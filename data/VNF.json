@@ -1,0 +1,156 @@
+{
+  "ticker": "VNF",
+  "companyName": "Công ty Cổ phần Vinafreight",
+  "stockExchange": "HNX",
+  "sector": "Logistics & Vận tải hàng hóa",
+  "reportPeriod": "Báo cáo Tài chính Hợp nhất Quý 2/2026",
+  "reportPeriodEndDate": "2026-06-30",
+  "disclosureDate": "2026-07-29",
+  "updateStatus": "Đã cập nhật BCTC Q2/2026 Hợp nhất",
+  "financialHighlights": {
+    "netRevenueQ2_2026": 415839517468,
+    "grossProfitQ2_2026": 35767841076,
+    "netProfitAfterTaxQ2_2026": 25459832149,
+    "netProfitParentQ2_2026": 23760027621,
+    "netProfitAfterTaxQ2_2025": 19524060569,
+    "profitGrowthYoY": 30.4,
+    "associatesProfitQ2_2026": 4859233074,
+    "associatesProfitQ2_2025": -249336424,
+    "eps6M2026": 1057,
+    "cashAndEquivalents": 138822439932,
+    "shortTermFinancialInvestments": 178158301625,
+    "longTermFinancialInvestments": 399646871687,
+    "totalAssets": 951439944331,
+    "totalLiabilities": 341445712488,
+    "ownerEquity": 609994231843
+  },
+  "balanceSheet": {
+    "shortTermAssets": {
+      "total": 543743413870,
+      "cashAndEquivalents": {
+        "total": 138822439932,
+        "cash": 117322439932,
+        "cashEquivalents": 21500000000
+      },
+      "shortTermFinancialInvestments": {
+        "total": 178158301625,
+        "tradingSecurities": {
+          "cost": 13825401625,
+          "fairValue": 14210890000,
+          "portfolio": [
+            { "ticker": "VFC", "company": "CTCP Vinafco", "cost": 7124466750, "fairValue": 8016240000 },
+            { "ticker": "SCS", "company": "CTCP Dịch vụ Hàng hóa Sài Gòn", "cost": 3339252375, "fairValue": 3009160000 },
+            { "ticker": "CLX", "company": "CTCP XNK và Đầu tư Chợ Lớn", "cost": 3361682500, "fairValue": 3185490000 }
+          ]
+        },
+        "heldToMaturity": 164332900000
+      },
+      "accountsReceivable": {
+        "total": 217363453696,
+        "tradeReceivables": 111548237349,
+        "prepaymentsToSuppliers": 1766099055,
+        "otherReceivables": 108560921552,
+        "badDebtProvision": -4511804260
+      },
+      "inventories": 3321684576,
+      "otherShortTermAssets": 6077534041
+    },
+    "longTermAssets": {
+      "total": 407696530461,
+      "longTermReceivables": 4936051710,
+      "fixedAssets": {
+        "total": 2206293084,
+        "tangibleFixedAssets": {
+          "cost": 18623673930,
+          "accumulatedDepreciation": -16799491614,
+          "netBookValue": 1824182316
+        },
+        "intangibleFixedAssets": {
+          "cost": 3093934079,
+          "accumulatedDepreciation": -2711823311,
+          "netBookValue": 382110768
+        }
+      },
+      "longTermFinancialInvestments": {
+        "total": 399646871687,
+        "associates": {
+          "total": 346192248081,
+          "list": [
+            { "name": "CTCP Giao nhận vận tải Miền Trung (VMT)", "ownership": 27.89, "bookValue": 25520610965, "profitShareQ2": 289062857 },
+            { "name": "CTCP Giao nhận vận tải Ngoại Thương (VNT)", "ownership": 24.87, "bookValue": 82114981912, "profitShareQ2": 2958854484 },
+            { "name": "CTCP Dịch vụ Logistics Thăng Long (TLL)", "ownership": 22.96, "bookValue": 56284237294, "profitShareQ2": 870844375 },
+            { "name": "CTCP Cảng Mipec (Mipec)", "ownership": 21.33, "bookValue": 167668091329, "profitShareQ2": -570724922 },
+            { "name": "CTCP Logistics Vĩnh Lộc (VLL)", "ownership": 20.00, "bookValue": 14604326581, "profitShareQ2": -20089752 }
+          ]
+        },
+        "otherEquityInvestments": {
+          "total": 50204623606,
+          "list": [
+            { "name": "CTNHH Kintetsu World Express Việt Nam", "value": 4246950000 },
+            { "name": "CTNHH Vận tải Ôtô Vi Na Vinatrans", "value": 726150000 },
+            { "name": "Công ty Liên doanh Vận tải Việt Nhật", "value": 4917335327 },
+            { "name": "CTCP Logistics Vinalink", "value": 21839032654 },
+            { "name": "CTCP Cảng Đà Nẵng", "value": 3410910750 },
+            { "name": "CTCP Cảng Đồng Nai", "value": 15064244875 }
+          ]
+        },
+        "heldToMaturityLongTerm": 3250000000
+      },
+      "otherLongTermAssets": 907313980
+    },
+    "liabilities": {
+      "total": 341445712488,
+      "shortTermLiabilities": {
+        "total": 336793865028,
+        "accountsPayable": 62935188754,
+        "advancesFromCustomers": 1177954912,
+        "dividendsPayable": 48128377201,
+        "taxesAndPayablesToState": 14421027469,
+        "accruedExpenses": 47103765469,
+        "otherShortTermPayables": 140776260866,
+        "shortTermBorrowings": 17605402329
+      },
+      "longTermLiabilities": {
+        "total": 4651847460,
+        "otherLongTermPayables": 4651847460
+      }
+    },
+    "equity": {
+      "total": 609994231843,
+      "charterCapital": 317158800000,
+      "sharePremium": 30146050000,
+      "treasuryShares": -155000000,
+      "developmentInvestmentFund": 15925977872,
+      "undistributedEarnings": 236261572391,
+      "nonControllingInterest": 10656831580,
+      "majorShareholders": [
+        { "name": "CTCP Transimex", "ownership": 61.02, "value": 193519810000 },
+        { "name": "CTCP QL&PT BĐS Conasi", "ownership": 13.11, "value": 41589440000 },
+        { "name": "CTCP Giao nhận Kho vận Ngoại thương Việt Nam", "ownership": 10.87, "value": 34473600000 },
+        { "name": "Cổ phiếu quỹ", "ownership": 0.05, "value": 155000000 },
+        { "name": "Các cổ đông khác", "ownership": 14.96, "value": 47420950000 }
+      ]
+    }
+  },
+  "incomeStatement6M2026": {
+    "grossRevenue": 692436703051,
+    "revenueDeductions": -3710976957,
+    "netRevenue": 688725726094,
+    "costOfGoodsSold": -627708154842,
+    "grossProfit": 61017571252,
+    "financialIncome": 11021000944,
+    "financialExpenses": -904826753,
+    "interestExpenses": -534220865,
+    "sellingExpenses": -16033176910,
+    "generalAdminExpenses": -13368076738,
+    "profitFromAssociates": 3436156612,
+    "operatingProfit": 45168648407,
+    "otherProfit": -10253519,
+    "profitBeforeTax": 45158394888,
+    "currentCorporateIncomeTax": -8890557764,
+    "netProfitAfterTax": 36267837124,
+    "netProfitParent": 33520391799,
+    "nonControllingInterestProfit": 2747445325,
+    "basicEPS": 1057
+  }
+}
