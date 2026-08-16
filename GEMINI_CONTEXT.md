@@ -1,6 +1,8 @@
 # GEMINI_CONTEXT.md — Ngữ cảnh đồng bộ dự án
 
-> **Mục đích**: File duy nhất để mọi AI agent (Gemini, Copilot, Claude, Cursor...) nắm được 100% hiện trạng code của dự án **Phân Tích Chuyên Sâu Cổ Phiếu (dulieucophieu.com)**. AI PHẢI cập nhật file này ngay sau mỗi lần sửa code / tạo file / đổi logic (theo chỉ thị trong `AGENTS.md`).
+> **Mục đích**: File duy nhất để mọi AI agent (Gemini, Copilot, Claude, Cursor...) nắm được 100% hiện trạng code của dự án **Phân Tích Chuyên Sâu Cổ Phiếu (dulieucophieu.com)**.
+>
+> **Quy tắc cập nhật (CẬP NHẬT 2026-08-15, theo `AGENTS.md`)**: **KHÔNG tự động cập nhật/đồng bộ/nhắc tới file này** sau mỗi lần sửa code — **CHỈ cập nhật khi người dùng yêu cầu đích danh** (vd "cập nhật GEMINI_CONTEXT.md", "đồng bộ ngữ cảnh", "cập nhật changelog").
 
 ---
 
@@ -11,7 +13,7 @@
 | **Tên dự án** | Phân Tích Chuyên Sâu Cổ Phiếu — Cổng Dữ Liệu & Báo Cáo Đầu Tư (`dulieucophieu.com`) |
 | **Sáng lập / Người phụ trách** | Nguyễn Trung Nhật · Zalo **0983.627.018** · trungnhat232@gmail.com |
 | **Tech stack** | Next.js **16.3.0** (App Router), React **19**, TypeScript **5.7.3**, Tailwind CSS **v4** (OKLCH, chủ đạo emerald), pnpm |
-| **Dữ liệu** | Google Drive API **v3** (folder ID `1eI8C_uDJlKDvNbzF9YOOr6QNCUIdw7o8`), file báo cáo là Google Docs (export text/plain) |
+| **Dữ liệu** | Google Drive API **v3** (folder ID `1eI8C_uDJlKDvNbzF9YOOr6QNCUIdw7o8`), file báo cáo là Google Docs (export text/plain). **Cơ chế hiện tại: STATIC SNAPSHOT** — `data/reports-snapshot.json` (59 báo cáo đã parse) phục vụ trực tiếp; Drive chỉ gọi khi bật live / chạy script refresh |
 | **UI** | shadcn/ui (`@base-ui/react`, cva, clsx, tailwind-merge), lucide-react, `tw-animate-css` |
 | **Fonts** | Inter (latin + vietnamese), JetBrains Mono |
 | **Format số** | vi-VN: dấu chấm nghìn, dấu phẩy thập phân; giá theo **nghìn đồng/cổ phiếu**; vốn hóa tỷ đồng |
@@ -20,8 +22,11 @@
 ### Cách chạy dev
 - **Lệnh dùng được**: `node node_modules\next\dist\bin\next dev` (chạy tại `localhost:3000`)
 - `pnpm dev` / `npm run dev` hiện **LỖI** (lỗi mạng khi tải package next) → không dùng.
-- `next.config.mjs`: `typescript.ignoreBuildErrors: true`, `images.unoptimized: true`.
+- `next.config.mjs`: `images.unoptimized: true` (đã **bỏ** `typescript.ignoreBuildErrors` — build production validate TypeScript).
+- `package.json`: `engines.node >=20`, `packageManager: pnpm@11.20.0`; `pnpm-workspace.yaml` chứa `overrides: {hono: 4.12.25}` + `allowBuilds: {msw: true}` (pnpm 11 bỏ qua field `pnpm` trong package.json). Lockfile: **chỉ `pnpm-lock.yaml`** (đã xóa `package-lock.json`).
 - Biến môi trường: `GOOGLE_DRIVE_API_KEY` + `GOOGLE_DRIVE_FOLDER_ID` trong `.env.local` (đã gitignore; template ở `.env.example`).
+- **Cập nhật dữ liệu**: `node scripts/refresh-snapshot.mjs` → lấy mới từ Drive (qua local, `?live=1`), ghi `data/reports-snapshot.json`, rồi **commit + push** để Vercel deploy lại.
+- **Vercel**: domain `dulieucophieu.com`, `metadataBase` = https://dulieucophieu.com, tự deploy khi push `main`. LƯU Ý env `GOOGLE_DRIVE_FOLDER_ID` trên Vercel từng bị gõ sai (lỗi 400) → đã vô hiệu hóa bằng cơ chế snapshot.
 
 ---
 
@@ -31,7 +36,9 @@
 
 ```mermaid
 flowchart LR
-  DRIVE[Google Drive folder<br/>1eI8C_uDJlKDvNbzF9YOOr6QNCUIdw7o8] -->|pageToken loop<br/>pageSize=1000| API[/api/reports<br/>app/api/reports/route.ts/]
+  SNAP[data/reports-snapshot.json<br/>59 báo cáo đã parse] -->|import tĩnh, MẶC ĐỊNH| API[/api/reports<br/>app/api/reports/route.ts/]
+  REFRESH[scripts/refresh-snapshot.mjs<br/>node scripts/refresh-snapshot.mjs] -. ?live=1 .-> API
+  DRIVE[Google Drive folder<br/>1eI8C_uDJlKDvNbzF9YOOr6QNCUIdw7o8] -. live mode<br/>REPORTS_SOURCE=live / ?live=1 .-> API
   API -->|JSON: slug, ticker, title, category, date,<br/>reportDate, summary?, targetPrice?, currentPrice?,<br/>recommendation?, upside?, bonusWelfareRate?| HOOK[useReports hook<br/>lib/use-reports.ts]
   HOOK --> SCREENER[Screener<br/>components/screener.tsx]
   HOOK --> KPI[HomeKpis<br/>components/home-kpis.tsx]
@@ -41,11 +48,17 @@ flowchart LR
   BAOCAO --> DETAIL[/bao-cao/[slug]/<br/>DriveDocViewer iframe/]
 ```
 
-### 2.2 Google Drive API — `app/api/reports/route.ts`
+### 2.2 API dữ liệu báo cáo — `app/api/reports/route.ts`
 
+**Cơ chế STATIC SNAPSHOT (MẶC ĐỊNH — hiện tại):**
+- `GET` phục vụ file `data/reports-snapshot.json` (snapshot đã parse sẵn, hiện **59 báo cáo**) → **KHÔNG gọi Google Drive lúc chạy**, không cần env → hoạt động ổn định tuyệt đối trên Vercel.
+- Header response `x-reports-source: snapshot`; `export const dynamic = "force-dynamic"` (chống static-cache lúc build).
+
+**Chế độ LIVE (tùy chọn — gọi Drive API lúc chạy):**
+- Kích hoạt khi env `REPORTS_SOURCE=live` **hoặc** query `?live=1` (script refresh dùng cách này).
 - `GET` quét **toàn bộ** file trong folder bằng vòng lặp `pageToken`/`nextPageToken` (`pageSize: 1000`), `orderBy: modifiedTime desc`, lọc `trashed = false`.
-- **Bóc nội dung**: `getDocContent(docId)` export `text/plain` qua `https://www.googleapis.com/drive/v3/files/{id}/export?mimeType=text/plain` (có `next: { revalidate: 60 }`).
-- `export const revalidate = 60` — cache 60s.
+- **Bóc nội dung**: `getDocContent(docId)` export `text/plain` qua `https://www.googleapis.com/drive/v3/files/{id}/export?mimeType=text/plain` (`cache: "no-store"`).
+- **Log lỗi chi tiết** `[reports] ...`: log số file Drive trả về, in **full JSON lỗi** + URL đã gọi (che API key), cảnh báo khi env folder khác folder mặc định, gợi ý sửa env khi gặp 400.
 - **Fallback**: thiếu API key / Drive lỗi → `STATIC_REPORTS` (14 báo cáo cổ phiếu, không có trường định giá).
 - **Phân loại báo cáo theo tiền tố tên file** (type `ParsedReport`, regex `/^\s*\[([A-Za-z0-9_]{1,16})\]\s*(.+)$/`):
   - `[VIMO_...]` → `category: 'macro'`, `ticker: null`
@@ -66,7 +79,7 @@ Chạy trên **5000 ký tự đầu** nội dung, sau khi `stripAnnotations()` (
 | **Chống bắt nhầm tỷ lệ** | `extractPrice()` kiểm tra ký tự ngay sau số trong văn bản gốc: nếu là `x`/`%` (P/B 1.0x, P/E 10x, 10%) → **loại bỏ** (chỉ loại khi số không kết thúc bằng dấu ngăn cách câu `,`/`.`); kèm **backstop** trong `parseValuation()`: `target < current * 0.3` → coi là nhiễu, trả null |
 | **Upside** | `UPSIDE_PATTERNS`: "tỷ suất sinh lời kỳ vọng" (chuẩn FPTS) / "mức sinh lời kỳ vọng (Upside)" / "upside" / "tiềm năng tăng giá" → **ưu tiên bóc trực tiếp**, fallback tự tính `((target-current)/current)*100` |
 | **Khuyến nghị** | `extractRecommendation()`: sau "khuyến nghị" → fallback từ khóa in hoa (`MUA | KHẢ QUAN | NẮM GIỮ | THEO DÕI`), xử lý "MUA (Chiến lược Trend Trade)" → MUA |
-| **Ngày báo cáo** | `modifiedTime` (RFC3339) → `toDateOnly()` → `YYYY-MM-DD`, alias `reportDate` |
+| **Ngày báo cáo** | `createdTime` (thời gian TẠO file) + 7h (GMT+7) → `toReportDate()` → **DD/MM/YYYY**, alias `reportDate` |
 | **Trích quỹ KTPL** (tỷ lệ khen thưởng phúc lợi) | `extractBonusWelfareRate()` — **quy chuẩn đơn giản 1 regex**: `/(?:KTPL|Khen thưởng phúc lợi|Quỹ KTPL)\s*[:=-]\s*(\d+(?:[.,]\d+)?)\s*%/i` (vd "KTPL: 10%" / "Khen thưởng phúc lợi = 4,93%"); số VN/international (7,5 / 7.5 / 10) → %; **không khớp → null** (Screener hiển thị "—"). Chạy trên toàn văn, chỉ báo cáo cổ phiếu (vĩ mô/hàng hóa = null). |
 
 Hỗ trợ số VN: `parseVnd()` ("55.000"/"55,000" → 55000; "82.5"/"82,5" → 82.5); `resolvePrice()` xử lý khoảng "34.100 - 34.500" → trung bình, quy đổi nghìn (số > 1000 chia 1000), loại dấu câu cuối `[.,]$`.
@@ -95,7 +108,7 @@ Hỗ trợ số VN: `parseVnd()` ("55.000"/"55,000" → 55000; "82.5"/"82,5" →
 | `app/dieu-khoan/page.tsx` | Server | ✅ Trang Điều khoản sử dụng (tĩnh). |
 | `app/chinh-sach-bao-mat/page.tsx` | Server | ✅ Trang Chính sách bảo mật (tĩnh). |
 | `app/lien-he/page.tsx` | Server | ✅ Liên hệ: thẻ người phụ trách, Zalo, Email, thẻ ngân hàng BIDV (1260202954 — NGUYEN TRUNG NHAT) + `CopyButton`. |
-| `app/api/reports/route.ts` | Route handler | ✅ API báo cáo (xem mục 2.2). |
+| `app/api/reports/route.ts` | Route handler | ✅ API báo cáo — **phục vụ static snapshot** mặc định (`data/reports-snapshot.json`), chế độ live qua `REPORTS_SOURCE=live`/`?live=1` (xem mục 2.2). |
 
 ### 3.2 Components (`components/`)
 
@@ -142,11 +155,19 @@ Hỗ trợ số VN: `parseVnd()` ("55.000"/"55,000" → 55000; "82.5"/"82,5" →
 - [x] Thông tin sáng lập + tài khoản ngân hàng + `CopyButton`
 - [x] Cập nhật NT2 `marketPrice = 21.2` → bảng hiển thị Giá TT 21,2 / Giá MT 30,2 / Upside +42% / MUA
 - [x] Bóc tách **tỷ lệ trích quỹ KTPL** (`extractBonusWelfareRate`) + thêm cột "Trích quỹ KTPL" trên Screener (9 → 10 cột, colSpan=10, SortKey `bonusWelfareRate`)
+- [x] **Chuẩn bị deploy Vercel**: bỏ `typescript.ignoreBuildErrors`, `metadataBase` = dulieucophieu.com, `README.md`, `engines.node >=20`, xóa `package-lock.json`
+- [x] **Fix `ERR_PNPM_LOCKFILE_CONFIG_MISMATCH`**: chuyển `overrides`/`allowBuilds` sang `pnpm-workspace.yaml`, thêm `packageManager: pnpm@11.20.0`, chạy `pnpm install --no-frozen-lockfile`
+- [x] **Fix static-cache 14 mã trên Vercel**: `export const dynamic = "force-dynamic"`, bỏ `revalidate=60`, fetch `cache: "no-store"`
+- [x] **Log lỗi Drive chi tiết** + cảnh báo folder ID sai — phát hiện `GOOGLE_DRIVE_FOLDER_ID` trên Vercel gõ sai → 400
+- [x] **Chuyển cơ chế STATIC SNAPSHOT**: `data/reports-snapshot.json` (59 báo cáo) + `scripts/refresh-snapshot.mjs` + header `x-reports-source`
+- [x] **Cập nhật dữ liệu mới**: 59 báo cáo (thêm QTP, MCF có đầy đủ định giá); 15 targetPrice / 16 recommendation / 8 KTPL
 
 ### 🔄 Đang xử lý (In Progress)
 - [ ] (Trống — không có tác vụ đang dở)
 
 ### 📋 Kế hoạch tiếp theo (Backlog)
+- [ ] Chia sẻ công khai (Anyone with the link → Viewer) **các Google Doc còn lại bị 403** → chạy `node scripts/refresh-snapshot.mjs` để snapshot đủ định giá
+- [ ] (Tùy chọn) Cập nhật `GOOGLE_DRIVE_FOLDER_ID` trên Vercel cho đúng (`1eI8C_uDJlKDvNbzF9YOOr6QNCUIdw7o8`) nếu muốn bật chế độ live `REPORTS_SOURCE=live`
 - [ ] Thêm báo cáo thực tế `[VIMO_...]` / `[HANGHOA_...]` vào Drive để chứng thực luồng macro/commodity end-to-end
 - [ ] `ProtectedContent` (nội dung bảo vệ) — chưa có trong code
 - [ ] `Paywall` (khóa nội dung trả phí) — chưa có trong code
@@ -158,10 +179,15 @@ Hỗ trợ số VN: `parseVnd()` ("55.000"/"55,000" → 55000; "82.5"/"82,5" →
 
 ## 5. Nhật ký thay đổi kỹ thuật (Changelog)
 
-> Ghi theo thứ tự mới → cũ. **Quy tắc**: AI PHẢI thêm dòng mới vào đầu danh sách này sau mỗi lần sửa code.
+> Ghi theo thứ tự mới → cũ. **Quy tắc (2026-08-15)**: chỉ cập nhật khi người dùng yêu cầu đích danh — thêm dòng mới vào đầu danh sách này.
 
 | Timestamp | File(s) sửa | Nội dung thay đổi |
 |---|---|---|
+| 2026-08-16 | `data/reports-snapshot.json` | **Cập nhật dữ liệu mới**: 59 báo cáo (+1 QTP; QTP target=14/MUA, MCF target=11.8/KHẢ QUAN); 15 có targetPrice, 16 có recommendation, 8 có KTPL. Push `462702b`. |
+| 2026-08-16 | `app/api/reports/route.ts` · `data/reports-snapshot.json` (mới) · `scripts/refresh-snapshot.mjs` (mới) | **Chuyển cơ chế dữ liệu sang STATIC SNAPSHOT**: GET trả snapshot import mặc định (+ header `x-reports-source: snapshot`); giữ chế độ LIVE qua `REPORTS_SOURCE=live` / `?live=1`; script `refresh-snapshot.mjs` tự phát hiện/khởi động dev server, fetch `?live=1`, ghi snapshot pretty. Build EXIT 0. Push `39222cf`. |
+| 2026-08-16 | `app/api/reports/route.ts` | **Log lỗi Drive chi tiết**: in full JSON lỗi + URL (che key), log số file Drive trả về, cảnh báo khi env folder khác default, gợi ý sửa env khi 400. Phát hiện `GOOGLE_DRIVE_FOLDER_ID` trên Vercel gõ sai (`1eIBC_...` thay vì `1eI8C_...`) → Drive 400. Push `0294c7a`. |
+| 2026-08-16 | `app/api/reports/route.ts` | **Fix static-cache 14 mã lúc build**: thay `revalidate=60` bằng `export const dynamic = "force-dynamic"`, fetch `cache: "no-store"` — route luôn chạy lúc request, không đóng băng fallback 14 mã lên Vercel. Push `9496833`. |
+| 2026-08-16 | `package.json` · `pnpm-workspace.yaml` · `pnpm-lock.yaml` | **Fix `ERR_PNPM_LOCKFILE_CONFIG_MISMATCH` cho Vercel**: chuyển `overrides: {hono: 4.12.25}` + `allowBuilds: {msw: true}` sang `pnpm-workspace.yaml` (pnpm 11 bỏ qua field `pnpm` trong package.json), xóa field `pnpm`, thêm `packageManager: pnpm@11.20.0`, chạy `pnpm install --no-frozen-lockfile`. Đã xóa `package-lock.json`. Push `e85ea25`. |
 | 2026-08-15 | `components/site-header.tsx` · `app/layout.tsx` · `app/dieu-khoan` · `app/chinh-sach-bao-mat` · `app/lien-he` | **Đổi thương hiệu → "Phân Tích Chuyên Sâu Cổ Phiếu"**: brand header responsive (mobile "Phân Tích Chuyên Sâu" / sm+ đầy đủ, icon TrendingUp giữ nguyên), `metadata.title` layout "Phân Tích Chuyên Sâu Cổ Phiếu - Cổng Dữ Liệu & Báo Cáo Đầu Tư", title 3 trang tĩnh đồng bộ. Footer vẫn còn "Value Capital" (chưa đổi). |
 | 2026-08-15 | `app/api/reports/route.ts` | **Đơn giản hóa logic KTPL**: xóa toàn bộ 7 pattern phức tạp + guard "lên tới", giữ 1 regex duy nhất `/(?:KTPL|Khen thưởng phúc lợi|Quỹ KTPL)\s*[:=-]\s*(\d+(?:[.,]\d+)?)\s*%/i`; không khớp → `bonusWelfareRate: null` (Screener hiển thị "—"). Dọn file test tạm. |
 | 2026-08-15 | `app/api/reports/route.ts` | **Fix lỗi bóc nhầm Giá MT/Giá TT** (HCC target=1 → 38.5, upside -96% → +38%): `TARGET_PRICE_PATTERNS` xử lý cụm thời hạn "1 NĂM"/"12 THÁNG"; `extractPrice()` chống bắt nhầm tỷ lệ (ký tự sau số là `x`/`%` → bỏ qua); thêm pattern upside "tỷ suất sinh lời kỳ vọng"; backstop `target < current*0.3` → null. |
@@ -176,4 +202,4 @@ Hỗ trợ số VN: `parseVnd()` ("55.000"/"55,000" → 55000; "82.5"/"82,5" →
 | 2026-08-15 | `app/api/reports/route.ts` | Xây dựng API báo cáo Drive ban đầu: pageToken loop, heuristic parse tên file, regex bóc tách định giá (Giá TT/MT/Upside/Khuyến nghị). |
 
 ---
-*Cập nhật lần cuối: 2026-08-15 · Người duy trì: Nguyễn Trung Nhật (trungnhat232@gmail.com)*
+*Cập nhật lần cuối: 2026-08-16 · Người duy trì: Nguyễn Trung Nhật (trungnhat232@gmail.com)*
