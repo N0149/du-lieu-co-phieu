@@ -35,11 +35,18 @@ async function getJson(url, timeoutMs) {
   }
 }
 
-// Kiểm tra server đã sẵn sàng chưa (fetch nhẹ, timeout ngắn).
+// Kiểm tra server đã sẵn sàng chưa: hit trang chủ `/` (trả nhanh, KHÔNG chạy live-fetch
+// Drive) → hoạt động đúng cả khi env REPORTS_SOURCE=live (trong GitHub Actions CI).
 async function isServerUp() {
   try {
-    await getJson(`${BASE}/api/reports`, 3000);
-    return true;
+    const ctrl = new AbortController();
+    const t = setTimeout(() => ctrl.abort(), 5000);
+    try {
+      const res = await fetch(`${BASE}/`, { signal: ctrl.signal });
+      return res.ok;
+    } finally {
+      clearTimeout(t);
+    }
   } catch {
     return false;
   }
@@ -50,6 +57,15 @@ async function fetchLiveReports() {
   const data = await getJson(LIVE_API, 60000);
   if (!Array.isArray(data) || data.length === 0) {
     throw new Error("API trả về danh sách rỗng — kiểm tra env GOOGLE_DRIVE_* trong .env.local");
+  }
+  // BẢO VỆ: nếu dữ liệu trông giống fallback tĩnh (≤20 mục, không có reportDate — ví dụ khi
+  // thiếu secret GOOGLE_DRIVE_* trong GitHub Actions) thì KHÔNG ghi đè snapshot tốt đang có.
+  const looksLikeStaticFallback =
+    data.length <= 20 && data.every((r) => !r || !r.reportDate);
+  if (looksLikeStaticFallback) {
+    throw new Error(
+      "API trả về danh sách fallback tĩnh (có thể thiếu secret GOOGLE_DRIVE_* trong GitHub Actions) — không ghi đè snapshot.",
+    );
   }
   return data;
 }
