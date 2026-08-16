@@ -1,9 +1,14 @@
 ﻿import { NextResponse } from "next/server";
+import reportsSnapshot from "../../../data/reports-snapshot.json";
 
-// QUAN TRỌNG: ép route LUÔN chạy ở thời điểm request (server), KHÔNG prerender / static-cache
-// lúc `next build`. Nếu thiếu dòng này, Next.js có thể "đóng băng" kết quả lần gọi đầu tiên
-// (kể cả danh sách tĩnh 14 mã fallback khi Drive trả lỗi lúc build) vào cache → website
-// hiển thị mã cũ mãi dù GOOGLE_DRIVE_API_KEY đã cấu hình đầy đủ trên Vercel.
+// CƠ CHẾ DỮ LIỆU: STATIC SNAPSHOT (mặc định).
+// - Route phục vụ file data/reports-snapshot.json (đã lưu sẵn toàn bộ báo cáo đã parse) →
+//   website hoạt động ổn định tuyệt đối, KHÔNG phụ thuộc Google Drive API lúc chạy.
+// - Muốn cập nhật dữ liệu: chạy `node scripts/refresh-snapshot.mjs` (lấy mới từ Drive qua
+//   local, dùng ?live=1) rồi commit file snapshot mới.
+// - Muốn quay lại chế độ LIVE (gọi Drive API mỗi request): set env REPORTS_SOURCE=live
+//   hoặc gọi /api/reports?live=1.
+// Giữ force-dynamic để hỗ trợ cả 2 chế độ an toàn (không bị static-cache lúc build).
 export const dynamic = "force-dynamic";
 
 const DRIVE_API_KEY = process.env.GOOGLE_DRIVE_API_KEY ?? "";
@@ -527,7 +532,17 @@ const STATIC_REPORTS = [
   },
 ];
 
-export async function GET() {
+export async function GET(request: Request) {
+  // Chế độ mặc định: trả về static snapshot (không gọi Drive, không cần env).
+  // Bỏ qua chỉ khi env REPORTS_SOURCE=live hoặc query ?live=1 (dùng bởi script refresh).
+  const forceLive = new URL(request.url).searchParams.get("live") === "1";
+  if (process.env.REPORTS_SOURCE !== "live" && !forceLive) {
+    return NextResponse.json(reportsSnapshot, {
+      headers: { "x-reports-source": "snapshot" },
+    });
+  }
+
+  // ===== Chế độ LIVE (REPORTS_SOURCE=live hoặc ?live=1): gọi Google Drive API lúc chạy =====
   // Chưa cấu hình API key → trả về danh sách tĩnh (không phá vỡ UI hiện tại)
   if (!DRIVE_API_KEY) {
     console.error(
