@@ -2,6 +2,7 @@ import Script from 'next/script'
 import { Analytics } from '@vercel/analytics/next'
 import type { Metadata, Viewport } from 'next'
 import { Inter, JetBrains_Mono } from 'next/font/google'
+import { SiteFooter } from '@/components/site-footer'
 import './globals.css'
 
 const inter = Inter({
@@ -15,9 +16,10 @@ const jetbrainsMono = JetBrains_Mono({
 })
 
 export const metadata: Metadata = {
-  title: 'RNAV Value Capital — Cổng Dữ Liệu Đầu Tư Giá Trị',
+  metadataBase: new URL('https://dulieucophieu.com'),
+  title: 'Phân Tích Chuyên Sâu Cổ Phiếu - Cổng Dữ Liệu & Báo Cáo Đầu Tư',
   description:
-    'Cổng dữ liệu đầu tư giá trị cấp tổ chức: bộ lọc cổ phiếu định giá rẻ, phân tích RNAV và bóc tách tài sản ngầm.',
+    'Cổng dữ liệu đầu tư giá trị cấp tổ chức: bộ lọc cổ phiếu định giá hấp dẫn, phân tích tài sản và bóc tách giá trị tiềm ẩn.',
   generator: 'v0.app',
 }
 
@@ -57,8 +59,9 @@ export default function RootLayout({
           {themeScript}
         </Script>
       </head>
-      <body className="font-sans antialiased">
-        {children}
+      <body className="flex min-h-screen flex-col font-sans antialiased">
+        <div className="flex-1">{children}</div>
+        <SiteFooter />
         {process.env.NODE_ENV === 'production' && <Analytics />}
       </body>
     </html>

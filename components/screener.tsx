@@ -1,7 +1,7 @@
 'use client'
 
 import { useMemo, useState } from 'react'
-import { useRouter } from 'next/navigation'
+import Link from 'next/link'
 import {
   ArrowUpDown,
   ArrowUp,
@@ -11,22 +11,52 @@ import {
   SlidersHorizontal,
   RotateCcw,
   Filter,
+  FileText,
 } from 'lucide-react'
-import { stocks, upside, priceToRnav, SECTORS, type Stock } from '@/lib/data'
+import { SECTORS } from '@/lib/data'
 import { fmtPrice, fmtNum, fmtPct, fmtInt } from '@/lib/format'
 import { StatusTag } from '@/components/badges'
 import { Button } from '@/components/ui/button'
 import { cn } from '@/lib/utils'
+import { useReports, reportHref } from '@/lib/use-reports'
+import {
+  buildReportStocks,
+  upsideOf,
+  marketPriceOf,
+  priceToRnavOf,
+  type ReportStock,
+} from '@/lib/report-stocks'
 
 type SortKey =
   | 'ticker'
   | 'sector'
   | 'marketPrice'
-  | 'rnav'
+  | 'targetPrice'
+  | 'reportDate'
   | 'upside'
-  | 'forwardPE'
-  | 'dividendYield'
+  | 'bonusWelfareRate'
 type SortDir = 'asc' | 'desc'
+
+// Chuyển "YYYY-MM-DD" → "DD/MM/YYYY" (chuẩn VN), fallback trả nguyên chuỗi
+function formatVnDate(iso: string): string {
+  const m = iso.match(/^(\d{4})-(\d{2})-(\d{2})/)
+  if (!m) return iso
+  return `${m[3]}/${m[2]}/${m[1]}`
+}
+
+// Chuyển "DD/MM/YYYY" (hoặc "YYYY-MM-DD") → "YYYYMMDD" để sort theo ngày chính xác
+// (ngày báo cáo hiện do API trả dạng DD/MM/YYYY từ createdTime)
+function sortableDate(v: string | null): string {
+  if (!v) return ''
+  const m = v.match(/^(\d{2})\/(\d{2})\/(\d{4})$/) // DD/MM/YYYY
+  if (m) return `${m[3]}${m[2]}${m[1]}`
+  return v.replace(/-/g, '') // YYYY-MM-DD → YYYYMMDD
+}
+
+// Format tỷ lệ trích quỹ KTPL: số nguyên → "10%", số thập phân → "7,5%" (locale vi-VN)
+function fmtRate(v: number): string {
+  return `${Number.isInteger(v) ? fmtNum(v, 0) : fmtNum(v, 1)}%`
+}
 
 const PAGE_SIZE = 8
 
@@ -92,45 +122,43 @@ function Slider({
 }
 
 export function Screener() {
-  const router = useRouter()
+  const { reports } = useReports()
 
-  const [peOn, setPeOn] = useState(true)
-  const [pe, setPe] = useState(7)
   const [prOn, setPrOn] = useState(true)
   const [pr, setPr] = useState(0.5)
-  const [divOn, setDivOn] = useState(true)
-  const [div, setDiv] = useState(8.6)
   const [sector, setSector] = useState<string>(SECTORS[0])
 
   const [sortKey, setSortKey] = useState<SortKey>('upside')
   const [sortDir, setSortDir] = useState<SortDir>('desc')
   const [page, setPage] = useState(1)
 
+  // Nguồn dữ liệu: các mã ĐÃ CÓ bài viết trong kho báo cáo (ghép dữ liệu tài chính nếu có)
+  const reportStocks = useMemo(() => buildReportStocks(reports), [reports])
+
   const filtered = useMemo(() => {
-    const rows = stocks.filter((s) => {
-      if (peOn && s.forwardPE >= pe) return false
-      if (prOn && priceToRnav(s) >= pr) return false
-      if (divOn && s.dividendYield <= div) return false
+    const rows = reportStocks.filter((s) => {
+      // Mã chưa có dữ liệu tài chính sẽ không bị loại bởi bộ lọc định giá
+      if (prOn && priceToRnavOf(s) != null && (priceToRnavOf(s) as number) >= pr) return false
       if (sector !== SECTORS[0] && s.sector !== sector) return false
       return true
     })
 
-    const val = (s: Stock): number | string => {
+    const val = (s: ReportStock): number | string => {
       switch (sortKey) {
         case 'ticker':
           return s.ticker
         case 'sector':
           return s.sector
         case 'marketPrice':
-          return s.marketPrice
-        case 'rnav':
-          return s.rnav
+          return marketPriceOf(s) ?? -Infinity
+        case 'targetPrice':
+          return s.targetPrice ?? -Infinity
+        case 'reportDate':
+          return sortableDate(s.reportDate) // DD/MM/YYYY (hoặc YYYY-MM-DD) → YYYYMMDD
         case 'upside':
-          return upside(s)
-        case 'forwardPE':
-          return s.forwardPE
-        case 'dividendYield':
-          return s.dividendYield
+          return upsideOf(s) ?? -Infinity
+        case 'bonusWelfareRate':
+          return s.bonusWelfareRate ?? -Infinity
       }
     }
 
@@ -142,7 +170,7 @@ export function Screener() {
       else cmp = (av as number) - (bv as number)
       return sortDir === 'asc' ? cmp : -cmp
     })
-  }, [peOn, pe, prOn, pr, divOn, div, sector, sortKey, sortDir])
+  }, [reportStocks, prOn, pr, sector, sortKey, sortDir])
 
   const totalPages = Math.max(1, Math.ceil(filtered.length / PAGE_SIZE))
   const safePage = Math.min(page, totalPages)
@@ -159,19 +187,16 @@ export function Screener() {
   }
 
   function reset() {
-    setPeOn(true)
-    setPe(7)
     setPrOn(true)
     setPr(0.5)
-    setDivOn(true)
-    setDiv(8.6)
     setSector(SECTORS[0])
     setPage(1)
   }
 
+  const rowsWithData = filtered.filter((s) => upsideOf(s) != null)
   const avgUpside =
-    filtered.length > 0
-      ? filtered.reduce((acc, s) => acc + upside(s), 0) / filtered.length
+    rowsWithData.length > 0
+      ? rowsWithData.reduce((acc, s) => acc + (upsideOf(s) as number), 0) / rowsWithData.length
       : 0
 
   return (
@@ -194,24 +219,6 @@ export function Screener() {
 
           <div className="flex flex-col gap-2.5 p-3">
             <FilterRow
-              label="Forward P/E"
-              hint="Chỉ hiển thị cổ phiếu có P/E tương lai thấp hơn ngưỡng."
-              enabled={peOn}
-              onToggle={(v) => {
-                setPeOn(v)
-                setPage(1)
-              }}
-            >
-              <div className="flex items-center justify-between text-xs">
-                <span className="text-muted-foreground">Tối đa</span>
-                <span className="font-mono font-semibold text-foreground">
-                  &lt; {fmtNum(pe, 1)}
-                </span>
-              </div>
-              <Slider value={pe} min={3} max={15} step={0.5} onChange={(v) => { setPe(v); setPage(1) }} />
-            </FilterRow>
-
-            <FilterRow
               label="Giá / RNAV"
               hint="Tỷ lệ giá thị trường trên giá trị tài sản ròng điều chỉnh."
               enabled={prOn}
@@ -227,24 +234,6 @@ export function Screener() {
                 </span>
               </div>
               <Slider value={pr} min={0.2} max={1.2} step={0.05} onChange={(v) => { setPr(v); setPage(1) }} />
-            </FilterRow>
-
-            <FilterRow
-              label="Tỷ suất cổ tức"
-              hint="Cổ tức tiền mặt trên thị giá, tối thiểu theo ngưỡng."
-              enabled={divOn}
-              onToggle={(v) => {
-                setDivOn(v)
-                setPage(1)
-              }}
-            >
-              <div className="flex items-center justify-between text-xs">
-                <span className="text-muted-foreground">Tối thiểu</span>
-                <span className="font-mono font-semibold text-foreground">
-                  &gt; {fmtNum(div, 1)}%
-                </span>
-              </div>
-              <Slider value={div} min={0} max={15} step={0.1} onChange={(v) => { setDiv(v); setPage(1) }} />
             </FilterRow>
 
             <div className="rounded-md border border-border bg-card p-3">
@@ -305,18 +294,21 @@ export function Screener() {
                   <Th onClick={() => toggleSort('marketPrice')} active={sortKey === 'marketPrice'} dir={sortDir} right>
                     Giá TT
                   </Th>
-                  <Th onClick={() => toggleSort('rnav')} active={sortKey === 'rnav'} dir={sortDir} right>
-                    RNAV
+                  <Th onClick={() => toggleSort('targetPrice')} active={sortKey === 'targetPrice'} dir={sortDir} right>
+                    Giá MT
+                  </Th>
+                  <Th onClick={() => toggleSort('bonusWelfareRate')} active={sortKey === 'bonusWelfareRate'} dir={sortDir} right>
+                    Trích quỹ KTPL
+                  </Th>
+                  <Th onClick={() => toggleSort('reportDate')} active={sortKey === 'reportDate'} dir={sortDir}>
+                    Ngày báo cáo
                   </Th>
                   <Th onClick={() => toggleSort('upside')} active={sortKey === 'upside'} dir={sortDir} right>
                     Upside
                   </Th>
-                  <Th onClick={() => toggleSort('forwardPE')} active={sortKey === 'forwardPE'} dir={sortDir} right>
-                    P/E FW
-                  </Th>
-                  <Th onClick={() => toggleSort('dividendYield')} active={sortKey === 'dividendYield'} dir={sortDir} right>
-                    Cổ tức
-                  </Th>
+                  <th className="px-3 py-2.5 text-left text-xs font-semibold text-muted-foreground uppercase tracking-wide">
+                    Khuyến nghị
+                  </th>
                   <th className="px-3 py-2.5 text-left text-xs font-semibold text-muted-foreground uppercase tracking-wide">
                     Trạng thái
                   </th>
@@ -324,51 +316,71 @@ export function Screener() {
               </thead>
               <tbody>
                 {pageRows.map((s, i) => {
-                  const up = upside(s)
+                  const up = upsideOf(s)
+                  const href = reportHref(s.ticker)
                   return (
                     <tr
                       key={s.ticker}
-                      onClick={() => router.push(`/ticker/${s.ticker}`)}
                       className={cn(
-                        'cursor-pointer border-b border-border/70 transition-colors hover:bg-accent/50',
+                        'relative border-b border-border/70 transition-colors hover:bg-accent/50',
                         i % 2 === 1 && 'bg-muted/40',
                       )}
                     >
                       <td className="px-3 py-2.5">
-                        <div className="flex items-center gap-2">
+                        {/* Link chính ở cột Mã CK; stretched-link (::after) phủ toàn dòng để cả dòng click được */}
+                        <Link
+                          href={href}
+                          className="inline-flex items-center gap-2 after:absolute after:inset-0"
+                          aria-label={`${s.ticker} — mở báo cáo phân tích`}
+                        >
                           <span className="font-mono text-sm font-bold text-foreground">{s.ticker}</span>
                           <span className="rounded bg-secondary px-1 py-0.5 text-[10px] text-muted-foreground">
                             {s.exchange}
                           </span>
-                        </div>
+                          {s.hasReport && (
+                            <span
+                              className="inline-flex items-center gap-1 rounded bg-accent px-1.5 py-0.5 text-[10px] font-medium text-accent-foreground"
+                              title="Đã có báo cáo phân tích"
+                            >
+                              <FileText className="size-3" /> Báo cáo
+                            </span>
+                          )}
+                        </Link>
                       </td>
                       <td className="max-w-[220px] truncate px-3 py-2.5 text-foreground">{s.name}</td>
                       <td className="px-3 py-2.5 text-muted-foreground">{s.sector}</td>
                       <td className="px-3 py-2.5 text-right font-mono tabular-nums text-foreground">
-                        {fmtPrice(s.marketPrice)}
+                        {marketPriceOf(s) != null ? fmtPrice(marketPriceOf(s) as number) : '—'}
                       </td>
                       <td className="px-3 py-2.5 text-right font-mono tabular-nums text-foreground">
-                        {fmtPrice(s.rnav)}
+                        {s.targetPrice != null ? fmtPrice(s.targetPrice) : '—'}
+                      </td>
+                      <td className="px-3 py-2.5 text-right font-mono tabular-nums text-foreground">
+                        {s.bonusWelfareRate != null ? fmtRate(s.bonusWelfareRate) : '—'}
+                      </td>
+                      <td className="px-3 py-2.5 font-mono tabular-nums text-foreground">
+                        {s.reportDate ? formatVnDate(s.reportDate) : '—'}
                       </td>
                       <td className="px-3 py-2.5 text-right">
-                        <span
-                          className={cn(
-                            'inline-block rounded px-1.5 py-0.5 font-mono text-xs font-semibold tabular-nums',
-                            up >= 100
-                              ? 'bg-positive-muted text-positive'
-                              : up >= 0
-                                ? 'text-positive'
-                                : 'text-negative',
-                          )}
-                        >
-                          {fmtPct(up, 0)}
-                        </span>
+                        {up != null ? (
+                          <span
+                            className={cn(
+                              'inline-block rounded px-1.5 py-0.5 font-mono text-xs font-semibold tabular-nums',
+                              up >= 100
+                                ? 'bg-positive-muted text-positive'
+                                : up >= 0
+                                  ? 'text-positive'
+                                  : 'text-negative',
+                            )}
+                          >
+                            {fmtPct(up, 0)}
+                          </span>
+                        ) : (
+                          <span className="text-muted-foreground">—</span>
+                        )}
                       </td>
-                      <td className="px-3 py-2.5 text-right font-mono tabular-nums text-foreground">
-                        {fmtNum(s.forwardPE, 1)}
-                      </td>
-                      <td className="px-3 py-2.5 text-right font-mono tabular-nums text-positive">
-                        {fmtNum(s.dividendYield, 1)}%
+                      <td className="px-3 py-2.5">
+                        <RecommendBadge recommendation={s.recommendation} />
                       </td>
                       <td className="px-3 py-2.5">
                         <StatusTag updated={s.updated} label={s.status} />
@@ -378,7 +390,7 @@ export function Screener() {
                 })}
                 {pageRows.length === 0 && (
                   <tr>
-                    <td colSpan={9} className="px-3 py-12 text-center text-sm text-muted-foreground">
+                    <td colSpan={10} className="px-3 py-12 text-center text-sm text-muted-foreground">
                       Không có cổ phiếu nào thỏa mãn bộ lọc. Hãy nới lỏng tiêu chí.
                     </td>
                   </tr>
@@ -470,5 +482,30 @@ function Th({
         )}
       </button>
     </th>
+  )
+}
+
+// Badge khuyến nghị bóc tách từ báo cáo — fallback an toàn hiển thị "—"
+const RECOMMEND_STYLES: Record<string, string> = {
+  MUA: 'bg-positive-muted text-positive border-positive/30',
+  'KHẢ QUAN': 'bg-accent text-accent-foreground border-primary/30',
+  'NẮM GIỮ': 'bg-warning-muted text-warning-foreground border-warning/30',
+  'THEO DÕI': 'bg-muted text-muted-foreground border-border',
+}
+
+function RecommendBadge({ recommendation }: { recommendation: string | null }) {
+  if (!recommendation) {
+    return <span className="text-muted-foreground">—</span>
+  }
+  const style = RECOMMEND_STYLES[recommendation] ?? RECOMMEND_STYLES['THEO DÕI']
+  return (
+    <span
+      className={cn(
+        'inline-block rounded border px-1.5 py-0.5 text-[11px] font-semibold whitespace-nowrap',
+        style,
+      )}
+    >
+      {recommendation}
+    </span>
   )
 }

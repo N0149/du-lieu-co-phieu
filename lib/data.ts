@@ -93,7 +93,7 @@ export const stocks: Stock[] = [
     name: 'Điện lực Dầu khí Nhơn Trạch 2',
     exchange: 'HOSE',
     sector: 'Điện & Tiện ích',
-    marketPrice: 19.8,
+    marketPrice: 21.2,
     rnav: 42.6,
     forwardPE: 6.9,
     dividendYield: 11.5,

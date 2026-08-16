@@ -25,11 +25,15 @@ export function SiteHeader() {
             <TrendingUp className="size-4.5" />
           </span>
           <span className="flex flex-col leading-none">
-            <span className="text-sm font-bold tracking-tight text-foreground">
-              RNAV<span className="text-primary"> Value Capital</span>
+            <span className="text-lg font-bold tracking-tight whitespace-nowrap text-foreground sm:text-xl">
+              {/* Mobile: rút gọn để không vỡ layout; sm+: đủ dài với accent */}
+              <span className="sm:hidden">Phân Tích Chuyên Sâu</span>
+              <span className="hidden sm:inline">
+                Phân Tích Chuyên Sâu<span className="text-primary"> Cổ Phiếu</span>
+              </span>
             </span>
             <span className="mt-0.5 hidden text-[10px] uppercase tracking-widest text-muted-foreground sm:block">
-              Cổng dữ liệu đầu tư giá trị
+              Cổng dữ liệu & báo cáo đầu tư
             </span>
           </span>
         </Link>

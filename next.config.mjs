@@ -1,8 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  typescript: {
-    ignoreBuildErrors: true,
-  },
+  // Production build phải validate TypeScript (lỗi type sẽ chặn build trên Vercel)
   images: {
     unoptimized: true,
   },

@@ -1,38 +1,99 @@
 'use client'
 
 import { useMemo, useRef, useState } from 'react'
+import Link from 'next/link'
 import { useRouter } from 'next/navigation'
-import { Search, CornerDownLeft } from 'lucide-react'
+import { Search, CornerDownLeft, FileText } from 'lucide-react'
 import { stocks, upside } from '@/lib/data'
 import { fmtPct } from '@/lib/format'
 import { cn } from '@/lib/utils'
+import { useReports, reportHref } from '@/lib/use-reports'
+import { reportTickers, buildReportStocks } from '@/lib/report-stocks'
 
-const QUICK = ['DAN', 'LHG', 'SNZ', 'VNF', 'DC4', 'NT2']
+type SearchEntry = {
+  ticker: string
+  name: string
+  hasReport: boolean
+}
 
 export function StockSearch() {
   const router = useRouter()
+  const { reports, byTicker } = useReports()
   const [q, setQ] = useState('')
   const [open, setOpen] = useState(false)
   const [active, setActive] = useState(0)
   const inputRef = useRef<HTMLInputElement>(null)
 
+  // Nguồn tìm kiếm: toàn bộ mã báo cáo (từ kho) + các mã có tên công ty (stocks)
+  const searchPool = useMemo<SearchEntry[]>(() => {
+    const seen = new Set<string>()
+    const pool: SearchEntry[] = []
+    const reportStocks = buildReportStocks(reports)
+    // Ưu tiên các mã trong kho báo cáo (đã có bài viết)
+    for (const r of reportStocks) {
+      const t = r.ticker.toUpperCase()
+      if (seen.has(t)) continue
+      seen.add(t)
+      pool.push({ ticker: r.ticker, name: r.name, hasReport: true })
+    }
+    // Bổ sung các mã còn lại trong stocks (để tìm được theo tên công ty)
+    for (const s of stocks) {
+      const t = s.ticker.toUpperCase()
+      if (seen.has(t)) continue
+      seen.add(t)
+      pool.push({ ticker: s.ticker, name: s.name, hasReport: byTicker.has(t) })
+    }
+    return pool
+  }, [reports, byTicker])
+
+  const stockMap = useMemo(
+    () => new Map(stocks.map((s) => [s.ticker.toUpperCase(), s])),
+    [],
+  )
+
   const results = useMemo(() => {
     const term = q.trim().toLowerCase()
-    if (!term) return stocks.slice(0, 6)
-    return stocks
+    if (!term) return searchPool.slice(0, 6)
+    return searchPool
       .filter(
         (s) =>
           s.ticker.toLowerCase().includes(term) ||
           s.name.toLowerCase().includes(term),
       )
       .slice(0, 8)
-  }, [q])
+  }, [q, searchPool])
 
+  // Mở thẳng báo cáo của mã cổ phiếu (từ dropdown gợi ý)
   function go(ticker: string) {
     setOpen(false)
     setQ('')
     inputRef.current?.blur()
-    router.push(`/ticker/${ticker}`)
+    router.push(reportHref(ticker))
+  }
+
+  // Xử lý Enter/Submit: chuẩn hóa keyword (trim + toUpperCase)
+  function submitSearch() {
+    const keyword = q.trim().toUpperCase()
+    if (!keyword) return
+
+    // Nếu đang có gợi ý được highlight hợp lệ (dùng phím mũi tên hoặc khớp chính xác mã)
+    const pick = results[active]
+    const isExactTicker = searchPool.some((p) => p.ticker.toUpperCase() === keyword)
+
+    setOpen(false)
+    inputRef.current?.blur()
+
+    if (pick && (active > 0 || pick.ticker.toUpperCase() === keyword)) {
+      router.push(reportHref(pick.ticker))
+      return
+    }
+    if (isExactTicker) {
+      // Từ khóa là MÃ CK cụ thể → thẳng tới báo cáo của mã
+      router.push(`/bao-cao?ticker=${encodeURIComponent(keyword)}`)
+      return
+    }
+    // Tên công ty hoặc từ khóa tự do → tìm trong kho báo cáo
+    router.push(`/bao-cao?search=${encodeURIComponent(keyword)}`)
   }
 
   function onKeyDown(e: React.KeyboardEvent) {
@@ -45,10 +106,10 @@ export function StockSearch() {
       setActive((a) => Math.max(a - 1, 0))
     } else if (e.key === 'Enter') {
       e.preventDefault()
-      const pick = results[active]
-      if (pick) go(pick.ticker)
+      submitSearch()
     } else if (e.key === 'Escape') {
       setOpen(false)
+      inputRef.current?.blur()
     }
   }
 
@@ -80,7 +141,8 @@ export function StockSearch() {
         <div className="absolute left-0 right-0 top-full z-50 mt-1 overflow-hidden rounded-md border border-border bg-popover shadow-lg">
           <ul role="listbox" className="max-h-80 overflow-y-auto py-1">
             {results.map((s, i) => {
-              const up = upside(s)
+              const stock = stockMap.get(s.ticker.toUpperCase())
+              const up = stock ? upside(stock) : null
               return (
                 <li key={s.ticker} role="option" aria-selected={i === active}>
                   <button
@@ -99,9 +161,15 @@ export function StockSearch() {
                     <span className="flex-1 truncate text-sm text-muted-foreground">
                       {s.name}
                     </span>
-                    <span className="shrink-0 font-mono text-xs font-medium text-positive">
-                      {fmtPct(up, 0)}
-                    </span>
+                    {s.hasReport ? (
+                      <span className="inline-flex shrink-0 items-center gap-1 rounded bg-accent px-1.5 py-0.5 text-[10px] font-medium text-accent-foreground">
+                        <FileText className="size-3" /> Báo cáo
+                      </span>
+                    ) : up != null ? (
+                      <span className="shrink-0 font-mono text-xs font-medium text-positive">
+                        {fmtPct(up, 0)}
+                      </span>
+                    ) : null}
                   </button>
                 </li>
               )
@@ -114,18 +182,21 @@ export function StockSearch() {
 }
 
 export function QuickJump() {
-  const router = useRouter()
+  const { reports } = useReports()
+  const tickers = useMemo(() => reportTickers(reports), [reports])
   return (
     <div className="flex flex-wrap items-center gap-1.5">
       <span className="text-xs text-muted-foreground">Truy cập nhanh:</span>
-      {QUICK.map((t) => (
-        <button
+      {tickers.map((t) => (
+        <Link
           key={t}
-          onClick={() => router.push(`/ticker/${t}`)}
-          className="rounded border border-border bg-card px-1.5 py-0.5 font-mono text-xs font-medium text-foreground transition-colors hover:border-primary hover:text-primary"
+          href={reportHref(t)}
+          title={`Mở báo cáo phân tích ${t}`}
+          className="inline-flex items-center gap-1 rounded border border-border bg-card px-1.5 py-0.5 font-mono text-xs font-medium text-foreground transition-colors hover:border-primary hover:text-primary"
         >
+          <FileText className="size-3 text-primary" />
           {t}
-        </button>
+        </Link>
       ))}
     </div>
   )

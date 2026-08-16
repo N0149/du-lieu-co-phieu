@@ -104,7 +104,12 @@ export default async function TickerPage({
           </div>
         </div>
 
-        <TickerTabs stock={stock} dd={dd} report={report} reportContent={reportContent} />
+        <TickerTabs
+          stock={stock}
+          dd={dd}
+          report={report ?? undefined}
+          reportContent={reportContent ?? undefined}
+        />
 
         <p className="mt-2 text-[11px] leading-relaxed text-muted-foreground">
           Ghi chú: Số liệu mang tính minh họa. Đây không phải là khuyến nghị đầu tư.

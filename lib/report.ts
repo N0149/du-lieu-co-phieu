@@ -15,6 +15,7 @@ export type FinancialHighlights = {
   associatesProfitQ2_2025?: number;
   associatesProfitGrowthYoY?: number;
   epsQ22026?: number;
+  eps6M2026?: number; // EPS 6 tháng (đồng/cổ phiếu)
   cashAndEquivalents?: number;
   shortTermFinancialInvestments?: number;
   longTermFinancialInvestments?: number;
@@ -28,15 +29,31 @@ export type TickerReport = {
   companyName: string;
   sector: string;
   reportPeriod: string;
+  reportPeriodEndDate?: string; // ngày kết thúc kỳ BCTC
+  disclosureDate?: string; // ngày công bố
+  updateStatus?: string; // trạng thái cập nhật BCTC
   publishDate: string;
   financialHighlights: FinancialHighlights;
+  balanceSheet?: Record<string, any>; // bảng CĐKT chi tiết
+  incomeStatement6M2026?: Record<string, any>; // KQKD 6 tháng
   valuationNote?: string;
   keyCatalysts?: string[];
 };
 
 export type TickerReportContent = {
   ticker: string;
-  content: string;
+  content: string; // nội dung MDX thô
+  title?: string;
+  overview?: string[];
+  keyDrivers?: string[];
+  investorNotes?: string[];
+  tableRows?: {
+    metric: string;
+    q2_2026: string;
+    q2_2025: string;
+    difference: string;
+    percent: string;
+  }[];
 };
 
 export async function getTickerReport(symbol: string): Promise<TickerReport | null> {

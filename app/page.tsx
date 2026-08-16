@@ -1,14 +1,9 @@
 import { SiteHeader } from '@/components/site-header'
 import { QuickJump } from '@/components/stock-search'
 import { Screener } from '@/components/screener'
-import { stocks, upside } from '@/lib/data'
-import { fmtInt, fmtPct } from '@/lib/format'
+import { HomeKpis } from '@/components/home-kpis'
 
 export default function Page() {
-  const undervalued = stocks.filter((s) => upside(s) > 0).length
-  const avgUpside = stocks.reduce((a, s) => a + upside(s), 0) / stocks.length
-  const avgDiv = stocks.reduce((a, s) => a + s.dividendYield, 0) / stocks.length
-
   return (
     <div className="min-h-screen">
       <SiteHeader />
@@ -21,23 +16,22 @@ export default function Page() {
               Trang chủ · Sàng lọc định giá
             </p>
             <h1 className="text-balance text-2xl font-bold tracking-tight text-foreground lg:text-3xl">
-              Bộ Lọc Cổ Phiếu Định Giá Rẻ
+              Bộ Lọc Cổ Phiếu Giá Trị
             </h1>
             <p className="mt-2 max-w-2xl text-pretty text-sm text-muted-foreground">
-              Sàng lọc doanh nghiệp giao dịch sâu dưới giá trị tài sản ròng điều chỉnh (RNAV),
-              P/E tương lai thấp và tỷ suất cổ tức cao. Nhấp vào một mã để xem phân tích chuyên sâu.
+              Danh sách được đồng bộ từ kho báo cáo phân tích: mỗi mã đều đã có bài viết
+              (badge{' '}
+              <span className="inline-flex items-center gap-1 rounded bg-accent px-1 py-px text-[10px] font-medium text-accent-foreground">
+                Báo cáo
+              </span>
+              ). Nhấp vào một mã để mở bài phân tích tương ứng trong kho báo cáo.
             </p>
           </div>
           <QuickJump />
         </div>
 
-        {/* KPI strip */}
-        <div className="mb-5 grid grid-cols-2 gap-px overflow-hidden rounded-lg border border-border bg-border md:grid-cols-4">
-          <Kpi label="Cổ phiếu trong danh mục" value={fmtInt(stocks.length)} unit="mã" />
-          <Kpi label="Đang định giá thấp" value={fmtInt(undervalued)} unit="mã" tone="positive" />
-          <Kpi label="Upside trung bình" value={fmtPct(avgUpside, 0)} tone="positive" />
-          <Kpi label="Cổ tức trung bình" value={`${avgDiv.toFixed(1)}%`} tone="positive" />
-        </div>
+        {/* KPI strip — tự đếm/tính từ kho báo cáo */}
+        <HomeKpis />
 
         <Screener />
 
@@ -46,34 +40,6 @@ export default function Page() {
           tính theo đơn vị nghìn đồng/cổ phiếu. Đây không phải là khuyến nghị đầu tư.
         </p>
       </main>
-    </div>
-  )
-}
-
-function Kpi({
-  label,
-  value,
-  unit,
-  tone,
-}: {
-  label: string
-  value: string
-  unit?: string
-  tone?: 'positive'
-}) {
-  return (
-    <div className="bg-card p-4">
-      <p className="text-xs text-muted-foreground">{label}</p>
-      <p className="mt-1 flex items-baseline gap-1">
-        <span
-          className={`font-mono text-2xl font-bold tabular-nums ${
-            tone === 'positive' ? 'text-positive' : 'text-foreground'
-          }`}
-        >
-          {value}
-        </span>
-        {unit && <span className="text-xs text-muted-foreground">{unit}</span>}
-      </p>
     </div>
   )
 }

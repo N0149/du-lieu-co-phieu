@@ -319,20 +319,26 @@ function NotesTab({ reportContent }: { reportContent?: TickerReportContent }) {
       ) : (
         <>
           <div className="rounded-3xl border border-border bg-background p-5">
-            <p className="text-sm font-semibold text-foreground">{reportContent.title}</p>
+            <p className="text-sm font-semibold text-foreground">
+              {reportContent.title ?? 'Thuyết minh BCTC'}
+            </p>
             <div className="mt-4 space-y-3 text-sm text-muted-foreground">
-              {reportContent.overview.map((item, index) => (
-                <p key={`overview-${index}`} className="flex gap-2">
-                  <span className="mt-1 inline-flex h-2.5 w-2.5 rounded-full bg-primary" />
-                  {item}
-                </p>
-              ))}
+              {reportContent.overview?.length ? (
+                reportContent.overview.map((item, index) => (
+                  <p key={`overview-${index}`} className="flex gap-2">
+                    <span className="mt-1 inline-flex h-2.5 w-2.5 rounded-full bg-primary" />
+                    {item}
+                  </p>
+                ))
+              ) : (
+                <p>Không có thuyết minh tổng quan.</p>
+              )}
             </div>
           </div>
 
           <div className="grid gap-4 xl:grid-cols-2">
-            <DetailPanel title="Nguyên nhân & Động lực" items={reportContent.keyDrivers} />
-            <DetailPanel title="Ghi chú nhà đầu tư" items={reportContent.investorNotes} />
+            <DetailPanel title="Nguyên nhân & Động lực" items={reportContent.keyDrivers ?? []} />
+            <DetailPanel title="Ghi chú nhà đầu tư" items={reportContent.investorNotes ?? []} />
           </div>
 
           {reportContent.tableRows?.length ? (
