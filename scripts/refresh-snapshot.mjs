@@ -6,13 +6,15 @@
  *   node scripts/refresh-snapshot.mjs
  *
  * Script tự kiểm tra http://localhost:3000/api/reports?live=1 (bắt buộc đúng folder/env
- * trong .env.local). Nếu server chưa chạy, script tự khởi động dev server, đợi sẵn sàng,
- * lấy dữ liệu, ghi vào data/reports-snapshot.json rồi tự tắt server.
+ * trong .env.local — hoặc env từ GitHub Actions CI). Nếu server chưa chạy, script tự khởi
+ * động dev server (cross-platform: `pnpm exec next dev` — pnpm có sẵn ở local & CI), chờ
+ * server sẵn sàng bằng polling health-check, lấy dữ liệu, ghi data/reports-snapshot.json,
+ * tắt dev server an toàn rồi exit(0).
  *
  * Sau khi chạy xong: commit file data/reports-snapshot.json mới lên GitHub.
  */
-import { readFile, writeFile } from "node:fs/promises";
-import { spawn } from "node:child_process";
+import { writeFile } from "node:fs/promises";
+import { spawn, spawnSync } from "node:child_process";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 
@@ -22,7 +24,12 @@ const OUT = path.join(ROOT, "data", "reports-snapshot.json");
 const BASE = process.env.SNAPSHOT_API ?? "http://localhost:3000";
 // ?live=1 ép route chạy chế độ LIVE (lấy mới từ Drive) thay vì trả snapshot cũ.
 const LIVE_API = `${BASE}/api/reports?live=1`;
+// Thời gian tối đa chờ dev server sẵn sàng (CI cold-compile Turbopack có thể chậm).
+const SERVER_WAIT_MS = 180_000;
+const POLL_INTERVAL_MS = 2000;
+const HEALTH_TIMEOUT_MS = 5000;
 
+// ---- Helper HTTP ----
 async function getJson(url, timeoutMs) {
   const ctrl = new AbortController();
   const t = setTimeout(() => ctrl.abort(), timeoutMs);
@@ -40,7 +47,7 @@ async function getJson(url, timeoutMs) {
 async function isServerUp() {
   try {
     const ctrl = new AbortController();
-    const t = setTimeout(() => ctrl.abort(), 5000);
+    const t = setTimeout(() => ctrl.abort(), HEALTH_TIMEOUT_MS);
     try {
       const res = await fetch(`${BASE}/`, { signal: ctrl.signal });
       return res.ok;
@@ -52,6 +59,107 @@ async function isServerUp() {
   }
 }
 
+// ---- Khởi động dev server (cross-platform) ----
+function hasPnpm() {
+  try {
+    const r = spawnSync(
+      process.platform === "win32" ? "pnpm.cmd" : "pnpm",
+      ["--version"],
+      { stdio: "ignore", shell: process.platform === "win32" },
+    );
+    return r.status === 0;
+  } catch {
+    return false;
+  }
+}
+
+// Cross-platform, KHÔNG dùng shell (tránh cảnh báo DEP0190 + lệch separator):
+// - POSIX/Linux (CI): dùng `pnpm exec next dev` — pnpm resolve đúng bin `next`, không hardcode path.
+// - Windows: spawn node trực tiếp với bin next qua path.join (đúng separator, không hardcode backslash);
+//   tránh phụ thuộc pnpm.cmd cần shell.
+function resolveStartCommand() {
+  if (process.platform !== "win32" && hasPnpm()) {
+    return { command: "pnpm", args: ["exec", "next", "dev"], shell: false };
+  }
+  return {
+    command: process.execPath,
+    args: [path.join(ROOT, "node_modules", "next", "dist", "bin", "next"), "dev"],
+    shell: false,
+  };
+}
+
+function spawnDevServer() {
+  const { command, args, shell } = resolveStartCommand();
+  console.log(`  Lệnh: ${command} ${args.join(" ")}`);
+  // stdio: inherit stdout+stderr để toàn bộ log của next dev hiển thị (rất quan trọng khi debug CI).
+  return spawn(command, args, {
+    cwd: ROOT,
+    stdio: ["ignore", "inherit", "inherit"],
+    shell,
+    env: { ...process.env, NEXT_TELEMETRY_DISABLED: "1" },
+  });
+}
+
+// Polling health-check cho tới khi server sẵn sàng; fail NHANH nếu server thoát sớm.
+function waitForServer(child) {
+  return new Promise((resolve, reject) => {
+    const deadline = Date.now() + SERVER_WAIT_MS;
+    let settled = false;
+    let exitInfo = null;
+
+    child.on("exit", (code, signal) => {
+      exitInfo = { code, signal };
+    });
+    child.on("error", (err) => {
+      if (!settled) {
+        settled = true;
+        reject(new Error(`Không thể khởi động dev server: ${err.message}`));
+      }
+    });
+
+    (async function poll() {
+      while (Date.now() < deadline) {
+        if (exitInfo) {
+          settled = true;
+          reject(
+            new Error(
+              `Dev server thoát sớm trước khi sẵn sàng (exit=${exitInfo.code}, signal=${exitInfo.signal}) — xem log phía trên.`,
+            ),
+          );
+          return;
+        }
+        if (await isServerUp()) {
+          settled = true;
+          resolve();
+          return;
+        }
+        await new Promise((r) => setTimeout(r, POLL_INTERVAL_MS));
+      }
+      if (!settled) {
+        settled = true;
+        reject(
+          new Error(
+            `Hết thời gian chờ ${SERVER_WAIT_MS / 1000}s — dev server không sẵn sàng. Xem log phía trên.`,
+          ),
+        );
+      }
+    })();
+  });
+}
+
+// Tắt dev server an toàn, cross-platform (Windows: giết cả cây tiến trình bằng taskkill).
+function killDevServer(child) {
+  if (!child || child.exitCode !== null || child.signalCode !== null) return;
+  if (process.platform === "win32") {
+    spawn("taskkill", ["/pid", String(child.pid), "/T", "/F"], { stdio: "ignore" });
+  } else {
+    child.kill("SIGTERM");
+    setTimeout(() => {
+      if (child.exitCode === null) child.kill("SIGKILL");
+    }, 3000).unref();
+  }
+}
+
 // Lấy dữ liệu LIVE từ Drive (mất ~10-15s vì phải đọc nội dung từng báo cáo).
 async function fetchLiveReports() {
   const data = await getJson(LIVE_API, 60000);
@@ -59,12 +167,12 @@ async function fetchLiveReports() {
     throw new Error("API trả về danh sách rỗng — kiểm tra env GOOGLE_DRIVE_* trong .env.local");
   }
   // BẢO VỆ: nếu dữ liệu trông giống fallback tĩnh (≤20 mục, không có reportDate — ví dụ khi
-  // thiếu secret GOOGLE_DRIVE_* trong GitHub Actions) thì KHÔNG ghi đè snapshot tốt đang có.
+  // API key sai hoặc thiếu secret GOOGLE_DRIVE_* trong GitHub Actions) thì KHÔNG ghi đè snapshot tốt.
   const looksLikeStaticFallback =
     data.length <= 20 && data.every((r) => !r || !r.reportDate);
   if (looksLikeStaticFallback) {
     throw new Error(
-      "API trả về danh sách fallback tĩnh (có thể thiếu secret GOOGLE_DRIVE_* trong GitHub Actions) — không ghi đè snapshot.",
+      "API trả về danh sách fallback tĩnh (thường do API key SAI hoặc thiếu secret GOOGLE_DRIVE_* trong GitHub Actions) — không ghi đè snapshot.",
     );
   }
   return data;
@@ -73,27 +181,16 @@ async function fetchLiveReports() {
 let child = null; // dev server do script tự khởi động (cần tắt khi xong)
 
 async function main() {
-  let data;
   if (await isServerUp()) {
     console.log(`✓ Dùng server đang chạy tại ${BASE}`);
-    data = await fetchLiveReports();
   } else {
     console.log(`⚠  Không thấy server tại ${BASE} — tự khởi động dev server...`);
-    child = spawn(
-      process.execPath,
-      [path.join(ROOT, "node_modules", "next", "dist", "bin", "next"), "dev"],
-      { cwd: ROOT, stdio: ["ignore", "pipe", "inherit"] },
-    );
-
-    const deadline = Date.now() + 120_000;
-    while (!(await isServerUp())) {
-      if (Date.now() > deadline) {
-        throw new Error("Không thể khởi động dev server trong 120s");
-      }
-      await new Promise((r) => setTimeout(r, 1500));
-    }
-    data = await fetchLiveReports();
+    child = spawnDevServer();
+    await waitForServer(child);
+    console.log("✓ Dev server đã sẵn sàng.");
   }
+
+  const data = await fetchLiveReports();
 
   const pretty = JSON.stringify(data, null, 2);
   await writeFile(OUT, pretty, "utf8");
@@ -103,14 +200,17 @@ async function main() {
   console.log("  Nhớ commit file snapshot mới để Vercel deploy lại.");
 }
 
+let exitCode = 0;
 main()
   .catch((err) => {
     console.error(`✗ Thất bại: ${err.message}`);
-    process.exitCode = 1;
+    exitCode = 1;
   })
   .finally(() => {
     if (child) {
-      console.log("Đang tắt dev server do script tự khởi động...");
-      child.kill();
+      console.log("Đang tắt dev server...");
+      killDevServer(child);
     }
+    // Chờ ngắn để SIGTERM/taskkill có hiệu lực, rồi thoát đúng mã (0 = thành công).
+    setTimeout(() => process.exit(exitCode), 500);
   });

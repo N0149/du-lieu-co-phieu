@@ -29,8 +29,10 @@ jobs:
 
       - name: Run refresh snapshot script
         env:
-          GOOGLE_DRIVE_API_KEY: AIzaSyB4PRAa88H_tqa8XcPfsZQBhujKrvuHQ9-4w
-          GOOGLE_DRIVE_FOLDER_ID: 1eI8C_uDJlKDvNbzF9YOOr6QNCUIdw7o8
+          # Dùng GitHub Secrets (Settings → Secrets and variables → Actions). KHÔNG hardcode
+          # API key vào file: vừa rò rỉ vừa dễ gõ sai → Drive 403 → workflow fail.
+          GOOGLE_DRIVE_API_KEY: ${{ secrets.GOOGLE_DRIVE_API_KEY }}
+          GOOGLE_DRIVE_FOLDER_ID: ${{ secrets.GOOGLE_DRIVE_FOLDER_ID }}
           REPORTS_SOURCE: live
         run: node scripts/refresh-snapshot.mjs
 
