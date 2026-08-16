@@ -383,10 +383,19 @@ async function listAllFilesInFolder(folderId: string): Promise<DriveFile[]> {
     );
 
     if (!res.ok) {
-      // Ném kèm nội dung lỗi từ Drive (thường là 403 do API key bị giới hạn
-      // referrer/IP, hoặc 404 do folder sai/không public) để GET log ra đầy đủ.
+      // Log ĐẦY ĐỦ URL đã gọi (che API key) + toàn bộ chuỗi JSON lỗi từ Drive (không cắt)
+      // để tra cứu chính xác trên Vercel Runtime Logs. Lỗi 400 thường do folder ID sai
+      // chính tả trong tham số q; 403 do API key bị giới hạn referrer/IP; 404 do folder
+      // không public.
+      const fullUrl = `https://www.googleapis.com/drive/v3/files?${params.toString()}`;
+      const errorBody = await res.text();
+      console.error(
+        `[reports] Drive API thất bại — HTTP ${res.status} ${res.statusText}\n` +
+          `URL: ${fullUrl.replace(/key=[^&]+/, "key=***")}\n` +
+          `Response: ${errorBody}`,
+      );
       throw new Error(
-        `Google Drive API error ${res.status} ${res.statusText}: ${(await res.text()).slice(0, 500)}`,
+        `Google Drive API error ${res.status} ${res.statusText}: ${errorBody.slice(0, 500)}`,
       );
     }
 
@@ -527,6 +536,16 @@ export async function GET() {
     return NextResponse.json(STATIC_REPORTS);
   }
 
+  // Cảnh báo nếu folder được cấu hình khác folder mặc định (folder mặc định là folder
+  // đang hoạt động, trả về đủ báo cáo ở local) — giúp phát hiện sớm lỗi gõ sai env trên Vercel.
+  const DEFAULT_FOLDER_ID = "1eI8C_uDJlKDvNbzF9YOOr6QNCUIdw7o8";
+  if (DRIVE_FOLDER_ID !== DEFAULT_FOLDER_ID) {
+    console.warn(
+      `[reports] LƯU Ý: GOOGLE_DRIVE_FOLDER_ID khác folder mặc định. ` +
+        `Đang dùng: ${DRIVE_FOLDER_ID} (mặc định: ${DEFAULT_FOLDER_ID})`,
+    );
+  }
+
   console.log(
     `[reports] Đồng bộ từ Drive: folder=${DRIVE_FOLDER_ID}, apiKey=${DRIVE_API_KEY ? "đã cấu hình" : "THIẾU"}`,
   );
@@ -596,11 +615,17 @@ export async function GET() {
     return NextResponse.json(deduped);
   } catch (error) {
     // Log ĐẦY ĐỦ thông tin để tra cứu trên Vercel (Project → Runtime Logs). Nguyên nhân
-    // thường gặp: API key bị giới hạn referrer/IP trong Google Cloud Console, folder không
-    // public, hoặc Drive trả 403/404. Kèm folder + trạng thái apiKey để khoanh vùng nhanh.
+    // thường gặp: folder ID sai (400), API key bị giới hạn referrer/IP (403), folder không
+    // public (404). Kèm folder + trạng thái apiKey để khoanh vùng nhanh.
+    const isBadRequest =
+      error instanceof Error && /Google Drive API error 400/.test(error.message);
     console.error(
       `[reports] Lỗi đồng bộ Google Drive — folder=${DRIVE_FOLDER_ID}, ` +
-        `apiKeyConfigured=${Boolean(DRIVE_API_KEY)}`,
+        `apiKeyConfigured=${Boolean(DRIVE_API_KEY)}` +
+        (isBadRequest
+          ? "\nGợi ý: Lỗi 400 Bad Request thường do GOOGLE_DRIVE_FOLDER_ID trên Vercel sai chính tả. " +
+            "Folder đang hoạt động ở local: 1eI8C_uDJlKDvNbzF9YOOr6QNCUIdw7o8"
+          : ""),
       error,
     );
     // Fallback an toàn: giữ nguyên danh sách tĩnh khi Drive lỗi
