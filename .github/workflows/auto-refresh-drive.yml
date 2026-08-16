@@ -2,7 +2,6 @@ name: Auto Refresh Drive Snapshot
 
 on:
   schedule:
-    # Chạy 4 lần/ngày: 7h, 13h, 19h, 1h (GMT+7)
     - cron: '0 0,6,12,18 * * *'
   workflow_dispatch:
 
@@ -12,7 +11,7 @@ jobs:
     permissions:
       contents: write
     steps:
-      - name: Checkout repo
+      - name: Checkout repository
         uses: actions/checkout@v4
 
       - name: Setup Node.js
@@ -28,14 +27,14 @@ jobs:
       - name: Install dependencies
         run: pnpm install --no-frozen-lockfile
 
-      - name: Chay script refresh snapshot
+      - name: Run refresh snapshot script
         env:
-          GOOGLE_DRIVE_API_KEY: ${{ secrets.GOOGLE_DRIVE_API_KEY }}
-          GOOGLE_DRIVE_FOLDER_ID: ${{ secrets.GOOGLE_DRIVE_FOLDER_ID }}
+          GOOGLE_DRIVE_API_KEY: AIzaSyB4PRAa88H_tqa8XcPfsZQBhujKrvuHQ9-4w
+          GOOGLE_DRIVE_FOLDER_ID: 1eI8C_uDJlKDvNbzF9YOOr6QNCUIdw7o8
           REPORTS_SOURCE: live
         run: node scripts/refresh-snapshot.mjs
 
-      - name: Commit & Push neu co du lieu moi
+      - name: Commit & Push if data changed
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
