@@ -8,14 +8,9 @@ import {
   ArrowDown,
   ChevronLeft,
   ChevronRight,
-  SlidersHorizontal,
-  RotateCcw,
-  Filter,
   FileText,
 } from 'lucide-react'
-import { SECTORS } from '@/lib/data'
-import { fmtPrice, fmtNum, fmtPct, fmtInt } from '@/lib/format'
-import { StatusTag } from '@/components/badges'
+import { fmtPrice, fmtNum, fmtPct } from '@/lib/format'
 import { Button } from '@/components/ui/button'
 import { cn } from '@/lib/utils'
 import { useReports, reportHref } from '@/lib/use-reports'
@@ -23,13 +18,11 @@ import {
   buildReportStocks,
   upsideOf,
   marketPriceOf,
-  priceToRnavOf,
   type ReportStock,
 } from '@/lib/report-stocks'
 
 type SortKey =
   | 'ticker'
-  | 'sector'
   | 'marketPrice'
   | 'targetPrice'
   | 'reportDate'
@@ -58,75 +51,11 @@ function fmtRate(v: number): string {
   return `${Number.isInteger(v) ? fmtNum(v, 0) : fmtNum(v, 1)}%`
 }
 
-const PAGE_SIZE = 8
-
-function FilterRow({
-  label,
-  enabled,
-  onToggle,
-  children,
-  hint,
-}: {
-  label: string
-  enabled: boolean
-  onToggle: (v: boolean) => void
-  children: React.ReactNode
-  hint: string
-}) {
-  return (
-    <div
-      className={cn(
-        'rounded-md border p-3 transition-colors',
-        enabled ? 'border-primary/40 bg-accent/40' : 'border-border bg-card',
-      )}
-    >
-      <label className="flex cursor-pointer items-center gap-2">
-        <input
-          type="checkbox"
-          checked={enabled}
-          onChange={(e) => onToggle(e.target.checked)}
-          className="size-3.5 accent-[var(--primary)]"
-        />
-        <span className="text-sm font-medium text-foreground">{label}</span>
-      </label>
-      <p className="mt-1 mb-2 pl-5.5 text-[11px] text-muted-foreground">{hint}</p>
-      <div className={cn('pl-5.5', !enabled && 'pointer-events-none opacity-40')}>{children}</div>
-    </div>
-  )
-}
-
-function Slider({
-  value,
-  min,
-  max,
-  step,
-  onChange,
-}: {
-  value: number
-  min: number
-  max: number
-  step: number
-  onChange: (v: number) => void
-}) {
-  return (
-    <input
-      type="range"
-      min={min}
-      max={max}
-      step={step}
-      value={value}
-      onChange={(e) => onChange(Number(e.target.value))}
-      className="h-1.5 w-full cursor-pointer appearance-none rounded-full bg-muted accent-[var(--primary)]"
-    />
-  )
-}
+// Số mã hiển thị trên mỗi trang phân trang (bảng full-width, thoáng hơn)
+const PAGE_SIZE = 20
 
 export function Screener() {
   const { reports } = useReports()
-
-  const [prOn, setPrOn] = useState(true)
-  const [pr, setPr] = useState(0.5)
-  const [sector, setSector] = useState<string>(SECTORS[0])
 
   const [sortKey, setSortKey] = useState<SortKey>('upside')
   const [sortDir, setSortDir] = useState<SortDir>('desc')
@@ -136,19 +65,12 @@ export function Screener() {
   const reportStocks = useMemo(() => buildReportStocks(reports), [reports])
 
   const filtered = useMemo(() => {
-    const rows = reportStocks.filter((s) => {
-      // Mã chưa có dữ liệu tài chính sẽ không bị loại bởi bộ lọc định giá
-      if (prOn && priceToRnavOf(s) != null && (priceToRnavOf(s) as number) >= pr) return false
-      if (sector !== SECTORS[0] && s.sector !== sector) return false
-      return true
-    })
+    const rows = reportStocks // Không còn sidebar bộ lọc — hiển thị toàn bộ mã đã có báo cáo
 
     const val = (s: ReportStock): number | string => {
       switch (sortKey) {
         case 'ticker':
           return s.ticker
-        case 'sector':
-          return s.sector
         case 'marketPrice':
           return marketPriceOf(s) ?? -Infinity
         case 'targetPrice':
@@ -170,7 +92,7 @@ export function Screener() {
       else cmp = (av as number) - (bv as number)
       return sortDir === 'asc' ? cmp : -cmp
     })
-  }, [reportStocks, prOn, pr, sector, sortKey, sortDir])
+  }, [reportStocks, sortKey, sortDir])
 
   const totalPages = Math.max(1, Math.ceil(filtered.length / PAGE_SIZE))
   const safePage = Math.min(page, totalPages)
@@ -181,101 +103,12 @@ export function Screener() {
       setSortDir((d) => (d === 'asc' ? 'desc' : 'asc'))
     } else {
       setSortKey(key)
-      setSortDir(key === 'ticker' || key === 'sector' ? 'asc' : 'desc')
+      setSortDir(key === 'ticker' ? 'asc' : 'desc')
     }
     setPage(1)
   }
 
-  function reset() {
-    setPrOn(true)
-    setPr(0.5)
-    setSector(SECTORS[0])
-    setPage(1)
-  }
-
-  const rowsWithData = filtered.filter((s) => upsideOf(s) != null)
-  const avgUpside =
-    rowsWithData.length > 0
-      ? rowsWithData.reduce((acc, s) => acc + (upsideOf(s) as number), 0) / rowsWithData.length
-      : 0
-
   return (
-    <div className="grid grid-cols-1 gap-4 lg:grid-cols-[300px_1fr]">
-      {/* Filter panel */}
-      <aside className="lg:sticky lg:top-[4.75rem] lg:self-start">
-        <div className="overflow-hidden rounded-lg border border-border bg-card">
-          <div className="flex items-center justify-between border-b border-border bg-secondary/50 px-3 py-2.5">
-            <div className="flex items-center gap-2">
-              <SlidersHorizontal className="size-4 text-primary" />
-              <h2 className="text-sm font-semibold text-foreground">Bộ lọc định giá</h2>
-            </div>
-            <button
-              onClick={reset}
-              className="flex items-center gap-1 text-[11px] text-muted-foreground transition-colors hover:text-foreground"
-            >
-              <RotateCcw className="size-3" /> Đặt lại
-            </button>
-          </div>
-
-          <div className="flex flex-col gap-2.5 p-3">
-            <FilterRow
-              label="Giá / RNAV"
-              hint="Tỷ lệ giá thị trường trên giá trị tài sản ròng điều chỉnh."
-              enabled={prOn}
-              onToggle={(v) => {
-                setPrOn(v)
-                setPage(1)
-              }}
-            >
-              <div className="flex items-center justify-between text-xs">
-                <span className="text-muted-foreground">Tối đa</span>
-                <span className="font-mono font-semibold text-foreground">
-                  &lt; {fmtNum(pr, 2)}x
-                </span>
-              </div>
-              <Slider value={pr} min={0.2} max={1.2} step={0.05} onChange={(v) => { setPr(v); setPage(1) }} />
-            </FilterRow>
-
-            <div className="rounded-md border border-border bg-card p-3">
-              <div className="mb-2 flex items-center gap-2">
-                <Filter className="size-3.5 text-muted-foreground" />
-                <span className="text-sm font-medium text-foreground">Ngành nghề</span>
-              </div>
-              <select
-                value={sector}
-                onChange={(e) => {
-                  setSector(e.target.value)
-                  setPage(1)
-                }}
-                className="h-8 w-full rounded-md border border-input bg-card px-2 text-sm text-foreground outline-none focus-visible:border-ring focus-visible:ring-3 focus-visible:ring-ring/30"
-              >
-                {SECTORS.map((s) => (
-                  <option key={s} value={s}>
-                    {s}
-                  </option>
-                ))}
-              </select>
-            </div>
-          </div>
-
-          <div className="grid grid-cols-2 gap-px border-t border-border bg-border">
-            <div className="bg-card p-3">
-              <p className="text-[11px] text-muted-foreground">Số cổ phiếu đạt lọc</p>
-              <p className="mt-0.5 font-mono text-lg font-bold text-foreground">
-                {fmtInt(filtered.length)}
-              </p>
-            </div>
-            <div className="bg-card p-3">
-              <p className="text-[11px] text-muted-foreground">Upside trung bình</p>
-              <p className="mt-0.5 font-mono text-lg font-bold text-positive">
-                {fmtPct(avgUpside, 0)}
-              </p>
-            </div>
-          </div>
-        </div>
-      </aside>
-
-      {/* Table */}
       <section className="min-w-0">
         <div className="overflow-hidden rounded-lg border border-border bg-card">
           <div className="overflow-x-auto">
@@ -288,9 +121,6 @@ export function Screener() {
                   <th className="px-3 py-2.5 text-left text-xs font-semibold text-muted-foreground uppercase tracking-wide">
                     Tên doanh nghiệp
                   </th>
-                  <Th onClick={() => toggleSort('sector')} active={sortKey === 'sector'} dir={sortDir}>
-                    Ngành
-                  </Th>
                   <Th onClick={() => toggleSort('marketPrice')} active={sortKey === 'marketPrice'} dir={sortDir} right>
                     Giá TT
                   </Th>
@@ -306,12 +136,6 @@ export function Screener() {
                   <Th onClick={() => toggleSort('upside')} active={sortKey === 'upside'} dir={sortDir} right>
                     Upside
                   </Th>
-                  <th className="px-3 py-2.5 text-left text-xs font-semibold text-muted-foreground uppercase tracking-wide">
-                    Khuyến nghị
-                  </th>
-                  <th className="px-3 py-2.5 text-left text-xs font-semibold text-muted-foreground uppercase tracking-wide">
-                    Trạng thái
-                  </th>
                 </tr>
               </thead>
               <tbody>
@@ -347,8 +171,7 @@ export function Screener() {
                           )}
                         </Link>
                       </td>
-                      <td className="max-w-[220px] truncate px-3 py-2.5 text-foreground">{s.name}</td>
-                      <td className="px-3 py-2.5 text-muted-foreground">{s.sector}</td>
+                      <td className="max-w-[260px] truncate px-3 py-2.5 text-foreground">{s.name}</td>
                       <td className="px-3 py-2.5 text-right font-mono tabular-nums text-foreground">
                         {marketPriceOf(s) != null ? fmtPrice(marketPriceOf(s) as number) : '—'}
                       </td>
@@ -379,18 +202,12 @@ export function Screener() {
                           <span className="text-muted-foreground">—</span>
                         )}
                       </td>
-                      <td className="px-3 py-2.5">
-                        <RecommendBadge recommendation={s.recommendation} />
-                      </td>
-                      <td className="px-3 py-2.5">
-                        <StatusTag updated={s.updated} label={s.status} />
-                      </td>
                     </tr>
                   )
                 })}
                 {pageRows.length === 0 && (
                   <tr>
-                    <td colSpan={10} className="px-3 py-12 text-center text-sm text-muted-foreground">
+                    <td colSpan={7} className="px-3 py-12 text-center text-sm text-muted-foreground">
                       Không có cổ phiếu nào thỏa mãn bộ lọc. Hãy nới lỏng tiêu chí.
                     </td>
                   </tr>
@@ -443,7 +260,6 @@ export function Screener() {
           </div>
         </div>
       </section>
-    </div>
   )
 }
 
@@ -485,27 +301,3 @@ function Th({
   )
 }
 
-// Badge khuyến nghị bóc tách từ báo cáo — fallback an toàn hiển thị "—"
-const RECOMMEND_STYLES: Record<string, string> = {
-  MUA: 'bg-positive-muted text-positive border-positive/30',
-  'KHẢ QUAN': 'bg-accent text-accent-foreground border-primary/30',
-  'NẮM GIỮ': 'bg-warning-muted text-warning-foreground border-warning/30',
-  'THEO DÕI': 'bg-muted text-muted-foreground border-border',
-}
-
-function RecommendBadge({ recommendation }: { recommendation: string | null }) {
-  if (!recommendation) {
-    return <span className="text-muted-foreground">—</span>
-  }
-  const style = RECOMMEND_STYLES[recommendation] ?? RECOMMEND_STYLES['THEO DÕI']
-  return (
-    <span
-      className={cn(
-        'inline-block rounded border px-1.5 py-0.5 text-[11px] font-semibold whitespace-nowrap',
-        style,
-      )}
-    >
-      {recommendation}
-    </span>
-  )
-}
