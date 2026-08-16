@@ -1,7 +1,10 @@
 ﻿import { NextResponse } from "next/server";
 
-// Cache response của route trong 60s: web load nhanh, tự động cập nhật khi có bài mới
-export const revalidate = 60;
+// QUAN TRỌNG: ép route LUÔN chạy ở thời điểm request (server), KHÔNG prerender / static-cache
+// lúc `next build`. Nếu thiếu dòng này, Next.js có thể "đóng băng" kết quả lần gọi đầu tiên
+// (kể cả danh sách tĩnh 14 mã fallback khi Drive trả lỗi lúc build) vào cache → website
+// hiển thị mã cũ mãi dù GOOGLE_DRIVE_API_KEY đã cấu hình đầy đủ trên Vercel.
+export const dynamic = "force-dynamic";
 
 const DRIVE_API_KEY = process.env.GOOGLE_DRIVE_API_KEY ?? "";
 const DRIVE_FOLDER_ID =
@@ -139,11 +142,18 @@ async function getDocContent(docId: string): Promise<string | null> {
     const params = new URLSearchParams({ mimeType: "text/plain", key: DRIVE_API_KEY });
     const res = await fetch(
       `https://www.googleapis.com/drive/v3/files/${docId}/export?${params.toString()}`,
-      { next: { revalidate: 60 } },
+      { cache: "no-store" },
     );
-    if (!res.ok) return null;
+    if (!res.ok) {
+      // Log để chẩn đoán trên Vercel Function Logs (vd doc không public / hết hạn share)
+      console.warn(
+        `[reports] Không đọc được nội dung doc ${docId}: HTTP ${res.status} ${res.statusText}`,
+      );
+      return null;
+    }
     return await res.text();
-  } catch {
+  } catch (err) {
+    console.warn(`[reports] Lỗi fetch nội dung doc ${docId}:`, err);
     return null;
   }
 }
@@ -369,11 +379,15 @@ async function listAllFilesInFolder(folderId: string): Promise<DriveFile[]> {
 
     const res = await fetch(
       `https://www.googleapis.com/drive/v3/files?${params.toString()}`,
-      { next: { revalidate: 60 } },
+      { cache: "no-store" },
     );
 
     if (!res.ok) {
-      throw new Error(`Google Drive API error ${res.status}: ${await res.text()}`);
+      // Ném kèm nội dung lỗi từ Drive (thường là 403 do API key bị giới hạn
+      // referrer/IP, hoặc 404 do folder sai/không public) để GET log ra đầy đủ.
+      throw new Error(
+        `Google Drive API error ${res.status} ${res.statusText}: ${(await res.text()).slice(0, 500)}`,
+      );
     }
 
     const data = (await res.json()) as {
@@ -507,11 +521,19 @@ const STATIC_REPORTS = [
 export async function GET() {
   // Chưa cấu hình API key → trả về danh sách tĩnh (không phá vỡ UI hiện tại)
   if (!DRIVE_API_KEY) {
+    console.error(
+      "[reports] GOOGLE_DRIVE_API_KEY đang TRỐNG — trả về fallback tĩnh. Hãy cấu hình env trên Vercel.",
+    );
     return NextResponse.json(STATIC_REPORTS);
   }
 
+  console.log(
+    `[reports] Đồng bộ từ Drive: folder=${DRIVE_FOLDER_ID}, apiKey=${DRIVE_API_KEY ? "đã cấu hình" : "THIẾU"}`,
+  );
+
   try {
     const files = await listAllFilesInFolder(DRIVE_FOLDER_ID);
+    console.log(`[reports] Drive trả về ${files.length} file trong folder.`);
 
     const seen = new Set<string>();
     const reports = await Promise.all(
@@ -573,7 +595,14 @@ export async function GET() {
 
     return NextResponse.json(deduped);
   } catch (error) {
-    console.error("Failed to fetch reports from Google Drive:", error);
+    // Log ĐẦY ĐỦ thông tin để tra cứu trên Vercel (Project → Runtime Logs). Nguyên nhân
+    // thường gặp: API key bị giới hạn referrer/IP trong Google Cloud Console, folder không
+    // public, hoặc Drive trả 403/404. Kèm folder + trạng thái apiKey để khoanh vùng nhanh.
+    console.error(
+      `[reports] Lỗi đồng bộ Google Drive — folder=${DRIVE_FOLDER_ID}, ` +
+        `apiKeyConfigured=${Boolean(DRIVE_API_KEY)}`,
+      error,
+    );
     // Fallback an toàn: giữ nguyên danh sách tĩnh khi Drive lỗi
     return NextResponse.json(STATIC_REPORTS);
   }
