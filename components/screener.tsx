@@ -37,13 +37,16 @@ function formatVnDate(iso: string): string {
   return `${m[3]}/${m[2]}/${m[1]}`
 }
 
-// Chuyển "DD/MM/YYYY" (hoặc "YYYY-MM-DD") → "YYYYMMDD" để sort theo ngày chính xác
-// (ngày báo cáo hiện do API trả dạng DD/MM/YYYY từ createdTime)
-function sortableDate(v: string | null): string {
-  if (!v) return ''
+// Chuyển "DD/MM/YYYY" (hoặc "YYYY-MM-DD") → timestamp (ms) để sort theo ngày chính xác.
+// Dùng new Date(y, m-1, d) (tháng 0-based) để tránh lỗi parse múi giờ của Date.parse.
+// Ngày báo cáo hiện do API trả dạng DD/MM/YYYY từ createdTime.
+function reportDateToTimestamp(v: string | null): number {
+  if (!v) return 0
   const m = v.match(/^(\d{2})\/(\d{2})\/(\d{4})$/) // DD/MM/YYYY
-  if (m) return `${m[3]}${m[2]}${m[1]}`
-  return v.replace(/-/g, '') // YYYY-MM-DD → YYYYMMDD
+  if (m) return new Date(+m[3], +m[2] - 1, +m[1]).getTime()
+  const m2 = v.match(/^(\d{4})-(\d{2})-(\d{2})$/) // YYYY-MM-DD
+  if (m2) return new Date(+m2[1], +m2[2] - 1, +m2[3]).getTime()
+  return 0
 }
 
 // Format tỷ lệ trích quỹ KTPL: số nguyên → "10%", số thập phân → "7,5%" (locale vi-VN)
@@ -57,7 +60,8 @@ const PAGE_SIZE = 20
 export function Screener() {
   const { reports } = useReports()
 
-  const [sortKey, setSortKey] = useState<SortKey>('upside')
+  // Mặc định sắp xếp theo ngày báo cáo mới nhất lên đầu (desc)
+  const [sortKey, setSortKey] = useState<SortKey>('reportDate')
   const [sortDir, setSortDir] = useState<SortDir>('desc')
   const [page, setPage] = useState(1)
 
@@ -76,7 +80,7 @@ export function Screener() {
         case 'targetPrice':
           return s.targetPrice ?? -Infinity
         case 'reportDate':
-          return sortableDate(s.reportDate) // DD/MM/YYYY (hoặc YYYY-MM-DD) → YYYYMMDD
+          return reportDateToTimestamp(s.reportDate) // DD/MM/YYYY (hoặc YYYY-MM-DD) → timestamp (ms)
         case 'upside':
           return upsideOf(s) ?? -Infinity
         case 'bonusWelfareRate':
@@ -118,9 +122,12 @@ export function Screener() {
                   <Th onClick={() => toggleSort('ticker')} active={sortKey === 'ticker'} dir={sortDir}>
                     Mã CK
                   </Th>
-                  <th className="px-3 py-2.5 text-left text-xs font-semibold text-muted-foreground uppercase tracking-wide">
+                  <th className="w-[150px] max-w-[160px] truncate px-3 py-2.5 text-left text-xs font-semibold text-muted-foreground uppercase tracking-wide">
                     Tên doanh nghiệp
                   </th>
+                  <Th onClick={() => toggleSort('reportDate')} active={sortKey === 'reportDate'} dir={sortDir}>
+                    Ngày báo cáo
+                  </Th>
                   <Th onClick={() => toggleSort('marketPrice')} active={sortKey === 'marketPrice'} dir={sortDir} right>
                     Giá TT
                   </Th>
@@ -129,9 +136,6 @@ export function Screener() {
                   </Th>
                   <Th onClick={() => toggleSort('bonusWelfareRate')} active={sortKey === 'bonusWelfareRate'} dir={sortDir} right>
                     Trích quỹ KTPL
-                  </Th>
-                  <Th onClick={() => toggleSort('reportDate')} active={sortKey === 'reportDate'} dir={sortDir}>
-                    Ngày báo cáo
                   </Th>
                   <Th onClick={() => toggleSort('upside')} active={sortKey === 'upside'} dir={sortDir} right>
                     Upside
@@ -171,7 +175,10 @@ export function Screener() {
                           )}
                         </Link>
                       </td>
-                      <td className="max-w-[260px] truncate px-3 py-2.5 text-foreground">{s.name}</td>
+                      <td className="w-[150px] max-w-[160px] truncate px-3 py-2.5 text-foreground">{s.name}</td>
+                      <td className="px-3 py-2.5 font-mono tabular-nums text-foreground">
+                        {s.reportDate ? formatVnDate(s.reportDate) : '—'}
+                      </td>
                       <td className="px-3 py-2.5 text-right font-mono tabular-nums text-foreground">
                         {marketPriceOf(s) != null ? fmtPrice(marketPriceOf(s) as number) : '—'}
                       </td>
@@ -180,9 +187,6 @@ export function Screener() {
                       </td>
                       <td className="px-3 py-2.5 text-right font-mono tabular-nums text-foreground">
                         {s.bonusWelfareRate != null ? fmtRate(s.bonusWelfareRate) : '—'}
-                      </td>
-                      <td className="px-3 py-2.5 font-mono tabular-nums text-foreground">
-                        {s.reportDate ? formatVnDate(s.reportDate) : '—'}
                       </td>
                       <td className="px-3 py-2.5 text-right">
                         {up != null ? (
