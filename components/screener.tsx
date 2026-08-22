@@ -28,7 +28,7 @@ type SortKey =
   | 'reportDate'
   | 'upside'
   | 'bonusWelfareRate'
-type SortDir = 'asc' | 'desc'
+type SortOrder = 'asc' | 'desc'
 
 // Chuyển "YYYY-MM-DD" → "DD/MM/YYYY" (chuẩn VN), fallback trả nguyên chuỗi
 function formatVnDate(iso: string): string {
@@ -55,14 +55,14 @@ function fmtRate(v: number): string {
 }
 
 // Số mã hiển thị trên mỗi trang phân trang (bảng full-width, thoáng hơn)
-const PAGE_SIZE = 20
+const ITEMS_PER_PAGE = 20
 
 export function Screener() {
-  const { reports } = useReports()
+  const { reports, loading } = useReports()
 
   // Mặc định sắp xếp theo ngày báo cáo mới nhất lên đầu (desc)
   const [sortKey, setSortKey] = useState<SortKey>('reportDate')
-  const [sortDir, setSortDir] = useState<SortDir>('desc')
+  const [sortOrder, setSortOrder] = useState<SortOrder>('desc')
   const [page, setPage] = useState(1)
 
   // Nguồn dữ liệu: các mã ĐÃ CÓ bài viết trong kho báo cáo (ghép dữ liệu tài chính nếu có)
@@ -94,20 +94,20 @@ export function Screener() {
       let cmp = 0
       if (typeof av === 'string' && typeof bv === 'string') cmp = av.localeCompare(bv)
       else cmp = (av as number) - (bv as number)
-      return sortDir === 'asc' ? cmp : -cmp
+      return sortOrder === 'asc' ? cmp : -cmp
     })
-  }, [reportStocks, sortKey, sortDir])
+  }, [reportStocks, sortKey, sortOrder])
 
-  const totalPages = Math.max(1, Math.ceil(filtered.length / PAGE_SIZE))
+  const totalPages = Math.max(1, Math.ceil(filtered.length / ITEMS_PER_PAGE))
   const safePage = Math.min(page, totalPages)
-  const pageRows = filtered.slice((safePage - 1) * PAGE_SIZE, safePage * PAGE_SIZE)
+  const pageRows = filtered.slice((safePage - 1) * ITEMS_PER_PAGE, safePage * ITEMS_PER_PAGE)
 
   function toggleSort(key: SortKey) {
     if (sortKey === key) {
-      setSortDir((d) => (d === 'asc' ? 'desc' : 'asc'))
+      setSortOrder((d) => (d === 'asc' ? 'desc' : 'asc'))
     } else {
       setSortKey(key)
-      setSortDir(key === 'ticker' ? 'asc' : 'desc')
+      setSortOrder(key === 'ticker' ? 'asc' : 'desc')
     }
     setPage(1)
   }
@@ -119,25 +119,25 @@ export function Screener() {
             <table className="w-full border-collapse text-sm">
               <thead>
                 <tr className="border-b border-border bg-secondary/60 text-left">
-                  <Th onClick={() => toggleSort('ticker')} active={sortKey === 'ticker'} dir={sortDir}>
+                  <Th onClick={() => toggleSort('ticker')} active={sortKey === 'ticker'} dir={sortOrder}>
                     Mã CK
                   </Th>
-                  <th className="w-[150px] max-w-[160px] truncate px-3 py-2.5 text-left text-xs font-semibold text-muted-foreground uppercase tracking-wide">
+                  <th className="w-[140px] max-w-[150px] truncate px-3 py-2.5 text-left text-xs font-semibold text-muted-foreground uppercase tracking-wide">
                     Tên doanh nghiệp
                   </th>
-                  <Th onClick={() => toggleSort('reportDate')} active={sortKey === 'reportDate'} dir={sortDir}>
+                  <Th onClick={() => toggleSort('reportDate')} active={sortKey === 'reportDate'} dir={sortOrder}>
                     Ngày báo cáo
                   </Th>
-                  <Th onClick={() => toggleSort('marketPrice')} active={sortKey === 'marketPrice'} dir={sortDir} right>
+                  <Th onClick={() => toggleSort('marketPrice')} active={sortKey === 'marketPrice'} dir={sortOrder} right>
                     Giá TT
                   </Th>
-                  <Th onClick={() => toggleSort('targetPrice')} active={sortKey === 'targetPrice'} dir={sortDir} right>
+                  <Th onClick={() => toggleSort('targetPrice')} active={sortKey === 'targetPrice'} dir={sortOrder} right>
                     Giá MT
                   </Th>
-                  <Th onClick={() => toggleSort('bonusWelfareRate')} active={sortKey === 'bonusWelfareRate'} dir={sortDir} right>
+                  <Th onClick={() => toggleSort('bonusWelfareRate')} active={sortKey === 'bonusWelfareRate'} dir={sortOrder} right>
                     Trích quỹ KTPL
                   </Th>
-                  <Th onClick={() => toggleSort('upside')} active={sortKey === 'upside'} dir={sortDir} right>
+                  <Th onClick={() => toggleSort('upside')} active={sortKey === 'upside'} dir={sortOrder} right>
                     Upside
                   </Th>
                 </tr>
@@ -175,7 +175,7 @@ export function Screener() {
                           )}
                         </Link>
                       </td>
-                      <td className="w-[150px] max-w-[160px] truncate px-3 py-2.5 text-foreground">{s.name}</td>
+                      <td className="w-[140px] max-w-[150px] truncate px-3 py-2.5 text-foreground">{s.name}</td>
                       <td className="px-3 py-2.5 font-mono tabular-nums text-foreground">
                         {s.reportDate ? formatVnDate(s.reportDate) : '—'}
                       </td>
@@ -209,10 +209,27 @@ export function Screener() {
                     </tr>
                   )
                 })}
-                {pageRows.length === 0 && (
+                {loading && (
                   <tr>
                     <td colSpan={7} className="px-3 py-12 text-center text-sm text-muted-foreground">
-                      Không có cổ phiếu nào thỏa mãn bộ lọc. Hãy nới lỏng tiêu chí.
+                      <span className="inline-flex items-center gap-2">
+                        <span className="size-4 animate-spin rounded-full border-2 border-border border-t-primary" />
+                        Đang tải dữ liệu báo cáo...
+                      </span>
+                    </td>
+                  </tr>
+                )}
+                {!loading && pageRows.length === 0 && reports.length === 0 && (
+                  <tr>
+                    <td colSpan={7} className="px-3 py-12 text-center text-sm text-muted-foreground">
+                      Chưa có dữ liệu báo cáo trong kho. Vui lòng quay lại sau.
+                    </td>
+                  </tr>
+                )}
+                {!loading && pageRows.length === 0 && reports.length > 0 && (
+                  <tr>
+                    <td colSpan={7} className="px-3 py-12 text-center text-sm text-muted-foreground">
+                      Không có cổ phiếu nào hiển thị trên trang này.
                     </td>
                   </tr>
                 )}
@@ -225,8 +242,8 @@ export function Screener() {
             <p className="text-xs text-muted-foreground">
               Hiển thị{' '}
               <span className="font-mono text-foreground">
-                {filtered.length === 0 ? 0 : (safePage - 1) * PAGE_SIZE + 1}–
-                {Math.min(safePage * PAGE_SIZE, filtered.length)}
+                {filtered.length === 0 ? 0 : (safePage - 1) * ITEMS_PER_PAGE + 1}–
+                {Math.min(safePage * ITEMS_PER_PAGE, filtered.length)}
               </span>{' '}
               trên <span className="font-mono text-foreground">{filtered.length}</span> mã
             </p>
@@ -277,7 +294,7 @@ function Th({
   children: React.ReactNode
   onClick: () => void
   active: boolean
-  dir: SortDir
+  dir: SortOrder
   right?: boolean
 }) {
   return (
