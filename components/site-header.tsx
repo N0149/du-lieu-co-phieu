@@ -5,6 +5,7 @@ import { usePathname } from 'next/navigation'
 import { TrendingUp } from 'lucide-react'
 import { StockSearch } from '@/components/stock-search'
 import { ThemeToggle } from '@/components/theme-toggle'
+import { TrialBadge } from '@/components/TrialBadge'
 import { cn } from '@/lib/utils'
 
 const NAV = [
@@ -66,6 +67,7 @@ export function SiteHeader() {
         </nav>
 
         <div className="ml-auto flex items-center gap-2 lg:ml-0">
+          <TrialBadge />
           <ThemeToggle />
         </div>
       </div>
