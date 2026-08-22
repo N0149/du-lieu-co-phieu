@@ -1,6 +1,7 @@
 'use client'
 
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
+import { createPortal } from 'react-dom'
 import { Crown, Sparkles, X } from 'lucide-react'
 import type { AccessStatus } from '@/lib/auth-check'
 import { Paywall } from '@/components/Paywall'
@@ -22,6 +23,10 @@ type PaywallModalProps = {
  * hoặc "Dùng thử 7 ngày".
  */
 export function PaywallModal({ open, onClose, onStarted, status }: PaywallModalProps) {
+  // Chỉ mount sau khi client sẵn sàng — createPortal cần `document` (không có ở SSR)
+  const [mounted, setMounted] = useState(false)
+  useEffect(() => setMounted(true), [])
+
   // Đóng bằng phím Escape
   useEffect(() => {
     if (!open) return
@@ -42,11 +47,14 @@ export function PaywallModal({ open, onClose, onStarted, status }: PaywallModalP
     }
   }, [open])
 
-  if (!open) return null
+  // Render qua createPortal vào <body> — tránh bị kẹt trong containing block:
+  // header sticky có `backdrop-blur` (backdrop-filter) sẽ khiến `position: fixed`
+  // của modal bị neo theo header (chỉ phủ 56px thay vì toàn viewport).
+  if (!open || !mounted) return null
 
-  return (
+  return createPortal(
     <div
-      className="fixed inset-0 z-50 flex items-center justify-center overflow-y-auto bg-black/60 p-4 backdrop-blur-xs"
+      className="fixed inset-0 z-[100] flex items-center justify-center overflow-y-auto bg-black/60 p-4 backdrop-blur-xs"
       onClick={onClose}
       role="dialog"
       aria-modal="true"
@@ -89,6 +97,7 @@ export function PaywallModal({ open, onClose, onStarted, status }: PaywallModalP
           <Paywall status={status} onStarted={onStarted} variant="modal" />
         </div>
       </div>
-    </div>
+    </div>,
+    document.body,
   )
 }
