@@ -2,6 +2,7 @@
 
 import { useState } from 'react'
 import { useRouter } from 'next/navigation'
+import Image from 'next/image'
 import {
   Crown,
   Lock,
@@ -21,9 +22,11 @@ import { cn } from '@/lib/utils'
 /** Thông tin thanh toán chuyển khoản ngân hàng (đồng bộ với trang /lien-he). */
 export const BANK_INFO = {
   bankName: 'TPBank',
+  bankFullName: 'Ngân hàng TMCP Tiên Phong',
   accountNumber: '0000 4944 263',
   accountOwner: 'NGUYEN TRUNG NHAT',
   transferSyntax: '[DULIEUCOPHIEU - Email hoặc Mã User]',
+  qrImage: '/qr-tpbank.jpg',
 } as const
 
 /** Số Zalo hỗ trợ / kích hoạt nhanh. */
@@ -41,6 +44,13 @@ type PaywallProps = {
   status: AccessStatus
   /** Callback sau khi bắt đầu dùng thử thành công (vd: đóng modal). */
   onStarted?: () => void
+  /**
+   * Kiểu hiển thị:
+   *  - 'page'  (mặc định): card độc lập, dùng trực tiếp trên trang /bao-cao/[slug].
+   *  - 'modal'           : nội dung phẳng (không card / không padding ngoài),
+   *                          dùng bên trong PaywallModal (modal đã có khung + p-6).
+   */
+  variant?: 'page' | 'modal'
   className?: string
 }
 
@@ -51,12 +61,13 @@ type PaywallProps = {
  *  - `EXPIRED`        : thông báo hết hạn + hướng dẫn chuyển khoản nâng cấp VIP.
  * (TRIAL_ACTIVE / SUBSCRIPTION_ACTIVE không render Paywall.)
  */
-export function Paywall({ status, onStarted, className }: PaywallProps) {
+export function Paywall({ status, onStarted, variant = 'page', className }: PaywallProps) {
   const router = useRouter()
   const [starting, setStarting] = useState(false)
   const [error, setError] = useState<string | null>(null)
 
   const isExpired = status === 'EXPIRED'
+  const isModal = variant === 'modal'
 
   /** Bắt đầu 7 ngày dùng thử miễn phí (tạo session + refresh để mở khóa báo cáo). */
   async function handleStartTrial() {
@@ -82,14 +93,21 @@ export function Paywall({ status, onStarted, className }: PaywallProps) {
   }
 
   return (
-    <section
+    <div
       className={cn(
-        'mx-auto w-full max-w-2xl overflow-hidden rounded-2xl border border-border bg-card shadow-sm',
+        isModal
+          ? 'w-full'
+          : 'mx-auto w-full max-w-2xl overflow-hidden rounded-2xl border border-border bg-card shadow-sm',
         className,
       )}
     >
       {/* ── Header ─────────────────────────────────────────────────────── */}
-      <div className="relative border-b border-border bg-secondary/50 px-6 py-6 text-center">
+      <div
+        className={cn(
+          'relative border-b border-border text-center',
+          isModal ? 'bg-secondary/40 pb-5 pt-0' : 'bg-secondary/50 px-6 py-6',
+        )}
+      >
         <div className="mx-auto flex size-12 items-center justify-center rounded-full bg-primary/10 text-primary">
           {isExpired ? <Lock className="size-6" /> : <Sparkles className="size-6" />}
         </div>
@@ -105,9 +123,9 @@ export function Paywall({ status, onStarted, className }: PaywallProps) {
         </p>
       </div>
 
-      <div className="px-6 py-6">
+      <div className={cn('space-y-4', isModal ? '' : 'px-6 py-6')}>
         {/* ── Quyền lợi gói VIP ────────────────────────────────────────── */}
-        <div className="mb-6 rounded-xl border border-primary/20 bg-primary/5 p-4">
+        <div className="rounded-xl border border-primary/20 bg-primary/5 p-4">
           <div className="mb-2 flex items-center gap-2">
             <Crown className="size-4 text-primary" />
             <h3 className="text-sm font-semibold text-foreground">Quyền lợi gói VIP</h3>
@@ -124,7 +142,7 @@ export function Paywall({ status, onStarted, className }: PaywallProps) {
 
         {/* ── CTA dùng thử / đăng nhập ─────────────────────────────────── */}
         {!isExpired && (
-          <div className="mb-6">
+          <div>
             <Button
               className="w-full"
               size="lg"
@@ -146,16 +164,35 @@ export function Paywall({ status, onStarted, className }: PaywallProps) {
         )}
 
         {/* ── Hướng dẫn thanh toán ngân hàng ───────────────────────────── */}
-        <div className="mb-4 flex items-center gap-2">
+        <div className="flex items-center gap-2">
           <Landmark className="size-4 text-muted-foreground" />
           <h3 className="text-sm font-semibold text-foreground">Thanh toán chuyển khoản</h3>
         </div>
 
         <div className="overflow-hidden rounded-xl border border-border">
-          <div className="flex items-center justify-between gap-3 border-b border-border bg-secondary/40 px-4 py-3">
+          {/* Mã VietQR TPBank */}
+          <div className="border-b border-border px-6 py-5">
+            <Image
+              src={BANK_INFO.qrImage}
+              alt={`Mã VietQR ${BANK_INFO.bankName} - ${BANK_INFO.accountOwner} - ${BANK_INFO.accountNumber}`}
+              width={192}
+              height={192}
+              className="mx-auto h-auto w-48 rounded-xl border border-border shadow-sm"
+            />
+            <p className="mt-2 text-center text-[11px] text-muted-foreground">
+              Quét mã VietQR để tự động điền thông tin chuyển khoản
+            </p>
+          </div>
+
+          <div className="flex items-center justify-between gap-3 bg-secondary/40 px-4 py-3">
             <div>
               <p className="text-[11px] uppercase tracking-wide text-muted-foreground">Ngân hàng</p>
-              <p className="text-sm font-semibold text-foreground">{BANK_INFO.bankName}</p>
+              <p className="text-sm font-semibold text-foreground">
+                {BANK_INFO.bankName}{' '}
+                <span className="font-normal text-muted-foreground">
+                  ({BANK_INFO.bankFullName})
+                </span>
+              </p>
             </div>
             <ShieldCheck className="size-5 text-positive" />
           </div>
@@ -191,13 +228,13 @@ export function Paywall({ status, onStarted, className }: PaywallProps) {
                 <code className="flex-1 rounded-md border border-border bg-muted px-2 py-1 font-mono text-xs text-foreground">
                   {BANK_INFO.transferSyntax}
                 </code>
-                <CopyButton value={BANK_INFO.transferSyntax} label="Sao chép" />
+                <CopyButton value={BANK_INFO.transferSyntax} label="Sao chép nội dung" />
               </div>
             </div>
           </div>
         </div>
 
-        <p className="mt-3 flex items-start gap-1.5 text-xs text-muted-foreground">
+        <p className="flex items-start gap-1.5 text-xs text-muted-foreground">
           <Clock className="mt-0.5 size-3.5 shrink-0" />
           <span>
             Sau khi chuyển khoản thành công, tài khoản VIP sẽ được kích hoạt trong vòng 24 giờ
@@ -208,12 +245,12 @@ export function Paywall({ status, onStarted, className }: PaywallProps) {
         {/* ── Liên hệ kích hoạt nhanh ──────────────────────────────────── */}
         <a
           href={`tel:${ZALO_CONTACT}`}
-          className="mt-5 flex items-center justify-center gap-2 rounded-xl border border-primary/30 bg-primary/5 px-4 py-3 text-sm font-semibold text-primary transition-colors hover:bg-primary/10"
+          className="flex items-center justify-center gap-2 rounded-xl border border-primary/30 bg-primary/5 px-4 py-3 text-sm font-semibold text-primary transition-colors hover:bg-primary/10"
         >
           <MessageCircle className="size-4" />
           Liên hệ Zalo {ZALO_CONTACT} để kích hoạt nhanh
         </a>
       </div>
-    </section>
+    </div>
   )
 }
