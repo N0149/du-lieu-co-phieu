@@ -12,6 +12,7 @@ const NAV = [
   { label: 'Bộ Lọc Cổ Phiếu', href: '/' },
   { label: 'Danh Mục Theo Dõi', href: '/danh-muc' },
   { label: 'Báo Cáo Phân Tích', href: '/bao-cao' },
+  { label: 'Thống Kê XNK', href: '/xuat-nhap-khau' },
 ]
 
 export function SiteHeader() {

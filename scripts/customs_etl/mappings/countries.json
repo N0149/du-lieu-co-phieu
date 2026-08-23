@@ -1,0 +1,129 @@
+{
+  "_meta": {
+    "description": "Tu dien chuan hoa ten quoc gia / thi truong (Master Mapping) cho ETL thong ke XNK - TCHQ.",
+    "note": "'canonical_name' dùng lam key unique trong bang dim_countries. Them 'aliases' de mo rong.",
+    "default_continent": null
+  },
+  "countries": [
+    {
+      "iso_code": "CHN",
+      "canonical_name": "Trung Quốc",
+      "continent": "Châu Á",
+      "aliases": ["trung quốc", "trung quoc", "china", "trung hoa", "cộng hòa nhân dân trung hoa"]
+    },
+    {
+      "iso_code": "USA",
+      "canonical_name": "Hoa Kỳ",
+      "continent": "Châu Mỹ",
+      "aliases": ["hoa kỳ", "hoa ky", "mỹ", "my", "usa", "united states", "american", "u.s.a"]
+    },
+    {
+      "iso_code": "JPN",
+      "canonical_name": "Nhật Bản",
+      "continent": "Châu Á",
+      "aliases": ["nhật bản", "nhat ban", "japan"]
+    },
+    {
+      "iso_code": "KOR",
+      "canonical_name": "Hàn Quốc",
+      "continent": "Châu Á",
+      "aliases": ["hàn quốc", "han quoc", "south korea", "korea", "hàn quốc (korea)"]
+    },
+    {
+      "iso_code": "SGP",
+      "canonical_name": "Singapore",
+      "continent": "Châu Á",
+      "aliases": ["singapore", "xinh-ga-po", "xinh ga po"]
+    },
+    {
+      "iso_code": "THA",
+      "canonical_name": "Thái Lan",
+      "continent": "Châu Á",
+      "aliases": ["thái lan", "thai lan", "thailand"]
+    },
+    {
+      "iso_code": "MYS",
+      "canonical_name": "Malaysia",
+      "continent": "Châu Á",
+      "aliases": ["malaysia", "ma-lai-xi-a", "ma lai xi a"]
+    },
+    {
+      "iso_code": "IDN",
+      "canonical_name": "Indonesia",
+      "continent": "Châu Á",
+      "aliases": ["indonesia", "in-đô-nê-xi-a", "in do ne xi a"]
+    },
+    {
+      "iso_code": "IND",
+      "canonical_name": "Ấn Độ",
+      "continent": "Châu Á",
+      "aliases": ["ấn độ", "an do", "india"]
+    },
+    {
+      "iso_code": "DEU",
+      "canonical_name": "Đức",
+      "continent": "Châu Âu",
+      "aliases": ["đức", "duc", "germany", "chlb đức", "cộng hòa liên bang đức"]
+    },
+    {
+      "iso_code": "FRA",
+      "canonical_name": "Pháp",
+      "continent": "Châu Âu",
+      "aliases": ["pháp", "phap", "france"]
+    },
+    {
+      "iso_code": "GBR",
+      "canonical_name": "Vương quốc Anh",
+      "continent": "Châu Âu",
+      "aliases": ["vương quốc anh", "vuong quoc anh", "anh", "uk", "united kingdom", "vương quốc liên hiệp anh và bắc ireland"]
+    },
+    {
+      "iso_code": "NLD",
+      "canonical_name": "Hà Lan",
+      "continent": "Châu Âu",
+      "aliases": ["hà lan", "ha lan", "netherlands", "holland"]
+    },
+    {
+      "iso_code": "AUS",
+      "canonical_name": "Australia",
+      "continent": "Châu Đại Dương",
+      "aliases": ["australia", "úc", "uc", "ô-xtrây-li-a", "o xtray li a"]
+    },
+    {
+      "iso_code": "RUS",
+      "canonical_name": "Nga",
+      "continent": "Châu Âu",
+      "aliases": ["nga", "liên bang nga", "lien bang nga", "russia", "liên bang nga (russia)"]
+    },
+    {
+      "iso_code": "BRA",
+      "canonical_name": "Brazil",
+      "continent": "Châu Mỹ",
+      "aliases": ["brazil", "bra-xin", "bra xin"]
+    },
+    {
+      "iso_code": "CAN",
+      "canonical_name": "Canada",
+      "continent": "Châu Mỹ",
+      "aliases": ["canada", "ca-na-đa", "ca na da"]
+    },
+    {
+      "iso_code": "VNM",
+      "canonical_name": "Việt Nam",
+      "continent": "Châu Á",
+      "aliases": ["việt nam", "viet nam", "vietnam", "vn"]
+    },
+    {
+      "iso_code": "HKG",
+      "canonical_name": "Hồng Kông",
+      "continent": "Châu Á",
+      "aliases": ["hồng kông", "hong kong", "hongkong", "hồng công"]
+    },
+    {
+      "iso_code": "TWN",
+      "canonical_name": "Đài Loan",
+      "continent": "Châu Á",
+      "aliases": ["đài loan", "dai loan", "taiwan", "đài loan (trung quốc)", "đài bắc"]
+    }
+  ]
+}

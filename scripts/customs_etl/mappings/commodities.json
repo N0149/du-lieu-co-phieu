@@ -1,0 +1,963 @@
+{
+  "_meta": {
+    "description": "Tu dien chuan hoa ten mat hang (Master Mapping) cho ETL thong ke XNK - TCHQ.",
+    "note": "Khong nen doi truong 'canonical_name' sau khi da nap vao DB (an toan voi cache dim). Them 'aliases' moi khi gap ten moi.",
+    "default_category": "Hang hoa khac",
+    "default_unit": null
+  },
+  "commodities": [
+    {
+      "code": "CN_01",
+      "canonical_name": "Dầu thô",
+      "category": "Nhiên liệu, khoáng sản",
+      "unit": "Tấn",
+      "aliases": [
+        "dầu thô",
+        "dau tho",
+        "crude oil",
+        "dầu mỏ",
+        "dau mo"
+      ]
+    },
+    {
+      "code": "CN_02",
+      "canonical_name": "Than đá",
+      "category": "Nhiên liệu, khoáng sản",
+      "unit": "Tấn",
+      "aliases": [
+        "than đá",
+        "than da",
+        "coal"
+      ]
+    },
+    {
+      "code": "CN_03",
+      "canonical_name": "Điện thoại và linh kiện",
+      "category": "Điện tử, máy tính",
+      "unit": "USD / Cái",
+      "aliases": [
+        "điện thoại",
+        "dien thoai",
+        "điện thoại các loại và linh kiện",
+        "dien thoai cac loai va linh kien",
+        "phone",
+        "mobile phone"
+      ]
+    },
+    {
+      "code": "CN_04",
+      "canonical_name": "Máy vi tính, sản phẩm điện tử và linh kiện",
+      "category": "Điện tử, máy tính",
+      "unit": "USD / Cái",
+      "aliases": [
+        "máy vi tính",
+        "may vi tinh",
+        "sản phẩm điện tử",
+        "san pham dien tu",
+        "linh kiện điện tử",
+        "linh kien dien tu",
+        "computer",
+        "electronic"
+      ]
+    },
+    {
+      "code": "CN_05",
+      "canonical_name": "Hàng dệt, may",
+      "category": "Dệt may, da giày",
+      "unit": "USD / Sản phẩm",
+      "aliases": [
+        "hàng dệt, may",
+        "hang det, may",
+        "hàng dệt may",
+        "hang det may",
+        "dệt may",
+        "det may",
+        "textile",
+        "garment"
+      ]
+    },
+    {
+      "code": "CN_06",
+      "canonical_name": "Giày dép các loại",
+      "category": "Dệt may, da giày",
+      "unit": "USD / Đôi",
+      "aliases": [
+        "giày dép",
+        "giay dep",
+        "giày dép các loại",
+        "giay dep cac loai",
+        "footwear",
+        "shoes"
+      ]
+    },
+    {
+      "code": "CN_07",
+      "canonical_name": "Gỗ và sản phẩm gỗ",
+      "category": "Nông lâm sản",
+      "unit": "USD / Tấn",
+      "aliases": [
+        "gỗ",
+        "go",
+        "sản phẩm gỗ",
+        "san pham go",
+        "wood",
+        "timber"
+      ]
+    },
+    {
+      "code": "CN_08",
+      "canonical_name": "Thủy sản",
+      "category": "Nông lâm thủy sản",
+      "unit": "Tấn",
+      "aliases": [
+        "thủy sản",
+        "thuy san",
+        "hàng thủy sản",
+        "hang thuy san",
+        "seafood"
+      ]
+    },
+    {
+      "code": "CN_09",
+      "canonical_name": "Gạo",
+      "category": "Nông lâm thủy sản",
+      "unit": "Tấn",
+      "aliases": [
+        "gạo",
+        "gao",
+        "rice"
+      ]
+    },
+    {
+      "code": "CN_10",
+      "canonical_name": "Cà phê",
+      "category": "Nông lâm thủy sản",
+      "unit": "Tấn",
+      "aliases": [
+        "cà phê",
+        "ca phe",
+        "coffee"
+      ]
+    },
+    {
+      "code": "CN_11",
+      "canonical_name": "Hạt điều",
+      "category": "Nông lâm thủy sản",
+      "unit": "Tấn",
+      "aliases": [
+        "hạt điều",
+        "hat dieu",
+        "cashew"
+      ]
+    },
+    {
+      "code": "CN_12",
+      "canonical_name": "Cao su",
+      "category": "Nông lâm thủy sản",
+      "unit": "Tấn",
+      "aliases": [
+        "cao su",
+        "rubber"
+      ]
+    },
+    {
+      "code": "CN_13",
+      "canonical_name": "Hồ tiêu",
+      "category": "Nông lâm thủy sản",
+      "unit": "Tấn",
+      "aliases": [
+        "hồ tiêu",
+        "ho tieu",
+        "pepper"
+      ]
+    },
+    {
+      "code": "CN_14",
+      "canonical_name": "Sắt thép các loại",
+      "category": "Vật liệu xây dựng, kim loại",
+      "unit": "Tấn",
+      "aliases": [
+        "sắt thép",
+        "sat thep",
+        "thép các loại",
+        "thep cac loai",
+        "iron",
+        "steel"
+      ]
+    },
+    {
+      "code": "CN_15",
+      "canonical_name": "Hóa chất",
+      "category": "Hóa chất, nhựa",
+      "unit": "USD / Tấn",
+      "aliases": [
+        "hóa chất",
+        "hoa chat",
+        "chemical"
+      ]
+    },
+    {
+      "code": "CN_16",
+      "canonical_name": "Chất dẻo nguyên liệu (nhựa)",
+      "category": "Hóa chất, nhựa",
+      "unit": "Tấn",
+      "aliases": [
+        "chất dẻo nguyên liệu",
+        "chat deo nguyen lieu",
+        "nhựa",
+        "nhua",
+        "plastic"
+      ]
+    },
+    {
+      "code": "CN_17",
+      "canonical_name": "Xăng dầu các loại",
+      "category": "Nhiên liệu, khoáng sản",
+      "unit": "Tấn",
+      "aliases": [
+        "xăng dầu",
+        "xang dau",
+        "xăng, dầu",
+        "xang, dau",
+        "petroleum",
+        "oil products"
+      ]
+    },
+    {
+      "code": "CN_18",
+      "canonical_name": "Ô tô nguyên chiếc các loại",
+      "category": "Phương tiện vận tải",
+      "unit": "Chiếc",
+      "aliases": [
+        "ô tô nguyên chiếc",
+        "o to nguyen chiec",
+        "ôtô",
+        "oto",
+        "ô tô",
+        "car",
+        "automobile"
+      ]
+    },
+    {
+      "code": "CN_19",
+      "canonical_name": "Sắt thép phế liệu",
+      "category": "Vật liệu xây dựng, kim loại",
+      "unit": "Tấn",
+      "aliases": [
+        "phế liệu sắt thép",
+        "phe lieu sat thep",
+        "sắt thép phế liệu",
+        "sat thep phe lieu",
+        "scrap"
+      ]
+    },
+    {
+      "code": "CN_20",
+      "canonical_name": "Túi xách, ví, vali, mũ và ô dù",
+      "category": "Dệt may, da giày",
+      "unit": "USD / Sản phẩm",
+      "aliases": [
+        "túi xách",
+        "tui xach",
+        "ví",
+        "vi",
+        "vali",
+        "ô dù",
+        "o du",
+        "handbag"
+      ]
+    },
+    {
+      "code": null,
+      "canonical_name": "Bánh kẹo và các sản phẩm từ ngũ cốc",
+      "category": null,
+      "unit": "USD",
+      "aliases": [
+        "Bánh kẹo và các sản phẩm từ ngũ cốc"
+      ]
+    },
+    {
+      "code": null,
+      "canonical_name": "Bông các loại",
+      "category": null,
+      "unit": "Tấn",
+      "aliases": [
+        "Bông các loại"
+      ]
+    },
+    {
+      "code": null,
+      "canonical_name": "Chất thơm, mỹ phẩm và chế phẩm vệ sinh",
+      "category": null,
+      "unit": "USD",
+      "aliases": [
+        "Chất thơm, mỹ phẩm và chế phẩm vệ sinh"
+      ]
+    },
+    {
+      "code": null,
+      "canonical_name": "Chè",
+      "category": null,
+      "unit": "Tấn",
+      "aliases": [
+        "Chè"
+      ]
+    },
+    {
+      "code": null,
+      "canonical_name": "Chế phẩm thực phẩm khác",
+      "category": null,
+      "unit": "USD",
+      "aliases": [
+        "Chế phẩm thực phẩm khác"
+      ]
+    },
+    {
+      "code": null,
+      "canonical_name": "Clanhke và xi măng",
+      "category": null,
+      "unit": "Tấn",
+      "aliases": [
+        "Clanhke và xi măng"
+      ]
+    },
+    {
+      "code": null,
+      "canonical_name": "Đá quý, kim loại quý và sản phẩm",
+      "category": null,
+      "unit": "USD",
+      "aliases": [
+        "Đá quý, kim loại quý và sản phẩm"
+      ]
+    },
+    {
+      "code": null,
+      "canonical_name": "Dầu mỡ động thực vật",
+      "category": null,
+      "unit": "USD",
+      "aliases": [
+        "Dầu mỡ động thực vật"
+      ]
+    },
+    {
+      "code": null,
+      "canonical_name": "Đậu tương",
+      "category": null,
+      "unit": "Tấn",
+      "aliases": [
+        "Đậu tương"
+      ]
+    },
+    {
+      "code": null,
+      "canonical_name": "Dây điện và dây cáp điện",
+      "category": null,
+      "unit": "USD",
+      "aliases": [
+        "Dây điện và dây cáp điện"
+      ]
+    },
+    {
+      "code": null,
+      "canonical_name": "Diesel",
+      "category": null,
+      "unit": "Tấn",
+      "aliases": [
+        "Diesel",
+        "- Diesel"
+      ]
+    },
+    {
+      "code": null,
+      "canonical_name": "Đồ chơi, dụng cụ thể thao và bộ phận",
+      "category": null,
+      "unit": "USD",
+      "aliases": [
+        "Đồ chơi, dụng cụ thể thao và bộ phận"
+      ]
+    },
+    {
+      "code": null,
+      "canonical_name": "Đồng",
+      "category": null,
+      "unit": "Tấn",
+      "aliases": [
+        "Đồng",
+        "- Đồng"
+      ]
+    },
+    {
+      "code": null,
+      "canonical_name": "Dược phẩm",
+      "category": null,
+      "unit": "USD",
+      "aliases": [
+        "Dược phẩm"
+      ]
+    },
+    {
+      "code": null,
+      "canonical_name": "Giấy các loại",
+      "category": null,
+      "unit": "Tấn",
+      "aliases": [
+        "Giấy các loại"
+      ]
+    },
+    {
+      "code": null,
+      "canonical_name": "Giấy và các sản phẩm từ giấy",
+      "category": null,
+      "unit": "USD",
+      "aliases": [
+        "Giấy và các sản phẩm từ giấy"
+      ]
+    },
+    {
+      "code": null,
+      "canonical_name": "Hàng điện gia dụng và linh kiện",
+      "category": null,
+      "unit": "USD",
+      "aliases": [
+        "Hàng điện gia dụng và linh kiện",
+        "Hàng Điện gia dụng và linh kiện"
+      ]
+    },
+    {
+      "code": null,
+      "canonical_name": "Hàng hóa khác",
+      "category": null,
+      "unit": "USD",
+      "aliases": [
+        "Hàng hóa khác"
+      ]
+    },
+    {
+      "code": null,
+      "canonical_name": "Hàng rau quả",
+      "category": null,
+      "unit": "USD",
+      "aliases": [
+        "Hàng rau quả"
+      ]
+    },
+    {
+      "code": null,
+      "canonical_name": "Hạt tiêu",
+      "category": null,
+      "unit": "Tấn",
+      "aliases": [
+        "Hạt tiêu"
+      ]
+    },
+    {
+      "code": null,
+      "canonical_name": "Khí đốt hóa lỏng",
+      "category": null,
+      "unit": "Tấn",
+      "aliases": [
+        "Khí đốt hóa lỏng"
+      ]
+    },
+    {
+      "code": null,
+      "canonical_name": "Kim loại thường khác",
+      "category": null,
+      "unit": "Tấn",
+      "aliases": [
+        "Kim loại thường khác",
+        "Kim loại thường khác:"
+      ]
+    },
+    {
+      "code": null,
+      "canonical_name": "Linh kiện, phụ tùng ô tô",
+      "category": null,
+      "unit": "USD",
+      "aliases": [
+        "Linh kiện, phụ tùng ô tô"
+      ]
+    },
+    {
+      "code": null,
+      "canonical_name": "Lúa mì",
+      "category": null,
+      "unit": "Tấn",
+      "aliases": [
+        "Lúa mì"
+      ]
+    },
+    {
+      "code": null,
+      "canonical_name": "Máy ảnh, máy quay phim và linh kiện",
+      "category": null,
+      "unit": "USD",
+      "aliases": [
+        "Máy ảnh, máy quay phim và linh kiện"
+      ]
+    },
+    {
+      "code": null,
+      "canonical_name": "Máy móc, thiết bị, dụng cụ phụ tùng khác",
+      "category": null,
+      "unit": "USD",
+      "aliases": [
+        "Máy móc, thiết bị, dụng cụ phụ tùng khác",
+        "Máy móc, thiết bị, dụng cụ, phụ tùng khác"
+      ]
+    },
+    {
+      "code": null,
+      "canonical_name": "Mazut",
+      "category": null,
+      "unit": "Tấn",
+      "aliases": [
+        "Mazut",
+        "- Mazut"
+      ]
+    },
+    {
+      "code": null,
+      "canonical_name": "Ngô",
+      "category": null,
+      "unit": "Tấn",
+      "aliases": [
+        "Ngô"
+      ]
+    },
+    {
+      "code": null,
+      "canonical_name": "Nguyên phụ liệu dệt, may, da, giày",
+      "category": null,
+      "unit": "USD",
+      "aliases": [
+        "Nguyên phụ liệu dệt, may, da, giày"
+      ]
+    },
+    {
+      "code": null,
+      "canonical_name": "Nguyên phụ liệu dược phẩm",
+      "category": null,
+      "unit": "USD",
+      "aliases": [
+        "Nguyên phụ liệu dược phẩm"
+      ]
+    },
+    {
+      "code": null,
+      "canonical_name": "Nguyên phụ liệu thuốc lá",
+      "category": null,
+      "unit": "USD",
+      "aliases": [
+        "Nguyên phụ liệu thuốc lá"
+      ]
+    },
+    {
+      "code": null,
+      "canonical_name": "Nhiên liệu bay",
+      "category": null,
+      "unit": "Tấn",
+      "aliases": [
+        "Nhiên liệu bay",
+        "- Nhiên liệu bay"
+      ]
+    },
+    {
+      "code": null,
+      "canonical_name": "Ô tô 9 chỗ ngồi trở xuống",
+      "category": null,
+      "unit": "Chiếc",
+      "aliases": [
+        "Ô tô 9 chỗ ngồi trở xuống",
+        "- Ô tô 9 chỗ ngồi trở xuống"
+      ]
+    },
+    {
+      "code": null,
+      "canonical_name": "Ô tô trên 9 chỗ ngồi",
+      "category": null,
+      "unit": "Chiếc",
+      "aliases": [
+        "Ô tô trên 9 chỗ ngồi",
+        "- Ô tô trên 9 chỗ ngồi"
+      ]
+    },
+    {
+      "code": null,
+      "canonical_name": "Ô tô vận tải",
+      "category": null,
+      "unit": "Chiếc",
+      "aliases": [
+        "Ô tô vận tải",
+        "- Ô tô vận tải"
+      ]
+    },
+    {
+      "code": null,
+      "canonical_name": "Phân bón các loại",
+      "category": null,
+      "unit": "Tấn",
+      "aliases": [
+        "Phân bón các loại",
+        "Phân bón các loại:"
+      ]
+    },
+    {
+      "code": null,
+      "canonical_name": "Phân DAP",
+      "category": null,
+      "unit": "Tấn",
+      "aliases": [
+        "Phân DAP",
+        "- Phân DAP"
+      ]
+    },
+    {
+      "code": null,
+      "canonical_name": "Phân Kali",
+      "category": null,
+      "unit": "Tấn",
+      "aliases": [
+        "Phân Kali",
+        "- Phân Kali"
+      ]
+    },
+    {
+      "code": null,
+      "canonical_name": "Phân NPK",
+      "category": null,
+      "unit": "Tấn",
+      "aliases": [
+        "Phân NPK",
+        "- Phân NPK"
+      ]
+    },
+    {
+      "code": null,
+      "canonical_name": "Phân SA",
+      "category": null,
+      "unit": "Tấn",
+      "aliases": [
+        "Phân SA",
+        "- Phân SA"
+      ]
+    },
+    {
+      "code": null,
+      "canonical_name": "Phân Ure",
+      "category": null,
+      "unit": "Tấn",
+      "aliases": [
+        "Phân Ure",
+        "- Phân Ure"
+      ]
+    },
+    {
+      "code": null,
+      "canonical_name": "Phôi thép",
+      "category": null,
+      "unit": "Tấn",
+      "aliases": [
+        "Phôi thép",
+        "- Phôi thép"
+      ]
+    },
+    {
+      "code": null,
+      "canonical_name": "Phụ tùng ô tô",
+      "category": null,
+      "unit": "USD",
+      "aliases": [
+        "Phụ tùng ô tô",
+        "- Phụ tùng ô tô"
+      ]
+    },
+    {
+      "code": null,
+      "canonical_name": "Phương tiện vận tải khác và phụ tùng",
+      "category": null,
+      "unit": "USD",
+      "aliases": [
+        "Phương tiện vận tải khác và phụ tùng"
+      ]
+    },
+    {
+      "code": null,
+      "canonical_name": "Phương tiện vận tải và phụ tùng",
+      "category": null,
+      "unit": "USD",
+      "aliases": [
+        "Phương tiện vận tải và phụ tùng",
+        "Phương tiện vận tải và phụ tùng:"
+      ]
+    },
+    {
+      "code": null,
+      "canonical_name": "Quặng và khoáng sản khác",
+      "category": null,
+      "unit": "Tấn",
+      "aliases": [
+        "Quặng và khoáng sản khác"
+      ]
+    },
+    {
+      "code": null,
+      "canonical_name": "Quế và hoa quế",
+      "category": null,
+      "unit": "Tấn",
+      "aliases": [
+        "Quế và hoa quế"
+      ]
+    },
+    {
+      "code": null,
+      "canonical_name": "Sắn",
+      "category": null,
+      "unit": "Tấn",
+      "aliases": [
+        "Sắn",
+        "- Sắn"
+      ]
+    },
+    {
+      "code": null,
+      "canonical_name": "Sản phẩm dệt đã hoàn thiện khác",
+      "category": null,
+      "unit": "USD",
+      "aliases": [
+        "Sản phẩm dệt đã hoàn thiện khác"
+      ]
+    },
+    {
+      "code": null,
+      "canonical_name": "Sản phẩm gốm, sứ",
+      "category": null,
+      "unit": "USD",
+      "aliases": [
+        "Sản phẩm gốm, sứ"
+      ]
+    },
+    {
+      "code": null,
+      "canonical_name": "Sản phẩm hóa chất",
+      "category": null,
+      "unit": "USD",
+      "aliases": [
+        "Sản phẩm hóa chất"
+      ]
+    },
+    {
+      "code": null,
+      "canonical_name": "Sản phẩm khác từ dầu mỏ",
+      "category": null,
+      "unit": "USD",
+      "aliases": [
+        "Sản phẩm khác từ dầu mỏ"
+      ]
+    },
+    {
+      "code": null,
+      "canonical_name": "Sản phẩm mây, tre, cói và thảm",
+      "category": null,
+      "unit": "USD",
+      "aliases": [
+        "Sản phẩm mây, tre, cói và thảm"
+      ]
+    },
+    {
+      "code": null,
+      "canonical_name": "Sản phẩm nội thất từ chất liệu khác gỗ",
+      "category": null,
+      "unit": "USD",
+      "aliases": [
+        "Sản phẩm nội thất từ chất liệu khác gỗ"
+      ]
+    },
+    {
+      "code": null,
+      "canonical_name": "Sản phẩm từ cao su",
+      "category": null,
+      "unit": "USD",
+      "aliases": [
+        "Sản phẩm từ cao su"
+      ]
+    },
+    {
+      "code": null,
+      "canonical_name": "Sản phẩm từ chất dẻo",
+      "category": null,
+      "unit": "USD",
+      "aliases": [
+        "Sản phẩm từ chất dẻo"
+      ]
+    },
+    {
+      "code": null,
+      "canonical_name": "Sản phẩm từ giấy",
+      "category": null,
+      "unit": "USD",
+      "aliases": [
+        "Sản phẩm từ giấy"
+      ]
+    },
+    {
+      "code": null,
+      "canonical_name": "Sản phẩm từ kim loại thường khác",
+      "category": null,
+      "unit": "USD",
+      "aliases": [
+        "Sản phẩm từ kim loại thường khác"
+      ]
+    },
+    {
+      "code": null,
+      "canonical_name": "Sản phẩm từ sắt thép",
+      "category": null,
+      "unit": "USD",
+      "aliases": [
+        "Sản phẩm từ sắt thép"
+      ]
+    },
+    {
+      "code": null,
+      "canonical_name": "Sắn và các sản phẩm từ sắn",
+      "category": null,
+      "unit": "Tấn",
+      "aliases": [
+        "Sắn và các sản phẩm từ sắn",
+        "Sắn và các sản phẩm từ sắn:"
+      ]
+    },
+    {
+      "code": null,
+      "canonical_name": "Sữa và sản phẩm sữa",
+      "category": null,
+      "unit": "USD",
+      "aliases": [
+        "Sữa và sản phẩm sữa"
+      ]
+    },
+    {
+      "code": null,
+      "canonical_name": "Tàu thuyền các loại",
+      "category": null,
+      "unit": "USD",
+      "aliases": [
+        "Tàu thuyền các loại",
+        "- Tàu thuyền các loại"
+      ]
+    },
+    {
+      "code": null,
+      "canonical_name": "Than các loại",
+      "category": null,
+      "unit": "Tấn",
+      "aliases": [
+        "Than các loại"
+      ]
+    },
+    {
+      "code": null,
+      "canonical_name": "Thịt lợn và các sản phẩm từ thịt lợn",
+      "category": null,
+      "unit": "USD",
+      "aliases": [
+        "Thịt lợn và các sản phẩm từ thịt lợn",
+        "- Thịt lợn và các sản phẩm từ thịt lợn"
+      ]
+    },
+    {
+      "code": null,
+      "canonical_name": "Thịt và các sản phẩm từ thịt",
+      "category": null,
+      "unit": "USD",
+      "aliases": [
+        "Thịt và các sản phẩm từ thịt",
+        "Thịt và các sản phẩm từ thịt:"
+      ]
+    },
+    {
+      "code": null,
+      "canonical_name": "Thức ăn gia súc và nguyên liệu",
+      "category": null,
+      "unit": "USD",
+      "aliases": [
+        "Thức ăn gia súc và nguyên liệu"
+      ]
+    },
+    {
+      "code": null,
+      "canonical_name": "Thuốc trừ sâu và nguyên liệu",
+      "category": null,
+      "unit": "USD",
+      "aliases": [
+        "Thuốc trừ sâu và nguyên liệu"
+      ]
+    },
+    {
+      "code": null,
+      "canonical_name": "Thủy tinh và các sản phẩm từ thủy tinh",
+      "category": null,
+      "unit": "USD",
+      "aliases": [
+        "Thủy tinh và các sản phẩm từ thủy tinh"
+      ]
+    },
+    {
+      "code": null,
+      "canonical_name": "Túi xách, ví,vali, mũ, ô, dù",
+      "category": null,
+      "unit": "USD",
+      "aliases": [
+        "Túi xách, ví,vali, mũ, ô, dù"
+      ]
+    },
+    {
+      "code": null,
+      "canonical_name": "Vải các loại",
+      "category": null,
+      "unit": "USD",
+      "aliases": [
+        "Vải các loại",
+        "- Vải các loại"
+      ]
+    },
+    {
+      "code": null,
+      "canonical_name": "Vải mành, vải kỹ thuật khác",
+      "category": null,
+      "unit": "USD",
+      "aliases": [
+        "Vải mành, vải kỹ thuật khác"
+      ]
+    },
+    {
+      "code": null,
+      "canonical_name": "Xăng",
+      "category": null,
+      "unit": "Tấn",
+      "aliases": [
+        "Xăng",
+        "- Xăng"
+      ]
+    },
+    {
+      "code": null,
+      "canonical_name": "Xe máy và linh kiện, phụ tùng",
+      "category": null,
+      "unit": "USD",
+      "aliases": [
+        "Xe máy và linh kiện, phụ tùng"
+      ]
+    },
+    {
+      "code": null,
+      "canonical_name": "Xơ, sợi dệt các loại",
+      "category": null,
+      "unit": "Tấn",
+      "aliases": [
+        "Xơ, sợi dệt các loại"
+      ]
+    }
+  ]
+}

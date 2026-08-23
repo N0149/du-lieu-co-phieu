@@ -1,0 +1,20 @@
+# ─────────────────────────────────────────────────────────────────────────────
+# Customs ETL — Backend ETL (Giai doan 1: Backfill du lieu lich su)
+# Thu vien can thiet de chay pipeline cào -> parse -> load
+# ─────────────────────────────────────────────────────────────────────────────
+
+# Crawling
+requests>=2.31.0
+beautifulsoup4>=4.12.0
+lxml>=4.9.0            # parser backend nhanh & an toan cho BeautifulSoup
+
+# Parsing (Excel / PDF)
+pandas>=2.0.0
+openpyxl>=3.1.0
+pdfplumber>=0.11.0
+
+# Database (PostgreSQL / Supabase)
+psycopg2-binary>=2.9.9
+
+# Config
+python-dotenv>=1.0.0
