@@ -113,174 +113,280 @@ export function Screener() {
   }
 
   return (
-      <section className="min-w-0">
-        <div className="overflow-hidden rounded-lg border border-border bg-card">
-          <div className="overflow-x-auto">
-            <table className="w-full border-collapse text-sm">
-              <thead>
-                <tr className="border-b border-border bg-secondary/60 text-left">
-                  <Th onClick={() => toggleSort('ticker')} active={sortKey === 'ticker'} dir={sortOrder}>
-                    Mã CK
-                  </Th>
-                  <th className="w-[140px] max-w-[150px] truncate px-3 py-2.5 text-left text-xs font-semibold text-muted-foreground uppercase tracking-wide">
-                    Tên doanh nghiệp
-                  </th>
-                  <Th onClick={() => toggleSort('reportDate')} active={sortKey === 'reportDate'} dir={sortOrder}>
-                    Ngày báo cáo
-                  </Th>
-                  <Th onClick={() => toggleSort('marketPrice')} active={sortKey === 'marketPrice'} dir={sortOrder} right>
-                    Giá TT
-                  </Th>
-                  <Th onClick={() => toggleSort('targetPrice')} active={sortKey === 'targetPrice'} dir={sortOrder} right>
-                    Giá MT
-                  </Th>
-                  <Th onClick={() => toggleSort('bonusWelfareRate')} active={sortKey === 'bonusWelfareRate'} dir={sortOrder} right>
-                    Trích quỹ KTPL
-                  </Th>
-                  <Th onClick={() => toggleSort('upside')} active={sortKey === 'upside'} dir={sortOrder} right>
-                    Upside
-                  </Th>
-                </tr>
-              </thead>
-              <tbody>
-                {pageRows.map((s, i) => {
-                  const up = upsideOf(s)
-                  const href = reportHref(s.ticker)
-                  return (
-                    <tr
-                      key={s.ticker}
-                      className={cn(
-                        'relative border-b border-border/70 transition-colors hover:bg-accent/50',
-                        i % 2 === 1 && 'bg-muted/40',
-                      )}
-                    >
-                      <td className="px-3 py-2.5">
-                        {/* Link chính ở cột Mã CK; stretched-link (::after) phủ toàn dòng để cả dòng click được */}
-                        <Link
-                          href={href}
-                          className="inline-flex items-center gap-2 after:absolute after:inset-0"
-                          aria-label={`${s.ticker} — mở báo cáo phân tích`}
-                        >
-                          <span className="font-mono text-sm font-bold text-foreground">{s.ticker}</span>
-                          <span className="rounded bg-secondary px-1 py-0.5 text-[10px] text-muted-foreground">
-                            {s.exchange}
-                          </span>
-                          {s.hasReport && (
-                            <span
-                              className="inline-flex items-center gap-1 rounded bg-accent px-1.5 py-0.5 text-[10px] font-medium text-accent-foreground"
-                              title="Đã có báo cáo phân tích"
-                            >
-                              <FileText className="size-3" /> Báo cáo
-                            </span>
-                          )}
-                        </Link>
-                      </td>
-                      <td className="w-[140px] max-w-[150px] truncate px-3 py-2.5 text-foreground">{s.name}</td>
-                      <td className="px-3 py-2.5 font-mono tabular-nums text-foreground">
-                        {s.reportDate ? formatVnDate(s.reportDate) : '—'}
-                      </td>
-                      <td className="px-3 py-2.5 text-right font-mono tabular-nums text-foreground">
-                        {marketPriceOf(s) != null ? fmtPrice(marketPriceOf(s) as number) : '—'}
-                      </td>
-                      <td className="px-3 py-2.5 text-right font-mono tabular-nums text-foreground">
-                        {s.targetPrice != null ? fmtPrice(s.targetPrice) : '—'}
-                      </td>
-                      <td className="px-3 py-2.5 text-right font-mono tabular-nums text-foreground">
-                        {s.bonusWelfareRate != null ? fmtRate(s.bonusWelfareRate) : '—'}
-                      </td>
-                      <td className="px-3 py-2.5 text-right">
-                        {up != null ? (
+    <section className="min-w-0">
+      {/* ═══ DESKTOP (≥ md): Bảng 7 cột ═══ */}
+      <div className="hidden overflow-hidden rounded-lg border border-border bg-card md:block">
+        <div className="overflow-x-auto">
+          <table className="w-full border-collapse text-sm">
+            <thead>
+              <tr className="border-b border-border bg-secondary/60 text-left">
+                <Th onClick={() => toggleSort('ticker')} active={sortKey === 'ticker'} dir={sortOrder}>
+                  Mã CK
+                </Th>
+                <th className="w-[140px] max-w-[150px] truncate px-3 py-2.5 text-left text-xs font-semibold text-muted-foreground uppercase tracking-wide">
+                  Tên doanh nghiệp
+                </th>
+                <Th onClick={() => toggleSort('reportDate')} active={sortKey === 'reportDate'} dir={sortOrder}>
+                  Ngày báo cáo
+                </Th>
+                <Th onClick={() => toggleSort('marketPrice')} active={sortKey === 'marketPrice'} dir={sortOrder} right>
+                  Giá TT
+                </Th>
+                <Th onClick={() => toggleSort('targetPrice')} active={sortKey === 'targetPrice'} dir={sortOrder} right>
+                  Giá MT
+                </Th>
+                <Th onClick={() => toggleSort('bonusWelfareRate')} active={sortKey === 'bonusWelfareRate'} dir={sortOrder} right>
+                  Trích quỹ KTPL
+                </Th>
+                <Th onClick={() => toggleSort('upside')} active={sortKey === 'upside'} dir={sortOrder} right>
+                  Upside
+                </Th>
+              </tr>
+            </thead>
+            <tbody>
+              {pageRows.map((s, i) => {
+                const up = upsideOf(s)
+                const href = reportHref(s.ticker)
+                return (
+                  <tr
+                    key={s.ticker}
+                    className={cn(
+                      'relative border-b border-border/70 transition-colors hover:bg-accent/50',
+                      i % 2 === 1 && 'bg-muted/40',
+                    )}
+                  >
+                    <td className="px-3 py-2.5">
+                      {/* Link chính ở cột Mã CK; stretched-link (::after) phủ toàn dòng để cả dòng click được */}
+                      <Link
+                        href={href}
+                        className="inline-flex items-center gap-2 after:absolute after:inset-0"
+                        aria-label={`${s.ticker} — mở báo cáo phân tích`}
+                      >
+                        <span className="font-mono text-sm font-bold text-foreground">{s.ticker}</span>
+                        <span className="rounded bg-secondary px-1 py-0.5 text-[10px] text-muted-foreground">
+                          {s.exchange}
+                        </span>
+                        {s.hasReport && (
                           <span
-                            className={cn(
-                              'inline-block rounded px-1.5 py-0.5 font-mono text-xs font-semibold tabular-nums',
-                              up >= 100
-                                ? 'bg-positive-muted text-positive'
-                                : up >= 0
-                                  ? 'text-positive'
-                                  : 'text-negative',
-                            )}
+                            className="inline-flex items-center gap-1 rounded bg-accent px-1.5 py-0.5 text-[10px] font-medium text-accent-foreground"
+                            title="Đã có báo cáo phân tích"
                           >
-                            {fmtPct(up, 0)}
+                            <FileText className="size-3" /> Báo cáo
                           </span>
-                        ) : (
-                          <span className="text-muted-foreground">—</span>
                         )}
-                      </td>
-                    </tr>
-                  )
-                })}
-                {loading && (
-                  <tr>
-                    <td colSpan={7} className="px-3 py-12 text-center text-sm text-muted-foreground">
-                      <span className="inline-flex items-center gap-2">
-                        <span className="size-4 animate-spin rounded-full border-2 border-border border-t-primary" />
-                        Đang tải dữ liệu báo cáo...
-                      </span>
+                      </Link>
+                    </td>
+                    <td className="w-[140px] max-w-[150px] truncate px-3 py-2.5 text-foreground">{s.name}</td>
+                    <td className="px-3 py-2.5 font-mono tabular-nums text-foreground">
+                      {s.reportDate ? formatVnDate(s.reportDate) : '—'}
+                    </td>
+                    <td className="px-3 py-2.5 text-right font-mono tabular-nums text-foreground">
+                      {marketPriceOf(s) != null ? fmtPrice(marketPriceOf(s) as number) : '—'}
+                    </td>
+                    <td className="px-3 py-2.5 text-right font-mono tabular-nums text-foreground">
+                      {s.targetPrice != null ? fmtPrice(s.targetPrice) : '—'}
+                    </td>
+                    <td className="px-3 py-2.5 text-right font-mono tabular-nums text-foreground">
+                      {s.bonusWelfareRate != null ? fmtRate(s.bonusWelfareRate) : '—'}
+                    </td>
+                    <td className="px-3 py-2.5 text-right">
+                      {up != null ? (
+                        <span
+                          className={cn(
+                            'inline-block rounded px-1.5 py-0.5 font-mono text-xs font-semibold tabular-nums',
+                            up >= 100
+                              ? 'bg-positive-muted text-positive'
+                              : up >= 0
+                                ? 'text-positive'
+                                : 'text-negative',
+                          )}
+                        >
+                          {fmtPct(up, 0)}
+                        </span>
+                      ) : (
+                        <span className="text-muted-foreground">—</span>
+                      )}
                     </td>
                   </tr>
-                )}
-                {!loading && pageRows.length === 0 && reports.length === 0 && (
-                  <tr>
-                    <td colSpan={7} className="px-3 py-12 text-center text-sm text-muted-foreground">
-                      Chưa có dữ liệu báo cáo trong kho. Vui lòng quay lại sau.
-                    </td>
-                  </tr>
-                )}
-                {!loading && pageRows.length === 0 && reports.length > 0 && (
-                  <tr>
-                    <td colSpan={7} className="px-3 py-12 text-center text-sm text-muted-foreground">
-                      Không có cổ phiếu nào hiển thị trên trang này.
-                    </td>
-                  </tr>
-                )}
-              </tbody>
-            </table>
-          </div>
-
-          {/* Pagination */}
-          <div className="flex items-center justify-between border-t border-border px-3 py-2.5">
-            <p className="text-xs text-muted-foreground">
-              Hiển thị{' '}
-              <span className="font-mono text-foreground">
-                {filtered.length === 0 ? 0 : (safePage - 1) * ITEMS_PER_PAGE + 1}–
-                {Math.min(safePage * ITEMS_PER_PAGE, filtered.length)}
-              </span>{' '}
-              trên <span className="font-mono text-foreground">{filtered.length}</span> mã
-            </p>
-            <div className="flex items-center gap-1">
-              <Button
-                variant="outline"
-                size="icon-sm"
-                onClick={() => setPage((p) => Math.max(1, p - 1))}
-                disabled={safePage <= 1}
-                aria-label="Trang trước"
-              >
-                <ChevronLeft className="size-4" />
-              </Button>
-              {Array.from({ length: totalPages }).map((_, i) => (
-                <Button
-                  key={i}
-                  variant={safePage === i + 1 ? 'default' : 'outline'}
-                  size="icon-sm"
-                  onClick={() => setPage(i + 1)}
-                  className="font-mono"
-                >
-                  {i + 1}
-                </Button>
-              ))}
-              <Button
-                variant="outline"
-                size="icon-sm"
-                onClick={() => setPage((p) => Math.min(totalPages, p + 1))}
-                disabled={safePage >= totalPages}
-                aria-label="Trang sau"
-              >
-                <ChevronRight className="size-4" />
-              </Button>
-            </div>
-          </div>
+                )
+              })}
+              {loading && (
+                <tr>
+                  <td colSpan={7} className="px-3 py-12 text-center text-sm text-muted-foreground">
+                    <span className="inline-flex items-center gap-2">
+                      <span className="size-4 animate-spin rounded-full border-2 border-border border-t-primary" />
+                      Đang tải dữ liệu báo cáo...
+                    </span>
+                  </td>
+                </tr>
+              )}
+              {!loading && pageRows.length === 0 && reports.length === 0 && (
+                <tr>
+                  <td colSpan={7} className="px-3 py-12 text-center text-sm text-muted-foreground">
+                    Chưa có dữ liệu báo cáo trong kho. Vui lòng quay lại sau.
+                  </td>
+                </tr>
+              )}
+              {!loading && pageRows.length === 0 && reports.length > 0 && (
+                <tr>
+                  <td colSpan={7} className="px-3 py-12 text-center text-sm text-muted-foreground">
+                    Không có cổ phiếu nào hiển thị trên trang này.
+                  </td>
+                </tr>
+              )}
+            </tbody>
+          </table>
         </div>
-      </section>
+      </div>
+
+      {/* ═══ MOBILE (< md): Card List ═══ */}
+      <div className="space-y-2.5 md:hidden">
+        {loading ? (
+          // 3 Card Skeleton
+          Array.from({ length: 3 }).map((_, i) => (
+            <div
+              key={i}
+              className="animate-pulse space-y-2.5 rounded-lg border border-border/60 bg-card p-3.5"
+            >
+              <div className="flex items-center justify-between gap-2">
+                <div className="flex items-center gap-2">
+                  <div className="h-5 w-12 rounded bg-muted" />
+                  <div className="h-4 w-24 rounded bg-muted" />
+                </div>
+                <div className="h-5 w-14 rounded bg-muted" />
+              </div>
+              <div className="grid grid-cols-3 gap-2 rounded bg-muted/30 p-2">
+                <div className="h-8 rounded bg-muted" />
+                <div className="h-8 rounded bg-muted" />
+                <div className="h-8 rounded bg-muted" />
+              </div>
+              <div className="flex items-center justify-between">
+                <div className="h-3 w-16 rounded bg-muted" />
+                <div className="h-3 w-20 rounded bg-muted" />
+              </div>
+            </div>
+          ))
+        ) : pageRows.length === 0 ? (
+          // Empty: căn giữa
+          <div className="rounded-lg border border-dashed border-border bg-card px-4 py-10 text-center text-sm text-muted-foreground">
+            Không tìm thấy cổ phiếu phù hợp.
+          </div>
+        ) : (
+          pageRows.map((s) => <CardStock key={s.ticker} stock={s} />)
+        )}
+      </div>
+
+      {/* ═══ PHÂN TRANG (dùng chung mobile + desktop — cuối danh sách) ═══ */}
+      <div className="mt-3 flex flex-col gap-2 rounded-lg border border-border bg-card px-3 py-2.5 sm:flex-row sm:items-center sm:justify-between">
+        <p className="text-xs text-muted-foreground">
+          Hiển thị{' '}
+          <span className="font-mono text-foreground">
+            {filtered.length === 0 ? 0 : (safePage - 1) * ITEMS_PER_PAGE + 1}–
+            {Math.min(safePage * ITEMS_PER_PAGE, filtered.length)}
+          </span>{' '}
+          trên <span className="font-mono text-foreground">{filtered.length}</span> mã
+        </p>
+        <div className="flex items-center gap-1">
+          <Button
+            variant="outline"
+            size="icon-sm"
+            onClick={() => setPage((p) => Math.max(1, p - 1))}
+            disabled={safePage <= 1}
+            aria-label="Trang trước"
+          >
+            <ChevronLeft className="size-4" />
+          </Button>
+          {Array.from({ length: totalPages }).map((_, i) => (
+            <Button
+              key={i}
+              variant={safePage === i + 1 ? 'default' : 'outline'}
+              size="icon-sm"
+              onClick={() => setPage(i + 1)}
+              className="font-mono"
+            >
+              {i + 1}
+            </Button>
+          ))}
+          <Button
+            variant="outline"
+            size="icon-sm"
+            onClick={() => setPage((p) => Math.min(totalPages, p + 1))}
+            disabled={safePage >= totalPages}
+            aria-label="Trang sau"
+          >
+            <ChevronRight className="size-4" />
+          </Button>
+        </div>
+      </div>
+    </section>
+  )
+}
+
+/** Thẻ cổ phiếu dạng Card cho giao diện mobile (< md). Toàn thẻ là Link mở báo cáo. */
+function CardStock({ stock }: { stock: ReportStock }) {
+  const up = upsideOf(stock)
+  const price = marketPriceOf(stock)
+
+  return (
+    <Link
+      href={reportHref(stock.ticker)}
+      className="block space-y-2.5 rounded-lg border border-border/60 bg-card p-3.5 transition-colors hover:bg-muted/40"
+      aria-label={`${stock.ticker} — mở báo cáo phân tích`}
+    >
+      {/* Hàng 1 — Header: badge mã emerald + tên + badge upside */}
+      <div className="flex items-center justify-between gap-2">
+        <div className="flex min-w-0 items-center gap-2">
+          <span className="shrink-0 rounded bg-emerald-600/10 px-1.5 py-0.5 font-mono text-xs font-bold text-emerald-600 dark:text-emerald-400">
+            {stock.ticker}
+          </span>
+          <span className="truncate text-sm font-medium text-foreground">{stock.name}</span>
+        </div>
+        {up != null ? (
+          <span
+            className={cn(
+              'shrink-0 rounded px-1.5 py-0.5 font-mono text-xs font-semibold tabular-nums',
+              up >= 0 ? 'bg-positive-muted text-positive' : 'bg-negative-muted text-negative',
+            )}
+          >
+            {fmtPct(up, 0)}
+          </span>
+        ) : (
+          <span className="shrink-0 text-xs text-muted-foreground">—</span>
+        )}
+      </div>
+
+      {/* Hàng 2 — Grid chỉ số (Giá TT / Giá MT / KTPL) */}
+      <div className="grid grid-cols-3 gap-2 rounded bg-muted/30 p-2 text-xs">
+        <div className="min-w-0">
+          <p className="text-muted-foreground">Giá TT</p>
+          <p className="truncate font-mono font-semibold text-foreground tabular-nums">
+            {price != null ? fmtPrice(price) : '—'}
+          </p>
+        </div>
+        <div className="min-w-0">
+          <p className="text-muted-foreground">Giá MT</p>
+          <p className="truncate font-mono font-semibold text-foreground tabular-nums">
+            {stock.targetPrice != null ? fmtPrice(stock.targetPrice) : '—'}
+          </p>
+        </div>
+        <div className="min-w-0">
+          <p className="text-muted-foreground">KTPL</p>
+          <p className="truncate font-mono font-semibold text-foreground tabular-nums">
+            {stock.bonusWelfareRate != null ? fmtRate(stock.bonusWelfareRate) : '—'}
+          </p>
+        </div>
+      </div>
+
+      {/* Hàng 3 — Footer: ngày báo cáo + "Xem báo cáo →" */}
+      <div className="flex items-center justify-between pt-0.5">
+        <span className="text-[11px] text-muted-foreground">
+          {stock.reportDate ? formatVnDate(stock.reportDate) : '—'}
+        </span>
+        <span className="text-xs font-semibold text-emerald-600 dark:text-emerald-400">
+          Xem báo cáo →
+        </span>
+      </div>
+    </Link>
   )
 }
 
@@ -321,4 +427,3 @@ function Th({
     </th>
   )
 }
-

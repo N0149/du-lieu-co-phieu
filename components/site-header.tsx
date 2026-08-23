@@ -1,8 +1,9 @@
 'use client'
 
+import { useState } from 'react'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
-import { TrendingUp } from 'lucide-react'
+import { Menu, TrendingUp, X } from 'lucide-react'
 import { StockSearch } from '@/components/stock-search'
 import { ThemeToggle } from '@/components/theme-toggle'
 import { TrialBadge } from '@/components/TrialBadge'
@@ -17,6 +18,7 @@ const NAV = [
 
 export function SiteHeader() {
   const pathname = usePathname()
+  const [menuOpen, setMenuOpen] = useState(false)
 
   return (
     <header className="sticky top-0 z-40 border-b border-border bg-background/85 backdrop-blur supports-[backdrop-filter]:bg-background/70">
@@ -70,8 +72,46 @@ export function SiteHeader() {
         <div className="ml-auto flex items-center gap-2 lg:ml-0">
           <TrialBadge />
           <ThemeToggle />
+          {/* Hamburger — hiển thị trên mobile/tablet (< lg) khi nav desktop bị ẩn */}
+          <button
+            type="button"
+            onClick={() => setMenuOpen((o) => !o)}
+            className="inline-flex size-8 shrink-0 items-center justify-center rounded-md text-muted-foreground transition-colors hover:bg-muted hover:text-foreground lg:hidden"
+            aria-label={menuOpen ? 'Đóng menu' : 'Mở menu'}
+            aria-expanded={menuOpen}
+          >
+            {menuOpen ? <X className="size-5" /> : <Menu className="size-5" />}
+          </button>
         </div>
       </div>
+
+      {/* Mobile menu (< lg) — đủ 4 mục điều hướng, đóng khi bấm link */}
+      {menuOpen && (
+        <nav className="border-t border-border bg-background/95 px-4 py-2 backdrop-blur lg:hidden">
+          <div className="flex flex-col gap-1">
+            {NAV.map((item) => {
+              const active =
+                item.href === '/' ? pathname === '/' : pathname.startsWith(item.href)
+              return (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  onClick={() => setMenuOpen(false)}
+                  className={cn(
+                    'flex items-center justify-between rounded-md px-3 py-2.5 text-sm font-medium transition-colors',
+                    active
+                      ? 'bg-secondary text-foreground'
+                      : 'text-muted-foreground hover:bg-muted hover:text-foreground',
+                  )}
+                >
+                  {item.label}
+                  {active && <span className="size-1.5 rounded-full bg-primary" />}
+                </Link>
+              )
+            })}
+          </div>
+        </nav>
+      )}
 
       {/* Mobile search row */}
       <div className="border-t border-border px-4 py-2 md:hidden">
