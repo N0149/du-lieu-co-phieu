@@ -6,6 +6,14 @@
 // Phần đọc/ghi cookie (server-only) nằm riêng ở `lib/session.ts`.
 // ─────────────────────────────────────────────────────────────────────────────
 
+/**
+ * CÔNG TẮC PAYWALL — tạm thời bật/tắt yêu cầu trả phí.
+ * - `true`  : bật chặn như cũ (phải đăng nhập dùng thử / nâng cấp VIP).
+ * - `false` : tạm tắt — mọi báo cáo đều mở được, không cần đăng nhập.
+ * ⚠️ Đang TẠM TẮT theo yêu cầu người dùng — nhớ đổi lại `true` khi muốn bật lại.
+ */
+export const PAYWALL_ENABLED = false
+
 /** Số ngày dùng thử miễn phí kể từ khi tạo tài khoản */
 export const TRIAL_DAYS = 7
 
@@ -146,5 +154,7 @@ export function checkUserAccess(userProfile: UserProfile | null): AccessResult {
 
 /** Trạng thái có được phép mở nội dung chi tiết báo cáo hay không. */
 export function canAccessReport(status: AccessStatus): boolean {
+  // Tạm tắt paywall → cho phép truy cập mọi trạng thái (kể cả chưa đăng nhập)
+  if (!PAYWALL_ENABLED) return true
   return status === 'TRIAL_ACTIVE' || status === 'SUBSCRIPTION_ACTIVE'
 }
