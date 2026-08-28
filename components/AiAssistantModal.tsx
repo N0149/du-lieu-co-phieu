@@ -13,6 +13,7 @@ import {
   ExternalLink,
   MessageSquare,
   Zap,
+  Loader2,
 } from 'lucide-react'
 
 type Message = {
@@ -287,12 +288,25 @@ export function AiAssistantModal({ open, onClose }: AiAssistantModalProps) {
                       : 'bg-muted/60 text-foreground border border-border/60 rounded-tl-xs shadow-xs'
                   }`}
                 >
-                  <div className="whitespace-pre-wrap space-y-2">
-                    {m.content}
-                    {m.isStreaming && (
-                      <span className="inline-block size-2 animate-pulse rounded-full bg-primary ml-1" />
-                    )}
-                  </div>
+                  {m.isStreaming && !m.content ? (
+                    <div className="flex items-center gap-2.5 py-1 text-muted-foreground">
+                      <div className="flex items-center gap-1">
+                        <span className="size-2 rounded-full bg-primary animate-bounce [animation-delay:-0.3s]" />
+                        <span className="size-2 rounded-full bg-primary animate-bounce [animation-delay:-0.15s]" />
+                        <span className="size-2 rounded-full bg-primary animate-bounce" />
+                      </div>
+                      <span className="text-xs font-medium text-primary/80 animate-pulse">
+                        Đang tra cứu dữ liệu & suy nghĩ...
+                      </span>
+                    </div>
+                  ) : (
+                    <div className="whitespace-pre-wrap space-y-2">
+                      {m.content}
+                      {m.isStreaming && (
+                        <span className="inline-block w-1.5 h-4 ml-1 translate-y-0.5 bg-primary animate-pulse" />
+                      )}
+                    </div>
+                  )}
                 </div>
 
                 {isUser && (
@@ -384,12 +398,16 @@ export function AiAssistantModal({ open, onClose }: AiAssistantModalProps) {
               disabled={!input.trim() || loading || rateLimitExceeded}
               className="inline-flex h-10 items-center justify-center gap-1.5 rounded-lg bg-primary px-4 text-sm font-medium text-primary-foreground shadow-xs transition-colors hover:bg-primary/90 disabled:opacity-50"
             >
-              <Send className="size-4" />
-              <span className="hidden sm:inline">Gửi</span>
+              {loading ? (
+                <Loader2 className="size-4 animate-spin" />
+              ) : (
+                <Send className="size-4" />
+              )}
+              <span className="hidden sm:inline">{loading ? 'Đang xử lý...' : 'Gửi'}</span>
             </button>
           </form>
           <div className="mt-2 flex items-center justify-between text-[11px] text-muted-foreground">
-            <span>Powered by Gemini 2.5 Flash + Kho Dữ Liệu Báo Cáo</span>
+            <span>Powered by Gemini 3.6 Flash + Kho Dữ Liệu Báo Cáo</span>
             <span>Hỏi đáp không thay thế tư vấn tài chính</span>
           </div>
         </div>
