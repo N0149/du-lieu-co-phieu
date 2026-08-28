@@ -188,15 +188,30 @@ Câu hỏi của người dùng: ${userQuery}`,
       },
     ]
 
-    const responseStream = await ai.models.generateContentStream({
-      model: 'gemini-2.5-flash',
-      contents,
-      config: {
-        systemInstruction,
-        maxOutputTokens: 600,
-        tools: [{ googleSearch: {} }],
-      },
-    })
+    let responseStream
+    try {
+      // Thử gọi với công cụ Google Search
+      responseStream = await ai.models.generateContentStream({
+        model: 'gemini-3.6-flash',
+        contents,
+        config: {
+          systemInstruction,
+          maxOutputTokens: 600,
+          tools: [{ googleSearch: {} }],
+        },
+      })
+    } catch (toolError) {
+      console.warn('[ai-chat] Gọi Google Search gặp lỗi (quota/tier), fallback sang chế độ tiêu chuẩn:', toolError)
+      // Fallback không dùng tool nếu key chưa bật search grounding
+      responseStream = await ai.models.generateContentStream({
+        model: 'gemini-3.6-flash',
+        contents,
+        config: {
+          systemInstruction,
+          maxOutputTokens: 600,
+        },
+      })
+    }
 
     // 6. Trả về dạng ReadableStream chunked UTF-8
     const stream = new ReadableStream({
