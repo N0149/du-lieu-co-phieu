@@ -1,8 +1,7 @@
 'use client'
 
-import { useLayoutEffect, useMemo, useRef, useState } from 'react'
+import { useMemo, useState } from 'react'
 import {
-  Area,
   Bar,
   CartesianGrid,
   ComposedChart,
@@ -35,19 +34,13 @@ export type TradeBalancePoint = {
 }
 
 type Segment = 'ALL' | 'DOMESTIC' | 'FDI' | 'COMPARE'
-type ChartType = 'bar' | 'line'
 type RangeKey = '15d' | 'month' | 'quarter' | 'year'
 
 const SEGMENT_OPTIONS: { key: Segment; label: string }[] = [
   { key: 'ALL', label: 'Tổng thể' },
   { key: 'DOMESTIC', label: 'Trong nước' },
   { key: 'FDI', label: 'FDI' },
-  { key: 'COMPARE', label: 'So sánh' },
-]
-
-const CHART_OPTIONS: { key: ChartType; label: string }[] = [
-  { key: 'bar', label: 'Dạng Cột' },
-  { key: 'line', label: 'Dạng Đường' },
+  { key: 'COMPARE', label: 'So sánh 3 khối' },
 ]
 
 const RANGE_OPTIONS: { key: RangeKey; label: string }[] = [
@@ -68,8 +61,8 @@ const KY_RANK: Record<string, number> = { KY_1: 0, KY_2: 1, THANG: 2, QUY: 3 }
 
 type AggPoint = {
   key: string
-  label: string // nhãn ngắn trên trục hoành
-  fullLabel: string // nhãn đầy đủ trong tooltip
+  label: string
+  fullLabel: string
   periodType: string
   export: number
   import: number
@@ -111,12 +104,6 @@ function toAgg(p: TradeBalancePoint, label: string, fullLabel: string, prev?: Ag
   }
 }
 
-/**
- * Gộp chuỗi raw theo khung thời gian — TÁCH DỨT ĐIỂM 2 chu kỳ:
- *   - '15d'   : CHỈ các điểm Kỳ 1 / Kỳ 2 (không trộn "Tháng" vào trục).
- *   - 'month' : CHỈ các điểm THANG (cả tháng, không trộn kỳ 15 ngày).
- *   - 'quarter' / 'year' : gộp theo quý / năm từ các điểm THANG.
- */
 function aggregate(data: TradeBalancePoint[], range: RangeKey): AggPoint[] {
   if (!data.length) return []
   const sorted = [...data].sort((a, b) => {
@@ -133,7 +120,6 @@ function aggregate(data: TradeBalancePoint[], range: RangeKey): AggPoint[] {
     return out
   }
 
-  // Tháng / Quý / Năm → chỉ dùng kỳ THANG (số liệu cả tháng)
   const thang = sorted.filter((p) => p.period_type === 'THANG')
   const bucketOf = (p: TradeBalancePoint): string => {
     const month = Number(p.period_date.slice(5, 7))
@@ -216,17 +202,16 @@ function Delta({ value }: { value?: number }) {
   )
 }
 
-/** Tooltip chi tiết: các series đang hiển thị + % biến động so với kỳ liền trước. */
 function ChartTooltip({
   active,
   payload,
   segment,
-  chartType,
+  is15d,
 }: {
   active?: boolean
   payload?: { payload: AggPoint }[]
   segment: Segment
-  chartType: ChartType
+  is15d: boolean
 }) {
   if (!active || !payload?.length) return null
   const p = payload[0].payload
@@ -234,17 +219,26 @@ function ChartTooltip({
   const series: { name: string; color: string; value: number }[] = []
   const isDom = segment === 'DOMESTIC'
   const isFdi = segment === 'FDI'
-  if (segment === 'COMPARE') {
+
+  if (!is15d && segment === 'COMPARE') {
     series.push(
       { name: 'Cán cân tổng thể', color: COLORS.emerald, value: p.balance },
       { name: 'Cán cân FDI', color: COLORS.amber, value: p.balanceFdi },
       { name: 'Cán cân trong nước', color: COLORS.sky, value: p.balanceDomestic },
     )
   } else {
+    const expVal = !is15d && isDom ? p.exportDomestic : !is15d && isFdi ? p.exportFdi : p.export
+    const impVal = !is15d && isDom ? p.importDomestic : !is15d && isFdi ? p.importFdi : p.import
+    const balVal = !is15d && isDom ? p.balanceDomestic : !is15d && isFdi ? p.balanceFdi : p.balance
+
     series.push(
-      { name: 'Xuất khẩu', color: COLORS.emerald, value: isDom ? p.exportDomestic : isFdi ? p.exportFdi : p.export },
-      { name: 'Nhập khẩu', color: COLORS.rose, value: isDom ? p.importDomestic : isFdi ? p.importFdi : p.import },
-      { name: 'Cán cân', color: COLORS.amber, value: isDom ? p.balanceDomestic : isFdi ? p.balanceFdi : p.balance },
+      { name: 'Xuất khẩu', color: COLORS.emerald, value: expVal },
+      { name: 'Nhập khẩu', color: COLORS.rose, value: impVal },
+      {
+        name: balVal >= 0 ? 'Xuất siêu' : 'Nhập siêu',
+        color: COLORS.amber,
+        value: balVal,
+      },
     )
   }
 
@@ -252,9 +246,6 @@ function ChartTooltip({
     <div className="rounded-lg border border-border bg-card/95 px-3 py-2.5 text-xs shadow-xl backdrop-blur">
       <div className="mb-1.5 flex items-center justify-between gap-4">
         <span className="font-semibold text-foreground">{p.fullLabel ?? p.label}</span>
-        {chartType === 'line' && segment !== 'COMPARE' && (
-          <span className="text-muted-foreground">Trái: XK–NK · Phải: cán cân</span>
-        )}
       </div>
       <div className="space-y-1">
         {series.map((s) => (
@@ -282,31 +273,8 @@ function ChartTooltip({
           </div>
         </div>
       )}
-      {p.partial && (
-        <div className="mt-1.5 text-[11px] italic text-muted-foreground">
-          * Số liệu chưa đủ kỳ báo cáo.
-        </div>
-      )}
     </div>
   )
-}
-
-/** Lấy domain [min, max] cho trục cán cân (luôn chứa 0, có padding) từ dữ liệu. */
-function balanceDomain(points: AggPoint[], isCompare: boolean): [number, number] {
-  let min = 0
-  let max = 0
-  for (const p of points) {
-    const vals = isCompare
-      ? [p.balance, p.balanceFdi, p.balanceDomestic]
-      : [p.balance]
-    for (const v of vals) {
-      if (v == null || Number.isNaN(v)) continue
-      min = Math.min(min, v)
-      max = Math.max(max, v)
-    }
-  }
-  const pad = (max - min) * 0.15 || 1
-  return [min - pad, max + pad]
 }
 
 const controlCls =
@@ -314,76 +282,57 @@ const controlCls =
 
 export function TradeBalanceChart({ data }: { data: TradeBalancePoint[] }) {
   const [segment, setSegment] = useState<Segment>('ALL')
-  const [chartType, setChartType] = useState<ChartType>('line')
   const [range, setRange] = useState<RangeKey>('15d')
 
-  // Ở dạng cột, "So sánh" (nhiều series) không có ý nghĩa → hạ về Tổng thể.
-  const effectiveSegment: Segment = chartType === 'bar' && segment === 'COMPARE' ? 'ALL' : segment
-  const isCompare = effectiveSegment === 'COMPARE'
+  // Ở kỳ 15 ngày, chỉ có số liệu tổng thể (không chia FDI / Trong nước)
+  const is15d = range === '15d'
+  const effectiveSegment: Segment = is15d ? 'ALL' : segment
+  const isCompare = !is15d && effectiveSegment === 'COMPARE'
 
   const points = useMemo(() => aggregate(data, range), [data, range])
 
   const keys = {
-    export: effectiveSegment === 'DOMESTIC' ? 'exportDomestic' : effectiveSegment === 'FDI' ? 'exportFdi' : 'export',
-    import: effectiveSegment === 'DOMESTIC' ? 'importDomestic' : effectiveSegment === 'FDI' ? 'importFdi' : 'import',
-    balance: effectiveSegment === 'DOMESTIC' ? 'balanceDomestic' : effectiveSegment === 'FDI' ? 'balanceFdi' : 'balance',
+    export: !is15d && effectiveSegment === 'DOMESTIC' ? 'exportDomestic' : !is15d && effectiveSegment === 'FDI' ? 'exportFdi' : 'export',
+    import: !is15d && effectiveSegment === 'DOMESTIC' ? 'importDomestic' : !is15d && effectiveSegment === 'FDI' ? 'importFdi' : 'import',
+    balance: !is15d && effectiveSegment === 'DOMESTIC' ? 'balanceDomestic' : !is15d && effectiveSegment === 'FDI' ? 'balanceFdi' : 'balance',
   }
 
   return (
-    <section className="rounded-xl border border-border bg-card p-4 sm:p-5">
+    <div className="rounded-xl border border-border bg-card p-4 sm:p-5 shadow-xs">
       {/* ── Tiêu đề + điều khiển ───────────────────────────────────────── */}
-      <div className="mb-4 flex flex-col gap-3 lg:flex-row lg:items-start lg:justify-between">
+      <div className="mb-4 flex flex-col gap-3 lg:flex-row lg:items-center lg:justify-between">
         <div>
-          <h2 className="text-base font-semibold text-foreground sm:text-lg">
-            Cán cân thương mại Xuất – Nhập khẩu
+          <h2 className="text-sm font-semibold text-foreground sm:text-base">
+            {is15d
+              ? 'Thống kê Xuất – Nhập siêu theo kỳ 15 ngày'
+              : 'Cán cân thương mại Xuất – Nhập khẩu'}
           </h2>
           <p className="mt-0.5 text-xs text-muted-foreground">
-            Theo số liệu Tổng cục Hải quan · đơn vị trục: tỷ USD
+            {is15d
+              ? 'Số liệu thống kê Hải quan theo kỳ 15 ngày (Xuất khẩu, Nhập khẩu & Cán cân Xuất/Nhập siêu) · đơn vị: tỷ USD'
+              : 'Theo số liệu Tổng cục Hải quan · đơn vị trục: tỷ USD'}
           </p>
         </div>
 
         <div className="flex flex-wrap items-center gap-2">
-          {/* Tabs khu vực */}
-          <div className="flex items-center gap-1 rounded-lg border border-border bg-muted/50 p-1">
-            {SEGMENT_OPTIONS.map((opt) => (
-              <button
-                key={opt.key}
-                type="button"
-                onClick={() => setSegment(opt.key)}
-                className={cn(
-                  'rounded-md px-2.5 py-1 text-xs font-medium transition-colors',
-                  segment === opt.key ? 'bg-background text-foreground shadow-sm' : 'text-muted-foreground hover:text-foreground',
-                  chartType === 'bar' && opt.key === 'COMPARE' && 'cursor-not-allowed opacity-40 hover:text-muted-foreground',
-                )}
-                disabled={chartType === 'bar' && opt.key === 'COMPARE'}
-                title={chartType === 'bar' && opt.key === 'COMPARE' ? 'So sánh chỉ dùng ở Dạng Đường' : undefined}
-              >
-                {opt.label}
-              </button>
-            ))}
-          </div>
-
-          {/* Kiểu biểu đồ: Dạng Cột / Dạng Đường */}
-          <div className="flex items-center gap-1 rounded-lg border border-border bg-muted/50 p-1">
-            {CHART_OPTIONS.map((opt) => (
-              <button
-                key={opt.key}
-                type="button"
-                onClick={() => setChartType(opt.key)}
-                title={
-                  opt.key === 'bar'
-                    ? 'Cột đôi Xuất khẩu / Nhập khẩu + đường Cán cân'
-                    : 'Đường Xuất khẩu / Nhập khẩu + vùng Cán cân âm dương'
-                }
-                className={cn(
-                  'rounded-md px-2.5 py-1 text-xs font-medium transition-colors',
-                  chartType === opt.key ? 'bg-background text-foreground shadow-sm' : 'text-muted-foreground hover:text-foreground',
-                )}
-              >
-                {opt.label}
-              </button>
-            ))}
-          </div>
+          {/* Tabs khu vực (Chỉ hiển thị khi không phải kỳ 15 ngày) */}
+          {!is15d && (
+            <div className="flex items-center gap-1 rounded-lg border border-border bg-muted/40 p-0.5 text-xs">
+              {SEGMENT_OPTIONS.map((opt) => (
+                <button
+                  key={opt.key}
+                  type="button"
+                  onClick={() => setSegment(opt.key)}
+                  className={cn(
+                    'rounded-md px-2.5 py-1 font-medium transition-colors',
+                    effectiveSegment === opt.key ? 'bg-background text-foreground shadow-xs font-semibold' : 'text-muted-foreground hover:text-foreground',
+                  )}
+                >
+                  {opt.label}
+                </button>
+              ))}
+            </div>
+          )}
 
           {/* Khung thời gian */}
           <select
@@ -401,135 +350,48 @@ export function TradeBalanceChart({ data }: { data: TradeBalancePoint[] }) {
         </div>
       </div>
 
-      {/* ── Biểu đồ ────────────────────────────────────────────────────── */}
+      {/* ── Biểu đồ dạng Cột sạch sẽ ──────────────────────────────────── */}
       {points.length === 0 ? (
         <div className="flex h-72 items-center justify-center rounded-lg border border-dashed border-border text-sm text-muted-foreground">
           Chưa có dữ liệu cán cân thương mại.
         </div>
-      ) : chartType === 'bar' ? (
-        <BarView points={points} keys={keys} tooltip={<ChartTooltip segment={effectiveSegment} chartType="bar" />} />
       ) : (
-        <LineView points={points} keys={keys} isCompare={isCompare} tooltip={<ChartTooltip segment={effectiveSegment} chartType="line" />} />
+        <div className="h-64 w-full sm:h-76">
+          <ResponsiveContainer width="100%" height="100%">
+            <ComposedChart data={points} margin={{ top: 8, right: 10, left: -10, bottom: 0 }}>
+              <CartesianGrid strokeDasharray="3 3" stroke="currentColor" opacity={0.1} vertical={false} />
+              <XAxis dataKey="label" tickLine={false} axisLine={false} tick={{ fontSize: 11 }} dy={6} />
+              <YAxis yAxisId="left" tickFormatter={fmtAxis} tickLine={false} axisLine={false} width={48} tick={{ fontSize: 11 }} />
+              <YAxis yAxisId="right" orientation="right" tickFormatter={fmtAxis} tickLine={false} axisLine={false} width={44} tick={{ fontSize: 11 }} />
+              <Tooltip content={<ChartTooltip segment={effectiveSegment} is15d={is15d} />} cursor={{ fill: 'currentColor', opacity: 0.05 }} />
+              <Legend wrapperStyle={{ fontSize: 12 }} iconType="circle" iconSize={8} />
+              <ReferenceLine yAxisId="right" y={0} stroke="currentColor" strokeOpacity={0.35} />
+
+              {isCompare ? (
+                <>
+                  <Bar yAxisId="right" dataKey="balance" name="Cán cân Tổng thể" fill={COLORS.emerald} radius={[3, 3, 0, 0]} maxBarSize={30} />
+                  <Bar yAxisId="right" dataKey="balanceFdi" name="Cán cân FDI" fill={COLORS.amber} radius={[3, 3, 0, 0]} maxBarSize={30} />
+                  <Bar yAxisId="right" dataKey="balanceDomestic" name="Cán cân Trong nước" fill={COLORS.sky} radius={[3, 3, 0, 0]} maxBarSize={30} />
+                </>
+              ) : (
+                <>
+                  <Bar yAxisId="left" dataKey={keys.export} name="Xuất khẩu" fill={COLORS.emerald} radius={[3, 3, 0, 0]} maxBarSize={28} />
+                  <Bar yAxisId="left" dataKey={keys.import} name="Nhập khẩu" fill={COLORS.rose} radius={[3, 3, 0, 0]} maxBarSize={28} />
+                  <Line
+                    yAxisId="right"
+                    type="monotone"
+                    dataKey={keys.balance}
+                    name={is15d ? 'Xuất / Nhập siêu' : 'Cán cân'}
+                    stroke={COLORS.amber}
+                    strokeWidth={2.5}
+                    dot={{ r: 3 }}
+                  />
+                </>
+              )}
+            </ComposedChart>
+          </ResponsiveContainer>
+        </div>
       )}
-    </section>
-  )
-}
-
-/* ── Dạng Cột: cột đôi XK / NK (trục trái) + đường Cán cân (trục phải) ────── */
-function BarView({
-  points,
-  keys,
-  tooltip,
-}: {
-  points: AggPoint[]
-  keys: { export: string; import: string; balance: string }
-  tooltip: React.ReactElement
-}) {
-  return (
-    <div className="h-72 w-full sm:h-80">
-      <ResponsiveContainer width="100%" height="100%">
-        <ComposedChart data={points} margin={{ top: 8, right: 0, left: 0, bottom: 0 }}>
-          <CartesianGrid strokeDasharray="3 3" stroke="currentColor" opacity={0.12} vertical={false} />
-          <XAxis dataKey="label" tickLine={false} axisLine={false} tick={{ fontSize: 11 }} dy={6} />
-          <YAxis yAxisId="left" tickFormatter={fmtAxis} tickLine={false} axisLine={false} width={48} tick={{ fontSize: 11 }} />
-          <YAxis yAxisId="right" orientation="right" tickFormatter={fmtAxis} tickLine={false} axisLine={false} width={44} tick={{ fontSize: 11 }} />
-          <Tooltip content={tooltip} cursor={{ fill: 'currentColor', opacity: 0.06 }} />
-          <Legend wrapperStyle={{ fontSize: 12 }} iconType="circle" iconSize={8} />
-          <ReferenceLine yAxisId="right" y={0} stroke="currentColor" strokeOpacity={0.45} />
-          <Bar yAxisId="left" dataKey={keys.export} name="Xuất khẩu" fill={COLORS.emerald} radius={[3, 3, 0, 0]} barSize={26} />
-          <Bar yAxisId="left" dataKey={keys.import} name="Nhập khẩu" fill={COLORS.rose} radius={[3, 3, 0, 0]} barSize={26} />
-          <Line yAxisId="right" type="monotone" dataKey={keys.balance} name="Cán cân" stroke={COLORS.amber} strokeWidth={2} dot={{ r: 2.5 }} />
-        </ComposedChart>
-      </ResponsiveContainer>
-    </div>
-  )
-}
-
-/* ── Dạng Đường: đường XK / NK (trục trái) + vùng Cán cân âm dương (trục phải) ── */
-function LineView({
-  points,
-  keys,
-  isCompare,
-  tooltip,
-}: {
-  points: AggPoint[]
-  keys: { export: string; import: string; balance: string }
-  isCompare: boolean
-  tooltip: React.ReactElement
-}) {
-  const wrapperRef = useRef<HTMLDivElement>(null)
-  const [plotH, setPlotH] = useState(280)
-  const posFill = 'rgba(16, 185, 129, 0.28)'
-  const negFill = 'rgba(244, 63, 94, 0.22)'
-
-  // Đo chiều cao vùng vẽ = chiều cao container − marginTop (8px)
-  useLayoutEffect(() => {
-    const el = wrapperRef.current
-    if (!el) return
-    const update = () => setPlotH(Math.max(60, el.clientHeight - 8))
-    update()
-    const ro = new ResizeObserver(update)
-    ro.observe(el)
-    return () => ro.disconnect()
-  }, [])
-
-  const domain = useMemo(() => balanceDomain(points, isCompare), [points, isCompare])
-  const [dmin, dmax] = domain
-  // Vị trí pixel của trục 0 trong vùng vẽ (scale tuyến tính với domain tường minh)
-  const zeroY = (plotH * (dmax - 0)) / (dmax - dmin)
-  const posH = Math.max(0, Math.min(plotH, zeroY))
-  const negH = Math.max(0, plotH - posH)
-
-  return (
-    <div ref={wrapperRef} className="h-72 w-full sm:h-80">
-      <ResponsiveContainer width="100%" height="100%">
-        <ComposedChart data={points} margin={{ top: 8, right: 0, left: 0, bottom: 0 }}>
-          <defs>
-            <clipPath id="tb-bal-pos">
-              <rect x={0} y={0} width="100%" height={posH} />
-            </clipPath>
-            <clipPath id="tb-bal-neg">
-              <rect x={0} y={posH} width="100%" height={negH} />
-            </clipPath>
-          </defs>
-          <CartesianGrid strokeDasharray="3 3" stroke="currentColor" opacity={0.12} vertical={false} />
-          <XAxis dataKey="label" tickLine={false} axisLine={false} tick={{ fontSize: 11 }} dy={6} />
-          <YAxis yAxisId="left" tickFormatter={fmtAxis} tickLine={false} axisLine={false} width={48} tick={{ fontSize: 11 }} />
-          <YAxis
-            yAxisId="right"
-            orientation="right"
-            domain={domain}
-            padding={{ top: 0, bottom: 0 }}
-            tickFormatter={fmtAxis}
-            tickLine={false}
-            axisLine={false}
-            width={44}
-            tick={{ fontSize: 11 }}
-          />
-          <Tooltip content={tooltip} cursor={{ stroke: 'currentColor', strokeDasharray: '3 3', opacity: 0.35 }} />
-          <Legend wrapperStyle={{ fontSize: 12 }} iconType="circle" iconSize={8} />
-          <ReferenceLine yAxisId="right" y={0} stroke="currentColor" strokeOpacity={0.45} strokeDasharray="4 4" />
-
-          {isCompare ? (
-            <>
-              {/* So sánh: 3 vùng cán cân của 3 khối (baseValue=0 → fill về đúng trục 0) */}
-              <Area yAxisId="right" type="monotone" dataKey="balance" name="Tổng thể" stroke={COLORS.emerald} strokeWidth={2} fill="rgba(16,185,129,0.18)" baseValue={0} dot={false} />
-              <Area yAxisId="right" type="monotone" dataKey="balanceFdi" name="FDI" stroke={COLORS.amber} strokeWidth={2} fill="rgba(245,158,11,0.16)" baseValue={0} dot={false} />
-              <Area yAxisId="right" type="monotone" dataKey="balanceDomestic" name="Trong nước" stroke={COLORS.sky} strokeWidth={2} fill="rgba(14,165,233,0.16)" baseValue={0} dot={false} />
-            </>
-          ) : (
-            <>
-              {/* Vùng cán cân âm dương quanh trục 0 (baseValue=0 + clipPath cắt 2 nửa) */}
-              <Area yAxisId="right" type="monotone" dataKey={keys.balance} stroke="none" fill={posFill} clipPath="url(#tb-bal-pos)" baseValue={0} dot={false} legendType="none" />
-              <Area yAxisId="right" type="monotone" dataKey={keys.balance} stroke="none" fill={negFill} clipPath="url(#tb-bal-neg)" baseValue={0} dot={false} legendType="none" />
-              <Line yAxisId="right" type="monotone" dataKey={keys.balance} name="Cán cân" stroke={COLORS.amber} strokeWidth={2} dot={{ r: 2.5 }} />
-              {/* Đường XK / NK trên trục trái */}
-              <Line yAxisId="left" type="monotone" dataKey={keys.export} name="Xuất khẩu" stroke={COLORS.emerald} strokeWidth={2} dot={{ r: 2.5 }} />
-              <Line yAxisId="left" type="monotone" dataKey={keys.import} name="Nhập khẩu" stroke={COLORS.rose} strokeWidth={2} dot={{ r: 2.5 }} />
-            </>
-          )}
-        </ComposedChart>
-      </ResponsiveContainer>
     </div>
   )
 }

@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 import { SiteHeader } from '@/components/site-header'
 import { CustomsTradeViewer } from '@/components/customs-trade-viewer'
-import { TradeBalanceChart, type TradeBalancePoint } from '@/components/TradeBalanceChart'
+import type { TradeBalancePoint } from '@/components/TradeBalanceChart'
 import snapshot from '@/data/customs_trade_snapshot.json'
 
 export const metadata: Metadata = {
@@ -32,11 +32,7 @@ export default function XuatNhapKhauPage() {
           </p>
         </div>
 
-        <TradeBalanceChart data={tradeBalance} />
-
-        <div className="h-4" />
-
-        <CustomsTradeViewer />
+        <CustomsTradeViewer tradeBalanceData={tradeBalance} />
 
         <p className="mt-6 text-[11px] leading-relaxed text-muted-foreground">
           Ghi chú: Số liệu thống kê sơ bộ theo kỳ báo cáo (SO_BO) — có thể thay đổi khi có số

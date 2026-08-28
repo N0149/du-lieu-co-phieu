@@ -1,26 +1,11 @@
 'use client'
 
 import { useEffect, useMemo, useState } from 'react'
-import { Search, Loader2, Inbox } from 'lucide-react'
+import { Search, Loader2, Inbox, LayoutGrid, ListFilter } from 'lucide-react'
 import { fmtInt } from '@/lib/format'
 import { cn } from '@/lib/utils'
-
-type TradeRow = {
-  period_type: string
-  period_date: string // YYYY-MM-DD
-  trade_type: string
-  status: string
-  dim_kind: string
-  name: string
-  unit: string | null
-  quantity: number | null
-  value_usd: number | null
-  quantity_acc: number | null
-  value_acc: number | null
-  code: string | null
-  category: string | null
-  dataset_category?: string
-}
+import { CustomsCommodityMatrix, type CustomsTradeRow } from './customs-commodity-matrix'
+import type { TradeBalancePoint } from './TradeBalanceChart'
 
 const PERIOD_LABEL: Record<string, string> = {
   THANG: 'Tháng',
@@ -39,7 +24,7 @@ const CATEGORY_LABEL: Record<string, string> = {
 
 const PAGE_SIZE = 50
 
-function fmtPeriod(r: TradeRow): string {
+function fmtPeriod(r: CustomsTradeRow): string {
   const [y, m] = r.period_date.split('-')
   if (r.period_type === 'QUY') {
     const q = Math.floor((Number(m) - 1) / 3) + 1
@@ -52,9 +37,16 @@ function fmtNum(v: number | null): string {
   return v == null ? '—' : fmtInt(v)
 }
 
-/** View giữ liệu thống kê XNK — fetch /api/customs-trade, lọc theo loại/kỳ/tìm kiếm. */
-export function CustomsTradeViewer() {
-  const [rows, setRows] = useState<TradeRow[] | null>(null)
+/** View giữ liệu thống kê XNK — fetch /api/customs-trade, hỗ trợ Ma trận so sánh & Danh sách chi tiết. */
+export function CustomsTradeViewer({
+  tradeBalanceData = [],
+}: {
+  tradeBalanceData?: TradeBalancePoint[]
+}) {
+  const [rows, setRows] = useState<CustomsTradeRow[] | null>(null)
+  const [viewMode, setViewMode] = useState<'matrix' | 'list'>('matrix')
+
+  // State cho chế độ Flat List
   const [tradeType, setTradeType] = useState<'ALL' | 'EXPORT' | 'IMPORT'>('ALL')
   const [category, setCategory] = useState('ALL')
   const [period, setPeriod] = useState('ALL')
@@ -65,10 +57,8 @@ export function CustomsTradeViewer() {
     let cancelled = false
     fetch('/api/customs-trade')
       .then((res) => (res.ok ? res.json() : null))
-      .then((data: { rows?: TradeRow[] } | TradeRow[] | null) => {
+      .then((data: { rows?: CustomsTradeRow[] } | CustomsTradeRow[] | null) => {
         if (cancelled) return
-        // Format mới: snapshot là object { generated_at, rows, trade_balance };
-        // fallback cho format cũ (mảng trực tiếp).
         const list = Array.isArray(data) ? data : data?.rows ?? []
         setRows(list)
       })
@@ -98,7 +88,6 @@ export function CustomsTradeViewer() {
     })
   }, [rows, tradeType, category, period, search])
 
-  // Phân trang — reset về trang 1 khi đổi bộ lọc
   useEffect(() => {
     setPage(1)
   }, [rows, tradeType, category, period, search])
@@ -124,167 +113,224 @@ export function CustomsTradeViewer() {
   const selectCls =
     'h-9 rounded-lg border border-border bg-background px-2.5 text-sm text-foreground outline-none focus:border-ring focus:ring-2 focus:ring-ring/40'
 
+  if (!rows) {
+    return (
+      <div className="flex h-64 items-center justify-center rounded-xl border border-border bg-card p-12 text-center text-sm text-muted-foreground">
+        <Loader2 className="mr-2 size-5 animate-spin text-primary" />
+        <span>Đang tải dữ liệu thống kê xuất nhập khẩu…</span>
+      </div>
+    )
+  }
+
   return (
     <div className="space-y-4">
-      {/* ── Bộ lọc ─────────────────────────────────────────────────────── */}
-      <div className="flex flex-col gap-2 rounded-lg border border-border bg-card p-3 sm:flex-row sm:items-center sm:gap-3">
-        <div className="flex items-center gap-1.5 rounded-lg border border-border bg-background px-2.5">
-          <Search className="size-4 shrink-0 text-muted-foreground" />
-          <input
-            value={search}
-            onChange={(e) => setSearch(e.target.value)}
-            placeholder="Tìm mặt hàng…"
-            className="h-9 w-full min-w-0 bg-transparent text-sm text-foreground outline-none placeholder:text-muted-foreground"
-          />
+      {/* ── CHUYỂN ĐỔI CHẾ ĐỘ XEM (VIEW MODE SWITCHER) ──────────────────────── */}
+      <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+        <div className="flex items-center gap-1 rounded-xl border border-border bg-card p-1 shadow-2xs">
+          <button
+            type="button"
+            onClick={() => setViewMode('matrix')}
+            className={cn(
+              'inline-flex items-center gap-1.5 rounded-lg px-3 py-1.5 text-xs font-semibold transition-all',
+              viewMode === 'matrix'
+                ? 'bg-primary text-primary-foreground shadow-xs'
+                : 'text-muted-foreground hover:text-foreground',
+            )}
+          >
+            <LayoutGrid className="size-3.5" />
+            <span>Ma trận So sánh theo Tháng</span>
+          </button>
+          <button
+            type="button"
+            onClick={() => setViewMode('list')}
+            className={cn(
+              'inline-flex items-center gap-1.5 rounded-lg px-3 py-1.5 text-xs font-semibold transition-all',
+              viewMode === 'list'
+                ? 'bg-primary text-primary-foreground shadow-xs'
+                : 'text-muted-foreground hover:text-foreground',
+            )}
+          >
+            <ListFilter className="size-3.5" />
+            <span>Bảng dữ liệu chi tiết (Flat List)</span>
+          </button>
         </div>
-        <select value={tradeType} onChange={(e) => setTradeType(e.target.value as typeof tradeType)} className={selectCls}>
-          <option value="ALL">Tất cả loại</option>
-          <option value="EXPORT">Xuất khẩu</option>
-          <option value="IMPORT">Nhập khẩu</option>
-        </select>
-        <select value={category} onChange={(e) => setCategory(e.target.value)} className={selectCls}>
-          <option value="ALL">Tất cả phân loại</option>
-          {Object.entries(CATEGORY_LABEL).map(([k, v]) => (
-            <option key={k} value={k}>
-              {v}
-            </option>
-          ))}
-        </select>
-        <select value={period} onChange={(e) => setPeriod(e.target.value)} className={selectCls}>
-          <option value="ALL">Tất cả kỳ</option>
-          {periodOptions.map((p) => {
-            const [ym, ty] = p.split('|')
-            const [y, m] = ym.split('-')
-            return (
-              <option key={p} value={p}>
-                {PERIOD_LABEL[ty] ?? ty} {m}/{y}
-              </option>
-            )
-          })}
-        </select>
+
+        <span className="text-xs text-muted-foreground">
+          Nguồn số liệu: Tổng cục Hải quan Việt Nam · Cập nhật mới nhất 2026
+        </span>
       </div>
 
-      {/* ── Tổng quan ──────────────────────────────────────────────────── */}
-      {rows && rows.length > 0 && (
-        <div className="grid grid-cols-1 gap-3 sm:grid-cols-3">
-          <SummaryCard label="Dòng dữ liệu" value={fmtInt(totals.count)} />
-          <SummaryCard label="Tổng Xuất khẩu (USD)" value={fmtInt(totals.xk)} tone="positive" />
-          <SummaryCard label="Tổng Nhập khẩu (USD)" value={fmtInt(totals.nk)} tone="negative" />
-        </div>
+      {/* ── CHẾ ĐỘ 1: MA TRẬN THEO THÁNG & BIỂU ĐỒ SO SÁNH (MẶC ĐỊNH) ────────── */}
+      {viewMode === 'matrix' && (
+        <CustomsCommodityMatrix rows={rows} tradeBalanceData={tradeBalanceData} />
       )}
 
-      {/* ── Bảng dữ liệu ───────────────────────────────────────────────── */}
-      <div className="overflow-hidden rounded-lg border border-border bg-card">
-        <div className="overflow-x-auto">
-          <table className="w-full border-collapse text-sm">
-            <thead>
-              <tr className="border-b border-border bg-secondary/60 text-left text-xs font-semibold uppercase tracking-wide text-muted-foreground">
-                <Th>Kỳ báo cáo</Th>
-                <Th>Loại</Th>
-                <Th>Mặt hàng</Th>
-                <Th>ĐVT</Th>
-                <Th right>Lượng</Th>
-                <Th right>Trị giá (USD)</Th>
-                <Th right>Lũy kế Lượng</Th>
-                <Th right>Lũy kế Trị giá (USD)</Th>
-              </tr>
-            </thead>
-            <tbody>
-              {!rows && (
-                <tr>
-                  <td colSpan={8} className="px-3 py-12 text-center text-sm text-muted-foreground">
-                    <Loader2 className="mx-auto size-5 animate-spin" />
-                    <span className="mt-2 inline-block">Đang tải dữ liệu thống kê...</span>
-                  </td>
-                </tr>
-              )}
-              {rows && filtered.length === 0 && (
-                <tr>
-                  <td colSpan={8} className="px-3 py-12 text-center text-sm text-muted-foreground">
-                    <Inbox className="mx-auto size-6" />
-                    <span className="mt-2 inline-block">Không có dữ liệu khớp bộ lọc.</span>
-                  </td>
-                </tr>
-              )}
-              {rows &&
-                visible.map((r, i) => (
-                  <tr
-                    key={`${r.period_date}-${r.trade_type}-${r.name}-${i}`}
-                    className={cn(
-                      'border-b border-border/70 transition-colors hover:bg-accent/50',
-                      i % 2 === 1 && 'bg-muted/40',
-                    )}
-                  >
-                    <td className="whitespace-nowrap px-3 py-2.5 font-mono text-xs text-foreground">
-                      {fmtPeriod(r)}
-                    </td>
-                    <td className="px-3 py-2.5">
-                      <span
+      {/* ── CHẾ ĐỘ 2: BẢNG DỮ LIỆU CHI TIẾT (FLAT LIST) ───────────────────────── */}
+      {viewMode === 'list' && (
+        <div className="space-y-4">
+          {/* Bộ lọc */}
+          <div className="flex flex-col gap-2 rounded-xl border border-border bg-card p-3 shadow-xs sm:flex-row sm:items-center sm:gap-3">
+            <div className="flex flex-1 items-center gap-1.5 rounded-lg border border-border bg-background px-2.5">
+              <Search className="size-4 shrink-0 text-muted-foreground" />
+              <input
+                value={search}
+                onChange={(e) => setSearch(e.target.value)}
+                placeholder="Tìm mặt hàng…"
+                className="h-9 w-full min-w-0 bg-transparent text-sm text-foreground outline-none placeholder:text-muted-foreground"
+              />
+            </div>
+            <select
+              value={tradeType}
+              onChange={(e) => setTradeType(e.target.value as typeof tradeType)}
+              className={selectCls}
+            >
+              <option value="ALL">Tất cả loại</option>
+              <option value="EXPORT">Xuất khẩu</option>
+              <option value="IMPORT">Nhập khẩu</option>
+            </select>
+            <select
+              value={category}
+              onChange={(e) => setCategory(e.target.value)}
+              className={selectCls}
+            >
+              <option value="ALL">Tất cả phân loại</option>
+              {Object.entries(CATEGORY_LABEL).map(([k, v]) => (
+                <option key={k} value={k}>
+                  {v}
+                </option>
+              ))}
+            </select>
+            <select
+              value={period}
+              onChange={(e) => setPeriod(e.target.value)}
+              className={selectCls}
+            >
+              <option value="ALL">Tất cả kỳ</option>
+              {periodOptions.map((p) => {
+                const [ym, ty] = p.split('|')
+                const [y, m] = ym.split('-')
+                return (
+                  <option key={p} value={p}>
+                    {PERIOD_LABEL[ty] ?? ty} {m}/{y}
+                  </option>
+                )
+              })}
+            </select>
+          </div>
+
+          {/* Tổng quan */}
+          <div className="grid grid-cols-1 gap-3 sm:grid-cols-3">
+            <SummaryCard label="Dòng dữ liệu" value={fmtInt(totals.count)} />
+            <SummaryCard label="Tổng Xuất khẩu (USD)" value={fmtInt(totals.xk)} tone="positive" />
+            <SummaryCard label="Tổng Nhập khẩu (USD)" value={fmtInt(totals.nk)} tone="negative" />
+          </div>
+
+          {/* Bảng dữ liệu */}
+          <div className="overflow-hidden rounded-xl border border-border bg-card shadow-xs">
+            <div className="overflow-x-auto">
+              <table className="w-full border-collapse text-sm">
+                <thead>
+                  <tr className="border-b border-border bg-secondary/60 text-left text-xs font-semibold uppercase tracking-wide text-muted-foreground">
+                    <Th>Kỳ báo cáo</Th>
+                    <Th>Loại</Th>
+                    <Th>Mặt hàng</Th>
+                    <Th>ĐVT</Th>
+                    <Th right>Lượng</Th>
+                    <Th right>Trị giá (USD)</Th>
+                    <Th right>Lũy kế Lượng</Th>
+                    <Th right>Lũy kế Trị giá (USD)</Th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {filtered.length === 0 ? (
+                    <tr>
+                      <td colSpan={8} className="px-3 py-12 text-center text-sm text-muted-foreground">
+                        <Inbox className="mx-auto size-6" />
+                        <span className="mt-2 inline-block">Không có dữ liệu khớp bộ lọc.</span>
+                      </td>
+                    </tr>
+                  ) : (
+                    visible.map((r, i) => (
+                      <tr
+                        key={`${r.period_date}-${r.trade_type}-${r.name}-${i}`}
                         className={cn(
-                          'inline-block rounded px-1.5 py-0.5 text-[11px] font-semibold',
-                          r.trade_type === 'EXPORT'
-                            ? 'bg-positive-muted text-positive'
-                            : 'bg-secondary text-foreground',
+                          'border-b border-border/70 transition-colors hover:bg-accent/50',
+                          i % 2 === 1 && 'bg-muted/40',
                         )}
                       >
-                        {r.trade_type === 'EXPORT' ? 'XK' : 'NK'}
-                      </span>
-                    </td>
-                    <td className="px-3 py-2.5 text-foreground">{r.name}</td>
-                    <td className="px-3 py-2.5 text-xs text-muted-foreground">{r.unit ?? '—'}</td>
-                    <td className="px-3 py-2.5 text-right font-mono tabular-nums text-foreground">
-                      {fmtNum(r.quantity)}
-                    </td>
-                    <td className="px-3 py-2.5 text-right font-mono tabular-nums text-foreground">
-                      {fmtNum(r.value_usd)}
-                    </td>
-                    <td className="px-3 py-2.5 text-right font-mono tabular-nums text-foreground">
-                      {fmtNum(r.quantity_acc)}
-                    </td>
-                    <td className="px-3 py-2.5 text-right font-mono tabular-nums text-foreground">
-                      {fmtNum(r.value_acc)}
-                    </td>
-                  </tr>
-                ))}
-            </tbody>
-          </table>
-        </div>
-      </div>
-
-      {/* ── Phân trang ─────────────────────────────────────────────────── */}
-      {rows && filtered.length > 0 && (
-        <div className="flex flex-col gap-2 rounded-lg border border-border bg-card px-3 py-2.5 text-xs text-muted-foreground sm:flex-row sm:items-center sm:justify-between">
-          <span>
-            Hiển thị {(safePage - 1) * PAGE_SIZE + 1}–
-            {Math.min(safePage * PAGE_SIZE, filtered.length)} trên {fmtInt(filtered.length)} dòng
-          </span>
-          <div className="flex items-center gap-2">
-            <button
-              type="button"
-              onClick={() => setPage((p) => Math.max(1, p - 1))}
-              disabled={safePage === 1}
-              className={cn(
-                'rounded-md border border-border px-2.5 py-1 font-medium transition-colors hover:text-foreground',
-                safePage === 1 && 'cursor-not-allowed opacity-40',
-              )}
-            >
-              ← Trước
-            </button>
-            <span className="font-medium text-foreground">
-              Trang {safePage}/{pageCount}
-            </span>
-            <button
-              type="button"
-              onClick={() => setPage((p) => Math.min(pageCount, p + 1))}
-              disabled={safePage === pageCount}
-              className={cn(
-                'rounded-md border border-border px-2.5 py-1 font-medium transition-colors hover:text-foreground',
-                safePage === pageCount && 'cursor-not-allowed opacity-40',
-              )}
-            >
-              Sau →
-            </button>
+                        <td className="whitespace-nowrap px-3 py-2.5 font-mono text-xs text-foreground">
+                          {fmtPeriod(r)}
+                        </td>
+                        <td className="px-3 py-2.5">
+                          <span
+                            className={cn(
+                              'inline-block rounded px-1.5 py-0.5 text-[11px] font-semibold',
+                              r.trade_type === 'EXPORT'
+                                ? 'bg-positive-muted text-positive'
+                                : 'bg-secondary text-foreground',
+                            )}
+                          >
+                            {r.trade_type === 'EXPORT' ? 'XK' : 'NK'}
+                          </span>
+                        </td>
+                        <td className="px-3 py-2.5 text-foreground">{r.name}</td>
+                        <td className="px-3 py-2.5 text-xs text-muted-foreground">{r.unit ?? '—'}</td>
+                        <td className="px-3 py-2.5 text-right font-mono tabular-nums text-foreground">
+                          {fmtNum(r.quantity)}
+                        </td>
+                        <td className="px-3 py-2.5 text-right font-mono tabular-nums text-foreground">
+                          {fmtNum(r.value_usd)}
+                        </td>
+                        <td className="px-3 py-2.5 text-right font-mono tabular-nums text-foreground">
+                          {fmtNum(r.quantity_acc)}
+                        </td>
+                        <td className="px-3 py-2.5 text-right font-mono tabular-nums text-foreground">
+                          {fmtNum(r.value_acc)}
+                        </td>
+                      </tr>
+                    ))
+                  )}
+                </tbody>
+              </table>
+            </div>
           </div>
+
+          {/* Phân trang */}
+          {filtered.length > 0 && (
+            <div className="flex flex-col gap-2 rounded-xl border border-border bg-card px-4 py-2.5 text-xs text-muted-foreground sm:flex-row sm:items-center sm:justify-between">
+              <span>
+                Hiển thị {(safePage - 1) * PAGE_SIZE + 1}–
+                {Math.min(safePage * PAGE_SIZE, filtered.length)} trên {fmtInt(filtered.length)} dòng
+              </span>
+              <div className="flex items-center gap-2">
+                <button
+                  type="button"
+                  onClick={() => setPage((p) => Math.max(1, p - 1))}
+                  disabled={safePage === 1}
+                  className={cn(
+                    'rounded-md border border-border px-2.5 py-1 font-medium transition-colors hover:text-foreground',
+                    safePage === 1 && 'cursor-not-allowed opacity-40',
+                  )}
+                >
+                  ← Trước
+                </button>
+                <span className="font-medium text-foreground">
+                  Trang {safePage}/{pageCount}
+                </span>
+                <button
+                  type="button"
+                  onClick={() => setPage((p) => Math.min(pageCount, p + 1))}
+                  disabled={safePage === pageCount}
+                  className={cn(
+                    'rounded-md border border-border px-2.5 py-1 font-medium transition-colors hover:text-foreground',
+                    safePage === pageCount && 'cursor-not-allowed opacity-40',
+                  )}
+                >
+                  Sau →
+                </button>
+              </div>
+            </div>
+          )}
         </div>
       )}
     </div>
@@ -313,7 +359,7 @@ function SummaryCard({
   tone?: 'positive' | 'negative'
 }) {
   return (
-    <div className="rounded-lg border border-border bg-card px-4 py-3">
+    <div className="rounded-xl border border-border bg-card px-4 py-3 shadow-2xs">
       <p className="text-xs text-muted-foreground">{label}</p>
       <p
         className={cn(

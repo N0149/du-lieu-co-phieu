@@ -625,9 +625,9 @@ def detect_status(*texts: str) -> str:
 #   2026-T8K1-xuatkhau.pdf                → ('KY_1', 2026-08-01)
 #   nhapkhautheophuongthucvantai-Q1.pdf   → ('QUY', 2026-01-01) [năm lấy từ nội dung]
 PERIOD_RE = re.compile(
-    r"""(?:(?P<year>20\d{2})[\s\-_.]*)?
+    r"""(?:(?P<year>20\d{2})[^\d]*)?
         (?:
-            (?:t(?:h(?:ang|áng)?)?[\s\-_.]*)?
+            (?:t(?:h(?:ang|áng)?)?[\s\-_.]*)
             (?P<month>\d{1,2})
             (?:[\s\-_.]*(?:k(?:y|ỳ)?[\s\-_.]*)?(?P<ky>[12]))?
             |

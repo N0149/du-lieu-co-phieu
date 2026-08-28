@@ -178,6 +178,54 @@ def do_export_json(args: argparse.Namespace) -> None:
     # Tách ma trận (Mặt hàng × Thị trường) ra khỏi bảng chính để web không phình to
     rows = [r for r in all_rows if r.dataset_category != "matrix"]
     matrix_rows = [r for r in all_rows if r.dataset_category == "matrix"]
+
+    # Điền khuyết các dòng THANG cho từng mặt hàng từ KY_1 + KY_2 (nếu thiếu file tháng)
+    thang_keys = {(r.period_date.isoformat(), r.trade_type, r.dataset_category, r.name) for r in rows if r.period_type == "THANG"}
+    k1_rows = {(r.period_date.isoformat(), r.trade_type, r.dataset_category, r.name): r for r in rows if r.period_type == "KY_1"}
+    k2_rows = {(r.period_date.isoformat(), r.trade_type, r.dataset_category, r.name): r for r in rows if r.period_type == "KY_2"}
+
+    synthesized_thang: list[parser_mod.ParsedRow] = []
+    all_k_keys = set(k1_rows.keys()) | set(k2_rows.keys())
+    for key in all_k_keys:
+        if key not in thang_keys:
+            k1 = k1_rows.get(key)
+            k2 = k2_rows.get(key)
+            base = k2 or k1
+            if not base:
+                continue
+            qty_sum = None
+            if (k1 and k1.quantity is not None) or (k2 and k2.quantity is not None):
+                qty_sum = (k1.quantity if k1 and k1.quantity else 0.0) + (k2.quantity if k2 and k2.quantity else 0.0)
+            val_sum = None
+            if (k1 and k1.value_usd is not None) or (k2 and k2.value_usd is not None):
+                val_sum = (k1.value_usd if k1 and k1.value_usd else 0.0) + (k2.value_usd if k2 and k2.value_usd else 0.0)
+
+            synth_row = parser_mod.ParsedRow(
+                period_type="THANG",
+                period_date=base.period_date,
+                trade_type=base.trade_type,
+                status=base.status,
+                dim_kind=base.dim_kind,
+                name=base.name,
+                raw_name=base.raw_name,
+                unit=base.unit,
+                quantity=qty_sum,
+                value_usd=val_sum,
+                quantity_acc=k2.quantity_acc if k2 else (k1.quantity_acc if k1 else None),
+                value_acc=k2.value_acc if k2 else (k1.value_acc if k1 else None),
+                code=base.code,
+                category=base.category,
+                iso_code=base.iso_code,
+                continent=base.continent,
+                source_file=base.source_file,
+                dataset_category=base.dataset_category,
+            )
+            synthesized_thang.append(synth_row)
+
+    if synthesized_thang:
+        log.info("Đã bổ sung %d dòng THANG từ KY_1 + KY_2.", len(synthesized_thang))
+        rows.extend(synthesized_thang)
+
     if args.limit:
         rows = rows[: args.limit]
         matrix_rows = matrix_rows[: args.limit]

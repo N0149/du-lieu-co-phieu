@@ -91,6 +91,32 @@ def build_trade_balance(
             else:
                 rec["import"] = val
 
+    # Bổ sung/điền khuyết số liệu THANG từ KY_1 + KY_2 nếu file tháng bị thiếu 1 hoặc 2 chiều
+    months = {k[1] for k in periods}
+    for m in months:
+        thang_key = ("THANG", m)
+        k1 = periods.get(("KY_1", m), {})
+        k2 = periods.get(("KY_2", m), {})
+        if thang_key in periods:
+            rec = periods[thang_key]
+            if rec["export"] == 0.0 and (k1.get("export", 0) or k2.get("export", 0)):
+                rec["export"] = round(k1.get("export", 0) + k2.get("export", 0), 2)
+            if rec["import"] == 0.0 and (k1.get("import", 0) or k2.get("import", 0)):
+                rec["import"] = round(k1.get("import", 0) + k2.get("import", 0), 2)
+            if rec["export_fdi"] == 0.0 and (k1.get("export_fdi", 0) or k2.get("export_fdi", 0)):
+                rec["export_fdi"] = round(k1.get("export_fdi", 0) + k2.get("export_fdi", 0), 2)
+            if rec["import_fdi"] == 0.0 and (k1.get("import_fdi", 0) or k2.get("import_fdi", 0)):
+                rec["import_fdi"] = round(k1.get("import_fdi", 0) + k2.get("import_fdi", 0), 2)
+        elif k1 or k2:
+            periods[thang_key] = {
+                "period_type": "THANG",
+                "period_date": m,
+                "export": round(k1.get("export", 0) + k2.get("export", 0), 2),
+                "import": round(k1.get("import", 0) + k2.get("import", 0), 2),
+                "export_fdi": round(k1.get("export_fdi", 0) + k2.get("export_fdi", 0), 2),
+                "import_fdi": round(k1.get("import_fdi", 0) + k2.get("import_fdi", 0), 2),
+            }
+
     series: list[dict[str, Any]] = []
     for key in sorted(periods, key=lambda k: (k[1], PERIOD_RANK.get(k[0], 99))):
         rec = periods[key]
