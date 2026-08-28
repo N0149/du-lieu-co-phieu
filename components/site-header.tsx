@@ -3,10 +3,11 @@
 import { useState } from 'react'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
-import { Menu, TrendingUp, X } from 'lucide-react'
+import { Menu, TrendingUp, X, Sparkles } from 'lucide-react'
 import { StockSearch } from '@/components/stock-search'
 import { ThemeToggle } from '@/components/theme-toggle'
 import { TrialBadge } from '@/components/TrialBadge'
+import { AiAssistantModal } from '@/components/AiAssistantModal'
 import { cn } from '@/lib/utils'
 
 const NAV = [
@@ -19,6 +20,7 @@ const NAV = [
 export function SiteHeader() {
   const pathname = usePathname()
   const [menuOpen, setMenuOpen] = useState(false)
+  const [aiModalOpen, setAiModalOpen] = useState(false)
 
   return (
     <header className="sticky top-0 z-40 border-b border-border bg-background/85 backdrop-blur supports-[backdrop-filter]:bg-background/70">
@@ -70,6 +72,16 @@ export function SiteHeader() {
         </nav>
 
         <div className="ml-auto flex items-center gap-2 lg:ml-0">
+          <button
+            type="button"
+            onClick={() => setAiModalOpen(true)}
+            className="inline-flex items-center gap-1.5 rounded-md border border-primary/40 bg-primary/10 px-2.5 py-1.5 text-xs font-semibold text-primary transition-colors hover:bg-primary/20"
+            title="Mở Trợ lý AI Phân Tích Chuyên Sâu"
+          >
+            <Sparkles className="size-3.5" />
+            <span className="hidden sm:inline">Hỏi AI</span>
+            <span className="sm:hidden">AI</span>
+          </button>
           <TrialBadge />
           <ThemeToggle />
           {/* Hamburger — hiển thị trên mobile/tablet (< lg) khi nav desktop bị ẩn */}
@@ -89,6 +101,22 @@ export function SiteHeader() {
       {menuOpen && (
         <nav className="border-t border-border bg-background/95 px-4 py-2 backdrop-blur lg:hidden">
           <div className="flex flex-col gap-1">
+            <button
+              type="button"
+              onClick={() => {
+                setMenuOpen(false)
+                setAiModalOpen(true)
+              }}
+              className="flex items-center justify-between rounded-md bg-primary/10 px-3 py-2.5 text-sm font-semibold text-primary transition-colors hover:bg-primary/20"
+            >
+              <span className="flex items-center gap-2">
+                <Sparkles className="size-4" />
+                Trợ lý AI Phân Tích Cổ Phiếu
+              </span>
+              <span className="rounded bg-primary/20 px-1.5 py-0.5 text-[10px] font-medium text-primary uppercase">
+                Mới
+              </span>
+            </button>
             {NAV.map((item) => {
               const active =
                 item.href === '/' ? pathname === '/' : pathname.startsWith(item.href)
@@ -117,6 +145,11 @@ export function SiteHeader() {
       <div className="border-t border-border px-4 py-2 md:hidden">
         <StockSearch />
       </div>
+
+      <AiAssistantModal
+        open={aiModalOpen}
+        onClose={() => setAiModalOpen(false)}
+      />
     </header>
   )
 }
