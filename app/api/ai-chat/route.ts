@@ -143,13 +143,14 @@ export async function POST(req: NextRequest) {
       )
     }
 
-    // 4. Kiểm tra API Key Gemini
-    const apiKey = process.env.GEMINI_API_KEY
+    // 4. Kiểm tra API Key Gemini (ưu tiên GEMINI_API_KEY, fallback GOOGLE_DRIVE_API_KEY)
+    const apiKey = process.env.GEMINI_API_KEY || process.env.GOOGLE_DRIVE_API_KEY
     if (!apiKey) {
       return Response.json(
         {
           error: 'MISSING_API_KEY',
-          message: 'Chưa cấu hình GEMINI_API_KEY trong biến môi trường server.',
+          message:
+            'Chưa cấu hình GEMINI_API_KEY trong biến môi trường server (Vercel / .env.local). Bạn có thể tạo API key miễn phí tại https://aistudio.google.com/app/apikey',
         },
         { status: 500 }
       )
