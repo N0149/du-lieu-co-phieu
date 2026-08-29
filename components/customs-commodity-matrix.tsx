@@ -1,6 +1,6 @@
 'use client'
 
-import { useMemo, useState, useCallback } from 'react'
+import { useMemo, useState, useCallback, useEffect } from 'react'
 import {
   BarChart,
   Bar,
@@ -25,9 +25,11 @@ import {
   BarChart2,
   TrendingUp,
   Scale,
+  Building2,
 } from 'lucide-react'
 import { cn } from '@/lib/utils'
 import { fmtInt, fmtNum } from '@/lib/format'
+import { getStocksForCustomsCommodity } from '@/lib/tier-a-stocks'
 import { TradeBalanceChart, type TradeBalancePoint } from './TradeBalanceChart'
 
 export type CustomsTradeRow = {
@@ -111,9 +113,13 @@ function calcPctChange(current: number | null | undefined, previous: number | nu
 export function CustomsCommodityMatrix({
   rows,
   tradeBalanceData = [],
+  initialSearch = '',
+  onSwitchToTierA,
 }: {
   rows: CustomsTradeRow[]
   tradeBalanceData?: TradeBalancePoint[]
+  initialSearch?: string
+  onSwitchToTierA?: () => void
 }) {
   // Bộ lọc chính
   const [tradeType, setTradeType] = useState<TradeType>('EXPORT')
@@ -121,7 +127,14 @@ export function CustomsCommodityMatrix({
   const [datasetCategory, setDatasetCategory] = useState<DatasetCategory>('main')
   const [valueType, setValueType] = useState<ValueDisplayType>('value')
   const [selectedCategory, setSelectedCategory] = useState<string>('ALL')
-  const [search, setSearch] = useState<string>('')
+  const [search, setSearch] = useState<string>(initialSearch)
+
+  // Cập nhật khi initialSearch thay đổi từ bên ngoài (ví dụ bấm từ Tier A card)
+  useEffect(() => {
+    if (initialSearch) {
+      setSearch(initialSearch)
+    }
+  }, [initialSearch])
 
   // Trạng thái biểu đồ DUY NHẤT (Chuyển đổi giữa Theo Mặt Hàng & Cán Cân)
   const [chartView, setChartView] = useState<ChartView>('commodity')
@@ -1138,6 +1151,24 @@ export function CustomsCommodityMatrix({
                             />
                           )}
                           <span className="truncate">{row.name}</span>
+                          {(() => {
+                            const matched = getStocksForCustomsCommodity(row.name)
+                            if (matched.length === 0) return null
+                            return (
+                              <button
+                                type="button"
+                                onClick={(e) => {
+                                  e.stopPropagation()
+                                  onSwitchToTierA?.()
+                                }}
+                                className="ml-1 inline-flex shrink-0 items-center gap-0.5 rounded border border-primary/20 bg-primary/10 px-1.5 py-0.5 text-[10px] font-semibold text-primary transition-colors hover:bg-primary/20"
+                                title={`Có ${matched.length} mã niêm yết Tier A liên quan: ${matched.map((s) => s.ticker).join(', ')}. Bấm để xem phân loại.`}
+                              >
+                                <Building2 className="size-2.5" />
+                                <span>{matched.length} mã CP</span>
+                              </button>
+                            )
+                          })()}
                         </div>
                       </td>
 

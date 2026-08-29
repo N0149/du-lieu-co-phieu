@@ -1,10 +1,11 @@
 'use client'
 
 import { useEffect, useMemo, useState } from 'react'
-import { Search, Loader2, Inbox, LayoutGrid, ListFilter } from 'lucide-react'
+import { Search, Loader2, Inbox, LayoutGrid, ListFilter, Sparkles, Building2 } from 'lucide-react'
 import { fmtInt } from '@/lib/format'
 import { cn } from '@/lib/utils'
 import { CustomsCommodityMatrix, type CustomsTradeRow } from './customs-commodity-matrix'
+import { TierAStocksViewer } from './tier-a-stocks-viewer'
 import type { TradeBalancePoint } from './TradeBalanceChart'
 
 const PERIOD_LABEL: Record<string, string> = {
@@ -37,14 +38,17 @@ function fmtNum(v: number | null): string {
   return v == null ? '—' : fmtInt(v)
 }
 
-/** View giữ liệu thống kê XNK — fetch /api/customs-trade, hỗ trợ Ma trận so sánh & Danh sách chi tiết. */
+/** View giữ liệu thống kê XNK — fetch /api/customs-trade, hỗ trợ Ma trận so sánh, 57 mã Tier A & Danh sách chi tiết. */
 export function CustomsTradeViewer({
   tradeBalanceData = [],
+  defaultViewMode = 'matrix',
 }: {
   tradeBalanceData?: TradeBalancePoint[]
+  defaultViewMode?: 'matrix' | 'tier_a' | 'list'
 }) {
   const [rows, setRows] = useState<CustomsTradeRow[] | null>(null)
-  const [viewMode, setViewMode] = useState<'matrix' | 'list'>('matrix')
+  const [viewMode, setViewMode] = useState<'matrix' | 'tier_a' | 'list'>(defaultViewMode)
+  const [selectedCommodityFilter, setSelectedCommodityFilter] = useState<string | null>(null)
 
   // State cho chế độ Flat List
   const [tradeType, setTradeType] = useState<'ALL' | 'EXPORT' | 'IMPORT'>('ALL')
@@ -113,6 +117,11 @@ export function CustomsTradeViewer({
   const selectCls =
     'h-9 rounded-lg border border-border bg-background px-2.5 text-sm text-foreground outline-none focus:border-ring focus:ring-2 focus:ring-ring/40'
 
+  const handleSelectCommodityFromTierA = (commodityName: string) => {
+    setSelectedCommodityFilter(commodityName)
+    setViewMode('matrix')
+  }
+
   if (!rows) {
     return (
       <div className="flex h-64 items-center justify-center rounded-xl border border-border bg-card p-12 text-center text-sm text-muted-foreground">
@@ -126,7 +135,7 @@ export function CustomsTradeViewer({
     <div className="space-y-4">
       {/* ── CHUYỂN ĐỔI CHẾ ĐỘ XEM (VIEW MODE SWITCHER) ──────────────────────── */}
       <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
-        <div className="flex items-center gap-1 rounded-xl border border-border bg-card p-1 shadow-2xs">
+        <div className="flex flex-wrap items-center gap-1 rounded-xl border border-border bg-card p-1 shadow-2xs">
           <button
             type="button"
             onClick={() => setViewMode('matrix')}
@@ -138,8 +147,26 @@ export function CustomsTradeViewer({
             )}
           >
             <LayoutGrid className="size-3.5" />
-            <span>Ma trận So sánh theo Tháng</span>
+            <span>Ma trận XNK (TCHQ)</span>
           </button>
+
+          <button
+            type="button"
+            onClick={() => setViewMode('tier_a')}
+            className={cn(
+              'inline-flex items-center gap-1.5 rounded-lg px-3 py-1.5 text-xs font-semibold transition-all',
+              viewMode === 'tier_a'
+                ? 'bg-primary text-primary-foreground shadow-xs'
+                : 'text-muted-foreground hover:text-foreground',
+            )}
+          >
+            <Building2 className="size-3.5" />
+            <span>57 Mã Niêm Yết Theo Ngành XNK (Tier A)</span>
+            <span className="rounded bg-primary/20 px-1.5 py-0.2 text-[10px] font-bold text-primary dark:bg-white/20 dark:text-white">
+              57+
+            </span>
+          </button>
+
           <button
             type="button"
             onClick={() => setViewMode('list')}
@@ -156,16 +183,26 @@ export function CustomsTradeViewer({
         </div>
 
         <span className="text-xs text-muted-foreground">
-          Nguồn số liệu: Tổng cục Hải quan Việt Nam · Cập nhật mới nhất 2026
+          Nguồn số liệu: Tổng cục Hải quan Việt Nam · Đối chiếu 2 đường độc lập
         </span>
       </div>
 
       {/* ── CHẾ ĐỘ 1: MA TRẬN THEO THÁNG & BIỂU ĐỒ SO SÁNH (MẶC ĐỊNH) ────────── */}
       {viewMode === 'matrix' && (
-        <CustomsCommodityMatrix rows={rows} tradeBalanceData={tradeBalanceData} />
+        <CustomsCommodityMatrix
+          rows={rows}
+          tradeBalanceData={tradeBalanceData}
+          initialSearch={selectedCommodityFilter ?? undefined}
+          onSwitchToTierA={() => setViewMode('tier_a')}
+        />
       )}
 
-      {/* ── CHẾ ĐỘ 2: BẢNG DỮ LIỆU CHI TIẾT (FLAT LIST) ───────────────────────── */}
+      {/* ── CHẾ ĐỘ 2: 57 MÃ NIÊM YẾT THEO NGÀNH XNK (TIER A) ─────────────────── */}
+      {viewMode === 'tier_a' && (
+        <TierAStocksViewer onSelectCommodity={handleSelectCommodityFromTierA} />
+      )}
+
+      {/* ── CHẾ ĐỘ 3: BẢNG DỮ LIỆU CHI TIẾT (FLAT LIST) ───────────────────────── */}
       {viewMode === 'list' && (
         <div className="space-y-4">
           {/* Bộ lọc */}
@@ -207,169 +244,151 @@ export function CustomsTradeViewer({
             >
               <option value="ALL">Tất cả kỳ</option>
               {periodOptions.map((p) => {
-                const [ym, ty] = p.split('|')
+                const [ym, pt] = p.split('|')
                 const [y, m] = ym.split('-')
+                const lbl = `${PERIOD_LABEL[pt] ?? pt} ${m}/${y}`
                 return (
                   <option key={p} value={p}>
-                    {PERIOD_LABEL[ty] ?? ty} {m}/{y}
+                    {lbl}
                   </option>
                 )
               })}
             </select>
           </div>
 
-          {/* Tổng quan */}
-          <div className="grid grid-cols-1 gap-3 sm:grid-cols-3">
-            <SummaryCard label="Dòng dữ liệu" value={fmtInt(totals.count)} />
-            <SummaryCard label="Tổng Xuất khẩu (USD)" value={fmtInt(totals.xk)} tone="positive" />
-            <SummaryCard label="Tổng Nhập khẩu (USD)" value={fmtInt(totals.nk)} tone="negative" />
+          {/* KPI tóm tắt */}
+          <div className="grid grid-cols-1 gap-2.5 sm:grid-cols-3">
+            <div className="rounded-xl border border-border bg-card p-3 shadow-xs">
+              <div className="text-xs text-muted-foreground">Tổng XK (bộ lọc)</div>
+              <div className="mt-1 font-mono text-base font-semibold text-emerald-600 dark:text-emerald-400">
+                ${fmtNum(totals.xk)}
+              </div>
+            </div>
+            <div className="rounded-xl border border-border bg-card p-3 shadow-xs">
+              <div className="text-xs text-muted-foreground">Tổng NK (bộ lọc)</div>
+              <div className="mt-1 font-mono text-base font-semibold text-blue-600 dark:text-blue-400">
+                ${fmtNum(totals.nk)}
+              </div>
+            </div>
+            <div className="rounded-xl border border-border bg-card p-3 shadow-xs">
+              <div className="text-xs text-muted-foreground">Số dòng dữ liệu</div>
+              <div className="mt-1 font-mono text-base font-semibold text-foreground">
+                {fmtInt(totals.count)} dòng
+              </div>
+            </div>
           </div>
 
-          {/* Bảng dữ liệu */}
+          {/* Bảng dữ liệu Flat List */}
           <div className="overflow-hidden rounded-xl border border-border bg-card shadow-xs">
             <div className="overflow-x-auto">
-              <table className="w-full border-collapse text-sm">
-                <thead>
-                  <tr className="border-b border-border bg-secondary/60 text-left text-xs font-semibold uppercase tracking-wide text-muted-foreground">
-                    <Th>Kỳ báo cáo</Th>
-                    <Th>Loại</Th>
-                    <Th>Mặt hàng</Th>
-                    <Th>ĐVT</Th>
-                    <Th right>Lượng</Th>
-                    <Th right>Trị giá (USD)</Th>
-                    <Th right>Lũy kế Lượng</Th>
-                    <Th right>Lũy kế Trị giá (USD)</Th>
+              <table className="w-full text-left text-xs">
+                <thead className="border-b border-border bg-muted/50 text-[11px] uppercase tracking-wider text-muted-foreground">
+                  <tr>
+                    <th className="px-3 py-2.5">Kỳ báo cáo</th>
+                    <th className="px-3 py-2.5">Loại</th>
+                    <th className="px-3 py-2.5">Tên chỉ tiêu / Mặt hàng</th>
+                    <th className="px-3 py-2.5 text-center">ĐVT</th>
+                    <th className="px-3 py-2.5 text-right">Lượng kỳ</th>
+                    <th className="px-3 py-2.5 text-right">Trị giá kỳ (USD)</th>
+                    <th className="px-3 py-2.5 text-right">Trị giá LK (USD)</th>
+                    <th className="px-3 py-2.5 text-center">Trạng thái</th>
                   </tr>
                 </thead>
-                <tbody>
-                  {filtered.length === 0 ? (
+                <tbody className="divide-y divide-border">
+                  {visible.length === 0 ? (
                     <tr>
-                      <td colSpan={8} className="px-3 py-12 text-center text-sm text-muted-foreground">
-                        <Inbox className="mx-auto size-6" />
-                        <span className="mt-2 inline-block">Không có dữ liệu khớp bộ lọc.</span>
+                      <td colSpan={8} className="p-8 text-center text-muted-foreground">
+                        <Inbox className="mx-auto mb-2 size-6 text-muted-foreground/60" />
+                        Không có dữ liệu phù hợp với bộ lọc.
                       </td>
                     </tr>
                   ) : (
-                    visible.map((r, i) => (
-                      <tr
-                        key={`${r.period_date}-${r.trade_type}-${r.name}-${i}`}
-                        className={cn(
-                          'border-b border-border/70 transition-colors hover:bg-accent/50',
-                          i % 2 === 1 && 'bg-muted/40',
-                        )}
-                      >
-                        <td className="whitespace-nowrap px-3 py-2.5 font-mono text-xs text-foreground">
-                          {fmtPeriod(r)}
-                        </td>
-                        <td className="px-3 py-2.5">
-                          <span
-                            className={cn(
-                              'inline-block rounded px-1.5 py-0.5 text-[11px] font-semibold',
-                              r.trade_type === 'EXPORT'
-                                ? 'bg-positive-muted text-positive'
-                                : 'bg-secondary text-foreground',
-                            )}
-                          >
-                            {r.trade_type === 'EXPORT' ? 'XK' : 'NK'}
-                          </span>
-                        </td>
-                        <td className="px-3 py-2.5 text-foreground">{r.name}</td>
-                        <td className="px-3 py-2.5 text-xs text-muted-foreground">{r.unit ?? '—'}</td>
-                        <td className="px-3 py-2.5 text-right font-mono tabular-nums text-foreground">
-                          {fmtNum(r.quantity)}
-                        </td>
-                        <td className="px-3 py-2.5 text-right font-mono tabular-nums text-foreground">
-                          {fmtNum(r.value_usd)}
-                        </td>
-                        <td className="px-3 py-2.5 text-right font-mono tabular-nums text-foreground">
-                          {fmtNum(r.quantity_acc)}
-                        </td>
-                        <td className="px-3 py-2.5 text-right font-mono tabular-nums text-foreground">
-                          {fmtNum(r.value_acc)}
-                        </td>
-                      </tr>
-                    ))
+                    visible.map((r, i) => {
+                      const isXk = r.trade_type === 'EXPORT'
+                      return (
+                        <tr
+                          key={`${r.period_date}-${r.period_type}-${r.trade_type}-${r.name}-${i}`}
+                          className="hover:bg-muted/40"
+                        >
+                          <td className="px-3 py-2 font-mono whitespace-nowrap text-foreground">
+                            {fmtPeriod(r)}
+                          </td>
+                          <td className="px-3 py-2">
+                            <span
+                              className={cn(
+                                'rounded px-1.5 py-0.5 text-[10px] font-semibold',
+                                isXk
+                                  ? 'bg-emerald-500/10 text-emerald-600 dark:text-emerald-400'
+                                  : 'bg-blue-500/10 text-blue-600 dark:text-blue-400',
+                              )}
+                            >
+                              {isXk ? 'Xuất khẩu' : 'Nhập khẩu'}
+                            </span>
+                          </td>
+                          <td className="max-w-[260px] truncate px-3 py-2 font-medium text-foreground">
+                            {r.name}
+                          </td>
+                          <td className="px-3 py-2 text-center text-muted-foreground">
+                            {r.unit ?? '—'}
+                          </td>
+                          <td className="px-3 py-2 text-right font-mono text-foreground">
+                            {fmtNum(r.quantity)}
+                          </td>
+                          <td className="px-3 py-2 text-right font-mono font-medium text-foreground">
+                            {fmtNum(r.value_usd)}
+                          </td>
+                          <td className="px-3 py-2 text-right font-mono text-muted-foreground">
+                            {fmtNum(r.value_acc)}
+                          </td>
+                          <td className="px-3 py-2 text-center">
+                            <span
+                              className={cn(
+                                'rounded px-1.5 py-0.5 text-[10px]',
+                                r.status === 'CHINH_THUC'
+                                  ? 'bg-emerald-500/10 text-emerald-600 dark:text-emerald-400'
+                                  : 'bg-amber-500/10 text-amber-600 dark:text-amber-400',
+                              )}
+                            >
+                              {r.status === 'CHINH_THUC' ? 'Chính thức' : 'Sơ bộ'}
+                            </span>
+                          </td>
+                        </tr>
+                      )
+                    })
                   )}
                 </tbody>
               </table>
             </div>
-          </div>
 
-          {/* Phân trang */}
-          {filtered.length > 0 && (
-            <div className="flex flex-col gap-2 rounded-xl border border-border bg-card px-4 py-2.5 text-xs text-muted-foreground sm:flex-row sm:items-center sm:justify-between">
-              <span>
-                Hiển thị {(safePage - 1) * PAGE_SIZE + 1}–
-                {Math.min(safePage * PAGE_SIZE, filtered.length)} trên {fmtInt(filtered.length)} dòng
-              </span>
-              <div className="flex items-center gap-2">
-                <button
-                  type="button"
-                  onClick={() => setPage((p) => Math.max(1, p - 1))}
-                  disabled={safePage === 1}
-                  className={cn(
-                    'rounded-md border border-border px-2.5 py-1 font-medium transition-colors hover:text-foreground',
-                    safePage === 1 && 'cursor-not-allowed opacity-40',
-                  )}
-                >
-                  ← Trước
-                </button>
-                <span className="font-medium text-foreground">
-                  Trang {safePage}/{pageCount}
+            {/* Phân trang */}
+            {pageCount > 1 && (
+              <div className="flex items-center justify-between border-t border-border px-3 py-2 text-xs">
+                <span className="text-muted-foreground">
+                  Trang {safePage} / {pageCount} ({fmtInt(filtered.length)} dòng)
                 </span>
-                <button
-                  type="button"
-                  onClick={() => setPage((p) => Math.min(pageCount, p + 1))}
-                  disabled={safePage === pageCount}
-                  className={cn(
-                    'rounded-md border border-border px-2.5 py-1 font-medium transition-colors hover:text-foreground',
-                    safePage === pageCount && 'cursor-not-allowed opacity-40',
-                  )}
-                >
-                  Sau →
-                </button>
+                <div className="flex items-center gap-1">
+                  <button
+                    type="button"
+                    disabled={safePage <= 1}
+                    onClick={() => setPage((p) => Math.max(1, p - 1))}
+                    className="rounded border border-border px-2 py-1 disabled:opacity-40"
+                  >
+                    Trước
+                  </button>
+                  <button
+                    type="button"
+                    disabled={safePage >= pageCount}
+                    onClick={() => setPage((p) => Math.min(pageCount, p + 1))}
+                    className="rounded border border-border px-2 py-1 disabled:opacity-40"
+                  >
+                    Sau
+                  </button>
+                </div>
               </div>
-            </div>
-          )}
+            )}
+          </div>
         </div>
       )}
-    </div>
-  )
-}
-
-function Th({
-  children,
-  right,
-}: {
-  children: React.ReactNode
-  right?: boolean
-}) {
-  return (
-    <th className={cn('px-3 py-2.5', right ? 'text-right' : 'text-left')}>{children}</th>
-  )
-}
-
-function SummaryCard({
-  label,
-  value,
-  tone,
-}: {
-  label: string
-  value: string
-  tone?: 'positive' | 'negative'
-}) {
-  return (
-    <div className="rounded-xl border border-border bg-card px-4 py-3 shadow-2xs">
-      <p className="text-xs text-muted-foreground">{label}</p>
-      <p
-        className={cn(
-          'mt-1 font-mono text-2xl font-bold tabular-nums text-foreground',
-          tone === 'positive' && 'text-positive',
-          tone === 'negative' && 'text-negative',
-        )}
-      >
-        {value}
-      </p>
     </div>
   )
 }

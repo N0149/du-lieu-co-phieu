@@ -9,6 +9,7 @@ import { fmtPct } from '@/lib/format'
 import { cn } from '@/lib/utils'
 import { useReports, reportHref } from '@/lib/use-reports'
 import { reportTickers, buildReportStocks } from '@/lib/report-stocks'
+import { getAllStocks, removeVietnameseAccents } from '@/lib/longlivestock'
 
 type SearchEntry = {
   ticker: string
@@ -43,6 +44,18 @@ export function StockSearch() {
       seen.add(t)
       pool.push({ ticker: s.ticker, name: s.name, hasReport: byTicker.has(t) })
     }
+
+    // Bổ sung toàn bộ 1.530 mã từ danh mục thị trường
+    try {
+      const allM = getAllStocks()
+      for (const m of allM) {
+        const t = m.t.toUpperCase()
+        if (seen.has(t)) continue
+        seen.add(t)
+        pool.push({ ticker: m.t, name: m.n, hasReport: byTicker.has(t) })
+      }
+    } catch {}
+
     return pool
   }, [reports, byTicker])
 
@@ -53,22 +66,26 @@ export function StockSearch() {
 
   const results = useMemo(() => {
     const term = q.trim().toLowerCase()
+    const termNorm = removeVietnameseAccents(term)
     if (!term) return searchPool.slice(0, 6)
     return searchPool
-      .filter(
-        (s) =>
-          s.ticker.toLowerCase().includes(term) ||
-          s.name.toLowerCase().includes(term),
-      )
+      .filter((s) => {
+        const tNorm = removeVietnameseAccents(`${s.ticker} ${s.name}`.toLowerCase())
+        return tNorm.includes(termNorm)
+      })
       .slice(0, 8)
   }, [q, searchPool])
 
   // Mở thẳng báo cáo của mã cổ phiếu (từ dropdown gợi ý)
-  function go(ticker: string) {
+  function go(ticker: string, hasReport: boolean) {
     setOpen(false)
     setQ('')
     inputRef.current?.blur()
-    router.push(reportHref(ticker))
+    if (hasReport) {
+      router.push(reportHref(ticker))
+    } else {
+      router.push(`/stock/${encodeURIComponent(ticker)}`)
+    }
   }
 
   // Xử lý Enter/Submit: chuẩn hóa keyword (trim + toUpperCase)
@@ -78,18 +95,25 @@ export function StockSearch() {
 
     // Nếu đang có gợi ý được highlight hợp lệ (dùng phím mũi tên hoặc khớp chính xác mã)
     const pick = results[active]
-    const isExactTicker = searchPool.some((p) => p.ticker.toUpperCase() === keyword)
+    const exactItem = searchPool.find((p) => p.ticker.toUpperCase() === keyword)
 
     setOpen(false)
     inputRef.current?.blur()
 
     if (pick && (active > 0 || pick.ticker.toUpperCase() === keyword)) {
-      router.push(reportHref(pick.ticker))
+      if (pick.hasReport) {
+        router.push(reportHref(pick.ticker))
+      } else {
+        router.push(`/stock/${encodeURIComponent(pick.ticker)}`)
+      }
       return
     }
-    if (isExactTicker) {
-      // Từ khóa là MÃ CK cụ thể → thẳng tới báo cáo của mã
-      router.push(`/bao-cao?ticker=${encodeURIComponent(keyword)}`)
+    if (exactItem) {
+      if (exactItem.hasReport) {
+        router.push(`/bao-cao?ticker=${encodeURIComponent(keyword)}`)
+      } else {
+        router.push(`/stock/${encodeURIComponent(keyword)}`)
+      }
       return
     }
     // Tên công ty hoặc từ khóa tự do → tìm trong kho báo cáo
@@ -149,7 +173,7 @@ export function StockSearch() {
                     type="button"
                     onMouseDown={(e) => e.preventDefault()}
                     onMouseEnter={() => setActive(i)}
-                    onClick={() => go(s.ticker)}
+                    onClick={() => go(s.ticker, s.hasReport)}
                     className={cn(
                       'flex w-full items-center gap-3 px-3 py-2 text-left',
                       i === active ? 'bg-accent' : 'hover:bg-muted',

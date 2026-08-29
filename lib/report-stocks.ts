@@ -1,5 +1,16 @@
 import { stocks } from '@/lib/data'
 import type { Report } from '@/lib/use-reports'
+import reportsSnapshot from '@/data/reports-snapshot.json'
+
+export function getSnapshotReports(): Report[] {
+  return reportsSnapshot as unknown as Report[]
+}
+
+export function getReportsForTicker(ticker: string): Report[] {
+  const tNorm = ticker.toUpperCase().trim()
+  const all = getSnapshotReports()
+  return all.filter((r) => (r.ticker || '').toUpperCase().trim() === tNorm)
+}
 
 /**
  * Dòng dữ liệu hiển thị trên bảng: là các mã cổ phiếu ĐÃ CÓ bài viết trong kho

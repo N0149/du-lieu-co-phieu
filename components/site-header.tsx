@@ -12,9 +12,11 @@ import { cn } from '@/lib/utils'
 
 const NAV = [
   { label: 'Bộ Lọc Cổ Phiếu', href: '/' },
+  { label: 'Cảng Biển', href: '/cang-bien' },
+  { label: 'Xuất nhập khẩu', href: '/xuat-nhap-khau' },
+  { label: 'Tra Cứu 1.530 Mã', href: '/tra-cuu' },
   { label: 'Danh Mục Theo Dõi', href: '/danh-muc' },
   { label: 'Báo Cáo Phân Tích', href: '/bao-cao' },
-  { label: 'Thống Kê XNK', href: '/xuat-nhap-khau' },
 ]
 
 export function SiteHeader() {
@@ -59,7 +61,7 @@ export function SiteHeader() {
                 key={item.href}
                 href={item.href}
                 className={cn(
-                  'rounded-md px-3 py-1.5 text-sm font-medium transition-colors',
+                  'rounded-md px-3 py-1.5 text-sm font-bold transition-colors',
                   active
                     ? 'bg-secondary text-foreground'
                     : 'text-muted-foreground hover:bg-muted hover:text-foreground',
@@ -126,7 +128,7 @@ export function SiteHeader() {
                   href={item.href}
                   onClick={() => setMenuOpen(false)}
                   className={cn(
-                    'flex items-center justify-between rounded-md px-3 py-2.5 text-sm font-medium transition-colors',
+                    'flex items-center justify-between rounded-md px-3 py-2.5 text-sm font-bold transition-colors',
                     active
                       ? 'bg-secondary text-foreground'
                       : 'text-muted-foreground hover:bg-muted hover:text-foreground',

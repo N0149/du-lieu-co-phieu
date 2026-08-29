@@ -1,0 +1,77 @@
+{
+ "updated": "2026-08-28T20:33:32",
+ "items": [
+  {
+   "id": "VNINDEX",
+   "label": "VN-Index (HOSE)",
+   "price": 1832.12,
+   "chg": 0.03,
+   "d": "2026-08-28",
+   "unit": ""
+  },
+  {
+   "id": "VN30",
+   "label": "VN30",
+   "price": 1982.96,
+   "chg": 0.19,
+   "d": "2026-08-28",
+   "unit": ""
+  },
+  {
+   "id": "HNXINDEX",
+   "label": "HNX-Index",
+   "price": 284.77,
+   "chg": 0.75,
+   "d": "2026-08-28",
+   "unit": ""
+  },
+  {
+   "id": "UPCOMINDEX",
+   "label": "UPCOM",
+   "price": 127.86,
+   "chg": 0.31,
+   "d": "2026-08-28",
+   "unit": ""
+  },
+  {
+   "id": "GOLD",
+   "label": "Vàng",
+   "price": 4649.3,
+   "chg": 0.86,
+   "d": "2026-08-28",
+   "unit": "USD/oz"
+  },
+  {
+   "id": "BRENT",
+   "label": "Dầu Brent",
+   "price": 87.5,
+   "chg": -2.45,
+   "d": "2026-08-28",
+   "unit": "USD/thùng"
+  },
+  {
+   "id": "WTI",
+   "label": "Dầu WTI",
+   "price": 82.51,
+   "chg": -1.22,
+   "d": "2026-08-28",
+   "unit": "USD/thùng"
+  },
+  {
+   "id": "USDVND",
+   "label": "USD/VND",
+   "price": 26075.0,
+   "chg": -0.1,
+   "d": "2026-08-28",
+   "unit": "đ"
+  },
+  {
+   "id": "HRC",
+   "label": "Thép HRC",
+   "price": 1203.0,
+   "chg": 0.33,
+   "d": "2026-08-28",
+   "unit": "USD/tấn"
+  }
+ ]
+}
