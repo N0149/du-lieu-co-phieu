@@ -25,7 +25,7 @@ export const BANK_INFO = {
   bankFullName: 'Ngân hàng TMCP Tiên Phong',
   accountNumber: '0000 4944 263',
   accountOwner: 'NGUYEN TRUNG NHAT',
-  transferSyntax: '[DULIEUCOPHIEU - Email hoặc Mã User]',
+  transferSyntax: '[DULIEUDAUTU - Email hoặc Mã User]',
   qrImage: '/qr-tpbank.jpg',
 } as const
 

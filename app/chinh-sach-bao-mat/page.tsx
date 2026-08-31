@@ -18,7 +18,7 @@ export default function PrivacyPage() {
             Chính Sách Bảo Mật
           </h1>
           <p className="mt-2 text-sm text-muted-foreground">
-            Cam kết bảo vệ thông tin và quyền riêng tư của người dùng website dulieucophieu.com.
+            Cam kết bảo vệ thông tin và quyền riêng tư của người dùng website dulieudautu.com.
           </p>
         </div>
 

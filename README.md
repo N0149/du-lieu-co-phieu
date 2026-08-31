@@ -1,6 +1,6 @@
-# Phân Tích Chuyên Sâu Cổ Phiếu — dulieucophieu.com
+# Phân Tích Chuyên Sâu Cổ Phiếu — dulieudautu.com (dulieucophieu.com)
 
-Cổng dữ liệu đầu tư giá trị: bộ lọc cổ phiếu định giá hấp dẫn + kho báo cáo phân tích (cổ phiếu, hàng hóa & ngành, kinh tế vĩ mô) đồng bộ trực tiếp từ Google Drive.
+Cổng dữ liệu đầu tư giá trị: bộ lọc cổ phiếu định giá hấp dẫn + kho báo cáo phân tích (cổ phiếu, hàng hóa & ngành, kinh tế vĩ mô) đồng bộ trực tiếp từ Google Drive. Tên miền chính: `dulieudautu.com` (hỗ trợ song song `dulieucophieu.com`).
 
 ## Tech stack
 
@@ -49,8 +49,8 @@ Build **có bật type validation** (không dùng `ignoreBuildErrors`) — lỗi
    - `GOOGLE_DRIVE_API_KEY` (giá trị trong `.env.local`)
    - `GOOGLE_DRIVE_FOLDER_ID` (`1eI8C_uDJlKDvNbzF9YOOr6QNCUIdw7o8`)
 4. **Deploy** → nhận URL `*.vercel.app`.
-5. **Gắn tên miền** `dulieucophieu.com` tại Vercel (Settings → Domains) + trỏ DNS (A/ALIAS/CNAME theo hướng dẫn Vercel).
-   - `metadataBase` đã được cấu hình `https://dulieucophieu.com` cho SEO.
+5. **Gắn tên miền** `dulieudautu.com` (Primary) và `dulieucophieu.com` tại Vercel (Settings → Domains) + trỏ DNS (A/ALIAS/CNAME theo hướng dẫn Vercel).
+   - `metadataBase` đã được cấu hình `process.env.NEXT_PUBLIC_SITE_URL || 'https://dulieudautu.com'` cho SEO, OpenGraph, Canonical và Sitemap/Robots.
 6. Kiểm tra: `/`, `/bao-cao`, `/ticker/DAN`, `/api/reports`.
 
 > API báo cáo đọc Google Drive tại **request time** (không cần API key lúc build). Folder & file báo cáo phải **chia sẻ công khai** ("Anyone with the link → Viewer").

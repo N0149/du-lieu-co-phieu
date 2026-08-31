@@ -42,7 +42,7 @@ export function AiAssistantModal({ open, onClose }: AiAssistantModalProps) {
       id: 'welcome',
       role: 'assistant',
       content:
-        'Xin chào! Tôi là Trợ lý AI Phân Tích Chuyên Sâu của **dulieucophieu.com**. Tôi được kết nối trực tiếp với **Kho 94 Báo Cáo Phân Tích Nội Bộ** và công cụ **Tìm kiếm Tin Tức Thời Gian Thực**.\n\nBạn muốn tìm hiểu thông tin hoặc định giá về mã cổ phiếu hay ngành hàng nào hôm nay?',
+        'Xin chào! Tôi là Trợ lý AI Phân Tích Chuyên Sâu của **dulieudautu.com**. Tôi được kết nối trực tiếp với **Kho 94 Báo Cáo Phân Tích Nội Bộ** và công cụ **Tìm kiếm Tin Tức Thời Gian Thực**.\n\nBạn muốn tìm hiểu thông tin hoặc định giá về mã cổ phiếu hay ngành hàng nào hôm nay?',
     },
   ])
   const [input, setInput] = useState('')

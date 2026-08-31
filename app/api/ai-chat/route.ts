@@ -63,7 +63,7 @@ function findRelevantContext(query: string): string {
       .sort((a, b) => (b.upside ?? 0) - (a.upside ?? 0))
       .slice(0, 5)
 
-    return `[KHO BÁO CÁO NỘI BỘ DULIEUCOPHIEU.COM - Tổng hợp 94 báo cáo, 81 mã unique]:
+    return `[KHO BÁO CÁO NỘI BỘ DULIEUDAUTU.COM - Tổng hợp 94 báo cáo, 81 mã unique]:
 Không tìm thấy báo cáo trùng khớp trực tiếp với từ khóa "${query}".
 Top 5 cổ phiếu có upside cao nhất trong kho báo cáo:
 ${topUpside
@@ -74,7 +74,7 @@ ${topUpside
   .join('\n')}`
   }
 
-  return `[KHO BÁO CÁO NỘI BỘ DULIEUCOPHIEU.COM - Dữ liệu khớp câu hỏi]:
+  return `[KHO BÁO CÁO NỘI BỘ DULIEUDAUTU.COM - Dữ liệu khớp câu hỏi]:
 ${matched
   .map((r) => {
     const parts = [
@@ -159,11 +159,11 @@ export async function POST(req: NextRequest) {
     // 5. Trích xuất ngữ cảnh RAG từ kho báo cáo nội bộ
     const internalContext = findRelevantContext(userQuery)
 
-    const systemInstruction = `Bạn là Trợ lý AI Phân Tích Chuyên Sâu của website dulieucophieu.com (Cổng Dữ Liệu & Báo Cáo Đầu Tư Chứng Khoán Việt Nam, sáng lập bởi Nguyễn Trung Nhật - Zalo 0983.627.018).
+    const systemInstruction = `Bạn là Trợ lý AI Phân Tích Chuyên Sâu của website dulieudautu.com (Cổng Dữ Liệu & Báo Cáo Đầu Tư Chứng Khoán Việt Nam, sáng lập bởi Nguyễn Trung Nhật - Zalo 0983.627.018).
 
 NHIỆM VỤ & QUY TẮC PHẢN HỒI:
 1. Giải đáp các thắc mắc về phân tích cổ phiếu, định giá doanh nghiệp, triển vọng ngành hàng, kinh tế vĩ mô và số liệu xuất nhập khẩu tại thị trường chứng khoán Việt Nam.
-2. ƯU TIÊN sử dụng dữ liệu từ [KHO BÁO CÁO NỘI BỘ DULIEUCOPHIEU.COM] được cung cấp bên dưới để đưa ra số liệu chuẩn xác nhất (Giá mục tiêu, Upside, Khuyến nghị, Quỹ khen thưởng phúc lợi KTPL).
+2. ƯU TIÊN sử dụng dữ liệu từ [KHO BÁO CÁO NỘI BỘ DULIEUDAUTU.COM] được cung cấp bên dưới để đưa ra số liệu chuẩn xác nhất (Giá mục tiêu, Upside, Khuyến nghị, Quỹ khen thưởng phúc lợi KTPL).
 3. Kết hợp công cụ tìm kiếm Google Search khi cần tra cứu tin tức thời gian thực, sự kiện doanh nghiệp mới nhất hoặc các mã cổ phiếu chưa có trong kho nội bộ.
 4. Trình bày bằng tiếng Việt chuyên nghiệp, ngắn gọn, súc tích (dưới 350 từ), dùng Markdown rõ ràng, bullet points, in đậm các con số tài chính trọng yếu.
 5. Luôn kèm tuyên bố miễn trách nhiệm ngắn gọn ở cuối: "*Lưu ý: Thông tin mang tính chất tham khảo, không phải khuyến nghị đầu tư.*"`

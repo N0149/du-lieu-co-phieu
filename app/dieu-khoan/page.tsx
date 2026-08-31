@@ -18,7 +18,7 @@ export default function TermsPage() {
             Điều Khoản Sử Dụng
           </h1>
           <p className="mt-2 text-sm text-muted-foreground">
-            Vui lòng đọc kỹ các điều khoản trước khi sử dụng website dulieucophieu.com.
+            Vui lòng đọc kỹ các điều khoản trước khi sử dụng website dulieudautu.com.
           </p>
         </div>
 
@@ -55,7 +55,7 @@ export default function TermsPage() {
             <h2 className="mb-2 text-base font-semibold text-foreground">4. Quyền sở hữu trí tuệ</h2>
             <p>
               Toàn bộ nội dung, thiết kế, cấu trúc và mã nguồn của website thuộc quyền sở
-              hữu của dulieucophieu.com. Việc sao chép, tái xuất bản hoặc phân phối nội dung
+              hữu của dulieudautu.com. Việc sao chép, tái xuất bản hoặc phân phối nội dung
               khi chưa được sự đồng ý bằng văn bản là vi phạm pháp luật.
             </p>
           </section>

@@ -58,7 +58,7 @@ export function SiteFooter() {
         {/* Bản quyền */}
         <p className="mt-3 text-xs text-muted-foreground">
           © 2026 Phân Tích Chuyên Sâu Cổ Phiếu. Bản quyền thuộc về{' '}
-          <span className="font-medium text-foreground">dulieucophieu.com</span>.
+          <span className="font-medium text-foreground">dulieudautu.com</span>.
         </p>
 
         {/* Hàng nút liên kết phụ */}

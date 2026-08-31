@@ -66,7 +66,7 @@ export async function POST(request: Request) {
 
   // ── Bắt đầu 7 ngày dùng thử ─────────────────────────────────────────────
   if (action === 'start_trial') {
-    const email = body.email?.trim() || 'guest@dulieucophieu.com'
+    const email = body.email?.trim() || 'guest@dulieudautu.com'
     const now = nowIso()
     const user: UserProfile = {
       id: `usr_${Date.now().toString(36)}${Math.random().toString(36).slice(2, 6)}`,

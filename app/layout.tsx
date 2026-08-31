@@ -15,11 +15,39 @@ const jetbrainsMono = JetBrains_Mono({
   variable: '--font-jetbrains',
 })
 
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://dulieudautu.com'
+
 export const metadata: Metadata = {
-  metadataBase: new URL('https://dulieucophieu.com'),
-  title: 'Phân Tích Chuyên Sâu Cổ Phiếu - Cổng Dữ Liệu & Báo Cáo Đầu Tư',
+  metadataBase: new URL(siteUrl),
+  title: {
+    default: 'Phân Tích Chuyên Sâu Cổ Phiếu - Cổng Dữ Liệu & Báo Cáo Đầu Tư',
+    template: '%s | Dữ Liệu Đầu Tư',
+  },
   description:
     'Cổng dữ liệu đầu tư giá trị cấp tổ chức: bộ lọc cổ phiếu định giá hấp dẫn, phân tích tài sản và bóc tách giá trị tiềm ẩn.',
+  alternates: {
+    canonical: '/',
+  },
+  openGraph: {
+    title: 'Phân Tích Chuyên Sâu Cổ Phiếu - Cổng Dữ Liệu & Báo Cáo Đầu Tư',
+    description:
+      'Cổng dữ liệu đầu tư giá trị cấp tổ chức: bộ lọc cổ phiếu định giá hấp dẫn, phân tích tài sản và bóc tách giá trị tiềm ẩn.',
+    url: siteUrl,
+    siteName: 'Dữ Liệu Đầu Tư',
+    locale: 'vi_VN',
+    type: 'website',
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
   generator: 'v0.app',
 }
 
