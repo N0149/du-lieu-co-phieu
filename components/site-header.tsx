@@ -55,7 +55,11 @@ export function SiteHeader() {
         <nav className="hidden items-center gap-1 lg:flex">
           {NAV.map((item) => {
             const active =
-              item.href === '/' ? pathname === '/' : pathname.startsWith(item.href)
+              item.href === '/'
+                ? pathname === '/'
+                : item.href === '/cang-bien'
+                ? pathname.startsWith('/cang-bien') || pathname.startsWith('/cang/')
+                : pathname.startsWith(item.href)
             return (
               <Link
                 key={item.href}
@@ -121,7 +125,11 @@ export function SiteHeader() {
             </button>
             {NAV.map((item) => {
               const active =
-                item.href === '/' ? pathname === '/' : pathname.startsWith(item.href)
+                item.href === '/'
+                  ? pathname === '/'
+                  : item.href === '/cang-bien'
+                  ? pathname.startsWith('/cang-bien') || pathname.startsWith('/cang/')
+                  : pathname.startsWith(item.href)
               return (
                 <Link
                   key={item.href}

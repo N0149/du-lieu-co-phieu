@@ -1,6 +1,7 @@
 import React from 'react'
 import { Metadata } from 'next'
 import Link from 'next/link'
+import { SiteHeader } from '@/components/site-header'
 import {
   getDashboardSummary,
   getNationalMap,
@@ -24,6 +25,7 @@ import {
   Database,
   ArrowUpRight,
   Layers,
+  LayoutGrid,
 } from 'lucide-react'
 
 export const metadata: Metadata = {
@@ -51,32 +53,43 @@ export default function CangBienPage() {
 
   return (
     <div className="min-h-screen bg-background text-foreground pb-20">
+      {/* Site Header */}
+      <SiteHeader />
+
       {/* Top Banner / Hero */}
-      <div className="relative border-b border-border/70 bg-gradient-to-b from-slate-950 via-slate-900/90 to-background py-8 sm:py-12 overflow-hidden">
+      <div className="relative border-b border-border/70 bg-gradient-to-b from-slate-950 via-slate-900/90 to-background py-8 sm:py-10 overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-teal-900/20 via-transparent to-transparent pointer-events-none" />
 
         <div className="mx-auto max-w-[1600px] px-4 relative z-10 space-y-6">
-          {/* Breadcrumb & Badges */}
-          <div className="flex flex-wrap items-center justify-between gap-2">
+          {/* Breadcrumb & Sub-navigation Tabs */}
+          <div className="flex flex-wrap items-center justify-between gap-3 border-b border-border/40 pb-4">
             <div className="flex items-center gap-2 text-xs text-muted-foreground">
               <Link href="/" className="hover:text-foreground transition-colors">
                 Trang chủ
               </Link>
-              <ChevronRight className="size-3" />
-              <span className="text-teal-400 font-semibold">Tình báo Cảng biển</span>
+              <ChevronRight className="size-3 text-muted-foreground/60" />
+              <span className="text-teal-400 font-semibold">Cảng Biển & Tình Báo Hàng Hải</span>
             </div>
 
-            <div className="flex items-center gap-2">
+            {/* Maritime Sub-navigation Tabs */}
+            <div className="flex flex-wrap items-center gap-2 bg-background/80 p-1 rounded-xl border border-border/70 text-xs font-semibold">
+              <Link
+                href="/cang-bien"
+                className="inline-flex items-center gap-1.5 rounded-lg bg-teal-500 text-slate-950 px-3 py-1.5 font-bold shadow-sm"
+              >
+                <LayoutGrid className="size-3.5" />
+                <span>Tổng quan &amp; Cổ phiếu</span>
+              </Link>
               <Link
                 href="/cang-bien/tau"
-                className="inline-flex items-center gap-1.5 rounded-lg border border-border bg-card/80 px-3 py-1 text-xs font-semibold text-foreground hover:border-teal-500/50 hover:bg-teal-500/10 transition-all"
+                className="inline-flex items-center gap-1.5 rounded-lg px-3 py-1.5 text-muted-foreground hover:bg-muted/80 hover:text-foreground transition-all"
               >
                 <Search className="size-3.5 text-teal-400" />
                 <span>Tra cứu tàu</span>
               </Link>
               <Link
                 href="/cang-bien/nguon-du-lieu"
-                className="inline-flex items-center gap-1.5 rounded-lg border border-border bg-card/80 px-3 py-1 text-xs font-semibold text-muted-foreground hover:text-foreground transition-all"
+                className="inline-flex items-center gap-1.5 rounded-lg px-3 py-1.5 text-muted-foreground hover:bg-muted/80 hover:text-foreground transition-all"
               >
                 <Database className="size-3.5 text-sky-400" />
                 <span>Nguồn dữ liệu</span>

@@ -1,7 +1,8 @@
 import React from 'react'
 import { Metadata } from 'next'
 import Link from 'next/link'
-import { Database, ShieldCheck, RefreshCw, CheckCircle, ChevronRight, ArrowLeft, Anchor, Cpu, Ship } from 'lucide-react'
+import { SiteHeader } from '@/components/site-header'
+import { Database, ShieldCheck, RefreshCw, CheckCircle, ChevronRight, ArrowLeft, Anchor, Cpu, Ship, LayoutGrid, Search } from 'lucide-react'
 
 export const metadata: Metadata = {
   title: 'Nguồn Dữ Liệu Cảng Biển & Phương Pháp Luận | Phân Tích Chuyên Sâu',
@@ -12,19 +13,50 @@ export const metadata: Metadata = {
 export default function NguonDuLieuPage() {
   return (
     <div className="min-h-screen bg-background text-foreground pb-20">
+      {/* Site Header */}
+      <SiteHeader />
+
       {/* Header */}
       <div className="border-b border-border/70 bg-gradient-to-b from-slate-950 via-slate-900/90 to-background py-8 sm:py-10">
-        <div className="mx-auto max-w-[1200px] px-4 space-y-4">
-          <div className="flex items-center gap-2 text-xs text-muted-foreground">
-            <Link href="/" className="hover:text-foreground transition-colors">
-              Trang chủ
-            </Link>
-            <ChevronRight className="size-3" />
-            <Link href="/cang-bien" className="hover:text-foreground transition-colors">
-              Cảng Biển
-            </Link>
-            <ChevronRight className="size-3" />
-            <span className="text-teal-400 font-semibold">Nguồn dữ liệu</span>
+        <div className="mx-auto max-w-[1200px] px-4 space-y-6">
+          {/* Breadcrumb & Sub-nav */}
+          <div className="flex flex-wrap items-center justify-between gap-3 border-b border-border/40 pb-4">
+            <div className="flex items-center gap-2 text-xs text-muted-foreground">
+              <Link href="/" className="hover:text-foreground transition-colors">
+                Trang chủ
+              </Link>
+              <ChevronRight className="size-3 text-muted-foreground/60" />
+              <Link href="/cang-bien" className="hover:text-foreground transition-colors">
+                Cảng Biển
+              </Link>
+              <ChevronRight className="size-3 text-muted-foreground/60" />
+              <span className="text-teal-400 font-semibold">Nguồn dữ liệu</span>
+            </div>
+
+            {/* Maritime Sub-navigation Tabs */}
+            <div className="flex flex-wrap items-center gap-2 bg-background/80 p-1 rounded-xl border border-border/70 text-xs font-semibold">
+              <Link
+                href="/cang-bien"
+                className="inline-flex items-center gap-1.5 rounded-lg px-3 py-1.5 text-muted-foreground hover:bg-muted/80 hover:text-foreground transition-all"
+              >
+                <LayoutGrid className="size-3.5" />
+                <span>Tổng quan &amp; Cổ phiếu</span>
+              </Link>
+              <Link
+                href="/cang-bien/tau"
+                className="inline-flex items-center gap-1.5 rounded-lg px-3 py-1.5 text-muted-foreground hover:bg-muted/80 hover:text-foreground transition-all"
+              >
+                <Search className="size-3.5 text-teal-400" />
+                <span>Tra cứu tàu</span>
+              </Link>
+              <Link
+                href="/cang-bien/nguon-du-lieu"
+                className="inline-flex items-center gap-1.5 rounded-lg bg-teal-500 text-slate-950 px-3 py-1.5 font-bold shadow-sm"
+              >
+                <Database className="size-3.5" />
+                <span>Nguồn dữ liệu</span>
+              </Link>
+            </div>
           </div>
 
           <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
@@ -34,20 +66,12 @@ export default function NguonDuLieuPage() {
                 <span>MINH BẠCH DỮ LIỆU</span>
               </div>
               <h1 className="text-2xl sm:text-3xl font-extrabold tracking-tight text-foreground">
-                Nguồn Dữ Liệu & Quy Trình Xử Lý
+                Nguồn Dữ Liệu &amp; Quy Trình Xử Lý
               </h1>
               <p className="text-xs sm:text-sm text-muted-foreground mt-1">
                 Nguyên tắc thu thập, làm sạch và chuẩn hoá dữ liệu vận hành cảng biển
               </p>
             </div>
-
-            <Link
-              href="/cang-bien"
-              className="inline-flex items-center gap-1.5 rounded-xl border border-border bg-card px-3.5 py-2 text-xs font-semibold text-foreground hover:border-teal-500/40 hover:bg-teal-500/10 transition-all self-start md:self-auto"
-            >
-              <ArrowLeft className="size-3.5" />
-              <span>Về Bản đồ Toàn quốc</span>
-            </Link>
           </div>
         </div>
       </div>

@@ -2,6 +2,7 @@ import React from 'react'
 import { Metadata } from 'next'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
+import { SiteHeader } from '@/components/site-header'
 import {
   getStockIntel,
   getAllStocksIntel,
@@ -24,6 +25,9 @@ import {
   Calendar,
   ArrowLeft,
   ExternalLink,
+  LayoutGrid,
+  Search,
+  Database,
 } from 'lucide-react'
 
 interface Props {
@@ -77,20 +81,50 @@ export default async function StockPortDetailPage({ params }: Props) {
 
   return (
     <div className="min-h-screen bg-background text-foreground pb-20">
+      {/* Site Header */}
+      <SiteHeader />
+
       {/* Top Header / Breadcrumb */}
       <div className="border-b border-border/70 bg-gradient-to-b from-slate-950 via-slate-900/90 to-background py-8">
         <div className="mx-auto max-w-[1600px] px-4 space-y-4">
-          {/* Breadcrumbs */}
-          <div className="flex items-center gap-2 text-xs text-muted-foreground">
-            <Link href="/" className="hover:text-foreground transition-colors">
-              Trang chủ
-            </Link>
-            <ChevronRight className="size-3" />
-            <Link href="/cang-bien" className="hover:text-foreground transition-colors">
-              Cảng Biển
-            </Link>
-            <ChevronRight className="size-3" />
-            <span className="text-teal-400 font-semibold">{intel.ticker}</span>
+          {/* Breadcrumbs & Sub-nav */}
+          <div className="flex flex-wrap items-center justify-between gap-3 border-b border-border/40 pb-4">
+            <div className="flex items-center gap-2 text-xs text-muted-foreground">
+              <Link href="/" className="hover:text-foreground transition-colors">
+                Trang chủ
+              </Link>
+              <ChevronRight className="size-3 text-muted-foreground/60" />
+              <Link href="/cang-bien" className="hover:text-foreground transition-colors">
+                Cảng Biển
+              </Link>
+              <ChevronRight className="size-3 text-muted-foreground/60" />
+              <span className="text-teal-400 font-semibold">{intel.ticker}</span>
+            </div>
+
+            {/* Maritime Sub-navigation Tabs */}
+            <div className="flex flex-wrap items-center gap-2 bg-background/80 p-1 rounded-xl border border-border/70 text-xs font-semibold">
+              <Link
+                href="/cang-bien"
+                className="inline-flex items-center gap-1.5 rounded-lg px-3 py-1.5 text-muted-foreground hover:bg-muted/80 hover:text-foreground transition-all"
+              >
+                <LayoutGrid className="size-3.5" />
+                <span>Tất cả cảng</span>
+              </Link>
+              <Link
+                href="/cang-bien/tau"
+                className="inline-flex items-center gap-1.5 rounded-lg px-3 py-1.5 text-muted-foreground hover:bg-muted/80 hover:text-foreground transition-all"
+              >
+                <Search className="size-3.5 text-teal-400" />
+                <span>Tra cứu tàu</span>
+              </Link>
+              <Link
+                href="/cang-bien/nguon-du-lieu"
+                className="inline-flex items-center gap-1.5 rounded-lg px-3 py-1.5 text-muted-foreground hover:bg-muted/80 hover:text-foreground transition-all"
+              >
+                <Database className="size-3.5 text-sky-400" />
+                <span>Nguồn dữ liệu</span>
+              </Link>
+            </div>
           </div>
 
           {/* Title Row */}
