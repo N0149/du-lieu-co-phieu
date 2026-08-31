@@ -3,7 +3,7 @@ import { Metadata } from 'next'
 import Link from 'next/link'
 import { SiteHeader } from '@/components/site-header'
 import { getDashboardSummary, formatDWT } from '@/lib/maritime'
-import { Ship, Search, ChevronRight, Anchor, Navigation, ArrowLeft, LayoutGrid, Database } from 'lucide-react'
+import { Ship, Search, ChevronRight, Anchor, Navigation, ArrowLeft, LayoutGrid, Database, Activity } from 'lucide-react'
 import { VesselSearchClient } from './vessel-search-client'
 
 export const metadata: Metadata = {
@@ -42,46 +42,49 @@ export default function VesselSearchPage() {
   const vessels = Array.from(vesselMap.values()).sort((a, b) => b.dwt - a.dwt)
 
   return (
-    <div className="min-h-screen bg-background text-foreground pb-20">
+    <div className="min-h-screen bg-slate-950 text-slate-100 pb-24 selection:bg-teal-500 selection:text-slate-950">
       {/* Site Header */}
       <SiteHeader />
 
       {/* Top Banner */}
-      <div className="border-b border-border/70 bg-gradient-to-b from-slate-950 via-slate-900/90 to-background py-8 sm:py-10">
-        <div className="mx-auto max-w-[1600px] px-4 space-y-6">
+      <div className="relative border-b border-slate-800/80 bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950 py-8 sm:py-10 overflow-hidden">
+        {/* Ambient Glow */}
+        <div className="absolute top-0 left-1/3 -translate-x-1/2 w-96 h-96 bg-teal-500/10 rounded-full blur-3xl pointer-events-none" />
+
+        <div className="mx-auto max-w-[1600px] px-4 space-y-6 relative z-10">
           {/* Breadcrumb & Sub-nav */}
-          <div className="flex flex-wrap items-center justify-between gap-3 border-b border-border/40 pb-4">
-            <div className="flex items-center gap-2 text-xs text-muted-foreground">
-              <Link href="/" className="hover:text-foreground transition-colors">
+          <div className="flex flex-wrap items-center justify-between gap-3 border-b border-slate-800/80 pb-4">
+            <div className="flex items-center gap-2 text-xs text-slate-400">
+              <Link href="/" className="hover:text-slate-200 transition-colors">
                 Trang chủ
               </Link>
-              <ChevronRight className="size-3 text-muted-foreground/60" />
-              <Link href="/cang-bien" className="hover:text-foreground transition-colors">
+              <ChevronRight className="size-3 text-slate-600" />
+              <Link href="/cang-bien" className="hover:text-slate-200 transition-colors">
                 Cảng Biển
               </Link>
-              <ChevronRight className="size-3 text-muted-foreground/60" />
-              <span className="text-teal-400 font-semibold">Tra cứu tàu</span>
+              <ChevronRight className="size-3 text-slate-600" />
+              <span className="text-teal-400 font-bold">Tra cứu tàu</span>
             </div>
 
             {/* Maritime Sub-navigation Tabs */}
-            <div className="flex flex-wrap items-center gap-2 bg-background/80 p-1 rounded-xl border border-border/70 text-xs font-semibold">
+            <div className="flex flex-wrap items-center gap-1.5 bg-slate-900/90 p-1 rounded-xl border border-slate-800 text-xs font-semibold shadow-inner">
               <Link
                 href="/cang-bien"
-                className="inline-flex items-center gap-1.5 rounded-lg px-3 py-1.5 text-muted-foreground hover:bg-muted/80 hover:text-foreground transition-all"
+                className="inline-flex items-center gap-1.5 rounded-lg px-3.5 py-1.5 text-slate-400 hover:bg-slate-800 hover:text-slate-200 transition-all font-bold"
               >
                 <LayoutGrid className="size-3.5" />
                 <span>Tổng quan &amp; Cổ phiếu</span>
               </Link>
               <Link
                 href="/cang-bien/tau"
-                className="inline-flex items-center gap-1.5 rounded-lg bg-teal-500 text-slate-950 px-3 py-1.5 font-bold shadow-sm"
+                className="inline-flex items-center gap-1.5 rounded-lg bg-gradient-to-r from-teal-400 to-emerald-400 text-slate-950 px-3.5 py-1.5 font-black shadow-md shadow-teal-500/20"
               >
                 <Search className="size-3.5" />
                 <span>Tra cứu tàu</span>
               </Link>
               <Link
                 href="/cang-bien/nguon-du-lieu"
-                className="inline-flex items-center gap-1.5 rounded-lg px-3 py-1.5 text-muted-foreground hover:bg-muted/80 hover:text-foreground transition-all"
+                className="inline-flex items-center gap-1.5 rounded-lg px-3.5 py-1.5 text-slate-400 hover:bg-slate-800 hover:text-slate-200 transition-all font-bold"
               >
                 <Database className="size-3.5 text-sky-400" />
                 <span>Nguồn dữ liệu</span>
@@ -91,15 +94,15 @@ export default function VesselSearchPage() {
 
           <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
             <div>
-              <div className="inline-flex items-center gap-2 rounded-full border border-teal-500/30 bg-teal-500/10 px-3 py-1 text-xs font-bold text-teal-400 mb-2">
-                <Ship className="size-3.5" />
-                <span>HỒ SƠ TÀU BIỂN</span>
+              <div className="inline-flex items-center gap-2 rounded-full border border-teal-500/30 bg-teal-500/10 px-3.5 py-1 text-xs font-black text-teal-300 mb-2.5">
+                <Ship className="size-3.5 text-teal-400" />
+                <span>HỒ SƠ TÀU BIỂN TOÀN CẦU &amp; VIỆT NAM</span>
               </div>
-              <h1 className="text-2xl sm:text-3xl font-extrabold tracking-tight text-foreground">
+              <h1 className="text-2xl sm:text-4xl font-black tracking-tight text-white">
                 Tra Cứu Tàu Biển Cập Cảng Việt Nam
               </h1>
-              <p className="text-xs sm:text-sm text-muted-foreground mt-1">
-                Dữ liệu tàu, kích thước LOA, mớn nước và trọng tải DWT thiết kế
+              <p className="text-xs sm:text-sm text-slate-400 mt-1.5">
+                Thông số kích thước chiều dài LOA, mớn nước, trọng tải thiết kế DWT và lịch sử điều động
               </p>
             </div>
           </div>

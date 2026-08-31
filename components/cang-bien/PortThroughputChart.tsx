@@ -2,7 +2,7 @@
 
 import React, { useState, useMemo } from 'react'
 import { MonthlyRecord, formatDWT, formatCalls } from '@/lib/maritime-types'
-import { BarChart3, TrendingUp, Calendar, Info, Scale } from 'lucide-react'
+import { BarChart3, TrendingUp, Calendar, Info, Scale, Sparkles } from 'lucide-react'
 
 interface Props {
   monthlyData: MonthlyRecord[]
@@ -67,12 +67,12 @@ export function PortThroughputChart({ monthlyData, tickerName }: Props) {
   }
 
   // SVG dimensions
-  const svgWidth = Math.max(760, dataToDisplay.length * 36)
-  const svgHeight = 280
-  const padLeft = metric === 'dwt' ? 58 : 45
-  const padRight = 20
-  const padTop = 30
-  const padBottom = 45
+  const svgWidth = Math.max(760, dataToDisplay.length * 38)
+  const svgHeight = 290
+  const padLeft = metric === 'dwt' ? 62 : 48
+  const padRight = 24
+  const padTop = 32
+  const padBottom = 48
   const plotWidth = svgWidth - padLeft - padRight
   const plotHeight = svgHeight - padTop - padBottom
 
@@ -83,45 +83,47 @@ export function PortThroughputChart({ monthlyData, tickerName }: Props) {
   const yTicks = [0, Math.round(maxVal * 0.33), Math.round(maxVal * 0.66), maxVal]
 
   return (
-    <div className="rounded-2xl border border-border/80 bg-card/70 p-4 sm:p-6 shadow-xl space-y-4">
+    <div className="rounded-2xl border border-slate-800 bg-gradient-to-b from-slate-900/95 via-slate-900/80 to-slate-950/95 p-4 sm:p-6 shadow-2xl shadow-black/40 space-y-4">
       {/* Header & Controls */}
-      <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-border/50 pb-4">
+      <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-slate-800/80 pb-4">
         <div>
-          <div className="flex items-center gap-2">
-            <span className="flex size-7 items-center justify-center rounded-lg bg-teal-500/10 text-teal-400 border border-teal-500/20">
-              <BarChart3 className="size-4" />
+          <div className="flex items-center gap-2.5">
+            <span className="flex size-8 items-center justify-center rounded-xl bg-teal-500/15 text-teal-400 border border-teal-500/30 shadow-sm">
+              <BarChart3 className="size-4.5" />
             </span>
-            <h3 className="text-base sm:text-lg font-bold text-foreground tracking-tight">
-              {metric === 'dwt' ? 'Trọng Tải Tàu (DWT) Theo Tháng' : 'Sản Lượng Tàu Qua Cảng Theo Tháng'} ({tickerName})
-            </h3>
+            <div>
+              <h3 className="text-base sm:text-lg font-extrabold text-slate-100 tracking-tight">
+                {metric === 'dwt' ? 'Trọng Tải Tàu (DWT) Theo Tháng' : 'Sản Lượng Tàu Qua Cảng Theo Tháng'} ({tickerName})
+              </h3>
+              <p className="text-xs text-slate-400 mt-0.5">
+                {metric === 'dwt'
+                  ? `Tổng trọng tải DWT tàu cập và rời các cầu bến trực thuộc (${dataToDisplay.length} tháng lịch sử)`
+                  : `Số lượt tàu cập và rời các cầu bến trực thuộc (${dataToDisplay.length} tháng lịch sử)`}
+              </p>
+            </div>
           </div>
-          <p className="text-xs text-muted-foreground mt-1">
-            {metric === 'dwt'
-              ? `Tổng trọng tải DWT tàu cập và rời các cầu bến trực thuộc theo từng tháng (${dataToDisplay.length} tháng)`
-              : `Số lượt tàu cập và rời các cầu bến trực thuộc theo từng tháng (${dataToDisplay.length} tháng)`}
-          </p>
         </div>
 
         <div className="flex flex-wrap items-center gap-2">
           {/* Metric Selector (Số lượt vs Trọng tải DWT) */}
           {hasDwtData && (
-            <div className="inline-flex rounded-xl border border-border bg-background/80 p-1 text-xs font-semibold">
+            <div className="inline-flex rounded-xl border border-slate-700 bg-slate-950/80 p-1 text-xs font-semibold shadow-inner">
               <button
                 onClick={() => setMetric('calls')}
-                className={`rounded-lg px-2.5 py-1 transition-all ${
+                className={`rounded-lg px-3 py-1.5 transition-all text-xs ${
                   metric === 'calls'
-                    ? 'bg-teal-500 text-slate-950 font-bold'
-                    : 'text-muted-foreground hover:text-foreground'
+                    ? 'bg-teal-500 text-slate-950 font-black shadow-md'
+                    : 'text-slate-400 hover:text-slate-200'
                 }`}
               >
                 Số Lượt Tàu
               </button>
               <button
                 onClick={() => setMetric('dwt')}
-                className={`rounded-lg px-2.5 py-1 transition-all ${
+                className={`rounded-lg px-3 py-1.5 transition-all text-xs ${
                   metric === 'dwt'
-                    ? 'bg-teal-500 text-slate-950 font-bold'
-                    : 'text-muted-foreground hover:text-foreground'
+                    ? 'bg-teal-500 text-slate-950 font-black shadow-md'
+                    : 'text-slate-400 hover:text-slate-200'
                 }`}
               >
                 Trọng Tải DWT
@@ -130,33 +132,33 @@ export function PortThroughputChart({ monthlyData, tickerName }: Props) {
           )}
 
           {/* Direction Mode Switch */}
-          <div className="inline-flex rounded-xl border border-border bg-background/80 p-1 text-xs font-semibold">
+          <div className="inline-flex rounded-xl border border-slate-700 bg-slate-950/80 p-1 text-xs font-semibold shadow-inner">
             <button
               onClick={() => setChartMode('both')}
-              className={`rounded-lg px-2.5 py-1 transition-all ${
+              className={`rounded-lg px-2.5 py-1.5 transition-all ${
                 chartMode === 'both'
-                  ? 'bg-slate-700 text-white font-bold'
-                  : 'text-muted-foreground hover:text-foreground'
+                  ? 'bg-slate-700 text-slate-100 font-bold shadow-xs'
+                  : 'text-slate-400 hover:text-slate-200'
               }`}
             >
               Vào + Ra
             </button>
             <button
               onClick={() => setChartMode('in')}
-              className={`rounded-lg px-2.5 py-1 transition-all ${
+              className={`rounded-lg px-2.5 py-1.5 transition-all ${
                 chartMode === 'in'
-                  ? 'bg-emerald-500 text-slate-950 font-bold'
-                  : 'text-muted-foreground hover:text-foreground'
+                  ? 'bg-emerald-500 text-slate-950 font-bold shadow-xs'
+                  : 'text-slate-400 hover:text-slate-200'
               }`}
             >
               Chỉ Vào
             </button>
             <button
               onClick={() => setChartMode('out')}
-              className={`rounded-lg px-2.5 py-1 transition-all ${
+              className={`rounded-lg px-2.5 py-1.5 transition-all ${
                 chartMode === 'out'
-                  ? 'bg-sky-500 text-slate-950 font-bold'
-                  : 'text-muted-foreground hover:text-foreground'
+                  ? 'bg-sky-500 text-slate-950 font-bold shadow-xs'
+                  : 'text-slate-400 hover:text-slate-200'
               }`}
             >
               Chỉ Ra
@@ -167,7 +169,7 @@ export function PortThroughputChart({ monthlyData, tickerName }: Props) {
           <select
             value={timeRange}
             onChange={(e) => setTimeRange(Number(e.target.value))}
-            className="rounded-xl border border-border bg-background/80 py-1 px-2.5 text-xs text-foreground focus:border-teal-500 focus:outline-none font-medium"
+            className="rounded-xl border border-slate-700 bg-slate-950/80 py-1.5 px-3 text-xs text-slate-200 focus:border-teal-500 focus:outline-none font-bold cursor-pointer"
           >
             <option value={12}>12 tháng gần nhất</option>
             <option value={24}>24 tháng gần nhất</option>
@@ -179,27 +181,27 @@ export function PortThroughputChart({ monthlyData, tickerName }: Props) {
 
       {/* Legend & Summary Info */}
       <div className="flex flex-wrap items-center justify-between gap-3 text-xs pt-1">
-        <div className="flex items-center gap-4 text-muted-foreground">
+        <div className="flex items-center gap-4 text-slate-400">
           {(chartMode === 'both' || chartMode === 'in') && (
             <div className="flex items-center gap-1.5">
-              <span className="size-3 rounded bg-emerald-500 shrink-0" />
-              <span className="text-foreground/90 font-medium">{metric === 'dwt' ? 'DWT Vào' : 'Tàu Vào'}</span>
+              <span className="size-3 rounded bg-emerald-400 shadow-xs shadow-emerald-400/50 shrink-0" />
+              <span className="text-slate-200 font-bold">{metric === 'dwt' ? 'DWT Vào' : 'Tàu Vào'}</span>
             </div>
           )}
           {(chartMode === 'both' || chartMode === 'out') && (
             <div className="flex items-center gap-1.5">
-              <span className="size-3 rounded bg-sky-500 shrink-0" />
-              <span className="text-foreground/90 font-medium">{metric === 'dwt' ? 'DWT Ra' : 'Tàu Ra'}</span>
+              <span className="size-3 rounded bg-sky-400 shadow-xs shadow-sky-400/50 shrink-0" />
+              <span className="text-slate-200 font-bold">{metric === 'dwt' ? 'DWT Ra' : 'Tàu Ra'}</span>
             </div>
           )}
           <div className="flex items-center gap-1.5">
-            <span className="size-3 rounded bg-amber-500/40 border border-dashed border-amber-400 shrink-0" />
-            <span className="text-foreground/90 font-medium">Tháng Chưa Đóng Sổ</span>
+            <span className="size-3 rounded bg-amber-400/30 border border-dashed border-amber-400 shrink-0" />
+            <span className="text-slate-300 font-medium">Tháng Chưa Đóng Sổ</span>
           </div>
         </div>
 
         {hoveredIndex !== null && dataToDisplay[hoveredIndex] ? (
-          <div className="rounded-lg bg-card border border-teal-500/40 px-2.5 py-1 text-teal-400 font-semibold shadow-md animate-in fade-in">
+          <div className="rounded-xl bg-slate-950 border border-teal-500/60 px-3 py-1.5 text-teal-300 font-bold shadow-lg shadow-teal-500/10 animate-in fade-in">
             {metric === 'dwt' ? (
               <>
                 Tháng {dataToDisplay[hoveredIndex].ym}: {formatDWT(dataToDisplay[hoveredIndex].in)} vào / {formatDWT(dataToDisplay[hoveredIndex].out)} ra (Tổng: {formatDWT(dataToDisplay[hoveredIndex].total)})
@@ -211,17 +213,17 @@ export function PortThroughputChart({ monthlyData, tickerName }: Props) {
             )}
           </div>
         ) : (
-          <div className="text-xs text-muted-foreground italic">
-            Rê chuột vào từng cột để xem chi tiết
+          <div className="text-xs text-slate-500 italic">
+            Rê chuột vào từng cột để xem chi tiết số liệu
           </div>
         )}
       </div>
 
       {/* Responsive Horizontal Scroll SVG Chart */}
-      <div className="w-full overflow-x-auto rounded-xl border border-border/70 bg-muted/20 p-2">
+      <div className="w-full overflow-x-auto rounded-2xl border border-slate-800/90 bg-slate-950/80 p-3 shadow-inner">
         <svg
           viewBox={`0 0 ${svgWidth} ${svgHeight}`}
-          className="w-full min-w-[700px] h-[300px] select-none"
+          className="w-full min-w-[700px] h-[310px] select-none"
         >
           <defs>
             <linearGradient id="barInGrad" x1="0" y1="0" x2="0" y2="1">
@@ -238,22 +240,24 @@ export function PortThroughputChart({ monthlyData, tickerName }: Props) {
           {yTicks.map((tick, i) => {
             const y = padTop + plotHeight - (tick / maxVal) * plotHeight
             return (
-              <g key={`ytick-${i}`} pointerEvents="none">
+              <g key={i}>
                 <line
                   x1={padLeft}
                   y1={y}
-                  x2={svgWidth - padRight}
+                  x2={padLeft + plotWidth}
                   y2={y}
-                  stroke="currentColor"
-                  className="text-border/60"
-                  strokeDasharray="4 4"
-                  opacity={0.6}
+                  stroke="#1e293b"
+                  strokeDasharray={i === 0 ? '0' : '4 4'}
+                  strokeWidth="1"
                 />
                 <text
                   x={padLeft - 8}
-                  y={y + 3.5}
+                  y={y + 4}
                   textAnchor="end"
-                  className="text-[10px] fill-muted-foreground font-mono"
+                  fontSize="10"
+                  fill="#94a3b8"
+                  fontFamily="monospace"
+                  fontWeight="bold"
                 >
                   {formatCompact(tick)}
                 </text>
@@ -261,135 +265,151 @@ export function PortThroughputChart({ monthlyData, tickerName }: Props) {
             )
           })}
 
-          {/* Bars & X-Axis Labels */}
-          {dataToDisplay.map((d, idx) => {
-            const colX = padLeft + idx * step
-            const x = colX + (step - barWidth) / 2
-            const cx = x + barWidth / 2
-            const isHovered = hoveredIndex === idx
+          {/* Background Indicator for Hovered Column */}
+          {hoveredIndex !== null && dataToDisplay[hoveredIndex] && (
+            <rect
+              x={padLeft + hoveredIndex * step}
+              y={padTop}
+              width={step}
+              height={plotHeight}
+              fill="#0d9488"
+              fillOpacity="0.12"
+              rx="4"
+              pointerEvents="none"
+            />
+          )}
 
-            // Heights
-            const hIn = (d.in / maxVal) * plotHeight
-            const hOut = (d.out / maxVal) * plotHeight
-            const hTotal = ((d.in + d.out) / maxVal) * plotHeight
+          {/* Data Bars */}
+          {dataToDisplay.map((d, i) => {
+            const xCenter = padLeft + i * step + step / 2
+            const xBar = xCenter - barWidth / 2
 
-            const yBase = padTop + plotHeight
+            const inH = Math.max(0, (d.in / maxVal) * plotHeight)
+            const outH = Math.max(0, (d.out / maxVal) * plotHeight)
+            const totalH = Math.max(0, (d.total / maxVal) * plotHeight)
+
+            const inY = padTop + plotHeight - inH
+            const outY = padTop + plotHeight - inH - outH
+
+            const isHovered = hoveredIndex === i
 
             return (
-              <g key={`bar-group-${idx}`}>
-                {/* 1. Background highlight on hover (pointer-events none) */}
-                {isHovered && (
+              <g key={d.ym} pointerEvents="none">
+                {/* Mode: Both (Stacked) */}
+                {chartMode === 'both' && (
+                  <>
+                    {/* In Bar (Bottom) */}
+                    {d.in > 0 && (
+                      <rect
+                        x={xBar}
+                        y={inY}
+                        width={barWidth}
+                        height={inH}
+                        fill="url(#barInGrad)"
+                        rx={d.out > 0 ? 0 : 4}
+                        opacity={d.isPartial ? 0.75 : 1}
+                      />
+                    )}
+                    {/* Out Bar (Top) */}
+                    {d.out > 0 && (
+                      <rect
+                        x={xBar}
+                        y={outY}
+                        width={barWidth}
+                        height={outH}
+                        fill="url(#barOutGrad)"
+                        rx="4"
+                        opacity={d.isPartial ? 0.75 : 1}
+                      />
+                    )}
+                  </>
+                )}
+
+                {/* Mode: In Only */}
+                {chartMode === 'in' && d.in > 0 && (
                   <rect
-                    x={colX}
-                    y={padTop}
-                    width={step}
-                    height={plotHeight}
-                    fill="#38bdf8"
-                    opacity={0.12}
-                    pointerEvents="none"
+                    x={xBar}
+                    y={inY}
+                    width={barWidth}
+                    height={inH}
+                    fill="url(#barInGrad)"
+                    rx="4"
+                    opacity={d.isPartial ? 0.75 : 1}
                   />
                 )}
 
-                {/* 2. Visual Bars (pointer-events none to prevent hover flicker) */}
-                <g pointerEvents="none">
-                  {chartMode === 'both' ? (
-                    <>
-                      {/* Bar In (Bottom portion) */}
-                      {d.in > 0 && (
-                        <rect
-                          x={x}
-                          y={yBase - hIn}
-                          width={barWidth}
-                          height={Math.max(hIn, 2)}
-                          fill="url(#barInGrad)"
-                          opacity={d.isPartial ? 0.6 : 0.9}
-                          stroke={d.isPartial ? '#f59e0b' : 'none'}
-                          strokeDasharray={d.isPartial ? '2 2' : 'none'}
-                        />
-                      )}
-                      {/* Bar Out (Top portion) */}
-                      {d.out > 0 && (
-                        <rect
-                          x={x}
-                          y={yBase - hIn - hOut}
-                          width={barWidth}
-                          height={Math.max(hOut, 2)}
-                          fill="url(#barOutGrad)"
-                          opacity={d.isPartial ? 0.6 : 0.9}
-                          rx={3}
-                        />
-                      )}
-                    </>
-                  ) : chartMode === 'in' ? (
-                    d.in > 0 && (
-                      <rect
-                        x={x}
-                        y={yBase - hIn}
-                        width={barWidth}
-                        height={Math.max(hIn, 2)}
-                        fill="url(#barInGrad)"
-                        rx={3}
-                        opacity={d.isPartial ? 0.6 : 0.9}
-                      />
-                    )
-                  ) : (
-                    d.out > 0 && (
-                      <rect
-                        x={x}
-                        y={yBase - hOut}
-                        width={barWidth}
-                        height={Math.max(hOut, 2)}
-                        fill="url(#barOutGrad)"
-                        rx={3}
-                        opacity={d.isPartial ? 0.6 : 0.9}
-                      />
-                    )
-                  )}
+                {/* Mode: Out Only */}
+                {chartMode === 'out' && d.out > 0 && (
+                  <rect
+                    x={xBar}
+                    y={padTop + plotHeight - outH}
+                    width={barWidth}
+                    height={outH}
+                    fill="url(#barOutGrad)"
+                    rx="4"
+                    opacity={d.isPartial ? 0.75 : 1}
+                  />
+                )}
 
-                  {/* Value number on top if hovered */}
-                  {isHovered && (
-                    <text
-                      x={cx}
-                      y={yBase - (chartMode === 'both' ? hTotal : chartMode === 'in' ? hIn : hOut) - 6}
-                      textAnchor="middle"
-                      className="text-[10px] font-bold fill-teal-400 font-mono"
-                    >
-                      {formatCompact(chartMode === 'both' ? d.total : chartMode === 'in' ? d.in : d.out)}
-                    </text>
-                  )}
-
-                  {/* X-axis Label (Month/Year) */}
+                {/* Value Label on Top of Selected/Hovered Bars */}
+                {isHovered && (
                   <text
-                    x={cx}
-                    y={yBase + 16}
+                    x={xCenter}
+                    y={chartMode === 'both' ? outY - 8 : (chartMode === 'in' ? inY - 8 : padTop + plotHeight - outH - 8)}
                     textAnchor="middle"
-                    className={`text-[9px] font-mono select-none ${
-                      isHovered
-                        ? 'fill-teal-400 font-bold'
-                        : d.ym.endsWith('-01')
-                        ? 'fill-foreground font-bold'
-                        : 'fill-muted-foreground font-medium'
-                    }`}
-                    transform={`rotate(-40, ${cx}, ${yBase + 16})`}
+                    fontSize="11"
+                    fontWeight="bold"
+                    fill="#5eead4"
+                    fontFamily="monospace"
                   >
-                    {d.ym.endsWith('-01') ? d.ym : d.ym.slice(5)}
+                    {chartMode === 'both'
+                      ? formatCompact(d.total)
+                      : chartMode === 'in'
+                      ? formatCompact(d.in)
+                      : formatCompact(d.out)}
                   </text>
-                </g>
+                )}
 
-                {/* 3. Dedicated Static Hit-box Rect: Captures ALL mouse interactions cleanly without jittering */}
-                <rect
-                  x={colX}
-                  y={padTop}
-                  width={step}
-                  height={plotHeight + padBottom}
-                  fill="transparent"
-                  className="cursor-pointer"
-                  onMouseEnter={() => setHoveredIndex(idx)}
-                  onMouseLeave={() => setHoveredIndex((curr) => (curr === idx ? null : curr))}
-                />
+                {/* Month Label on X-axis */}
+                <text
+                  x={xCenter}
+                  y={padTop + plotHeight + 18}
+                  textAnchor="middle"
+                  fontSize="10"
+                  fill={isHovered ? '#2dd4bf' : '#94a3b8'}
+                  fontWeight={isHovered ? 'bold' : 'normal'}
+                  fontFamily="monospace"
+                >
+                  {d.ym.slice(2)}
+                </text>
+
+                {/* Partial Month Asterisk / Indicator */}
+                {d.isPartial && (
+                  <circle
+                    cx={xCenter}
+                    cy={padTop + plotHeight + 28}
+                    r="2.5"
+                    fill="#f59e0b"
+                  />
+                )}
               </g>
             )
           })}
+
+          {/* Static Hitboxes Layer for Hover Interaction without Re-rendering Glitch */}
+          {dataToDisplay.map((_, i) => (
+            <rect
+              key={`hitbox-${i}`}
+              x={padLeft + i * step}
+              y={padTop}
+              width={step}
+              height={plotHeight + 35}
+              fill="transparent"
+              cursor="pointer"
+              onMouseEnter={() => setHoveredIndex(i)}
+              onMouseLeave={() => setHoveredIndex(null)}
+            />
+          ))}
         </svg>
       </div>
     </div>

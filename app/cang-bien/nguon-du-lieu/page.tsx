@@ -2,7 +2,7 @@ import React from 'react'
 import { Metadata } from 'next'
 import Link from 'next/link'
 import { SiteHeader } from '@/components/site-header'
-import { Database, ShieldCheck, RefreshCw, CheckCircle, ChevronRight, ArrowLeft, Anchor, Cpu, Ship, LayoutGrid, Search } from 'lucide-react'
+import { Database, ShieldCheck, RefreshCw, CheckCircle, ChevronRight, ArrowLeft, Anchor, Cpu, Ship, LayoutGrid, Search, Lock, Layers } from 'lucide-react'
 
 export const metadata: Metadata = {
   title: 'Nguồn Dữ Liệu Cảng Biển & Phương Pháp Luận | Phân Tích Chuyên Sâu',
@@ -12,46 +12,49 @@ export const metadata: Metadata = {
 
 export default function NguonDuLieuPage() {
   return (
-    <div className="min-h-screen bg-background text-foreground pb-20">
+    <div className="min-h-screen bg-slate-950 text-slate-100 pb-24 selection:bg-teal-500 selection:text-slate-950">
       {/* Site Header */}
       <SiteHeader />
 
       {/* Header */}
-      <div className="border-b border-border/70 bg-gradient-to-b from-slate-950 via-slate-900/90 to-background py-8 sm:py-10">
-        <div className="mx-auto max-w-[1200px] px-4 space-y-6">
+      <div className="relative border-b border-slate-800/80 bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950 py-8 sm:py-10 overflow-hidden">
+        {/* Ambient Glow */}
+        <div className="absolute top-0 right-1/3 translate-x-1/2 w-96 h-96 bg-sky-500/10 rounded-full blur-3xl pointer-events-none" />
+
+        <div className="mx-auto max-w-[1200px] px-4 space-y-6 relative z-10">
           {/* Breadcrumb & Sub-nav */}
-          <div className="flex flex-wrap items-center justify-between gap-3 border-b border-border/40 pb-4">
-            <div className="flex items-center gap-2 text-xs text-muted-foreground">
-              <Link href="/" className="hover:text-foreground transition-colors">
+          <div className="flex flex-wrap items-center justify-between gap-3 border-b border-slate-800/80 pb-4">
+            <div className="flex items-center gap-2 text-xs text-slate-400">
+              <Link href="/" className="hover:text-slate-200 transition-colors">
                 Trang chủ
               </Link>
-              <ChevronRight className="size-3 text-muted-foreground/60" />
-              <Link href="/cang-bien" className="hover:text-foreground transition-colors">
+              <ChevronRight className="size-3 text-slate-600" />
+              <Link href="/cang-bien" className="hover:text-slate-200 transition-colors">
                 Cảng Biển
               </Link>
-              <ChevronRight className="size-3 text-muted-foreground/60" />
-              <span className="text-teal-400 font-semibold">Nguồn dữ liệu</span>
+              <ChevronRight className="size-3 text-slate-600" />
+              <span className="text-teal-400 font-bold">Nguồn dữ liệu</span>
             </div>
 
             {/* Maritime Sub-navigation Tabs */}
-            <div className="flex flex-wrap items-center gap-2 bg-background/80 p-1 rounded-xl border border-border/70 text-xs font-semibold">
+            <div className="flex flex-wrap items-center gap-1.5 bg-slate-900/90 p-1 rounded-xl border border-slate-800 text-xs font-semibold shadow-inner">
               <Link
                 href="/cang-bien"
-                className="inline-flex items-center gap-1.5 rounded-lg px-3 py-1.5 text-muted-foreground hover:bg-muted/80 hover:text-foreground transition-all"
+                className="inline-flex items-center gap-1.5 rounded-lg px-3.5 py-1.5 text-slate-400 hover:bg-slate-800 hover:text-slate-200 transition-all font-bold"
               >
                 <LayoutGrid className="size-3.5" />
                 <span>Tổng quan &amp; Cổ phiếu</span>
               </Link>
               <Link
                 href="/cang-bien/tau"
-                className="inline-flex items-center gap-1.5 rounded-lg px-3 py-1.5 text-muted-foreground hover:bg-muted/80 hover:text-foreground transition-all"
+                className="inline-flex items-center gap-1.5 rounded-lg px-3.5 py-1.5 text-slate-400 hover:bg-slate-800 hover:text-slate-200 transition-all font-bold"
               >
                 <Search className="size-3.5 text-teal-400" />
                 <span>Tra cứu tàu</span>
               </Link>
               <Link
                 href="/cang-bien/nguon-du-lieu"
-                className="inline-flex items-center gap-1.5 rounded-lg bg-teal-500 text-slate-950 px-3 py-1.5 font-bold shadow-sm"
+                className="inline-flex items-center gap-1.5 rounded-lg bg-gradient-to-r from-teal-400 to-emerald-400 text-slate-950 px-3.5 py-1.5 font-black shadow-md shadow-teal-500/20"
               >
                 <Database className="size-3.5" />
                 <span>Nguồn dữ liệu</span>
@@ -61,15 +64,15 @@ export default function NguonDuLieuPage() {
 
           <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
             <div>
-              <div className="inline-flex items-center gap-2 rounded-full border border-teal-500/30 bg-teal-500/10 px-3 py-1 text-xs font-bold text-teal-400 mb-2">
-                <Database className="size-3.5" />
-                <span>MINH BẠCH DỮ LIỆU</span>
+              <div className="inline-flex items-center gap-2 rounded-full border border-teal-500/30 bg-teal-500/10 px-3.5 py-1 text-xs font-black text-teal-300 mb-2.5">
+                <Database className="size-3.5 text-teal-400" />
+                <span>MINH BẠCH &amp; CHUẨN HOÁ DỮ LIỆU</span>
               </div>
-              <h1 className="text-2xl sm:text-3xl font-extrabold tracking-tight text-foreground">
+              <h1 className="text-2xl sm:text-4xl font-black tracking-tight text-white">
                 Nguồn Dữ Liệu &amp; Quy Trình Xử Lý
               </h1>
-              <p className="text-xs sm:text-sm text-muted-foreground mt-1">
-                Nguyên tắc thu thập, làm sạch và chuẩn hoá dữ liệu vận hành cảng biển
+              <p className="text-xs sm:text-sm text-slate-400 mt-1.5">
+                Nguyên tắc thu thập, làm sạch và chuẩn hoá dữ liệu vận hành cảng biển Việt Nam
               </p>
             </div>
           </div>
@@ -80,14 +83,14 @@ export default function NguonDuLieuPage() {
       <div className="mx-auto max-w-[1200px] px-4 pt-8 space-y-8">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {/* Card 1: Cảng vụ hàng hải */}
-          <div className="rounded-2xl border border-border/80 bg-card/80 p-6 shadow-lg space-y-3">
+          <div className="rounded-2xl border border-slate-800 bg-gradient-to-b from-slate-900/95 via-slate-900/80 to-slate-950/95 p-6 shadow-xl space-y-3.5 hover:border-teal-500/40 transition-all">
             <div className="flex items-center gap-3">
-              <span className="flex size-9 items-center justify-center rounded-xl bg-teal-500/10 text-teal-400 border border-teal-500/20">
+              <span className="flex size-10 items-center justify-center rounded-xl bg-teal-500/15 text-teal-400 border border-teal-500/30">
                 <Anchor className="size-5" />
               </span>
-              <h3 className="text-base font-bold text-foreground">1. Cảng Vụ Hàng Hải Việt Nam</h3>
+              <h3 className="text-base font-extrabold text-white">1. Cảng Vụ Hàng Hải Việt Nam</h3>
             </div>
-            <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed">
+            <p className="text-xs sm:text-sm text-slate-400 leading-relaxed">
               Lịch tàu vào/ra cảng được công bố công khai bởi các Cảng vụ Hàng hải Việt Nam (Hải Phòng,
               TP.HCM, Cái Mép, Đà Nẵng, Quảng Ninh, Đồng Nai...). Dữ liệu bao gồm tên tàu, trọng tải DWT,
               chiều dài LOA, mớn nước, giờ điều động và cầu bến tiếp nhận cụ thể.
@@ -95,14 +98,14 @@ export default function NguonDuLieuPage() {
           </div>
 
           {/* Card 2: Hoa tiêu và cảng quốc tế */}
-          <div className="rounded-2xl border border-border/80 bg-card/80 p-6 shadow-lg space-y-3">
+          <div className="rounded-2xl border border-slate-800 bg-gradient-to-b from-slate-900/95 via-slate-900/80 to-slate-950/95 p-6 shadow-xl space-y-3.5 hover:border-sky-500/40 transition-all">
             <div className="flex items-center gap-3">
-              <span className="flex size-9 items-center justify-center rounded-xl bg-sky-500/10 text-sky-400 border border-sky-500/20">
+              <span className="flex size-10 items-center justify-center rounded-xl bg-sky-500/15 text-sky-400 border border-sky-500/30">
                 <Ship className="size-5" />
               </span>
-              <h3 className="text-base font-bold text-foreground">2. Hoa Tiêu & Cổng Điều Động</h3>
+              <h3 className="text-base font-extrabold text-white">2. Hoa Tiêu &amp; Cổng Điều Động</h3>
             </div>
-            <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed">
+            <p className="text-xs sm:text-sm text-slate-400 leading-relaxed">
               Dữ liệu dẫn tàu trực tiếp từ các đơn vị Hoa tiêu Hàng hải (Hoa tiêu Miền Bắc, Hoa tiêu Miền Nam)
               và các cổng thông tin hàng hải quốc tế, cung cấp dữ liệu tức thời về các lượt tàu đang cập bến
               hoặc chuẩn bị rời bến trong ngày.
@@ -110,32 +113,30 @@ export default function NguonDuLieuPage() {
           </div>
 
           {/* Card 3: Xử lý và làm sạch */}
-          <div className="rounded-2xl border border-border/80 bg-card/80 p-6 shadow-lg space-y-3">
+          <div className="rounded-2xl border border-slate-800 bg-gradient-to-b from-slate-900/95 via-slate-900/80 to-slate-950/95 p-6 shadow-xl space-y-3.5 hover:border-emerald-500/40 transition-all">
             <div className="flex items-center gap-3">
-              <span className="flex size-9 items-center justify-center rounded-xl bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
+              <span className="flex size-10 items-center justify-center rounded-xl bg-emerald-500/15 text-emerald-400 border border-emerald-500/30">
                 <Cpu className="size-5" />
               </span>
-              <h3 className="text-base font-bold text-foreground">3. Pipeline Xử Lý & Làm Sạch</h3>
+              <h3 className="text-base font-extrabold text-white">3. Pipeline Xử Lý &amp; Làm Sạch</h3>
             </div>
-            <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed">
-              Tên tàu được chuẩn hoá (loại bỏ ký tự rác, ghép các phiên bản trùng lặp), mã cảng đồng nhất
-              theo chuẩn ISO UN/LOCODE. Hệ thống tự động quét và cập nhật hàng ngày lúc 05:00 sáng,
-              bổ sung backfill dữ liệu 3 ngày gần nhất.
+            <p className="text-xs sm:text-sm text-slate-400 leading-relaxed">
+              Dữ liệu thô trải qua hệ thống chuẩn hoá tên tàu theo chuẩn IMO/Call Sign, chuyển đổi ngày giờ
+              thực tế GMT+7, và đối soát chéo cầu bến để loại bỏ các bản ghi trùng lặp do tàu đổi ca hoa tiêu.
             </p>
           </div>
 
-          {/* Card 4: Hiệu chỉnh số liệu */}
-          <div className="rounded-2xl border border-border/80 bg-card/80 p-6 shadow-lg space-y-3">
+          {/* Card 4: Ánh xạ mã cổ phiếu */}
+          <div className="rounded-2xl border border-slate-800 bg-gradient-to-b from-slate-900/95 via-slate-900/80 to-slate-950/95 p-6 shadow-xl space-y-3.5 hover:border-amber-500/40 transition-all">
             <div className="flex items-center gap-3">
-              <span className="flex size-9 items-center justify-center rounded-xl bg-amber-500/10 text-amber-400 border border-amber-500/20">
+              <span className="flex size-10 items-center justify-center rounded-xl bg-amber-500/15 text-amber-400 border border-amber-500/30">
                 <ShieldCheck className="size-5" />
               </span>
-              <h3 className="text-base font-bold text-foreground">4. Hiệu Chỉnh & Đối Soát</h3>
+              <h3 className="text-base font-extrabold text-white">4. Ánh Xạ Mã Cổ Phiếu Niêm Yết</h3>
             </div>
-            <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed">
-              Khi cảng vụ điều chỉnh hoặc đăng lại lịch tàu, hệ thống lưu vết toàn bộ các bản ghi nhận và tính
-              toán theo bản cuối cùng trong cửa sổ 7 ngày, đảm bảo số lượt tàu và trọng tải DWT phản ánh
-              đúng thực tế từ nguồn công bố chính thức.
+            <p className="text-xs sm:text-sm text-slate-400 leading-relaxed">
+              Mỗi bến cảng tiếp nhận được đối chiếu tự động vào danh mục tài sản của từng mã cổ phiếu (PHP, GMD,
+              DVP, DXP, MIPEC, SGP, PDN, CDN...) thông qua bản đồ bến chuẩn xác, đảm bảo dữ liệu phản ánh sát hoạt động kinh doanh.
             </p>
           </div>
         </div>
