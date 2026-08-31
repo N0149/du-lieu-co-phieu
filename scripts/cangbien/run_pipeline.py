@@ -48,7 +48,7 @@ def export_summary_json():
         SELECT id, vessel_name, authority_id, berth_name, stock_ticker, call_direction,
                call_date, scheduled_time, draft, loa, dwt, gt, origin_port, dest_port, source
         FROM port_calls
-        ORDER BY id DESC
+        ORDER BY COALESCE(scheduled_time, call_date) DESC, id DESC
         LIMIT 1000
     """)
     recent_calls = [dict(row) for row in cursor.fetchall()]

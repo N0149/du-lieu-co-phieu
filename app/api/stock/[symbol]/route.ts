@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server'
-import type { StockDetailData } from '@/lib/longlivestock'
+import { fetchStockDetailData, type StockDetailData } from '@/lib/longlivestock'
 
 export const dynamic = 'force-dynamic'
 
@@ -24,23 +24,15 @@ export async function GET(
   }
 
   try {
-    const res = await fetch(`https://longlivestock.com/data/${ticker}_data.json`, {
-      next: { revalidate: 3600 },
-      headers: {
-        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64)',
-      },
-    })
-
-    if (!res.ok) {
+    const data = await fetchStockDetailData(ticker)
+    if (!data) {
       return NextResponse.json(
         { error: `Không tìm thấy dữ liệu chi tiết cho mã ${ticker}` },
-        { status: res.status }
+        { status: 404 }
       )
     }
 
-    const data: StockDetailData = await res.json()
     cache.set(ticker, { data, timestamp: Date.now() })
-
     return NextResponse.json(data)
   } catch (error: any) {
     console.error(`[API stock/${ticker}] Error fetching data:`, error)

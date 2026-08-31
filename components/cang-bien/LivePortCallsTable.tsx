@@ -2,7 +2,7 @@
 
 import React, { useState, useMemo } from 'react'
 import { LivePortCall, formatDWT } from '@/lib/maritime-types'
-import { Ship, Search, ArrowDownRight, ArrowUpRight, RefreshCw, Filter, ExternalLink } from 'lucide-react'
+import { Ship, Search, ArrowDownRight, ArrowUpRight, RefreshCw, Filter, ExternalLink, ArrowDown, ArrowUp } from 'lucide-react'
 import Link from 'next/link'
 
 interface Props {
@@ -13,6 +13,7 @@ export function LivePortCallsTable({ calls }: Props) {
   const [searchTerm, setSearchTerm] = useState('')
   const [filterDirection, setFilterDirection] = useState<string>('all')
   const [filterTicker, setFilterTicker] = useState<string>('all')
+  const [sortOrder, setSortOrder] = useState<'desc' | 'asc'>('desc')
 
   const uniqueTickers = useMemo(() => {
     const set = new Set<string>()
@@ -23,26 +24,36 @@ export function LivePortCallsTable({ calls }: Props) {
   }, [calls])
 
   const filteredCalls = useMemo(() => {
-    return calls.filter((c) => {
-      const matchSearch =
-        !searchTerm ||
-        c.vessel_name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-        (c.berth_name && c.berth_name.toLowerCase().includes(searchTerm.toLowerCase()))
-      
-      const matchDir =
-        filterDirection === 'all' ||
-        (filterDirection === 'in' && c.call_direction === 'in') ||
-        (filterDirection === 'out' && c.call_direction === 'out') ||
-        (filterDirection === 'shift' && c.call_direction === 'shift')
+    return calls
+      .filter((c) => {
+        const matchSearch =
+          !searchTerm ||
+          c.vessel_name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+          (c.berth_name && c.berth_name.toLowerCase().includes(searchTerm.toLowerCase()))
+        
+        const matchDir =
+          filterDirection === 'all' ||
+          (filterDirection === 'in' && c.call_direction === 'in') ||
+          (filterDirection === 'out' && c.call_direction === 'out') ||
+          (filterDirection === 'shift' && c.call_direction === 'shift')
 
-      const matchTicker =
-        filterTicker === 'all' ||
-        (filterTicker === 'mapped' && c.stock_ticker) ||
-        c.stock_ticker === filterTicker
+        const matchTicker =
+          filterTicker === 'all' ||
+          (filterTicker === 'mapped' && c.stock_ticker) ||
+          c.stock_ticker === filterTicker
 
-      return matchSearch && matchDir && matchTicker
-    })
-  }, [calls, searchTerm, filterDirection, filterTicker])
+        return matchSearch && matchDir && matchTicker
+      })
+      .sort((a, b) => {
+        const timeA = a.scheduled_time || a.call_date || ''
+        const timeB = b.scheduled_time || b.call_date || ''
+        const cmp = timeB.localeCompare(timeA)
+        if (cmp !== 0) {
+          return sortOrder === 'desc' ? cmp : -cmp
+        }
+        return sortOrder === 'desc' ? (b.id || 0) - (a.id || 0) : (a.id || 0) - (b.id || 0)
+      })
+  }, [calls, searchTerm, filterDirection, filterTicker, sortOrder])
 
   return (
     <div className="rounded-2xl border border-border/80 bg-card/70 p-4 sm:p-6 shadow-xl space-y-4">
@@ -110,7 +121,22 @@ export function LivePortCallsTable({ calls }: Props) {
         <table className="w-full text-left text-xs border-collapse">
           <thead>
             <tr className="bg-muted/60 text-muted-foreground border-b border-border/80 uppercase text-[10px] tracking-wider font-semibold">
-              <th className="py-3 px-3">Thời gian</th>
+              <th
+                className="py-3 px-3 cursor-pointer select-none hover:text-foreground transition-colors group"
+                onClick={() => setSortOrder((prev) => (prev === 'desc' ? 'asc' : 'desc'))}
+                title={sortOrder === 'desc' ? 'Đang xếp: Mới nhất → Cũ nhất (Nhấn để đổi)' : 'Đang xếp: Cũ nhất → Mới nhất (Nhấn để đổi)'}
+              >
+                <div className="flex items-center gap-1.5">
+                  <span>Thời gian</span>
+                  <span className="text-teal-400">
+                    {sortOrder === 'desc' ? (
+                      <ArrowDown className="size-3" />
+                    ) : (
+                      <ArrowUp className="size-3" />
+                    )}
+                  </span>
+                </div>
+              </th>
               <th className="py-3 px-3">Tên tàu</th>
               <th className="py-3 px-3">Hướng</th>
               <th className="py-3 px-3">Trọng tải (DWT)</th>

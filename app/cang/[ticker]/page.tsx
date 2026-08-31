@@ -68,6 +68,12 @@ export default async function StockPortDetailPage({ params }: Props) {
     (acc, m) => acc + (m.in || 0) + (m.out || 0),
     0
   )
+  const totalDwtHistory = monthlyData.reduce(
+    (acc, m) => acc + (m.dwt_in || 0) + (m.dwt_out || 0),
+    0
+  )
+  const latestDwt = (latestMonth?.dwt_in || 0) + (latestMonth?.dwt_out || 0)
+  const prevDwt = (prevMonth?.dwt_in || 0) + (prevMonth?.dwt_out || 0)
 
   return (
     <div className="min-h-screen bg-background text-foreground pb-20">
@@ -144,7 +150,7 @@ export default async function StockPortDetailPage({ params }: Props) {
                 {(latestMonth?.in || 0) + (latestMonth?.out || 0)} lượt
               </div>
               <div className="text-[10px] text-muted-foreground mt-0.5">
-                Vào: {latestMonth?.in || 0} | Ra: {latestMonth?.out || 0}
+                {latestDwt > 0 ? formatDWT(latestDwt) : `Vào: ${latestMonth?.in || 0} | Ra: ${latestMonth?.out || 0}`}
               </div>
             </div>
 
@@ -156,7 +162,7 @@ export default async function StockPortDetailPage({ params }: Props) {
                 {(prevMonth?.in || 0) + (prevMonth?.out || 0)} lượt
               </div>
               <div className="text-[10px] text-muted-foreground mt-0.5">
-                Vào: {prevMonth?.in || 0} | Ra: {prevMonth?.out || 0}
+                {prevDwt > 0 ? formatDWT(prevDwt) : `Vào: ${prevMonth?.in || 0} | Ra: ${prevMonth?.out || 0}`}
               </div>
             </div>
 
@@ -174,13 +180,13 @@ export default async function StockPortDetailPage({ params }: Props) {
 
             <div className="rounded-xl border border-border/80 bg-card/80 p-3.5 shadow-sm">
               <div className="text-[11px] text-muted-foreground font-medium">
-                Tổng Lượt Tàu (Toàn chuỗi)
+                Tổng Trọng Tải DWT
               </div>
               <div className="text-xl font-extrabold text-amber-400 mt-1">
-                {formatCalls(totalCallsHistory)}
+                {totalDwtHistory > 0 ? formatDWT(totalDwtHistory) : formatCalls(totalCallsHistory)}
               </div>
               <div className="text-[10px] text-muted-foreground mt-0.5">
-                {monthlyData.length} tháng lịch sử
+                {formatCalls(totalCallsHistory)} ({monthlyData.length} tháng)
               </div>
             </div>
           </div>

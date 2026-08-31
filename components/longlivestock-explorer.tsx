@@ -8,6 +8,7 @@ import {
   type MarketManifestData,
   removeVietnameseAccents,
 } from '@/lib/longlivestock'
+import { useReports } from '@/lib/use-reports'
 import { MarketIndicesStrip } from './market-indices-strip'
 import { SectorChipsBrowser } from './sector-chips-browser'
 import { StockScreenerBar, type ScreenerFilterState } from './stock-screener-bar'
@@ -28,12 +29,17 @@ const INITIAL_FILTER_STATE: ScreenerFilterState = {
   dyMin: null,
   w1Min: null,
   sector: '',
+  exchange: '',
+  hasReportOnly: false,
+  portOnly: false,
+  viewMode: 'grid',
 }
 
 export function LongLiveStockExplorer({
   manifestData,
   indicesData,
 }: LongLiveStockExplorerProps) {
+  const { byTicker } = useReports()
   const [isSectorPanelOpen, setIsSectorPanelOpen] = useState(false)
   const [searchQuery, setSearchQuery] = useState('')
   const [selectedSector, setSelectedSector] = useState('')
@@ -78,13 +84,24 @@ export function LongLiveStockExplorer({
       if (selectedSector && x.s2 !== selectedSector) return false
       if (filterState.sector && x.s2 !== filterState.sector) return false
 
-      // 2. Search query (ticker, company name, sector)
+      // 2. Exchange filter
+      if (filterState.exchange && x.e?.toUpperCase() !== filterState.exchange.toUpperCase()) {
+        return false
+      }
+
+      // 3. Port filter
+      if (filterState.portOnly && !x.port) return false
+
+      // 4. Report filter
+      if (filterState.hasReportOnly && !byTicker.has(x.t.toUpperCase())) return false
+
+      // 5. Search query (ticker, company name, sector)
       if (qNorm) {
         const textTarget = removeVietnameseAccents(`${x.t} ${x.n} ${x.s} ${x.s2} ${x.g}`.toLowerCase())
         if (!textTarget.includes(qNorm)) return false
       }
 
-      // 3. Screener numeric criteria
+      // 6. Screener numeric criteria
       if (filterState.roeMin != null && (x.roe == null || isNaN(x.roe) || x.roe < filterState.roeMin))
         return false
       if (filterState.peMax != null && (x.pe == null || isNaN(x.pe) || x.pe <= 0 || x.pe > filterState.peMax))
@@ -100,7 +117,7 @@ export function LongLiveStockExplorer({
 
       return true
     })
-  }, [allStocks, searchQuery, selectedSector, filterState])
+  }, [allStocks, searchQuery, selectedSector, filterState, byTicker])
 
   const hasSearchOrFilter =
     searchQuery.trim().length > 0 ||
@@ -111,7 +128,10 @@ export function LongLiveStockExplorer({
     filterState.capMin != null ||
     filterState.dyMin != null ||
     filterState.w1Min != null ||
-    filterState.sector !== ''
+    filterState.sector !== '' ||
+    filterState.exchange !== '' ||
+    filterState.hasReportOnly ||
+    filterState.portOnly
 
   return (
     <div className="min-h-screen">
@@ -181,11 +201,12 @@ export function LongLiveStockExplorer({
           </div>
         )}
 
-        {/* Stock Cards Grid */}
+        {/* Stock Cards Grid / Table */}
         <StockCardGrid
           stocks={filteredStocks}
           searchQuery={searchQuery}
           selectedSector={selectedSector}
+          viewMode={filterState.viewMode}
         />
       </div>
     </div>

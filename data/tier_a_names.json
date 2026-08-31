@@ -1,0 +1,307 @@
+[
+  {
+    "ticker": "AAM",
+    "name": "Công ty Cổ Phần Thủy Sản MeKong",
+    "group_label": "Thủy sản"
+  },
+  {
+    "ticker": "ADS",
+    "name": "Công ty Cổ phần DAMSAN",
+    "group_label": "Dệt may"
+  },
+  {
+    "ticker": "BDG",
+    "name": "Công ty Cổ phần May mặc Bình Dương",
+    "group_label": "Dệt may"
+  },
+  {
+    "ticker": "BFC",
+    "name": "Công ty Cổ phần Phân bón Bình Điền",
+    "group_label": "Phân bón"
+  },
+  {
+    "ticker": "BMG",
+    "name": "Công ty Cổ phần May Bình Minh",
+    "group_label": "Dệt may"
+  },
+  {
+    "ticker": "BRR",
+    "name": "Công ty Cổ phần Cao su Bà Rịa",
+    "group_label": "Cao su (trồng/chế biến mủ)"
+  },
+  {
+    "ticker": "BVG",
+    "name": "Công ty Cổ phần Group Bắc Việt",
+    "group_label": "Sắt thép"
+  },
+  {
+    "ticker": "BVN",
+    "name": "Công ty Cổ phần Bông Việt Nam",
+    "group_label": "Dệt may"
+  },
+  {
+    "ticker": "CAT",
+    "name": "Công ty Cổ phần Thủy sản Cà Mau",
+    "group_label": "Thủy sản"
+  },
+  {
+    "ticker": "CSV",
+    "name": "Công ty Cổ phần Hóa chất Cơ bản miền Nam",
+    "group_label": "Phân bón"
+  },
+  {
+    "ticker": "DCM",
+    "name": "Công ty Cổ phần - Tổng Công ty Phân bón Dầu Khí Cà Mau",
+    "group_label": "Phân bón"
+  },
+  {
+    "ticker": "DDV",
+    "name": "Công ty Cổ phần DAP - Vinachem",
+    "group_label": "Phân bón"
+  },
+  {
+    "ticker": "DHB",
+    "name": "Công ty Cổ phần Phân đạm và Hóa chất Hà Bắc",
+    "group_label": "Phân bón"
+  },
+  {
+    "ticker": "DPM",
+    "name": "Tổng Công ty Phân bón và Hóa chất Dầu khí - Công ty Cổ phần",
+    "group_label": "Phân bón"
+  },
+  {
+    "ticker": "DPR",
+    "name": "Công ty Cổ phần Cao su Đồng Phú",
+    "group_label": "Cao su (trồng/chế biến mủ)"
+  },
+  {
+    "ticker": "DRI",
+    "name": "Công ty Cổ phần Đầu tư Cao su Đắk Lắk",
+    "group_label": "Cao su (trồng/chế biến mủ)"
+  },
+  {
+    "ticker": "GMC",
+    "name": "Công ty Cổ phần Garmex Sài Gòn",
+    "group_label": "Dệt may"
+  },
+  {
+    "ticker": "GTA",
+    "name": "Công ty Cổ phần Chế biến Gỗ Thuận An",
+    "group_label": "Gỗ"
+  },
+  {
+    "ticker": "HDM",
+    "name": "Công ty Cổ phần Dệt May Huế",
+    "group_label": "Dệt may"
+  },
+  {
+    "ticker": "HMG",
+    "name": "Công ty Cổ phần Kim Khí Hà Nội - VNSTEEL",
+    "group_label": "Sắt thép"
+  },
+  {
+    "ticker": "HNI",
+    "name": "Công ty Cổ phần May Hữu Nghị",
+    "group_label": "Dệt may"
+  },
+  {
+    "ticker": "HPG",
+    "name": "Công ty Cổ phần Tập đoàn Hòa Phát",
+    "group_label": "Sắt thép"
+  },
+  {
+    "ticker": "HRC",
+    "name": "Công ty Cổ phần Cao su Hòa Bình",
+    "group_label": "Cao su (trồng/chế biến mủ)"
+  },
+  {
+    "ticker": "HSG",
+    "name": "Công ty Cổ phần Tập đoàn Hoa Sen",
+    "group_label": "Sắt thép"
+  },
+  {
+    "ticker": "HSM",
+    "name": "Tổng Công ty Cổ phần Dệt May Hà Nội",
+    "group_label": "Dệt may"
+  },
+  {
+    "ticker": "HTG",
+    "name": "Tổng Công ty Cổ phần Dệt may Hòa Thọ",
+    "group_label": "Dệt may"
+  },
+  {
+    "ticker": "HUG",
+    "name": "Tổng công ty May Hưng Yên - Công ty Cổ phần",
+    "group_label": "Dệt may"
+  },
+  {
+    "ticker": "IRC",
+    "name": "Công ty Cổ phần Cao su Công nghiệp",
+    "group_label": "Cao su (trồng/chế biến mủ)"
+  },
+  {
+    "ticker": "KHS",
+    "name": "Công ty Cổ phần Kiên Hùng",
+    "group_label": "Thủy sản"
+  },
+  {
+    "ticker": "LTG",
+    "name": "Công ty Cổ phần Tập đoàn Lộc Trời",
+    "group_label": "Gạo"
+  },
+  {
+    "ticker": "M10",
+    "name": "Tổng công ty May 10 - Công ty Cổ phần",
+    "group_label": "Dệt may"
+  },
+  {
+    "ticker": "MNB",
+    "name": "Tổng Công ty May Nhà Bè - Công ty Cổ phần",
+    "group_label": "Dệt may"
+  },
+  {
+    "ticker": "MPC",
+    "name": "Công ty Cổ phần Tập đoàn Thủy sản Minh Phú",
+    "group_label": "Thủy sản"
+  },
+  {
+    "ticker": "MPT",
+    "name": "Công ty Cổ phần Tập đoàn MPT",
+    "group_label": "Dệt may"
+  },
+  {
+    "ticker": "MSH",
+    "name": "Công ty Cổ phần May Sông Hồng",
+    "group_label": "Dệt may"
+  },
+  {
+    "ticker": "NFC",
+    "name": "Công ty Cổ phần Phân lân Ninh Bình",
+    "group_label": "Phân bón"
+  },
+  {
+    "ticker": "NHH",
+    "name": "Công ty Cổ phần Nhựa Hà Nội",
+    "group_label": "Sản phẩm nhựa"
+  },
+  {
+    "ticker": "NKG",
+    "name": "Công ty Cổ phần Thép Nam Kim",
+    "group_label": "Sắt thép"
+  },
+  {
+    "ticker": "PCE",
+    "name": "Công ty Cổ phần Phân bón và hóa chất dầu khí Miền Trung",
+    "group_label": "Phân bón"
+  },
+  {
+    "ticker": "PHR",
+    "name": "Công ty Cổ phần Cao su Phước Hòa",
+    "group_label": "Cao su (trồng/chế biến mủ)"
+  },
+  {
+    "ticker": "PMB",
+    "name": "Công ty Cổ phần Phân bón và Hóa chất Dầu khí Miền Bắc",
+    "group_label": "Phân bón"
+  },
+  {
+    "ticker": "POM",
+    "name": "Công ty Cổ phần Thép Pomina",
+    "group_label": "Sắt thép"
+  },
+  {
+    "ticker": "PSE",
+    "name": "Công ty Cổ phần Phân bón và hóa chất dầu khí Đông Nam Bộ",
+    "group_label": "Phân bón"
+  },
+  {
+    "ticker": "PSW",
+    "name": "Công ty Cổ phần Phân bón và hóa chất dầu khí Tây Nam Bộ",
+    "group_label": "Phân bón"
+  },
+  {
+    "ticker": "PTG",
+    "name": "Công ty Cổ phần May Xuất Khẩu Phan Thiết",
+    "group_label": "Dệt may"
+  },
+  {
+    "ticker": "RTB",
+    "name": "Công ty Cổ phần Cao su Tân Biên",
+    "group_label": "Cao su (trồng/chế biến mủ)"
+  },
+  {
+    "ticker": "SEA",
+    "name": "Tổng Công ty Thủy sản Việt Nam - Công ty Cổ phần",
+    "group_label": "Thủy sản"
+  },
+  {
+    "ticker": "SMC",
+    "name": "Công ty Cổ phần Đầu tư Thương mại SMC",
+    "group_label": "Sắt thép"
+  },
+  {
+    "ticker": "STK",
+    "name": "Công ty Cổ phần Sợi Thế Kỷ",
+    "group_label": "Dệt may"
+  },
+  {
+    "ticker": "TCM",
+    "name": "Công ty Cổ phần Dệt may - Đầu tư - Thương mại Thành Công",
+    "group_label": "Dệt may"
+  },
+  {
+    "ticker": "TCR",
+    "name": "Công ty Cổ phần Công nghiệp Gốm sứ TAICERA",
+    "group_label": "Gốm sứ"
+  },
+  {
+    "ticker": "THP",
+    "name": "Công ty Cổ phần Thủy sản và Thương mại Thuận Phước",
+    "group_label": "Thủy sản"
+  },
+  {
+    "ticker": "TIS",
+    "name": "Công ty Cổ phần Gang thép Thái Nguyên",
+    "group_label": "Sắt thép"
+  },
+  {
+    "ticker": "TNG",
+    "name": "Công ty Cổ phần Đầu tư và Thương mại TNG",
+    "group_label": "Dệt may"
+  },
+  {
+    "ticker": "TRC",
+    "name": "Công ty Cổ phần Cao su Tây Ninh",
+    "group_label": "Cao su (trồng/chế biến mủ)"
+  },
+  {
+    "ticker": "TVN",
+    "name": "Tổng Công ty Thép Việt Nam - Công ty Cổ phần",
+    "group_label": "Sắt thép"
+  },
+  {
+    "ticker": "TVT",
+    "name": "Tổng Công ty Việt Thắng - CTCP",
+    "group_label": "Dệt may"
+  },
+  {
+    "ticker": "VCA",
+    "name": "Công ty Cổ phần Thép VICASA",
+    "group_label": "Sắt thép"
+  },
+  {
+    "ticker": "VGG",
+    "name": "Tổng Công Ty Cổ phần May Việt Tiến",
+    "group_label": "Dệt may"
+  },
+  {
+    "ticker": "VGT",
+    "name": "Tập đoàn Dệt May Việt Nam",
+    "group_label": "Dệt may"
+  },
+  {
+    "ticker": "VHC",
+    "name": "Công ty Cổ phần Vĩnh Hoàn",
+    "group_label": "Thủy sản"
+  }
+]

@@ -1,0 +1,36 @@
+{
+  "name": "CTCP Damsan",
+  "sub_head": "Báo cáo thường niên 2025 · Dệt may (sợi)",
+  "nganh": "Dệt may",
+  "main_market": "sợi bán nội địa + xuất Hàn Quốc",
+  "segments": [
+    {
+      "ten": "Sợi OE, CD (16.560 tấn/năm)",
+      "chitiet": "Kinh doanh sợi OE, CD + đầu tư Sợi EIFFEL nâng tổng công suất 16.560 tấn sợi/năm (tr.8)",
+      "vaitro": "Mảng chủ lực",
+      "pill": "Xơ, sợi × Xuất khẩu"
+    },
+    {
+      "ten": "Khăn bông xuất khẩu",
+      "chitiet": "Gia công, sản xuất và xuất khẩu khăn bông (tr.8)",
+      "vaitro": "Mảng thứ hai",
+      "pill": "Hàng dệt, may × Xuất khẩu"
+    },
+    {
+      "ten": "Kinh doanh bông nguyên liệu",
+      "chitiet": "Thương mại bông đầu vào cho ngành sợi (tr.8)",
+      "vaitro": "Thương mại",
+      "pill": "Bông × Nhập khẩu"
+    }
+  ],
+  "markets": [
+    "<b>Sợi:</b> tiêu thụ nội địa Việt Nam + xuất khẩu sang Hàn Quốc (tr.10)",
+    "<b>Đối tác thương mại:</b> khách Hàn Quốc, Itochu (Nhật Bản) (tr.15)"
+  ],
+  "drivers": [
+    "<b>Giá bông nguyên liệu</b> · đầu vào chính của sợi (tr.8)",
+    "<b>Rào cản tại thị trường lớn</b> · Mỹ và EU đặt rào cản với dệt may; Hoa Kỳ vẫn là thị trường lớn nhất của ngành (tr.24)"
+  ],
+  "no_data": "Nhóm \"Hàng dệt, may\" (X) và \"Vải các loại\" (N) TCHQ chỉ công bố trị giá, không có cột lượng → không tính được đơn giá cho 2 chuỗi này.",
+  "cite": "Báo cáo thường niên 2025 CTCP Damsan (công bố 04/2026) — trang trích dẫn ghi cạnh từng ý."
+}

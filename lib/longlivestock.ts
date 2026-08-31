@@ -77,6 +77,43 @@ export type StockFinancialYear = {
   src?: string
 }
 
+export type CoreSegmentItem = {
+  segment: string
+  description: string
+  role: string
+  tag: string
+}
+
+export type CoreBentoCard = {
+  title: string
+  items: string[]
+}
+
+export type CoreCardData = {
+  monogram?: string
+  logoUrl?: string | null
+  companyName?: string | null
+  subtitle?: string | null
+  mainMarketTag?: string | null
+  segments?: CoreSegmentItem[]
+  bentoCards?: CoreBentoCard[]
+  citation?: string | null
+  snippet?: string | null
+  pills?: string[]
+}
+
+export type PriceWeeklyItem = {
+  d: string // Date YYYY-MM-DD
+  c: number // Close price (k VND)
+  v: number // Volume
+}
+
+export type PortThroughputItem = {
+  year: number
+  dwt?: number | null
+  vessels?: number | null
+}
+
 export type StockDetailData = {
   ticker: string
   company: {
@@ -115,11 +152,10 @@ export type StockDetailData = {
     shares: number
     pct: number
   }[]
-  price_history?: {
-    date: string
-    close: number
-    volume: number
-  }[]
+  price_weekly?: PriceWeeklyItem[]
+  throughput?: PortThroughputItem[]
+  is_port?: boolean
+  coreCard?: CoreCardData | null
 }
 
 export function getManifestData(): MarketManifestData {
@@ -152,4 +188,155 @@ export function removeVietnameseAccents(str: string): string {
   } catch {
     return (str || '').replace(/đ/g, 'd').replace(/Đ/g, 'D').toUpperCase()
   }
+}
+
+/**
+ * Phân tích bóc tách khối core-card từ HTML trang stock của longlivestock
+ */
+export function parseCoreCardFromHtml(html: string, ticker: string): CoreCardData | null {
+  if (!html || !html.includes('core-card')) return null
+
+  try {
+    const monoMatch = html.match(/<div class="core-mono"[^>]*>(.*?)<\/div>/)
+    const logoMatch = html.match(/<img class="core-logo"[^>]*src="([^"]+)"[^>]*>/)
+    const idMatch = html.match(/<div class="core-id">\s*<b>(.*?)<\/b>\s*<span>(.*?)<\/span>/)
+    const tagMatch = html.match(/<div class="core-tag">(.*?)<\/div>/)
+    const citeMatch = html.match(/<div class="core-cite">([\s\S]*?)<\/div>/)
+    const snippetMatch = html.match(/<p class="core-snippet">([\s\S]*?)<\/p>/)
+
+    const rows: CoreSegmentItem[] = []
+    const tbodyMatch = html.match(/<table class="core-table">[\s\S]*?<tbody>([\s\S]*?)<\/tbody>/)
+    if (tbodyMatch) {
+      const rowMatches = tbodyMatch[1].matchAll(
+        /<tr>\s*<td class="core-seg">\s*<b>(.*?)<\/b>\s*<small>([\s\S]*?)<\/small>\s*<\/td>\s*<td>([\s\S]*?)<\/td>\s*<td>\s*<span class="core-pill">(.*?)<\/span>\s*<\/td>\s*<\/tr>/g
+      )
+      for (const m of rowMatches) {
+        rows.push({
+          segment: m[1].trim(),
+          description: m[2].trim(),
+          role: m[3].trim(),
+          tag: m[4].trim(),
+        })
+      }
+    }
+
+    const miniMatches = Array.from(
+      html.matchAll(/<div class="core-mini">\s*<h4>(.*?)<\/h4>\s*<ul>([\s\S]*?)<\/ul>\s*<\/div>/g)
+    )
+    const bentoCards: CoreBentoCard[] = miniMatches.map((m) => {
+      const title = m[1].trim()
+      const items = Array.from(m[2].matchAll(/<li>([\s\S]*?)<\/li>/g)).map((li) => li[1].trim())
+      return { title, items }
+    })
+
+    const pillsMatch = html.match(/<div class="core-bl">([\s\S]*?)<\/div>/)
+    let pills: string[] = []
+    if (pillsMatch) {
+      pills = Array.from(pillsMatch[1].matchAll(/<span class="core-pill">(.*?)<\/span>/g)).map((m) =>
+        m[1].trim()
+      )
+    }
+
+    return {
+      monogram: monoMatch ? monoMatch[1] : ticker ? ticker[0] : '',
+      logoUrl: logoMatch ? logoMatch[1] : null,
+      companyName: idMatch ? idMatch[1] : null,
+      subtitle: idMatch ? idMatch[2] : null,
+      mainMarketTag: tagMatch ? tagMatch[1] : null,
+      segments: rows,
+      bentoCards: bentoCards,
+      citation: citeMatch ? citeMatch[1] : null,
+      snippet: snippetMatch ? snippetMatch[1] : null,
+      pills: pills,
+    }
+  } catch (err) {
+    console.error(`Error parsing coreCard for ${ticker}:`, err)
+    return null
+  }
+}
+
+/**
+ * Tải toàn bộ dữ liệu chi tiết cổ phiếu gồm tài chính, giá tuần, sản lượng cảng và mảng kinh doanh cốt lõi
+ */
+export async function fetchStockDetailData(tickerUpper: string): Promise<StockDetailData | null> {
+  const ticker = tickerUpper.toUpperCase().trim()
+  const manifestItem = getStockByTicker(ticker)
+
+  let jsonData: Partial<StockDetailData> | null = null
+  let coreCardData: CoreCardData | null = null
+
+  // Chạy song song fetch JSON data và HTML stock page
+  const [jsonRes, htmlRes] = await Promise.allSettled([
+    fetch(`https://longlivestock.com/data/${ticker}_data.json`, {
+      next: { revalidate: 3600 },
+      headers: { 'User-Agent': 'Mozilla/5.0' },
+    }),
+    fetch(`https://longlivestock.com/stock/${ticker}`, {
+      next: { revalidate: 3600 },
+      headers: { 'User-Agent': 'Mozilla/5.0' },
+    }),
+  ])
+
+  if (jsonRes.status === 'fulfilled' && jsonRes.value.ok) {
+    try {
+      jsonData = await jsonRes.value.json()
+    } catch (e) {
+      console.error(`Error parsing JSON for ${ticker}:`, e)
+    }
+  }
+
+  if (htmlRes.status === 'fulfilled' && htmlRes.value.ok) {
+    try {
+      const html = await htmlRes.value.text()
+      coreCardData = parseCoreCardFromHtml(html, ticker)
+    } catch (e) {
+      console.error(`Error parsing HTML for ${ticker}:`, e)
+    }
+  }
+
+  if (!jsonData && !manifestItem) {
+    return null
+  }
+
+  // Tạo kết quả tổng hợp
+  const result: StockDetailData = {
+    ticker: jsonData?.ticker || manifestItem?.t || ticker,
+    company: {
+      name: jsonData?.company?.name || manifestItem?.n || ticker,
+      exchange: jsonData?.company?.exchange || manifestItem?.e || '',
+      sector: jsonData?.company?.sector || manifestItem?.s || '',
+      entity_type: jsonData?.company?.entity_type || manifestItem?.et || 'nonbank',
+      status: jsonData?.company?.status || manifestItem?.st || 'active',
+      status_note: jsonData?.company?.status_note || null,
+      status_date: jsonData?.company?.status_date || null,
+      business_lines: jsonData?.company?.business_lines || [],
+      icb_l1: jsonData?.company?.icb_l1 || manifestItem?.g,
+      icb_l2: jsonData?.company?.icb_l2 || manifestItem?.s2,
+    },
+    profile: jsonData?.profile || `${manifestItem?.n || ticker} là doanh nghiệp niêm yết thuộc ngành ${manifestItem?.s || ''}.`,
+    market: {
+      price: jsonData?.market?.price ?? manifestItem?.px ?? null,
+      market_cap_ty: jsonData?.market?.market_cap_ty ?? manifestItem?.cap ?? null,
+      shares_m: jsonData?.market?.shares_m ?? null,
+      foreign_pct: jsonData?.market?.foreign_pct ?? null,
+      state_pct: jsonData?.market?.state_pct ?? null,
+      high_1y: jsonData?.market?.high_1y ?? null,
+      low_1y: jsonData?.market?.low_1y ?? null,
+    },
+    valuation: {
+      eps: jsonData?.valuation?.eps ?? null,
+      bvps: jsonData?.valuation?.bvps ?? null,
+      pe: jsonData?.valuation?.pe ?? manifestItem?.pe ?? null,
+      pb: jsonData?.valuation?.pb ?? manifestItem?.pb ?? null,
+      dividend: jsonData?.valuation?.dividend ?? manifestItem?.div ?? null,
+    },
+    financials: jsonData?.financials || [],
+    shareholders: jsonData?.shareholders || [],
+    price_weekly: jsonData?.price_weekly || [],
+    throughput: jsonData?.throughput || [],
+    is_port: jsonData?.is_port ?? manifestItem?.port ?? false,
+    coreCard: coreCardData,
+  }
+
+  return result
 }

@@ -1,17 +1,8 @@
 'use client'
 
 import React, { useState, useMemo } from 'react'
-import { BarChart3, TrendingUp, Calendar, Info } from 'lucide-react'
-
-interface MonthlyRecord {
-  ym: string
-  in?: number
-  out?: number
-  dwt_in?: number
-  dwt_out?: number
-  partial?: boolean
-  est?: boolean
-}
+import { MonthlyRecord, formatDWT, formatCalls } from '@/lib/maritime-types'
+import { BarChart3, TrendingUp, Calendar, Info, Scale } from 'lucide-react'
 
 interface Props {
   monthlyData: MonthlyRecord[]
@@ -19,22 +10,36 @@ interface Props {
 }
 
 export function PortThroughputChart({ monthlyData, tickerName }: Props) {
+  const [metric, setMetric] = useState<'calls' | 'dwt'>('calls')
   const [chartMode, setChartMode] = useState<'both' | 'in' | 'out'>('both')
   const [timeRange, setTimeRange] = useState<number>(24) // 12, 24, 36, or 0 (all)
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null)
 
+  // Check if DWT data is available in the dataset
+  const hasDwtData = useMemo(() => {
+    return monthlyData.some(
+      (d) => (d.dwt_in && d.dwt_in > 0) || (d.dwt_out && d.dwt_out > 0)
+    )
+  }, [monthlyData])
+
   const dataToDisplay = useMemo(() => {
     if (!monthlyData || monthlyData.length === 0) return []
     const sliced = timeRange === 0 ? monthlyData : monthlyData.slice(-timeRange)
-    return sliced.map((d) => ({
-      ym: d.ym,
-      in: d.in || 0,
-      out: d.out || 0,
-      total: (d.in || 0) + (d.out || 0),
-      isPartial: Boolean(d.partial),
-      isEstimated: Boolean(d.est),
-    }))
-  }, [monthlyData, timeRange])
+    return sliced.map((d) => {
+      const inVal = metric === 'dwt' ? (d.dwt_in || 0) : (d.in || 0)
+      const outVal = metric === 'dwt' ? (d.dwt_out || 0) : (d.out || 0)
+      const totalVal = inVal + outVal
+
+      return {
+        ym: d.ym,
+        in: inVal,
+        out: outVal,
+        total: totalVal,
+        isPartial: Boolean(d.partial),
+        isEstimated: Boolean(d.est),
+      }
+    })
+  }, [monthlyData, timeRange, metric])
 
   // Max value calculation for scaling
   const maxVal = useMemo(() => {
@@ -48,10 +53,23 @@ export function PortThroughputChart({ monthlyData, tickerName }: Props) {
     return Math.ceil(m * 1.15)
   }, [dataToDisplay, chartMode])
 
+  // Compact formatter for Y-axis and bar tops
+  const formatCompact = (val: number) => {
+    if (metric === 'calls') {
+      if (val >= 1e6) return (val / 1e6).toFixed(1) + 'M'
+      if (val >= 1e3) return (val / 1e3).toFixed(0) + 'k'
+      return val.toString()
+    }
+    if (val >= 1e9) return (val / 1e9).toFixed(1) + 'B'
+    if (val >= 1e6) return (val / 1e6).toFixed(1) + 'M'
+    if (val >= 1e3) return (val / 1e3).toFixed(0) + 'k'
+    return val.toString()
+  }
+
   // SVG dimensions
   const svgWidth = Math.max(760, dataToDisplay.length * 36)
   const svgHeight = 280
-  const padLeft = 45
+  const padLeft = metric === 'dwt' ? 58 : 45
   const padRight = 20
   const padTop = 30
   const padBottom = 45
@@ -67,29 +85,57 @@ export function PortThroughputChart({ monthlyData, tickerName }: Props) {
   return (
     <div className="rounded-2xl border border-border/80 bg-card/70 p-4 sm:p-6 shadow-xl space-y-4">
       {/* Header & Controls */}
-      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-border/50 pb-4">
+      <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-border/50 pb-4">
         <div>
           <div className="flex items-center gap-2">
             <span className="flex size-7 items-center justify-center rounded-lg bg-teal-500/10 text-teal-400 border border-teal-500/20">
               <BarChart3 className="size-4" />
             </span>
             <h3 className="text-base sm:text-lg font-bold text-foreground tracking-tight">
-              Sản Lượng Tàu Qua Cảng Theo Tháng ({tickerName})
+              {metric === 'dwt' ? 'Trọng Tải Tàu (DWT) Theo Tháng' : 'Sản Lượng Tàu Qua Cảng Theo Tháng'} ({tickerName})
             </h3>
           </div>
           <p className="text-xs text-muted-foreground mt-1">
-            Số lượt tàu cập và rời các cầu bến trực thuộc theo từng tháng ({dataToDisplay.length} tháng)
+            {metric === 'dwt'
+              ? `Tổng trọng tải DWT tàu cập và rời các cầu bến trực thuộc theo từng tháng (${dataToDisplay.length} tháng)`
+              : `Số lượt tàu cập và rời các cầu bến trực thuộc theo từng tháng (${dataToDisplay.length} tháng)`}
           </p>
         </div>
 
         <div className="flex flex-wrap items-center gap-2">
-          {/* Mode Switch */}
+          {/* Metric Selector (Số lượt vs Trọng tải DWT) */}
+          {hasDwtData && (
+            <div className="inline-flex rounded-xl border border-border bg-background/80 p-1 text-xs font-semibold">
+              <button
+                onClick={() => setMetric('calls')}
+                className={`rounded-lg px-2.5 py-1 transition-all ${
+                  metric === 'calls'
+                    ? 'bg-teal-500 text-slate-950 font-bold'
+                    : 'text-muted-foreground hover:text-foreground'
+                }`}
+              >
+                Số Lượt Tàu
+              </button>
+              <button
+                onClick={() => setMetric('dwt')}
+                className={`rounded-lg px-2.5 py-1 transition-all ${
+                  metric === 'dwt'
+                    ? 'bg-teal-500 text-slate-950 font-bold'
+                    : 'text-muted-foreground hover:text-foreground'
+                }`}
+              >
+                Trọng Tải DWT
+              </button>
+            </div>
+          )}
+
+          {/* Direction Mode Switch */}
           <div className="inline-flex rounded-xl border border-border bg-background/80 p-1 text-xs font-semibold">
             <button
               onClick={() => setChartMode('both')}
               className={`rounded-lg px-2.5 py-1 transition-all ${
                 chartMode === 'both'
-                  ? 'bg-teal-500 text-slate-950 font-bold'
+                  ? 'bg-slate-700 text-white font-bold'
                   : 'text-muted-foreground hover:text-foreground'
               }`}
             >
@@ -136,25 +182,33 @@ export function PortThroughputChart({ monthlyData, tickerName }: Props) {
         <div className="flex items-center gap-4 text-muted-foreground">
           {(chartMode === 'both' || chartMode === 'in') && (
             <div className="flex items-center gap-1.5">
-              <span className="size-3 rounded bg-emerald-500" />
-              <span className="text-slate-300">Tàu Vào</span>
+              <span className="size-3 rounded bg-emerald-500 shrink-0" />
+              <span className="text-foreground/90 font-medium">{metric === 'dwt' ? 'DWT Vào' : 'Tàu Vào'}</span>
             </div>
           )}
           {(chartMode === 'both' || chartMode === 'out') && (
             <div className="flex items-center gap-1.5">
-              <span className="size-3 rounded bg-sky-500" />
-              <span className="text-slate-300">Tàu Ra</span>
+              <span className="size-3 rounded bg-sky-500 shrink-0" />
+              <span className="text-foreground/90 font-medium">{metric === 'dwt' ? 'DWT Ra' : 'Tàu Ra'}</span>
             </div>
           )}
           <div className="flex items-center gap-1.5">
-            <span className="size-3 rounded bg-amber-500/40 border border-dashed border-amber-400" />
-            <span className="text-slate-300">Tháng Chưa Đóng Sổ</span>
+            <span className="size-3 rounded bg-amber-500/40 border border-dashed border-amber-400 shrink-0" />
+            <span className="text-foreground/90 font-medium">Tháng Chưa Đóng Sổ</span>
           </div>
         </div>
 
         {hoveredIndex !== null && dataToDisplay[hoveredIndex] ? (
-          <div className="rounded-lg bg-slate-900 border border-teal-500/30 px-2.5 py-1 text-teal-300 font-semibold animate-in fade-in">
-            Tháng {dataToDisplay[hoveredIndex].ym}: {dataToDisplay[hoveredIndex].in} vào / {dataToDisplay[hoveredIndex].out} ra (Tổng: {dataToDisplay[hoveredIndex].total} lượt)
+          <div className="rounded-lg bg-card border border-teal-500/40 px-2.5 py-1 text-teal-400 font-semibold shadow-md animate-in fade-in">
+            {metric === 'dwt' ? (
+              <>
+                Tháng {dataToDisplay[hoveredIndex].ym}: {formatDWT(dataToDisplay[hoveredIndex].in)} vào / {formatDWT(dataToDisplay[hoveredIndex].out)} ra (Tổng: {formatDWT(dataToDisplay[hoveredIndex].total)})
+              </>
+            ) : (
+              <>
+                Tháng {dataToDisplay[hoveredIndex].ym}: {dataToDisplay[hoveredIndex].in.toLocaleString('vi-VN')} vào / {dataToDisplay[hoveredIndex].out.toLocaleString('vi-VN')} ra (Tổng: {dataToDisplay[hoveredIndex].total.toLocaleString('vi-VN')} lượt)
+              </>
+            )}
           </div>
         ) : (
           <div className="text-xs text-muted-foreground italic">
@@ -164,7 +218,7 @@ export function PortThroughputChart({ monthlyData, tickerName }: Props) {
       </div>
 
       {/* Responsive Horizontal Scroll SVG Chart */}
-      <div className="w-full overflow-x-auto rounded-xl border border-border/40 bg-slate-950/40 p-2">
+      <div className="w-full overflow-x-auto rounded-xl border border-border/70 bg-muted/20 p-2">
         <svg
           viewBox={`0 0 ${svgWidth} ${svgHeight}`}
           className="w-full min-w-[700px] h-[300px] select-none"
@@ -190,17 +244,18 @@ export function PortThroughputChart({ monthlyData, tickerName }: Props) {
                   y1={y}
                   x2={svgWidth - padRight}
                   y2={y}
-                  stroke="#334155"
+                  stroke="currentColor"
+                  className="text-border/60"
                   strokeDasharray="4 4"
-                  opacity={0.4}
+                  opacity={0.6}
                 />
                 <text
                   x={padLeft - 8}
                   y={y + 3.5}
                   textAnchor="end"
-                  className="text-[10px] fill-slate-400 font-mono"
+                  className="text-[10px] fill-muted-foreground font-mono"
                 >
-                  {tick}
+                  {formatCompact(tick)}
                 </text>
               </g>
             )
@@ -230,7 +285,7 @@ export function PortThroughputChart({ monthlyData, tickerName }: Props) {
                     width={step}
                     height={plotHeight}
                     fill="#38bdf8"
-                    opacity={0.08}
+                    opacity={0.12}
                     pointerEvents="none"
                   />
                 )}
@@ -297,9 +352,9 @@ export function PortThroughputChart({ monthlyData, tickerName }: Props) {
                       x={cx}
                       y={yBase - (chartMode === 'both' ? hTotal : chartMode === 'in' ? hIn : hOut) - 6}
                       textAnchor="middle"
-                      className="text-[10px] font-bold fill-teal-300 font-mono"
+                      className="text-[10px] font-bold fill-teal-400 font-mono"
                     >
-                      {chartMode === 'both' ? d.total : chartMode === 'in' ? d.in : d.out}
+                      {formatCompact(chartMode === 'both' ? d.total : chartMode === 'in' ? d.in : d.out)}
                     </text>
                   )}
 
@@ -310,10 +365,10 @@ export function PortThroughputChart({ monthlyData, tickerName }: Props) {
                     textAnchor="middle"
                     className={`text-[9px] font-mono select-none ${
                       isHovered
-                        ? 'fill-teal-300 font-bold'
+                        ? 'fill-teal-400 font-bold'
                         : d.ym.endsWith('-01')
-                        ? 'fill-slate-200 font-bold'
-                        : 'fill-slate-400'
+                        ? 'fill-foreground font-bold'
+                        : 'fill-muted-foreground font-medium'
                     }`}
                     transform={`rotate(-40, ${cx}, ${yBase + 16})`}
                   >

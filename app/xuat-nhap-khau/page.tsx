@@ -13,10 +13,11 @@ export const metadata: Metadata = {
 export default async function XuatNhapKhauPage({
   searchParams,
 }: {
-  searchParams?: Promise<{ tab?: string }>
+  searchParams?: Promise<{ tab?: string; ticker?: string }>
 }) {
   const params = await searchParams
-  const defaultViewMode = params?.tab === 'tier-a' ? 'tier_a' : 'matrix'
+  const defaultViewMode = params?.ticker || params?.tab === 'tier-a' ? 'tier_a' : 'matrix'
+  const initialTicker = params?.ticker ?? null
   const tradeBalance = (snapshot as { trade_balance?: TradeBalancePoint[] }).trade_balance ?? []
 
   return (
@@ -34,7 +35,7 @@ export default async function XuatNhapKhauPage({
           </h1>
           <p className="mt-2 max-w-3xl text-pretty text-sm text-muted-foreground">
             Số liệu xuất nhập khẩu hàng hóa theo kỳ báo cáo của Tổng cục Hải quan Việt Nam (nhóm
-            mặt hàng chủ yếu) liên kết trực tiếp với <b>57+ mã niêm yết (Tier A)</b> theo nhóm ngành —
+            mặt hàng chủ yếu) liên kết trực tiếp với <b>57+ mã niêm yết (Tier A)</b> và hồ sơ chuỗi giá trị BCTN <b>640+ doanh nghiệp</b> —
             phục vụ nhận diện sớm tín hiệu kinh doanh và phân tích vĩ mô.
           </p>
         </div>
@@ -42,6 +43,7 @@ export default async function XuatNhapKhauPage({
         <CustomsTradeViewer
           tradeBalanceData={tradeBalance}
           defaultViewMode={defaultViewMode}
+          initialTicker={initialTicker}
         />
 
         <p className="mt-6 text-[11px] leading-relaxed text-muted-foreground">

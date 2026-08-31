@@ -42,9 +42,11 @@ function fmtNum(v: number | null): string {
 export function CustomsTradeViewer({
   tradeBalanceData = [],
   defaultViewMode = 'matrix',
+  initialTicker = null,
 }: {
   tradeBalanceData?: TradeBalancePoint[]
   defaultViewMode?: 'matrix' | 'tier_a' | 'list'
+  initialTicker?: string | null
 }) {
   const [rows, setRows] = useState<CustomsTradeRow[] | null>(null)
   const [viewMode, setViewMode] = useState<'matrix' | 'tier_a' | 'list'>(defaultViewMode)
@@ -199,7 +201,10 @@ export function CustomsTradeViewer({
 
       {/* ── CHẾ ĐỘ 2: 57 MÃ NIÊM YẾT THEO NGÀNH XNK (TIER A) ─────────────────── */}
       {viewMode === 'tier_a' && (
-        <TierAStocksViewer onSelectCommodity={handleSelectCommodityFromTierA} />
+        <TierAStocksViewer
+          onSelectCommodity={handleSelectCommodityFromTierA}
+          initialTicker={initialTicker}
+        />
       )}
 
       {/* ── CHẾ ĐỘ 3: BẢNG DỮ LIỆU CHI TIẾT (FLAT LIST) ───────────────────────── */}

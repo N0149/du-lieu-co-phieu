@@ -5,6 +5,7 @@ import { StockDetailView } from '@/components/stock-detail-view'
 import {
   getAllStocks,
   getStockByTicker,
+  fetchStockDetailData,
   type StockDetailData,
 } from '@/lib/longlivestock'
 import { getReportsForTicker } from '@/lib/report-stocks'
@@ -41,59 +42,11 @@ export default async function StockDetailPage({
   const allStocks = getAllStocks()
   const manifestItem = allStocks.find((s) => s.t.toUpperCase() === ticker)
 
-  // Fetch detailed data from LongLiveStock or internal cache
-  let stockData: StockDetailData | null = null
-  try {
-    const res = await fetch(`https://longlivestock.com/data/${ticker}_data.json`, {
-      next: { revalidate: 3600 },
-      headers: {
-        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64)',
-      },
-    })
+  // Fetch full detailed data and core-card intelligence
+  const stockData = await fetchStockDetailData(ticker)
 
-    if (res.ok) {
-      stockData = await res.json()
-    }
-  } catch (err) {
-    console.error(`Error loading stock detail for ${ticker}:`, err)
-  }
-
-  // If live fetch failed but we have manifestItem, create a minimal fallback
   if (!stockData) {
-    if (!manifestItem) notFound()
-
-    stockData = {
-      ticker: manifestItem.t,
-      company: {
-        name: manifestItem.n,
-        exchange: manifestItem.e,
-        sector: manifestItem.s,
-        entity_type: manifestItem.et,
-        status: manifestItem.st || 'active',
-        status_note: null,
-        status_date: null,
-        icb_l1: manifestItem.g,
-        icb_l2: manifestItem.s2,
-      },
-      profile: `${manifestItem.n} (${manifestItem.t}) là doanh nghiệp niêm yết thuộc ngành ${manifestItem.s}.`,
-      market: {
-        price: manifestItem.px,
-        market_cap_ty: manifestItem.cap,
-        shares_m: null,
-        foreign_pct: null,
-        state_pct: null,
-        high_1y: null,
-        low_1y: null,
-      },
-      valuation: {
-        eps: null,
-        bvps: null,
-        pe: manifestItem.pe,
-        pb: manifestItem.pb,
-        dividend: manifestItem.div,
-      },
-      financials: [],
-    }
+    notFound()
   }
 
   // Lấy các bài báo cáo phân tích thực tế của mã từ kho dữ liệu
