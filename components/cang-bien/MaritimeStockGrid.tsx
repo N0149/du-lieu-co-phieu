@@ -49,29 +49,28 @@ export function MaritimeStockGrid({ stocks, stocksIntel }: Props) {
             >
               {/* Subtle background glow effect on hover */}
               <div className="absolute -right-12 -top-12 size-32 rounded-full bg-teal-500/5 blur-2xl group-hover:bg-teal-500/15 transition-all pointer-events-none" />
-
               <div>
                 {/* Top Row: Ticker & Category Badge */}
                 <div className="flex items-start justify-between gap-2 mb-3 relative z-10">
                   <div className="space-y-0.5">
                     <div className="flex items-center gap-2">
-                      <span className="text-2xl font-black tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-teal-300 via-emerald-300 to-cyan-300 group-hover:from-teal-200 group-hover:to-cyan-200">
+                      <span className="text-2xl font-bold tracking-tight text-[#F0F3F6] group-hover:text-emerald-400 transition-colors">
                         {s.ticker}
                       </span>
                     </div>
-                    <span className="text-[11px] font-medium text-slate-400 flex items-center gap-1">
-                      <MapPin className="size-3 text-teal-400/80 shrink-0" />
+                    <span className="text-[11px] font-medium text-[#9EACB9] flex items-center gap-1">
+                      <MapPin className="size-3 text-emerald-400/80 shrink-0" />
                       <span>{s.region || intel.region || 'Việt Nam'}</span>
                     </span>
                   </div>
 
                   {isPurePlay ? (
-                    <span className="inline-flex items-center gap-1 rounded-full bg-emerald-500/15 border border-emerald-500/30 px-2.5 py-0.5 text-[10px] font-bold text-emerald-300 shadow-xs">
+                    <span className="inline-flex items-center gap-1 rounded-full bg-emerald-500/10 border border-emerald-500/20 px-2.5 py-0.5 text-[10px] font-semibold text-emerald-400">
                       <CheckCircle className="size-3 text-emerald-400" />
                       Cảng thuần
                     </span>
                   ) : (
-                    <span className="inline-flex items-center gap-1 rounded-full bg-amber-500/15 border border-amber-500/30 px-2.5 py-0.5 text-[10px] font-bold text-amber-300 shadow-xs">
+                    <span className="inline-flex items-center gap-1 rounded-full bg-amber-500/10 border border-amber-500/20 px-2.5 py-0.5 text-[10px] font-semibold text-amber-400">
                       <Layers className="size-3 text-amber-400" />
                       {s.category === 'fleet' ? 'Đội tàu' : 'Đa cảng'}
                     </span>
@@ -79,13 +78,13 @@ export function MaritimeStockGrid({ stocks, stocksIntel }: Props) {
                 </div>
 
                 {/* Company Name */}
-                <h4 className="text-sm font-bold text-slate-100 line-clamp-1 mb-2.5 group-hover:text-teal-300 transition-colors">
+                <h4 className="text-sm font-bold text-[#F0F3F6] line-clamp-1 mb-2.5 group-hover:text-emerald-400 transition-colors">
                   {s.name}
                 </h4>
 
                 {/* Scope Note / Description */}
                 {s.scope_note && (
-                  <p className="text-[11px] text-slate-400 line-clamp-2 mb-3.5 leading-relaxed bg-slate-950/50 p-2 rounded-xl border border-slate-800/60">
+                  <p className="text-[11px] text-[#9EACB9] line-clamp-2 mb-3.5 leading-relaxed bg-[#1A1D26] p-2.5 rounded-lg border border-white/5">
                     {s.scope_note}
                   </p>
                 )}
@@ -93,23 +92,24 @@ export function MaritimeStockGrid({ stocks, stocksIntel }: Props) {
                 {/* Attached Berths Chips */}
                 {berths.length > 0 && (
                   <div className="mb-4">
-                    <div className="text-[10px] uppercase tracking-wider font-bold text-slate-400 mb-1.5 flex items-center justify-between">
-                      <span className="flex items-center gap-1 text-teal-400">
+                    <div className="text-[10px] uppercase tracking-wider font-semibold text-[#9EACB9] mb-1.5 flex items-center justify-between">
+                      <span className="flex items-center gap-1 text-emerald-400">
                         <Navigation className="size-3" />
                         Cầu bến ({berths.length}):
                       </span>
                     </div>
-                    <div className="flex flex-wrap gap-1.5">
-                      {berths.slice(0, 3).map((b, bIdx) => (
+                    <div className="flex flex-wrap gap-1">
+                      {berths.slice(0, 3).map((b, i) => (
                         <span
-                          key={bIdx}
-                          className="rounded-lg bg-slate-800/90 px-2 py-0.5 text-[10px] font-medium text-slate-200 border border-slate-700/60 truncate max-w-[170px]"
+                          key={i}
+                          className="inline-block rounded bg-white/5 border border-white/8 px-1.5 py-0.5 text-[10px] text-[#9EACB9] font-mono truncate max-w-[130px]"
+                          title={b}
                         >
                           {b}
                         </span>
                       ))}
                       {berths.length > 3 && (
-                        <span className="rounded-lg bg-slate-800/60 px-1.5 py-0.5 text-[10px] font-semibold text-slate-400 border border-slate-700/40">
+                        <span className="inline-block rounded bg-white/5 px-1 py-0.5 text-[10px] text-[#9EACB9]">
                           +{berths.length - 3}
                         </span>
                       )}
@@ -118,16 +118,14 @@ export function MaritimeStockGrid({ stocks, stocksIntel }: Props) {
                 )}
               </div>
 
-              {/* Bottom Action Button with Gradient Glow */}
-              <div className="border-t border-slate-800/80 pt-3 mt-2 relative z-10">
-                <Link
-                  href={`/cang/${s.ticker.toLowerCase()}`}
-                  className="inline-flex w-full items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-teal-500 via-teal-400 to-emerald-500 px-3.5 py-2.5 text-xs font-extrabold text-slate-950 shadow-md shadow-teal-500/20 transition-all hover:brightness-110 hover:shadow-teal-500/30 group-hover:scale-[1.01]"
-                >
-                  <span>Phân Tích Sản Lượng &amp; DWT</span>
-                  <ArrowRight className="size-3.5 transition-transform group-hover:translate-x-1" />
-                </Link>
-              </div>
+              {/* Action Button Link */}
+              <Link
+                href={`/cang/${s.ticker.toLowerCase()}`}
+                className="mt-2 inline-flex w-full items-center justify-between rounded-lg bg-emerald-500/10 border border-emerald-500/25 px-3 py-2 text-xs font-bold text-emerald-400 hover:bg-emerald-500 hover:text-white transition-all shadow-xs"
+              >
+                <span>Xem Dữ Liệu Tàu &amp; DWT</span>
+                <ArrowRight className="size-3.5" />
+              </Link>
             </div>
           )
         })}

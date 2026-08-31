@@ -10,12 +10,12 @@ const FOOTER_LINKS = [
 export function SiteFooter() {
   return (
     <footer className="mx-auto w-full max-w-[1600px] px-4 py-8">
-      <div className="rounded-lg border border-border/40 bg-muted/30 p-6 sm:p-8">
+      <div className="rounded-xl border border-white/8 bg-[#212631] shadow-[0_4px_20px_rgba(0,0,0,0.25)] p-6 sm:p-8">
         {/* Tuyên bố miễn trách nhiệm */}
         <section aria-labelledby="disclaimer-title" className="max-w-4xl">
           <h2
             id="disclaimer-title"
-            className="text-base font-bold tracking-tight text-foreground"
+            className="text-base font-bold tracking-tight text-[#F0F3F6]"
           >
             Tuyên bố miễn trách nhiệm
           </h2>

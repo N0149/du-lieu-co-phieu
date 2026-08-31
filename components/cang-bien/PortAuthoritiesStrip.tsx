@@ -20,26 +20,26 @@ export function PortAuthoritiesStrip({ ports }: Props) {
   }, [ports, selectedRegion])
 
   return (
-    <div className="rounded-2xl border border-slate-800 bg-gradient-to-b from-slate-900/90 via-slate-900/70 to-slate-950/90 shadow-xl shadow-black/30 overflow-hidden transition-all duration-300">
+    <div className="rounded-xl border border-white/8 bg-[#212631] shadow-[0_4px_20px_rgba(0,0,0,0.25)] overflow-hidden transition-all duration-300">
       {/* Collapsible Header Banner */}
       <div
         onClick={() => setIsOpen(!isOpen)}
-        className="flex items-center justify-between p-4 sm:p-5 cursor-pointer hover:bg-slate-800/40 transition-colors select-none"
+        className="flex items-center justify-between p-5 cursor-pointer hover:bg-white/[0.02] transition-colors select-none"
       >
         <div className="flex items-center gap-3.5">
-          <span className="flex size-9 shrink-0 items-center justify-center rounded-xl bg-teal-500/15 text-teal-400 border border-teal-500/30 shadow-sm">
+          <span className="flex size-9 shrink-0 items-center justify-center rounded-xl bg-emerald-500/15 text-emerald-400 border border-emerald-500/30 shadow-sm">
             <Building2 className="size-5" />
           </span>
           <div>
             <div className="flex items-center gap-2.5">
-              <h3 className="text-sm sm:text-base font-extrabold text-slate-100 tracking-tight">
+              <h3 className="text-sm sm:text-base font-bold text-[#F0F3F6] tracking-tight">
                 Thống Kê 15 Cảng Vụ Hàng Hải Toàn Quốc (Dữ Liệu Bổ Trợ)
               </h3>
-              <span className="rounded-full bg-slate-800 px-2.5 py-0.5 text-[10px] text-teal-400 font-bold border border-slate-700">
+              <span className="rounded-full bg-emerald-500/10 px-2.5 py-0.5 text-[10px] text-emerald-400 font-semibold border border-emerald-500/20">
                 15 Cảng Vụ
               </span>
             </div>
-            <p className="text-xs text-slate-400 mt-0.5">
+            <p className="text-xs text-[#9EACB9] mt-0.5">
               {isOpen
                 ? 'Nhấp để thu gọn danh mục cảng vụ'
                 : 'Nhấp để mở rộng bảng theo dõi sản lượng DWT 30 ngày từng khu vực (Bắc, Trung, Nam)'}
@@ -50,7 +50,7 @@ export function PortAuthoritiesStrip({ ports }: Props) {
         {/* Toggle Button */}
         <button
           type="button"
-          className="inline-flex items-center gap-2 rounded-xl border border-teal-500/30 bg-teal-500/10 px-3.5 py-2 text-xs font-extrabold text-teal-300 hover:bg-teal-500 hover:text-slate-950 transition-all shrink-0 ml-2 shadow-xs"
+          className="inline-flex items-center gap-2 rounded-lg border border-emerald-500/30 bg-emerald-500/10 px-3.5 py-2 text-xs font-bold text-emerald-400 hover:bg-emerald-500/20 transition-all shrink-0 ml-2 shadow-xs"
         >
           {isOpen ? (
             <>

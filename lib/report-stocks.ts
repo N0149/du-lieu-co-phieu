@@ -1,6 +1,7 @@
 import { stocks } from '@/lib/data'
 import type { Report } from '@/lib/use-reports'
 import reportsSnapshot from '@/data/reports-snapshot.json'
+import { getStockByTicker } from '@/lib/longlivestock'
 
 export function getSnapshotReports(): Report[] {
   return reportsSnapshot as unknown as Report[]
@@ -14,8 +15,8 @@ export function getReportsForTicker(ticker: string): Report[] {
 
 /**
  * Dòng dữ liệu hiển thị trên bảng: là các mã cổ phiếu ĐÃ CÓ bài viết trong kho
- * báo cáo. Nếu mã tồn tại trong dữ liệu tài chính (lib/data.ts) thì bổ sung đầy
- * đủ số liệu; ngược lại hiển thị dạng "chưa có dữ liệu" (các ô số liệu là null).
+ * báo cáo. Nếu mã tồn tại trong dữ liệu tài chính (lib/data.ts hoặc longlive manifest)
+ * thì bổ sung đầy đủ số liệu; ngược lại hiển thị dạng fallback an toàn.
  */
 export type ReportStock = {
   ticker: string
@@ -74,21 +75,23 @@ export function buildReportStocks(reports: Report[]): ReportStock[] {
     const bonusWelfareRate = val?.bonusWelfareRate ?? null
 
     const s = stockByTicker.get(ticker)
+    const m = getStockByTicker(ticker)
+
     if (!s) {
       return {
         ticker,
-        name: ticker,
-        exchange: '—',
-        sector: 'Chưa phân loại',
-        marketPrice: null,
+        name: m?.n || ticker,
+        exchange: m?.e || '—',
+        sector: m?.s || 'Chưa phân loại',
+        marketPrice: m?.px ?? null,
         rnav: null,
-        forwardPE: null,
-        dividendYield: null,
-        marketCap: null,
+        forwardPE: m?.pe ?? null,
+        dividendYield: m?.dy ?? null,
+        marketCap: m?.cap ?? null,
         status: 'Có báo cáo phân tích',
         updated: false,
         hasReport: true,
-        hasData: false,
+        hasData: Boolean(m),
         reportDate,
         currentPrice,
         targetPrice,

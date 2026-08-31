@@ -3,6 +3,7 @@ import { Analytics } from '@vercel/analytics/next'
 import type { Metadata, Viewport } from 'next'
 import { Inter, JetBrains_Mono } from 'next/font/google'
 import { SiteFooter } from '@/components/site-footer'
+import { AntiScrapingTrap } from '@/components/security/anti-scraping-trap'
 import './globals.css'
 
 const inter = Inter({
@@ -97,6 +98,7 @@ export default function RootLayout({
       <body className="flex min-h-screen flex-col font-sans antialiased">
         <div className="flex-1">{children}</div>
         <SiteFooter />
+        <AntiScrapingTrap />
         {process.env.NODE_ENV === 'production' && <Analytics />}
       </body>
     </html>

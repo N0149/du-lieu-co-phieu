@@ -53,28 +53,28 @@ export function TopMoversPanel({ stocks }: TopMoversPanelProps) {
   }, [stocks])
 
   return (
-    <div className="flex flex-col rounded-xl border border-border bg-card shadow-xs">
+    <div className="flex flex-col rounded-xl border border-white/8 bg-[#212631] shadow-[0_4px_20px_rgba(0,0,0,0.25)] overflow-hidden">
       {/* Top Gainers */}
       <div>
-        <div className="flex items-center gap-1.5 border-b border-border bg-emerald-500/5 px-4 py-2.5 text-xs font-bold text-emerald-600 dark:text-emerald-400">
+        <div className="flex items-center gap-1.5 border-b border-white/8 bg-[#1a1d26] px-4 py-2.5 text-xs font-bold text-emerald-400">
           <TrendingUp className="size-3.5" />
-          <span>▲ Tăng mạnh nhất (1 tuần)</span>
+          <span>Top Tăng Giá Tuần Này (W1)</span>
         </div>
-        <div className="divide-y divide-border/60">
+        <div className="divide-y divide-white/5">
           {gainers.map((s) => (
             <Link
               key={s.t}
               href={`/stock/${s.t}`}
-              className="flex items-center justify-between gap-2 px-4 py-2 text-xs transition-colors hover:bg-muted/40"
+              className="flex items-center justify-between px-4 py-2 text-xs transition-colors hover:bg-white/[0.03]"
             >
-              <div className="flex min-w-0 items-baseline gap-2">
-                <span className="font-mono font-bold text-primary">{s.t}</span>
-                <span className="truncate text-[11px] text-muted-foreground">{s.n}</span>
+              <div className="flex items-center gap-2">
+                <span className="font-mono font-bold text-[#F0F3F6]">{s.t}</span>
+                <span className="text-[11px] text-[#9EACB9] truncate max-w-[110px]">{s.n}</span>
               </div>
               <div className="flex items-center gap-2">
                 <MiniSparkline spark={s.spark} isUp={true} />
-                <span className="font-mono text-xs font-bold text-emerald-600 dark:text-emerald-400">
-                  +{s.w1?.toFixed(1)}%
+                <span className="font-mono font-bold text-emerald-400 tabular-nums">
+                  +{s.w1}%
                 </span>
               </div>
             </Link>
@@ -83,26 +83,26 @@ export function TopMoversPanel({ stocks }: TopMoversPanelProps) {
       </div>
 
       {/* Top Losers */}
-      <div className="border-t border-border">
-        <div className="flex items-center gap-1.5 border-b border-border bg-rose-500/5 px-4 py-2.5 text-xs font-bold text-rose-600 dark:text-rose-400">
+      <div className="border-t border-white/8">
+        <div className="flex items-center gap-1.5 border-b border-white/8 bg-[#1a1d26] px-4 py-2.5 text-xs font-bold text-rose-400">
           <TrendingDown className="size-3.5" />
-          <span>▼ Giảm mạnh nhất (1 tuần)</span>
+          <span>Top Giảm Giá Tuần Này (W1)</span>
         </div>
-        <div className="divide-y divide-border/60">
+        <div className="divide-y divide-white/5">
           {losers.map((s) => (
             <Link
               key={s.t}
               href={`/stock/${s.t}`}
-              className="flex items-center justify-between gap-2 px-4 py-2 text-xs transition-colors hover:bg-muted/40"
+              className="flex items-center justify-between px-4 py-2 text-xs transition-colors hover:bg-white/[0.03]"
             >
-              <div className="flex min-w-0 items-baseline gap-2">
-                <span className="font-mono font-bold text-primary">{s.t}</span>
-                <span className="truncate text-[11px] text-muted-foreground">{s.n}</span>
+              <div className="flex items-center gap-2">
+                <span className="font-mono font-bold text-[#F0F3F6]">{s.t}</span>
+                <span className="text-[11px] text-[#9EACB9] truncate max-w-[110px]">{s.n}</span>
               </div>
               <div className="flex items-center gap-2">
                 <MiniSparkline spark={s.spark} isUp={false} />
-                <span className="font-mono text-xs font-bold text-rose-600 dark:text-rose-400">
-                  {s.w1?.toFixed(1)}%
+                <span className="font-mono font-bold text-rose-400 tabular-nums">
+                  {s.w1}%
                 </span>
               </div>
             </Link>

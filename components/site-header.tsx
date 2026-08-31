@@ -12,6 +12,7 @@ import { cn } from '@/lib/utils'
 
 const NAV = [
   { label: 'Bộ Lọc Cổ Phiếu', href: '/' },
+  { label: 'Tin Tức', href: '/tin-tuc' },
   { label: 'Cảng Biển', href: '/cang-bien' },
   { label: 'Xuất nhập khẩu', href: '/xuat-nhap-khau' },
   { label: 'Tra Cứu 1.530 Mã', href: '/tra-cuu' },
@@ -19,37 +20,46 @@ const NAV = [
   { label: 'Báo Cáo Phân Tích', href: '/bao-cao' },
 ]
 
-export function SiteHeader() {
+interface SiteHeaderProps {
+  hideSearch?: boolean
+}
+
+export function SiteHeader({ hideSearch = false }: SiteHeaderProps) {
   const pathname = usePathname()
   const [menuOpen, setMenuOpen] = useState(false)
   const [aiModalOpen, setAiModalOpen] = useState(false)
 
+  const isTraCuu = pathname?.startsWith('/tra-cuu')
+  const shouldShowSearch = !hideSearch && !isTraCuu
+
   return (
-    <header className="sticky top-0 z-40 border-b border-border bg-background/85 backdrop-blur supports-[backdrop-filter]:bg-background/70">
+    <header className="sticky top-0 z-40 border-b border-white/8 bg-[#14171f]/85 backdrop-blur supports-[backdrop-filter]:bg-[#14171f]/75">
       <div className="mx-auto flex h-14 max-w-[1600px] items-center gap-4 px-4">
         {/* Brand */}
         <Link href="/" className="flex shrink-0 items-center gap-2">
-          <span className="flex size-8 items-center justify-center rounded-md bg-primary text-primary-foreground">
+          <span className="flex size-8 items-center justify-center rounded-xl bg-emerald-500/15 text-emerald-400 border border-emerald-500/30 shadow-sm">
             <TrendingUp className="size-4.5" />
           </span>
           <span className="flex flex-col leading-none">
-            <span className="text-lg font-bold tracking-tight whitespace-nowrap text-foreground sm:text-xl">
+            <span className="text-lg font-bold tracking-tight whitespace-nowrap text-[#F0F3F6] sm:text-xl">
               {/* Mobile: rút gọn để không vỡ layout; sm+: đủ dài với accent */}
               <span className="sm:hidden">Phân Tích Chuyên Sâu</span>
               <span className="hidden sm:inline">
-                Phân Tích Chuyên Sâu<span className="text-primary"> Cổ Phiếu</span>
+                Phân Tích Chuyên Sâu<span className="text-emerald-400"> Cổ Phiếu</span>
               </span>
             </span>
-            <span className="mt-0.5 hidden text-[10px] uppercase tracking-widest text-muted-foreground sm:block">
+            <span className="mt-0.5 hidden text-[10px] uppercase tracking-widest text-[#9EACB9] sm:block">
               Cổng dữ liệu & báo cáo đầu tư
             </span>
           </span>
         </Link>
 
         {/* Search */}
-        <div className="ml-2 hidden flex-1 justify-center md:flex">
-          <StockSearch />
-        </div>
+        {shouldShowSearch && (
+          <div className="ml-2 hidden flex-1 justify-center md:flex">
+            <StockSearch />
+          </div>
+        )}
 
         {/* Nav */}
         <nav className="hidden items-center gap-1 lg:flex">
@@ -65,10 +75,10 @@ export function SiteHeader() {
                 key={item.href}
                 href={item.href}
                 className={cn(
-                  'rounded-md px-3 py-1.5 text-sm font-bold transition-colors',
+                  'rounded-lg px-3 py-1.5 text-xs font-semibold transition-all',
                   active
-                    ? 'bg-secondary text-foreground'
-                    : 'text-muted-foreground hover:bg-muted hover:text-foreground',
+                    ? 'bg-[#212631] text-[#F0F3F6] border border-white/8 shadow-sm'
+                    : 'text-[#9EACB9] hover:bg-white/5 hover:text-[#F0F3F6]',
                 )}
               >
                 {item.label}
@@ -81,7 +91,7 @@ export function SiteHeader() {
           <button
             type="button"
             onClick={() => setAiModalOpen(true)}
-            className="inline-flex items-center gap-1.5 rounded-md border border-primary/40 bg-primary/10 px-2.5 py-1.5 text-xs font-semibold text-primary transition-colors hover:bg-primary/20"
+            className="inline-flex items-center gap-1.5 rounded-lg border border-emerald-500/30 bg-emerald-500/10 px-2.5 py-1.5 text-xs font-semibold text-emerald-400 transition-colors hover:bg-emerald-500/20"
             title="Mở Trợ lý AI Phân Tích Chuyên Sâu"
           >
             <Sparkles className="size-3.5" />
@@ -94,7 +104,7 @@ export function SiteHeader() {
           <button
             type="button"
             onClick={() => setMenuOpen((o) => !o)}
-            className="inline-flex size-8 shrink-0 items-center justify-center rounded-md text-muted-foreground transition-colors hover:bg-muted hover:text-foreground lg:hidden"
+            className="inline-flex size-8 shrink-0 items-center justify-center rounded-lg text-[#9EACB9] transition-colors hover:bg-white/5 hover:text-[#F0F3F6] lg:hidden"
             aria-label={menuOpen ? 'Đóng menu' : 'Mở menu'}
             aria-expanded={menuOpen}
           >
@@ -152,9 +162,11 @@ export function SiteHeader() {
       )}
 
       {/* Mobile search row */}
-      <div className="border-t border-border px-4 py-2 md:hidden">
-        <StockSearch />
-      </div>
+      {shouldShowSearch && (
+        <div className="border-t border-border px-4 py-2 md:hidden">
+          <StockSearch />
+        </div>
+      )}
 
       <AiAssistantModal
         open={aiModalOpen}

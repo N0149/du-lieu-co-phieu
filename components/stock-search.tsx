@@ -76,16 +76,12 @@ export function StockSearch() {
       .slice(0, 8)
   }, [q, searchPool])
 
-  // Mở thẳng báo cáo của mã cổ phiếu (từ dropdown gợi ý)
-  function go(ticker: string, hasReport: boolean) {
+  // Mở thẳng trang phân tích & tài chính của mã cổ phiếu (từ dropdown gợi ý)
+  function go(ticker: string) {
     setOpen(false)
     setQ('')
     inputRef.current?.blur()
-    if (hasReport) {
-      router.push(reportHref(ticker))
-    } else {
-      router.push(`/stock/${encodeURIComponent(ticker)}`)
-    }
+    router.push(`/stock/${encodeURIComponent(ticker)}`)
   }
 
   // Xử lý Enter/Submit: chuẩn hóa keyword (trim + toUpperCase)
@@ -101,19 +97,11 @@ export function StockSearch() {
     inputRef.current?.blur()
 
     if (pick && (active > 0 || pick.ticker.toUpperCase() === keyword)) {
-      if (pick.hasReport) {
-        router.push(reportHref(pick.ticker))
-      } else {
-        router.push(`/stock/${encodeURIComponent(pick.ticker)}`)
-      }
+      router.push(`/stock/${encodeURIComponent(pick.ticker)}`)
       return
     }
     if (exactItem) {
-      if (exactItem.hasReport) {
-        router.push(`/bao-cao?ticker=${encodeURIComponent(keyword)}`)
-      } else {
-        router.push(`/stock/${encodeURIComponent(keyword)}`)
-      }
+      router.push(`/stock/${encodeURIComponent(keyword)}`)
       return
     }
     // Tên công ty hoặc từ khóa tự do → tìm trong kho báo cáo
@@ -173,7 +161,7 @@ export function StockSearch() {
                     type="button"
                     onMouseDown={(e) => e.preventDefault()}
                     onMouseEnter={() => setActive(i)}
-                    onClick={() => go(s.ticker, s.hasReport)}
+                    onClick={() => go(s.ticker)}
                     className={cn(
                       'flex w-full items-center gap-3 px-3 py-2 text-left',
                       i === active ? 'bg-accent' : 'hover:bg-muted',
@@ -214,8 +202,8 @@ export function QuickJump() {
       {tickers.map((t) => (
         <Link
           key={t}
-          href={reportHref(t)}
-          title={`Mở báo cáo phân tích ${t}`}
+          href={`/stock/${encodeURIComponent(t)}`}
+          title={`Xem chi tiết & báo cáo ${t}`}
           className="inline-flex items-center gap-1 rounded border border-border bg-card px-1.5 py-0.5 font-mono text-xs font-medium text-foreground transition-colors hover:border-primary hover:text-primary"
         >
           <FileText className="size-3 text-primary" />

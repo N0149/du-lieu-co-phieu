@@ -132,19 +132,19 @@ export function YoYThroughputComparison({ monthlyData, tickerName }: Props) {
   }
 
   return (
-    <div className="rounded-2xl border border-slate-800 bg-gradient-to-b from-slate-900/95 via-slate-900/80 to-slate-950/95 p-4 sm:p-6 shadow-2xl shadow-black/40 space-y-4">
+    <div className="rounded-xl border border-white/8 bg-[#212631] p-5 sm:p-6 shadow-[0_4px_20px_rgba(0,0,0,0.25)] space-y-4">
       {/* Header with Title & Controls */}
-      <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-slate-800/80 pb-4">
+      <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-white/8 pb-4">
         <div>
           <div className="flex items-center gap-2.5">
-            <span className="flex size-8 items-center justify-center rounded-xl bg-teal-500/15 text-teal-400 border border-teal-500/30 shadow-sm">
+            <span className="flex size-8 items-center justify-center rounded-xl bg-emerald-500/15 text-emerald-400 border border-emerald-500/30 shadow-sm">
               <Sparkles className="size-4.5" />
             </span>
             <div>
-              <h3 className="text-base sm:text-lg font-extrabold text-slate-100 tracking-tight">
+              <h3 className="text-base sm:text-lg font-bold text-[#F0F3F6] tracking-tight">
                 Bảng So Sánh Sản Lượng Cùng Kỳ YoY ({tickerName})
               </h3>
-              <p className="text-xs text-slate-400 mt-0.5">
+              <p className="text-xs text-[#9EACB9] mt-0.5">
                 Đối soát mức tăng trưởng từng tháng giữa Năm {compareYear} và Năm {baseYear}
               </p>
             </div>
@@ -155,23 +155,23 @@ export function YoYThroughputComparison({ monthlyData, tickerName }: Props) {
         <div className="flex flex-wrap items-center gap-2.5">
           {/* Metric Selector */}
           {hasDwtData && (
-            <div className="inline-flex rounded-xl border border-slate-700 bg-slate-950/80 p-1 text-xs font-semibold shadow-inner">
+            <div className="inline-flex rounded-lg border border-white/10 bg-[#1A1D26] p-1 text-xs font-semibold shadow-inner">
               <button
                 onClick={() => setMetric('calls')}
-                className={`rounded-lg px-3 py-1.5 transition-all ${
+                className={`rounded-md px-3 py-1.5 transition-all ${
                   metric === 'calls'
-                    ? 'bg-teal-500 text-slate-950 font-black shadow-md'
-                    : 'text-slate-400 hover:text-slate-200'
+                    ? 'bg-emerald-500 text-white font-bold shadow-md'
+                    : 'text-[#9EACB9] hover:text-[#F0F3F6]'
                 }`}
               >
                 Số Lượt Tàu
               </button>
               <button
                 onClick={() => setMetric('dwt')}
-                className={`rounded-lg px-3 py-1.5 transition-all ${
+                className={`rounded-md px-3 py-1.5 transition-all ${
                   metric === 'dwt'
-                    ? 'bg-teal-500 text-slate-950 font-black shadow-md'
-                    : 'text-slate-400 hover:text-slate-200'
+                    ? 'bg-emerald-500 text-white font-bold shadow-md'
+                    : 'text-[#9EACB9] hover:text-[#F0F3F6]'
                 }`}
               >
                 Trọng Tải DWT
@@ -180,9 +180,9 @@ export function YoYThroughputComparison({ monthlyData, tickerName }: Props) {
           )}
 
           {/* Year Pairs Selector */}
-          <div className="flex items-center gap-2 text-xs bg-slate-950/80 px-3 py-2 rounded-xl border border-slate-700">
-            <Calendar className="size-3.5 text-teal-400" />
-            <span className="text-slate-400 font-medium">Đối chiếu:</span>
+          <div className="flex items-center gap-2 text-xs bg-[#1A1D26] px-3 py-2 rounded-lg border border-white/10">
+            <Calendar className="size-3.5 text-emerald-400" />
+            <span className="text-[#9EACB9] font-medium">Đối chiếu:</span>
             <select
               value={`${compareYear}-${baseYear}`}
               onChange={(e) => {
@@ -190,12 +190,12 @@ export function YoYThroughputComparison({ monthlyData, tickerName }: Props) {
                 setCompareYear(c)
                 setBaseYear(b)
               }}
-              className="bg-transparent font-black text-teal-300 focus:outline-none cursor-pointer"
+              className="bg-transparent font-bold text-emerald-400 focus:outline-none cursor-pointer"
             >
               {availableYears.map((y, idx) => {
                 const prevY = availableYears[idx + 1] || y - 1
                 return (
-                  <option key={y} value={`${y}-${prevY}`} className="bg-slate-900 text-slate-100">
+                  <option key={y} value={`${y}-${prevY}`} className="bg-[#212631] text-[#F0F3F6]">
                     Năm {y} vs {prevY}
                   </option>
                 )
@@ -208,26 +208,26 @@ export function YoYThroughputComparison({ monthlyData, tickerName }: Props) {
       {/* Visual Month Indicators (T1 - T12) - STRICT HORIZONTAL STRIP */}
       <div className="flex items-stretch justify-between gap-1.5 sm:gap-2 overflow-x-auto pb-1 pt-1 no-scrollbar">
         {monthRows.rows.map((r) => {
-          let statusColor = 'bg-slate-950/60 text-slate-500 border-slate-800/80' // future month
+          let statusColor = 'bg-[#1A1D26]/60 text-[#64748B] border-white/5' // future month
           if (r.hasCompareData) {
             if (r.isPartial) {
               statusColor =
-                'bg-amber-500/20 text-amber-300 border-amber-500/60 shadow-md shadow-amber-500/10 animate-pulse'
+                'bg-amber-500/15 text-amber-300 border-amber-500/40 shadow-sm animate-pulse'
             } else {
               statusColor =
-                'bg-teal-500/20 text-teal-300 border-teal-500/60 shadow-md shadow-teal-500/10'
+                'bg-emerald-500/15 text-emerald-400 border-emerald-500/40 shadow-sm'
             }
           }
 
           return (
             <div
               key={r.month}
-              className={`flex-1 min-w-[52px] max-w-[85px] py-2 px-1 flex flex-col items-center justify-center rounded-xl border text-center transition-all ${statusColor}`}
+              className={`flex-1 min-w-[52px] max-w-[85px] py-2 px-1 flex flex-col items-center justify-center rounded-lg border text-center transition-all ${statusColor}`}
             >
-              <span className="text-xs sm:text-sm font-black tracking-tight">
+              <span className="text-xs sm:text-sm font-bold tracking-tight">
                 T{r.month}
               </span>
-              <span className="text-[8px] sm:text-[9px] uppercase font-bold mt-0.5 whitespace-nowrap opacity-90">
+              <span className="text-[8px] sm:text-[9px] uppercase font-semibold mt-0.5 whitespace-nowrap opacity-90">
                 {r.hasCompareData
                   ? r.isPartial
                     ? 'Đang chạy'
@@ -240,10 +240,10 @@ export function YoYThroughputComparison({ monthlyData, tickerName }: Props) {
       </div>
 
       {/* Comparison Table */}
-      <div className="overflow-x-auto rounded-xl border border-slate-800 bg-slate-950/40">
+      <div className="overflow-x-auto rounded-lg border border-white/8 bg-[#1A1D26]/40">
         <table className="w-full text-left text-xs border-collapse">
           <thead>
-            <tr className="bg-slate-950/80 text-slate-400 border-b border-slate-800 uppercase text-[10px] tracking-wider font-semibold">
+            <tr className="bg-[#1A1D26] text-[#9EACB9] border-b border-white/8 uppercase text-[11px] tracking-wider font-semibold">
               <th className="py-3 px-4 font-bold">Tháng</th>
               <th className="py-3 px-4 text-right font-bold">
                 {metric === 'dwt' ? 'DWT Qua Cảng' : 'Lượt Tàu Qua Cảng'} {baseYear}
@@ -254,7 +254,7 @@ export function YoYThroughputComparison({ monthlyData, tickerName }: Props) {
               <th className="py-3 px-4 text-right font-bold">Tăng Trưởng (YoY)</th>
             </tr>
           </thead>
-          <tbody className="divide-y divide-slate-800/60 font-mono">
+          <tbody className="divide-y divide-white/5 font-mono">
             {monthRows.rows.map((r) => {
               const hasData = r.valBase !== null || r.valCompare !== null
               if (!hasData) return null
@@ -264,32 +264,32 @@ export function YoYThroughputComparison({ monthlyData, tickerName }: Props) {
               const isZero = r.yoyGrowth !== null && r.yoyGrowth === 0
 
               return (
-                <tr key={r.month} className="hover:bg-slate-800/40 transition-colors font-sans">
-                  <td className="py-3 px-4 font-bold text-slate-100 flex items-center gap-2">
-                    <span className="inline-flex size-5 items-center justify-center rounded-md bg-slate-800 text-[11px] font-bold text-teal-400">
+                <tr key={r.month} className="hover:bg-white/[0.03] transition-colors font-sans">
+                  <td className="py-3 px-4 font-bold text-[#F0F3F6] flex items-center gap-2">
+                    <span className="inline-flex size-5 items-center justify-center rounded bg-white/10 text-[11px] font-bold text-emerald-400">
                       T{r.month}
                     </span>
                     {r.isPartial && (
-                      <span className="rounded bg-amber-500/20 text-amber-400 px-1.5 py-0.5 text-[9px] font-bold border border-amber-500/30">
+                      <span className="rounded-full bg-amber-500/15 text-amber-400 px-2 py-0.5 text-[9px] font-medium border border-amber-500/25">
                         Đang diễn ra
                       </span>
                     )}
                   </td>
-                  <td className="py-3 px-4 text-right text-slate-400 font-mono">
+                  <td className="py-3 px-4 text-right text-[#9EACB9] font-mono">
                     {formatVal(r.valBase)}
                   </td>
-                  <td className="py-3 px-4 text-right font-bold text-slate-100 font-mono">
+                  <td className="py-3 px-4 text-right font-bold text-[#F0F3F6] font-mono">
                     {formatVal(r.valCompare)}
                   </td>
                   <td className="py-3 px-4 text-right font-mono">
                     {r.yoyGrowth !== null ? (
                       <span
-                        className={`inline-flex items-center gap-1 px-2.5 py-0.5 rounded-lg text-xs font-bold ${
+                        className={`inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-xs font-semibold border ${
                           isPositive
-                            ? 'bg-emerald-500/15 text-emerald-400 border border-emerald-500/30'
+                            ? 'bg-emerald-500/10 text-emerald-400 border-emerald-500/20'
                             : isNegative
-                            ? 'bg-rose-500/15 text-rose-400 border border-rose-500/30'
-                            : 'bg-slate-800 text-slate-400'
+                            ? 'bg-rose-500/10 text-rose-400 border-rose-500/20'
+                            : 'bg-white/5 text-[#9EACB9] border-white/10'
                         }`}
                       >
                         {isPositive && <ArrowUpRight className="size-3.5" />}
@@ -301,7 +301,7 @@ export function YoYThroughputComparison({ monthlyData, tickerName }: Props) {
                         </span>
                       </span>
                     ) : (
-                      <span className="text-slate-600">—</span>
+                      <span className="text-[#64748B]">—</span>
                     )}
                   </td>
                 </tr>
@@ -309,30 +309,30 @@ export function YoYThroughputComparison({ monthlyData, tickerName }: Props) {
             })}
 
             {/* Cumulative Row (YTD) */}
-            <tr className="bg-slate-900/90 font-bold border-t-2 border-slate-700/80 font-sans">
-              <td className="py-3.5 px-4 text-teal-300 font-black">
+            <tr className="bg-[#1A1D26] font-bold border-t border-white/10 font-sans">
+              <td className="py-3.5 px-4 text-emerald-400 font-bold">
                 Lũy Kế {monthRows.countComparedMonths > 0 ? `${monthRows.countComparedMonths} Tháng` : 'Cùng Kỳ'}
               </td>
-              <td className="py-3.5 px-4 text-right text-slate-300 font-mono">
+              <td className="py-3.5 px-4 text-right text-[#9EACB9] font-mono">
                 {formatVal(monthRows.sumBase)}
               </td>
-              <td className="py-3.5 px-4 text-right text-teal-300 font-mono text-sm font-black">
+              <td className="py-3.5 px-4 text-right text-[#F0F3F6] font-mono text-sm font-bold">
                 {formatVal(monthRows.sumCompare)}
               </td>
               <td className="py-3.5 px-4 text-right font-mono">
                 {monthRows.cumulativeYoY !== null ? (
                   <span
-                    className={`inline-flex items-center gap-1 px-3 py-1 rounded-lg text-xs font-extrabold shadow-sm ${
+                    className={`inline-flex items-center gap-1 px-3 py-1 rounded-full text-xs font-bold shadow-sm border ${
                       monthRows.cumulativeYoY >= 0
-                        ? 'bg-emerald-500/20 text-emerald-300 border border-emerald-500/40'
-                        : 'bg-rose-500/20 text-rose-300 border border-rose-500/40'
+                        ? 'bg-emerald-500/15 text-emerald-400 border-emerald-500/30'
+                        : 'bg-rose-500/15 text-rose-400 border-rose-500/30'
                     }`}
                   >
                     {monthRows.cumulativeYoY >= 0 ? '+' : ''}
                     {monthRows.cumulativeYoY.toFixed(1)}% YoY
                   </span>
                 ) : (
-                  <span className="text-slate-600">—</span>
+                  <span className="text-[#64748B]">—</span>
                 )}
               </td>
             </tr>

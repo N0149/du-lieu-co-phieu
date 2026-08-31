@@ -63,9 +63,9 @@ export function MarketIndicesStrip({
   }
 
   return (
-    <div className="sticky top-14 z-30 border-b border-border bg-background/95 backdrop-blur">
+    <div className="sticky top-14 z-30 border-b border-white/8 bg-[#14171f]/95 backdrop-blur">
       {/* Tầng 1: Ticker Bar (Indices + Commodities) */}
-      <div className="overflow-x-auto border-b border-border/60 py-1.5 scrollbar-none">
+      <div className="overflow-x-auto border-b border-white/8 py-2 scrollbar-none">
         <div className="mx-auto flex max-w-[1600px] min-w-max items-center justify-between px-4 text-xs">
           {/* VN Indices */}
           <div className="flex items-center gap-4">
@@ -74,50 +74,41 @@ export function MarketIndicesStrip({
               const isDown = it.chg < 0
               return (
                 <div key={it.id} className="flex items-baseline gap-1.5 whitespace-nowrap">
-                  <span className="font-medium text-muted-foreground">{it.label}</span>
-                  <span className="font-mono font-bold text-foreground">
+                  <span className="font-medium text-[#9EACB9]">{it.label}</span>
+                  <span className="font-mono font-bold text-[#F0F3F6]">
                     {fmtPrice(it.price)}
                   </span>
                   <span
                     className={cn(
-                      'font-mono text-[11px] font-semibold',
-                      isUp && 'text-emerald-500',
-                      isDown && 'text-rose-500',
-                      !isUp && !isDown && 'text-muted-foreground',
+                      'font-mono text-[11px] font-semibold tabular-nums',
+                      isUp ? 'text-emerald-400' : isDown ? 'text-rose-400' : 'text-amber-400'
                     )}
                   >
-                    {isUp ? '▲' : isDown ? '▼' : ''}
-                    {Math.abs(it.chg).toFixed(2)}%
+                    {isUp ? `+${it.chg.toFixed(2)}%` : `${it.chg.toFixed(2)}%`}
                   </span>
                 </div>
               )
             })}
           </div>
 
-          <div className="mx-3 hidden h-3.5 w-px bg-border/80 sm:block" />
-
-          {/* Commodities & FX */}
-          <div className="flex items-center gap-4">
+          {/* Commodities */}
+          <div className="hidden items-center gap-4 lg:flex pl-4 border-l border-white/8">
             {commItems.map((it) => {
               const isUp = it.chg > 0
               const isDown = it.chg < 0
               return (
-                <div key={it.id} className="flex items-baseline gap-1.5 whitespace-nowrap">
-                  <span className="font-medium text-muted-foreground">{it.label}</span>
-                  <span className="font-mono font-semibold text-foreground">
+                <div key={it.id} className="flex items-baseline gap-1.5 whitespace-nowrap text-[11px]">
+                  <span className="text-[#9EACB9]">{it.label}</span>
+                  <span className="font-mono font-semibold text-[#F0F3F6]">
                     {fmtPrice(it.price)}
                   </span>
-                  <span className="text-[10px] text-muted-foreground">{it.unit}</span>
                   <span
                     className={cn(
-                      'font-mono text-[11px] font-semibold',
-                      isUp && 'text-emerald-500',
-                      isDown && 'text-rose-500',
-                      !isUp && !isDown && 'text-muted-foreground',
+                      'font-mono font-medium tabular-nums',
+                      isUp ? 'text-emerald-400' : isDown ? 'text-rose-400' : 'text-amber-400'
                     )}
                   >
-                    {isUp ? '▲' : isDown ? '▼' : ''}
-                    {Math.abs(it.chg).toFixed(2)}%
+                    {isUp ? `+${it.chg.toFixed(2)}%` : `${it.chg.toFixed(2)}%`}
                   </span>
                 </div>
               )

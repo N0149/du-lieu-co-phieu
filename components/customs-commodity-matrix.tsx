@@ -1039,24 +1039,24 @@ export function CustomsCommodityMatrix({
       </div>
 
       {/* ── BẢNG MA TRẬN THEO THÁNG (PIVOT TABLE) ───────────────────────────── */}
-      <div className="overflow-hidden rounded-xl border border-border bg-card shadow-xs">
+      <div className="overflow-hidden rounded-xl border border-white/8 bg-[#212631] shadow-[0_4px_20px_rgba(0,0,0,0.25)]">
         <div className="overflow-x-auto">
           <table className="w-full border-collapse text-xs">
             <thead>
-              <tr className="border-b border-border bg-secondary/80 text-muted-foreground">
-                <th className="sticky left-0 z-20 w-10 bg-secondary/95 px-2 py-3 text-center font-medium backdrop-blur">
+              <tr className="border-b border-white/8 bg-[#1a1d26] text-[#9EACB9]">
+                <th className="sticky left-0 z-20 w-10 bg-[#1a1d26] px-2 py-3 text-center font-medium backdrop-blur">
                   #
                 </th>
-                <th className="sticky left-10 z-20 min-w-[200px] max-w-[260px] bg-secondary/95 px-3 py-3 text-left font-semibold uppercase tracking-wider text-foreground backdrop-blur sm:min-w-[240px]">
+                <th className="sticky left-10 z-20 min-w-[200px] max-w-[260px] bg-[#1a1d26] px-3 py-3 text-left font-semibold uppercase tracking-wider text-[#F0F3F6] backdrop-blur sm:min-w-[240px]">
                   Mặt hàng
                 </th>
-                <th className="min-w-[70px] px-2.5 py-3 text-left font-medium uppercase tracking-wider">
+                <th className="min-w-[70px] px-2.5 py-3 text-left font-medium uppercase tracking-wider text-[#9EACB9]">
                   ĐVT
                 </th>
                 {displayColumns.map((col) => (
                   <th
                     key={col.key}
-                    className="min-w-[105px] px-3 py-3 text-right font-mono font-semibold uppercase tracking-wider text-foreground"
+                    className="min-w-[105px] px-3 py-3 text-right font-mono font-semibold uppercase tracking-wider text-[#F0F3F6]"
                   >
                     {col.label}
                   </th>
@@ -1066,14 +1066,14 @@ export function CustomsCommodityMatrix({
 
             <tbody>
               {filteredRows.length > 0 && valueType === 'value' && (
-                <tr className="border-b-2 border-border bg-primary/5 font-semibold">
-                  <td className="sticky left-0 z-10 bg-card px-2 py-2.5 text-center text-primary">
+                <tr className="border-b border-white/8 bg-emerald-500/5 font-semibold">
+                  <td className="sticky left-0 z-10 bg-[#1e2330] px-2 py-2.5 text-center text-emerald-400">
                     ∑
                   </td>
-                  <td className="sticky left-10 z-10 bg-card px-3 py-2.5 text-primary">
+                  <td className="sticky left-10 z-10 bg-[#1e2330] px-3 py-2.5 text-emerald-400">
                     TỔNG CỘNG ({filteredRows.length} mặt hàng)
                   </td>
-                  <td className="px-2.5 py-2.5 text-muted-foreground">Triệu USD</td>
+                  <td className="px-2.5 py-2.5 text-[#9EACB9]">Triệu USD</td>
                   {displayColumns.map((col) => {
                     const tot = columnTotals[col.key]?.value ?? 0
                     return (
@@ -1083,9 +1083,9 @@ export function CustomsCommodityMatrix({
                           'px-3 py-2.5 text-right font-mono tabular-nums font-bold',
                           tradeType === 'BALANCE'
                             ? tot >= 0
-                              ? 'text-emerald-600 dark:text-emerald-400'
-                              : 'text-rose-600 dark:text-rose-400'
-                            : 'text-foreground',
+                              ? 'text-emerald-400'
+                              : 'text-rose-400'
+                            : 'text-[#F0F3F6]',
                         )}
                       >
                         {fmtNum(tot / 1e6, 1)}
@@ -1099,7 +1099,7 @@ export function CustomsCommodityMatrix({
                 <tr>
                   <td
                     colSpan={displayColumns.length + 3}
-                    className="px-4 py-12 text-center text-sm text-muted-foreground"
+                    className="px-4 py-12 text-center text-sm text-[#9EACB9]"
                   >
                     Không tìm thấy mặt hàng nào khớp bộ lọc.
                   </td>
@@ -1114,8 +1114,8 @@ export function CustomsCommodityMatrix({
                       key={row.name}
                       onClick={() => toggleCommodity(row.name)}
                       className={cn(
-                        'group cursor-pointer border-b border-border/70 transition-colors hover:bg-accent/40',
-                        isSelected ? 'bg-primary/5 dark:bg-primary/10' : idx % 2 === 1 ? 'bg-muted/20' : '',
+                        'group cursor-pointer border-b border-white/5 transition-colors hover:bg-white/[0.04]',
+                        isSelected ? 'bg-emerald-500/10' : '',
                       )}
                     >
                       <td

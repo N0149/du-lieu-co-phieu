@@ -56,22 +56,22 @@ export function LivePortCallsTable({ calls }: Props) {
   }, [calls, searchTerm, filterDirection, filterTicker, sortOrder])
 
   return (
-    <div className="rounded-2xl border border-slate-800 bg-gradient-to-b from-slate-900/95 via-slate-900/80 to-slate-950/95 p-4 sm:p-6 shadow-2xl shadow-black/40 space-y-4">
+    <div className="rounded-xl border border-white/8 bg-[#212631] p-5 sm:p-6 shadow-[0_4px_20px_rgba(0,0,0,0.25)] space-y-4">
       {/* Table Header & Controls */}
-      <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-slate-800/80 pb-4">
+      <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-white/8 pb-4">
         <div>
           <div className="flex items-center gap-2.5">
-            <span className="flex size-8 items-center justify-center rounded-xl bg-gradient-to-br from-emerald-500/20 to-teal-500/10 text-emerald-400 border border-emerald-500/30 shadow-md shadow-emerald-500/5">
+            <span className="flex size-8 items-center justify-center rounded-xl bg-emerald-500/15 text-emerald-400 border border-emerald-500/30 shadow-sm">
               <RefreshCw className="size-4 animate-spin-slow" />
             </span>
             <div>
-              <h3 className="text-base sm:text-lg font-extrabold text-slate-100 tracking-tight flex items-center gap-2">
+              <h3 className="text-base sm:text-lg font-bold text-[#F0F3F6] tracking-tight flex items-center gap-2">
                 <span>Nhật Ký Tàu Cập Cảng Hôm Nay (Dữ Liệu Thật)</span>
-                <span className="text-xs font-semibold text-emerald-400 bg-emerald-500/10 px-2 py-0.5 rounded-full border border-emerald-500/20">
+                <span className="text-xs font-semibold text-emerald-400 bg-emerald-500/10 px-2.5 py-0.5 rounded-full border border-emerald-500/20">
                   {filteredCalls.length} chuyến
                 </span>
               </h3>
-              <p className="text-xs text-slate-400 mt-0.5">
+              <p className="text-xs text-[#9EACB9] mt-0.5">
                 Cập nhật tự động từ CSDL Cảng vụ Hải Phòng &amp; Cổng thông tin Hoa tiêu Miền Nam
               </p>
             </div>
@@ -82,13 +82,13 @@ export function LivePortCallsTable({ calls }: Props) {
         <div className="flex flex-wrap items-center gap-2">
           {/* Search Box */}
           <div className="relative min-w-[200px]">
-            <Search className="absolute left-3 top-2.5 size-3.5 text-slate-400" />
+            <Search className="absolute left-3 top-2.5 size-3.5 text-[#9EACB9]" />
             <input
               type="text"
               placeholder="Tìm tên tàu, bến cảng..."
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
-              className="w-full rounded-xl border border-slate-700 bg-slate-950/80 py-2 pl-9 pr-3 text-xs text-slate-200 placeholder:text-slate-500 focus:border-teal-500 focus:ring-1 focus:ring-teal-500/30 focus:outline-none transition-all"
+              className="w-full rounded-lg border border-white/10 bg-[#1A1D26] py-2 pl-9 pr-3 text-xs text-[#F0F3F6] placeholder:text-[#64748B] focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500/30 focus:outline-none transition-all"
             />
           </div>
 
@@ -96,7 +96,7 @@ export function LivePortCallsTable({ calls }: Props) {
           <select
             value={filterDirection}
             onChange={(e) => setFilterDirection(e.target.value)}
-            className="rounded-xl border border-slate-700 bg-slate-950/80 py-2 px-3 text-xs text-slate-200 focus:border-teal-500 focus:ring-1 focus:ring-teal-500/30 focus:outline-none transition-all cursor-pointer"
+            className="rounded-lg border border-white/10 bg-[#1A1D26] py-2 px-3 text-xs text-[#F0F3F6] focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500/30 focus:outline-none transition-all cursor-pointer"
           >
             <option value="all">Mọi hướng (Vào / Ra)</option>
             <option value="in">🚢 Tàu Vào Cảng</option>
@@ -108,7 +108,7 @@ export function LivePortCallsTable({ calls }: Props) {
           <select
             value={filterTicker}
             onChange={(e) => setFilterTicker(e.target.value)}
-            className="rounded-xl border border-slate-700 bg-slate-950/80 py-2 px-3 text-xs text-slate-200 focus:border-teal-500 focus:ring-1 focus:ring-teal-500/30 focus:outline-none transition-all cursor-pointer"
+            className="rounded-lg border border-white/10 bg-[#1A1D26] py-2 px-3 text-xs text-[#F0F3F6] focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500/30 focus:outline-none transition-all cursor-pointer"
           >
             <option value="all">Tất cả mã niêm yết</option>
             <option value="mapped">Chỉ mã có gắn bến</option>
@@ -122,18 +122,18 @@ export function LivePortCallsTable({ calls }: Props) {
       </div>
 
       {/* Table Content */}
-      <div className="overflow-x-auto rounded-xl border border-slate-800 bg-slate-950/40">
+      <div className="overflow-x-auto rounded-lg border border-white/8 bg-[#1A1D26]/40">
         <table className="w-full text-left text-xs border-collapse">
           <thead>
-            <tr className="bg-slate-950/80 text-slate-400 border-b border-slate-800 uppercase text-[10px] tracking-wider font-semibold">
+            <tr className="bg-[#1A1D26] text-[#9EACB9] border-b border-white/8 uppercase text-[11px] tracking-wider font-semibold">
               <th
-                className="py-3 px-3.5 cursor-pointer select-none hover:text-slate-200 transition-colors group"
+                className="py-3 px-3.5 cursor-pointer select-none hover:text-[#F0F3F6] transition-colors group"
                 onClick={() => setSortOrder((prev) => (prev === 'desc' ? 'asc' : 'desc'))}
                 title={sortOrder === 'desc' ? 'Đang xếp: Mới nhất → Cũ nhất (Nhấn để đổi)' : 'Đang xếp: Cũ nhất → Mới nhất (Nhấn để đổi)'}
               >
                 <div className="flex items-center gap-1.5 font-bold">
                   <span>Thời gian</span>
-                  <span className="text-teal-400">
+                  <span className="text-emerald-400">
                     {sortOrder === 'desc' ? (
                       <ArrowDown className="size-3" />
                     ) : (
@@ -151,10 +151,10 @@ export function LivePortCallsTable({ calls }: Props) {
               <th className="py-3 px-3.5 font-bold">Nguồn</th>
             </tr>
           </thead>
-          <tbody className="divide-y divide-slate-800/60 font-mono">
+          <tbody className="divide-y divide-white/5 font-mono">
             {filteredCalls.length === 0 ? (
               <tr>
-                <td colSpan={8} className="py-10 text-center text-slate-500 font-sans">
+                <td colSpan={8} className="py-10 text-center text-[#9EACB9] font-sans">
                   Không tìm thấy chuyến tàu nào phù hợp với bộ lọc tìm kiếm.
                 </td>
               </tr>
@@ -164,47 +164,47 @@ export function LivePortCallsTable({ calls }: Props) {
                 const isOut = c.call_direction === 'out'
 
                 return (
-                  <tr key={idx} className="hover:bg-slate-800/40 transition-colors font-sans group">
-                    <td className="py-3 px-3.5 whitespace-nowrap text-slate-400 font-mono text-xs">
+                  <tr key={idx} className="hover:bg-white/[0.03] transition-colors font-sans group">
+                    <td className="py-3 px-3.5 whitespace-nowrap text-[#9EACB9] font-mono text-xs">
                       {c.scheduled_time ? c.scheduled_time.slice(5, 16) : c.call_date}
                     </td>
 
-                    <td className="py-3 px-3.5 font-bold text-slate-100 whitespace-nowrap group-hover:text-teal-300 transition-colors">
+                    <td className="py-3 px-3.5 font-bold text-[#F0F3F6] whitespace-nowrap group-hover:text-emerald-400 transition-colors">
                       <div className="flex items-center gap-2">
-                        <Ship className="size-3.5 text-teal-400 shrink-0" />
+                        <Ship className="size-3.5 text-emerald-400 shrink-0" />
                         <span className="truncate max-w-[190px]">{c.vessel_name}</span>
                       </div>
                     </td>
 
                     <td className="py-3 px-3.5 whitespace-nowrap">
                       {isIn && (
-                        <span className="inline-flex items-center gap-1 rounded-md bg-emerald-500/15 text-emerald-400 px-2 py-0.5 text-[10px] font-bold border border-emerald-500/30">
+                        <span className="inline-flex items-center gap-1 rounded-full bg-emerald-500/10 text-emerald-400 px-2.5 py-0.5 text-[10px] font-medium border border-emerald-500/20">
                           <ArrowDownRight className="size-3" />
                           Vào cảng
                         </span>
                       )}
                       {isOut && (
-                        <span className="inline-flex items-center gap-1 rounded-md bg-sky-500/15 text-sky-400 px-2 py-0.5 text-[10px] font-bold border border-sky-500/30">
+                        <span className="inline-flex items-center gap-1 rounded-full bg-blue-500/10 text-blue-400 px-2.5 py-0.5 text-[10px] font-medium border border-blue-500/20">
                           <ArrowUpRight className="size-3" />
                           Rời cảng
                         </span>
                       )}
                       {!isIn && !isOut && (
-                        <span className="inline-flex items-center rounded-md bg-amber-500/15 text-amber-400 px-2 py-0.5 text-[10px] font-bold border border-amber-500/30">
+                        <span className="inline-flex items-center rounded-full bg-amber-500/10 text-amber-400 px-2.5 py-0.5 text-[10px] font-medium border border-amber-500/20">
                           Dời bến
                         </span>
                       )}
                     </td>
 
-                    <td className="py-3 px-3.5 whitespace-nowrap font-bold text-teal-300 font-mono">
+                    <td className="py-3 px-3.5 whitespace-nowrap font-bold text-emerald-400 font-mono">
                       {c.dwt && c.dwt > 0 ? c.dwt.toLocaleString('vi-VN') + ' DWT' : '—'}
                     </td>
 
-                    <td className="py-3 px-3.5 whitespace-nowrap text-xs text-slate-400 font-mono">
+                    <td className="py-3 px-3.5 whitespace-nowrap text-xs text-[#9EACB9] font-mono">
                       {c.loa ? `${c.loa}m` : '—'} / {c.draft ? `${c.draft}m` : '—'}
                     </td>
 
-                    <td className="py-3 px-3.5 font-medium text-slate-200 whitespace-nowrap max-w-[170px] truncate">
+                    <td className="py-3 px-3.5 font-medium text-[#F0F3F6] whitespace-nowrap max-w-[170px] truncate">
                       {c.berth_name || '—'}
                     </td>
 
@@ -212,17 +212,17 @@ export function LivePortCallsTable({ calls }: Props) {
                       {c.stock_ticker ? (
                         <Link
                           href={`/cang/${c.stock_ticker.toLowerCase()}`}
-                          className="inline-flex items-center gap-1.5 rounded-lg bg-teal-500/15 border border-teal-500/30 px-2.5 py-1 text-xs font-black text-teal-300 hover:bg-teal-500 hover:text-slate-950 transition-all shadow-xs"
+                          className="inline-flex items-center gap-1.5 rounded-lg bg-emerald-500/15 border border-emerald-500/30 px-2.5 py-1 text-xs font-bold text-emerald-400 hover:bg-emerald-500 hover:text-white transition-all shadow-xs"
                         >
                           <span>{c.stock_ticker}</span>
                           <ExternalLink className="size-3" />
                         </Link>
                       ) : (
-                        <span className="text-slate-600 text-xs">—</span>
+                        <span className="text-[#64748B] text-xs">—</span>
                       )}
                     </td>
 
-                    <td className="py-3 px-3.5 whitespace-nowrap text-[11px] text-slate-400">
+                    <td className="py-3 px-3.5 whitespace-nowrap text-[11px] text-[#9EACB9]">
                       {c.source === 'cvhh_haiphong' ? 'Cảng vụ Hải Phòng' : 'Hoa tiêu Miền Nam'}
                     </td>
                   </tr>

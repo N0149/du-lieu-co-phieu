@@ -83,19 +83,19 @@ export function PortThroughputChart({ monthlyData, tickerName }: Props) {
   const yTicks = [0, Math.round(maxVal * 0.33), Math.round(maxVal * 0.66), maxVal]
 
   return (
-    <div className="rounded-2xl border border-slate-800 bg-gradient-to-b from-slate-900/95 via-slate-900/80 to-slate-950/95 p-4 sm:p-6 shadow-2xl shadow-black/40 space-y-4">
+    <div className="rounded-xl border border-white/8 bg-[#212631] p-5 sm:p-6 shadow-[0_4px_20px_rgba(0,0,0,0.25)] space-y-4">
       {/* Header & Controls */}
-      <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-slate-800/80 pb-4">
+      <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-white/8 pb-4">
         <div>
           <div className="flex items-center gap-2.5">
-            <span className="flex size-8 items-center justify-center rounded-xl bg-teal-500/15 text-teal-400 border border-teal-500/30 shadow-sm">
+            <span className="flex size-8 items-center justify-center rounded-xl bg-emerald-500/15 text-emerald-400 border border-emerald-500/30 shadow-sm">
               <BarChart3 className="size-4.5" />
             </span>
             <div>
-              <h3 className="text-base sm:text-lg font-extrabold text-slate-100 tracking-tight">
+              <h3 className="text-base sm:text-lg font-bold text-[#F0F3F6] tracking-tight">
                 {metric === 'dwt' ? 'Trọng Tải Tàu (DWT) Theo Tháng' : 'Sản Lượng Tàu Qua Cảng Theo Tháng'} ({tickerName})
               </h3>
-              <p className="text-xs text-slate-400 mt-0.5">
+              <p className="text-xs text-[#9EACB9] mt-0.5">
                 {metric === 'dwt'
                   ? `Tổng trọng tải DWT tàu cập và rời các cầu bến trực thuộc (${dataToDisplay.length} tháng lịch sử)`
                   : `Số lượt tàu cập và rời các cầu bến trực thuộc (${dataToDisplay.length} tháng lịch sử)`}
@@ -107,23 +107,23 @@ export function PortThroughputChart({ monthlyData, tickerName }: Props) {
         <div className="flex flex-wrap items-center gap-2">
           {/* Metric Selector (Số lượt vs Trọng tải DWT) */}
           {hasDwtData && (
-            <div className="inline-flex rounded-xl border border-slate-700 bg-slate-950/80 p-1 text-xs font-semibold shadow-inner">
+            <div className="inline-flex rounded-lg border border-white/10 bg-[#1A1D26] p-1 text-xs font-semibold shadow-inner">
               <button
                 onClick={() => setMetric('calls')}
-                className={`rounded-lg px-3 py-1.5 transition-all text-xs ${
+                className={`rounded-md px-3 py-1.5 transition-all text-xs ${
                   metric === 'calls'
-                    ? 'bg-teal-500 text-slate-950 font-black shadow-md'
-                    : 'text-slate-400 hover:text-slate-200'
+                    ? 'bg-emerald-500 text-white font-bold shadow-md'
+                    : 'text-[#9EACB9] hover:text-[#F0F3F6]'
                 }`}
               >
                 Số Lượt Tàu
               </button>
               <button
                 onClick={() => setMetric('dwt')}
-                className={`rounded-lg px-3 py-1.5 transition-all text-xs ${
+                className={`rounded-md px-3 py-1.5 transition-all text-xs ${
                   metric === 'dwt'
-                    ? 'bg-teal-500 text-slate-950 font-black shadow-md'
-                    : 'text-slate-400 hover:text-slate-200'
+                    ? 'bg-emerald-500 text-white font-bold shadow-md'
+                    : 'text-[#9EACB9] hover:text-[#F0F3F6]'
                 }`}
               >
                 Trọng Tải DWT
@@ -132,33 +132,33 @@ export function PortThroughputChart({ monthlyData, tickerName }: Props) {
           )}
 
           {/* Direction Mode Switch */}
-          <div className="inline-flex rounded-xl border border-slate-700 bg-slate-950/80 p-1 text-xs font-semibold shadow-inner">
+          <div className="inline-flex rounded-lg border border-white/10 bg-[#1A1D26] p-1 text-xs font-semibold shadow-inner">
             <button
               onClick={() => setChartMode('both')}
-              className={`rounded-lg px-2.5 py-1.5 transition-all ${
+              className={`rounded-md px-2.5 py-1.5 transition-all ${
                 chartMode === 'both'
-                  ? 'bg-slate-700 text-slate-100 font-bold shadow-xs'
-                  : 'text-slate-400 hover:text-slate-200'
+                  ? 'bg-white/15 text-[#F0F3F6] font-bold shadow-xs'
+                  : 'text-[#9EACB9] hover:text-[#F0F3F6]'
               }`}
             >
               Vào + Ra
             </button>
             <button
               onClick={() => setChartMode('in')}
-              className={`rounded-lg px-2.5 py-1.5 transition-all ${
+              className={`rounded-md px-2.5 py-1.5 transition-all ${
                 chartMode === 'in'
-                  ? 'bg-emerald-500 text-slate-950 font-bold shadow-xs'
-                  : 'text-slate-400 hover:text-slate-200'
+                  ? 'bg-emerald-500 text-white font-bold shadow-xs'
+                  : 'text-[#9EACB9] hover:text-[#F0F3F6]'
               }`}
             >
               Chỉ Vào
             </button>
             <button
               onClick={() => setChartMode('out')}
-              className={`rounded-lg px-2.5 py-1.5 transition-all ${
+              className={`rounded-md px-2.5 py-1.5 transition-all ${
                 chartMode === 'out'
-                  ? 'bg-sky-500 text-slate-950 font-bold shadow-xs'
-                  : 'text-slate-400 hover:text-slate-200'
+                  ? 'bg-blue-500 text-white font-bold shadow-xs'
+                  : 'text-[#9EACB9] hover:text-[#F0F3F6]'
               }`}
             >
               Chỉ Ra
@@ -169,7 +169,7 @@ export function PortThroughputChart({ monthlyData, tickerName }: Props) {
           <select
             value={timeRange}
             onChange={(e) => setTimeRange(Number(e.target.value))}
-            className="rounded-xl border border-slate-700 bg-slate-950/80 py-1.5 px-3 text-xs text-slate-200 focus:border-teal-500 focus:outline-none font-bold cursor-pointer"
+            className="rounded-lg border border-white/10 bg-[#1A1D26] py-1.5 px-3 text-xs text-[#F0F3F6] focus:border-emerald-500 focus:outline-none font-bold cursor-pointer"
           >
             <option value={12}>12 tháng gần nhất</option>
             <option value={24}>24 tháng gần nhất</option>
@@ -181,27 +181,27 @@ export function PortThroughputChart({ monthlyData, tickerName }: Props) {
 
       {/* Legend & Summary Info */}
       <div className="flex flex-wrap items-center justify-between gap-3 text-xs pt-1">
-        <div className="flex items-center gap-4 text-slate-400">
+        <div className="flex items-center gap-4 text-[#9EACB9]">
           {(chartMode === 'both' || chartMode === 'in') && (
             <div className="flex items-center gap-1.5">
               <span className="size-3 rounded bg-emerald-400 shadow-xs shadow-emerald-400/50 shrink-0" />
-              <span className="text-slate-200 font-bold">{metric === 'dwt' ? 'DWT Vào' : 'Tàu Vào'}</span>
+              <span className="text-[#F0F3F6] font-bold">{metric === 'dwt' ? 'DWT Vào' : 'Tàu Vào'}</span>
             </div>
           )}
           {(chartMode === 'both' || chartMode === 'out') && (
             <div className="flex items-center gap-1.5">
-              <span className="size-3 rounded bg-sky-400 shadow-xs shadow-sky-400/50 shrink-0" />
-              <span className="text-slate-200 font-bold">{metric === 'dwt' ? 'DWT Ra' : 'Tàu Ra'}</span>
+              <span className="size-3 rounded bg-blue-400 shadow-xs shadow-blue-400/50 shrink-0" />
+              <span className="text-[#F0F3F6] font-bold">{metric === 'dwt' ? 'DWT Ra' : 'Tàu Ra'}</span>
             </div>
           )}
           <div className="flex items-center gap-1.5">
             <span className="size-3 rounded bg-amber-400/30 border border-dashed border-amber-400 shrink-0" />
-            <span className="text-slate-300 font-medium">Tháng Chưa Đóng Sổ</span>
+            <span className="text-[#9EACB9] font-medium">Tháng Chưa Đóng Sổ</span>
           </div>
         </div>
 
         {hoveredIndex !== null && dataToDisplay[hoveredIndex] ? (
-          <div className="rounded-xl bg-slate-950 border border-teal-500/60 px-3 py-1.5 text-teal-300 font-bold shadow-lg shadow-teal-500/10 animate-in fade-in">
+          <div className="rounded-lg bg-[#1A1D26] border border-emerald-500/40 px-3 py-1.5 text-emerald-400 font-bold shadow-lg shadow-emerald-500/10 animate-in fade-in">
             {metric === 'dwt' ? (
               <>
                 Tháng {dataToDisplay[hoveredIndex].ym}: {formatDWT(dataToDisplay[hoveredIndex].in)} vào / {formatDWT(dataToDisplay[hoveredIndex].out)} ra (Tổng: {formatDWT(dataToDisplay[hoveredIndex].total)})
@@ -213,26 +213,26 @@ export function PortThroughputChart({ monthlyData, tickerName }: Props) {
             )}
           </div>
         ) : (
-          <div className="text-xs text-slate-500 italic">
+          <div className="text-xs text-[#64748B] italic">
             Rê chuột vào từng cột để xem chi tiết số liệu
           </div>
         )}
       </div>
 
       {/* Responsive Horizontal Scroll SVG Chart */}
-      <div className="w-full overflow-x-auto rounded-2xl border border-slate-800/90 bg-slate-950/80 p-3 shadow-inner">
+      <div className="w-full overflow-x-auto rounded-xl border border-white/8 bg-[#1A1D26]/70 p-3 shadow-inner">
         <svg
           viewBox={`0 0 ${svgWidth} ${svgHeight}`}
           className="w-full min-w-[700px] h-[310px] select-none"
         >
           <defs>
             <linearGradient id="barInGrad" x1="0" y1="0" x2="0" y2="1">
-              <stop offset="0%" stopColor="#34d399" />
+              <stop offset="0%" stopColor="#10B981" />
               <stop offset="100%" stopColor="#059669" />
             </linearGradient>
             <linearGradient id="barOutGrad" x1="0" y1="0" x2="0" y2="1">
-              <stop offset="0%" stopColor="#38bdf8" />
-              <stop offset="100%" stopColor="#0284c7" />
+              <stop offset="0%" stopColor="#3B82F6" />
+              <stop offset="100%" stopColor="#1D4ED8" />
             </linearGradient>
           </defs>
 
@@ -246,7 +246,7 @@ export function PortThroughputChart({ monthlyData, tickerName }: Props) {
                   y1={y}
                   x2={padLeft + plotWidth}
                   y2={y}
-                  stroke="#1e293b"
+                  stroke="rgba(255,255,255,0.06)"
                   strokeDasharray={i === 0 ? '0' : '4 4'}
                   strokeWidth="1"
                 />

@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server'
 import snapshot from '@/data/customs_trade_snapshot.json'
+import { getClientIp, checkInMemoryRateLimit } from '@/lib/security'
 
 export const dynamic = 'force-dynamic'
 
@@ -50,16 +51,31 @@ export type CustomsTradeRow = {
  * API phục vụ snapshot thống kê XNK (xuất từ scripts/customs_etl).
  * Snapshot được tạo bằng: `python scripts/customs_etl/main.py --export-json`
  * → ghi `data/customs_trade_snapshot.json`, rồi commit + push để Vercel cập nhật.
- *
- * Mặc định trả {generated_at, rows, trade_balance} (bỏ matrix_rows ~5.000 dòng
- * để giữ payload nhẹ). Thêm `?include_matrix=1` để kèm ma trận Mặt hàng × Thị trường.
  */
 export async function GET(req: NextRequest) {
+  const ip = getClientIp(req.headers)
+  const limiter = checkInMemoryRateLimit(`rl:trade:${ip}`, {
+    windowMs: 60_000,
+    max: 40,
+  })
+
+  if (!limiter.success) {
+    return NextResponse.json(
+      { error: 'Tần suất yêu cầu quá nhanh. Vui lòng thử lại sau 1 phút.' },
+      { status: 429, headers: { 'Retry-After': '60', 'X-Robots-Tag': 'noindex' } }
+    )
+  }
+
   const includeMatrix = req.nextUrl.searchParams.get('include_matrix') === '1'
   const data = snapshot as unknown as CustomsTradeSnapshot
-  if (!includeMatrix) {
-    const { matrix_rows: _omit, ...rest } = data
-    return NextResponse.json(rest)
-  }
-  return NextResponse.json(data)
+  const payload = !includeMatrix
+    ? (({ matrix_rows: _omit, ...rest }) => rest)(data)
+    : data
+
+  return NextResponse.json(payload, {
+    headers: {
+      'Cache-Control': 'public, s-maxage=3600, stale-while-revalidate=86400',
+      'X-Robots-Tag': 'noindex',
+    },
+  })
 }

@@ -44,19 +44,19 @@ export function NationalMaritimeMap({ mapData, ports, selectedPortId, onSelectPo
   }, [ports])
 
   return (
-    <div className="relative flex flex-col rounded-2xl border border-border/80 bg-gradient-to-b from-card to-background p-4 sm:p-6 shadow-xl overflow-hidden">
+    <div className="relative flex flex-col rounded-xl border border-white/8 bg-[#212631] p-5 sm:p-6 shadow-[0_4px_20px_rgba(0,0,0,0.25)] overflow-hidden">
       {/* Header Info */}
-      <div className="flex flex-wrap items-center justify-between gap-4 border-b border-border/50 pb-4">
+      <div className="flex flex-wrap items-center justify-between gap-4 border-b border-white/8 pb-4">
         <div>
           <div className="flex items-center gap-2">
-            <span className="flex size-7 items-center justify-center rounded-lg bg-teal-500/10 text-teal-400 border border-teal-500/20">
+            <span className="flex size-8 items-center justify-center rounded-xl bg-emerald-500/15 text-emerald-400 border border-emerald-500/30 shadow-sm">
               <Anchor className="size-4" />
             </span>
-            <h3 className="text-base sm:text-lg font-bold text-foreground tracking-tight">
+            <h3 className="text-base sm:text-lg font-bold text-[#F0F3F6] tracking-tight">
               Bản Đồ 15 Cảng Vụ Hàng Hải Việt Nam
             </h3>
           </div>
-          <p className="mt-1 text-xs text-muted-foreground">
+          <p className="mt-1 text-xs text-[#9EACB9]">
             Chiều cao cột tỉ lệ với sản lượng trọng tải tàu (DWT) 30 ngày qua
           </p>
         </div>
@@ -64,7 +64,7 @@ export function NationalMaritimeMap({ mapData, ports, selectedPortId, onSelectPo
         {selectedPortId && (
           <button
             onClick={() => onSelectPort && onSelectPort(null)}
-            className="inline-flex items-center gap-1.5 rounded-lg border border-teal-500/30 bg-teal-500/10 px-3 py-1 text-xs font-semibold text-teal-400 hover:bg-teal-500/20 transition-all"
+            className="inline-flex items-center gap-1.5 rounded-full border border-emerald-500/30 bg-emerald-500/10 px-3 py-1 text-xs font-semibold text-emerald-400 hover:bg-emerald-500/20 transition-all"
           >
             <CheckCircle2 className="size-3.5" />
             <span>Đang lọc: {ports.find((p) => p.id === selectedPortId)?.name}</span>
@@ -76,7 +76,7 @@ export function NationalMaritimeMap({ mapData, ports, selectedPortId, onSelectPo
       {/* Main SVG Map & Sidebar Overlay */}
       <div className="relative mt-4 grid grid-cols-1 lg:grid-cols-12 gap-6 items-center">
         {/* Left SVG Area */}
-        <div className="lg:col-span-8 relative flex items-center justify-center min-h-[440px] sm:min-h-[580px] bg-slate-950/40 rounded-xl border border-slate-800/60 p-2">
+        <div className="lg:col-span-8 relative flex items-center justify-center min-h-[440px] sm:min-h-[580px] bg-[#1A1D26]/70 rounded-xl border border-white/8 p-2">
           <svg
             viewBox={`0 0 ${vw} ${totalHeight}`}
             className="w-full max-h-[600px] h-auto drop-shadow-2xl select-none"

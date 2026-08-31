@@ -54,7 +54,7 @@ const COLORS = {
   emerald: '#10b981',
   rose: '#f43f5e',
   amber: '#f59e0b',
-  sky: '#0ea5e9',
+  sky: '#3b82f6',
 }
 
 const KY_RANK: Record<string, number> = { KY_1: 0, KY_2: 1, THANG: 2, QUY: 3 }
@@ -243,18 +243,18 @@ function ChartTooltip({
   }
 
   return (
-    <div className="rounded-lg border border-border bg-card/95 px-3 py-2.5 text-xs shadow-xl backdrop-blur">
+    <div className="rounded-xl border border-white/10 bg-[#212631]/95 px-3.5 py-3 text-xs shadow-xl backdrop-blur">
       <div className="mb-1.5 flex items-center justify-between gap-4">
-        <span className="font-semibold text-foreground">{p.fullLabel ?? p.label}</span>
+        <span className="font-bold text-[#F0F3F6]">{p.fullLabel ?? p.label}</span>
       </div>
-      <div className="space-y-1">
+      <div className="space-y-1.5">
         {series.map((s) => (
           <div key={s.name} className="flex items-center justify-between gap-6">
-            <span className="flex items-center gap-1.5 text-muted-foreground">
+            <span className="flex items-center gap-1.5 text-[#9EACB9]">
               <span className="size-2 rounded-full" style={{ backgroundColor: s.color }} />
               {s.name}
             </span>
-            <span className={cn('font-medium tabular-nums', s.value < 0 ? 'text-rose-600 dark:text-rose-400' : 'text-foreground')}>
+            <span className={cn('font-medium tabular-nums', s.value < 0 ? 'text-rose-400' : 'text-[#F0F3F6]')}>
               {s.value < 0 ? '−' : '+'}
               {fmtUsd(Math.abs(s.value))}
             </span>
@@ -262,12 +262,12 @@ function ChartTooltip({
         ))}
       </div>
       {(p.deltaExport != null || p.deltaImport != null) && (
-        <div className="mt-2 border-t border-border pt-1.5">
-          <div className="flex items-center justify-between gap-6 text-muted-foreground">
+        <div className="mt-2 border-t border-white/8 pt-1.5">
+          <div className="flex items-center justify-between gap-6 text-[#9EACB9]">
             <span>Xuất khẩu vs kỳ trước</span>
             <Delta value={p.deltaExport} />
           </div>
-          <div className="flex items-center justify-between gap-6 text-muted-foreground">
+          <div className="flex items-center justify-between gap-6 text-[#9EACB9]">
             <span>Nhập khẩu vs kỳ trước</span>
             <Delta value={p.deltaImport} />
           </div>
@@ -278,7 +278,7 @@ function ChartTooltip({
 }
 
 const controlCls =
-  'inline-flex items-center rounded-lg border border-border bg-background px-3 h-8 text-xs font-medium text-muted-foreground transition-colors hover:text-foreground'
+  'inline-flex items-center rounded-lg border border-white/10 bg-[#1A1D26] px-3 h-8 text-xs font-medium text-[#9EACB9] transition-colors hover:text-[#F0F3F6]'
 
 export function TradeBalanceChart({ data }: { data: TradeBalancePoint[] }) {
   const [segment, setSegment] = useState<Segment>('ALL')
@@ -298,16 +298,16 @@ export function TradeBalanceChart({ data }: { data: TradeBalancePoint[] }) {
   }
 
   return (
-    <div className="rounded-xl border border-border bg-card p-4 sm:p-5 shadow-xs">
+    <div className="rounded-xl border border-white/8 bg-[#212631] p-5 sm:p-6 shadow-[0_4px_20px_rgba(0,0,0,0.25)] space-y-4">
       {/* ── Tiêu đề + điều khiển ───────────────────────────────────────── */}
-      <div className="mb-4 flex flex-col gap-3 lg:flex-row lg:items-center lg:justify-between">
+      <div className="flex flex-col gap-3 lg:flex-row lg:items-center lg:justify-between border-b border-white/8 pb-4">
         <div>
-          <h2 className="text-sm font-semibold text-foreground sm:text-base">
+          <h2 className="text-base font-bold text-[#F0F3F6] sm:text-lg tracking-tight">
             {is15d
               ? 'Thống kê Xuất – Nhập siêu theo kỳ 15 ngày'
               : 'Cán cân thương mại Xuất – Nhập khẩu'}
           </h2>
-          <p className="mt-0.5 text-xs text-muted-foreground">
+          <p className="mt-0.5 text-xs text-[#9EACB9]">
             {is15d
               ? 'Số liệu thống kê Hải quan theo kỳ 15 ngày (Xuất khẩu, Nhập khẩu & Cán cân Xuất/Nhập siêu) · đơn vị: tỷ USD'
               : 'Theo số liệu Tổng cục Hải quan · đơn vị trục: tỷ USD'}
@@ -317,7 +317,7 @@ export function TradeBalanceChart({ data }: { data: TradeBalancePoint[] }) {
         <div className="flex flex-wrap items-center gap-2">
           {/* Tabs khu vực (Chỉ hiển thị khi không phải kỳ 15 ngày) */}
           {!is15d && (
-            <div className="flex items-center gap-1 rounded-lg border border-border bg-muted/40 p-0.5 text-xs">
+            <div className="flex items-center gap-1 rounded-lg border border-white/10 bg-[#1A1D26] p-1 text-xs">
               {SEGMENT_OPTIONS.map((opt) => (
                 <button
                   key={opt.key}
@@ -325,7 +325,7 @@ export function TradeBalanceChart({ data }: { data: TradeBalancePoint[] }) {
                   onClick={() => setSegment(opt.key)}
                   className={cn(
                     'rounded-md px-2.5 py-1 font-medium transition-colors',
-                    effectiveSegment === opt.key ? 'bg-background text-foreground shadow-xs font-semibold' : 'text-muted-foreground hover:text-foreground',
+                    effectiveSegment === opt.key ? 'bg-white/15 text-[#F0F3F6] shadow-xs font-semibold' : 'text-[#9EACB9] hover:text-[#F0F3F6]',
                   )}
                 >
                   {opt.label}
