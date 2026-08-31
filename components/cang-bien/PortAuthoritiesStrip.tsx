@@ -95,12 +95,12 @@ export function PortAuthoritiesStrip({ ports }: Props) {
           {/* Grid of Port Authorities Cards */}
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-3.5">
             {filteredPorts.map((p) => {
-              const calls30d = p.calls_30d || p.calls_7d ? (p.calls_7d || 0) * 4 : 450
-              const dwt30d = p.dwt_30d || p.dwt_7d ? (p.dwt_7d || 0) * 4 : 5200000
+              const calls30d = p.calls_30d || 450
+              const dwt30d = p.dwt_30d || 5200000
 
               return (
                 <div
-                  key={p.id || p.slug}
+                  key={p.id}
                   className="rounded-xl border border-slate-800/90 bg-slate-900/70 p-4 shadow-sm hover:border-teal-500/40 hover:bg-slate-900 transition-all flex flex-col justify-between group"
                 >
                   <div>
@@ -109,7 +109,7 @@ export function PortAuthoritiesStrip({ ports }: Props) {
                         <MapPin className="size-2.5" />
                         {p.region || 'Cảng vụ'}
                       </span>
-                      <span className="text-[10px] font-mono text-slate-500 uppercase">{p.id || p.slug}</span>
+                      <span className="text-[10px] font-mono text-slate-500 uppercase">{p.id}</span>
                     </div>
 
                     <h4 className="text-xs font-bold text-slate-100 group-hover:text-teal-300 transition-colors line-clamp-1 mb-2">
