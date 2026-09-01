@@ -28,14 +28,11 @@ jobs:
       - name: Install dependencies
         run: pnpm install --no-frozen-lockfile
 
-      - name: Run refresh snapshot script
+      - name: Run sync direct script
         env:
-          # Dùng GitHub Secrets (Settings → Secrets and variables → Actions). KHÔNG hardcode
-          # API key vào file: vừa rò rỉ vừa dễ gõ sai → Drive 403 → workflow fail.
           GOOGLE_DRIVE_API_KEY: ${{ secrets.GOOGLE_DRIVE_API_KEY }}
           GOOGLE_DRIVE_FOLDER_ID: ${{ secrets.GOOGLE_DRIVE_FOLDER_ID }}
-          REPORTS_SOURCE: live
-        run: node scripts/refresh-snapshot.mjs
+        run: node scripts/sync-direct.mjs
 
       - name: Commit & Push if data changed
         run: |
