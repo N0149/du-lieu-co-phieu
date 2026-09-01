@@ -126,9 +126,9 @@ export function StockSearch() {
   }
 
   return (
-    <div className="relative w-full max-w-md">
+    <div className="relative w-full max-w-xl">
       <div className="relative">
-        <Search className="pointer-events-none absolute left-2.5 top-1/2 size-4 -translate-y-1/2 text-muted-foreground" />
+        <Search className="pointer-events-none absolute left-3 top-1/2 size-4 -translate-y-1/2 text-muted-foreground" />
         <input
           ref={inputRef}
           value={q}
@@ -140,9 +140,9 @@ export function StockSearch() {
           onFocus={() => setOpen(true)}
           onBlur={() => setTimeout(() => setOpen(false), 120)}
           onKeyDown={onKeyDown}
-          placeholder="Tìm nhanh theo Mã CK hoặc tên doanh nghiệp…"
+          placeholder="Tìm nhanh theo Mã CK hoặc tên doanh nghiệp (vd: HPG, FPT, VNM...)"
           aria-label="Tìm kiếm cổ phiếu"
-          className="h-9 w-full rounded-md border border-input bg-card pl-8 pr-16 font-mono text-sm text-foreground outline-none transition-colors placeholder:font-sans placeholder:text-muted-foreground focus-visible:border-ring focus-visible:ring-3 focus-visible:ring-ring/30"
+          className="h-9 w-full rounded-lg border border-input bg-card/90 pl-9 pr-16 font-mono text-sm text-foreground outline-none transition-colors placeholder:font-sans placeholder:text-muted-foreground focus-visible:border-ring focus-visible:ring-2 focus-visible:ring-ring/30"
         />
         <kbd className="pointer-events-none absolute right-2.5 top-1/2 hidden -translate-y-1/2 items-center gap-1 rounded border border-border bg-muted px-1.5 py-0.5 font-mono text-[10px] text-muted-foreground sm:flex">
           <CornerDownLeft className="size-3" /> Enter

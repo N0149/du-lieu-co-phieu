@@ -38,26 +38,22 @@ export function SiteHeader({ hideSearch = false }: SiteHeaderProps) {
       <div className="mx-auto flex h-14 max-w-[1600px] items-center gap-4 px-4">
         {/* Brand */}
         <Link href="/" className="flex shrink-0 items-center gap-2">
-          <span className="flex size-8 items-center justify-center rounded-xl bg-emerald-500/15 text-emerald-400 border border-emerald-500/30 shadow-sm">
-            <TrendingUp className="size-4.5" />
+          <span className="flex size-7.5 items-center justify-center rounded-lg bg-emerald-500/15 text-emerald-400 border border-emerald-500/30 shadow-sm">
+            <TrendingUp className="size-4" />
           </span>
           <span className="flex flex-col leading-none">
-            <span className="text-lg font-bold tracking-tight whitespace-nowrap text-[#F0F3F6] sm:text-xl">
-              {/* Mobile: rút gọn để không vỡ layout; sm+: đủ dài với accent */}
-              <span className="sm:hidden">Phân Tích Chuyên Sâu</span>
-              <span className="hidden sm:inline">
-                Phân Tích Chuyên Sâu<span className="text-emerald-400"> Cổ Phiếu</span>
-              </span>
+            <span className="text-base font-bold tracking-tight whitespace-nowrap text-[#F0F3F6] sm:text-lg">
+              Dữ Liệu<span className="text-emerald-400"> Đầu Tư</span>
             </span>
-            <span className="mt-0.5 hidden text-[10px] uppercase tracking-widest text-[#9EACB9] sm:block">
-              Cổng dữ liệu & báo cáo đầu tư
+            <span className="mt-0.5 hidden text-[9px] uppercase tracking-wider text-[#9EACB9] sm:block">
+              Cổng dữ liệu & báo cáo
             </span>
           </span>
         </Link>
 
         {/* Search */}
         {shouldShowSearch && (
-          <div className="ml-2 hidden flex-1 justify-center md:flex">
+          <div className="ml-1 hidden flex-1 max-w-xl md:flex">
             <StockSearch />
           </div>
         )}
