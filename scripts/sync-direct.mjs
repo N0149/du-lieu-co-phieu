@@ -1,11 +1,19 @@
-import { readFileSync, writeFileSync } from 'fs';
+import { readFileSync, writeFileSync, existsSync } from 'fs';
+import path from 'path';
 
-const envContent = readFileSync('.env.local', 'utf8');
-const apiKey = envContent.match(/GOOGLE_DRIVE_API_KEY=([^\r\n]+)/)?.[1]?.trim();
-const folderId = envContent.match(/GOOGLE_DRIVE_FOLDER_ID=([^\r\n]+)/)?.[1]?.trim() || '1eI8C_uDJlKDvNbzF9YOOr6QNCUIdw7o8';
+// Đọc API Key & Folder ID
+const envPath = existsSync('.env.local') ? '.env.local' : '.env';
+const envContent = existsSync(envPath) ? readFileSync(envPath, 'utf8') : '';
+const apiKey = process.env.GOOGLE_DRIVE_API_KEY || envContent.match(/GOOGLE_DRIVE_API_KEY=([^\r\n]+)/)?.[1]?.trim();
+const folderId = process.env.GOOGLE_DRIVE_FOLDER_ID || envContent.match(/GOOGLE_DRIVE_FOLDER_ID=([^\r\n]+)/)?.[1]?.trim() || '1eI8C_uDJlKDvNbzF9YOOr6QNCUIdw7o8';
 
-console.log(`Using Folder ID: ${folderId}`);
-console.log(`Using API Key: ${apiKey ? apiKey.slice(0, 8) + '...' : 'MISSING'}`);
+if (!apiKey) {
+  console.error('❌ Lỗi: Thiếu GOOGLE_DRIVE_API_KEY');
+  process.exit(1);
+}
+
+console.log(`📁 Thư mục Google Drive: ${folderId}`);
+console.log(`🔑 Google Drive API Key: ${apiKey.slice(0, 8)}...`);
 
 const TICKER_STOP_WORDS = new Set([
   'RNAV', 'BCTC', 'CTY', 'KCN', 'BĐS', 'YOY', 'TNDN', 'LNST', 'EPS', 'PE', 'PB', 'Q1', 'Q2', 'Q3', 'Q4', 'NĐT', 'ROE',
@@ -262,22 +270,43 @@ async function getDocContent(docId) {
   }
 }
 
+// Xử lý song song có giới hạn concurrency
+async function pMap(items, mapper, concurrency = 8) {
+  const results = new Array(items.length);
+  let index = 0;
+
+  const workers = Array.from({ length: Math.min(items.length, concurrency) }, async () => {
+    while (index < items.length) {
+      const current = index++;
+      results[current] = await mapper(items[current], current);
+    }
+  });
+
+  await Promise.all(workers);
+  return results;
+}
+
 async function run() {
-  console.log('Fetching file list from Google Drive...');
+  console.log('🔄 Đang kết nối Google Drive lấy danh sách file mới nhất...');
   const files = await listAllFilesInFolder(folderId);
-  console.log(`Found ${files.length} total files in Google Drive folder.`);
+  console.log(`✓ Tìm thấy tổng cộng ${files.length} files trong thư mục.`);
 
-  const seen = new Set();
-  const reports = [];
+  if (files.length === 0) {
+    console.warn('⚠ Không tìm thấy file nào trong thư mục Google Drive.');
+    return;
+  }
 
-  for (let i = 0; i < files.length; i++) {
-    const file = files[i];
+  console.log(`🚀 Đang bóc tách và phân tích song song ${files.length} tài liệu...`);
+  
+  let doneCount = 0;
+  const reports = await pMap(files, async (file) => {
     const parsed = parseReportName(file.name);
-    if (!parsed) continue;
+    if (!parsed) {
+      doneCount++;
+      return null;
+    }
 
     const date = toReportDate(file.createdTime);
-    process.stdout.write(`[${i + 1}/${files.length}] Fetching ${parsed.ticker || parsed.kind}: ${file.name.slice(0, 30)}...\r`);
-    
     const content = await getDocContent(file.id);
     const valuation = parsed.kind === 'stock' && content ? parseValuation(content) : null;
     const summary = parsed.kind !== 'stock' && content ? extractSummary(content) : null;
@@ -285,7 +314,12 @@ async function run() {
 
     const slugBase = parsed.kind === 'stock' ? parsed.ticker.toLowerCase() : parsed.kind;
 
-    reports.push({
+    doneCount++;
+    if (doneCount % 10 === 0 || doneCount === files.length) {
+      process.stdout.write(`  [${doneCount}/${files.length}] Hoàn tất ${parsed.ticker || parsed.kind}...\r`);
+    }
+
+    return {
       slug: `${slugBase}-${(date || 'unknown').replace(/\//g, '-')}`,
       ticker: parsed.ticker,
       title: parsed.title,
@@ -299,24 +333,28 @@ async function run() {
       recommendation: valuation?.recommendation ?? null,
       upside: valuation?.upside ?? null,
       bonusWelfareRate,
-    });
-  }
+    };
+  }, 10);
 
-  console.log('\n\nDeduplicating...');
+  console.log('\n🧹 Đang lọc trùng và chuẩn hóa dữ liệu...');
+  const seen = new Set();
   const deduped = [];
   for (const r of reports) {
+    if (!r) continue;
     const key = `${r.ticker || r.category}|${r.title.toLowerCase()}`;
     if (seen.has(key)) continue;
     seen.add(key);
     deduped.push(r);
   }
 
-  console.log(`Total parsed valid reports: ${deduped.length}`);
-  writeFileSync('data/reports-snapshot.json', JSON.stringify(deduped, null, 2), 'utf8');
-  console.log('✓ Successfully saved data/reports-snapshot.json');
+  console.log(`✓ Đã phân tích xong ${deduped.length} báo cáo hợp lệ.`);
+
+  const snapshotPath = path.join(process.cwd(), 'data', 'reports-snapshot.json');
+  writeFileSync(snapshotPath, JSON.stringify(deduped, null, 2), 'utf8');
+  console.log(`✅ Ghi đè thành công ${deduped.length} báo cáo vào file: ${snapshotPath}`);
 }
 
 run().catch((e) => {
-  console.error('Error:', e);
+  console.error('❌ Lỗi khi đồng bộ:', e);
   process.exit(1);
 });
