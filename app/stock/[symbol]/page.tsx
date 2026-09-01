@@ -52,6 +52,21 @@ export default async function StockDetailPage({
   // Lấy các bài báo cáo phân tích thực tế của mã từ kho dữ liệu
   const reports = getReportsForTicker(ticker)
 
+  // Đọc dữ liệu chi tiết BCTC cục bộ áp dụng cho TẤT CẢ các mã cổ phiếu
+  const detailedSnapshot = await (async () => {
+    try {
+      const { getLocalFinancialSnapshot } = await import('@/lib/local-financials')
+      return getLocalFinancialSnapshot(
+        ticker,
+        stockData.company.name,
+        stockData.company.exchange,
+        stockData.financials
+      )
+    } catch {
+      return null
+    }
+  })()
+
   // Find related stocks in same sector or group
   const relatedStocks = allStocks
     .filter(
@@ -69,6 +84,7 @@ export default async function StockDetailPage({
         stockData={stockData}
         relatedStocks={relatedStocks}
         reports={reports}
+        detailedSnapshot={detailedSnapshot}
       />
     </div>
   )
