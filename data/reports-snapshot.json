@@ -9,10 +9,10 @@
     "driveDocId": "1gm1600ufYlJW-d42oXdk7mFHoB1Ju2-MD-etgaKOBew",
     "summary": null,
     "targetPrice": 37.728,
-    "currentPrice": null,
+    "currentPrice": 28.5,
     "recommendation": "MUA",
     "upside": 32.38,
-    "bonusWelfareRate": null
+    "bonusWelfareRate": 0.37
   },
   {
     "slug": "mls-22-08-2026",
@@ -27,7 +27,7 @@
     "currentPrice": null,
     "recommendation": null,
     "upside": null,
-    "bonusWelfareRate": null
+    "bonusWelfareRate": 15.95
   },
   {
     "slug": "bio-22-08-2026",
@@ -57,7 +57,7 @@
     "currentPrice": 13,
     "recommendation": null,
     "upside": 15.384615384615385,
-    "bonusWelfareRate": null
+    "bonusWelfareRate": 3.7
   },
   {
     "slug": "dpr-22-08-2026",
@@ -72,7 +72,7 @@
     "currentPrice": 36.3,
     "recommendation": null,
     "upside": 36.08815426997246,
-    "bonusWelfareRate": null
+    "bonusWelfareRate": 17.62
   },
   {
     "slug": "adc-22-08-2026",
@@ -102,7 +102,7 @@
     "currentPrice": null,
     "recommendation": null,
     "upside": null,
-    "bonusWelfareRate": null
+    "bonusWelfareRate": 11.75
   },
   {
     "slug": "abc-22-08-2026",
@@ -117,7 +117,7 @@
     "currentPrice": 10.5,
     "recommendation": "MUA",
     "upside": 69.52380952380953,
-    "bonusWelfareRate": null
+    "bonusWelfareRate": 0
   },
   {
     "slug": "tya-22-08-2026",
@@ -132,7 +132,7 @@
     "currentPrice": null,
     "recommendation": null,
     "upside": null,
-    "bonusWelfareRate": null
+    "bonusWelfareRate": 0
   },
   {
     "slug": "ndc-22-08-2026",
@@ -147,7 +147,7 @@
     "currentPrice": null,
     "recommendation": "KHẢ QUAN",
     "upside": null,
-    "bonusWelfareRate": null
+    "bonusWelfareRate": 5
   },
   {
     "slug": "foc-22-08-2026",
@@ -177,7 +177,7 @@
     "currentPrice": null,
     "recommendation": null,
     "upside": null,
-    "bonusWelfareRate": null
+    "bonusWelfareRate": 24.26
   },
   {
     "slug": "tta-18-08-2026",
@@ -207,7 +207,7 @@
     "currentPrice": null,
     "recommendation": "MUA",
     "upside": null,
-    "bonusWelfareRate": null
+    "bonusWelfareRate": 10.5
   },
   {
     "slug": "bts-19-08-2026",
@@ -222,7 +222,7 @@
     "currentPrice": 5,
     "recommendation": "THEO DÕI",
     "upside": 10,
-    "bonusWelfareRate": null
+    "bonusWelfareRate": 0
   },
   {
     "slug": "cat-20-08-2026",
@@ -237,7 +237,7 @@
     "currentPrice": null,
     "recommendation": null,
     "upside": null,
-    "bonusWelfareRate": null
+    "bonusWelfareRate": 6
   },
   {
     "slug": "hpd-18-08-2026",
@@ -252,7 +252,7 @@
     "currentPrice": 16.3,
     "recommendation": null,
     "upside": 38.03680981595091,
-    "bonusWelfareRate": null
+    "bonusWelfareRate": 3.58
   },
   {
     "slug": "khs-17-08-2026",
@@ -267,7 +267,7 @@
     "currentPrice": 13.2,
     "recommendation": "MUA",
     "upside": 40.15151515151516,
-    "bonusWelfareRate": null
+    "bonusWelfareRate": 8
   },
   {
     "slug": "gsp-17-08-2026",
@@ -312,7 +312,7 @@
     "currentPrice": 18.2,
     "recommendation": "KHẢ QUAN",
     "upside": 12.637362637362642,
-    "bonusWelfareRate": null
+    "bonusWelfareRate": 3.02
   },
   {
     "slug": "mh3-18-08-2026",
@@ -327,7 +327,7 @@
     "currentPrice": null,
     "recommendation": null,
     "upside": null,
-    "bonusWelfareRate": null
+    "bonusWelfareRate": 9.16
   },
   {
     "slug": "dhb-18-08-2026",
@@ -342,7 +342,7 @@
     "currentPrice": 10.9,
     "recommendation": null,
     "upside": 51.376146788990816,
-    "bonusWelfareRate": null
+    "bonusWelfareRate": 0
   },
   {
     "slug": "clh-17-08-2026",
@@ -357,7 +357,7 @@
     "currentPrice": 20.8,
     "recommendation": null,
     "upside": 18.26923076923077,
-    "bonusWelfareRate": null
+    "bonusWelfareRate": 27.93
   },
   {
     "slug": "lix-17-08-2026",
@@ -372,7 +372,7 @@
     "currentPrice": null,
     "recommendation": "MUA",
     "upside": null,
-    "bonusWelfareRate": null
+    "bonusWelfareRate": 10.26
   },
   {
     "slug": "ntc-17-08-2026",
@@ -432,7 +432,7 @@
     "currentPrice": null,
     "recommendation": "KHẢ QUAN",
     "upside": null,
-    "bonusWelfareRate": null
+    "bonusWelfareRate": 24.25
   },
   {
     "slug": "hvt-17-08-2026",
@@ -477,7 +477,7 @@
     "currentPrice": null,
     "recommendation": null,
     "upside": null,
-    "bonusWelfareRate": null
+    "bonusWelfareRate": 0
   },
   {
     "slug": "pdv-18-08-2026",
@@ -492,7 +492,7 @@
     "currentPrice": null,
     "recommendation": null,
     "upside": null,
-    "bonusWelfareRate": null
+    "bonusWelfareRate": 5.58
   },
   {
     "slug": "aam-16-08-2026",
@@ -507,7 +507,7 @@
     "currentPrice": 7.3,
     "recommendation": null,
     "upside": 9.589041095890414,
-    "bonusWelfareRate": null
+    "bonusWelfareRate": 0
   },
   {
     "slug": "szl-16-08-2026",
@@ -1092,7 +1092,7 @@
     "currentPrice": 25,
     "recommendation": "MUA",
     "upside": 54,
-    "bonusWelfareRate": null
+    "bonusWelfareRate": 10
   },
   {
     "slug": "vlb-16-08-2026",
@@ -1107,7 +1107,7 @@
     "currentPrice": 48.2,
     "recommendation": "THEO DÕI",
     "upside": 12.03319502074688,
-    "bonusWelfareRate": null
+    "bonusWelfareRate": 5.4
   },
   {
     "slug": "bsq-16-08-2026",
@@ -1137,7 +1137,7 @@
     "currentPrice": 6.97,
     "recommendation": null,
     "upside": 21.951219512195127,
-    "bonusWelfareRate": null
+    "bonusWelfareRate": 0
   },
   {
     "slug": "ttt-16-08-2026",
@@ -1152,7 +1152,7 @@
     "currentPrice": null,
     "recommendation": "THEO DÕI",
     "upside": null,
-    "bonusWelfareRate": null
+    "bonusWelfareRate": 0
   },
   {
     "slug": "pdn-15-08-2026",

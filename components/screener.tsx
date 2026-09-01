@@ -49,9 +49,9 @@ function reportDateToTimestamp(v: string | null): number {
   return 0
 }
 
-// Format tỷ lệ trích quỹ KTPL: số nguyên → "10%", số thập phân → "7,5%" (locale vi-VN)
+// Format tỷ lệ trích quỹ KTPL: số nguyên → "10%", số thập phân → "7,5%" hoặc "0,37%" (locale vi-VN)
 function fmtRate(v: number): string {
-  return `${Number.isInteger(v) ? fmtNum(v, 0) : fmtNum(v, 1)}%`
+  return `${v.toLocaleString('vi-VN', { minimumFractionDigits: 0, maximumFractionDigits: 2 })}%`
 }
 
 // Số mã hiển thị trên mỗi trang phân trang (bảng full-width, thoáng hơn)

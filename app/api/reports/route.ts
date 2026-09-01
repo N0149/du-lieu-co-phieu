@@ -1,4 +1,4 @@
-﻿import { NextResponse } from "next/server";
+import { NextResponse } from "next/server";
 import reportsSnapshot from "../../../data/reports-snapshot.json";
 
 // CƠ CHẾ DỮ LIỆU: STATIC SNAPSHOT (mặc định).
@@ -216,10 +216,10 @@ function resolvePrice(raw: string): number | null {
 // "Giá đóng cửa hiện tại (VNĐ/cp)\r\n\t19.350" → 19.35). Đặt CUỐI để không cướp mất
 // xử lý khoảng giá của các pattern trên. Thêm `(?![\d.,])\b` chống bắt nhầm tỷ lệ "1.0x".
 const CURRENT_PRICE_PATTERNS = [
-  /giá đóng cửa hiện tại\s*:?\s*([\d.,]+\s*(?:[-–—]|đến|→)?\s*[\d.,]*)\s*(?:VND|VNĐ|đồng)?/i,
-  /thị giá hiện tại\s*(?:xoay quanh mốc|ở mức|khoảng|quanh mốc)?\s*:?\s*([\d.,]+\s*(?:[-–—]|đến|→)?\s*[\d.,]*)\s*(?:VND|VNĐ|đồng)?/i,
-  /giá thị trường\s*(?:hiện tại)?\s*(?:xoay quanh mốc|ở mức|khoảng)?\s*:?\s*([\d.,]+\s*(?:[-–—]|đến|→)?\s*[\d.,]*)\s*(?:VND|VNĐ|đồng)?/i,
-  /giá hiện tại\s*:?\s*([\d.,]+\s*(?:[-–—]|đến|→)?\s*[\d.,]*)\s*(?:VND|VNĐ|đồng)?/i,
+  /giá đóng cửa hiện tại(?:\s*\([^)]*\))?\s*:?\s*([\d.,]+\s*(?:[-–—]|đến|→)?\s*[\d.,]*)\s*(?:VND|VNĐ|đồng)?/i,
+  /thị giá hiện tại(?:\s*\([^)]*\))?\s*(?:xoay quanh mốc|ở mức|khoảng|quanh mốc)?\s*:?\s*([\d.,]+\s*(?:[-–—]|đến|→)?\s*[\d.,]*)\s*(?:VND|VNĐ|đồng)?/i,
+  /giá thị trường\s*(?:hiện tại)?(?:\s*\([^)]*\))?\s*(?:xoay quanh mốc|ở mức|khoảng)?\s*:?\s*([\d.,]+\s*(?:[-–—]|đến|→)?\s*[\d.,]*)\s*(?:VND|VNĐ|đồng)?/i,
+  /giá hiện tại(?:\s*\([^)]*\))?\s*:?\s*([\d.,]+\s*(?:[-–—]|đến|→)?\s*[\d.,]*)\s*(?:VND|VNĐ|đồng)?/i,
   /(?:giá\s+(?:đóng\s+cửa(?:\s+hiện\s+tại)?|thị\s+trường|hiện\s+tại|tham\s+chiếu)(?:[^\d\n]{0,35})?)\s*[:=\s\n\t|]+(\d{1,3}(?:\.\d{3})+|\d+(?:[.,]\d+)?)\s*(?:vnđ|đồng|\/(?![0-9])|(?![.,\d])(?!\x2F[0-9])\b)/i,
 ];
 
@@ -290,21 +290,24 @@ function extractUpside(head: string): number | null {
 // BÓC "TỶ LỆ TRÍCH QUỸ KHEN THƯỞNG PHÚC LỢI" (KTPL)
 // ==========================================
 
-// Quy chuẩn ĐƠN GIẢN cho KTPL: 1 regex duy nhất bắt cú pháp rõ ràng ở phần đầu bài viết:
+// Quy chuẩn linh hoạt cho KTPL:
+// Bắt được cả dạng bảng tóm tắt lẫn văn xuôi có định ngữ (/LNST, năm, hợp nhất...):
+//   "Tỷ lệ trích Quỹ Khen thưởng phúc lợi/LNST năm 2025: 0,37%"
+//   "Tỷ lệ trích Quỹ khen thưởng, phúc lợi/LNST: 17,62%"
+//   "Tỷ lệ trích Quỹ Khen thưởng phúc lợi/Lợi nhuận sau thuế: 11,75%"
 //   "KTPL: 10%" · "KTPL = 4,93%" · "Khen thưởng phúc lợi: 5%" · "Quỹ KTPL - 7.5%"
-// Không khớp → trả null (giao diện Screener hiển thị "—").
 const BONUS_WELFARE_RATE_RE =
-  /(?:KTPL|Khen thưởng phúc lợi|Quỹ KTPL)\s*[:=-]\s*(\d+(?:[.,]\d+)?)\s*%/i;
+  /(?:tỷ\s*lệ\s*trích\s*)?(?:quỹ\s*)?(?:khen\s*thưởng\s*[,/&]?\s*phúc\s*lợi|ktpl)(?:[^\n%:=]{0,100}?)\s*[:=-]\s*(\d+(?:[.,]\d+)?)\s*%/i;
 
-// Bóc tỷ lệ trích quỹ khen thưởng phúc lợi (KTPL) — trả % (số dương ≤ 100) hoặc null.
-// Hỗ trợ số nguyên & thập phân chuẩn VN hoặc quốc tế: 5% / 10% / 7,5% / 7.5% / 15.0%
+// Bóc tỷ lệ trích quỹ khen thưởng phúc lợi (KTPL) — trả % (số từ 0 đến 100) hoặc null.
+// Hỗ trợ số nguyên & thập phân chuẩn VN hoặc quốc tế: 0% / 0,37% / 5% / 10% / 7,5% / 17,62%
 function extractBonusWelfareRate(text: string): number | null {
   const cleaned = stripAnnotations(text);
   const m = cleaned.match(BONUS_WELFARE_RATE_RE);
   if (!m) return null;
-  // "7,5" → 7.5; "7.5" → 7.5; "10" → 10 (dấu phẩy VN là dấu thập phân)
+  // "0,37" → 0.37; "7,5" → 7.5; "10" → 10 (dấu phẩy VN là dấu thập phân)
   const n = Number(m[1].replace(/,/g, "."));
-  return Number.isFinite(n) && n > 0 && n <= 100 ? n : null;
+  return Number.isFinite(n) && n >= 0 && n <= 100 ? n : null;
 }
 
 // Bóc tách toàn bộ trường định giá từ nội dung báo cáo (mẫu chuẩn UIC)
