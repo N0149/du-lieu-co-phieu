@@ -1,34 +1,8 @@
 import { NextRequest, NextResponse } from 'next/server'
-import fs from 'fs'
-import path from 'path'
-import newsSnapshotRaw from '@/data/news_snapshot.json'
+import { fetchAllRssFeeds, getCachedNews, getLastFetchedTime, type RawNewsItem } from '@/lib/rss-news-service'
 
 export const dynamic = 'force-dynamic'
-
-export type RawNewsItem = {
-  id: string
-  title: string
-  link: string
-  pubDate: string
-  source: string
-  ticker: string | null
-  tickers?: string[]
-  category: string
-  summary: string
-}
-
-function loadNewsSnapshot(): RawNewsItem[] {
-  try {
-    const filePath = path.join(process.cwd(), 'data', 'news_snapshot.json')
-    if (fs.existsSync(filePath)) {
-      const content = fs.readFileSync(filePath, 'utf-8')
-      return JSON.parse(content)
-    }
-  } catch (err) {
-    console.warn('[API /api/news] Reading from file failed, using bundled JSON:', err)
-  }
-  return (newsSnapshotRaw as unknown as RawNewsItem[]) || []
-}
+export const maxDuration = 30 // Cho phép Next.js serverless chạy tối đa 30s khi quét RSS
 
 export async function GET(request: NextRequest) {
   try {
@@ -39,15 +13,30 @@ export async function GET(request: NextRequest) {
     const category = searchParams.get('category') || searchParams.get('tab') || 'all'
     const limit = parseInt(searchParams.get('limit') || '50', 10)
     const page = parseInt(searchParams.get('page') || '1', 10)
+    const forceRefresh = searchParams.get('refresh') === 'true' || searchParams.get('refresh') === '1' || searchParams.get('refresh') === 'force'
 
-    let items = loadNewsSnapshot()
+    // Lấy dữ liệu tin tức (tự động fetch RSS mới nếu quá 3 phút hoặc khi forceRefresh)
+    let items: RawNewsItem[] = []
+    if (forceRefresh) {
+      items = await fetchAllRssFeeds(true)
+    } else {
+      // Background revalidation: Lấy cached trước nếu có, kích hoạt fetch mới nếu hết TTL
+      const cached = getCachedNews()
+      if (cached && cached.length > 0) {
+        items = cached
+        // Kích hoạt fetch ngầm nếu quá 3 phút mà không block response
+        fetchAllRssFeeds(false).catch((e) => console.warn('[API /api/news] Background fetch error:', e))
+      } else {
+        items = await fetchAllRssFeeds(false)
+      }
+    }
 
     // 1. Lọc theo danh mục
     if (category && category !== 'all') {
-      if (category === 'doanh-nghiep' || category === 'stock') {
+      if (category === 'doanh-nghiep' || category === 'stock' || category === 'co-phieu') {
         items = items.filter((item) => item.category === 'doanh-nghiep' || item.ticker || (item.tickers && item.tickers.length > 0))
       } else if (category === 'thi-truong' || category === 'market') {
-        items = items.filter((item) => item.category === 'thi-truong')
+        items = items.filter((item) => item.category === 'thi-truong' || item.category === 'quoc-te')
       } else if (category === 'quoc-te' || category === 'global') {
         items = items.filter((item) => item.category === 'quoc-te')
       }
@@ -77,7 +66,8 @@ export async function GET(request: NextRequest) {
         (item) =>
           item.title.toLowerCase().includes(q) ||
           (item.summary && item.summary.toLowerCase().includes(q)) ||
-          (item.ticker && item.ticker.toLowerCase() === q)
+          (item.ticker && item.ticker.toLowerCase() === q) ||
+          (item.tickers && item.tickers.some((t) => t.toLowerCase() === q))
       )
     }
 
@@ -109,6 +99,7 @@ export async function GET(request: NextRequest) {
       page,
       limit,
       totalPages: Math.ceil(total / limit),
+      lastUpdated: getLastFetchedTime() || Date.now(),
       trendingTickers,
       items: paginatedItems,
     })
@@ -120,6 +111,23 @@ export async function GET(request: NextRequest) {
         error: error?.message || 'Lỗi khi tải dữ liệu tin tức',
         items: [],
       },
+      { status: 500 }
+    )
+  }
+}
+
+export async function POST() {
+  try {
+    const items = await fetchAllRssFeeds(true)
+    return NextResponse.json({
+      success: true,
+      message: `Đã làm mới thành công ${items.length} tin tức từ các nguồn RSS`,
+      total: items.length,
+      lastUpdated: getLastFetchedTime(),
+    })
+  } catch (err: any) {
+    return NextResponse.json(
+      { success: false, error: err?.message || 'Lỗi làm mới RSS' },
       { status: 500 }
     )
   }

@@ -3,6 +3,10 @@
     {
       "path": "/api/sync-market-data",
       "schedule": "45 8 * * 1-5"
+    },
+    {
+      "path": "/api/sync-funds",
+      "schedule": "0 20 * * 0"
     }
   ]
 }

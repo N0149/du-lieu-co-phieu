@@ -98,18 +98,62 @@ def upsert_vessel(conn: sqlite3.Connection, data: Dict[str, Any]):
     conn.execute(sql, data)
 
 def insert_port_call(conn: sqlite3.Connection, data: Dict[str, Any]):
-    sql = """
-    INSERT INTO port_calls (
-        vessel_id, vessel_name, authority_id, berth_name, berth_slug,
-        stock_ticker, call_direction, call_date, scheduled_time,
-        draft, loa, dwt, gt, origin_port, dest_port, agent_name, pilot_name, notes, source
-    ) VALUES (
-        :vessel_id, :vessel_name, :authority_id, :berth_name, :berth_slug,
-        :stock_ticker, :call_direction, :call_date, :scheduled_time,
-        :draft, :loa, :dwt, :gt, :origin_port, :dest_port, :agent_name, :pilot_name, :notes, :source
-    );
-    """
-    conn.execute(sql, data)
+    """Insert or update port call with deduplication on vessel_name + call_date + direction + scheduled_time"""
+    v_name = data.get("vessel_name", "").strip()
+    c_date = data.get("call_date", "").strip()
+    c_dir = data.get("call_direction", "").strip()
+    s_time = (data.get("scheduled_time") or "").strip()
+    b_name = (data.get("berth_name") or "").strip()
+
+    # Check if record already exists
+    cursor = conn.execute("""
+        SELECT id FROM port_calls
+        WHERE vessel_name = ? AND call_date = ? AND call_direction = ? AND (scheduled_time = ? OR (scheduled_time IS NULL AND ? = ''))
+    """, (v_name, c_date, c_dir, s_time, s_time))
+    existing = cursor.fetchone()
+
+    if existing:
+        # Update existing record with newer data
+        conn.execute("""
+            UPDATE port_calls SET
+                berth_name = COALESCE(:berth_name, berth_name),
+                berth_slug = COALESCE(:berth_slug, berth_slug),
+                stock_ticker = COALESCE(:stock_ticker, stock_ticker),
+                draft = CASE WHEN :draft > 0 THEN :draft ELSE draft END,
+                loa = CASE WHEN :loa > 0 THEN :loa ELSE loa END,
+                dwt = CASE WHEN :dwt > 0 THEN :dwt ELSE dwt END,
+                gt = CASE WHEN :gt > 0 THEN :gt ELSE gt END,
+                origin_port = COALESCE(:origin_port, origin_port),
+                dest_port = COALESCE(:dest_port, dest_port),
+                agent_name = COALESCE(:agent_name, agent_name),
+                pilot_name = COALESCE(:pilot_name, pilot_name),
+                source = :source
+            WHERE id = :id
+        """, {**data, "id": existing["id"]})
+    else:
+        sql = """
+        INSERT INTO port_calls (
+            vessel_id, vessel_name, authority_id, berth_name, berth_slug,
+            stock_ticker, call_direction, call_date, scheduled_time,
+            draft, loa, dwt, gt, origin_port, dest_port, agent_name, pilot_name, notes, source
+        ) VALUES (
+            :vessel_id, :vessel_name, :authority_id, :berth_name, :berth_slug,
+            :stock_ticker, :call_direction, :call_date, :scheduled_time,
+            :draft, :loa, :dwt, :gt, :origin_port, :dest_port, :agent_name, :pilot_name, :notes, :source
+        );
+        """
+        conn.execute(sql, data)
+
+def dedupe_port_calls(conn: sqlite3.Connection):
+    """Delete duplicate rows from port_calls table keeping the lowest id"""
+    conn.execute("""
+        DELETE FROM port_calls
+        WHERE id NOT IN (
+            SELECT MIN(id)
+            FROM port_calls
+            GROUP BY vessel_name, call_date, call_direction, COALESCE(scheduled_time, '')
+        );
+    """)
 
 def upsert_stock_metric_monthly(conn: sqlite3.Connection, data: Dict[str, Any]):
     sql = """

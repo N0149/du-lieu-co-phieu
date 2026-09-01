@@ -68,6 +68,8 @@ export function NewsDashboard({
   const [isLoading, setIsLoading] = useState(false)
   const [isRefreshing, setIsRefreshing] = useState(false)
   const [visibleCount, setVisibleCount] = useState(40)
+  const [lastUpdated, setLastUpdated] = useState<Date>(new Date())
+  const [, setTick] = useState(0)
 
   // Load saved bookmarks from localStorage
   useEffect(() => {
@@ -95,17 +97,18 @@ export function NewsDashboard({
     })
   }, [])
 
-  // Fetch news data
+  // Fetch news data (Hỗ trợ force refresh và background polling)
   const fetchNews = useCallback(async (force = false) => {
     if (force) setIsRefreshing(true)
     else if (news.length === 0) setIsLoading(true)
 
     try {
-      const res = await fetch(`/api/news?limit=1000`)
+      const res = await fetch(`/api/news?limit=1000${force ? '&refresh=true' : ''}`)
       if (res.ok) {
         const data = await res.json()
-        if (data.items) {
+        if (data.items && Array.isArray(data.items)) {
           setNews(data.items)
+          setLastUpdated(new Date(data.lastUpdated || Date.now()))
         }
       }
     } catch (err) {
@@ -122,6 +125,23 @@ export function NewsDashboard({
       fetchNews(false)
     }
   }, [fetchNews, news.length])
+
+  // TỰ ĐỘNG CẬP NHẬT TIN TỨC: Polling mỗi 60 giây
+  useEffect(() => {
+    const pollInterval = setInterval(() => {
+      fetchNews(false)
+    }, 60000)
+
+    // Tự động tính toán lại relative time ("x phút trước") mỗi 30 giây
+    const tickInterval = setInterval(() => {
+      setTick((t) => t + 1)
+    }, 30000)
+
+    return () => {
+      clearInterval(pollInterval)
+      clearInterval(tickInterval)
+    }
+  }, [fetchNews])
 
   // Filter news
   const filteredNews = useMemo(() => {
@@ -276,15 +296,30 @@ export function NewsDashboard({
               )}
             </div>
 
+            {/* Live indicator & Last updated time */}
+            <div className="hidden md:flex items-center gap-1.5 text-[11px] text-[#64748b]">
+              <span className="relative flex size-2">
+                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75"></span>
+                <span className="relative inline-flex size-2 rounded-full bg-emerald-500"></span>
+              </span>
+              <span className="text-[#8b949e]">Tự động cập nhật</span>
+              <span className="font-mono text-[#64748b]">
+                ({lastUpdated.toLocaleTimeString('vi-VN', { hour: '2-digit', minute: '2-digit', second: '2-digit' })})
+              </span>
+            </div>
+
             {/* Refresh Button */}
             <button
               type="button"
               onClick={() => fetchNews(true)}
               disabled={isRefreshing}
-              className="flex size-7.5 items-center justify-center rounded border border-[#232a36] bg-[#12161f] text-[#8b949e] transition-colors hover:border-[#384356] hover:text-white"
-              title="Làm mới dữ liệu"
+              className="flex h-7.5 items-center gap-1.5 rounded border border-[#232a36] bg-[#12161f] px-2 text-xs text-[#8b949e] transition-colors hover:border-[#384356] hover:text-white"
+              title="Nhấn để quét RSS mới nhất ngay lập tức"
             >
-              <RefreshCw className={cn('size-3.5', isRefreshing && 'animate-spin text-[#3b82f6]')} />
+              <RefreshCw className={cn('size-3.5', isRefreshing && 'animate-spin text-emerald-400')} />
+              <span className="hidden sm:inline font-medium text-[11px]">
+                {isRefreshing ? 'Đang quét RSS…' : 'Làm mới'}
+              </span>
             </button>
           </div>
         </div>

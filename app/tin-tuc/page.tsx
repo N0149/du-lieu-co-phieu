@@ -1,12 +1,10 @@
 import type { Metadata } from 'next'
-import fs from 'fs'
-import path from 'path'
 import { SiteHeader } from '@/components/site-header'
 import { NewsDashboard, NewsSnapshotItem } from '@/components/news/news-dashboard'
-import newsSnapshotRaw from '@/data/news_snapshot.json'
+import { getCachedNews, fetchAllRssFeeds } from '@/lib/rss-news-service'
 import manifestRaw from '@/data/longlive_manifest.json'
 
-export const revalidate = 180 // Revalidate page every 3 minutes
+export const dynamic = 'force-dynamic'
 
 export const metadata: Metadata = {
   title: 'Tổng Hợp Tin Tức Thị Trường & Công Bố Doanh Nghiệp Mới Nhất',
@@ -24,17 +22,19 @@ export const metadata: Metadata = {
   },
 }
 
-function getInitialNews(): NewsSnapshotItem[] {
+async function getInitialNews(): Promise<NewsSnapshotItem[]> {
   try {
-    const filePath = path.join(process.cwd(), 'data', 'news_snapshot.json')
-    if (fs.existsSync(filePath)) {
-      const content = fs.readFileSync(filePath, 'utf-8')
-      return JSON.parse(content)
+    const cached = getCachedNews()
+    if (cached && cached.length > 0) {
+      // Trigger background update if stale
+      fetchAllRssFeeds(false).catch(() => {})
+      return cached
     }
+    return await fetchAllRssFeeds(false)
   } catch (err) {
-    console.warn('[NewsPage] Fallback to bundled JSON:', err)
+    console.warn('[NewsPage] Fallback to cached:', err)
+    return getCachedNews()
   }
-  return (newsSnapshotRaw as unknown as NewsSnapshotItem[]) || []
 }
 
 function getStockPriceMap(): Record<string, { px: number | null; w1: number | null }> {
@@ -56,7 +56,7 @@ function getStockPriceMap(): Record<string, { px: number | null; w1: number | nu
 }
 
 export default async function NewsPage() {
-  const initialNews = getInitialNews()
+  const initialNews = await getInitialNews()
   const stockPriceMap = getStockPriceMap()
 
   // Calculate trending tickers

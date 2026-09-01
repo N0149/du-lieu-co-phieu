@@ -12,6 +12,7 @@ import { cn } from '@/lib/utils'
 
 const NAV = [
   { label: 'Bộ Lọc Cổ Phiếu', href: '/' },
+  { label: 'Quỹ Mở', href: '/quy-mo' },
   { label: 'Tin Tức', href: '/tin-tuc' },
   { label: 'Cảng Biển', href: '/cang-bien' },
   { label: 'Xuất nhập khẩu', href: '/xuat-nhap-khau' },

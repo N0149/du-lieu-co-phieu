@@ -1,5 +1,432 @@
 [
   {
+    "id": "cafef-60a66752751813c5aa2a905bc207c7c4",
+    "title": "Chứng khoán Dầu khí sắp phát hành trái phiếu riêng lẻ",
+    "link": "https://cafef.vn/chung-khoan-dau-khi-sap-phat-hanh-trai-phieu-rieng-le-188260901103449972.chn",
+    "pubDate": "2026-09-01T03:52:00.000Z",
+    "source": "CafeF",
+    "ticker": null,
+    "tickers": [],
+    "category": "thi-truong",
+    "summary": "Chứng khoán Dầu khí dự kiến phát hành trái phiếu mã PSI112601 trị giá 30 tỷ đồng vào ngày 7/9 tới."
+  },
+  {
+    "id": "cafef-8ed5eeab9dee86e829957b74faad28fa",
+    "title": "Một số chính sách kinh tế mới có hiệu lực trong tháng 9/2026",
+    "link": "https://cafef.vn/mot-so-chinh-sach-kinh-te-moi-co-hieu-luc-trong-thang-9-2026-18826090110304301.chn",
+    "pubDate": "2026-09-01T03:30:00.000Z",
+    "source": "CafeF",
+    "ticker": null,
+    "tickers": [],
+    "category": "thi-truong",
+    "summary": "Hàng loạt quy định mới trong các lĩnh vực tài sản mã hóa, quản lý ngoại thương, giao dịch hàng hóa và hoạt động ngân hàng sẽ có hiệu lực từ tháng 9/2026."
+  },
+  {
+    "id": "cafef-b30086bea2e1923cabcb38bf5f90ac34",
+    "title": "Lãi suất ngân hàng Agribank mới nhất tháng 9/2026: Mức cao nhất là bao nhiêu?",
+    "link": "https://cafef.vn/lai-suat-ngan-hang-agribank-moi-nhat-thang-9-2026-muc-cao-nhat-la-bao-nhieu-188260901103019057.chn",
+    "pubDate": "2026-09-01T03:28:00.000Z",
+    "source": "CafeF",
+    "ticker": null,
+    "tickers": [],
+    "category": "thi-truong",
+    "summary": "Đầu tháng 9/2026, Agribank tiếp tục áp dụng lãi suất cao nhất 6%/năm tại quầy và 6,8%/năm đối với tiền gửi trực tuyến, trong đó kênh online duy trì mức ưu đãi vượt trội ở hầu hết các kỳ hạn."
+  },
+  {
+    "id": "cafef-dee7db85ea560a1594f1d5b0d8adaae5",
+    "title": "Loạt doanh nghiệp lên kế hoạch huy động trái phiếu để làm gì?",
+    "link": "https://cafef.vn/loat-doanh-nghiep-len-ke-hoach-huy-dong-trai-phieu-de-lam-gi-188260901091407924.chn",
+    "pubDate": "2026-09-01T03:20:00.000Z",
+    "source": "CafeF",
+    "ticker": "BCM",
+    "tickers": [
+      "BCM",
+      "KBC",
+      "CII"
+    ],
+    "category": "doanh-nghiep",
+    "summary": "Các doanh nghiệp bất động sản, hạ tầng như CII, Becamex Group, Kinh Bắc đang lên kế hoạch huy động vốn qua kênh trái phiếu với mục đích khác nhau, từ đầu tư dự án đến cơ cấu lại các khoản nợ."
+  },
+  {
+    "id": "cafef-eeb81ca6d9f1fc1de11917f8807ef9e3",
+    "title": "Giá vàng nhẫn trơn, vàng miếng sáng 1/9 tại SJC, PNJ, DOJI, Bảo Tín Minh Châu và Phú Quý",
+    "link": "https://cafef.vn/gia-vang-nhan-tron-vang-mieng-sang-1-9-tai-sjc-pnj-doji-bao-tin-minh-chau-va-phu-quy-188260901081024493.chn",
+    "pubDate": "2026-09-01T03:13:00.000Z",
+    "source": "CafeF",
+    "ticker": "PNJ",
+    "tickers": [
+      "PNJ"
+    ],
+    "category": "doanh-nghiep",
+    "summary": "Giá vàng trong nước sáng 1/9 duy trì ổn định so với cuối phiên trước, với vàng miếng phổ biến ở mức 145,1 - 148,7 triệu đồng/lượng và vàng nhẫn dao động 145,2 - 149,6 triệu đồng/lượng. So với đầu phiên, mặt bằng giá gần như không thay đổi, ngoại trừ Bảo Tín Minh Châu giảm 300.000..."
+  },
+  {
+    "id": "cafef-0612aa38b38a7745ce15380f078610cd",
+    "title": "Phát Đạt lãi 505 tỷ đồng trên 158 tỷ đồng doanh thu: Tiền đến từ đâu?",
+    "link": "https://cafef.vn/phat-dat-lai-505-ty-dong-tren-158-ty-dong-doanh-thu-tien-den-tu-dau-188260901080346508.chn",
+    "pubDate": "2026-09-01T03:03:00.000Z",
+    "source": "CafeF",
+    "ticker": "PDR",
+    "tickers": [
+      "PDR"
+    ],
+    "category": "doanh-nghiep",
+    "summary": "Doanh thu 158 tỷ đồng trong nửa đầu năm vẫn mang về cho Phát Đạt khoản lợi nhuận hơn 500 tỷ đồng trước thuế."
+  },
+  {
+    "id": "cafef-96c6db64ee625fb78218da66858c9a04",
+    "title": "Giá vàng thế giới đang chịu sức ép gì?",
+    "link": "https://cafef.vn/gia-vang-the-gioi-dang-chiu-suc-ep-gi-188260901093240514.chn",
+    "pubDate": "2026-09-01T02:59:00.000Z",
+    "source": "CafeF",
+    "ticker": null,
+    "tickers": [],
+    "category": "thi-truong",
+    "summary": "Giá vàng giảm nhẹ trong phiên giao dịch sáng 1/9 (giờ Việt Nam) khi căng thẳng quân sự Mỹ - Iran đẩy giá dầu tăng mạnh, đồng thời lợi suất trái phiếu Mỹ đi lên. Triển vọng Cục Dự trữ Liên bang Mỹ (Fed) tiếp tục tăng lãi suất cũng khiến kim loại quý chịu thêm áp lực."
+  },
+  {
+    "id": "vietnambiz-046fdb25acba7b6bf17655ff6836f647",
+    "title": "VNG l&#234;n kế hoạch ph&#225;t h&#224;nh ESOP gi&#225; 30.000 đồng, bằng 1/20 thị gi&#225;",
+    "link": "https://vietnambiz.vn/vng-len-ke-hoach-phat-hanh-esop-gia-30000-dong-bang-120-thi-gia-20269182050193.htm",
+    "pubDate": "2026-09-01T02:50:35.000Z",
+    "source": "Vietnambiz",
+    "ticker": "VNG",
+    "tickers": [
+      "VNG"
+    ],
+    "category": "doanh-nghiep",
+    "summary": "Sau khi phát hành thành công, số lượng cổ phiếu của VNG sẽ tăng từ 29,7 triệu cổ phiếu lên 30,4 triệu cổ phiếu, tương đương vốn điều lệ tăng từ hơn 297 tỷ đồng lên khoảng 304 tỷ đồng."
+  },
+  {
+    "id": "cafef-acb942708639a12ba4cc244269c7f964",
+    "title": "Vẫn còn cơ hội giảm thực chất lãi suất cho vay",
+    "link": "https://cafef.vn/van-con-co-hoi-giam-thuc-chat-lai-suat-cho-vay-188260901094705538.chn",
+    "pubDate": "2026-09-01T02:46:42.000Z",
+    "source": "CafeF",
+    "ticker": null,
+    "tickers": [],
+    "category": "thi-truong",
+    "summary": "Tại cuộc họp với Ngân hàng Nhà nước và các tổ chức tín dụng vào ngày 13-8 vừa qua, Ủy viên Bộ Chính trị, Thủ tướng Chính phủ Lê Minh Hưng đã chỉ đạo: \"Các tổ chức tín dụng tiếp tục tiết giảm chi phí, ổn định mặt bằng lãi suất, giảm thực chất lãi suất cho vay\" qua đó chia sẻ với n..."
+  },
+  {
+    "id": "cafef-444971f8f1051be66bd9e17dea918312",
+    "title": "Vingroup công bố số liệu quan trọng, phá mọi kỷ lục đã được thiết lập",
+    "link": "https://cafef.vn/vingroup-cong-bo-so-lieu-quan-trong-pha-moi-ky-luc-da-duoc-thiet-lap-188260901092126692.chn",
+    "pubDate": "2026-09-01T02:40:00.000Z",
+    "source": "CafeF",
+    "ticker": "VIC",
+    "tickers": [
+      "VIC"
+    ],
+    "category": "doanh-nghiep",
+    "summary": "Đây là lần đầu tiên kỷ lục này thiết lập tại Việt Nam."
+  },
+  {
+    "id": "cafef-0a0f3fc85786094ba1f28bbab00b5cc5",
+    "title": "Loạt tân binh 'đổ bộ' sàn HoSE trong quý III/2026",
+    "link": "https://cafef.vn/loat-tan-binh-do-bo-san-hose-trong-quy-iii-2026-188260901093411435.chn",
+    "pubDate": "2026-09-01T02:34:00.000Z",
+    "source": "CafeF",
+    "ticker": "HCM",
+    "tickers": [
+      "HCM"
+    ],
+    "category": "doanh-nghiep",
+    "summary": "Trong quý III/2026, loạt đơn vị tiềm năng trong ngành tài chính, bán lẻ gia nhập Sở Giao dịch Chứng khoán TP.HCM (HoSE)."
+  },
+  {
+    "id": "cafef-282dad9ef0cddca1046f715b06dcd30c",
+    "title": "Quỹ vàng khổng lồ có động thái \"lạ\"",
+    "link": "https://cafef.vn/quy-vang-khong-lo-co-dong-thai-la-188260901090603634.chn",
+    "pubDate": "2026-09-01T02:14:00.000Z",
+    "source": "CafeF",
+    "ticker": null,
+    "tickers": [],
+    "category": "thi-truong",
+    "summary": "Trước đó, quỹ này đã trải qua tuần bán ròng gần 5 tấn vàng."
+  },
+  {
+    "id": "vietnambiz-dd887daea65f501d7713fa247b61e827",
+    "title": "750 triệu cổ phiếu Chứng kho&#225;n Kafi l&#234;n UPCoM ng&#224;y 9/9, gi&#225; tham chiếu 15.000 đồng/cp",
+    "link": "https://vietnambiz.vn/750-trieu-co-phieu-chung-khoan-kafi-len-upcom-ngay-99-gia-tham-chieu-15000-dongcp-202682915204655.htm",
+    "pubDate": "2026-09-01T02:00:00.000Z",
+    "source": "Vietnambiz",
+    "ticker": null,
+    "tickers": [],
+    "category": "thi-truong",
+    "summary": "Với giá tham chiếu 15.000 đồng/cp trong phiên giao dịch đầu tiên, 750 triệu cổ phiếu Chứng khoán Kafi tương ứng mức định giá khoảng 11.250 tỷ đồng khi lên UPCoM."
+  },
+  {
+    "id": "cafef-2c79828a28d61f47d11521dc597e1619",
+    "title": "Từ tháng 9, hai quy định mới lĩnh vực tài chính ngân hàng chính thức có hiệu lực",
+    "link": "https://cafef.vn/tu-thang-9-hai-quy-dinh-moi-linh-vuc-tai-chinh-ngan-hang-chinh-thuc-co-hieu-luc-188260901085056076.chn",
+    "pubDate": "2026-09-01T01:50:00.000Z",
+    "source": "CafeF",
+    "ticker": null,
+    "tickers": [],
+    "category": "tai-chinh",
+    "summary": "Tháng 9/2026, Nghị định 284/2026/NĐ-CP sẽ chính thức có hiệu lực."
+  },
+  {
+    "id": "cafef-e904c4252c874427932a148ae2d6e7fa",
+    "title": "FLC tăng vốn gấp rưỡi lên gần 13.000 tỷ đồng",
+    "link": "https://cafef.vn/flc-tang-von-gap-ruoi-len-gan-13000-ty-dong-188260901084809701.chn",
+    "pubDate": "2026-09-01T01:47:00.000Z",
+    "source": "CafeF",
+    "ticker": null,
+    "tickers": [],
+    "category": "doanh-nghiep",
+    "summary": "Toàn bộ vốn điều lệ của FLC là nguồn vốn tư nhân, không có vốn ngân sách nhà nước hay vốn nước ngoài."
+  },
+  {
+    "id": "vneconomy-cfb0612022946d181512f3d4fb30ae9a",
+    "title": "Chứng khoán Mỹ mất điểm, giá dầu tăng mạnh vì Mỹ và Iran lại không kích lẫn nhau",
+    "link": "https://vneconomy.vn/chung-khoan-my-mat-diem-gia-dau-tang-manh-vi-my-va-iran-lai-khong-kich-lan-nhau.htm",
+    "pubDate": "2026-09-01T01:29:01.000Z",
+    "source": "VnEconomy",
+    "ticker": null,
+    "tickers": [],
+    "category": "quoc-te",
+    "summary": "Cổ phiếu công nghệ là nhóm đóng góp nhiều nhất vào thành quả tăng của chứng khoán Mỹ trong tháng này..."
+  },
+  {
+    "id": "vneconomy-c31e79400751333549756bc302268877",
+    "title": "Mối lo lãi suất tăng đẩy giá vàng xuống đáy 2 tuần",
+    "link": "https://vneconomy.vn/moi-lo-lai-suat-tang-day-gia-vang-xuong-day-2-tuan.htm",
+    "pubDate": "2026-09-01T01:21:08.000Z",
+    "source": "VnEconomy",
+    "ticker": null,
+    "tickers": [],
+    "category": "thi-truong",
+    "summary": "Dù vậy, giá vàng đã tăng 10% trong tháng 8 vừa qua, đánh dấu tháng tăng mạnh nhất kể từ tháng 1 năm nay..."
+  },
+  {
+    "id": "cafef-822382c1dfa44204019b8ee8b313c260",
+    "title": "Thị trường công nghiệp đường sắt 2,3 triệu tỷ đồng ở Việt Nam: Hãy nhìn cách Hàn Quốc \"ràng buộc\" DN Đức",
+    "link": "https://cafef.vn/thi-truong-cong-nghiep-duong-sat-23-trieu-ty-dong-o-viet-nam-hay-nhin-cach-han-quoc-rang-buoc-dn-duc-188260901080813409.chn",
+    "pubDate": "2026-09-01T01:08:00.000Z",
+    "source": "CafeF",
+    "ticker": "VIC",
+    "tickers": [
+      "VIC"
+    ],
+    "category": "doanh-nghiep",
+    "summary": "Hoà Phát, THACO, VinGroup… đều đã tham gia vào chuỗi cung ứng nguyên vật liệu và thiết bị cho công nghiệp đường sắt. Đâu là động lực để họ tiến thêm một bước dài?"
+  },
+  {
+    "id": "cafef-33b3744e5873aa905d3564f1fc1f4d0f",
+    "title": "VinFast huy động 14.000 tỷ đồng trái phiếu",
+    "link": "https://cafef.vn/vinfast-huy-dong-14000-ty-dong-trai-phieu-188260901080557382.chn",
+    "pubDate": "2026-09-01T01:05:00.000Z",
+    "source": "CafeF",
+    "ticker": null,
+    "tickers": [],
+    "category": "thi-truong",
+    "summary": "Trước thời điểm chia tách, Sản Xuất Và Kinh Doanh Vinfast đang vay trái phiếu khoảng 14.000 tỷ đồng với lãi suất 12-13,5%/năm."
+  },
+  {
+    "id": "cafef-5427cd51a9d4824b04f0ce4cd361c01a",
+    "title": "VietnamPlas 2026 – Triển lãm Nhựa Cao su tiêu biểu",
+    "link": "https://cafef.vn/vietnamplas-2026-trien-lam-nhua-cao-su-tieu-bieu-188260829160322907.chn",
+    "pubDate": "2026-09-01T01:00:00.000Z",
+    "source": "CafeF",
+    "ticker": null,
+    "tickers": [],
+    "category": "doanh-nghiep",
+    "summary": "VietnamPlas 2026 quy tụ các doanh nghiệp, công nghệ và giải pháp mới trong ngành nhựa và cao su, từ nguyên liệu, hóa dầu, máy móc đến sản xuất thông minh và tái chế. Sự kiện diễn ra từ ngày 9–12/9/2026 tại SECC, TP. Hồ Chí Minh, mang đến cơ hội cập nhật xu hướng, kết nối đối tác ..."
+  },
+  {
+    "id": "cafef-40c60c0abfa1359aa9b3c8f98ad36bd6",
+    "title": "Giá vàng được dự báo có thể sớm đạt 5.400 USD/ounce",
+    "link": "https://cafef.vn/gia-vang-duoc-du-bao-co-the-som-dat-5400-usd-ounce-188260901071644641.chn",
+    "pubDate": "2026-09-01T00:48:00.000Z",
+    "source": "CafeF",
+    "ticker": null,
+    "tickers": [],
+    "category": "quoc-te",
+    "summary": "Nhiều ngân hàng và tổ chức tài chính nâng dự báo, cho rằng giá vàng thế giới có thể tiến tới mốc 5.000 USD/ounce, thậm chí đạt 5.400 USD/ounce trong thời gian tới."
+  },
+  {
+    "id": "vietnambiz-c937595f8c02a88d7697178031ba5b20",
+    "title": "G&#243;c nh&#236;n của chuy&#234;n gia SSI về thời điểm v&#224;ng để đ&#243;n s&#243;ng n&#226;ng hạng",
+    "link": "https://vietnambiz.vn/goc-nhin-cua-chuyen-gia-ssi-ve-thoi-diem-vang-de-don-song-nang-hang-2026827141822275.htm",
+    "pubDate": "2026-09-01T00:30:00.000Z",
+    "source": "Vietnambiz",
+    "ticker": "SSI",
+    "tickers": [
+      "SSI"
+    ],
+    "category": "doanh-nghiep",
+    "summary": "Trước thềm đợt đầu tiên trong lộ trình bốn giai đoạn đưa Việt Nam vào FTSE Global Equity Index Series, ông Thomas Nguyen, Giám đốc Thị trường nước ngoài của CTCP Chứng khoán SSI (Mã: SSI), chia sẻ góc nhìn về việc thị trường chứng khoán Việt Nam đang đứng trước một thay đổi quan ..."
+  },
+  {
+    "id": "cafef-21075d885710a116effe9e803f7dd8c0",
+    "title": "Năng lượng Bắc Hà lãi ròng bán niên 2026 gần 27 tỷ đồng",
+    "link": "https://cafef.vn/nang-luong-bac-ha-lai-rong-ban-nien-2026-gan-27-ty-dong-188260901070953797.chn",
+    "pubDate": "2026-09-01T00:09:00.000Z",
+    "source": "CafeF",
+    "ticker": null,
+    "tickers": [],
+    "category": "doanh-nghiep",
+    "summary": "Kết thúc 6 tháng đầu năm 2026, Năng lượng Bắc Hà báo lãi ròng gần 26,7 tỷ đồng, giảm 12,5% so với cùng kỳ."
+  },
+  {
+    "id": "cafef-1e9050cc23dec27d15be2ac411422a9d",
+    "title": "Đà Nẵng kỳ vọng hút hàng tỷ USD qua các sản phẩm tài chính mới",
+    "link": "https://cafef.vn/da-nang-ky-vong-hut-hang-ty-usd-qua-cac-san-pham-tai-chinh-moi-188260831185431536.chn",
+    "pubDate": "2026-08-31T23:53:00.000Z",
+    "source": "CafeF",
+    "ticker": null,
+    "tickers": [],
+    "category": "tai-chinh",
+    "summary": "Định hướng thu hút nguồn vốn quốc tế cho các dự án hạ tầng, năng lượng và công nghệ đang được Đà Nẵng đặt lên hàng đầu khi xây dựng Trung tâm tài chính quốc tế Việt Nam tại TP. Đà Nẫng (VIFC-DN). Cùng với đó, địa phương đề xuất thí điểm Sở giao dịch hàng hóa và Sàn giao dịch tín ..."
+  },
+  {
+    "id": "cafef-bfd18a8a66bc3094c663cf31edbe02e7",
+    "title": "Hơn 43.000 tỷ đồng tài sản của Vingroup nằm ngoài Việt Nam: Doanh thu mới chiếm 2%, nhưng một khoản chi tăng gần 6 lần",
+    "link": "https://cafef.vn/hon-43000-ty-dong-tai-san-cua-vingroup-nam-ngoai-viet-nam-doanh-thu-moi-chiem-2-nhung-mot-khoan-chi-tang-gan-6-lan-188260831231449738.chn",
+    "pubDate": "2026-08-31T17:09:00.000Z",
+    "source": "CafeF",
+    "ticker": "VIC",
+    "tickers": [
+      "VIC"
+    ],
+    "category": "doanh-nghiep",
+    "summary": "Trong khoảng 221.920 tỷ đồng doanh thu từ khách hàng bên ngoài tập đoàn, thị trường Việt Nam đóng góp gần 98%, còn nước ngoài khoảng 2%."
+  },
+  {
+    "id": "cafef-80654651e117f4903f73559e2f6b17ae",
+    "title": "Chuỗi lẩu Haidilao tại Việt Nam kiếm gần 1.500 tỷ trong 6T2026, mức tăng trưởng khiến Singapore, Mỹ, Hàn Quốc “hít khói”",
+    "link": "https://cafef.vn/chuoi-lau-haidilao-tai-viet-nam-kiem-gan-1500-ty-trong-6t2026-muc-tang-truong-khien-singapore-my-han-quoc-hit-khoi-188260831230234103.chn",
+    "pubDate": "2026-08-31T17:06:00.000Z",
+    "source": "CafeF",
+    "ticker": null,
+    "tickers": [],
+    "category": "doanh-nghiep",
+    "summary": "Trong bối cảnh có nhiều quan ngại về ngành ăn uống gặp khó khăn, chuỗi nhà hàng lẩu Haidilao phong cách Trung Quốc vừa mở rộng hoạt động tại Việt Nam mới nhà hàng mới ở TPHCM và tăng trưởng doanh thu hơn 30% trong nửa đầu năm 2026."
+  },
+  {
+    "id": "cafef-60d18f3e8bb1fb8a43f53463849358db",
+    "title": "2 “đại gia” tin đồn trong vụ mua cổ phần Techcombank tới 2 tỷ USD có gì đặc biệt?",
+    "link": "https://cafef.vn/2-dai-gia-tin-don-trong-vu-mua-co-phan-techcombank-toi-2-ty-usd-co-gi-dac-biet-188260831230346768.chn",
+    "pubDate": "2026-08-31T17:03:00.000Z",
+    "source": "CafeF",
+    "ticker": "TCB",
+    "tickers": [
+      "TCB"
+    ],
+    "category": "doanh-nghiep",
+    "summary": "Cả hai đều là những định chế tài chính lớn, đã hiện diện tại Việt Nam nhiều năm."
+  },
+  {
+    "id": "cafef-f1a4717cbc69bb53736195f069ddfb18",
+    "title": "Loạt thông tin quan trọng sắp công bố, chuyên gia dự báo thế nào về giá vàng tuần tới?",
+    "link": "https://cafef.vn/loat-thong-tin-quan-trong-sap-cong-bo-chuyen-gia-du-bao-the-nao-ve-gia-vang-tuan-toi-188260831220949221.chn",
+    "pubDate": "2026-08-31T17:03:00.000Z",
+    "source": "CafeF",
+    "ticker": null,
+    "tickers": [],
+    "category": "quoc-te",
+    "summary": "Trong tuần tới, tâm điểm của thị trường sẽ chuyển sang loạt dữ liệu kinh tế Mỹ, đặc biệt là báo cáo việc làm, trong bối cảnh nhà đầu tư tiếp tục đánh giá khả năng Fed điều chỉnh chính sách tiền tệ."
+  },
+  {
+    "id": "cafef-92c7200d904b9e03ac3f4888d519f0e9",
+    "title": "Việt Nam có 63 DN tỷ USD trên sàn chứng khoán, giá trị hơn 8,5 triệu tỷ đồng: 1 năm có thêm 6 tân binh trị giá hơn 500.000 tỷ",
+    "link": "https://cafef.vn/viet-nam-co-63-dn-ty-usd-tren-san-chung-khoan-gia-tri-hon-85-trieu-ty-dong-1-nam-co-them-6-tan-binh-tri-gia-hon-500000-ty-188260831230006973.chn",
+    "pubDate": "2026-08-31T17:02:00.000Z",
+    "source": "CafeF",
+    "ticker": null,
+    "tickers": [],
+    "category": "doanh-nghiep",
+    "summary": "Từ ngân hàng, bất động sản đến viễn thông, năng lượng, bán lẻ, hàng không và du lịch, bản đồ doanh nghiệp tỷ USD trên thị trường chứng khoán Việt Nam đang ngày càng đa dạng hơn."
+  },
+  {
+    "id": "cafef-7b0cbdee060aa12eb9c7812697223963",
+    "title": "Lịch chốt quyền trả cổ tức trong tuần sau nghỉ lễ 2/9, tỷ lệ cao nhất 16%",
+    "link": "https://cafef.vn/lich-chot-quyen-tra-co-tuc-trong-tuan-sau-nghi-le-2-9-ty-le-cao-nhat-16-188260831160554783.chn",
+    "pubDate": "2026-08-31T17:02:00.000Z",
+    "source": "CafeF",
+    "ticker": null,
+    "tickers": [],
+    "category": "doanh-nghiep",
+    "summary": "Sau nghỉ lễ Quốc khánh 2/9, ngày 3/9/2026 và 4/9/2026, trên các sàn chứng khoán, có khoảng 10 doanh nghiệp dự kiến trả cổ tức với tỷ lệ cao nhất là 16%."
+  },
+  {
+    "id": "cafef-425f4affa5906b49a2acb13eed6282f9",
+    "title": "Quỹ vàng lớn nhất nhất thế giới mua mạnh nhất trong vòng 18 tháng",
+    "link": "https://cafef.vn/quy-vang-lon-nhat-nhat-the-gioi-mua-manh-nhat-trong-vong-18-thang-188260831230250079.chn",
+    "pubDate": "2026-08-31T17:01:00.000Z",
+    "source": "CafeF",
+    "ticker": null,
+    "tickers": [],
+    "category": "thi-truong",
+    "summary": "Động thái cho thấy dòng vốn đầu tư toàn cầu đang có sự thay đổi đáng kể khẩu vị đối với vàng."
+  },
+  {
+    "id": "cafef-fadf3591b5e9a74d7d18ad99d1c54e9b",
+    "title": "CTCK chỉ tên 10 cổ phiếu triển vọng trong tháng 9",
+    "link": "https://cafef.vn/ctck-chi-ten-10-co-phieu-trien-vong-trong-thang-9-188260831221210273.chn",
+    "pubDate": "2026-08-31T17:01:00.000Z",
+    "source": "CafeF",
+    "ticker": null,
+    "tickers": [],
+    "category": "thi-truong",
+    "summary": "Chứng khoán Mirae Asset Việt Nam đánh giá triển vọng của loạt cổ phiếu lớn thuộc các nhóm ngân hàng, thép, công nghệ, sữa và xăng dầu."
+  },
+  {
+    "id": "cafef-ada6fb202236bc4dda8030d33a51fe73",
+    "title": "TKV chuẩn bị mở rộng, nâng công suất Nhà máy sản xuất alumin Nhân Cơ",
+    "link": "https://cafef.vn/tkv-chuan-bi-mo-rong-nang-cong-suat-nha-may-san-xuat-alumin-nhan-co-188260831220902235.chn",
+    "pubDate": "2026-08-31T15:08:00.000Z",
+    "source": "CafeF",
+    "ticker": null,
+    "tickers": [],
+    "category": "doanh-nghiep",
+    "summary": "Dự án đầu tư mở rộng, nâng công suất Nhà máy sản xuất alumin Nhân Cơ có tổng mức đầu tư dự kiến khoảng 24.704 tỷ đồng; thời gian xây dựng cơ bản 45 tháng, thời gian sản xuất 30 năm. Theo tính toán của tư vấn, dự án có thể đạt doanh thu bình quân khoảng 12.741 tỷ đồng/năm, tạo việ..."
+  },
+  {
+    "id": "cafef-6d2d86e18dc722ea35e2a9ad89cf45f1",
+    "title": "'Sống đủ lâu' để thấy Hồng Trà Ngô Gia ở Thái Lan: Sau 7 năm phủ rộng thị trường Việt Nam, nay thử sức tại Bangkok",
+    "link": "https://cafef.vn/song-du-lau-de-thay-hong-tra-ngo-gia-o-thai-lan-sau-7-nam-phu-rong-thi-truong-viet-nam-nay-thu-suc-tai-bangkok-188260831215244395.chn",
+    "pubDate": "2026-08-31T14:52:00.000Z",
+    "source": "CafeF",
+    "ticker": null,
+    "tickers": [],
+    "category": "doanh-nghiep",
+    "summary": "Một cái tên vốn quen thuộc với người Việt vừa xuất hiện tại Bangkok. Cửa hàng mới khai trương đầu tháng 8, đánh dấu bước thử sức tại thị trường Thái Lan."
+  },
+  {
+    "id": "cafef-1d6765072fd33da634feb57d3680889c",
+    "title": "Lãi suất ngân hàng 31/8 tại Agribank, Vietcombank, BIDV, VietinBank, MB, Sacombank, HDBank,...",
+    "link": "https://cafef.vn/lai-suat-ngan-hang-31-8-tai-agribank-vietcombank-bidv-vietinbank-mb-sacombank-hdbank-188260831204646321.chn",
+    "pubDate": "2026-08-31T13:45:00.000Z",
+    "source": "CafeF",
+    "ticker": "VCB",
+    "tickers": [
+      "VCB",
+      "BID",
+      "CTG",
+      "STB",
+      "HDB",
+      "ACB"
+    ],
+    "category": "doanh-nghiep",
+    "summary": "Lãi suất huy động trực tuyến tại các ngân hàng ngày 31/8 tiếp tục phân hóa mạnh. ACB giữ mức cao nhất 7,8%/năm ở kỳ hạn 12 tháng, trong khi Sacombank niêm yết 7,5%/năm. LPBank và Saigonbank cùng ở mức 7,2%/năm, còn nhóm Big4 duy trì 6,8%/năm."
+  },
+  {
+    "id": "cafef-e5edec6ff9bc2a58c2f79a7820c53bd3",
+    "title": "Giá vàng nhẫn trơn, vàng miếng chiều tối 31/8 tại SJC, PNJ, DOJI, Bảo Tín Minh Châu và Phú Quý",
+    "link": "https://cafef.vn/gia-vang-nhan-tron-vang-mieng-chieu-toi-31-8-tai-sjc-pnj-doji-bao-tin-minh-chau-va-phu-quy-188260831080512397.chn",
+    "pubDate": "2026-08-31T13:40:00.000Z",
+    "source": "CafeF",
+    "ticker": "PNJ",
+    "tickers": [
+      "PNJ"
+    ],
+    "category": "doanh-nghiep",
+    "summary": "Giá vàng trong nước chốt phiên 31/8 với vàng nhẫn được niêm yết từ 145,2 - 149,9 triệu đồng/lượng tùy thương hiệu. Đáng chú ý, giá bán vàng nhẫn giữa các nhà vàng chênh tới 1,7 triệu đồng/lượng, trong khi vàng miếng phổ biến ở mức 145,7 - 148,7 triệu đồng/lượng."
+  },
+  {
     "id": "cafef-66cc3a7e6f9310b88faee2814837ce8c",
     "title": "Hút vốn ngoại, ngân hàng Việt gửi đi thông điệp gì?",
     "link": "https://cafef.vn/hut-von-ngoai-ngan-hang-viet-gui-di-thong-diep-gi-188260831184945866.chn",
@@ -24,6 +451,17 @@
     "summary": "6 tháng sau khi trở thành đại sứ thương hiệu của Sacombank, giá trị của cái tên Đình Bắc đã hoàn toàn khác."
   },
   {
+    "id": "vneconomy-928ab14c2040a1117f4752c7387245c0",
+    "title": "Từ tăng trưởng đến thịnh vượng, hạnh phúc",
+    "link": "https://vneconomy.vn/tu-tang-truong-den-thinh-vuong-hanh-phuc.htm",
+    "pubDate": "2026-08-31T11:04:29.000Z",
+    "source": "VnEconomy",
+    "ticker": null,
+    "tickers": [],
+    "category": "tai-chinh",
+    "summary": "Trong tư tưởng Hồ Chí Minh, phát triển kinh tế chưa bao giờ là mục tiêu tự thân. Đằng sau tăng trưởng, sản xuất và tích lũy của cải là một yêu cầu nhất quán: làm cho nhân dân có cuộc sống ngày càng ấm no, tự do, hạnh phúc; đồng thời, tạo nền tảng để dân tộc vươn lên độc lập, tự c..."
+  },
+  {
     "id": "cafef-0a40632b567b4fece665060ffd916e14",
     "title": "Tín dụng sẵn sàng tăng tốc bơm vốn ra nền kinh tế từ nay đến cuối năm",
     "link": "https://cafef.vn/tin-dung-san-sang-tang-toc-bom-von-ra-nen-kinh-te-tu-nay-den-cuoi-nam-188260831163454091.chn",
@@ -44,19 +482,6 @@
     "tickers": [],
     "category": "thi-truong",
     "summary": "USD duy trì gần mức cao nhất 2 tuần khi kỳ vọng Fed tăng lãi suất tháng 9 gia tăng, trong khi yen Nhật suy yếu, vượt mốc 160 yen/USD và làm dấy lên lo ngại can thiệp."
-  },
-  {
-    "id": "cafef-5430e5d38dd58b7681b00d3ce7227f06",
-    "title": "Giá vàng nhẫn trơn, vàng miếng chiều 31/8 tại SJC, PNJ, DOJI, Bảo Tín Minh Châu và Phú Quý",
-    "link": "https://cafef.vn/gia-vang-nhan-tron-vang-mieng-sang-31-8-tai-sjc-pnj-doji-bao-tin-minh-chau-va-phu-quy-188260831080512397.chn",
-    "pubDate": "2026-08-31T08:58:00.000Z",
-    "source": "CafeF",
-    "ticker": "PNJ",
-    "tickers": [
-      "PNJ"
-    ],
-    "category": "doanh-nghiep",
-    "summary": "Giá vàng trong nước chiều 31/8 nhìn chung đi ngang so với cuối tuần trước, dù một số thương hiệu đã điều chỉnh giảm. Trong khi vàng nhẫn có mức chênh lệch giá bán tới 1,1 triệu đồng/lượng giữa các thương hiệu, giá vàng thế giới tiếp tục giảm, xuống quanh 4.330 USD/ounce."
   },
   {
     "id": "cafef-a36cbe0ba6d096f1ee49628790b56dda",
@@ -147,6 +572,20 @@
     "tickers": [],
     "category": "doanh-nghiep",
     "summary": "Thay vì tiếp tục gom bất động sản, chàng trai trẻ được khuyến nghị dành dòng tiền mới cho tài sản tài chính, đồng thời phân bổ một nửa danh mục ra thị trường quốc tế để giảm rủi ro tập trung."
+  },
+  {
+    "id": "vietnambiz-f370d6b27be3f7a0150f7e31fa85f1a0",
+    "title": "Nh&#243;m CII tiếp tục mua v&#224;o PC1, n&#226;ng tỷ lệ sở hữu l&#234;n gần 13%",
+    "link": "https://vietnambiz.vn/nhom-cii-tiep-tuc-mua-vao-pc1-nang-ty-le-so-huu-len-gan-13-20268308481610.htm",
+    "pubDate": "2026-08-31T06:00:00.000Z",
+    "source": "Vietnambiz",
+    "ticker": "CII",
+    "tickers": [
+      "CII",
+      "PC1"
+    ],
+    "category": "doanh-nghiep",
+    "summary": "Sau nhiều lần mua vào, nhóm CII tiếp tục tăng sở hữu tại PC1 khi CII Invest mua thêm 1 triệu cổ phiếu, đưa tổng tỷ lệ nắm giữ của nhóm liên quan lên 12,79% vốn."
   },
   {
     "id": "cafef-df2da6967720e75a7a0c4a4ea12f5169",
@@ -1255,41 +1694,6 @@
     "summary": "Sở Nông nghiệp và Môi trường tỉnh Lâm Đồng xử phạt 270 triệu đồng đối với \"ông chủ\" của khu nghỉ dưỡng Apec Mandala Wyndham công suất 3.000 phòng và yêu cầu chấm dứt ngay hành vi xả nước thải vượt quy chuẩn kỹ thuật ra môi trường."
   },
   {
-    "id": "cafef-3010daafee06ff69196199938927d43e",
-    "title": "Võ sư Mai Hữu Tín đang nắm giữ doanh nghiệp nào?",
-    "link": "https://cafef.vn/vo-su-mai-huu-tin-dang-nam-giu-doanh-nghiep-nao-188260829110521563.chn",
-    "pubDate": "2026-08-29T04:40:00.000Z",
-    "source": "CafeF",
-    "ticker": null,
-    "tickers": [],
-    "category": "doanh-nghiep",
-    "summary": "Bên cạnh vai trò thủ lĩnh cộng đồng doanh nghiệp và võ sư vovinam, ông Mai Hữu Tín còn đang trực tiếp chèo lái 2 doanh nghiệp trên thị trường chứng khoán với những bài toán tài chính trái chiều."
-  },
-  {
-    "id": "cafef-49b3a4bdd6dda46080d6811d3108b462",
-    "title": "Trở về sau AFF Cup, Madam Pang tuyên bố mạnh mẽ trước ngày tuyển Thái Lan tái đấu tuyển Việt Nam",
-    "link": "https://cafef.vn/tro-ve-sau-aff-cup-madam-pang-tuyen-bo-manh-me-truoc-ngay-tuyen-thai-lan-tai-dau-tuyen-viet-nam-188260829110125151.chn",
-    "pubDate": "2026-08-29T04:13:00.000Z",
-    "source": "CafeF",
-    "ticker": null,
-    "tickers": [],
-    "category": "doanh-nghiep",
-    "summary": "Madam Pang đặt mục tiêu cao cho tuyển Thái Lan."
-  },
-  {
-    "id": "cafef-7341a1b463b2d4f4c300d8812350c6e4",
-    "title": "Chủ tịch và Tổng giám đốc SMC hoán đổi ghế cổ đông lớn",
-    "link": "https://cafef.vn/chu-tich-va-tong-giam-doc-smc-hoan-doi-ghe-co-dong-lon-18826082911123601.chn",
-    "pubDate": "2026-08-29T04:12:00.000Z",
-    "source": "CafeF",
-    "ticker": "SMC",
-    "tickers": [
-      "SMC"
-    ],
-    "category": "doanh-nghiep",
-    "summary": "Trong khi Tổng giám đốc Nguyễn Quang Trung bán ra 4,9 triệu cổ phiếu SMC thì Chủ tịch Phạm Hoàng Anh mua vào 5 triệu cổ phiếu, qua đó trở thành cổ đông lớn của SMC."
-  },
-  {
     "id": "vietnambiz-a0bf219576e6481b570e6d0f3ed28842",
     "title": "Đề xuất cho nh&#224; đầu tư thử d&#249;ng AI đặt lệnh chứng kho&#225;n",
     "link": "https://vietnambiz.vn/de-xuat-cho-nha-dau-tu-thu-dung-ai-dat-lenh-chung-khoan-202682994527204.htm",
@@ -1299,19 +1703,6 @@
     "tickers": [],
     "category": "thi-truong",
     "summary": "Bộ Tài chính đề xuất tối đa 1.000 nhà đầu tư chuyên nghiệp được thử nghiệm dùng AI để đầu tư các cổ phiếu nằm ngoài rổ có vốn hóa lớn."
-  },
-  {
-    "id": "cafef-db7743c40a1e70133ac85526af79e4e9",
-    "title": "Công ty may hơn 30 năm tuổi muốn huy động lượng vốn gấp 3,5 lần tổng tài sản hiện tại: Gia nhập cuộc chơi chăm sóc sức khỏe và làm đẹp",
-    "link": "https://cafef.vn/cong-ty-may-hon-30-nam-tuoi-muon-huy-dong-luong-von-gap-35-lan-tong-tai-san-hien-tai-gia-nhap-cuoc-choi-cham-soc-suc-khoe-va-lam-dep-188260829105556125.chn",
-    "pubDate": "2026-08-29T03:55:00.000Z",
-    "source": "CafeF",
-    "ticker": "TTG",
-    "tickers": [
-      "TTG"
-    ],
-    "category": "doanh-nghiep",
-    "summary": "Từ một doanh nghiệp may có vốn điều lệ 34 tỷ đồng, TTG đang chuẩn bị huy động 165 tỷ đồng để chuyển trọng tâm sang chăm sóc sức khỏe và làm đẹp. Quy mô của đợt tăng vốn lớn hơn nhiều lần nền tảng hiện tại, biến kế hoạch này thành cuộc tái cấu trúc lớn nhất của doanh nghiệp trong ..."
   },
   {
     "id": "vneconomy-44d5f54415aab79507d1e88291557072",
@@ -1338,67 +1729,6 @@
     "summary": "Sáng ngày 29/8 ghi nhận đồng euro tại nhiều ngân hàng tiếp tục điều chỉnh mạnh. Theo khảo sát, tỷ giá mua euro tại các ngân hàng dao động trong khoảng 29.344 VND/EUR - 29.815 VND/EUR, trong khi tỷ giá bán ra phổ biến 30.897 VND/EUR - 31.209 VND/EUR."
   },
   {
-    "id": "cafef-61dd36ef084417fe96259ad87f5758ce",
-    "title": "Chủ tịch Cadisun Phạm Lương Hòa lĩnh 5 năm tù",
-    "link": "https://cafef.vn/chu-tich-cadisun-pham-luong-hoa-linh-5-nam-tu-188260829095011614.chn",
-    "pubDate": "2026-08-29T02:58:00.000Z",
-    "source": "CafeF",
-    "ticker": null,
-    "tickers": [],
-    "category": "doanh-nghiep",
-    "summary": "Ngày 28/8, TAND TP Hà Nội tuyên phạt bị cáo Phạm Lương Hòa, Chủ tịch HĐQT kiêm Tổng giám đốc Công ty Cadisun, 5 năm tù về tội Vi phạm quy định về kế toán gây hậu quả nghiêm trọng."
-  },
-  {
-    "id": "cafef-7002a78b1916e12509189347526beb56",
-    "title": "Sân bay Long Thành nguy cơ chậm tiến độ: Chính phủ yêu cầu ACV dồn lực đẩy nhanh thi công",
-    "link": "https://cafef.vn/san-bay-long-thanh-nguy-co-cham-tien-do-chinh-phu-yeu-cau-acv-don-luc-day-nhanh-thi-cong-188260829095123155.chn",
-    "pubDate": "2026-08-29T02:57:00.000Z",
-    "source": "CafeF",
-    "ticker": "ACV",
-    "tickers": [
-      "ACV"
-    ],
-    "category": "doanh-nghiep",
-    "summary": "Một số gói thầu tại sân bay Long Thành đang đứng trước nguy cơ chậm tiến độ, không hoàn thành trong năm 2026."
-  },
-  {
-    "id": "cafef-48dfae2522c43fd558a2faa4f2d3bcf9",
-    "title": "Tài sản vợ chồng tỷ phú Phạm Nhật Vượng chiếm gần 3/4 Top 20 người giàu nhất sàn chứng khoán Việt Nam",
-    "link": "https://cafef.vn/tai-san-vo-chong-ty-phu-pham-nhat-vuong-chiem-gan-3-4-top-20-nguoi-giau-nhat-san-chung-khoan-viet-nam-188260829094834972.chn",
-    "pubDate": "2026-08-29T02:49:00.000Z",
-    "source": "CafeF",
-    "ticker": "FPT",
-    "tickers": [
-      "FPT"
-    ],
-    "category": "doanh-nghiep",
-    "summary": "Sau 8 tháng đầu năm 2026, bảng xếp hạng những người giàu nhất thị trường chứng khoán Việt Nam cho biết ông Phạm Nhật Vượng tiếp tục dẫn đầu với khối tài sản cổ phiếu vượt 1 triệu tỷ đồng, trong khi bà Phạm Thu Hương là người tăng mạnh nhất xét theo tỷ lệ. Ở chiều ngược lại, Chủ t..."
-  },
-  {
-    "id": "cafef-578318a73613cc47311a16d065a2c021",
-    "title": "Trung tâm dữ liệu AI hơn 91.000 tỷ đồng được đề xuất xây dựng tại Tây Ninh: Công ty của ông Đặng Thành Tâm liên minh cùng 2 đối tác quốc tế",
-    "link": "https://cafef.vn/trung-tam-du-lieu-ai-hon-91000-ty-dong-duoc-de-xuat-xay-dung-tai-tay-ninh-cong-ty-cua-ong-dang-thanh-tam-lien-minh-cung-2-doi-tac-quoc-te-18826082909261553.chn",
-    "pubDate": "2026-08-29T02:28:00.000Z",
-    "source": "CafeF",
-    "ticker": "SGT",
-    "tickers": [
-      "SGT"
-    ],
-    "category": "doanh-nghiep",
-    "summary": "Ngày 28/8, tại Hội nghị Xúc tiến đầu tư tỉnh Tây Ninh năm 2026, liên danh gồm CTCP Công nghệ Viễn thông Sài Gòn (SAIGONTEL, mã SGT), World Harmony và SAIF Eagle II đã trao Thư bày tỏ quan tâm đầu tư tới UBND tỉnh Tây Ninh, khởi động nghiên cứu Tổ hợp Trung tâm dữ liệu trí tuệ nhâ..."
-  },
-  {
-    "id": "cafef-70a7c6fe23953ce3c738712a9723fb5a",
-    "title": "Khánh thành SIB Đà Nẵng, Searee mở rộng danh mục tài sản công nghiệp",
-    "link": "https://cafef.vn/khanh-thanh-sib-da-nang-searee-mo-rong-danh-muc-tai-san-cong-nghiep-188260829092259901.chn",
-    "pubDate": "2026-08-29T02:22:00.000Z",
-    "source": "CafeF",
-    "ticker": null,
-    "tickers": [],
-    "category": "doanh-nghiep",
-    "summary": "Sau Tổng kho Logistics 8.000 m² đã kín công suất, Searee tiếp tục đưa Tòa nhà Công nghiệp Searee - SIB vào khai thác tại Đà Nẵng, đánh dấu bước phát triển tiếp theo của mảng Tài sản Công nghiệp."
-  },
-  {
     "id": "cafef-49d644ffaacc0dc5138472f0947eb651",
     "title": "Thống đốc bổ nhiệm Kế toán trưởng Agribank",
     "link": "https://cafef.vn/thong-doc-bo-nhiem-ke-toan-truong-agribank-18826082908151138.chn",
@@ -1419,17 +1749,6 @@
     "tickers": [],
     "category": "quoc-te",
     "summary": "Thị trường chứng khoán Mỹ giảm điểm trong phiên giao dịch ngày thứ Sáu (28/8) sau khi Chủ tịch Cục Dự trữ Liên bang Mỹ (Fed) Kevin Warsh bày tỏ lo ngại về xu hướng lạm phát hiện tại, nhưng vẫn hoàn tất một tuần tăng..."
-  },
-  {
-    "id": "cafef-39e03a23d6a36ee55371f943d8ed2d4a",
-    "title": "Từng tuyên bố muốn xuất khẩu toàn cầu, \"thịt trâu Huho đắt nhất TikTok” bất ngờ biến mất trên các kênh bán hàng",
-    "link": "https://cafef.vn/tung-tuyen-bo-muon-xuat-khau-toan-cau-thit-trau-huho-dat-nhat-tiktok-bat-ngo-bien-mat-tren-cac-kenh-ban-hang-188260829084526923.chn",
-    "pubDate": "2026-08-29T01:45:00.000Z",
-    "source": "CafeF",
-    "ticker": null,
-    "tickers": [],
-    "category": "doanh-nghiep",
-    "summary": "Thời gian này, người dùng mạng phát hiện Huyền Huho hiện không còn giới thiệu, bán hay review các sản phẩm thịt trâu trên trang TikTok cá nhân, hay các kênh bán hàng khác."
   },
   {
     "id": "vietnambiz-a52cfce197ba09dbf808f82ed503e31a",
@@ -1487,28 +1806,6 @@
     "summary": "Với lợi suất trái phiếu kho bạc Mỹ và tỷ giá đồng USD đồng loạt tăng mạnh sau bài phát biểu này, quỹ vàng khổng lồ SPDR Gold Trust có một phiên bán ròng mạnh và hoàn tất một tuần bán nhiều hơn mua..."
   },
   {
-    "id": "cafef-f6f6af7c05159793fee2385e0b9ce1a1",
-    "title": "Xi măng Xuân Thành lãi ròng hơn 59 tỷ đồng sau nửa đầu năm 2026",
-    "link": "https://cafef.vn/xi-mang-xuan-thanh-lai-rong-hon-59-ty-dong-sau-nua-dau-nam-2026-188260829080341385.chn",
-    "pubDate": "2026-08-29T01:16:00.000Z",
-    "source": "CafeF",
-    "ticker": null,
-    "tickers": [],
-    "category": "doanh-nghiep",
-    "summary": "Kết thúc 6 tháng đầu năm 2026, Xi măng Xuân Thành báo lãi ròng hơn 59,3 tỷ đồng, tăng 90,1% so với cùng kỳ năm trước."
-  },
-  {
-    "id": "cafef-32962316af08050580524e01d52ce592",
-    "title": "Grab xuống tiền cho mạng lưới 2.500 điểm sạc tại Việt Nam: Startup phía sau từng có vốn chỉ 500 triệu đồng",
-    "link": "https://cafef.vn/grab-xuong-tien-cho-mang-luoi-2500-diem-sac-tai-viet-nam-startup-phia-sau-tung-co-von-chi-500-trieu-dong-188260829081552304.chn",
-    "pubDate": "2026-08-29T01:15:00.000Z",
-    "source": "CafeF",
-    "ticker": null,
-    "tickers": [],
-    "category": "doanh-nghiep",
-    "summary": "Grab vừa công bố khoản đầu tư chiến lược vào EBOOST, doanh nghiệp hoạt động trong lĩnh vực hạ tầng và dịch vụ sạc xe điện tại Việt Nam. Trước khi nhận vốn từ Grab, EBOOST đã phát triển mạng lưới hơn 2.500 điểm sạc và tích hợp hệ thống vào ứng dụng Grab Driver."
-  },
-  {
     "id": "vneconomy-9cab8d3b98c5b4ffc922c13d948f1e01",
     "title": "Techcombank: Chuyển đổi giao dịch thành nguồn lực cho hộ kinh doanh",
     "link": "https://vneconomy.vn/techcombank-chuyen-doi-giao-dich-thanh-nguon-luc-cho-ho-kinh-doanh.htm",
@@ -1531,17 +1828,6 @@
     "tickers": [],
     "category": "thi-truong",
     "summary": "VN-Index khép lại tháng 8 tại vùng cao nhất trong gần hai tháng, nối tiếp đà hồi phục từ cuối tháng 7. Độ rộng thị trường đảo chiều tích cực, trong khi áp lực bán ròng của khối ngoại đã giảm đáng kể so với tháng trước."
-  },
-  {
-    "id": "cafef-8a8afbd301bb48f6b07318a2a6f80a91",
-    "title": "Đại gia ngành gỗ Việt chi triệu đô lập công ty tại Mỹ",
-    "link": "https://cafef.vn/dai-gia-nganh-go-viet-chi-trieu-do-lap-cong-ty-tai-my-188260829075739963.chn",
-    "pubDate": "2026-08-29T00:57:00.000Z",
-    "source": "CafeF",
-    "ticker": null,
-    "tickers": [],
-    "category": "doanh-nghiep",
-    "summary": "CTCP Phú Tài đang lên kế hoạch mở rộng hiện diện tại thị trường Mỹ thông qua việc thành lập một pháp nhân mới tại Houston, bang Texas."
   },
   {
     "id": "cafef-01e74cadb918420a36ef0588ae6135d7",
@@ -1577,17 +1863,6 @@
     "tickers": [],
     "category": "doanh-nghiep",
     "summary": "Hầu hết các công ty tài chính đều có lợi nhuận tăng trưởng dương trong 6 tháng đầu năm."
-  },
-  {
-    "id": "cafef-999bee7dd243b88082760eeb75439d52",
-    "title": "Doanh nghiệp đã hứa thì phải làm",
-    "link": "https://cafef.vn/doanh-nghiep-da-hua-thi-phai-lam-188260829073003191.chn",
-    "pubDate": "2026-08-29T00:29:00.000Z",
-    "source": "CafeF",
-    "ticker": null,
-    "tickers": [],
-    "category": "doanh-nghiep",
-    "summary": "Tại Hội nghị Xúc tiến đầu tư tỉnh Cà Mau ngày 28/8, Phó Thủ tướng Hồ Quốc Dũng yêu cầu doanh nghiệp, nhà đầu tư đã cam kết phải thực hiện, đã hứa phải làm, coi đó là trách nhiệm đồng hành với vùng đất địa đầu của Tổ quốc."
   },
   {
     "id": "cafef-f937ec1b5501c47703043ba47893f3da",
@@ -2005,28 +2280,6 @@
     "summary": "Thanh khoản khớp lệnh sàn HoSE sáng nay sụt giảm 10% so với sáng hôm qua và xuống mức thấp nhất 5 phiên. Dù vậy mức giao dịch chậm không gây “tổn hại” lớn cho thị trường vì nhà đầu tư cầm cổ cũng không chấp nhận bán rẻ."
   },
   {
-    "id": "cafef-5db70b5dfb5ba4fb3c921cb715d66e1e",
-    "title": "Viettel Global sắp chi hơn 10.000 tỷ đồng trả cổ tức năm 2025",
-    "link": "https://cafef.vn/viettel-global-sap-chi-hon-10000-ty-dong-tra-co-tuc-nam-2025-188260828112855402.chn",
-    "pubDate": "2026-08-28T04:28:00.000Z",
-    "source": "CafeF",
-    "ticker": null,
-    "tickers": [],
-    "category": "doanh-nghiep",
-    "summary": "Ngày 15/9/2026 tới đây, Viettel Global sẽ chốt danh sách cổ đông để trả cổ tức năm 2025 cho cổ đông bằng tiền mặt với tỷ lệ 33%."
-  },
-  {
-    "id": "cafef-4ff6c8a7f1c0f1149c26016888d1a416",
-    "title": "Chính thức: Việt Nam có công ty chứng khoán vốn điều lệ 30.000 tỷ đồng",
-    "link": "https://cafef.vn/chinh-thuc-viet-nam-co-cong-ty-chung-khoan-von-dieu-le-30000-ty-dong-188260828112803563.chn",
-    "pubDate": "2026-08-28T04:27:00.000Z",
-    "source": "CafeF",
-    "ticker": null,
-    "tickers": [],
-    "category": "doanh-nghiep",
-    "summary": "Việc tăng vốn diễn ra sau khi công ty hoàn thành đợt phát hành cổ phiếu để tăng vốn cổ phần từ nguồn vốn chủ sở hữu."
-  },
-  {
     "id": "vneconomy-68720901dc71850d51ae0a812d0a3bb8",
     "title": "15.000 thẻ sau 20 ngày: Vì sao những khách hàng khác nhau lại cùng chọn VIB One Card?",
     "link": "https://vneconomy.vn/15000-the-sau-20-ngay-vi-sao-nhung-khach-hang-khac-nhau-lai-cung-chon-vib-one-card.htm",
@@ -2053,17 +2306,6 @@
     "summary": "Sonadezi Long Thành vừa thông báo ngày 17/9 là ngày đăng ký cuối cùng để cổ đông thực hiện quyền nhận cổ tức bằng tiền mặt và cổ phiếu."
   },
   {
-    "id": "cafef-24d6fdf9f664caacceee25fafd7a07a8",
-    "title": "Quỹ vàng lớn nhất thế giới trở lại mua ròng",
-    "link": "https://cafef.vn/quy-vang-lon-nhat-the-gioi-tro-lai-mua-rong-188260828105126536.chn",
-    "pubDate": "2026-08-28T03:51:00.000Z",
-    "source": "CafeF",
-    "ticker": null,
-    "tickers": [],
-    "category": "thi-truong",
-    "summary": "Kim loại quý đang chịu sức ép từ mặt bằng lãi suất và lợi suất trái phiếu Mỹ duy trì ở mức cao."
-  },
-  {
     "id": "vietnambiz-47186c51ed81a26b8b3675ab20bc5f93",
     "title": "Sacombank đồng h&#224;nh c&#249;ng c&#225; nh&#226;n v&#224; hộ kinh doanh với nhiều ưu đ&#227;i đến cuối năm",
     "link": "https://vietnambiz.vn/sacombank-dong-hanh-cung-ca-nhan-va-ho-kinh-doanh-voi-nhieu-uu-dai-den-cuoi-nam-2026828103339120.htm",
@@ -2075,17 +2317,6 @@
     ],
     "category": "doanh-nghiep",
     "summary": "Từ nay đến hết ngày 31/12/2026, Sacombank triển khai chương trình \"Có Sacombank – Tiện buôn bán – Lợi doanh thu\" trên phạm vi toàn quốc với nhiều ưu đãi thiết thực dành cho nhóm cá nhân, hộ kinh doanh, tiểu thương,..."
-  },
-  {
-    "id": "cafef-ad63d63b16da81f960763b2a173ec8ed",
-    "title": "Lý do PV Gas không còn đáp ứng điều kiện công ty đại chúng",
-    "link": "https://cafef.vn/ly-do-pv-gas-khong-con-dap-ung-dieu-kien-cong-ty-dai-chung-18826082809504245.chn",
-    "pubDate": "2026-08-28T03:31:00.000Z",
-    "source": "CafeF",
-    "ticker": null,
-    "tickers": [],
-    "category": "thi-truong",
-    "summary": "Tại ngày 14/8/2026, PV Gas không còn đáp ứng điều kiện công ty đại chúng do không đảm bảo tỷ lệ sở hữu của cổ đông nhỏ lẻ."
   },
   {
     "id": "vietnambiz-9bea0a1eb4c46eadb9442d2ebe59ca2c",
@@ -2110,17 +2341,6 @@
     "tickers": [],
     "category": "tai-chinh",
     "summary": "Chỉ trong 3 phiên giảm liên tiếp (26 – 28/8), giá mua, bán vàng miếng SJC giảm tổng cộng phổ biến 1,2 triệu đồng/lượng mỗi chiều. Đối với vàng nhẫn, tổng mức giảm dao động từ 1,2 triệu tới 3,1 triệu đồng/lượng, tuỳ doanh nghiệp…"
-  },
-  {
-    "id": "cafef-40f5da29ebffa85d0258c8e55d98e9dd",
-    "title": "Một doanh nghiệp sắp \"lăn chốt\" cổ tức, tổng tỷ lệ 95%",
-    "link": "https://cafef.vn/mot-doanh-nghiep-sap-lan-chot-co-tuc-tong-ty-le-95-188260828100520979.chn",
-    "pubDate": "2026-08-28T03:05:00.000Z",
-    "source": "CafeF",
-    "ticker": null,
-    "tickers": [],
-    "category": "doanh-nghiep",
-    "summary": "Doanh nghiệp dự kiến thanh toán cổ tức tiền mặt vào đầu tháng 10 tới."
   },
   {
     "id": "vneconomy-9ede0739e68680452c419a848efd50b4",
@@ -2260,19 +2480,6 @@
     "summary": "Đứng đầu danh sách 26 tổ chức bảo hiểm có uy tín trong lĩnh vực hàng hải do Bộ Tài chính công bố, Bảo hiểm Bảo Việt tiếp tục khẳng định nền tảng tài chính vững chắc, năng lực chuyên môn và kinh nghiệm quản trị những rủi ro có quy mô lớn, tính chất phức tạp."
   },
   {
-    "id": "cafef-f73bb8b7dc4b24457a9ec29272c28710",
-    "title": "Một cổ phiếu ngân hàng vừa vượt đường MA200, được khối ngoại mạnh tay gom hàng",
-    "link": "https://cafef.vn/mot-co-phieu-ngan-hang-vua-vuot-duong-ma200-duoc-khoi-ngoai-manh-tay-gom-hang-188260827210413297.chn",
-    "pubDate": "2026-08-28T01:00:00.000Z",
-    "source": "CafeF",
-    "ticker": "VPB",
-    "tickers": [
-      "VPB"
-    ],
-    "category": "doanh-nghiep",
-    "summary": "Sau nhiều phiên diễn biến tích cực, cổ phiếu VPB vừa chốt phiên 27/8 phía trên đường MA200, một chỉ báo kỹ thuật quan trọng cho xu hướng dài hạn, cùng với thanh khoản kỷ lục trong 5 tháng, đồng thời được khối ngoại mạnh tay mua ròng hơn 100 tỷ đồng."
-  },
-  {
     "id": "cafef-97f092869f3e3eac172e43ac6937b170",
     "title": "VIETABANK BIZ – Nền tảng số thế hệ mới dành cho doanh nghiệp",
     "link": "https://cafef.vn/vietabank-biz-nen-tang-so-the-he-moi-danh-cho-doanh-nghiep-1882608280613466.chn",
@@ -2295,19 +2502,6 @@
     ],
     "category": "doanh-nghiep",
     "summary": "Nhiều năm liên tiếp thuộc nhóm các ngân hàng có số nộp ngân sách lớn, đồng thời luôn tích cực đóng góp cho các chương trình an sinh xã hội, Ngân hàng TMCP Sài Gòn Tài Lộc (SACOMBANK) đang cho thấy một cách tiếp cận rộng hơn về hiệu quả kinh doanh khi tăng trưởng phải đi cùng trác..."
-  },
-  {
-    "id": "cafef-610137b9f6030ae23308fade1cc4861b",
-    "title": "Ông Đoàn Văn Hiểu Em đăng ký bán 1 triệu cổ phiếu MWG",
-    "link": "https://cafef.vn/ong-doan-van-hieu-em-dang-ky-ban-1-trieu-co-phieu-mwg-188260828075235286.chn",
-    "pubDate": "2026-08-28T00:52:00.000Z",
-    "source": "CafeF",
-    "ticker": "MWG",
-    "tickers": [
-      "MWG"
-    ],
-    "category": "doanh-nghiep",
-    "summary": "Ông Đoàn Văn Hiểu Em đăng ký bán 1 triệu cổ phiếu MWG trong thời gian từ 7/9 đến /10/2026 nhằm chuyển sang đầu tư cổ phiếu DMX."
   },
   {
     "id": "vietnambiz-053b790c822f1bcd0ee582bc442126d8",
@@ -2374,28 +2568,6 @@
     ],
     "category": "doanh-nghiep",
     "summary": "Techcombank được cho là đang đàm phán bán ít nhất 15% vốn, trong khi Vietcombank, VPBank, SHB, HDBank và VIB cũng đang tìm kiếm hoặc mở cửa cho nhà đầu tư nước ngoài."
-  },
-  {
-    "id": "cafef-b37c9b7f71a5030dc08b500aaf53af0b",
-    "title": "Một công ty chứng khoán gặp sự cố mất điện",
-    "link": "https://cafef.vn/mot-cong-ty-chung-khoan-gap-su-co-mat-dien-18826082723583942.chn",
-    "pubDate": "2026-08-27T23:09:00.000Z",
-    "source": "CafeF",
-    "ticker": null,
-    "tickers": [],
-    "category": "thi-truong",
-    "summary": "Giao dịch của khách hàng tại công ty bị gián đoạn trong gần một giờ sáng."
-  },
-  {
-    "id": "cafef-df7ceb5b653fb1a57b18afb008225136",
-    "title": "Quỹ từ thiện của Bill Gates bán cổ phiếu Berkshire Hathaway giữa lúc “drama” tình bạn với Warren Buffett rạn nứt",
-    "link": "https://cafef.vn/quy-tu-thien-cua-bill-gates-ban-co-phieu-berkshire-hathaway-giua-luc-drama-tinh-ban-voi-warren-buffett-ran-nut-188260827223431889.chn",
-    "pubDate": "2026-08-27T17:07:00.000Z",
-    "source": "CafeF",
-    "ticker": null,
-    "tickers": [],
-    "category": "thi-truong",
-    "summary": "Warren Buffett trước đó đã tuyên bố chấm dứt cam kết các khoản quyên góp hàng năm trị giá hàng tỷ USD cho quỹ từ thiện của Bill Gates."
   },
   {
     "id": "cafef-3a815914f86579114367727af47eacc1",
@@ -2708,17 +2880,6 @@
     "summary": "Viettel đang sở hữu hơn 99,027% vốn Viettel Global, qua đó dự kiến nhận gần như toàn bộ khoản cổ tức trong đợt chi trả này."
   },
   {
-    "id": "cafef-90e0b4ec4171bfce93edacf470493bb2",
-    "title": "Giá vàng SJC, vàng nhẫn cuối ngày 27/8",
-    "link": "https://cafef.vn/gia-vang-sjc-vang-nhan-sang-27-8-1882608270751104.chn",
-    "pubDate": "2026-08-27T09:31:00.000Z",
-    "source": "CafeF",
-    "ticker": null,
-    "tickers": [],
-    "category": "tai-chinh",
-    "summary": "Cuối ngày 27/8, thị trường vàng trong nước khép lại một ngày giao dịch nhiều biến động."
-  },
-  {
     "id": "vietnamfinance-1dce9cbbaa7fb61b552ac15738cbd258",
     "title": "CII tham gia dự án Quốc lộ 13 gần 21.000 tỷ đồng",
     "link": "https://vietnamfinance.vn/cii-tham-gia-du-an-quoc-lo-13-gan-21000-ty-dong-d149764.html",
@@ -2904,19 +3065,6 @@
     "summary": "(VNF) - Chuyên gia cho rằng, để niềm tin bảo hiểm không bị “bào mòn” bởi những khoản chi bồi thường nhỏ, khắc phục việc bồi thường thuế giá trị gia tăng (VAT) không thống nhất giữa các doanh nghiệp, cần sự vào cuộc của cả 3 bên: Cơ quan quản lý, doanh nghiệp bảo hiểm và người tha..."
   },
   {
-    "id": "cafef-f12744b96bf58b29fa7413cb12c58822",
-    "title": "Ngân hàng của gia tộc Madam Pang liên tục thua lỗ tại Việt Nam: Âm hơn 1.000 tỷ đồng trong 5 năm qua dù tài sản, dư nợ tăng phi mã",
-    "link": "https://cafef.vn/ngan-hang-cua-gia-toc-madam-pang-lien-tuc-thua-lo-tai-viet-nam-am-hon-1000-ty-dong-trong-5-nam-qua-du-tai-san-du-no-tang-phi-ma-188260827144409827.chn",
-    "pubDate": "2026-08-27T07:42:00.000Z",
-    "source": "CafeF",
-    "ticker": "HCM",
-    "tickers": [
-      "HCM"
-    ],
-    "category": "doanh-nghiep",
-    "summary": "KBank – ngân hàng lớn của Thái Lan gắn với gia tộc Lamsam, gia tộc của Madam Pang – đang đặt cược lớn vào thị trường Việt Nam với kế hoạch đầu tư hơn 1 tỷ USD đến năm 2027. Tuy nhiên, đằng sau đà mở rộng mạnh về quy mô, Chi nhánh TP.HCM của KBank đã ghi nhận 5 năm thua lỗ liên ti..."
-  },
-  {
     "id": "vietnamfinance-d0a46d6d1ad95642c33ff094dfeb30f8",
     "title": "Cuộc đua gia tăng quyền sở hữu tại Đường Quảng Ngãi lại tiếp tục",
     "link": "https://vietnamfinance.vn/cuoc-dua-gia-tang-quyen-so-huu-tai-duong-quang-ngai-lai-tiep-tuc-d149759.html",
@@ -3010,17 +3158,6 @@
     "summary": "(VNF) - Với chiến thắng trước Đội tuyển Thái Lan tại trận chung kết lượt về, Đội tuyển Bóng đá nam quốc gia Việt Nam đã bảo vệ thành công ngôi vô địch ASEAN Cup 2026, mang lại niềm vui và niềm tự hào cho hàng triệu người hâm mộ cả nước."
   },
   {
-    "id": "cafef-2f0abbf1c9b04d1d40527255506a692d",
-    "title": "Sân bay Gia Bình và bài toán mở rộng năng lực kết nối của kinh tế phía Bắc",
-    "link": "https://cafef.vn/san-bay-gia-binh-va-bai-toan-mo-rong-nang-luc-ket-noi-cua-kinh-te-phia-bac-188260827122314186.chn",
-    "pubDate": "2026-08-27T05:23:00.000Z",
-    "source": "CafeF",
-    "ticker": null,
-    "tickers": [],
-    "category": "tai-chinh",
-    "summary": "Trong bối cảnh sản xuất, xuất khẩu và các chuỗi cung ứng tại miền Bắc tiếp tục mở rộng, vai trò của một sân bay không còn giới hạn ở vận chuyển hành khách. Với định hướng phát triển gắn với logistics, công nghiệp và thương mại, Cảng hàng không quốc tế Gia Bình được kỳ vọng bổ sun..."
-  },
-  {
     "id": "vietnamfinance-742671ceb1244087f517300ba07c84f3",
     "title": "Hơn 12.500 tỷ đồng chảy về kho bạc: Tín hiệu lãi suất từ phiên giao dịch Trái phiếu Chính phủ",
     "link": "https://vietnamfinance.vn/hon-12500-ty-dong-ve-kho-bac-nha-nuoc-dock-tin-hieu-lai-suat-tu-1-phien-giao-dich-trai-phieu-chinh-phu-d149748.html",
@@ -3043,19 +3180,6 @@
     "tickers": [],
     "category": "thi-truong",
     "summary": "Quán tính tăng mạnh hôm qua chỉ kéo dài khoảng 45 phút đầu phiên sáng nay. Sự suy yếu khá nhanh của các cổ phiếu dẫn dắt, nhất là ngân hàng, đã nhanh chóng hạ nhiệt điểm số lẫn toàn thị trường."
-  },
-  {
-    "id": "cafef-75bb0ae4a868a7c8e785009a66b0aa90",
-    "title": "Vietcombank có thông báo quan trọng đến tất cả khách hàng",
-    "link": "https://cafef.vn/vietcombank-co-thong-bao-quan-trong-den-tat-ca-khach-hang-188260827105330836.chn",
-    "pubDate": "2026-08-27T04:20:00.000Z",
-    "source": "CafeF",
-    "ticker": "VCB",
-    "tickers": [
-      "VCB"
-    ],
-    "category": "doanh-nghiep",
-    "summary": "Vietcombank cảnh báo thủ đoạn kẻ gian sử dụng AI để giả mạo hình ảnh ngân hàng, báo chí và phóng viên nhằm lôi kéo khách hàng đầu tư vào các nền tảng tiền số trái phép."
   },
   {
     "id": "vietnambiz-4ad660939dea935871c8a6d7acdf5a81",
@@ -3145,20 +3269,6 @@
     "summary": "Sau 6 phiên tăng liên tiếp, cổ phiếu VIC vượt đỉnh lịch sử trong sáng 27/8, lên 232.100 đồng/cổ phiếu. Với mức giá này, vốn hóa Vingroup đã vượt 1,8 triệu tỷ đồng."
   },
   {
-    "id": "cafef-3b0679af46ec571da7c5574ef31fa863",
-    "title": "Các ngân hàng dùng gần 100.000 tỷ đồng để dự phòng rủi ro tín dụng: Không phải Agribank, VietinBank hay BIDV, đây mới là ngân hàng trích lập nhiều nhất",
-    "link": "https://cafef.vn/cac-ngan-hang-dung-gan-100000-ty-dong-de-du-phong-rui-ro-tin-dung-khong-phai-agribank-vietinbank-hay-bidv-day-moi-la-ngan-hang-trich-lap-nhieu-nhat-188260827103824677.chn",
-    "pubDate": "2026-08-27T03:36:00.000Z",
-    "source": "CafeF",
-    "ticker": "BID",
-    "tickers": [
-      "BID",
-      "CTG"
-    ],
-    "category": "doanh-nghiep",
-    "summary": "Trong 6 tháng đầu năm 2026, 28 ngân hàng đã chi gần 97.445 tỷ đồng cho dự phòng rủi ro tín dụng, tăng hơn 11.700 tỷ đồng so với cùng kỳ."
-  },
-  {
     "id": "vietnamfinance-55935bfc7114268775eb4d687e336391",
     "title": "VSIP mở thêm khu công nghiệp rộng 448ha tại Quảng Ninh",
     "link": "https://vietnamfinance.vn/vsip-khoi-cong-khu-cong-nghiep-448ha-tai-quang-ninh-d149747.html",
@@ -3170,17 +3280,6 @@
     ],
     "category": "doanh-nghiep",
     "summary": "(VNF) - VSIP vừa khởi công KCN VSIP Quảng Ninh quy mô 448,16ha tại KKT ven biển Quảng Yên, hướng tới thu hút các dự án công nghệ cao, công nghiệp hỗ trợ, sản xuất hiện đại."
-  },
-  {
-    "id": "cafef-6f7e3913ac69a1683ff686f90e9c5405",
-    "title": "Hôm nay, nhiều người vội đi gửi tiết kiệm sau khi đội tuyển Việt Nam thắng Thái Lan",
-    "link": "https://cafef.vn/hom-nay-nhieu-nguoi-voi-di-gui-tiet-kiem-sau-khi-doi-tuyen-viet-nam-thang-thai-lan-18826082710301961.chn",
-    "pubDate": "2026-08-27T03:30:00.000Z",
-    "source": "CafeF",
-    "ticker": null,
-    "tickers": [],
-    "category": "thi-truong",
-    "summary": "Một ngân hàng vừa \"chơi lớn\" tặng thêm 2,6%/năm lãi suất tiết kiệm cho khách hàng sau khi đội tuyển Việt Nam vô địch ASEAN Cup 2026."
   },
   {
     "id": "vietnamfinance-d35c7bc274496d5179815739b690296e",
@@ -3661,19 +3760,6 @@
     "summary": "Cổ phiếu MSB được sang tay qua giao dịch thỏa thuận với khối lượng gần 164 triệu cổ phiếu, tổng giá trị hơn 2.500 tỷ đồng."
   },
   {
-    "id": "vietnambiz-a855a4dc5919e5e6a33eaab1a4255389",
-    "title": "Tự doanh mua r&#242;ng gần 300 tỷ đồng, gom mạnh TCB",
-    "link": "https://vietnambiz.vn/tu-doanh-mua-rong-gan-300-ty-dong-gom-manh-tcb-2026826172126195.htm",
-    "pubDate": "2026-08-26T10:27:28.000Z",
-    "source": "Vietnambiz",
-    "ticker": "TCB",
-    "tickers": [
-      "TCB"
-    ],
-    "category": "doanh-nghiep",
-    "summary": "Trong phiên 26/8, tự doanh mua ròng với tổng giá trị khoảng 297 tỷ đồng trên HOSE, trong đó cổ phiếu TCB ghi nhận giá trị mua ròng lớn nhất."
-  },
-  {
     "id": "vietnamfinance-e43bb466fb2ae815717fce7665656806",
     "title": "Ngân hàng KB Kookmin: 'Techcombank chỉ là một trong những ứng viên tiềm năng'",
     "link": "https://vietnamfinance.vn/ngan-hang-kb-kookmin-techcombank-chi-la-mot-trong-nhung-ung-vien-tiem-nang-d149733.html",
@@ -3754,19 +3840,6 @@
     ],
     "category": "doanh-nghiep",
     "summary": "(VNF) - Ngày 25/8, Cục Quản lý, giám sát kế toán, kiểm toán - Bộ Tài chính và Viện Kế toán Công chứng Anh và xứ Wales (ICAEW) đã ký gia hạn Biên bản ghi nhớ hợp tác (MOU)."
-  },
-  {
-    "id": "vietnambiz-a90cc94d70313529a2ebd360b0f36bd5",
-    "title": "Xếp dỡ Hải An đ&#243;n th&#234;m cổ đ&#244;ng lớn",
-    "link": "https://vietnambiz.vn/xep-do-hai-an-don-them-co-dong-lon-202682616177112.htm",
-    "pubDate": "2026-08-26T09:58:14.000Z",
-    "source": "Vietnambiz",
-    "ticker": "GEX",
-    "tickers": [
-      "GEX"
-    ],
-    "category": "doanh-nghiep",
-    "summary": "Sau giao dịch, tỷ lệ sở hữu của Gelex tại Xếp dỡ Hải An tăng từ 4,94% lên 5,16% vốn điều lệ."
   },
   {
     "id": "vietnambiz-8e85b7fd539eeaf1da7dd66128c78fd9",
@@ -3966,28 +4039,6 @@
     "tickers": [],
     "category": "doanh-nghiep",
     "summary": "Cao su Phước Hoà vừa thông báo ngày 14/9 là ngày đăng ký cuối cùng để cổ đông thực hiện quyền nhận cổ tức bằng tiền, nhận cổ phiếu thưởng và tham dự ĐHĐCĐ bất thường năm 2026."
-  },
-  {
-    "id": "vneconomy-59547c23018b579a5c10713a56993928",
-    "title": "Gần 31 nghìn tỷ đồng trái phiếu doanh nghiệp đáo hạn trong quý 3/2026",
-    "link": "https://vneconomy.vn/gan-31-nghin-ty-dong-trai-phieu-doanh-nghiep-dao-han-trong-quy-32026.htm",
-    "pubDate": "2026-08-26T02:46:02.000Z",
-    "source": "VnEconomy",
-    "ticker": null,
-    "tickers": [],
-    "category": "thi-truong",
-    "summary": "Ước tính khoảng 30,9 nghìn tỷ đồng trái phiếu doanh nghiệp đáo hạn trong quý 3/2026, giảm 47% so với cùng kỳ, tập trung chủ yếu ở nhóm Bất động sản với khoảng 61%, tương đương 18,9 nghìn tỷ đồng."
-  },
-  {
-    "id": "vneconomy-6c97b0cd1a53931115c44e7bb9640f58",
-    "title": "Dòng tiền toàn cầu thận trọng với cổ phiếu, đổ mạnh vào vàng và trái phiếu",
-    "link": "https://vneconomy.vn/dong-tien-toan-cau-than-trong-voi-co-phieu-do-manh-vao-vang-va-trai-phieu.htm",
-    "pubDate": "2026-08-26T02:44:35.000Z",
-    "source": "VnEconomy",
-    "ticker": null,
-    "tickers": [],
-    "category": "thi-truong",
-    "summary": "ETF hàng hóa tiếp tục xu hướng hút ròng tuần thứ 3 liên tiếp, đạt hơn 4,8 tỷ USD, tăng 198% so với tuần trước và là mức cao nhất từ cuối tháng 02/2026. Trong đó, quỹ ETF SPDR Gold Trust cũng hút ròng hơn 3,3 tỷ USD trong tuần qua."
   },
   {
     "id": "vietnambiz-9e8c8d1ea736ae0b71564262b0517d97",
@@ -4382,17 +4433,6 @@
     "summary": "Chốt tuần 17-22/8, tuỳ từng thương hiệu, mức tăng giá vàng nhẫn dao động từ 3,4 triệu – 4,2 triệu đồng/lượng. Duy chỉ có một doanh nghiệp phía Nam tăng mạnh 6 triệu đồng/lượng, gấp đôi các thương hiệu còn lại…"
   },
   {
-    "id": "vietnambiz-b1cd5a3bc3aad04d6a1435094970e59f",
-    "title": "Tr&#225;i phiếu doanh nghiệp bước v&#224;o giai đoạn s&#224;ng lọc mới",
-    "link": "https://vietnambiz.vn/trai-phieu-doanh-nghiep-buoc-vao-giai-doan-sang-loc-moi-2026822203317332.htm",
-    "pubDate": "2026-08-22T15:00:26.000Z",
-    "source": "Vietnambiz",
-    "ticker": null,
-    "tickers": [],
-    "category": "doanh-nghiep",
-    "summary": "Thị trường trái phiếu doanh nghiệp chưa trở lại giai đoạn sôi động về quy mô, khi phần lớn lượng phát hành vẫn đến từ ngân hàng và áp lực đáo hạn, chậm trả còn hiện hữu."
-  },
-  {
     "id": "vneconomy-ce0d7d59354f6212c1caea90fe70847a",
     "title": "Nhà đầu tư lùi dự báo về thời điểm Mỹ và Anh tăng lãi suất",
     "link": "https://vneconomy.vn/nha-dau-tu-lui-du-bao-ve-thoi-diem-my-va-anh-tang-lai-suat.htm",
@@ -4494,17 +4534,6 @@
     "tickers": [],
     "category": "tai-chinh",
     "summary": "Theo giới phân tích, diễn biến của phiên này phản ánh những yếu tố tác động trái chiều..."
-  },
-  {
-    "id": "vneconomy-8fd3f57e3aa37b67e243ecd689c21715",
-    "title": "Trái phiếu chính phủ Trung Quốc “ngược dòng” đà bán tháo toàn cầu",
-    "link": "https://vneconomy.vn/trai-phieu-chinh-phu-trung-quoc-nguoc-dong-da-ban-thao-toan-cau.htm",
-    "pubDate": "2026-08-21T00:22:33.000Z",
-    "source": "VnEconomy",
-    "ticker": null,
-    "tickers": [],
-    "category": "tai-chinh",
-    "summary": "Trái phiếu chính phủ Trung Quốc đang nổi lên như một công cụ quan trọng trong việc đa dạng hóa danh mục đầu tư, do có khả năng chuyển động ngược chiều so với phần còn lại của thị trường mỗi khi xảy ra bán tháo trái phiếu chính phủ toàn cầu..."
   },
   {
     "id": "vneconomy-8ecf9d85a8ba3771525b8b554ea8e5e8",

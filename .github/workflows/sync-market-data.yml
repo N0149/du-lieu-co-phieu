@@ -1,9 +1,10 @@
-name: Sync Market Data Daily
+name: Sync Market & Maritime Data Daily
 
 on:
   schedule:
-    # Chạy vào 08:45 UTC (15:45 Giờ Việt Nam GMT+7) từ Thứ 2 đến Thứ 6 hàng tuần
-    - cron: '45 8 * * 1-5'
+    # Chạy 2 lần mỗi ngày: 22:30 UTC (05:30 GMT+7 sáng) và 09:30 UTC (16:30 GMT+7 chiều)
+    - cron: '30 22 * * *'
+    - cron: '30 9 * * *'
   workflow_dispatch: # Cho phép bấm nút "Run workflow" thủ công trên GitHub
 
 jobs:
@@ -12,6 +13,15 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install Python dependencies
+        run: |
+          pip install requests beautifulsoup4
 
       - name: Set up Node.js
         uses: actions/setup-node@v4
@@ -44,14 +54,18 @@ jobs:
           async function main() {
             await fetchAndSave('https://longlivestock.com/data/indices.json', 'data/longlive_indices.json');
             await fetchAndSave('https://longlivestock.com/data/manifest.json', 'data/longlive_manifest.json');
-            console.log('Daily sync done!');
+            console.log('Market data sync done!');
           }
           main().catch(console.error);
           "
+
+      - name: Scrape live maritime port calls & sync intelligence
+        run: |
+          python scripts/cangbien/run_pipeline.py
 
       - name: Commit and push changes
         run: |
           git config --global user.name 'github-actions[bot]'
           git config --global user.email 'github-actions[bot]@users.noreply.github.com'
-          git add data/longlive_indices.json data/longlive_manifest.json
-          git diff --quiet && git diff --staged --quiet || (git commit -m "chore(data): auto sync market EOD data $(date +'%Y-%m-%d')" && git push)
+          git add data/longlive_indices.json data/longlive_manifest.json data/maritime/dashboard_summary.json data/maritime.db
+          git diff --quiet && git diff --staged --quiet || (git commit -m "chore(data): auto sync market & maritime live schedules $(date +'%Y-%m-%d %H:%M')" && git push)
