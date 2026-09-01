@@ -11,9 +11,9 @@ import { AiAssistantModal } from '@/components/AiAssistantModal'
 import { cn } from '@/lib/utils'
 
 const NAV = [
-  { label: 'Bộ Lọc Cổ Phiếu', href: '/' },
+  { label: 'Tin Tức', href: '/' },
+  { label: 'Bộ Lọc Cổ Phiếu', href: '/bo-loc' },
   { label: 'Quỹ Mở', href: '/quy-mo' },
-  { label: 'Tin Tức', href: '/tin-tuc' },
   { label: 'Cảng Biển', href: '/cang-bien' },
   { label: 'Xuất nhập khẩu', href: '/xuat-nhap-khau' },
   { label: 'Tra Cứu 1.530 Mã', href: '/tra-cuu' },
@@ -63,7 +63,7 @@ export function SiteHeader({ hideSearch = false }: SiteHeaderProps) {
           {NAV.map((item) => {
             const active =
               item.href === '/'
-                ? pathname === '/'
+                ? pathname === '/' || pathname === '/tin-tuc'
                 : item.href === '/cang-bien'
                 ? pathname.startsWith('/cang-bien') || pathname.startsWith('/cang/')
                 : pathname.startsWith(item.href)
@@ -133,7 +133,7 @@ export function SiteHeader({ hideSearch = false }: SiteHeaderProps) {
             {NAV.map((item) => {
               const active =
                 item.href === '/'
-                  ? pathname === '/'
+                  ? pathname === '/' || pathname === '/tin-tuc'
                   : item.href === '/cang-bien'
                   ? pathname.startsWith('/cang-bien') || pathname.startsWith('/cang/')
                   : pathname.startsWith(item.href)

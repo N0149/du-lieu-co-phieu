@@ -19,6 +19,7 @@ import type { Report } from '@/lib/use-reports'
 import { cn } from '@/lib/utils'
 import { BusinessPlanComparison, BusinessPlanYear } from '@/components/business-plan-comparison'
 import { FinancialStatementsExplorer } from '@/components/financial-statements-explorer'
+import { CompanyReportsTab } from '@/components/reports/CompanyReportsTab'
 
 import type { DetailedFinancialSnapshot } from '@/lib/local-financials'
 
@@ -877,6 +878,27 @@ export function StockDetailView({
           </div>
         </div>
       )}
+
+      {/* ── Báo Cáo Phân Tích Từ Các Công Ty Chứng Khoán (CTCK) ── */}
+      <section className="space-y-4 rounded-2xl border border-border bg-card p-5 shadow-2xs">
+        <div className="flex flex-wrap items-center justify-between gap-2 border-b border-border/60 pb-3">
+          <div className="flex items-center gap-2.5">
+            <div className="flex size-7.5 items-center justify-center rounded-lg bg-emerald-500/10 text-emerald-500 border border-emerald-500/20">
+              <FileText className="size-4" />
+            </div>
+            <div>
+              <h3 className="text-base font-bold text-foreground">
+                Báo Cáo Phân Tích & Định Giá Doanh Nghiệp ({ticker})
+              </h3>
+              <p className="text-xs text-muted-foreground">
+                Tổng hợp báo cáo nghiên cứu, khuyến nghị Mua/Bán và giá mục tiêu từ các CTCK hàng đầu (SSI, Vietcap, TCBS, ACBS...)
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <CompanyReportsTab symbol={ticker} />
+      </section>
 
       {/* ── 5. Khối Biểu Đồ Kép Tinh Gọn (Price 5Y Weekly + Revenue/Profit 16Y) ── */}
       {(priceChartSvg || revChartData) && (

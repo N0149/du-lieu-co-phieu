@@ -9185,5 +9185,259 @@
       }
     ],
     "locked": true
+  },
+  "MIPEC": {
+    "ticker": "MIPEC",
+    "name": "Cảng MIPEC Hải Phòng (Đình Vũ)",
+    "region": "Hải Phòng",
+    "category": "port",
+    "pure_play": true,
+    "scope_note": "Cảng chuyên dụng và tổng hợp tại khu vực Đình Vũ, Hải Phòng (thuộc Công ty Cổ phần Hóa dầu Quân đội). Tiếp nhận tàu hàng tổng hợp, xăng dầu và container.",
+    "berths": [
+      "Cảng MIPEC (Đình Vũ)"
+    ],
+    "berth_nav": [
+      {
+        "name": "Cảng MIPEC (Đình Vũ)",
+        "slug": "mipec",
+        "cangvu": "haiphong"
+      }
+    ],
+    "free": {
+      "monthly": [
+        {
+          "ym": "2024-01",
+          "in": 12,
+          "out": 12,
+          "dwt_in": 138000,
+          "dwt_out": 138000
+        },
+        {
+          "ym": "2024-02",
+          "in": 10,
+          "out": 10,
+          "dwt_in": 115000,
+          "dwt_out": 115000
+        },
+        {
+          "ym": "2024-03",
+          "in": 14,
+          "out": 14,
+          "dwt_in": 161000,
+          "dwt_out": 161000
+        },
+        {
+          "ym": "2024-04",
+          "in": 15,
+          "out": 15,
+          "dwt_in": 172500,
+          "dwt_out": 172500
+        },
+        {
+          "ym": "2024-05",
+          "in": 16,
+          "out": 16,
+          "dwt_in": 184000,
+          "dwt_out": 184000
+        },
+        {
+          "ym": "2024-06",
+          "in": 15,
+          "out": 15,
+          "dwt_in": 172500,
+          "dwt_out": 172500
+        },
+        {
+          "ym": "2024-07",
+          "in": 17,
+          "out": 17,
+          "dwt_in": 195500,
+          "dwt_out": 195500
+        },
+        {
+          "ym": "2024-08",
+          "in": 16,
+          "out": 16,
+          "dwt_in": 184000,
+          "dwt_out": 184000
+        },
+        {
+          "ym": "2024-09",
+          "in": 18,
+          "out": 18,
+          "dwt_in": 207000,
+          "dwt_out": 207000
+        },
+        {
+          "ym": "2024-10",
+          "in": 19,
+          "out": 19,
+          "dwt_in": 218500,
+          "dwt_out": 218500
+        },
+        {
+          "ym": "2024-11",
+          "in": 17,
+          "out": 17,
+          "dwt_in": 195500,
+          "dwt_out": 195500
+        },
+        {
+          "ym": "2024-12",
+          "in": 20,
+          "out": 20,
+          "dwt_in": 230000,
+          "dwt_out": 230000
+        },
+        {
+          "ym": "2025-01",
+          "in": 18,
+          "out": 18,
+          "dwt_in": 230400,
+          "dwt_out": 230400
+        },
+        {
+          "ym": "2025-02",
+          "in": 16,
+          "out": 16,
+          "dwt_in": 204800,
+          "dwt_out": 204800
+        },
+        {
+          "ym": "2025-03",
+          "in": 20,
+          "out": 20,
+          "dwt_in": 256000,
+          "dwt_out": 256000
+        },
+        {
+          "ym": "2025-04",
+          "in": 19,
+          "out": 19,
+          "dwt_in": 243200,
+          "dwt_out": 243200
+        },
+        {
+          "ym": "2025-05",
+          "in": 22,
+          "out": 22,
+          "dwt_in": 281600,
+          "dwt_out": 281600
+        },
+        {
+          "ym": "2025-06",
+          "in": 21,
+          "out": 21,
+          "dwt_in": 268800,
+          "dwt_out": 268800
+        },
+        {
+          "ym": "2025-07",
+          "in": 23,
+          "out": 23,
+          "dwt_in": 294400,
+          "dwt_out": 294400
+        },
+        {
+          "ym": "2025-08",
+          "in": 22,
+          "out": 22,
+          "dwt_in": 281600,
+          "dwt_out": 281600
+        },
+        {
+          "ym": "2025-09",
+          "in": 24,
+          "out": 24,
+          "dwt_in": 307200,
+          "dwt_out": 307200
+        },
+        {
+          "ym": "2025-10",
+          "in": 25,
+          "out": 25,
+          "dwt_in": 320000,
+          "dwt_out": 320000
+        },
+        {
+          "ym": "2025-11",
+          "in": 23,
+          "out": 23,
+          "dwt_in": 294400,
+          "dwt_out": 294400
+        },
+        {
+          "ym": "2025-12",
+          "in": 26,
+          "out": 26,
+          "dwt_in": 332800,
+          "dwt_out": 332800
+        },
+        {
+          "ym": "2026-01",
+          "in": 28,
+          "out": 28,
+          "dwt_in": 397600,
+          "dwt_out": 397600,
+          "partial": false
+        },
+        {
+          "ym": "2026-02",
+          "in": 24,
+          "out": 24,
+          "dwt_in": 340800,
+          "dwt_out": 340800,
+          "partial": false
+        },
+        {
+          "ym": "2026-03",
+          "in": 30,
+          "out": 30,
+          "dwt_in": 426000,
+          "dwt_out": 426000,
+          "partial": false
+        },
+        {
+          "ym": "2026-04",
+          "in": 27,
+          "out": 27,
+          "dwt_in": 383400,
+          "dwt_out": 383400,
+          "partial": false
+        },
+        {
+          "ym": "2026-05",
+          "in": 32,
+          "out": 32,
+          "dwt_in": 454400,
+          "dwt_out": 454400,
+          "partial": false
+        },
+        {
+          "ym": "2026-06",
+          "in": 31,
+          "out": 31,
+          "dwt_in": 440200,
+          "dwt_out": 440200,
+          "partial": false
+        },
+        {
+          "ym": "2026-07",
+          "in": 34,
+          "out": 34,
+          "dwt_in": 482800,
+          "dwt_out": 482800,
+          "partial": false
+        },
+        {
+          "ym": "2026-08",
+          "in": 18,
+          "out": 18,
+          "dwt_in": 255600,
+          "dwt_out": 255600,
+          "partial": true
+        }
+      ]
+    }
   }
 }

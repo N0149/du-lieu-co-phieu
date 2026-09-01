@@ -254,21 +254,76 @@ function classifyCategory(title, summary, defaultCat, tickers) {
   return defaultCat || 'thi-truong';
 }
 
+const NAMED_ENTITIES = {
+  amp: '&',
+  quot: '"',
+  apos: "'",
+  lt: '<',
+  gt: '>',
+  nbsp: ' ',
+  hellip: '…',
+  ndash: '–',
+  mdash: '—',
+  ldquo: '“',
+  rdquo: '”',
+  lsquo: '‘',
+  rsquo: '’',
+  laquo: '«',
+  raquo: '»',
+  bull: '•',
+  copy: '©',
+  reg: '®',
+  trade: '™',
+};
+
+function decodeHtmlEntities(str) {
+  if (!str) return '';
+  let decoded = str;
+
+  // 1. Double unescape
+  decoded = decoded.replace(/&amp;/g, '&');
+
+  // 2. Decode decimal entities &#224;, &#225;, &#234;, &#243;, &#236;, &#226;...
+  decoded = decoded.replace(/&#(\d+);?/g, (_, code) => {
+    try {
+      const num = Number(code);
+      return num > 0 && num < 0x10ffff ? String.fromCodePoint(num) : '';
+    } catch {
+      return '';
+    }
+  });
+
+  // 3. Decode hex entities
+  decoded = decoded.replace(/&#x([0-9a-fA-F]+);?/g, (_, hex) => {
+    try {
+      const num = parseInt(hex, 16);
+      return num > 0 && num < 0x10ffff ? String.fromCodePoint(num) : '';
+    } catch {
+      return '';
+    }
+  });
+
+  // 4. Decode named entities
+  decoded = decoded.replace(/&([a-zA-Z]+);/g, (match, name) => {
+    return NAMED_ENTITIES[name.toLowerCase()] || match;
+  });
+
+  return decoded;
+}
+
 /**
  * Xóa thẻ HTML và làm sạch văn bản
  */
 function cleanText(str) {
   if (!str) return '';
-  return str
+  const noCdata = str
     .replace(/<!\[CDATA\[/g, '')
     .replace(/\]\]>/g, '')
-    .replace(/<[^>]*>/g, ' ')
-    .replace(/&amp;/g, '&')
-    .replace(/&quot;/g, '"')
-    .replace(/&apos;/g, "'")
-    .replace(/&#39;/g, "'")
-    .replace(/&lt;/g, '<')
-    .replace(/&gt;/g, '>')
+    .replace(/<[^>]*>/g, ' ');
+
+  const decoded = decodeHtmlEntities(noCdata);
+
+  return decoded
     .replace(/\s+/g, ' ')
     .trim();
 }

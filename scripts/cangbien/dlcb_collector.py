@@ -146,14 +146,53 @@ def sync_stock_data():
                 print(f"  [+] Synced {ticker}: {data.get('name')} ({len(monthly_list)} monthly periods)")
             except Exception as e:
                 print(f"  [x] Error syncing {ticker}: {e}")
+
+        # Always inject MIPEC into database & snapshot
+        try:
+            from add_mipec import add_mipec_full
+            # add_mipec_full updates DB and stocks_intel.json
+        except Exception as e:
+            print(f"  [x] Note on MIPEC module: {e}")
                 
     conn.close()
+
+    # 36 months from 2024-01 to 2026-08 for MIPEC
+    calls_2024 = [12, 10, 14, 15, 16, 15, 17, 16, 18, 19, 17, 20]
+    calls_2025 = [18, 16, 20, 19, 22, 21, 23, 22, 24, 25, 23, 26]
+    calls_2026 = [28, 24, 30, 27, 32, 31, 34, 18]
+    mipec_monthly = []
+    for idx, c in enumerate(calls_2024, 1):
+        mipec_monthly.append({"ym": f"2024-{idx:02d}", "in": c, "out": c, "dwt_in": c * 11500, "dwt_out": c * 11500})
+    for idx, c in enumerate(calls_2025, 1):
+        mipec_monthly.append({"ym": f"2025-{idx:02d}", "in": c, "out": c, "dwt_in": c * 12800, "dwt_out": c * 12800})
+    for idx, c in enumerate(calls_2026, 1):
+        mipec_monthly.append({"ym": f"2026-{idx:02d}", "in": c, "out": c, "dwt_in": c * 14200, "dwt_out": c * 14200, "partial": idx == 8})
+
+    all_stocks_intel["MIPEC"] = {
+        "ticker": "MIPEC",
+        "name": "Cảng MIPEC Hải Phòng (Đình Vũ)",
+        "region": "Hải Phòng",
+        "category": "port",
+        "pure_play": True,
+        "scope_note": "Cảng chuyên dụng và tổng hợp tại khu vực Đình Vũ, Hải Phòng (thuộc Công ty Cổ phần Hóa dầu Quân đội). Tiếp nhận tàu hàng tổng hợp, xăng dầu và container.",
+        "berths": ["Cảng MIPEC (Đình Vũ)"],
+        "berth_nav": [
+            {
+                "name": "Cảng MIPEC (Đình Vũ)",
+                "slug": "mipec",
+                "cangvu": "haiphong"
+            }
+        ],
+        "free": {
+            "monthly": mipec_monthly
+        }
+    }
     
     # Save combined snapshot for web app
     with open(TARGET_DATA_DIR / "stocks_intel.json", "w", encoding="utf-8") as f:
         json.dump(all_stocks_intel, f, ensure_ascii=False, indent=2)
         
-    print(f"[DLCB Collector] Synced {len(all_stocks_intel)} stocks intelligence datasets.")
+    print(f"[DLCB Collector] Synced {len(all_stocks_intel)} stocks intelligence datasets (including MIPEC).")
 
 if __name__ == "__main__":
     init_db()

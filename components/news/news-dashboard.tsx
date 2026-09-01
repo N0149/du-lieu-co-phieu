@@ -32,6 +32,33 @@ interface NewsDashboardProps {
   stockPriceMap?: Record<string, { px: number | null; w1: number | null }>
 }
 
+function decodeHtmlEntities(str: string): string {
+  if (!str) return ''
+  return str
+    .replace(/&amp;/g, '&')
+    .replace(/&#(\d+);?/g, (_, code) => {
+      try {
+        const num = Number(code)
+        return num > 0 && num < 0x10ffff ? String.fromCodePoint(num) : ''
+      } catch {
+        return ''
+      }
+    })
+    .replace(/&#x([0-9a-fA-F]+);?/g, (_, hex) => {
+      try {
+        const num = parseInt(hex, 16)
+        return num > 0 && num < 0x10ffff ? String.fromCodePoint(num) : ''
+      } catch {
+        return ''
+      }
+    })
+    .replace(/&quot;/g, '"')
+    .replace(/&apos;/g, "'")
+    .replace(/&lt;/g, '<')
+    .replace(/&gt;/g, '>')
+    .replace(/&nbsp;/g, ' ')
+}
+
 function formatRelativeTime(dateStr: string): string {
   try {
     const d = new Date(dateStr)
@@ -432,7 +459,7 @@ export function NewsDashboard({
                       rel="noopener noreferrer"
                       className="block text-[13px] font-normal leading-snug text-[#e2e8f0] transition-colors hover:text-[#60a5fa]"
                     >
-                      {item.title}
+                      {decodeHtmlEntities(item.title)}
                     </a>
 
                     {/* Ticker Badges (Pills placed directly under title like WiData) */}

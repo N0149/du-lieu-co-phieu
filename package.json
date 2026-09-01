@@ -11,7 +11,11 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint .",
-    "fetch-news": "node scripts/news/fetch_rss_news.js"
+    "fetch-news": "node scripts/news/fetch_rss_news.js",
+    "sync-industry-reports": "node scripts/crawl-industry-reports.mjs",
+    "sync-company-reports": "node scripts/crawl-company-reports.mjs",
+    "sync-daily-reports": "node scripts/sync-daily-reports.mjs",
+    "sync-financials": "node scripts/crawl-financial-statements.mjs"
   },
   "dependencies": {
     "@base-ui/react": "^1.5.0",

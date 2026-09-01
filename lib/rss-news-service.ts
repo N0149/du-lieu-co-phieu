@@ -259,18 +259,73 @@ function classifyCategory(title: string, summary: string, defaultCat: string, ti
   return defaultCat || 'thi-truong'
 }
 
+const NAMED_ENTITIES: Record<string, string> = {
+  amp: '&',
+  quot: '"',
+  apos: "'",
+  lt: '<',
+  gt: '>',
+  nbsp: ' ',
+  hellip: '…',
+  ndash: '–',
+  mdash: '—',
+  ldquo: '“',
+  rdquo: '”',
+  lsquo: '‘',
+  rsquo: '’',
+  laquo: '«',
+  raquo: '»',
+  bull: '•',
+  copy: '©',
+  reg: '®',
+  trade: '™',
+}
+
+export function decodeHtmlEntities(str: string): string {
+  if (!str) return ''
+  let decoded = str
+
+  // 1. Xử lý double encoding nếu có
+  decoded = decoded.replace(/&amp;/g, '&')
+
+  // 2. Giải mã mã số thập phân &#224;, &#225;, &#234;, &#243;, &#236;, &#226;...
+  decoded = decoded.replace(/&#(\d+);?/g, (_, code) => {
+    try {
+      const num = Number(code)
+      return num > 0 && num < 0x10ffff ? String.fromCodePoint(num) : ''
+    } catch {
+      return ''
+    }
+  })
+
+  // 3. Giải mã mã số Hex &#x00E1;, &#xE2;...
+  decoded = decoded.replace(/&#x([0-9a-fA-F]+);?/g, (_, hex) => {
+    try {
+      const num = parseInt(hex, 16)
+      return num > 0 && num < 0x10ffff ? String.fromCodePoint(num) : ''
+    } catch {
+      return ''
+    }
+  })
+
+  // 4. Giải mã các named entities phổ biến
+  decoded = decoded.replace(/&([a-zA-Z]+);/g, (match, name) => {
+    return NAMED_ENTITIES[name.toLowerCase()] ?? match
+  })
+
+  return decoded
+}
+
 function cleanText(str: string): string {
   if (!str) return ''
-  return str
+  const noCdata = str
     .replace(/<!\[CDATA\[/g, '')
     .replace(/\]\]>/g, '')
     .replace(/<[^>]*>/g, ' ')
-    .replace(/&amp;/g, '&')
-    .replace(/&quot;/g, '"')
-    .replace(/&apos;/g, "'")
-    .replace(/&#39;/g, "'")
-    .replace(/&lt;/g, '<')
-    .replace(/&gt;/g, '>')
+
+  const decoded = decodeHtmlEntities(noCdata)
+
+  return decoded
     .replace(/\s+/g, ' ')
     .trim()
 }

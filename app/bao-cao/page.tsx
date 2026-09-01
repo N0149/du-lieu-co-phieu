@@ -6,8 +6,17 @@ import { useSearchParams } from "next/navigation";
 import { SiteHeader } from "@/components/site-header";
 import { fmtPrice, fmtPct } from "@/lib/format";
 import { getAllStocks, type StockManifestItem } from "@/lib/longlivestock";
-import { Search, ArrowLeft, ArrowUpDown, FileText, CheckCircle } from "lucide-react";
+import {
+  Search,
+  ArrowLeft,
+  FileText,
+  Layers,
+  Building2,
+  Sparkles,
+} from "lucide-react";
 import { cn } from "@/lib/utils";
+import { IndustryReportsTab } from "@/components/reports/IndustryReportsTab";
+import industryData from "@/data/industry-reports.json";
 
 interface Report {
   slug: string;
@@ -66,7 +75,6 @@ function getReportCategory(
   const c = (report.category || "").toLowerCase();
   const tick = (report.ticker || "").toUpperCase();
 
-  // 1. Kinh tế Vĩ mô
   if (
     c === "macro" ||
     t.includes("vĩ mô") ||
@@ -81,7 +89,6 @@ function getReportCategory(
     };
   }
 
-  // 2. Hàng hóa & Ngành
   if (
     c === "commodity" ||
     t.includes("hàng hóa") ||
@@ -96,7 +103,6 @@ function getReportCategory(
     };
   }
 
-  // 3. Định giá RNAV / Bóc tách tài sản
   if (
     c === "rnav" ||
     t.includes("rnav") ||
@@ -115,7 +121,6 @@ function getReportCategory(
   const stock = stockMap.get(tick);
   const s = (stock?.s || "").toLowerCase();
 
-  // 4. Bất Động Sản & Xây Dựng
   if (
     s.includes("bất động sản") ||
     s.includes("xây dựng") ||
@@ -129,7 +134,6 @@ function getReportCategory(
     };
   }
 
-  // 5. Cảng Biển & Logistics
   if (
     s.includes("vận tải") ||
     s.includes("cảng") ||
@@ -158,7 +162,6 @@ function getReportCategory(
     };
   }
 
-  // 6. Năng Lượng & Tiện Ích
   if (
     s.includes("điện") ||
     s.includes("nước") ||
@@ -175,7 +178,6 @@ function getReportCategory(
     };
   }
 
-  // 7. Tiêu Dùng & Nông Sản
   if (
     s.includes("thực phẩm") ||
     s.includes("nông sản") ||
@@ -209,7 +211,6 @@ function getReportCategory(
     };
   }
 
-  // 8. Vật Liệu & Hóa Chất
   if (
     s.includes("hóa chất") ||
     s.includes("vật liệu") ||
@@ -254,7 +255,6 @@ function getReportCategory(
     };
   }
 
-  // 9. Dược Phẩm & Y Tế
   if (
     s.includes("dược") ||
     s.includes("y tế") ||
@@ -267,7 +267,6 @@ function getReportCategory(
     };
   }
 
-  // 10. Tài Chính & Bảo Hiểm
   if (
     s.includes("bảo hiểm") ||
     s.includes("tài chính") ||
@@ -307,6 +306,11 @@ function ReportsPageInner() {
   const tickerParam = searchParams.get("ticker") ?? "";
   const searchParam = searchParams.get("search") ?? "";
   const tabParam = (searchParams.get("tab") as CategoryKey) ?? "all";
+  const viewParam = searchParams.get("view") as "industry" | "company" | null;
+
+  const [mainTab, setMainTab] = useState<"industry" | "company">(
+    viewParam === "company" || tickerParam ? "company" : "industry"
+  );
 
   const [reports, setReports] = useState<Report[]>([]);
   const [loading, setLoading] = useState(true);
@@ -314,14 +318,20 @@ function ReportsPageInner() {
   const [sortBy, setSortBy] = useState<"newest" | "oldest" | "upside">("newest");
   const [tab, setTab] = useState<CategoryKey>(tabParam);
 
+  const industryCount = industryData.total || 0;
+
   const stockManifestMap = useMemo(() => {
     const all = getAllStocks();
     return new Map(all.map((s) => [s.t.toUpperCase(), s]));
   }, []);
 
   useEffect(() => {
-    if (tickerParam) setSearch(tickerParam.toUpperCase());
-    else if (searchParam) setSearch(searchParam);
+    if (tickerParam) {
+      setSearch(tickerParam.toUpperCase());
+      setMainTab("company");
+    } else if (searchParam) {
+      setSearch(searchParam);
+    }
   }, [tickerParam, searchParam]);
 
   useEffect(() => {
@@ -334,7 +344,6 @@ function ReportsPageInner() {
       .catch(() => setLoading(false));
   }, []);
 
-  // Tính toán phân loại cho toàn bộ danh sách báo cáo
   const categorizedReports = useMemo(() => {
     return reports.map((r) => {
       const cat = getReportCategory(r, stockManifestMap);
@@ -347,7 +356,6 @@ function ReportsPageInner() {
     });
   }, [reports, stockManifestMap]);
 
-  // Số lượng báo cáo theo từng tab lựa chọn
   const tabCounts = useMemo(() => {
     const counts: Record<CategoryKey, number> = {
       all: reports.length,
@@ -371,7 +379,6 @@ function ReportsPageInner() {
     return counts;
   }, [reports.length, categorizedReports]);
 
-  // Xử lý lọc theo từ khóa, lọc theo tab và sắp xếp
   const filteredAndSortedReports = useMemo(() => {
     return categorizedReports
       .filter((r) => {
@@ -381,7 +388,6 @@ function ReportsPageInner() {
           if (!haystack.includes(query)) return false;
         }
 
-        // Lọc theo Tab lựa chọn
         if (tab !== "all" && r.categoryKey !== tab) {
           return false;
         }
@@ -417,212 +423,274 @@ function ReportsPageInner() {
 
       <main className="mx-auto w-full max-w-[1600px] px-4 py-6 flex-1">
         {/* Nút quay về trang chủ */}
-        <div className="mb-5">
+        <div className="mb-4">
           <Link
             href="/"
             className="inline-flex items-center gap-1.5 rounded-lg border border-border bg-card/60 px-3 py-1.5 text-xs font-medium text-muted-foreground transition-all hover:bg-card hover:text-foreground"
           >
-            <ArrowLeft className="size-3.5" /> Quay lại Bộ lọc
+            <ArrowLeft className="size-3.5" /> Quay lại Trang chủ
           </Link>
         </div>
 
-        {/* Tiêu đề trang */}
+        {/* Header trang */}
         <div className="mb-6 border-b border-border pb-5">
-          <h1 className="text-2xl font-bold tracking-tight text-foreground sm:text-3xl">
-            Kho Báo Cáo Phân Tích Chuyên Sâu
-          </h1>
-          <p className="mt-1.5 text-sm text-muted-foreground">
-            Hệ thống đồng bộ dữ liệu trực tiếp từ kho nghiên cứu định giá độc lập và bóc tách tài sản RNAV
-          </p>
-        </div>
-
-        {/* Thanh công cụ: Ô tìm kiếm & Bộ sắp xếp */}
-        <div className="flex flex-col sm:flex-row gap-3 mb-5">
-          <div className="relative flex-1">
-            <Search className="pointer-events-none absolute left-3.5 top-1/2 size-4 -translate-y-1/2 text-muted-foreground" />
-            <input
-              type="text"
-              placeholder="Tìm nhanh theo Mã CK (SNZ, VNF, LHG, HPG...) hoặc tên bài viết, nhóm ngành..."
-              className="h-10 w-full rounded-xl border border-border bg-card pl-10 pr-4 text-sm text-foreground outline-none transition-colors placeholder:text-muted-foreground focus:border-emerald-500/50 focus:ring-2 focus:ring-emerald-500/20"
-              value={search}
-              onChange={(e) => setSearch(e.target.value)}
-            />
-          </div>
-
-          <div className="flex items-center gap-2">
-            <div className="relative">
-              <select
-                value={sortBy}
-                onChange={(e) => setSortBy(e.target.value as "newest" | "oldest" | "upside")}
-                className="h-10 rounded-xl border border-border bg-card px-3 pr-8 text-xs sm:text-sm font-medium text-foreground outline-none transition-colors cursor-pointer hover:border-border/80 focus:border-emerald-500"
-              >
-                <option value="newest">📅 Mới cập nhật nhất</option>
-                <option value="oldest">📅 Cũ nhất</option>
-                <option value="upside">📈 Upside cao nhất</option>
-              </select>
+          <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
+            <div>
+              <h1 className="text-2xl font-bold tracking-tight text-foreground sm:text-3xl flex items-center gap-2.5">
+                Kho Báo Cáo Phân Tích
+                <span className="inline-flex items-center gap-1 rounded-full border border-emerald-500/30 bg-emerald-500/10 px-2.5 py-0.5 text-xs font-semibold text-emerald-400">
+                  <Sparkles className="size-3" /> Cập nhật 2026
+                </span>
+              </h1>
+              <p className="mt-1 text-sm text-muted-foreground">
+                Tổng hợp báo cáo phân tích chuyên sâu các ngành kinh tế từ CTCK hàng đầu và báo cáo định giá độc lập RNAV
+              </p>
             </div>
           </div>
-        </div>
 
-        {/* Thanh Tab lựa chọn phân loại đầy đủ */}
-        <div className="mb-5 overflow-x-auto pb-1 scrollbar-none">
-          <div className="flex items-center gap-1.5 min-w-max">
-            {CATEGORY_TABS.map((t) => {
-              const count = tabCounts[t.key] ?? 0;
-              const active = tab === t.key;
-              return (
-                <button
-                  key={t.key}
-                  type="button"
-                  onClick={() => setTab(t.key)}
-                  className={cn(
-                    "inline-flex items-center gap-1.5 rounded-lg px-3 py-1.5 text-xs font-semibold transition-all cursor-pointer",
-                    active
-                      ? "bg-emerald-500/20 text-emerald-400 border border-emerald-500/40 shadow-sm"
-                      : "bg-card/50 text-muted-foreground border border-border/60 hover:bg-card hover:text-foreground"
-                  )}
-                >
-                  {t.label}
-                  <span
-                    className={cn(
-                      "rounded-full px-1.5 py-0.2 text-[10px] font-mono font-medium",
-                      active ? "bg-emerald-500/30 text-emerald-300" : "bg-muted text-muted-foreground"
-                    )}
-                  >
-                    {count}
-                  </span>
-                </button>
-              );
-            })}
-          </div>
-        </div>
-
-        {/* Hiển thị số lượng kết quả */}
-        <div className="mb-4 flex items-center justify-between text-xs text-muted-foreground font-medium">
-          <span>
-            Hiển thị <strong>{filteredAndSortedReports.length}</strong> / {reports.length} báo cáo
-          </span>
-          {tab !== "all" && (
+          {/* CHUYỂN ĐỔI CHUYÊN MỤC CHÍNH (MAIN TABS) */}
+          <div className="mt-5 flex items-center gap-2 border-t border-border/50 pt-4">
             <button
               type="button"
-              onClick={() => setTab("all")}
-              className="text-emerald-400 hover:underline cursor-pointer"
+              onClick={() => setMainTab("industry")}
+              className={cn(
+                "inline-flex items-center gap-2 rounded-xl px-4 py-2.5 text-xs sm:text-sm font-bold transition-all cursor-pointer",
+                mainTab === "industry"
+                  ? "bg-emerald-500 text-white shadow-md shadow-emerald-500/20"
+                  : "bg-card text-muted-foreground border border-border hover:bg-muted hover:text-foreground"
+              )}
             >
-              Xóa bộ lọc danh mục
+              <Layers className="size-4" />
+              <span>Báo Cáo Ngành</span>
+              <span
+                className={cn(
+                  "rounded-full px-2 py-0.5 text-[10px] font-mono font-bold",
+                  mainTab === "industry"
+                    ? "bg-white/20 text-white"
+                    : "bg-muted text-muted-foreground"
+                )}
+              >
+                {industryCount}
+              </span>
             </button>
-          )}
+
+            <button
+              type="button"
+              onClick={() => setMainTab("company")}
+              className={cn(
+                "inline-flex items-center gap-2 rounded-xl px-4 py-2.5 text-xs sm:text-sm font-bold transition-all cursor-pointer",
+                mainTab === "company"
+                  ? "bg-emerald-500 text-white shadow-md shadow-emerald-500/20"
+                  : "bg-card text-muted-foreground border border-border hover:bg-muted hover:text-foreground"
+              )}
+            >
+              <Building2 className="size-4" />
+              <span>Định Giá & RNAV Độc Quyền</span>
+              <span
+                className={cn(
+                  "rounded-full px-2 py-0.5 text-[10px] font-mono font-bold",
+                  mainTab === "company"
+                    ? "bg-white/20 text-white"
+                    : "bg-muted text-muted-foreground"
+                )}
+              >
+                {reports.length}
+              </span>
+            </button>
+          </div>
         </div>
 
-        {/* Trạng thái loading */}
-        {loading ? (
-          <div className="py-16 text-center text-muted-foreground text-sm">
-            <div className="inline-block size-6 border-2 border-emerald-500 border-t-transparent rounded-full animate-spin mb-2"></div>
-            <p>Đang tải dữ liệu báo cáo...</p>
-          </div>
+        {/* NỘI DUNG THEO TAB ĐƯỢC CHỌN */}
+        {mainTab === "industry" ? (
+          <IndustryReportsTab />
         ) : (
-          /* Danh sách thẻ báo cáo */
-          <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
-            {filteredAndSortedReports.length > 0 ? (
-              filteredAndSortedReports.map((report) => {
-                const upside = report.upside;
-                const isSpecial = report.categoryKey === "macro_commodity";
+          <div className="flex flex-col gap-5">
+            {/* Thanh công cụ tìm kiếm & sắp xếp cho Báo cáo doanh nghiệp */}
+            <div className="flex flex-col sm:flex-row gap-3">
+              <div className="relative flex-1">
+                <Search className="pointer-events-none absolute left-3.5 top-1/2 size-4 -translate-y-1/2 text-muted-foreground" />
+                <input
+                  type="text"
+                  placeholder="Tìm nhanh theo Mã CK (SNZ, VNF, LHG, HPG...) hoặc tên bài viết..."
+                  className="h-10 w-full rounded-xl border border-border bg-card pl-10 pr-4 text-sm text-foreground outline-none transition-colors placeholder:text-muted-foreground focus:border-emerald-500/50 focus:ring-2 focus:ring-emerald-500/20"
+                  value={search}
+                  onChange={(e) => setSearch(e.target.value)}
+                />
+              </div>
 
-                if (isSpecial) {
+              <div className="flex items-center gap-2">
+                <select
+                  value={sortBy}
+                  onChange={(e) => setSortBy(e.target.value as "newest" | "oldest" | "upside")}
+                  className="h-10 rounded-xl border border-border bg-card px-3 pr-8 text-xs sm:text-sm font-medium text-foreground outline-none transition-colors cursor-pointer hover:border-border/80 focus:border-emerald-500"
+                >
+                  <option value="newest">📅 Mới cập nhật nhất</option>
+                  <option value="oldest">📅 Cũ nhất</option>
+                  <option value="upside">📈 Upside cao nhất</option>
+                </select>
+              </div>
+            </div>
+
+            {/* Thanh Tab phân loại ngành cho báo cáo độc quyền */}
+            <div className="overflow-x-auto pb-1 scrollbar-none">
+              <div className="flex items-center gap-1.5 min-w-max">
+                {CATEGORY_TABS.map((t) => {
+                  const count = tabCounts[t.key] ?? 0;
+                  const active = tab === t.key;
                   return (
-                    <Link
-                      key={report.driveDocId}
-                      href={`/bao-cao/${report.driveDocId}`}
-                      className="group flex flex-col justify-between rounded-xl border border-border bg-card p-4 transition-all duration-200 hover:-translate-y-0.5 hover:border-emerald-500/50 hover:shadow-md"
+                    <button
+                      key={t.key}
+                      type="button"
+                      onClick={() => setTab(t.key)}
+                      className={cn(
+                        "inline-flex items-center gap-1.5 rounded-lg px-3 py-1.5 text-xs font-semibold transition-all cursor-pointer",
+                        active
+                          ? "bg-emerald-500/20 text-emerald-400 border border-emerald-500/40 shadow-sm"
+                          : "bg-card/50 text-muted-foreground border border-border/60 hover:bg-card hover:text-foreground"
+                      )}
                     >
-                      <div>
-                        <div className="mb-2 flex items-center justify-between gap-2">
-                          <span
-                            className={cn(
-                              "rounded-md border px-2 py-0.5 text-[11px] font-bold uppercase",
-                              report.badgeClass
-                            )}
-                          >
-                            {report.categoryLabel}
-                          </span>
-                          <span className="text-[11px] text-muted-foreground font-mono">
-                            {report.date}
-                          </span>
-                        </div>
-                        <h2 className="text-sm font-bold text-foreground leading-snug group-hover:text-emerald-400 transition-colors">
-                          {report.title}
-                        </h2>
-                        {report.summary && (
-                          <p className="mt-2 text-xs text-muted-foreground line-clamp-2 leading-relaxed">
-                            {report.summary}
-                          </p>
+                      {t.label}
+                      <span
+                        className={cn(
+                          "rounded-full px-1.5 py-0.2 text-[10px] font-mono font-medium",
+                          active ? "bg-emerald-500/30 text-emerald-300" : "bg-muted text-muted-foreground"
                         )}
-                      </div>
-                    </Link>
+                      >
+                        {count}
+                      </span>
+                    </button>
                   );
-                }
+                })}
+              </div>
+            </div>
 
-                return (
-                  <Link
-                    key={report.driveDocId}
-                    href={`/bao-cao/${report.driveDocId}`}
-                    className="group flex flex-col justify-between rounded-xl border border-border bg-card p-4 transition-all duration-200 hover:-translate-y-0.5 hover:border-emerald-500/50 hover:shadow-md"
-                  >
-                    <div>
-                      <div className="mb-2 flex items-center justify-between gap-2">
-                        <div className="flex items-center gap-1.5">
-                          {report.ticker && (
-                            <span className="rounded-md border border-emerald-500/30 bg-emerald-500/10 px-2 py-0.5 font-mono text-xs font-bold text-emerald-400">
-                              {report.ticker}
-                            </span>
-                          )}
-                          <span
-                            className={cn(
-                              "rounded-md border px-2 py-0.5 text-[10px] font-semibold",
-                              report.badgeClass
-                            )}
-                          >
-                            {report.categoryLabel}
-                          </span>
-                        </div>
-                        <span className="text-[11px] text-muted-foreground font-mono">
-                          {report.date}
-                        </span>
-                      </div>
+            {/* Hiển thị số lượng */}
+            <div className="flex items-center justify-between text-xs text-muted-foreground font-medium">
+              <span>
+                Hiển thị <strong>{filteredAndSortedReports.length}</strong> / {reports.length} bài phân tích
+              </span>
+              {tab !== "all" && (
+                <button
+                  type="button"
+                  onClick={() => setTab("all")}
+                  className="text-emerald-400 hover:underline cursor-pointer"
+                >
+                  Xóa bộ lọc danh mục
+                </button>
+              )}
+            </div>
 
-                      <h2 className="text-sm font-bold text-foreground leading-snug group-hover:text-emerald-400 transition-colors">
-                        {report.title}
-                      </h2>
-                    </div>
-
-                    {report.targetPrice != null && (
-                      <div className="mt-3.5 flex items-center justify-between border-t border-border/50 pt-2.5 text-xs font-medium">
-                        <span className="text-muted-foreground">
-                          Giá MT:{" "}
-                          <strong className="font-mono text-foreground font-bold">
-                            {fmtPrice(report.targetPrice)}
-                          </strong>
-                        </span>
-                        {upside != null && (
-                          <span
-                            className={cn(
-                              "rounded-md border px-1.5 py-0.5 font-mono text-xs font-bold",
-                              upside >= 0
-                                ? "border-emerald-500/30 bg-emerald-500/10 text-emerald-400"
-                                : "border-red-500/30 bg-red-500/10 text-red-400"
-                            )}
-                          >
-                            {fmtPct(upside)}
-                          </span>
-                        )}
-                      </div>
-                    )}
-                  </Link>
-                );
-              })
+            {/* Danh sách thẻ báo cáo */}
+            {loading ? (
+              <div className="py-16 text-center text-muted-foreground text-sm">
+                <div className="inline-block size-6 border-2 border-emerald-500 border-t-transparent rounded-full animate-spin mb-2"></div>
+                <p>Đang tải dữ liệu báo cáo...</p>
+              </div>
             ) : (
-              <div className="col-span-full rounded-2xl border border-border bg-card p-10 text-center text-sm text-muted-foreground">
-                <FileText className="mx-auto mb-2 size-8 text-muted-foreground/50" />
-                Không tìm thấy báo cáo phù hợp trong danh mục được chọn.
+              <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+                {filteredAndSortedReports.length > 0 ? (
+                  filteredAndSortedReports.map((report) => {
+                    const upside = report.upside;
+                    const isSpecial = report.categoryKey === "macro_commodity";
+
+                    if (isSpecial) {
+                      return (
+                        <Link
+                          key={report.driveDocId}
+                          href={`/bao-cao/${report.driveDocId}`}
+                          className="group flex flex-col justify-between rounded-xl border border-border bg-card p-4 transition-all duration-200 hover:-translate-y-0.5 hover:border-emerald-500/50 hover:shadow-md"
+                        >
+                          <div>
+                            <div className="mb-2 flex items-center justify-between gap-2">
+                              <span
+                                className={cn(
+                                  "rounded-md border px-2 py-0.5 text-[11px] font-bold uppercase",
+                                  report.badgeClass
+                                )}
+                              >
+                                {report.categoryLabel}
+                              </span>
+                              <span className="text-[11px] text-muted-foreground font-mono">
+                                {report.date}
+                              </span>
+                            </div>
+                            <h2 className="text-sm font-bold text-foreground leading-snug group-hover:text-emerald-400 transition-colors">
+                              {report.title}
+                            </h2>
+                            {report.summary && (
+                              <p className="mt-2 text-xs text-muted-foreground line-clamp-2 leading-relaxed">
+                                {report.summary}
+                              </p>
+                            )}
+                          </div>
+                        </Link>
+                      );
+                    }
+
+                    return (
+                      <Link
+                        key={report.driveDocId}
+                        href={`/bao-cao/${report.driveDocId}`}
+                        className="group flex flex-col justify-between rounded-xl border border-border bg-card p-4 transition-all duration-200 hover:-translate-y-0.5 hover:border-emerald-500/50 hover:shadow-md"
+                      >
+                        <div>
+                          <div className="mb-2 flex items-center justify-between gap-2">
+                            <div className="flex items-center gap-1.5">
+                              {report.ticker && (
+                                <span className="rounded-md border border-emerald-500/30 bg-emerald-500/10 px-2 py-0.5 font-mono text-xs font-bold text-emerald-400">
+                                  {report.ticker}
+                                </span>
+                              )}
+                              <span
+                                className={cn(
+                                  "rounded-md border px-2 py-0.5 text-[10px] font-semibold",
+                                  report.badgeClass
+                                )}
+                              >
+                                {report.categoryLabel}
+                              </span>
+                            </div>
+                            <span className="text-[11px] text-muted-foreground font-mono">
+                              {report.date}
+                            </span>
+                          </div>
+
+                          <h2 className="text-sm font-bold text-foreground leading-snug group-hover:text-emerald-400 transition-colors">
+                            {report.title}
+                          </h2>
+                        </div>
+
+                        {report.targetPrice != null && (
+                          <div className="mt-3.5 flex items-center justify-between border-t border-border/50 pt-2.5 text-xs font-medium">
+                            <span className="text-muted-foreground">
+                              Giá MT:{" "}
+                              <strong className="font-mono text-foreground font-bold">
+                                {fmtPrice(report.targetPrice)}
+                              </strong>
+                            </span>
+                            {upside != null && (
+                              <span
+                                className={cn(
+                                  "rounded-md border px-1.5 py-0.5 font-mono text-xs font-bold",
+                                  upside >= 0
+                                    ? "border-emerald-500/30 bg-emerald-500/10 text-emerald-400"
+                                    : "border-red-500/30 bg-red-500/10 text-red-400"
+                                )}
+                              >
+                                {fmtPct(upside)}
+                              </span>
+                            )}
+                          </div>
+                        )}
+                      </Link>
+                    );
+                  })
+                ) : (
+                  <div className="col-span-full rounded-2xl border border-border bg-card p-10 text-center text-sm text-muted-foreground">
+                    <FileText className="mx-auto mb-2 size-8 text-muted-foreground/50" />
+                    Không tìm thấy bài viết phù hợp trong danh mục được chọn.
+                  </div>
+                )}
               </div>
             )}
           </div>
