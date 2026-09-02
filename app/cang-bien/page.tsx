@@ -7,12 +7,14 @@ import {
   getNationalMap,
   getNationalTraffic,
   getAllStocksIntel,
+  getFreightRates,
   formatDWT,
   formatCalls,
 } from '@/lib/maritime'
 import { PortAuthoritiesStrip } from '@/components/cang-bien/PortAuthoritiesStrip'
 import { MaritimeStockGrid } from '@/components/cang-bien/MaritimeStockGrid'
 import { LivePortCallsTable } from '@/components/cang-bien/LivePortCallsTable'
+import { FreightRatesChart } from '@/components/cang-bien/FreightRatesChart'
 import {
   Anchor,
   Ship,
@@ -41,6 +43,7 @@ export default function CangBienPage() {
   const mapData = getNationalMap()
   const trafficData = getNationalTraffic()
   const stocksIntel = getAllStocksIntel()
+  const freightData = getFreightRates()
 
   const ports = trafficData?.ports || summary?.port_authorities || []
   const stocks = summary?.stocks || []
@@ -197,9 +200,17 @@ export default function CangBienPage() {
           <MaritimeStockGrid stocks={stocks} stocksIntel={stocksIntel} />
         </section>
 
-        {/* Section 2: Live Port Calls Table */}
-        <section className="space-y-4">
-          <LivePortCallsTable calls={liveCalls} />
+        {/* Section 2: International Freight Rates & Live Port Calls Grid */}
+        <section className="grid grid-cols-1 xl:grid-cols-12 gap-6 items-start">
+          {/* Left: Freight Rates Intelligence Card */}
+          <div className="xl:col-span-5 space-y-4">
+            <FreightRatesChart freightData={freightData} />
+          </div>
+
+          {/* Right: Live Port Calls Table */}
+          <div className="xl:col-span-7 space-y-4">
+            <LivePortCallsTable calls={liveCalls} />
+          </div>
         </section>
 
         {/* Section 3: 15 Port Authorities Summary (Collapsible) */}

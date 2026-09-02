@@ -67,5 +67,5 @@ jobs:
         run: |
           git config --global user.name 'github-actions[bot]'
           git config --global user.email 'github-actions[bot]@users.noreply.github.com'
-          git add data/longlive_indices.json data/longlive_manifest.json data/maritime/dashboard_summary.json data/maritime.db
+          git add data/longlive_indices.json data/longlive_manifest.json data/maritime/dashboard_summary.json data/maritime/freight_rates.json data/maritime.db
           git diff --quiet && git diff --staged --quiet || (git commit -m "chore(data): auto sync market & maritime live schedules $(date +'%Y-%m-%d %H:%M')" && git push)

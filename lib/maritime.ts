@@ -73,3 +73,17 @@ export function getStockIntel(ticker: string): StockIntelDetail | null {
   const upper = ticker.toUpperCase()
   return all[upper] || null
 }
+
+export function getFreightRates(): import('./maritime-types').FreightRatesData | null {
+  const filePath = path.join(DATA_DIR, 'freight_rates.json')
+  if (!fs.existsSync(filePath)) {
+    return null
+  }
+  try {
+    const raw = fs.readFileSync(filePath, 'utf-8')
+    return JSON.parse(raw)
+  } catch (error) {
+    console.error('Error reading freight_rates.json:', error)
+    return null
+  }
+}

@@ -110,3 +110,20 @@ CREATE INDEX IF NOT EXISTS idx_port_calls_date ON port_calls(call_date);
 CREATE INDEX IF NOT EXISTS idx_port_calls_vessel ON port_calls(vessel_name);
 CREATE INDEX IF NOT EXISTS idx_port_calls_auth ON port_calls(authority_id);
 CREATE INDEX IF NOT EXISTS idx_stock_metrics_ym ON stock_metrics_monthly(period_ym);
+
+-- Freight Rates Intelligence Schema (BDI, BCTI, BDTI, Drewry WCI, SCFI)
+CREATE TABLE IF NOT EXISTS freight_indices (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    symbol TEXT NOT NULL,              -- 'BDI', 'BCTI', 'BDTI', 'WCI', 'SCFI'
+    name TEXT NOT NULL,                -- 'Baltic Dry Index', 'Baltic Clean Tanker', 'Baltic Dirty Tanker', 'Drewry World Container Index'
+    category TEXT NOT NULL,            -- 'dry_bulk', 'clean_tanker', 'dirty_tanker', 'container'
+    date TEXT NOT NULL,                -- 'YYYY-MM-DD'
+    value REAL NOT NULL,               -- Current index value
+    change_val REAL DEFAULT 0.0,       -- Change value
+    change_pct REAL DEFAULT 0.0,       -- Change %
+    unit TEXT DEFAULT 'points',        -- 'pts' or 'USD/FEU'
+    source TEXT DEFAULT 'drewry_baltic',
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    UNIQUE(symbol, date)
+);
+CREATE INDEX IF NOT EXISTS idx_freight_symbol_date ON freight_indices(symbol, date);

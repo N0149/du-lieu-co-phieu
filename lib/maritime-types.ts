@@ -69,6 +69,36 @@ export interface NationalMapData {
   truongsa: { label: [number, number]; dots: [number, number][] }
 }
 
+export interface FreightIndexHistoryPoint {
+  date: string
+  value: number
+  change_val: number
+  change_pct: number
+}
+
+export interface FreightIndexItem {
+  symbol: string
+  name: string
+  vietnamese_name: string
+  category: string
+  unit: string
+  affected_stocks: string[]
+  summary: string
+  source: string
+  latest_date: string
+  latest_value: number
+  previous_value: number
+  change_val: number
+  change_pct: number
+  history: FreightIndexHistoryPoint[]
+}
+
+export interface FreightRatesData {
+  status: string
+  updated_at: string
+  indices: Record<string, FreightIndexItem>
+}
+
 export interface StockIntelDetail {
   ticker: string
   name: string

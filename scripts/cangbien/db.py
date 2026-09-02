@@ -178,3 +178,26 @@ def upsert_port_authority_metric_monthly(conn: sqlite3.Connection, data: Dict[st
         dwt=excluded.dwt;
     """
     conn.execute(sql, data)
+
+def upsert_freight_index(conn: sqlite3.Connection, data: Dict[str, Any]):
+    sql = """
+    INSERT INTO freight_indices (symbol, name, category, date, value, change_val, change_pct, unit, source)
+    VALUES (:symbol, :name, :category, :date, :value, :change_val, :change_pct, :unit, :source)
+    ON CONFLICT(symbol, date) DO UPDATE SET
+        value=excluded.value,
+        change_val=excluded.change_val,
+        change_pct=excluded.change_pct,
+        unit=excluded.unit,
+        source=excluded.source;
+    """
+    conn.execute(sql, data)
+
+def get_freight_series(conn: sqlite3.Connection, symbol: str, limit: int = 180):
+    cursor = conn.execute("""
+        SELECT symbol, name, category, date, value, change_val, change_pct, unit, source
+        FROM freight_indices
+        WHERE symbol = ?
+        ORDER BY date ASC
+        LIMIT ?
+    """, (symbol.upper(), limit))
+    return [dict(row) for row in cursor.fetchall()]

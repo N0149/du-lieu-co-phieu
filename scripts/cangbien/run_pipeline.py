@@ -16,6 +16,7 @@ from db import init_db, get_connection, dedupe_port_calls
 from dlcb_collector import sync_national_data, sync_stock_data
 from cvhh_haiphong_scraper import scrape_haiphong_day, save_records as save_hp_records
 from pilot_south_scraper import scrape_pilot_south, save_records as save_south_records
+from crawl_freight_rates import run_freight_crawler
 
 DATA_DIR = Path(__file__).resolve().parent.parent.parent / "data" / "maritime"
 
@@ -118,8 +119,15 @@ def run_all():
     except Exception as e:
         print(f"[Pilot South] Error scraping pilot south: {e}")
         
-    # Step 5: Export JSON for Next.js
-    print("\n>>> Step 5: Exporting Unified JSON Snapshot...")
+    # Step 5: Scrape Freight Rates & Global Indices
+    print("\n>>> Step 5: Crawling Global Freight Rates (BDI, WCI, BDTI, BCTI)...")
+    try:
+        run_freight_crawler()
+    except Exception as e:
+        print(f"[Freight] Error crawling freight rates: {e}")
+        
+    # Step 6: Export JSON for Next.js
+    print("\n>>> Step 6: Exporting Unified JSON Snapshot...")
     export_summary_json()
     
     print("\n" + "=" * 60)
