@@ -2,6 +2,7 @@ import React from 'react'
 import { Metadata } from 'next'
 import Link from 'next/link'
 import { SiteHeader } from '@/components/site-header'
+import { MaritimeSubNav } from '@/components/cang-bien/MaritimeSubNav'
 import { Database, ShieldCheck, RefreshCw, CheckCircle, ChevronRight, ArrowLeft, Anchor, Cpu, Ship, LayoutGrid, Search, Lock, Layers } from 'lucide-react'
 
 export const metadata: Metadata = {
@@ -37,29 +38,7 @@ export default function NguonDuLieuPage() {
             </div>
 
             {/* Maritime Sub-navigation Tabs */}
-            <div className="flex flex-wrap items-center gap-1.5 bg-slate-900/90 p-1 rounded-xl border border-slate-800 text-xs font-semibold shadow-inner">
-              <Link
-                href="/cang-bien"
-                className="inline-flex items-center gap-1.5 rounded-lg px-3.5 py-1.5 text-slate-400 hover:bg-slate-800 hover:text-slate-200 transition-all font-bold"
-              >
-                <LayoutGrid className="size-3.5" />
-                <span>Tổng quan &amp; Cổ phiếu</span>
-              </Link>
-              <Link
-                href="/cang-bien/tau"
-                className="inline-flex items-center gap-1.5 rounded-lg px-3.5 py-1.5 text-slate-400 hover:bg-slate-800 hover:text-slate-200 transition-all font-bold"
-              >
-                <Search className="size-3.5 text-teal-400" />
-                <span>Tra cứu tàu</span>
-              </Link>
-              <Link
-                href="/cang-bien/nguon-du-lieu"
-                className="inline-flex items-center gap-1.5 rounded-lg bg-gradient-to-r from-teal-400 to-emerald-400 text-slate-950 px-3.5 py-1.5 font-black shadow-md shadow-teal-500/20"
-              >
-                <Database className="size-3.5" />
-                <span>Nguồn dữ liệu</span>
-              </Link>
-            </div>
+            <MaritimeSubNav activeTab="nguon-du-lieu" />
           </div>
 
           <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">

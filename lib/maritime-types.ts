@@ -90,6 +90,14 @@ export interface FreightIndexItem {
   previous_value: number
   change_val: number
   change_pct: number
+  stats_52w?: {
+    high: number
+    low: number
+  }
+  stats_10y?: {
+    all_time_high: number
+    all_time_low: number
+  }
   history: FreightIndexHistoryPoint[]
 }
 

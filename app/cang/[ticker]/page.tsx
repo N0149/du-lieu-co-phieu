@@ -12,6 +12,7 @@ import {
 } from '@/lib/maritime'
 import { PortThroughputChart } from '@/components/cang-bien/PortThroughputChart'
 import { YoYThroughputComparison } from '@/components/cang-bien/YoYThroughputComparison'
+import { MaritimeSubNav } from '@/components/cang-bien/MaritimeSubNav'
 import {
   Ship,
   Anchor,
@@ -108,29 +109,7 @@ export default async function StockPortDetailPage({ params }: Props) {
             </div>
 
             {/* Maritime Sub-navigation Tabs */}
-            <div className="flex flex-wrap items-center gap-1.5 bg-slate-900/90 p-1 rounded-xl border border-slate-800 text-xs font-semibold shadow-inner">
-              <Link
-                href="/cang-bien"
-                className="inline-flex items-center gap-1.5 rounded-lg px-3.5 py-1.5 text-slate-400 hover:bg-slate-800 hover:text-slate-200 transition-all font-bold"
-              >
-                <LayoutGrid className="size-3.5" />
-                <span>Tất cả cảng</span>
-              </Link>
-              <Link
-                href="/cang-bien/tau"
-                className="inline-flex items-center gap-1.5 rounded-lg px-3.5 py-1.5 text-slate-400 hover:bg-slate-800 hover:text-slate-200 transition-all font-bold"
-              >
-                <Search className="size-3.5 text-teal-400" />
-                <span>Tra cứu tàu</span>
-              </Link>
-              <Link
-                href="/cang-bien/nguon-du-lieu"
-                className="inline-flex items-center gap-1.5 rounded-lg px-3.5 py-1.5 text-slate-400 hover:bg-slate-800 hover:text-slate-200 transition-all font-bold"
-              >
-                <Database className="size-3.5 text-sky-400" />
-                <span>Nguồn dữ liệu</span>
-              </Link>
-            </div>
+            <MaritimeSubNav activeTab="tong-quan" />
           </div>
 
           {/* Title Row */}

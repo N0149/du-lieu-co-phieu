@@ -14,18 +14,28 @@ import {
   ExternalLink,
   ChevronRight,
   Zap,
+  BarChart3,
+  Flame,
+  ArrowUpRight,
+  ArrowDownRight,
 } from 'lucide-react'
 import { FreightRatesData, FreightIndexItem } from '@/lib/maritime-types'
 
 interface Props {
   freightData: FreightRatesData | null
+  initialSymbol?: string
+  fullPageMode?: boolean
 }
 
-export function FreightRatesChart({ freightData }: Props) {
+export function FreightRatesChart({
+  freightData,
+  initialSymbol = 'BDI',
+  fullPageMode = false,
+}: Props) {
   const indices = freightData?.indices || {}
   const symbolList = ['BDI', 'WCI', 'BDTI', 'BCTI']
-  const [selectedSymbol, setSelectedSymbol] = useState<string>('BDI')
-  const [timeRange, setTimeRange] = useState<'1M' | '3M' | '6M' | '1Y'>('6M')
+  const [selectedSymbol, setSelectedSymbol] = useState<string>(initialSymbol)
+  const [timeRange, setTimeRange] = useState<'1M' | '3M' | '6M' | '1Y' | '3Y' | '5Y' | '10Y'>('1Y')
   const [hoveredPoint, setHoveredPoint] = useState<{
     date: string
     value: number
@@ -42,30 +52,41 @@ export function FreightRatesChart({ freightData }: Props) {
     const all = activeIndex.history
     const count =
       timeRange === '1M'
-        ? 22
+        ? 5
         : timeRange === '3M'
-        ? 65
+        ? 13
         : timeRange === '6M'
-        ? 130
+        ? 26
+        : timeRange === '1Y'
+        ? 52
+        : timeRange === '3Y'
+        ? 156
+        : timeRange === '5Y'
+        ? 260
         : all.length
     return all.slice(-count)
   }, [activeIndex, timeRange])
 
   // SVG dimensions
-  const width = 680
-  const height = 230
-  const padding = { top: 20, right: 45, bottom: 28, left: 15 }
+  const width = fullPageMode ? 1000 : 700
+  const height = fullPageMode ? 360 : 250
+  const padding = {
+    top: 25,
+    right: 55,
+    bottom: 35,
+    left: 20,
+  }
   const chartW = width - padding.left - padding.right
   const chartH = height - padding.top - padding.bottom
 
-  const { minVal, maxVal, pathD, areaD, points } = useMemo(() => {
+  const { minVal, maxVal, pathD, areaD, points, dateLabels } = useMemo(() => {
     if (!historyData.length) {
-      return { minVal: 0, maxVal: 0, pathD: '', areaD: '', points: [] }
+      return { minVal: 0, maxVal: 0, pathD: '', areaD: '', points: [], dateLabels: [] }
     }
     const vals = historyData.map((d) => d.value)
     const rawMin = Math.min(...vals)
     const rawMax = Math.max(...vals)
-    const buffer = (rawMax - rawMin) * 0.1 || 10
+    const buffer = (rawMax - rawMin) * 0.08 || 10
     const min = Math.max(0, Math.floor(rawMin - buffer))
     const max = Math.ceil(rawMax + buffer)
 
@@ -80,13 +101,26 @@ export function FreightRatesChart({ freightData }: Props) {
       height - padding.bottom
     } Z`
 
-    return { minVal: min, maxVal: max, pathD: path, areaD: area, points: pts }
+    // Generate ~5 evenly spaced date labels along X axis
+    const labelIndices = [
+      0,
+      Math.floor(pts.length * 0.25),
+      Math.floor(pts.length * 0.5),
+      Math.floor(pts.length * 0.75),
+      pts.length - 1,
+    ]
+    const labels = labelIndices.map((idx) => {
+      const pt = pts[idx]
+      return { x: pt.x, text: pt.date }
+    })
+
+    return { minVal: min, maxVal: max, pathD: path, areaD: area, points: pts, dateLabels: labels }
   }, [historyData, chartW, chartH, padding.left, padding.top, padding.bottom, height])
 
   if (!activeIndex) {
     return (
-      <div className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 text-center text-xs text-slate-400">
-        Đang nạp dữ liệu cước vận tải biển quốc tế...
+      <div className="rounded-2xl border border-slate-800 bg-slate-900/60 p-8 text-center text-xs text-slate-400">
+        Đang nạp dữ liệu chỉ số cước vận tải biển quốc tế...
       </div>
     )
   }
@@ -97,29 +131,39 @@ export function FreightRatesChart({ freightData }: Props) {
       ? `$${activeIndex.latest_value.toLocaleString('vi-VN')}`
       : `${activeIndex.latest_value.toLocaleString('vi-VN')} pts`
 
+  const rangeButtons: Array<'1M' | '3M' | '6M' | '1Y' | '3Y' | '5Y' | '10Y'> = [
+    '1M',
+    '3M',
+    '6M',
+    '1Y',
+    '3Y',
+    '5Y',
+    '10Y',
+  ]
+
   return (
-    <div className="rounded-2xl border border-slate-800 bg-gradient-to-b from-slate-900/95 via-slate-900/85 to-slate-950/95 p-4 sm:p-5 shadow-2xl shadow-black/40 backdrop-blur-md flex flex-col justify-between space-y-4">
+    <div className="rounded-2xl border border-slate-800 bg-gradient-to-b from-slate-900/95 via-slate-900/85 to-slate-950/95 p-5 sm:p-7 shadow-2xl shadow-black/40 backdrop-blur-md space-y-6">
       {/* Top Header & Tag */}
-      <div className="flex flex-wrap items-center justify-between gap-3 border-b border-slate-800/80 pb-3">
-        <div className="flex items-center gap-2">
-          <span className="flex size-7 items-center justify-center rounded-lg bg-teal-500/15 text-teal-400 border border-teal-500/30">
-            <Globe2 className="size-4" />
+      <div className="flex flex-wrap items-center justify-between gap-4 border-b border-slate-800/80 pb-4">
+        <div className="flex items-center gap-3">
+          <span className="flex size-9 items-center justify-center rounded-xl bg-teal-500/15 text-teal-400 border border-teal-500/30 shadow-xs">
+            <Globe2 className="size-5" />
           </span>
           <div>
-            <h3 className="text-sm sm:text-base font-extrabold text-white tracking-tight flex items-center gap-1.5">
-              <span>Chỉ Số Cước Vận Tải Biển Quốc Tế</span>
-              <span className="text-[10px] font-bold text-teal-400 bg-teal-500/10 px-2 py-0.5 rounded-full border border-teal-500/20">
-                LIVE
+            <h2 className="text-base sm:text-xl font-extrabold text-white tracking-tight flex items-center gap-2">
+              <span>{activeIndex.name}</span>
+              <span className="text-xs font-black text-teal-400 bg-teal-500/15 px-2.5 py-0.5 rounded-full border border-teal-500/30">
+                {activeIndex.symbol}
               </span>
-            </h3>
-            <p className="text-[11px] text-slate-400 mt-0.5">
-              Đo lường chi phí thuê tàu hàng rời, dầu khí &amp; giá cước container giao ngay
+            </h2>
+            <p className="text-xs text-slate-400 mt-0.5 font-medium">
+              {activeIndex.vietnamese_name} — Cập nhật từ {activeIndex.source}
             </p>
           </div>
         </div>
 
         {/* Index Switcher Tabs */}
-        <div className="flex flex-wrap items-center gap-1 bg-slate-950/80 p-1 rounded-xl border border-slate-800/90 text-xs font-bold">
+        <div className="flex flex-wrap items-center gap-1.5 bg-slate-950/90 p-1 rounded-xl border border-slate-800/90 text-xs font-bold">
           {symbolList.map((sym) => {
             const item = indices[sym]
             if (!item) return null
@@ -131,10 +175,10 @@ export function FreightRatesChart({ freightData }: Props) {
                   setSelectedSymbol(sym)
                   setHoveredPoint(null)
                 }}
-                className={`px-2.5 py-1 rounded-lg text-xs font-extrabold transition-all cursor-pointer ${
+                className={`px-3 py-1.5 rounded-lg text-xs font-black transition-all cursor-pointer ${
                   isActive
-                    ? 'bg-gradient-to-r from-teal-500 to-emerald-500 text-slate-950 shadow-md shadow-teal-500/20'
-                    : 'text-slate-400 hover:text-slate-200 hover:bg-slate-800/60'
+                    ? 'bg-gradient-to-r from-teal-400 to-emerald-400 text-slate-950 shadow-md shadow-teal-500/20'
+                    : 'text-slate-400 hover:text-slate-200 hover:bg-slate-800/70'
                 }`}
               >
                 {sym}
@@ -144,79 +188,130 @@ export function FreightRatesChart({ freightData }: Props) {
         </div>
       </div>
 
-      {/* KPI Metric Readout & Affected Stocks Bar */}
-      <div className="grid grid-cols-1 sm:grid-cols-12 gap-3.5 items-center bg-slate-950/70 p-3.5 rounded-xl border border-slate-800/70">
-        {/* Left: Value & Daily Change */}
-        <div className="sm:col-span-6 flex items-baseline gap-3">
-          <div>
-            <span className="text-[11px] font-bold text-slate-400 block font-sans">
-              {activeIndex.vietnamese_name} ({activeIndex.symbol})
-            </span>
-            <div className="text-2xl sm:text-3xl font-black text-transparent bg-clip-text bg-gradient-to-r from-teal-300 via-cyan-300 to-emerald-300 font-mono tracking-tight mt-0.5">
-              {formattedVal}
-            </div>
+      {/* KPI Metric Readout & 52-Week Stats */}
+      <div className="grid grid-cols-2 lg:grid-cols-4 gap-3.5 bg-slate-950/80 p-4 sm:p-5 rounded-2xl border border-slate-800/80">
+        {/* Metric 1: Current Price */}
+        <div>
+          <span className="text-[11px] font-bold text-slate-400 block uppercase tracking-wider">
+            Điểm số hiện tại ({activeIndex.latest_date})
+          </span>
+          <div className="text-2xl sm:text-4xl font-black text-transparent bg-clip-text bg-gradient-to-r from-teal-300 via-cyan-300 to-emerald-300 font-mono tracking-tight mt-1">
+            {formattedVal}
           </div>
-
-          <div
-            className={`inline-flex items-center gap-1 px-2.5 py-1 rounded-lg text-xs font-black border ${
-              isPositive
-                ? 'bg-emerald-500/15 text-emerald-400 border-emerald-500/30'
-                : 'bg-rose-500/15 text-rose-400 border-rose-500/30'
-            }`}
-          >
-            {isPositive ? <TrendingUp className="size-3.5" /> : <TrendingDown className="size-3.5" />}
-            <span>
-              {isPositive ? '+' : ''}
-              {activeIndex.change_pct}%
+          <div className="flex items-center gap-1.5 mt-1">
+            <span
+              className={`inline-flex items-center gap-1 px-2 py-0.5 rounded-md text-[11px] font-black border ${
+                isPositive
+                  ? 'bg-emerald-500/15 text-emerald-400 border-emerald-500/30'
+                  : 'bg-rose-500/15 text-rose-400 border-rose-500/30'
+              }`}
+            >
+              {isPositive ? <TrendingUp className="size-3" /> : <TrendingDown className="size-3" />}
+              <span>
+                {isPositive ? '+' : ''}
+                {activeIndex.change_pct}%
+              </span>
+            </span>
+            <span className="text-[11px] font-mono text-slate-500">
+              ({isPositive ? '+' : ''}
+              {activeIndex.change_val})
             </span>
           </div>
         </div>
 
-        {/* Right: Affected Stocks Chips */}
-        <div className="sm:col-span-6 flex flex-col sm:items-end justify-center">
-          <span className="text-[10px] text-slate-400 font-semibold mb-1">
-            Cổ phiếu hưởng lợi trực tiếp:
+        {/* Metric 2: 52-Week Range */}
+        <div>
+          <span className="text-[11px] font-bold text-slate-400 block uppercase tracking-wider">
+            Biên độ 52 Tuần
+          </span>
+          <div className="text-sm font-extrabold text-slate-200 font-mono mt-1.5">
+            Thấp:{' '}
+            <strong className="text-slate-400">
+              {activeIndex.stats_52w?.low.toLocaleString('vi-VN') || '—'}
+            </strong>
+          </div>
+          <div className="text-sm font-extrabold text-slate-200 font-mono mt-0.5">
+            Cao:{' '}
+            <strong className="text-teal-300">
+              {activeIndex.stats_52w?.high.toLocaleString('vi-VN') || '—'}
+            </strong>
+          </div>
+          <span className="text-[10px] text-slate-500 block mt-1">1 năm gần nhất</span>
+        </div>
+
+        {/* Metric 3: 10-Year Record Extremes */}
+        <div>
+          <span className="text-[11px] font-bold text-slate-400 block uppercase tracking-wider">
+            Kỷ lục 10 Năm (2016-2026)
+          </span>
+          <div className="text-sm font-extrabold text-slate-200 font-mono mt-1.5 flex items-center gap-1">
+            <ArrowUpRight className="size-3.5 text-amber-400 shrink-0" />
+            <span>
+              Đỉnh: <strong className="text-amber-300 font-black">{activeIndex.stats_10y?.all_time_high.toLocaleString('vi-VN') || '—'}</strong>
+            </span>
+          </div>
+          <div className="text-sm font-extrabold text-slate-200 font-mono mt-0.5 flex items-center gap-1">
+            <ArrowDownRight className="size-3.5 text-sky-400 shrink-0" />
+            <span>
+              Đáy: <strong className="text-sky-300 font-black">{activeIndex.stats_10y?.all_time_low.toLocaleString('vi-VN') || '—'}</strong>
+            </span>
+          </div>
+          <span className="text-[10px] text-slate-500 block mt-1">Chu kỳ siêu bão cước</span>
+        </div>
+
+        {/* Metric 4: Affected Vietnamese Stocks */}
+        <div>
+          <span className="text-[11px] font-bold text-slate-400 block uppercase tracking-wider mb-2">
+            Cổ phiếu VN hưởng lợi trực tiếp
           </span>
           <div className="flex flex-wrap items-center gap-1.5">
             {activeIndex.affected_stocks.map((ticker) => (
               <Link
                 key={ticker}
-                href={ticker === 'HAH' || ticker === 'GMD' ? `/cang/${ticker.toLowerCase()}` : `/stock/${ticker.toUpperCase()}`}
-                className="inline-flex items-center gap-1 rounded-md bg-slate-800/90 border border-slate-700 px-2 py-0.5 text-[10px] font-black text-teal-300 hover:border-teal-500/50 hover:bg-slate-800 transition-colors shadow-xs"
+                href={
+                  ticker === 'HAH' || ticker === 'GMD'
+                    ? `/cang/${ticker.toLowerCase()}`
+                    : `/stock/${ticker.toUpperCase()}`
+                }
+                className="inline-flex items-center gap-1 rounded-lg bg-slate-800/90 border border-slate-700 px-2.5 py-1 text-xs font-black text-teal-300 hover:border-teal-500/50 hover:bg-slate-800 transition-colors shadow-xs"
               >
                 <span>{ticker}</span>
-                <ChevronRight className="size-2.5 text-slate-400" />
+                <ChevronRight className="size-3 text-slate-400" />
               </Link>
             ))}
           </div>
+          <span className="text-[10px] text-slate-500 block mt-1.5">Bấm mã để xem phân tích</span>
         </div>
       </div>
 
-      {/* Interactive SVG Chart */}
-      <div className="space-y-2">
-        <div className="flex items-center justify-between text-xs">
+      {/* Interactive SVG Chart Section */}
+      <div className="space-y-3">
+        <div className="flex flex-wrap items-center justify-between gap-3 text-xs">
           <div className="flex items-center gap-2">
-            <span className="text-[11px] text-slate-400 font-medium">
-              Nguồn: <strong className="text-slate-300">{activeIndex.source}</strong>
+            <span className="text-xs text-slate-300 font-semibold">
+              Chuỗi thời gian:{' '}
+              <strong className="text-teal-400">
+                {historyData[0]?.date} ➔ {historyData[historyData.length - 1]?.date}
+              </strong>
             </span>
-            <span className="text-[10px] text-slate-500 font-mono">
-              ({activeIndex.latest_date})
+            <span className="text-[11px] text-slate-500 font-mono">
+              ({historyData.length} kỳ tuần/ngày)
             </span>
           </div>
 
           {/* Time Range Filter Buttons */}
-          <div className="flex items-center gap-1 bg-slate-950/60 p-0.5 rounded-lg border border-slate-800 text-[11px] font-bold">
-            {(['1M', '3M', '6M', '1Y'] as const).map((r) => (
+          <div className="flex items-center gap-1 bg-slate-950/80 p-1 rounded-xl border border-slate-800 text-xs font-bold shadow-inner">
+            {rangeButtons.map((r) => (
               <button
                 key={r}
                 onClick={() => {
                   setTimeRange(r)
                   setHoveredPoint(null)
                 }}
-                className={`px-2 py-0.5 rounded text-[10px] font-extrabold transition-all cursor-pointer ${
+                className={`px-3 py-1 rounded-lg text-xs font-black transition-all cursor-pointer ${
                   timeRange === r
-                    ? 'bg-teal-500/20 text-teal-300 border border-teal-500/40'
-                    : 'text-slate-400 hover:text-slate-200'
+                    ? 'bg-gradient-to-r from-teal-500 to-emerald-500 text-slate-950 shadow-md shadow-teal-500/20'
+                    : 'text-slate-400 hover:text-slate-200 hover:bg-slate-800/60'
                 }`}
               >
                 {r}
@@ -226,9 +321,8 @@ export function FreightRatesChart({ freightData }: Props) {
         </div>
 
         {/* SVG Container with Tooltip */}
-        <div className="relative w-full overflow-hidden rounded-xl border border-slate-800/70 bg-slate-950/80">
-          {/* Ambient background glow inside chart */}
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-32 bg-teal-500/5 rounded-full blur-2xl pointer-events-none" />
+        <div className="relative w-full overflow-hidden rounded-2xl border border-slate-800/80 bg-slate-950/90 shadow-inner">
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-48 bg-teal-500/5 rounded-full blur-3xl pointer-events-none" />
 
           <svg
             viewBox={`0 0 ${width} ${height}`}
@@ -237,7 +331,7 @@ export function FreightRatesChart({ freightData }: Props) {
           >
             <defs>
               <linearGradient id="freightAreaGradient" x1="0" y1="0" x2="0" y2="1">
-                <stop offset="0%" stopColor="#14b8a6" stopOpacity="0.3" />
+                <stop offset="0%" stopColor="#14b8a6" stopOpacity="0.32" />
                 <stop offset="60%" stopColor="#06b6d4" stopOpacity="0.08" />
                 <stop offset="100%" stopColor="#0f172a" stopOpacity="0" />
               </linearGradient>
@@ -264,11 +358,12 @@ export function FreightRatesChart({ freightData }: Props) {
                     strokeWidth="0.8"
                   />
                   <text
-                    x={width - padding.right + 6}
+                    x={width - padding.right + 8}
                     y={y + 3.5}
-                    fill="#64748b"
-                    fontSize="9.5"
+                    fill="#94a3b8"
+                    fontSize="10"
                     fontFamily="monospace"
+                    fontWeight="bold"
                   >
                     {val.toLocaleString('vi-VN')}
                   </text>
@@ -285,13 +380,28 @@ export function FreightRatesChart({ freightData }: Props) {
                 d={pathD}
                 fill="none"
                 stroke="url(#freightLineGradient)"
-                strokeWidth="2.4"
+                strokeWidth="2.6"
                 strokeLinecap="round"
                 strokeLinejoin="round"
               />
             )}
 
-            {/* Interactive Hover Point & Cursor */}
+            {/* X Axis Date Labels */}
+            {dateLabels.map((lbl, idx) => (
+              <text
+                key={idx}
+                x={lbl.x}
+                y={height - padding.bottom + 18}
+                textAnchor={idx === 0 ? 'start' : idx === dateLabels.length - 1 ? 'end' : 'middle'}
+                fill="#64748b"
+                fontSize="10"
+                fontFamily="monospace"
+              >
+                {lbl.text}
+              </text>
+            ))}
+
+            {/* Interactive Hover Point & Vertical Cursor Line */}
             {hoveredPoint && (
               <g>
                 <line
@@ -306,10 +416,10 @@ export function FreightRatesChart({ freightData }: Props) {
                 <circle
                   cx={hoveredPoint.x}
                   cy={hoveredPoint.y}
-                  r="4.5"
+                  r="5"
                   fill="#2dd4bf"
-                  stroke="#0f172a"
-                  strokeWidth="2"
+                  stroke="#020617"
+                  strokeWidth="2.5"
                 />
               </g>
             )}
@@ -335,14 +445,14 @@ export function FreightRatesChart({ freightData }: Props) {
           {/* Floating Tooltip Bubble */}
           {hoveredPoint && (
             <div
-              className="pointer-events-none absolute z-20 rounded-xl border border-teal-500/40 bg-slate-900/95 px-3 py-1.5 shadow-2xl shadow-black/80 backdrop-blur-md text-[11px] font-mono text-white transition-all transform -translate-x-1/2 -translate-y-full"
+              className="pointer-events-none absolute z-20 rounded-xl border border-teal-500/40 bg-slate-900/95 px-3.5 py-2 shadow-2xl shadow-black/90 backdrop-blur-md text-xs font-mono text-white transition-all transform -translate-x-1/2 -translate-y-full"
               style={{
                 left: `${(hoveredPoint.x / width) * 100}%`,
-                top: `${(hoveredPoint.y / height) * 100 - 8}%`,
+                top: `${(hoveredPoint.y / height) * 100 - 10}%`,
               }}
             >
               <div className="text-[10px] text-slate-400 font-sans">{hoveredPoint.date}</div>
-              <div className="font-bold text-teal-300">
+              <div className="text-sm font-black text-teal-300 mt-0.5">
                 {activeIndex.unit === 'USD/FEU'
                   ? `$${hoveredPoint.value.toLocaleString('vi-VN')}`
                   : `${hoveredPoint.value.toLocaleString('vi-VN')} pts`}
@@ -361,8 +471,8 @@ export function FreightRatesChart({ freightData }: Props) {
       </div>
 
       {/* Bottom Summary Note */}
-      <div className="flex items-start gap-2 pt-1 border-t border-slate-800/60 text-[11px] text-slate-400 leading-relaxed">
-        <Info className="size-3.5 text-teal-400 shrink-0 mt-0.5" />
+      <div className="flex items-start gap-2.5 pt-2 border-t border-slate-800/70 text-xs text-slate-400 leading-relaxed">
+        <Info className="size-4 text-teal-400 shrink-0 mt-0.5" />
         <p>{activeIndex.summary}</p>
       </div>
     </div>

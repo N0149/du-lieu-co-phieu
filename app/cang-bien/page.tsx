@@ -7,14 +7,13 @@ import {
   getNationalMap,
   getNationalTraffic,
   getAllStocksIntel,
-  getFreightRates,
   formatDWT,
   formatCalls,
 } from '@/lib/maritime'
 import { PortAuthoritiesStrip } from '@/components/cang-bien/PortAuthoritiesStrip'
 import { MaritimeStockGrid } from '@/components/cang-bien/MaritimeStockGrid'
 import { LivePortCallsTable } from '@/components/cang-bien/LivePortCallsTable'
-import { FreightRatesChart } from '@/components/cang-bien/FreightRatesChart'
+import { MaritimeSubNav } from '@/components/cang-bien/MaritimeSubNav'
 import {
   Anchor,
   Ship,
@@ -30,6 +29,7 @@ import {
   LayoutGrid,
   Sparkles,
   Zap,
+  Globe2,
 } from 'lucide-react'
 
 export const metadata: Metadata = {
@@ -43,7 +43,6 @@ export default function CangBienPage() {
   const mapData = getNationalMap()
   const trafficData = getNationalTraffic()
   const stocksIntel = getAllStocksIntel()
-  const freightData = getFreightRates()
 
   const ports = trafficData?.ports || summary?.port_authorities || []
   const stocks = summary?.stocks || []
@@ -80,29 +79,7 @@ export default function CangBienPage() {
             </div>
 
             {/* Maritime Sub-navigation Tabs */}
-            <div className="flex flex-wrap items-center gap-1.5 bg-slate-900/90 p-1 rounded-xl border border-slate-800 text-xs font-semibold shadow-inner">
-              <Link
-                href="/cang-bien"
-                className="inline-flex items-center gap-1.5 rounded-lg bg-gradient-to-r from-teal-400 to-emerald-400 text-slate-950 px-3.5 py-1.5 font-black shadow-md shadow-teal-500/20"
-              >
-                <LayoutGrid className="size-3.5" />
-                <span>Tổng quan &amp; Cổ phiếu</span>
-              </Link>
-              <Link
-                href="/cang-bien/tau"
-                className="inline-flex items-center gap-1.5 rounded-lg px-3.5 py-1.5 text-slate-400 hover:bg-slate-800 hover:text-slate-200 transition-all font-bold"
-              >
-                <Search className="size-3.5 text-teal-400" />
-                <span>Tra cứu tàu</span>
-              </Link>
-              <Link
-                href="/cang-bien/nguon-du-lieu"
-                className="inline-flex items-center gap-1.5 rounded-lg px-3.5 py-1.5 text-slate-400 hover:bg-slate-800 hover:text-slate-200 transition-all font-bold"
-              >
-                <Database className="size-3.5 text-sky-400" />
-                <span>Nguồn dữ liệu</span>
-              </Link>
-            </div>
+            <MaritimeSubNav activeTab="tong-quan" />
           </div>
 
           {/* Hero Titles */}
@@ -200,17 +177,33 @@ export default function CangBienPage() {
           <MaritimeStockGrid stocks={stocks} stocksIntel={stocksIntel} />
         </section>
 
-        {/* Section 2: International Freight Rates & Live Port Calls Grid */}
-        <section className="grid grid-cols-1 xl:grid-cols-12 gap-6 items-start">
-          {/* Left: Freight Rates Intelligence Card */}
-          <div className="xl:col-span-5 space-y-4">
-            <FreightRatesChart freightData={freightData} />
+        {/* Teaser Banner: Global Freight Rates Tab */}
+        <div className="rounded-2xl border border-slate-800 bg-gradient-to-r from-slate-900/90 via-teal-950/20 to-slate-900/90 p-4 sm:p-5 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 shadow-xl">
+          <div className="flex items-center gap-3">
+            <span className="flex size-10 items-center justify-center rounded-xl bg-teal-500/15 text-teal-400 border border-teal-500/30 shrink-0">
+              <Globe2 className="size-5" />
+            </span>
+            <div>
+              <h4 className="text-sm sm:text-base font-extrabold text-white">
+                Chỉ Số Cước Vận Tải Biển Quốc Tế 10 Năm (2016 – 2026)
+              </h4>
+              <p className="text-xs text-slate-400 mt-0.5">
+                Biến động cước hàng rời (BDI), container viễn dương (Drewry WCI) và tàu dầu (BDTI, BCTI)
+              </p>
+            </div>
           </div>
+          <Link
+            href="/cang-bien/cuoc-van-tai"
+            className="inline-flex items-center gap-2 rounded-xl bg-gradient-to-r from-teal-400 to-emerald-400 text-slate-950 px-4 py-2 text-xs font-black shadow-md shadow-teal-500/20 hover:brightness-110 transition-all shrink-0"
+          >
+            <span>Xem Biểu Đồ 10 Năm</span>
+            <ChevronRight className="size-4" />
+          </Link>
+        </div>
 
-          {/* Right: Live Port Calls Table */}
-          <div className="xl:col-span-7 space-y-4">
-            <LivePortCallsTable calls={liveCalls} />
-          </div>
+        {/* Section 2: Live Port Calls Table (Full Width) */}
+        <section className="space-y-4">
+          <LivePortCallsTable calls={liveCalls} />
         </section>
 
         {/* Section 3: 15 Port Authorities Summary (Collapsible) */}
