@@ -2,9 +2,8 @@ name: Sync Market & Maritime Data Daily
 
 on:
   schedule:
-    # Chạy 2 lần mỗi ngày: 22:30 UTC (05:30 GMT+7 sáng) và 09:30 UTC (16:30 GMT+7 chiều)
-    - cron: '30 22 * * *'
-    - cron: '30 9 * * *'
+    # Chạy 1 lần mỗi ngày: 13:30 UTC (tức 20:30 GMT+7 tối theo giờ Việt Nam)
+    - cron: '30 13 * * *'
   workflow_dispatch: # Cho phép bấm nút "Run workflow" thủ công trên GitHub
 
 jobs:
