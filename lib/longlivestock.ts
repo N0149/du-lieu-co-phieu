@@ -1,5 +1,6 @@
 import manifestRaw from '@/data/longlive_manifest.json'
 import indicesRaw from '@/data/longlive_indices.json'
+import { getLiveStockQuote } from './live-quote-service'
 
 export type StockManifestItem = {
   t: string // Ticker (e.g. "HPG")
@@ -265,30 +266,30 @@ export async function fetchStockDetailData(tickerUpper: string): Promise<StockDe
   let jsonData: Partial<StockDetailData> | null = null
   let coreCardData: CoreCardData | null = null
 
-  // Chạy song song fetch JSON data và HTML stock page
-  const [jsonRes, htmlRes] = await Promise.allSettled([
+  // Chạy song song fetch JSON data, HTML stock page và Live Quote
+  const [jsonRes, htmlRes, liveQuote] = await Promise.all([
     fetch(`https://longlivestock.com/data/${ticker}_data.json`, {
       next: { revalidate: 3600 },
       headers: { 'User-Agent': 'Mozilla/5.0' },
-    }),
+    })
+      .then(async (r) => (r.ok ? await r.json() : null))
+      .catch(() => null),
     fetch(`https://longlivestock.com/stock/${ticker}`, {
       next: { revalidate: 3600 },
       headers: { 'User-Agent': 'Mozilla/5.0' },
-    }),
+    })
+      .then(async (r) => (r.ok ? await r.text() : null))
+      .catch(() => null),
+    getLiveStockQuote(ticker).catch(() => null),
   ])
 
-  if (jsonRes.status === 'fulfilled' && jsonRes.value.ok) {
-    try {
-      jsonData = await jsonRes.value.json()
-    } catch (e) {
-      console.error(`Error parsing JSON for ${ticker}:`, e)
-    }
+  if (jsonRes) {
+    jsonData = jsonRes
   }
 
-  if (htmlRes.status === 'fulfilled' && htmlRes.value.ok) {
+  if (htmlRes) {
     try {
-      const html = await htmlRes.value.text()
-      coreCardData = parseCoreCardFromHtml(html, ticker)
+      coreCardData = parseCoreCardFromHtml(htmlRes, ticker)
     } catch (e) {
       console.error(`Error parsing HTML for ${ticker}:`, e)
     }
@@ -296,6 +297,26 @@ export async function fetchStockDetailData(tickerUpper: string): Promise<StockDe
 
   if (!jsonData && !manifestItem) {
     return null
+  }
+
+  // Cập nhật chuỗi price_weekly với giá phiên hôm nay nếu có
+  const weeklyPrices = [...(jsonData?.price_weekly || [])]
+  if (liveQuote && weeklyPrices.length > 0) {
+    const parts = liveQuote.tradingDate?.split('/') // DD/MM/YYYY
+    const todayIso = parts && parts.length === 3 ? `${parts[2]}-${parts[1]}-${parts[0]}` : null
+    if (todayIso) {
+      const last = weeklyPrices[weeklyPrices.length - 1]
+      if (last.d < todayIso) {
+        weeklyPrices.push({
+          d: todayIso,
+          c: liveQuote.priceK,
+          v: liveQuote.volume ?? last.v,
+        })
+      } else if (last.d === todayIso) {
+        last.c = liveQuote.priceK
+        if (liveQuote.volume) last.v = liveQuote.volume
+      }
+    }
   }
 
   // Tạo kết quả tổng hợp
@@ -315,7 +336,7 @@ export async function fetchStockDetailData(tickerUpper: string): Promise<StockDe
     },
     profile: jsonData?.profile || `${manifestItem?.n || ticker} là doanh nghiệp niêm yết thuộc ngành ${manifestItem?.s || ''}.`,
     market: {
-      price: jsonData?.market?.price ?? manifestItem?.px ?? null,
+      price: liveQuote?.priceK ?? jsonData?.market?.price ?? manifestItem?.px ?? null,
       market_cap_ty: jsonData?.market?.market_cap_ty ?? manifestItem?.cap ?? null,
       shares_m: jsonData?.market?.shares_m ?? null,
       foreign_pct: jsonData?.market?.foreign_pct ?? null,
@@ -332,7 +353,7 @@ export async function fetchStockDetailData(tickerUpper: string): Promise<StockDe
     },
     financials: jsonData?.financials || [],
     shareholders: jsonData?.shareholders || [],
-    price_weekly: jsonData?.price_weekly || [],
+    price_weekly: weeklyPrices,
     throughput: jsonData?.throughput || [],
     is_port: jsonData?.is_port ?? manifestItem?.port ?? false,
     coreCard: coreCardData,

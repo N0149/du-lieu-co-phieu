@@ -1,5 +1,6 @@
 import fs from 'node:fs'
 import path from 'node:path'
+import { getLiveStockQuote, type LiveStockQuote } from './live-quote-service'
 
 const CIPHER_KEY_HEX = '19dd3af428f4cf7d68864cd4c87d8d1c5b489932e84b93ac6528a0dd403a5725'
 
@@ -16,9 +17,12 @@ export interface StockEvaluationData {
     pbForward: number | null
     pbForwardVsMedian: number | null
   } | null
-  price: number | null
-  priceChange?: number | null
-  priceChangePct?: number | null
+  price: number | null // in VNĐ (e.g. 32100)
+  priceChange?: number | null // in thousand VNĐ (e.g. -1.30)
+  priceChangePct?: number | null // in % (e.g. -3.89)
+  tradingDate?: string | null // DD/MM/YYYY
+  tradingTime?: string | null // HH:mm:ss
+  basicPrice?: number | null // in VNĐ
   metrics: {
     marketCap: number | null // in tỷ (T)
     pe: number | null
@@ -56,6 +60,38 @@ async function decryptApiResponse(res: Response): Promise<any> {
 
 const CACHE_DIR = path.join(process.cwd(), 'data', 'evaluation_cache')
 
+function applyLiveQuote(target: StockEvaluationData, quote: LiveStockQuote | null): StockEvaluationData {
+  if (!quote) return target
+
+  target.price = quote.price
+  target.priceChange = quote.change
+  target.priceChangePct = quote.changePercent
+  target.tradingDate = quote.tradingDate
+  target.tradingTime = quote.tradingTime
+  target.basicPrice = quote.basicPrice
+
+  // Chuẩn hóa marketCap nếu lưu dạng số thô quá lớn (> 10 tỷ) -> chuyển về tỷ đồng
+  if (target.metrics.marketCap && target.metrics.marketCap > 10_000_000_000) {
+    target.metrics.marketCap = Math.round(target.metrics.marketCap / 1_000_000_000)
+  }
+
+  // Tự động đồng bộ P/E, P/B và Vốn hóa theo giá live mới nhất
+  if (quote.price > 0) {
+    if (target.metrics.eps && target.metrics.eps > 0) {
+      target.metrics.pe = Math.round((quote.price / target.metrics.eps) * 100) / 100
+    }
+    if (target.metrics.bvps && target.metrics.bvps > 0) {
+      target.metrics.pb = Math.round((quote.price / target.metrics.bvps) * 100) / 100
+    }
+    if (target.metrics.sharesOut && target.metrics.sharesOut > 0) {
+      // Vốn hóa theo tỷ đồng (VNĐ * shares / 10^9)
+      target.metrics.marketCap = Math.round((quote.price * target.metrics.sharesOut) / 1_000_000_000)
+    }
+  }
+
+  return target
+}
+
 export async function getStockEvaluation(symbol: string): Promise<StockEvaluationData | null> {
   const sym = symbol.toUpperCase().trim()
   if (!sym) return null
@@ -68,12 +104,16 @@ export async function getStockEvaluation(symbol: string): Promise<StockEvaluatio
   }
 
   const cacheFile = path.join(CACHE_DIR, `${sym}.json`)
+
+  // Tải đồng thời live quote để luôn có giá và biến động phiên mới nhất
+  const liveQuote = await getLiveStockQuote(sym)
+
   // Ưu tiên đọc từ cache cục bộ (Offline-First, không phụ thuộc vào ruatichsan)
   if (fs.existsSync(cacheFile)) {
     try {
       const cached = JSON.parse(fs.readFileSync(cacheFile, 'utf-8'))
       if (cached?.metrics) {
-        return cached
+        return applyLiveQuote(cached, liveQuote)
       }
       if (cached?.snapshot) {
         const s = cached.snapshot
@@ -85,7 +125,7 @@ export async function getStockEvaluation(symbol: string): Promise<StockEvaluatio
           else if (score >= 5.0) ratingText = 'KHÁ'
           else ratingText = 'CẦN LƯU Ý'
         }
-        return {
+        const dataFromSnap: StockEvaluationData = {
           symbol: sym,
           score360: score != null ? {
             total: score,
@@ -98,7 +138,7 @@ export async function getStockEvaluation(symbol: string): Promise<StockEvaluatio
             pbForward: s?.pb_forward ?? null,
             pbForwardVsMedian: s?.pb_forward_vs_median ?? null,
           } : null,
-          price: s?.price != null ? s.price / 1000 : null,
+          price: s?.price != null ? s.price : null,
           metrics: {
             marketCap: s?.market_cap_bn ?? null,
             pe: s?.pe ?? null,
@@ -112,6 +152,7 @@ export async function getStockEvaluation(symbol: string): Promise<StockEvaluatio
             beta: null,
           }
         }
+        return applyLiveQuote(dataFromSnap, liveQuote)
       }
     } catch {}
   }
@@ -141,7 +182,7 @@ export async function getStockEvaluation(symbol: string): Promise<StockEvaluatio
         try {
           fs.writeFileSync(cacheFile, JSON.stringify(direct, null, 2), 'utf-8')
         } catch {}
-        return direct
+        return applyLiveQuote(direct, liveQuote)
       }
     }
 
@@ -180,7 +221,7 @@ export async function getStockEvaluation(symbol: string): Promise<StockEvaluatio
               pbForwardVsMedian: s?.pb_forward_vs_median ?? null,
             }
           : null,
-      price: s?.price != null ? s.price / 1000 : null,
+      price: s?.price != null ? s.price : null,
       metrics: {
         marketCap: s?.market_cap_bn ?? null,
         pe: s?.pe ?? moneyData?.pe ?? null,
@@ -200,7 +241,7 @@ export async function getStockEvaluation(symbol: string): Promise<StockEvaluatio
       fs.writeFileSync(cacheFile, JSON.stringify(result, null, 2), 'utf-8')
     } catch {}
 
-    return result
+    return applyLiveQuote(result, liveQuote)
   } catch (err) {
     console.error(`[getStockEvaluation] Lỗi tải dữ liệu đánh giá ${sym}:`, err)
     return null

@@ -5,7 +5,7 @@ import { getClientIp, checkInMemoryRateLimit } from '@/lib/security'
 export const dynamic = 'force-dynamic'
 
 const cache = new Map<string, { data: StockDetailData; timestamp: number }>()
-const CACHE_TTL_MS = 1000 * 60 * 30 // 30 minutes cache
+const CACHE_TTL_MS = 1000 * 60 * 5 // 5 minutes cache
 
 export async function GET(
   request: NextRequest,
@@ -43,7 +43,7 @@ export async function GET(
   if (cached && Date.now() - cached.timestamp < CACHE_TTL_MS) {
     return NextResponse.json(cached.data, {
       headers: {
-        'Cache-Control': 'public, s-maxage=1800, stale-while-revalidate=86400',
+        'Cache-Control': 'public, s-maxage=300, stale-while-revalidate=86400',
         'X-Robots-Tag': 'noindex',
       },
     })
@@ -61,7 +61,7 @@ export async function GET(
     cache.set(ticker, { data, timestamp: Date.now() })
     return NextResponse.json(data, {
       headers: {
-        'Cache-Control': 'public, s-maxage=1800, stale-while-revalidate=86400',
+        'Cache-Control': 'public, s-maxage=300, stale-while-revalidate=86400',
         'X-Robots-Tag': 'noindex',
       },
     })

@@ -29,16 +29,76 @@ export function StockEvaluationHeader({
   evaluationData,
   priceChanges,
 }: StockEvaluationHeaderProps) {
-  const { market, valuation } = stockData
+  const { market, valuation, ticker } = stockData
 
-  // 1. Dữ liệu Giá & Biến động
-  const priceRaw = evaluationData?.price != null ? evaluationData.price : market.price != null ? market.price * 1000 : 11000
-  const priceDisplay = Number(priceRaw).toLocaleString('vi-VN', { maximumFractionDigits: 0 })
+  // 1. Quản lý trạng thái Giá thời gian thực (Live Quote)
+  const [liveData, setLiveData] = React.useState<{
+    price: number | null
+    change: number | null
+    changePct: number | null
+    tradingDate: string | null
+  }>({
+    price: evaluationData?.price != null ? evaluationData.price : market.price != null ? market.price * 1000 : null,
+    change: evaluationData?.priceChange ?? null,
+    changePct: evaluationData?.priceChangePct ?? null,
+    tradingDate: evaluationData?.tradingDate ?? null,
+  })
 
-  // Biến động %
-  const changePct = priceChanges.y1 ?? -2.05
-  const isDown = changePct < 0
-  const isUp = changePct > 0
+  // Đồng bộ khi props evaluationData thay đổi từ server
+  React.useEffect(() => {
+    if (evaluationData) {
+      setLiveData({
+        price: evaluationData.price != null ? evaluationData.price : market.price != null ? market.price * 1000 : null,
+        change: evaluationData.priceChange ?? null,
+        changePct: evaluationData.priceChangePct ?? null,
+        tradingDate: evaluationData.tradingDate ?? null,
+      })
+    }
+  }, [evaluationData, market.price])
+
+  // Tự động làm mới giá mỗi 60 giây khi người dùng đang mở tab (giống ruatichsan)
+  React.useEffect(() => {
+    let timer: any = null
+    const fetchLiveQuote = async () => {
+      if (document.hidden) return
+      try {
+        const res = await fetch(`/api/stock/${ticker}/live-quote`)
+        if (res.ok) {
+          const data = await res.json()
+          if (data && data.price > 0) {
+            setLiveData({
+              price: data.price,
+              change: data.change,
+              changePct: data.changePercent,
+              tradingDate: data.tradingDate,
+            })
+          }
+        }
+      } catch {}
+    }
+
+    timer = setInterval(fetchLiveQuote, 60000)
+    return () => clearInterval(timer)
+  }, [ticker])
+
+  const currentPrice = liveData.price ?? (evaluationData?.price != null ? evaluationData.price : market.price != null ? market.price * 1000 : 11000)
+  const priceDisplay = Number(currentPrice).toLocaleString('vi-VN', { maximumFractionDigits: 0 })
+
+  // Biến động trong phiên
+  const changeVal = liveData.change ?? evaluationData?.priceChange ?? 0
+  const changePct = liveData.changePct ?? evaluationData?.priceChangePct ?? 0
+
+  const isDown = changeVal < 0 || changePct < 0
+  const isUp = changeVal > 0 || changePct > 0
+
+  // Định dạng hiển thị biến động giá tuyệt đối: e.g. -1,30 hoặc +0,50 hoặc 0,00
+  const changeDisplay = (isUp ? '+' : '') + Number(changeVal).toLocaleString('vi-VN', {
+    minimumFractionDigits: 2,
+    maximumFractionDigits: 2,
+  })
+
+  // Ngày chốt phiên
+  const dateDisplay = liveData.tradingDate || evaluationData?.tradingDate || priceChanges.lastDate
 
   // 2. Dữ liệu Đánh giá 360°
   const score = evaluationData?.score360
@@ -61,17 +121,26 @@ export function StockEvaluationHeader({
 
   // 3. Danh sách 10 thẻ KPI
   const m = evaluationData?.metrics
-  const marketCapBn = m?.marketCap ?? market.market_cap_ty ?? 33688
+  const sharesVal = m?.sharesOut ?? 3062510126
+  let rawCap = m?.marketCap ?? market.market_cap_ty ?? 33688
+  if (rawCap > 10_000_000_000) rawCap = Math.round(rawCap / 1_000_000_000)
+  const marketCapBn = (currentPrice > 0 && sharesVal > 0)
+    ? Math.round((currentPrice * sharesVal) / 1_000_000_000)
+    : rawCap
+
   const capDisplay = marketCapBn >= 100000
     ? `${(marketCapBn).toLocaleString('vi-VN', { maximumFractionDigits: 3 })}T`
     : `${marketCapBn.toLocaleString('vi-VN', { maximumFractionDigits: 0 })} tỷ`
 
-  const peVal = m?.pe ?? valuation.pe
-  const pbVal = m?.pb ?? valuation.pb
-  const psVal = m?.ps ?? 1.39
   const epsVal = m?.eps ?? valuation.eps
   const bvpsVal = m?.bvps ?? valuation.bvps
-  const sharesVal = m?.sharesOut ?? 3062510126
+  const peVal = (currentPrice > 0 && epsVal && epsVal > 0)
+    ? currentPrice / epsVal
+    : (m?.pe ?? valuation.pe)
+  const pbVal = (currentPrice > 0 && bvpsVal && bvpsVal > 0)
+    ? currentPrice / bvpsVal
+    : (m?.pb ?? valuation.pb)
+  const psVal = m?.ps ?? 1.39
   const vol10dVal = m?.volume10d ?? 17456166
   const betaVal = m?.beta ?? 0.51
   const evEbitdaVal = m?.evEbitda
@@ -118,73 +187,67 @@ export function StockEvaluationHeader({
               </div>
             </div>
 
-            {/* Xếp hạng & Điểm tổng hợp */}
-            <div className="mt-4 space-y-2.5">
-              <div className="flex items-center justify-between text-xs sm:text-[13px]">
-                <span className="text-muted-foreground">Xếp hạng doanh nghiệp:</span>
-                <span className="font-bold tracking-wide text-emerald-500 dark:text-emerald-400 uppercase">
-                  {ratingText}
-                </span>
-              </div>
-
-              <div className="flex items-center justify-between text-xs sm:text-[13px]">
-                <span className="text-muted-foreground">Điểm tổng hợp</span>
-                <span className="rounded-md border border-emerald-500/30 bg-emerald-500/15 px-2.5 py-0.5 font-black text-emerald-600 dark:text-emerald-300">
-                  {totalScore.toFixed(1)}/10
-                </span>
-              </div>
+            {/* Điểm số & Xếp hạng */}
+            <div className="mt-3 flex items-baseline gap-3">
+              <span className="font-mono text-4xl font-black text-emerald-500 sm:text-5xl">
+                {totalScore.toFixed(1)}
+              </span>
+              <span className="text-xs font-bold text-muted-foreground uppercase">
+                / 10 ĐIỂM
+              </span>
+              <span
+                className={cn(
+                  'ml-auto rounded-lg px-2.5 py-1 text-xs font-black tracking-wider uppercase shadow-xs',
+                  totalScore >= 8.0
+                    ? 'bg-emerald-500/15 text-emerald-400 border border-emerald-500/30'
+                    : totalScore >= 6.5
+                    ? 'bg-sky-500/15 text-sky-400 border border-sky-500/30'
+                    : totalScore >= 5.0
+                    ? 'bg-amber-500/15 text-amber-400 border border-amber-500/30'
+                    : 'bg-rose-500/15 text-rose-400 border border-rose-500/30'
+                )}
+              >
+                {ratingText}
+              </span>
             </div>
           </div>
 
-          {/* Đường phân cách */}
-          <div className="border-t border-border/60 pt-3.5 space-y-2.5 text-xs sm:text-[13px]">
-            {/* Định giá P/E */}
-            <div className="flex items-center justify-between gap-2">
-              <span className="text-muted-foreground whitespace-nowrap">Định giá P/E</span>
-              <span className="font-semibold text-amber-500 dark:text-amber-400 whitespace-nowrap text-right">
-                {formatCompareMedian(score?.peVsMedian ?? 2.83)}
+          {/* 5 Hàng Định Giá & Vị Thế So Với Trung Vị */}
+          <div className="space-y-2 border-t border-border/60 pt-3 text-xs">
+            <div className="flex items-center justify-between">
+              <span className="text-muted-foreground font-medium">Định giá P/E</span>
+              <span className="font-mono font-bold text-foreground">
+                {formatCompareMedian(score?.peVsMedian)}
               </span>
             </div>
-
-            {/* Định giá P/B */}
-            <div className="flex items-center justify-between gap-2">
-              <span className="text-muted-foreground whitespace-nowrap">Định giá P/B</span>
-              <span className="font-semibold text-amber-500 dark:text-amber-400 whitespace-nowrap text-right">
-                {formatCompareMedian(score?.pbVsMedian ?? 4.76)}
+            <div className="flex items-center justify-between">
+              <span className="text-muted-foreground font-medium">Định giá P/B</span>
+              <span className="font-mono font-bold text-foreground">
+                {formatCompareMedian(score?.pbVsMedian)}
               </span>
             </div>
-
-            {/* Định giá P/S */}
-            <div className="flex items-center justify-between gap-2">
-              <span className="text-muted-foreground whitespace-nowrap">Định giá P/S</span>
-              <span className="font-semibold text-amber-500 dark:text-amber-400 whitespace-nowrap text-right">
-                {formatCompareMedian(score?.psVsMedian ?? -1.32)}
+            <div className="flex items-center justify-between">
+              <span className="text-muted-foreground font-medium">Định giá P/S</span>
+              <span className="font-mono font-bold text-foreground">
+                {formatCompareMedian(score?.psVsMedian)}
               </span>
             </div>
-
-            {/* Định giá P/E forward */}
-            <div className="flex items-center justify-between gap-2">
-              <div className="flex items-center gap-1 text-muted-foreground whitespace-nowrap">
-                <span>Định giá P/E forward</span>
-                <span title="P/E dự phóng dựa trên kế hoạch kinh doanh doanh nghiệp">
-                  <HelpCircle className="size-3 text-muted-foreground/60 hover:text-foreground cursor-help" />
-                </span>
-              </div>
-              <span className="font-semibold text-amber-500 dark:text-amber-400 whitespace-nowrap text-right">
-                {formatForwardValuation(score?.peForward ?? 7.89, score?.peForwardVsMedian ?? -3.07)}
+            <div className="flex items-center justify-between">
+              <span className="text-muted-foreground font-medium flex items-center gap-1">
+                Định giá P/E forward
+                <HelpCircle className="size-3 text-muted-foreground/60" />
+              </span>
+              <span className="font-mono font-bold text-foreground">
+                {formatForwardValuation(score?.peForward, score?.peForwardVsMedian)}
               </span>
             </div>
-
-            {/* Định giá P/B forward */}
-            <div className="flex items-center justify-between gap-2">
-              <div className="flex items-center gap-1 text-muted-foreground whitespace-nowrap">
-                <span>Định giá P/B forward</span>
-                <span title="P/B dự phóng dựa trên kế hoạch kinh doanh doanh nghiệp">
-                  <HelpCircle className="size-3 text-muted-foreground/60 hover:text-foreground cursor-help" />
-                </span>
-              </div>
-              <span className="font-semibold text-amber-500 dark:text-amber-400 whitespace-nowrap text-right">
-                {formatForwardValuation(score?.pbForward ?? 1.21, score?.pbForwardVsMedian ?? -3.97)}
+            <div className="flex items-center justify-between">
+              <span className="text-muted-foreground font-medium flex items-center gap-1">
+                Định giá P/B forward
+                <HelpCircle className="size-3 text-muted-foreground/60" />
+              </span>
+              <span className="font-mono font-bold text-foreground">
+                {formatForwardValuation(score?.pbForward, score?.pbForwardVsMedian)}
               </span>
             </div>
           </div>
@@ -210,7 +273,7 @@ export function StockEvaluationHeader({
                 isDown ? 'text-rose-500' : isUp ? 'text-emerald-500' : 'text-muted-foreground'
               )}
             >
-              {isDown ? '-0,70' : isUp ? '+0,50' : '0,00'}
+              {changeDisplay}
             </span>
 
             {/* Pill % thay đổi */}
@@ -228,9 +291,9 @@ export function StockEvaluationHeader({
               <span>{Math.abs(changePct).toFixed(2)}%</span>
             </span>
 
-            {priceChanges.lastDate && (
+            {dateDisplay && (
               <span className="ml-auto text-xs text-muted-foreground font-medium">
-                Đóng cửa {priceChanges.lastDate}
+                Đóng cửa {dateDisplay}
               </span>
             )}
           </div>
