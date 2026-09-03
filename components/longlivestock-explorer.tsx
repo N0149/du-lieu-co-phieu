@@ -12,8 +12,6 @@ import { useReports } from '@/lib/use-reports'
 import { MarketIndicesStrip } from './market-indices-strip'
 import { SectorChipsBrowser } from './sector-chips-browser'
 import { StockScreenerBar, type ScreenerFilterState } from './stock-screener-bar'
-import { MarketTreemap } from './market-treemap'
-import { TopMoversPanel } from './top-movers-panel'
 import { StockCardGrid } from './stock-card-grid'
 
 interface LongLiveStockExplorerProps {
@@ -184,22 +182,6 @@ export function LongLiveStockExplorer({
           sectorOptions={sectorOptions}
           filteredStocks={filteredStocks}
         />
-
-        {/* Bento Row: Treemap Heatmap + Top Movers (Only shown when not actively searching to avoid clutter) */}
-        {!hasSearchOrFilter && (
-          <div className="grid grid-cols-1 gap-6 lg:grid-cols-3">
-            <div className="lg:col-span-2">
-              <MarketTreemap
-                stocks={allStocks}
-                manifestData={manifestData}
-                onSelectSector={handleSelectSector}
-              />
-            </div>
-            <div>
-              <TopMoversPanel stocks={allStocks} />
-            </div>
-          </div>
-        )}
 
         {/* Stock Cards Grid / Table */}
         <StockCardGrid

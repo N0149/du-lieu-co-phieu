@@ -238,7 +238,8 @@ def do_export_json(args: argparse.Namespace) -> None:
     }
     out_path = Path(args.out_json)
     out_path.parent.mkdir(parents=True, exist_ok=True)
-    out_path.write_text(json.dumps(payload, ensure_ascii=False, indent=2), encoding="utf-8")
+    out_path.write_text(json.dumps(payload, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
+
     log.info(
         "Đã xuất %d dòng + %d ma trận + %d kỳ cán cân → %s",
         len(payload["rows"]), len(payload["matrix_rows"]),

@@ -136,12 +136,12 @@ export function CustomsCommodityMatrix({
     }
   }, [initialSearch])
 
-  // Trạng thái biểu đồ DUY NHẤT (Chuyển đổi giữa Theo Mặt Hàng & Cán Cân)
   const [chartView, setChartView] = useState<ChartView>('commodity')
   const [chartType, setChartType] = useState<ChartType>('bar')
-  const [chartRange, setChartRange] = useState<'all' | 'recent12' | '2026' | '2025'>('all')
+  const [chartRange, setChartRange] = useState<string>('recent12')
   const [isChartVisible, setIsChartVisible] = useState<boolean>(true)
   const [chartMode, setChartMode] = useState<ChartMode>('value')
+
   const [selectedCommodities, setSelectedCommodities] = useState<string[]>([
     'Hàng dệt, may',
   ])
@@ -376,6 +376,16 @@ export function CustomsCommodityMatrix({
     return map
   }, [selectedCommodities])
 
+  // Danh sách các năm có trong dữ liệu (sắp xếp giảm dần)
+  const availableYears = useMemo(() => {
+    const yrs = new Set<string>()
+    for (const c of periodColumns) {
+      const y = c.date.slice(0, 4)
+      if (y) yrs.add(y)
+    }
+    return Array.from(yrs).sort().reverse()
+  }, [periodColumns])
+
   // Chuẩn bị dữ liệu cho biểu đồ Recharts (lọc theo chartRange)
   const chartData = useMemo(() => {
     if (periodColumns.length === 0) return []
@@ -384,13 +394,12 @@ export function CustomsCommodityMatrix({
     let targetCols = periodColumns
     if (chartRange === 'recent12') {
       targetCols = periodColumns.slice(-12)
-    } else if (chartRange === '2026') {
-      targetCols = periodColumns.filter((c) => c.date.startsWith('2026'))
-    } else if (chartRange === '2025') {
-      targetCols = periodColumns.filter((c) => c.date.startsWith('2025'))
+    } else if (chartRange !== 'all') {
+      targetCols = periodColumns.filter((c) => c.date.startsWith(chartRange))
     }
 
     if (targetCols.length === 0) return []
+
 
     const baseValues: Record<string, number | null> = {}
     if (chartMode === 'pct') {
@@ -698,17 +707,16 @@ export function CustomsCommodityMatrix({
                   </div>
 
                   {/* Lọc khung thời gian biểu đồ */}
-                  <div className="flex items-center rounded-lg border border-border bg-muted/40 p-0.5 text-xs">
+                  <div className="flex flex-wrap items-center rounded-lg border border-border bg-muted/40 p-0.5 text-xs">
                     {[
                       { key: 'all', label: 'Tất cả' },
                       { key: 'recent12', label: '12 kỳ gần nhất' },
-                      { key: '2026', label: 'Năm 2026' },
-                      { key: '2025', label: 'Năm 2025' },
+                      ...availableYears.map((y) => ({ key: y, label: `Năm ${y}` })),
                     ].map((opt) => (
                       <button
                         key={opt.key}
                         type="button"
-                        onClick={() => setChartRange(opt.key as typeof chartRange)}
+                        onClick={() => setChartRange(opt.key)}
                         className={cn(
                           'rounded-md px-2 py-1 font-medium transition-colors',
                           chartRange === opt.key
@@ -720,6 +728,7 @@ export function CustomsCommodityMatrix({
                       </button>
                     ))}
                   </div>
+
 
                   <button
                     type="button"

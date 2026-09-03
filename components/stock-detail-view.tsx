@@ -36,6 +36,7 @@ import { FinancialCashFlowAndDividends } from '@/components/stock/FinancialCashF
 import { ValuationBandsChart } from '@/components/stock/ValuationBandsChart'
 import { StockEvaluationHeader } from '@/components/stock/StockEvaluationHeader'
 import { CompanyProfileEnhancement } from '@/components/stock/CompanyProfileEnhancement'
+import { PeerComparisonView } from '@/components/peer-comparison-view'
 import type { DetailedFinancialSnapshot } from '@/lib/local-financials'
 import type { BankAnalysisData } from '@/lib/banking-types'
 import type { StockEvaluationData } from '@/lib/stock-evaluation-service'
@@ -1272,139 +1273,6 @@ export function StockDetailView({
             financials={financials}
             detailedSnapshot={detailedSnapshot}
           />
-
-          {/* B. Bảng Báo Cáo Tài Chính & Chỉ Số Đa Năm Toàn Diện */}
-          {sortedFinancials.length > 0 && (
-            <div className="rounded-2xl border border-border bg-card p-6 shadow-xs space-y-4">
-              <div className="flex items-center justify-between gap-2 border-b border-border/60 pb-3">
-                <h3 className="flex items-center gap-2 text-sm font-bold uppercase tracking-wider text-foreground">
-                  <Layers className="size-4 text-primary" />
-                  <span>Bảng Báo Cáo Tài Chính & Chỉ Số Đa Năm ({sortedFinancials.length} Năm)</span>
-                </h3>
-                <span className="text-xs text-muted-foreground">Đơn vị: Tỷ VNĐ / % / Đồng</span>
-              </div>
-
-              <div className="overflow-x-auto rounded-xl border border-border">
-                <table className="w-full text-left text-xs">
-                  <thead className="border-b border-border bg-muted/60 font-mono text-[11px] uppercase tracking-wider text-muted-foreground">
-                    <tr>
-                      <th className="px-3.5 py-3 sticky left-0 bg-muted/90 backdrop-blur-xs">Năm</th>
-                      <th className="px-3 py-3 text-right">Doanh thu</th>
-                      <th className="px-3 py-3 text-right">LNST</th>
-                      <th className="px-3 py-3 text-right">Biên gộp</th>
-                      <th className="px-3 py-3 text-right">Biên ròng</th>
-                      <th className="px-3 py-3 text-right">ROE</th>
-                      <th className="px-3 py-3 text-right">ROA</th>
-                      <th className="px-3 py-3 text-right">EPS (đ)</th>
-                      <th className="px-3 py-3 text-right">BVPS (đ)</th>
-                      <th className="px-3 py-3 text-right">D/E</th>
-                      <th className="px-3 py-3 text-right">Tăng trưởng DT</th>
-                      <th className="px-3 py-3 text-right">Tăng trưởng LNST</th>
-                      <th className="px-3 py-3 text-right">Cổ tức (đ)</th>
-                    </tr>
-                  </thead>
-                  <tbody className="divide-y divide-border/60">
-                    {sortedFinancials.map((row) => {
-                      const isProfNeg = row.profit != null && row.profit < 0
-                      const isRoePos = row.roe != null && row.roe > 0
-                      const isRoeNeg = row.roe != null && row.roe < 0
-                      const isRgPos = row.revenue_growth != null && row.revenue_growth > 0
-                      const isRgNeg = row.revenue_growth != null && row.revenue_growth < 0
-                      const isPgPos = row.npat_growth != null && row.npat_growth > 0
-                      const isPgNeg = row.npat_growth != null && row.npat_growth < 0
-
-                      return (
-                        <tr key={row.year} className="hover:bg-muted/30 transition-colors">
-                          <td className="px-3.5 py-2.5 font-mono font-bold text-foreground sticky left-0 bg-card">
-                            {row.year}
-                          </td>
-                          <td className="px-3 py-2.5 text-right font-mono text-foreground font-medium">
-                            {row.revenue != null ? fmt(row.revenue, 0) : '—'}
-                          </td>
-                          <td
-                            className={cn(
-                              'px-3 py-2.5 text-right font-mono font-bold',
-                              isProfNeg ? 'text-rose-600 dark:text-rose-400' : 'text-amber-600 dark:text-amber-400',
-                            )}
-                          >
-                            {row.profit != null ? fmt(row.profit, 0) : '—'}
-                          </td>
-                          <td className="px-3 py-2.5 text-right font-mono text-muted-foreground">
-                            {row.gross_margin != null ? `${fmt(row.gross_margin, 1)}%` : '—'}
-                          </td>
-                          <td
-                            className={cn(
-                              'px-3 py-2.5 text-right font-mono',
-                              row.net_margin != null && row.net_margin < 0
-                                ? 'text-rose-600 dark:text-rose-400 font-bold'
-                                : 'text-muted-foreground',
-                            )}
-                          >
-                            {row.net_margin != null ? `${fmt(row.net_margin, 1)}%` : '—'}
-                          </td>
-                          <td
-                            className={cn(
-                              'px-3 py-2.5 text-right font-mono font-bold',
-                              isRoePos
-                                ? 'text-emerald-600 dark:text-emerald-400'
-                                : isRoeNeg
-                                  ? 'text-rose-600 dark:text-rose-400'
-                                  : 'text-muted-foreground',
-                            )}
-                          >
-                            {row.roe != null ? `${fmt(row.roe, 1)}%` : '—'}
-                          </td>
-                          <td className="px-3 py-2.5 text-right font-mono text-muted-foreground">
-                            {row.roa != null ? `${fmt(row.roa, 1)}%` : '—'}
-                          </td>
-                          <td className="px-3 py-2.5 text-right font-mono text-foreground">
-                            {row.eps != null ? fmt(row.eps, 0) : '—'}
-                          </td>
-                          <td className="px-3 py-2.5 text-right font-mono text-foreground">
-                            {row.bvps != null ? fmt(row.bvps, 0) : '—'}
-                          </td>
-                          <td className="px-3 py-2.5 text-right font-mono text-muted-foreground">
-                            {row.debt_to_equity != null ? fmt(row.debt_to_equity, 2) : '—'}
-                          </td>
-                          <td
-                            className={cn(
-                              'px-3 py-2.5 text-right font-mono font-semibold',
-                              isRgPos
-                                ? 'text-emerald-600 dark:text-emerald-400'
-                                : isRgNeg
-                                  ? 'text-rose-600 dark:text-rose-400'
-                                  : 'text-muted-foreground',
-                            )}
-                          >
-                            {row.revenue_growth != null
-                              ? `${isRgPos ? '+' : ''}${fmt(row.revenue_growth, 1)}%`
-                              : '—'}
-                          </td>
-                          <td
-                            className={cn(
-                              'px-3 py-2.5 text-right font-mono font-semibold',
-                              isPgPos
-                                ? 'text-emerald-600 dark:text-emerald-400'
-                                : isPgNeg
-                                  ? 'text-rose-600 dark:text-rose-400'
-                                  : 'text-muted-foreground',
-                            )}
-                          >
-                            {row.npat_growth != null
-                              ? `${isPgPos ? '+' : ''}${fmt(row.npat_growth, 1)}%`
-                              : '—'}
-                          </td>
-                          <td className="px-3 py-2.5 text-right font-mono text-foreground">
-                            {row.dividend != null ? fmt(row.dividend, 0) : '—'}
-                          </td>
-                        </tr>
-                      )
-                    })}
-                  </tbody>
-                </table>
-              </div>
-            </div>
-          )}
         </div>
       )}
 
@@ -1412,13 +1280,21 @@ export function StockDetailView({
       {/* TAB 4: SO SÁNH TRONG NGÀNH                               */}
       {/* ══════════════════════════════════════════════════════════ */}
       {activeTab === 'peers' && (
-        <div className="space-y-5 animate-in fade-in-50 duration-200">
+        <div className="space-y-6 animate-in fade-in-50 duration-200">
+          {/* A. Bảng & Biểu đồ So Sánh Doanh Nghiệp Cùng Ngành Chuyên Sâu (Chuẩn Ruatichsan) */}
+          <PeerComparisonView
+            currentTicker={ticker}
+            sectorName={company.sector || company.icb_l1 || 'Cùng nhóm ngành'}
+            initialPeers={relatedStocks.map((s) => s.t)}
+          />
+
+          {/* B. Lưới Thẻ Toàn Bộ Cổ Phiếu Cùng Nhóm Ngành */}
           <div className="rounded-2xl border border-border bg-card p-6 shadow-xs space-y-4">
             <div className="flex flex-wrap items-center justify-between gap-2 border-b border-border/60 pb-3">
               <div className="flex items-center gap-2">
                 <Users className="size-4 text-violet-500" />
                 <h3 className="text-sm font-bold uppercase tracking-wider text-foreground">
-                  Cổ Phiếu Cùng Ngành ({company.sector || company.icb_l1 || 'Cùng nhóm ngành'})
+                  Danh Sách Cổ Phiếu Cùng Ngành ({company.sector || company.icb_l1 || 'Cùng nhóm ngành'})
                 </h3>
               </div>
               <Link
