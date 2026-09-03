@@ -10,24 +10,25 @@
 
 | Mục | Chi tiết |
 |---|---|
-| **Tên dự án** | Phân Tích Chuyên Sâu Cổ Phiếu — Cổng Dữ Liệu & Báo Cáo Đầu Tư (`dulieucophieu.com`) |
+| **Tên dự án** | Phân Tích Chuyên Sâu Cổ Phiếu — Cổng Dữ Liệu & Báo Cáo Đầu Tư (`dulieudautu.com` / `dulieucophieu.com`) |
 | **Sáng lập / Người phụ trách** | Nguyễn Trung Nhật · Zalo **0983.627.018** · trungnhat232@gmail.com |
-| **Tech stack** | Next.js **16.3.0** (App Router, Turbopack), React **19**, TypeScript **5.7.3**, Tailwind CSS **v4** (OKLCH, chủ đạo emerald / teal / dark oceanic), pnpm |
+| **Tech stack** | Next.js **16.3.0** (App Router, Turbopack), React **19**, TypeScript **5.7.3**, Tailwind CSS **v4** (OKLCH, chủ đạo emerald / teal / dark oceanic), Node.js **22.x**, pnpm |
+| **Dữ liệu Giá Live** | Realtime Ticker API từ **24hMoney** (`lib/live-quote-service.ts`) → route `/api/stock/[symbol]/live-quote`, cache 60s in-memory, client polling tự động mỗi 60s |
 | **Dữ liệu Báo cáo** | Google Drive API **v3** (folder ID `1eI8C_uDJlKDvNbzF9YOOr6QNCUIdw7o8`), file báo cáo là Google Docs (export text/plain). **STATIC SNAPSHOT** — `data/reports-snapshot.json` (**94 báo cáo, 81 mã unique**) |
 | **Dữ liệu XNK** | `data/customs_trade_snapshot.json` (2511 rows + 5108 ma trận + 13 kỳ cán cân) → `/api/customs-trade` |
 | **Dữ liệu Cảng Biển** | SQLite `data/maritime.db` (WAL mode) + JSON Snapshots `data/maritime/dashboard_summary.json` (15 cảng vụ, 12 mã cổ phiếu cảng biển & vận tải biển: `PHP`, `GMD`, `DVP`, `DXP`, `MIPEC`, `SGP`, `PDN`, `CDN`, `HAH`, `VGR`, `CQN`, `PSP`, 147+ hồ sơ tàu biển, 395+ lượt điều động tàu phân biệt không trùng lặp) |
 | **UI Theme** | **Dark Oceanic Fintech Aesthetic**: Nền Deep Slate 950, hiệu ứng ánh sáng ngọc bích / lục bảo (Teal & Cyan Glow), bảng kính mờ Glassmorphism, mã cổ phiếu Neon Gradient |
 | **Fonts** | Inter (latin + vietnamese), JetBrains Mono |
 | **Format số** | vi-VN: dấu chấm nghìn, dấu phẩy thập phân; giá theo **nghìn đồng/cổ phiếu**; vốn hóa tỷ đồng; trọng tải DWT / lượt tàu |
-| **Định vị sản phẩm** | Bộ lọc định giá cổ phiếu + kho báo cáo phân tích + thống kê XNK Hải quan + tình báo hàng hải & dữ liệu vận hành cảng biển |
+| **Định vị sản phẩm** | Bộ lọc định giá cổ phiếu + giá thời gian thực + kho báo cáo phân tích + thống kê XNK Hải quan + tình báo hàng hải & dữ liệu vận hành cảng biển |
 
-### Cách chạy dev
+### Cách chạy dev & Build
 - **Lệnh dùng được**: `pnpm dev` hoặc `node node_modules\next\dist\bin\next dev` (chạy tại `localhost:3000`)
-- `next.config.mjs`: `images.unoptimized: true` (đã validate TypeScript lúc build).
-- `package.json`: `engines.node >=20`, `packageManager: pnpm@11.20.0`; lockfile: `pnpm-lock.yaml`.
+- `next.config.mjs`: `images.unoptimized: true`, `serverExternalPackages: ['node:sqlite']`, `outputFileTracingExcludes` loại trừ cache nặng.
+- `package.json`: `engines.node: "22.x"`, `packageManager: pnpm@11.20.0`; lockfile: `pnpm-lock.yaml`.
 - **Cập nhật dữ liệu Cảng biển thủ công**: `python scripts/cangbien/run_pipeline.py` (quét trực tiếp Cảng vụ Hải Phòng & Hoa tiêu Miền Nam, khử trùng lặp, cập nhật SQLite và JSON snapshots).
 - **Tự động hóa CI/CD**: GitHub Actions `.github/workflows/sync-market-data.yml` chạy tự động **2 lần mỗi ngày (05:30 sáng và 16:30 chiều GMT+7)**.
-- **Vercel**: domain `dulieucophieu.com`, `metadataBase` = https://dulieucophieu.com, tự deploy khi push `main`.
+- **Vercel**: domain `dulieudautu.com`, `metadataBase` = https://dulieudautu.com, tự deploy khi push `main`. Payload được tối ưu qua `.vercelignore` (loại trừ `evaluation_cache`, `shareholder_cache`, `*.db`).
 
 ---
 
@@ -84,7 +85,11 @@ flowchart TD
 | `app/tin-tuc/page.tsx` | Server | ✅ **Trang Tin Tức**: Dòng tin tài chính & bóc tách mã cổ phiếu realtime. |
 | `app/bao-cao/page.tsx` | Client (Suspense) | ✅ Kho báo cáo: tìm kiếm, sort, 4 Tab lọc (Tất cả / Cổ phiếu / Hàng hóa / Vĩ mô). |
 | `app/bao-cao/[slug]/page.tsx` | Server (async) | ✅ Viewer báo cáo + `<ReportAudioPlayer/>` (TTS) + `<DriveDocViewer/>`. |
-| `app/ticker/[symbol]/page.tsx` | Server (async) | ✅ Trang chi tiết cổ phiếu định giá & BCTC. |
+| `app/ticker/[symbol]/page.tsx` | Server (async) | ✅ Trang chi tiết cổ phiếu định giá & BCTC (legacy route). |
+| `app/stock/[symbol]/page.tsx` | Server (async) | ✅ **Trang Chi Tiết Cổ Phiếu Chuyên Sâu**: Header giá realtime (`StockEvaluationHeader`), 6 tab nội dung (Đánh giá 360, BCTC chuyên sâu 16 năm, Kế hoạch KD & thực hiện, Hồ sơ cổ đông & giao dịch nội bộ, Định giá P/E-P/B Bands, Báo cáo phân tích CTCK). |
+| `app/thi-truong/page.tsx` | Server (async) | ✅ **Trang Thị Trường Tài Chính & Vĩ Mô**: Biến động thế giới, hàng hóa, tỷ giá, crypto, biểu đồ định giá P/E & P/B VN-Index từ 2005, báo cáo thị trường, thống kê dư nợ Margin 41 CTCK. |
+| `app/nganh/page.tsx` | Server (async) | ✅ **Trang Bản Đồ Ngành & Vốn Hóa**: Cơ cấu vốn hóa, lợi nhuận, định giá P/E, P/B, ROE toàn bộ các ngành cấp 1 & cấp 2 trên TTCK Việt Nam. |
+| `app/api/stock/[symbol]/live-quote/route.ts` | Server (route) | ✅ **API Giá Realtime**: Tích hợp 24hMoney Ticker API, cache 60s, cung cấp giá khớp, biên độ, % thay đổi và ngày giao dịch mới nhất. |
 | `app/xuat-nhap-khau/page.tsx` | Server | ✅ Trang Thống Kê XNK: `<TradeBalanceChart/>` + `<CustomsTradeViewer/>`. |
 | `app/cang-bien/page.tsx` | Server | ✅ **Trang Chủ Tình Báo Cảng Biển**: Giao diện Dark Oceanic, `<SiteHeader/>` + Sub-nav, KPI toàn quốc, `<MaritimeStockGrid/>` (12 mã), `<LivePortCallsTable/>` (nhật ký tàu thời gian thực), `<PortAuthoritiesStrip/>` (15 Cảng vụ thu gọn/mở rộng). |
 | `app/cang/[ticker]/page.tsx` | Server (async) | ✅ **Trang Phân Tích Cảng Biển Từng Mã**: `<SiteHeader/>` + Sub-nav, KPI tháng gần nhất, `<PortThroughputChart/>` (biểu đồ cột SVG gradient không giật), `<YoYThroughputComparison/>` (bảng so sánh 12 tháng cùng kỳ YoY), danh mục cầu bến & bến nước sâu, khung giá bốc dỡ QĐ 810/TT 39, và **Nhật ký 10 chuyến tàu gần nhất** kèm ngày giờ cụ thể. |
@@ -121,7 +126,17 @@ flowchart TD
   - [x] **Nâng cấp Theme Dark Oceanic Fintech**: Nền Deep Slate 950, ambient glow Teal & Cyan, thẻ Neon Gradient, bảng glassmorphism
   - [x] **Khử trùng lặp & Cập nhật đa ngày**: `dedupe_port_calls` loại bỏ 100% bản ghi lặp, quét multi-day (30/08, 31/08, 01/09, 02/09) với 395+ chuyến tàu sạch
   - [x] **Tự động hóa Cronjob**: GitHub Actions `.github/workflows/sync-market-data.yml` tự động cào 2 lần/ngày (05:30 và 16:30 GMT+7)
-  - [x] Build Next.js 16 Turbopack thành công 100% (31/31 routes) và deploy lên `dulieucophieu.com`
+  - [x] **Hệ thống Định giá & Đánh giá 360 Cổ Phiếu Chuyên Sâu (`/stock/[symbol]`)**:
+  - [x] Tích hợp Live Quote API từ 24hMoney (`lib/live-quote-service.ts`) tự động lấy giá khớp, biên độ, % biến động và ngày giao dịch thực tế.
+  - [x] Polling ngầm 60s tự động cập nhật giá realtime trên frontend (`StockEvaluationHeader.tsx`).
+  - [x] Tự động tính toán lại P/E, P/B forward và vốn hóa thị trường theo giá realtime.
+  - [x] Trang chi tiết 6 tab: Đánh giá 360, BCTC chuyên sâu 16 năm, Kế hoạch KD, Hồ sơ cổ đông, Định giá P/E-P/B Bands, Báo cáo CTCK.
+- [x] **Trang Thị Trường Tài Chính & Vĩ Mô (`/thi-truong`)**: Tỷ giá, hàng hóa, crypto, định giá VN-Index từ 2005, dư nợ margin 41 CTCK.
+- [x] **Trang Bản Đồ Ngành & Vốn Hóa (`/nganh`)**: Cơ cấu vốn hóa, lợi nhuận, P/E, P/B toàn bộ ngành cấp 1 và cấp 2.
+- [x] **Tối ưu hóa Vercel Deployment (2026-09-03)**:
+  - [x] Tạo `.vercelignore` và cấu hình `outputFileTracingExcludes` trong `next.config.mjs` loại trừ 3.000 file cache cục bộ (`evaluation_cache`, `shareholder_cache`, `*.db`) khỏi gói build.
+  - [x] Nâng cấp Node engine lên `22.x` trong `package.json` và khai báo `serverExternalPackages: ['node:sqlite']`.
+  - [x] Gỡ bỏ 3.000 file cache khỏi Git tracking, giảm payload build từ >500MB xuống <15MB, deploy production Vercel thành công 100%.
 
 ---
 
@@ -131,6 +146,8 @@ flowchart TD
 
 | Timestamp | File(s) sửa | Nội dung thay đổi |
 |---|---|---|
+| 2026-09-03 (Tối) | `lib/live-quote-service.ts` (mới) · `app/api/stock/[symbol]/live-quote/route.ts` (mới) · `components/stock/StockEvaluationHeader.tsx` · `lib/stock-evaluation-service.ts` · `lib/longlivestock.ts` · `.vercelignore` (mới) · `next.config.mjs` · `package.json` · `.gitignore` | **Tích hợp API cập nhật giá thời gian thực (Live Quote) & Khắc phục triệt để lỗi deployment Vercel**: <br>1. **Live Quote API**: Kết nối trực tiếp 24hMoney Ticker API qua `lib/live-quote-service.ts` (cache 60s in-memory), bóc tách giá khớp, biên độ, % thay đổi, ngày và giờ giao dịch thực tế.<br>2. **Auto-refresh Frontend**: `StockEvaluationHeader` tự động thăm dò `/api/stock/[symbol]/live-quote` mỗi 60s ngầm khi tab mở, hiển thị giá chuẩn VNĐ, pill % xanh/đỏ và ngày chốt phiên.<br>3. **Đồng bộ tính toán**: Tự động tính lại P/E, P/B và vốn hóa theo giá realtime; cập nhật nốt phiên mới vào chuỗi `price_weekly`.<br>4. **Sửa lỗi Vercel Deployment**: Thêm `.vercelignore` và `outputFileTracingExcludes` trong `next.config.mjs`, nâng cấp engine `node: 22.x`, gỡ bỏ hơn 3.000 file cache nặng (`evaluation_cache`, `shareholder_cache`, `*.db`) khỏi Git tracking, giảm dung lượng build từ >500MB xuống <15MB giúp Vercel build & deploy thành công 100% lên `dulieudautu.com`. Push `935051f`. |
+| 2026-09-03 (Chiều) | `app/thi-truong/page.tsx` (mới) · `app/nganh/page.tsx` (mới) · `app/stock/[symbol]/page.tsx` · `components/market/**` · `components/industry/**` · `components/stock/**` · `lib/banking-service.ts` · `lib/ctck-service.ts` · `lib/pe-pb-service.ts` | **Triển khai hệ thống Thị Trường Vĩ Mô, Bản Đồ Ngành và Đánh Giá 360 Doanh Nghiệp**: <br>1. Xây dựng trang `/thi-truong` hiển thị biến động thế giới, hàng hóa, tỷ giá, định giá P/E-P/B VN-Index và thống kê margin 41 CTCK.<br>2. Xây dựng trang `/nganh` trực quan hóa cơ cấu ngành, vốn hóa, lợi nhuận và định giá.<br>3. Tái cấu trúc trang `/stock/[symbol]` thành hệ thống 6 tab chuyên sâu: Đánh giá 360, BCTC chuyên sâu, Kế hoạch KD, Cổ đông, Định giá P/E-P/B Bands, Báo cáo CTCK. Push `8e1ec7d`. |
 | 2026-09-02 | `app/page.tsx` · `app/bo-loc/page.tsx` (mới) · `components/site-header.tsx` | **Cấu hình trang chủ (/) hiển thị trực tiếp Tab Tin Tức & di chuyển Bộ Lọc Cổ Phiếu sang (/bo-loc)**: <br>1. Đưa tab **Tin Tức** lên vị trí đầu tiên trên thanh menu điều hướng và trỏ trực tiếp về trang chủ `/`.<br>2. Cấu hình `app/page.tsx` nạp dữ liệu và hiển thị trực tiếp `NewsDashboard` (dòng tin tức tài chính & doanh nghiệp realtime, tự động bóc tách mã CK, lọc nguồn, bookmark, polling 60s).<br>3. Tạo trang `app/bo-loc/page.tsx` lưu giữ nguyên vẹn chức năng Bộ Lọc Cổ Phiếu + KPIs định giá RNAV.<br>4. Đồng bộ active state trên `SiteHeader` chuẩn xác cho cả desktop và mobile (`/` và `/tin-tuc` đều active Tin Tức, `/bo-loc` active Bộ Lọc Cổ Phiếu). |
 | 2026-09-01 | `scripts/cangbien/db.py` · `run_pipeline.py` · `.github/workflows/sync-market-data.yml` · `data/maritime/dashboard_summary.json` | **Cập nhật dữ liệu tàu mới nhất (31/08, 01/09, 02/09), xử lý chống trùng lặp và cài đặt cron auto-sync**: <br>1. Thêm hàm `dedupe_port_calls` và nâng cấp `insert_port_call` trong `db.py` chống trùng lặp theo `(Tên tàu, Ngày, Giờ, Hướng, Cầu bến)`.<br>2. Mở rộng `run_pipeline.py` quét multi-day (offset -3 đến 1), cập nhật 395 lượt tàu phân biệt duy nhất.<br>3. Nâng cấp GitHub Actions workflow chạy tự động 2 lần mỗi ngày (05:30 và 16:30 GMT+7) để tự động cào và deploy lên `dulieucophieu.com`. Push `1ba5545`. |
 | 2026-08-31 | `app/cang-bien/**` · `app/cang/**` · `components/cang-bien/**` | **Nâng cấp giao diện sang theme Dark Oceanic Fintech & đồng bộ Header toàn site**: <br>1. Gắn `SiteHeader` và thanh Sub-nav tabs (Tổng quan / Tra cứu tàu / Nguồn dữ liệu) trên tất cả các trang cảng biển.<br>2. Chuyển đổi toàn bộ giao diện sang Dark Oceanic: Nền Deep Slate 950, ambient glow Teal & Cyan, thẻ Neon Gradient, bảng Bloomberg Terminal glassmorphism.<br>3. Tối ưu biểu đồ cột SVG gradient đa sắc và dải tháng T1-T12 nằm ngang. Push `6d5f88f` → `d86b78f`. |
@@ -142,4 +159,4 @@ flowchart TD
 | 2026-08-23 | `app/xuat-nhap-khau/page.tsx` (mới) · `app/api/customs-trade/route.ts` (mới) · `components/customs-trade-viewer.tsx` (mới) · `components/TradeBalanceChart.tsx` (mới) · `components/site-header.tsx` | **Trang Thống Kê XNK + biểu đồ Cán cân**: route `/api/customs-trade` trả snapshot XNK; trang `/xuat-nhap-khau` render `TradeBalanceChart` + `CustomsTradeViewer`. |
 
 ---
-*Cập nhật lần cuối: 2026-09-02 · Người duy trì: Nguyễn Trung Nhật (trungnhat232@gmail.com)*
+*Cập nhật lần cuối: 2026-09-03 · Người duy trì: Nguyễn Trung Nhật (trungnhat232@gmail.com)*
