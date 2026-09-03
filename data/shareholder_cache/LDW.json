@@ -1,0 +1,142 @@
+{
+  "symbol": "LDW",
+  "updated": "2026-08-01T05:43:55.000Z",
+  "co_cau_so_huu": {
+    "CoDongSoHuu": [
+      {
+        "Code": "CORP_52114",
+        "Name": "CTCP Golden Stream",
+        "Url": "CTCP Golden Stream",
+        "AssetVolume": "9.000.000",
+        "AssetRate": "11,42",
+        "UpdatedDate": "16/07/2026"
+      },
+      {
+        "Code": "CORP_39104",
+        "Name": "CTCP Cấp thoát nước Thủy Anh",
+        "Url": "CTCP Cấp thoát nước Thủy Anh",
+        "AssetVolume": "12.502.601",
+        "AssetRate": "15,87",
+        "UpdatedDate": "16/07/2026"
+      },
+      {
+        "Code": "CEO_57132",
+        "Name": "Bùi Hoàng Trường Vĩ",
+        "Url": "<a href='/du-lieu/ceo/CEO_57132/bui-hoang-truong-vi.chn'>Bùi Hoàng Trường Vĩ</a>",
+        "AssetVolume": "1.300",
+        "AssetRate": "0,0",
+        "UpdatedDate": "16/07/2026"
+      },
+      {
+        "Code": "SCIC",
+        "Name": "Tổng Công ty Đầu tư và Kinh doanh vốn Nhà nước",
+        "Url": "<a href='/du-lieu/otc/SCIC-tong-cong-ty-dau-tu-va-kinh-doanh-von-nha-nuoc.chn' title='Tổng Công ty Đầu tư và Kinh doanh vốn Nhà nước'>Tổng Công ty Đầu tư và Kinh doanh vốn Nhà nước</a>",
+        "AssetVolume": "31.512.924",
+        "AssetRate": "39,99",
+        "UpdatedDate": "16/07/2026"
+      },
+      {
+        "Code": "CEO_57131",
+        "Name": "Nguyễn Văn Dũng",
+        "Url": "<a href='/du-lieu/ceo/CEO_57131/nguyen-van-dung.chn'>Nguyễn Văn Dũng</a>",
+        "AssetVolume": "3.600",
+        "AssetRate": "0,0",
+        "UpdatedDate": "16/07/2026"
+      },
+      {
+        "Code": "CORP_52113",
+        "Name": "Công ty TNHH Dịch vụ và Thương mại Mesa",
+        "Url": "Công ty TNHH Dịch vụ và Thương mại Mesa",
+        "AssetVolume": "10.735.182",
+        "AssetRate": "13,62",
+        "UpdatedDate": "16/07/2026"
+      },
+      {
+        "Code": "CEO_57136",
+        "Name": "Nguyễn Thị Mỹ Vân",
+        "Url": "<a href='/du-lieu/ceo/CEO_57136/nguyen-thi-my-van.chn'>Nguyễn Thị Mỹ Vân</a>",
+        "AssetVolume": "1.200",
+        "AssetRate": "0,0",
+        "UpdatedDate": "16/07/2026"
+      }
+    ],
+    "NuocNgoai": 78799600,
+    "NhaNuoc": 0,
+    "Khac": -78799500
+  },
+  "cong_ty_con": [],
+  "cong_ty_lien_ket": [
+    {
+      "Symbol": "LDW",
+      "CorpCode": "CORP_50836",
+      "Name": "Công ty Cổ phần cấp nước và XD Di linh",
+      "TotalCapital": 14.98,
+      "SharedCapital": 5.54,
+      "OwnershipRate": 37,
+      "Note": "",
+      "Order": 1,
+      "TradeCenter": ""
+    },
+    {
+      "Symbol": "LDW",
+      "CorpCode": "CORP_51453",
+      "Name": "CTCP Cấp thoát nước và Xây dựng Đức Trọng",
+      "TotalCapital": 13.5,
+      "SharedCapital": 4.32,
+      "OwnershipRate": 32.1,
+      "Note": "",
+      "Order": 2,
+      "TradeCenter": ""
+    }
+  ],
+  "giao_dich_noi_bo": [
+    {
+      "transaction_name": "Trương Thị Mỹ An",
+      "transaction_position": "",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 6875893,
+      "plan_buy": 0,
+      "plan_sell": 0,
+      "plan_begin_date": "",
+      "plan_end_date": "",
+      "real_buy": 0,
+      "real_sell": 6875893,
+      "real_end_date": "2025-12-11",
+      "published_date": "2026-07-28",
+      "volume_after": 0
+    },
+    {
+      "transaction_name": "Trương Thị Mỹ An",
+      "transaction_position": "",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 6875893,
+      "plan_buy": 0,
+      "plan_sell": 0,
+      "plan_begin_date": "",
+      "plan_end_date": "",
+      "real_buy": 0,
+      "real_sell": 6875893,
+      "real_end_date": "2025-12-15",
+      "published_date": "2025-12-17",
+      "volume_after": 0
+    },
+    {
+      "transaction_name": "Trương Thị Mỹ An",
+      "transaction_position": "",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 13975893,
+      "plan_buy": 0,
+      "plan_sell": 0,
+      "plan_begin_date": "",
+      "plan_end_date": "",
+      "real_buy": 0,
+      "real_sell": 7100000,
+      "real_end_date": "2025-11-10",
+      "published_date": "2025-11-17",
+      "volume_after": 6875893
+    }
+  ]
+}

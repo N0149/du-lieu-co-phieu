@@ -1,0 +1,432 @@
+{
+  "code": "10",
+  "broker": [
+    {
+      "name": "VPS",
+      "code": "VPS"
+    },
+    {
+      "name": "SSI",
+      "code": "SSI"
+    },
+    {
+      "name": "Kỹ Thương",
+      "code": "TCBS"
+    },
+    {
+      "name": "TP. Hồ Chí Minh",
+      "code": "HSC"
+    },
+    {
+      "name": "Vietcap",
+      "code": "VCI"
+    },
+    {
+      "name": "MB",
+      "code": "MBS"
+    },
+    {
+      "name": "VNDIRECT",
+      "code": "VNDS"
+    },
+    {
+      "name": "KIS Việt Nam",
+      "code": "KIS"
+    },
+    {
+      "name": "Mirae Asset Việt Nam",
+      "code": "MAS"
+    },
+    {
+      "name": "",
+      "code": ""
+    }
+  ],
+  "data": [
+    {
+      "data": {
+        "VPS": 14.28,
+        "SSI": 12.5,
+        "TCBS": 9,
+        "HSC": 6.43,
+        "VCI": 6.39,
+        "MBS": 5.11,
+        "VNDS": 4.62,
+        "KIS": 3.46,
+        "MAS": 2.82,
+        "": null
+      },
+      "quarter": 4,
+      "year": 2025
+    },
+    {
+      "data": {
+        "VPS": 17.05,
+        "SSI": 11.82,
+        "TCBS": 7.75,
+        "HSC": 6.25,
+        "VCI": 6.43,
+        "MBS": 5.61,
+        "VNDS": 5.42,
+        "KIS": 2.87,
+        "MAS": 2.97,
+        "": null
+      },
+      "quarter": 3,
+      "year": 2025
+    },
+    {
+      "data": {
+        "VPS": 15.37,
+        "SSI": 10.85,
+        "TCBS": 7.45,
+        "HSC": 6.69,
+        "VCI": 6.84,
+        "MBS": 5.39,
+        "VNDS": 6.36,
+        "KIS": 3.13,
+        "MAS": 3.5,
+        "": null
+      },
+      "quarter": 2,
+      "year": 2025
+    },
+    {
+      "data": {
+        "VPS": 16.94,
+        "SSI": 9.93,
+        "TCBS": 7.49,
+        "HSC": 6.59,
+        "VCI": 6.77,
+        "MBS": 5.19,
+        "VNDS": 5.26,
+        "KIS": 3.2,
+        "MAS": 4.08,
+        "": null
+      },
+      "quarter": 1,
+      "year": 2025
+    },
+    {
+      "data": {
+        "VPS": 16.45,
+        "SSI": 9.19,
+        "TCBS": 7.7,
+        "HSC": 6.75,
+        "VCI": 7.03,
+        "MBS": 5.16,
+        "VNDS": 5.08,
+        "KIS": 3.17,
+        "MAS": 4.67,
+        "": null
+      },
+      "quarter": 4,
+      "year": 2024
+    },
+    {
+      "data": {
+        "VPS": 17.63,
+        "SSI": 8.84,
+        "TCBS": 7.09,
+        "HSC": 6.65,
+        "VCI": 6.78,
+        "MBS": 4.69,
+        "VNDS": 5.7,
+        "KIS": 2.96,
+        "MAS": 4.5,
+        "": null
+      },
+      "quarter": 3,
+      "year": 2024
+    },
+    {
+      "data": {
+        "VPS": 19.19,
+        "SSI": 9.32,
+        "TCBS": 7.02,
+        "HSC": 6.17,
+        "VCI": 5.44,
+        "MBS": 4.87,
+        "VNDS": 6.24,
+        "KIS": null,
+        "MAS": 4.51,
+        "": null
+      },
+      "quarter": 2,
+      "year": 2024
+    },
+    {
+      "data": {
+        "VPS": 20.29,
+        "SSI": 9.32,
+        "TCBS": 6.56,
+        "HSC": 5.92,
+        "VCI": 5.57,
+        "MBS": 4.98,
+        "VNDS": 6.01,
+        "KIS": null,
+        "MAS": 4.64,
+        "": null
+      },
+      "quarter": 1,
+      "year": 2024
+    },
+    {
+      "data": {
+        "VPS": 19.92,
+        "SSI": 9.78,
+        "TCBS": 7.55,
+        "HSC": 5.35,
+        "VCI": 4.6,
+        "MBS": 5.21,
+        "VNDS": 6.64,
+        "KIS": 2.84,
+        "MAS": 4.94,
+        "": null
+      },
+      "quarter": 4,
+      "year": 2023
+    },
+    {
+      "data": {
+        "VPS": 19.92,
+        "SSI": 10.59,
+        "TCBS": 6.8,
+        "HSC": 5.06,
+        "VCI": 4,
+        "MBS": 5.09,
+        "VNDS": 7.21,
+        "KIS": 3.34,
+        "MAS": 4.71,
+        "": null
+      },
+      "quarter": 3,
+      "year": 2023
+    },
+    {
+      "data": {
+        "VPS": 19.1,
+        "SSI": 10.22,
+        "TCBS": 5.47,
+        "HSC": 4.98,
+        "VCI": 4.62,
+        "MBS": 4.85,
+        "VNDS": 7.27,
+        "KIS": 3.27,
+        "MAS": 5.16,
+        "": null
+      },
+      "quarter": 2,
+      "year": 2023
+    },
+    {
+      "data": {
+        "VPS": 15.67,
+        "SSI": 11.53,
+        "TCBS": 4.35,
+        "HSC": 6.32,
+        "VCI": null,
+        "MBS": 4.64,
+        "VNDS": 6.8,
+        "KIS": 3.39,
+        "MAS": 5.9,
+        "": null
+      },
+      "quarter": 1,
+      "year": 2023
+    },
+    {
+      "data": {
+        "VPS": 14.81,
+        "SSI": 9.96,
+        "TCBS": 3.73,
+        "HSC": 6.19,
+        "VCI": null,
+        "MBS": 4.88,
+        "VNDS": 7.51,
+        "KIS": 3.48,
+        "MAS": 6.31,
+        "": null
+      },
+      "quarter": 4,
+      "year": 2022
+    },
+    {
+      "data": {
+        "VPS": 18.71,
+        "SSI": 9.6,
+        "TCBS": 5.23,
+        "HSC": 5.58,
+        "VCI": null,
+        "MBS": 4.73,
+        "VNDS": 7.72,
+        "KIS": 2.74,
+        "MAS": 5.85,
+        "": null
+      },
+      "quarter": 3,
+      "year": 2022
+    },
+    {
+      "data": {
+        "VPS": 17.1,
+        "SSI": 10.02,
+        "TCBS": 5.37,
+        "HSC": 6.06,
+        "VCI": null,
+        "MBS": 4.44,
+        "VNDS": 7.96,
+        "KIS": 3.69,
+        "MAS": 5.1,
+        "": null
+      },
+      "quarter": 2,
+      "year": 2022
+    },
+    {
+      "data": {
+        "VPS": 17.94,
+        "SSI": 9.66,
+        "TCBS": 5.55,
+        "HSC": 5.24,
+        "VCI": null,
+        "MBS": 4.52,
+        "VNDS": 8.01,
+        "KIS": 3.27,
+        "MAS": 5.01,
+        "": null
+      },
+      "quarter": 1,
+      "year": 2022
+    },
+    {
+      "data": {
+        "VPS": 17.12,
+        "SSI": 10.28,
+        "TCBS": 5.28,
+        "HSC": 5.66,
+        "VCI": null,
+        "MBS": 4.43,
+        "VNDS": 7.76,
+        "KIS": 2.8,
+        "MAS": 4.47,
+        "": null
+      },
+      "quarter": 4,
+      "year": 2021
+    },
+    {
+      "data": {
+        "VPS": 16.5,
+        "SSI": 11.58,
+        "TCBS": 4.81,
+        "HSC": 6.79,
+        "VCI": null,
+        "MBS": 4.45,
+        "VNDS": 7.72,
+        "KIS": 2.98,
+        "MAS": 3.94,
+        "": null
+      },
+      "quarter": 3,
+      "year": 2021
+    },
+    {
+      "data": {
+        "VPS": 16.4,
+        "SSI": 10.97,
+        "TCBS": 4.03,
+        "HSC": 7.05,
+        "VCI": null,
+        "MBS": 3.99,
+        "VNDS": 6.92,
+        "KIS": 2.79,
+        "MAS": 4.56,
+        "": null
+      },
+      "quarter": 2,
+      "year": 2021
+    },
+    {
+      "data": {
+        "VPS": 13.24,
+        "SSI": 11.89,
+        "TCBS": 3.06,
+        "HSC": 8.23,
+        "VCI": null,
+        "MBS": 4.07,
+        "VNDS": 7.46,
+        "KIS": null,
+        "MAS": 4.41,
+        "": null
+      },
+      "quarter": 1,
+      "year": 2021
+    },
+    {
+      "data": {
+        "VPS": 10.84,
+        "SSI": 11.65,
+        "TCBS": null,
+        "HSC": 7.9,
+        "VCI": null,
+        "MBS": 4.83,
+        "VNDS": 7.28,
+        "KIS": 3.75,
+        "MAS": 4.8,
+        "": null
+      },
+      "quarter": 4,
+      "year": 2020
+    },
+    {
+      "data": {
+        "VPS": 7.65,
+        "SSI": 11.82,
+        "TCBS": null,
+        "HSC": 8.43,
+        "VCI": null,
+        "MBS": 5.11,
+        "VNDS": 7.12,
+        "KIS": 3.78,
+        "MAS": 4.49,
+        "": null
+      },
+      "quarter": 3,
+      "year": 2020
+    },
+    {
+      "data": {
+        "VPS": 5.87,
+        "SSI": 14.13,
+        "TCBS": 3.49,
+        "HSC": 8.77,
+        "VCI": null,
+        "MBS": 4.42,
+        "VNDS": 7.25,
+        "KIS": null,
+        "MAS": 4.33,
+        "": null
+      },
+      "quarter": 2,
+      "year": 2020
+    },
+    {
+      "data": {
+        "VPS": 5.25,
+        "SSI": 12.32,
+        "TCBS": null,
+        "HSC": 11.03,
+        "VCI": null,
+        "MBS": 4.7,
+        "VNDS": 6.95,
+        "KIS": null,
+        "MAS": 5.5,
+        "": null
+      },
+      "quarter": 1,
+      "year": 2020
+    }
+  ],
+  "update_time": 1773972749
+}

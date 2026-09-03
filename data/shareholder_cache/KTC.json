@@ -1,0 +1,148 @@
+{
+  "symbol": "KTC",
+  "updated": "2026-03-22T03:18:22.000Z",
+  "co_cau_so_huu": {
+    "CoDongSoHuu": [
+      {
+        "Code": "CORP_51559",
+        "Name": "Ủy ban Nhân dân tỉnh Kiên Giang",
+        "Url": "Ủy ban Nhân dân tỉnh Kiên Giang",
+        "AssetVolume": "17.886.578",
+        "AssetRate": "49,04",
+        "UpdatedDate": "02/12/2025"
+      },
+      {
+        "Code": "CEO_54965",
+        "Name": "Nguyễn Thành Công",
+        "Url": "<a href='/du-lieu/ceo/CEO_54965/nguyen-thanh-cong.chn'>Nguyễn Thành Công</a>",
+        "AssetVolume": "1.700",
+        "AssetRate": "0,0",
+        "UpdatedDate": "02/12/2025"
+      },
+      {
+        "Code": "CEO_54966",
+        "Name": "Huỳnh Thanh Nguyên",
+        "Url": "<a href='/du-lieu/ceo/CEO_54966/huynh-thanh-nguyen.chn'>Huỳnh Thanh Nguyên</a>",
+        "AssetVolume": "3.500",
+        "AssetRate": "0,01",
+        "UpdatedDate": "02/12/2025"
+      },
+      {
+        "Code": "CEO_54953",
+        "Name": "Nguyễn Thanh Tung",
+        "Url": "<a href='/du-lieu/ceo/CEO_54953/nguyen-thanh-tung.chn'>Nguyễn Thanh Tung</a>",
+        "AssetVolume": "7.500",
+        "AssetRate": "0,02",
+        "UpdatedDate": "02/12/2025"
+      },
+      {
+        "Code": "CORP_95069",
+        "Name": "Công ty TNHH MTV Xăng dầu Tây Nam Bộ",
+        "Url": "Công ty TNHH MTV Xăng dầu Tây Nam Bộ",
+        "AssetVolume": "5.083.913",
+        "AssetRate": "13,94",
+        "UpdatedDate": "02/12/2025"
+      },
+      {
+        "Code": "CEO_60128",
+        "Name": "Đặng Văn Lành",
+        "Url": "<a href='/du-lieu/ceo/CEO_60128/dang-van-lanh.chn'>Đặng Văn Lành</a>",
+        "AssetVolume": "1.900",
+        "AssetRate": "0,01",
+        "UpdatedDate": "02/12/2025"
+      },
+      {
+        "Code": "CORP_51558",
+        "Name": "Quỹ Đầu tư Phát triển Kiên Giang",
+        "Url": "Quỹ Đầu tư Phát triển Kiên Giang",
+        "AssetVolume": "3.647.383",
+        "AssetRate": "10,0",
+        "UpdatedDate": "02/12/2025"
+      },
+      {
+        "Code": "CEO_54967",
+        "Name": "Đinh Hoài Thanh",
+        "Url": "<a href='/du-lieu/ceo/CEO_54967/dinh-hoai-thanh.chn'>Đinh Hoài Thanh</a>",
+        "AssetVolume": "6.000",
+        "AssetRate": "0,02",
+        "UpdatedDate": "02/12/2025"
+      },
+      {
+        "Code": "CEO_54955",
+        "Name": "Nguyễn Duy An",
+        "Url": "<a href='/du-lieu/ceo/CEO_54955/nguyen-duy-an.chn'>Nguyễn Duy An</a>",
+        "AssetVolume": "6.100",
+        "AssetRate": "0,02",
+        "UpdatedDate": "02/12/2025"
+      },
+      {
+        "Code": "CORP_00856",
+        "Name": "Công ty Xăng dầu khu vực 2 - TNHH MTV",
+        "Url": "Công ty Xăng dầu khu vực 2 - TNHH MTV",
+        "AssetVolume": "9.118.459",
+        "AssetRate": "25,0",
+        "UpdatedDate": "02/12/2025"
+      },
+      {
+        "Code": "CEO_54963",
+        "Name": "Võ Chí Công",
+        "Url": "<a href='/du-lieu/ceo/CEO_54963/vo-chi-cong.chn'>Võ Chí Công</a>",
+        "AssetVolume": "1.900",
+        "AssetRate": "0,01",
+        "UpdatedDate": "02/12/2025"
+      }
+    ],
+    "NuocNgoai": 49.00000000000001,
+    "NhaNuoc": 0,
+    "Khac": 50.99999999999999
+  },
+  "cong_ty_con": [
+    {
+      "Symbol": "KTC",
+      "CorpCode": "CORP_51560",
+      "Name": "CTCP Thương mại dịch vụ Kiên Giang",
+      "TotalCapital": 50,
+      "SharedCapital": 49.02,
+      "OwnershipRate": 98.03,
+      "Note": "",
+      "Order": 1,
+      "TradeCenter": ""
+    }
+  ],
+  "cong_ty_lien_ket": [
+    {
+      "Symbol": "KTC",
+      "CorpCode": "CORP_95099",
+      "Name": "Công ty TNHH Xăng dầu Kiên Giang",
+      "TotalCapital": 100,
+      "SharedCapital": 49,
+      "OwnershipRate": 49,
+      "Note": "",
+      "Order": 2,
+      "TradeCenter": ""
+    },
+    {
+      "Symbol": "KTC",
+      "CorpCode": "CORP_51561",
+      "Name": "CTCP Thực phẩm đóng hộp Kiên Giang",
+      "TotalCapital": 20.368,
+      "SharedCapital": 7.76,
+      "OwnershipRate": 38.08,
+      "Note": "",
+      "Order": 3,
+      "TradeCenter": ""
+    },
+    {
+      "Symbol": "KTC",
+      "CorpCode": "KBE",
+      "Name": "Công ty Cổ phần Sách - Thiết bị Trường học Kiên Giang",
+      "TotalCapital": 12.3106,
+      "SharedCapital": 2.462,
+      "OwnershipRate": 20,
+      "Note": "",
+      "Order": 4,
+      "TradeCenter": "UpCOM"
+    }
+  ],
+  "giao_dich_noi_bo": []
+}

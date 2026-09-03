@@ -1,0 +1,355 @@
+{
+  "symbol": "BHN",
+  "updated": "2026-06-01T06:56:33.000Z",
+  "co_cau_so_huu": {
+    "CoDongSoHuu": [
+      {
+        "Code": "CEO_60621",
+        "Name": "Trần Đình Thanh",
+        "Url": "<a href='/du-lieu/ceo/CEO_60621/tran-dinh-thanh.chn'>Trần Đình Thanh</a>",
+        "AssetVolume": "6.900",
+        "AssetRate": "0,0",
+        "UpdatedDate": "09/06/2025"
+      },
+      {
+        "Code": "CEO_52039",
+        "Name": "Ngô Quế Lâm",
+        "Url": "<a href='/du-lieu/ceo/CEO_52039/ngo-que-lam.chn'>Ngô Quế Lâm</a>",
+        "AssetVolume": "1.100",
+        "AssetRate": "0,0",
+        "UpdatedDate": "09/06/2025"
+      },
+      {
+        "Code": "CORP_60151",
+        "Name": "Bộ Công thương",
+        "Url": "Bộ Công thương",
+        "AssetVolume": "189.592.400",
+        "AssetRate": "81,79",
+        "UpdatedDate": "09/06/2025"
+      },
+      {
+        "Code": "CORP_39446",
+        "Name": "Carlsberg Breweries A/S",
+        "Url": "Carlsberg Breweries A/S",
+        "AssetVolume": "40.198.200",
+        "AssetRate": "17,34",
+        "UpdatedDate": "09/06/2025"
+      }
+    ],
+    "NuocNgoai": 17.56,
+    "NhaNuoc": 0,
+    "Khac": 82.44
+  },
+  "cong_ty_con": [
+    {
+      "Symbol": "BHN",
+      "CorpCode": "CORP_30157",
+      "Name": "CTCP TNHH MTV Thương mại Habeco",
+      "TotalCapital": 50,
+      "SharedCapital": 50,
+      "OwnershipRate": 100,
+      "Note": "",
+      "Order": 1,
+      "TradeCenter": ""
+    },
+    {
+      "Symbol": "BHN",
+      "CorpCode": "CORP_30155",
+      "Name": "CTCP Bia Hà Nội - Quảng Tri",
+      "TotalCapital": 110,
+      "SharedCapital": 108.415,
+      "OwnershipRate": 98.56,
+      "Note": "",
+      "Order": 2,
+      "TradeCenter": ""
+    },
+    {
+      "Symbol": "BHN",
+      "CorpCode": "CORP_30156",
+      "Name": "CTCP Đầu tư phát triển công nghệ Bia rượu Nước giải khát Hà Nội",
+      "TotalCapital": 200,
+      "SharedCapital": 192.2,
+      "OwnershipRate": 96.102,
+      "Note": "",
+      "Order": 3,
+      "TradeCenter": ""
+    },
+    {
+      "Symbol": "BHN",
+      "CorpCode": "CORP_30154",
+      "Name": "CTCP Bao bì Bia rượu Nước giải khát",
+      "TotalCapital": 20,
+      "SharedCapital": 13.79,
+      "OwnershipRate": 68.95,
+      "Note": "",
+      "Order": 4,
+      "TradeCenter": ""
+    },
+    {
+      "Symbol": "BHN",
+      "CorpCode": "HBH",
+      "Name": "Công ty Cổ phần Habeco - Hải Phòng",
+      "TotalCapital": 160,
+      "SharedCapital": 106.7068,
+      "OwnershipRate": 66.69,
+      "Note": "",
+      "Order": 5,
+      "TradeCenter": "UpCOM"
+    },
+    {
+      "Symbol": "BHN",
+      "CorpCode": "BTB",
+      "Name": "Công ty Cổ phần Bia Hà Nội - Thái Bình",
+      "TotalCapital": 76.9122,
+      "SharedCapital": 51,
+      "OwnershipRate": 66.31,
+      "Note": "",
+      "Order": 6,
+      "TradeCenter": "UpCOM"
+    },
+    {
+      "Symbol": "BHN",
+      "CorpCode": "CORP_30150",
+      "Name": "CTCP Bia Hà Nội - Hải Phòng",
+      "TotalCapital": 91.792,
+      "SharedCapital": 59.674,
+      "OwnershipRate": 65.01,
+      "Note": "",
+      "Order": 7,
+      "TradeCenter": ""
+    },
+    {
+      "Symbol": "BHN",
+      "CorpCode": "BQB",
+      "Name": "Công ty Cổ phần Bia Hà Nội - Quảng Bình",
+      "TotalCapital": 58,
+      "SharedCapital": 35.9897,
+      "OwnershipRate": 62.05,
+      "Note": "",
+      "Order": 8,
+      "TradeCenter": "UpCOM"
+    },
+    {
+      "Symbol": "BHN",
+      "CorpCode": "HAT",
+      "Name": "Công ty Cổ phần Thương mại Bia Hà Nội",
+      "TotalCapital": 31.23,
+      "SharedCapital": 18.738,
+      "OwnershipRate": 60,
+      "Note": "",
+      "Order": 9,
+      "TradeCenter": "HASTC"
+    },
+    {
+      "Symbol": "BHN",
+      "CorpCode": "THB",
+      "Name": "Công ty cổ phần Bia Hà Nội - Thanh Hóa",
+      "TotalCapital": 114.2457,
+      "SharedCapital": 62.8351,
+      "OwnershipRate": 55,
+      "Note": "",
+      "Order": 10,
+      "TradeCenter": "HASTC"
+    },
+    {
+      "Symbol": "BHN",
+      "CorpCode": "HAD",
+      "Name": "Công ty Cổ phần Bia Hà Nội - Hải Dương",
+      "TotalCapital": 40,
+      "SharedCapital": 22,
+      "OwnershipRate": 55,
+      "Note": "",
+      "Order": 11,
+      "TradeCenter": "HASTC"
+    },
+    {
+      "Symbol": "BHN",
+      "CorpCode": "HNR",
+      "Name": "Công ty cổ phần Rượu và Nước giải khát Hà Nội",
+      "TotalCapital": 200,
+      "SharedCapital": 108.58041,
+      "OwnershipRate": 54.29,
+      "Note": "",
+      "Order": 12,
+      "TradeCenter": "UpCOM"
+    },
+    {
+      "Symbol": "BHN",
+      "CorpCode": "CORP_30145",
+      "Name": "CTCP Bia Hà Nội - Hồng Hà",
+      "TotalCapital": 100,
+      "SharedCapital": 53.885,
+      "OwnershipRate": 53.89,
+      "Note": "",
+      "Order": 13,
+      "TradeCenter": ""
+    },
+    {
+      "Symbol": "BHN",
+      "CorpCode": "CORP_30152",
+      "Name": "CTCP Bia Thương mại Hà Nội - Quảng Ninh",
+      "TotalCapital": 0,
+      "SharedCapital": 7.895,
+      "OwnershipRate": 52.64,
+      "Note": "",
+      "Order": 14,
+      "TradeCenter": ""
+    },
+    {
+      "Symbol": "BHN",
+      "CorpCode": "CORP_30158",
+      "Name": "CTCP Bia Hà Nội - Nghệ An",
+      "TotalCapital": 0,
+      "SharedCapital": 91.8,
+      "OwnershipRate": 51,
+      "Note": "",
+      "Order": 15,
+      "TradeCenter": ""
+    },
+    {
+      "Symbol": "BHN",
+      "CorpCode": "BBM",
+      "Name": "Công ty Cổ phần Bia Hà Nội - Nam Định",
+      "TotalCapital": 20,
+      "SharedCapital": 10.2,
+      "OwnershipRate": 51,
+      "Note": "",
+      "Order": 16,
+      "TradeCenter": "UpCOM"
+    }
+  ],
+  "cong_ty_lien_ket": [
+    {
+      "Symbol": "BHN",
+      "CorpCode": "CORP_30159",
+      "Name": "CTCP Bao bì Habeco",
+      "TotalCapital": 25.5,
+      "SharedCapital": 15.48,
+      "OwnershipRate": 44.22,
+      "Note": "",
+      "Order": 17,
+      "TradeCenter": ""
+    },
+    {
+      "Symbol": "BHN",
+      "CorpCode": "HRB",
+      "Name": "Công ty Cổ phần Harec Đầu tư và Thương mại",
+      "TotalCapital": 63.384,
+      "SharedCapital": 25.3536,
+      "OwnershipRate": 40,
+      "Note": "",
+      "Order": 18,
+      "TradeCenter": "UpCOM"
+    },
+    {
+      "Symbol": "BHN",
+      "CorpCode": "CORP_30143",
+      "Name": "CTCP Vận tải Habeco",
+      "TotalCapital": 25,
+      "SharedCapital": 7,
+      "OwnershipRate": 28,
+      "Note": "",
+      "Order": 19,
+      "TradeCenter": ""
+    },
+    {
+      "Symbol": "BHN",
+      "CorpCode": "CORP_30144",
+      "Name": "CTCP Bia Hà Nội - Kim Bài",
+      "TotalCapital": 40,
+      "SharedCapital": 11.2,
+      "OwnershipRate": 28,
+      "Note": "",
+      "Order": 20,
+      "TradeCenter": ""
+    },
+    {
+      "Symbol": "BHN",
+      "CorpCode": "CORP_30147",
+      "Name": "Công ty TNHH Thủy tinh Sanmiguel Yamamura Hải Phòng",
+      "TotalCapital": 0,
+      "SharedCapital": 0,
+      "OwnershipRate": 27.21,
+      "Note": "",
+      "Order": 21,
+      "TradeCenter": ""
+    },
+    {
+      "Symbol": "BHN",
+      "CorpCode": "CORP_30142",
+      "Name": "CTCP Đầu tư phát triển Habeco",
+      "TotalCapital": 300,
+      "SharedCapital": 72,
+      "OwnershipRate": 24,
+      "Note": "",
+      "Order": 22,
+      "TradeCenter": ""
+    }
+  ],
+  "giao_dich_noi_bo": [
+    {
+      "transaction_name": "Nguyễn Thị Ngọc Anh",
+      "transaction_position": "Kế toán trưởng",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 900,
+      "plan_buy": 0,
+      "plan_sell": 900,
+      "plan_begin_date": "2016-12-19",
+      "plan_end_date": "2017-01-12",
+      "real_buy": 0,
+      "real_sell": 900,
+      "real_end_date": "2016-12-19",
+      "published_date": "2016-12-15",
+      "volume_after": 0
+    },
+    {
+      "transaction_name": "Nguyễn Thị Nga",
+      "transaction_position": "Thành viên HĐQT",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 2200,
+      "plan_buy": 0,
+      "plan_sell": 2200,
+      "plan_begin_date": "2016-11-24",
+      "plan_end_date": "2016-12-20",
+      "real_buy": 0,
+      "real_sell": 2200,
+      "real_end_date": "2016-12-01",
+      "published_date": "2016-11-21",
+      "volume_after": 0
+    },
+    {
+      "transaction_name": "Đỗ Thị Hảo",
+      "transaction_position": "Vợ",
+      "leader_name": "Vương Toàn",
+      "leader_position": "Phó Tổng GĐ",
+      "volume_before": 2300,
+      "plan_buy": 0,
+      "plan_sell": 2300,
+      "plan_begin_date": "2016-11-23",
+      "plan_end_date": "2016-12-22",
+      "real_buy": 0,
+      "real_sell": 2300,
+      "real_end_date": "2016-11-28",
+      "published_date": "2016-11-21",
+      "volume_after": 0
+    },
+    {
+      "transaction_name": "Chử Thu Trang",
+      "transaction_position": "Thành viên BKS",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 600,
+      "plan_buy": 0,
+      "plan_sell": 600,
+      "plan_begin_date": "2016-11-13",
+      "plan_end_date": "2016-12-08",
+      "real_buy": 0,
+      "real_sell": 600,
+      "real_end_date": "2016-11-21",
+      "published_date": "2016-11-09",
+      "volume_after": 0
+    }
+  ]
+}

@@ -1,0 +1,268 @@
+{
+  "symbol": "FCS",
+  "updated": "2026-05-01T05:52:25.000Z",
+  "co_cau_so_huu": {
+    "CoDongSoHuu": [
+      {
+        "Code": "CEO_83051",
+        "Name": "Huỳnh Thị Phượng",
+        "Url": "<a href='/du-lieu/ceo/CEO_83051/huynh-thi-phuong.chn'>Huỳnh Thị Phượng</a>",
+        "AssetVolume": "7.500",
+        "AssetRate": "0,03",
+        "UpdatedDate": "31/12/2022"
+      },
+      {
+        "Code": "VSF",
+        "Name": "Công ty Cổ phần Lương thực Thành phố Hồ Chí Minh",
+        "Url": "<a href='/du-lieu/upcom/VSF-tong-cong-ty-luong-thuc-mien-nam-cong-ty-co-phan.chn' title='Tổng Công ty Lương thực Miền Nam - Công ty cổ phần'>Tổng Công ty Lương thực Miền Nam - Công ty cổ phần</a>",
+        "AssetVolume": "19.187.100",
+        "AssetRate": "65,15",
+        "UpdatedDate": "30/06/2024"
+      },
+      {
+        "Code": "CORP_99892",
+        "Name": "CTCP Đầu tư SFC",
+        "Url": "CTCP Đầu tư SFC",
+        "AssetVolume": "9.000.000",
+        "AssetRate": "30,56",
+        "UpdatedDate": "31/12/2022"
+      },
+      {
+        "Code": "CORP_654445",
+        "Name": "Tổng công ty Xây dựng thủy lợi 4-CTCP",
+        "Url": "Tổng công ty Xây dựng thủy lợi 4-CTCP",
+        "AssetVolume": "4.338.200",
+        "AssetRate": "14,73",
+        "UpdatedDate": "27/08/2025"
+      },
+      {
+        "Code": "CEO_873459",
+        "Name": "Nguyễn Ngọc Mai Trinh",
+        "Url": "<a href='/du-lieu/ceo/CEO_873459/nguyen-ngoc-mai-trinh.chn'>Nguyễn Ngọc Mai Trinh</a>",
+        "AssetVolume": "913.814",
+        "AssetRate": "3,1",
+        "UpdatedDate": "31/12/2022"
+      },
+      {
+        "Code": "CEO_873674",
+        "Name": "Nguyễn Thụy Hải Yến",
+        "Url": "<a href='/du-lieu/ceo/CEO_873674/nguyen-thuy-hai-yen.chn'>Nguyễn Thụy Hải Yến</a>",
+        "AssetVolume": "1.600",
+        "AssetRate": "0,01",
+        "UpdatedDate": "21/07/2022"
+      },
+      {
+        "Code": "CORP_82279",
+        "Name": "CTCP Đầu tư Song Mộc",
+        "Url": "CTCP Đầu tư Song Mộc",
+        "AssetVolume": "7.040.914",
+        "AssetRate": "23,91",
+        "UpdatedDate": "22/09/2023"
+      },
+      {
+        "Code": "KLQ_99995",
+        "Name": "Phan Thị Bích Tuyên",
+        "Url": "Phan Thị Bích Tuyên",
+        "AssetVolume": "2.600.000",
+        "AssetRate": "8,83",
+        "UpdatedDate": "25/08/2023"
+      }
+    ],
+    "NuocNgoai": 29450000,
+    "NhaNuoc": 0,
+    "Khac": -29449900
+  },
+  "cong_ty_con": [],
+  "cong_ty_lien_ket": [
+    {
+      "Symbol": "FCS",
+      "CorpCode": "CORP_93761",
+      "Name": "Công ty cổ phần Phú Tam Khôi",
+      "TotalCapital": 77.5,
+      "SharedCapital": 31,
+      "OwnershipRate": 40,
+      "Note": "",
+      "Order": 1,
+      "TradeCenter": ""
+    },
+    {
+      "Symbol": "FCS",
+      "CorpCode": "CORP_51905",
+      "Name": "Công ty TNHH Thương mại Dịch vụ Đồng Thịnh",
+      "TotalCapital": 533,
+      "SharedCapital": 80,
+      "OwnershipRate": 15,
+      "Note": "",
+      "Order": 2,
+      "TradeCenter": ""
+    },
+    {
+      "Symbol": "FCS",
+      "CorpCode": "CORP_51906",
+      "Name": "CTCP Địa ốc Bình Tây",
+      "TotalCapital": 0,
+      "SharedCapital": 0,
+      "OwnershipRate": 0,
+      "Note": "",
+      "Order": 3,
+      "TradeCenter": ""
+    },
+    {
+      "Symbol": "FCS",
+      "CorpCode": "CORP_80939",
+      "Name": "CTCP Bao bì Bình Tây",
+      "TotalCapital": 0,
+      "SharedCapital": 0,
+      "OwnershipRate": 0,
+      "Note": "",
+      "Order": 4,
+      "TradeCenter": ""
+    }
+  ],
+  "giao_dich_noi_bo": [
+    {
+      "transaction_name": "Tổng công ty Xây dựng thủy lợi 4-CTCP",
+      "transaction_position": "",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 2734200,
+      "plan_buy": 0,
+      "plan_sell": 0,
+      "plan_begin_date": "",
+      "plan_end_date": "",
+      "real_buy": 1604000,
+      "real_sell": 0,
+      "real_end_date": "2025-08-27",
+      "published_date": "2025-09-08",
+      "volume_after": 4338200
+    },
+    {
+      "transaction_name": "Tổng công ty Xây dựng thủy lợi 4-CTCP",
+      "transaction_position": "",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 0,
+      "plan_buy": 0,
+      "plan_sell": 0,
+      "plan_begin_date": "",
+      "plan_end_date": "",
+      "real_buy": 2715200,
+      "real_sell": 0,
+      "real_end_date": "2025-06-05",
+      "published_date": "2025-06-13",
+      "volume_after": 2715200
+    },
+    {
+      "transaction_name": "Phan Thị Bích Tuyên",
+      "transaction_position": "Phó Tổng GĐ",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 2600000,
+      "plan_buy": 0,
+      "plan_sell": 2600000,
+      "plan_begin_date": "2025-06-05",
+      "plan_end_date": "2025-07-04",
+      "real_buy": 0,
+      "real_sell": 2600000,
+      "real_end_date": "2025-06-05",
+      "published_date": "2025-06-04",
+      "volume_after": 0
+    },
+    {
+      "transaction_name": "CTCP Đầu tư Song Mộc",
+      "transaction_position": "",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 0,
+      "plan_buy": 7155914,
+      "plan_sell": 0,
+      "plan_begin_date": "2023-08-28",
+      "plan_end_date": "2023-09-22",
+      "real_buy": 7040914,
+      "real_sell": 0,
+      "real_end_date": "2023-09-22",
+      "published_date": "2023-09-26",
+      "volume_after": 7040914
+    },
+    {
+      "transaction_name": "CTCP Tập đoàn Somo Việt Nam",
+      "transaction_position": "",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 9913814,
+      "plan_buy": 0,
+      "plan_sell": 9913814,
+      "plan_begin_date": "2023-08-14",
+      "plan_end_date": "2023-09-08",
+      "real_buy": 0,
+      "real_sell": 9913814,
+      "real_end_date": "2023-08-29",
+      "published_date": "2023-09-05",
+      "volume_after": 0
+    },
+    {
+      "transaction_name": "Phan Thị Bích Tuyên",
+      "transaction_position": "",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 0,
+      "plan_buy": 0,
+      "plan_sell": 0,
+      "plan_begin_date": "",
+      "plan_end_date": "",
+      "real_buy": 2600000,
+      "real_sell": 0,
+      "real_end_date": "2023-08-25",
+      "published_date": "2023-08-31",
+      "volume_after": 2600000
+    },
+    {
+      "transaction_name": "CTCP Đầu tư SFC",
+      "transaction_position": "",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 9690114,
+      "plan_buy": 400000,
+      "plan_sell": 0,
+      "plan_begin_date": "2018-07-26",
+      "plan_end_date": "2018-08-23",
+      "real_buy": 223700,
+      "real_sell": 0,
+      "real_end_date": "2018-08-23",
+      "published_date": "2018-07-25",
+      "volume_after": 9913814
+    },
+    {
+      "transaction_name": "Huỳnh Thị Phượng",
+      "transaction_position": "Kế toán trưởng",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 7500,
+      "plan_buy": 0,
+      "plan_sell": 6500,
+      "plan_begin_date": "2017-03-06",
+      "plan_end_date": "2017-04-03",
+      "real_buy": 0,
+      "real_sell": 0,
+      "real_end_date": "2017-04-03",
+      "published_date": "2017-03-03",
+      "volume_after": 7500
+    },
+    {
+      "transaction_name": "Võ Thành Nhân",
+      "transaction_position": "Thành viên BKS",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 1600,
+      "plan_buy": 0,
+      "plan_sell": 1600,
+      "plan_begin_date": "2017-03-06",
+      "plan_end_date": "2017-04-03",
+      "real_buy": 0,
+      "real_sell": 0,
+      "real_end_date": "2017-04-03",
+      "published_date": "2017-03-03",
+      "volume_after": 1600
+    }
+  ]
+}

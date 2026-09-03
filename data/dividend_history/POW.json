@@ -1,0 +1,45 @@
+{
+  "symbol": "POW",
+  "events": [
+    {
+      "date": "2020-11-18",
+      "cashVnd": 300,
+      "stockPct": null,
+      "texts": [
+        "Trả cổ tức bằng tiền mặt - Cả năm 2019 - 300 VND"
+      ]
+    },
+    {
+      "date": "2021-09-30",
+      "cashVnd": 200,
+      "stockPct": null,
+      "texts": [
+        "Trả cổ tức bằng tiền mặt - Cả năm 2020 - 200 VND"
+      ]
+    },
+    {
+      "date": "2025-12-10",
+      "cashVnd": null,
+      "stockPct": 0.04,
+      "texts": [
+        "Phát hành cổ phiếu - Trả Cổ tức bằng Cổ phiếu tỉ lệ 4.0%"
+      ]
+    },
+    {
+      "date": "2025-12-10",
+      "cashVnd": null,
+      "stockPct": 0.15,
+      "texts": [
+        "Phát hành cổ phiếu - Cổ phiếu thưởng tỉ lệ 15.0%"
+      ]
+    },
+    {
+      "date": "2025-12-10",
+      "cashVnd": null,
+      "stockPct": 0.12,
+      "texts": [
+        "Phát hành cổ phiếu - Quyền mua CP cho Cổ đông hiện hữu tỉ lệ 12.0%"
+      ]
+    }
+  ]
+}

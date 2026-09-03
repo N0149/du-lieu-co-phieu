@@ -1,0 +1,109 @@
+{
+  "symbol": "DNA",
+  "events": [
+    {
+      "date": "2015-12-31",
+      "cashVnd": 1500,
+      "stockPct": null,
+      "texts": [
+        "Trả cổ tức bằng tiền mặt - Cả năm 2015 - 1,500 VND"
+      ]
+    },
+    {
+      "date": "2017-06-27",
+      "cashVnd": 1500,
+      "stockPct": null,
+      "texts": [
+        "Trả cổ tức bằng tiền mặt - Cả năm 2016 - 1,500 VND"
+      ]
+    },
+    {
+      "date": "2018-06-04",
+      "cashVnd": 1500,
+      "stockPct": null,
+      "texts": [
+        "Trả cổ tức bằng tiền mặt - Đợt 1 2017 - 1,500 VND"
+      ]
+    },
+    {
+      "date": "2019-07-12",
+      "cashVnd": 1000,
+      "stockPct": null,
+      "texts": [
+        "Trả cổ tức bằng tiền mặt - Cả năm 2018 - 1,000 VND"
+      ]
+    },
+    {
+      "date": "2019-08-19",
+      "cashVnd": null,
+      "stockPct": 0.05,
+      "texts": [
+        "Phát hành cổ phiếu - Trả Cổ tức bằng Cổ phiếu tỉ lệ 5.0%"
+      ]
+    },
+    {
+      "date": "2020-07-23",
+      "cashVnd": 1000,
+      "stockPct": null,
+      "texts": [
+        "Trả cổ tức bằng tiền mặt - Cả năm 2019 - 1,000 VND"
+      ]
+    },
+    {
+      "date": "2020-09-17",
+      "cashVnd": null,
+      "stockPct": 0.05,
+      "texts": [
+        "Phát hành cổ phiếu - Trả Cổ tức bằng Cổ phiếu tỉ lệ 5.0%"
+      ]
+    },
+    {
+      "date": "2021-07-26",
+      "cashVnd": 1000,
+      "stockPct": null,
+      "texts": [
+        "Trả cổ tức bằng tiền mặt - Cả năm 2020 - 1,000 VND"
+      ]
+    },
+    {
+      "date": "2021-10-08",
+      "cashVnd": null,
+      "stockPct": 0.05,
+      "texts": [
+        "Phát hành cổ phiếu - Trả Cổ tức bằng Cổ phiếu tỉ lệ 5.0%"
+      ]
+    },
+    {
+      "date": "2022-10-14",
+      "cashVnd": 1500,
+      "stockPct": null,
+      "texts": [
+        "Trả cổ tức bằng tiền mặt - Cả năm 2021 - 1,500 VND"
+      ]
+    },
+    {
+      "date": "2023-09-07",
+      "cashVnd": 1500,
+      "stockPct": null,
+      "texts": [
+        "Trả cổ tức bằng tiền mặt - Cả năm 2022 - 1,500 VND"
+      ]
+    },
+    {
+      "date": "2024-08-23",
+      "cashVnd": 1500,
+      "stockPct": null,
+      "texts": [
+        "Trả cổ tức bằng tiền mặt - Cả năm 2023 - 1,500 VND"
+      ]
+    },
+    {
+      "date": "2025-08-27",
+      "cashVnd": 1500,
+      "stockPct": null,
+      "texts": [
+        "Trả cổ tức bằng tiền mặt - Cả năm 2024 - 1,500 VND"
+      ]
+    }
+  ]
+}

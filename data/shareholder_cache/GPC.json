@@ -1,0 +1,118 @@
+{
+  "symbol": "GPC",
+  "updated": "2026-08-01T05:37:30.000Z",
+  "co_cau_so_huu": {
+    "CoDongSoHuu": [
+      {
+        "Code": "CEO_874343",
+        "Name": "Hàng Nhật Quang",
+        "Url": "<a href='/du-lieu/ceo/CEO_874343/hang-nhat-quang.chn'>Hàng Nhật Quang</a>",
+        "AssetVolume": "2.599",
+        "AssetRate": "0,0",
+        "UpdatedDate": "09/10/2024"
+      },
+      {
+        "Code": "CEO_874337",
+        "Name": "Đặng Đức Thành",
+        "Url": "<a href='/du-lieu/ceo/CEO_874337/dang-duc-thanh.chn'>Đặng Đức Thành</a>",
+        "AssetVolume": "15.599.999",
+        "AssetRate": "28,85",
+        "UpdatedDate": "09/10/2024"
+      },
+      {
+        "Code": "CEO_874342",
+        "Name": "Nguyễn Quốc Việt",
+        "Url": "<a href='/du-lieu/ceo/CEO_874342/nguyen-quoc-viet.chn'>Nguyễn Quốc Việt</a>",
+        "AssetVolume": "2.599",
+        "AssetRate": "0,0",
+        "UpdatedDate": "09/10/2024"
+      },
+      {
+        "Code": "CEO_874339",
+        "Name": "Lâm Thị Diệu Hương",
+        "Url": "<a href='/du-lieu/ceo/CEO_874339/lam-thi-dieu-huong.chn'>Lâm Thị Diệu Hương</a>",
+        "AssetVolume": "679.899",
+        "AssetRate": "1,26",
+        "UpdatedDate": "09/10/2024"
+      },
+      {
+        "Code": "CEO_874338",
+        "Name": "Đặng Bích Hồng",
+        "Url": "<a href='/du-lieu/ceo/CEO_874338/dang-bich-hong.chn'>Đặng Bích Hồng</a>",
+        "AssetVolume": "532.999",
+        "AssetRate": "0,99",
+        "UpdatedDate": "09/10/2024"
+      },
+      {
+        "Code": "CEO_874344",
+        "Name": "Trần Công Lộc",
+        "Url": "<a href='/du-lieu/ceo/CEO_874344/tran-cong-loc.chn'>Trần Công Lộc</a>",
+        "AssetVolume": "16.899",
+        "AssetRate": "0,03",
+        "UpdatedDate": "09/10/2024"
+      },
+      {
+        "Code": "LQ_82260",
+        "Name": "Đặng Bích Vân",
+        "Url": "Đặng Bích Vân ( của ông <a href='/du-lieu/ceo/CEO_874337/dang-duc-thanh.chn'>Đặng Đức Thành</a>)",
+        "AssetVolume": "4.679.999",
+        "AssetRate": "8,66",
+        "UpdatedDate": "09/10/2024"
+      },
+      {
+        "Code": "CEO_874345",
+        "Name": "Nguyễn Minh Cường",
+        "Url": "<a href='/du-lieu/ceo/CEO_874345/nguyen-minh-cuong.chn'>Nguyễn Minh Cường</a>",
+        "AssetVolume": "7.799",
+        "AssetRate": "0,01",
+        "UpdatedDate": "09/10/2024"
+      },
+      {
+        "Code": "CEO_874340",
+        "Name": "Phạm Hoàng Lương",
+        "Url": "<a href='/du-lieu/ceo/CEO_874340/pham-hoang-luong.chn'>Phạm Hoàng Lương</a>",
+        "AssetVolume": "3.899",
+        "AssetRate": "0,01",
+        "UpdatedDate": "09/10/2024"
+      },
+      {
+        "Code": "CEO_874341",
+        "Name": "Nguyễn Công Thành",
+        "Url": "<a href='/du-lieu/ceo/CEO_874341/nguyen-cong-thanh.chn'>Nguyễn Công Thành</a>",
+        "AssetVolume": "77.999",
+        "AssetRate": "0,14",
+        "UpdatedDate": "09/10/2024"
+      }
+    ],
+    "NuocNgoai": 49,
+    "NhaNuoc": 0,
+    "Khac": 51
+  },
+  "cong_ty_con": [
+    {
+      "Symbol": "GPC",
+      "CorpCode": "CORP_52301",
+      "Name": "CTCP Organic Tiến Thịnh",
+      "TotalCapital": 70,
+      "SharedCapital": 59.99,
+      "OwnershipRate": 85.7,
+      "Note": "",
+      "Order": 1,
+      "TradeCenter": ""
+    }
+  ],
+  "cong_ty_lien_ket": [
+    {
+      "Symbol": "GPC",
+      "CorpCode": "CORP_52302",
+      "Name": "CTCP Đầu tư và Phát triển Đồng Khởi",
+      "TotalCapital": 50,
+      "SharedCapital": 18.25,
+      "OwnershipRate": 36.5,
+      "Note": "",
+      "Order": 2,
+      "TradeCenter": ""
+    }
+  ],
+  "giao_dich_noi_bo": []
+}

@@ -1,0 +1,135 @@
+{
+  "symbol": "CID",
+  "updated": "2026-09-01T07:20:23.000Z",
+  "co_cau_so_huu": {
+    "CoDongSoHuu": [
+      {
+        "Code": "SCIC",
+        "Name": "Công ty Cổ phần Xây dựng và Phát triển Cơ sở Hạ tầng",
+        "Url": "<a href='/du-lieu/otc/SCIC-tong-cong-ty-dau-tu-va-kinh-doanh-von-nha-nuoc.chn' title='Tổng Công ty Đầu tư và Kinh doanh vốn Nhà nước'>Tổng Công ty Đầu tư và Kinh doanh vốn Nhà nước</a>",
+        "AssetVolume": "97.632",
+        "AssetRate": "10,52",
+        "UpdatedDate": "19/05/2026"
+      },
+      {
+        "Code": "CEO_03811",
+        "Name": "Hoàng Cảnh",
+        "Url": "<a href='/du-lieu/ceo/CEO_03811/hoang-canh.chn'>Hoàng Cảnh</a>",
+        "AssetVolume": "1.200",
+        "AssetRate": "0,13",
+        "UpdatedDate": "19/05/2026"
+      },
+      {
+        "Code": "CEO_08416",
+        "Name": "Nguyễn Văn Thiết",
+        "Url": "<a href='/du-lieu/ceo/CEO_08416/nguyen-van-thiet.chn'>Nguyễn Văn Thiết</a>",
+        "AssetVolume": "300",
+        "AssetRate": "0,03",
+        "UpdatedDate": "19/05/2026"
+      },
+      {
+        "Code": "CEO_38777",
+        "Name": "Trần Quốc Điền",
+        "Url": "<a href='/du-lieu/ceo/CEO_38777/tran-quoc-dien.chn'>Trần Quốc Điền</a>",
+        "AssetVolume": "2.200",
+        "AssetRate": "0,24",
+        "UpdatedDate": "19/05/2026"
+      },
+      {
+        "Code": "CEO_10139",
+        "Name": "Trần Duy Hải",
+        "Url": "<a href='/du-lieu/ceo/CEO_10139/tran-duy-hai.chn'>Trần Duy Hải</a>",
+        "AssetVolume": "552.726",
+        "AssetRate": "59,53",
+        "UpdatedDate": "19/05/2026"
+      },
+      {
+        "Code": "CEO_38778",
+        "Name": "Phạm Ánh Dương",
+        "Url": "<a href='/du-lieu/ceo/CEO_38778/pham-anh-duong.chn'>Phạm Ánh Dương</a>",
+        "AssetVolume": "1.000",
+        "AssetRate": "0,11",
+        "UpdatedDate": "19/05/2026"
+      },
+      {
+        "Code": "KLQ_100178",
+        "Name": "Trần Hoài Linh",
+        "Url": "Trần Hoài Linh",
+        "AssetVolume": "46.000",
+        "AssetRate": "4,95",
+        "UpdatedDate": "19/05/2026"
+      },
+      {
+        "Code": "CEO_10151",
+        "Name": "Trần Hải Nguyên Long",
+        "Url": "<a href='/du-lieu/ceo/CEO_10151/tran-hai-nguyen-long.chn'>Trần Hải Nguyên Long</a>",
+        "AssetVolume": "78.860",
+        "AssetRate": "8,49",
+        "UpdatedDate": "19/05/2026"
+      },
+      {
+        "Code": "CEO_71123",
+        "Name": "Vũ Trọng Hiệp",
+        "Url": "<a href='/du-lieu/ceo/CEO_71123/vu-trong-hiep.chn'>Vũ Trọng Hiệp</a>",
+        "AssetVolume": "600",
+        "AssetRate": "0,06",
+        "UpdatedDate": "19/05/2026"
+      }
+    ],
+    "NuocNgoai": 0.42,
+    "NhaNuoc": 0,
+    "Khac": 99.58
+  },
+  "cong_ty_con": [],
+  "cong_ty_lien_ket": [],
+  "giao_dich_noi_bo": [
+    {
+      "transaction_name": "Trần Hoài Linh",
+      "transaction_position": "",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 47000,
+      "plan_buy": 0,
+      "plan_sell": 0,
+      "plan_begin_date": "",
+      "plan_end_date": "",
+      "real_buy": 0,
+      "real_sell": 1000,
+      "real_end_date": "2024-06-17",
+      "published_date": "2024-07-09",
+      "volume_after": 46000
+    },
+    {
+      "transaction_name": "Trần Hoài Linh",
+      "transaction_position": "",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 40500,
+      "plan_buy": 0,
+      "plan_sell": 0,
+      "plan_begin_date": "",
+      "plan_end_date": "",
+      "real_buy": 0,
+      "real_sell": 6200,
+      "real_end_date": "2024-06-11",
+      "published_date": "2024-07-09",
+      "volume_after": 46700
+    },
+    {
+      "transaction_name": "Dương Trọng Tín",
+      "transaction_position": "Kế toán trưởng",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 8526,
+      "plan_buy": 0,
+      "plan_sell": 6000,
+      "plan_begin_date": "2010-12-13",
+      "plan_end_date": "2011-01-10",
+      "real_buy": 0,
+      "real_sell": 0,
+      "real_end_date": "",
+      "published_date": "2010-12-10",
+      "volume_after": 0
+    }
+  ]
+}

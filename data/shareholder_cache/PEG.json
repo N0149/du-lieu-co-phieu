@@ -1,0 +1,79 @@
+{
+  "symbol": "PEG",
+  "updated": "2026-03-22T03:20:16.000Z",
+  "co_cau_so_huu": {
+    "CoDongSoHuu": [
+      {
+        "Code": "CEO_52281",
+        "Name": "Nguyễn Thanh Hải",
+        "Url": "<a href='/du-lieu/ceo/CEO_52281/nguyen-thanh-hai.chn'>Nguyễn Thanh Hải</a>",
+        "AssetVolume": "18.123",
+        "AssetRate": "0,01",
+        "UpdatedDate": "31/12/2022"
+      }
+    ],
+    "NuocNgoai": -3.58755000923484,
+    "NhaNuoc": 0,
+    "Khac": 103.58755000923485
+  },
+  "cong_ty_con": [
+    {
+      "Symbol": "PEG",
+      "CorpCode": "CORP_51650",
+      "Name": "Công ty TNHH MTV An Pha Vĩnh Long",
+      "TotalCapital": 10,
+      "SharedCapital": 10,
+      "OwnershipRate": 100,
+      "Note": "",
+      "Order": 1,
+      "TradeCenter": ""
+    },
+    {
+      "Symbol": "PEG",
+      "CorpCode": "PCF",
+      "Name": "Công ty cổ phần Cà Phê Petec",
+      "TotalCapital": 30,
+      "SharedCapital": 17.62366,
+      "OwnershipRate": 58.75,
+      "Note": "",
+      "Order": 2,
+      "TradeCenter": "UpCOM"
+    }
+  ],
+  "cong_ty_lien_ket": [
+    {
+      "Symbol": "PEG",
+      "CorpCode": "CORP_51651",
+      "Name": "CTCP Bất động sản và Kỹ thuật Xăng dầu",
+      "TotalCapital": 38.3,
+      "SharedCapital": 11.76,
+      "OwnershipRate": 30.71,
+      "Note": "",
+      "Order": 3,
+      "TradeCenter": ""
+    },
+    {
+      "Symbol": "PEG",
+      "CorpCode": "PLO",
+      "Name": "Công ty Cổ phần Kho Vận Petec ",
+      "TotalCapital": 71.9255,
+      "SharedCapital": 20.2,
+      "OwnershipRate": 28.08,
+      "Note": "",
+      "Order": 4,
+      "TradeCenter": "UpCOM"
+    },
+    {
+      "Symbol": "PEG",
+      "CorpCode": "GCB",
+      "Name": "Công ty Cổ Phần Petec Bình Định",
+      "TotalCapital": 40.3914,
+      "SharedCapital": 0,
+      "OwnershipRate": 0,
+      "Note": "",
+      "Order": 5,
+      "TradeCenter": "UpCOM"
+    }
+  ],
+  "giao_dich_noi_bo": []
+}

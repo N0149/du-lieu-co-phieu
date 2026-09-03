@@ -1,0 +1,62 @@
+{
+  "symbol": "VTM",
+  "updated": "2026-05-01T06:22:42.000Z",
+  "co_cau_so_huu": {
+    "CoDongSoHuu": [
+      {
+        "Code": "CEO_57551",
+        "Name": "Vũ Mạnh Dũng",
+        "Url": "<a href='/du-lieu/ceo/CEO_57551/vu-manh-dung.chn'>Vũ Mạnh Dũng</a>",
+        "AssetVolume": "780",
+        "AssetRate": "0,02",
+        "UpdatedDate": "30/06/2022"
+      },
+      {
+        "Code": "CEO_38085",
+        "Name": "Lương Văn Hiếu",
+        "Url": "<a href='/du-lieu/ceo/CEO_38085/luong-van-hieu.chn'>Lương Văn Hiếu</a>",
+        "AssetVolume": "1.073",
+        "AssetRate": "0,03",
+        "UpdatedDate": "30/06/2022"
+      },
+      {
+        "Code": "CEO_38081",
+        "Name": "Phan Văn Cường",
+        "Url": "<a href='/du-lieu/ceo/CEO_38081/phan-van-cuong.chn'>Phan Văn Cường</a>",
+        "AssetVolume": "1.073",
+        "AssetRate": "0,03",
+        "UpdatedDate": "30/06/2022"
+      },
+      {
+        "Code": "CEO_38082",
+        "Name": "Hoàng Minh Sơn",
+        "Url": "<a href='/du-lieu/ceo/CEO_38082/hoang-minh-son.chn'>Hoàng Minh Sơn</a>",
+        "AssetVolume": "1.073",
+        "AssetRate": "0,03",
+        "UpdatedDate": "30/06/2022"
+      },
+      {
+        "Code": "CEO_84160",
+        "Name": "Vũ Đức Long",
+        "Url": "<a href='/du-lieu/ceo/CEO_84160/vu-duc-long.chn'>Vũ Đức Long</a>",
+        "AssetVolume": "292",
+        "AssetRate": "0,01",
+        "UpdatedDate": "30/06/2022"
+      },
+      {
+        "Code": "CEO_38083",
+        "Name": "Nguyễn Ngọc Thành",
+        "Url": "<a href='/du-lieu/ceo/CEO_38083/nguyen-ngoc-thanh.chn'>Nguyễn Ngọc Thành</a>",
+        "AssetVolume": "292",
+        "AssetRate": "0,01",
+        "UpdatedDate": "30/06/2022"
+      }
+    ],
+    "NuocNgoai": 3279795.92,
+    "NhaNuoc": 0,
+    "Khac": -3279695.92
+  },
+  "cong_ty_con": [],
+  "cong_ty_lien_ket": [],
+  "giao_dich_noi_bo": []
+}

@@ -1,0 +1,389 @@
+{
+  "symbol": "KSV",
+  "updated": "2026-06-01T07:13:36.000Z",
+  "co_cau_so_huu": {
+    "CoDongSoHuu": [
+      {
+        "Code": "CEO_05333",
+        "Name": "Lương Văn Lĩnh",
+        "Url": "<a href='/du-lieu/ceo/CEO_05333/luong-van-linh.chn'>Lương Văn Lĩnh</a>",
+        "AssetVolume": "1.000",
+        "AssetRate": "0,0",
+        "UpdatedDate": "14/08/2025"
+      },
+      {
+        "Code": "CEO_37592",
+        "Name": "Lê Anh Sơn",
+        "Url": "<a href='/du-lieu/ceo/CEO_37592/le-anh-son.chn'>Lê Anh Sơn</a>",
+        "AssetVolume": "2.300",
+        "AssetRate": "0,0",
+        "UpdatedDate": "14/08/2025"
+      },
+      {
+        "Code": "CEO_59168",
+        "Name": "Lê Tuấn Ngọc",
+        "Url": "<a href='/du-lieu/ceo/CEO_59168/le-tuan-ngoc.chn'>Lê Tuấn Ngọc</a>",
+        "AssetVolume": "2.900",
+        "AssetRate": "0,0",
+        "UpdatedDate": "14/08/2025"
+      },
+      {
+        "Code": "CEO_95005",
+        "Name": "Đặng Đức Hưng",
+        "Url": "<a href='/du-lieu/ceo/CEO_95005/dang-duc-hung.chn'>Đặng Đức Hưng</a>",
+        "AssetVolume": "3.000",
+        "AssetRate": "0,0",
+        "UpdatedDate": "14/08/2025"
+      },
+      {
+        "Code": "CEO_875274",
+        "Name": "Lý Xuân Tuyên",
+        "Url": "<a href='/du-lieu/ceo/CEO_875274/ly-xuan-tuyen.chn'>Lý Xuân Tuyên</a>",
+        "AssetVolume": "5.000",
+        "AssetRate": "0,0",
+        "UpdatedDate": "14/08/2025"
+      },
+      {
+        "Code": "CEO_37593",
+        "Name": "Đào Minh Sơn",
+        "Url": "<a href='/du-lieu/ceo/CEO_37593/dao-minh-son.chn'>Đào Minh Sơn</a>",
+        "AssetVolume": "13.400",
+        "AssetRate": "0,01",
+        "UpdatedDate": "14/08/2025"
+      },
+      {
+        "Code": "VINACOMIN",
+        "Name": "Tập đoàn Công nghiệp Than - Khoáng sản Việt Nam",
+        "Url": "<a href='/du-lieu/otc/VINACOMIN-tap-doan-cong-nghiep-than-khoang-san-viet-nam.chn' title='Tập đoàn Công nghiệp Than - Khoáng sản Việt Nam'>Tập đoàn Công nghiệp Than - Khoáng sản Việt Nam</a>",
+        "AssetVolume": "196.117.900",
+        "AssetRate": "98,06",
+        "UpdatedDate": "14/08/2025"
+      },
+      {
+        "Code": "CEO_37594",
+        "Name": "Trịnh Văn Tuệ",
+        "Url": "<a href='/du-lieu/ceo/CEO_37594/trinh-van-tue.chn'>Trịnh Văn Tuệ</a>",
+        "AssetVolume": "5.000",
+        "AssetRate": "0,0",
+        "UpdatedDate": "14/08/2025"
+      },
+      {
+        "Code": "CEO_57767",
+        "Name": "Nguyễn Nam Hưng",
+        "Url": "<a href='/du-lieu/ceo/CEO_57767/nguyen-nam-hung.chn'>Nguyễn Nam Hưng</a>",
+        "AssetVolume": "1.000",
+        "AssetRate": "0,0",
+        "UpdatedDate": "14/08/2025"
+      },
+      {
+        "Code": "CEO_56355",
+        "Name": "Bùi Tiến Hải",
+        "Url": "<a href='/du-lieu/ceo/CEO_56355/bui-tien-hai.chn'>Bùi Tiến Hải</a>",
+        "AssetVolume": "5.000",
+        "AssetRate": "0,0",
+        "UpdatedDate": "14/08/2025"
+      }
+    ],
+    "NuocNgoai": 49,
+    "NhaNuoc": 0,
+    "Khac": 51
+  },
+  "cong_ty_con": [
+    {
+      "Symbol": "KSV",
+      "CorpCode": "CORP_39363",
+      "Name": "CTCP Đầu tư Gang thép Lào Cai - Vimico",
+      "TotalCapital": 300,
+      "SharedCapital": 297.03,
+      "OwnershipRate": 99.01,
+      "Note": "",
+      "Order": 1,
+      "TradeCenter": ""
+    },
+    {
+      "Symbol": "KSV",
+      "CorpCode": "CORP_39360",
+      "Name": "CTCP Kim loại màu Nghệ Tĩnh",
+      "TotalCapital": 38.85,
+      "SharedCapital": 23.67,
+      "OwnershipRate": 60.93,
+      "Note": "",
+      "Order": 2,
+      "TradeCenter": ""
+    },
+    {
+      "Symbol": "KSV",
+      "CorpCode": "CORP_39367",
+      "Name": "CTCP Địa ốc Khoáng sản - TKV",
+      "TotalCapital": 100,
+      "SharedCapital": 57,
+      "OwnershipRate": 57,
+      "Note": "",
+      "Order": 3,
+      "TradeCenter": ""
+    },
+    {
+      "Symbol": "KSV",
+      "CorpCode": "CORP_39364",
+      "Name": "CTCP Đất hiếm Lai Châu - Vimico",
+      "TotalCapital": 350,
+      "SharedCapital": 192.5,
+      "OwnershipRate": 55,
+      "Note": "",
+      "Order": 4,
+      "TradeCenter": ""
+    },
+    {
+      "Symbol": "KSV",
+      "CorpCode": "CBI",
+      "Name": "Công ty Cổ phần Gang thép Cao Bằng",
+      "TotalCapital": 430.0636,
+      "SharedCapital": 225.9542,
+      "OwnershipRate": 52.54,
+      "Note": "",
+      "Order": 5,
+      "TradeCenter": "UpCOM"
+    },
+    {
+      "Symbol": "KSV",
+      "CorpCode": "KCB",
+      "Name": "CTCP Khoáng sản và luyện kim Cao Bằng",
+      "TotalCapital": 80,
+      "SharedCapital": 41.50869,
+      "OwnershipRate": 51.89,
+      "Note": "",
+      "Order": 6,
+      "TradeCenter": "UpCOM"
+    },
+    {
+      "Symbol": "KSV",
+      "CorpCode": "CORP_39358",
+      "Name": "CTCP Du lịch và Thương mại Bằng Giang Cao Bằng",
+      "TotalCapital": 18,
+      "SharedCapital": 9.24,
+      "OwnershipRate": 51.31,
+      "Note": "",
+      "Order": 7,
+      "TradeCenter": ""
+    },
+    {
+      "Symbol": "KSV",
+      "CorpCode": "TMG",
+      "Name": "Công ty Cổ phần Kim loại màu Thái Nguyên - Vimico",
+      "TotalCapital": 180,
+      "SharedCapital": 91.8,
+      "OwnershipRate": 51,
+      "Note": "",
+      "Order": 8,
+      "TradeCenter": "UpCOM"
+    },
+    {
+      "Symbol": "KSV",
+      "CorpCode": "CORP_39362",
+      "Name": "CTCP Khoáng sản 3 - Vimico",
+      "TotalCapital": 35,
+      "SharedCapital": 17.85,
+      "OwnershipRate": 51,
+      "Note": "",
+      "Order": 9,
+      "TradeCenter": ""
+    },
+    {
+      "Symbol": "KSV",
+      "CorpCode": "CORP_39368",
+      "Name": "CTCP Vàng Lào Cai",
+      "TotalCapital": 105,
+      "SharedCapital": 48.45,
+      "OwnershipRate": 46.14,
+      "Note": "",
+      "Order": 11,
+      "TradeCenter": ""
+    }
+  ],
+  "cong_ty_lien_ket": [
+    {
+      "Symbol": "KSV",
+      "CorpCode": "CORP_39369",
+      "Name": "CTCP Đá quý và Vàng Hà Nội",
+      "TotalCapital": 18,
+      "SharedCapital": 8.7,
+      "OwnershipRate": 48.31,
+      "Note": "",
+      "Order": 10,
+      "TradeCenter": ""
+    },
+    {
+      "Symbol": "KSV",
+      "CorpCode": "CORP_39415",
+      "Name": "CTCP Xi măng Tân Quang - VVMI",
+      "TotalCapital": 350,
+      "SharedCapital": 47.98,
+      "OwnershipRate": 13.71,
+      "Note": "",
+      "Order": 12,
+      "TradeCenter": ""
+    }
+  ],
+  "giao_dich_noi_bo": [
+    {
+      "transaction_name": "Ngô Quốc Trung",
+      "transaction_position": "Kế toán trưởng",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 5100,
+      "plan_buy": 0,
+      "plan_sell": 5100,
+      "plan_begin_date": "2025-02-19",
+      "plan_end_date": "2025-03-20",
+      "real_buy": 0,
+      "real_sell": 5100,
+      "real_end_date": "2025-02-28",
+      "published_date": "2025-03-05",
+      "volume_after": 0
+    },
+    {
+      "transaction_name": "Trịnh Văn Tuệ",
+      "transaction_position": "Tổng Giám đốc",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 15200,
+      "plan_buy": 0,
+      "plan_sell": 10200,
+      "plan_begin_date": "2025-02-21",
+      "plan_end_date": "2025-03-20",
+      "real_buy": 0,
+      "real_sell": 10200,
+      "real_end_date": "2025-02-28",
+      "published_date": "2025-03-04",
+      "volume_after": 5000
+    },
+    {
+      "transaction_name": "Đặng Đức Hưng",
+      "transaction_position": "Phó Tổng GĐ",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 3000,
+      "plan_buy": 0,
+      "plan_sell": 3000,
+      "plan_begin_date": "2025-02-19",
+      "plan_end_date": "2025-03-20",
+      "real_buy": 0,
+      "real_sell": 0,
+      "real_end_date": "",
+      "published_date": "2025-02-17",
+      "volume_after": 0
+    },
+    {
+      "transaction_name": "Lương Văn Lĩnh",
+      "transaction_position": "Trưởng BKS",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 1000,
+      "plan_buy": 0,
+      "plan_sell": 1000,
+      "plan_begin_date": "2025-01-16",
+      "plan_end_date": "2025-02-13",
+      "real_buy": 0,
+      "real_sell": 0,
+      "real_end_date": "",
+      "published_date": "2025-01-14",
+      "volume_after": 0
+    },
+    {
+      "transaction_name": "Nguyễn Nam Hưng",
+      "transaction_position": "Thành viên BKS",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 1000,
+      "plan_buy": 0,
+      "plan_sell": 1000,
+      "plan_begin_date": "2025-01-16",
+      "plan_end_date": "2025-02-13",
+      "real_buy": 0,
+      "real_sell": 0,
+      "real_end_date": "",
+      "published_date": "2025-01-14",
+      "volume_after": 0
+    },
+    {
+      "transaction_name": "Nguyễn Văn Hải",
+      "transaction_position": "Chủ tịch HĐQT",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 10000,
+      "plan_buy": 0,
+      "plan_sell": 10000,
+      "plan_begin_date": "2024-10-08",
+      "plan_end_date": "2024-11-05",
+      "real_buy": 0,
+      "real_sell": 10000,
+      "real_end_date": "2024-11-01",
+      "published_date": "2024-11-06",
+      "volume_after": 0
+    },
+    {
+      "transaction_name": "Lý Xuân Tuyên",
+      "transaction_position": "",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 18000,
+      "plan_buy": 0,
+      "plan_sell": 18000,
+      "plan_begin_date": "2024-08-12",
+      "plan_end_date": "2024-09-10",
+      "real_buy": 0,
+      "real_sell": 13000,
+      "real_end_date": "2024-09-10",
+      "published_date": "2024-09-16",
+      "volume_after": 5000
+    },
+    {
+      "transaction_name": "Nguyễn Văn Nam",
+      "transaction_position": "Em ruột",
+      "leader_name": "Nguyễn Văn Hải",
+      "leader_position": "Chủ tịch HĐQT",
+      "volume_before": 1100,
+      "plan_buy": 0,
+      "plan_sell": 1100,
+      "plan_begin_date": "2022-05-16",
+      "plan_end_date": "2022-06-14",
+      "real_buy": 0,
+      "real_sell": 0,
+      "real_end_date": "",
+      "published_date": "2022-05-12",
+      "volume_after": 0
+    },
+    {
+      "transaction_name": "Nguyễn Văn Nam",
+      "transaction_position": "Em ruột",
+      "leader_name": "Nguyễn Văn Hải",
+      "leader_position": "Chủ tịch HĐQT",
+      "volume_before": 1100,
+      "plan_buy": 0,
+      "plan_sell": 1100,
+      "plan_begin_date": "2022-03-01",
+      "plan_end_date": "2022-03-30",
+      "real_buy": 0,
+      "real_sell": 0,
+      "real_end_date": "2022-03-31",
+      "published_date": "2022-02-23",
+      "volume_after": 1100
+    },
+    {
+      "transaction_name": "Nguyễn Văn Kiên",
+      "transaction_position": "Em ruột",
+      "leader_name": "Nguyễn Văn Viên",
+      "leader_position": "Kế toán trưởng",
+      "volume_before": 600,
+      "plan_buy": 0,
+      "plan_sell": 600,
+      "plan_begin_date": "2022-03-01",
+      "plan_end_date": "2022-03-30",
+      "real_buy": 0,
+      "real_sell": 0,
+      "real_end_date": "",
+      "published_date": "2022-02-23",
+      "volume_after": 0
+    }
+  ]
+}

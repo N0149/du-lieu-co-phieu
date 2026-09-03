@@ -1,0 +1,255 @@
+{
+  "symbol": "BMS",
+  "updated": "2026-07-01T06:27:28.000Z",
+  "co_cau_so_huu": {
+    "CoDongSoHuu": [
+      {
+        "Code": "CORP_66622",
+        "Name": "Công ty TNHH Vina Green Energy LA",
+        "Url": "Công ty TNHH Vina Green Energy LA",
+        "AssetVolume": "10.549.999",
+        "AssetRate": "4,9",
+        "UpdatedDate": "16/06/2026"
+      },
+      {
+        "Code": "KLQ_100510",
+        "Name": "Nguyễn Khả Ái Vy",
+        "Url": "Nguyễn Khả Ái Vy",
+        "AssetVolume": "9.563.365",
+        "AssetRate": "4,45",
+        "UpdatedDate": "16/06/2026"
+      },
+      {
+        "Code": "KLQ_100509",
+        "Name": "Lê Thị Xi Na",
+        "Url": "Lê Thị Xi Na",
+        "AssetVolume": "9.610.620",
+        "AssetRate": "4,47",
+        "UpdatedDate": "16/06/2026"
+      },
+      {
+        "Code": "KLQ_100511",
+        "Name": "Nguyễn Thị Mộng Như",
+        "Url": "Nguyễn Thị Mộng Như",
+        "AssetVolume": "9.763.690",
+        "AssetRate": "4,54",
+        "UpdatedDate": "16/06/2026"
+      },
+      {
+        "Code": "KLQ_80993",
+        "Name": "Trương Thị Mỹ An",
+        "Url": "Trương Thị Mỹ An",
+        "AssetVolume": "10.714.041",
+        "AssetRate": "4,98",
+        "UpdatedDate": "16/06/2026"
+      },
+      {
+        "Code": "CORP_81032",
+        "Name": "CTCP Rồng Ngọc",
+        "Url": "CTCP Rồng Ngọc",
+        "AssetVolume": "18.855.496",
+        "AssetRate": "8,76",
+        "UpdatedDate": "16/06/2026"
+      },
+      {
+        "Code": "CORP_56241",
+        "Name": "Công ty cổ phần Long An Solar Park",
+        "Url": "Công ty cổ phần Long An Solar Park",
+        "AssetVolume": "19.170.139",
+        "AssetRate": "8,91",
+        "UpdatedDate": "16/06/2026"
+      },
+      {
+        "Code": "CORP_66624",
+        "Name": "Công ty TNHH Nhật Phượng NT",
+        "Url": "Công ty TNHH Nhật Phượng NT",
+        "AssetVolume": "9.494.999",
+        "AssetRate": "4,41",
+        "UpdatedDate": "16/06/2026"
+      },
+      {
+        "Code": "CORP_66623",
+        "Name": "Công ty TNHH Solar City LA",
+        "Url": "Công ty TNHH Solar City LA",
+        "AssetVolume": "10.549.999",
+        "AssetRate": "4,9",
+        "UpdatedDate": "16/06/2026"
+      },
+      {
+        "Code": "KLQ_100508",
+        "Name": "Trương Thị Thanh Trúc",
+        "Url": "Trương Thị Thanh Trúc",
+        "AssetVolume": "32.594.539",
+        "AssetRate": "15,15",
+        "UpdatedDate": "16/06/2026"
+      },
+      {
+        "Code": "CORP_66625",
+        "Name": "Công ty TNHH Blue Ocean Resort NT",
+        "Url": "Công ty TNHH Blue Ocean Resort NT",
+        "AssetVolume": "10.022.499",
+        "AssetRate": "4,66",
+        "UpdatedDate": "16/06/2026"
+      },
+      {
+        "Code": "CORP_66619",
+        "Name": "Công ty TNHH Đầu tư Đại Phước Lộc ĐL",
+        "Url": "Công ty TNHH Đầu tư Đại Phước Lộc ĐL",
+        "AssetVolume": "10.022.499",
+        "AssetRate": "4,66",
+        "UpdatedDate": "16/06/2026"
+      },
+      {
+        "Code": "CORP_66621",
+        "Name": "Công ty TNHH Cosmo Medical Hub",
+        "Url": "Công ty TNHH Cosmo Medical Hub",
+        "AssetVolume": "10.402.299",
+        "AssetRate": "4,83",
+        "UpdatedDate": "16/06/2026"
+      },
+      {
+        "Code": "CORP_66620",
+        "Name": "Công ty CР Thiên Anh Sài  Gòn",
+        "Url": "Công ty CР Thiên Anh Sài  Gòn",
+        "AssetVolume": "10.549.999",
+        "AssetRate": "4,9",
+        "UpdatedDate": "16/06/2026"
+      }
+    ],
+    "NuocNgoai": 203926556,
+    "NhaNuoc": 0,
+    "Khac": -203926456
+  },
+  "cong_ty_con": [],
+  "cong_ty_lien_ket": [],
+  "giao_dich_noi_bo": [
+    {
+      "transaction_name": "Trương Thị Mỹ An",
+      "transaction_position": "",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 16355490,
+      "plan_buy": 0,
+      "plan_sell": 0,
+      "plan_begin_date": "",
+      "plan_end_date": "",
+      "real_buy": 0,
+      "real_sell": 6200000,
+      "real_end_date": "2026-05-20",
+      "published_date": "2026-05-29",
+      "volume_after": 10155490
+    },
+    {
+      "transaction_name": "Dương Tiến Dũng",
+      "transaction_position": "",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 16370044,
+      "plan_buy": 0,
+      "plan_sell": 0,
+      "plan_begin_date": "",
+      "plan_end_date": "",
+      "real_buy": 0,
+      "real_sell": 16370044,
+      "real_end_date": "2024-12-19",
+      "published_date": "2024-12-26",
+      "volume_after": 0
+    },
+    {
+      "transaction_name": "Công ty cổ phần Long An Solar Park",
+      "transaction_position": "",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 0,
+      "plan_buy": 0,
+      "plan_sell": 0,
+      "plan_begin_date": "",
+      "plan_end_date": "",
+      "real_buy": 16370044,
+      "real_sell": 0,
+      "real_end_date": "2024-12-19",
+      "published_date": "2024-12-26",
+      "volume_after": 16370044
+    },
+    {
+      "transaction_name": "Trần Thị Thủy",
+      "transaction_position": "Thành viên BKS",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 117887,
+      "plan_buy": 0,
+      "plan_sell": 117887,
+      "plan_begin_date": "2021-12-01",
+      "plan_end_date": "2021-12-29",
+      "real_buy": 0,
+      "real_sell": 117887,
+      "real_end_date": "2021-12-06",
+      "published_date": "2021-11-30",
+      "volume_after": 0
+    },
+    {
+      "transaction_name": "Trịnh Thị Thu Hương",
+      "transaction_position": "Người được ủy quyền công bố thông tin",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 26400,
+      "plan_buy": 0,
+      "plan_sell": 26400,
+      "plan_begin_date": "2020-10-21",
+      "plan_end_date": "2020-11-19",
+      "real_buy": 0,
+      "real_sell": 26400,
+      "real_end_date": "2020-11-19",
+      "published_date": "2020-10-23",
+      "volume_after": 0
+    },
+    {
+      "transaction_name": "Trịnh Thị Thu Hương",
+      "transaction_position": "Người được ủy quyền công bố thông tin",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 26400,
+      "plan_buy": 0,
+      "plan_sell": 26400,
+      "plan_begin_date": "2020-08-24",
+      "plan_end_date": "2020-09-18",
+      "real_buy": 0,
+      "real_sell": 0,
+      "real_end_date": "2020-09-18",
+      "published_date": "2020-08-21",
+      "volume_after": 26400
+    },
+    {
+      "transaction_name": "Dương Tiến Dũng",
+      "transaction_position": "",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 0,
+      "plan_buy": 0,
+      "plan_sell": 0,
+      "plan_begin_date": "",
+      "plan_end_date": "",
+      "real_buy": 11509666,
+      "real_sell": 0,
+      "real_end_date": "2018-12-05",
+      "published_date": "2018-12-12",
+      "volume_after": 11509666
+    },
+    {
+      "transaction_name": "Trần Thị Y",
+      "transaction_position": "",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 11509666,
+      "plan_buy": 0,
+      "plan_sell": 0,
+      "plan_begin_date": "",
+      "plan_end_date": "",
+      "real_buy": 0,
+      "real_sell": 11509666,
+      "real_end_date": "2018-12-05",
+      "published_date": "2018-12-11",
+      "volume_after": 0
+    }
+  ]
+}

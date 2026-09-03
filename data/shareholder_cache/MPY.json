@@ -1,0 +1,101 @@
+{
+  "symbol": "MPY",
+  "updated": "2026-03-22T03:19:14.000Z",
+  "co_cau_so_huu": {
+    "CoDongSoHuu": [
+      {
+        "Code": "CORP_51052",
+        "Name": "UBND tỉnh Phú Yên",
+        "Url": "UBND tỉnh Phú Yên",
+        "AssetVolume": "5.607.900",
+        "AssetRate": "91,29",
+        "UpdatedDate": "21/11/2025"
+      },
+      {
+        "Code": "CEO_52505",
+        "Name": "Nguyễn Mạnh Hùng",
+        "Url": "<a href='/du-lieu/ceo/CEO_52505/nguyen-manh-hung.chn'>Nguyễn Mạnh Hùng</a>",
+        "AssetVolume": "15.400",
+        "AssetRate": "0,25",
+        "UpdatedDate": "21/11/2025"
+      },
+      {
+        "Code": "CEO_52509",
+        "Name": "Nguyễn Quang Nguyên",
+        "Url": "<a href='/du-lieu/ceo/CEO_52509/nguyen-quang-nguyen.chn'>Nguyễn Quang Nguyên</a>",
+        "AssetVolume": "5.800",
+        "AssetRate": "0,09",
+        "UpdatedDate": "21/11/2025"
+      },
+      {
+        "Code": "CEO_52504",
+        "Name": "Huỳnh Kim Toàn",
+        "Url": "<a href='/du-lieu/ceo/CEO_52504/huynh-kim-toan.chn'>Huỳnh Kim Toàn</a>",
+        "AssetVolume": "17.200",
+        "AssetRate": "0,28",
+        "UpdatedDate": "21/11/2025"
+      },
+      {
+        "Code": "CEO_54861",
+        "Name": "Trần Minh Hoàng",
+        "Url": "<a href='/du-lieu/ceo/CEO_54861/tran-minh-hoang.chn'>Trần Minh Hoàng</a>",
+        "AssetVolume": "7.000",
+        "AssetRate": "0,11",
+        "UpdatedDate": "21/11/2025"
+      },
+      {
+        "Code": "CEO_52506",
+        "Name": "Đỗ Thị Ngọc Huyền",
+        "Url": "<a href='/du-lieu/ceo/CEO_52506/do-thi-ngoc-huyen.chn'>Đỗ Thị Ngọc Huyền</a>",
+        "AssetVolume": "26.700",
+        "AssetRate": "0,43",
+        "UpdatedDate": "21/11/2025"
+      },
+      {
+        "Code": "CEO_52508",
+        "Name": "Ung Trọng Hiệu",
+        "Url": "<a href='/du-lieu/ceo/CEO_52508/ung-trong-hieu.chn'>Ung Trọng Hiệu</a>",
+        "AssetVolume": "1.000",
+        "AssetRate": "0,02",
+        "UpdatedDate": "21/11/2025"
+      },
+      {
+        "Code": "CEO_54860",
+        "Name": "Phạm Quốc Duy",
+        "Url": "<a href='/du-lieu/ceo/CEO_54860/pham-quoc-duy.chn'>Phạm Quốc Duy</a>",
+        "AssetVolume": "1.000",
+        "AssetRate": "0,02",
+        "UpdatedDate": "21/11/2025"
+      }
+    ],
+    "NuocNgoai": 0,
+    "NhaNuoc": 0,
+    "Khac": 100
+  },
+  "cong_ty_con": [
+    {
+      "Symbol": "MPY",
+      "CorpCode": "CORP_51951",
+      "Name": "Công ty TNHH MTV Xây dựng và Phát triển Đô thị Sông Cầu",
+      "TotalCapital": 4.5,
+      "SharedCapital": 4.5,
+      "OwnershipRate": 100,
+      "Note": "",
+      "Order": 1,
+      "TradeCenter": ""
+    },
+    {
+      "Symbol": "MPY",
+      "CorpCode": "CORP_51952",
+      "Name": "Công ty TNHH MTV Xây dựng và Phát triển Đô thị Đông Hòa",
+      "TotalCapital": 4.5,
+      "SharedCapital": 4.5,
+      "OwnershipRate": 100,
+      "Note": "",
+      "Order": 2,
+      "TradeCenter": ""
+    }
+  ],
+  "cong_ty_lien_ket": [],
+  "giao_dich_noi_bo": []
+}

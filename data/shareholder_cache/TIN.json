@@ -1,0 +1,455 @@
+{
+  "symbol": "TIN",
+  "updated": "2026-08-01T05:57:57.000Z",
+  "co_cau_so_huu": {
+    "CoDongSoHuu": [
+      {
+        "Code": "KLQ_100238",
+        "Name": "Lê Văn Bình",
+        "Url": "Lê Văn Bình",
+        "AssetVolume": "2.322.390",
+        "AssetRate": "",
+        "UpdatedDate": "28/06/2024"
+      },
+      {
+        "Code": "CEO_871355",
+        "Name": "Trần Việt Phương",
+        "Url": "<a href='/du-lieu/ceo/CEO_871355/tran-viet-phuong.chn'>Trần Việt Phương</a>",
+        "AssetVolume": "376.999",
+        "AssetRate": "",
+        "UpdatedDate": "02/07/2024"
+      },
+      {
+        "Code": "KLQ_100237",
+        "Name": "Lê Thị Phương",
+        "Url": "Lê Thị Phương",
+        "AssetVolume": "2.211.800",
+        "AssetRate": "",
+        "UpdatedDate": "28/06/2024"
+      },
+      {
+        "Code": "KLQ_100249",
+        "Name": "Phạm Thị Thảo Nguyên",
+        "Url": "Phạm Thị Thảo Nguyên",
+        "AssetVolume": "3.211.362",
+        "AssetRate": "",
+        "UpdatedDate": "28/06/2024"
+      },
+      {
+        "Code": "KLQ_100256",
+        "Name": "Đinh Thị Ngọc Yến",
+        "Url": "Đinh Thị Ngọc Yến",
+        "AssetVolume": "3.724.348",
+        "AssetRate": "",
+        "UpdatedDate": "28/06/2024"
+      },
+      {
+        "Code": "CEO_871359",
+        "Name": "Lê Phương Hải",
+        "Url": "<a href='/du-lieu/ceo/CEO_871359/le-phuong-hai.chn'>Lê Phương Hải</a>",
+        "AssetVolume": "194.999",
+        "AssetRate": "",
+        "UpdatedDate": "02/07/2024"
+      },
+      {
+        "Code": "KLQ_100255",
+        "Name": "Vương Thanh Tân",
+        "Url": "Vương Thanh Tân",
+        "AssetVolume": "1.658.850",
+        "AssetRate": "",
+        "UpdatedDate": "28/06/2024"
+      },
+      {
+        "Code": "KLQ_100243",
+        "Name": "Nguyễn Thanh Thông",
+        "Url": "Nguyễn Thanh Thông",
+        "AssetVolume": "2.930.635",
+        "AssetRate": "",
+        "UpdatedDate": "28/06/2024"
+      },
+      {
+        "Code": "KLQ_100254",
+        "Name": "Võ Thị Anh Quân",
+        "Url": "Võ Thị Anh Quân",
+        "AssetVolume": "1.437.670",
+        "AssetRate": "",
+        "UpdatedDate": "28/06/2024"
+      },
+      {
+        "Code": "VICEM",
+        "Name": "Tổng Công ty Công nghiệp Xi măng Việt Nam",
+        "Url": "<a href='/du-lieu/otc/VICEM-tong-cong-ty-cong-nghiep-xi-mang-viet-nam.chn' title='Tổng Công ty Công nghiệp Xi măng Việt Nam'>Tổng Công ty Công nghiệp Xi măng Việt Nam</a>",
+        "AssetVolume": "13.045.151",
+        "AssetRate": "",
+        "UpdatedDate": "02/07/2024"
+      },
+      {
+        "Code": "KLQ_100250",
+        "Name": "Phạm Văn Hải",
+        "Url": "Phạm Văn Hải",
+        "AssetVolume": "986.700",
+        "AssetRate": "",
+        "UpdatedDate": "28/06/2024"
+      },
+      {
+        "Code": "KLQ_100239",
+        "Name": "Lê Đào Phương Trang",
+        "Url": "Lê Đào Phương Trang",
+        "AssetVolume": "2.786.873",
+        "AssetRate": "",
+        "UpdatedDate": "28/06/2024"
+      },
+      {
+        "Code": "LQ_97368",
+        "Name": "Phan Thị Tuyết Hằng",
+        "Url": "Phan Thị Tuyết Hằng (Mẹ vợ của ông <a href='/du-lieu/ceo/CEO_871353/nguyen-lan-trung-anh.chn'>Nguyễn Lân Trung Anh</a>)",
+        "AssetVolume": "86.260",
+        "AssetRate": "",
+        "UpdatedDate": "02/07/2024"
+      },
+      {
+        "Code": "KLQ_100233",
+        "Name": "Huỳnh Quang Thái",
+        "Url": "Huỳnh Quang Thái",
+        "AssetVolume": "2.406.084",
+        "AssetRate": "",
+        "UpdatedDate": "28/06/2024"
+      },
+      {
+        "Code": "CEO_871340",
+        "Name": "Nguyễn Chí Hiếu",
+        "Url": "<a href='/du-lieu/ceo/CEO_871340/nguyen-chi-hieu.chn'>Nguyễn Chí Hiếu</a>",
+        "AssetVolume": "3.019.106",
+        "AssetRate": "",
+        "UpdatedDate": "02/07/2024"
+      },
+      {
+        "Code": "KLQ_100252",
+        "Name": "Trần Thanh Tân",
+        "Url": "Trần Thanh Tân",
+        "AssetVolume": "1.500.000",
+        "AssetRate": "",
+        "UpdatedDate": "28/06/2024"
+      },
+      {
+        "Code": "CEO_871337",
+        "Name": "Nguyễn Đức Phương",
+        "Url": "<a href='/du-lieu/ceo/CEO_871337/nguyen-duc-phuong.chn'>Nguyễn Đức Phương</a>",
+        "AssetVolume": "4.041.979",
+        "AssetRate": "",
+        "UpdatedDate": "02/07/2024"
+      },
+      {
+        "Code": "LQ_97366",
+        "Name": "Nguyễn Ái Linh",
+        "Url": "Nguyễn Ái Linh (Vợ của ông <a href='/du-lieu/ceo/CEO_871337/nguyen-duc-phuong.chn'>Nguyễn Đức Phương</a>)",
+        "AssetVolume": "623.999",
+        "AssetRate": "",
+        "UpdatedDate": "02/07/2024"
+      },
+      {
+        "Code": "KLQ_100248",
+        "Name": "Nguyễn Ái Nghĩa",
+        "Url": "Nguyễn Ái Nghĩa",
+        "AssetVolume": "1.187.011",
+        "AssetRate": "",
+        "UpdatedDate": "28/06/2024"
+      },
+      {
+        "Code": "KLQ_100253",
+        "Name": "Tạ Quang Lộc",
+        "Url": "Tạ Quang Lộc",
+        "AssetVolume": "1.026.275",
+        "AssetRate": "",
+        "UpdatedDate": "28/06/2024"
+      },
+      {
+        "Code": "KLQ_100251",
+        "Name": "Trần Thị Mỹ Hằng",
+        "Url": "Trần Thị Mỹ Hằng",
+        "AssetVolume": "2.250.936",
+        "AssetRate": "",
+        "UpdatedDate": "28/06/2024"
+      },
+      {
+        "Code": "CEO_877176",
+        "Name": "Đặng Ngọc Thảo Uyên",
+        "Url": "<a href='/du-lieu/ceo/CEO_877176/dang-ngoc-thao-uyen.chn'>Đặng Ngọc Thảo Uyên</a>",
+        "AssetVolume": "2.720.603",
+        "AssetRate": "",
+        "UpdatedDate": "26/08/2024"
+      },
+      {
+        "Code": "KLQ_100240",
+        "Name": "Lương Châu Yến Linh",
+        "Url": "Lương Châu Yến Linh",
+        "AssetVolume": "1.071.874",
+        "AssetRate": "",
+        "UpdatedDate": "28/06/2024"
+      },
+      {
+        "Code": "LQ_97367",
+        "Name": "Nguyễn Thị Thanh Hoa",
+        "Url": "Nguyễn Thị Thanh Hoa (Vợ của ông <a href='/du-lieu/ceo/CEO_871339/ho-minh-tam.chn'>Hồ Minh Tâm</a>)",
+        "AssetVolume": "2.234.569",
+        "AssetRate": "",
+        "UpdatedDate": "02/07/2024"
+      },
+      {
+        "Code": "KLQ_100235",
+        "Name": "Lê Nam",
+        "Url": "Lê Nam",
+        "AssetVolume": "1.264.364",
+        "AssetRate": "",
+        "UpdatedDate": "28/06/2024"
+      },
+      {
+        "Code": "KLQ_100171",
+        "Name": "Phạm Thị Thảo Nguyên",
+        "Url": "Phạm Thị Thảo Nguyên",
+        "AssetVolume": "4.711.362",
+        "AssetRate": "",
+        "UpdatedDate": "09/05/2024"
+      },
+      {
+        "Code": "CEO_871353",
+        "Name": "Nguyễn Lân Trung Anh",
+        "Url": "<a href='/du-lieu/ceo/CEO_871353/nguyen-lan-trung-anh.chn'>Nguyễn Lân Trung Anh</a>",
+        "AssetVolume": "116.999",
+        "AssetRate": "",
+        "UpdatedDate": "02/07/2024"
+      },
+      {
+        "Code": "KLQ_100234",
+        "Name": "Lý Tường Lâm",
+        "Url": "Lý Tường Lâm",
+        "AssetVolume": "1.111.161",
+        "AssetRate": "",
+        "UpdatedDate": "28/06/2024"
+      },
+      {
+        "Code": "KLQ_100229",
+        "Name": "Dương Minh Khá",
+        "Url": "Dương Minh Khá",
+        "AssetVolume": "2.358.123",
+        "AssetRate": "",
+        "UpdatedDate": "28/06/2024"
+      },
+      {
+        "Code": "CEO_871339",
+        "Name": "Hồ Minh Tâm",
+        "Url": "<a href='/du-lieu/ceo/CEO_871339/ho-minh-tam.chn'>Hồ Minh Tâm</a>",
+        "AssetVolume": "750.099",
+        "AssetRate": "",
+        "UpdatedDate": "02/07/2024"
+      },
+      {
+        "Code": "KLQ_100244",
+        "Name": "Nguyễn Thị Hải Châu",
+        "Url": "Nguyễn Thị Hải Châu",
+        "AssetVolume": "3.317.700",
+        "AssetRate": "",
+        "UpdatedDate": "28/06/2024"
+      },
+      {
+        "Code": "KLQ_100231",
+        "Name": "Huỳnh Thị Ánh Nguyệt",
+        "Url": "Huỳnh Thị Ánh Nguyệt",
+        "AssetVolume": "2.866.050",
+        "AssetRate": "",
+        "UpdatedDate": "28/06/2024"
+      },
+      {
+        "Code": "CEO_871360",
+        "Name": "Huỳnh Lê Khanh",
+        "Url": "<a href='/du-lieu/ceo/CEO_871360/huynh-le-khanh.chn'>Huỳnh Lê Khanh</a>",
+        "AssetVolume": "16.899",
+        "AssetRate": "",
+        "UpdatedDate": "02/07/2024"
+      },
+      {
+        "Code": "KLQ_100242",
+        "Name": "Nguyễn Phúc Huy",
+        "Url": "Nguyễn Phúc Huy",
+        "AssetVolume": "707.776",
+        "AssetRate": "",
+        "UpdatedDate": "28/06/2024"
+      },
+      {
+        "Code": "KLQ_100247",
+        "Name": "Nguyễn Thị Thanh Hoa",
+        "Url": "Nguyễn Thị Thanh Hoa",
+        "AssetVolume": "1.718.900",
+        "AssetRate": "",
+        "UpdatedDate": "28/06/2024"
+      }
+    ],
+    "NuocNgoai": 0.64,
+    "NhaNuoc": 0,
+    "Khac": 99.36
+  },
+  "cong_ty_con": [],
+  "cong_ty_lien_ket": [],
+  "giao_dich_noi_bo": [
+    {
+      "transaction_name": "Phạm Thị Thảo Nguyên",
+      "transaction_position": "",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 1495739,
+      "plan_buy": 0,
+      "plan_sell": 0,
+      "plan_begin_date": "",
+      "plan_end_date": "",
+      "real_buy": 3215623,
+      "real_sell": 0,
+      "real_end_date": "2024-05-09",
+      "published_date": "2024-07-02",
+      "volume_after": 4711362
+    },
+    {
+      "transaction_name": "Huỳnh Lê Khanh",
+      "transaction_position": "Phó Tổng GĐ",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 0,
+      "plan_buy": 13000,
+      "plan_sell": 0,
+      "plan_begin_date": "2022-11-28",
+      "plan_end_date": "2022-11-28",
+      "real_buy": 13000,
+      "real_sell": 0,
+      "real_end_date": "2022-11-28",
+      "published_date": "2022-11-24",
+      "volume_after": 13000
+    },
+    {
+      "transaction_name": "Lê Phương Hải",
+      "transaction_position": "Phó Tổng GĐ",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 0,
+      "plan_buy": 150000,
+      "plan_sell": 0,
+      "plan_begin_date": "2022-11-28",
+      "plan_end_date": "2022-11-28",
+      "real_buy": 150000,
+      "real_sell": 0,
+      "real_end_date": "2022-11-28",
+      "published_date": "2022-11-24",
+      "volume_after": 150000
+    },
+    {
+      "transaction_name": "Hồ Minh Tâm",
+      "transaction_position": "Thành viên HĐQT",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 160000,
+      "plan_buy": 417000,
+      "plan_sell": 0,
+      "plan_begin_date": "2022-11-28",
+      "plan_end_date": "2022-11-28",
+      "real_buy": 417000,
+      "real_sell": 0,
+      "real_end_date": "2022-11-28",
+      "published_date": "2022-11-24",
+      "volume_after": 577000
+    },
+    {
+      "transaction_name": "Lê Phương Hải",
+      "transaction_position": "Phó Tổng GĐ",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 0,
+      "plan_buy": 90000,
+      "plan_sell": 0,
+      "plan_begin_date": "2022-11-10",
+      "plan_end_date": "2022-11-10",
+      "real_buy": 0,
+      "real_sell": 0,
+      "real_end_date": "2022-11-10",
+      "published_date": "2022-11-08",
+      "volume_after": 0
+    },
+    {
+      "transaction_name": "Nguyễn Lân Trung Anh",
+      "transaction_position": "Thành viên HĐQT độc lập",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 0,
+      "plan_buy": 90000,
+      "plan_sell": 0,
+      "plan_begin_date": "2022-11-10",
+      "plan_end_date": "2022-11-10",
+      "real_buy": 90000,
+      "real_sell": 0,
+      "real_end_date": "2022-11-10",
+      "published_date": "2022-11-08",
+      "volume_after": 90000
+    },
+    {
+      "transaction_name": "Hồ Minh Tâm",
+      "transaction_position": "Thành viên HĐQT",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 0,
+      "plan_buy": 160000,
+      "plan_sell": 0,
+      "plan_begin_date": "2022-11-10",
+      "plan_end_date": "2022-11-10",
+      "real_buy": 160000,
+      "real_sell": 0,
+      "real_end_date": "2022-11-10",
+      "published_date": "2022-11-06",
+      "volume_after": 160000
+    },
+    {
+      "transaction_name": "Nguyễn Đức Phương",
+      "transaction_position": "Chủ tịch HĐQT",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 2969215,
+      "plan_buy": 140000,
+      "plan_sell": 0,
+      "plan_begin_date": "2022-11-08",
+      "plan_end_date": "2022-11-10",
+      "real_buy": 140000,
+      "real_sell": 0,
+      "real_end_date": "2022-11-10",
+      "published_date": "2022-11-06",
+      "volume_after": 3109215
+    },
+    {
+      "transaction_name": "Phạm Hải Âu",
+      "transaction_position": "Thành viên HĐQT",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 100000,
+      "plan_buy": 90000,
+      "plan_sell": 0,
+      "plan_begin_date": "2022-11-08",
+      "plan_end_date": "2022-11-10",
+      "real_buy": 90000,
+      "real_sell": 0,
+      "real_end_date": "2022-11-10",
+      "published_date": "2022-11-06",
+      "volume_after": 190000
+    },
+    {
+      "transaction_name": "Trần Việt Phương",
+      "transaction_position": "Trưởng BKS",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 200000,
+      "plan_buy": 90000,
+      "plan_sell": 0,
+      "plan_begin_date": "2022-11-08",
+      "plan_end_date": "2022-11-10",
+      "real_buy": 90000,
+      "real_sell": 0,
+      "real_end_date": "2022-11-09",
+      "published_date": "2022-11-06",
+      "volume_after": 290000
+    }
+  ]
+}

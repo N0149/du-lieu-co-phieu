@@ -1,0 +1,131 @@
+{
+  "symbol": "DTH",
+  "updated": "2026-03-22T03:15:38.000Z",
+  "co_cau_so_huu": {
+    "CoDongSoHuu": [
+      {
+        "Code": "KLQ_100183",
+        "Name": "Đoàn Quang Hưng",
+        "Url": "Đoàn Quang Hưng",
+        "AssetVolume": "703.875",
+        "AssetRate": "9,42",
+        "UpdatedDate": "04/06/2025"
+      },
+      {
+        "Code": "CEO_872126",
+        "Name": "Lê Xuân Thủy",
+        "Url": "<a href='/du-lieu/ceo/CEO_872126/le-xuan-thuy.chn'>Lê Xuân Thủy</a>",
+        "AssetVolume": "45.585",
+        "AssetRate": "0,61",
+        "UpdatedDate": "04/06/2025"
+      },
+      {
+        "Code": "CORP_56193",
+        "Name": "Công ty Cổ phần METZ USA Việt Nam",
+        "Url": "Công ty Cổ phần METZ USA Việt Nam",
+        "AssetVolume": "6.224.514",
+        "AssetRate": "83,31",
+        "UpdatedDate": "04/06/2025"
+      }
+    ],
+    "NuocNgoai": 49,
+    "NhaNuoc": 0,
+    "Khac": 51
+  },
+  "cong_ty_con": [
+    {
+      "Symbol": "DTH",
+      "CorpCode": "CORP_52234",
+      "Name": "Công ty TNHH MTV Dược Thanh hóa - Hủa Phăn",
+      "TotalCapital": 100,
+      "SharedCapital": 100,
+      "OwnershipRate": 100,
+      "Note": "Đơn vị: 1000 USD",
+      "Order": 1,
+      "TradeCenter": ""
+    }
+  ],
+  "cong_ty_lien_ket": [],
+  "giao_dich_noi_bo": [
+    {
+      "transaction_name": "Đoàn Quang Hưng",
+      "transaction_position": "",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 2003875,
+      "plan_buy": 0,
+      "plan_sell": 0,
+      "plan_begin_date": "",
+      "plan_end_date": "",
+      "real_buy": 0,
+      "real_sell": 1300000,
+      "real_end_date": "2024-07-15",
+      "published_date": "2024-07-25",
+      "volume_after": 703875
+    },
+    {
+      "transaction_name": "Công ty Cổ phần METZ USA Việt Nam",
+      "transaction_position": "",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 4645,
+      "plan_buy": 6320000,
+      "plan_sell": 0,
+      "plan_begin_date": "2024-07-12",
+      "plan_end_date": "2024-08-09",
+      "real_buy": 6219869,
+      "real_sell": 0,
+      "real_end_date": "2024-08-05",
+      "published_date": "2024-07-12",
+      "volume_after": 6224514
+    },
+    {
+      "transaction_name": "Trần Thanh Minh",
+      "transaction_position": "Thành viên HĐQT",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 1711428,
+      "plan_buy": 0,
+      "plan_sell": 1711428,
+      "plan_begin_date": "2024-07-16",
+      "plan_end_date": "2024-08-12",
+      "real_buy": 0,
+      "real_sell": 1711428,
+      "real_end_date": "2024-08-02",
+      "published_date": "2024-07-12",
+      "volume_after": 0
+    },
+    {
+      "transaction_name": "Trần Thị Huyền Trang",
+      "transaction_position": "Vợ",
+      "leader_name": "Trần Thanh Minh",
+      "leader_position": "Thành viên HĐQT",
+      "volume_before": 2128043,
+      "plan_buy": 0,
+      "plan_sell": 2128043,
+      "plan_begin_date": "2024-07-16",
+      "plan_end_date": "2024-08-12",
+      "real_buy": 0,
+      "real_sell": 2128043,
+      "real_end_date": "2024-07-26",
+      "published_date": "2024-07-12",
+      "volume_after": 0
+    },
+    {
+      "transaction_name": "Cao Văn Bốn",
+      "transaction_position": "Thành viên HĐQT",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 31067,
+      "plan_buy": 0,
+      "plan_sell": 31067,
+      "plan_begin_date": "2022-08-29",
+      "plan_end_date": "2022-09-27",
+      "real_buy": 0,
+      "real_sell": 31067,
+      "real_end_date": "2022-08-31",
+      "published_date": "2022-09-08",
+      "volume_after": 0
+    }
+  ]
+}

@@ -1,0 +1,248 @@
+{
+  "updated": "2026-08-28",
+  "funds_included": 65,
+  "top_stocks": [
+    {
+      "code": "HPG",
+      "sector": "Vật liệu xây dựng",
+      "funds_count": 33,
+      "avg_pct": 5.65,
+      "total_value_bn": null
+    },
+    {
+      "code": "CTG",
+      "sector": "Ngân hàng",
+      "funds_count": 31,
+      "avg_pct": 4.76,
+      "total_value_bn": null
+    },
+    {
+      "code": "MWG",
+      "sector": "Bán lẻ",
+      "funds_count": 31,
+      "avg_pct": 4.42,
+      "total_value_bn": null
+    },
+    {
+      "code": "MBB",
+      "sector": "Ngân hàng",
+      "funds_count": 28,
+      "avg_pct": 5.92,
+      "total_value_bn": null
+    },
+    {
+      "code": "TCB",
+      "sector": "Ngân hàng",
+      "funds_count": 23,
+      "avg_pct": 4.67,
+      "total_value_bn": null
+    },
+    {
+      "code": "VCB",
+      "sector": "Ngân hàng",
+      "funds_count": 20,
+      "avg_pct": 4.48,
+      "total_value_bn": null
+    },
+    {
+      "code": "ACB",
+      "sector": "Ngân hàng",
+      "funds_count": 13,
+      "avg_pct": 6.47,
+      "total_value_bn": null
+    },
+    {
+      "code": "VHM",
+      "sector": "Bất động sản",
+      "funds_count": 13,
+      "avg_pct": 5.21,
+      "total_value_bn": null
+    },
+    {
+      "code": "STB",
+      "sector": "Ngân hàng",
+      "funds_count": 12,
+      "avg_pct": 4.36,
+      "total_value_bn": null
+    },
+    {
+      "code": "MSN",
+      "sector": "Thực phẩm - Đồ uống",
+      "funds_count": 12,
+      "avg_pct": 4,
+      "total_value_bn": null
+    },
+    {
+      "code": "VPB",
+      "sector": "Ngân hàng",
+      "funds_count": 12,
+      "avg_pct": 3.93,
+      "total_value_bn": null
+    },
+    {
+      "code": "FPT",
+      "sector": "Công nghệ và thông tin",
+      "funds_count": 11,
+      "avg_pct": 4.87,
+      "total_value_bn": null
+    },
+    {
+      "code": "PNJ",
+      "sector": "Sản xuất Phụ trợ",
+      "funds_count": 10,
+      "avg_pct": 4.42,
+      "total_value_bn": null
+    },
+    {
+      "code": "VIC",
+      "sector": "Bất động sản",
+      "funds_count": 9,
+      "avg_pct": 10.16,
+      "total_value_bn": null
+    },
+    {
+      "code": "HDB",
+      "sector": "Ngân hàng",
+      "funds_count": 9,
+      "avg_pct": 4.13,
+      "total_value_bn": null
+    },
+    {
+      "code": "NLG12501",
+      "sector": "Bất động sản",
+      "funds_count": 8,
+      "avg_pct": 8.27,
+      "total_value_bn": null
+    },
+    {
+      "code": "GMD",
+      "sector": "Vận tải - Kho bãi",
+      "funds_count": 7,
+      "avg_pct": 3.9,
+      "total_value_bn": null
+    },
+    {
+      "code": "CTD",
+      "sector": "Xây dựng",
+      "funds_count": 5,
+      "avg_pct": 4.66,
+      "total_value_bn": null
+    },
+    {
+      "code": "PVS",
+      "sector": "Khai khoáng",
+      "funds_count": 5,
+      "avg_pct": 4.09,
+      "total_value_bn": null
+    },
+    {
+      "code": "KBC12401",
+      "sector": "Bất động sản",
+      "funds_count": 4,
+      "avg_pct": 7.76,
+      "total_value_bn": null
+    }
+  ],
+  "top_sectors": [
+    {
+      "sector": "Ngân hàng",
+      "funds_count": 40,
+      "avg_pct": 26.82
+    },
+    {
+      "sector": "Chứng khoán",
+      "funds_count": 38,
+      "avg_pct": 4.65
+    },
+    {
+      "sector": "Bán lẻ",
+      "funds_count": 38,
+      "avg_pct": 4.59
+    },
+    {
+      "sector": "Bất động sản",
+      "funds_count": 37,
+      "avg_pct": 11.65
+    },
+    {
+      "sector": "Vật liệu xây dựng",
+      "funds_count": 37,
+      "avg_pct": 5.79
+    },
+    {
+      "sector": "Thực phẩm - Đồ uống",
+      "funds_count": 37,
+      "avg_pct": 5.76
+    },
+    {
+      "sector": "Vận tải - Kho bãi",
+      "funds_count": 35,
+      "avg_pct": 3.51
+    },
+    {
+      "sector": "Sản xuất Phụ trợ",
+      "funds_count": 32,
+      "avg_pct": 3.68
+    },
+    {
+      "sector": "Tiện ích",
+      "funds_count": 32,
+      "avg_pct": 3.11
+    },
+    {
+      "sector": "Sản xuất Nhựa - Hóa chất",
+      "funds_count": 30,
+      "avg_pct": 4.04
+    },
+    {
+      "sector": "Công nghệ và thông tin",
+      "funds_count": 28,
+      "avg_pct": 4.04
+    },
+    {
+      "sector": "Xây dựng",
+      "funds_count": 28,
+      "avg_pct": 3.68
+    },
+    {
+      "sector": "Thiết bị điện",
+      "funds_count": 27,
+      "avg_pct": 1.91
+    },
+    {
+      "sector": "Khai khoáng",
+      "funds_count": 22,
+      "avg_pct": 2.27
+    },
+    {
+      "sector": "Bán buôn",
+      "funds_count": 18,
+      "avg_pct": 1.81
+    },
+    {
+      "sector": "Bảo hiểm",
+      "funds_count": 14,
+      "avg_pct": 2.79
+    },
+    {
+      "sector": "Chế biến thủy sản",
+      "funds_count": 12,
+      "avg_pct": 2.51
+    },
+    {
+      "sector": "Sản xuất Hàng gia dụng",
+      "funds_count": 11,
+      "avg_pct": 2.25
+    },
+    {
+      "sector": "Sản xuất",
+      "funds_count": 6,
+      "avg_pct": 0.64
+    },
+    {
+      "sector": "Nông - Lâm - Ngư",
+      "funds_count": 5,
+      "avg_pct": 4.05
+    }
+  ]
+}

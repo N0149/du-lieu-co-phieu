@@ -1,0 +1,166 @@
+{
+  "symbol": "RBC",
+  "updated": "2026-08-01T05:52:00.000Z",
+  "co_cau_so_huu": {
+    "CoDongSoHuu": [
+      {
+        "Code": "CEO_58100",
+        "Name": "Phan Đình Phúc",
+        "Url": "<a href='/du-lieu/ceo/CEO_58100/phan-dinh-phuc.chn'>Phan Đình Phúc</a>",
+        "AssetVolume": "10.000",
+        "AssetRate": "0,1",
+        "UpdatedDate": "20/05/2025"
+      },
+      {
+        "Code": "CORP_72052",
+        "Name": "Công ty TNHH MTV Tổng Công ty cao su Đồng Nai",
+        "Url": "Công ty TNHH MTV Tổng Công ty cao su Đồng Nai",
+        "AssetVolume": "1.336.000",
+        "AssetRate": "13,49",
+        "UpdatedDate": "30/06/2024"
+      },
+      {
+        "Code": "CEO_83372",
+        "Name": "Phan Trọng Quỳnh",
+        "Url": "<a href='/du-lieu/ceo/CEO_83372/phan-trong-quynh.chn'>Phan Trọng Quỳnh</a>",
+        "AssetVolume": "4.300",
+        "AssetRate": "0,04",
+        "UpdatedDate": "31/12/2022"
+      },
+      {
+        "Code": "CEO_38251",
+        "Name": "Bùi Văn Dũng",
+        "Url": "<a href='/du-lieu/ceo/CEO_38251/bui-van-dung.chn'>Bùi Văn Dũng</a>",
+        "AssetVolume": "14.650",
+        "AssetRate": "0,15",
+        "UpdatedDate": "31/12/2022"
+      },
+      {
+        "Code": "CEO_38285",
+        "Name": "Trần Công Hải",
+        "Url": "<a href='/du-lieu/ceo/CEO_38285/tran-cong-hai.chn'>Trần Công Hải</a>",
+        "AssetVolume": "10.600",
+        "AssetRate": "0,11",
+        "UpdatedDate": "31/12/2022"
+      },
+      {
+        "Code": "GVR",
+        "Name": "Tập đoàn Công nghiệp Cao su Việt Nam",
+        "Url": "<a href='/du-lieu/hose/GVR-tap-doan-cong-nghiep-cao-su-viet-nam.chn' title='Tập đoàn Công nghiệp Cao su Việt Nam'>Tập đoàn Công nghiệp Cao su Việt Nam</a>",
+        "AssetVolume": "6.933.333",
+        "AssetRate": "70,01",
+        "UpdatedDate": "31/12/2022"
+      }
+    ],
+    "NuocNgoai": 0.01,
+    "NhaNuoc": 0,
+    "Khac": 99.99
+  },
+  "cong_ty_con": [
+    {
+      "Symbol": "RBC",
+      "CorpCode": "CORP_39240",
+      "Name": "Công ty TNHH MTV Chế biến gỗ Đông Hòa",
+      "TotalCapital": 30,
+      "SharedCapital": 30,
+      "OwnershipRate": 100,
+      "Note": "",
+      "Order": 1,
+      "TradeCenter": ""
+    },
+    {
+      "Symbol": "RBC",
+      "CorpCode": "CORP_39241",
+      "Name": "Công ty TNHH MTV Thương mại và Địa ốc Hồng Phúc",
+      "TotalCapital": 20,
+      "SharedCapital": 20,
+      "OwnershipRate": 100,
+      "Note": "",
+      "Order": 2,
+      "TradeCenter": ""
+    }
+  ],
+  "cong_ty_lien_ket": [],
+  "giao_dich_noi_bo": [
+    {
+      "transaction_name": "Phan Đình Phúc",
+      "transaction_position": "Chủ tịch HĐQT",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 0,
+      "plan_buy": 10000,
+      "plan_sell": 0,
+      "plan_begin_date": "2025-05-15",
+      "plan_end_date": "2025-06-13",
+      "real_buy": 10000,
+      "real_sell": 0,
+      "real_end_date": "2025-05-20",
+      "published_date": "2025-05-19",
+      "volume_after": 10000
+    },
+    {
+      "transaction_name": "Nguyễn Hồng Minh",
+      "transaction_position": "Kế toán trưởng",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 20000,
+      "plan_buy": 0,
+      "plan_sell": 4000,
+      "plan_begin_date": "2015-10-09",
+      "plan_end_date": "2015-11-08",
+      "real_buy": 0,
+      "real_sell": 4000,
+      "real_end_date": "2015-10-22",
+      "published_date": "2016-02-04",
+      "volume_after": 16000
+    },
+    {
+      "transaction_name": "Phùng Bá Thành",
+      "transaction_position": "Phó Tổng GĐ",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 30000,
+      "plan_buy": 0,
+      "plan_sell": 10000,
+      "plan_begin_date": "2015-10-09",
+      "plan_end_date": "2015-11-08",
+      "real_buy": 0,
+      "real_sell": 10000,
+      "real_end_date": "2015-10-22",
+      "published_date": "2016-02-04",
+      "volume_after": 20000
+    },
+    {
+      "transaction_name": "Lê Thị Ngọc Lý",
+      "transaction_position": "Thành viên HĐQT",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 29000,
+      "plan_buy": 0,
+      "plan_sell": 9000,
+      "plan_begin_date": "2015-10-09",
+      "plan_end_date": "2015-11-08",
+      "real_buy": 0,
+      "real_sell": 9000,
+      "real_end_date": "2015-10-22",
+      "published_date": "2016-02-04",
+      "volume_after": 20000
+    },
+    {
+      "transaction_name": "Bùi Văn Dũng",
+      "transaction_position": "Phó Tổng GĐ",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 24650,
+      "plan_buy": 0,
+      "plan_sell": 10000,
+      "plan_begin_date": "2015-10-09",
+      "plan_end_date": "2015-11-08",
+      "real_buy": 0,
+      "real_sell": 10000,
+      "real_end_date": "2015-10-22",
+      "published_date": "2016-02-04",
+      "volume_after": 14650
+    }
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "symbol": "E29",
+  "updated": "2026-08-01T05:35:33.000Z",
+  "co_cau_so_huu": {
+    "CoDongSoHuu": [
+      {
+        "Code": "CORP_51990",
+        "Name": "CTCP xây dựng và kinh doanh thương mại Âu Lạc",
+        "Url": "CTCP xây dựng và kinh doanh thương mại Âu Lạc",
+        "AssetVolume": "1.237.300",
+        "AssetRate": "24,75",
+        "UpdatedDate": "31/12/2025"
+      },
+      {
+        "Code": "TCT319",
+        "Name": "Tổng Công ty 319",
+        "Url": "<a href='/du-lieu/otc/TCT319-tong-cong-ty-319.chn' title='Tổng Công ty 319'>Tổng Công ty 319</a>",
+        "AssetVolume": "2.550.000",
+        "AssetRate": "51,0",
+        "UpdatedDate": "31/12/2025"
+      }
+    ],
+    "NuocNgoai": 5000000,
+    "NhaNuoc": 0,
+    "Khac": -4999900
+  },
+  "cong_ty_con": [],
+  "cong_ty_lien_ket": [],
+  "giao_dich_noi_bo": []
+}

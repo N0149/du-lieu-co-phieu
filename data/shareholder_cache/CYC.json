@@ -1,0 +1,151 @@
+{
+  "symbol": "CYC",
+  "updated": "2026-08-01T05:32:11.000Z",
+  "co_cau_so_huu": {
+    "CoDongSoHuu": [
+      {
+        "Code": "CORP_52209",
+        "Name": "CTCP Đầu tư Tập đoàn Hồng Hạc",
+        "Url": "CTCP Đầu tư Tập đoàn Hồng Hạc",
+        "AssetVolume": "459.900",
+        "AssetRate": "5,08",
+        "UpdatedDate": "31/12/2025"
+      },
+      {
+        "Code": "CORP_00688",
+        "Name": "Chyih Investment Co., Ltd ",
+        "Url": "Chyih Investment Co., Ltd ",
+        "AssetVolume": "7.057.325",
+        "AssetRate": "78,01",
+        "UpdatedDate": "31/12/2025"
+      },
+      {
+        "Code": "LQ_99857",
+        "Name": "Chen Tzu Hsuan",
+        "Url": "Chen Tzu Hsuan (Con của ông <a href='/du-lieu/ceo/CEO_02383/chen-hui-zun.chn'>Chen Hui Zun</a>)",
+        "AssetVolume": "687.100",
+        "AssetRate": "7,6",
+        "UpdatedDate": "31/12/2025"
+      }
+    ],
+    "NuocNgoai": 48.6,
+    "NhaNuoc": 0,
+    "Khac": 51.4
+  },
+  "cong_ty_con": [],
+  "cong_ty_lien_ket": [],
+  "giao_dich_noi_bo": [
+    {
+      "transaction_name": "CHEN CHIEN AN",
+      "transaction_position": "Cha",
+      "leader_name": "Chen Hui Zun",
+      "leader_position": "Chủ tịch HĐQT",
+      "volume_before": 185200,
+      "plan_buy": 0,
+      "plan_sell": 185200,
+      "plan_begin_date": "2025-12-11",
+      "plan_end_date": "2025-12-25",
+      "real_buy": 0,
+      "real_sell": 185200,
+      "real_end_date": "2025-12-15",
+      "published_date": "2025-12-09",
+      "volume_after": 0
+    },
+    {
+      "transaction_name": "Chen Tzu Hsuan",
+      "transaction_position": "Con",
+      "leader_name": "Chen Hui Zun",
+      "leader_position": "Chủ tịch HĐQT",
+      "volume_before": 501900,
+      "plan_buy": 0,
+      "plan_sell": 185200,
+      "plan_begin_date": "2025-12-11",
+      "plan_end_date": "2025-12-25",
+      "real_buy": 0,
+      "real_sell": 185200,
+      "real_end_date": "2025-12-15",
+      "published_date": "2025-12-09",
+      "volume_after": 687100
+    },
+    {
+      "transaction_name": "CHEN CHIEN AN",
+      "transaction_position": "Cha",
+      "leader_name": "Chen Hui Zun",
+      "leader_position": "Chủ tịch HĐQT",
+      "volume_before": 0,
+      "plan_buy": 185200,
+      "plan_sell": 0,
+      "plan_begin_date": "2024-06-13",
+      "plan_end_date": "2024-07-12",
+      "real_buy": 185200,
+      "real_sell": 0,
+      "real_end_date": "2024-07-12",
+      "published_date": "2024-06-12",
+      "volume_after": 185200
+    },
+    {
+      "transaction_name": "CTCP Đầu tư Tập đoàn Hồng Hạc",
+      "transaction_position": "",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 413300,
+      "plan_buy": 0,
+      "plan_sell": 0,
+      "plan_begin_date": "",
+      "plan_end_date": "",
+      "real_buy": 46600,
+      "real_sell": 0,
+      "real_end_date": "2021-12-17",
+      "published_date": "2021-12-23",
+      "volume_after": 459900
+    },
+    {
+      "transaction_name": "Chen Tzu Hsuan",
+      "transaction_position": "Con",
+      "leader_name": "Chen Hui Zun",
+      "leader_position": "Chủ tịch HĐQT",
+      "volume_before": 50000,
+      "plan_buy": 505000,
+      "plan_sell": 0,
+      "plan_begin_date": "2018-09-20",
+      "plan_end_date": "2018-10-16",
+      "real_buy": 451900,
+      "real_sell": 0,
+      "real_end_date": "2018-10-16",
+      "published_date": "2018-09-18",
+      "volume_after": 501900
+    },
+    {
+      "transaction_name": "Chen Tzu Hsuan",
+      "transaction_position": "Con",
+      "leader_name": "Chen Hui Zun",
+      "leader_position": "Chủ tịch HĐQT",
+      "volume_before": 0,
+      "plan_buy": 50000,
+      "plan_sell": 0,
+      "plan_begin_date": "2017-07-31",
+      "plan_end_date": "2017-08-18",
+      "real_buy": 50000,
+      "real_sell": 0,
+      "real_end_date": "2017-08-17",
+      "published_date": "2017-07-28",
+      "volume_after": 50000
+    },
+    {
+      "transaction_name": "Trịnh Quốc Minh ",
+      "transaction_position": "Giám đốc",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 0,
+      "plan_buy": 0,
+      "plan_sell": 0,
+      "plan_begin_date": "",
+      "plan_end_date": "",
+      "real_buy": 0,
+      "real_sell": 3150,
+      "real_end_date": "2009-07-28",
+      "published_date": "2009-08-26",
+      "volume_after": 0
+    }
+  ]
+}

@@ -1,0 +1,707 @@
+{
+  "symbol": "SSB",
+  "updated": "2026-09-01T07:47:13.000Z",
+  "co_cau_so_huu": {
+    "CoDongSoHuu": [
+      {
+        "Code": "CEO_72006",
+        "Name": "Nguyễn Tuấn Cường",
+        "Url": "<a href='/du-lieu/ceo/CEO_72006/nguyen-tuan-cuong.chn'>Nguyễn Tuấn Cường</a>",
+        "AssetVolume": "2.108.468",
+        "AssetRate": "0,06",
+        "UpdatedDate": "20/08/2026"
+      },
+      {
+        "Code": "CEO_50957",
+        "Name": "Nguyễn Thị Nga",
+        "Url": "<a href='/du-lieu/ceo/CEO_50957/nguyen-thi-nga.chn'>Nguyễn Thị Nga</a>",
+        "AssetVolume": "148.225.028",
+        "AssetRate": "4,32",
+        "UpdatedDate": "06/08/2026"
+      },
+      {
+        "Code": "CEO_60787",
+        "Name": "Lê Hữu Báu",
+        "Url": "<a href='/du-lieu/ceo/CEO_60787/le-huu-bau.chn'>Lê Hữu Báu</a>",
+        "AssetVolume": "55.615.266",
+        "AssetRate": "1,62",
+        "UpdatedDate": "04/06/2026"
+      },
+      {
+        "Code": "CEO_62066",
+        "Name": "Ngô Thị Nhài",
+        "Url": "<a href='/du-lieu/ceo/CEO_62066/ngo-thi-nhai.chn'>Ngô Thị Nhài</a>",
+        "AssetVolume": "9.493.142",
+        "AssetRate": "0,28",
+        "UpdatedDate": "23/08/2024"
+      },
+      {
+        "Code": "CEO_878720",
+        "Name": "Lê Thanh Hải",
+        "Url": "<a href='/du-lieu/ceo/CEO_878720/le-thanh-hai.chn'>Lê Thanh Hải</a>",
+        "AssetVolume": "731.101",
+        "AssetRate": "0,02",
+        "UpdatedDate": "05/12/2025"
+      },
+      {
+        "Code": "CEO_62035",
+        "Name": "Nguyễn Thị Hoài Phương",
+        "Url": "<a href='/du-lieu/ceo/CEO_62035/nguyen-thi-hoai-phuong.chn'>Nguyễn Thị Hoài Phương</a>",
+        "AssetVolume": "185.777",
+        "AssetRate": "0,01",
+        "UpdatedDate": "19/03/2025"
+      },
+      {
+        "Code": "CEO_60785",
+        "Name": "Lê Văn Tần",
+        "Url": "<a href='/du-lieu/ceo/CEO_60785/le-van-tan.chn'>Lê Văn Tần</a>",
+        "AssetVolume": "17.451.053",
+        "AssetRate": "0,51",
+        "UpdatedDate": "07/08/2026"
+      },
+      {
+        "Code": "CEO_878721",
+        "Name": "Bùi Quốc Hiệu",
+        "Url": "<a href='/du-lieu/ceo/CEO_878721/bui-quoc-hieu.chn'>Bùi Quốc Hiệu</a>",
+        "AssetVolume": "80.028",
+        "AssetRate": "0,0",
+        "UpdatedDate": "24/02/2026"
+      },
+      {
+        "Code": "CEO_875238",
+        "Name": "Vũ Thu Thủy",
+        "Url": "<a href='/du-lieu/ceo/CEO_875238/vu-thu-thuy.chn'>Vũ Thu Thủy</a>",
+        "AssetVolume": "124.104",
+        "AssetRate": "0,0",
+        "UpdatedDate": "10/08/2026"
+      },
+      {
+        "Code": "CEO_60791",
+        "Name": "Khúc Thị Quỳnh Lâm",
+        "Url": "<a href='/du-lieu/ceo/CEO_60791/khuc-thi-quynh-lam.chn'>Khúc Thị Quỳnh Lâm</a>",
+        "AssetVolume": "16.109.226",
+        "AssetRate": "0,47",
+        "UpdatedDate": "07/08/2026"
+      },
+      {
+        "Code": "CEO_87735",
+        "Name": "Hoàng Tuyết Mai",
+        "Url": "<a href='/du-lieu/ceo/CEO_87735/hoang-tuyet-mai.chn'>Hoàng Tuyết Mai</a>",
+        "AssetVolume": "60.582",
+        "AssetRate": "0,0",
+        "UpdatedDate": "12/08/2026"
+      },
+      {
+        "Code": "CEO_875237",
+        "Name": "Nguyễn Thành Luân",
+        "Url": "<a href='/du-lieu/ceo/CEO_875237/nguyen-thanh-luan.chn'>Nguyễn Thành Luân</a>",
+        "AssetVolume": "194.876",
+        "AssetRate": "0,01",
+        "UpdatedDate": "23/08/2024"
+      },
+      {
+        "Code": "CEO_87733",
+        "Name": "Vũ Quốc Tuấn",
+        "Url": "<a href='/du-lieu/ceo/CEO_87733/vu-quoc-tuan.chn'>Vũ Quốc Tuấn</a>",
+        "AssetVolume": "122.760",
+        "AssetRate": "0,0",
+        "UpdatedDate": "10/08/2026"
+      },
+      {
+        "Code": "CEO_872075",
+        "Name": "Mathew Nevil Welch",
+        "Url": "<a href='/du-lieu/ceo/CEO_872075/mathew-nevil-welch.chn'>Mathew Nevil Welch</a>",
+        "AssetVolume": "220.520",
+        "AssetRate": "0,01",
+        "UpdatedDate": "12/08/2026"
+      },
+      {
+        "Code": "CEO_60790",
+        "Name": "Hoàng Minh Tân",
+        "Url": "<a href='/du-lieu/ceo/CEO_60790/hoang-minh-tan.chn'>Hoàng Minh Tân</a>",
+        "AssetVolume": "6.677.632",
+        "AssetRate": "0,19",
+        "UpdatedDate": "23/08/2024"
+      },
+      {
+        "Code": "CORP_60729",
+        "Name": "Công ty TNHH Phát triển và Đầu tư Phú Mỹ",
+        "Url": "Công ty TNHH Phát triển và Đầu tư Phú Mỹ",
+        "AssetVolume": "141.245.669",
+        "AssetRate": "4,12",
+        "UpdatedDate": "23/08/2024"
+      },
+      {
+        "Code": "CEO_62145",
+        "Name": "Trần Thị Thanh Thủy",
+        "Url": "<a href='/du-lieu/ceo/CEO_62145/tran-thi-thanh-thuy.chn'>Trần Thị Thanh Thủy</a>",
+        "AssetVolume": "421.308",
+        "AssetRate": "0,01",
+        "UpdatedDate": "11/08/2026"
+      },
+      {
+        "Code": "CORP_82137",
+        "Name": "Công ty TNHH Đầu tư tài chính và thương mại Vạn Lộc",
+        "Url": "Công ty TNHH Đầu tư tài chính và thương mại Vạn Lộc",
+        "AssetVolume": "82.964.771",
+        "AssetRate": "2,42",
+        "UpdatedDate": "23/08/2024"
+      },
+      {
+        "Code": "CEO_876833",
+        "Name": "Nguyễn Hồng Quang",
+        "Url": "<a href='/du-lieu/ceo/CEO_876833/nguyen-hong-quang.chn'>Nguyễn Hồng Quang</a>",
+        "AssetVolume": "625.682",
+        "AssetRate": "0,02",
+        "UpdatedDate": "11/08/2026"
+      },
+      {
+        "Code": "CEO_878497",
+        "Name": "Lương Duy Đông",
+        "Url": "<a href='/du-lieu/ceo/CEO_878497/luong-duy-dong.chn'>Lương Duy Đông</a>",
+        "AssetVolume": "71.369",
+        "AssetRate": "0,0",
+        "UpdatedDate": "12/08/2026"
+      },
+      {
+        "Code": "CEO_61169",
+        "Name": "Vũ Thị Ngọc Quỳnh",
+        "Url": "<a href='/du-lieu/ceo/CEO_61169/vu-thi-ngoc-quynh.chn'>Vũ Thị Ngọc Quỳnh</a>",
+        "AssetVolume": "8.009.737",
+        "AssetRate": "0,23",
+        "UpdatedDate": "25/02/2025"
+      },
+      {
+        "Code": "CEO_72007",
+        "Name": "Vũ Đình Khoán",
+        "Url": "<a href='/du-lieu/ceo/CEO_72007/vu-dinh-khoan.chn'>Vũ Đình Khoán</a>",
+        "AssetVolume": "2.747.838",
+        "AssetRate": "0,08",
+        "UpdatedDate": "20/08/2026"
+      },
+      {
+        "Code": "CEO_61167",
+        "Name": "Bùi Trung Kiên",
+        "Url": "<a href='/du-lieu/ceo/CEO_61167/bui-trung-kien.chn'>Bùi Trung Kiên</a>",
+        "AssetVolume": "5.884.971",
+        "AssetRate": "0,17",
+        "UpdatedDate": "23/08/2024"
+      },
+      {
+        "Code": "CEO_61168",
+        "Name": "Nguyễn Thị Phượng",
+        "Url": "<a href='/du-lieu/ceo/CEO_61168/nguyen-thi-phuong.chn'>Nguyễn Thị Phượng</a>",
+        "AssetVolume": "3.742.178",
+        "AssetRate": "0,11",
+        "UpdatedDate": "23/08/2024"
+      },
+      {
+        "Code": "CEO_87734",
+        "Name": "Đào Minh Nguyệt",
+        "Url": "<a href='/du-lieu/ceo/CEO_87734/dao-minh-nguyet.chn'>Đào Minh Nguyệt</a>",
+        "AssetVolume": "182.163",
+        "AssetRate": "0,01",
+        "UpdatedDate": "11/08/2026"
+      },
+      {
+        "Code": "CEO_60786",
+        "Name": "Lê Thu Thủy",
+        "Url": "<a href='/du-lieu/ceo/CEO_60786/le-thu-thuy.chn'>Lê Thu Thủy</a>",
+        "AssetVolume": "65.677.282",
+        "AssetRate": "1,92",
+        "UpdatedDate": "23/08/2024"
+      },
+      {
+        "Code": "CEO_76320",
+        "Name": "Nguyễn Thị Thu Hương",
+        "Url": "<a href='/du-lieu/ceo/CEO_76320/nguyen-thi-thu-huong.chn'>Nguyễn Thị Thu Hương</a>",
+        "AssetVolume": "2.792.707",
+        "AssetRate": "0,08",
+        "UpdatedDate": "20/08/2026"
+      },
+      {
+        "Code": "CEO_876834",
+        "Name": "Nguyễn Tuấn Anh",
+        "Url": "<a href='/du-lieu/ceo/CEO_876834/nguyen-tuan-anh.chn'>Nguyễn Tuấn Anh</a>",
+        "AssetVolume": "380.000",
+        "AssetRate": "0,01",
+        "UpdatedDate": "06/08/2026"
+      },
+      {
+        "Code": "CEO_62125",
+        "Name": "Đặng Thu Trang",
+        "Url": "<a href='/du-lieu/ceo/CEO_62125/dang-thu-trang.chn'>Đặng Thu Trang</a>",
+        "AssetVolume": "370.076",
+        "AssetRate": "0,01",
+        "UpdatedDate": "06/08/2026"
+      },
+      {
+        "Code": "CEO_62077",
+        "Name": "Hoàng Mạnh Phú",
+        "Url": "<a href='/du-lieu/ceo/CEO_62077/hoang-manh-phu.chn'>Hoàng Mạnh Phú</a>",
+        "AssetVolume": "2.676.383",
+        "AssetRate": "0,08",
+        "UpdatedDate": "20/08/2026"
+      },
+      {
+        "Code": "CEO_879566",
+        "Name": "Matthew Sander Hosford",
+        "Url": "<a href='/du-lieu/ceo/CEO_879566/matthew-sander-hosford.chn'>Matthew Sander Hosford</a>",
+        "AssetVolume": "100.000",
+        "AssetRate": "0,0",
+        "UpdatedDate": "10/08/2026"
+      },
+      {
+        "Code": "CORP_60796",
+        "Name": "Công ty TNHH MTV Đầu tư Xây dựng và Thương mại Đức Thịnh",
+        "Url": "Công ty TNHH MTV Đầu tư Xây dựng và Thương mại Đức Thịnh",
+        "AssetVolume": "81.826.232",
+        "AssetRate": "2,39",
+        "UpdatedDate": "23/08/2024"
+      },
+      {
+        "Code": "CEO_87872",
+        "Name": "Vo Long Nhi (Andrew Vo)",
+        "Url": "<a href='/du-lieu/ceo/CEO_87872/vo-long-nhi-andrew-vo.chn'>Vo Long Nhi (Andrew Vo)</a>",
+        "AssetVolume": "1.441.276",
+        "AssetRate": "0,04",
+        "UpdatedDate": "07/08/2026"
+      },
+      {
+        "Code": "CEO_875236",
+        "Name": "Fergus Macdonald Clark",
+        "Url": "<a href='/du-lieu/ceo/CEO_875236/fergus-macdonald-clark.chn'>Fergus Macdonald Clark</a>",
+        "AssetVolume": "220.520",
+        "AssetRate": "0,01",
+        "UpdatedDate": "10/08/2026"
+      },
+      {
+        "Code": "CEO_62004",
+        "Name": "Nguyễn Ngọc Quỳnh",
+        "Url": "<a href='/du-lieu/ceo/CEO_62004/nguyen-ngoc-quynh.chn'>Nguyễn Ngọc Quỳnh</a>",
+        "AssetVolume": "4.993.231",
+        "AssetRate": "0,15",
+        "UpdatedDate": "07/08/2026"
+      },
+      {
+        "Code": "CEO_60793",
+        "Name": "Lê Quốc Long",
+        "Url": "<a href='/du-lieu/ceo/CEO_60793/le-quoc-long.chn'>Lê Quốc Long</a>",
+        "AssetVolume": "6.462.899",
+        "AssetRate": "0,19",
+        "UpdatedDate": "11/08/2026"
+      },
+      {
+        "Code": "CEO_60812",
+        "Name": "Loic Faussier",
+        "Url": "<a href='/du-lieu/ceo/CEO_60812/loic-faussier.chn'>Loic Faussier</a>",
+        "AssetVolume": "273.352",
+        "AssetRate": "0,01",
+        "UpdatedDate": "23/08/2024"
+      },
+      {
+        "Code": "CEO_873749",
+        "Name": "Nguyễn Minh Thắng",
+        "Url": "<a href='/du-lieu/ceo/CEO_873749/nguyen-minh-thang.chn'>Nguyễn Minh Thắng</a>",
+        "AssetVolume": "145.512",
+        "AssetRate": "0,0",
+        "UpdatedDate": "13/02/2025"
+      }
+    ],
+    "NuocNgoai": 0.27,
+    "NhaNuoc": 0,
+    "Khac": 99.73
+  },
+  "cong_ty_con": [
+    {
+      "Symbol": "SSB",
+      "CorpCode": "CORP_60728",
+      "Name": "Công ty TNHH MTV Quản lý quỹ Đông Nam Á",
+      "TotalCapital": 200,
+      "SharedCapital": 200,
+      "OwnershipRate": 100,
+      "Note": "",
+      "Order": 1,
+      "TradeCenter": ""
+    },
+    {
+      "Symbol": "SSB",
+      "CorpCode": "CORP_60707",
+      "Name": "Công ty TNHH MTV Quản lý Nợ và Khai thác Tài sản SEABANK (SEABANK-AMC)",
+      "TotalCapital": 0,
+      "SharedCapital": 0,
+      "OwnershipRate": 0,
+      "Note": "",
+      "Order": 6,
+      "TradeCenter": ""
+    }
+  ],
+  "cong_ty_lien_ket": [
+    {
+      "Symbol": "SSB",
+      "CorpCode": "VCBF",
+      "Name": "Công ty Liên doanh Quản lý quỹ đầu tư chứng khoán Vietcombank",
+      "TotalCapital": 265,
+      "SharedCapital": 0,
+      "OwnershipRate": 0,
+      "Note": "",
+      "Order": 2,
+      "TradeCenter": "OTC"
+    },
+    {
+      "Symbol": "SSB",
+      "CorpCode": "AgriGold",
+      "Name": "Tổng Công ty Vàng Agribank Việt Nam - CTCP",
+      "TotalCapital": 206,
+      "SharedCapital": 0,
+      "OwnershipRate": 0,
+      "Note": "",
+      "Order": 3,
+      "TradeCenter": "OTC"
+    },
+    {
+      "Symbol": "SSB",
+      "CorpCode": "CORP_93463",
+      "Name": "Công ty TNHH Bảo hiểm nhân thọ Vietcombank-Cardiff",
+      "TotalCapital": 600,
+      "SharedCapital": 0,
+      "OwnershipRate": 0,
+      "Note": "",
+      "Order": 4,
+      "TradeCenter": ""
+    },
+    {
+      "Symbol": "SSB",
+      "CorpCode": "CORP_72000",
+      "Name": "CTCP Dịch vụ thẻ Smartlink",
+      "TotalCapital": 65,
+      "SharedCapital": 0,
+      "OwnershipRate": 0,
+      "Note": "",
+      "Order": 5,
+      "TradeCenter": ""
+    }
+  ],
+  "giao_dich_noi_bo": [
+    {
+      "transaction_name": "Hoàng Tuyết Mai",
+      "transaction_position": "Phụ trách quản trị",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 38582,
+      "plan_buy": 22000,
+      "plan_sell": 0,
+      "plan_begin_date": "2026-08-11",
+      "plan_end_date": "2026-08-12",
+      "real_buy": 0,
+      "real_sell": 0,
+      "real_end_date": "",
+      "published_date": "2026-08-27",
+      "volume_after": 0
+    },
+    {
+      "transaction_name": "Khúc Thị Quỳnh Lâm",
+      "transaction_position": "Phó Chủ tịch HĐQT",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 13761726,
+      "plan_buy": 2347500,
+      "plan_sell": 0,
+      "plan_begin_date": "2026-08-03",
+      "plan_end_date": "2026-08-12",
+      "real_buy": 0,
+      "real_sell": 0,
+      "real_end_date": "",
+      "published_date": "2026-08-26",
+      "volume_after": 0
+    },
+    {
+      "transaction_name": "Vũ Thu Thủy",
+      "transaction_position": "Thành viên BKS",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 24104,
+      "plan_buy": 100000,
+      "plan_sell": 0,
+      "plan_begin_date": "2026-08-03",
+      "plan_end_date": "2026-08-12",
+      "real_buy": 0,
+      "real_sell": 0,
+      "real_end_date": "",
+      "published_date": "2026-08-26",
+      "volume_after": 0
+    },
+    {
+      "transaction_name": "Hoàng Mạnh Phú",
+      "transaction_position": "Phó Tổng GĐ",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 2676383,
+      "plan_buy": 2357000,
+      "plan_sell": 0,
+      "plan_begin_date": "2026-08-20",
+      "plan_end_date": "2026-08-24",
+      "real_buy": 0,
+      "real_sell": 0,
+      "real_end_date": "",
+      "published_date": "2026-08-20",
+      "volume_after": 0
+    },
+    {
+      "transaction_name": "Nguyễn Tuấn Cường",
+      "transaction_position": "Phó Tổng GĐ",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 2108468,
+      "plan_buy": 2357000,
+      "plan_sell": 0,
+      "plan_begin_date": "2026-08-20",
+      "plan_end_date": "2026-08-24",
+      "real_buy": 0,
+      "real_sell": 0,
+      "real_end_date": "",
+      "published_date": "2026-08-20",
+      "volume_after": 0
+    },
+    {
+      "transaction_name": "Nguyễn Thị Thu Hương",
+      "transaction_position": "Kế toán trưởng",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 2792707,
+      "plan_buy": 2357000,
+      "plan_sell": 0,
+      "plan_begin_date": "2026-08-20",
+      "plan_end_date": "2026-08-24",
+      "real_buy": 0,
+      "real_sell": 0,
+      "real_end_date": "",
+      "published_date": "2026-08-20",
+      "volume_after": 0
+    },
+    {
+      "transaction_name": "Vũ Đình Khoán",
+      "transaction_position": "Phó Tổng GĐ",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 2747838,
+      "plan_buy": 2359500,
+      "plan_sell": 0,
+      "plan_begin_date": "2026-08-20",
+      "plan_end_date": "2026-08-24",
+      "real_buy": 0,
+      "real_sell": 0,
+      "real_end_date": "",
+      "published_date": "2026-08-20",
+      "volume_after": 0
+    },
+    {
+      "transaction_name": "Hoàng Tuyết Mai",
+      "transaction_position": "Phụ trách quản trị",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 38582,
+      "plan_buy": 22000,
+      "plan_sell": 0,
+      "plan_begin_date": "2026-08-12",
+      "plan_end_date": "2026-08-12",
+      "real_buy": 22000,
+      "real_sell": 0,
+      "real_end_date": "2026-08-12",
+      "published_date": "2026-08-14",
+      "volume_after": 60582
+    },
+    {
+      "transaction_name": "Khúc Thị Quỳnh Lâm",
+      "transaction_position": "Phó Chủ tịch HĐQT",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 13761726,
+      "plan_buy": 2347500,
+      "plan_sell": 0,
+      "plan_begin_date": "2026-08-07",
+      "plan_end_date": "2026-08-07",
+      "real_buy": 2347500,
+      "real_sell": 0,
+      "real_end_date": "2026-08-07",
+      "published_date": "2026-08-14",
+      "volume_after": 16109226
+    },
+    {
+      "transaction_name": "Vũ Thu Thủy",
+      "transaction_position": "Thành viên BKS",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 24104,
+      "plan_buy": 100000,
+      "plan_sell": 0,
+      "plan_begin_date": "2026-08-06",
+      "plan_end_date": "2026-08-10",
+      "real_buy": 100000,
+      "real_sell": 0,
+      "real_end_date": "2026-08-10",
+      "published_date": "2026-08-12",
+      "volume_after": 124104
+    },
+    {
+      "transaction_name": "Hoàng Mạnh Phú",
+      "transaction_position": "Phó Tổng GĐ",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 776383,
+      "plan_buy": 1900000,
+      "plan_sell": 0,
+      "plan_begin_date": "2026-08-10",
+      "plan_end_date": "2026-08-12",
+      "real_buy": 1900000,
+      "real_sell": 0,
+      "real_end_date": "2026-08-10",
+      "published_date": "2026-08-11",
+      "volume_after": 2676383
+    },
+    {
+      "transaction_name": "Vũ Quốc Tuấn",
+      "transaction_position": "Phụ trách quản trị",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 22760,
+      "plan_buy": 100000,
+      "plan_sell": 0,
+      "plan_begin_date": "2026-08-07",
+      "plan_end_date": "2026-08-12",
+      "real_buy": 100000,
+      "real_sell": 0,
+      "real_end_date": "2026-08-10",
+      "published_date": "2026-08-11",
+      "volume_after": 122760
+    },
+    {
+      "transaction_name": "Vũ Quốc Tuấn",
+      "transaction_position": "Phụ trách quản trị",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 22760,
+      "plan_buy": 100000,
+      "plan_sell": 0,
+      "plan_begin_date": "2026-08-07",
+      "plan_end_date": "2026-08-12",
+      "real_buy": 0,
+      "real_sell": 0,
+      "real_end_date": "",
+      "published_date": "2026-08-11",
+      "volume_after": 0
+    },
+    {
+      "transaction_name": "Hoàng Mạnh Phú",
+      "transaction_position": "Phó Tổng GĐ",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 776383,
+      "plan_buy": 1900000,
+      "plan_sell": 0,
+      "plan_begin_date": "2026-08-10",
+      "plan_end_date": "2026-08-12",
+      "real_buy": 0,
+      "real_sell": 0,
+      "real_end_date": "",
+      "published_date": "2026-08-11",
+      "volume_after": 0
+    },
+    {
+      "transaction_name": "Lê Quốc Long",
+      "transaction_position": "Phó Tổng GĐ",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 5962899,
+      "plan_buy": 500000,
+      "plan_sell": 0,
+      "plan_begin_date": "2026-08-06",
+      "plan_end_date": "2026-08-12",
+      "real_buy": 500000,
+      "real_sell": 0,
+      "real_end_date": "2026-08-11",
+      "published_date": "2026-08-10",
+      "volume_after": 6462899
+    },
+    {
+      "transaction_name": "Đặng Thu Trang",
+      "transaction_position": "Phó Tổng GĐ",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 70076,
+      "plan_buy": 300000,
+      "plan_sell": 0,
+      "plan_begin_date": "2026-08-06",
+      "plan_end_date": "2026-08-12",
+      "real_buy": 300000,
+      "real_sell": 0,
+      "real_end_date": "2026-08-06",
+      "published_date": "2026-08-10",
+      "volume_after": 370076
+    },
+    {
+      "transaction_name": "Nguyễn Tuấn Anh",
+      "transaction_position": "Phó Tổng GĐ",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 80000,
+      "plan_buy": 300000,
+      "plan_sell": 0,
+      "plan_begin_date": "2026-08-06",
+      "plan_end_date": "2026-08-12",
+      "real_buy": 300000,
+      "real_sell": 0,
+      "real_end_date": "2026-08-06",
+      "published_date": "2026-08-10",
+      "volume_after": 380000
+    },
+    {
+      "transaction_name": "Nguyễn Tuấn Anh",
+      "transaction_position": "Phó Tổng GĐ",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 80000,
+      "plan_buy": 300000,
+      "plan_sell": 0,
+      "plan_begin_date": "2026-08-06",
+      "plan_end_date": "2026-08-12",
+      "real_buy": 0,
+      "real_sell": 0,
+      "real_end_date": "",
+      "published_date": "2026-08-10",
+      "volume_after": 0
+    },
+    {
+      "transaction_name": "Đặng Thu Trang",
+      "transaction_position": "Phó Tổng GĐ",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 70076,
+      "plan_buy": 300000,
+      "plan_sell": 0,
+      "plan_begin_date": "2026-08-06",
+      "plan_end_date": "2026-08-12",
+      "real_buy": 0,
+      "real_sell": 0,
+      "real_end_date": "",
+      "published_date": "2026-08-10",
+      "volume_after": 0
+    },
+    {
+      "transaction_name": "Lê Quốc Long",
+      "transaction_position": "Phó Tổng GĐ",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 5962899,
+      "plan_buy": 500000,
+      "plan_sell": 0,
+      "plan_begin_date": "2026-08-06",
+      "plan_end_date": "2026-08-12",
+      "real_buy": 0,
+      "real_sell": 0,
+      "real_end_date": "",
+      "published_date": "2026-08-10",
+      "volume_after": 0
+    }
+  ]
+}

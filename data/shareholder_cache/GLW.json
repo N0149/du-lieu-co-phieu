@@ -1,0 +1,62 @@
+{
+  "symbol": "GLW",
+  "updated": "2026-08-01T05:37:22.000Z",
+  "co_cau_so_huu": {
+    "CoDongSoHuu": [
+      {
+        "Code": "CORP_51388",
+        "Name": "Ủy ban nhân dân tỉnh Gia Lai",
+        "Url": "Ủy ban nhân dân tỉnh Gia Lai",
+        "AssetVolume": "8.420.900",
+        "AssetRate": "46,78",
+        "UpdatedDate": "15/05/2026"
+      },
+      {
+        "Code": "SII",
+        "Name": "Công ty Cổ phần Cấp thoát nước Gia Lai",
+        "Url": "<a href='/du-lieu/upcom/SII-cong-ty-co-phan-ha-tang-nuoc-sai-gon.chn' title='Công ty cổ phần Hạ tầng nước Sài Gòn'>Công ty cổ phần Hạ tầng nước Sài Gòn</a>",
+        "AssetVolume": "9.180.000",
+        "AssetRate": "51,0",
+        "UpdatedDate": "15/05/2026"
+      },
+      {
+        "Code": "CEO_53925",
+        "Name": "Nguyễn Đình Vinh",
+        "Url": "<a href='/du-lieu/ceo/CEO_53925/nguyen-dinh-vinh.chn'>Nguyễn Đình Vinh</a>",
+        "AssetVolume": "8.100",
+        "AssetRate": "0,05",
+        "UpdatedDate": "15/05/2026"
+      },
+      {
+        "Code": "CEO_53926",
+        "Name": "Vũ Hoành Thiên",
+        "Url": "<a href='/du-lieu/ceo/CEO_53926/vu-hoanh-thien.chn'>Vũ Hoành Thiên</a>",
+        "AssetVolume": "5.000",
+        "AssetRate": "0,03",
+        "UpdatedDate": "15/05/2026"
+      },
+      {
+        "Code": "CEO_53928",
+        "Name": "Hoàng Trọng Đạt",
+        "Url": "<a href='/du-lieu/ceo/CEO_53928/hoang-trong-dat.chn'>Hoàng Trọng Đạt</a>",
+        "AssetVolume": "8.000",
+        "AssetRate": "0,04",
+        "UpdatedDate": "15/05/2026"
+      },
+      {
+        "Code": "CEO_53927",
+        "Name": "Trịnh Thị Thanh Hà",
+        "Url": "<a href='/du-lieu/ceo/CEO_53927/trinh-thi-thanh-ha.chn'>Trịnh Thị Thanh Hà</a>",
+        "AssetVolume": "3.900",
+        "AssetRate": "0,02",
+        "UpdatedDate": "15/05/2026"
+      }
+    ],
+    "NuocNgoai": 17999387.76,
+    "NhaNuoc": 0,
+    "Khac": -17999287.76
+  },
+  "cong_ty_con": [],
+  "cong_ty_lien_ket": [],
+  "giao_dich_noi_bo": []
+}

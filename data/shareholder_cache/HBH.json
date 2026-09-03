@@ -1,0 +1,54 @@
+{
+  "symbol": "HBH",
+  "updated": "2026-09-01T07:28:39.000Z",
+  "co_cau_so_huu": {
+    "CoDongSoHuu": [
+      {
+        "Code": "BHP",
+        "Name": "Công ty Cổ phần Habeco - Hải Phòng",
+        "Url": "<a href='/du-lieu/upcom/BHP-cong-ty-co-phan-bia-ha-noi-hai-phong.chn' title='Công ty Cổ phần Bia Hà Nội - Hải Phòng'>Công ty Cổ phần Bia Hà Nội - Hải Phòng</a>",
+        "AssetVolume": "2.250.000",
+        "AssetRate": "14,06",
+        "UpdatedDate": "20/08/2026"
+      },
+      {
+        "Code": "CEO_56645",
+        "Name": "Nguyễn Hoàng Giang",
+        "Url": "<a href='/du-lieu/ceo/CEO_56645/nguyen-hoang-giang.chn'>Nguyễn Hoàng Giang</a>",
+        "AssetVolume": "2.000",
+        "AssetRate": "0,01",
+        "UpdatedDate": "20/08/2026"
+      },
+      {
+        "Code": "BHN",
+        "Name": "Tổng CTCP Bia - Rượu - Nước giải khát Hà Nội",
+        "Url": "<a href='/du-lieu/hose/BHN-tong-ctcp-bia-ruou-nuoc-giai-khat-ha-noi.chn' title='Tổng CTCP Bia - Rượu - Nước giải khát Hà Nội'>Tổng CTCP Bia - Rượu - Nước giải khát Hà Nội</a>",
+        "AssetVolume": "10.670.680",
+        "AssetRate": "66,69",
+        "UpdatedDate": "20/08/2026"
+      },
+      {
+        "Code": "CEO_872579",
+        "Name": "Phạm Anh Tuấn",
+        "Url": "<a href='/du-lieu/ceo/CEO_872579/pham-anh-tuan.chn'>Phạm Anh Tuấn</a>",
+        "AssetVolume": "10.000",
+        "AssetRate": "0,06",
+        "UpdatedDate": "20/08/2026"
+      },
+      {
+        "Code": "CEO_52845",
+        "Name": "Đỗ Châu Tuấn",
+        "Url": "<a href='/du-lieu/ceo/CEO_52845/do-chau-tuan.chn'>Đỗ Châu Tuấn</a>",
+        "AssetVolume": "20.000",
+        "AssetRate": "0,13",
+        "UpdatedDate": "20/08/2026"
+      }
+    ],
+    "NuocNgoai": 0.83,
+    "NhaNuoc": 0,
+    "Khac": 99.17
+  },
+  "cong_ty_con": [],
+  "cong_ty_lien_ket": [],
+  "giao_dich_noi_bo": []
+}

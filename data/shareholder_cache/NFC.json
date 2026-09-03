@@ -1,0 +1,247 @@
+{
+  "symbol": "NFC",
+  "updated": "2026-07-01T06:44:55.000Z",
+  "co_cau_so_huu": {
+    "CoDongSoHuu": [
+      {
+        "Code": "CEO_38814",
+        "Name": "Tạ Thị Kim Chúc",
+        "Url": "<a href='/du-lieu/ceo/CEO_38814/ta-thi-kim-chuc.chn'>Tạ Thị Kim Chúc</a>",
+        "AssetVolume": "32.729",
+        "AssetRate": "0,21",
+        "UpdatedDate": "15/05/2024"
+      },
+      {
+        "Code": "VINACHEM",
+        "Name": "Công ty Cổ phần Phân lân Ninh Bình",
+        "Url": "<a href='/du-lieu/otc/VINACHEM-tap-doan-hoa-chat-viet-nam.chn' title='Tập đoàn Hóa chất Việt Nam'>Tập đoàn Hóa chất Việt Nam</a>",
+        "AssetVolume": "8.023.428",
+        "AssetRate": "51,0",
+        "UpdatedDate": "15/05/2024"
+      },
+      {
+        "Code": "CEO_50744",
+        "Name": "Nguyễn Ngọc Thạch",
+        "Url": "<a href='/du-lieu/ceo/CEO_50744/nguyen-ngoc-thach.chn'>Nguyễn Ngọc Thạch</a>",
+        "AssetVolume": "32.850",
+        "AssetRate": "0,21",
+        "UpdatedDate": "15/05/2024"
+      },
+      {
+        "Code": "CEO_50741",
+        "Name": "Phạm Hồng Sơn",
+        "Url": "<a href='/du-lieu/ceo/CEO_50741/pham-hong-son.chn'>Phạm Hồng Sơn</a>",
+        "AssetVolume": "201.928",
+        "AssetRate": "1,28",
+        "UpdatedDate": "15/05/2024"
+      },
+      {
+        "Code": "CEO_50742",
+        "Name": "Dương Như Đức",
+        "Url": "<a href='/du-lieu/ceo/CEO_50742/duong-nhu-duc.chn'>Dương Như Đức</a>",
+        "AssetVolume": "3.280",
+        "AssetRate": "0,02",
+        "UpdatedDate": "15/05/2024"
+      },
+      {
+        "Code": "CEO_37620",
+        "Name": "Nguyễn Ngọc Thuấn",
+        "Url": "<a href='/du-lieu/ceo/CEO_37620/nguyen-ngoc-thuan.chn'>Nguyễn Ngọc Thuấn</a>",
+        "AssetVolume": "2.565",
+        "AssetRate": "0,02",
+        "UpdatedDate": "15/05/2024"
+      },
+      {
+        "Code": "CEO_65238",
+        "Name": "Phạm Thanh Tùng",
+        "Url": "<a href='/du-lieu/ceo/CEO_65238/pham-thanh-tung.chn'>Phạm Thanh Tùng</a>",
+        "AssetVolume": "3.982",
+        "AssetRate": "0,03",
+        "UpdatedDate": "15/05/2024"
+      },
+      {
+        "Code": "CORP_80338",
+        "Name": "Công ty TNHH Hoàng Ngân",
+        "Url": "Công ty TNHH Hoàng Ngân",
+        "AssetVolume": "2.559.436",
+        "AssetRate": "16,27",
+        "UpdatedDate": "09/01/2026"
+      },
+      {
+        "Code": "CEO_50743",
+        "Name": "Hà Huy San",
+        "Url": "<a href='/du-lieu/ceo/CEO_50743/ha-huy-san.chn'>Hà Huy San</a>",
+        "AssetVolume": "69.607",
+        "AssetRate": "0,44",
+        "UpdatedDate": "15/05/2024"
+      },
+      {
+        "Code": "CEO_50740",
+        "Name": "Phạm Mạnh Ninh",
+        "Url": "<a href='/du-lieu/ceo/CEO_50740/pham-manh-ninh.chn'>Phạm Mạnh Ninh</a>",
+        "AssetVolume": "1.573.155",
+        "AssetRate": "10,0",
+        "UpdatedDate": "15/05/2024"
+      },
+      {
+        "Code": "CEO_50745",
+        "Name": "Nguyễn Ngọc Chi",
+        "Url": "<a href='/du-lieu/ceo/CEO_50745/nguyen-ngoc-chi.chn'>Nguyễn Ngọc Chi</a>",
+        "AssetVolume": "42.711",
+        "AssetRate": "0,27",
+        "UpdatedDate": "15/05/2024"
+      }
+    ],
+    "NuocNgoai": 0.39,
+    "NhaNuoc": 0,
+    "Khac": 99.61
+  },
+  "cong_ty_con": [],
+  "cong_ty_lien_ket": [],
+  "giao_dich_noi_bo": [
+    {
+      "transaction_name": "Công ty TNHH Hoàng Ngân",
+      "transaction_position": "",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 2490226,
+      "plan_buy": 250000,
+      "plan_sell": 0,
+      "plan_begin_date": "2025-12-11",
+      "plan_end_date": "2026-01-09",
+      "real_buy": 69210,
+      "real_sell": 0,
+      "real_end_date": "2026-01-09",
+      "published_date": "2026-01-13",
+      "volume_after": 2559436
+    },
+    {
+      "transaction_name": "Công ty TNHH Hoàng Ngân",
+      "transaction_position": "",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 2490226,
+      "plan_buy": 250000,
+      "plan_sell": 0,
+      "plan_begin_date": "2025-12-11",
+      "plan_end_date": "2026-01-09",
+      "real_buy": 0,
+      "real_sell": 0,
+      "real_end_date": "",
+      "published_date": "2025-12-09",
+      "volume_after": 0
+    },
+    {
+      "transaction_name": "Công ty TNHH Hoàng Ngân",
+      "transaction_position": "",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 2202326,
+      "plan_buy": 360000,
+      "plan_sell": 0,
+      "plan_begin_date": "2025-10-31",
+      "plan_end_date": "2025-11-28",
+      "real_buy": 287900,
+      "real_sell": 0,
+      "real_end_date": "2025-11-28",
+      "published_date": "2025-12-03",
+      "volume_after": 2490226
+    },
+    {
+      "transaction_name": "Công ty TNHH Hoàng Ngân",
+      "transaction_position": "",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 1902326,
+      "plan_buy": 300000,
+      "plan_sell": 0,
+      "plan_begin_date": "2025-08-06",
+      "plan_end_date": "2025-08-29",
+      "real_buy": 300000,
+      "real_sell": 0,
+      "real_end_date": "2025-08-27",
+      "published_date": "2025-09-05",
+      "volume_after": 2202326
+    },
+    {
+      "transaction_name": "Công ty TNHH Hoàng Ngân",
+      "transaction_position": "",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 1702326,
+      "plan_buy": 200000,
+      "plan_sell": 0,
+      "plan_begin_date": "2025-03-05",
+      "plan_end_date": "2025-03-26",
+      "real_buy": 200000,
+      "real_sell": 0,
+      "real_end_date": "2025-03-26",
+      "published_date": "2025-04-01",
+      "volume_after": 1902326
+    },
+    {
+      "transaction_name": "Công ty TNHH Hoàng Ngân",
+      "transaction_position": "",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 1701726,
+      "plan_buy": 100000,
+      "plan_sell": 0,
+      "plan_begin_date": "2022-06-24",
+      "plan_end_date": "2022-07-22",
+      "real_buy": 600,
+      "real_sell": 0,
+      "real_end_date": "2022-07-22",
+      "published_date": "2022-06-24",
+      "volume_after": 1702326
+    },
+    {
+      "transaction_name": "Tạ Thị Kim Chúc",
+      "transaction_position": "Thành viên BKS",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 13050,
+      "plan_buy": 20000,
+      "plan_sell": 0,
+      "plan_begin_date": "2016-08-24",
+      "plan_end_date": "2016-09-16",
+      "real_buy": 19679,
+      "real_sell": 0,
+      "real_end_date": "2016-09-16",
+      "published_date": "2016-08-23",
+      "volume_after": 32729
+    },
+    {
+      "transaction_name": "Nguyễn Ngọc Thạch",
+      "transaction_position": "Thành viên HĐQT",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 10000,
+      "plan_buy": 20000,
+      "plan_sell": 0,
+      "plan_begin_date": "2015-02-13",
+      "plan_end_date": "2015-03-10",
+      "real_buy": 11900,
+      "real_sell": 0,
+      "real_end_date": "2015-03-10",
+      "published_date": "2015-03-12",
+      "volume_after": 21900
+    },
+    {
+      "transaction_name": "Nguyễn Ngọc Thạch",
+      "transaction_position": "Thành viên HĐQT",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 0,
+      "plan_buy": 100000,
+      "plan_sell": 0,
+      "plan_begin_date": "2014-10-06",
+      "plan_end_date": "2014-10-30",
+      "real_buy": 10000,
+      "real_sell": 0,
+      "real_end_date": "2014-10-30",
+      "published_date": "2014-10-30",
+      "volume_after": 10000
+    }
+  ]
+}

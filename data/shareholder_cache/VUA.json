@@ -1,0 +1,175 @@
+{
+  "symbol": "VUA",
+  "updated": "2026-05-01T06:22:56.000Z",
+  "co_cau_so_huu": {
+    "CoDongSoHuu": [
+      {
+        "Code": "CORP_654568",
+        "Name": "Công ty TNHH MTV VIPICO",
+        "Url": "Công ty TNHH MTV VIPICO",
+        "AssetVolume": "32.050.190",
+        "AssetRate": "16,03",
+        "UpdatedDate": "23/02/2026"
+      },
+      {
+        "Code": "CORP_65805",
+        "Name": "CTCP Đầu tư Xây dựng Gen Cons Việt Nam",
+        "Url": "CTCP Đầu tư Xây dựng Gen Cons Việt Nam",
+        "AssetVolume": "49.279.480",
+        "AssetRate": "24,64",
+        "UpdatedDate": "26/01/2026"
+      },
+      {
+        "Code": "CORP_82232",
+        "Name": "CTCP Đầu tư Phát triển Bất động sản Thành Vinh",
+        "Url": "CTCP Đầu tư Phát triển Bất động sản Thành Vinh",
+        "AssetVolume": "48.999.909",
+        "AssetRate": "24,5",
+        "UpdatedDate": "23/01/2026"
+      },
+      {
+        "Code": "CORP_654567",
+        "Name": "CTCP Đầu tư và Phát triển hạ tầng Nam Quang",
+        "Url": "CTCP Đầu tư và Phát triển hạ tầng Nam Quang",
+        "AssetVolume": "49.254.680",
+        "AssetRate": "24,63",
+        "UpdatedDate": "26/01/2026"
+      },
+      {
+        "Code": "CORP_900005",
+        "Name": "Công Ty Cổ Phần Bất Động Sản Xây Dựng Hưng Thịnh",
+        "Url": "Công Ty Cổ Phần Bất Động Sản Xây Dựng Hưng Thịnh",
+        "AssetVolume": "8.000.000",
+        "AssetRate": "4,0",
+        "UpdatedDate": "26/01/2026"
+      },
+      {
+        "Code": "CORP_900004",
+        "Name": "Công ty cổ phần Thương mại dịch vụ Trọng Hưng",
+        "Url": "Công ty cổ phần Thương mại dịch vụ Trọng Hưng",
+        "AssetVolume": "8.000.000",
+        "AssetRate": "4,0",
+        "UpdatedDate": "26/01/2026"
+      }
+    ],
+    "NuocNgoai": 200000000,
+    "NhaNuoc": 0,
+    "Khac": -199999900
+  },
+  "cong_ty_con": [],
+  "cong_ty_lien_ket": [],
+  "giao_dich_noi_bo": [
+    {
+      "transaction_name": "Công ty TNHH MTV VIPICO",
+      "transaction_position": "",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 6217790,
+      "plan_buy": 0,
+      "plan_sell": 0,
+      "plan_begin_date": "",
+      "plan_end_date": "",
+      "real_buy": 25832400,
+      "real_sell": 0,
+      "real_end_date": "2026-02-23",
+      "published_date": "2026-02-10",
+      "volume_after": 32050190
+    },
+    {
+      "transaction_name": "CTCP Đầu tư Phát triển Bất động sản Thành Vinh",
+      "transaction_position": "",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 6564909,
+      "plan_buy": 0,
+      "plan_sell": 0,
+      "plan_begin_date": "",
+      "plan_end_date": "",
+      "real_buy": 42435000,
+      "real_sell": 0,
+      "real_end_date": "2026-01-23",
+      "published_date": "2026-02-10",
+      "volume_after": 48999909
+    },
+    {
+      "transaction_name": "CTCP Đầu tư Phát triển Bất động sản Thành Vinh",
+      "transaction_position": "",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 0,
+      "plan_buy": 0,
+      "plan_sell": 0,
+      "plan_begin_date": "",
+      "plan_end_date": "",
+      "real_buy": 6564909,
+      "real_sell": 0,
+      "real_end_date": "2025-08-12",
+      "published_date": "2025-08-22",
+      "volume_after": 6564909
+    },
+    {
+      "transaction_name": "Công ty TNHH MTV VIPICO",
+      "transaction_position": "",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 0,
+      "plan_buy": 0,
+      "plan_sell": 0,
+      "plan_begin_date": "",
+      "plan_end_date": "",
+      "real_buy": 6217790,
+      "real_sell": 0,
+      "real_end_date": "2025-08-12",
+      "published_date": "2025-08-22",
+      "volume_after": 6217790
+    },
+    {
+      "transaction_name": "CTCP Đầu tư Xây dựng Gen Cons Việt Nam",
+      "transaction_position": "",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 0,
+      "plan_buy": 0,
+      "plan_sell": 0,
+      "plan_begin_date": "",
+      "plan_end_date": "",
+      "real_buy": 8352880,
+      "real_sell": 0,
+      "real_end_date": "2025-08-12",
+      "published_date": "2025-08-22",
+      "volume_after": 8352880
+    },
+    {
+      "transaction_name": "CTCP Đầu tư và Phát triển hạ tầng Nam Quang",
+      "transaction_position": "",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 0,
+      "plan_buy": 0,
+      "plan_sell": 0,
+      "plan_begin_date": "",
+      "plan_end_date": "",
+      "real_buy": 8348680,
+      "real_sell": 0,
+      "real_end_date": "2025-08-12",
+      "published_date": "2025-08-20",
+      "volume_after": 8348680
+    },
+    {
+      "transaction_name": "Luyện Quang Thắng",
+      "transaction_position": "Chủ tịch HĐQT",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 300000,
+      "plan_buy": 0,
+      "plan_sell": 0,
+      "plan_begin_date": "",
+      "plan_end_date": "",
+      "real_buy": 0,
+      "real_sell": 300000,
+      "real_end_date": "2025-08-12",
+      "published_date": "2025-08-15",
+      "volume_after": 0
+    }
+  ]
+}

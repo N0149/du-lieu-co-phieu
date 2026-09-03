@@ -1,0 +1,223 @@
+{
+  "symbol": "MVB",
+  "updated": "2026-07-01T06:44:09.000Z",
+  "co_cau_so_huu": {
+    "CoDongSoHuu": [
+      {
+        "Code": "VINACOMIN",
+        "Name": "Tập đoàn Công nghiệp Than - Khoáng sản Việt Nam",
+        "Url": "<a href='/du-lieu/otc/VINACOMIN-tap-doan-cong-nghiep-than-khoang-san-viet-nam.chn' title='Tập đoàn Công nghiệp Than - Khoáng sản Việt Nam'>Tập đoàn Công nghiệp Than - Khoáng sản Việt Nam</a>",
+        "AssetVolume": "103.104.100",
+        "AssetRate": "98,19",
+        "UpdatedDate": "27/05/2025"
+      },
+      {
+        "Code": "CEO_95235",
+        "Name": "Ngô Ngọc Sơn",
+        "Url": "<a href='/du-lieu/ceo/CEO_95235/ngo-ngoc-son.chn'>Ngô Ngọc Sơn</a>",
+        "AssetVolume": "3.000",
+        "AssetRate": "0,0",
+        "UpdatedDate": "27/05/2025"
+      },
+      {
+        "Code": "CEO_57794",
+        "Name": "Trịnh Hồng Ngân",
+        "Url": "<a href='/du-lieu/ceo/CEO_57794/trinh-hong-ngan.chn'>Trịnh Hồng Ngân</a>",
+        "AssetVolume": "14.700",
+        "AssetRate": "0,01",
+        "UpdatedDate": "27/05/2025"
+      },
+      {
+        "Code": "CEO_37955",
+        "Name": "Vũ Đình Lên",
+        "Url": "<a href='/du-lieu/ceo/CEO_37955/vu-dinh-len.chn'>Vũ Đình Lên</a>",
+        "AssetVolume": "13.500",
+        "AssetRate": "0,01",
+        "UpdatedDate": "27/05/2025"
+      }
+    ],
+    "NuocNgoai": 0.09,
+    "NhaNuoc": 0,
+    "Khac": 99.91
+  },
+  "cong_ty_con": [
+    {
+      "Symbol": "MVB",
+      "CorpCode": "CQT",
+      "Name": "Công ty cổ phần Xi măng Quán Triều VVMI",
+      "TotalCapital": 250,
+      "SharedCapital": 212.46014,
+      "OwnershipRate": 84.98,
+      "Note": "",
+      "Order": 1,
+      "TradeCenter": "UpCOM"
+    },
+    {
+      "Symbol": "MVB",
+      "CorpCode": "CORP_39415",
+      "Name": "CTCP Xi măng Tân Quang - VVMI",
+      "TotalCapital": 350,
+      "SharedCapital": 199.99,
+      "OwnershipRate": 57.14,
+      "Note": "",
+      "Order": 2,
+      "TradeCenter": ""
+    },
+    {
+      "Symbol": "MVB",
+      "CorpCode": "CLH",
+      "Name": "Công ty cổ phần Xi măng La Hiên VVMI",
+      "TotalCapital": 120,
+      "SharedCapital": 61.6596,
+      "OwnershipRate": 51.38,
+      "Note": "",
+      "Order": 3,
+      "TradeCenter": "HASTC"
+    },
+    {
+      "Symbol": "MVB",
+      "CorpCode": "APL",
+      "Name": "CTCP Cơ khí và Thiết bị áp lực - VVMI",
+      "TotalCapital": 12,
+      "SharedCapital": 6.12,
+      "OwnershipRate": 51,
+      "Note": "",
+      "Order": 4,
+      "TradeCenter": "UpCOM"
+    },
+    {
+      "Symbol": "MVB",
+      "CorpCode": "CORP_39417",
+      "Name": "CTCP Sản xuất và kinh doanh vật tư thiết bị - VVMI",
+      "TotalCapital": 12.5,
+      "SharedCapital": 6.38,
+      "OwnershipRate": 51,
+      "Note": "",
+      "Order": 5,
+      "TradeCenter": ""
+    },
+    {
+      "Symbol": "MVB",
+      "CorpCode": "CORP_39418",
+      "Name": "CTCP Cơ khí mỏ Việt Bắc - VVMI",
+      "TotalCapital": 9,
+      "SharedCapital": 4.59,
+      "OwnershipRate": 51,
+      "Note": "",
+      "Order": 6,
+      "TradeCenter": ""
+    },
+    {
+      "Symbol": "MVB",
+      "CorpCode": "CORP_39419",
+      "Name": "CTCP Vật liệu Xây dựng và Kinh doanh tổng hợp - VVMI",
+      "TotalCapital": 7.5,
+      "SharedCapital": 3.83,
+      "OwnershipRate": 51,
+      "Note": "",
+      "Order": 7,
+      "TradeCenter": ""
+    },
+    {
+      "Symbol": "MVB",
+      "CorpCode": "CORP_39420",
+      "Name": "CTCP Đầu tư và Xây dựng - VVMI",
+      "TotalCapital": 9.9,
+      "SharedCapital": 5.05,
+      "OwnershipRate": 51,
+      "Note": "",
+      "Order": 8,
+      "TradeCenter": ""
+    },
+    {
+      "Symbol": "MVB",
+      "CorpCode": "CORP_39421",
+      "Name": "CTCP Khách sạn Thái Nguyên - VVMI",
+      "TotalCapital": 7.5,
+      "SharedCapital": 3.83,
+      "OwnershipRate": 51,
+      "Note": "",
+      "Order": 9,
+      "TradeCenter": ""
+    }
+  ],
+  "cong_ty_lien_ket": [
+    {
+      "Symbol": "MVB",
+      "CorpCode": "CORP_39422",
+      "Name": "CTCP Xuất nhập khẩu mỏ Việt Bắc",
+      "TotalCapital": 6,
+      "SharedCapital": 1.74,
+      "OwnershipRate": 29,
+      "Note": "",
+      "Order": 10,
+      "TradeCenter": ""
+    }
+  ],
+  "giao_dich_noi_bo": [
+    {
+      "transaction_name": "Trịnh Hồng Ngân",
+      "transaction_position": "Phó Tổng GĐ",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 5700,
+      "plan_buy": 9000,
+      "plan_sell": 0,
+      "plan_begin_date": "2020-10-08",
+      "plan_end_date": "2020-10-30",
+      "real_buy": 9000,
+      "real_sell": 0,
+      "real_end_date": "2020-10-08",
+      "published_date": "2020-10-13",
+      "volume_after": 14700
+    },
+    {
+      "transaction_name": "Trịnh Hồng Ngân",
+      "transaction_position": "Phó Tổng GĐ",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 5700,
+      "plan_buy": 9000,
+      "plan_sell": 0,
+      "plan_begin_date": "2020-10-07",
+      "plan_end_date": "2020-10-29",
+      "real_buy": 9000,
+      "real_sell": 0,
+      "real_end_date": "2020-10-07",
+      "published_date": "2020-10-12",
+      "volume_after": 14700
+    },
+    {
+      "transaction_name": "Trịnh Hồng Ngân",
+      "transaction_position": "Phó Tổng GĐ",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 14700,
+      "plan_buy": 0,
+      "plan_sell": 0,
+      "plan_begin_date": "",
+      "plan_end_date": "",
+      "real_buy": 0,
+      "real_sell": 9000,
+      "real_end_date": "2020-09-04",
+      "published_date": "2020-10-08",
+      "volume_after": 5700
+    },
+    {
+      "transaction_name": "Trịnh Hồng Ngân",
+      "transaction_position": "Phó Tổng GĐ",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 14700,
+      "plan_buy": 0,
+      "plan_sell": 0,
+      "plan_begin_date": "",
+      "plan_end_date": "",
+      "real_buy": 0,
+      "real_sell": 9000,
+      "real_end_date": "2020-09-03",
+      "published_date": "2020-10-07",
+      "volume_after": 5700
+    }
+  ]
+}

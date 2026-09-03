@@ -1,0 +1,248 @@
+{
+  "symbol": "VTG",
+  "updated": "2026-03-22T03:25:15.000Z",
+  "co_cau_so_huu": {
+    "CoDongSoHuu": [
+      {
+        "Code": "CORP_39160",
+        "Name": "Công ty TNHH Thương mại - Du lịch Ngọc Lâm",
+        "Url": "Công ty TNHH Thương mại - Du lịch Ngọc Lâm",
+        "AssetVolume": "2.237.340",
+        "AssetRate": "12,0",
+        "UpdatedDate": "31/12/2018"
+      },
+      {
+        "Code": "CORP_00986",
+        "Name": "UBND tỉnh Bà Rịa - Vũng Tàu",
+        "Url": "UBND tỉnh Bà Rịa - Vũng Tàu",
+        "AssetVolume": "10.978.400",
+        "AssetRate": "58,88",
+        "UpdatedDate": "31/12/2018"
+      },
+      {
+        "Code": "CORP_51722",
+        "Name": "Công ty TNHH Xây dựng và Dịch vụ Thương mại An Khang",
+        "Url": "Công ty TNHH Xây dựng và Dịch vụ Thương mại An Khang",
+        "AssetVolume": "932.225",
+        "AssetRate": "5,0",
+        "UpdatedDate": "18/09/2020"
+      },
+      {
+        "Code": "CORP_50092",
+        "Name": "CTCP Dịch vụ Du lịch Chợ Lớn",
+        "Url": "CTCP Dịch vụ Du lịch Chợ Lớn",
+        "AssetVolume": "436.610",
+        "AssetRate": "2,34",
+        "UpdatedDate": "31/12/2016"
+      },
+      {
+        "Code": "CORP_52094",
+        "Name": "Công ty TNHH Tư vấn Đầu tư và Dịch vụ Du lịch Hải An",
+        "Url": "Công ty TNHH Tư vấn Đầu tư và Dịch vụ Du lịch Hải An",
+        "AssetVolume": "1.864.450",
+        "AssetRate": "10,0",
+        "UpdatedDate": "18/09/2020"
+      },
+      {
+        "Code": "CEO_83740",
+        "Name": "Nguyễn Thị Bảo Ngọc",
+        "Url": "<a href='/du-lieu/ceo/CEO_83740/nguyen-thi-bao-ngoc.chn'>Nguyễn Thị Bảo Ngọc</a>",
+        "AssetVolume": "1.600",
+        "AssetRate": "0,01",
+        "UpdatedDate": "31/12/2018"
+      },
+      {
+        "Code": "CEO_39642",
+        "Name": "Trần Tuấn Việt",
+        "Url": "<a href='/du-lieu/ceo/CEO_39642/tran-tuan-viet.chn'>Trần Tuấn Việt</a>",
+        "AssetVolume": "2.300",
+        "AssetRate": "0,01",
+        "UpdatedDate": "31/12/2016"
+      },
+      {
+        "Code": "CEO_38063",
+        "Name": "Nguyễn Hồng Ân",
+        "Url": "<a href='/du-lieu/ceo/CEO_38063/nguyen-hong-an.chn'>Nguyễn Hồng Ân</a>",
+        "AssetVolume": "2.800",
+        "AssetRate": "0,02",
+        "UpdatedDate": "31/12/2018"
+      },
+      {
+        "Code": "CORP_39115",
+        "Name": "Công ty TNHH Xây dựng & DVTM An Khang",
+        "Url": "Công ty TNHH Xây dựng & DVTM An Khang",
+        "AssetVolume": "3.060.138",
+        "AssetRate": "16,41",
+        "UpdatedDate": "31/12/2018"
+      },
+      {
+        "Code": "CEO_38070",
+        "Name": "Nguyễn Thị Thành",
+        "Url": "<a href='/du-lieu/ceo/CEO_38070/nguyen-thi-thanh.chn'>Nguyễn Thị Thành</a>",
+        "AssetVolume": "130",
+        "AssetRate": "0,0",
+        "UpdatedDate": "31/12/2018"
+      },
+      {
+        "Code": "CEO_38069",
+        "Name": "Nguyễn Thị Lý",
+        "Url": "<a href='/du-lieu/ceo/CEO_38069/nguyen-thi-ly.chn'>Nguyễn Thị Lý</a>",
+        "AssetVolume": "200",
+        "AssetRate": "0,0",
+        "UpdatedDate": "31/12/2018"
+      },
+      {
+        "Code": "CEO_38065",
+        "Name": "Nguyễn Tấn Đạt",
+        "Url": "<a href='/du-lieu/ceo/CEO_38065/nguyen-tan-dat.chn'>Nguyễn Tấn Đạt</a>",
+        "AssetVolume": "2.200",
+        "AssetRate": "0,01",
+        "UpdatedDate": "31/12/2016"
+      }
+    ],
+    "NuocNgoai": 49,
+    "NhaNuoc": 0,
+    "Khac": 51
+  },
+  "cong_ty_con": [
+    {
+      "Symbol": "VTG",
+      "CorpCode": "CORP_39161",
+      "Name": "Công ty TNHH Lữ hành Vũng Tàu",
+      "TotalCapital": 4,
+      "SharedCapital": 4,
+      "OwnershipRate": 100,
+      "Note": "",
+      "Order": 1,
+      "TradeCenter": ""
+    },
+    {
+      "Symbol": "VTG",
+      "CorpCode": "CORP_39163",
+      "Name": "CTCP Du lịch Nghinh Phong",
+      "TotalCapital": 3,
+      "SharedCapital": 2.8,
+      "OwnershipRate": 93.33,
+      "Note": "",
+      "Order": 2,
+      "TradeCenter": ""
+    },
+    {
+      "Symbol": "VTG",
+      "CorpCode": "CORP_39162",
+      "Name": "CTCP Du lịch Thùy Vân",
+      "TotalCapital": 15.378,
+      "SharedCapital": 7.7,
+      "OwnershipRate": 50.07,
+      "Note": "",
+      "Order": 3,
+      "TradeCenter": ""
+    }
+  ],
+  "cong_ty_lien_ket": [
+    {
+      "Symbol": "VTG",
+      "CorpCode": "CORP_39165",
+      "Name": "CTCP Giải trí Thể thao Minh Phạm",
+      "TotalCapital": 3.34,
+      "SharedCapital": 1.17,
+      "OwnershipRate": 35,
+      "Note": "",
+      "Order": 4,
+      "TradeCenter": ""
+    },
+    {
+      "Symbol": "VTG",
+      "CorpCode": "CORP_39164",
+      "Name": "CTCP Đầu tư Khách sạn Biển Đông",
+      "TotalCapital": 10,
+      "SharedCapital": 2.65,
+      "OwnershipRate": 26.53,
+      "Note": "",
+      "Order": 5,
+      "TradeCenter": ""
+    }
+  ],
+  "giao_dich_noi_bo": [
+    {
+      "transaction_name": "Công ty TNHH Tư vấn Đầu tư và Dịch vụ Du lịch Hải An",
+      "transaction_position": "",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 0,
+      "plan_buy": 0,
+      "plan_sell": 0,
+      "plan_begin_date": "",
+      "plan_end_date": "",
+      "real_buy": 1864450,
+      "real_sell": 0,
+      "real_end_date": "2020-09-17",
+      "published_date": "2020-09-23",
+      "volume_after": 1864450
+    },
+    {
+      "transaction_name": "Công ty TNHH Xây dựng và Dịch vụ Thương mại An Khang",
+      "transaction_position": "",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 2796675,
+      "plan_buy": 0,
+      "plan_sell": 1864450,
+      "plan_begin_date": "2020-09-17",
+      "plan_end_date": "2020-10-15",
+      "real_buy": 0,
+      "real_sell": 1864450,
+      "real_end_date": "2020-09-17",
+      "published_date": "2020-09-16",
+      "volume_after": 932225
+    },
+    {
+      "transaction_name": "Công ty TNHH Xây dựng và Dịch vụ Thương mại An Khang",
+      "transaction_position": "",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 3060138,
+      "plan_buy": 0,
+      "plan_sell": 263463,
+      "plan_begin_date": "2020-03-24",
+      "plan_end_date": "2020-04-22",
+      "real_buy": 0,
+      "real_sell": 263463,
+      "real_end_date": "2020-03-26",
+      "published_date": "2020-03-22",
+      "volume_after": 2796675
+    },
+    {
+      "transaction_name": "Võ Thị Thu Vân",
+      "transaction_position": "Vợ",
+      "leader_name": "Nguyễn Tấn Đạt",
+      "leader_position": "Kế toán trưởng",
+      "volume_before": 4600,
+      "plan_buy": 0,
+      "plan_sell": 0,
+      "plan_begin_date": "",
+      "plan_end_date": "",
+      "real_buy": 0,
+      "real_sell": 4600,
+      "real_end_date": "2016-02-23",
+      "published_date": "2016-02-29",
+      "volume_after": 0
+    },
+    {
+      "transaction_name": "Đỗ Đại Minh",
+      "transaction_position": "Thành viên HĐQT độc lập",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 90000,
+      "plan_buy": 0,
+      "plan_sell": 90000,
+      "plan_begin_date": "2016-01-24",
+      "plan_end_date": "2016-02-22",
+      "real_buy": 0,
+      "real_sell": 90000,
+      "real_end_date": "2016-02-22",
+      "published_date": "2016-01-20",
+      "volume_after": 0
+    }
+  ]
+}

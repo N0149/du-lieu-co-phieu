@@ -1,0 +1,168 @@
+{
+  "symbol": "NOS",
+  "updated": "2026-03-22T03:19:48.000Z",
+  "co_cau_so_huu": {
+    "CoDongSoHuu": [
+      {
+        "Code": "BMI",
+        "Name": "Tổng Công ty Cổ phần Bảo Minh",
+        "Url": "<a href='/du-lieu/hose/BMI-tong-cong-ty-co-phan-bao-minh.chn' title='Tổng Công ty Cổ phần Bảo Minh'>Tổng Công ty Cổ phần Bảo Minh</a>",
+        "AssetVolume": "2.000.000",
+        "AssetRate": "10,24",
+        "UpdatedDate": "31/12/2021"
+      },
+      {
+        "Code": "CEO_50181",
+        "Name": "Trần Thanh Hà",
+        "Url": "<a href='/du-lieu/ceo/CEO_50181/tran-thanh-ha.chn'>Trần Thanh Hà</a>",
+        "AssetVolume": "13.690",
+        "AssetRate": "0,07",
+        "UpdatedDate": "31/12/2022"
+      },
+      {
+        "Code": "CEO_55599",
+        "Name": "Hoàng Thị Thu Thảo",
+        "Url": "<a href='/du-lieu/ceo/CEO_55599/hoang-thi-thu-thao.chn'>Hoàng Thị Thu Thảo</a>",
+        "AssetVolume": "100",
+        "AssetRate": "0,0",
+        "UpdatedDate": "31/12/2022"
+      },
+      {
+        "Code": "MVN",
+        "Name": "Công ty Cổ phần Vận tải biển và Thương mại Phương Đông",
+        "Url": "<a href='/du-lieu/upcom/MVN-tong-cong-ty-hang-hai-viet-nam-ctcp.chn' title='Tổng Công ty Hàng hải Việt Nam - CTCP'>Tổng Công ty Hàng hải Việt Nam - CTCP</a>",
+        "AssetVolume": "9.827.440",
+        "AssetRate": "50,33",
+        "UpdatedDate": "30/06/2024"
+      }
+    ],
+    "NuocNgoai": 0.06999999999999999,
+    "NhaNuoc": 0,
+    "Khac": 99.93
+  },
+  "cong_ty_con": [
+    {
+      "Symbol": "NOS",
+      "CorpCode": "CORP_70563",
+      "Name": "Công ty TNHH Một thành viên Xuất nhập khẩu Nosco Đông Phong",
+      "TotalCapital": 10,
+      "SharedCapital": 10,
+      "OwnershipRate": 100,
+      "Note": "",
+      "Order": 1,
+      "TradeCenter": ""
+    },
+    {
+      "Symbol": "NOS",
+      "CorpCode": "CORP_70565",
+      "Name": "Công ty cổ phần Thương mại và vận tải thủy NOSCO Quảng Ninh",
+      "TotalCapital": 0,
+      "SharedCapital": 7.65,
+      "OwnershipRate": 51,
+      "Note": "",
+      "Order": 2,
+      "TradeCenter": ""
+    }
+  ],
+  "cong_ty_lien_ket": [
+    {
+      "Symbol": "NOS",
+      "CorpCode": "CORP_70562",
+      "Name": "Công ty TNHH Vận tải biển và Cung ứng Nhân lực Quốc tế Nosco",
+      "TotalCapital": 12.5,
+      "SharedCapital": 5,
+      "OwnershipRate": 40,
+      "Note": "",
+      "Order": 3,
+      "TradeCenter": ""
+    },
+    {
+      "Symbol": "NOS",
+      "CorpCode": "CORP_70564",
+      "Name": "Công ty cổ phần Thương mại và vận tải Biển Bắc",
+      "TotalCapital": 20,
+      "SharedCapital": 6,
+      "OwnershipRate": 30,
+      "Note": "",
+      "Order": 4,
+      "TradeCenter": ""
+    },
+    {
+      "Symbol": "NOS",
+      "CorpCode": "CORP_70566",
+      "Name": "Nhà máy sửa chữa tàu biển Nosco – Vinalines",
+      "TotalCapital": 15,
+      "SharedCapital": 3.0045,
+      "OwnershipRate": 20.03,
+      "Note": "",
+      "Order": 5,
+      "TradeCenter": ""
+    }
+  ],
+  "giao_dich_noi_bo": [
+    {
+      "transaction_name": "Công ty cổ phần Thương mại và vận tải Biển Bắc",
+      "transaction_position": "",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 401120,
+      "plan_buy": 0,
+      "plan_sell": 2000,
+      "plan_begin_date": "2016-12-13",
+      "plan_end_date": "2016-12-29",
+      "real_buy": 0,
+      "real_sell": 2000,
+      "real_end_date": "2016-12-15",
+      "published_date": "2016-12-11",
+      "volume_after": 399120
+    },
+    {
+      "transaction_name": "Tổng Công ty Hàng Hải Việt Nam - Công ty TNHH MTV",
+      "transaction_position": "",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 10228560,
+      "plan_buy": 0,
+      "plan_sell": 401120,
+      "plan_begin_date": "2015-09-23",
+      "plan_end_date": "2015-10-22",
+      "real_buy": 0,
+      "real_sell": 401120,
+      "real_end_date": "2015-09-30",
+      "published_date": "2015-09-20",
+      "volume_after": 9827440
+    },
+    {
+      "transaction_name": "Đỗ Phương Hồng",
+      "transaction_position": "Kế toán trưởng",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 0,
+      "plan_buy": 10709,
+      "plan_sell": 0,
+      "plan_begin_date": "2012-07-01",
+      "plan_end_date": "2012-07-26",
+      "real_buy": 10709,
+      "real_sell": 0,
+      "real_end_date": "2012-07-08",
+      "published_date": "2012-06-28",
+      "volume_after": 10709
+    },
+    {
+      "transaction_name": "Nguyễn Cảnh Dương",
+      "transaction_position": "cha",
+      "leader_name": "Nguyễn Cảnh Việt",
+      "leader_position": "Chủ tịch HĐQT",
+      "volume_before": 16833,
+      "plan_buy": 126350,
+      "plan_sell": 0,
+      "plan_begin_date": "2012-03-05",
+      "plan_end_date": "2012-05-03",
+      "real_buy": 113892,
+      "real_sell": 0,
+      "real_end_date": "2012-04-12",
+      "published_date": "2012-02-29",
+      "volume_after": 130725
+    }
+  ]
+}

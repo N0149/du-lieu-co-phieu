@@ -1,0 +1,135 @@
+{
+  "symbol": "MCM",
+  "updated": "2026-06-01T07:15:32.000Z",
+  "co_cau_so_huu": {
+    "CoDongSoHuu": [
+      {
+        "Code": "CEO_58992",
+        "Name": "Nguyễn Anh Tú",
+        "Url": "<a href='/du-lieu/ceo/CEO_58992/nguyen-anh-tu.chn'>Nguyễn Anh Tú</a>",
+        "AssetVolume": "200.000",
+        "AssetRate": "0,18",
+        "UpdatedDate": "26/05/2026"
+      },
+      {
+        "Code": "CEO_58985",
+        "Name": "Phạm Hải Nam",
+        "Url": "<a href='/du-lieu/ceo/CEO_58985/pham-hai-nam.chn'>Phạm Hải Nam</a>",
+        "AssetVolume": "130.641",
+        "AssetRate": "0,12",
+        "UpdatedDate": "26/05/2026"
+      },
+      {
+        "Code": "CEO_58988",
+        "Name": "Phạm Quang Thùy",
+        "Url": "<a href='/du-lieu/ceo/CEO_58988/pham-quang-thuy.chn'>Phạm Quang Thùy</a>",
+        "AssetVolume": "113.866",
+        "AssetRate": "0,1",
+        "UpdatedDate": "26/05/2026"
+      },
+      {
+        "Code": "CEO_58989",
+        "Name": "Nguyễn Sỹ Quang",
+        "Url": "<a href='/du-lieu/ceo/CEO_58989/nguyen-sy-quang.chn'>Nguyễn Sỹ Quang</a>",
+        "AssetVolume": "335.300",
+        "AssetRate": "0,3",
+        "UpdatedDate": "26/05/2026"
+      },
+      {
+        "Code": "VNM",
+        "Name": "Công ty cổ phần Giống bò sữa Mộc Châu",
+        "Url": "<a href='/du-lieu/hose/VNM-cong-ty-co-phan-sua-viet-nam.chn' title='Công ty Cổ phần Sữa Việt Nam'>Công ty Cổ phần Sữa Việt Nam</a>",
+        "AssetVolume": "9.737.790",
+        "AssetRate": "8,85",
+        "UpdatedDate": "26/05/2026"
+      }
+    ],
+    "NuocNgoai": 0.03,
+    "NhaNuoc": 0,
+    "Khac": 99.97
+  },
+  "cong_ty_con": [],
+  "cong_ty_lien_ket": [],
+  "giao_dich_noi_bo": [
+    {
+      "transaction_name": "Lê Thị Lệ",
+      "transaction_position": "Vợ",
+      "leader_name": "Phạm Quang Thùy",
+      "leader_position": "Thành viên BKS",
+      "volume_before": 224080,
+      "plan_buy": 0,
+      "plan_sell": 100000,
+      "plan_begin_date": "2024-06-10",
+      "plan_end_date": "2024-07-09",
+      "real_buy": 0,
+      "real_sell": 10000,
+      "real_end_date": "2024-07-09",
+      "published_date": "2024-06-04",
+      "volume_after": 214080
+    },
+    {
+      "transaction_name": "Nguyễn Sỹ Quang",
+      "transaction_position": "Phó Tổng GĐ",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 351326,
+      "plan_buy": 0,
+      "plan_sell": 51326,
+      "plan_begin_date": "2024-03-01",
+      "plan_end_date": "2024-03-29",
+      "real_buy": 0,
+      "real_sell": 16026,
+      "real_end_date": "2024-03-28",
+      "published_date": "2024-02-29",
+      "volume_after": 335300
+    },
+    {
+      "transaction_name": "Nguyễn Anh Tú",
+      "transaction_position": "Kế toán trưởng",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 441521,
+      "plan_buy": 0,
+      "plan_sell": 241521,
+      "plan_begin_date": "2023-10-02",
+      "plan_end_date": "2023-10-25",
+      "real_buy": 0,
+      "real_sell": 241521,
+      "real_end_date": "2023-10-04",
+      "published_date": "2023-10-06",
+      "volume_after": 200000
+    },
+    {
+      "transaction_name": "Tổng Công ty Chăn nuôi Việt Nam - CTCP",
+      "transaction_position": "",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 35771572,
+      "plan_buy": 0,
+      "plan_sell": 0,
+      "plan_begin_date": "",
+      "plan_end_date": "",
+      "real_buy": 29458399,
+      "real_sell": 0,
+      "real_end_date": "2023-06-01",
+      "published_date": "2023-06-05",
+      "volume_after": 65229971
+    },
+    {
+      "transaction_name": "Phạm Quang Thùy",
+      "transaction_position": "Thành viên BKS",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 125871,
+      "plan_buy": 0,
+      "plan_sell": 100000,
+      "plan_begin_date": "2020-12-30",
+      "plan_end_date": "2021-01-26",
+      "real_buy": 0,
+      "real_sell": 45000,
+      "real_end_date": "2021-01-15",
+      "published_date": "2021-01-05",
+      "volume_after": 80871
+    }
+  ]
+}

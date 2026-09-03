@@ -1,0 +1,207 @@
+{
+  "symbol": "CHC",
+  "updated": "2026-08-01T05:30:20.000Z",
+  "co_cau_so_huu": {
+    "CoDongSoHuu": [
+      {
+        "Code": "CEO_81895",
+        "Name": "Nguyễn Thị Tranh",
+        "Url": "<a href='/du-lieu/ceo/CEO_81895/nguyen-thi-tranh.chn'>Nguyễn Thị Tranh</a>",
+        "AssetVolume": "60.361",
+        "AssetRate": "0,9",
+        "UpdatedDate": "22/05/2026"
+      },
+      {
+        "Code": "CEO_58287",
+        "Name": "Nguyễn Thị Ngọc Hà",
+        "Url": "<a href='/du-lieu/ceo/CEO_58287/nguyen-thi-ngoc-ha.chn'>Nguyễn Thị Ngọc Hà</a>",
+        "AssetVolume": "10.000",
+        "AssetRate": "0,15",
+        "UpdatedDate": "22/05/2026"
+      },
+      {
+        "Code": "CEO_81898",
+        "Name": "Nguyễn Thị Thanh Bình",
+        "Url": "<a href='/du-lieu/ceo/CEO_81898/nguyen-thi-thanh-binh.chn'>Nguyễn Thị Thanh Bình</a>",
+        "AssetVolume": "9.046",
+        "AssetRate": "0,13",
+        "UpdatedDate": "22/05/2026"
+      },
+      {
+        "Code": "CEO_873679",
+        "Name": "Nguyễn Thị Bích Xi",
+        "Url": "<a href='/du-lieu/ceo/CEO_873679/nguyen-thi-bich-xi.chn'>Nguyễn Thị Bích Xi</a>",
+        "AssetVolume": "5.353",
+        "AssetRate": "0,08",
+        "UpdatedDate": "22/05/2026"
+      },
+      {
+        "Code": "CEO_98617",
+        "Name": "Nguyễn Thị Phương Loan",
+        "Url": "<a href='/du-lieu/ceo/CEO_98617/nguyen-thi-phuong-loan.chn'>Nguyễn Thị Phương Loan</a>",
+        "AssetVolume": "50.000",
+        "AssetRate": "0,74",
+        "UpdatedDate": "22/05/2026"
+      },
+      {
+        "Code": "KLQ_99639",
+        "Name": "Tống Thị Nguyên",
+        "Url": "Tống Thị Nguyên",
+        "AssetVolume": "371.943",
+        "AssetRate": "5,53",
+        "UpdatedDate": "22/05/2026"
+      },
+      {
+        "Code": "CEO_81892",
+        "Name": "Nguyễn Chí Dũng",
+        "Url": "<a href='/du-lieu/ceo/CEO_81892/nguyen-chi-dung.chn'>Nguyễn Chí Dũng</a>",
+        "AssetVolume": "48.000",
+        "AssetRate": "0,71",
+        "UpdatedDate": "22/05/2026"
+      },
+      {
+        "Code": "CEO_81893",
+        "Name": "Dương Phú Minh Hoàng",
+        "Url": "<a href='/du-lieu/ceo/CEO_81893/duong-phu-minh-hoang.chn'>Dương Phú Minh Hoàng</a>",
+        "AssetVolume": "231.708",
+        "AssetRate": "3,44",
+        "UpdatedDate": "22/05/2026"
+      }
+    ],
+    "NuocNgoai": 49,
+    "NhaNuoc": 0,
+    "Khac": 51
+  },
+  "cong_ty_con": [],
+  "cong_ty_lien_ket": [],
+  "giao_dich_noi_bo": [
+    {
+      "transaction_name": "Dương Phú Minh Hoàng",
+      "transaction_position": "Giám đốc",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 231708,
+      "plan_buy": 50000,
+      "plan_sell": 0,
+      "plan_begin_date": "2023-08-29",
+      "plan_end_date": "2023-09-22",
+      "real_buy": 41407,
+      "real_sell": 0,
+      "real_end_date": "2023-09-11",
+      "published_date": "2023-09-21",
+      "volume_after": 273115
+    },
+    {
+      "transaction_name": "Dương Phú Minh Hoàng",
+      "transaction_position": "Giám đốc",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 202785,
+      "plan_buy": 50000,
+      "plan_sell": 0,
+      "plan_begin_date": "2022-08-22",
+      "plan_end_date": "2022-09-15",
+      "real_buy": 28923,
+      "real_sell": 0,
+      "real_end_date": "2022-08-24",
+      "published_date": "2022-09-16",
+      "volume_after": 231708
+    },
+    {
+      "transaction_name": "Nguyễn Thị Ngọc Hà",
+      "transaction_position": "Thành viên BKS",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 0,
+      "plan_buy": 20000,
+      "plan_sell": 0,
+      "plan_begin_date": "2022-02-16",
+      "plan_end_date": "2022-02-16",
+      "real_buy": 20000,
+      "real_sell": 0,
+      "real_end_date": "2022-02-16",
+      "published_date": "2022-02-14",
+      "volume_after": 10000
+    },
+    {
+      "transaction_name": "Nguyễn Thị Phương Loan",
+      "transaction_position": "Thành viên HĐQT",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 0,
+      "plan_buy": 100000,
+      "plan_sell": 0,
+      "plan_begin_date": "2022-02-15",
+      "plan_end_date": "2022-02-16",
+      "real_buy": 100000,
+      "real_sell": 0,
+      "real_end_date": "2022-02-16",
+      "published_date": "2022-02-14",
+      "volume_after": 50000
+    },
+    {
+      "transaction_name": "Nguyễn Thị Tranh",
+      "transaction_position": "Thành viên HĐQT",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 12310,
+      "plan_buy": 1000,
+      "plan_sell": 0,
+      "plan_begin_date": "2021-06-02",
+      "plan_end_date": "2021-06-30",
+      "real_buy": 0,
+      "real_sell": 0,
+      "real_end_date": "2021-06-23",
+      "published_date": "2021-06-08",
+      "volume_after": 12310
+    },
+    {
+      "transaction_name": "Nguyễn Thị Tranh",
+      "transaction_position": "Thành viên HĐQT",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 12310,
+      "plan_buy": 20000,
+      "plan_sell": 0,
+      "plan_begin_date": "2021-04-26",
+      "plan_end_date": "2021-05-25",
+      "real_buy": 0,
+      "real_sell": 0,
+      "real_end_date": "2021-05-25",
+      "published_date": "2021-04-26",
+      "volume_after": 12310
+    },
+    {
+      "transaction_name": "Nguyễn Thị Tranh",
+      "transaction_position": "Thành viên HĐQT",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 0,
+      "plan_buy": 50000,
+      "plan_sell": 0,
+      "plan_begin_date": "2020-06-25",
+      "plan_end_date": "2020-07-23",
+      "real_buy": 12310,
+      "real_sell": 0,
+      "real_end_date": "2020-07-14",
+      "published_date": "2020-06-25",
+      "volume_after": 12310
+    },
+    {
+      "transaction_name": "Dương Phú Minh Hoàng",
+      "transaction_position": "Giám đốc",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 66878,
+      "plan_buy": 5000,
+      "plan_sell": 0,
+      "plan_begin_date": "2017-06-26",
+      "plan_end_date": "2017-07-21",
+      "real_buy": 0,
+      "real_sell": 0,
+      "real_end_date": "",
+      "published_date": "2017-06-22",
+      "volume_after": 0
+    }
+  ]
+}

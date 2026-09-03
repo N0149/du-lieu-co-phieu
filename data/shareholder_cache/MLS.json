@@ -1,0 +1,191 @@
+{
+  "symbol": "MLS",
+  "updated": "2026-09-01T07:36:28.000Z",
+  "co_cau_so_huu": {
+    "CoDongSoHuu": [
+      {
+        "Code": "CEO_99374",
+        "Name": "Lê Văn Nhị",
+        "Url": "<a href='/du-lieu/ceo/CEO_99374/le-van-nhi.chn'>Lê Văn Nhị</a>",
+        "AssetVolume": "24.700",
+        "AssetRate": "0,62",
+        "UpdatedDate": "30/12/2016"
+      },
+      {
+        "Code": "MTA",
+        "Name": "Tổng Công ty Khoáng sản và Thương mại Hà Tĩnh - CTCP",
+        "Url": "<a href='/du-lieu/upcom/MTA-tong-cong-ty-khoang-san-va-thuong-mai-ha-tinh-ctcp.chn' title='Tổng Công ty Khoáng sản và Thương mại Hà Tĩnh - CTCP'>Tổng Công ty Khoáng sản và Thương mại Hà Tĩnh - CTCP</a>",
+        "AssetVolume": "2.051.000",
+        "AssetRate": "51,28",
+        "UpdatedDate": "31/12/2018"
+      },
+      {
+        "Code": "CEO_99373",
+        "Name": "Nguyễn Đình Lục",
+        "Url": "<a href='/du-lieu/ceo/CEO_99373/nguyen-dinh-luc.chn'>Nguyễn Đình Lục</a>",
+        "AssetVolume": "700",
+        "AssetRate": "0,02",
+        "UpdatedDate": "19/08/2020"
+      },
+      {
+        "Code": "CEO_83334",
+        "Name": "Phạm Hồng Tài",
+        "Url": "<a href='/du-lieu/ceo/CEO_83334/pham-hong-tai.chn'>Phạm Hồng Tài</a>",
+        "AssetVolume": "1.400",
+        "AssetRate": "0,04",
+        "UpdatedDate": "31/12/2018"
+      },
+      {
+        "Code": "CEO_99371",
+        "Name": "Phan Thanh Nam",
+        "Url": "<a href='/du-lieu/ceo/CEO_99371/phan-thanh-nam.chn'>Phan Thanh Nam</a>",
+        "AssetVolume": "6.400",
+        "AssetRate": "0,16",
+        "UpdatedDate": "31/12/2018"
+      },
+      {
+        "Code": "CEO_99375",
+        "Name": "Nguyễn Đình Sơn",
+        "Url": "<a href='/du-lieu/ceo/CEO_99375/nguyen-dinh-son.chn'>Nguyễn Đình Sơn</a>",
+        "AssetVolume": "6.800",
+        "AssetRate": "0,17",
+        "UpdatedDate": "31/12/2018"
+      }
+    ],
+    "NuocNgoai": 1.46,
+    "NhaNuoc": 0,
+    "Khac": 98.54
+  },
+  "cong_ty_con": [],
+  "cong_ty_lien_ket": [],
+  "giao_dich_noi_bo": [
+    {
+      "transaction_name": "Nguyễn Đình Lục",
+      "transaction_position": "Thành viên BKS",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 700,
+      "plan_buy": 0,
+      "plan_sell": 700,
+      "plan_begin_date": "2020-08-18",
+      "plan_end_date": "2020-09-14",
+      "real_buy": 0,
+      "real_sell": 0,
+      "real_end_date": "",
+      "published_date": "2020-08-18",
+      "volume_after": 0
+    },
+    {
+      "transaction_name": "Nguyễn Văn Hòa",
+      "transaction_position": "Kế toán trưởng",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 6400,
+      "plan_buy": 0,
+      "plan_sell": 6400,
+      "plan_begin_date": "2020-08-09",
+      "plan_end_date": "2020-09-03",
+      "real_buy": 0,
+      "real_sell": 6400,
+      "real_end_date": "2020-08-18",
+      "published_date": "2020-08-07",
+      "volume_after": 0
+    },
+    {
+      "transaction_name": "Nguyễn Đình Lục",
+      "transaction_position": "Thành viên BKS",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 6700,
+      "plan_buy": 0,
+      "plan_sell": 6000,
+      "plan_begin_date": "2020-08-09",
+      "plan_end_date": "2020-09-07",
+      "real_buy": 0,
+      "real_sell": 6000,
+      "real_end_date": "2020-08-06",
+      "published_date": "2020-08-07",
+      "volume_after": 700
+    },
+    {
+      "transaction_name": "Công ty TNHH Mua bán nợ Việt Nam",
+      "transaction_position": "",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 247900,
+      "plan_buy": 0,
+      "plan_sell": 247900,
+      "plan_begin_date": "2020-08-02",
+      "plan_end_date": "2020-08-27",
+      "real_buy": 0,
+      "real_sell": 247900,
+      "real_end_date": "2020-08-05",
+      "published_date": "2020-07-30",
+      "volume_after": 0
+    },
+    {
+      "transaction_name": "Công ty TNHH Mua bán nợ Việt Nam",
+      "transaction_position": "",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 1260000,
+      "plan_buy": 0,
+      "plan_sell": 1260000,
+      "plan_begin_date": "2020-06-24",
+      "plan_end_date": "2020-07-23",
+      "real_buy": 0,
+      "real_sell": 1012100,
+      "real_end_date": "2020-07-23",
+      "published_date": "2020-06-25",
+      "volume_after": 247900
+    },
+    {
+      "transaction_name": "Nguyễn Văn Nguyên",
+      "transaction_position": "Thành viên HĐQT",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 10000,
+      "plan_buy": 0,
+      "plan_sell": 10000,
+      "plan_begin_date": "2020-06-21",
+      "plan_end_date": "2020-07-20",
+      "real_buy": 0,
+      "real_sell": 10000,
+      "real_end_date": "2020-07-02",
+      "published_date": "2020-06-22",
+      "volume_after": 0
+    },
+    {
+      "transaction_name": "Nguyễn Văn Hòa",
+      "transaction_position": "Kế toán trưởng",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 6400,
+      "plan_buy": 0,
+      "plan_sell": 6000,
+      "plan_begin_date": "2018-04-26",
+      "plan_end_date": "2018-05-23",
+      "real_buy": 0,
+      "real_sell": 0,
+      "real_end_date": "2018-05-23",
+      "published_date": "2018-04-26",
+      "volume_after": 6400
+    },
+    {
+      "transaction_name": "Nguyễn Đình Sơn",
+      "transaction_position": "Phó Giám đốc",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 13600,
+      "plan_buy": 0,
+      "plan_sell": 6800,
+      "plan_begin_date": "2017-07-18",
+      "plan_end_date": "2017-08-13",
+      "real_buy": 0,
+      "real_sell": 6800,
+      "real_end_date": "2017-08-13",
+      "published_date": "2017-07-16",
+      "volume_after": 6800
+    }
+  ]
+}

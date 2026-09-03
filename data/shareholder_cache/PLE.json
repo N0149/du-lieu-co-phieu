@@ -1,0 +1,111 @@
+{
+  "symbol": "PLE",
+  "updated": "2026-03-22T03:20:29.000Z",
+  "co_cau_so_huu": {
+    "CoDongSoHuu": [
+      {
+        "Code": "CEO_871654",
+        "Name": "Nguyễn Thành Nam",
+        "Url": "<a href='/du-lieu/ceo/CEO_871654/nguyen-thanh-nam.chn'>Nguyễn Thành Nam</a>",
+        "AssetVolume": "7.486",
+        "AssetRate": "0,62",
+        "UpdatedDate": "06/08/2025"
+      },
+      {
+        "Code": "CEO_871655",
+        "Name": "Hà Dương Thanh",
+        "Url": "<a href='/du-lieu/ceo/CEO_871655/ha-duong-thanh.chn'>Hà Dương Thanh</a>",
+        "AssetVolume": "2.941",
+        "AssetRate": "0,24",
+        "UpdatedDate": "06/08/2025"
+      },
+      {
+        "Code": "CEO_874831",
+        "Name": "Lương Quang Hiếu",
+        "Url": "<a href='/du-lieu/ceo/CEO_874831/luong-quang-hieu.chn'>Lương Quang Hiếu</a>",
+        "AssetVolume": "154.912",
+        "AssetRate": "12,75",
+        "UpdatedDate": "06/08/2025"
+      },
+      {
+        "Code": "CORP_99999",
+        "Name": "Công ty TNHH MTV - Tổng Công ty Xây lắp và Thương mại Petrolimex",
+        "Url": "Công ty TNHH MTV - Tổng Công ty Xây lắp và Thương mại Petrolimex",
+        "AssetVolume": "619.650",
+        "AssetRate": "51,0",
+        "UpdatedDate": "06/08/2025"
+      },
+      {
+        "Code": "CEO_871653",
+        "Name": "Dương Đức Toàn",
+        "Url": "<a href='/du-lieu/ceo/CEO_871653/duong-duc-toan.chn'>Dương Đức Toàn</a>",
+        "AssetVolume": "16.786",
+        "AssetRate": "1,38",
+        "UpdatedDate": "06/08/2025"
+      },
+      {
+        "Code": "CEO_871658",
+        "Name": "Vũ Thị Ngọc Thoa",
+        "Url": "<a href='/du-lieu/ceo/CEO_871658/vu-thi-ngoc-thoa.chn'>Vũ Thị Ngọc Thoa</a>",
+        "AssetVolume": "16.389",
+        "AssetRate": "1,35",
+        "UpdatedDate": "06/08/2025"
+      }
+    ],
+    "NuocNgoai": 49,
+    "NhaNuoc": 0,
+    "Khac": 51
+  },
+  "cong_ty_con": [],
+  "cong_ty_lien_ket": [],
+  "giao_dich_noi_bo": [
+    {
+      "transaction_name": "CTCP Tổng Công ty Xây lắp và Thương mại Petrolimex",
+      "transaction_position": "",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 619650,
+      "plan_buy": 0,
+      "plan_sell": 619650,
+      "plan_begin_date": "2023-03-17",
+      "plan_end_date": "2023-03-24",
+      "real_buy": 0,
+      "real_sell": 0,
+      "real_end_date": "2023-03-24",
+      "published_date": "2023-03-15",
+      "volume_after": 619650
+    },
+    {
+      "transaction_name": "CTCP Tổng Công ty Xây lắp và Thương mại Petrolimex",
+      "transaction_position": "",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 619650,
+      "plan_buy": 0,
+      "plan_sell": 619650,
+      "plan_begin_date": "2023-02-09",
+      "plan_end_date": "2023-03-10",
+      "real_buy": 0,
+      "real_sell": 0,
+      "real_end_date": "2023-03-10",
+      "published_date": "2023-03-14",
+      "volume_after": 619650
+    },
+    {
+      "transaction_name": "CTCP Tổng Công ty Xây lắp và Thương mại Petrolimex",
+      "transaction_position": "",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 619650,
+      "plan_buy": 0,
+      "plan_sell": 619650,
+      "plan_begin_date": "2023-02-09",
+      "plan_end_date": "2023-03-10",
+      "real_buy": 0,
+      "real_sell": 0,
+      "real_end_date": "",
+      "published_date": "2023-01-30",
+      "volume_after": 0
+    }
+  ]
+}

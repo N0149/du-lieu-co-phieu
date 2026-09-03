@@ -1,0 +1,273 @@
+{
+  "symbol": "SBG",
+  "updated": "2026-09-01T07:44:14.000Z",
+  "co_cau_so_huu": {
+    "CoDongSoHuu": [
+      {
+        "Code": "CEO_876564",
+        "Name": "Phan Hồng Vân",
+        "Url": "<a href='/du-lieu/ceo/CEO_876564/phan-hong-van.chn'>Phan Hồng Vân</a>",
+        "AssetVolume": "1.223.903",
+        "AssetRate": "2,04",
+        "UpdatedDate": "02/10/2024"
+      },
+      {
+        "Code": "CEO_876561",
+        "Name": "Nguyễn Văn Đức",
+        "Url": "<a href='/du-lieu/ceo/CEO_876561/nguyen-van-duc.chn'>Nguyễn Văn Đức</a>",
+        "AssetVolume": "2.439.755",
+        "AssetRate": "4,07",
+        "UpdatedDate": "02/10/2024"
+      },
+      {
+        "Code": "CEO_876567",
+        "Name": "Đào Đức Tuấn",
+        "Url": "<a href='/du-lieu/ceo/CEO_876567/dao-duc-tuan.chn'>Đào Đức Tuấn</a>",
+        "AssetVolume": "20.129",
+        "AssetRate": "0,03",
+        "UpdatedDate": "02/10/2024"
+      },
+      {
+        "Code": "CORP_82163",
+        "Name": "CTCP Siba Holdings",
+        "Url": "CTCP Siba Holdings",
+        "AssetVolume": "22.288.100",
+        "AssetRate": "37,15",
+        "UpdatedDate": "30/06/2026"
+      },
+      {
+        "Code": "CEO_877248",
+        "Name": "Trương Đức Nam",
+        "Url": "<a href='/du-lieu/ceo/CEO_877248/truong-duc-nam.chn'>Trương Đức Nam</a>",
+        "AssetVolume": "88.571",
+        "AssetRate": "0,15",
+        "UpdatedDate": "02/10/2024"
+      },
+      {
+        "Code": "CEO_876568",
+        "Name": "Hà Thị Ngọc Sơn",
+        "Url": "<a href='/du-lieu/ceo/CEO_876568/ha-thi-ngoc-son.chn'>Hà Thị Ngọc Sơn</a>",
+        "AssetVolume": "41.870",
+        "AssetRate": "0,07",
+        "UpdatedDate": "02/10/2024"
+      },
+      {
+        "Code": "CEO_876565",
+        "Name": "Lê Thị Xuân Đức",
+        "Url": "<a href='/du-lieu/ceo/CEO_876565/le-thi-xuan-duc.chn'>Lê Thị Xuân Đức</a>",
+        "AssetVolume": "16.103",
+        "AssetRate": "0,03",
+        "UpdatedDate": "02/10/2024"
+      },
+      {
+        "Code": "CEO_876562",
+        "Name": "Phan Lê Hoàng Trung",
+        "Url": "<a href='/du-lieu/ceo/CEO_876562/phan-le-hoang-trung.chn'>Phan Lê Hoàng Trung</a>",
+        "AssetVolume": "46.200",
+        "AssetRate": "0,08",
+        "UpdatedDate": "04/11/2024"
+      },
+      {
+        "Code": "CEO_876560",
+        "Name": "Nguyễn Văn Phú",
+        "Url": "<a href='/du-lieu/ceo/CEO_876560/nguyen-van-phu.chn'>Nguyễn Văn Phú</a>",
+        "AssetVolume": "300.000",
+        "AssetRate": "0,5",
+        "UpdatedDate": "04/11/2024"
+      },
+      {
+        "Code": "CEO_876563",
+        "Name": "Trần Ngọc Long",
+        "Url": "<a href='/du-lieu/ceo/CEO_876563/tran-ngoc-long.chn'>Trần Ngọc Long</a>",
+        "AssetVolume": "66.400",
+        "AssetRate": "0,11",
+        "UpdatedDate": "23/10/2024"
+      }
+    ],
+    "NuocNgoai": 0.82,
+    "NhaNuoc": 0,
+    "Khac": 99.18
+  },
+  "cong_ty_con": [
+    {
+      "Symbol": "SBG",
+      "CorpCode": "CORP_65659",
+      "Name": "Công ty TNHH MTV Năng lượng sạch Vmeco Bạc Liêu",
+      "TotalCapital": 20,
+      "SharedCapital": 20,
+      "OwnershipRate": 100,
+      "Note": "",
+      "Order": 1,
+      "TradeCenter": ""
+    },
+    {
+      "Symbol": "SBG",
+      "CorpCode": "CORP_65660",
+      "Name": "Công ty TNHH MTV Năng lượng sạch vmeco Đồng Tháp",
+      "TotalCapital": 20,
+      "SharedCapital": 20,
+      "OwnershipRate": 100,
+      "Note": "",
+      "Order": 2,
+      "TradeCenter": ""
+    },
+    {
+      "Symbol": "SBG",
+      "CorpCode": "CORP_65661",
+      "Name": "CTCP Đầu tư Xây dựng Sibacons",
+      "TotalCapital": 60,
+      "SharedCapital": 48,
+      "OwnershipRate": 80,
+      "Note": "",
+      "Order": 3,
+      "TradeCenter": ""
+    }
+  ],
+  "cong_ty_lien_ket": [],
+  "giao_dich_noi_bo": [
+    {
+      "transaction_name": "CTCP Siba Holdings",
+      "transaction_position": "",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 27800000,
+      "plan_buy": 0,
+      "plan_sell": 7500000,
+      "plan_begin_date": "2026-06-03",
+      "plan_end_date": "2026-06-30",
+      "real_buy": 0,
+      "real_sell": 5511900,
+      "real_end_date": "2026-06-30",
+      "published_date": "2026-06-04",
+      "volume_after": 22288100
+    },
+    {
+      "transaction_name": "CTCP Siba Holdings",
+      "transaction_position": "",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 27800000,
+      "plan_buy": 0,
+      "plan_sell": 7500000,
+      "plan_begin_date": "2026-06-03",
+      "plan_end_date": "2026-06-30",
+      "real_buy": 0,
+      "real_sell": 0,
+      "real_end_date": "",
+      "published_date": "2026-06-04",
+      "volume_after": 0
+    },
+    {
+      "transaction_name": "Đỗ Quốc Huy",
+      "transaction_position": "Công bố thông tin",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 40800,
+      "plan_buy": 0,
+      "plan_sell": 40800,
+      "plan_begin_date": "2025-02-26",
+      "plan_end_date": "2025-02-27",
+      "real_buy": 0,
+      "real_sell": 40800,
+      "real_end_date": "2025-02-27",
+      "published_date": "2025-03-04",
+      "volume_after": 0
+    },
+    {
+      "transaction_name": "Phan Lê Hoàng Trung",
+      "transaction_position": "Thành Viên HĐQT",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 46200,
+      "plan_buy": 13800,
+      "plan_sell": 0,
+      "plan_begin_date": "2024-11-04",
+      "plan_end_date": "2024-11-04",
+      "real_buy": 0,
+      "real_sell": 0,
+      "real_end_date": "2024-11-04",
+      "published_date": "2024-10-30",
+      "volume_after": 46200
+    },
+    {
+      "transaction_name": "Nguyễn Văn Phú",
+      "transaction_position": "Chủ tịch HĐQT",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 231000,
+      "plan_buy": 69000,
+      "plan_sell": 0,
+      "plan_begin_date": "2024-10-21",
+      "plan_end_date": "2024-11-04",
+      "real_buy": 69000,
+      "real_sell": 0,
+      "real_end_date": "2024-11-04",
+      "published_date": "2024-10-17",
+      "volume_after": 300000
+    },
+    {
+      "transaction_name": "Đỗ Quốc Huy",
+      "transaction_position": "Phụ trách quản trị",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 46508,
+      "plan_buy": 13892,
+      "plan_sell": 0,
+      "plan_begin_date": "2024-10-21",
+      "plan_end_date": "2024-11-04",
+      "real_buy": 13892,
+      "real_sell": 0,
+      "real_end_date": "2024-11-04",
+      "published_date": "2024-10-17",
+      "volume_after": 60400
+    },
+    {
+      "transaction_name": "CTCP Siba Holdings",
+      "transaction_position": "",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 21406000,
+      "plan_buy": 6394000,
+      "plan_sell": 0,
+      "plan_begin_date": "2024-10-21",
+      "plan_end_date": "2024-11-04",
+      "real_buy": 6394000,
+      "real_sell": 0,
+      "real_end_date": "2024-10-31",
+      "published_date": "2024-10-17",
+      "volume_after": 27800000
+    },
+    {
+      "transaction_name": "Trần Ngọc Long",
+      "transaction_position": "Thành viên HĐQT độc lập",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 51128,
+      "plan_buy": 15272,
+      "plan_sell": 0,
+      "plan_begin_date": "2024-10-21",
+      "plan_end_date": "2024-11-04",
+      "real_buy": 15272,
+      "real_sell": 0,
+      "real_end_date": "2024-10-23",
+      "published_date": "2024-10-16",
+      "volume_after": 66400
+    },
+    {
+      "transaction_name": "Trương Đức Nam",
+      "transaction_position": "Thành viên BKS",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 55000,
+      "plan_buy": 0,
+      "plan_sell": 55000,
+      "plan_begin_date": "2024-05-30",
+      "plan_end_date": "2024-06-27",
+      "real_buy": 0,
+      "real_sell": 0,
+      "real_end_date": "2024-06-27",
+      "published_date": "2024-05-22",
+      "volume_after": 55000
+    }
+  ]
+}

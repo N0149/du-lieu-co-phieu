@@ -1,0 +1,78 @@
+{
+  "symbol": "MBT",
+  "updated": "2026-03-22T03:18:53.000Z",
+  "co_cau_so_huu": {
+    "CoDongSoHuu": [
+      {
+        "Code": "CEO_879051",
+        "Name": "Tôn Hồng Hoa",
+        "Url": "<a href='/du-lieu/ceo/CEO_879051/ton-hong-hoa.chn'>Tôn Hồng Hoa</a>",
+        "AssetVolume": "50.000",
+        "AssetRate": "1,32",
+        "UpdatedDate": "10/03/2025"
+      },
+      {
+        "Code": "CEO_879044",
+        "Name": "Phan Thị Kiều Oanh",
+        "Url": "<a href='/du-lieu/ceo/CEO_879044/phan-thi-kieu-oanh.chn'>Phan Thị Kiều Oanh</a>",
+        "AssetVolume": "46.400",
+        "AssetRate": "1,22",
+        "UpdatedDate": "10/03/2025"
+      },
+      {
+        "Code": "CEO_879048",
+        "Name": "Nguyễn Thị Hạnh",
+        "Url": "<a href='/du-lieu/ceo/CEO_879048/nguyen-thi-hanh.chn'>Nguyễn Thị Hạnh</a>",
+        "AssetVolume": "150.000",
+        "AssetRate": "3,95",
+        "UpdatedDate": "10/03/2025"
+      },
+      {
+        "Code": "CEO_879049",
+        "Name": "Phan Phạm Phú Nam Phương",
+        "Url": "<a href='/du-lieu/ceo/CEO_879049/phan-pham-phu-nam-phuong.chn'>Phan Phạm Phú Nam Phương</a>",
+        "AssetVolume": "60.000",
+        "AssetRate": "1,58",
+        "UpdatedDate": "10/03/2025"
+      },
+      {
+        "Code": "CEO_879050",
+        "Name": "Vũ Đình Phương",
+        "Url": "<a href='/du-lieu/ceo/CEO_879050/vu-dinh-phuong.chn'>Vũ Đình Phương</a>",
+        "AssetVolume": "50.000",
+        "AssetRate": "1,32",
+        "UpdatedDate": "10/03/2025"
+      },
+      {
+        "Code": "CEO_879045",
+        "Name": "Đặng Trọng Khang",
+        "Url": "<a href='/du-lieu/ceo/CEO_879045/dang-trong-khang.chn'>Đặng Trọng Khang</a>",
+        "AssetVolume": "238.100",
+        "AssetRate": "6,27",
+        "UpdatedDate": "10/03/2025"
+      },
+      {
+        "Code": "CEO_879047",
+        "Name": "Lê Hòa Lộc",
+        "Url": "<a href='/du-lieu/ceo/CEO_879047/le-hoa-loc.chn'>Lê Hòa Lộc</a>",
+        "AssetVolume": "100.000",
+        "AssetRate": "2,63",
+        "UpdatedDate": "10/03/2025"
+      },
+      {
+        "Code": "CEO_879046",
+        "Name": "Trịnh Thị Hồng Diễm",
+        "Url": "<a href='/du-lieu/ceo/CEO_879046/trinh-thi-hong-diem.chn'>Trịnh Thị Hồng Diễm</a>",
+        "AssetVolume": "150.000",
+        "AssetRate": "3,95",
+        "UpdatedDate": "10/03/2025"
+      }
+    ],
+    "NuocNgoai": 0,
+    "NhaNuoc": 0,
+    "Khac": 100
+  },
+  "cong_ty_con": [],
+  "cong_ty_lien_ket": [],
+  "giao_dich_noi_bo": []
+}

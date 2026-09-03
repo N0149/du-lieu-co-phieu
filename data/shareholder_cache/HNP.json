@@ -1,0 +1,103 @@
+{
+  "symbol": "HNP",
+  "updated": "2026-03-22T03:17:17.000Z",
+  "co_cau_so_huu": {
+    "CoDongSoHuu": [
+      {
+        "Code": "CEO_99250",
+        "Name": "Đỗ Thị Lan Anh",
+        "Url": "<a href='/du-lieu/ceo/CEO_99250/do-thi-lan-anh.chn'>Đỗ Thị Lan Anh</a>",
+        "AssetVolume": "48.726",
+        "AssetRate": "0,97",
+        "UpdatedDate": "21/01/2026"
+      },
+      {
+        "Code": "CEO_99252",
+        "Name": "Phạm Thị Thu Hằng",
+        "Url": "<a href='/du-lieu/ceo/CEO_99252/pham-thi-thu-hang.chn'>Phạm Thị Thu Hằng</a>",
+        "AssetVolume": "100",
+        "AssetRate": "0,0",
+        "UpdatedDate": "21/01/2026"
+      },
+      {
+        "Code": "CEO_58307",
+        "Name": "Hoàng Thu Hương",
+        "Url": "<a href='/du-lieu/ceo/CEO_58307/hoang-thu-huong.chn'>Hoàng Thu Hương</a>",
+        "AssetVolume": "121.946",
+        "AssetRate": "2,44",
+        "UpdatedDate": "21/01/2026"
+      },
+      {
+        "Code": "CEO_99248",
+        "Name": "Nguyễn Duy Hải",
+        "Url": "<a href='/du-lieu/ceo/CEO_99248/nguyen-duy-hai.chn'>Nguyễn Duy Hải</a>",
+        "AssetVolume": "37.366",
+        "AssetRate": "0,75",
+        "UpdatedDate": "21/01/2026"
+      },
+      {
+        "Code": "CEO_99244",
+        "Name": "Nguyễn Quốc Cường",
+        "Url": "<a href='/du-lieu/ceo/CEO_99244/nguyen-quoc-cuong.chn'>Nguyễn Quốc Cường</a>",
+        "AssetVolume": "70.560",
+        "AssetRate": "1,41",
+        "UpdatedDate": "21/01/2026"
+      },
+      {
+        "Code": "CEO_99245",
+        "Name": "Hoàng Văn Phúc",
+        "Url": "<a href='/du-lieu/ceo/CEO_99245/hoang-van-phuc.chn'>Hoàng Văn Phúc</a>",
+        "AssetVolume": "121.906",
+        "AssetRate": "2,44",
+        "UpdatedDate": "21/01/2026"
+      },
+      {
+        "Code": "HNE",
+        "Name": "Công ty cổ phần Hanel",
+        "Url": "<a href='/du-lieu/upcom/HNE-cong-ty-co-phan-hanel.chn' title='Công ty cổ phần Hanel'>Công ty cổ phần Hanel</a>",
+        "AssetVolume": "2.814.232",
+        "AssetRate": "56,28",
+        "UpdatedDate": "21/01/2026"
+      },
+      {
+        "Code": "CEO_99243",
+        "Name": "Nguyễn Đình Vinh",
+        "Url": "<a href='/du-lieu/ceo/CEO_99243/nguyen-dinh-vinh.chn'>Nguyễn Đình Vinh</a>",
+        "AssetVolume": "35.606",
+        "AssetRate": "0,71",
+        "UpdatedDate": "21/01/2026"
+      },
+      {
+        "Code": "CEO_880019",
+        "Name": "Toyoda Nobuo",
+        "Url": "<a href='/du-lieu/ceo/CEO_880019/toyoda-nobuo.chn'>Toyoda Nobuo</a>",
+        "AssetVolume": "69.000",
+        "AssetRate": "1,38",
+        "UpdatedDate": "21/01/2026"
+      }
+    ],
+    "NuocNgoai": 4.05,
+    "NhaNuoc": 0,
+    "Khac": 95.95
+  },
+  "cong_ty_con": [],
+  "cong_ty_lien_ket": [],
+  "giao_dich_noi_bo": [
+    {
+      "transaction_name": "Toyoda Nobuo",
+      "transaction_position": "Giám đốc",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 0,
+      "plan_buy": 69000,
+      "plan_sell": 0,
+      "plan_begin_date": "2025-10-16",
+      "plan_end_date": "2025-11-14",
+      "real_buy": 69000,
+      "real_sell": 0,
+      "real_end_date": "2025-10-24",
+      "published_date": "2025-10-20",
+      "volume_after": 69000
+    }
+  ]
+}

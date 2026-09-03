@@ -1,0 +1,127 @@
+{
+  "symbol": "HDW",
+  "updated": "2026-03-22T03:16:51.000Z",
+  "co_cau_so_huu": {
+    "CoDongSoHuu": [
+      {
+        "Code": "CEO_59899",
+        "Name": "Vũ Văn Nhân",
+        "Url": "<a href='/du-lieu/ceo/CEO_59899/vu-van-nhan.chn'>Vũ Văn Nhân</a>",
+        "AssetVolume": "29.200",
+        "AssetRate": "0,09",
+        "UpdatedDate": "09/09/2025"
+      },
+      {
+        "Code": "CEO_55843",
+        "Name": "Nguyễn Thanh Sơn",
+        "Url": "<a href='/du-lieu/ceo/CEO_55843/nguyen-thanh-son.chn'>Nguyễn Thanh Sơn</a>",
+        "AssetVolume": "30.100",
+        "AssetRate": "0,09",
+        "UpdatedDate": "09/09/2025"
+      },
+      {
+        "Code": "CEO_53532",
+        "Name": "Nguyễn Văn Phụng",
+        "Url": "<a href='/du-lieu/ceo/CEO_53532/nguyen-van-phung.chn'>Nguyễn Văn Phụng</a>",
+        "AssetVolume": "28.700",
+        "AssetRate": "0,09",
+        "UpdatedDate": "09/09/2025"
+      },
+      {
+        "Code": "CEO_53539",
+        "Name": "Nguyễn Thị Thu Hằng",
+        "Url": "<a href='/du-lieu/ceo/CEO_53539/nguyen-thi-thu-hang.chn'>Nguyễn Thị Thu Hằng</a>",
+        "AssetVolume": "8.400",
+        "AssetRate": "0,03",
+        "UpdatedDate": "09/09/2025"
+      },
+      {
+        "Code": "CORP_51281",
+        "Name": "CTCP Cấp nước Phúc Hưng Hải Dương",
+        "Url": "CTCP Cấp nước Phúc Hưng Hải Dương",
+        "AssetVolume": "3.900.000",
+        "AssetRate": "12,23",
+        "UpdatedDate": "09/09/2025"
+      },
+      {
+        "Code": "CEO_73085",
+        "Name": "Trần Hữu Định",
+        "Url": "<a href='/du-lieu/ceo/CEO_73085/tran-huu-dinh.chn'>Trần Hữu Định</a>",
+        "AssetVolume": "5.365",
+        "AssetRate": "0,02",
+        "UpdatedDate": "09/09/2025"
+      },
+      {
+        "Code": "CEO_873449",
+        "Name": "Trần Thị Huệ",
+        "Url": "<a href='/du-lieu/ceo/CEO_873449/tran-thi-hue.chn'>Trần Thị Huệ</a>",
+        "AssetVolume": "1.000",
+        "AssetRate": "0,0",
+        "UpdatedDate": "09/09/2025"
+      },
+      {
+        "Code": "CEO_53533",
+        "Name": "Vũ Mạnh Dũng",
+        "Url": "<a href='/du-lieu/ceo/CEO_53533/vu-manh-dung.chn'>Vũ Mạnh Dũng</a>",
+        "AssetVolume": "39.400",
+        "AssetRate": "0,12",
+        "UpdatedDate": "09/09/2025"
+      },
+      {
+        "Code": "CEO_53538",
+        "Name": "Trần Thị Thanh Ngân",
+        "Url": "<a href='/du-lieu/ceo/CEO_53538/tran-thi-thanh-ngan.chn'>Trần Thị Thanh Ngân</a>",
+        "AssetVolume": "11.851",
+        "AssetRate": "0,04",
+        "UpdatedDate": "09/09/2025"
+      },
+      {
+        "Code": "CEO_53536",
+        "Name": "Nguyễn Thị Hương",
+        "Url": "<a href='/du-lieu/ceo/CEO_53536/nguyen-thi-huong.chn'>Nguyễn Thị Hương</a>",
+        "AssetVolume": "24.325",
+        "AssetRate": "0,08",
+        "UpdatedDate": "09/09/2025"
+      },
+      {
+        "Code": "CORP_51280",
+        "Name": "UBND tỉnh Hải Dương",
+        "Url": "UBND tỉnh Hải Dương",
+        "AssetVolume": "20.723.606",
+        "AssetRate": "65,0",
+        "UpdatedDate": "09/09/2025"
+      },
+      {
+        "Code": "CEO_53535",
+        "Name": "Phạm Minh Cường",
+        "Url": "<a href='/du-lieu/ceo/CEO_53535/pham-minh-cuong.chn'>Phạm Minh Cường</a>",
+        "AssetVolume": "117.403",
+        "AssetRate": "0,37",
+        "UpdatedDate": "09/09/2025"
+      }
+    ],
+    "NuocNgoai": 0.04,
+    "NhaNuoc": 0,
+    "Khac": 99.96
+  },
+  "cong_ty_con": [],
+  "cong_ty_lien_ket": [],
+  "giao_dich_noi_bo": [
+    {
+      "transaction_name": "Nguyễn Bá Quyết",
+      "transaction_position": "Em rể",
+      "leader_name": "Vũ Mạnh Dũng",
+      "leader_position": "Chủ tịch HĐQT",
+      "volume_before": 171200,
+      "plan_buy": 60000,
+      "plan_sell": 0,
+      "plan_begin_date": "2023-10-03",
+      "plan_end_date": "2023-10-30",
+      "real_buy": 54600,
+      "real_sell": 0,
+      "real_end_date": "2023-10-04",
+      "published_date": "2023-10-10",
+      "volume_after": 225800
+    }
+  ]
+}

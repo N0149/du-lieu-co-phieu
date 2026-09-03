@@ -1,0 +1,135 @@
+{
+  "symbol": "CQN",
+  "updated": "2026-06-01T07:00:37.000Z",
+  "co_cau_so_huu": {
+    "CoDongSoHuu": [
+      {
+        "Code": "CEO_58811",
+        "Name": "Đinh Anh Tuấn",
+        "Url": "<a href='/du-lieu/ceo/CEO_58811/dinh-anh-tuan.chn'>Đinh Anh Tuấn</a>",
+        "AssetVolume": "19.041",
+        "AssetRate": "0,03",
+        "UpdatedDate": "13/06/2025"
+      },
+      {
+        "Code": "TNTGROUP",
+        "Name": "Công ty cổ phần Cảng Quảng Ninh",
+        "Url": "<a href='/du-lieu/otc/TNTGROUP-ctcp-tap-doan-tt.chn' title='CTCP Tập đoàn T&T'>CTCP Tập đoàn T&T</a>",
+        "AssetVolume": "58.369.435",
+        "AssetRate": "77,77",
+        "UpdatedDate": "13/06/2025"
+      },
+      {
+        "Code": "CEO_58813",
+        "Name": "Quách Đình Phú",
+        "Url": "<a href='/du-lieu/ceo/CEO_58813/quach-dinh-phu.chn'>Quách Đình Phú</a>",
+        "AssetVolume": "14.922",
+        "AssetRate": "0,02",
+        "UpdatedDate": "13/06/2025"
+      },
+      {
+        "Code": "CEO_75822",
+        "Name": "Bùi Quang Đạo",
+        "Url": "<a href='/du-lieu/ceo/CEO_75822/bui-quang-dao.chn'>Bùi Quang Đạo</a>",
+        "AssetVolume": "40.868",
+        "AssetRate": "0,05",
+        "UpdatedDate": "13/06/2025"
+      },
+      {
+        "Code": "CEO_58812",
+        "Name": "Hoàng Trọng Tùng",
+        "Url": "<a href='/du-lieu/ceo/CEO_58812/hoang-trong-tung.chn'>Hoàng Trọng Tùng</a>",
+        "AssetVolume": "12.400",
+        "AssetRate": "0,02",
+        "UpdatedDate": "13/06/2025"
+      }
+    ],
+    "NuocNgoai": 49,
+    "NhaNuoc": 0,
+    "Khac": 51
+  },
+  "cong_ty_con": [],
+  "cong_ty_lien_ket": [],
+  "giao_dich_noi_bo": [
+    {
+      "transaction_name": "CTCP Tập đoàn T&amp;T",
+      "transaction_position": "",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 64369435,
+      "plan_buy": 0,
+      "plan_sell": 6000000,
+      "plan_begin_date": "2022-03-30",
+      "plan_end_date": "2022-04-28",
+      "real_buy": 0,
+      "real_sell": 6000000,
+      "real_end_date": "2022-04-06",
+      "published_date": "2022-03-29",
+      "volume_after": 58369435
+    },
+    {
+      "transaction_name": "CTCP Tập đoàn T&amp;T",
+      "transaction_position": "",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 71169435,
+      "plan_buy": 0,
+      "plan_sell": 6800000,
+      "plan_begin_date": "2022-01-04",
+      "plan_end_date": "2022-01-26",
+      "real_buy": 0,
+      "real_sell": 6800000,
+      "real_end_date": "2022-01-12",
+      "published_date": "2021-12-28",
+      "volume_after": 64369435
+    },
+    {
+      "transaction_name": "CTCP Tập đoàn T&amp;T",
+      "transaction_position": "",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 73769435,
+      "plan_buy": 0,
+      "plan_sell": 2600000,
+      "plan_begin_date": "2021-06-10",
+      "plan_end_date": "2021-07-08",
+      "real_buy": 0,
+      "real_sell": 2600000,
+      "real_end_date": "2021-06-15",
+      "published_date": "2021-06-16",
+      "volume_after": 71169435
+    },
+    {
+      "transaction_name": "CTCP Tập đoàn T&amp;T",
+      "transaction_position": "",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 73769435,
+      "plan_buy": 0,
+      "plan_sell": 2600000,
+      "plan_begin_date": "2021-04-27",
+      "plan_end_date": "2021-05-26",
+      "real_buy": 0,
+      "real_sell": 0,
+      "real_end_date": "2021-05-26",
+      "published_date": "2021-05-05",
+      "volume_after": 73769435
+    },
+    {
+      "transaction_name": "Công ty cổ phần Đầu tư và Khoáng sản Hợp Thành",
+      "transaction_position": "",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 34846186,
+      "plan_buy": 0,
+      "plan_sell": 0,
+      "plan_begin_date": "",
+      "plan_end_date": "",
+      "real_buy": 0,
+      "real_sell": 3312894,
+      "real_end_date": "2016-11-02",
+      "published_date": "2016-11-17",
+      "volume_after": 31533292
+    }
+  ]
+}

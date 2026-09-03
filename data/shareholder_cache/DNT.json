@@ -1,0 +1,211 @@
+{
+  "symbol": "DNT",
+  "updated": "2026-03-22T03:15:22.000Z",
+  "co_cau_so_huu": {
+    "CoDongSoHuu": [
+      {
+        "Code": "CEO_54215",
+        "Name": "Nguyễn Hồng Quân",
+        "Url": "<a href='/du-lieu/ceo/CEO_54215/nguyen-hong-quan.chn'>Nguyễn Hồng Quân</a>",
+        "AssetVolume": "1.000",
+        "AssetRate": "0,01",
+        "UpdatedDate": "25/12/2025"
+      },
+      {
+        "Code": "CEO_06641",
+        "Name": "Nguyễn Minh Thức",
+        "Url": "<a href='/du-lieu/ceo/CEO_06641/nguyen-minh-thuc.chn'>Nguyễn Minh Thức</a>",
+        "AssetVolume": "10.150",
+        "AssetRate": "0,14",
+        "UpdatedDate": "25/12/2025"
+      },
+      {
+        "Code": "CORP_00744",
+        "Name": "Công ty TNHH Thanh Bình",
+        "Url": "Công ty TNHH Thanh Bình",
+        "AssetVolume": "1.231.400",
+        "AssetRate": "16,91",
+        "UpdatedDate": "25/12/2025"
+      },
+      {
+        "Code": "CEO_57722",
+        "Name": "Phạm Văn Tâm",
+        "Url": "<a href='/du-lieu/ceo/CEO_57722/pham-van-tam.chn'>Phạm Văn Tâm</a>",
+        "AssetVolume": "750",
+        "AssetRate": "0,01",
+        "UpdatedDate": "25/12/2025"
+      },
+      {
+        "Code": "CEO_50611",
+        "Name": "Huỳnh Quốc Bảo",
+        "Url": "<a href='/du-lieu/ceo/CEO_50611/huynh-quoc-bao.chn'>Huỳnh Quốc Bảo</a>",
+        "AssetVolume": "150",
+        "AssetRate": "0,0",
+        "UpdatedDate": "25/12/2025"
+      },
+      {
+        "Code": "CEO_51614",
+        "Name": "Nguyễn Văn An",
+        "Url": "<a href='/du-lieu/ceo/CEO_51614/nguyen-van-an.chn'>Nguyễn Văn An</a>",
+        "AssetVolume": "9.000",
+        "AssetRate": "0,12",
+        "UpdatedDate": "25/12/2025"
+      },
+      {
+        "Code": "CEO_04135",
+        "Name": "Huỳnh Thị Bích Phượng",
+        "Url": "<a href='/du-lieu/ceo/CEO_04135/huynh-thi-bich-phuong.chn'>Huỳnh Thị Bích Phượng</a>",
+        "AssetVolume": "794.250",
+        "AssetRate": "10,91",
+        "UpdatedDate": "25/12/2025"
+      },
+      {
+        "Code": "CEO_57723",
+        "Name": "Đặng Thị Tố Ngân",
+        "Url": "<a href='/du-lieu/ceo/CEO_57723/dang-thi-to-ngan.chn'>Đặng Thị Tố Ngân</a>",
+        "AssetVolume": "200",
+        "AssetRate": "0,0",
+        "UpdatedDate": "25/12/2025"
+      },
+      {
+        "Code": "CORP_51479",
+        "Name": "Công ty TNHH MTV Đầu tư Phát triển Bửu Long",
+        "Url": "Công ty TNHH MTV Đầu tư Phát triển Bửu Long",
+        "AssetVolume": "4.920.000",
+        "AssetRate": "67,57",
+        "UpdatedDate": "25/12/2025"
+      }
+    ],
+    "NuocNgoai": 49,
+    "NhaNuoc": 0,
+    "Khac": 51
+  },
+  "cong_ty_con": [],
+  "cong_ty_lien_ket": [
+    {
+      "Symbol": "DNT",
+      "CorpCode": "CORP_52073",
+      "Name": "CTCP Khách sạn Vĩnh An",
+      "TotalCapital": 0,
+      "SharedCapital": 0,
+      "OwnershipRate": 36.87,
+      "Note": "",
+      "Order": 1,
+      "TradeCenter": ""
+    }
+  ],
+  "giao_dich_noi_bo": [
+    {
+      "transaction_name": "Công ty TNHH Thanh Bình",
+      "transaction_position": "",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 1219500,
+      "plan_buy": 20000,
+      "plan_sell": 0,
+      "plan_begin_date": "2025-06-16",
+      "plan_end_date": "2025-07-11",
+      "real_buy": 11900,
+      "real_sell": 0,
+      "real_end_date": "2025-07-11",
+      "published_date": "2025-06-16",
+      "volume_after": 1231400
+    },
+    {
+      "transaction_name": "Công ty TNHH Thanh Bình",
+      "transaction_position": "",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 1219500,
+      "plan_buy": 0,
+      "plan_sell": 1219500,
+      "plan_begin_date": "2023-10-20",
+      "plan_end_date": "2023-11-17",
+      "real_buy": 0,
+      "real_sell": 0,
+      "real_end_date": "2023-11-17",
+      "published_date": "2023-11-21",
+      "volume_after": 1219500
+    },
+    {
+      "transaction_name": "Huỳnh Thị Bích Phượng",
+      "transaction_position": "Phó Tổng GĐ",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 99500,
+      "plan_buy": 500000,
+      "plan_sell": 0,
+      "plan_begin_date": "2013-05-02",
+      "plan_end_date": "2013-05-31",
+      "real_buy": 0,
+      "real_sell": 0,
+      "real_end_date": "2013-05-31",
+      "published_date": "2013-06-07",
+      "volume_after": 0
+    },
+    {
+      "transaction_name": "Ngân hàng Thương mại Cổ phần Sài Gòn Thương Tín",
+      "transaction_position": "",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 658550,
+      "plan_buy": 0,
+      "plan_sell": 658550,
+      "plan_begin_date": "2012-04-27",
+      "plan_end_date": "2012-06-25",
+      "real_buy": 0,
+      "real_sell": 658550,
+      "real_end_date": "2012-05-08",
+      "published_date": "2012-04-26",
+      "volume_after": 0
+    },
+    {
+      "transaction_name": "Huỳnh Thị Bích Phượng",
+      "transaction_position": "Phó Tổng GĐ",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 755500,
+      "plan_buy": 2000,
+      "plan_sell": 0,
+      "plan_begin_date": "2012-01-17",
+      "plan_end_date": "2012-03-16",
+      "real_buy": 0,
+      "real_sell": 0,
+      "real_end_date": "",
+      "published_date": "2012-01-16",
+      "volume_after": 0
+    },
+    {
+      "transaction_name": "Huỳnh Thị Bích Phượng",
+      "transaction_position": "Phó Tổng GĐ",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 99400,
+      "plan_buy": 2000,
+      "plan_sell": 0,
+      "plan_begin_date": "2011-11-28",
+      "plan_end_date": "2011-12-30",
+      "real_buy": 0,
+      "real_sell": 0,
+      "real_end_date": "",
+      "published_date": "2011-11-24",
+      "volume_after": 0
+    },
+    {
+      "transaction_name": "Ngô Văn Chương",
+      "transaction_position": "CT.HĐQT - GĐ",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 3280000,
+      "plan_buy": 5100,
+      "plan_sell": 0,
+      "plan_begin_date": "2011-03-25",
+      "plan_end_date": "2011-03-31",
+      "real_buy": 0,
+      "real_sell": 0,
+      "real_end_date": "",
+      "published_date": "2011-03-24",
+      "volume_after": 0
+    }
+  ]
+}

@@ -1,0 +1,199 @@
+{
+  "symbol": "SZB",
+  "updated": "2026-08-01T05:56:11.000Z",
+  "co_cau_so_huu": {
+    "CoDongSoHuu": [
+      {
+        "Code": "CORP_00678",
+        "Name": "Quỹ Đầu tư Phát triển tỉnh Đồng Nai ",
+        "Url": "Quỹ Đầu tư Phát triển tỉnh Đồng Nai ",
+        "AssetVolume": "900.000",
+        "AssetRate": "3,0",
+        "UpdatedDate": "27/07/2026"
+      },
+      {
+        "Code": "SNZ",
+        "Name": "Tổng Công ty Cổ phần phát triển khu Công nghiệp",
+        "Url": "<a href='/du-lieu/upcom/SNZ-tong-cong-ty-co-phan-phat-trien-khu-cong-nghiep.chn' title='Tổng Công ty Cổ phần phát triển khu Công nghiệp'>Tổng Công ty Cổ phần phát triển khu Công nghiệp</a>",
+        "AssetVolume": "13.867.000",
+        "AssetRate": "46,22",
+        "UpdatedDate": "27/07/2026"
+      },
+      {
+        "Code": "SZC",
+        "Name": "Công ty cổ phần Sonadezi Châu Đức",
+        "Url": "<a href='/du-lieu/hose/SZC-cong-ty-co-phan-sonadezi-chau-duc.chn' title='Công ty cổ phần Sonadezi Châu Đức'>Công ty cổ phần Sonadezi Châu Đức</a>",
+        "AssetVolume": "1.260.725",
+        "AssetRate": "4,2",
+        "UpdatedDate": "27/07/2026"
+      },
+      {
+        "Code": "CEO_05280",
+        "Name": "Lương Minh Hiền",
+        "Url": "<a href='/du-lieu/ceo/CEO_05280/luong-minh-hien.chn'>Lương Minh Hiền</a>",
+        "AssetVolume": "333.424",
+        "AssetRate": "1,11",
+        "UpdatedDate": "27/07/2026"
+      },
+      {
+        "Code": "CEO_65608",
+        "Name": "Nguyễn Bá Chuyên",
+        "Url": "<a href='/du-lieu/ceo/CEO_65608/nguyen-ba-chuyen.chn'>Nguyễn Bá Chuyên</a>",
+        "AssetVolume": "240.300",
+        "AssetRate": "0,8",
+        "UpdatedDate": "27/07/2026"
+      },
+      {
+        "Code": "CORP_53257",
+        "Name": "America LLC",
+        "Url": "America LLC",
+        "AssetVolume": "1.802.100",
+        "AssetRate": "6,01",
+        "UpdatedDate": "27/07/2026"
+      },
+      {
+        "Code": "CEO_65610",
+        "Name": "Lê Thị Ngọc Sáu",
+        "Url": "<a href='/du-lieu/ceo/CEO_65610/le-thi-ngoc-sau.chn'>Lê Thị Ngọc Sáu</a>",
+        "AssetVolume": "28.400",
+        "AssetRate": "0,09",
+        "UpdatedDate": "27/07/2026"
+      },
+      {
+        "Code": "SZL",
+        "Name": "Công ty cổ phần Sonadezi Long Thành",
+        "Url": "<a href='/du-lieu/hose/SZL-cong-ty-co-phan-sonadezi-long-thanh.chn' title='Công ty cổ phần Sonadezi Long Thành'>Công ty cổ phần Sonadezi Long Thành</a>",
+        "AssetVolume": "2.521.456",
+        "AssetRate": "8,4",
+        "UpdatedDate": "27/07/2026"
+      },
+      {
+        "Code": "CEO_65751",
+        "Name": "Đặng Thị Ngọc Hà",
+        "Url": "<a href='/du-lieu/ceo/CEO_65751/dang-thi-ngoc-ha.chn'>Đặng Thị Ngọc Hà</a>",
+        "AssetVolume": "9.000",
+        "AssetRate": "0,03",
+        "UpdatedDate": "27/07/2026"
+      },
+      {
+        "Code": "CEO_65609",
+        "Name": "Hà Quang Chấn",
+        "Url": "<a href='/du-lieu/ceo/CEO_65609/ha-quang-chan.chn'>Hà Quang Chấn</a>",
+        "AssetVolume": "25.900",
+        "AssetRate": "0,09",
+        "UpdatedDate": "27/07/2026"
+      },
+      {
+        "Code": "LQ_92284",
+        "Name": "Trần Trung Chiến",
+        "Url": "Trần Trung Chiến (Chồng của bà <a href='/du-lieu/ceo/CEO_05280/luong-minh-hien.chn'>Lương Minh Hiền</a>)",
+        "AssetVolume": "850.500",
+        "AssetRate": "2,84",
+        "UpdatedDate": "27/07/2026"
+      }
+    ],
+    "NuocNgoai": 6.86,
+    "NhaNuoc": 0,
+    "Khac": 93.14
+  },
+  "cong_ty_con": [],
+  "cong_ty_lien_ket": [],
+  "giao_dich_noi_bo": [
+    {
+      "transaction_name": "Nguyễn Bá Chuyên",
+      "transaction_position": "Phó Tổng GĐ",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 170300,
+      "plan_buy": 100000,
+      "plan_sell": 0,
+      "plan_begin_date": "2024-01-04",
+      "plan_end_date": "2024-02-01",
+      "real_buy": 70000,
+      "real_sell": 0,
+      "real_end_date": "2024-01-29",
+      "published_date": "2024-01-03",
+      "volume_after": 240300
+    },
+    {
+      "transaction_name": "CTCP Đầu tư Xây dựng và Vật liệu Đồng Nai",
+      "transaction_position": "",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 42024,
+      "plan_buy": 0,
+      "plan_sell": 42024,
+      "plan_begin_date": "2023-05-23",
+      "plan_end_date": "2023-06-16",
+      "real_buy": 0,
+      "real_sell": 42024,
+      "real_end_date": "2023-06-05",
+      "published_date": "2023-05-24",
+      "volume_after": 0
+    },
+    {
+      "transaction_name": "Nguyễn Mạnh Thắng",
+      "transaction_position": "Em rể",
+      "leader_name": "Lương Minh Hiền",
+      "leader_position": "Chủ tịch HĐQT",
+      "volume_before": 300600,
+      "plan_buy": 0,
+      "plan_sell": 0,
+      "plan_begin_date": "",
+      "plan_end_date": "",
+      "real_buy": 0,
+      "real_sell": 278600,
+      "real_end_date": "2022-12-30",
+      "published_date": "2023-02-09",
+      "volume_after": 22000
+    },
+    {
+      "transaction_name": "Trần Trung Chiến",
+      "transaction_position": "Chồng",
+      "leader_name": "Lương Minh Hiền",
+      "leader_position": "Thành viên HĐQT",
+      "volume_before": 500000,
+      "plan_buy": 500000,
+      "plan_sell": 0,
+      "plan_begin_date": "2021-06-25",
+      "plan_end_date": "2021-07-23",
+      "real_buy": 350500,
+      "real_sell": 0,
+      "real_end_date": "2021-07-23",
+      "published_date": "2021-06-28",
+      "volume_after": 850500
+    },
+    {
+      "transaction_name": "America LLC",
+      "transaction_position": "",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 1798400,
+      "plan_buy": 0,
+      "plan_sell": 0,
+      "plan_begin_date": "",
+      "plan_end_date": "",
+      "real_buy": 3700,
+      "real_sell": 0,
+      "real_end_date": "2021-03-02",
+      "published_date": "2021-03-12",
+      "volume_after": 1802100
+    },
+    {
+      "transaction_name": "America LLC",
+      "transaction_position": "",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 1484800,
+      "plan_buy": 0,
+      "plan_sell": 0,
+      "plan_begin_date": "",
+      "plan_end_date": "",
+      "real_buy": 24500,
+      "real_sell": 0,
+      "real_end_date": "2021-01-20",
+      "published_date": "2021-01-28",
+      "volume_after": 1509300
+    }
+  ]
+}

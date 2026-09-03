@@ -1,0 +1,107 @@
+{
+  "symbol": "EIN",
+  "updated": "2026-03-22T03:15:54.000Z",
+  "co_cau_so_huu": {
+    "CoDongSoHuu": [
+      {
+        "Code": "CORP_51021",
+        "Name": "Công ty CP Giải pháp Đầu tư Thái Sơn",
+        "Url": "Công ty CP Giải pháp Đầu tư Thái Sơn",
+        "AssetVolume": "9.121.764",
+        "AssetRate": "20,09",
+        "UpdatedDate": "21/10/2022"
+      },
+      {
+        "Code": "CORP_52269",
+        "Name": "CTCP Công nghệ và Thiết bị điện Hà Nội",
+        "Url": "CTCP Công nghệ và Thiết bị điện Hà Nội",
+        "AssetVolume": "15.000.000",
+        "AssetRate": "33,03",
+        "UpdatedDate": "31/12/2021"
+      }
+    ],
+    "NuocNgoai": 0.03,
+    "NhaNuoc": 0,
+    "Khac": 99.97
+  },
+  "cong_ty_con": [
+    {
+      "Symbol": "EIN",
+      "CorpCode": "CORP_51022",
+      "Name": "Công ty TNHH MTV Dịch vụ lữ hành cuộc sống  Việt",
+      "TotalCapital": 7,
+      "SharedCapital": 7,
+      "OwnershipRate": 100,
+      "Note": "",
+      "Order": 1,
+      "TradeCenter": ""
+    }
+  ],
+  "cong_ty_lien_ket": [],
+  "giao_dich_noi_bo": [
+    {
+      "transaction_name": "Công ty CP Giải pháp Đầu tư Thái Sơn",
+      "transaction_position": "",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 7712064,
+      "plan_buy": 0,
+      "plan_sell": 0,
+      "plan_begin_date": "",
+      "plan_end_date": "",
+      "real_buy": 1409700,
+      "real_sell": 0,
+      "real_end_date": "2022-10-20",
+      "published_date": "2022-10-26",
+      "volume_after": 9121764
+    },
+    {
+      "transaction_name": "Công ty CP Giải pháp Đầu tư Thái Sơn",
+      "transaction_position": "",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 9212064,
+      "plan_buy": 0,
+      "plan_sell": 0,
+      "plan_begin_date": "",
+      "plan_end_date": "",
+      "real_buy": 0,
+      "real_sell": 1500000,
+      "real_end_date": "2022-10-18",
+      "published_date": "2022-10-26",
+      "volume_after": 7712064
+    },
+    {
+      "transaction_name": "Nguyễn Duy Tân",
+      "transaction_position": "Thành viên HĐQT",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 15000,
+      "plan_buy": 0,
+      "plan_sell": 0,
+      "plan_begin_date": "",
+      "plan_end_date": "",
+      "real_buy": 0,
+      "real_sell": 15000,
+      "real_end_date": "2021-03-09",
+      "published_date": "2021-03-16",
+      "volume_after": 0
+    },
+    {
+      "transaction_name": "Nguyễn Duy Tân",
+      "transaction_position": "Thành viên HĐQT",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 0,
+      "plan_buy": 0,
+      "plan_sell": 0,
+      "plan_begin_date": "",
+      "plan_end_date": "",
+      "real_buy": 15000,
+      "real_sell": 0,
+      "real_end_date": "2021-03-04",
+      "published_date": "2021-03-16",
+      "volume_after": 15000
+    }
+  ]
+}

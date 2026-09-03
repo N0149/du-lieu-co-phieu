@@ -1,0 +1,628 @@
+{
+  "symbol": "VIF",
+  "updated": "2026-06-01T07:34:52.000Z",
+  "co_cau_so_huu": {
+    "CoDongSoHuu": [
+      {
+        "Code": "CEO_98612",
+        "Name": "Vũ Văn Hường",
+        "Url": "<a href='/du-lieu/ceo/CEO_98612/vu-van-huong.chn'>Vũ Văn Hường</a>",
+        "AssetVolume": "2.000",
+        "AssetRate": "0,0",
+        "UpdatedDate": "21/07/2025"
+      },
+      {
+        "Code": "CEO_98608",
+        "Name": "Phí Mạnh Cường",
+        "Url": "<a href='/du-lieu/ceo/CEO_98608/phi-manh-cuong.chn'>Phí Mạnh Cường</a>",
+        "AssetVolume": "2.500",
+        "AssetRate": "0,0",
+        "UpdatedDate": "21/07/2025"
+      },
+      {
+        "Code": "CEO_98609",
+        "Name": "Nguyễn Tấn Cường",
+        "Url": "<a href='/du-lieu/ceo/CEO_98609/nguyen-tan-cuong.chn'>Nguyễn Tấn Cường</a>",
+        "AssetVolume": "3.600",
+        "AssetRate": "0,0",
+        "UpdatedDate": "21/07/2025"
+      },
+      {
+        "Code": "CEO_66303",
+        "Name": "Hồ Thị Thanh Huyền",
+        "Url": "<a href='/du-lieu/ceo/CEO_66303/ho-thi-thanh-huyen.chn'>Hồ Thị Thanh Huyền</a>",
+        "AssetVolume": "7.000",
+        "AssetRate": "0,0",
+        "UpdatedDate": "21/07/2025"
+      },
+      {
+        "Code": "CORP_00772",
+        "Name": "Bộ Tài chính",
+        "Url": "Bộ Tài chính",
+        "AssetVolume": "178.500.000",
+        "AssetRate": "51,0",
+        "UpdatedDate": "21/07/2025"
+      },
+      {
+        "Code": "TNTGROUP",
+        "Name": "Tổng Công ty Lâm nghiệp Việt Nam - CTCP",
+        "Url": "<a href='/du-lieu/otc/TNTGROUP-ctcp-tap-doan-tt.chn' title='CTCP Tập đoàn T&T'>CTCP Tập đoàn T&T</a>",
+        "AssetVolume": "140.000.000",
+        "AssetRate": "40,0",
+        "UpdatedDate": "21/07/2025"
+      },
+      {
+        "Code": "CEO_98615",
+        "Name": "Ngô Thị Thúy Mai",
+        "Url": "<a href='/du-lieu/ceo/CEO_98615/ngo-thi-thuy-mai.chn'>Ngô Thị Thúy Mai</a>",
+        "AssetVolume": "4.000",
+        "AssetRate": "0,0",
+        "UpdatedDate": "21/07/2025"
+      },
+      {
+        "Code": "CEO_66372",
+        "Name": "Nguyễn Khương Lâm",
+        "Url": "<a href='/du-lieu/ceo/CEO_66372/nguyen-khuong-lam.chn'>Nguyễn Khương Lâm</a>",
+        "AssetVolume": "4.600",
+        "AssetRate": "0,0",
+        "UpdatedDate": "21/07/2025"
+      },
+      {
+        "Code": "CEO_98616",
+        "Name": "Nguyễn Trung Kiên",
+        "Url": "<a href='/du-lieu/ceo/CEO_98616/nguyen-trung-kien.chn'>Nguyễn Trung Kiên</a>",
+        "AssetVolume": "2.700",
+        "AssetRate": "0,0",
+        "UpdatedDate": "21/07/2025"
+      },
+      {
+        "Code": "CEO_56870",
+        "Name": "Đào Quốc Hoàn",
+        "Url": "<a href='/du-lieu/ceo/CEO_56870/dao-quoc-hoan.chn'>Đào Quốc Hoàn</a>",
+        "AssetVolume": "3.600",
+        "AssetRate": "0,0",
+        "UpdatedDate": "21/07/2025"
+      },
+      {
+        "Code": "CEO_84315",
+        "Name": "Mai Quý Quảng",
+        "Url": "<a href='/du-lieu/ceo/CEO_84315/mai-quy-quang.chn'>Mai Quý Quảng</a>",
+        "AssetVolume": "14.400",
+        "AssetRate": "0,0",
+        "UpdatedDate": "21/07/2025"
+      },
+      {
+        "Code": "CEO_98617",
+        "Name": "Nguyễn Thị Phương Loan",
+        "Url": "<a href='/du-lieu/ceo/CEO_98617/nguyen-thi-phuong-loan.chn'>Nguyễn Thị Phương Loan</a>",
+        "AssetVolume": "115.900",
+        "AssetRate": "0,03",
+        "UpdatedDate": "21/07/2025"
+      }
+    ],
+    "NuocNgoai": 49,
+    "NhaNuoc": 0,
+    "Khac": 51
+  },
+  "cong_ty_con": [
+    {
+      "Symbol": "VIF",
+      "CorpCode": "CORP_99790",
+      "Name": "Công ty TNHH MTV Lâm Nghiệp Đình Lập",
+      "TotalCapital": 66.5,
+      "SharedCapital": 66.5,
+      "OwnershipRate": 100,
+      "Note": "",
+      "Order": 1,
+      "TradeCenter": ""
+    },
+    {
+      "Symbol": "VIF",
+      "CorpCode": "CORP_99791",
+      "Name": "Công ty TNHH MTV Lâm Nghiệp Ba Tơ",
+      "TotalCapital": 42,
+      "SharedCapital": 42,
+      "OwnershipRate": 100,
+      "Note": "",
+      "Order": 2,
+      "TradeCenter": ""
+    },
+    {
+      "Symbol": "VIF",
+      "CorpCode": "CORP_99792",
+      "Name": "Công ty TNHH MTV Lâm Nghiệp Đông Bắc",
+      "TotalCapital": 46.1,
+      "SharedCapital": 46.1,
+      "OwnershipRate": 100,
+      "Note": "",
+      "Order": 3,
+      "TradeCenter": ""
+    },
+    {
+      "Symbol": "VIF",
+      "CorpCode": "CORP_99793",
+      "Name": "Công ty TNHH MTV Lâm Nghiệp Lộc Bình",
+      "TotalCapital": 83.5,
+      "SharedCapital": 83.5,
+      "OwnershipRate": 100,
+      "Note": "",
+      "Order": 4,
+      "TradeCenter": ""
+    },
+    {
+      "Symbol": "VIF",
+      "CorpCode": "CORP_99794",
+      "Name": "Công ty TNHH MTV Lâm Nghiệp La Ngà - Đồng Nai",
+      "TotalCapital": 134,
+      "SharedCapital": 134,
+      "OwnershipRate": 100,
+      "Note": "",
+      "Order": 5,
+      "TradeCenter": ""
+    },
+    {
+      "Symbol": "VIF",
+      "CorpCode": "CORP_99962",
+      "Name": "Công ty TNHH MTV Ván dán Vinafor Bắc Giang",
+      "TotalCapital": 63,
+      "SharedCapital": 63,
+      "OwnershipRate": 100,
+      "Note": "",
+      "Order": 6,
+      "TradeCenter": ""
+    },
+    {
+      "Symbol": "VIF",
+      "CorpCode": "CORP_99801",
+      "Name": "CTCP LĐS và XNK Hà Tĩnh",
+      "TotalCapital": 2.7,
+      "SharedCapital": 2.3,
+      "OwnershipRate": 85,
+      "Note": "",
+      "Order": 7,
+      "TradeCenter": ""
+    },
+    {
+      "Symbol": "VIF",
+      "CorpCode": "CORP_99803",
+      "Name": "CTCP GLN Vùng Bắc Bộ",
+      "TotalCapital": 2.1,
+      "SharedCapital": 1.68,
+      "OwnershipRate": 79.86,
+      "Note": "",
+      "Order": 8,
+      "TradeCenter": ""
+    },
+    {
+      "Symbol": "VIF",
+      "CorpCode": "CORP_99802",
+      "Name": "CTCP GLN Vùng Bắc Trung Bộ",
+      "TotalCapital": 2.825,
+      "SharedCapital": 2.06,
+      "OwnershipRate": 73.04,
+      "Note": "",
+      "Order": 9,
+      "TradeCenter": ""
+    },
+    {
+      "Symbol": "VIF",
+      "CorpCode": "CORP_99798",
+      "Name": "CTCP Vinafor Tây Nguyên",
+      "TotalCapital": 12.195,
+      "SharedCapital": 8.36,
+      "OwnershipRate": 68.59,
+      "Note": "",
+      "Order": 10,
+      "TradeCenter": ""
+    },
+    {
+      "Symbol": "VIF",
+      "CorpCode": "CORP_99807",
+      "Name": "CTCP GLN Vùng Đông Bắc",
+      "TotalCapital": 1.6,
+      "SharedCapital": 1.08,
+      "OwnershipRate": 67.69,
+      "Note": "",
+      "Order": 11,
+      "TradeCenter": ""
+    },
+    {
+      "Symbol": "VIF",
+      "CorpCode": "CORP_99799",
+      "Name": "CTCP Long Bình",
+      "TotalCapital": 9,
+      "SharedCapital": 5.57,
+      "OwnershipRate": 61.89,
+      "Note": "",
+      "Order": 12,
+      "TradeCenter": ""
+    },
+    {
+      "Symbol": "VIF",
+      "CorpCode": "CORP_99805",
+      "Name": "CTCP GLN Vùng Nam Trung Bộ",
+      "TotalCapital": 2.197,
+      "SharedCapital": 1.14,
+      "OwnershipRate": 51.84,
+      "Note": "",
+      "Order": 13,
+      "TradeCenter": ""
+    },
+    {
+      "Symbol": "VIF",
+      "CorpCode": "CORP_99796",
+      "Name": "Công ty Sx và XNK Lâm sản Sài Gòn",
+      "TotalCapital": 24,
+      "SharedCapital": 12.41,
+      "OwnershipRate": 51.69,
+      "Note": "",
+      "Order": 14,
+      "TradeCenter": ""
+    },
+    {
+      "Symbol": "VIF",
+      "CorpCode": "CORP_99797",
+      "Name": "CTCP Vinafor Đà Nẵng",
+      "TotalCapital": 20.183,
+      "SharedCapital": 10.3,
+      "OwnershipRate": 51.01,
+      "Note": "",
+      "Order": 15,
+      "TradeCenter": ""
+    },
+    {
+      "Symbol": "VIF",
+      "CorpCode": "CORP_99800",
+      "Name": "CTCP GLN Vùng Nam Bộ",
+      "TotalCapital": 10,
+      "SharedCapital": 5.1,
+      "OwnershipRate": 51,
+      "Note": "",
+      "Order": 16,
+      "TradeCenter": ""
+    },
+    {
+      "Symbol": "VIF",
+      "CorpCode": "CORP_99806",
+      "Name": "CTCP GLN Vùng Tây Nguyên",
+      "TotalCapital": 9.9,
+      "SharedCapital": 5.05,
+      "OwnershipRate": 51,
+      "Note": "",
+      "Order": 17,
+      "TradeCenter": ""
+    },
+    {
+      "Symbol": "VIF",
+      "CorpCode": "CHC",
+      "Name": "Công ty Cổ phần Cẩm Hà",
+      "TotalCapital": 67.3159,
+      "SharedCapital": 34.3332,
+      "OwnershipRate": 51,
+      "Note": "",
+      "Order": 18,
+      "TradeCenter": "UpCOM"
+    }
+  ],
+  "cong_ty_lien_ket": [
+    {
+      "Symbol": "VIF",
+      "CorpCode": "CORP_51867",
+      "Name": "CTCP 19/5 Đoan Hùng",
+      "TotalCapital": 4,
+      "SharedCapital": 1.96,
+      "OwnershipRate": 49.01,
+      "Note": "",
+      "Order": 19,
+      "TradeCenter": ""
+    },
+    {
+      "Symbol": "VIF",
+      "CorpCode": "CORP_51853",
+      "Name": "Công ty TNHH Việt Nhật chế biến gỗ & dăm gỗ Dung Quất",
+      "TotalCapital": 13.458,
+      "SharedCapital": 6.59,
+      "OwnershipRate": 49,
+      "Note": "",
+      "Order": 20,
+      "TradeCenter": ""
+    },
+    {
+      "Symbol": "VIF",
+      "CorpCode": "CORP_51855",
+      "Name": "Công ty TNHH Sản xuất NLG Việt Nhật Cái Lân",
+      "TotalCapital": 32.645,
+      "SharedCapital": 16,
+      "OwnershipRate": 49,
+      "Note": "",
+      "Order": 21,
+      "TradeCenter": ""
+    },
+    {
+      "Symbol": "VIF",
+      "CorpCode": "CORP_51872",
+      "Name": "CTCP Giống Lâm nghiệp Trung ương",
+      "TotalCapital": 2,
+      "SharedCapital": 0.96,
+      "OwnershipRate": 48.1,
+      "Note": "",
+      "Order": 22,
+      "TradeCenter": ""
+    },
+    {
+      "Symbol": "VIF",
+      "CorpCode": "CORP_51863",
+      "Name": "CTCP Cờ đỏ",
+      "TotalCapital": 9.386,
+      "SharedCapital": 4.3,
+      "OwnershipRate": 45.78,
+      "Note": "",
+      "Order": 23,
+      "TradeCenter": ""
+    },
+    {
+      "Symbol": "VIF",
+      "CorpCode": "CORP_51856",
+      "Name": "Công ty TNHH Sản xuất NLG Việt Nhật Vũng Áng",
+      "TotalCapital": 32.645,
+      "SharedCapital": 13.06,
+      "OwnershipRate": 40,
+      "Note": "",
+      "Order": 24,
+      "TradeCenter": ""
+    },
+    {
+      "Symbol": "VIF",
+      "CorpCode": "CORP_51857",
+      "Name": "Công ty LD Nuôi và Phát triển Khỉ Việt Nam",
+      "TotalCapital": 41.854,
+      "SharedCapital": 16.74,
+      "OwnershipRate": 40,
+      "Note": "",
+      "Order": 25,
+      "TradeCenter": ""
+    },
+    {
+      "Symbol": "VIF",
+      "CorpCode": "CORP_51854",
+      "Name": "Công ty TNHH Sản xuất NLG Việt Nhật",
+      "TotalCapital": 55.718,
+      "SharedCapital": 22.27,
+      "OwnershipRate": 39.97,
+      "Note": "",
+      "Order": 26,
+      "TradeCenter": ""
+    },
+    {
+      "Symbol": "VIF",
+      "CorpCode": "CORP_51859",
+      "Name": "Công ty TNHH Việt Thành Thái",
+      "TotalCapital": 126,
+      "SharedCapital": 44.1,
+      "OwnershipRate": 35,
+      "Note": "",
+      "Order": 27,
+      "TradeCenter": ""
+    },
+    {
+      "Symbol": "VIF",
+      "CorpCode": "CORP_51873",
+      "Name": "CTCP Lâm đặc sản mây tre xuất khẩu",
+      "TotalCapital": 2.6,
+      "SharedCapital": 0.91,
+      "OwnershipRate": 35,
+      "Note": "",
+      "Order": 28,
+      "TradeCenter": ""
+    },
+    {
+      "Symbol": "VIF",
+      "CorpCode": "CORP_51866",
+      "Name": "Công ty cổ phần XKNLS Sài Gòn",
+      "TotalCapital": 8,
+      "SharedCapital": 2.4,
+      "OwnershipRate": 30,
+      "Note": "",
+      "Order": 29,
+      "TradeCenter": ""
+    },
+    {
+      "Symbol": "VIF",
+      "CorpCode": "YAMAHAVN",
+      "Name": "Công ty TNHH Yamaha Motor Việt Nam",
+      "TotalCapital": 0,
+      "SharedCapital": 161.716,
+      "OwnershipRate": 30,
+      "Note": "",
+      "Order": 30,
+      "TradeCenter": "OTC"
+    },
+    {
+      "Symbol": "VIF",
+      "CorpCode": "CORP_51860",
+      "Name": "CTCP Thương mại và Lâm sản Hà Nội",
+      "TotalCapital": 20,
+      "SharedCapital": 6,
+      "OwnershipRate": 30,
+      "Note": "",
+      "Order": 31,
+      "TradeCenter": ""
+    },
+    {
+      "Symbol": "VIF",
+      "CorpCode": "CORP_51861",
+      "Name": "CTCP Lâm nghiệp 19",
+      "TotalCapital": 21,
+      "SharedCapital": 6.3,
+      "OwnershipRate": 30,
+      "Note": "",
+      "Order": 32,
+      "TradeCenter": ""
+    },
+    {
+      "Symbol": "VIF",
+      "CorpCode": "CORP_51864",
+      "Name": "CTCP LN Miền Đông",
+      "TotalCapital": 9,
+      "SharedCapital": 2.7,
+      "OwnershipRate": 30,
+      "Note": "",
+      "Order": 33,
+      "TradeCenter": ""
+    },
+    {
+      "Symbol": "VIF",
+      "CorpCode": "CORP_51868",
+      "Name": "CTCP Kon Hà Nừng",
+      "TotalCapital": 6,
+      "SharedCapital": 1.8,
+      "OwnershipRate": 30,
+      "Note": "",
+      "Order": 34,
+      "TradeCenter": ""
+    },
+    {
+      "Symbol": "VIF",
+      "CorpCode": "CORP_51870",
+      "Name": "CTCP Gỗ lạng Buôn Ma Thuột",
+      "TotalCapital": 4,
+      "SharedCapital": 1.2,
+      "OwnershipRate": 30,
+      "Note": "",
+      "Order": 35,
+      "TradeCenter": ""
+    },
+    {
+      "Symbol": "VIF",
+      "CorpCode": "CORP_51871",
+      "Name": "CTCP XNK Naforimex Hà Nội",
+      "TotalCapital": 3.6,
+      "SharedCapital": 1.08,
+      "OwnershipRate": 30,
+      "Note": "",
+      "Order": 36,
+      "TradeCenter": ""
+    },
+    {
+      "Symbol": "VIF",
+      "CorpCode": "CORP_51874",
+      "Name": "CTCP Thương mại công nghiệp và chế biến gỗ",
+      "TotalCapital": 2.7,
+      "SharedCapital": 0.8,
+      "OwnershipRate": 29.69,
+      "Note": "",
+      "Order": 37,
+      "TradeCenter": ""
+    },
+    {
+      "Symbol": "VIF",
+      "CorpCode": "CORP_51862",
+      "Name": "CTCP Formach",
+      "TotalCapital": 13.045,
+      "SharedCapital": 3.62,
+      "OwnershipRate": 27.78,
+      "Note": "",
+      "Order": 38,
+      "TradeCenter": ""
+    },
+    {
+      "Symbol": "VIF",
+      "CorpCode": "CORP_51865",
+      "Name": "CTCP LS Forprodex",
+      "TotalCapital": 9.9,
+      "SharedCapital": 2.7,
+      "OwnershipRate": 27.25,
+      "Note": "",
+      "Order": 39,
+      "TradeCenter": ""
+    },
+    {
+      "Symbol": "VIF",
+      "CorpCode": "CORP_51858",
+      "Name": "Công ty TNHH NLG Quy Nhơn",
+      "TotalCapital": 9.5,
+      "SharedCapital": 2.09,
+      "OwnershipRate": 22,
+      "Note": "",
+      "Order": 40,
+      "TradeCenter": ""
+    },
+    {
+      "Symbol": "VIF",
+      "CorpCode": "CORP_51869",
+      "Name": "CTCP Xây lắp Đầu tư phát triển Nông lâm nghiệp Việt Nam",
+      "TotalCapital": 6.036,
+      "SharedCapital": 1.23,
+      "OwnershipRate": 20.33,
+      "Note": "",
+      "Order": 41,
+      "TradeCenter": ""
+    }
+  ],
+  "giao_dich_noi_bo": [
+    {
+      "transaction_name": "Nguyễn Khương Lâm",
+      "transaction_position": "Phó Tổng GĐ",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 4600,
+      "plan_buy": 0,
+      "plan_sell": 2600,
+      "plan_begin_date": "2024-07-09",
+      "plan_end_date": "2024-08-07",
+      "real_buy": 0,
+      "real_sell": 2600,
+      "real_end_date": "2024-08-07",
+      "published_date": "2024-08-26",
+      "volume_after": 4600
+    },
+    {
+      "transaction_name": "Vũ Văn Hường",
+      "transaction_position": "Phó Tổng GĐ",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 3700,
+      "plan_buy": 0,
+      "plan_sell": 1700,
+      "plan_begin_date": "2022-01-20",
+      "plan_end_date": "2022-01-28",
+      "real_buy": 0,
+      "real_sell": 1700,
+      "real_end_date": "2022-01-28",
+      "published_date": "2022-01-19",
+      "volume_after": 2000
+    },
+    {
+      "transaction_name": "Vũ Lê Lam",
+      "transaction_position": "Vợ",
+      "leader_name": "Mai Quý Quảng",
+      "leader_position": "Phụ trách Kế toán",
+      "volume_before": 23200,
+      "plan_buy": 0,
+      "plan_sell": 23200,
+      "plan_begin_date": "2018-02-05",
+      "plan_end_date": "2018-03-05",
+      "real_buy": 0,
+      "real_sell": 23200,
+      "real_end_date": "2018-02-27",
+      "published_date": "2018-02-02",
+      "volume_after": 0
+    },
+    {
+      "transaction_name": "Tổng Công ty cổ phần Bảo hiểm Sài Gòn – Hà Nội (BSH)",
+      "transaction_position": "",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 0,
+      "plan_buy": 0,
+      "plan_sell": 0,
+      "plan_begin_date": "",
+      "plan_end_date": "",
+      "real_buy": 16541000,
+      "real_sell": 0,
+      "real_end_date": "2017-02-24",
+      "published_date": "2017-03-03",
+      "volume_after": 16541000
+    }
+  ]
+}

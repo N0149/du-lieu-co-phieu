@@ -1,0 +1,426 @@
+{
+  "symbol": "VGG",
+  "updated": "2026-03-22T03:24:32.000Z",
+  "co_cau_so_huu": {
+    "CoDongSoHuu": [
+      {
+        "Code": "CEO_38363",
+        "Name": "Hồ Ngọc Huy",
+        "Url": "<a href='/du-lieu/ceo/CEO_38363/ho-ngoc-huy.chn'>Hồ Ngọc Huy</a>",
+        "AssetVolume": "19.210",
+        "AssetRate": "0,04",
+        "UpdatedDate": "08/12/2025"
+      },
+      {
+        "Code": "CEO_38364",
+        "Name": "Nguyễn Thị Tùng",
+        "Url": "<a href='/du-lieu/ceo/CEO_38364/nguyen-thi-tung.chn'>Nguyễn Thị Tùng</a>",
+        "AssetVolume": "25.610",
+        "AssetRate": "0,06",
+        "UpdatedDate": "08/12/2025"
+      },
+      {
+        "Code": "CEO_38365",
+        "Name": "Nguyễn Trâm Anh",
+        "Url": "<a href='/du-lieu/ceo/CEO_38365/nguyen-tram-anh.chn'>Nguyễn Trâm Anh</a>",
+        "AssetVolume": "63.010",
+        "AssetRate": "0,14",
+        "UpdatedDate": "08/12/2025"
+      },
+      {
+        "Code": "CEO_38360",
+        "Name": "Phan Văn Kiệt",
+        "Url": "<a href='/du-lieu/ceo/CEO_38360/phan-van-kiet.chn'>Phan Văn Kiệt</a>",
+        "AssetVolume": "22.329",
+        "AssetRate": "0,05",
+        "UpdatedDate": "08/12/2025"
+      },
+      {
+        "Code": "CEO_38361",
+        "Name": "Thạch Thị Phong Huyền",
+        "Url": "<a href='/du-lieu/ceo/CEO_38361/thach-thi-phong-huyen.chn'>Thạch Thị Phong Huyền</a>",
+        "AssetVolume": "34.500",
+        "AssetRate": "0,08",
+        "UpdatedDate": "08/12/2025"
+      },
+      {
+        "Code": "CORP_39054",
+        "Name": "South Island Garment SDN.BHD",
+        "Url": "South Island Garment SDN.BHD",
+        "AssetVolume": "6.415.000",
+        "AssetRate": "14,55",
+        "UpdatedDate": "08/12/2025"
+      },
+      {
+        "Code": "CEO_38359",
+        "Name": "Trần Minh Công",
+        "Url": "<a href='/du-lieu/ceo/CEO_38359/tran-minh-cong.chn'>Trần Minh Công</a>",
+        "AssetVolume": "122.700",
+        "AssetRate": "0,28",
+        "UpdatedDate": "08/12/2025"
+      },
+      {
+        "Code": "CEO_06005",
+        "Name": "Nguyễn Đình Trường",
+        "Url": "<a href='/du-lieu/ceo/CEO_06005/nguyen-dinh-truong.chn'>Nguyễn Đình Trường</a>",
+        "AssetVolume": "28.120",
+        "AssetRate": "0,06",
+        "UpdatedDate": "08/12/2025"
+      },
+      {
+        "Code": "CORP_39010",
+        "Name": "Tung Shing Sewing Machine Co.,Ltd",
+        "Url": "Tung Shing Sewing Machine Co.,Ltd",
+        "AssetVolume": "2.196.000",
+        "AssetRate": "4,98",
+        "UpdatedDate": "08/12/2025"
+      },
+      {
+        "Code": "CEO_00375",
+        "Name": "Vũ Đức Giang",
+        "Url": "<a href='/du-lieu/ceo/CEO_00375/vu-duc-giang.chn'>Vũ Đức Giang</a>",
+        "AssetVolume": "20.000",
+        "AssetRate": "0,05",
+        "UpdatedDate": "08/12/2025"
+      },
+      {
+        "Code": "CEO_38358",
+        "Name": "Bùi Văn Tiến",
+        "Url": "<a href='/du-lieu/ceo/CEO_38358/bui-van-tien.chn'>Bùi Văn Tiến</a>",
+        "AssetVolume": "75.200",
+        "AssetRate": "0,17",
+        "UpdatedDate": "08/12/2025"
+      }
+    ],
+    "NuocNgoai": 15.04,
+    "NhaNuoc": 0,
+    "Khac": 84.96000000000001
+  },
+  "cong_ty_con": [
+    {
+      "Symbol": "VGG",
+      "CorpCode": "CORP_39247",
+      "Name": "Công ty TNHH May Thuận Tiến",
+      "TotalCapital": 20,
+      "SharedCapital": 0,
+      "OwnershipRate": 0,
+      "Note": "",
+      "Order": 1,
+      "TradeCenter": ""
+    },
+    {
+      "Symbol": "VGG",
+      "CorpCode": "CORP_39248",
+      "Name": "Công ty TNHH May Tiến Thuận",
+      "TotalCapital": 20,
+      "SharedCapital": 0,
+      "OwnershipRate": 0,
+      "Note": "",
+      "Order": 2,
+      "TradeCenter": ""
+    },
+    {
+      "Symbol": "VGG",
+      "CorpCode": "CORP_39249",
+      "Name": "Công ty TNHH Nam Thiên",
+      "TotalCapital": 8.139,
+      "SharedCapital": 0,
+      "OwnershipRate": 0,
+      "Note": "",
+      "Order": 3,
+      "TradeCenter": ""
+    },
+    {
+      "Symbol": "VGG",
+      "CorpCode": "CORP_39251",
+      "Name": "Công ty TNHH May xuất khẩu Việt Hồng",
+      "TotalCapital": 10,
+      "SharedCapital": 0,
+      "OwnershipRate": 0,
+      "Note": "",
+      "Order": 4,
+      "TradeCenter": ""
+    },
+    {
+      "Symbol": "VGG",
+      "CorpCode": "CORP_51835",
+      "Name": "Công ty TNHH Liên doanh sản xuất Nút Việt Thuận",
+      "TotalCapital": 0,
+      "SharedCapital": 0,
+      "OwnershipRate": 0,
+      "Note": "",
+      "Order": 5,
+      "TradeCenter": ""
+    },
+    {
+      "Symbol": "VGG",
+      "CorpCode": "CORP_51836",
+      "Name": "Công ty TNHH Việt Khánh",
+      "TotalCapital": 0,
+      "SharedCapital": 0,
+      "OwnershipRate": 0,
+      "Note": "",
+      "Order": 6,
+      "TradeCenter": ""
+    },
+    {
+      "Symbol": "VGG",
+      "CorpCode": "CORP_51837",
+      "Name": "CTCP May Việt Tân",
+      "TotalCapital": 0,
+      "SharedCapital": 0,
+      "OwnershipRate": 0,
+      "Note": "",
+      "Order": 7,
+      "TradeCenter": ""
+    },
+    {
+      "Symbol": "VGG",
+      "CorpCode": "CORP_51838",
+      "Name": "CTCP Việt Hưng",
+      "TotalCapital": 0,
+      "SharedCapital": 0,
+      "OwnershipRate": 0,
+      "Note": "",
+      "Order": 8,
+      "TradeCenter": ""
+    },
+    {
+      "Symbol": "VGG",
+      "CorpCode": "CORP_80363",
+      "Name": "CTCP May Việt Thịnh",
+      "TotalCapital": 0,
+      "SharedCapital": 0,
+      "OwnershipRate": 0,
+      "Note": "",
+      "Order": 9,
+      "TradeCenter": ""
+    },
+    {
+      "Symbol": "VGG",
+      "CorpCode": "CORP_51839",
+      "Name": "CTCP Nguyên vật liệu Dệt may Bình An",
+      "TotalCapital": 0,
+      "SharedCapital": 0,
+      "OwnershipRate": 0,
+      "Note": "",
+      "Order": 10,
+      "TradeCenter": ""
+    },
+    {
+      "Symbol": "VGG",
+      "CorpCode": "CORP_51840",
+      "Name": "CTCP May Công Tiến",
+      "TotalCapital": 0,
+      "SharedCapital": 0,
+      "OwnershipRate": 0,
+      "Note": "",
+      "Order": 11,
+      "TradeCenter": ""
+    },
+    {
+      "Symbol": "VGG",
+      "CorpCode": "CORP_51841",
+      "Name": "CTCP May Vĩnh Tiến",
+      "TotalCapital": 0,
+      "SharedCapital": 0,
+      "OwnershipRate": 0,
+      "Note": "",
+      "Order": 12,
+      "TradeCenter": ""
+    },
+    {
+      "Symbol": "VGG",
+      "CorpCode": "CORP_80362",
+      "Name": "CTCP Đồng Tiến",
+      "TotalCapital": 0,
+      "SharedCapital": 0,
+      "OwnershipRate": 0,
+      "Note": "",
+      "Order": 13,
+      "TradeCenter": ""
+    },
+    {
+      "Symbol": "VGG",
+      "CorpCode": "CORP_80372",
+      "Name": "CTCP May Tiền Tiến",
+      "TotalCapital": 0,
+      "SharedCapital": 0,
+      "OwnershipRate": 0,
+      "Note": "",
+      "Order": 14,
+      "TradeCenter": ""
+    },
+    {
+      "Symbol": "VGG",
+      "CorpCode": "CORP_51842",
+      "Name": "CTCP Việt Tiến Đông Á",
+      "TotalCapital": 0,
+      "SharedCapital": 0,
+      "OwnershipRate": 0,
+      "Note": "",
+      "Order": 15,
+      "TradeCenter": ""
+    },
+    {
+      "Symbol": "VGG",
+      "CorpCode": "CORP_51843",
+      "Name": "Công ty TNHH Nhãn thời gian Việt Tiến",
+      "TotalCapital": 0,
+      "SharedCapital": 0,
+      "OwnershipRate": 0,
+      "Note": "",
+      "Order": 16,
+      "TradeCenter": ""
+    },
+    {
+      "Symbol": "VGG",
+      "CorpCode": "CORP_80377",
+      "Name": "CTCP May Tây Đô",
+      "TotalCapital": 0,
+      "SharedCapital": 0,
+      "OwnershipRate": 0,
+      "Note": "",
+      "Order": 17,
+      "TradeCenter": ""
+    },
+    {
+      "Symbol": "VGG",
+      "CorpCode": "CORP_51844",
+      "Name": "CTCP Tổng hợp Ninh Thuận",
+      "TotalCapital": 0,
+      "SharedCapital": 0,
+      "OwnershipRate": 0,
+      "Note": "",
+      "Order": 18,
+      "TradeCenter": ""
+    },
+    {
+      "Symbol": "VGG",
+      "CorpCode": "CORP_80373",
+      "Name": "CTCP Cơ khí Thủ Đức",
+      "TotalCapital": 0,
+      "SharedCapital": 0,
+      "OwnershipRate": 0,
+      "Note": "",
+      "Order": 19,
+      "TradeCenter": ""
+    },
+    {
+      "Symbol": "VGG",
+      "CorpCode": "CORP_51845",
+      "Name": "Công ty TNHH Việt Long Hưng",
+      "TotalCapital": 0,
+      "SharedCapital": 0,
+      "OwnershipRate": 0,
+      "Note": "",
+      "Order": 20,
+      "TradeCenter": ""
+    },
+    {
+      "Symbol": "VGG",
+      "CorpCode": "CORP_51846",
+      "Name": "Hợp tác Kinh doanh Việt Tiến Tungshing",
+      "TotalCapital": 0,
+      "SharedCapital": 0,
+      "OwnershipRate": 0,
+      "Note": "",
+      "Order": 21,
+      "TradeCenter": ""
+    },
+    {
+      "Symbol": "VGG",
+      "CorpCode": "CORP_51847",
+      "Name": "Xí nghiệp dịch vụ Giao nhận hàng hóa XNK M&S",
+      "TotalCapital": 0,
+      "SharedCapital": 0,
+      "OwnershipRate": 0,
+      "Note": "",
+      "Order": 22,
+      "TradeCenter": ""
+    }
+  ],
+  "cong_ty_lien_ket": [],
+  "giao_dich_noi_bo": [
+    {
+      "transaction_name": "South Island Garment SDN.BHD",
+      "transaction_position": "",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 3965000,
+      "plan_buy": 0,
+      "plan_sell": 0,
+      "plan_begin_date": "",
+      "plan_end_date": "",
+      "real_buy": 2400000,
+      "real_sell": 0,
+      "real_end_date": "2024-07-08",
+      "published_date": "2024-07-12",
+      "volume_after": 6415000
+    },
+    {
+      "transaction_name": "AFC VF Limited (AFC Vietnam Fund)",
+      "transaction_position": "",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 2477010,
+      "plan_buy": 0,
+      "plan_sell": 0,
+      "plan_begin_date": "",
+      "plan_end_date": "",
+      "real_buy": 0,
+      "real_sell": 2450000,
+      "real_end_date": "2024-07-08",
+      "published_date": "2024-07-11",
+      "volume_after": 27010
+    },
+    {
+      "transaction_name": "AFC VF Limited (AFC Vietnam Fund)",
+      "transaction_position": "",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 2207610,
+      "plan_buy": 0,
+      "plan_sell": 0,
+      "plan_begin_date": "",
+      "plan_end_date": "",
+      "real_buy": 4500,
+      "real_sell": 0,
+      "real_end_date": "2023-08-29",
+      "published_date": "2023-09-05",
+      "volume_after": 2203110
+    },
+    {
+      "transaction_name": "Tung Shing Sewing Machine Co.,Ltd",
+      "transaction_position": "",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 2783000,
+      "plan_buy": 0,
+      "plan_sell": 0,
+      "plan_begin_date": "",
+      "plan_end_date": "",
+      "real_buy": 0,
+      "real_sell": 587000,
+      "real_end_date": "2020-09-24",
+      "published_date": "2020-10-02",
+      "volume_after": 2196000
+    },
+    {
+      "transaction_name": "Thạch Thị Phong Huyền",
+      "transaction_position": "Trưởng BKS",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 34500,
+      "plan_buy": 0,
+      "plan_sell": 4500,
+      "plan_begin_date": "2019-10-07",
+      "plan_end_date": "2019-10-31",
+      "real_buy": 0,
+      "real_sell": 0,
+      "real_end_date": "2019-10-31",
+      "published_date": "2019-10-03",
+      "volume_after": 34500
+    }
+  ]
+}

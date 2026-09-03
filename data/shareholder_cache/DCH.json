@@ -1,0 +1,47 @@
+{
+  "symbol": "DCH",
+  "updated": "2026-08-01T05:32:46.000Z",
+  "co_cau_so_huu": {
+    "CoDongSoHuu": [
+      {
+        "Code": "CORP_51515",
+        "Name": "Công ty TNHH Thành Lê Minh",
+        "Url": "Công ty TNHH Thành Lê Minh",
+        "AssetVolume": "747.100",
+        "AssetRate": "25,94",
+        "UpdatedDate": "31/12/2025"
+      },
+      {
+        "Code": "CORP_99691",
+        "Name": "UBND thành phố Hà Nội",
+        "Url": "UBND thành phố Hà Nội",
+        "AssetVolume": "1.561.100",
+        "AssetRate": "54,2",
+        "UpdatedDate": "31/12/2025"
+      }
+    ],
+    "NuocNgoai": 2880000,
+    "NhaNuoc": 0,
+    "Khac": -2879900
+  },
+  "cong_ty_con": [],
+  "cong_ty_lien_ket": [],
+  "giao_dich_noi_bo": [
+    {
+      "transaction_name": "CTCP IDS Equity Holdings",
+      "transaction_position": "",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 0,
+      "plan_buy": 719700,
+      "plan_sell": 0,
+      "plan_begin_date": "2018-10-08",
+      "plan_end_date": "2018-11-05",
+      "real_buy": 0,
+      "real_sell": 0,
+      "real_end_date": "2018-11-05",
+      "published_date": "2018-10-04",
+      "volume_after": 0
+    }
+  ]
+}

@@ -1,0 +1,151 @@
+{
+  "symbol": "AMC",
+  "updated": "2026-09-01T07:15:31.000Z",
+  "co_cau_so_huu": {
+    "CoDongSoHuu": [
+      {
+        "Code": "CEO_60467",
+        "Name": "Nguyễn Thành Hưng",
+        "Url": "<a href='/du-lieu/ceo/CEO_60467/nguyen-thanh-hung.chn'>Nguyễn Thành Hưng</a>",
+        "AssetVolume": "15.000",
+        "AssetRate": "0,35",
+        "UpdatedDate": "02/07/2026"
+      },
+      {
+        "Code": "CEO_60464",
+        "Name": "Nguyễn Trung Thành",
+        "Url": "<a href='/du-lieu/ceo/CEO_60464/nguyen-trung-thanh.chn'>Nguyễn Trung Thành</a>",
+        "AssetVolume": "7.500",
+        "AssetRate": "0,18",
+        "UpdatedDate": "02/07/2026"
+      },
+      {
+        "Code": "CORP_60023",
+        "Name": "Tổng Công ty Hợp tác Kinh tế",
+        "Url": "Tổng Công ty Hợp tác Kinh tế",
+        "AssetVolume": "1.710.000",
+        "AssetRate": "40,0",
+        "UpdatedDate": "02/07/2026"
+      },
+      {
+        "Code": "CEO_84540",
+        "Name": "Đinh Xuân Tự",
+        "Url": "<a href='/du-lieu/ceo/CEO_84540/dinh-xuan-tu.chn'>Đinh Xuân Tự</a>",
+        "AssetVolume": "12.000",
+        "AssetRate": "0,28",
+        "UpdatedDate": "02/07/2026"
+      },
+      {
+        "Code": "CEO_55389",
+        "Name": "Lê Đình Hùng",
+        "Url": "<a href='/du-lieu/ceo/CEO_55389/le-dinh-hung.chn'>Lê Đình Hùng</a>",
+        "AssetVolume": "7.500",
+        "AssetRate": "0,18",
+        "UpdatedDate": "02/07/2026"
+      }
+    ],
+    "NuocNgoai": 2.22,
+    "NhaNuoc": 0,
+    "Khac": 97.78
+  },
+  "cong_ty_con": [],
+  "cong_ty_lien_ket": [],
+  "giao_dich_noi_bo": [
+    {
+      "transaction_name": "Lê Xuân Nghĩa",
+      "transaction_position": "",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 148600,
+      "plan_buy": 0,
+      "plan_sell": 0,
+      "plan_begin_date": "",
+      "plan_end_date": "",
+      "real_buy": 0,
+      "real_sell": 23000,
+      "real_end_date": "2016-12-13",
+      "published_date": "2016-12-16",
+      "volume_after": 125600
+    },
+    {
+      "transaction_name": "Nguyễn Thị Liên",
+      "transaction_position": "Mẹ",
+      "leader_name": "Lê Mạnh Hùng",
+      "leader_position": "Thành viên HĐQT",
+      "volume_before": 90200,
+      "plan_buy": 0,
+      "plan_sell": 90200,
+      "plan_begin_date": "2016-11-10",
+      "plan_end_date": "2016-12-08",
+      "real_buy": 0,
+      "real_sell": 90200,
+      "real_end_date": "2016-11-10",
+      "published_date": "2016-11-08",
+      "volume_after": 0
+    },
+    {
+      "transaction_name": "Nguyễn Thị Liên",
+      "transaction_position": "Mẹ",
+      "leader_name": "Lê Mạnh Hùng",
+      "leader_position": "Thành viên HĐQT",
+      "volume_before": 114400,
+      "plan_buy": 0,
+      "plan_sell": 114400,
+      "plan_begin_date": "2016-09-07",
+      "plan_end_date": "2016-10-03",
+      "real_buy": 0,
+      "real_sell": 24200,
+      "real_end_date": "2016-09-21",
+      "published_date": "2016-09-05",
+      "volume_after": 90200
+    },
+    {
+      "transaction_name": "Lê Đình Danh",
+      "transaction_position": "Chủ tịch HĐQT",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 100000,
+      "plan_buy": 100000,
+      "plan_sell": 0,
+      "plan_begin_date": "2015-10-18",
+      "plan_end_date": "2015-11-16",
+      "real_buy": 51000,
+      "real_sell": 0,
+      "real_end_date": "2015-11-16",
+      "published_date": "2015-10-14",
+      "volume_after": 61000
+    },
+    {
+      "transaction_name": "Nguyễn Thị Liên",
+      "transaction_position": "Mẹ",
+      "leader_name": "Lê Mạnh Hùng",
+      "leader_position": "Thành viên HĐQT",
+      "volume_before": 39700,
+      "plan_buy": 100000,
+      "plan_sell": 0,
+      "plan_begin_date": "2015-03-15",
+      "plan_end_date": "2015-04-13",
+      "real_buy": 74700,
+      "real_sell": 0,
+      "real_end_date": "2015-04-15",
+      "published_date": "2015-04-20",
+      "volume_after": 114400
+    },
+    {
+      "transaction_name": "Nguyễn Thị Liên",
+      "transaction_position": "mẹ",
+      "leader_name": "Lê Mạnh Hùng",
+      "leader_position": "Thành viên HĐQT",
+      "volume_before": 0,
+      "plan_buy": 200000,
+      "plan_sell": 0,
+      "plan_begin_date": "2013-09-18",
+      "plan_end_date": "2013-10-15",
+      "real_buy": 39700,
+      "real_sell": 0,
+      "real_end_date": "2013-10-15",
+      "published_date": "2013-09-17",
+      "volume_after": 39700
+    }
+  ]
+}

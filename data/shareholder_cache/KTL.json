@@ -1,0 +1,195 @@
+{
+  "symbol": "KTL",
+  "updated": "2026-03-30T15:38:54.000Z",
+  "co_cau_so_huu": {
+    "CoDongSoHuu": [
+      {
+        "Code": "CEO_54805",
+        "Name": "Lê Anh Tuấn",
+        "Url": "<a href='/du-lieu/ceo/CEO_54805/le-anh-tuan.chn'>Lê Anh Tuấn</a>",
+        "AssetVolume": "1.100",
+        "AssetRate": "0,01",
+        "UpdatedDate": "15/08/2025"
+      },
+      {
+        "Code": "CORP_99691",
+        "Name": "UBND thành phố Hà Nội",
+        "Url": "UBND thành phố Hà Nội",
+        "AssetVolume": "12.680.500",
+        "AssetRate": "66,04",
+        "UpdatedDate": "15/08/2025"
+      },
+      {
+        "Code": "CEO_29170",
+        "Name": "Chu Thị Thanh Mai",
+        "Url": "<a href='/du-lieu/ceo/CEO_29170/chu-thi-thanh-mai.chn'>Chu Thị Thanh Mai</a>",
+        "AssetVolume": "3.000",
+        "AssetRate": "0,02",
+        "UpdatedDate": "15/08/2025"
+      },
+      {
+        "Code": "CEO_29164",
+        "Name": "Lê Chí Liêm",
+        "Url": "<a href='/du-lieu/ceo/CEO_29164/le-chi-liem.chn'>Lê Chí Liêm</a>",
+        "AssetVolume": "52.400",
+        "AssetRate": "0,27",
+        "UpdatedDate": "15/08/2025"
+      },
+      {
+        "Code": "CEO_29171",
+        "Name": "Nguyễn Quỳnh Châu",
+        "Url": "<a href='/du-lieu/ceo/CEO_29171/nguyen-quynh-chau.chn'>Nguyễn Quỳnh Châu</a>",
+        "AssetVolume": "7.900",
+        "AssetRate": "0,04",
+        "UpdatedDate": "15/08/2025"
+      },
+      {
+        "Code": "CEO_29165",
+        "Name": "Hồ Quốc Bình",
+        "Url": "<a href='/du-lieu/ceo/CEO_29165/ho-quoc-binh.chn'>Hồ Quốc Bình</a>",
+        "AssetVolume": "1.000",
+        "AssetRate": "0,01",
+        "UpdatedDate": "15/08/2025"
+      },
+      {
+        "Code": "CEO_29162",
+        "Name": "Phạm Hữu Hùng",
+        "Url": "<a href='/du-lieu/ceo/CEO_29162/pham-huu-hung.chn'>Phạm Hữu Hùng</a>",
+        "AssetVolume": "1.900",
+        "AssetRate": "0,01",
+        "UpdatedDate": "15/08/2025"
+      },
+      {
+        "Code": "CEO_29166",
+        "Name": "Vũ Thị Hồng Vân",
+        "Url": "<a href='/du-lieu/ceo/CEO_29166/vu-thi-hong-van.chn'>Vũ Thị Hồng Vân</a>",
+        "AssetVolume": "9.000",
+        "AssetRate": "0,05",
+        "UpdatedDate": "15/08/2025"
+      },
+      {
+        "Code": "CEO_29163",
+        "Name": "Phạm Hồng Thanh",
+        "Url": "<a href='/du-lieu/ceo/CEO_29163/pham-hong-thanh.chn'>Phạm Hồng Thanh</a>",
+        "AssetVolume": "32.000",
+        "AssetRate": "0,17",
+        "UpdatedDate": "15/08/2025"
+      }
+    ],
+    "NuocNgoai": 0.31,
+    "NhaNuoc": 0,
+    "Khac": 99.69
+  },
+  "cong_ty_con": [],
+  "cong_ty_lien_ket": [
+    {
+      "Symbol": "KTL",
+      "CorpCode": "CORP_29047",
+      "Name": "Công ty TNHH Phụ tùng Xe máy - Ôtô Goshi - Thăng Long",
+      "TotalCapital": 0,
+      "SharedCapital": 57,
+      "OwnershipRate": 30,
+      "Note": "",
+      "Order": 1,
+      "TradeCenter": ""
+    }
+  ],
+  "giao_dich_noi_bo": [
+    {
+      "transaction_name": "Công ty Cổ phần Chứng Khoán Sài Gòn Hà Nội",
+      "transaction_position": "",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 968138,
+      "plan_buy": 0,
+      "plan_sell": 0,
+      "plan_begin_date": "",
+      "plan_end_date": "",
+      "real_buy": 1800300,
+      "real_sell": 0,
+      "real_end_date": "2022-06-26",
+      "published_date": "2022-07-03",
+      "volume_after": 2768438
+    },
+    {
+      "transaction_name": "Công ty Cổ phần Chứng Khoán Sài Gòn Hà Nội",
+      "transaction_position": "",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 942438,
+      "plan_buy": 0,
+      "plan_sell": 0,
+      "plan_begin_date": "",
+      "plan_end_date": "",
+      "real_buy": 20000,
+      "real_sell": 0,
+      "real_end_date": "2018-01-23",
+      "published_date": "2018-01-27",
+      "volume_after": 962438
+    },
+    {
+      "transaction_name": "Chu Thị Thanh Mai",
+      "transaction_position": "Trưởng BKS",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 0,
+      "plan_buy": 5000,
+      "plan_sell": 0,
+      "plan_begin_date": "2017-05-08",
+      "plan_end_date": "2017-06-06",
+      "real_buy": 3000,
+      "real_sell": 0,
+      "real_end_date": "2017-06-06",
+      "published_date": "2017-05-07",
+      "volume_after": 3000
+    },
+    {
+      "transaction_name": "Chu Thị Thanh Mai",
+      "transaction_position": "Trưởng BKS",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 1700,
+      "plan_buy": 0,
+      "plan_sell": 1700,
+      "plan_begin_date": "2016-08-30",
+      "plan_end_date": "2016-09-19",
+      "real_buy": 0,
+      "real_sell": 1700,
+      "real_end_date": "2016-08-30",
+      "published_date": "2016-08-29",
+      "volume_after": 0
+    },
+    {
+      "transaction_name": "CTCP Sắt thép Đông Á ",
+      "transaction_position": "",
+      "leader_name": "Trần Tuấn Nam",
+      "leader_position": "Thành viên HĐQT",
+      "volume_before": 500000,
+      "plan_buy": 0,
+      "plan_sell": 500000,
+      "plan_begin_date": "2016-07-14",
+      "plan_end_date": "2016-08-11",
+      "real_buy": 0,
+      "real_sell": 500000,
+      "real_end_date": "2016-07-17",
+      "published_date": "2016-07-13",
+      "volume_after": 0
+    },
+    {
+      "transaction_name": "CTCP Sắt thép Đông Á ",
+      "transaction_position": "",
+      "leader_name": "Trần Tuấn Nam",
+      "leader_position": "Thành viên HĐQT",
+      "volume_before": 1000000,
+      "plan_buy": 0,
+      "plan_sell": 500000,
+      "plan_begin_date": "2016-05-17",
+      "plan_end_date": "2016-06-15",
+      "real_buy": 0,
+      "real_sell": 500000,
+      "real_end_date": "2016-05-17",
+      "published_date": "2016-05-15",
+      "volume_after": 500000
+    }
+  ]
+}

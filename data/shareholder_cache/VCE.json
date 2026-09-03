@@ -1,0 +1,38 @@
+{
+  "symbol": "VCE",
+  "updated": "2026-08-01T06:00:48.000Z",
+  "co_cau_so_huu": {
+    "CoDongSoHuu": [
+      {
+        "Code": "CEO_99411",
+        "Name": "Trịnh Quốc Sơn",
+        "Url": "<a href='/du-lieu/ceo/CEO_99411/trinh-quoc-son.chn'>Trịnh Quốc Sơn</a>",
+        "AssetVolume": "2.900",
+        "AssetRate": "0,06",
+        "UpdatedDate": "31/12/2022"
+      },
+      {
+        "Code": "VINACOMIN",
+        "Name": "Tập đoàn Công nghiệp Than - Khoáng sản Việt Nam",
+        "Url": "<a href='/du-lieu/otc/VINACOMIN-tap-doan-cong-nghiep-than-khoang-san-viet-nam.chn' title='Tập đoàn Công nghiệp Than - Khoáng sản Việt Nam'>Tập đoàn Công nghiệp Than - Khoáng sản Việt Nam</a>",
+        "AssetVolume": "1.500.000",
+        "AssetRate": "30,0",
+        "UpdatedDate": "30/06/2024"
+      },
+      {
+        "Code": "CMS",
+        "Name": "CTCP Xây lắp Môi trường - TKV",
+        "Url": "<a href='/du-lieu/hastc/CMS-cong-ty-co-phan-tap-doan-cmh-viet-nam.chn' title='Công ty cổ phần Tập đoàn CMH Việt Nam'>Công ty cổ phần Tập đoàn CMH Việt Nam</a>",
+        "AssetVolume": "3.421.900",
+        "AssetRate": "68,44",
+        "UpdatedDate": "30/06/2024"
+      }
+    ],
+    "NuocNgoai": 5000000,
+    "NhaNuoc": 0,
+    "Khac": -4999900
+  },
+  "cong_ty_con": [],
+  "cong_ty_lien_ket": [],
+  "giao_dich_noi_bo": []
+}

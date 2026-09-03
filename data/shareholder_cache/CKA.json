@@ -1,0 +1,170 @@
+{
+  "symbol": "CKA",
+  "updated": "2026-08-01T05:30:34.000Z",
+  "co_cau_so_huu": {
+    "CoDongSoHuu": [
+      {
+        "Code": "CEO_58004",
+        "Name": "Đổng Trọng Nghĩa",
+        "Url": "<a href='/du-lieu/ceo/CEO_58004/dong-trong-nghia.chn'>Đổng Trọng Nghĩa</a>",
+        "AssetVolume": "623.222",
+        "AssetRate": "18,96",
+        "UpdatedDate": "31/12/2025"
+      },
+      {
+        "Code": "CEO_59680",
+        "Name": "Trần Quân Anh",
+        "Url": "<a href='/du-lieu/ceo/CEO_59680/tran-quan-anh.chn'>Trần Quân Anh</a>",
+        "AssetVolume": "934.850",
+        "AssetRate": "28,45",
+        "UpdatedDate": "31/12/2025"
+      },
+      {
+        "Code": "VEA",
+        "Name": "Tổng Công ty Máy động lực và máy nông nghiệp Việt Nam - CTCP",
+        "Url": "<a href='/du-lieu/upcom/VEA-tong-cong-ty-may-dong-luc-va-may-nong-nghiep-viet-nam-ctcp.chn' title='Tổng Công ty Máy động lực và máy nông nghiệp Việt Nam - CTCP'>Tổng Công ty Máy động lực và máy nông nghiệp Việt Nam - CTCP</a>",
+        "AssetVolume": "1.558.072",
+        "AssetRate": "47,41",
+        "UpdatedDate": "31/12/2025"
+      }
+    ],
+    "NuocNgoai": 0.18,
+    "NhaNuoc": 0,
+    "Khac": 99.82
+  },
+  "cong_ty_con": [
+    {
+      "Symbol": "CKA",
+      "CorpCode": "CORP_51611",
+      "Name": "Công ty TNHH MTV Cơ khí Long Xuyên",
+      "TotalCapital": 4.57999992370605,
+      "SharedCapital": 4.58,
+      "OwnershipRate": 100,
+      "Note": "",
+      "Order": 1,
+      "TradeCenter": ""
+    },
+    {
+      "Symbol": "CKA",
+      "CorpCode": "CORP_51612",
+      "Name": "Công ty TNHH MTV Cầu đường Cơ khí An Giang",
+      "TotalCapital": 10,
+      "SharedCapital": 10,
+      "OwnershipRate": 100,
+      "Note": "",
+      "Order": 2,
+      "TradeCenter": ""
+    }
+  ],
+  "cong_ty_lien_ket": [
+    {
+      "Symbol": "CKA",
+      "CorpCode": "CORP_51613",
+      "Name": "Công ty TNHH Liên doanh Antraco",
+      "TotalCapital": 16.25,
+      "SharedCapital": 7.96,
+      "OwnershipRate": 49,
+      "Note": "",
+      "Order": 3,
+      "TradeCenter": ""
+    }
+  ],
+  "giao_dich_noi_bo": [
+    {
+      "transaction_name": "Lê Thanh Vân",
+      "transaction_position": "Giám đốc",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 103143,
+      "plan_buy": 0,
+      "plan_sell": 50000,
+      "plan_begin_date": "2025-08-27",
+      "plan_end_date": "2025-09-25",
+      "real_buy": 0,
+      "real_sell": 0,
+      "real_end_date": "2025-09-25",
+      "published_date": "2025-08-29",
+      "volume_after": 103143
+    },
+    {
+      "transaction_name": "Ngô Thị Kiều Dung",
+      "transaction_position": "Vợ",
+      "leader_name": "Nguyễn Đức Hiền",
+      "leader_position": "Thành viên BKS",
+      "volume_before": 5000,
+      "plan_buy": 0,
+      "plan_sell": 5000,
+      "plan_begin_date": "2025-06-13",
+      "plan_end_date": "2025-07-09",
+      "real_buy": 0,
+      "real_sell": 3000,
+      "real_end_date": "2025-07-10",
+      "published_date": "2025-06-16",
+      "volume_after": 2000
+    },
+    {
+      "transaction_name": "Ngô Thị Kiều Dung",
+      "transaction_position": "Vợ",
+      "leader_name": "Nguyễn Đức Hiền",
+      "leader_position": "Thành viên BKS",
+      "volume_before": 6900,
+      "plan_buy": 0,
+      "plan_sell": 6900,
+      "plan_begin_date": "2024-07-10",
+      "plan_end_date": "2024-08-08",
+      "real_buy": 0,
+      "real_sell": 1900,
+      "real_end_date": "2024-08-08",
+      "published_date": "2024-07-10",
+      "volume_after": 5000
+    },
+    {
+      "transaction_name": "Ngô Thị Kiều Dung",
+      "transaction_position": "Vợ",
+      "leader_name": "Nguyễn Đức Hiền",
+      "leader_position": "Thành viên BKS",
+      "volume_before": 6900,
+      "plan_buy": 0,
+      "plan_sell": 6900,
+      "plan_begin_date": "2024-02-01",
+      "plan_end_date": "2024-02-27",
+      "real_buy": 0,
+      "real_sell": 0,
+      "real_end_date": "2024-02-27",
+      "published_date": "2024-02-29",
+      "volume_after": 6900
+    },
+    {
+      "transaction_name": "Lê Thanh Vân",
+      "transaction_position": "Giám đốc",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 92615,
+      "plan_buy": 50000,
+      "plan_sell": 0,
+      "plan_begin_date": "2022-02-28",
+      "plan_end_date": "2022-03-25",
+      "real_buy": 10528,
+      "real_sell": 0,
+      "real_end_date": "2022-03-25",
+      "published_date": "2022-02-28",
+      "volume_after": 103143
+    },
+    {
+      "transaction_name": "Nguyễn Thanh Vi",
+      "transaction_position": "Thành viên BKS",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 10034,
+      "plan_buy": 0,
+      "plan_sell": 10034,
+      "plan_begin_date": "2018-10-18",
+      "plan_end_date": "2018-11-16",
+      "real_buy": 0,
+      "real_sell": 1000,
+      "real_end_date": "2018-10-19",
+      "published_date": "2018-10-17",
+      "volume_after": 9034
+    }
+  ]
+}

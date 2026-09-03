@@ -1,0 +1,79 @@
+{
+  "symbol": "SBH",
+  "updated": "2026-07-01T06:50:27.000Z",
+  "co_cau_so_huu": {
+    "CoDongSoHuu": [
+      {
+        "Code": "GE2",
+        "Name": "Tổng công ty Phát điện 2 - Công ty cổ phần",
+        "Url": "<a href='/du-lieu/upcom/GE2-tong-cong-ty-phat-dien-2-cong-ty-co-phan.chn' title='Tổng công ty Phát điện 2 - Công ty cổ phần'>Tổng công ty Phát điện 2 - Công ty cổ phần</a>",
+        "AssetVolume": "76.740.928",
+        "AssetRate": "61,78",
+        "UpdatedDate": "30/12/2025"
+      },
+      {
+        "Code": "CEO_54566",
+        "Name": "Đoàn Thị Mỹ Đông",
+        "Url": "<a href='/du-lieu/ceo/CEO_54566/doan-thi-my-dong.chn'>Đoàn Thị Mỹ Đông</a>",
+        "AssetVolume": "4.290",
+        "AssetRate": "0,0",
+        "UpdatedDate": "30/12/2025"
+      },
+      {
+        "Code": "CEO_54564",
+        "Name": "Ngô Đức Thăng",
+        "Url": "<a href='/du-lieu/ceo/CEO_54564/ngo-duc-thang.chn'>Ngô Đức Thăng</a>",
+        "AssetVolume": "18.000",
+        "AssetRate": "0,01",
+        "UpdatedDate": "30/12/2025"
+      },
+      {
+        "Code": "CORP_81763",
+        "Name": "Công ty TNHH Năng lượng R.E.E",
+        "Url": "Công ty TNHH Năng lượng R.E.E",
+        "AssetVolume": "32.000.000",
+        "AssetRate": "25,76",
+        "UpdatedDate": "30/12/2025"
+      }
+    ],
+    "NuocNgoai": 0.01,
+    "NhaNuoc": 0,
+    "Khac": 99.99
+  },
+  "cong_ty_con": [],
+  "cong_ty_lien_ket": [],
+  "giao_dich_noi_bo": [
+    {
+      "transaction_name": "Công ty Cổ phần Cơ điện lạnh",
+      "transaction_position": "",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 32000000,
+      "plan_buy": 0,
+      "plan_sell": 0,
+      "plan_begin_date": "",
+      "plan_end_date": "",
+      "real_buy": 0,
+      "real_sell": 32000000,
+      "real_end_date": "2020-11-09",
+      "published_date": "2020-11-23",
+      "volume_after": 0
+    },
+    {
+      "transaction_name": "Công ty TNHH Năng lượng R.E.E",
+      "transaction_position": "",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 0,
+      "plan_buy": 0,
+      "plan_sell": 0,
+      "plan_begin_date": "",
+      "plan_end_date": "",
+      "real_buy": 32000000,
+      "real_sell": 0,
+      "real_end_date": "2020-11-09",
+      "published_date": "2020-11-18",
+      "volume_after": 32000000
+    }
+  ]
+}

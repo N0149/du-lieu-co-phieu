@@ -1,0 +1,63 @@
+{
+  "symbol": "CIP",
+  "updated": "2026-08-01T05:30:30.000Z",
+  "co_cau_so_huu": {
+    "CoDongSoHuu": [
+      {
+        "Code": "VVN",
+        "Name": "Tổng Công ty cổ phần Xây dựng công nghiệp Việt Nam",
+        "Url": "<a href='/du-lieu/upcom/VVN-tong-cong-ty-co-phan-xay-dung-cong-nghiep-viet-nam.chn' title='Tổng Công ty cổ phần Xây dựng công nghiệp Việt Nam'>Tổng Công ty cổ phần Xây dựng công nghiệp Việt Nam</a>",
+        "AssetVolume": "2.370.217",
+        "AssetRate": "52,15",
+        "UpdatedDate": "31/12/2025"
+      },
+      {
+        "Code": "CEO_873465",
+        "Name": "Trần Văn Long",
+        "Url": "<a href='/du-lieu/ceo/CEO_873465/tran-van-long.chn'>Trần Văn Long</a>",
+        "AssetVolume": "21.000",
+        "AssetRate": "0,46",
+        "UpdatedDate": "31/12/2025"
+      }
+    ],
+    "NuocNgoai": 49,
+    "NhaNuoc": 0,
+    "Khac": 51
+  },
+  "cong_ty_con": [],
+  "cong_ty_lien_ket": [],
+  "giao_dich_noi_bo": [
+    {
+      "transaction_name": "Trần Quốc Duy",
+      "transaction_position": "",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 219800,
+      "plan_buy": 0,
+      "plan_sell": 0,
+      "plan_begin_date": "",
+      "plan_end_date": "",
+      "real_buy": 25100,
+      "real_sell": 0,
+      "real_end_date": "2021-12-20",
+      "published_date": "2021-12-27",
+      "volume_after": 244900
+    },
+    {
+      "transaction_name": "Phạm Hùng",
+      "transaction_position": "Phó Giám đốc",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 40000,
+      "plan_buy": 0,
+      "plan_sell": 10000,
+      "plan_begin_date": "2018-12-02",
+      "plan_end_date": "2018-12-30",
+      "real_buy": 0,
+      "real_sell": 0,
+      "real_end_date": "2018-12-30",
+      "published_date": "2018-11-27",
+      "volume_after": 40000
+    }
+  ]
+}

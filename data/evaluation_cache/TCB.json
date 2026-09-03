@@ -1,0 +1,27 @@
+{
+  "symbol": "TCB",
+  "score360": {
+    "total": 8.8,
+    "ratingText": "XUẤT SẮC",
+    "peVsMedian": -5.716460000000001,
+    "pbVsMedian": -1.0983804320000008,
+    "psVsMedian": -5,
+    "peForward": 8.04,
+    "peForwardVsMedian": -15,
+    "pbForward": 1.25,
+    "pbForwardVsMedian": -10
+  },
+  "price": null,
+  "metrics": {
+    "marketCap": 236680000000000,
+    "pe": 9.14177,
+    "eps": 3576.9881370996,
+    "volume10d": 17456166,
+    "pb": 1.362702446,
+    "ps": null,
+    "bvps": null,
+    "sharesOut": 7086240414,
+    "evEbitda": null,
+    "beta": 1.08442
+  }
+}

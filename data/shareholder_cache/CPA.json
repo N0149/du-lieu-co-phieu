@@ -1,0 +1,103 @@
+{
+  "symbol": "CPA",
+  "updated": "2026-08-01T05:31:18.000Z",
+  "co_cau_so_huu": {
+    "CoDongSoHuu": [
+      {
+        "Code": "CORP_52026",
+        "Name": "UBND tỉnh Đắk Lắk",
+        "Url": "UBND tỉnh Đắk Lắk",
+        "AssetVolume": "4.769.796",
+        "AssetRate": "20,19",
+        "UpdatedDate": "31/12/2025"
+      }
+    ],
+    "NuocNgoai": 49,
+    "NhaNuoc": 0,
+    "Khac": 51
+  },
+  "cong_ty_con": [],
+  "cong_ty_lien_ket": [],
+  "giao_dich_noi_bo": [
+    {
+      "transaction_name": "Nguyễn Thị Thúy Hằng",
+      "transaction_position": "",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 0,
+      "plan_buy": 0,
+      "plan_sell": 0,
+      "plan_begin_date": "",
+      "plan_end_date": "",
+      "real_buy": 5883370,
+      "real_sell": 0,
+      "real_end_date": "2022-12-27",
+      "published_date": "2023-01-03",
+      "volume_after": 5883370
+    },
+    {
+      "transaction_name": "Nguyễn Trần Xuân Mai",
+      "transaction_position": "",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 0,
+      "plan_buy": 0,
+      "plan_sell": 0,
+      "plan_begin_date": "",
+      "plan_end_date": "",
+      "real_buy": 5883370,
+      "real_sell": 0,
+      "real_end_date": "2022-12-27",
+      "published_date": "2023-01-03",
+      "volume_after": 5883370
+    },
+    {
+      "transaction_name": "Tôn Thị Bích Vân",
+      "transaction_position": "",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 0,
+      "plan_buy": 0,
+      "plan_sell": 0,
+      "plan_begin_date": "",
+      "plan_end_date": "",
+      "real_buy": 5883370,
+      "real_sell": 0,
+      "real_end_date": "2022-12-27",
+      "published_date": "2023-01-03",
+      "volume_after": 5883370
+    },
+    {
+      "transaction_name": "Công ty cổ phần Thực phẩm Dinh dưỡng Đồng Tâm",
+      "transaction_position": "",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 18267808,
+      "plan_buy": 0,
+      "plan_sell": 18267808,
+      "plan_begin_date": "2022-12-26",
+      "plan_end_date": "2023-01-18",
+      "real_buy": 0,
+      "real_sell": 18267808,
+      "real_end_date": "2022-12-27",
+      "published_date": "2022-12-25",
+      "volume_after": 0
+    },
+    {
+      "transaction_name": "Hồ Sỹ Trung",
+      "transaction_position": "Phó Chủ tịch HĐQT",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 54737,
+      "plan_buy": 0,
+      "plan_sell": 52737,
+      "plan_begin_date": "2022-08-01",
+      "plan_end_date": "2022-08-30",
+      "real_buy": 0,
+      "real_sell": 52700,
+      "real_end_date": "2022-08-28",
+      "published_date": "2022-09-05",
+      "volume_after": 2037
+    }
+  ]
+}

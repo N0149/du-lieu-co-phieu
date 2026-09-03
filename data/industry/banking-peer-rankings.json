@@ -1,0 +1,12 @@
+{
+  "nhnxKyHanS": [],
+  "nhnxKyHanNH": [],
+  "nhnxKyHanDH": [],
+  "nhnxNKhachS": [],
+  "nhnxNKhachCN": [],
+  "nhnxNKhachTC": [],
+  "meta": {
+    "empty": true,
+    "hint": "Run backend/scripts/compute_banking_peer_loan_rankings.py to populate from vnstock/VCI."
+  }
+}

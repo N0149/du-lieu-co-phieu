@@ -1,0 +1,237 @@
+{
+  "symbol": "HC3",
+  "updated": "2026-09-01T07:28:47.000Z",
+  "co_cau_so_huu": {
+    "CoDongSoHuu": [
+      {
+        "Code": "CEO_52856",
+        "Name": "Nguyễn Thị Thúy",
+        "Url": "<a href='/du-lieu/ceo/CEO_52856/nguyen-thi-thuy.chn'>Nguyễn Thị Thúy</a>",
+        "AssetVolume": "1.150.403",
+        "AssetRate": "5,56",
+        "UpdatedDate": "01/07/2026"
+      },
+      {
+        "Code": "CEO_52860",
+        "Name": "Lưu Thị Phương",
+        "Url": "<a href='/du-lieu/ceo/CEO_52860/luu-thi-phuong.chn'>Lưu Thị Phương</a>",
+        "AssetVolume": "123.973",
+        "AssetRate": "0,6",
+        "UpdatedDate": "01/07/2026"
+      },
+      {
+        "Code": "CEO_873797",
+        "Name": "Bùi Thị Ngọc Anh",
+        "Url": "<a href='/du-lieu/ceo/CEO_873797/bui-thi-ngoc-anh.chn'>Bùi Thị Ngọc Anh</a>",
+        "AssetVolume": "450.000",
+        "AssetRate": "2,18",
+        "UpdatedDate": "01/07/2026"
+      },
+      {
+        "Code": "LQ_96234",
+        "Name": "Đào Viết Liễu",
+        "Url": "Đào Viết Liễu (Em ruột của ông <a href='/du-lieu/ceo/CEO_52853/dao-viet-truc.chn'>Đào Viết Trúc</a>)",
+        "AssetVolume": "315.176",
+        "AssetRate": "1,52",
+        "UpdatedDate": "01/07/2026"
+      },
+      {
+        "Code": "LQ_82429",
+        "Name": "Bùi Ngọc Khôi",
+        "Url": "Bùi Ngọc Khôi (Em của bà <a href='/du-lieu/ceo/CEO_873797/bui-thi-ngoc-anh.chn'>Bùi Thị Ngọc Anh</a>)",
+        "AssetVolume": "313.549",
+        "AssetRate": "1,52",
+        "UpdatedDate": "01/07/2026"
+      },
+      {
+        "Code": "CEO_52852",
+        "Name": "Phạm Kỳ Hưng",
+        "Url": "<a href='/du-lieu/ceo/CEO_52852/pham-ky-hung.chn'>Phạm Kỳ Hưng</a>",
+        "AssetVolume": "6.140.498",
+        "AssetRate": "29,68",
+        "UpdatedDate": "01/07/2026"
+      },
+      {
+        "Code": "CEO_52854",
+        "Name": "Phạm Đức Duy",
+        "Url": "<a href='/du-lieu/ceo/CEO_52854/pham-duc-duy.chn'>Phạm Đức Duy</a>",
+        "AssetVolume": "2.145.633",
+        "AssetRate": "10,37",
+        "UpdatedDate": "01/07/2026"
+      },
+      {
+        "Code": "LQ_96227",
+        "Name": "Phạm Thị Kim Thoa",
+        "Url": "Phạm Thị Kim Thoa (Vợ của ông <a href='/du-lieu/ceo/CEO_52852/pham-ky-hung.chn'>Phạm Kỳ Hưng</a>)",
+        "AssetVolume": "1.561.486",
+        "AssetRate": "7,55",
+        "UpdatedDate": "01/07/2026"
+      }
+    ],
+    "NuocNgoai": 0.09,
+    "NhaNuoc": 0,
+    "Khac": 99.91
+  },
+  "cong_ty_con": [
+    {
+      "Symbol": "HC3",
+      "CorpCode": "CORP_51133",
+      "Name": "Công ty TNHH Tư vấn Thiết kế Haco 3D",
+      "TotalCapital": 7.8,
+      "SharedCapital": 7.8,
+      "OwnershipRate": 100,
+      "Note": "",
+      "Order": 1,
+      "TradeCenter": ""
+    },
+    {
+      "Symbol": "HC3",
+      "CorpCode": "ACSGroup",
+      "Name": "Công ty cổ phần ACS Việt Nam",
+      "TotalCapital": 0,
+      "SharedCapital": 108,
+      "OwnershipRate": 50.96,
+      "Note": "",
+      "Order": 2,
+      "TradeCenter": "OTC"
+    }
+  ],
+  "cong_ty_lien_ket": [
+    {
+      "Symbol": "HC3",
+      "CorpCode": "CORP_51134",
+      "Name": "Công ty Liên doanh Làng Quốc tế Hướng Dương GS - Hải Phòng",
+      "TotalCapital": 8250,
+      "SharedCapital": 3300,
+      "OwnershipRate": 40,
+      "Note": "nghìn USD",
+      "Order": 3,
+      "TradeCenter": ""
+    },
+    {
+      "Symbol": "HC3",
+      "CorpCode": "CORP_51135",
+      "Name": "Công ty Cổ phần Thành Hưng",
+      "TotalCapital": 80,
+      "SharedCapital": 24.8,
+      "OwnershipRate": 31,
+      "Note": "",
+      "Order": 4,
+      "TradeCenter": ""
+    }
+  ],
+  "giao_dich_noi_bo": [
+    {
+      "transaction_name": "Nguyễn Thị Thúy",
+      "transaction_position": "Phó Tổng GĐ",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 1150403,
+      "plan_buy": 650000,
+      "plan_sell": 0,
+      "plan_begin_date": "2025-01-03",
+      "plan_end_date": "2025-01-24",
+      "real_buy": 546063,
+      "real_sell": 0,
+      "real_end_date": "",
+      "published_date": "2024-12-28",
+      "volume_after": 1696466
+    },
+    {
+      "transaction_name": "Bùi Ngọc Khôi",
+      "transaction_position": "Em",
+      "leader_name": "Bùi Thị Ngọc Anh",
+      "leader_position": "Phó Tổng GĐ",
+      "volume_before": 0,
+      "plan_buy": 450000,
+      "plan_sell": 0,
+      "plan_begin_date": "2023-04-03",
+      "plan_end_date": "2023-04-28",
+      "real_buy": 313549,
+      "real_sell": 0,
+      "real_end_date": "2023-04-28",
+      "published_date": "2023-03-29",
+      "volume_after": 313549
+    },
+    {
+      "transaction_name": "Bùi Thị Ngọc Anh",
+      "transaction_position": "Phó Tổng GĐ",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 0,
+      "plan_buy": 500000,
+      "plan_sell": 0,
+      "plan_begin_date": "2022-12-05",
+      "plan_end_date": "2022-12-30",
+      "real_buy": 450000,
+      "real_sell": 0,
+      "real_end_date": "2022-12-30",
+      "published_date": "2022-12-02",
+      "volume_after": 450000
+    },
+    {
+      "transaction_name": "Nguyễn Hoàng",
+      "transaction_position": "Chồng",
+      "leader_name": "Bùi Thị Ngọc Anh",
+      "leader_position": "Phó Tổng GĐ",
+      "volume_before": 335129,
+      "plan_buy": 0,
+      "plan_sell": 335129,
+      "plan_begin_date": "2022-12-05",
+      "plan_end_date": "2022-12-30",
+      "real_buy": 0,
+      "real_sell": 335129,
+      "real_end_date": "2022-12-20",
+      "published_date": "2022-12-02",
+      "volume_after": 0
+    },
+    {
+      "transaction_name": "Nguyễn Thị Mỹ Lợi",
+      "transaction_position": "Mẹ chồng",
+      "leader_name": "Bùi Thị Ngọc Anh",
+      "leader_position": "Phó Tổng GĐ",
+      "volume_before": 88800,
+      "plan_buy": 0,
+      "plan_sell": 88800,
+      "plan_begin_date": "2022-12-05",
+      "plan_end_date": "2022-12-30",
+      "real_buy": 0,
+      "real_sell": 88800,
+      "real_end_date": "2022-12-09",
+      "published_date": "2022-12-02",
+      "volume_after": 0
+    },
+    {
+      "transaction_name": "Phạm Thị Kim Hoa",
+      "transaction_position": "Em ruột",
+      "leader_name": "Phạm Kỳ Hưng",
+      "leader_position": "Chủ tịch HĐQT",
+      "volume_before": 62064,
+      "plan_buy": 0,
+      "plan_sell": 13000,
+      "plan_begin_date": "2019-09-20",
+      "plan_end_date": "2019-10-18",
+      "real_buy": 0,
+      "real_sell": 13000,
+      "real_end_date": "2019-09-20",
+      "published_date": "2019-09-17",
+      "volume_after": 49064
+    },
+    {
+      "transaction_name": "Phạm Thị Kim Thoa",
+      "transaction_position": "Vợ",
+      "leader_name": "Phạm Kỳ Hưng",
+      "leader_position": "Chủ tịch HĐQT",
+      "volume_before": 1252575,
+      "plan_buy": 100000,
+      "plan_sell": 0,
+      "plan_begin_date": "2018-07-16",
+      "plan_end_date": "2018-08-13",
+      "real_buy": 37910,
+      "real_sell": 0,
+      "real_end_date": "2018-08-13",
+      "published_date": "2018-07-13",
+      "volume_after": 1290485
+    }
+  ]
+}

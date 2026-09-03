@@ -1,0 +1,154 @@
+{
+  "symbol": "BRR",
+  "updated": "2026-08-01T05:28:15.000Z",
+  "co_cau_so_huu": {
+    "CoDongSoHuu": [
+      {
+        "Code": "GVR",
+        "Name": "Tập đoàn Công nghiệp Cao su Việt Nam",
+        "Url": "<a href='/du-lieu/hose/GVR-tap-doan-cong-nghiep-cao-su-viet-nam.chn' title='Tập đoàn Công nghiệp Cao su Việt Nam'>Tập đoàn Công nghiệp Cao su Việt Nam</a>",
+        "AssetVolume": "109.652.400",
+        "AssetRate": "97,47",
+        "UpdatedDate": "31/12/2025"
+      }
+    ],
+    "NuocNgoai": 49,
+    "NhaNuoc": 0,
+    "Khac": 51
+  },
+  "cong_ty_con": [],
+  "cong_ty_lien_ket": [
+    {
+      "Symbol": "BRR",
+      "CorpCode": "CORP_29096",
+      "Name": "CTCP Cao su Bà Rịa - Kompong Thom",
+      "TotalCapital": 720,
+      "SharedCapital": 342.9,
+      "OwnershipRate": 47.6,
+      "Note": "",
+      "Order": 1,
+      "TradeCenter": ""
+    },
+    {
+      "Symbol": "BRR",
+      "CorpCode": "CORP_94520",
+      "Name": "CTCP Cao su Việt Lào",
+      "TotalCapital": 775,
+      "SharedCapital": 111,
+      "OwnershipRate": 14.3,
+      "Note": "",
+      "Order": 2,
+      "TradeCenter": ""
+    },
+    {
+      "Symbol": "BRR",
+      "CorpCode": "CORP_29072",
+      "Name": "CTCP Khu công nghiệp Long Khánh",
+      "TotalCapital": 120,
+      "SharedCapital": 15.3,
+      "OwnershipRate": 12.7,
+      "Note": "",
+      "Order": 3,
+      "TradeCenter": ""
+    },
+    {
+      "Symbol": "BRR",
+      "CorpCode": "CORP_29113",
+      "Name": "CTCP Cao su Lai Châu",
+      "TotalCapital": 1000,
+      "SharedCapital": 103,
+      "OwnershipRate": 10.3,
+      "Note": "",
+      "Order": 4,
+      "TradeCenter": ""
+    },
+    {
+      "Symbol": "BRR",
+      "CorpCode": "CORP_29116",
+      "Name": "CTCP Cao su Lai Châu 2",
+      "TotalCapital": 900,
+      "SharedCapital": 59.2,
+      "OwnershipRate": 6.6,
+      "Note": "",
+      "Order": 5,
+      "TradeCenter": ""
+    },
+    {
+      "Symbol": "BRR",
+      "CorpCode": "CORP_29117",
+      "Name": "CTCP Cao su Yên Bái",
+      "TotalCapital": 1000,
+      "SharedCapital": 36,
+      "OwnershipRate": 3.6,
+      "Note": "",
+      "Order": 6,
+      "TradeCenter": ""
+    }
+  ],
+  "giao_dich_noi_bo": [
+    {
+      "transaction_name": "Huỳnh Thị Hoa",
+      "transaction_position": "Trưởng BKS",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 2500,
+      "plan_buy": 0,
+      "plan_sell": 2000,
+      "plan_begin_date": "2022-12-14",
+      "plan_end_date": "2023-01-05",
+      "real_buy": 0,
+      "real_sell": 700,
+      "real_end_date": "2022-12-25",
+      "published_date": "2022-12-12",
+      "volume_after": 1800
+    },
+    {
+      "transaction_name": "Huỳnh Thị Hoa",
+      "transaction_position": "Trưởng BKS",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 2700,
+      "plan_buy": 0,
+      "plan_sell": 2200,
+      "plan_begin_date": "2022-11-06",
+      "plan_end_date": "2022-12-01",
+      "real_buy": 0,
+      "real_sell": 200,
+      "real_end_date": "2022-11-30",
+      "published_date": "2022-11-03",
+      "volume_after": 2500
+    },
+    {
+      "transaction_name": "Huỳnh Thị Hoa",
+      "transaction_position": "Trưởng BKS",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 4100,
+      "plan_buy": 0,
+      "plan_sell": 3500,
+      "plan_begin_date": "2022-01-06",
+      "plan_end_date": "2022-01-27",
+      "real_buy": 0,
+      "real_sell": 1400,
+      "real_end_date": "2022-01-25",
+      "published_date": "2022-01-06",
+      "volume_after": 2700
+    },
+    {
+      "transaction_name": "Phạm Văn Thỏa",
+      "transaction_position": "Chồng",
+      "leader_name": "Huỳnh Thị Hoa",
+      "leader_position": "Trưởng BKS",
+      "volume_before": 3100,
+      "plan_buy": 0,
+      "plan_sell": 3100,
+      "plan_begin_date": "2018-08-19",
+      "plan_end_date": "2018-09-17",
+      "real_buy": 0,
+      "real_sell": 3100,
+      "real_end_date": "2018-08-23",
+      "published_date": "2018-08-19",
+      "volume_after": 0
+    }
+  ]
+}

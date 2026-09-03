@@ -1,0 +1,255 @@
+{
+  "symbol": "KGM",
+  "updated": "2026-03-22T03:18:07.000Z",
+  "co_cau_so_huu": {
+    "CoDongSoHuu": [
+      {
+        "Code": "CEO_53268",
+        "Name": "Nguyễn Thanh Sơn",
+        "Url": "<a href='/du-lieu/ceo/CEO_53268/nguyen-thanh-son.chn'>Nguyễn Thanh Sơn</a>",
+        "AssetVolume": "51.500",
+        "AssetRate": "0,2",
+        "UpdatedDate": "03/06/2025"
+      },
+      {
+        "Code": "CEO_59539",
+        "Name": "Nguyễn Trường Giang",
+        "Url": "<a href='/du-lieu/ceo/CEO_59539/nguyen-truong-giang.chn'>Nguyễn Trường Giang</a>",
+        "AssetVolume": "8.600",
+        "AssetRate": "0,03",
+        "UpdatedDate": "03/06/2025"
+      },
+      {
+        "Code": "CEO_53262",
+        "Name": "Đoàn Huỳnh Dũng",
+        "Url": "<a href='/du-lieu/ceo/CEO_53262/doan-huynh-dung.chn'>Đoàn Huỳnh Dũng</a>",
+        "AssetVolume": "10.000",
+        "AssetRate": "0,04",
+        "UpdatedDate": "03/06/2025"
+      },
+      {
+        "Code": "CEO_59540",
+        "Name": "Vũ Thị Minh Hiền",
+        "Url": "<a href='/du-lieu/ceo/CEO_59540/vu-thi-minh-hien.chn'>Vũ Thị Minh Hiền</a>",
+        "AssetVolume": "2.100",
+        "AssetRate": "0,01",
+        "UpdatedDate": "03/06/2025"
+      },
+      {
+        "Code": "KLQ_97491",
+        "Name": "Đặng Quốc Việt",
+        "Url": "Đặng Quốc Việt",
+        "AssetVolume": "2.643.000",
+        "AssetRate": "10,39",
+        "UpdatedDate": "03/06/2025"
+      },
+      {
+        "Code": "VSF",
+        "Name": "Công ty Cổ phần Xuất nhập khẩu Kiên Giang",
+        "Url": "<a href='/du-lieu/upcom/VSF-tong-cong-ty-luong-thuc-mien-nam-cong-ty-co-phan.chn' title='Tổng Công ty Lương thực Miền Nam - Công ty cổ phần'>Tổng Công ty Lương thực Miền Nam - Công ty cổ phần</a>",
+        "AssetVolume": "21.184.800",
+        "AssetRate": "83,31",
+        "UpdatedDate": "03/06/2025"
+      },
+      {
+        "Code": "CEO_53267",
+        "Name": "Trần Thị Mai Trinh",
+        "Url": "<a href='/du-lieu/ceo/CEO_53267/tran-thi-mai-trinh.chn'>Trần Thị Mai Trinh</a>",
+        "AssetVolume": "1.500",
+        "AssetRate": "0,01",
+        "UpdatedDate": "03/06/2025"
+      },
+      {
+        "Code": "CEO_874662",
+        "Name": "Đặng Quốc Việt",
+        "Url": "<a href='/du-lieu/ceo/CEO_874662/dang-quoc-viet.chn'>Đặng Quốc Việt</a>",
+        "AssetVolume": "3.000",
+        "AssetRate": "0,01",
+        "UpdatedDate": "03/06/2025"
+      },
+      {
+        "Code": "CEO_53264",
+        "Name": "Phạm Minh Trung",
+        "Url": "<a href='/du-lieu/ceo/CEO_53264/pham-minh-trung.chn'>Phạm Minh Trung</a>",
+        "AssetVolume": "30.700",
+        "AssetRate": "0,12",
+        "UpdatedDate": "03/06/2025"
+      },
+      {
+        "Code": "CEO_55383",
+        "Name": "Bạch Ngọc Văn",
+        "Url": "<a href='/du-lieu/ceo/CEO_55383/bach-ngoc-van.chn'>Bạch Ngọc Văn</a>",
+        "AssetVolume": "251.600",
+        "AssetRate": "0,99",
+        "UpdatedDate": "03/06/2025"
+      },
+      {
+        "Code": "CEO_57272",
+        "Name": "Trần Thị Điệp",
+        "Url": "<a href='/du-lieu/ceo/CEO_57272/tran-thi-diep.chn'>Trần Thị Điệp</a>",
+        "AssetVolume": "4.500",
+        "AssetRate": "0,02",
+        "UpdatedDate": "03/06/2025"
+      },
+      {
+        "Code": "CEO_53265",
+        "Name": "Dương Thị Thanh Nguyệt",
+        "Url": "<a href='/du-lieu/ceo/CEO_53265/duong-thi-thanh-nguyet.chn'>Dương Thị Thanh Nguyệt</a>",
+        "AssetVolume": "101.500",
+        "AssetRate": "0,4",
+        "UpdatedDate": "03/06/2025"
+      }
+    ],
+    "NuocNgoai": 0.02,
+    "NhaNuoc": 0,
+    "Khac": 99.98
+  },
+  "cong_ty_con": [],
+  "cong_ty_lien_ket": [],
+  "giao_dich_noi_bo": [
+    {
+      "transaction_name": "Phạm Minh Trung",
+      "transaction_position": "Thành viên HĐQT",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 30700,
+      "plan_buy": 0,
+      "plan_sell": 30700,
+      "plan_begin_date": "2023-09-26",
+      "plan_end_date": "2023-10-25",
+      "real_buy": 0,
+      "real_sell": 30700,
+      "real_end_date": "2023-10-19",
+      "published_date": "2023-10-24",
+      "volume_after": 0
+    },
+    {
+      "transaction_name": "Đặng Quốc Việt",
+      "transaction_position": "Thành viên HĐQT",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 543000,
+      "plan_buy": 0,
+      "plan_sell": 540000,
+      "plan_begin_date": "2023-09-21",
+      "plan_end_date": "2023-10-20",
+      "real_buy": 0,
+      "real_sell": 540000,
+      "real_end_date": "2023-09-27",
+      "published_date": "2023-09-29",
+      "volume_after": 3000
+    },
+    {
+      "transaction_name": "Phạm Minh Trung",
+      "transaction_position": "Thành viên HĐQT",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 51700,
+      "plan_buy": 0,
+      "plan_sell": 25000,
+      "plan_begin_date": "2023-08-15",
+      "plan_end_date": "2023-09-13",
+      "real_buy": 0,
+      "real_sell": 21000,
+      "real_end_date": "2023-09-13",
+      "published_date": "2023-09-19",
+      "volume_after": 30700
+    },
+    {
+      "transaction_name": "Đặng Quốc Việt",
+      "transaction_position": "Thành viên HĐQT",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 1243000,
+      "plan_buy": 0,
+      "plan_sell": 700000,
+      "plan_begin_date": "2023-09-11",
+      "plan_end_date": "2023-10-09",
+      "real_buy": 0,
+      "real_sell": 700000,
+      "real_end_date": "2023-09-12",
+      "published_date": "2023-09-14",
+      "volume_after": 543000
+    },
+    {
+      "transaction_name": "Trần Thị Mai Trinh",
+      "transaction_position": "Trưởng BKS",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 11500,
+      "plan_buy": 0,
+      "plan_sell": 10000,
+      "plan_begin_date": "2023-08-17",
+      "plan_end_date": "2023-09-15",
+      "real_buy": 0,
+      "real_sell": 10000,
+      "real_end_date": "2023-09-07",
+      "published_date": "2023-09-12",
+      "volume_after": 1500
+    },
+    {
+      "transaction_name": "Đặng Quốc Việt",
+      "transaction_position": "Thành viên HĐQT",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 2643000,
+      "plan_buy": 0,
+      "plan_sell": 1400000,
+      "plan_begin_date": "2023-08-11",
+      "plan_end_date": "2023-09-08",
+      "real_buy": 0,
+      "real_sell": 1400000,
+      "real_end_date": "2023-08-29",
+      "published_date": "2023-08-09",
+      "volume_after": 1243000
+    },
+    {
+      "transaction_name": "Đặng Quốc Việt",
+      "transaction_position": "",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 100000,
+      "plan_buy": 0,
+      "plan_sell": 0,
+      "plan_begin_date": "",
+      "plan_end_date": "",
+      "real_buy": 2543000,
+      "real_sell": 0,
+      "real_end_date": "2022-06-21",
+      "published_date": "2022-06-27",
+      "volume_after": 2643000
+    },
+    {
+      "transaction_name": "Phan Hùng Minh",
+      "transaction_position": "Thành viên HĐQT",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 2543000,
+      "plan_buy": 0,
+      "plan_sell": 2543000,
+      "plan_begin_date": "2022-06-01",
+      "plan_end_date": "2022-06-30",
+      "real_buy": 0,
+      "real_sell": 2543000,
+      "real_end_date": "2022-06-21",
+      "published_date": "2022-05-27",
+      "volume_after": 0
+    },
+    {
+      "transaction_name": "Bạch Ngọc Văn",
+      "transaction_position": "Thành viên HĐQT",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 251600,
+      "plan_buy": 100000,
+      "plan_sell": 0,
+      "plan_begin_date": "2018-05-07",
+      "plan_end_date": "2018-05-25",
+      "real_buy": 0,
+      "real_sell": 0,
+      "real_end_date": "2018-05-25",
+      "published_date": "2018-05-04",
+      "volume_after": 251600
+    }
+  ]
+}

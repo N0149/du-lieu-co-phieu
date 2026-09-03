@@ -1,0 +1,103 @@
+{
+  "symbol": "VIN",
+  "updated": "2026-03-22T03:24:42.000Z",
+  "co_cau_so_huu": {
+    "CoDongSoHuu": [
+      {
+        "Code": "CEO_58544",
+        "Name": "Nguyễn Thanh Tòng",
+        "Url": "<a href='/du-lieu/ceo/CEO_58544/nguyen-thanh-tong.chn'>Nguyễn Thanh Tòng</a>",
+        "AssetVolume": "5.000",
+        "AssetRate": "0,02",
+        "UpdatedDate": "12/06/2025"
+      },
+      {
+        "Code": "CEO_59197",
+        "Name": "Lê Hoàng Như Uyên",
+        "Url": "<a href='/du-lieu/ceo/CEO_59197/le-hoang-nhu-uyen.chn'>Lê Hoàng Như Uyên</a>",
+        "AssetVolume": "4.200",
+        "AssetRate": "0,02",
+        "UpdatedDate": "12/06/2025"
+      },
+      {
+        "Code": "TVN",
+        "Name": "Tổng Công ty Thép Việt Nam - CTCP",
+        "Url": "<a href='/du-lieu/upcom/TVN-tong-cong-ty-thep-viet-nam-ctcp.chn' title='Tổng Công ty Thép Việt Nam - CTCP'>Tổng Công ty Thép Việt Nam - CTCP</a>",
+        "AssetVolume": "24.319.300",
+        "AssetRate": "95,37",
+        "UpdatedDate": "12/06/2025"
+      },
+      {
+        "Code": "CEO_11672",
+        "Name": "Vũ Thị Bình Nguyên",
+        "Url": "<a href='/du-lieu/ceo/CEO_11672/vu-thi-binh-nguyen.chn'>Vũ Thị Bình Nguyên</a>",
+        "AssetVolume": "2.500",
+        "AssetRate": "0,01",
+        "UpdatedDate": "12/06/2025"
+      }
+    ],
+    "NuocNgoai": 0.09,
+    "NhaNuoc": 0,
+    "Khac": 99.91
+  },
+  "cong_ty_con": [
+    {
+      "Symbol": "VIN",
+      "CorpCode": "CORP_72084",
+      "Name": "Công ty TNHH Vận tải ô tô Vina Vinatrans (VTRUCK) ",
+      "TotalCapital": 19.4,
+      "SharedCapital": 17.95,
+      "OwnershipRate": 92.51,
+      "Note": "",
+      "Order": 1,
+      "TradeCenter": ""
+    }
+  ],
+  "cong_ty_lien_ket": [
+    {
+      "Symbol": "VIN",
+      "CorpCode": "CORP_52015",
+      "Name": "Công ty TNHH Lotte Vinatrans Global Logictics (VN)",
+      "TotalCapital": 0,
+      "SharedCapital": 0,
+      "OwnershipRate": 49,
+      "Note": "",
+      "Order": 2,
+      "TradeCenter": ""
+    },
+    {
+      "Symbol": "VIN",
+      "CorpCode": "CORP_72086",
+      "Name": "Công ty TNHH Nissin Logistics",
+      "TotalCapital": 0,
+      "SharedCapital": 0,
+      "OwnershipRate": 29,
+      "Note": "",
+      "Order": 3,
+      "TradeCenter": ""
+    },
+    {
+      "Symbol": "VIN",
+      "CorpCode": "CORP_72087",
+      "Name": "Công ty TNHH Agility",
+      "TotalCapital": 31.9,
+      "SharedCapital": 9.25,
+      "OwnershipRate": 29,
+      "Note": "",
+      "Order": 4,
+      "TradeCenter": ""
+    },
+    {
+      "Symbol": "VIN",
+      "CorpCode": "CORP_72085",
+      "Name": "Công ty Liên doanh Vận tải Quốc tế Việt Nhật",
+      "TotalCapital": 89,
+      "SharedCapital": 19.31,
+      "OwnershipRate": 21.7,
+      "Note": "",
+      "Order": 5,
+      "TradeCenter": ""
+    }
+  ],
+  "giao_dich_noi_bo": []
+}

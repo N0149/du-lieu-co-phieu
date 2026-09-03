@@ -1,0 +1,192 @@
+{
+  "symbol": "TCK",
+  "updated": "2026-05-01T06:15:01.000Z",
+  "co_cau_so_huu": {
+    "CoDongSoHuu": [
+      {
+        "Code": "CEO_75833",
+        "Name": "Trịnh Nam Hải",
+        "Url": "<a href='/du-lieu/ceo/CEO_75833/trinh-nam-hai.chn'>Trịnh Nam Hải</a>",
+        "AssetVolume": "5.500",
+        "AssetRate": "0,02",
+        "UpdatedDate": "31/12/2018"
+      },
+      {
+        "Code": "CEO_75830",
+        "Name": "Dương Văn Hồng",
+        "Url": "<a href='/du-lieu/ceo/CEO_75830/duong-van-hong.chn'>Dương Văn Hồng</a>",
+        "AssetVolume": "3.400",
+        "AssetRate": "0,01",
+        "UpdatedDate": "31/12/2018"
+      },
+      {
+        "Code": "CEO_75835",
+        "Name": "Nguyễn Văn Sơn",
+        "Url": "<a href='/du-lieu/ceo/CEO_75835/nguyen-van-son.chn'>Nguyễn Văn Sơn</a>",
+        "AssetVolume": "15.700",
+        "AssetRate": "0,07",
+        "UpdatedDate": "31/12/2018"
+      },
+      {
+        "Code": "CEO_10504",
+        "Name": "Trần Thanh Vân",
+        "Url": "<a href='/du-lieu/ceo/CEO_10504/tran-thanh-van.chn'>Trần Thanh Vân</a>",
+        "AssetVolume": "2.500",
+        "AssetRate": "0,01",
+        "UpdatedDate": "31/12/2018"
+      },
+      {
+        "Code": "CEO_75831",
+        "Name": "Phạm Việt Hùng",
+        "Url": "<a href='/du-lieu/ceo/CEO_75831/pham-viet-hung.chn'>Phạm Việt Hùng</a>",
+        "AssetVolume": "7.400",
+        "AssetRate": "0,03",
+        "UpdatedDate": "31/12/2018"
+      },
+      {
+        "Code": "CEO_53463",
+        "Name": "Nguyễn Thị Ngọc Diệp",
+        "Url": "<a href='/du-lieu/ceo/CEO_53463/nguyen-thi-ngoc-diep.chn'>Nguyễn Thị Ngọc Diệp</a>",
+        "AssetVolume": "1.500",
+        "AssetRate": "0,01",
+        "UpdatedDate": "31/12/2018"
+      },
+      {
+        "Code": "CORP_30229",
+        "Name": "Bộ Xây dựng",
+        "Url": "Bộ Xây dựng",
+        "AssetVolume": "23.555.200",
+        "AssetRate": "98,76",
+        "UpdatedDate": "14/06/2017"
+      },
+      {
+        "Code": "CEO_81797",
+        "Name": "Nguyễn Thị Tuyết Nhung",
+        "Url": "<a href='/du-lieu/ceo/CEO_81797/nguyen-thi-tuyet-nhung.chn'>Nguyễn Thị Tuyết Nhung</a>",
+        "AssetVolume": "6.800",
+        "AssetRate": "0,03",
+        "UpdatedDate": "31/12/2018"
+      },
+      {
+        "Code": "CEO_53465",
+        "Name": "Lê Thế Thủy",
+        "Url": "<a href='/du-lieu/ceo/CEO_53465/le-the-thuy.chn'>Lê Thế Thủy</a>",
+        "AssetVolume": "5.800",
+        "AssetRate": "0,02",
+        "UpdatedDate": "31/12/2018"
+      },
+      {
+        "Code": "CEO_75834",
+        "Name": "Vũ Xuân Thắng",
+        "Url": "<a href='/du-lieu/ceo/CEO_75834/vu-xuan-thang.chn'>Vũ Xuân Thắng</a>",
+        "AssetVolume": "7.000",
+        "AssetRate": "0,03",
+        "UpdatedDate": "31/12/2018"
+      },
+      {
+        "Code": "CEO_53464",
+        "Name": "Vũ Đức Đại",
+        "Url": "<a href='/du-lieu/ceo/CEO_53464/vu-duc-dai.chn'>Vũ Đức Đại</a>",
+        "AssetVolume": "1.300",
+        "AssetRate": "0,01",
+        "UpdatedDate": "31/12/2018"
+      }
+    ],
+    "NuocNgoai": 23850000,
+    "NhaNuoc": 0,
+    "Khac": -23849900
+  },
+  "cong_ty_con": [
+    {
+      "Symbol": "TCK",
+      "CorpCode": "CORP_80802",
+      "Name": "Công ty TNHH MTV Sản xuất - Xuất nhập khẩu - Dịch vụ và phát triển nông thôn (DECOIMEX)",
+      "TotalCapital": 100,
+      "SharedCapital": 100,
+      "OwnershipRate": 100,
+      "Note": "",
+      "Order": 1,
+      "TradeCenter": ""
+    },
+    {
+      "Symbol": "TCK",
+      "CorpCode": "CORP_80803",
+      "Name": "Công ty TNHH MTV Xây lắp và Kinh doanh vật tư thiết bị (COMA 27) ",
+      "TotalCapital": 12.938,
+      "SharedCapital": 12.94,
+      "OwnershipRate": 100,
+      "Note": "",
+      "Order": 2,
+      "TradeCenter": ""
+    },
+    {
+      "Symbol": "TCK",
+      "CorpCode": "CORP_80798",
+      "Name": "CTCP Khóa Minh Khai (COMA Minh Khai)",
+      "TotalCapital": 6.6,
+      "SharedCapital": 4.45,
+      "OwnershipRate": 67.47,
+      "Note": "",
+      "Order": 3,
+      "TradeCenter": ""
+    },
+    {
+      "Symbol": "TCK",
+      "CorpCode": "CORP_80799",
+      "Name": "CTCP Cơ khí và xây lắp Thái Bình (COMA 16)",
+      "TotalCapital": 6,
+      "SharedCapital": 3.22,
+      "OwnershipRate": 53.61,
+      "Note": "",
+      "Order": 4,
+      "TradeCenter": ""
+    },
+    {
+      "Symbol": "TCK",
+      "CorpCode": "CORP_80801",
+      "Name": "CTCP Cơ khí xây dựng và lắp máy điện nước (COMAEL)",
+      "TotalCapital": 11,
+      "SharedCapital": 5.67,
+      "OwnershipRate": 51.54,
+      "Note": "",
+      "Order": 5,
+      "TradeCenter": ""
+    },
+    {
+      "Symbol": "TCK",
+      "CorpCode": "CORP_80797",
+      "Name": "CTCP Cơ khí xây dựng số 2 Bắc Hà (COMA2)",
+      "TotalCapital": 17.122,
+      "SharedCapital": 8.8,
+      "OwnershipRate": 51.38,
+      "Note": "",
+      "Order": 6,
+      "TradeCenter": ""
+    }
+  ],
+  "cong_ty_lien_ket": [
+    {
+      "Symbol": "TCK",
+      "CorpCode": "CORP_80808",
+      "Name": "Công ty LD đồng hồ nước ZENNER - COMA",
+      "TotalCapital": 2.998,
+      "SharedCapital": 0.93,
+      "OwnershipRate": 31,
+      "Note": "",
+      "Order": 7,
+      "TradeCenter": ""
+    },
+    {
+      "Symbol": "TCK",
+      "CorpCode": "CORP_80806",
+      "Name": "CTCP Cơ khí và đầu tư xây dựng số 9 (COMA 9)",
+      "TotalCapital": 45,
+      "SharedCapital": 9,
+      "OwnershipRate": 20,
+      "Note": "",
+      "Order": 8,
+      "TradeCenter": ""
+    }
+  ],
+  "giao_dich_noi_bo": []
+}

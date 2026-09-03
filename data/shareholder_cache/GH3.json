@@ -1,0 +1,135 @@
+{
+  "symbol": "GH3",
+  "updated": "2026-03-22T03:16:20.000Z",
+  "co_cau_so_huu": {
+    "CoDongSoHuu": [
+      {
+        "Code": "CEO_73131",
+        "Name": "Trương Thái Hòa",
+        "Url": "<a href='/du-lieu/ceo/CEO_73131/truong-thai-hoa.chn'>Trương Thái Hòa</a>",
+        "AssetVolume": "103.900",
+        "AssetRate": "0,9",
+        "UpdatedDate": "12/09/2025"
+      },
+      {
+        "Code": "CEO_73133",
+        "Name": "Đỗ Thị Thanh Thủy",
+        "Url": "<a href='/du-lieu/ceo/CEO_73133/do-thi-thanh-thuy.chn'>Đỗ Thị Thanh Thủy</a>",
+        "AssetVolume": "65.989",
+        "AssetRate": "0,57",
+        "UpdatedDate": "12/09/2025"
+      },
+      {
+        "Code": "CEO_73135",
+        "Name": "Nguyễn Xuân Trường",
+        "Url": "<a href='/du-lieu/ceo/CEO_73135/nguyen-xuan-truong.chn'>Nguyễn Xuân Trường</a>",
+        "AssetVolume": "32.500",
+        "AssetRate": "0,28",
+        "UpdatedDate": "12/09/2025"
+      },
+      {
+        "Code": "CEO_73137",
+        "Name": "Cù Chí Hoàng",
+        "Url": "<a href='/du-lieu/ceo/CEO_73137/cu-chi-hoang.chn'>Cù Chí Hoàng</a>",
+        "AssetVolume": "1.500",
+        "AssetRate": "0,01",
+        "UpdatedDate": "12/09/2025"
+      },
+      {
+        "Code": "CEO_73134",
+        "Name": "Đặng Trần Trung",
+        "Url": "<a href='/du-lieu/ceo/CEO_73134/dang-tran-trung.chn'>Đặng Trần Trung</a>",
+        "AssetVolume": "94.100",
+        "AssetRate": "0,82",
+        "UpdatedDate": "12/09/2025"
+      },
+      {
+        "Code": "KLQ_100094",
+        "Name": "Đỗ Tuấn Hùng",
+        "Url": "Đỗ Tuấn Hùng",
+        "AssetVolume": "691.800",
+        "AssetRate": "6,02",
+        "UpdatedDate": "12/09/2025"
+      },
+      {
+        "Code": "CEO_73138",
+        "Name": "Phạm Tất Thành",
+        "Url": "<a href='/du-lieu/ceo/CEO_73138/pham-tat-thanh.chn'>Phạm Tất Thành</a>",
+        "AssetVolume": "11.900",
+        "AssetRate": "0,1",
+        "UpdatedDate": "12/09/2025"
+      },
+      {
+        "Code": "CEO_73140",
+        "Name": "Nguyễn Hồng Hải",
+        "Url": "<a href='/du-lieu/ceo/CEO_73140/nguyen-hong-hai.chn'>Nguyễn Hồng Hải</a>",
+        "AssetVolume": "3.100",
+        "AssetRate": "0,03",
+        "UpdatedDate": "12/09/2025"
+      },
+      {
+        "Code": "CEO_73132",
+        "Name": "Vũ Thanh Tùng",
+        "Url": "<a href='/du-lieu/ceo/CEO_73132/vu-thanh-tung.chn'>Vũ Thanh Tùng</a>",
+        "AssetVolume": "2.000",
+        "AssetRate": "0,02",
+        "UpdatedDate": "12/09/2025"
+      },
+      {
+        "Code": "CEO_73136",
+        "Name": "Vũ Đức Linh",
+        "Url": "<a href='/du-lieu/ceo/CEO_73136/vu-duc-linh.chn'>Vũ Đức Linh</a>",
+        "AssetVolume": "3.500",
+        "AssetRate": "0,03",
+        "UpdatedDate": "12/09/2025"
+      },
+      {
+        "Code": "CORP_99691",
+        "Name": "UBND thành phố Hà Nội",
+        "Url": "UBND thành phố Hà Nội",
+        "AssetVolume": "8.492.991",
+        "AssetRate": "73,86",
+        "UpdatedDate": "12/09/2025"
+      }
+    ],
+    "NuocNgoai": 49,
+    "NhaNuoc": 0,
+    "Khac": 51
+  },
+  "cong_ty_con": [],
+  "cong_ty_lien_ket": [],
+  "giao_dich_noi_bo": [
+    {
+      "transaction_name": "Đỗ Tuấn Hùng",
+      "transaction_position": "",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 0,
+      "plan_buy": 0,
+      "plan_sell": 0,
+      "plan_begin_date": "",
+      "plan_end_date": "",
+      "real_buy": 691800,
+      "real_sell": 0,
+      "real_end_date": "2024-01-24",
+      "published_date": "2024-02-16",
+      "volume_after": 691800
+    },
+    {
+      "transaction_name": "Vũ Thanh Tùng",
+      "transaction_position": "Thành viên HĐQT",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 54000,
+      "plan_buy": 0,
+      "plan_sell": 52000,
+      "plan_begin_date": "2023-06-15",
+      "plan_end_date": "2023-07-14",
+      "real_buy": 0,
+      "real_sell": 52000,
+      "real_end_date": "2023-06-20",
+      "published_date": "2023-06-14",
+      "volume_after": 2000
+    }
+  ]
+}

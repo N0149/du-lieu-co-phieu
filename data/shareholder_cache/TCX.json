@@ -1,0 +1,271 @@
+{
+  "symbol": "TCX",
+  "updated": "2026-09-01T07:48:45.000Z",
+  "co_cau_so_huu": {
+    "CoDongSoHuu": [
+      {
+        "Code": "CEO_872187",
+        "Name": "Đặng Văn Khải",
+        "Url": "<a href='/du-lieu/ceo/CEO_872187/dang-van-khai.chn'>Đặng Văn Khải</a>",
+        "AssetVolume": "142.800",
+        "AssetRate": "0,01",
+        "UpdatedDate": "22/09/2025"
+      },
+      {
+        "Code": "CEO_880270",
+        "Name": "Phạm Thúy Vân",
+        "Url": "<a href='/du-lieu/ceo/CEO_880270/pham-thuy-van.chn'>Phạm Thúy Vân</a>",
+        "AssetVolume": "5.000",
+        "AssetRate": "0,0",
+        "UpdatedDate": "22/09/2025"
+      },
+      {
+        "Code": "CEO_880267",
+        "Name": "Ngô Hoàng Hà",
+        "Url": "<a href='/du-lieu/ceo/CEO_880267/ngo-hoang-ha.chn'>Ngô Hoàng Hà</a>",
+        "AssetVolume": "357.183",
+        "AssetRate": "0,01",
+        "UpdatedDate": "02/03/2026"
+      },
+      {
+        "Code": "CEO_880263",
+        "Name": "Hoàng Thị Kim Cúc",
+        "Url": "<a href='/du-lieu/ceo/CEO_880263/hoang-thi-kim-cuc.chn'>Hoàng Thị Kim Cúc</a>",
+        "AssetVolume": "5.040",
+        "AssetRate": "0,0",
+        "UpdatedDate": "22/09/2025"
+      },
+      {
+        "Code": "CEO_880268",
+        "Name": "Nguyễn Tuấn Cường",
+        "Url": "<a href='/du-lieu/ceo/CEO_880268/nguyen-tuan-cuong.chn'>Nguyễn Tuấn Cường</a>",
+        "AssetVolume": "221.672",
+        "AssetRate": "0,01",
+        "UpdatedDate": "01/07/2026"
+      },
+      {
+        "Code": "CEO_80024",
+        "Name": "Nguyễn Xuân Minh",
+        "Url": "<a href='/du-lieu/ceo/CEO_80024/nguyen-xuan-minh.chn'>Nguyễn Xuân Minh</a>",
+        "AssetVolume": "93.666.973",
+        "AssetRate": "3,38",
+        "UpdatedDate": "22/09/2025"
+      },
+      {
+        "Code": "CEO_872149",
+        "Name": "Phạm Diệu Linh",
+        "Url": "<a href='/du-lieu/ceo/CEO_872149/pham-dieu-linh.chn'>Phạm Diệu Linh</a>",
+        "AssetVolume": "542.395",
+        "AssetRate": "0,02",
+        "UpdatedDate": "02/03/2026"
+      },
+      {
+        "Code": "CEO_880266",
+        "Name": "Nguyễn Đăng Minh",
+        "Url": "<a href='/du-lieu/ceo/CEO_880266/nguyen-dang-minh.chn'>Nguyễn Đăng Minh</a>",
+        "AssetVolume": "276.912",
+        "AssetRate": "0,01",
+        "UpdatedDate": "02/03/2026"
+      },
+      {
+        "Code": "CEO_880264",
+        "Name": "Lê Thị Thu Hương",
+        "Url": "<a href='/du-lieu/ceo/CEO_880264/le-thi-thu-huong.chn'>Lê Thị Thu Hương</a>",
+        "AssetVolume": "70.632",
+        "AssetRate": "0,0",
+        "UpdatedDate": "22/09/2025"
+      },
+      {
+        "Code": "CEO_880261",
+        "Name": "Nguyễn Thị Thu Hiền",
+        "Url": "<a href='/du-lieu/ceo/CEO_880261/nguyen-thi-thu-hien.chn'>Nguyễn Thị Thu Hiền</a>",
+        "AssetVolume": "11.663.014",
+        "AssetRate": "0,42",
+        "UpdatedDate": "02/03/2026"
+      },
+      {
+        "Code": "CEO_880265",
+        "Name": "Trần Thị Thu Trang",
+        "Url": "<a href='/du-lieu/ceo/CEO_880265/tran-thi-thu-trang.chn'>Trần Thị Thu Trang</a>",
+        "AssetVolume": "318.936",
+        "AssetRate": "0,01",
+        "UpdatedDate": "02/03/2026"
+      },
+      {
+        "Code": "CEO_880269",
+        "Name": "Bùi Thị Thu Hằng",
+        "Url": "<a href='/du-lieu/ceo/CEO_880269/bui-thi-thu-hang.chn'>Bùi Thị Thu Hằng</a>",
+        "AssetVolume": "260.498",
+        "AssetRate": "0,01",
+        "UpdatedDate": "02/07/2026"
+      }
+    ],
+    "NuocNgoai": 9.17,
+    "NhaNuoc": 0,
+    "Khac": 90.83
+  },
+  "cong_ty_con": [],
+  "cong_ty_lien_ket": [],
+  "giao_dich_noi_bo": [
+    {
+      "transaction_name": "Bùi Thị Thu Hằng",
+      "transaction_position": "Phó Tổng GĐ",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 243492,
+      "plan_buy": 17006,
+      "plan_sell": 0,
+      "plan_begin_date": "2026-07-01",
+      "plan_end_date": "2026-07-02",
+      "real_buy": 17006,
+      "real_sell": 0,
+      "real_end_date": "2026-07-02",
+      "published_date": "2026-07-20",
+      "volume_after": 260498
+    },
+    {
+      "transaction_name": "Nguyễn Tuấn Cường",
+      "transaction_position": "Phó Tổng GĐ",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 221672,
+      "plan_buy": 31488,
+      "plan_sell": 0,
+      "plan_begin_date": "2026-07-01",
+      "plan_end_date": "2026-07-02",
+      "real_buy": 0,
+      "real_sell": 0,
+      "real_end_date": "",
+      "published_date": "2026-07-13",
+      "volume_after": 0
+    },
+    {
+      "transaction_name": "Nguyễn Thị Thu Hiền",
+      "transaction_position": "Thành Viên HĐQT",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 11634585,
+      "plan_buy": 28429,
+      "plan_sell": 0,
+      "plan_begin_date": "2026-02-27",
+      "plan_end_date": "2026-03-02",
+      "real_buy": 28429,
+      "real_sell": 0,
+      "real_end_date": "2026-03-02",
+      "published_date": "2026-03-09",
+      "volume_after": 11663014
+    },
+    {
+      "transaction_name": "Trần Thị Thu Trang",
+      "transaction_position": "Phó Tổng GĐ",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 303380,
+      "plan_buy": 15556,
+      "plan_sell": 0,
+      "plan_begin_date": "2026-02-27",
+      "plan_end_date": "2026-03-02",
+      "real_buy": 15556,
+      "real_sell": 0,
+      "real_end_date": "2026-03-02",
+      "published_date": "2026-03-09",
+      "volume_after": 318936
+    },
+    {
+      "transaction_name": "Nguyễn Tuấn Cường",
+      "transaction_position": "Phó Tổng GĐ",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 171136,
+      "plan_buy": 13591,
+      "plan_sell": 0,
+      "plan_begin_date": "2026-02-27",
+      "plan_end_date": "2026-03-02",
+      "real_buy": 13591,
+      "real_sell": 0,
+      "real_end_date": "2026-03-02",
+      "published_date": "2026-03-09",
+      "volume_after": 184727
+    },
+    {
+      "transaction_name": "Bùi Thị Thu Hằng",
+      "transaction_position": "Phó Tổng GĐ",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 192464,
+      "plan_buy": 10446,
+      "plan_sell": 0,
+      "plan_begin_date": "2026-02-27",
+      "plan_end_date": "2026-03-02",
+      "real_buy": 10446,
+      "real_sell": 0,
+      "real_end_date": "2026-03-02",
+      "published_date": "2026-03-09",
+      "volume_after": 202910
+    },
+    {
+      "transaction_name": "Phạm Diệu Linh",
+      "transaction_position": "Phó Tổng GĐ",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 525943,
+      "plan_buy": 16452,
+      "plan_sell": 0,
+      "plan_begin_date": "2026-02-27",
+      "plan_end_date": "2026-03-02",
+      "real_buy": 16452,
+      "real_sell": 0,
+      "real_end_date": "2026-03-02",
+      "published_date": "2026-03-09",
+      "volume_after": 542395
+    },
+    {
+      "transaction_name": "Nguyễn Đăng Minh",
+      "transaction_position": "Phó Tổng GĐ",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 264197,
+      "plan_buy": 12715,
+      "plan_sell": 0,
+      "plan_begin_date": "2026-02-27",
+      "plan_end_date": "2026-03-02",
+      "real_buy": 12715,
+      "real_sell": 0,
+      "real_end_date": "2026-03-02",
+      "published_date": "2026-03-09",
+      "volume_after": 276912
+    },
+    {
+      "transaction_name": "Ngô Hoàng Hà",
+      "transaction_position": "Phó Tổng GĐ",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 321588,
+      "plan_buy": 35595,
+      "plan_sell": 0,
+      "plan_begin_date": "2026-02-27",
+      "plan_end_date": "2026-03-02",
+      "real_buy": 35595,
+      "real_sell": 0,
+      "real_end_date": "2026-03-02",
+      "published_date": "2026-02-27",
+      "volume_after": 357183
+    },
+    {
+      "transaction_name": "Ngô Hoàng Hà",
+      "transaction_position": "Phó Tổng GĐ",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 321588,
+      "plan_buy": 35595,
+      "plan_sell": 0,
+      "plan_begin_date": "2026-02-27",
+      "plan_end_date": "2026-03-02",
+      "real_buy": 0,
+      "real_sell": 0,
+      "real_end_date": "",
+      "published_date": "2026-02-27",
+      "volume_after": 0
+    }
+  ]
+}

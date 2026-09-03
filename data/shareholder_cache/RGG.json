@@ -1,0 +1,46 @@
+{
+  "symbol": "RGG",
+  "updated": "2026-08-01T05:52:10.000Z",
+  "co_cau_so_huu": {
+    "CoDongSoHuu": [
+      {
+        "Code": "CEO_880332",
+        "Name": "Trần Ngọc Thái",
+        "Url": "<a href='/du-lieu/ceo/CEO_880332/tran-ngoc-thai.chn'>Trần Ngọc Thái</a>",
+        "AssetVolume": "4.403.666",
+        "AssetRate": "2,0",
+        "UpdatedDate": "19/06/2026"
+      },
+      {
+        "Code": "CEO_880327",
+        "Name": "Trần Ngọc Thành",
+        "Url": "<a href='/du-lieu/ceo/CEO_880327/tran-ngoc-thanh.chn'>Trần Ngọc Thành</a>",
+        "AssetVolume": "33.000.000",
+        "AssetRate": "15,0",
+        "UpdatedDate": "19/06/2026"
+      },
+      {
+        "Code": "DXS",
+        "Name": "Công ty Cổ phần Dịch vụ Bất động sản Đất Xanh",
+        "Url": "<a href='/du-lieu/hose/DXS-cong-ty-co-phan-dich-vu-bat-dong-san-dat-xanh.chn' title='Công ty Cổ phần Dịch vụ Bất động sản Đất Xanh'>Công ty Cổ phần Dịch vụ Bất động sản Đất Xanh</a>",
+        "AssetVolume": "121.000.002",
+        "AssetRate": "55,0",
+        "UpdatedDate": "19/06/2026"
+      },
+      {
+        "Code": "CEO_05323",
+        "Name": "Lương Trí Thìn",
+        "Url": "<a href='/du-lieu/ceo/CEO_05323/luong-tri-thin.chn'>Lương Trí Thìn</a>",
+        "AssetVolume": "11.378.888",
+        "AssetRate": "5,17",
+        "UpdatedDate": "19/06/2026"
+      }
+    ],
+    "NuocNgoai": 200000000,
+    "NhaNuoc": 0,
+    "Khac": -199999900
+  },
+  "cong_ty_con": [],
+  "cong_ty_lien_ket": [],
+  "giao_dich_noi_bo": []
+}

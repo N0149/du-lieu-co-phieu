@@ -1,0 +1,103 @@
+{
+  "symbol": "GIC",
+  "updated": "2026-08-01T05:37:12.000Z",
+  "co_cau_so_huu": {
+    "CoDongSoHuu": [
+      {
+        "Code": "CEO_66140",
+        "Name": "Nguyễn Thị Minh Lan",
+        "Url": "<a href='/du-lieu/ceo/CEO_66140/nguyen-thi-minh-lan.chn'>Nguyễn Thị Minh Lan</a>",
+        "AssetVolume": "42.240",
+        "AssetRate": "0,17",
+        "UpdatedDate": "19/06/2026"
+      },
+      {
+        "Code": "CORP_53257",
+        "Name": "America LLC",
+        "Url": "America LLC",
+        "AssetVolume": "1.603.800",
+        "AssetRate": "6,3",
+        "UpdatedDate": "19/06/2026"
+      },
+      {
+        "Code": "CEO_66126",
+        "Name": "Đồng Trung Hải",
+        "Url": "<a href='/du-lieu/ceo/CEO_66126/dong-trung-hai.chn'>Đồng Trung Hải</a>",
+        "AssetVolume": "31.680",
+        "AssetRate": "0,12",
+        "UpdatedDate": "19/06/2026"
+      },
+      {
+        "Code": "CEO_66131",
+        "Name": "Trần Ngọc Toàn",
+        "Url": "<a href='/du-lieu/ceo/CEO_66131/tran-ngoc-toan.chn'>Trần Ngọc Toàn</a>",
+        "AssetVolume": "5.500",
+        "AssetRate": "0,02",
+        "UpdatedDate": "19/06/2026"
+      },
+      {
+        "Code": "VSC",
+        "Name": "Công ty cổ phần VSC Green Logistics",
+        "Url": "<a href='/du-lieu/hose/VSC-cong-ty-co-phan-container-viet-nam.chn' title='Công ty cổ phần Container Việt Nam'>Công ty cổ phần Container Việt Nam</a>",
+        "AssetVolume": "16.884.000",
+        "AssetRate": "66,34",
+        "UpdatedDate": "19/06/2026"
+      }
+    ],
+    "NuocNgoai": 4.88,
+    "NhaNuoc": 0,
+    "Khac": 95.12
+  },
+  "cong_ty_con": [],
+  "cong_ty_lien_ket": [],
+  "giao_dich_noi_bo": [
+    {
+      "transaction_name": "America LLC",
+      "transaction_position": "",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 727000,
+      "plan_buy": 0,
+      "plan_sell": 0,
+      "plan_begin_date": "",
+      "plan_end_date": "",
+      "real_buy": 2000,
+      "real_sell": 0,
+      "real_end_date": "2025-02-03",
+      "published_date": "2025-02-07",
+      "volume_after": 729000
+    },
+    {
+      "transaction_name": "America LLC",
+      "transaction_position": "",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 603100,
+      "plan_buy": 0,
+      "plan_sell": 0,
+      "plan_begin_date": "",
+      "plan_end_date": "",
+      "real_buy": 4000,
+      "real_sell": 0,
+      "real_end_date": "2024-10-25",
+      "published_date": "2024-11-01",
+      "volume_after": 607100
+    },
+    {
+      "transaction_name": "Nguyễn Thị Thủy",
+      "transaction_position": "Vợ",
+      "leader_name": "Nguyễn Thế Trọng",
+      "leader_position": "Chủ tịch HĐQT",
+      "volume_before": 18000,
+      "plan_buy": 0,
+      "plan_sell": 18000,
+      "plan_begin_date": "2024-03-29",
+      "plan_end_date": "2024-04-26",
+      "real_buy": 0,
+      "real_sell": 18000,
+      "real_end_date": "2024-04-01",
+      "published_date": "2024-04-04",
+      "volume_after": 0
+    }
+  ]
+}

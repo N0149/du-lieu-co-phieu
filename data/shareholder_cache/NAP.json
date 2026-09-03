@@ -1,0 +1,211 @@
+{
+  "symbol": "NAP",
+  "updated": "2026-05-01T06:03:25.000Z",
+  "co_cau_so_huu": {
+    "CoDongSoHuu": [
+      {
+        "Code": "CEO_37569",
+        "Name": "Bùi Kiều Hưng",
+        "Url": "<a href='/du-lieu/ceo/CEO_37569/bui-kieu-hung.chn'>Bùi Kiều Hưng</a>",
+        "AssetVolume": "15.925",
+        "AssetRate": "0,07",
+        "UpdatedDate": "12/06/2025"
+      },
+      {
+        "Code": "CEO_37574",
+        "Name": "Nguyễn Xuân Hùng",
+        "Url": "<a href='/du-lieu/ceo/CEO_37574/nguyen-xuan-hung.chn'>Nguyễn Xuân Hùng</a>",
+        "AssetVolume": "20.740",
+        "AssetRate": "0,1",
+        "UpdatedDate": "12/06/2025"
+      },
+      {
+        "Code": "CEO_37567",
+        "Name": "Lê Doãn Long",
+        "Url": "<a href='/du-lieu/ceo/CEO_37567/le-doan-long.chn'>Lê Doãn Long</a>",
+        "AssetVolume": "44.900",
+        "AssetRate": "0,21",
+        "UpdatedDate": "12/06/2025"
+      },
+      {
+        "Code": "CEO_37568",
+        "Name": "Trần Văn Đạt",
+        "Url": "<a href='/du-lieu/ceo/CEO_37568/tran-van-dat.chn'>Trần Văn Đạt</a>",
+        "AssetVolume": "32.150",
+        "AssetRate": "0,15",
+        "UpdatedDate": "12/06/2025"
+      },
+      {
+        "Code": "CORP_65555",
+        "Name": "Công ty TNHH Tín Nghĩa Commodities",
+        "Url": "Công ty TNHH Tín Nghĩa Commodities",
+        "AssetVolume": "4.594.156",
+        "AssetRate": "21,35",
+        "UpdatedDate": "12/06/2025"
+      },
+      {
+        "Code": "CEO_83686",
+        "Name": "Nguyễn Danh Hải",
+        "Url": "<a href='/du-lieu/ceo/CEO_83686/nguyen-danh-hai.chn'>Nguyễn Danh Hải</a>",
+        "AssetVolume": "6.600",
+        "AssetRate": "0,03",
+        "UpdatedDate": "12/06/2025"
+      },
+      {
+        "Code": "MVN",
+        "Name": "Công ty cổ phần Cảng Nghệ Tĩnh",
+        "Url": "<a href='/du-lieu/upcom/MVN-tong-cong-ty-hang-hai-viet-nam-ctcp.chn' title='Tổng Công ty Hàng hải Việt Nam - CTCP'>Tổng Công ty Hàng hải Việt Nam - CTCP</a>",
+        "AssetVolume": "10.973.772",
+        "AssetRate": "51,0",
+        "UpdatedDate": "12/06/2025"
+      }
+    ],
+    "NuocNgoai": 21516383.67,
+    "NhaNuoc": 0,
+    "Khac": -21516283.67
+  },
+  "cong_ty_con": [],
+  "cong_ty_lien_ket": [
+    {
+      "Symbol": "NAP",
+      "CorpCode": "CORP_65114",
+      "Name": "CTCP lai dắt và dịch vụ hàng hải Cảng Cửa Lò",
+      "TotalCapital": 13.5,
+      "SharedCapital": 4.86,
+      "OwnershipRate": 36,
+      "Note": "",
+      "Order": 1,
+      "TradeCenter": ""
+    }
+  ],
+  "giao_dich_noi_bo": [
+    {
+      "transaction_name": "Công ty TNHH Tín Nghĩa Commodities",
+      "transaction_position": "",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 0,
+      "plan_buy": 0,
+      "plan_sell": 0,
+      "plan_begin_date": "",
+      "plan_end_date": "",
+      "real_buy": 4594156,
+      "real_sell": 0,
+      "real_end_date": "2022-02-24",
+      "published_date": "2022-03-24",
+      "volume_after": 4594156
+    },
+    {
+      "transaction_name": "CTCP Đầu tư Xây dựng Tuấn Lộc",
+      "transaction_position": "",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 4594156,
+      "plan_buy": 0,
+      "plan_sell": 4594156,
+      "plan_begin_date": "2022-01-26",
+      "plan_end_date": "2022-02-24",
+      "real_buy": 0,
+      "real_sell": 4594156,
+      "real_end_date": "2022-02-24",
+      "published_date": "2022-01-27",
+      "volume_after": 0
+    },
+    {
+      "transaction_name": "CTCP Đầu tư Xây dựng Tuấn Lộc",
+      "transaction_position": "",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 4594156,
+      "plan_buy": 0,
+      "plan_sell": 4594156,
+      "plan_begin_date": "2021-12-26",
+      "plan_end_date": "2022-01-20",
+      "real_buy": 0,
+      "real_sell": 0,
+      "real_end_date": "2022-01-20",
+      "published_date": "2021-12-22",
+      "volume_after": 4594156
+    },
+    {
+      "transaction_name": "Bùi Ngọc Yên",
+      "transaction_position": "",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 1156551,
+      "plan_buy": 0,
+      "plan_sell": 1156551,
+      "plan_begin_date": "2019-04-02",
+      "plan_end_date": "2019-05-01",
+      "real_buy": 0,
+      "real_sell": 1156551,
+      "real_end_date": "2019-04-02",
+      "published_date": "2019-03-31",
+      "volume_after": 0
+    },
+    {
+      "transaction_name": "Bùi Ngọc Yên",
+      "transaction_position": "",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 2313101,
+      "plan_buy": 0,
+      "plan_sell": 1156550,
+      "plan_begin_date": "2018-10-04",
+      "plan_end_date": "2018-11-01",
+      "real_buy": 0,
+      "real_sell": 1156550,
+      "real_end_date": "2018-10-08",
+      "published_date": "2018-10-02",
+      "volume_after": 1156551
+    },
+    {
+      "transaction_name": "CTCP Đầu tư Xây dựng Tuấn Lộc",
+      "transaction_position": "",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 3894156,
+      "plan_buy": 700000,
+      "plan_sell": 0,
+      "plan_begin_date": "2017-05-14",
+      "plan_end_date": "2017-06-12",
+      "real_buy": 700000,
+      "real_sell": 0,
+      "real_end_date": "2017-05-22",
+      "published_date": "2017-05-10",
+      "volume_after": 4594156
+    },
+    {
+      "transaction_name": "Nguyễn Xuân Hùng",
+      "transaction_position": "Kế toán trưởng",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 18040,
+      "plan_buy": 2700,
+      "plan_sell": 0,
+      "plan_begin_date": "2017-04-27",
+      "plan_end_date": "2017-05-25",
+      "real_buy": 2700,
+      "real_sell": 0,
+      "real_end_date": "2017-05-18",
+      "published_date": "2017-04-26",
+      "volume_after": 20740
+    },
+    {
+      "transaction_name": "Nguyễn Xuân Hùng",
+      "transaction_position": "Kế toán trưởng",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 13540,
+      "plan_buy": 4500,
+      "plan_sell": 0,
+      "plan_begin_date": "2016-11-21",
+      "plan_end_date": "2016-12-20",
+      "real_buy": 4500,
+      "real_sell": 0,
+      "real_end_date": "2016-12-20",
+      "published_date": "2016-11-17",
+      "volume_after": 18040
+    }
+  ]
+}

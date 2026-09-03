@@ -1,0 +1,54 @@
+{
+  "symbol": "TKA",
+  "updated": "2026-03-22T03:23:17.000Z",
+  "co_cau_so_huu": {
+    "CoDongSoHuu": [
+      {
+        "Code": "CEO_59185",
+        "Name": "Trần Anh Giang",
+        "Url": "<a href='/du-lieu/ceo/CEO_59185/tran-anh-giang.chn'>Trần Anh Giang</a>",
+        "AssetVolume": "4.100",
+        "AssetRate": "0,11",
+        "UpdatedDate": "02/12/2025"
+      },
+      {
+        "Code": "CEO_59184",
+        "Name": "Phạm Thanh Hà",
+        "Url": "<a href='/du-lieu/ceo/CEO_59184/pham-thanh-ha.chn'>Phạm Thanh Hà</a>",
+        "AssetVolume": "6.100",
+        "AssetRate": "0,16",
+        "UpdatedDate": "02/12/2025"
+      },
+      {
+        "Code": "KHATOCO",
+        "Name": "Tổng Công ty Khánh Việt",
+        "Url": "<a href='/du-lieu/otc/KHATOCO-tong-cong-ty-khanh-viet.chn' title='Tổng Công ty Khánh Việt'>Tổng Công ty Khánh Việt</a>",
+        "AssetVolume": "3.186.500",
+        "AssetRate": "83,86",
+        "UpdatedDate": "02/12/2025"
+      },
+      {
+        "Code": "CEO_59189",
+        "Name": "Lê Văn Tuấn",
+        "Url": "<a href='/du-lieu/ceo/CEO_59189/le-van-tuan.chn'>Lê Văn Tuấn</a>",
+        "AssetVolume": "3.700",
+        "AssetRate": "0,1",
+        "UpdatedDate": "02/12/2025"
+      },
+      {
+        "Code": "CEO_59188",
+        "Name": "Nguyễn Quang Long",
+        "Url": "<a href='/du-lieu/ceo/CEO_59188/nguyen-quang-long.chn'>Nguyễn Quang Long</a>",
+        "AssetVolume": "1.800",
+        "AssetRate": "0,05",
+        "UpdatedDate": "02/12/2025"
+      }
+    ],
+    "NuocNgoai": 49,
+    "NhaNuoc": 0,
+    "Khac": 51
+  },
+  "cong_ty_con": [],
+  "cong_ty_lien_ket": [],
+  "giao_dich_noi_bo": []
+}

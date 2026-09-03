@@ -1,0 +1,71 @@
+{
+  "symbol": "FHN",
+  "updated": "2026-06-01T07:06:03.000Z",
+  "co_cau_so_huu": {
+    "CoDongSoHuu": [
+      {
+        "Code": "CEO_53763",
+        "Name": "Bùi Thị Tú Giang",
+        "Url": "<a href='/du-lieu/ceo/CEO_53763/bui-thi-tu-giang.chn'>Bùi Thị Tú Giang</a>",
+        "AssetVolume": "88.700",
+        "AssetRate": "2,96",
+        "UpdatedDate": "21/05/2026"
+      },
+      {
+        "Code": "LQ_964157",
+        "Name": "Trần Linh Phương",
+        "Url": "Trần Linh Phương (con của ông <a href='/du-lieu/ceo/CEO_53762/tran-huu-hanh.chn'>Trần Hữu Hạnh</a>)",
+        "AssetVolume": "49.200",
+        "AssetRate": "1,64",
+        "UpdatedDate": "21/05/2026"
+      },
+      {
+        "Code": "CEO_53762",
+        "Name": "Trần Hữu Hạnh",
+        "Url": "<a href='/du-lieu/ceo/CEO_53762/tran-huu-hanh.chn'>Trần Hữu Hạnh</a>",
+        "AssetVolume": "18.100",
+        "AssetRate": "0,6",
+        "UpdatedDate": "21/05/2026"
+      },
+      {
+        "Code": "CEO_53769",
+        "Name": "Nguyễn Văn Sửu",
+        "Url": "<a href='/du-lieu/ceo/CEO_53769/nguyen-van-suu.chn'>Nguyễn Văn Sửu</a>",
+        "AssetVolume": "13.400",
+        "AssetRate": "0,45",
+        "UpdatedDate": "21/05/2026"
+      },
+      {
+        "Code": "CEO_54802",
+        "Name": "Dương Tuấn Linh",
+        "Url": "<a href='/du-lieu/ceo/CEO_54802/duong-tuan-linh.chn'>Dương Tuấn Linh</a>",
+        "AssetVolume": "1.000",
+        "AssetRate": "0,03",
+        "UpdatedDate": "21/05/2026"
+      }
+    ],
+    "NuocNgoai": 3000000,
+    "NhaNuoc": 0,
+    "Khac": -2999900
+  },
+  "cong_ty_con": [],
+  "cong_ty_lien_ket": [],
+  "giao_dich_noi_bo": [
+    {
+      "transaction_name": "Trần Linh Phương",
+      "transaction_position": "con",
+      "leader_name": "Trần Hữu Hạnh",
+      "leader_position": "Giám đốc",
+      "volume_before": 3600,
+      "plan_buy": 45600,
+      "plan_sell": 0,
+      "plan_begin_date": "2024-06-13",
+      "plan_end_date": "2024-06-28",
+      "real_buy": 45600,
+      "real_sell": 0,
+      "real_end_date": "2024-06-13",
+      "published_date": "2024-06-13",
+      "volume_after": 49200
+    }
+  ]
+}

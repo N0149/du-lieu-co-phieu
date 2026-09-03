@@ -1,0 +1,127 @@
+{
+  "symbol": "VLP",
+  "updated": "2026-03-22T03:24:48.000Z",
+  "co_cau_so_huu": {
+    "CoDongSoHuu": [
+      {
+        "Code": "CEO_52954",
+        "Name": "Nguyễn Văn Thuần",
+        "Url": "<a href='/du-lieu/ceo/CEO_52954/nguyen-van-thuan.chn'>Nguyễn Văn Thuần</a>",
+        "AssetVolume": "2.200",
+        "AssetRate": "0,06",
+        "UpdatedDate": "24/11/2025"
+      },
+      {
+        "Code": "CORP_51150",
+        "Name": "UBND tỉnh Vĩnh Long",
+        "Url": "UBND tỉnh Vĩnh Long",
+        "AssetVolume": "2.872.822",
+        "AssetRate": "81,24",
+        "UpdatedDate": "24/11/2025"
+      },
+      {
+        "Code": "CEO_876341",
+        "Name": "Phan Thanh Hiền",
+        "Url": "<a href='/du-lieu/ceo/CEO_876341/phan-thanh-hien.chn'>Phan Thanh Hiền</a>",
+        "AssetVolume": "9.400",
+        "AssetRate": "0,27",
+        "UpdatedDate": "24/11/2025"
+      },
+      {
+        "Code": "CEO_52952",
+        "Name": "Ngô Thành Thía",
+        "Url": "<a href='/du-lieu/ceo/CEO_52952/ngo-thanh-thia.chn'>Ngô Thành Thía</a>",
+        "AssetVolume": "22.200",
+        "AssetRate": "0,63",
+        "UpdatedDate": "24/11/2025"
+      },
+      {
+        "Code": "CEO_52958",
+        "Name": "Lưu Quang Trường",
+        "Url": "<a href='/du-lieu/ceo/CEO_52958/luu-quang-truong.chn'>Lưu Quang Trường</a>",
+        "AssetVolume": "3.400",
+        "AssetRate": "0,1",
+        "UpdatedDate": "24/11/2025"
+      },
+      {
+        "Code": "CEO_52959",
+        "Name": "Trần Thị Kim Dung",
+        "Url": "<a href='/du-lieu/ceo/CEO_52959/tran-thi-kim-dung.chn'>Trần Thị Kim Dung</a>",
+        "AssetVolume": "6.900",
+        "AssetRate": "0,2",
+        "UpdatedDate": "24/11/2025"
+      },
+      {
+        "Code": "CEO_52955",
+        "Name": "Phạm Công Hiền",
+        "Url": "<a href='/du-lieu/ceo/CEO_52955/pham-cong-hien.chn'>Phạm Công Hiền</a>",
+        "AssetVolume": "1.500",
+        "AssetRate": "0,04",
+        "UpdatedDate": "24/11/2025"
+      },
+      {
+        "Code": "CEO_52951",
+        "Name": "Nguyễn Thị Quí",
+        "Url": "<a href='/du-lieu/ceo/CEO_52951/nguyen-thi-qui.chn'>Nguyễn Thị Quí</a>",
+        "AssetVolume": "10.000",
+        "AssetRate": "0,28",
+        "UpdatedDate": "24/11/2025"
+      }
+    ],
+    "NuocNgoai": 51.17056058344669,
+    "NhaNuoc": 0,
+    "Khac": 48.82943941655331
+  },
+  "cong_ty_con": [],
+  "cong_ty_lien_ket": [],
+  "giao_dich_noi_bo": [
+    {
+      "transaction_name": "Uỷ ban nhân dân tỉnh Vĩnh Long",
+      "transaction_position": "",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 2872822,
+      "plan_buy": 0,
+      "plan_sell": 1569728,
+      "plan_begin_date": "2020-02-05",
+      "plan_end_date": "2020-02-05",
+      "real_buy": 0,
+      "real_sell": 0,
+      "real_end_date": "2020-02-05",
+      "published_date": "2020-02-14",
+      "volume_after": 2872822
+    },
+    {
+      "transaction_name": "Uỷ ban nhân dân tỉnh Vĩnh Long",
+      "transaction_position": "",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 2872822,
+      "plan_buy": 0,
+      "plan_sell": 1569728,
+      "plan_begin_date": "2020-02-12",
+      "plan_end_date": "2020-02-12",
+      "real_buy": 0,
+      "real_sell": 0,
+      "real_end_date": "",
+      "published_date": "2020-02-14",
+      "volume_after": 0
+    },
+    {
+      "transaction_name": "Phạm Công Hiền",
+      "transaction_position": "Trưởng BKS",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 1500,
+      "plan_buy": 2000,
+      "plan_sell": 0,
+      "plan_begin_date": "2018-08-07",
+      "plan_end_date": "2018-08-30",
+      "real_buy": 0,
+      "real_sell": 0,
+      "real_end_date": "2018-08-30",
+      "published_date": "2018-08-06",
+      "volume_after": 1500
+    }
+  ]
+}

@@ -1,0 +1,223 @@
+{
+  "symbol": "VAV",
+  "updated": "2026-06-01T07:33:12.000Z",
+  "co_cau_so_huu": {
+    "CoDongSoHuu": [
+      {
+        "Code": "CEO_53019",
+        "Name": "Cao Hải Tháp",
+        "Url": "<a href='/du-lieu/ceo/CEO_53019/cao-hai-thap.chn'>Cao Hải Tháp</a>",
+        "AssetVolume": "39.000",
+        "AssetRate": "0,08",
+        "UpdatedDate": "20/05/2026"
+      },
+      {
+        "Code": "MBCapital",
+        "Name": "Công ty Cổ phần Quản lý quỹ đầu tư MB",
+        "Url": "<a href='/du-lieu/otc/MBCAPITAL-cong-ty-co-phan-quan-ly-quy-dau-tu-mb.chn' title='Công ty Cổ phần Quản lý quỹ đầu tư MB'>Công ty Cổ phần Quản lý quỹ đầu tư MB</a>",
+        "AssetVolume": "1.980.000",
+        "AssetRate": "4,13",
+        "UpdatedDate": "20/05/2026"
+      },
+      {
+        "Code": "VCW",
+        "Name": "Công ty Cổ phần VIWACO",
+        "Url": "<a href='/du-lieu/upcom/VCW-cong-ty-co-phan-dau-tu-nuoc-sach-song-da.chn' title='Công ty Cổ phần Đầu tư Nước sạch Sông Đà'>Công ty Cổ phần Đầu tư Nước sạch Sông Đà</a>",
+        "AssetVolume": "7.244.100",
+        "AssetRate": "15,09",
+        "UpdatedDate": "20/05/2026"
+      },
+      {
+        "Code": "CEO_98106",
+        "Name": "Nguyễn Anh Việt",
+        "Url": "<a href='/du-lieu/ceo/CEO_98106/nguyen-anh-viet.chn'>Nguyễn Anh Việt</a>",
+        "AssetVolume": "216.480",
+        "AssetRate": "0,45",
+        "UpdatedDate": "20/05/2026"
+      },
+      {
+        "Code": "REE",
+        "Name": "Công ty Cổ phần VIWACO",
+        "Url": "<a href='/du-lieu/hose/REE-cong-ty-co-phan-co-dien-lanh.chn' title='Công ty Cổ phần Cơ điện lạnh'>Công ty Cổ phần Cơ điện lạnh</a>",
+        "AssetVolume": "1.500.000",
+        "AssetRate": "3,13",
+        "UpdatedDate": "20/05/2026"
+      },
+      {
+        "Code": "VCG",
+        "Name": "Công ty Cổ phần VIWACO",
+        "Url": "<a href='/du-lieu/hose/VCG-tong-cong-ty-co-phan-xuat-nhap-khau-va-xay-dung-viet-nam.chn' title='Tổng Công ty Cổ phần Xuất nhập khẩu và Xây dựng Việt Nam'>Tổng Công ty Cổ phần Xuất nhập khẩu và Xây dựng Việt Nam</a>",
+        "AssetVolume": "24.480.000",
+        "AssetRate": "51,0",
+        "UpdatedDate": "20/05/2026"
+      },
+      {
+        "Code": "CEO_53020",
+        "Name": "Trần Mạnh Hùng",
+        "Url": "<a href='/du-lieu/ceo/CEO_53020/tran-manh-hung.chn'>Trần Mạnh Hùng</a>",
+        "AssetVolume": "1.200",
+        "AssetRate": "0,0",
+        "UpdatedDate": "20/05/2026"
+      },
+      {
+        "Code": "CORP_98009",
+        "Name": "Công ty TNHH MTV Nước sạch Hà Nội",
+        "Url": "Công ty TNHH MTV Nước sạch Hà Nội",
+        "AssetVolume": "11.377.320",
+        "AssetRate": "23,7",
+        "UpdatedDate": "20/05/2026"
+      }
+    ],
+    "NuocNgoai": 2.59,
+    "NhaNuoc": 0,
+    "Khac": 97.41
+  },
+  "cong_ty_con": [],
+  "cong_ty_lien_ket": [],
+  "giao_dich_noi_bo": [
+    {
+      "transaction_name": "Công ty Cổ phần Đầu tư Nước sạch Sông Đà",
+      "transaction_position": "",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 1914700,
+      "plan_buy": 0,
+      "plan_sell": 0,
+      "plan_begin_date": "",
+      "plan_end_date": "",
+      "real_buy": 500000,
+      "real_sell": 0,
+      "real_end_date": "2020-02-25",
+      "published_date": "2020-03-03",
+      "volume_after": 2414700
+    },
+    {
+      "transaction_name": "Công ty Cổ phần Đầu tư Nước sạch Sông Đà",
+      "transaction_position": "",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 1524700,
+      "plan_buy": 0,
+      "plan_sell": 0,
+      "plan_begin_date": "",
+      "plan_end_date": "",
+      "real_buy": 390000,
+      "real_sell": 0,
+      "real_end_date": "2020-01-19",
+      "published_date": "2020-02-07",
+      "volume_after": 1914700
+    },
+    {
+      "transaction_name": "Công ty Cổ phần Cơ điện lạnh",
+      "transaction_position": "",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 890000,
+      "plan_buy": 0,
+      "plan_sell": 0,
+      "plan_begin_date": "",
+      "plan_end_date": "",
+      "real_buy": 0,
+      "real_sell": 390000,
+      "real_end_date": "2020-01-19",
+      "published_date": "2020-01-24",
+      "volume_after": 500000
+    },
+    {
+      "transaction_name": "Công ty Cổ phần Đầu tư Nước sạch Sông Đà",
+      "transaction_position": "",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 925000,
+      "plan_buy": 0,
+      "plan_sell": 0,
+      "plan_begin_date": "",
+      "plan_end_date": "",
+      "real_buy": 599700,
+      "real_sell": 0,
+      "real_end_date": "2020-01-08",
+      "published_date": "2020-01-14",
+      "volume_after": 1524700
+    },
+    {
+      "transaction_name": "Công ty Cổ phần Đầu tư Nước sạch Sông Đà",
+      "transaction_position": "",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 730000,
+      "plan_buy": 0,
+      "plan_sell": 0,
+      "plan_begin_date": "",
+      "plan_end_date": "",
+      "real_buy": 195000,
+      "real_sell": 0,
+      "real_end_date": "2019-12-12",
+      "published_date": "2019-12-22",
+      "volume_after": 925000
+    },
+    {
+      "transaction_name": "CTCP Cơ Điện Lạnh",
+      "transaction_position": "",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 770000,
+      "plan_buy": 0,
+      "plan_sell": 0,
+      "plan_begin_date": "",
+      "plan_end_date": "",
+      "real_buy": 120000,
+      "real_sell": 0,
+      "real_end_date": "2018-10-15",
+      "published_date": "2018-10-22",
+      "volume_after": 890000
+    },
+    {
+      "transaction_name": "Công ty Cổ phần Quản lý quỹ đầu tư MB",
+      "transaction_position": "",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 1200000,
+      "plan_buy": 0,
+      "plan_sell": 0,
+      "plan_begin_date": "",
+      "plan_end_date": "",
+      "real_buy": 0,
+      "real_sell": 870000,
+      "real_end_date": "2017-12-24",
+      "published_date": "2017-12-28",
+      "volume_after": 330000
+    },
+    {
+      "transaction_name": "Công ty Cổ phần Quản lý quỹ đầu tư MB",
+      "transaction_position": "",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 0,
+      "plan_buy": 0,
+      "plan_sell": 0,
+      "plan_begin_date": "",
+      "plan_end_date": "",
+      "real_buy": 1200000,
+      "real_sell": 0,
+      "real_end_date": "2017-10-02",
+      "published_date": "2017-10-10",
+      "volume_after": 1200000
+    },
+    {
+      "transaction_name": "CTCP Đầu tư và Phát triển Sinh Thái",
+      "transaction_position": "",
+      "leader_name": "Lương Thị Lan Hương",
+      "leader_position": "Thành viên HĐQT",
+      "volume_before": 1201800,
+      "plan_buy": 0,
+      "plan_sell": 1201800,
+      "plan_begin_date": "2017-10-01",
+      "plan_end_date": "2017-10-30",
+      "real_buy": 0,
+      "real_sell": 1201800,
+      "real_end_date": "2017-10-02",
+      "published_date": "2017-09-28",
+      "volume_after": 0
+    }
+  ]
+}

@@ -1,0 +1,289 @@
+{
+  "symbol": "IPA",
+  "updated": "2026-09-01T07:32:42.000Z",
+  "co_cau_so_huu": {
+    "CoDongSoHuu": [
+      {
+        "Code": "CORP_51984",
+        "Name": "Công ty TNHH MTV Quản lý Quỹ đầu tư Chứng khoán IPA",
+        "Url": "Công ty TNHH MTV Quản lý Quỹ đầu tư Chứng khoán IPA",
+        "AssetVolume": "3.690.671",
+        "AssetRate": "1,73",
+        "UpdatedDate": "21/08/2026"
+      },
+      {
+        "Code": "CEO_00503",
+        "Name": "Phạm Minh Hương",
+        "Url": "<a href='/du-lieu/ceo/CEO_00503/pham-minh-huong.chn'>Phạm Minh Hương</a>",
+        "AssetVolume": "37.259",
+        "AssetRate": "0,02",
+        "UpdatedDate": "21/08/2026"
+      },
+      {
+        "Code": "CEO_00378",
+        "Name": "Vũ Hiền",
+        "Url": "<a href='/du-lieu/ceo/CEO_00378/vu-hien.chn'>Vũ Hiền</a>",
+        "AssetVolume": "2.442.202",
+        "AssetRate": "1,14",
+        "UpdatedDate": "21/08/2026"
+      },
+      {
+        "Code": "CORP_39332",
+        "Name": "Công ty TNHH Quản lý Đầu tư H&H",
+        "Url": "Công ty TNHH Quản lý Đầu tư H&H",
+        "AssetVolume": "136.359.177",
+        "AssetRate": "63,77",
+        "UpdatedDate": "21/08/2026"
+      }
+    ],
+    "NuocNgoai": 0.42,
+    "NhaNuoc": 0,
+    "Khac": 99.58
+  },
+  "cong_ty_con": [
+    {
+      "Symbol": "IPA",
+      "CorpCode": "CORP_00902",
+      "Name": "Công ty TNHH MTV Tài chính I.P.A",
+      "TotalCapital": 533,
+      "SharedCapital": 533,
+      "OwnershipRate": 100,
+      "Note": "",
+      "Order": 1,
+      "TradeCenter": ""
+    },
+    {
+      "Symbol": "IPA",
+      "CorpCode": "CORP_39325",
+      "Name": "CTCP Thực phẩm Homefood",
+      "TotalCapital": 20,
+      "SharedCapital": 17.97,
+      "OwnershipRate": 89.86,
+      "Note": "",
+      "Order": 4,
+      "TradeCenter": ""
+    },
+    {
+      "Symbol": "IPA",
+      "CorpCode": "CORP_39322",
+      "Name": "CTCP Năng lượng Bắc Hà",
+      "TotalCapital": 302,
+      "SharedCapital": 224.87,
+      "OwnershipRate": 74.46,
+      "Note": "",
+      "Order": 5,
+      "TradeCenter": ""
+    },
+    {
+      "Symbol": "IPA",
+      "CorpCode": "CORP_39321",
+      "Name": "Công ty TNHH Bất động sản Anvie",
+      "TotalCapital": 212,
+      "SharedCapital": 154,
+      "OwnershipRate": 72.64,
+      "Note": "",
+      "Order": 6,
+      "TradeCenter": ""
+    },
+    {
+      "Symbol": "IPA",
+      "CorpCode": "CORP_39324",
+      "Name": "CTCP Dịch vụ Homedirect",
+      "TotalCapital": 50,
+      "SharedCapital": 35,
+      "OwnershipRate": 70,
+      "Note": "",
+      "Order": 7,
+      "TradeCenter": ""
+    },
+    {
+      "Symbol": "IPA",
+      "CorpCode": "CORP_39323",
+      "Name": "CTCP Hòn Ngọc Á Châu",
+      "TotalCapital": 209,
+      "SharedCapital": 114.09,
+      "OwnershipRate": 54.59,
+      "Note": "",
+      "Order": 8,
+      "TradeCenter": ""
+    }
+  ],
+  "cong_ty_lien_ket": [
+    {
+      "Symbol": "IPA",
+      "CorpCode": "CORP_51940",
+      "Name": "CTCP Bất động sản ANVIE Hội An",
+      "TotalCapital": 20,
+      "SharedCapital": 19.8,
+      "OwnershipRate": 99,
+      "Note": "",
+      "Order": 2,
+      "TradeCenter": ""
+    },
+    {
+      "Symbol": "IPA",
+      "CorpCode": "CORP_51941",
+      "Name": "CTCP Đầu tư phát triển Lũng Xuân",
+      "TotalCapital": 90,
+      "SharedCapital": 88.2,
+      "OwnershipRate": 98,
+      "Note": "",
+      "Order": 3,
+      "TradeCenter": ""
+    },
+    {
+      "Symbol": "IPA",
+      "CorpCode": "CORP_39330",
+      "Name": "CTCP Cơ khi Ngành In",
+      "TotalCapital": 18,
+      "SharedCapital": 9.23,
+      "OwnershipRate": 51.29,
+      "Note": "",
+      "Order": 9,
+      "TradeCenter": ""
+    },
+    {
+      "Symbol": "IPA",
+      "CorpCode": "CORP_39328",
+      "Name": "CTCP Ong Trung Ương",
+      "TotalCapital": 27.5,
+      "SharedCapital": 13.76,
+      "OwnershipRate": 50.03,
+      "Note": "",
+      "Order": 10,
+      "TradeCenter": ""
+    },
+    {
+      "Symbol": "IPA",
+      "CorpCode": "CORP_39329",
+      "Name": "CTCP Giải pháp Phần mềm Tài chính",
+      "TotalCapital": 24,
+      "SharedCapital": 8.4,
+      "OwnershipRate": 35,
+      "Note": "",
+      "Order": 11,
+      "TradeCenter": ""
+    },
+    {
+      "Symbol": "IPA",
+      "CorpCode": "CORP_39326",
+      "Name": "CTCP Khoáng sản và gang thép Kim Sơn",
+      "TotalCapital": 180,
+      "SharedCapital": 54,
+      "OwnershipRate": 30,
+      "Note": "",
+      "Order": 12,
+      "TradeCenter": ""
+    },
+    {
+      "Symbol": "IPA",
+      "CorpCode": "VND",
+      "Name": "Công ty cổ phần Chứng khoán VNDIRECT",
+      "TotalCapital": 15222.999,
+      "SharedCapital": 3964.65022,
+      "OwnershipRate": 26.04,
+      "Note": "",
+      "Order": 13,
+      "TradeCenter": "HoSE"
+    },
+    {
+      "Symbol": "IPA",
+      "CorpCode": "CORP_51942",
+      "Name": "CTCP Điện Nông thôn Trà Vinh",
+      "TotalCapital": 52.8,
+      "SharedCapital": 10.75,
+      "OwnershipRate": 20.36,
+      "Note": "",
+      "Order": 14,
+      "TradeCenter": ""
+    },
+    {
+      "Symbol": "IPA",
+      "CorpCode": "HOT",
+      "Name": "Công ty cổ phần Du lịch - Dịch vụ Hội An",
+      "TotalCapital": 80,
+      "SharedCapital": 16.00475,
+      "OwnershipRate": 20.01,
+      "Note": "",
+      "Order": 15,
+      "TradeCenter": "UpCOM"
+    },
+    {
+      "Symbol": "IPA",
+      "CorpCode": "CORP_39327",
+      "Name": "CTCP Dược phẩm Eco",
+      "TotalCapital": 60,
+      "SharedCapital": 12,
+      "OwnershipRate": 20,
+      "Note": "",
+      "Order": 16,
+      "TradeCenter": ""
+    }
+  ],
+  "giao_dich_noi_bo": [
+    {
+      "transaction_name": "Công ty TNHH MTV Quản lý Quỹ đầu tư Chứng khoán IPA",
+      "transaction_position": "",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 3209280,
+      "plan_buy": 0,
+      "plan_sell": 3209280,
+      "plan_begin_date": "2023-12-26",
+      "plan_end_date": "2024-01-16",
+      "real_buy": 0,
+      "real_sell": 3209280,
+      "real_end_date": "2024-01-16",
+      "published_date": "2023-12-22",
+      "volume_after": 0
+    },
+    {
+      "transaction_name": "Công ty TNHH MTV quản lý quỹ đầu tư chứng khoán IPA",
+      "transaction_position": "",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 3209280,
+      "plan_buy": 0,
+      "plan_sell": 3209280,
+      "plan_begin_date": "2022-12-07",
+      "plan_end_date": "2023-01-05",
+      "real_buy": 0,
+      "real_sell": 0,
+      "real_end_date": "2023-01-05",
+      "published_date": "2022-12-05",
+      "volume_after": 3209280
+    },
+    {
+      "transaction_name": "Công ty TNHH Quản lý Đầu tư H&amp;H",
+      "transaction_position": "",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 47896500,
+      "plan_buy": 1550000,
+      "plan_sell": 0,
+      "plan_begin_date": "2021-07-08",
+      "plan_end_date": "2021-08-05",
+      "real_buy": 1509000,
+      "real_sell": 0,
+      "real_end_date": "2021-08-05",
+      "published_date": "2021-07-13",
+      "volume_after": 49405500
+    },
+    {
+      "transaction_name": "Công ty TNHH MTV quản lý quỹ đầu tư chứng khoán IPA",
+      "transaction_position": "",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 0,
+      "plan_buy": 1500000,
+      "plan_sell": 0,
+      "plan_begin_date": "2019-10-22",
+      "plan_end_date": "2019-10-30",
+      "real_buy": 1377200,
+      "real_sell": 0,
+      "real_end_date": "2019-10-24",
+      "published_date": "2019-10-22",
+      "volume_after": 1377200
+    }
+  ]
+}

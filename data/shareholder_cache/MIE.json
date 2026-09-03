@@ -1,0 +1,133 @@
+{
+  "symbol": "MIE",
+  "updated": "2026-05-01T06:02:18.000Z",
+  "co_cau_so_huu": {
+    "CoDongSoHuu": [
+      {
+        "Code": "CEO_53829",
+        "Name": "Trần Thị Thu Trang",
+        "Url": "<a href='/du-lieu/ceo/CEO_53829/tran-thi-thu-trang.chn'>Trần Thị Thu Trang</a>",
+        "AssetVolume": "9.700",
+        "AssetRate": "0,01",
+        "UpdatedDate": "31/12/2021"
+      },
+      {
+        "Code": "SCIC",
+        "Name": "Tổng Công ty Đầu tư và Kinh doanh vốn Nhà nước",
+        "Url": "<a href='/du-lieu/otc/SCIC-tong-cong-ty-dau-tu-va-kinh-doanh-von-nha-nuoc.chn' title='Tổng Công ty Đầu tư và Kinh doanh vốn Nhà nước'>Tổng Công ty Đầu tư và Kinh doanh vốn Nhà nước</a>",
+        "AssetVolume": "141.384.672",
+        "AssetRate": "99,57",
+        "UpdatedDate": "30/12/2025"
+      },
+      {
+        "Code": "CEO_53830",
+        "Name": "Đậu Huy Ngọc Linh",
+        "Url": "<a href='/du-lieu/ceo/CEO_53830/dau-huy-ngoc-linh.chn'>Đậu Huy Ngọc Linh</a>",
+        "AssetVolume": "1.000",
+        "AssetRate": "0,0",
+        "UpdatedDate": "31/12/2021"
+      },
+      {
+        "Code": "CEO_76088",
+        "Name": "Nguyễn Khắc Hải",
+        "Url": "<a href='/du-lieu/ceo/CEO_76088/nguyen-khac-hai.chn'>Nguyễn Khắc Hải</a>",
+        "AssetVolume": "3.100",
+        "AssetRate": "0,0",
+        "UpdatedDate": "31/12/2018"
+      },
+      {
+        "Code": "CEO_76089",
+        "Name": "Phạm Thành Đông",
+        "Url": "<a href='/du-lieu/ceo/CEO_76089/pham-thanh-dong.chn'>Phạm Thành Đông</a>",
+        "AssetVolume": "2.100",
+        "AssetRate": "0,0",
+        "UpdatedDate": "31/12/2021"
+      }
+    ],
+    "NuocNgoai": 141991500,
+    "NhaNuoc": 0,
+    "Khac": -141991400
+  },
+  "cong_ty_con": [
+    {
+      "Symbol": "MIE",
+      "CorpCode": "CORP_51367",
+      "Name": "Công ty TNHH NN MTV Cơ khí Hà Nội",
+      "TotalCapital": 644.67,
+      "SharedCapital": 644.67,
+      "OwnershipRate": 100,
+      "Note": "",
+      "Order": 1,
+      "TradeCenter": ""
+    },
+    {
+      "Symbol": "MIE",
+      "CorpCode": "CORP_51368",
+      "Name": "Công ty TNHH NN MTV Cơ khí Quang Trung",
+      "TotalCapital": 163.33,
+      "SharedCapital": 163.33,
+      "OwnershipRate": 100,
+      "Note": "",
+      "Order": 2,
+      "TradeCenter": ""
+    },
+    {
+      "Symbol": "MIE",
+      "CorpCode": "CORP_51369",
+      "Name": "Công ty TNHH NN MTV Xuất nhập khẩu Sản phẩm Cơ khí",
+      "TotalCapital": 186.95,
+      "SharedCapital": 186.95,
+      "OwnershipRate": 100,
+      "Note": "",
+      "Order": 3,
+      "TradeCenter": ""
+    },
+    {
+      "Symbol": "MIE",
+      "CorpCode": "CORP_51370",
+      "Name": "Công ty TNHH MTV Xuất nhập khẩu Thiết bị toàn bộ và Kỹ thuật",
+      "TotalCapital": 35.89,
+      "SharedCapital": 35.89,
+      "OwnershipRate": 100,
+      "Note": "",
+      "Order": 4,
+      "TradeCenter": ""
+    },
+    {
+      "Symbol": "MIE",
+      "CorpCode": "CORP_51371",
+      "Name": "Công ty cổ phần Cơ khí Duyên Hải",
+      "TotalCapital": 128.1,
+      "SharedCapital": 125.78,
+      "OwnershipRate": 98.19,
+      "Note": "",
+      "Order": 5,
+      "TradeCenter": ""
+    },
+    {
+      "Symbol": "MIE",
+      "CorpCode": "CORP_51372",
+      "Name": "Công ty cổ phần Dụng cụ số 1",
+      "TotalCapital": 6.177,
+      "SharedCapital": 3.15,
+      "OwnershipRate": 51,
+      "Note": "",
+      "Order": 6,
+      "TradeCenter": ""
+    }
+  ],
+  "cong_ty_lien_ket": [
+    {
+      "Symbol": "MIE",
+      "CorpCode": "CORP_75079",
+      "Name": " Công ty Cổ phần Đầu tư Thương mại Sài Gòn – Hà Nội",
+      "TotalCapital": 9,
+      "SharedCapital": 1.8,
+      "OwnershipRate": 20,
+      "Note": "",
+      "Order": 7,
+      "TradeCenter": ""
+    }
+  ],
+  "giao_dich_noi_bo": []
+}

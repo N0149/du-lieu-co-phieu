@@ -1,0 +1,206 @@
+{
+  "symbol": "VCT",
+  "updated": "2026-05-01T06:19:37.000Z",
+  "co_cau_so_huu": {
+    "CoDongSoHuu": [
+      {
+        "Code": "KLQ_96027",
+        "Name": "Trần Quốc Toàn",
+        "Url": "Trần Quốc Toàn",
+        "AssetVolume": "49.400",
+        "AssetRate": "4,49",
+        "UpdatedDate": "06/07/2018"
+      },
+      {
+        "Code": "CEO_871505",
+        "Name": "Nguyễn Quang Huy",
+        "Url": "<a href='/du-lieu/ceo/CEO_871505/nguyen-quang-huy.chn'>Nguyễn Quang Huy</a>",
+        "AssetVolume": "242.500",
+        "AssetRate": "22,05",
+        "UpdatedDate": "02/06/2023"
+      },
+      {
+        "Code": "CEO_29059",
+        "Name": "Nguyễn Thái Hà",
+        "Url": "<a href='/du-lieu/ceo/CEO_29059/nguyen-thai-ha.chn'>Nguyễn Thái Hà</a>",
+        "AssetVolume": "700",
+        "AssetRate": "0,06",
+        "UpdatedDate": "31/12/2018"
+      },
+      {
+        "Code": "CEO_871882",
+        "Name": "Nguyễn Thị Thu Hương",
+        "Url": "<a href='/du-lieu/ceo/CEO_871882/nguyen-thi-thu-huong.chn'>Nguyễn Thị Thu Hương</a>",
+        "AssetVolume": "264.000",
+        "AssetRate": "24,0",
+        "UpdatedDate": "02/06/2023"
+      },
+      {
+        "Code": "VCG",
+        "Name": "Công ty Cổ phần Tư vấn Xây dựng Vinaconex",
+        "Url": "<a href='/du-lieu/hose/VCG-tong-cong-ty-co-phan-xuat-nhap-khau-va-xay-dung-viet-nam.chn' title='Tổng Công ty Cổ phần Xuất nhập khẩu và Xây dựng Việt Nam'>Tổng Công ty Cổ phần Xuất nhập khẩu và Xây dựng Việt Nam</a>",
+        "AssetVolume": "55.000",
+        "AssetRate": "5,0",
+        "UpdatedDate": "02/06/2023"
+      },
+      {
+        "Code": "CEO_51895",
+        "Name": "Vũ Ngọc Minh",
+        "Url": "<a href='/du-lieu/ceo/CEO_51895/vu-ngoc-minh.chn'>Vũ Ngọc Minh</a>",
+        "AssetVolume": "3.570",
+        "AssetRate": "0,32",
+        "UpdatedDate": "31/12/2018"
+      },
+      {
+        "Code": "CEO_40016",
+        "Name": "Nguyễn Thành Long",
+        "Url": "<a href='/du-lieu/ceo/CEO_40016/nguyen-thanh-long.chn'>Nguyễn Thành Long</a>",
+        "AssetVolume": "62.848",
+        "AssetRate": "5,71",
+        "UpdatedDate": "31/12/2018"
+      }
+    ],
+    "NuocNgoai": 1100000,
+    "NhaNuoc": 0,
+    "Khac": -1099900
+  },
+  "cong_ty_con": [
+    {
+      "Symbol": "VCT",
+      "CorpCode": "CORP_93696",
+      "Name": "CTCP Tư vấn và Đầu tư Xây dựng VINACONEX ",
+      "TotalCapital": 3,
+      "SharedCapital": 1.84,
+      "OwnershipRate": 61.47,
+      "Note": "",
+      "Order": 1,
+      "TradeCenter": ""
+    },
+    {
+      "Symbol": "VCT",
+      "CorpCode": "CORP_50100",
+      "Name": "CTCP Tư vấn và đầu tư Vinaconex 36",
+      "TotalCapital": 4,
+      "SharedCapital": 2.04,
+      "OwnershipRate": 51,
+      "Note": "",
+      "Order": 2,
+      "TradeCenter": ""
+    }
+  ],
+  "cong_ty_lien_ket": [],
+  "giao_dich_noi_bo": [
+    {
+      "transaction_name": "Nguyễn Quang Huy",
+      "transaction_position": "Thành viên HĐQT",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 500,
+      "plan_buy": 242000,
+      "plan_sell": 0,
+      "plan_begin_date": "2023-06-02",
+      "plan_end_date": "2023-06-30",
+      "real_buy": 242000,
+      "real_sell": 0,
+      "real_end_date": "2023-06-02",
+      "published_date": "2023-05-31",
+      "volume_after": 242500
+    },
+    {
+      "transaction_name": "Nguyễn Thị Thu Hương",
+      "transaction_position": "Thành viên HĐQT",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 0,
+      "plan_buy": 264000,
+      "plan_sell": 0,
+      "plan_begin_date": "2023-06-02",
+      "plan_end_date": "2023-06-30",
+      "real_buy": 264000,
+      "real_sell": 0,
+      "real_end_date": "2023-06-02",
+      "published_date": "2023-05-31",
+      "volume_after": 264000
+    },
+    {
+      "transaction_name": "Tổng Công ty Cổ phần Xuất nhập khẩu và Xây dựng Việt Nam",
+      "transaction_position": "",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 561000,
+      "plan_buy": 0,
+      "plan_sell": 506000,
+      "plan_begin_date": "2023-06-02",
+      "plan_end_date": "2023-06-30",
+      "real_buy": 0,
+      "real_sell": 506000,
+      "real_end_date": "2023-06-02",
+      "published_date": "2023-05-31",
+      "volume_after": 55000
+    },
+    {
+      "transaction_name": "Trần Quốc Toàn",
+      "transaction_position": "",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 59400,
+      "plan_buy": 0,
+      "plan_sell": 0,
+      "plan_begin_date": "",
+      "plan_end_date": "",
+      "real_buy": 0,
+      "real_sell": 10000,
+      "real_end_date": "2018-07-06",
+      "published_date": "2019-05-10",
+      "volume_after": 49400
+    },
+    {
+      "transaction_name": "Trần Quốc Toàn",
+      "transaction_position": "",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 24300,
+      "plan_buy": 0,
+      "plan_sell": 0,
+      "plan_begin_date": "",
+      "plan_end_date": "",
+      "real_buy": 35100,
+      "real_sell": 0,
+      "real_end_date": "2018-05-18",
+      "published_date": "2018-06-02",
+      "volume_after": 59400
+    },
+    {
+      "transaction_name": "Nguyễn Duy Khang",
+      "transaction_position": "Chủ tịch HĐQT",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 62848,
+      "plan_buy": 0,
+      "plan_sell": 62848,
+      "plan_begin_date": "2017-10-10",
+      "plan_end_date": "2017-10-31",
+      "real_buy": 0,
+      "real_sell": 62848,
+      "real_end_date": "2017-10-12",
+      "published_date": "2017-11-15",
+      "volume_after": 0
+    },
+    {
+      "transaction_name": "Nguyễn Thành Long",
+      "transaction_position": "Thành viên HĐQT",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 100000,
+      "plan_buy": 62848,
+      "plan_sell": 0,
+      "plan_begin_date": "2017-10-10",
+      "plan_end_date": "2017-10-31",
+      "real_buy": 62848,
+      "real_sell": 0,
+      "real_end_date": "2017-10-12",
+      "published_date": "2017-10-06",
+      "volume_after": 162848
+    }
+  ]
+}

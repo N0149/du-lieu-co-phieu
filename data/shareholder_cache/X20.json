@@ -1,0 +1,191 @@
+{
+  "symbol": "X20",
+  "updated": "2026-06-01T07:37:32.000Z",
+  "co_cau_so_huu": {
+    "CoDongSoHuu": [
+      {
+        "Code": "CEO_65956",
+        "Name": "Lê Thanh Hà",
+        "Url": "<a href='/du-lieu/ceo/CEO_65956/le-thanh-ha.chn'>Lê Thanh Hà</a>",
+        "AssetVolume": "2.600",
+        "AssetRate": "0,02",
+        "UpdatedDate": "18/09/2025"
+      },
+      {
+        "Code": "CEO_54140",
+        "Name": "Hoàng Sỹ Tâm",
+        "Url": "<a href='/du-lieu/ceo/CEO_54140/hoang-sy-tam.chn'>Hoàng Sỹ Tâm</a>",
+        "AssetVolume": "2.300",
+        "AssetRate": "0,01",
+        "UpdatedDate": "18/09/2025"
+      },
+      {
+        "Code": "CEO_65512",
+        "Name": "Hà Minh Vĩ",
+        "Url": "<a href='/du-lieu/ceo/CEO_65512/ha-minh-vi.chn'>Hà Minh Vĩ</a>",
+        "AssetVolume": "1.000",
+        "AssetRate": "0,01",
+        "UpdatedDate": "18/09/2025"
+      },
+      {
+        "Code": "CEO_54139",
+        "Name": "Phạm Văn Đô",
+        "Url": "<a href='/du-lieu/ceo/CEO_54139/pham-van-do.chn'>Phạm Văn Đô</a>",
+        "AssetVolume": "5.800",
+        "AssetRate": "0,03",
+        "UpdatedDate": "18/09/2025"
+      },
+      {
+        "Code": "CEO_54144",
+        "Name": "Chu Văn Đệ",
+        "Url": "<a href='/du-lieu/ceo/CEO_54144/chu-van-de.chn'>Chu Văn Đệ</a>",
+        "AssetVolume": "5.700",
+        "AssetRate": "0,03",
+        "UpdatedDate": "18/09/2025"
+      },
+      {
+        "Code": "CEO_65234",
+        "Name": "Nguyễn Thị Sen",
+        "Url": "<a href='/du-lieu/ceo/CEO_65234/nguyen-thi-sen.chn'>Nguyễn Thị Sen</a>",
+        "AssetVolume": "4.900",
+        "AssetRate": "0,03",
+        "UpdatedDate": "18/09/2025"
+      },
+      {
+        "Code": "CEO_66512",
+        "Name": "Nguyễn Văn Vinh",
+        "Url": "<a href='/du-lieu/ceo/CEO_66512/nguyen-van-vinh.chn'>Nguyễn Văn Vinh</a>",
+        "AssetVolume": "1.000",
+        "AssetRate": "0,01",
+        "UpdatedDate": "18/09/2025"
+      },
+      {
+        "Code": "CEO_54147",
+        "Name": "Nguyễn Thị Hương",
+        "Url": "<a href='/du-lieu/ceo/CEO_54147/nguyen-thi-huong.chn'>Nguyễn Thị Hương</a>",
+        "AssetVolume": "10.100",
+        "AssetRate": "0,06",
+        "UpdatedDate": "18/09/2025"
+      },
+      {
+        "Code": "CEO_54149",
+        "Name": "Phan Vũ Thúy Anh",
+        "Url": "<a href='/du-lieu/ceo/CEO_54149/phan-vu-thuy-anh.chn'>Phan Vũ Thúy Anh</a>",
+        "AssetVolume": "3.100",
+        "AssetRate": "0,02",
+        "UpdatedDate": "18/09/2025"
+      },
+      {
+        "Code": "CEO_54142",
+        "Name": "Phạm Văn Đông",
+        "Url": "<a href='/du-lieu/ceo/CEO_54142/pham-van-dong.chn'>Phạm Văn Đông</a>",
+        "AssetVolume": "6.300",
+        "AssetRate": "0,04",
+        "UpdatedDate": "18/09/2025"
+      },
+      {
+        "Code": "CORP_00879",
+        "Name": "Bộ Quốc phòng",
+        "Url": "Bộ Quốc phòng",
+        "AssetVolume": "12.371.190",
+        "AssetRate": "71,72",
+        "UpdatedDate": "18/09/2025"
+      },
+      {
+        "Code": "CEO_54141",
+        "Name": "Hà Chí Khoa",
+        "Url": "<a href='/du-lieu/ceo/CEO_54141/ha-chi-khoa.chn'>Hà Chí Khoa</a>",
+        "AssetVolume": "2.200",
+        "AssetRate": "0,01",
+        "UpdatedDate": "18/09/2025"
+      },
+      {
+        "Code": "CEO_65235",
+        "Name": "Nguyễn Đức Tuấn",
+        "Url": "<a href='/du-lieu/ceo/CEO_65235/nguyen-duc-tuan.chn'>Nguyễn Đức Tuấn</a>",
+        "AssetVolume": "900",
+        "AssetRate": "0,01",
+        "UpdatedDate": "18/09/2025"
+      },
+      {
+        "Code": "CEO_65355",
+        "Name": "Hoàng Thị Thùy Linh",
+        "Url": "<a href='/du-lieu/ceo/CEO_65355/hoang-thi-thuy-linh.chn'>Hoàng Thị Thùy Linh</a>",
+        "AssetVolume": "4.900",
+        "AssetRate": "0,03",
+        "UpdatedDate": "18/09/2025"
+      },
+      {
+        "Code": "CEO_54146",
+        "Name": "Ngô Thị Hoa",
+        "Url": "<a href='/du-lieu/ceo/CEO_54146/ngo-thi-hoa.chn'>Ngô Thị Hoa</a>",
+        "AssetVolume": "1.300",
+        "AssetRate": "0,01",
+        "UpdatedDate": "18/09/2025"
+      }
+    ],
+    "NuocNgoai": 0.14,
+    "NhaNuoc": 0,
+    "Khac": 99.86
+  },
+  "cong_ty_con": [
+    {
+      "Symbol": "X20",
+      "CorpCode": "CORP_51414",
+      "Name": "Công ty TNHH MTV X20 Thái Nguyên",
+      "TotalCapital": 9.5,
+      "SharedCapital": 9.5,
+      "OwnershipRate": 100,
+      "Note": "",
+      "Order": 1,
+      "TradeCenter": ""
+    },
+    {
+      "Symbol": "X20",
+      "CorpCode": "CORP_51415",
+      "Name": "Công ty TNHH MTV X20 Nam Định",
+      "TotalCapital": 30,
+      "SharedCapital": 30,
+      "OwnershipRate": 100,
+      "Note": "",
+      "Order": 2,
+      "TradeCenter": ""
+    },
+    {
+      "Symbol": "X20",
+      "CorpCode": "CORP_51416",
+      "Name": "Công ty TNHH MTV X20 Thanh Hóa",
+      "TotalCapital": 8,
+      "SharedCapital": 8,
+      "OwnershipRate": 100,
+      "Note": "",
+      "Order": 3,
+      "TradeCenter": ""
+    },
+    {
+      "Symbol": "X20",
+      "CorpCode": "CORP_65149",
+      "Name": "Công ty TNHH MTV X20 Nghệ An",
+      "TotalCapital": 6,
+      "SharedCapital": 6,
+      "OwnershipRate": 100,
+      "Note": "",
+      "Order": 4,
+      "TradeCenter": ""
+    }
+  ],
+  "cong_ty_lien_ket": [
+    {
+      "Symbol": "X20",
+      "CorpCode": "CORP_51417",
+      "Name": "Công ty Cổ phần 199",
+      "TotalCapital": 4.97,
+      "SharedCapital": 1.66,
+      "OwnershipRate": 33.4,
+      "Note": "",
+      "Order": 5,
+      "TradeCenter": ""
+    }
+  ],
+  "giao_dich_noi_bo": []
+}

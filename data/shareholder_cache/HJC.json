@@ -1,0 +1,103 @@
+{
+  "symbol": "HJC",
+  "updated": "2026-07-01T06:37:35.000Z",
+  "co_cau_so_huu": {
+    "CoDongSoHuu": [
+      {
+        "Code": "CORP_39098",
+        "Name": "Công ty Thuốc lá Sài Gòn",
+        "Url": "Công ty Thuốc lá Sài Gòn",
+        "AssetVolume": "838.738",
+        "AssetRate": "6,53",
+        "UpdatedDate": "31/12/2018"
+      },
+      {
+        "Code": "CEO_39666",
+        "Name": "Nguyễn Đức Lượng",
+        "Url": "<a href='/du-lieu/ceo/CEO_39666/nguyen-duc-luong.chn'>Nguyễn Đức Lượng</a>",
+        "AssetVolume": "21.806",
+        "AssetRate": "0,17",
+        "UpdatedDate": "31/12/2015"
+      },
+      {
+        "Code": "CEO_39668",
+        "Name": "Ngô Thị Vân Hà ",
+        "Url": "<a href='/du-lieu/ceo/CEO_39668/ngo-thi-van-ha.chn'>Ngô Thị Vân Hà </a>",
+        "AssetVolume": "2.054",
+        "AssetRate": "0,02",
+        "UpdatedDate": "14/09/2015"
+      },
+      {
+        "Code": "CEO_39688",
+        "Name": "Nguyễn Thị Thành",
+        "Url": "<a href='/du-lieu/ceo/CEO_39688/nguyen-thi-thanh.chn'>Nguyễn Thị Thành</a>",
+        "AssetVolume": "9.198",
+        "AssetRate": "0,07",
+        "UpdatedDate": "31/12/2016"
+      },
+      {
+        "Code": "VINATABA",
+        "Name": "Tổng Công ty Thuốc lá Việt Nam - Công ty TNHH MTV",
+        "Url": "<a href='/du-lieu/otc/VINATABA-tong-cong-ty-thuoc-la-viet-nam-cong-ty-tnhh-mtv.chn' title='Tổng Công ty Thuốc lá Việt Nam - Công ty TNHH MTV'>Tổng Công ty Thuốc lá Việt Nam - Công ty TNHH MTV</a>",
+        "AssetVolume": "9.778.162",
+        "AssetRate": "76,08",
+        "UpdatedDate": "30/06/2024"
+      },
+      {
+        "Code": "CEO_39667",
+        "Name": "Đặng Thị Thu Thảo",
+        "Url": "<a href='/du-lieu/ceo/CEO_39667/dang-thi-thu-thao.chn'>Đặng Thị Thu Thảo</a>",
+        "AssetVolume": "21.806",
+        "AssetRate": "0,17",
+        "UpdatedDate": "14/09/2015"
+      },
+      {
+        "Code": "CEO_83488",
+        "Name": "Nguyễn Diệu Hương",
+        "Url": "<a href='/du-lieu/ceo/CEO_83488/nguyen-dieu-huong.chn'>Nguyễn Diệu Hương</a>",
+        "AssetVolume": "32.152",
+        "AssetRate": "0,25",
+        "UpdatedDate": "20/06/2019"
+      },
+      {
+        "Code": "CEO_39536",
+        "Name": "Lê Văn Khuê",
+        "Url": "<a href='/du-lieu/ceo/CEO_39536/le-van-khue.chn'>Lê Văn Khuê</a>",
+        "AssetVolume": "5.752",
+        "AssetRate": "0,04",
+        "UpdatedDate": "31/12/2015"
+      },
+      {
+        "Code": "CEO_39664",
+        "Name": "Nguyễn Thanh Liêm ",
+        "Url": "<a href='/du-lieu/ceo/CEO_39664/nguyen-thanh-liem.chn'>Nguyễn Thanh Liêm </a>",
+        "AssetVolume": "3.355",
+        "AssetRate": "0,03",
+        "UpdatedDate": "14/09/2015"
+      }
+    ],
+    "NuocNgoai": 0.53,
+    "NhaNuoc": 0,
+    "Khac": 99.47
+  },
+  "cong_ty_con": [],
+  "cong_ty_lien_ket": [],
+  "giao_dich_noi_bo": [
+    {
+      "transaction_name": "Nguyễn Diệu Hương",
+      "transaction_position": "Thành viên HĐQT",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 1152,
+      "plan_buy": 31000,
+      "plan_sell": 0,
+      "plan_begin_date": "2019-06-16",
+      "plan_end_date": "2019-06-27",
+      "real_buy": 31000,
+      "real_sell": 0,
+      "real_end_date": "2019-06-19",
+      "published_date": "2019-06-13",
+      "volume_after": 32152
+    }
+  ]
+}

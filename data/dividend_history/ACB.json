@@ -1,0 +1,125 @@
+{
+  "symbol": "ACB",
+  "events": [
+    {
+      "date": "2015-02-15",
+      "cashVnd": null,
+      "stockPct": null,
+      "texts": [
+        "Phát hành cổ phiếu - Phát hành cho CBCNV"
+      ]
+    },
+    {
+      "date": "2015-05-15",
+      "cashVnd": 700,
+      "stockPct": null,
+      "texts": [
+        "Trả cổ tức bằng tiền mặt - Cả năm 2014 - 700 VND"
+      ]
+    },
+    {
+      "date": "2016-12-01",
+      "cashVnd": null,
+      "stockPct": 0.1,
+      "texts": [
+        "Phát hành cổ phiếu - Trả Cổ tức bằng Cổ phiếu tỉ lệ 10.0%"
+      ]
+    },
+    {
+      "date": "2018-03-20",
+      "cashVnd": null,
+      "stockPct": 0.1,
+      "texts": [
+        "Phát hành cổ phiếu - Trả Cổ tức bằng Cổ phiếu tỉ lệ 10.0%"
+      ]
+    },
+    {
+      "date": "2018-09-06",
+      "cashVnd": null,
+      "stockPct": 0.15,
+      "texts": [
+        "Phát hành cổ phiếu - Trả Cổ tức bằng Cổ phiếu tỉ lệ 15.0%"
+      ]
+    },
+    {
+      "date": "2019-07-25",
+      "cashVnd": null,
+      "stockPct": 0.3,
+      "texts": [
+        "Phát hành cổ phiếu - Trả Cổ tức bằng Cổ phiếu tỉ lệ 30.0%"
+      ]
+    },
+    {
+      "date": "2020-08-20",
+      "cashVnd": null,
+      "stockPct": 0.3,
+      "texts": [
+        "Phát hành cổ phiếu - Trả Cổ tức bằng Cổ phiếu tỉ lệ 30.0%"
+      ]
+    },
+    {
+      "date": "2021-06-10",
+      "cashVnd": null,
+      "stockPct": 0.25,
+      "texts": [
+        "Phát hành cổ phiếu - Trả Cổ tức bằng Cổ phiếu tỉ lệ 25.0%"
+      ]
+    },
+    {
+      "date": "2022-06-02",
+      "cashVnd": null,
+      "stockPct": 0.25,
+      "texts": [
+        "Phát hành cổ phiếu - Trả Cổ tức bằng Cổ phiếu tỉ lệ 25.0%"
+      ]
+    },
+    {
+      "date": "2023-06-01",
+      "cashVnd": null,
+      "stockPct": 0.15,
+      "texts": [
+        "Phát hành cổ phiếu - Trả Cổ tức bằng Cổ phiếu tỉ lệ 15.0%"
+      ]
+    },
+    {
+      "date": "2023-06-01",
+      "cashVnd": 1000,
+      "stockPct": null,
+      "texts": [
+        "Trả cổ tức bằng tiền mặt - Cả năm 2022 - 1,000 VND"
+      ]
+    },
+    {
+      "date": "2024-05-31",
+      "cashVnd": null,
+      "stockPct": 0.15,
+      "texts": [
+        "Phát hành cổ phiếu - Trả Cổ tức bằng Cổ phiếu tỉ lệ 15.0%"
+      ]
+    },
+    {
+      "date": "2024-05-31",
+      "cashVnd": 1000,
+      "stockPct": null,
+      "texts": [
+        "Trả cổ tức bằng tiền mặt - Cả năm 2023 - 1,000 VND"
+      ]
+    },
+    {
+      "date": "2025-05-23",
+      "cashVnd": 1000,
+      "stockPct": null,
+      "texts": [
+        "Trả cổ tức bằng tiền mặt - Cả năm 2024 - 1,000 VND"
+      ]
+    },
+    {
+      "date": "2025-05-23",
+      "cashVnd": null,
+      "stockPct": 0.15,
+      "texts": [
+        "Phát hành cổ phiếu - Trả Cổ tức bằng Cổ phiếu tỉ lệ 15.0%"
+      ]
+    }
+  ]
+}

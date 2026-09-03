@@ -1,0 +1,102 @@
+{
+  "symbol": "HSP",
+  "updated": "2026-05-01T05:57:06.000Z",
+  "co_cau_so_huu": {
+    "CoDongSoHuu": [
+      {
+        "Code": "KLQ_97040",
+        "Name": "Tôn Nữ Cẩm Vân",
+        "Url": "Tôn Nữ Cẩm Vân",
+        "AssetVolume": "1.599.661",
+        "AssetRate": "13,3",
+        "UpdatedDate": "05/05/2025"
+      },
+      {
+        "Code": "CEO_58952",
+        "Name": "Nguyễn Thị Hồng Hạnh",
+        "Url": "<a href='/du-lieu/ceo/CEO_58952/nguyen-thi-hong-hanh.chn'>Nguyễn Thị Hồng Hạnh</a>",
+        "AssetVolume": "26.315",
+        "AssetRate": "0,22",
+        "UpdatedDate": "05/05/2025"
+      },
+      {
+        "Code": "CORP_52111",
+        "Name": "Công ty TNHH Quản lý đầu tư HAP Việt Nam\t",
+        "Url": "Công ty TNHH Quản lý đầu tư HAP Việt Nam\t",
+        "AssetVolume": "3.700.000",
+        "AssetRate": "30,76",
+        "UpdatedDate": "05/05/2025"
+      },
+      {
+        "Code": "CEO_58949",
+        "Name": "Nguyễn Mạnh Đức",
+        "Url": "<a href='/du-lieu/ceo/CEO_58949/nguyen-manh-duc.chn'>Nguyễn Mạnh Đức</a>",
+        "AssetVolume": "40.000",
+        "AssetRate": "0,33",
+        "UpdatedDate": "05/05/2025"
+      },
+      {
+        "Code": "CEO_58953",
+        "Name": "Phạm Thị Huyền",
+        "Url": "<a href='/du-lieu/ceo/CEO_58953/pham-thi-huyen.chn'>Phạm Thị Huyền</a>",
+        "AssetVolume": "1.000",
+        "AssetRate": "0,01",
+        "UpdatedDate": "05/05/2025"
+      },
+      {
+        "Code": "CEO_58950",
+        "Name": "Nguyễn Xuân Cương",
+        "Url": "<a href='/du-lieu/ceo/CEO_58950/nguyen-xuan-cuong.chn'>Nguyễn Xuân Cương</a>",
+        "AssetVolume": "110.608",
+        "AssetRate": "0,92",
+        "UpdatedDate": "05/05/2025"
+      },
+      {
+        "Code": "CEO_58948",
+        "Name": "Nguyễn Ngọc Anh",
+        "Url": "<a href='/du-lieu/ceo/CEO_58948/nguyen-ngoc-anh.chn'>Nguyễn Ngọc Anh</a>",
+        "AssetVolume": "583.980",
+        "AssetRate": "4,86",
+        "UpdatedDate": "05/05/2025"
+      },
+      {
+        "Code": "CEO_58954",
+        "Name": "Trần\tThế Giang",
+        "Url": "<a href='/du-lieu/ceo/CEO_58954/tranthe-giang.chn'>Trần\tThế Giang</a>",
+        "AssetVolume": "45.417",
+        "AssetRate": "0,38",
+        "UpdatedDate": "05/05/2025"
+      },
+      {
+        "Code": "LQ_97028",
+        "Name": "Nguyễn Ái Vân Anh",
+        "Url": "Nguyễn Ái Vân Anh (Con của ông <a href='/du-lieu/ceo/CEO_58947/nguyen-thien-ai.chn'>Nguyễn Thiện Ái</a>)",
+        "AssetVolume": "177.080",
+        "AssetRate": "1,47",
+        "UpdatedDate": "05/05/2025"
+      },
+      {
+        "Code": "CEO_58947",
+        "Name": "Nguyễn Thiện Ái",
+        "Url": "<a href='/du-lieu/ceo/CEO_58947/nguyen-thien-ai.chn'>Nguyễn Thiện Ái</a>",
+        "AssetVolume": "199.818",
+        "AssetRate": "1,66",
+        "UpdatedDate": "05/05/2025"
+      },
+      {
+        "Code": "CEO_58951",
+        "Name": "Nguyễn Minh Đức",
+        "Url": "<a href='/du-lieu/ceo/CEO_58951/nguyen-minh-duc.chn'>Nguyễn Minh Đức</a>",
+        "AssetVolume": "6.793",
+        "AssetRate": "0,06",
+        "UpdatedDate": "05/05/2025"
+      }
+    ],
+    "NuocNgoai": 2.95,
+    "NhaNuoc": 0,
+    "Khac": 97.05
+  },
+  "cong_ty_con": [],
+  "cong_ty_lien_ket": [],
+  "giao_dich_noi_bo": []
+}

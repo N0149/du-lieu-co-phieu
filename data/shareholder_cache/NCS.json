@@ -1,0 +1,38 @@
+{
+  "symbol": "NCS",
+  "updated": "2026-09-01T07:37:44.000Z",
+  "co_cau_so_huu": {
+    "CoDongSoHuu": [
+      {
+        "Code": "HVN",
+        "Name": "Tổng Công ty Hàng không Việt Nam - CTCP",
+        "Url": "<a href='/du-lieu/hose/HVN-tong-cong-ty-hang-khong-viet-nam-ctcp.chn' title='Tổng Công ty Hàng không Việt Nam - CTCP'>Tổng Công ty Hàng không Việt Nam - CTCP</a>",
+        "AssetVolume": "10.800.607",
+        "AssetRate": "60,18",
+        "UpdatedDate": "19/05/2026"
+      },
+      {
+        "Code": "VACS",
+        "Name": "Công ty TNHH MTV Suất ăn hàng không Việt Nam",
+        "Url": "<a href='/du-lieu/otc/VACS-cong-ty-tnhh-mtv-suat-an-hang-khong-viet-nam.chn' title='Công ty TNHH MTV Suất ăn hàng không Việt Nam'>Công ty TNHH MTV Suất ăn hàng không Việt Nam</a>",
+        "AssetVolume": "306.015",
+        "AssetRate": "1,7",
+        "UpdatedDate": "19/05/2026"
+      },
+      {
+        "Code": "SAS",
+        "Name": "Công ty cổ phần Suất ăn Hàng không Nội Bài",
+        "Url": "<a href='/du-lieu/upcom/SAS-ctcp-dich-vu-hang-khong-san-bay-tan-son-nhat.chn' title='CTCP Dịch vụ Hàng không Sân bay Tân Sơn Nhất'>CTCP Dịch vụ Hàng không Sân bay Tân Sơn Nhất</a>",
+        "AssetVolume": "1.800.295",
+        "AssetRate": "10,03",
+        "UpdatedDate": "19/05/2026"
+      }
+    ],
+    "NuocNgoai": 5.68,
+    "NhaNuoc": 0,
+    "Khac": 94.32
+  },
+  "cong_ty_con": [],
+  "cong_ty_lien_ket": [],
+  "giao_dich_noi_bo": []
+}

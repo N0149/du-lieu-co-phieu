@@ -1,0 +1,341 @@
+{
+  "symbol": "PNJ",
+  "events": [
+    {
+      "date": "2015-06-10",
+      "cashVnd": 300,
+      "stockPct": null,
+      "texts": [
+        "Trả cổ tức bằng tiền mặt - Đợt 2 2014 - 300 VND"
+      ]
+    },
+    {
+      "date": "2015-06-10",
+      "cashVnd": null,
+      "stockPct": 0.2,
+      "texts": [
+        "Phát hành cổ phiếu - Cổ phiếu thưởng tỉ lệ 20.0%"
+      ]
+    },
+    {
+      "date": "2015-06-10",
+      "cashVnd": null,
+      "stockPct": 0.1,
+      "texts": [
+        "Phát hành cổ phiếu - Trả Cổ tức bằng Cổ phiếu tỉ lệ 10.0%"
+      ]
+    },
+    {
+      "date": "2015-12-30",
+      "cashVnd": 500,
+      "stockPct": null,
+      "texts": [
+        "Trả cổ tức bằng tiền mặt - Đợt 1 2015 - 500 VND"
+      ]
+    },
+    {
+      "date": "2016-06-01",
+      "cashVnd": 1000,
+      "stockPct": null,
+      "texts": [
+        "Trả cổ tức bằng tiền mặt - Đợt 2 2015 - 1,000 VND"
+      ]
+    },
+    {
+      "date": "2016-11-23",
+      "cashVnd": 1000,
+      "stockPct": null,
+      "texts": [
+        "Trả cổ tức bằng tiền mặt - Đợt 1 2016 - 1,000 VND"
+      ]
+    },
+    {
+      "date": "2017-05-17",
+      "cashVnd": 800,
+      "stockPct": null,
+      "texts": [
+        "Trả cổ tức bằng tiền mặt - Đợt 2 2016 - 800 VND"
+      ]
+    },
+    {
+      "date": "2017-07-14",
+      "cashVnd": null,
+      "stockPct": null,
+      "texts": [
+        "Phát hành cổ phiếu - Phát hành riêng lẻ"
+      ]
+    },
+    {
+      "date": "2017-08-16",
+      "cashVnd": 1000,
+      "stockPct": null,
+      "texts": [
+        "Trả cổ tức bằng tiền mặt - Đợt 1 2017 - 1,000 VND"
+      ]
+    },
+    {
+      "date": "2017-12-19",
+      "cashVnd": 800,
+      "stockPct": null,
+      "texts": [
+        "Trả cổ tức bằng tiền mặt - Đợt 2 2017 - 800 VND"
+      ]
+    },
+    {
+      "date": "2018-05-14",
+      "cashVnd": 200,
+      "stockPct": null,
+      "texts": [
+        "Trả cổ tức bằng tiền mặt - Đợt 3 2017 - 200 VND"
+      ]
+    },
+    {
+      "date": "2018-06-14",
+      "cashVnd": null,
+      "stockPct": 0.5,
+      "texts": [
+        "Phát hành cổ phiếu - Cổ phiếu thưởng tỉ lệ 50.0%"
+      ]
+    },
+    {
+      "date": "2018-08-08",
+      "cashVnd": 1000,
+      "stockPct": null,
+      "texts": [
+        "Trả cổ tức bằng tiền mặt - Đợt 1 2018 - 1,000 VND"
+      ]
+    },
+    {
+      "date": "2018-11-30",
+      "cashVnd": null,
+      "stockPct": null,
+      "texts": [
+        "Phát hành cổ phiếu - Phát hành cho CBCNV"
+      ]
+    },
+    {
+      "date": "2018-12-28",
+      "cashVnd": 800,
+      "stockPct": null,
+      "texts": [
+        "Trả cổ tức bằng tiền mặt - Đợt 2 2018 - 800 VND"
+      ]
+    },
+    {
+      "date": "2019-05-21",
+      "cashVnd": 200,
+      "stockPct": null,
+      "texts": [
+        "Trả cổ tức bằng tiền mặt - Đợt 3 2018 - 200 VND"
+      ]
+    },
+    {
+      "date": "2019-06-05",
+      "cashVnd": null,
+      "stockPct": 0.3333,
+      "texts": [
+        "Phát hành cổ phiếu - Cổ phiếu thưởng tỉ lệ 33.3%"
+      ]
+    },
+    {
+      "date": "2019-07-23",
+      "cashVnd": 800,
+      "stockPct": null,
+      "texts": [
+        "Trả cổ tức bằng tiền mặt - Đợt 1 2019 - 800 VND"
+      ]
+    },
+    {
+      "date": "2019-12-14",
+      "cashVnd": null,
+      "stockPct": null,
+      "texts": [
+        "Phát hành cổ phiếu - Phát hành cho CBCNV"
+      ]
+    },
+    {
+      "date": "2020-04-01",
+      "cashVnd": 1000,
+      "stockPct": null,
+      "texts": [
+        "Trả cổ tức bằng tiền mặt - Đợt 2 2019 - 1,000 VND"
+      ]
+    },
+    {
+      "date": "2020-12-08",
+      "cashVnd": 600,
+      "stockPct": null,
+      "texts": [
+        "Trả cổ tức bằng tiền mặt - Đợt 1 2020 - 600 VND"
+      ]
+    },
+    {
+      "date": "2020-12-17",
+      "cashVnd": null,
+      "stockPct": null,
+      "texts": [
+        "Phát hành cổ phiếu - Phát hành cho CBCNV"
+      ]
+    },
+    {
+      "date": "2021-03-15",
+      "cashVnd": 800,
+      "stockPct": null,
+      "texts": [
+        "Trả cổ tức bằng tiền mặt - Đợt 2 2020 - 800 VND"
+      ]
+    },
+    {
+      "date": "2021-12-09",
+      "cashVnd": 600,
+      "stockPct": null,
+      "texts": [
+        "Trả cổ tức bằng tiền mặt - Đợt 3 2020 - 600 VND"
+      ]
+    },
+    {
+      "date": "2022-03-07",
+      "cashVnd": 600,
+      "stockPct": null,
+      "texts": [
+        "Trả cổ tức bằng tiền mặt - Đợt 1 2021 - 600 VND"
+      ]
+    },
+    {
+      "date": "2022-03-31",
+      "cashVnd": null,
+      "stockPct": null,
+      "texts": [
+        "Phát hành cổ phiếu - Phát hành riêng lẻ"
+      ]
+    },
+    {
+      "date": "2022-06-23",
+      "cashVnd": 600,
+      "stockPct": null,
+      "texts": [
+        "Trả cổ tức bằng tiền mặt - Đợt 2 2021 - 600 VND"
+      ]
+    },
+    {
+      "date": "2022-08-30",
+      "cashVnd": null,
+      "stockPct": null,
+      "texts": [
+        "Phát hành cổ phiếu - Phát hành cho CBCNV"
+      ]
+    },
+    {
+      "date": "2022-10-28",
+      "cashVnd": 800,
+      "stockPct": null,
+      "texts": [
+        "Trả cổ tức bằng tiền mặt - Đợt 3 2021 - 800 VND"
+      ]
+    },
+    {
+      "date": "2022-12-29",
+      "cashVnd": null,
+      "stockPct": 0.3333,
+      "texts": [
+        "Phát hành cổ phiếu - Cổ phiếu thưởng tỉ lệ 33.3%"
+      ]
+    },
+    {
+      "date": "2023-01-06",
+      "cashVnd": 600,
+      "stockPct": null,
+      "texts": [
+        "Trả cổ tức bằng tiền mặt - Đợt 1 2022 - 600 VND"
+      ]
+    },
+    {
+      "date": "2023-06-09",
+      "cashVnd": 600,
+      "stockPct": null,
+      "texts": [
+        "Trả cổ tức bằng tiền mặt - Đợt 2 2022 - 600 VND"
+      ]
+    },
+    {
+      "date": "2023-10-20",
+      "cashVnd": 800,
+      "stockPct": null,
+      "texts": [
+        "Trả cổ tức bằng tiền mặt - Đợt 3 2022 - 800 VND"
+      ]
+    },
+    {
+      "date": "2024-01-05",
+      "cashVnd": null,
+      "stockPct": null,
+      "texts": [
+        "Phát hành cổ phiếu - Phát hành cho CBCNV"
+      ]
+    },
+    {
+      "date": "2024-03-15",
+      "cashVnd": 600,
+      "stockPct": null,
+      "texts": [
+        "Trả cổ tức bằng tiền mặt - Đợt 1 2023 - 600 VND"
+      ]
+    },
+    {
+      "date": "2024-09-26",
+      "cashVnd": null,
+      "stockPct": 0.01,
+      "texts": [
+        "Phát hành cổ phiếu - Phát hành cho CBCNV tỉ lệ 1.0%"
+      ]
+    },
+    {
+      "date": "2024-10-02",
+      "cashVnd": 1400,
+      "stockPct": null,
+      "texts": [
+        "Trả cổ tức bằng tiền mặt - Đợt 2 2023 - 1,400 VND"
+      ]
+    },
+    {
+      "date": "2025-02-10",
+      "cashVnd": 600,
+      "stockPct": null,
+      "texts": [
+        "Trả cổ tức bằng tiền mặt - Đợt 1 2024 - 600 VND"
+      ]
+    },
+    {
+      "date": "2025-09-23",
+      "cashVnd": null,
+      "stockPct": 0.0096,
+      "texts": [
+        "Phát hành cổ phiếu - Phát hành cho CBCNV tỉ lệ 1.0%"
+      ]
+    },
+    {
+      "date": "2025-09-26",
+      "cashVnd": 1400,
+      "stockPct": null,
+      "texts": [
+        "Trả cổ tức bằng tiền mặt - Đợt 2 2024 - 1,400 VND"
+      ]
+    },
+    {
+      "date": "2026-01-09",
+      "cashVnd": 1000,
+      "stockPct": null,
+      "texts": [
+        "Trả cổ tức bằng tiền mặt - Đợt 1 2025 - 1,000 VND"
+      ]
+    },
+    {
+      "date": "2026-04-23",
+      "cashVnd": null,
+      "stockPct": 0.5,
+      "texts": [
+        "Phát hành cổ phiếu - Cổ phiếu thưởng tỉ lệ 50.0%"
+      ]
+    }
+  ]
+}

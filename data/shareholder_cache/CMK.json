@@ -1,0 +1,54 @@
+{
+  "symbol": "CMK",
+  "updated": "2026-06-01T07:00:08.000Z",
+  "co_cau_so_huu": {
+    "CoDongSoHuu": [
+      {
+        "Code": "CEO_57653",
+        "Name": "Bùi Thị Khánh Hà",
+        "Url": "<a href='/du-lieu/ceo/CEO_57653/bui-thi-khanh-ha.chn'>Bùi Thị Khánh Hà</a>",
+        "AssetVolume": "6.325",
+        "AssetRate": "0,44",
+        "UpdatedDate": "25/05/2026"
+      },
+      {
+        "Code": "CEO_39815",
+        "Name": "Đặng Văn Phối",
+        "Url": "<a href='/du-lieu/ceo/CEO_39815/dang-van-phoi.chn'>Đặng Văn Phối</a>",
+        "AssetVolume": "19.500",
+        "AssetRate": "1,36",
+        "UpdatedDate": "25/05/2026"
+      },
+      {
+        "Code": "CEO_39817",
+        "Name": "Đỗ Văn Hinh",
+        "Url": "<a href='/du-lieu/ceo/CEO_39817/do-van-hinh.chn'>Đỗ Văn Hinh</a>",
+        "AssetVolume": "49.627",
+        "AssetRate": "3,46",
+        "UpdatedDate": "25/05/2026"
+      },
+      {
+        "Code": "VINACOMIN",
+        "Name": "Tập đoàn Công nghiệp Than - Khoáng sản Việt Nam",
+        "Url": "<a href='/du-lieu/otc/VINACOMIN-tap-doan-cong-nghiep-than-khoang-san-viet-nam.chn' title='Tập đoàn Công nghiệp Than - Khoáng sản Việt Nam'>Tập đoàn Công nghiệp Than - Khoáng sản Việt Nam</a>",
+        "AssetVolume": "521.418",
+        "AssetRate": "36,4",
+        "UpdatedDate": "25/05/2026"
+      },
+      {
+        "Code": "CEO_56510",
+        "Name": "Đinh Mai Lâm",
+        "Url": "<a href='/du-lieu/ceo/CEO_56510/dinh-mai-lam.chn'>Đinh Mai Lâm</a>",
+        "AssetVolume": "2.635",
+        "AssetRate": "0,18",
+        "UpdatedDate": "25/05/2026"
+      }
+    ],
+    "NuocNgoai": 1432577.55,
+    "NhaNuoc": 0,
+    "Khac": -1432477.55
+  },
+  "cong_ty_con": [],
+  "cong_ty_lien_ket": [],
+  "giao_dich_noi_bo": []
+}

@@ -1,0 +1,189 @@
+{
+  "symbol": "ABT",
+  "events": [
+    {
+      "date": "2015-01-27",
+      "cashVnd": 1500,
+      "stockPct": null,
+      "texts": [
+        "Trả cổ tức bằng tiền mặt - Đợt 4 2014 - 1,500 VND"
+      ]
+    },
+    {
+      "date": "2015-04-09",
+      "cashVnd": 1500,
+      "stockPct": null,
+      "texts": [
+        "Trả cổ tức bằng tiền mặt - Đợt 1 2015 - 1,500 VND"
+      ]
+    },
+    {
+      "date": "2015-07-28",
+      "cashVnd": 1500,
+      "stockPct": null,
+      "texts": [
+        "Trả cổ tức bằng tiền mặt - Đợt 2 2015 - 1,500 VND"
+      ]
+    },
+    {
+      "date": "2015-10-28",
+      "cashVnd": 1500,
+      "stockPct": null,
+      "texts": [
+        "Trả cổ tức bằng tiền mặt - Đợt 3 2015 - 1,500 VND"
+      ]
+    },
+    {
+      "date": "2016-01-29",
+      "cashVnd": 700,
+      "stockPct": null,
+      "texts": [
+        "Trả cổ tức bằng tiền mặt - Đợt 4 2015 - 700 VND"
+      ]
+    },
+    {
+      "date": "2016-08-09",
+      "cashVnd": 2500,
+      "stockPct": null,
+      "texts": [
+        "Trả cổ tức bằng tiền mặt - Đợt 1 2016 - 2,500 VND"
+      ]
+    },
+    {
+      "date": "2017-02-09",
+      "cashVnd": 2000,
+      "stockPct": null,
+      "texts": [
+        "Trả cổ tức bằng tiền mặt - Đợt 2 2016 - 2,000 VND"
+      ]
+    },
+    {
+      "date": "2017-06-29",
+      "cashVnd": 1000,
+      "stockPct": null,
+      "texts": [
+        "Trả cổ tức bằng tiền mặt - Đợt 1 2017 - 1,000 VND"
+      ]
+    },
+    {
+      "date": "2018-01-29",
+      "cashVnd": 1000,
+      "stockPct": null,
+      "texts": [
+        "Trả cổ tức bằng tiền mặt - Đợt 2 2017 - 1,000 VND"
+      ]
+    },
+    {
+      "date": "2018-07-31",
+      "cashVnd": 3000,
+      "stockPct": null,
+      "texts": [
+        "Trả cổ tức bằng tiền mặt - Đợt 1 2018 - 3,000 VND"
+      ]
+    },
+    {
+      "date": "2019-02-19",
+      "cashVnd": 2000,
+      "stockPct": null,
+      "texts": [
+        "Trả cổ tức bằng tiền mặt - Đợt 2 2018 - 2,000 VND"
+      ]
+    },
+    {
+      "date": "2019-09-05",
+      "cashVnd": 2000,
+      "stockPct": null,
+      "texts": [
+        "Trả cổ tức bằng tiền mặt - Đợt 1 2019 - 2,000 VND"
+      ]
+    },
+    {
+      "date": "2020-03-19",
+      "cashVnd": 1000,
+      "stockPct": null,
+      "texts": [
+        "Trả cổ tức bằng tiền mặt - Đợt 2 2019 - 1,000 VND"
+      ]
+    },
+    {
+      "date": "2021-01-22",
+      "cashVnd": 1000,
+      "stockPct": null,
+      "texts": [
+        "Trả cổ tức bằng tiền mặt - Đợt 1 2020 - 1,000 VND"
+      ]
+    },
+    {
+      "date": "2022-01-19",
+      "cashVnd": 1000,
+      "stockPct": null,
+      "texts": [
+        "Trả cổ tức bằng tiền mặt - Đợt 1 2021 - 1,000 VND"
+      ]
+    },
+    {
+      "date": "2022-06-01",
+      "cashVnd": null,
+      "stockPct": null,
+      "texts": [
+        "Phát hành cổ phiếu - Phát hành cho CBCNV"
+      ]
+    },
+    {
+      "date": "2022-08-23",
+      "cashVnd": 1000,
+      "stockPct": null,
+      "texts": [
+        "Trả cổ tức bằng tiền mặt - Đợt 2 2021 - 1,000 VND"
+      ]
+    },
+    {
+      "date": "2023-03-14",
+      "cashVnd": 2000,
+      "stockPct": null,
+      "texts": [
+        "Trả cổ tức bằng tiền mặt - Đợt 1 2022 - 2,000 VND"
+      ]
+    },
+    {
+      "date": "2023-07-20",
+      "cashVnd": 500,
+      "stockPct": null,
+      "texts": [
+        "Trả cổ tức bằng tiền mặt - Đợt 1 2023 - 500 VND"
+      ]
+    },
+    {
+      "date": "2023-07-20",
+      "cashVnd": 500,
+      "stockPct": null,
+      "texts": [
+        "Trả cổ tức bằng tiền mặt - Đợt 2 2022 - 500 VND"
+      ]
+    },
+    {
+      "date": "2024-03-19",
+      "cashVnd": 2000,
+      "stockPct": null,
+      "texts": [
+        "Trả cổ tức bằng tiền mặt - Đợt 2 2023 - 2,000 VND"
+      ]
+    },
+    {
+      "date": "2025-03-17",
+      "cashVnd": 3000,
+      "stockPct": null,
+      "texts": [
+        "Trả cổ tức bằng tiền mặt - Đợt 1 2024 - 3,000 VND"
+      ]
+    },
+    {
+      "date": "2026-03-17",
+      "cashVnd": 3000,
+      "stockPct": null,
+      "texts": [
+        "Trả cổ tức bằng tiền mặt - Đợt 1 2025 - 3,000 VND"
+      ]
+    }
+  ]
+}

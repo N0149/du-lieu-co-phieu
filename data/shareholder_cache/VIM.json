@@ -1,0 +1,167 @@
+{
+  "symbol": "VIM",
+  "updated": "2026-03-30T15:44:08.000Z",
+  "co_cau_so_huu": {
+    "CoDongSoHuu": [
+      {
+        "Code": "LQ_01497",
+        "Name": "Nguyễn Thị Hiệp",
+        "Url": "Nguyễn Thị Hiệp (Vợ của ông <a href='/du-lieu/ceo/CEO_05393/luu-van-lau.chn'>Lưu Văn Lấu</a>)",
+        "AssetVolume": "20.000",
+        "AssetRate": "1,6",
+        "UpdatedDate": "15/08/2025"
+      },
+      {
+        "Code": "KLQ_100407",
+        "Name": "Nguyễn Thị Minh",
+        "Url": "Nguyễn Thị Minh",
+        "AssetVolume": "58.100",
+        "AssetRate": "4,65",
+        "UpdatedDate": "15/08/2025"
+      },
+      {
+        "Code": "CEO_05393",
+        "Name": "Lưu Văn Lấu",
+        "Url": "<a href='/du-lieu/ceo/CEO_05393/luu-van-lau.chn'>Lưu Văn Lấu</a>",
+        "AssetVolume": "43.000",
+        "AssetRate": "3,44",
+        "UpdatedDate": "15/08/2025"
+      },
+      {
+        "Code": "VGC",
+        "Name": "Công ty Cổ phần Khoáng sản Viglacera",
+        "Url": "<a href='/du-lieu/hose/VGC-tong-cong-ty-viglacera-ctcp.chn' title='Tổng Công ty Viglacera - CTCP'>Tổng Công ty Viglacera - CTCP</a>",
+        "AssetVolume": "637.500",
+        "AssetRate": "51,0",
+        "UpdatedDate": "15/08/2025"
+      },
+      {
+        "Code": "CEO_56272",
+        "Name": "Nguyễn Thị Sửu",
+        "Url": "<a href='/du-lieu/ceo/CEO_56272/nguyen-thi-suu.chn'>Nguyễn Thị Sửu</a>",
+        "AssetVolume": "39.000",
+        "AssetRate": "3,12",
+        "UpdatedDate": "15/08/2025"
+      }
+    ],
+    "NuocNgoai": 0.86,
+    "NhaNuoc": 0,
+    "Khac": 99.14
+  },
+  "cong_ty_con": [],
+  "cong_ty_lien_ket": [],
+  "giao_dich_noi_bo": [
+    {
+      "transaction_name": "Nguyễn Thị Minh",
+      "transaction_position": "",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 66200,
+      "plan_buy": 0,
+      "plan_sell": 0,
+      "plan_begin_date": "",
+      "plan_end_date": "",
+      "real_buy": 0,
+      "real_sell": 8100,
+      "real_end_date": "2025-05-20",
+      "published_date": "2025-05-26",
+      "volume_after": 58100
+    },
+    {
+      "transaction_name": "Nguyễn Thị Minh",
+      "transaction_position": "",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 0,
+      "plan_buy": 0,
+      "plan_sell": 0,
+      "plan_begin_date": "",
+      "plan_end_date": "",
+      "real_buy": 80000,
+      "real_sell": 0,
+      "real_end_date": "2025-05-07",
+      "published_date": "2025-05-21",
+      "volume_after": 80000
+    },
+    {
+      "transaction_name": "Nguyễn Thị Sửu",
+      "transaction_position": "Thành viên HĐQT",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 39000,
+      "plan_buy": 0,
+      "plan_sell": 15000,
+      "plan_begin_date": "2021-03-11",
+      "plan_end_date": "2021-03-30",
+      "real_buy": 0,
+      "real_sell": 0,
+      "real_end_date": "",
+      "published_date": "2021-03-11",
+      "volume_after": 0
+    },
+    {
+      "transaction_name": "Nguyễn Thị Hiệp",
+      "transaction_position": "Vợ",
+      "leader_name": "Lưu Văn Lấu",
+      "leader_position": "Thành viên HĐQT",
+      "volume_before": 20000,
+      "plan_buy": 0,
+      "plan_sell": 20000,
+      "plan_begin_date": "2020-02-19",
+      "plan_end_date": "2020-03-17",
+      "real_buy": 0,
+      "real_sell": 0,
+      "real_end_date": "2020-03-16",
+      "published_date": "2020-02-18",
+      "volume_after": 20000
+    },
+    {
+      "transaction_name": "Nguyễn Thị Bích Lan",
+      "transaction_position": "Vợ",
+      "leader_name": "Nguyễn Mạnh Hà",
+      "leader_position": "Giám đốc",
+      "volume_before": 31810,
+      "plan_buy": 0,
+      "plan_sell": 28904,
+      "plan_begin_date": "2019-07-10",
+      "plan_end_date": "2019-07-31",
+      "real_buy": 0,
+      "real_sell": 28904,
+      "real_end_date": "2019-07-22",
+      "published_date": "2019-07-08",
+      "volume_after": 2906
+    },
+    {
+      "transaction_name": "Lưu Văn Lấu",
+      "transaction_position": "Thành viên HĐQT",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 27000,
+      "plan_buy": 20000,
+      "plan_sell": 0,
+      "plan_begin_date": "2019-05-08",
+      "plan_end_date": "2019-05-30",
+      "real_buy": 16000,
+      "real_sell": 0,
+      "real_end_date": "2019-05-20",
+      "published_date": "2019-05-06",
+      "volume_after": 43000
+    },
+    {
+      "transaction_name": "Bùi Thị Kim Chung",
+      "transaction_position": "Thành viên BKS",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 2450,
+      "plan_buy": 0,
+      "plan_sell": 2450,
+      "plan_begin_date": "2019-05-02",
+      "plan_end_date": "2019-05-31",
+      "real_buy": 0,
+      "real_sell": 2450,
+      "real_end_date": "2019-05-30",
+      "published_date": "2019-04-27",
+      "volume_after": 0
+    }
+  ]
+}

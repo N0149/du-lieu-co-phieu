@@ -1,0 +1,195 @@
+{
+  "symbol": "NQN",
+  "updated": "2026-05-01T06:04:42.000Z",
+  "co_cau_so_huu": {
+    "CoDongSoHuu": [
+      {
+        "Code": "CEO_56930",
+        "Name": "Trần Mạnh",
+        "Url": "<a href='/du-lieu/ceo/CEO_56930/tran-manh.chn'>Trần Mạnh</a>",
+        "AssetVolume": "21.200",
+        "AssetRate": "0,04",
+        "UpdatedDate": "15/08/2025"
+      },
+      {
+        "Code": "CEO_54614",
+        "Name": "Lưu Thị Hiền",
+        "Url": "<a href='/du-lieu/ceo/CEO_54614/luu-thi-hien.chn'>Lưu Thị Hiền</a>",
+        "AssetVolume": "600",
+        "AssetRate": "0,0",
+        "UpdatedDate": "15/08/2025"
+      },
+      {
+        "Code": "CEO_54611",
+        "Name": "Hoàng Ngọc Hà",
+        "Url": "<a href='/du-lieu/ceo/CEO_54611/hoang-ngoc-ha.chn'>Hoàng Ngọc Hà</a>",
+        "AssetVolume": "21.300",
+        "AssetRate": "0,04",
+        "UpdatedDate": "15/08/2025"
+      },
+      {
+        "Code": "CEO_54608",
+        "Name": "Nguyễn Văn Thọ",
+        "Url": "<a href='/du-lieu/ceo/CEO_54608/nguyen-van-tho.chn'>Nguyễn Văn Thọ</a>",
+        "AssetVolume": "25.200",
+        "AssetRate": "0,05",
+        "UpdatedDate": "15/08/2025"
+      },
+      {
+        "Code": "CEO_54606",
+        "Name": "Bùi Tiến Thanh",
+        "Url": "<a href='/du-lieu/ceo/CEO_54606/bui-tien-thanh.chn'>Bùi Tiến Thanh</a>",
+        "AssetVolume": "29.800",
+        "AssetRate": "0,06",
+        "UpdatedDate": "15/08/2025"
+      },
+      {
+        "Code": "CEO_54609",
+        "Name": "Nguyễn Thị Thanh",
+        "Url": "<a href='/du-lieu/ceo/CEO_54609/nguyen-thi-thanh.chn'>Nguyễn Thị Thanh</a>",
+        "AssetVolume": "41.200",
+        "AssetRate": "0,08",
+        "UpdatedDate": "15/08/2025"
+      },
+      {
+        "Code": "CEO_54612",
+        "Name": "Nguyễn Thị Kim Ngọc",
+        "Url": "<a href='/du-lieu/ceo/CEO_54612/nguyen-thi-kim-ngoc.chn'>Nguyễn Thị Kim Ngọc</a>",
+        "AssetVolume": "38.100",
+        "AssetRate": "0,07",
+        "UpdatedDate": "15/08/2025"
+      },
+      {
+        "Code": "CEO_54613",
+        "Name": "Phạm Duy Hiếu",
+        "Url": "<a href='/du-lieu/ceo/CEO_54613/pham-duy-hieu.chn'>Phạm Duy Hiếu</a>",
+        "AssetVolume": "300",
+        "AssetRate": "0,0",
+        "UpdatedDate": "15/08/2025"
+      },
+      {
+        "Code": "CEO_54615",
+        "Name": "Tô Thị Hằng Nga",
+        "Url": "<a href='/du-lieu/ceo/CEO_54615/to-thi-hang-nga.chn'>Tô Thị Hằng Nga</a>",
+        "AssetVolume": "12.000",
+        "AssetRate": "0,02",
+        "UpdatedDate": "15/08/2025"
+      },
+      {
+        "Code": "CEO_54607",
+        "Name": "Trịnh Văn Bình",
+        "Url": "<a href='/du-lieu/ceo/CEO_54607/trinh-van-binh.chn'>Trịnh Văn Bình</a>",
+        "AssetVolume": "27.200",
+        "AssetRate": "0,05",
+        "UpdatedDate": "15/08/2025"
+      },
+      {
+        "Code": "CORP_51540",
+        "Name": "UBND tỉnh Quảng Ninh",
+        "Url": "UBND tỉnh Quảng Ninh",
+        "AssetVolume": "48.880.593",
+        "AssetRate": "96,16",
+        "UpdatedDate": "15/08/2025"
+      },
+      {
+        "Code": "CEO_54610",
+        "Name": "Vũ Văn Tuấn",
+        "Url": "<a href='/du-lieu/ceo/CEO_54610/vu-van-tuan.chn'>Vũ Văn Tuấn</a>",
+        "AssetVolume": "22.200",
+        "AssetRate": "0,04",
+        "UpdatedDate": "15/08/2025"
+      },
+      {
+        "Code": "CEO_54605",
+        "Name": "Nguyễn Văn Thanh",
+        "Url": "<a href='/du-lieu/ceo/CEO_54605/nguyen-van-thanh.chn'>Nguyễn Văn Thanh</a>",
+        "AssetVolume": "9.800",
+        "AssetRate": "0,02",
+        "UpdatedDate": "15/08/2025"
+      }
+    ],
+    "NuocNgoai": 50831591.84,
+    "NhaNuoc": 0,
+    "Khac": -50831491.84
+  },
+  "cong_ty_con": [
+    {
+      "Symbol": "NQN",
+      "CorpCode": "CORP_99759",
+      "Name": "Công ty TNHH Cấp nước Yên Lập - Quảng Ninh",
+      "TotalCapital": 4.752,
+      "SharedCapital": 0.18,
+      "OwnershipRate": 3.87,
+      "Note": "",
+      "Order": 1,
+      "TradeCenter": ""
+    }
+  ],
+  "cong_ty_lien_ket": [],
+  "giao_dich_noi_bo": [
+    {
+      "transaction_name": "Trần Mạnh",
+      "transaction_position": "Người được ủy quyền công bố thông tin",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 21200,
+      "plan_buy": 30000,
+      "plan_sell": 0,
+      "plan_begin_date": "2019-02-28",
+      "plan_end_date": "2019-03-28",
+      "real_buy": 0,
+      "real_sell": 0,
+      "real_end_date": "2019-03-28",
+      "published_date": "2019-02-26",
+      "volume_after": 21200
+    },
+    {
+      "transaction_name": "Trần Mạnh",
+      "transaction_position": "Người được ủy quyền công bố thông tin",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 20700,
+      "plan_buy": 50000,
+      "plan_sell": 0,
+      "plan_begin_date": "2018-09-25",
+      "plan_end_date": "2018-10-24",
+      "real_buy": 600,
+      "real_sell": 0,
+      "real_end_date": "2018-10-24",
+      "published_date": "2018-09-24",
+      "volume_after": 21300
+    },
+    {
+      "transaction_name": "Trần Mạnh",
+      "transaction_position": "Người được ủy quyền công bố thông tin",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 17600,
+      "plan_buy": 20000,
+      "plan_sell": 0,
+      "plan_begin_date": "2018-08-06",
+      "plan_end_date": "2018-09-04",
+      "real_buy": 3100,
+      "real_sell": 0,
+      "real_end_date": "2018-09-03",
+      "published_date": "2018-08-03",
+      "volume_after": 20700
+    },
+    {
+      "transaction_name": "Trần Mạnh",
+      "transaction_position": "Người được ủy quyền công bố thông tin",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 18500,
+      "plan_buy": 0,
+      "plan_sell": 2000,
+      "plan_begin_date": "2018-06-20",
+      "plan_end_date": "2018-07-12",
+      "real_buy": 0,
+      "real_sell": 900,
+      "real_end_date": "2018-07-01",
+      "published_date": "2018-06-18",
+      "volume_after": 17600
+    }
+  ]
+}

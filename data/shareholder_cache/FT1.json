@@ -1,0 +1,94 @@
+{
+  "symbol": "FT1",
+  "updated": "2026-09-01T07:27:05.000Z",
+  "co_cau_so_huu": {
+    "CoDongSoHuu": [
+      {
+        "Code": "CEO_53322",
+        "Name": "Lê Thị Minh Thư",
+        "Url": "<a href='/du-lieu/ceo/CEO_53322/le-thi-minh-thu.chn'>Lê Thị Minh Thư</a>",
+        "AssetVolume": "6.400",
+        "AssetRate": "0,09",
+        "UpdatedDate": "21/08/2026"
+      },
+      {
+        "Code": "CEO_53316",
+        "Name": "Lê Văn Hùng",
+        "Url": "<a href='/du-lieu/ceo/CEO_53316/le-van-hung.chn'>Lê Văn Hùng</a>",
+        "AssetVolume": "57.000",
+        "AssetRate": "0,81",
+        "UpdatedDate": "21/08/2026"
+      },
+      {
+        "Code": "CEO_53317",
+        "Name": "Nguyễn Đức Giang",
+        "Url": "<a href='/du-lieu/ceo/CEO_53317/nguyen-duc-giang.chn'>Nguyễn Đức Giang</a>",
+        "AssetVolume": "6.000",
+        "AssetRate": "0,08",
+        "UpdatedDate": "21/08/2026"
+      },
+      {
+        "Code": "CEO_53313",
+        "Name": "Phạm Văn Khay",
+        "Url": "<a href='/du-lieu/ceo/CEO_53313/pham-van-khay.chn'>Phạm Văn Khay</a>",
+        "AssetVolume": "13.300",
+        "AssetRate": "0,19",
+        "UpdatedDate": "21/08/2026"
+      },
+      {
+        "Code": "CEO_53320",
+        "Name": "Nguyễn Văn Thùy",
+        "Url": "<a href='/du-lieu/ceo/CEO_53320/nguyen-van-thuy.chn'>Nguyễn Văn Thùy</a>",
+        "AssetVolume": "29.800",
+        "AssetRate": "0,42",
+        "UpdatedDate": "21/08/2026"
+      },
+      {
+        "Code": "LQ_96452",
+        "Name": "Phạm Văn Khanh",
+        "Url": "Phạm Văn Khanh (con đẻ của ông <a href='/du-lieu/ceo/CEO_53313/pham-van-khay.chn'>Phạm Văn Khay</a>)",
+        "AssetVolume": "200.000",
+        "AssetRate": "2,82",
+        "UpdatedDate": "21/08/2026"
+      },
+      {
+        "Code": "CEO_53312",
+        "Name": "Vũ Từ Công",
+        "Url": "<a href='/du-lieu/ceo/CEO_53312/vu-tu-cong.chn'>Vũ Từ Công</a>",
+        "AssetVolume": "10.000",
+        "AssetRate": "0,14",
+        "UpdatedDate": "21/08/2026"
+      },
+      {
+        "Code": "CEO_53314",
+        "Name": "Nguyễn Đức Hiển",
+        "Url": "<a href='/du-lieu/ceo/CEO_53314/nguyen-duc-hien.chn'>Nguyễn Đức Hiển</a>",
+        "AssetVolume": "194.300",
+        "AssetRate": "2,74",
+        "UpdatedDate": "21/08/2026"
+      },
+      {
+        "Code": "CEO_53318",
+        "Name": "Lý Kiều Anh",
+        "Url": "<a href='/du-lieu/ceo/CEO_53318/ly-kieu-anh.chn'>Lý Kiều Anh</a>",
+        "AssetVolume": "5.000",
+        "AssetRate": "0,07",
+        "UpdatedDate": "21/08/2026"
+      },
+      {
+        "Code": "CEO_53319",
+        "Name": "Nguyễn Anh Dũng",
+        "Url": "<a href='/du-lieu/ceo/CEO_53319/nguyen-anh-dung.chn'>Nguyễn Anh Dũng</a>",
+        "AssetVolume": "3.900",
+        "AssetRate": "0,06",
+        "UpdatedDate": "21/08/2026"
+      }
+    ],
+    "NuocNgoai": 0.24,
+    "NhaNuoc": 0,
+    "Khac": 99.76
+  },
+  "cong_ty_con": [],
+  "cong_ty_lien_ket": [],
+  "giao_dich_noi_bo": []
+}

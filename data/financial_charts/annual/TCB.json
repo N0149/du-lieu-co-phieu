@@ -1,0 +1,1764 @@
+{
+  "newFiscalDateYear": [
+    "2018-12-31",
+    "2019-12-31",
+    "2020-12-31",
+    "2021-12-31",
+    "2022-12-31",
+    "2023-12-31",
+    "2024-12-31",
+    "2025-12-31"
+  ],
+  "isNganHang": true,
+  "isChungKhoan": false,
+  "tongCongTaiSan": [
+    320988.941,
+    383699.461,
+    439602.933,
+    568728.95,
+    699033,
+    849482,
+    978799,
+    1192344
+  ],
+  "tsTienTuongDuongTienDTTCNH": [
+    2606.467,
+    4820.627,
+    3663.615,
+    3578.643,
+    4216,
+    3621,
+    3385,
+    4361
+  ],
+  "tsDauTuNamGiuDenNgayDaoHan": [
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null
+  ],
+  "tsKhoanPhaiThu": [
+    11322.256,
+    12954.103,
+    16572.411,
+    28117.18,
+    61609,
+    69834,
+    29541,
+    56111
+  ],
+  "tsHangTonKho": [
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null
+  ],
+  "tsTaiSanCoDinh": [
+    1718.596,
+    3207.777,
+    4613.423,
+    7224.481,
+    8411,
+    8893,
+    12467,
+    12123
+  ],
+  "tsTaiSanDoDangDaiHan": [
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null
+  ],
+  "tsKhac": [
+    null,
+    null,
+    null,
+    null,
+    70517,
+    80543,
+    39501,
+    68001
+  ],
+  "nvVonChuSoHuu": [
+    51782.705,
+    62072.767,
+    74614.786,
+    93041.472,
+    113425,
+    131616,
+    147940,
+    179501
+  ],
+  "nvVonDieuLe": [
+    34965.922,
+    35001.4,
+    35049.062,
+    35109.148,
+    35172,
+    35225,
+    70649,
+    70862
+  ],
+  "nvVayNganHan": [
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null
+  ],
+  "nvVayDaiHanTPCD": [
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null
+  ],
+  "nvKhac": [
+    11852.845,
+    11168.656,
+    11878.118,
+    14795.596,
+    23775,
+    25329,
+    23862,
+    26877
+  ],
+  "nvMuaTraTienTruocDtChuaTH": [
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null
+  ],
+  "nvCoPhieuQuy": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "tsNguyenGiaTscdHuuHinh": [
+    1835.272,
+    1761.468,
+    2416.349,
+    4824.092,
+    5156.346,
+    5492.566,
+    9080.615,
+    9539.276
+  ],
+  "tsKhauHaoTscdHuuHinhLuyKe": [
+    -1047.256,
+    -967.984,
+    -945.407,
+    -1195.36,
+    -1459.534,
+    -1964.98,
+    -2503.916,
+    -3195.544
+  ],
+  "doanhSoThuan": [
+    18349.768,
+    21068.145,
+    27042.526,
+    37076.291,
+    40527.191,
+    40061.092,
+    46990.397,
+    53391.125
+  ],
+  "lnst": [
+    8462.775,
+    10075.139,
+    12324.991,
+    18052.25,
+    20150.377,
+    18003.802,
+    21522.928,
+    25290.23
+  ],
+  "coTucLNST": [
+    8462.775,
+    10075.139,
+    12324.991,
+    18052.25,
+    20150,
+    18004,
+    21523,
+    25290
+  ],
+  "lctThuanHDSXKD": [
+    298.932,
+    12631.802,
+    -10088.467,
+    12828.221,
+    55469,
+    12053,
+    42377,
+    39924
+  ],
+  "lctThuanHDDauTu": [
+    519.47,
+    -222.244,
+    -655.391,
+    -879.943,
+    -1057,
+    -2912,
+    -383,
+    -816
+  ],
+  "lctThuanHDTC": [
+    null,
+    null,
+    null,
+    null,
+    -710,
+    54,
+    -5010,
+    5236
+  ],
+  "lctThuanTrongKy": [
+    13699.378,
+    -3094.234,
+    -174.546,
+    60.053,
+    53702,
+    9194,
+    36984,
+    44343
+  ],
+  "coTucDaTra": [
+    0,
+    0,
+    65.086,
+    0,
+    75,
+    0.854,
+    5210,
+    7085
+  ],
+  "ROECuoiKy": [
+    16.34,
+    16.23,
+    16.52,
+    19.4,
+    17.77,
+    13.68,
+    14.55,
+    14.09
+  ],
+  "ROACuoiKy": [
+    2.64,
+    2.63,
+    2.8,
+    3.17,
+    2.88,
+    2.12,
+    2.2,
+    2.12
+  ],
+  "nhToiThuNhapLaiThuan": [
+    11389.939,
+    14257.844,
+    18751.209,
+    26698.613,
+    30289.775,
+    27691.12,
+    35507.963,
+    38155.091
+  ],
+  "nhToiLaiThuanTuHDDV": [
+    3272.58,
+    3253.353,
+    4188.778,
+    6382.24,
+    8527,
+    8715,
+    8042,
+    8772
+  ],
+  "nhToiThuNhapTuHDKhac": [
+    3687.249,
+    3556.948,
+    4102.539,
+    3995.438,
+    2084.811,
+    3655.075,
+    3440.186,
+    6464.039
+  ],
+  "nhTsChoVayKhachHang": [
+    159939.217,
+    230802.027,
+    277524.615,
+    347341.244,
+    420523.705,
+    518641.568,
+    631724.964,
+    767617.129
+  ],
+  "nhChoVayKhachHang": [
+    159939.217,
+    230802.027,
+    277524.615,
+    347341.244,
+    420523.705,
+    518641.568,
+    631724.964,
+    767617.129
+  ],
+  "nhTsTienVangTienGuiNHNN": [
+    13161.95,
+    8012.883,
+    13916.939,
+    8487.172,
+    15691.311,
+    30761.287,
+    57737.923,
+    86523.593
+  ],
+  "nhTsTienGuiChoVayTCTDkhac": [
+    35559.363,
+    47990.224,
+    28994.954,
+    70515.258,
+    82873.754,
+    104072.32,
+    84590.474,
+    114958.312
+  ],
+  "nhTsChungKhoanKinhDoanh": [
+    7572.229,
+    10041.556,
+    8347.576,
+    5070.812,
+    961.034,
+    4432.778,
+    9000.644,
+    4815.777
+  ],
+  "nhTsChungKhoanDauTu": [
+    86512.348,
+    66054.597,
+    84447.241,
+    97586.088,
+    103652,
+    104994,
+    148624,
+    145526
+  ],
+  "nhTsKhac": [
+    20628.948,
+    23714.918,
+    28585.856,
+    43464.039,
+    80102.645,
+    92707.943,
+    55211.688,
+    83401.567
+  ],
+  "nhNvVcsh": [
+    51782.705,
+    62072.767,
+    74614.786,
+    93041.472,
+    113424.966,
+    131616.065,
+    147939.621,
+    179501.442
+  ],
+  "nhNvTienGuiKhachHang": [
+    201414.532,
+    231296.761,
+    277458.651,
+    314752.525,
+    358404,
+    454661,
+    533392,
+    618912
+  ],
+  "nhNvGuiVayTCTDKhac": [
+    28973.455,
+    38632.337,
+    21232.089,
+    45606.142,
+    167563,
+    153173,
+    132239,
+    144983
+  ],
+  "nhNvPhatHanhGtoCoGia": [
+    13177.959,
+    17460.634,
+    27899.64,
+    33679.824,
+    34007,
+    84703,
+    140422,
+    215330
+  ],
+  "nhNvNoChinhPhuVaNHNN": [
+    6025.027,
+    0,
+    0,
+    0.842,
+    7.826,
+    0.131,
+    11.531,
+    4323.867
+  ],
+  "nhNvKhac": [
+    19615.263,
+    34236.962,
+    38397.767,
+    81648.145,
+    25626.208,
+    25328.804,
+    24794.848,
+    29293.691
+  ],
+  "nhSlNIM": [
+    3.8885,
+    4.093,
+    4.6691,
+    5.1239,
+    4.8941,
+    3.6667,
+    3.8605,
+    3.4353
+  ],
+  "nhSlYOAE": [
+    7.3105,
+    7.1815,
+    7.2215,
+    6.8137,
+    7.2309,
+    7.5089,
+    6.5331,
+    6.1239
+  ],
+  "nhSlCOF": [
+    3.8949,
+    3.4654,
+    2.903,
+    1.9103,
+    2.5742,
+    4.1899,
+    3.046,
+    3.0287
+  ],
+  "nhToiTangTruongYoy": [
+    null,
+    14.81,
+    28.36,
+    37.1,
+    9.31,
+    -5.23,
+    13.01,
+    11.2
+  ],
+  "nhTangTruongChoVayKhachHang": [
+    null,
+    44.64,
+    20.81,
+    24.81,
+    21,
+    23.33,
+    21.8,
+    21.51
+  ],
+  "nhTsTiLeLaiPhiTongTaiSan": [
+    1.7876,
+    1.4474,
+    1.1794,
+    1.0212,
+    1.1485,
+    1.1397,
+    0.8302,
+    0.8208
+  ],
+  "nhTsTiLeTaiSanVcsh": [
+    6.2,
+    6.18,
+    5.89,
+    6.11,
+    6.16,
+    6.45,
+    6.62,
+    6.64
+  ],
+  "nhTsDuPhongRuiRoChoVayKhachHang": [
+    -2385.114,
+    -2916.744,
+    -2214.248,
+    -3735.663,
+    -4771.449,
+    -6127.896,
+    -8090.693,
+    -10498.378
+  ],
+  "nhnxCasa": [
+    28.6976,
+    34.4646,
+    46.1468,
+    50.4708,
+    36.9588,
+    39.9141,
+    37.3538,
+    35.8743
+  ],
+  "noXauTiLe": [
+    1.7528,
+    1.3336,
+    0.4667,
+    0.6604,
+    0.7212,
+    1.1567,
+    1.124,
+    1.068
+  ],
+  "noXauTiLeBaoPhu": [
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null
+  ],
+  "nhDuPhongRuiRoTinDungNo2345": [
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null
+  ],
+  "nhnxduPhongChung35": [
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null
+  ],
+  "nhnxdpCuThe35": [
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null
+  ],
+  "nhnxduPhongChung25": [
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null
+  ],
+  "nhnxduPhongCthe25": [
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null
+  ],
+  "nhnxnoNhom2": [
+    1.6179,
+    0.9197,
+    0.6507,
+    0.6175,
+    2.0767,
+    0.8559,
+    0.703,
+    0.5018
+  ],
+  "nhnxnoNhom3": [
+    0.1487,
+    0.0945,
+    0.1502,
+    0.1953,
+    0.2144,
+    0.358,
+    0.2162,
+    0.1196
+  ],
+  "nhnxnoNhom4": [
+    0.5393,
+    0.1322,
+    0.1924,
+    0.2477,
+    0.269,
+    0.5326,
+    0.3903,
+    0.1745
+  ],
+  "nhnxnoNhom5": [
+    1.0649,
+    1.1068,
+    0.1241,
+    0.2174,
+    0.2378,
+    0.2661,
+    0.5176,
+    0.774
+  ],
+  "nhTyLeNhomNo2345": [
+    3.3707,
+    2.2533,
+    1.1174,
+    1.2779,
+    2.7979,
+    2.0126,
+    1.827,
+    1.5699
+  ],
+  "nhChoVayNganhTheoKy": [
+    {
+      "fiscalPeriod": "2018-12-31",
+      "totalBillions": 159939.22,
+      "items": [
+        {
+          "label": "Các ngành khác",
+          "valueBillions": 72383.68,
+          "pct": 45.26
+        },
+        {
+          "label": "Sản xuất",
+          "valueBillions": 23099.73,
+          "pct": 14.44
+        },
+        {
+          "label": "Thương mại",
+          "valueBillions": 21171.98,
+          "pct": 13.24
+        },
+        {
+          "label": "Công nghiệp chế biến, chế tạo",
+          "valueBillions": 19076.39,
+          "pct": 11.93
+        },
+        {
+          "label": "Bất động sản và tư vấn",
+          "valueBillions": 13554.78,
+          "pct": 8.47
+        },
+        {
+          "label": "Dịch vụ tài chính",
+          "valueBillions": 9468.65,
+          "pct": 5.92
+        },
+        {
+          "label": "Xây dựng",
+          "valueBillions": 8095.57,
+          "pct": 5.06
+        },
+        {
+          "label": "Dịch vụ cộng đồng và cá nhân",
+          "valueBillions": 7029.16,
+          "pct": 4.39
+        },
+        {
+          "label": "Hoạt động dịch vụ khác",
+          "valueBillions": 6568.62,
+          "pct": 4.11
+        },
+        {
+          "label": "Kho bãi, vận tải, viễn thông",
+          "valueBillions": 3000.57,
+          "pct": 1.88
+        }
+      ],
+      "top10": [
+        {
+          "name": "Các ngành khác",
+          "value": 72383.68
+        },
+        {
+          "name": "Sản xuất",
+          "value": 23099.73
+        },
+        {
+          "name": "Thương mại",
+          "value": 21171.98
+        },
+        {
+          "name": "Công nghiệp chế biến, chế tạo",
+          "value": 19076.39
+        },
+        {
+          "name": "Bất động sản và tư vấn",
+          "value": 13554.78
+        },
+        {
+          "name": "Dịch vụ tài chính",
+          "value": 9468.65
+        },
+        {
+          "name": "Xây dựng",
+          "value": 8095.57
+        },
+        {
+          "name": "Dịch vụ cộng đồng và cá nhân",
+          "value": 7029.16
+        },
+        {
+          "name": "Hoạt động dịch vụ khác",
+          "value": 6568.62
+        },
+        {
+          "name": "Kho bãi, vận tải, viễn thông",
+          "value": 3000.57
+        }
+      ],
+      "other": null
+    },
+    {
+      "fiscalPeriod": "2019-12-31",
+      "totalBillions": 230802.03,
+      "items": [
+        {
+          "label": "Các ngành khác",
+          "valueBillions": 105247.35,
+          "pct": 45.6
+        },
+        {
+          "label": "Bất động sản và tư vấn",
+          "valueBillions": 50421.55,
+          "pct": 21.85
+        },
+        {
+          "label": "Thương mại",
+          "valueBillions": 27075.22,
+          "pct": 11.73
+        },
+        {
+          "label": "Sản xuất",
+          "valueBillions": 24739.83,
+          "pct": 10.72
+        },
+        {
+          "label": "Công nghiệp chế biến, chế tạo",
+          "valueBillions": 20431.39,
+          "pct": 8.85
+        },
+        {
+          "label": "Dịch vụ cộng đồng và cá nhân",
+          "valueBillions": 8893.9,
+          "pct": 3.85
+        },
+        {
+          "label": "Hoạt động dịch vụ khác",
+          "valueBillions": 7814.56,
+          "pct": 3.39
+        },
+        {
+          "label": "Xây dựng",
+          "valueBillions": 6957.44,
+          "pct": 3.01
+        },
+        {
+          "label": "Kho bãi, vận tải, viễn thông",
+          "valueBillions": 3825.15,
+          "pct": 1.66
+        },
+        {
+          "label": "Sản xuất và phân phối điện, khí đốt và nước nóng, hơi nước và điều hòa không khí",
+          "valueBillions": 2858.78,
+          "pct": 1.24
+        }
+      ],
+      "top10": [
+        {
+          "name": "Các ngành khác",
+          "value": 105247.35
+        },
+        {
+          "name": "Bất động sản và tư vấn",
+          "value": 50421.55
+        },
+        {
+          "name": "Thương mại",
+          "value": 27075.22
+        },
+        {
+          "name": "Sản xuất",
+          "value": 24739.83
+        },
+        {
+          "name": "Công nghiệp chế biến, chế tạo",
+          "value": 20431.39
+        },
+        {
+          "name": "Dịch vụ cộng đồng và cá nhân",
+          "value": 8893.9
+        },
+        {
+          "name": "Hoạt động dịch vụ khác",
+          "value": 7814.56
+        },
+        {
+          "name": "Xây dựng",
+          "value": 6957.44
+        },
+        {
+          "name": "Kho bãi, vận tải, viễn thông",
+          "value": 3825.15
+        },
+        {
+          "name": "Sản xuất và phân phối điện, khí đốt và nước nóng, hơi nước và điều hòa không khí",
+          "value": 2858.78
+        }
+      ],
+      "other": null
+    },
+    {
+      "fiscalPeriod": "2020-12-31",
+      "totalBillions": 277524.61,
+      "items": [
+        {
+          "label": "Các ngành khác",
+          "valueBillions": 111139.45,
+          "pct": 40.05
+        },
+        {
+          "label": "Bất động sản và tư vấn",
+          "valueBillions": 91360.79,
+          "pct": 32.92
+        },
+        {
+          "label": "Thương mại",
+          "valueBillions": 29247.06,
+          "pct": 10.54
+        },
+        {
+          "label": "Sản xuất",
+          "valueBillions": 24119.48,
+          "pct": 8.69
+        },
+        {
+          "label": "Công nghiệp chế biến, chế tạo",
+          "valueBillions": 19732.67,
+          "pct": 7.11
+        },
+        {
+          "label": "Xây dựng",
+          "valueBillions": 9135.83,
+          "pct": 3.29
+        },
+        {
+          "label": "Dịch vụ tài chính",
+          "valueBillions": 7794.68,
+          "pct": 2.81
+        },
+        {
+          "label": "Kho bãi, vận tải, viễn thông",
+          "valueBillions": 3386.33,
+          "pct": 1.22
+        },
+        {
+          "label": "Sản xuất và phân phối điện, khí đốt và nước nóng, hơi nước và điều hòa không khí",
+          "valueBillions": 3100.1,
+          "pct": 1.12
+        },
+        {
+          "label": "Vận tải, kho bãi",
+          "valueBillions": 2700.9,
+          "pct": 0.97
+        }
+      ],
+      "top10": [
+        {
+          "name": "Các ngành khác",
+          "value": 111139.45
+        },
+        {
+          "name": "Bất động sản và tư vấn",
+          "value": 91360.79
+        },
+        {
+          "name": "Thương mại",
+          "value": 29247.06
+        },
+        {
+          "name": "Sản xuất",
+          "value": 24119.48
+        },
+        {
+          "name": "Công nghiệp chế biến, chế tạo",
+          "value": 19732.67
+        },
+        {
+          "name": "Xây dựng",
+          "value": 9135.83
+        },
+        {
+          "name": "Dịch vụ tài chính",
+          "value": 7794.68
+        },
+        {
+          "name": "Kho bãi, vận tải, viễn thông",
+          "value": 3386.33
+        },
+        {
+          "name": "Sản xuất và phân phối điện, khí đốt và nước nóng, hơi nước và điều hòa không khí",
+          "value": 3100.1
+        },
+        {
+          "name": "Vận tải, kho bãi",
+          "value": 2700.9
+        }
+      ],
+      "other": null
+    },
+    {
+      "fiscalPeriod": "2021-12-31",
+      "totalBillions": 347341.24,
+      "items": [
+        {
+          "label": "Các ngành khác",
+          "valueBillions": 161657.1,
+          "pct": 46.54
+        },
+        {
+          "label": "Bất động sản và tư vấn",
+          "valueBillions": 95912.75,
+          "pct": 27.61
+        },
+        {
+          "label": "Sản xuất",
+          "valueBillions": 35099.84,
+          "pct": 10.11
+        },
+        {
+          "label": "Thương mại",
+          "valueBillions": 34711.87,
+          "pct": 9.99
+        },
+        {
+          "label": "Công nghiệp chế biến, chế tạo",
+          "valueBillions": 28719.03,
+          "pct": 8.27
+        },
+        {
+          "label": "Xây dựng",
+          "valueBillions": 13055.75,
+          "pct": 3.76
+        },
+        {
+          "label": "Sản xuất và phân phối điện, khí đốt và nước nóng, hơi nước và điều hòa không khí",
+          "valueBillions": 4590.74,
+          "pct": 1.32
+        },
+        {
+          "label": "Kho bãi, vận tải, viễn thông",
+          "valueBillions": 3052.92,
+          "pct": 0.88
+        },
+        {
+          "label": "Vận tải, kho bãi",
+          "valueBillions": 2372.04,
+          "pct": 0.68
+        },
+        {
+          "label": "Khai khoáng",
+          "valueBillions": 1720.17,
+          "pct": 0.5
+        }
+      ],
+      "top10": [
+        {
+          "name": "Các ngành khác",
+          "value": 161657.1
+        },
+        {
+          "name": "Bất động sản và tư vấn",
+          "value": 95912.75
+        },
+        {
+          "name": "Sản xuất",
+          "value": 35099.84
+        },
+        {
+          "name": "Thương mại",
+          "value": 34711.87
+        },
+        {
+          "name": "Công nghiệp chế biến, chế tạo",
+          "value": 28719.03
+        },
+        {
+          "name": "Xây dựng",
+          "value": 13055.75
+        },
+        {
+          "name": "Sản xuất và phân phối điện, khí đốt và nước nóng, hơi nước và điều hòa không khí",
+          "value": 4590.74
+        },
+        {
+          "name": "Kho bãi, vận tải, viễn thông",
+          "value": 3052.92
+        },
+        {
+          "name": "Vận tải, kho bãi",
+          "value": 2372.04
+        },
+        {
+          "name": "Khai khoáng",
+          "value": 1720.17
+        }
+      ],
+      "other": null
+    },
+    {
+      "fiscalPeriod": "2022-12-31",
+      "totalBillions": 420523.71,
+      "items": [
+        {
+          "label": "Các ngành khác",
+          "valueBillions": 226806.95,
+          "pct": 53.93
+        },
+        {
+          "label": "Bất động sản và tư vấn",
+          "valueBillions": 108805.15,
+          "pct": 25.87
+        },
+        {
+          "label": "Thương mại",
+          "valueBillions": 34129.85,
+          "pct": 8.12
+        },
+        {
+          "label": "Sản xuất",
+          "valueBillions": 33438.68,
+          "pct": 7.95
+        },
+        {
+          "label": "Công nghiệp chế biến, chế tạo",
+          "valueBillions": 28006.74,
+          "pct": 6.66
+        },
+        {
+          "label": "Xây dựng",
+          "valueBillions": 12093.13,
+          "pct": 2.88
+        },
+        {
+          "label": "Sản xuất và phân phối điện, khí đốt và nước nóng, hơi nước và điều hòa không khí",
+          "valueBillions": 3951.23,
+          "pct": 0.94
+        },
+        {
+          "label": "Nông nghiệp và lâm nghiệp",
+          "valueBillions": 2095.34,
+          "pct": 0.5
+        },
+        {
+          "label": "Kho bãi, vận tải, viễn thông",
+          "valueBillions": 1879.6,
+          "pct": 0.45
+        },
+        {
+          "label": "Vận tải, kho bãi",
+          "valueBillions": 1516.64,
+          "pct": 0.36
+        }
+      ],
+      "top10": [
+        {
+          "name": "Các ngành khác",
+          "value": 226806.95
+        },
+        {
+          "name": "Bất động sản và tư vấn",
+          "value": 108805.15
+        },
+        {
+          "name": "Thương mại",
+          "value": 34129.85
+        },
+        {
+          "name": "Sản xuất",
+          "value": 33438.68
+        },
+        {
+          "name": "Công nghiệp chế biến, chế tạo",
+          "value": 28006.74
+        },
+        {
+          "name": "Xây dựng",
+          "value": 12093.13
+        },
+        {
+          "name": "Sản xuất và phân phối điện, khí đốt và nước nóng, hơi nước và điều hòa không khí",
+          "value": 3951.23
+        },
+        {
+          "name": "Nông nghiệp và lâm nghiệp",
+          "value": 2095.34
+        },
+        {
+          "name": "Kho bãi, vận tải, viễn thông",
+          "value": 1879.6
+        },
+        {
+          "name": "Vận tải, kho bãi",
+          "value": 1516.64
+        }
+      ],
+      "other": null
+    },
+    {
+      "fiscalPeriod": "2023-12-31",
+      "totalBillions": 518641.57,
+      "items": [
+        {
+          "label": "Các ngành khác",
+          "valueBillions": 221480.51,
+          "pct": 42.7
+        },
+        {
+          "label": "Bất động sản và tư vấn",
+          "valueBillions": 176803.98,
+          "pct": 34.09
+        },
+        {
+          "label": "Sản xuất",
+          "valueBillions": 47631.73,
+          "pct": 9.18
+        },
+        {
+          "label": "Thương mại",
+          "valueBillions": 44842.42,
+          "pct": 8.65
+        },
+        {
+          "label": "Công nghiệp chế biến, chế tạo",
+          "valueBillions": 42054.34,
+          "pct": 8.11
+        },
+        {
+          "label": "Xây dựng",
+          "valueBillions": 11876.94,
+          "pct": 2.29
+        },
+        {
+          "label": "Kho bãi, vận tải, viễn thông",
+          "valueBillions": 8651.29,
+          "pct": 1.67
+        },
+        {
+          "label": "Vận tải, kho bãi",
+          "valueBillions": 7867.11,
+          "pct": 1.52
+        },
+        {
+          "label": "Sản xuất và phân phối điện, khí đốt và nước nóng, hơi nước và điều hòa không khí",
+          "valueBillions": 3794.49,
+          "pct": 0.73
+        },
+        {
+          "label": "Nông nghiệp và lâm nghiệp",
+          "valueBillions": 2908.68,
+          "pct": 0.56
+        }
+      ],
+      "top10": [
+        {
+          "name": "Các ngành khác",
+          "value": 221480.51
+        },
+        {
+          "name": "Bất động sản và tư vấn",
+          "value": 176803.98
+        },
+        {
+          "name": "Sản xuất",
+          "value": 47631.73
+        },
+        {
+          "name": "Thương mại",
+          "value": 44842.42
+        },
+        {
+          "name": "Công nghiệp chế biến, chế tạo",
+          "value": 42054.34
+        },
+        {
+          "name": "Xây dựng",
+          "value": 11876.94
+        },
+        {
+          "name": "Kho bãi, vận tải, viễn thông",
+          "value": 8651.29
+        },
+        {
+          "name": "Vận tải, kho bãi",
+          "value": 7867.11
+        },
+        {
+          "name": "Sản xuất và phân phối điện, khí đốt và nước nóng, hơi nước và điều hòa không khí",
+          "value": 3794.49
+        },
+        {
+          "name": "Nông nghiệp và lâm nghiệp",
+          "value": 2908.68
+        }
+      ],
+      "other": null
+    },
+    {
+      "fiscalPeriod": "2024-12-31",
+      "totalBillions": 631724.96,
+      "items": [
+        {
+          "label": "Các ngành khác",
+          "valueBillions": 272316.57,
+          "pct": 43.11
+        },
+        {
+          "label": "Bất động sản và tư vấn",
+          "valueBillions": 187100.08,
+          "pct": 29.62
+        },
+        {
+          "label": "Sản xuất",
+          "valueBillions": 62617.46,
+          "pct": 9.91
+        },
+        {
+          "label": "Công nghiệp chế biến, chế tạo",
+          "valueBillions": 58465.03,
+          "pct": 9.25
+        },
+        {
+          "label": "Thương mại",
+          "valueBillions": 54777.57,
+          "pct": 8.67
+        },
+        {
+          "label": "Xây dựng",
+          "valueBillions": 17442.92,
+          "pct": 2.76
+        },
+        {
+          "label": "Giáo dục và đào tạo",
+          "valueBillions": 11158.01,
+          "pct": 1.77
+        },
+        {
+          "label": "Hoạt động chuyên môn, khoa học và công nghệ",
+          "valueBillions": 10837.6,
+          "pct": 1.72
+        },
+        {
+          "label": "Dịch vụ tài chính",
+          "valueBillions": 9377.85,
+          "pct": 1.48
+        },
+        {
+          "label": "Kho bãi, vận tải, viễn thông",
+          "valueBillions": 6822.03,
+          "pct": 1.08
+        }
+      ],
+      "top10": [
+        {
+          "name": "Các ngành khác",
+          "value": 272316.57
+        },
+        {
+          "name": "Bất động sản và tư vấn",
+          "value": 187100.08
+        },
+        {
+          "name": "Sản xuất",
+          "value": 62617.46
+        },
+        {
+          "name": "Công nghiệp chế biến, chế tạo",
+          "value": 58465.03
+        },
+        {
+          "name": "Thương mại",
+          "value": 54777.57
+        },
+        {
+          "name": "Xây dựng",
+          "value": 17442.92
+        },
+        {
+          "name": "Giáo dục và đào tạo",
+          "value": 11158.01
+        },
+        {
+          "name": "Hoạt động chuyên môn, khoa học và công nghệ",
+          "value": 10837.6
+        },
+        {
+          "name": "Dịch vụ tài chính",
+          "value": 9377.85
+        },
+        {
+          "name": "Kho bãi, vận tải, viễn thông",
+          "value": 6822.03
+        }
+      ],
+      "other": null
+    },
+    {
+      "fiscalPeriod": "2025-12-31",
+      "totalBillions": 767617.13,
+      "items": [
+        {
+          "label": "Các ngành khác",
+          "valueBillions": 356187.67,
+          "pct": 46.4
+        },
+        {
+          "label": "Bất động sản và tư vấn",
+          "valueBillions": 207026.82,
+          "pct": 26.97
+        },
+        {
+          "label": "Sản xuất",
+          "valueBillions": 61602.14,
+          "pct": 8.03
+        },
+        {
+          "label": "Thương mại",
+          "valueBillions": 61559.03,
+          "pct": 8.02
+        },
+        {
+          "label": "Công nghiệp chế biến, chế tạo",
+          "valueBillions": 56386.7,
+          "pct": 7.35
+        },
+        {
+          "label": "Xây dựng",
+          "valueBillions": 26413.71,
+          "pct": 3.44
+        },
+        {
+          "label": "Dịch vụ tài chính",
+          "valueBillions": 19255.78,
+          "pct": 2.51
+        },
+        {
+          "label": "Dịch vụ cộng đồng và cá nhân",
+          "valueBillions": 14175.25,
+          "pct": 1.85
+        },
+        {
+          "label": "Hoạt động hành chính và các dịch vụ hỗ trợ",
+          "valueBillions": 9937.79,
+          "pct": 1.29
+        },
+        {
+          "label": "Kho bãi, vận tải, viễn thông",
+          "valueBillions": 8740.17,
+          "pct": 1.14
+        }
+      ],
+      "top10": [
+        {
+          "name": "Các ngành khác",
+          "value": 356187.67
+        },
+        {
+          "name": "Bất động sản và tư vấn",
+          "value": 207026.82
+        },
+        {
+          "name": "Sản xuất",
+          "value": 61602.14
+        },
+        {
+          "name": "Thương mại",
+          "value": 61559.03
+        },
+        {
+          "name": "Công nghiệp chế biến, chế tạo",
+          "value": 56386.7
+        },
+        {
+          "name": "Xây dựng",
+          "value": 26413.71
+        },
+        {
+          "name": "Dịch vụ tài chính",
+          "value": 19255.78
+        },
+        {
+          "name": "Dịch vụ cộng đồng và cá nhân",
+          "value": 14175.25
+        },
+        {
+          "name": "Hoạt động hành chính và các dịch vụ hỗ trợ",
+          "value": 9937.79
+        },
+        {
+          "name": "Kho bãi, vận tải, viễn thông",
+          "value": 8740.17
+        }
+      ],
+      "other": null
+    }
+  ],
+  "bienLoiNhuanGop": [
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null
+  ],
+  "bienLoiNhuanRong": [
+    46.12,
+    47.82,
+    45.58,
+    48.69,
+    49.72,
+    44.94,
+    45.8,
+    47.37
+  ],
+  "tangTruongDoanhSoThuanYoY": [
+    null,
+    14.81,
+    28.36,
+    37.1,
+    9.31,
+    -1.15,
+    17.3,
+    13.62
+  ],
+  "tangTruongLNSTYoY": [
+    null,
+    19.05,
+    22.33,
+    46.47,
+    11.62,
+    -10.65,
+    19.55,
+    17.5
+  ],
+  "tiLePhaiThuTaiSan": [
+    3.53,
+    3.38,
+    3.77,
+    4.94,
+    8.81,
+    8.22,
+    3.02,
+    4.71
+  ],
+  "tiLeNovayRongVcsh": [
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null
+  ],
+  "nvTileVayRongVCSHQ": [
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null
+  ],
+  "hangTonKhoVongQuay": [
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null
+  ],
+  "coTucTiLeDaTra": [
+    0,
+    0,
+    0.53,
+    0,
+    0.37,
+    0,
+    24.21,
+    28.02
+  ],
+  "ckTsFVTPL": [
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null
+  ],
+  "ckTsHTM": [
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null
+  ],
+  "ckTsCacKhoanChoVay": [
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null
+  ],
+  "ckTsAFS": [
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null
+  ],
+  "ckTsTienVaTuongDuong": [
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null
+  ],
+  "ckTsKhac": [
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null
+  ],
+  "ckNvVonChuSoHuu": [
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null
+  ],
+  "ckNvVayTPNganHan": [
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null
+  ],
+  "ckNvVayTDaiHan": [
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null
+  ],
+  "ckNvKhac": [
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null
+  ],
+  "ckCcdtLaiFVTPL": [
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null
+  ],
+  "ckCcdtLaiHTM": [
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null
+  ],
+  "ckCcdtLaiKhoanVayVaPhaiThu": [
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null
+  ],
+  "ckCcdtLaiAFS": [
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null
+  ],
+  "ckCcdtDoanhThuMGCK": [
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null
+  ],
+  "ckCcdtKhac": [
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null
+  ],
+  "ckTsTiLeNoVayVCSH": [
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null
+  ],
+  "ckTsTiLeChoVayMarginVcsh": [
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null
+  ],
+  "ckNvTiLeVayRongVcsh": [
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null
+  ],
+  "dataSource": "kbs+vci",
+  "sourceSymbol": "TCB",
+  "noXauDates": [
+    "2018-12-31",
+    "2019-12-31",
+    "2020-12-31",
+    "2021-12-31",
+    "2022-12-31",
+    "2023-12-31",
+    "2024-12-31",
+    "2025-12-31"
+  ],
+  "PE": [
+    null,
+    null,
+    null,
+    null,
+    4.51,
+    6.21,
+    5.99,
+    9.76
+  ],
+  "PB": [
+    null,
+    null,
+    null,
+    null,
+    0.8,
+    0.85,
+    1.18,
+    1.38
+  ],
+  "fundamentalEnrichment": {
+    "source": "vnstock_data.Fundamental.equity.ratio"
+  },
+  "financialRatioSource": "kbs"
+}

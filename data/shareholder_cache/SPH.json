@@ -1,0 +1,175 @@
+{
+  "symbol": "SPH",
+  "updated": "2026-08-01T05:55:18.000Z",
+  "co_cau_so_huu": {
+    "CoDongSoHuu": [
+      {
+        "Code": "CEO_72414",
+        "Name": "Phạm Trọng Vinh",
+        "Url": "<a href='/du-lieu/ceo/CEO_72414/pham-trong-vinh.chn'>Phạm Trọng Vinh</a>",
+        "AssetVolume": "300",
+        "AssetRate": "0,0",
+        "UpdatedDate": "31/12/2016"
+      },
+      {
+        "Code": "CEO_72418",
+        "Name": "Trần Thị Hiền",
+        "Url": "<a href='/du-lieu/ceo/CEO_72418/tran-thi-hien.chn'>Trần Thị Hiền</a>",
+        "AssetVolume": "700",
+        "AssetRate": "0,01",
+        "UpdatedDate": "31/12/2018"
+      },
+      {
+        "Code": "CEO_72417",
+        "Name": "Lê Văn Toàn",
+        "Url": "<a href='/du-lieu/ceo/CEO_72417/le-van-toan.chn'>Lê Văn Toàn</a>",
+        "AssetVolume": "5.000",
+        "AssetRate": "0,05",
+        "UpdatedDate": "31/12/2018"
+      },
+      {
+        "Code": "CEO_72415",
+        "Name": "Phạm Vân Anh",
+        "Url": "<a href='/du-lieu/ceo/CEO_72415/pham-van-anh.chn'>Phạm Vân Anh</a>",
+        "AssetVolume": "2.200",
+        "AssetRate": "0,02",
+        "UpdatedDate": "31/12/2018"
+      },
+      {
+        "Code": "CEO_06820",
+        "Name": "Nguyễn Phú Cường",
+        "Url": "<a href='/du-lieu/ceo/CEO_06820/nguyen-phu-cuong.chn'>Nguyễn Phú Cường</a>",
+        "AssetVolume": "2.400.000",
+        "AssetRate": "24,0",
+        "UpdatedDate": "31/12/2018"
+      },
+      {
+        "Code": "CEO_72419",
+        "Name": "Thiều Thị Thanh Thúy",
+        "Url": "<a href='/du-lieu/ceo/CEO_72419/thieu-thi-thanh-thuy.chn'>Thiều Thị Thanh Thúy</a>",
+        "AssetVolume": "600",
+        "AssetRate": "0,01",
+        "UpdatedDate": "31/12/2016"
+      }
+    ],
+    "NuocNgoai": 0.01,
+    "NhaNuoc": 0,
+    "Khac": 99.99
+  },
+  "cong_ty_con": [],
+  "cong_ty_lien_ket": [],
+  "giao_dich_noi_bo": [
+    {
+      "transaction_name": "Nguyễn Phú Cường",
+      "transaction_position": "Thành viên HĐQT",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 1103000,
+      "plan_buy": 1300000,
+      "plan_sell": 0,
+      "plan_begin_date": "2017-07-20",
+      "plan_end_date": "2017-08-17",
+      "real_buy": 1297000,
+      "real_sell": 0,
+      "real_end_date": "2017-07-31",
+      "published_date": "2017-07-20",
+      "volume_after": 2400000
+    },
+    {
+      "transaction_name": "Phạm Trọng Vinh",
+      "transaction_position": "Thành viên BKS",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 10300,
+      "plan_buy": 0,
+      "plan_sell": 10000,
+      "plan_begin_date": "2016-05-11",
+      "plan_end_date": "2016-05-26",
+      "real_buy": 0,
+      "real_sell": 10000,
+      "real_end_date": "2016-05-12",
+      "published_date": "2016-05-08",
+      "volume_after": 300
+    },
+    {
+      "transaction_name": "Nguyễn Hoàng Giang",
+      "transaction_position": "vợ",
+      "leader_name": "Đỗ Xuân Thụ",
+      "leader_position": "Thành viên HĐQT",
+      "volume_before": 100000,
+      "plan_buy": 0,
+      "plan_sell": 100000,
+      "plan_begin_date": "2015-12-30",
+      "plan_end_date": "2016-01-28",
+      "real_buy": 0,
+      "real_sell": 100000,
+      "real_end_date": "2016-01-03",
+      "published_date": "2015-12-28",
+      "volume_after": 0
+    },
+    {
+      "transaction_name": "Đỗ Xuân Thụ",
+      "transaction_position": "Thành viên HĐQT",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 400000,
+      "plan_buy": 0,
+      "plan_sell": 400000,
+      "plan_begin_date": "2015-12-30",
+      "plan_end_date": "2016-01-28",
+      "real_buy": 0,
+      "real_sell": 400000,
+      "real_end_date": "2016-01-03",
+      "published_date": "2015-12-28",
+      "volume_after": 0
+    },
+    {
+      "transaction_name": "Đỗ Xuân Hà",
+      "transaction_position": "Con",
+      "leader_name": "Đỗ Xuân Thụ",
+      "leader_position": "Ủy viên HĐQT",
+      "volume_before": 200000,
+      "plan_buy": 0,
+      "plan_sell": 200000,
+      "plan_begin_date": "2015-12-30",
+      "plan_end_date": "2016-01-28",
+      "real_buy": 0,
+      "real_sell": 200000,
+      "real_end_date": "2016-01-03",
+      "published_date": "2015-12-28",
+      "volume_after": 0
+    },
+    {
+      "transaction_name": "Phan Thị Thanh Thủy",
+      "transaction_position": "Vợ",
+      "leader_name": "Nguyễn Phú Cường",
+      "leader_position": "Thành viên HĐQT",
+      "volume_before": 67800,
+      "plan_buy": 0,
+      "plan_sell": 62800,
+      "plan_begin_date": "2014-10-26",
+      "plan_end_date": "2014-11-24",
+      "real_buy": 0,
+      "real_sell": 62800,
+      "real_end_date": "2014-11-16",
+      "published_date": "2014-10-29",
+      "volume_after": 5000
+    },
+    {
+      "transaction_name": "Nguyễn Phú Cường",
+      "transaction_position": "Thành viên HĐQT",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 1302601,
+      "plan_buy": 0,
+      "plan_sell": 200000,
+      "plan_begin_date": "2014-10-01",
+      "plan_end_date": "2014-10-30",
+      "real_buy": 0,
+      "real_sell": 199601,
+      "real_end_date": "2014-10-26",
+      "published_date": "2014-09-30",
+      "volume_after": 1103000
+    }
+  ]
+}

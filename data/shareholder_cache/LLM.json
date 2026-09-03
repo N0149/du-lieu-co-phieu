@@ -1,0 +1,364 @@
+{
+  "symbol": "LLM",
+  "updated": "2026-07-01T06:42:18.000Z",
+  "co_cau_so_huu": {
+    "CoDongSoHuu": [
+      {
+        "Code": "CEO_81772",
+        "Name": "Vũ Văn Định",
+        "Url": "<a href='/du-lieu/ceo/CEO_81772/vu-van-dinh.chn'>Vũ Văn Định</a>",
+        "AssetVolume": "10.000",
+        "AssetRate": "0,01",
+        "UpdatedDate": "25/09/2025"
+      },
+      {
+        "Code": "CEO_81775",
+        "Name": "Lê Thị Thu Hồng",
+        "Url": "<a href='/du-lieu/ceo/CEO_81775/le-thi-thu-hong.chn'>Lê Thị Thu Hồng</a>",
+        "AssetVolume": "2.100",
+        "AssetRate": "0,0",
+        "UpdatedDate": "25/09/2025"
+      },
+      {
+        "Code": "CEO_81776",
+        "Name": "Nguyễn Văn Trường",
+        "Url": "<a href='/du-lieu/ceo/CEO_81776/nguyen-van-truong.chn'>Nguyễn Văn Trường</a>",
+        "AssetVolume": "4.800",
+        "AssetRate": "0,01",
+        "UpdatedDate": "25/09/2025"
+      },
+      {
+        "Code": "CEO_81773",
+        "Name": "Nguyễn Mạnh Dũng",
+        "Url": "<a href='/du-lieu/ceo/CEO_81773/nguyen-manh-dung.chn'>Nguyễn Mạnh Dũng</a>",
+        "AssetVolume": "12.200",
+        "AssetRate": "0,02",
+        "UpdatedDate": "25/09/2025"
+      },
+      {
+        "Code": "CEO_02071",
+        "Name": "Bùi Đức Kiên",
+        "Url": "<a href='/du-lieu/ceo/CEO_02071/bui-duc-kien.chn'>Bùi Đức Kiên</a>",
+        "AssetVolume": "20.000",
+        "AssetRate": "0,03",
+        "UpdatedDate": "25/09/2025"
+      },
+      {
+        "Code": "CEO_10080",
+        "Name": "Trần Đình Đại",
+        "Url": "<a href='/du-lieu/ceo/CEO_10080/tran-dinh-dai.chn'>Trần Đình Đại</a>",
+        "AssetVolume": "22.400",
+        "AssetRate": "0,03",
+        "UpdatedDate": "25/09/2025"
+      },
+      {
+        "Code": "CORP_30229",
+        "Name": "Bộ Xây dựng",
+        "Url": "Bộ Xây dựng",
+        "AssetVolume": "78.032.404",
+        "AssetRate": "97,88",
+        "UpdatedDate": "25/09/2025"
+      },
+      {
+        "Code": "CEO_81774",
+        "Name": "Nguyễn Thị Thu Trang",
+        "Url": "<a href='/du-lieu/ceo/CEO_81774/nguyen-thi-thu-trang.chn'>Nguyễn Thị Thu Trang</a>",
+        "AssetVolume": "1.100",
+        "AssetRate": "0,0",
+        "UpdatedDate": "25/09/2025"
+      },
+      {
+        "Code": "CEO_58869",
+        "Name": "Tô Phi Sơn",
+        "Url": "<a href='/du-lieu/ceo/CEO_58869/to-phi-son.chn'>Tô Phi Sơn</a>",
+        "AssetVolume": "2.000",
+        "AssetRate": "0,0",
+        "UpdatedDate": "25/09/2025"
+      },
+      {
+        "Code": "CEO_81771",
+        "Name": "Nguyễn Hữu Thành",
+        "Url": "<a href='/du-lieu/ceo/CEO_81771/nguyen-huu-thanh.chn'>Nguyễn Hữu Thành</a>",
+        "AssetVolume": "10.000",
+        "AssetRate": "0,01",
+        "UpdatedDate": "25/09/2025"
+      },
+      {
+        "Code": "CEO_04752",
+        "Name": "Lê Quốc Ân",
+        "Url": "<a href='/du-lieu/ceo/CEO_04752/le-quoc-an.chn'>Lê Quốc Ân</a>",
+        "AssetVolume": "20.000",
+        "AssetRate": "0,03",
+        "UpdatedDate": "25/09/2025"
+      },
+      {
+        "Code": "CEO_53123",
+        "Name": "Nguyễn Văn Hùng",
+        "Url": "<a href='/du-lieu/ceo/CEO_53123/nguyen-van-hung.chn'>Nguyễn Văn Hùng</a>",
+        "AssetVolume": "31.300",
+        "AssetRate": "0,04",
+        "UpdatedDate": "25/09/2025"
+      },
+      {
+        "Code": "CEO_81769",
+        "Name": "Nguyễn Đình Hải",
+        "Url": "<a href='/du-lieu/ceo/CEO_81769/nguyen-dinh-hai.chn'>Nguyễn Đình Hải</a>",
+        "AssetVolume": "33.100",
+        "AssetRate": "0,04",
+        "UpdatedDate": "25/09/2025"
+      },
+      {
+        "Code": "CEO_81770",
+        "Name": "Lê Văn Tuấn",
+        "Url": "<a href='/du-lieu/ceo/CEO_81770/le-van-tuan.chn'>Lê Văn Tuấn</a>",
+        "AssetVolume": "57.500",
+        "AssetRate": "0,07",
+        "UpdatedDate": "25/09/2025"
+      }
+    ],
+    "NuocNgoai": 0.02,
+    "NhaNuoc": 0,
+    "Khac": 99.98
+  },
+  "cong_ty_con": [
+    {
+      "Symbol": "LLM",
+      "CorpCode": "CORP_51949",
+      "Name": "CTCP Lilama South East Asia SDN BHD",
+      "TotalCapital": 69,
+      "SharedCapital": 68.31,
+      "OwnershipRate": 99,
+      "Note": "",
+      "Order": 1,
+      "TradeCenter": ""
+    },
+    {
+      "Symbol": "LLM",
+      "CorpCode": "CORP_80772",
+      "Name": "CTCP Tư vấn quốc tế LHT",
+      "TotalCapital": 9.6,
+      "SharedCapital": 5.76,
+      "OwnershipRate": 60,
+      "Note": "",
+      "Order": 2,
+      "TradeCenter": ""
+    },
+    {
+      "Symbol": "LLM",
+      "CorpCode": "L35",
+      "Name": "Công ty Cổ phần Cơ khí Lắp máy Lilama",
+      "TotalCapital": 32.6515,
+      "SharedCapital": 16.65299,
+      "OwnershipRate": 51,
+      "Note": "",
+      "Order": 3,
+      "TradeCenter": "UpCOM"
+    },
+    {
+      "Symbol": "LLM",
+      "CorpCode": "LM7",
+      "Name": "Công ty Cổ phần Lilama 7",
+      "TotalCapital": 50,
+      "SharedCapital": 25.5,
+      "OwnershipRate": 51,
+      "Note": "",
+      "Order": 4,
+      "TradeCenter": "UpCOM"
+    },
+    {
+      "Symbol": "LLM",
+      "CorpCode": "LO5",
+      "Name": "Công ty Cổ phần Lilama 5",
+      "TotalCapital": 51.4979,
+      "SharedCapital": 26.265,
+      "OwnershipRate": 51,
+      "Note": "",
+      "Order": 5,
+      "TradeCenter": "UpCOM"
+    },
+    {
+      "Symbol": "LLM",
+      "CorpCode": "L61",
+      "Name": "Công ty Cổ phần Lilama 69-1",
+      "TotalCapital": 75.762,
+      "SharedCapital": 31.13862,
+      "OwnershipRate": 41.1,
+      "Note": "",
+      "Order": 7,
+      "TradeCenter": "UpCOM"
+    },
+    {
+      "Symbol": "LLM",
+      "CorpCode": "L63",
+      "Name": "CTCP Lilama 69-3",
+      "TotalCapital": 82.7936,
+      "SharedCapital": 29.8057,
+      "OwnershipRate": 36,
+      "Note": "",
+      "Order": 10,
+      "TradeCenter": "UpCOM"
+    },
+    {
+      "Symbol": "LLM",
+      "CorpCode": "LM8",
+      "Name": "Công ty Cổ phần Lilama 18",
+      "TotalCapital": 93.8868,
+      "SharedCapital": 33.79925,
+      "OwnershipRate": 36,
+      "Note": "",
+      "Order": 11,
+      "TradeCenter": "HoSE"
+    },
+    {
+      "Symbol": "LLM",
+      "CorpCode": "L10",
+      "Name": "Công ty cổ phần Lilama 10 ",
+      "TotalCapital": 98.9,
+      "SharedCapital": 35.604,
+      "OwnershipRate": 36,
+      "Note": "",
+      "Order": 12,
+      "TradeCenter": "HoSE"
+    },
+    {
+      "Symbol": "LLM",
+      "CorpCode": "L45",
+      "Name": "CTCP Lilama 45.1",
+      "TotalCapital": 48,
+      "SharedCapital": 17.28,
+      "OwnershipRate": 36,
+      "Note": "",
+      "Order": 13,
+      "TradeCenter": "UpCOM"
+    },
+    {
+      "Symbol": "LLM",
+      "CorpCode": "L62",
+      "Name": "Công ty Cổ phần Lilama 69-2",
+      "TotalCapital": 82.9824,
+      "SharedCapital": 0,
+      "OwnershipRate": 0,
+      "Note": "",
+      "Order": 17,
+      "TradeCenter": "UpCOM"
+    }
+  ],
+  "cong_ty_lien_ket": [
+    {
+      "Symbol": "LLM",
+      "CorpCode": "CORP_80777",
+      "Name": "CTCP Tư vấn thiết kế xây dựng và Công nghệ LILAMA",
+      "TotalCapital": 4.4,
+      "SharedCapital": 1.99,
+      "OwnershipRate": 45.45,
+      "Note": "",
+      "Order": 6,
+      "TradeCenter": ""
+    },
+    {
+      "Symbol": "LLM",
+      "CorpCode": "L43",
+      "Name": "Công ty Cổ phần Lilama 45.3",
+      "TotalCapital": 35,
+      "SharedCapital": 14.29,
+      "OwnershipRate": 40.83,
+      "Note": "",
+      "Order": 8,
+      "TradeCenter": "UpCOM"
+    },
+    {
+      "Symbol": "LLM",
+      "CorpCode": "LCD",
+      "Name": "Công ty Cổ phần Lắp máy - Thí nghiệm Cơ điện",
+      "TotalCapital": 15,
+      "SharedCapital": 5.4275,
+      "OwnershipRate": 36.18,
+      "Note": "",
+      "Order": 9,
+      "TradeCenter": "HASTC"
+    },
+    {
+      "Symbol": "LLM",
+      "CorpCode": "L44",
+      "Name": "Công ty Cổ phần Lilama 45.4",
+      "TotalCapital": 40,
+      "SharedCapital": 14.02346,
+      "OwnershipRate": 35.06,
+      "Note": "",
+      "Order": 14,
+      "TradeCenter": "UpCOM"
+    },
+    {
+      "Symbol": "LLM",
+      "CorpCode": "CORP_70596",
+      "Name": "Công ty CP Bất động sản Lilama",
+      "TotalCapital": 104.712,
+      "SharedCapital": 29.25,
+      "OwnershipRate": 27.93,
+      "Note": "",
+      "Order": 15,
+      "TradeCenter": ""
+    },
+    {
+      "Symbol": "LLM",
+      "CorpCode": "CORP_81325",
+      "Name": "CTCP Đầu tư xây dựng Lilama",
+      "TotalCapital": 250,
+      "SharedCapital": 69.3,
+      "OwnershipRate": 27.72,
+      "Note": "",
+      "Order": 16,
+      "TradeCenter": ""
+    }
+  ],
+  "giao_dich_noi_bo": [
+    {
+      "transaction_name": "Tô Phi Sơn",
+      "transaction_position": "Kế toán trưởng",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 0,
+      "plan_buy": 3000,
+      "plan_sell": 0,
+      "plan_begin_date": "2021-03-03",
+      "plan_end_date": "2021-03-30",
+      "real_buy": 2000,
+      "real_sell": 0,
+      "real_end_date": "2021-03-30",
+      "published_date": "2021-03-02",
+      "volume_after": 2000
+    },
+    {
+      "transaction_name": "Nguyễn Thị Thu Phương",
+      "transaction_position": "Chị ruột",
+      "leader_name": "Nguyễn Văn Hùng",
+      "leader_position": "Phó Tổng GĐ",
+      "volume_before": 300000,
+      "plan_buy": 0,
+      "plan_sell": 100000,
+      "plan_begin_date": "2018-08-12",
+      "plan_end_date": "2018-09-10",
+      "real_buy": 0,
+      "real_sell": 0,
+      "real_end_date": "2018-09-12",
+      "published_date": "2018-08-06",
+      "volume_after": 300000
+    },
+    {
+      "transaction_name": "Nguyễn Văn Hùng",
+      "transaction_position": "Phó Tổng GĐ",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 31300,
+      "plan_buy": 0,
+      "plan_sell": 20000,
+      "plan_begin_date": "2018-02-04",
+      "plan_end_date": "2018-03-04",
+      "real_buy": 0,
+      "real_sell": 0,
+      "real_end_date": "2018-03-04",
+      "published_date": "2018-01-31",
+      "volume_after": 31300
+    }
+  ]
+}

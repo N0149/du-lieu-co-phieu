@@ -1,0 +1,46 @@
+{
+  "symbol": "UPS",
+  "updated": "2026-08-01T06:00:17.000Z",
+  "co_cau_so_huu": {
+    "CoDongSoHuu": [
+      {
+        "Code": "KLQ_100611",
+        "Name": "Bùi Quang Minh",
+        "Url": "Bùi Quang Minh",
+        "AssetVolume": "2.346.300",
+        "AssetRate": "7,32",
+        "UpdatedDate": "10/02/2026"
+      },
+      {
+        "Code": "KLQ_100612",
+        "Name": "Dương Hữu Phước",
+        "Url": "Dương Hữu Phước",
+        "AssetVolume": "3.000.000",
+        "AssetRate": "9,36",
+        "UpdatedDate": "10/02/2026"
+      },
+      {
+        "Code": "CEO_881682",
+        "Name": "Trần Văn Chiến",
+        "Url": "<a href='/du-lieu/ceo/CEO_881682/tran-van-chien.chn'>Trần Văn Chiến</a>",
+        "AssetVolume": "1.188.000",
+        "AssetRate": "3,71",
+        "UpdatedDate": "01/05/2026"
+      },
+      {
+        "Code": "KLQ_100610",
+        "Name": "Cao Tấn Thành",
+        "Url": "Cao Tấn Thành",
+        "AssetVolume": "23.417.340",
+        "AssetRate": "73,05",
+        "UpdatedDate": "10/02/2026"
+      }
+    ],
+    "NuocNgoai": 32374600,
+    "NhaNuoc": 0,
+    "Khac": -32374500
+  },
+  "cong_ty_con": [],
+  "cong_ty_lien_ket": [],
+  "giao_dich_noi_bo": []
+}

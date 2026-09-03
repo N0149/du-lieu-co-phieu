@@ -1,0 +1,143 @@
+{
+  "symbol": "BHA",
+  "updated": "2026-08-01T05:27:22.000Z",
+  "co_cau_so_huu": {
+    "CoDongSoHuu": [
+      {
+        "Code": "LIC",
+        "Name": "Công ty Cổ phần Thủy điện Bắc Hà",
+        "Url": "<a href='/du-lieu/upcom/LIC-tong-cong-ty-licogi-cong-ty-co-phan.chn' title='Tổng Công ty Licogi - Công ty Cổ phần'>Tổng Công ty Licogi - Công ty Cổ phần</a>",
+        "AssetVolume": "28.650.728",
+        "AssetRate": "43,41",
+        "UpdatedDate": "31/12/2025"
+      },
+      {
+        "Code": "CORP_51003",
+        "Name": "Công ty cổ phần đầu tư Bắc Hà",
+        "Url": "Công ty cổ phần đầu tư Bắc Hà",
+        "AssetVolume": "15.966.600",
+        "AssetRate": "24,19",
+        "UpdatedDate": "31/12/2025"
+      }
+    ],
+    "NuocNgoai": 0.02,
+    "NhaNuoc": 0,
+    "Khac": 99.98
+  },
+  "cong_ty_con": [],
+  "cong_ty_lien_ket": [],
+  "giao_dich_noi_bo": [
+    {
+      "transaction_name": "Công ty Cổ phần Chứng khoán Bảo Việt",
+      "transaction_position": "",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 6095362,
+      "plan_buy": 0,
+      "plan_sell": 6095362,
+      "plan_begin_date": "2019-07-04",
+      "plan_end_date": "2019-08-01",
+      "real_buy": 0,
+      "real_sell": 6095362,
+      "real_end_date": "2019-07-24",
+      "published_date": "2019-07-02",
+      "volume_after": 0
+    },
+    {
+      "transaction_name": "Công ty Cổ phần Chứng khoán Bảo Việt",
+      "transaction_position": "",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 6095362,
+      "plan_buy": 0,
+      "plan_sell": 6095362,
+      "plan_begin_date": "2019-05-26",
+      "plan_end_date": "2019-06-25",
+      "real_buy": 0,
+      "real_sell": 0,
+      "real_end_date": "2019-06-25",
+      "published_date": "2019-06-30",
+      "volume_after": 6095362
+    },
+    {
+      "transaction_name": "Công ty Cổ phần Quản lý quỹ Đầu tư Chứng khoán Liên Minh Việt Nam",
+      "transaction_position": "",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 300000,
+      "plan_buy": 0,
+      "plan_sell": 300000,
+      "plan_begin_date": "2019-06-11",
+      "plan_end_date": "2019-07-04",
+      "real_buy": 0,
+      "real_sell": 0,
+      "real_end_date": "",
+      "published_date": "2019-06-11",
+      "volume_after": 0
+    },
+    {
+      "transaction_name": "CTCP Hưng Doanh Việt",
+      "transaction_position": "",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 16600000,
+      "plan_buy": 0,
+      "plan_sell": 0,
+      "plan_begin_date": "",
+      "plan_end_date": "",
+      "real_buy": 0,
+      "real_sell": 16600000,
+      "real_end_date": "2019-05-22",
+      "published_date": "2019-05-29",
+      "volume_after": 0
+    },
+    {
+      "transaction_name": "Công ty cổ phần đầu tư Bắc Hà",
+      "transaction_position": "",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 5850000,
+      "plan_buy": 10320000,
+      "plan_sell": 0,
+      "plan_begin_date": "2019-05-19",
+      "plan_end_date": "2019-06-17",
+      "real_buy": 10116600,
+      "real_sell": 0,
+      "real_end_date": "2019-05-26",
+      "published_date": "2019-05-16",
+      "volume_after": 15966600
+    },
+    {
+      "transaction_name": "Hồ Thị Kim Ánh",
+      "transaction_position": "",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 94900,
+      "plan_buy": 0,
+      "plan_sell": 0,
+      "plan_begin_date": "",
+      "plan_end_date": "",
+      "real_buy": 1226600,
+      "real_sell": 0,
+      "real_end_date": "2018-05-03",
+      "published_date": "2018-05-14",
+      "volume_after": 1321500
+    },
+    {
+      "transaction_name": "Công ty TNHH Kinh doanh BĐS Mặt trời mới",
+      "transaction_position": "",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 4775762,
+      "plan_buy": 0,
+      "plan_sell": 0,
+      "plan_begin_date": "",
+      "plan_end_date": "",
+      "real_buy": 0,
+      "real_sell": 4326600,
+      "real_end_date": "2018-05-03",
+      "published_date": "2018-05-14",
+      "volume_after": 449162
+    }
+  ]
+}

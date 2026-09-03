@@ -1,0 +1,231 @@
+{
+  "symbol": "ISG",
+  "updated": "2026-03-22T03:17:58.000Z",
+  "co_cau_so_huu": {
+    "CoDongSoHuu": [
+      {
+        "Code": "CEO_39777",
+        "Name": "Trần Viết Điền",
+        "Url": "<a href='/du-lieu/ceo/CEO_39777/tran-viet-dien.chn'>Trần Viết Điền</a>",
+        "AssetVolume": "443.080",
+        "AssetRate": "5,04",
+        "UpdatedDate": "12/05/2016"
+      },
+      {
+        "Code": "CEO_39782",
+        "Name": "Nguyễn Thị Hoa Đào",
+        "Url": "<a href='/du-lieu/ceo/CEO_39782/nguyen-thi-hoa-dao.chn'>Nguyễn Thị Hoa Đào</a>",
+        "AssetVolume": "440",
+        "AssetRate": "0,01",
+        "UpdatedDate": "31/12/2015"
+      },
+      {
+        "Code": "CEO_39780",
+        "Name": "Vũ Thị Phương Mai",
+        "Url": "<a href='/du-lieu/ceo/CEO_39780/vu-thi-phuong-mai.chn'>Vũ Thị Phương Mai</a>",
+        "AssetVolume": "55.900",
+        "AssetRate": "0,64",
+        "UpdatedDate": "03/01/2025"
+      },
+      {
+        "Code": "LQ_39220",
+        "Name": "Nguyễn Vũ",
+        "Url": "Nguyễn Vũ (Con của ông <a href='/du-lieu/ceo/CEO_39473/nguyen-ngoc-minh.chn'>Nguyễn Ngọc Minh</a>)",
+        "AssetVolume": "1.000.000",
+        "AssetRate": "11,36",
+        "UpdatedDate": "30/06/2015"
+      },
+      {
+        "Code": "MVN",
+        "Name": "Công ty cổ phần Vận tải biển và Hợp tác Quốc tế",
+        "Url": "<a href='/du-lieu/upcom/MVN-tong-cong-ty-hang-hai-viet-nam-ctcp.chn' title='Tổng Công ty Hàng hải Việt Nam - CTCP'>Tổng Công ty Hàng hải Việt Nam - CTCP</a>",
+        "AssetVolume": "3.168.000",
+        "AssetRate": "36,0",
+        "UpdatedDate": "30/06/2024"
+      },
+      {
+        "Code": "CEO_39779",
+        "Name": "Trần Thị Cẩm Hà",
+        "Url": "<a href='/du-lieu/ceo/CEO_39779/tran-thi-cam-ha.chn'>Trần Thị Cẩm Hà</a>",
+        "AssetVolume": "27.280",
+        "AssetRate": "0,31",
+        "UpdatedDate": "31/12/2015"
+      },
+      {
+        "Code": "CEO_39472",
+        "Name": "Võ Lê Anh Dũng",
+        "Url": "<a href='/du-lieu/ceo/CEO_39472/vo-le-anh-dung.chn'>Võ Lê Anh Dũng</a>",
+        "AssetVolume": "4.950",
+        "AssetRate": "0,06",
+        "UpdatedDate": "31/12/2015"
+      },
+      {
+        "Code": "CEO_39784",
+        "Name": "Nguyễn Tuấn Anh",
+        "Url": "<a href='/du-lieu/ceo/CEO_39784/nguyen-tuan-anh.chn'>Nguyễn Tuấn Anh</a>",
+        "AssetVolume": "459.690",
+        "AssetRate": "5,22",
+        "UpdatedDate": "12/05/2016"
+      },
+      {
+        "Code": "CEO_39473",
+        "Name": "Nguyễn Ngọc Minh",
+        "Url": "<a href='/du-lieu/ceo/CEO_39473/nguyen-ngoc-minh.chn'>Nguyễn Ngọc Minh</a>",
+        "AssetVolume": "1.276.230",
+        "AssetRate": "14,5",
+        "UpdatedDate": "12/05/2016"
+      },
+      {
+        "Code": "CEO_39781",
+        "Name": "Vũ Hồng Thanh",
+        "Url": "<a href='/du-lieu/ceo/CEO_39781/vu-hong-thanh.chn'>Vũ Hồng Thanh</a>",
+        "AssetVolume": "7.810",
+        "AssetRate": "0,09",
+        "UpdatedDate": "31/12/2015"
+      },
+      {
+        "Code": "CEO_39778",
+        "Name": "Lê Văn Đức",
+        "Url": "<a href='/du-lieu/ceo/CEO_39778/le-van-duc.chn'>Lê Văn Đức</a>",
+        "AssetVolume": "2.200",
+        "AssetRate": "0,03",
+        "UpdatedDate": "30/06/2015"
+      }
+    ],
+    "NuocNgoai": 49,
+    "NhaNuoc": 0,
+    "Khac": 51
+  },
+  "cong_ty_con": [],
+  "cong_ty_lien_ket": [],
+  "giao_dich_noi_bo": [
+    {
+      "transaction_name": "Vũ Thị Phương Mai",
+      "transaction_position": "Vợ",
+      "leader_name": "Nguyễn Ngọc Minh",
+      "leader_position": "Chủ tịch HĐQT",
+      "volume_before": 44900,
+      "plan_buy": 11000,
+      "plan_sell": 0,
+      "plan_begin_date": "2024-12-05",
+      "plan_end_date": "2025-01-03",
+      "real_buy": 11000,
+      "real_sell": 0,
+      "real_end_date": "2025-01-03",
+      "published_date": "2024-12-04",
+      "volume_after": 55900
+    },
+    {
+      "transaction_name": "Phí Tiến Dũng",
+      "transaction_position": "",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 968000,
+      "plan_buy": 0,
+      "plan_sell": 0,
+      "plan_begin_date": "",
+      "plan_end_date": "",
+      "real_buy": 0,
+      "real_sell": 968000,
+      "real_end_date": "2016-05-12",
+      "published_date": "2016-05-17",
+      "volume_after": 0
+    },
+    {
+      "transaction_name": "Nguyễn Tuấn Anh",
+      "transaction_position": "Phó Tổng GĐ",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 19690,
+      "plan_buy": 440000,
+      "plan_sell": 0,
+      "plan_begin_date": "2016-05-12",
+      "plan_end_date": "2016-06-10",
+      "real_buy": 440000,
+      "real_sell": 0,
+      "real_end_date": "2016-05-12",
+      "published_date": "2016-05-11",
+      "volume_after": 459690
+    },
+    {
+      "transaction_name": "Nguyễn Ngọc Minh",
+      "transaction_position": "Chủ tịch HĐQT",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 836230,
+      "plan_buy": 440000,
+      "plan_sell": 0,
+      "plan_begin_date": "2016-05-11",
+      "plan_end_date": "2016-06-09",
+      "real_buy": 440000,
+      "real_sell": 0,
+      "real_end_date": "2016-05-12",
+      "published_date": "2016-05-11",
+      "volume_after": 1276230
+    },
+    {
+      "transaction_name": "Trần Viết Điền",
+      "transaction_position": "Thành viên HĐQT",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 3080,
+      "plan_buy": 440000,
+      "plan_sell": 0,
+      "plan_begin_date": "2016-05-11",
+      "plan_end_date": "2016-06-09",
+      "real_buy": 440000,
+      "real_sell": 0,
+      "real_end_date": "2016-05-12",
+      "published_date": "2016-05-11",
+      "volume_after": 443080
+    },
+    {
+      "transaction_name": "Phí Tiến Dũng",
+      "transaction_position": "",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 176000,
+      "plan_buy": 0,
+      "plan_sell": 0,
+      "plan_begin_date": "",
+      "plan_end_date": "",
+      "real_buy": 792000,
+      "real_sell": 0,
+      "real_end_date": "2016-02-04",
+      "published_date": "2016-02-05",
+      "volume_after": 968000
+    },
+    {
+      "transaction_name": "Tổng Công ty Hàng hải Việt Nam - CTCP",
+      "transaction_position": "",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 4312000,
+      "plan_buy": 0,
+      "plan_sell": 1144000,
+      "plan_begin_date": "2016-02-04",
+      "plan_end_date": "2016-03-04",
+      "real_buy": 0,
+      "real_sell": 1144000,
+      "real_end_date": "2016-02-16",
+      "published_date": "2016-02-02",
+      "volume_after": 3168000
+    },
+    {
+      "transaction_name": "Tổng Công ty Hàng hải Việt Nam - CTCP",
+      "transaction_position": "",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 4488000,
+      "plan_buy": 0,
+      "plan_sell": 1320000,
+      "plan_begin_date": "2016-01-18",
+      "plan_end_date": "2016-02-16",
+      "real_buy": 0,
+      "real_sell": 176000,
+      "real_end_date": "2016-01-19",
+      "published_date": "2016-01-14",
+      "volume_after": 4312000
+    }
+  ]
+}

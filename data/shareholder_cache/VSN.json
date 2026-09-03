@@ -1,0 +1,127 @@
+{
+  "symbol": "VSN",
+  "updated": "2026-06-01T07:36:35.000Z",
+  "co_cau_so_huu": {
+    "CoDongSoHuu": [
+      {
+        "Code": "MML",
+        "Name": "Công ty Cổ phần Masan MEATLife",
+        "Url": "<a href='/du-lieu/upcom/MML-cong-ty-co-phan-masan-meatlife.chn' title='Công ty Cổ phần Masan MEATLife'>Công ty Cổ phần Masan MEATLife</a>",
+        "AssetVolume": "20.180.026",
+        "AssetRate": "24,94",
+        "UpdatedDate": "22/08/2025"
+      },
+      {
+        "Code": "CEO_36002",
+        "Name": "Lâm Thị Ngọc Sương",
+        "Url": "<a href='/du-lieu/ceo/CEO_36002/lam-thi-ngoc-suong.chn'>Lâm Thị Ngọc Sương</a>",
+        "AssetVolume": "2.900",
+        "AssetRate": "0,0",
+        "UpdatedDate": "22/08/2025"
+      },
+      {
+        "Code": "SATRA",
+        "Name": "Tổng Công ty Thương mại Sài Gòn - TNHH MTV",
+        "Url": "<a href='/du-lieu/otc/SATRA-tong-cong-ty-thuong-mai-sai-gon-tnhh-mtv.chn' title='Tổng Công ty Thương mại Sài Gòn - TNHH MTV'>Tổng Công ty Thương mại Sài Gòn - TNHH MTV</a>",
+        "AssetVolume": "54.829.878",
+        "AssetRate": "67,77",
+        "UpdatedDate": "22/08/2025"
+      },
+      {
+        "Code": "CEO_84317",
+        "Name": "Phan Văn Dũng",
+        "Url": "<a href='/du-lieu/ceo/CEO_84317/phan-van-dung.chn'>Phan Văn Dũng</a>",
+        "AssetVolume": "400",
+        "AssetRate": "0,0",
+        "UpdatedDate": "22/08/2025"
+      },
+      {
+        "Code": "CEO_37998",
+        "Name": "Văn Đức Mười",
+        "Url": "<a href='/du-lieu/ceo/CEO_37998/van-duc-muoi.chn'>Văn Đức Mười</a>",
+        "AssetVolume": "3.400",
+        "AssetRate": "0,0",
+        "UpdatedDate": "22/08/2025"
+      },
+      {
+        "Code": "CEO_36003",
+        "Name": "Đặng Thị Phương Ninh",
+        "Url": "<a href='/du-lieu/ceo/CEO_36003/dang-thi-phuong-ninh.chn'>Đặng Thị Phương Ninh</a>",
+        "AssetVolume": "5.400",
+        "AssetRate": "0,01",
+        "UpdatedDate": "22/08/2025"
+      },
+      {
+        "Code": "CEO_36004",
+        "Name": "Huỳnh Quang Giàu",
+        "Url": "<a href='/du-lieu/ceo/CEO_36004/huynh-quang-giau.chn'>Huỳnh Quang Giàu</a>",
+        "AssetVolume": "200",
+        "AssetRate": "0,0",
+        "UpdatedDate": "22/08/2025"
+      },
+      {
+        "Code": "CEO_37996",
+        "Name": "Nguyễn Ngọc An",
+        "Url": "<a href='/du-lieu/ceo/CEO_37996/nguyen-ngoc-an.chn'>Nguyễn Ngọc An</a>",
+        "AssetVolume": "8.600",
+        "AssetRate": "0,01",
+        "UpdatedDate": "22/08/2025"
+      }
+    ],
+    "NuocNgoai": 4.1,
+    "NhaNuoc": 0,
+    "Khac": 95.9
+  },
+  "cong_ty_con": [],
+  "cong_ty_lien_ket": [],
+  "giao_dich_noi_bo": [
+    {
+      "transaction_name": "Công ty Cổ phần Dinh dưỡng Nông nghiệp Quốc tế",
+      "transaction_position": "",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 20180026,
+      "plan_buy": 0,
+      "plan_sell": 20180026,
+      "plan_begin_date": "2021-12-01",
+      "plan_end_date": "2021-12-30",
+      "real_buy": 0,
+      "real_sell": 20180026,
+      "real_end_date": "2021-12-06",
+      "published_date": "2021-11-29",
+      "volume_after": 0
+    },
+    {
+      "transaction_name": "Công ty Cổ phần Masan MEATLife",
+      "transaction_position": "",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 0,
+      "plan_buy": 20180026,
+      "plan_sell": 0,
+      "plan_begin_date": "2021-12-01",
+      "plan_end_date": "2021-12-30",
+      "real_buy": 20180026,
+      "real_sell": 0,
+      "real_end_date": "2021-12-06",
+      "published_date": "2021-11-29",
+      "volume_after": 20180026
+    },
+    {
+      "transaction_name": "Đặng Thị Phương Ninh",
+      "transaction_position": "Phó Tổng GĐ",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 5400,
+      "plan_buy": 0,
+      "plan_sell": 3600,
+      "plan_begin_date": "2016-11-09",
+      "plan_end_date": "2016-12-01",
+      "real_buy": 0,
+      "real_sell": 0,
+      "real_end_date": "2016-11-29",
+      "published_date": "2016-11-07",
+      "volume_after": 5400
+    }
+  ]
+}

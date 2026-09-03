@@ -1,0 +1,199 @@
+{
+  "symbol": "PAP",
+  "updated": "2026-03-22T03:20:07.000Z",
+  "co_cau_so_huu": {
+    "CoDongSoHuu": [
+      {
+        "Code": "KLQ_97480",
+        "Name": "Trần Văn Nguyện",
+        "Url": "Trần Văn Nguyện",
+        "AssetVolume": "17.500.000",
+        "AssetRate": "4,9",
+        "UpdatedDate": "13/03/2026"
+      },
+      {
+        "Code": "CEO_872635",
+        "Name": "Trần Nhân Tâm",
+        "Url": "<a href='/du-lieu/ceo/CEO_872635/tran-nhan-tam.chn'>Trần Nhân Tâm</a>",
+        "AssetVolume": "5.208.884",
+        "AssetRate": "1,46",
+        "UpdatedDate": "31/12/2022"
+      },
+      {
+        "Code": "KLQ_100559",
+        "Name": "Trần Phi Hùng",
+        "Url": "Trần Phi Hùng",
+        "AssetVolume": "27.000.000",
+        "AssetRate": "7,56",
+        "UpdatedDate": "13/03/2026"
+      },
+      {
+        "Code": "CORP_52191",
+        "Name": "Công ty TNHH MTV Hoành Sơn",
+        "Url": "Công ty TNHH MTV Hoành Sơn",
+        "AssetVolume": "40.197.900",
+        "AssetRate": "11,26",
+        "UpdatedDate": "31/12/2022"
+      },
+      {
+        "Code": "KLQ_81429",
+        "Name": "Hà Văn Nam",
+        "Url": "Hà Văn Nam",
+        "AssetVolume": "17.500.000",
+        "AssetRate": "4,9",
+        "UpdatedDate": "13/03/2026"
+      },
+      {
+        "Code": "LQ_994467",
+        "Name": "Trần Mạnh Cường",
+        "Url": "Trần Mạnh Cường ( của bà <a href='/du-lieu/ceo/CEO_875831/tran-thi-lam-giang.chn'>Trần Thị Lam Giang</a>)",
+        "AssetVolume": "17.552.632",
+        "AssetRate": "4,92",
+        "UpdatedDate": "13/03/2026"
+      },
+      {
+        "Code": "PVN",
+        "Name": "Tập đoàn Công nghiệp-Năng lượng Quốc gia Việt Nam",
+        "Url": "<a href='/du-lieu/otc/PVN-tap-doan-cong-nghiepnang-luong-quoc-gia-viet-nam.chn' title='Tập đoàn Công nghiệp-Năng lượng Quốc gia Việt Nam'>Tập đoàn Công nghiệp-Năng lượng Quốc gia Việt Nam</a>",
+        "AssetVolume": "35.000.000",
+        "AssetRate": "9,8",
+        "UpdatedDate": "30/06/2024"
+      }
+    ],
+    "NuocNgoai": 49,
+    "NhaNuoc": 0,
+    "Khac": 51
+  },
+  "cong_ty_con": [],
+  "cong_ty_lien_ket": [],
+  "giao_dich_noi_bo": [
+    {
+      "transaction_name": "Nguyễn Quốc Quân",
+      "transaction_position": "",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 13802100,
+      "plan_buy": 0,
+      "plan_sell": 0,
+      "plan_begin_date": "",
+      "plan_end_date": "",
+      "real_buy": 0,
+      "real_sell": 12000000,
+      "real_end_date": "2024-05-23",
+      "published_date": "2024-05-30",
+      "volume_after": 1802100
+    },
+    {
+      "transaction_name": "Hà Văn Nam",
+      "transaction_position": "",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 0,
+      "plan_buy": 0,
+      "plan_sell": 0,
+      "plan_begin_date": "",
+      "plan_end_date": "",
+      "real_buy": 12500000,
+      "real_sell": 0,
+      "real_end_date": "2022-11-11",
+      "published_date": "2022-11-16",
+      "volume_after": 12500000
+    },
+    {
+      "transaction_name": "Hoàng Thanh Hùng",
+      "transaction_position": "",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 0,
+      "plan_buy": 0,
+      "plan_sell": 0,
+      "plan_begin_date": "",
+      "plan_end_date": "",
+      "real_buy": 12500000,
+      "real_sell": 0,
+      "real_end_date": "2022-11-11",
+      "published_date": "2022-11-16",
+      "volume_after": 12500000
+    },
+    {
+      "transaction_name": "Bùi Hữu Quốc Bảo",
+      "transaction_position": "",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 16500000,
+      "plan_buy": 0,
+      "plan_sell": 0,
+      "plan_begin_date": "",
+      "plan_end_date": "",
+      "real_buy": 12500000,
+      "real_sell": 0,
+      "real_end_date": "2022-11-11",
+      "published_date": "2022-11-16",
+      "volume_after": 4000000
+    },
+    {
+      "transaction_name": "Võ Trung Thành",
+      "transaction_position": "",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 0,
+      "plan_buy": 0,
+      "plan_sell": 0,
+      "plan_begin_date": "",
+      "plan_end_date": "",
+      "real_buy": 12500000,
+      "real_sell": 0,
+      "real_end_date": "2022-11-11",
+      "published_date": "2022-11-16",
+      "volume_after": 12500000
+    },
+    {
+      "transaction_name": "Trần Văn Nguyện",
+      "transaction_position": "",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 0,
+      "plan_buy": 0,
+      "plan_sell": 0,
+      "plan_begin_date": "",
+      "plan_end_date": "",
+      "real_buy": 12000000,
+      "real_sell": 0,
+      "real_end_date": "2022-06-08",
+      "published_date": "2022-06-14",
+      "volume_after": 12000000
+    },
+    {
+      "transaction_name": "Nguyễn Quốc Quân",
+      "transaction_position": "",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 0,
+      "plan_buy": 0,
+      "plan_sell": 0,
+      "plan_begin_date": "",
+      "plan_end_date": "",
+      "real_buy": 13802100,
+      "real_sell": 0,
+      "real_end_date": "2022-06-07",
+      "published_date": "2022-06-14",
+      "volume_after": 13802100
+    },
+    {
+      "transaction_name": "Công ty TNHH MTV Hoành Sơn",
+      "transaction_position": "",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 66000000,
+      "plan_buy": 0,
+      "plan_sell": 25802100,
+      "plan_begin_date": "2022-05-26",
+      "plan_end_date": "2022-06-24",
+      "real_buy": 0,
+      "real_sell": 25802100,
+      "real_end_date": "2022-06-09",
+      "published_date": "2022-05-25",
+      "volume_after": 40197900
+    }
+  ]
+}

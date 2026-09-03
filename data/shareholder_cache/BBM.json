@@ -1,0 +1,54 @@
+{
+  "symbol": "BBM",
+  "updated": "2026-08-01T05:26:49.000Z",
+  "co_cau_so_huu": {
+    "CoDongSoHuu": [
+      {
+        "Code": "CEO_53919",
+        "Name": "Đặng Quang Thắng",
+        "Url": "<a href='/du-lieu/ceo/CEO_53919/dang-quang-thang.chn'>Đặng Quang Thắng</a>",
+        "AssetVolume": "12.990",
+        "AssetRate": "0,65",
+        "UpdatedDate": "22/06/2026"
+      },
+      {
+        "Code": "CEO_53921",
+        "Name": "Vũ Thế Tường",
+        "Url": "<a href='/du-lieu/ceo/CEO_53921/vu-the-tuong.chn'>Vũ Thế Tường</a>",
+        "AssetVolume": "4.150",
+        "AssetRate": "0,21",
+        "UpdatedDate": "22/06/2026"
+      },
+      {
+        "Code": "CEO_58368",
+        "Name": "Trần Thị Diệp",
+        "Url": "<a href='/du-lieu/ceo/CEO_58368/tran-thi-diep.chn'>Trần Thị Diệp</a>",
+        "AssetVolume": "5.560",
+        "AssetRate": "0,28",
+        "UpdatedDate": "22/06/2026"
+      },
+      {
+        "Code": "BHN",
+        "Name": "Tổng CTCP Bia - Rượu - Nước giải khát Hà Nội",
+        "Url": "<a href='/du-lieu/hose/BHN-tong-ctcp-bia-ruou-nuoc-giai-khat-ha-noi.chn' title='Tổng CTCP Bia - Rượu - Nước giải khát Hà Nội'>Tổng CTCP Bia - Rượu - Nước giải khát Hà Nội</a>",
+        "AssetVolume": "1.020.000",
+        "AssetRate": "51,0",
+        "UpdatedDate": "22/06/2026"
+      },
+      {
+        "Code": "CEO_53922",
+        "Name": "Nguyễn Thị Thanh",
+        "Url": "<a href='/du-lieu/ceo/CEO_53922/nguyen-thi-thanh.chn'>Nguyễn Thị Thanh</a>",
+        "AssetVolume": "3.130",
+        "AssetRate": "0,16",
+        "UpdatedDate": "22/06/2026"
+      }
+    ],
+    "NuocNgoai": 0.1,
+    "NhaNuoc": 0,
+    "Khac": 99.9
+  },
+  "cong_ty_con": [],
+  "cong_ty_lien_ket": [],
+  "giao_dich_noi_bo": []
+}

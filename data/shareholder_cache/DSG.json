@@ -1,0 +1,141 @@
+{
+  "symbol": "DSG",
+  "updated": "2026-09-01T07:25:03.000Z",
+  "co_cau_so_huu": {
+    "CoDongSoHuu": [
+      {
+        "Code": "CEO_54926",
+        "Name": "Phạm Văn Chương",
+        "Url": "<a href='/du-lieu/ceo/CEO_54926/pham-van-chuong.chn'>Phạm Văn Chương</a>",
+        "AssetVolume": "494",
+        "AssetRate": "0,0",
+        "UpdatedDate": "31/12/2018"
+      },
+      {
+        "Code": "CEO_52861",
+        "Name": "Ngô Tiến Cường",
+        "Url": "<a href='/du-lieu/ceo/CEO_52861/ngo-tien-cuong.chn'>Ngô Tiến Cường</a>",
+        "AssetVolume": "10.864",
+        "AssetRate": "0,04",
+        "UpdatedDate": "31/12/2018"
+      },
+      {
+        "Code": "CEO_52866",
+        "Name": "Nguyễn Thị Khánh Vân",
+        "Url": "<a href='/du-lieu/ceo/CEO_52866/nguyen-thi-khanh-van.chn'>Nguyễn Thị Khánh Vân</a>",
+        "AssetVolume": "6.618",
+        "AssetRate": "0,02",
+        "UpdatedDate": "17/01/2017"
+      },
+      {
+        "Code": "CEO_52867",
+        "Name": "Hoàng Thị Hằng",
+        "Url": "<a href='/du-lieu/ceo/CEO_52867/hoang-thi-hang.chn'>Hoàng Thị Hằng</a>",
+        "AssetVolume": "7.434",
+        "AssetRate": "0,02",
+        "UpdatedDate": "31/12/2018"
+      },
+      {
+        "Code": "SSI",
+        "Name": "Công ty Cổ phần Kính Viglacera Đáp Cầu",
+        "Url": "<a href='/du-lieu/hose/SSI-cong-ty-co-phan-chung-khoan-ssi.chn' title='Công ty cổ phần Chứng khoán SSI'>Công ty cổ phần Chứng khoán SSI</a>",
+        "AssetVolume": "800.000",
+        "AssetRate": "2,67",
+        "UpdatedDate": "17/01/2017"
+      },
+      {
+        "Code": "CEO_52864",
+        "Name": "Nguyễn Mạnh Hùng",
+        "Url": "<a href='/du-lieu/ceo/CEO_52864/nguyen-manh-hung.chn'>Nguyễn Mạnh Hùng</a>",
+        "AssetVolume": "6.000",
+        "AssetRate": "0,02",
+        "UpdatedDate": "17/01/2017"
+      }
+    ],
+    "NuocNgoai": 0.17,
+    "NhaNuoc": 0,
+    "Khac": 99.83
+  },
+  "cong_ty_con": [
+    {
+      "Symbol": "DSG",
+      "CorpCode": "CORP_51136",
+      "Name": "Công ty TNHH MTV Lắp dựng kính Viglacera ",
+      "TotalCapital": 20,
+      "SharedCapital": 20,
+      "OwnershipRate": 100,
+      "Note": "",
+      "Order": 1,
+      "TradeCenter": ""
+    }
+  ],
+  "cong_ty_lien_ket": [
+    {
+      "Symbol": "DSG",
+      "CorpCode": "CORP_51899",
+      "Name": "Công ty cổ phần Viglacera Deta",
+      "TotalCapital": 20,
+      "SharedCapital": 4,
+      "OwnershipRate": 20,
+      "Note": "",
+      "Order": 2,
+      "TradeCenter": ""
+    },
+    {
+      "Symbol": "DSG",
+      "CorpCode": "CORP_39134",
+      "Name": "Công ty Cổ phần Vinafacade",
+      "TotalCapital": 16,
+      "SharedCapital": 3.2,
+      "OwnershipRate": 20,
+      "Note": "",
+      "Order": 3,
+      "TradeCenter": ""
+    },
+    {
+      "Symbol": "DSG",
+      "CorpCode": "CORP_93369",
+      "Name": "CTCP Thương mại Viglacera",
+      "TotalCapital": 28.4689998626709,
+      "SharedCapital": 0.95,
+      "OwnershipRate": 3.33,
+      "Note": "",
+      "Order": 4,
+      "TradeCenter": ""
+    }
+  ],
+  "giao_dich_noi_bo": [
+    {
+      "transaction_name": "Hoàng Kim Bồng",
+      "transaction_position": "Chủ tịch HĐQT",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 23100,
+      "plan_buy": 0,
+      "plan_sell": 23100,
+      "plan_begin_date": "2021-11-14",
+      "plan_end_date": "2021-12-12",
+      "real_buy": 0,
+      "real_sell": 17100,
+      "real_end_date": "2021-12-12",
+      "published_date": "2021-11-11",
+      "volume_after": 6000
+    },
+    {
+      "transaction_name": "Hoàng Kim Bồng",
+      "transaction_position": "Chủ tịch HĐQT",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 30000,
+      "plan_buy": 0,
+      "plan_sell": 30000,
+      "plan_begin_date": "2021-04-12",
+      "plan_end_date": "2021-05-09",
+      "real_buy": 0,
+      "real_sell": 6900,
+      "real_end_date": "2021-05-09",
+      "published_date": "2021-04-11",
+      "volume_after": 23100
+    }
+  ]
+}

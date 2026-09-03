@@ -1,0 +1,191 @@
+{
+  "symbol": "BSL",
+  "updated": "2026-09-01T07:18:24.000Z",
+  "co_cau_so_huu": {
+    "CoDongSoHuu": [
+      {
+        "Code": "CEO_11236",
+        "Name": "Văn Thanh Liêm",
+        "Url": "<a href='/du-lieu/ceo/CEO_11236/van-thanh-liem.chn'>Văn Thanh Liêm</a>",
+        "AssetVolume": "182.673",
+        "AssetRate": "0,41",
+        "UpdatedDate": "28/05/2026"
+      },
+      {
+        "Code": "SAB",
+        "Name": "Tổng CTCP Bia - Rượu - Nước giải khát Sài Gòn",
+        "Url": "<a href='/du-lieu/hose/SAB-tong-ctcp-bia-ruou-nuoc-giai-khat-sai-gon.chn' title='Tổng CTCP Bia - Rượu - Nước giải khát Sài Gòn'>Tổng CTCP Bia - Rượu - Nước giải khát Sài Gòn</a>",
+        "AssetVolume": "30.950.000",
+        "AssetRate": "68,78",
+        "UpdatedDate": "28/05/2026"
+      },
+      {
+        "Code": "CEO_37631",
+        "Name": "Nguyễn Thanh Thủy",
+        "Url": "<a href='/du-lieu/ceo/CEO_37631/nguyen-thanh-thuy.chn'>Nguyễn Thanh Thủy</a>",
+        "AssetVolume": "15.000",
+        "AssetRate": "0,03",
+        "UpdatedDate": "28/05/2026"
+      },
+      {
+        "Code": "CEO_52055",
+        "Name": "Văn Thảo Nguyên",
+        "Url": "<a href='/du-lieu/ceo/CEO_52055/van-thao-nguyen.chn'>Văn Thảo Nguyên</a>",
+        "AssetVolume": "400.000",
+        "AssetRate": "0,89",
+        "UpdatedDate": "28/05/2026"
+      },
+      {
+        "Code": "SB1",
+        "Name": "Công ty Cổ phần Bia Sài Gòn - Sông Lam",
+        "Url": "<a href='/du-lieu/upcom/SB1-cong-ty-co-phan-bia-sai-gon-nghe-tinh.chn' title='Công ty cổ phần Bia Sài Gòn - Nghệ Tĩnh'>Công ty cổ phần Bia Sài Gòn - Nghệ Tĩnh</a>",
+        "AssetVolume": "10.400",
+        "AssetRate": "0,02",
+        "UpdatedDate": "28/05/2026"
+      },
+      {
+        "Code": "TBSG",
+        "Name": "CTCP Đầu tư Thái Bình",
+        "Url": "<a href='/du-lieu/otc/TBSG-ctcp-dau-tu-thai-binh.chn' title='CTCP Đầu tư Thái Bình'>CTCP Đầu tư Thái Bình</a>",
+        "AssetVolume": "1.666.667",
+        "AssetRate": "3,7",
+        "UpdatedDate": "28/05/2026"
+      },
+      {
+        "Code": "CEO_52716",
+        "Name": "Nguyễn Hồng Anh",
+        "Url": "<a href='/du-lieu/ceo/CEO_52716/nguyen-hong-anh.chn'>Nguyễn Hồng Anh</a>",
+        "AssetVolume": "50.000",
+        "AssetRate": "0,11",
+        "UpdatedDate": "28/05/2026"
+      },
+      {
+        "Code": "CEO_52714",
+        "Name": "Võ Hải Thanh",
+        "Url": "<a href='/du-lieu/ceo/CEO_52714/vo-hai-thanh.chn'>Võ Hải Thanh</a>",
+        "AssetVolume": "197.100",
+        "AssetRate": "0,44",
+        "UpdatedDate": "28/05/2026"
+      }
+    ],
+    "NuocNgoai": 0.08,
+    "NhaNuoc": 0,
+    "Khac": 99.92
+  },
+  "cong_ty_con": [],
+  "cong_ty_lien_ket": [],
+  "giao_dich_noi_bo": [
+    {
+      "transaction_name": "Hoàng Lâm Hòa",
+      "transaction_position": "Phó Giám đốc",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 25300,
+      "plan_buy": 0,
+      "plan_sell": 25300,
+      "plan_begin_date": "2022-02-14",
+      "plan_end_date": "2022-03-13",
+      "real_buy": 0,
+      "real_sell": 25300,
+      "real_end_date": "2022-02-21",
+      "published_date": "2022-02-13",
+      "volume_after": 0
+    },
+    {
+      "transaction_name": "Hoàng Lâm Hòa",
+      "transaction_position": "Phó Giám đốc",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 20300,
+      "plan_buy": 50000,
+      "plan_sell": 0,
+      "plan_begin_date": "2021-02-24",
+      "plan_end_date": "2021-02-25",
+      "real_buy": 5000,
+      "real_sell": 0,
+      "real_end_date": "2021-02-25",
+      "published_date": "2021-02-25",
+      "volume_after": 25300
+    },
+    {
+      "transaction_name": "Hoàng Lâm Hòa",
+      "transaction_position": "Phó Giám đốc",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 20300,
+      "plan_buy": 50000,
+      "plan_sell": 0,
+      "plan_begin_date": "2021-01-03",
+      "plan_end_date": "2021-01-27",
+      "real_buy": 0,
+      "real_sell": 0,
+      "real_end_date": "2021-01-27",
+      "published_date": "2021-01-05",
+      "volume_after": 20300
+    },
+    {
+      "transaction_name": "Võ Hải Thanh",
+      "transaction_position": "Giám đốc",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 184000,
+      "plan_buy": 100000,
+      "plan_sell": 0,
+      "plan_begin_date": "2020-11-09",
+      "plan_end_date": "2020-11-24",
+      "real_buy": 13100,
+      "real_sell": 0,
+      "real_end_date": "2020-11-24",
+      "published_date": "2020-11-14",
+      "volume_after": 197100
+    },
+    {
+      "transaction_name": "Hoàng Lâm Hòa",
+      "transaction_position": "Phó Giám đốc",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 0,
+      "plan_buy": 0,
+      "plan_sell": 0,
+      "plan_begin_date": "",
+      "plan_end_date": "",
+      "real_buy": 20300,
+      "real_sell": 0,
+      "real_end_date": "2020-10-07",
+      "published_date": "2020-10-14",
+      "volume_after": 20300
+    },
+    {
+      "transaction_name": "Võ Hải Thanh",
+      "transaction_position": "Giám đốc",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 184000,
+      "plan_buy": 100000,
+      "plan_sell": 0,
+      "plan_begin_date": "2020-09-30",
+      "plan_end_date": "2020-10-22",
+      "real_buy": 0,
+      "real_sell": 0,
+      "real_end_date": "2020-10-22",
+      "published_date": "2020-09-29",
+      "volume_after": 184000
+    },
+    {
+      "transaction_name": "Võ Hải Thanh",
+      "transaction_position": "Giám đốc",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 134000,
+      "plan_buy": 50000,
+      "plan_sell": 0,
+      "plan_begin_date": "2020-09-27",
+      "plan_end_date": "2020-10-20",
+      "real_buy": 50000,
+      "real_sell": 0,
+      "real_end_date": "2020-09-23",
+      "published_date": "2020-09-24",
+      "volume_after": 184000
+    }
+  ]
+}

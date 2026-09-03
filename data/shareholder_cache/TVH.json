@@ -1,0 +1,86 @@
+{
+  "symbol": "TVH",
+  "updated": "2026-05-01T06:18:20.000Z",
+  "co_cau_so_huu": {
+    "CoDongSoHuu": [
+      {
+        "Code": "CEO_55991",
+        "Name": "Trần Hải Thanh",
+        "Url": "<a href='/du-lieu/ceo/CEO_55991/tran-hai-thanh.chn'>Trần Hải Thanh</a>",
+        "AssetVolume": "21.398",
+        "AssetRate": "0,53",
+        "UpdatedDate": "11/06/2025"
+      },
+      {
+        "Code": "CEO_55988",
+        "Name": "Lê Hữu Quảng",
+        "Url": "<a href='/du-lieu/ceo/CEO_55988/le-huu-quang.chn'>Lê Hữu Quảng</a>",
+        "AssetVolume": "5.496",
+        "AssetRate": "0,14",
+        "UpdatedDate": "11/06/2025"
+      },
+      {
+        "Code": "CEO_55992",
+        "Name": "Đoàn Thị Như Ý",
+        "Url": "<a href='/du-lieu/ceo/CEO_55992/doan-thi-nhu-y.chn'>Đoàn Thị Như Ý</a>",
+        "AssetVolume": "4.680",
+        "AssetRate": "0,12",
+        "UpdatedDate": "11/06/2025"
+      },
+      {
+        "Code": "CEO_57375",
+        "Name": "Phạm Trung Kiên",
+        "Url": "<a href='/du-lieu/ceo/CEO_57375/pham-trung-kien.chn'>Phạm Trung Kiên</a>",
+        "AssetVolume": "10.446",
+        "AssetRate": "0,26",
+        "UpdatedDate": "11/06/2025"
+      },
+      {
+        "Code": "CEO_58389",
+        "Name": "Vũ Ngọc Long",
+        "Url": "<a href='/du-lieu/ceo/CEO_58389/vu-ngoc-long.chn'>Vũ Ngọc Long</a>",
+        "AssetVolume": "10.998",
+        "AssetRate": "0,27",
+        "UpdatedDate": "11/06/2025"
+      },
+      {
+        "Code": "CEO_55995",
+        "Name": "Lê Tấn Đạt",
+        "Url": "<a href='/du-lieu/ceo/CEO_55995/le-tan-dat.chn'>Lê Tấn Đạt</a>",
+        "AssetVolume": "10.992",
+        "AssetRate": "0,27",
+        "UpdatedDate": "11/06/2025"
+      },
+      {
+        "Code": "CEO_55993",
+        "Name": "Nguyễn Quang Hưng",
+        "Url": "<a href='/du-lieu/ceo/CEO_55993/nguyen-quang-hung.chn'>Nguyễn Quang Hưng</a>",
+        "AssetVolume": "5.444",
+        "AssetRate": "0,14",
+        "UpdatedDate": "11/06/2025"
+      },
+      {
+        "Code": "CEO_55996",
+        "Name": "Đinh Văn Ngọc",
+        "Url": "<a href='/du-lieu/ceo/CEO_55996/dinh-van-ngoc.chn'>Đinh Văn Ngọc</a>",
+        "AssetVolume": "14.305",
+        "AssetRate": "0,36",
+        "UpdatedDate": "11/06/2025"
+      },
+      {
+        "Code": "MVN",
+        "Name": "Công ty cổ phần Tư vấn và Xây dựng công trình Hàng Hải",
+        "Url": "<a href='/du-lieu/upcom/MVN-tong-cong-ty-hang-hai-viet-nam-ctcp.chn' title='Tổng Công ty Hàng hải Việt Nam - CTCP'>Tổng Công ty Hàng hải Việt Nam - CTCP</a>",
+        "AssetVolume": "1.961.960",
+        "AssetRate": "49,0",
+        "UpdatedDate": "11/06/2025"
+      }
+    ],
+    "NuocNgoai": 4004000,
+    "NhaNuoc": 0,
+    "Khac": -4003900
+  },
+  "cong_ty_con": [],
+  "cong_ty_lien_ket": [],
+  "giao_dich_noi_bo": []
+}

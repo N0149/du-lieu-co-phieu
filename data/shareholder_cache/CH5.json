@@ -1,0 +1,127 @@
+{
+  "symbol": "CH5",
+  "updated": "2026-06-01T06:59:21.000Z",
+  "co_cau_so_huu": {
+    "CoDongSoHuu": [
+      {
+        "Code": "LQ_96174",
+        "Name": "Cao Viết Thành",
+        "Url": "Cao Viết Thành (Con của ông <a href='/du-lieu/ceo/CEO_52700/cao-tien-dat.chn'>Cao Tiến Đạt</a>)",
+        "AssetVolume": "108.805",
+        "AssetRate": "2,92",
+        "UpdatedDate": "01/07/2025"
+      },
+      {
+        "Code": "UDIC",
+        "Name": "Tổng Công ty Đầu tư Phát triển Hạ tầng Đô thị",
+        "Url": "<a href='/du-lieu/otc/UDIC-tong-cong-ty-dau-tu-phat-trien-ha-tang-do-thi.chn' title='Tổng Công ty Đầu tư Phát triển Hạ tầng Đô thị'>Tổng Công ty Đầu tư Phát triển Hạ tầng Đô thị</a>",
+        "AssetVolume": "1.355.250",
+        "AssetRate": "36,31",
+        "UpdatedDate": "01/07/2025"
+      },
+      {
+        "Code": "CEO_59679",
+        "Name": "Nguyễn Thành Trung",
+        "Url": "<a href='/du-lieu/ceo/CEO_59679/nguyen-thanh-trung.chn'>Nguyễn Thành Trung</a>",
+        "AssetVolume": "15.617",
+        "AssetRate": "0,42",
+        "UpdatedDate": "01/07/2025"
+      },
+      {
+        "Code": "CEO_52701",
+        "Name": "Nguyễn Thị Hồng Phương",
+        "Url": "<a href='/du-lieu/ceo/CEO_52701/nguyen-thi-hong-phuong.chn'>Nguyễn Thị Hồng Phương</a>",
+        "AssetVolume": "34.602",
+        "AssetRate": "0,93",
+        "UpdatedDate": "01/07/2025"
+      },
+      {
+        "Code": "CEO_52697",
+        "Name": "Phạm Quang Chung",
+        "Url": "<a href='/du-lieu/ceo/CEO_52697/pham-quang-chung.chn'>Phạm Quang Chung</a>",
+        "AssetVolume": "46.327",
+        "AssetRate": "1,24",
+        "UpdatedDate": "01/07/2025"
+      },
+      {
+        "Code": "KLQ_97474",
+        "Name": "Trần Hồng Tâm",
+        "Url": "Trần Hồng Tâm",
+        "AssetVolume": "236.250",
+        "AssetRate": "6,33",
+        "UpdatedDate": "01/07/2025"
+      },
+      {
+        "Code": "KLQ_97473",
+        "Name": "Nguyễn Mạnh Trung",
+        "Url": "Nguyễn Mạnh Trung",
+        "AssetVolume": "315.100",
+        "AssetRate": "8,44",
+        "UpdatedDate": "01/07/2025"
+      },
+      {
+        "Code": "CEO_52702",
+        "Name": "Nguyễn Mạnh Đức",
+        "Url": "<a href='/du-lieu/ceo/CEO_52702/nguyen-manh-duc.chn'>Nguyễn Mạnh Đức</a>",
+        "AssetVolume": "10.172",
+        "AssetRate": "0,27",
+        "UpdatedDate": "01/07/2025"
+      },
+      {
+        "Code": "CEO_52699",
+        "Name": "Trần Thanh Tùng",
+        "Url": "<a href='/du-lieu/ceo/CEO_52699/tran-thanh-tung.chn'>Trần Thanh Tùng</a>",
+        "AssetVolume": "40.080",
+        "AssetRate": "1,07",
+        "UpdatedDate": "01/07/2025"
+      },
+      {
+        "Code": "CEO_52700",
+        "Name": "Cao Tiến Đạt",
+        "Url": "<a href='/du-lieu/ceo/CEO_52700/cao-tien-dat.chn'>Cao Tiến Đạt</a>",
+        "AssetVolume": "77.762",
+        "AssetRate": "2,08",
+        "UpdatedDate": "01/07/2025"
+      },
+      {
+        "Code": "CEO_52696",
+        "Name": "Vương Đức Cường",
+        "Url": "<a href='/du-lieu/ceo/CEO_52696/vuong-duc-cuong.chn'>Vương Đức Cường</a>",
+        "AssetVolume": "223.145",
+        "AssetRate": "5,98",
+        "UpdatedDate": "01/07/2025"
+      },
+      {
+        "Code": "CEO_52698",
+        "Name": "Phạm Minh Hải",
+        "Url": "<a href='/du-lieu/ceo/CEO_52698/pham-minh-hai.chn'>Phạm Minh Hải</a>",
+        "AssetVolume": "48.466",
+        "AssetRate": "1,3",
+        "UpdatedDate": "01/07/2025"
+      }
+    ],
+    "NuocNgoai": 0.0000133960267384694,
+    "NhaNuoc": 0,
+    "Khac": 99.99998660397326
+  },
+  "cong_ty_con": [],
+  "cong_ty_lien_ket": [],
+  "giao_dich_noi_bo": [
+    {
+      "transaction_name": "Phạm Minh Hải",
+      "transaction_position": "Giám đốc",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 37500,
+      "plan_buy": 0,
+      "plan_sell": 0,
+      "plan_begin_date": "",
+      "plan_end_date": "",
+      "real_buy": 10966,
+      "real_sell": 0,
+      "real_end_date": "2021-05-10",
+      "published_date": "2021-05-21",
+      "volume_after": 48466
+    }
+  ]
+}

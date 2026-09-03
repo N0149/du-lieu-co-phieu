@@ -1,0 +1,63 @@
+{
+  "symbol": "PCF",
+  "updated": "2026-05-01T06:05:51.000Z",
+  "co_cau_so_huu": {
+    "CoDongSoHuu": [
+      {
+        "Code": "CEO_52281",
+        "Name": "Nguyễn Thanh Hải",
+        "Url": "<a href='/du-lieu/ceo/CEO_52281/nguyen-thanh-hai.chn'>Nguyễn Thanh Hải</a>",
+        "AssetVolume": "2.440",
+        "AssetRate": "0,08",
+        "UpdatedDate": "31/12/2022"
+      },
+      {
+        "Code": "CEO_84477",
+        "Name": "Nguyễn Quốc Việt",
+        "Url": "<a href='/du-lieu/ceo/CEO_84477/nguyen-quoc-viet.chn'>Nguyễn Quốc Việt</a>",
+        "AssetVolume": "15.894",
+        "AssetRate": "0,53",
+        "UpdatedDate": "31/12/2022"
+      },
+      {
+        "Code": "CEO_07762",
+        "Name": "Nguyễn Thị Việt Ánh",
+        "Url": "<a href='/du-lieu/ceo/CEO_07762/nguyen-thi-viet-anh.chn'>Nguyễn Thị Việt Ánh</a>",
+        "AssetVolume": "2.570",
+        "AssetRate": "0,09",
+        "UpdatedDate": "31/12/2022"
+      },
+      {
+        "Code": "PEG",
+        "Name": "Tổng Công ty Thương mại Kỹ thuật và Đầu tư - CTCP",
+        "Url": "<a href='/du-lieu/upcom/PEG-tong-cong-ty-thuong-mai-ky-thuat-va-dau-tu-ctcp.chn' title='Tổng Công ty Thương mại Kỹ thuật và Đầu tư - CTCP'>Tổng Công ty Thương mại Kỹ thuật và Đầu tư - CTCP</a>",
+        "AssetVolume": "1.762.366",
+        "AssetRate": "58,75",
+        "UpdatedDate": "31/12/2022"
+      }
+    ],
+    "NuocNgoai": 0.58,
+    "NhaNuoc": 0,
+    "Khac": 99.42
+  },
+  "cong_ty_con": [],
+  "cong_ty_lien_ket": [],
+  "giao_dich_noi_bo": [
+    {
+      "transaction_name": "Khưu Kim Huê",
+      "transaction_position": "Thành viên BKS",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 0,
+      "plan_buy": 100,
+      "plan_sell": 0,
+      "plan_begin_date": "2018-08-09",
+      "plan_end_date": "2018-08-29",
+      "real_buy": 100,
+      "real_sell": 0,
+      "real_end_date": "2018-08-22",
+      "published_date": "2018-08-06",
+      "volume_after": 100
+    }
+  ]
+}

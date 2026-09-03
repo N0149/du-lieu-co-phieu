@@ -1,0 +1,47 @@
+{
+  "symbol": "DMN",
+  "updated": "2026-07-01T06:32:30.000Z",
+  "co_cau_so_huu": {
+    "CoDongSoHuu": [
+      {
+        "Code": "LQ_97353",
+        "Name": "Hà Thị Dạ Thảo",
+        "Url": "Hà Thị Dạ Thảo (Vợ của ông <a href='/du-lieu/ceo/CEO_871163/vo-dinh-an.chn'>Võ Đình Ân</a>)",
+        "AssetVolume": "812.000",
+        "AssetRate": "6,5",
+        "UpdatedDate": "31/03/2021"
+      },
+      {
+        "Code": "CEO_871163",
+        "Name": "Võ Đình Ân",
+        "Url": "<a href='/du-lieu/ceo/CEO_871163/vo-dinh-an.chn'>Võ Đình Ân</a>",
+        "AssetVolume": "8.996.720",
+        "AssetRate": "71,97",
+        "UpdatedDate": "31/03/2021"
+      }
+    ],
+    "NuocNgoai": 49,
+    "NhaNuoc": 0,
+    "Khac": 51
+  },
+  "cong_ty_con": [],
+  "cong_ty_lien_ket": [],
+  "giao_dich_noi_bo": [
+    {
+      "transaction_name": "Hồ Đắc Khuê Anh",
+      "transaction_position": "",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 2100,
+      "plan_buy": 0,
+      "plan_sell": 0,
+      "plan_begin_date": "",
+      "plan_end_date": "",
+      "real_buy": 960000,
+      "real_sell": 0,
+      "real_end_date": "",
+      "published_date": "2026-06-17",
+      "volume_after": 962100
+    }
+  ]
+}

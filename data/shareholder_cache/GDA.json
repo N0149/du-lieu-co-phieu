@@ -1,0 +1,127 @@
+{
+  "symbol": "GDA",
+  "updated": "2026-08-01T05:36:48.000Z",
+  "co_cau_so_huu": {
+    "CoDongSoHuu": [
+      {
+        "Code": "CEO_876368",
+        "Name": "Đoàn Vĩnh Phước",
+        "Url": "<a href='/du-lieu/ceo/CEO_876368/doan-vinh-phuoc.chn'>Đoàn Vĩnh Phước</a>",
+        "AssetVolume": "927.929",
+        "AssetRate": "0,62",
+        "UpdatedDate": "26/08/2025"
+      },
+      {
+        "Code": "LQ_61713",
+        "Name": "Vũ Minh Tân",
+        "Url": "Vũ Minh Tân (Chồng của bà <a href='/du-lieu/ceo/CEO_876254/le-thi-phuong-loan.chn'>Lê Thị Phương Loan</a>)",
+        "AssetVolume": "3.215.323",
+        "AssetRate": "2,16",
+        "UpdatedDate": "26/08/2025"
+      },
+      {
+        "Code": "CEO_876253",
+        "Name": "Nguyễn Thị Ngọc Quỳnh",
+        "Url": "<a href='/du-lieu/ceo/CEO_876253/nguyen-thi-ngoc-quynh.chn'>Nguyễn Thị Ngọc Quỳnh</a>",
+        "AssetVolume": "9.788.627",
+        "AssetRate": "6,57",
+        "UpdatedDate": "26/08/2025"
+      },
+      {
+        "Code": "CORP_65619",
+        "Name": "Công ty TNHH Thương mại JFE Shoji Việt Nam",
+        "Url": "Công ty TNHH Thương mại JFE Shoji Việt Nam",
+        "AssetVolume": "11.096.799",
+        "AssetRate": "7,44",
+        "UpdatedDate": "26/08/2025"
+      },
+      {
+        "Code": "CEO_876255",
+        "Name": "Hồ Song Ngọc",
+        "Url": "<a href='/du-lieu/ceo/CEO_876255/ho-song-ngoc.chn'>Hồ Song Ngọc</a>",
+        "AssetVolume": "1.541.274",
+        "AssetRate": "1,03",
+        "UpdatedDate": "26/08/2025"
+      },
+      {
+        "Code": "LQ_61714",
+        "Name": "Nguyễn Thanh Vĩnh Nhật",
+        "Url": "Nguyễn Thanh Vĩnh Nhật (Con của ông <a href='/du-lieu/ceo/CEO_876252/nguyen-thanh-trung.chn'>Nguyễn Thanh Trung</a>)",
+        "AssetVolume": "1.676.949",
+        "AssetRate": "1,12",
+        "UpdatedDate": "26/08/2025"
+      },
+      {
+        "Code": "LQ_61715",
+        "Name": "Nguyễn Thanh Quỳnh An",
+        "Url": "Nguyễn Thanh Quỳnh An (Con của ông <a href='/du-lieu/ceo/CEO_876252/nguyen-thanh-trung.chn'>Nguyễn Thanh Trung</a>)",
+        "AssetVolume": "2.183.117",
+        "AssetRate": "1,46",
+        "UpdatedDate": "26/08/2025"
+      },
+      {
+        "Code": "CEO_876254",
+        "Name": "Lê Thị Phương Loan",
+        "Url": "<a href='/du-lieu/ceo/CEO_876254/le-thi-phuong-loan.chn'>Lê Thị Phương Loan</a>",
+        "AssetVolume": "19.210.250",
+        "AssetRate": "12,88",
+        "UpdatedDate": "26/08/2025"
+      },
+      {
+        "Code": "CEO_876369",
+        "Name": "Phạm Quốc Thắng",
+        "Url": "<a href='/du-lieu/ceo/CEO_876369/pham-quoc-thang.chn'>Phạm Quốc Thắng</a>",
+        "AssetVolume": "1.636.554",
+        "AssetRate": "1,1",
+        "UpdatedDate": "26/08/2025"
+      },
+      {
+        "Code": "CEO_876252",
+        "Name": "Nguyễn Thanh Trung",
+        "Url": "<a href='/du-lieu/ceo/CEO_876252/nguyen-thanh-trung.chn'>Nguyễn Thanh Trung</a>",
+        "AssetVolume": "48.610.430",
+        "AssetRate": "32,6",
+        "UpdatedDate": "26/08/2025"
+      }
+    ],
+    "NuocNgoai": 18.06,
+    "NhaNuoc": 0,
+    "Khac": 81.94
+  },
+  "cong_ty_con": [],
+  "cong_ty_lien_ket": [],
+  "giao_dich_noi_bo": [
+    {
+      "transaction_name": "Lê Thị Phương Loan",
+      "transaction_position": "Thành viên HĐQT",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 12303790,
+      "plan_buy": 2473326,
+      "plan_sell": 0,
+      "plan_begin_date": "2023-12-25",
+      "plan_end_date": "2024-01-22",
+      "real_buy": 2473326,
+      "real_sell": 0,
+      "real_end_date": "2024-01-05",
+      "published_date": "2024-01-10",
+      "volume_after": 14777116
+    },
+    {
+      "transaction_name": "Vũ Minh Tân",
+      "transaction_position": "Chồng",
+      "leader_name": "Lê Thị Phương Loan",
+      "leader_position": "Thành viên HĐQT",
+      "volume_before": 2473326,
+      "plan_buy": 0,
+      "plan_sell": 2473326,
+      "plan_begin_date": "2023-12-25",
+      "plan_end_date": "2024-01-22",
+      "real_buy": 0,
+      "real_sell": 2473326,
+      "real_end_date": "2024-01-05",
+      "published_date": "2024-01-10",
+      "volume_after": 0
+    }
+  ]
+}

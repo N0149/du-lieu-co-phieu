@@ -1,0 +1,2168 @@
+{
+  "generated_at": "2026-09-01T14:02:06.962Z",
+  "sectors": [
+    {
+      "key": "banking",
+      "name_vi": "Ngân hàng",
+      "name_en": "Banking",
+      "stock_count": 27,
+      "equity_sum": 1886962,
+      "current": {
+        "pe": {
+          "median": 8.39,
+          "mean": 24.93
+        },
+        "pb": {
+          "median": 1.22,
+          "mean": 1.34
+        },
+        "ps": {
+          "median": 1.7,
+          "mean": 1.77
+        }
+      },
+      "history": {
+        "1y": {
+          "pe": {
+            "median": 8.41,
+            "mean": 8.63,
+            "min": 7.78,
+            "max": 10.22
+          },
+          "pb": {
+            "median": 1.22,
+            "mean": 1.25,
+            "min": 1.08,
+            "max": 1.56
+          },
+          "ps": {
+            "median": 1.84,
+            "mean": 1.85,
+            "min": 1.49,
+            "max": 2.13
+          }
+        },
+        "3y": {
+          "pe": {
+            "median": 8.52,
+            "mean": 8.57,
+            "min": 7.26,
+            "max": 10.66
+          },
+          "pb": {
+            "median": 1.2,
+            "mean": 1.21,
+            "min": 1.01,
+            "max": 1.66
+          },
+          "ps": {
+            "median": 1.64,
+            "mean": 1.68,
+            "min": 1.32,
+            "max": 2.13
+          }
+        },
+        "5y": {
+          "pe": {
+            "median": 8.56,
+            "mean": 9.62,
+            "min": 5.19,
+            "max": 26.4
+          },
+          "pb": {
+            "median": 1.22,
+            "mean": 1.34,
+            "min": 0.99,
+            "max": 2.92
+          },
+          "ps": {
+            "median": 1.74,
+            "mean": 1.84,
+            "min": 1.32,
+            "max": 3.39
+          }
+        },
+        "10y": {
+          "pe": {
+            "median": 9.96,
+            "mean": 11.44,
+            "min": 5.19,
+            "max": 32.22
+          },
+          "pb": {
+            "median": 1.21,
+            "mean": 1.3,
+            "min": 0.38,
+            "max": 3.29
+          },
+          "ps": {
+            "median": 1.74,
+            "mean": 1.87,
+            "min": 0.67,
+            "max": 4.45
+          }
+        }
+      }
+    },
+    {
+      "key": "securities",
+      "name_vi": "Chứng khoán",
+      "name_en": "Securities",
+      "stock_count": 41,
+      "equity_sum": 331943,
+      "current": {
+        "pe": {
+          "median": 16.83,
+          "mean": 24.45
+        },
+        "pb": {
+          "median": 1.17,
+          "mean": 1.29
+        },
+        "ps": {
+          "median": 4.15,
+          "mean": 6.08
+        }
+      },
+      "history": {
+        "1y": {
+          "pe": {
+            "median": 17.8,
+            "mean": 18.3,
+            "min": 14.7,
+            "max": 27.22
+          },
+          "pb": {
+            "median": 1.29,
+            "mean": 1.3,
+            "min": 1.06,
+            "max": 1.69
+          },
+          "ps": {
+            "median": 4.88,
+            "mean": 5.21,
+            "min": 3.76,
+            "max": 8.7
+          }
+        },
+        "3y": {
+          "pe": {
+            "median": 19.12,
+            "mean": 19.41,
+            "min": 14.7,
+            "max": 28.48
+          },
+          "pb": {
+            "median": 1.29,
+            "mean": 1.29,
+            "min": 1,
+            "max": 1.78
+          },
+          "ps": {
+            "median": 5.53,
+            "mean": 5.69,
+            "min": 3.76,
+            "max": 8.7
+          }
+        },
+        "5y": {
+          "pe": {
+            "median": 17.71,
+            "mean": 17.59,
+            "min": 5.91,
+            "max": 40.36
+          },
+          "pb": {
+            "median": 1.29,
+            "mean": 1.41,
+            "min": 0.54,
+            "max": 3.08
+          },
+          "ps": {
+            "median": 5.11,
+            "mean": 5.15,
+            "min": 1.77,
+            "max": 13.25
+          }
+        },
+        "10y": {
+          "pe": {
+            "median": 12.22,
+            "mean": 13.68,
+            "min": 4.96,
+            "max": 40.36
+          },
+          "pb": {
+            "median": 0.96,
+            "mean": 1.06,
+            "min": 0.42,
+            "max": 3.08
+          },
+          "ps": {
+            "median": 3.64,
+            "mean": 3.92,
+            "min": 1.62,
+            "max": 13.25
+          }
+        }
+      }
+    },
+    {
+      "key": "insurance",
+      "name_vi": "Bảo hiểm",
+      "name_en": "Insurance",
+      "stock_count": 14,
+      "equity_sum": 60911,
+      "current": {
+        "pe": {
+          "median": 10.11,
+          "mean": 16.17
+        },
+        "pb": {
+          "median": 0.92,
+          "mean": 1.06
+        },
+        "ps": {
+          "median": 0.76,
+          "mean": 0.92
+        }
+      },
+      "history": {
+        "1y": {
+          "pe": {
+            "median": 10.82,
+            "mean": 10.83,
+            "min": 8.98,
+            "max": 13.12
+          },
+          "pb": {
+            "median": 1.09,
+            "mean": 1.09,
+            "min": 0.91,
+            "max": 1.21
+          },
+          "ps": {
+            "median": 0.91,
+            "mean": 0.88,
+            "min": 0.72,
+            "max": 1.08
+          }
+        },
+        "3y": {
+          "pe": {
+            "median": 10.71,
+            "mean": 10.73,
+            "min": 8.91,
+            "max": 13.71
+          },
+          "pb": {
+            "median": 1.14,
+            "mean": 1.14,
+            "min": 0.91,
+            "max": 1.39
+          },
+          "ps": {
+            "median": 0.87,
+            "mean": 0.87,
+            "min": 0.65,
+            "max": 1.08
+          }
+        },
+        "5y": {
+          "pe": {
+            "median": 10.83,
+            "mean": 11.04,
+            "min": 8.57,
+            "max": 15.26
+          },
+          "pb": {
+            "median": 1.21,
+            "mean": 1.28,
+            "min": 0.91,
+            "max": 2.08
+          },
+          "ps": {
+            "median": 0.92,
+            "mean": 1.01,
+            "min": 0.65,
+            "max": 1.66
+          }
+        },
+        "10y": {
+          "pe": {
+            "median": 10.9,
+            "mean": 12.14,
+            "min": 7.37,
+            "max": 27.11
+          },
+          "pb": {
+            "median": 1.15,
+            "mean": 1.24,
+            "min": 0.78,
+            "max": 2.16
+          },
+          "ps": {
+            "median": 0.88,
+            "mean": 0.98,
+            "min": 0.46,
+            "max": 2.6
+          }
+        }
+      }
+    },
+    {
+      "key": "real_estate",
+      "name_vi": "Bất động sản",
+      "name_en": "Real Estate",
+      "stock_count": 50,
+      "equity_sum": 690282,
+      "current": {
+        "pe": {
+          "median": 15.32,
+          "mean": 17.71
+        },
+        "pb": {
+          "median": 0.54,
+          "mean": 0.51
+        },
+        "ps": {
+          "median": 1.31,
+          "mean": 1.35
+        }
+      },
+      "history": {
+        "1y": {
+          "pe": {
+            "median": 21.49,
+            "mean": 24.98,
+            "min": 14.61,
+            "max": 50.26
+          },
+          "pb": {
+            "median": 0.65,
+            "mean": 0.73,
+            "min": 0.46,
+            "max": 1.19
+          },
+          "ps": {
+            "median": 2.33,
+            "mean": 2.89,
+            "min": 1.16,
+            "max": 6.07
+          }
+        },
+        "3y": {
+          "pe": {
+            "median": 21.58,
+            "mean": 24.46,
+            "min": 8.75,
+            "max": 51.9
+          },
+          "pb": {
+            "median": 0.84,
+            "mean": 0.83,
+            "min": 0.46,
+            "max": 1.44
+          },
+          "ps": {
+            "median": 2.85,
+            "mean": 3.19,
+            "min": 0.91,
+            "max": 6.43
+          }
+        },
+        "5y": {
+          "pe": {
+            "median": 20.53,
+            "mean": 22.34,
+            "min": 4.02,
+            "max": 63.37
+          },
+          "pb": {
+            "median": 0.93,
+            "mean": 1.14,
+            "min": 0.46,
+            "max": 4.22
+          },
+          "ps": {
+            "median": 3.22,
+            "mean": 3.36,
+            "min": 0.66,
+            "max": 15.7
+          }
+        },
+        "10y": {
+          "pe": {
+            "median": 13.6,
+            "mean": 16.27,
+            "min": 3.3,
+            "max": 63.37
+          },
+          "pb": {
+            "median": 0.95,
+            "mean": 1.08,
+            "min": 0.41,
+            "max": 4.22
+          },
+          "ps": {
+            "median": 1.92,
+            "mean": 2.45,
+            "min": 0.48,
+            "max": 15.7
+          }
+        }
+      }
+    },
+    {
+      "key": "industrial_real_estate",
+      "name_vi": "Bất động sản khu công nghiệp",
+      "name_en": "Industrial Real Estate",
+      "stock_count": 20,
+      "equity_sum": 167703,
+      "current": {
+        "pe": {
+          "median": 10.4,
+          "mean": 12.65
+        },
+        "pb": {
+          "median": 1.21,
+          "mean": 1.51
+        },
+        "ps": {
+          "median": 2.8,
+          "mean": 3.66
+        }
+      },
+      "history": {
+        "1y": {
+          "pe": {
+            "median": 11.93,
+            "mean": 11.84,
+            "min": 9.42,
+            "max": 13.41
+          },
+          "pb": {
+            "median": 1.63,
+            "mean": 1.6,
+            "min": 1.19,
+            "max": 1.89
+          },
+          "ps": {
+            "median": 2.7,
+            "mean": 2.74,
+            "min": 2.46,
+            "max": 3.44
+          }
+        },
+        "3y": {
+          "pe": {
+            "median": 14.99,
+            "mean": 14.53,
+            "min": 9.42,
+            "max": 21.54
+          },
+          "pb": {
+            "median": 1.83,
+            "mean": 1.82,
+            "min": 1.19,
+            "max": 2.25
+          },
+          "ps": {
+            "median": 3.56,
+            "mean": 3.59,
+            "min": 2.46,
+            "max": 5.57
+          }
+        },
+        "5y": {
+          "pe": {
+            "median": 15.09,
+            "mean": 14.71,
+            "min": 8.4,
+            "max": 42.66
+          },
+          "pb": {
+            "median": 1.93,
+            "mean": 2.13,
+            "min": 1.19,
+            "max": 5.09
+          },
+          "ps": {
+            "median": 3.6,
+            "mean": 3.61,
+            "min": 2.14,
+            "max": 5.62
+          }
+        },
+        "10y": {
+          "pe": {
+            "median": 11.98,
+            "mean": 12.41,
+            "min": 5.61,
+            "max": 42.66
+          },
+          "pb": {
+            "median": 1.67,
+            "mean": 1.72,
+            "min": 0.77,
+            "max": 5.09
+          },
+          "ps": {
+            "median": 2.82,
+            "mean": 3.33,
+            "min": 1.41,
+            "max": 10.21
+          }
+        }
+      }
+    },
+    {
+      "key": "retail",
+      "name_vi": "Bán lẻ",
+      "name_en": "Retail",
+      "stock_count": 21,
+      "equity_sum": 71179,
+      "current": {
+        "pe": {
+          "median": 11.18,
+          "mean": 13.97
+        },
+        "pb": {
+          "median": 1,
+          "mean": 1.62
+        },
+        "ps": {
+          "median": 0.27,
+          "mean": 0.39
+        }
+      },
+      "history": {
+        "1y": {
+          "pe": {
+            "median": 15,
+            "mean": 14.98,
+            "min": 10.77,
+            "max": 18.33
+          },
+          "pb": {
+            "median": 1.21,
+            "mean": 1.2,
+            "min": 1,
+            "max": 1.39
+          },
+          "ps": {
+            "median": 0.29,
+            "mean": 0.28,
+            "min": 0.24,
+            "max": 0.34
+          }
+        },
+        "3y": {
+          "pe": {
+            "median": 16.12,
+            "mean": 15.66,
+            "min": 2.95,
+            "max": 24.21
+          },
+          "pb": {
+            "median": 1.2,
+            "mean": 1.04,
+            "min": 0.17,
+            "max": 1.92
+          },
+          "ps": {
+            "median": 0.42,
+            "mean": 0.55,
+            "min": 0.24,
+            "max": 1.83
+          }
+        },
+        "5y": {
+          "pe": {
+            "median": 16.06,
+            "mean": 16.14,
+            "min": 2.95,
+            "max": 37.56
+          },
+          "pb": {
+            "median": 1.21,
+            "mean": 1.16,
+            "min": 0.17,
+            "max": 3.9
+          },
+          "ps": {
+            "median": 0.43,
+            "mean": 0.59,
+            "min": 0.15,
+            "max": 8.15
+          }
+        },
+        "10y": {
+          "pe": {
+            "median": 12.25,
+            "mean": 14.62,
+            "min": 2.95,
+            "max": 252.54
+          },
+          "pb": {
+            "median": 1.21,
+            "mean": 1.18,
+            "min": 0.17,
+            "max": 3.9
+          },
+          "ps": {
+            "median": 0.29,
+            "mean": 0.42,
+            "min": 0.07,
+            "max": 8.15
+          }
+        }
+      }
+    },
+    {
+      "key": "textile",
+      "name_vi": "Dệt May",
+      "name_en": "Textile & Garment",
+      "stock_count": 19,
+      "equity_sum": 29450,
+      "current": {
+        "pe": {
+          "median": 5.23,
+          "mean": 5.23
+        },
+        "pb": {
+          "median": 0.72,
+          "mean": 0.75
+        },
+        "ps": {
+          "median": 0.17,
+          "mean": 0.39
+        }
+      },
+      "history": {
+        "1y": {
+          "pe": {
+            "median": 8.41,
+            "mean": 10.24,
+            "min": 4.56,
+            "max": 27.2
+          },
+          "pb": {
+            "median": 0.82,
+            "mean": 0.94,
+            "min": 0.7,
+            "max": 1.38
+          },
+          "ps": {
+            "median": 0.31,
+            "mean": 0.35,
+            "min": 0.14,
+            "max": 0.61
+          }
+        },
+        "3y": {
+          "pe": {
+            "median": 14.08,
+            "mean": 16.5,
+            "min": 4.56,
+            "max": 54.54
+          },
+          "pb": {
+            "median": 0.93,
+            "mean": 1.03,
+            "min": 0.5,
+            "max": 1.49
+          },
+          "ps": {
+            "median": 0.42,
+            "mean": 0.34,
+            "min": 0.1,
+            "max": 0.63
+          }
+        },
+        "5y": {
+          "pe": {
+            "median": 13.15,
+            "mean": 17.05,
+            "min": 2.55,
+            "max": 150.82
+          },
+          "pb": {
+            "median": 1.1,
+            "mean": 1.14,
+            "min": 0.5,
+            "max": 3.31
+          },
+          "ps": {
+            "median": 0.39,
+            "mean": 0.41,
+            "min": 0.1,
+            "max": 2.1
+          }
+        },
+        "10y": {
+          "pe": {
+            "median": 9.44,
+            "mean": 12.9,
+            "min": 2.55,
+            "max": 150.82
+          },
+          "pb": {
+            "median": 1.07,
+            "mean": 1.1,
+            "min": 0.4,
+            "max": 3.31
+          },
+          "ps": {
+            "median": 0.32,
+            "mean": 0.38,
+            "min": 0.1,
+            "max": 2.1
+          }
+        }
+      }
+    },
+    {
+      "key": "chemicals",
+      "name_vi": "Hóa chất",
+      "name_en": "Chemicals",
+      "stock_count": 25,
+      "equity_sum": 138321,
+      "current": {
+        "pe": {
+          "median": 7.81,
+          "mean": 8.05
+        },
+        "pb": {
+          "median": 1.2,
+          "mean": 1.42
+        },
+        "ps": {
+          "median": 0.76,
+          "mean": 1.16
+        }
+      },
+      "history": {
+        "1y": {
+          "pe": {
+            "median": 8.47,
+            "mean": 8.8,
+            "min": 6.52,
+            "max": 11.23
+          },
+          "pb": {
+            "median": 1.43,
+            "mean": 1.42,
+            "min": 1.15,
+            "max": 1.67
+          },
+          "ps": {
+            "median": 0.96,
+            "mean": 0.95,
+            "min": 0.74,
+            "max": 1.14
+          }
+        },
+        "3y": {
+          "pe": {
+            "median": 10.68,
+            "mean": 10.49,
+            "min": 6.52,
+            "max": 14.85
+          },
+          "pb": {
+            "median": 1.51,
+            "mean": 1.47,
+            "min": 1.05,
+            "max": 2.06
+          },
+          "ps": {
+            "median": 1,
+            "mean": 1.01,
+            "min": 0.74,
+            "max": 1.36
+          }
+        },
+        "5y": {
+          "pe": {
+            "median": 10.63,
+            "mean": 10.72,
+            "min": 5,
+            "max": 20.63
+          },
+          "pb": {
+            "median": 1.51,
+            "mean": 1.47,
+            "min": 0.79,
+            "max": 2.33
+          },
+          "ps": {
+            "median": 0.99,
+            "mean": 1.05,
+            "min": 0.52,
+            "max": 3.73
+          }
+        },
+        "10y": {
+          "pe": {
+            "median": 9.47,
+            "mean": 9.82,
+            "min": 5,
+            "max": 23.12
+          },
+          "pb": {
+            "median": 1.1,
+            "mean": 1.16,
+            "min": 0.44,
+            "max": 2.54
+          },
+          "ps": {
+            "median": 0.83,
+            "mean": 0.84,
+            "min": 0.21,
+            "max": 3.73
+          }
+        }
+      }
+    },
+    {
+      "key": "construction_materials",
+      "name_vi": "Vật liệu xây dựng",
+      "name_en": "Construction Materials",
+      "stock_count": 27,
+      "equity_sum": 193969,
+      "current": {
+        "pe": {
+          "median": 8.93,
+          "mean": 12.47
+        },
+        "pb": {
+          "median": 0.84,
+          "mean": 1.07
+        },
+        "ps": {
+          "median": 0.52,
+          "mean": 0.76
+        }
+      },
+      "history": {
+        "1y": {
+          "pe": {
+            "median": 12.55,
+            "mean": 11.96,
+            "min": 8.72,
+            "max": 14.6
+          },
+          "pb": {
+            "median": 1.02,
+            "mean": 1.07,
+            "min": 0.83,
+            "max": 1.32
+          },
+          "ps": {
+            "median": 0.52,
+            "mean": 0.54,
+            "min": 0.45,
+            "max": 0.68
+          }
+        },
+        "3y": {
+          "pe": {
+            "median": 13.08,
+            "mean": 13.06,
+            "min": 8.72,
+            "max": 16.86
+          },
+          "pb": {
+            "median": 1.09,
+            "mean": 1.09,
+            "min": 0.83,
+            "max": 1.32
+          },
+          "ps": {
+            "median": 0.57,
+            "mean": 0.57,
+            "min": 0.45,
+            "max": 0.71
+          }
+        },
+        "5y": {
+          "pe": {
+            "median": 13.01,
+            "mean": 13.02,
+            "min": 4.71,
+            "max": 24.54
+          },
+          "pb": {
+            "median": 1.1,
+            "mean": 1.18,
+            "min": 0.61,
+            "max": 2.53
+          },
+          "ps": {
+            "median": 0.61,
+            "mean": 0.7,
+            "min": 0.24,
+            "max": 1.42
+          }
+        },
+        "10y": {
+          "pe": {
+            "median": 10.05,
+            "mean": 10.6,
+            "min": 3.76,
+            "max": 24.54
+          },
+          "pb": {
+            "median": 1.06,
+            "mean": 1.21,
+            "min": 0.38,
+            "max": 3
+          },
+          "ps": {
+            "median": 0.6,
+            "mean": 0.64,
+            "min": 0.08,
+            "max": 2.27
+          }
+        }
+      }
+    },
+    {
+      "key": "metals_mining",
+      "name_vi": "Kim loại và khai khoáng",
+      "name_en": "Metals & Mining",
+      "stock_count": 24,
+      "equity_sum": 205670,
+      "current": {
+        "pe": {
+          "median": 7.63,
+          "mean": 12.9
+        },
+        "pb": {
+          "median": 0.84,
+          "mean": 1.42
+        },
+        "ps": {
+          "median": 0.98,
+          "mean": 1.16
+        }
+      },
+      "history": {
+        "1y": {
+          "pe": {
+            "median": 10.68,
+            "mean": 10.67,
+            "min": 7.54,
+            "max": 13.12
+          },
+          "pb": {
+            "median": 1.17,
+            "mean": 1.14,
+            "min": 0.78,
+            "max": 1.48
+          },
+          "ps": {
+            "median": 1.34,
+            "mean": 1.3,
+            "min": 0.94,
+            "max": 1.61
+          }
+        },
+        "3y": {
+          "pe": {
+            "median": 11.81,
+            "mean": 12.06,
+            "min": 7.54,
+            "max": 18.42
+          },
+          "pb": {
+            "median": 1.1,
+            "mean": 1.12,
+            "min": 0.78,
+            "max": 1.48
+          },
+          "ps": {
+            "median": 1.17,
+            "mean": 1.2,
+            "min": 0.88,
+            "max": 1.61
+          }
+        },
+        "5y": {
+          "pe": {
+            "median": 11.23,
+            "mean": 11.24,
+            "min": 4.57,
+            "max": 21.94
+          },
+          "pb": {
+            "median": 1.11,
+            "mean": 1.23,
+            "min": 0.6,
+            "max": 3.39
+          },
+          "ps": {
+            "median": 1.12,
+            "mean": 1.17,
+            "min": 0.18,
+            "max": 2.62
+          }
+        },
+        "10y": {
+          "pe": {
+            "median": 10.92,
+            "mean": 12.59,
+            "min": 4.27,
+            "max": 78.93
+          },
+          "pb": {
+            "median": 1.09,
+            "mean": 1.14,
+            "min": 0.46,
+            "max": 3.39
+          },
+          "ps": {
+            "median": 1.02,
+            "mean": 0.98,
+            "min": 0.08,
+            "max": 2.62
+          }
+        }
+      }
+    },
+    {
+      "key": "oil_gas",
+      "name_vi": "Dầu khí",
+      "name_en": "Oil & Gas",
+      "stock_count": 22,
+      "equity_sum": 234469,
+      "current": {
+        "pe": {
+          "median": 9.92,
+          "mean": 11.28
+        },
+        "pb": {
+          "median": 1.14,
+          "mean": 1.31
+        },
+        "ps": {
+          "median": 0.39,
+          "mean": 0.47
+        }
+      },
+      "history": {
+        "1y": {
+          "pe": {
+            "median": 16.02,
+            "mean": 33.13,
+            "min": 8.96,
+            "max": 108.13
+          },
+          "pb": {
+            "median": 1.12,
+            "mean": 1.07,
+            "min": 0.5,
+            "max": 1.78
+          },
+          "ps": {
+            "median": 0.36,
+            "mean": 0.33,
+            "min": 0.19,
+            "max": 0.46
+          }
+        },
+        "3y": {
+          "pe": {
+            "median": 16.32,
+            "mean": 42.88,
+            "min": 8.42,
+            "max": 283.01
+          },
+          "pb": {
+            "median": 1.07,
+            "mean": 0.97,
+            "min": 0.32,
+            "max": 1.78
+          },
+          "ps": {
+            "median": 0.34,
+            "mean": 0.33,
+            "min": 0.19,
+            "max": 0.49
+          }
+        },
+        "5y": {
+          "pe": {
+            "median": 16.24,
+            "mean": 42.37,
+            "min": 8.42,
+            "max": 283.01
+          },
+          "pb": {
+            "median": 1.07,
+            "mean": 1.04,
+            "min": 0.32,
+            "max": 2.24
+          },
+          "ps": {
+            "median": 0.33,
+            "mean": 0.36,
+            "min": 0.15,
+            "max": 0.98
+          }
+        },
+        "10y": {
+          "pe": {
+            "median": 12.43,
+            "mean": 26.59,
+            "min": 5.05,
+            "max": 283.01
+          },
+          "pb": {
+            "median": 1.05,
+            "mean": 1.03,
+            "min": 0.32,
+            "max": 2.55
+          },
+          "ps": {
+            "median": 0.38,
+            "mean": 0.4,
+            "min": 0.14,
+            "max": 1.02
+          }
+        }
+      }
+    },
+    {
+      "key": "electricity",
+      "name_vi": "Điện",
+      "name_en": "Electricity & Power",
+      "stock_count": 25,
+      "equity_sum": 162511,
+      "current": {
+        "pe": {
+          "median": 9.23,
+          "mean": 8.95
+        },
+        "pb": {
+          "median": 1.31,
+          "mean": 1.41
+        },
+        "ps": {
+          "median": 2.75,
+          "mean": 2.71
+        }
+      },
+      "history": {
+        "1y": {
+          "pe": {
+            "median": 11.33,
+            "mean": 11.1,
+            "min": 9,
+            "max": 13.04
+          },
+          "pb": {
+            "median": 1.57,
+            "mean": 1.56,
+            "min": 1.29,
+            "max": 1.78
+          },
+          "ps": {
+            "median": 3.77,
+            "mean": 3.66,
+            "min": 2.74,
+            "max": 4.23
+          }
+        },
+        "3y": {
+          "pe": {
+            "median": 12.83,
+            "mean": 13.18,
+            "min": 8.96,
+            "max": 17.29
+          },
+          "pb": {
+            "median": 1.62,
+            "mean": 1.61,
+            "min": 1.29,
+            "max": 1.88
+          },
+          "ps": {
+            "median": 4.01,
+            "mean": 3.77,
+            "min": 2.43,
+            "max": 4.64
+          }
+        },
+        "5y": {
+          "pe": {
+            "median": 12.29,
+            "mean": 12.02,
+            "min": 6.58,
+            "max": 17.29
+          },
+          "pb": {
+            "median": 1.63,
+            "mean": 1.63,
+            "min": 1.22,
+            "max": 2
+          },
+          "ps": {
+            "median": 3.69,
+            "mean": 3.52,
+            "min": 1.07,
+            "max": 4.64
+          }
+        },
+        "10y": {
+          "pe": {
+            "median": 10.95,
+            "mean": 11.74,
+            "min": 6.24,
+            "max": 32.98
+          },
+          "pb": {
+            "median": 1.54,
+            "mean": 1.53,
+            "min": 1.04,
+            "max": 2
+          },
+          "ps": {
+            "median": 3.15,
+            "mean": 3.06,
+            "min": 0.64,
+            "max": 6.3
+          }
+        }
+      }
+    },
+    {
+      "key": "water",
+      "name_vi": "Nước",
+      "name_en": "Water Supply & Utilities",
+      "stock_count": 8,
+      "equity_sum": 14127,
+      "current": {
+        "pe": {
+          "median": 10.84,
+          "mean": 16.04
+        },
+        "pb": {
+          "median": 1.75,
+          "mean": 1.99
+        },
+        "ps": {
+          "median": 1.26,
+          "mean": 3.34
+        }
+      },
+      "history": {
+        "1y": {
+          "pe": {
+            "median": 11.8,
+            "mean": 11.94,
+            "min": 9.68,
+            "max": 13.84
+          },
+          "pb": {
+            "median": 1.83,
+            "mean": 1.81,
+            "min": 1.56,
+            "max": 2.05
+          },
+          "ps": {
+            "median": 1.22,
+            "mean": 1.23,
+            "min": 1.11,
+            "max": 2.36
+          }
+        },
+        "3y": {
+          "pe": {
+            "median": 12.59,
+            "mean": 12.67,
+            "min": 9.68,
+            "max": 16.3
+          },
+          "pb": {
+            "median": 1.84,
+            "mean": 1.8,
+            "min": 1.37,
+            "max": 2.2
+          },
+          "ps": {
+            "median": 1.18,
+            "mean": 1.17,
+            "min": 0.97,
+            "max": 2.43
+          }
+        },
+        "5y": {
+          "pe": {
+            "median": 12.78,
+            "mean": 12.81,
+            "min": 9.68,
+            "max": 16.3
+          },
+          "pb": {
+            "median": 1.71,
+            "mean": 1.72,
+            "min": 1.13,
+            "max": 2.24
+          },
+          "ps": {
+            "median": 1.19,
+            "mean": 1.32,
+            "min": 0.55,
+            "max": 3.65
+          }
+        },
+        "10y": {
+          "pe": {
+            "median": 12.43,
+            "mean": 12.18,
+            "min": 7.37,
+            "max": 16.46
+          },
+          "pb": {
+            "median": 1.48,
+            "mean": 1.47,
+            "min": 0.86,
+            "max": 2.24
+          },
+          "ps": {
+            "median": 1.18,
+            "mean": 1.28,
+            "min": 0.55,
+            "max": 3.65
+          }
+        }
+      }
+    },
+    {
+      "key": "technology",
+      "name_vi": "Công nghệ",
+      "name_en": "Technology",
+      "stock_count": 19,
+      "equity_sum": 104933,
+      "current": {
+        "pe": {
+          "median": 115.12,
+          "mean": 115.12
+        },
+        "pb": {
+          "median": 1.31,
+          "mean": 1.22
+        },
+        "ps": {
+          "median": 1.5,
+          "mean": 1.74
+        }
+      },
+      "history": {
+        "1y": {
+          "pe": {
+            "median": 14.07,
+            "mean": 15.7,
+            "min": 6.74,
+            "max": 138.09
+          },
+          "pb": {
+            "median": 1.36,
+            "mean": 1.33,
+            "min": 0.87,
+            "max": 1.65
+          },
+          "ps": {
+            "median": 1.19,
+            "mean": 1.27,
+            "min": 0.76,
+            "max": 2.22
+          }
+        },
+        "3y": {
+          "pe": {
+            "median": 13.85,
+            "mean": 15.16,
+            "min": 4.49,
+            "max": 138.09
+          },
+          "pb": {
+            "median": 1.27,
+            "mean": 1.16,
+            "min": 0.51,
+            "max": 2.13
+          },
+          "ps": {
+            "median": 0.99,
+            "mean": 0.96,
+            "min": 0.22,
+            "max": 2.22
+          }
+        },
+        "5y": {
+          "pe": {
+            "median": 13.39,
+            "mean": 19.05,
+            "min": 4.49,
+            "max": 179.64
+          },
+          "pb": {
+            "median": 1.06,
+            "mean": 1.16,
+            "min": 0.43,
+            "max": 2.96
+          },
+          "ps": {
+            "median": 0.9,
+            "mean": 0.91,
+            "min": 0.22,
+            "max": 2.61
+          }
+        },
+        "10y": {
+          "pe": {
+            "median": 11.85,
+            "mean": 18.06,
+            "min": 4.49,
+            "max": 179.64
+          },
+          "pb": {
+            "median": 1.07,
+            "mean": 1.12,
+            "min": 0.39,
+            "max": 2.96
+          },
+          "ps": {
+            "median": 0.7,
+            "mean": 0.76,
+            "min": 0.13,
+            "max": 2.61
+          }
+        }
+      }
+    },
+    {
+      "key": "pharmaceuticals",
+      "name_vi": "Dược phẩm",
+      "name_en": "Pharmaceuticals",
+      "stock_count": 22,
+      "equity_sum": 26344,
+      "current": {
+        "pe": {
+          "median": 7.6,
+          "mean": 7.6
+        },
+        "pb": {
+          "median": 1.41,
+          "mean": 2.25
+        },
+        "ps": {
+          "median": 0.18,
+          "mean": 0.64
+        }
+      },
+      "history": {
+        "1y": {
+          "pe": {
+            "median": 12.36,
+            "mean": 11.75,
+            "min": 6.35,
+            "max": 16.54
+          },
+          "pb": {
+            "median": 1.37,
+            "mean": 1.31,
+            "min": 0.89,
+            "max": 1.75
+          },
+          "ps": {
+            "median": 0.72,
+            "mean": 0.75,
+            "min": 0.18,
+            "max": 1.5
+          }
+        },
+        "3y": {
+          "pe": {
+            "median": 14.31,
+            "mean": 14.35,
+            "min": 3.66,
+            "max": 28.17
+          },
+          "pb": {
+            "median": 1.37,
+            "mean": 1.27,
+            "min": 0.72,
+            "max": 2.02
+          },
+          "ps": {
+            "median": 1.13,
+            "mean": 0.8,
+            "min": 0.18,
+            "max": 1.73
+          }
+        },
+        "5y": {
+          "pe": {
+            "median": 14.22,
+            "mean": 14.36,
+            "min": 3.66,
+            "max": 31.83
+          },
+          "pb": {
+            "median": 1.4,
+            "mean": 1.33,
+            "min": 0.55,
+            "max": 2.93
+          },
+          "ps": {
+            "median": 1.18,
+            "mean": 0.9,
+            "min": 0.11,
+            "max": 2.88
+          }
+        },
+        "10y": {
+          "pe": {
+            "median": 14.31,
+            "mean": 14.38,
+            "min": 3.66,
+            "max": 31.83
+          },
+          "pb": {
+            "median": 1.56,
+            "mean": 1.64,
+            "min": 0.55,
+            "max": 4.52
+          },
+          "ps": {
+            "median": 1.17,
+            "mean": 1.02,
+            "min": 0.11,
+            "max": 2.88
+          }
+        }
+      }
+    },
+    {
+      "key": "food_beverage",
+      "name_vi": "Thực phẩm & Đồ uống",
+      "name_en": "Food & Beverage",
+      "stock_count": 15,
+      "equity_sum": 165334,
+      "current": {
+        "pe": {
+          "median": 11.54,
+          "mean": 13.49
+        },
+        "pb": {
+          "median": 1.82,
+          "mean": 2.53
+        },
+        "ps": {
+          "median": 1.05,
+          "mean": 1.51
+        }
+      },
+      "history": {
+        "1y": {
+          "pe": {
+            "median": 13.36,
+            "mean": 13.09,
+            "min": 11.27,
+            "max": 14.63
+          },
+          "pb": {
+            "median": 1.82,
+            "mean": 1.82,
+            "min": 1.7,
+            "max": 1.96
+          },
+          "ps": {
+            "median": 1.23,
+            "mean": 1.21,
+            "min": 1,
+            "max": 1.38
+          }
+        },
+        "3y": {
+          "pe": {
+            "median": 13.54,
+            "mean": 13.53,
+            "min": 11.16,
+            "max": 17.08
+          },
+          "pb": {
+            "median": 1.94,
+            "mean": 1.92,
+            "min": 1.7,
+            "max": 2.22
+          },
+          "ps": {
+            "median": 1.3,
+            "mean": 1.3,
+            "min": 0.99,
+            "max": 1.74
+          }
+        },
+        "5y": {
+          "pe": {
+            "median": 13.71,
+            "mean": 14.58,
+            "min": 10.01,
+            "max": 33.37
+          },
+          "pb": {
+            "median": 2.02,
+            "mean": 2.17,
+            "min": 1.7,
+            "max": 3.26
+          },
+          "ps": {
+            "median": 1.43,
+            "mean": 1.53,
+            "min": 0.99,
+            "max": 2.83
+          }
+        },
+        "10y": {
+          "pe": {
+            "median": 14.72,
+            "mean": 16.89,
+            "min": 7.15,
+            "max": 35.63
+          },
+          "pb": {
+            "median": 2.42,
+            "mean": 2.61,
+            "min": 1.25,
+            "max": 10.14
+          },
+          "ps": {
+            "median": 1.64,
+            "mean": 1.68,
+            "min": 0.64,
+            "max": 4.79
+          }
+        }
+      }
+    },
+    {
+      "key": "transport_logistics",
+      "name_vi": "Vận tải & Logistics",
+      "name_en": "Transport & Logistics",
+      "stock_count": 28,
+      "equity_sum": 190866,
+      "current": {
+        "pe": {
+          "median": 4.43,
+          "mean": 6.18
+        },
+        "pb": {
+          "median": 1.33,
+          "mean": 1.19
+        },
+        "ps": {
+          "median": 0.87,
+          "mean": 1.59
+        }
+      },
+      "history": {
+        "1y": {
+          "pe": {
+            "median": 10.11,
+            "mean": 10.68,
+            "min": 4.39,
+            "max": 16.91
+          },
+          "pb": {
+            "median": 1.81,
+            "mean": 1.78,
+            "min": 1.25,
+            "max": 2.18
+          },
+          "ps": {
+            "median": 1.23,
+            "mean": 1.34,
+            "min": 0.69,
+            "max": 2.1
+          }
+        },
+        "3y": {
+          "pe": {
+            "median": 10.76,
+            "mean": 10.92,
+            "min": 4.39,
+            "max": 21.75
+          },
+          "pb": {
+            "median": 1.86,
+            "mean": 1.83,
+            "min": 1.25,
+            "max": 2.32
+          },
+          "ps": {
+            "median": 1.34,
+            "mean": 1.41,
+            "min": 0.58,
+            "max": 2.4
+          }
+        },
+        "5y": {
+          "pe": {
+            "median": 10.29,
+            "mean": 10.36,
+            "min": 2.28,
+            "max": 22.58
+          },
+          "pb": {
+            "median": 1.86,
+            "mean": 1.95,
+            "min": 0.91,
+            "max": 4.18
+          },
+          "ps": {
+            "median": 1.53,
+            "mean": 1.51,
+            "min": 0.5,
+            "max": 3.99
+          }
+        },
+        "10y": {
+          "pe": {
+            "median": 9.97,
+            "mean": 10.19,
+            "min": 2.28,
+            "max": 29.18
+          },
+          "pb": {
+            "median": 1.69,
+            "mean": 1.71,
+            "min": 0.43,
+            "max": 4.18
+          },
+          "ps": {
+            "median": 1.63,
+            "mean": 1.64,
+            "min": 0.31,
+            "max": 4.83
+          }
+        }
+      }
+    },
+    {
+      "key": "construction",
+      "name_vi": "Xây dựng",
+      "name_en": "Construction",
+      "stock_count": 17,
+      "equity_sum": 73564,
+      "current": {
+        "pe": {
+          "median": 9.79,
+          "mean": 13.11
+        },
+        "pb": {
+          "median": 0.7,
+          "mean": 0.95
+        },
+        "ps": {
+          "median": 0.64,
+          "mean": 0.57
+        }
+      },
+      "history": {
+        "1y": {
+          "pe": {
+            "median": 11.53,
+            "mean": 12.15,
+            "min": 5.45,
+            "max": 23.51
+          },
+          "pb": {
+            "median": 0.69,
+            "mean": 0.55,
+            "min": 0.22,
+            "max": 1.02
+          },
+          "ps": {
+            "median": 0.64,
+            "mean": 0.65,
+            "min": 0.5,
+            "max": 1.02
+          }
+        },
+        "3y": {
+          "pe": {
+            "median": 18.76,
+            "mean": 23.19,
+            "min": 5.45,
+            "max": 133.31
+          },
+          "pb": {
+            "median": 0.74,
+            "mean": 0.66,
+            "min": 0.22,
+            "max": 1.23
+          },
+          "ps": {
+            "median": 0.81,
+            "mean": 0.81,
+            "min": 0.5,
+            "max": 1.26
+          }
+        },
+        "5y": {
+          "pe": {
+            "median": 17.31,
+            "mean": 21.36,
+            "min": 3.62,
+            "max": 139.82
+          },
+          "pb": {
+            "median": 0.81,
+            "mean": 0.88,
+            "min": 0.22,
+            "max": 2.59
+          },
+          "ps": {
+            "median": 0.8,
+            "mean": 0.81,
+            "min": 0.23,
+            "max": 1.65
+          }
+        },
+        "10y": {
+          "pe": {
+            "median": 11.86,
+            "mean": 15.61,
+            "min": 3.34,
+            "max": 139.82
+          },
+          "pb": {
+            "median": 0.86,
+            "mean": 0.9,
+            "min": 0.22,
+            "max": 2.59
+          },
+          "ps": {
+            "median": 0.58,
+            "mean": 0.59,
+            "min": 0.11,
+            "max": 1.65
+          }
+        }
+      }
+    },
+    {
+      "key": "agriculture_fishery",
+      "name_vi": "Nông nghiệp & Thủy sản",
+      "name_en": "Agriculture & Fishery",
+      "stock_count": 21,
+      "equity_sum": 77275,
+      "current": {
+        "pe": {
+          "median": 10.81,
+          "mean": 10.81
+        },
+        "pb": {
+          "median": 1.07,
+          "mean": 2.83
+        },
+        "ps": {
+          "median": 0.38,
+          "mean": 3.48
+        }
+      },
+      "history": {
+        "1y": {
+          "pe": {
+            "median": 9.39,
+            "mean": 10.6,
+            "min": 5.87,
+            "max": 23.09
+          },
+          "pb": {
+            "median": 1.18,
+            "mean": 1.17,
+            "min": 0.85,
+            "max": 1.49
+          },
+          "ps": {
+            "median": 0.47,
+            "mean": 0.47,
+            "min": 0.34,
+            "max": 0.59
+          }
+        },
+        "3y": {
+          "pe": {
+            "median": 12.22,
+            "mean": 18.74,
+            "min": 5.87,
+            "max": 121.94
+          },
+          "pb": {
+            "median": 1.15,
+            "mean": 1.16,
+            "min": 0.76,
+            "max": 1.49
+          },
+          "ps": {
+            "median": 0.55,
+            "mean": 0.66,
+            "min": 0.34,
+            "max": 1.75
+          }
+        },
+        "5y": {
+          "pe": {
+            "median": 12.55,
+            "mean": 16.86,
+            "min": 5.81,
+            "max": 121.94
+          },
+          "pb": {
+            "median": 1.14,
+            "mean": 1.16,
+            "min": 0.48,
+            "max": 2.37
+          },
+          "ps": {
+            "median": 0.55,
+            "mean": 0.66,
+            "min": 0.2,
+            "max": 1.75
+          }
+        },
+        "10y": {
+          "pe": {
+            "median": 12.48,
+            "mean": 17.87,
+            "min": 3.5,
+            "max": 279.42
+          },
+          "pb": {
+            "median": 1.15,
+            "mean": 1.09,
+            "min": 0.18,
+            "max": 2.38
+          },
+          "ps": {
+            "median": 0.56,
+            "mean": 0.63,
+            "min": 0.17,
+            "max": 1.75
+          }
+        }
+      }
+    },
+    {
+      "key": "industrial",
+      "name_vi": "Công nghiệp",
+      "name_en": "Industrial Manufacturing",
+      "stock_count": 5,
+      "equity_sum": 65759,
+      "current": {
+        "pe": {
+          "median": 11.65,
+          "mean": 19
+        },
+        "pb": {
+          "median": 1.97,
+          "mean": 2.38
+        },
+        "ps": {
+          "median": 1.37,
+          "mean": 4.16
+        }
+      },
+      "history": {
+        "1y": {
+          "pe": {
+            "median": 18.67,
+            "mean": 18.26,
+            "min": 11.65,
+            "max": 26.15
+          },
+          "pb": {
+            "median": 1.92,
+            "mean": 1.92,
+            "min": 1.63,
+            "max": 2.37
+          },
+          "ps": {
+            "median": 2.49,
+            "mean": 2.4,
+            "min": 1.37,
+            "max": 3.64
+          }
+        },
+        "3y": {
+          "pe": {
+            "median": 12.7,
+            "mean": 14.49,
+            "min": 9.57,
+            "max": 26.15
+          },
+          "pb": {
+            "median": 1.81,
+            "mean": 1.79,
+            "min": 1.35,
+            "max": 2.68
+          },
+          "ps": {
+            "median": 1.4,
+            "mean": 1.67,
+            "min": 0.99,
+            "max": 3.64
+          }
+        },
+        "5y": {
+          "pe": {
+            "median": 12.57,
+            "mean": 14.3,
+            "min": 8.4,
+            "max": 29.41
+          },
+          "pb": {
+            "median": 1.76,
+            "mean": 1.75,
+            "min": 1.33,
+            "max": 2.68
+          },
+          "ps": {
+            "median": 1.31,
+            "mean": 1.52,
+            "min": 0.81,
+            "max": 3.64
+          }
+        },
+        "10y": {
+          "pe": {
+            "median": 12.7,
+            "mean": 13.99,
+            "min": 6.94,
+            "max": 29.41
+          },
+          "pb": {
+            "median": 1.77,
+            "mean": 1.79,
+            "min": 1.14,
+            "max": 2.68
+          },
+          "ps": {
+            "median": 1.33,
+            "mean": 1.75,
+            "min": 0.63,
+            "max": 5.88
+          }
+        }
+      }
+    },
+    {
+      "key": "other_financial",
+      "name_vi": "Tài chính khác",
+      "name_en": "Other Financial",
+      "stock_count": 4,
+      "equity_sum": 17455,
+      "current": {
+        "pe": {
+          "median": 9.03,
+          "mean": 8.23
+        },
+        "pb": {
+          "median": 0.84,
+          "mean": 0.81
+        },
+        "ps": {
+          "median": 1.42,
+          "mean": 2.35
+        }
+      },
+      "history": {
+        "1y": {
+          "pe": {
+            "median": 10.94,
+            "mean": 10.21,
+            "min": 6.96,
+            "max": 13.82
+          },
+          "pb": {
+            "median": 1,
+            "mean": 0.98,
+            "min": 0.81,
+            "max": 1.18
+          },
+          "ps": {
+            "median": 1.8,
+            "mean": 1.84,
+            "min": 1.41,
+            "max": 2.41
+          }
+        },
+        "3y": {
+          "pe": {
+            "median": 13.55,
+            "mean": 13.64,
+            "min": 6.96,
+            "max": 21.62
+          },
+          "pb": {
+            "median": 0.99,
+            "mean": 1.03,
+            "min": 0.67,
+            "max": 1.6
+          },
+          "ps": {
+            "median": 1.91,
+            "mean": 2.02,
+            "min": 1.41,
+            "max": 3.39
+          }
+        },
+        "5y": {
+          "pe": {
+            "median": 12.56,
+            "mean": 14.15,
+            "min": 6.65,
+            "max": 31.94
+          },
+          "pb": {
+            "median": 1,
+            "mean": 1.07,
+            "min": 0.54,
+            "max": 3.33
+          },
+          "ps": {
+            "median": 2.17,
+            "mean": 2.65,
+            "min": 1.41,
+            "max": 10.83
+          }
+        },
+        "10y": {
+          "pe": {
+            "median": 12.09,
+            "mean": 13.65,
+            "min": 6.33,
+            "max": 31.94
+          },
+          "pb": {
+            "median": 1.02,
+            "mean": 1.1,
+            "min": 0.54,
+            "max": 3.36
+          },
+          "ps": {
+            "median": 2.04,
+            "mean": 2.46,
+            "min": 0.9,
+            "max": 10.83
+          }
+        }
+      }
+    }
+  ]
+}

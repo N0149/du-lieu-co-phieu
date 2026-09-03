@@ -1,0 +1,99 @@
+{
+  "symbol": "MES",
+  "updated": "2026-05-01T06:02:05.000Z",
+  "co_cau_so_huu": {
+    "CoDongSoHuu": [
+      {
+        "Code": "CEO_99094",
+        "Name": "Nguyễn Quốc Đảm",
+        "Url": "<a href='/du-lieu/ceo/CEO_99094/nguyen-quoc-dam.chn'>Nguyễn Quốc Đảm</a>",
+        "AssetVolume": "5.000",
+        "AssetRate": "0,03",
+        "UpdatedDate": "31/08/2016"
+      },
+      {
+        "Code": "CORP_99691",
+        "Name": "UBND thành phố Hà Nội",
+        "Url": "UBND thành phố Hà Nội",
+        "AssetVolume": "18.393.800",
+        "AssetRate": "98,89",
+        "UpdatedDate": "04/04/2018"
+      },
+      {
+        "Code": "CEO_99096",
+        "Name": "Hoàng Quốc Chung",
+        "Url": "<a href='/du-lieu/ceo/CEO_99096/hoang-quoc-chung.chn'>Hoàng Quốc Chung</a>",
+        "AssetVolume": "5.000",
+        "AssetRate": "0,03",
+        "UpdatedDate": "31/08/2016"
+      },
+      {
+        "Code": "CEO_99099",
+        "Name": "Tạ Thị Loan",
+        "Url": "<a href='/du-lieu/ceo/CEO_99099/ta-thi-loan.chn'>Tạ Thị Loan</a>",
+        "AssetVolume": "1.000",
+        "AssetRate": "0,01",
+        "UpdatedDate": "31/08/2016"
+      },
+      {
+        "Code": "CEO_99095",
+        "Name": "Nguyễn Kim Cương",
+        "Url": "<a href='/du-lieu/ceo/CEO_99095/nguyen-kim-cuong.chn'>Nguyễn Kim Cương</a>",
+        "AssetVolume": "5.500",
+        "AssetRate": "0,03",
+        "UpdatedDate": "31/08/2016"
+      },
+      {
+        "Code": "CEO_99098",
+        "Name": "Nguyễn Cẩm Tú",
+        "Url": "<a href='/du-lieu/ceo/CEO_99098/nguyen-cam-tu.chn'>Nguyễn Cẩm Tú</a>",
+        "AssetVolume": "4.000",
+        "AssetRate": "0,02",
+        "UpdatedDate": "31/08/2016"
+      },
+      {
+        "Code": "CEO_99097",
+        "Name": "Nguyễn Trung Thành",
+        "Url": "<a href='/du-lieu/ceo/CEO_99097/nguyen-trung-thanh.chn'>Nguyễn Trung Thành</a>",
+        "AssetVolume": "11.900",
+        "AssetRate": "0,06",
+        "UpdatedDate": "31/12/2018"
+      }
+    ],
+    "NuocNgoai": 18600000,
+    "NhaNuoc": 0,
+    "Khac": -18599900
+  },
+  "cong_ty_con": [],
+  "cong_ty_lien_ket": [
+    {
+      "Symbol": "MES",
+      "CorpCode": "CORP_99690",
+      "Name": "CTCP Bất động sản Sài Đồng",
+      "TotalCapital": 41,
+      "SharedCapital": 11.89,
+      "OwnershipRate": 29,
+      "Note": "",
+      "Order": 1,
+      "TradeCenter": ""
+    }
+  ],
+  "giao_dich_noi_bo": [
+    {
+      "transaction_name": "UBND thành phố Hà Nội",
+      "transaction_position": "",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 18393800,
+      "plan_buy": 0,
+      "plan_sell": 18393800,
+      "plan_begin_date": "2018-01-08",
+      "plan_end_date": "2018-02-05",
+      "real_buy": 0,
+      "real_sell": 0,
+      "real_end_date": "2018-04-03",
+      "published_date": "2018-01-07",
+      "volume_after": 18393800
+    }
+  ]
+}

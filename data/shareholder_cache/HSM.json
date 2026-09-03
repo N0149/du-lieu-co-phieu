@@ -1,0 +1,128 @@
+{
+  "symbol": "HSM",
+  "updated": "2026-08-01T05:40:33.000Z",
+  "co_cau_so_huu": {
+    "CoDongSoHuu": [
+      {
+        "Code": "CORP_99750",
+        "Name": "Công ty TNHH MTV Tổng Công ty Dệt May Miền Bắc - Vinatex",
+        "Url": "Công ty TNHH MTV Tổng Công ty Dệt May Miền Bắc - Vinatex",
+        "AssetVolume": "11.802.600",
+        "AssetRate": "57,57",
+        "UpdatedDate": "09/01/2018"
+      },
+      {
+        "Code": "CEO_54198",
+        "Name": "Hồ Lê Hùng",
+        "Url": "<a href='/du-lieu/ceo/CEO_54198/ho-le-hung.chn'>Hồ Lê Hùng</a>",
+        "AssetVolume": "2.000",
+        "AssetRate": "0,01",
+        "UpdatedDate": "31/12/2018"
+      },
+      {
+        "Code": "CORP_60453",
+        "Name": "CTCP Phát triển Hạ tầng Công nghiệp & Sản xuất Kinh doanh Dệt May Việt Nam (Vinatex ITC)",
+        "Url": "CTCP Phát triển Hạ tầng Công nghiệp & Sản xuất Kinh doanh Dệt May Việt Nam (Vinatex ITC)",
+        "AssetVolume": "3.816.900",
+        "AssetRate": "18,62",
+        "UpdatedDate": "09/01/2018"
+      }
+    ],
+    "NuocNgoai": 0.01,
+    "NhaNuoc": 0,
+    "Khac": 99.99
+  },
+  "cong_ty_con": [
+    {
+      "Symbol": "HSM",
+      "CorpCode": "HALOTEXCO",
+      "Name": "CTCP Dệt may Hoàng Thị Loan",
+      "TotalCapital": 33.6,
+      "SharedCapital": 26.7,
+      "OwnershipRate": 75.58,
+      "Note": "",
+      "Order": 1,
+      "TradeCenter": "OTC"
+    },
+    {
+      "Symbol": "HSM",
+      "CorpCode": "CORP_51471",
+      "Name": "Công ty CP Thời trang Hanosimex",
+      "TotalCapital": 9,
+      "SharedCapital": 5.85,
+      "OwnershipRate": 65,
+      "Note": "",
+      "Order": 2,
+      "TradeCenter": ""
+    },
+    {
+      "Symbol": "HSM",
+      "CorpCode": "CORP_51472",
+      "Name": "Công ty CP May Halotexco",
+      "TotalCapital": 7,
+      "SharedCapital": 3.75,
+      "OwnershipRate": 53.64,
+      "Note": "",
+      "Order": 3,
+      "TradeCenter": ""
+    },
+    {
+      "Symbol": "HSM",
+      "CorpCode": "DetHaDong",
+      "Name": "Công ty cổ phần Dệt Hà Đông Hanosimex",
+      "TotalCapital": 0,
+      "SharedCapital": 10.38,
+      "OwnershipRate": 53.23,
+      "Note": "",
+      "Order": 4,
+      "TradeCenter": "OTC"
+    },
+    {
+      "Symbol": "HSM",
+      "CorpCode": "CORP_51913",
+      "Name": "CTCP Dệt kim Hanosimex",
+      "TotalCapital": 38,
+      "SharedCapital": 19.47,
+      "OwnershipRate": 51.23,
+      "Note": "",
+      "Order": 5,
+      "TradeCenter": ""
+    },
+    {
+      "Symbol": "HSM",
+      "CorpCode": "CORP_51470",
+      "Name": "Công ty cổ phần Thương mại Hải phòng Hanosimex",
+      "TotalCapital": 10,
+      "SharedCapital": 5.107,
+      "OwnershipRate": 51.07,
+      "Note": "",
+      "Order": 6,
+      "TradeCenter": ""
+    }
+  ],
+  "cong_ty_lien_ket": [
+    {
+      "Symbol": "HSM",
+      "CorpCode": "CORP_51476",
+      "Name": "Công ty Cổ phần Vinatex Hồng Lĩnh",
+      "TotalCapital": 80,
+      "SharedCapital": 25,
+      "OwnershipRate": 31.25,
+      "Note": "",
+      "Order": 7,
+      "TradeCenter": ""
+    },
+    {
+      "Symbol": "HSM",
+      "CorpCode": "CORP_51475",
+      "Name": "Công ty Cổ phần May Đông Mỹ Hanosimex",
+      "TotalCapital": 4,
+      "SharedCapital": 1.16,
+      "OwnershipRate": 28.98,
+      "Note": "",
+      "Order": 8,
+      "TradeCenter": ""
+    }
+  ],
+  "giao_dich_noi_bo": []
+}

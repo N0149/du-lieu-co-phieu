@@ -1,0 +1,135 @@
+{
+  "symbol": "NBE",
+  "updated": "2026-03-22T03:19:29.000Z",
+  "co_cau_so_huu": {
+    "CoDongSoHuu": [
+      {
+        "Code": "CEO_56370",
+        "Name": "Lê Hồng Phương",
+        "Url": "<a href='/du-lieu/ceo/CEO_56370/le-hong-phuong.chn'>Lê Hồng Phương</a>",
+        "AssetVolume": "20.000",
+        "AssetRate": "0,4",
+        "UpdatedDate": "13/03/2025"
+      },
+      {
+        "Code": "CEO_58092",
+        "Name": "Nguyễn Thị Thu Huyền",
+        "Url": "<a href='/du-lieu/ceo/CEO_58092/nguyen-thi-thu-huyen.chn'>Nguyễn Thị Thu Huyền</a>",
+        "AssetVolume": "2.000",
+        "AssetRate": "0,04",
+        "UpdatedDate": "13/03/2025"
+      },
+      {
+        "Code": "KLQ_100472",
+        "Name": "Cao Văn Nguyên",
+        "Url": "Cao Văn Nguyên",
+        "AssetVolume": "345.759",
+        "AssetRate": "6,92",
+        "UpdatedDate": "20/01/2026"
+      }
+    ],
+    "NuocNgoai": 0.83,
+    "NhaNuoc": 0,
+    "Khac": 99.17
+  },
+  "cong_ty_con": [],
+  "cong_ty_lien_ket": [],
+  "giao_dich_noi_bo": [
+    {
+      "transaction_name": "Cao Văn Nguyên",
+      "transaction_position": "",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 350059,
+      "plan_buy": 0,
+      "plan_sell": 0,
+      "plan_begin_date": "",
+      "plan_end_date": "",
+      "real_buy": 0,
+      "real_sell": 4300,
+      "real_end_date": "2026-01-20",
+      "published_date": "2026-01-27",
+      "volume_after": 345759
+    },
+    {
+      "transaction_name": "Cao Văn Nguyên",
+      "transaction_position": "",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 400359,
+      "plan_buy": 0,
+      "plan_sell": 0,
+      "plan_begin_date": "",
+      "plan_end_date": "",
+      "real_buy": 0,
+      "real_sell": 900,
+      "real_end_date": "2026-01-05",
+      "published_date": "2026-01-08",
+      "volume_after": 399459
+    },
+    {
+      "transaction_name": "Cao Văn Nguyên",
+      "transaction_position": "",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 369200,
+      "plan_buy": 0,
+      "plan_sell": 0,
+      "plan_begin_date": "",
+      "plan_end_date": "",
+      "real_buy": 41300,
+      "real_sell": 0,
+      "real_end_date": "2025-11-26",
+      "published_date": "2025-12-03",
+      "volume_after": 410500
+    },
+    {
+      "transaction_name": "Cao Văn Nguyên",
+      "transaction_position": "",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 320000,
+      "plan_buy": 0,
+      "plan_sell": 0,
+      "plan_begin_date": "",
+      "plan_end_date": "",
+      "real_buy": 35800,
+      "real_sell": 0,
+      "real_end_date": "2025-10-20",
+      "published_date": "2025-10-27",
+      "volume_after": 355800
+    },
+    {
+      "transaction_name": "Cao Văn Nguyên",
+      "transaction_position": "",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 299500,
+      "plan_buy": 0,
+      "plan_sell": 0,
+      "plan_begin_date": "",
+      "plan_end_date": "",
+      "real_buy": 14500,
+      "real_sell": 0,
+      "real_end_date": "2025-10-08",
+      "published_date": "2025-10-13",
+      "volume_after": 314000
+    },
+    {
+      "transaction_name": "Cao Văn Nguyên",
+      "transaction_position": "",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 246500,
+      "plan_buy": 0,
+      "plan_sell": 0,
+      "plan_begin_date": "",
+      "plan_end_date": "",
+      "real_buy": 49500,
+      "real_sell": 0,
+      "real_end_date": "2025-10-02",
+      "published_date": "2025-10-08",
+      "volume_after": 296000
+    }
+  ]
+}

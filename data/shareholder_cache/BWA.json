@@ -1,0 +1,85 @@
+{
+  "symbol": "BWA",
+  "updated": "2026-08-01T05:28:58.000Z",
+  "co_cau_so_huu": {
+    "CoDongSoHuu": [
+      {
+        "Code": "CEO_85172",
+        "Name": "Nguyễn Thị Thư Trúc",
+        "Url": "<a href='/du-lieu/ceo/CEO_85172/nguyen-thi-thu-truc.chn'>Nguyễn Thị Thư Trúc</a>",
+        "AssetVolume": "3.400",
+        "AssetRate": "0,13",
+        "UpdatedDate": "16/04/2026"
+      },
+      {
+        "Code": "CEO_55623",
+        "Name": "Nguyễn Hữu Kiên",
+        "Url": "<a href='/du-lieu/ceo/CEO_55623/nguyen-huu-kien.chn'>Nguyễn Hữu Kiên</a>",
+        "AssetVolume": "11.900",
+        "AssetRate": "0,44",
+        "UpdatedDate": "16/04/2026"
+      },
+      {
+        "Code": "LQ_82269",
+        "Name": "Nguyễn Thị Diễm Loan",
+        "Url": "Nguyễn Thị Diễm Loan (Chị dâu của ông <a href='/du-lieu/ceo/CEO_11368/vo-thanh-y.chn'>Võ Thành Y</a>)",
+        "AssetVolume": "34.700",
+        "AssetRate": "1,29",
+        "UpdatedDate": "16/04/2026"
+      },
+      {
+        "Code": "CORP_00979",
+        "Name": "Công ty TNHH Cấp thoát nước Lâm Đồng",
+        "Url": "Công ty TNHH Cấp thoát nước Lâm Đồng",
+        "AssetVolume": "2.050.300",
+        "AssetRate": "75,94",
+        "UpdatedDate": "16/04/2026"
+      },
+      {
+        "Code": "CEO_98087",
+        "Name": "Trần Thị Nga",
+        "Url": "<a href='/du-lieu/ceo/CEO_98087/tran-thi-nga.chn'>Trần Thị Nga</a>",
+        "AssetVolume": "2.500",
+        "AssetRate": "0,09",
+        "UpdatedDate": "16/04/2026"
+      },
+      {
+        "Code": "CEO_07915",
+        "Name": "Nguyễn Trọng Hiếu",
+        "Url": "<a href='/du-lieu/ceo/CEO_07915/nguyen-trong-hieu.chn'>Nguyễn Trọng Hiếu</a>",
+        "AssetVolume": "8.500",
+        "AssetRate": "0,31",
+        "UpdatedDate": "16/04/2026"
+      }
+    ],
+    "NuocNgoai": 0.02,
+    "NhaNuoc": 0,
+    "Khac": 99.98
+  },
+  "cong_ty_con": [],
+  "cong_ty_lien_ket": [
+    {
+      "Symbol": "BWA",
+      "CorpCode": "CORP_00979",
+      "Name": "Công ty TNHH Cấp thoát nước Lâm Đồng",
+      "TotalCapital": 0,
+      "SharedCapital": 0,
+      "OwnershipRate": 0,
+      "Note": "",
+      "Order": 1,
+      "TradeCenter": ""
+    },
+    {
+      "Symbol": "BWA",
+      "CorpCode": "CORP_50836",
+      "Name": "Công ty Cổ phần cấp nước và XD Di linh",
+      "TotalCapital": 14.2,
+      "SharedCapital": 0,
+      "OwnershipRate": 0,
+      "Note": "",
+      "Order": 2,
+      "TradeCenter": ""
+    }
+  ],
+  "giao_dich_noi_bo": []
+}

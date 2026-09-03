@@ -1,0 +1,77 @@
+{
+  "symbol": "CTG",
+  "events": [
+    {
+      "date": "2015-06-23",
+      "cashVnd": 1000,
+      "stockPct": null,
+      "texts": [
+        "Trả cổ tức bằng tiền mặt - Cả năm 2014 - 1,000 VND"
+      ]
+    },
+    {
+      "date": "2017-01-16",
+      "cashVnd": 700,
+      "stockPct": null,
+      "texts": [
+        "Trả cổ tức bằng tiền mặt - Cả năm 2015 - 700 VND"
+      ]
+    },
+    {
+      "date": "2017-09-27",
+      "cashVnd": 700,
+      "stockPct": null,
+      "texts": [
+        "Trả cổ tức bằng tiền mặt - Cả năm 2016 - 700 VND"
+      ]
+    },
+    {
+      "date": "2020-12-17",
+      "cashVnd": 500,
+      "stockPct": null,
+      "texts": [
+        "Trả cổ tức bằng tiền mặt - Cả năm 2019 - 500 VND"
+      ]
+    },
+    {
+      "date": "2021-07-07",
+      "cashVnd": null,
+      "stockPct": 0.2907,
+      "texts": [
+        "Phát hành cổ phiếu - Trả Cổ tức bằng Cổ phiếu tỉ lệ 29.1%"
+      ]
+    },
+    {
+      "date": "2021-12-14",
+      "cashVnd": 800,
+      "stockPct": null,
+      "texts": [
+        "Trả cổ tức bằng tiền mặt - Cả năm 2020 - 800 VND"
+      ]
+    },
+    {
+      "date": "2023-11-30",
+      "cashVnd": null,
+      "stockPct": 0.1174,
+      "texts": [
+        "Phát hành cổ phiếu - Trả Cổ tức bằng Cổ phiếu tỉ lệ 11.7%"
+      ]
+    },
+    {
+      "date": "2025-10-14",
+      "cashVnd": 450,
+      "stockPct": null,
+      "texts": [
+        "Trả cổ tức bằng tiền mặt - Cả năm 2024 - 450 VND"
+      ]
+    },
+    {
+      "date": "2025-12-17",
+      "cashVnd": null,
+      "stockPct": 0.4464,
+      "texts": [
+        "Phát hành cổ phiếu - Trả Cổ tức bằng Cổ phiếu tỉ lệ 44.6%"
+      ]
+    }
+  ]
+}

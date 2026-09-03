@@ -1,0 +1,110 @@
+{
+  "symbol": "TMB",
+  "updated": "2026-06-01T07:30:34.000Z",
+  "co_cau_so_huu": {
+    "CoDongSoHuu": [
+      {
+        "Code": "VINACOMIN",
+        "Name": "Tập đoàn Công nghiệp Than - Khoáng sản Việt Nam",
+        "Url": "<a href='/du-lieu/otc/VINACOMIN-tap-doan-cong-nghiep-than-khoang-san-viet-nam.chn' title='Tập đoàn Công nghiệp Than - Khoáng sản Việt Nam'>Tập đoàn Công nghiệp Than - Khoáng sản Việt Nam</a>",
+        "AssetVolume": "10.116.000",
+        "AssetRate": "67,44",
+        "UpdatedDate": "28/05/2026"
+      },
+      {
+        "Code": "CEO_65582",
+        "Name": "Phạm Văn Hảo",
+        "Url": "<a href='/du-lieu/ceo/CEO_65582/pham-van-hao.chn'>Phạm Văn Hảo</a>",
+        "AssetVolume": "4.060",
+        "AssetRate": "0,03",
+        "UpdatedDate": "28/05/2026"
+      },
+      {
+        "Code": "CEO_98690",
+        "Name": "Phan Tiến Hải",
+        "Url": "<a href='/du-lieu/ceo/CEO_98690/phan-tien-hai.chn'>Phan Tiến Hải</a>",
+        "AssetVolume": "8.958",
+        "AssetRate": "0,06",
+        "UpdatedDate": "28/05/2026"
+      },
+      {
+        "Code": "CEO_98689",
+        "Name": "Đoàn Hữu Thung",
+        "Url": "<a href='/du-lieu/ceo/CEO_98689/doan-huu-thung.chn'>Đoàn Hữu Thung</a>",
+        "AssetVolume": "9.678",
+        "AssetRate": "0,06",
+        "UpdatedDate": "28/05/2026"
+      },
+      {
+        "Code": "CEO_84553",
+        "Name": "Nguyễn Anh Toán",
+        "Url": "<a href='/du-lieu/ceo/CEO_84553/nguyen-anh-toan.chn'>Nguyễn Anh Toán</a>",
+        "AssetVolume": "5.376",
+        "AssetRate": "0,04",
+        "UpdatedDate": "28/05/2026"
+      },
+      {
+        "Code": "CEO_98693",
+        "Name": "Đặng Thị Hải Hà",
+        "Url": "<a href='/du-lieu/ceo/CEO_98693/dang-thi-hai-ha.chn'>Đặng Thị Hải Hà</a>",
+        "AssetVolume": "11.916",
+        "AssetRate": "0,08",
+        "UpdatedDate": "28/05/2026"
+      },
+      {
+        "Code": "CEO_98692",
+        "Name": "Vũ Hữu Long",
+        "Url": "<a href='/du-lieu/ceo/CEO_98692/vu-huu-long.chn'>Vũ Hữu Long</a>",
+        "AssetVolume": "15.000",
+        "AssetRate": "0,1",
+        "UpdatedDate": "28/05/2026"
+      },
+      {
+        "Code": "CEO_98696",
+        "Name": "Nguyễn Đức Vinh",
+        "Url": "<a href='/du-lieu/ceo/CEO_98696/nguyen-duc-vinh.chn'>Nguyễn Đức Vinh</a>",
+        "AssetVolume": "3.000",
+        "AssetRate": "0,02",
+        "UpdatedDate": "28/05/2026"
+      },
+      {
+        "Code": "CEO_85161",
+        "Name": "Ngô Quang Trung",
+        "Url": "<a href='/du-lieu/ceo/CEO_85161/ngo-quang-trung.chn'>Ngô Quang Trung</a>",
+        "AssetVolume": "3.582",
+        "AssetRate": "0,02",
+        "UpdatedDate": "28/05/2026"
+      },
+      {
+        "Code": "CEO_98694",
+        "Name": "Vũ Minh Chiến",
+        "Url": "<a href='/du-lieu/ceo/CEO_98694/vu-minh-chien.chn'>Vũ Minh Chiến</a>",
+        "AssetVolume": "714",
+        "AssetRate": "0,0",
+        "UpdatedDate": "28/05/2026"
+      },
+      {
+        "Code": "CEO_98691",
+        "Name": "Nguyễn Minh Hải",
+        "Url": "<a href='/du-lieu/ceo/CEO_98691/nguyen-minh-hai.chn'>Nguyễn Minh Hải</a>",
+        "AssetVolume": "12.372",
+        "AssetRate": "0,08",
+        "UpdatedDate": "28/05/2026"
+      },
+      {
+        "Code": "CEO_98695",
+        "Name": "Bùi Thị Phương Thảo",
+        "Url": "<a href='/du-lieu/ceo/CEO_98695/bui-thi-phuong-thao.chn'>Bùi Thị Phương Thảo</a>",
+        "AssetVolume": "1.200",
+        "AssetRate": "0,01",
+        "UpdatedDate": "28/05/2026"
+      }
+    ],
+    "NuocNgoai": 0.11,
+    "NhaNuoc": 0,
+    "Khac": 99.89
+  },
+  "cong_ty_con": [],
+  "cong_ty_lien_ket": [],
+  "giao_dich_noi_bo": []
+}

@@ -1,0 +1,150 @@
+{
+  "symbol": "VPW",
+  "updated": "2026-07-01T07:00:50.000Z",
+  "co_cau_so_huu": {
+    "CoDongSoHuu": [
+      {
+        "Code": "CORP_99714",
+        "Name": "Ủy ban nhân dân tỉnh Vĩnh Phúc",
+        "Url": "Ủy ban nhân dân tỉnh Vĩnh Phúc",
+        "AssetVolume": "10.805.776",
+        "AssetRate": "96,75",
+        "UpdatedDate": "30/06/2026"
+      },
+      {
+        "Code": "CEO_53613",
+        "Name": "Nguyễn Thị Quỳnh Anh",
+        "Url": "<a href='/du-lieu/ceo/CEO_53613/nguyen-thi-quynh-anh.chn'>Nguyễn Thị Quỳnh Anh</a>",
+        "AssetVolume": "2.800",
+        "AssetRate": "0,03",
+        "UpdatedDate": "30/06/2026"
+      },
+      {
+        "Code": "CEO_53605",
+        "Name": "Đỗ Thanh Hải",
+        "Url": "<a href='/du-lieu/ceo/CEO_53605/do-thanh-hai.chn'>Đỗ Thanh Hải</a>",
+        "AssetVolume": "8.400",
+        "AssetRate": "0,08",
+        "UpdatedDate": "30/06/2026"
+      },
+      {
+        "Code": "CEO_53612",
+        "Name": "Nguyễn Huy Hùng",
+        "Url": "<a href='/du-lieu/ceo/CEO_53612/nguyen-huy-hung.chn'>Nguyễn Huy Hùng</a>",
+        "AssetVolume": "14.000",
+        "AssetRate": "0,13",
+        "UpdatedDate": "30/06/2026"
+      },
+      {
+        "Code": "CEO_53608",
+        "Name": "Lê Thị Kim Thanh",
+        "Url": "<a href='/du-lieu/ceo/CEO_53608/le-thi-kim-thanh.chn'>Lê Thị Kim Thanh</a>",
+        "AssetVolume": "42.000",
+        "AssetRate": "0,38",
+        "UpdatedDate": "30/06/2026"
+      },
+      {
+        "Code": "CEO_53610",
+        "Name": "Bùi Thị Thúy Ngọc",
+        "Url": "<a href='/du-lieu/ceo/CEO_53610/bui-thi-thuy-ngoc.chn'>Bùi Thị Thúy Ngọc</a>",
+        "AssetVolume": "9.200",
+        "AssetRate": "0,08",
+        "UpdatedDate": "30/06/2026"
+      },
+      {
+        "Code": "CEO_53607",
+        "Name": "Nguyễn Văn Khánh",
+        "Url": "<a href='/du-lieu/ceo/CEO_53607/nguyen-van-khanh.chn'>Nguyễn Văn Khánh</a>",
+        "AssetVolume": "20.600",
+        "AssetRate": "0,18",
+        "UpdatedDate": "30/06/2026"
+      },
+      {
+        "Code": "CEO_53611",
+        "Name": "Ninh Duy Giang",
+        "Url": "<a href='/du-lieu/ceo/CEO_53611/ninh-duy-giang.chn'>Ninh Duy Giang</a>",
+        "AssetVolume": "5.600",
+        "AssetRate": "0,05",
+        "UpdatedDate": "30/06/2026"
+      }
+    ],
+    "NuocNgoai": 11168646.15,
+    "NhaNuoc": 0,
+    "Khac": -11168546.15
+  },
+  "cong_ty_con": [],
+  "cong_ty_lien_ket": [
+    {
+      "Symbol": "VPW",
+      "CorpCode": "CORP_51320",
+      "Name": "CTCP Đầu tư Xây dựng cấp nước Vĩnh Phúc",
+      "TotalCapital": 45,
+      "SharedCapital": 19,
+      "OwnershipRate": 42.22,
+      "Note": "",
+      "Order": 1,
+      "TradeCenter": ""
+    },
+    {
+      "Symbol": "VPW",
+      "CorpCode": "CORP_51319",
+      "Name": "CTCP Đầu tư Xây dựng cấp thoát nước",
+      "TotalCapital": 3,
+      "SharedCapital": 0.55,
+      "OwnershipRate": 18.33,
+      "Note": "",
+      "Order": 2,
+      "TradeCenter": ""
+    }
+  ],
+  "giao_dich_noi_bo": [
+    {
+      "transaction_name": "Lê Thị Kim Thanh",
+      "transaction_position": "Phó Tổng GĐ",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 25400,
+      "plan_buy": 21600,
+      "plan_sell": 0,
+      "plan_begin_date": "2023-06-08",
+      "plan_end_date": "2023-07-07",
+      "real_buy": 16600,
+      "real_sell": 0,
+      "real_end_date": "2023-07-07",
+      "published_date": "2023-06-07",
+      "volume_after": 42000
+    },
+    {
+      "transaction_name": "Nguyễn Văn Khánh",
+      "transaction_position": "Phó Chủ tịch HĐQT",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 15000,
+      "plan_buy": 9200,
+      "plan_sell": 0,
+      "plan_begin_date": "2022-01-21",
+      "plan_end_date": "2022-02-18",
+      "real_buy": 5600,
+      "real_sell": 0,
+      "real_end_date": "2022-02-18",
+      "published_date": "2022-01-24",
+      "volume_after": 20600
+    },
+    {
+      "transaction_name": "Lê Thị Kim Thanh",
+      "transaction_position": "Phó Tổng GĐ",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 14400,
+      "plan_buy": 11000,
+      "plan_sell": 0,
+      "plan_begin_date": "2022-01-21",
+      "plan_end_date": "2022-02-18",
+      "real_buy": 11000,
+      "real_sell": 0,
+      "real_end_date": "2022-01-21",
+      "published_date": "2022-01-24",
+      "volume_after": 25400
+    }
+  ]
+}

@@ -1,0 +1,135 @@
+{
+  "symbol": "PSL",
+  "updated": "2026-08-01T05:50:35.000Z",
+  "co_cau_so_huu": {
+    "CoDongSoHuu": [
+      {
+        "Code": "CEO_58417",
+        "Name": "Vũ Quang Tiến",
+        "Url": "<a href='/du-lieu/ceo/CEO_58417/vu-quang-tien.chn'>Vũ Quang Tiến</a>",
+        "AssetVolume": "4.000",
+        "AssetRate": "0,03",
+        "UpdatedDate": "19/08/2025"
+      },
+      {
+        "Code": "CEO_38872",
+        "Name": "Vương Thị Kim Được",
+        "Url": "<a href='/du-lieu/ceo/CEO_38872/vuong-thi-kim-duoc.chn'>Vương Thị Kim Được</a>",
+        "AssetVolume": "15.001",
+        "AssetRate": "0,13",
+        "UpdatedDate": "19/08/2025"
+      },
+      {
+        "Code": "DOFICO",
+        "Name": "Tổng Công ty Công nghiệp Thực phẩm Đồng Nai",
+        "Url": "<a href='/du-lieu/otc/DOFICO-tong-cong-ty-cong-nghiep-thuc-pham-dong-nai.chn' title='Tổng Công ty Công nghiệp Thực phẩm Đồng Nai'>Tổng Công ty Công nghiệp Thực phẩm Đồng Nai</a>",
+        "AssetVolume": "8.688.981",
+        "AssetRate": "73,56",
+        "UpdatedDate": "19/08/2025"
+      },
+      {
+        "Code": "CEO_38109",
+        "Name": "Đỗ Văn Trong",
+        "Url": "<a href='/du-lieu/ceo/CEO_38109/do-van-trong.chn'>Đỗ Văn Trong</a>",
+        "AssetVolume": "14.017",
+        "AssetRate": "0,12",
+        "UpdatedDate": "19/08/2025"
+      },
+      {
+        "Code": "CEO_08210",
+        "Name": "Nguyễn Văn Khâm",
+        "Url": "<a href='/du-lieu/ceo/CEO_08210/nguyen-van-kham.chn'>Nguyễn Văn Khâm</a>",
+        "AssetVolume": "36.847",
+        "AssetRate": "0,31",
+        "UpdatedDate": "19/08/2025"
+      }
+    ],
+    "NuocNgoai": 0.1,
+    "NhaNuoc": 0,
+    "Khac": 99.9
+  },
+  "cong_ty_con": [],
+  "cong_ty_lien_ket": [],
+  "giao_dich_noi_bo": [
+    {
+      "transaction_name": "Nguyễn Văn Khâm",
+      "transaction_position": "Thành viên BKS",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 81547,
+      "plan_buy": 0,
+      "plan_sell": 70000,
+      "plan_begin_date": "2020-11-08",
+      "plan_end_date": "2020-12-07",
+      "real_buy": 0,
+      "real_sell": 70000,
+      "real_end_date": "2020-12-08",
+      "published_date": "2020-11-04",
+      "volume_after": 36847
+    },
+    {
+      "transaction_name": "Nguyễn Văn Khâm",
+      "transaction_position": "Thành viên BKS",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 109247,
+      "plan_buy": 0,
+      "plan_sell": 100000,
+      "plan_begin_date": "2020-10-01",
+      "plan_end_date": "2020-10-29",
+      "real_buy": 0,
+      "real_sell": 27700,
+      "real_end_date": "2020-11-01",
+      "published_date": "2020-09-29",
+      "volume_after": 81547
+    },
+    {
+      "transaction_name": "Nguyễn Văn Khâm",
+      "transaction_position": "Thành viên BKS",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 258647,
+      "plan_buy": 0,
+      "plan_sell": 150000,
+      "plan_begin_date": "2020-08-23",
+      "plan_end_date": "2020-09-21",
+      "real_buy": 0,
+      "real_sell": 148400,
+      "real_end_date": "2020-09-23",
+      "published_date": "2020-08-20",
+      "volume_after": 109247
+    },
+    {
+      "transaction_name": "Nguyễn Văn Khâm",
+      "transaction_position": "Thành viên BKS",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 308647,
+      "plan_buy": 0,
+      "plan_sell": 50000,
+      "plan_begin_date": "2020-07-20",
+      "plan_end_date": "2020-08-18",
+      "real_buy": 0,
+      "real_sell": 50000,
+      "real_end_date": "2020-08-13",
+      "published_date": "2020-07-21",
+      "volume_after": 258647
+    },
+    {
+      "transaction_name": "Nguyễn Văn Khâm",
+      "transaction_position": "Thành viên BKS",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 176670,
+      "plan_buy": 0,
+      "plan_sell": 135000,
+      "plan_begin_date": "2018-01-02",
+      "plan_end_date": "2018-01-31",
+      "real_buy": 0,
+      "real_sell": 0,
+      "real_end_date": "",
+      "published_date": "2017-12-28",
+      "volume_after": 0
+    }
+  ]
+}

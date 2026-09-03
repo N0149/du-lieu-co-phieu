@@ -1,0 +1,164 @@
+{
+  "symbol": "DTK",
+  "updated": "2026-06-01T07:04:37.000Z",
+  "co_cau_so_huu": {
+    "CoDongSoHuu": [
+      {
+        "Code": "CEO_37184",
+        "Name": "Phạm Xuân Phong",
+        "Url": "<a href='/du-lieu/ceo/CEO_37184/pham-xuan-phong.chn'>Phạm Xuân Phong</a>",
+        "AssetVolume": "21.800",
+        "AssetRate": "0,0",
+        "UpdatedDate": "28/05/2026"
+      },
+      {
+        "Code": "CEO_99173",
+        "Name": "Bùi Thu Thái",
+        "Url": "<a href='/du-lieu/ceo/CEO_99173/bui-thu-thai.chn'>Bùi Thu Thái</a>",
+        "AssetVolume": "2.700",
+        "AssetRate": "0,0",
+        "UpdatedDate": "28/05/2026"
+      },
+      {
+        "Code": "VINACOMIN",
+        "Name": "Tập đoàn Công nghiệp Than - Khoáng sản Việt Nam",
+        "Url": "<a href='/du-lieu/otc/VINACOMIN-tap-doan-cong-nghiep-than-khoang-san-viet-nam.chn' title='Tập đoàn Công nghiệp Than - Khoáng sản Việt Nam'>Tập đoàn Công nghiệp Than - Khoáng sản Việt Nam</a>",
+        "AssetVolume": "677.808.500",
+        "AssetRate": "99,27",
+        "UpdatedDate": "28/05/2026"
+      },
+      {
+        "Code": "CEO_84777",
+        "Name": "Bùi Thị Tố Uyên",
+        "Url": "<a href='/du-lieu/ceo/CEO_84777/bui-thi-to-uyen.chn'>Bùi Thị Tố Uyên</a>",
+        "AssetVolume": "1.400",
+        "AssetRate": "0,0",
+        "UpdatedDate": "28/05/2026"
+      },
+      {
+        "Code": "CEO_99175",
+        "Name": "Bùi Minh Tân",
+        "Url": "<a href='/du-lieu/ceo/CEO_99175/bui-minh-tan.chn'>Bùi Minh Tân</a>",
+        "AssetVolume": "10.800",
+        "AssetRate": "0,0",
+        "UpdatedDate": "28/05/2026"
+      },
+      {
+        "Code": "CEO_37188",
+        "Name": "Nguyễn Thị Hà",
+        "Url": "<a href='/du-lieu/ceo/CEO_37188/nguyen-thi-ha.chn'>Nguyễn Thị Hà</a>",
+        "AssetVolume": "5.400",
+        "AssetRate": "0,0",
+        "UpdatedDate": "28/05/2026"
+      },
+      {
+        "Code": "CEO_66419",
+        "Name": "Nguyễn Trung Thực",
+        "Url": "<a href='/du-lieu/ceo/CEO_66419/nguyen-trung-thuc.chn'>Nguyễn Trung Thực</a>",
+        "AssetVolume": "7.900",
+        "AssetRate": "0,0",
+        "UpdatedDate": "28/05/2026"
+      },
+      {
+        "Code": "CEO_66420",
+        "Name": "Nguyễn Đức Thảo",
+        "Url": "<a href='/du-lieu/ceo/CEO_66420/nguyen-duc-thao.chn'>Nguyễn Đức Thảo</a>",
+        "AssetVolume": "10.000",
+        "AssetRate": "0,0",
+        "UpdatedDate": "28/05/2026"
+      },
+      {
+        "Code": "CEO_39961",
+        "Name": "Nguyễn Trọng Hùng",
+        "Url": "<a href='/du-lieu/ceo/CEO_39961/nguyen-trong-hung.chn'>Nguyễn Trọng Hùng</a>",
+        "AssetVolume": "10.000",
+        "AssetRate": "0,0",
+        "UpdatedDate": "28/05/2026"
+      },
+      {
+        "Code": "CEO_99169",
+        "Name": "Nguyễn Đức Pha",
+        "Url": "<a href='/du-lieu/ceo/CEO_99169/nguyen-duc-pha.chn'>Nguyễn Đức Pha</a>",
+        "AssetVolume": "10.800",
+        "AssetRate": "0,0",
+        "UpdatedDate": "28/05/2026"
+      },
+      {
+        "Code": "CEO_66421",
+        "Name": "Lê Ngọc Nam",
+        "Url": "<a href='/du-lieu/ceo/CEO_66421/le-ngoc-nam.chn'>Lê Ngọc Nam</a>",
+        "AssetVolume": "12.300",
+        "AssetRate": "0,0",
+        "UpdatedDate": "28/05/2026"
+      },
+      {
+        "Code": "CEO_99171",
+        "Name": "Hoàng Phó Hiềng",
+        "Url": "<a href='/du-lieu/ceo/CEO_99171/hoang-pho-hieng.chn'>Hoàng Phó Hiềng</a>",
+        "AssetVolume": "23.200",
+        "AssetRate": "0,0",
+        "UpdatedDate": "28/05/2026"
+      },
+      {
+        "Code": "CEO_99170",
+        "Name": "Ngô Trí Thịnh",
+        "Url": "<a href='/du-lieu/ceo/CEO_99170/ngo-tri-thinh.chn'>Ngô Trí Thịnh</a>",
+        "AssetVolume": "36.200",
+        "AssetRate": "0,01",
+        "UpdatedDate": "28/05/2026"
+      }
+    ],
+    "NuocNgoai": 0.01,
+    "NhaNuoc": 0,
+    "Khac": 99.99
+  },
+  "cong_ty_con": [
+    {
+      "Symbol": "DTK",
+      "CorpCode": "CORP_99710",
+      "Name": "CTCP Than - Điện Nông Sơn",
+      "TotalCapital": 140,
+      "SharedCapital": 124.28,
+      "OwnershipRate": 88.77,
+      "Note": "",
+      "Order": 1,
+      "TradeCenter": ""
+    }
+  ],
+  "cong_ty_lien_ket": [
+    {
+      "Symbol": "DTK",
+      "CorpCode": "QTP",
+      "Name": "Công ty Cổ phần Nhiệt điện Quảng Ninh",
+      "TotalCapital": 4500,
+      "SharedCapital": 477.841,
+      "OwnershipRate": 10.62,
+      "Note": "",
+      "Order": 2,
+      "TradeCenter": "UpCOM"
+    },
+    {
+      "Symbol": "DTK",
+      "CorpCode": "CORP_99712",
+      "Name": "CTCP Nhiệt điện Hải Phòng",
+      "TotalCapital": 5000,
+      "SharedCapital": 360.5,
+      "OwnershipRate": 7.21,
+      "Note": "",
+      "Order": 3,
+      "TradeCenter": ""
+    },
+    {
+      "Symbol": "DTK",
+      "CorpCode": "CORP_99713",
+      "Name": "Công ty TNHH MTV Điện lực Vĩnh Tân 1",
+      "TotalCapital": 351014400,
+      "SharedCapital": 17550720,
+      "OwnershipRate": 5,
+      "Note": "Đơn vị: USD",
+      "Order": 4,
+      "TradeCenter": ""
+    }
+  ],
+  "giao_dich_noi_bo": []
+}

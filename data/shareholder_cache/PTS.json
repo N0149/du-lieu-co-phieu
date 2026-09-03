@@ -1,0 +1,179 @@
+{
+  "symbol": "PTS",
+  "updated": "2026-03-22T03:20:55.000Z",
+  "co_cau_so_huu": {
+    "CoDongSoHuu": [
+      {
+        "Code": "CEO_02741",
+        "Name": "Đào Thanh Liêm",
+        "Url": "<a href='/du-lieu/ceo/CEO_02741/dao-thanh-liem.chn'>Đào Thanh Liêm</a>",
+        "AssetVolume": "20.000",
+        "AssetRate": "0,36",
+        "UpdatedDate": "09/06/2025"
+      },
+      {
+        "Code": "CEO_07934",
+        "Name": "Nguyễn Trọng Thủy",
+        "Url": "<a href='/du-lieu/ceo/CEO_07934/nguyen-trong-thuy.chn'>Nguyễn Trọng Thủy</a>",
+        "AssetVolume": "12.456",
+        "AssetRate": "0,22",
+        "UpdatedDate": "09/06/2025"
+      },
+      {
+        "Code": "CEO_70671",
+        "Name": "Đào Mạnh Kiên",
+        "Url": "<a href='/du-lieu/ceo/CEO_70671/dao-manh-kien.chn'>Đào Mạnh Kiên</a>",
+        "AssetVolume": "10.000",
+        "AssetRate": "0,18",
+        "UpdatedDate": "09/06/2025"
+      },
+      {
+        "Code": "CEO_72071",
+        "Name": "Phạm Thị Ngọc Anh",
+        "Url": "<a href='/du-lieu/ceo/CEO_72071/pham-thi-ngoc-anh.chn'>Phạm Thị Ngọc Anh</a>",
+        "AssetVolume": "19.748",
+        "AssetRate": "0,35",
+        "UpdatedDate": "09/06/2025"
+      },
+      {
+        "Code": "CEO_83355",
+        "Name": "Phạm Kim Anh",
+        "Url": "<a href='/du-lieu/ceo/CEO_83355/pham-kim-anh.chn'>Phạm Kim Anh</a>",
+        "AssetVolume": "3.164",
+        "AssetRate": "0,06",
+        "UpdatedDate": "09/06/2025"
+      },
+      {
+        "Code": "CEO_29252",
+        "Name": "Đỗ Thị Thúy",
+        "Url": "<a href='/du-lieu/ceo/CEO_29252/do-thi-thuy.chn'>Đỗ Thị Thúy</a>",
+        "AssetVolume": "475",
+        "AssetRate": "0,01",
+        "UpdatedDate": "09/06/2025"
+      },
+      {
+        "Code": "CEO_65425",
+        "Name": "Trịnh Chiến Chinh",
+        "Url": "<a href='/du-lieu/ceo/CEO_65425/trinh-chien-chinh.chn'>Trịnh Chiến Chinh</a>",
+        "AssetVolume": "700",
+        "AssetRate": "0,01",
+        "UpdatedDate": "09/06/2025"
+      },
+      {
+        "Code": "CORP_60152",
+        "Name": "Tổng Công ty Vận tải thủy Petrolimex-Công ty TNHH MTV",
+        "Url": "Tổng Công ty Vận tải thủy Petrolimex-Công ty TNHH MTV",
+        "AssetVolume": "2.839.680",
+        "AssetRate": "51,0",
+        "UpdatedDate": "09/06/2025"
+      },
+      {
+        "Code": "CEO_06621",
+        "Name": "Nguyễn Minh Khiêm",
+        "Url": "<a href='/du-lieu/ceo/CEO_06621/nguyen-minh-khiem.chn'>Nguyễn Minh Khiêm</a>",
+        "AssetVolume": "1.741",
+        "AssetRate": "0,03",
+        "UpdatedDate": "09/06/2025"
+      }
+    ],
+    "NuocNgoai": 7.67,
+    "NhaNuoc": 0,
+    "Khac": 92.33
+  },
+  "cong_ty_con": [
+    {
+      "Symbol": "PTS",
+      "CorpCode": "CORP_93178",
+      "Name": "Công ty TNHH Đóng tàu PTS Hải Phòng",
+      "TotalCapital": 5,
+      "SharedCapital": 5,
+      "OwnershipRate": 100,
+      "Note": "",
+      "Order": 1,
+      "TradeCenter": ""
+    }
+  ],
+  "cong_ty_lien_ket": [],
+  "giao_dich_noi_bo": [
+    {
+      "transaction_name": "Nguyễn Minh Khiêm",
+      "transaction_position": "Thành viên BKS",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 11741,
+      "plan_buy": 0,
+      "plan_sell": 10000,
+      "plan_begin_date": "2021-10-10",
+      "plan_end_date": "2021-11-03",
+      "real_buy": 0,
+      "real_sell": 10000,
+      "real_end_date": "2021-10-27",
+      "published_date": "2021-10-07",
+      "volume_after": 1741
+    },
+    {
+      "transaction_name": "Nguyễn Thị Thu Hạnh",
+      "transaction_position": "Vợ",
+      "leader_name": "Đào Thanh Liêm",
+      "leader_position": "TV. HĐQT",
+      "volume_before": 4610,
+      "plan_buy": 0,
+      "plan_sell": 4610,
+      "plan_begin_date": "2010-07-01",
+      "plan_end_date": "2010-08-30",
+      "real_buy": 0,
+      "real_sell": 4600,
+      "real_end_date": "2010-08-30",
+      "published_date": "2010-09-10",
+      "volume_after": 10
+    },
+    {
+      "transaction_name": "Phạm Mai Anh",
+      "transaction_position": "Chị",
+      "leader_name": "Phạm Thị Ngọc Anh",
+      "leader_position": "Kế toán trưởng",
+      "volume_before": 0,
+      "plan_buy": 0,
+      "plan_sell": 0,
+      "plan_begin_date": "",
+      "plan_end_date": "",
+      "real_buy": 3000,
+      "real_sell": 0,
+      "real_end_date": "2009-05-14",
+      "published_date": "2009-05-31",
+      "volume_after": 3000
+    },
+    {
+      "transaction_name": "Nguyễn Minh Khiêm",
+      "transaction_position": "TV.BKS",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 7540,
+      "plan_buy": 0,
+      "plan_sell": 0,
+      "plan_begin_date": "",
+      "plan_end_date": "",
+      "real_buy": 0,
+      "real_sell": 1000,
+      "real_end_date": "2009-11-30",
+      "published_date": "2009-02-02",
+      "volume_after": 6540
+    },
+    {
+      "transaction_name": "Phạm Mai Anh",
+      "transaction_position": "",
+      "leader_name": "Phạm Thị Ngọc Anh",
+      "leader_position": "Kế toán trưởng",
+      "volume_before": 11900,
+      "plan_buy": 0,
+      "plan_sell": 11900,
+      "plan_begin_date": "2008-07-31",
+      "plan_end_date": "2008-08-28",
+      "real_buy": 0,
+      "real_sell": 11900,
+      "real_end_date": "2008-08-28",
+      "published_date": "2008-09-10",
+      "volume_after": 0
+    }
+  ]
+}

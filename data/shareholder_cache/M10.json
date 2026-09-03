@@ -1,0 +1,419 @@
+{
+  "symbol": "M10",
+  "updated": "2026-08-01T05:44:31.000Z",
+  "co_cau_so_huu": {
+    "CoDongSoHuu": [
+      {
+        "Code": "CEO_876412",
+        "Name": "Trần Thanh Bình",
+        "Url": "<a href='/du-lieu/ceo/CEO_876412/tran-thanh-binh.chn'>Trần Thanh Bình</a>",
+        "AssetVolume": "39.517",
+        "AssetRate": "0,12",
+        "UpdatedDate": "18/06/2026"
+      },
+      {
+        "Code": "CEO_39412",
+        "Name": "Nguyễn Thiên Lý",
+        "Url": "<a href='/du-lieu/ceo/CEO_39412/nguyen-thien-ly.chn'>Nguyễn Thiên Lý</a>",
+        "AssetVolume": "1.104.640",
+        "AssetRate": "3,48",
+        "UpdatedDate": "18/06/2026"
+      },
+      {
+        "Code": "CEO_73252",
+        "Name": "Nguyễn Thị Phương Thảo",
+        "Url": "<a href='/du-lieu/ceo/CEO_73252/nguyen-thi-phuong-thao.chn'>Nguyễn Thị Phương Thảo</a>",
+        "AssetVolume": "62.487",
+        "AssetRate": "0,2",
+        "UpdatedDate": "18/06/2026"
+      },
+      {
+        "Code": "KLQ_61098",
+        "Name": "Nguyễn Thị Thanh Huyền",
+        "Url": "Nguyễn Thị Thanh Huyền",
+        "AssetVolume": "986.700",
+        "AssetRate": "3,11",
+        "UpdatedDate": "18/06/2026"
+      },
+      {
+        "Code": "CEO_73250",
+        "Name": "Hà Mạnh",
+        "Url": "<a href='/du-lieu/ceo/CEO_73250/ha-manh.chn'>Hà Mạnh</a>",
+        "AssetVolume": "84.153",
+        "AssetRate": "0,27",
+        "UpdatedDate": "18/06/2026"
+      },
+      {
+        "Code": "CEO_39413",
+        "Name": "Thân Đức Việt",
+        "Url": "<a href='/du-lieu/ceo/CEO_39413/than-duc-viet.chn'>Thân Đức Việt</a>",
+        "AssetVolume": "664.240",
+        "AssetRate": "2,09",
+        "UpdatedDate": "18/06/2026"
+      },
+      {
+        "Code": "LQ_96709",
+        "Name": "Nguyễn Văn Thành",
+        "Url": "Nguyễn Văn Thành (Chồng của bà <a href='/du-lieu/ceo/CEO_54057/pham-bich-hong.chn'>Phạm Bích Hồng</a>)",
+        "AssetVolume": "373.606",
+        "AssetRate": "1,18",
+        "UpdatedDate": "18/06/2026"
+      },
+      {
+        "Code": "CEO_54054",
+        "Name": "Nguyễn Thị Thu Hà",
+        "Url": "<a href='/du-lieu/ceo/CEO_54054/nguyen-thi-thu-ha.chn'>Nguyễn Thị Thu Hà</a>",
+        "AssetVolume": "18.364",
+        "AssetRate": "0,06",
+        "UpdatedDate": "18/06/2026"
+      },
+      {
+        "Code": "CEO_54057",
+        "Name": "Phạm Bích Hồng",
+        "Url": "<a href='/du-lieu/ceo/CEO_54057/pham-bich-hong.chn'>Phạm Bích Hồng</a>",
+        "AssetVolume": "909.680",
+        "AssetRate": "2,87",
+        "UpdatedDate": "18/06/2026"
+      },
+      {
+        "Code": "CEO_39415",
+        "Name": "Bạch Thăng Long",
+        "Url": "<a href='/du-lieu/ceo/CEO_39415/bach-thang-long.chn'>Bạch Thăng Long</a>",
+        "AssetVolume": "373.584",
+        "AssetRate": "1,18",
+        "UpdatedDate": "18/06/2026"
+      },
+      {
+        "Code": "CEO_39414",
+        "Name": "Phạm Duy Hạnh",
+        "Url": "<a href='/du-lieu/ceo/CEO_39414/pham-duy-hanh.chn'>Phạm Duy Hạnh</a>",
+        "AssetVolume": "48.000",
+        "AssetRate": "0,15",
+        "UpdatedDate": "18/06/2026"
+      },
+      {
+        "Code": "CEO_39411",
+        "Name": "Nguyễn Thị Thanh Huyền",
+        "Url": "<a href='/du-lieu/ceo/CEO_39411/nguyen-thi-thanh-huyen.chn'>Nguyễn Thị Thanh Huyền</a>",
+        "AssetVolume": "1.733.600",
+        "AssetRate": "5,46",
+        "UpdatedDate": "18/06/2026"
+      },
+      {
+        "Code": "CEO_00375",
+        "Name": "Vũ Đức Giang",
+        "Url": "<a href='/du-lieu/ceo/CEO_00375/vu-duc-giang.chn'>Vũ Đức Giang</a>",
+        "AssetVolume": "1.509.296",
+        "AssetRate": "4,75",
+        "UpdatedDate": "18/06/2026"
+      },
+      {
+        "Code": "CEO_54055",
+        "Name": "Bùi Thị Tuyết",
+        "Url": "<a href='/du-lieu/ceo/CEO_54055/bui-thi-tuyet.chn'>Bùi Thị Tuyết</a>",
+        "AssetVolume": "139.750",
+        "AssetRate": "0,44",
+        "UpdatedDate": "18/06/2026"
+      },
+      {
+        "Code": "CEO_56304",
+        "Name": "Tạ Thu Hà",
+        "Url": "<a href='/du-lieu/ceo/CEO_56304/ta-thu-ha.chn'>Tạ Thu Hà</a>",
+        "AssetVolume": "42.012",
+        "AssetRate": "0,13",
+        "UpdatedDate": "18/06/2026"
+      },
+      {
+        "Code": "CEO_37967",
+        "Name": "Nguyễn Ánh Dương",
+        "Url": "<a href='/du-lieu/ceo/CEO_37967/nguyen-anh-duong.chn'>Nguyễn Ánh Dương</a>",
+        "AssetVolume": "207.680",
+        "AssetRate": "0,65",
+        "UpdatedDate": "18/06/2026"
+      },
+      {
+        "Code": "CEO_39416",
+        "Name": "Trần Trọng Kim",
+        "Url": "<a href='/du-lieu/ceo/CEO_39416/tran-trong-kim.chn'>Trần Trọng Kim</a>",
+        "AssetVolume": "283.952",
+        "AssetRate": "0,89",
+        "UpdatedDate": "18/06/2026"
+      },
+      {
+        "Code": "LQ_96699",
+        "Name": "Đỗ Hương Quỳnh",
+        "Url": "Đỗ Hương Quỳnh (Con của bà <a href='/du-lieu/ceo/CEO_39412/nguyen-thien-ly.chn'>Nguyễn Thiên Lý</a>)",
+        "AssetVolume": "636.579",
+        "AssetRate": "2,0",
+        "UpdatedDate": "18/06/2026"
+      },
+      {
+        "Code": "VGT",
+        "Name": "Tổng Công ty May 10 - Công ty cổ phần",
+        "Url": "<a href='/du-lieu/upcom/VGT-tap-doan-det-may-viet-nam.chn' title='Tập đoàn Dệt may Việt Nam'>Tập đoàn Dệt may Việt Nam</a>",
+        "AssetVolume": "10.227.398",
+        "AssetRate": "32,21",
+        "UpdatedDate": "18/06/2026"
+      },
+      {
+        "Code": "CEO_54058",
+        "Name": "Hoàng Thế Nhu",
+        "Url": "<a href='/du-lieu/ceo/CEO_54058/hoang-the-nhu.chn'>Hoàng Thế Nhu</a>",
+        "AssetVolume": "178.640",
+        "AssetRate": "0,56",
+        "UpdatedDate": "18/06/2026"
+      },
+      {
+        "Code": "CEO_57668",
+        "Name": "Vũ Hoàng Hà",
+        "Url": "<a href='/du-lieu/ceo/CEO_57668/vu-hoang-ha.chn'>Vũ Hoàng Hà</a>",
+        "AssetVolume": "132.737",
+        "AssetRate": "0,42",
+        "UpdatedDate": "18/06/2026"
+      }
+    ],
+    "NuocNgoai": 49.00039537356055,
+    "NhaNuoc": 0,
+    "Khac": 50.99960462643945
+  },
+  "cong_ty_con": [
+    {
+      "Symbol": "M10",
+      "CorpCode": "CORP_51393",
+      "Name": "Công ty TNHH May Phù Đổng",
+      "TotalCapital": 1.799,
+      "SharedCapital": 1.1,
+      "OwnershipRate": 60.97,
+      "Note": "",
+      "Order": 1,
+      "TradeCenter": ""
+    }
+  ],
+  "cong_ty_lien_ket": [],
+  "giao_dich_noi_bo": [
+    {
+      "transaction_name": "Tạ Thu Hà",
+      "transaction_position": "Thành viên BKS",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 26012,
+      "plan_buy": 16000,
+      "plan_sell": 0,
+      "plan_begin_date": "2023-08-25",
+      "plan_end_date": "2023-09-05",
+      "real_buy": 16000,
+      "real_sell": 0,
+      "real_end_date": "2023-08-31",
+      "published_date": "2023-09-07",
+      "volume_after": 42012
+    },
+    {
+      "transaction_name": "Phạm Bích Hồng",
+      "transaction_position": "Kế toán trưởng",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 871680,
+      "plan_buy": 38000,
+      "plan_sell": 0,
+      "plan_begin_date": "2023-08-25",
+      "plan_end_date": "2023-09-05",
+      "real_buy": 38000,
+      "real_sell": 0,
+      "real_end_date": "2023-08-31",
+      "published_date": "2023-09-07",
+      "volume_after": 909680
+    },
+    {
+      "transaction_name": "Lê Quang Hưng",
+      "transaction_position": "Chồng",
+      "leader_name": "Tạ Thu Hà",
+      "leader_position": "Thành viên BKS",
+      "volume_before": 15129,
+      "plan_buy": 4000,
+      "plan_sell": 0,
+      "plan_begin_date": "2023-08-25",
+      "plan_end_date": "2023-09-05",
+      "real_buy": 4000,
+      "real_sell": 0,
+      "real_end_date": "2023-08-31",
+      "published_date": "2023-09-07",
+      "volume_after": 19129
+    },
+    {
+      "transaction_name": "Hoàng Thế Nhu",
+      "transaction_position": "Giám đốc Điều hành",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 140640,
+      "plan_buy": 38000,
+      "plan_sell": 0,
+      "plan_begin_date": "2023-08-25",
+      "plan_end_date": "2023-09-05",
+      "real_buy": 38000,
+      "real_sell": 0,
+      "real_end_date": "2023-08-31",
+      "published_date": "2023-09-07",
+      "volume_after": 178640
+    },
+    {
+      "transaction_name": "Vũ Hoàng Hà",
+      "transaction_position": "Người được ủy quyền công bố thông tin",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 123737,
+      "plan_buy": 9000,
+      "plan_sell": 0,
+      "plan_begin_date": "2023-08-25",
+      "plan_end_date": "2023-09-05",
+      "real_buy": 9000,
+      "real_sell": 0,
+      "real_end_date": "2023-08-31",
+      "published_date": "2023-09-07",
+      "volume_after": 132737
+    },
+    {
+      "transaction_name": "Nguyễn Thị Phương Thảo",
+      "transaction_position": "Giám đốc Điều hành",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 24487,
+      "plan_buy": 38000,
+      "plan_sell": 0,
+      "plan_begin_date": "2023-08-25",
+      "plan_end_date": "2023-09-05",
+      "real_buy": 38000,
+      "real_sell": 0,
+      "real_end_date": "2023-08-31",
+      "published_date": "2023-09-07",
+      "volume_after": 62487
+    },
+    {
+      "transaction_name": "Bạch Ngọc Lân",
+      "transaction_position": "Em",
+      "leader_name": "Bạch Thăng Long",
+      "leader_position": "Thành viên HĐQT",
+      "volume_before": 1209,
+      "plan_buy": 9000,
+      "plan_sell": 0,
+      "plan_begin_date": "2023-08-25",
+      "plan_end_date": "2023-09-05",
+      "real_buy": 9000,
+      "real_sell": 0,
+      "real_end_date": "2023-08-30",
+      "published_date": "2023-09-07",
+      "volume_after": 10209
+    },
+    {
+      "transaction_name": "Nguyễn Thị Thu Hà",
+      "transaction_position": "Vợ",
+      "leader_name": "Hoàng Thế Nhu",
+      "leader_position": "Giám đốc Điều hành",
+      "volume_before": 18364,
+      "plan_buy": 7000,
+      "plan_sell": 0,
+      "plan_begin_date": "2023-08-25",
+      "plan_end_date": "2023-09-05",
+      "real_buy": 7000,
+      "real_sell": 0,
+      "real_end_date": "2023-08-30",
+      "published_date": "2023-09-07",
+      "volume_after": 25364
+    },
+    {
+      "transaction_name": "Bạch Thăng Long",
+      "transaction_position": "Thành viên HĐQT",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 335584,
+      "plan_buy": 38000,
+      "plan_sell": 0,
+      "plan_begin_date": "2023-08-25",
+      "plan_end_date": "2023-09-05",
+      "real_buy": 38000,
+      "real_sell": 0,
+      "real_end_date": "2023-08-30",
+      "published_date": "2023-09-07",
+      "volume_after": 373584
+    },
+    {
+      "transaction_name": "Hà Mạnh",
+      "transaction_position": "Giám đốc Điều hành",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 46153,
+      "plan_buy": 38000,
+      "plan_sell": 0,
+      "plan_begin_date": "2023-08-25",
+      "plan_end_date": "2023-09-05",
+      "real_buy": 38000,
+      "real_sell": 0,
+      "real_end_date": "2023-08-30",
+      "published_date": "2023-09-07",
+      "volume_after": 84153
+    },
+    {
+      "transaction_name": "Nguyễn Ánh Dương",
+      "transaction_position": "Phó Tổng GĐ",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 169680,
+      "plan_buy": 38000,
+      "plan_sell": 0,
+      "plan_begin_date": "2023-08-25",
+      "plan_end_date": "2023-09-05",
+      "real_buy": 38000,
+      "real_sell": 0,
+      "real_end_date": "2023-08-29",
+      "published_date": "2023-09-07",
+      "volume_after": 207680
+    },
+    {
+      "transaction_name": "Thân Đức Việt",
+      "transaction_position": "Tổng Giám đốc",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 622240,
+      "plan_buy": 42000,
+      "plan_sell": 0,
+      "plan_begin_date": "2023-08-25",
+      "plan_end_date": "2023-09-05",
+      "real_buy": 42000,
+      "real_sell": 0,
+      "real_end_date": "2023-08-28",
+      "published_date": "2023-09-07",
+      "volume_after": 664240
+    },
+    {
+      "transaction_name": "Nguyễn Thị Bích Thủy",
+      "transaction_position": "Thành viên HĐQT",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 38000,
+      "plan_buy": 38000,
+      "plan_sell": 0,
+      "plan_begin_date": "2023-08-25",
+      "plan_end_date": "2023-09-05",
+      "real_buy": 38000,
+      "real_sell": 0,
+      "real_end_date": "2023-08-28",
+      "published_date": "2023-09-07",
+      "volume_after": 156441
+    },
+    {
+      "transaction_name": "Nguyễn Thị Thanh Huyền",
+      "transaction_position": "",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 1515900,
+      "plan_buy": 0,
+      "plan_sell": 0,
+      "plan_begin_date": "",
+      "plan_end_date": "",
+      "real_buy": 0,
+      "real_sell": 529200,
+      "real_end_date": "2022-10-06",
+      "published_date": "2022-10-12",
+      "volume_after": 986700
+    }
+  ]
+}

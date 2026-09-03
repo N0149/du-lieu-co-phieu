@@ -1,0 +1,992 @@
+{
+  "metadata": {
+    "generated_at": "2026-08-31T08:00:27.193Z",
+    "period": "Q2/2026",
+    "banks_count": 27,
+    "ranked_count": 27,
+    "failed_banks": [],
+    "metrics": [
+      {
+        "key": "roe",
+        "label": "ROE (cuối kỳ)",
+        "unit": "%",
+        "higherBetter": true
+      },
+      {
+        "key": "casa",
+        "label": "CASA",
+        "unit": "%",
+        "higherBetter": true
+      },
+      {
+        "key": "nim",
+        "label": "NIM",
+        "unit": "%",
+        "higherBetter": true
+      },
+      {
+        "key": "cof",
+        "label": "COF",
+        "unit": "%",
+        "higherBetter": false
+      },
+      {
+        "key": "llr25",
+        "label": "Dự phòng RR Tín dụng / Nợ 2→5",
+        "unit": "%",
+        "higherBetter": true
+      },
+      {
+        "key": "llr35",
+        "label": "Dự phòng RR Tín dụng / Nợ 3→5",
+        "unit": "%",
+        "higherBetter": true
+      },
+      {
+        "key": "loanGrowth",
+        "label": "Tăng trưởng cho vay khách hàng",
+        "unit": "%",
+        "higherBetter": true
+      },
+      {
+        "key": "leverage",
+        "label": "Tổng TS/VCSH",
+        "unit": "x",
+        "higherBetter": false
+      },
+      {
+        "key": "npl25",
+        "label": "Tỷ lệ Nợ nhóm 2→5",
+        "unit": "%",
+        "higherBetter": false
+      },
+      {
+        "key": "npl35",
+        "label": "Tỷ lệ Nợ nhóm 3→5",
+        "unit": "%",
+        "higherBetter": false
+      },
+      {
+        "key": "accrual",
+        "label": "Lãi & phí phải thu/Tổng TS",
+        "unit": "%",
+        "higherBetter": false
+      }
+    ],
+    "note": "rank 27 = tốt nhất (top 1 ngành), rank 1 = kém nhất. Mỗi chỉ tiêu: rank 1..M trong số mã có số liệu (M≤27); khi M=27, thứ hạng tốt k khớp rank = 27−k+1.",
+    "overall_points_max": 297,
+    "overall_points_note": "Xếp hạng tổng hợp = tổng điểm rank trên các chỉ tiêu có số liệu; tối đa lý thuyết = số chỉ tiêu × số ngân hàng trong rổ."
+  },
+  "banks": {
+    "VCB": {
+      "symbol": "VCB",
+      "name": "VCB",
+      "raw": {
+        "roe": 18.3,
+        "casa": 32.8,
+        "nim": 3,
+        "cof": 2.9,
+        "llr25": 197.4,
+        "llr35": 279.3,
+        "loanGrowth": 5.1,
+        "leverage": 10.7,
+        "npl25": 0.9,
+        "npl35": 0.6,
+        "accrual": 0.4
+      },
+      "ranks": {
+        "roe": 19,
+        "casa": 26,
+        "nim": 20,
+        "cof": 27,
+        "llr25": 27,
+        "llr35": 27,
+        "loanGrowth": 7,
+        "leverage": 20,
+        "npl25": 27,
+        "npl35": 27,
+        "accrual": 27
+      },
+      "overall_points": 254,
+      "overall_place": 1
+    },
+    "CTG": {
+      "symbol": "CTG",
+      "name": "CTG",
+      "raw": {
+        "roe": 19.4,
+        "casa": 23.2,
+        "nim": 2.9,
+        "cof": 3.9,
+        "llr25": 75.3,
+        "llr35": 134,
+        "loanGrowth": 5,
+        "leverage": 14.8,
+        "npl25": 2.1,
+        "npl35": 1.2,
+        "accrual": 0.7
+      },
+      "ranks": {
+        "roe": 21,
+        "casa": 24,
+        "nim": 15,
+        "cof": 25,
+        "llr25": 23,
+        "llr35": 25,
+        "loanGrowth": 6,
+        "leverage": 6,
+        "npl25": 20,
+        "npl35": 22,
+        "accrual": 26
+      },
+      "overall_points": 213,
+      "overall_place": 5
+    },
+    "BID": {
+      "symbol": "BID",
+      "name": "BID",
+      "raw": {
+        "roe": 15,
+        "casa": 20.4,
+        "nim": 2.2,
+        "cof": 4,
+        "llr25": 45.5,
+        "llr35": 75.9,
+        "loanGrowth": 5.4,
+        "leverage": 17.3,
+        "npl25": 3,
+        "npl35": 1.8,
+        "accrual": 0.9
+      },
+      "ranks": {
+        "roe": 14,
+        "casa": 19,
+        "nim": 6,
+        "cof": 24,
+        "llr25": 15,
+        "llr35": 17,
+        "loanGrowth": 8,
+        "leverage": 3,
+        "npl25": 16,
+        "npl35": 17,
+        "accrual": 17
+      },
+      "overall_points": 156,
+      "overall_place": 11
+    },
+    "ACB": {
+      "symbol": "ACB",
+      "name": "ACB",
+      "raw": {
+        "roe": 17.6,
+        "casa": 20.5,
+        "nim": 3,
+        "cof": 5.2,
+        "llr25": 64.6,
+        "llr35": 105.3,
+        "loanGrowth": 8.6,
+        "leverage": 10.8,
+        "npl25": 1.7,
+        "npl35": 1,
+        "accrual": 0.7
+      },
+      "ranks": {
+        "roe": 18,
+        "casa": 20,
+        "nim": 19,
+        "cof": 19,
+        "llr25": 22,
+        "llr35": 23,
+        "loanGrowth": 15,
+        "leverage": 19,
+        "npl25": 24,
+        "npl35": 26,
+        "accrual": 23
+      },
+      "overall_points": 228,
+      "overall_place": 4
+    },
+    "MBB": {
+      "symbol": "MBB",
+      "name": "MBB",
+      "raw": {
+        "roe": 19.8,
+        "casa": 34.4,
+        "nim": 4.1,
+        "cof": 4.5,
+        "llr25": 55.9,
+        "llr35": 93.6,
+        "loanGrowth": 13.2,
+        "leverage": 11.1,
+        "npl25": 2.4,
+        "npl35": 1.4,
+        "accrual": 1
+      },
+      "ranks": {
+        "roe": 24,
+        "casa": 27,
+        "nim": 25,
+        "cof": 22,
+        "llr25": 19,
+        "llr35": 21,
+        "loanGrowth": 22,
+        "leverage": 17,
+        "npl25": 19,
+        "npl35": 20,
+        "accrual": 13
+      },
+      "overall_points": 229,
+      "overall_place": 3
+    },
+    "STB": {
+      "symbol": "STB",
+      "name": "STB",
+      "raw": {
+        "roe": 14.3,
+        "casa": 16.6,
+        "nim": 2.9,
+        "cof": 5.1,
+        "llr25": 42,
+        "llr35": 56.7,
+        "loanGrowth": 1.5,
+        "leverage": 14.2,
+        "npl25": 10.2,
+        "npl35": 7.5,
+        "accrual": 0.8
+      },
+      "ranks": {
+        "roe": 11,
+        "casa": 18,
+        "nim": 14,
+        "cof": 20,
+        "llr25": 14,
+        "llr35": 11,
+        "loanGrowth": 2,
+        "leverage": 8,
+        "npl25": 2,
+        "npl35": 1,
+        "accrual": 22
+      },
+      "overall_points": 123,
+      "overall_place": 21
+    },
+    "TCB": {
+      "symbol": "TCB",
+      "name": "TCB",
+      "raw": {
+        "roe": 14.9,
+        "casa": 32.6,
+        "nim": 3.6,
+        "cof": 3.9,
+        "llr25": 76.7,
+        "llr35": 132.5,
+        "loanGrowth": 10.4,
+        "leverage": 6.7,
+        "npl25": 1.8,
+        "npl35": 1.1,
+        "accrual": 0.9
+      },
+      "ranks": {
+        "roe": 12,
+        "casa": 25,
+        "nim": 23,
+        "cof": 26,
+        "llr25": 24,
+        "llr35": 24,
+        "loanGrowth": 17,
+        "leverage": 27,
+        "npl25": 23,
+        "npl35": 25,
+        "accrual": 15
+      },
+      "overall_points": 241,
+      "overall_place": 2
+    },
+    "TPB": {
+      "symbol": "TPB",
+      "name": "TPB",
+      "raw": {
+        "roe": 15.1,
+        "casa": 21,
+        "nim": 2.9,
+        "cof": 5.8,
+        "llr25": 33,
+        "llr35": 66.5,
+        "loanGrowth": 10.6,
+        "leverage": 11.1,
+        "npl25": 3.7,
+        "npl35": 1.9,
+        "accrual": 1.1
+      },
+      "ranks": {
+        "roe": 15,
+        "casa": 22,
+        "nim": 16,
+        "cof": 11,
+        "llr25": 9,
+        "llr35": 13,
+        "loanGrowth": 18,
+        "leverage": 17,
+        "npl25": 13,
+        "npl35": 15,
+        "accrual": 12
+      },
+      "overall_points": 161,
+      "overall_place": 9
+    },
+    "VIB": {
+      "symbol": "VIB",
+      "name": "VIB",
+      "raw": {
+        "roe": 16.6,
+        "casa": 11.9,
+        "nim": 3.1,
+        "cof": 5.5,
+        "llr25": 23.2,
+        "llr35": 43.6,
+        "loanGrowth": 4,
+        "leverage": 12.2,
+        "npl25": 5.5,
+        "npl35": 2.9,
+        "accrual": 0.8
+      },
+      "ranks": {
+        "roe": 17,
+        "casa": 14,
+        "nim": 21,
+        "cof": 16,
+        "llr25": 6,
+        "llr35": 6,
+        "loanGrowth": 4,
+        "leverage": 13,
+        "npl25": 8,
+        "npl35": 9,
+        "accrual": 20
+      },
+      "overall_points": 134,
+      "overall_place": 20
+    },
+    "VPB": {
+      "symbol": "VPB",
+      "name": "VPB",
+      "raw": {
+        "roe": 15,
+        "casa": 12.1,
+        "nim": 5.1,
+        "cof": 5.9,
+        "llr25": 28.6,
+        "llr35": 56.2,
+        "loanGrowth": 23,
+        "leverage": 7.9,
+        "npl25": 6.4,
+        "npl35": 3.3,
+        "accrual": 1.4
+      },
+      "ranks": {
+        "roe": 13,
+        "casa": 15,
+        "nim": 27,
+        "cof": 8,
+        "llr25": 7,
+        "llr35": 10,
+        "loanGrowth": 26,
+        "leverage": 26,
+        "npl25": 5,
+        "npl35": 5,
+        "accrual": 9
+      },
+      "overall_points": 151,
+      "overall_place": 15
+    },
+    "HDB": {
+      "symbol": "HDB",
+      "name": "HDB",
+      "raw": {
+        "roe": 24.1,
+        "casa": 10.9,
+        "nim": 4.3,
+        "cof": 6,
+        "llr25": 18.6,
+        "llr35": 50,
+        "loanGrowth": 20.6,
+        "leverage": 11.6,
+        "npl25": 7.5,
+        "npl35": 2.8,
+        "accrual": 0.8
+      },
+      "ranks": {
+        "roe": 27,
+        "casa": 12,
+        "nim": 26,
+        "cof": 6,
+        "llr25": 3,
+        "llr35": 8,
+        "loanGrowth": 25,
+        "leverage": 14,
+        "npl25": 3,
+        "npl35": 11,
+        "accrual": 18
+      },
+      "overall_points": 153,
+      "overall_place": 13
+    },
+    "SHB": {
+      "symbol": "SHB",
+      "name": "SHB",
+      "raw": {
+        "roe": 19.5,
+        "casa": 8.1,
+        "nim": 3.1,
+        "cof": 6.4,
+        "llr25": 63.4,
+        "llr35": 82.5,
+        "loanGrowth": 7.3,
+        "leverage": 12.8,
+        "npl25": 2.7,
+        "npl35": 2.1,
+        "accrual": 1.9
+      },
+      "ranks": {
+        "roe": 23,
+        "casa": 8,
+        "nim": 22,
+        "cof": 1,
+        "llr25": 21,
+        "llr35": 18,
+        "loanGrowth": 10,
+        "leverage": 11,
+        "npl25": 18,
+        "npl35": 14,
+        "accrual": 6
+      },
+      "overall_points": 152,
+      "overall_place": 14
+    },
+    "EIB": {
+      "symbol": "EIB",
+      "name": "EIB",
+      "raw": {
+        "roe": 6.2,
+        "casa": 14.1,
+        "nim": 2.3,
+        "cof": 5.4,
+        "llr25": 20.8,
+        "llr35": 31.7,
+        "loanGrowth": 2.1,
+        "leverage": 10,
+        "npl25": 4.7,
+        "npl35": 3.1,
+        "accrual": 0.7
+      },
+      "ranks": {
+        "roe": 2,
+        "casa": 17,
+        "nim": 9,
+        "cof": 18,
+        "llr25": 4,
+        "llr35": 2,
+        "loanGrowth": 3,
+        "leverage": 22,
+        "npl25": 9,
+        "npl35": 7,
+        "accrual": 24
+      },
+      "overall_points": 117,
+      "overall_place": 23
+    },
+    "LPB": {
+      "symbol": "LPB",
+      "name": "LPB",
+      "raw": {
+        "roe": 22.2,
+        "casa": 6.4,
+        "nim": 2.6,
+        "cof": 5.8,
+        "llr25": 40,
+        "llr35": 66.8,
+        "loanGrowth": 9.6,
+        "leverage": 14.3,
+        "npl25": 3.1,
+        "npl35": 1.9,
+        "accrual": 0.8
+      },
+      "ranks": {
+        "roe": 26,
+        "casa": 6,
+        "nim": 11,
+        "cof": 12,
+        "llr25": 13,
+        "llr35": 15,
+        "loanGrowth": 16,
+        "leverage": 7,
+        "npl25": 15,
+        "npl35": 16,
+        "accrual": 21
+      },
+      "overall_points": 158,
+      "overall_place": 10
+    },
+    "BAB": {
+      "symbol": "BAB",
+      "name": "BAB",
+      "raw": {
+        "roe": 7.3,
+        "casa": 3.5,
+        "nim": 2.7,
+        "cof": 6.1,
+        "llr25": 103.7,
+        "llr35": 134.9,
+        "loanGrowth": 7.8,
+        "leverage": 15.6,
+        "npl25": 1.5,
+        "npl35": 1.1,
+        "accrual": 3.5
+      },
+      "ranks": {
+        "roe": 3,
+        "casa": 2,
+        "nim": 12,
+        "cof": 5,
+        "llr25": 26,
+        "llr35": 26,
+        "loanGrowth": 12,
+        "leverage": 4,
+        "npl25": 25,
+        "npl35": 24,
+        "accrual": 2
+      },
+      "overall_points": 141,
+      "overall_place": 17
+    },
+    "KLB": {
+      "symbol": "KLB",
+      "name": "KLB",
+      "raw": {
+        "roe": 21,
+        "casa": 5.8,
+        "nim": 3.8,
+        "cof": 5.9,
+        "llr25": 51.6,
+        "llr35": 91.3,
+        "loanGrowth": 8.4,
+        "leverage": 12.4,
+        "npl25": 3.2,
+        "npl35": 1.8,
+        "accrual": 1.5
+      },
+      "ranks": {
+        "roe": 25,
+        "casa": 5,
+        "nim": 24,
+        "cof": 7,
+        "llr25": 18,
+        "llr35": 20,
+        "loanGrowth": 14,
+        "leverage": 12,
+        "npl25": 14,
+        "npl35": 18,
+        "accrual": 8
+      },
+      "overall_points": 165,
+      "overall_place": 8
+    },
+    "NVB": {
+      "symbol": "NVB",
+      "name": "NVB",
+      "raw": {
+        "roe": 10.4,
+        "casa": 8.8,
+        "nim": 2.2,
+        "cof": 6.2,
+        "llr25": 17.5,
+        "llr35": 18.9,
+        "loanGrowth": 36.9,
+        "leverage": 13.9,
+        "npl25": 7,
+        "npl35": 6.4,
+        "accrual": 0.8
+      },
+      "ranks": {
+        "roe": 5,
+        "casa": 10,
+        "nim": 7,
+        "cof": 4,
+        "llr25": 2,
+        "llr35": 1,
+        "loanGrowth": 27,
+        "leverage": 9,
+        "npl25": 4,
+        "npl35": 2,
+        "accrual": 19
+      },
+      "overall_points": 90,
+      "overall_place": 25
+    },
+    "ABB": {
+      "symbol": "ABB",
+      "name": "ABB",
+      "raw": {
+        "roe": 18.4,
+        "casa": 9.1,
+        "nim": 1.6,
+        "cof": 5.9,
+        "llr25": 56.3,
+        "llr35": 87.2,
+        "loanGrowth": 18.6,
+        "leverage": 11.5,
+        "npl25": 1.9,
+        "npl35": 1.2,
+        "accrual": 0.9
+      },
+      "ranks": {
+        "roe": 20,
+        "casa": 11,
+        "nim": 1,
+        "cof": 9,
+        "llr25": 20,
+        "llr35": 19,
+        "loanGrowth": 24,
+        "leverage": 15,
+        "npl25": 22,
+        "npl35": 23,
+        "accrual": 14
+      },
+      "overall_points": 178,
+      "overall_place": 6
+    },
+    "BVB": {
+      "symbol": "BVB",
+      "name": "BVB",
+      "raw": {
+        "roe": 10.6,
+        "casa": 7.6,
+        "nim": 2.7,
+        "cof": 6.3,
+        "llr25": 31.4,
+        "llr35": 43.6,
+        "loanGrowth": 7.3,
+        "leverage": 17.9,
+        "npl25": 4.5,
+        "npl35": 3.2,
+        "accrual": 2
+      },
+      "ranks": {
+        "roe": 6,
+        "casa": 7,
+        "nim": 13,
+        "cof": 2,
+        "llr25": 8,
+        "llr35": 5,
+        "loanGrowth": 11,
+        "leverage": 1,
+        "npl25": 11,
+        "npl35": 6,
+        "accrual": 5
+      },
+      "overall_points": 75,
+      "overall_place": 27
+    },
+    "MSB": {
+      "symbol": "MSB",
+      "name": "MSB",
+      "raw": {
+        "roe": 12.7,
+        "casa": 22.8,
+        "nim": 3,
+        "cof": 4.4,
+        "llr25": 34.4,
+        "llr35": 51.6,
+        "loanGrowth": 12.3,
+        "leverage": 9.8,
+        "npl25": 3.8,
+        "npl35": 2.5,
+        "accrual": 2.8
+      },
+      "ranks": {
+        "roe": 10,
+        "casa": 23,
+        "nim": 18,
+        "cof": 23,
+        "llr25": 11,
+        "llr35": 9,
+        "loanGrowth": 21,
+        "leverage": 24,
+        "npl25": 12,
+        "npl35": 12,
+        "accrual": 3
+      },
+      "overall_points": 166,
+      "overall_place": 7
+    },
+    "NAB": {
+      "symbol": "NAB",
+      "name": "NAB",
+      "raw": {
+        "roe": 19.5,
+        "casa": 5.4,
+        "nim": 2.2,
+        "cof": 5.6,
+        "llr25": 50,
+        "llr35": 68.3,
+        "loanGrowth": 10.7,
+        "leverage": 17.4,
+        "npl25": 2,
+        "npl35": 1.5,
+        "accrual": 2.2
+      },
+      "ranks": {
+        "roe": 22,
+        "casa": 4,
+        "nim": 5,
+        "cof": 15,
+        "llr25": 16,
+        "llr35": 16,
+        "loanGrowth": 19,
+        "leverage": 2,
+        "npl25": 21,
+        "npl35": 19,
+        "accrual": 4
+      },
+      "overall_points": 143,
+      "overall_place": 16
+    },
+    "OCB": {
+      "symbol": "OCB",
+      "name": "OCB",
+      "raw": {
+        "roe": 11.5,
+        "casa": 11.1,
+        "nim": 3,
+        "cof": 5.7,
+        "llr25": 35.4,
+        "llr35": 59.4,
+        "loanGrowth": 10.9,
+        "leverage": 9.8,
+        "npl25": 5.9,
+        "npl35": 3.5,
+        "accrual": 1.2
+      },
+      "ranks": {
+        "roe": 8,
+        "casa": 13,
+        "nim": 17,
+        "cof": 13,
+        "llr25": 12,
+        "llr35": 12,
+        "loanGrowth": 20,
+        "leverage": 23,
+        "npl25": 6,
+        "npl35": 3,
+        "accrual": 11
+      },
+      "overall_points": 138,
+      "overall_place": 18
+    },
+    "PGB": {
+      "symbol": "PGB",
+      "name": "PGB",
+      "raw": {
+        "roe": 8.6,
+        "casa": 20.9,
+        "nim": 2.4,
+        "cof": 4.9,
+        "llr25": 21.9,
+        "llr35": 43,
+        "loanGrowth": 4.3,
+        "leverage": 10.9,
+        "npl25": 5.7,
+        "npl35": 2.9,
+        "accrual": 0.9
+      },
+      "ranks": {
+        "roe": 4,
+        "casa": 21,
+        "nim": 10,
+        "cof": 21,
+        "llr25": 5,
+        "llr35": 4,
+        "loanGrowth": 5,
+        "leverage": 18,
+        "npl25": 7,
+        "npl35": 8,
+        "accrual": 16
+      },
+      "overall_points": 119,
+      "overall_place": 22
+    },
+    "SGB": {
+      "symbol": "SGB",
+      "name": "SGB",
+      "raw": {
+        "roe": 4.5,
+        "casa": 8.3,
+        "nim": 1.9,
+        "cof": 5.4,
+        "llr25": 8.2,
+        "llr35": 35.7,
+        "loanGrowth": 1.1,
+        "leverage": 8.4,
+        "npl25": 12.6,
+        "npl35": 2.9,
+        "accrual": 0.7
+      },
+      "ranks": {
+        "roe": 1,
+        "casa": 9,
+        "nim": 3,
+        "cof": 17,
+        "llr25": 1,
+        "llr35": 3,
+        "loanGrowth": 1,
+        "leverage": 25,
+        "npl25": 1,
+        "npl35": 10,
+        "accrual": 25
+      },
+      "overall_points": 96,
+      "overall_place": 24
+    },
+    "SSB": {
+      "symbol": "SSB",
+      "name": "SSB",
+      "raw": {
+        "roe": 15.7,
+        "casa": 13.1,
+        "nim": 2.2,
+        "cof": 5.6,
+        "llr25": 50,
+        "llr35": 66.6,
+        "loanGrowth": 7.1,
+        "leverage": 10.1,
+        "npl25": 3,
+        "npl35": 2.2,
+        "accrual": 1.4
+      },
+      "ranks": {
+        "roe": 16,
+        "casa": 16,
+        "nim": 8,
+        "cof": 14,
+        "llr25": 17,
+        "llr35": 14,
+        "loanGrowth": 9,
+        "leverage": 21,
+        "npl25": 17,
+        "npl35": 13,
+        "accrual": 10
+      },
+      "overall_points": 155,
+      "overall_place": 12
+    },
+    "VAB": {
+      "symbol": "VAB",
+      "name": "VAB",
+      "raw": {
+        "roe": 12.2,
+        "casa": 5.4,
+        "nim": 1.7,
+        "cof": 6.3,
+        "llr25": 94.3,
+        "llr35": 100.4,
+        "loanGrowth": 8.4,
+        "leverage": 13.8,
+        "npl25": 1.3,
+        "npl35": 1.2,
+        "accrual": 5.4
+      },
+      "ranks": {
+        "roe": 9,
+        "casa": 3,
+        "nim": 2,
+        "cof": 3,
+        "llr25": 25,
+        "llr35": 22,
+        "loanGrowth": 13,
+        "leverage": 10,
+        "npl25": 26,
+        "npl35": 21,
+        "accrual": 1
+      },
+      "overall_points": 135,
+      "overall_place": 19
+    },
+    "VBB": {
+      "symbol": "VBB",
+      "name": "VBB",
+      "raw": {
+        "roe": 11.2,
+        "casa": 3.4,
+        "nim": 2.1,
+        "cof": 5.8,
+        "llr25": 33.5,
+        "llr35": 45.1,
+        "loanGrowth": 14,
+        "leverage": 15.6,
+        "npl25": 4.5,
+        "npl35": 3.4,
+        "accrual": 1.9
+      },
+      "ranks": {
+        "roe": 7,
+        "casa": 1,
+        "nim": 4,
+        "cof": 10,
+        "llr25": 10,
+        "llr35": 7,
+        "loanGrowth": 23,
+        "leverage": 5,
+        "npl25": 10,
+        "npl35": 4,
+        "accrual": 7
+      },
+      "overall_points": 88,
+      "overall_place": 26
+    }
+  },
+  "industry": {
+    "roe": {
+      "mean": 14.9,
+      "median": 15
+    },
+    "casa": {
+      "mean": 14.4,
+      "median": 11.9
+    },
+    "nim": {
+      "mean": 2.8,
+      "median": 2.9
+    },
+    "cof": {
+      "mean": 5.3,
+      "median": 5.6
+    },
+    "llr25": {
+      "mean": 50.8,
+      "median": 42
+    },
+    "llr35": {
+      "mean": 78.5,
+      "median": 66.6
+    },
+    "loanGrowth": {
+      "mean": 10.2,
+      "median": 8.4
+    },
+    "leverage": {
+      "mean": 12.3,
+      "median": 11.6
+    },
+    "npl25": {
+      "mean": 4.2,
+      "median": 3.2
+    },
+    "npl35": {
+      "mean": 2.5,
+      "median": 2.1
+    },
+    "accrual": {
+      "mean": 1.4,
+      "median": 0.9
+    }
+  }
+}

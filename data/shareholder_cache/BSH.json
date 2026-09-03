@@ -1,0 +1,46 @@
+{
+  "symbol": "BSH",
+  "updated": "2026-09-01T07:18:21.000Z",
+  "co_cau_so_huu": {
+    "CoDongSoHuu": [
+      {
+        "Code": "CEO_54756",
+        "Name": "Nguyễn Hữu Lộc",
+        "Url": "<a href='/du-lieu/ceo/CEO_54756/nguyen-huu-loc.chn'>Nguyễn Hữu Lộc</a>",
+        "AssetVolume": "107.860",
+        "AssetRate": "0,6",
+        "UpdatedDate": "08/04/2026"
+      },
+      {
+        "Code": "CORP_51548",
+        "Name": "Công ty Cổ phần Đầu tư Thương mại Thuận Thành",
+        "Url": "Công ty Cổ phần Đầu tư Thương mại Thuận Thành",
+        "AssetVolume": "1.865.720",
+        "AssetRate": "10,37",
+        "UpdatedDate": "08/04/2026"
+      },
+      {
+        "Code": "CEO_52055",
+        "Name": "Văn Thảo Nguyên",
+        "Url": "<a href='/du-lieu/ceo/CEO_52055/van-thao-nguyen.chn'>Văn Thảo Nguyên</a>",
+        "AssetVolume": "480.027",
+        "AssetRate": "2,67",
+        "UpdatedDate": "08/04/2026"
+      },
+      {
+        "Code": "SAB",
+        "Name": "Tổng CTCP Bia - Rượu - Nước giải khát Sài Gòn",
+        "Url": "<a href='/du-lieu/hose/SAB-tong-ctcp-bia-ruou-nuoc-giai-khat-sai-gon.chn' title='Tổng CTCP Bia - Rượu - Nước giải khát Sài Gòn'>Tổng CTCP Bia - Rượu - Nước giải khát Sài Gòn</a>",
+        "AssetVolume": "9.380.000",
+        "AssetRate": "52,11",
+        "UpdatedDate": "08/04/2026"
+      }
+    ],
+    "NuocNgoai": 0.3,
+    "NhaNuoc": 0,
+    "Khac": 99.7
+  },
+  "cong_ty_con": [],
+  "cong_ty_lien_ket": [],
+  "giao_dich_noi_bo": []
+}

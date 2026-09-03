@@ -1,0 +1,103 @@
+{
+  "symbol": "BDW",
+  "updated": "2026-09-01T07:17:05.000Z",
+  "co_cau_so_huu": {
+    "CoDongSoHuu": [
+      {
+        "Code": "CORP_80170",
+        "Name": "Quỹ Đầu tư Phát triển tỉnh Bình Định",
+        "Url": "Quỹ Đầu tư Phát triển tỉnh Bình Định",
+        "AssetVolume": "6.329.508",
+        "AssetRate": "51,0",
+        "UpdatedDate": "27/07/2026"
+      }
+    ],
+    "NuocNgoai": 0.06,
+    "NhaNuoc": 0,
+    "Khac": 99.94
+  },
+  "cong_ty_con": [],
+  "cong_ty_lien_ket": [],
+  "giao_dich_noi_bo": [
+    {
+      "transaction_name": "Ngô Thị Hồng Vân",
+      "transaction_position": "Thành viên HĐQT",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 496000,
+      "plan_buy": 0,
+      "plan_sell": 0,
+      "plan_begin_date": "",
+      "plan_end_date": "",
+      "real_buy": 0,
+      "real_sell": 496000,
+      "real_end_date": "2026-08-13",
+      "published_date": "2026-08-18",
+      "volume_after": 0
+    },
+    {
+      "transaction_name": "Nguyễn Thị Kim Phượng",
+      "transaction_position": "",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 560104,
+      "plan_buy": 0,
+      "plan_sell": 0,
+      "plan_begin_date": "",
+      "plan_end_date": "",
+      "real_buy": 620540,
+      "real_sell": 0,
+      "real_end_date": "2025-01-08",
+      "published_date": "2025-01-15",
+      "volume_after": 1180644
+    },
+    {
+      "transaction_name": "Dương Tiến Dũng",
+      "transaction_position": "Thành viên HĐQT",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 620540,
+      "plan_buy": 0,
+      "plan_sell": 0,
+      "plan_begin_date": "",
+      "plan_end_date": "",
+      "real_buy": 0,
+      "real_sell": 620540,
+      "real_end_date": "2025-01-08",
+      "published_date": "2025-01-15",
+      "volume_after": 0
+    },
+    {
+      "transaction_name": "Dương Tiến Dũng",
+      "transaction_position": "Thành viên HĐQT",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 620540,
+      "plan_buy": 0,
+      "plan_sell": 620540,
+      "plan_begin_date": "2018-08-20",
+      "plan_end_date": "2018-08-24",
+      "real_buy": 0,
+      "real_sell": 0,
+      "real_end_date": "2018-08-24",
+      "published_date": "2018-08-20",
+      "volume_after": 620540
+    },
+    {
+      "transaction_name": "Quỹ Đầu tư Phát triển tỉnh Bình Định",
+      "transaction_position": "",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 7985612,
+      "plan_buy": 0,
+      "plan_sell": 1656104,
+      "plan_begin_date": "2018-03-05",
+      "plan_end_date": "2018-03-30",
+      "real_buy": 0,
+      "real_sell": 1656104,
+      "real_end_date": "2018-03-13",
+      "published_date": "2018-03-01",
+      "volume_after": 6329508
+    }
+  ]
+}

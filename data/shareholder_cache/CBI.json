@@ -1,0 +1,55 @@
+{
+  "symbol": "CBI",
+  "updated": "2026-05-01T05:45:35.000Z",
+  "co_cau_so_huu": {
+    "CoDongSoHuu": [
+      {
+        "Code": "PC1",
+        "Name": "Công ty Cổ phần Gang thép Cao Bằng",
+        "Url": "<a href='/du-lieu/hose/PC1-cong-ty-co-phan-tap-doan-pc1.chn' title='Công ty Cổ phần Tập đoàn PC1'>Công ty Cổ phần Tập đoàn PC1</a>",
+        "AssetVolume": "10.788.226",
+        "AssetRate": "25,09",
+        "UpdatedDate": "31/12/2023"
+      },
+      {
+        "Code": "KSV",
+        "Name": "Công ty Cổ phần Gang thép Cao Bằng",
+        "Url": "<a href='/du-lieu/hastc/KSV-tong-cong-ty-khoang-san-tkv-ctcp.chn' title='Tổng Công ty Khoáng sản TKV - CTCP'>Tổng Công ty Khoáng sản TKV - CTCP</a>",
+        "AssetVolume": "22.595.420",
+        "AssetRate": "52,54",
+        "UpdatedDate": "31/12/2023"
+      },
+      {
+        "Code": "HGM",
+        "Name": "Công ty Cổ phần Gang thép Cao Bằng",
+        "Url": "<a href='/du-lieu/hastc/HGM-cong-ty-co-phan-co-khi-va-khoang-san-ha-giang.chn' title='Công ty cổ phần Cơ khí và Khoáng sản Hà Giang'>Công ty cổ phần Cơ khí và Khoáng sản Hà Giang</a>",
+        "AssetVolume": "4.166.988",
+        "AssetRate": "9,69",
+        "UpdatedDate": "31/12/2023"
+      }
+    ],
+    "NuocNgoai": 43004324.49,
+    "NhaNuoc": 0,
+    "Khac": -43004224.49
+  },
+  "cong_ty_con": [],
+  "cong_ty_lien_ket": [],
+  "giao_dich_noi_bo": [
+    {
+      "transaction_name": "Phạm Thành Đô",
+      "transaction_position": "Thành viên HĐQT",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 1548747,
+      "plan_buy": 0,
+      "plan_sell": 1548747,
+      "plan_begin_date": "2021-08-11",
+      "plan_end_date": "2021-09-09",
+      "real_buy": 0,
+      "real_sell": 1548747,
+      "real_end_date": "2021-09-07",
+      "published_date": "2021-08-11",
+      "volume_after": 0
+    }
+  ]
+}

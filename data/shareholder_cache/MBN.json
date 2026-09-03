@@ -1,0 +1,86 @@
+{
+  "symbol": "MBN",
+  "updated": "2026-05-01T06:01:31.000Z",
+  "co_cau_so_huu": {
+    "CoDongSoHuu": [
+      {
+        "Code": "CEO_55426",
+        "Name": "Nguyễn Đình Thu",
+        "Url": "<a href='/du-lieu/ceo/CEO_55426/nguyen-dinh-thu.chn'>Nguyễn Đình Thu</a>",
+        "AssetVolume": "6.000",
+        "AssetRate": "0,1",
+        "UpdatedDate": "15/12/2017"
+      },
+      {
+        "Code": "CEO_55430",
+        "Name": "Nghiêm Thị Oanh",
+        "Url": "<a href='/du-lieu/ceo/CEO_55430/nghiem-thi-oanh.chn'>Nghiêm Thị Oanh</a>",
+        "AssetVolume": "600",
+        "AssetRate": "0,01",
+        "UpdatedDate": "15/12/2018"
+      },
+      {
+        "Code": "CORP_51595",
+        "Name": "Công ty cổ phần Môi trường Thuận Thành",
+        "Url": "Công ty cổ phần Môi trường Thuận Thành",
+        "AssetVolume": "1.412.900",
+        "AssetRate": "24,57",
+        "UpdatedDate": "15/12/2017"
+      },
+      {
+        "Code": "CEO_55425",
+        "Name": "Vũ Đức Thắng",
+        "Url": "<a href='/du-lieu/ceo/CEO_55425/vu-duc-thang.chn'>Vũ Đức Thắng</a>",
+        "AssetVolume": "11.900",
+        "AssetRate": "0,21",
+        "UpdatedDate": "15/12/2018"
+      },
+      {
+        "Code": "CEO_55431",
+        "Name": "Phạm Nhật Quang",
+        "Url": "<a href='/du-lieu/ceo/CEO_55431/pham-nhat-quang.chn'>Phạm Nhật Quang</a>",
+        "AssetVolume": "1.500",
+        "AssetRate": "0,03",
+        "UpdatedDate": "15/12/2018"
+      },
+      {
+        "Code": "CEO_55432",
+        "Name": "Đặng Thị Thủy",
+        "Url": "<a href='/du-lieu/ceo/CEO_55432/dang-thi-thuy.chn'>Đặng Thị Thủy</a>",
+        "AssetVolume": "6.700",
+        "AssetRate": "0,12",
+        "UpdatedDate": "15/12/2018"
+      },
+      {
+        "Code": "CEO_55428",
+        "Name": "Nguyễn Văn Cảnh",
+        "Url": "<a href='/du-lieu/ceo/CEO_55428/nguyen-van-canh.chn'>Nguyễn Văn Cảnh</a>",
+        "AssetVolume": "6.200",
+        "AssetRate": "0,11",
+        "UpdatedDate": "15/12/2018"
+      },
+      {
+        "Code": "CORP_51234",
+        "Name": "UBND tỉnh Bắc Ninh",
+        "Url": "UBND tỉnh Bắc Ninh",
+        "AssetVolume": "3.715.154",
+        "AssetRate": "64,61",
+        "UpdatedDate": "15/12/2017"
+      },
+      {
+        "Code": "CEO_55423",
+        "Name": "Ngô Minh Châu",
+        "Url": "<a href='/du-lieu/ceo/CEO_55423/ngo-minh-chau.chn'>Ngô Minh Châu</a>",
+        "AssetVolume": "8.600",
+        "AssetRate": "0,15",
+        "UpdatedDate": "15/12/2018"
+      }
+    ],
+    "NuocNgoai": 5750000,
+    "NhaNuoc": 0,
+    "Khac": -5749900
+  },
+  "cong_ty_con": [],
+  "cong_ty_lien_ket": [],
+  "giao_dich_noi_bo": []
+}

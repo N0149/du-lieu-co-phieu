@@ -1,0 +1,220 @@
+{
+  "symbol": "NDT",
+  "updated": "2026-09-01T07:37:54.000Z",
+  "co_cau_so_huu": {
+    "CoDongSoHuu": [
+      {
+        "Code": "CEO_55330",
+        "Name": "Nguyễn Văn Miêng",
+        "Url": "<a href='/du-lieu/ceo/CEO_55330/nguyen-van-mieng.chn'>Nguyễn Văn Miêng</a>",
+        "AssetVolume": "45.860",
+        "AssetRate": "0,29",
+        "UpdatedDate": "15/12/2025"
+      },
+      {
+        "Code": "LQ_96939",
+        "Name": "Bùi Thị Hải ",
+        "Url": "Bùi Thị Hải  (Vợ của ông <a href='/du-lieu/ceo/CEO_55330/nguyen-van-mieng.chn'>Nguyễn Văn Miêng</a>)",
+        "AssetVolume": "333.971",
+        "AssetRate": "2,14",
+        "UpdatedDate": "24/08/2022"
+      },
+      {
+        "Code": "CEO_55337",
+        "Name": "Đỗ Thị Thơ",
+        "Url": "<a href='/du-lieu/ceo/CEO_55337/do-thi-tho.chn'>Đỗ Thị Thơ</a>",
+        "AssetVolume": "592.250",
+        "AssetRate": "3,79",
+        "UpdatedDate": "24/08/2022"
+      },
+      {
+        "Code": "KLQ_96105",
+        "Name": "Trung Thị Nga",
+        "Url": "Trung Thị Nga",
+        "AssetVolume": "826.849",
+        "AssetRate": "5,29",
+        "UpdatedDate": "24/08/2022"
+      },
+      {
+        "Code": "CEO_55339",
+        "Name": "Bùi Minh Hạnh",
+        "Url": "<a href='/du-lieu/ceo/CEO_55339/bui-minh-hanh.chn'>Bùi Minh Hạnh</a>",
+        "AssetVolume": "5.520",
+        "AssetRate": "0,04",
+        "UpdatedDate": "24/08/2022"
+      },
+      {
+        "Code": "CEO_55340",
+        "Name": "Vũ Ngọc Tuấn",
+        "Url": "<a href='/du-lieu/ceo/CEO_55340/vu-ngoc-tuan.chn'>Vũ Ngọc Tuấn</a>",
+        "AssetVolume": "11.959",
+        "AssetRate": "0,08",
+        "UpdatedDate": "24/08/2022"
+      },
+      {
+        "Code": "CEO_55333",
+        "Name": "Nguyễn Thị Khánh",
+        "Url": "<a href='/du-lieu/ceo/CEO_55333/nguyen-thi-khanh.chn'>Nguyễn Thị Khánh</a>",
+        "AssetVolume": "29.554",
+        "AssetRate": "0,19",
+        "UpdatedDate": "24/08/2022"
+      },
+      {
+        "Code": "CEO_55338",
+        "Name": "Trần Ngọc Khanh",
+        "Url": "<a href='/du-lieu/ceo/CEO_55338/tran-ngoc-khanh.chn'>Trần Ngọc Khanh</a>",
+        "AssetVolume": "6.094",
+        "AssetRate": "0,04",
+        "UpdatedDate": "24/08/2022"
+      },
+      {
+        "Code": "CEO_55334",
+        "Name": "Nguyễn Mạnh Hùng",
+        "Url": "<a href='/du-lieu/ceo/CEO_55334/nguyen-manh-hung.chn'>Nguyễn Mạnh Hùng</a>",
+        "AssetVolume": "164.335",
+        "AssetRate": "1,05",
+        "UpdatedDate": "24/08/2022"
+      },
+      {
+        "Code": "CEO_55332",
+        "Name": "Nguyễn Xuân Vũ",
+        "Url": "<a href='/du-lieu/ceo/CEO_55332/nguyen-xuan-vu.chn'>Nguyễn Xuân Vũ</a>",
+        "AssetVolume": "5.290",
+        "AssetRate": "0,03",
+        "UpdatedDate": "24/08/2022"
+      },
+      {
+        "Code": "VGT",
+        "Name": "Tập đoàn Dệt may Việt Nam",
+        "Url": "<a href='/du-lieu/upcom/VGT-tap-doan-det-may-viet-nam.chn' title='Tập đoàn Dệt may Việt Nam'>Tập đoàn Dệt may Việt Nam</a>",
+        "AssetVolume": "8.394.655",
+        "AssetRate": "53,67",
+        "UpdatedDate": "24/08/2022"
+      }
+    ],
+    "NuocNgoai": 0.04,
+    "NhaNuoc": 0,
+    "Khac": 99.96
+  },
+  "cong_ty_con": [
+    {
+      "Symbol": "NDT",
+      "CorpCode": "CORP_60821",
+      "Name": "Công ty TNHH MTV May 2",
+      "TotalCapital": 8,
+      "SharedCapital": 8,
+      "OwnershipRate": 100,
+      "Note": "",
+      "Order": 1,
+      "TradeCenter": ""
+    },
+    {
+      "Symbol": "NDT",
+      "CorpCode": "CORP_51577",
+      "Name": "CTCP Dệt - Dệt may Nam Định",
+      "TotalCapital": 30,
+      "SharedCapital": 27.26,
+      "OwnershipRate": 90.88,
+      "Note": "",
+      "Order": 2,
+      "TradeCenter": ""
+    },
+    {
+      "Symbol": "NDT",
+      "CorpCode": "CORP_51578",
+      "Name": "CTCP Chăn len Dệt may Nam Định",
+      "TotalCapital": 12,
+      "SharedCapital": 10.54,
+      "OwnershipRate": 87.8,
+      "Note": "",
+      "Order": 3,
+      "TradeCenter": ""
+    },
+    {
+      "Symbol": "NDT",
+      "CorpCode": "CORP_51582",
+      "Name": "CTCP Dệt khăn Dệt may Nam Định",
+      "TotalCapital": 5,
+      "SharedCapital": 4.32,
+      "OwnershipRate": 86.34,
+      "Note": "",
+      "Order": 4,
+      "TradeCenter": ""
+    },
+    {
+      "Symbol": "NDT",
+      "CorpCode": "CORP_51580",
+      "Name": "CTCP May IV Dệt may Nam Định",
+      "TotalCapital": 7.5,
+      "SharedCapital": 4.01,
+      "OwnershipRate": 53.46,
+      "Note": "",
+      "Order": 6,
+      "TradeCenter": ""
+    },
+    {
+      "Symbol": "NDT",
+      "CorpCode": "CORP_51576",
+      "Name": "CTCP Dịch vụ Thương mại Dệt Nam Định",
+      "TotalCapital": 5.4,
+      "SharedCapital": 2.84,
+      "OwnershipRate": 52.52,
+      "Note": "",
+      "Order": 7,
+      "TradeCenter": ""
+    }
+  ],
+  "cong_ty_lien_ket": [
+    {
+      "Symbol": "NDT",
+      "CorpCode": "CORP_51581",
+      "Name": "CTCP May 5 Dệt may Nam Định",
+      "TotalCapital": 5.5,
+      "SharedCapital": 4.33,
+      "OwnershipRate": 78.65,
+      "Note": "",
+      "Order": 5,
+      "TradeCenter": ""
+    },
+    {
+      "Symbol": "NDT",
+      "CorpCode": "CORP_51583",
+      "Name": "CTCP May I Dệt Nam Định",
+      "TotalCapital": 4.8,
+      "SharedCapital": 2.01,
+      "OwnershipRate": 41.82,
+      "Note": "",
+      "Order": 8,
+      "TradeCenter": ""
+    },
+    {
+      "Symbol": "NDT",
+      "CorpCode": "CORP_51584",
+      "Name": "CTCP Phát triển Đô thị Dệt may Nam Định",
+      "TotalCapital": 62.3,
+      "SharedCapital": 23,
+      "OwnershipRate": 36.92,
+      "Note": "",
+      "Order": 9,
+      "TradeCenter": ""
+    }
+  ],
+  "giao_dich_noi_bo": [
+    {
+      "transaction_name": "Nguyễn Văn Miêng",
+      "transaction_position": "Chủ tịch HĐQT",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 350960,
+      "plan_buy": 0,
+      "plan_sell": 305100,
+      "plan_begin_date": "2025-12-10",
+      "plan_end_date": "2025-12-31",
+      "real_buy": 0,
+      "real_sell": 305100,
+      "real_end_date": "2025-12-15",
+      "published_date": "2025-12-09",
+      "volume_after": 45860
+    }
+  ]
+}

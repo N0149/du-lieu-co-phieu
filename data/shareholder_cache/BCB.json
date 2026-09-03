@@ -1,0 +1,127 @@
+{
+  "symbol": "BCB",
+  "updated": "2026-09-01T07:16:36.000Z",
+  "co_cau_so_huu": {
+    "CoDongSoHuu": [
+      {
+        "Code": "KLQ_39191",
+        "Name": "Nguyễn Hoàng Thanh",
+        "Url": "Nguyễn Hoàng Thanh",
+        "AssetVolume": "653.234",
+        "AssetRate": "11,46",
+        "UpdatedDate": "21/05/2026"
+      },
+      {
+        "Code": "CEO_55642",
+        "Name": "Trần Văn Chính",
+        "Url": "<a href='/du-lieu/ceo/CEO_55642/tran-van-chinh.chn'>Trần Văn Chính</a>",
+        "AssetVolume": "9.348",
+        "AssetRate": "0,16",
+        "UpdatedDate": "21/05/2026"
+      },
+      {
+        "Code": "CORP_51617",
+        "Name": "Công ty TNHH Xây dựng Quang Thành",
+        "Url": "Công ty TNHH Xây dựng Quang Thành",
+        "AssetVolume": "1.140.000",
+        "AssetRate": "20,0",
+        "UpdatedDate": "21/05/2026"
+      },
+      {
+        "Code": "CEO_872666",
+        "Name": "Đỗ Đình Kỳ",
+        "Url": "<a href='/du-lieu/ceo/CEO_872666/do-dinh-ky.chn'>Đỗ Đình Kỳ</a>",
+        "AssetVolume": "9.120",
+        "AssetRate": "0,16",
+        "UpdatedDate": "21/05/2026"
+      },
+      {
+        "Code": "CEO_55641",
+        "Name": "Đỗ Quang Thái",
+        "Url": "<a href='/du-lieu/ceo/CEO_55641/do-quang-thai.chn'>Đỗ Quang Thái</a>",
+        "AssetVolume": "8.322",
+        "AssetRate": "0,15",
+        "UpdatedDate": "21/05/2026"
+      },
+      {
+        "Code": "NECORP",
+        "Name": "Tổng Công ty Đông Bắc - BQP",
+        "Url": "<a href='/du-lieu/otc/NECORP-tong-cong-ty-dong-bac-bqp.chn' title='Tổng Công ty Đông Bắc - BQP'>Tổng Công ty Đông Bắc - BQP</a>",
+        "AssetVolume": "2.907.000",
+        "AssetRate": "51,0",
+        "UpdatedDate": "21/05/2026"
+      }
+    ],
+    "NuocNgoai": 42.98245614035088,
+    "NhaNuoc": 0,
+    "Khac": 57.01754385964912
+  },
+  "cong_ty_con": [],
+  "cong_ty_lien_ket": [],
+  "giao_dich_noi_bo": [
+    {
+      "transaction_name": "Nguyễn Hoàng Thanh",
+      "transaction_position": "",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 0,
+      "plan_buy": 0,
+      "plan_sell": 0,
+      "plan_begin_date": "",
+      "plan_end_date": "",
+      "real_buy": 653234,
+      "real_sell": 0,
+      "real_end_date": "2026-05-08",
+      "published_date": "2026-05-19",
+      "volume_after": 653234
+    },
+    {
+      "transaction_name": "Trần Thị Thu Hường",
+      "transaction_position": "Thành viên HĐQT",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 8320,
+      "plan_buy": 0,
+      "plan_sell": 8000,
+      "plan_begin_date": "2025-09-11",
+      "plan_end_date": "2025-10-10",
+      "real_buy": 0,
+      "real_sell": 8000,
+      "real_end_date": "2025-09-11",
+      "published_date": "2025-09-10",
+      "volume_after": 320
+    },
+    {
+      "transaction_name": "CTCP Xây dựng Thương mại và Du lịch Thố Huân",
+      "transaction_position": "",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 653334,
+      "plan_buy": 0,
+      "plan_sell": 0,
+      "plan_begin_date": "",
+      "plan_end_date": "",
+      "real_buy": 0,
+      "real_sell": 653334,
+      "real_end_date": "2025-07-24",
+      "published_date": "2025-08-11",
+      "volume_after": 0
+    },
+    {
+      "transaction_name": "CTCP Xây dựng Thương mại và Du lịch Thố Huân",
+      "transaction_position": "",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 653334,
+      "plan_buy": 0,
+      "plan_sell": 0,
+      "plan_begin_date": "",
+      "plan_end_date": "",
+      "real_buy": 0,
+      "real_sell": 653334,
+      "real_end_date": "2025-07-24",
+      "published_date": "2025-08-01",
+      "volume_after": 0
+    }
+  ]
+}

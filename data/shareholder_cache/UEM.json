@@ -1,0 +1,143 @@
+{
+  "symbol": "UEM",
+  "updated": "2026-06-01T07:32:47.000Z",
+  "co_cau_so_huu": {
+    "CoDongSoHuu": [
+      {
+        "Code": "VINACOMIN",
+        "Name": "Tập đoàn Công nghiệp Than - Khoáng sản Việt Nam",
+        "Url": "<a href='/du-lieu/otc/VINACOMIN-tap-doan-cong-nghiep-than-khoang-san-viet-nam.chn' title='Tập đoàn Công nghiệp Than - Khoáng sản Việt Nam'>Tập đoàn Công nghiệp Than - Khoáng sản Việt Nam</a>",
+        "AssetVolume": "862.306",
+        "AssetRate": "35,37",
+        "UpdatedDate": "14/05/2026"
+      },
+      {
+        "Code": "LQ_39108",
+        "Name": "Nguyễn Thị Xuân",
+        "Url": "Nguyễn Thị Xuân (Vợ của ông <a href='/du-lieu/ceo/CEO_39591/nguyen-minh-tam.chn'>Nguyễn Minh Tâm</a>)",
+        "AssetVolume": "29.519",
+        "AssetRate": "1,21",
+        "UpdatedDate": "14/05/2026"
+      }
+    ],
+    "NuocNgoai": 0.02,
+    "NhaNuoc": 0,
+    "Khac": 99.98
+  },
+  "cong_ty_con": [],
+  "cong_ty_lien_ket": [],
+  "giao_dich_noi_bo": [
+    {
+      "transaction_name": "Tập đoàn Công nghiệp Than - Khoáng sản Việt Nam",
+      "transaction_position": "",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 862306,
+      "plan_buy": 0,
+      "plan_sell": 862306,
+      "plan_begin_date": "2025-05-20",
+      "plan_end_date": "2025-06-18",
+      "real_buy": 0,
+      "real_sell": 0,
+      "real_end_date": "2025-06-05",
+      "published_date": "2025-05-21",
+      "volume_after": 862306
+    },
+    {
+      "transaction_name": "Tập đoàn Công nghiệp Than - Khoáng sản Việt Nam",
+      "transaction_position": "",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 862306,
+      "plan_buy": 0,
+      "plan_sell": 862306,
+      "plan_begin_date": "2025-03-19",
+      "plan_end_date": "2025-04-14",
+      "real_buy": 0,
+      "real_sell": 0,
+      "real_end_date": "2025-04-10",
+      "published_date": "2025-03-17",
+      "volume_after": 862306
+    },
+    {
+      "transaction_name": "Nguyễn Minh Tâm",
+      "transaction_position": "Giám đốc",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 556,
+      "plan_buy": 13001,
+      "plan_sell": 0,
+      "plan_begin_date": "2016-12-21",
+      "plan_end_date": "2016-12-30",
+      "real_buy": 13001,
+      "real_sell": 0,
+      "real_end_date": "2016-12-28",
+      "published_date": "2016-12-19",
+      "volume_after": 13557
+    },
+    {
+      "transaction_name": "Nguyễn Thị Xuân",
+      "transaction_position": "Vợ",
+      "leader_name": "Nguyễn Minh Tâm",
+      "leader_position": "Giám đốc",
+      "volume_before": 15657,
+      "plan_buy": 7226,
+      "plan_sell": 0,
+      "plan_begin_date": "2015-12-15",
+      "plan_end_date": "2015-12-31",
+      "real_buy": 7226,
+      "real_sell": 0,
+      "real_end_date": "2015-12-16",
+      "published_date": "2015-12-11",
+      "volume_after": 22883
+    },
+    {
+      "transaction_name": "Nguyễn Thị Xuân",
+      "transaction_position": "Vợ",
+      "leader_name": "Nguyễn Minh Tâm",
+      "leader_position": "Giám đốc",
+      "volume_before": 8153,
+      "plan_buy": 7504,
+      "plan_sell": 0,
+      "plan_begin_date": "2015-11-11",
+      "plan_end_date": "2015-12-08",
+      "real_buy": 7504,
+      "real_sell": 0,
+      "real_end_date": "2015-11-11",
+      "published_date": "2015-11-09",
+      "volume_after": 15657
+    },
+    {
+      "transaction_name": "Nguyễn Trọng Thanh",
+      "transaction_position": "Thành viên BKS",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 3335,
+      "plan_buy": 7226,
+      "plan_sell": 0,
+      "plan_begin_date": "2015-11-06",
+      "plan_end_date": "2015-11-30",
+      "real_buy": 7226,
+      "real_sell": 0,
+      "real_end_date": "2015-11-12",
+      "published_date": "2015-11-04",
+      "volume_after": 10561
+    },
+    {
+      "transaction_name": "Nguyễn Thị Xuân",
+      "transaction_position": "Vợ",
+      "leader_name": "Nguyễn Minh Tâm",
+      "leader_position": "Ủy viên HĐQT",
+      "volume_before": 5003,
+      "plan_buy": 3150,
+      "plan_sell": 0,
+      "plan_begin_date": "2015-10-20",
+      "plan_end_date": "2015-11-18",
+      "real_buy": 3150,
+      "real_sell": 0,
+      "real_end_date": "2015-10-27",
+      "published_date": "2015-10-16",
+      "volume_after": 8153
+    }
+  ]
+}

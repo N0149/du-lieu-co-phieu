@@ -1,0 +1,79 @@
+{
+  "symbol": "PSE",
+  "updated": "2026-05-01T06:07:47.000Z",
+  "co_cau_so_huu": {
+    "CoDongSoHuu": [
+      {
+        "Code": "CEO_29152",
+        "Name": "Phạm Hoài Hương",
+        "Url": "<a href='/du-lieu/ceo/CEO_29152/pham-hoai-huong.chn'>Phạm Hoài Hương</a>",
+        "AssetVolume": "11.700",
+        "AssetRate": "0,09",
+        "UpdatedDate": "19/09/2025"
+      },
+      {
+        "Code": "DPM",
+        "Name": "Công ty cổ phần Phân bón và Hóa chất Dầu khí Đông Nam Bộ",
+        "Url": "<a href='/du-lieu/hose/DPM-tong-cong-ty-phan-bon-va-hoa-chat-dau-khictcp.chn' title='Tổng Công ty Phân bón và Hóa chất Dầu khí-CTCP'>Tổng Công ty Phân bón và Hóa chất Dầu khí-CTCP</a>",
+        "AssetVolume": "9.375.000",
+        "AssetRate": "75,0",
+        "UpdatedDate": "19/09/2025"
+      },
+      {
+        "Code": "CEO_38923",
+        "Name": "Trịnh Văn Chương",
+        "Url": "<a href='/du-lieu/ceo/CEO_38923/trinh-van-chuong.chn'>Trịnh Văn Chương</a>",
+        "AssetVolume": "19.750",
+        "AssetRate": "0,16",
+        "UpdatedDate": "19/09/2025"
+      },
+      {
+        "Code": "CORP_53242",
+        "Name": "Công ty TNHH Thương mại Dịch vụ Hoa Anh Đào",
+        "Url": "Công ty TNHH Thương mại Dịch vụ Hoa Anh Đào",
+        "AssetVolume": "387.500",
+        "AssetRate": "3,1",
+        "UpdatedDate": "19/09/2025"
+      }
+    ],
+    "NuocNgoai": 0.09,
+    "NhaNuoc": 0,
+    "Khac": 99.91
+  },
+  "cong_ty_con": [],
+  "cong_ty_lien_ket": [],
+  "giao_dich_noi_bo": [
+    {
+      "transaction_name": "Lê Thanh Tùng",
+      "transaction_position": "Chồng",
+      "leader_name": "Lê Quỳnh Chang",
+      "leader_position": "Thành viên BKS",
+      "volume_before": 69300,
+      "plan_buy": 0,
+      "plan_sell": 69300,
+      "plan_begin_date": "2021-10-25",
+      "plan_end_date": "2021-11-23",
+      "real_buy": 0,
+      "real_sell": 69300,
+      "real_end_date": "2021-11-07",
+      "published_date": "2021-10-24",
+      "volume_after": 0
+    },
+    {
+      "transaction_name": "Nguyễn Tiến Sỹ",
+      "transaction_position": "Phó Giám đốc",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 28000,
+      "plan_buy": 0,
+      "plan_sell": 28000,
+      "plan_begin_date": "2017-08-07",
+      "plan_end_date": "2017-08-14",
+      "real_buy": 0,
+      "real_sell": 28000,
+      "real_end_date": "2017-08-07",
+      "published_date": "2017-08-06",
+      "volume_after": 0
+    }
+  ]
+}

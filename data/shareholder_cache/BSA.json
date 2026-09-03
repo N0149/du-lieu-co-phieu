@@ -1,0 +1,223 @@
+{
+  "symbol": "BSA",
+  "updated": "2026-09-01T07:18:17.000Z",
+  "co_cau_so_huu": {
+    "CoDongSoHuu": [
+      {
+        "Code": "CEO_55235",
+        "Name": "Nguyễn Thị Thanh Hoa",
+        "Url": "<a href='/du-lieu/ceo/CEO_55235/nguyen-thi-thanh-hoa.chn'>Nguyễn Thị Thanh Hoa</a>",
+        "AssetVolume": "65.441",
+        "AssetRate": "0,1",
+        "UpdatedDate": "30/12/2025"
+      },
+      {
+        "Code": "TV4",
+        "Name": "Công ty cổ phần Thủy điện Buôn Đôn",
+        "Url": "<a href='/du-lieu/hastc/TV4-cong-ty-co-phan-tu-van-xay-dung-dien-4.chn' title='Công ty Cổ phần Tư vấn Xây dựng Điện 4'>Công ty Cổ phần Tư vấn Xây dựng Điện 4</a>",
+        "AssetVolume": "20.724.182",
+        "AssetRate": "31,0",
+        "UpdatedDate": "30/12/2025"
+      },
+      {
+        "Code": "TV2",
+        "Name": "Công ty Cổ phần Tư vấn Xây dựng Điện 2",
+        "Url": "<a href='/du-lieu/hose/TV2-cong-ty-co-phan-tu-van-xay-dung-dien-2.chn' title='Công ty Cổ phần Tư vấn Xây dựng Điện 2'>Công ty Cổ phần Tư vấn Xây dựng Điện 2</a>",
+        "AssetVolume": "3.342.609",
+        "AssetRate": "5,0",
+        "UpdatedDate": "30/12/2025"
+      },
+      {
+        "Code": "CEO_878040",
+        "Name": "Nguyễn Văn Luận",
+        "Url": "<a href='/du-lieu/ceo/CEO_878040/nguyen-van-luan.chn'>Nguyễn Văn Luận</a>",
+        "AssetVolume": "6.205.622",
+        "AssetRate": "9,28",
+        "UpdatedDate": "30/12/2025"
+      },
+      {
+        "Code": "PPC",
+        "Name": "Công ty Cổ phần Nhiệt điện Phả Lại",
+        "Url": "<a href='/du-lieu/hose/PPC-cong-ty-co-phan-nhiet-dien-pha-lai.chn' title='Công ty Cổ phần Nhiệt điện Phả Lại'>Công ty Cổ phần Nhiệt điện Phả Lại</a>",
+        "AssetVolume": "10.027.829",
+        "AssetRate": "15,0",
+        "UpdatedDate": "30/12/2025"
+      },
+      {
+        "Code": "BTP",
+        "Name": "Công ty Cổ phần Nhiệt điện Bà Rịa",
+        "Url": "<a href='/du-lieu/hose/BTP-cong-ty-co-phan-nhiet-dien-ba-ria.chn' title='Công ty Cổ phần Nhiệt điện Bà Rịa'>Công ty Cổ phần Nhiệt điện Bà Rịa</a>",
+        "AssetVolume": "16.713.050",
+        "AssetRate": "25,0",
+        "UpdatedDate": "30/12/2025"
+      },
+      {
+        "Code": "CEO_55238",
+        "Name": "Trương Hải Quang",
+        "Url": "<a href='/du-lieu/ceo/CEO_55238/truong-hai-quang.chn'>Trương Hải Quang</a>",
+        "AssetVolume": "112.584",
+        "AssetRate": "0,17",
+        "UpdatedDate": "30/12/2025"
+      },
+      {
+        "Code": "CEO_11645",
+        "Name": "Vũ Thành Danh",
+        "Url": "<a href='/du-lieu/ceo/CEO_11645/vu-thanh-danh.chn'>Vũ Thành Danh</a>",
+        "AssetVolume": "199.556",
+        "AssetRate": "0,3",
+        "UpdatedDate": "30/06/2026"
+      }
+    ],
+    "NuocNgoai": 49,
+    "NhaNuoc": 0,
+    "Khac": 51
+  },
+  "cong_ty_con": [],
+  "cong_ty_lien_ket": [],
+  "giao_dich_noi_bo": [
+    {
+      "transaction_name": "Nguyễn Văn Luận",
+      "transaction_position": "Thành viên HĐQT",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 6205622,
+      "plan_buy": 0,
+      "plan_sell": 170000,
+      "plan_begin_date": "2024-08-09",
+      "plan_end_date": "2024-09-05",
+      "real_buy": 0,
+      "real_sell": 0,
+      "real_end_date": "2024-09-05",
+      "published_date": "2024-08-06",
+      "volume_after": 6205622
+    },
+    {
+      "transaction_name": "Nguyễn Văn Luận",
+      "transaction_position": "",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 5895764,
+      "plan_buy": 0,
+      "plan_sell": 0,
+      "plan_begin_date": "",
+      "plan_end_date": "",
+      "real_buy": 10000,
+      "real_sell": 0,
+      "real_end_date": "2023-07-31",
+      "published_date": "2023-07-31",
+      "volume_after": 5905764
+    },
+    {
+      "transaction_name": "Phạm Quốc Thái",
+      "transaction_position": "Thành viên BKS",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 131710,
+      "plan_buy": 0,
+      "plan_sell": 90000,
+      "plan_begin_date": "2023-02-02",
+      "plan_end_date": "2023-03-01",
+      "real_buy": 0,
+      "real_sell": 90000,
+      "real_end_date": "2023-02-02",
+      "published_date": "2023-02-01",
+      "volume_after": 41710
+    },
+    {
+      "transaction_name": "Nguyễn Văn Luận",
+      "transaction_position": "",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 4600000,
+      "plan_buy": 0,
+      "plan_sell": 0,
+      "plan_begin_date": "",
+      "plan_end_date": "",
+      "real_buy": 213266,
+      "real_sell": 0,
+      "real_end_date": "2020-12-29",
+      "published_date": "2021-01-06",
+      "volume_after": 4813266
+    },
+    {
+      "transaction_name": "Nguyễn Văn Luận",
+      "transaction_position": "",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 3400000,
+      "plan_buy": 0,
+      "plan_sell": 0,
+      "plan_begin_date": "",
+      "plan_end_date": "",
+      "real_buy": 1000000,
+      "real_sell": 0,
+      "real_end_date": "2020-11-30",
+      "published_date": "2021-01-05",
+      "volume_after": 4400000
+    },
+    {
+      "transaction_name": "Nguyễn Văn Luận",
+      "transaction_position": "",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 2000000,
+      "plan_buy": 0,
+      "plan_sell": 0,
+      "plan_begin_date": "",
+      "plan_end_date": "",
+      "real_buy": 1400000,
+      "real_sell": 0,
+      "real_end_date": "2020-11-27",
+      "published_date": "2021-01-05",
+      "volume_after": 3400000
+    },
+    {
+      "transaction_name": "Trần Ngọc Thủy",
+      "transaction_position": "",
+      "leader_name": "Trần Hoài Nam",
+      "leader_position": "Chủ tịch HĐQT",
+      "volume_before": 16489,
+      "plan_buy": 0,
+      "plan_sell": 16489,
+      "plan_begin_date": "2020-08-11",
+      "plan_end_date": "2020-09-09",
+      "real_buy": 0,
+      "real_sell": 16400,
+      "real_end_date": "2020-09-11",
+      "published_date": "2020-08-06",
+      "volume_after": 89
+    },
+    {
+      "transaction_name": "Nguyễn Như Đông",
+      "transaction_position": "Chồng",
+      "leader_name": "Nguyễn Thị Thanh Hoa",
+      "leader_position": "Thành viên BKS",
+      "volume_before": 35350,
+      "plan_buy": 10000,
+      "plan_sell": 0,
+      "plan_begin_date": "2019-06-12",
+      "plan_end_date": "2019-07-08",
+      "real_buy": 10000,
+      "real_sell": 0,
+      "real_end_date": "2019-06-07",
+      "published_date": "2019-06-12",
+      "volume_after": 43350
+    },
+    {
+      "transaction_name": "Trương Hải Quang",
+      "transaction_position": "Phó Tổng GĐ",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 85125,
+      "plan_buy": 0,
+      "plan_sell": 10000,
+      "plan_begin_date": "2018-09-13",
+      "plan_end_date": "2018-10-11",
+      "real_buy": 0,
+      "real_sell": 10000,
+      "real_end_date": "2018-10-01",
+      "published_date": "2018-09-11",
+      "volume_after": 75125
+    }
+  ]
+}

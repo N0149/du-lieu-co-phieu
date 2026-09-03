@@ -79,7 +79,9 @@ flowchart TD
 | File | Loại | Trạng thái & Mô tả |
 |---|---|---|
 | `app/layout.tsx` | Server (root) | ✅ Layout toàn site: fonts Inter/JetBrains, `themeScript`, `<SiteFooter/>`, `@vercel/analytics`. |
-| `app/page.tsx` | Server | ✅ Trang chủ: `SiteHeader` + `HomeKpis` + `Screener`. |
+| `app/page.tsx` | Server | ✅ **Trang chủ**: Hiển thị trực tiếp Dòng Tin Tức Thị Trường & Công Bố Doanh Nghiệp realtime (`NewsDashboard`). |
+| `app/bo-loc/page.tsx` | Server | ✅ **Bộ Lọc Cổ Phiếu**: `SiteHeader` + `HomeKpis` + `Screener` định giá RNAV & tài sản. |
+| `app/tin-tuc/page.tsx` | Server | ✅ **Trang Tin Tức**: Dòng tin tài chính & bóc tách mã cổ phiếu realtime. |
 | `app/bao-cao/page.tsx` | Client (Suspense) | ✅ Kho báo cáo: tìm kiếm, sort, 4 Tab lọc (Tất cả / Cổ phiếu / Hàng hóa / Vĩ mô). |
 | `app/bao-cao/[slug]/page.tsx` | Server (async) | ✅ Viewer báo cáo + `<ReportAudioPlayer/>` (TTS) + `<DriveDocViewer/>`. |
 | `app/ticker/[symbol]/page.tsx` | Server (async) | ✅ Trang chi tiết cổ phiếu định giá & BCTC. |
@@ -129,6 +131,7 @@ flowchart TD
 
 | Timestamp | File(s) sửa | Nội dung thay đổi |
 |---|---|---|
+| 2026-09-02 | `app/page.tsx` · `app/bo-loc/page.tsx` (mới) · `components/site-header.tsx` | **Cấu hình trang chủ (/) hiển thị trực tiếp Tab Tin Tức & di chuyển Bộ Lọc Cổ Phiếu sang (/bo-loc)**: <br>1. Đưa tab **Tin Tức** lên vị trí đầu tiên trên thanh menu điều hướng và trỏ trực tiếp về trang chủ `/`.<br>2. Cấu hình `app/page.tsx` nạp dữ liệu và hiển thị trực tiếp `NewsDashboard` (dòng tin tức tài chính & doanh nghiệp realtime, tự động bóc tách mã CK, lọc nguồn, bookmark, polling 60s).<br>3. Tạo trang `app/bo-loc/page.tsx` lưu giữ nguyên vẹn chức năng Bộ Lọc Cổ Phiếu + KPIs định giá RNAV.<br>4. Đồng bộ active state trên `SiteHeader` chuẩn xác cho cả desktop và mobile (`/` và `/tin-tuc` đều active Tin Tức, `/bo-loc` active Bộ Lọc Cổ Phiếu). |
 | 2026-09-01 | `scripts/cangbien/db.py` · `run_pipeline.py` · `.github/workflows/sync-market-data.yml` · `data/maritime/dashboard_summary.json` | **Cập nhật dữ liệu tàu mới nhất (31/08, 01/09, 02/09), xử lý chống trùng lặp và cài đặt cron auto-sync**: <br>1. Thêm hàm `dedupe_port_calls` và nâng cấp `insert_port_call` trong `db.py` chống trùng lặp theo `(Tên tàu, Ngày, Giờ, Hướng, Cầu bến)`.<br>2. Mở rộng `run_pipeline.py` quét multi-day (offset -3 đến 1), cập nhật 395 lượt tàu phân biệt duy nhất.<br>3. Nâng cấp GitHub Actions workflow chạy tự động 2 lần mỗi ngày (05:30 và 16:30 GMT+7) để tự động cào và deploy lên `dulieucophieu.com`. Push `1ba5545`. |
 | 2026-08-31 | `app/cang-bien/**` · `app/cang/**` · `components/cang-bien/**` | **Nâng cấp giao diện sang theme Dark Oceanic Fintech & đồng bộ Header toàn site**: <br>1. Gắn `SiteHeader` và thanh Sub-nav tabs (Tổng quan / Tra cứu tàu / Nguồn dữ liệu) trên tất cả các trang cảng biển.<br>2. Chuyển đổi toàn bộ giao diện sang Dark Oceanic: Nền Deep Slate 950, ambient glow Teal & Cyan, thẻ Neon Gradient, bảng Bloomberg Terminal glassmorphism.<br>3. Tối ưu biểu đồ cột SVG gradient đa sắc và dải tháng T1-T12 nằm ngang. Push `6d5f88f` → `d86b78f`. |
 | 2026-08-29 | `scripts/cangbien/**` (mới) · `data/maritime/**` (mới) · `app/cang-bien/**` (mới) · `app/cang/**` (mới) · `components/cang-bien/**` (mới) · `lib/maritime*.ts` (mới) · `components/site-header.tsx` | **Triển khai toàn diện Hệ Thống Dữ Liệu Cảng Biển & Tình Báo Hàng Hải (`dulieucophieu.com/cang-bien`)**: Data engine SQLite, scraper Cảng vụ HP & Hoa tiêu Miền Nam, 12 mã cổ phiếu cảng biển, biểu đồ SVG không giật, bảng so sánh cùng kỳ YoY, 10 chuyến tàu gần nhất, Cảng MIPEC Đình Vũ. Push `d710fab`. |
@@ -139,4 +142,4 @@ flowchart TD
 | 2026-08-23 | `app/xuat-nhap-khau/page.tsx` (mới) · `app/api/customs-trade/route.ts` (mới) · `components/customs-trade-viewer.tsx` (mới) · `components/TradeBalanceChart.tsx` (mới) · `components/site-header.tsx` | **Trang Thống Kê XNK + biểu đồ Cán cân**: route `/api/customs-trade` trả snapshot XNK; trang `/xuat-nhap-khau` render `TradeBalanceChart` + `CustomsTradeViewer`. |
 
 ---
-*Cập nhật lần cuối: 2026-09-01 · Người duy trì: Nguyễn Trung Nhật (trungnhat232@gmail.com)*
+*Cập nhật lần cuối: 2026-09-02 · Người duy trì: Nguyễn Trung Nhật (trungnhat232@gmail.com)*

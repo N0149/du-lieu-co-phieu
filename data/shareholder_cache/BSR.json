@@ -1,0 +1,173 @@
+{
+  "symbol": "BSR",
+  "updated": "2026-09-01T07:18:29.000Z",
+  "co_cau_so_huu": {
+    "CoDongSoHuu": [
+      {
+        "Code": "CEO_873464",
+        "Name": "Mai Tuấn Đạt",
+        "Url": "<a href='/du-lieu/ceo/CEO_873464/mai-tuan-dat.chn'>Mai Tuấn Đạt</a>",
+        "AssetVolume": "2.393",
+        "AssetRate": "0,0",
+        "UpdatedDate": "11/08/2026"
+      },
+      {
+        "Code": "CEO_54159",
+        "Name": "Khương Lê Thành",
+        "Url": "<a href='/du-lieu/ceo/CEO_54159/khuong-le-thanh.chn'>Khương Lê Thành</a>",
+        "AssetVolume": "5.812",
+        "AssetRate": "0,0",
+        "UpdatedDate": "11/08/2026"
+      },
+      {
+        "Code": "CEO_56049",
+        "Name": "Bùi Minh Tiến",
+        "Url": "<a href='/du-lieu/ceo/CEO_56049/bui-minh-tien.chn'>Bùi Minh Tiến</a>",
+        "AssetVolume": "42.000",
+        "AssetRate": "0,0",
+        "UpdatedDate": "11/08/2026"
+      },
+      {
+        "Code": "CEO_54155",
+        "Name": "Nguyễn Văn Hội",
+        "Url": "<a href='/du-lieu/ceo/CEO_54155/nguyen-van-hoi.chn'>Nguyễn Văn Hội</a>",
+        "AssetVolume": "10.940",
+        "AssetRate": "0,0",
+        "UpdatedDate": "11/08/2026"
+      },
+      {
+        "Code": "PVN",
+        "Name": "Tập đoàn Công nghiệp-Năng lượng Quốc gia Việt Nam",
+        "Url": "<a href='/du-lieu/otc/PVN-tap-doan-cong-nghiepnang-luong-quoc-gia-viet-nam.chn' title='Tập đoàn Công nghiệp-Năng lượng Quốc gia Việt Nam'>Tập đoàn Công nghiệp-Năng lượng Quốc gia Việt Nam</a>",
+        "AssetVolume": "4.882.981.755",
+        "AssetRate": "97,52",
+        "UpdatedDate": "11/08/2026"
+      },
+      {
+        "Code": "CEO_54156",
+        "Name": "Nguyễn Việt Thắng",
+        "Url": "<a href='/du-lieu/ceo/CEO_54156/nguyen-viet-thang.chn'>Nguyễn Việt Thắng</a>",
+        "AssetVolume": "2.564",
+        "AssetRate": "0,0",
+        "UpdatedDate": "11/08/2026"
+      }
+    ],
+    "NuocNgoai": 1.15,
+    "NhaNuoc": 0,
+    "Khac": 98.85
+  },
+  "cong_ty_con": [
+    {
+      "Symbol": "BSR",
+      "CorpCode": "PBT",
+      "Name": "Công ty cổ phần Nhà và Thương mại Dầu khí",
+      "TotalCapital": 175.2228,
+      "SharedCapital": 145.89284,
+      "OwnershipRate": 83.26,
+      "Note": "",
+      "Order": 1,
+      "TradeCenter": "UpCOM"
+    },
+    {
+      "Symbol": "BSR",
+      "CorpCode": "CORP_94452",
+      "Name": "CTCP Hóa dầu và Nhiên liệu sinh học dầu khí miền Trung (PCB)",
+      "TotalCapital": 982,
+      "SharedCapital": 643.6,
+      "OwnershipRate": 65.54,
+      "Note": "",
+      "Order": 2,
+      "TradeCenter": ""
+    }
+  ],
+  "cong_ty_lien_ket": [
+    {
+      "Symbol": "BSR",
+      "CorpCode": "PVEIC",
+      "Name": "Tổng Công ty Bảo Dưỡng -Sửa chữa Công trình Dầu khí - CTCP",
+      "TotalCapital": 0,
+      "SharedCapital": 7,
+      "OwnershipRate": 8.75,
+      "Note": "",
+      "Order": 3,
+      "TradeCenter": "OTC"
+    },
+    {
+      "Symbol": "BSR",
+      "CorpCode": "CORP_51737",
+      "Name": "Công ty TNHH Kho ngầm Xăng dầu Dầu khí Việt Nam",
+      "TotalCapital": 95.467,
+      "SharedCapital": 4.8,
+      "OwnershipRate": 5.03,
+      "Note": "",
+      "Order": 4,
+      "TradeCenter": ""
+    }
+  ],
+  "giao_dich_noi_bo": [
+    {
+      "transaction_name": "Bùi Minh Tiến",
+      "transaction_position": "Thành viên HĐQT",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 0,
+      "plan_buy": 100000,
+      "plan_sell": 0,
+      "plan_begin_date": "2019-09-18",
+      "plan_end_date": "2019-10-17",
+      "real_buy": 42000,
+      "real_sell": 0,
+      "real_end_date": "2019-10-17",
+      "published_date": "2019-09-17",
+      "volume_after": 42000
+    },
+    {
+      "transaction_name": "Bùi Minh Tiến",
+      "transaction_position": "Thành viên HĐQT",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 0,
+      "plan_buy": 100000,
+      "plan_sell": 0,
+      "plan_begin_date": "2019-09-17",
+      "plan_end_date": "2019-10-16",
+      "real_buy": 42000,
+      "real_sell": 0,
+      "real_end_date": "2019-10-16",
+      "published_date": "2019-09-16",
+      "volume_after": 42000
+    },
+    {
+      "transaction_name": "KIM Vietnam Growth Equity Fund",
+      "transaction_position": "",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 17326700,
+      "plan_buy": 0,
+      "plan_sell": 0,
+      "plan_begin_date": "",
+      "plan_end_date": "",
+      "real_buy": 0,
+      "real_sell": 904500,
+      "real_end_date": "2018-08-29",
+      "published_date": "2018-09-12",
+      "volume_after": 16422200
+    },
+    {
+      "transaction_name": "KIM Vietnam Growth Equity Fund",
+      "transaction_position": "",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 17326700,
+      "plan_buy": 0,
+      "plan_sell": 0,
+      "plan_begin_date": "",
+      "plan_end_date": "",
+      "real_buy": 0,
+      "real_sell": 904500,
+      "real_end_date": "2018-08-28",
+      "published_date": "2018-09-11",
+      "volume_after": 16422200
+    }
+  ]
+}

@@ -1,0 +1,111 @@
+{
+  "symbol": "MTL",
+  "updated": "2026-05-01T06:03:01.000Z",
+  "co_cau_so_huu": {
+    "CoDongSoHuu": [
+      {
+        "Code": "CEO_37078",
+        "Name": "Nguyễn Thị Huyền ",
+        "Url": "<a href='/du-lieu/ceo/CEO_37078/nguyen-thi-huyen.chn'>Nguyễn Thị Huyền </a>",
+        "AssetVolume": "6.800",
+        "AssetRate": "0,11",
+        "UpdatedDate": "31/12/2016"
+      },
+      {
+        "Code": "CEO_37077",
+        "Name": "Trần Thị Mỹ Châu",
+        "Url": "<a href='/du-lieu/ceo/CEO_37077/tran-thi-my-chau.chn'>Trần Thị Mỹ Châu</a>",
+        "AssetVolume": "2.500",
+        "AssetRate": "0,04",
+        "UpdatedDate": "25/01/2016"
+      },
+      {
+        "Code": "CEO_37076",
+        "Name": "Phương Sơn Hà",
+        "Url": "<a href='/du-lieu/ceo/CEO_37076/phuong-son-ha.chn'>Phương Sơn Hà</a>",
+        "AssetVolume": "5.000",
+        "AssetRate": "0,08",
+        "UpdatedDate": "25/01/2016"
+      },
+      {
+        "Code": "CORP_39300",
+        "Name": "Công ty TNHH MTV Môi trường Đô thị Hà Nội",
+        "Url": "Công ty TNHH MTV Môi trường Đô thị Hà Nội",
+        "AssetVolume": "5.115.000",
+        "AssetRate": "85,25",
+        "UpdatedDate": "31/12/2018"
+      },
+      {
+        "Code": "CEO_83856",
+        "Name": "Chu Thị Kim Cúc",
+        "Url": "<a href='/du-lieu/ceo/CEO_83856/chu-thi-kim-cuc.chn'>Chu Thị Kim Cúc</a>",
+        "AssetVolume": "1.800",
+        "AssetRate": "0,03",
+        "UpdatedDate": "30/06/2017"
+      },
+      {
+        "Code": "CEO_37074",
+        "Name": "Nguyễn Đức Đông",
+        "Url": "<a href='/du-lieu/ceo/CEO_37074/nguyen-duc-dong.chn'>Nguyễn Đức Đông</a>",
+        "AssetVolume": "3.200",
+        "AssetRate": "0,05",
+        "UpdatedDate": "31/12/2016"
+      },
+      {
+        "Code": "CEO_37071",
+        "Name": "Trần Nhị Hiền",
+        "Url": "<a href='/du-lieu/ceo/CEO_37071/tran-nhi-hien.chn'>Trần Nhị Hiền</a>",
+        "AssetVolume": "4.900",
+        "AssetRate": "0,08",
+        "UpdatedDate": "31/12/2016"
+      },
+      {
+        "Code": "CEO_37073",
+        "Name": "Nguyễn Lê Anh",
+        "Url": "<a href='/du-lieu/ceo/CEO_37073/nguyen-le-anh.chn'>Nguyễn Lê Anh</a>",
+        "AssetVolume": "3.200",
+        "AssetRate": "0,05",
+        "UpdatedDate": "31/12/2018"
+      }
+    ],
+    "NuocNgoai": 5999795.92,
+    "NhaNuoc": 0,
+    "Khac": -5999695.92
+  },
+  "cong_ty_con": [],
+  "cong_ty_lien_ket": [],
+  "giao_dich_noi_bo": [
+    {
+      "transaction_name": "Công ty TNHH Bất động sản Media Market",
+      "transaction_position": "",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 591800,
+      "plan_buy": 0,
+      "plan_sell": 0,
+      "plan_begin_date": "",
+      "plan_end_date": "",
+      "real_buy": 0,
+      "real_sell": 571800,
+      "real_end_date": "2020-12-08",
+      "published_date": "2021-07-21",
+      "volume_after": 20000
+    },
+    {
+      "transaction_name": "Công ty TNHH Bất động sản Media Market",
+      "transaction_position": "",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 300000,
+      "plan_buy": 0,
+      "plan_sell": 0,
+      "plan_begin_date": "",
+      "plan_end_date": "",
+      "real_buy": 0,
+      "real_sell": 280000,
+      "real_end_date": "2020-12-08",
+      "published_date": "2020-12-23",
+      "volume_after": 20000
+    }
+  ]
+}

@@ -77,15 +77,53 @@ export default async function StockDetailPage({
     )
     .sort((a, b) => (b.cap || 0) - (a.cap || 0))
 
+  // Dữ liệu phân tích & so sánh chuyên sâu ngành Ngân hàng (nếu là bank)
+  const { getBankAnalysisData } = await import('@/lib/banking-service')
+  const bankAnalysisData = getBankAnalysisData(ticker)
+
+  // Dữ liệu Đánh giá 360 & định giá P/E, P/B forward tổng hợp
+  const { getStockEvaluation } = await import('@/lib/stock-evaluation-service')
+  const evaluationData = await getStockEvaluation(ticker)
+
+  // Dữ liệu Hồ sơ doanh nghiệp mở rộng (Cổ đông, Công ty con/liên kết, Giao dịch nội bộ)
+  const { getCompanyFullProfile } = await import('@/lib/company-profile-service')
+  const companyProfileData = await getCompanyFullProfile(ticker)
+
+  // Dữ liệu Biểu đồ tài chính chuyên sâu (Quý & Năm)
+  const { getFinancialChartData } = await import('@/lib/financial-charts-service')
+  const { getValuationHistory } = await import('@/lib/valuation-history-service')
+  const { getDividendHistory } = await import('@/lib/dividend-history-service')
+
+  const [
+    financialChartQuarter,
+    financialChartAnnual,
+    valuationHistory,
+    dividendHistory,
+  ] = await Promise.all([
+    getFinancialChartData(ticker, 'quarter'),
+    getFinancialChartData(ticker, 'annual'),
+    getValuationHistory(ticker),
+    getDividendHistory(ticker),
+  ])
+
   return (
     <div className="min-h-screen bg-background text-foreground">
       <SiteHeader />
-      <StockDetailView
-        stockData={stockData}
-        relatedStocks={relatedStocks}
-        reports={reports}
-        detailedSnapshot={detailedSnapshot}
-      />
+      <main className="w-full px-3 sm:px-6 lg:px-8 py-5">
+        <StockDetailView
+          stockData={stockData}
+          relatedStocks={relatedStocks}
+          reports={reports}
+          detailedSnapshot={detailedSnapshot}
+          bankAnalysisData={bankAnalysisData}
+          evaluationData={evaluationData}
+          companyProfileData={companyProfileData}
+          financialChartQuarter={financialChartQuarter}
+          financialChartAnnual={financialChartAnnual}
+          valuationHistory={valuationHistory}
+          dividendHistory={dividendHistory}
+        />
+      </main>
     </div>
   )
 }

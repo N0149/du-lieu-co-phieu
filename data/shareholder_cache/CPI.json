@@ -1,0 +1,131 @@
+{
+  "symbol": "CPI",
+  "updated": "2026-08-01T05:31:22.000Z",
+  "co_cau_so_huu": {
+    "CoDongSoHuu": [
+      {
+        "Code": "GELEXIMCO",
+        "Name": "Tập đoàn Geleximco - CTCP",
+        "Url": "<a href='/du-lieu/otc/GELEXIMCO-tap-doan-geleximco-ctcp.chn' title='Tập đoàn Geleximco - CTCP'>Tập đoàn Geleximco - CTCP</a>",
+        "AssetVolume": "1.800.000",
+        "AssetRate": "4,93",
+        "UpdatedDate": "31/12/2025"
+      },
+      {
+        "Code": "CQN",
+        "Name": "Công ty cổ phần Cảng Quảng Ninh",
+        "Url": "<a href='/du-lieu/upcom/CQN-cong-ty-co-phan-cang-quang-ninh.chn' title='Công ty cổ phần Cảng Quảng Ninh'>Công ty cổ phần Cảng Quảng Ninh</a>",
+        "AssetVolume": "2.970.999",
+        "AssetRate": "8,14",
+        "UpdatedDate": "31/12/2025"
+      },
+      {
+        "Code": "MVN",
+        "Name": "Tổng Công ty Hàng hải Việt Nam - CTCP",
+        "Url": "<a href='/du-lieu/upcom/MVN-tong-cong-ty-hang-hai-viet-nam-ctcp.chn' title='Tổng Công ty Hàng hải Việt Nam - CTCP'>Tổng Công ty Hàng hải Việt Nam - CTCP</a>",
+        "AssetVolume": "20.655.000",
+        "AssetRate": "56,58",
+        "UpdatedDate": "31/12/2025"
+      }
+    ],
+    "NuocNgoai": 36505000,
+    "NhaNuoc": 0,
+    "Khac": -36504900
+  },
+  "cong_ty_con": [],
+  "cong_ty_lien_ket": [
+    {
+      "Symbol": "CPI",
+      "CorpCode": "CICT",
+      "Name": "Công ty TNHH Cảng Container Quốc tế Cái Lân",
+      "TotalCapital": 0,
+      "SharedCapital": 944.93,
+      "OwnershipRate": 50.08,
+      "Note": "",
+      "Order": 1,
+      "TradeCenter": "OTC"
+    }
+  ],
+  "giao_dich_noi_bo": [
+    {
+      "transaction_name": "Công ty cổ phần Cảng Quảng Ninh",
+      "transaction_position": "",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 2970999,
+      "plan_buy": 0,
+      "plan_sell": 50187,
+      "plan_begin_date": "2023-02-20",
+      "plan_end_date": "2023-03-15",
+      "real_buy": 0,
+      "real_sell": 0,
+      "real_end_date": "2023-03-15",
+      "published_date": "2023-02-17",
+      "volume_after": 2970999
+    },
+    {
+      "transaction_name": "Phạm Văn Toàn",
+      "transaction_position": "Thành viên HĐQT",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 330930,
+      "plan_buy": 0,
+      "plan_sell": 300000,
+      "plan_begin_date": "2019-07-17",
+      "plan_end_date": "2019-08-08",
+      "real_buy": 0,
+      "real_sell": 300000,
+      "real_end_date": "2019-07-19",
+      "published_date": "2019-07-16",
+      "volume_after": 30930
+    },
+    {
+      "transaction_name": "Thẩm Nguyễn Thục Anh",
+      "transaction_position": "Con gái",
+      "leader_name": "Thẩm Hồng Sơn",
+      "leader_position": "Thành viên HĐQT",
+      "volume_before": 0,
+      "plan_buy": 300000,
+      "plan_sell": 0,
+      "plan_begin_date": "2019-07-17",
+      "plan_end_date": "2019-08-08",
+      "real_buy": 300000,
+      "real_sell": 0,
+      "real_end_date": "2019-07-19",
+      "published_date": "2019-07-16",
+      "volume_after": 300000
+    },
+    {
+      "transaction_name": "CTCP Cảng Quảng Ninh",
+      "transaction_position": "",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 3062779,
+      "plan_buy": 0,
+      "plan_sell": 0,
+      "plan_begin_date": "",
+      "plan_end_date": "",
+      "real_buy": 0,
+      "real_sell": 91780,
+      "real_end_date": "2018-06-01",
+      "published_date": "2018-06-11",
+      "volume_after": 2970999
+    },
+    {
+      "transaction_name": "CTCP Cảng Quảng Ninh",
+      "transaction_position": "",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 3461562,
+      "plan_buy": 0,
+      "plan_sell": 0,
+      "plan_begin_date": "",
+      "plan_end_date": "",
+      "real_buy": 0,
+      "real_sell": 398783,
+      "real_end_date": "2017-10-20",
+      "published_date": "2017-11-23",
+      "volume_after": 3062779
+    }
+  ]
+}

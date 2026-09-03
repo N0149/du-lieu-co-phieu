@@ -1,0 +1,127 @@
+{
+  "symbol": "BRS",
+  "updated": "2026-08-01T05:28:16.000Z",
+  "co_cau_so_huu": {
+    "CoDongSoHuu": [
+      {
+        "Code": "CORP_00986",
+        "Name": "UBND tỉnh Bà Rịa - Vũng Tàu",
+        "Url": "UBND tỉnh Bà Rịa - Vũng Tàu",
+        "AssetVolume": "3.493.750",
+        "AssetRate": "76,92",
+        "UpdatedDate": "31/07/2026"
+      },
+      {
+        "Code": "CORP_39390",
+        "Name": "Công ty TNHH Ô tô chuyên dùng Hiệp Hòa",
+        "Url": "Công ty TNHH Ô tô chuyên dùng Hiệp Hòa",
+        "AssetVolume": "728.000",
+        "AssetRate": "16,03",
+        "UpdatedDate": "31/07/2026"
+      }
+    ],
+    "NuocNgoai": 49,
+    "NhaNuoc": 0,
+    "Khac": 51
+  },
+  "cong_ty_con": [],
+  "cong_ty_lien_ket": [],
+  "giao_dich_noi_bo": [
+    {
+      "transaction_name": "Trương Thị Tâm",
+      "transaction_position": "Kế toán trưởng",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 0,
+      "plan_buy": 1100,
+      "plan_sell": 0,
+      "plan_begin_date": "2020-10-12",
+      "plan_end_date": "2020-11-10",
+      "real_buy": 1100,
+      "real_sell": 0,
+      "real_end_date": "2020-10-20",
+      "published_date": "2020-10-13",
+      "volume_after": 1100
+    },
+    {
+      "transaction_name": "Nguyễn Phạm Việt Nghĩa",
+      "transaction_position": "Thành viên HĐQT",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 9600,
+      "plan_buy": 3000,
+      "plan_sell": 0,
+      "plan_begin_date": "2018-08-14",
+      "plan_end_date": "2018-09-11",
+      "real_buy": 3000,
+      "real_sell": 0,
+      "real_end_date": "2018-08-26",
+      "published_date": "2018-08-12",
+      "volume_after": 12600
+    },
+    {
+      "transaction_name": "Nguyễn Phạm Việt Nghĩa",
+      "transaction_position": "Tổng Giám đốc",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 8700,
+      "plan_buy": 900,
+      "plan_sell": 0,
+      "plan_begin_date": "2017-11-26",
+      "plan_end_date": "2017-12-25",
+      "real_buy": 900,
+      "real_sell": 0,
+      "real_end_date": "2017-12-03",
+      "published_date": "2017-11-22",
+      "volume_after": 9600
+    },
+    {
+      "transaction_name": "Nguyễn Phạm Việt Nghĩa",
+      "transaction_position": "Tổng Giám đốc",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 7900,
+      "plan_buy": 800,
+      "plan_sell": 0,
+      "plan_begin_date": "2017-10-18",
+      "plan_end_date": "2017-11-15",
+      "real_buy": 800,
+      "real_sell": 0,
+      "real_end_date": "2017-10-30",
+      "published_date": "2017-10-17",
+      "volume_after": 8700
+    },
+    {
+      "transaction_name": "Nguyễn Phạm Việt Nghĩa",
+      "transaction_position": "Tổng Giám đốc",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 3100,
+      "plan_buy": 4800,
+      "plan_sell": 0,
+      "plan_begin_date": "2017-08-15",
+      "plan_end_date": "2017-08-21",
+      "real_buy": 4800,
+      "real_sell": 0,
+      "real_end_date": "2017-08-21",
+      "published_date": "2017-08-24",
+      "volume_after": 79000
+    },
+    {
+      "transaction_name": "Nguyễn Phạm Việt Nghĩa",
+      "transaction_position": "Tổng Giám đốc",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 0,
+      "plan_buy": 3100,
+      "plan_sell": 0,
+      "plan_begin_date": "2017-06-19",
+      "plan_end_date": "2017-07-18",
+      "real_buy": 3100,
+      "real_sell": 0,
+      "real_end_date": "2017-06-27",
+      "published_date": "2017-06-18",
+      "volume_after": 3100
+    }
+  ]
+}

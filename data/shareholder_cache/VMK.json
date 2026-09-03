@@ -1,0 +1,22 @@
+{
+  "symbol": "VMK",
+  "updated": "2026-03-22T03:24:51.000Z",
+  "co_cau_so_huu": {
+    "CoDongSoHuu": [
+      {
+        "Code": "CORP_654322",
+        "Name": "Công ty TNHH Quang Ngân Việt Nam",
+        "Url": "Công ty TNHH Quang Ngân Việt Nam",
+        "AssetVolume": "2.038.519",
+        "AssetRate": "25,77",
+        "UpdatedDate": "28/08/2025"
+      }
+    ],
+    "NuocNgoai": 0,
+    "NhaNuoc": 0,
+    "Khac": 100
+  },
+  "cong_ty_con": [],
+  "cong_ty_lien_ket": [],
+  "giao_dich_noi_bo": []
+}

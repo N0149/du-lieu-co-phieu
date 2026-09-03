@@ -1,0 +1,167 @@
+{
+  "symbol": "VNY",
+  "updated": "2026-09-01T07:55:15.000Z",
+  "co_cau_so_huu": {
+    "CoDongSoHuu": [
+      {
+        "Code": "CEO_55153",
+        "Name": "Lê Anh Tuấn",
+        "Url": "<a href='/du-lieu/ceo/CEO_55153/le-anh-tuan.chn'>Lê Anh Tuấn</a>",
+        "AssetVolume": "355.499",
+        "AssetRate": "2,19",
+        "UpdatedDate": "30/06/2022"
+      },
+      {
+        "Code": "CEO_55154",
+        "Name": "Nguyễn Thị Hương",
+        "Url": "<a href='/du-lieu/ceo/CEO_55154/nguyen-thi-huong.chn'>Nguyễn Thị Hương</a>",
+        "AssetVolume": "670.249",
+        "AssetRate": "4,12",
+        "UpdatedDate": "30/06/2022"
+      },
+      {
+        "Code": "KLQ_29030",
+        "Name": "Lê Hải Đoàn",
+        "Url": "Lê Hải Đoàn",
+        "AssetVolume": "1.682.614",
+        "AssetRate": "10,35",
+        "UpdatedDate": "02/07/2026"
+      },
+      {
+        "Code": "CEO_55155",
+        "Name": "Đặng Văn Tiếp",
+        "Url": "<a href='/du-lieu/ceo/CEO_55155/dang-van-tiep.chn'>Đặng Văn Tiếp</a>",
+        "AssetVolume": "62.500",
+        "AssetRate": "0,38",
+        "UpdatedDate": "30/06/2022"
+      },
+      {
+        "Code": "CEO_55157",
+        "Name": "Trần Hồng Quynh",
+        "Url": "<a href='/du-lieu/ceo/CEO_55157/tran-hong-quynh.chn'>Trần Hồng Quynh</a>",
+        "AssetVolume": "75.000",
+        "AssetRate": "0,46",
+        "UpdatedDate": "30/06/2022"
+      },
+      {
+        "Code": "KLQ_100617",
+        "Name": "Nguyễn Văn Tuyến",
+        "Url": "Nguyễn Văn Tuyến",
+        "AssetVolume": "4.000.000",
+        "AssetRate": "24,62",
+        "UpdatedDate": "06/08/2026"
+      },
+      {
+        "Code": "CEO_873655",
+        "Name": "Nguyễn Thị Phượng",
+        "Url": "<a href='/du-lieu/ceo/CEO_873655/nguyen-thi-phuong.chn'>Nguyễn Thị Phượng</a>",
+        "AssetVolume": "189.873",
+        "AssetRate": "1,17",
+        "UpdatedDate": "30/07/2022"
+      }
+    ],
+    "NuocNgoai": 16249967.35,
+    "NhaNuoc": 0,
+    "Khac": -16249867.35
+  },
+  "cong_ty_con": [],
+  "cong_ty_lien_ket": [],
+  "giao_dich_noi_bo": [
+    {
+      "transaction_name": "Nguyễn Văn Tuyến",
+      "transaction_position": "",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 0,
+      "plan_buy": 0,
+      "plan_sell": 0,
+      "plan_begin_date": "",
+      "plan_end_date": "",
+      "real_buy": 4000000,
+      "real_sell": 0,
+      "real_end_date": "2026-08-06",
+      "published_date": "2026-08-14",
+      "volume_after": 4000000
+    },
+    {
+      "transaction_name": "Công ty TNHH MTV Quản lý quỹ Ngân hàng TMCP Công thương Việt Nam",
+      "transaction_position": "",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 4000000,
+      "plan_buy": 0,
+      "plan_sell": 0,
+      "plan_begin_date": "",
+      "plan_end_date": "",
+      "real_buy": 0,
+      "real_sell": 4000000,
+      "real_end_date": "2026-08-06",
+      "published_date": "2026-08-13",
+      "volume_after": 0
+    },
+    {
+      "transaction_name": "Lê Hải Đoàn",
+      "transaction_position": "",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 1130614,
+      "plan_buy": 0,
+      "plan_sell": 0,
+      "plan_begin_date": "",
+      "plan_end_date": "",
+      "real_buy": 552000,
+      "real_sell": 0,
+      "real_end_date": "2026-07-02",
+      "published_date": "2026-07-14",
+      "volume_after": 1682614
+    },
+    {
+      "transaction_name": "Nguyễn Thị Thu Hà",
+      "transaction_position": "Kế toán trưởng",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 90400,
+      "plan_buy": 0,
+      "plan_sell": 0,
+      "plan_begin_date": "",
+      "plan_end_date": "",
+      "real_buy": 0,
+      "real_sell": 90400,
+      "real_end_date": "2025-09-04",
+      "published_date": "2025-09-15",
+      "volume_after": 0
+    },
+    {
+      "transaction_name": "Nguyễn Thị Hương",
+      "transaction_position": "Thành viên HĐQT",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 623749,
+      "plan_buy": 100000,
+      "plan_sell": 0,
+      "plan_begin_date": "2018-12-17",
+      "plan_end_date": "2019-01-11",
+      "real_buy": 46500,
+      "real_sell": 0,
+      "real_end_date": "2019-01-11",
+      "published_date": "2018-12-14",
+      "volume_after": 670249
+    },
+    {
+      "transaction_name": "Nguyễn Thị Hương",
+      "transaction_position": "Thành viên HĐQT",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 505000,
+      "plan_buy": 0,
+      "plan_sell": 0,
+      "plan_begin_date": "",
+      "plan_end_date": "",
+      "real_buy": 118749,
+      "real_sell": 0,
+      "real_end_date": "2018-10-19",
+      "published_date": "2018-12-13",
+      "volume_after": 623749
+    }
+  ]
+}

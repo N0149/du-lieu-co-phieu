@@ -1,0 +1,30 @@
+{
+  "symbol": "PVH",
+  "updated": "2026-06-01T07:22:36.000Z",
+  "co_cau_so_huu": {
+    "CoDongSoHuu": [
+      {
+        "Code": "CORP_51055",
+        "Name": "Công ty CP Quản lý Quỹ Leadvisors",
+        "Url": "Công ty CP Quản lý Quỹ Leadvisors",
+        "AssetVolume": "1.500.000",
+        "AssetRate": "7,14",
+        "UpdatedDate": "30/06/2024"
+      },
+      {
+        "Code": "PVX",
+        "Name": "Tổng Công ty cổ phần Xây lắp Dầu khí Việt Nam",
+        "Url": "<a href='/du-lieu/upcom/PVX-tong-cong-ty-co-phan-xay-lap-dau-khi-viet-nam.chn' title='Tổng Công ty cổ phần Xây lắp Dầu khí Việt Nam'>Tổng Công ty cổ phần Xây lắp Dầu khí Việt Nam</a>",
+        "AssetVolume": "7.560.000",
+        "AssetRate": "36,0",
+        "UpdatedDate": "31/12/2021"
+      }
+    ],
+    "NuocNgoai": 21000000,
+    "NhaNuoc": 0,
+    "Khac": -20999900
+  },
+  "cong_ty_con": [],
+  "cong_ty_lien_ket": [],
+  "giao_dich_noi_bo": []
+}

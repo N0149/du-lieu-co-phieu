@@ -1,0 +1,151 @@
+{
+  "symbol": "BHK",
+  "updated": "2026-09-01T07:17:23.000Z",
+  "co_cau_so_huu": {
+    "CoDongSoHuu": [
+      {
+        "Code": "CEO_85160",
+        "Name": "Trương Văn Hải",
+        "Url": "<a href='/du-lieu/ceo/CEO_85160/truong-van-hai.chn'>Trương Văn Hải</a>",
+        "AssetVolume": "37.620",
+        "AssetRate": "0,94",
+        "UpdatedDate": "04/06/2026"
+      },
+      {
+        "Code": "KLQ_96158",
+        "Name": "Hoàng Thị Bích",
+        "Url": "Hoàng Thị Bích",
+        "AssetVolume": "78.200",
+        "AssetRate": "1,96",
+        "UpdatedDate": "04/06/2026"
+      },
+      {
+        "Code": "BHN",
+        "Name": "Tổng CTCP Bia - Rượu - Nước giải khát Hà Nội",
+        "Url": "<a href='/du-lieu/hose/BHN-tong-ctcp-bia-ruou-nuoc-giai-khat-ha-noi.chn' title='Tổng CTCP Bia - Rượu - Nước giải khát Hà Nội'>Tổng CTCP Bia - Rượu - Nước giải khát Hà Nội</a>",
+        "AssetVolume": "1.120.000",
+        "AssetRate": "28,1",
+        "UpdatedDate": "04/06/2026"
+      }
+    ],
+    "NuocNgoai": 0.01,
+    "NhaNuoc": 0,
+    "Khac": 99.99
+  },
+  "cong_ty_con": [],
+  "cong_ty_lien_ket": [],
+  "giao_dich_noi_bo": [
+    {
+      "transaction_name": "Nguyễn Xuân Thành",
+      "transaction_position": "Thành viên HĐQT",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 0,
+      "plan_buy": 10000,
+      "plan_sell": 0,
+      "plan_begin_date": "2025-08-19",
+      "plan_end_date": "2025-08-26",
+      "real_buy": 0,
+      "real_sell": 0,
+      "real_end_date": "",
+      "published_date": "2025-08-20",
+      "volume_after": 0
+    },
+    {
+      "transaction_name": "Bùi Thị Hạnh",
+      "transaction_position": "Vợ",
+      "leader_name": "Trương Văn Hải",
+      "leader_position": "Giám đốc",
+      "volume_before": 0,
+      "plan_buy": 5350,
+      "plan_sell": 0,
+      "plan_begin_date": "2023-10-25",
+      "plan_end_date": "2023-11-23",
+      "real_buy": 5350,
+      "real_sell": 0,
+      "real_end_date": "2023-11-17",
+      "published_date": "2023-11-20",
+      "volume_after": 5350
+    },
+    {
+      "transaction_name": "Trương Thị Từ",
+      "transaction_position": "Chị ruột",
+      "leader_name": "Trương Văn Hải",
+      "leader_position": "Giám đốc",
+      "volume_before": 2800,
+      "plan_buy": 0,
+      "plan_sell": 2800,
+      "plan_begin_date": "2023-01-04",
+      "plan_end_date": "2023-01-30",
+      "real_buy": 0,
+      "real_sell": 2800,
+      "real_end_date": "2023-01-18",
+      "published_date": "2023-01-02",
+      "volume_after": 0
+    },
+    {
+      "transaction_name": "Vũ Thị Thương Huyền",
+      "transaction_position": "Kế toán trưởng",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 3100,
+      "plan_buy": 29480,
+      "plan_sell": 0,
+      "plan_begin_date": "2022-12-08",
+      "plan_end_date": "2022-12-30",
+      "real_buy": 0,
+      "real_sell": 0,
+      "real_end_date": "2022-12-30",
+      "published_date": "2022-12-06",
+      "volume_after": 3100
+    },
+    {
+      "transaction_name": "Công ty TNHH Ngân Hạnh",
+      "transaction_position": "",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 669000,
+      "plan_buy": 0,
+      "plan_sell": 669000,
+      "plan_begin_date": "2022-06-27",
+      "plan_end_date": "2022-07-26",
+      "real_buy": 0,
+      "real_sell": 669000,
+      "real_end_date": "2022-07-21",
+      "published_date": "2022-06-24",
+      "volume_after": 0
+    },
+    {
+      "transaction_name": "CTCP Nhựa - Bao bì Ngân Hạnh",
+      "transaction_position": "",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 200000,
+      "plan_buy": 0,
+      "plan_sell": 0,
+      "plan_begin_date": "",
+      "plan_end_date": "",
+      "real_buy": 0,
+      "real_sell": 200000,
+      "real_end_date": "2022-01-04",
+      "published_date": "2022-01-18",
+      "volume_after": 0
+    },
+    {
+      "transaction_name": "Hoàng Thị Bích",
+      "transaction_position": "Em gái",
+      "leader_name": "Hoàng Ngọc Văn",
+      "leader_position": "Thành viên HĐQT",
+      "volume_before": 48200,
+      "plan_buy": 30000,
+      "plan_sell": 0,
+      "plan_begin_date": "2020-08-18",
+      "plan_end_date": "2020-09-10",
+      "real_buy": 30000,
+      "real_sell": 0,
+      "real_end_date": "2020-09-04",
+      "published_date": "2020-08-18",
+      "volume_after": 78200
+    }
+  ]
+}

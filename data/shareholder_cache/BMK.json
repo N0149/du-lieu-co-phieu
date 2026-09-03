@@ -1,0 +1,127 @@
+{
+  "symbol": "BMK",
+  "updated": "2026-09-01T07:17:59.000Z",
+  "co_cau_so_huu": {
+    "CoDongSoHuu": [
+      {
+        "Code": "CEO_878620",
+        "Name": "Hồ Minh Kha",
+        "Url": "<a href='/du-lieu/ceo/CEO_878620/ho-minh-kha.chn'>Hồ Minh Kha</a>",
+        "AssetVolume": "4.835.380",
+        "AssetRate": "60,26",
+        "UpdatedDate": "25/08/2025"
+      },
+      {
+        "Code": "CEO_878621",
+        "Name": "Lê Xuân Mẫn",
+        "Url": "<a href='/du-lieu/ceo/CEO_878621/le-xuan-man.chn'>Lê Xuân Mẫn</a>",
+        "AssetVolume": "1.543.100",
+        "AssetRate": "19,23",
+        "UpdatedDate": "23/01/2026"
+      }
+    ],
+    "NuocNgoai": 5.04,
+    "NhaNuoc": 0,
+    "Khac": 94.96
+  },
+  "cong_ty_con": [],
+  "cong_ty_lien_ket": [],
+  "giao_dich_noi_bo": [
+    {
+      "transaction_name": "Lê Xuân Mẫn",
+      "transaction_position": "Giám đốc",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 1540000,
+      "plan_buy": 39000,
+      "plan_sell": 0,
+      "plan_begin_date": "2025-12-26",
+      "plan_end_date": "2026-01-23",
+      "real_buy": 3100,
+      "real_sell": 0,
+      "real_end_date": "2026-01-23",
+      "published_date": "2025-12-24",
+      "volume_after": 1543100
+    },
+    {
+      "transaction_name": "Lê Xuân Mẫn",
+      "transaction_position": "Giám đốc",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 1540000,
+      "plan_buy": 39000,
+      "plan_sell": 0,
+      "plan_begin_date": "2025-12-26",
+      "plan_end_date": "2026-01-23",
+      "real_buy": 0,
+      "real_sell": 0,
+      "real_end_date": "",
+      "published_date": "2025-12-24",
+      "volume_after": 0
+    },
+    {
+      "transaction_name": "Lê Xuân Mẫn",
+      "transaction_position": "Giám đốc",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 1539056,
+      "plan_buy": 40100,
+      "plan_sell": 0,
+      "plan_begin_date": "2025-09-29",
+      "plan_end_date": "2025-10-24",
+      "real_buy": 0,
+      "real_sell": 0,
+      "real_end_date": "",
+      "published_date": "2025-09-30",
+      "volume_after": 0
+    },
+    {
+      "transaction_name": "Lê Xuân Mẫn",
+      "transaction_position": "Giám đốc",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 1290800,
+      "plan_buy": 13500,
+      "plan_sell": 0,
+      "plan_begin_date": "2025-08-07",
+      "plan_end_date": "2025-09-05",
+      "real_buy": 0,
+      "real_sell": 0,
+      "real_end_date": "",
+      "published_date": "2025-08-08",
+      "volume_after": 0
+    },
+    {
+      "transaction_name": "Lê Xuân Mẫn",
+      "transaction_position": "Giám đốc",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 1279400,
+      "plan_buy": 12240,
+      "plan_sell": 0,
+      "plan_begin_date": "2025-06-30",
+      "plan_end_date": "2025-07-25",
+      "real_buy": 11400,
+      "real_sell": 0,
+      "real_end_date": "2025-07-25",
+      "published_date": "2025-06-26",
+      "volume_after": 1290800
+    },
+    {
+      "transaction_name": "Lê Xuân Mẫn",
+      "transaction_position": "Giám đốc",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 1268100,
+      "plan_buy": 14400,
+      "plan_sell": 0,
+      "plan_begin_date": "2025-05-07",
+      "plan_end_date": "2025-05-30",
+      "real_buy": 11600,
+      "real_sell": 0,
+      "real_end_date": "2025-05-30",
+      "published_date": "2025-05-15",
+      "volume_after": 1279400
+    }
+  ]
+}

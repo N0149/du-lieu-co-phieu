@@ -1,0 +1,646 @@
+{
+  "symbol": "HPG",
+  "ownership": {
+    "foreign": 21.75,
+    "state": 0,
+    "other": 78.25,
+    "shareholders": [
+      {
+        "name": "Trần Đình Long",
+        "shares": "2.178.000.179",
+        "rate": 25.8,
+        "updated": "25/05/2026"
+      },
+      {
+        "name": "Dragon Capital",
+        "shares": "645.563.198",
+        "rate": 7.65,
+        "updated": "25/05/2026"
+      },
+      {
+        "name": "Vũ Thị Hiền",
+        "shares": "580.800.046",
+        "rate": 6.88,
+        "updated": "25/05/2026"
+      },
+      {
+        "name": "VOF Investment Limited",
+        "shares": "411.655.688",
+        "rate": 4.88,
+        "updated": "25/05/2026"
+      },
+      {
+        "name": "Deutsche Bank AG & Deutsche Asset Management (Asia) Ltd",
+        "shares": "410.299.595",
+        "rate": 4.86,
+        "updated": "25/05/2026"
+      },
+      {
+        "name": "Deutsche Bank AG London",
+        "shares": "315.393.739",
+        "rate": 3.74,
+        "updated": "25/05/2026"
+      },
+      {
+        "name": "Trần Vũ Minh",
+        "shares": "230.652.294",
+        "rate": 2.73,
+        "updated": "25/05/2026"
+      },
+      {
+        "name": "Trần Tuấn Dương",
+        "shares": "195.312.455",
+        "rate": 2.31,
+        "updated": "25/05/2026"
+      },
+      {
+        "name": "Nguyễn Mạnh Tuấn",
+        "shares": "191.496.898",
+        "rate": 2.27,
+        "updated": "25/05/2026"
+      },
+      {
+        "name": "KB Vietnam Focus Balanced Fund",
+        "shares": "134.639.875",
+        "rate": 1.59,
+        "updated": "25/05/2026"
+      },
+      {
+        "name": "Nguyễn Ngọc Quang",
+        "shares": "131.434.285",
+        "rate": 1.56,
+        "updated": "08/07/2026"
+      },
+      {
+        "name": "Vietnam Enterprise Investments Limited",
+        "shares": "126.206.357",
+        "rate": 1.49,
+        "updated": "25/05/2026"
+      },
+      {
+        "name": "Harding Loevner Funds Inc - Frontier Emerging Markets Portfolio",
+        "shares": "119.063.103",
+        "rate": 1.41,
+        "updated": "25/05/2026"
+      },
+      {
+        "name": "Franklin Templeton Investments",
+        "shares": "118.404.144",
+        "rate": 1.4,
+        "updated": "25/05/2026"
+      },
+      {
+        "name": "Market Vectors Vietnam ETF",
+        "shares": "116.556.272",
+        "rate": 1.38,
+        "updated": "25/05/2026"
+      },
+      {
+        "name": "Doãn Gia Cường",
+        "shares": "105.830.783",
+        "rate": 1.25,
+        "updated": "25/05/2026"
+      },
+      {
+        "name": "Wasatch Frontier Emerging Small Countries Fund",
+        "shares": "105.064.518",
+        "rate": 1.24,
+        "updated": "25/05/2026"
+      },
+      {
+        "name": "Beira Limited",
+        "shares": "100.913.856",
+        "rate": 1.2,
+        "updated": "25/05/2026"
+      },
+      {
+        "name": "PENM IV Germany GmbH & Co.KG",
+        "shares": "99.796.798",
+        "rate": 1.18,
+        "updated": "25/05/2026"
+      },
+      {
+        "name": "Norges Bank",
+        "shares": "98.318.371",
+        "rate": 1.16,
+        "updated": "25/05/2026"
+      },
+      {
+        "name": "Công ty TNHH Quản lý quỹ SSI",
+        "shares": "92.163.642",
+        "rate": 1.09,
+        "updated": "25/05/2026"
+      },
+      {
+        "name": "PXP Vietnam Emerging Equity Fund",
+        "shares": "76.196.782",
+        "rate": 0.9,
+        "updated": "25/05/2026"
+      },
+      {
+        "name": "LionGlobal Vietnam Fund",
+        "shares": "73.245.257",
+        "rate": 0.87,
+        "updated": "25/05/2026"
+      },
+      {
+        "name": "Vietnam Holding Limited",
+        "shares": "60.015.875",
+        "rate": 0.71,
+        "updated": "25/05/2026"
+      },
+      {
+        "name": "Forum One - VCG Partners Vietnam Fund",
+        "shares": "39.932.755",
+        "rate": 0.47,
+        "updated": "25/05/2026"
+      },
+      {
+        "name": "Hoàng Quang Việt",
+        "shares": "38.171.897",
+        "rate": 0.45,
+        "updated": "25/05/2026"
+      },
+      {
+        "name": "Nguyễn Việt Thắng",
+        "shares": "27.080.020",
+        "rate": 0.32,
+        "updated": "25/05/2026"
+      },
+      {
+        "name": "Đặng Ngọc Khánh",
+        "shares": "550.000",
+        "rate": 0.01,
+        "updated": "25/05/2026"
+      },
+      {
+        "name": "Nguyễn Thị Thảo Nguyên",
+        "shares": "887.942",
+        "rate": 0.01,
+        "updated": "25/05/2026"
+      },
+      {
+        "name": "Ngô Lan Anh",
+        "shares": "2.264",
+        "rate": 0,
+        "updated": "25/05/2026"
+      },
+      {
+        "name": "Phạm Thị Kim Oanh",
+        "shares": "103",
+        "rate": 0,
+        "updated": "25/05/2026"
+      },
+      {
+        "name": "Trần Thị Thu Hiền",
+        "shares": "8.383",
+        "rate": 0,
+        "updated": "25/05/2026"
+      }
+    ],
+    "pieChartData": [
+      {
+        "name": "Trần Đình Long",
+        "value": 25.8,
+        "color": "#3b82f6"
+      },
+      {
+        "name": "Dragon Capital",
+        "value": 7.65,
+        "color": "#ef4444"
+      },
+      {
+        "name": "Vũ Thị Hiền",
+        "value": 6.88,
+        "color": "#10b981"
+      },
+      {
+        "name": "VOF Investment Limited",
+        "value": 4.88,
+        "color": "#f59e0b"
+      },
+      {
+        "name": "Deutsche Bank AG & Deutsche Asset Management (Asia) Ltd",
+        "value": 4.86,
+        "color": "#8b5cf6"
+      },
+      {
+        "name": "Deutsche Bank AG London",
+        "value": 3.74,
+        "color": "#ec4899"
+      },
+      {
+        "name": "Trần Vũ Minh",
+        "value": 2.73,
+        "color": "#06b6d4"
+      },
+      {
+        "name": "Trần Tuấn Dương",
+        "value": 2.31,
+        "color": "#f97316"
+      },
+      {
+        "name": "Nguyễn Mạnh Tuấn",
+        "value": 2.27,
+        "color": "#14b8a6"
+      },
+      {
+        "name": "Cổ đông khác",
+        "value": 38.88,
+        "color": "#64748b"
+      }
+    ]
+  },
+  "subsidiaries": [
+    {
+      "name": "CTCP Thép Hòa Phát Dung Quất",
+      "charterCapital": 25000,
+      "contributedCapital": 25000,
+      "ownershipRate": 100,
+      "type": "subsidiary",
+      "note": ""
+    },
+    {
+      "name": "Công ty TNHH Thép Hòa Phát Hưng Yên",
+      "charterCapital": 600,
+      "contributedCapital": 600,
+      "ownershipRate": 100,
+      "type": "subsidiary",
+      "note": ""
+    },
+    {
+      "name": "Công ty TNHH Tôn Hòa Phát",
+      "charterCapital": 2000,
+      "contributedCapital": 2000,
+      "ownershipRate": 100,
+      "type": "subsidiary",
+      "note": ""
+    },
+    {
+      "name": "CTCP Thép Hòa Phát Hải Dương",
+      "charterCapital": 3500,
+      "contributedCapital": 3500,
+      "ownershipRate": 99.998,
+      "type": "subsidiary",
+      "note": ""
+    },
+    {
+      "name": "CTCP Phát triển nông nghiệp Hòa Phát",
+      "charterCapital": 2880,
+      "contributedCapital": 2880,
+      "ownershipRate": 99.99,
+      "type": "subsidiary",
+      "note": ""
+    },
+    {
+      "name": "Công ty TNHH Ống thép Hòa Phát",
+      "charterCapital": 1500,
+      "contributedCapital": 1500,
+      "ownershipRate": 99.967,
+      "type": "subsidiary",
+      "note": ""
+    },
+    {
+      "name": "CTCP Đầu tư Khoáng sản An Thông",
+      "charterCapital": 500,
+      "contributedCapital": 500,
+      "ownershipRate": 99.96,
+      "type": "subsidiary",
+      "note": ""
+    },
+    {
+      "name": "Công ty TNHH Thiết bị Phụ tùng Hòa Phát",
+      "charterCapital": 350,
+      "contributedCapital": 350,
+      "ownershipRate": 99.857,
+      "type": "subsidiary",
+      "note": ""
+    },
+    {
+      "name": "CTCP Xây dựng & Phát triển Đô thị Hòa Phát",
+      "charterCapital": 1300,
+      "contributedCapital": 1300,
+      "ownershipRate": 99.846,
+      "type": "subsidiary",
+      "note": ""
+    },
+    {
+      "name": "Công ty TNHH Điện lạnh Hòa Phát",
+      "charterCapital": 150,
+      "contributedCapital": 150,
+      "ownershipRate": 99.67,
+      "type": "subsidiary",
+      "note": ""
+    },
+    {
+      "name": "CTCP Nội thất Hòa Phát",
+      "charterCapital": 400,
+      "contributedCapital": 398,
+      "ownershipRate": 99.6,
+      "type": "subsidiary",
+      "note": ""
+    }
+  ],
+  "insiderTrades": [
+    {
+      "traderName": "Nguyễn Ngọc Quang",
+      "traderPosition": "Thành viên HĐQT",
+      "leaderName": "",
+      "tradeDate": "08/07/2026",
+      "action": "SELL",
+      "volumeTraded": 6600000,
+      "volumeRegistered": 6600000,
+      "volumeAfter": 131434285
+    },
+    {
+      "traderName": "Trần Vũ Minh",
+      "traderPosition": "Con",
+      "leaderName": "Trần Đình Long",
+      "tradeDate": "09/04/2026",
+      "action": "BUY",
+      "volumeTraded": 33291904,
+      "volumeRegistered": 50000000,
+      "volumeAfter": 209683900
+    },
+    {
+      "traderName": "Chu Quang Việt",
+      "traderPosition": "Anh trai",
+      "leaderName": "Chu Quang Vũ",
+      "tradeDate": "08/08/2025",
+      "action": "SELL",
+      "volumeTraded": 50000,
+      "volumeRegistered": 50000,
+      "volumeAfter": 98899
+    },
+    {
+      "traderName": "Đặng Ngọc Khánh a",
+      "traderPosition": "Thành viên HĐQT độc lập",
+      "leaderName": "",
+      "tradeDate": "30/06/2025",
+      "action": "BUY",
+      "volumeTraded": 386600,
+      "volumeRegistered": 400000,
+      "volumeAfter": 500000
+    },
+    {
+      "traderName": "Nguyễn Ngọc Quang",
+      "traderPosition": "Thành viên HĐQT",
+      "leaderName": "",
+      "tradeDate": "14/05/2025",
+      "action": "SELL",
+      "volumeTraded": 8500000,
+      "volumeRegistered": 8500000,
+      "volumeAfter": 104571429
+    },
+    {
+      "traderName": "Nguyễn Quang Minh",
+      "traderPosition": "Con",
+      "leaderName": "Nguyễn Ngọc Quang",
+      "tradeDate": "14/05/2025",
+      "action": "BUY",
+      "volumeTraded": 5500000,
+      "volumeRegistered": 5500000,
+      "volumeAfter": 5500000
+    },
+    {
+      "traderName": "Doãn Thị Bích Ngọc",
+      "traderPosition": "Chị",
+      "leaderName": "Doãn Gia Cường",
+      "tradeDate": "25/04/2025",
+      "action": "SELL",
+      "volumeTraded": 400000,
+      "volumeRegistered": 400000,
+      "volumeAfter": 435596
+    },
+    {
+      "traderName": "Lê Ngọc Hổ",
+      "traderPosition": "Em rể",
+      "leaderName": "Trần Đình Long",
+      "tradeDate": "04/09/2024",
+      "action": "SELL",
+      "volumeTraded": 221100,
+      "volumeRegistered": 221100,
+      "volumeAfter": 0
+    },
+    {
+      "traderName": "Nguyễn Ngọc Quang",
+      "traderPosition": "Thành viên HĐQT",
+      "leaderName": "",
+      "tradeDate": "02/04/2024",
+      "action": "SELL",
+      "volumeTraded": 1000000,
+      "volumeRegistered": 1000000,
+      "volumeAfter": 102792209
+    },
+    {
+      "traderName": "CTCP Đầu tư và Xây dựng Sao Phương Bắc",
+      "traderPosition": "",
+      "leaderName": "",
+      "tradeDate": "08/11/2023",
+      "action": "SELL",
+      "volumeTraded": 950000,
+      "volumeRegistered": 1100000,
+      "volumeAfter": 33325502
+    },
+    {
+      "traderName": "Trần Vũ Minh",
+      "traderPosition": "Con",
+      "leaderName": "Trần Đình Long",
+      "tradeDate": "06/11/2023",
+      "action": "BUY",
+      "volumeTraded": 42890300,
+      "volumeRegistered": 42890300,
+      "volumeAfter": 133630300
+    },
+    {
+      "traderName": "Trần Đình Long",
+      "traderPosition": "Chủ tịch HĐQT",
+      "leaderName": "",
+      "tradeDate": "01/11/2023",
+      "action": "SELL",
+      "volumeTraded": 16320000,
+      "volumeRegistered": 16320000,
+      "volumeAfter": 1500000000
+    },
+    {
+      "traderName": "Vũ Thị Hiền",
+      "traderPosition": "Vợ",
+      "leaderName": "Trần Đình Long",
+      "tradeDate": "06/11/2023",
+      "action": "SELL",
+      "volumeTraded": 26570300,
+      "volumeRegistered": 26570300,
+      "volumeAfter": 400000000
+    },
+    {
+      "traderName": "Nguyễn Đức Tuấn",
+      "traderPosition": "Anh rể",
+      "leaderName": "Trần Tuấn Dương",
+      "tradeDate": "19/05/2023",
+      "action": "SELL",
+      "volumeTraded": 135135,
+      "volumeRegistered": 135135,
+      "volumeAfter": 0
+    },
+    {
+      "traderName": "Trần Thị Phương Liên",
+      "traderPosition": "Chị",
+      "leaderName": "Trần Tuấn Dương",
+      "tradeDate": "03/04/2023",
+      "action": "SELL",
+      "volumeTraded": 273737,
+      "volumeRegistered": 273737,
+      "volumeAfter": 0
+    },
+    {
+      "traderName": "Hoàng Nhật Minh",
+      "traderPosition": "Con",
+      "leaderName": "Hoàng Quang Việt",
+      "tradeDate": "22/02/2023",
+      "action": "BUY",
+      "volumeTraded": 1000000,
+      "volumeRegistered": 1000000,
+      "volumeAfter": 1000000
+    },
+    {
+      "traderName": "Hoàng Quang Việt",
+      "traderPosition": "Thành viên HĐQT",
+      "leaderName": "",
+      "tradeDate": "22/02/2023",
+      "action": "SELL",
+      "volumeTraded": 2000000,
+      "volumeRegistered": 2000000,
+      "volumeAfter": 26289184
+    },
+    {
+      "traderName": "Hoàng Nhật Anh",
+      "traderPosition": "Con",
+      "leaderName": "Hoàng Quang Việt",
+      "tradeDate": "20/02/2023",
+      "action": "BUY",
+      "volumeTraded": 1000000,
+      "volumeRegistered": 1000000,
+      "volumeAfter": 1000000
+    },
+    {
+      "traderName": "Nguyễn Hà My",
+      "traderPosition": "Con",
+      "leaderName": "Nguyễn Ngọc Quang",
+      "tradeDate": "11/07/2022",
+      "action": "BUY",
+      "volumeTraded": 5000000,
+      "volumeRegistered": 5000000,
+      "volumeAfter": 5000000
+    },
+    {
+      "traderName": "Nguyễn Ngọc Quang",
+      "traderPosition": "Thành viên HĐQT",
+      "leaderName": "",
+      "tradeDate": "11/07/2022",
+      "action": "SELL",
+      "volumeTraded": 5000000,
+      "volumeRegistered": 5000000,
+      "volumeAfter": 103792209
+    },
+    {
+      "traderName": "Nguyễn Hữu Mạnh",
+      "traderPosition": "Anh",
+      "leaderName": "Nguyễn Thị Thảo Nguyên",
+      "tradeDate": "08/07/2022",
+      "action": "BUY",
+      "volumeTraded": 172000,
+      "volumeRegistered": 300000,
+      "volumeAfter": 172000
+    },
+    {
+      "traderName": "Vietnam Enterprise Investments Limited",
+      "traderPosition": "",
+      "leaderName": "",
+      "tradeDate": "31/03/2022",
+      "action": "SELL",
+      "volumeTraded": 1500000,
+      "volumeRegistered": 0,
+      "volumeAfter": 66860749
+    },
+    {
+      "traderName": "Nguyễn Thị Thảo Nguyên",
+      "traderPosition": "Phó Tổng GĐ",
+      "leaderName": "",
+      "tradeDate": "24/03/2022",
+      "action": "SELL",
+      "volumeTraded": 350000,
+      "volumeRegistered": 350000,
+      "volumeAfter": 497909
+    },
+    {
+      "traderName": "Nguyễn Ngọc Quang",
+      "traderPosition": "Thành viên HĐQT",
+      "leaderName": "",
+      "tradeDate": "07/03/2022",
+      "action": "SELL",
+      "volumeTraded": 1000000,
+      "volumeRegistered": 1000000,
+      "volumeAfter": 83686315
+    },
+    {
+      "traderName": "DC Developing Markets Strategies Public Limited Company",
+      "traderPosition": "",
+      "leaderName": "",
+      "tradeDate": "03/12/2021",
+      "action": "SELL",
+      "volumeTraded": 600000,
+      "volumeRegistered": 0,
+      "volumeAfter": 8400000
+    },
+    {
+      "traderName": "Amersham Industries Limited",
+      "traderPosition": "",
+      "leaderName": "",
+      "tradeDate": "22/11/2021",
+      "action": "BUY",
+      "volumeTraded": 800000,
+      "volumeRegistered": 0,
+      "volumeAfter": 20810062
+    },
+    {
+      "traderName": "Vietnam Enterprise Investments Limited",
+      "traderPosition": "",
+      "leaderName": "",
+      "tradeDate": "22/11/2021",
+      "action": "BUY",
+      "volumeTraded": 200000,
+      "volumeRegistered": 0,
+      "volumeAfter": 83060749
+    },
+    {
+      "traderName": "Norges Bank",
+      "traderPosition": "",
+      "leaderName": "",
+      "tradeDate": "12/11/2021",
+      "action": "SELL",
+      "volumeTraded": 1200000,
+      "volumeRegistered": 0,
+      "volumeAfter": 52086441
+    },
+    {
+      "traderName": "Samsung Vietnam Securitues Master Investment Trust (Equity)",
+      "traderPosition": "",
+      "leaderName": "",
+      "tradeDate": "12/11/2021",
+      "action": "SELL",
+      "volumeTraded": 200000,
+      "volumeRegistered": 0,
+      "volumeAfter": 1339860
+    },
+    {
+      "traderName": "Amersham Industries Limited",
+      "traderPosition": "",
+      "leaderName": "",
+      "tradeDate": "11/11/2021",
+      "action": "BUY",
+      "volumeTraded": 2450000,
+      "volumeRegistered": 0,
+      "volumeAfter": 19010062
+    }
+  ]
+}

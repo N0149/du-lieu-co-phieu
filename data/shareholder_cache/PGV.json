@@ -1,0 +1,249 @@
+{
+  "symbol": "PGV",
+  "updated": "2026-06-01T07:20:20.000Z",
+  "co_cau_so_huu": {
+    "CoDongSoHuu": [
+      {
+        "Code": "CEO_58704",
+        "Name": "Vũ Phương Thảo",
+        "Url": "<a href='/du-lieu/ceo/CEO_58704/vu-phuong-thao.chn'>Vũ Phương Thảo</a>",
+        "AssetVolume": "945",
+        "AssetRate": "0,0",
+        "UpdatedDate": "28/12/2023"
+      },
+      {
+        "Code": "CEO_55728",
+        "Name": "Nguyễn Thị Thanh Hương",
+        "Url": "<a href='/du-lieu/ceo/CEO_55728/nguyen-thi-thanh-huong.chn'>Nguyễn Thị Thanh Hương</a>",
+        "AssetVolume": "10.080",
+        "AssetRate": "0,0",
+        "UpdatedDate": "28/12/2023"
+      },
+      {
+        "Code": "CEO_55726",
+        "Name": "Lê Văn Danh",
+        "Url": "<a href='/du-lieu/ceo/CEO_55726/le-van-danh.chn'>Lê Văn Danh</a>",
+        "AssetVolume": "12.600",
+        "AssetRate": "0,0",
+        "UpdatedDate": "31/12/2023"
+      },
+      {
+        "Code": "CEO_55727",
+        "Name": "Phan Thanh Xuân",
+        "Url": "<a href='/du-lieu/ceo/CEO_55727/phan-thanh-xuan.chn'>Phan Thanh Xuân</a>",
+        "AssetVolume": "14.175",
+        "AssetRate": "0,0",
+        "UpdatedDate": "28/12/2023"
+      },
+      {
+        "Code": "CEO_874564",
+        "Name": "Trần Đình Ân",
+        "Url": "<a href='/du-lieu/ceo/CEO_874564/tran-dinh-an.chn'>Trần Đình Ân</a>",
+        "AssetVolume": "7.420",
+        "AssetRate": "0,0",
+        "UpdatedDate": "31/12/2023"
+      },
+      {
+        "Code": "CEO_875744",
+        "Name": "Nguyễn Thị Hải Yến",
+        "Url": "<a href='/du-lieu/ceo/CEO_875744/nguyen-thi-hai-yen.chn'>Nguyễn Thị Hải Yến</a>",
+        "AssetVolume": "11.484",
+        "AssetRate": "0,0",
+        "UpdatedDate": "31/12/2023"
+      },
+      {
+        "Code": "CEO_59317",
+        "Name": "Võ Minh Thắng",
+        "Url": "<a href='/du-lieu/ceo/CEO_59317/vo-minh-thang.chn'>Võ Minh Thắng</a>",
+        "AssetVolume": "12.180",
+        "AssetRate": "0,0",
+        "UpdatedDate": "28/12/2023"
+      },
+      {
+        "Code": "CEO_55407",
+        "Name": "Trương Quốc Phúc",
+        "Url": "<a href='/du-lieu/ceo/CEO_55407/truong-quoc-phuc.chn'>Trương Quốc Phúc</a>",
+        "AssetVolume": "6.720",
+        "AssetRate": "0,0",
+        "UpdatedDate": "28/12/2023"
+      },
+      {
+        "Code": "CEO_61271",
+        "Name": "Nguyễn Thanh Trùng Dương",
+        "Url": "<a href='/du-lieu/ceo/CEO_61271/nguyen-thanh-trung-duong.chn'>Nguyễn Thanh Trùng Dương</a>",
+        "AssetVolume": "16.170",
+        "AssetRate": "0,0",
+        "UpdatedDate": "31/12/2023"
+      },
+      {
+        "Code": "CEO_55725",
+        "Name": "Cao Minh Trung",
+        "Url": "<a href='/du-lieu/ceo/CEO_55725/cao-minh-trung.chn'>Cao Minh Trung</a>",
+        "AssetVolume": "23.415",
+        "AssetRate": "0,0",
+        "UpdatedDate": "28/12/2023"
+      },
+      {
+        "Code": "CEO_55406",
+        "Name": "Đinh Quốc Lâm",
+        "Url": "<a href='/du-lieu/ceo/CEO_55406/dinh-quoc-lam.chn'>Đinh Quốc Lâm</a>",
+        "AssetVolume": "28.455",
+        "AssetRate": "0,0",
+        "UpdatedDate": "28/12/2023"
+      },
+      {
+        "Code": "EVN",
+        "Name": "Tập đoàn Điện lực Việt Nam - Công ty TNHH MTV",
+        "Url": "<a href='/du-lieu/otc/EVN-tap-doan-dien-luc-viet-nam-cong-ty-tnhh-mtv.chn' title='Tập đoàn Điện lực Việt Nam - Công ty TNHH MTV'>Tập đoàn Điện lực Việt Nam - Công ty TNHH MTV</a>",
+        "AssetVolume": "1.114.422.994",
+        "AssetRate": "99,19",
+        "UpdatedDate": "28/12/2023"
+      }
+    ],
+    "NuocNgoai": 0.02,
+    "NhaNuoc": 0,
+    "Khac": 99.98
+  },
+  "cong_ty_con": [
+    {
+      "Symbol": "PGV",
+      "CorpCode": "BTP",
+      "Name": "Công ty Cổ phần Nhiệt điện Bà Rịa",
+      "TotalCapital": 604.856,
+      "SharedCapital": 481.23557,
+      "OwnershipRate": 79.56,
+      "Note": "",
+      "Order": 1,
+      "TradeCenter": "HoSE"
+    },
+    {
+      "Symbol": "PGV",
+      "CorpCode": "NBP",
+      "Name": "Công ty Cổ phần Nhiệt điện Ninh Bình",
+      "TotalCapital": 128.655,
+      "SharedCapital": 70.4499969482422,
+      "OwnershipRate": 54.76,
+      "Note": "",
+      "Order": 2,
+      "TradeCenter": "HASTC"
+    }
+  ],
+  "cong_ty_lien_ket": [
+    {
+      "Symbol": "PGV",
+      "CorpCode": "TBC",
+      "Name": "Công ty cổ phần Thủy điện Thác Bà",
+      "TotalCapital": 635,
+      "SharedCapital": 190.5,
+      "OwnershipRate": 30,
+      "Note": "",
+      "Order": 3,
+      "TradeCenter": "HoSE"
+    },
+    {
+      "Symbol": "PGV",
+      "CorpCode": "CORP_80814",
+      "Name": "CTCP Đầu tư phát triển điện Sê San 3A (Gia Lai)",
+      "TotalCapital": 280,
+      "SharedCapital": 84,
+      "OwnershipRate": 30,
+      "Note": "",
+      "Order": 4,
+      "TradeCenter": ""
+    },
+    {
+      "Symbol": "PGV",
+      "CorpCode": "VSH",
+      "Name": "Công ty Cổ phần Thủy điện Vĩnh Sơn - Sông Hinh",
+      "TotalCapital": 2362.4124,
+      "SharedCapital": 608.719970703125,
+      "OwnershipRate": 25.77,
+      "Note": "",
+      "Order": 5,
+      "TradeCenter": "HoSE"
+    },
+    {
+      "Symbol": "PGV",
+      "CorpCode": "CORP_51452",
+      "Name": "Công ty TNHH Dịch vụ Năng lượng GE - PMTP",
+      "TotalCapital": 501.700012207031,
+      "SharedCapital": 75.26,
+      "OwnershipRate": 15,
+      "Note": "",
+      "Order": 6,
+      "TradeCenter": ""
+    },
+    {
+      "Symbol": "PGV",
+      "CorpCode": "NT2",
+      "Name": "Công ty Cổ phần Điện lực Dầu khí Nhơn Trạch 2",
+      "TotalCapital": 2878.7602,
+      "SharedCapital": 83.0899963378906,
+      "OwnershipRate": 2.89,
+      "Note": "",
+      "Order": 7,
+      "TradeCenter": "HoSE"
+    },
+    {
+      "Symbol": "PGV",
+      "CorpCode": "CORP_51451",
+      "Name": "CTCP Điện Việt - Lào",
+      "TotalCapital": 4377.52978515625,
+      "SharedCapital": 19.7,
+      "OwnershipRate": 0.449999988079071,
+      "Note": "",
+      "Order": 8,
+      "TradeCenter": ""
+    }
+  ],
+  "giao_dich_noi_bo": [
+    {
+      "transaction_name": "Công đoàn PGV",
+      "transaction_position": "",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 99600,
+      "plan_buy": 0,
+      "plan_sell": 99600,
+      "plan_begin_date": "2023-03-23",
+      "plan_end_date": "2023-04-21",
+      "real_buy": 0,
+      "real_sell": 99600,
+      "real_end_date": "2023-04-04",
+      "published_date": "2023-03-21",
+      "volume_after": 0
+    },
+    {
+      "transaction_name": "Công đoàn PGV",
+      "transaction_position": "",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 99600,
+      "plan_buy": 0,
+      "plan_sell": 99600,
+      "plan_begin_date": "2023-02-10",
+      "plan_end_date": "2023-03-10",
+      "real_buy": 0,
+      "real_sell": 0,
+      "real_end_date": "2023-03-10",
+      "published_date": "2023-01-30",
+      "volume_after": 99600
+    },
+    {
+      "transaction_name": "Công đoàn PGV",
+      "transaction_position": "",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 0,
+      "plan_buy": 100000,
+      "plan_sell": 0,
+      "plan_begin_date": "2022-04-22",
+      "plan_end_date": "2022-05-20",
+      "real_buy": 99600,
+      "real_sell": 0,
+      "real_end_date": "2022-05-20",
+      "published_date": "2022-05-24",
+      "volume_after": 99600
+    }
+  ]
+}

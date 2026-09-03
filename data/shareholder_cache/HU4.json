@@ -1,0 +1,249 @@
+{
+  "symbol": "HU4",
+  "updated": "2026-03-22T03:17:39.000Z",
+  "co_cau_so_huu": {
+    "CoDongSoHuu": [
+      {
+        "Code": "CEO_71523",
+        "Name": "Đồng Phạm Bình",
+        "Url": "<a href='/du-lieu/ceo/CEO_71523/dong-pham-binh.chn'>Đồng Phạm Bình</a>",
+        "AssetVolume": "58.400",
+        "AssetRate": "0,39",
+        "UpdatedDate": "22/01/2026"
+      },
+      {
+        "Code": "CEO_71525",
+        "Name": "Đoàn Văn Thanh",
+        "Url": "<a href='/du-lieu/ceo/CEO_71525/doan-van-thanh.chn'>Đoàn Văn Thanh</a>",
+        "AssetVolume": "9.100",
+        "AssetRate": "0,06",
+        "UpdatedDate": "22/01/2026"
+      },
+      {
+        "Code": "CEO_38230",
+        "Name": "Nguyễn Việt Hùng",
+        "Url": "<a href='/du-lieu/ceo/CEO_38230/nguyen-viet-hung.chn'>Nguyễn Việt Hùng</a>",
+        "AssetVolume": "25.400",
+        "AssetRate": "0,17",
+        "UpdatedDate": "22/01/2026"
+      },
+      {
+        "Code": "CEO_71522",
+        "Name": "Lê Quang Hiệp",
+        "Url": "<a href='/du-lieu/ceo/CEO_71522/le-quang-hiep.chn'>Lê Quang Hiệp</a>",
+        "AssetVolume": "130.900",
+        "AssetRate": "0,87",
+        "UpdatedDate": "22/01/2026"
+      },
+      {
+        "Code": "CEO_71527",
+        "Name": "Nguyễn Văn Huyên",
+        "Url": "<a href='/du-lieu/ceo/CEO_71527/nguyen-van-huyen.chn'>Nguyễn Văn Huyên</a>",
+        "AssetVolume": "58.000",
+        "AssetRate": "0,39",
+        "UpdatedDate": "22/01/2026"
+      },
+      {
+        "Code": "CEO_71530",
+        "Name": "Nguyễn Thị Nhan",
+        "Url": "<a href='/du-lieu/ceo/CEO_71530/nguyen-thi-nhan.chn'>Nguyễn Thị Nhan</a>",
+        "AssetVolume": "20.280",
+        "AssetRate": "0,14",
+        "UpdatedDate": "22/01/2026"
+      },
+      {
+        "Code": "CEO_99979",
+        "Name": "Phan Công Bình",
+        "Url": "<a href='/du-lieu/ceo/CEO_99979/phan-cong-binh.chn'>Phan Công Bình</a>",
+        "AssetVolume": "40.000",
+        "AssetRate": "0,27",
+        "UpdatedDate": "22/01/2026"
+      },
+      {
+        "Code": "LQ_39285",
+        "Name": "Lê Thị Minh Ngọc",
+        "Url": "Lê Thị Minh Ngọc (Vợ của ông <a href='/du-lieu/ceo/CEO_71522/le-quang-hiep.chn'>Lê Quang Hiệp</a>)",
+        "AssetVolume": "159.500",
+        "AssetRate": "1,06",
+        "UpdatedDate": "22/01/2026"
+      },
+      {
+        "Code": "CEO_38232",
+        "Name": "Lê Thị Mậu",
+        "Url": "<a href='/du-lieu/ceo/CEO_38232/le-thi-mau.chn'>Lê Thị Mậu</a>",
+        "AssetVolume": "41.470",
+        "AssetRate": "0,28",
+        "UpdatedDate": "22/01/2026"
+      },
+      {
+        "Code": "CEO_38231",
+        "Name": "Nguyễn Thị Thanh Thúy",
+        "Url": "<a href='/du-lieu/ceo/CEO_38231/nguyen-thi-thanh-thuy.chn'>Nguyễn Thị Thanh Thúy</a>",
+        "AssetVolume": "2.240",
+        "AssetRate": "0,01",
+        "UpdatedDate": "22/01/2026"
+      },
+      {
+        "Code": "HUDX",
+        "Name": "Tổng Công ty Đầu tư Phát triển nhà và Đô thị-Công ty TNHH",
+        "Url": "<a href='/du-lieu/otc/HUDX-tong-cong-ty-dau-tu-phat-trien-nha-va-do-thicong-ty-tnhh.chn' title='Tổng Công ty Đầu tư Phát triển nhà và Đô thị-Công ty TNHH'>Tổng Công ty Đầu tư Phát triển nhà và Đô thị-Công ty TNHH</a>",
+        "AssetVolume": "7.650.000",
+        "AssetRate": "51,0",
+        "UpdatedDate": "22/01/2026"
+      },
+      {
+        "Code": "CEO_38233",
+        "Name": "Hoàng Anh Tuấn",
+        "Url": "<a href='/du-lieu/ceo/CEO_38233/hoang-anh-tuan.chn'>Hoàng Anh Tuấn</a>",
+        "AssetVolume": "81.859",
+        "AssetRate": "0,55",
+        "UpdatedDate": "22/01/2026"
+      },
+      {
+        "Code": "CEO_71526",
+        "Name": "Lê Đỗ Thắng",
+        "Url": "<a href='/du-lieu/ceo/CEO_71526/le-do-thang.chn'>Lê Đỗ Thắng</a>",
+        "AssetVolume": "20.700",
+        "AssetRate": "0,14",
+        "UpdatedDate": "22/01/2026"
+      }
+    ],
+    "NuocNgoai": 0.02,
+    "NhaNuoc": 0,
+    "Khac": 99.98
+  },
+  "cong_ty_con": [
+    {
+      "Symbol": "HU4",
+      "CorpCode": "CORP_70618",
+      "Name": "Công ty Cổ phần Tư vấn, Đầu tư và Xây dựng HUD403",
+      "TotalCapital": 2,
+      "SharedCapital": 1.2,
+      "OwnershipRate": 60,
+      "Note": "",
+      "Order": 1,
+      "TradeCenter": ""
+    },
+    {
+      "Symbol": "HU4",
+      "CorpCode": "CORP_70619",
+      "Name": "Công ty Cổ phần Đầu tư và Xây dựng HUD405 - Bình Định",
+      "TotalCapital": 9,
+      "SharedCapital": 4.59,
+      "OwnershipRate": 51,
+      "Note": "",
+      "Order": 2,
+      "TradeCenter": ""
+    },
+    {
+      "Symbol": "HU4",
+      "CorpCode": "CORP_70617",
+      "Name": "Công ty Cổ phần Xây dựng HUD401",
+      "TotalCapital": 7,
+      "SharedCapital": 3.57,
+      "OwnershipRate": 51,
+      "Note": "",
+      "Order": 3,
+      "TradeCenter": ""
+    }
+  ],
+  "cong_ty_lien_ket": [],
+  "giao_dich_noi_bo": [
+    {
+      "transaction_name": "Phan Công Bình",
+      "transaction_position": "",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 40000,
+      "plan_buy": 0,
+      "plan_sell": 0,
+      "plan_begin_date": "",
+      "plan_end_date": "",
+      "real_buy": 0,
+      "real_sell": 0,
+      "real_end_date": "2024-07-11",
+      "published_date": "2024-07-16",
+      "volume_after": 40000
+    },
+    {
+      "transaction_name": "Nguyễn Thị Hoa",
+      "transaction_position": "Vợ",
+      "leader_name": "Nguyễn Văn Huyên",
+      "leader_position": "Phó Giám đốc",
+      "volume_before": 53005,
+      "plan_buy": 50000,
+      "plan_sell": 0,
+      "plan_begin_date": "2022-06-29",
+      "plan_end_date": "2022-07-22",
+      "real_buy": 0,
+      "real_sell": 0,
+      "real_end_date": "2022-07-22",
+      "published_date": "2022-06-29",
+      "volume_after": 53005
+    },
+    {
+      "transaction_name": "Nguyễn Đức Mạnh",
+      "transaction_position": "Con",
+      "leader_name": "Nguyễn Văn Huyên",
+      "leader_position": "Phó Giám đốc",
+      "volume_before": 0,
+      "plan_buy": 100000,
+      "plan_sell": 0,
+      "plan_begin_date": "2022-06-29",
+      "plan_end_date": "2022-07-22",
+      "real_buy": 0,
+      "real_sell": 0,
+      "real_end_date": "2022-07-22",
+      "published_date": "2022-06-29",
+      "volume_after": 0
+    },
+    {
+      "transaction_name": "Nguyễn Thị Hoa",
+      "transaction_position": "Vợ",
+      "leader_name": "Nguyễn Văn Huyên",
+      "leader_position": "Phó Giám đốc",
+      "volume_before": 5,
+      "plan_buy": 50000,
+      "plan_sell": 0,
+      "plan_begin_date": "2022-04-28",
+      "plan_end_date": "2022-05-25",
+      "real_buy": 53000,
+      "real_sell": 0,
+      "real_end_date": "2022-05-25",
+      "published_date": "2022-04-27",
+      "volume_after": 53005
+    },
+    {
+      "transaction_name": "Lê Quốc Khánh",
+      "transaction_position": "Em ruột",
+      "leader_name": "Lê Quang Hiệp",
+      "leader_position": "Chủ tịch HĐQT",
+      "volume_before": 29000,
+      "plan_buy": 0,
+      "plan_sell": 13000,
+      "plan_begin_date": "2022-03-25",
+      "plan_end_date": "2022-04-22",
+      "real_buy": 0,
+      "real_sell": 0,
+      "real_end_date": "2022-04-22",
+      "published_date": "2022-03-24",
+      "volume_after": 29000
+    },
+    {
+      "transaction_name": "Lê Quốc Khánh",
+      "transaction_position": "Em ruột",
+      "leader_name": "Lê Quang Hiệp",
+      "leader_position": "Chủ tịch HĐQT",
+      "volume_before": 29000,
+      "plan_buy": 0,
+      "plan_sell": 13000,
+      "plan_begin_date": "2021-12-08",
+      "plan_end_date": "2021-12-24",
+      "real_buy": 0,
+      "real_sell": 0,
+      "real_end_date": "",
+      "published_date": "2021-12-08",
+      "volume_after": 0
+    }
+  ]
+}

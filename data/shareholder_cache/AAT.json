@@ -1,0 +1,223 @@
+{
+  "symbol": "AAT",
+  "updated": "2026-09-01T07:14:35.000Z",
+  "co_cau_so_huu": {
+    "CoDongSoHuu": [
+      {
+        "Code": "KLQ_81283",
+        "Name": "Nguyễn Thị Hoa",
+        "Url": "Nguyễn Thị Hoa",
+        "AssetVolume": "3.234.496",
+        "AssetRate": "4,57",
+        "UpdatedDate": "30/06/2026"
+      },
+      {
+        "Code": "CEO_873905",
+        "Name": "Nguyễn Thị Hiền",
+        "Url": "<a href='/du-lieu/ceo/CEO_873905/nguyen-thi-hien.chn'>Nguyễn Thị Hiền</a>",
+        "AssetVolume": "123",
+        "AssetRate": "0,0",
+        "UpdatedDate": "04/07/2023"
+      },
+      {
+        "Code": "CEO_87531",
+        "Name": "Lê Đăng Thuyết",
+        "Url": "<a href='/du-lieu/ceo/CEO_87531/le-dang-thuyet.chn'>Lê Đăng Thuyết</a>",
+        "AssetVolume": "618.825",
+        "AssetRate": "0,87",
+        "UpdatedDate": "30/06/2024"
+      },
+      {
+        "Code": "CEO_87529",
+        "Name": "Lê Văn Ngọc",
+        "Url": "<a href='/du-lieu/ceo/CEO_87529/le-van-ngoc.chn'>Lê Văn Ngọc</a>",
+        "AssetVolume": "123",
+        "AssetRate": "0,0",
+        "UpdatedDate": "04/07/2023"
+      },
+      {
+        "Code": "CEO_87533",
+        "Name": "Đinh Bộ Lễ",
+        "Url": "<a href='/du-lieu/ceo/CEO_87533/dinh-bo-le.chn'>Đinh Bộ Lễ</a>",
+        "AssetVolume": "123",
+        "AssetRate": "0,0",
+        "UpdatedDate": "30/06/2024"
+      },
+      {
+        "Code": "CEO_87536",
+        "Name": "Tống Anh Linh",
+        "Url": "<a href='/du-lieu/ceo/CEO_87536/tong-anh-linh.chn'>Tống Anh Linh</a>",
+        "AssetVolume": "390.250",
+        "AssetRate": "0,55",
+        "UpdatedDate": "30/06/2024"
+      },
+      {
+        "Code": "CEO_87535",
+        "Name": "Nguyễn Thị Giang",
+        "Url": "<a href='/du-lieu/ceo/CEO_87535/nguyen-thi-giang.chn'>Nguyễn Thị Giang</a>",
+        "AssetVolume": "123",
+        "AssetRate": "0,0",
+        "UpdatedDate": "04/07/2023"
+      },
+      {
+        "Code": "CEO_87527",
+        "Name": "Trịnh Xuân Lượng",
+        "Url": "<a href='/du-lieu/ceo/CEO_87527/trinh-xuan-luong.chn'>Trịnh Xuân Lượng</a>",
+        "AssetVolume": "1.256.853",
+        "AssetRate": "1,77",
+        "UpdatedDate": "30/06/2024"
+      },
+      {
+        "Code": "CEO_87530",
+        "Name": "Lương Văn Quyết",
+        "Url": "<a href='/du-lieu/ceo/CEO_87530/luong-van-quyet.chn'>Lương Văn Quyết</a>",
+        "AssetVolume": "123",
+        "AssetRate": "0,0",
+        "UpdatedDate": "04/07/2023"
+      },
+      {
+        "Code": "CEO_87532",
+        "Name": "Trịnh Xuân Dưỡng",
+        "Url": "<a href='/du-lieu/ceo/CEO_87532/trinh-xuan-duong.chn'>Trịnh Xuân Dưỡng</a>",
+        "AssetVolume": "495.060",
+        "AssetRate": "0,7",
+        "UpdatedDate": "30/06/2024"
+      },
+      {
+        "Code": "CEO_87599",
+        "Name": "Lê Thị Trang",
+        "Url": "<a href='/du-lieu/ceo/CEO_87599/le-thi-trang.chn'>Lê Thị Trang</a>",
+        "AssetVolume": "123",
+        "AssetRate": "0,0",
+        "UpdatedDate": "30/06/2024"
+      },
+      {
+        "Code": "CEO_87526",
+        "Name": "Trịnh Xuân Lâm",
+        "Url": "<a href='/du-lieu/ceo/CEO_87526/trinh-xuan-lam.chn'>Trịnh Xuân Lâm</a>",
+        "AssetVolume": "8.331.465",
+        "AssetRate": "11,76",
+        "UpdatedDate": "30/06/2024"
+      },
+      {
+        "Code": "CEO_87534",
+        "Name": "Trịnh Văn Tâm",
+        "Url": "<a href='/du-lieu/ceo/CEO_87534/trinh-van-tam.chn'>Trịnh Văn Tâm</a>",
+        "AssetVolume": "123",
+        "AssetRate": "0,0",
+        "UpdatedDate": "04/07/2023"
+      },
+      {
+        "Code": "CEO_87528",
+        "Name": "Trịnh Văn Dương",
+        "Url": "<a href='/du-lieu/ceo/CEO_87528/trinh-van-duong.chn'>Trịnh Văn Dương</a>",
+        "AssetVolume": "557.053",
+        "AssetRate": "0,79",
+        "UpdatedDate": "30/06/2024"
+      }
+    ],
+    "NuocNgoai": 0.25,
+    "NhaNuoc": 0,
+    "Khac": 99.75
+  },
+  "cong_ty_con": [],
+  "cong_ty_lien_ket": [],
+  "giao_dich_noi_bo": [
+    {
+      "transaction_name": "Nguyễn Thị Hoa",
+      "transaction_position": "",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 3550496,
+      "plan_buy": 0,
+      "plan_sell": 0,
+      "plan_begin_date": "",
+      "plan_end_date": "",
+      "real_buy": 0,
+      "real_sell": 317400,
+      "real_end_date": "2024-02-01",
+      "published_date": "2024-07-22",
+      "volume_after": 3234496
+    },
+    {
+      "transaction_name": "Nguyễn Thị Hoa",
+      "transaction_position": "",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 3463096,
+      "plan_buy": 0,
+      "plan_sell": 0,
+      "plan_begin_date": "",
+      "plan_end_date": "",
+      "real_buy": 87400,
+      "real_sell": 100,
+      "real_end_date": "2024-01-22",
+      "published_date": "2024-07-22",
+      "volume_after": 3550396
+    },
+    {
+      "transaction_name": "Trịnh Kim Giang",
+      "transaction_position": "Con",
+      "leader_name": "Trịnh Xuân Lâm",
+      "leader_position": "Chủ tịch HĐQT",
+      "volume_before": 11150,
+      "plan_buy": 0,
+      "plan_sell": 0,
+      "plan_begin_date": "",
+      "plan_end_date": "",
+      "real_buy": 55300,
+      "real_sell": 0,
+      "real_end_date": "2022-11-29",
+      "published_date": "2022-12-01",
+      "volume_after": 64450
+    },
+    {
+      "transaction_name": "Trịnh Xuân Lâm",
+      "transaction_position": "Chủ tịch HĐQT",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 4522825,
+      "plan_buy": 3000000,
+      "plan_sell": 0,
+      "plan_begin_date": "2022-08-30",
+      "plan_end_date": "2022-09-28",
+      "real_buy": 3000000,
+      "real_sell": 0,
+      "real_end_date": "2022-09-28",
+      "published_date": "2022-08-24",
+      "volume_after": 7552825
+    },
+    {
+      "transaction_name": "Trịnh Xuân Lượng",
+      "transaction_position": "Thành viên HĐQT",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 1115000,
+      "plan_buy": 13340,
+      "plan_sell": 0,
+      "plan_begin_date": "2022-06-28",
+      "plan_end_date": "2022-07-13",
+      "real_buy": 0,
+      "real_sell": 0,
+      "real_end_date": "",
+      "published_date": "2022-07-28",
+      "volume_after": 0
+    },
+    {
+      "transaction_name": "Trịnh Xuân Lâm",
+      "transaction_position": "Chủ tịch HĐQT",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 3830025,
+      "plan_buy": 9000000,
+      "plan_sell": 0,
+      "plan_begin_date": "2022-07-22",
+      "plan_end_date": "2022-08-19",
+      "real_buy": 692800,
+      "real_sell": 0,
+      "real_end_date": "2022-08-19",
+      "published_date": "2022-07-20",
+      "volume_after": 4522825
+    }
+  ]
+}

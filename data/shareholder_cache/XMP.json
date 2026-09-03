@@ -1,0 +1,87 @@
+{
+  "symbol": "XMP",
+  "updated": "2026-06-01T07:37:42.000Z",
+  "co_cau_so_huu": {
+    "CoDongSoHuu": [
+      {
+        "Code": "CORP_52183",
+        "Name": "CTCP Thép và Vật tư Công nghiệp",
+        "Url": "CTCP Thép và Vật tư Công nghiệp",
+        "AssetVolume": "2.590.000",
+        "AssetRate": "17,27",
+        "UpdatedDate": "15/09/2025"
+      },
+      {
+        "Code": "CEO_73300",
+        "Name": "Lê Văn Thuỷ",
+        "Url": "<a href='/du-lieu/ceo/CEO_73300/le-van-thuy.chn'>Lê Văn Thuỷ</a>",
+        "AssetVolume": "300.000",
+        "AssetRate": "2,0",
+        "UpdatedDate": "15/09/2025"
+      },
+      {
+        "Code": "VCP",
+        "Name": "CTCP Thủy điện Xuân Minh",
+        "Url": "<a href='/du-lieu/upcom/VCP-cong-ty-co-phan-xay-dung-va-nang-luong-vcp.chn' title='Công ty Cổ phần Xây dựng và Năng lượng VCP'>Công ty Cổ phần Xây dựng và Năng lượng VCP</a>",
+        "AssetVolume": "7.650.000",
+        "AssetRate": "51,0",
+        "UpdatedDate": "15/09/2025"
+      }
+    ],
+    "NuocNgoai": 0.21,
+    "NhaNuoc": 0,
+    "Khac": 99.79
+  },
+  "cong_ty_con": [],
+  "cong_ty_lien_ket": [],
+  "giao_dich_noi_bo": [
+    {
+      "transaction_name": "CTCP Thép và Vật tư Công nghiệp",
+      "transaction_position": "",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 750000,
+      "plan_buy": 2000000,
+      "plan_sell": 0,
+      "plan_begin_date": "2024-09-30",
+      "plan_end_date": "2024-10-25",
+      "real_buy": 1840000,
+      "real_sell": 0,
+      "real_end_date": "2024-09-30",
+      "published_date": "2024-09-30",
+      "volume_after": 2590000
+    },
+    {
+      "transaction_name": "Nguyễn Thị Thanh Thuỷ",
+      "transaction_position": "Thành viên HĐQT",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 1840000,
+      "plan_buy": 0,
+      "plan_sell": 1840000,
+      "plan_begin_date": "2024-09-27",
+      "plan_end_date": "2024-10-25",
+      "real_buy": 0,
+      "real_sell": 1840000,
+      "real_end_date": "2024-09-30",
+      "published_date": "2024-09-25",
+      "volume_after": 0
+    },
+    {
+      "transaction_name": "Nguyễn Thị Thanh Thuỷ",
+      "transaction_position": "Thành viên HĐQT",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 1500000,
+      "plan_buy": 400000,
+      "plan_sell": 0,
+      "plan_begin_date": "2023-05-10",
+      "plan_end_date": "2023-06-07",
+      "real_buy": 340000,
+      "real_sell": 0,
+      "real_end_date": "2023-05-15",
+      "published_date": "2023-05-11",
+      "volume_after": 1840000
+    }
+  ]
+}

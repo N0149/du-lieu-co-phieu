@@ -1,0 +1,107 @@
+{
+  "symbol": "PTO",
+  "updated": "2026-08-01T05:50:54.000Z",
+  "co_cau_so_huu": {
+    "CoDongSoHuu": [
+      {
+        "Code": "CEO_872737",
+        "Name": "Mai Xuân Dung",
+        "Url": "<a href='/du-lieu/ceo/CEO_872737/mai-xuan-dung.chn'>Mai Xuân Dung</a>",
+        "AssetVolume": "180.000",
+        "AssetRate": "15,0",
+        "UpdatedDate": "23/12/2025"
+      },
+      {
+        "Code": "CEO_873157",
+        "Name": "Phạm Thị Huệ",
+        "Url": "<a href='/du-lieu/ceo/CEO_873157/pham-thi-hue.chn'>Phạm Thị Huệ</a>",
+        "AssetVolume": "800",
+        "AssetRate": "0,07",
+        "UpdatedDate": "23/12/2025"
+      },
+      {
+        "Code": "CEO_52729",
+        "Name": "Nguyễn Thị Chinh",
+        "Url": "<a href='/du-lieu/ceo/CEO_52729/nguyen-thi-chinh.chn'>Nguyễn Thị Chinh</a>",
+        "AssetVolume": "9.480",
+        "AssetRate": "0,79",
+        "UpdatedDate": "23/12/2025"
+      },
+      {
+        "Code": "VNPT",
+        "Name": "Công ty Cổ phần Dịch vụ - Xây dựng Công trình Bưu điện",
+        "Url": "<a href='/du-lieu/otc/VNPT-tap-doan-buu-chinh-vien-thong-viet-nam.chn' title='Tập đoàn Bưu chính Viễn thông Việt Nam'>Tập đoàn Bưu chính Viễn thông Việt Nam</a>",
+        "AssetVolume": "360.000",
+        "AssetRate": "30,0",
+        "UpdatedDate": "23/12/2025"
+      }
+    ],
+    "NuocNgoai": 48.951,
+    "NhaNuoc": 0,
+    "Khac": 51.049
+  },
+  "cong_ty_con": [
+    {
+      "Symbol": "PTO",
+      "CorpCode": "CORP_51107",
+      "Name": "Công ty TNHH Một thành viên Đông Tây PTCO",
+      "TotalCapital": 1,
+      "SharedCapital": 1,
+      "OwnershipRate": 100,
+      "Note": "",
+      "Order": 1,
+      "TradeCenter": ""
+    }
+  ],
+  "cong_ty_lien_ket": [],
+  "giao_dich_noi_bo": [
+    {
+      "transaction_name": "Tập đoàn Bưu chính Viễn thông Việt Nam",
+      "transaction_position": "",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 360000,
+      "plan_buy": 0,
+      "plan_sell": 360000,
+      "plan_begin_date": "2025-11-12",
+      "plan_end_date": "2025-12-11",
+      "real_buy": 0,
+      "real_sell": 0,
+      "real_end_date": "2025-11-26",
+      "published_date": "2025-11-13",
+      "volume_after": 360000
+    },
+    {
+      "transaction_name": "Tập đoàn Bưu chính Viễn thông Việt Nam",
+      "transaction_position": "",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 360000,
+      "plan_buy": 0,
+      "plan_sell": 360000,
+      "plan_begin_date": "2025-10-13",
+      "plan_end_date": "2025-11-10",
+      "real_buy": 0,
+      "real_sell": 0,
+      "real_end_date": "2025-10-27",
+      "published_date": "2025-10-11",
+      "volume_after": 360000
+    },
+    {
+      "transaction_name": "Vũ Quang Thắng",
+      "transaction_position": "",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 58400,
+      "plan_buy": 0,
+      "plan_sell": 0,
+      "plan_begin_date": "",
+      "plan_end_date": "",
+      "real_buy": 4000,
+      "real_sell": 0,
+      "real_end_date": "2018-01-25",
+      "published_date": "2018-03-23",
+      "volume_after": 62400
+    }
+  ]
+}

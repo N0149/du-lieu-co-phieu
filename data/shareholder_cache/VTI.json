@@ -1,0 +1,80 @@
+{
+  "symbol": "VTI",
+  "updated": "2026-08-01T06:04:01.000Z",
+  "co_cau_so_huu": {
+    "CoDongSoHuu": [
+      {
+        "Code": "VGT",
+        "Name": "Công ty Cổ phần Sản xuất – Xuất nhập khẩu Dệt May",
+        "Url": "<a href='/du-lieu/upcom/VGT-tap-doan-det-may-viet-nam.chn' title='Tập đoàn Dệt may Việt Nam'>Tập đoàn Dệt may Việt Nam</a>",
+        "AssetVolume": "2.925.000",
+        "AssetRate": "68,34",
+        "UpdatedDate": "31/12/2018"
+      },
+      {
+        "Code": "CEO_37016",
+        "Name": "Hoàng Thúy Anh",
+        "Url": "<a href='/du-lieu/ceo/CEO_37016/hoang-thuy-anh.chn'>Hoàng Thúy Anh</a>",
+        "AssetVolume": "1.300",
+        "AssetRate": "0,03",
+        "UpdatedDate": "31/12/2018"
+      },
+      {
+        "Code": "CORP_01098",
+        "Name": "CTCP May Hưng Yên",
+        "Url": "CTCP May Hưng Yên",
+        "AssetVolume": "233.434",
+        "AssetRate": "5,45",
+        "UpdatedDate": "31/12/2018"
+      },
+      {
+        "Code": "CEO_70777",
+        "Name": "Bùi Trung Dũng",
+        "Url": "<a href='/du-lieu/ceo/CEO_70777/bui-trung-dung.chn'>Bùi Trung Dũng</a>",
+        "AssetVolume": "6.800",
+        "AssetRate": "0,16",
+        "UpdatedDate": "31/12/2018"
+      }
+    ],
+    "NuocNgoai": 3500000,
+    "NhaNuoc": 0,
+    "Khac": -3499900
+  },
+  "cong_ty_con": [],
+  "cong_ty_lien_ket": [
+    {
+      "Symbol": "VTI",
+      "CorpCode": "CORP_94120",
+      "Name": "Công ty Đáp cầu Yên phong",
+      "TotalCapital": 30.068,
+      "SharedCapital": 6.01,
+      "OwnershipRate": 20,
+      "Note": "",
+      "Order": 1,
+      "TradeCenter": ""
+    },
+    {
+      "Symbol": "VTI",
+      "CorpCode": "CORP_70607",
+      "Name": "Công ty CP May 20",
+      "TotalCapital": 0,
+      "SharedCapital": 0,
+      "OwnershipRate": 0,
+      "Note": "",
+      "Order": 2,
+      "TradeCenter": ""
+    },
+    {
+      "Symbol": "VTI",
+      "CorpCode": "CORP_70608",
+      "Name": "CTCP Nguyên phụ liệu dệt may (Vinatex Log)",
+      "TotalCapital": 0,
+      "SharedCapital": 0,
+      "OwnershipRate": 0,
+      "Note": "",
+      "Order": 3,
+      "TradeCenter": ""
+    }
+  ],
+  "giao_dich_noi_bo": []
+}

@@ -1,0 +1,231 @@
+{
+  "symbol": "HPW",
+  "updated": "2026-03-22T03:17:24.000Z",
+  "co_cau_so_huu": {
+    "CoDongSoHuu": [
+      {
+        "Code": "CEO_98127",
+        "Name": "Cao Văn Quý",
+        "Url": "<a href='/du-lieu/ceo/CEO_98127/cao-van-quy.chn'>Cao Văn Quý</a>",
+        "AssetVolume": "150.000",
+        "AssetRate": "0,2",
+        "UpdatedDate": "07/05/2025"
+      },
+      {
+        "Code": "CEO_98120",
+        "Name": "Đặng Hữu Dũng",
+        "Url": "<a href='/du-lieu/ceo/CEO_98120/dang-huu-dung.chn'>Đặng Hữu Dũng</a>",
+        "AssetVolume": "86.400",
+        "AssetRate": "0,12",
+        "UpdatedDate": "07/05/2025"
+      },
+      {
+        "Code": "CEO_98121",
+        "Name": "Trần Việt Cường",
+        "Url": "<a href='/du-lieu/ceo/CEO_98121/tran-viet-cuong.chn'>Trần Việt Cường</a>",
+        "AssetVolume": "100.000",
+        "AssetRate": "0,13",
+        "UpdatedDate": "07/05/2025"
+      },
+      {
+        "Code": "CEO_98123",
+        "Name": "Nguyễn Đăng Ninh",
+        "Url": "<a href='/du-lieu/ceo/CEO_98123/nguyen-dang-ninh.chn'>Nguyễn Đăng Ninh</a>",
+        "AssetVolume": "121.100",
+        "AssetRate": "0,16",
+        "UpdatedDate": "07/05/2025"
+      },
+      {
+        "Code": "CEO_98128",
+        "Name": "Trịnh Anh Tuấn",
+        "Url": "<a href='/du-lieu/ceo/CEO_98128/trinh-anh-tuan.chn'>Trịnh Anh Tuấn</a>",
+        "AssetVolume": "35.000",
+        "AssetRate": "0,05",
+        "UpdatedDate": "07/05/2025"
+      },
+      {
+        "Code": "CORP_39320",
+        "Name": "Ủy ban Nhân dân Thành phố Hải Phòng",
+        "Url": "Ủy ban Nhân dân Thành phố Hải Phòng",
+        "AssetVolume": "59.797.840",
+        "AssetRate": "80,58",
+        "UpdatedDate": "07/05/2025"
+      },
+      {
+        "Code": "CEO_98122",
+        "Name": "Trần Văn Dương",
+        "Url": "<a href='/du-lieu/ceo/CEO_98122/tran-van-duong.chn'>Trần Văn Dương</a>",
+        "AssetVolume": "165.000",
+        "AssetRate": "0,22",
+        "UpdatedDate": "07/05/2025"
+      },
+      {
+        "Code": "CEO_98124",
+        "Name": "Trịnh Thị Mỵ",
+        "Url": "<a href='/du-lieu/ceo/CEO_98124/trinh-thi-my.chn'>Trịnh Thị Mỵ</a>",
+        "AssetVolume": "2.500",
+        "AssetRate": "0,0",
+        "UpdatedDate": "07/05/2025"
+      },
+      {
+        "Code": "CEO_98126",
+        "Name": "Nguyễn Thị Thu Hiền",
+        "Url": "<a href='/du-lieu/ceo/CEO_98126/nguyen-thi-thu-hien.chn'>Nguyễn Thị Thu Hiền</a>",
+        "AssetVolume": "5.500",
+        "AssetRate": "0,01",
+        "UpdatedDate": "07/05/2025"
+      },
+      {
+        "Code": "CEO_98119",
+        "Name": "Vũ Hồng Dương",
+        "Url": "<a href='/du-lieu/ceo/CEO_98119/vu-hong-duong.chn'>Vũ Hồng Dương</a>",
+        "AssetVolume": "496.600",
+        "AssetRate": "0,67",
+        "UpdatedDate": "07/05/2025"
+      }
+    ],
+    "NuocNgoai": 0.14,
+    "NhaNuoc": 0,
+    "Khac": 99.86
+  },
+  "cong_ty_con": [
+    {
+      "Symbol": "HPW",
+      "CorpCode": "CORP_98004",
+      "Name": "CTCP Kinh doanh nước sạch số 2 Hải Phòng",
+      "TotalCapital": 42000000000,
+      "SharedCapital": 27421800000,
+      "OwnershipRate": 65.29,
+      "Note": "",
+      "Order": 1,
+      "TradeCenter": ""
+    }
+  ],
+  "cong_ty_lien_ket": [
+    {
+      "Symbol": "HPW",
+      "CorpCode": "CORP_98005",
+      "Name": "Công ty TNHH Công nghệ cấp nước tiên tiến Nhật Bản Việt Nam",
+      "TotalCapital": 22450000000,
+      "SharedCapital": 5612500000,
+      "OwnershipRate": 25,
+      "Note": "",
+      "Order": 2,
+      "TradeCenter": ""
+    }
+  ],
+  "giao_dich_noi_bo": [
+    {
+      "transaction_name": "Vũ Hồng Dương",
+      "transaction_position": "Chủ tịch HĐQT",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 393100,
+      "plan_buy": 103500,
+      "plan_sell": 0,
+      "plan_begin_date": "2020-06-17",
+      "plan_end_date": "2020-07-14",
+      "real_buy": 103500,
+      "real_sell": 0,
+      "real_end_date": "2020-07-05",
+      "published_date": "2020-06-18",
+      "volume_after": 496600
+    },
+    {
+      "transaction_name": "Vũ Hồng Dương",
+      "transaction_position": "Chủ tịch HĐQT",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 384800,
+      "plan_buy": 8300,
+      "plan_sell": 0,
+      "plan_begin_date": "2020-05-12",
+      "plan_end_date": "2020-06-09",
+      "real_buy": 8300,
+      "real_sell": 0,
+      "real_end_date": "2020-05-19",
+      "published_date": "2020-05-13",
+      "volume_after": 393100
+    },
+    {
+      "transaction_name": "Trịnh Thị Mỵ",
+      "transaction_position": "Trưởng BKS",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 29600,
+      "plan_buy": 0,
+      "plan_sell": 27100,
+      "plan_begin_date": "2019-10-09",
+      "plan_end_date": "2019-10-30",
+      "real_buy": 0,
+      "real_sell": 27100,
+      "real_end_date": "2019-10-09",
+      "published_date": "2019-10-07",
+      "volume_after": 2500
+    },
+    {
+      "transaction_name": "Vũ Hồng Dương",
+      "transaction_position": "Chủ tịch HĐQT",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 355800,
+      "plan_buy": 29000,
+      "plan_sell": 0,
+      "plan_begin_date": "2019-05-06",
+      "plan_end_date": "2019-05-30",
+      "real_buy": 29000,
+      "real_sell": 0,
+      "real_end_date": "2019-05-08",
+      "published_date": "2019-05-01",
+      "volume_after": 384800
+    },
+    {
+      "transaction_name": "Đỗ Thị Mai Hương",
+      "transaction_position": "Vợ",
+      "leader_name": "Đặng Hữu Dũng",
+      "leader_position": "Thành viên HĐQT",
+      "volume_before": 33000,
+      "plan_buy": 40000,
+      "plan_sell": 0,
+      "plan_begin_date": "2018-05-27",
+      "plan_end_date": "2018-06-24",
+      "real_buy": 0,
+      "real_sell": 40000,
+      "real_end_date": "2018-05-28",
+      "published_date": "2018-05-22",
+      "volume_after": 73000
+    },
+    {
+      "transaction_name": "Vũ Thị Vinh",
+      "transaction_position": "Vợ",
+      "leader_name": "Vũ Hồng Dương",
+      "leader_position": "Chủ tịch HĐQT",
+      "volume_before": 45000,
+      "plan_buy": 5000,
+      "plan_sell": 0,
+      "plan_begin_date": "2017-02-16",
+      "plan_end_date": "2017-03-16",
+      "real_buy": 5000,
+      "real_sell": 0,
+      "real_end_date": "2017-02-20",
+      "published_date": "2017-02-13",
+      "volume_after": 50000
+    },
+    {
+      "transaction_name": "Vũ Thị Vinh",
+      "transaction_position": "Vợ",
+      "leader_name": "Vũ Hồng Dương",
+      "leader_position": "Chủ tịch HĐQT",
+      "volume_before": 40000,
+      "plan_buy": 5000,
+      "plan_sell": 0,
+      "plan_begin_date": "2016-11-28",
+      "plan_end_date": "2016-12-27",
+      "real_buy": 5000,
+      "real_sell": 0,
+      "real_end_date": "2016-12-07",
+      "published_date": "2016-11-21",
+      "volume_after": 45000
+    }
+  ]
+}

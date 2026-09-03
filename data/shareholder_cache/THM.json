@@ -1,0 +1,63 @@
+{
+  "symbol": "THM",
+  "updated": "2026-03-22T03:23:10.000Z",
+  "co_cau_so_huu": {
+    "CoDongSoHuu": [
+      {
+        "Code": "CORP_56162",
+        "Name": "CTCP Appatex ",
+        "Url": "CTCP Appatex ",
+        "AssetVolume": "7.969.500",
+        "AssetRate": "65,58",
+        "UpdatedDate": "18/02/2025"
+      },
+      {
+        "Code": "CEO_876464",
+        "Name": "Nguyễn Thị Hương",
+        "Url": "<a href='/du-lieu/ceo/CEO_876464/nguyen-thi-huong.chn'>Nguyễn Thị Hương</a>",
+        "AssetVolume": "24.000",
+        "AssetRate": "0,2",
+        "UpdatedDate": "09/08/2024"
+      }
+    ],
+    "NuocNgoai": 49,
+    "NhaNuoc": 0,
+    "Khac": 51
+  },
+  "cong_ty_con": [],
+  "cong_ty_lien_ket": [],
+  "giao_dich_noi_bo": [
+    {
+      "transaction_name": "CTCP Appatex ",
+      "transaction_position": "",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 7969500,
+      "plan_buy": 0,
+      "plan_sell": 1500000,
+      "plan_begin_date": "2025-01-20",
+      "plan_end_date": "2025-02-18",
+      "real_buy": 0,
+      "real_sell": 0,
+      "real_end_date": "2025-02-18",
+      "published_date": "2025-01-15",
+      "volume_after": 7969500
+    },
+    {
+      "transaction_name": "Nguyễn Thị Hương",
+      "transaction_position": "Kế toán trưởng",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 24000,
+      "plan_buy": 0,
+      "plan_sell": 24000,
+      "plan_begin_date": "2024-07-15",
+      "plan_end_date": "2024-08-09",
+      "real_buy": 0,
+      "real_sell": 0,
+      "real_end_date": "2024-08-09",
+      "published_date": "2024-07-12",
+      "volume_after": 24000
+    }
+  ]
+}

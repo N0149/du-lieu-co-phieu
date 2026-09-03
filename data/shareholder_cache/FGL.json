@@ -1,0 +1,191 @@
+{
+  "symbol": "FGL",
+  "updated": "2026-08-01T05:36:14.000Z",
+  "co_cau_so_huu": {
+    "CoDongSoHuu": [
+      {
+        "Code": "LQ_92304",
+        "Name": "Nguyễn Thành Hiện",
+        "Url": "Nguyễn Thành Hiện (Chồng của bà <a href='/du-lieu/ceo/CEO_56558/duong-thuy-phuong-lan.chn'>Dương Thùy Phương Lan</a>)",
+        "AssetVolume": "179.530",
+        "AssetRate": "1,22",
+        "UpdatedDate": "31/12/2019"
+      },
+      {
+        "Code": "KLQ_100135",
+        "Name": "Nguyễn Thị Thu Vân",
+        "Url": "Nguyễn Thị Thu Vân",
+        "AssetVolume": "2.876.798",
+        "AssetRate": "19,6",
+        "UpdatedDate": "30/06/2026"
+      },
+      {
+        "Code": "LQ_92119",
+        "Name": "Lê Thị Thanh Tình",
+        "Url": "Lê Thị Thanh Tình (Vợ của ông <a href='/du-lieu/ceo/CEO_56551/trinh-dinh-truong.chn'>Trịnh Đình Trường</a>)",
+        "AssetVolume": "1.000.000",
+        "AssetRate": "6,81",
+        "UpdatedDate": "31/12/2021"
+      },
+      {
+        "Code": "CEO_56558",
+        "Name": "Dương Thùy Phương Lan",
+        "Url": "<a href='/du-lieu/ceo/CEO_56558/duong-thuy-phuong-lan.chn'>Dương Thùy Phương Lan</a>",
+        "AssetVolume": "243.100",
+        "AssetRate": "1,66",
+        "UpdatedDate": "31/12/2019"
+      },
+      {
+        "Code": "CORP_52211",
+        "Name": "CTCP Đầu tư Legend HighLand",
+        "Url": "CTCP Đầu tư Legend HighLand",
+        "AssetVolume": "3.500.000",
+        "AssetRate": "23,85",
+        "UpdatedDate": "14/12/2021"
+      },
+      {
+        "Code": "CORP_52210",
+        "Name": "CTCP Năng lượng Nghĩa Hưng",
+        "Url": "CTCP Năng lượng Nghĩa Hưng",
+        "AssetVolume": "3.389.238",
+        "AssetRate": "23,09",
+        "UpdatedDate": "14/05/2024"
+      }
+    ],
+    "NuocNgoai": 14676300,
+    "NhaNuoc": 0,
+    "Khac": -14676200
+  },
+  "cong_ty_con": [],
+  "cong_ty_lien_ket": [],
+  "giao_dich_noi_bo": [
+    {
+      "transaction_name": "CTCP Năng lượng Nghĩa Hưng",
+      "transaction_position": "",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 3550000,
+      "plan_buy": 0,
+      "plan_sell": 0,
+      "plan_begin_date": "",
+      "plan_end_date": "",
+      "real_buy": 0,
+      "real_sell": 160762,
+      "real_end_date": "2024-05-14",
+      "published_date": "2024-05-17",
+      "volume_after": 3389238
+    },
+    {
+      "transaction_name": "Nguyễn Thị Thu Vân",
+      "transaction_position": "",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 977531,
+      "plan_buy": 0,
+      "plan_sell": 0,
+      "plan_begin_date": "",
+      "plan_end_date": "",
+      "real_buy": 1899267,
+      "real_sell": 0,
+      "real_end_date": "2024-05-14",
+      "published_date": "2024-05-17",
+      "volume_after": 2876798
+    },
+    {
+      "transaction_name": "Lê Thị Thanh Tình",
+      "transaction_position": "Vợ",
+      "leader_name": "Trịnh Đình Trường",
+      "leader_position": "Chủ tịch HĐQT",
+      "volume_before": 1000000,
+      "plan_buy": 0,
+      "plan_sell": 1000000,
+      "plan_begin_date": "2024-05-13",
+      "plan_end_date": "2024-05-17",
+      "real_buy": 0,
+      "real_sell": 1000000,
+      "real_end_date": "2024-05-14",
+      "published_date": "2024-05-09",
+      "volume_after": 0
+    },
+    {
+      "transaction_name": "Trịnh Đình Trường",
+      "transaction_position": "Chủ tịch HĐQT",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 738505,
+      "plan_buy": 0,
+      "plan_sell": 738505,
+      "plan_begin_date": "2024-05-08",
+      "plan_end_date": "2024-06-07",
+      "real_buy": 0,
+      "real_sell": 738505,
+      "real_end_date": "2024-05-14",
+      "published_date": "2024-05-07",
+      "volume_after": 0
+    },
+    {
+      "transaction_name": "Công ty Cổ phần Tập đoàn Đức Long Gia Lai",
+      "transaction_position": "",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 7484913,
+      "plan_buy": 0,
+      "plan_sell": 0,
+      "plan_begin_date": "",
+      "plan_end_date": "",
+      "real_buy": 0,
+      "real_sell": 7484913,
+      "real_end_date": "2021-12-14",
+      "published_date": "2021-12-28",
+      "volume_after": 0
+    },
+    {
+      "transaction_name": "CTCP Năng lượng Nghĩa Hưng",
+      "transaction_position": "",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 0,
+      "plan_buy": 0,
+      "plan_sell": 0,
+      "plan_begin_date": "",
+      "plan_end_date": "",
+      "real_buy": 3550000,
+      "real_sell": 0,
+      "real_end_date": "2021-12-14",
+      "published_date": "2021-12-28",
+      "volume_after": 3550000
+    },
+    {
+      "transaction_name": "CTCP Đầu tư Legend HighLand",
+      "transaction_position": "",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 0,
+      "plan_buy": 0,
+      "plan_sell": 0,
+      "plan_begin_date": "",
+      "plan_end_date": "",
+      "real_buy": 3500000,
+      "real_sell": 0,
+      "real_end_date": "2021-12-14",
+      "published_date": "2021-12-28",
+      "volume_after": 3500000
+    },
+    {
+      "transaction_name": "Trịnh Quang Hưng",
+      "transaction_position": "Thành viên HĐQT",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 2377702,
+      "plan_buy": 475000,
+      "plan_sell": 0,
+      "plan_begin_date": "2021-06-02",
+      "plan_end_date": "2021-06-25",
+      "real_buy": 475100,
+      "real_sell": 0,
+      "real_end_date": "2021-06-08",
+      "published_date": "2021-06-08",
+      "volume_after": 2852802
+    }
+  ]
+}

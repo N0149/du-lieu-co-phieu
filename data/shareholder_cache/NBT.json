@@ -1,0 +1,167 @@
+{
+  "symbol": "NBT",
+  "updated": "2026-03-22T03:19:31.000Z",
+  "co_cau_so_huu": {
+    "CoDongSoHuu": [
+      {
+        "Code": "CORP_39253",
+        "Name": "Ủy ban nhân dân tỉnh Bến Tre",
+        "Url": "Ủy ban nhân dân tỉnh Bến Tre",
+        "AssetVolume": "18.816.000",
+        "AssetRate": "64,0",
+        "UpdatedDate": "21/01/2026"
+      },
+      {
+        "Code": "CEO_37200",
+        "Name": "Hồ Thị Bích Hà",
+        "Url": "<a href='/du-lieu/ceo/CEO_37200/ho-thi-bich-ha.chn'>Hồ Thị Bích Hà</a>",
+        "AssetVolume": "8.190",
+        "AssetRate": "0,03",
+        "UpdatedDate": "21/01/2026"
+      },
+      {
+        "Code": "CORP_39104",
+        "Name": "CTCP Cấp thoát nước Thủy Anh",
+        "Url": "CTCP Cấp thoát nước Thủy Anh",
+        "AssetVolume": "5.109.510",
+        "AssetRate": "17,38",
+        "UpdatedDate": "21/01/2026"
+      },
+      {
+        "Code": "CEO_37204",
+        "Name": "Võ Thị Thiên Trang",
+        "Url": "<a href='/du-lieu/ceo/CEO_37204/vo-thi-thien-trang.chn'>Võ Thị Thiên Trang</a>",
+        "AssetVolume": "20.865",
+        "AssetRate": "0,07",
+        "UpdatedDate": "21/01/2026"
+      },
+      {
+        "Code": "CEO_37199",
+        "Name": "Nguyễn Thị Diễm Phượng",
+        "Url": "<a href='/du-lieu/ceo/CEO_37199/nguyen-thi-diem-phuong.chn'>Nguyễn Thị Diễm Phượng</a>",
+        "AssetVolume": "37.590",
+        "AssetRate": "0,13",
+        "UpdatedDate": "21/01/2026"
+      },
+      {
+        "Code": "HOANCAU",
+        "Name": "Công ty TNHH Hoàn Cầu",
+        "Url": "<a href='/du-lieu/otc/HOANCAU-cong-ty-tnhh-hoan-cau.chn' title='Công ty TNHH Hoàn Cầu'>Công ty TNHH Hoàn Cầu</a>",
+        "AssetVolume": "4.410.000",
+        "AssetRate": "15,0",
+        "UpdatedDate": "21/01/2026"
+      },
+      {
+        "Code": "CEO_37203",
+        "Name": "Trần Hùng",
+        "Url": "<a href='/du-lieu/ceo/CEO_37203/tran-hung.chn'>Trần Hùng</a>",
+        "AssetVolume": "7.770",
+        "AssetRate": "0,03",
+        "UpdatedDate": "21/01/2026"
+      },
+      {
+        "Code": "CEO_37201",
+        "Name": "Lê Văn Phong",
+        "Url": "<a href='/du-lieu/ceo/CEO_37201/le-van-phong.chn'>Lê Văn Phong</a>",
+        "AssetVolume": "13.230",
+        "AssetRate": "0,05",
+        "UpdatedDate": "21/01/2026"
+      },
+      {
+        "Code": "CEO_37198",
+        "Name": "Phạm Chí Vũ",
+        "Url": "<a href='/du-lieu/ceo/CEO_37198/pham-chi-vu.chn'>Phạm Chí Vũ</a>",
+        "AssetVolume": "19.320",
+        "AssetRate": "0,07",
+        "UpdatedDate": "21/01/2026"
+      }
+    ],
+    "NuocNgoai": 0.5,
+    "NhaNuoc": 0,
+    "Khac": 99.5
+  },
+  "cong_ty_con": [],
+  "cong_ty_lien_ket": [],
+  "giao_dich_noi_bo": [
+    {
+      "transaction_name": "Võ Thị Thiên Trang",
+      "transaction_position": "Kế toán trưởng",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 11730,
+      "plan_buy": 9135,
+      "plan_sell": 0,
+      "plan_begin_date": "2019-07-23",
+      "plan_end_date": "2019-08-20",
+      "real_buy": 9135,
+      "real_sell": 0,
+      "real_end_date": "2019-07-28",
+      "published_date": "2019-07-22",
+      "volume_after": 20865
+    },
+    {
+      "transaction_name": "Võ Thị Thiên Trang",
+      "transaction_position": "Kế toán trưởng",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 6600,
+      "plan_buy": 4800,
+      "plan_sell": 0,
+      "plan_begin_date": "2018-09-12",
+      "plan_end_date": "2018-10-09",
+      "real_buy": 4800,
+      "real_sell": 0,
+      "real_end_date": "2018-09-19",
+      "published_date": "2018-09-11",
+      "volume_after": 11400
+    },
+    {
+      "transaction_name": "Lê Văn Phong",
+      "transaction_position": "Trưởng BKS",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 15600,
+      "plan_buy": 0,
+      "plan_sell": 3000,
+      "plan_begin_date": "2017-07-23",
+      "plan_end_date": "2017-08-20",
+      "real_buy": 0,
+      "real_sell": 3000,
+      "real_end_date": "2017-07-25",
+      "published_date": "2017-07-19",
+      "volume_after": 12600
+    },
+    {
+      "transaction_name": "Nguyễn Thị Diễm Phượng",
+      "transaction_position": "Thành viên HĐQT",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 32400,
+      "plan_buy": 3400,
+      "plan_sell": 0,
+      "plan_begin_date": "2017-07-11",
+      "plan_end_date": "2017-08-08",
+      "real_buy": 3400,
+      "real_sell": 0,
+      "real_end_date": "2017-07-13",
+      "published_date": "2017-07-10",
+      "volume_after": 35800
+    },
+    {
+      "transaction_name": "Phạm Vũ Hoàng",
+      "transaction_position": "Con",
+      "leader_name": "Phạm Chí Vũ",
+      "leader_position": "Chủ tịch HĐQT",
+      "volume_before": 10000,
+      "plan_buy": 5000,
+      "plan_sell": 0,
+      "plan_begin_date": "2017-07-11",
+      "plan_end_date": "2017-08-08",
+      "real_buy": 5000,
+      "real_sell": 0,
+      "real_end_date": "2017-07-13",
+      "published_date": "2017-07-10",
+      "volume_after": 15000
+    }
+  ]
+}

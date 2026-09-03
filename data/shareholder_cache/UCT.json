@@ -1,0 +1,119 @@
+{
+  "symbol": "UCT",
+  "updated": "2026-03-22T03:24:01.000Z",
+  "co_cau_so_huu": {
+    "CoDongSoHuu": [
+      {
+        "Code": "CEO_98030",
+        "Name": "Nguyễn Quốc Cường",
+        "Url": "<a href='/du-lieu/ceo/CEO_98030/nguyen-quoc-cuong.chn'>Nguyễn Quốc Cường</a>",
+        "AssetVolume": "1.000",
+        "AssetRate": "0,02",
+        "UpdatedDate": "31/12/2018"
+      },
+      {
+        "Code": "KLQ_99961",
+        "Name": "Võ Ngọc Diệp",
+        "Url": "Võ Ngọc Diệp",
+        "AssetVolume": "2.302.901",
+        "AssetRate": "43,09",
+        "UpdatedDate": "14/07/2023"
+      },
+      {
+        "Code": "CEO_98026",
+        "Name": "Võ Văn Được",
+        "Url": "<a href='/du-lieu/ceo/CEO_98026/vo-van-duoc.chn'>Võ Văn Được</a>",
+        "AssetVolume": "3.300",
+        "AssetRate": "0,06",
+        "UpdatedDate": "31/12/2018"
+      },
+      {
+        "Code": "CEO_98028",
+        "Name": "Nguyễn Thạch Em",
+        "Url": "<a href='/du-lieu/ceo/CEO_98028/nguyen-thach-em.chn'>Nguyễn Thạch Em</a>",
+        "AssetVolume": "3.900",
+        "AssetRate": "0,07",
+        "UpdatedDate": "31/12/2018"
+      },
+      {
+        "Code": "CEO_98031",
+        "Name": "Nguyễn Thị Thúy Vy",
+        "Url": "<a href='/du-lieu/ceo/CEO_98031/nguyen-thi-thuy-vy.chn'>Nguyễn Thị Thúy Vy</a>",
+        "AssetVolume": "1.300",
+        "AssetRate": "0,02",
+        "UpdatedDate": "31/12/2018"
+      },
+      {
+        "Code": "CEO_98021",
+        "Name": "Lưu Việt Chiến",
+        "Url": "<a href='/du-lieu/ceo/CEO_98021/luu-viet-chien.chn'>Lưu Việt Chiến</a>",
+        "AssetVolume": "1.300",
+        "AssetRate": "0,02",
+        "UpdatedDate": "31/12/2018"
+      },
+      {
+        "Code": "CEO_98029",
+        "Name": "Đặng Minh Khiết",
+        "Url": "<a href='/du-lieu/ceo/CEO_98029/dang-minh-khiet.chn'>Đặng Minh Khiết</a>",
+        "AssetVolume": "15.200",
+        "AssetRate": "0,28",
+        "UpdatedDate": "31/12/2018"
+      },
+      {
+        "Code": "CEO_98023",
+        "Name": "Lê Thanh Hiếu",
+        "Url": "<a href='/du-lieu/ceo/CEO_98023/le-thanh-hieu.chn'>Lê Thanh Hiếu</a>",
+        "AssetVolume": "14.700",
+        "AssetRate": "0,28",
+        "UpdatedDate": "31/12/2018"
+      },
+      {
+        "Code": "CEO_98022",
+        "Name": "Trần Thanh Phong",
+        "Url": "<a href='/du-lieu/ceo/CEO_98022/tran-thanh-phong.chn'>Trần Thanh Phong</a>",
+        "AssetVolume": "7.200",
+        "AssetRate": "0,13",
+        "UpdatedDate": "31/12/2018"
+      },
+      {
+        "Code": "CEO_98027",
+        "Name": "Nguyễn Phúc Như",
+        "Url": "<a href='/du-lieu/ceo/CEO_98027/nguyen-phuc-nhu.chn'>Nguyễn Phúc Như</a>",
+        "AssetVolume": "1.100",
+        "AssetRate": "0,02",
+        "UpdatedDate": "31/12/2018"
+      },
+      {
+        "Code": "CORP_39397",
+        "Name": "UBND TP. Cần Thơ",
+        "Url": "UBND TP. Cần Thơ",
+        "AssetVolume": "4.930.645",
+        "AssetRate": "92,26",
+        "UpdatedDate": "31/12/2018"
+      }
+    ],
+    "NuocNgoai": 49,
+    "NhaNuoc": 0,
+    "Khac": 51
+  },
+  "cong_ty_con": [],
+  "cong_ty_lien_ket": [],
+  "giao_dich_noi_bo": [
+    {
+      "transaction_name": "Võ Ngọc Diệp",
+      "transaction_position": "",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 58400,
+      "plan_buy": 0,
+      "plan_sell": 0,
+      "plan_begin_date": "",
+      "plan_end_date": "",
+      "real_buy": 2244501,
+      "real_sell": 0,
+      "real_end_date": "2023-07-14",
+      "published_date": "2023-07-14",
+      "volume_after": 2302901
+    }
+  ]
+}

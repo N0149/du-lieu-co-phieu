@@ -1,0 +1,215 @@
+{
+  "symbol": "LPT",
+  "updated": "2026-03-22T03:18:46.000Z",
+  "co_cau_so_huu": {
+    "CoDongSoHuu": [
+      {
+        "Code": "KLQ_97452",
+        "Name": "Trần Thị Bút",
+        "Url": "Trần Thị Bút",
+        "AssetVolume": "720.000",
+        "AssetRate": "6,0",
+        "UpdatedDate": "12/09/2025"
+      },
+      {
+        "Code": "CEO_871568",
+        "Name": "Phan Quang Tiệp",
+        "Url": "<a href='/du-lieu/ceo/CEO_871568/phan-quang-tiep.chn'>Phan Quang Tiệp</a>",
+        "AssetVolume": "1.090.000",
+        "AssetRate": "9,08",
+        "UpdatedDate": "12/09/2025"
+      },
+      {
+        "Code": "KLQ_00475",
+        "Name": "Nguyễn Thị Ngân",
+        "Url": "Nguyễn Thị Ngân",
+        "AssetVolume": "311.100",
+        "AssetRate": "2,59",
+        "UpdatedDate": "12/09/2025"
+      },
+      {
+        "Code": "CEO_59516",
+        "Name": "Vũ Văn Thành",
+        "Url": "<a href='/du-lieu/ceo/CEO_59516/vu-van-thanh.chn'>Vũ Văn Thành</a>",
+        "AssetVolume": "750",
+        "AssetRate": "0,01",
+        "UpdatedDate": "12/09/2025"
+      },
+      {
+        "Code": "CEO_872743",
+        "Name": "Phạm Anh Tuấn",
+        "Url": "<a href='/du-lieu/ceo/CEO_872743/pham-anh-tuan.chn'>Phạm Anh Tuấn</a>",
+        "AssetVolume": "886.000",
+        "AssetRate": "7,38",
+        "UpdatedDate": "12/09/2025"
+      },
+      {
+        "Code": "CEO_73223",
+        "Name": "Trần Ngọc Mai",
+        "Url": "<a href='/du-lieu/ceo/CEO_73223/tran-ngoc-mai.chn'>Trần Ngọc Mai</a>",
+        "AssetVolume": "1.000.000",
+        "AssetRate": "8,33",
+        "UpdatedDate": "12/09/2025"
+      },
+      {
+        "Code": "CEO_871567",
+        "Name": "Nguyễn Xuân Mạnh",
+        "Url": "<a href='/du-lieu/ceo/CEO_871567/nguyen-xuan-manh.chn'>Nguyễn Xuân Mạnh</a>",
+        "AssetVolume": "240.000",
+        "AssetRate": "2,0",
+        "UpdatedDate": "12/09/2025"
+      },
+      {
+        "Code": "LQ_964003",
+        "Name": "Nguyễn Trần Linh Chi",
+        "Url": "Nguyễn Trần Linh Chi (Vợ của ông <a href='/du-lieu/ceo/CEO_872743/pham-anh-tuan.chn'>Phạm Anh Tuấn</a>)",
+        "AssetVolume": "991.869",
+        "AssetRate": "8,27",
+        "UpdatedDate": "12/09/2025"
+      },
+      {
+        "Code": "CEO_59591",
+        "Name": "Nguyễn Thị Thanh Hương",
+        "Url": "<a href='/du-lieu/ceo/CEO_59591/nguyen-thi-thanh-huong.chn'>Nguyễn Thị Thanh Hương</a>",
+        "AssetVolume": "50.000",
+        "AssetRate": "0,42",
+        "UpdatedDate": "12/09/2025"
+      }
+    ],
+    "NuocNgoai": 49,
+    "NhaNuoc": 0,
+    "Khac": 51
+  },
+  "cong_ty_con": [],
+  "cong_ty_lien_ket": [],
+  "giao_dich_noi_bo": [
+    {
+      "transaction_name": "Nguyễn Trần Linh Chi",
+      "transaction_position": "Vợ",
+      "leader_name": "Phạm Anh Tuấn",
+      "leader_position": "Thành viên HĐQT",
+      "volume_before": 247650,
+      "plan_buy": 744219,
+      "plan_sell": 0,
+      "plan_begin_date": "2023-06-12",
+      "plan_end_date": "2023-07-10",
+      "real_buy": 0,
+      "real_sell": 0,
+      "real_end_date": "",
+      "published_date": "2023-06-08",
+      "volume_after": 0
+    },
+    {
+      "transaction_name": "Tạ Thanh Phương",
+      "transaction_position": "Thành viên HĐQT",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 75000,
+      "plan_buy": 0,
+      "plan_sell": 75000,
+      "plan_begin_date": "2023-02-10",
+      "plan_end_date": "2023-02-28",
+      "real_buy": 0,
+      "real_sell": 75000,
+      "real_end_date": "2023-02-13",
+      "published_date": "2023-02-07",
+      "volume_after": 0
+    },
+    {
+      "transaction_name": "Nguyễn Thành Lê",
+      "transaction_position": "",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 0,
+      "plan_buy": 0,
+      "plan_sell": 0,
+      "plan_begin_date": "",
+      "plan_end_date": "",
+      "real_buy": 744219,
+      "real_sell": 0,
+      "real_end_date": "2022-05-24",
+      "published_date": "2022-05-29",
+      "volume_after": 744219
+    },
+    {
+      "transaction_name": "Phạm Anh Tuấn",
+      "transaction_position": "Thành viên HĐQT",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 224000,
+      "plan_buy": 550000,
+      "plan_sell": 0,
+      "plan_begin_date": "2022-05-24",
+      "plan_end_date": "2022-05-27",
+      "real_buy": 550000,
+      "real_sell": 0,
+      "real_end_date": "2022-05-24",
+      "published_date": "2022-05-20",
+      "volume_after": 886000
+    },
+    {
+      "transaction_name": "Nguyễn Xuân Mạnh",
+      "transaction_position": "Chủ tịch HĐQT",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 0,
+      "plan_buy": 480000,
+      "plan_sell": 0,
+      "plan_begin_date": "2022-04-20",
+      "plan_end_date": "2022-04-27",
+      "real_buy": 480000,
+      "real_sell": 0,
+      "real_end_date": "2022-04-22",
+      "published_date": "2022-04-16",
+      "volume_after": 240000
+    },
+    {
+      "transaction_name": "Nguyễn Thị Ngân",
+      "transaction_position": "",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 400400,
+      "plan_buy": 0,
+      "plan_sell": 0,
+      "plan_begin_date": "",
+      "plan_end_date": "",
+      "real_buy": 0,
+      "real_sell": 193000,
+      "real_end_date": "2021-12-17",
+      "published_date": "2021-12-27",
+      "volume_after": 207400
+    },
+    {
+      "transaction_name": "Vũ Văn Thành",
+      "transaction_position": "Chủ tịch Ủy ban kiểm toán",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 500,
+      "plan_buy": 1990000,
+      "plan_sell": 0,
+      "plan_begin_date": "2021-11-26",
+      "plan_end_date": "2021-12-24",
+      "real_buy": 0,
+      "real_sell": 0,
+      "real_end_date": "2021-12-24",
+      "published_date": "2021-11-24",
+      "volume_after": 500
+    },
+    {
+      "transaction_name": "Nguyễn Thị Ngân",
+      "transaction_position": "",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 81800,
+      "plan_buy": 0,
+      "plan_sell": 0,
+      "plan_begin_date": "",
+      "plan_end_date": "",
+      "real_buy": 18600,
+      "real_sell": 0,
+      "real_end_date": "2021-11-16",
+      "published_date": "2021-11-19",
+      "volume_after": 400400
+    }
+  ]
+}

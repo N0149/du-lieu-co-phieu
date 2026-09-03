@@ -1,0 +1,94 @@
+{
+  "symbol": "NAU",
+  "updated": "2026-03-22T03:19:27.000Z",
+  "co_cau_so_huu": {
+    "CoDongSoHuu": [
+      {
+        "Code": "CEO_54685",
+        "Name": "Phú Văn Phượng",
+        "Url": "<a href='/du-lieu/ceo/CEO_54685/phu-van-phuong.chn'>Phú Văn Phượng</a>",
+        "AssetVolume": "5.700",
+        "AssetRate": "0,16",
+        "UpdatedDate": "11/12/2025"
+      },
+      {
+        "Code": "CORP_51203",
+        "Name": "UBND tỉnh Nghệ An",
+        "Url": "UBND tỉnh Nghệ An",
+        "AssetVolume": "2.965.299",
+        "AssetRate": "80,8",
+        "UpdatedDate": "11/12/2025"
+      },
+      {
+        "Code": "CEO_54691",
+        "Name": "Đặng Văn Bính",
+        "Url": "<a href='/du-lieu/ceo/CEO_54691/dang-van-binh.chn'>Đặng Văn Bính</a>",
+        "AssetVolume": "5.200",
+        "AssetRate": "0,14",
+        "UpdatedDate": "11/12/2025"
+      },
+      {
+        "Code": "CEO_54689",
+        "Name": "Lê Thị Tuyết Dung",
+        "Url": "<a href='/du-lieu/ceo/CEO_54689/le-thi-tuyet-dung.chn'>Lê Thị Tuyết Dung</a>",
+        "AssetVolume": "2.100",
+        "AssetRate": "0,06",
+        "UpdatedDate": "11/12/2025"
+      },
+      {
+        "Code": "CEO_54684",
+        "Name": "Phạm Văn Dương",
+        "Url": "<a href='/du-lieu/ceo/CEO_54684/pham-van-duong.chn'>Phạm Văn Dương</a>",
+        "AssetVolume": "5.900",
+        "AssetRate": "0,16",
+        "UpdatedDate": "11/12/2025"
+      },
+      {
+        "Code": "CEO_54683",
+        "Name": "Hoàng Văn Khanh",
+        "Url": "<a href='/du-lieu/ceo/CEO_54683/hoang-van-khanh.chn'>Hoàng Văn Khanh</a>",
+        "AssetVolume": "15.200",
+        "AssetRate": "0,41",
+        "UpdatedDate": "11/12/2025"
+      },
+      {
+        "Code": "CEO_54688",
+        "Name": "Trần Thị Mai Hương",
+        "Url": "<a href='/du-lieu/ceo/CEO_54688/tran-thi-mai-huong.chn'>Trần Thị Mai Hương</a>",
+        "AssetVolume": "1.900",
+        "AssetRate": "0,05",
+        "UpdatedDate": "11/12/2025"
+      },
+      {
+        "Code": "CEO_54686",
+        "Name": "Phạm Quang Dụ",
+        "Url": "<a href='/du-lieu/ceo/CEO_54686/pham-quang-du.chn'>Phạm Quang Dụ</a>",
+        "AssetVolume": "9.600",
+        "AssetRate": "0,26",
+        "UpdatedDate": "11/12/2025"
+      },
+      {
+        "Code": "CEO_54690",
+        "Name": "Mai Thị Thanh Hoa",
+        "Url": "<a href='/du-lieu/ceo/CEO_54690/mai-thi-thanh-hoa.chn'>Mai Thị Thanh Hoa</a>",
+        "AssetVolume": "2.200",
+        "AssetRate": "0,06",
+        "UpdatedDate": "11/12/2025"
+      },
+      {
+        "Code": "CEO_54687",
+        "Name": "Nguyễn Công Đức",
+        "Url": "<a href='/du-lieu/ceo/CEO_54687/nguyen-cong-duc.chn'>Nguyễn Công Đức</a>",
+        "AssetVolume": "3.000",
+        "AssetRate": "0,08",
+        "UpdatedDate": "11/12/2025"
+      }
+    ],
+    "NuocNgoai": 0.01,
+    "NhaNuoc": 0,
+    "Khac": 99.99
+  },
+  "cong_ty_con": [],
+  "cong_ty_lien_ket": [],
+  "giao_dich_noi_bo": []
+}

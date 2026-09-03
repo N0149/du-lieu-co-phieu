@@ -1,0 +1,435 @@
+{
+  "symbol": "HAN",
+  "updated": "2026-05-01T05:54:17.000Z",
+  "co_cau_so_huu": {
+    "CoDongSoHuu": [
+      {
+        "Code": "CEO_55032",
+        "Name": "Bùi Xuân Dũng",
+        "Url": "<a href='/du-lieu/ceo/CEO_55032/bui-xuan-dung.chn'>Bùi Xuân Dũng</a>",
+        "AssetVolume": "101.700",
+        "AssetRate": "0,07",
+        "UpdatedDate": "23/12/2025"
+      },
+      {
+        "Code": "CEO_37990",
+        "Name": "Dương Mạnh Hùng",
+        "Url": "<a href='/du-lieu/ceo/CEO_37990/duong-manh-hung.chn'>Dương Mạnh Hùng</a>",
+        "AssetVolume": "3.700",
+        "AssetRate": "0,0",
+        "UpdatedDate": "23/12/2025"
+      },
+      {
+        "Code": "CEO_55033",
+        "Name": "Nghiêm Sỹ Minh",
+        "Url": "<a href='/du-lieu/ceo/CEO_55033/nghiem-sy-minh.chn'>Nghiêm Sỹ Minh</a>",
+        "AssetVolume": "203.100",
+        "AssetRate": "0,14",
+        "UpdatedDate": "23/12/2025"
+      },
+      {
+        "Code": "CEO_37994",
+        "Name": "Dương Ngọc Quang",
+        "Url": "<a href='/du-lieu/ceo/CEO_37994/duong-ngoc-quang.chn'>Dương Ngọc Quang</a>",
+        "AssetVolume": "100",
+        "AssetRate": "0,0",
+        "UpdatedDate": "23/12/2025"
+      },
+      {
+        "Code": "CORP_30229",
+        "Name": "Bộ Xây dựng",
+        "Url": "Bộ Xây dựng",
+        "AssetVolume": "139.399.608",
+        "AssetRate": "98,83",
+        "UpdatedDate": "23/12/2025"
+      },
+      {
+        "Code": "CEO_37989",
+        "Name": "Đinh Công Thụy",
+        "Url": "<a href='/du-lieu/ceo/CEO_37989/dinh-cong-thuy.chn'>Đinh Công Thụy</a>",
+        "AssetVolume": "4.100",
+        "AssetRate": "0,0",
+        "UpdatedDate": "23/12/2025"
+      },
+      {
+        "Code": "CEO_37992",
+        "Name": "Mai Trung Huấn",
+        "Url": "<a href='/du-lieu/ceo/CEO_37992/mai-trung-huan.chn'>Mai Trung Huấn</a>",
+        "AssetVolume": "30.000",
+        "AssetRate": "0,02",
+        "UpdatedDate": "23/12/2025"
+      },
+      {
+        "Code": "CEO_37991",
+        "Name": "Võ Thị Thu Hương",
+        "Url": "<a href='/du-lieu/ceo/CEO_37991/vo-thi-thu-huong.chn'>Võ Thị Thu Hương</a>",
+        "AssetVolume": "3.600",
+        "AssetRate": "0,0",
+        "UpdatedDate": "23/12/2025"
+      },
+      {
+        "Code": "CEO_37993",
+        "Name": "Đào Xuân Hồng",
+        "Url": "<a href='/du-lieu/ceo/CEO_37993/dao-xuan-hong.chn'>Đào Xuân Hồng</a>",
+        "AssetVolume": "40.400",
+        "AssetRate": "0,03",
+        "UpdatedDate": "23/12/2025"
+      },
+      {
+        "Code": "CEO_55035",
+        "Name": "Nguyễn Đỗ Quý",
+        "Url": "<a href='/du-lieu/ceo/CEO_55035/nguyen-do-quy.chn'>Nguyễn Đỗ Quý</a>",
+        "AssetVolume": "30.000",
+        "AssetRate": "0,02",
+        "UpdatedDate": "23/12/2025"
+      }
+    ],
+    "NuocNgoai": 141047795.92,
+    "NhaNuoc": 0,
+    "Khac": -141047695.92
+  },
+  "cong_ty_con": [
+    {
+      "Symbol": "HAN",
+      "CorpCode": "HICC1",
+      "Name": "CTCP Đầu tư và Xây dựng số 1 Hà Nội",
+      "TotalCapital": 35,
+      "SharedCapital": 82.096,
+      "OwnershipRate": 234.56,
+      "Note": "",
+      "Order": 1,
+      "TradeCenter": "OTC"
+    },
+    {
+      "Symbol": "HAN",
+      "CorpCode": "CORP_39428",
+      "Name": "Công ty TNHH MTV Hancorp 3",
+      "TotalCapital": 20,
+      "SharedCapital": 20,
+      "OwnershipRate": 100,
+      "Note": "",
+      "Order": 2,
+      "TradeCenter": ""
+    },
+    {
+      "Symbol": "HAN",
+      "CorpCode": "CORP_39429",
+      "Name": "Công ty TNHH MTV HANTECH",
+      "TotalCapital": 10,
+      "SharedCapital": 10,
+      "OwnershipRate": 100,
+      "Note": "",
+      "Order": 3,
+      "TradeCenter": ""
+    },
+    {
+      "Symbol": "HAN",
+      "CorpCode": "CORP_39426",
+      "Name": "CTCP Thiết bị và Vật liệu Xây dựng Hancorp ",
+      "TotalCapital": 40,
+      "SharedCapital": 32,
+      "OwnershipRate": 80,
+      "Note": "",
+      "Order": 4,
+      "TradeCenter": ""
+    },
+    {
+      "Symbol": "HAN",
+      "CorpCode": "CORP_39427",
+      "Name": "CTCP Đầu tư và thương mại Hancorp1",
+      "TotalCapital": 500,
+      "SharedCapital": 255,
+      "OwnershipRate": 51,
+      "Note": "",
+      "Order": 5,
+      "TradeCenter": ""
+    },
+    {
+      "Symbol": "HAN",
+      "CorpCode": "CORP_39424",
+      "Name": "CTCP Đầu tư Phát triển nhà và Xây dựng Tây Hồ",
+      "TotalCapital": 43.91096027,
+      "SharedCapital": 21.99,
+      "OwnershipRate": 50.09,
+      "Note": "",
+      "Order": 6,
+      "TradeCenter": ""
+    }
+  ],
+  "cong_ty_lien_ket": [
+    {
+      "Symbol": "HAN",
+      "CorpCode": "CORP_39425",
+      "Name": "CTCP Xây dựng Hancorp 2",
+      "TotalCapital": 128.5,
+      "SharedCapital": 59.2,
+      "OwnershipRate": 46.07,
+      "Note": "",
+      "Order": 7,
+      "TradeCenter": ""
+    },
+    {
+      "Symbol": "HAN",
+      "CorpCode": "CORP_75057",
+      "Name": "Công ty CP Xi Măng Mỹ Đức",
+      "TotalCapital": 340,
+      "SharedCapital": 149.6,
+      "OwnershipRate": 44,
+      "Note": "",
+      "Order": 8,
+      "TradeCenter": ""
+    },
+    {
+      "Symbol": "HAN",
+      "CorpCode": "CORP_39434",
+      "Name": "CTCP Tư vấn-Thiết kế-Xây dựng-Kinh doanh Nhà",
+      "TotalCapital": 6.233333333,
+      "SharedCapital": 2.24,
+      "OwnershipRate": 36,
+      "Note": "",
+      "Order": 9,
+      "TradeCenter": ""
+    },
+    {
+      "Symbol": "HAN",
+      "CorpCode": "CORP_39431",
+      "Name": "CTCP Lắp máy Điện nước và Xây dựng",
+      "TotalCapital": 139.19,
+      "SharedCapital": 41.76,
+      "OwnershipRate": 30,
+      "Note": "",
+      "Order": 10,
+      "TradeCenter": ""
+    },
+    {
+      "Symbol": "HAN",
+      "CorpCode": "CORP_39432",
+      "Name": "CTCP Đầu tư và Xây dựng số 34",
+      "TotalCapital": 263,
+      "SharedCapital": 78.9,
+      "OwnershipRate": 30,
+      "Note": "",
+      "Order": 11,
+      "TradeCenter": ""
+    },
+    {
+      "Symbol": "HAN",
+      "CorpCode": "CORP_51912",
+      "Name": "CTCP Cơ khí và Xây dựng",
+      "TotalCapital": 9.5,
+      "SharedCapital": 2.85,
+      "OwnershipRate": 29.95,
+      "Note": "",
+      "Order": 12,
+      "TradeCenter": ""
+    },
+    {
+      "Symbol": "HAN",
+      "CorpCode": "CORP_39437",
+      "Name": "CTCP Thi công Cơ giới và Xây lắp",
+      "TotalCapital": 60.57132843,
+      "SharedCapital": 17.28,
+      "OwnershipRate": 28.53,
+      "Note": "",
+      "Order": 13,
+      "TradeCenter": ""
+    },
+    {
+      "Symbol": "HAN",
+      "CorpCode": "CORP_51910",
+      "Name": "Công ty cổ phần Hancorp",
+      "TotalCapital": 300,
+      "SharedCapital": 83.19,
+      "OwnershipRate": 27.73,
+      "Note": "",
+      "Order": 14,
+      "TradeCenter": ""
+    },
+    {
+      "Symbol": "HAN",
+      "CorpCode": "CORP_39108",
+      "Name": "CTCP Đầu tư Xây dựng Bất động sản Lanmak",
+      "TotalCapital": 70.45185185,
+      "SharedCapital": 19.02,
+      "OwnershipRate": 27,
+      "Note": "",
+      "Order": 15,
+      "TradeCenter": ""
+    },
+    {
+      "Symbol": "HAN",
+      "CorpCode": "CORP_39433",
+      "Name": "CTCP Kinh doanh Vật tư và Xây dựng",
+      "TotalCapital": 40.23703704,
+      "SharedCapital": 10.86,
+      "OwnershipRate": 27,
+      "Note": "",
+      "Order": 16,
+      "TradeCenter": ""
+    },
+    {
+      "Symbol": "HAN",
+      "CorpCode": "CORP_39442",
+      "Name": "CTCP Công nghệ Xây dựng Hancorp 5",
+      "TotalCapital": 14,
+      "SharedCapital": 3.5,
+      "OwnershipRate": 25,
+      "Note": "",
+      "Order": 17,
+      "TradeCenter": ""
+    },
+    {
+      "Symbol": "HAN",
+      "CorpCode": "CORP_39441",
+      "Name": "Công ty Liên doanh Quốc tế Hồ Tây",
+      "TotalCapital": 359.24,
+      "SharedCapital": 89.81,
+      "OwnershipRate": 25,
+      "Note": "",
+      "Order": 18,
+      "TradeCenter": ""
+    },
+    {
+      "Symbol": "HAN",
+      "CorpCode": "CORP_39430",
+      "Name": "Công ty TNHH Liên doanh Xây dựng VIC",
+      "TotalCapital": 115,
+      "SharedCapital": 23.68,
+      "OwnershipRate": 20.59,
+      "Note": "",
+      "Order": 19,
+      "TradeCenter": ""
+    },
+    {
+      "Symbol": "HAN",
+      "CorpCode": "CORP_39435",
+      "Name": "CTCP Trung Đô",
+      "TotalCapital": 257,
+      "SharedCapital": 51.79,
+      "OwnershipRate": 20.15,
+      "Note": "",
+      "Order": 20,
+      "TradeCenter": ""
+    },
+    {
+      "Symbol": "HAN",
+      "CorpCode": "CORP_51911",
+      "Name": "Công ty cổ phần Hanviland",
+      "TotalCapital": 40,
+      "SharedCapital": 8,
+      "OwnershipRate": 20,
+      "Note": "",
+      "Order": 21,
+      "TradeCenter": ""
+    },
+    {
+      "Symbol": "HAN",
+      "CorpCode": "VC2",
+      "Name": "Công ty Cổ phần Đầu tư và Xây dựng Vina2",
+      "TotalCapital": 540.7635,
+      "SharedCapital": 18.695,
+      "OwnershipRate": 3.46,
+      "Note": "",
+      "Order": 22,
+      "TradeCenter": "HASTC"
+    }
+  ],
+  "giao_dich_noi_bo": [
+    {
+      "transaction_name": "Võ Thị Thu Hương",
+      "transaction_position": "Thành viên BKS",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 10100,
+      "plan_buy": 0,
+      "plan_sell": 10100,
+      "plan_begin_date": "2020-12-01",
+      "plan_end_date": "2020-12-06",
+      "real_buy": 0,
+      "real_sell": 6500,
+      "real_end_date": "2020-12-06",
+      "published_date": "2021-01-06",
+      "volume_after": 3600
+    },
+    {
+      "transaction_name": "Võ Thị Thu",
+      "transaction_position": "Thành viên BKS",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 10100,
+      "plan_buy": 0,
+      "plan_sell": 10100,
+      "plan_begin_date": "2020-11-29",
+      "plan_end_date": "2020-12-23",
+      "real_buy": 0,
+      "real_sell": 0,
+      "real_end_date": "2020-11-29",
+      "published_date": "2020-12-08",
+      "volume_after": 10100
+    },
+    {
+      "transaction_name": "Nguyễn Đỗ Quý",
+      "transaction_position": "Phó Tổng GĐ",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 30000,
+      "plan_buy": 0,
+      "plan_sell": 30000,
+      "plan_begin_date": "2020-11-29",
+      "plan_end_date": "2020-12-23",
+      "real_buy": 0,
+      "real_sell": 0,
+      "real_end_date": "2020-12-22",
+      "published_date": "2020-11-27",
+      "volume_after": 30000
+    },
+    {
+      "transaction_name": "Dương Ngọc Quang",
+      "transaction_position": "Kế toán trưởng",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 58200,
+      "plan_buy": 0,
+      "plan_sell": 58200,
+      "plan_begin_date": "2020-11-29",
+      "plan_end_date": "2020-12-23",
+      "real_buy": 100,
+      "real_sell": 58200,
+      "real_end_date": "2020-12-17",
+      "published_date": "2020-11-27",
+      "volume_after": 100
+    },
+    {
+      "transaction_name": "Nguyễn Minh Cương",
+      "transaction_position": "Phó Tổng GĐ",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 50400,
+      "plan_buy": 0,
+      "plan_sell": 50400,
+      "plan_begin_date": "2020-11-29",
+      "plan_end_date": "2020-12-23",
+      "real_buy": 0,
+      "real_sell": 50400,
+      "real_end_date": "2020-12-01",
+      "published_date": "2020-11-27",
+      "volume_after": 0
+    },
+    {
+      "transaction_name": "Nghiêm Sĩ Minh",
+      "transaction_position": "Thành viên HĐQT",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 203100,
+      "plan_buy": 0,
+      "plan_sell": 203100,
+      "plan_begin_date": "2017-05-02",
+      "plan_end_date": "2017-05-31",
+      "real_buy": 0,
+      "real_sell": 0,
+      "real_end_date": "2017-05-31",
+      "published_date": "2017-04-26",
+      "volume_after": 203100
+    }
+  ]
+}

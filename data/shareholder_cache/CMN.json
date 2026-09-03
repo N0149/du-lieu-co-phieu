@@ -1,0 +1,135 @@
+{
+  "symbol": "CMN",
+  "updated": "2026-09-01T07:21:07.000Z",
+  "co_cau_so_huu": {
+    "CoDongSoHuu": [
+      {
+        "Code": "CORP_900002",
+        "Name": "Công ty cổ phần Đầu tư SB Space Holding",
+        "Url": "Công ty cổ phần Đầu tư SB Space Holding",
+        "AssetVolume": "960.000",
+        "AssetRate": "6,67",
+        "UpdatedDate": "19/01/2026"
+      },
+      {
+        "Code": "CORP_00130",
+        "Name": "Công ty TNHH Đầu tư và Thương mại Thiên Hải",
+        "Url": "Công ty TNHH Đầu tư và Thương mại Thiên Hải",
+        "AssetVolume": "183.400",
+        "AssetRate": "1,27",
+        "UpdatedDate": "31/12/2025"
+      },
+      {
+        "Code": "CORP_00129",
+        "Name": "CTCP Đầu tư Vina",
+        "Url": "CTCP Đầu tư Vina",
+        "AssetVolume": "234.500",
+        "AssetRate": "1,63",
+        "UpdatedDate": "31/12/2025"
+      }
+    ],
+    "NuocNgoai": 0.4,
+    "NhaNuoc": 0,
+    "Khac": 99.6
+  },
+  "cong_ty_con": [],
+  "cong_ty_lien_ket": [],
+  "giao_dich_noi_bo": [
+    {
+      "transaction_name": "Công ty cổ phần Đầu tư SB Space Holding",
+      "transaction_position": "",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 0,
+      "plan_buy": 0,
+      "plan_sell": 0,
+      "plan_begin_date": "",
+      "plan_end_date": "",
+      "real_buy": 960000,
+      "real_sell": 0,
+      "real_end_date": "2026-01-19",
+      "published_date": "2026-01-23",
+      "volume_after": 960000
+    },
+    {
+      "transaction_name": "Tổng Công ty Thuốc lá Việt Nam - Công ty TNHH MTV",
+      "transaction_position": "",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 960000,
+      "plan_buy": 0,
+      "plan_sell": 0,
+      "plan_begin_date": "",
+      "plan_end_date": "",
+      "real_buy": 0,
+      "real_sell": 960000,
+      "real_end_date": "2025-12-24",
+      "published_date": "2026-01-07",
+      "volume_after": 0
+    },
+    {
+      "transaction_name": "CTCP Đầu tư Vina",
+      "transaction_position": "",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 241100,
+      "plan_buy": 0,
+      "plan_sell": 0,
+      "plan_begin_date": "",
+      "plan_end_date": "",
+      "real_buy": 0,
+      "real_sell": 6600,
+      "real_end_date": "2025-12-08",
+      "published_date": "2025-12-15",
+      "volume_after": 234500
+    },
+    {
+      "transaction_name": "CTCP Đầu tư Vina",
+      "transaction_position": "",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 73000,
+      "plan_buy": 0,
+      "plan_sell": 0,
+      "plan_begin_date": "",
+      "plan_end_date": "",
+      "real_buy": 197500,
+      "real_sell": 0,
+      "real_end_date": "2025-11-20",
+      "published_date": "2025-11-27",
+      "volume_after": 270500
+    },
+    {
+      "transaction_name": "Công ty TNHH Đầu tư và Thương mại Thiên Hải",
+      "transaction_position": "",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 256400,
+      "plan_buy": 0,
+      "plan_sell": 0,
+      "plan_begin_date": "",
+      "plan_end_date": "",
+      "real_buy": 0,
+      "real_sell": 73000,
+      "real_end_date": "2025-11-19",
+      "published_date": "2025-11-27",
+      "volume_after": 183400
+    },
+    {
+      "transaction_name": "Công ty TNHH Đầu tư và Thương mại Thiên Hải",
+      "transaction_position": "",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 234300,
+      "plan_buy": 0,
+      "plan_sell": 0,
+      "plan_begin_date": "",
+      "plan_end_date": "",
+      "real_buy": 6200,
+      "real_sell": 0,
+      "real_end_date": "2022-12-08",
+      "published_date": "2022-12-16",
+      "volume_after": 240500
+    }
+  ]
+}

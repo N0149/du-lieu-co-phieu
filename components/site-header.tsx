@@ -12,6 +12,8 @@ import { cn } from '@/lib/utils'
 
 const NAV = [
   { label: 'Tin Tức', href: '/' },
+  { label: 'Thị Trường', href: '/thi-truong' },
+  { label: 'Ngành ICB', href: '/nganh' },
   { label: 'Bộ Lọc Cổ Phiếu', href: '/bo-loc' },
   { label: 'Quỹ Mở', href: '/quy-mo' },
   { label: 'Cảng Biển', href: '/cang-bien' },

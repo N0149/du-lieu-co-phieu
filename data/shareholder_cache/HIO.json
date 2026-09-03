@@ -1,0 +1,62 @@
+{
+  "symbol": "HIO",
+  "updated": "2026-06-01T07:09:17.000Z",
+  "co_cau_so_huu": {
+    "CoDongSoHuu": [
+      {
+        "Code": "CORP_65651",
+        "Name": "CTCP Helio Power",
+        "Url": "CTCP Helio Power",
+        "AssetVolume": "29.112.000",
+        "AssetRate": "69,31",
+        "UpdatedDate": "22/01/2026"
+      },
+      {
+        "Code": "CEO_876499",
+        "Name": "Bùi Tuấn Dương",
+        "Url": "<a href='/du-lieu/ceo/CEO_876499/bui-tuan-duong.chn'>Bùi Tuấn Dương</a>",
+        "AssetVolume": "20.000",
+        "AssetRate": "0,05",
+        "UpdatedDate": "22/01/2026"
+      },
+      {
+        "Code": "CEO_59204",
+        "Name": "Phan Thành Đạt",
+        "Url": "<a href='/du-lieu/ceo/CEO_59204/phan-thanh-dat.chn'>Phan Thành Đạt</a>",
+        "AssetVolume": "1.050.000",
+        "AssetRate": "2,5",
+        "UpdatedDate": "22/01/2026"
+      },
+      {
+        "Code": "CEO_876504",
+        "Name": "Nguyễn Thị Ngọc Quỳnh",
+        "Url": "<a href='/du-lieu/ceo/CEO_876504/nguyen-thi-ngoc-quynh.chn'>Nguyễn Thị Ngọc Quỳnh</a>",
+        "AssetVolume": "20.000",
+        "AssetRate": "0,05",
+        "UpdatedDate": "22/01/2026"
+      },
+      {
+        "Code": "CEO_876498",
+        "Name": "Nguyễn Thị Lan",
+        "Url": "<a href='/du-lieu/ceo/CEO_876498/nguyen-thi-lan.chn'>Nguyễn Thị Lan</a>",
+        "AssetVolume": "1.030.000",
+        "AssetRate": "2,45",
+        "UpdatedDate": "22/01/2026"
+      },
+      {
+        "Code": "CEO_876503",
+        "Name": "Nguyễn Thị Thanh Hương",
+        "Url": "<a href='/du-lieu/ceo/CEO_876503/nguyen-thi-thanh-huong.chn'>Nguyễn Thị Thanh Hương</a>",
+        "AssetVolume": "10.000",
+        "AssetRate": "0,02",
+        "UpdatedDate": "22/01/2026"
+      }
+    ],
+    "NuocNgoai": 0.02,
+    "NhaNuoc": 0,
+    "Khac": 99.98
+  },
+  "cong_ty_con": [],
+  "cong_ty_lien_ket": [],
+  "giao_dich_noi_bo": []
+}

@@ -1,0 +1,191 @@
+{
+  "symbol": "MDF",
+  "updated": "2026-09-01T07:35:51.000Z",
+  "co_cau_so_huu": {
+    "CoDongSoHuu": [
+      {
+        "Code": "CORP_01140",
+        "Name": "Công ty TNHH MTV Cao su Quảng Trị",
+        "Url": "Công ty TNHH MTV Cao su Quảng Trị",
+        "AssetVolume": "3.555.500",
+        "AssetRate": "6,45",
+        "UpdatedDate": "31/12/2022"
+      },
+      {
+        "Code": "CEO_876927",
+        "Name": "Dương Tấn Thanh",
+        "Url": "<a href='/du-lieu/ceo/CEO_876927/duong-tan-thanh.chn'>Dương Tấn Thanh</a>",
+        "AssetVolume": "74.000",
+        "AssetRate": "0,13",
+        "UpdatedDate": "29/07/2026"
+      },
+      {
+        "Code": "CEO_02327",
+        "Name": "Cao Thanh Nam",
+        "Url": "<a href='/du-lieu/ceo/CEO_02327/cao-thanh-nam.chn'>Cao Thanh Nam</a>",
+        "AssetVolume": "175.700",
+        "AssetRate": "0,32",
+        "UpdatedDate": "31/12/2022"
+      },
+      {
+        "Code": "CEO_08083",
+        "Name": "Nguyễn Văn Công",
+        "Url": "<a href='/du-lieu/ceo/CEO_08083/nguyen-van-cong.chn'>Nguyễn Văn Công</a>",
+        "AssetVolume": "25.500",
+        "AssetRate": "0,05",
+        "UpdatedDate": "31/12/2022"
+      },
+      {
+        "Code": "RTB",
+        "Name": "Công ty cổ phần Cao su Tân Biên",
+        "Url": "<a href='/du-lieu/upcom/RTB-cong-ty-co-phan-cao-su-tan-bien.chn' title='Công ty cổ phần Cao su Tân Biên'>Công ty cổ phần Cao su Tân Biên</a>",
+        "AssetVolume": "3.367.155",
+        "AssetRate": "6,11",
+        "UpdatedDate": "31/12/2022"
+      },
+      {
+        "Code": "GVR",
+        "Name": "Tập đoàn Công nghiệp Cao su Việt Nam",
+        "Url": "<a href='/du-lieu/hose/GVR-tap-doan-cong-nghiep-cao-su-viet-nam.chn' title='Tập đoàn Công nghiệp Cao su Việt Nam'>Tập đoàn Công nghiệp Cao su Việt Nam</a>",
+        "AssetVolume": "46.761.748",
+        "AssetRate": "84,85",
+        "UpdatedDate": "31/12/2022"
+      }
+    ],
+    "NuocNgoai": 55113593.88,
+    "NhaNuoc": 0,
+    "Khac": -55113493.88
+  },
+  "cong_ty_con": [],
+  "cong_ty_lien_ket": [],
+  "giao_dich_noi_bo": [
+    {
+      "transaction_name": "Dương Tấn Thanh",
+      "transaction_position": "Tổng Giám đốc",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 24000,
+      "plan_buy": 0,
+      "plan_sell": 0,
+      "plan_begin_date": "",
+      "plan_end_date": "",
+      "real_buy": 0,
+      "real_sell": 0,
+      "real_end_date": "2026-07-29",
+      "published_date": "2026-08-03",
+      "volume_after": 74000
+    },
+    {
+      "transaction_name": "Công ty Hữu hạn công nghiệp Hồng Đạt",
+      "transaction_position": "",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 423000,
+      "plan_buy": 0,
+      "plan_sell": 0,
+      "plan_begin_date": "",
+      "plan_end_date": "",
+      "real_buy": 6000,
+      "real_sell": 5500,
+      "real_end_date": "2026-05-19",
+      "published_date": "2026-06-25",
+      "volume_after": 428500
+    },
+    {
+      "transaction_name": "Dương Tấn Thanh",
+      "transaction_position": "Tổng Giám đốc",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 0,
+      "plan_buy": 0,
+      "plan_sell": 0,
+      "plan_begin_date": "",
+      "plan_end_date": "",
+      "real_buy": 24000,
+      "real_sell": 0,
+      "real_end_date": "2025-09-30",
+      "published_date": "2025-10-23",
+      "volume_after": 24000
+    },
+    {
+      "transaction_name": "Cao Thanh Nam",
+      "transaction_position": "Thành viên HĐQT",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 92900,
+      "plan_buy": 100000,
+      "plan_sell": 0,
+      "plan_begin_date": "2021-11-11",
+      "plan_end_date": "2021-12-09",
+      "real_buy": 61100,
+      "real_sell": 0,
+      "real_end_date": "2021-12-09",
+      "published_date": "2021-11-03",
+      "volume_after": 154000
+    },
+    {
+      "transaction_name": "Cao Thanh Nam",
+      "transaction_position": "Thành viên HĐQT",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 5000,
+      "plan_buy": 0,
+      "plan_sell": 0,
+      "plan_begin_date": "",
+      "plan_end_date": "",
+      "real_buy": 87900,
+      "real_sell": 0,
+      "real_end_date": "2021-08-04",
+      "published_date": "2021-09-24",
+      "volume_after": 92900
+    },
+    {
+      "transaction_name": "Cao Thanh Nam",
+      "transaction_position": "Thành viên HĐQT",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 3000,
+      "plan_buy": 15000,
+      "plan_sell": 0,
+      "plan_begin_date": "2015-10-05",
+      "plan_end_date": "2015-10-30",
+      "real_buy": 2000,
+      "real_sell": 0,
+      "real_end_date": "2015-10-30",
+      "published_date": "2015-10-05",
+      "volume_after": 5000
+    },
+    {
+      "transaction_name": "Cao Thanh Nam",
+      "transaction_position": "Thành viên HĐQT",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 3000,
+      "plan_buy": 15000,
+      "plan_sell": 0,
+      "plan_begin_date": "2015-05-11",
+      "plan_end_date": "2015-06-04",
+      "real_buy": 0,
+      "real_sell": 0,
+      "real_end_date": "2015-06-04",
+      "published_date": "2015-05-08",
+      "volume_after": 3000
+    },
+    {
+      "transaction_name": "Cao Thanh Nam",
+      "transaction_position": "Thành viên HĐQT, TGĐ",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 3000,
+      "plan_buy": 11000,
+      "plan_sell": 0,
+      "plan_begin_date": "2013-05-06",
+      "plan_end_date": "2013-06-06",
+      "real_buy": 0,
+      "real_sell": 0,
+      "real_end_date": "",
+      "published_date": "2013-05-06",
+      "volume_after": 3000
+    }
+  ]
+}

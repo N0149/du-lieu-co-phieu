@@ -1,0 +1,111 @@
+{
+  "symbol": "PAI",
+  "updated": "2026-03-22T03:20:06.000Z",
+  "co_cau_so_huu": {
+    "CoDongSoHuu": [
+      {
+        "Code": "CEO_98768",
+        "Name": "Đào Việt Phương",
+        "Url": "<a href='/du-lieu/ceo/CEO_98768/dao-viet-phuong.chn'>Đào Việt Phương</a>",
+        "AssetVolume": "1.000",
+        "AssetRate": "0,02",
+        "UpdatedDate": "05/02/2026"
+      },
+      {
+        "Code": "DPM",
+        "Name": "Tổng Công ty Phân bón và Hóa chất Dầu khí-CTCP",
+        "Url": "<a href='/du-lieu/hose/DPM-tong-cong-ty-phan-bon-va-hoa-chat-dau-khictcp.chn' title='Tổng Công ty Phân bón và Hóa chất Dầu khí-CTCP'>Tổng Công ty Phân bón và Hóa chất Dầu khí-CTCP</a>",
+        "AssetVolume": "360.000",
+        "AssetRate": "8,5",
+        "UpdatedDate": "05/02/2026"
+      },
+      {
+        "Code": "PPS",
+        "Name": "CTCP Công nghệ thông tin, viễn thông và tự động hóa Dầu khí",
+        "Url": "<a href='/du-lieu/hastc/PPS-cong-ty-co-phan-dich-vu-ky-thuat-dien-luc-dau-khi-viet-nam.chn' title='Công ty Cổ phần Dịch vụ Kỹ thuật Điện lực Dầu khí Việt Nam'>Công ty Cổ phần Dịch vụ Kỹ thuật Điện lực Dầu khí Việt Nam</a>",
+        "AssetVolume": "504.000",
+        "AssetRate": "11,9",
+        "UpdatedDate": "05/02/2026"
+      },
+      {
+        "Code": "CEO_98762",
+        "Name": "Nguyễn Việt Anh",
+        "Url": "<a href='/du-lieu/ceo/CEO_98762/nguyen-viet-anh.chn'>Nguyễn Việt Anh</a>",
+        "AssetVolume": "10.000",
+        "AssetRate": "0,24",
+        "UpdatedDate": "05/02/2026"
+      },
+      {
+        "Code": "PSI",
+        "Name": "Công ty cổ phần Chứng khoán Dầu khí",
+        "Url": "<a href='/du-lieu/hastc/PSI-cong-ty-co-phan-chung-khoan-dau-khi.chn' title='Công ty cổ phần Chứng khoán Dầu khí'>Công ty cổ phần Chứng khoán Dầu khí</a>",
+        "AssetVolume": "501.810",
+        "AssetRate": "11,85",
+        "UpdatedDate": "05/02/2026"
+      },
+      {
+        "Code": "SCIC",
+        "Name": "Tổng Công ty Đầu tư và Kinh doanh vốn Nhà nước",
+        "Url": "<a href='/du-lieu/otc/SCIC-tong-cong-ty-dau-tu-va-kinh-doanh-von-nha-nuoc.chn' title='Tổng Công ty Đầu tư và Kinh doanh vốn Nhà nước'>Tổng Công ty Đầu tư và Kinh doanh vốn Nhà nước</a>",
+        "AssetVolume": "576.120",
+        "AssetRate": "13,6",
+        "UpdatedDate": "05/02/2026"
+      },
+      {
+        "Code": "CEO_58002",
+        "Name": "Đào Quang Ngọc",
+        "Url": "<a href='/du-lieu/ceo/CEO_58002/dao-quang-ngoc.chn'>Đào Quang Ngọc</a>",
+        "AssetVolume": "2.000",
+        "AssetRate": "0,05",
+        "UpdatedDate": "05/02/2026"
+      },
+      {
+        "Code": "CEO_98765",
+        "Name": "Vũ Trường Quang",
+        "Url": "<a href='/du-lieu/ceo/CEO_98765/vu-truong-quang.chn'>Vũ Trường Quang</a>",
+        "AssetVolume": "2.710",
+        "AssetRate": "0,06",
+        "UpdatedDate": "05/02/2026"
+      },
+      {
+        "Code": "CORP_80048",
+        "Name": "CTCP Thương mại Dầu khí",
+        "Url": "CTCP Thương mại Dầu khí",
+        "AssetVolume": "2.196.000",
+        "AssetRate": "51,85",
+        "UpdatedDate": "05/02/2026"
+      },
+      {
+        "Code": "CEO_98769",
+        "Name": "Nguyễn Ngọc Lan",
+        "Url": "<a href='/du-lieu/ceo/CEO_98769/nguyen-ngoc-lan.chn'>Nguyễn Ngọc Lan</a>",
+        "AssetVolume": "1.000",
+        "AssetRate": "0,02",
+        "UpdatedDate": "05/02/2026"
+      }
+    ],
+    "NuocNgoai": 0.17,
+    "NhaNuoc": 0,
+    "Khac": 99.83
+  },
+  "cong_ty_con": [],
+  "cong_ty_lien_ket": [],
+  "giao_dich_noi_bo": [
+    {
+      "transaction_name": "Tổng Công ty Đầu tư và Kinh doanh vốn Nhà nước",
+      "transaction_position": "",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 576120,
+      "plan_buy": 0,
+      "plan_sell": 576120,
+      "plan_begin_date": "2020-11-23",
+      "plan_end_date": "2020-12-22",
+      "real_buy": 0,
+      "real_sell": 0,
+      "real_end_date": "2020-11-25",
+      "published_date": "2020-11-23",
+      "volume_after": 576120
+    }
+  ]
+}

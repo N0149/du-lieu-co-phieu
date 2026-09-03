@@ -1,0 +1,279 @@
+{
+  "symbol": "USD",
+  "updated": "2026-08-01T06:00:18.000Z",
+  "co_cau_so_huu": {
+    "CoDongSoHuu": [
+      {
+        "Code": "CEO_874508",
+        "Name": "Trần Hải Đăng",
+        "Url": "<a href='/du-lieu/ceo/CEO_874508/tran-hai-dang.chn'>Trần Hải Đăng</a>",
+        "AssetVolume": "3.000",
+        "AssetRate": "0,05",
+        "UpdatedDate": "26/05/2026"
+      },
+      {
+        "Code": "CEO_56074",
+        "Name": "Huỳnh Thị Thùy Trang",
+        "Url": "<a href='/du-lieu/ceo/CEO_56074/huynh-thi-thuy-trang.chn'>Huỳnh Thị Thùy Trang</a>",
+        "AssetVolume": "4.000",
+        "AssetRate": "0,07",
+        "UpdatedDate": "26/05/2026"
+      },
+      {
+        "Code": "CEO_874507",
+        "Name": "Hồ Thống Nhất",
+        "Url": "<a href='/du-lieu/ceo/CEO_874507/ho-thong-nhat.chn'>Hồ Thống Nhất</a>",
+        "AssetVolume": "6.300",
+        "AssetRate": "0,11",
+        "UpdatedDate": "26/05/2026"
+      },
+      {
+        "Code": "CORP_39390",
+        "Name": "Công ty TNHH Ô tô chuyên dùng Hiệp Hòa",
+        "Url": "Công ty TNHH Ô tô chuyên dùng Hiệp Hòa",
+        "AssetVolume": "1.000.000",
+        "AssetRate": "17,86",
+        "UpdatedDate": "26/05/2026"
+      },
+      {
+        "Code": "CEO_56072",
+        "Name": "Võ Thị Phương Ngân",
+        "Url": "<a href='/du-lieu/ceo/CEO_56072/vo-thi-phuong-ngan.chn'>Võ Thị Phương Ngân</a>",
+        "AssetVolume": "400",
+        "AssetRate": "0,01",
+        "UpdatedDate": "26/05/2026"
+      },
+      {
+        "Code": "CEO_56901",
+        "Name": "Đậu Đức Hiển",
+        "Url": "<a href='/du-lieu/ceo/CEO_56901/dau-duc-hien.chn'>Đậu Đức Hiển</a>",
+        "AssetVolume": "40.800",
+        "AssetRate": "0,73",
+        "UpdatedDate": "26/05/2026"
+      },
+      {
+        "Code": "CORP_51549",
+        "Name": "Ủy ban Nhân dân tỉnh Sóc Trăng",
+        "Url": "Ủy ban Nhân dân tỉnh Sóc Trăng",
+        "AssetVolume": "2.177.535",
+        "AssetRate": "38,88",
+        "UpdatedDate": "26/05/2026"
+      },
+      {
+        "Code": "CEO_57377",
+        "Name": "Đặng Hồng Nghi",
+        "Url": "<a href='/du-lieu/ceo/CEO_57377/dang-hong-nghi.chn'>Đặng Hồng Nghi</a>",
+        "AssetVolume": "3.600",
+        "AssetRate": "0,06",
+        "UpdatedDate": "26/05/2026"
+      },
+      {
+        "Code": "CEO_871820",
+        "Name": "Phùng Thanh Tâm",
+        "Url": "<a href='/du-lieu/ceo/CEO_871820/phung-thanh-tam.chn'>Phùng Thanh Tâm</a>",
+        "AssetVolume": "4.700",
+        "AssetRate": "0,08",
+        "UpdatedDate": "26/05/2026"
+      },
+      {
+        "Code": "CEO_56070",
+        "Name": "Nguyễn Đức Khôi",
+        "Url": "<a href='/du-lieu/ceo/CEO_56070/nguyen-duc-khoi.chn'>Nguyễn Đức Khôi</a>",
+        "AssetVolume": "36.200",
+        "AssetRate": "0,65",
+        "UpdatedDate": "26/05/2026"
+      },
+      {
+        "Code": "KLQ_100359",
+        "Name": "Trịnh Xuân Thắng",
+        "Url": "Trịnh Xuân Thắng",
+        "AssetVolume": "279.000",
+        "AssetRate": "4,98",
+        "UpdatedDate": "26/05/2026"
+      },
+      {
+        "Code": "CORP_51696",
+        "Name": "Công ty TNHH Cây xanh Công Minh",
+        "Url": "Công ty TNHH Cây xanh Công Minh",
+        "AssetVolume": "435.000",
+        "AssetRate": "7,77",
+        "UpdatedDate": "26/05/2026"
+      },
+      {
+        "Code": "CEO_56068",
+        "Name": "Lâm Hữu Tùng",
+        "Url": "<a href='/du-lieu/ceo/CEO_56068/lam-huu-tung.chn'>Lâm Hữu Tùng</a>",
+        "AssetVolume": "1.199.165",
+        "AssetRate": "21,41",
+        "UpdatedDate": "26/05/2026"
+      }
+    ],
+    "NuocNgoai": 49,
+    "NhaNuoc": 0,
+    "Khac": 51
+  },
+  "cong_ty_con": [],
+  "cong_ty_lien_ket": [],
+  "giao_dich_noi_bo": [
+    {
+      "transaction_name": "Lâm Hữu Tùng",
+      "transaction_position": "Chủ tịch HĐQT",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 1135465,
+      "plan_buy": 0,
+      "plan_sell": 0,
+      "plan_begin_date": "",
+      "plan_end_date": "",
+      "real_buy": 63700,
+      "real_sell": 0,
+      "real_end_date": "2025-03-25",
+      "published_date": "2025-03-31",
+      "volume_after": 1199165
+    },
+    {
+      "transaction_name": "Trịnh Xuân Thắng",
+      "transaction_position": "",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 283000,
+      "plan_buy": 0,
+      "plan_sell": 0,
+      "plan_begin_date": "",
+      "plan_end_date": "",
+      "real_buy": 0,
+      "real_sell": 4000,
+      "real_end_date": "2025-03-11",
+      "published_date": "2025-03-14",
+      "volume_after": 279000
+    },
+    {
+      "transaction_name": "Trịnh Xuân Thắng",
+      "transaction_position": "",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 354148,
+      "plan_buy": 0,
+      "plan_sell": 0,
+      "plan_begin_date": "",
+      "plan_end_date": "",
+      "real_buy": 19700,
+      "real_sell": 0,
+      "real_end_date": "2025-02-25",
+      "published_date": "2025-03-01",
+      "volume_after": 334448
+    },
+    {
+      "transaction_name": "Trịnh Xuân Thắng",
+      "transaction_position": "",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 392048,
+      "plan_buy": 0,
+      "plan_sell": 0,
+      "plan_begin_date": "",
+      "plan_end_date": "",
+      "real_buy": 0,
+      "real_sell": 1000,
+      "real_end_date": "2025-02-13",
+      "published_date": "2025-02-18",
+      "volume_after": 391048
+    },
+    {
+      "transaction_name": "Công ty TNHH Cây xanh Công Minh",
+      "transaction_position": "",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 435000,
+      "plan_buy": 0,
+      "plan_sell": 0,
+      "plan_begin_date": "",
+      "plan_end_date": "",
+      "real_buy": 0,
+      "real_sell": 435000,
+      "real_end_date": "2024-02-28",
+      "published_date": "2024-03-12",
+      "volume_after": 0
+    },
+    {
+      "transaction_name": "Lâm Hữu Tùng",
+      "transaction_position": "Chủ tịch HĐQT",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 1119065,
+      "plan_buy": 0,
+      "plan_sell": 0,
+      "plan_begin_date": "",
+      "plan_end_date": "",
+      "real_buy": 3000,
+      "real_sell": 0,
+      "real_end_date": "2023-10-03",
+      "published_date": "2023-11-20",
+      "volume_after": 1122065
+    },
+    {
+      "transaction_name": "Công ty TNHH Cây xanh Công Minh",
+      "transaction_position": "",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 1000000,
+      "plan_buy": 0,
+      "plan_sell": 1000000,
+      "plan_begin_date": "2023-06-13",
+      "plan_end_date": "2023-07-11",
+      "real_buy": 0,
+      "real_sell": 565000,
+      "real_end_date": "2023-07-06",
+      "published_date": "2023-06-12",
+      "volume_after": 435000
+    },
+    {
+      "transaction_name": "Đậu Đức Hiển",
+      "transaction_position": "Phó Tổng GĐ",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 6800,
+      "plan_buy": 34000,
+      "plan_sell": 0,
+      "plan_begin_date": "2023-06-12",
+      "plan_end_date": "2023-07-11",
+      "real_buy": 34000,
+      "real_sell": 0,
+      "real_end_date": "2023-07-06",
+      "published_date": "2023-06-08",
+      "volume_after": 40800
+    },
+    {
+      "transaction_name": "Lâm Hữu Tùng",
+      "transaction_position": "Chủ tịch HĐQT",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 619065,
+      "plan_buy": 500000,
+      "plan_sell": 0,
+      "plan_begin_date": "2023-06-12",
+      "plan_end_date": "2023-07-11",
+      "real_buy": 500000,
+      "real_sell": 0,
+      "real_end_date": "2023-06-13",
+      "published_date": "2023-06-08",
+      "volume_after": 1119065
+    },
+    {
+      "transaction_name": "Nguyễn Đức Khôi",
+      "transaction_position": "Phó Tổng GĐ",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 5200,
+      "plan_buy": 31000,
+      "plan_sell": 0,
+      "plan_begin_date": "2023-06-12",
+      "plan_end_date": "2023-07-11",
+      "real_buy": 31000,
+      "real_sell": 0,
+      "real_end_date": "2023-06-13",
+      "published_date": "2023-06-08",
+      "volume_after": 36200
+    }
+  ]
+}

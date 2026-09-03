@@ -1,0 +1,830 @@
+{
+  "symbol": "VSC",
+  "updated": "2026-09-01T07:55:46.000Z",
+  "co_cau_so_huu": {
+    "CoDongSoHuu": [
+      {
+        "Code": "CORP_60265",
+        "Name": "Lucerne Enterprise Ltd",
+        "Url": "Lucerne Enterprise Ltd",
+        "AssetVolume": "20.447.482",
+        "AssetRate": "5,46",
+        "UpdatedDate": "12/06/2025"
+      },
+      {
+        "Code": "CEO_30472",
+        "Name": "Nguyễn Thế Trọng",
+        "Url": "<a href='/du-lieu/ceo/CEO_30472/nguyen-the-trong.chn'>Nguyễn Thế Trọng</a>",
+        "AssetVolume": "75.363",
+        "AssetRate": "0,02",
+        "UpdatedDate": "12/06/2025"
+      },
+      {
+        "Code": "CEO_876848",
+        "Name": "Trương Anh Thư",
+        "Url": "<a href='/du-lieu/ceo/CEO_876848/truong-anh-thu.chn'>Trương Anh Thư</a>",
+        "AssetVolume": "266.524",
+        "AssetRate": "0,07",
+        "UpdatedDate": "12/06/2025"
+      },
+      {
+        "Code": "SFI",
+        "Name": "Công ty Cổ phần Đại lý Vận tải SAFI",
+        "Url": "<a href='/du-lieu/hose/SFI-cong-ty-co-phan-dai-ly-van-tai-safi.chn' title='Công ty Cổ phần Đại lý Vận tải SAFI'>Công ty Cổ phần Đại lý Vận tải SAFI</a>",
+        "AssetVolume": "16.345.224",
+        "AssetRate": "4,37",
+        "UpdatedDate": "12/06/2025"
+      },
+      {
+        "Code": "CEO_877701",
+        "Name": "Vũ Ngọc Lâm",
+        "Url": "<a href='/du-lieu/ceo/CEO_877701/vu-ngoc-lam.chn'>Vũ Ngọc Lâm</a>",
+        "AssetVolume": "100.000",
+        "AssetRate": "0,03",
+        "UpdatedDate": "28/07/2026"
+      },
+      {
+        "Code": "CEO_00884",
+        "Name": "Nguyễn Thị Kim Nhã",
+        "Url": "<a href='/du-lieu/ceo/CEO_00884/nguyen-thi-kim-nha.chn'>Nguyễn Thị Kim Nhã</a>",
+        "AssetVolume": "309.021",
+        "AssetRate": "0,08",
+        "UpdatedDate": "12/06/2025"
+      },
+      {
+        "Code": "CORP_51055",
+        "Name": "Công ty CP Quản lý Quỹ Leadvisors",
+        "Url": "Công ty CP Quản lý Quỹ Leadvisors",
+        "AssetVolume": "15.350.000",
+        "AssetRate": "4,1",
+        "UpdatedDate": "24/07/2026"
+      },
+      {
+        "Code": "KLQ_100120",
+        "Name": "Đàm Văn Huy",
+        "Url": "Đàm Văn Huy",
+        "AssetVolume": "10.532.402",
+        "AssetRate": "2,81",
+        "UpdatedDate": "12/06/2025"
+      },
+      {
+        "Code": "CORP_00474",
+        "Name": "Swiftcurrent Offshore, Ltd",
+        "Url": "Swiftcurrent Offshore, Ltd",
+        "AssetVolume": "6.342.927",
+        "AssetRate": "1,69",
+        "UpdatedDate": "12/06/2025"
+      },
+      {
+        "Code": "CEO_00986",
+        "Name": "Nguyễn Việt Hòa",
+        "Url": "<a href='/du-lieu/ceo/CEO_00986/nguyen-viet-hoa.chn'>Nguyễn Việt Hòa</a>",
+        "AssetVolume": "4.217.496",
+        "AssetRate": "1,13",
+        "UpdatedDate": "12/06/2025"
+      },
+      {
+        "Code": "CEO_876882",
+        "Name": "Phan Thị Trung Hiếu",
+        "Url": "<a href='/du-lieu/ceo/CEO_876882/phan-thi-trung-hieu.chn'>Phan Thị Trung Hiếu</a>",
+        "AssetVolume": "62.830",
+        "AssetRate": "0,02",
+        "UpdatedDate": "12/06/2025"
+      },
+      {
+        "Code": "CEO_876849",
+        "Name": "Phạm Thanh Tuấn",
+        "Url": "<a href='/du-lieu/ceo/CEO_876849/pham-thanh-tuan.chn'>Phạm Thanh Tuấn</a>",
+        "AssetVolume": "229.015",
+        "AssetRate": "0,06",
+        "UpdatedDate": "12/06/2025"
+      },
+      {
+        "Code": "CORP_00473",
+        "Name": "Swiftcurrent Partners, L.P",
+        "Url": "Swiftcurrent Partners, L.P",
+        "AssetVolume": "7.088.596",
+        "AssetRate": "1,89",
+        "UpdatedDate": "12/06/2025"
+      },
+      {
+        "Code": "CEO_873780",
+        "Name": "Nguyễn Đức Dũng",
+        "Url": "<a href='/du-lieu/ceo/CEO_873780/nguyen-duc-dung.chn'>Nguyễn Đức Dũng</a>",
+        "AssetVolume": "600.000",
+        "AssetRate": "0,16",
+        "UpdatedDate": "01/10/2025"
+      },
+      {
+        "Code": "CEO_874567",
+        "Name": "Ngô Thị Thùy Lương",
+        "Url": "<a href='/du-lieu/ceo/CEO_874567/ngo-thi-thuy-luong.chn'>Ngô Thị Thùy Lương</a>",
+        "AssetVolume": "25.132",
+        "AssetRate": "0,01",
+        "UpdatedDate": "12/06/2025"
+      },
+      {
+        "Code": "CEO_80626",
+        "Name": "Nguyễn Việt Trung",
+        "Url": "<a href='/du-lieu/ceo/CEO_80626/nguyen-viet-trung.chn'>Nguyễn Việt Trung</a>",
+        "AssetVolume": "101.147",
+        "AssetRate": "0,03",
+        "UpdatedDate": "12/06/2025"
+      },
+      {
+        "Code": "CEO_878782",
+        "Name": "Trần Thị Diệu Hương",
+        "Url": "<a href='/du-lieu/ceo/CEO_878782/tran-thi-dieu-huong.chn'>Trần Thị Diệu Hương</a>",
+        "AssetVolume": "62.830",
+        "AssetRate": "0,02",
+        "UpdatedDate": "12/06/2025"
+      },
+      {
+        "Code": "CORP_81640",
+        "Name": "CTCP Đầu tư Sao Á D.C",
+        "Url": "CTCP Đầu tư Sao Á D.C",
+        "AssetVolume": "17.875.137",
+        "AssetRate": "4,77",
+        "UpdatedDate": "12/06/2025"
+      },
+      {
+        "Code": "KLQ_81243",
+        "Name": "Đoàn Quang Huy",
+        "Url": "Đoàn Quang Huy",
+        "AssetVolume": "10.177.776",
+        "AssetRate": "2,72",
+        "UpdatedDate": "12/06/2025"
+      },
+      {
+        "Code": "CEO_00649",
+        "Name": "Trần Xuân Bạo",
+        "Url": "<a href='/du-lieu/ceo/CEO_00649/tran-xuan-bao.chn'>Trần Xuân Bạo</a>",
+        "AssetVolume": "812.008",
+        "AssetRate": "0,22",
+        "UpdatedDate": "30/06/2026"
+      },
+      {
+        "Code": "CEO_80629",
+        "Name": "Nguyễn Thị Minh Lan",
+        "Url": "<a href='/du-lieu/ceo/CEO_80629/nguyen-thi-minh-lan.chn'>Nguyễn Thị Minh Lan</a>",
+        "AssetVolume": "5.497",
+        "AssetRate": "0,0",
+        "UpdatedDate": "12/06/2025"
+      },
+      {
+        "Code": "CEO_66340",
+        "Name": "Đặng Thanh Tâm",
+        "Url": "<a href='/du-lieu/ceo/CEO_66340/dang-thanh-tam.chn'>Đặng Thanh Tâm</a>",
+        "AssetVolume": "62.830",
+        "AssetRate": "0,02",
+        "UpdatedDate": "12/06/2025"
+      },
+      {
+        "Code": "CORP_81956",
+        "Name": "Công ty TNHH Quỹ TM Holding",
+        "Url": "Công ty TNHH Quỹ TM Holding",
+        "AssetVolume": "13.141.560",
+        "AssetRate": "3,51",
+        "UpdatedDate": "12/06/2025"
+      },
+      {
+        "Code": "CEO_87270",
+        "Name": "Tạ Công Thông",
+        "Url": "<a href='/du-lieu/ceo/CEO_87270/ta-cong-thong.chn'>Tạ Công Thông</a>",
+        "AssetVolume": "685.462",
+        "AssetRate": "0,18",
+        "UpdatedDate": "05/09/2025"
+      },
+      {
+        "Code": "CORP_60343",
+        "Name": "DC Developing Markets Strategies Public Limited Company",
+        "Url": "DC Developing Markets Strategies Public Limited Company",
+        "AssetVolume": "12.190.268",
+        "AssetRate": "3,26",
+        "UpdatedDate": "12/06/2025"
+      },
+      {
+        "Code": "CORP_60305",
+        "Name": "FTIF - Templeton Frontier Markets Fund",
+        "Url": "FTIF - Templeton Frontier Markets Fund",
+        "AssetVolume": "6.510.861",
+        "AssetRate": "1,74",
+        "UpdatedDate": "12/06/2025"
+      },
+      {
+        "Code": "CEO_877634",
+        "Name": "Nguyễn Đức Thành",
+        "Url": "<a href='/du-lieu/ceo/CEO_877634/nguyen-duc-thanh.chn'>Nguyễn Đức Thành</a>",
+        "AssetVolume": "251.320",
+        "AssetRate": "0,07",
+        "UpdatedDate": "12/06/2025"
+      },
+      {
+        "Code": "CEO_70876",
+        "Name": "Lê Thế Trung",
+        "Url": "<a href='/du-lieu/ceo/CEO_70876/le-the-trung.chn'>Lê Thế Trung</a>",
+        "AssetVolume": "251.320",
+        "AssetRate": "0,07",
+        "UpdatedDate": "30/06/2026"
+      },
+      {
+        "Code": "CEO_877636",
+        "Name": "Phan Tuấn Linh",
+        "Url": "<a href='/du-lieu/ceo/CEO_877636/phan-tuan-linh.chn'>Phan Tuấn Linh</a>",
+        "AssetVolume": "251.320",
+        "AssetRate": "0,07",
+        "UpdatedDate": "12/06/2025"
+      },
+      {
+        "Code": "CEO_54203",
+        "Name": "Cáp Trọng Cường",
+        "Url": "<a href='/du-lieu/ceo/CEO_54203/cap-trong-cuong.chn'>Cáp Trọng Cường</a>",
+        "AssetVolume": "71.132",
+        "AssetRate": "0,02",
+        "UpdatedDate": "12/06/2025"
+      },
+      {
+        "Code": "CEO_80627",
+        "Name": "Nghiêm Tuấn Anh",
+        "Url": "<a href='/du-lieu/ceo/CEO_80627/nghiem-tuan-anh.chn'>Nghiêm Tuấn Anh</a>",
+        "AssetVolume": "45.226",
+        "AssetRate": "0,01",
+        "UpdatedDate": "12/06/2025"
+      },
+      {
+        "Code": "CEO_87268",
+        "Name": "Dương Tiến Dũng",
+        "Url": "<a href='/du-lieu/ceo/CEO_87268/duong-tien-dung.chn'>Dương Tiến Dũng</a>",
+        "AssetVolume": "71.078",
+        "AssetRate": "0,02",
+        "UpdatedDate": "12/06/2025"
+      },
+      {
+        "Code": "KLQ_100121",
+        "Name": "Lê Thị Thu Trang",
+        "Url": "Lê Thị Thu Trang",
+        "AssetVolume": "11.186.347",
+        "AssetRate": "2,99",
+        "UpdatedDate": "12/06/2025"
+      },
+      {
+        "Code": "CEO_877635",
+        "Name": "Ninh Văn Hiến",
+        "Url": "<a href='/du-lieu/ceo/CEO_877635/ninh-van-hien.chn'>Ninh Văn Hiến</a>",
+        "AssetVolume": "192.187",
+        "AssetRate": "0,05",
+        "UpdatedDate": "27/11/2025"
+      },
+      {
+        "Code": "CEO_00432",
+        "Name": "Hoàng Trọng Giang",
+        "Url": "<a href='/du-lieu/ceo/CEO_00432/hoang-trong-giang.chn'>Hoàng Trọng Giang</a>",
+        "AssetVolume": "298.179",
+        "AssetRate": "0,08",
+        "UpdatedDate": "12/06/2025"
+      },
+      {
+        "Code": "CEO_873868",
+        "Name": "Phan Văn Hưng",
+        "Url": "<a href='/du-lieu/ceo/CEO_873868/phan-van-hung.chn'>Phan Văn Hưng</a>",
+        "AssetVolume": "40.525",
+        "AssetRate": "0,01",
+        "UpdatedDate": "12/06/2025"
+      },
+      {
+        "Code": "CEO_80628",
+        "Name": "Hoàng Tiến Lục",
+        "Url": "<a href='/du-lieu/ceo/CEO_80628/hoang-tien-luc.chn'>Hoàng Tiến Lục</a>",
+        "AssetVolume": "261.169",
+        "AssetRate": "0,07",
+        "UpdatedDate": "12/06/2025"
+      },
+      {
+        "Code": "CEO_66138",
+        "Name": "Bùi Minh Hưng",
+        "Url": "<a href='/du-lieu/ceo/CEO_66138/bui-minh-hung.chn'>Bùi Minh Hưng</a>",
+        "AssetVolume": "129.045",
+        "AssetRate": "0,03",
+        "UpdatedDate": "12/06/2025"
+      },
+      {
+        "Code": "CEO_00973",
+        "Name": "Nguyễn Văn Tiến",
+        "Url": "<a href='/du-lieu/ceo/CEO_00973/nguyen-van-tien.chn'>Nguyễn Văn Tiến</a>",
+        "AssetVolume": "438.035",
+        "AssetRate": "0,12",
+        "UpdatedDate": "12/06/2025"
+      },
+      {
+        "Code": "CEO_86761",
+        "Name": "Nghiêm Thị Thùy Dương",
+        "Url": "<a href='/du-lieu/ceo/CEO_86761/nghiem-thi-thuy-duong.chn'>Nghiêm Thị Thùy Dương</a>",
+        "AssetVolume": "125.681",
+        "AssetRate": "0,03",
+        "UpdatedDate": "12/06/2025"
+      },
+      {
+        "Code": "VietinbankCapital",
+        "Name": "Công ty TNHH MTV Quản lý quỹ Ngân hàng TMCP Công thương Việt Nam",
+        "Url": "<a href='/du-lieu/otc/VIETINBANKCAPITAL-cong-ty-tnhh-mtv-quan-ly-quy-ngan-hang-tmcp-cong-thuong-viet-nam.chn' title='Công ty TNHH MTV Quản lý quỹ Ngân hàng TMCP Công thương Việt Nam'>Công ty TNHH MTV Quản lý quỹ Ngân hàng TMCP Công thương Việt Nam</a>",
+        "AssetVolume": "10.500.000",
+        "AssetRate": "2,8",
+        "UpdatedDate": "14/08/2025"
+      }
+    ],
+    "NuocNgoai": 3.01,
+    "NhaNuoc": 0,
+    "Khac": 96.99
+  },
+  "cong_ty_con": [
+    {
+      "Symbol": "VSC",
+      "CorpCode": "CORP_65746",
+      "Name": "Công ty TNHH MTV Dịch vụ Cảng Xanh",
+      "TotalCapital": 110,
+      "SharedCapital": 110,
+      "OwnershipRate": 100,
+      "Note": "",
+      "Order": 1,
+      "TradeCenter": ""
+    },
+    {
+      "Symbol": "VSC",
+      "CorpCode": "CORP_65769",
+      "Name": "CTCP Cảng cạn Quảng Bình - Đình Vũ",
+      "TotalCapital": 468,
+      "SharedCapital": 468,
+      "OwnershipRate": 100,
+      "Note": "",
+      "Order": 2,
+      "TradeCenter": ""
+    },
+    {
+      "Symbol": "VSC",
+      "CorpCode": "CORP_93156",
+      "Name": "Công ty TNHH MTV Viconship Hồ Chí Minh",
+      "TotalCapital": 15,
+      "SharedCapital": 15,
+      "OwnershipRate": 100,
+      "Note": "",
+      "Order": 3,
+      "TradeCenter": ""
+    },
+    {
+      "Symbol": "VSC",
+      "CorpCode": "CORP_93158",
+      "Name": "Công ty TNHH Vận tải biển Ngôi sao xanh",
+      "TotalCapital": 76,
+      "SharedCapital": 76,
+      "OwnershipRate": 100,
+      "Note": "",
+      "Order": 4,
+      "TradeCenter": ""
+    },
+    {
+      "Symbol": "VSC",
+      "CorpCode": "CORP_70441",
+      "Name": "Công ty TNHH MTV Trung tâm Logistics Xanh",
+      "TotalCapital": 620,
+      "SharedCapital": 620,
+      "OwnershipRate": 100,
+      "Note": "",
+      "Order": 5,
+      "TradeCenter": ""
+    },
+    {
+      "Symbol": "VSC",
+      "CorpCode": "CORP_30106",
+      "Name": "CTCP Cảng Nam Hải Đình Vũ",
+      "TotalCapital": 400,
+      "SharedCapital": 399.96,
+      "OwnershipRate": 99.9899978637695,
+      "Note": "",
+      "Order": 6,
+      "TradeCenter": ""
+    },
+    {
+      "Symbol": "VSC",
+      "CorpCode": "CORP_39566",
+      "Name": "CTCP Đầu tư Dịch vụ và Phát triển xanh",
+      "TotalCapital": 121.190002441406,
+      "SharedCapital": 80.39,
+      "OwnershipRate": 66.3300018310547,
+      "Note": "",
+      "Order": 7,
+      "TradeCenter": ""
+    },
+    {
+      "Symbol": "VSC",
+      "CorpCode": "CORP_93155",
+      "Name": "Công ty TNHH Container miền Trung",
+      "TotalCapital": 30.5,
+      "SharedCapital": 19.82,
+      "OwnershipRate": 65,
+      "Note": "",
+      "Order": 8,
+      "TradeCenter": ""
+    },
+    {
+      "Symbol": "VSC",
+      "CorpCode": "VGR",
+      "Name": "Công ty Cổ phần Cảng Xanh VIP",
+      "TotalCapital": 822.25,
+      "SharedCapital": 529.09998,
+      "OwnershipRate": 64.35,
+      "Note": "",
+      "Order": 9,
+      "TradeCenter": "UpCOM"
+    },
+    {
+      "Symbol": "VSC",
+      "CorpCode": "CORP_65770",
+      "Name": "CTCP Container Quy Nhơn",
+      "TotalCapital": 13,
+      "SharedCapital": 7.1,
+      "OwnershipRate": 54.5999984741211,
+      "Note": "",
+      "Order": 10,
+      "TradeCenter": ""
+    }
+  ],
+  "cong_ty_lien_ket": [
+    {
+      "Symbol": "VSC",
+      "CorpCode": "CORP_65773",
+      "Name": "CTCP VHL Logistics",
+      "TotalCapital": 17.1000003814697,
+      "SharedCapital": 7.52,
+      "OwnershipRate": 44,
+      "Note": "",
+      "Order": 11,
+      "TradeCenter": ""
+    },
+    {
+      "Symbol": "VSC",
+      "CorpCode": "CORP_65772",
+      "Name": "CTCP VTB Vinnaship",
+      "TotalCapital": 34,
+      "SharedCapital": 13.6,
+      "OwnershipRate": 40.0099983215332,
+      "Note": "",
+      "Order": 12,
+      "TradeCenter": ""
+    },
+    {
+      "Symbol": "VSC",
+      "CorpCode": "CORP_65771",
+      "Name": "CTCP Cảng VIMC Đình Vũ",
+      "TotalCapital": 248,
+      "SharedCapital": 89.28,
+      "OwnershipRate": 36,
+      "Note": "",
+      "Order": 13,
+      "TradeCenter": ""
+    },
+    {
+      "Symbol": "VSC",
+      "CorpCode": "DNL",
+      "Name": "Công ty cổ phần Logistic Cảng Đà Nẵng",
+      "TotalCapital": 43.1,
+      "SharedCapital": 13.32,
+      "OwnershipRate": 30.9,
+      "Note": "",
+      "Order": 14,
+      "TradeCenter": "UpCOM"
+    },
+    {
+      "Symbol": "VSC",
+      "CorpCode": "PSP",
+      "Name": "Công ty Cổ phần Cảng dịch vụ Dầu khí Đình Vũ",
+      "TotalCapital": 575,
+      "SharedCapital": 0,
+      "OwnershipRate": 0,
+      "Note": "",
+      "Order": 15,
+      "TradeCenter": "UpCOM"
+    }
+  ],
+  "giao_dich_noi_bo": [
+    {
+      "transaction_name": "Công ty CP Quản lý Quỹ Leadvisors",
+      "transaction_position": "",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 30350000,
+      "plan_buy": 0,
+      "plan_sell": 0,
+      "plan_begin_date": "",
+      "plan_end_date": "",
+      "real_buy": 0,
+      "real_sell": 15000000,
+      "real_end_date": "2026-07-24",
+      "published_date": "2026-08-25",
+      "volume_after": 15350000
+    },
+    {
+      "transaction_name": "Công ty CP Quản lý Quỹ Leadvisors",
+      "transaction_position": "",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 60000000,
+      "plan_buy": 0,
+      "plan_sell": 0,
+      "plan_begin_date": "",
+      "plan_end_date": "",
+      "real_buy": 0,
+      "real_sell": 20000000,
+      "real_end_date": "2026-07-03",
+      "published_date": "2026-08-08",
+      "volume_after": 40000000
+    },
+    {
+      "transaction_name": "Vũ Ngọc Lâm",
+      "transaction_position": "Phó Tổng GĐ",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 100000,
+      "plan_buy": 500000,
+      "plan_sell": 0,
+      "plan_begin_date": "2026-07-28",
+      "plan_end_date": "2026-08-25",
+      "real_buy": 0,
+      "real_sell": 0,
+      "real_end_date": "",
+      "published_date": "2026-07-29",
+      "volume_after": 0
+    },
+    {
+      "transaction_name": "Công ty CP Quản lý Quỹ Leadvisors",
+      "transaction_position": "",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 40000000,
+      "plan_buy": 0,
+      "plan_sell": 0,
+      "plan_begin_date": "",
+      "plan_end_date": "",
+      "real_buy": 0,
+      "real_sell": 9650000,
+      "real_end_date": "2026-07-06",
+      "published_date": "2026-07-22",
+      "volume_after": 30350000
+    },
+    {
+      "transaction_name": "Công ty CP Quản lý Quỹ Leadvisors",
+      "transaction_position": "",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 0,
+      "plan_buy": 0,
+      "plan_sell": 0,
+      "plan_begin_date": "",
+      "plan_end_date": "",
+      "real_buy": 60000000,
+      "real_sell": 0,
+      "real_end_date": "2026-04-22",
+      "published_date": "2026-05-14",
+      "volume_after": 60000000
+    },
+    {
+      "transaction_name": "Hoàng Anh Tuấn",
+      "transaction_position": "Chồng",
+      "leader_name": "Trần Thị Phương Anh",
+      "leader_position": "Thành viên HĐQT",
+      "volume_before": 18000,
+      "plan_buy": 0,
+      "plan_sell": 18000,
+      "plan_begin_date": "2026-04-16",
+      "plan_end_date": "2026-05-14",
+      "real_buy": 0,
+      "real_sell": 18000,
+      "real_end_date": "2026-05-14",
+      "published_date": "2026-04-16",
+      "volume_after": 0
+    },
+    {
+      "transaction_name": "Trần Thị Phương Anh",
+      "transaction_position": "Thành viên HĐQT",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 250000,
+      "plan_buy": 0,
+      "plan_sell": 250000,
+      "plan_begin_date": "2026-04-16",
+      "plan_end_date": "2026-05-14",
+      "real_buy": 0,
+      "real_sell": 250000,
+      "real_end_date": "2026-05-14",
+      "published_date": "2026-04-16",
+      "volume_after": 0
+    },
+    {
+      "transaction_name": "Hoàng Anh Tuấn",
+      "transaction_position": "Chồng",
+      "leader_name": "Trần Thị Phương Anh",
+      "leader_position": "Thành viên HĐQT",
+      "volume_before": 18000,
+      "plan_buy": 0,
+      "plan_sell": 18000,
+      "plan_begin_date": "2026-04-16",
+      "plan_end_date": "2026-05-14",
+      "real_buy": 0,
+      "real_sell": 0,
+      "real_end_date": "",
+      "published_date": "2026-04-16",
+      "volume_after": 0
+    },
+    {
+      "transaction_name": "Trần Thị Phương Anh",
+      "transaction_position": "Thành viên HĐQT",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 250000,
+      "plan_buy": 0,
+      "plan_sell": 250000,
+      "plan_begin_date": "2026-04-16",
+      "plan_end_date": "2026-05-14",
+      "real_buy": 0,
+      "real_sell": 0,
+      "real_end_date": "",
+      "published_date": "2026-04-16",
+      "volume_after": 0
+    },
+    {
+      "transaction_name": "Ninh Văn Hiến",
+      "transaction_position": "Thành Viên HĐQT",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 192187,
+      "plan_buy": 0,
+      "plan_sell": 92187,
+      "plan_begin_date": "2025-10-29",
+      "plan_end_date": "2025-11-27",
+      "real_buy": 0,
+      "real_sell": 0,
+      "real_end_date": "2025-11-27",
+      "published_date": "2025-10-27",
+      "volume_after": 192187
+    },
+    {
+      "transaction_name": "Ninh Văn Hiến",
+      "transaction_position": "Thành Viên HĐQT",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 192187,
+      "plan_buy": 92187,
+      "plan_sell": 0,
+      "plan_begin_date": "",
+      "plan_end_date": "",
+      "real_buy": 0,
+      "real_sell": 0,
+      "real_end_date": "2025-10-16",
+      "published_date": "2025-10-17",
+      "volume_after": 192187
+    },
+    {
+      "transaction_name": "Tạ Công Thông",
+      "transaction_position": "Tổng Giám đốc",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 695062,
+      "plan_buy": 0,
+      "plan_sell": 0,
+      "plan_begin_date": "",
+      "plan_end_date": "",
+      "real_buy": 0,
+      "real_sell": 9600,
+      "real_end_date": "2025-09-05",
+      "published_date": "2025-09-09",
+      "volume_after": 685462
+    },
+    {
+      "transaction_name": "Nguyễn Đức Dũng",
+      "transaction_position": "Chủ tịch HĐQT",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 817187,
+      "plan_buy": 0,
+      "plan_sell": 217187,
+      "plan_begin_date": "2025-09-09",
+      "plan_end_date": "2025-10-08",
+      "real_buy": 0,
+      "real_sell": 217187,
+      "real_end_date": "2025-10-01",
+      "published_date": "2025-09-08",
+      "volume_after": 600000
+    },
+    {
+      "transaction_name": "Công ty TNHH MTV Quản lý quỹ Ngân hàng TMCP Công thương Việt Nam",
+      "transaction_position": "",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 25525000,
+      "plan_buy": 0,
+      "plan_sell": 0,
+      "plan_begin_date": "",
+      "plan_end_date": "",
+      "real_buy": 0,
+      "real_sell": 15025000,
+      "real_end_date": "2025-08-14",
+      "published_date": "2025-08-18",
+      "volume_after": 10500000
+    },
+    {
+      "transaction_name": "Công ty TNHH MTV Quản lý quỹ Ngân hàng TMCP Công thương Việt Nam",
+      "transaction_position": "",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 40525000,
+      "plan_buy": 0,
+      "plan_sell": 0,
+      "plan_begin_date": "",
+      "plan_end_date": "",
+      "real_buy": 0,
+      "real_sell": 15000000,
+      "real_end_date": "2025-08-12",
+      "published_date": "2025-08-14",
+      "volume_after": 25525000
+    },
+    {
+      "transaction_name": "Nguyễn Đức Dũng",
+      "transaction_position": "Chủ tịch HĐQT",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 817187,
+      "plan_buy": 0,
+      "plan_sell": 217187,
+      "plan_begin_date": "2025-08-06",
+      "plan_end_date": "2025-09-03",
+      "real_buy": 0,
+      "real_sell": 0,
+      "real_end_date": "2025-09-03",
+      "published_date": "2025-08-11",
+      "volume_after": 817187
+    },
+    {
+      "transaction_name": "Trần Thị Phương Anh",
+      "transaction_position": "Thành viên HĐQT",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 312973,
+      "plan_buy": 0,
+      "plan_sell": 62500,
+      "plan_begin_date": "2025-08-06",
+      "plan_end_date": "2025-09-03",
+      "real_buy": 0,
+      "real_sell": 62500,
+      "real_end_date": "2025-08-07",
+      "published_date": "2025-08-11",
+      "volume_after": 250473
+    },
+    {
+      "transaction_name": "Hoàng Anh Tuấn",
+      "transaction_position": "Chồng",
+      "leader_name": "Trần Thị Phương Anh",
+      "leader_position": "Thành viên HĐQT",
+      "volume_before": 22500,
+      "plan_buy": 0,
+      "plan_sell": 4500,
+      "plan_begin_date": "2025-08-06",
+      "plan_end_date": "2025-09-03",
+      "real_buy": 0,
+      "real_sell": 4500,
+      "real_end_date": "2025-08-07",
+      "published_date": "2025-08-11",
+      "volume_after": 18000
+    },
+    {
+      "transaction_name": "Vũ Ngọc Lâm",
+      "transaction_position": "Phó Tổng GĐ",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 125000,
+      "plan_buy": 0,
+      "plan_sell": 25000,
+      "plan_begin_date": "2025-08-06",
+      "plan_end_date": "2025-09-03",
+      "real_buy": 0,
+      "real_sell": 25000,
+      "real_end_date": "2025-08-06",
+      "published_date": "2025-08-11",
+      "volume_after": 100000
+    },
+    {
+      "transaction_name": "Công ty TNHH MTV Quản lý quỹ Ngân hàng TMCP Công thương Việt Nam",
+      "transaction_position": "",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 50625000,
+      "plan_buy": 0,
+      "plan_sell": 0,
+      "plan_begin_date": "",
+      "plan_end_date": "",
+      "real_buy": 0,
+      "real_sell": 10100000,
+      "real_end_date": "2025-07-29",
+      "published_date": "2025-08-07",
+      "volume_after": 40525000
+    }
+  ]
+}

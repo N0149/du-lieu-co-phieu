@@ -1,0 +1,103 @@
+{
+  "symbol": "CRV",
+  "updated": "2026-09-01T07:21:39.000Z",
+  "co_cau_so_huu": {
+    "CoDongSoHuu": [
+      {
+        "Code": "CEO_880450",
+        "Name": "Phạm Thị Thu Huyền",
+        "Url": "<a href='/du-lieu/ceo/CEO_880450/pham-thi-thu-huyen.chn'>Phạm Thị Thu Huyền</a>",
+        "AssetVolume": "3.570",
+        "AssetRate": "0,0",
+        "UpdatedDate": "18/08/2025"
+      },
+      {
+        "Code": "CEO_30461",
+        "Name": "Đỗ Hữu Hậu",
+        "Url": "<a href='/du-lieu/ceo/CEO_30461/do-huu-hau.chn'>Đỗ Hữu Hậu</a>",
+        "AssetVolume": "5.100",
+        "AssetRate": "0,0",
+        "UpdatedDate": "18/08/2025"
+      },
+      {
+        "Code": "HHS",
+        "Name": "Công ty Cổ phần Đầu tư Dịch vụ Hoàng Huy",
+        "Url": "<a href='/du-lieu/hose/HHS-cong-ty-co-phan-dau-tu-dich-vu-hoang-huy.chn' title='Công ty Cổ phần Đầu tư Dịch vụ Hoàng Huy'>Công ty Cổ phần Đầu tư Dịch vụ Hoàng Huy</a>",
+        "AssetVolume": "242.382.447",
+        "AssetRate": "35,26",
+        "UpdatedDate": "08/01/2026"
+      },
+      {
+        "Code": "CEO_880452",
+        "Name": "Nguyễn Thị Thùy Dương",
+        "Url": "<a href='/du-lieu/ceo/CEO_880452/nguyen-thi-thuy-duong.chn'>Nguyễn Thị Thùy Dương</a>",
+        "AssetVolume": "510",
+        "AssetRate": "0,0",
+        "UpdatedDate": "18/08/2025"
+      },
+      {
+        "Code": "CORP_60336",
+        "Name": "CTCP Phát triển Dịch vụ Hoàng Giang",
+        "Url": "CTCP Phát triển Dịch vụ Hoàng Giang",
+        "AssetVolume": "56.570.220",
+        "AssetRate": "8,23",
+        "UpdatedDate": "18/08/2025"
+      },
+      {
+        "Code": "CORP_65825",
+        "Name": "CTCP HHS Capital",
+        "Url": "CTCP HHS Capital",
+        "AssetVolume": "50.100.000",
+        "AssetRate": "7,29",
+        "UpdatedDate": "18/08/2025"
+      },
+      {
+        "Code": "TCH",
+        "Name": "Công ty cổ phần Đầu tư Dịch vụ Tài chính Hoàng Huy",
+        "Url": "<a href='/du-lieu/hose/TCH-cong-ty-co-phan-dau-tu-dich-vu-tai-chinh-hoang-huy.chn' title='Công ty cổ phần Đầu tư Dịch vụ Tài chính Hoàng Huy'>Công ty cổ phần Đầu tư Dịch vụ Tài chính Hoàng Huy</a>",
+        "AssetVolume": "262.507.903",
+        "AssetRate": "38,19",
+        "UpdatedDate": "08/01/2026"
+      }
+    ],
+    "NuocNgoai": 687399854,
+    "NhaNuoc": 0,
+    "Khac": -687399754
+  },
+  "cong_ty_con": [],
+  "cong_ty_lien_ket": [],
+  "giao_dich_noi_bo": [
+    {
+      "transaction_name": "Công ty Cổ phần Đầu tư Dịch vụ Hoàng Huy",
+      "transaction_position": "",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 236470680,
+      "plan_buy": 5911767,
+      "plan_sell": 0,
+      "plan_begin_date": "2026-01-08",
+      "plan_end_date": "2026-01-08",
+      "real_buy": 5911767,
+      "real_sell": 0,
+      "real_end_date": "2026-01-08",
+      "published_date": "2026-01-06",
+      "volume_after": 242382447
+    },
+    {
+      "transaction_name": "Công ty cổ phần Đầu tư Dịch vụ Tài chính Hoàng Huy",
+      "transaction_position": "",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 256105272,
+      "plan_buy": 6402631,
+      "plan_sell": 0,
+      "plan_begin_date": "2026-01-08",
+      "plan_end_date": "2026-01-08",
+      "real_buy": 6402631,
+      "real_sell": 0,
+      "real_end_date": "2026-01-08",
+      "published_date": "2026-01-06",
+      "volume_after": 262507903
+    }
+  ]
+}

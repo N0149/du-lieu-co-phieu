@@ -1,0 +1,90 @@
+{
+  "symbol": "HU6",
+  "updated": "2026-07-01T06:39:18.000Z",
+  "co_cau_so_huu": {
+    "CoDongSoHuu": [
+      {
+        "Code": "CEO_58017",
+        "Name": "Trần Thị Hạnh",
+        "Url": "<a href='/du-lieu/ceo/CEO_58017/tran-thi-hanh.chn'>Trần Thị Hạnh</a>",
+        "AssetVolume": "100",
+        "AssetRate": "0,0",
+        "UpdatedDate": "31/12/2022"
+      },
+      {
+        "Code": "CEO_39793",
+        "Name": "Trương Thanh Huy",
+        "Url": "<a href='/du-lieu/ceo/CEO_39793/truong-thanh-huy.chn'>Trương Thanh Huy</a>",
+        "AssetVolume": "47.250",
+        "AssetRate": "0,63",
+        "UpdatedDate": "31/12/2022"
+      },
+      {
+        "Code": "CORP_99559",
+        "Name": "CTCP Tư vấn Đầu tư và xây dựng HUD-CIC",
+        "Url": "CTCP Tư vấn Đầu tư và xây dựng HUD-CIC",
+        "AssetVolume": "150.000",
+        "AssetRate": "2,0",
+        "UpdatedDate": "31/12/2022"
+      },
+      {
+        "Code": "CORP_99560",
+        "Name": "CTCP Đầu tư phát triển nhà Hợp Phú",
+        "Url": "CTCP Đầu tư phát triển nhà Hợp Phú",
+        "AssetVolume": "300.000",
+        "AssetRate": "4,0",
+        "UpdatedDate": "31/12/2022"
+      },
+      {
+        "Code": "CORP_52332",
+        "Name": "CTCP Tập đoàn Đầu tư Quang Minh",
+        "Url": "CTCP Tập đoàn Đầu tư Quang Minh",
+        "AssetVolume": "116.100",
+        "AssetRate": "1,55",
+        "UpdatedDate": "31/12/2022"
+      },
+      {
+        "Code": "CEO_39794",
+        "Name": "Ngô Liên Hương",
+        "Url": "<a href='/du-lieu/ceo/CEO_39794/ngo-lien-huong.chn'>Ngô Liên Hương</a>",
+        "AssetVolume": "13.500",
+        "AssetRate": "0,18",
+        "UpdatedDate": "31/12/2022"
+      },
+      {
+        "Code": "CEO_39799",
+        "Name": "Phạm Thị Như Trang",
+        "Url": "<a href='/du-lieu/ceo/CEO_39799/pham-thi-nhu-trang.chn'>Phạm Thị Như Trang</a>",
+        "AssetVolume": "3.000",
+        "AssetRate": "0,04",
+        "UpdatedDate": "31/12/2022"
+      },
+      {
+        "Code": "CEO_39795",
+        "Name": "Hoàng Đức Phương",
+        "Url": "<a href='/du-lieu/ceo/CEO_39795/hoang-duc-phuong.chn'>Hoàng Đức Phương</a>",
+        "AssetVolume": "12.750",
+        "AssetRate": "0,17",
+        "UpdatedDate": "31/12/2022"
+      }
+    ],
+    "NuocNgoai": 0.13,
+    "NhaNuoc": 0,
+    "Khac": 99.87
+  },
+  "cong_ty_con": [],
+  "cong_ty_lien_ket": [
+    {
+      "Symbol": "HU6",
+      "CorpCode": "CORP_99558",
+      "Name": "Công ty cổ phần Đầu tư và xây dựng HUD10",
+      "TotalCapital": 0,
+      "SharedCapital": 10,
+      "OwnershipRate": 25,
+      "Note": "",
+      "Order": 1,
+      "TradeCenter": ""
+    }
+  ],
+  "giao_dich_noi_bo": []
+}

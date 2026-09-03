@@ -1,0 +1,291 @@
+{
+  "symbol": "CAT",
+  "updated": "2026-05-01T05:45:31.000Z",
+  "co_cau_so_huu": {
+    "CoDongSoHuu": [
+      {
+        "Code": "BVS",
+        "Name": "Công ty Cổ phần Thủy sản Cà Mau",
+        "Url": "<a href='/du-lieu/hastc/BVS-cong-ty-co-phan-chung-khoan-bao-viet.chn' title='Công ty Cổ phần Chứng khoán Bảo Việt'>Công ty Cổ phần Chứng khoán Bảo Việt</a>",
+        "AssetVolume": "1.462.500",
+        "AssetRate": "10,54",
+        "UpdatedDate": "16/12/2025"
+      },
+      {
+        "Code": "LQ_96733",
+        "Name": "Huỳnh Văn Long",
+        "Url": "Huỳnh Văn Long (Cha của ông <a href='/du-lieu/ceo/CEO_54105/huynh-nhat-vu.chn'>Huỳnh Nhật Vũ</a>)",
+        "AssetVolume": "183.813",
+        "AssetRate": "1,32",
+        "UpdatedDate": "16/12/2025"
+      },
+      {
+        "Code": "CEO_54109",
+        "Name": "Đặng Chiến Thắng",
+        "Url": "<a href='/du-lieu/ceo/CEO_54109/dang-chien-thang.chn'>Đặng Chiến Thắng</a>",
+        "AssetVolume": "54.500",
+        "AssetRate": "0,39",
+        "UpdatedDate": "09/02/2026"
+      },
+      {
+        "Code": "CEO_54102",
+        "Name": "Nguyễn Hồng Đức",
+        "Url": "<a href='/du-lieu/ceo/CEO_54102/nguyen-hong-duc.chn'>Nguyễn Hồng Đức</a>",
+        "AssetVolume": "478.710",
+        "AssetRate": "3,45",
+        "UpdatedDate": "16/12/2025"
+      },
+      {
+        "Code": "CEO_54099",
+        "Name": "Nguyễn Viết Luận",
+        "Url": "<a href='/du-lieu/ceo/CEO_54099/nguyen-viet-luan.chn'>Nguyễn Viết Luận</a>",
+        "AssetVolume": "52.500",
+        "AssetRate": "0,38",
+        "UpdatedDate": "16/12/2025"
+      },
+      {
+        "Code": "CEO_54105",
+        "Name": "Huỳnh Nhật Vũ",
+        "Url": "<a href='/du-lieu/ceo/CEO_54105/huynh-nhat-vu.chn'>Huỳnh Nhật Vũ</a>",
+        "AssetVolume": "855.685",
+        "AssetRate": "6,17",
+        "UpdatedDate": "16/12/2025"
+      },
+      {
+        "Code": "LQ_96731",
+        "Name": "Bùi Phan Hoàng Anh",
+        "Url": "Bùi Phan Hoàng Anh (Con của ông <a href='/du-lieu/ceo/CEO_54101/bui-nguyen-khanh.chn'>Bùi Nguyên Khánh</a>)",
+        "AssetVolume": "1.095.000",
+        "AssetRate": "7,89",
+        "UpdatedDate": "16/12/2025"
+      },
+      {
+        "Code": "CEO_54101",
+        "Name": "Bùi Nguyên Khánh",
+        "Url": "<a href='/du-lieu/ceo/CEO_54101/bui-nguyen-khanh.chn'>Bùi Nguyên Khánh</a>",
+        "AssetVolume": "1.245.000",
+        "AssetRate": "8,97",
+        "UpdatedDate": "16/12/2025"
+      },
+      {
+        "Code": "CEO_54111",
+        "Name": "Tô Tần Hoài",
+        "Url": "<a href='/du-lieu/ceo/CEO_54111/to-tan-hoai.chn'>Tô Tần Hoài</a>",
+        "AssetVolume": "225.000",
+        "AssetRate": "1,62",
+        "UpdatedDate": "16/12/2025"
+      },
+      {
+        "Code": "CEO_54104",
+        "Name": "Bùi Vĩnh Hoàng Chương",
+        "Url": "<a href='/du-lieu/ceo/CEO_54104/bui-vinh-hoang-chuong.chn'>Bùi Vĩnh Hoàng Chương</a>",
+        "AssetVolume": "1.085.500",
+        "AssetRate": "7,82",
+        "UpdatedDate": "09/02/2026"
+      },
+      {
+        "Code": "CEO_54103",
+        "Name": "Bùi Thế Hùng",
+        "Url": "<a href='/du-lieu/ceo/CEO_54103/bui-the-hung.chn'>Bùi Thế Hùng</a>",
+        "AssetVolume": "135.000",
+        "AssetRate": "0,97",
+        "UpdatedDate": "16/12/2025"
+      },
+      {
+        "Code": "CEO_54107",
+        "Name": "Lê Thanh Phương",
+        "Url": "<a href='/du-lieu/ceo/CEO_54107/le-thanh-phuong.chn'>Lê Thanh Phương</a>",
+        "AssetVolume": "217.200",
+        "AssetRate": "1,57",
+        "UpdatedDate": "09/02/2026"
+      },
+      {
+        "Code": "CEO_54110",
+        "Name": "Phan Thị Ngọc Ánh",
+        "Url": "<a href='/du-lieu/ceo/CEO_54110/phan-thi-ngoc-anh.chn'>Phan Thị Ngọc Ánh</a>",
+        "AssetVolume": "1.050.000",
+        "AssetRate": "7,57",
+        "UpdatedDate": "16/12/2025"
+      }
+    ],
+    "NuocNgoai": 0.72,
+    "NhaNuoc": 0,
+    "Khac": 99.28
+  },
+  "cong_ty_con": [
+    {
+      "Symbol": "CAT",
+      "CorpCode": "CORP_51403",
+      "Name": "CTCP Thủy sản An Phước",
+      "TotalCapital": 90.31,
+      "SharedCapital": 74.96,
+      "OwnershipRate": 83,
+      "Note": "",
+      "Order": 1,
+      "TradeCenter": ""
+    }
+  ],
+  "cong_ty_lien_ket": [],
+  "giao_dich_noi_bo": [
+    {
+      "transaction_name": "Lê Thanh Phương",
+      "transaction_position": "Thành viên HĐQT",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 197200,
+      "plan_buy": 20000,
+      "plan_sell": 0,
+      "plan_begin_date": "2026-02-09",
+      "plan_end_date": "2026-02-09",
+      "real_buy": 20000,
+      "real_sell": 0,
+      "real_end_date": "2026-02-09",
+      "published_date": "2026-03-09",
+      "volume_after": 217200
+    },
+    {
+      "transaction_name": "Bùi Vĩnh Hoàng Chương",
+      "transaction_position": "Con",
+      "leader_name": "Bùi Nguyên Khánh",
+      "leader_position": "Chủ tịch HĐQT",
+      "volume_before": 1085500,
+      "plan_buy": 28000,
+      "plan_sell": 0,
+      "plan_begin_date": "2026-02-09",
+      "plan_end_date": "2026-02-09",
+      "real_buy": 0,
+      "real_sell": 0,
+      "real_end_date": "",
+      "published_date": "2026-03-09",
+      "volume_after": 0
+    },
+    {
+      "transaction_name": "Đặng Chiến Thắng",
+      "transaction_position": "Thành viên BKS",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 54500,
+      "plan_buy": 20000,
+      "plan_sell": 0,
+      "plan_begin_date": "2026-02-09",
+      "plan_end_date": "2026-02-09",
+      "real_buy": 0,
+      "real_sell": 0,
+      "real_end_date": "",
+      "published_date": "2026-02-12",
+      "volume_after": 0
+    },
+    {
+      "transaction_name": "Bùi Thế Hùng",
+      "transaction_position": "Thành viên HĐQT",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 0,
+      "plan_buy": 0,
+      "plan_sell": 0,
+      "plan_begin_date": "",
+      "plan_end_date": "",
+      "real_buy": 0,
+      "real_sell": 0,
+      "real_end_date": "",
+      "published_date": "2026-02-12",
+      "volume_after": 0
+    },
+    {
+      "transaction_name": "Nguyễn Văn Khánh",
+      "transaction_position": "Phó Chủ tịch HĐQT",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 0,
+      "plan_buy": 28000,
+      "plan_sell": 0,
+      "plan_begin_date": "2026-02-06",
+      "plan_end_date": "2026-03-06",
+      "real_buy": 0,
+      "real_sell": 0,
+      "real_end_date": "",
+      "published_date": "2026-02-07",
+      "volume_after": 0
+    },
+    {
+      "transaction_name": "Nguyễn Viết Luận",
+      "transaction_position": "Thành viên BKS",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 0,
+      "plan_buy": 35000,
+      "plan_sell": 0,
+      "plan_begin_date": "2024-12-31",
+      "plan_end_date": "2025-01-20",
+      "real_buy": 35000,
+      "real_sell": 0,
+      "real_end_date": "2024-12-31",
+      "published_date": "2024-12-28",
+      "volume_after": 35000
+    },
+    {
+      "transaction_name": "Bùi Phan Hoàng Anh",
+      "transaction_position": "Em",
+      "leader_name": "Bùi Vĩnh Hoàng Chương",
+      "leader_position": "Chủ tịch HĐQT",
+      "volume_before": 677854,
+      "plan_buy": 52146,
+      "plan_sell": 0,
+      "plan_begin_date": "2023-01-05",
+      "plan_end_date": "2023-01-18",
+      "real_buy": 52146,
+      "real_sell": 0,
+      "real_end_date": "2023-01-13",
+      "published_date": "2022-12-26",
+      "volume_after": 730000
+    },
+    {
+      "transaction_name": "Phan Thị Ngọc Ánh",
+      "transaction_position": "Phó Tổng GĐ",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 600000,
+      "plan_buy": 100000,
+      "plan_sell": 0,
+      "plan_begin_date": "2023-01-03",
+      "plan_end_date": "2023-01-18",
+      "real_buy": 100000,
+      "real_sell": 0,
+      "real_end_date": "2023-01-11",
+      "published_date": "2022-12-26",
+      "volume_after": 700000
+    },
+    {
+      "transaction_name": "Bùi Nguyên Khánh",
+      "transaction_position": "Chủ tịch HĐQT",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 780000,
+      "plan_buy": 50000,
+      "plan_sell": 0,
+      "plan_begin_date": "2022-12-26",
+      "plan_end_date": "2023-01-18",
+      "real_buy": 50000,
+      "real_sell": 0,
+      "real_end_date": "2023-01-12",
+      "published_date": "2022-12-20",
+      "volume_after": 830000
+    },
+    {
+      "transaction_name": "Lê Thanh Phương",
+      "transaction_position": "Thành viên HĐQT",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 113500,
+      "plan_buy": 50000,
+      "plan_sell": 0,
+      "plan_begin_date": "2018-04-16",
+      "plan_end_date": "2018-05-15",
+      "real_buy": 0,
+      "real_sell": 0,
+      "real_end_date": "",
+      "published_date": "2018-04-11",
+      "volume_after": 0
+    }
+  ]
+}

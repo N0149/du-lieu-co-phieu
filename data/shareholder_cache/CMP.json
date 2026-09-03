@@ -1,0 +1,22 @@
+{
+  "symbol": "CMP",
+  "updated": "2026-08-01T05:31:03.000Z",
+  "co_cau_so_huu": {
+    "CoDongSoHuu": [
+      {
+        "Code": "SBIC",
+        "Name": "Tổng Công ty Công nghiệp Tàu thủy Việt nam",
+        "Url": "<a href='/du-lieu/otc/SBIC-tong-cong-ty-cong-nghiep-tau-thuy-viet-nam.chn' title='Tổng Công ty Công nghiệp Tàu thủy Việt nam'>Tổng Công ty Công nghiệp Tàu thủy Việt nam</a>",
+        "AssetVolume": "32.044.424",
+        "AssetRate": "98,89",
+        "UpdatedDate": "31/12/2025"
+      }
+    ],
+    "NuocNgoai": 0.00000108006640133284,
+    "NhaNuoc": 0,
+    "Khac": 99.9999989199336
+  },
+  "cong_ty_con": [],
+  "cong_ty_lien_ket": [],
+  "giao_dich_noi_bo": []
+}

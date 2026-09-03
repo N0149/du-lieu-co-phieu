@@ -1,0 +1,239 @@
+{
+  "symbol": "HNI",
+  "updated": "2026-07-01T06:38:05.000Z",
+  "co_cau_so_huu": {
+    "CoDongSoHuu": [
+      {
+        "Code": "CEO_84912",
+        "Name": "Mai Văn Thiên",
+        "Url": "<a href='/du-lieu/ceo/CEO_84912/mai-van-thien.chn'>Mai Văn Thiên</a>",
+        "AssetVolume": "62.000",
+        "AssetRate": "0,26",
+        "UpdatedDate": "12/06/2026"
+      },
+      {
+        "Code": "LQ_96622",
+        "Name": "Hà Văn Nghĩa",
+        "Url": "Hà Văn Nghĩa ( của ông <a href='/du-lieu/ceo/CEO_53783/ha-van-long.chn'>Hà Văn Long</a>)",
+        "AssetVolume": "1.023.418",
+        "AssetRate": "4,3",
+        "UpdatedDate": "12/06/2026"
+      },
+      {
+        "Code": "CEO_53782",
+        "Name": "Kiều Ngọc Mạnh Hùng",
+        "Url": "<a href='/du-lieu/ceo/CEO_53782/kieu-ngoc-manh-hung.chn'>Kiều Ngọc Mạnh Hùng</a>",
+        "AssetVolume": "1.302.654",
+        "AssetRate": "5,48",
+        "UpdatedDate": "12/06/2026"
+      },
+      {
+        "Code": "CEO_53781",
+        "Name": "Hà Văn Duyệt",
+        "Url": "<a href='/du-lieu/ceo/CEO_53781/ha-van-duyet.chn'>Hà Văn Duyệt</a>",
+        "AssetVolume": "2.618.174",
+        "AssetRate": "11,01",
+        "UpdatedDate": "12/06/2026"
+      },
+      {
+        "Code": "CEO_53784",
+        "Name": "Dương Thanh Tùng",
+        "Url": "<a href='/du-lieu/ceo/CEO_53784/duong-thanh-tung.chn'>Dương Thanh Tùng</a>",
+        "AssetVolume": "720.000",
+        "AssetRate": "3,03",
+        "UpdatedDate": "12/06/2026"
+      },
+      {
+        "Code": "CEO_877954",
+        "Name": "Hà Hải Ninh",
+        "Url": "<a href='/du-lieu/ceo/CEO_877954/ha-hai-ninh.chn'>Hà Hải Ninh</a>",
+        "AssetVolume": "662.348",
+        "AssetRate": "2,79",
+        "UpdatedDate": "12/06/2026"
+      },
+      {
+        "Code": "CEO_53785",
+        "Name": "Nguyễn Thị Hằng Nga",
+        "Url": "<a href='/du-lieu/ceo/CEO_53785/nguyen-thi-hang-nga.chn'>Nguyễn Thị Hằng Nga</a>",
+        "AssetVolume": "595.604",
+        "AssetRate": "2,5",
+        "UpdatedDate": "12/06/2026"
+      },
+      {
+        "Code": "LQ_61723",
+        "Name": "Hà Hải Ninh",
+        "Url": "Hà Hải Ninh (Con của ông <a href='/du-lieu/ceo/CEO_53781/ha-van-duyet.chn'>Hà Văn Duyệt</a>)",
+        "AssetVolume": "492.648",
+        "AssetRate": "2,07",
+        "UpdatedDate": "12/06/2026"
+      },
+      {
+        "Code": "VGT",
+        "Name": "Tập đoàn Dệt may Việt Nam",
+        "Url": "<a href='/du-lieu/upcom/VGT-tap-doan-det-may-viet-nam.chn' title='Tập đoàn Dệt may Việt Nam'>Tập đoàn Dệt may Việt Nam</a>",
+        "AssetVolume": "5.501.666",
+        "AssetRate": "23,14",
+        "UpdatedDate": "12/06/2026"
+      },
+      {
+        "Code": "CEO_53786",
+        "Name": "Vũ Thị Ngát",
+        "Url": "<a href='/du-lieu/ceo/CEO_53786/vu-thi-ngat.chn'>Vũ Thị Ngát</a>",
+        "AssetVolume": "200.034",
+        "AssetRate": "0,84",
+        "UpdatedDate": "12/06/2026"
+      },
+      {
+        "Code": "CEO_53783",
+        "Name": "Hà Văn Long",
+        "Url": "<a href='/du-lieu/ceo/CEO_53783/ha-van-long.chn'>Hà Văn Long</a>",
+        "AssetVolume": "1.217.772",
+        "AssetRate": "5,12",
+        "UpdatedDate": "12/06/2026"
+      },
+      {
+        "Code": "CEO_81282",
+        "Name": "Phan Thanh Sơn",
+        "Url": "<a href='/du-lieu/ceo/CEO_81282/phan-thanh-son.chn'>Phan Thanh Sơn</a>",
+        "AssetVolume": "76.554",
+        "AssetRate": "0,32",
+        "UpdatedDate": "12/06/2026"
+      }
+    ],
+    "NuocNgoai": 0.72,
+    "NhaNuoc": 0,
+    "Khac": 99.28
+  },
+  "cong_ty_con": [],
+  "cong_ty_lien_ket": [],
+  "giao_dich_noi_bo": [
+    {
+      "transaction_name": "Dương Thanh Tùng",
+      "transaction_position": "Thành viên BKS",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 1000938,
+      "plan_buy": 0,
+      "plan_sell": 280938,
+      "plan_begin_date": "2025-10-28",
+      "plan_end_date": "2025-11-25",
+      "real_buy": 0,
+      "real_sell": 280938,
+      "real_end_date": "2025-11-11",
+      "published_date": "2025-10-29",
+      "volume_after": 720000
+    },
+    {
+      "transaction_name": "Hà Hải Ninh",
+      "transaction_position": "Giám đốc Điều hành",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 632348,
+      "plan_buy": 300000,
+      "plan_sell": 0,
+      "plan_begin_date": "2025-10-21",
+      "plan_end_date": "2025-11-19",
+      "real_buy": 300000,
+      "real_sell": 0,
+      "real_end_date": "2025-11-14",
+      "published_date": "2025-10-18",
+      "volume_after": 662348
+    },
+    {
+      "transaction_name": "Hà Hải Ninh",
+      "transaction_position": "Giám đốc Điều hành",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 517648,
+      "plan_buy": 200000,
+      "plan_sell": 0,
+      "plan_begin_date": "2025-03-04",
+      "plan_end_date": "2025-03-31",
+      "real_buy": 114700,
+      "real_sell": 0,
+      "real_end_date": "2025-03-24",
+      "published_date": "2025-02-28",
+      "volume_after": 632348
+    },
+    {
+      "transaction_name": "Hà Hải Ninh",
+      "transaction_position": "Giám đốc Điều hành",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 492648,
+      "plan_buy": 100000,
+      "plan_sell": 0,
+      "plan_begin_date": "2025-01-13",
+      "plan_end_date": "2025-02-07",
+      "real_buy": 25000,
+      "real_sell": 0,
+      "real_end_date": "2025-01-17",
+      "published_date": "2025-01-10",
+      "volume_after": 517648
+    },
+    {
+      "transaction_name": "Hà Hải Ninh",
+      "transaction_position": "Con",
+      "leader_name": "Hà Văn Duyệt",
+      "leader_position": "Tổng Giám đốc",
+      "volume_before": 242648,
+      "plan_buy": 250000,
+      "plan_sell": 0,
+      "plan_begin_date": "2023-10-26",
+      "plan_end_date": "2023-11-24",
+      "real_buy": 250000,
+      "real_sell": 0,
+      "real_end_date": "2023-11-06",
+      "published_date": "2023-11-13",
+      "volume_after": 492648
+    },
+    {
+      "transaction_name": "Nguyễn Thùy Dương",
+      "transaction_position": "Con dâu",
+      "leader_name": "Hà Văn Duyệt",
+      "leader_position": "Chủ tịch HĐQT",
+      "volume_before": 20800,
+      "plan_buy": 100000,
+      "plan_sell": 0,
+      "plan_begin_date": "2022-10-19",
+      "plan_end_date": "2022-11-17",
+      "real_buy": 100000,
+      "real_sell": 0,
+      "real_end_date": "2022-10-31",
+      "published_date": "2022-10-17",
+      "volume_after": 120800
+    },
+    {
+      "transaction_name": "Dương Thanh Tùng",
+      "transaction_position": "Thành viên BKS",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 1240938,
+      "plan_buy": 0,
+      "plan_sell": 240000,
+      "plan_begin_date": "2022-10-14",
+      "plan_end_date": "2022-11-11",
+      "real_buy": 0,
+      "real_sell": 240000,
+      "real_end_date": "2022-11-11",
+      "published_date": "2022-10-11",
+      "volume_after": 1000938
+    },
+    {
+      "transaction_name": "Mai Văn Thiên",
+      "transaction_position": "Thành viên HĐQT",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 0,
+      "plan_buy": 0,
+      "plan_sell": 0,
+      "plan_begin_date": "",
+      "plan_end_date": "",
+      "real_buy": 31000,
+      "real_sell": 0,
+      "real_end_date": "2021-03-16",
+      "published_date": "2021-03-27",
+      "volume_after": 31000
+    }
+  ]
+}

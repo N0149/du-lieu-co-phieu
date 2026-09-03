@@ -1,0 +1,207 @@
+{
+  "symbol": "BMG",
+  "updated": "2026-08-01T05:27:57.000Z",
+  "co_cau_so_huu": {
+    "CoDongSoHuu": [
+      {
+        "Code": "CEO_55900",
+        "Name": "Nguyễn Thị Thắng",
+        "Url": "<a href='/du-lieu/ceo/CEO_55900/nguyen-thi-thang.chn'>Nguyễn Thị Thắng</a>",
+        "AssetVolume": "237.082",
+        "AssetRate": "4,48",
+        "UpdatedDate": "11/05/2026"
+      },
+      {
+        "Code": "CEO_84051",
+        "Name": "Nguyễn Minh Tuấn",
+        "Url": "<a href='/du-lieu/ceo/CEO_84051/nguyen-minh-tuan.chn'>Nguyễn Minh Tuấn</a>",
+        "AssetVolume": "2.215",
+        "AssetRate": "0,04",
+        "UpdatedDate": "11/05/2026"
+      },
+      {
+        "Code": "CEO_55905",
+        "Name": "Ngô Thị Thân",
+        "Url": "<a href='/du-lieu/ceo/CEO_55905/ngo-thi-than.chn'>Ngô Thị Thân</a>",
+        "AssetVolume": "54.831",
+        "AssetRate": "1,04",
+        "UpdatedDate": "11/05/2026"
+      },
+      {
+        "Code": "CEO_55911",
+        "Name": "Nguyễn Thị Thu Nhung",
+        "Url": "<a href='/du-lieu/ceo/CEO_55911/nguyen-thi-thu-nhung.chn'>Nguyễn Thị Thu Nhung</a>",
+        "AssetVolume": "70.662",
+        "AssetRate": "1,34",
+        "UpdatedDate": "11/05/2026"
+      },
+      {
+        "Code": "CEO_55902",
+        "Name": "Võ Quốc Hào",
+        "Url": "<a href='/du-lieu/ceo/CEO_55902/vo-quoc-hao.chn'>Võ Quốc Hào</a>",
+        "AssetVolume": "150.024",
+        "AssetRate": "2,83",
+        "UpdatedDate": "11/05/2026"
+      },
+      {
+        "Code": "CEO_55904",
+        "Name": "Tu Yen Hsien",
+        "Url": "<a href='/du-lieu/ceo/CEO_55904/tu-yen-hsien.chn'>Tu Yen Hsien</a>",
+        "AssetVolume": "264.600",
+        "AssetRate": "5,0",
+        "UpdatedDate": "11/05/2026"
+      },
+      {
+        "Code": "VGT",
+        "Name": "Công ty cổ phần May Bình Minh",
+        "Url": "<a href='/du-lieu/upcom/VGT-tap-doan-det-may-viet-nam.chn' title='Tập đoàn Dệt may Việt Nam'>Tập đoàn Dệt may Việt Nam</a>",
+        "AssetVolume": "1.323.000",
+        "AssetRate": "25,0",
+        "UpdatedDate": "11/05/2026"
+      },
+      {
+        "Code": "CEO_55906",
+        "Name": "Nguyễn Anh Tuấn",
+        "Url": "<a href='/du-lieu/ceo/CEO_55906/nguyen-anh-tuan.chn'>Nguyễn Anh Tuấn</a>",
+        "AssetVolume": "116.747",
+        "AssetRate": "2,21",
+        "UpdatedDate": "11/05/2026"
+      },
+      {
+        "Code": "LQ_92036",
+        "Name": "Phạm Thị Nụ",
+        "Url": "Phạm Thị Nụ (Em vợ của ông <a href='/du-lieu/ceo/CEO_55903/nguyen-ngoc-hai.chn'>Nguyễn Ngọc Hải</a>)",
+        "AssetVolume": "155.350",
+        "AssetRate": "2,94",
+        "UpdatedDate": "11/05/2026"
+      },
+      {
+        "Code": "LQ_92035",
+        "Name": "Phạm Thị Hoa",
+        "Url": "Phạm Thị Hoa (Vợ của ông <a href='/du-lieu/ceo/CEO_55903/nguyen-ngoc-hai.chn'>Nguyễn Ngọc Hải</a>)",
+        "AssetVolume": "264.600",
+        "AssetRate": "5,0",
+        "UpdatedDate": "11/05/2026"
+      },
+      {
+        "Code": "CEO_55903",
+        "Name": "Nguyễn Ngọc Hải",
+        "Url": "<a href='/du-lieu/ceo/CEO_55903/nguyen-ngoc-hai.chn'>Nguyễn Ngọc Hải</a>",
+        "AssetVolume": "264.600",
+        "AssetRate": "5,0",
+        "UpdatedDate": "11/05/2026"
+      },
+      {
+        "Code": "CEO_56739",
+        "Name": "Vũ Đình Nghĩa",
+        "Url": "<a href='/du-lieu/ceo/CEO_56739/vu-dinh-nghia.chn'>Vũ Đình Nghĩa</a>",
+        "AssetVolume": "5.909",
+        "AssetRate": "0,11",
+        "UpdatedDate": "11/05/2026"
+      },
+      {
+        "Code": "CEO_73325",
+        "Name": "Trần Thị Đoan",
+        "Url": "<a href='/du-lieu/ceo/CEO_73325/tran-thi-doan.chn'>Trần Thị Đoan</a>",
+        "AssetVolume": "10.000",
+        "AssetRate": "0,19",
+        "UpdatedDate": "11/05/2026"
+      },
+      {
+        "Code": "CEO_55910",
+        "Name": "Hồ Thanh Lâm",
+        "Url": "<a href='/du-lieu/ceo/CEO_55910/ho-thanh-lam.chn'>Hồ Thanh Lâm</a>",
+        "AssetVolume": "16.817",
+        "AssetRate": "0,32",
+        "UpdatedDate": "11/05/2026"
+      }
+    ],
+    "NuocNgoai": 19.17,
+    "NhaNuoc": 0,
+    "Khac": 80.83
+  },
+  "cong_ty_con": [],
+  "cong_ty_lien_ket": [],
+  "giao_dich_noi_bo": [
+    {
+      "transaction_name": "Tu Yen Hsien",
+      "transaction_position": "Thành viên HĐQT",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 0,
+      "plan_buy": 0,
+      "plan_sell": 0,
+      "plan_begin_date": "",
+      "plan_end_date": "",
+      "real_buy": 264600,
+      "real_sell": 0,
+      "real_end_date": "2023-11-03",
+      "published_date": "2023-11-07",
+      "volume_after": 264600
+    },
+    {
+      "transaction_name": "Tu I Chao",
+      "transaction_position": "Cha ruột",
+      "leader_name": "Tu Yen Hsien",
+      "leader_position": "Thành viên HĐQT",
+      "volume_before": 264600,
+      "plan_buy": 0,
+      "plan_sell": 0,
+      "plan_begin_date": "",
+      "plan_end_date": "",
+      "real_buy": 0,
+      "real_sell": 264600,
+      "real_end_date": "2023-11-03",
+      "published_date": "2023-11-07",
+      "volume_after": 0
+    },
+    {
+      "transaction_name": "Nguyễn Minh Tuấn",
+      "transaction_position": "Người được ủy quyền công bố thông tin",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 34815,
+      "plan_buy": 0,
+      "plan_sell": 0,
+      "plan_begin_date": "",
+      "plan_end_date": "",
+      "real_buy": 0,
+      "real_sell": 32600,
+      "real_end_date": "2022-08-23",
+      "published_date": "2022-11-22",
+      "volume_after": 2215
+    },
+    {
+      "transaction_name": "Võ Quốc Hào",
+      "transaction_position": "Thành viên HĐQT",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 86024,
+      "plan_buy": 0,
+      "plan_sell": 0,
+      "plan_begin_date": "",
+      "plan_end_date": "",
+      "real_buy": 64000,
+      "real_sell": 0,
+      "real_end_date": "2022-08-23",
+      "published_date": "2022-11-22",
+      "volume_after": 150024
+    },
+    {
+      "transaction_name": "Trần Thị Đoan",
+      "transaction_position": "Kế toán trưởng",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 0,
+      "plan_buy": 0,
+      "plan_sell": 0,
+      "plan_begin_date": "",
+      "plan_end_date": "",
+      "real_buy": 10000,
+      "real_sell": 0,
+      "real_end_date": "2022-08-18",
+      "published_date": "2022-11-22",
+      "volume_after": 10000
+    }
+  ]
+}

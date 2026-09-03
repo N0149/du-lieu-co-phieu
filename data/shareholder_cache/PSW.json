@@ -1,0 +1,54 @@
+{
+  "symbol": "PSW",
+  "updated": "2026-09-01T07:41:55.000Z",
+  "co_cau_so_huu": {
+    "CoDongSoHuu": [
+      {
+        "Code": "CEO_38789",
+        "Name": "Lê Thanh Tùng",
+        "Url": "<a href='/du-lieu/ceo/CEO_38789/le-thanh-tung.chn'>Lê Thanh Tùng</a>",
+        "AssetVolume": "600",
+        "AssetRate": "0,0",
+        "UpdatedDate": "14/08/2026"
+      },
+      {
+        "Code": "CEO_36129",
+        "Name": "Mai Hồng Khánh",
+        "Url": "<a href='/du-lieu/ceo/CEO_36129/mai-hong-khanh.chn'>Mai Hồng Khánh</a>",
+        "AssetVolume": "1.000",
+        "AssetRate": "0,01",
+        "UpdatedDate": "14/08/2026"
+      },
+      {
+        "Code": "DPM",
+        "Name": "Công ty cổ phần Phân bón và Hóa chất Dầu khí Tây Nam Bộ",
+        "Url": "<a href='/du-lieu/hose/DPM-tong-cong-ty-phan-bon-va-hoa-chat-dau-khictcp.chn' title='Tổng Công ty Phân bón và Hóa chất Dầu khí-CTCP'>Tổng Công ty Phân bón và Hóa chất Dầu khí-CTCP</a>",
+        "AssetVolume": "12.750.000",
+        "AssetRate": "75,0",
+        "UpdatedDate": "14/08/2026"
+      },
+      {
+        "Code": "CEO_83912",
+        "Name": "Phạm Quý Hiển",
+        "Url": "<a href='/du-lieu/ceo/CEO_83912/pham-quy-hien.chn'>Phạm Quý Hiển</a>",
+        "AssetVolume": "11.000",
+        "AssetRate": "0,06",
+        "UpdatedDate": "14/08/2026"
+      },
+      {
+        "Code": "CEO_36132",
+        "Name": "Nguyễn Thành Công",
+        "Url": "<a href='/du-lieu/ceo/CEO_36132/nguyen-thanh-cong.chn'>Nguyễn Thành Công</a>",
+        "AssetVolume": "6.003",
+        "AssetRate": "0,04",
+        "UpdatedDate": "14/08/2026"
+      }
+    ],
+    "NuocNgoai": 0.36,
+    "NhaNuoc": 0,
+    "Khac": 99.64
+  },
+  "cong_ty_con": [],
+  "cong_ty_lien_ket": [],
+  "giao_dich_noi_bo": []
+}

@@ -1,0 +1,58 @@
+{
+  "symbol": "CCT",
+  "updated": "2026-08-01T05:29:52.000Z",
+  "co_cau_so_huu": {
+    "CoDongSoHuu": [
+      {
+        "Code": "CEO_84731",
+        "Name": "Nguyễn Đẳng Song",
+        "Url": "<a href='/du-lieu/ceo/CEO_84731/nguyen-dang-song.chn'>Nguyễn Đẳng Song</a>",
+        "AssetVolume": "5.411.200",
+        "AssetRate": "19,0",
+        "UpdatedDate": "31/12/2025"
+      },
+      {
+        "Code": "CEO_58548",
+        "Name": "Hoàng Việt",
+        "Url": "<a href='/du-lieu/ceo/CEO_58548/hoang-viet.chn'>Hoàng Việt</a>",
+        "AssetVolume": "5.411.200",
+        "AssetRate": "19,0",
+        "UpdatedDate": "31/12/2025"
+      },
+      {
+        "Code": "CEO_872102",
+        "Name": "Trần Tuấn Hải",
+        "Url": "<a href='/du-lieu/ceo/CEO_872102/tran-tuan-hai.chn'>Trần Tuấn Hải</a>",
+        "AssetVolume": "5.411.200",
+        "AssetRate": "19,0",
+        "UpdatedDate": "31/12/2025"
+      },
+      {
+        "Code": "CEO_871538",
+        "Name": "Nguyễn Mạnh Hà",
+        "Url": "<a href='/du-lieu/ceo/CEO_871538/nguyen-manh-ha.chn'>Nguyễn Mạnh Hà</a>",
+        "AssetVolume": "5.696.000",
+        "AssetRate": "20,0",
+        "UpdatedDate": "31/12/2025"
+      }
+    ],
+    "NuocNgoai": 0.01,
+    "NhaNuoc": 0,
+    "Khac": 99.99
+  },
+  "cong_ty_con": [],
+  "cong_ty_lien_ket": [
+    {
+      "Symbol": "CCT",
+      "CorpCode": "CORP_51113",
+      "Name": "Công ty TNHH Cảng Cần Thơ - Thanh Tuấn",
+      "TotalCapital": 20,
+      "SharedCapital": 10,
+      "OwnershipRate": 50,
+      "Note": "",
+      "Order": 1,
+      "TradeCenter": ""
+    }
+  ],
+  "giao_dich_noi_bo": []
+}

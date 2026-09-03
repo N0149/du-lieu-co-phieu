@@ -1,0 +1,62 @@
+{
+  "symbol": "MEL",
+  "updated": "2026-03-22T03:19:01.000Z",
+  "co_cau_so_huu": {
+    "CoDongSoHuu": [
+      {
+        "Code": "CEO_84826",
+        "Name": "Nguyễn Thế Giang",
+        "Url": "<a href='/du-lieu/ceo/CEO_84826/nguyen-the-giang.chn'>Nguyễn Thế Giang</a>",
+        "AssetVolume": "700",
+        "AssetRate": "0,0",
+        "UpdatedDate": "30/06/2024"
+      },
+      {
+        "Code": "CEO_66455",
+        "Name": "Nguyễn Mạnh Hải",
+        "Url": "<a href='/du-lieu/ceo/CEO_66455/nguyen-manh-hai.chn'>Nguyễn Mạnh Hải</a>",
+        "AssetVolume": "1.050",
+        "AssetRate": "0,01",
+        "UpdatedDate": "30/06/2024"
+      },
+      {
+        "Code": "CEO_53160",
+        "Name": "Lê Thị Hương Giang",
+        "Url": "<a href='/du-lieu/ceo/CEO_53160/le-thi-huong-giang.chn'>Lê Thị Hương Giang</a>",
+        "AssetVolume": "6.750.000",
+        "AssetRate": "45,0",
+        "UpdatedDate": "31/12/2023"
+      },
+      {
+        "Code": "CEO_53159",
+        "Name": "Phạm Quang",
+        "Url": "<a href='/du-lieu/ceo/CEO_53159/pham-quang.chn'>Phạm Quang</a>",
+        "AssetVolume": "818.000",
+        "AssetRate": "5,45",
+        "UpdatedDate": "30/06/2024"
+      },
+      {
+        "Code": "CEO_53158",
+        "Name": "Lê Hồng Minh",
+        "Url": "<a href='/du-lieu/ceo/CEO_53158/le-hong-minh.chn'>Lê Hồng Minh</a>",
+        "AssetVolume": "1.500.000",
+        "AssetRate": "10,0",
+        "UpdatedDate": "30/06/2024"
+      },
+      {
+        "Code": "CEO_53161",
+        "Name": "Chu Đức Khương",
+        "Url": "<a href='/du-lieu/ceo/CEO_53161/chu-duc-khuong.chn'>Chu Đức Khương</a>",
+        "AssetVolume": "1.575",
+        "AssetRate": "0,01",
+        "UpdatedDate": "30/06/2024"
+      }
+    ],
+    "NuocNgoai": 0.04,
+    "NhaNuoc": 0,
+    "Khac": 99.96
+  },
+  "cong_ty_con": [],
+  "cong_ty_lien_ket": [],
+  "giao_dich_noi_bo": []
+}

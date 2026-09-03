@@ -1,0 +1,34 @@
+{
+  "symbol": "FTI",
+  "updated": "2026-08-01T05:36:37.000Z",
+  "co_cau_so_huu": {
+    "CoDongSoHuu": [
+      {
+        "Code": "CEO_53482",
+        "Name": "Nguyễn Thị Kim Thanh",
+        "Url": "<a href='/du-lieu/ceo/CEO_53482/nguyen-thi-kim-thanh.chn'>Nguyễn Thị Kim Thanh</a>",
+        "AssetVolume": "5.630",
+        "AssetRate": "0,14",
+        "UpdatedDate": "30/06/2023"
+      }
+    ],
+    "NuocNgoai": 3943708.16,
+    "NhaNuoc": 0,
+    "Khac": -3943608.16
+  },
+  "cong_ty_con": [],
+  "cong_ty_lien_ket": [
+    {
+      "Symbol": "FTI",
+      "CorpCode": "CORP_51264",
+      "Name": "Công ty Liên doanh Vikotrade",
+      "TotalCapital": 0,
+      "SharedCapital": 0,
+      "OwnershipRate": 100,
+      "Note": "",
+      "Order": 1,
+      "TradeCenter": ""
+    }
+  ],
+  "giao_dich_noi_bo": []
+}

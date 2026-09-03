@@ -1,0 +1,215 @@
+{
+  "symbol": "GMH",
+  "updated": "2026-09-01T07:27:50.000Z",
+  "co_cau_so_huu": {
+    "CoDongSoHuu": [
+      {
+        "Code": "LQ_82088",
+        "Name": "Lê Thị Mỹ Trang",
+        "Url": "Lê Thị Mỹ Trang (Con của ông <a href='/du-lieu/ceo/CEO_871373/le-dinh-sung.chn'>Lê Đình Sung</a>)",
+        "AssetVolume": "295.700",
+        "AssetRate": "1,79",
+        "UpdatedDate": "12/05/2026"
+      },
+      {
+        "Code": "CEO_871375",
+        "Name": "Trần Cảnh Bình",
+        "Url": "<a href='/du-lieu/ceo/CEO_871375/tran-canh-binh.chn'>Trần Cảnh Bình</a>",
+        "AssetVolume": "224.919",
+        "AssetRate": "1,36",
+        "UpdatedDate": "12/05/2026"
+      },
+      {
+        "Code": "CEO_871377",
+        "Name": "Trương Đức Trí",
+        "Url": "<a href='/du-lieu/ceo/CEO_871377/truong-duc-tri.chn'>Trương Đức Trí</a>",
+        "AssetVolume": "150.000",
+        "AssetRate": "0,91",
+        "UpdatedDate": "12/05/2026"
+      },
+      {
+        "Code": "KLQ_81335",
+        "Name": "Trần Thiên Như An",
+        "Url": "Trần Thiên Như An",
+        "AssetVolume": "911.900",
+        "AssetRate": "5,53",
+        "UpdatedDate": "12/05/2026"
+      },
+      {
+        "Code": "CEO_871376",
+        "Name": "Nguyễn Văn Tú",
+        "Url": "<a href='/du-lieu/ceo/CEO_871376/nguyen-van-tu.chn'>Nguyễn Văn Tú</a>",
+        "AssetVolume": "711.768",
+        "AssetRate": "4,31",
+        "UpdatedDate": "12/05/2026"
+      },
+      {
+        "Code": "CEO_871373",
+        "Name": "Lê Đình Sung",
+        "Url": "<a href='/du-lieu/ceo/CEO_871373/le-dinh-sung.chn'>Lê Đình Sung</a>",
+        "AssetVolume": "2.501.185",
+        "AssetRate": "15,16",
+        "UpdatedDate": "12/05/2026"
+      },
+      {
+        "Code": "CEO_871844",
+        "Name": "Thái Vĩnh Đồng",
+        "Url": "<a href='/du-lieu/ceo/CEO_871844/thai-vinh-dong.chn'>Thái Vĩnh Đồng</a>",
+        "AssetVolume": "5.439",
+        "AssetRate": "0,03",
+        "UpdatedDate": "12/05/2026"
+      },
+      {
+        "Code": "CEO_875569",
+        "Name": "Phạm Minh Thạnh",
+        "Url": "<a href='/du-lieu/ceo/CEO_875569/pham-minh-thanh.chn'>Phạm Minh Thạnh</a>",
+        "AssetVolume": "76.869",
+        "AssetRate": "0,47",
+        "UpdatedDate": "12/05/2026"
+      },
+      {
+        "Code": "CEO_871378",
+        "Name": "Đặng Sĩ Tiếp",
+        "Url": "<a href='/du-lieu/ceo/CEO_871378/dang-si-tiep.chn'>Đặng Sĩ Tiếp</a>",
+        "AssetVolume": "487.000",
+        "AssetRate": "2,95",
+        "UpdatedDate": "12/05/2026"
+      },
+      {
+        "Code": "CEO_871842",
+        "Name": "Lê Đình Minh",
+        "Url": "<a href='/du-lieu/ceo/CEO_871842/le-dinh-minh.chn'>Lê Đình Minh</a>",
+        "AssetVolume": "830.836",
+        "AssetRate": "5,04",
+        "UpdatedDate": "12/05/2026"
+      },
+      {
+        "Code": "LQ_82090",
+        "Name": "Lê Thị Thảo Duyên",
+        "Url": "Lê Thị Thảo Duyên (Con dâu của ông <a href='/du-lieu/ceo/CEO_871373/le-dinh-sung.chn'>Lê Đình Sung</a>)",
+        "AssetVolume": "714.065",
+        "AssetRate": "4,33",
+        "UpdatedDate": "12/05/2026"
+      },
+      {
+        "Code": "CEO_871379",
+        "Name": "Nguyễn Bá Hải",
+        "Url": "<a href='/du-lieu/ceo/CEO_871379/nguyen-ba-hai.chn'>Nguyễn Bá Hải</a>",
+        "AssetVolume": "2.400",
+        "AssetRate": "0,01",
+        "UpdatedDate": "12/05/2026"
+      },
+      {
+        "Code": "CEO_871374",
+        "Name": "Phạm Thị Mỹ Liên",
+        "Url": "<a href='/du-lieu/ceo/CEO_871374/pham-thi-my-lien.chn'>Phạm Thị Mỹ Liên</a>",
+        "AssetVolume": "2.250.000",
+        "AssetRate": "13,64",
+        "UpdatedDate": "12/05/2026"
+      }
+    ],
+    "NuocNgoai": 0.84,
+    "NhaNuoc": 0,
+    "Khac": 99.16
+  },
+  "cong_ty_con": [],
+  "cong_ty_lien_ket": [],
+  "giao_dich_noi_bo": [
+    {
+      "transaction_name": "Phạm Minh Thạnh",
+      "transaction_position": "Thành viên Uỷ ban kiểm toán",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 76869,
+      "plan_buy": 224919,
+      "plan_sell": 0,
+      "plan_begin_date": "2023-06-02",
+      "plan_end_date": "2023-06-10",
+      "real_buy": 0,
+      "real_sell": 0,
+      "real_end_date": "",
+      "published_date": "2023-05-27",
+      "volume_after": 0
+    },
+    {
+      "transaction_name": "Trần Cảnh Bình",
+      "transaction_position": "Thành viên HĐQT",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 224919,
+      "plan_buy": 0,
+      "plan_sell": 224919,
+      "plan_begin_date": "2023-06-02",
+      "plan_end_date": "2023-06-10",
+      "real_buy": 0,
+      "real_sell": 0,
+      "real_end_date": "",
+      "published_date": "2023-05-27",
+      "volume_after": 0
+    },
+    {
+      "transaction_name": "Lê Đình Sung",
+      "transaction_position": "Chủ tịch HĐQT",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 2316185,
+      "plan_buy": 204959,
+      "plan_sell": 0,
+      "plan_begin_date": "2022-10-30",
+      "plan_end_date": "2022-11-10",
+      "real_buy": 185000,
+      "real_sell": 0,
+      "real_end_date": "2022-11-07",
+      "published_date": "2022-10-24",
+      "volume_after": 2501185
+    },
+    {
+      "transaction_name": "Trần Cảnh Bình",
+      "transaction_position": "Thành viên HĐQT",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 409919,
+      "plan_buy": 0,
+      "plan_sell": 204959,
+      "plan_begin_date": "2022-10-03",
+      "plan_end_date": "2022-11-10",
+      "real_buy": 0,
+      "real_sell": 185000,
+      "real_end_date": "2022-11-07",
+      "published_date": "2022-10-24",
+      "volume_after": 224909
+    },
+    {
+      "transaction_name": "Trần Thiên Như An",
+      "transaction_position": "",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 2880000,
+      "plan_buy": 0,
+      "plan_sell": 0,
+      "plan_begin_date": "",
+      "plan_end_date": "",
+      "real_buy": 0,
+      "real_sell": 1968100,
+      "real_end_date": "2022-03-21",
+      "published_date": "2022-03-23",
+      "volume_after": 911900
+    },
+    {
+      "transaction_name": "Phan Thị Thanh Hương",
+      "transaction_position": "Vợ",
+      "leader_name": "Đặng Sĩ Tiếp",
+      "leader_position": "Phó Tổng GĐ",
+      "volume_before": 0,
+      "plan_buy": 19800,
+      "plan_sell": 0,
+      "plan_begin_date": "2022-01-24",
+      "plan_end_date": "2022-01-24",
+      "real_buy": 19800,
+      "real_sell": 0,
+      "real_end_date": "2022-01-24",
+      "published_date": "2022-02-28",
+      "volume_after": 19800
+    }
+  ]
+}

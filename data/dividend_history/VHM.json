@@ -1,0 +1,85 @@
+{
+  "symbol": "VHM",
+  "events": [
+    {
+      "date": "2017-12-31",
+      "cashVnd": 4500,
+      "stockPct": null,
+      "texts": [
+        "Trả cổ tức bằng tiền mặt - Cả năm 2017 - 4,500 VND"
+      ]
+    },
+    {
+      "date": "2018-01-31",
+      "cashVnd": null,
+      "stockPct": null,
+      "texts": [
+        "Phát hành cổ phiếu - Phát hành để sáp nhập"
+      ]
+    },
+    {
+      "date": "2018-01-31",
+      "cashVnd": null,
+      "stockPct": null,
+      "texts": [
+        "Phát hành cổ phiếu - Phát hành riêng lẻ"
+      ]
+    },
+    {
+      "date": "2018-01-31",
+      "cashVnd": null,
+      "stockPct": 2,
+      "texts": [
+        "Phát hành cổ phiếu - Trả Cổ tức bằng Cổ phiếu tỉ lệ 200.0%"
+      ]
+    },
+    {
+      "date": "2018-02-28",
+      "cashVnd": null,
+      "stockPct": null,
+      "texts": [
+        "Phát hành cổ phiếu - Phát hành riêng lẻ"
+      ]
+    },
+    {
+      "date": "2018-10-08",
+      "cashVnd": null,
+      "stockPct": 0.25,
+      "texts": [
+        "Phát hành cổ phiếu - Trả Cổ tức bằng Cổ phiếu tỉ lệ 25.0%"
+      ]
+    },
+    {
+      "date": "2019-08-08",
+      "cashVnd": 1000,
+      "stockPct": null,
+      "texts": [
+        "Trả cổ tức bằng tiền mặt - Cả năm 2018 - 1,000 VND"
+      ]
+    },
+    {
+      "date": "2021-09-15",
+      "cashVnd": null,
+      "stockPct": 0.3,
+      "texts": [
+        "Phát hành cổ phiếu - Trả Cổ tức bằng Cổ phiếu tỉ lệ 30.0%"
+      ]
+    },
+    {
+      "date": "2021-09-15",
+      "cashVnd": 1500,
+      "stockPct": null,
+      "texts": [
+        "Trả cổ tức bằng tiền mặt - Cả năm 2020 - 1,500 VND"
+      ]
+    },
+    {
+      "date": "2022-05-31",
+      "cashVnd": 2000,
+      "stockPct": null,
+      "texts": [
+        "Trả cổ tức bằng tiền mặt - Cả năm 2021 - 2,000 VND"
+      ]
+    }
+  ]
+}

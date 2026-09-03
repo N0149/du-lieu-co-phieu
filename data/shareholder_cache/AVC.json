@@ -1,0 +1,207 @@
+{
+  "symbol": "AVC",
+  "updated": "2026-03-22T03:12:42.000Z",
+  "co_cau_so_huu": {
+    "CoDongSoHuu": [
+      {
+        "Code": "CEO_54003",
+        "Name": "Cao Huy Bảo",
+        "Url": "<a href='/du-lieu/ceo/CEO_54003/cao-huy-bao.chn'>Cao Huy Bảo</a>",
+        "AssetVolume": "21.218",
+        "AssetRate": "0,03",
+        "UpdatedDate": "29/12/2025"
+      },
+      {
+        "Code": "GE2",
+        "Name": "Tổng công ty Phát điện 2 - Công ty cổ phần",
+        "Url": "<a href='/du-lieu/upcom/GE2-tong-cong-ty-phat-dien-2-cong-ty-co-phan.chn' title='Tổng công ty Phát điện 2 - Công ty cổ phần'>Tổng công ty Phát điện 2 - Công ty cổ phần</a>",
+        "AssetVolume": "65.630.260",
+        "AssetRate": "87,45",
+        "UpdatedDate": "29/12/2025"
+      },
+      {
+        "Code": "LQ_964323",
+        "Name": "Đặng Thị Lan Ngọc",
+        "Url": "Đặng Thị Lan Ngọc (Con của ông <a href='/du-lieu/ceo/CEO_59351/dang-thanh-binh.chn'>Đặng Thanh Bình</a>)",
+        "AssetVolume": "1.000.000",
+        "AssetRate": "1,33",
+        "UpdatedDate": "29/12/2025"
+      },
+      {
+        "Code": "CEO_59351",
+        "Name": "Đặng Thanh Bình",
+        "Url": "<a href='/du-lieu/ceo/CEO_59351/dang-thanh-binh.chn'>Đặng Thanh Bình</a>",
+        "AssetVolume": "3.546.134",
+        "AssetRate": "4,72",
+        "UpdatedDate": "29/12/2025"
+      },
+      {
+        "Code": "LQ_964324",
+        "Name": "Đặng Ngọc Hoàng",
+        "Url": "Đặng Ngọc Hoàng (Con của ông <a href='/du-lieu/ceo/CEO_59351/dang-thanh-binh.chn'>Đặng Thanh Bình</a>)",
+        "AssetVolume": "1.000.000",
+        "AssetRate": "1,33",
+        "UpdatedDate": "29/12/2025"
+      },
+      {
+        "Code": "CEO_73327",
+        "Name": "Dương Thị Hồng Vân",
+        "Url": "<a href='/du-lieu/ceo/CEO_73327/duong-thi-hong-van.chn'>Dương Thị Hồng Vân</a>",
+        "AssetVolume": "8.354",
+        "AssetRate": "0,01",
+        "UpdatedDate": "29/12/2025"
+      },
+      {
+        "Code": "CEO_54008",
+        "Name": "Ngô Xuân Thế",
+        "Url": "<a href='/du-lieu/ceo/CEO_54008/ngo-xuan-the.chn'>Ngô Xuân Thế</a>",
+        "AssetVolume": "41.268",
+        "AssetRate": "0,05",
+        "UpdatedDate": "29/12/2025"
+      },
+      {
+        "Code": "CEO_54005",
+        "Name": "Nguyễn Thiện",
+        "Url": "<a href='/du-lieu/ceo/CEO_54005/nguyen-thien.chn'>Nguyễn Thiện</a>",
+        "AssetVolume": "2.400",
+        "AssetRate": "0,0",
+        "UpdatedDate": "29/12/2025"
+      }
+    ],
+    "NuocNgoai": 48.99999999999999,
+    "NhaNuoc": 0,
+    "Khac": 51.00000000000001
+  },
+  "cong_ty_con": [],
+  "cong_ty_lien_ket": [],
+  "giao_dich_noi_bo": [
+    {
+      "transaction_name": "Đặng Ngọc Hoàng",
+      "transaction_position": "Con",
+      "leader_name": "Đặng Thanh Bình",
+      "leader_position": "Thành viên HĐQT",
+      "volume_before": 0,
+      "plan_buy": 1000000,
+      "plan_sell": 0,
+      "plan_begin_date": "2025-04-17",
+      "plan_end_date": "2025-05-15",
+      "real_buy": 1000000,
+      "real_sell": 0,
+      "real_end_date": "2025-04-22",
+      "published_date": "2025-04-16",
+      "volume_after": 1000000
+    },
+    {
+      "transaction_name": "Đặng Thanh Bình",
+      "transaction_position": "Thành viên HĐQT",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 5546134,
+      "plan_buy": 0,
+      "plan_sell": 2000000,
+      "plan_begin_date": "2025-04-17",
+      "plan_end_date": "2025-05-15",
+      "real_buy": 0,
+      "real_sell": 2000000,
+      "real_end_date": "2025-04-22",
+      "published_date": "2025-04-16",
+      "volume_after": 3546134
+    },
+    {
+      "transaction_name": "Đặng Thị Lan Ngọc",
+      "transaction_position": "Con",
+      "leader_name": "Đặng Thanh Bình",
+      "leader_position": "Thành viên HĐQT",
+      "volume_before": 0,
+      "plan_buy": 1000000,
+      "plan_sell": 0,
+      "plan_begin_date": "2025-04-17",
+      "plan_end_date": "2025-05-15",
+      "real_buy": 1000000,
+      "real_sell": 0,
+      "real_end_date": "2025-04-22",
+      "published_date": "2025-04-16",
+      "volume_after": 1000000
+    },
+    {
+      "transaction_name": "Nguyễn Thiện",
+      "transaction_position": "Trưởng BKS",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 0,
+      "plan_buy": 10000,
+      "plan_sell": 0,
+      "plan_begin_date": "2025-01-15",
+      "plan_end_date": "2025-01-24",
+      "real_buy": 2400,
+      "real_sell": 0,
+      "real_end_date": "2025-01-24",
+      "published_date": "2025-01-14",
+      "volume_after": 2400
+    },
+    {
+      "transaction_name": "Nguyễn Thiện",
+      "transaction_position": "Trưởng BKS",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 18000,
+      "plan_buy": 0,
+      "plan_sell": 18000,
+      "plan_begin_date": "2023-10-18",
+      "plan_end_date": "2023-11-10",
+      "real_buy": 0,
+      "real_sell": 18000,
+      "real_end_date": "2023-11-10",
+      "published_date": "2023-11-15",
+      "volume_after": 0
+    },
+    {
+      "transaction_name": "Nguyễn Thiện",
+      "transaction_position": "Trưởng BKS",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 12000,
+      "plan_buy": 20000,
+      "plan_sell": 0,
+      "plan_begin_date": "2022-09-05",
+      "plan_end_date": "2022-10-04",
+      "real_buy": 6000,
+      "real_sell": 0,
+      "real_end_date": "2022-10-04",
+      "published_date": "2022-10-06",
+      "volume_after": 18000
+    },
+    {
+      "transaction_name": "Nguyễn Thiện",
+      "transaction_position": "Trưởng BKS",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 0,
+      "plan_buy": 20000,
+      "plan_sell": 0,
+      "plan_begin_date": "2022-07-06",
+      "plan_end_date": "2022-08-03",
+      "real_buy": 12000,
+      "real_sell": 0,
+      "real_end_date": "2022-08-03",
+      "published_date": "2022-07-05",
+      "volume_after": 12000
+    },
+    {
+      "transaction_name": "Nguyễn Thiện",
+      "transaction_position": "Trưởng BKS",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 20000,
+      "plan_buy": 0,
+      "plan_sell": 20000,
+      "plan_begin_date": "2019-03-12",
+      "plan_end_date": "2019-04-10",
+      "real_buy": 0,
+      "real_sell": 20000,
+      "real_end_date": "2019-04-02",
+      "published_date": "2019-03-11",
+      "volume_after": 0
+    }
+  ]
+}

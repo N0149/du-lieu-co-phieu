@@ -1,0 +1,54 @@
+{
+  "symbol": "DP2",
+  "updated": "2026-06-01T07:03:41.000Z",
+  "co_cau_so_huu": {
+    "CoDongSoHuu": [
+      {
+        "Code": "CEO_872965",
+        "Name": "Lương Tấn Hoàn",
+        "Url": "<a href='/du-lieu/ceo/CEO_872965/luong-tan-hoan.chn'>Lương Tấn Hoàn</a>",
+        "AssetVolume": "1.875",
+        "AssetRate": "0,01",
+        "UpdatedDate": "31/12/2022"
+      },
+      {
+        "Code": "CEO_04990",
+        "Name": "Lê Tiến Dũng",
+        "Url": "<a href='/du-lieu/ceo/CEO_04990/le-tien-dung.chn'>Lê Tiến Dũng</a>",
+        "AssetVolume": "32.345",
+        "AssetRate": "0,16",
+        "UpdatedDate": "31/12/2022"
+      },
+      {
+        "Code": "CORP_51051",
+        "Name": "CTCP Đầu tư Tài chính Đất Việt",
+        "Url": "CTCP Đầu tư Tài chính Đất Việt",
+        "AssetVolume": "2.474.800",
+        "AssetRate": "12,37",
+        "UpdatedDate": "31/12/2021"
+      },
+      {
+        "Code": "CEO_873668",
+        "Name": "Vũ Thị Thu Hằng",
+        "Url": "<a href='/du-lieu/ceo/CEO_873668/vu-thi-thu-hang.chn'>Vũ Thị Thu Hằng</a>",
+        "AssetVolume": "1.000",
+        "AssetRate": "0,01",
+        "UpdatedDate": "31/12/2022"
+      },
+      {
+        "Code": "DVN",
+        "Name": "Công ty Cổ phần Dược phẩm Trung ương 2",
+        "Url": "<a href='/du-lieu/upcom/DVN-tong-cong-ty-duoc-viet-nam-ctcp.chn' title='Tổng Công ty Dược Việt Nam - CTCP'>Tổng Công ty Dược Việt Nam - CTCP</a>",
+        "AssetVolume": "1.275.000",
+        "AssetRate": "6,38",
+        "UpdatedDate": "30/06/2024"
+      }
+    ],
+    "NuocNgoai": 20000000,
+    "NhaNuoc": 0,
+    "Khac": -19999900
+  },
+  "cong_ty_con": [],
+  "cong_ty_lien_ket": [],
+  "giao_dich_noi_bo": []
+}

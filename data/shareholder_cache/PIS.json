@@ -1,0 +1,225 @@
+{
+  "symbol": "PIS",
+  "updated": "2026-03-22T03:20:25.000Z",
+  "co_cau_so_huu": {
+    "CoDongSoHuu": [
+      {
+        "Code": "CEO_99320",
+        "Name": "Lâm Ánh Vy",
+        "Url": "<a href='/du-lieu/ceo/CEO_99320/lam-anh-vy.chn'>Lâm Ánh Vy</a>",
+        "AssetVolume": "1.265.000",
+        "AssetRate": "4,6",
+        "UpdatedDate": "05/09/2025"
+      },
+      {
+        "Code": "CEO_84442",
+        "Name": "Nguyễn Hoàng Lam",
+        "Url": "<a href='/du-lieu/ceo/CEO_84442/nguyen-hoang-lam.chn'>Nguyễn Hoàng Lam</a>",
+        "AssetVolume": "6.700",
+        "AssetRate": "0,02",
+        "UpdatedDate": "05/09/2025"
+      },
+      {
+        "Code": "CORP_39179",
+        "Name": "Công ty TNHH Thương mại Ánh Vy",
+        "Url": "Công ty TNHH Thương mại Ánh Vy",
+        "AssetVolume": "24.097.000",
+        "AssetRate": "87,63",
+        "UpdatedDate": "05/09/2025"
+      },
+      {
+        "Code": "CEO_876757",
+        "Name": "Lâm Duy Việt",
+        "Url": "<a href='/du-lieu/ceo/CEO_876757/lam-duy-viet.chn'>Lâm Duy Việt</a>",
+        "AssetVolume": "1.265.000",
+        "AssetRate": "4,6",
+        "UpdatedDate": "05/09/2025"
+      },
+      {
+        "Code": "CEO_38126",
+        "Name": "Nguyễn Tấn Bảo Toàn",
+        "Url": "<a href='/du-lieu/ceo/CEO_38126/nguyen-tan-bao-toan.chn'>Nguyễn Tấn Bảo Toàn</a>",
+        "AssetVolume": "5.000",
+        "AssetRate": "0,02",
+        "UpdatedDate": "05/09/2025"
+      }
+    ],
+    "NuocNgoai": 49,
+    "NhaNuoc": 0,
+    "Khac": 51
+  },
+  "cong_ty_con": [
+    {
+      "Symbol": "PIS",
+      "CorpCode": "CORP_39180",
+      "Name": "Công ty TNHH MTV Truyền hình Cáp Quy Nhơn",
+      "TotalCapital": 10,
+      "SharedCapital": 10,
+      "OwnershipRate": 100,
+      "Note": "",
+      "Order": 1,
+      "TradeCenter": ""
+    },
+    {
+      "Symbol": "PIS",
+      "CorpCode": "CORP_00418",
+      "Name": "CTCP Dịch vụ phát triển hạ tầng PBC",
+      "TotalCapital": 15,
+      "SharedCapital": 10.62,
+      "OwnershipRate": 70.83,
+      "Note": "",
+      "Order": 2,
+      "TradeCenter": ""
+    }
+  ],
+  "cong_ty_lien_ket": [
+    {
+      "Symbol": "PIS",
+      "CorpCode": "CORP_39181",
+      "Name": "CTCP Kinh doanh Công Nông nghiệp Bình Định ",
+      "TotalCapital": 150,
+      "SharedCapital": 75,
+      "OwnershipRate": 50,
+      "Note": "",
+      "Order": 3,
+      "TradeCenter": ""
+    },
+    {
+      "Symbol": "PIS",
+      "CorpCode": "CORP_39182",
+      "Name": "Công ty TNHH Nguyên liệu Giấy Quy Nhơn",
+      "TotalCapital": 9.5,
+      "SharedCapital": 4.28,
+      "OwnershipRate": 45,
+      "Note": "",
+      "Order": 4,
+      "TradeCenter": ""
+    },
+    {
+      "Symbol": "PIS",
+      "CorpCode": "CORP_39183",
+      "Name": "CTCP Chế biến gỗ nội thất PISICO ",
+      "TotalCapital": 15,
+      "SharedCapital": 6.002,
+      "OwnershipRate": 40.01,
+      "Note": "",
+      "Order": 5,
+      "TradeCenter": ""
+    },
+    {
+      "Symbol": "PIS",
+      "CorpCode": "CORP_39184",
+      "Name": "CTCP PISICO Hà Thanh",
+      "TotalCapital": 15,
+      "SharedCapital": 6,
+      "OwnershipRate": 40,
+      "Note": "",
+      "Order": 6,
+      "TradeCenter": ""
+    },
+    {
+      "Symbol": "PIS",
+      "CorpCode": "CORP_39185",
+      "Name": "CTCP Chế biến gỗ PISICO Đồng An",
+      "TotalCapital": 17.6,
+      "SharedCapital": 5.51,
+      "OwnershipRate": 31.28,
+      "Note": "",
+      "Order": 7,
+      "TradeCenter": ""
+    },
+    {
+      "Symbol": "PIS",
+      "CorpCode": "CORP_99844",
+      "Name": "CTCP Lâm nghiệp Phú Yên",
+      "TotalCapital": 12,
+      "SharedCapital": 3.6,
+      "OwnershipRate": 30,
+      "Note": "",
+      "Order": 8,
+      "TradeCenter": ""
+    }
+  ],
+  "giao_dich_noi_bo": [
+    {
+      "transaction_name": "Lâm Ánh Vy",
+      "transaction_position": "Con",
+      "leader_name": "Đồng Thị Ánh",
+      "leader_position": "Phó Chủ tịch HĐQT",
+      "volume_before": 0,
+      "plan_buy": 0,
+      "plan_sell": 0,
+      "plan_begin_date": "",
+      "plan_end_date": "",
+      "real_buy": 1265000,
+      "real_sell": 0,
+      "real_end_date": "2025-04-18",
+      "published_date": "2025-04-25",
+      "volume_after": 1265000
+    },
+    {
+      "transaction_name": "Công ty TNHH Thương mại Ánh Vy",
+      "transaction_position": "",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 26627000,
+      "plan_buy": 0,
+      "plan_sell": 0,
+      "plan_begin_date": "",
+      "plan_end_date": "",
+      "real_buy": 0,
+      "real_sell": 2530000,
+      "real_end_date": "2025-04-18",
+      "published_date": "2025-04-25",
+      "volume_after": 24097000
+    },
+    {
+      "transaction_name": "Lâm Duy Việt",
+      "transaction_position": "Phó Tổng GĐ",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 0,
+      "plan_buy": 0,
+      "plan_sell": 0,
+      "plan_begin_date": "",
+      "plan_end_date": "",
+      "real_buy": 1265000,
+      "real_sell": 0,
+      "real_end_date": "2025-04-16",
+      "published_date": "2025-04-24",
+      "volume_after": 1265000
+    },
+    {
+      "transaction_name": "Công ty TNHH Thương mại Ánh Vy",
+      "transaction_position": "",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 2750000,
+      "plan_buy": 23877000,
+      "plan_sell": 0,
+      "plan_begin_date": "2017-09-29",
+      "plan_end_date": "2017-10-10",
+      "real_buy": 23877000,
+      "real_sell": 0,
+      "real_end_date": "2017-10-03",
+      "published_date": "2017-09-28",
+      "volume_after": 26627000
+    },
+    {
+      "transaction_name": "Quỹ Đầu tư Phát triển tỉnh Bình Định",
+      "transaction_position": "",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 23877000,
+      "plan_buy": 0,
+      "plan_sell": 23877000,
+      "plan_begin_date": "2017-09-28",
+      "plan_end_date": "2017-10-10",
+      "real_buy": 0,
+      "real_sell": 23877000,
+      "real_end_date": "2017-10-03",
+      "published_date": "2017-09-27",
+      "volume_after": 0
+    }
+  ]
+}

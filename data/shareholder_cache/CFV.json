@@ -1,0 +1,39 @@
+{
+  "symbol": "CFV",
+  "updated": "2026-03-22T03:13:51.000Z",
+  "co_cau_so_huu": {
+    "CoDongSoHuu": [
+      {
+        "Code": "CEO_877198",
+        "Name": "Phạm Thị Linh",
+        "Url": "<a href='/du-lieu/ceo/CEO_877198/pham-thi-linh.chn'>Phạm Thị Linh</a>",
+        "AssetVolume": "6.749.900",
+        "AssetRate": "53,36",
+        "UpdatedDate": "18/07/2025"
+      }
+    ],
+    "NuocNgoai": 63.41075110691965,
+    "NhaNuoc": 0,
+    "Khac": 36.58924889308035
+  },
+  "cong_ty_con": [],
+  "cong_ty_lien_ket": [],
+  "giao_dich_noi_bo": [
+    {
+      "transaction_name": "Phạm Thị Linh",
+      "transaction_position": "Thành viên HĐQT",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 7761900,
+      "plan_buy": 0,
+      "plan_sell": 1012000,
+      "plan_begin_date": "2025-06-27",
+      "plan_end_date": "2025-07-25",
+      "real_buy": 0,
+      "real_sell": 1012000,
+      "real_end_date": "2025-07-18",
+      "published_date": "2025-06-25",
+      "volume_after": 6749900
+    }
+  ]
+}

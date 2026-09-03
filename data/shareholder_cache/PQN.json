@@ -1,0 +1,46 @@
+{
+  "symbol": "PQN",
+  "updated": "2026-05-01T06:07:34.000Z",
+  "co_cau_so_huu": {
+    "CoDongSoHuu": [
+      {
+        "Code": "CEO_98175",
+        "Name": "Dương Hùng Văn",
+        "Url": "<a href='/du-lieu/ceo/CEO_98175/duong-hung-van.chn'>Dương Hùng Văn</a>",
+        "AssetVolume": "50.000",
+        "AssetRate": "0,17",
+        "UpdatedDate": "31/12/2021"
+      },
+      {
+        "Code": "CEO_07885",
+        "Name": "Nguyễn Trần Toàn",
+        "Url": "<a href='/du-lieu/ceo/CEO_07885/nguyen-tran-toan.chn'>Nguyễn Trần Toàn</a>",
+        "AssetVolume": "5.000",
+        "AssetRate": "0,02",
+        "UpdatedDate": "30/06/2024"
+      },
+      {
+        "Code": "CEO_57218",
+        "Name": "Phạm Văn Hùng",
+        "Url": "<a href='/du-lieu/ceo/CEO_57218/pham-van-hung.chn'>Phạm Văn Hùng</a>",
+        "AssetVolume": "20.000",
+        "AssetRate": "0,07",
+        "UpdatedDate": "31/12/2021"
+      },
+      {
+        "Code": "PVS",
+        "Name": "Công ty cổ phần Dịch vụ Dầu khí Quảng Ngãi PTSC",
+        "Url": "<a href='/du-lieu/hastc/PVS-tong-cong-ty-co-phan-dich-vu-ky-thuat-dau-khi-viet-nam.chn' title='Tổng Công ty Cổ phần Dịch vụ Kỹ thuật Dầu khí Việt Nam'>Tổng Công ty Cổ phần Dịch vụ Kỹ thuật Dầu khí Việt Nam</a>",
+        "AssetVolume": "28.558.100",
+        "AssetRate": "95,19",
+        "UpdatedDate": "31/12/2021"
+      }
+    ],
+    "NuocNgoai": 30000000,
+    "NhaNuoc": 0,
+    "Khac": -29999900
+  },
+  "cong_ty_con": [],
+  "cong_ty_lien_ket": [],
+  "giao_dich_noi_bo": []
+}

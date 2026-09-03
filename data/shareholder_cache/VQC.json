@@ -1,0 +1,54 @@
+{
+  "symbol": "VQC",
+  "updated": "2026-06-01T07:36:19.000Z",
+  "co_cau_so_huu": {
+    "CoDongSoHuu": [
+      {
+        "Code": "VINACOMIN",
+        "Name": "Tập đoàn Công nghiệp Than - Khoáng sản Việt Nam",
+        "Url": "<a href='/du-lieu/otc/VINACOMIN-tap-doan-cong-nghiep-than-khoang-san-viet-nam.chn' title='Tập đoàn Công nghiệp Than - Khoáng sản Việt Nam'>Tập đoàn Công nghiệp Than - Khoáng sản Việt Nam</a>",
+        "AssetVolume": "1.836.000",
+        "AssetRate": "51,01",
+        "UpdatedDate": "14/05/2026"
+      },
+      {
+        "Code": "CEO_55099",
+        "Name": "Phạm Thị Thu Thủy",
+        "Url": "<a href='/du-lieu/ceo/CEO_55099/pham-thi-thu-thuy.chn'>Phạm Thị Thu Thủy</a>",
+        "AssetVolume": "11.991",
+        "AssetRate": "0,33",
+        "UpdatedDate": "14/05/2026"
+      },
+      {
+        "Code": "CEO_38984",
+        "Name": "Nguyễn Thị Thanh Thảo",
+        "Url": "<a href='/du-lieu/ceo/CEO_38984/nguyen-thi-thanh-thao.chn'>Nguyễn Thị Thanh Thảo</a>",
+        "AssetVolume": "6.516",
+        "AssetRate": "0,18",
+        "UpdatedDate": "14/05/2026"
+      },
+      {
+        "Code": "CEO_47591",
+        "Name": "Nguyễn Quang Trung",
+        "Url": "<a href='/du-lieu/ceo/CEO_47591/nguyen-quang-trung.chn'>Nguyễn Quang Trung</a>",
+        "AssetVolume": "6.116",
+        "AssetRate": "0,17",
+        "UpdatedDate": "14/05/2026"
+      },
+      {
+        "Code": "CEO_871307",
+        "Name": "Nguyễn Văn Thanh",
+        "Url": "<a href='/du-lieu/ceo/CEO_871307/nguyen-van-thanh.chn'>Nguyễn Văn Thanh</a>",
+        "AssetVolume": "3.567",
+        "AssetRate": "0,1",
+        "UpdatedDate": "14/05/2026"
+      }
+    ],
+    "NuocNgoai": 3.88,
+    "NhaNuoc": 0,
+    "Khac": 96.12
+  },
+  "cong_ty_con": [],
+  "cong_ty_lien_ket": [],
+  "giao_dich_noi_bo": []
+}

@@ -1,0 +1,71 @@
+{
+  "symbol": "AIG",
+  "updated": "2026-09-01T07:15:27.000Z",
+  "co_cau_so_huu": {
+    "CoDongSoHuu": [
+      {
+        "Code": "CEO_878386",
+        "Name": "Nguyễn Bá Lương",
+        "Url": "<a href='/du-lieu/ceo/CEO_878386/nguyen-ba-luong.chn'>Nguyễn Bá Lương</a>",
+        "AssetVolume": "2.099.512",
+        "AssetRate": "1,07",
+        "UpdatedDate": "04/08/2026"
+      },
+      {
+        "Code": "CEO_878393",
+        "Name": "Nguyễn Bảo Tùng",
+        "Url": "<a href='/du-lieu/ceo/CEO_878393/nguyen-bao-tung.chn'>Nguyễn Bảo Tùng</a>",
+        "AssetVolume": "16.641.892",
+        "AssetRate": "8,48",
+        "UpdatedDate": "04/08/2026"
+      },
+      {
+        "Code": "CEO_878384",
+        "Name": "Nguyễn Thiên Trúc",
+        "Url": "<a href='/du-lieu/ceo/CEO_878384/nguyen-thien-truc.chn'>Nguyễn Thiên Trúc</a>",
+        "AssetVolume": "59.478.394",
+        "AssetRate": "30,32",
+        "UpdatedDate": "04/08/2026"
+      }
+    ],
+    "NuocNgoai": 45.07,
+    "NhaNuoc": 0,
+    "Khac": 54.93
+  },
+  "cong_ty_con": [],
+  "cong_ty_lien_ket": [],
+  "giao_dich_noi_bo": [
+    {
+      "transaction_name": "Lê Văn Mác",
+      "transaction_position": "",
+      "leader_name": "Lê Minh Ngọc",
+      "leader_position": "",
+      "volume_before": 65392,
+      "plan_buy": 0,
+      "plan_sell": 0,
+      "plan_begin_date": "",
+      "plan_end_date": "",
+      "real_buy": 50000,
+      "real_sell": 0,
+      "real_end_date": "2025-01-21",
+      "published_date": "2025-02-04",
+      "volume_after": 115392
+    },
+    {
+      "transaction_name": "Nguyễn Văn Minh",
+      "transaction_position": "Anh rể",
+      "leader_name": "Nguyễn Thiên Trúc",
+      "leader_position": "Chủ tịch HĐQT",
+      "volume_before": 155000,
+      "plan_buy": 0,
+      "plan_sell": 55000,
+      "plan_begin_date": "2024-11-21",
+      "plan_end_date": "2024-12-18",
+      "real_buy": 0,
+      "real_sell": 50000,
+      "real_end_date": "2024-12-18",
+      "published_date": "2024-11-20",
+      "volume_after": 100000
+    }
+  ]
+}

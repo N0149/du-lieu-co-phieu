@@ -1,0 +1,111 @@
+{
+  "symbol": "TTS",
+  "updated": "2026-08-01T05:59:36.000Z",
+  "co_cau_so_huu": {
+    "CoDongSoHuu": [
+      {
+        "Code": "CEO_52476",
+        "Name": "Phạm Thế Dũng",
+        "Url": "<a href='/du-lieu/ceo/CEO_52476/pham-the-dung.chn'>Phạm Thế Dũng</a>",
+        "AssetVolume": "5.000",
+        "AssetRate": "0,01",
+        "UpdatedDate": "31/12/2018"
+      },
+      {
+        "Code": "CEO_52481",
+        "Name": "Phan Đình Hạnh",
+        "Url": "<a href='/du-lieu/ceo/CEO_52481/phan-dinh-hanh.chn'>Phan Đình Hạnh</a>",
+        "AssetVolume": "14.000",
+        "AssetRate": "0,03",
+        "UpdatedDate": "31/12/2018"
+      },
+      {
+        "Code": "TIS",
+        "Name": "Công ty Cổ phần Cán thép Thái Trung",
+        "Url": "<a href='/du-lieu/upcom/TIS-cong-ty-co-phan-gang-thep-thai-nguyen.chn' title='Công ty cổ phần Gang thép Thái Nguyên'>Công ty cổ phần Gang thép Thái Nguyên</a>",
+        "AssetVolume": "47.587.653",
+        "AssetRate": "93,68",
+        "UpdatedDate": "31/12/2018"
+      },
+      {
+        "Code": "CEO_52479",
+        "Name": "Nguyễn Thanh Sơn",
+        "Url": "<a href='/du-lieu/ceo/CEO_52479/nguyen-thanh-son.chn'>Nguyễn Thanh Sơn</a>",
+        "AssetVolume": "100",
+        "AssetRate": "0,0",
+        "UpdatedDate": "25/08/2016"
+      },
+      {
+        "Code": "CEO_52478",
+        "Name": "Đỗ Thủy Hường",
+        "Url": "<a href='/du-lieu/ceo/CEO_52478/do-thuy-huong.chn'>Đỗ Thủy Hường</a>",
+        "AssetVolume": "3.000",
+        "AssetRate": "0,01",
+        "UpdatedDate": "25/08/2016"
+      },
+      {
+        "Code": "CORP_51050",
+        "Name": "Công ty TNHH Thương mại và Xây dựng Hà Nam",
+        "Url": "Công ty TNHH Thương mại và Xây dựng Hà Nam",
+        "AssetVolume": "2.420.854",
+        "AssetRate": "4,77",
+        "UpdatedDate": "31/12/2018"
+      }
+    ],
+    "NuocNgoai": 0.01,
+    "NhaNuoc": 0,
+    "Khac": 99.99
+  },
+  "cong_ty_con": [],
+  "cong_ty_lien_ket": [],
+  "giao_dich_noi_bo": [
+    {
+      "transaction_name": "Trần Tuấn",
+      "transaction_position": "Chủ tịch HĐQT",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 0,
+      "plan_buy": 5000,
+      "plan_sell": 0,
+      "plan_begin_date": "2023-02-21",
+      "plan_end_date": "2023-03-20",
+      "real_buy": 0,
+      "real_sell": 0,
+      "real_end_date": "2023-03-20",
+      "published_date": "2023-02-17",
+      "volume_after": 0
+    },
+    {
+      "transaction_name": "Trần Tuấn",
+      "transaction_position": "Chủ tịch HĐQT",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 0,
+      "plan_buy": 8000,
+      "plan_sell": 0,
+      "plan_begin_date": "2017-05-17",
+      "plan_end_date": "2017-06-15",
+      "real_buy": 0,
+      "real_sell": 0,
+      "real_end_date": "2017-06-15",
+      "published_date": "2017-05-17",
+      "volume_after": 0
+    },
+    {
+      "transaction_name": "Nguyễn Thị Minh Châu",
+      "transaction_position": "Kế toán trưởng",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 500,
+      "plan_buy": 5000,
+      "plan_sell": 0,
+      "plan_begin_date": "2017-05-17",
+      "plan_end_date": "2017-06-15",
+      "real_buy": 0,
+      "real_sell": 0,
+      "real_end_date": "2017-06-15",
+      "published_date": "2017-05-17",
+      "volume_after": 500
+    }
+  ]
+}

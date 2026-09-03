@@ -1,0 +1,87 @@
+{
+  "symbol": "GTT",
+  "updated": "2026-03-22T03:16:31.000Z",
+  "co_cau_so_huu": {
+    "CoDongSoHuu": [
+      {
+        "Code": "CEO_04116",
+        "Name": "Huỳnh Sỹ Chiến",
+        "Url": "<a href='/du-lieu/ceo/CEO_04116/huynh-sy-chien.chn'>Huỳnh Sỹ Chiến</a>",
+        "AssetVolume": "18.750",
+        "AssetRate": "0,04",
+        "UpdatedDate": "30/12/2016"
+      },
+      {
+        "Code": "CEO_06327",
+        "Name": "Nguyễn Hữu Ẩn",
+        "Url": "<a href='/du-lieu/ceo/CEO_06327/nguyen-huu-an.chn'>Nguyễn Hữu Ẩn</a>",
+        "AssetVolume": "18.750",
+        "AssetRate": "0,04",
+        "UpdatedDate": "29/06/2016"
+      },
+      {
+        "Code": "CEO_11385",
+        "Name": "Võ Thanh Minh Hằng",
+        "Url": "<a href='/du-lieu/ceo/CEO_11385/vo-thanh-minh-hang.chn'>Võ Thanh Minh Hằng</a>",
+        "AssetVolume": "435.000",
+        "AssetRate": "1,0",
+        "UpdatedDate": "30/12/2016"
+      },
+      {
+        "Code": "CEO_11349",
+        "Name": "Võ Hoàng Chương",
+        "Url": "<a href='/du-lieu/ceo/CEO_11349/vo-hoang-chuong.chn'>Võ Hoàng Chương</a>",
+        "AssetVolume": "870.000",
+        "AssetRate": "2,0",
+        "UpdatedDate": "30/12/2018"
+      },
+      {
+        "Code": "CEO_11393",
+        "Name": "Võ Thị Thanh",
+        "Url": "<a href='/du-lieu/ceo/CEO_11393/vo-thi-thanh.chn'>Võ Thị Thanh</a>",
+        "AssetVolume": "15.093.000",
+        "AssetRate": "34,69",
+        "UpdatedDate": "30/12/2018"
+      }
+    ],
+    "NuocNgoai": 0.12,
+    "NhaNuoc": 0,
+    "Khac": 99.88
+  },
+  "cong_ty_con": [],
+  "cong_ty_lien_ket": [],
+  "giao_dich_noi_bo": [
+    {
+      "transaction_name": "Đặng Thị Bích Thảo",
+      "transaction_position": "Em",
+      "leader_name": "Đặng Thị Nguyệt Thương",
+      "leader_position": "Thành viên HĐQT",
+      "volume_before": 21870,
+      "plan_buy": 0,
+      "plan_sell": 21870,
+      "plan_begin_date": "2013-08-08",
+      "plan_end_date": "2013-09-06",
+      "real_buy": 0,
+      "real_sell": 21870,
+      "real_end_date": "2013-08-11",
+      "published_date": "2013-08-12",
+      "volume_after": 0
+    },
+    {
+      "transaction_name": "CTCP Đầu tư tài chính BIDV (BFI)",
+      "transaction_position": "",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 3551400,
+      "plan_buy": 0,
+      "plan_sell": 3551400,
+      "plan_begin_date": "2010-06-29",
+      "plan_end_date": "2010-08-29",
+      "real_buy": 0,
+      "real_sell": 3551400,
+      "real_end_date": "2010-08-29",
+      "published_date": "2010-09-05",
+      "volume_after": 0
+    }
+  ]
+}

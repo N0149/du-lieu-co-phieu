@@ -1,0 +1,103 @@
+{
+  "symbol": "ODE",
+  "updated": "2026-03-22T03:20:02.000Z",
+  "co_cau_so_huu": {
+    "CoDongSoHuu": [
+      {
+        "Code": "CEO_871399",
+        "Name": "Nguyễn Thị Ngọc Minh",
+        "Url": "<a href='/du-lieu/ceo/CEO_871399/nguyen-thi-ngoc-minh.chn'>Nguyễn Thị Ngọc Minh</a>",
+        "AssetVolume": "10.000",
+        "AssetRate": "0,1",
+        "UpdatedDate": "31/12/2021"
+      },
+      {
+        "Code": "CEO_871396",
+        "Name": "Hoàng Thị Mỹ Bình",
+        "Url": "<a href='/du-lieu/ceo/CEO_871396/hoang-thi-my-binh.chn'>Hoàng Thị Mỹ Bình</a>",
+        "AssetVolume": "500.000",
+        "AssetRate": "5,0",
+        "UpdatedDate": "31/12/2021"
+      },
+      {
+        "Code": "CEO_871400",
+        "Name": "Đỗ Lệ Thủy",
+        "Url": "<a href='/du-lieu/ceo/CEO_871400/do-le-thuy.chn'>Đỗ Lệ Thủy</a>",
+        "AssetVolume": "5.000",
+        "AssetRate": "0,05",
+        "UpdatedDate": "31/12/2021"
+      },
+      {
+        "Code": "CEO_871393",
+        "Name": "Nguyễn Đình Đức",
+        "Url": "<a href='/du-lieu/ceo/CEO_871393/nguyen-dinh-duc.chn'>Nguyễn Đình Đức</a>",
+        "AssetVolume": "425.000",
+        "AssetRate": "4,25",
+        "UpdatedDate": "31/12/2021"
+      },
+      {
+        "Code": "CEO_871392",
+        "Name": "Đinh Chí Hiếu",
+        "Url": "<a href='/du-lieu/ceo/CEO_871392/dinh-chi-hieu.chn'>Đinh Chí Hiếu</a>",
+        "AssetVolume": "150.000",
+        "AssetRate": "1,5",
+        "UpdatedDate": "31/12/2021"
+      },
+      {
+        "Code": "CEO_871394",
+        "Name": "Lê Thị Trà Mi",
+        "Url": "<a href='/du-lieu/ceo/CEO_871394/le-thi-tra-mi.chn'>Lê Thị Trà Mi</a>",
+        "AssetVolume": "10.000",
+        "AssetRate": "0,1",
+        "UpdatedDate": "31/12/2021"
+      },
+      {
+        "Code": "CORP_65727",
+        "Name": "CTCP Sunshine Sky Villa",
+        "Url": "CTCP Sunshine Sky Villa",
+        "AssetVolume": "500.000",
+        "AssetRate": "5,0",
+        "UpdatedDate": "18/12/2024"
+      }
+    ],
+    "NuocNgoai": 49,
+    "NhaNuoc": 0,
+    "Khac": 51
+  },
+  "cong_ty_con": [],
+  "cong_ty_lien_ket": [],
+  "giao_dich_noi_bo": [
+    {
+      "transaction_name": "CTCP Sunshine Sky Villa",
+      "transaction_position": "",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 400000,
+      "plan_buy": 0,
+      "plan_sell": 0,
+      "plan_begin_date": "",
+      "plan_end_date": "",
+      "real_buy": 100000,
+      "real_sell": 0,
+      "real_end_date": "2024-12-18",
+      "published_date": "2024-12-21",
+      "volume_after": 500000
+    },
+    {
+      "transaction_name": "",
+      "transaction_position": "",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 0,
+      "plan_buy": 0,
+      "plan_sell": 0,
+      "plan_begin_date": "",
+      "plan_end_date": "",
+      "real_buy": 400000,
+      "real_sell": 0,
+      "real_end_date": "2024-12-13",
+      "published_date": "2024-12-19",
+      "volume_after": 400000
+    }
+  ]
+}

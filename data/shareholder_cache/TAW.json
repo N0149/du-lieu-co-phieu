@@ -1,0 +1,223 @@
+{
+  "symbol": "TAW",
+  "updated": "2026-07-01T06:53:52.000Z",
+  "co_cau_so_huu": {
+    "CoDongSoHuu": [
+      {
+        "Code": "CEO_37711",
+        "Name": "Võ Khánh Toàn",
+        "Url": "<a href='/du-lieu/ceo/CEO_37711/vo-khanh-toan.chn'>Võ Khánh Toàn</a>",
+        "AssetVolume": "2.100",
+        "AssetRate": "0,04",
+        "UpdatedDate": "04/06/2026"
+      },
+      {
+        "Code": "CEO_37714",
+        "Name": "Nguyễn Thị Thanh Hương",
+        "Url": "<a href='/du-lieu/ceo/CEO_37714/nguyen-thi-thanh-huong.chn'>Nguyễn Thị Thanh Hương</a>",
+        "AssetVolume": "10.600",
+        "AssetRate": "0,21",
+        "UpdatedDate": "04/06/2026"
+      },
+      {
+        "Code": "CORP_39267",
+        "Name": "Công ty TNHH Thương mại N.T.P",
+        "Url": "Công ty TNHH Thương mại N.T.P",
+        "AssetVolume": "517.500",
+        "AssetRate": "10,35",
+        "UpdatedDate": "04/06/2026"
+      },
+      {
+        "Code": "CEO_37715",
+        "Name": "Trần Đức Hùng",
+        "Url": "<a href='/du-lieu/ceo/CEO_37715/tran-duc-hung.chn'>Trần Đức Hùng</a>",
+        "AssetVolume": "900",
+        "AssetRate": "0,02",
+        "UpdatedDate": "04/06/2026"
+      },
+      {
+        "Code": "CEO_83422",
+        "Name": "Phan Kim Phượng",
+        "Url": "<a href='/du-lieu/ceo/CEO_83422/phan-kim-phuong.chn'>Phan Kim Phượng</a>",
+        "AssetVolume": "3.500",
+        "AssetRate": "0,07",
+        "UpdatedDate": "04/06/2026"
+      },
+      {
+        "Code": "SAWACO",
+        "Name": "Tổng Công ty Cấp nước Sài Gòn",
+        "Url": "<a href='/du-lieu/otc/SAWACO-tong-cong-ty-cap-nuoc-sai-gon.chn' title='Tổng Công ty Cấp nước Sài Gòn'>Tổng Công ty Cấp nước Sài Gòn</a>",
+        "AssetVolume": "3.250.000",
+        "AssetRate": "65,0",
+        "UpdatedDate": "04/06/2026"
+      },
+      {
+        "Code": "CEO_37599",
+        "Name": "Võ Thị Hồng Hà",
+        "Url": "<a href='/du-lieu/ceo/CEO_37599/vo-thi-hong-ha.chn'>Võ Thị Hồng Hà</a>",
+        "AssetVolume": "7.100",
+        "AssetRate": "0,14",
+        "UpdatedDate": "04/06/2026"
+      },
+      {
+        "Code": "CEO_56626",
+        "Name": "Hồ Lê Minh",
+        "Url": "<a href='/du-lieu/ceo/CEO_56626/ho-le-minh.chn'>Hồ Lê Minh</a>",
+        "AssetVolume": "726.610",
+        "AssetRate": "14,53",
+        "UpdatedDate": "04/06/2026"
+      }
+    ],
+    "NuocNgoai": 5000000,
+    "NhaNuoc": 0,
+    "Khac": -4999900
+  },
+  "cong_ty_con": [],
+  "cong_ty_lien_ket": [],
+  "giao_dich_noi_bo": [
+    {
+      "transaction_name": "Công ty TNHH Thương mại N.T.P",
+      "transaction_position": "",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 792500,
+      "plan_buy": 0,
+      "plan_sell": 275000,
+      "plan_begin_date": "2025-12-05",
+      "plan_end_date": "2025-12-31",
+      "real_buy": 0,
+      "real_sell": 275000,
+      "real_end_date": "2025-12-19",
+      "published_date": "2025-12-03",
+      "volume_after": 517500
+    },
+    {
+      "transaction_name": "Công ty TNHH Thương mại N.T.P",
+      "transaction_position": "",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 0,
+      "plan_buy": 792500,
+      "plan_sell": 0,
+      "plan_begin_date": "2023-05-19",
+      "plan_end_date": "2023-06-16",
+      "real_buy": 792500,
+      "real_sell": 0,
+      "real_end_date": "2023-05-24",
+      "published_date": "2023-05-17",
+      "volume_after": 792500
+    },
+    {
+      "transaction_name": "Nguyễn Thanh Phong",
+      "transaction_position": "Thành viên HĐQT",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 792500,
+      "plan_buy": 0,
+      "plan_sell": 792500,
+      "plan_begin_date": "2023-05-19",
+      "plan_end_date": "2023-06-16",
+      "real_buy": 0,
+      "real_sell": 792500,
+      "real_end_date": "2023-05-24",
+      "published_date": "2023-05-17",
+      "volume_after": 0
+    },
+    {
+      "transaction_name": "Hồ Lê Minh",
+      "transaction_position": "",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 226610,
+      "plan_buy": 0,
+      "plan_sell": 0,
+      "plan_begin_date": "",
+      "plan_end_date": "",
+      "real_buy": 500000,
+      "real_sell": 0,
+      "real_end_date": "2018-10-11",
+      "published_date": "2018-10-23",
+      "volume_after": 726610
+    },
+    {
+      "transaction_name": "Nguyễn Thanh Phong",
+      "transaction_position": "Thành viên HĐQT",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 1225000,
+      "plan_buy": 0,
+      "plan_sell": 432500,
+      "plan_begin_date": "2018-10-11",
+      "plan_end_date": "2018-11-07",
+      "real_buy": 0,
+      "real_sell": 432500,
+      "real_end_date": "2018-10-12",
+      "published_date": "2018-10-09",
+      "volume_after": 792500
+    },
+    {
+      "transaction_name": "Nguyễn Đỗ Ngọc Bảo",
+      "transaction_position": "Vợ",
+      "leader_name": "Nguyễn Thanh Phong",
+      "leader_position": "Thành viên HĐQT",
+      "volume_before": 67500,
+      "plan_buy": 0,
+      "plan_sell": 67500,
+      "plan_begin_date": "2018-10-11",
+      "plan_end_date": "2018-11-07",
+      "real_buy": 0,
+      "real_sell": 67500,
+      "real_end_date": "2018-10-12",
+      "published_date": "2018-10-09",
+      "volume_after": 0
+    },
+    {
+      "transaction_name": "Hoàng Thế Bảo",
+      "transaction_position": "Thành viên HĐQT",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 0,
+      "plan_buy": 1000,
+      "plan_sell": 0,
+      "plan_begin_date": "2017-12-07",
+      "plan_end_date": "2018-01-05",
+      "real_buy": 0,
+      "real_sell": 0,
+      "real_end_date": "2018-01-05",
+      "published_date": "2017-12-05",
+      "volume_after": 0
+    },
+    {
+      "transaction_name": "Nguyễn Đỗ Ngọc Bảo",
+      "transaction_position": "Vợ",
+      "leader_name": "Nguyễn Thanh Phong",
+      "leader_position": "Thành viên HĐQT",
+      "volume_before": 0,
+      "plan_buy": 67500,
+      "plan_sell": 0,
+      "plan_begin_date": "2017-08-16",
+      "plan_end_date": "2017-09-08",
+      "real_buy": 67500,
+      "real_sell": 0,
+      "real_end_date": "2017-08-18",
+      "published_date": "2017-08-15",
+      "volume_after": 67500
+    },
+    {
+      "transaction_name": "Công ty Cổ phần Cơ điện lạnh",
+      "transaction_position": "",
+      "leader_name": "Lục Chánh Trường",
+      "leader_position": "Thành viên HĐQT",
+      "volume_before": 1450200,
+      "plan_buy": 0,
+      "plan_sell": 1450200,
+      "plan_begin_date": "2017-03-15",
+      "plan_end_date": "2017-04-13",
+      "real_buy": 0,
+      "real_sell": 1450200,
+      "real_end_date": "2017-03-17",
+      "published_date": "2017-03-13",
+      "volume_after": 0
+    }
+  ]
+}

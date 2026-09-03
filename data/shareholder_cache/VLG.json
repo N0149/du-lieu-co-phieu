@@ -1,0 +1,111 @@
+{
+  "symbol": "VLG",
+  "updated": "2026-08-01T06:02:36.000Z",
+  "co_cau_so_huu": {
+    "CoDongSoHuu": [
+      {
+        "Code": "CEO_39485",
+        "Name": "Phạm Bá Ngân",
+        "Url": "<a href='/du-lieu/ceo/CEO_39485/pham-ba-ngan.chn'>Phạm Bá Ngân</a>",
+        "AssetVolume": "10.600",
+        "AssetRate": "0,07",
+        "UpdatedDate": "19/09/2025"
+      },
+      {
+        "Code": "CEO_39487",
+        "Name": "Phạm Thành Giang",
+        "Url": "<a href='/du-lieu/ceo/CEO_39487/pham-thanh-giang.chn'>Phạm Thành Giang</a>",
+        "AssetVolume": "400",
+        "AssetRate": "0,0",
+        "UpdatedDate": "19/09/2025"
+      }
+    ],
+    "NuocNgoai": 0.3,
+    "NhaNuoc": 0,
+    "Khac": 99.7
+  },
+  "cong_ty_con": [],
+  "cong_ty_lien_ket": [],
+  "giao_dich_noi_bo": [
+    {
+      "transaction_name": "CTCP Phát triển Hàng hải",
+      "transaction_position": "",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 50000,
+      "plan_buy": 0,
+      "plan_sell": 50000,
+      "plan_begin_date": "2021-11-24",
+      "plan_end_date": "2021-12-21",
+      "real_buy": 0,
+      "real_sell": 50000,
+      "real_end_date": "2021-12-14",
+      "published_date": "2021-11-22",
+      "volume_after": 0
+    },
+    {
+      "transaction_name": "Phạm Thành Giang",
+      "transaction_position": "Công bố thông tin",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 75400,
+      "plan_buy": 0,
+      "plan_sell": 75000,
+      "plan_begin_date": "2017-10-04",
+      "plan_end_date": "2017-11-02",
+      "real_buy": 0,
+      "real_sell": 75000,
+      "real_end_date": "2017-10-16",
+      "published_date": "2017-10-03",
+      "volume_after": 400
+    },
+    {
+      "transaction_name": "Phạm Thành Giang",
+      "transaction_position": "Phó Tổng Giám đốc",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 56700,
+      "plan_buy": 50000,
+      "plan_sell": 0,
+      "plan_begin_date": "2016-04-10",
+      "plan_end_date": "2016-05-08",
+      "real_buy": 18700,
+      "real_sell": 0,
+      "real_end_date": "2016-05-09",
+      "published_date": "2016-04-05",
+      "volume_after": 75400
+    },
+    {
+      "transaction_name": "Phạm Thành Giang",
+      "transaction_position": "Phó Tổng Giám đốc",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 58200,
+      "plan_buy": 0,
+      "plan_sell": 30000,
+      "plan_begin_date": "2015-11-10",
+      "plan_end_date": "2015-11-29",
+      "real_buy": 0,
+      "real_sell": 1500,
+      "real_end_date": "2015-11-29",
+      "published_date": "2015-11-08",
+      "volume_after": 56700
+    },
+    {
+      "transaction_name": "Phạm Thành Giang",
+      "transaction_position": "Phó Tổng Giám đốc",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 2600,
+      "plan_buy": 100000,
+      "plan_sell": 0,
+      "plan_begin_date": "2015-09-30",
+      "plan_end_date": "2015-10-29",
+      "real_buy": 55600,
+      "real_sell": 0,
+      "real_end_date": "2015-10-29",
+      "published_date": "2015-09-27",
+      "volume_after": 58200
+    }
+  ]
+}

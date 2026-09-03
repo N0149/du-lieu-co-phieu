@@ -1,0 +1,27 @@
+{
+  "symbol": "OCB",
+  "score360": {
+    "total": 8.8,
+    "ratingText": "XUẤT SẮC",
+    "peVsMedian": -8.85084,
+    "pbVsMedian": -4.8094943144,
+    "psVsMedian": -5,
+    "peForward": 6.67,
+    "peForwardVsMedian": -15,
+    "pbForward": 0.83,
+    "pbForwardVsMedian": -10
+  },
+  "price": null,
+  "metrics": {
+    "marketCap": 33687600000000,
+    "pe": 7.57458,
+    "eps": 1511.634520786,
+    "volume10d": 2149734,
+    "pb": 0.8988132107,
+    "ps": null,
+    "bvps": null,
+    "sharesOut": 3062510126,
+    "evEbitda": null,
+    "beta": 0.514868
+  }
+}

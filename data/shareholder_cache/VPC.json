@@ -1,0 +1,183 @@
+{
+  "symbol": "VPC",
+  "updated": "2026-03-22T03:25:01.000Z",
+  "co_cau_so_huu": {
+    "CoDongSoHuu": [
+      {
+        "Code": "CEO_04496",
+        "Name": "Lại Thế Vĩnh",
+        "Url": "<a href='/du-lieu/ceo/CEO_04496/lai-the-vinh.chn'>Lại Thế Vĩnh</a>",
+        "AssetVolume": "1.000",
+        "AssetRate": "0,02",
+        "UpdatedDate": "31/12/2018"
+      },
+      {
+        "Code": "KLQ_80961",
+        "Name": "Nguyễn Thanh Quang",
+        "Url": "Nguyễn Thanh Quang",
+        "AssetVolume": "630.440",
+        "AssetRate": "11,21",
+        "UpdatedDate": "26/01/2024"
+      },
+      {
+        "Code": "CORP_00030",
+        "Name": "Công ty TNHH Cavico Việt Nam",
+        "Url": "Công ty TNHH Cavico Việt Nam",
+        "AssetVolume": "389.100",
+        "AssetRate": "6,92",
+        "UpdatedDate": "31/12/2012"
+      },
+      {
+        "Code": "CEO_10269",
+        "Name": "Trần Mạnh Hùng",
+        "Url": "<a href='/du-lieu/ceo/CEO_10269/tran-manh-hung.chn'>Trần Mạnh Hùng</a>",
+        "AssetVolume": "70",
+        "AssetRate": "0,0",
+        "UpdatedDate": "31/12/2018"
+      },
+      {
+        "Code": "CEO_10406",
+        "Name": "Tạ Minh Lập",
+        "Url": "<a href='/du-lieu/ceo/CEO_10406/ta-minh-lap.chn'>Tạ Minh Lập</a>",
+        "AssetVolume": "1.000",
+        "AssetRate": "0,02",
+        "UpdatedDate": "31/12/2015"
+      },
+      {
+        "Code": "KLQ_100450",
+        "Name": "Nguyễn Thị Thanh Nga",
+        "Url": "Nguyễn Thị Thanh Nga",
+        "AssetVolume": "376.270",
+        "AssetRate": "6,69",
+        "UpdatedDate": "08/08/2025"
+      },
+      {
+        "Code": "KLQ_96248",
+        "Name": "Huỳnh Thị Huyền",
+        "Url": "Huỳnh Thị Huyền",
+        "AssetVolume": "186.200",
+        "AssetRate": "3,31",
+        "UpdatedDate": "07/05/2019"
+      }
+    ],
+    "NuocNgoai": 0.36,
+    "NhaNuoc": 0,
+    "Khac": 99.64
+  },
+  "cong_ty_con": [],
+  "cong_ty_lien_ket": [],
+  "giao_dich_noi_bo": [
+    {
+      "transaction_name": "Nguyễn Thị Thanh Nga",
+      "transaction_position": "",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 276270,
+      "plan_buy": 0,
+      "plan_sell": 0,
+      "plan_begin_date": "",
+      "plan_end_date": "",
+      "real_buy": 100000,
+      "real_sell": 0,
+      "real_end_date": "2025-08-08",
+      "published_date": "2025-08-18",
+      "volume_after": 376270
+    },
+    {
+      "transaction_name": "Nguyễn Văn Anh",
+      "transaction_position": "Chủ tịch HĐQT",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 157200,
+      "plan_buy": 0,
+      "plan_sell": 157200,
+      "plan_begin_date": "2025-03-14",
+      "plan_end_date": "2025-04-11",
+      "real_buy": 0,
+      "real_sell": 157200,
+      "real_end_date": "2025-04-04",
+      "published_date": "2025-03-11",
+      "volume_after": 0
+    },
+    {
+      "transaction_name": "Nguyễn Thanh Quang",
+      "transaction_position": "",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 256340,
+      "plan_buy": 0,
+      "plan_sell": 0,
+      "plan_begin_date": "",
+      "plan_end_date": "",
+      "real_buy": 374100,
+      "real_sell": 0,
+      "real_end_date": "2024-01-26",
+      "published_date": "2024-02-01",
+      "volume_after": 630440
+    },
+    {
+      "transaction_name": "Huỳnh Thị Huyền",
+      "transaction_position": "",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 775200,
+      "plan_buy": 0,
+      "plan_sell": 0,
+      "plan_begin_date": "",
+      "plan_end_date": "",
+      "real_buy": 0,
+      "real_sell": 589000,
+      "real_end_date": "2019-05-07",
+      "published_date": "2019-05-16",
+      "volume_after": 186200
+    },
+    {
+      "transaction_name": "Asiavantage Global Limited",
+      "transaction_position": "",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 625000,
+      "plan_buy": 0,
+      "plan_sell": 625000,
+      "plan_begin_date": "2010-06-19",
+      "plan_end_date": "2010-07-09",
+      "real_buy": 0,
+      "real_sell": 625000,
+      "real_end_date": "2010-06-22",
+      "published_date": "2010-06-30",
+      "volume_after": 0
+    },
+    {
+      "transaction_name": "Phạm Thế Anh",
+      "transaction_position": "Phó GĐ",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 45000,
+      "plan_buy": 0,
+      "plan_sell": 40000,
+      "plan_begin_date": "2009-10-20",
+      "plan_end_date": "2009-11-15",
+      "real_buy": 0,
+      "real_sell": 0,
+      "real_end_date": "",
+      "published_date": "2009-10-19",
+      "volume_after": 0
+    },
+    {
+      "transaction_name": "Dương Văn Sơn",
+      "transaction_position": "Kế toán trưởng",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 8000,
+      "plan_buy": 40000,
+      "plan_sell": 0,
+      "plan_begin_date": "2009-10-20",
+      "plan_end_date": "2009-11-15",
+      "real_buy": 0,
+      "real_sell": 0,
+      "real_end_date": "",
+      "published_date": "2009-10-19",
+      "volume_after": 0
+    }
+  ]
+}

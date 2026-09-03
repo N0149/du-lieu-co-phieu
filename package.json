@@ -15,7 +15,16 @@
     "sync-industry-reports": "node scripts/crawl-industry-reports.mjs",
     "sync-company-reports": "node scripts/crawl-company-reports.mjs",
     "sync-daily-reports": "node scripts/sync-daily-reports.mjs",
-    "sync-financials": "node scripts/crawl-financial-statements.mjs"
+    "sync-financials": "node scripts/crawl-financial-statements.mjs",
+    "sync-business-plans": "node scripts/crawl-business-plans.mjs",
+    "sync-industry": "node scripts/sync-industry-data.mjs",
+    "sync-ruatichsan": "node scripts/sync-all-ruatichsan-data.mjs",
+    "sync-direct": "node scripts/crawl-direct-market.mjs",
+    "sync-valuation": "node scripts/crawl-direct-market.mjs --mode=valuation",
+    "sync-insider": "node scripts/crawl-direct-market.mjs --mode=insider",
+    "sync-shareholders": "node scripts/crawl-direct-market.mjs --mode=shareholders",
+    "sync-financial-charts": "node scripts/sync-financial-charts.mjs --banks",
+    "scheduler": "node scripts/scheduler-daemon.mjs"
   },
   "dependencies": {
     "@base-ui/react": "^1.5.0",

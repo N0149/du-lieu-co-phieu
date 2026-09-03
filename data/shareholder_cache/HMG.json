@@ -1,0 +1,63 @@
+{
+  "symbol": "HMG",
+  "updated": "2026-03-22T03:17:11.000Z",
+  "co_cau_so_huu": {
+    "CoDongSoHuu": [
+      {
+        "Code": "CEO_57278",
+        "Name": "Trần Thị Hoa Lý",
+        "Url": "<a href='/du-lieu/ceo/CEO_57278/tran-thi-hoa-ly.chn'>Trần Thị Hoa Lý</a>",
+        "AssetVolume": "1.100",
+        "AssetRate": "0,01",
+        "UpdatedDate": "04/07/2025"
+      },
+      {
+        "Code": "CEO_37724",
+        "Name": "Dương Thị Phương Hiền",
+        "Url": "<a href='/du-lieu/ceo/CEO_37724/duong-thi-phuong-hien.chn'>Dương Thị Phương Hiền</a>",
+        "AssetVolume": "500",
+        "AssetRate": "0,01",
+        "UpdatedDate": "04/07/2025"
+      },
+      {
+        "Code": "CEO_59500",
+        "Name": "Nguyễn Thị Anh Đào",
+        "Url": "<a href='/du-lieu/ceo/CEO_59500/nguyen-thi-anh-dao.chn'>Nguyễn Thị Anh Đào</a>",
+        "AssetVolume": "1.100",
+        "AssetRate": "0,01",
+        "UpdatedDate": "04/07/2025"
+      },
+      {
+        "Code": "TVN",
+        "Name": "CTCP Kim khí Hà Nội - VNSTEEL",
+        "Url": "<a href='/du-lieu/upcom/TVN-tong-cong-ty-thep-viet-nam-ctcp.chn' title='Tổng Công ty Thép Việt Nam - CTCP'>Tổng Công ty Thép Việt Nam - CTCP</a>",
+        "AssetVolume": "8.043.150",
+        "AssetRate": "89,37",
+        "UpdatedDate": "04/07/2025"
+      }
+    ],
+    "NuocNgoai": 0,
+    "NhaNuoc": 0,
+    "Khac": 100
+  },
+  "cong_ty_con": [],
+  "cong_ty_lien_ket": [],
+  "giao_dich_noi_bo": [
+    {
+      "transaction_name": "Vũ Khắc Hoàng",
+      "transaction_position": "Thành viên HĐQT",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 700,
+      "plan_buy": 1000,
+      "plan_sell": 0,
+      "plan_begin_date": "2016-09-08",
+      "plan_end_date": "2016-10-06",
+      "real_buy": 0,
+      "real_sell": 0,
+      "real_end_date": "2016-10-11",
+      "published_date": "2016-09-07",
+      "volume_after": 700
+    }
+  ]
+}

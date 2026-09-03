@@ -1,0 +1,199 @@
+{
+  "symbol": "FRM",
+  "updated": "2026-07-01T06:35:02.000Z",
+  "co_cau_so_huu": {
+    "CoDongSoHuu": [
+      {
+        "Code": "SAGRI",
+        "Name": "Tổng Công ty Nông nghiệp Sài Gòn - TNHH MTV",
+        "Url": "<a href='/du-lieu/otc/SAGRI-tong-cong-ty-nong-nghiep-sai-gon-tnhh-mtv.chn' title='Tổng Công ty Nông nghiệp Sài Gòn - TNHH MTV'>Tổng Công ty Nông nghiệp Sài Gòn - TNHH MTV</a>",
+        "AssetVolume": "3.066.500",
+        "AssetRate": "26,21",
+        "UpdatedDate": "30/06/2024"
+      },
+      {
+        "Code": "LQ_96581",
+        "Name": "Nguyễn Thị Mai Lan",
+        "Url": "Nguyễn Thị Mai Lan (Mẹ của ông <a href='/du-lieu/ceo/CEO_10869/tran-viet-thang.chn'>Trần Việt Thắng</a>)",
+        "AssetVolume": "481.300",
+        "AssetRate": "4,11",
+        "UpdatedDate": "30/06/2024"
+      },
+      {
+        "Code": "CEO_58584",
+        "Name": "Phạm Ngọc Toản",
+        "Url": "<a href='/du-lieu/ceo/CEO_58584/pham-ngoc-toan.chn'>Phạm Ngọc Toản</a>",
+        "AssetVolume": "1.700",
+        "AssetRate": "0,01",
+        "UpdatedDate": "31/12/2022"
+      },
+      {
+        "Code": "CORP_52135",
+        "Name": "Công ty cổ phần Nông nghiệp TLK",
+        "Url": "Công ty cổ phần Nông nghiệp TLK",
+        "AssetVolume": "2.649.911",
+        "AssetRate": "22,65",
+        "UpdatedDate": "31/12/2022"
+      },
+      {
+        "Code": "GTN",
+        "Name": "Công ty cổ phần GTNfoods",
+        "Url": "<a href='/du-lieu/hose/GTN-cong-ty-co-phan-gtnfoods.chn' title='Công ty cổ phần GTNfoods'>Công ty cổ phần GTNfoods</a>",
+        "AssetVolume": "4.100.000",
+        "AssetRate": "35,04",
+        "UpdatedDate": "30/06/2024"
+      },
+      {
+        "Code": "CEO_58088",
+        "Name": "Nguyễn Thị Hoa",
+        "Url": "<a href='/du-lieu/ceo/CEO_58088/nguyen-thi-hoa.chn'>Nguyễn Thị Hoa</a>",
+        "AssetVolume": "530.000",
+        "AssetRate": "4,53",
+        "UpdatedDate": "31/12/2022"
+      },
+      {
+        "Code": "CEO_58574",
+        "Name": "Đỗ Thị Thanh Hương",
+        "Url": "<a href='/du-lieu/ceo/CEO_58574/do-thi-thanh-huong.chn'>Đỗ Thị Thanh Hương</a>",
+        "AssetVolume": "1.700",
+        "AssetRate": "0,01",
+        "UpdatedDate": "31/12/2022"
+      }
+    ],
+    "NuocNgoai": 11700000,
+    "NhaNuoc": 0,
+    "Khac": -11699900
+  },
+  "cong_ty_con": [],
+  "cong_ty_lien_ket": [],
+  "giao_dich_noi_bo": [
+    {
+      "transaction_name": "Công ty cổ phần Nông nghiệp TLK",
+      "transaction_position": "",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 0,
+      "plan_buy": 0,
+      "plan_sell": 0,
+      "plan_begin_date": "",
+      "plan_end_date": "",
+      "real_buy": 2649911,
+      "real_sell": 0,
+      "real_end_date": "2021-02-04",
+      "published_date": "2021-02-19",
+      "volume_after": 2649911
+    },
+    {
+      "transaction_name": "Trịnh Thị Hương",
+      "transaction_position": "",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 2119126,
+      "plan_buy": 0,
+      "plan_sell": 0,
+      "plan_begin_date": "",
+      "plan_end_date": "",
+      "real_buy": 0,
+      "real_sell": 2119126,
+      "real_end_date": "2021-02-04",
+      "published_date": "2021-02-19",
+      "volume_after": 0
+    },
+    {
+      "transaction_name": "Nguyễn Thị Mai Lan",
+      "transaction_position": "Mẹ",
+      "leader_name": "Trần Việt Thắng",
+      "leader_position": "Phó Chủ tịch HĐQT",
+      "volume_before": 774100,
+      "plan_buy": 0,
+      "plan_sell": 0,
+      "plan_begin_date": "",
+      "plan_end_date": "",
+      "real_buy": 0,
+      "real_sell": 292800,
+      "real_end_date": "2019-09-19",
+      "published_date": "2019-09-26",
+      "volume_after": 481300
+    },
+    {
+      "transaction_name": "Đỗ Văn Chiến",
+      "transaction_position": "Phó Giám đốc",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 1800,
+      "plan_buy": 0,
+      "plan_sell": 1800,
+      "plan_begin_date": "2019-09-10",
+      "plan_end_date": "2019-09-12",
+      "real_buy": 0,
+      "real_sell": 1800,
+      "real_end_date": "2019-09-22",
+      "published_date": "2019-09-10",
+      "volume_after": 0
+    },
+    {
+      "transaction_name": "Nguyễn Thị Mai Lan",
+      "transaction_position": "Mẹ",
+      "leader_name": "Trần Việt Thắng",
+      "leader_position": "Phó Chủ tịch HĐQT",
+      "volume_before": 692000,
+      "plan_buy": 0,
+      "plan_sell": 0,
+      "plan_begin_date": "",
+      "plan_end_date": "",
+      "real_buy": 24500,
+      "real_sell": 0,
+      "real_end_date": "2019-08-29",
+      "published_date": "2019-09-08",
+      "volume_after": 716500
+    },
+    {
+      "transaction_name": "Nguyễn Thị Mai Lan",
+      "transaction_position": "",
+      "leader_name": "Trần Việt Thắng",
+      "leader_position": "Phó Chủ tịch HĐQT",
+      "volume_before": 940000,
+      "plan_buy": 0,
+      "plan_sell": 0,
+      "plan_begin_date": "",
+      "plan_end_date": "",
+      "real_buy": 0,
+      "real_sell": 248000,
+      "real_end_date": "2019-08-25",
+      "published_date": "2019-08-29",
+      "volume_after": 692000
+    },
+    {
+      "transaction_name": "Công ty cổ phần GTNfoods",
+      "transaction_position": "",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 4100000,
+      "plan_buy": 0,
+      "plan_sell": 0,
+      "plan_begin_date": "",
+      "plan_end_date": "",
+      "real_buy": 0,
+      "real_sell": 4100000,
+      "real_end_date": "2019-06-10",
+      "published_date": "2019-06-13",
+      "volume_after": 0
+    },
+    {
+      "transaction_name": "Nguyễn Thị Mai Lan",
+      "transaction_position": "",
+      "leader_name": "Trần Việt Thắng",
+      "leader_position": "Phó Chủ tịch HĐQT",
+      "volume_before": 1971285,
+      "plan_buy": 0,
+      "plan_sell": 1971285,
+      "plan_begin_date": "2018-06-06",
+      "plan_end_date": "2018-07-05",
+      "real_buy": 0,
+      "real_sell": 1031285,
+      "real_end_date": "2018-06-06",
+      "published_date": "2018-06-05",
+      "volume_after": 940000
+    }
+  ]
+}

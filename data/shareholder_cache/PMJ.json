@@ -1,0 +1,119 @@
+{
+  "symbol": "PMJ",
+  "updated": "2026-06-01T07:21:05.000Z",
+  "co_cau_so_huu": {
+    "CoDongSoHuu": [
+      {
+        "Code": "CEO_37454",
+        "Name": "Nguyễn Đắc Thọ",
+        "Url": "<a href='/du-lieu/ceo/CEO_37454/nguyen-dac-tho.chn'>Nguyễn Đắc Thọ</a>",
+        "AssetVolume": "20.550",
+        "AssetRate": "1,14",
+        "UpdatedDate": "27/11/2025"
+      },
+      {
+        "Code": "CEO_39519",
+        "Name": "Phan Thị Thanh Sâm",
+        "Url": "<a href='/du-lieu/ceo/CEO_39519/phan-thi-thanh-sam.chn'>Phan Thị Thanh Sâm</a>",
+        "AssetVolume": "183.600",
+        "AssetRate": "10,2",
+        "UpdatedDate": "27/11/2025"
+      },
+      {
+        "Code": "CEO_37457",
+        "Name": "Đoàn Minh Đôn",
+        "Url": "<a href='/du-lieu/ceo/CEO_37457/doan-minh-don.chn'>Đoàn Minh Đôn</a>",
+        "AssetVolume": "12.950",
+        "AssetRate": "0,72",
+        "UpdatedDate": "27/11/2025"
+      },
+      {
+        "Code": "CEO_58329",
+        "Name": "Trần Xuân Hòa",
+        "Url": "<a href='/du-lieu/ceo/CEO_58329/tran-xuan-hoa.chn'>Trần Xuân Hòa</a>",
+        "AssetVolume": "321.300",
+        "AssetRate": "17,85",
+        "UpdatedDate": "27/11/2025"
+      },
+      {
+        "Code": "VNPT",
+        "Name": "Công ty cổ phần Vật tư Bưu điện",
+        "Url": "<a href='/du-lieu/otc/VNPT-tap-doan-buu-chinh-vien-thong-viet-nam.chn' title='Tập đoàn Bưu chính Viễn thông Việt Nam'>Tập đoàn Bưu chính Viễn thông Việt Nam</a>",
+        "AssetVolume": "918.000",
+        "AssetRate": "51,0",
+        "UpdatedDate": "27/11/2025"
+      },
+      {
+        "Code": "CEO_58330",
+        "Name": "Đỗ Hoài Phong",
+        "Url": "<a href='/du-lieu/ceo/CEO_58330/do-hoai-phong.chn'>Đỗ Hoài Phong</a>",
+        "AssetVolume": "413.100",
+        "AssetRate": "22,95",
+        "UpdatedDate": "27/11/2025"
+      },
+      {
+        "Code": "LQ_99822",
+        "Name": "Trần Thị Kim Lan",
+        "Url": "Trần Thị Kim Lan (Vợ của ông <a href='/du-lieu/ceo/CEO_37457/doan-minh-don.chn'>Đoàn Minh Đôn</a>)",
+        "AssetVolume": "27.250",
+        "AssetRate": "1,51",
+        "UpdatedDate": "27/11/2025"
+      }
+    ],
+    "NuocNgoai": 0.17,
+    "NhaNuoc": 0,
+    "Khac": 99.83
+  },
+  "cong_ty_con": [],
+  "cong_ty_lien_ket": [],
+  "giao_dich_noi_bo": [
+    {
+      "transaction_name": "Nguyễn Đắc Thọ",
+      "transaction_position": "Giám đốc chi nhánh",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 20550,
+      "plan_buy": 0,
+      "plan_sell": 19000,
+      "plan_begin_date": "2023-06-16",
+      "plan_end_date": "2023-07-07",
+      "real_buy": 0,
+      "real_sell": 0,
+      "real_end_date": "",
+      "published_date": "2023-06-13",
+      "volume_after": 0
+    },
+    {
+      "transaction_name": "Trần Thị Kim Lan",
+      "transaction_position": "Vợ",
+      "leader_name": "Đoàn Minh Đôn",
+      "leader_position": "Phó Tổng GĐ",
+      "volume_before": 0,
+      "plan_buy": 27250,
+      "plan_sell": 0,
+      "plan_begin_date": "2017-05-03",
+      "plan_end_date": "2017-05-26",
+      "real_buy": 27250,
+      "real_sell": 0,
+      "real_end_date": "2017-05-15",
+      "published_date": "2017-04-29",
+      "volume_after": 27250
+    },
+    {
+      "transaction_name": "Lý Chí Đức",
+      "transaction_position": "Phó Chủ tịch HĐQT",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 0,
+      "plan_buy": 0,
+      "plan_sell": 0,
+      "plan_begin_date": "",
+      "plan_end_date": "",
+      "real_buy": 21650,
+      "real_sell": 0,
+      "real_end_date": "2016-06-30",
+      "published_date": "2016-07-06",
+      "volume_after": 21650
+    }
+  ]
+}

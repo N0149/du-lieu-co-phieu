@@ -1,0 +1,175 @@
+{
+  "symbol": "QNW",
+  "updated": "2026-03-22T03:21:15.000Z",
+  "co_cau_so_huu": {
+    "CoDongSoHuu": [
+      {
+        "Code": "CEO_99362",
+        "Name": "Phạm Đình Tùng",
+        "Url": "<a href='/du-lieu/ceo/CEO_99362/pham-dinh-tung.chn'>Phạm Đình Tùng</a>",
+        "AssetVolume": "2.500",
+        "AssetRate": "0,01",
+        "UpdatedDate": "30/10/2025"
+      },
+      {
+        "Code": "CEO_99356",
+        "Name": "Lâm Xuân Kính",
+        "Url": "<a href='/du-lieu/ceo/CEO_99356/lam-xuan-kinh.chn'>Lâm Xuân Kính</a>",
+        "AssetVolume": "5.000",
+        "AssetRate": "0,03",
+        "UpdatedDate": "30/10/2025"
+      },
+      {
+        "Code": "LQ_994448",
+        "Name": "Hoàng Nguyệt Hà",
+        "Url": "Hoàng Nguyệt Hà (Con của ông <a href='/du-lieu/ceo/CEO_84409/hoang-van-duong.chn'>Hoàng Văn Dương</a>)",
+        "AssetVolume": "992.000",
+        "AssetRate": "4,96",
+        "UpdatedDate": "09/01/2026"
+      },
+      {
+        "Code": "CEO_99358",
+        "Name": "Nguyễn Đăng Đơ",
+        "Url": "<a href='/du-lieu/ceo/CEO_99358/nguyen-dang-do.chn'>Nguyễn Đăng Đơ</a>",
+        "AssetVolume": "3.100",
+        "AssetRate": "0,02",
+        "UpdatedDate": "30/10/2025"
+      },
+      {
+        "Code": "CEO_85244",
+        "Name": "Võ Xuân Vũ",
+        "Url": "<a href='/du-lieu/ceo/CEO_85244/vo-xuan-vu.chn'>Võ Xuân Vũ</a>",
+        "AssetVolume": "6.800",
+        "AssetRate": "0,03",
+        "UpdatedDate": "30/10/2025"
+      },
+      {
+        "Code": "CEO_84410",
+        "Name": "Hoàng Văn Thắng",
+        "Url": "<a href='/du-lieu/ceo/CEO_84410/hoang-van-thang.chn'>Hoàng Văn Thắng</a>",
+        "AssetVolume": "190.000",
+        "AssetRate": "0,95",
+        "UpdatedDate": "09/01/2026"
+      },
+      {
+        "Code": "CEO_99360",
+        "Name": "Nguyễn Thanh Tùng",
+        "Url": "<a href='/du-lieu/ceo/CEO_99360/nguyen-thanh-tung.chn'>Nguyễn Thanh Tùng</a>",
+        "AssetVolume": "6.800",
+        "AssetRate": "0,03",
+        "UpdatedDate": "30/10/2025"
+      },
+      {
+        "Code": "CEO_99361",
+        "Name": "Võ Thị Kim Hoa",
+        "Url": "<a href='/du-lieu/ceo/CEO_99361/vo-thi-kim-hoa.chn'>Võ Thị Kim Hoa</a>",
+        "AssetVolume": "3.400",
+        "AssetRate": "0,02",
+        "UpdatedDate": "30/10/2025"
+      },
+      {
+        "Code": "CEO_81857",
+        "Name": "Hồ Nhân",
+        "Url": "<a href='/du-lieu/ceo/CEO_81857/ho-nhan.chn'>Hồ Nhân</a>",
+        "AssetVolume": "316.087",
+        "AssetRate": "1,58",
+        "UpdatedDate": "30/10/2025"
+      },
+      {
+        "Code": "CEO_99359",
+        "Name": "Võ Xuân Vũ",
+        "Url": "<a href='/du-lieu/ceo/CEO_99359/vo-xuan-vu.chn'>Võ Xuân Vũ</a>",
+        "AssetVolume": "3.700",
+        "AssetRate": "0,02",
+        "UpdatedDate": "30/10/2025"
+      },
+      {
+        "Code": "CEO_99355",
+        "Name": "Đặng Ngọc Anh",
+        "Url": "<a href='/du-lieu/ceo/CEO_99355/dang-ngoc-anh.chn'>Đặng Ngọc Anh</a>",
+        "AssetVolume": "8.000",
+        "AssetRate": "0,04",
+        "UpdatedDate": "30/10/2025"
+      },
+      {
+        "Code": "CORP_99727",
+        "Name": "UBND tỉnh Quảng Ngãi",
+        "Url": "UBND tỉnh Quảng Ngãi",
+        "AssetVolume": "4.671.188",
+        "AssetRate": "23,36",
+        "UpdatedDate": "30/10/2025"
+      }
+    ],
+    "NuocNgoai": 0.01,
+    "NhaNuoc": 0,
+    "Khac": 99.99
+  },
+  "cong_ty_con": [],
+  "cong_ty_lien_ket": [],
+  "giao_dich_noi_bo": [
+    {
+      "transaction_name": "Hoàng Nguyệt Hà",
+      "transaction_position": "Con",
+      "leader_name": "Hoàng Văn Dương",
+      "leader_position": "Chủ tịch HĐQT",
+      "volume_before": 0,
+      "plan_buy": 0,
+      "plan_sell": 0,
+      "plan_begin_date": "",
+      "plan_end_date": "",
+      "real_buy": 992000,
+      "real_sell": 0,
+      "real_end_date": "2026-01-09",
+      "published_date": "2026-01-10",
+      "volume_after": 992000
+    },
+    {
+      "transaction_name": "Hoàng Văn Thắng",
+      "transaction_position": "Thành viên HĐQT",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 0,
+      "plan_buy": 190000,
+      "plan_sell": 0,
+      "plan_begin_date": "2025-12-31",
+      "plan_end_date": "2026-01-27",
+      "real_buy": 190000,
+      "real_sell": 0,
+      "real_end_date": "2026-01-09",
+      "published_date": "2025-12-29",
+      "volume_after": 190000
+    },
+    {
+      "transaction_name": "Hoàng Văn Thắng",
+      "transaction_position": "Thành viên HĐQT",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 0,
+      "plan_buy": 190000,
+      "plan_sell": 0,
+      "plan_begin_date": "2025-12-31",
+      "plan_end_date": "2026-01-27",
+      "real_buy": 0,
+      "real_sell": 0,
+      "real_end_date": "",
+      "published_date": "2025-12-29",
+      "volume_after": 0
+    },
+    {
+      "transaction_name": "Hồ Nhân",
+      "transaction_position": "",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 316087,
+      "plan_buy": 0,
+      "plan_sell": 316087,
+      "plan_begin_date": "2022-04-20",
+      "plan_end_date": "2022-05-13",
+      "real_buy": 0,
+      "real_sell": 0,
+      "real_end_date": "",
+      "published_date": "2022-04-20",
+      "volume_after": 0
+    }
+  ]
+}

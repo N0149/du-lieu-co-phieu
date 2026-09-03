@@ -1,0 +1,39 @@
+{
+  "symbol": "CQT",
+  "updated": "2026-08-01T05:31:26.000Z",
+  "co_cau_so_huu": {
+    "CoDongSoHuu": [
+      {
+        "Code": "MVB",
+        "Name": "Tổng công ty Công nghiệp mỏ Việt Bắc TKV - CTCP",
+        "Url": "<a href='/du-lieu/hastc/MVB-tong-cong-ty-cong-nghiep-mo-viet-bac-tkv-ctcp.chn' title='Tổng công ty Công nghiệp mỏ Việt Bắc TKV - CTCP'>Tổng công ty Công nghiệp mỏ Việt Bắc TKV - CTCP</a>",
+        "AssetVolume": "21.246.014",
+        "AssetRate": "84,98",
+        "UpdatedDate": "31/12/2025"
+      }
+    ],
+    "NuocNgoai": 24997755.1,
+    "NhaNuoc": 0,
+    "Khac": -24997655.1
+  },
+  "cong_ty_con": [],
+  "cong_ty_lien_ket": [],
+  "giao_dich_noi_bo": [
+    {
+      "transaction_name": "Trần Việt Cường",
+      "transaction_position": "Giám đốc",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 0,
+      "plan_buy": 30000,
+      "plan_sell": 0,
+      "plan_begin_date": "2023-09-07",
+      "plan_end_date": "2023-09-29",
+      "real_buy": 27000,
+      "real_sell": 0,
+      "real_end_date": "2023-09-22",
+      "published_date": "2023-10-03",
+      "volume_after": 27000
+    }
+  ]
+}

@@ -1,0 +1,151 @@
+{
+  "symbol": "MDC",
+  "updated": "2026-08-01T05:44:59.000Z",
+  "co_cau_so_huu": {
+    "CoDongSoHuu": [
+      {
+        "Code": "CEO_38841",
+        "Name": "Dương Hải Yến",
+        "Url": "<a href='/du-lieu/ceo/CEO_38841/duong-hai-yen.chn'>Dương Hải Yến</a>",
+        "AssetVolume": "2.125",
+        "AssetRate": "0,01",
+        "UpdatedDate": "30/07/2026"
+      },
+      {
+        "Code": "CEO_54668",
+        "Name": "Nguyễn Hữu Hùng",
+        "Url": "<a href='/du-lieu/ceo/CEO_54668/nguyen-huu-hung.chn'>Nguyễn Hữu Hùng</a>",
+        "AssetVolume": "1.772",
+        "AssetRate": "0,01",
+        "UpdatedDate": "30/07/2026"
+      },
+      {
+        "Code": "CEO_71025",
+        "Name": "Nguyễn Thế Hanh",
+        "Url": "<a href='/du-lieu/ceo/CEO_71025/nguyen-the-hanh.chn'>Nguyễn Thế Hanh</a>",
+        "AssetVolume": "1.986",
+        "AssetRate": "0,01",
+        "UpdatedDate": "30/07/2026"
+      },
+      {
+        "Code": "VINACOMIN",
+        "Name": "Tập đoàn Công nghiệp Than - Khoáng sản Việt Nam",
+        "Url": "<a href='/du-lieu/otc/VINACOMIN-tap-doan-cong-nghiep-than-khoang-san-viet-nam.chn' title='Tập đoàn Công nghiệp Than - Khoáng sản Việt Nam'>Tập đoàn Công nghiệp Than - Khoáng sản Việt Nam</a>",
+        "AssetVolume": "13.921.925",
+        "AssetRate": "65,0",
+        "UpdatedDate": "30/07/2026"
+      },
+      {
+        "Code": "CEO_60371",
+        "Name": "Hòa Quang Trung",
+        "Url": "<a href='/du-lieu/ceo/CEO_60371/hoa-quang-trung.chn'>Hòa Quang Trung</a>",
+        "AssetVolume": "3.486",
+        "AssetRate": "0,02",
+        "UpdatedDate": "30/07/2026"
+      },
+      {
+        "Code": "CEO_03952",
+        "Name": "Hoàng Trọng Hiệp",
+        "Url": "<a href='/du-lieu/ceo/CEO_03952/hoang-trong-hiep.chn'>Hoàng Trọng Hiệp</a>",
+        "AssetVolume": "921",
+        "AssetRate": "0,0",
+        "UpdatedDate": "30/07/2026"
+      },
+      {
+        "Code": "CEO_11739",
+        "Name": "Vũ Tiến Quang",
+        "Url": "<a href='/du-lieu/ceo/CEO_11739/vu-tien-quang.chn'>Vũ Tiến Quang</a>",
+        "AssetVolume": "1.109",
+        "AssetRate": "0,01",
+        "UpdatedDate": "30/07/2026"
+      }
+    ],
+    "NuocNgoai": 17.77,
+    "NhaNuoc": 0,
+    "Khac": 82.23
+  },
+  "cong_ty_con": [],
+  "cong_ty_lien_ket": [],
+  "giao_dich_noi_bo": [
+    {
+      "transaction_name": "Tập đoàn Công nghiệp Than - Khoáng sản Việt nam",
+      "transaction_position": "",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 12830654,
+      "plan_buy": 1091271,
+      "plan_sell": 0,
+      "plan_begin_date": "2020-08-24",
+      "plan_end_date": "2020-09-21",
+      "real_buy": 1091271,
+      "real_sell": 0,
+      "real_end_date": "2020-09-15",
+      "published_date": "2020-08-25",
+      "volume_after": 13921925
+    },
+    {
+      "transaction_name": "Tập đoàn Công nghiệp Than - Khoáng sản Việt nam",
+      "transaction_position": "",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 12812654,
+      "plan_buy": 1109271,
+      "plan_sell": 0,
+      "plan_begin_date": "2020-05-31",
+      "plan_end_date": "2020-06-29",
+      "real_buy": 18000,
+      "real_sell": 0,
+      "real_end_date": "2020-06-29",
+      "published_date": "2020-05-28",
+      "volume_after": 12830654
+    },
+    {
+      "transaction_name": "Tập đoàn Công nghiệp Than - Khoáng sản Việt nam",
+      "transaction_position": "",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 12810154,
+      "plan_buy": 1111771,
+      "plan_sell": 0,
+      "plan_begin_date": "2019-11-17",
+      "plan_end_date": "2019-12-16",
+      "real_buy": 2500,
+      "real_sell": 0,
+      "real_end_date": "2019-12-16",
+      "published_date": "2019-11-14",
+      "volume_after": 12812654
+    },
+    {
+      "transaction_name": "Tập đoàn Công nghiệp Than - Khoáng sản Việt nam",
+      "transaction_position": "",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 12796354,
+      "plan_buy": 1125571,
+      "plan_sell": 0,
+      "plan_begin_date": "2019-08-05",
+      "plan_end_date": "2019-09-03",
+      "real_buy": 13800,
+      "real_sell": 0,
+      "real_end_date": "2019-09-03",
+      "published_date": "2019-09-12",
+      "volume_after": 12810154
+    },
+    {
+      "transaction_name": "Tập đoàn Công nghiệp Than - Khoáng sản Việt nam",
+      "transaction_position": "",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 11575854,
+      "plan_buy": 2350071,
+      "plan_sell": 0,
+      "plan_begin_date": "2019-05-13",
+      "plan_end_date": "2019-06-11",
+      "real_buy": 1224500,
+      "real_sell": 0,
+      "real_end_date": "2019-06-11",
+      "published_date": "2019-05-09",
+      "volume_after": 12800354
+    }
+  ]
+}

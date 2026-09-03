@@ -1,0 +1,336 @@
+{
+  "symbol": "VGI",
+  "updated": "2026-05-01T06:20:19.000Z",
+  "co_cau_so_huu": {
+    "CoDongSoHuu": [
+      {
+        "Code": "VIETTEL",
+        "Name": "Tập đoàn Công nghiệp - Viễn thông Quân đội (Viettel)",
+        "Url": "<a href='/du-lieu/otc/VIETTEL-tap-doan-cong-nghiep-vien-thong-quan-doi-viettel.chn' title='Tập đoàn Công nghiệp - Viễn thông Quân đội (Viettel)'>Tập đoàn Công nghiệp - Viễn thông Quân đội (Viettel)</a>",
+        "AssetVolume": "3.014.217.300",
+        "AssetRate": "99,03",
+        "UpdatedDate": "08/09/2025"
+      },
+      {
+        "Code": "CEO_50768",
+        "Name": "Hoàng Sơn",
+        "Url": "<a href='/du-lieu/ceo/CEO_50768/hoang-son.chn'>Hoàng Sơn</a>",
+        "AssetVolume": "72.300",
+        "AssetRate": "0,0",
+        "UpdatedDate": "08/09/2025"
+      },
+      {
+        "Code": "CEO_61729",
+        "Name": "Lê Đăng Dũng",
+        "Url": "<a href='/du-lieu/ceo/CEO_61729/le-dang-dung.chn'>Lê Đăng Dũng</a>",
+        "AssetVolume": "26.300",
+        "AssetRate": "0,0",
+        "UpdatedDate": "08/09/2025"
+      },
+      {
+        "Code": "CEO_95323",
+        "Name": "Tào Đức Thắng",
+        "Url": "<a href='/du-lieu/ceo/CEO_95323/tao-duc-thang.chn'>Tào Đức Thắng</a>",
+        "AssetVolume": "57.800",
+        "AssetRate": "0,0",
+        "UpdatedDate": "08/09/2025"
+      },
+      {
+        "Code": "CEO_55395",
+        "Name": "Nguyễn Thanh Nam",
+        "Url": "<a href='/du-lieu/ceo/CEO_55395/nguyen-thanh-nam.chn'>Nguyễn Thanh Nam</a>",
+        "AssetVolume": "16.200",
+        "AssetRate": "0,0",
+        "UpdatedDate": "08/09/2025"
+      },
+      {
+        "Code": "CEO_55397",
+        "Name": "Phan Thanh Sang",
+        "Url": "<a href='/du-lieu/ceo/CEO_55397/phan-thanh-sang.chn'>Phan Thanh Sang</a>",
+        "AssetVolume": "6.700",
+        "AssetRate": "0,0",
+        "UpdatedDate": "08/09/2025"
+      },
+      {
+        "Code": "CEO_55402",
+        "Name": "Nguyễn Cao Lợi",
+        "Url": "<a href='/du-lieu/ceo/CEO_55402/nguyen-cao-loi.chn'>Nguyễn Cao Lợi</a>",
+        "AssetVolume": "5.900",
+        "AssetRate": "0,0",
+        "UpdatedDate": "08/09/2025"
+      },
+      {
+        "Code": "CEO_61508",
+        "Name": "Đỗ Mạnh Hùng",
+        "Url": "<a href='/du-lieu/ceo/CEO_61508/do-manh-hung.chn'>Đỗ Mạnh Hùng</a>",
+        "AssetVolume": "11.000",
+        "AssetRate": "0,0",
+        "UpdatedDate": "08/09/2025"
+      },
+      {
+        "Code": "CEO_55403",
+        "Name": "Nguyễn Đức Quang",
+        "Url": "<a href='/du-lieu/ceo/CEO_55403/nguyen-duc-quang.chn'>Nguyễn Đức Quang</a>",
+        "AssetVolume": "10.000",
+        "AssetRate": "0,0",
+        "UpdatedDate": "08/09/2025"
+      },
+      {
+        "Code": "CEO_55399",
+        "Name": "Phạm Hoàng Điệp",
+        "Url": "<a href='/du-lieu/ceo/CEO_55399/pham-hoang-diep.chn'>Phạm Hoàng Điệp</a>",
+        "AssetVolume": "2.700",
+        "AssetRate": "0,0",
+        "UpdatedDate": "08/09/2025"
+      }
+    ],
+    "NuocNgoai": 0.01,
+    "NhaNuoc": 0,
+    "Khac": 99.99
+  },
+  "cong_ty_con": [
+    {
+      "Symbol": "VGI",
+      "CorpCode": "CORP_60406",
+      "Name": "Công ty TNHH Viettel Overseas",
+      "TotalCapital": 25,
+      "SharedCapital": 25,
+      "OwnershipRate": 100,
+      "Note": "triệu USD",
+      "Order": 1,
+      "TradeCenter": ""
+    },
+    {
+      "Symbol": "VGI",
+      "CorpCode": "CORP_60410",
+      "Name": "Công ty Viettel Timor Leste, UNIP, LDA",
+      "TotalCapital": 500,
+      "SharedCapital": 500,
+      "OwnershipRate": 100,
+      "Note": "nghìn USD",
+      "Order": 2,
+      "TradeCenter": ""
+    },
+    {
+      "Symbol": "VGI",
+      "CorpCode": "CORP_51589",
+      "Name": "Công ty TNHH Viettel Tanzania",
+      "TotalCapital": 8,
+      "SharedCapital": 8,
+      "OwnershipRate": 99.99,
+      "Note": "tỷTSH",
+      "Order": 3,
+      "TradeCenter": ""
+    },
+    {
+      "Symbol": "VGI",
+      "CorpCode": "CORP_51592",
+      "Name": "Công ty TNHH Viettel E-commerce",
+      "TotalCapital": 225,
+      "SharedCapital": 224.98,
+      "OwnershipRate": 99.99,
+      "Note": "nghìn USD",
+      "Order": 4,
+      "TradeCenter": ""
+    },
+    {
+      "Symbol": "VGI",
+      "CorpCode": "CORP_60407",
+      "Name": "Công ty TNHH Viettel Cambodia",
+      "TotalCapital": 44.88,
+      "SharedCapital": 40.39,
+      "OwnershipRate": 90,
+      "Note": "triệu USD",
+      "Order": 5,
+      "TradeCenter": ""
+    },
+    {
+      "Symbol": "VGI",
+      "CorpCode": "CORP_51590",
+      "Name": "Công ty Viettel Burundi S.A",
+      "TotalCapital": 5,
+      "SharedCapital": 4.25,
+      "OwnershipRate": 85,
+      "Note": "triệu BIF",
+      "Order": 6,
+      "TradeCenter": ""
+    },
+    {
+      "Symbol": "VGI",
+      "CorpCode": "CORP_60408",
+      "Name": "Công ty TNHH Movitel",
+      "TotalCapital": 500,
+      "SharedCapital": 350,
+      "OwnershipRate": 70,
+      "Note": "nghìn USD",
+      "Order": 7,
+      "TradeCenter": ""
+    },
+    {
+      "Symbol": "VGI",
+      "CorpCode": "CORP_60411",
+      "Name": "Công ty Viettel Cameroon",
+      "TotalCapital": 40,
+      "SharedCapital": 28,
+      "OwnershipRate": 70,
+      "Note": "nghìn USD",
+      "Order": 8,
+      "TradeCenter": ""
+    },
+    {
+      "Symbol": "VGI",
+      "CorpCode": "CORP_51591",
+      "Name": "Công ty M-Mola S.A",
+      "TotalCapital": 500,
+      "SharedCapital": 335,
+      "OwnershipRate": 67,
+      "Note": "nghìn USD",
+      "Order": 9,
+      "TradeCenter": ""
+    },
+    {
+      "Symbol": "VGI",
+      "CorpCode": "CORP_60409",
+      "Name": "Công ty National Telecom S.A. (Natcom)",
+      "TotalCapital": 99.83,
+      "SharedCapital": 59.9,
+      "OwnershipRate": 60,
+      "Note": "triệu USD",
+      "Order": 10,
+      "TradeCenter": ""
+    }
+  ],
+  "cong_ty_lien_ket": [
+    {
+      "Symbol": "VGI",
+      "CorpCode": "CORP_51593",
+      "Name": "Công ty TNHH Myanmar National Tele & Communications",
+      "TotalCapital": 345,
+      "SharedCapital": 169.05,
+      "OwnershipRate": 49,
+      "Note": "triệu USD",
+      "Order": 11,
+      "TradeCenter": ""
+    },
+    {
+      "Symbol": "VGI",
+      "CorpCode": "CORP_60412",
+      "Name": "Công ty TNHH Viễn thông Star",
+      "TotalCapital": 59.47,
+      "SharedCapital": 26.17,
+      "OwnershipRate": 44,
+      "Note": "triệu USD",
+      "Order": 12,
+      "TradeCenter": ""
+    },
+    {
+      "Symbol": "VGI",
+      "CorpCode": "CORP_60413",
+      "Name": "Công ty TNHH Metcom",
+      "TotalCapital": 1,
+      "SharedCapital": 0.44,
+      "OwnershipRate": 44,
+      "Note": "nghìn USD",
+      "Order": 13,
+      "TradeCenter": ""
+    }
+  ],
+  "giao_dich_noi_bo": [
+    {
+      "transaction_name": "Tống Khánh Linh",
+      "transaction_position": "Vợ",
+      "leader_name": "Hà Thế Dương",
+      "leader_position": "Phó Tổng GĐ",
+      "volume_before": 10000,
+      "plan_buy": 0,
+      "plan_sell": 10000,
+      "plan_begin_date": "2024-03-08",
+      "plan_end_date": "2024-04-05",
+      "real_buy": 0,
+      "real_sell": 10000,
+      "real_end_date": "2024-03-08",
+      "published_date": "2024-03-06",
+      "volume_after": 0
+    },
+    {
+      "transaction_name": "Nguyễn Thị Thanh Dung",
+      "transaction_position": "Vợ",
+      "leader_name": "Phùng Văn Cường",
+      "leader_position": "Thành viên HĐQT",
+      "volume_before": 75000,
+      "plan_buy": 0,
+      "plan_sell": 75000,
+      "plan_begin_date": "2024-03-01",
+      "plan_end_date": "2024-03-29",
+      "real_buy": 0,
+      "real_sell": 55000,
+      "real_end_date": "2024-03-28",
+      "published_date": "2024-02-29",
+      "volume_after": 20000
+    },
+    {
+      "transaction_name": "Nguyễn Thị Thanh Dung",
+      "transaction_position": "Vợ",
+      "leader_name": "Phùng Văn Cường",
+      "leader_position": "Thành viên HĐQT",
+      "volume_before": 75000,
+      "plan_buy": 0,
+      "plan_sell": 75000,
+      "plan_begin_date": "2023-11-20",
+      "plan_end_date": "2023-12-19",
+      "real_buy": 0,
+      "real_sell": 0,
+      "real_end_date": "2023-12-20",
+      "published_date": "2023-12-26",
+      "volume_after": 75000
+    },
+    {
+      "transaction_name": "Tống Khánh Linh",
+      "transaction_position": "Vợ",
+      "leader_name": "Hà Thế Dương",
+      "leader_position": "Phó Tổng GĐ",
+      "volume_before": 10000,
+      "plan_buy": 0,
+      "plan_sell": 10000,
+      "plan_begin_date": "2023-10-26",
+      "plan_end_date": "2023-11-24",
+      "real_buy": 0,
+      "real_sell": 0,
+      "real_end_date": "2023-11-24",
+      "published_date": "2023-12-07",
+      "volume_after": 10000
+    },
+    {
+      "transaction_name": "Hà Thế Dương",
+      "transaction_position": "Phó Tổng GĐ",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 45100,
+      "plan_buy": 0,
+      "plan_sell": 45100,
+      "plan_begin_date": "2020-04-17",
+      "plan_end_date": "2020-05-15",
+      "real_buy": 0,
+      "real_sell": 45100,
+      "real_end_date": "2020-05-05",
+      "published_date": "2020-04-15",
+      "volume_after": 0
+    },
+    {
+      "transaction_name": "Hà Thế Dương",
+      "transaction_position": "Phó Tổng GĐ",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 1700,
+      "plan_buy": 50000,
+      "plan_sell": 0,
+      "plan_begin_date": "2019-09-26",
+      "plan_end_date": "2019-10-25",
+      "real_buy": 43400,
+      "real_sell": 0,
+      "real_end_date": "2019-10-25",
+      "published_date": "2019-09-24",
+      "volume_after": 45100
+    }
+  ]
+}

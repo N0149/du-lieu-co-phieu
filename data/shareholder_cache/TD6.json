@@ -1,0 +1,30 @@
+{
+  "symbol": "TD6",
+  "updated": "2026-08-01T05:57:00.000Z",
+  "co_cau_so_huu": {
+    "CoDongSoHuu": [
+      {
+        "Code": "CEO_61889",
+        "Name": "Nguyễn Quang Tùng",
+        "Url": "<a href='/du-lieu/ceo/CEO_61889/nguyen-quang-tung.chn'>Nguyễn Quang Tùng</a>",
+        "AssetVolume": "15.039",
+        "AssetRate": "0,02",
+        "UpdatedDate": "13/02/2026"
+      },
+      {
+        "Code": "VINACOMIN",
+        "Name": "Tập đoàn Công nghiệp Than - Khoáng sản Việt Nam",
+        "Url": "<a href='/du-lieu/otc/VINACOMIN-tap-doan-cong-nghiep-than-khoang-san-viet-nam.chn' title='Tập đoàn Công nghiệp Than - Khoáng sản Việt Nam'>Tập đoàn Công nghiệp Than - Khoáng sản Việt Nam</a>",
+        "AssetVolume": "40.257.884",
+        "AssetRate": "65,0",
+        "UpdatedDate": "25/08/2025"
+      }
+    ],
+    "NuocNgoai": 0.24,
+    "NhaNuoc": 0,
+    "Khac": 99.76
+  },
+  "cong_ty_con": [],
+  "cong_ty_lien_ket": [],
+  "giao_dich_noi_bo": []
+}

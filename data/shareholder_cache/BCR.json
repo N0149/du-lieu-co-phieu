@@ -1,0 +1,143 @@
+{
+  "symbol": "BCR",
+  "updated": "2026-09-01T07:16:52.000Z",
+  "co_cau_so_huu": {
+    "CoDongSoHuu": [
+      {
+        "Code": "TCD",
+        "Name": "Công ty cổ phần BCG Land",
+        "Url": "<a href='/du-lieu/upcom/TCD-cong-ty-co-phan-tap-doan-xay-dung-tracodi.chn' title='Công ty Cổ phần Tập đoàn Xây dựng Tracodi'>Công ty Cổ phần Tập đoàn Xây dựng Tracodi</a>",
+        "AssetVolume": "44.702.000",
+        "AssetRate": "9,43",
+        "UpdatedDate": "31/07/2026"
+      },
+      {
+        "Code": "CORP_60824",
+        "Name": "CTCP Tập đoàn Bamboo Capital",
+        "Url": "CTCP Tập đoàn Bamboo Capital",
+        "AssetVolume": "294.209.184",
+        "AssetRate": "62,1",
+        "UpdatedDate": "31/07/2026"
+      }
+    ],
+    "NuocNgoai": 0.39,
+    "NhaNuoc": 0,
+    "Khac": 99.61
+  },
+  "cong_ty_con": [],
+  "cong_ty_lien_ket": [],
+  "giao_dich_noi_bo": [
+    {
+      "transaction_name": "Nguyễn Khánh Duy",
+      "transaction_position": "",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 2060000,
+      "plan_buy": 0,
+      "plan_sell": 0,
+      "plan_begin_date": "",
+      "plan_end_date": "",
+      "real_buy": 0,
+      "real_sell": 60000,
+      "real_end_date": "2025-05-13",
+      "published_date": "2025-06-16",
+      "volume_after": 2000000
+    },
+    {
+      "transaction_name": "Nguyễn Tùng Lâm",
+      "transaction_position": "Phó Chủ tịch HĐQT",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 3090000,
+      "plan_buy": 0,
+      "plan_sell": 3090000,
+      "plan_begin_date": "2025-05-05",
+      "plan_end_date": "2025-05-23",
+      "real_buy": 0,
+      "real_sell": 0,
+      "real_end_date": "",
+      "published_date": "2025-05-07",
+      "volume_after": 0
+    },
+    {
+      "transaction_name": "Huỳnh Thị Thảo",
+      "transaction_position": "Kế toán trưởng",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 280450,
+      "plan_buy": 0,
+      "plan_sell": 280450,
+      "plan_begin_date": "2025-05-05",
+      "plan_end_date": "2025-05-23",
+      "real_buy": 0,
+      "real_sell": 0,
+      "real_end_date": "",
+      "published_date": "2025-05-07",
+      "volume_after": 0
+    },
+    {
+      "transaction_name": "Phạm Hữu Quốc",
+      "transaction_position": "Phó Tổng GĐ",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 309000,
+      "plan_buy": 0,
+      "plan_sell": 309000,
+      "plan_begin_date": "2025-04-14",
+      "plan_end_date": "2025-05-12",
+      "real_buy": 0,
+      "real_sell": 309000,
+      "real_end_date": "2025-04-15",
+      "published_date": "2025-04-12",
+      "volume_after": 0
+    },
+    {
+      "transaction_name": "Lê Nguyễn Phương Thảo",
+      "transaction_position": "Phụ trách quản trị",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 38000,
+      "plan_buy": 0,
+      "plan_sell": 23000,
+      "plan_begin_date": "2024-07-09",
+      "plan_end_date": "2024-08-06",
+      "real_buy": 0,
+      "real_sell": 23000,
+      "real_end_date": "2024-07-25",
+      "published_date": "2024-07-08",
+      "volume_after": 15000
+    },
+    {
+      "transaction_name": "Phạm Hữu Quốc",
+      "transaction_position": "Phó Tổng GĐ",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 900000,
+      "plan_buy": 0,
+      "plan_sell": 600000,
+      "plan_begin_date": "2024-04-01",
+      "plan_end_date": "2024-04-29",
+      "real_buy": 0,
+      "real_sell": 0,
+      "real_end_date": "",
+      "published_date": "2024-03-29",
+      "volume_after": 0
+    },
+    {
+      "transaction_name": "Nguyễn Hồ Nam",
+      "transaction_position": "",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 20000000,
+      "plan_buy": 0,
+      "plan_sell": 20000000,
+      "plan_begin_date": "2024-01-11",
+      "plan_end_date": "2024-02-07",
+      "real_buy": 0,
+      "real_sell": 20000000,
+      "real_end_date": "2024-01-16",
+      "published_date": "2024-01-23",
+      "volume_after": 0
+    }
+  ]
+}

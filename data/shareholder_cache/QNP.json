@@ -1,0 +1,95 @@
+{
+  "symbol": "QNP",
+  "updated": "2026-03-22T03:21:13.000Z",
+  "co_cau_so_huu": {
+    "CoDongSoHuu": [
+      {
+        "Code": "CEO_876734",
+        "Name": "Nguyễn Thành Nam",
+        "Url": "<a href='/du-lieu/ceo/CEO_876734/nguyen-thanh-nam.chn'>Nguyễn Thành Nam</a>",
+        "AssetVolume": "3.300",
+        "AssetRate": "0,01",
+        "UpdatedDate": "10/06/2025"
+      },
+      {
+        "Code": "MVN",
+        "Name": "Công ty Cổ phần Cảng Quy Nhơn",
+        "Url": "<a href='/du-lieu/upcom/MVN-tong-cong-ty-hang-hai-viet-nam-ctcp.chn' title='Tổng Công ty Hàng hải Việt Nam - CTCP'>Tổng Công ty Hàng hải Việt Nam - CTCP</a>",
+        "AssetVolume": "30.312.262",
+        "AssetRate": "75,01",
+        "UpdatedDate": "10/06/2025"
+      },
+      {
+        "Code": "CEO_876743",
+        "Name": "Trần Vũ Thanh Quang",
+        "Url": "<a href='/du-lieu/ceo/CEO_876743/tran-vu-thanh-quang.chn'>Trần Vũ Thanh Quang</a>",
+        "AssetVolume": "3.500",
+        "AssetRate": "0,01",
+        "UpdatedDate": "10/06/2025"
+      },
+      {
+        "Code": "CEO_75848",
+        "Name": "Nguyễn Kim Toàn",
+        "Url": "<a href='/du-lieu/ceo/CEO_75848/nguyen-kim-toan.chn'>Nguyễn Kim Toàn</a>",
+        "AssetVolume": "8.000",
+        "AssetRate": "0,02",
+        "UpdatedDate": "10/06/2025"
+      },
+      {
+        "Code": "CEO_99322",
+        "Name": "Hồ Liên Nam",
+        "Url": "<a href='/du-lieu/ceo/CEO_99322/ho-lien-nam.chn'>Hồ Liên Nam</a>",
+        "AssetVolume": "3.200",
+        "AssetRate": "0,01",
+        "UpdatedDate": "10/06/2025"
+      }
+    ],
+    "NuocNgoai": 0,
+    "NhaNuoc": 0,
+    "Khac": 100
+  },
+  "cong_ty_con": [
+    {
+      "Symbol": "QNP",
+      "CorpCode": "CORP_65676",
+      "Name": "Công ty TNHH MTV dịch vụ logistics Cảng Quy Nhơn",
+      "TotalCapital": 50,
+      "SharedCapital": 50,
+      "OwnershipRate": 100,
+      "Note": "",
+      "Order": 1,
+      "TradeCenter": ""
+    }
+  ],
+  "cong_ty_lien_ket": [
+    {
+      "Symbol": "QNP",
+      "CorpCode": "CORP_60684",
+      "Name": "CTCP Dịch vụ Công nghiệp Hàng hải (INSECO)",
+      "TotalCapital": 24,
+      "SharedCapital": 4.8,
+      "OwnershipRate": 20,
+      "Note": "",
+      "Order": 2,
+      "TradeCenter": ""
+    }
+  ],
+  "giao_dich_noi_bo": [
+    {
+      "transaction_name": "Võ Thị Đông Phương",
+      "transaction_position": "Vợ",
+      "leader_name": "Nguyễn Thành Nam",
+      "leader_position": "Thành Viên HĐQT",
+      "volume_before": 29600,
+      "plan_buy": 0,
+      "plan_sell": 29600,
+      "plan_begin_date": "2024-02-15",
+      "plan_end_date": "2024-02-28",
+      "real_buy": 0,
+      "real_sell": 29600,
+      "real_end_date": "2024-02-28",
+      "published_date": "2024-03-05",
+      "volume_after": 0
+    }
+  ]
+}

@@ -1,0 +1,37 @@
+{
+  "symbol": "STB",
+  "events": [
+    {
+      "date": "2015-10-01",
+      "cashVnd": null,
+      "stockPct": null,
+      "texts": [
+        "Phát hành cổ phiếu - Phát hành để sáp nhập"
+      ]
+    },
+    {
+      "date": "2015-10-16",
+      "cashVnd": null,
+      "stockPct": 0.0875,
+      "texts": [
+        "Phát hành cổ phiếu - Phát hành để sáp nhập tỉ lệ 8.8%"
+      ]
+    },
+    {
+      "date": "2015-10-16",
+      "cashVnd": null,
+      "stockPct": 0.1,
+      "texts": [
+        "Phát hành cổ phiếu - Cổ phiếu thưởng tỉ lệ 10.0%"
+      ]
+    },
+    {
+      "date": "2015-10-16",
+      "cashVnd": null,
+      "stockPct": 0.2,
+      "texts": [
+        "Phát hành cổ phiếu - Trả Cổ tức bằng Cổ phiếu tỉ lệ 20.0%"
+      ]
+    }
+  ]
+}

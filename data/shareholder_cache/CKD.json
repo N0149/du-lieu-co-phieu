@@ -1,0 +1,179 @@
+{
+  "symbol": "CKD",
+  "updated": "2026-03-22T03:13:58.000Z",
+  "co_cau_so_huu": {
+    "CoDongSoHuu": [
+      {
+        "Code": "LIC",
+        "Name": "Công ty cổ phần Cơ khí Đông Anh Licogi",
+        "Url": "<a href='/du-lieu/upcom/LIC-tong-cong-ty-licogi-cong-ty-co-phan.chn' title='Tổng Công ty Licogi - Công ty Cổ phần'>Tổng Công ty Licogi - Công ty Cổ phần</a>",
+        "AssetVolume": "27.609.700",
+        "AssetRate": "920,32",
+        "UpdatedDate": "14/10/2025"
+      },
+      {
+        "Code": "CEO_75551",
+        "Name": "Nguyễn Đình Hóa",
+        "Url": "<a href='/du-lieu/ceo/CEO_75551/nguyen-dinh-hoa.chn'>Nguyễn Đình Hóa</a>",
+        "AssetVolume": "26.500",
+        "AssetRate": "0,88",
+        "UpdatedDate": "14/10/2025"
+      },
+      {
+        "Code": "CEO_75540",
+        "Name": "Lã Quý Duẩn",
+        "Url": "<a href='/du-lieu/ceo/CEO_75540/la-quy-duan.chn'>Lã Quý Duẩn</a>",
+        "AssetVolume": "101.500",
+        "AssetRate": "3,38",
+        "UpdatedDate": "14/10/2025"
+      }
+    ],
+    "NuocNgoai": 0.03,
+    "NhaNuoc": 0,
+    "Khac": 99.97
+  },
+  "cong_ty_con": [],
+  "cong_ty_lien_ket": [
+    {
+      "Symbol": "CKD",
+      "CorpCode": "CORP_99594",
+      "Name": "Công ty TNHH KCN Thăng Long",
+      "TotalCapital": 0,
+      "SharedCapital": 0,
+      "OwnershipRate": 42,
+      "Note": "",
+      "Order": 1,
+      "TradeCenter": ""
+    }
+  ],
+  "giao_dich_noi_bo": [
+    {
+      "transaction_name": "Trần Văn Hải",
+      "transaction_position": "Giám đốc Tài chính",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 70000,
+      "plan_buy": 0,
+      "plan_sell": 70000,
+      "plan_begin_date": "2021-11-07",
+      "plan_end_date": "2021-12-02",
+      "real_buy": 0,
+      "real_sell": 4200,
+      "real_end_date": "2021-12-02",
+      "published_date": "2021-11-07",
+      "volume_after": 65800
+    },
+    {
+      "transaction_name": "Nguyễn Đình Hóa",
+      "transaction_position": "Phó Tổng GĐ",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 26500,
+      "plan_buy": 0,
+      "plan_sell": 16500,
+      "plan_begin_date": "2020-11-24",
+      "plan_end_date": "2020-12-23",
+      "real_buy": 0,
+      "real_sell": 0,
+      "real_end_date": "2020-12-22",
+      "published_date": "2020-11-26",
+      "volume_after": 26500
+    },
+    {
+      "transaction_name": "Trần Văn Hải",
+      "transaction_position": "Giám đốc Tài chính",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 79500,
+      "plan_buy": 0,
+      "plan_sell": 79500,
+      "plan_begin_date": "2020-11-18",
+      "plan_end_date": "2020-12-17",
+      "real_buy": 0,
+      "real_sell": 9500,
+      "real_end_date": "2020-12-15",
+      "published_date": "2020-11-18",
+      "volume_after": 70000
+    },
+    {
+      "transaction_name": "Trần Văn Hải",
+      "transaction_position": "Giám đốc Tài chính",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 79500,
+      "plan_buy": 0,
+      "plan_sell": 79500,
+      "plan_begin_date": "2020-11-18",
+      "plan_end_date": "2020-12-17",
+      "real_buy": 0,
+      "real_sell": 0,
+      "real_end_date": "",
+      "published_date": "2020-11-18",
+      "volume_after": 0
+    },
+    {
+      "transaction_name": "Trần Văn Hải",
+      "transaction_position": "Giám đốc Tài chính",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 0,
+      "plan_buy": 150000,
+      "plan_sell": 0,
+      "plan_begin_date": "2019-12-17",
+      "plan_end_date": "2020-01-15",
+      "real_buy": 79500,
+      "real_sell": 0,
+      "real_end_date": "2020-01-16",
+      "published_date": "2019-12-17",
+      "volume_after": 79500
+    },
+    {
+      "transaction_name": "Nguyễn Anh Khoa",
+      "transaction_position": "Kế toán trưởng",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 19900,
+      "plan_buy": 0,
+      "plan_sell": 9900,
+      "plan_begin_date": "2018-12-09",
+      "plan_end_date": "2018-12-27",
+      "real_buy": 0,
+      "real_sell": 9900,
+      "real_end_date": "2018-12-17",
+      "published_date": "2018-12-04",
+      "volume_after": 10000
+    },
+    {
+      "transaction_name": "Trần Văn Hải",
+      "transaction_position": "Giám đốc Tài chính",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 0,
+      "plan_buy": 20000,
+      "plan_sell": 0,
+      "plan_begin_date": "2017-08-03",
+      "plan_end_date": "2017-08-29",
+      "real_buy": 0,
+      "real_sell": 0,
+      "real_end_date": "2017-08-29",
+      "published_date": "2017-08-03",
+      "volume_after": 0
+    },
+    {
+      "transaction_name": "Nguyễn Hà Thọ ",
+      "transaction_position": "Chồng",
+      "leader_name": "Nguyễn Thị Thoa",
+      "leader_position": "Thành viên BKS",
+      "volume_before": 5000,
+      "plan_buy": 10700,
+      "plan_sell": 0,
+      "plan_begin_date": "2016-07-07",
+      "plan_end_date": "2016-07-28",
+      "real_buy": 0,
+      "real_sell": 0,
+      "real_end_date": "2016-07-28",
+      "published_date": "2016-07-05",
+      "volume_after": 5000
+    }
+  ]
+}

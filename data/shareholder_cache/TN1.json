@@ -1,0 +1,263 @@
+{
+  "symbol": "TN1",
+  "updated": "2026-09-01T07:50:17.000Z",
+  "co_cau_so_huu": {
+    "CoDongSoHuu": [
+      {
+        "Code": "CEO_86556",
+        "Name": "Bùi Quốc Khánh",
+        "Url": "<a href='/du-lieu/ceo/CEO_86556/bui-quoc-khanh.chn'>Bùi Quốc Khánh</a>",
+        "AssetVolume": "363",
+        "AssetRate": "0,0",
+        "UpdatedDate": "26/08/2026"
+      },
+      {
+        "Code": "CEO_86015",
+        "Name": "Trần Phi Hạnh",
+        "Url": "<a href='/du-lieu/ceo/CEO_86015/tran-phi-hanh.chn'>Trần Phi Hạnh</a>",
+        "AssetVolume": "168.687",
+        "AssetRate": "0,28",
+        "UpdatedDate": "26/08/2026"
+      },
+      {
+        "Code": "CEO_86558",
+        "Name": "Nguyễn Thị Yến",
+        "Url": "<a href='/du-lieu/ceo/CEO_86558/nguyen-thi-yen.chn'>Nguyễn Thị Yến</a>",
+        "AssetVolume": "1.445",
+        "AssetRate": "0,0",
+        "UpdatedDate": "26/08/2026"
+      },
+      {
+        "Code": "CEO_86014",
+        "Name": "Nguyễn Thị Minh Lan",
+        "Url": "<a href='/du-lieu/ceo/CEO_86014/nguyen-thi-minh-lan.chn'>Nguyễn Thị Minh Lan</a>",
+        "AssetVolume": "66.080",
+        "AssetRate": "0,11",
+        "UpdatedDate": "26/08/2026"
+      },
+      {
+        "Code": "CEO_86016",
+        "Name": "Phạm Đình Cao",
+        "Url": "<a href='/du-lieu/ceo/CEO_86016/pham-dinh-cao.chn'>Phạm Đình Cao</a>",
+        "AssetVolume": "342",
+        "AssetRate": "0,0",
+        "UpdatedDate": "26/08/2026"
+      },
+      {
+        "Code": "CEO_86013",
+        "Name": "Nguyễn Ngọc Cương",
+        "Url": "<a href='/du-lieu/ceo/CEO_86013/nguyen-ngoc-cuong.chn'>Nguyễn Ngọc Cương</a>",
+        "AssetVolume": "342",
+        "AssetRate": "0,0",
+        "UpdatedDate": "26/08/2026"
+      },
+      {
+        "Code": "CEO_86012",
+        "Name": "Nguyễn Việt Sơn",
+        "Url": "<a href='/du-lieu/ceo/CEO_86012/nguyen-viet-son.chn'>Nguyễn Việt Sơn</a>",
+        "AssetVolume": "34.109",
+        "AssetRate": "0,06",
+        "UpdatedDate": "26/08/2026"
+      },
+      {
+        "Code": "CEO_86557",
+        "Name": "Nguyễn Thu Trang",
+        "Url": "<a href='/du-lieu/ceo/CEO_86557/nguyen-thu-trang.chn'>Nguyễn Thu Trang</a>",
+        "AssetVolume": "66.053",
+        "AssetRate": "0,11",
+        "UpdatedDate": "26/08/2026"
+      },
+      {
+        "Code": "FPTCAPITAL",
+        "Name": "Công ty Cổ phần Quản lý quỹ đầu tư FPT",
+        "Url": "<a href='/du-lieu/otc/FPTCAPITAL-cong-ty-co-phan-quan-ly-quy-dau-tu-fpt.chn' title='Công ty Cổ phần Quản lý quỹ đầu tư FPT'>Công ty Cổ phần Quản lý quỹ đầu tư FPT</a>",
+        "AssetVolume": "6.165.115",
+        "AssetRate": "10,26",
+        "UpdatedDate": "26/08/2026"
+      },
+      {
+        "Code": "CORP_81170",
+        "Name": "Công ty TNHH MTV Đầu tư Sao Hôm",
+        "Url": "Công ty TNHH MTV Đầu tư Sao Hôm",
+        "AssetVolume": "42.425.134",
+        "AssetRate": "70,6",
+        "UpdatedDate": "26/08/2026"
+      }
+    ],
+    "NuocNgoai": 0.03,
+    "NhaNuoc": 0,
+    "Khac": 99.97
+  },
+  "cong_ty_con": [
+    {
+      "Symbol": "TN1",
+      "CorpCode": "CORP_81167",
+      "Name": "Công ty TNHH Dịch vụ bảo vệ V-ONE",
+      "TotalCapital": 2,
+      "SharedCapital": 2,
+      "OwnershipRate": 100,
+      "Note": "",
+      "Order": 1,
+      "TradeCenter": ""
+    },
+    {
+      "Symbol": "TN1",
+      "CorpCode": "CORP_81166",
+      "Name": "CTCP Dịch vụ bảo vệ Nhất Việt",
+      "TotalCapital": 2,
+      "SharedCapital": 1.99,
+      "OwnershipRate": 99.5,
+      "Note": "",
+      "Order": 2,
+      "TradeCenter": ""
+    },
+    {
+      "Symbol": "TN1",
+      "CorpCode": "CORP_81163",
+      "Name": "CTCP Đầu tư và Quản lý Bất động sản TN Property Management",
+      "TotalCapital": 6,
+      "SharedCapital": 5.94,
+      "OwnershipRate": 99,
+      "Note": "",
+      "Order": 3,
+      "TradeCenter": ""
+    },
+    {
+      "Symbol": "TN1",
+      "CorpCode": "CORP_81165",
+      "Name": "CTCP Dịch vụ Vệ sinh Công nghiệp C-ONE",
+      "TotalCapital": 5,
+      "SharedCapital": 4.74,
+      "OwnershipRate": 94.75,
+      "Note": "",
+      "Order": 4,
+      "TradeCenter": ""
+    },
+    {
+      "Symbol": "TN1",
+      "CorpCode": "CORP_81164",
+      "Name": "CTCP Đầu tư Kinh doanh Thương mại TNTrading",
+      "TotalCapital": 5,
+      "SharedCapital": 2.55,
+      "OwnershipRate": 51,
+      "Note": "",
+      "Order": 5,
+      "TradeCenter": ""
+    }
+  ],
+  "cong_ty_lien_ket": [],
+  "giao_dich_noi_bo": [
+    {
+      "transaction_name": "Bùi Quốc Khánh",
+      "transaction_position": "Thành viên HĐQT",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 344221,
+      "plan_buy": 0,
+      "plan_sell": 343921,
+      "plan_begin_date": "2025-05-28",
+      "plan_end_date": "2025-06-26",
+      "real_buy": 0,
+      "real_sell": 343921,
+      "real_end_date": "2025-05-28",
+      "published_date": "2025-05-26",
+      "volume_after": 300
+    },
+    {
+      "transaction_name": "Công ty Cổ phần Quản lý quỹ đầu tư FPT",
+      "transaction_position": "",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 5806134,
+      "plan_buy": 0,
+      "plan_sell": 0,
+      "plan_begin_date": "",
+      "plan_end_date": "",
+      "real_buy": 0,
+      "real_sell": 5806134,
+      "real_end_date": "2024-07-03",
+      "published_date": "2024-07-09",
+      "volume_after": 0
+    },
+    {
+      "transaction_name": "Công ty TNHH MTV Đầu tư Sao Hôm",
+      "transaction_position": "",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 29274630,
+      "plan_buy": 2600000,
+      "plan_sell": 0,
+      "plan_begin_date": "2024-07-01",
+      "plan_end_date": "2024-07-30",
+      "real_buy": 2600000,
+      "real_sell": 0,
+      "real_end_date": "2024-07-03",
+      "published_date": "2024-06-26",
+      "volume_after": 31874630
+    },
+    {
+      "transaction_name": "Công ty TNHH Một thành viên Đầu tư Sao Hôm",
+      "transaction_position": "",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 14044800,
+      "plan_buy": 0,
+      "plan_sell": 0,
+      "plan_begin_date": "",
+      "plan_end_date": "",
+      "real_buy": 0,
+      "real_sell": 0,
+      "real_end_date": "2020-10-30",
+      "published_date": "2020-11-04",
+      "volume_after": 14044800
+    },
+    {
+      "transaction_name": "Công ty Cổ phần Quản lý quỹ đầu tư FPT",
+      "transaction_position": "",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 0,
+      "plan_buy": 0,
+      "plan_sell": 0,
+      "plan_begin_date": "",
+      "plan_end_date": "",
+      "real_buy": 2555555,
+      "real_sell": 0,
+      "real_end_date": "2020-10-30",
+      "published_date": "2020-11-03",
+      "volume_after": 2555555
+    },
+    {
+      "transaction_name": "Bùi Quốc Khánh",
+      "transaction_position": "Thành viên HĐQT",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 132,
+      "plan_buy": 150000,
+      "plan_sell": 0,
+      "plan_begin_date": "2020-10-30",
+      "plan_end_date": "2020-11-30",
+      "real_buy": 150000,
+      "real_sell": 0,
+      "real_end_date": "2020-10-30",
+      "published_date": "2020-10-28",
+      "volume_after": 150132
+    },
+    {
+      "transaction_name": "Nguyễn Thu Trang",
+      "transaction_position": "Thành viên HĐQT",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 132,
+      "plan_buy": 25000,
+      "plan_sell": 0,
+      "plan_begin_date": "2020-10-30",
+      "plan_end_date": "2020-11-30",
+      "real_buy": 25000,
+      "real_sell": 0,
+      "real_end_date": "2020-10-30",
+      "published_date": "2020-10-28",
+      "volume_after": 25132
+    }
+  ]
+}

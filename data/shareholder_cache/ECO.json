@@ -1,0 +1,159 @@
+{
+  "symbol": "ECO",
+  "updated": "2026-03-22T03:15:52.000Z",
+  "co_cau_so_huu": {
+    "CoDongSoHuu": [
+      {
+        "Code": "CEO_880406",
+        "Name": "Nguyễn Đình Tuấn",
+        "Url": "<a href='/du-lieu/ceo/CEO_880406/nguyen-dinh-tuan.chn'>Nguyễn Đình Tuấn</a>",
+        "AssetVolume": "450.000",
+        "AssetRate": "1,5",
+        "UpdatedDate": "06/01/2026"
+      },
+      {
+        "Code": "CEO_880405",
+        "Name": "Nguyễn Văn Bình",
+        "Url": "<a href='/du-lieu/ceo/CEO_880405/nguyen-van-binh.chn'>Nguyễn Văn Bình</a>",
+        "AssetVolume": "6.000.000",
+        "AssetRate": "20,0",
+        "UpdatedDate": "06/01/2026"
+      },
+      {
+        "Code": "CEO_880408",
+        "Name": "Đào Quốc Hùng",
+        "Url": "<a href='/du-lieu/ceo/CEO_880408/dao-quoc-hung.chn'>Đào Quốc Hùng</a>",
+        "AssetVolume": "450.000",
+        "AssetRate": "1,5",
+        "UpdatedDate": "05/01/2026"
+      },
+      {
+        "Code": "CEO_879985",
+        "Name": "Nguyễn Hữu Dương",
+        "Url": "<a href='/du-lieu/ceo/CEO_879985/nguyen-huu-duong.chn'>Nguyễn Hữu Dương</a>",
+        "AssetVolume": "4.500.000",
+        "AssetRate": "15,0",
+        "UpdatedDate": "21/11/2025"
+      },
+      {
+        "Code": "CEO_880411",
+        "Name": "Đỗ Thị Duyên",
+        "Url": "<a href='/du-lieu/ceo/CEO_880411/do-thi-duyen.chn'>Đỗ Thị Duyên</a>",
+        "AssetVolume": "224.250",
+        "AssetRate": "0,75",
+        "UpdatedDate": "05/01/2026"
+      },
+      {
+        "Code": "CEO_880410",
+        "Name": "Trần Ngọc Phương",
+        "Url": "<a href='/du-lieu/ceo/CEO_880410/tran-ngoc-phuong.chn'>Trần Ngọc Phương</a>",
+        "AssetVolume": "75.000",
+        "AssetRate": "0,25",
+        "UpdatedDate": "21/11/2025"
+      },
+      {
+        "Code": "LQ_994418",
+        "Name": "Nguyễn Thị Lương",
+        "Url": "Nguyễn Thị Lương (Vợ của ông <a href='/du-lieu/ceo/CEO_880405/nguyen-van-binh.chn'>Nguyễn Văn Bình</a>)",
+        "AssetVolume": "1.470.000",
+        "AssetRate": "4,9",
+        "UpdatedDate": "21/11/2025"
+      },
+      {
+        "Code": "CEO_880407",
+        "Name": "Nguyễn Thành An",
+        "Url": "<a href='/du-lieu/ceo/CEO_880407/nguyen-thanh-an.chn'>Nguyễn Thành An</a>",
+        "AssetVolume": "225.000",
+        "AssetRate": "0,75",
+        "UpdatedDate": "21/11/2025"
+      }
+    ],
+    "NuocNgoai": 0.08,
+    "NhaNuoc": 0,
+    "Khac": 99.92
+  },
+  "cong_ty_con": [],
+  "cong_ty_lien_ket": [],
+  "giao_dich_noi_bo": [
+    {
+      "transaction_name": "Nguyễn Đình Tuấn",
+      "transaction_position": "Thành viên HĐQT",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 300000,
+      "plan_buy": 150000,
+      "plan_sell": 0,
+      "plan_begin_date": "2025-12-31",
+      "plan_end_date": "2026-01-06",
+      "real_buy": 150000,
+      "real_sell": 0,
+      "real_end_date": "2026-01-06",
+      "published_date": "2025-12-30",
+      "volume_after": 450000
+    },
+    {
+      "transaction_name": "Nguyễn Văn Bình",
+      "transaction_position": "Chủ tịch HĐQT",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 4000000,
+      "plan_buy": 2000000,
+      "plan_sell": 0,
+      "plan_begin_date": "2025-12-31",
+      "plan_end_date": "2026-01-06",
+      "real_buy": 2000000,
+      "real_sell": 0,
+      "real_end_date": "2026-01-06",
+      "published_date": "2025-12-30",
+      "volume_after": 6000000
+    },
+    {
+      "transaction_name": "Đỗ Thị Duyên",
+      "transaction_position": "Thành viên BKS",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 149500,
+      "plan_buy": 74750,
+      "plan_sell": 0,
+      "plan_begin_date": "2025-12-31",
+      "plan_end_date": "2026-01-06",
+      "real_buy": 74750,
+      "real_sell": 0,
+      "real_end_date": "2026-01-05",
+      "published_date": "2025-12-30",
+      "volume_after": 224250
+    },
+    {
+      "transaction_name": "Đào Quốc Hùng",
+      "transaction_position": "Phó Tổng Giám đốc",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 300000,
+      "plan_buy": 150000,
+      "plan_sell": 0,
+      "plan_begin_date": "2025-12-31",
+      "plan_end_date": "2026-01-06",
+      "real_buy": 150000,
+      "real_sell": 0,
+      "real_end_date": "2026-01-05",
+      "published_date": "2025-12-30",
+      "volume_after": 450000
+    },
+    {
+      "transaction_name": "Nguyễn Hữu Dương",
+      "transaction_position": "Thành viên HĐQT",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 3000000,
+      "plan_buy": 0,
+      "plan_sell": 3000000,
+      "plan_begin_date": "2025-08-01",
+      "plan_end_date": "2025-08-29",
+      "real_buy": 0,
+      "real_sell": 3000000,
+      "real_end_date": "2025-08-05",
+      "published_date": "2025-07-30",
+      "volume_after": 0
+    }
+  ]
+}

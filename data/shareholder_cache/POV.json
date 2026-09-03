@@ -1,0 +1,87 @@
+{
+  "symbol": "POV",
+  "updated": "2026-05-01T06:07:21.000Z",
+  "co_cau_so_huu": {
+    "CoDongSoHuu": [
+      {
+        "Code": "MTA",
+        "Name": "Tổng Công ty Khoáng sản và Thương mại Hà Tĩnh - CTCP",
+        "Url": "<a href='/du-lieu/upcom/MTA-tong-cong-ty-khoang-san-va-thuong-mai-ha-tinh-ctcp.chn' title='Tổng Công ty Khoáng sản và Thương mại Hà Tĩnh - CTCP'>Tổng Công ty Khoáng sản và Thương mại Hà Tĩnh - CTCP</a>",
+        "AssetVolume": "1.250.000",
+        "AssetRate": "10,0",
+        "UpdatedDate": "25/09/2025"
+      },
+      {
+        "Code": "OIL",
+        "Name": "Công ty Cổ phần Xăng dầu Dầu khí Vũng Áng",
+        "Url": "<a href='/du-lieu/upcom/OIL-tong-cong-ty-dau-viet-nam-ctcp.chn' title='Tổng Công ty Dầu Việt Nam - CTCP'>Tổng Công ty Dầu Việt Nam - CTCP</a>",
+        "AssetVolume": "7.062.500",
+        "AssetRate": "56,5",
+        "UpdatedDate": "25/09/2025"
+      },
+      {
+        "Code": "CORP_52253",
+        "Name": "Công ty Cổ phần Kinh doanh Khí Miền Bắc",
+        "Url": "Công ty Cổ phần Kinh doanh Khí Miền Bắc",
+        "AssetVolume": "1.248.000",
+        "AssetRate": "9,98",
+        "UpdatedDate": "25/09/2025"
+      }
+    ],
+    "NuocNgoai": 0.01,
+    "NhaNuoc": 0,
+    "Khac": 99.99
+  },
+  "cong_ty_con": [],
+  "cong_ty_lien_ket": [],
+  "giao_dich_noi_bo": [
+    {
+      "transaction_name": "Công ty Cổ phần Kinh doanh Khí Miền Bắc",
+      "transaction_position": "",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 1000000,
+      "plan_buy": 0,
+      "plan_sell": 10000,
+      "plan_begin_date": "2020-01-01",
+      "plan_end_date": "2020-01-29",
+      "real_buy": 0,
+      "real_sell": 2000,
+      "real_end_date": "2020-01-29",
+      "published_date": "2019-12-31",
+      "volume_after": 998000
+    },
+    {
+      "transaction_name": "Lê Minh Châu",
+      "transaction_position": "Trưởng BKS",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 0,
+      "plan_buy": 0,
+      "plan_sell": 0,
+      "plan_begin_date": "",
+      "plan_end_date": "",
+      "real_buy": 200,
+      "real_sell": 0,
+      "real_end_date": "2017-07-20",
+      "published_date": "2017-08-28",
+      "volume_after": 200
+    },
+    {
+      "transaction_name": "Nguyễn Trung Kiên",
+      "transaction_position": "Giám đốc",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 0,
+      "plan_buy": 209700,
+      "plan_sell": 0,
+      "plan_begin_date": "2017-03-15",
+      "plan_end_date": "2017-04-12",
+      "real_buy": 209700,
+      "real_sell": 0,
+      "real_end_date": "2017-03-16",
+      "published_date": "2017-03-14",
+      "volume_after": 209700
+    }
+  ]
+}

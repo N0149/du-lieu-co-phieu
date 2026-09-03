@@ -1,0 +1,202 @@
+{
+  "symbol": "CTW",
+  "updated": "2026-09-01T07:22:12.000Z",
+  "co_cau_so_huu": {
+    "CoDongSoHuu": [
+      {
+        "Code": "CORP_39397",
+        "Name": "UBND TP. Cần Thơ",
+        "Url": "UBND TP. Cần Thơ",
+        "AssetVolume": "14.280.000",
+        "AssetRate": "51,0",
+        "UpdatedDate": "30/07/2026"
+      }
+    ],
+    "NuocNgoai": 0.01,
+    "NhaNuoc": 0,
+    "Khac": 99.99
+  },
+  "cong_ty_con": [
+    {
+      "Symbol": "CTW",
+      "CorpCode": "CORP_39400",
+      "Name": "CTCP Cấp nước Thốt Nốt",
+      "TotalCapital": 33.119,
+      "SharedCapital": 28.51,
+      "OwnershipRate": 86.07,
+      "Note": "",
+      "Order": 1,
+      "TradeCenter": ""
+    },
+    {
+      "Symbol": "CTW",
+      "CorpCode": "CORP_39398",
+      "Name": "CTCP Cấp nước Trà Nóc - Ô Môn",
+      "TotalCapital": 53.188,
+      "SharedCapital": 35.1,
+      "OwnershipRate": 65.42,
+      "Note": "",
+      "Order": 2,
+      "TradeCenter": ""
+    }
+  ],
+  "cong_ty_lien_ket": [
+    {
+      "Symbol": "CTW",
+      "CorpCode": "CORP_39401",
+      "Name": "CTCP Nhựa Tân Tiến",
+      "TotalCapital": 10,
+      "SharedCapital": 3,
+      "OwnershipRate": 30,
+      "Note": "",
+      "Order": 3,
+      "TradeCenter": ""
+    }
+  ],
+  "giao_dich_noi_bo": [
+    {
+      "transaction_name": "Công ty Cổ phần Nước – Môi trường Bình Dương",
+      "transaction_position": "",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 0,
+      "plan_buy": 0,
+      "plan_sell": 0,
+      "plan_begin_date": "",
+      "plan_end_date": "",
+      "real_buy": 6900000,
+      "real_sell": 0,
+      "real_end_date": "2022-04-12",
+      "published_date": "2022-04-19",
+      "volume_after": 6900000
+    },
+    {
+      "transaction_name": "CTCP Đầu tư Ngành nước DNP",
+      "transaction_position": "",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 13329900,
+      "plan_buy": 0,
+      "plan_sell": 0,
+      "plan_begin_date": "",
+      "plan_end_date": "",
+      "real_buy": 0,
+      "real_sell": 13329900,
+      "real_end_date": "2022-04-06",
+      "published_date": "2022-04-14",
+      "volume_after": 0
+    },
+    {
+      "transaction_name": "Công ty cổ phần Hạ tầng nước Sài Gòn",
+      "transaction_position": "",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 3374000,
+      "plan_buy": 0,
+      "plan_sell": 0,
+      "plan_begin_date": "",
+      "plan_end_date": "",
+      "real_buy": 0,
+      "real_sell": 3374000,
+      "real_end_date": "2020-02-09",
+      "published_date": "2020-02-17",
+      "volume_after": 0
+    },
+    {
+      "transaction_name": "CTCP Đầu tư Ngành nước DNP",
+      "transaction_position": "",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 6310400,
+      "plan_buy": 0,
+      "plan_sell": 0,
+      "plan_begin_date": "",
+      "plan_end_date": "",
+      "real_buy": 7019500,
+      "real_sell": 0,
+      "real_end_date": "2020-02-11",
+      "published_date": "2020-02-13",
+      "volume_after": 13329900
+    },
+    {
+      "transaction_name": "Phạm Quốc Khánh",
+      "transaction_position": "",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 3640100,
+      "plan_buy": 0,
+      "plan_sell": 0,
+      "plan_begin_date": "",
+      "plan_end_date": "",
+      "real_buy": 0,
+      "real_sell": 3637000,
+      "real_end_date": "2020-02-09",
+      "published_date": "2020-02-13",
+      "volume_after": 3100
+    },
+    {
+      "transaction_name": "Phạm Quốc Khánh",
+      "transaction_position": "",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 0,
+      "plan_buy": 0,
+      "plan_sell": 0,
+      "plan_begin_date": "",
+      "plan_end_date": "",
+      "real_buy": 3637000,
+      "real_sell": 0,
+      "real_end_date": "2019-09-15",
+      "published_date": "2019-09-19",
+      "volume_after": 3637000
+    },
+    {
+      "transaction_name": "UBND TP. Cần Thơ",
+      "transaction_position": "",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 17920000,
+      "plan_buy": 0,
+      "plan_sell": 3640000,
+      "plan_begin_date": "2019-08-19",
+      "plan_end_date": "2019-09-15",
+      "real_buy": 0,
+      "real_sell": 3640000,
+      "real_end_date": "2019-08-29",
+      "published_date": "2019-08-15",
+      "volume_after": 14280000
+    },
+    {
+      "transaction_name": "CTCP Kỹ thuật Enviro",
+      "transaction_position": "",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 6310400,
+      "plan_buy": 0,
+      "plan_sell": 0,
+      "plan_begin_date": "",
+      "plan_end_date": "",
+      "real_buy": 0,
+      "real_sell": 6310400,
+      "real_end_date": "2018-01-30",
+      "published_date": "2018-02-08",
+      "volume_after": 0
+    },
+    {
+      "transaction_name": "Nguyễn Tùng Nguyên",
+      "transaction_position": "Thành viên HĐQT",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 10100,
+      "plan_buy": 5000,
+      "plan_sell": 0,
+      "plan_begin_date": "2016-10-17",
+      "plan_end_date": "2016-11-14",
+      "real_buy": 1500,
+      "real_sell": 0,
+      "real_end_date": "2016-11-14",
+      "published_date": "2016-10-13",
+      "volume_after": 11600
+    }
+  ]
+}

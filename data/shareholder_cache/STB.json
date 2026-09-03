@@ -1,0 +1,858 @@
+{
+  "symbol": "STB",
+  "updated": "2026-09-01T07:47:27.000Z",
+  "co_cau_so_huu": {
+    "CoDongSoHuu": [
+      {
+        "Code": "CEO_70276",
+        "Name": "Nguyễn Vạn Lý",
+        "Url": "<a href='/du-lieu/ceo/CEO_70276/nguyen-van-ly.chn'>Nguyễn Vạn Lý</a>",
+        "AssetVolume": "216.033",
+        "AssetRate": "0,01",
+        "UpdatedDate": "31/12/2016"
+      },
+      {
+        "Code": "CEO_04642",
+        "Name": "Nguyễn Minh Tâm",
+        "Url": "<a href='/du-lieu/ceo/CEO_04642/nguyen-minh-tam.chn'>Nguyễn Minh Tâm</a>",
+        "AssetVolume": "14.739",
+        "AssetRate": "0,0",
+        "UpdatedDate": "31/12/2023"
+      },
+      {
+        "Code": "CORP_39056",
+        "Name": "PYN Elite Fund (Non-Ucits)",
+        "Url": "PYN Elite Fund (Non-Ucits)",
+        "AssetVolume": "91.657.700",
+        "AssetRate": "4,86",
+        "UpdatedDate": "09/12/2025"
+      },
+      {
+        "Code": "CEO_80116",
+        "Name": "Nguyễn Đức Thạch Diễm",
+        "Url": "<a href='/du-lieu/ceo/CEO_80116/nguyen-duc-thach-diem.chn'>Nguyễn Đức Thạch Diễm</a>",
+        "AssetVolume": "76.320",
+        "AssetRate": "0,0",
+        "UpdatedDate": "31/12/2023"
+      },
+      {
+        "Code": "CEO_70273",
+        "Name": "Dương Hoàng Quỳnh Như",
+        "Url": "<a href='/du-lieu/ceo/CEO_70273/duong-hoang-quynh-nhu.chn'>Dương Hoàng Quỳnh Như</a>",
+        "AssetVolume": "9.695.631",
+        "AssetRate": "0,51",
+        "UpdatedDate": "31/12/2016"
+      },
+      {
+        "Code": "CEO_06584",
+        "Name": "Nguyễn Miên Tuấn",
+        "Url": "<a href='/du-lieu/ceo/CEO_06584/nguyen-mien-tuan.chn'>Nguyễn Miên Tuấn</a>",
+        "AssetVolume": "139.826",
+        "AssetRate": "0,01",
+        "UpdatedDate": "31/12/2019"
+      },
+      {
+        "Code": "CEO_30524",
+        "Name": "Bùi Văn Dũng",
+        "Url": "<a href='/du-lieu/ceo/CEO_30524/bui-van-dung.chn'>Bùi Văn Dũng</a>",
+        "AssetVolume": "138.752",
+        "AssetRate": "0,01",
+        "UpdatedDate": "31/12/2023"
+      },
+      {
+        "Code": "CEO_50620",
+        "Name": "Nguyễn Văn Nhân",
+        "Url": "<a href='/du-lieu/ceo/CEO_50620/nguyen-van-nhan.chn'>Nguyễn Văn Nhân</a>",
+        "AssetVolume": "610.047",
+        "AssetRate": "0,03",
+        "UpdatedDate": "31/12/2016"
+      },
+      {
+        "Code": "CEO_50123",
+        "Name": "Huỳnh Thanh Giang",
+        "Url": "<a href='/du-lieu/ceo/CEO_50123/huynh-thanh-giang.chn'>Huỳnh Thanh Giang</a>",
+        "AssetVolume": "48.562",
+        "AssetRate": "0,0",
+        "UpdatedDate": "31/12/2023"
+      },
+      {
+        "Code": "CEO_30500",
+        "Name": "Lê Minh Tâm",
+        "Url": "<a href='/du-lieu/ceo/CEO_30500/le-minh-tam.chn'>Lê Minh Tâm</a>",
+        "AssetVolume": "5.060",
+        "AssetRate": "0,0",
+        "UpdatedDate": "16/10/2015"
+      },
+      {
+        "Code": "CEO_98024",
+        "Name": "Nguyễn Ngọc Thái Bình",
+        "Url": "<a href='/du-lieu/ceo/CEO_98024/nguyen-ngoc-thai-binh.chn'>Nguyễn Ngọc Thái Bình</a>",
+        "AssetVolume": "3.084.824",
+        "AssetRate": "0,16",
+        "UpdatedDate": "30/06/2019"
+      },
+      {
+        "Code": "BETA",
+        "Name": "Công ty Cổ phần Chứng khoán BETA",
+        "Url": "<a href='/du-lieu/otc/BETA-cong-ty-co-phan-chung-khoan-beta.chn' title='Công ty Cổ phần Chứng khoán BETA'>Công ty Cổ phần Chứng khoán BETA</a>",
+        "AssetVolume": "3.358.990",
+        "AssetRate": "0,18",
+        "UpdatedDate": "16/10/2015"
+      },
+      {
+        "Code": "CEO_20066",
+        "Name": "Trần Xuân Huy",
+        "Url": "<a href='/du-lieu/ceo/CEO_20066/tran-xuan-huy.chn'>Trần Xuân Huy</a>",
+        "AssetVolume": "596.051",
+        "AssetRate": "0,03",
+        "UpdatedDate": "16/10/2015"
+      },
+      {
+        "Code": "CEO_00841",
+        "Name": "Nguyễn Tấn Thành",
+        "Url": "<a href='/du-lieu/ceo/CEO_00841/nguyen-tan-thanh.chn'>Nguyễn Tấn Thành</a>",
+        "AssetVolume": "1.644.072",
+        "AssetRate": "0,09",
+        "UpdatedDate": "16/10/2015"
+      },
+      {
+        "Code": "CEO_03355",
+        "Name": "Đoàn Văn Đức",
+        "Url": "<a href='/du-lieu/ceo/CEO_03355/doan-van-duc.chn'>Đoàn Văn Đức</a>",
+        "AssetVolume": "483.337",
+        "AssetRate": "0,03",
+        "UpdatedDate": "16/10/2015"
+      },
+      {
+        "Code": "CEO_50975",
+        "Name": "Nguyễn Thị Thanh Mai",
+        "Url": "<a href='/du-lieu/ceo/CEO_50975/nguyen-thi-thanh-mai.chn'>Nguyễn Thị Thanh Mai</a>",
+        "AssetVolume": "270.978",
+        "AssetRate": "0,01",
+        "UpdatedDate": "31/12/2019"
+      },
+      {
+        "Code": "CEO_03660",
+        "Name": "Hồ Doãn Cường",
+        "Url": "<a href='/du-lieu/ceo/CEO_03660/ho-doan-cuong.chn'>Hồ Doãn Cường</a>",
+        "AssetVolume": "7.126",
+        "AssetRate": "0,0",
+        "UpdatedDate": "31/12/2023"
+      },
+      {
+        "Code": "CEO_01297",
+        "Name": "Lê Hùng Cường",
+        "Url": "<a href='/du-lieu/ceo/CEO_01297/le-hung-cuong.chn'>Lê Hùng Cường</a>",
+        "AssetVolume": "29.292",
+        "AssetRate": "0,0",
+        "UpdatedDate": "16/10/2015"
+      },
+      {
+        "Code": "CORP_80987",
+        "Name": "Hanoi Investments Holdings Limited",
+        "Url": "Hanoi Investments Holdings Limited",
+        "AssetVolume": "24.155.000",
+        "AssetRate": "1,28",
+        "UpdatedDate": "10/02/2023"
+      },
+      {
+        "Code": "CEO_00249",
+        "Name": "Lê Thị Hoa",
+        "Url": "<a href='/du-lieu/ceo/CEO_00249/le-thi-hoa.chn'>Lê Thị Hoa</a>",
+        "AssetVolume": "1",
+        "AssetRate": "0,0",
+        "UpdatedDate": "31/12/2019"
+      },
+      {
+        "Code": "CEO_70275",
+        "Name": "Kiều Hữu Dũng",
+        "Url": "<a href='/du-lieu/ceo/CEO_70275/kieu-huu-dung.chn'>Kiều Hữu Dũng</a>",
+        "AssetVolume": "300.000",
+        "AssetRate": "0,02",
+        "UpdatedDate": "03/03/2017"
+      },
+      {
+        "Code": "CEO_01296",
+        "Name": "Đỗ Thu Ngân",
+        "Url": "<a href='/du-lieu/ceo/CEO_01296/do-thu-ngan.chn'>Đỗ Thu Ngân</a>",
+        "AssetVolume": "190.405",
+        "AssetRate": "0,01",
+        "UpdatedDate": "16/10/2015"
+      },
+      {
+        "Code": "CEO_30783",
+        "Name": "Nguyễn Thị Lệ An",
+        "Url": "<a href='/du-lieu/ceo/CEO_30783/nguyen-thi-le-an.chn'>Nguyễn Thị Lệ An</a>",
+        "AssetVolume": "18.247",
+        "AssetRate": "0,0",
+        "UpdatedDate": "31/12/2016"
+      },
+      {
+        "Code": "CEO_50901",
+        "Name": "Nguyễn Văn Cựu",
+        "Url": "<a href='/du-lieu/ceo/CEO_50901/nguyen-van-cuu.chn'>Nguyễn Văn Cựu</a>",
+        "AssetVolume": "500.000",
+        "AssetRate": "0,03",
+        "UpdatedDate": "28/03/2017"
+      },
+      {
+        "Code": "CORP_82224",
+        "Name": "Nhóm quỹ ngoại Dragon Capital",
+        "Url": "Nhóm quỹ ngoại Dragon Capital",
+        "AssetVolume": "113.111.000",
+        "AssetRate": "6,0",
+        "UpdatedDate": "29/05/2023"
+      },
+      {
+        "Code": "CORP_81758",
+        "Name": "CTBC Vietnam Equity Fund",
+        "Url": "CTBC Vietnam Equity Fund",
+        "AssetVolume": "43.000.000",
+        "AssetRate": "2,28",
+        "UpdatedDate": "08/11/2023"
+      },
+      {
+        "Code": "CEO_50121",
+        "Name": "Phan Huy Khang",
+        "Url": "<a href='/du-lieu/ceo/CEO_50121/phan-huy-khang.chn'>Phan Huy Khang</a>",
+        "AssetVolume": "22.480.081",
+        "AssetRate": "1,19",
+        "UpdatedDate": "31/12/2016"
+      },
+      {
+        "Code": "NHS",
+        "Name": "Công ty Cổ phần Đường Ninh Hòa",
+        "Url": "<a href='/du-lieu/hose/NHS-cong-ty-co-phan-duong-ninh-hoa.chn' title='Công ty Cổ phần Đường Ninh Hòa'>Công ty Cổ phần Đường Ninh Hòa</a>",
+        "AssetVolume": "3.172.199",
+        "AssetRate": "0,17",
+        "UpdatedDate": "16/10/2015"
+      },
+      {
+        "Code": "CEO_00734",
+        "Name": "Đào Nguyên Vũ",
+        "Url": "<a href='/du-lieu/ceo/CEO_00734/dao-nguyen-vu.chn'>Đào Nguyên Vũ</a>",
+        "AssetVolume": "31",
+        "AssetRate": "0,0",
+        "UpdatedDate": "29/10/2025"
+      },
+      {
+        "Code": "CEO_07730",
+        "Name": "Quách Thanh Ngọc Thủy",
+        "Url": "<a href='/du-lieu/ceo/CEO_07730/quach-thanh-ngoc-thuy.chn'>Quách Thanh Ngọc Thủy</a>",
+        "AssetVolume": "101",
+        "AssetRate": "0,0",
+        "UpdatedDate": "31/12/2023"
+      },
+      {
+        "Code": "CEO_00275",
+        "Name": "Lê Văn Tòng",
+        "Url": "<a href='/du-lieu/ceo/CEO_00275/le-van-tong.chn'>Lê Văn Tòng</a>",
+        "AssetVolume": "1.046.952",
+        "AssetRate": "0,06",
+        "UpdatedDate": "31/12/2019"
+      },
+      {
+        "Code": "CEO_82321",
+        "Name": "Phạm Văn Phong",
+        "Url": "<a href='/du-lieu/ceo/CEO_82321/pham-van-phong.chn'>Phạm Văn Phong</a>",
+        "AssetVolume": "19.680",
+        "AssetRate": "0,0",
+        "UpdatedDate": "31/12/2023"
+      },
+      {
+        "Code": "CORP_60285",
+        "Name": "Norges Bank",
+        "Url": "Norges Bank",
+        "AssetVolume": "29.000.000",
+        "AssetRate": "1,54",
+        "UpdatedDate": "05/01/2023"
+      },
+      {
+        "Code": "CEO_61418",
+        "Name": "Nguyễn Xuân Vũ",
+        "Url": "<a href='/du-lieu/ceo/CEO_61418/nguyen-xuan-vu.chn'>Nguyễn Xuân Vũ</a>",
+        "AssetVolume": "833",
+        "AssetRate": "0,0",
+        "UpdatedDate": "31/12/2023"
+      },
+      {
+        "Code": "CEO_00490",
+        "Name": "Phạm Duy Cường",
+        "Url": "<a href='/du-lieu/ceo/CEO_00490/pham-duy-cuong.chn'>Phạm Duy Cường</a>",
+        "AssetVolume": "512.631",
+        "AssetRate": "0,03",
+        "UpdatedDate": "16/10/2015"
+      },
+      {
+        "Code": "TTCG",
+        "Name": "CTCP Đầu tư Thành Thành Công",
+        "Url": "<a href='/du-lieu/otc/TTCG-ctcp-dau-tu-thanh-thanh-cong.chn' title='CTCP Đầu tư Thành Thành Công'>CTCP Đầu tư Thành Thành Công</a>",
+        "AssetVolume": "138.749",
+        "AssetRate": "0,01",
+        "UpdatedDate": "16/10/2015"
+      },
+      {
+        "Code": "CEO_70277",
+        "Name": "Hà Văn Trung",
+        "Url": "<a href='/du-lieu/ceo/CEO_70277/ha-van-trung.chn'>Hà Văn Trung</a>",
+        "AssetVolume": "10.000",
+        "AssetRate": "0,0",
+        "UpdatedDate": "31/12/2023"
+      },
+      {
+        "Code": "CEO_00122",
+        "Name": "Doãn Bá Tùng",
+        "Url": "<a href='/du-lieu/ceo/CEO_00122/doan-ba-tung.chn'>Doãn Bá Tùng</a>",
+        "AssetVolume": "600.509",
+        "AssetRate": "0,03",
+        "UpdatedDate": "16/10/2015"
+      },
+      {
+        "Code": "CEO_55555",
+        "Name": "Dương Công Minh",
+        "Url": "<a href='/du-lieu/ceo/CEO_55555/duong-cong-minh.chn'>Dương Công Minh</a>",
+        "AssetVolume": "62.569.075",
+        "AssetRate": "3,32",
+        "UpdatedDate": "31/12/2023"
+      },
+      {
+        "Code": "CEO_30710",
+        "Name": "Phan Đình Tuệ",
+        "Url": "<a href='/du-lieu/ceo/CEO_30710/phan-dinh-tue.chn'>Phan Đình Tuệ</a>",
+        "AssetVolume": "142.895",
+        "AssetRate": "0,01",
+        "UpdatedDate": "31/12/2023"
+      },
+      {
+        "Code": "CEO_50062",
+        "Name": "Nguyễn Thị Mỹ Hạnh",
+        "Url": "<a href='/du-lieu/ceo/CEO_50062/nguyen-thi-my-hanh.chn'>Nguyễn Thị Mỹ Hạnh</a>",
+        "AssetVolume": "27.762",
+        "AssetRate": "0,0",
+        "UpdatedDate": "16/10/2015"
+      },
+      {
+        "Code": "CORP_00053",
+        "Name": "Vietnam Dragon Fund Ltd",
+        "Url": "Vietnam Dragon Fund Ltd",
+        "AssetVolume": "26.330.894",
+        "AssetRate": "1,4",
+        "UpdatedDate": "16/10/2015"
+      },
+      {
+        "Code": "CEO_00412",
+        "Name": "Trầm Bê",
+        "Url": "<a href='/du-lieu/ceo/CEO_00412/tram-be.chn'>Trầm Bê</a>",
+        "AssetVolume": "27.650.619",
+        "AssetRate": "1,47",
+        "UpdatedDate": "31/12/2016"
+      },
+      {
+        "Code": "CEO_872078",
+        "Name": "Lâm Văn Kiệt",
+        "Url": "<a href='/du-lieu/ceo/CEO_872078/lam-van-kiet.chn'>Lâm Văn Kiệt</a>",
+        "AssetVolume": "66",
+        "AssetRate": "0,0",
+        "UpdatedDate": "31/12/2023"
+      },
+      {
+        "Code": "CEO_00719",
+        "Name": "Nguyễn Châu",
+        "Url": "<a href='/du-lieu/ceo/CEO_00719/nguyen-chau.chn'>Nguyễn Châu</a>",
+        "AssetVolume": "161.112",
+        "AssetRate": "0,01",
+        "UpdatedDate": "16/10/2015"
+      },
+      {
+        "Code": "CEO_51261",
+        "Name": "Võ Anh Nhuệ",
+        "Url": "<a href='/du-lieu/ceo/CEO_51261/vo-anh-nhue.chn'>Võ Anh Nhuệ</a>",
+        "AssetVolume": "3",
+        "AssetRate": "0,0",
+        "UpdatedDate": "31/12/2019"
+      },
+      {
+        "Code": "CEO_08399",
+        "Name": "Nguyễn Văn Thành",
+        "Url": "<a href='/du-lieu/ceo/CEO_08399/nguyen-van-thanh.chn'>Nguyễn Văn Thành</a>",
+        "AssetVolume": "332.680",
+        "AssetRate": "0,02",
+        "UpdatedDate": "16/10/2015"
+      },
+      {
+        "Code": "CEO_00042",
+        "Name": "Đặng Hồng Anh",
+        "Url": "<a href='/du-lieu/ceo/CEO_00042/dang-hong-anh.chn'>Đặng Hồng Anh</a>",
+        "AssetVolume": "9.712.499",
+        "AssetRate": "0,52",
+        "UpdatedDate": "16/10/2015"
+      },
+      {
+        "Code": "CEO_02112",
+        "Name": "Huỳnh Phú Kiệt",
+        "Url": "<a href='/du-lieu/ceo/CEO_02112/huynh-phu-kiet.chn'>Huỳnh Phú Kiệt</a>",
+        "AssetVolume": "175.758",
+        "AssetRate": "0,01",
+        "UpdatedDate": "16/10/2015"
+      },
+      {
+        "Code": "CEO_30786",
+        "Name": "Nguyễn Bá Trị",
+        "Url": "<a href='/du-lieu/ceo/CEO_30786/nguyen-ba-tri.chn'>Nguyễn Bá Trị</a>",
+        "AssetVolume": "7",
+        "AssetRate": "0,0",
+        "UpdatedDate": "31/12/2023"
+      },
+      {
+        "Code": "ToanThinhPhat",
+        "Name": "Công ty cổ phần Đầu tư Kiến trúc Xây dựng Toàn Thịnh Phát",
+        "Url": "<a href='/du-lieu/otc/TOANTHINHPHAT-cong-ty-co-phan-dau-tu-kien-truc-xay-dung-toan-thinh-phat.chn' title='Công ty cổ phần Đầu tư Kiến trúc Xây dựng Toàn Thịnh Phát'>Công ty cổ phần Đầu tư Kiến trúc Xây dựng Toàn Thịnh Phát</a>",
+        "AssetVolume": "12.158.434",
+        "AssetRate": "0,64",
+        "UpdatedDate": "16/10/2015"
+      },
+      {
+        "Code": "CEO_80117",
+        "Name": "Hoàng Thanh Hải",
+        "Url": "<a href='/du-lieu/ceo/CEO_80117/hoang-thanh-hai.chn'>Hoàng Thanh Hải</a>",
+        "AssetVolume": "76.315",
+        "AssetRate": "0,0",
+        "UpdatedDate": "31/12/2023"
+      },
+      {
+        "Code": "CEO_51517",
+        "Name": "Trần Minh Khoa",
+        "Url": "<a href='/du-lieu/ceo/CEO_51517/tran-minh-khoa.chn'>Trần Minh Khoa</a>",
+        "AssetVolume": "6.937",
+        "AssetRate": "0,0",
+        "UpdatedDate": "31/12/2016"
+      },
+      {
+        "Code": "CEO_06973",
+        "Name": "Phạm Nhật Vinh",
+        "Url": "<a href='/du-lieu/ceo/CEO_06973/pham-nhat-vinh.chn'>Phạm Nhật Vinh</a>",
+        "AssetVolume": "200.438",
+        "AssetRate": "0,01",
+        "UpdatedDate": "16/10/2015"
+      },
+      {
+        "Code": "CEO_30720",
+        "Name": "Hà Quỳnh Anh",
+        "Url": "<a href='/du-lieu/ceo/CEO_30720/ha-quynh-anh.chn'>Hà Quỳnh Anh</a>",
+        "AssetVolume": "5.828",
+        "AssetRate": "0,0",
+        "UpdatedDate": "31/12/2023"
+      },
+      {
+        "Code": "CEO_30301",
+        "Name": "Nguyễn Hải Tâm",
+        "Url": "<a href='/du-lieu/ceo/CEO_30301/nguyen-hai-tam.chn'>Nguyễn Hải Tâm</a>",
+        "AssetVolume": "149.013",
+        "AssetRate": "0,01",
+        "UpdatedDate": "16/10/2015"
+      },
+      {
+        "Code": "SCR",
+        "Name": "Công ty Cổ phần Địa ốc Sài Gòn Thương Tín",
+        "Url": "<a href='/du-lieu/hose/SCR-cong-ty-co-phan-dia-oc-sai-gon-thuong-tin.chn' title='Công ty Cổ phần Địa ốc Sài Gòn Thương Tín'>Công ty Cổ phần Địa ốc Sài Gòn Thương Tín</a>",
+        "AssetVolume": "15",
+        "AssetRate": "0,0",
+        "UpdatedDate": "16/10/2015"
+      }
+    ],
+    "NuocNgoai": 11.08,
+    "NhaNuoc": 0,
+    "Khac": 88.92
+  },
+  "cong_ty_con": [
+    {
+      "Symbol": "STB",
+      "CorpCode": "CORP_30037",
+      "Name": "Công ty TNHH MTV Cho thuê Tài chính Ngân hàng Sài Gòn Thương Tín (SBL)",
+      "TotalCapital": 300,
+      "SharedCapital": 300,
+      "OwnershipRate": 100,
+      "Note": "",
+      "Order": 1,
+      "TradeCenter": ""
+    },
+    {
+      "Symbol": "STB",
+      "CorpCode": "CORP_93080",
+      "Name": "Công ty TNHH Quản lý và khai thác nợ Tài sản Ngân hàng Sài gòn Thương Tín (SBA)",
+      "TotalCapital": 500,
+      "SharedCapital": 500,
+      "OwnershipRate": 100,
+      "Note": "",
+      "Order": 2,
+      "TradeCenter": ""
+    },
+    {
+      "Symbol": "STB",
+      "CorpCode": "CORP_93081",
+      "Name": "Công ty Kiều hối Ngân hàng Sài Gòn Thương Tín (SBR)",
+      "TotalCapital": 15,
+      "SharedCapital": 15,
+      "OwnershipRate": 100,
+      "Note": "",
+      "Order": 3,
+      "TradeCenter": ""
+    },
+    {
+      "Symbol": "STB",
+      "CorpCode": "CORP_93082",
+      "Name": "Công ty TNHH MTV Vàng bạc đá quý Sài Gòn Thương Tín (SBJ)",
+      "TotalCapital": 250,
+      "SharedCapital": 250,
+      "OwnershipRate": 100,
+      "Note": "",
+      "Order": 4,
+      "TradeCenter": ""
+    },
+    {
+      "Symbol": "STB",
+      "CorpCode": "CORP_94845",
+      "Name": "Sacombank Cambodia Plc",
+      "TotalCapital": 783.3,
+      "SharedCapital": 783.3,
+      "OwnershipRate": 100,
+      "Note": "",
+      "Order": 5,
+      "TradeCenter": ""
+    },
+    {
+      "Symbol": "STB",
+      "CorpCode": "CORP_94846",
+      "Name": "Chi nhánh Lào",
+      "TotalCapital": 780,
+      "SharedCapital": 780,
+      "OwnershipRate": 100,
+      "Note": "",
+      "Order": 6,
+      "TradeCenter": ""
+    }
+  ],
+  "cong_ty_lien_ket": [],
+  "giao_dich_noi_bo": [
+    {
+      "transaction_name": "PYN Elite Fund (Non-Ucits)",
+      "transaction_position": "",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 95657700,
+      "plan_buy": 0,
+      "plan_sell": 0,
+      "plan_begin_date": "",
+      "plan_end_date": "",
+      "real_buy": 0,
+      "real_sell": 4000000,
+      "real_end_date": "2025-12-09",
+      "published_date": "2025-12-18",
+      "volume_after": 91657700
+    },
+    {
+      "transaction_name": "Đào Nguyên Vũ",
+      "transaction_position": "Phó Tổng GĐ",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 52331,
+      "plan_buy": 0,
+      "plan_sell": 52331,
+      "plan_begin_date": "2025-10-22",
+      "plan_end_date": "2025-11-20",
+      "real_buy": 0,
+      "real_sell": 52300,
+      "real_end_date": "2025-10-29",
+      "published_date": "2025-10-16",
+      "volume_after": 31
+    },
+    {
+      "transaction_name": "PYN Elite Fund (Non-Ucits)",
+      "transaction_position": "",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 113489700,
+      "plan_buy": 0,
+      "plan_sell": 0,
+      "plan_begin_date": "",
+      "plan_end_date": "",
+      "real_buy": 0,
+      "real_sell": 1110900,
+      "real_end_date": "2025-02-26",
+      "published_date": "2025-03-08",
+      "volume_after": 112378800
+    },
+    {
+      "transaction_name": "PYN Elite Fund",
+      "transaction_position": "",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 94149600,
+      "plan_buy": 0,
+      "plan_sell": 0,
+      "plan_begin_date": "",
+      "plan_end_date": "",
+      "real_buy": 4000000,
+      "real_sell": 0,
+      "real_end_date": "2024-03-28",
+      "published_date": "2024-04-08",
+      "volume_after": 98149600
+    },
+    {
+      "transaction_name": "CTBC Vietnam Equity Fund",
+      "transaction_position": "",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 40000000,
+      "plan_buy": 0,
+      "plan_sell": 0,
+      "plan_begin_date": "",
+      "plan_end_date": "",
+      "real_buy": 3000000,
+      "real_sell": 0,
+      "real_end_date": "2023-11-08",
+      "published_date": "2023-11-09",
+      "volume_after": 43000000
+    },
+    {
+      "transaction_name": "Vietnam Enterprise Investments Limited",
+      "transaction_position": "",
+      "leader_name": "Dominic Timothy Charles Scriven",
+      "leader_position": "Thành viên HĐQT",
+      "volume_before": 7130000,
+      "plan_buy": 0,
+      "plan_sell": 0,
+      "plan_begin_date": "",
+      "plan_end_date": "",
+      "real_buy": 1000000,
+      "real_sell": 0,
+      "real_end_date": "2023-11-08",
+      "published_date": "2023-11-09",
+      "volume_after": 8130000
+    },
+    {
+      "transaction_name": "KB Vietnam Focus Balanced Fund",
+      "transaction_position": "",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 1400000,
+      "plan_buy": 0,
+      "plan_sell": 0,
+      "plan_begin_date": "",
+      "plan_end_date": "",
+      "real_buy": 50000,
+      "real_sell": 0,
+      "real_end_date": "2023-05-29",
+      "published_date": "2023-05-30",
+      "volume_after": 1450000
+    },
+    {
+      "transaction_name": "Nhóm quỹ ngoại Dragon Capital",
+      "transaction_position": "",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 114811000,
+      "plan_buy": 0,
+      "plan_sell": 0,
+      "plan_begin_date": "",
+      "plan_end_date": "",
+      "real_buy": 0,
+      "real_sell": 1700000,
+      "real_end_date": "2023-05-29",
+      "published_date": "2023-05-30",
+      "volume_after": 113111000
+    },
+    {
+      "transaction_name": "Amersham Industries Limited",
+      "transaction_position": "",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 2000000,
+      "plan_buy": 0,
+      "plan_sell": 0,
+      "plan_begin_date": "",
+      "plan_end_date": "",
+      "real_buy": 0,
+      "real_sell": 250000,
+      "real_end_date": "2023-05-29",
+      "published_date": "2023-05-30",
+      "volume_after": 1750000
+    },
+    {
+      "transaction_name": "Vietnam Enterprise Investments Limited",
+      "transaction_position": "",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 6500000,
+      "plan_buy": 0,
+      "plan_sell": 0,
+      "plan_begin_date": "",
+      "plan_end_date": "",
+      "real_buy": 0,
+      "real_sell": 1500000,
+      "real_end_date": "2023-05-29",
+      "published_date": "2023-05-30",
+      "volume_after": 5000000
+    },
+    {
+      "transaction_name": "Nguyễn Thanh Xuân",
+      "transaction_position": "Chị",
+      "leader_name": "Nguyễn Minh Tâm",
+      "leader_position": "Phó Tổng GĐ",
+      "volume_before": 13119,
+      "plan_buy": 0,
+      "plan_sell": 13119,
+      "plan_begin_date": "2023-05-04",
+      "plan_end_date": "2023-05-31",
+      "real_buy": 0,
+      "real_sell": 0,
+      "real_end_date": "",
+      "published_date": "2023-04-25",
+      "volume_after": 0
+    },
+    {
+      "transaction_name": "Hanoi Investments Holdings Limited",
+      "transaction_position": "",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 23155000,
+      "plan_buy": 0,
+      "plan_sell": 0,
+      "plan_begin_date": "",
+      "plan_end_date": "",
+      "real_buy": 1000000,
+      "real_sell": 0,
+      "real_end_date": "2023-02-10",
+      "published_date": "2023-02-10",
+      "volume_after": 24155000
+    },
+    {
+      "transaction_name": "Samsung Vietnam Securitues Master Investment Trust (Equity)",
+      "transaction_position": "",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 1806500,
+      "plan_buy": 0,
+      "plan_sell": 0,
+      "plan_begin_date": "",
+      "plan_end_date": "",
+      "real_buy": 100000,
+      "real_sell": 0,
+      "real_end_date": "2023-02-10",
+      "published_date": "2023-02-10",
+      "volume_after": 1906500
+    },
+    {
+      "transaction_name": "DC Developing Markets Strategies Public Limited Company",
+      "transaction_position": "",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 14700000,
+      "plan_buy": 0,
+      "plan_sell": 0,
+      "plan_begin_date": "",
+      "plan_end_date": "",
+      "real_buy": 500000,
+      "real_sell": 0,
+      "real_end_date": "2023-02-10",
+      "published_date": "2023-02-10",
+      "volume_after": 15200000
+    },
+    {
+      "transaction_name": "Samsung Vietnam Securitues Master Investment Trust (Equity)",
+      "transaction_position": "",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 1352400,
+      "plan_buy": 0,
+      "plan_sell": 0,
+      "plan_begin_date": "",
+      "plan_end_date": "",
+      "real_buy": 0,
+      "real_sell": 100000,
+      "real_end_date": "2023-01-05",
+      "published_date": "2023-01-06",
+      "volume_after": 1252400
+    },
+    {
+      "transaction_name": "Norges Bank",
+      "transaction_position": "",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 30456900,
+      "plan_buy": 0,
+      "plan_sell": 0,
+      "plan_begin_date": "",
+      "plan_end_date": "",
+      "real_buy": 0,
+      "real_sell": 1456900,
+      "real_end_date": "2023-01-05",
+      "published_date": "2023-01-06",
+      "volume_after": 29000000
+    },
+    {
+      "transaction_name": "Vietnam Enterprise Investments Limited",
+      "transaction_position": "",
+      "leader_name": "Dominic Timothy Charles Scriven",
+      "leader_position": "Thành viên HĐQT",
+      "volume_before": 4040400,
+      "plan_buy": 0,
+      "plan_sell": 0,
+      "plan_begin_date": "",
+      "plan_end_date": "",
+      "real_buy": 0,
+      "real_sell": 1000000,
+      "real_end_date": "2023-01-05",
+      "published_date": "2023-01-06",
+      "volume_after": 3040400
+    },
+    {
+      "transaction_name": "Nhóm quỹ ngoại Dragon Capital",
+      "transaction_position": "",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 113184700,
+      "plan_buy": 0,
+      "plan_sell": 0,
+      "plan_begin_date": "",
+      "plan_end_date": "",
+      "real_buy": 0,
+      "real_sell": 2556900,
+      "real_end_date": "2023-01-05",
+      "published_date": "2023-01-06",
+      "volume_after": 110627800
+    },
+    {
+      "transaction_name": "DC Developing Markets Strategies Public Limited Company",
+      "transaction_position": "",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 13000000,
+      "plan_buy": 0,
+      "plan_sell": 0,
+      "plan_begin_date": "",
+      "plan_end_date": "",
+      "real_buy": 1500000,
+      "real_sell": 0,
+      "real_end_date": "2023-01-04",
+      "published_date": "2023-01-06",
+      "volume_after": 14500000
+    },
+    {
+      "transaction_name": "Nhóm quỹ ngoại Dragon Capital",
+      "transaction_position": "",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 109084700,
+      "plan_buy": 0,
+      "plan_sell": 0,
+      "plan_begin_date": "",
+      "plan_end_date": "",
+      "real_buy": 4100000,
+      "real_sell": 0,
+      "real_end_date": "2023-01-04",
+      "published_date": "2023-01-06",
+      "volume_after": 113184700
+    }
+  ]
+}

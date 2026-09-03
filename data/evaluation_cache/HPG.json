@@ -1,0 +1,27 @@
+{
+  "symbol": "HPG",
+  "score360": {
+    "total": 7,
+    "ratingText": "TỐT",
+    "peVsMedian": 3.5664000000000016,
+    "pbVsMedian": 1.1904339248000007,
+    "psVsMedian": -5,
+    "peForward": 12.13,
+    "peForwardVsMedian": -15,
+    "pbForward": 1.52,
+    "pbForwardVsMedian": -10
+  },
+  "price": null,
+  "metrics": {
+    "marketCap": 186590000000000,
+    "pe": 13.7832,
+    "eps": 2013.3206632867,
+    "volume10d": 20082204,
+    "pb": 1.6488042406,
+    "ps": null,
+    "bvps": null,
+    "sharesOut": 8442964520,
+    "evEbitda": 10.4788,
+    "beta": 0.549172
+  }
+}

@@ -1,0 +1,239 @@
+{
+  "symbol": "XLV",
+  "updated": "2026-03-22T03:25:28.000Z",
+  "co_cau_so_huu": {
+    "CoDongSoHuu": [
+      {
+        "Code": "CEO_58695",
+        "Name": "Nguyễn Cao Ngọc",
+        "Url": "<a href='/du-lieu/ceo/CEO_58695/nguyen-cao-ngoc.chn'>Nguyễn Cao Ngọc</a>",
+        "AssetVolume": "19.450",
+        "AssetRate": "0,65",
+        "UpdatedDate": "16/05/2025"
+      },
+      {
+        "Code": "CEO_05568",
+        "Name": "Ngô Đình Khương",
+        "Url": "<a href='/du-lieu/ceo/CEO_05568/ngo-dinh-khuong.chn'>Ngô Đình Khương</a>",
+        "AssetVolume": "323.950",
+        "AssetRate": "10,8",
+        "UpdatedDate": "16/05/2025"
+      },
+      {
+        "Code": "CEO_54525",
+        "Name": "Nguyễn Hữu Ngoạn",
+        "Url": "<a href='/du-lieu/ceo/CEO_54525/nguyen-huu-ngoan.chn'>Nguyễn Hữu Ngoạn</a>",
+        "AssetVolume": "6.600",
+        "AssetRate": "0,22",
+        "UpdatedDate": "16/05/2025"
+      },
+      {
+        "Code": "CEO_54526",
+        "Name": "Đặng Vũ Quyền",
+        "Url": "<a href='/du-lieu/ceo/CEO_54526/dang-vu-quyen.chn'>Đặng Vũ Quyền</a>",
+        "AssetVolume": "72.200",
+        "AssetRate": "2,41",
+        "UpdatedDate": "16/05/2025"
+      },
+      {
+        "Code": "CEO_54524",
+        "Name": "Đinh Hữu Phương",
+        "Url": "<a href='/du-lieu/ceo/CEO_54524/dinh-huu-phuong.chn'>Đinh Hữu Phương</a>",
+        "AssetVolume": "55.750",
+        "AssetRate": "1,86",
+        "UpdatedDate": "16/05/2025"
+      },
+      {
+        "Code": "CEO_58729",
+        "Name": "Trần Ngọc Tân",
+        "Url": "<a href='/du-lieu/ceo/CEO_58729/tran-ngoc-tan.chn'>Trần Ngọc Tân</a>",
+        "AssetVolume": "53.450",
+        "AssetRate": "1,78",
+        "UpdatedDate": "16/05/2025"
+      },
+      {
+        "Code": "CEO_00207",
+        "Name": "Lê Công Tinh",
+        "Url": "<a href='/du-lieu/ceo/CEO_00207/le-cong-tinh.chn'>Lê Công Tinh</a>",
+        "AssetVolume": "5.750",
+        "AssetRate": "0,19",
+        "UpdatedDate": "16/05/2025"
+      },
+      {
+        "Code": "CEO_54521",
+        "Name": "Trần Xuân Minh",
+        "Url": "<a href='/du-lieu/ceo/CEO_54521/tran-xuan-minh.chn'>Trần Xuân Minh</a>",
+        "AssetVolume": "332.325",
+        "AssetRate": "11,08",
+        "UpdatedDate": "16/05/2025"
+      },
+      {
+        "Code": "CEO_54523",
+        "Name": "Trần Quang Hưng",
+        "Url": "<a href='/du-lieu/ceo/CEO_54523/tran-quang-hung.chn'>Trần Quang Hưng</a>",
+        "AssetVolume": "1.175",
+        "AssetRate": "0,04",
+        "UpdatedDate": "16/05/2025"
+      },
+      {
+        "Code": "CEO_54520",
+        "Name": "Trần Xuân Chính",
+        "Url": "<a href='/du-lieu/ceo/CEO_54520/tran-xuan-chinh.chn'>Trần Xuân Chính</a>",
+        "AssetVolume": "518.250",
+        "AssetRate": "17,28",
+        "UpdatedDate": "16/05/2025"
+      },
+      {
+        "Code": "KLQ_00724",
+        "Name": "Lưu Quang Hưng",
+        "Url": "Lưu Quang Hưng",
+        "AssetVolume": "150.600",
+        "AssetRate": "5,02",
+        "UpdatedDate": "16/05/2025"
+      },
+      {
+        "Code": "CEO_54522",
+        "Name": "Nguyễn Anh Tuấn",
+        "Url": "<a href='/du-lieu/ceo/CEO_54522/nguyen-anh-tuan.chn'>Nguyễn Anh Tuấn</a>",
+        "AssetVolume": "330.050",
+        "AssetRate": "11,0",
+        "UpdatedDate": "16/05/2025"
+      }
+    ],
+    "NuocNgoai": 49,
+    "NhaNuoc": 0,
+    "Khac": 51
+  },
+  "cong_ty_con": [],
+  "cong_ty_lien_ket": [],
+  "giao_dich_noi_bo": [
+    {
+      "transaction_name": "Lưu Quang Hưng",
+      "transaction_position": "",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 149900,
+      "plan_buy": 0,
+      "plan_sell": 0,
+      "plan_begin_date": "",
+      "plan_end_date": "",
+      "real_buy": 700,
+      "real_sell": 0,
+      "real_end_date": "2024-03-04",
+      "published_date": "2024-03-16",
+      "volume_after": 150600
+    },
+    {
+      "transaction_name": "Trần Quang Hưng",
+      "transaction_position": "Trưởng BKS",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 26175,
+      "plan_buy": 0,
+      "plan_sell": 25000,
+      "plan_begin_date": "2021-11-10",
+      "plan_end_date": "2021-11-30",
+      "real_buy": 0,
+      "real_sell": 25000,
+      "real_end_date": "2021-11-11",
+      "published_date": "2021-11-08",
+      "volume_after": 1175
+    },
+    {
+      "transaction_name": "Trần Xuân Chính",
+      "transaction_position": "Chủ tịch HĐQT",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 488250,
+      "plan_buy": 100000,
+      "plan_sell": 0,
+      "plan_begin_date": "2020-08-12",
+      "plan_end_date": "2020-09-10",
+      "real_buy": 30000,
+      "real_sell": 0,
+      "real_end_date": "2020-08-31",
+      "published_date": "2020-08-13",
+      "volume_after": 518250
+    },
+    {
+      "transaction_name": "Trần Ngọc Tân",
+      "transaction_position": "Thành viên BKS",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 43450,
+      "plan_buy": 10000,
+      "plan_sell": 0,
+      "plan_begin_date": "2020-08-12",
+      "plan_end_date": "2020-09-10",
+      "real_buy": 10000,
+      "real_sell": 0,
+      "real_end_date": "2020-08-13",
+      "published_date": "2020-08-13",
+      "volume_after": 53450
+    },
+    {
+      "transaction_name": "Trần Xuân Minh",
+      "transaction_position": "Phó Tổng GĐ",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 322325,
+      "plan_buy": 10000,
+      "plan_sell": 0,
+      "plan_begin_date": "2020-08-12",
+      "plan_end_date": "2020-09-10",
+      "real_buy": 10000,
+      "real_sell": 0,
+      "real_end_date": "2020-08-13",
+      "published_date": "2020-08-13",
+      "volume_after": 332325
+    },
+    {
+      "transaction_name": "Đinh Hữu Phương",
+      "transaction_position": "Thành viên BKS",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 45750,
+      "plan_buy": 10000,
+      "plan_sell": 0,
+      "plan_begin_date": "2020-08-12",
+      "plan_end_date": "2020-09-10",
+      "real_buy": 10000,
+      "real_sell": 0,
+      "real_end_date": "2020-08-13",
+      "published_date": "2020-08-13",
+      "volume_after": 55750
+    },
+    {
+      "transaction_name": "Nguyễn Anh Tuấn",
+      "transaction_position": "Phó Tổng GĐ",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 316350,
+      "plan_buy": 15000,
+      "plan_sell": 0,
+      "plan_begin_date": "2020-08-12",
+      "plan_end_date": "2020-09-10",
+      "real_buy": 13700,
+      "real_sell": 0,
+      "real_end_date": "2020-08-13",
+      "published_date": "2020-08-13",
+      "volume_after": 330050
+    },
+    {
+      "transaction_name": "Nguyễn Cao Ngọc",
+      "transaction_position": "Phó Tổng GĐ",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 6450,
+      "plan_buy": 20000,
+      "plan_sell": 0,
+      "plan_begin_date": "2020-08-12",
+      "plan_end_date": "2020-09-10",
+      "real_buy": 13000,
+      "real_sell": 0,
+      "real_end_date": "2020-08-13",
+      "published_date": "2020-08-13",
+      "volume_after": 19450
+    }
+  ]
+}

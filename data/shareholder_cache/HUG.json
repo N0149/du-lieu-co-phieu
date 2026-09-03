@@ -1,0 +1,248 @@
+{
+  "symbol": "HUG",
+  "updated": "2026-08-01T05:41:08.000Z",
+  "co_cau_so_huu": {
+    "CoDongSoHuu": [
+      {
+        "Code": "CEO_53845",
+        "Name": "Nguyễn Xuân Dương",
+        "Url": "<a href='/du-lieu/ceo/CEO_53845/nguyen-xuan-duong.chn'>Nguyễn Xuân Dương</a>",
+        "AssetVolume": "615.466",
+        "AssetRate": "3,15",
+        "UpdatedDate": "14/05/2026"
+      },
+      {
+        "Code": "VGT",
+        "Name": "Tổng Công ty may Hưng Yên - Công ty Cổ phần",
+        "Url": "<a href='/du-lieu/upcom/VGT-tap-doan-det-may-viet-nam.chn' title='Tập đoàn Dệt may Việt Nam'>Tập đoàn Dệt may Việt Nam</a>",
+        "AssetVolume": "6.830.562",
+        "AssetRate": "35,01",
+        "UpdatedDate": "14/05/2026"
+      },
+      {
+        "Code": "CEO_53854",
+        "Name": "Đỗ Văn Thuần",
+        "Url": "<a href='/du-lieu/ceo/CEO_53854/do-van-thuan.chn'>Đỗ Văn Thuần</a>",
+        "AssetVolume": "89.616",
+        "AssetRate": "0,46",
+        "UpdatedDate": "14/05/2026"
+      },
+      {
+        "Code": "CEO_53852",
+        "Name": "Bùi Thị Lý",
+        "Url": "<a href='/du-lieu/ceo/CEO_53852/bui-thi-ly.chn'>Bùi Thị Lý</a>",
+        "AssetVolume": "83.154",
+        "AssetRate": "0,43",
+        "UpdatedDate": "14/05/2026"
+      },
+      {
+        "Code": "CEO_53847",
+        "Name": "Lưong Thị Hữu",
+        "Url": "<a href='/du-lieu/ceo/CEO_53847/luong-thi-huu.chn'>Lưong Thị Hữu</a>",
+        "AssetVolume": "61.542",
+        "AssetRate": "0,32",
+        "UpdatedDate": "14/05/2026"
+      },
+      {
+        "Code": "CEO_53853",
+        "Name": "Hoàng Thị Hường",
+        "Url": "<a href='/du-lieu/ceo/CEO_53853/hoang-thi-huong.chn'>Hoàng Thị Hường</a>",
+        "AssetVolume": "37.735",
+        "AssetRate": "0,19",
+        "UpdatedDate": "14/05/2026"
+      },
+      {
+        "Code": "KLQ_100133",
+        "Name": "Phạm Tuấn Anh",
+        "Url": "Phạm Tuấn Anh",
+        "AssetVolume": "1.560.521",
+        "AssetRate": "8,0",
+        "UpdatedDate": "14/05/2026"
+      },
+      {
+        "Code": "CEO_53850",
+        "Name": "Phạm Thị Lan Hương",
+        "Url": "<a href='/du-lieu/ceo/CEO_53850/pham-thi-lan-huong.chn'>Phạm Thị Lan Hương</a>",
+        "AssetVolume": "186.746",
+        "AssetRate": "0,96",
+        "UpdatedDate": "14/05/2026"
+      },
+      {
+        "Code": "CEO_53848",
+        "Name": "Tạ Minh Tân",
+        "Url": "<a href='/du-lieu/ceo/CEO_53848/ta-minh-tan.chn'>Tạ Minh Tân</a>",
+        "AssetVolume": "133.639",
+        "AssetRate": "0,68",
+        "UpdatedDate": "14/05/2026"
+      },
+      {
+        "Code": "CEO_53856",
+        "Name": "Trần Thị Hường",
+        "Url": "<a href='/du-lieu/ceo/CEO_53856/tran-thi-huong.chn'>Trần Thị Hường</a>",
+        "AssetVolume": "9.872",
+        "AssetRate": "0,05",
+        "UpdatedDate": "14/05/2026"
+      },
+      {
+        "Code": "CEO_53849",
+        "Name": "Phạm Thị Phương Hoa",
+        "Url": "<a href='/du-lieu/ceo/CEO_53849/pham-thi-phuong-hoa.chn'>Phạm Thị Phương Hoa</a>",
+        "AssetVolume": "188.203",
+        "AssetRate": "0,96",
+        "UpdatedDate": "14/05/2026"
+      },
+      {
+        "Code": "CEO_53855",
+        "Name": "Chu Hữu Nghị",
+        "Url": "<a href='/du-lieu/ceo/CEO_53855/chu-huu-nghi.chn'>Chu Hữu Nghị</a>",
+        "AssetVolume": "47.444",
+        "AssetRate": "0,24",
+        "UpdatedDate": "14/05/2026"
+      },
+      {
+        "Code": "LQ_96646",
+        "Name": "Nguyễn Thị Hiên",
+        "Url": "Nguyễn Thị Hiên (Con gái của ông <a href='/du-lieu/ceo/CEO_53845/nguyen-xuan-duong.chn'>Nguyễn Xuân Dương</a>)",
+        "AssetVolume": "227.049",
+        "AssetRate": "1,16",
+        "UpdatedDate": "14/05/2026"
+      },
+      {
+        "Code": "CEO_53851",
+        "Name": "Nguyễn Văn Trung",
+        "Url": "<a href='/du-lieu/ceo/CEO_53851/nguyen-van-trung.chn'>Nguyễn Văn Trung</a>",
+        "AssetVolume": "224.893",
+        "AssetRate": "1,15",
+        "UpdatedDate": "14/05/2026"
+      }
+    ],
+    "NuocNgoai": 49,
+    "NhaNuoc": 0,
+    "Khac": 51
+  },
+  "cong_ty_con": [
+    {
+      "Symbol": "HUG",
+      "CorpCode": "CORP_51377",
+      "Name": "Công ty Cổ phần May Sơn Động",
+      "TotalCapital": 25,
+      "SharedCapital": 19.6,
+      "OwnershipRate": 78.4,
+      "Note": "",
+      "Order": 1,
+      "TradeCenter": ""
+    },
+    {
+      "Symbol": "HUG",
+      "CorpCode": "CORP_51376",
+      "Name": "Công ty Cồ phần Phú Hưng",
+      "TotalCapital": 20,
+      "SharedCapital": 10.2,
+      "OwnershipRate": 51,
+      "Note": "",
+      "Order": 2,
+      "TradeCenter": ""
+    }
+  ],
+  "cong_ty_lien_ket": [
+    {
+      "Symbol": "HUG",
+      "CorpCode": "CORP_51379",
+      "Name": "Công ty Cổ phần Châu Giang - Hưng Yên",
+      "TotalCapital": 29,
+      "SharedCapital": 13.34,
+      "OwnershipRate": 46,
+      "Note": "",
+      "Order": 3,
+      "TradeCenter": ""
+    },
+    {
+      "Symbol": "HUG",
+      "CorpCode": "CORP_51380",
+      "Name": "Công ty Cổ phần May Xuất khẩu Ninh Bình",
+      "TotalCapital": 38,
+      "SharedCapital": 16.15,
+      "OwnershipRate": 42.5,
+      "Note": "",
+      "Order": 4,
+      "TradeCenter": ""
+    },
+    {
+      "Symbol": "HUG",
+      "CorpCode": "CORP_51381",
+      "Name": "Công ty Cổ phần Tiên Hưng",
+      "TotalCapital": 26.3,
+      "SharedCapital": 10.97,
+      "OwnershipRate": 41.73,
+      "Note": "",
+      "Order": 5,
+      "TradeCenter": ""
+    }
+  ],
+  "giao_dich_noi_bo": [
+    {
+      "transaction_name": "Phạm Tuấn Anh",
+      "transaction_position": "",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 1560521,
+      "plan_buy": 148490,
+      "plan_sell": 0,
+      "plan_begin_date": "2025-09-25",
+      "plan_end_date": "2025-10-24",
+      "real_buy": 0,
+      "real_sell": 0,
+      "real_end_date": "",
+      "published_date": "2025-09-24",
+      "volume_after": 0
+    },
+    {
+      "transaction_name": "Phạm Tuấn Anh",
+      "transaction_position": "",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 1550278,
+      "plan_buy": 0,
+      "plan_sell": 0,
+      "plan_begin_date": "",
+      "plan_end_date": "",
+      "real_buy": 10243,
+      "real_sell": 0,
+      "real_end_date": "2024-10-01",
+      "published_date": "2024-10-07",
+      "volume_after": 1560521
+    },
+    {
+      "transaction_name": "Nguyễn Tuấn Linh",
+      "transaction_position": "",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 1033818,
+      "plan_buy": 0,
+      "plan_sell": 0,
+      "plan_begin_date": "",
+      "plan_end_date": "",
+      "real_buy": 0,
+      "real_sell": 1033818,
+      "real_end_date": "2024-04-24",
+      "published_date": "2024-06-17",
+      "volume_after": 0
+    },
+    {
+      "transaction_name": "Phạm Tuấn Anh",
+      "transaction_position": "",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 516460,
+      "plan_buy": 0,
+      "plan_sell": 0,
+      "plan_begin_date": "",
+      "plan_end_date": "",
+      "real_buy": 1033818,
+      "real_sell": 0,
+      "real_end_date": "2024-04-25",
+      "published_date": "2024-05-08",
+      "volume_after": 1550278
+    }
+  ]
+}

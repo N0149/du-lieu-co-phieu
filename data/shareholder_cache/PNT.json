@@ -1,0 +1,231 @@
+{
+  "symbol": "PNT",
+  "updated": "2026-06-01T07:21:17.000Z",
+  "co_cau_so_huu": {
+    "CoDongSoHuu": [
+      {
+        "Code": "CEO_98640",
+        "Name": "Đỗ Quý Nhật Quang",
+        "Url": "<a href='/du-lieu/ceo/CEO_98640/do-quy-nhat-quang.chn'>Đỗ Quý Nhật Quang</a>",
+        "AssetVolume": "102.800",
+        "AssetRate": "1,11",
+        "UpdatedDate": "08/08/2025"
+      },
+      {
+        "Code": "CEO_72259",
+        "Name": "Nguyễn Thành Nhơn",
+        "Url": "<a href='/du-lieu/ceo/CEO_72259/nguyen-thanh-nhon.chn'>Nguyễn Thành Nhơn</a>",
+        "AssetVolume": "168.904",
+        "AssetRate": "1,82",
+        "UpdatedDate": "08/08/2025"
+      },
+      {
+        "Code": "CEO_98639",
+        "Name": "Ngô Như Hùng",
+        "Url": "<a href='/du-lieu/ceo/CEO_98639/ngo-nhu-hung.chn'>Ngô Như Hùng</a>",
+        "AssetVolume": "1.704",
+        "AssetRate": "0,02",
+        "UpdatedDate": "08/08/2025"
+      },
+      {
+        "Code": "CEO_83748",
+        "Name": "Lê Hoàng Phi",
+        "Url": "<a href='/du-lieu/ceo/CEO_83748/le-hoang-phi.chn'>Lê Hoàng Phi</a>",
+        "AssetVolume": "6.148",
+        "AssetRate": "0,07",
+        "UpdatedDate": "08/08/2025"
+      },
+      {
+        "Code": "CEO_72260",
+        "Name": "Nghiêm Bá Bích",
+        "Url": "<a href='/du-lieu/ceo/CEO_72260/nghiem-ba-bich.chn'>Nghiêm Bá Bích</a>",
+        "AssetVolume": "80.501",
+        "AssetRate": "0,87",
+        "UpdatedDate": "08/08/2025"
+      },
+      {
+        "Code": "BTRS",
+        "Name": "CTCP Đầu Tư Xây Dựng Kinh Doanh Nhà Bến Thành",
+        "Url": "<a href='/du-lieu/otc/BTRS-ctcp-dau-tu-xay-dung-kinh-doanh-nha-ben-thanh.chn' title='CTCP Đầu Tư Xây Dựng Kinh Doanh Nhà Bến Thành'>CTCP Đầu Tư Xây Dựng Kinh Doanh Nhà Bến Thành</a>",
+        "AssetVolume": "929.000",
+        "AssetRate": "10,01",
+        "UpdatedDate": "08/08/2025"
+      },
+      {
+        "Code": "CEO_72257",
+        "Name": "Lê Hữu Sơn",
+        "Url": "<a href='/du-lieu/ceo/CEO_72257/le-huu-son.chn'>Lê Hữu Sơn</a>",
+        "AssetVolume": "266.446",
+        "AssetRate": "2,87",
+        "UpdatedDate": "08/08/2025"
+      },
+      {
+        "Code": "CEO_877640",
+        "Name": "Văn Bá Duy An",
+        "Url": "<a href='/du-lieu/ceo/CEO_877640/van-ba-duy-an.chn'>Văn Bá Duy An</a>",
+        "AssetVolume": "213.485",
+        "AssetRate": "2,3",
+        "UpdatedDate": "08/08/2025"
+      },
+      {
+        "Code": "CEO_72258",
+        "Name": "Văn Bá Dương",
+        "Url": "<a href='/du-lieu/ceo/CEO_72258/van-ba-duong.chn'>Văn Bá Dương</a>",
+        "AssetVolume": "137.574",
+        "AssetRate": "1,48",
+        "UpdatedDate": "08/08/2025"
+      }
+    ],
+    "NuocNgoai": 0.11,
+    "NhaNuoc": 0,
+    "Khac": 99.89
+  },
+  "cong_ty_con": [],
+  "cong_ty_lien_ket": [],
+  "giao_dich_noi_bo": [
+    {
+      "transaction_name": "Văn Bá Duy An",
+      "transaction_position": "Thành viên HĐQT",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 75911,
+      "plan_buy": 137574,
+      "plan_sell": 0,
+      "plan_begin_date": "2024-09-23",
+      "plan_end_date": "2024-10-18",
+      "real_buy": 137574,
+      "real_sell": 0,
+      "real_end_date": "2024-09-30",
+      "published_date": "2024-09-19",
+      "volume_after": 213485
+    },
+    {
+      "transaction_name": "CTCP Đầu Tư Xây Dựng Kinh Doanh Nhà Bến Thành",
+      "transaction_position": "",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 869000,
+      "plan_buy": 0,
+      "plan_sell": 0,
+      "plan_begin_date": "",
+      "plan_end_date": "",
+      "real_buy": 60000,
+      "real_sell": 0,
+      "real_end_date": "2023-12-25",
+      "published_date": "2023-12-28",
+      "volume_after": 929000
+    },
+    {
+      "transaction_name": "CTCP Đầu Tư Xây Dựng Kinh Doanh Nhà Bến Thành",
+      "transaction_position": "",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 769000,
+      "plan_buy": 0,
+      "plan_sell": 0,
+      "plan_begin_date": "",
+      "plan_end_date": "",
+      "real_buy": 100000,
+      "real_sell": 0,
+      "real_end_date": "2023-12-22",
+      "published_date": "2023-12-27",
+      "volume_after": 869000
+    },
+    {
+      "transaction_name": "CTCP Đầu Tư Xây Dựng Kinh Doanh Nhà Bến Thành",
+      "transaction_position": "",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 729900,
+      "plan_buy": 0,
+      "plan_sell": 0,
+      "plan_begin_date": "",
+      "plan_end_date": "",
+      "real_buy": 17100,
+      "real_sell": 0,
+      "real_end_date": "2023-11-06",
+      "published_date": "2023-11-10",
+      "volume_after": 747000
+    },
+    {
+      "transaction_name": "CTCP Đầu Tư Xây Dựng Kinh Doanh Nhà Bến Thành",
+      "transaction_position": "",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 640500,
+      "plan_buy": 0,
+      "plan_sell": 0,
+      "plan_begin_date": "",
+      "plan_end_date": "",
+      "real_buy": 10000,
+      "real_sell": 0,
+      "real_end_date": "2023-03-02",
+      "published_date": "2023-03-08",
+      "volume_after": 650500
+    },
+    {
+      "transaction_name": "CTCP Đầu Tư Xây Dựng Kinh Doanh Nhà Bến Thành",
+      "transaction_position": "",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 510800,
+      "plan_buy": 0,
+      "plan_sell": 0,
+      "plan_begin_date": "",
+      "plan_end_date": "",
+      "real_buy": 50000,
+      "real_sell": 0,
+      "real_end_date": "2022-12-30",
+      "published_date": "2023-01-04",
+      "volume_after": 560800
+    },
+    {
+      "transaction_name": "CTCP Đầu Tư Xây Dựng Kinh Doanh Nhà Bến Thành",
+      "transaction_position": "",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 460800,
+      "plan_buy": 0,
+      "plan_sell": 0,
+      "plan_begin_date": "",
+      "plan_end_date": "",
+      "real_buy": 50000,
+      "real_sell": 0,
+      "real_end_date": "2022-12-13",
+      "published_date": "2022-12-19",
+      "volume_after": 510800
+    },
+    {
+      "transaction_name": "Nguyễn Thành Nhơn",
+      "transaction_position": "Thành viên HĐQT",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 168904,
+      "plan_buy": 0,
+      "plan_sell": 30000,
+      "plan_begin_date": "2021-01-08",
+      "plan_end_date": "2021-02-05",
+      "real_buy": 0,
+      "real_sell": 30000,
+      "real_end_date": "2021-01-08",
+      "published_date": "2021-01-08",
+      "volume_after": 138904
+    },
+    {
+      "transaction_name": "Nguyễn Thành Nhơn",
+      "transaction_position": "Thành viên HĐQT",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 168904,
+      "plan_buy": 0,
+      "plan_sell": 20000,
+      "plan_begin_date": "2017-03-27",
+      "plan_end_date": "2017-04-21",
+      "real_buy": 0,
+      "real_sell": 0,
+      "real_end_date": "2017-04-21",
+      "published_date": "2017-03-24",
+      "volume_after": 168904
+    }
+  ]
+}

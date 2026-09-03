@@ -1,0 +1,123 @@
+{
+  "symbol": "DHB",
+  "updated": "2026-09-01T07:23:26.000Z",
+  "co_cau_so_huu": {
+    "CoDongSoHuu": [
+      {
+        "Code": "VINACHEM",
+        "Name": "Công ty Cổ phần Phân đạm và Hóa chất Hà Bắc",
+        "Url": "<a href='/du-lieu/otc/VINACHEM-tap-doan-hoa-chat-viet-nam.chn' title='Tập đoàn Hóa chất Việt Nam'>Tập đoàn Hóa chất Việt Nam</a>",
+        "AssetVolume": "265.831.008",
+        "AssetRate": "97,66",
+        "UpdatedDate": "30/06/2024"
+      },
+      {
+        "Code": "CEO_53011",
+        "Name": "Lê Anh Tuấn",
+        "Url": "<a href='/du-lieu/ceo/CEO_53011/le-anh-tuan.chn'>Lê Anh Tuấn</a>",
+        "AssetVolume": "3.000",
+        "AssetRate": "0,0",
+        "UpdatedDate": "31/12/2021"
+      },
+      {
+        "Code": "CEO_53013",
+        "Name": "Phạm Văn Trung",
+        "Url": "<a href='/du-lieu/ceo/CEO_53013/pham-van-trung.chn'>Phạm Văn Trung</a>",
+        "AssetVolume": "4.300",
+        "AssetRate": "0,0",
+        "UpdatedDate": "31/12/2021"
+      },
+      {
+        "Code": "CEO_53012",
+        "Name": "Nguyễn Văn Dũng",
+        "Url": "<a href='/du-lieu/ceo/CEO_53012/nguyen-van-dung.chn'>Nguyễn Văn Dũng</a>",
+        "AssetVolume": "4.600",
+        "AssetRate": "0,0",
+        "UpdatedDate": "31/12/2021"
+      },
+      {
+        "Code": "CEO_84121",
+        "Name": "Đặng Xuân Thủy",
+        "Url": "<a href='/du-lieu/ceo/CEO_84121/dang-xuan-thuy.chn'>Đặng Xuân Thủy</a>",
+        "AssetVolume": "6.400",
+        "AssetRate": "0,0",
+        "UpdatedDate": "31/12/2021"
+      },
+      {
+        "Code": "CEO_53010",
+        "Name": "Hà Xuân Hán",
+        "Url": "<a href='/du-lieu/ceo/CEO_53010/ha-xuan-han.chn'>Hà Xuân Hán</a>",
+        "AssetVolume": "4.900",
+        "AssetRate": "0,0",
+        "UpdatedDate": "31/12/2021"
+      },
+      {
+        "Code": "CEO_99734",
+        "Name": "Nguyễn Đức Ninh",
+        "Url": "<a href='/du-lieu/ceo/CEO_99734/nguyen-duc-ninh.chn'>Nguyễn Đức Ninh</a>",
+        "AssetVolume": "4.800",
+        "AssetRate": "0,0",
+        "UpdatedDate": "31/12/2021"
+      },
+      {
+        "Code": "CEO_99736",
+        "Name": "Nguyễn Phùng Hưng",
+        "Url": "<a href='/du-lieu/ceo/CEO_99736/nguyen-phung-hung.chn'>Nguyễn Phùng Hưng</a>",
+        "AssetVolume": "4.300",
+        "AssetRate": "0,0",
+        "UpdatedDate": "31/12/2021"
+      },
+      {
+        "Code": "CEO_99732",
+        "Name": "Phan Văn Tiền",
+        "Url": "<a href='/du-lieu/ceo/CEO_99732/phan-van-tien.chn'>Phan Văn Tiền</a>",
+        "AssetVolume": "3.800",
+        "AssetRate": "0,0",
+        "UpdatedDate": "19/04/2017"
+      },
+      {
+        "Code": "CEO_99733",
+        "Name": "Đỗ Doãn Hùng",
+        "Url": "<a href='/du-lieu/ceo/CEO_99733/do-doan-hung.chn'>Đỗ Doãn Hùng</a>",
+        "AssetVolume": "4.300",
+        "AssetRate": "0,0",
+        "UpdatedDate": "21/04/2018"
+      }
+    ],
+    "NuocNgoai": 0.01,
+    "NhaNuoc": 0,
+    "Khac": 99.99
+  },
+  "cong_ty_con": [
+    {
+      "Symbol": "DHB",
+      "CorpCode": "CORP_51741",
+      "Name": "CTCP Hóa chất Hưng Phát",
+      "TotalCapital": 84,
+      "SharedCapital": 84,
+      "OwnershipRate": 100,
+      "Note": "",
+      "Order": 1,
+      "TradeCenter": ""
+    }
+  ],
+  "cong_ty_lien_ket": [],
+  "giao_dich_noi_bo": [
+    {
+      "transaction_name": "CTCP Xuất nhập khẩu Hà Anh",
+      "transaction_position": "",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 100200,
+      "plan_buy": 400000,
+      "plan_sell": 0,
+      "plan_begin_date": "2024-06-04",
+      "plan_end_date": "2024-06-21",
+      "real_buy": 349300,
+      "real_sell": 0,
+      "real_end_date": "2024-06-19",
+      "published_date": "2024-06-03",
+      "volume_after": 449500
+    }
+  ]
+}

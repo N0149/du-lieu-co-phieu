@@ -1,0 +1,135 @@
+{
+  "symbol": "BGE",
+  "updated": "2026-09-01T07:17:11.000Z",
+  "co_cau_so_huu": {
+    "CoDongSoHuu": [
+      {
+        "Code": "CEO_877122",
+        "Name": "Nguyễn Mạnh Chiến",
+        "Url": "<a href='/du-lieu/ceo/CEO_877122/nguyen-manh-chien.chn'>Nguyễn Mạnh Chiến</a>",
+        "AssetVolume": "1.000.000",
+        "AssetRate": "0,14",
+        "UpdatedDate": "11/06/2026"
+      },
+      {
+        "Code": "CORP_654443",
+        "Name": "Công ty cổ phần Đầu tư và Mua bán nợ Sài Gòn",
+        "Url": "Công ty cổ phần Đầu tư và Mua bán nợ Sài Gòn",
+        "AssetVolume": "38.400.000",
+        "AssetRate": "5,26",
+        "UpdatedDate": "28/05/2025"
+      },
+      {
+        "Code": "CORP_654444",
+        "Name": "Công ty Trách nhiệm hữu hạn Mua bán nợ Nam Sài Gòn",
+        "Url": "Công ty Trách nhiệm hữu hạn Mua bán nợ Nam Sài Gòn",
+        "AssetVolume": "44.600.000",
+        "AssetRate": "6,11",
+        "UpdatedDate": "30/05/2025"
+      }
+    ],
+    "NuocNgoai": 0.06,
+    "NhaNuoc": 0,
+    "Khac": 99.94
+  },
+  "cong_ty_con": [],
+  "cong_ty_lien_ket": [],
+  "giao_dich_noi_bo": [
+    {
+      "transaction_name": "Công ty Trách nhiệm hữu hạn Mua bán nợ Nam Sài Gòn",
+      "transaction_position": "",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 41700000,
+      "plan_buy": 0,
+      "plan_sell": 0,
+      "plan_begin_date": "",
+      "plan_end_date": "",
+      "real_buy": 2900000,
+      "real_sell": 0,
+      "real_end_date": "2025-05-30",
+      "published_date": "2025-06-11",
+      "volume_after": 44600000
+    },
+    {
+      "transaction_name": "Công ty Trách nhiệm hữu hạn Mua bán nợ Nam Sài Gòn",
+      "transaction_position": "",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 32900000,
+      "plan_buy": 0,
+      "plan_sell": 0,
+      "plan_begin_date": "",
+      "plan_end_date": "",
+      "real_buy": 8800000,
+      "real_sell": 0,
+      "real_end_date": "2025-05-28",
+      "published_date": "2025-06-11",
+      "volume_after": 41700000
+    },
+    {
+      "transaction_name": "Công ty cổ phần Đầu tư và Mua bán nợ Sài Gòn",
+      "transaction_position": "",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 35500000,
+      "plan_buy": 0,
+      "plan_sell": 0,
+      "plan_begin_date": "",
+      "plan_end_date": "",
+      "real_buy": 2900000,
+      "real_sell": 0,
+      "real_end_date": "2025-05-28",
+      "published_date": "2025-06-11",
+      "volume_after": 38400000
+    },
+    {
+      "transaction_name": "Lê Thanh Tùng",
+      "transaction_position": "Thành viên HĐQT",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 3040300,
+      "plan_buy": 0,
+      "plan_sell": 3040300,
+      "plan_begin_date": "2025-05-28",
+      "plan_end_date": "2025-06-19",
+      "real_buy": 0,
+      "real_sell": 3040300,
+      "real_end_date": "2025-06-06",
+      "published_date": "2025-05-29",
+      "volume_after": 0
+    },
+    {
+      "transaction_name": "Đặng Đình Quyết",
+      "transaction_position": "Phó Tổng Giám đốc",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 3100000,
+      "plan_buy": 0,
+      "plan_sell": 3000000,
+      "plan_begin_date": "2025-05-26",
+      "plan_end_date": "2025-06-19",
+      "real_buy": 0,
+      "real_sell": 3000000,
+      "real_end_date": "2025-05-28",
+      "published_date": "2025-05-28",
+      "volume_after": 100000
+    },
+    {
+      "transaction_name": "Đỗ Thị In",
+      "transaction_position": "Mẹ ",
+      "leader_name": "Đồng Hải Hà",
+      "leader_position": "Trưởng BKS",
+      "volume_before": 2000000,
+      "plan_buy": 0,
+      "plan_sell": 0,
+      "plan_begin_date": "",
+      "plan_end_date": "",
+      "real_buy": 0,
+      "real_sell": 2000000,
+      "real_end_date": "2025-04-10",
+      "published_date": "2025-04-23",
+      "volume_after": 0
+    }
+  ]
+}

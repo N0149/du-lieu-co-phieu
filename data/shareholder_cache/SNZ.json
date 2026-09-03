@@ -1,0 +1,291 @@
+{
+  "symbol": "SNZ",
+  "updated": "2026-03-22T03:22:21.000Z",
+  "co_cau_so_huu": {
+    "CoDongSoHuu": [
+      {
+        "Code": "CEO_08477",
+        "Name": "Nguyễn Văn Tuấn",
+        "Url": "<a href='/du-lieu/ceo/CEO_08477/nguyen-van-tuan.chn'>Nguyễn Văn Tuấn</a>",
+        "AssetVolume": "5.000",
+        "AssetRate": "0,0",
+        "UpdatedDate": "07/10/2025"
+      },
+      {
+        "Code": "CEO_39112",
+        "Name": "Đỗ Thị Thu Hằng",
+        "Url": "<a href='/du-lieu/ceo/CEO_39112/do-thi-thu-hang.chn'>Đỗ Thị Thu Hằng</a>",
+        "AssetVolume": "27.200",
+        "AssetRate": "0,01",
+        "UpdatedDate": "07/10/2025"
+      },
+      {
+        "Code": "CEO_39115",
+        "Name": "Chu Thanh Sơn",
+        "Url": "<a href='/du-lieu/ceo/CEO_39115/chu-thanh-son.chn'>Chu Thanh Sơn</a>",
+        "AssetVolume": "4.300",
+        "AssetRate": "0,0",
+        "UpdatedDate": "07/10/2025"
+      },
+      {
+        "Code": "CEO_71563",
+        "Name": "Lê Thị Lệ Hằng",
+        "Url": "<a href='/du-lieu/ceo/CEO_71563/le-thi-le-hang.chn'>Lê Thị Lệ Hằng</a>",
+        "AssetVolume": "5.000",
+        "AssetRate": "0,0",
+        "UpdatedDate": "07/10/2025"
+      },
+      {
+        "Code": "CEO_07323",
+        "Name": "Nguyễn Thị Hạnh",
+        "Url": "<a href='/du-lieu/ceo/CEO_07323/nguyen-thi-hanh.chn'>Nguyễn Thị Hạnh</a>",
+        "AssetVolume": "10.600",
+        "AssetRate": "0,0",
+        "UpdatedDate": "07/10/2025"
+      },
+      {
+        "Code": "CORP_51282",
+        "Name": "UBND tỉnh Đồng Nai",
+        "Url": "UBND tỉnh Đồng Nai",
+        "AssetVolume": "374.756.700",
+        "AssetRate": "99,54",
+        "UpdatedDate": "07/10/2025"
+      },
+      {
+        "Code": "CEO_53543",
+        "Name": "Phạm Thị Cẩm Hà",
+        "Url": "<a href='/du-lieu/ceo/CEO_53543/pham-thi-cam-ha.chn'>Phạm Thị Cẩm Hà</a>",
+        "AssetVolume": "5.000",
+        "AssetRate": "0,0",
+        "UpdatedDate": "07/10/2025"
+      },
+      {
+        "Code": "CEO_71654",
+        "Name": "Đinh Ngọc Thuận",
+        "Url": "<a href='/du-lieu/ceo/CEO_71654/dinh-ngoc-thuan.chn'>Đinh Ngọc Thuận</a>",
+        "AssetVolume": "6.300",
+        "AssetRate": "0,0",
+        "UpdatedDate": "07/10/2025"
+      },
+      {
+        "Code": "CEO_70695",
+        "Name": "Nguyễn Long Bôn",
+        "Url": "<a href='/du-lieu/ceo/CEO_70695/nguyen-long-bon.chn'>Nguyễn Long Bôn</a>",
+        "AssetVolume": "14.900",
+        "AssetRate": "0,0",
+        "UpdatedDate": "07/10/2025"
+      },
+      {
+        "Code": "CEO_55883",
+        "Name": "Trương Viết Hoàng Sơn",
+        "Url": "<a href='/du-lieu/ceo/CEO_55883/truong-viet-hoang-son.chn'>Trương Viết Hoàng Sơn</a>",
+        "AssetVolume": "20.000",
+        "AssetRate": "0,01",
+        "UpdatedDate": "07/10/2025"
+      },
+      {
+        "Code": "CEO_53542",
+        "Name": "Trần Ngọc Tòng",
+        "Url": "<a href='/du-lieu/ceo/CEO_53542/tran-ngoc-tong.chn'>Trần Ngọc Tòng</a>",
+        "AssetVolume": "5.000",
+        "AssetRate": "0,0",
+        "UpdatedDate": "07/10/2025"
+      },
+      {
+        "Code": "CEO_61041",
+        "Name": "Phan Đình Thám",
+        "Url": "<a href='/du-lieu/ceo/CEO_61041/phan-dinh-tham.chn'>Phan Đình Thám</a>",
+        "AssetVolume": "11.500",
+        "AssetRate": "0,0",
+        "UpdatedDate": "07/10/2025"
+      },
+      {
+        "Code": "CEO_39114",
+        "Name": "Trần Thanh Hải",
+        "Url": "<a href='/du-lieu/ceo/CEO_39114/tran-thanh-hai.chn'>Trần Thanh Hải</a>",
+        "AssetVolume": "26.800",
+        "AssetRate": "0,01",
+        "UpdatedDate": "07/10/2025"
+      }
+    ],
+    "NuocNgoai": 49.00106722111876,
+    "NhaNuoc": 0,
+    "Khac": 50.99893277888124
+  },
+  "cong_ty_con": [
+    {
+      "Symbol": "SNZ",
+      "CorpCode": "SZE",
+      "Name": "Công ty Cổ phần Môi trường Sonadezi",
+      "TotalCapital": 300,
+      "SharedCapital": 192.13,
+      "OwnershipRate": 64.04,
+      "Note": "",
+      "Order": 1,
+      "TradeCenter": "UpCOM"
+    },
+    {
+      "Symbol": "SNZ",
+      "CorpCode": "DNW",
+      "Name": "Công ty cổ phần Cấp nước Đồng Nai",
+      "TotalCapital": 1200,
+      "SharedCapital": 767.8692,
+      "OwnershipRate": 63.99,
+      "Note": "",
+      "Order": 2,
+      "TradeCenter": "UpCOM"
+    },
+    {
+      "Symbol": "SNZ",
+      "CorpCode": "D2D",
+      "Name": "Công ty Cổ phần Phát triển Đô thị Công nghiệp Số 2",
+      "TotalCapital": 303.0475,
+      "SharedCapital": 175.3416,
+      "OwnershipRate": 57.86,
+      "Note": "",
+      "Order": 3,
+      "TradeCenter": "HoSE"
+    },
+    {
+      "Symbol": "SNZ",
+      "CorpCode": "SZL",
+      "Name": "Công ty cổ phần Sonadezi Long Thành",
+      "TotalCapital": 291.1484,
+      "SharedCapital": 153.57,
+      "OwnershipRate": 52.75,
+      "Note": "",
+      "Order": 4,
+      "TradeCenter": "HoSE"
+    },
+    {
+      "Symbol": "SNZ",
+      "CorpCode": "DND",
+      "Name": "CTCP Đầu tư Xây dựng và Vật liệu Đồng Nai",
+      "TotalCapital": 88.34,
+      "SharedCapital": 46.1934,
+      "OwnershipRate": 52.29,
+      "Note": "",
+      "Order": 5,
+      "TradeCenter": "UpCOM"
+    },
+    {
+      "Symbol": "SNZ",
+      "CorpCode": "PDN",
+      "Name": "Công ty Cổ phần Cảng Đồng Nai",
+      "TotalCapital": 555.6582,
+      "SharedCapital": 283.3866,
+      "OwnershipRate": 51,
+      "Note": "",
+      "Order": 6,
+      "TradeCenter": "HoSE"
+    }
+  ],
+  "cong_ty_lien_ket": [
+    {
+      "Symbol": "SNZ",
+      "CorpCode": "SZC",
+      "Name": "Công ty cổ phần Sonadezi Châu Đức",
+      "TotalCapital": 1799.8586,
+      "SharedCapital": 843.12,
+      "OwnershipRate": 46.84,
+      "Note": "",
+      "Order": 7,
+      "TradeCenter": "HoSE"
+    },
+    {
+      "Symbol": "SNZ",
+      "CorpCode": "SDV",
+      "Name": "Công ty Cổ phần Dịch vụ Sonadezi",
+      "TotalCapital": 50,
+      "SharedCapital": 20,
+      "OwnershipRate": 40,
+      "Note": "",
+      "Order": 8,
+      "TradeCenter": "UpCOM"
+    },
+    {
+      "Symbol": "SNZ",
+      "CorpCode": "CORP_51285",
+      "Name": "Công ty Cổ phần Xây dựng Đồng Nai",
+      "TotalCapital": 21,
+      "SharedCapital": 8.4,
+      "OwnershipRate": 40,
+      "Note": "",
+      "Order": 9,
+      "TradeCenter": ""
+    },
+    {
+      "Symbol": "SNZ",
+      "CorpCode": "CORP_92717",
+      "Name": "Công ty CP đầu tư quốc lộ 91 Cần Thơ - An Giang",
+      "TotalCapital": 282,
+      "SharedCapital": 112.01,
+      "OwnershipRate": 39.72,
+      "Note": "",
+      "Order": 10,
+      "TradeCenter": ""
+    },
+    {
+      "Symbol": "SNZ",
+      "CorpCode": "CORP_94174",
+      "Name": "CTCP Sonadezi An Bình",
+      "TotalCapital": 31.13,
+      "SharedCapital": 11.81,
+      "OwnershipRate": 37.95,
+      "Note": "",
+      "Order": 11,
+      "TradeCenter": ""
+    },
+    {
+      "Symbol": "SNZ",
+      "CorpCode": "CORP_51288",
+      "Name": "Công ty Cổ phần Bến xe và Dịch vụ Vận tải Đồng Nai",
+      "TotalCapital": 17.7,
+      "SharedCapital": 6.37,
+      "OwnershipRate": 36,
+      "Note": "",
+      "Order": 12,
+      "TradeCenter": ""
+    },
+    {
+      "Symbol": "SNZ",
+      "CorpCode": "SDN",
+      "Name": "Công ty Cổ phần Sơn Đồng Nai",
+      "TotalCapital": 30.3643,
+      "SharedCapital": 9.11088,
+      "OwnershipRate": 30.01,
+      "Note": "",
+      "Order": 13,
+      "TradeCenter": "HASTC"
+    },
+    {
+      "Symbol": "SNZ",
+      "CorpCode": "CORP_51810",
+      "Name": "CTCP Xây dựng Công nghiệp số 1 - Đồng Nai",
+      "TotalCapital": 30.744,
+      "SharedCapital": 6.15,
+      "OwnershipRate": 20,
+      "Note": "",
+      "Order": 14,
+      "TradeCenter": ""
+    }
+  ],
+  "giao_dich_noi_bo": [
+    {
+      "transaction_name": "Lê Thị Lệ Hằng",
+      "transaction_position": "",
+      "leader_name": "",
+      "leader_position": "",
+      "volume_before": 11200,
+      "plan_buy": 0,
+      "plan_sell": 6200,
+      "plan_begin_date": "2017-12-07",
+      "plan_end_date": "2018-01-04",
+      "real_buy": 0,
+      "real_sell": 6200,
+      "real_end_date": "2018-01-04",
+      "published_date": "2017-12-05",
+      "volume_after": 5000
+    }
+  ]
+}
