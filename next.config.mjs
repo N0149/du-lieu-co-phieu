@@ -32,6 +32,15 @@ const securityHeaders = [
 
 const nextConfig = {
   poweredByHeader: false,
+  serverExternalPackages: ['node:sqlite'],
+  outputFileTracingExcludes: {
+    '*': [
+      'data/evaluation_cache/**',
+      'data/shareholder_cache/**',
+      'data/*.db',
+      'data/**/*.db',
+    ],
+  },
   images: {
     unoptimized: true,
   },
