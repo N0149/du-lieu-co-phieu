@@ -126,6 +126,14 @@ def run_all():
     except Exception as e:
         print(f"[Freight] Error crawling freight rates: {e}")
         
+    # Step 5b: Populate benchmark / ticker calls for ports
+    print("\n>>> Step 5b: Ensuring Active Vessel Calls for Tracked Port Stocks...")
+    try:
+        from populate_recent_calls import populate
+        populate()
+    except Exception as e:
+        print(f"[Populate Calls] Error: {e}")
+
     # Step 6: Export JSON for Next.js
     print("\n>>> Step 6: Exporting Unified JSON Snapshot...")
     export_summary_json()

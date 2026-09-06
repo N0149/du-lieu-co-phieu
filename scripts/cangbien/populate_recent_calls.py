@@ -86,7 +86,7 @@ SAMPLE_VESSELS = {
 def populate():
     print("[Populate Calls] Adding recent 10+ calls with specific timestamps for each port...")
     conn = get_connection()
-    now = datetime(2026, 8, 29, 14, 0)
+    now = datetime.now()
     
     with conn:
         for ticker, vessels in SAMPLE_VESSELS.items():
@@ -94,9 +94,9 @@ def populate():
             cursor = conn.execute("SELECT count(*) as cnt FROM port_calls WHERE stock_ticker = ?", (ticker,))
             cnt = cursor.fetchone()['cnt']
             
-            # Generate 12 historical calls spanning the last 10 days
+            # Generate 12 historical calls spanning the last few days leading up to today
             for idx, v in enumerate(vessels):
-                call_time = now - timedelta(days=(idx // 2), hours=(idx * 3 + 2), minutes=(idx * 17) % 60)
+                call_time = now - timedelta(days=(idx // 2), hours=(idx * 2 + 1), minutes=(idx * 17) % 60)
                 call_date = call_time.strftime("%Y-%m-%d")
                 sched_str = call_time.strftime("%Y-%m-%d %H:%M")
                 direction = "in" if idx % 2 == 0 else "out"
