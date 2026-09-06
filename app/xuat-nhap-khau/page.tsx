@@ -18,7 +18,10 @@ export default async function XuatNhapKhauPage({
   const params = await searchParams
   const defaultViewMode = params?.ticker || params?.tab === 'tier-a' ? 'tier_a' : 'matrix'
   const initialTicker = params?.ticker ?? null
-  const tradeBalance = (snapshot as { trade_balance?: TradeBalancePoint[] }).trade_balance ?? []
+  const rawData = snapshot as unknown as {
+    trade_balance?: TradeBalancePoint[]
+  }
+  const tradeBalance = rawData.trade_balance ?? []
 
   return (
     <div className="min-h-screen">
@@ -45,6 +48,8 @@ export default async function XuatNhapKhauPage({
           defaultViewMode={defaultViewMode}
           initialTicker={initialTicker}
         />
+
+
 
         <p className="mt-6 text-[11px] leading-relaxed text-muted-foreground">
           Ghi chú: Số liệu thống kê sơ bộ theo kỳ báo cáo (SO_BO) — có thể thay đổi khi có số

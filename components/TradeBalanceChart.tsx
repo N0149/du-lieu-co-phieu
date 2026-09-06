@@ -120,7 +120,8 @@ function aggregate(data: TradeBalancePoint[], range: RangeKey): AggPoint[] {
     return out
   }
 
-  const thang = sorted.filter((p) => p.period_type === 'THANG')
+  // Chỉ lấy các tháng đã hoàn thành (tháng 8/2026 mới chỉ có 15 ngày K1 nên không đưa vào số liệu tháng)
+  const thang = sorted.filter((p) => p.period_type === 'THANG' && !p.period_date.startsWith('2026-08'))
   const bucketOf = (p: TradeBalancePoint): string => {
     const month = Number(p.period_date.slice(5, 7))
     if (range === 'month') return p.period_date.slice(0, 7)

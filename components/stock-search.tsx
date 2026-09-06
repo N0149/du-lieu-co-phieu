@@ -1,201 +1,66 @@
 'use client'
 
-import { useMemo, useRef, useState } from 'react'
+import { useState, useEffect } from 'react'
 import Link from 'next/link'
-import { useRouter } from 'next/navigation'
-import { Search, CornerDownLeft, FileText } from 'lucide-react'
-import { stocks, upside } from '@/lib/data'
-import { fmtPct } from '@/lib/format'
-import { cn } from '@/lib/utils'
-import { useReports, reportHref } from '@/lib/use-reports'
-import { reportTickers, buildReportStocks } from '@/lib/report-stocks'
-import { getAllStocks, removeVietnameseAccents } from '@/lib/longlivestock'
-
-type SearchEntry = {
-  ticker: string
-  name: string
-  hasReport: boolean
-}
+import { Search, FileText } from 'lucide-react'
+import { GlobalSearchModal } from '@/components/global-search-modal'
+import { useReports } from '@/lib/use-reports'
+import { reportTickers } from '@/lib/report-stocks'
 
 export function StockSearch() {
-  const router = useRouter()
-  const { reports, byTicker } = useReports()
-  const [q, setQ] = useState('')
-  const [open, setOpen] = useState(false)
-  const [active, setActive] = useState(0)
-  const inputRef = useRef<HTMLInputElement>(null)
+  const [modalOpen, setModalOpen] = useState(false)
 
-  // Nguồn tìm kiếm: toàn bộ mã báo cáo (từ kho) + các mã có tên công ty (stocks)
-  const searchPool = useMemo<SearchEntry[]>(() => {
-    const seen = new Set<string>()
-    const pool: SearchEntry[] = []
-    const reportStocks = buildReportStocks(reports)
-    // Ưu tiên các mã trong kho báo cáo (đã có bài viết)
-    for (const r of reportStocks) {
-      const t = r.ticker.toUpperCase()
-      if (seen.has(t)) continue
-      seen.add(t)
-      pool.push({ ticker: r.ticker, name: r.name, hasReport: true })
-    }
-    // Bổ sung các mã còn lại trong stocks (để tìm được theo tên công ty)
-    for (const s of stocks) {
-      const t = s.ticker.toUpperCase()
-      if (seen.has(t)) continue
-      seen.add(t)
-      pool.push({ ticker: s.ticker, name: s.name, hasReport: byTicker.has(t) })
-    }
-
-    // Bổ sung toàn bộ 1.530 mã từ danh mục thị trường
-    try {
-      const allM = getAllStocks()
-      for (const m of allM) {
-        const t = m.t.toUpperCase()
-        if (seen.has(t)) continue
-        seen.add(t)
-        pool.push({ ticker: m.t, name: m.n, hasReport: byTicker.has(t) })
+  // Global hotkey Ctrl+K / Cmd+K or "/"
+  useEffect(() => {
+    function handleKeyDown(e: KeyboardEvent) {
+      if ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === 'k') {
+        e.preventDefault()
+        setModalOpen(true)
+      } else if (
+        e.key === '/' &&
+        !['INPUT', 'TEXTAREA', 'SELECT'].includes((e.target as HTMLElement)?.tagName)
+      ) {
+        e.preventDefault()
+        setModalOpen(true)
       }
-    } catch {}
-
-    return pool
-  }, [reports, byTicker])
-
-  const stockMap = useMemo(
-    () => new Map(stocks.map((s) => [s.ticker.toUpperCase(), s])),
-    [],
-  )
-
-  const results = useMemo(() => {
-    const term = q.trim().toLowerCase()
-    const termNorm = removeVietnameseAccents(term)
-    if (!term) return searchPool.slice(0, 6)
-    return searchPool
-      .filter((s) => {
-        const tNorm = removeVietnameseAccents(`${s.ticker} ${s.name}`.toLowerCase())
-        return tNorm.includes(termNorm)
-      })
-      .slice(0, 8)
-  }, [q, searchPool])
-
-  // Mở thẳng trang phân tích & tài chính của mã cổ phiếu (từ dropdown gợi ý)
-  function go(ticker: string) {
-    setOpen(false)
-    setQ('')
-    inputRef.current?.blur()
-    router.push(`/stock/${encodeURIComponent(ticker)}`)
-  }
-
-  // Xử lý Enter/Submit: chuẩn hóa keyword (trim + toUpperCase)
-  function submitSearch() {
-    const keyword = q.trim().toUpperCase()
-    if (!keyword) return
-
-    // Nếu đang có gợi ý được highlight hợp lệ (dùng phím mũi tên hoặc khớp chính xác mã)
-    const pick = results[active]
-    const exactItem = searchPool.find((p) => p.ticker.toUpperCase() === keyword)
-
-    setOpen(false)
-    inputRef.current?.blur()
-
-    if (pick && (active > 0 || pick.ticker.toUpperCase() === keyword)) {
-      router.push(`/stock/${encodeURIComponent(pick.ticker)}`)
-      return
     }
-    if (exactItem) {
-      router.push(`/stock/${encodeURIComponent(keyword)}`)
-      return
-    }
-    // Tên công ty hoặc từ khóa tự do → tìm trong kho báo cáo
-    router.push(`/bao-cao?search=${encodeURIComponent(keyword)}`)
-  }
-
-  function onKeyDown(e: React.KeyboardEvent) {
-    if (e.nativeEvent.isComposing || (e as unknown as { keyCode: number }).keyCode === 229) return
-    if (e.key === 'ArrowDown') {
-      e.preventDefault()
-      setActive((a) => Math.min(a + 1, results.length - 1))
-    } else if (e.key === 'ArrowUp') {
-      e.preventDefault()
-      setActive((a) => Math.max(a - 1, 0))
-    } else if (e.key === 'Enter') {
-      e.preventDefault()
-      submitSearch()
-    } else if (e.key === 'Escape') {
-      setOpen(false)
-      inputRef.current?.blur()
-    }
-  }
+    window.addEventListener('keydown', handleKeyDown)
+    return () => window.removeEventListener('keydown', handleKeyDown)
+  }, [])
 
   return (
-    <div className="relative w-full max-w-xl">
-      <div className="relative">
-        <Search className="pointer-events-none absolute left-3 top-1/2 size-4 -translate-y-1/2 text-muted-foreground" />
-        <input
-          ref={inputRef}
-          value={q}
-          onChange={(e) => {
-            setQ(e.target.value)
-            setActive(0)
-            setOpen(true)
-          }}
-          onFocus={() => setOpen(true)}
-          onBlur={() => setTimeout(() => setOpen(false), 120)}
-          onKeyDown={onKeyDown}
-          placeholder="Tìm nhanh theo Mã CK hoặc tên doanh nghiệp (vd: HPG, FPT, VNM...)"
-          aria-label="Tìm kiếm cổ phiếu"
-          className="h-9 w-full rounded-lg border border-input bg-card/90 pl-9 pr-16 font-mono text-sm text-foreground outline-none transition-colors placeholder:font-sans placeholder:text-muted-foreground focus-visible:border-ring focus-visible:ring-2 focus-visible:ring-ring/30"
-        />
-        <kbd className="pointer-events-none absolute right-2.5 top-1/2 hidden -translate-y-1/2 items-center gap-1 rounded border border-border bg-muted px-1.5 py-0.5 font-mono text-[10px] text-muted-foreground sm:flex">
-          <CornerDownLeft className="size-3" /> Enter
-        </kbd>
+    <>
+      <div className="relative w-full max-w-xl">
+        <button
+          type="button"
+          onClick={() => setModalOpen(true)}
+          className="group flex h-9 w-full items-center justify-between rounded-lg border border-white/10 bg-[#121620] px-3 text-xs text-[#9EACB9] transition-all hover:border-emerald-500/50 hover:bg-[#181d28] hover:text-[#F0F3F6]"
+          title="Mở công cụ tìm kiếm toàn diện (Ctrl + K)"
+        >
+          <div className="flex items-center gap-2.5 truncate">
+            <Search className="size-4 shrink-0 text-[#64748b] group-hover:text-emerald-400 transition-colors" />
+            <span className="truncate">
+              Tìm kiếm Biểu đồ, Dữ liệu, Bố cục, Cổ phiếu...
+            </span>
+          </div>
+
+          <kbd className="hidden sm:inline-flex items-center gap-1 rounded border border-white/10 bg-[#1e2430] px-1.5 py-0.5 font-mono text-[10px] text-[#8b949e]">
+            <span className="text-[11px]">⌘</span>K
+          </kbd>
+        </button>
       </div>
 
-      {open && results.length > 0 && (
-        <div className="absolute left-0 right-0 top-full z-50 mt-1 overflow-hidden rounded-md border border-border bg-popover shadow-lg">
-          <ul role="listbox" className="max-h-80 overflow-y-auto py-1">
-            {results.map((s, i) => {
-              const stock = stockMap.get(s.ticker.toUpperCase())
-              const up = stock ? upside(stock) : null
-              return (
-                <li key={s.ticker} role="option" aria-selected={i === active}>
-                  <button
-                    type="button"
-                    onMouseDown={(e) => e.preventDefault()}
-                    onMouseEnter={() => setActive(i)}
-                    onClick={() => go(s.ticker)}
-                    className={cn(
-                      'flex w-full items-center gap-3 px-3 py-2 text-left',
-                      i === active ? 'bg-accent' : 'hover:bg-muted',
-                    )}
-                  >
-                    <span className="w-12 font-mono text-sm font-semibold text-foreground">
-                      {s.ticker}
-                    </span>
-                    <span className="flex-1 truncate text-sm text-muted-foreground">
-                      {s.name}
-                    </span>
-                    {s.hasReport ? (
-                      <span className="inline-flex shrink-0 items-center gap-1 rounded bg-accent px-1.5 py-0.5 text-[10px] font-medium text-accent-foreground">
-                        <FileText className="size-3" /> Báo cáo
-                      </span>
-                    ) : up != null ? (
-                      <span className="shrink-0 font-mono text-xs font-medium text-positive">
-                        {fmtPct(up, 0)}
-                      </span>
-                    ) : null}
-                  </button>
-                </li>
-              )
-            })}
-          </ul>
-        </div>
-      )}
-    </div>
+      <GlobalSearchModal
+        open={modalOpen}
+        onClose={() => setModalOpen(false)}
+      />
+    </>
   )
 }
 
 export function QuickJump() {
   const { reports } = useReports()
-  const tickers = useMemo(() => reportTickers(reports), [reports])
+  const tickers = reportTickers(reports)
   return (
     <div className="flex flex-wrap items-center gap-1.5">
       <span className="text-xs text-muted-foreground">Truy cập nhanh:</span>

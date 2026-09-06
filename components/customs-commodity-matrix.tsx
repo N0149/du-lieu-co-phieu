@@ -2,6 +2,8 @@
 
 import { useMemo, useState, useCallback, useEffect } from 'react'
 import {
+  AreaChart,
+  Area,
   BarChart,
   Bar,
   CartesianGrid,
@@ -36,16 +38,16 @@ export type CustomsTradeRow = {
   period_type: 'KY_1' | 'KY_2' | 'THANG' | 'QUY'
   period_date: string // ISO YYYY-MM-DD
   trade_type: 'EXPORT' | 'IMPORT'
-  status: 'SO_BO' | 'CHINH_THUC'
-  dim_kind: string
+  status?: string
+  dim_kind?: string
   name: string
-  unit: string | null
-  quantity: number | null
-  value_usd: number | null
-  quantity_acc: number | null
-  value_acc: number | null
-  code: string | null
-  category: string | null
+  unit?: string | null
+  quantity?: number | null
+  value_usd?: number | null
+  quantity_acc?: number | null
+  value_acc?: number | null
+  code?: string | null
+  category?: string | null
   dataset_category?: string
 }
 
@@ -67,8 +69,8 @@ const PALETTE = [
 
 type TradeType = 'EXPORT' | 'IMPORT' | 'BALANCE'
 type PeriodType = 'THANG' | 'KY' | 'QUY'
-type ValueDisplayType = 'value' | 'quantity' | 'mom'
-type ChartType = 'bar' | 'line'
+type ValueDisplayType = 'value' | 'quantity' | 'mom' | 'yoy'
+type ChartType = 'line' | 'bar'
 type ChartMode = 'value' | 'pct'
 type DatasetCategory = 'main' | 'fdi' | 'ALL'
 type ChartView = 'commodity' | 'balance'
@@ -83,6 +85,9 @@ interface PivotCell {
   exportMoM: number | null
   importMoM: number | null
   balanceMoM: number | null
+  exportYoY: number | null
+  importYoY: number | null
+  balanceYoY: number | null
 }
 
 interface CommodityRowData {
@@ -137,14 +142,15 @@ export function CustomsCommodityMatrix({
   }, [initialSearch])
 
   const [chartView, setChartView] = useState<ChartView>('commodity')
-  const [chartType, setChartType] = useState<ChartType>('bar')
-  const [chartRange, setChartRange] = useState<string>('recent12')
+  const [chartType, setChartType] = useState<ChartType>('line')
+  const [chartRange, setChartRange] = useState<string>('3y')
   const [isChartVisible, setIsChartVisible] = useState<boolean>(true)
   const [chartMode, setChartMode] = useState<ChartMode>('value')
 
   const [selectedCommodities, setSelectedCommodities] = useState<string[]>([
     'Hàng dệt, may',
   ])
+
 
   // Phân trang bảng ma trận
   const [page, setPage] = useState<number>(1)
@@ -167,6 +173,11 @@ export function CustomsCommodityMatrix({
       if (periodType === 'KY' && r.period_type !== 'KY_1' && r.period_type !== 'KY_2') return false
       if (periodType === 'QUY' && r.period_type !== 'QUY') return false
 
+      // Loại bỏ tháng chưa trọn vẹn (tháng 8/2026 hiện mới chỉ có 15 ngày Kỳ 1) khi xem ở khung Tháng hoặc Quý
+      if ((periodType === 'THANG' || periodType === 'QUY') && r.period_date.startsWith('2026-08')) {
+        return false
+      }
+
       // Phân loại FDI/Main
       if (datasetCategory !== 'ALL' && (r.dataset_category ?? 'main') !== datasetCategory) return false
 
@@ -185,25 +196,25 @@ export function CustomsCommodityMatrix({
       const key = `${r.period_date}|${r.period_type}`
       if (!periodMap.has(key)) {
         const [y, m] = r.period_date.split('-')
-        const yShort = y.slice(2)
         let label = `${m}-${y}`
-        let shortLabel = `${m}/${yShort}`
+        let shortLabel = `${m}/${y}`
         let fullLabel = `Tháng ${m}/${y}`
 
         if (r.period_type === 'KY_1') {
           label = `${m}-${y} (K1)`
-          shortLabel = `${m}/${yShort}-K1`
+          shortLabel = `${m}/${y}-K1`
           fullLabel = `Kỳ 1 Tháng ${m}/${y}`
         } else if (r.period_type === 'KY_2') {
           label = `${m}-${y} (K2)`
-          shortLabel = `${m}/${yShort}-K2`
+          shortLabel = `${m}/${y}-K2`
           fullLabel = `Kỳ 2 Tháng ${m}/${y}`
         } else if (r.period_type === 'QUY') {
           const q = Math.floor((Number(m) - 1) / 3) + 1
           label = `Q${q}-${y}`
-          shortLabel = `Q${q}/${yShort}`
+          shortLabel = `Q${q}/${y}`
           fullLabel = `Quý ${q}/${y}`
         }
+
 
         periodMap.set(key, {
           key,
@@ -268,7 +279,11 @@ export function CustomsCommodityMatrix({
           exportMoM: null,
           importMoM: null,
           balanceMoM: null,
+          exportYoY: null,
+          importYoY: null,
+          balanceYoY: null,
         }
+
       }
 
       const cell = item.values[pKey]
@@ -310,6 +325,16 @@ export function CustomsCommodityMatrix({
         curCell.exportMoM = calcPctChange(curCell.exportValue, prevCell?.exportValue)
         curCell.importMoM = calcPctChange(curCell.importValue, prevCell?.importValue)
         curCell.balanceMoM = calcPctChange(curCell.balanceValue, prevCell?.balanceValue)
+
+        // Tính YoY (cùng kỳ năm trước)
+        const yoyOffset = periodType === 'THANG' ? 12 : periodType === 'QUY' ? 4 : 24
+        const yoyKey = i >= yoyOffset ? periodColumns[i - yoyOffset].key : null
+        const yoyCell = yoyKey ? item.values[yoyKey] : null
+
+        curCell.exportYoY = calcPctChange(curCell.exportValue, yoyCell?.exportValue)
+        curCell.importYoY = calcPctChange(curCell.importValue, yoyCell?.importValue)
+        curCell.balanceYoY = calcPctChange(curCell.balanceValue, yoyCell?.balanceValue)
+
 
         const val =
           tradeType === 'EXPORT'
@@ -392,11 +417,26 @@ export function CustomsCommodityMatrix({
 
     // Lọc các cột thời gian theo khung chọn
     let targetCols = periodColumns
-    if (chartRange === 'recent12') {
+    if (chartRange === 'ytd') {
+      const maxYear = periodColumns.length > 0 ? periodColumns[periodColumns.length - 1].date.slice(0, 4) : '2026'
+      targetCols = periodColumns.filter((c) => c.date.startsWith(maxYear))
+      if (targetCols.length === 0) targetCols = periodColumns.slice(-12)
+    } else if (chartRange === '3m') {
+      targetCols = periodColumns.slice(-3)
+    } else if (chartRange === '6m') {
+      targetCols = periodColumns.slice(-6)
+    } else if (chartRange === '1y' || chartRange === 'recent12') {
       targetCols = periodColumns.slice(-12)
+    } else if (chartRange === '2y') {
+      targetCols = periodColumns.slice(-24)
+    } else if (chartRange === '3y') {
+      targetCols = periodColumns.slice(-36)
+    } else if (chartRange === '5y') {
+      targetCols = periodColumns.slice(-60)
     } else if (chartRange !== 'all') {
       targetCols = periodColumns.filter((c) => c.date.startsWith(chartRange))
     }
+
 
     if (targetCols.length === 0) return []
 
@@ -635,14 +675,17 @@ export function CustomsCommodityMatrix({
               <div className="mb-3 flex flex-col gap-3 lg:flex-row lg:items-center lg:justify-between">
                 <div className="flex flex-wrap items-center gap-2">
                   <div className="flex items-center gap-1.5">
-                    <Sparkles className="size-4 text-primary" />
+                    <span className="size-2 rounded-full bg-primary animate-pulse" />
                     <h3 className="text-sm font-semibold text-foreground sm:text-base">
-                      Biến động Mặt hàng Xuất Nhập Khẩu
+                      {selectedCommodities.length === 0
+                        ? `Biểu đồ ${tradeType === 'EXPORT' ? 'Xuất khẩu' : tradeType === 'IMPORT' ? 'Nhập khẩu' : 'Cán cân'} theo Mặt hàng`
+                        : selectedCommodities.length === 1
+                          ? `[VN] - ${tradeType === 'EXPORT' ? 'Xuất khẩu' : tradeType === 'IMPORT' ? 'Nhập khẩu' : 'Cán cân'} ${selectedCommodities[0]}`
+                          : `Biến động ${selectedCommodities.length} mặt hàng ${tradeType === 'EXPORT' ? 'Xuất khẩu' : tradeType === 'IMPORT' ? 'Nhập khẩu' : 'Cán cân'}`}
                     </h3>
                   </div>
                   <span className="text-xs text-muted-foreground">
-                    ({selectedCommodities.length} mặt hàng đang chọn ·{' '}
-                    {chartMode === 'value' ? 'Trị giá Triệu USD' : '% Biến động'})
+                    ({chartMode === 'value' ? 'Trị giá Triệu USD' : '% Biến động'} · Khung {periodType === 'THANG' ? 'Tháng' : periodType === 'QUY' ? 'Quý' : 'Kỳ 15 ngày'})
                   </span>
                 </div>
 
@@ -650,19 +693,6 @@ export function CustomsCommodityMatrix({
                 <div className="flex flex-wrap items-center gap-2">
                   {/* Chuyển đổi Dạng Cột / Dạng Đường */}
                   <div className="flex items-center rounded-lg border border-border bg-muted/40 p-0.5 text-xs">
-                    <button
-                      type="button"
-                      onClick={() => setChartType('bar')}
-                      className={cn(
-                        'inline-flex items-center gap-1 rounded-md px-2.5 py-1 font-medium transition-colors',
-                        chartType === 'bar'
-                          ? 'bg-background text-foreground shadow-xs font-semibold'
-                          : 'text-muted-foreground hover:text-foreground',
-                      )}
-                    >
-                      <BarChart2 className="size-3" />
-                      <span>Dạng Cột</span>
-                    </button>
                     <button
                       type="button"
                       onClick={() => setChartType('line')}
@@ -674,11 +704,24 @@ export function CustomsCommodityMatrix({
                       )}
                     >
                       <TrendingUp className="size-3" />
-                      <span>Dạng Đường</span>
+                      <span>Đường</span>
+                    </button>
+                    <button
+                      type="button"
+                      onClick={() => setChartType('bar')}
+                      className={cn(
+                        'inline-flex items-center gap-1 rounded-md px-2.5 py-1 font-medium transition-colors',
+                        chartType === 'bar'
+                          ? 'bg-background text-foreground shadow-xs font-semibold'
+                          : 'text-muted-foreground hover:text-foreground',
+                      )}
+                    >
+                      <BarChart2 className="size-3" />
+                      <span>Cột</span>
                     </button>
                   </div>
 
-                  {/* Nút chuyển Giá trị / % Biến động */}
+                  {/* Nút chuyển Giá trị ($) / % Biến động */}
                   <div className="flex items-center rounded-lg border border-border bg-muted/40 p-0.5 text-xs">
                     <button
                       type="button"
@@ -689,8 +732,9 @@ export function CustomsCommodityMatrix({
                           ? 'bg-background text-foreground shadow-xs font-semibold'
                           : 'text-muted-foreground hover:text-foreground',
                       )}
+                      title="Trị giá tính bằng Triệu USD"
                     >
-                      Trị giá (Triệu USD)
+                      $ Trị giá
                     </button>
                     <button
                       type="button"
@@ -701,17 +745,22 @@ export function CustomsCommodityMatrix({
                           ? 'bg-background text-foreground shadow-xs font-semibold'
                           : 'text-muted-foreground hover:text-foreground',
                       )}
+                      title="% Biến động"
                     >
-                      % Biến động
+                      %
                     </button>
                   </div>
 
-                  {/* Lọc khung thời gian biểu đồ */}
+                  {/* Lọc khung thời gian biểu đồ (Chuẩn WiData: 3Y, 1Y, 6M, YTD, 2Y, 5Y, Tất cả) */}
                   <div className="flex flex-wrap items-center rounded-lg border border-border bg-muted/40 p-0.5 text-xs">
                     {[
+                      { key: '3y', label: '3Y' },
+                      { key: '1y', label: '1Y' },
+                      { key: '6m', label: '6M' },
+                      { key: 'ytd', label: 'YTD' },
+                      { key: '2y', label: '2Y' },
+                      { key: '5y', label: '5Y' },
                       { key: 'all', label: 'Tất cả' },
-                      { key: 'recent12', label: '12 kỳ gần nhất' },
-                      ...availableYears.map((y) => ({ key: y, label: `Năm ${y}` })),
                     ].map((opt) => (
                       <button
                         key={opt.key}
@@ -729,13 +778,12 @@ export function CustomsCommodityMatrix({
                     ))}
                   </div>
 
-
                   <button
                     type="button"
                     onClick={selectTop5}
                     className="h-7.5 rounded-lg border border-border bg-background px-2.5 text-xs font-medium text-muted-foreground transition-colors hover:text-foreground"
                   >
-                    Top 5 lớn nhất
+                    Top 5
                   </button>
 
                   {selectedCommodities.length > 0 && (
@@ -750,8 +798,8 @@ export function CustomsCommodityMatrix({
                 </div>
               </div>
 
-              {/* Series Pills */}
-              {selectedCommodities.length > 0 ? (
+              {/* Series Legend Pills */}
+              {selectedCommodities.length > 0 && (
                 <div className="mb-3 flex flex-wrap items-center gap-1.5">
                   {selectedCommodities.map((name) => {
                     const color = commodityColorMap.get(name) ?? '#10b981'
@@ -761,7 +809,7 @@ export function CustomsCommodityMatrix({
                         className="inline-flex items-center gap-1.5 rounded-full border border-border/80 bg-background/90 px-2.5 py-1 text-xs font-medium text-foreground shadow-2xs backdrop-blur"
                       >
                         <span className="size-2 shrink-0 rounded-full" style={{ backgroundColor: color }} />
-                        <span className="max-w-[150px] truncate sm:max-w-[220px]">{name}</span>
+                        <span className="max-w-[160px] truncate sm:max-w-[240px]">{name}</span>
                         <button
                           type="button"
                           onClick={() => toggleCommodity(name)}
@@ -774,36 +822,31 @@ export function CustomsCommodityMatrix({
                     )
                   })}
                 </div>
-              ) : (
-                <div className="mb-3 rounded-lg border border-dashed border-border bg-muted/20 p-3 text-center text-xs text-muted-foreground">
-                  Chưa có mặt hàng nào được chọn. Nhấn vào dấu <span className="font-semibold text-primary">+</span> trên
-                  bảng để thêm mặt hàng vào biểu đồ.
-                </div>
               )}
 
-              {/* Vùng vẽ đồ thị */}
-              {selectedCommodities.length > 0 && chartData.length > 0 && (
-                <div className="h-64 w-full sm:h-76">
+              {/* Vùng vẽ đồ thị Recharts (luôn hiện khung lưới, hiển thị overlay khi chưa tích chọn) */}
+              {chartData.length > 0 && (
+                <div className="relative h-68 w-full sm:h-80">
                   <ResponsiveContainer width="100%" height="100%">
                     {chartType === 'bar' ? (
-                      <BarChart data={chartData} margin={{ top: 8, right: 10, left: -10, bottom: 0 }}>
-                        <CartesianGrid strokeDasharray="3 3" stroke="currentColor" opacity={0.1} vertical={false} />
+                      <BarChart data={chartData} margin={{ top: 10, right: 12, left: -8, bottom: 0 }}>
+                        <CartesianGrid strokeDasharray="3 3" stroke="currentColor" opacity={0.08} vertical={false} />
                         <XAxis
                           dataKey="label"
                           tickLine={false}
                           axisLine={false}
                           interval={chartData.length > 24 ? 'preserveEnd' : 0}
-                          angle={chartData.length > 10 ? -30 : 0}
-                          textAnchor={chartData.length > 10 ? 'end' : 'middle'}
-                          height={chartData.length > 10 ? 38 : 24}
+                          angle={chartData.length > 12 ? -30 : 0}
+                          textAnchor={chartData.length > 12 ? 'end' : 'middle'}
+                          height={chartData.length > 12 ? 38 : 24}
                           tick={{ fontSize: chartData.length > 20 ? 10 : 11 }}
-                          dy={chartData.length > 10 ? 4 : 6}
+                          dy={chartData.length > 12 ? 4 : 6}
                         />
                         <YAxis
                           tickFormatter={(v) => (chartMode === 'pct' ? `${v}%` : fmtInt(v))}
                           tickLine={false}
                           axisLine={false}
-                          width={48}
+                          width={52}
                           tick={{ fontSize: 11 }}
                         />
                         <Tooltip
@@ -818,29 +861,81 @@ export function CustomsCommodityMatrix({
                             name={name}
                             fill={commodityColorMap.get(name) ?? '#10b981'}
                             radius={[3, 3, 0, 0]}
-                            maxBarSize={40}
+                            maxBarSize={36}
                           />
                         ))}
                       </BarChart>
-                    ) : (
-                      <LineChart data={chartData} margin={{ top: 8, right: 10, left: -10, bottom: 0 }}>
-                        <CartesianGrid strokeDasharray="3 3" stroke="currentColor" opacity={0.1} vertical={false} />
+                    ) : selectedCommodities.length === 1 ? (
+                      <AreaChart data={chartData} margin={{ top: 10, right: 12, left: -8, bottom: 0 }}>
+                        <defs>
+                          <linearGradient id="wiDataAreaGrad" x1="0" y1="0" x2="0" y2="1">
+                            <stop
+                              offset="5%"
+                              stopColor={commodityColorMap.get(selectedCommodities[0]) ?? '#10b981'}
+                              stopOpacity={0.32}
+                            />
+                            <stop
+                              offset="95%"
+                              stopColor={commodityColorMap.get(selectedCommodities[0]) ?? '#10b981'}
+                              stopOpacity={0.0}
+                            />
+                          </linearGradient>
+                        </defs>
+                        <CartesianGrid strokeDasharray="3 3" stroke="currentColor" opacity={0.08} vertical={false} />
                         <XAxis
                           dataKey="label"
                           tickLine={false}
                           axisLine={false}
                           interval={chartData.length > 24 ? 'preserveEnd' : 0}
-                          angle={chartData.length > 10 ? -30 : 0}
-                          textAnchor={chartData.length > 10 ? 'end' : 'middle'}
-                          height={chartData.length > 10 ? 38 : 24}
+                          angle={chartData.length > 12 ? -30 : 0}
+                          textAnchor={chartData.length > 12 ? 'end' : 'middle'}
+                          height={chartData.length > 12 ? 38 : 24}
                           tick={{ fontSize: chartData.length > 20 ? 10 : 11 }}
-                          dy={chartData.length > 10 ? 4 : 6}
+                          dy={chartData.length > 12 ? 4 : 6}
                         />
                         <YAxis
                           tickFormatter={(v) => (chartMode === 'pct' ? `${v}%` : fmtInt(v))}
                           tickLine={false}
                           axisLine={false}
-                          width={48}
+                          width={52}
+                          tick={{ fontSize: 11 }}
+                        />
+                        <Tooltip
+                          content={<MatrixChartTooltip chartMode={chartMode} colorMap={commodityColorMap} />}
+                          cursor={{ stroke: 'currentColor', strokeDasharray: '3 3', opacity: 0.3 }}
+                        />
+                        <ReferenceLine y={0} stroke="currentColor" strokeOpacity={0.25} />
+                        <Area
+                          type="monotone"
+                          dataKey={selectedCommodities[0]}
+                          name={selectedCommodities[0]}
+                          stroke={commodityColorMap.get(selectedCommodities[0]) ?? '#10b981'}
+                          strokeWidth={2.5}
+                          fill="url(#wiDataAreaGrad)"
+                          dot={{ r: 3, strokeWidth: 1.5, fill: commodityColorMap.get(selectedCommodities[0]) ?? '#10b981' }}
+                          activeDot={{ r: 6, fill: commodityColorMap.get(selectedCommodities[0]) ?? '#10b981', stroke: '#fff', strokeWidth: 2 }}
+                          connectNulls
+                        />
+                      </AreaChart>
+                    ) : (
+                      <LineChart data={chartData} margin={{ top: 10, right: 12, left: -8, bottom: 0 }}>
+                        <CartesianGrid strokeDasharray="3 3" stroke="currentColor" opacity={0.08} vertical={false} />
+                        <XAxis
+                          dataKey="label"
+                          tickLine={false}
+                          axisLine={false}
+                          interval={chartData.length > 24 ? 'preserveEnd' : 0}
+                          angle={chartData.length > 12 ? -30 : 0}
+                          textAnchor={chartData.length > 12 ? 'end' : 'middle'}
+                          height={chartData.length > 12 ? 38 : 24}
+                          tick={{ fontSize: chartData.length > 20 ? 10 : 11 }}
+                          dy={chartData.length > 12 ? 4 : 6}
+                        />
+                        <YAxis
+                          tickFormatter={(v) => (chartMode === 'pct' ? `${v}%` : fmtInt(v))}
+                          tickLine={false}
+                          axisLine={false}
+                          width={52}
                           tick={{ fontSize: 11 }}
                         />
                         <Tooltip
@@ -864,8 +959,21 @@ export function CustomsCommodityMatrix({
                       </LineChart>
                     )}
                   </ResponsiveContainer>
+
+                  {selectedCommodities.length === 0 && (
+                    <div className="absolute inset-0 flex flex-col items-center justify-center pointer-events-none">
+                      <div className="rounded-xl border border-dashed border-border/80 bg-background/90 px-4 py-3 text-center shadow-xs backdrop-blur-xs">
+                        <BarChart2 className="size-6 mx-auto text-primary/70 mb-1.5" />
+                        <p className="text-xs font-semibold text-foreground">Chưa có mặt hàng nào được chọn</p>
+                        <p className="text-[11px] text-muted-foreground mt-0.5">
+                          Tích vào ô kiểm bên trái từng mặt hàng dưới bảng hoặc bấm nút <b className="text-primary font-medium">Top 5</b> để vẽ đồ thị
+                        </p>
+                      </div>
+                    </div>
+                  )}
                 </div>
               )}
+
             </div>
           )}
         </div>
@@ -956,19 +1064,21 @@ export function CustomsCommodityMatrix({
               </select>
             </div>
 
-            {/* Kiểu giá trị: Trị giá / Lượng / MoM% */}
+            {/* Kiểu giá trị: Trị giá / Lượng / MoM% / YoY% */}
             <div className="flex items-center gap-1.5 text-xs text-muted-foreground">
-              <span>Kiểu:</span>
+              <span>Kiểu giá trị:</span>
               <select
                 value={valueType}
                 onChange={(e) => setValueType(e.target.value as ValueDisplayType)}
                 className="h-8 rounded-lg border border-border bg-background px-2 text-xs font-medium text-foreground outline-none focus:border-ring"
               >
-                <option value="value">Trị giá (Triệu USD)</option>
-                <option value="quantity">Lượng (ĐVT)</option>
+                <option value="value">Value (Triệu USD)</option>
                 <option value="mom">Tăng trưởng MoM (%)</option>
+                <option value="yoy">Tăng trưởng cùng kỳ YoY (%)</option>
+                <option value="quantity">Lượng (ĐVT)</option>
               </select>
             </div>
+
 
             {/* Nhóm ngành */}
             {categoryOptions.length > 0 && (
@@ -1028,10 +1138,21 @@ export function CustomsCommodityMatrix({
 
             <button
               type="button"
-              onClick={() => setIsChartVisible((v) => !v)}
+              onClick={() => {
+                if (!isChartVisible) {
+                  setIsChartVisible(true)
+                  if (chartView === 'commodity' && selectedCommodities.length === 0) {
+                    selectTop5()
+                  }
+                } else if (chartView === 'commodity' && selectedCommodities.length === 0) {
+                  selectTop5()
+                } else {
+                  setIsChartVisible(false)
+                }
+              }}
               className="inline-flex h-8 items-center gap-1.5 rounded-lg border border-border bg-background px-2.5 text-xs font-medium text-foreground transition-colors hover:bg-secondary"
             >
-              {isChartVisible ? (
+              {isChartVisible && (chartView === 'balance' || selectedCommodities.length > 0) ? (
                 <>
                   <EyeOff className="size-3.5 text-muted-foreground" />
                   <span>Ẩn đồ thị</span>
@@ -1123,36 +1244,44 @@ export function CustomsCommodityMatrix({
                       key={row.name}
                       onClick={() => toggleCommodity(row.name)}
                       className={cn(
-                        'group cursor-pointer border-b border-white/5 transition-colors hover:bg-white/[0.04]',
-                        isSelected ? 'bg-emerald-500/10' : '',
+                        'group cursor-pointer border-b border-white/5 transition-colors',
+                        isSelected
+                          ? 'bg-primary/15 hover:bg-primary/20 border-l-2 border-l-primary font-medium'
+                          : 'hover:bg-white/[0.04]',
                       )}
                     >
                       <td
-                        className="sticky left-0 z-10 bg-card group-hover:bg-accent/40 px-2 py-2.5 text-center transition-colors"
+                        className={cn(
+                          'sticky left-0 z-10 px-2.5 py-2.5 text-center cursor-pointer transition-colors',
+                          isSelected ? 'bg-[#1e2330]' : 'bg-card group-hover:bg-accent/40',
+                        )}
                         onClick={(e) => {
                           e.stopPropagation()
                           toggleCommodity(row.name)
                         }}
                       >
-                        <button
-                          type="button"
-                          className={cn(
-                            'inline-flex size-5 items-center justify-center rounded border transition-all',
-                            isSelected
-                              ? 'border-transparent text-white shadow-xs'
-                              : 'border-border text-muted-foreground hover:border-primary hover:text-primary',
-                          )}
-                          style={{
-                            backgroundColor: isSelected ? seriesColor : 'transparent',
-                          }}
-                          title={isSelected ? 'Bỏ khỏi đồ thị' : 'Thêm vào đồ thị'}
-                        >
-                          {isSelected ? <Check className="size-3 stroke-[3]" /> : <Plus className="size-3" />}
-                        </button>
+                        <div className="flex items-center justify-center pointer-events-none">
+                          <input
+                            type="checkbox"
+                            checked={isSelected}
+                            readOnly
+                            tabIndex={-1}
+                            className="size-4 rounded border-border text-primary transition-all"
+                            style={isSelected && seriesColor ? { accentColor: seriesColor } : undefined}
+                            title={isSelected ? 'Bỏ chọn khỏi biểu đồ' : 'Tích chọn để vẽ biểu đồ mặt hàng này'}
+                          />
+                        </div>
                       </td>
 
-                      <td className="sticky left-10 z-10 bg-card group-hover:bg-accent/40 px-3 py-2.5 font-medium text-foreground transition-colors">
-                        <div className="flex items-center gap-1.5">
+                      <td
+                        className={cn(
+                          'sticky left-10 z-10 px-3 py-2.5 font-medium transition-colors',
+                          isSelected
+                            ? 'bg-[#1e2330] text-foreground font-semibold'
+                            : 'bg-card group-hover:bg-accent/40 text-foreground',
+                        )}
+                      >
+                        <div className="flex items-center gap-2">
                           {isSelected && (
                             <span
                               className="size-2 shrink-0 rounded-full"
@@ -1180,6 +1309,7 @@ export function CustomsCommodityMatrix({
                           })()}
                         </div>
                       </td>
+
 
                       <td className="px-2.5 py-2.5 text-muted-foreground">
                         {row.unit ?? '—'}
@@ -1317,8 +1447,35 @@ function CellDisplay({
     )
   }
 
+  if (valueType === 'yoy') {
+    const yoy =
+      tradeType === 'EXPORT'
+        ? cell.exportYoY
+        : tradeType === 'IMPORT'
+          ? cell.importYoY
+          : cell.balanceYoY
+
+    if (yoy == null) return <span className="text-muted-foreground/50">—</span>
+
+    const isUp = yoy >= 0
+    return (
+      <span
+        className={cn(
+          'inline-flex items-center gap-0.5 rounded px-1 py-0.5 text-[11px] font-medium',
+          isUp
+            ? 'bg-emerald-500/10 text-emerald-600 dark:text-emerald-400'
+            : 'bg-rose-500/10 text-rose-600 dark:text-rose-400',
+        )}
+      >
+        {isUp ? '+' : ''}
+        {yoy.toFixed(1)}%
+      </span>
+    )
+  }
+
   return null
 }
+
 
 function MatrixChartTooltip({
   active,

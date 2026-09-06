@@ -73,6 +73,8 @@ const themeScript = `
     var t = localStorage.getItem('rnav-theme');
     if (!t) t = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
     document.documentElement.classList.add(t);
+    var sb = localStorage.getItem('app_sidebar_collapsed');
+    document.documentElement.setAttribute('data-sidebar', sb === 'true' ? 'collapsed' : 'expanded');
   } catch (e) {
     document.documentElement.classList.add('dark');
   }

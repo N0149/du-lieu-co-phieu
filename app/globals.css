@@ -169,3 +169,112 @@
     font-variant-numeric: tabular-nums;
   }
 }
+
+/* Sidebar Layout Transitions (Desktop >= 1024px) */
+@media (min-width: 1024px) {
+  html[data-sidebar="expanded"] main,
+  html[data-sidebar="expanded"] footer {
+    padding-left: 15rem; /* 240px */
+    transition: padding-left 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  html[data-sidebar="collapsed"] main,
+  html[data-sidebar="collapsed"] footer {
+    padding-left: 4.25rem; /* 68px */
+    transition: padding-left 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  html:not([data-sidebar]) main,
+  html:not([data-sidebar]) footer {
+    padding-left: 15rem;
+  }
+}
+
+/* AGM Markdown Content & Table Styling */
+.agm-markdown-content {
+  color: var(--foreground);
+  font-size: 0.925rem;
+  line-height: 1.7;
+}
+
+.agm-markdown-content h3 {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #38bdf8;
+  margin-top: 1.5rem;
+  margin-bottom: 0.75rem;
+  padding-bottom: 0.35rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.agm-markdown-content h4 {
+  font-size: 1.02rem;
+  font-weight: 600;
+  color: #a5b4fc;
+  margin-top: 1.25rem;
+  margin-bottom: 0.5rem;
+}
+
+.agm-markdown-content p {
+  margin: 0.65rem 0;
+  color: rgba(240, 243, 246, 0.9);
+}
+
+.agm-markdown-content strong {
+  color: #ffffff;
+  font-weight: 600;
+}
+
+.agm-markdown-content ul {
+  list-style-type: disc;
+  padding-left: 1.35rem;
+  margin: 0.6rem 0;
+}
+
+.agm-markdown-content ul li {
+  margin-bottom: 0.35rem;
+}
+
+.agm-markdown-content ol {
+  list-style-type: decimal;
+  padding-left: 1.35rem;
+  margin: 0.6rem 0;
+}
+
+.agm-markdown-content ol li {
+  margin-bottom: 0.4rem;
+}
+
+.agm-markdown-content hr {
+  border-color: rgba(255, 255, 255, 0.1);
+  margin: 1.5rem 0;
+}
+
+.agm-table-wrapper {
+  max-width: 100%;
+}
+
+.agm-table-wrapper table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.85rem;
+  text-align: left;
+}
+
+.agm-table-wrapper thead th {
+  background-color: rgba(255, 255, 255, 0.05);
+  color: #f0f3f6;
+  font-weight: 700;
+  padding: 10px 14px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+  white-space: nowrap;
+}
+
+.agm-table-wrapper tbody td {
+  padding: 8px 14px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  color: rgba(240, 243, 246, 0.88);
+}
+
+.agm-table-wrapper tbody tr:hover {
+  background-color: rgba(255, 255, 255, 0.03);
+}
+

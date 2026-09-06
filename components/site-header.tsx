@@ -1,27 +1,22 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect, useCallback } from 'react'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
-import { Menu, TrendingUp, X, Sparkles } from 'lucide-react'
+import {
+  Menu,
+  TrendingUp,
+  X,
+  Sparkles,
+  PanelLeftClose,
+  PanelLeftOpen,
+} from 'lucide-react'
 import { StockSearch } from '@/components/stock-search'
 import { ThemeToggle } from '@/components/theme-toggle'
 import { TrialBadge } from '@/components/TrialBadge'
 import { AiAssistantModal } from '@/components/AiAssistantModal'
+import { VerticalSidebarNav, NAV_GROUPS } from '@/components/vertical-sidebar-nav'
 import { cn } from '@/lib/utils'
-
-const NAV = [
-  { label: 'Tin Tức', href: '/' },
-  { label: 'Thị Trường', href: '/thi-truong' },
-  { label: 'Ngành ICB', href: '/nganh' },
-  { label: 'Bộ Lọc Cổ Phiếu', href: '/bo-loc' },
-  { label: 'Quỹ Mở', href: '/quy-mo' },
-  { label: 'Cảng Biển', href: '/cang-bien' },
-  { label: 'Xuất nhập khẩu', href: '/xuat-nhap-khau' },
-  { label: 'Tra Cứu 1.530 Mã', href: '/tra-cuu' },
-  { label: 'Danh Mục Theo Dõi', href: '/danh-muc' },
-  { label: 'Báo Cáo Phân Tích', href: '/bao-cao' },
-]
 
 interface SiteHeaderProps {
   hideSearch?: boolean
@@ -31,146 +26,209 @@ export function SiteHeader({ hideSearch = false }: SiteHeaderProps) {
   const pathname = usePathname()
   const [menuOpen, setMenuOpen] = useState(false)
   const [aiModalOpen, setAiModalOpen] = useState(false)
+  const [collapsed, setCollapsed] = useState(false)
+
+  // Initialize sidebar collapsed state from localStorage and sync html attribute
+  useEffect(() => {
+    try {
+      const saved = localStorage.getItem('app_sidebar_collapsed')
+      const isCol = saved === 'true'
+      setCollapsed(isCol)
+      document.documentElement.setAttribute('data-sidebar', isCol ? 'collapsed' : 'expanded')
+    } catch {}
+  }, [])
+
+  const toggleCollapse = useCallback(() => {
+    setCollapsed((prev) => {
+      const next = !prev
+      try {
+        localStorage.setItem('app_sidebar_collapsed', next ? 'true' : 'false')
+        document.documentElement.setAttribute('data-sidebar', next ? 'collapsed' : 'expanded')
+      } catch {}
+      return next
+    })
+  }, [])
 
   const isTraCuu = pathname?.startsWith('/tra-cuu')
   const shouldShowSearch = !hideSearch && !isTraCuu
 
+  const isItemActive = (href: string) => {
+    if (href === '/') {
+      return pathname === '/' || pathname === '/tin-tuc'
+    }
+    if (href === '/stock/MWG') {
+      return (
+        pathname.startsWith('/stock/') ||
+        pathname === '/doanh-nghiep' ||
+        pathname.startsWith('/ticker/') ||
+        pathname.startsWith('/tra-cuu')
+      )
+    }
+    if (href === '/cang-bien') {
+      return pathname.startsWith('/cang-bien') || pathname.startsWith('/cang/')
+    }
+    return pathname.startsWith(href)
+  }
+
   return (
-    <header className="sticky top-0 z-40 border-b border-white/8 bg-[#14171f]/85 backdrop-blur supports-[backdrop-filter]:bg-[#14171f]/75">
-      <div className="mx-auto flex h-14 max-w-[1600px] items-center gap-4 px-4">
-        {/* Brand */}
-        <Link href="/" className="flex shrink-0 items-center gap-2">
-          <span className="flex size-7.5 items-center justify-center rounded-lg bg-emerald-500/15 text-emerald-400 border border-emerald-500/30 shadow-sm">
-            <TrendingUp className="size-4" />
-          </span>
-          <span className="flex flex-col leading-none">
-            <span className="text-base font-bold tracking-tight whitespace-nowrap text-[#F0F3F6] sm:text-lg">
-              Dữ Liệu<span className="text-emerald-400"> Đầu Tư</span>
-            </span>
-            <span className="mt-0.5 hidden text-[9px] uppercase tracking-wider text-[#9EACB9] sm:block">
-              Cổng dữ liệu & báo cáo
-            </span>
-          </span>
-        </Link>
-
-        {/* Search */}
-        {shouldShowSearch && (
-          <div className="ml-1 hidden flex-1 max-w-xl md:flex">
-            <StockSearch />
-          </div>
-        )}
-
-        {/* Nav */}
-        <nav className="hidden items-center gap-1 lg:flex">
-          {NAV.map((item) => {
-            const active =
-              item.href === '/'
-                ? pathname === '/' || pathname === '/tin-tuc'
-                : item.href === '/cang-bien'
-                ? pathname.startsWith('/cang-bien') || pathname.startsWith('/cang/')
-                : pathname.startsWith(item.href)
-            return (
-              <Link
-                key={item.href}
-                href={item.href}
-                className={cn(
-                  'rounded-lg px-3 py-1.5 text-xs font-semibold transition-all',
-                  active
-                    ? 'bg-[#212631] text-[#F0F3F6] border border-white/8 shadow-sm'
-                    : 'text-[#9EACB9] hover:bg-white/5 hover:text-[#F0F3F6]',
-                )}
-              >
-                {item.label}
-              </Link>
-            )
-          })}
-        </nav>
-
-        <div className="ml-auto flex items-center gap-2 lg:ml-0">
-          <button
-            type="button"
-            onClick={() => setAiModalOpen(true)}
-            className="inline-flex items-center gap-1.5 rounded-lg border border-emerald-500/30 bg-emerald-500/10 px-2.5 py-1.5 text-xs font-semibold text-emerald-400 transition-colors hover:bg-emerald-500/20"
-            title="Mở Trợ lý AI Phân Tích Chuyên Sâu"
-          >
-            <Sparkles className="size-3.5" />
-            <span className="hidden sm:inline">Hỏi AI</span>
-            <span className="sm:hidden">AI</span>
-          </button>
-          <TrialBadge />
-          <ThemeToggle />
-          {/* Hamburger — hiển thị trên mobile/tablet (< lg) khi nav desktop bị ẩn */}
-          <button
-            type="button"
-            onClick={() => setMenuOpen((o) => !o)}
-            className="inline-flex size-8 shrink-0 items-center justify-center rounded-lg text-[#9EACB9] transition-colors hover:bg-white/5 hover:text-[#F0F3F6] lg:hidden"
-            aria-label={menuOpen ? 'Đóng menu' : 'Mở menu'}
-            aria-expanded={menuOpen}
-          >
-            {menuOpen ? <X className="size-5" /> : <Menu className="size-5" />}
-          </button>
-        </div>
-      </div>
-
-      {/* Mobile menu (< lg) — đủ 4 mục điều hướng, đóng khi bấm link */}
-      {menuOpen && (
-        <nav className="border-t border-border bg-background/95 px-4 py-2 backdrop-blur lg:hidden">
-          <div className="flex flex-col gap-1">
+    <>
+      <header className="sticky top-0 z-40 border-b border-white/8 bg-[#14171f]/85 backdrop-blur supports-[backdrop-filter]:bg-[#14171f]/75">
+        <div className="mx-auto flex h-14 w-full items-center justify-between gap-3 px-3 sm:px-4">
+          {/* Left: Sidebar Toggle Button + Brand Logo */}
+          <div className="flex items-center gap-2 sm:gap-3">
+            {/* Desktop Sidebar Toggle Button */}
             <button
               type="button"
-              onClick={() => {
-                setMenuOpen(false)
-                setAiModalOpen(true)
-              }}
-              className="flex items-center justify-between rounded-md bg-primary/10 px-3 py-2.5 text-sm font-semibold text-primary transition-colors hover:bg-primary/20"
+              onClick={toggleCollapse}
+              className="hidden lg:flex size-8 items-center justify-center rounded-lg text-[#9EACB9] transition-colors hover:bg-white/5 hover:text-[#F0F3F6]"
+              title={collapsed ? 'Mở rộng thanh menu dọc' : 'Thu gọn thanh menu dọc'}
+              aria-label={collapsed ? 'Mở rộng sidebar' : 'Thu gọn sidebar'}
             >
-              <span className="flex items-center gap-2">
-                <Sparkles className="size-4" />
-                Trợ lý AI Phân Tích Cổ Phiếu
-              </span>
-              <span className="rounded bg-primary/20 px-1.5 py-0.5 text-[10px] font-medium text-primary uppercase">
-                Mới
-              </span>
+              {collapsed ? (
+                <PanelLeftOpen className="size-4.5 text-emerald-400" />
+              ) : (
+                <PanelLeftClose className="size-4.5" />
+              )}
             </button>
-            {NAV.map((item) => {
-              const active =
-                item.href === '/'
-                  ? pathname === '/' || pathname === '/tin-tuc'
-                  : item.href === '/cang-bien'
-                  ? pathname.startsWith('/cang-bien') || pathname.startsWith('/cang/')
-                  : pathname.startsWith(item.href)
-              return (
-                <Link
-                  key={item.href}
-                  href={item.href}
-                  onClick={() => setMenuOpen(false)}
-                  className={cn(
-                    'flex items-center justify-between rounded-md px-3 py-2.5 text-sm font-bold transition-colors',
-                    active
-                      ? 'bg-secondary text-foreground'
-                      : 'text-muted-foreground hover:bg-muted hover:text-foreground',
-                  )}
-                >
-                  {item.label}
-                  {active && <span className="size-1.5 rounded-full bg-primary" />}
-                </Link>
-              )
-            })}
+
+            {/* Brand Logo */}
+            <Link href="/" className="flex shrink-0 items-center gap-2">
+              <span className="flex size-7.5 items-center justify-center rounded-lg bg-emerald-500/15 text-emerald-400 border border-emerald-500/30 shadow-sm">
+                <TrendingUp className="size-4" />
+              </span>
+              <span className="flex flex-col leading-none">
+                <span className="text-base font-bold tracking-tight whitespace-nowrap text-[#F0F3F6] sm:text-lg">
+                  Dữ Liệu<span className="text-emerald-400"> Đầu Tư</span>
+                </span>
+                <span className="mt-0.5 hidden text-[9px] uppercase tracking-wider text-[#9EACB9] sm:block">
+                  Cổng dữ liệu & báo cáo
+                </span>
+              </span>
+            </Link>
           </div>
-        </nav>
-      )}
 
-      {/* Mobile search row */}
-      {shouldShowSearch && (
-        <div className="border-t border-border px-4 py-2 md:hidden">
-          <StockSearch />
+          {/* Center: Global Search Bar (WiData Style Omnibar) */}
+          {shouldShowSearch && (
+            <div className="flex-1 max-w-xl mx-2 sm:mx-4">
+              <StockSearch />
+            </div>
+          )}
+
+          {/* Right Action Tools */}
+          <div className="flex items-center gap-2">
+            <button
+              type="button"
+              onClick={() => setAiModalOpen(true)}
+              className="inline-flex items-center gap-1.5 rounded-lg border border-emerald-500/30 bg-emerald-500/10 px-2.5 py-1.5 text-xs font-semibold text-emerald-400 transition-colors hover:bg-emerald-500/20"
+              title="Mở Trợ lý AI Phân Tích Chuyên Sâu"
+            >
+              <Sparkles className="size-3.5" />
+              <span className="hidden sm:inline">Hỏi AI</span>
+              <span className="sm:hidden">AI</span>
+            </button>
+
+            <div className="hidden sm:flex items-center gap-2">
+              <TrialBadge />
+              <ThemeToggle />
+            </div>
+
+            {/* Mobile Hamburger Button */}
+            <button
+              type="button"
+              onClick={() => setMenuOpen((o) => !o)}
+              className="inline-flex size-8 shrink-0 items-center justify-center rounded-lg text-[#9EACB9] transition-colors hover:bg-white/5 hover:text-[#F0F3F6] lg:hidden"
+              aria-label={menuOpen ? 'Đóng menu' : 'Mở menu'}
+              aria-expanded={menuOpen}
+            >
+              {menuOpen ? <X className="size-5" /> : <Menu className="size-5" />}
+            </button>
+          </div>
         </div>
-      )}
 
-      <AiAssistantModal
-        open={aiModalOpen}
-        onClose={() => setAiModalOpen(false)}
+        {/* Mobile Menu Drawer (< lg) with Complete Vertical Tabs */}
+        {menuOpen && (
+          <nav className="border-t border-border bg-[#0e1117]/95 px-4 py-3 backdrop-blur lg:hidden max-h-[calc(100vh-3.5rem)] overflow-y-auto">
+            <div className="flex flex-col gap-4">
+              {/* AI Button in Mobile */}
+              <button
+                type="button"
+                onClick={() => {
+                  setMenuOpen(false)
+                  setAiModalOpen(true)
+                }}
+                className="flex items-center justify-between rounded-lg bg-emerald-500/15 border border-emerald-500/30 px-3 py-2 text-xs font-semibold text-emerald-400 transition-colors hover:bg-emerald-500/25"
+              >
+                <span className="flex items-center gap-2">
+                  <Sparkles className="size-4" />
+                  Trợ lý AI Phân Tích Cổ Phiếu
+                </span>
+                <span className="rounded bg-emerald-500/20 px-1.5 py-0.5 text-[9px] font-bold uppercase">
+                  Mới
+                </span>
+              </button>
+
+              {/* Vertical Navigation Groups in Mobile */}
+              {NAV_GROUPS.map((group, gIdx) => (
+                <div key={gIdx} className="space-y-1">
+                  {group.title && (
+                    <div className="px-1 text-[10px] font-bold uppercase tracking-wider text-[#64748b]">
+                      {group.title}
+                    </div>
+                  )}
+
+                  <div className="space-y-1">
+                    {group.items.map((item) => {
+                      const active = isItemActive(item.href)
+                      const Icon = item.icon
+
+                      return (
+                        <Link
+                          key={item.href}
+                          href={item.href}
+                          onClick={() => setMenuOpen(false)}
+                          className={cn(
+                            'flex items-center justify-between rounded-lg px-3 py-2 text-xs font-medium transition-colors',
+                            active
+                              ? 'bg-emerald-500/15 text-emerald-400 font-semibold border border-emerald-500/30 shadow-xs'
+                              : 'text-[#9EACB9] hover:bg-white/5 hover:text-white'
+                          )}
+                        >
+                          <div className="flex items-center gap-2.5 min-w-0">
+                            <Icon
+                              className={cn(
+                                'size-4 shrink-0',
+                                active ? 'text-emerald-400' : 'text-[#64748b]'
+                              )}
+                            />
+                            <span className="truncate">{item.label}</span>
+                          </div>
+
+                          {item.badge && (
+                            <span className="rounded bg-emerald-500/15 px-1.5 py-0.2 text-[9px] font-bold text-emerald-400">
+                              {item.badge}
+                            </span>
+                          )}
+                        </Link>
+                      )
+                    })}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </nav>
+        )}
+
+        <AiAssistantModal
+          open={aiModalOpen}
+          onClose={() => setAiModalOpen(false)}
+        />
+      </header>
+
+      {/* Desktop Persistent Vertical Sidebar */}
+      <VerticalSidebarNav
+        collapsed={collapsed}
+        onToggleCollapse={toggleCollapse}
       />
-    </header>
+    </>
   )
 }

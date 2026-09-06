@@ -22,6 +22,7 @@ import {
   Percent,
   Award,
   Sparkles,
+  Vote,
 } from 'lucide-react'
 import type { StockDetailData, StockManifestItem } from '@/lib/longlivestock'
 import type { Report } from '@/lib/use-reports'
@@ -29,11 +30,14 @@ import { cn } from '@/lib/utils'
 import { BusinessPlanComparison, BusinessPlanYear } from '@/components/business-plan-comparison'
 import { FinancialStatementsExplorer } from '@/components/financial-statements-explorer'
 import { CompanyReportsTab } from '@/components/reports/CompanyReportsTab'
+import { StockAgmReportView } from '@/components/stock/StockAgmReportView'
+import type { AgmReportData } from '@/lib/agm-service'
 import { BankFinancialCharts } from '@/components/stock/BankFinancialCharts'
 import { BankingDetailedFinancialCharts } from '@/components/stock/BankingDetailedFinancialCharts'
 import { GeneralDetailedFinancialCharts } from '@/components/stock/GeneralDetailedFinancialCharts'
 import { FinancialCashFlowAndDividends } from '@/components/stock/FinancialCashFlowAndDividends'
 import { ValuationBandsChart } from '@/components/stock/ValuationBandsChart'
+import { StockValuationEpsChart } from '@/components/stock/StockValuationEpsChart'
 import { StockEvaluationHeader } from '@/components/stock/StockEvaluationHeader'
 import { CompanyProfileEnhancement } from '@/components/stock/CompanyProfileEnhancement'
 import { PeerComparisonView } from '@/components/peer-comparison-view'
@@ -44,6 +48,12 @@ import type { CompanyFullProfileData } from '@/lib/company-profile-types'
 import type { FinancialChartPayload } from '@/lib/financial-charts-service'
 import type { ValuationHistoryPayload } from '@/lib/valuation-history-service'
 import type { DividendHistoryPayload } from '@/lib/dividend-history-service'
+import type { RawBusinessPlanPayload } from '@/lib/business-plan-db'
+import type { ProfitStructurePayload } from '@/lib/profit-structure-service'
+import type { CostBreakdownPayload } from '@/lib/cost-breakdown-service'
+import type { DetailedBalanceSheetPayload } from '@/lib/balance-sheet-cashflow-service'
+import type { CapexFinancialPayload } from '@/lib/capex-financial-service'
+import type { DebtDupontPayload } from '@/lib/debt-dupont-service'
 
 export type StockDetailTab =
   | 'profile'
@@ -52,6 +62,7 @@ export type StockDetailTab =
   | 'peers'
   | 'evaluation'
   | 'reports'
+  | 'agm'
 
 interface StockDetailViewProps {
   stockData: StockDetailData
@@ -65,6 +76,20 @@ interface StockDetailViewProps {
   financialChartAnnual?: FinancialChartPayload | null
   valuationHistory?: ValuationHistoryPayload | null
   dividendHistory?: DividendHistoryPayload | null
+  businessPlanData?: RawBusinessPlanPayload | null
+  profitStructureQuarter?: ProfitStructurePayload | null
+  profitStructureAnnual?: ProfitStructurePayload | null
+  costBreakdownQuarter?: CostBreakdownPayload | null
+  costBreakdownAnnual?: CostBreakdownPayload | null
+  balanceSheetQuarter?: DetailedBalanceSheetPayload | null
+  balanceSheetAnnual?: DetailedBalanceSheetPayload | null
+  capexFinancialQuarter?: CapexFinancialPayload | null
+  capexFinancialAnnual?: CapexFinancialPayload | null
+  debtDupontQuarter?: DebtDupontPayload | null
+  debtDupontAnnual?: DebtDupontPayload | null
+  agmData?: AgmReportData | null
+  availableAgmTickers?: string[]
+  initialTab?: StockDetailTab
 }
 
 function fmt(n: number | null | undefined, dec = 0): string {
@@ -93,9 +118,36 @@ export function StockDetailView({
   financialChartAnnual = null,
   valuationHistory = null,
   dividendHistory = null,
+  businessPlanData = null,
+  profitStructureQuarter = null,
+  profitStructureAnnual = null,
+  costBreakdownQuarter = null,
+  costBreakdownAnnual = null,
+  balanceSheetQuarter = null,
+  balanceSheetAnnual = null,
+  capexFinancialQuarter = null,
+  capexFinancialAnnual = null,
+  debtDupontQuarter = null,
+  debtDupontAnnual = null,
+  agmData = null,
+  availableAgmTickers = [],
+  initialTab = 'charts',
 }: StockDetailViewProps) {
-  const [activeTab, setActiveTab] = useState<StockDetailTab>('profile')
+  const [activeTab, setActiveTab] = useState<StockDetailTab>(initialTab || 'charts')
   const [copied, setCopied] = useState(false)
+
+  const handleTabChange = (tabId: StockDetailTab) => {
+    setActiveTab(tabId)
+    if (typeof window !== 'undefined') {
+      const url = new URL(window.location.href)
+      if (tabId === 'charts') {
+        url.searchParams.set('tab', 'financial-charts')
+      } else {
+        url.searchParams.set('tab', tabId)
+      }
+      window.history.replaceState({}, '', url.toString())
+    }
+  }
 
   const {
     ticker,
@@ -169,6 +221,20 @@ export function StockDetailView({
       : null
 
   const hasReports = reports.length > 0
+
+  // Tỷ lệ trích Quỹ khen thưởng phúc lợi (KTPL) & P/E thực tế sau KTPL
+  const bonusWelfareRate = useMemo(() => {
+    const rep = reports.find((r) => r.bonusWelfareRate != null && r.bonusWelfareRate !== undefined)
+    return rep?.bonusWelfareRate ?? null
+  }, [reports])
+
+  const basePE = valuation?.pe ?? null
+
+  const adjustedPE = useMemo(() => {
+    if (basePE == null || basePE <= 0 || bonusWelfareRate == null) return null
+    if (bonusWelfareRate >= 100) return null
+    return basePE / (1 - bonusWelfareRate / 100)
+  }, [basePE, bonusWelfareRate])
 
   // 4. Tính toán dữ liệu cổ đông
   const shareholderData = useMemo(() => {
@@ -430,16 +496,17 @@ export function StockDetailView({
   const TABS = useMemo(() => {
     return [
       {
-        id: 'profile' as StockDetailTab,
-        label: 'Hồ Sơ Doanh Nghiệp',
-        icon: Building2,
-        iconColor: 'text-indigo-500',
-      },
-      {
         id: 'charts' as StockDetailTab,
         label: 'Biểu Đồ Tài Chính',
         icon: BarChart3,
         iconColor: 'text-emerald-500',
+        badge: 'PRO',
+      },
+      {
+        id: 'profile' as StockDetailTab,
+        label: 'Hồ Sơ Doanh Nghiệp',
+        icon: Building2,
+        iconColor: 'text-indigo-500',
       },
       {
         id: 'financials' as StockDetailTab,
@@ -466,8 +533,15 @@ export function StockDetailView({
         iconColor: 'text-sky-500',
         badge: 'NEW',
       },
+      {
+        id: 'agm' as StockDetailTab,
+        label: 'ĐHĐCĐ',
+        icon: Vote,
+        iconColor: 'text-purple-400',
+        badge: agmData?.hasReport ? '2026' : undefined,
+      },
     ]
-  }, [])
+  }, [agmData])
 
   return (
     <div className="space-y-5 pb-12">
@@ -564,7 +638,7 @@ export function StockDetailView({
             <button
               key={tab.id}
               type="button"
-              onClick={() => setActiveTab(tab.id)}
+              onClick={() => handleTabChange(tab.id)}
               className={cn(
                 'group relative flex items-center gap-2 rounded-xl px-4 py-2.5 text-xs sm:text-[13px] font-bold transition-all whitespace-nowrap cursor-pointer',
                 isActive
@@ -596,6 +670,64 @@ export function StockDetailView({
       {/* ══════════════════════════════════════════════════════════ */}
       {activeTab === 'profile' && (
         <div className="space-y-5 animate-in fade-in-50 duration-200">
+          {/* Card nổi bật KTPL (nếu doanh nghiệp đã có tỷ lệ trích Quỹ KTPL) */}
+          {bonusWelfareRate != null && (
+            <div className="overflow-hidden rounded-2xl border border-amber-500/30 bg-gradient-to-r from-amber-500/10 via-amber-500/5 to-transparent p-4 sm:p-5 shadow-xs">
+              <div className="flex flex-wrap items-center justify-between gap-4">
+                <div className="flex items-center gap-3">
+                  <div className="flex size-10 shrink-0 items-center justify-center rounded-xl bg-amber-500/20 text-amber-600 dark:text-amber-400">
+                    <Award className="size-5" />
+                  </div>
+                  <div>
+                    <div className="flex flex-wrap items-center gap-2">
+                      <h4 className="text-sm font-bold text-foreground sm:text-base">
+                        Chính Sách Quỹ Khen Thưởng & Phúc Lợi (KTPL)
+                      </h4>
+                      <span className="rounded-full bg-amber-500/20 border border-amber-500/30 px-2.5 py-0.5 font-mono text-[10px] font-bold text-amber-700 dark:text-amber-300">
+                        Nghị quyết ĐHĐCĐ & Nghiên cứu AI
+                      </span>
+                    </div>
+                    <p className="mt-0.5 text-xs text-muted-foreground leading-relaxed">
+                      Tỷ lệ trích lập từ Lợi nhuận sau thuế (LNST) được ghi nhận trong Báo cáo phân tích chuyên sâu.
+                    </p>
+                  </div>
+                </div>
+
+                <div className="flex items-center gap-4 sm:gap-6">
+                  <div className="text-right">
+                    <div className="text-[10px] sm:text-[11px] font-bold uppercase tracking-wider text-muted-foreground">
+                      Tỷ lệ trích KTPL
+                    </div>
+                    <div className="font-mono text-xl sm:text-2xl font-black text-amber-600 dark:text-amber-400">
+                      {bonusWelfareRate}%
+                    </div>
+                  </div>
+
+                  {adjustedPE != null && (
+                    <div className="border-l border-amber-500/30 pl-4 sm:pl-6 text-right">
+                      <div className="text-[10px] sm:text-[11px] font-bold uppercase tracking-wider text-muted-foreground">
+                        P/E Thực tế (sau KTPL)
+                      </div>
+                      <div className="flex items-baseline justify-end gap-1.5">
+                        <span className="font-mono text-xl sm:text-2xl font-black text-foreground">
+                          {adjustedPE.toFixed(1)}x
+                        </span>
+                        {basePE != null && (
+                          <span
+                            className="text-xs text-muted-foreground line-through"
+                            title="P/E danh nghĩa chưa trừ KTPL"
+                          >
+                            {basePE.toFixed(1)}x
+                          </span>
+                        )}
+                      </div>
+                    </div>
+                  )}
+                </div>
+              </div>
+            </div>
+          )}
+
           {/* Mảng kinh doanh cốt lõi (Core Card) */}
           <div className="overflow-hidden rounded-2xl border border-border bg-card shadow-xs">
             <div className="flex flex-wrap items-center gap-3.5 border-b border-border bg-muted/40 p-4 sm:p-5">
@@ -758,6 +890,18 @@ export function StockDetailView({
                   </div>
                 </div>
               )}
+
+              {bonusWelfareRate != null && (
+                <div className="rounded-lg border border-amber-500/30 bg-amber-500/10 p-2.5">
+                  <div className="text-[10.5px] uppercase tracking-wider font-bold text-amber-700 dark:text-amber-300 flex items-center justify-between">
+                    <span>Trích Quỹ KTPL</span>
+                    <span className="text-[9px] font-semibold opacity-75">LNST</span>
+                  </div>
+                  <div className="mt-0.5 text-xs font-black text-amber-800 dark:text-amber-200">
+                    {bonusWelfareRate}% {adjustedPE != null ? `(P/E: ${adjustedPE.toFixed(1)}x)` : ''}
+                  </div>
+                </div>
+              )}
             </div>
 
             {/* Ngành nghề đăng ký */}
@@ -857,6 +1001,17 @@ export function StockDetailView({
               symbol={ticker}
               quarterData={financialChartQuarter}
               annualData={financialChartAnnual}
+              businessPlanData={businessPlanData}
+              profitStructureQuarter={profitStructureQuarter}
+              profitStructureAnnual={profitStructureAnnual}
+              costBreakdownQuarter={costBreakdownQuarter}
+              costBreakdownAnnual={costBreakdownAnnual}
+              balanceSheetQuarter={balanceSheetQuarter}
+              balanceSheetAnnual={balanceSheetAnnual}
+              capexFinancialQuarter={capexFinancialQuarter}
+              capexFinancialAnnual={capexFinancialAnnual}
+              debtDupontQuarter={debtDupontQuarter}
+              debtDupontAnnual={debtDupontAnnual}
             />
           )}
 
@@ -868,6 +1023,9 @@ export function StockDetailView({
               dividendData={dividendHistory}
             />
           )}
+
+          {/* Biểu đồ Định Giá Doanh Nghiệp (EPS & P/E) Chuẩn WiData */}
+          <StockValuationEpsChart symbol={ticker} />
 
           {/* Bộ 3 Dải Định Giá Lịch Sử P/E, P/B, P/S Bands theo độ lệch chuẩn */}
           {valuationHistory && (
@@ -1476,6 +1634,9 @@ export function StockDetailView({
               </div>
             </div>
           </div>
+
+          {/* Biểu đồ Định Giá Doanh Nghiệp (EPS & P/E) Chuẩn WiData */}
+          <StockValuationEpsChart symbol={ticker} />
         </div>
       )}
 
@@ -1600,6 +1761,20 @@ export function StockDetailView({
 
             <CompanyReportsTab symbol={ticker} />
           </section>
+        </div>
+      )}
+
+      {/* ══════════════════════════════════════════════════════════ */}
+      {/* TAB 7: ĐHĐCĐ (BÁO CÁO ĐẠI HỘI ĐỒNG CỔ ĐÔNG)               */}
+      {/* ══════════════════════════════════════════════════════════ */}
+      {activeTab === 'agm' && (
+        <div className="animate-in fade-in-50 duration-200">
+          <StockAgmReportView
+            agmData={agmData}
+            ticker={ticker}
+            companyName={company.name}
+            availableTickers={availableAgmTickers}
+          />
         </div>
       )}
     </div>

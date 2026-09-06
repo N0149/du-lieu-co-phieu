@@ -27,6 +27,7 @@ import {
   AlertCircle,
 } from 'lucide-react'
 import { cn } from '@/lib/utils'
+import { InsiderTradingPriceChart } from './InsiderTradingPriceChart'
 
 interface CompanyProfileEnhancementProps {
   symbol: string
@@ -518,8 +519,12 @@ export function CompanyProfileEnhancement({ symbol, data }: CompanyProfileEnhanc
       )}
 
       {/* ══════════════════════════════════════════════════════════ */}
-      {/* 3. LỊCH SỬ GIAO DỊCH NỘI BỘ GẦN ĐÂY                       */}
+      {/* 3. LỊCH SỬ GIAO DỊCH NỘI BỘ (BIỂU ĐỒ & BẢNG KÊ)          */}
       {/* ══════════════════════════════════════════════════════════ */}
+      {insiderTrades.length > 0 && (
+        <InsiderTradingPriceChart symbol={symbol} trades={insiderTrades} />
+      )}
+
       {insiderTrades.length > 0 && (
         <div className="w-full rounded-2xl border border-border bg-card p-5 sm:p-7 shadow-xs">
           <div className="flex items-center justify-between border-b border-border/60 pb-4 mb-5">

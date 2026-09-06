@@ -33,10 +33,24 @@ export async function generateMetadata({
 
 export default async function StockDetailPage({
   params,
+  searchParams,
 }: {
   params: Promise<{ symbol: string }>
+  searchParams?: Promise<{ tab?: string }>
 }) {
   const { symbol } = await params
+  const sParams = searchParams ? await searchParams : {}
+  const rawTab = sParams?.tab?.toLowerCase()
+  let initialTab: 'profile' | 'charts' | 'financials' | 'peers' | 'evaluation' | 'reports' | 'agm' = 'charts'
+
+  if (rawTab === 'profile') initialTab = 'profile'
+  else if (rawTab === 'financials') initialTab = 'financials'
+  else if (rawTab === 'peers') initialTab = 'peers'
+  else if (rawTab === 'evaluation') initialTab = 'evaluation'
+  else if (rawTab === 'reports') initialTab = 'reports'
+  else if (rawTab === 'agm' || rawTab === 'dhcd' || rawTab === 'dhcd-2026' || rawTab === 'dai-hoi-co-dong') initialTab = 'agm'
+  else if (rawTab === 'charts' || rawTab === 'financial-charts') initialTab = 'charts'
+
   const ticker = symbol.toUpperCase().trim()
 
   const allStocks = getAllStocks()
@@ -93,17 +107,50 @@ export default async function StockDetailPage({
   const { getFinancialChartData } = await import('@/lib/financial-charts-service')
   const { getValuationHistory } = await import('@/lib/valuation-history-service')
   const { getDividendHistory } = await import('@/lib/dividend-history-service')
+  const { getLocalBusinessPlan } = await import('@/lib/business-plan-db')
+  const { getProfitStructureData } = await import('@/lib/profit-structure-service')
+  const { getCostBreakdownData } = await import('@/lib/cost-breakdown-service')
+  const { getDetailedBalanceSheetCashFlowData } = await import('@/lib/balance-sheet-cashflow-service')
+  const { getCapexFinancialData } = await import('@/lib/capex-financial-service')
+  const { getDebtDupontData } = await import('@/lib/debt-dupont-service')
+  const { getAgmReport, getAvailableAgmTickers } = await import('@/lib/agm-service')
 
   const [
     financialChartQuarter,
     financialChartAnnual,
     valuationHistory,
     dividendHistory,
+    businessPlanData,
+    profitStructureQuarter,
+    profitStructureAnnual,
+    costBreakdownQuarter,
+    costBreakdownAnnual,
+    balanceSheetQuarter,
+    balanceSheetAnnual,
+    capexFinancialQuarter,
+    capexFinancialAnnual,
+    debtDupontQuarter,
+    debtDupontAnnual,
+    agmData,
+    availableAgmTickers,
   ] = await Promise.all([
     getFinancialChartData(ticker, 'quarter'),
     getFinancialChartData(ticker, 'annual'),
     getValuationHistory(ticker),
     getDividendHistory(ticker),
+    Promise.resolve(getLocalBusinessPlan(ticker)),
+    Promise.resolve(getProfitStructureData(ticker, 'quarter')),
+    Promise.resolve(getProfitStructureData(ticker, 'annual')),
+    Promise.resolve(getCostBreakdownData(ticker, 'quarter')),
+    Promise.resolve(getCostBreakdownData(ticker, 'annual')),
+    Promise.resolve(getDetailedBalanceSheetCashFlowData(ticker, 'quarter')),
+    Promise.resolve(getDetailedBalanceSheetCashFlowData(ticker, 'annual')),
+    Promise.resolve(getCapexFinancialData(ticker, 'quarter')),
+    Promise.resolve(getCapexFinancialData(ticker, 'annual')),
+    Promise.resolve(getDebtDupontData(ticker, 'quarter')),
+    Promise.resolve(getDebtDupontData(ticker, 'annual')),
+    Promise.resolve(getAgmReport(ticker, 2026)),
+    Promise.resolve(getAvailableAgmTickers(2026)),
   ])
 
   return (
@@ -122,6 +169,20 @@ export default async function StockDetailPage({
           financialChartAnnual={financialChartAnnual}
           valuationHistory={valuationHistory}
           dividendHistory={dividendHistory}
+          businessPlanData={businessPlanData}
+          profitStructureQuarter={profitStructureQuarter}
+          profitStructureAnnual={profitStructureAnnual}
+          costBreakdownQuarter={costBreakdownQuarter}
+          costBreakdownAnnual={costBreakdownAnnual}
+          balanceSheetQuarter={balanceSheetQuarter}
+          balanceSheetAnnual={balanceSheetAnnual}
+          capexFinancialQuarter={capexFinancialQuarter}
+          capexFinancialAnnual={capexFinancialAnnual}
+          debtDupontQuarter={debtDupontQuarter}
+          debtDupontAnnual={debtDupontAnnual}
+          agmData={agmData}
+          availableAgmTickers={availableAgmTickers}
+          initialTab={initialTab}
         />
       </main>
     </div>

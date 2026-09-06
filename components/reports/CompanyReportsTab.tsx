@@ -15,6 +15,7 @@ import {
   Building,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { ConsensusTargetPriceChart } from "@/components/stock/ConsensusTargetPriceChart";
 
 export interface CompanyReportItem {
   id: string;
@@ -147,47 +148,8 @@ export function CompanyReportsTab({ symbol, initialReports }: CompanyReportsTabP
 
   return (
     <div className="flex flex-col gap-5">
-      {/* Thẻ tóm tắt khuyến nghị & giá mục tiêu của các CTCK */}
-      {targetPriceStats && targetPriceStats.count > 0 && (
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 rounded-2xl border border-border bg-card/60 p-4 backdrop-blur shadow-sm">
-          <div className="flex items-center gap-3">
-            <div className="flex size-10 items-center justify-center rounded-xl bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
-              <Target className="size-5" />
-            </div>
-            <div>
-              <span className="text-[11px] text-muted-foreground uppercase font-semibold">Giá MT trung bình</span>
-              <p className="text-base font-bold text-foreground font-mono">
-                {targetPriceStats.avg.toLocaleString("vi-VN", { maximumFractionDigits: 0 })} đ
-              </p>
-            </div>
-          </div>
-
-          <div className="flex items-center gap-3">
-            <div className="flex size-10 items-center justify-center rounded-xl bg-blue-500/10 text-blue-400 border border-blue-500/20">
-              <TrendingUp className="size-5" />
-            </div>
-            <div>
-              <span className="text-[11px] text-muted-foreground uppercase font-semibold">Khoảng định giá</span>
-              <p className="text-sm font-bold text-foreground font-mono">
-                {targetPriceStats.min.toLocaleString("vi-VN", { maximumFractionDigits: 0 })} -{" "}
-                {targetPriceStats.max.toLocaleString("vi-VN", { maximumFractionDigits: 0 })} đ
-              </p>
-            </div>
-          </div>
-
-          <div className="flex items-center gap-3">
-            <div className="flex size-10 items-center justify-center rounded-xl bg-purple-500/10 text-purple-400 border border-purple-500/20">
-              <Building className="size-5" />
-            </div>
-            <div>
-              <span className="text-[11px] text-muted-foreground uppercase font-semibold">Tổng báo cáo CTCK</span>
-              <p className="text-base font-bold text-foreground font-mono">
-                {reports.length} báo cáo <span className="text-xs text-muted-foreground font-normal">({availableSources.length} CTCK)</span>
-              </p>
-            </div>
-          </div>
-        </div>
-      )}
+      {/* BIỂU ĐỒ GIÁ KHUYẾN NGHỊ CTCK VS THỊ GIÁ (WIDATA STYLE) */}
+      <ConsensusTargetPriceChart symbol={symbol} />
 
       {/* Thanh công cụ tìm kiếm & lọc */}
       <div className="flex flex-col sm:flex-row gap-3 items-center justify-between">

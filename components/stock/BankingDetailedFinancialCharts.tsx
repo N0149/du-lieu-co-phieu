@@ -31,6 +31,7 @@ import {
   ArrowUpRight,
 } from 'lucide-react'
 import { cn } from '@/lib/utils'
+import { WiDataStandardRow } from './WiDataStandardRow'
 
 interface BankingDetailedFinancialChartsProps {
   symbol: string
@@ -549,6 +550,9 @@ export function BankingDetailedFinancialCharts({
           </div>
         </div>
       </div>
+
+      {/* BỘ 3 BIỂU ĐỒ THỊ TRƯỜNG & ĐỊNH GIÁ (WIDATA STANDARD) */}
+      <WiDataStandardRow symbol={symbol} />
     </div>
   )
 }

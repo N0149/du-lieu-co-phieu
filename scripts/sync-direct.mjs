@@ -173,15 +173,68 @@ function extractUpside(head) {
   return null;
 }
 
-const BONUS_WELFARE_RATE_RE =
-  /(?:tỷ\s*lệ\s*trích\s*)?(?:quỹ\s*)?(?:khen\s*thưởng\s*[,/&]?\s*phúc\s*lợi|ktpl)(?:[^\n%:=]{0,100}?)\s*[:=-]\s*(\d+(?:[.,]\d+)?)\s*%/i;
+// ==========================================
+// BÓC "TỶ LỆ TRÍCH QUỸ KHEN THƯỞNG PHÚC LỢI" (KTPL) - NÂNG CẤP
+// ==========================================
 
 function extractBonusWelfareRate(text) {
+  if (!text) return null;
   const cleaned = stripAnnotations(text);
-  const m = cleaned.match(BONUS_WELFARE_RATE_RE);
-  if (!m) return null;
-  const n = Number(m[1].replace(/,/g, '.'));
-  return Number.isFinite(n) && n >= 0 && n <= 100 ? n : null;
+
+  // 1. Kiểm tra trường hợp "không trích lập" / 0%
+  const noDeductPatterns = [
+    /(?:không|chưa)\s*(?:thực\s*hiện\s*)?trích\s*(?:lập\s*)?(?:bất\s*kỳ\s*)?(?:các\s*)?quỹ/i,
+    /(?:không|chưa)\s*trích\s*(?:lập\s*)?(?:quỹ\s*)?(?:khen\s*thưởng|phúc\s*lợi|ktpl)/i,
+    /tỷ\s*lệ\s*trích\s*(?:quỹ\s*)?(?:khen\s*thưởng\s*[,/&]?\s*phúc\s*lợi|ktpl)[^\n%:=]{0,100}?[:=-]\s*0\s*%/i,
+    /quỹ\s*khen\s*thưởng\s*[,/&]?\s*phúc\s*lợi\s*[:=-]\s*0(?:\s*%|\s*đồng)?/i,
+  ];
+  for (const re of noDeductPatterns) {
+    if (re.test(cleaned)) return 0;
+  }
+
+  // 2. Mẫu công thức toán LaTex: =\s*(\d+(?:[.,]\d+)?)\s*\\?%
+  const latexMatch = cleaned.match(/(?:khen\s*thưởng\s*[,/&]?\s*(?:và\s*)?phúc\s*lợi|ktpl)[^=\n]{0,120}=\s*(\d+(?:[.,]\d+)?)\s*\\?%/i);
+  if (latexMatch) {
+    const n = Number(latexMatch[1].replace(/,/g, '.'));
+    if (Number.isFinite(n) && n >= 0 && n <= 100) return n;
+  }
+
+  // 3. Mẫu dạng câu & văn xuôi đa dạng
+  const patterns = [
+    // Chuẩn: tỷ lệ trích ... : X%
+    /(?:tỷ\s*lệ\s*trích\s*)?(?:quỹ\s*)?(?:khen\s*thưởng\s*[,/&]?\s*(?:và\s*)?phúc\s*lợi|ktpl)(?:[^\n%:=]{0,100}?)\s*[:=-]\s*(\d+(?:[.,]\d+)?)\s*%/i,
+    
+    // "tỷ lệ trích lập ... (lên tới|ở mức|đạt mức|là) 13,46%"
+    /(?:tỷ\s*lệ\s*trích\s*(?:lập\s*)?)?(?:các\s*)?(?:quỹ\s*)?(?:khen\s*thưởng\s*[,/&]?\s*(?:và\s*)?phúc\s*lợi|ktpl)[^\n%]{0,100}?(?:ở\s*mức|là|đạt\s*mức|đạt|lên\s*tới)\s*(\d+(?:[.,]\d+)?)\s*%/i,
+    
+    // "tỷ lệ trích 25,00% Lợi nhuận sau thuế ... cho hai quỹ này"
+    /tỷ\s*lệ\s*trích\s*(?:lập\s*)?(\d+(?:[.,]\d+)?)\s*%\s*(?:lợi\s*nhuận\s*sau\s*thuế|lnst)[^\n]{0,100}?(?:khen\s*thưởng|phúc\s*lợi|hai\s*quỹ|ktpl)/i,
+    
+    // "duy trì tỷ lệ trích lập ở mức 15% LNST, trong đó ... Quỹ khen thưởng ... Quỹ phúc lợi"
+    /(?:khen\s*thưởng\s*[,/&]?\s*(?:và\s*)?phúc\s*lợi|ktpl)[^\n%]{0,80}?\s*\((\d+(?:[.,]\d+)?)\s*%\s*lnst\)/i,
+    
+    // "tỷ lệ trích quỹ này là 10,0% dựa trên lợi nhuận sau thuế"
+    /tỷ\s*lệ\s*trích\s*quỹ\s*này\s*là\s*(\d+(?:[.,]\d+)?)\s*%/i,
+
+    // "trích Quỹ khen thưởng, phúc lợi (6% LNST)"
+    /trích\s*(?:lập\s*)?(?:quỹ\s*)?(?:khen\s*thưởng\s*[,/&]?\s*(?:và\s*)?phúc\s*lợi|ktpl)\s*\(\s*(\d+(?:[.,]\d+)?)\s*%\s*(?:lnst)?\s*\)/i,
+
+    // "trích ... 15% LNST cho Quỹ khen thưởng, phúc lợi"
+    /trích\s*(?:lập\s*)?\s*(\d+(?:[.,]\d+)?)\s*%\s*(?:lnst|lợi\s*nhuận\s*sau\s*thuế)[^\n]{0,80}?(?:khen\s*thưởng|phúc\s*lợi|ktpl)/i,
+    
+    // Bảng: | Quỹ khen thưởng, phúc lợi | 10% | hoặc tương tự
+    /\|\s*(?:quỹ\s*)?(?:khen\s*thưởng\s*[,/&]?\s*(?:và\s*)?phúc\s*lợi|ktpl)\s*\|\s*(\d+(?:[.,]\d+)?)\s*%/i,
+  ];
+
+  for (const p of patterns) {
+    const m = cleaned.match(p);
+    if (m) {
+      const n = Number(m[1].replace(/,/g, '.'));
+      if (Number.isFinite(n) && n >= 0 && n <= 100) return n;
+    }
+  }
+
+  return null;
 }
 
 function parseValuation(content) {

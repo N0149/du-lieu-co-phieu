@@ -12,8 +12,9 @@ import {
 import { cn } from "@/lib/utils";
 import { StockFinancialYear } from "@/lib/longlivestock";
 import type { RawFinancialStatementData } from "@/lib/financial-statements-db";
+import { WiDataFinancialRatiosDashboard } from "@/components/stock/WiDataFinancialRatiosDashboard";
 
-export type FinancialTab = "cdkt" | "kqkd" | "lctt";
+export type FinancialTab = "cdkt" | "kqkd" | "lctt" | "ratios";
 
 interface FinancialStatementsExplorerProps {
   ticker: string;
@@ -228,154 +229,47 @@ export function FinancialStatementsExplorer({
           </div>
 
           {/* Công cụ bên phải: Đổi đơn vị & Xuất CSV */}
-          <div className="flex items-center gap-2">
-            <div className="flex items-center rounded-xl border border-border bg-background p-0.5 text-xs font-semibold">
-              <button
-                type="button"
-                onClick={() => setUnit("bil")}
-                className={cn(
-                  "rounded-lg px-2.5 py-1 transition-colors cursor-pointer",
-                  unit === "bil" ? "bg-emerald-500/20 text-emerald-400 font-bold" : "text-muted-foreground hover:text-foreground"
-                )}
-              >
-                Tỷ đồng
-              </button>
-              <button
-                type="button"
-                onClick={() => setUnit("mil")}
-                className={cn(
-                  "rounded-lg px-2.5 py-1 transition-colors cursor-pointer",
-                  unit === "mil" ? "bg-emerald-500/20 text-emerald-400 font-bold" : "text-muted-foreground hover:text-foreground"
-                )}
-              >
-                Triệu đồng
-              </button>
-            </div>
-
-            <button
-              type="button"
-              onClick={handleExportCsv}
-              disabled={loading || !currentRows.length}
-              className="inline-flex items-center gap-1.5 rounded-xl border border-border bg-background px-3 py-1.5 text-xs font-semibold text-foreground transition-colors hover:bg-muted hover:border-emerald-500/40 hover:text-emerald-400 disabled:opacity-40 cursor-pointer shadow-2xs"
-              title="Xuất file Excel CSV"
-            >
-              <Download className="size-3.5" />
-              <span>Xuất Excel</span>
-            </button>
-          </div>
-        </div>
-
-        {/* TOOLBAR: Mode Quý/Năm, Số Kỳ, Điều hướng < >, Nút QoQ & YoY chuẩn ruatichsan */}
-        <div className="flex flex-wrap items-center justify-between gap-2.5 pt-1">
-          {/* Cụm Quý / Năm, Số Kỳ & Bộ Điều Hướng < > */}
-          <div className="flex flex-wrap items-center gap-2">
-            {/* Chế độ Theo Năm / Theo Quý */}
-            <div className="flex items-center rounded-xl border border-border bg-background p-0.5 text-xs font-bold">
-              <button
-                type="button"
-                onClick={() => setPeriodMode("annual")}
-                className={cn(
-                  "rounded-lg px-3 py-1.5 transition-colors cursor-pointer",
-                  periodMode === "annual" ? "bg-primary text-primary-foreground shadow-xs" : "text-muted-foreground hover:text-foreground"
-                )}
-              >
-                Theo năm
-              </button>
-              <button
-                type="button"
-                onClick={() => setPeriodMode("quarter")}
-                className={cn(
-                  "rounded-lg px-3 py-1.5 transition-colors cursor-pointer",
-                  periodMode === "quarter" ? "bg-primary text-primary-foreground shadow-xs" : "text-muted-foreground hover:text-foreground"
-                )}
-              >
-                Theo quý
-              </button>
-            </div>
-
-            {/* Dropdown Số kỳ */}
-            <div className="flex items-center gap-1.5 text-xs">
-              <span className="text-muted-foreground font-medium">Số kỳ:</span>
-              <select
-                value={periodCount}
-                onChange={(e) => setPeriodCount(Number(e.target.value))}
-                className="h-8 rounded-lg border border-border bg-background px-2 text-xs font-bold text-foreground outline-none cursor-pointer hover:border-emerald-500/50"
-              >
-                <option value={4}>4</option>
-                <option value={8}>8</option>
-                <option value={12}>12</option>
-                <option value={16}>16</option>
-                <option value={20}>20</option>
-                <option value={0}>Tất cả ({allFiscalDates.length})</option>
-              </select>
-            </div>
-
-            {/* Bộ điều hướng khoảng thời gian < [ Q3.2023 — Q2.2026 ] > */}
-            {rangeDisplay && (
-              <div className="flex items-center rounded-xl border border-border bg-background p-0.5 text-xs">
+          {activeTab !== "ratios" && (
+            <div className="flex items-center gap-2">
+              <div className="flex items-center rounded-xl border border-border bg-background p-0.5 text-xs font-semibold">
                 <button
                   type="button"
-                  onClick={handlePrevPeriods}
-                  disabled={!canGoBack}
-                  className="p-1.5 rounded-lg text-muted-foreground hover:text-foreground hover:bg-muted disabled:opacity-30 disabled:cursor-not-allowed cursor-pointer transition-colors"
-                  title="Lùi về các kỳ trước trong quá khứ"
+                  onClick={() => setUnit("bil")}
+                  className={cn(
+                    "rounded-lg px-2.5 py-1 transition-colors cursor-pointer",
+                    unit === "bil" ? "bg-emerald-500/20 text-emerald-400 font-bold" : "text-muted-foreground hover:text-foreground"
+                  )}
                 >
-                  <ChevronLeft className="size-3.5" />
+                  Tỷ đồng
                 </button>
-                <span className="px-2.5 font-bold text-[11px] text-foreground select-none">
-                  {rangeDisplay}
-                </span>
                 <button
                   type="button"
-                  onClick={handleNextPeriods}
-                  disabled={!canGoForward}
-                  className="p-1.5 rounded-lg text-muted-foreground hover:text-foreground hover:bg-muted disabled:opacity-30 disabled:cursor-not-allowed cursor-pointer transition-colors"
-                  title="Tiến tới các kỳ gần đây"
+                  onClick={() => setUnit("mil")}
+                  className={cn(
+                    "rounded-lg px-2.5 py-1 transition-colors cursor-pointer",
+                    unit === "mil" ? "bg-emerald-500/20 text-emerald-400 font-bold" : "text-muted-foreground hover:text-foreground"
+                  )}
                 >
-                  <ChevronRight className="size-3.5" />
+                  Triệu đồng
                 </button>
               </div>
-            )}
-          </div>
 
-          {/* Nút Toggle Tăng trưởng QoQ & YoY phong cách Ruatichsan */}
-          <div className="flex items-center gap-2 text-xs font-semibold">
-            {periodMode === "quarter" && (
               <button
                 type="button"
-                onClick={() => setShowQoQ(!showQoQ)}
-                className={cn(
-                  "flex items-center gap-1.5 rounded-xl border px-3 py-1.5 transition-all cursor-pointer shadow-2xs",
-                  showQoQ
-                    ? "border-purple-500 bg-purple-600 text-white font-bold shadow-sm ring-2 ring-purple-500/20"
-                    : "border-purple-500/30 bg-purple-500/10 text-purple-300 hover:bg-purple-500/20"
-                )}
-                title="Bật/Tắt dòng hiển thị tăng trưởng so với quý trước"
+                onClick={handleExportCsv}
+                disabled={loading || !currentRows.length}
+                className="inline-flex items-center gap-1.5 rounded-xl border border-border bg-background px-3 py-1.5 text-xs font-semibold text-foreground transition-colors hover:bg-muted hover:border-emerald-500/40 hover:text-emerald-400 disabled:opacity-40 cursor-pointer shadow-2xs"
+                title="Xuất file Excel CSV"
               >
-                <Activity className="size-3.5" />
-                <span>Tăng trưởng QoQ</span>
+                <Download className="size-3.5" />
+                <span>Xuất Excel</span>
               </button>
-            )}
-
-            <button
-              type="button"
-              onClick={() => setShowYoY(!showYoY)}
-              className={cn(
-                "flex items-center gap-1.5 rounded-xl border px-3 py-1.5 transition-all cursor-pointer shadow-2xs",
-                showYoY
-                  ? "border-sky-500 bg-sky-600 text-white font-bold shadow-sm ring-2 ring-sky-500/20"
-                  : "border-sky-500/30 bg-sky-500/10 text-sky-300 hover:bg-sky-500/20"
-              )}
-              title="Bật/Tắt dòng hiển thị tăng trưởng so với cùng kỳ năm trước"
-            >
-              <Activity className="size-3.5" />
-              <span>Tăng trưởng YoY</span>
-            </button>
-          </div>
+            </div>
+          )}
         </div>
 
-        {/* 3 SUB-TABS: Cân Đối Kế Toán | Kết Quả Kinh Doanh | Lưu Chuyển Tiền Tệ */}
-        <div className="flex items-center gap-1.5 pt-1">
+        {/* 4 SUB-TABS: Cân Đối Kế Toán | Kết Quả Kinh Doanh | Lưu Chuyển Tiền Tệ | Chỉ Số Tài Chính */}
+        <div className="flex flex-wrap items-center gap-1.5 pt-1 border-b border-border/50 pb-2">
           <button
             type="button"
             onClick={() => setActiveTab("cdkt")}
@@ -412,11 +306,139 @@ export function FinancialStatementsExplorer({
           >
             Lưu Chuyển Tiền Tệ
           </button>
+          <button
+            type="button"
+            onClick={() => setActiveTab("ratios")}
+            className={cn(
+              "rounded-xl px-4 py-2 text-xs font-bold transition-all cursor-pointer flex items-center gap-1.5",
+              activeTab === "ratios"
+                ? "bg-emerald-500/20 text-emerald-400 border border-emerald-500/30 shadow-2xs"
+                : "border border-border/80 bg-background/80 text-muted-foreground hover:text-foreground hover:border-border"
+            )}
+          >
+            <span>Chỉ Số Tài Chính</span>
+            <span className="text-[10px] uppercase font-mono px-1.5 py-0.5 rounded bg-emerald-500/20 text-emerald-300 font-bold border border-emerald-500/30">
+              Đầy Đủ
+            </span>
+          </button>
         </div>
+
+        {/* TOOLBAR: Mode Quý/Năm, Số Kỳ, Điều hướng < >, Nút QoQ & YoY chuẩn ruatichsan */}
+        {activeTab !== "ratios" && (
+          <div className="flex flex-wrap items-center justify-between gap-2.5 pt-1">
+            {/* Cụm Quý / Năm, Số Kỳ & Bộ Điều Hướng < > */}
+            <div className="flex flex-wrap items-center gap-2">
+              {/* Chế độ Theo Năm / Theo Quý */}
+              <div className="flex items-center rounded-xl border border-border bg-background p-0.5 text-xs font-bold">
+                <button
+                  type="button"
+                  onClick={() => setPeriodMode("annual")}
+                  className={cn(
+                    "rounded-lg px-3 py-1.5 transition-colors cursor-pointer",
+                    periodMode === "annual" ? "bg-primary text-primary-foreground shadow-xs" : "text-muted-foreground hover:text-foreground"
+                  )}
+                >
+                  Theo năm
+                </button>
+                <button
+                  type="button"
+                  onClick={() => setPeriodMode("quarter")}
+                  className={cn(
+                    "rounded-lg px-3 py-1.5 transition-colors cursor-pointer",
+                    periodMode === "quarter" ? "bg-primary text-primary-foreground shadow-xs" : "text-muted-foreground hover:text-foreground"
+                  )}
+                >
+                  Theo quý
+                </button>
+              </div>
+
+              {/* Dropdown Số kỳ */}
+              <div className="flex items-center gap-1.5 text-xs">
+                <span className="text-muted-foreground font-medium">Số kỳ:</span>
+                <select
+                  value={periodCount}
+                  onChange={(e) => setPeriodCount(Number(e.target.value))}
+                  className="h-8 rounded-lg border border-border bg-background px-2 text-xs font-bold text-foreground outline-none cursor-pointer hover:border-emerald-500/50"
+                >
+                  <option value={4}>4</option>
+                  <option value={8}>8</option>
+                  <option value={12}>12</option>
+                  <option value={16}>16</option>
+                  <option value={20}>20</option>
+                  <option value={0}>Tất cả ({allFiscalDates.length})</option>
+                </select>
+              </div>
+
+              {/* Bộ điều hướng khoảng thời gian < [ Q3.2023 — Q2.2026 ] > */}
+              {rangeDisplay && (
+                <div className="flex items-center rounded-xl border border-border bg-background p-0.5 text-xs">
+                  <button
+                    type="button"
+                    onClick={handlePrevPeriods}
+                    disabled={!canGoBack}
+                    className="p-1.5 rounded-lg text-muted-foreground hover:text-foreground hover:bg-muted disabled:opacity-30 disabled:cursor-not-allowed cursor-pointer transition-colors"
+                    title="Lùi về các kỳ trước trong quá khứ"
+                  >
+                    <ChevronLeft className="size-3.5" />
+                  </button>
+                  <span className="px-2.5 font-bold text-[11px] text-foreground select-none">
+                    {rangeDisplay}
+                  </span>
+                  <button
+                    type="button"
+                    onClick={handleNextPeriods}
+                    disabled={!canGoForward}
+                    className="p-1.5 rounded-lg text-muted-foreground hover:text-foreground hover:bg-muted disabled:opacity-30 disabled:cursor-not-allowed cursor-pointer transition-colors"
+                    title="Tiến tới các kỳ gần đây"
+                  >
+                    <ChevronRight className="size-3.5" />
+                  </button>
+                </div>
+              )}
+            </div>
+
+            {/* Nút Toggle Tăng trưởng QoQ & YoY phong cách Ruatichsan */}
+            <div className="flex items-center gap-2 text-xs font-semibold">
+              {periodMode === "quarter" && (
+                <button
+                  type="button"
+                  onClick={() => setShowQoQ(!showQoQ)}
+                  className={cn(
+                    "flex items-center gap-1.5 rounded-xl border px-3 py-1.5 transition-all cursor-pointer shadow-2xs",
+                    showQoQ
+                      ? "border-purple-500 bg-purple-600 text-white font-bold shadow-sm ring-2 ring-purple-500/20"
+                      : "border-purple-500/30 bg-purple-500/10 text-purple-300 hover:bg-purple-500/20"
+                  )}
+                  title="Bật/Tắt dòng hiển thị tăng trưởng so với quý trước"
+                >
+                  <Activity className="size-3.5" />
+                  <span>Tăng trưởng QoQ</span>
+                </button>
+              )}
+
+              <button
+                type="button"
+                onClick={() => setShowYoY(!showYoY)}
+                className={cn(
+                  "flex items-center gap-1.5 rounded-xl border px-3 py-1.5 transition-all cursor-pointer shadow-2xs",
+                  showYoY
+                    ? "border-sky-500 bg-sky-600 text-white font-bold shadow-sm ring-2 ring-sky-500/20"
+                    : "border-sky-500/30 bg-sky-500/10 text-sky-300 hover:bg-sky-500/20"
+                )}
+                title="Bật/Tắt dòng hiển thị tăng trưởng so với cùng kỳ năm trước"
+              >
+                <Activity className="size-3.5" />
+                <span>Tăng trưởng YoY</span>
+              </button>
+            </div>
+          </div>
+        )}
       </div>
 
-      {/* ── BẢNG BCTC CHÍNH (TÔ SÁNG LIỀN MẠCH 100% QUA INLINE STYLES) ── */}
-      {loading ? (
+      {/* ── BẢNG BCTC CHÍNH HOẶC DASHBOARD CHỈ SỐ TÀI CHÍNH ── */}
+      {activeTab === "ratios" ? (
+        <WiDataFinancialRatiosDashboard ticker={ticker} />
+      ) : loading ? (
         <div className="py-20 text-center text-muted-foreground text-sm">
           <div className="inline-block size-6 border-2 border-emerald-500 border-t-transparent rounded-full animate-spin mb-2"></div>
           <p>Đang tải dữ liệu Báo Cáo Tài Chính ({periodMode === "quarter" ? "Quý" : "Năm"})...</p>

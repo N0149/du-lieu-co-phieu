@@ -47,6 +47,36 @@ export type CustomsTradeRow = {
   dataset_category: 'main' | 'fdi' | 'matrix' | 'province' | 'transport'
 }
 
+import fs from 'fs'
+import path from 'path'
+import zlib from 'zlib'
+
+// Chuẩn bị sẵn buffer nén gzip để trả về ngay tức thì (<1ms), giảm kích thước từ 13MB xuống còn 1.26MB
+let cachedRawJson: string | null = null
+let cachedGzipBuffer: Buffer | null = null
+let cachedMtime: number = 0
+
+function getPrecomputedPayload(): { raw: string; gzip: Buffer } {
+  try {
+    const filePath = path.join(process.cwd(), 'data', 'customs_trade_snapshot.json')
+    const stats = fs.statSync(filePath)
+    if (!cachedRawJson || !cachedGzipBuffer || stats.mtimeMs > cachedMtime) {
+      cachedMtime = stats.mtimeMs
+      cachedRawJson = fs.readFileSync(filePath, 'utf-8')
+      cachedGzipBuffer = zlib.gzipSync(Buffer.from(cachedRawJson), { level: 6 })
+    }
+  } catch {
+    if (!cachedRawJson || !cachedGzipBuffer) {
+      cachedRawJson = JSON.stringify(snapshot)
+      cachedGzipBuffer = zlib.gzipSync(Buffer.from(cachedRawJson), { level: 6 })
+    }
+  }
+  return {
+    raw: cachedRawJson ?? JSON.stringify(snapshot),
+    gzip: cachedGzipBuffer ?? zlib.gzipSync(Buffer.from(JSON.stringify(snapshot)), { level: 6 }),
+  }
+}
+
 /**
  * API phục vụ snapshot thống kê XNK (xuất từ scripts/customs_etl).
  * Snapshot được tạo bằng: `python scripts/customs_etl/main.py --export-json`
@@ -67,10 +97,44 @@ export async function GET(req: NextRequest) {
   }
 
   const includeMatrix = req.nextUrl.searchParams.get('include_matrix') === '1'
-  const data = snapshot as unknown as CustomsTradeSnapshot
-  const payload = !includeMatrix
-    ? (({ matrix_rows: _omit, ...rest }) => rest)(data)
-    : data
+  if (!includeMatrix) {
+    const acceptsGzip = req.headers.get('accept-encoding')?.includes('gzip')
+    const { raw, gzip } = getPrecomputedPayload()
+
+    const cacheControlHeader =
+      process.env.NODE_ENV === 'development'
+        ? 'no-cache, no-store, must-revalidate'
+        : 'public, s-maxage=300, stale-while-revalidate=1800'
+
+    if (acceptsGzip) {
+      return new NextResponse(gzip as unknown as BodyInit, {
+        status: 200,
+        headers: {
+          'Content-Type': 'application/json; charset=utf-8',
+          'Content-Encoding': 'gzip',
+          'Cache-Control': cacheControlHeader,
+          'X-Robots-Tag': 'noindex',
+        },
+      })
+    }
+
+    return new NextResponse(raw, {
+      status: 200,
+      headers: {
+        'Content-Type': 'application/json; charset=utf-8',
+        'Cache-Control': cacheControlHeader,
+        'X-Robots-Tag': 'noindex',
+      },
+    })
+  }
+
+  let payload = snapshot as unknown as CustomsTradeSnapshot
+  try {
+    const matrixFile = require('@/data/customs_matrix_detail.json')
+    payload = { ...payload, matrix_rows: matrixFile.matrix_rows }
+  } catch {
+    // Giữ nguyên payload snapshot chính
+  }
 
   return NextResponse.json(payload, {
     headers: {
@@ -79,3 +143,4 @@ export async function GET(req: NextRequest) {
     },
   })
 }
+

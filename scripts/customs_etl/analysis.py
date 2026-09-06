@@ -107,7 +107,7 @@ def build_trade_balance(
                 rec["export_fdi"] = round(k1.get("export_fdi", 0) + k2.get("export_fdi", 0), 2)
             if rec["import_fdi"] == 0.0 and (k1.get("import_fdi", 0) or k2.get("import_fdi", 0)):
                 rec["import_fdi"] = round(k1.get("import_fdi", 0) + k2.get("import_fdi", 0), 2)
-        elif k1 or k2:
+        elif k1 and k2:
             periods[thang_key] = {
                 "period_type": "THANG",
                 "period_date": m,

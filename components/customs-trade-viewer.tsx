@@ -38,17 +38,28 @@ function fmtNum(v: number | null): string {
   return v == null ? '—' : fmtInt(v)
 }
 
+// Module-level in-memory cache để chuyển tab trong SPA không bao giờ phải tải lại
+let cachedCustomsRows: CustomsTradeRow[] | null = null
+
 /** View giữ liệu thống kê XNK — fetch /api/customs-trade, hỗ trợ Ma trận so sánh, 57 mã Tier A & Danh sách chi tiết. */
 export function CustomsTradeViewer({
   tradeBalanceData = [],
   defaultViewMode = 'matrix',
   initialTicker = null,
+  initialRows = null,
 }: {
   tradeBalanceData?: TradeBalancePoint[]
   defaultViewMode?: 'matrix' | 'tier_a' | 'list'
   initialTicker?: string | null
+  initialRows?: CustomsTradeRow[] | null
 }) {
-  const [rows, setRows] = useState<CustomsTradeRow[] | null>(null)
+  const [rows, setRows] = useState<CustomsTradeRow[] | null>(() => {
+    if (initialRows && initialRows.length > 0) {
+      cachedCustomsRows = initialRows
+      return initialRows
+    }
+    return cachedCustomsRows
+  })
   const [viewMode, setViewMode] = useState<'matrix' | 'tier_a' | 'list'>(defaultViewMode)
   const [selectedCommodityFilter, setSelectedCommodityFilter] = useState<string | null>(null)
 
@@ -60,12 +71,22 @@ export function CustomsTradeViewer({
   const [page, setPage] = useState(1)
 
   useEffect(() => {
+    if (rows && rows.length > 0) {
+      cachedCustomsRows = rows
+      return
+    }
+    if (cachedCustomsRows && cachedCustomsRows.length > 0) {
+      setRows(cachedCustomsRows)
+      return
+    }
+
     let cancelled = false
     fetch('/api/customs-trade')
       .then((res) => (res.ok ? res.json() : null))
       .then((data: { rows?: CustomsTradeRow[] } | CustomsTradeRow[] | null) => {
         if (cancelled) return
         const list = Array.isArray(data) ? data : data?.rows ?? []
+        cachedCustomsRows = list
         setRows(list)
       })
       .catch(() => {
@@ -74,7 +95,8 @@ export function CustomsTradeViewer({
     return () => {
       cancelled = true
     }
-  }, [])
+  }, [rows])
+
 
   const periodOptions = useMemo(() => {
     if (!rows) return [] as string[]
@@ -337,14 +359,15 @@ export function CustomsTradeViewer({
                             {r.unit ?? '—'}
                           </td>
                           <td className="px-3 py-2 text-right font-mono text-foreground">
-                            {fmtNum(r.quantity)}
+                            {fmtNum(r.quantity ?? null)}
                           </td>
                           <td className="px-3 py-2 text-right font-mono font-medium text-foreground">
-                            {fmtNum(r.value_usd)}
+                            {fmtNum(r.value_usd ?? null)}
                           </td>
                           <td className="px-3 py-2 text-right font-mono text-muted-foreground">
-                            {fmtNum(r.value_acc)}
+                            {fmtNum(r.value_acc ?? null)}
                           </td>
+
                           <td className="px-3 py-2 text-center">
                             <span
                               className={cn(

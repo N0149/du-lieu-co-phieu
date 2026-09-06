@@ -1,5 +1,6 @@
 import manifestRaw from '@/data/longlive_manifest.json'
 import indicesRaw from '@/data/longlive_indices.json'
+import coreCardsRaw from '@/data/company_core_cards.json'
 import { getLiveStockQuote } from './live-quote-service'
 
 export type StockManifestItem = {
@@ -177,6 +178,15 @@ export function getStockByTicker(ticker: string): StockManifestItem | undefined 
   return getAllStocks().find((s) => s.t.toUpperCase() === tNorm)
 }
 
+/**
+ * Lấy Mảng kinh doanh cốt lõi (Core Card) trích từ BCTN trực tiếp từ file nội bộ (0ms latency, 100% offline)
+ */
+export function getLocalCoreCard(ticker: string): CoreCardData | null {
+  const tNorm = ticker.toUpperCase().trim()
+  const map = coreCardsRaw as Record<string, CoreCardData | null>
+  return map[tNorm] || null
+}
+
 /** Chuẩn hóa xâu tìm kiếm không dấu */
 export function removeVietnameseAccents(str: string): string {
   try {
@@ -264,9 +274,11 @@ export async function fetchStockDetailData(tickerUpper: string): Promise<StockDe
   const manifestItem = getStockByTicker(ticker)
 
   let jsonData: Partial<StockDetailData> | null = null
-  let coreCardData: CoreCardData | null = null
+  // 1. Đọc Mảng kinh doanh cốt lõi trực tiếp từ file JSON nội bộ (0ms, 100% offline)
+  let coreCardData: CoreCardData | null = getLocalCoreCard(ticker)
 
-  // Chạy song song fetch JSON data, HTML stock page và Live Quote
+  // 2. Chỉ gọi mạng lấy HTML nếu mã này chưa từng có trong file nội bộ (fallback dự phòng)
+  const needHtmlFallback = !coreCardData
   const [jsonRes, htmlRes, liveQuote] = await Promise.all([
     fetch(`https://longlivestock.com/data/${ticker}_data.json`, {
       next: { revalidate: 3600 },
@@ -274,12 +286,14 @@ export async function fetchStockDetailData(tickerUpper: string): Promise<StockDe
     })
       .then(async (r) => (r.ok ? await r.json() : null))
       .catch(() => null),
-    fetch(`https://longlivestock.com/stock/${ticker}`, {
-      next: { revalidate: 3600 },
-      headers: { 'User-Agent': 'Mozilla/5.0' },
-    })
-      .then(async (r) => (r.ok ? await r.text() : null))
-      .catch(() => null),
+    needHtmlFallback
+      ? fetch(`https://longlivestock.com/stock/${ticker}`, {
+          next: { revalidate: 3600 },
+          headers: { 'User-Agent': 'Mozilla/5.0' },
+        })
+          .then(async (r) => (r.ok ? await r.text() : null))
+          .catch(() => null)
+      : Promise.resolve(null),
     getLiveStockQuote(ticker).catch(() => null),
   ])
 
@@ -287,7 +301,7 @@ export async function fetchStockDetailData(tickerUpper: string): Promise<StockDe
     jsonData = jsonRes
   }
 
-  if (htmlRes) {
+  if (htmlRes && !coreCardData) {
     try {
       coreCardData = parseCoreCardFromHtml(htmlRes, ticker)
     } catch (e) {

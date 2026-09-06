@@ -179,20 +179,20 @@ def do_export_json(args: argparse.Namespace) -> None:
     rows = [r for r in all_rows if r.dataset_category != "matrix"]
     matrix_rows = [r for r in all_rows if r.dataset_category == "matrix"]
 
-    # Điền khuyết các dòng THANG cho từng mặt hàng từ KY_1 + KY_2 (nếu thiếu file tháng)
+    # Điền khuyết các dòng THANG cho từng mặt hàng từ KY_1 + KY_2 (chỉ khi có ĐỦ CẢ HAI KỲ 1 và 2)
     thang_keys = {(r.period_date.isoformat(), r.trade_type, r.dataset_category, r.name) for r in rows if r.period_type == "THANG"}
     k1_rows = {(r.period_date.isoformat(), r.trade_type, r.dataset_category, r.name): r for r in rows if r.period_type == "KY_1"}
     k2_rows = {(r.period_date.isoformat(), r.trade_type, r.dataset_category, r.name): r for r in rows if r.period_type == "KY_2"}
 
     synthesized_thang: list[parser_mod.ParsedRow] = []
-    all_k_keys = set(k1_rows.keys()) | set(k2_rows.keys())
+    all_k_keys = set(k1_rows.keys()) & set(k2_rows.keys())
     for key in all_k_keys:
         if key not in thang_keys:
             k1 = k1_rows.get(key)
             k2 = k2_rows.get(key)
-            base = k2 or k1
-            if not base:
+            if not k1 or not k2:
                 continue
+            base = k2
             qty_sum = None
             if (k1 and k1.quantity is not None) or (k2 and k2.quantity is not None):
                 qty_sum = (k1.quantity if k1 and k1.quantity else 0.0) + (k2.quantity if k2 and k2.quantity else 0.0)
@@ -230,22 +230,33 @@ def do_export_json(args: argparse.Namespace) -> None:
         rows = rows[: args.limit]
         matrix_rows = matrix_rows[: args.limit]
 
+    clean_rows = [{k: v for k, v in r.to_dict().items() if v is not None} for r in rows]
     payload = {
         "generated_at": datetime.now(timezone.utc).isoformat(),
-        "rows": [r.to_dict() for r in rows],
-        "matrix_rows": [r.to_dict() for r in matrix_rows],
+        "rows": clean_rows,
         "trade_balance": analysis.build_trade_balance(totals_by_file),
     }
     out_path = Path(args.out_json)
     out_path.parent.mkdir(parents=True, exist_ok=True)
     out_path.write_text(json.dumps(payload, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
 
+    if matrix_rows:
+        matrix_path = out_path.parent / "customs_matrix_detail.json"
+        matrix_payload = {
+            "generated_at": payload["generated_at"],
+            "matrix_rows": [{k: v for k, v in r.to_dict().items() if v is not None} for r in matrix_rows],
+        }
+        matrix_path.write_text(json.dumps(matrix_payload, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
+
     log.info(
-        "Đã xuất %d dòng + %d ma trận + %d kỳ cán cân → %s",
-        len(payload["rows"]), len(payload["matrix_rows"]),
-        len(payload["trade_balance"]), out_path,
+        "Đã xuất %d dòng + %d kỳ cán cân → %s (%s dòng ma trận tách riêng)",
+        len(payload["rows"]),
+        len(payload["trade_balance"]),
+        out_path,
+        len(matrix_rows) if matrix_rows else 0,
     )
     print_summary(rows, matrix_rows)
+
 
 
 # ── CLI ──────────────────────────────────────────────────────────────────────
