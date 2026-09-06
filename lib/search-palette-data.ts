@@ -1,0 +1,394 @@
+export type SearchCategory =
+  | 'all'
+  | 'stock'
+  | 'macro'
+  | 'sector'
+  | 'chart'
+  | 'layout'
+  | 'maritime'
+  | 'customs'
+
+export type SearchSubFilter =
+  | 'all'
+  | 'stock'
+  | 'sector'
+  | 'vn'
+  | 'us'
+  | 'cn'
+  | 'eu'
+  | 'market'
+
+export type SearchPaletteItem = {
+  id: string
+  title: string
+  subtitle?: string
+  ticker?: string
+  icon?: string
+  category: 'stock' | 'macro' | 'sector' | 'chart' | 'layout' | 'maritime' | 'customs'
+  categoryLabel: string
+  region?: 'VN' | 'US' | 'EU' | 'CN' | 'GLOBAL'
+  href: string
+  keywords?: string[]
+}
+
+export const PRESET_SEARCH_ITEMS: SearchPaletteItem[] = [
+  // --- BỐ CỤC (LAYOUTS & DASHBOARDS) ---
+  {
+    id: 'layout-home-news',
+    title: 'Dòng Tin Tức Thị Trường Realtime',
+    subtitle: 'Tổng hợp tin tài chính & doanh nghiệp theo thời gian thực',
+    icon: '📰',
+    category: 'layout',
+    categoryLabel: 'Bố cục',
+    href: '/',
+    keywords: ['tin tuc', 'trang chu', 'dong tin', 'thi truong', 'news'],
+  },
+  {
+    id: 'layout-screener',
+    title: 'Bộ Lọc Cổ Phiếu Chuyên Sâu (1.530+ Mã)',
+    subtitle: 'Lọc cổ phiếu theo P/E, ROE, dòng tiền, CAPEX, tăng trưởng & tín hiệu kỹ thuật',
+    icon: '⚡',
+    category: 'layout',
+    categoryLabel: 'Bố cục',
+    href: '/bo-loc',
+    keywords: ['bo loc', 'bo loc co phieu', 'screener', 'filter', 'pe', 'roe', 'canslim', 'tien de chet nguoi'],
+  },
+  {
+    id: 'layout-nghien-cuu-ai',
+    title: 'Nghiên Cứu Chuyên Sâu AI (Định Giá RNAV & Báo Cáo)',
+    subtitle: 'Định giá tài sản ròng RNAV, bóc tách giá trị doanh nghiệp & báo cáo phân tích',
+    icon: '✨',
+    category: 'layout',
+    categoryLabel: 'Bố cục',
+    href: '/nghien-cuu-ai',
+    keywords: ['nghien cuu chuyen sau ai', 'ai', 'dinh gia', 'rnav', 'upside', 'boc tach tai san'],
+  },
+  {
+    id: 'layout-reports',
+    title: 'Kho Báo Cáo Phân Tích Chuyên Sâu',
+    subtitle: '94+ báo cáo phân tích doanh nghiệp chi tiết kèm audio tóm tắt',
+    icon: '📑',
+    category: 'layout',
+    categoryLabel: 'Bố cục',
+    href: '/bao-cao',
+    keywords: ['bao cao', 'kho bao cao', 'audio', 'phan tich'],
+  },
+  {
+    id: 'layout-cangbien',
+    title: 'Tình Báo Cảng Biển & Hàng Hải Quốc Gia',
+    subtitle: 'Nhật ký điều động tàu, 15 cảng vụ & 12 cổ phiếu cảng biển',
+    icon: '⚓',
+    category: 'layout',
+    categoryLabel: 'Bố cục',
+    href: '/cang-bien',
+    keywords: ['cang bien', 'hang hai', 'tau bien', 'dwt', 'maritime'],
+  },
+  {
+    id: 'layout-xnk',
+    title: 'Thống Kê Xuất Nhập Khẩu & Hải Quan',
+    subtitle: 'Cán cân thương mại, 2.500+ dòng hàng hóa & đối tác thương mại',
+    icon: '📦',
+    category: 'layout',
+    categoryLabel: 'Bố cục',
+    href: '/xuat-nhap-khau',
+    keywords: ['xuat nhap khau', 'hai quan', 'can can', 'xnk', 'thuong mai'],
+  },
+  {
+    id: 'layout-quymo',
+    title: 'Hiệu Quả Đầu Tư 50+ Quỹ Mở',
+    subtitle: 'So sánh lợi nhuận NAV, quy mô tài sản và danh mục quỹ',
+    icon: '💼',
+    category: 'layout',
+    categoryLabel: 'Bố cục',
+    href: '/quy-mo',
+    keywords: ['quy mo', 'chung chi quy', 'nav', 'etf', 'funds'],
+  },
+  {
+    id: 'layout-watchlist',
+    title: 'Danh Mục Theo Dõi Cổ Phiếu',
+    subtitle: 'Quản lý danh sách cổ phiếu quan tâm và biến động giá',
+    icon: '⭐',
+    category: 'layout',
+    categoryLabel: 'Bố cục',
+    href: '/danh-muc',
+    keywords: ['danh muc', 'theo doi', 'watchlist', 'favorites'],
+  },
+
+  // --- DỮ LIỆU VĨ MÔ (MACRO) ---
+  {
+    id: 'macro-us-gdp',
+    title: '[US] - Tổng sản phẩm quốc nội (GDP YoY)',
+    subtitle: 'Chỉ số tăng trưởng kinh tế Hoa Kỳ theo quý & năm',
+    icon: '🌐',
+    category: 'macro',
+    categoryLabel: 'Vĩ mô',
+    region: 'US',
+    href: '/?macro=us-gdp',
+    keywords: ['us', 'gdp', 'hoa ky', 'kinh te my', 'tang truong'],
+  },
+  {
+    id: 'macro-eu-pmi',
+    title: '[EU] - Construction PMI & Sản xuất',
+    subtitle: 'Chỉ số nhà quản trị mua hàng khối Eurozone',
+    icon: '🌐',
+    category: 'macro',
+    categoryLabel: 'Vĩ mô',
+    region: 'EU',
+    href: '/?macro=eu-pmi',
+    keywords: ['eu', 'pmi', 'chau au', 'san xuat', 'eurozone'],
+  },
+  {
+    id: 'macro-eu-gdp',
+    title: '[EU] - GDP danh nghĩa - Chênh lệch xuất nhập khẩu - EU27',
+    subtitle: 'Cán cân ngoại thương và GDP khối 27 nước Châu Âu',
+    icon: '🌐',
+    category: 'macro',
+    categoryLabel: 'Vĩ mô',
+    region: 'EU',
+    href: '/?macro=eu-trade',
+    keywords: ['eu', 'gdp', 'xnk', 'eu27', 'can can'],
+  },
+  {
+    id: 'macro-vn-interbank',
+    title: '[VN] - Lãi suất liên ngân hàng TW',
+    subtitle: 'Diễn biến lãi suất qua đêm, 1 tuần, 1 tháng liên ngân hàng',
+    icon: '🏦',
+    category: 'macro',
+    categoryLabel: 'Vĩ mô',
+    region: 'VN',
+    href: '/?macro=vn-rate',
+    keywords: ['vn', 'lai suat', 'lien ngan hang', 'sbv', 'qua dem'],
+  },
+  {
+    id: 'macro-vn-omo',
+    title: '[VN] - Bơm hút ròng thị trường mở (OMO)',
+    subtitle: 'Quy mô phát hành tín phiếu và cho vay cầm cố của NHNN',
+    icon: '🏦',
+    category: 'macro',
+    categoryLabel: 'Vĩ mô',
+    region: 'VN',
+    href: '/?macro=vn-omo',
+    keywords: ['vn', 'omo', 'bom hut rong', 'tin phieu', 'nhnn'],
+  },
+  {
+    id: 'macro-us-income',
+    title: '[US] - Thu nhập cá nhân - Đóng góp BHXH của người sử dụng lao động',
+    subtitle: 'Số liệu việc làm, tiền lương và chi phí lao động Mỹ',
+    icon: '🌐',
+    category: 'macro',
+    categoryLabel: 'Vĩ mô',
+    region: 'US',
+    href: '/?macro=us-income',
+    keywords: ['us', 'thu nhap', 'bhxh', 'viec lam', 'labor'],
+  },
+  {
+    id: 'macro-cn-rrr',
+    title: '[CN] - Tỷ lệ dự trữ bắt buộc (RRR) PBoC',
+    subtitle: 'Quyết định tỷ lệ dự trữ bắt buộc ngân hàng trung ương Trung Quốc',
+    icon: '🌐',
+    category: 'macro',
+    categoryLabel: 'Vĩ mô',
+    region: 'CN',
+    href: '/?macro=cn-rrr',
+    keywords: ['cn', 'rrr', 'trung quoc', 'pboc', 'du tru'],
+  },
+  {
+    id: 'macro-global-coal',
+    title: '[GLOBAL] - Giá than đá Newcastle (Future)',
+    subtitle: 'Thị trường than nhiệt tương lai tại cảng Newcastle Australia',
+    icon: '⚡',
+    category: 'macro',
+    categoryLabel: 'Vĩ mô',
+    region: 'GLOBAL',
+    href: '/?macro=commodity-coal',
+    keywords: ['than da', 'newcastle', 'nang luong', 'coal', 'hang hoa'],
+  },
+  {
+    id: 'macro-global-rubber',
+    title: '[GLOBAL] - Giá cao su RSS3 Singapore (Future)',
+    subtitle: 'Chỉ số giá cao su tự nhiên giao dịch trên sàn SGX',
+    icon: '🌱',
+    category: 'macro',
+    categoryLabel: 'Vĩ mô',
+    region: 'GLOBAL',
+    href: '/?macro=commodity-rubber',
+    keywords: ['cao su', 'rss3', 'singapore', 'rubber', 'nong san'],
+  },
+
+  // --- NGÀNH (SECTORS) ---
+  {
+    id: 'sector-rubber',
+    title: 'Ngành Nuôi trồng và chế biến cao su',
+    subtitle: 'Các cổ phiếu DRC, CSM, PHR, DPR, GVR, BCRC',
+    icon: '🏭',
+    category: 'sector',
+    categoryLabel: 'Ngành',
+    href: '/bo-loc?sector=cao-su',
+    keywords: ['nganh cao su', 'phr', 'dpr', 'gvr', 'drc'],
+  },
+  {
+    id: 'sector-steel',
+    title: 'Ngành Thép & Tôn mạ kim loại',
+    subtitle: 'Các doanh nghiệp HPG, HSG, NKG, SMC, VGS',
+    icon: '🏭',
+    category: 'sector',
+    categoryLabel: 'Ngành',
+    href: '/bo-loc?sector=thep',
+    keywords: ['thep', 'ton ma', 'hpg', 'hsg', 'nkg'],
+  },
+  {
+    id: 'sector-maritime',
+    title: 'Ngành Cảng biển & Logistics Hàng hải',
+    subtitle: 'Các mã cảng GMD, HAH, PHP, DVP, DXP, SGP',
+    icon: '⚓',
+    category: 'sector',
+    categoryLabel: 'Ngành',
+    href: '/cang-bien',
+    keywords: ['cang bien', 'logistics', 'gmd', 'hah', 'php', 'dvp'],
+  },
+  {
+    id: 'sector-retail',
+    title: 'Ngành Bán lẻ & Phân phối công nghệ',
+    subtitle: 'MWG, FRT, DGW, PNJ, PET',
+    icon: '🛒',
+    category: 'sector',
+    categoryLabel: 'Ngành',
+    href: '/bo-loc?sector=ban-le',
+    keywords: ['ban le', 'mwg', 'frt', 'dgw', 'pnj'],
+  },
+  {
+    id: 'sector-banks',
+    title: 'Ngành Ngân hàng & Định chế tài chính',
+    subtitle: 'VCB, BID, CTG, TCB, MBB, ACB, VPB',
+    icon: '🏦',
+    category: 'sector',
+    categoryLabel: 'Ngành',
+    href: '/bo-loc?sector=ngan-hang',
+    keywords: ['ngan hang', 'bank', 'vcb', 'tcb', 'mbb', 'bid'],
+  },
+  {
+    id: 'sector-real-estate',
+    title: 'Ngành Bất động sản Dân dụng & KCN',
+    subtitle: 'VHM, KDH, NLG, BCM, KBC, IDC, SZC',
+    icon: '🏢',
+    category: 'sector',
+    categoryLabel: 'Ngành',
+    href: '/bo-loc?sector=bds',
+    keywords: ['bat dong san', 'kcn', 'vhm', 'kbc', 'idc', 'szc'],
+  },
+
+  // --- BIỂU ĐỒ (CHARTS) ---
+  {
+    id: 'chart-savings-rate',
+    title: 'Biểu đồ Lãi suất huy động tiền gửi',
+    subtitle: 'So sánh lãi suất tiền gửi 12 tháng nhóm Big 4 & TMCP',
+    icon: '📈',
+    category: 'chart',
+    categoryLabel: 'Biểu đồ',
+    href: '/?chart=interest-rate',
+    keywords: ['bieu do', 'lai suat', 'huy dong', 'tiet kiem'],
+  },
+  {
+    id: 'chart-trade-balance',
+    title: 'Biểu đồ Cán cân Thương mại Xuất Nhập Khẩu Việt Nam',
+    subtitle: 'Thặng dư/Thâm hụt cán cân ngoại thương qua các kỳ hải quan',
+    icon: '📈',
+    category: 'chart',
+    categoryLabel: 'Biểu đồ',
+    href: '/xuat-nhap-khau',
+    keywords: ['bieu do', 'can can', 'xnk', 'hai quan', 'thang du'],
+  },
+  {
+    id: 'chart-port-throughput',
+    title: 'Biểu đồ Sản lượng thông qua Cảng biển Việt Nam',
+    subtitle: 'Chuỗi dữ liệu 218 tháng lượt tàu và trọng tải DWT cảng vụ',
+    icon: '📈',
+    category: 'chart',
+    categoryLabel: 'Biểu đồ',
+    href: '/cang-bien',
+    keywords: ['bieu do', 'san luong', 'cang bien', 'dwt', 'luot tau'],
+  },
+
+  // --- DOANH NGHIỆP NỔI BẬT (TRENDING STOCKS) ---
+  {
+    id: 'stock-hpg-layout',
+    ticker: 'HPG',
+    title: 'HPG',
+    subtitle: 'CTCP Tập đoàn Hòa Phát · Bố cục phân tích & BCTC',
+    icon: '🏢',
+    category: 'layout',
+    categoryLabel: 'Bố cục',
+    href: '/stock/HPG',
+    keywords: ['hpg', 'hoa phat', 'thep'],
+  },
+  {
+    id: 'stock-mwg',
+    ticker: 'MWG',
+    title: 'CTCP Đầu tư Thế giới Di động',
+    subtitle: 'MWG · Sàn HOSE · Bán lẻ thiết bị công nghệ & Bách Hóa Xanh',
+    category: 'stock',
+    categoryLabel: 'Doanh nghiệp',
+    href: '/stock/MWG',
+    keywords: ['mwg', 'the gioi di dong', 'bach hoa xanh'],
+  },
+  {
+    id: 'stock-fpt',
+    ticker: 'FPT',
+    title: 'CTCP FPT',
+    subtitle: 'FPT · Sàn HOSE · Công nghệ thông tin & Xuất khẩu phần mềm',
+    category: 'stock',
+    categoryLabel: 'Doanh nghiệp',
+    href: '/stock/FPT',
+    keywords: ['fpt', 'cong nghe', 'phan mem', 'ai'],
+  },
+  {
+    id: 'stock-hpg-company',
+    ticker: 'HPG',
+    title: 'CTCP Tập đoàn Hòa Phát',
+    subtitle: 'HPG · Sàn HOSE · Sản xuất thép Dung Quất & Thép xây dựng',
+    category: 'stock',
+    categoryLabel: 'Doanh nghiệp',
+    href: '/stock/HPG',
+    keywords: ['hpg', 'tap doan hoa phat', 'thep dung quat'],
+  },
+  {
+    id: 'stock-vhm',
+    ticker: 'VHM',
+    title: 'CTCP Vinhomes',
+    subtitle: 'VHM · Sàn HOSE · Đại đô thị bất động sản & KCN',
+    category: 'stock',
+    categoryLabel: 'Doanh nghiệp',
+    href: '/stock/VHM',
+    keywords: ['vhm', 'vinhomes', 'vingroup', 'bds'],
+  },
+  {
+    id: 'stock-vcb',
+    ticker: 'VCB',
+    title: 'Ngân hàng TMCP Ngoại thương Việt Nam',
+    subtitle: 'VCB · Sàn HOSE · Ngân hàng quy mô và vốn hóa lớn nhất',
+    category: 'stock',
+    categoryLabel: 'Doanh nghiệp',
+    href: '/stock/VCB',
+    keywords: ['vcb', 'vietcombank', 'ngan hang'],
+  },
+  {
+    id: 'stock-gmd',
+    ticker: 'GMD',
+    title: 'CTCP Gemadept',
+    subtitle: 'GMD · Cảng nước sâu Gemalink & Cụm cảng Nam Đình Vũ',
+    category: 'stock',
+    categoryLabel: 'Doanh nghiệp',
+    href: '/stock/GMD',
+    keywords: ['gmd', 'gemadept', 'gemalink', 'cang bien'],
+  },
+  {
+    id: 'stock-hah',
+    ticker: 'HAH',
+    title: 'CTCP Vận tải và Xếp dỡ Hải An',
+    subtitle: 'HAH · Đội tàu container lớn nhất Việt Nam & Cảng Hải An',
+    category: 'stock',
+    categoryLabel: 'Doanh nghiệp',
+    href: '/stock/HAH',
+    keywords: ['hah', 'hai an', 'tau container', 'van tai bien'],
+  },
+]

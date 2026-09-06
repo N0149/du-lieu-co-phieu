@@ -1,0 +1,137 @@
+{
+  "symbol": "MWG",
+  "name": "Công ty Cổ phần Đầu tư Thế Giới Di Động",
+  "note": "Theo chuẩn công bố 2015 & Báo cáo bộ phận Thuyết minh BCTC kiểm toán",
+  "byBrand": [
+    {
+      "year": "2018",
+      "tgdd": 35100,
+      "dmx": 46900,
+      "bhx": 4272,
+      "khac": 244,
+      "total": 86516
+    },
+    {
+      "year": "2019",
+      "tgdd": 33700,
+      "dmx": 56700,
+      "bhx": 10773,
+      "khac": 1001,
+      "total": 102174
+    },
+    {
+      "year": "2020",
+      "tgdd": 29800,
+      "dmx": 55900,
+      "bhx": 21222,
+      "khac": 1624,
+      "total": 108546
+    },
+    {
+      "year": "2021",
+      "tgdd": 31200,
+      "dmx": 61400,
+      "bhx": 28216,
+      "khac": 2142,
+      "total": 122958
+    },
+    {
+      "year": "2022",
+      "tgdd": 34800,
+      "dmx": 68700,
+      "bhx": 27100,
+      "khac": 2805,
+      "total": 133405
+    },
+    {
+      "year": "2023",
+      "tgdd": 28100,
+      "dmx": 55700,
+      "bhx": 31600,
+      "khac": 2880,
+      "total": 118280
+    },
+    {
+      "year": "2024",
+      "tgdd": 29800,
+      "dmx": 59200,
+      "bhx": 41800,
+      "khac": 3541,
+      "total": 134341
+    }
+  ],
+  "bySectorRevenue": [
+    {
+      "year": "2020",
+      "thietBi": 85700,
+      "fmcg": 21222,
+      "khac": 1624,
+      "total": 108546
+    },
+    {
+      "year": "2021",
+      "thietBi": 92600,
+      "fmcg": 28216,
+      "khac": 2142,
+      "total": 122958
+    },
+    {
+      "year": "2022",
+      "thietBi": 103500,
+      "fmcg": 27100,
+      "khac": 2805,
+      "total": 133405
+    },
+    {
+      "year": "2023",
+      "thietBi": 83800,
+      "fmcg": 31600,
+      "khac": 2880,
+      "total": 118280
+    },
+    {
+      "year": "2024",
+      "thietBi": 89000,
+      "fmcg": 41800,
+      "khac": 3541,
+      "total": 134341
+    }
+  ],
+  "bySectorGrossProfit": [
+    {
+      "year": "2020",
+      "thietBi": 18200,
+      "fmcg": 4500,
+      "khac": 300,
+      "total": 23000
+    },
+    {
+      "year": "2021",
+      "thietBi": 20400,
+      "fmcg": 6200,
+      "khac": 450,
+      "total": 27050
+    },
+    {
+      "year": "2022",
+      "thietBi": 22500,
+      "fmcg": 7200,
+      "khac": 900,
+      "total": 30600
+    },
+    {
+      "year": "2023",
+      "thietBi": 15000,
+      "fmcg": 6900,
+      "khac": 600,
+      "total": 22500
+    },
+    {
+      "year": "2024",
+      "thietBi": 17600,
+      "fmcg": 10400,
+      "khac": 800,
+      "total": 28800
+    }
+  ]
+}

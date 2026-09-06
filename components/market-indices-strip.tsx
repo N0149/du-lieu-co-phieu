@@ -1,29 +1,19 @@
 'use client'
 
-import { useMemo, useState } from 'react'
+import { useState } from 'react'
 import { TrendingUp, TrendingDown, Layers, ChevronDown, RefreshCw, Check } from 'lucide-react'
 import type { MarketIndicesData, MarketManifestData } from '@/lib/longlivestock'
 import { cn } from '@/lib/utils'
 
 interface MarketIndicesStripProps {
-  indicesData: MarketIndicesData
+  indicesData?: MarketIndicesData
   manifestData: MarketManifestData
   isSectorPanelOpen: boolean
   onToggleSectorPanel: () => void
   totalSectorsCount?: number
 }
 
-function fmtPrice(val: number | null | undefined, unit?: string): string {
-  if (val == null || isNaN(val)) return '—'
-  const dec = val % 1 === 0 ? 0 : 2
-  return val.toLocaleString('vi-VN', {
-    minimumFractionDigits: dec,
-    maximumFractionDigits: dec,
-  })
-}
-
 export function MarketIndicesStrip({
-  indicesData,
   manifestData,
   isSectorPanelOpen,
   onToggleSectorPanel,
@@ -31,14 +21,6 @@ export function MarketIndicesStrip({
 }: MarketIndicesStripProps) {
   const [syncing, setSyncing] = useState(false)
   const [synced, setSynced] = useState(false)
-
-  const vnItems = useMemo(() => {
-    return (indicesData.items || []).filter((it) => !it.unit)
-  }, [indicesData])
-
-  const commItems = useMemo(() => {
-    return (indicesData.items || []).filter((it) => !!it.unit)
-  }, [indicesData])
 
   const breadth = manifestData.breadth || { up: 0, down: 0, flat: 0 }
 
@@ -63,59 +45,7 @@ export function MarketIndicesStrip({
   }
 
   return (
-    <div className="sticky top-14 z-30 border-b border-white/8 bg-[#14171f]/95 backdrop-blur">
-      {/* Tầng 1: Ticker Bar (Indices + Commodities) */}
-      <div className="overflow-x-auto border-b border-white/8 py-2 scrollbar-none">
-        <div className="mx-auto flex max-w-[1600px] min-w-max items-center justify-between px-4 text-xs">
-          {/* VN Indices */}
-          <div className="flex items-center gap-4">
-            {vnItems.map((it) => {
-              const isUp = it.chg > 0
-              const isDown = it.chg < 0
-              return (
-                <div key={it.id} className="flex items-baseline gap-1.5 whitespace-nowrap">
-                  <span className="font-medium text-[#9EACB9]">{it.label}</span>
-                  <span className="font-mono font-bold text-[#F0F3F6]">
-                    {fmtPrice(it.price)}
-                  </span>
-                  <span
-                    className={cn(
-                      'font-mono text-[11px] font-semibold tabular-nums',
-                      isUp ? 'text-emerald-400' : isDown ? 'text-rose-400' : 'text-amber-400'
-                    )}
-                  >
-                    {isUp ? `+${it.chg.toFixed(2)}%` : `${it.chg.toFixed(2)}%`}
-                  </span>
-                </div>
-              )
-            })}
-          </div>
-
-          {/* Commodities */}
-          <div className="hidden items-center gap-4 lg:flex pl-4 border-l border-white/8">
-            {commItems.map((it) => {
-              const isUp = it.chg > 0
-              const isDown = it.chg < 0
-              return (
-                <div key={it.id} className="flex items-baseline gap-1.5 whitespace-nowrap text-[11px]">
-                  <span className="text-[#9EACB9]">{it.label}</span>
-                  <span className="font-mono font-semibold text-[#F0F3F6]">
-                    {fmtPrice(it.price)}
-                  </span>
-                  <span
-                    className={cn(
-                      'font-mono font-medium tabular-nums',
-                      isUp ? 'text-emerald-400' : isDown ? 'text-rose-400' : 'text-amber-400'
-                    )}
-                  >
-                    {isUp ? `+${it.chg.toFixed(2)}%` : `${it.chg.toFixed(2)}%`}
-                  </span>
-                </div>
-              )
-            })}
-          </div>
-        </div>
-      </div>
+    <div className="sticky top-14 z-30 border-b border-border bg-background/95 backdrop-blur">
 
       {/* Tầng 2: Breadth & Action Strip */}
       <div className="mx-auto flex max-w-[1600px] flex-wrap items-center justify-between gap-3 px-4 py-2 text-xs">

@@ -9,6 +9,7 @@ export interface ValuationHistoryPayload {
   pe: (number | null)[]
   pb: (number | null)[]
   ps: (number | null)[]
+  lastEps?: number
   snapshot?: {
     pe?: number
     pb?: number

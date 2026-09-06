@@ -18,7 +18,7 @@ export const PAYWALL_ENABLED = false
 export const TRIAL_DAYS = 7
 
 /** Tên cookie chứa session người dùng (giá trị là JSON của `UserProfile`) */
-export const SESSION_COOKIE_NAME = 'dulieucophieu_session'
+export const SESSION_COOKIE_NAME = 'dulieudautu_session'
 
 /**
  * Trạng thái quyền truy cập hiện tại của người dùng.

@@ -54,7 +54,10 @@ export function parseUserProfile(raw: string | undefined): UserProfile | null {
  */
 export async function getCurrentUser(): Promise<UserProfile | null> {
   const cookieStore = await cookies()
-  return parseUserProfile(cookieStore.get(SESSION_COOKIE_NAME)?.value)
+  const raw =
+    cookieStore.get(SESSION_COOKIE_NAME)?.value ||
+    cookieStore.get('dulieucophieu_session')?.value
+  return parseUserProfile(raw)
 }
 
 /**

@@ -1,9 +1,11 @@
 # Ignore local caches and heavy databases from Vercel deployment
 data/evaluation_cache/
 data/shareholder_cache/
+data/notes-cache/
 data/valuation_history/
 data/financial_charts/
 data/dividend_history/
 data/*.db
 data/**/*.db
 scripts/
+

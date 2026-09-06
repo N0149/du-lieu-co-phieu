@@ -1,0 +1,21 @@
+{
+  "symbol": "AIC",
+  "events": [
+    {
+      "date": "2017-05-16",
+      "cashVnd": null,
+      "stockPct": null,
+      "texts": [
+        "Phát hành cổ phiếu - Phát hành riêng lẻ"
+      ]
+    },
+    {
+      "date": "2020-11-27",
+      "cashVnd": null,
+      "stockPct": 0.25,
+      "texts": [
+        "Phát hành cổ phiếu - Quyền mua CP cho Cổ đông hiện hữu tỉ lệ 25.0%"
+      ]
+    }
+  ]
+}
