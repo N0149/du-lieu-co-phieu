@@ -48,8 +48,8 @@ def add_mipec_full():
         calls_2024 = [12, 10, 14, 15, 16, 15, 17, 16, 18, 19, 17, 20]
         # 2025
         calls_2025 = [18, 16, 20, 19, 22, 21, 23, 22, 24, 25, 23, 26]
-        # 2026 (T1 - T8)
-        calls_2026 = [28, 24, 30, 27, 32, 31, 34, 18]
+        # 2026 (T1 - T8 đã chốt đủ tháng, T9 đang chạy)
+        calls_2026 = [28, 24, 30, 27, 32, 31, 34, 33, 7]
 
         for m_idx, c in enumerate(calls_2024, 1):
             ym = f"2024-{m_idx:02d}"
@@ -81,7 +81,7 @@ def add_mipec_full():
 
         for m_idx, c in enumerate(calls_2026, 1):
             ym = f"2026-{m_idx:02d}"
-            is_p = 1 if m_idx == 8 else 0
+            is_p = 1 if m_idx == 9 else 0
             upsert_stock_metric_monthly(conn, {
                 "ticker": "MIPEC",
                 "period_ym": ym,

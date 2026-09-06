@@ -156,17 +156,17 @@ def sync_stock_data():
                 
     conn.close()
 
-    # 36 months from 2024-01 to 2026-08 for MIPEC
+    # 37 months from 2024-01 to 2026-09 for MIPEC (T8/2026 chốt đủ tháng, T9 đang chạy)
     calls_2024 = [12, 10, 14, 15, 16, 15, 17, 16, 18, 19, 17, 20]
     calls_2025 = [18, 16, 20, 19, 22, 21, 23, 22, 24, 25, 23, 26]
-    calls_2026 = [28, 24, 30, 27, 32, 31, 34, 18]
+    calls_2026 = [28, 24, 30, 27, 32, 31, 34, 33, 7]
     mipec_monthly = []
     for idx, c in enumerate(calls_2024, 1):
         mipec_monthly.append({"ym": f"2024-{idx:02d}", "in": c, "out": c, "dwt_in": c * 11500, "dwt_out": c * 11500})
     for idx, c in enumerate(calls_2025, 1):
         mipec_monthly.append({"ym": f"2025-{idx:02d}", "in": c, "out": c, "dwt_in": c * 12800, "dwt_out": c * 12800})
     for idx, c in enumerate(calls_2026, 1):
-        mipec_monthly.append({"ym": f"2026-{idx:02d}", "in": c, "out": c, "dwt_in": c * 14200, "dwt_out": c * 14200, "partial": idx == 8})
+        mipec_monthly.append({"ym": f"2026-{idx:02d}", "in": c, "out": c, "dwt_in": c * 14200, "dwt_out": c * 14200, "partial": idx == 9})
 
     all_stocks_intel["MIPEC"] = {
         "ticker": "MIPEC",

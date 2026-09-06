@@ -1,6 +1,10 @@
 {
   "status": "success",
+<<<<<<< HEAD
   "generated_at": "2026-09-05T16:11:19.171025",
+=======
+  "generated_at": "2026-09-06T19:33:04.804361",
+>>>>>>> 1cb4852 (fix(cang-bien): chot so lieu san luong thang 8/2026 cho Cang MIPEC (+50% YoY) va chuyen T9 sang dang chay)
   "kpis": {
     "total_port_authorities": 16,
     "total_calls_30d": 15628,
@@ -336,8 +340,8 @@
       "category": "port",
       "pure_play": 1,
       "scope_note": "Cảng chuyên dụng và tổng hợp tại khu vực Đình Vũ, Hải Phòng (thuộc Công ty Cổ phần Hóa dầu Quân đội). Tiếp nhận tàu hàng tổng hợp, xăng dầu và container.",
-      "total_calls": 1344,
-      "total_dwt": 17339000
+      "total_calls": 1388,
+      "total_dwt": 17963800
     },
     {
       "ticker": "CQN",
