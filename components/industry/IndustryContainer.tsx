@@ -94,13 +94,13 @@ export function IndustryContainer({ data }: IndustryContainerProps) {
       </div>
 
       {/* Thanh lựa chọn loại trừ cổ phiếu (chỉ xuất hiện ở tab Cơ cấu ngành ICB) */}
-      {activeTab === 'co-cau' && (
+      <div className={activeTab !== 'co-cau' ? 'hidden' : undefined}>
         <IndustryExclusionBar
           excludedSymbols={excludedSymbols}
           onChange={setExcludedSymbols}
           allStocks={data.allStocks}
         />
-      )}
+      </div>
 
       {/* 1. Thanh chỉ số tổng quan thị trường (tự động cập nhật theo loại trừ) */}
       <IndustryOverviewCards
@@ -108,27 +108,25 @@ export function IndustryContainer({ data }: IndustryContainerProps) {
         isExcluded={isExcluded}
       />
 
-      {/* 2. Nội dung Tab */}
-      {activeTab === 'co-cau' ? (
-        <div className="space-y-6">
-          {/* Hai biểu đồ tròn (tự động cập nhật theo loại trừ) */}
-          <IndustryPieCharts
-            marketCapPie={activeData.marketCapPie}
-            lnstPie={activeData.lnstPie}
-            quarterLabel={activeData.summary.latestQuarter}
-          />
+      {/* 2. Nội dung Tab (giữ mounted để chuyển tab 0ms tức thì) */}
+      <div className={cn("space-y-6 animate-in fade-in duration-200", activeTab !== 'co-cau' && "hidden")}>
+        {/* Hai biểu đồ tròn (tự động cập nhật theo loại trừ) */}
+        <IndustryPieCharts
+          marketCapPie={activeData.marketCapPie}
+          lnstPie={activeData.lnstPie}
+          quarterLabel={activeData.summary.latestQuarter}
+        />
 
-          {/* Bảng dữ liệu 19 ngành L2 (tự động cập nhật theo loại trừ) */}
-          <IndustryTable
-            sectors={activeData.sectors}
-            quarterLabel={activeData.summary.latestQuarter}
-          />
-        </div>
-      ) : (
-        <div className="space-y-6">
-          <IndustryValuationTable valuationList={data.valuationOverview} />
-        </div>
-      )}
+        {/* Bảng dữ liệu 19 ngành L2 (tự động cập nhật theo loại trừ) */}
+        <IndustryTable
+          sectors={activeData.sectors}
+          quarterLabel={activeData.summary.latestQuarter}
+        />
+      </div>
+
+      <div className={cn("space-y-6 animate-in fade-in duration-200", activeTab !== 'dinh-gia' && "hidden")}>
+        <IndustryValuationTable valuationList={data.valuationOverview} />
+      </div>
     </div>
   )
 }

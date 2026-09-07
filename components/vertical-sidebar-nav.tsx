@@ -1,6 +1,6 @@
 'use client'
 
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import {
@@ -100,7 +100,7 @@ export const NAV_GROUPS: NavGroup[] = [
         label: 'Quỹ Mở',
         href: '/quy-mo',
         icon: PieChart,
-        description: 'Hiệu quả 50+ quỹ đầu tư đại chúng',
+        description: 'Top holdings 42 quỹ đầu tư lớn nhất',
       },
     ],
   },
@@ -135,23 +135,29 @@ export function VerticalSidebarNav({
   className,
 }: VerticalSidebarNavProps) {
   const pathname = usePathname()
+  const [pendingHref, setPendingHref] = useState<string | null>(null)
+
+  useEffect(() => {
+    setPendingHref(null)
+  }, [pathname])
 
   const isItemActive = (href: string) => {
+    const target = pendingHref || pathname
     if (href === '/') {
-      return pathname === '/' || pathname === '/tin-tuc'
+      return target === '/' || target === '/tin-tuc'
     }
     if (href === '/stock/MWG') {
       return (
-        pathname.startsWith('/stock/') ||
-        pathname === '/doanh-nghiep' ||
-        pathname.startsWith('/ticker/') ||
-        pathname.startsWith('/tra-cuu')
+        target.startsWith('/stock/') ||
+        target === '/doanh-nghiep' ||
+        target.startsWith('/ticker/') ||
+        target.startsWith('/tra-cuu')
       )
     }
     if (href === '/cang-bien') {
-      return pathname.startsWith('/cang-bien') || pathname.startsWith('/cang/')
+      return target.startsWith('/cang-bien') || target.startsWith('/cang/')
     }
-    return pathname.startsWith(href)
+    return target.startsWith(href)
   }
 
   return (
@@ -189,6 +195,7 @@ export function VerticalSidebarNav({
                   <Link
                     key={item.href}
                     href={item.href}
+                    onClick={() => setPendingHref(item.href)}
                     className={cn(
                       'group relative flex items-center rounded-lg text-xs font-medium transition-all',
                       collapsed

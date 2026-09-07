@@ -9,8 +9,10 @@ import {
   RefreshCw,
   X,
   SlidersHorizontal,
+  ExternalLink,
 } from 'lucide-react'
 import { cn } from '@/lib/utils'
+import type { CorporateDisclosure } from '@/lib/disclosures'
 
 export type NewsSnapshotItem = {
   id: string
@@ -24,11 +26,12 @@ export type NewsSnapshotItem = {
   summary?: string
 }
 
-type TabType = 'all' | 'thi-truong' | 'co-phieu' | 'saved'
+type TabType = 'all' | 'thi-truong' | 'co-phieu' | 'cong-bo' | 'saved'
 
 interface NewsDashboardProps {
   initialNews?: NewsSnapshotItem[]
   initialTrending?: { ticker: string; count: number }[]
+  initialDisclosures?: CorporateDisclosure[]
   stockPriceMap?: Record<string, { px: number | null; w1: number | null }>
 }
 
@@ -85,6 +88,7 @@ function formatRelativeTime(dateStr: string): string {
 
 export function NewsDashboard({
   initialNews = [],
+  initialDisclosures = [],
   stockPriceMap = {},
 }: NewsDashboardProps) {
   const [activeTab, setActiveTab] = useState<TabType>('all')
@@ -92,11 +96,27 @@ export function NewsDashboard({
   const [selectedSource, setSelectedSource] = useState<string>('all')
   const [savedIds, setSavedIds] = useState<string[]>([])
   const [news, setNews] = useState<NewsSnapshotItem[]>(initialNews)
+  const [disclosures, setDisclosures] = useState<CorporateDisclosure[]>(initialDisclosures)
+  const [discExchange, setDiscExchange] = useState<string>('ALL')
+  const [discType, setDiscType] = useState<string>('ALL')
+  const [discImportantOnly, setDiscImportantOnly] = useState<boolean>(false)
   const [isLoading, setIsLoading] = useState(false)
   const [isRefreshing, setIsRefreshing] = useState(false)
   const [visibleCount, setVisibleCount] = useState(40)
   const [lastUpdated, setLastUpdated] = useState<Date>(new Date())
   const [, setTick] = useState(0)
+
+  // Fetch disclosures if empty
+  useEffect(() => {
+    if (disclosures.length === 0) {
+      fetch('/api/disclosures?limit=200')
+        .then((r) => r.json())
+        .then((d) => {
+          if (d.data && Array.isArray(d.data)) setDisclosures(d.data)
+        })
+        .catch(() => {})
+    }
+  }, [disclosures.length])
 
   // Load saved bookmarks from localStorage
   useEffect(() => {
@@ -211,6 +231,23 @@ export function NewsDashboard({
     return filteredNews.slice(0, visibleCount)
   }, [filteredNews, visibleCount])
 
+  const filteredDisclosures = useMemo(() => {
+    return disclosures.filter((item) => {
+      if (discImportantOnly && !item.is_important) return false
+      if (discExchange !== 'ALL' && item.exchange?.toUpperCase() !== discExchange.toUpperCase()) return false
+      if (discType !== 'ALL' && item.doc_type !== discType) return false
+      if (searchQuery.trim()) {
+        const q = searchQuery.toLowerCase()
+        return (
+          item.title.toLowerCase().includes(q) ||
+          item.symbol.toLowerCase().includes(q) ||
+          item.doc_type_label.toLowerCase().includes(q)
+        )
+      }
+      return true
+    })
+  }, [disclosures, discExchange, discType, discImportantOnly, searchQuery])
+
   // Available unique sources
   const availableSources = useMemo(() => {
     const s = new Set<string>()
@@ -226,12 +263,12 @@ export function NewsDashboard({
       <div className="sticky top-0 z-30 border-b border-[#1f242d] bg-[#0b0d11]/95 backdrop-blur">
         <div className="flex h-12 w-full items-center justify-between px-4 lg:px-6">
           {/* Left: WiData Navigation Tabs */}
-          <div className="flex items-center gap-1.5">
+          <div className="flex items-center gap-1.5 overflow-x-auto py-1">
             <button
               type="button"
               onClick={() => setActiveTab('all')}
               className={cn(
-                'rounded px-3.5 py-1 text-[13px] font-medium transition-all',
+                'rounded px-3.5 py-1 text-[13px] font-medium transition-all shrink-0',
                 activeTab === 'all'
                   ? 'bg-[#1e2430] text-[#ffffff]'
                   : 'text-[#8b949e] hover:bg-[#161a22] hover:text-[#c9d1d9]'
@@ -244,7 +281,7 @@ export function NewsDashboard({
               type="button"
               onClick={() => setActiveTab('thi-truong')}
               className={cn(
-                'rounded px-3.5 py-1 text-[13px] font-medium transition-all',
+                'rounded px-3.5 py-1 text-[13px] font-medium transition-all shrink-0',
                 activeTab === 'thi-truong'
                   ? 'bg-[#1e2430] text-[#ffffff]'
                   : 'text-[#8b949e] hover:bg-[#161a22] hover:text-[#c9d1d9]'
@@ -257,13 +294,31 @@ export function NewsDashboard({
               type="button"
               onClick={() => setActiveTab('co-phieu')}
               className={cn(
-                'rounded px-3.5 py-1 text-[13px] font-medium transition-all',
+                'rounded px-3.5 py-1 text-[13px] font-medium transition-all shrink-0',
                 activeTab === 'co-phieu'
                   ? 'bg-[#1e2430] text-[#ffffff]'
                   : 'text-[#8b949e] hover:bg-[#161a22] hover:text-[#c9d1d9]'
               )}
             >
               Cổ phiếu
+            </button>
+
+            <button
+              type="button"
+              onClick={() => setActiveTab('cong-bo')}
+              className={cn(
+                'flex items-center gap-1.5 rounded px-3.5 py-1 text-[13px] font-medium transition-all shrink-0',
+                activeTab === 'cong-bo'
+                  ? 'bg-[#1e2430] text-[#38bdf8] font-semibold'
+                  : 'text-[#8b949e] hover:bg-[#161a22] hover:text-[#38bdf8]'
+              )}
+            >
+              <span>Công bố 3 Sàn</span>
+              {disclosures.length > 0 && (
+                <span className="rounded-full bg-[#0284c7]/20 text-[#38bdf8] px-1.5 py-0.2 text-[11px] font-bold">
+                  {disclosures.length}
+                </span>
+              )}
             </button>
 
             {savedIds.length > 0 && (
@@ -352,174 +407,354 @@ export function NewsDashboard({
         </div>
       </div>
 
-      {/* Main WiData Table Header */}
-      <div className="w-full">
-        <div className="flex h-10 w-full items-center border-b border-[#181d26] bg-[#0b0d11] px-4 text-xs font-medium text-[#7d8590] lg:px-6">
-          <div className="w-10 text-center">
-            {/* Bookmark column header */}
-          </div>
-          <div className="w-28 sm:w-36 pl-1 text-left">
-            Thời gian
-          </div>
-          <div className="flex-1 pl-2 text-left">
-            Tiêu đề bài viết
-          </div>
-          <div className="w-28 sm:w-36 pr-2 text-right">
-            Nguồn
-          </div>
-        </div>
-
-        {/* Loading skeletons */}
-        {isLoading && (
-          <div className="divide-y divide-[#141820]">
-            {[...Array(14)].map((_, i) => (
-              <div key={i} className="flex h-12 animate-pulse items-center px-4 lg:px-6">
-                <div className="size-4 w-10 rounded bg-[#161a22]" />
-                <div className="h-3.5 w-28 sm:w-36 rounded bg-[#161a22]" />
-                <div className="flex-1 pl-2">
-                  <div className="h-3.5 w-3/4 rounded bg-[#161a22]" />
-                </div>
-                <div className="h-3.5 w-28 sm:w-36 rounded bg-[#161a22]" />
-              </div>
-            ))}
-          </div>
-        )}
-
-        {/* Empty State */}
-        {!isLoading && displayedNews.length === 0 && (
-          <div className="flex flex-col items-center justify-center py-28 text-center text-[#64748b]">
-            <p className="text-sm font-medium text-[#94a3b8]">Không có bài viết nào phù hợp bộ lọc</p>
-            {(searchQuery || selectedSource !== 'all' || activeTab !== 'all') && (
-              <button
-                type="button"
-                onClick={() => {
-                  setSearchQuery('')
-                  setSelectedSource('all')
-                  setActiveTab('all')
-                }}
-                className="mt-3 rounded bg-[#1e2430] px-3 py-1.5 text-xs text-[#c9d1d9] hover:bg-[#283142] hover:text-white"
-              >
-                Xóa toàn bộ bộ lọc
-              </button>
-            )}
-          </div>
-        )}
-
-        {/* WiData News Row Stream */}
-        {!isLoading && displayedNews.length > 0 && (
-          <div className="divide-y divide-[#141820]">
-            {displayedNews.map((item, idx) => {
-              const isSaved = savedIds.includes(item.id)
-              const relativeTime = formatRelativeTime(item.pubDate)
-              const tickersList =
-                item.tickers && item.tickers.length > 0
-                  ? item.tickers
-                  : item.ticker
-                  ? [item.ticker]
-                  : []
-
-              return (
-                <div
-                  key={`${item.id}-${idx}`}
-                  className="group flex min-h-[46px] w-full items-start px-4 py-2.5 transition-colors hover:bg-[#121620] lg:px-6"
+      {activeTab === 'cong-bo' ? (
+        <div className="w-full">
+          {/* Sub-filters Bar */}
+          <div className="flex flex-wrap items-center justify-between gap-3 border-b border-[#181d26] bg-[#0d1118] px-4 py-2.5 lg:px-6">
+            <div className="flex flex-wrap items-center gap-2">
+              <span className="text-xs font-semibold text-[#8b949e]">Sàn:</span>
+              {(['ALL', 'HOSE', 'HNX', 'UPCOM'] as const).map((ex) => (
+                <button
+                  key={ex}
+                  type="button"
+                  onClick={() => setDiscExchange(ex)}
+                  className={cn(
+                    'rounded px-2.5 py-1 text-xs font-medium transition-colors',
+                    discExchange === ex
+                      ? 'bg-[#0284c7] text-white font-bold'
+                      : 'bg-[#161b24] text-[#8b949e] hover:bg-[#202734] hover:text-[#c9d1d9]'
+                  )}
                 >
-                  {/* Col 1: Bookmark Icon (WiData Style) */}
-                  <div className="flex w-10 shrink-0 items-center justify-center pt-0.5">
-                    <button
-                      type="button"
-                      onClick={(e) => toggleBookmark(item.id, e)}
-                      className={cn(
-                        'flex size-5 items-center justify-center rounded transition-colors',
-                        isSaved
-                          ? 'text-[#eab308]'
-                          : 'text-[#374151] hover:text-[#9ca3af] group-hover:text-[#6b7280]'
-                      )}
-                      title={isSaved ? 'Bỏ lưu' : 'Lưu bài'}
-                    >
-                      <Bookmark
-                        className={cn(
-                          'size-3.5',
-                          isSaved && 'fill-[#eab308]'
-                        )}
-                      />
-                    </button>
-                  </div>
+                  {ex === 'ALL' ? 'Tất cả 3 sàn' : ex}
+                </button>
+              ))}
 
-                  {/* Col 2: Relative Time (WiData Style) */}
-                  <div className="w-28 sm:w-36 shrink-0 pl-1 pt-0.5 text-left text-xs font-normal text-[#8e95a5]">
-                    {relativeTime}
-                  </div>
+              <span className="ml-2 text-xs font-semibold text-[#8b949e]">Loại:</span>
+              {[
+                { id: 'ALL', label: 'Tất cả' },
+                { id: 'BCTC_SOAT_XET', label: 'BCTC & Soát xét' },
+                { id: 'GIAI_TRINH_KQKD', label: 'Giải trình KQKD' },
+                { id: 'CO_TUC', label: 'Cổ tức & Quyền' },
+                { id: 'CANH_BAO_KIEM_SOAT', label: 'Cảnh báo / Kiểm soát' },
+                { id: 'DHDCD', label: 'ĐHĐCĐ' },
+              ].map((cat) => (
+                <button
+                  key={cat.id}
+                  type="button"
+                  onClick={() => setDiscType(cat.id)}
+                  className={cn(
+                    'rounded px-2.5 py-1 text-xs font-medium transition-colors',
+                    discType === cat.id
+                      ? 'bg-[#1e293b] text-[#38bdf8] border border-[#0284c7]/40 font-bold'
+                      : 'bg-[#161b24] text-[#8b949e] hover:bg-[#202734] hover:text-[#c9d1d9]'
+                  )}
+                >
+                  {cat.label}
+                </button>
+              ))}
+            </div>
 
-                  {/* Col 3: Title + Ticker Pills (WiData Style) */}
-                  <div className="flex-1 pl-2 pr-4">
-                    {/* Title */}
-                    <a
-                      href={item.link}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="block text-[13px] font-normal leading-snug text-[#e2e8f0] transition-colors hover:text-[#60a5fa]"
-                    >
-                      {decodeHtmlEntities(item.title)}
-                    </a>
-
-                    {/* Ticker Badges (Pills placed directly under title like WiData) */}
-                    {tickersList.length > 0 && (
-                      <div className="mt-1.5 flex flex-wrap items-center gap-1.5">
-                        {tickersList.map((t) => {
-                          const stockData = stockPriceMap[t]
-                          const chg = stockData?.w1 ?? 0
-                          const isPos = chg > 0
-                          const isNeg = chg < 0
-
-                          return (
-                            <Link
-                              key={t}
-                              href={`/stock/${t}`}
-                              onClick={(e) => e.stopPropagation()}
-                              className={cn(
-                                'inline-flex items-center gap-1 rounded-md px-1.5 py-0.2 font-mono text-[10.5px] font-medium transition-all hover:brightness-125',
-                                isPos
-                                  ? 'bg-[#132a1e] text-[#4ade80] border border-[#22c55e]/30'
-                                  : isNeg
-                                  ? 'bg-[#2d1417] text-[#f87171] border border-[#ef4444]/30'
-                                  : 'bg-[#282012] text-[#fbbf24] border border-[#eab308]/30'
-                              )}
-                              title={`Xem phân tích mã ${t}`}
-                            >
-                              <span>{t}</span>
-                              <span className="text-[9.5px]">
-                                ({isPos ? `+${chg}%` : `${chg}%`})
-                              </span>
-                            </Link>
-                          )
-                        })}
-                      </div>
-                    )}
-                  </div>
-
-                  {/* Col 4: Source Name (WiData Style: simple right-aligned text) */}
-                  <div className="w-28 sm:w-36 shrink-0 pr-2 pt-0.5 text-right text-xs font-normal text-[#8e95a5]">
-                    {item.source}
-                  </div>
-                </div>
-              )
-            })}
-          </div>
-        )}
-
-        {/* Load More Button */}
-        {!isLoading && filteredNews.length > visibleCount && (
-          <div className="border-t border-[#181d26] bg-[#0b0d11] p-5 text-center">
             <button
               type="button"
-              onClick={() => setVisibleCount((prev) => prev + 40)}
-              className="rounded border border-[#232a36] bg-[#161a22] px-5 py-2 text-xs font-medium text-[#c9d1d9] transition-colors hover:border-[#384356] hover:bg-[#1e2430] hover:text-white"
+              onClick={() => setDiscImportantOnly(!discImportantOnly)}
+              className={cn(
+                'rounded px-2.5 py-1 text-xs font-medium transition-colors flex items-center gap-1',
+                discImportantOnly
+                  ? 'bg-amber-500 text-black font-bold shadow'
+                  : 'bg-amber-500/10 text-amber-400 hover:bg-amber-500/20 border border-amber-500/30'
+              )}
             >
-              Tải thêm tin tức ({filteredNews.length - visibleCount} bài còn lại)
+              <span>⚡</span> Chỉ tin nhạy cảm giá
             </button>
           </div>
-        )}
-      </div>
+
+          {/* Table Header */}
+          <div className="flex h-10 w-full items-center border-b border-[#181d26] bg-[#0b0d11] px-4 text-xs font-medium text-[#7d8590] lg:px-6">
+            <div className="w-24 sm:w-28 pl-1 text-left">Mã CK</div>
+            <div className="w-16 text-center">Sàn</div>
+            <div className="w-32 sm:w-36 text-left">Phân loại</div>
+            <div className="flex-1 pl-2 text-left">Tiêu đề văn bản công bố</div>
+            <div className="w-28 sm:w-36 text-center">Thời gian</div>
+            <div className="w-24 sm:w-28 pr-2 text-right">Tài liệu</div>
+          </div>
+
+          {/* Table Body */}
+          {filteredDisclosures.length === 0 ? (
+            <div className="flex flex-col items-center justify-center py-28 text-center text-[#64748b]">
+              <p className="text-sm font-medium text-[#94a3b8]">Không có văn bản công bố nào phù hợp bộ lọc</p>
+            </div>
+          ) : (
+            <div className="divide-y divide-[#141820]">
+              {filteredDisclosures.slice(0, visibleCount).map((item) => {
+                const priceInfo = stockPriceMap[item.symbol]
+                const isImportant = Boolean(item.is_important)
+                return (
+                  <div
+                    key={item.id}
+                    className={cn(
+                      'group flex min-h-[48px] w-full items-center px-4 py-2.5 transition-colors hover:bg-[#121620] lg:px-6',
+                      isImportant && 'bg-amber-500/[0.03]'
+                    )}
+                  >
+                    {/* Symbol & Price */}
+                    <div className="w-24 sm:w-28 shrink-0">
+                      <Link
+                        href={`/ticker/${item.symbol}`}
+                        className="inline-flex items-center gap-1 font-mono text-sm font-bold text-[#f1f5f9] hover:text-[#38bdf8] transition-colors"
+                      >
+                        {item.symbol}
+                      </Link>
+                      {priceInfo && priceInfo.px != null && (
+                        <div className="text-[11px] font-mono text-[#8b949e]">
+                          <span>{priceInfo.px}</span>
+                          {priceInfo.w1 != null && (
+                            <span className={cn('ml-1', priceInfo.w1 > 0 ? 'text-[#10b981]' : priceInfo.w1 < 0 ? 'text-[#ef4444]' : 'text-[#8b949e]')}>
+                              {priceInfo.w1 > 0 ? `+${priceInfo.w1}%` : `${priceInfo.w1}%`}
+                            </span>
+                          )}
+                        </div>
+                      )}
+                    </div>
+
+                    {/* Exchange */}
+                    <div className="w-16 shrink-0 text-center">
+                      <span className={cn(
+                        'rounded px-1.5 py-0.5 text-[10px] font-bold font-mono',
+                        item.exchange === 'HOSE' ? 'bg-blue-500/10 text-blue-400 border border-blue-500/20' :
+                        item.exchange === 'HNX' ? 'bg-purple-500/10 text-purple-400 border border-purple-500/20' :
+                        'bg-amber-500/10 text-amber-400 border border-amber-500/20'
+                      )}>
+                        {item.exchange || 'UPCOM'}
+                      </span>
+                    </div>
+
+                    {/* Doc Type Badge */}
+                    <div className="w-32 sm:w-36 shrink-0 pr-2">
+                      <span className="rounded bg-[#1a202c] px-2 py-0.5 text-[11px] font-medium text-[#94a3b8] border border-[#2d3748]">
+                        {item.doc_type_label || 'CBTT'}
+                      </span>
+                      {isImportant && (
+                        <span className="ml-1 text-[11px] text-amber-400 font-bold" title="Tin nhạy cảm giá">⚡</span>
+                      )}
+                    </div>
+
+                    {/* Title */}
+                    <div className="flex-1 pl-2 pr-4">
+                      <p className="text-[13px] font-normal text-[#e2e8f0] leading-snug group-hover:text-[#38bdf8] transition-colors">
+                        {item.title}
+                      </p>
+                    </div>
+
+                    {/* Published Date */}
+                    <div className="w-28 sm:w-36 shrink-0 text-center text-xs font-mono text-[#64748b]">
+                      {item.published_at}
+                    </div>
+
+                    {/* Original Document Link */}
+                    <div className="w-24 sm:w-28 shrink-0 text-right pr-2">
+                      {item.file_url ? (
+                        <a
+                          href={item.file_url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center gap-1 rounded bg-[#161b24] hover:bg-[#222a38] px-2 py-1 text-[11px] font-medium text-[#38bdf8] transition-colors border border-[#232a36]"
+                        >
+                          <span>Xem file</span>
+                          <ExternalLink className="size-3" />
+                        </a>
+                      ) : (
+                        <span className="text-xs text-[#475569]">—</span>
+                      )}
+                    </div>
+                  </div>
+                )
+              })}
+            </div>
+          )}
+
+          {/* Load More Button for Disclosures */}
+          {filteredDisclosures.length > visibleCount && (
+            <div className="border-t border-[#181d26] bg-[#0b0d11] p-5 text-center">
+              <button
+                type="button"
+                onClick={() => setVisibleCount((prev) => prev + 40)}
+                className="rounded border border-[#232a36] bg-[#161a22] px-5 py-2 text-xs font-medium text-[#c9d1d9] transition-colors hover:border-[#384356] hover:bg-[#1e2430] hover:text-white"
+              >
+                Tải thêm ({filteredDisclosures.length - visibleCount} văn bản còn lại)
+              </button>
+            </div>
+          )}
+        </div>
+      ) : (
+        /* Main WiData Table Header */
+        <div className="w-full">
+          <div className="flex h-10 w-full items-center border-b border-[#181d26] bg-[#0b0d11] px-4 text-xs font-medium text-[#7d8590] lg:px-6">
+            <div className="w-10 text-center">
+              {/* Bookmark column header */}
+            </div>
+            <div className="w-28 sm:w-36 pl-1 text-left">
+              Thời gian
+            </div>
+            <div className="flex-1 pl-2 text-left">
+              Tiêu đề bài viết
+            </div>
+            <div className="w-28 sm:w-36 pr-2 text-right">
+              Nguồn
+            </div>
+          </div>
+
+          {/* Loading skeletons */}
+          {isLoading && (
+            <div className="divide-y divide-[#141820]">
+              {[...Array(14)].map((_, i) => (
+                <div key={i} className="flex h-12 animate-pulse items-center px-4 lg:px-6">
+                  <div className="size-4 w-10 rounded bg-[#161a22]" />
+                  <div className="h-3.5 w-28 sm:w-36 rounded bg-[#161a22]" />
+                  <div className="flex-1 pl-2">
+                    <div className="h-3.5 w-3/4 rounded bg-[#161a22]" />
+                  </div>
+                  <div className="h-3.5 w-28 sm:w-36 rounded bg-[#161a22]" />
+                </div>
+              ))}
+            </div>
+          )}
+
+          {/* Empty State */}
+          {!isLoading && displayedNews.length === 0 && (
+            <div className="flex flex-col items-center justify-center py-28 text-center text-[#64748b]">
+              <p className="text-sm font-medium text-[#94a3b8]">Không có bài viết nào phù hợp bộ lọc</p>
+              {(searchQuery || selectedSource !== 'all' || activeTab !== 'all') && (
+                <button
+                  type="button"
+                  onClick={() => {
+                    setSearchQuery('')
+                    setSelectedSource('all')
+                    setActiveTab('all')
+                  }}
+                  className="mt-3 rounded bg-[#1e2430] px-3 py-1.5 text-xs text-[#c9d1d9] hover:bg-[#283142] hover:text-white"
+                >
+                  Xóa toàn bộ bộ lọc
+                </button>
+              )}
+            </div>
+          )}
+
+          {/* WiData News Row Stream */}
+          {!isLoading && displayedNews.length > 0 && (
+            <div className="divide-y divide-[#141820]">
+              {displayedNews.map((item, idx) => {
+                const isSaved = savedIds.includes(item.id)
+                const relativeTime = formatRelativeTime(item.pubDate)
+                const tickersList =
+                  item.tickers && item.tickers.length > 0
+                    ? item.tickers
+                    : item.ticker
+                    ? [item.ticker]
+                    : []
+
+                return (
+                  <div
+                    key={`${item.id}-${idx}`}
+                    className="group flex min-h-[46px] w-full items-start px-4 py-2.5 transition-colors hover:bg-[#121620] lg:px-6"
+                  >
+                    {/* Col 1: Bookmark Icon (WiData Style) */}
+                    <div className="flex w-10 shrink-0 items-center justify-center pt-0.5">
+                      <button
+                        type="button"
+                        onClick={(e) => toggleBookmark(item.id, e)}
+                        className={cn(
+                          'flex size-5 items-center justify-center rounded transition-colors',
+                          isSaved
+                            ? 'text-[#eab308]'
+                            : 'text-[#374151] hover:text-[#9ca3af] group-hover:text-[#6b7280]'
+                        )}
+                        title={isSaved ? 'Bỏ lưu' : 'Lưu bài'}
+                      >
+                        <Bookmark
+                          className={cn(
+                            'size-3.5',
+                            isSaved && 'fill-[#eab308]'
+                          )}
+                        />
+                      </button>
+                    </div>
+
+                    {/* Col 2: Relative Time (WiData Style) */}
+                    <div className="w-28 sm:w-36 shrink-0 pl-1 pt-0.5 text-left text-xs font-normal text-[#8e95a5]">
+                      {relativeTime}
+                    </div>
+
+                    {/* Col 3: Title + Ticker Pills (WiData Style) */}
+                    <div className="flex-1 pl-2 pr-4">
+                      {/* Title */}
+                      <a
+                        href={item.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="block text-[13px] font-normal leading-snug text-[#e2e8f0] transition-colors hover:text-[#60a5fa]"
+                      >
+                        {decodeHtmlEntities(item.title)}
+                      </a>
+
+                      {/* Ticker Badges (Pills placed directly under title like WiData) */}
+                      {tickersList.length > 0 && (
+                        <div className="mt-1.5 flex flex-wrap items-center gap-1.5">
+                          {tickersList.map((t) => {
+                            const stockData = stockPriceMap[t]
+                            const chg = stockData?.w1 ?? 0
+                            const isPos = chg > 0
+                            const isNeg = chg < 0
+
+                            return (
+                              <Link
+                                key={t}
+                                href={`/stock/${t}`}
+                                onClick={(e) => e.stopPropagation()}
+                                className={cn(
+                                  'inline-flex items-center gap-1 rounded-md px-1.5 py-0.2 font-mono text-[10.5px] font-medium transition-all hover:brightness-125',
+                                  isPos
+                                    ? 'bg-[#132a1e] text-[#4ade80] border border-[#22c55e]/30'
+                                    : isNeg
+                                    ? 'bg-[#2d1417] text-[#f87171] border border-[#ef4444]/30'
+                                    : 'bg-[#282012] text-[#fbbf24] border border-[#eab308]/30'
+                                )}
+                                title={`Xem phân tích mã ${t}`}
+                              >
+                                <span>{t}</span>
+                                <span className="text-[9.5px]">
+                                  ({isPos ? `+${chg}%` : `${chg}%`})
+                                </span>
+                              </Link>
+                            )
+                          })}
+                        </div>
+                      )}
+                    </div>
+
+                    {/* Col 4: Source Name (WiData Style: simple right-aligned text) */}
+                    <div className="w-28 sm:w-36 shrink-0 pr-2 pt-0.5 text-right text-xs font-normal text-[#8e95a5]">
+                      {item.source}
+                    </div>
+                  </div>
+                )
+              })}
+            </div>
+          )}
+
+          {/* Load More Button */}
+          {!isLoading && filteredNews.length > visibleCount && (
+            <div className="border-t border-[#181d26] bg-[#0b0d11] p-5 text-center">
+              <button
+                type="button"
+                onClick={() => setVisibleCount((prev) => prev + 40)}
+                className="rounded border border-[#232a36] bg-[#161a22] px-5 py-2 text-xs font-medium text-[#c9d1d9] transition-colors hover:border-[#384356] hover:bg-[#1e2430] hover:text-white"
+              >
+                Tải thêm tin tức ({filteredNews.length - visibleCount} bài còn lại)
+              </button>
+            </div>
+          )}
+        </div>
+      )}
     </div>
   )
 }

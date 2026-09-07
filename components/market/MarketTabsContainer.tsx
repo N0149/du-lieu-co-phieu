@@ -1,13 +1,13 @@
 'use client'
 
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef, startTransition } from 'react'
 import { useRouter, useSearchParams } from 'next/navigation'
 import Link from 'next/link'
 import { WorldMarketSection } from './WorldMarketSection'
 import { ValuationChartsSection } from './ValuationChartsSection'
 import { MarketReportsSection } from './MarketReportsSection'
 import { CtckStatisticsSection } from './CtckStatisticsSection'
-import { Activity, LineChart, FileText, BarChart3, Sparkles, Layers } from 'lucide-react'
+import { Activity, LineChart, FileText, BarChart3, Sparkles, Layers, Loader2 } from 'lucide-react'
 import { cn } from '@/lib/utils'
 import type { WorldMarketData } from '@/lib/market-service'
 import type { ValuationFilterResult } from '@/lib/pe-pb-service'
@@ -31,29 +31,84 @@ export function MarketTabsContainer({
   const searchParams = useSearchParams()
 
   const tabParam = searchParams.get('tab')
-  const [activeTab, setActiveTab] = useState<'dinhgia' | 'reports' | 'ctck'>(() => {
-    if (tabParam === 'reports') return 'reports'
-    if (tabParam === 'ctck') return 'ctck'
-    return 'dinhgia'
-  })
+  const initialTab: 'dinhgia' | 'reports' | 'ctck' =
+    tabParam === 'reports' ? 'reports' : tabParam === 'ctck' ? 'ctck' : 'dinhgia'
+
+  const [activeTab, setActiveTab] = useState<'dinhgia' | 'reports' | 'ctck'>(initialTab)
+  const [mountedTabs, setMountedTabs] = useState<Set<string>>(() => new Set([initialTab]))
+  const [loadingTab, setLoadingTab] = useState<string | null>(null)
+  const switchTimerRef = useRef<NodeJS.Timeout | null>(null)
 
   // Cập nhật tab khi query url thay đổi
   useEffect(() => {
-    if (tabParam === 'reports') setActiveTab('reports')
-    else if (tabParam === 'ctck') setActiveTab('ctck')
-    else if (tabParam === 'dinhgia') setActiveTab('dinhgia')
+    const nextTab = tabParam === 'reports' ? 'reports' : tabParam === 'ctck' ? 'ctck' : 'dinhgia'
+    setActiveTab(nextTab)
+    setMountedTabs((prev) => new Set(prev).add(nextTab))
   }, [tabParam])
 
-  const handleTabChange = (tab: 'dinhgia' | 'reports' | 'ctck') => {
-    setActiveTab(tab)
-    const newParams = new URLSearchParams(searchParams.toString())
-    if (tab === 'dinhgia') {
-      newParams.delete('tab')
-    } else {
-      newParams.set('tab', tab)
+  useEffect(() => {
+    return () => {
+      if (switchTimerRef.current) clearTimeout(switchTimerRef.current)
     }
-    const query = newParams.toString()
-    router.replace(query ? `/thi-truong?${query}` : '/thi-truong', { scroll: false })
+  }, [])
+
+  // Tự động nạp trước các tab thị trường còn lại trong nền
+  useEffect(() => {
+    const remaining = (['dinhgia', 'reports', 'ctck'] as const).filter((t) => t !== initialTab)
+    let idx = 0
+    const timer = setInterval(() => {
+      if (idx >= remaining.length) {
+        clearInterval(timer)
+        return
+      }
+      const next = remaining[idx]
+      setMountedTabs((prev) => {
+        if (prev.has(next)) return prev
+        const updated = new Set(prev)
+        updated.add(next)
+        return updated
+      })
+      idx++
+    }, 250)
+
+    return () => clearInterval(timer)
+  }, [initialTab])
+
+  const handleTabChange = (tab: 'dinhgia' | 'reports' | 'ctck') => {
+    if (tab === activeTab) return
+
+    // 1. Chuyển tab trên giao diện ngay tức thì (0ms)
+    setActiveTab(tab)
+
+    // Cập nhật URL nhanh không block
+    if (typeof window !== 'undefined') {
+      const url = new URL(window.location.href)
+      if (tab === 'dinhgia') {
+        url.searchParams.delete('tab')
+      } else {
+        url.searchParams.set('tab', tab)
+      }
+      window.history.replaceState({}, '', url.toString())
+    }
+
+    if (switchTimerRef.current) {
+      clearTimeout(switchTimerRef.current)
+      switchTimerRef.current = null
+    }
+
+    if (mountedTabs.has(tab)) {
+      setLoadingTab(null)
+      return
+    }
+
+    // Tab chưa mount: hiện loading nhẹ để giao diện đổi trước
+    setLoadingTab(tab)
+    switchTimerRef.current = setTimeout(() => {
+      startTransition(() => {
+        setMountedTabs((prev) => new Set(prev).add(tab))
+        setLoadingTab(null)
+      })
+    }, 20)
   }
 
   const reportsTotal = initialReports?.total || 1073
@@ -139,9 +194,22 @@ export function MarketTabsContainer({
 
       {/* Nội dung Tab */}
       <div className="mx-auto max-w-[1720px] pt-2">
+        {/* Khung chờ Skeleton khi tab đang được nạp lần đầu */}
+        {loadingTab === activeTab && (
+          <div className="space-y-6 animate-in fade-in-50 duration-150 py-4">
+            <div className="rounded-2xl border border-white/8 bg-[#14171f] p-8 flex flex-col items-center justify-center gap-3 min-h-[300px] animate-pulse">
+              <div className="flex size-12 items-center justify-center rounded-2xl bg-emerald-500/10 text-emerald-400">
+                <Loader2 className="size-6 animate-spin" />
+              </div>
+              <p className="text-sm font-semibold text-[#F0F3F6]">Đang tải trang...</p>
+              <p className="text-xs text-[#9EACB9]">Tab đã chuyển thành công, dữ liệu đang nạp</p>
+            </div>
+          </div>
+        )}
+
         {/* TAB 1: ĐỊNH GIÁ & THỊ TRƯỜNG TOÀN CẦU */}
-        {activeTab === 'dinhgia' && (
-          <div className="space-y-8 animate-in fade-in duration-200">
+        {mountedTabs.has('dinhgia') && (
+          <div className={cn("space-y-8 animate-in fade-in duration-200", (activeTab !== 'dinhgia' || loadingTab === 'dinhgia') && "hidden")}>
             {/* Hàng 1: Biến động thị trường thế giới */}
             <section className="rounded-2xl border border-white/8 bg-[#14171f] p-4 shadow-lg sm:p-6">
               <WorldMarketSection initialData={initialWorldData} />
@@ -165,15 +233,15 @@ export function MarketTabsContainer({
         )}
 
         {/* TAB 2: BÁO CÁO PHÂN TÍCH THỊ TRƯỜNG */}
-        {activeTab === 'reports' && (
-          <div className="animate-in fade-in duration-200">
+        {mountedTabs.has('reports') && (
+          <div className={cn("animate-in fade-in duration-200", (activeTab !== 'reports' || loadingTab === 'reports') && "hidden")}>
             <MarketReportsSection initialReports={initialReports} />
           </div>
         )}
 
         {/* TAB 3: THỐNG KÊ CTCK (DƯ NỢ MARGIN & THỊ PHẦN HOSE) */}
-        {activeTab === 'ctck' && (
-          <div className="animate-in fade-in duration-200">
+        {mountedTabs.has('ctck') && (
+          <div className={cn("animate-in fade-in duration-200", (activeTab !== 'ctck' || loadingTab === 'ctck') && "hidden")}>
             <CtckStatisticsSection initialData={initialCtckData} />
           </div>
         )}

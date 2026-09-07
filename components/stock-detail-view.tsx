@@ -1,6 +1,6 @@
 'use client'
 
-import { useMemo, useState } from 'react'
+import { useMemo, useState, useRef, useEffect, startTransition } from 'react'
 import Link from 'next/link'
 import {
   ArrowLeft,
@@ -23,6 +23,7 @@ import {
   Award,
   Sparkles,
   Vote,
+  Loader2,
 } from 'lucide-react'
 import type { StockDetailData, StockManifestItem } from '@/lib/longlivestock'
 import type { Report } from '@/lib/use-reports'
@@ -106,6 +107,53 @@ function fmtDateVN(iso: string | null | undefined): string {
   return p.length === 3 ? `${p[2]}/${p[1]}/${p[0]}` : iso
 }
 
+function TabLoadingSkeleton({ tabLabel }: { tabLabel?: string }) {
+  return (
+    <div className="space-y-5 animate-in fade-in-50 duration-150 py-2">
+      {/* Header Skeleton */}
+      <div className="flex flex-wrap items-center justify-between gap-4 rounded-2xl border border-border/70 bg-card/60 p-4 shadow-xs">
+        <div className="flex items-center gap-3">
+          <div className="flex size-10 shrink-0 items-center justify-center rounded-xl bg-primary/15 text-primary animate-pulse">
+            <Loader2 className="size-5 animate-spin" />
+          </div>
+          <div>
+            <div className="flex items-center gap-2">
+              <h3 className="text-sm font-bold text-foreground sm:text-base">
+                Đang nạp dữ liệu {tabLabel || 'chuyên sâu'}...
+              </h3>
+              <span className="rounded-full bg-emerald-500/15 border border-emerald-500/30 px-2 py-0.5 font-mono text-[10px] font-bold text-emerald-600 dark:text-emerald-400 animate-pulse">
+                Đang xử lý
+              </span>
+            </div>
+            <p className="mt-0.5 text-xs text-muted-foreground">
+              Tab đã được kích hoạt, hệ thống đang kết xuất dữ liệu và biểu đồ phân tích...
+            </p>
+          </div>
+        </div>
+      </div>
+
+      {/* KPI Cards Skeleton */}
+      <div className="grid grid-cols-2 gap-3 sm:grid-cols-4 sm:gap-4">
+        {[1, 2, 3, 4].map((i) => (
+          <div key={i} className="h-24 rounded-2xl border border-border/60 bg-card/40 p-4 animate-pulse flex flex-col justify-between">
+            <div className="h-3 w-1/2 rounded bg-muted/60" />
+            <div className="h-6 w-3/4 rounded bg-muted/80" />
+          </div>
+        ))}
+      </div>
+
+      {/* Main Content Area Skeleton */}
+      <div className="rounded-2xl border border-border/60 bg-card/40 p-8 sm:p-12 flex flex-col items-center justify-center gap-3 min-h-[340px] animate-pulse">
+        <div className="flex size-12 items-center justify-center rounded-2xl bg-muted/50 text-muted-foreground">
+          <Loader2 className="size-6 animate-spin text-primary" />
+        </div>
+        <p className="text-sm font-semibold text-foreground">Đang tải trang...</p>
+        <p className="text-xs text-muted-foreground">Vui lòng chờ trong giây lát</p>
+      </div>
+    </div>
+  )
+}
+
 export function StockDetailView({
   stockData,
   relatedStocks = [],
@@ -133,10 +181,67 @@ export function StockDetailView({
   availableAgmTickers = [],
   initialTab = 'charts',
 }: StockDetailViewProps) {
+  // Tab đang hiển thị trên thanh nút bấm (cập nhật NGAY LẬP TỨC để phản hồi giao diện không delay)
   const [activeTab, setActiveTab] = useState<StockDetailTab>(initialTab || 'charts')
+  // Danh sách các tab đã từng được mount (để giữ cache không phải render lại từ đầu)
+  const [mountedTabs, setMountedTabs] = useState<Set<StockDetailTab>>(
+    () => new Set([initialTab || 'charts'])
+  )
+  // Tab đang được nạp nội dung (nếu tab đó chưa từng được mount)
+  const [loadingTab, setLoadingTab] = useState<StockDetailTab | null>(null)
+  const switchTimerRef = useRef<NodeJS.Timeout | null>(null)
   const [copied, setCopied] = useState(false)
 
+  // Cập nhật khi initialTab thay đổi từ URL bên ngoài
+  useEffect(() => {
+    if (initialTab && initialTab !== activeTab) {
+      setActiveTab(initialTab)
+      setMountedTabs((prev) => new Set(prev).add(initialTab))
+    }
+  }, [initialTab])
+
+  // Tự động nạp trước các tab còn lại vào nền khi rảnh rỗi (Idle Pre-mount)
+  // Nhờ đó khi người dùng bấm vào tab nào thì tab đó ĐÃ CÓ SẴN trong DOM -> Hiển thị tức thì 0ms, siêu mượt!
+  useEffect(() => {
+    const tabsToPreload: StockDetailTab[] = [
+      'profile',
+      'evaluation',
+      'peers',
+      'reports',
+      'agm',
+      'financials',
+    ].filter((t) => t !== (initialTab || 'charts')) as StockDetailTab[]
+
+    let step = 0
+    const interval = setInterval(() => {
+      if (step >= tabsToPreload.length) {
+        clearInterval(interval)
+        return
+      }
+      const nextTab = tabsToPreload[step]
+      setMountedTabs((prev) => {
+        if (prev.has(nextTab)) return prev
+        const updated = new Set(prev)
+        updated.add(nextTab)
+        return updated
+      })
+      step++
+    }, 200)
+
+    return () => clearInterval(interval)
+  }, [initialTab])
+
+  // Dọn dẹp timer khi unmount
+  useEffect(() => {
+    return () => {
+      if (switchTimerRef.current) clearTimeout(switchTimerRef.current)
+    }
+  }, [])
+
   const handleTabChange = (tabId: StockDetailTab) => {
+    if (tabId === activeTab) return
+
+    // 1. Chuyển tab trên thanh điều hướng & cập nhật URL NGAY LẬP TỨC (0ms)
     setActiveTab(tabId)
     if (typeof window !== 'undefined') {
       const url = new URL(window.location.href)
@@ -147,6 +252,27 @@ export function StockDetailView({
       }
       window.history.replaceState({}, '', url.toString())
     }
+
+    if (switchTimerRef.current) {
+      clearTimeout(switchTimerRef.current)
+      switchTimerRef.current = null
+    }
+
+    // 2. Nếu tab này đã mount: Chuyển hiển thị ngay tức thì 0ms (siêu mượt)
+    if (mountedTabs.has(tabId)) {
+      setLoadingTab(null)
+      return
+    }
+
+    // 3. Nếu tab này chưa kịp mount trong nền:
+    // Bật loading để tab đổi trước, sau đó nạp nội dung trang vào sau
+    setLoadingTab(tabId)
+    switchTimerRef.current = setTimeout(() => {
+      startTransition(() => {
+        setMountedTabs((prev) => new Set(prev).add(tabId))
+        setLoadingTab(null)
+      })
+    }, 100)
   }
 
   const {
@@ -634,6 +760,7 @@ export function StockDetailView({
         {TABS.map((tab) => {
           const Icon = tab.icon
           const isActive = activeTab === tab.id
+          const isLoadingThisTab = loadingTab === tab.id
           return (
             <button
               key={tab.id}
@@ -653,11 +780,13 @@ export function StockDetailView({
                 )}
               />
               <span>{tab.label}</span>
-              {tab.badge && (
+              {isLoadingThisTab ? (
+                <Loader2 className="size-3 animate-spin text-primary-foreground" />
+              ) : tab.badge ? (
                 <span className="rounded-full bg-rose-500 px-1.5 py-0.5 font-mono text-[9px] font-black uppercase text-white shadow-2xs animate-pulse">
                   {tab.badge}
                 </span>
-              )}
+              ) : null}
             </button>
           )
         })}
@@ -665,11 +794,18 @@ export function StockDetailView({
 
       {/* ── 4. NỘI DUNG TỪNG TAB ── */}
 
+      {/* Khung chờ Skeleton mượt mà hiển thị ngay khi người dùng chuyển sang tab mới chưa từng mở */}
+      {loadingTab === activeTab && (
+        <TabLoadingSkeleton
+          tabLabel={TABS.find((t) => t.id === activeTab)?.label}
+        />
+      )}
+
       {/* ══════════════════════════════════════════════════════════ */}
       {/* TAB 1: HỒ SƠ DOANH NGHIỆP                                 */}
       {/* ══════════════════════════════════════════════════════════ */}
-      {activeTab === 'profile' && (
-        <div className="space-y-5 animate-in fade-in-50 duration-200">
+      {mountedTabs.has('profile') && (
+        <div className={cn("space-y-5 animate-in fade-in-50 duration-200", (activeTab !== 'profile' || loadingTab === 'profile') && "hidden")}>
           {/* Card nổi bật KTPL (nếu doanh nghiệp đã có tỷ lệ trích Quỹ KTPL) */}
           {bonusWelfareRate != null && (
             <div className="overflow-hidden rounded-2xl border border-amber-500/30 bg-gradient-to-r from-amber-500/10 via-amber-500/5 to-transparent p-4 sm:p-5 shadow-xs">
@@ -984,8 +1120,8 @@ export function StockDetailView({
       {/* ══════════════════════════════════════════════════════════ */}
       {/* TAB 2: BIỂU ĐỒ TÀI CHÍNH                                 */}
       {/* ══════════════════════════════════════════════════════════ */}
-      {activeTab === 'charts' && (
-        <div className="space-y-6 animate-in fade-in-50 duration-200">
+      {mountedTabs.has('charts') && (
+        <div className={cn("space-y-6 animate-in fade-in-50 duration-200", (activeTab !== 'charts' || loadingTab === 'charts') && "hidden")}>
           {/* 9 Biểu đồ tài chính chuyên biệt ngành Ngân hàng (Chuỗi thời gian Quý / Năm) */}
           {(financialChartQuarter?.isNganHang || financialChartAnnual?.isNganHang || bankAnalysisData?.isBank) && (financialChartQuarter || financialChartAnnual) && (
             <BankingDetailedFinancialCharts
@@ -1420,8 +1556,8 @@ export function StockDetailView({
       {/* ══════════════════════════════════════════════════════════ */}
       {/* TAB 3: BÁO CÁO TÀI CHÍNH                                 */}
       {/* ══════════════════════════════════════════════════════════ */}
-      {activeTab === 'financials' && (
-        <div className="space-y-5 animate-in fade-in-50 duration-200">
+      {mountedTabs.has('financials') && (
+        <div className={cn("space-y-5 animate-in fade-in-50 duration-200", (activeTab !== 'financials' || loadingTab === 'financials') && "hidden")}>
           {/* A. Kế Hoạch Kinh Doanh & Tỷ Lệ Hoàn Thành (1 năm / 3 năm / 5 năm / 10 năm) */}
           <BusinessPlanComparison ticker={ticker} />
 
@@ -1437,8 +1573,8 @@ export function StockDetailView({
       {/* ══════════════════════════════════════════════════════════ */}
       {/* TAB 4: SO SÁNH TRONG NGÀNH                               */}
       {/* ══════════════════════════════════════════════════════════ */}
-      {activeTab === 'peers' && (
-        <div className="space-y-6 animate-in fade-in-50 duration-200">
+      {mountedTabs.has('peers') && (
+        <div className={cn("space-y-6 animate-in fade-in-50 duration-200", (activeTab !== 'peers' || loadingTab === 'peers') && "hidden")}>
           {/* A. Bảng & Biểu đồ So Sánh Doanh Nghiệp Cùng Ngành Chuyên Sâu (Chuẩn Ruatichsan) */}
           <PeerComparisonView
             currentTicker={ticker}
@@ -1523,8 +1659,8 @@ export function StockDetailView({
       {/* ══════════════════════════════════════════════════════════ */}
       {/* TAB 5: ĐÁNH GIÁ 360°                                     */}
       {/* ══════════════════════════════════════════════════════════ */}
-      {activeTab === 'evaluation' && (
-        <div className="space-y-5 animate-in fade-in-50 duration-200">
+      {mountedTabs.has('evaluation') && (
+        <div className={cn("space-y-5 animate-in fade-in-50 duration-200", (activeTab !== 'evaluation' || loadingTab === 'evaluation') && "hidden")}>
           <div className="grid grid-cols-1 gap-5 md:grid-cols-3">
             {/* Card 1: Sức khỏe tài chính & Khả năng sinh lời */}
             <div className="rounded-2xl border border-border bg-card p-5 shadow-xs space-y-3">
@@ -1643,8 +1779,8 @@ export function StockDetailView({
       {/* ══════════════════════════════════════════════════════════ */}
       {/* TAB 6: BÁO CÁO PHÂN TÍCH                                 */}
       {/* ══════════════════════════════════════════════════════════ */}
-      {activeTab === 'reports' && (
-        <div className="space-y-5 animate-in fade-in-50 duration-200">
+      {mountedTabs.has('reports') && (
+        <div className={cn("space-y-5 animate-in fade-in-50 duration-200", (activeTab !== 'reports' || loadingTab === 'reports') && "hidden")}>
           {/* 1. Báo cáo phân tích chuyên sâu độc quyền kèm Audio Podcast (ĐƯA LÊN TRÊN ĐẦU) */}
           {hasReports && (
             <div className="rounded-2xl border-2 border-primary/50 bg-card p-5 sm:p-6 shadow-sm space-y-4">
@@ -1767,8 +1903,8 @@ export function StockDetailView({
       {/* ══════════════════════════════════════════════════════════ */}
       {/* TAB 7: ĐHĐCĐ (BÁO CÁO ĐẠI HỘI ĐỒNG CỔ ĐÔNG)               */}
       {/* ══════════════════════════════════════════════════════════ */}
-      {activeTab === 'agm' && (
-        <div className="animate-in fade-in-50 duration-200">
+      {mountedTabs.has('agm') && (
+        <div className={cn("animate-in fade-in-50 duration-200", (activeTab !== 'agm' || loadingTab === 'agm') && "hidden")}>
           <StockAgmReportView
             agmData={agmData}
             ticker={ticker}

@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import { SiteHeader } from '@/components/site-header'
 import { NewsDashboard, NewsSnapshotItem } from '@/components/news/news-dashboard'
 import { getCachedNews, fetchAllRssFeeds } from '@/lib/rss-news-service'
+import { getRecentMarketDisclosures } from '@/lib/disclosures'
 import manifestRaw from '@/data/longlive_manifest.json'
 
 export const dynamic = 'force-dynamic'
@@ -57,6 +58,7 @@ function getStockPriceMap(): Record<string, { px: number | null; w1: number | nu
 
 export default async function NewsPage() {
   const initialNews = await getInitialNews()
+  const initialDisclosures = getRecentMarketDisclosures({ limit: 200 })
   const stockPriceMap = getStockPriceMap()
 
   // Calculate trending tickers
@@ -83,6 +85,7 @@ export default async function NewsPage() {
       <main className="flex-1">
         <NewsDashboard
           initialNews={initialNews}
+          initialDisclosures={initialDisclosures}
           initialTrending={initialTrending}
           stockPriceMap={stockPriceMap}
         />

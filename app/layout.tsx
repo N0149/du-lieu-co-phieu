@@ -81,6 +81,9 @@ const themeScript = `
 })();
 `
 
+import { Suspense } from 'react'
+import { NavigationProgressBar } from '@/components/navigation-progress-bar'
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -98,6 +101,9 @@ export default function RootLayout({
         </Script>
       </head>
       <body className="flex min-h-screen flex-col font-sans antialiased">
+        <Suspense fallback={null}>
+          <NavigationProgressBar />
+        </Suspense>
         <div className="flex-1">{children}</div>
         <SiteFooter />
         <AntiScrapingTrap />

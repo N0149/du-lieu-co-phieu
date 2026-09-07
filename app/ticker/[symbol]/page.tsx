@@ -7,6 +7,7 @@ import { MosBadge, StatusTag } from '@/components/badges'
 import { getStock, getDeepDive, upside, priceToRnav, marginOfSafety, stocks } from '@/lib/data'
 import type { TickerReport, TickerReportContent } from '@/lib/report'
 import { getTickerReport, getTickerContent } from '@/lib/report'
+import { getDisclosuresBySymbol } from '@/lib/disclosures'
 import { fmtPrice, fmtNum, fmtPct, fmtInt } from '@/lib/format'
 
 export function generateStaticParams() {
@@ -24,6 +25,7 @@ export default async function TickerPage({
 
   const report = await getTickerReport(symbol)
   const reportContent = await getTickerContent(symbol)
+  const disclosures = getDisclosuresBySymbol(symbol)
   const dd = getDeepDive(stock)
   const up = upside(stock)
   const mos = marginOfSafety(stock)
@@ -109,6 +111,7 @@ export default async function TickerPage({
           dd={dd}
           report={report ?? undefined}
           reportContent={reportContent ?? undefined}
+          disclosures={disclosures}
         />
 
         <p className="mt-2 text-[11px] leading-relaxed text-muted-foreground">
