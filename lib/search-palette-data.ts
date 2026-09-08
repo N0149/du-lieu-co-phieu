@@ -34,14 +34,24 @@ export type SearchPaletteItem = {
 export const PRESET_SEARCH_ITEMS: SearchPaletteItem[] = [
   // --- BỐ CỤC (LAYOUTS & DASHBOARDS) ---
   {
+    id: 'layout-doanh-nghiep',
+    title: 'Phân Tích Doanh Nghiệp Chuyên Sâu (MWG & 1.530+ Mã)',
+    subtitle: 'BCTC 16 năm, định giá P/E-P/B kép, bóc tách phân khúc kinh doanh & ĐHĐCĐ',
+    icon: '🏢',
+    category: 'layout',
+    categoryLabel: 'Bố cục',
+    href: '/stock/MWG',
+    keywords: ['doanh nghiep', 'mwg', 'chi tiet', 'bctc', 'phan tich co phieu', 'dinh gia'],
+  },
+  {
     id: 'layout-home-news',
-    title: 'Dòng Tin Tức Thị Trường Realtime',
-    subtitle: 'Tổng hợp tin tài chính & doanh nghiệp theo thời gian thực',
+    title: 'Dòng Tin Tức & Công Bố 3 Sàn Realtime',
+    subtitle: 'Công bố thông tin 3 sàn HOSE/HNX/UPCOM & tổng hợp tin tài chính thời gian thực',
     icon: '📰',
     category: 'layout',
     categoryLabel: 'Bố cục',
     href: '/',
-    keywords: ['tin tuc', 'trang chu', 'dong tin', 'thi truong', 'news'],
+    keywords: ['tin tuc', 'cong bo 3 san', 'dong tin', 'thi truong', 'news', 'bao chi', 'cong bo thong tin'],
   },
   {
     id: 'layout-screener',

@@ -1,0 +1,101 @@
+{
+  "symbol": "ABB",
+  "events": [
+    {
+      "date": "2006-11-30",
+      "cashVnd": null,
+      "stockPct": 14.34,
+      "texts": [
+        "Phát hành cổ phiếu - Cổ phiếu thưởng tỉ lệ 14.3%"
+      ]
+    },
+    {
+      "date": "2011-01-31",
+      "cashVnd": null,
+      "stockPct": 10,
+      "texts": [
+        "Phát hành cổ phiếu - Cổ phiếu thưởng tỉ lệ 10.0%"
+      ]
+    },
+    {
+      "date": "2014-05-14",
+      "cashVnd": 246,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 2.46%"
+      ]
+    },
+    {
+      "date": "2016-05-15",
+      "cashVnd": 390,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 3.9%"
+      ]
+    },
+    {
+      "date": "2016-08-29",
+      "cashVnd": null,
+      "stockPct": 10.869565217391305,
+      "texts": [
+        "Thưởng bằng Cổ phiếu, tỷ lệ 230:25"
+      ]
+    },
+    {
+      "date": "2019-06-28",
+      "cashVnd": null,
+      "stockPct": 7.3999999999999995,
+      "texts": [
+        "Cổ tức bằng Cổ phiếu, tỷ lệ 1000:74"
+      ]
+    },
+    {
+      "date": "2021-11-09",
+      "cashVnd": null,
+      "stockPct": 20,
+      "texts": [
+        "Phát hành cổ phiếu - Quyền mua CP cho Cổ đông hiện hữu tỉ lệ 20.0%"
+      ]
+    },
+    {
+      "date": "2022-02-09",
+      "cashVnd": null,
+      "stockPct": 35,
+      "texts": [
+        "Thưởng bằng Cổ phiếu, tỷ lệ 100:35"
+      ]
+    },
+    {
+      "date": "2023-05-29",
+      "cashVnd": null,
+      "stockPct": 10,
+      "texts": [
+        "Cổ tức bằng Cổ phiếu, tỷ lệ 100:10"
+      ]
+    },
+    {
+      "date": "2026-01-14",
+      "cashVnd": null,
+      "stockPct": 30,
+      "texts": [
+        "Phát hành cổ phiếu - Quyền mua CP cho Cổ đông hiện hữu tỉ lệ 30.0%"
+      ]
+    },
+    {
+      "date": "2026-03-03",
+      "cashVnd": null,
+      "stockPct": 5,
+      "texts": [
+        "Phát hành cổ phiếu - Phát hành cho CBCNV tỉ lệ 5.0%"
+      ]
+    },
+    {
+      "date": "2026-07-08",
+      "cashVnd": null,
+      "stockPct": 15,
+      "texts": [
+        "Cổ tức bằng Cổ phiếu, tỷ lệ 100:15"
+      ]
+    }
+  ]
+}

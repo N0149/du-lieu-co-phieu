@@ -40,7 +40,14 @@ export function StockAgmReportView({
 }: StockAgmReportViewProps) {
   const [selectedSectionId, setSelectedSectionId] = useState<string>("all")
   const [searchKeyword, setSearchKeyword] = useState<string>("")
+  const [tickerSearch, setTickerSearch] = useState<string>("")
   const [copied, setCopied] = useState<boolean>(false)
+
+  const filteredTickers = useMemo(() => {
+    if (!tickerSearch.trim()) return availableTickers
+    const query = tickerSearch.toUpperCase().trim()
+    return availableTickers.filter((sym) => sym.includes(query))
+  }, [availableTickers, tickerSearch])
 
   // Quản lý thanh điều hướng tab phần: hỗ trợ cuộn mượt và nút mũi tên
   const tabsContainerRef = useRef<HTMLDivElement>(null)
@@ -113,25 +120,41 @@ export function StockAgmReportView({
 
         {availableTickers.length > 0 && (
           <div className="pt-4 border-t border-border/50 max-w-2xl mx-auto text-left">
-            <p className="text-xs font-semibold text-muted-foreground uppercase tracking-wider mb-3">
-              Các mã đã có Báo cáo ĐHĐCĐ 2026 ({availableTickers.length} mã):
-            </p>
-            <div className="flex flex-wrap gap-1.5">
-              {availableTickers.map((sym) => (
-                <Link
-                  key={sym}
-                  href={`/stock/${sym}?tab=agm`}
-                  className={cn(
-                    "inline-flex items-center gap-1 px-2.5 py-1 rounded-lg text-xs font-bold font-mono transition-colors",
-                    sym === ticker
-                      ? "bg-primary text-primary-foreground"
-                      : "bg-muted/80 text-foreground/80 hover:bg-primary/20 hover:text-primary"
-                  )}
-                >
-                  <span>{sym}</span>
-                  <ArrowUpRight className="size-3 opacity-60" />
-                </Link>
-              ))}
+            <div className="flex flex-wrap items-center justify-between gap-2 mb-3">
+              <p className="text-xs font-semibold text-muted-foreground uppercase tracking-wider">
+                Các mã đã có Báo cáo ĐHĐCĐ 2026 ({availableTickers.length} mã):
+              </p>
+              <div className="relative">
+                <Search className="size-3 absolute left-2 top-1/2 -translate-y-1/2 text-muted-foreground pointer-events-none" />
+                <input
+                  type="text"
+                  placeholder="Lọc nhanh..."
+                  value={tickerSearch}
+                  onChange={(e) => setTickerSearch(e.target.value)}
+                  className="h-6 w-28 rounded-md border border-border bg-background/80 pl-6 pr-1.5 text-xs font-mono text-foreground placeholder:text-muted-foreground focus:outline-hidden focus:border-primary"
+                />
+              </div>
+            </div>
+            <div className="flex flex-wrap gap-1.5 max-h-48 overflow-y-auto pr-1">
+              {filteredTickers.length === 0 ? (
+                <span className="text-xs text-muted-foreground py-1">Không tìm thấy mã &quot;{tickerSearch}&quot;</span>
+              ) : (
+                filteredTickers.map((sym) => (
+                  <Link
+                    key={sym}
+                    href={`/stock/${sym}?tab=agm`}
+                    className={cn(
+                      "inline-flex items-center gap-1 px-2.5 py-1 rounded-lg text-xs font-bold font-mono transition-colors",
+                      sym === ticker
+                        ? "bg-primary text-primary-foreground"
+                        : "bg-muted/80 text-foreground/80 hover:bg-primary/20 hover:text-primary"
+                    )}
+                  >
+                    <span>{sym}</span>
+                    <ArrowUpRight className="size-3 opacity-60" />
+                  </Link>
+                ))
+              )}
             </div>
           </div>
         )}
@@ -182,42 +205,59 @@ export function StockAgmReportView({
       {/* ── 0. DANH SÁCH CÁC MÃ ĐÃ CÓ BÁO CÁO ĐHĐCĐ (TIỆN THEO DÕI) ── */}
       {availableTickers.length > 0 && (
         <div className="rounded-2xl border border-border/80 bg-card/60 p-4 shadow-xs backdrop-blur-xs">
-          <div className="flex flex-wrap items-center justify-between gap-2 mb-3">
+          <div className="flex flex-wrap items-center justify-between gap-3 mb-3">
             <div className="flex items-center gap-2">
               <span className="flex size-2 rounded-full bg-emerald-500 animate-pulse" />
               <span className="text-xs font-bold uppercase tracking-wider text-foreground">
                 Danh sách mã đã có dữ liệu ĐHĐCĐ {year} ({availableTickers.length} mã)
               </span>
             </div>
-            <span className="text-[11px] text-muted-foreground italic">
-              (Bấm vào mã để xem ngay)
-            </span>
+
+            <div className="flex items-center gap-2">
+              <div className="relative">
+                <Search className="size-3.5 absolute left-2.5 top-1/2 -translate-y-1/2 text-muted-foreground pointer-events-none" />
+                <input
+                  type="text"
+                  placeholder="Lọc mã..."
+                  value={tickerSearch}
+                  onChange={(e) => setTickerSearch(e.target.value)}
+                  className="h-7 w-28 sm:w-36 rounded-lg border border-border bg-background/80 pl-7 pr-2 text-xs font-mono text-foreground placeholder:text-muted-foreground focus:outline-hidden focus:border-primary transition-colors"
+                />
+              </div>
+              <span className="text-[11px] text-muted-foreground italic hidden sm:inline">
+                (Bấm vào mã để xem)
+              </span>
+            </div>
           </div>
 
-          <div className="flex flex-wrap gap-1.5 max-h-32 overflow-y-auto pr-1">
-            {availableTickers.map((sym) => {
-              const isCurrent = sym.toUpperCase() === ticker.toUpperCase()
-              return (
-                <Link
-                  key={sym}
-                  href={`/stock/${sym}?tab=agm`}
-                  className={cn(
-                    "inline-flex items-center gap-1 px-2.5 py-1 rounded-lg text-xs font-mono font-bold transition-all",
-                    isCurrent
-                      ? "bg-primary text-primary-foreground shadow-xs ring-2 ring-primary/40"
-                      : "bg-muted/70 text-foreground/85 hover:bg-primary/20 hover:text-primary border border-border/50 hover:border-primary/40"
-                  )}
-                  title={`Xem ĐHĐCĐ của ${sym}`}
-                >
-                  <span>{sym}</span>
-                  {isCurrent ? (
-                    <span className="size-1.5 rounded-full bg-primary-foreground" />
-                  ) : (
-                    <ArrowUpRight className="size-3 opacity-40" />
-                  )}
-                </Link>
-              )
-            })}
+          <div className="flex flex-wrap gap-1.5 max-h-40 overflow-y-auto pr-1">
+            {filteredTickers.length === 0 ? (
+              <span className="text-xs text-muted-foreground py-1">Không tìm thấy mã &quot;{tickerSearch}&quot;</span>
+            ) : (
+              filteredTickers.map((sym) => {
+                const isCurrent = sym.toUpperCase() === ticker.toUpperCase()
+                return (
+                  <Link
+                    key={sym}
+                    href={`/stock/${sym}?tab=agm`}
+                    className={cn(
+                      "inline-flex items-center gap-1 px-2.5 py-1 rounded-lg text-xs font-mono font-bold transition-all",
+                      isCurrent
+                        ? "bg-primary text-primary-foreground shadow-xs ring-2 ring-primary/40"
+                        : "bg-muted/70 text-foreground/85 hover:bg-primary/20 hover:text-primary border border-border/50 hover:border-primary/40"
+                    )}
+                    title={`Xem ĐHĐCĐ của ${sym}`}
+                  >
+                    <span>{sym}</span>
+                    {isCurrent ? (
+                      <span className="size-1.5 rounded-full bg-primary-foreground" />
+                    ) : (
+                      <ArrowUpRight className="size-3 opacity-40" />
+                    )}
+                  </Link>
+                )
+              })
+            )}
           </div>
         </div>
       )}

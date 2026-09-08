@@ -47,6 +47,13 @@ export const NAV_GROUPS: NavGroup[] = [
         description: 'Dòng tin tức & công bố doanh nghiệp realtime',
       },
       {
+        label: 'Doanh nghiệp',
+        href: '/stock/MWG',
+        icon: Building2,
+        badge: 'MWG',
+        description: 'Chi tiết tài chính, BCTC & phân tích MWG',
+      },
+      {
         label: 'Thị Trường',
         href: '/thi-truong',
         icon: TrendingUp,
@@ -70,13 +77,7 @@ export const NAV_GROUPS: NavGroup[] = [
         href: '/nghien-cuu-ai',
         icon: Sparkles,
         badge: 'RNAV',
-        description: 'Định giá RNAV, sàng lọc tài sản & trợ lý AI',
-      },
-      {
-        label: 'Doanh nghiệp',
-        href: '/stock/MWG',
-        icon: Building2,
-        description: 'Chi tiết tài chính, BCTC & phân tích MWG',
+        description: 'Định giá RNAV & sàng lọc tài sản',
       },
     ],
   },
@@ -143,16 +144,17 @@ export function VerticalSidebarNav({
 
   const isItemActive = (href: string) => {
     const target = pendingHref || pathname
-    if (href === '/') {
-      return target === '/' || target === '/tin-tuc'
-    }
-    if (href === '/stock/MWG') {
+    if (href === '/stock/MWG' || href === '/') {
       return (
+        target === '/' ||
         target.startsWith('/stock/') ||
         target === '/doanh-nghiep' ||
         target.startsWith('/ticker/') ||
         target.startsWith('/tra-cuu')
       )
+    }
+    if (href === '/tin-tuc') {
+      return target === '/tin-tuc'
     }
     if (href === '/cang-bien') {
       return target.startsWith('/cang-bien') || target.startsWith('/cang/')
