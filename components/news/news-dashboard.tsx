@@ -166,6 +166,25 @@ export function NewsDashboard({
     }
   }, [news.length])
 
+  // Fetch disclosures data (Hỗ trợ force refresh và polling)
+  const fetchDisclosures = useCallback(async (force = false) => {
+    if (force) setIsRefreshing(true)
+    try {
+      const res = await fetch(`/api/disclosures?limit=200${force ? '&refresh=true' : ''}`)
+      if (res.ok) {
+        const data = await res.json()
+        if (data.data && Array.isArray(data.data)) {
+          setDisclosures(data.data)
+          setLastUpdated(new Date())
+        }
+      }
+    } catch (err) {
+      console.error('Error fetching disclosures:', err)
+    } finally {
+      if (force) setIsRefreshing(false)
+    }
+  }, [])
+
   // Initial fetch if empty
   useEffect(() => {
     if (news.length === 0) {
@@ -173,10 +192,21 @@ export function NewsDashboard({
     }
   }, [fetchNews, news.length])
 
-  // TỰ ĐỘNG CẬP NHẬT TIN TỨC: Polling mỗi 60 giây
+  // Tự động kéo disclosures mới khi người dùng chuyển sang tab 'cong-bo'
+  useEffect(() => {
+    if (activeTab === 'cong-bo') {
+      fetchDisclosures(false)
+    }
+  }, [activeTab, fetchDisclosures])
+
+  // TỰ ĐỘNG CẬP NHẬT: Polling mỗi 60 giây (tự động phát hiện tab hiện tại để fetch nguồn tương ứng)
   useEffect(() => {
     const pollInterval = setInterval(() => {
-      fetchNews(false)
+      if (activeTab === 'cong-bo') {
+        fetchDisclosures(false)
+      } else {
+        fetchNews(false)
+      }
     }, 60000)
 
     // Tự động tính toán lại relative time ("x phút trước") mỗi 30 giây
@@ -188,7 +218,7 @@ export function NewsDashboard({
       clearInterval(pollInterval)
       clearInterval(tickInterval)
     }
-  }, [fetchNews])
+  }, [activeTab, fetchDisclosures, fetchNews])
 
   // Filter news
   const filteredNews = useMemo(() => {
@@ -393,14 +423,20 @@ export function NewsDashboard({
             {/* Refresh Button */}
             <button
               type="button"
-              onClick={() => fetchNews(true)}
+              onClick={() => {
+                if (activeTab === 'cong-bo') {
+                  fetchDisclosures(true)
+                } else {
+                  fetchNews(true)
+                }
+              }}
               disabled={isRefreshing}
               className="flex h-7.5 items-center gap-1.5 rounded border border-[#232a36] bg-[#12161f] px-2 text-xs text-[#8b949e] transition-colors hover:border-[#384356] hover:text-white"
-              title="Nhấn để quét RSS mới nhất ngay lập tức"
+              title="Nhấn để quét dữ liệu mới nhất ngay lập tức"
             >
               <RefreshCw className={cn('size-3.5', isRefreshing && 'animate-spin text-emerald-400')} />
               <span className="hidden sm:inline font-medium text-[11px]">
-                {isRefreshing ? 'Đang quét RSS…' : 'Làm mới'}
+                {isRefreshing ? (activeTab === 'cong-bo' ? 'Đang quét Sở…' : 'Đang quét RSS…') : 'Làm mới'}
               </span>
             </button>
           </div>

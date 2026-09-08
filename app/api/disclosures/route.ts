@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server'
-import { getDisclosuresBySymbol, getRecentMarketDisclosures } from '@/lib/disclosures'
+import { getDisclosuresBySymbol, getLiveMarketDisclosures } from '@/lib/disclosures'
 
 export const dynamic = 'force-dynamic'
 
@@ -10,12 +10,13 @@ export async function GET(request: NextRequest) {
     const exchange = searchParams.get('exchange') || 'ALL'
     const docType = searchParams.get('docType') || searchParams.get('type') || 'ALL'
     const importantOnly = searchParams.get('important') === 'true' || searchParams.get('important') === '1'
+    const refresh = searchParams.get('refresh') === 'true' || searchParams.get('refresh') === '1'
     const q = searchParams.get('q')?.toLowerCase() || ''
     const limit = Math.min(parseInt(searchParams.get('limit') || '50', 10), 200)
 
     let items = symbol
       ? getDisclosuresBySymbol(symbol, limit)
-      : getRecentMarketDisclosures({ limit, exchange, docType, importantOnly })
+      : await getLiveMarketDisclosures({ limit, exchange, docType, importantOnly, forceRefresh: refresh })
 
     if (q) {
       items = items.filter(
