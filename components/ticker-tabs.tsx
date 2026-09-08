@@ -1,7 +1,7 @@
 'use client'
 
-import { useState, useMemo } from 'react'
-import { Activity, FileText, LayoutList, Bell, ExternalLink } from 'lucide-react'
+import { useState, useMemo, useRef, useEffect, useCallback } from 'react'
+import { Activity, FileText, LayoutList, Bell, ExternalLink, ChevronLeft, ChevronRight } from 'lucide-react'
 import type { Stock, DeepDive } from '@/lib/data'
 import type { TickerReport, TickerReportContent } from '@/lib/report'
 import type { CorporateDisclosure } from '@/lib/disclosures'
@@ -9,10 +9,10 @@ import { fmtBillion, fmtInt, fmtNum, fmtPct, fmtPrice } from '@/lib/format'
 import { cn } from '@/lib/utils'
 
 const TABS = [
-  { id: 'overview', label: 'Tổng quan & Luận điểm', icon: Activity },
-  { id: 'financial', label: 'Báo cáo Tài chính Đầy đủ', icon: FileText },
-  { id: 'notes', label: 'Thuyết minh BCTC Chi tiết', icon: LayoutList },
-  { id: 'disclosures', label: 'Công bố Thông tin & Sự kiện', icon: Bell },
+  { id: 'overview', label: 'Tổng quan & Luận điểm', shortLabel: 'Tổng quan', icon: Activity },
+  { id: 'financial', label: 'Báo cáo Tài chính Đầy đủ', shortLabel: 'BCTC Đầy đủ', icon: FileText },
+  { id: 'notes', label: 'Thuyết minh BCTC Chi tiết', shortLabel: 'Thuyết minh', icon: LayoutList },
+  { id: 'disclosures', label: 'Công bố Thông tin & Sự kiện', shortLabel: 'Công bố tin', icon: Bell },
 ] as const
 
 type TabId = (typeof TABS)[number]['id']
@@ -32,10 +32,80 @@ export function TickerTabs({
 }) {
   const [tab, setTab] = useState<TabId>('overview')
 
+  const tabsContainerRef = useRef<HTMLDivElement>(null)
+  const tabButtonRefs = useRef<Record<string, HTMLButtonElement | null>>({})
+  const [canScrollLeft, setCanScrollLeft] = useState(false)
+  const [canScrollRight, setCanScrollRight] = useState(false)
+
+  const checkTabScroll = useCallback(() => {
+    const el = tabsContainerRef.current
+    if (!el) return
+    const { scrollLeft, scrollWidth, clientWidth } = el
+    setCanScrollLeft(scrollLeft > 6)
+    setCanScrollRight(scrollLeft + clientWidth < scrollWidth - 6)
+  }, [])
+
+  useEffect(() => {
+    const el = tabsContainerRef.current
+    if (!el) return
+    checkTabScroll()
+    el.addEventListener('scroll', checkTabScroll, { passive: true })
+    window.addEventListener('resize', checkTabScroll)
+    return () => {
+      el.removeEventListener('scroll', checkTabScroll)
+      window.removeEventListener('resize', checkTabScroll)
+    }
+  }, [checkTabScroll])
+
+  useEffect(() => {
+    const btn = tabButtonRefs.current[tab]
+    if (btn && tabsContainerRef.current) {
+      btn.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' })
+    }
+    const t = setTimeout(checkTabScroll, 120)
+    return () => clearTimeout(t)
+  }, [tab, checkTabScroll])
+
+  const scrollTabs = (direction: 'left' | 'right') => {
+    const el = tabsContainerRef.current
+    if (!el) return
+    const scrollAmount = Math.max(180, el.clientWidth * 0.45)
+    el.scrollBy({
+      left: direction === 'left' ? -scrollAmount : scrollAmount,
+      behavior: 'smooth',
+    })
+  }
+
+  const handleTabsWheel = (e: React.WheelEvent<HTMLDivElement>) => {
+    const el = tabsContainerRef.current
+    if (!el) return
+    if (el.scrollWidth > el.clientWidth && Math.abs(e.deltaY) > 0) {
+      el.scrollLeft += e.deltaY * 0.85
+    }
+  }
+
   return (
     <div className="mt-6">
-      <div className="sticky top-16 z-30 -mx-4 border-b border-border bg-background/95 px-4 py-3 backdrop-blur md:top-20">
-        <div className="flex gap-1 overflow-x-auto">
+      <div className="sticky top-16 z-30 -mx-4 border-b border-border bg-background/95 px-4 py-3 backdrop-blur md:top-20 relative group">
+        {/* Nút cuộn trái */}
+        {canScrollLeft && (
+          <div className="absolute left-2 top-0 bottom-0 z-10 flex items-center pr-3 bg-gradient-to-r from-background via-background/95 to-transparent">
+            <button
+              type="button"
+              onClick={() => scrollTabs('left')}
+              className="flex size-7 items-center justify-center rounded-lg bg-card text-foreground shadow-sm border border-border hover:bg-primary hover:text-primary-foreground transition-colors cursor-pointer"
+              title="Xem tab trước"
+            >
+              <ChevronLeft className="size-3.5" />
+            </button>
+          </div>
+        )}
+
+        <div
+          ref={tabsContainerRef}
+          onWheel={handleTabsWheel}
+          className="flex gap-1 overflow-x-auto scrollbar-none scroll-smooth touch-pan-x"
+        >
           {TABS.map((item) => {
             const Icon = item.icon
             const active = tab === item.id
@@ -43,17 +113,21 @@ export function TickerTabs({
             return (
               <button
                 key={item.id}
+                ref={(el) => {
+                  tabButtonRefs.current[item.id] = el
+                }}
                 type="button"
                 onClick={() => setTab(item.id)}
                 className={cn(
-                  'flex shrink-0 items-center gap-2 rounded-t-lg border-b-2 px-3 py-2 text-sm font-medium transition-colors',
+                  'flex shrink-0 items-center gap-1.5 sm:gap-2 rounded-t-lg border-b-2 px-2.5 py-2 sm:px-3 text-xs sm:text-sm font-medium transition-colors whitespace-nowrap cursor-pointer',
                   active
                     ? 'border-primary text-primary'
                     : 'border-transparent text-muted-foreground hover:text-foreground',
                 )}
               >
                 <Icon className="size-4" />
-                {item.label}
+                <span className="hidden md:inline">{item.label}</span>
+                <span className="md:hidden">{item.shortLabel}</span>
                 {count !== undefined && count > 0 && (
                   <span className={cn('ml-1 rounded-full px-1.5 py-0.2 text-[11px]', active ? 'bg-primary/20 text-primary font-bold' : 'bg-muted text-muted-foreground')}>
                     {count}
@@ -63,6 +137,20 @@ export function TickerTabs({
             )
           })}
         </div>
+
+        {/* Nút cuộn phải */}
+        {canScrollRight && (
+          <div className="absolute right-2 top-0 bottom-0 z-10 flex items-center pl-3 bg-gradient-to-l from-background via-background/95 to-transparent">
+            <button
+              type="button"
+              onClick={() => scrollTabs('right')}
+              className="flex size-7 items-center justify-center rounded-lg bg-card text-foreground shadow-sm border border-border hover:bg-primary hover:text-primary-foreground transition-colors cursor-pointer"
+              title="Xem tab tiếp theo"
+            >
+              <ChevronRight className="size-3.5" />
+            </button>
+          </div>
+        )}
       </div>
 
       <div className="rounded-b-lg border border-border border-t-0 bg-card p-6">

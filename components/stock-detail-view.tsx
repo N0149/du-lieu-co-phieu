@@ -1,6 +1,6 @@
 'use client'
 
-import { useMemo, useState, useRef, useEffect, startTransition } from 'react'
+import { useMemo, useState, useRef, useEffect, useCallback, startTransition } from 'react'
 import Link from 'next/link'
 import {
   ArrowLeft,
@@ -24,6 +24,8 @@ import {
   Sparkles,
   Vote,
   Loader2,
+  ChevronLeft,
+  ChevronRight,
 } from 'lucide-react'
 import type { StockDetailData, StockManifestItem } from '@/lib/longlivestock'
 import type { Report } from '@/lib/use-reports'
@@ -191,6 +193,60 @@ export function StockDetailView({
   const [loadingTab, setLoadingTab] = useState<StockDetailTab | null>(null)
   const switchTimerRef = useRef<NodeJS.Timeout | null>(null)
   const [copied, setCopied] = useState(false)
+
+  // Quản lý thanh điều hướng tab: hỗ trợ cuộn mượt và nút mũi tên trên mọi kích thước màn hình
+  const tabsContainerRef = useRef<HTMLDivElement>(null)
+  const tabButtonRefs = useRef<Record<string, HTMLButtonElement | null>>({})
+  const [canScrollLeft, setCanScrollLeft] = useState(false)
+  const [canScrollRight, setCanScrollRight] = useState(false)
+
+  const checkTabScroll = useCallback(() => {
+    const el = tabsContainerRef.current
+    if (!el) return
+    const { scrollLeft, scrollWidth, clientWidth } = el
+    setCanScrollLeft(scrollLeft > 6)
+    setCanScrollRight(scrollLeft + clientWidth < scrollWidth - 6)
+  }, [])
+
+  useEffect(() => {
+    const el = tabsContainerRef.current
+    if (!el) return
+    checkTabScroll()
+    el.addEventListener('scroll', checkTabScroll, { passive: true })
+    window.addEventListener('resize', checkTabScroll)
+    return () => {
+      el.removeEventListener('scroll', checkTabScroll)
+      window.removeEventListener('resize', checkTabScroll)
+    }
+  }, [checkTabScroll])
+
+  // Tự động cuộn tab đang chọn vào tầm mắt người dùng
+  useEffect(() => {
+    const btn = tabButtonRefs.current[activeTab]
+    if (btn && tabsContainerRef.current) {
+      btn.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' })
+    }
+    const t = setTimeout(checkTabScroll, 120)
+    return () => clearTimeout(t)
+  }, [activeTab, checkTabScroll])
+
+  const scrollTabs = (direction: 'left' | 'right') => {
+    const el = tabsContainerRef.current
+    if (!el) return
+    const scrollAmount = Math.max(200, el.clientWidth * 0.45)
+    el.scrollBy({
+      left: direction === 'left' ? -scrollAmount : scrollAmount,
+      behavior: 'smooth',
+    })
+  }
+
+  const handleTabsWheel = (e: React.WheelEvent<HTMLDivElement>) => {
+    const el = tabsContainerRef.current
+    if (!el) return
+    if (el.scrollWidth > el.clientWidth && Math.abs(e.deltaY) > 0) {
+      el.scrollLeft += e.deltaY * 0.85
+    }
+  }
 
   // Cập nhật khi initialTab thay đổi từ URL bên ngoài
   useEffect(() => {
@@ -618,12 +674,13 @@ export function StockDetailView({
     return { W, H, padL, padR, padB, grid, bars }
   }, [is_port, throughput])
 
-  // Cấu hình danh sách 6 Tabs chuẩn
+  // Cấu hình danh sách 7 Tabs chuẩn (hỗ trợ cả nhãn đầy đủ và nhãn gọn cho màn hình laptop/máy tính nhỏ)
   const TABS = useMemo(() => {
     return [
       {
         id: 'charts' as StockDetailTab,
         label: 'Biểu Đồ Tài Chính',
+        shortLabel: 'Biểu đồ',
         icon: BarChart3,
         iconColor: 'text-emerald-500',
         badge: 'PRO',
@@ -631,30 +688,35 @@ export function StockDetailView({
       {
         id: 'profile' as StockDetailTab,
         label: 'Hồ Sơ Doanh Nghiệp',
+        shortLabel: 'Hồ sơ',
         icon: Building2,
         iconColor: 'text-indigo-500',
       },
       {
         id: 'financials' as StockDetailTab,
         label: 'Báo Cáo Tài Chính',
+        shortLabel: 'BCTC',
         icon: FileSpreadsheet,
         iconColor: 'text-amber-500',
       },
       {
         id: 'peers' as StockDetailTab,
         label: 'So sánh trong ngành',
+        shortLabel: 'So sánh',
         icon: Users,
         iconColor: 'text-violet-500',
       },
       {
         id: 'evaluation' as StockDetailTab,
         label: 'Đánh Giá 360°',
+        shortLabel: 'Đánh giá 360°',
         icon: Target,
         iconColor: 'text-rose-500',
       },
       {
         id: 'reports' as StockDetailTab,
         label: 'Báo Cáo Phân Tích',
+        shortLabel: 'Báo cáo',
         icon: FileText,
         iconColor: 'text-sky-500',
         badge: 'NEW',
@@ -662,6 +724,7 @@ export function StockDetailView({
       {
         id: 'agm' as StockDetailTab,
         label: 'ĐHĐCĐ',
+        shortLabel: 'ĐHĐCĐ',
         icon: Vote,
         iconColor: 'text-purple-400',
         badge: agmData?.hasReport ? '2026' : undefined,
@@ -755,41 +818,83 @@ export function StockDetailView({
         priceChanges={priceChanges}
       />
 
-      {/* ── 3. THANH ĐIỀU HƯỚNG TAB CHÍNH (THEO CHUẨN GIAO DIỆN GỌN GÀNG) ── */}
-      <div className="sticky top-2 z-30 flex items-center gap-1.5 overflow-x-auto rounded-2xl border border-border/80 bg-card/95 p-1.5 backdrop-blur-md shadow-xs scrollbar-none">
-        {TABS.map((tab) => {
-          const Icon = tab.icon
-          const isActive = activeTab === tab.id
-          const isLoadingThisTab = loadingTab === tab.id
-          return (
+      {/* ── 3. THANH ĐIỀU HƯỚNG TAB CHÍNH (TƯƠNG THÍCH MỌI KÍCH THƯỚC MÀN HÌNH TỪ LAPTOP ĐẾN DESKTOP) ── */}
+      <div className="sticky top-2 z-30 relative group">
+        {/* Nút lướt sang trái khi nội dung bị tràn trên màn hình nhỏ */}
+        {canScrollLeft && (
+          <div className="absolute left-0 top-0 bottom-0 z-10 flex items-center pr-3 pl-1 bg-gradient-to-r from-card via-card/95 to-transparent rounded-l-2xl">
             <button
-              key={tab.id}
               type="button"
-              onClick={() => handleTabChange(tab.id)}
-              className={cn(
-                'group relative flex items-center gap-2 rounded-xl px-4 py-2.5 text-xs sm:text-[13px] font-bold transition-all whitespace-nowrap cursor-pointer',
-                isActive
-                  ? 'bg-primary text-primary-foreground shadow-xs'
-                  : 'bg-transparent text-muted-foreground hover:bg-muted/70 hover:text-foreground'
-              )}
+              onClick={() => scrollTabs('left')}
+              className="flex size-7 sm:size-8 items-center justify-center rounded-xl bg-background/90 text-foreground shadow-md border border-border/80 hover:bg-primary hover:text-primary-foreground transition-all cursor-pointer"
+              title="Xem các tab trước"
+              aria-label="Xem các tab trước"
             >
-              <Icon
-                className={cn(
-                  'size-4 shrink-0 transition-colors',
-                  isActive ? 'text-primary-foreground' : tab.iconColor
-                )}
-              />
-              <span>{tab.label}</span>
-              {isLoadingThisTab ? (
-                <Loader2 className="size-3 animate-spin text-primary-foreground" />
-              ) : tab.badge ? (
-                <span className="rounded-full bg-rose-500 px-1.5 py-0.5 font-mono text-[9px] font-black uppercase text-white shadow-2xs animate-pulse">
-                  {tab.badge}
-                </span>
-              ) : null}
+              <ChevronLeft className="size-4" />
             </button>
-          )
-        })}
+          </div>
+        )}
+
+        {/* Danh sách tab co giãn thông minh, tự động thu gọn nhãn trên laptop và hỗ trợ con lăn chuột */}
+        <div
+          ref={tabsContainerRef}
+          onWheel={handleTabsWheel}
+          className="flex items-center gap-1 sm:gap-1.5 overflow-x-auto rounded-2xl border border-border/80 bg-card/95 p-1 sm:p-1.5 backdrop-blur-md shadow-xs scrollbar-none scroll-smooth touch-pan-x"
+        >
+          {TABS.map((tab) => {
+            const Icon = tab.icon
+            const isActive = activeTab === tab.id
+            const isLoadingThisTab = loadingTab === tab.id
+            return (
+              <button
+                key={tab.id}
+                ref={(el) => {
+                  tabButtonRefs.current[tab.id] = el
+                }}
+                type="button"
+                onClick={() => handleTabChange(tab.id)}
+                className={cn(
+                  'group relative flex items-center gap-1.5 sm:gap-2 rounded-xl px-2.5 py-2 sm:px-3.5 sm:py-2.5 text-xs sm:text-[13px] font-bold transition-all whitespace-nowrap cursor-pointer shrink-0',
+                  isActive
+                    ? 'bg-primary text-primary-foreground shadow-xs'
+                    : 'bg-transparent text-muted-foreground hover:bg-muted/70 hover:text-foreground'
+                )}
+              >
+                <Icon
+                  className={cn(
+                    'size-3.5 sm:size-4 shrink-0 transition-colors',
+                    isActive ? 'text-primary-foreground' : tab.iconColor
+                  )}
+                />
+                {/* Trên màn hình lớn (xl+) hiện tên đầy đủ, trên laptop/màn hình nhỏ hiện tên ngắn gọn để vừa vặn */}
+                <span className="hidden xl:inline">{tab.label}</span>
+                <span className="xl:hidden">{tab.shortLabel}</span>
+                {isLoadingThisTab ? (
+                  <Loader2 className="size-3 animate-spin text-primary-foreground" />
+                ) : tab.badge ? (
+                  <span className="rounded-full bg-rose-500 px-1.5 py-0.5 font-mono text-[9px] font-black uppercase text-white shadow-2xs animate-pulse">
+                    {tab.badge}
+                  </span>
+                ) : null}
+              </button>
+            )
+          })}
+        </div>
+
+        {/* Nút lướt sang phải khi màn hình nhỏ bị tràn */}
+        {canScrollRight && (
+          <div className="absolute right-0 top-0 bottom-0 z-10 flex items-center pl-3 pr-1 bg-gradient-to-l from-card via-card/95 to-transparent rounded-r-2xl">
+            <button
+              type="button"
+              onClick={() => scrollTabs('right')}
+              className="flex size-7 sm:size-8 items-center justify-center rounded-xl bg-background/90 text-foreground shadow-md border border-border/80 hover:bg-primary hover:text-primary-foreground transition-all cursor-pointer"
+              title="Xem thêm tab tiếp theo"
+              aria-label="Xem thêm tab tiếp theo"
+            >
+              <ChevronRight className="size-4" />
+            </button>
+          </div>
+        )}
       </div>
 
       {/* ── 4. NỘI DUNG TỪNG TAB ── */}
