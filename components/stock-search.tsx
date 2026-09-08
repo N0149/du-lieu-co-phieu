@@ -39,8 +39,11 @@ export function StockSearch() {
         >
           <div className="flex items-center gap-2.5 truncate">
             <Search className="size-4 shrink-0 text-[#64748b] group-hover:text-emerald-400 transition-colors" />
-            <span className="truncate">
+            <span className="truncate hidden sm:inline">
               Tìm kiếm Biểu đồ, Dữ liệu, Bố cục, Cổ phiếu...
+            </span>
+            <span className="truncate sm:hidden text-[11.5px]">
+              Tìm mã CP, BCTC...
             </span>
           </div>
 

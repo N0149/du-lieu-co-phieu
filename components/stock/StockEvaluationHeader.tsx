@@ -170,8 +170,8 @@ export function StockEvaluationHeader({
   ]
 
   return (
-    <div className="w-full rounded-2xl border border-border bg-card p-5 sm:p-6 shadow-xs">
-      <div className="w-full flex flex-col lg:flex-row gap-6 lg:gap-8 items-stretch">
+    <div className="w-full rounded-2xl border border-border bg-card p-3.5 sm:p-6 shadow-xs">
+      <div className="w-full flex flex-col lg:flex-row gap-5 lg:gap-8 items-stretch">
         {/* ── CỘT TRÁI: ĐÁNH GIÁ 360° (38% bề ngang) ── */}
         <div className="w-full lg:w-[38%] shrink-0 flex flex-col space-y-4 lg:border-r lg:border-border/60 lg:pr-8">
           <div>
@@ -256,10 +256,10 @@ export function StockEvaluationHeader({
         {/* ── CỘT PHẢI: GIÁ & GRID 10 THẺ KPI (62% dàn đều trọn vẹn) ── */}
         <div className="w-full lg:w-[62%] flex-1 min-w-0 flex flex-col justify-between space-y-4">
           {/* Header Giá lớn + Thay đổi */}
-          <div className="w-full flex flex-wrap items-baseline gap-2.5 sm:gap-3">
+          <div className="w-full flex flex-wrap items-baseline gap-2 sm:gap-3">
             <span
               className={cn(
-                'font-mono text-3xl font-black tracking-tight sm:text-4xl',
+                'font-mono text-2xl sm:text-4xl font-black tracking-tight',
                 isDown ? 'text-rose-500' : isUp ? 'text-emerald-500' : 'text-foreground'
               )}
             >
@@ -269,7 +269,7 @@ export function StockEvaluationHeader({
             {/* Biến động giá tuyệt đối */}
             <span
               className={cn(
-                'font-mono text-sm sm:text-base font-bold',
+                'font-mono text-xs sm:text-base font-bold',
                 isDown ? 'text-rose-500' : isUp ? 'text-emerald-500' : 'text-muted-foreground'
               )}
             >
@@ -279,7 +279,7 @@ export function StockEvaluationHeader({
             {/* Pill % thay đổi */}
             <span
               className={cn(
-                'inline-flex items-center gap-1 rounded-md px-2 py-0.5 font-mono text-xs font-bold shadow-xs',
+                'inline-flex items-center gap-0.5 sm:gap-1 rounded-md px-1.5 sm:px-2 py-0.5 font-mono text-[11px] sm:text-xs font-bold shadow-xs',
                 isDown
                   ? 'bg-rose-500/15 text-rose-500 border border-rose-500/30'
                   : isUp
@@ -292,18 +292,18 @@ export function StockEvaluationHeader({
             </span>
 
             {dateDisplay && (
-              <span className="ml-auto text-xs text-muted-foreground font-medium">
+              <span className="ml-auto text-[11px] sm:text-xs text-muted-foreground font-medium">
                 Đóng cửa {dateDisplay}
               </span>
             )}
           </div>
 
           {/* Grid 10 Thẻ KPI: Trải đều 5 cột x 2 hàng toàn diện */}
-          <div className="w-full grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-2 sm:gap-2.5 pt-1">
+          <div className="w-full grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-1.5 sm:gap-2.5 pt-1">
             {kpiCards.map((card) => (
               <div
                 key={card.label}
-                className="w-full rounded-xl border border-border/70 bg-muted/30 p-2.5 sm:p-3 text-center transition-all hover:bg-muted/60 hover:border-border flex flex-col justify-center"
+                className="w-full rounded-xl border border-border/70 bg-muted/30 p-2 sm:p-3 text-center transition-all hover:bg-muted/60 hover:border-border flex flex-col justify-center"
               >
                 <div className="text-[10px] sm:text-[10.5px] font-bold uppercase tracking-wider text-muted-foreground whitespace-nowrap">
                   {card.label}

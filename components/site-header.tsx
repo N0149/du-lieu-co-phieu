@@ -10,6 +10,8 @@ import {
   Sparkles,
   PanelLeftClose,
   PanelLeftOpen,
+  Building2,
+  FileText,
 } from 'lucide-react'
 import { StockSearch } from '@/components/stock-search'
 import { ThemeToggle } from '@/components/theme-toggle'
@@ -229,6 +231,86 @@ export function SiteHeader({ hideSearch = false }: SiteHeaderProps) {
         collapsed={collapsed}
         onToggleCollapse={toggleCollapse}
       />
+
+      {/* Mobile Bottom Navigation Bar (< lg) - Thanh điều hướng nhanh dưới ngón tay cái cho điện thoại */}
+      <nav className="fixed bottom-0 left-0 right-0 z-40 border-t border-white/10 bg-[#14171f]/95 pb-[max(env(safe-area-inset-bottom),0.35rem)] pt-1 backdrop-blur-xl supports-[backdrop-filter]:bg-[#14171f]/85 lg:hidden shadow-2xl">
+        <div className="grid grid-cols-5 items-center justify-items-center px-1">
+          {/* 1. Trang chủ / Thị trường */}
+          <Link
+            href="/"
+            className={cn(
+              'flex flex-col items-center gap-0.5 py-1 px-1.5 rounded-xl text-[10.5px] font-semibold transition-all active:scale-90',
+              pathname === '/' || pathname === '/tin-tuc'
+                ? 'text-emerald-400'
+                : 'text-[#9EACB9] hover:text-[#F0F3F6]'
+            )}
+          >
+            <TrendingUp className="size-5 shrink-0" />
+            <span className="leading-tight">Thị trường</span>
+          </Link>
+
+          {/* 2. Tra cứu Doanh nghiệp / Cổ phiếu */}
+          <Link
+            href="/doanh-nghiep"
+            className={cn(
+              'flex flex-col items-center gap-0.5 py-1 px-1.5 rounded-xl text-[10.5px] font-semibold transition-all active:scale-90',
+              pathname?.startsWith('/stock') ||
+                pathname === '/doanh-nghiep' ||
+                pathname?.startsWith('/ticker') ||
+                pathname?.startsWith('/tra-cuu')
+                ? 'text-emerald-400'
+                : 'text-[#9EACB9] hover:text-[#F0F3F6]'
+            )}
+          >
+            <Building2 className="size-5 shrink-0" />
+            <span className="leading-tight">Cổ phiếu</span>
+          </Link>
+
+          {/* 3. Nút Hỏi AI - Nổi bật trung tâm */}
+          <button
+            type="button"
+            onClick={() => {
+              setMenuOpen(false)
+              setAiModalOpen(true)
+            }}
+            className="flex flex-col items-center -mt-3.5 group cursor-pointer active:scale-90 transition-transform"
+            title="Mở Trợ lý AI Phân Tích Cổ Phiếu"
+          >
+            <div className="flex size-11 items-center justify-center rounded-2xl bg-gradient-to-tr from-emerald-600 via-emerald-500 to-teal-400 text-white shadow-lg shadow-emerald-500/25 border-2 border-[#14171f] group-hover:scale-105 transition-transform">
+              <Sparkles className="size-5.5 animate-pulse" />
+            </div>
+            <span className="mt-0.5 text-[10px] font-bold text-emerald-400">Hỏi AI</span>
+          </button>
+
+          {/* 4. Báo cáo phân tích */}
+          <Link
+            href="/bao-cao"
+            className={cn(
+              'flex flex-col items-center gap-0.5 py-1 px-1.5 rounded-xl text-[10.5px] font-semibold transition-all active:scale-90',
+              pathname?.startsWith('/bao-cao')
+                ? 'text-emerald-400'
+                : 'text-[#9EACB9] hover:text-[#F0F3F6]'
+            )}
+          >
+            <FileText className="size-5 shrink-0" />
+            <span className="leading-tight">Báo cáo</span>
+          </Link>
+
+          {/* 5. Menu mở rộng đầy đủ danh mục */}
+          <button
+            type="button"
+            onClick={() => setMenuOpen((o) => !o)}
+            className={cn(
+              'flex flex-col items-center gap-0.5 py-1 px-1.5 rounded-xl text-[10.5px] font-semibold transition-all active:scale-90 cursor-pointer',
+              menuOpen ? 'text-emerald-400' : 'text-[#9EACB9] hover:text-[#F0F3F6]'
+            )}
+            title="Menu mở rộng danh mục"
+          >
+            <Menu className="size-5 shrink-0" />
+            <span className="leading-tight">Thêm</span>
+          </button>
+        </div>
+      </nav>
     </>
   )
 }

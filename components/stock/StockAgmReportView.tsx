@@ -287,14 +287,14 @@ export function StockAgmReportView({
       </div>
 
       {/* ── 2. SECTION TABS BAR (TƯƠNG THÍCH MỌI MÀN HÌNH TỪ LAPTOP ĐẾN DESKTOP) ── */}
-      <div className="sticky top-20 z-20 relative group">
+      <div className="sticky top-14 sm:top-16 z-20 relative group">
         {/* Nút lướt sang trái khi nội dung bị tràn trên màn hình nhỏ */}
         {canScrollLeft && (
           <div className="absolute left-0 top-0 bottom-0 z-10 flex items-center pr-3 pl-1 bg-gradient-to-r from-card via-card/95 to-transparent rounded-l-2xl">
             <button
               type="button"
               onClick={() => scrollTabs("left")}
-              className="flex size-7 sm:size-8 items-center justify-center rounded-xl bg-background/90 text-foreground shadow-md border border-border/80 hover:bg-primary hover:text-primary-foreground transition-all cursor-pointer"
+              className="flex size-7 sm:size-8 items-center justify-center rounded-xl bg-background/90 text-foreground shadow-md border border-border/80 hover:bg-primary hover:text-primary-foreground transition-all cursor-pointer touch-manipulation"
               title="Xem các mục trước"
               aria-label="Xem các mục trước"
             >
@@ -316,7 +316,7 @@ export function StockAgmReportView({
             type="button"
             onClick={() => setSelectedSectionId("all")}
             className={cn(
-              "flex items-center gap-1.5 rounded-xl px-2.5 py-2 sm:px-3.5 sm:py-2 text-xs sm:text-[13px] font-bold transition-all whitespace-nowrap cursor-pointer shrink-0",
+              "flex items-center gap-1.5 rounded-xl px-2.5 py-2 sm:px-3.5 sm:py-2 text-xs sm:text-[13px] font-bold transition-all whitespace-nowrap cursor-pointer shrink-0 min-h-[38px] touch-manipulation active:scale-95",
               selectedSectionId === "all"
                 ? "bg-primary text-primary-foreground shadow-2xs"
                 : "bg-transparent text-muted-foreground hover:bg-muted/70 hover:text-foreground"
@@ -337,7 +337,7 @@ export function StockAgmReportView({
                 type="button"
                 onClick={() => setSelectedSectionId(sec.id)}
                 className={cn(
-                  "flex items-center gap-1.5 rounded-xl px-2.5 py-2 sm:px-3.5 sm:py-2 text-xs sm:text-[13px] font-bold transition-all whitespace-nowrap cursor-pointer shrink-0",
+                  "flex items-center gap-1.5 rounded-xl px-2.5 py-2 sm:px-3.5 sm:py-2 text-xs sm:text-[13px] font-bold transition-all whitespace-nowrap cursor-pointer shrink-0 min-h-[38px] touch-manipulation active:scale-95",
                   isSelected
                     ? "bg-primary text-primary-foreground shadow-2xs"
                     : "bg-transparent text-muted-foreground hover:bg-muted/70 hover:text-foreground"

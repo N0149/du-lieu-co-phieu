@@ -60,10 +60,13 @@ export const metadata: Metadata = {
 }
 
 export const viewport: Viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  maximumScale: 5,
   colorScheme: 'light dark',
   themeColor: [
     { media: '(prefers-color-scheme: light)', color: '#ffffff' },
-    { media: '(prefers-color-scheme: dark)', color: '#1a1f2b' },
+    { media: '(prefers-color-scheme: dark)', color: '#14171f' },
   ],
 }
 
@@ -104,7 +107,7 @@ export default function RootLayout({
         <Suspense fallback={null}>
           <NavigationProgressBar />
         </Suspense>
-        <div className="flex-1">{children}</div>
+        <div className="flex-1 pb-16 lg:pb-0">{children}</div>
         <SiteFooter />
         <AntiScrapingTrap />
         {process.env.NODE_ENV === 'production' && <Analytics />}

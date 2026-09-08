@@ -459,7 +459,7 @@ export function FinancialStatementsExplorer({
             >
               <thead>
                 <tr className="border-b border-border bg-muted/20 text-[11.5px] font-bold text-muted-foreground uppercase tracking-wider sticky top-0 z-20">
-                  <th className="py-3 pl-4 pr-3 min-w-[280px] max-w-[340px] sticky left-0 z-30 bg-card border-r border-border/60 shadow-[2px_0_5px_rgba(0,0,0,0.04)]">
+                  <th className="py-2.5 sm:py-3 pl-3 sm:pl-4 pr-2 sm:pr-3 min-w-[170px] sm:min-w-[280px] max-w-[210px] sm:max-w-[340px] sticky left-0 z-30 bg-card border-r border-border/60 shadow-[2px_0_5px_rgba(0,0,0,0.04)]">
                     <div className="flex items-center justify-between">
                       <span>Tiêu chí ({unitLabel})</span>
                     </div>
@@ -556,7 +556,7 @@ export function FinancialStatementsExplorer({
                         {/* Cột tiêu chí (Cố định Sticky Left) */}
                         <td
                           className={cn(
-                            "py-2 pr-3 sticky left-0 z-10 bg-card border-r border-border/60 shadow-[2px_0_5px_rgba(0,0,0,0.04)] group-hover:bg-muted/20 transition-colors",
+                            "py-2 pr-2 sm:pr-3 sticky left-0 z-10 bg-card border-r border-border/60 shadow-[2px_0_5px_rgba(0,0,0,0.04)] group-hover:bg-muted/20 transition-colors min-w-[170px] sm:min-w-[280px] max-w-[210px] sm:max-w-[340px]",
                             padLeftClass
                           )}
                         >
