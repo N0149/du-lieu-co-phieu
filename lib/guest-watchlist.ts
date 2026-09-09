@@ -54,3 +54,15 @@ export function clearGuestWatchlist(): void {
     window.dispatchEvent(new Event('watchlist-updated'))
   } catch {}
 }
+
+export function addBulkGuestTickers(tickers: string[]): string[] {
+  if (typeof window === 'undefined') return []
+  const current = getGuestWatchlist()
+  const clean = tickers.map((t) => t.toUpperCase().trim()).filter(Boolean)
+  const updated = Array.from(new Set([...clean, ...current]))
+  try {
+    localStorage.setItem(GUEST_WATCHLIST_KEY, JSON.stringify(updated))
+    window.dispatchEvent(new Event('watchlist-updated'))
+  } catch {}
+  return updated
+}

@@ -20,14 +20,18 @@ import {
   ArrowDown,
   TrendingUp,
   TrendingDown,
+  ListPlus,
+  Check,
+  X,
 } from 'lucide-react'
 import { createClient } from '@/lib/supabase/client'
-import { getGuestWatchlist, addGuestTicker, removeGuestTicker } from '@/lib/guest-watchlist'
+import { getGuestWatchlist, addGuestTicker, removeGuestTicker, addBulkGuestTickers } from '@/lib/guest-watchlist'
 import {
   getUserWatchlist,
   addTickerToWatchlist,
   removeTickerFromWatchlist,
   syncGuestWatchlist,
+  addBulkTickersToWatchlist,
 } from '@/lib/watchlist-service'
 import { AuthModal } from '@/components/auth/AuthModal'
 import { fmtPrice, fmtNum, fmtPct } from '@/lib/format'
@@ -84,6 +88,57 @@ export function WatchlistManager({
   const [isPending, startTransition] = useTransition()
   const [authModalOpen, setAuthModalOpen] = useState(false)
   const [searchFocused, setSearchFocused] = useState(false)
+
+  // Trạng thái nhập danh sách mã hàng loạt
+  const [bulkModalOpen, setBulkModalOpen] = useState(false)
+  const [bulkInput, setBulkInput] = useState('')
+  const [bulkSubmitting, setBulkSubmitting] = useState(false)
+  const [bulkMessage, setBulkMessage] = useState('')
+
+  const parsedBulkTickers = useMemo(() => {
+    if (!bulkInput.trim()) return []
+    const tokens = bulkInput.toUpperCase().split(/[\s,;\n\r\t]+/)
+    const clean = Array.from(
+      new Set(tokens.map((t) => t.trim()).filter((t) => t.length >= 2 && t.length <= 10))
+    )
+    return clean
+  }, [bulkInput])
+
+  const handleBulkSubmit = async () => {
+    if (parsedBulkTickers.length === 0) return
+    setBulkSubmitting(true)
+    setBulkMessage('')
+    try {
+      if (user) {
+        const res = await addBulkTickersToWatchlist(parsedBulkTickers)
+        if (res.success) {
+          setBulkMessage(`✓ Đã thêm thành công ${res.count} mã vào Watchlist của bạn!`)
+          setTickers((prev) => Array.from(new Set([...parsedBulkTickers, ...prev])))
+          setTimeout(() => {
+            setBulkModalOpen(false)
+            setBulkInput('')
+            setBulkMessage('')
+          }, 1200)
+        } else {
+          setBulkMessage(`Lỗi: ${res.error || 'Không thể lưu danh mục.'}`)
+        }
+      } else {
+        addBulkGuestTickers(parsedBulkTickers)
+        setTickers((prev) => Array.from(new Set([...parsedBulkTickers, ...prev])))
+        setBulkMessage(`✓ Đã lưu ${parsedBulkTickers.length} mã vào Watchlist tạm!`)
+        setTimeout(() => {
+          setBulkModalOpen(false)
+          setBulkInput('')
+          setBulkMessage('')
+        }, 1200)
+      }
+      window.dispatchEvent(new Event('watchlist-updated'))
+    } catch {
+      setBulkMessage('Đã xảy ra sự cố khi thêm mã.')
+    } finally {
+      setBulkSubmitting(false)
+    }
+  }
 
   // Khôi phục chế độ xem đã lưu
   useEffect(() => {
@@ -352,6 +407,20 @@ export function WatchlistManager({
               </div>
             )}
           </div>
+
+          {/* Nút Nhập hàng loạt */}
+          <button
+            type="button"
+            onClick={() => {
+              setBulkModalOpen(true)
+              setBulkMessage('')
+            }}
+            className="flex items-center gap-1.5 rounded-lg border border-emerald-500/30 bg-emerald-500/10 px-2.5 py-1.5 text-xs font-semibold text-emerald-400 hover:bg-emerald-500/20 transition-colors cursor-pointer shrink-0"
+            title="Dán danh sách mã cổ phiếu hàng loạt (copy từ Excel, Zalo, ghi chú...)"
+          >
+            <ListPlus className="size-3.5" />
+            <span>Nhập hàng loạt</span>
+          </button>
 
           {/* Ô lọc nhanh trong danh mục khi có nhiều mã (hữu ích cho danh mục 50-100 mã) */}
           {tickers.length > 5 && (
@@ -796,6 +865,113 @@ export function WatchlistManager({
               </div>
             )
           })}
+        </div>
+      )}
+
+      {/* Modal nhập danh sách mã hàng loạt */}
+      {bulkModalOpen && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/70 backdrop-blur-xs animate-in fade-in duration-200">
+          <div className="relative w-full max-w-lg rounded-2xl border border-white/10 bg-[#12161f] p-5 shadow-2xl text-left">
+            <div className="flex items-center justify-between pb-3 border-b border-white/8">
+              <div className="flex items-center gap-2">
+                <div className="flex size-8 items-center justify-center rounded-lg bg-emerald-500/10 text-emerald-400">
+                  <ListPlus className="size-4" />
+                </div>
+                <div>
+                  <h3 className="text-sm font-bold text-white">Nhập danh sách mã hàng loạt</h3>
+                  <p className="text-[11px] text-[#9EACB9]">Thêm nhanh từ 1 đến hơn 100 mã cổ phiếu cùng lúc</p>
+                </div>
+              </div>
+              <button
+                type="button"
+                onClick={() => setBulkModalOpen(false)}
+                className="rounded-lg p-1.5 text-[#64748b] hover:bg-white/5 hover:text-white transition-colors cursor-pointer"
+              >
+                <X className="size-4" />
+              </button>
+            </div>
+
+            <div className="mt-3 space-y-3">
+              <p className="text-xs text-[#9EACB9]">
+                Dán danh sách các mã cổ phiếu cách nhau bằng dấu cách, dấu phẩy hoặc xuống dòng (copy từ Excel, Zalo, ghi chú...):
+              </p>
+
+              <textarea
+                value={bulkInput}
+                onChange={(e) => setBulkInput(e.target.value)}
+                placeholder={"Ví dụ:\nAAM ABT ADS AIC BIO BLI BMI BTD BTU BVH\nhoặc mỗi dòng một mã..."}
+                rows={6}
+                className="w-full rounded-xl border border-white/10 bg-[#0a0d14] p-3 font-mono text-xs text-white placeholder-[#64748b] outline-none focus:border-emerald-500/50 focus:ring-1 focus:ring-emerald-500/50 resize-y"
+              />
+
+              {parsedBulkTickers.length > 0 && (
+                <div className="rounded-xl border border-white/8 bg-white/5 p-2.5">
+                  <div className="flex items-center justify-between text-xs text-emerald-400 mb-1.5 font-semibold">
+                    <span>Đã nhận diện: {parsedBulkTickers.length} mã hợp lệ</span>
+                    <span className="text-[10px] text-[#9EACB9] font-normal">
+                      (Tự động loại trùng lặp)
+                    </span>
+                  </div>
+                  <div className="flex flex-wrap gap-1 max-h-24 overflow-y-auto pr-1">
+                    {parsedBulkTickers.slice(0, 36).map((t) => (
+                      <span
+                        key={t}
+                        className="rounded bg-emerald-500/15 px-1.5 py-0.5 text-[10px] font-mono font-bold text-emerald-300"
+                      >
+                        {t}
+                      </span>
+                    ))}
+                    {parsedBulkTickers.length > 36 && (
+                      <span className="text-[10px] text-[#9EACB9] self-center">
+                        +{parsedBulkTickers.length - 36} mã nữa...
+                      </span>
+                    )}
+                  </div>
+                </div>
+              )}
+
+              {bulkMessage && (
+                <div
+                  className={cn(
+                    'text-xs font-semibold rounded-lg p-2.5 text-center',
+                    bulkMessage.includes('thành công') || bulkMessage.includes('Đã lưu')
+                      ? 'bg-emerald-500/10 text-emerald-400 border border-emerald-500/20'
+                      : 'bg-rose-500/10 text-rose-400 border border-rose-500/20'
+                  )}
+                >
+                  {bulkMessage}
+                </div>
+              )}
+
+              <div className="flex items-center justify-end gap-2 pt-3 border-t border-white/8">
+                <button
+                  type="button"
+                  onClick={() => setBulkModalOpen(false)}
+                  className="rounded-lg px-3 py-1.5 text-xs text-[#9EACB9] hover:bg-white/5 hover:text-white transition-colors cursor-pointer"
+                >
+                  Đóng
+                </button>
+                <button
+                  type="button"
+                  disabled={parsedBulkTickers.length === 0 || bulkSubmitting}
+                  onClick={handleBulkSubmit}
+                  className="flex items-center gap-1.5 rounded-lg bg-emerald-500 px-4 py-1.5 text-xs font-bold text-black transition-transform hover:scale-105 active:scale-95 disabled:opacity-50 disabled:pointer-events-none cursor-pointer shadow-sm"
+                >
+                  {bulkSubmitting ? (
+                    <>
+                      <Loader2 className="size-3.5 animate-spin" />
+                      <span>Đang lưu...</span>
+                    </>
+                  ) : (
+                    <>
+                      <Check className="size-3.5" />
+                      <span>Thêm {parsedBulkTickers.length > 0 ? `${parsedBulkTickers.length} mã` : ''} vào Watchlist</span>
+                    </>
+                  )}
+                </button>
+              </div>
+            </div>
+          </div>
         </div>
       )}
 

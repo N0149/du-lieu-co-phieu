@@ -204,3 +204,47 @@ export async function syncGuestWatchlist(
   revalidatePath('/danh-muc')
   return { success: true, count: cleanTickers.length }
 }
+
+/**
+ * Thêm hàng loạt mã cổ phiếu vào Watchlist của người dùng hiện tại (Server).
+ */
+export async function addBulkTickersToWatchlist(
+  tickers: string[]
+): Promise<{ success: boolean; count: number; error?: string }> {
+  if (!tickers || tickers.length === 0) return { success: true, count: 0 }
+
+  const supabase = await createClient()
+  if (!supabase) return { success: false, count: 0, error: 'Chưa kết nối cơ sở dữ liệu Supabase.' }
+
+  const { data: { user } } = await supabase.auth.getUser()
+  if (!user) return { success: false, count: 0, error: 'UNAUTHENTICATED' }
+
+  const watchlistId = await getOrCreateDefaultWatchlist(supabase, user.id)
+  if (!watchlistId) return { success: false, count: 0, error: 'Không thể khởi tạo danh mục.' }
+
+  const cleanTickers = Array.from(
+    new Set(tickers.map((t) => t.trim().toUpperCase()))
+  ).filter((t) => t.length >= 2 && t.length <= 10)
+
+  if (cleanTickers.length === 0) {
+    return { success: false, count: 0, error: 'Không có mã cổ phiếu hợp lệ.' }
+  }
+
+  const rows = cleanTickers.map((t) => ({
+    watchlist_id: watchlistId,
+    user_id: user.id,
+    ticker: t,
+  }))
+
+  const { error } = await supabase
+    .from('watchlist_items')
+    .upsert(rows, { onConflict: 'watchlist_id, ticker', ignoreDuplicates: true })
+
+  if (error) {
+    console.error('[Watchlist] Lỗi thêm hàng loạt cổ phiếu:', error)
+    return { success: false, count: 0, error: error.message }
+  }
+
+  revalidatePath('/danh-muc')
+  return { success: true, count: cleanTickers.length }
+}
