@@ -33,6 +33,7 @@ export default async function WatchlistPage() {
     pb: s.pb,
     roe: s.roe,
     dy: s.dy ?? null,
+    w1: s.w1 ?? null,
   }))
 
   // 3. Map thông tin cổ phiếu định giá chuyên sâu
