@@ -144,17 +144,18 @@ export function VerticalSidebarNav({
 
   const isItemActive = (href: string) => {
     const target = pendingHref || pathname
-    if (href === '/stock/MWG' || href === '/') {
+    if (!target) return false
+
+    if (href === '/' || href === '/tin-tuc') {
+      return target === '/' || target === '/tin-tuc'
+    }
+    if (href === '/stock/MWG') {
       return (
-        target === '/' ||
-        target.startsWith('/stock/') ||
+        target.startsWith('/stock') ||
         target === '/doanh-nghiep' ||
-        target.startsWith('/ticker/') ||
+        target.startsWith('/ticker') ||
         target.startsWith('/tra-cuu')
       )
-    }
-    if (href === '/tin-tuc') {
-      return target === '/tin-tuc'
     }
     if (href === '/cang-bien') {
       return target.startsWith('/cang-bien') || target.startsWith('/cang/')

@@ -14,6 +14,9 @@ import {
 } from 'lucide-react'
 import { cn } from '@/lib/utils'
 import type { CorporateDisclosure } from '@/lib/disclosures'
+import { getGuestWatchlist } from '@/lib/guest-watchlist'
+import { createClient } from '@/lib/supabase/client'
+import { getUserWatchlist } from '@/lib/watchlist-service'
 
 export type NewsSnapshotItem = {
   id: string
@@ -35,6 +38,7 @@ interface NewsDashboardProps {
   initialDisclosures?: CorporateDisclosure[]
   stockPriceMap?: Record<string, { px: number | null; w1: number | null }>
   defaultTab?: TabType
+  initialWatchlist?: string[]
 }
 
 function decodeHtmlEntities(str: string): string {
@@ -93,13 +97,14 @@ export function NewsDashboard({
   initialDisclosures = [],
   stockPriceMap = {},
   defaultTab = 'cong-bo',
+  initialWatchlist = [],
 }: NewsDashboardProps) {
   const [activeTab, setActiveTab] = useState<TabType>(defaultTab || 'cong-bo')
   const [searchQuery, setSearchQuery] = useState('')
   const [selectedSource, setSelectedSource] = useState<string>('all')
   const [savedIds, setSavedIds] = useState<string[]>([])
   const [watchlistOnly, setWatchlistOnly] = useState(false)
-  const [userWatchlist, setUserWatchlist] = useState<string[]>(['MWG', 'HPG', 'FPT', 'VNM', 'ACB', 'TCB'])
+  const [userWatchlist, setUserWatchlist] = useState<string[]>(initialWatchlist)
   const [news, setNews] = useState<NewsSnapshotItem[]>(initialNews)
   const [disclosures, setDisclosures] = useState<CorporateDisclosure[]>(initialDisclosures)
   const [discExchange, setDiscExchange] = useState<string>('ALL')
@@ -123,23 +128,50 @@ export function NewsDashboard({
     }
   }, [disclosures.length])
 
-  // Load saved bookmarks & watchlist from localStorage
+  // Load saved bookmarks & đồng bộ Watchlist thực tế của người dùng
   useEffect(() => {
+    let cancelled = false
+
     try {
       const saved = localStorage.getItem('rnav_saved_news')
       if (saved) {
         setSavedIds(JSON.parse(saved))
       }
     } catch {}
-    try {
-      const savedWatch = localStorage.getItem('rnav_user_watchlist')
-      if (savedWatch) {
-        const parsed = JSON.parse(savedWatch)
-        if (Array.isArray(parsed) && parsed.length > 0) {
-          setUserWatchlist(parsed.map((s: string) => String(s).toUpperCase()))
-        }
+
+    const syncRealWatchlist = async () => {
+      const supabase = createClient()
+      if (!supabase) {
+        const guest = getGuestWatchlist()
+        if (!cancelled && guest.length > 0) setUserWatchlist(guest)
+        return
       }
-    } catch {}
+
+      try {
+        const { data: { session } } = await supabase.auth.getSession()
+        if (session?.user) {
+          const res = await getUserWatchlist()
+          if (!cancelled) {
+            setUserWatchlist(res.items.map((it) => it.ticker.toUpperCase()))
+          }
+        } else {
+          const guest = getGuestWatchlist()
+          if (!cancelled) {
+            setUserWatchlist(guest)
+          }
+        }
+      } catch {
+        const guest = getGuestWatchlist()
+        if (!cancelled) setUserWatchlist(guest)
+      }
+    }
+
+    syncRealWatchlist()
+    window.addEventListener('watchlist-updated', syncRealWatchlist)
+    return () => {
+      cancelled = true
+      window.removeEventListener('watchlist-updated', syncRealWatchlist)
+    }
   }, [])
 
   // Toggle bookmark handler
@@ -268,8 +300,19 @@ export function NewsDashboard({
       )
     }
 
+    // 0. Lọc theo Watchlist cá nhân nếu người dùng bật
+    if (watchlistOnly) {
+      if (userWatchlist.length === 0) return []
+      result = result.filter((item) => {
+        const t = item.ticker?.toUpperCase()
+        if (t && userWatchlist.includes(t)) return true
+        if (item.tickers && item.tickers.some((tk) => userWatchlist.includes(tk.toUpperCase()))) return true
+        return false
+      })
+    }
+
     return result
-  }, [news, activeTab, selectedSource, searchQuery, savedIds])
+  }, [news, activeTab, selectedSource, searchQuery, savedIds, watchlistOnly, userWatchlist])
 
   const displayedNews = useMemo(() => {
     return filteredNews.slice(0, visibleCount)
@@ -278,7 +321,10 @@ export function NewsDashboard({
   const filteredDisclosures = useMemo(() => {
     return disclosures.filter((item) => {
       if (discImportantOnly && !item.is_important) return false
-      if (watchlistOnly && !userWatchlist.includes(item.symbol.toUpperCase())) return false
+      if (watchlistOnly) {
+        if (userWatchlist.length === 0) return false
+        if (!userWatchlist.includes(item.symbol.toUpperCase())) return false
+      }
       if (discExchange !== 'ALL' && item.exchange?.toUpperCase() !== discExchange.toUpperCase()) return false
       if (discType !== 'ALL' && item.doc_type !== discType) return false
       if (searchQuery.trim()) {
@@ -537,20 +583,34 @@ export function NewsDashboard({
               <div className="size-12 rounded-2xl bg-[#161b24] flex items-center justify-center mb-3 text-2xl border border-[#232a36]">
                 📋
               </div>
-              <p className="text-sm font-semibold text-[#f1f5f9]">Không tìm thấy công bố phù hợp</p>
+              <p className="text-sm font-semibold text-[#f1f5f9]">
+                {watchlistOnly && userWatchlist.length === 0
+                  ? 'Danh mục theo dõi của bạn đang trống'
+                  : 'Không tìm thấy công bố phù hợp'}
+              </p>
               <p className="text-xs text-[#64748b] mt-1 max-w-sm">
                 {watchlistOnly
-                  ? `Chưa có công bố nào của các mã trong Watchlist (${userWatchlist.join(', ')}). Bạn có thể tắt lọc Watchlist để xem toàn bộ tài liệu.`
+                  ? userWatchlist.length === 0
+                    ? 'Bạn chưa thêm mã cổ phiếu nào vào Watchlist. Hãy thêm các cổ phiếu bạn quan tâm để nhận tin công bố riêng biệt.'
+                    : `Chưa có công bố nào của các mã trong Watchlist của bạn (${userWatchlist.join(', ')}). Bạn có thể tắt lọc Watchlist để xem toàn bộ tài liệu.`
                   : 'Thử điều chỉnh lại bộ lọc loại văn bản hoặc từ khóa tìm kiếm.'}
               </p>
               {watchlistOnly && (
-                <button
-                  type="button"
-                  onClick={() => setWatchlistOnly(false)}
-                  className="mt-3 rounded-lg bg-[#1e293b] px-3.5 py-1.5 text-xs text-[#38bdf8] font-medium hover:bg-[#283548] transition-colors border border-[#0284c7]/30"
-                >
-                  Xem tất cả tài liệu
-                </button>
+                <div className="flex items-center gap-2 mt-3">
+                  <button
+                    type="button"
+                    onClick={() => setWatchlistOnly(false)}
+                    className="rounded-lg bg-[#1e293b] px-3.5 py-1.5 text-xs text-[#38bdf8] font-medium hover:bg-[#283548] transition-colors border border-[#0284c7]/30 cursor-pointer"
+                  >
+                    Xem tất cả tài liệu
+                  </button>
+                  <Link
+                    href="/danh-muc"
+                    className="rounded-lg bg-amber-500/15 px-3.5 py-1.5 text-xs text-amber-400 font-medium hover:bg-amber-500/25 transition-colors border border-amber-500/30"
+                  >
+                    {userWatchlist.length === 0 ? 'Thêm cổ phiếu vào Watchlist' : 'Quản lý Watchlist'}
+                  </Link>
+                </div>
               )}
             </div>
           ) : (
@@ -810,20 +870,43 @@ export function NewsDashboard({
 
           {/* Empty State */}
           {!isLoading && displayedNews.length === 0 && (
-            <div className="flex flex-col items-center justify-center py-28 text-center text-[#64748b]">
-              <p className="text-sm font-medium text-[#94a3b8]">Không có bài viết nào phù hợp bộ lọc</p>
-              {(searchQuery || selectedSource !== 'all' || activeTab !== 'all') && (
-                <button
-                  type="button"
-                  onClick={() => {
-                    setSearchQuery('')
-                    setSelectedSource('all')
-                    setActiveTab('all')
-                  }}
-                  className="mt-3 rounded bg-[#1e2430] px-3 py-1.5 text-xs text-[#c9d1d9] hover:bg-[#283142] hover:text-white"
+            <div className="flex flex-col items-center justify-center py-28 text-center text-[#64748b] px-4">
+              <p className="text-sm font-semibold text-[#f1f5f9]">
+                {watchlistOnly
+                  ? userWatchlist.length === 0
+                    ? 'Danh mục theo dõi của bạn đang trống'
+                    : 'Không có tin tức nào về các mã trong Watchlist của bạn'
+                  : 'Không có bài viết nào phù hợp bộ lọc'}
+              </p>
+              <p className="text-xs text-[#64748b] mt-1 max-w-sm">
+                {watchlistOnly
+                  ? userWatchlist.length === 0
+                    ? 'Hãy thêm các mã cổ phiếu bạn quan tâm vào Watchlist để lọc tin nhanh chóng.'
+                    : `Hiện chưa có tin bài mới liên quan đến (${userWatchlist.join(', ')}). Bạn có thể tắt lọc Watchlist để xem toàn bộ tin tức.`
+                  : 'Thử tìm kiếm với từ khóa khác hoặc chuyển sang nguồn tin khác.'}
+              </p>
+              {watchlistOnly && userWatchlist.length === 0 ? (
+                <Link
+                  href="/danh-muc"
+                  className="mt-3 inline-flex items-center gap-1.5 rounded-lg bg-emerald-500 px-3.5 py-1.5 text-xs text-black font-bold hover:bg-emerald-400 transition-colors"
                 >
-                  Xóa toàn bộ bộ lọc
-                </button>
+                  <Star className="size-3.5 fill-black" />
+                  <span>Thêm cổ phiếu vào Watchlist</span>
+                </Link>
+              ) : (
+                (searchQuery || selectedSource !== 'all' || activeTab !== 'all' || watchlistOnly) && (
+                  <button
+                    type="button"
+                    onClick={() => {
+                      setSearchQuery('')
+                      setSelectedSource('all')
+                      setWatchlistOnly(false)
+                    }}
+                    className="mt-3 rounded bg-[#1e2430] px-3.5 py-1.5 text-xs text-[#c9d1d9] hover:bg-[#283142] hover:text-white cursor-pointer border border-[#2d3748]"
+                  >
+                    Xem tất cả tin tức
+                  </button>
+                )
               )}
             </div>
           )}

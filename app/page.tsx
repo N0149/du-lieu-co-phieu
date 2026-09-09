@@ -3,6 +3,7 @@ import { SiteHeader } from '@/components/site-header'
 import { NewsDashboard, NewsSnapshotItem } from '@/components/news/news-dashboard'
 import { getCachedNews, fetchAllRssFeeds } from '@/lib/rss-news-service'
 import { getRecentMarketDisclosures } from '@/lib/disclosures'
+import { getUserWatchlist } from '@/lib/watchlist-service'
 import manifestRaw from '@/data/longlive_manifest.json'
 
 export const dynamic = 'force-dynamic'
@@ -56,8 +57,13 @@ function getStockPriceMap(): Record<string, { px: number | null; w1: number | nu
 }
 
 export default async function HomePage() {
-  const initialNews = await getInitialNews()
-  const initialDisclosures = getRecentMarketDisclosures({ limit: 200 })
+  const [initialNews, initialDisclosures, userWatchlistResult] = await Promise.all([
+    getInitialNews(),
+    getRecentMarketDisclosures({ limit: 200 }),
+    getUserWatchlist(),
+  ])
+
+  const initialWatchlist = userWatchlistResult.items.map((it) => it.ticker)
   const stockPriceMap = getStockPriceMap()
 
   // Calculate trending tickers
@@ -88,9 +94,9 @@ export default async function HomePage() {
           initialTrending={initialTrending}
           stockPriceMap={stockPriceMap}
           defaultTab="cong-bo"
+          initialWatchlist={initialWatchlist}
         />
       </main>
     </div>
   )
 }
-
