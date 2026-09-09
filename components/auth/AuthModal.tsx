@@ -57,10 +57,13 @@ export function AuthModal({
 
     try {
       const origin = window.location.origin
+      if (typeof window !== 'undefined') {
+        sessionStorage.setItem('auth_redirect_next', window.location.pathname)
+      }
       const { error: authErr } = await supabase.auth.signInWithOAuth({
         provider: 'google',
         options: {
-          redirectTo: `${origin}/auth/callback?next=${encodeURIComponent(window.location.pathname)}`,
+          redirectTo: `${origin}/auth/callback`,
         },
       })
       if (authErr) throw authErr
@@ -88,11 +91,13 @@ export function AuthModal({
     }
 
     try {
-      const origin = window.location.origin
+      if (typeof window !== 'undefined') {
+        sessionStorage.setItem('auth_redirect_next', window.location.pathname)
+      }
       const { error: otpErr } = await supabase.auth.signInWithOtp({
         email: email.trim(),
         options: {
-          emailRedirectTo: `${origin}/auth/callback?next=${encodeURIComponent(window.location.pathname)}`,
+          emailRedirectTo: `${origin}/auth/callback`,
         },
       })
 
