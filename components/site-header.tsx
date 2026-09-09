@@ -16,6 +16,7 @@ import {
 import { StockSearch } from '@/components/stock-search'
 import { ThemeToggle } from '@/components/theme-toggle'
 import { TrialBadge } from '@/components/TrialBadge'
+import { UserNav } from '@/components/auth/UserNav'
 import { VerticalSidebarNav, NAV_GROUPS } from '@/components/vertical-sidebar-nav'
 import { cn } from '@/lib/utils'
 
@@ -120,6 +121,8 @@ export function SiteHeader({ hideSearch = false }: SiteHeaderProps) {
               <TrialBadge />
               <ThemeToggle />
             </div>
+
+            <UserNav />
 
             {/* Mobile Hamburger Button */}
             <button

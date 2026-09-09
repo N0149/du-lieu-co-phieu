@@ -26,6 +26,13 @@ export function middleware(request: NextRequest) {
   const userAgent = request.headers.get('user-agent') || ''
   const ip = getClientIp(request.headers)
 
+  // 0. Nếu URL chứa mã xác thực auth code mà không ở /auth/callback -> Tự động chuyển hướng về /auth/callback
+  if (pathname !== '/auth/callback' && request.nextUrl.searchParams.has('code')) {
+    const callbackUrl = new URL('/auth/callback', request.url)
+    callbackUrl.search = request.nextUrl.search
+    return NextResponse.redirect(callbackUrl)
+  }
+
   // 1. Kiểm tra nếu IP đã dính bẫy Honeypot -> Chặn ngay lập tức
   if (isIpBlockedByHoneypot(ip)) {
     return new NextResponse(

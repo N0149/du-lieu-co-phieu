@@ -30,6 +30,7 @@ import {
 import type { StockDetailData, StockManifestItem } from '@/lib/longlivestock'
 import type { Report } from '@/lib/use-reports'
 import { cn } from '@/lib/utils'
+import { WatchlistStarButton } from '@/components/watchlist/WatchlistStarButton'
 import { BusinessPlanComparison, BusinessPlanYear } from '@/components/business-plan-comparison'
 import { FinancialStatementsExplorer } from '@/components/financial-statements-explorer'
 import { CompanyReportsTab } from '@/components/reports/CompanyReportsTab'
@@ -745,6 +746,8 @@ export function StockDetailView({
         </Link>
 
         <div className="flex items-center gap-2">
+          <WatchlistStarButton ticker={ticker} showLabel size="sm" />
+
           <button
             type="button"
             onClick={handleCopy}
