@@ -24,9 +24,10 @@ export function UserNav() {
       return
     }
 
-    // 1. Kiểm tra session hiện tại
-    supabase.auth.getUser().then(async ({ data: { user: currentUser } }) => {
+    // 1. Kiểm tra session hiện tại từ cookie/storage tức thì (0ms)
+    supabase.auth.getSession().then(async ({ data: { session } }) => {
       if (cancelled) return
+      const currentUser = session?.user ?? null
       setUser(currentUser)
       setLoading(false)
 

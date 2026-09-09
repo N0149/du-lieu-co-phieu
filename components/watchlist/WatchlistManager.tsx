@@ -44,12 +44,20 @@ export type StockInfo = {
 type WatchlistManagerProps = {
   allManifestStocks: { t: string; n: string; e: string; px: number | null; pe: number | null; pb: number | null; roe: number | null; dy: number | null }[]
   curatedStocks: Record<string, { rnav: number; upside: number; mos: number; status: string; updated: boolean }>
+  initialTickers?: string[]
+  initialUser?: { email: string; id: string } | null
 }
 
-export function WatchlistManager({ allManifestStocks, curatedStocks }: WatchlistManagerProps) {
-  const [user, setUser] = useState<any>(null)
-  const [tickers, setTickers] = useState<string[]>([])
-  const [loading, setLoading] = useState(true)
+export function WatchlistManager({
+  allManifestStocks,
+  curatedStocks,
+  initialTickers = [],
+  initialUser = null,
+}: WatchlistManagerProps) {
+  const [user, setUser] = useState<any>(initialUser)
+  const [tickers, setTickers] = useState<string[]>(initialTickers)
+  // Nếu đã có initialTickers từ SSR hoặc initialUser, không bao giờ để loading = true
+  const [loading, setLoading] = useState(false)
   const [query, setQuery] = useState('')
   const [isPending, startTransition] = useTransition()
   const [authModalOpen, setAuthModalOpen] = useState(false)
@@ -64,50 +72,49 @@ export function WatchlistManager({ allManifestStocks, curatedStocks }: Watchlist
     return map
   }, [allManifestStocks])
 
-  // Tải danh mục ban đầu
-  const loadWatchlist = async () => {
-    setLoading(true)
+  // Đồng bộ session & danh mục ngầm phía client (không block UI)
+  const syncClientState = async () => {
     const supabase = createClient()
-
     if (!supabase) {
-      setTickers(getGuestWatchlist())
-      setLoading(false)
+      const guest = getGuestWatchlist()
+      if (guest.length > 0) setTickers(guest)
       return
     }
 
-    const { data: { user: currentUser } } = await supabase.auth.getUser()
-    setUser(currentUser)
+    // Đọc session nhanh từ storage (0ms)
+    const { data: { session } } = await supabase.auth.getSession()
+    const currentUser = session?.user ?? null
+    if (currentUser) setUser(currentUser)
 
     if (currentUser) {
-      // Đã đăng nhập -> Lấy từ Supabase
+      // Đã đăng nhập -> Nếu có mã guest lưu tạm thì đồng bộ ngầm
       const guestList = getGuestWatchlist()
       if (guestList.length > 0) {
         await syncGuestWatchlist(guestList)
         localStorage.removeItem('dulieudautu_guest_watchlist')
+        const res = await getUserWatchlist()
+        setTickers(res.items.map((it) => it.ticker.toUpperCase()))
+      } else if (tickers.length === 0) {
+        const res = await getUserWatchlist()
+        setTickers(res.items.map((it) => it.ticker.toUpperCase()))
       }
-
-      const res = await getUserWatchlist()
-      const serverTickers = res.items.map((it) => it.ticker.toUpperCase())
-      setTickers(serverTickers)
     } else {
-      // Khách -> Lấy từ localStorage
+      // Khách vãng lai -> Kiểm tra localStorage
       const guestList = getGuestWatchlist()
-      // Nếu là lần đầu tiên truy cập và chưa có mã nào, đặt mặc định 4 mã mẫu
-      if (guestList.length === 0) {
-        const defaults = ['FPT', 'LHG', 'MWG', 'DAN']
-        setTickers(defaults)
-      } else {
+      if (guestList.length > 0) {
         setTickers(guestList)
+      } else if (tickers.length === 0) {
+        // Gợi ý mặc định nếu hoàn toàn chưa có mã nào
+        setTickers(['FPT', 'LHG', 'MWG', 'DAN'])
       }
     }
-    setLoading(false)
   }
 
   useEffect(() => {
-    loadWatchlist()
+    syncClientState()
 
     const handleUpdate = () => {
-      loadWatchlist()
+      syncClientState()
     }
     window.addEventListener('watchlist-updated', handleUpdate)
     return () => window.removeEventListener('watchlist-updated', handleUpdate)

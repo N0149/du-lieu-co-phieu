@@ -4,16 +4,26 @@ import { SiteHeader } from '@/components/site-header'
 import { WatchlistManager } from '@/components/watchlist/WatchlistManager'
 import { getAllStocks } from '@/lib/longlivestock'
 import { stocks, upside, marginOfSafety } from '@/lib/data'
+import { getUserWatchlist } from '@/lib/watchlist-service'
+
+export const dynamic = 'force-dynamic'
 
 export const metadata: Metadata = {
   title: 'Danh Mục Theo Dõi (Watchlist) · Dữ Liệu Đầu Tư',
   description: 'Tự tạo và quản lý danh mục cổ phiếu theo dõi cá nhân, đồng bộ tức thì trên mọi thiết bị.',
 }
 
-export default function WatchlistPage() {
+export default async function WatchlistPage() {
   const allStocks = getAllStocks()
 
-  // Thu nhỏ payload manifest để gửi sang Client tối ưu dung lượng mạng
+  // 1. Tải trước Watchlist từ Server (SSR) để hiển thị tức thì 0ms, triệt tiêu hoàn toàn spinner
+  const serverWatchlist = await getUserWatchlist()
+  const initialTickers = serverWatchlist.items.map((it) => it.ticker)
+  const initialUser = serverWatchlist.isAuthenticated
+    ? { email: serverWatchlist.userEmail || '', id: serverWatchlist.userId || '' }
+    : null
+
+  // 2. Thu nhỏ payload manifest gửi sang Client
   const allManifestStocks = allStocks.map((s) => ({
     t: s.t,
     n: s.n,
@@ -25,7 +35,7 @@ export default function WatchlistPage() {
     dy: s.dy ?? null,
   }))
 
-  // Map thông tin cổ phiếu phân tích giá trị có sẵn (nếu có)
+  // 3. Map thông tin cổ phiếu định giá chuyên sâu
   const curatedStocks: Record<
     string,
     { rnav: number; upside: number; mos: number; status: string; updated: boolean }
@@ -60,6 +70,8 @@ export default function WatchlistPage() {
         <WatchlistManager
           allManifestStocks={allManifestStocks}
           curatedStocks={curatedStocks}
+          initialTickers={initialTickers}
+          initialUser={initialUser}
         />
       </main>
     </div>
