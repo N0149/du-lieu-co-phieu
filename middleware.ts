@@ -5,6 +5,7 @@ import {
   isIpBlockedByHoneypot,
   checkInMemoryRateLimit,
   getClientIp,
+  verifyApiOriginAccess,
 } from '@/lib/security'
 
 // Bỏ qua các file tĩnh, favicon, static image và next internal bundle
@@ -68,8 +69,35 @@ export function middleware(request: NextRequest) {
     )
   }
 
-  // 3. Rate Limiting cho API Endpoints (tối đa 60 requests / phút / IP)
+  // 3. Khóa van bảo vệ API nội bộ (Anti-Scraping / Direct API Access Gatekeeper)
   if (pathname.startsWith('/api/')) {
+    const host = request.headers.get('host') || request.nextUrl.host
+    const apiGuard = verifyApiOriginAccess(pathname, request.headers, host)
+
+    // A. Nếu người dùng gõ/paste trực tiếp URL API vào thanh địa chỉ trình duyệt -> Chuyển hướng về trang giao diện UI
+    if (!apiGuard.allowed && apiGuard.redirectUrl) {
+      return NextResponse.redirect(new URL(apiGuard.redirectUrl, request.url))
+    }
+
+    // B. Nếu là script ngoài (Python, curl, Postman, web clone) -> Chặn đứng 403 Forbidden
+    if (!apiGuard.allowed) {
+      console.warn(`[Anti-Scraping] Blocked external API call to ${pathname} from IP: ${ip} (${apiGuard.reason})`)
+      return new NextResponse(
+        JSON.stringify({
+          error: 'DIRECT_API_ACCESS_FORBIDDEN',
+          message: 'Truy cập trực tiếp vào API nội bộ bị từ chối. Dữ liệu chỉ được hiển thị trên giao diện dulieudautu.com.',
+        }),
+        {
+          status: 403,
+          headers: {
+            'Content-Type': 'application/json; charset=utf-8',
+            'X-Robots-Tag': 'noindex, nofollow, noarchive',
+          },
+        }
+      )
+    }
+
+    // Rate Limiting cho API Endpoints (tối đa 60 requests / phút / IP)
     // Không rate-limit honeypot trap để cho bot chạy thẳng vào bẫy
     if (pathname !== '/api/security/trap') {
       const apiLimiter = checkInMemoryRateLimit(`rl:api:${ip}`, {
@@ -98,7 +126,33 @@ export function middleware(request: NextRequest) {
       }
     }
   } else {
-    // 4. Rate Limiting cho Web Pages (tối đa 150 requests / phút / IP để chống spam reload)
+    // 4. Chống cào hàng loạt trang cổ phiếu (Bulk Stock Scraping: tối đa 25 mã / phút / IP)
+    if (pathname.startsWith('/stock/')) {
+      const stockLimiter = checkInMemoryRateLimit(`rl:stock:${ip}`, {
+        windowMs: 60_000,
+        max: 25,
+      })
+
+      if (!stockLimiter.success) {
+        console.warn(`[Anti-Scraping] IP: ${ip} cào duyệt quá 25 mã cổ phiếu / phút trên ${pathname}`)
+        return new NextResponse(
+          `<html><body style="font-family: sans-serif; text-align: center; padding: 50px;">
+            <h2>Yêu cầu tra cứu bị tạm dừng (429)</h2>
+            <p>Hệ thống ghi nhận bạn đang tra cứu số lượng lớn mã cổ phiếu với tốc độ bất thường.</p>
+            <p>Vui lòng chờ 1 phút trước khi tiếp tục tra cứu.</p>
+          </body></html>`,
+          {
+            status: 429,
+            headers: {
+              'Content-Type': 'text/html; charset=utf-8',
+              'Retry-After': '60',
+            },
+          }
+        )
+      }
+    }
+
+    // 5. Rate Limiting chung cho Web Pages (tối đa 150 requests / phút / IP để chống spam reload)
     const pageLimiter = checkInMemoryRateLimit(`rl:page:${ip}`, {
       windowMs: 60_000,
       max: 150,

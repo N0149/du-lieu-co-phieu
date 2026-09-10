@@ -60,8 +60,14 @@ export async function getFinancialChartData(
     if (!res.ok) return null
     const data = await decryptApiResponse(res)
     if (data) {
-      fs.mkdirSync(targetDir, { recursive: true })
-      fs.writeFileSync(cacheFile, JSON.stringify(data, null, 2), 'utf-8')
+      try {
+        if (!fs.existsSync(targetDir)) {
+          fs.mkdirSync(targetDir, { recursive: true })
+        }
+        fs.writeFileSync(cacheFile, JSON.stringify(data, null, 2), 'utf-8')
+      } catch {
+        // Bỏ qua lỗi ghi disk trên môi trường read-only như Vercel
+      }
       return data as FinancialChartPayload
     }
   } catch (err) {

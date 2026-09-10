@@ -1,3 +1,4 @@
+import fs from 'node:fs'
 import path from 'node:path'
 import { DatabaseSync } from 'node:sqlite'
 
@@ -6,12 +7,13 @@ export interface CostBreakdownPoint {
   displayDate: string
   quarterNum: number | null
   doanhThuThuan: number // Doanh thu thuần (tỷ đồng - Đường line)
-  giaVon: number // Giá vốn hàng bán (tỷ đồng - Stacked bar 1)
-  cpBanHang: number // Chi phí bán hàng (tỷ đồng - Stacked bar 2)
-  cpQuanLy: number // Chi phí quản lý doanh nghiệp (tỷ đồng - Stacked bar 3)
-  cpLaiVay: number // Chi phí lãi vay (tỷ đồng - Stacked bar 4)
-  tongChiPhi: number // Tổng chi phí hoạt động
-  // Tỷ trọng % trên Doanh thu thuần
+  // 1. Số tiền chi phí (Tỷ đồng)
+  giaVon: number // Giá vốn hàng bán (COGS)
+  cpBanHang: number // Chi phí bán hàng
+  cpQuanLy: number // Chi phí quản lý doanh nghiệp
+  cpLaiVay: number // Chi phí lãi vay
+  tongChiPhi: number // Tổng 4 chi phí
+  // 2. Tỷ trọng trên Doanh thu thuần (%)
   pctGiaVon: number | null
   pctBanHang: number | null
   pctQuanLy: number | null
@@ -31,8 +33,9 @@ let dbInstance: DatabaseSync | null = null
 
 function getFinancialStatementsDb(): DatabaseSync | null {
   if (dbInstance) return dbInstance
+  if (!fs.existsSync(DB_PATH)) return null
   try {
-    const db = new DatabaseSync(DB_PATH)
+    const db = new DatabaseSync(DB_PATH, { readOnly: true })
     dbInstance = db
     return dbInstance
   } catch (err) {

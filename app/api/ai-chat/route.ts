@@ -8,6 +8,7 @@ import reportsData from '@/data/reports-snapshot.json'
 import { getCurrentUser } from '@/lib/session'
 import { checkUserAccess } from '@/lib/auth-check'
 import { checkRateLimit } from '@/lib/rate-limiter'
+import { getClientIp } from '@/lib/security'
 
 export const dynamic = 'force-dynamic'
 export const maxDuration = 60
@@ -115,7 +116,7 @@ export async function POST(req: NextRequest) {
       access.status === 'TRIAL_ACTIVE' || access.status === 'SUBSCRIPTION_ACTIVE'
 
     // 2. Xác định định danh rate limit
-    let identifier = `guest:${req.headers.get('x-forwarded-for')?.split(',')[0].trim() || '127.0.0.1'}`
+    let identifier = `guest:${getClientIp(req.headers)}`
     if (user?.id) {
       identifier = `user:${user.id}`
     }

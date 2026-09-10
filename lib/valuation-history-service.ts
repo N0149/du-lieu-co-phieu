@@ -69,8 +69,14 @@ export async function getValuationHistory(symbol: string): Promise<ValuationHist
     if (!res.ok) return null
     const data = await decryptApiResponse(res)
     if (data) {
-      fs.mkdirSync(VAL_DIR, { recursive: true })
-      fs.writeFileSync(cacheFile, JSON.stringify(data, null, 2), 'utf-8')
+      try {
+        if (!fs.existsSync(VAL_DIR)) {
+          fs.mkdirSync(VAL_DIR, { recursive: true })
+        }
+        fs.writeFileSync(cacheFile, JSON.stringify(data, null, 2), 'utf-8')
+      } catch {
+        // Bỏ qua lỗi ghi disk trên môi trường read-only như Vercel
+      }
       return data as ValuationHistoryPayload
     }
   } catch (err) {

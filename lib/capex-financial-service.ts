@@ -1,3 +1,4 @@
+import fs from 'node:fs'
 import path from 'node:path'
 import { DatabaseSync } from 'node:sqlite'
 
@@ -35,8 +36,9 @@ let dbInstance: DatabaseSync | null = null
 
 function getFinancialStatementsDb(): DatabaseSync | null {
   if (dbInstance) return dbInstance
+  if (!fs.existsSync(DB_PATH)) return null
   try {
-    const db = new DatabaseSync(DB_PATH)
+    const db = new DatabaseSync(DB_PATH, { readOnly: true })
     dbInstance = db
     return dbInstance
   } catch (err) {

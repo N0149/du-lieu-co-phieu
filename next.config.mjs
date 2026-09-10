@@ -33,6 +33,17 @@ const securityHeaders = [
 const nextConfig = {
   poweredByHeader: false,
   serverExternalPackages: ['node:sqlite'],
+  outputFileTracingIncludes: {
+    '/stock/[symbol]': [
+      './data/financial_charts/**/*',
+      './data/valuation_history/**/*',
+      './data/dividend_history/**/*',
+      './data/segments/**/*',
+      './data/price_history/**/*',
+      './data/industry-reports.json',
+      './data/reports-snapshot.json',
+    ],
+  },
   outputFileTracingExcludes: {
     '*': [
       'data/evaluation_cache/**',

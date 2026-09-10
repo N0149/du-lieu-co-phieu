@@ -60,8 +60,14 @@ export async function getDividendHistory(symbol: string): Promise<DividendHistor
     if (!res.ok) return null
     const data = await decryptApiResponse(res)
     if (data) {
-      fs.mkdirSync(DIV_DIR, { recursive: true })
-      fs.writeFileSync(cacheFile, JSON.stringify(data, null, 2), 'utf-8')
+      try {
+        if (!fs.existsSync(DIV_DIR)) {
+          fs.mkdirSync(DIV_DIR, { recursive: true })
+        }
+        fs.writeFileSync(cacheFile, JSON.stringify(data, null, 2), 'utf-8')
+      } catch {
+        // Bỏ qua lỗi ghi disk trên môi trường read-only như Vercel
+      }
       return data as DividendHistoryPayload
     }
   } catch (err) {

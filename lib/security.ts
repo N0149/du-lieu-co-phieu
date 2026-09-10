@@ -191,19 +191,108 @@ export function checkInMemoryRateLimit(
  * Lấy IP thực của Client từ Request Headers (hỗ trợ Vercel, Cloudflare, Reverse Proxies)
  */
 export function getClientIp(headers: Headers): string {
+  // 1. Cloudflare header (đáng tin cậy nhất và không thể bị giả mạo khi qua Cloudflare Proxy)
+  const cfConnectingIp = headers.get('cf-connecting-ip')
+  if (cfConnectingIp) return cfConnectingIp.trim()
+
+  // 2. Vercel / Standard reverse proxy
+  const realIp = headers.get('x-real-ip')
+  if (realIp) return realIp.trim()
+
   const forwarded = headers.get('x-forwarded-for')
   if (forwarded) {
     const firstIp = forwarded.split(',')[0].trim()
     if (firstIp) return firstIp
   }
 
-  const realIp = headers.get('x-real-ip')
-  if (realIp) return realIp.trim()
-
-  const cfConnectingIp = headers.get('cf-connecting-ip')
-  if (cfConnectingIp) return cfConnectingIp.trim()
-
   return '127.0.0.1'
+}
+
+/**
+ * Kết quả thẩm định quyền truy cập API nội bộ
+ */
+export type ApiOriginVerificationResult = {
+  allowed: boolean
+  redirectUrl?: string
+  reason?: string
+}
+
+/**
+ * Thẩm định truy cập API nội bộ:
+ * - Cho phép request cùng origin (từ chính frontend React trên website)
+ * - Chuyển hướng người dùng vào trang giao diện nếu gõ thẳng URL API vào thanh địa chỉ trình duyệt
+ * - Chặn đứng các script cào tự động từ bên ngoài (Python, curl, Postman, cross-site fetch)
+ */
+export function verifyApiOriginAccess(
+  pathname: string,
+  headers: Headers,
+  host: string | null
+): ApiOriginVerificationResult {
+  // 1. Ngoại lệ các route hệ thống, auth callback, cron job và bẫy honeypot
+  if (
+    pathname === '/api/security/trap' ||
+    pathname.startsWith('/api/auth/') ||
+    pathname.startsWith('/api/sync-')
+  ) {
+    return { allowed: true }
+  }
+
+  const secFetchSite = headers.get('sec-fetch-site')
+  const secFetchDest = headers.get('sec-fetch-dest')
+  const secFetchMode = headers.get('sec-fetch-mode')
+  const referer = headers.get('referer')
+  const origin = headers.get('origin')
+  const accept = headers.get('accept') || ''
+
+  // 2. Nếu người dùng gõ/paste thẳng link API vào thanh địa chỉ trình duyệt
+  // (sec-fetch-dest === 'document', sec-fetch-mode === 'navigate', hoặc browser gửi accept: text/html)
+  if (secFetchDest === 'document' || secFetchMode === 'navigate' || accept.startsWith('text/html')) {
+    // Nếu là API cổ phiếu (vd: /api/stock/HPG/..., /api/financials/HPG, /api/business-plan/HPG)
+    // Tự động chuyển hướng về trang giao diện /stock/HPG để xem trực tiếp
+    const match = pathname.match(/\/(?:stock|financials|business-plan|reports\/company)\/([A-Za-z0-9]{3,4})/i)
+    if (match && match[1]) {
+      return { allowed: false, redirectUrl: `/stock/${match[1].toUpperCase()}` }
+    }
+    return { allowed: false, redirectUrl: '/' }
+  }
+
+  // 3. Chặn các request Cross-Site (từ trang web đối thủ gọi sang trộm API)
+  if (secFetchSite === 'cross-site') {
+    return { allowed: false, reason: 'CROSS_SITE_API_REQUEST_BLOCKED' }
+  }
+
+  // 4. Kiểm tra hợp lệ Same-Origin:
+  // - Trình duyệt chuẩn gửi sec-fetch-site: 'same-origin' hoặc 'same-site'
+  const hasSameOriginSec = secFetchSite === 'same-origin' || secFetchSite === 'same-site'
+
+  // - Hoặc có referer hợp lệ trỏ từ host của website
+  let isMatchingReferer = false
+  if (referer && host) {
+    try {
+      const refUrl = new URL(referer)
+      if (refUrl.host === host || refUrl.host.endsWith(host)) {
+        isMatchingReferer = true
+      }
+    } catch {}
+  }
+
+  // - Hoặc origin trùng khớp host
+  let isMatchingOrigin = false
+  if (origin && host) {
+    try {
+      const originUrl = new URL(origin)
+      if (originUrl.host === host || originUrl.host.endsWith(host)) {
+        isMatchingOrigin = true
+      }
+    } catch {}
+  }
+
+  if (hasSameOriginSec || isMatchingReferer || isMatchingOrigin) {
+    return { allowed: true }
+  }
+
+  // 5. Nếu không có bất kỳ dấu hiệu xác nhận Same-Origin nào -> Script ngoài (Python, curl, Postman, crawler)
+  return { allowed: false, reason: 'EXTERNAL_SCRAPER_OR_DIRECT_CALL' }
 }
 
 /**
@@ -216,9 +305,12 @@ export function isSameOriginOrDirect(headers: Headers, host: string | null): boo
   }
 
   const referer = headers.get('referer')
-  if (!referer) return true // Direct browser address bar visit
+  if (referer && host && referer.includes(host)) {
+    return true
+  }
 
-  if (host && referer.includes(host)) {
+  const origin = headers.get('origin')
+  if (origin && host && origin.includes(host)) {
     return true
   }
 

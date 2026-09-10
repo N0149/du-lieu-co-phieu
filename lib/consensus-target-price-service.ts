@@ -1,7 +1,5 @@
-import fs from 'node:fs'
-import path from 'node:path'
-import { DatabaseSync } from 'node:sqlite'
 import { getStockPriceHistory, type DailyPricePoint } from './stock-price-history-service'
+import { fetchAndCacheCompanyReports } from './company-reports-service'
 
 export interface BrokerReportTarget {
   id: string
@@ -39,8 +37,6 @@ export interface ConsensusTargetPayload {
   timeline: TargetPriceTimelinePoint[]
 }
 
-const DB_PATH = path.join(process.cwd(), 'data', 'company_reports.db')
-
 function parseDateToTimestamp(dateStr: string): number {
   if (!dateStr) return 0
   const parts = dateStr.split('-')
@@ -64,30 +60,19 @@ export async function getConsensusTargetPriceData(
   const pricePoints = priceData.points
   const currentPrice = pricePoints[pricePoints.length - 1].close
 
-  // 2. Lấy các báo cáo phân tích có giá mục tiêu từ SQLite
-  let reports: BrokerReportTarget[] = []
-  if (fs.existsSync(DB_PATH)) {
-    try {
-      const db = new DatabaseSync(DB_PATH)
-      const stmt = db.prepare(`
-        SELECT id, date, source, recommendation, target_price, title
-        FROM company_reports
-        WHERE symbol = ? AND target_price IS NOT NULL AND target_price > 0
-        ORDER BY date ASC
-      `)
-      const rows = stmt.all(sym) as any[]
-      reports = rows.map((r) => ({
-        id: String(r.id),
-        date: String(r.date || ''),
-        source: String(r.source || 'CTCK'),
-        recommendation: r.recommendation ? String(r.recommendation) : null,
-        targetPrice: Math.round(Number(r.target_price) < 1000 ? Number(r.target_price) * 1000 : Number(r.target_price)),
-        title: String(r.title || ''),
-      }))
-    } catch (e) {
-      console.warn(`[ConsensusTargetPrice] Lỗi đọc company_reports.db:`, e)
-    }
-  }
+  // 2. Lấy các báo cáo phân tích có giá mục tiêu (từ SQLite hoặc fallback online)
+  const allReports = await fetchAndCacheCompanyReports(sym)
+  const reports: BrokerReportTarget[] = allReports
+    .filter((r) => r.targetPrice != null && r.targetPrice > 0)
+    .sort((a, b) => (a.date || '').localeCompare(b.date || ''))
+    .map((r) => ({
+      id: String(r.id),
+      date: String(r.date || ''),
+      source: String(r.source || 'CTCK'),
+      recommendation: r.recommendation ? String(r.recommendation) : null,
+      targetPrice: Math.round(Number(r.targetPrice) < 1000 ? Number(r.targetPrice) * 1000 : Number(r.targetPrice)),
+      title: String(r.title || ''),
+    }))
 
   // 3. Map báo cáo vào chuỗi thời gian của đường giá
   const reportsByDate: Record<string, BrokerReportTarget[]> = {}

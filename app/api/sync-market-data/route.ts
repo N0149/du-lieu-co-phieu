@@ -14,16 +14,23 @@ export async function POST(request: NextRequest) {
 }
 
 async function handleSync(request: NextRequest) {
-  // Optional authorization check for production cron jobs
+  // Kiểm tra xác thực Cron Secret để ngăn chặn truy cập trái phép
   const authHeader = request.headers.get('authorization')
   const cronSecret = process.env.CRON_SECRET
 
-  if (cronSecret && authHeader !== `Bearer ${cronSecret}`) {
-    // Check if query param key is provided for easy manual trigger: ?secret=...
+  // Trên môi trường production hoặc khi đã cấu hình CRON_SECRET: bắt buộc phải khớp xác thực
+  if (process.env.NODE_ENV === 'production' || cronSecret) {
     const url = new URL(request.url)
     const querySecret = url.searchParams.get('secret')
-    if (querySecret !== cronSecret) {
-      return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
+    const isAuthorized =
+      Boolean(cronSecret) &&
+      (authHeader === `Bearer ${cronSecret}` || querySecret === cronSecret)
+
+    if (!isAuthorized) {
+      return NextResponse.json(
+        { error: 'Unauthorized', message: 'Yêu cầu mã xác thực CRON_SECRET hợp lệ.' },
+        { status: 401 }
+      )
     }
   }
 
