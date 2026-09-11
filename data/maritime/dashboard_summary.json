@@ -1,6 +1,6 @@
 {
   "status": "success",
-  "generated_at": "2026-09-07T18:20:17.198876",
+  "generated_at": "2026-09-11T18:02:30.825416",
   "kpis": {
     "total_port_authorities": 16,
     "total_calls_30d": 15628,
@@ -330,16 +330,6 @@
       "total_dwt": 0
     },
     {
-      "ticker": "MIPEC",
-      "name": "Cảng MIPEC Hải Phòng (Đình Vũ)",
-      "region": "Hải Phòng",
-      "category": "port",
-      "pure_play": 1,
-      "scope_note": "Cảng chuyên dụng và tổng hợp tại khu vực Đình Vũ, Hải Phòng (thuộc Công ty Cổ phần Hóa dầu Quân đội). Tiếp nhận tàu hàng tổng hợp, xăng dầu và container.",
-      "total_calls": 1388,
-      "total_dwt": 17963800
-    },
-    {
       "ticker": "CQN",
       "name": "Cảng Quảng Ninh",
       "region": "Quảng Ninh",
@@ -348,6 +338,16 @@
       "scope_note": null,
       "total_calls": 892,
       "total_dwt": 0
+    },
+    {
+      "ticker": "MIPEC",
+      "name": "Cảng MIPEC Hải Phòng (Đình Vũ)",
+      "region": "Hải Phòng",
+      "category": "port",
+      "pure_play": 1,
+      "scope_note": "Cảng chuyên dụng và tổng hợp tại khu vực Đình Vũ, Hải Phòng (thuộc Công ty Cổ phần Hóa dầu Quân đội). Tiếp nhận tàu hàng tổng hợp, xăng dầu và container.",
+      "total_calls": 722,
+      "total_dwt": 4785941
     }
   ],
   "recent_port_calls": [
