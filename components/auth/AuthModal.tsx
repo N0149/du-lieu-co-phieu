@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react'
 import { createPortal } from 'react-dom'
+import Link from 'next/link'
 import { X, Mail, Sparkles, Loader2, CheckCircle2, ShieldCheck, AlertCircle } from 'lucide-react'
 import { createClient, isSupabaseConfigured } from '@/lib/supabase/client'
 import { getGuestWatchlist, clearGuestWatchlist } from '@/lib/guest-watchlist'
@@ -247,9 +248,22 @@ export function AuthModal({
               </button>
             </form>
 
-            <div className="flex items-center justify-center gap-1.5 pt-2 text-[10px] text-[#64748b]">
-              <ShieldCheck className="size-3.5 text-emerald-400" />
-              <span>Không cần nhớ mật khẩu. Xác thực an toàn 100%.</span>
+            <div className="pt-2 text-center text-[10.5px] text-[#8b949e] border-t border-white/8 space-y-1">
+              <p>
+                Bằng việc tiếp tục, bạn đồng ý với{' '}
+                <Link href="/dieu-khoan" target="_blank" className="text-emerald-400 hover:underline">
+                  Điều khoản sử dụng
+                </Link>{' '}
+                và{' '}
+                <Link href="/chinh-sach-bao-mat" target="_blank" className="text-emerald-400 hover:underline">
+                  Chính sách bảo mật
+                </Link>{' '}
+                của dulieudautu.com.
+              </p>
+              <div className="flex items-center justify-center gap-1.5 text-[10px] text-[#64748b]">
+                <ShieldCheck className="size-3.5 text-emerald-400" />
+                <span>Không cần nhớ mật khẩu. Xác thực an toàn 100%.</span>
+              </div>
             </div>
           </div>
         )}
