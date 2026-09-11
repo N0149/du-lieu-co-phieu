@@ -108,7 +108,6 @@ export function NewsDashboard({
   const [news, setNews] = useState<NewsSnapshotItem[]>(initialNews)
   const [disclosures, setDisclosures] = useState<CorporateDisclosure[]>(initialDisclosures)
   const [discExchange, setDiscExchange] = useState<string>('ALL')
-  const [discType, setDiscType] = useState<string>('ALL')
   const [discImportantOnly, setDiscImportantOnly] = useState<boolean>(false)
   const [isLoading, setIsLoading] = useState(false)
   const [isRefreshing, setIsRefreshing] = useState(false)
@@ -326,7 +325,6 @@ export function NewsDashboard({
         if (!userWatchlist.includes(item.symbol.toUpperCase())) return false
       }
       if (discExchange !== 'ALL' && item.exchange?.toUpperCase() !== discExchange.toUpperCase()) return false
-      if (discType !== 'ALL' && item.doc_type !== discType) return false
       if (searchQuery.trim()) {
         const q = searchQuery.toLowerCase()
         return (
@@ -337,7 +335,7 @@ export function NewsDashboard({
       }
       return true
     })
-  }, [disclosures, discExchange, discType, discImportantOnly, watchlistOnly, userWatchlist, searchQuery])
+  }, [disclosures, discExchange, discImportantOnly, watchlistOnly, userWatchlist, searchQuery])
 
   // Available unique sources
   const availableSources = useMemo(() => {
@@ -499,73 +497,71 @@ export function NewsDashboard({
         </div>
       </div>
 
+      {/* Sub-bar bộ lọc nhanh: Watchlist đưa lên ĐẦU TIÊN cho toàn bộ tab */}
+      <div className="border-b border-[#181d26] bg-[#0d1118] px-3 sm:px-4 lg:px-6 py-2">
+        <div className="flex items-center justify-between gap-3 overflow-x-auto no-scrollbar">
+          <div className="flex items-center gap-2 shrink-0">
+            {/* 1. Nút Watchlist đưa lên ĐẦU TIÊN */}
+            <button
+              type="button"
+              onClick={() => setWatchlistOnly(!watchlistOnly)}
+              className={cn(
+                'rounded-lg px-3 py-1.5 text-xs font-bold transition-all flex items-center gap-1.5 shrink-0 border cursor-pointer',
+                watchlistOnly
+                  ? 'bg-amber-500 text-black border-amber-400 shadow-md ring-2 ring-amber-500/25'
+                  : 'bg-[#161b24] text-amber-400 hover:bg-[#202734] border-amber-500/30'
+              )}
+              title="Chỉ hiển thị bài viết & công bố của các mã trong Danh mục theo dõi (Watchlist)"
+            >
+              <Star className={cn('size-3.5', watchlistOnly ? 'fill-black' : 'fill-amber-400')} />
+              <span>Watchlist ({userWatchlist.length} mã)</span>
+            </button>
+
+            {/* 2. Nút Tin nhạy cảm giá (khi ở tab công bố) */}
+            {activeTab === 'cong-bo' && (
+              <button
+                type="button"
+                onClick={() => setDiscImportantOnly(!discImportantOnly)}
+                className={cn(
+                  'rounded-lg px-2.5 py-1.5 text-xs font-semibold transition-all flex items-center gap-1 shrink-0 border cursor-pointer',
+                  discImportantOnly
+                    ? 'bg-amber-500 text-black border-amber-400 font-bold shadow'
+                    : 'bg-amber-500/10 text-amber-400 hover:bg-amber-500/20 border-amber-500/30'
+                )}
+                title="Lọc các văn bản công bố nhạy cảm với biến động giá cổ phiếu"
+              >
+                <span>⚡</span>
+                <span className="hidden sm:inline">Tin nhạy cảm giá</span>
+                <span className="sm:hidden">Nhạy cảm</span>
+              </button>
+            )}
+
+            {/* Link thêm nhanh mã nếu danh mục trống */}
+            {userWatchlist.length === 0 && (
+              <Link
+                href="/danh-muc"
+                className="text-[11px] text-[#38bdf8] hover:underline flex items-center gap-1 ml-1"
+              >
+                + Thêm mã vào Watchlist
+              </Link>
+            )}
+          </div>
+
+          {/* Tag thông báo số mã đang lọc */}
+          {watchlistOnly && userWatchlist.length > 0 && (
+            <div className="hidden sm:flex items-center gap-1.5 text-[11px] text-[#9EACB9] shrink-0 truncate max-w-md">
+              <span className="text-[#64748b]">Đang lọc:</span>
+              <span className="font-mono text-amber-400 font-semibold truncate">
+                {userWatchlist.slice(0, 10).join(', ')}
+                {userWatchlist.length > 10 ? ` (+${userWatchlist.length - 10} mã)` : ''}
+              </span>
+            </div>
+          )}
+        </div>
+      </div>
+
       {activeTab === 'cong-bo' ? (
         <div className="w-full">
-          {/* Sub-filters Bar: Gọn gàng 1 dòng phân loại văn bản + Watchlist */}
-          <div className="border-b border-[#181d26] bg-[#0d1118] px-3 sm:px-4 lg:px-6 py-2">
-            <div className="flex items-center justify-between gap-2 overflow-x-auto no-scrollbar scrollbar-none">
-              {/* Doc Type Pills */}
-              <div className="flex items-center gap-1.5 shrink-0">
-                <span className="text-[11px] font-bold uppercase tracking-wider text-[#64748b] mr-1 shrink-0">Loại:</span>
-                {[
-                  { id: 'ALL', label: 'Tất cả văn bản' },
-                  { id: 'BCTC_SOAT_XET', label: 'BCTC & Soát xét' },
-                  { id: 'GIAI_TRINH_KQKD', label: 'Giải trình KQKD' },
-                  { id: 'CO_TUC', label: 'Cổ tức & Quyền' },
-                  { id: 'CANH_BAO_KIEM_SOAT', label: 'Cảnh báo / Kiểm soát' },
-                  { id: 'DHDCD', label: 'ĐHĐCĐ' },
-                ].map((cat) => (
-                  <button
-                    key={cat.id}
-                    type="button"
-                    onClick={() => setDiscType(cat.id)}
-                    className={cn(
-                      'rounded-md px-2.5 py-1 text-xs font-medium transition-all shrink-0 whitespace-nowrap',
-                      discType === cat.id
-                        ? 'bg-[#1e293b] text-[#38bdf8] border border-[#0284c7]/50 font-bold'
-                        : 'bg-[#161b24] text-[#8b949e] hover:bg-[#202734] hover:text-[#c9d1d9] border border-[#232a36]'
-                    )}
-                  >
-                    {cat.label}
-                  </button>
-                ))}
-              </div>
-
-              {/* Watchlist Filter & Price Sensitive Buttons */}
-              <div className="flex items-center gap-1.5 shrink-0">
-                <button
-                  type="button"
-                  onClick={() => setWatchlistOnly(!watchlistOnly)}
-                  className={cn(
-                    'rounded-md px-2.5 py-1 text-xs font-semibold transition-all flex items-center gap-1.5 shrink-0 border',
-                    watchlistOnly
-                      ? 'bg-amber-500 text-black border-amber-400 font-bold shadow'
-                      : 'bg-[#161b24] text-amber-400 hover:bg-[#202734] border-amber-500/30'
-                  )}
-                  title="Chỉ hiển thị công bố của các mã trong Danh mục theo dõi (Watchlist)"
-                >
-                  <Star className={cn('size-3.5', watchlistOnly ? 'fill-black' : 'fill-amber-400')} />
-                  <span>Watchlist ({userWatchlist.length})</span>
-                </button>
-
-                <button
-                  type="button"
-                  onClick={() => setDiscImportantOnly(!discImportantOnly)}
-                  className={cn(
-                    'rounded-md px-2.5 py-1 text-xs font-semibold transition-all flex items-center gap-1 shrink-0 border',
-                    discImportantOnly
-                      ? 'bg-amber-500 text-black border-amber-400 font-bold shadow'
-                      : 'bg-amber-500/10 text-amber-400 hover:bg-amber-500/20 border-amber-500/30'
-                  )}
-                  title="Lọc các tin tức có ảnh hưởng nhạy cảm đến giá cổ phiếu"
-                >
-                  <span>⚡</span>
-                  <span className="hidden sm:inline">Tin nhạy cảm giá</span>
-                  <span className="sm:hidden">Nhạy cảm</span>
-                </button>
-              </div>
-            </div>
-          </div>
 
           {/* Desktop Table Header (>= md) */}
           <div className="hidden md:flex h-10 w-full items-center border-b border-[#181d26] bg-[#0b0d11] px-4 text-xs font-medium text-[#7d8590] lg:px-6">
@@ -593,7 +589,7 @@ export function NewsDashboard({
                   ? userWatchlist.length === 0
                     ? 'Bạn chưa thêm mã cổ phiếu nào vào Watchlist. Hãy thêm các cổ phiếu bạn quan tâm để nhận tin công bố riêng biệt.'
                     : `Chưa có công bố nào của các mã trong Watchlist của bạn (${userWatchlist.join(', ')}). Bạn có thể tắt lọc Watchlist để xem toàn bộ tài liệu.`
-                  : 'Thử điều chỉnh lại bộ lọc loại văn bản hoặc từ khóa tìm kiếm.'}
+                  : 'Thử tìm kiếm với mã cổ phiếu hoặc từ khóa khác.'}
               </p>
               {watchlistOnly && (
                 <div className="flex items-center gap-2 mt-3">
