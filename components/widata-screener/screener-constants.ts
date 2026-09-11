@@ -167,6 +167,21 @@ export const SCREENER_CRITERIA: ScreenerCriterion[] = [
     getter: (s) => s.pe,
   },
   {
+    id: 'pe_adjusted',
+    label: 'P/E sau KTPL',
+    category: 'chung',
+    subCategory: 'Định giá',
+    unit: 'Lần',
+    min: 0,
+    max: 60,
+    step: 0.5,
+    defaultValue: { operator: 'lt', value1: 15 },
+    description: 'P/E thực tế khi loại bỏ Quỹ khen thưởng & phúc lợi (KTPL) theo Nghị quyết ĐHĐCĐ',
+    info: 'P/E sau KTPL = P/E / (1 - Tỷ lệ KTPL/100). Phản ánh đúng mức giá nhà đầu tư phải trả trên lợi nhuận thực tế thuộc về cổ đông.',
+    getter: (s) => s.peAdjusted,
+  },
+
+  {
     id: 'pb',
     label: 'P/B (D)',
     category: 'chung',

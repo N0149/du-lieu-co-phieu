@@ -1,0 +1,69 @@
+{
+  "symbol": "CLX",
+  "events": [
+    {
+      "date": "2018-12-26",
+      "cashVnd": 300,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 3%"
+      ]
+    },
+    {
+      "date": "2019-12-18",
+      "cashVnd": 150,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 1.5%"
+      ]
+    },
+    {
+      "date": "2020-07-29",
+      "cashVnd": 200,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 2%"
+      ]
+    },
+    {
+      "date": "2022-12-15",
+      "cashVnd": 300,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 3%"
+      ]
+    },
+    {
+      "date": "2023-06-28",
+      "cashVnd": 300,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 3%"
+      ]
+    },
+    {
+      "date": "2024-07-10",
+      "cashVnd": 700,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 7%"
+      ]
+    },
+    {
+      "date": "2025-07-13",
+      "cashVnd": 700,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 7%"
+      ]
+    },
+    {
+      "date": "2026-07-16",
+      "cashVnd": 750,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 7.5%"
+      ]
+    }
+  ]
+}

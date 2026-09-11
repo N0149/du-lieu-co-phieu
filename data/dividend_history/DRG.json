@@ -1,0 +1,29 @@
+{
+  "symbol": "DRG",
+  "events": [
+    {
+      "date": "2025-03-18",
+      "cashVnd": 246,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 2.46%"
+      ]
+    },
+    {
+      "date": "2025-12-09",
+      "cashVnd": 87,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 0.87%"
+      ]
+    },
+    {
+      "date": "2026-09-02",
+      "cashVnd": 169,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 1.69%"
+      ]
+    }
+  ]
+}

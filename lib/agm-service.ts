@@ -22,12 +22,15 @@ export interface AgmReportData {
   hasReport: boolean
   sections: AgmSection[]
   availableYears: number[]
+  ktplRate?: number | null // Tỷ lệ trích Quỹ khen thưởng & phúc lợi (%) theo Nghị quyết ĐHĐCĐ
+  ktplVnd?: number | null
   stats: {
     hasQa: boolean
     hasCapitalIncrease: boolean
     tableCount: number
   }
 }
+
 
 const SHORT_TITLES: Record<number, string> = {
   1: '1. Kế hoạch & KQKD',
@@ -232,6 +235,8 @@ export function getAgmReport(ticker: string, targetYear = 2026): AgmReportData |
   // Đếm số lượng bảng
   const tableCount = (raw.match(/\|[\s-:]+\|/g) || []).length
 
+  const agmKtpl = getAgmKtplInfo(sym)
+
   return {
     ticker: sym,
     year: selectedYear,
@@ -240,6 +245,8 @@ export function getAgmReport(ticker: string, targetYear = 2026): AgmReportData |
     hasReport: true,
     sections,
     availableYears,
+    ktplRate: agmKtpl?.ktplRate ?? null,
+    ktplVnd: agmKtpl?.ktplVnd ?? null,
     stats: {
       hasQa,
       hasCapitalIncrease,
@@ -247,3 +254,31 @@ export function getAgmReport(ticker: string, targetYear = 2026): AgmReportData |
     },
   }
 }
+
+let agmKtplCache: Record<string, { ticker: string; year: number; ktplRate: number; ktplVnd: number | null }> | null = null
+
+export function getAllAgmKtpl(): Record<string, { ticker: string; year: number; ktplRate: number; ktplVnd: number | null }> {
+  if (process.env.NODE_ENV === 'production' && agmKtplCache) return agmKtplCache
+  const snapPath = path.join(process.cwd(), 'data', 'agm_ktpl_snapshot.json')
+  if (fs.existsSync(snapPath)) {
+    try {
+      agmKtplCache = JSON.parse(fs.readFileSync(snapPath, 'utf-8'))
+      return agmKtplCache || {}
+    } catch {
+      // ignore
+    }
+  }
+  return {}
+}
+
+export function getAgmKtplInfo(ticker: string) {
+  if (!ticker) return null
+  const map = getAllAgmKtpl()
+  return map[ticker.toUpperCase().trim()] || null
+}
+
+export function getAgmKtpl(ticker: string): number | null {
+  const info = getAgmKtplInfo(ticker)
+  return info && typeof info.ktplRate === 'number' ? info.ktplRate : null
+}
+

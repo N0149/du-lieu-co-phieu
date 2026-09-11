@@ -14,12 +14,14 @@ export default function TraCuuPage() {
   const indicesData = getIndicesData()
 
   return (
-    <div className="min-h-screen bg-background text-foreground">
+    <div className="flex min-h-screen flex-col bg-background text-foreground">
       <SiteHeader />
-      <LongLiveStockExplorer
-        manifestData={manifestData}
-        indicesData={indicesData}
-      />
+      <main className="flex-1">
+        <LongLiveStockExplorer
+          manifestData={manifestData}
+          indicesData={indicesData}
+        />
+      </main>
     </div>
   )
 }

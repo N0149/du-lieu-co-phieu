@@ -99,7 +99,9 @@ export function middleware(request: NextRequest) {
 
     // Rate Limiting cho API Endpoints (tối đa 60 requests / phút / IP)
     // Không rate-limit honeypot trap để cho bot chạy thẳng vào bẫy
-    if (pathname !== '/api/security/trap') {
+    // Miễn rate-limit cho localhost/development
+    const isLocalhost = ip === '127.0.0.1' || ip === '::1' || process.env.NODE_ENV !== 'production'
+    if (pathname !== '/api/security/trap' && !isLocalhost) {
       const apiLimiter = checkInMemoryRateLimit(`rl:api:${ip}`, {
         windowMs: 60_000,
         max: 60,
@@ -127,7 +129,8 @@ export function middleware(request: NextRequest) {
     }
   } else {
     // 4. Chống cào hàng loạt trang cổ phiếu (Bulk Stock Scraping: tối đa 25 mã / phút / IP)
-    if (pathname.startsWith('/stock/')) {
+    const isLocalhost = ip === '127.0.0.1' || ip === '::1' || process.env.NODE_ENV !== 'production'
+    if (pathname.startsWith('/stock/') && !isLocalhost) {
       const stockLimiter = checkInMemoryRateLimit(`rl:stock:${ip}`, {
         windowMs: 60_000,
         max: 25,

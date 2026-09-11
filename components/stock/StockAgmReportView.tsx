@@ -38,6 +38,8 @@ export function StockAgmReportView({
   companyName,
   availableTickers = [],
 }: StockAgmReportViewProps) {
+
+
   const [selectedSectionId, setSelectedSectionId] = useState<string>("all")
   const [searchKeyword, setSearchKeyword] = useState<string>("")
   const [tickerSearch, setTickerSearch] = useState<string>("")
@@ -166,6 +168,8 @@ export function StockAgmReportView({
 
   // Lọc section theo tab chọn
   const visibleSections = useMemo(() => {
+
+
     if (selectedSectionId === "all") return sections
     return sections.filter((s) => s.id === selectedSectionId)
   }, [sections, selectedSectionId])
@@ -327,6 +331,8 @@ export function StockAgmReportView({
       </div>
 
       {/* ── 2. SECTION TABS BAR (TƯƠNG THÍCH MỌI MÀN HÌNH TỪ LAPTOP ĐẾN DESKTOP) ── */}
+
+
       <div className="sticky top-14 sm:top-16 z-20 relative group">
         {/* Nút lướt sang trái khi nội dung bị tràn trên màn hình nhỏ */}
         {canScrollLeft && (

@@ -22,9 +22,9 @@ export default function BoLocPage() {
     <div className="min-h-screen bg-[#0f1218] text-foreground flex flex-col">
       <SiteHeader />
 
-      <div className="flex-1">
+      <main className="flex-1">
         <WiDataScreener initialStocks={initialStocks} />
-      </div>
+      </main>
 
       <footer className="border-t border-white/10 bg-[#121620] px-4 py-3 text-center text-[11px] text-muted-foreground">
         Hệ thống Bộ lọc Cổ phiếu Chuyên Sâu · Dữ liệu cập nhật từ các Sở Giao dịch Chứng khoán HOSE, HNX, UPCOM và BCTC doanh nghiệp niêm yết.

@@ -1,0 +1,56 @@
+{
+  "symbol": "DC1",
+  "events": [
+    {
+      "date": "2018-10-21",
+      "cashVnd": 1000,
+      "stockPct": 10,
+      "texts": [
+        "Cổ tức bằng Cổ phiếu, tỷ lệ 10:1",
+        "Cổ tức bằng Tiền, tỷ lệ 10%"
+      ]
+    },
+    {
+      "date": "2019-06-26",
+      "cashVnd": 1500,
+      "stockPct": 5,
+      "texts": [
+        "Cổ tức bằng Cổ phiếu, tỷ lệ 100:5",
+        "Cổ tức bằng Tiền, tỷ lệ 15%"
+      ]
+    },
+    {
+      "date": "2020-09-02",
+      "cashVnd": 2000,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 20%"
+      ]
+    },
+    {
+      "date": "2022-04-11",
+      "cashVnd": null,
+      "stockPct": 30,
+      "texts": [
+        "Cổ tức bằng Cổ phiếu, tỷ lệ 10:3"
+      ]
+    },
+    {
+      "date": "2023-09-21",
+      "cashVnd": 500,
+      "stockPct": 10,
+      "texts": [
+        "Cổ tức bằng Cổ phiếu, tỷ lệ 10:1",
+        "Cổ tức bằng Tiền, tỷ lệ 5%"
+      ]
+    },
+    {
+      "date": "2026-06-25",
+      "cashVnd": null,
+      "stockPct": 36,
+      "texts": [
+        "Thưởng bằng Cổ tức, tỷ lệ 100:36"
+      ]
+    }
+  ]
+}

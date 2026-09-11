@@ -11,7 +11,7 @@ import type {
   SubsidiaryItem,
   InsiderTradeItem,
 } from './company-profile-types'
-import type { StockEvaluationData } from './stock-evaluation-service'
+import { type StockEvaluationData, formatAuditorShortName, getAvgTradingVol15d } from './stock-evaluation-service'
 
 const SLICE_COLORS = [
   '#3b82f6', '#ef4444', '#10b981', '#f59e0b', '#8b5cf6',
@@ -257,9 +257,13 @@ export async function fetchDirectStockEvaluation(symbol: string): Promise<StockE
     const bvps = mData?.bvps ?? (parseFloat(cData.find((x) => x.Code === 'BVPS')?.Value) || null)
     const marketCap = mData?.market_cap ?? null
     const sharesOut = mData?.circulation_vol ?? null
-    const volume10d = mData?.avg_trading_vol ?? null
+    const vol15d = await getAvgTradingVol15d(sym)
+    const volume10d = vol15d ?? mData?.avg_trading_vol ?? null
     const beta = mData?.the_beta ?? null
     const evEbitda = mData?.ev_per_ebitda ?? null
+    const auditor = formatAuditorShortName(mData?.audit_firm_name)
+    const isBig4 = Boolean(mData?.audit_is_big4)
+    const bookValue = mData?.book_value ?? null
 
     // Thuật toán tính điểm 360° độc lập (dựa trên P/E, P/B, ROE, Beta, quy mô)
     let scoreTotal = 7.0
@@ -304,6 +308,9 @@ export async function fetchDirectStockEvaluation(symbol: string): Promise<StockE
         sharesOut,
         evEbitda,
         beta,
+        auditor: auditor !== '—' ? auditor : null,
+        isBig4,
+        bookValue,
       },
     }
   } catch (err) {

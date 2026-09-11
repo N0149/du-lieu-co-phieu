@@ -43,11 +43,12 @@ export default function VesselSearchPage() {
   const vessels = Array.from(vesselMap.values()).sort((a, b) => b.dwt - a.dwt)
 
   return (
-    <div className="min-h-screen bg-slate-950 text-slate-100 pb-24 selection:bg-teal-500 selection:text-slate-950">
+    <div className="flex min-h-screen flex-col bg-slate-950 text-slate-100 selection:bg-teal-500 selection:text-slate-950">
       {/* Site Header */}
       <SiteHeader />
 
-      {/* Top Banner */}
+      <main className="flex-1 pb-24">
+        {/* Top Banner */}
       <div className="relative border-b border-slate-800/80 bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950 py-8 sm:py-10 overflow-hidden">
         {/* Ambient Glow */}
         <div className="absolute top-0 left-1/3 -translate-x-1/2 w-96 h-96 bg-teal-500/10 rounded-full blur-3xl pointer-events-none" />
@@ -92,6 +93,7 @@ export default function VesselSearchPage() {
       <div className="mx-auto max-w-[1600px] px-4 pt-8">
         <VesselSearchClient initialVessels={vessels} />
       </div>
-    </div>
-  )
+    </main>
+  </div>
+)
 }

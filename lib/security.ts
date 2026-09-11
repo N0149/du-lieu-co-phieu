@@ -256,6 +256,15 @@ export function verifyApiOriginAccess(
     return { allowed: false, redirectUrl: '/' }
   }
 
+  // Cho phép môi trường phát triển cục bộ (localhost, 127.0.0.1)
+  if (
+    process.env.NODE_ENV !== 'production' ||
+    host?.includes('localhost') ||
+    host?.includes('127.0.0.1')
+  ) {
+    return { allowed: true }
+  }
+
   // 3. Chặn các request Cross-Site (từ trang web đối thủ gọi sang trộm API)
   if (secFetchSite === 'cross-site') {
     return { allowed: false, reason: 'CROSS_SITE_API_REQUEST_BLOCKED' }

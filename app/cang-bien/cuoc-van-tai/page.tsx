@@ -31,11 +31,12 @@ export default function CuocVanTaiPage() {
   const indices = freightData?.indices || {}
 
   return (
-    <div className="min-h-screen bg-slate-950 text-slate-100 pb-24 selection:bg-teal-500 selection:text-slate-950">
+    <div className="flex min-h-screen flex-col bg-slate-950 text-slate-100 selection:bg-teal-500 selection:text-slate-950">
       {/* Site Header */}
       <SiteHeader />
 
-      {/* Hero Header */}
+      <main className="flex-1 pb-24">
+        {/* Hero Header */}
       <div className="relative border-b border-slate-800/80 bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950 py-8 sm:py-12 overflow-hidden">
         {/* Ambient Gradient Glow Lights */}
         <div className="absolute top-0 left-1/4 -translate-x-1/2 w-96 h-96 bg-teal-500/10 rounded-full blur-3xl pointer-events-none" />
@@ -252,6 +253,7 @@ export default function CuocVanTaiPage() {
           </div>
         </section>
       </div>
-    </div>
-  )
+    </main>
+  </div>
+)
 }

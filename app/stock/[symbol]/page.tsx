@@ -113,7 +113,8 @@ export default async function StockDetailPage({
   const { getDetailedBalanceSheetCashFlowData } = await import('@/lib/balance-sheet-cashflow-service')
   const { getCapexFinancialData } = await import('@/lib/capex-financial-service')
   const { getDebtDupontData } = await import('@/lib/debt-dupont-service')
-  const { getAgmReport, getAvailableAgmTickers } = await import('@/lib/agm-service')
+  const { getAgmReport, getAvailableAgmTickers, getAgmKtpl } = await import('@/lib/agm-service')
+  const { getLocalFinancialStatements } = await import('@/lib/financial-statements-db')
 
   const [
     financialChartQuarter,
@@ -133,6 +134,8 @@ export default async function StockDetailPage({
     debtDupontAnnual,
     agmData,
     availableAgmTickers,
+    financialStatementsQuarter,
+    financialStatementsAnnual,
   ] = await Promise.all([
     getFinancialChartData(ticker, 'quarter'),
     getFinancialChartData(ticker, 'annual'),
@@ -151,7 +154,12 @@ export default async function StockDetailPage({
     Promise.resolve(getDebtDupontData(ticker, 'annual')),
     Promise.resolve(getAgmReport(ticker, 2026)),
     Promise.resolve(getAvailableAgmTickers(2026)),
+    Promise.resolve(getLocalFinancialStatements(ticker, 'quarter')),
+    Promise.resolve(getLocalFinancialStatements(ticker, 'annual')),
   ])
+
+  // Tỷ lệ lợi nhuận trích ngoài cổ đông (KTPL, Thưởng BĐH, Thù lao HĐQT)
+  const ktplRate = agmData?.ktplRate ?? getAgmKtpl(ticker)
 
   return (
     <div className="min-h-screen bg-background text-foreground">
@@ -162,6 +170,8 @@ export default async function StockDetailPage({
           relatedStocks={relatedStocks}
           reports={reports}
           detailedSnapshot={detailedSnapshot}
+          initialFinancialStatements={financialStatementsQuarter}
+          initialFinancialStatementsAnnual={financialStatementsAnnual}
           bankAnalysisData={bankAnalysisData}
           evaluationData={evaluationData}
           companyProfileData={companyProfileData}
@@ -182,6 +192,7 @@ export default async function StockDetailPage({
           debtDupontAnnual={debtDupontAnnual}
           agmData={agmData}
           availableAgmTickers={availableAgmTickers}
+          ktplRate={ktplRate}
           initialTab={initialTab}
         />
       </main>

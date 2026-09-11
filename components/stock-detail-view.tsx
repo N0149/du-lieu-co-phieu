@@ -33,6 +33,7 @@ import { cn } from '@/lib/utils'
 import { WatchlistStarButton } from '@/components/watchlist/WatchlistStarButton'
 import { BusinessPlanComparison, BusinessPlanYear } from '@/components/business-plan-comparison'
 import { FinancialStatementsExplorer } from '@/components/financial-statements-explorer'
+import type { RawFinancialStatementData } from '@/lib/financial-statements-db'
 import { CompanyReportsTab } from '@/components/reports/CompanyReportsTab'
 import { StockAgmReportView } from '@/components/stock/StockAgmReportView'
 import type { AgmReportData } from '@/lib/agm-service'
@@ -93,6 +94,9 @@ interface StockDetailViewProps {
   debtDupontAnnual?: DebtDupontPayload | null
   agmData?: AgmReportData | null
   availableAgmTickers?: string[]
+  ktplRate?: number | null
+  initialFinancialStatements?: RawFinancialStatementData | null
+  initialFinancialStatementsAnnual?: RawFinancialStatementData | null
   initialTab?: StockDetailTab
 }
 
@@ -182,6 +186,9 @@ export function StockDetailView({
   debtDupontAnnual = null,
   agmData = null,
   availableAgmTickers = [],
+  ktplRate = null,
+  initialFinancialStatements = null,
+  initialFinancialStatementsAnnual = null,
   initialTab = 'charts',
 }: StockDetailViewProps) {
   // Tab đang hiển thị trên thanh nút bấm (cập nhật NGAY LẬP TỨC để phản hồi giao diện không delay)
@@ -194,6 +201,7 @@ export function StockDetailView({
   const [loadingTab, setLoadingTab] = useState<StockDetailTab | null>(null)
   const switchTimerRef = useRef<NodeJS.Timeout | null>(null)
   const [copied, setCopied] = useState(false)
+
 
   // Quản lý thanh điều hướng tab: hỗ trợ cuộn mượt và nút mũi tên trên mọi kích thước màn hình
   const tabsContainerRef = useRef<HTMLDivElement>(null)
@@ -407,17 +415,31 @@ export function StockDetailView({
 
   // Tỷ lệ trích Quỹ khen thưởng phúc lợi (KTPL) & P/E thực tế sau KTPL
   const bonusWelfareRate = useMemo(() => {
+    // 1. Ưu tiên prop ktplRate
+    if (ktplRate != null && ktplRate !== undefined) {
+      return ktplRate
+    }
+    // 2. Tiếp theo từ dữ liệu Nghị quyết ĐHĐCĐ mới nhất
+    if (agmData?.ktplRate != null && agmData.ktplRate !== undefined) {
+      return agmData.ktplRate
+    }
+    // 3. Fallback từ báo cáo phân tích chuyên sâu
     const rep = reports.find((r) => r.bonusWelfareRate != null && r.bonusWelfareRate !== undefined)
     return rep?.bonusWelfareRate ?? null
-  }, [reports])
+  }, [ktplRate, agmData, reports])
 
-  const basePE = valuation?.pe ?? null
+  const currentPrice = evaluationData?.price != null ? evaluationData.price : market.price != null ? market.price * 1000 : null
+  const epsVal = evaluationData?.metrics?.eps ?? valuation?.eps ?? null
+  const basePE = (currentPrice != null && currentPrice > 0 && epsVal != null && epsVal > 0)
+    ? currentPrice / epsVal
+    : (evaluationData?.metrics?.pe ?? valuation?.pe ?? null)
 
   const adjustedPE = useMemo(() => {
     if (basePE == null || basePE <= 0 || bonusWelfareRate == null) return null
     if (bonusWelfareRate >= 100) return null
     return basePE / (1 - bonusWelfareRate / 100)
   }, [basePE, bonusWelfareRate])
+
 
   // 4. Tính toán dữ liệu cổ đông
   const shareholderData = useMemo(() => {
@@ -819,6 +841,7 @@ export function StockDetailView({
         stockData={stockData}
         evaluationData={evaluationData}
         priceChanges={priceChanges}
+        ktplRate={bonusWelfareRate}
       />
 
       {/* ── 3. THANH ĐIỀU HƯỚNG TAB CHÍNH (TƯƠNG THÍCH MỌI KÍCH THƯỚC MÀN HÌNH TỪ LAPTOP ĐẾN DESKTOP) ── */}
@@ -914,63 +937,6 @@ export function StockDetailView({
       {/* ══════════════════════════════════════════════════════════ */}
       {mountedTabs.has('profile') && (
         <div className={cn("space-y-5 animate-in fade-in-50 duration-200", (activeTab !== 'profile' || loadingTab === 'profile') && "hidden")}>
-          {/* Card nổi bật KTPL (nếu doanh nghiệp đã có tỷ lệ trích Quỹ KTPL) */}
-          {bonusWelfareRate != null && (
-            <div className="overflow-hidden rounded-2xl border border-amber-500/30 bg-gradient-to-r from-amber-500/10 via-amber-500/5 to-transparent p-4 sm:p-5 shadow-xs">
-              <div className="flex flex-wrap items-center justify-between gap-4">
-                <div className="flex items-center gap-3">
-                  <div className="flex size-10 shrink-0 items-center justify-center rounded-xl bg-amber-500/20 text-amber-600 dark:text-amber-400">
-                    <Award className="size-5" />
-                  </div>
-                  <div>
-                    <div className="flex flex-wrap items-center gap-2">
-                      <h4 className="text-sm font-bold text-foreground sm:text-base">
-                        Chính Sách Quỹ Khen Thưởng & Phúc Lợi (KTPL)
-                      </h4>
-                      <span className="rounded-full bg-amber-500/20 border border-amber-500/30 px-2.5 py-0.5 font-mono text-[10px] font-bold text-amber-700 dark:text-amber-300">
-                        Nghị quyết ĐHĐCĐ & Nghiên cứu AI
-                      </span>
-                    </div>
-                    <p className="mt-0.5 text-xs text-muted-foreground leading-relaxed">
-                      Tỷ lệ trích lập từ Lợi nhuận sau thuế (LNST) được ghi nhận trong Báo cáo phân tích chuyên sâu.
-                    </p>
-                  </div>
-                </div>
-
-                <div className="flex items-center gap-4 sm:gap-6">
-                  <div className="text-right">
-                    <div className="text-[10px] sm:text-[11px] font-bold uppercase tracking-wider text-muted-foreground">
-                      Tỷ lệ trích KTPL
-                    </div>
-                    <div className="font-mono text-xl sm:text-2xl font-black text-amber-600 dark:text-amber-400">
-                      {bonusWelfareRate}%
-                    </div>
-                  </div>
-
-                  {adjustedPE != null && (
-                    <div className="border-l border-amber-500/30 pl-4 sm:pl-6 text-right">
-                      <div className="text-[10px] sm:text-[11px] font-bold uppercase tracking-wider text-muted-foreground">
-                        P/E Thực tế (sau KTPL)
-                      </div>
-                      <div className="flex items-baseline justify-end gap-1.5">
-                        <span className="font-mono text-xl sm:text-2xl font-black text-foreground">
-                          {adjustedPE.toFixed(1)}x
-                        </span>
-                        {basePE != null && (
-                          <span
-                            className="text-xs text-muted-foreground line-through"
-                            title="P/E danh nghĩa chưa trừ KTPL"
-                          >
-                            {basePE.toFixed(1)}x
-                          </span>
-                        )}
-                      </div>
-                    </div>
-                  )}
-                </div>
-              </div>
-            </div>
-          )}
 
           {/* Mảng kinh doanh cốt lõi (Core Card) */}
           <div className="overflow-hidden rounded-2xl border border-border bg-card shadow-xs">
@@ -1674,6 +1640,8 @@ export function StockDetailView({
             ticker={ticker}
             financials={financials}
             detailedSnapshot={detailedSnapshot}
+            initialData={initialFinancialStatements}
+            initialAnnualData={initialFinancialStatementsAnnual}
           />
         </div>
       )}
@@ -1818,11 +1786,25 @@ export function StockDetailView({
                 <div className="flex items-center justify-between">
                   <span className="text-muted-foreground">Hệ số P/E:</span>
                   <span className="font-mono font-bold text-foreground">
-                    {valuation.pe != null && valuation.pe > 0 ? `${fmt(valuation.pe, 1)} lần` : '—'}
+                    {basePE != null && basePE > 0 ? `${fmt(basePE, 1)} lần` : '—'}
                   </span>
                 </div>
+                {adjustedPE != null && (
+                  <div className="flex items-center justify-between">
+                    <span className="text-muted-foreground flex items-center gap-1" title="P/E thực tế sau khi trừ các khoản trích ngoài cổ đông (KTPL, Thưởng BĐH, Thù lao HĐQT)">
+                      <span>P/E (sau trích lập):</span>
+                      <span className="text-[10.5px] text-amber-600 dark:text-amber-400 font-medium">
+                        ({bonusWelfareRate}%)
+                      </span>
+                    </span>
+                    <span className="font-mono font-bold text-amber-600 dark:text-amber-400">
+                      {fmt(adjustedPE, 1)} lần
+                    </span>
+                  </div>
+                )}
                 <div className="flex items-center justify-between">
                   <span className="text-muted-foreground">Hệ số P/B:</span>
+
                   <span className="font-mono font-bold text-foreground">
                     {valuation.pb != null && valuation.pb > 0 ? `${fmt(valuation.pb, 2)} lần` : '—'}
                   </span>
@@ -2021,6 +2003,7 @@ export function StockDetailView({
           />
         </div>
       )}
+
     </div>
   )
 }

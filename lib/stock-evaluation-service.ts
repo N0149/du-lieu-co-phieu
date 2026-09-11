@@ -34,7 +34,33 @@ export interface StockEvaluationData {
     sharesOut: number | null
     evEbitda: number | null
     beta: number | null
+    auditor?: string | null
+    isBig4?: boolean | null
+    bookValue?: number | null
   }
+}
+
+export function formatAuditorShortName(name: string | null | undefined): string {
+  if (!name) return '—'
+  const lower = name.toLowerCase()
+  if (lower.includes('pwc') || lower.includes('pricewaterhouse')) return 'PWC'
+  if (lower.includes('kpmg')) return 'KPMG'
+  if (lower.includes('ernst') || lower.includes('& young') || lower.includes('ey')) return 'EY'
+  if (lower.includes('deloitte')) return 'Deloitte'
+  if (lower.includes('a&c') || lower.includes('a & c')) return 'A&C'
+  if (lower.includes('aasc')) return 'AASC'
+  if (lower.includes('rsm')) return 'RSM'
+  if (lower.includes('bdo')) return 'BDO'
+  if (lower.includes('grant thornton')) return 'Grant Thornton'
+  if (lower.includes('vaco')) return 'VACO'
+  if (lower.includes('cpa')) return 'CPA VN'
+  if (lower.includes('uhy')) return 'UHY'
+  if (lower.includes('moore')) return 'Moore AIS'
+  return name
+    .replace(/^công ty\s+(tnhh|trách nhiệm hữu hạn|cổ phần|cp)\s+/i, '')
+    .replace(/^kiểm toán\s+(và\s+tư\s+vấn\s+)?/i, '')
+    .replace(/\s+việt nam$/i, '')
+    .trim() || name
 }
 
 let cryptoKeyCache: CryptoKey | null = null
@@ -92,6 +118,62 @@ function applyLiveQuote(target: StockEvaluationData, quote: LiveStockQuote | nul
   return target
 }
 
+/**
+ * Lấy khối lượng giao dịch bình quân 15 phiên gần nhất (KLGD TB15D)
+ * Phục vụ đánh giá tính thanh khoản cổ phiếu chuẩn xác cho nhà đầu tư
+ * 1. Nạp từ VNDirect DChart API
+ * 2. Fallback sang DNSE Entrade API
+ */
+export async function getAvgTradingVol15d(symbol: string): Promise<number | null> {
+  const sym = symbol.toUpperCase().trim()
+  if (!sym) return null
+
+  const now = Math.floor(Date.now() / 1000)
+  const fromSec = now - 35 * 86400 // 35 ngày để đảm bảo tối thiểu 15 ngày giao dịch thực tế
+
+  // 1. Thử VNDirect DChart API
+  try {
+    const res = await fetch(
+      `https://dchart-api.vndirect.com.vn/dchart/history?resolution=D&symbol=${sym}&from=${fromSec}&to=${now}`,
+      {
+        headers: { 'User-Agent': 'Mozilla/5.0' },
+        next: { revalidate: 1800 },
+      }
+    )
+    if (res.ok) {
+      const data = await res.json()
+      if (data && data.s === 'ok' && Array.isArray(data.v) && data.v.length > 0) {
+        const last15 = data.v.slice(-15)
+        if (last15.length > 0) {
+          return Math.round(last15.reduce((a: number, b: number) => a + (Number(b) || 0), 0) / last15.length)
+        }
+      }
+    }
+  } catch {}
+
+  // 2. Fallback sang DNSE Entrade API
+  try {
+    const res = await fetch(
+      `https://services.entrade.com.vn/chart-api/v2/ohlcs/stock?from=${fromSec}&to=${now}&symbol=${sym}&resolution=1D`,
+      {
+        headers: { 'User-Agent': 'Mozilla/5.0' },
+        next: { revalidate: 1800 },
+      }
+    )
+    if (res.ok) {
+      const data = await res.json()
+      if (data && Array.isArray(data.v) && data.v.length > 0) {
+        const last15 = data.v.slice(-15)
+        if (last15.length > 0) {
+          return Math.round(last15.reduce((a: number, b: number) => a + (Number(b) || 0), 0) / last15.length)
+        }
+      }
+    }
+  } catch {}
+
+  return null
+}
+
 export async function getStockEvaluation(symbol: string): Promise<StockEvaluationData | null> {
   const sym = symbol.toUpperCase().trim()
   if (!sym) return null
@@ -109,10 +191,11 @@ export async function getStockEvaluation(symbol: string): Promise<StockEvaluatio
   const liveQuote = await getLiveStockQuote(sym)
 
   // Ưu tiên đọc từ cache cục bộ (Offline-First, không phụ thuộc vào ruatichsan)
+  // Chỉ dùng cache nếu đã có đầy đủ kiểm toán và khối lượng thanh khoản hợp lệ
   if (fs.existsSync(cacheFile)) {
     try {
       const cached = JSON.parse(fs.readFileSync(cacheFile, 'utf-8'))
-      if (cached?.metrics) {
+      if (cached?.metrics && cached.metrics.auditor !== undefined && cached.metrics.volume10d != null && cached.metrics.volume10d > 0) {
         return applyLiveQuote(cached, liveQuote)
       }
       if (cached?.snapshot) {
@@ -158,7 +241,7 @@ export async function getStockEvaluation(symbol: string): Promise<StockEvaluatio
   }
 
   try {
-    const [valRes, moneyRes] = await Promise.allSettled([
+    const [valRes, moneyRes, vol15dRes] = await Promise.allSettled([
       fetch(`https://api.ruatichsan.com/api/v1/data/public/valuation/${sym}`, {
         headers: {
           Origin: 'https://ruatichsan.com',
@@ -169,6 +252,7 @@ export async function getStockEvaluation(symbol: string): Promise<StockEvaluatio
       fetch(`https://api-finance-t19.24hmoney.vn/v2/ios/companies/index?symbol=${sym}`, {
         next: { revalidate: 600 },
       }),
+      getAvgTradingVol15d(sym),
     ])
 
     let valData: any = null
@@ -205,6 +289,12 @@ export async function getStockEvaluation(symbol: string): Promise<StockEvaluatio
       else ratingText = 'CẦN LƯU Ý'
     }
 
+    const auditor = formatAuditorShortName(moneyData?.audit_firm_name)
+    const isBig4 = Boolean(moneyData?.audit_is_big4)
+    const bookValue = moneyData?.book_value ?? null
+    const calcVol15d = (vol15dRes.status === 'fulfilled' && vol15dRes.value) ? vol15dRes.value : null
+    const volumeFinal = calcVol15d ?? moneyData?.avg_trading_vol ?? null
+
     const result: StockEvaluationData = {
       symbol: sym,
       score360:
@@ -226,13 +316,16 @@ export async function getStockEvaluation(symbol: string): Promise<StockEvaluatio
         marketCap: s?.market_cap_bn ?? null,
         pe: s?.pe ?? moneyData?.pe ?? null,
         eps: s?.eps ?? valData?.lastEps ?? null,
-        volume10d: moneyData?.avg_trading_vol ?? null,
+        volume10d: volumeFinal,
         pb: s?.pb ?? moneyData?.pb ?? null,
         ps: s?.ps ?? valData?.ps?.at(-1) ?? null,
         bvps: s?.bvps ?? valData?.lastBvps ?? null,
         sharesOut: valData?.lastCirculationVol ?? moneyData?.circulation_vol ?? null,
         evEbitda: moneyData?.ev_per_ebitda || null,
         beta: moneyData?.the_beta ?? null,
+        auditor: auditor !== '—' ? auditor : null,
+        isBig4,
+        bookValue,
       },
     }
 

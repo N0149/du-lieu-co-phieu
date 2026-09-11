@@ -184,8 +184,23 @@ export function Screener() {
                       {s.targetPrice != null ? fmtPrice(s.targetPrice) : '—'}
                     </td>
                     <td className="px-4 py-3 text-right font-mono tabular-nums text-[#9EACB9]">
-                      {s.bonusWelfareRate != null ? fmtRate(s.bonusWelfareRate) : '—'}
+                      {s.bonusWelfareRate != null ? (
+                        <div>
+                          <span>{fmtRate(s.bonusWelfareRate)}</span>
+                          {s.forwardPE != null && s.forwardPE > 0 && s.bonusWelfareRate > 0 && (
+                            <span
+                              className="block text-[10.5px] text-amber-500 font-semibold"
+                              title={`P/E thực tế sau KTPL (P/E gốc: ${s.forwardPE.toFixed(1)}x)`}
+                            >
+                              P/E: {(s.forwardPE / (1 - s.bonusWelfareRate / 100)).toFixed(1)}x
+                            </span>
+                          )}
+                        </div>
+                      ) : (
+                        '—'
+                      )}
                     </td>
+
                     <td className="px-4 py-3 text-right">
                       {up != null ? (
                         <span
@@ -378,8 +393,14 @@ function CardStock({ stock }: { stock: ReportStock }) {
           <p className="truncate font-mono font-semibold text-[#9EACB9] tabular-nums">
             {stock.bonusWelfareRate != null ? fmtRate(stock.bonusWelfareRate) : '—'}
           </p>
+          {stock.bonusWelfareRate != null && stock.bonusWelfareRate > 0 && stock.forwardPE != null && stock.forwardPE > 0 && (
+            <p className="text-[10px] text-amber-500 font-bold truncate">
+              {(stock.forwardPE / (1 - stock.bonusWelfareRate / 100)).toFixed(1)}x
+            </p>
+          )}
         </div>
       </div>
+
 
       {/* Hàng 3 — Footer: ngày báo cáo + "Xem chi tiết →" */}
       <div className="flex items-center justify-between pt-0.5">

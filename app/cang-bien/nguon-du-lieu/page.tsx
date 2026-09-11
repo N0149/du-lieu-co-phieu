@@ -13,11 +13,12 @@ export const metadata: Metadata = {
 
 export default function NguonDuLieuPage() {
   return (
-    <div className="min-h-screen bg-slate-950 text-slate-100 pb-24 selection:bg-teal-500 selection:text-slate-950">
+    <div className="flex min-h-screen flex-col bg-slate-950 text-slate-100 selection:bg-teal-500 selection:text-slate-950">
       {/* Site Header */}
       <SiteHeader />
 
-      {/* Header */}
+      <main className="flex-1 pb-24">
+        {/* Header */}
       <div className="relative border-b border-slate-800/80 bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950 py-8 sm:py-10 overflow-hidden">
         {/* Ambient Glow */}
         <div className="absolute top-0 right-1/3 translate-x-1/2 w-96 h-96 bg-sky-500/10 rounded-full blur-3xl pointer-events-none" />
@@ -120,6 +121,7 @@ export default function NguonDuLieuPage() {
           </div>
         </div>
       </div>
-    </div>
-  )
+    </main>
+  </div>
+)
 }

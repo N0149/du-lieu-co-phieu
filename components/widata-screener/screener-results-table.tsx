@@ -95,6 +95,7 @@ export function ScreenerResultsTable({ stocks }: ScreenerResultsTableProps) {
       'Giá (k VND)',
       'Vốn hóa (Tỷ)',
       'P/E',
+      'P/E (sau KTPL)',
       'P/B',
       'ROE (%)',
       'ROA (%)',
@@ -114,6 +115,7 @@ export function ScreenerResultsTable({ stocks }: ScreenerResultsTableProps) {
       s.price ?? '',
       s.marketCap ?? '',
       s.pe ?? '',
+      s.peAdjusted ?? '',
       s.pb ?? '',
       s.roe ?? '',
       s.roa ?? '',
@@ -124,6 +126,7 @@ export function ScreenerResultsTable({ stocks }: ScreenerResultsTableProps) {
       s.score360 ?? '',
       s.upside ?? '',
     ])
+
 
     const csvContent =
       '\uFEFF' + [headers.join(','), ...rows.map((r) => r.join(','))].join('\n')
@@ -291,6 +294,13 @@ export function ScreenerResultsTable({ stocks }: ScreenerResultsTableProps) {
                     P/E {renderSortIcon('pe')}
                   </th>
                   <th
+                    onClick={() => handleSort('peAdjusted')}
+                    className="cursor-pointer px-3 py-3 text-right hover:text-foreground whitespace-nowrap"
+                    title="P/E thực tế sau khi loại bỏ Quỹ khen thưởng & phúc lợi (KTPL) theo Nghị quyết ĐHĐCĐ"
+                  >
+                    P/E sau KTPL {renderSortIcon('peAdjusted')}
+                  </th>
+                  <th
                     onClick={() => handleSort('pb')}
                     className="cursor-pointer px-3 py-3 text-right hover:text-foreground whitespace-nowrap"
                   >
@@ -367,8 +377,16 @@ export function ScreenerResultsTable({ stocks }: ScreenerResultsTableProps) {
                   >
                     Trích KTPL (%) {renderSortIcon('ktplRate')}
                   </th>
+                  <th
+                    onClick={() => handleSort('peAdjusted')}
+                    className="cursor-pointer px-3 py-3 text-right hover:text-foreground whitespace-nowrap"
+                    title="P/E thực tế sau khi loại bỏ Quỹ KTPL"
+                  >
+                    P/E sau KTPL {renderSortIcon('peAdjusted')}
+                  </th>
                 </>
               )}
+
 
               {activeTab === 'tang_truong' && (
                 <>
@@ -468,7 +486,7 @@ export function ScreenerResultsTable({ stocks }: ScreenerResultsTableProps) {
           <tbody className="divide-y divide-white/5">
             {pageRows.length === 0 ? (
               <tr>
-                <td colSpan={12} className="p-8 text-center text-muted-foreground">
+                <td colSpan={14} className="p-8 text-center text-muted-foreground">
                   Không có mã cổ phiếu nào thỏa mãn các điều kiện lọc.
                 </td>
               </tr>
@@ -566,6 +584,26 @@ export function ScreenerResultsTable({ stocks }: ScreenerResultsTableProps) {
                         <td className="px-3 py-2.5 text-right font-mono text-foreground whitespace-nowrap">
                           {s.pe != null ? s.pe.toFixed(1) : '—'}
                         </td>
+                        <td className="px-3 py-2.5 text-right font-mono whitespace-nowrap">
+                          {s.peAdjusted != null ? (
+                            <span
+                              className={cn(
+                                s.ktplRate != null && s.ktplRate > 0
+                                  ? 'font-bold text-amber-600 dark:text-amber-400'
+                                  : 'text-foreground'
+                              )}
+                              title={
+                                s.ktplRate != null && s.ktplRate > 0
+                                  ? `Đã loại bỏ ${s.ktplRate}% quỹ KTPL`
+                                  : undefined
+                              }
+                            >
+                              {s.peAdjusted.toFixed(1)}
+                            </span>
+                          ) : (
+                            '—'
+                          )}
+                        </td>
                         <td className="px-3 py-2.5 text-right font-mono text-foreground whitespace-nowrap">
                           {s.pb != null ? s.pb.toFixed(2) : '—'}
                         </td>
@@ -607,8 +645,29 @@ export function ScreenerResultsTable({ stocks }: ScreenerResultsTableProps) {
                         <td className="px-3 py-2.5 text-right font-mono font-medium text-foreground whitespace-nowrap">
                           {s.ktplRate != null ? `${s.ktplRate.toFixed(1)}%` : '—'}
                         </td>
+                        <td className="px-3 py-2.5 text-right font-mono whitespace-nowrap">
+                          {s.peAdjusted != null ? (
+                            <span
+                              className={cn(
+                                s.ktplRate != null && s.ktplRate > 0
+                                  ? 'font-bold text-amber-600 dark:text-amber-400'
+                                  : 'text-foreground'
+                              )}
+                              title={
+                                s.ktplRate != null && s.ktplRate > 0
+                                  ? `Đã loại bỏ ${s.ktplRate}% quỹ KTPL`
+                                  : undefined
+                              }
+                            >
+                              {s.peAdjusted.toFixed(1)}
+                            </span>
+                          ) : (
+                            '—'
+                          )}
+                        </td>
                       </>
                     )}
+
 
                     {activeTab === 'tang_truong' && (
                       <>

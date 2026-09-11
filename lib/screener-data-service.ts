@@ -12,7 +12,9 @@ export interface ScreenerStockItem {
   price: number | null // Giá thị trường (k VND)
   marketCap: number | null // Vốn hóa (Tỷ VND)
   pe: number | null // P/E
+  peAdjusted: number | null // P/E thực tế khi loại bỏ Quỹ KTPL (sau KTPL)
   pb: number | null // P/B
+
   roe: number | null // ROE %
   roa: number | null // ROA %
   eps: number | null // EPS (VND)
@@ -268,7 +270,24 @@ export function getEnrichedScreenerStocks(): ScreenerStockItem[] {
     }
   }
 
+  // 6b. Snapshot KTPL từ Nghị quyết ĐHĐCĐ mới nhất (2026)
+  const agmKtplMap = new Map<string, { ktplRate: number; ktplVnd: number | null }>()
+  const agmKtplPath = path.join(baseDir, 'data', 'agm_ktpl_snapshot.json')
+  if (fs.existsSync(agmKtplPath)) {
+    try {
+      const agmKtplData = JSON.parse(fs.readFileSync(agmKtplPath, 'utf-8'))
+      for (const [sym, info] of Object.entries(agmKtplData as Record<string, any>)) {
+        if (info && typeof info.ktplRate === 'number') {
+          agmKtplMap.set(sym.toUpperCase(), { ktplRate: info.ktplRate, ktplVnd: info.ktplVnd ?? null })
+        }
+      }
+    } catch (err) {
+      console.warn('Lỗi đọc agm_ktpl_snapshot.json:', err)
+    }
+  }
+
   // 7. Cơ cấu sở hữu từ company_profiles.db
+
   const profileMap = new Map<string, { foreign: number | null; state: number | null }>()
   const profileDbPath = path.join(baseDir, 'data', 'company_profiles.db')
   if (fs.existsSync(profileDbPath)) {
@@ -361,16 +380,28 @@ export function getEnrichedScreenerStocks(): ScreenerStockItem[] {
       upside = Math.round(((rep.targetPrice - px) / px) * 1000) / 10
     }
 
+    const agmKtpl = agmKtplMap.get(sym)
+    const finalKtplRate = agmKtpl?.ktplRate ?? rep?.bonusWelfareRate ?? null
+    const finalKtplVnd = agmKtpl?.ktplVnd ?? null
+
+    const peAdjusted =
+      pe != null && pe > 0 && finalKtplRate != null && finalKtplRate >= 0 && finalKtplRate < 100
+        ? Math.round((pe / (1 - finalKtplRate / 100)) * 10) / 10
+        : pe ?? null
+
     return {
       ticker: sym,
       name: s.n || sym,
       exchange: exchange === 'HOSE' || exchange === 'HNX' || exchange === 'UPCOM' ? exchange : 'UPCOM',
       sector: s.s || 'Khác',
+      industry: s.s2 || s.s || 'Khác',
       icbL1: s.g || 'Khác',
       icbL2: s.s2 || s.s || 'Khác',
       price: px,
       marketCap: cap,
       pe,
+      peAdjusted,
+
       pb,
       roe,
       roa,
@@ -389,8 +420,8 @@ export function getEnrichedScreenerStocks(): ScreenerStockItem[] {
       profitGrowthYoY,
       capexGrowth,
       cashRatio,
-      ktplRate: rep?.bonusWelfareRate ?? null,
-      ktplVnd: null,
+      ktplRate: finalKtplRate,
+      ktplVnd: finalKtplVnd,
       score360: ev?.score ?? (roe && roe > 15 ? 7.8 : pe && pe < 12 ? 7.2 : 6.0),
       score360Rating: ev?.rating ?? (roe && roe > 18 ? 'XUẤT SẮC' : roe && roe > 12 ? 'TỐT' : 'KHÁ'),
       reportCount: rep?.count || 0,

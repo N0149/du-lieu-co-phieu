@@ -44,6 +44,8 @@ export function initFinancialStatementsDb(): DatabaseSync {
   }
 
   const db = new DatabaseSync(DB_PATH);
+  db.exec(`PRAGMA journal_mode = WAL;`);
+  db.exec(`PRAGMA busy_timeout = 5000;`);
   db.exec(`
     CREATE TABLE IF NOT EXISTS financial_statements (
       symbol TEXT NOT NULL,
@@ -73,6 +75,7 @@ export function getLocalFinancialStatements(
   try {
     const db = new DatabaseSync(DB_PATH, { readOnly: true });
     try {
+      db.exec(`PRAGMA busy_timeout = 5000;`);
       const row = db
         .prepare(
           `SELECT fiscal_dates, cdkt, kqkd, lctt, data_source 

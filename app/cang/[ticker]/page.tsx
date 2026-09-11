@@ -83,11 +83,12 @@ export default async function StockPortDetailPage({ params }: Props) {
   const prevDwt = (prevMonth?.dwt_in || 0) + (prevMonth?.dwt_out || 0)
 
   return (
-    <div className="min-h-screen bg-slate-950 text-slate-100 pb-24 selection:bg-teal-500 selection:text-slate-950">
+    <div className="flex min-h-screen flex-col bg-slate-950 text-slate-100 selection:bg-teal-500 selection:text-slate-950">
       {/* Site Header */}
       <SiteHeader />
 
-      {/* Top Header / Breadcrumb */}
+      <main className="flex-1 pb-24">
+        {/* Top Header / Breadcrumb */}
       <div className="relative border-b border-slate-800/80 bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950 py-8 sm:py-10 overflow-hidden">
         {/* Ambient Gradient Glow Lights */}
         <div className="absolute top-0 left-1/4 -translate-x-1/2 w-96 h-96 bg-teal-500/10 rounded-full blur-3xl pointer-events-none" />
@@ -398,6 +399,7 @@ export default async function StockPortDetailPage({ params }: Props) {
           )}
         </section>
       </div>
-    </div>
-  )
+    </main>
+  </div>
+)
 }

@@ -41,11 +41,29 @@ Dưới đây là Báo cáo chi tiết được trích xuất từ tài liệu �
 
 ## MỤC 2: PHÂN PHỐI LỢI NHUẬN (2025 & DỰ KIẾN 2026)
 
-### 1. Phương án Phân phối Lợi nhuận năm 2025
+### 1. Phương án Phân phối Lợi nhuận sau thuế đến ngày 31/12/2025
+
+| STT | Phân phối lợi nhuận sau thuế | Tỷ lệ | Số tiền (VNĐ) |
+| :---: | :--- | :---: | :---: |
+| 1 | **Lợi nhuận sau thuế năm nay (LNST 2025)** | | **257.194.601.921** |
+| 2 | Lãi/Lỗ CLTG | | 489.974.967 |
+| 3 | Trích quỹ dự trữ bắt buộc | 5,00% | 12.859.730.096 |
+| 4 | Thù lao HĐQT, BKS | 0,82% | 2.109.432.000 |
+| 5 | Quỹ thưởng NQL công ty | | - |
+| 7 | **Trích KTPL (01 tháng lương bình quân NLĐ)** | **12,94%** | **33.277.898.880** |
+| 8 | Lợi nhuận được chia cổ tức trong năm | | 208.457.565.979 |
+| 9 | Lợi nhuận năm trước chưa chia | | 242.722.699.222 |
+| 10 | **Tổng lợi nhuận được chia cổ tức** | | **451.180.265.200** |
+| 11 | Vốn cổ phần nhận cổ tức | | 1.505.476.260.000 |
+| 12 | **Chia cổ tức 2025 bằng tiền mặt** | **5,0%** | **75.273.813.000** |
+| 13 | **Chia cổ tức 2025 bằng cổ phiếu** | **10,0%** | **150.547.626.000** |
+| 14 | Lợi nhuận còn lại sau khi chia cổ tức | | 225.358.826.200 |
+
+*   **Tỷ lệ trích Quỹ Khen thưởng Phúc lợi (KTPL):** Có trích **33.277.898.880 VNĐ** (tương đương **12,94%** LNST năm 2025) cho 01 tháng lương bình quân người lao động.
 *   **Tổng lợi nhuận được chia cổ tức:** 451.180.265.200 VNĐ.
 *   **Tỷ lệ chi trả cổ tức năm 2025:** **15%**
-    *   **Chi trả bằng tiền mặt:** **5%** (Tương ứng số tiền chi trả khoảng 75 tỷ đồng).
-    *   **Chi trả bằng cổ phiếu:** **10%** (Phát hành cổ phiếu để tăng vốn điều lệ từ nguồn lợi nhuận sau thuế chưa phân phối).
+    *   **Chi trả bằng tiền mặt:** **5,0%** (Tương ứng số tiền chi trả: 75.273.813.000 VNĐ).
+    *   **Chi trả bằng cổ phiếu:** **10,0%** (Tương ứng số tiền chi trả: 150.547.626.000 VNĐ, phát hành cổ phiếu tăng vốn điều lệ từ nguồn LNST chưa phân phối).
 
 ### 2. Kế hoạch Phân phối Lợi nhuận và Dự kiến Cổ tức năm 2026
 *   **Tỷ lệ chia cổ tức dự kiến năm 2026:** Tối thiểu **10%**.

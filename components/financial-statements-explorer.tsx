@@ -20,6 +20,7 @@ interface FinancialStatementsExplorerProps {
   ticker: string;
   financials?: StockFinancialYear[];
   initialData?: RawFinancialStatementData | null;
+  initialAnnualData?: RawFinancialStatementData | null;
   detailedSnapshot?: any;
 }
 
@@ -81,6 +82,7 @@ const RUATICHSAN_FONT_STYLE = {
 export function FinancialStatementsExplorer({
   ticker,
   initialData,
+  initialAnnualData,
 }: FinancialStatementsExplorerProps) {
   const [activeTab, setActiveTab] = useState<FinancialTab>("cdkt");
   const [periodMode, setPeriodMode] = useState<"quarter" | "annual">("quarter");
@@ -94,10 +96,31 @@ export function FinancialStatementsExplorer({
   // Cột đang được rê chuột (hover) để tô sáng đồng loạt các quý cùng kỳ
   const [hoveredColIdx, setHoveredColIdx] = useState<number | null>(null);
 
-  const [statementData, setStatementData] = useState<RawFinancialStatementData | null>(initialData || null);
+  const [quarterData, setQuarterData] = useState<RawFinancialStatementData | null>(initialData || null);
+  const [annualData, setAnnualData] = useState<RawFinancialStatementData | null>(initialAnnualData || null);
 
-  // Tải dữ liệu BCTC khi đổi mã hoặc đổi kỳ (quarter / annual)
+  // Đồng bộ khi prop SSR thay đổi
   useEffect(() => {
+    if (initialData && Array.isArray(initialData.fiscalDates) && initialData.fiscalDates.length > 0) {
+      setQuarterData(initialData);
+    }
+  }, [initialData]);
+
+  useEffect(() => {
+    if (initialAnnualData && Array.isArray(initialAnnualData.fiscalDates) && initialAnnualData.fiscalDates.length > 0) {
+      setAnnualData(initialAnnualData);
+    }
+  }, [initialAnnualData]);
+
+  const statementData = periodMode === "quarter" ? quarterData : annualData;
+
+  // Tải dữ liệu BCTC khi đổi mã hoặc đổi kỳ (quarter / annual) nếu chưa có trong cache
+  useEffect(() => {
+    const currentCached = periodMode === "quarter" ? quarterData : annualData;
+    if (currentCached && Array.isArray(currentCached.fiscalDates) && currentCached.fiscalDates.length > 0) {
+      return;
+    }
+
     let isMounted = true;
     setLoading(true);
     setDateOffset(0);
@@ -106,8 +129,12 @@ export function FinancialStatementsExplorer({
       .then((res) => res.json())
       .then((data) => {
         if (isMounted) {
-          if (data && Array.isArray(data.fiscalDates)) {
-            setStatementData(data);
+          if (data && Array.isArray(data.fiscalDates) && data.fiscalDates.length > 0) {
+            if (periodMode === "quarter") {
+              setQuarterData(data);
+            } else {
+              setAnnualData(data);
+            }
           }
           setLoading(false);
         }
@@ -120,7 +147,7 @@ export function FinancialStatementsExplorer({
     return () => {
       isMounted = false;
     };
-  }, [ticker, periodMode]);
+  }, [ticker, periodMode, quarterData, annualData]);
 
   // Reset offset khi đổi số kỳ
   useEffect(() => {
@@ -448,6 +475,25 @@ export function FinancialStatementsExplorer({
           <TableIcon className="mx-auto mb-2 size-8 text-muted-foreground/40" />
           <p className="font-semibold text-foreground">Không có dữ liệu Báo Cáo Tài Chính cho kỳ này</p>
           <p className="text-xs mt-1">Dữ liệu BCTC đang được cập nhật hoặc mã cổ phiếu chưa công bố.</p>
+          <button
+            type="button"
+            onClick={() => {
+              setLoading(true);
+              fetch(`/api/financials/${encodeURIComponent(ticker)}?period=${periodMode}`)
+                .then((res) => res.json())
+                .then((data) => {
+                  if (data && Array.isArray(data.fiscalDates) && data.fiscalDates.length > 0) {
+                    if (periodMode === "quarter") setQuarterData(data);
+                    else setAnnualData(data);
+                  }
+                  setLoading(false);
+                })
+                .catch(() => setLoading(false));
+            }}
+            className="mt-3 inline-flex items-center gap-1.5 rounded-lg border border-primary/30 bg-primary/10 px-3 py-1.5 text-xs font-semibold text-primary hover:bg-primary/20 transition-colors cursor-pointer"
+          >
+            Tải lại dữ liệu
+          </button>
         </div>
       ) : (
         <div className="relative overflow-hidden rounded-xl border border-border bg-card shadow-2xs">

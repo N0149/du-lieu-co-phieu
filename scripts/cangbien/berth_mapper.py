@@ -21,10 +21,10 @@ BERTH_RULES = [
     {"patterns": ["HOANG DIEU", "HOÀNG DIỆU"], "ticker": "PHP", "slug": "hoang-dieu", "name": "Hoàng Diệu", "authority": "haiphong", "deep_sea": False},
     {"patterns": ["HTIT", "LACH HUYEN 3", "LACH HUYEN 4", "LACH HUYEN 3 4", "HHIT"], "ticker": "PHP", "slug": "htit", "name": "HTIT (Lạch Huyện 3-4)", "authority": "haiphong", "deep_sea": True},
     {"patterns": ["VIP GREEN", "VIP GREEN PORT", "VIPGREEN"], "ticker": "VGR", "slug": "vip-green-port", "name": "VIP Green Port", "authority": "haiphong", "deep_sea": False},
-    {"patterns": ["NAM DINH VU", "NAM ĐÌNH VŨ", "NDV"], "ticker": "GMD", "slug": "nam-dinh-vu", "name": "Nam Đình Vũ", "authority": "haiphong", "deep_sea": False},
+    {"patterns": ["NAM DINH VU", "NAM ĐÌNH VŨ", "NDV", "NAM HAI", "CANG NAM HAI"], "ticker": "GMD", "slug": "nam-dinh-vu", "name": "Nam Đình Vũ / Nam Hải", "authority": "haiphong", "deep_sea": False},
     {"patterns": ["NAM HAI DINH VU", "NHDV"], "ticker": "GMD", "slug": "nam-hai-dinh-vu", "name": "Nam Hải Đình Vũ (cũ)", "authority": "haiphong", "deep_sea": False},
     {"patterns": ["HAI AN", "CANG HAI AN", "HAH"], "ticker": "HAH", "slug": "hai-an", "name": "Cảng Hải An", "authority": "haiphong", "deep_sea": False},
-    {"patterns": ["MIPEC", "CANG MIPEC", "MIPEC PORT", "MIPEC DINH VU", "CANG QUAN DOI MIPEC"], "ticker": "MIPEC", "slug": "mipec", "name": "Cảng MIPEC (Đình Vũ)", "authority": "haiphong", "deep_sea": False},
+    {"patterns": ["MIPEC", "CANG MIPEC", "MIPEC PORT", "MPC PORT", "MPC", "MIPEC DINH VU", "CANG QUAN DOI MIPEC"], "ticker": "MIPEC", "slug": "mipec", "name": "Cảng MIPEC (Đình Vũ)", "authority": "haiphong", "deep_sea": False},
     
     # --- Quảng Ninh ---
     {"patterns": ["CAI LAN", "CÁI LÂN", "TONG HOP CAI LAN"], "ticker": "CQN", "slug": "ben-cang-tong-hop-cai-lan", "name": "Cái Lân (bến tổng hợp)", "authority": "quangninh", "deep_sea": True},
@@ -32,9 +32,9 @@ BERTH_RULES = [
     
     # --- TP.HCM & Cái Mép ---
     {"patterns": ["GEMALINK", "GEMALINK CAI MEP"], "ticker": "GMD", "slug": "gemalink-gemadept-cai-mep", "name": "Gemalink (Cái Mép)", "authority": "hcm", "deep_sea": True},
-    {"patterns": ["PHUOC LONG", "ICD PHUOC LONG"], "ticker": "GMD", "slug": "phuoc-long", "name": "Phước Long", "authority": "hcm", "deep_sea": False},
-    {"patterns": ["K12", "K12A", "K12B", "K12C", "K12C1", "TAN THUAN", "TÂN THUẬN"], "ticker": "SGP", "slug": "k12", "name": "Tân Thuận (K12)", "authority": "hcm", "deep_sea": False},
-    {"patterns": ["K17", "TAN THUAN 2", "TÂN THUẬN 2"], "ticker": "SGP", "slug": "tan-t-2", "name": "Tân Thuận 2 (K17)", "authority": "hcm", "deep_sea": False},
+    {"patterns": ["PHUOC LONG", "ICD PHUOC LONG", "P.LONG", "P.LONG 1", "P.LONG 2", "P.LONG 3", "P LONG"], "ticker": "GMD", "slug": "phuoc-long", "name": "Phước Long", "authority": "hcm", "deep_sea": False},
+    {"patterns": ["K12", "K12A", "K12B", "K12C", "K12C1", "TAN THUAN", "TÂN THUẬN", "K15", "K15B", "K15C", "K16", "K18", "BP12-CSG", "CSG"], "ticker": "SGP", "slug": "k12", "name": "Tân Thuận (K12/K15)", "authority": "hcm", "deep_sea": False},
+    {"patterns": ["K17", "TAN THUAN 2", "TÂN THUẬN 2", "TT2"], "ticker": "SGP", "slug": "tan-t-2", "name": "Tân Thuận 2 (K17)", "authority": "hcm", "deep_sea": False},
     {"patterns": ["H PHUOC", "HIEP PHUOC", "HIỆP PHƯỚC", "SG HP", "SAI GON HIEP PHUOC"], "ticker": "SGP", "slug": "h-phuoc", "name": "Hiệp Phước", "authority": "hcm", "deep_sea": True},
     {"patterns": ["SPCT", "SAI GON PREMIER"], "ticker": "SGP", "slug": "spct", "name": "Cảng SPCT", "authority": "hcm", "deep_sea": True},
     {"patterns": ["VICT", "VIETNAM INTERNATIONAL CONTAINER"], "ticker": None, "slug": "vict", "name": "Cảng VICT", "authority": "hcm", "deep_sea": False},

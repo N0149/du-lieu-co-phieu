@@ -1,6 +1,7 @@
-﻿import fs from 'fs'
+import fs from 'fs'
 import path from 'path'
 import { fileURLToPath } from 'url'
+import { generateAgmKtplSnapshot } from './extract-agm-ktpl.mjs'
 
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = path.dirname(__filename)
@@ -29,6 +30,15 @@ export function syncAgmFiles() {
   }
 
   console.log(`✅ Đã đồng bộ thành công ${copiedCount} file ĐHĐCĐ vào ${TARGET_DIR}`)
+
+  // Tự động bóc tách tỷ lệ KTPL sau khi đồng bộ
+  try {
+    generateAgmKtplSnapshot()
+  } catch (err) {
+    console.warn('Lỗi khi bóc tách KTPL tự động:', err)
+  }
 }
 
 syncAgmFiles()
+
+
