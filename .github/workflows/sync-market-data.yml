@@ -2,13 +2,16 @@ name: Sync Market & Maritime Data Daily
 
 on:
   schedule:
-    # Chạy 1 lần mỗi ngày: 13:30 UTC (tức 20:30 GMT+7 tối theo giờ Việt Nam)
-    - cron: '30 13 * * *'
+    # Chạy 2 lần mỗi ngày: 23:00 UTC (06:00 sáng GMT+7) và 11:00 UTC (18:00 chiều GMT+7)
+    - cron: '0 23 * * *'
+    - cron: '0 11 * * *'
   workflow_dispatch: # Cho phép bấm nút "Run workflow" thủ công trên GitHub
 
 jobs:
   update-data:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -25,7 +28,7 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version: 22
 
       - name: Fetch latest market & stock data
         run: |
@@ -70,5 +73,5 @@ jobs:
         run: |
           git config --global user.name 'github-actions[bot]'
           git config --global user.email 'github-actions[bot]@users.noreply.github.com'
-          git add data/longlive_indices.json data/longlive_manifest.json data/maritime/dashboard_summary.json data/maritime/freight_rates.json data/maritime.db data/disclosures_snapshot.json data/corporate_disclosures.db
+          git add data/longlive_indices.json data/longlive_manifest.json data/maritime/dashboard_summary.json data/maritime/freight_rates.json data/maritime/national_traffic.json data/maritime/stocks_intel.json data/maritime.db data/disclosures_snapshot.json data/corporate_disclosures.db
           git diff --quiet && git diff --staged --quiet || (git commit -m "chore(data): auto sync market, maritime & corporate disclosures $(date +'%Y-%m-%d %H:%M')" && git push)
