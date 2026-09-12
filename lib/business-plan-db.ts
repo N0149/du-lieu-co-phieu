@@ -1,6 +1,7 @@
 import fs from 'node:fs'
 import path from 'node:path'
 import { DatabaseSync } from 'node:sqlite'
+import { createClient, type SupabaseClient } from '@supabase/supabase-js'
 
 const DATA_DIR = path.resolve(process.cwd(), 'data')
 const DB_PATH = path.join(DATA_DIR, 'business_plans.db')
@@ -30,6 +31,16 @@ export interface RawBusinessPlanPayload {
   symbol: string
   updated?: string
   data: BusinessPlanYearData[]
+}
+
+let supabaseInstance: SupabaseClient | null = null
+function getSupabase(): SupabaseClient | null {
+  if (supabaseInstance) return supabaseInstance
+  const url = process.env.NEXT_PUBLIC_SUPABASE_URL || 'https://pxtmuwrpuywrkclobfpa.supabase.co'
+  const key = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || 'sb_publishable_Jjx3eb2edh-gxHZKYEZIog_UyWNqV9Z'
+  if (!url || !key) return null
+  supabaseInstance = createClient(url, key)
+  return supabaseInstance
 }
 
 let dbInstance: DatabaseSync | null = null
@@ -93,6 +104,7 @@ async function decryptApiResponse(res: Response): Promise<any> {
 
 export function getLocalBusinessPlan(symbol: string): RawBusinessPlanPayload | null {
   try {
+    if (!fs.existsSync(DB_PATH)) return null
     const db = getBusinessPlanDb()
     const stmt = db.prepare(`
       SELECT plan_data, updated_source, updated_at
@@ -108,8 +120,7 @@ export function getLocalBusinessPlan(symbol: string): RawBusinessPlanPayload | n
       updated: row.updated_source || row.updated_at,
       data: Array.isArray(data) ? data : data.data || [],
     }
-  } catch (err) {
-    console.error(`Lỗi đọc SQLite kế hoạch kinh doanh cho ${symbol}:`, err)
+  } catch {
     return null
   }
 }
@@ -129,10 +140,31 @@ export function saveBusinessPlanToDb(symbol: string, payload: RawBusinessPlanPay
       payload.updated || new Date().toISOString()
     )
     return true
-  } catch (err) {
-    console.error(`Lỗi lưu kế hoạch kinh doanh vào SQLite cho ${symbol}:`, err)
+  } catch {
+    // Bỏ qua lỗi ghi disk trên môi trường read-only
     return false
   }
+}
+
+function saveBusinessPlanToSupabaseAsync(symbol: string, payload: RawBusinessPlanPayload) {
+  try {
+    const supabase = getSupabase()
+    if (!supabase) return
+    supabase
+      .from('business_plans')
+      .upsert(
+        {
+          symbol: symbol.toUpperCase().trim(),
+          plan_data: payload.data || [],
+          updated_source: payload.updated || new Date().toISOString(),
+          updated_at: new Date().toISOString(),
+        },
+        { onConflict: 'symbol' }
+      )
+      .then(({ error }) => {
+        if (error) console.warn(`[saveBusinessPlanToSupabaseAsync] Error ${symbol}:`, error.message)
+      })
+  } catch {}
 }
 
 export async function fetchAndCacheBusinessPlan(symbol: string): Promise<RawBusinessPlanPayload | null> {
@@ -146,7 +178,7 @@ export async function fetchAndCacheBusinessPlan(symbol: string): Promise<RawBusi
         Origin: 'https://ruatichsan.com',
         Referer: `https://ruatichsan.com/company?symbol=${sym}`,
       },
-      next: { revalidate: 3600 },
+      next: { revalidate: 86400 },
     })
 
     if (!res.ok) return null
@@ -154,6 +186,7 @@ export async function fetchAndCacheBusinessPlan(symbol: string): Promise<RawBusi
     if (!decrypted || !Array.isArray(decrypted.data)) return null
 
     saveBusinessPlanToDb(sym, decrypted)
+    saveBusinessPlanToSupabaseAsync(sym, decrypted)
     return decrypted
   } catch (err) {
     console.error(`Lỗi fetch Kế hoạch KD online cho ${sym}:`, err)
@@ -162,9 +195,38 @@ export async function fetchAndCacheBusinessPlan(symbol: string): Promise<RawBusi
 }
 
 export async function getBusinessPlan(symbol: string): Promise<RawBusinessPlanPayload | null> {
-  const local = getLocalBusinessPlan(symbol)
+  const sym = symbol.toUpperCase().trim()
+
+  // 1. Local SQLite (< 0.1ms)
+  const local = getLocalBusinessPlan(sym)
   if (local && Array.isArray(local.data) && local.data.length > 0) {
     return local
   }
-  return await fetchAndCacheBusinessPlan(symbol)
+
+  // 2. Supabase Cloud (< 25ms)
+  try {
+    const supabase = getSupabase()
+    if (supabase) {
+      const { data, error } = await supabase
+        .from('business_plans')
+        .select('symbol, plan_data, updated_source, updated_at')
+        .eq('symbol', sym)
+        .maybeSingle()
+
+      if (!error && data && data.plan_data) {
+        const parsed: RawBusinessPlanPayload = {
+          symbol: sym,
+          updated: data.updated_source || data.updated_at,
+          data: Array.isArray(data.plan_data) ? data.plan_data : (data.plan_data.data || []),
+        }
+        saveBusinessPlanToDb(sym, parsed)
+        return parsed
+      }
+    }
+  } catch (err) {
+    console.error(`[getBusinessPlan] Lỗi đọc Supabase cho ${sym}:`, err)
+  }
+
+  // 3. Online Fallback
+  return await fetchAndCacheBusinessPlan(sym)
 }

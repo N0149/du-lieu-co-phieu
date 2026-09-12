@@ -289,7 +289,7 @@ export function WiDataScreener({ initialStocks }: WiDataScreenerProps) {
         </aside>
 
         {/* CỘT 3: KHUNG THIẾT LẬP ĐIỀU KIỆN & BẢNG KẾT QUẢ (Không gian chính bên phải) */}
-        <main className="flex-1 overflow-y-auto p-4 space-y-4">
+        <div className="flex-1 min-w-0 overflow-y-auto p-4 space-y-4">
           {/* Phía trên: Khung thiết lập điều kiện lọc (Conditions Builder) */}
           <ScreenerConditionsBuilder
             conditions={conditions}
@@ -303,9 +303,12 @@ export function WiDataScreener({ initialStocks }: WiDataScreenerProps) {
 
           {/* Phía dưới: Bảng kết quả lọc thông minh (Results Table) */}
           <div ref={tableRef} className="pt-2">
-            <ScreenerResultsTable stocks={filteredStocks} />
+            <ScreenerResultsTable
+              stocks={filteredStocks}
+              conditions={conditions}
+            />
           </div>
-        </main>
+        </div>
       </div>
     </div>
   )

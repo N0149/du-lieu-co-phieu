@@ -107,14 +107,14 @@ export default async function StockDetailPage({
   const { getFinancialChartData } = await import('@/lib/financial-charts-service')
   const { getValuationHistory } = await import('@/lib/valuation-history-service')
   const { getDividendHistory } = await import('@/lib/dividend-history-service')
-  const { getLocalBusinessPlan } = await import('@/lib/business-plan-db')
-  const { getProfitStructureData } = await import('@/lib/profit-structure-service')
-  const { getCostBreakdownData } = await import('@/lib/cost-breakdown-service')
-  const { getDetailedBalanceSheetCashFlowData } = await import('@/lib/balance-sheet-cashflow-service')
-  const { getCapexFinancialData } = await import('@/lib/capex-financial-service')
-  const { getDebtDupontData } = await import('@/lib/debt-dupont-service')
+  const { getBusinessPlan } = await import('@/lib/business-plan-db')
+  const { buildProfitStructureData } = await import('@/lib/profit-structure-service')
+  const { buildCostBreakdownData } = await import('@/lib/cost-breakdown-service')
+  const { buildDetailedBalanceSheetCashFlowData } = await import('@/lib/balance-sheet-cashflow-service')
+  const { buildCapexFinancialData } = await import('@/lib/capex-financial-service')
+  const { buildDebtDupontData } = await import('@/lib/debt-dupont-service')
   const { getAgmReport, getAvailableAgmTickers, getAgmKtpl } = await import('@/lib/agm-service')
-  const { getLocalFinancialStatements } = await import('@/lib/financial-statements-db')
+  const { getFinancialStatements } = await import('@/lib/financial-statements-db')
 
   const [
     financialChartQuarter,
@@ -122,41 +122,33 @@ export default async function StockDetailPage({
     valuationHistory,
     dividendHistory,
     businessPlanData,
-    profitStructureQuarter,
-    profitStructureAnnual,
-    costBreakdownQuarter,
-    costBreakdownAnnual,
-    balanceSheetQuarter,
-    balanceSheetAnnual,
-    capexFinancialQuarter,
-    capexFinancialAnnual,
-    debtDupontQuarter,
-    debtDupontAnnual,
-    agmData,
-    availableAgmTickers,
     financialStatementsQuarter,
     financialStatementsAnnual,
+    agmData,
+    availableAgmTickers,
   ] = await Promise.all([
     getFinancialChartData(ticker, 'quarter'),
     getFinancialChartData(ticker, 'annual'),
     getValuationHistory(ticker),
     getDividendHistory(ticker),
-    Promise.resolve(getLocalBusinessPlan(ticker)),
-    Promise.resolve(getProfitStructureData(ticker, 'quarter')),
-    Promise.resolve(getProfitStructureData(ticker, 'annual')),
-    Promise.resolve(getCostBreakdownData(ticker, 'quarter')),
-    Promise.resolve(getCostBreakdownData(ticker, 'annual')),
-    Promise.resolve(getDetailedBalanceSheetCashFlowData(ticker, 'quarter')),
-    Promise.resolve(getDetailedBalanceSheetCashFlowData(ticker, 'annual')),
-    Promise.resolve(getCapexFinancialData(ticker, 'quarter')),
-    Promise.resolve(getCapexFinancialData(ticker, 'annual')),
-    Promise.resolve(getDebtDupontData(ticker, 'quarter')),
-    Promise.resolve(getDebtDupontData(ticker, 'annual')),
+    getBusinessPlan(ticker),
+    getFinancialStatements(ticker, 'quarter'),
+    getFinancialStatements(ticker, 'annual'),
     Promise.resolve(getAgmReport(ticker, 2026)),
     Promise.resolve(getAvailableAgmTickers(2026)),
-    Promise.resolve(getLocalFinancialStatements(ticker, 'quarter')),
-    Promise.resolve(getLocalFinancialStatements(ticker, 'annual')),
   ])
+
+  // Tính toán đồng thời các cụm biểu đồ chuyên sâu từ dữ liệu BCTC đã tải (0ms overhead)
+  const profitStructureQuarter = buildProfitStructureData(ticker, 'quarter', financialStatementsQuarter)
+  const profitStructureAnnual = buildProfitStructureData(ticker, 'annual', financialStatementsAnnual)
+  const costBreakdownQuarter = buildCostBreakdownData(ticker, 'quarter', financialStatementsQuarter)
+  const costBreakdownAnnual = buildCostBreakdownData(ticker, 'annual', financialStatementsAnnual)
+  const balanceSheetQuarter = buildDetailedBalanceSheetCashFlowData(ticker, 'quarter', financialStatementsQuarter)
+  const balanceSheetAnnual = buildDetailedBalanceSheetCashFlowData(ticker, 'annual', financialStatementsAnnual)
+  const capexFinancialQuarter = buildCapexFinancialData(ticker, 'quarter', financialStatementsQuarter)
+  const capexFinancialAnnual = buildCapexFinancialData(ticker, 'annual', financialStatementsAnnual)
+  const debtDupontQuarter = buildDebtDupontData(ticker, 'quarter', financialStatementsQuarter)
+  const debtDupontAnnual = buildDebtDupontData(ticker, 'annual', financialStatementsAnnual)
 
   // Tỷ lệ lợi nhuận trích ngoài cổ đông (KTPL, Thưởng BĐH, Thù lao HĐQT)
   const ktplRate = agmData?.ktplRate ?? getAgmKtpl(ticker)

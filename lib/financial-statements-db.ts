@@ -1,6 +1,7 @@
 import fs from "node:fs";
 import path from "node:path";
 import { DatabaseSync } from "node:sqlite";
+import { createClient, type SupabaseClient } from "@supabase/supabase-js";
 
 const DATA_DIR = path.resolve(process.cwd(), "data");
 const DB_PATH = path.join(DATA_DIR, "financial_statements.db");
@@ -14,6 +15,16 @@ export interface RawFinancialStatementData {
   kqkd: Array<[string, number, number, ...Array<number | null>]>;
   lctt: Array<[string, number, number, ...Array<number | null>]>;
   dataSource?: string;
+}
+
+let supabaseInstance: SupabaseClient | null = null;
+function getSupabase(): SupabaseClient | null {
+  if (supabaseInstance) return supabaseInstance;
+  const url = process.env.NEXT_PUBLIC_SUPABASE_URL || 'https://pxtmuwrpuywrkclobfpa.supabase.co';
+  const key = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || 'sb_publishable_Jjx3eb2edh-gxHZKYEZIog_UyWNqV9Z';
+  if (!url || !key) return null;
+  supabaseInstance = createClient(url, key);
+  return supabaseInstance;
 }
 
 let cryptoKeyCache: CryptoKey | null = null;
@@ -37,7 +48,7 @@ async function decryptApiResponse(res: Response): Promise<any> {
   return JSON.parse(new TextDecoder().decode(decryptedBuf));
 }
 
-// Khởi tạo bảng SQLite
+// Khởi tạo bảng SQLite cục bộ
 export function initFinancialStatementsDb(): DatabaseSync {
   if (!fs.existsSync(DATA_DIR)) {
     fs.mkdirSync(DATA_DIR, { recursive: true });
@@ -108,50 +119,135 @@ export function getLocalFinancialStatements(
   }
 }
 
-// Lưu BCTC vào SQLite
+// Lưu BCTC vào SQLite (an toàn với môi trường read-only Vercel)
 export function saveLocalFinancialStatements(
   symbol: string,
   periodType: "quarter" | "annual",
   data: RawFinancialStatementData
 ): void {
   const ticker = symbol.toUpperCase().trim();
-  const db = initFinancialStatementsDb();
-
   try {
-    const stmt = db.prepare(`
-      INSERT OR REPLACE INTO financial_statements (
-        symbol, period_type, fiscal_dates, cdkt, kqkd, lctt, data_source, updated_at
-      ) VALUES (?, ?, ?, ?, ?, ?, ?, datetime('now', 'localtime'))
-    `);
+    const db = initFinancialStatementsDb();
+    try {
+      const stmt = db.prepare(`
+        INSERT OR REPLACE INTO financial_statements (
+          symbol, period_type, fiscal_dates, cdkt, kqkd, lctt, data_source, updated_at
+        ) VALUES (?, ?, ?, ?, ?, ?, ?, datetime('now', 'localtime'))
+      `);
 
-    stmt.run(
-      ticker,
-      periodType,
-      JSON.stringify(data.fiscalDates || []),
-      JSON.stringify(data.cdkt || []),
-      JSON.stringify(data.kqkd || []),
-      JSON.stringify(data.lctt || []),
-      data.dataSource || "Ruatichsan"
-    );
-  } finally {
-    db.close();
+      stmt.run(
+        ticker,
+        periodType,
+        JSON.stringify(data.fiscalDates || []),
+        JSON.stringify(data.cdkt || []),
+        JSON.stringify(data.kqkd || []),
+        JSON.stringify(data.lctt || []),
+        data.dataSource || "Ruatichsan"
+      );
+    } finally {
+      db.close();
+    }
+  } catch {
+    // Bỏ qua lỗi ghi disk trên môi trường read-only như Vercel
   }
 }
 
-// Tải từ nguồn chính thức (Online Fallback) và tự động Cache vào SQLite (Offline-First)
-export async function fetchAndCacheFinancialStatements(
+// Đọc BCTC từ Supabase Cloud Database (<25ms)
+export async function getSupabaseFinancialStatements(
   symbol: string,
   periodType: "quarter" | "annual" = "quarter"
 ): Promise<RawFinancialStatementData | null> {
   const ticker = symbol.toUpperCase().trim();
+  try {
+    const supabase = getSupabase();
+    if (!supabase) return null;
 
-  // 1. Kiểm tra SQLite nội bộ trước
+    const { data, error } = await supabase
+      .from("financial_statements")
+      .select("fiscal_dates, cdkt, kqkd, lctt, data_source")
+      .eq("symbol", ticker)
+      .eq("period_type", periodType)
+      .maybeSingle();
+
+    if (error || !data || !data.fiscal_dates) return null;
+
+    const parseJson = (val: any) => {
+      if (Array.isArray(val)) return val;
+      if (typeof val === "string") {
+        try {
+          return JSON.parse(val);
+        } catch {
+          return [];
+        }
+      }
+      return [];
+    };
+
+    return {
+      fiscalDates: parseJson(data.fiscal_dates),
+      cdkt: parseJson(data.cdkt),
+      kqkd: parseJson(data.kqkd),
+      lctt: parseJson(data.lctt),
+      dataSource: data.data_source || "Supabase",
+    };
+  } catch (err) {
+    console.error(`[getSupabaseFinancialStatements] Lỗi truy vấn ${ticker}:`, err);
+    return null;
+  }
+}
+
+// Lưu bất đồng bộ lên Supabase khi có dữ liệu mới từ fallback
+function saveToSupabaseAsync(
+  symbol: string,
+  periodType: "quarter" | "annual",
+  data: RawFinancialStatementData
+) {
+  try {
+    const supabase = getSupabase();
+    if (!supabase) return;
+    supabase
+      .from("financial_statements")
+      .upsert(
+        {
+          symbol: symbol.toUpperCase().trim(),
+          period_type: periodType,
+          fiscal_dates: data.fiscalDates,
+          cdkt: data.cdkt,
+          kqkd: data.kqkd,
+          lctt: data.lctt,
+          data_source: data.dataSource || "Ruatichsan",
+          updated_at: new Date().toISOString(),
+        },
+        { onConflict: "symbol,period_type" }
+      )
+      .then(({ error }) => {
+        if (error) console.warn(`[saveToSupabaseAsync] Lỗi lưu ${symbol}:`, error.message);
+      });
+  } catch {}
+}
+
+// Hàm đọc BCTC thống nhất 3 lớp: SQLite Local -> Supabase Cloud -> Online Fallback
+export async function getFinancialStatements(
+  symbol: string,
+  periodType: "quarter" | "annual" = "quarter"
+): Promise<RawFinancialStatementData | null> {
+  const ticker = symbol.toUpperCase().trim();
+  if (!ticker) return null;
+
+  // 1. Kiểm tra SQLite đĩa cục bộ trước (Localhost offline-first <0.1ms)
   const local = getLocalFinancialStatements(ticker, periodType);
   if (local && local.fiscalDates && local.fiscalDates.length > 0) {
     return local;
   }
 
-  // 2. Nếu chưa có, tải online và giải mã
+  // 2. Truy vấn từ Supabase Cloud Database (Production Vercel <25ms)
+  const cloud = await getSupabaseFinancialStatements(ticker, periodType);
+  if (cloud && cloud.fiscalDates && cloud.fiscalDates.length > 0) {
+    saveLocalFinancialStatements(ticker, periodType, cloud);
+    return cloud;
+  }
+
+  // 3. Online Fallback: Nếu là mã mới chưa có trên DB, tải online từ nguồn chính thức
   try {
     const endpoint = `${API_BASE_URL}/${periodType}/${encodeURIComponent(ticker)}`;
     const res = await fetch(endpoint, {
@@ -160,23 +256,28 @@ export async function fetchAndCacheFinancialStatements(
         "Origin": "https://ruatichsan.com",
         "Referer": `https://ruatichsan.com/company?symbol=${ticker}`,
       },
+      next: { revalidate: 86400 },
     });
 
-    if (!res.ok) {
-      return null;
+    if (res.ok) {
+      const data: RawFinancialStatementData = await decryptApiResponse(res);
+      if (data && Array.isArray(data.fiscalDates) && data.fiscalDates.length > 0) {
+        saveToSupabaseAsync(ticker, periodType, data);
+        saveLocalFinancialStatements(ticker, periodType, data);
+        return data;
+      }
     }
-
-    const data: RawFinancialStatementData = await decryptApiResponse(res);
-
-    if (data && Array.isArray(data.fiscalDates) && data.fiscalDates.length > 0) {
-      // 3. Tự động lưu cache vào SQLite
-      saveLocalFinancialStatements(ticker, periodType, data);
-      return data;
-    }
-
-    return null;
   } catch (err) {
-    console.error(`[fetchAndCacheFinancialStatements] Error for ${ticker} (${periodType}):`, err);
-    return null;
+    console.error(`[getFinancialStatements] Fallback online error for ${ticker}:`, err);
   }
+
+  return null;
+}
+
+// Tải từ nguồn chính thức (Online Fallback) và tự động Cache (Tương thích ngược)
+export async function fetchAndCacheFinancialStatements(
+  symbol: string,
+  periodType: "quarter" | "annual" = "quarter"
+): Promise<RawFinancialStatementData | null> {
+  return getFinancialStatements(symbol, periodType);
 }

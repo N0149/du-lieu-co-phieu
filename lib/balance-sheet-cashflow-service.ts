@@ -1,6 +1,4 @@
-import fs from 'node:fs'
-import path from 'node:path'
-import { DatabaseSync } from 'node:sqlite'
+import { getFinancialStatements, type RawFinancialStatementData } from './financial-statements-db'
 
 export interface DetailedBalanceSheetPoint {
   date: string
@@ -36,24 +34,6 @@ export interface DetailedBalanceSheetPayload {
   points: DetailedBalanceSheetPoint[]
 }
 
-const DATA_DIR = path.resolve(process.cwd(), 'data')
-const DB_PATH = path.join(DATA_DIR, 'financial_statements.db')
-
-let dbInstance: DatabaseSync | null = null
-
-function getFinancialStatementsDb(): DatabaseSync | null {
-  if (dbInstance) return dbInstance
-  if (!fs.existsSync(DB_PATH)) return null
-  try {
-    const db = new DatabaseSync(DB_PATH, { readOnly: true })
-    dbInstance = db
-    return dbInstance
-  } catch (err) {
-    console.error('[BalanceSheetCashflowService] Lỗi kết nối DB:', err)
-    return null
-  }
-}
-
 function fmtPeriod(dateStr: string, isQuarter: boolean): string {
   if (!dateStr) return ''
   if (!isQuarter) return dateStr.slice(0, 4)
@@ -65,121 +45,117 @@ function fmtPeriod(dateStr: string, isQuarter: boolean): string {
   return `Q${q}/${y}`
 }
 
-export function getDetailedBalanceSheetCashFlowData(
+export function buildDetailedBalanceSheetCashFlowData(
   symbol: string,
-  periodType: 'quarter' | 'annual' = 'quarter'
+  periodType: 'quarter' | 'annual',
+  data: RawFinancialStatementData | null | undefined
 ): DetailedBalanceSheetPayload | null {
-  try {
-    const db = getFinancialStatementsDb()
-    if (!db) return null
+  if (!data || !data.fiscalDates || !data.cdkt) return null
+  const dates = data.fiscalDates
+  const cdkt = data.cdkt
+  const lctt = data.lctt || []
 
-    const stmt = db.prepare(`
-      SELECT fiscal_dates, cdkt, lctt
-      FROM financial_statements
-      WHERE symbol = ? AND period_type = ?
-    `)
+  if (!Array.isArray(dates) || !Array.isArray(cdkt) || cdkt.length === 0) return null
 
-    const row = stmt.get(symbol.toUpperCase().trim(), periodType) as
-      | { fiscal_dates: string; cdkt: string; lctt: string }
-      | undefined
+  const findRow = (arr: any[][], name: string) =>
+    arr.find((r) => r[0] && String(r[0]).toLowerCase().trim() === name.toLowerCase().trim())
 
-    if (!row || !row.fiscal_dates || !row.cdkt) return null
+  // Tài sản
+  const rTien = findRow(cdkt, 'Tiền và tương đương tiền')
+  const rDTNH = findRow(cdkt, 'Đầu tư ngắn hạn')
+  const rPT = findRow(cdkt, 'Các khoản phải thu')
+  const rTK = findRow(cdkt, 'Hàng tồn kho, ròng') || findRow(cdkt, 'Hàng tồn kho')
+  const rTSCD = findRow(cdkt, 'Tài sản cố định')
+  const rDTDH = findRow(cdkt, 'Đầu tư dài hạn')
+  const rTongTS = findRow(cdkt, 'TỔNG CỘNG TÀI SẢN')
 
-    const dates = JSON.parse(row.fiscal_dates) as string[]
-    const cdkt = JSON.parse(row.cdkt) as any[][]
-    const lctt = row.lctt ? (JSON.parse(row.lctt) as any[][]) : []
+  // Nguồn vốn
+  const rVayNH = findRow(cdkt, 'Vay ngắn hạn')
+  const rVayDH = findRow(cdkt, 'Vay dài hạn')
+  const rPTNB = findRow(cdkt, 'Phải trả người bán')
+  const rNMTT = findRow(cdkt, 'Người mua trả tiền trước')
+  const rVCSH = findRow(cdkt, 'Vốn chủ sở hữu')
+  const rTongNV = findRow(cdkt, 'Tổng cộng nguồn vốn')
 
-    if (!Array.isArray(dates) || !Array.isArray(cdkt) || cdkt.length === 0) return null
+  // Lưu chuyển tiền
+  const rOCF = findRow(lctt, 'Lưu chuyển tiền tệ ròng từ các hoạt động sản xuất kinh doanh')
+  const rICF = findRow(lctt, 'Lưu chuyển tiền thuần từ hoạt động đầu tư')
+  const rCFF = findRow(lctt, 'Lưu chuyển tiền thuần từ hoạt động tài chính')
+  const rNet = findRow(lctt, 'Lưu chuyển tiền thuần trong kỳ')
 
-    const findRow = (arr: any[][], name: string) =>
-      arr.find((r) => r[0] && String(r[0]).toLowerCase().trim() === name.toLowerCase().trim())
+  const isQuarter = periodType === 'quarter'
+  const toBillion = (val: any) => Math.round((Number(val) || 0) / 1e8) / 10
+
+  const points: DetailedBalanceSheetPoint[] = dates.map((d, i) => {
+    const col = i + 3
+    const qNum = isQuarter ? Math.ceil(parseInt(d.split('-')[1], 10) / 3) : null
 
     // Tài sản
-    const rTien = findRow(cdkt, 'Tiền và tương đương tiền')
-    const rDTNH = findRow(cdkt, 'Đầu tư ngắn hạn')
-    const rPT = findRow(cdkt, 'Các khoản phải thu')
-    const rTK = findRow(cdkt, 'Hàng tồn kho, ròng') || findRow(cdkt, 'Hàng tồn kho')
-    const rTSCD = findRow(cdkt, 'Tài sản cố định')
-    const rDTDH = findRow(cdkt, 'Đầu tư dài hạn')
-    const rTongTS = findRow(cdkt, 'TỔNG CỘNG TÀI SẢN')
+    const tien = toBillion(rTien ? rTien[col] : 0)
+    const dtnh = toBillion(rDTNH ? rDTNH[col] : 0)
+    const pt = toBillion(rPT ? rPT[col] : 0)
+    const tk = toBillion(rTK ? rTK[col] : 0)
+    const tscd = toBillion(rTSCD ? rTSCD[col] : 0)
+    const dtdh = toBillion(rDTDH ? rDTDH[col] : 0)
+    const tongTS = toBillion(rTongTS ? rTongTS[col] : 0)
+    const tsKhac = Math.max(0, Math.round((tongTS - (tien + dtnh + pt + tk + tscd + dtdh)) * 10) / 10)
 
     // Nguồn vốn
-    const rVayNH = findRow(cdkt, 'Vay ngắn hạn')
-    const rVayDH = findRow(cdkt, 'Vay dài hạn')
-    const rPTNB = findRow(cdkt, 'Phải trả người bán')
-    const rNMTT = findRow(cdkt, 'Người mua trả tiền trước')
-    const rVCSH = findRow(cdkt, 'Vốn chủ sở hữu')
-    const rTongNV = findRow(cdkt, 'Tổng cộng nguồn vốn')
+    const vnh = toBillion(rVayNH ? rVayNH[col] : 0)
+    const vdh = toBillion(rVayDH ? rVayDH[col] : 0)
+    const ptnb = toBillion(rPTNB ? rPTNB[col] : 0)
+    const nmtt = toBillion(rNMTT ? rNMTT[col] : 0)
+    const vcsh = toBillion(rVCSH ? rVCSH[col] : 0)
+    const tongNV = toBillion(rTongNV ? rTongNV[col] : 0)
+    const nvKhac = Math.max(0, Math.round((tongNV - (vnh + vdh + ptnb + nmtt + vcsh)) * 10) / 10)
 
     // Lưu chuyển tiền
-    const rOCF = findRow(lctt, 'Lưu chuyển tiền tệ ròng từ các hoạt động sản xuất kinh doanh')
-    const rICF = findRow(lctt, 'Lưu chuyển tiền thuần từ hoạt động đầu tư')
-    const rCFF = findRow(lctt, 'Lưu chuyển tiền thuần từ hoạt động tài chính')
-    const rNet = findRow(lctt, 'Lưu chuyển tiền thuần trong kỳ')
-
-    const isQuarter = periodType === 'quarter'
-    const toBillion = (val: any) => Math.round((Number(val) || 0) / 1e8) / 10
-
-    const points: DetailedBalanceSheetPoint[] = dates.map((d, i) => {
-      const col = i + 3
-      const qNum = isQuarter ? Math.ceil(parseInt(d.split('-')[1], 10) / 3) : null
-
-      // Tài sản
-      const tien = toBillion(rTien ? rTien[col] : 0)
-      const dtnh = toBillion(rDTNH ? rDTNH[col] : 0)
-      const pt = toBillion(rPT ? rPT[col] : 0)
-      const tk = toBillion(rTK ? rTK[col] : 0)
-      const tscd = toBillion(rTSCD ? rTSCD[col] : 0)
-      const dtdh = toBillion(rDTDH ? rDTDH[col] : 0)
-      const tongTS = toBillion(rTongTS ? rTongTS[col] : 0)
-      const tsKhac = Math.max(0, Math.round((tongTS - (tien + dtnh + pt + tk + tscd + dtdh)) * 10) / 10)
-
-      // Nguồn vốn
-      const vnh = toBillion(rVayNH ? rVayNH[col] : 0)
-      const vdh = toBillion(rVayDH ? rVayDH[col] : 0)
-      const ptnb = toBillion(rPTNB ? rPTNB[col] : 0)
-      const nmtt = toBillion(rNMTT ? rNMTT[col] : 0)
-      const vcsh = toBillion(rVCSH ? rVCSH[col] : 0)
-      const tongNV = toBillion(rTongNV ? rTongNV[col] : 0)
-      const nvKhac = Math.max(0, Math.round((tongNV - (vnh + vdh + ptnb + nmtt + vcsh)) * 10) / 10)
-
-      // Lưu chuyển tiền
-      const ocf = toBillion(rOCF ? rOCF[col] : 0)
-      const icf = toBillion(rICF ? rICF[col] : 0)
-      const cff = toBillion(rCFF ? rCFF[col] : 0)
-      const netCash = toBillion(rNet ? rNet[col] : 0)
-
-      return {
-        date: d,
-        displayDate: fmtPeriod(d, isQuarter),
-        quarterNum: qNum,
-        tien,
-        dtnh,
-        pt,
-        tk,
-        tscd,
-        dtdh,
-        tsKhac,
-        tongTS,
-        vcsh,
-        nmtt,
-        ptnb,
-        vdh,
-        vnh,
-        nvKhac,
-        tongNV,
-        ocf,
-        icf,
-        cff,
-        netCash,
-      }
-    })
+    const ocf = toBillion(rOCF ? rOCF[col] : 0)
+    const icf = toBillion(rICF ? rICF[col] : 0)
+    const cff = toBillion(rCFF ? rCFF[col] : 0)
+    const netCash = toBillion(rNet ? rNet[col] : 0)
 
     return {
-      symbol: symbol.toUpperCase().trim(),
-      periodType,
-      points,
+      date: d,
+      displayDate: fmtPeriod(d, isQuarter),
+      quarterNum: qNum,
+      tien,
+      dtnh,
+      pt,
+      tk,
+      tscd,
+      dtdh,
+      tsKhac,
+      tongTS,
+      vcsh,
+      nmtt,
+      ptnb,
+      vdh,
+      vnh,
+      nvKhac,
+      tongNV,
+      ocf,
+      icf,
+      cff,
+      netCash,
     }
+  })
+
+  return {
+    symbol: symbol.toUpperCase().trim(),
+    periodType,
+    points,
+  }
+}
+
+export async function getDetailedBalanceSheetCashFlowData(
+  symbol: string,
+  periodType: 'quarter' | 'annual' = 'quarter',
+  rawStmt?: RawFinancialStatementData | null
+): Promise<DetailedBalanceSheetPayload | null> {
+  try {
+    const stmt = rawStmt || (await getFinancialStatements(symbol, periodType))
+    return buildDetailedBalanceSheetCashFlowData(symbol, periodType, stmt)
   } catch (err) {
     console.error(`[BalanceSheetCashflowService] Lỗi xử lý cho ${symbol}:`, err)
     return null

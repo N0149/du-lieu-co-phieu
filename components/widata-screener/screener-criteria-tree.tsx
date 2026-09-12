@@ -26,6 +26,7 @@ const CATEGORY_GROUPS = [
     subCategories: [
       'Báo cáo phân tích',
       'Báo cáo tài chính',
+      'Tỷ lệ LNST không thuộc cổ đông',
       'Cổ tức',
       'Định giá',
       'Hiệu quả hoạt động',
@@ -40,22 +41,22 @@ const CATEGORY_GROUPS = [
   {
     id: 'phi_tai_chinh',
     label: 'Phi tài chính',
-    subCategories: ['Đánh giá AI', 'Cơ cấu cổ đông'],
+    subCategories: ['Báo cáo tài chính (Sản xuất)', 'Đánh giá AI', 'Cơ cấu cổ đông'],
   },
   {
     id: 'ngan_hang',
     label: 'Ngân hàng',
-    subCategories: ['Chỉ số Ngân hàng'],
+    subCategories: ['Báo cáo tài chính (Ngân hàng)', 'Chỉ số Ngân hàng'],
   },
   {
     id: 'bao_hiem',
     label: 'Bảo hiểm',
-    subCategories: ['Chỉ số Bảo hiểm'],
+    subCategories: ['Báo cáo tài chính (Bảo hiểm)', 'Chỉ số Bảo hiểm'],
   },
   {
     id: 'chung_khoan',
     label: 'Chứng khoán',
-    subCategories: ['Chỉ số Chứng khoán'],
+    subCategories: ['Báo cáo tài chính (Chứng khoán)', 'Chỉ số Chứng khoán'],
   },
 ]
 

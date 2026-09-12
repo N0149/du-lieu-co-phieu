@@ -1,6 +1,4 @@
-import fs from 'node:fs'
-import path from 'node:path'
-import { DatabaseSync } from 'node:sqlite'
+import { getFinancialStatements, type RawFinancialStatementData } from './financial-statements-db'
 
 export interface CostBreakdownPoint {
   date: string
@@ -26,24 +24,6 @@ export interface CostBreakdownPayload {
   points: CostBreakdownPoint[]
 }
 
-const DATA_DIR = path.resolve(process.cwd(), 'data')
-const DB_PATH = path.join(DATA_DIR, 'financial_statements.db')
-
-let dbInstance: DatabaseSync | null = null
-
-function getFinancialStatementsDb(): DatabaseSync | null {
-  if (dbInstance) return dbInstance
-  if (!fs.existsSync(DB_PATH)) return null
-  try {
-    const db = new DatabaseSync(DB_PATH, { readOnly: true })
-    dbInstance = db
-    return dbInstance
-  } catch (err) {
-    console.error('[CostBreakdownService] Lỗi kết nối financial_statements.db:', err)
-    return null
-  }
-}
-
 function fmtPeriod(dateStr: string, isQuarter: boolean): string {
   if (!dateStr) return ''
   if (!isQuarter) {
@@ -57,84 +37,80 @@ function fmtPeriod(dateStr: string, isQuarter: boolean): string {
   return `Q${q}/${y}`
 }
 
-export function getCostBreakdownData(
+export function buildCostBreakdownData(
   symbol: string,
-  periodType: 'quarter' | 'annual' = 'quarter'
+  periodType: 'quarter' | 'annual',
+  data: RawFinancialStatementData | null | undefined
 ): CostBreakdownPayload | null {
-  try {
-    const db = getFinancialStatementsDb()
-    if (!db) return null
+  if (!data || !data.fiscalDates || !data.kqkd) return null
+  const dates = data.fiscalDates
+  const kqkd = data.kqkd
 
-    const stmt = db.prepare(`
-      SELECT fiscal_dates, kqkd
-      FROM financial_statements
-      WHERE symbol = ? AND period_type = ?
-    `)
+  if (!Array.isArray(dates) || !Array.isArray(kqkd) || kqkd.length === 0) return null
 
-    const row = stmt.get(symbol.toUpperCase().trim(), periodType) as
-      | { fiscal_dates: string; kqkd: string }
-      | undefined
+  const findRow = (name: string) =>
+    kqkd.find((r) => r[0] && String(r[0]).toLowerCase().trim() === name.toLowerCase().trim())
 
-    if (!row || !row.fiscal_dates || !row.kqkd) return null
+  const rowDT = findRow('Doanh thu thuần')
+  const rowGV = findRow('Giá vốn hàng bán')
+  const rowBH = findRow('Chi phí bán hàng')
+  const rowQL = findRow('Chi phí quản lý doanh nghiệp')
+  const rowLV = findRow('Chi phí lãi vay')
 
-    const dates = JSON.parse(row.fiscal_dates) as string[]
-    const kqkd = JSON.parse(row.kqkd) as any[][]
+  if (!rowDT || !rowGV) return null
 
-    if (!Array.isArray(dates) || !Array.isArray(kqkd) || kqkd.length === 0) return null
+  const isQuarter = periodType === 'quarter'
 
-    const findRow = (name: string) =>
-      kqkd.find((r) => r[0] && String(r[0]).toLowerCase().trim() === name.toLowerCase().trim())
+  const points: CostBreakdownPoint[] = dates.map((d, i) => {
+    const col = i + 3
+    const dt = (rowDT ? Number(rowDT[col]) || 0 : 0) / 1e9
+    const gv = Math.abs(rowGV ? Number(rowGV[col]) || 0 : 0) / 1e9
+    const bh = Math.abs(rowBH ? Number(rowBH[col]) || 0 : 0) / 1e9
+    const ql = Math.abs(rowQL ? Number(rowQL[col]) || 0 : 0) / 1e9
+    const lv = Math.abs(rowLV ? Number(rowLV[col]) || 0 : 0) / 1e9
+    const tong = gv + bh + ql + lv
 
-    const rowDT = findRow('Doanh thu thuần')
-    const rowGV = findRow('Giá vốn hàng bán')
-    const rowBH = findRow('Chi phí bán hàng')
-    const rowQL = findRow('Chi phí quản lý doanh nghiệp')
-    const rowLV = findRow('Chi phí lãi vay')
+    const qNum = isQuarter ? Math.ceil(parseInt(d.split('-')[1], 10) / 3) : null
 
-    if (!rowDT || !rowGV) return null
+    const round1 = (n: number) => Math.round(n * 10) / 10
 
-    const isQuarter = periodType === 'quarter'
-
-    const points: CostBreakdownPoint[] = dates.map((d, i) => {
-      const col = i + 3
-      const dt = (rowDT ? Number(rowDT[col]) || 0 : 0) / 1e9
-      const gv = Math.abs(rowGV ? Number(rowGV[col]) || 0 : 0) / 1e9
-      const bh = Math.abs(rowBH ? Number(rowBH[col]) || 0 : 0) / 1e9
-      const ql = Math.abs(rowQL ? Number(rowQL[col]) || 0 : 0) / 1e9
-      const lv = Math.abs(rowLV ? Number(rowLV[col]) || 0 : 0) / 1e9
-      const tong = gv + bh + ql + lv
-
-      const qNum = isQuarter ? Math.ceil(parseInt(d.split('-')[1], 10) / 3) : null
-
-      const round1 = (n: number) => Math.round(n * 10) / 10
-
-      const pctGV = dt > 0 ? round1((gv / dt) * 100) : null
-      const pctBH = dt > 0 ? round1((bh / dt) * 100) : null
-      const pctQL = dt > 0 ? round1((ql / dt) * 100) : null
-      const pctLV = dt > 0 ? round1((lv / dt) * 100) : null
-
-      return {
-        date: d,
-        displayDate: fmtPeriod(d, isQuarter),
-        quarterNum: qNum,
-        doanhThuThuan: round1(dt),
-        giaVon: round1(gv),
-        cpBanHang: round1(bh),
-        cpQuanLy: round1(ql),
-        cpLaiVay: round1(lv),
-        tongChiPhi: round1(tong),
-        pctGiaVon: pctGV,
-        pctBanHang: pctBH,
-        pctQuanLy: pctQL,
-        pctLaiVay: pctLV,
-      }
-    })
+    const pctGV = dt > 0 ? round1((gv / dt) * 100) : null
+    const pctBH = dt > 0 ? round1((bh / dt) * 100) : null
+    const pctQL = dt > 0 ? round1((ql / dt) * 100) : null
+    const pctLV = dt > 0 ? round1((lv / dt) * 100) : null
 
     return {
-      symbol: symbol.toUpperCase().trim(),
-      periodType,
-      points,
+      date: d,
+      displayDate: fmtPeriod(d, isQuarter),
+      quarterNum: qNum,
+      doanhThuThuan: round1(dt),
+      giaVon: round1(gv),
+      cpBanHang: round1(bh),
+      cpQuanLy: round1(ql),
+      cpLaiVay: round1(lv),
+      tongChiPhi: round1(tong),
+      pctGiaVon: pctGV,
+      pctBanHang: pctBH,
+      pctQuanLy: pctQL,
+      pctLaiVay: pctLV,
     }
+  })
+
+  return {
+    symbol: symbol.toUpperCase().trim(),
+    periodType,
+    points,
+  }
+}
+
+export async function getCostBreakdownData(
+  symbol: string,
+  periodType: 'quarter' | 'annual' = 'quarter',
+  rawStmt?: RawFinancialStatementData | null
+): Promise<CostBreakdownPayload | null> {
+  try {
+    const stmt = rawStmt || (await getFinancialStatements(symbol, periodType))
+    return buildCostBreakdownData(symbol, periodType, stmt)
   } catch (err) {
     console.error(`[CostBreakdownService] Lỗi xử lý chi phí cho ${symbol}:`, err)
     return null
