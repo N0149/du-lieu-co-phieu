@@ -142,9 +142,9 @@ export function FreightRatesChart({
   ]
 
   return (
-    <div className="rounded-2xl border border-slate-800 bg-gradient-to-b from-slate-900/95 via-slate-900/85 to-slate-950/95 p-5 sm:p-7 shadow-2xl shadow-black/40 backdrop-blur-md space-y-6">
+    <div className="rounded-2xl border border-[#1e2430] bg-[#161a22] p-5 sm:p-7 shadow-2xl shadow-black/40 backdrop-blur-md space-y-6">
       {/* Top Header & Tag */}
-      <div className="flex flex-wrap items-center justify-between gap-4 border-b border-slate-800/80 pb-4">
+      <div className="flex flex-wrap items-center justify-between gap-4 border-b border-[#1e2430] pb-4">
         <div className="flex items-center gap-3">
           <span className="flex size-9 items-center justify-center rounded-xl bg-teal-500/15 text-teal-400 border border-teal-500/30 shadow-xs">
             <Globe2 className="size-5" />
@@ -163,7 +163,7 @@ export function FreightRatesChart({
         </div>
 
         {/* Index Switcher Tabs */}
-        <div className="flex flex-wrap items-center gap-1.5 bg-slate-950/90 p-1 rounded-xl border border-slate-800/90 text-xs font-bold">
+        <div className="flex flex-wrap items-center gap-1.5 bg-[#12151c] p-1 rounded-xl border border-[#1e2430] text-xs font-bold">
           {symbolList.map((sym) => {
             const item = indices[sym]
             if (!item) return null
@@ -178,7 +178,7 @@ export function FreightRatesChart({
                 className={`px-3 py-1.5 rounded-lg text-xs font-black transition-all cursor-pointer ${
                   isActive
                     ? 'bg-gradient-to-r from-teal-400 to-emerald-400 text-slate-950 shadow-md shadow-teal-500/20'
-                    : 'text-slate-400 hover:text-slate-200 hover:bg-slate-800/70'
+                    : 'text-slate-400 hover:text-slate-200 hover:bg-[#1e2430]'
                 }`}
               >
                 {sym}
@@ -189,7 +189,7 @@ export function FreightRatesChart({
       </div>
 
       {/* KPI Metric Readout & 52-Week Stats */}
-      <div className="grid grid-cols-2 lg:grid-cols-4 gap-3.5 bg-slate-950/80 p-4 sm:p-5 rounded-2xl border border-slate-800/80">
+      <div className="grid grid-cols-2 lg:grid-cols-4 gap-3.5 bg-[#12151c] p-4 sm:p-5 rounded-2xl border border-[#1e2430]">
         {/* Metric 1: Current Price */}
         <div>
           <span className="text-[11px] font-bold text-slate-400 block uppercase tracking-wider">
@@ -300,7 +300,7 @@ export function FreightRatesChart({
           </div>
 
           {/* Time Range Filter Buttons */}
-          <div className="flex items-center gap-1 bg-slate-950/80 p-1 rounded-xl border border-slate-800 text-xs font-bold shadow-inner">
+          <div className="flex items-center gap-1 bg-[#12151c] p-1 rounded-xl border border-[#1e2430] text-xs font-bold shadow-inner">
             {rangeButtons.map((r) => (
               <button
                 key={r}
@@ -311,7 +311,7 @@ export function FreightRatesChart({
                 className={`px-3 py-1 rounded-lg text-xs font-black transition-all cursor-pointer ${
                   timeRange === r
                     ? 'bg-gradient-to-r from-teal-500 to-emerald-500 text-slate-950 shadow-md shadow-teal-500/20'
-                    : 'text-slate-400 hover:text-slate-200 hover:bg-slate-800/60'
+                    : 'text-slate-400 hover:text-slate-200 hover:bg-[#1e2430]'
                 }`}
               >
                 {r}
@@ -321,7 +321,7 @@ export function FreightRatesChart({
         </div>
 
         {/* SVG Container with Tooltip */}
-        <div className="relative w-full overflow-hidden rounded-2xl border border-slate-800/80 bg-slate-950/90 shadow-inner">
+        <div className="relative w-full overflow-hidden rounded-2xl border border-[#1e2430] bg-[#12151c] shadow-inner">
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-48 bg-teal-500/5 rounded-full blur-3xl pointer-events-none" />
 
           <svg

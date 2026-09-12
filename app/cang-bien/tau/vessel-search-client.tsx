@@ -41,7 +41,7 @@ export function VesselSearchClient({ initialVessels }: Props) {
   return (
     <div className="space-y-6">
       {/* Search & Filter Toolbar */}
-      <div className="flex flex-col sm:flex-row gap-4 items-center justify-between rounded-2xl border border-slate-800 bg-gradient-to-b from-slate-900/95 via-slate-900/80 to-slate-950/95 p-4 sm:p-5 shadow-2xl shadow-black/40">
+      <div className="flex flex-col sm:flex-row gap-4 items-center justify-between rounded-2xl border border-[#1e2430] bg-[#161a22] p-4 sm:p-5 shadow-2xl shadow-black/40">
         <div className="relative w-full sm:w-96">
           <Search className="absolute left-3.5 top-3 size-4 text-slate-400" />
           <input
@@ -49,7 +49,7 @@ export function VesselSearchClient({ initialVessels }: Props) {
             placeholder="Tìm tên con tàu (VD: CMA CGM, EVER GIVEN, NDV...)"
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
-            className="w-full rounded-xl border border-slate-700 bg-slate-950/80 py-2.5 pl-10 pr-3 text-xs text-slate-200 placeholder:text-slate-500 focus:border-teal-500 focus:ring-1 focus:ring-teal-500/30 focus:outline-none transition-all"
+            className="w-full rounded-xl border border-[#1e2430] bg-[#12151c] py-2.5 pl-10 pr-3 text-xs text-slate-200 placeholder:text-slate-500 focus:border-teal-500 focus:ring-1 focus:ring-teal-500/30 focus:outline-none transition-all"
           />
         </div>
 
@@ -57,7 +57,7 @@ export function VesselSearchClient({ initialVessels }: Props) {
           <select
             value={minDwt}
             onChange={(e) => setMinDwt(Number(e.target.value))}
-            className="rounded-xl border border-slate-700 bg-slate-950/80 py-2 px-3 text-xs text-slate-200 focus:border-teal-500 focus:outline-none font-bold cursor-pointer"
+            className="rounded-xl border border-[#1e2430] bg-[#12151c] py-2 px-3 text-xs text-slate-200 focus:border-teal-500 focus:outline-none font-bold cursor-pointer"
           >
             <option value={0}>Mọi cỡ tàu (DWT)</option>
             <option value={5000}>Tàu &gt; 5.000 DWT</option>
@@ -75,10 +75,10 @@ export function VesselSearchClient({ initialVessels }: Props) {
         {filtered.map((v, idx) => (
           <div
             key={idx}
-            className="group rounded-2xl border border-slate-800 bg-gradient-to-b from-slate-900/90 via-slate-900/70 to-slate-950/90 p-5 shadow-xl shadow-black/30 hover:border-teal-500/50 hover:shadow-2xl hover:shadow-teal-500/10 transition-all flex flex-col justify-between space-y-3.5"
+            className="group rounded-2xl border border-[#1e2430] bg-[#161a22] p-5 shadow-xl shadow-black/30 hover:border-teal-500/50 hover:shadow-2xl hover:shadow-teal-500/10 transition-all flex flex-col justify-between space-y-3.5"
           >
             <div>
-              <div className="flex items-start justify-between gap-2 border-b border-slate-800/80 pb-3 mb-3">
+              <div className="flex items-start justify-between gap-2 border-b border-[#1e2430] pb-3 mb-3">
                 <div className="flex items-center gap-2.5">
                   <span className="flex size-8 items-center justify-center rounded-xl bg-teal-500/15 text-teal-400 border border-teal-500/30">
                     <Ship className="size-4" />
@@ -99,7 +99,7 @@ export function VesselSearchClient({ initialVessels }: Props) {
               </div>
 
               {/* Specs Grid */}
-              <div className="grid grid-cols-2 gap-2 text-xs font-mono bg-slate-950/70 p-3 rounded-xl border border-slate-800/60 mb-3">
+              <div className="grid grid-cols-2 gap-2 text-xs font-mono bg-[#12151c] p-3 rounded-xl border border-[#1e2430] mb-3">
                 <div>
                   <span className="text-[10px] font-sans text-slate-400 block font-medium">Trọng tải DWT:</span>
                   <span className="font-black text-teal-300">
@@ -131,7 +131,7 @@ export function VesselSearchClient({ initialVessels }: Props) {
               </div>
             </div>
 
-            <div className="pt-2 border-t border-slate-800/80 flex items-center justify-between text-[11px] text-slate-400">
+            <div className="pt-2 border-t border-[#1e2430] flex items-center justify-between text-[11px] text-slate-400">
               <span>{v.authority === 'haiphong' ? 'Cảng vụ Hải Phòng' : 'Hoa tiêu Miền Nam'}</span>
               <span className="font-mono text-slate-500">{v.lastDate}</span>
             </div>

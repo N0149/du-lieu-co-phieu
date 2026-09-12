@@ -43,19 +43,19 @@ export default function VesselSearchPage() {
   const vessels = Array.from(vesselMap.values()).sort((a, b) => b.dwt - a.dwt)
 
   return (
-    <div className="flex min-h-screen flex-col bg-slate-950 text-slate-100 selection:bg-teal-500 selection:text-slate-950">
+    <div className="flex min-h-screen flex-col bg-[#0f1218] text-[#F0F3F6] selection:bg-teal-500 selection:text-slate-950">
       {/* Site Header */}
       <SiteHeader />
 
       <main className="flex-1 pb-24">
         {/* Top Banner */}
-      <div className="relative border-b border-slate-800/80 bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950 py-8 sm:py-10 overflow-hidden">
+      <div className="relative border-b border-[#1e2430] bg-gradient-to-b from-[#0f1218] via-[#141822] to-[#0f1218] py-8 sm:py-10 overflow-hidden">
         {/* Ambient Glow */}
         <div className="absolute top-0 left-1/3 -translate-x-1/2 w-96 h-96 bg-teal-500/10 rounded-full blur-3xl pointer-events-none" />
 
         <div className="mx-auto max-w-[1600px] px-4 space-y-6 relative z-10">
           {/* Breadcrumb & Sub-nav */}
-          <div className="flex flex-wrap items-center justify-between gap-3 border-b border-slate-800/80 pb-4">
+          <div className="flex flex-wrap items-center justify-between gap-3 border-b border-[#1e2430] pb-4">
             <div className="flex items-center gap-2 text-xs text-slate-400">
               <Link href="/" className="hover:text-slate-200 transition-colors">
                 Trang chủ

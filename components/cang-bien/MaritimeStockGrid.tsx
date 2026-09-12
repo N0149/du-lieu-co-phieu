@@ -45,7 +45,7 @@ export function MaritimeStockGrid({ stocks, stocksIntel }: Props) {
           return (
             <div
               key={s.ticker}
-              className="group relative flex flex-col justify-between rounded-2xl border border-slate-800 bg-gradient-to-b from-slate-900/95 via-slate-900/70 to-slate-950/95 p-5 shadow-xl shadow-black/40 transition-all duration-300 hover:border-teal-500/60 hover:shadow-2xl hover:shadow-teal-500/10 hover:-translate-y-1 overflow-hidden"
+              className="group relative flex flex-col justify-between rounded-2xl border border-[#1e2430] bg-[#161a22] p-5 shadow-xl shadow-black/40 transition-all duration-300 hover:border-teal-500/60 hover:shadow-2xl hover:shadow-teal-500/10 hover:-translate-y-1 overflow-hidden"
             >
               {/* Subtle background glow effect on hover */}
               <div className="absolute -right-12 -top-12 size-32 rounded-full bg-teal-500/5 blur-2xl group-hover:bg-teal-500/15 transition-all pointer-events-none" />

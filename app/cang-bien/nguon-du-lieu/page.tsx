@@ -13,19 +13,19 @@ export const metadata: Metadata = {
 
 export default function NguonDuLieuPage() {
   return (
-    <div className="flex min-h-screen flex-col bg-slate-950 text-slate-100 selection:bg-teal-500 selection:text-slate-950">
+    <div className="flex min-h-screen flex-col bg-[#0f1218] text-[#F0F3F6] selection:bg-teal-500 selection:text-slate-950">
       {/* Site Header */}
       <SiteHeader />
 
       <main className="flex-1 pb-24">
         {/* Header */}
-      <div className="relative border-b border-slate-800/80 bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950 py-8 sm:py-10 overflow-hidden">
+      <div className="relative border-b border-[#1e2430] bg-gradient-to-b from-[#0f1218] via-[#141822] to-[#0f1218] py-8 sm:py-10 overflow-hidden">
         {/* Ambient Glow */}
         <div className="absolute top-0 right-1/3 translate-x-1/2 w-96 h-96 bg-sky-500/10 rounded-full blur-3xl pointer-events-none" />
 
         <div className="mx-auto max-w-[1200px] px-4 space-y-6 relative z-10">
           {/* Breadcrumb & Sub-nav */}
-          <div className="flex flex-wrap items-center justify-between gap-3 border-b border-slate-800/80 pb-4">
+          <div className="flex flex-wrap items-center justify-between gap-3 border-b border-[#1e2430] pb-4">
             <div className="flex items-center gap-2 text-xs text-slate-400">
               <Link href="/" className="hover:text-slate-200 transition-colors">
                 Trang chủ
@@ -63,7 +63,7 @@ export default function NguonDuLieuPage() {
       <div className="mx-auto max-w-[1200px] px-4 pt-8 space-y-8">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {/* Card 1: Cảng vụ hàng hải */}
-          <div className="rounded-2xl border border-slate-800 bg-gradient-to-b from-slate-900/95 via-slate-900/80 to-slate-950/95 p-6 shadow-xl space-y-3.5 hover:border-teal-500/40 transition-all">
+          <div className="rounded-2xl border border-[#1e2430] bg-[#161a22] p-6 shadow-xl space-y-3.5 hover:border-teal-500/40 transition-all">
             <div className="flex items-center gap-3">
               <span className="flex size-10 items-center justify-center rounded-xl bg-teal-500/15 text-teal-400 border border-teal-500/30">
                 <Anchor className="size-5" />
@@ -78,7 +78,7 @@ export default function NguonDuLieuPage() {
           </div>
 
           {/* Card 2: Hoa tiêu và cảng quốc tế */}
-          <div className="rounded-2xl border border-slate-800 bg-gradient-to-b from-slate-900/95 via-slate-900/80 to-slate-950/95 p-6 shadow-xl space-y-3.5 hover:border-sky-500/40 transition-all">
+          <div className="rounded-2xl border border-[#1e2430] bg-[#161a22] p-6 shadow-xl space-y-3.5 hover:border-sky-500/40 transition-all">
             <div className="flex items-center gap-3">
               <span className="flex size-10 items-center justify-center rounded-xl bg-sky-500/15 text-sky-400 border border-sky-500/30">
                 <Ship className="size-5" />
@@ -93,7 +93,7 @@ export default function NguonDuLieuPage() {
           </div>
 
           {/* Card 3: Xử lý và làm sạch */}
-          <div className="rounded-2xl border border-slate-800 bg-gradient-to-b from-slate-900/95 via-slate-900/80 to-slate-950/95 p-6 shadow-xl space-y-3.5 hover:border-emerald-500/40 transition-all">
+          <div className="rounded-2xl border border-[#1e2430] bg-[#161a22] p-6 shadow-xl space-y-3.5 hover:border-emerald-500/40 transition-all">
             <div className="flex items-center gap-3">
               <span className="flex size-10 items-center justify-center rounded-xl bg-emerald-500/15 text-emerald-400 border border-emerald-500/30">
                 <Cpu className="size-5" />
@@ -107,7 +107,7 @@ export default function NguonDuLieuPage() {
           </div>
 
           {/* Card 4: Ánh xạ mã cổ phiếu */}
-          <div className="rounded-2xl border border-slate-800 bg-gradient-to-b from-slate-900/95 via-slate-900/80 to-slate-950/95 p-6 shadow-xl space-y-3.5 hover:border-amber-500/40 transition-all">
+          <div className="rounded-2xl border border-[#1e2430] bg-[#161a22] p-6 shadow-xl space-y-3.5 hover:border-amber-500/40 transition-all">
             <div className="flex items-center gap-3">
               <span className="flex size-10 items-center justify-center rounded-xl bg-amber-500/15 text-amber-400 border border-amber-500/30">
                 <ShieldCheck className="size-5" />

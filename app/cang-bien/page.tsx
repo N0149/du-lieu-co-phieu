@@ -56,13 +56,13 @@ export default function CangBienPage() {
   }
 
   return (
-    <div className="flex min-h-screen flex-col bg-slate-950 text-slate-100 selection:bg-teal-500 selection:text-slate-950">
+    <div className="flex min-h-screen flex-col bg-[#0f1218] text-[#F0F3F6] selection:bg-teal-500 selection:text-slate-950">
       {/* Site Header */}
       <SiteHeader />
 
       <main className="flex-1 pb-24">
         {/* Top Banner / Oceanic Hero */}
-      <div className="relative border-b border-slate-800/80 bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950 py-8 sm:py-12 overflow-hidden">
+      <div className="relative border-b border-[#1e2430] bg-gradient-to-b from-[#0f1218] via-[#141822] to-[#0f1218] py-8 sm:py-12 overflow-hidden">
         {/* Ambient Gradient Glow Lights */}
         <div className="absolute top-0 left-1/4 -translate-x-1/2 w-96 h-96 bg-teal-500/10 rounded-full blur-3xl pointer-events-none" />
         <div className="absolute top-12 right-1/4 translate-x-1/2 w-96 h-96 bg-sky-500/10 rounded-full blur-3xl pointer-events-none" />
@@ -70,7 +70,7 @@ export default function CangBienPage() {
 
         <div className="mx-auto max-w-[1600px] px-4 relative z-10 space-y-6 sm:space-y-8">
           {/* Breadcrumb & Sub-navigation Tabs */}
-          <div className="flex flex-wrap items-center justify-between gap-3 border-b border-slate-800/80 pb-4">
+          <div className="flex flex-wrap items-center justify-between gap-3 border-b border-[#1e2430] pb-4">
             <div className="flex items-center gap-2 text-xs text-slate-400">
               <Link href="/" className="hover:text-slate-200 transition-colors">
                 Trang chủ
@@ -101,7 +101,7 @@ export default function CangBienPage() {
           {/* Elevated Glass KPI Stat Strip */}
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4 pt-2">
             {/* Card 1: Port Authorities */}
-            <div className="group rounded-2xl border border-slate-800/90 bg-gradient-to-b from-slate-900/90 via-slate-900/60 to-slate-950/90 p-4 sm:p-5 shadow-xl shadow-black/30 backdrop-blur-sm hover:border-teal-500/40 transition-all hover:-translate-y-0.5">
+            <div className="group rounded-2xl border border-[#1e2430] bg-[#161a22] p-4 sm:p-5 shadow-xl shadow-black/30 backdrop-blur-sm hover:border-teal-500/40 transition-all hover:-translate-y-0.5">
               <div className="text-xs text-slate-400 font-semibold flex items-center justify-between">
                 <span className="flex items-center gap-1.5">
                   <Anchor className="size-3.5 text-teal-400" />
@@ -118,7 +118,7 @@ export default function CangBienPage() {
             </div>
 
             {/* Card 2: Calls 30d */}
-            <div className="group rounded-2xl border border-slate-800/90 bg-gradient-to-b from-slate-900/90 via-slate-900/60 to-slate-950/90 p-4 sm:p-5 shadow-xl shadow-black/30 backdrop-blur-sm hover:border-sky-500/40 transition-all hover:-translate-y-0.5">
+            <div className="group rounded-2xl border border-[#1e2430] bg-[#161a22] p-4 sm:p-5 shadow-xl shadow-black/30 backdrop-blur-sm hover:border-sky-500/40 transition-all hover:-translate-y-0.5">
               <div className="text-xs text-slate-400 font-semibold flex items-center justify-between">
                 <span className="flex items-center gap-1.5">
                   <Ship className="size-3.5 text-sky-400" />
@@ -135,7 +135,7 @@ export default function CangBienPage() {
             </div>
 
             {/* Card 3: DWT 30d */}
-            <div className="group rounded-2xl border border-slate-800/90 bg-gradient-to-b from-slate-900/90 via-slate-900/60 to-slate-950/90 p-4 sm:p-5 shadow-xl shadow-black/30 backdrop-blur-sm hover:border-emerald-500/40 transition-all hover:-translate-y-0.5">
+            <div className="group rounded-2xl border border-[#1e2430] bg-[#161a22] p-4 sm:p-5 shadow-xl shadow-black/30 backdrop-blur-sm hover:border-emerald-500/40 transition-all hover:-translate-y-0.5">
               <div className="text-xs text-slate-400 font-semibold flex items-center justify-between">
                 <span className="flex items-center gap-1.5">
                   <TrendingUp className="size-3.5 text-emerald-400" />
@@ -152,7 +152,7 @@ export default function CangBienPage() {
             </div>
 
             {/* Card 4: Tracked Stocks */}
-            <div className="group rounded-2xl border border-slate-800/90 bg-gradient-to-b from-slate-900/90 via-slate-900/60 to-slate-950/90 p-4 sm:p-5 shadow-xl shadow-black/30 backdrop-blur-sm hover:border-amber-500/40 transition-all hover:-translate-y-0.5">
+            <div className="group rounded-2xl border border-[#1e2430] bg-[#161a22] p-4 sm:p-5 shadow-xl shadow-black/30 backdrop-blur-sm hover:border-amber-500/40 transition-all hover:-translate-y-0.5">
               <div className="text-xs text-slate-400 font-semibold flex items-center justify-between">
                 <span className="flex items-center gap-1.5">
                   <Layers className="size-3.5 text-amber-400" />
@@ -179,7 +179,7 @@ export default function CangBienPage() {
         </section>
 
         {/* Teaser Banner: Global Freight Rates Tab */}
-        <div className="rounded-2xl border border-slate-800 bg-gradient-to-r from-slate-900/90 via-teal-950/20 to-slate-900/90 p-4 sm:p-5 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 shadow-xl">
+        <div className="rounded-2xl border border-[#1e2430] bg-[#161a22] p-4 sm:p-5 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 shadow-xl">
           <div className="flex items-center gap-3">
             <span className="flex size-10 items-center justify-center rounded-xl bg-teal-500/15 text-teal-400 border border-teal-500/30 shrink-0">
               <Globe2 className="size-5" />
@@ -213,7 +213,7 @@ export default function CangBienPage() {
         </section>
 
         {/* Section 4: Value Proposition & Framework */}
-        <section className="rounded-3xl border border-slate-800 bg-gradient-to-br from-slate-900/95 via-slate-900/70 to-slate-950/95 p-6 sm:p-8 shadow-2xl shadow-black/40">
+        <section className="rounded-3xl border border-[#1e2430] bg-[#161a22] p-6 sm:p-8 shadow-2xl shadow-black/40">
           <div className="max-w-4xl space-y-5">
             <div className="flex items-center gap-2.5">
               <span className="flex size-8 items-center justify-center rounded-xl bg-teal-500/15 text-teal-400 border border-teal-500/30">
@@ -225,7 +225,7 @@ export default function CangBienPage() {
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4 pt-1">
-              <div className="rounded-2xl border border-slate-800 bg-slate-950/70 p-5 space-y-2 hover:border-teal-500/40 transition-colors">
+              <div className="rounded-2xl border border-[#1e2430] bg-[#12151c] p-5 space-y-2 hover:border-teal-500/40 transition-colors">
                 <div className="text-sm font-black text-teal-300 flex items-center gap-1.5">
                   <Zap className="size-4 text-teal-400" />
                   <span>1. Tín hiệu sớm hơn BCTC</span>
@@ -236,7 +236,7 @@ export default function CangBienPage() {
                 </p>
               </div>
 
-              <div className="rounded-2xl border border-slate-800 bg-slate-950/70 p-5 space-y-2 hover:border-sky-500/40 transition-colors">
+              <div className="rounded-2xl border border-[#1e2430] bg-[#12151c] p-5 space-y-2 hover:border-sky-500/40 transition-colors">
                 <div className="text-sm font-black text-sky-300 flex items-center gap-1.5">
                   <Anchor className="size-4 text-sky-400" />
                   <span>2. Bến nước sâu &amp; Giá cước</span>
@@ -247,7 +247,7 @@ export default function CangBienPage() {
                 </p>
               </div>
 
-              <div className="rounded-2xl border border-slate-800 bg-slate-950/70 p-5 space-y-2 hover:border-amber-500/40 transition-colors">
+              <div className="rounded-2xl border border-[#1e2430] bg-[#12151c] p-5 space-y-2 hover:border-amber-500/40 transition-colors">
                 <div className="text-sm font-black text-amber-300 flex items-center gap-1.5">
                   <Sparkles className="size-4 text-amber-400" />
                   <span>3. Phân biệt Cảng thuần vs Holding</span>

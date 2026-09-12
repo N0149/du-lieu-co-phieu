@@ -83,20 +83,20 @@ export default async function StockPortDetailPage({ params }: Props) {
   const prevDwt = (prevMonth?.dwt_in || 0) + (prevMonth?.dwt_out || 0)
 
   return (
-    <div className="flex min-h-screen flex-col bg-slate-950 text-slate-100 selection:bg-teal-500 selection:text-slate-950">
+    <div className="flex min-h-screen flex-col bg-[#0f1218] text-[#F0F3F6] selection:bg-teal-500 selection:text-slate-950">
       {/* Site Header */}
       <SiteHeader />
 
       <main className="flex-1 pb-24">
         {/* Top Header / Breadcrumb */}
-      <div className="relative border-b border-slate-800/80 bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950 py-8 sm:py-10 overflow-hidden">
+      <div className="relative border-b border-[#1e2430] bg-gradient-to-b from-[#0f1218] via-[#141822] to-[#0f1218] py-8 sm:py-10 overflow-hidden">
         {/* Ambient Gradient Glow Lights */}
         <div className="absolute top-0 left-1/4 -translate-x-1/2 w-96 h-96 bg-teal-500/10 rounded-full blur-3xl pointer-events-none" />
         <div className="absolute top-12 right-1/4 translate-x-1/2 w-96 h-96 bg-sky-500/10 rounded-full blur-3xl pointer-events-none" />
 
         <div className="mx-auto max-w-[1600px] px-4 space-y-6 relative z-10">
           {/* Breadcrumbs & Sub-nav */}
-          <div className="flex flex-wrap items-center justify-between gap-3 border-b border-slate-800/80 pb-4">
+          <div className="flex flex-wrap items-center justify-between gap-3 border-b border-[#1e2430] pb-4">
             <div className="flex items-center gap-2 text-xs text-slate-400">
               <Link href="/" className="hover:text-slate-200 transition-colors">
                 Trang chủ
@@ -141,29 +141,27 @@ export default async function StockPortDetailPage({ params }: Props) {
               </p>
             </div>
 
-            <div className="flex items-center gap-2">
-              <Link
-                href="/cang-bien"
-                className="inline-flex items-center gap-2 rounded-xl border border-slate-700 bg-slate-900/90 px-4 py-2 text-xs font-extrabold text-slate-200 hover:border-teal-500/40 hover:bg-slate-800 transition-all shadow-md"
-              >
-                <ArrowLeft className="size-3.5 text-teal-400" />
-                <span>Về Danh Mục Cảng Biển</span>
-              </Link>
-            </div>
+            <Link
+              href={`/stock/${intel.ticker.toLowerCase()}`}
+              className="inline-flex items-center gap-2 rounded-xl bg-gradient-to-r from-teal-400 to-emerald-400 text-slate-950 px-4 py-2 text-xs font-black shadow-md shadow-teal-500/20 hover:brightness-110 transition-all shrink-0 self-start md:self-center"
+            >
+              <span>Xem BCTC &amp; Định Giá {intel.ticker}</span>
+              <ExternalLink className="size-4" />
+            </Link>
           </div>
 
-          {/* Scope Note Banner */}
+          {/* Scope Note */}
           {intel.scope_note && (
-            <div className="rounded-2xl border border-teal-500/30 bg-gradient-to-r from-teal-950/40 to-slate-900/40 p-4 text-xs text-slate-300 flex items-start gap-3 shadow-inner">
-              <Info className="size-4.5 text-teal-400 shrink-0 mt-0.5" />
-              <p className="leading-relaxed">{intel.scope_note}</p>
+            <div className="rounded-xl border border-teal-500/30 bg-teal-950/20 p-3.5 text-xs text-teal-200/90 leading-relaxed max-w-4xl flex items-start gap-2.5">
+              <span className="text-teal-400 font-bold shrink-0">💡 Phạm vi:</span>
+              <span>{intel.scope_note}</span>
             </div>
           )}
 
           {/* Elevated Glass KPI Strip */}
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4 pt-1">
             {/* KPI 1 */}
-            <div className="rounded-2xl border border-slate-800/90 bg-gradient-to-b from-slate-900/90 via-slate-900/60 to-slate-950/90 p-4 shadow-xl shadow-black/30 backdrop-blur-sm hover:border-teal-500/40 transition-all">
+            <div className="rounded-2xl border border-[#1e2430] bg-[#161a22] p-4 shadow-xl shadow-black/30 backdrop-blur-sm hover:border-teal-500/40 transition-all">
               <div className="text-xs text-slate-400 font-semibold flex items-center justify-between">
                 <span>Tháng gần nhất ({latestMonth?.ym || '—'})</span>
                 <span className="size-2 rounded-full bg-teal-400" />
@@ -177,7 +175,7 @@ export default async function StockPortDetailPage({ params }: Props) {
             </div>
 
             {/* KPI 2 */}
-            <div className="rounded-2xl border border-slate-800/90 bg-gradient-to-b from-slate-900/90 via-slate-900/60 to-slate-950/90 p-4 shadow-xl shadow-black/30 backdrop-blur-sm hover:border-sky-500/40 transition-all">
+            <div className="rounded-2xl border border-[#1e2430] bg-[#161a22] p-4 shadow-xl shadow-black/30 backdrop-blur-sm hover:border-sky-500/40 transition-all">
               <div className="text-xs text-slate-400 font-semibold flex items-center justify-between">
                 <span>Tháng trước ({prevMonth?.ym || '—'})</span>
                 <span className="size-2 rounded-full bg-sky-400" />
@@ -191,7 +189,7 @@ export default async function StockPortDetailPage({ params }: Props) {
             </div>
 
             {/* KPI 3 */}
-            <div className="rounded-2xl border border-slate-800/90 bg-gradient-to-b from-slate-900/90 via-slate-900/60 to-slate-950/90 p-4 shadow-xl shadow-black/30 backdrop-blur-sm hover:border-emerald-500/40 transition-all">
+            <div className="rounded-2xl border border-[#1e2430] bg-[#161a22] p-4 shadow-xl shadow-black/30 backdrop-blur-sm hover:border-emerald-500/40 transition-all">
               <div className="text-xs text-slate-400 font-semibold flex items-center justify-between">
                 <span>Cầu bến quản lý</span>
                 <span className="size-2 rounded-full bg-emerald-400" />
@@ -205,7 +203,7 @@ export default async function StockPortDetailPage({ params }: Props) {
             </div>
 
             {/* KPI 4 */}
-            <div className="rounded-2xl border border-slate-800/90 bg-gradient-to-b from-slate-900/90 via-slate-900/60 to-slate-950/90 p-4 shadow-xl shadow-black/30 backdrop-blur-sm hover:border-amber-500/40 transition-all">
+            <div className="rounded-2xl border border-[#1e2430] bg-[#161a22] p-4 shadow-xl shadow-black/30 backdrop-blur-sm hover:border-amber-500/40 transition-all">
               <div className="text-xs text-slate-400 font-semibold flex items-center justify-between">
                 <span>Tổng DWT lịch sử</span>
                 <span className="size-2 rounded-full bg-amber-400" />
@@ -236,8 +234,8 @@ export default async function StockPortDetailPage({ params }: Props) {
         {/* Section 3: Affiliated Berths & Tariff Insights */}
         <section className="grid grid-cols-1 lg:grid-cols-12 gap-6">
           {/* Left: Berths Card */}
-          <div className="lg:col-span-6 rounded-2xl border border-slate-800 bg-gradient-to-b from-slate-900/95 via-slate-900/80 to-slate-950/95 p-5 sm:p-6 shadow-xl space-y-4">
-            <div className="flex items-center gap-2.5 border-b border-slate-800/80 pb-3">
+          <div className="lg:col-span-6 rounded-2xl border border-[#1e2430] bg-[#161a22] p-5 sm:p-6 shadow-xl space-y-4">
+            <div className="flex items-center gap-2.5 border-b border-[#1e2430] pb-3">
               <span className="flex size-8 items-center justify-center rounded-xl bg-teal-500/15 text-teal-400 border border-teal-500/30">
                 <Anchor className="size-4.5" />
               </span>
@@ -255,10 +253,10 @@ export default async function StockPortDetailPage({ params }: Props) {
                 return (
                   <div
                     key={idx}
-                    className="flex items-center justify-between p-3.5 rounded-xl border border-slate-800 bg-slate-950/70 text-xs hover:border-slate-700 transition-colors"
+                    className="flex items-center justify-between p-3.5 rounded-xl border border-[#1e2430] bg-[#12151c] text-xs hover:border-slate-700 transition-colors"
                   >
                     <div className="flex items-center gap-2.5">
-                      <span className="flex size-6 shrink-0 items-center justify-center rounded-lg bg-slate-800 text-[11px] font-bold text-teal-400 border border-slate-700">
+                      <span className="flex size-6 shrink-0 items-center justify-center rounded-lg bg-[#161a22] text-[11px] font-bold text-teal-400 border border-[#1e2430]">
                         {idx + 1}
                       </span>
                       <span className="font-bold text-slate-200">{bName}</span>
@@ -268,7 +266,7 @@ export default async function StockPortDetailPage({ params }: Props) {
                         Bến Nước Sâu (Giá cao)
                       </span>
                     ) : (
-                      <span className="rounded-full bg-slate-800/80 px-2.5 py-0.5 text-[10px] text-slate-400 border border-slate-700/50">
+                      <span className="rounded-full bg-[#161a22] px-2.5 py-0.5 text-[10px] text-slate-400 border border-[#1e2430]">
                         Bến Sông / Tổng hợp
                       </span>
                     )}
@@ -279,8 +277,8 @@ export default async function StockPortDetailPage({ params }: Props) {
           </div>
 
           {/* Right: Tariff & Price Insights */}
-          <div className="lg:col-span-6 rounded-2xl border border-slate-800 bg-gradient-to-b from-slate-900/95 via-slate-900/80 to-slate-950/95 p-5 sm:p-6 shadow-xl space-y-4">
-            <div className="flex items-center gap-2.5 border-b border-slate-800/80 pb-3">
+          <div className="lg:col-span-6 rounded-2xl border border-[#1e2430] bg-[#161a22] p-5 sm:p-6 shadow-xl space-y-4">
+            <div className="flex items-center gap-2.5 border-b border-[#1e2430] pb-3">
               <span className="flex size-8 items-center justify-center rounded-xl bg-amber-500/15 text-amber-400 border border-amber-500/30">
                 <DollarSign className="size-4.5" />
               </span>
@@ -293,7 +291,7 @@ export default async function StockPortDetailPage({ params }: Props) {
               <p>
                 Áp dụng theo <strong className="text-slate-200">Quyết định 810/QĐ-BGTVT</strong> (kế thừa Thông tư 39/2023/TT-BGTVT):
               </p>
-              <div className="rounded-2xl border border-slate-800 bg-slate-950/80 p-4 space-y-2.5">
+              <div className="rounded-2xl border border-[#1e2430] bg-[#12151c] p-4 space-y-2.5">
                 <div className="flex justify-between items-center text-xs">
                   <span className="text-slate-300">Khung giá bốc dỡ Container thường:</span>
                   <span className="font-black text-teal-400">~260.000 – 450.000 VNĐ / TEU</span>
@@ -333,10 +331,10 @@ export default async function StockPortDetailPage({ params }: Props) {
           </div>
 
           {tickerCalls.length > 0 ? (
-            <div className="overflow-x-auto rounded-2xl border border-slate-800 bg-slate-900/90 shadow-2xl">
+            <div className="overflow-x-auto rounded-2xl border border-[#1e2430] bg-[#161a22] shadow-2xl">
               <table className="w-full text-left text-xs border-collapse">
                 <thead>
-                  <tr className="bg-slate-950/80 text-slate-400 border-b border-slate-800 uppercase text-[10px] tracking-wider font-semibold">
+                  <tr className="bg-[#12151c] text-slate-400 border-b border-[#1e2430] uppercase text-[10px] tracking-wider font-semibold">
                     <th className="py-3 px-3.5 font-bold">Ngày Giờ Điều Động</th>
                     <th className="py-3 px-3.5 font-bold">Tên Tàu</th>
                     <th className="py-3 px-3.5 font-bold">Hướng</th>
@@ -346,14 +344,14 @@ export default async function StockPortDetailPage({ params }: Props) {
                     <th className="py-3 px-3.5 font-bold">Nguồn Ghi Nhận</th>
                   </tr>
                 </thead>
-                <tbody className="divide-y divide-slate-800/60 font-mono">
+                <tbody className="divide-y divide-[#1e2430] font-mono">
                   {tickerCalls.slice(0, 10).map((c: any, idx: number) => {
                     const isIn = c.call_direction === 'in'
                     const isOut = c.call_direction === 'out'
                     const timeDisplay = c.scheduled_time || c.call_date
 
                     return (
-                      <tr key={idx} className="hover:bg-slate-800/40 transition-colors font-sans group">
+                      <tr key={idx} className="hover:bg-[#1a1f2c] transition-colors font-sans group">
                         <td className="py-3 px-3.5 text-slate-300 font-mono text-xs whitespace-nowrap font-medium">
                           {timeDisplay}
                         </td>
@@ -393,7 +391,7 @@ export default async function StockPortDetailPage({ params }: Props) {
               </table>
             </div>
           ) : (
-            <div className="rounded-2xl border border-slate-800 bg-slate-900/50 p-8 text-center text-xs text-slate-400">
+            <div className="rounded-2xl border border-[#1e2430] bg-[#161a22] p-8 text-center text-xs text-slate-400">
               Đang đồng bộ nhật ký điều động tàu cho <strong>{intel.name}</strong>.
             </div>
           )}

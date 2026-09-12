@@ -70,11 +70,11 @@ export function PortAuthoritiesStrip({ ports }: Props) {
 
       {/* Expandable Body */}
       {isOpen && (
-        <div className="p-4 sm:p-6 border-t border-slate-800/80 bg-slate-950/60 space-y-5 animate-in fade-in zoom-in-98 duration-200">
+        <div className="p-4 sm:p-6 border-t border-[#1e2430] bg-[#12151c] space-y-5 animate-in fade-in zoom-in-98 duration-200">
           {/* Region Filter Buttons */}
-          <div className="flex flex-wrap items-center justify-between gap-3 pb-2 border-b border-slate-800/60">
+          <div className="flex flex-wrap items-center justify-between gap-3 pb-2 border-b border-[#1e2430]">
             <span className="text-xs text-slate-400 font-medium">Lọc theo khu vực địa lý:</span>
-            <div className="flex flex-wrap items-center gap-1.5 bg-slate-900/90 p-1 rounded-xl border border-slate-800 text-xs font-semibold">
+            <div className="flex flex-wrap items-center gap-1.5 bg-[#161a22] p-1 rounded-xl border border-[#1e2430] text-xs font-semibold">
               {regions.map((r) => (
                 <button
                   key={r}
@@ -83,7 +83,7 @@ export function PortAuthoritiesStrip({ ports }: Props) {
                   className={`rounded-lg px-3 py-1.5 transition-all text-xs font-bold ${
                     selectedRegion === r
                       ? 'bg-teal-500 text-slate-950 shadow-md font-extrabold'
-                      : 'text-slate-400 hover:text-slate-200 hover:bg-slate-800'
+                      : 'text-slate-400 hover:text-slate-200 hover:bg-[#1f2430]'
                   }`}
                 >
                   {r === 'all' ? 'Toàn quốc (15)' : r}
@@ -101,11 +101,11 @@ export function PortAuthoritiesStrip({ ports }: Props) {
               return (
                 <div
                   key={p.id}
-                  className="rounded-xl border border-slate-800/90 bg-slate-900/70 p-4 shadow-sm hover:border-teal-500/40 hover:bg-slate-900 transition-all flex flex-col justify-between group"
+                  className="rounded-xl border border-[#1e2430] bg-[#161a22] p-4 shadow-sm hover:border-teal-500/40 hover:bg-[#1a1f2c] transition-all flex flex-col justify-between group"
                 >
                   <div>
                     <div className="flex items-center justify-between gap-2 mb-2">
-                      <span className="inline-flex items-center gap-1 rounded-full bg-slate-800 px-2 py-0.5 text-[10px] font-bold text-teal-400 border border-slate-700/60">
+                      <span className="inline-flex items-center gap-1 rounded-full bg-[#12151c] px-2 py-0.5 text-[10px] font-bold text-teal-400 border border-[#1e2430]">
                         <MapPin className="size-2.5" />
                         {p.region || 'Cảng vụ'}
                       </span>
@@ -117,7 +117,7 @@ export function PortAuthoritiesStrip({ ports }: Props) {
                     </h4>
                   </div>
 
-                  <div className="space-y-1.5 pt-2 border-t border-slate-800/60 font-mono text-[11px]">
+                  <div className="space-y-1.5 pt-2 border-t border-[#1e2430] font-mono text-[11px]">
                     <div className="flex justify-between items-center text-slate-400">
                       <span className="font-sans text-[10px]">Lượt tàu:</span>
                       <span className="font-bold text-sky-400">{formatCalls(calls30d)}</span>

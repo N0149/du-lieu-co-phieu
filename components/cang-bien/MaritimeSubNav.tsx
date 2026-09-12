@@ -43,7 +43,7 @@ export function MaritimeSubNav({ activeTab }: Props) {
   ]
 
   return (
-    <div className="flex flex-wrap items-center gap-1.5 bg-slate-900/90 p-1 rounded-xl border border-slate-800 text-xs font-semibold shadow-inner">
+    <div className="flex flex-wrap items-center gap-1.5 bg-[#12151c]/90 p-1 rounded-xl border border-[#1e2430] text-xs font-semibold shadow-inner">
       {tabs.map((tab) => {
         const Icon = tab.icon
         const isActive = tab.id === selectedTab
@@ -56,7 +56,7 @@ export function MaritimeSubNav({ activeTab }: Props) {
             className={`inline-flex items-center gap-1.5 rounded-lg px-3.5 py-1.5 transition-all cursor-pointer ${
               isActive
                 ? 'bg-gradient-to-r from-teal-400 to-emerald-400 text-slate-950 font-black shadow-md shadow-teal-500/20'
-                : 'text-slate-400 hover:bg-slate-800 hover:text-slate-200 font-bold'
+                : 'text-slate-400 hover:bg-[#1f2430] hover:text-slate-200 font-bold'
             }`}
           >
             {isLoadingThis ? (
