@@ -1,0 +1,63 @@
+{
+  "symbol": "PGV",
+  "events": [
+    {
+      "date": "2021-07-22",
+      "cashVnd": 500,
+      "stockPct": 5,
+      "texts": [
+        "Cổ tức bằng Cổ phiếu, tỷ lệ 100:5",
+        "Cổ tức bằng Tiền, tỷ lệ 5%"
+      ]
+    },
+    {
+      "date": "2022-07-13",
+      "cashVnd": 1300,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 13%"
+      ]
+    },
+    {
+      "date": "2022-12-26",
+      "cashVnd": 550,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 5.5%"
+      ]
+    },
+    {
+      "date": "2023-09-06",
+      "cashVnd": 1450,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 14.5%"
+      ]
+    },
+    {
+      "date": "2023-12-27",
+      "cashVnd": 926,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 6.66%",
+        "Cổ tức bằng Tiền, tỷ lệ 2.6%"
+      ]
+    },
+    {
+      "date": "2026-07-23",
+      "cashVnd": 1000,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 10%"
+      ]
+    },
+    {
+      "date": "2026-08-09",
+      "cashVnd": null,
+      "stockPct": 8,
+      "texts": [
+        "Thưởng bằng Cổ tức, tỷ lệ 100:8"
+      ]
+    }
+  ]
+}

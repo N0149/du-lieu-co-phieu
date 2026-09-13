@@ -13,6 +13,7 @@ import {
 import { PortThroughputChart } from '@/components/cang-bien/PortThroughputChart'
 import { YoYThroughputComparison } from '@/components/cang-bien/YoYThroughputComparison'
 import { MaritimeSubNav } from '@/components/cang-bien/MaritimeSubNav'
+import { StockVesselCallsTable } from '@/components/cang-bien/StockVesselCallsTable'
 import {
   Ship,
   Anchor,
@@ -309,92 +310,9 @@ export default async function StockPortDetailPage({ params }: Props) {
           </div>
         </section>
 
-        {/* Section 4: 10 Most Recent Vessel Calls */}
-        <section className="space-y-4">
-          <div className="flex items-center justify-between">
-            <div className="flex items-center gap-2.5">
-              <span className="flex size-8 items-center justify-center rounded-xl bg-emerald-500/15 text-emerald-400 border border-emerald-500/30">
-                <Ship className="size-4.5" />
-              </span>
-              <div>
-                <h3 className="text-base sm:text-lg font-extrabold text-slate-100">
-                  Nhật Ký 10 Chuyến Tàu Gần Nhất Thuộc {intel.ticker}
-                </h3>
-                <p className="text-xs text-slate-400 mt-0.5">
-                  Lịch trình chi tiết ngày giờ, trọng tải DWT và cầu bến tiếp nhận
-                </p>
-              </div>
-            </div>
-            <span className="text-xs font-bold text-teal-300 bg-teal-500/15 px-3 py-1 rounded-xl border border-teal-500/30">
-              {Math.min(tickerCalls.length, 10)} chuyến gần nhất
-            </span>
-          </div>
-
-          {tickerCalls.length > 0 ? (
-            <div className="overflow-x-auto rounded-2xl border border-[#1e2430] bg-[#161a22] shadow-2xl">
-              <table className="w-full text-left text-xs border-collapse">
-                <thead>
-                  <tr className="bg-[#12151c] text-slate-400 border-b border-[#1e2430] uppercase text-[10px] tracking-wider font-semibold">
-                    <th className="py-3 px-3.5 font-bold">Ngày Giờ Điều Động</th>
-                    <th className="py-3 px-3.5 font-bold">Tên Tàu</th>
-                    <th className="py-3 px-3.5 font-bold">Hướng</th>
-                    <th className="py-3 px-3.5 font-bold">Trọng Tải (DWT)</th>
-                    <th className="py-3 px-3.5 font-bold">Kích Thước (LOA/Mớn)</th>
-                    <th className="py-3 px-3.5 font-bold">Cầu Bến Cập</th>
-                    <th className="py-3 px-3.5 font-bold">Nguồn Ghi Nhận</th>
-                  </tr>
-                </thead>
-                <tbody className="divide-y divide-[#1e2430] font-mono">
-                  {tickerCalls.slice(0, 10).map((c: any, idx: number) => {
-                    const isIn = c.call_direction === 'in'
-                    const isOut = c.call_direction === 'out'
-                    const timeDisplay = c.scheduled_time || c.call_date
-
-                    return (
-                      <tr key={idx} className="hover:bg-[#1a1f2c] transition-colors font-sans group">
-                        <td className="py-3 px-3.5 text-slate-300 font-mono text-xs whitespace-nowrap font-medium">
-                          {timeDisplay}
-                        </td>
-                        <td className="py-3 px-3.5 font-bold text-slate-100 whitespace-nowrap group-hover:text-teal-300 transition-colors">
-                          <div className="flex items-center gap-2">
-                            <Ship className="size-3.5 text-teal-400 shrink-0" />
-                            <span>{c.vessel_name}</span>
-                          </div>
-                        </td>
-                        <td className="py-3 px-3.5 whitespace-nowrap">
-                          {isIn ? (
-                            <span className="inline-flex items-center rounded-md bg-emerald-500/15 text-emerald-400 px-2 py-0.5 text-[10px] font-bold border border-emerald-500/30">
-                              Vào cảng
-                            </span>
-                          ) : (
-                            <span className="inline-flex items-center rounded-md bg-sky-500/15 text-sky-400 px-2 py-0.5 text-[10px] font-bold border border-sky-500/30">
-                              Rời cảng
-                            </span>
-                          )}
-                        </td>
-                        <td className="py-3 px-3.5 font-black text-teal-300 font-mono whitespace-nowrap">
-                          {c.dwt ? c.dwt.toLocaleString('vi-VN') + ' DWT' : '—'}
-                        </td>
-                        <td className="py-3 px-3.5 text-slate-400 text-xs whitespace-nowrap font-mono">
-                          {c.loa ? `${c.loa}m` : '—'} / {c.draft ? `${c.draft}m` : '—'}
-                        </td>
-                        <td className="py-3 px-3.5 text-slate-200 font-medium whitespace-nowrap">
-                          {c.berth_name || '—'}
-                        </td>
-                        <td className="py-3 px-3.5 text-[11px] text-slate-400 whitespace-nowrap">
-                          {c.source || 'Cảng vụ Hàng hải'}
-                        </td>
-                      </tr>
-                    )
-                  })}
-                </tbody>
-              </table>
-            </div>
-          ) : (
-            <div className="rounded-2xl border border-[#1e2430] bg-[#161a22] p-8 text-center text-xs text-slate-400">
-              Đang đồng bộ nhật ký điều động tàu cho <strong>{intel.name}</strong>.
-            </div>
-          )}
+        {/* Section 4: 100 Most Recent Vessel Calls (Paginated 10 calls/page) */}
+        <section>
+          <StockVesselCallsTable calls={tickerCalls} ticker={intel.ticker} />
         </section>
       </div>
     </main>

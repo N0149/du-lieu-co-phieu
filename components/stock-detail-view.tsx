@@ -15,12 +15,9 @@ import {
   Share2,
   Check,
   Users,
-  Target,
-  ShieldCheck,
   ArrowUpRight,
   PieChart,
   Percent,
-  Award,
   Sparkles,
   Vote,
   Loader2,
@@ -76,7 +73,6 @@ export type StockDetailTab =
   | 'community'
   | 'financials'
   | 'peers'
-  | 'evaluation'
   | 'reports'
   | 'agm'
   | 'bctc'
@@ -313,7 +309,6 @@ export function StockDetailView({
       'profile',
       'articles',
       'community',
-      'evaluation',
       'peers',
       'reports',
       'agm',
@@ -786,13 +781,6 @@ export function StockDetailView({
         shortLabel: 'So sánh',
         icon: Users,
         iconColor: 'text-violet-500',
-      },
-      {
-        id: 'evaluation' as StockDetailTab,
-        label: 'Đánh Giá 360°',
-        shortLabel: 'Đánh giá 360°',
-        icon: Target,
-        iconColor: 'text-rose-500',
       },
       {
         id: 'reports' as StockDetailTab,
@@ -1726,6 +1714,9 @@ export function StockDetailView({
             detailedSnapshot={detailedSnapshot}
             initialData={initialFinancialStatements}
             initialAnnualData={initialFinancialStatementsAnnual}
+            bctcDataHopNhat={bctcDataHopNhat}
+            bctcDataCongTyMe={bctcDataCongTyMe}
+            onSelectTab={handleTabChange}
           />
         </div>
       )}
@@ -1817,141 +1808,7 @@ export function StockDetailView({
       )}
 
       {/* ══════════════════════════════════════════════════════════ */}
-      {/* TAB 5: ĐÁNH GIÁ 360°                                     */}
-      {/* ══════════════════════════════════════════════════════════ */}
-      {mountedTabs.has('evaluation') && (
-        <div className={cn("space-y-5 animate-in fade-in-50 duration-200", (activeTab !== 'evaluation' || loadingTab === 'evaluation') && "hidden")}>
-          <div className="grid grid-cols-1 gap-5 md:grid-cols-3">
-            {/* Card 1: Sức khỏe tài chính & Khả năng sinh lời */}
-            <div className="rounded-2xl border border-border bg-card p-5 shadow-xs space-y-3">
-              <div className="flex items-center gap-2 border-b border-border/60 pb-2.5">
-                <ShieldCheck className="size-4 text-emerald-500" />
-                <h4 className="text-xs font-bold uppercase tracking-wider text-foreground">
-                  Hiệu Quả Sinh Lời
-                </h4>
-              </div>
-              <div className="space-y-2.5 text-xs">
-                <div className="flex items-center justify-between">
-                  <span className="text-muted-foreground">ROE gần nhất:</span>
-                  <span className="font-mono font-bold text-foreground">
-                    {latestFin?.roe != null ? `${fmt(latestFin.roe, 1)}%` : '—'}
-                  </span>
-                </div>
-                <div className="flex items-center justify-between">
-                  <span className="text-muted-foreground">ROA gần nhất:</span>
-                  <span className="font-mono font-bold text-foreground">
-                    {latestFin?.roa != null ? `${fmt(latestFin.roa, 1)}%` : '—'}
-                  </span>
-                </div>
-                <div className="flex items-center justify-between">
-                  <span className="text-muted-foreground">Biên lợi nhuận ròng:</span>
-                  <span className="font-mono font-bold text-foreground">
-                    {latestFin?.net_margin != null ? `${fmt(latestFin.net_margin, 1)}%` : '—'}
-                  </span>
-                </div>
-                <div className="flex items-center justify-between">
-                  <span className="text-muted-foreground">Biên lợi nhuận gộp:</span>
-                  <span className="font-mono font-bold text-foreground">
-                    {latestFin?.gross_margin != null ? `${fmt(latestFin.gross_margin, 1)}%` : '—'}
-                  </span>
-                </div>
-              </div>
-            </div>
-
-            {/* Card 2: Định giá tương đối */}
-            <div className="rounded-2xl border border-border bg-card p-5 shadow-xs space-y-3">
-              <div className="flex items-center gap-2 border-b border-border/60 pb-2.5">
-                <Target className="size-4 text-rose-500" />
-                <h4 className="text-xs font-bold uppercase tracking-wider text-foreground">
-                  Định Giá Thị Trường
-                </h4>
-              </div>
-              <div className="space-y-2.5 text-xs">
-                <div className="flex items-center justify-between">
-                  <span className="text-muted-foreground">Hệ số P/E:</span>
-                  <span className="font-mono font-bold text-foreground">
-                    {basePE != null && basePE > 0 ? `${fmt(basePE, 1)} lần` : '—'}
-                  </span>
-                </div>
-                {adjustedPE != null && (
-                  <div className="flex items-center justify-between">
-                    <span className="text-muted-foreground flex items-center gap-1" title="P/E thực tế sau khi trừ các khoản trích ngoài cổ đông (KTPL, Thưởng BĐH, Thù lao HĐQT)">
-                      <span>P/E (sau trích lập):</span>
-                      <span className="text-[10.5px] text-amber-600 dark:text-amber-400 font-medium">
-                        ({bonusWelfareRate}%)
-                      </span>
-                    </span>
-                    <span className="font-mono font-bold text-amber-600 dark:text-amber-400">
-                      {fmt(adjustedPE, 1)} lần
-                    </span>
-                  </div>
-                )}
-                <div className="flex items-center justify-between">
-                  <span className="text-muted-foreground">Hệ số P/B:</span>
-
-                  <span className="font-mono font-bold text-foreground">
-                    {valuation.pb != null && valuation.pb > 0 ? `${fmt(valuation.pb, 2)} lần` : '—'}
-                  </span>
-                </div>
-                <div className="flex items-center justify-between">
-                  <span className="text-muted-foreground">Tỷ suất cổ tức:</span>
-                  <span className="font-mono font-bold text-emerald-500">
-                    {divYield != null ? `${fmt(divYield, 1)}% / năm` : '—'}
-                  </span>
-                </div>
-                <div className="flex items-center justify-between">
-                  <span className="text-muted-foreground">Giá trị sổ sách (BVPS):</span>
-                  <span className="font-mono font-bold text-foreground">
-                    {valuation.bvps != null ? `${fmt(valuation.bvps)} đ` : '—'}
-                  </span>
-                </div>
-              </div>
-            </div>
-
-            {/* Card 3: Đòn bẩy & An toàn tài chính */}
-            <div className="rounded-2xl border border-border bg-card p-5 shadow-xs space-y-3">
-              <div className="flex items-center gap-2 border-b border-border/60 pb-2.5">
-                <Award className="size-4 text-amber-500" />
-                <h4 className="text-xs font-bold uppercase tracking-wider text-foreground">
-                  Cơ Cấu Vốn & An Toàn
-                </h4>
-              </div>
-              <div className="space-y-2.5 text-xs">
-                <div className="flex items-center justify-between">
-                  <span className="text-muted-foreground">Nợ vay / Vốn CSH (D/E):</span>
-                  <span className="font-mono font-bold text-foreground">
-                    {latestFin?.debt_to_equity != null ? `${fmt(latestFin.debt_to_equity, 2)} lần` : '—'}
-                  </span>
-                </div>
-                <div className="flex items-center justify-between">
-                  <span className="text-muted-foreground">Tỷ lệ sở hữu nước ngoài:</span>
-                  <span className="font-mono font-bold text-foreground">
-                    {market.foreign_pct != null ? `${fmt(market.foreign_pct, 1)}%` : '—'}
-                  </span>
-                </div>
-                <div className="flex items-center justify-between">
-                  <span className="text-muted-foreground">Tỷ lệ sở hữu nhà nước:</span>
-                  <span className="font-mono font-bold text-foreground">
-                    {market.state_pct != null ? `${fmt(market.state_pct, 1)}%` : '—'}
-                  </span>
-                </div>
-                <div className="flex items-center justify-between">
-                  <span className="text-muted-foreground">Trôi nổi tự do:</span>
-                  <span className="font-mono font-bold text-foreground">
-                    {shareholderData.otherPct > 0 ? `${fmt(shareholderData.otherPct, 1)}%` : '—'}
-                  </span>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* Biểu đồ Định Giá Doanh Nghiệp (EPS & P/E) Chuẩn WiData */}
-          <StockValuationEpsChart symbol={ticker} />
-        </div>
-      )}
-
-      {/* ══════════════════════════════════════════════════════════ */}
-      {/* TAB 6: BÁO CÁO PHÂN TÍCH                                 */}
+      {/* TAB: BÁO CÁO PHÂN TÍCH                                   */}
       {/* ══════════════════════════════════════════════════════════ */}
       {mountedTabs.has('reports') && (
         <div className={cn("space-y-5 animate-in fade-in-50 duration-200", (activeTab !== 'reports' || loadingTab === 'reports') && "hidden")}>

@@ -5,7 +5,6 @@ import {
   ResponsiveContainer,
   ComposedChart,
   Bar,
-  Line,
   XAxis,
   YAxis,
   Tooltip,
@@ -196,17 +195,15 @@ export function FinancialCashFlowAndDividends({
                   name="Tiền mặt (VNĐ/CP)"
                   fill="#10b981"
                   radius={[4, 4, 0, 0]}
-                  maxBarSize={48}
+                  maxBarSize={32}
                 />
-                <Line
+                <Bar
                   yAxisId="right"
-                  type="monotone"
                   dataKey="stockPct"
                   name="Cổ tức cổ phiếu (%)"
-                  stroke="#f59e0b"
-                  strokeWidth={2.5}
-                  dot={{ r: 4, fill: '#f59e0b' }}
-                  activeDot={{ r: 6 }}
+                  fill="#f59e0b"
+                  radius={[4, 4, 0, 0]}
+                  maxBarSize={32}
                 />
               </ComposedChart>
             </ResponsiveContainer>

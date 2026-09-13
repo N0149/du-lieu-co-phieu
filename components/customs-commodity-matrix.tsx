@@ -173,10 +173,6 @@ export function CustomsCommodityMatrix({
       if (periodType === 'KY' && r.period_type !== 'KY_1' && r.period_type !== 'KY_2') return false
       if (periodType === 'QUY' && r.period_type !== 'QUY') return false
 
-      // Loại bỏ tháng chưa trọn vẹn (tháng 8/2026 hiện mới chỉ có 15 ngày Kỳ 1) khi xem ở khung Tháng hoặc Quý
-      if ((periodType === 'THANG' || periodType === 'QUY') && r.period_date.startsWith('2026-08')) {
-        return false
-      }
 
       // Phân loại FDI/Main
       if (datasetCategory !== 'ALL' && (r.dataset_category ?? 'main') !== datasetCategory) return false

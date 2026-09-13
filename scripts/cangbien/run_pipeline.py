@@ -48,13 +48,23 @@ def export_summary_json():
     """)
     stocks = [dict(row) for row in cursor.fetchall()]
     
-    # 3. Recent live port calls (today and recent schedule)
+    # 3. Recent live port calls (guarantee up to 100 recent calls per stock ticker)
     cursor = conn.execute("""
+        WITH ranked AS (
+            SELECT id, vessel_name, authority_id, berth_name, stock_ticker, call_direction,
+                   call_date, scheduled_time, draft, loa, dwt, gt, origin_port, dest_port, source,
+                   ROW_NUMBER() OVER (
+                       PARTITION BY stock_ticker 
+                       ORDER BY COALESCE(scheduled_time, call_date) DESC, id DESC
+                   ) as rn
+            FROM port_calls
+        )
         SELECT id, vessel_name, authority_id, berth_name, stock_ticker, call_direction,
                call_date, scheduled_time, draft, loa, dwt, gt, origin_port, dest_port, source
-        FROM port_calls
+        FROM ranked
+        WHERE (stock_ticker IS NOT NULL AND rn <= 100)
+           OR (stock_ticker IS NULL AND rn <= 300)
         ORDER BY COALESCE(scheduled_time, call_date) DESC, id DESC
-        LIMIT 1000
     """)
     recent_calls = [dict(row) for row in cursor.fetchall()]
     

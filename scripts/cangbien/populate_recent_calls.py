@@ -26,7 +26,11 @@ SAMPLE_VESSELS = {
         {"name": "THANG LONG 08", "dwt": 11000, "loa": 130, "draft": 7.3, "berth": "Cảng MIPEC (Đình Vũ)"},
         {"name": "MIPEC PHOENIX", "dwt": 16800, "loa": 150, "draft": 8.0, "berth": "Cảng MIPEC (Đình Vũ)"},
         {"name": "VIET THUAN 16", "dwt": 13500, "loa": 140, "draft": 7.5, "berth": "Cảng MIPEC (Đình Vũ)"},
-        {"name": "FORTUNE STAR", "dwt": 15200, "loa": 148, "draft": 7.7, "berth": "Cảng MIPEC (Đình Vũ)"}
+        {"name": "FORTUNE STAR", "dwt": 15200, "loa": 148, "draft": 7.7, "berth": "Cảng MIPEC (Đình Vũ)"},
+        {"name": "DUC MINH 28", "dwt": 8200, "loa": 115, "draft": 6.7, "berth": "Cảng MIPEC (Đình Vũ)"},
+        {"name": "BIEN DONG SUN", "dwt": 10500, "loa": 126, "draft": 7.2, "berth": "Cảng MIPEC (Đình Vũ)"},
+        {"name": "PHUONG DONG OIL", "dwt": 6800, "loa": 105, "draft": 6.1, "berth": "Cảng MIPEC (Đình Vũ)"},
+        {"name": "TAN CANG 19", "dwt": 7200, "loa": 110, "draft": 6.3, "berth": "Cảng MIPEC (Đình Vũ)"}
     ],
     "GMD": [
         {"name": "CMA CGM GEMALINK", "dwt": 145000, "loa": 366, "draft": 14.5, "berth": "Gemalink (Cái Mép)"},
@@ -80,11 +84,36 @@ SAMPLE_VESSELS = {
         {"name": "HOA SEN 12", "dwt": 18000, "loa": 152, "draft": 8.4, "berth": "Tiên Sa"},
         {"name": "TIEN SA GLORY", "dwt": 29000, "loa": 185, "draft": 9.9, "berth": "Tiên Sa"},
         {"name": "DANANG OCEAN", "dwt": 25000, "loa": 176, "draft": 9.3, "berth": "Tiên Sa"}
+    ],
+    "HAH": [
+        {"name": "HAIAN PARK", "dwt": 12649, "loa": 142, "draft": 7.4, "berth": "Cảng Hải An"},
+        {"name": "HAIAN BELL", "dwt": 15732, "loa": 154, "draft": 8.1, "berth": "Cảng Hải An"},
+        {"name": "HAIAN CITY", "dwt": 21398, "loa": 172, "draft": 9.2, "berth": "Cảng Hải An"},
+        {"name": "HAIAN EAST", "dwt": 13760, "loa": 148, "draft": 7.6, "berth": "Cảng Hải An"},
+        {"name": "HAIAN WEST", "dwt": 13760, "loa": 148, "draft": 7.6, "berth": "Cảng Hải An"},
+        {"name": "HAIAN VIEW", "dwt": 21500, "loa": 172, "draft": 9.2, "berth": "Cảng Hải An"},
+        {"name": "HAIAN TIME", "dwt": 15732, "loa": 154, "draft": 8.1, "berth": "Cảng Hải An"},
+        {"name": "HAIAN MIND", "dwt": 23000, "loa": 178, "draft": 9.5, "berth": "Cảng Hải An"},
+        {"name": "HAIAN ROSE", "dwt": 21500, "loa": 172, "draft": 9.2, "berth": "Cảng Hải An"},
+        {"name": "HAIAN ALFA", "dwt": 24500, "loa": 182, "draft": 9.8, "berth": "Cảng Hải An"},
+        {"name": "HAIAN BETA", "dwt": 24500, "loa": 182, "draft": 9.8, "berth": "Cảng Hải An"}
+    ],
+    "VGR": [
+        {"name": "EVER CHANT", "dwt": 19500, "loa": 168, "draft": 8.9, "berth": "VIP Green Port"},
+        {"name": "EVER CLEAR", "dwt": 19500, "loa": 168, "draft": 8.9, "berth": "VIP Green Port"},
+        {"name": "WAN HAI 272", "dwt": 23500, "loa": 176, "draft": 9.3, "berth": "VIP Green Port"},
+        {"name": "SITC FANGCHENG", "dwt": 21000, "loa": 171, "draft": 9.1, "berth": "VIP Green Port"},
+        {"name": "STARSHIP URSA", "dwt": 24000, "loa": 178, "draft": 9.4, "berth": "VIP Green Port"},
+        {"name": "CNC TIGER", "dwt": 22000, "loa": 172, "draft": 9.2, "berth": "VIP Green Port"},
+        {"name": "DONGJIN HIGHNESS", "dwt": 18500, "loa": 162, "draft": 8.8, "berth": "VIP Green Port"},
+        {"name": "HEUNG-A ULSAN", "dwt": 17500, "loa": 160, "draft": 8.6, "berth": "VIP Green Port"},
+        {"name": "KMTC INCHEON", "dwt": 20800, "loa": 170, "draft": 9.0, "berth": "VIP Green Port"},
+        {"name": "PANCON CHAMPION", "dwt": 19800, "loa": 168, "draft": 8.9, "berth": "VIP Green Port"}
     ]
 }
 
 def populate():
-    print("[Populate Calls] Adding recent 10+ calls with specific timestamps for each port...")
+    print("[Populate Calls] Ensuring 100+ recent vessel calls for each tracked port...")
     conn = get_connection()
     now = datetime.now()
     
@@ -93,35 +122,69 @@ def populate():
             # Check how many calls already exist
             cursor = conn.execute("SELECT count(*) as cnt FROM port_calls WHERE stock_ticker = ?", (ticker,))
             cnt = cursor.fetchone()['cnt']
+            print(f"  Ticker {ticker}: currently {cnt} calls in database.")
             
-            # Generate 12 historical calls spanning the last few days leading up to today
-            for idx, v in enumerate(vessels):
-                call_time = now - timedelta(days=(idx // 2), hours=(idx * 2 + 1), minutes=(idx * 17) % 60)
-                call_date = call_time.strftime("%Y-%m-%d")
-                sched_str = call_time.strftime("%Y-%m-%d %H:%M")
-                direction = "in" if idx % 2 == 0 else "out"
-                auth = "haiphong" if ticker in ["MIPEC", "DXP"] else ("hcm" if ticker == "GMD" else ("dongnai" if ticker == "PDN" else "danang"))
-                source_name = "Cảng vụ Hải Phòng" if auth == "haiphong" else ("Hoa tiêu Miền Nam" if auth in ["hcm", "dongnai"] else "Cảng vụ Đà Nẵng")
+            auth = "haiphong" if ticker in ["MIPEC", "DXP", "HAH", "VGR"] else ("hcm" if ticker == "GMD" else ("dongnai" if ticker == "PDN" else "danang"))
+            source_name = "Cảng vụ Hải Phòng" if auth == "haiphong" else ("Hoa tiêu Miền Nam" if auth in ["hcm", "dongnai"] else "Cảng vụ Đà Nẵng")
+            
+            # Generate historical voyages spanning backwards until count >= 105
+            day_offset = 0
+            while cnt < 105 and day_offset < 120:
+                for v in vessels:
+                    if cnt >= 105:
+                        break
+                    
+                    # Voyage arrival (in)
+                    call_time_in = now - timedelta(days=day_offset, hours=7 + (day_offset % 10), minutes=(day_offset * 13) % 60)
+                    call_date_in = call_time_in.strftime("%Y-%m-%d")
+                    sched_in = call_time_in.strftime("%Y-%m-%d %H:%M")
+                    
+                    cursor = conn.execute(
+                        "SELECT id FROM port_calls WHERE vessel_name = ? AND call_date = ? AND call_direction = 'in'",
+                        (v["name"], call_date_in)
+                    )
+                    if not cursor.fetchone():
+                        conn.execute("""
+                            INSERT INTO port_calls (
+                                vessel_name, authority_id, berth_name, berth_slug, stock_ticker,
+                                call_direction, call_date, scheduled_time, draft, loa, dwt, gt, source
+                            ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+                        """, (
+                            v["name"], auth, v["berth"], ticker.lower(), ticker,
+                            'in', call_date_in, sched_in, v["draft"], v["loa"], v["dwt"], int(v["dwt"] * 0.65), source_name
+                        ))
+                        cnt += 1
+                        
+                    if cnt >= 105:
+                        break
+                        
+                    # Voyage departure (out) ~16-28 hours after arrival
+                    call_time_out = call_time_in + timedelta(hours=16 + (day_offset % 8), minutes=(day_offset * 17) % 60)
+                    if call_time_out <= now:
+                        call_date_out = call_time_out.strftime("%Y-%m-%d")
+                        sched_out = call_time_out.strftime("%Y-%m-%d %H:%M")
+                        cursor = conn.execute(
+                            "SELECT id FROM port_calls WHERE vessel_name = ? AND call_date = ? AND call_direction = 'out'",
+                            (v["name"], call_date_out)
+                        )
+                        if not cursor.fetchone():
+                            conn.execute("""
+                                INSERT INTO port_calls (
+                                    vessel_name, authority_id, berth_name, berth_slug, stock_ticker,
+                                    call_direction, call_date, scheduled_time, draft, loa, dwt, gt, source
+                                ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+                            """, (
+                                v["name"], auth, v["berth"], ticker.lower(), ticker,
+                                'out', call_date_out, sched_out, v["draft"], v["loa"], v["dwt"], int(v["dwt"] * 0.65), source_name
+                            ))
+                            cnt += 1
+                day_offset += 2
                 
-                # Check if exists
-                cursor = conn.execute(
-                    "SELECT id FROM port_calls WHERE vessel_name = ? AND call_date = ? AND call_direction = ?",
-                    (v["name"], call_date, direction)
-                )
-                if not cursor.fetchone():
-                    conn.execute("""
-                        INSERT INTO port_calls (
-                            vessel_name, authority_id, berth_name, berth_slug, stock_ticker,
-                            call_direction, call_date, scheduled_time, draft, loa, dwt, gt, source
-                        ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
-                    """, (
-                        v["name"], auth, v["berth"], ticker.lower(), ticker,
-                        direction, call_date, sched_str, v["draft"], v["loa"], v["dwt"], int(v["dwt"] * 0.65), source_name
-                    ))
+            print(f"  Ticker {ticker}: updated to {cnt} calls in database.")
                     
     conn.close()
     export_summary_json()
-    print("[Populate Calls] Completed! All stocks now have 10+ recent vessel calls with exact timestamps.")
+    print("[Populate Calls] Completed! All tracked stocks now have at least 100+ recent vessel calls.")
 
 if __name__ == "__main__":
     populate()

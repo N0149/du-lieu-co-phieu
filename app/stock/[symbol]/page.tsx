@@ -41,14 +41,13 @@ export default async function StockDetailPage({
   const { symbol } = await params
   const sParams = searchParams ? await searchParams : {}
   const rawTab = sParams?.tab?.toLowerCase()
-  let initialTab: 'profile' | 'charts' | 'articles' | 'community' | 'financials' | 'peers' | 'evaluation' | 'reports' | 'agm' | 'bctc' = 'charts'
+  let initialTab: 'profile' | 'charts' | 'articles' | 'community' | 'financials' | 'peers' | 'reports' | 'agm' | 'bctc' = 'charts'
 
   if (rawTab === 'profile') initialTab = 'profile'
   else if (rawTab === 'articles' || rawTab === 'news' || rawTab === 'bai-viet' || rawTab === 'tin-tuc') initialTab = 'articles'
   else if (rawTab === 'community' || rawTab === 'cong-dong' || rawTab === 'thao-luan' || rawTab === 'dien-dan') initialTab = 'community'
   else if (rawTab === 'financials') initialTab = 'financials'
   else if (rawTab === 'peers') initialTab = 'peers'
-  else if (rawTab === 'evaluation') initialTab = 'evaluation'
   else if (rawTab === 'reports') initialTab = 'reports'
   else if (rawTab === 'agm' || rawTab === 'dhcd' || rawTab === 'dhcd-2026' || rawTab === 'dai-hoi-co-dong') initialTab = 'agm'
   else if (rawTab === 'bctc' || rawTab === 'thuyet-minh' || rawTab === 'thuyetminh' || rawTab === 'notes') initialTab = 'bctc'
