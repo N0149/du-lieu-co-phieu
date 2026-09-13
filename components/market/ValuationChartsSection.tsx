@@ -459,7 +459,6 @@ function ValuationSvgChart({
                   textAnchor="end"
                   fontSize="10"
                   fill="#64748b"
-                  fontFamily="monospace"
                 >
                   {tick}
                 </text>
@@ -476,7 +475,6 @@ function ValuationSvgChart({
               textAnchor={i === 0 ? 'start' : i === xTicks.length - 1 ? 'end' : 'middle'}
               fontSize="9"
               fill="#64748b"
-              fontFamily="monospace"
             >
               {tick.label}
             </text>

@@ -488,7 +488,6 @@ export function CommodityChartModal({
                       textAnchor="end"
                       fontSize="10"
                       fill="#64748b"
-                      fontFamily="monospace"
                     >
                       {tick}
                     </text>
@@ -505,7 +504,6 @@ export function CommodityChartModal({
                   textAnchor={i === 0 ? 'start' : i === xTicks.length - 1 ? 'end' : 'middle'}
                   fontSize="9.5"
                   fill="#64748b"
-                  fontFamily="monospace"
                 >
                   {tick.label}
                 </text>

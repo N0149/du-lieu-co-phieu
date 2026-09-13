@@ -41,14 +41,17 @@ export default async function StockDetailPage({
   const { symbol } = await params
   const sParams = searchParams ? await searchParams : {}
   const rawTab = sParams?.tab?.toLowerCase()
-  let initialTab: 'profile' | 'charts' | 'financials' | 'peers' | 'evaluation' | 'reports' | 'agm' = 'charts'
+  let initialTab: 'profile' | 'charts' | 'articles' | 'community' | 'financials' | 'peers' | 'evaluation' | 'reports' | 'agm' | 'bctc' = 'charts'
 
   if (rawTab === 'profile') initialTab = 'profile'
+  else if (rawTab === 'articles' || rawTab === 'news' || rawTab === 'bai-viet' || rawTab === 'tin-tuc') initialTab = 'articles'
+  else if (rawTab === 'community' || rawTab === 'cong-dong' || rawTab === 'thao-luan' || rawTab === 'dien-dan') initialTab = 'community'
   else if (rawTab === 'financials') initialTab = 'financials'
   else if (rawTab === 'peers') initialTab = 'peers'
   else if (rawTab === 'evaluation') initialTab = 'evaluation'
   else if (rawTab === 'reports') initialTab = 'reports'
   else if (rawTab === 'agm' || rawTab === 'dhcd' || rawTab === 'dhcd-2026' || rawTab === 'dai-hoi-co-dong') initialTab = 'agm'
+  else if (rawTab === 'bctc' || rawTab === 'thuyet-minh' || rawTab === 'thuyetminh' || rawTab === 'notes') initialTab = 'bctc'
   else if (rawTab === 'charts' || rawTab === 'financial-charts') initialTab = 'charts'
 
   const ticker = symbol.toUpperCase().trim()
@@ -114,7 +117,9 @@ export default async function StockDetailPage({
   const { buildCapexFinancialData } = await import('@/lib/capex-financial-service')
   const { buildDebtDupontData } = await import('@/lib/debt-dupont-service')
   const { getAgmReport, getAvailableAgmTickers, getAgmKtpl } = await import('@/lib/agm-service')
+  const { getBctcReport, getAvailableBctcTickers } = await import('@/lib/bctc-service')
   const { getFinancialStatements } = await import('@/lib/financial-statements-db')
+  const { getStockArticles } = await import('@/lib/stock-articles-service')
 
   const [
     financialChartQuarter,
@@ -126,6 +131,10 @@ export default async function StockDetailPage({
     financialStatementsAnnual,
     agmData,
     availableAgmTickers,
+    bctcDataHopNhat,
+    bctcDataCongTyMe,
+    availableBctcTickers,
+    articlesData,
   ] = await Promise.all([
     getFinancialChartData(ticker, 'quarter'),
     getFinancialChartData(ticker, 'annual'),
@@ -136,6 +145,10 @@ export default async function StockDetailPage({
     getFinancialStatements(ticker, 'annual'),
     Promise.resolve(getAgmReport(ticker, 2026)),
     Promise.resolve(getAvailableAgmTickers(2026)),
+    Promise.resolve(getBctcReport(ticker, 'HopNhat')),
+    Promise.resolve(getBctcReport(ticker, 'CongTyMe')),
+    Promise.resolve(getAvailableBctcTickers()),
+    Promise.resolve(getStockArticles(ticker, stockData.company.name)),
   ])
 
   // Tính toán đồng thời các cụm biểu đồ chuyên sâu từ dữ liệu BCTC đã tải (0ms overhead)
@@ -184,7 +197,11 @@ export default async function StockDetailPage({
           debtDupontAnnual={debtDupontAnnual}
           agmData={agmData}
           availableAgmTickers={availableAgmTickers}
+          bctcDataHopNhat={bctcDataHopNhat}
+          bctcDataCongTyMe={bctcDataCongTyMe}
+          availableBctcTickers={availableBctcTickers}
           ktplRate={ktplRate}
+          articlesData={articlesData}
           initialTab={initialTab}
         />
       </main>

@@ -304,8 +304,9 @@ function insertDisclosures(db, records) {
 /**
  * Nguồn 1: Thu thập từ CafeF Disclosures Stream (Bao gồm cả 3 sàn HOSE, HNX, UPCoM)
  */
-async function fetchCafefDisclosures(page = 1, pageSize = 50) {
-  const url = `https://cafef.vn/du-lieu/Ajax/Events_RelatedNews_New.aspx?symbol=&floorID=0&configID=0&PageIndex=${page}&PageSize=${pageSize}&Type=2`;
+async function fetchCafefDisclosures(page = 1, pageSize = 50, symbol = "") {
+  const symParam = symbol ? `symbol=${encodeURIComponent(symbol)}` : 'symbol=';
+  const url = `https://cafef.vn/du-lieu/Ajax/Events_RelatedNews_New.aspx?${symParam}&floorID=0&configID=0&PageIndex=${page}&PageSize=${pageSize}&Type=2`;
   const res = await fetch(url, {
     headers: {
       "User-Agent": USER_AGENT,
@@ -336,19 +337,19 @@ async function fetchCafefDisclosures(page = 1, pageSize = 50) {
     const fileUrl = rawHref.startsWith("http") ? rawHref : `https://cafef.vn${rawHref}`;
     const rawTitle = (linkMatch[2] || linkMatch[3] || "").replace(/<[^>]+>/g, "").trim();
 
-    const symbol = extractTickerFromTitle(rawTitle);
-    if (!symbol) continue;
+    const sym = extractTickerFromTitle(rawTitle, symbol || null);
+    if (!sym) continue;
 
-    const exchange = stockExchanges[symbol] || "UPCOM";
-    const companyName = stockNames[symbol] || "";
+    const exchange = stockExchanges[sym] || "UPCOM";
+    const companyName = stockNames[sym] || "";
     const { docType, label, isImportant } = classifyDisclosure(rawTitle);
 
     const titleHash = crypto.createHash("md5").update(rawTitle).digest("hex").slice(0, 10);
-    const id = `cf_${symbol}_${publishedAt.slice(0, 10)}_${titleHash}`;
+    const id = `cf_${sym}_${publishedAt.slice(0, 10)}_${titleHash}`;
 
     records.push({
       id,
-      symbol,
+      symbol: sym,
       exchange,
       company_name: companyName,
       title: rawTitle,
@@ -460,8 +461,12 @@ async function syncTickersDisclosures(db, tickers) {
     process.stdout.write(`[${i + 1}/${tickers.length}] Quét ${sym}... `);
 
     try {
-      const records = await fetchVietcapNews(sym, 0, 50);
-      const saved = insertDisclosures(db, records);
+      // 1. Quét từ CafeF có link văn bản gốc trực tiếp (file_url)
+      const cfRecords = await fetchCafefDisclosures(1, 50, sym);
+      // 2. Quét thêm từ Vietcap IQ (để bổ sung thêm các tin phân tích / thumbnail)
+      const vcRecords = await fetchVietcapNews(sym, 0, 50);
+
+      const saved = insertDisclosures(db, [...cfRecords, ...vcRecords]);
       totalSaved += saved;
       console.log(`OK (${saved} văn bản)`);
     } catch (err) {

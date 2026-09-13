@@ -362,7 +362,6 @@ export function FreightRatesChart({
                     y={y + 3.5}
                     fill="#94a3b8"
                     fontSize="10"
-                    fontFamily="monospace"
                     fontWeight="bold"
                   >
                     {val.toLocaleString('vi-VN')}
@@ -395,7 +394,6 @@ export function FreightRatesChart({
                 textAnchor={idx === 0 ? 'start' : idx === dateLabels.length - 1 ? 'end' : 'middle'}
                 fill="#64748b"
                 fontSize="10"
-                fontFamily="monospace"
               >
                 {lbl.text}
               </text>

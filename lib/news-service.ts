@@ -13,7 +13,7 @@ export type NewsItem = {
   link: string
   pubDate: string // ISO string
   relativeTime: string // ví dụ: "15 phút trước", "1 giờ trước"
-  source: 'CafeF' | 'VnEconomy' | 'Vietnambiz' | 'Báo Đầu Tư' | 'Tin Nhanh CK' | 'Tổng Hợp'
+  source: 'CafeF' | 'VnEconomy' | 'Vietnambiz' | 'Báo Đầu Tư' | 'Tin Nhanh CK' | 'Stockbiz' | 'Vietstock' | 'VietnamFinance' | 'Tổng Hợp'
   sourceUrl: string
   category: 'market' | 'stock' | 'global' | 'general'
   summary?: string
@@ -48,9 +48,15 @@ const FEEDS: FeedConfig[] = [
   { name: 'Vietnambiz', url: 'https://vietnambiz.vn/rss/doanh-nghiep.rss', categoryHint: 'stock' },
   { name: 'Vietnambiz', url: 'https://vietnambiz.vn/rss/tai-chinh.rss', categoryHint: 'market' },
 
-  // Báo Đầu Tư Feeds
-  { name: 'Báo Đầu Tư', url: 'https://baodautu.vn/rss/chung-khoan-d4.rss', categoryHint: 'market' },
-  { name: 'Báo Đầu Tư', url: 'https://baodautu.vn/rss/tai-chinh-ngan-hang-d5.rss', categoryHint: 'market' },
+  // Vietstock Feeds
+  { name: 'Vietstock', url: 'https://vietstock.vn/144/chung-khoan.rss', categoryHint: 'market' },
+  { name: 'Vietstock', url: 'https://vietstock.vn/830/chung-khoan/co-phieu.rss', categoryHint: 'stock' },
+  { name: 'Vietstock', url: 'https://vietstock.vn/733/doanh-nghiep.rss', categoryHint: 'stock' },
+  { name: 'Vietstock', url: 'https://vietstock.vn/734/tai-chinh.rss', categoryHint: 'market' },
+  { name: 'Vietstock', url: 'https://vietstock.vn/763/bat-dong-san.rss', categoryHint: 'stock' },
+
+  // VietnamFinance
+  { name: 'VietnamFinance', url: 'https://vietnamfinance.vn/rss.rss', categoryHint: 'market' },
 ]
 
 // Common false-positive 3-letter words to ignore

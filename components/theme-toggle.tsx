@@ -38,3 +38,25 @@ export function ThemeToggle() {
     </Button>
   )
 }
+
+export function ThemeInitializer() {
+  useEffect(() => {
+    try {
+      const t = localStorage.getItem('rnav-theme')
+      if (t === 'light') {
+        document.documentElement.classList.remove('dark')
+        document.documentElement.classList.add('light')
+      } else {
+        document.documentElement.classList.add('dark')
+      }
+      const sb = localStorage.getItem('app_sidebar_collapsed')
+      if (sb) {
+        document.documentElement.setAttribute('data-sidebar', sb === 'true' ? 'collapsed' : 'expanded')
+      }
+    } catch {
+      document.documentElement.classList.add('dark')
+    }
+  }, [])
+
+  return null
+}

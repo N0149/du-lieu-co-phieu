@@ -11,14 +11,14 @@ export const dynamic = 'force-dynamic'
 export const metadata: Metadata = {
   title: 'Tổng Hợp Tin Tức Thị Trường & Công Bố Doanh Nghiệp Mới Nhất',
   description:
-    'Cổng tổng hợp tin tức tài chính, kinh tế vĩ mô và doanh nghiệp niêm yết theo thời gian thực từ Vietnambiz, VnEconomy, TinNhanhCK, CafeF, VietnamFinance. Tự động bóc tách mã cổ phiếu & biến động giá.',
+    'Cổng tổng hợp tin tức tài chính, kinh tế vĩ mô và doanh nghiệp niêm yết theo thời gian thực từ Stockbiz, Tin Nhanh CK, Vietstock, Vietnambiz, VnEconomy, CafeF, VietnamFinance. Tự động bóc tách mã cổ phiếu & biến động giá.',
   alternates: {
     canonical: '/tin-tuc',
   },
   openGraph: {
     title: 'Tổng Hợp Tin Tức Thị Trường & Công Bố Doanh Nghiệp | Dữ Liệu Đầu Tư',
     description:
-      'Dòng tin trực tiếp cập nhật liên tục từ các nguồn báo tài chính hàng đầu. Bóc tách mã cổ phiếu và giá realtime.',
+      'Dòng tin trực tiếp cập nhật liên tục từ các nguồn báo tài chính hàng đầu: Stockbiz, Tin Nhanh CK, Vietstock, CafeF, VnEconomy, Vietnambiz. Bóc tách mã cổ phiếu và giá realtime.',
     url: '/tin-tuc',
     type: 'website',
   },
@@ -69,14 +69,13 @@ export default async function NewsPage() {
   // Calculate trending tickers
   const tickerCounts: Record<string, number> = {}
   initialNews.forEach((item) => {
-    if (item.ticker) {
-      tickerCounts[item.ticker] = (tickerCounts[item.ticker] || 0) + 1
-    }
-    if (item.tickers) {
-      item.tickers.forEach((t) => {
-        tickerCounts[t] = (tickerCounts[t] || 0) + 1
-      })
-    }
+    const rawList = [item.ticker, ...(item.tickers || [])]
+    rawList.forEach((t) => {
+      const code = typeof t === 'string' ? t.toUpperCase().trim() : null
+      if (code && /^[A-Z0-9]{3}$/.test(code) && !code.includes('OBJECT')) {
+        tickerCounts[code] = (tickerCounts[code] || 0) + 1
+      }
+    })
   })
 
   const initialTrending = Object.entries(tickerCounts)

@@ -26,17 +26,26 @@ import {
   Loader2,
   ChevronLeft,
   ChevronRight,
+  Newspaper,
+  ScrollText,
+  MessageSquare,
 } from 'lucide-react'
 import type { StockDetailData, StockManifestItem } from '@/lib/longlivestock'
 import type { Report } from '@/lib/use-reports'
 import { cn } from '@/lib/utils'
+import { saveRecentSearch } from '@/lib/recent-searches'
 import { WatchlistStarButton } from '@/components/watchlist/WatchlistStarButton'
 import { BusinessPlanComparison, BusinessPlanYear } from '@/components/business-plan-comparison'
 import { FinancialStatementsExplorer } from '@/components/financial-statements-explorer'
 import type { RawFinancialStatementData } from '@/lib/financial-statements-db'
 import { CompanyReportsTab } from '@/components/reports/CompanyReportsTab'
 import { StockAgmReportView } from '@/components/stock/StockAgmReportView'
+import { StockBctcReportView } from '@/components/stock/StockBctcReportView'
+import { StockArticlesTab } from '@/components/stock/StockArticlesTab'
+import { StockCommunityTab } from '@/components/stock/StockCommunityTab'
+import type { StockArticlesPayload } from '@/lib/stock-articles-service'
 import type { AgmReportData } from '@/lib/agm-service'
+import type { BctcReportData } from '@/lib/bctc-service'
 import { BankFinancialCharts } from '@/components/stock/BankFinancialCharts'
 import { BankingDetailedFinancialCharts } from '@/components/stock/BankingDetailedFinancialCharts'
 import { GeneralDetailedFinancialCharts } from '@/components/stock/GeneralDetailedFinancialCharts'
@@ -63,11 +72,14 @@ import type { DebtDupontPayload } from '@/lib/debt-dupont-service'
 export type StockDetailTab =
   | 'profile'
   | 'charts'
+  | 'articles'
+  | 'community'
   | 'financials'
   | 'peers'
   | 'evaluation'
   | 'reports'
   | 'agm'
+  | 'bctc'
 
 interface StockDetailViewProps {
   stockData: StockDetailData
@@ -94,7 +106,11 @@ interface StockDetailViewProps {
   debtDupontAnnual?: DebtDupontPayload | null
   agmData?: AgmReportData | null
   availableAgmTickers?: string[]
+  bctcDataHopNhat?: BctcReportData | null
+  bctcDataCongTyMe?: BctcReportData | null
+  availableBctcTickers?: string[]
   ktplRate?: number | null
+  articlesData?: StockArticlesPayload | null
   initialFinancialStatements?: RawFinancialStatementData | null
   initialFinancialStatementsAnnual?: RawFinancialStatementData | null
   initialTab?: StockDetailTab
@@ -186,7 +202,11 @@ export function StockDetailView({
   debtDupontAnnual = null,
   agmData = null,
   availableAgmTickers = [],
+  bctcDataHopNhat = null,
+  bctcDataCongTyMe = null,
+  availableBctcTickers = [],
   ktplRate = null,
+  articlesData = null,
   initialFinancialStatements = null,
   initialFinancialStatementsAnnual = null,
   initialTab = 'charts',
@@ -239,6 +259,27 @@ export function StockDetailView({
     return () => clearTimeout(t)
   }, [activeTab, checkTabScroll])
 
+  // Tự động lưu mã vào danh sách tìm kiếm gần đây
+  useEffect(() => {
+    if (stockData?.ticker) {
+      const ticker = stockData.ticker.toUpperCase()
+      saveRecentSearch({
+        id: `stock-${ticker}`,
+        ticker,
+        title: stockData.company?.name ? `${ticker} - ${stockData.company.name}` : ticker,
+        subtitle: `${ticker} · Sàn ${stockData.company?.exchange || 'HOSE'} · Ngành: ${stockData.company?.sector || 'Đại chúng'}`,
+        category: 'stock',
+        categoryLabel: 'Doanh nghiệp',
+        href: `/stock/${encodeURIComponent(ticker)}`,
+      })
+    }
+  }, [
+    stockData?.ticker,
+    stockData?.company?.name,
+    stockData?.company?.exchange,
+    stockData?.company?.sector,
+  ])
+
   const scrollTabs = (direction: 'left' | 'right') => {
     const el = tabsContainerRef.current
     if (!el) return
@@ -270,6 +311,8 @@ export function StockDetailView({
   useEffect(() => {
     const tabsToPreload: StockDetailTab[] = [
       'profile',
+      'articles',
+      'community',
       'evaluation',
       'peers',
       'reports',
@@ -716,6 +759,21 @@ export function StockDetailView({
         iconColor: 'text-indigo-500',
       },
       {
+        id: 'articles' as StockDetailTab,
+        label: 'Bài Viết & Sự Kiện',
+        shortLabel: 'Bài viết',
+        icon: Newspaper,
+        iconColor: 'text-amber-500',
+        badge: articlesData && articlesData.total > 0 ? `${articlesData.total}` : undefined,
+      },
+      {
+        id: 'community' as StockDetailTab,
+        label: 'Cộng Đồng',
+        shortLabel: 'Cộng đồng',
+        icon: MessageSquare,
+        iconColor: 'text-sky-500',
+      },
+      {
         id: 'financials' as StockDetailTab,
         label: 'Báo Cáo Tài Chính',
         shortLabel: 'BCTC',
@@ -752,8 +810,16 @@ export function StockDetailView({
         iconColor: 'text-purple-400',
         badge: agmData?.hasReport ? '2026' : undefined,
       },
+      {
+        id: 'bctc' as StockDetailTab,
+        label: 'Thuyết Minh BCTC',
+        shortLabel: 'Thuyết minh',
+        icon: ScrollText,
+        iconColor: 'text-teal-400',
+        badge: (bctcDataHopNhat?.hasReport || bctcDataCongTyMe?.hasReport) ? 'MỚI' : undefined,
+      },
     ]
-  }, [agmData])
+  }, [agmData, articlesData, bctcDataHopNhat, bctcDataCongTyMe])
 
   return (
     <div className="space-y-5 pb-12">
@@ -1298,7 +1364,6 @@ export function StockDetailView({
                               y={g.y + 3.5}
                               textAnchor="end"
                               fontSize="9.5"
-                              fontFamily="monospace"
                               className="fill-muted-foreground/75 font-medium"
                             >
                               {g.label}
@@ -1353,7 +1418,6 @@ export function StockDetailView({
                             y={priceChartSvg.H - priceChartSvg.padB + 18}
                             textAnchor="middle"
                             fontSize="9.5"
-                            fontFamily="monospace"
                             className="fill-muted-foreground/70 font-medium"
                           >
                             {ym.yr}
@@ -1423,7 +1487,6 @@ export function StockDetailView({
                               y={g.y + 3.5}
                               textAnchor="end"
                               fontSize="9.5"
-                              fontFamily="monospace"
                               className="fill-muted-foreground/75 font-medium"
                             >
                               {g.label}
@@ -1451,7 +1514,6 @@ export function StockDetailView({
                             y={g.y + 3.5}
                             textAnchor="start"
                             fontSize="9.5"
-                            fontFamily="monospace"
                             fill="#f59e0b"
                             className="font-semibold"
                           >
@@ -1490,7 +1552,6 @@ export function StockDetailView({
                               y={revChartData.H - revChartData.padB + 18}
                               textAnchor="middle"
                               fontSize="9.5"
-                              fontFamily="monospace"
                               className="fill-muted-foreground/70 font-medium"
                             >
                               {String(b.year).slice(-2)}
@@ -1574,7 +1635,6 @@ export function StockDetailView({
                           y={g.y + 3.5}
                           textAnchor="end"
                           fontSize="9.5"
-                          fontFamily="monospace"
                           className="fill-muted-foreground/75 font-medium"
                         >
                           {g.label}
@@ -1600,7 +1660,6 @@ export function StockDetailView({
                           y={tpChartData.H - tpChartData.padB + 18}
                           textAnchor="middle"
                           fontSize="9.5"
-                          fontFamily="monospace"
                           className="fill-muted-foreground/70 font-medium"
                         >
                           {b.year}
@@ -1611,7 +1670,6 @@ export function StockDetailView({
                             y={b.by - 6}
                             textAnchor="middle"
                             fontSize="9.5"
-                            fontFamily="monospace"
                             className="fill-foreground font-bold"
                           >
                             {fmt(b.val, 1)}
@@ -1624,6 +1682,32 @@ export function StockDetailView({
               </div>
             </div>
           )}
+        </div>
+      )}
+
+      {/* ══════════════════════════════════════════════════════════ */}
+      {/* TAB 2.5: BÀI VIẾT & SỰ KIỆN DOANH NGHIỆP                  */}
+      {/* ══════════════════════════════════════════════════════════ */}
+      {mountedTabs.has('articles') && (
+        <div className={cn("space-y-5 animate-in fade-in-50 duration-200", (activeTab !== 'articles' || loadingTab === 'articles') && "hidden")}>
+          <StockArticlesTab
+            symbol={ticker}
+            companyName={company.name}
+            initialArticles={articlesData}
+          />
+        </div>
+      )}
+
+      {/* ══════════════════════════════════════════════════════════ */}
+      {/* TAB 2.6: CỘNG ĐỒNG THẢO LUẬN & PHÂN TÍCH (CHUẨN FIREANT)   */}
+      {/* ══════════════════════════════════════════════════════════ */}
+      {mountedTabs.has('community') && (
+        <div className={cn("space-y-5 animate-in fade-in-50 duration-200", (activeTab !== 'community' || loadingTab === 'community') && "hidden")}>
+          <StockCommunityTab
+            symbol={ticker}
+            companyName={company.name}
+            currentPrice={market.price ? market.price * 1000 : undefined}
+          />
         </div>
       )}
 
@@ -2000,6 +2084,21 @@ export function StockDetailView({
             ticker={ticker}
             companyName={company.name}
             availableTickers={availableAgmTickers}
+          />
+        </div>
+      )}
+
+      {/* ══════════════════════════════════════════════════════════ */}
+      {/* TAB 8: THUYẾT MINH BÁO CÁO TÀI CHÍNH                      */}
+      {/* ══════════════════════════════════════════════════════════ */}
+      {mountedTabs.has('bctc') && (
+        <div className={cn("animate-in fade-in-50 duration-200", (activeTab !== 'bctc' || loadingTab === 'bctc') && "hidden")}>
+          <StockBctcReportView
+            bctcDataHopNhat={bctcDataHopNhat}
+            bctcDataCongTyMe={bctcDataCongTyMe}
+            ticker={ticker}
+            companyName={company.name}
+            availableTickers={availableBctcTickers}
           />
         </div>
       )}

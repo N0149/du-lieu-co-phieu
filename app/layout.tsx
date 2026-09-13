@@ -1,19 +1,16 @@
-import Script from 'next/script'
+import { Suspense } from 'react'
 import { Analytics } from '@vercel/analytics/next'
 import type { Metadata, Viewport } from 'next'
-import { Inter, JetBrains_Mono } from 'next/font/google'
+import { Inter } from 'next/font/google'
 import { SiteFooter } from '@/components/site-footer'
 import { AntiScrapingTrap } from '@/components/security/anti-scraping-trap'
+import { NavigationProgressBar } from '@/components/navigation-progress-bar'
+import { ThemeInitializer } from '@/components/theme-toggle'
 import './globals.css'
 
 const inter = Inter({
   subsets: ['latin', 'vietnamese'],
   variable: '--font-inter',
-})
-
-const jetbrainsMono = JetBrains_Mono({
-  subsets: ['latin'],
-  variable: '--font-jetbrains',
 })
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://dulieudautu.com'
@@ -70,23 +67,6 @@ export const viewport: Viewport = {
   ],
 }
 
-const themeScript = `
-(function() {
-  try {
-    var t = localStorage.getItem('rnav-theme');
-    if (!t) t = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-    document.documentElement.classList.add(t);
-    var sb = localStorage.getItem('app_sidebar_collapsed');
-    document.documentElement.setAttribute('data-sidebar', sb === 'true' ? 'collapsed' : 'expanded');
-  } catch (e) {
-    document.documentElement.classList.add('dark');
-  }
-})();
-`
-
-import { Suspense } from 'react'
-import { NavigationProgressBar } from '@/components/navigation-progress-bar'
-
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -95,15 +75,11 @@ export default function RootLayout({
   return (
     <html
       lang="vi"
-      className={`${inter.variable} ${jetbrainsMono.variable} bg-background`}
+      className={`${inter.variable} dark bg-background`}
       suppressHydrationWarning
     >
-      <head>
-        <Script id="theme-script" strategy="beforeInteractive">
-          {themeScript}
-        </Script>
-      </head>
       <body className="flex min-h-screen flex-col font-sans antialiased">
+        <ThemeInitializer />
         <Suspense fallback={null}>
           <NavigationProgressBar />
         </Suspense>

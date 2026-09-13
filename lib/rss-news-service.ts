@@ -29,10 +29,17 @@ export const RSS_SOURCES = [
   { name: 'Vietnambiz', url: 'https://vietnambiz.vn/rss/tai-chinh.rss', defaultCategory: 'tai-chinh' },
   { name: 'Vietnambiz', url: 'https://vietnambiz.vn/rss/bat-dong-san.rss', defaultCategory: 'bat-dong-san' },
 
-  // 3. VietnamFinance
+  // 3. Vietstock (Cổng thông tin tài chính - chứng khoán hàng đầu)
+  { name: 'Vietstock', url: 'https://vietstock.vn/144/chung-khoan.rss', defaultCategory: 'thi-truong' },
+  { name: 'Vietstock', url: 'https://vietstock.vn/830/chung-khoan/co-phieu.rss', defaultCategory: 'doanh-nghiep' },
+  { name: 'Vietstock', url: 'https://vietstock.vn/733/doanh-nghiep.rss', defaultCategory: 'doanh-nghiep' },
+  { name: 'Vietstock', url: 'https://vietstock.vn/734/tai-chinh.rss', defaultCategory: 'tai-chinh' },
+  { name: 'Vietstock', url: 'https://vietstock.vn/763/bat-dong-san.rss', defaultCategory: 'bat-dong-san' },
+
+  // 4. VietnamFinance
   { name: 'VietnamFinance', url: 'https://vietnamfinance.vn/rss.rss', defaultCategory: 'tai-chinh' },
 
-  // 4. CafeF
+  // 5. CafeF
   { name: 'CafeF', url: 'https://cafef.vn/doanh-nghiep.rss', defaultCategory: 'doanh-nghiep' },
   { name: 'CafeF', url: 'https://cafef.vn/thi-truong-chung-khoan.rss', defaultCategory: 'thi-truong' },
   { name: 'CafeF', url: 'https://cafef.vn/tai-chinh-ngan-hang.rss', defaultCategory: 'tai-chinh' },
@@ -346,8 +353,11 @@ export function parseRssItemsFromXml(xmlText: string, source: { name: string; de
 
     // Link
     const linkMatch = itemXml.match(/<link>(?:<!\[CDATA\[([\s\S]*?)\]\]>|([\s\S]*?))<\/link>/i)
-    const link = (linkMatch ? linkMatch[1] || linkMatch[2] || '' : '').trim()
+    let link = (linkMatch ? linkMatch[1] || linkMatch[2] || '' : '').trim()
     if (!link || !link.startsWith('http')) continue
+    if (link.startsWith('http://vietstock.vn')) {
+      link = link.replace('http://vietstock.vn', 'https://vietstock.vn')
+    }
 
     // Ngày xuất bản
     const pubDateMatch = itemXml.match(/<pubDate>(?:<!\[CDATA\[([\s\S]*?)\]\]>|([\s\S]*?))<\/pubDate>/i)
@@ -375,7 +385,7 @@ export function parseRssItemsFromXml(xmlText: string, source: { name: string; de
     const primaryTicker = tickers.length > 0 ? tickers[0] : null
     const category = classifyCategory(title, summary, source.defaultCategory, tickers)
 
-    const id = `${source.name.toLowerCase()}-${crypto.createHash('md5').update(link).digest('hex')}`
+    const id = `${source.name.toLowerCase().replace(/\s+/g, '')}-${crypto.createHash('md5').update(link).digest('hex')}`
 
     items.push({
       id,
@@ -388,6 +398,208 @@ export function parseRssItemsFromXml(xmlText: string, source: { name: string; de
       category,
       summary: summary.length > 280 ? summary.slice(0, 280) + '...' : summary,
     })
+  }
+
+  return items
+}
+
+export function slugifyText(text: string): string {
+  if (!text) return ''
+  return text
+    .toString()
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '')
+    .replace(/đ/g, 'd')
+    .replace(/Đ/g, 'D')
+    .toLowerCase()
+    .trim()
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/^-+|-+$/g, '')
+    .slice(0, 80)
+}
+
+export async function fetchStockbizNews(): Promise<RawNewsItem[]> {
+  const items: RawNewsItem[] = []
+  const urls = ['https://stockbiz.vn/', 'https://stockbiz.vn/tin-tuc']
+  const seenPostIds = new Set<number>()
+
+  for (const pageUrl of urls) {
+    try {
+      const controller = new AbortController()
+      const timeoutId = setTimeout(() => controller.abort(), 6500)
+
+      const res = await fetch(pageUrl, {
+        headers: {
+          'User-Agent':
+            'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36',
+          Accept: 'text/html,application/xhtml+xml',
+        },
+        signal: controller.signal,
+      })
+      clearTimeout(timeoutId)
+
+      if (!res.ok) continue
+      const html = await res.text()
+      const match = html.match(/<script id="__NEXT_DATA__" type="application\/json">([\s\S]*?)<\/script>/)
+      if (!match) continue
+
+      const data = JSON.parse(match[1])
+      const postsMap = data.props?.pageProps?.initialState?.posts?.posts || {}
+
+      for (const [, val] of Object.entries(postsMap)) {
+        const postsList = (val as any)?.posts || (Array.isArray(val) ? val : [])
+        for (const p of postsList) {
+          if (!p || !p.postID || seenPostIds.has(p.postID) || !p.title) continue
+          seenPostIds.add(p.postID)
+
+          const title = cleanText(p.title)
+          if (!title || title.length < 5) continue
+
+          const summary = cleanText(p.description || '')
+          if (!isFinancialArticle(title, summary)) continue
+
+          const slug = slugifyText(title)
+          const link = `https://stockbiz.vn/tin-tuc/${slug || '-'}/${p.postID}`
+
+          let pubDate = new Date().toISOString()
+          if (p.date) {
+            const parsed = new Date(p.date)
+            if (!isNaN(parsed.getTime())) pubDate = parsed.toISOString()
+          }
+
+          const extractedTickers = extractTickersFromText(`${title} ${summary}`)
+          if (Array.isArray(p.taggedSymbols)) {
+            for (const symItem of p.taggedSymbols) {
+              const raw =
+                typeof symItem === 'string'
+                  ? symItem
+                  : symItem?.symbol || symItem?.ticker || symItem?.code
+              if (typeof raw === 'string') {
+                const u = raw.toUpperCase().trim()
+                if (u && /^[A-Z0-9]{3}$/.test(u) && !IGNORED_TICKERS.has(u) && !extractedTickers.includes(u)) {
+                  extractedTickers.push(u)
+                }
+              }
+            }
+          }
+
+          let defaultCat = 'thi-truong'
+          const groupName = (p.postGroup?.name || '').toLowerCase()
+          if (
+            groupName.includes('doanh nghiệp') ||
+            groupName.includes('chứng khoán') ||
+            extractedTickers.length > 0
+          ) {
+            defaultCat = 'doanh-nghiep'
+          } else if (groupName.includes('quốc tế') || groupName.includes('thế giới')) {
+            defaultCat = 'quoc-te'
+          }
+
+          const category = classifyCategory(title, summary, defaultCat, extractedTickers)
+          const primaryTicker = extractedTickers.length > 0 ? extractedTickers[0] : null
+          const id = `stockbiz-${p.postID}`
+
+          items.push({
+            id,
+            title,
+            link,
+            pubDate,
+            source: 'Stockbiz',
+            ticker: primaryTicker,
+            tickers: extractedTickers,
+            category,
+            summary: summary.length > 280 ? summary.slice(0, 280) + '...' : summary,
+          })
+        }
+      }
+    } catch {
+      // Ignore individual fetch failure to keep other sources resilient
+    }
+  }
+
+  return items
+}
+
+export async function fetchTinNhanhCKNews(): Promise<RawNewsItem[]> {
+  const items: RawNewsItem[] = []
+  const sections = [
+    { url: 'https://tinnhanhchungkhoan.vn/tin-moi.html', defaultCat: 'thi-truong' },
+    { url: 'https://tinnhanhchungkhoan.vn/chung-khoan/', defaultCat: 'thi-truong' },
+    { url: 'https://tinnhanhchungkhoan.vn/doanh-nghiep/', defaultCat: 'doanh-nghiep' },
+  ]
+  const seenLinks = new Set<string>()
+
+  for (const sec of sections) {
+    try {
+      const controller = new AbortController()
+      const timeoutId = setTimeout(() => controller.abort(), 6500)
+
+      const res = await fetch(sec.url, {
+        headers: {
+          'User-Agent':
+            'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36',
+          Accept: 'text/html,application/xhtml+xml',
+        },
+        signal: controller.signal,
+      })
+      clearTimeout(timeoutId)
+
+      if (!res.ok) continue
+      const html = await res.text()
+      const articles = [...html.matchAll(/<article[\s\S]*?<\/article>/gi)]
+
+      for (const m of articles) {
+        const art = m[0]
+        const linkMatch =
+          art.match(/<a[^>]*href=["'](https?:\/\/www\.tinnhanhchungkhoan\.vn\/[^"']*-post\d+\.html|\/[^"']*-post\d+\.html)["'][^>]*title=["']([\s\S]*?)["']/i) ||
+          art.match(/<h2[^>]*class=["'][^"']*story__heading[^"']*["'][\s\S]*?<a[^>]*href=["']([^"']+)["'][^>]*>([\s\S]*?)<\/a>/i)
+        if (!linkMatch) continue
+
+        let link = linkMatch[1].trim()
+        if (link.startsWith('/')) link = `https://www.tinnhanhchungkhoan.vn${link}`
+        const cleanLink = link.split('?')[0].trim()
+        if (seenLinks.has(cleanLink)) continue
+        seenLinks.add(cleanLink)
+
+        const title = cleanText(linkMatch[2] || '')
+        if (!title || title.length < 5) continue
+
+        const timeMatch =
+          art.match(/<time[^>]*datetime=["']([^"']+)["']/i) ||
+          art.match(/<time[^>]*>([\s\S]*?)<\/time>/i)
+        let pubDate = new Date().toISOString()
+        if (timeMatch && timeMatch[1]) {
+          const parsed = new Date(timeMatch[1].trim())
+          if (!isNaN(parsed.getTime())) pubDate = parsed.toISOString()
+        }
+
+        const summaryMatch =
+          art.match(/<div[^>]*class=["'][^"']*(?:story__summary|summary|s-content)[^"']*["'][^>]*>([\s\S]*?)<\/div>/i) ||
+          art.match(/<p[^>]*class=["'][^"']*(?:story__summary|summary)[^"']*["'][^>]*>([\s\S]*?)<\/p>/i)
+        const summary = summaryMatch ? cleanText(summaryMatch[1]) : ''
+
+        if (!isFinancialArticle(title, summary)) continue
+
+        const tickers = extractTickersFromText(`${title} ${summary}`)
+        const primaryTicker = tickers.length > 0 ? tickers[0] : null
+        const category = classifyCategory(title, summary, sec.defaultCat, tickers)
+        const id = `tinnhanhck-${crypto.createHash('md5').update(cleanLink).digest('hex')}`
+
+        items.push({
+          id,
+          title,
+          link: cleanLink,
+          pubDate,
+          source: 'Tin Nhanh CK',
+          ticker: primaryTicker,
+          tickers,
+          category,
+          summary: summary.length > 280 ? summary.slice(0, 280) + '...' : summary,
+        })
+      }
+    } catch {
+      // Continue next section
+    }
   }
 
   return items
@@ -413,7 +625,7 @@ export async function fetchAllRssFeeds(force = false): Promise<RawNewsItem[]> {
   isFetchingInProgress = true
 
   try {
-    const fetchTasks = RSS_SOURCES.map(async (source) => {
+    const rssFetchTasks = RSS_SOURCES.map(async (source) => {
       try {
         const controller = new AbortController()
         const timeoutId = setTimeout(() => controller.abort(), 6500)
@@ -436,8 +648,20 @@ export async function fetchAllRssFeeds(force = false): Promise<RawNewsItem[]> {
       }
     })
 
-    const results = await Promise.all(fetchTasks)
-    const allItems = results.flat()
+    const allTasks = [
+      ...rssFetchTasks,
+      fetchStockbizNews(),
+      fetchTinNhanhCKNews(),
+    ]
+
+    const results = await Promise.allSettled(allTasks)
+    const allItems: RawNewsItem[] = []
+
+    for (const r of results) {
+      if (r.status === 'fulfilled' && Array.isArray(r.value)) {
+        allItems.push(...r.value)
+      }
+    }
 
     if (allItems.length === 0 && inMemoryNewsCache) {
       isFetchingInProgress = false
@@ -459,7 +683,35 @@ export async function fetchAllRssFeeds(force = false): Promise<RawNewsItem[]> {
 
       seenLinks.add(cleanLink)
       seenTitles.add(cleanTitle)
-      uniqueItems.push(it)
+
+      // Sanitize item tickers strictly
+      let tickers: string[] = []
+      if (Array.isArray(it.tickers)) {
+        tickers = it.tickers
+          .map((t) => {
+            if (typeof t === 'string') return t.toUpperCase().trim()
+            if (t && typeof t === 'object') {
+              const s = (t as any).symbol || (t as any).ticker || (t as any).code
+              return typeof s === 'string' ? s.toUpperCase().trim() : null
+            }
+            return null
+          })
+          .filter((t): t is string => !!t && /^[A-Z0-9]{3}$/.test(t) && !t.includes('OBJECT'))
+      }
+      let primary = it.ticker
+      if (primary) {
+        if (typeof primary !== 'string' || !/^[A-Z0-9]{3}$/.test(primary) || primary.includes('OBJECT')) {
+          primary = tickers.length > 0 ? tickers[0] : null
+        }
+      } else if (tickers.length > 0) {
+        primary = tickers[0]
+      }
+
+      uniqueItems.push({
+        ...it,
+        ticker: primary,
+        tickers: Array.from(new Set(tickers)),
+      })
     }
 
     // Sắp xếp giảm dần theo thời gian công bố
@@ -488,18 +740,49 @@ export async function fetchAllRssFeeds(force = false): Promise<RawNewsItem[]> {
 }
 
 export function getCachedNews(): RawNewsItem[] {
+  const sanitizeList = (list: RawNewsItem[]): RawNewsItem[] => {
+    return (list || []).map((it) => {
+      let tickers: string[] = []
+      if (Array.isArray(it.tickers)) {
+        tickers = it.tickers
+          .map((t) => {
+            if (typeof t === 'string') return t.toUpperCase().trim()
+            if (t && typeof t === 'object') {
+              const s = (t as any).symbol || (t as any).ticker || (t as any).code
+              return typeof s === 'string' ? s.toUpperCase().trim() : null
+            }
+            return null
+          })
+          .filter((t): t is string => !!t && /^[A-Z0-9]{3}$/.test(t) && !t.includes('OBJECT'))
+      }
+      let primary = it.ticker
+      if (primary) {
+        if (typeof primary !== 'string' || !/^[A-Z0-9]{3}$/.test(primary) || primary.includes('OBJECT')) {
+          primary = tickers.length > 0 ? tickers[0] : null
+        }
+      } else if (tickers.length > 0) {
+        primary = tickers[0]
+      }
+      return {
+        ...it,
+        ticker: primary,
+        tickers: Array.from(new Set(tickers)),
+      }
+    })
+  }
+
   if (inMemoryNewsCache && inMemoryNewsCache.length > 0) {
-    return inMemoryNewsCache
+    return sanitizeList(inMemoryNewsCache)
   }
   try {
     const filePath = path.join(process.cwd(), 'data', 'news_snapshot.json')
     if (fs.existsSync(filePath)) {
       const content = fs.readFileSync(filePath, 'utf-8')
-      inMemoryNewsCache = JSON.parse(content)
+      inMemoryNewsCache = sanitizeList(JSON.parse(content))
       return inMemoryNewsCache || []
     }
   } catch {}
-  return (newsSnapshotRaw as unknown as RawNewsItem[]) || []
+  return sanitizeList((newsSnapshotRaw as unknown as RawNewsItem[]) || [])
 }
 
 export function getLastFetchedTime(): number {

@@ -29,6 +29,7 @@ export type SearchPaletteItem = {
   region?: 'VN' | 'US' | 'EU' | 'CN' | 'GLOBAL'
   href: string
   keywords?: string[]
+  isRecent?: boolean
 }
 
 export const PRESET_SEARCH_ITEMS: SearchPaletteItem[] = [

@@ -256,7 +256,6 @@ export function PortThroughputChart({ monthlyData, tickerName }: Props) {
                   textAnchor="end"
                   fontSize="10"
                   fill="#94a3b8"
-                  fontFamily="monospace"
                   fontWeight="bold"
                 >
                   {formatCompact(tick)}
@@ -360,7 +359,6 @@ export function PortThroughputChart({ monthlyData, tickerName }: Props) {
                     fontSize="11"
                     fontWeight="bold"
                     fill="#5eead4"
-                    fontFamily="monospace"
                   >
                     {chartMode === 'both'
                       ? formatCompact(d.total)
@@ -378,7 +376,6 @@ export function PortThroughputChart({ monthlyData, tickerName }: Props) {
                   fontSize="10"
                   fill={isHovered ? '#2dd4bf' : '#94a3b8'}
                   fontWeight={isHovered ? 'bold' : 'normal'}
-                  fontFamily="monospace"
                 >
                   {d.ym.slice(2)}
                 </text>

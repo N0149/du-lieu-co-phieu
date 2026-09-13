@@ -46,3 +46,7 @@ scratch/
 _tmp*
 run_all_remaining.py
 run_gemini_extract_all.py
+audit_bctc.py
+run_gemini_extract_bctc.py
+run_extract_complete_bctc.py
+Chay_Trich_Xuat_BCTC.bat

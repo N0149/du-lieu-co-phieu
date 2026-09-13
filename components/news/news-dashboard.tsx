@@ -114,6 +114,11 @@ export function NewsDashboard({
   const [visibleCount, setVisibleCount] = useState(40)
   const [lastUpdated, setLastUpdated] = useState<Date>(new Date())
   const [, setTick] = useState(0)
+  const [mounted, setMounted] = useState(false)
+
+  useEffect(() => {
+    setMounted(true)
+  }, [])
 
   // Fetch disclosures if empty
   useEffect(() => {
@@ -284,7 +289,9 @@ export function NewsDashboard({
 
     // 2. Source filter
     if (selectedSource !== 'all') {
-      result = result.filter((item) => item.source.toLowerCase() === selectedSource.toLowerCase())
+      result = result.filter(
+        (item) => item.source && item.source.toLowerCase() === selectedSource.toLowerCase()
+      )
     }
 
     // 3. Search query
@@ -292,10 +299,13 @@ export function NewsDashboard({
       const q = searchQuery.trim().toLowerCase()
       result = result.filter(
         (item) =>
-          item.title.toLowerCase().includes(q) ||
+          item.title?.toLowerCase().includes(q) ||
           (item.summary && item.summary.toLowerCase().includes(q)) ||
           (item.ticker && item.ticker.toLowerCase() === q) ||
-          (item.tickers && item.tickers.some((t) => t.toLowerCase() === q))
+          (item.tickers &&
+            item.tickers.some((t) =>
+              (typeof t === 'string' ? t : (t as any)?.ticker)?.toLowerCase() === q
+            ))
       )
     }
 
@@ -469,8 +479,8 @@ export function NewsDashboard({
                 <span className="relative inline-flex size-2 rounded-full bg-emerald-500"></span>
               </span>
               <span className="text-[#8b949e]">Tự động cập nhật</span>
-              <span className="font-mono text-[#64748b]">
-                ({lastUpdated.toLocaleTimeString('vi-VN', { hour: '2-digit', minute: '2-digit', second: '2-digit' })})
+              <span className="font-mono text-[#64748b]" suppressHydrationWarning>
+                {mounted ? `(${lastUpdated.toLocaleTimeString('vi-VN', { hour: '2-digit', minute: '2-digit', second: '2-digit' })})` : ''}
               </span>
             </div>
 
@@ -630,7 +640,7 @@ export function NewsDashboard({
                       <div className="flex items-center justify-between gap-2">
                         <div className="flex items-center gap-1.5 flex-wrap min-w-0">
                           <Link
-                            href={`/stock/${item.symbol}`}
+                            href={`/stock/${encodeURIComponent(item.symbol)}`}
                             className="inline-flex items-center gap-1 font-mono text-sm font-bold text-white hover:text-[#38bdf8] transition-colors"
                           >
                             <span className="rounded bg-emerald-500/15 text-emerald-400 px-1.5 py-0.5 border border-emerald-500/30">
@@ -671,7 +681,7 @@ export function NewsDashboard({
                           )}
                         </div>
 
-                        <span className="text-[11px] font-mono text-[#64748b] shrink-0">
+                        <span className="text-[11px] font-mono text-[#64748b] shrink-0" suppressHydrationWarning>
                           {formatRelativeTime(item.published_at || '') || item.published_at}
                         </span>
                       </div>
@@ -702,7 +712,7 @@ export function NewsDashboard({
 
                         <div className="flex items-center gap-1.5">
                           <Link
-                            href={`/stock/${item.symbol}`}
+                            href={`/stock/${encodeURIComponent(item.symbol)}`}
                             className="inline-flex items-center gap-1 rounded bg-[#161b24] hover:bg-[#1e2430] px-2 py-1 text-[11px] font-medium text-[#94a3b8] hover:text-white transition-colors border border-[#232a36]"
                           >
                             <span>BCTC & Chi tiết</span>
@@ -730,7 +740,7 @@ export function NewsDashboard({
                       {/* Symbol & Price */}
                       <div className="w-24 sm:w-28 shrink-0">
                         <Link
-                          href={`/stock/${item.symbol}`}
+                          href={`/stock/${encodeURIComponent(item.symbol)}`}
                           className="inline-flex items-center gap-1 font-mono text-sm font-bold text-[#f1f5f9] hover:text-[#38bdf8] transition-colors"
                         >
                           <span>{item.symbol}</span>
@@ -913,12 +923,30 @@ export function NewsDashboard({
               {displayedNews.map((item, idx) => {
                 const isSaved = savedIds.includes(item.id)
                 const relativeTime = formatRelativeTime(item.pubDate)
-                const tickersList =
+                const rawTickers =
                   item.tickers && item.tickers.length > 0
                     ? item.tickers
                     : item.ticker
                     ? [item.ticker]
                     : []
+                const tickersList: string[] = Array.from(
+                  new Set(
+                    rawTickers
+                      .map((t) => {
+                        const code =
+                          typeof t === 'string'
+                            ? t
+                            : (t as any)?.symbol || (t as any)?.ticker || (t as any)?.code
+                        return typeof code === 'string' ? code.toUpperCase().trim() : null
+                      })
+                      .filter(
+                        (t): t is string =>
+                          typeof t === 'string' &&
+                          /^[A-Z0-9]{3}$/.test(t) &&
+                          !t.includes('OBJECT')
+                      )
+                  )
+                )
 
                 return (
                   <div
@@ -948,7 +976,10 @@ export function NewsDashboard({
                     </div>
 
                     {/* Col 2: Relative Time (WiData Style) */}
-                    <div className="w-28 sm:w-36 shrink-0 pl-1 pt-0.5 text-left text-xs font-normal text-[#8e95a5]">
+                    <div
+                      className="w-28 sm:w-36 shrink-0 pl-1 pt-0.5 text-left text-xs font-normal text-[#8e95a5]"
+                      suppressHydrationWarning
+                    >
                       {relativeTime}
                     </div>
 
@@ -961,34 +992,35 @@ export function NewsDashboard({
                         rel="noopener noreferrer"
                         className="block text-[13px] font-normal leading-snug text-[#e2e8f0] transition-colors hover:text-[#60a5fa]"
                       >
-                        {decodeHtmlEntities(item.title)}
+                        {decodeHtmlEntities(item.title || '')}
                       </a>
 
                       {/* Ticker Badges (Pills placed directly under title like WiData) */}
                       {tickersList.length > 0 && (
                         <div className="mt-1.5 flex flex-wrap items-center gap-1.5">
-                          {tickersList.map((t) => {
-                            const stockData = stockPriceMap[t]
+                          {tickersList.map((tickerCode) => {
+                            if (!tickerCode || !/^[A-Z0-9]{3}$/.test(tickerCode)) return null
+                            const stockData = stockPriceMap[tickerCode]
                             const chg = stockData?.w1 ?? 0
                             const isPos = chg > 0
                             const isNeg = chg < 0
 
                             return (
                               <Link
-                                key={t}
-                                href={`/stock/${t}`}
+                                key={tickerCode}
+                                href={`/stock/${encodeURIComponent(tickerCode)}`}
                                 onClick={(e) => e.stopPropagation()}
                                 className={cn(
-                                  'inline-flex items-center gap-1 rounded-md px-1.5 py-0.2 font-mono text-[10.5px] font-medium transition-all hover:brightness-125',
+                                  'inline-flex items-center gap-1 rounded-md px-1.5 py-0.5 font-mono text-[10.5px] font-medium transition-all hover:brightness-125',
                                   isPos
                                     ? 'bg-[#132a1e] text-[#4ade80] border border-[#22c55e]/30'
                                     : isNeg
                                     ? 'bg-[#2d1417] text-[#f87171] border border-[#ef4444]/30'
                                     : 'bg-[#282012] text-[#fbbf24] border border-[#eab308]/30'
                                 )}
-                                title={`Xem phân tích mã ${t}`}
+                                title={`Xem phân tích mã ${tickerCode}`}
                               >
-                                <span>{t}</span>
+                                <span>{tickerCode}</span>
                                 <span className="text-[9.5px]">
                                   ({isPos ? `+${chg}%` : `${chg}%`})
                                 </span>

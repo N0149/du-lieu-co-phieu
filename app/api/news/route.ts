@@ -78,14 +78,13 @@ export async function GET(request: NextRequest) {
     // Thống kê danh mục và ticker hot
     const tickerCounts: Record<string, number> = {}
     items.forEach((item) => {
-      if (item.ticker) {
-        tickerCounts[item.ticker] = (tickerCounts[item.ticker] || 0) + 1
-      }
-      if (item.tickers) {
-        item.tickers.forEach((t) => {
-          tickerCounts[t] = (tickerCounts[t] || 0) + 1
-        })
-      }
+      const rawList = [item.ticker, ...(item.tickers || [])]
+      rawList.forEach((t) => {
+        const code = typeof t === 'string' ? t.toUpperCase().trim() : null
+        if (code && /^[A-Z0-9]{3}$/.test(code) && !code.includes('OBJECT')) {
+          tickerCounts[code] = (tickerCounts[code] || 0) + 1
+        }
+      })
     })
 
     const trendingTickers = Object.entries(tickerCounts)

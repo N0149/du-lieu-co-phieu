@@ -1118,7 +1118,7 @@ export function CustomsCommodityMatrix({
         {/* Hàng 2: Tiêu đề + Nút Xuất Excel + Nút Ẩn/Hiện đồ thị */}
         <div className="flex flex-wrap items-center justify-between gap-2 border-t border-border/60 pt-2.5">
           <div className="flex items-center gap-2">
-            <span className="font-mono text-xs font-bold uppercase tracking-wider text-foreground">
+            <span className="text-xs font-bold uppercase tracking-wider text-foreground">
               {tableTitle}
             </span>
             <span className="rounded-full bg-secondary px-2 py-0.5 text-[11px] font-medium text-muted-foreground">
@@ -1186,7 +1186,7 @@ export function CustomsCommodityMatrix({
                 {displayColumns.map((col) => (
                   <th
                     key={col.key}
-                    className="min-w-[105px] px-3 py-3 text-right font-mono font-semibold uppercase tracking-wider text-[#F0F3F6]"
+                    className="min-w-[105px] px-3 py-3 text-right tabular-nums font-semibold uppercase tracking-wider text-[#F0F3F6]"
                   >
                     {col.label}
                   </th>
@@ -1210,7 +1210,7 @@ export function CustomsCommodityMatrix({
                       <td
                         key={col.key}
                         className={cn(
-                          'px-3 py-2.5 text-right font-mono tabular-nums font-bold',
+                          'px-3 py-2.5 text-right tabular-nums font-bold',
                           tradeType === 'BALANCE'
                             ? tot >= 0
                               ? 'text-emerald-400'
@@ -1320,7 +1320,7 @@ export function CustomsCommodityMatrix({
                         return (
                           <td
                             key={col.key}
-                            className="px-3 py-2.5 text-right font-mono tabular-nums text-foreground"
+                            className="px-3 py-2.5 text-right tabular-nums text-foreground"
                           >
                             <CellDisplay
                               cell={cell}
@@ -1514,7 +1514,7 @@ function MatrixChartTooltip({
                 <span className="size-2 rounded-full shrink-0" style={{ backgroundColor: color }} />
                 <span className="max-w-[160px] truncate">{entry.name}</span>
               </span>
-              <span className="font-mono font-medium tabular-nums text-foreground">
+              <span className="font-medium tabular-nums text-foreground">
                 {formattedVal}
               </span>
             </div>

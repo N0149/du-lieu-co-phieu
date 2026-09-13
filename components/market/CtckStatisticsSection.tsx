@@ -334,10 +334,10 @@ export function CtckStatisticsSection({ initialData }: CtckStatisticsSectionProp
                 ].map((row, i) => (
                   <g key={i}>
                     <line x1="45" y1={row.y} x2="555" y2={row.y} stroke="rgba(255,255,255,0.06)" strokeDasharray="2 2" />
-                    <text x="40" y={row.y + 3} textAnchor="end" fontSize="8.5" fill="#8B98A5" fontFamily="monospace">
+                    <text x="40" y={row.y + 3} textAnchor="end" fontSize="8.5" fill="#8B98A5">
                       {row.valLeft}
                     </text>
-                    <text x="560" y={row.y + 3} textAnchor="start" fontSize="8.5" fill="#3b82f6" fontFamily="monospace">
+                    <text x="560" y={row.y + 3} textAnchor="start" fontSize="8.5" fill="#3b82f6">
                       {row.valRight}
                     </text>
                   </g>
@@ -411,7 +411,7 @@ export function CtckStatisticsSection({ initialData }: CtckStatisticsSectionProp
                   const step = 510 / filtered1.length
                   const x = 45 + idx * step + step / 2
                   return (
-                    <text key={item.period} x={x} y="217" textAnchor="middle" fontSize="8.5" fill="#8B98A5" fontFamily="monospace">
+                    <text key={item.period} x={x} y="217" textAnchor="middle" fontSize="8.5" fill="#8B98A5">
                       {item.period}
                     </text>
                   )
@@ -595,11 +595,11 @@ export function CtckStatisticsSection({ initialData }: CtckStatisticsSectionProp
                 ].map((row, i) => (
                   <g key={i}>
                     <line x1="45" y1={row.y} x2="555" y2={row.y} stroke="rgba(255,255,255,0.06)" strokeDasharray="2 2" />
-                    <text x="40" y={row.y + 3} textAnchor="end" fontSize="8.5" fill="#8B98A5" fontFamily="monospace">
-                      {row.valLeft}
+                    <text x="40" y={row.y + 3} textAnchor="end" fontSize="8.5" fill="#8B98A5">
+                       {row.valLeft}
                     </text>
-                    <text x="560" y={row.y + 3} textAnchor="start" fontSize="8.5" fill="#f97316" fontFamily="monospace">
-                      {row.valRight}
+                    <text x="560" y={row.y + 3} textAnchor="start" fontSize="8.5" fill="#f97316">
+                       {row.valRight}
                     </text>
                   </g>
                 ))}
@@ -641,7 +641,7 @@ export function CtckStatisticsSection({ initialData }: CtckStatisticsSectionProp
                   const step = 510 / filtered2.length
                   const x = 45 + idx * step + step / 2
                   return (
-                    <text key={item.period} x={x} y="217" textAnchor="middle" fontSize="8.5" fill="#8B98A5" fontFamily="monospace">
+                    <text key={item.period} x={x} y="217" textAnchor="middle" fontSize="8.5" fill="#8B98A5">
                       {item.period}
                     </text>
                   )
@@ -819,7 +819,7 @@ export function CtckStatisticsSection({ initialData }: CtckStatisticsSectionProp
                 ].map((row, i) => (
                   <g key={i}>
                     <line x1="45" y1={row.y} x2="555" y2={row.y} stroke="rgba(255,255,255,0.06)" strokeDasharray="2 2" />
-                    <text x="40" y={row.y + 3} textAnchor="end" fontSize="8.5" fill="#8B98A5" fontFamily="monospace">
+                    <text x="40" y={row.y + 3} textAnchor="end" fontSize="8.5" fill="#8B98A5">
                       {row.val}
                     </text>
                   </g>
@@ -862,7 +862,7 @@ export function CtckStatisticsSection({ initialData }: CtckStatisticsSectionProp
                   const step = 510 / filtered3.length
                   const x = 45 + idx * step + step / 2
                   return (
-                    <text key={item.period} x={x} y="217" textAnchor="middle" fontSize="8.5" fill="#8B98A5" fontFamily="monospace">
+                    <text key={item.period} x={x} y="217" textAnchor="middle" fontSize="8.5" fill="#8B98A5">
                       {item.period}
                     </text>
                   )
@@ -1052,7 +1052,7 @@ export function CtckStatisticsSection({ initialData }: CtckStatisticsSectionProp
                 ].map((row, i) => (
                   <g key={i}>
                     <line x1="45" y1={row.y} x2="555" y2={row.y} stroke="rgba(255,255,255,0.06)" strokeDasharray="2 2" />
-                    <text x="40" y={row.y + 3} textAnchor="end" fontSize="8.5" fill="#8B98A5" fontFamily="monospace">
+                    <text x="40" y={row.y + 3} textAnchor="end" fontSize="8.5" fill="#8B98A5">
                       {row.val}
                     </text>
                   </g>
@@ -1093,7 +1093,7 @@ export function CtckStatisticsSection({ initialData }: CtckStatisticsSectionProp
                   const step = 510 / filtered4.length
                   const x = 45 + idx * step + step / 2
                   return (
-                    <text key={item.label} x={x} y="217" textAnchor="middle" fontSize="8.5" fill="#8B98A5" fontFamily="monospace">
+                    <text key={item.label} x={x} y="217" textAnchor="middle" fontSize="8.5" fill="#8B98A5">
                       {item.label}
                     </text>
                   )
