@@ -1,5 +1,6 @@
 import fs from 'node:fs'
 import path from 'node:path'
+import { DatabaseSync } from 'node:sqlite'
 import { getLiveStockQuote, type LiveStockQuote } from './live-quote-service'
 
 const CIPHER_KEY_HEX = '19dd3af428f4cf7d68864cd4c87d8d1c5b489932e84b93ac6528a0dd403a5725'
@@ -118,56 +119,47 @@ function applyLiveQuote(target: StockEvaluationData, quote: LiveStockQuote | nul
   return target
 }
 
+const DB_EVAL_PATH = path.resolve(process.cwd(), 'data', 'stock_evaluations.db')
+
+function getEvaluationFromDb(sym: string): any {
+  if (!fs.existsSync(DB_EVAL_PATH)) return null
+  try {
+    const db = new DatabaseSync(DB_EVAL_PATH, { readOnly: true })
+    try {
+      const row = db
+        .prepare(
+          `SELECT symbol, score360_total, score360_rating, pe_vs_median, pb_vs_median, ps_vs_median,
+                  pe_forward, pb_forward, pe_forward_vs_median, pb_forward_vs_median, raw_json
+           FROM stock_evaluations
+           WHERE symbol = ?`
+        )
+        .get(sym) as any
+      return row || null
+    } finally {
+      db.close()
+    }
+  } catch {
+    return null
+  }
+}
+
 /**
  * Lấy khối lượng giao dịch bình quân 15 phiên gần nhất (KLGD TB15D)
- * Phục vụ đánh giá tính thanh khoản cổ phiếu chuẩn xác cho nhà đầu tư
- * 1. Nạp từ VNDirect DChart API
- * 2. Fallback sang DNSE Entrade API
+ * Đọc trực tiếp từ kho dữ liệu lịch sử giá cục bộ (0ms, 100% offline)
  */
-export async function getAvgTradingVol15d(symbol: string): Promise<number | null> {
+export function getAvgTradingVol15d(symbol: string): number | null {
   const sym = symbol.toUpperCase().trim()
   if (!sym) return null
 
-  const now = Math.floor(Date.now() / 1000)
-  const fromSec = now - 35 * 86400 // 35 ngày để đảm bảo tối thiểu 15 ngày giao dịch thực tế
-
-  // 1. Thử VNDirect DChart API
   try {
-    const res = await fetch(
-      `https://dchart-api.vndirect.com.vn/dchart/history?resolution=D&symbol=${sym}&from=${fromSec}&to=${now}`,
-      {
-        headers: { 'User-Agent': 'Mozilla/5.0' },
-        next: { revalidate: 1800 },
-      }
-    )
-    if (res.ok) {
-      const data = await res.json()
-      if (data && data.s === 'ok' && Array.isArray(data.v) && data.v.length > 0) {
-        const last15 = data.v.slice(-15)
-        if (last15.length > 0) {
-          return Math.round(last15.reduce((a: number, b: number) => a + (Number(b) || 0), 0) / last15.length)
-        }
-      }
-    }
-  } catch {}
-
-  // 2. Fallback sang DNSE Entrade API
-  try {
-    const res = await fetch(
-      `https://services.entrade.com.vn/chart-api/v2/ohlcs/stock?from=${fromSec}&to=${now}&symbol=${sym}&resolution=1D`,
-      {
-        headers: { 'User-Agent': 'Mozilla/5.0' },
-        next: { revalidate: 1800 },
-      }
-    )
-    if (res.ok) {
-      const data = await res.json()
-      if (data && Array.isArray(data.v) && data.v.length > 0) {
-        const last15 = data.v.slice(-15)
-        if (last15.length > 0) {
-          return Math.round(last15.reduce((a: number, b: number) => a + (Number(b) || 0), 0) / last15.length)
-        }
-      }
+    const p = path.join(process.cwd(), 'data', 'price_history', `${sym}.json`)
+    if (!fs.existsSync(p)) return null
+    const raw = fs.readFileSync(p, 'utf-8')
+    const parsed = JSON.parse(raw)
+    if (parsed && Array.isArray(parsed.points) && parsed.points.length > 0) {
+      const last15 = parsed.points.slice(-15)
+      const sum = last15.reduce((acc: number, pt: any) => acc + (Number(pt.volume) || 0), 0)
+      return Math.round(sum / last15.length)
     }
   } catch {}
 
@@ -178,165 +170,88 @@ export async function getStockEvaluation(symbol: string): Promise<StockEvaluatio
   const sym = symbol.toUpperCase().trim()
   if (!sym) return null
 
-  // Đảm bảo thư mục cache tồn tại
-  if (!fs.existsSync(CACHE_DIR)) {
+  // 1. Tải đồng thời live quote (timeout 800ms) và thông tin mở rộng từ 24hMoney (timeout 800ms)
+  const [liveQuote, moneyData] = await Promise.all([
+    getLiveStockQuote(sym).catch(() => null),
+    fetch(`https://api-finance-t19.24hmoney.vn/v2/ios/companies/index?symbol=${encodeURIComponent(sym.toLowerCase())}`, {
+      headers: { Accept: 'application/json' },
+      signal: AbortSignal.timeout(800),
+      next: { revalidate: 600 },
+    })
+      .then(async (r) => (r.ok ? (await r.json())?.data : null))
+      .catch(() => null),
+  ])
+
+  // 2. Đọc dữ liệu đánh giá 360° từ SQLite nội bộ (1.368 mã, < 0.2ms)
+  const dbRow = getEvaluationFromDb(sym)
+
+  let valData: any = null
+  if (dbRow?.raw_json) {
     try {
-      fs.mkdirSync(CACHE_DIR, { recursive: true })
+      valData = JSON.parse(dbRow.raw_json)
     } catch {}
   }
 
-  const cacheFile = path.join(CACHE_DIR, `${sym}.json`)
-
-  // Tải đồng thời live quote để luôn có giá và biến động phiên mới nhất
-  const liveQuote = await getLiveStockQuote(sym)
-
-  // Ưu tiên đọc từ cache cục bộ (Offline-First, không phụ thuộc vào ruatichsan)
-  // Chỉ dùng cache nếu đã có đầy đủ kiểm toán và khối lượng thanh khoản hợp lệ
-  if (fs.existsSync(cacheFile)) {
-    try {
-      const cached = JSON.parse(fs.readFileSync(cacheFile, 'utf-8'))
-      if (cached?.metrics && cached.metrics.auditor !== undefined && cached.metrics.volume10d != null && cached.metrics.volume10d > 0) {
-        return applyLiveQuote(cached, liveQuote)
-      }
-      if (cached?.snapshot) {
-        const s = cached.snapshot
-        const score = s?.score360_total ?? null
-        let ratingText = 'TRUNG BÌNH'
-        if (score != null) {
-          if (score >= 8.0) ratingText = 'XUẤT SẮC'
-          else if (score >= 6.5) ratingText = 'TỐT'
-          else if (score >= 5.0) ratingText = 'KHÁ'
-          else ratingText = 'CẦN LƯU Ý'
-        }
-        const dataFromSnap: StockEvaluationData = {
-          symbol: sym,
-          score360: score != null ? {
-            total: score,
-            ratingText,
-            peVsMedian: s?.pe_vs_median ?? null,
-            pbVsMedian: s?.pb_vs_median ?? null,
-            psVsMedian: s?.ps_vs_median ?? null,
-            peForward: s?.pe_forward ?? null,
-            peForwardVsMedian: s?.pe_forward_vs_median ?? null,
-            pbForward: s?.pb_forward ?? null,
-            pbForwardVsMedian: s?.pb_forward_vs_median ?? null,
-          } : null,
-          price: s?.price != null ? s.price : null,
-          metrics: {
-            marketCap: s?.market_cap_bn ?? null,
-            pe: s?.pe ?? null,
-            eps: s?.eps ?? cached?.lastEps ?? null,
-            volume10d: null,
-            pb: s?.pb ?? null,
-            ps: s?.ps ?? cached?.ps?.at(-1) ?? null,
-            bvps: s?.bvps ?? cached?.lastBvps ?? null,
-            sharesOut: cached?.lastCirculationVol ?? null,
-            evEbitda: null,
-            beta: null,
-          }
-        }
-        return applyLiveQuote(dataFromSnap, liveQuote)
-      }
-    } catch {}
-  }
-
-  try {
-    const [valRes, moneyRes, vol15dRes] = await Promise.allSettled([
-      fetch(`https://api.ruatichsan.com/api/v1/data/public/valuation/${sym}`, {
-        headers: {
-          Origin: 'https://ruatichsan.com',
-          Referer: `https://ruatichsan.com/company?symbol=${sym}`,
-        },
-        next: { revalidate: 600 },
-      }),
-      fetch(`https://api-finance-t19.24hmoney.vn/v2/ios/companies/index?symbol=${sym}`, {
-        next: { revalidate: 600 },
-      }),
-      getAvgTradingVol15d(sym),
-    ])
-
-    let valData: any = null
-    if (valRes.status === 'fulfilled' && valRes.value.ok) {
-      valData = await decryptApiResponse(valRes.value)
-    } else {
-      // Nếu ruatichsan không phản hồi / đóng cửa -> Tự động chuyển sang Bot trực tiếp CafeF & 24hMoney
-      const { fetchDirectStockEvaluation } = await import('./direct-market-bot')
-      const direct = await fetchDirectStockEvaluation(sym)
-      if (direct) {
-        try {
-          fs.writeFileSync(cacheFile, JSON.stringify(direct, null, 2), 'utf-8')
-        } catch {}
-        return applyLiveQuote(direct, liveQuote)
-      }
-    }
-
-    let moneyData: any = null
-    if (moneyRes.status === 'fulfilled' && moneyRes.value.ok) {
+  // Fallback đọc từ file cache nếu có
+  if (!valData) {
+    const cacheFile = path.join(CACHE_DIR, `${sym}.json`)
+    if (fs.existsSync(cacheFile)) {
       try {
-        const json = await moneyRes.value.json()
-        moneyData = json.data
+        valData = JSON.parse(fs.readFileSync(cacheFile, 'utf-8'))
       } catch {}
     }
-
-    const s = valData?.snapshot
-    const score = s?.score360_total ?? null
-
-    let ratingText = 'TRUNG BÌNH'
-    if (score != null) {
-      if (score >= 8.0) ratingText = 'XUẤT SẮC'
-      else if (score >= 6.5) ratingText = 'TỐT'
-      else if (score >= 5.0) ratingText = 'KHÁ'
-      else ratingText = 'CẦN LƯU Ý'
-    }
-
-    const auditor = formatAuditorShortName(moneyData?.audit_firm_name)
-    const isBig4 = Boolean(moneyData?.audit_is_big4)
-    const bookValue = moneyData?.book_value ?? null
-    const calcVol15d = (vol15dRes.status === 'fulfilled' && vol15dRes.value) ? vol15dRes.value : null
-    const volumeFinal = calcVol15d ?? moneyData?.avg_trading_vol ?? null
-
-    const result: StockEvaluationData = {
-      symbol: sym,
-      score360:
-        score != null
-          ? {
-              total: score,
-              ratingText,
-              peVsMedian: s?.pe_vs_median ?? null,
-              pbVsMedian: s?.pb_vs_median ?? null,
-              psVsMedian: s?.ps_vs_median ?? null,
-              peForward: s?.pe_forward ?? null,
-              peForwardVsMedian: s?.pe_forward_vs_median ?? null,
-              pbForward: s?.pb_forward ?? null,
-              pbForwardVsMedian: s?.pb_forward_vs_median ?? null,
-            }
-          : null,
-      price: s?.price != null ? s.price : null,
-      metrics: {
-        marketCap: s?.market_cap_bn ?? null,
-        pe: s?.pe ?? moneyData?.pe ?? null,
-        eps: s?.eps ?? valData?.lastEps ?? null,
-        volume10d: volumeFinal,
-        pb: s?.pb ?? moneyData?.pb ?? null,
-        ps: s?.ps ?? valData?.ps?.at(-1) ?? null,
-        bvps: s?.bvps ?? valData?.lastBvps ?? null,
-        sharesOut: valData?.lastCirculationVol ?? moneyData?.circulation_vol ?? null,
-        evEbitda: moneyData?.ev_per_ebitda || null,
-        beta: moneyData?.the_beta ?? null,
-        auditor: auditor !== '—' ? auditor : null,
-        isBig4,
-        bookValue,
-      },
-    }
-
-    // Ghi cache nền
-    try {
-      fs.writeFileSync(cacheFile, JSON.stringify(result, null, 2), 'utf-8')
-    } catch {}
-
-    return applyLiveQuote(result, liveQuote)
-  } catch (err) {
-    console.error(`[getStockEvaluation] Lỗi tải dữ liệu đánh giá ${sym}:`, err)
-    return null
   }
+
+  const s = valData?.snapshot
+  const score = dbRow?.score360_total ?? s?.score360_total ?? null
+
+  let ratingText = dbRow?.score360_rating || 'TRUNG BÌNH'
+  if (score != null && !dbRow?.score360_rating) {
+    if (score >= 8.0) ratingText = 'XUẤT SẮC'
+    else if (score >= 6.5) ratingText = 'TỐT'
+    else if (score >= 5.0) ratingText = 'KHÁ'
+    else ratingText = 'CẦN LƯU Ý'
+  }
+
+  const auditor = formatAuditorShortName(moneyData?.audit_firm_name)
+  const isBig4 = Boolean(moneyData?.audit_is_big4)
+  const bookValue = moneyData?.book_value ?? null
+  const localVol15d = getAvgTradingVol15d(sym)
+  const volumeFinal = localVol15d ?? moneyData?.avg_trading_vol ?? liveQuote?.volume ?? null
+
+  const result: StockEvaluationData = {
+    symbol: sym,
+    score360:
+      score != null
+        ? {
+            total: score,
+            ratingText,
+            peVsMedian: dbRow?.pe_vs_median ?? s?.pe_vs_median ?? null,
+            pbVsMedian: dbRow?.pb_vs_median ?? s?.pb_vs_median ?? null,
+            psVsMedian: dbRow?.ps_vs_median ?? s?.ps_vs_median ?? null,
+            peForward: dbRow?.pe_forward ?? s?.pe_forward ?? null,
+            peForwardVsMedian: dbRow?.pe_forward_vs_median ?? s?.pe_forward_vs_median ?? null,
+            pbForward: dbRow?.pb_forward ?? s?.pb_forward ?? null,
+            pbForwardVsMedian: dbRow?.pb_forward_vs_median ?? s?.pb_forward_vs_median ?? null,
+          }
+        : null,
+    price: s?.price != null ? s.price : null,
+    metrics: {
+      marketCap: s?.market_cap_bn ?? null,
+      pe: s?.pe ?? moneyData?.pe ?? null,
+      eps: s?.eps ?? valData?.lastEps ?? null,
+      volume10d: volumeFinal,
+      pb: s?.pb ?? moneyData?.pb ?? null,
+      ps: s?.ps ?? valData?.ps?.at(-1) ?? null,
+      bvps: s?.bvps ?? valData?.lastBvps ?? null,
+      sharesOut: valData?.lastCirculationVol ?? moneyData?.circulation_vol ?? null,
+      evEbitda: moneyData?.ev_per_ebitda || null,
+      beta: moneyData?.the_beta ?? null,
+      auditor: auditor !== '—' ? auditor : null,
+      isBig4,
+      bookValue,
+    },
+  }
+
+  return applyLiveQuote(result, liveQuote)
 }

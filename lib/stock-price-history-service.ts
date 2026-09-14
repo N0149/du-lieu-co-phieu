@@ -25,6 +25,34 @@ function formatDDMMYYYY(sec: number): string {
 }
 
 /**
+ * Đọc lịch sử giá từ cache nội bộ data/price_history/{ticker}.json (0ms, 100% offline)
+ */
+export function getLocalPriceWeekly(ticker: string): { d: string; c: number; v: number }[] {
+  try {
+    const p = path.join(CACHE_DIR, `${ticker.toUpperCase().trim()}.json`)
+    if (!fs.existsSync(p)) return []
+    const raw = fs.readFileSync(p, 'utf-8')
+    const parsed = JSON.parse(raw)
+    if (!parsed || !Array.isArray(parsed.points)) return []
+
+    return parsed.points.map((pt: any) => {
+      let d = pt.date || ''
+      if (d.includes('/')) {
+        const parts = d.split('/')
+        if (parts.length === 3) d = `${parts[2]}-${parts[1]}-${parts[0]}`
+      }
+      return {
+        d,
+        c: pt.close ? Math.round((pt.close / 1000) * 100) / 100 : 0,
+        v: pt.volume || 0,
+      }
+    })
+  } catch {
+    return []
+  }
+}
+
+/**
  * Lấy lịch sử giá ngày của mã cổ phiếu trong N năm gần nhất.
  * Ưu tiên:
  * 1. Đọc cache nội bộ từ data/price_history/{symbol}.json (nếu có và còn mới).
@@ -47,16 +75,12 @@ export async function getStockPriceHistory(
   const cacheFile = path.join(CACHE_DIR, `${sym}.json`)
   const now = Date.now()
 
-  // 1. Kiểm tra cache đĩa cục bộ (TTL: 3 giờ trong phiên hoặc 12 giờ ngoài phiên)
+  // 1. Kiểm tra cache đĩa cục bộ (Offline-First, không gọi mạng bên thứ 3)
   if (fs.existsSync(cacheFile)) {
     try {
-      const stat = fs.statSync(cacheFile)
-      const ageHours = (now - stat.mtimeMs) / (1000 * 60 * 60)
-      if (ageHours < 4) {
-        const cached = JSON.parse(fs.readFileSync(cacheFile, 'utf-8'))
-        if (cached && Array.isArray(cached.points) && cached.points.length > 0) {
-          return cached as StockPriceHistoryPayload
-        }
+      const cached = JSON.parse(fs.readFileSync(cacheFile, 'utf-8'))
+      if (cached && Array.isArray(cached.points) && cached.points.length > 0) {
+        return cached as StockPriceHistoryPayload
       }
     } catch {}
   }
@@ -64,7 +88,7 @@ export async function getStockPriceHistory(
   const toSec = Math.floor(now / 1000)
   const fromSec = toSec - Math.max(1, years) * 365 * 86400
 
-  // 2. Nạp từ VNDirect DChart API
+  // 2. Dự phòng nạp từ VNDirect DChart API (chỉ khi máy chưa từng có file)
   try {
     const vnUrl = `https://dchart-api.vndirect.com.vn/dchart/history?resolution=D&symbol=${sym}&from=${fromSec}&to=${toSec}`
     const res = await fetch(vnUrl, {
@@ -72,6 +96,7 @@ export async function getStockPriceHistory(
         'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36',
         Accept: 'application/json',
       },
+      signal: AbortSignal.timeout(1500),
       next: { revalidate: 3600 },
     })
 

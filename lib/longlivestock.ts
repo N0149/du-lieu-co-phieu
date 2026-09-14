@@ -268,53 +268,29 @@ export function parseCoreCardFromHtml(html: string, ticker: string): CoreCardDat
 
 /**
  * Tải toàn bộ dữ liệu chi tiết cổ phiếu gồm tài chính, giá tuần, sản lượng cảng và mảng kinh doanh cốt lõi
+ * 100% Local-First / Zero-Latency: Đọc trực tiếp từ kho dữ liệu nội bộ sẵn có.
  */
-export async function fetchStockDetailData(tickerUpper: string): Promise<StockDetailData | null> {
+export async function fetchStockDetailData(
+  tickerUpper: string,
+  initialWeeklyPrices: PriceWeeklyItem[] = []
+): Promise<StockDetailData | null> {
   const ticker = tickerUpper.toUpperCase().trim()
   const manifestItem = getStockByTicker(ticker)
 
-  let jsonData: Partial<StockDetailData> | null = null
-  // 1. Đọc Mảng kinh doanh cốt lõi trực tiếp từ file JSON nội bộ (0ms, 100% offline)
-  let coreCardData: CoreCardData | null = getLocalCoreCard(ticker)
-
-  // 2. Chỉ gọi mạng lấy HTML nếu mã này chưa từng có trong file nội bộ (fallback dự phòng)
-  const needHtmlFallback = !coreCardData
-  const [jsonRes, htmlRes, liveQuote] = await Promise.all([
-    fetch(`https://longlivestock.com/data/${ticker}_data.json`, {
-      next: { revalidate: 3600 },
-      headers: { 'User-Agent': 'Mozilla/5.0' },
-    })
-      .then(async (r) => (r.ok ? await r.json() : null))
-      .catch(() => null),
-    needHtmlFallback
-      ? fetch(`https://longlivestock.com/stock/${ticker}`, {
-          next: { revalidate: 3600 },
-          headers: { 'User-Agent': 'Mozilla/5.0' },
-        })
-          .then(async (r) => (r.ok ? await r.text() : null))
-          .catch(() => null)
-      : Promise.resolve(null),
-    getLiveStockQuote(ticker).catch(() => null),
-  ])
-
-  if (jsonRes) {
-    jsonData = jsonRes
-  }
-
-  if (htmlRes && !coreCardData) {
-    try {
-      coreCardData = parseCoreCardFromHtml(htmlRes, ticker)
-    } catch (e) {
-      console.error(`Error parsing HTML for ${ticker}:`, e)
-    }
-  }
-
-  if (!jsonData && !manifestItem) {
+  if (!manifestItem) {
     return null
   }
 
+  // 1. Đọc Mảng kinh doanh cốt lõi trực tiếp từ file JSON nội bộ (0ms, 100% offline)
+  const coreCardData: CoreCardData | null = getLocalCoreCard(ticker)
+
+  // 2. Lấy giá trực tiếp live quote (timeout tối đa 800ms)
+  const liveQuote = await getLiveStockQuote(ticker).catch(() => null)
+
+  // 3. Chuỗi giá tuần
+  const weeklyPrices = [...initialWeeklyPrices]
+
   // Cập nhật chuỗi price_weekly với giá phiên hôm nay nếu có
-  const weeklyPrices = [...(jsonData?.price_weekly || [])]
   if (liveQuote && weeklyPrices.length > 0) {
     const parts = liveQuote.tradingDate?.split('/') // DD/MM/YYYY
     const todayIso = parts && parts.length === 3 ? `${parts[2]}-${parts[1]}-${parts[0]}` : null
@@ -333,43 +309,43 @@ export async function fetchStockDetailData(tickerUpper: string): Promise<StockDe
     }
   }
 
-  // Tạo kết quả tổng hợp
+  // Tạo kết quả tổng hợp 100% từ dữ liệu nội bộ
   const result: StockDetailData = {
-    ticker: jsonData?.ticker || manifestItem?.t || ticker,
+    ticker: manifestItem.t || ticker,
     company: {
-      name: jsonData?.company?.name || manifestItem?.n || ticker,
-      exchange: jsonData?.company?.exchange || manifestItem?.e || '',
-      sector: jsonData?.company?.sector || manifestItem?.s || '',
-      entity_type: jsonData?.company?.entity_type || manifestItem?.et || 'nonbank',
-      status: jsonData?.company?.status || manifestItem?.st || 'active',
-      status_note: jsonData?.company?.status_note || null,
-      status_date: jsonData?.company?.status_date || null,
-      business_lines: jsonData?.company?.business_lines || [],
-      icb_l1: jsonData?.company?.icb_l1 || manifestItem?.g,
-      icb_l2: jsonData?.company?.icb_l2 || manifestItem?.s2,
+      name: manifestItem.n || ticker,
+      exchange: manifestItem.e || '',
+      sector: manifestItem.s || '',
+      entity_type: manifestItem.et || 'nonbank',
+      status: manifestItem.st || 'active',
+      status_note: null,
+      status_date: null,
+      business_lines: [],
+      icb_l1: manifestItem.g,
+      icb_l2: manifestItem.s2,
     },
-    profile: jsonData?.profile || `${manifestItem?.n || ticker} là doanh nghiệp niêm yết thuộc ngành ${manifestItem?.s || ''}.`,
+    profile: `${manifestItem.n || ticker} là doanh nghiệp niêm yết thuộc ngành ${manifestItem.s || ''}.`,
     market: {
-      price: liveQuote?.priceK ?? jsonData?.market?.price ?? manifestItem?.px ?? null,
-      market_cap_ty: jsonData?.market?.market_cap_ty ?? manifestItem?.cap ?? null,
-      shares_m: jsonData?.market?.shares_m ?? null,
-      foreign_pct: jsonData?.market?.foreign_pct ?? null,
-      state_pct: jsonData?.market?.state_pct ?? null,
-      high_1y: jsonData?.market?.high_1y ?? null,
-      low_1y: jsonData?.market?.low_1y ?? null,
+      price: liveQuote?.priceK ?? manifestItem.px ?? null,
+      market_cap_ty: manifestItem.cap ?? null,
+      shares_m: null,
+      foreign_pct: null,
+      state_pct: null,
+      high_1y: null,
+      low_1y: null,
     },
     valuation: {
-      eps: jsonData?.valuation?.eps ?? null,
-      bvps: jsonData?.valuation?.bvps ?? null,
-      pe: jsonData?.valuation?.pe ?? manifestItem?.pe ?? null,
-      pb: jsonData?.valuation?.pb ?? manifestItem?.pb ?? null,
-      dividend: jsonData?.valuation?.dividend ?? manifestItem?.div ?? null,
+      eps: null,
+      bvps: null,
+      pe: manifestItem.pe ?? null,
+      pb: manifestItem.pb ?? null,
+      dividend: manifestItem.div ?? null,
     },
-    financials: jsonData?.financials || [],
-    shareholders: jsonData?.shareholders || [],
+    financials: [],
+    shareholders: [],
     price_weekly: weeklyPrices,
-    throughput: jsonData?.throughput || [],
-    is_port: jsonData?.is_port ?? manifestItem?.port ?? false,
+    throughput: [],
+    is_port: manifestItem.port ?? false,
     coreCard: coreCardData,
   }
 

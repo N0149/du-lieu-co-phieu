@@ -30,6 +30,7 @@ export function WiDataScreener({ initialStocks }: WiDataScreenerProps) {
   const [selectedSector, setSelectedSector] = useState<string>('')
   const [selectedTickers, setSelectedTickers] = useState<string[]>([])
   const [isSidebarOpen, setIsSidebarOpen] = useState<boolean>(true)
+  const [isFilterPanelOpen, setIsFilterPanelOpen] = useState<boolean>(true)
 
   // Trạng thái điều kiện lọc
   const [conditions, setConditions] = useState<ActiveCondition[]>([])
@@ -251,7 +252,7 @@ export function WiDataScreener({ initialStocks }: WiDataScreenerProps) {
 
   return (
     <div className="flex min-h-screen flex-col bg-[#0f1218] text-foreground">
-      {/* 1. TOP BAR: Lọc Sàn, Ngành, Mã CK, Bật/Tắt Sidebar */}
+      {/* 1. TOP BAR: Lọc Sàn, Ngành, Mã CK, Bật/Tắt Sidebar, Ẩn/Hiện Bộ lọc */}
       <ScreenerTopBar
         selectedExchange={selectedExchange}
         onChangeExchange={setSelectedExchange}
@@ -264,51 +265,56 @@ export function WiDataScreener({ initialStocks }: WiDataScreenerProps) {
         isSidebarOpen={isSidebarOpen}
         onToggleSidebar={() => setIsSidebarOpen((prev) => !prev)}
         totalCount={filteredStocks.length}
+        isFilterPanelOpen={isFilterPanelOpen}
+        onToggleFilterPanel={() => setIsFilterPanelOpen((prev) => !prev)}
       />
 
-      {/* 2. MAIN 3-COLUMN WORKSPACE THEO MẪU WIDATA */}
-      <div className="flex flex-1 flex-col lg:flex-row overflow-hidden">
-        {/* CỘT 1: BỘ LỌC CÓ SẴN & CÁ NHÂN (Sidebar Trái) */}
-        {isSidebarOpen && (
-          <aside className="w-full shrink-0 border-b border-white/10 lg:w-56 lg:border-b-0 lg:border-r">
-            <ScreenerPresetSidebar
-              customPresets={customPresets}
-              activePresetId={activePresetId}
-              onSelectPreset={handleSelectPreset}
-              onDeleteCustomPreset={handleDeleteCustomPreset}
+      {/* 2. KHU VỰC THIẾT LẬP BỘ LỌC 3 CỘT (CÓ THỂ THU GỌN / MỞ RỘNG) */}
+      {isFilterPanelOpen && (
+        <div className="flex flex-col lg:flex-row border-b border-white/10 bg-[#0f1218] shrink-0 h-auto lg:h-[450px]">
+          {/* CỘT 1: BỘ LỌC CÓ SẴN & CÁ NHÂN (Sidebar Trái) */}
+          {isSidebarOpen && (
+            <aside className="w-full shrink-0 border-b border-white/10 lg:w-56 lg:border-b-0 lg:border-r overflow-y-auto">
+              <ScreenerPresetSidebar
+                customPresets={customPresets}
+                activePresetId={activePresetId}
+                onSelectPreset={handleSelectPreset}
+                onDeleteCustomPreset={handleDeleteCustomPreset}
+              />
+            </aside>
+          )}
+
+          {/* CỘT 2: CÂY CHỈ TIÊU LỌC (Cột giữa chia đôi chuẩn WiData) */}
+          <aside className="w-full shrink-0 border-b border-white/10 lg:w-[380px] xl:w-[420px] lg:border-b-0 lg:border-r overflow-hidden">
+            <ScreenerCriteriaTree
+              activeCriterionIds={activeCriterionIds}
+              onToggleCriterion={handleToggleCriterion}
             />
           </aside>
-        )}
 
-        {/* CỘT 2: CÂY CHỈ TIÊU LỌC (Cột giữa chia đôi chuẩn WiData) */}
-        <aside className="w-full shrink-0 border-b border-white/10 lg:w-[380px] xl:w-[420px] lg:border-b-0 lg:border-r">
-          <ScreenerCriteriaTree
-            activeCriterionIds={activeCriterionIds}
-            onToggleCriterion={handleToggleCriterion}
-          />
-        </aside>
-
-        {/* CỘT 3: KHUNG THIẾT LẬP ĐIỀU KIỆN & BẢNG KẾT QUẢ (Không gian chính bên phải) */}
-        <div className="flex-1 min-w-0 overflow-y-auto p-4 space-y-4">
-          {/* Phía trên: Khung thiết lập điều kiện lọc (Conditions Builder) */}
-          <ScreenerConditionsBuilder
-            conditions={conditions}
-            onUpdateCondition={handleUpdateCondition}
-            onRemoveCondition={handleRemoveCondition}
-            onResetConditions={handleResetConditions}
-            onSavePreset={handleSavePreset}
-            onRunFilter={handleRunFilter}
-            matchingCount={filteredStocks.length}
-          />
-
-          {/* Phía dưới: Bảng kết quả lọc thông minh (Results Table) */}
-          <div ref={tableRef} className="pt-2">
-            <ScreenerResultsTable
-              stocks={filteredStocks}
+          {/* CỘT 3: KHUNG THIẾT LẬP ĐIỀU KIỆN (Không gian chính bên phải) */}
+          <div className="flex-1 min-w-0 overflow-y-auto p-4">
+            <ScreenerConditionsBuilder
               conditions={conditions}
+              onUpdateCondition={handleUpdateCondition}
+              onRemoveCondition={handleRemoveCondition}
+              onResetConditions={handleResetConditions}
+              onSavePreset={handleSavePreset}
+              onRunFilter={handleRunFilter}
+              matchingCount={filteredStocks.length}
             />
           </div>
         </div>
+      )}
+
+      {/* 3. BẢNG KẾT QUẢ LỌC CỔ PHIẾU (RỘNG TOÀN MÀN HÌNH - FULL WIDTH) */}
+      <div ref={tableRef} className="w-full p-4 bg-[#0f1218] flex-1">
+        <ScreenerResultsTable
+          stocks={filteredStocks}
+          conditions={conditions}
+          isFilterPanelOpen={isFilterPanelOpen}
+          onToggleFilterPanel={() => setIsFilterPanelOpen((prev) => !prev)}
+        />
       </div>
     </div>
   )

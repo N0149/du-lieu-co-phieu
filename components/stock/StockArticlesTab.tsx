@@ -676,7 +676,13 @@ export function StockArticlesTab({
                     title={item.title}
                     ticker={symbol}
                     type={item.type}
-                    onClick={() => setSelectedArticle(item)}
+                    onClick={() => {
+                      if (item.link && item.link.startsWith('http')) {
+                        window.open(item.link, '_blank', 'noopener,noreferrer')
+                      } else {
+                        setSelectedArticle(item)
+                      }
+                    }}
                   />
 
                   {/* Cột 2: Nội dung bài viết */}

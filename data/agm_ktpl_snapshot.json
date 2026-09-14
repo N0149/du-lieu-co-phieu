@@ -63,6 +63,14 @@
     "lnstVnd": 17870400000000,
     "method": "table_vnd_sum"
   },
+  "ACE": {
+    "ticker": "ACE",
+    "year": 2026,
+    "ktplRate": 26.77,
+    "ktplVnd": 4600000000,
+    "lnstVnd": 17181299563,
+    "method": "table_vnd_sum"
+  },
   "ACL": {
     "ticker": "ACL",
     "year": 2026,
@@ -85,6 +93,14 @@
     "ktplRate": 3.53,
     "ktplVnd": 2700000000,
     "lnstVnd": 76460537616,
+    "method": "table_vnd_sum"
+  },
+  "AG1": {
+    "ticker": "AG1",
+    "year": 2026,
+    "ktplRate": 34.63,
+    "ktplVnd": 3865371508,
+    "lnstVnd": 11160450510,
     "method": "table_vnd_sum"
   },
   "AGG": {
@@ -118,6 +134,14 @@
     "ktplVnd": null,
     "lnstVnd": 877703271139,
     "method": "direct_regex"
+  },
+  "ALC": {
+    "ticker": "ALC",
+    "year": 2026,
+    "ktplRate": 7,
+    "ktplVnd": 19890431746,
+    "lnstVnd": null,
+    "method": "table_pct_sum"
   },
   "ALT": {
     "ticker": "ALT",
@@ -173,6 +197,14 @@
     "ktplRate": 3.85,
     "ktplVnd": 9620869176,
     "lnstVnd": 250170276714,
+    "method": "table_vnd_sum"
+  },
+  "AVC": {
+    "ticker": "AVC",
+    "year": 2026,
+    "ktplRate": 4.12,
+    "ktplVnd": 11101569250,
+    "lnstVnd": 269393572146,
     "method": "table_vnd_sum"
   },
   "BAB": {
@@ -263,6 +295,14 @@
     "lnstVnd": 242970138199,
     "method": "table_vnd_sum"
   },
+  "BHA": {
+    "ticker": "BHA",
+    "year": 2026,
+    "ktplRate": 6.73,
+    "ktplVnd": 11245972381,
+    "lnstVnd": 167018195631,
+    "method": "table_vnd_sum"
+  },
   "BHN": {
     "ticker": "BHN",
     "year": 2026,
@@ -286,6 +326,14 @@
     "ktplVnd": 0,
     "lnstVnd": null,
     "method": "no_fund_text"
+  },
+  "BLT": {
+    "ticker": "BLT",
+    "year": 2026,
+    "ktplRate": 34.85,
+    "ktplVnd": 2646000000,
+    "lnstVnd": 7591723049,
+    "method": "table_vnd_sum"
   },
   "BMC": {
     "ticker": "BMC",
@@ -343,6 +391,14 @@
     "lnstVnd": 150157461524,
     "method": "table_vnd_sum"
   },
+  "BRS": {
+    "ticker": "BRS",
+    "year": 2026,
+    "ktplRate": 54.84,
+    "ktplVnd": 18442243012,
+    "lnstVnd": 17179851506,
+    "method": "table_pct_sum"
+  },
   "BSA": {
     "ticker": "BSA",
     "year": 2026,
@@ -365,6 +421,22 @@
     "ktplRate": 8.91,
     "ktplVnd": 43966000000,
     "lnstVnd": 493666033520,
+    "method": "table_vnd_sum"
+  },
+  "BSL": {
+    "ticker": "BSL",
+    "year": 2026,
+    "ktplRate": 22.36,
+    "ktplVnd": 9448000000,
+    "lnstVnd": 42254215068,
+    "method": "table_vnd_sum"
+  },
+  "BSP": {
+    "ticker": "BSP",
+    "year": 2026,
+    "ktplRate": 27.15,
+    "ktplVnd": 2362802856,
+    "lnstVnd": 8703871009,
     "method": "table_vnd_sum"
   },
   "BT1": {
@@ -397,6 +469,14 @@
     "ktplRate": 84.03,
     "ktplVnd": 35772994400,
     "lnstVnd": 42570802456,
+    "method": "table_vnd_sum"
+  },
+  "BTU": {
+    "ticker": "BTU",
+    "year": 2026,
+    "ktplRate": 38.24,
+    "ktplVnd": 5636376889,
+    "lnstVnd": 14740078891,
     "method": "table_vnd_sum"
   },
   "BTV": {
@@ -438,6 +518,14 @@
     "ktplVnd": 113493704419,
     "lnstVnd": 810669317275,
     "method": "table_vnd_sum"
+  },
+  "BWS": {
+    "ticker": "BWS",
+    "year": 2026,
+    "ktplRate": 12.6,
+    "ktplVnd": null,
+    "lnstVnd": null,
+    "method": "table_pct_sum"
   },
   "C32": {
     "ticker": "C32",
@@ -574,6 +662,14 @@
     "ktplVnd": null,
     "lnstVnd": null,
     "method": "table_pct_sum"
+  },
+  "CMD": {
+    "ticker": "CMD",
+    "year": 2026,
+    "ktplRate": 3,
+    "ktplVnd": 937075489,
+    "lnstVnd": 31235849638,
+    "method": "table_vnd_sum"
   },
   "CMF": {
     "ticker": "CMF",
@@ -999,6 +1095,14 @@
     "lnstVnd": 44025851429,
     "method": "table_zero"
   },
+  "DNA": {
+    "ticker": "DNA",
+    "year": 2026,
+    "ktplRate": 32.72,
+    "ktplVnd": 53500529598,
+    "lnstVnd": 163494000000,
+    "method": "table_vnd_sum"
+  },
   "DNC": {
     "ticker": "DNC",
     "year": 2026,
@@ -1015,12 +1119,28 @@
     "lnstVnd": 9134927711,
     "method": "table_vnd_sum"
   },
+  "DNW": {
+    "ticker": "DNW",
+    "year": 2026,
+    "ktplRate": 21,
+    "ktplVnd": 57003555000,
+    "lnstVnd": 271449235496,
+    "method": "table_vnd_sum"
+  },
   "DOP": {
     "ticker": "DOP",
     "year": 2026,
     "ktplRate": 18.49,
     "ktplVnd": 2039581906,
     "lnstVnd": 11031292706,
+    "method": "table_vnd_sum"
+  },
+  "DP1": {
+    "ticker": "DP1",
+    "year": 2026,
+    "ktplRate": 4.71,
+    "ktplVnd": 5321294216,
+    "lnstVnd": 113082355399,
     "method": "table_vnd_sum"
   },
   "DP3": {
@@ -1470,5 +1590,1773 @@
     "ktplVnd": 0,
     "lnstVnd": 25212954658,
     "method": "no_fund_text"
+  },
+  "HC1": {
+    "ticker": "HC1",
+    "year": 2026,
+    "ktplRate": 13.8,
+    "ktplVnd": 1815870615,
+    "lnstVnd": 13158706147,
+    "method": "table_vnd_sum"
+  },
+  "HC3": {
+    "ticker": "HC3",
+    "year": 2026,
+    "ktplRate": 3,
+    "ktplVnd": 1200718047,
+    "lnstVnd": 40023934907,
+    "method": "table_vnd_sum"
+  },
+  "HCC": {
+    "ticker": "HCC",
+    "year": 2026,
+    "ktplRate": 8.88,
+    "ktplVnd": 2700000000,
+    "lnstVnd": 30400012594,
+    "method": "table_vnd_sum"
+  },
+  "HCD": {
+    "ticker": "HCD",
+    "year": 2026,
+    "ktplRate": 0,
+    "ktplVnd": 0,
+    "lnstVnd": 20034619648,
+    "method": "table_zero"
+  },
+  "HCM": {
+    "ticker": "HCM",
+    "year": 2026,
+    "ktplRate": 3,
+    "ktplVnd": 31189651331,
+    "lnstVnd": 1039655044354,
+    "method": "table_vnd_sum"
+  },
+  "HD2": {
+    "ticker": "HD2",
+    "year": 2026,
+    "ktplRate": 23.96,
+    "ktplVnd": 2730000000,
+    "lnstVnd": 11393173590,
+    "method": "table_vnd_sum"
+  },
+  "HD8": {
+    "ticker": "HD8",
+    "year": 2026,
+    "ktplRate": 14.59,
+    "ktplVnd": 350000000,
+    "lnstVnd": 350000000,
+    "method": "table_pct_sum"
+  },
+  "HDM": {
+    "ticker": "HDM",
+    "year": 2026,
+    "ktplRate": 13.46,
+    "ktplVnd": 20294390845,
+    "lnstVnd": 150784050073,
+    "method": "table_vnd_sum"
+  },
+  "HDP": {
+    "ticker": "HDP",
+    "year": 2026,
+    "ktplRate": 7.45,
+    "ktplVnd": 1500000000,
+    "lnstVnd": 20133970934,
+    "method": "table_vnd_sum"
+  },
+  "HDW": {
+    "ticker": "HDW",
+    "year": 2026,
+    "ktplRate": 52.23,
+    "ktplVnd": 25338623970,
+    "lnstVnd": 48516171731,
+    "method": "table_vnd_sum"
+  },
+  "HEP": {
+    "ticker": "HEP",
+    "year": 2026,
+    "ktplRate": 60,
+    "ktplVnd": 9834833730,
+    "lnstVnd": 16391389551,
+    "method": "table_vnd_sum"
+  },
+  "HGM": {
+    "ticker": "HGM",
+    "year": 2026,
+    "ktplRate": 4.2,
+    "ktplVnd": 20000000000,
+    "lnstVnd": 475654254654,
+    "method": "table_vnd_sum"
+  },
+  "HHS": {
+    "ticker": "HHS",
+    "year": 2026,
+    "ktplRate": 0,
+    "ktplVnd": null,
+    "lnstVnd": 3553215479345,
+    "method": "direct_regex"
+  },
+  "HHV": {
+    "ticker": "HHV",
+    "year": 2026,
+    "ktplRate": 1,
+    "ktplVnd": 2859000000,
+    "lnstVnd": 2859000000,
+    "method": "table_pct_sum"
+  },
+  "HII": {
+    "ticker": "HII",
+    "year": 2026,
+    "ktplRate": 15,
+    "ktplVnd": 3642603824,
+    "lnstVnd": 24284025492,
+    "method": "table_vnd_sum"
+  },
+  "HIO": {
+    "ticker": "HIO",
+    "year": 2026,
+    "ktplRate": 8,
+    "ktplVnd": 1084377372,
+    "lnstVnd": 13554717154,
+    "method": "table_vnd_sum"
+  },
+  "HJS": {
+    "ticker": "HJS",
+    "year": 2026,
+    "ktplRate": 10.88,
+    "ktplVnd": null,
+    "lnstVnd": 4271911557,
+    "method": "direct_regex"
+  },
+  "HLB": {
+    "ticker": "HLB",
+    "year": 2026,
+    "ktplRate": 3.64,
+    "ktplVnd": 5000000000,
+    "lnstVnd": 137373778364,
+    "method": "table_vnd_sum"
+  },
+  "HLC": {
+    "ticker": "HLC",
+    "year": 2026,
+    "ktplRate": 72.6,
+    "ktplVnd": null,
+    "lnstVnd": 82054191269,
+    "method": "direct_regex"
+  },
+  "HMC": {
+    "ticker": "HMC",
+    "year": 2026,
+    "ktplRate": 15.05,
+    "ktplVnd": 4700000000,
+    "lnstVnd": 31219878322,
+    "method": "table_vnd_sum"
+  },
+  "HMR": {
+    "ticker": "HMR",
+    "year": 2026,
+    "ktplRate": 5,
+    "ktplVnd": 158504118,
+    "lnstVnd": 3170082351,
+    "method": "table_vnd_sum"
+  },
+  "HNA": {
+    "ticker": "HNA",
+    "year": 2026,
+    "ktplRate": 2.56,
+    "ktplVnd": 23790670381,
+    "lnstVnd": 928345241879,
+    "method": "table_vnd_sum"
+  },
+  "HNF": {
+    "ticker": "HNF",
+    "year": 2026,
+    "ktplRate": 5,
+    "ktplVnd": 5116418893,
+    "lnstVnd": 102328377859,
+    "method": "table_vnd_sum"
+  },
+  "HNG": {
+    "ticker": "HNG",
+    "year": 2026,
+    "ktplRate": 0,
+    "ktplVnd": 0,
+    "lnstVnd": null,
+    "method": "table_zero"
+  },
+  "HNI": {
+    "ticker": "HNI",
+    "year": 2026,
+    "ktplRate": 11.98,
+    "ktplVnd": 11225573941,
+    "lnstVnd": 93735184164,
+    "method": "table_vnd_sum"
+  },
+  "HNM": {
+    "ticker": "HNM",
+    "year": 2026,
+    "ktplRate": 0,
+    "ktplVnd": null,
+    "lnstVnd": 17451165549,
+    "method": "direct_regex"
+  },
+  "HOM": {
+    "ticker": "HOM",
+    "year": 2026,
+    "ktplRate": 0,
+    "ktplVnd": null,
+    "lnstVnd": 23320270851,
+    "method": "direct_regex"
+  },
+  "HPA": {
+    "ticker": "HPA",
+    "year": 2026,
+    "ktplRate": 5.62,
+    "ktplVnd": 90000000000,
+    "lnstVnd": 1600250990769,
+    "method": "table_vnd_sum"
+  },
+  "HPB": {
+    "ticker": "HPB",
+    "year": 2026,
+    "ktplRate": 12.14,
+    "ktplVnd": 1000000000,
+    "lnstVnd": 8238784467,
+    "method": "table_vnd_sum"
+  },
+  "HPD": {
+    "ticker": "HPD",
+    "year": 2026,
+    "ktplRate": 2,
+    "ktplVnd": null,
+    "lnstVnd": 24922735658,
+    "method": "table_pct_sum"
+  },
+  "HPG": {
+    "ticker": "HPG",
+    "year": 2026,
+    "ktplRate": 4.32,
+    "ktplVnd": 670000000000,
+    "lnstVnd": 15514931571606,
+    "method": "table_vnd_sum"
+  },
+  "HPO": {
+    "ticker": "HPO",
+    "year": 2026,
+    "ktplRate": 15,
+    "ktplVnd": 2092511363,
+    "lnstVnd": null,
+    "method": "table_pct_sum"
+  },
+  "HPP": {
+    "ticker": "HPP",
+    "year": 2026,
+    "ktplRate": 25.61,
+    "ktplVnd": 31971018626,
+    "lnstVnd": 124832540626,
+    "method": "table_vnd_sum"
+  },
+  "HPT": {
+    "ticker": "HPT",
+    "year": 2026,
+    "ktplRate": 30,
+    "ktplVnd": null,
+    "lnstVnd": null,
+    "method": "table_pct_sum"
+  },
+  "HPX": {
+    "ticker": "HPX",
+    "year": 2026,
+    "ktplRate": 0,
+    "ktplVnd": null,
+    "lnstVnd": 83314475297,
+    "method": "direct_regex"
+  },
+  "HQC": {
+    "ticker": "HQC",
+    "year": 2026,
+    "ktplRate": 0.3,
+    "ktplVnd": 202940076,
+    "lnstVnd": 67646691994,
+    "method": "table_vnd_sum"
+  },
+  "HRB": {
+    "ticker": "HRB",
+    "year": 2026,
+    "ktplRate": 13.54,
+    "ktplVnd": 3017369914,
+    "lnstVnd": 22279049820,
+    "method": "table_vnd_sum"
+  },
+  "HRC": {
+    "ticker": "HRC",
+    "year": 2026,
+    "ktplRate": 31.57,
+    "ktplVnd": null,
+    "lnstVnd": null,
+    "method": "table_pct_sum"
+  },
+  "HSP": {
+    "ticker": "HSP",
+    "year": 2026,
+    "ktplRate": 5,
+    "ktplVnd": null,
+    "lnstVnd": null,
+    "method": "direct_regex"
+  },
+  "HTC": {
+    "ticker": "HTC",
+    "year": 2026,
+    "ktplRate": 3.12,
+    "ktplVnd": 777043484,
+    "lnstVnd": 24908049020,
+    "method": "table_vnd_sum"
+  },
+  "HTG": {
+    "ticker": "HTG",
+    "year": 2026,
+    "ktplRate": 72.29,
+    "ktplVnd": 33046640818,
+    "lnstVnd": 45716502497,
+    "method": "table_vnd_sum"
+  },
+  "HTI": {
+    "ticker": "HTI",
+    "year": 2026,
+    "ktplRate": 2.42,
+    "ktplVnd": 4104000000,
+    "lnstVnd": 169428061449,
+    "method": "table_vnd_sum"
+  },
+  "HTN": {
+    "ticker": "HTN",
+    "year": 2026,
+    "ktplRate": 8,
+    "ktplVnd": 1821397874,
+    "lnstVnd": 22767473421,
+    "method": "table_vnd_sum"
+  },
+  "HTV": {
+    "ticker": "HTV",
+    "year": 2026,
+    "ktplRate": 65.76,
+    "ktplVnd": 10065062000,
+    "lnstVnd": 15306662000,
+    "method": "table_vnd_sum"
+  },
+  "HU1": {
+    "ticker": "HU1",
+    "year": 2026,
+    "ktplRate": 10,
+    "ktplVnd": 369847488,
+    "lnstVnd": 3698474880,
+    "method": "table_vnd_sum"
+  },
+  "HU4": {
+    "ticker": "HU4",
+    "year": 2026,
+    "ktplRate": 22.93,
+    "ktplVnd": 6222320000,
+    "lnstVnd": 27137412666,
+    "method": "table_vnd_sum"
+  },
+  "HU6": {
+    "ticker": "HU6",
+    "year": 2026,
+    "ktplRate": 0,
+    "ktplVnd": 0,
+    "lnstVnd": 2452583291,
+    "method": "table_zero"
+  },
+  "HUG": {
+    "ticker": "HUG",
+    "year": 2026,
+    "ktplRate": 20,
+    "ktplVnd": 16125770866,
+    "lnstVnd": 80628854326,
+    "method": "table_vnd_sum"
+  },
+  "HVA": {
+    "ticker": "HVA",
+    "year": 2026,
+    "ktplRate": 0,
+    "ktplVnd": null,
+    "lnstVnd": null,
+    "method": "direct_regex"
+  },
+  "HVH": {
+    "ticker": "HVH",
+    "year": 2026,
+    "ktplRate": 2.1,
+    "ktplVnd": 400000000,
+    "lnstVnd": 19046800000,
+    "method": "table_vnd_sum"
+  },
+  "HVN": {
+    "ticker": "HVN",
+    "year": 2026,
+    "ktplRate": 0,
+    "ktplVnd": 0,
+    "lnstVnd": 5427115611134,
+    "method": "table_zero"
+  },
+  "HVT": {
+    "ticker": "HVT",
+    "year": 2026,
+    "ktplRate": 10.71,
+    "ktplVnd": 10583440120,
+    "lnstVnd": 98838234534,
+    "method": "table_vnd_sum"
+  },
+  "HWS": {
+    "ticker": "HWS",
+    "year": 2026,
+    "ktplRate": 4.72,
+    "ktplVnd": null,
+    "lnstVnd": null,
+    "method": "table_pct_sum"
+  },
+  "ICC": {
+    "ticker": "ICC",
+    "year": 2026,
+    "ktplRate": 17.26,
+    "ktplVnd": 2050734562,
+    "lnstVnd": 11881291519,
+    "method": "table_vnd_sum"
+  },
+  "ICG": {
+    "ticker": "ICG",
+    "year": 2026,
+    "ktplRate": 10,
+    "ktplVnd": 5442000000,
+    "lnstVnd": null,
+    "method": "table_pct_sum"
+  },
+  "ICN": {
+    "ticker": "ICN",
+    "year": 2026,
+    "ktplRate": 0.37,
+    "ktplVnd": 600000000,
+    "lnstVnd": 161481594524,
+    "method": "table_vnd_sum"
+  },
+  "IDC": {
+    "ticker": "IDC",
+    "year": 2026,
+    "ktplRate": 0,
+    "ktplVnd": 0,
+    "lnstVnd": 1591982945084,
+    "method": "table_zero"
+  },
+  "IDI": {
+    "ticker": "IDI",
+    "year": 2026,
+    "ktplRate": 0,
+    "ktplVnd": null,
+    "lnstVnd": 104461654676,
+    "method": "direct_regex"
+  },
+  "IDP": {
+    "ticker": "IDP",
+    "year": 2026,
+    "ktplRate": 0.95,
+    "ktplVnd": 1679966430,
+    "lnstVnd": 177174097155,
+    "method": "table_vnd_sum"
+  },
+  "IDV": {
+    "ticker": "IDV",
+    "year": 2026,
+    "ktplRate": 7,
+    "ktplVnd": 9109178711,
+    "lnstVnd": 130131124441,
+    "method": "table_vnd_sum"
+  },
+  "IJC": {
+    "ticker": "IJC",
+    "year": 2026,
+    "ktplRate": 6,
+    "ktplVnd": 27561682735,
+    "lnstVnd": 459361378912,
+    "method": "table_vnd_sum"
+  },
+  "INN": {
+    "ticker": "INN",
+    "year": 2026,
+    "ktplRate": 5,
+    "ktplVnd": 6337053151,
+    "lnstVnd": 126741063011,
+    "method": "table_vnd_sum"
+  },
+  "ISH": {
+    "ticker": "ISH",
+    "year": 2026,
+    "ktplRate": 2.99,
+    "ktplVnd": 2520000000,
+    "lnstVnd": 84247403728,
+    "method": "table_vnd_sum"
+  },
+  "IST": {
+    "ticker": "IST",
+    "year": 2026,
+    "ktplRate": 18.75,
+    "ktplVnd": 16157500000,
+    "lnstVnd": 86167992928,
+    "method": "table_vnd_sum"
+  },
+  "ITQ": {
+    "ticker": "ITQ",
+    "year": 2026,
+    "ktplRate": 20,
+    "ktplVnd": 1016891337,
+    "lnstVnd": 5084456687,
+    "method": "table_vnd_sum"
+  },
+  "ITS": {
+    "ticker": "ITS",
+    "year": 2026,
+    "ktplRate": 10.3,
+    "ktplVnd": 440000000,
+    "lnstVnd": 4273171917,
+    "method": "table_vnd_sum"
+  },
+  "JVC": {
+    "ticker": "JVC",
+    "year": 2026,
+    "ktplRate": 0,
+    "ktplVnd": 0,
+    "lnstVnd": 49945279764,
+    "method": "no_fund_text"
+  },
+  "KBC": {
+    "ticker": "KBC",
+    "year": 2026,
+    "ktplRate": 0,
+    "ktplVnd": 0,
+    "lnstVnd": 2208140955280,
+    "method": "no_fund_text"
+  },
+  "KCB": {
+    "ticker": "KCB",
+    "year": 2026,
+    "ktplRate": 34.84,
+    "ktplVnd": 2994666226,
+    "lnstVnd": 8594666226,
+    "method": "table_vnd_sum"
+  },
+  "KDC": {
+    "ticker": "KDC",
+    "year": 2026,
+    "ktplRate": 2.3,
+    "ktplVnd": null,
+    "lnstVnd": null,
+    "method": "direct_regex"
+  },
+  "KGM": {
+    "ticker": "KGM",
+    "year": 2026,
+    "ktplRate": 21.12,
+    "ktplVnd": 2272128727,
+    "lnstVnd": 10760643636,
+    "method": "table_vnd_sum"
+  },
+  "KHG": {
+    "ticker": "KHG",
+    "year": 2026,
+    "ktplRate": 0,
+    "ktplVnd": 0,
+    "lnstVnd": 68708602345,
+    "method": "table_zero"
+  },
+  "KHP": {
+    "ticker": "KHP",
+    "year": 2026,
+    "ktplRate": 35.91,
+    "ktplVnd": 20362406320,
+    "lnstVnd": 56711602531,
+    "method": "table_vnd_sum"
+  },
+  "KHS": {
+    "ticker": "KHS",
+    "year": 2026,
+    "ktplRate": 8,
+    "ktplVnd": 4551977124,
+    "lnstVnd": null,
+    "method": "table_pct_sum"
+  },
+  "KIP": {
+    "ticker": "KIP",
+    "year": 2026,
+    "ktplRate": 6.3,
+    "ktplVnd": 976536236,
+    "lnstVnd": 15501536236,
+    "method": "table_vnd_sum"
+  },
+  "KKC": {
+    "ticker": "KKC",
+    "year": 2026,
+    "ktplRate": 0,
+    "ktplVnd": 0,
+    "lnstVnd": 8073696735,
+    "method": "no_fund_text"
+  },
+  "KLB": {
+    "ticker": "KLB",
+    "year": 2026,
+    "ktplRate": 0,
+    "ktplVnd": 0,
+    "lnstVnd": 1847375869723,
+    "method": "no_fund_text"
+  },
+  "KMR": {
+    "ticker": "KMR",
+    "year": 2026,
+    "ktplRate": 10,
+    "ktplVnd": null,
+    "lnstVnd": null,
+    "method": "table_pct_sum"
+  },
+  "KMT": {
+    "ticker": "KMT",
+    "year": 2026,
+    "ktplRate": 4.8,
+    "ktplVnd": 300000000,
+    "lnstVnd": 6248795687,
+    "method": "table_vnd_sum"
+  },
+  "KSB": {
+    "ticker": "KSB",
+    "year": 2026,
+    "ktplRate": 15,
+    "ktplVnd": 23385222265,
+    "lnstVnd": 155901481767,
+    "method": "table_vnd_sum"
+  },
+  "KST": {
+    "ticker": "KST",
+    "year": 2026,
+    "ktplRate": 6.19,
+    "ktplVnd": 690134953,
+    "lnstVnd": 11141475855,
+    "method": "table_vnd_sum"
+  },
+  "KTC": {
+    "ticker": "KTC",
+    "year": 2026,
+    "ktplRate": 31.68,
+    "ktplVnd": 7925998093,
+    "lnstVnd": 25017256992,
+    "method": "table_vnd_sum"
+  },
+  "L10": {
+    "ticker": "L10",
+    "year": 2026,
+    "ktplRate": 35,
+    "ktplVnd": 12391785.807,
+    "lnstVnd": null,
+    "method": "table_pct_sum"
+  },
+  "L14": {
+    "ticker": "L14",
+    "year": 2026,
+    "ktplRate": 5,
+    "ktplVnd": 1106567697,
+    "lnstVnd": 22131353956,
+    "method": "table_vnd_sum"
+  },
+  "L18": {
+    "ticker": "L18",
+    "year": 2026,
+    "ktplRate": 3,
+    "ktplVnd": 5000000000,
+    "lnstVnd": 166786835892,
+    "method": "table_vnd_sum"
+  },
+  "L40": {
+    "ticker": "L40",
+    "year": 2026,
+    "ktplRate": 0.3,
+    "ktplVnd": 425452937,
+    "lnstVnd": 141817645830,
+    "method": "table_vnd_sum"
+  },
+  "LAF": {
+    "ticker": "LAF",
+    "year": 2026,
+    "ktplRate": 5,
+    "ktplVnd": 2006000000,
+    "lnstVnd": 40120000000,
+    "method": "table_vnd_sum"
+  },
+  "LAI": {
+    "ticker": "LAI",
+    "year": 2026,
+    "ktplRate": 2.06,
+    "ktplVnd": 1800000000,
+    "lnstVnd": 87292265986,
+    "method": "table_vnd_sum"
+  },
+  "LAS": {
+    "ticker": "LAS",
+    "year": 2026,
+    "ktplRate": 10,
+    "ktplVnd": 16422696708,
+    "lnstVnd": 164226967082,
+    "method": "table_vnd_sum"
+  },
+  "LAW": {
+    "ticker": "LAW",
+    "year": 2026,
+    "ktplRate": 14.95,
+    "ktplVnd": 4461147950,
+    "lnstVnd": 29836986328,
+    "method": "table_vnd_sum"
+  },
+  "LBE": {
+    "ticker": "LBE",
+    "year": 2026,
+    "ktplRate": 0,
+    "ktplVnd": 0,
+    "lnstVnd": 24401741497,
+    "method": "no_fund_text"
+  },
+  "LCG": {
+    "ticker": "LCG",
+    "year": 2026,
+    "ktplRate": 6,
+    "ktplVnd": 9008769674,
+    "lnstVnd": 150146161236,
+    "method": "table_vnd_sum"
+  },
+  "LGC": {
+    "ticker": "LGC",
+    "year": 2026,
+    "ktplRate": 2,
+    "ktplVnd": 6475273194,
+    "lnstVnd": 6475273194,
+    "method": "table_pct_sum"
+  },
+  "LGL": {
+    "ticker": "LGL",
+    "year": 2026,
+    "ktplRate": 4.89,
+    "ktplVnd": 1000000000,
+    "lnstVnd": 20463408155,
+    "method": "table_vnd_sum"
+  },
+  "LHC": {
+    "ticker": "LHC",
+    "year": 2026,
+    "ktplRate": 0.27,
+    "ktplVnd": 600000000,
+    "lnstVnd": 218453116673,
+    "method": "table_vnd_sum"
+  },
+  "LHG": {
+    "ticker": "LHG",
+    "year": 2026,
+    "ktplRate": 12.66,
+    "ktplVnd": 37021985800,
+    "lnstVnd": 292457204850,
+    "method": "table_vnd_sum"
+  },
+  "LKW": {
+    "ticker": "LKW",
+    "year": 2026,
+    "ktplRate": 29.72,
+    "ktplVnd": 3687719226,
+    "lnstVnd": 12406128168,
+    "method": "table_vnd_sum"
+  },
+  "LM8": {
+    "ticker": "LM8",
+    "year": 2026,
+    "ktplRate": 26,
+    "ktplVnd": 4208822433,
+    "lnstVnd": 16187778590,
+    "method": "table_vnd_sum"
+  },
+  "LMI": {
+    "ticker": "LMI",
+    "year": 2026,
+    "ktplRate": 10,
+    "ktplVnd": 263499000,
+    "lnstVnd": 2634988412,
+    "method": "table_vnd_sum"
+  },
+  "M10": {
+    "ticker": "M10",
+    "year": 2026,
+    "ktplRate": 20,
+    "ktplVnd": null,
+    "lnstVnd": null,
+    "method": "table_pct_sum"
+  },
+  "MAC": {
+    "ticker": "MAC",
+    "year": 2026,
+    "ktplRate": 3,
+    "ktplVnd": 1145092453,
+    "lnstVnd": 1145092453,
+    "method": "table_pct_sum"
+  },
+  "MBB": {
+    "ticker": "MBB",
+    "year": 2026,
+    "ktplRate": 10.5,
+    "ktplVnd": null,
+    "lnstVnd": null,
+    "method": "table_pct_sum"
+  },
+  "MBG": {
+    "ticker": "MBG",
+    "year": 2026,
+    "ktplRate": 1,
+    "ktplVnd": null,
+    "lnstVnd": 20267776737,
+    "method": "table_pct_sum"
+  },
+  "MBS": {
+    "ticker": "MBS",
+    "year": 2026,
+    "ktplRate": 6,
+    "ktplVnd": null,
+    "lnstVnd": null,
+    "method": "table_pct_sum"
+  },
+  "MCF": {
+    "ticker": "MCF",
+    "year": 2026,
+    "ktplRate": 23.99,
+    "ktplVnd": 2418198020,
+    "lnstVnd": 10080000000,
+    "method": "table_vnd_sum"
+  },
+  "MCM": {
+    "ticker": "MCM",
+    "year": 2026,
+    "ktplRate": 10,
+    "ktplVnd": null,
+    "lnstVnd": null,
+    "method": "table_pct_sum"
+  },
+  "MCO": {
+    "ticker": "MCO",
+    "year": 2026,
+    "ktplRate": 0,
+    "ktplVnd": null,
+    "lnstVnd": null,
+    "method": "direct_regex"
+  },
+  "MDF": {
+    "ticker": "MDF",
+    "year": 2026,
+    "ktplRate": 0,
+    "ktplVnd": null,
+    "lnstVnd": 8150256379,
+    "method": "direct_regex"
+  },
+  "MDG": {
+    "ticker": "MDG",
+    "year": 2026,
+    "ktplRate": 14.5,
+    "ktplVnd": null,
+    "lnstVnd": null,
+    "method": "table_pct_sum"
+  },
+  "MFS": {
+    "ticker": "MFS",
+    "year": 2026,
+    "ktplRate": 16.19,
+    "ktplVnd": 2593572817,
+    "lnstVnd": 16016906860,
+    "method": "table_vnd_sum"
+  },
+  "MGC": {
+    "ticker": "MGC",
+    "year": 2026,
+    "ktplRate": 55.65,
+    "ktplVnd": 4066133932,
+    "lnstVnd": 7306133932,
+    "method": "table_vnd_sum"
+  },
+  "MGG": {
+    "ticker": "MGG",
+    "year": 2026,
+    "ktplRate": 20,
+    "ktplVnd": 4993215712,
+    "lnstVnd": 24966078562,
+    "method": "table_vnd_sum"
+  },
+  "MH3": {
+    "ticker": "MH3",
+    "year": 2026,
+    "ktplRate": 6.44,
+    "ktplVnd": 2754000000,
+    "lnstVnd": 42755648125,
+    "method": "table_vnd_sum"
+  },
+  "MHC": {
+    "ticker": "MHC",
+    "year": 2026,
+    "ktplRate": 0,
+    "ktplVnd": 0,
+    "lnstVnd": 172856249661,
+    "method": "table_zero"
+  },
+  "MIG": {
+    "ticker": "MIG",
+    "year": 2026,
+    "ktplRate": 6,
+    "ktplVnd": null,
+    "lnstVnd": null,
+    "method": "table_pct_sum"
+  },
+  "MKP": {
+    "ticker": "MKP",
+    "year": 2026,
+    "ktplRate": 16,
+    "ktplVnd": 688216197,
+    "lnstVnd": 4301351234,
+    "method": "table_vnd_sum"
+  },
+  "MML": {
+    "ticker": "MML",
+    "year": 2026,
+    "ktplRate": 0,
+    "ktplVnd": null,
+    "lnstVnd": null,
+    "method": "direct_regex"
+  },
+  "MNB": {
+    "ticker": "MNB",
+    "year": 2026,
+    "ktplRate": 18,
+    "ktplVnd": 11806962698,
+    "lnstVnd": 65594237212,
+    "method": "table_vnd_sum"
+  },
+  "MPY": {
+    "ticker": "MPY",
+    "year": 2026,
+    "ktplRate": 53.02,
+    "ktplVnd": null,
+    "lnstVnd": 9118624895,
+    "method": "direct_regex"
+  },
+  "MQN": {
+    "ticker": "MQN",
+    "year": 2026,
+    "ktplRate": 20.01,
+    "ktplVnd": 7397772721,
+    "lnstVnd": 36967800118,
+    "method": "table_vnd_sum"
+  },
+  "MSH": {
+    "ticker": "MSH",
+    "year": 2026,
+    "ktplRate": 4.22,
+    "ktplVnd": 28535048670,
+    "lnstVnd": 675772206144,
+    "method": "table_vnd_sum"
+  },
+  "MSR": {
+    "ticker": "MSR",
+    "year": 2026,
+    "ktplRate": 0,
+    "ktplVnd": 0,
+    "lnstVnd": null,
+    "method": "table_zero"
+  },
+  "MST": {
+    "ticker": "MST",
+    "year": 2026,
+    "ktplRate": 0,
+    "ktplVnd": 0,
+    "lnstVnd": 22788172293,
+    "method": "table_zero"
+  },
+  "MTG": {
+    "ticker": "MTG",
+    "year": 2026,
+    "ktplRate": 6.34,
+    "ktplVnd": 277435064,
+    "lnstVnd": 4374350649,
+    "method": "table_vnd_sum"
+  },
+  "MTH": {
+    "ticker": "MTH",
+    "year": 2026,
+    "ktplRate": 3,
+    "ktplVnd": 414494989,
+    "lnstVnd": 13816499659,
+    "method": "table_vnd_sum"
+  },
+  "MTL": {
+    "ticker": "MTL",
+    "year": 2026,
+    "ktplRate": 50,
+    "ktplVnd": null,
+    "lnstVnd": null,
+    "method": "table_pct_sum"
+  },
+  "MTP": {
+    "ticker": "MTP",
+    "year": 2026,
+    "ktplRate": 3,
+    "ktplVnd": 543985479,
+    "lnstVnd": 18132849284,
+    "method": "table_vnd_sum"
+  },
+  "MTV": {
+    "ticker": "MTV",
+    "year": 2026,
+    "ktplRate": 61.94,
+    "ktplVnd": 6596325712,
+    "lnstVnd": 10648875712,
+    "method": "table_vnd_sum"
+  },
+  "MVN": {
+    "ticker": "MVN",
+    "year": 2026,
+    "ktplRate": 8.48,
+    "ktplVnd": 56951795544,
+    "lnstVnd": 671553523320,
+    "method": "table_vnd_sum"
+  },
+  "NAB": {
+    "ticker": "NAB",
+    "year": 2026,
+    "ktplRate": 1.43,
+    "ktplVnd": 60000000000,
+    "lnstVnd": 4182234064738,
+    "method": "table_vnd_sum"
+  },
+  "NAF": {
+    "ticker": "NAF",
+    "year": 2026,
+    "ktplRate": 5,
+    "ktplVnd": 7260000000,
+    "lnstVnd": 7260000000,
+    "method": "table_pct_sum"
+  },
+  "NAP": {
+    "ticker": "NAP",
+    "year": 2026,
+    "ktplRate": 25.17,
+    "ktplVnd": 6207012991,
+    "lnstVnd": 24662025241,
+    "method": "table_vnd_sum"
+  },
+  "NAS": {
+    "ticker": "NAS",
+    "year": 2026,
+    "ktplRate": 10,
+    "ktplVnd": null,
+    "lnstVnd": 27303960489,
+    "method": "table_pct_sum"
+  },
+  "NAW": {
+    "ticker": "NAW",
+    "year": 2026,
+    "ktplRate": 15,
+    "ktplVnd": 2955241633,
+    "lnstVnd": 19701610883,
+    "method": "table_vnd_sum"
+  },
+  "NBB": {
+    "ticker": "NBB",
+    "year": 2026,
+    "ktplRate": 4.01,
+    "ktplVnd": 353000000,
+    "lnstVnd": 8806428000,
+    "method": "table_vnd_sum"
+  },
+  "NBE": {
+    "ticker": "NBE",
+    "year": 2026,
+    "ktplRate": 25,
+    "ktplVnd": 2271833525,
+    "lnstVnd": 9087334100,
+    "method": "table_vnd_sum"
+  },
+  "NBP": {
+    "ticker": "NBP",
+    "year": 2026,
+    "ktplRate": 0,
+    "ktplVnd": null,
+    "lnstVnd": null,
+    "method": "direct_regex"
+  },
+  "NBT": {
+    "ticker": "NBT",
+    "year": 2026,
+    "ktplRate": 43.19,
+    "ktplVnd": 23330756592,
+    "lnstVnd": 54020363371,
+    "method": "table_vnd_sum"
+  },
+  "NCS": {
+    "ticker": "NCS",
+    "year": 2026,
+    "ktplRate": 11.83,
+    "ktplVnd": 8008655615,
+    "lnstVnd": 67691421983,
+    "method": "table_vnd_sum"
+  },
+  "NCT": {
+    "ticker": "NCT",
+    "year": 2026,
+    "ktplRate": 8.32,
+    "ktplVnd": 32202519503,
+    "lnstVnd": 32202519503,
+    "method": "table_pct_sum"
+  },
+  "ND2": {
+    "ticker": "ND2",
+    "year": 2026,
+    "ktplRate": 0,
+    "ktplVnd": null,
+    "lnstVnd": 214643250291,
+    "method": "direct_regex"
+  },
+  "NDN": {
+    "ticker": "NDN",
+    "year": 2026,
+    "ktplRate": 5,
+    "ktplVnd": null,
+    "lnstVnd": null,
+    "method": "table_pct_sum"
+  },
+  "NDP": {
+    "ticker": "NDP",
+    "year": 2026,
+    "ktplRate": 11,
+    "ktplVnd": 2505710882,
+    "lnstVnd": 22779189842,
+    "method": "table_vnd_sum"
+  },
+  "NDT": {
+    "ticker": "NDT",
+    "year": 2026,
+    "ktplRate": 0,
+    "ktplVnd": null,
+    "lnstVnd": 246227169,
+    "method": "direct_regex"
+  },
+  "NDX": {
+    "ticker": "NDX",
+    "year": 2026,
+    "ktplRate": 5,
+    "ktplVnd": 268318531,
+    "lnstVnd": 5366370617,
+    "method": "table_vnd_sum"
+  },
+  "NED": {
+    "ticker": "NED",
+    "year": 2026,
+    "ktplRate": 5.2,
+    "ktplVnd": 1966419480,
+    "lnstVnd": 37802189985,
+    "method": "table_vnd_sum"
+  },
+  "NET": {
+    "ticker": "NET",
+    "year": 2026,
+    "ktplRate": 0,
+    "ktplVnd": null,
+    "lnstVnd": 158682736144,
+    "method": "direct_regex"
+  },
+  "NFC": {
+    "ticker": "NFC",
+    "year": 2026,
+    "ktplRate": 10.51,
+    "ktplVnd": 14586293885,
+    "lnstVnd": 138794938853,
+    "method": "table_vnd_sum"
+  },
+  "NHA": {
+    "ticker": "NHA",
+    "year": 2026,
+    "ktplRate": 0,
+    "ktplVnd": 0,
+    "lnstVnd": 78940102487,
+    "method": "table_zero"
+  },
+  "NHH": {
+    "ticker": "NHH",
+    "year": 2026,
+    "ktplRate": 10,
+    "ktplVnd": 11260218775,
+    "lnstVnd": 112602187745,
+    "method": "table_vnd_sum"
+  },
+  "NJC": {
+    "ticker": "NJC",
+    "year": 2026,
+    "ktplRate": 20,
+    "ktplVnd": 2519068356,
+    "lnstVnd": 12595341779,
+    "method": "table_vnd_sum"
+  },
+  "NKG": {
+    "ticker": "NKG",
+    "year": 2026,
+    "ktplRate": 5,
+    "ktplVnd": 9854817519,
+    "lnstVnd": 3941927008,
+    "method": "table_pct_sum"
+  },
+  "NNC": {
+    "ticker": "NNC",
+    "year": 2026,
+    "ktplRate": 4.61,
+    "ktplVnd": 10348211124,
+    "lnstVnd": 224667025612,
+    "method": "table_vnd_sum"
+  },
+  "NNT": {
+    "ticker": "NNT",
+    "year": 2026,
+    "ktplRate": 23.98,
+    "ktplVnd": 15662815158,
+    "lnstVnd": 65308975459,
+    "method": "table_vnd_sum"
+  },
+  "NO1": {
+    "ticker": "NO1",
+    "year": 2026,
+    "ktplRate": 0,
+    "ktplVnd": null,
+    "lnstVnd": 6914231242,
+    "method": "direct_regex"
+  },
+  "NRC": {
+    "ticker": "NRC",
+    "year": 2026,
+    "ktplRate": 6,
+    "ktplVnd": 589018585,
+    "lnstVnd": 490848821,
+    "method": "table_pct_sum"
+  },
+  "NSC": {
+    "ticker": "NSC",
+    "year": 2026,
+    "ktplRate": 10.82,
+    "ktplVnd": 17154915153,
+    "lnstVnd": 158577891525,
+    "method": "table_vnd_sum"
+  },
+  "NSH": {
+    "ticker": "NSH",
+    "year": 2026,
+    "ktplRate": 0,
+    "ktplVnd": 0,
+    "lnstVnd": 3486974695,
+    "method": "table_zero"
+  },
+  "NT2": {
+    "ticker": "NT2",
+    "year": 2026,
+    "ktplRate": 5,
+    "ktplVnd": 56514240143,
+    "lnstVnd": 1130284802854,
+    "method": "table_vnd_sum"
+  },
+  "NTC": {
+    "ticker": "NTC",
+    "year": 2026,
+    "ktplRate": 4.09,
+    "ktplVnd": 13156000000,
+    "lnstVnd": 321831802648,
+    "method": "table_vnd_sum"
+  },
+  "NTH": {
+    "ticker": "NTH",
+    "year": 2026,
+    "ktplRate": 5,
+    "ktplVnd": null,
+    "lnstVnd": null,
+    "method": "table_pct_sum"
+  },
+  "NTL": {
+    "ticker": "NTL",
+    "year": 2026,
+    "ktplRate": 9.98,
+    "ktplVnd": 1740000000,
+    "lnstVnd": 17428350462,
+    "method": "table_vnd_sum"
+  },
+  "NTT": {
+    "ticker": "NTT",
+    "year": 2026,
+    "ktplRate": 0,
+    "ktplVnd": null,
+    "lnstVnd": 39500751050,
+    "method": "direct_regex"
+  },
+  "NTW": {
+    "ticker": "NTW",
+    "year": 2026,
+    "ktplRate": 19.94,
+    "ktplVnd": 3677883000,
+    "lnstVnd": 18441536422,
+    "method": "table_vnd_sum"
+  },
+  "NUE": {
+    "ticker": "NUE",
+    "year": 2026,
+    "ktplRate": 22,
+    "ktplVnd": 1626668000,
+    "lnstVnd": 7393947141,
+    "method": "table_vnd_sum"
+  },
+  "NVB": {
+    "ticker": "NVB",
+    "year": 2026,
+    "ktplRate": 0,
+    "ktplVnd": 0,
+    "lnstVnd": null,
+    "method": "no_fund_text"
+  },
+  "NVL": {
+    "ticker": "NVL",
+    "year": 2026,
+    "ktplRate": 0,
+    "ktplVnd": null,
+    "lnstVnd": null,
+    "method": "direct_regex"
+  },
+  "NVP": {
+    "ticker": "NVP",
+    "year": 2026,
+    "ktplRate": 29.75,
+    "ktplVnd": 4522051093,
+    "lnstVnd": null,
+    "method": "table_pct_sum"
+  },
+  "NVT": {
+    "ticker": "NVT",
+    "year": 2026,
+    "ktplRate": 0,
+    "ktplVnd": null,
+    "lnstVnd": null,
+    "method": "direct_regex"
+  },
+  "OCH": {
+    "ticker": "OCH",
+    "year": 2026,
+    "ktplRate": 0,
+    "ktplVnd": 0,
+    "lnstVnd": 29721678185,
+    "method": "table_zero"
+  },
+  "OGC": {
+    "ticker": "OGC",
+    "year": 2026,
+    "ktplRate": 0,
+    "ktplVnd": null,
+    "lnstVnd": null,
+    "method": "direct_regex"
+  },
+  "ONE": {
+    "ticker": "ONE",
+    "year": 2026,
+    "ktplRate": 24.65,
+    "ktplVnd": 829813596,
+    "lnstVnd": 3366222101,
+    "method": "table_vnd_sum"
+  },
+  "OPC": {
+    "ticker": "OPC",
+    "year": 2026,
+    "ktplRate": 11.03,
+    "ktplVnd": 20333881000,
+    "lnstVnd": 184320582290,
+    "method": "table_vnd_sum"
+  },
+  "ORS": {
+    "ticker": "ORS",
+    "year": 2026,
+    "ktplRate": 0,
+    "ktplVnd": 0,
+    "lnstVnd": 118498637900,
+    "method": "no_fund_text"
+  },
+  "PAC": {
+    "ticker": "PAC",
+    "year": 2026,
+    "ktplRate": 10,
+    "ktplVnd": 11768290000,
+    "lnstVnd": 117682877926,
+    "method": "table_vnd_sum"
+  },
+  "PAI": {
+    "ticker": "PAI",
+    "year": 2026,
+    "ktplRate": 15,
+    "ktplVnd": 584772668,
+    "lnstVnd": 3898484455,
+    "method": "table_vnd_sum"
+  },
+  "PAN": {
+    "ticker": "PAN",
+    "year": 2026,
+    "ktplRate": 6.86,
+    "ktplVnd": 3000000000,
+    "lnstVnd": 43727000000,
+    "method": "table_vnd_sum"
+  },
+  "PAP": {
+    "ticker": "PAP",
+    "year": 2026,
+    "ktplRate": 0,
+    "ktplVnd": 0,
+    "lnstVnd": 504690828103,
+    "method": "table_zero"
+  },
+  "PAS": {
+    "ticker": "PAS",
+    "year": 2026,
+    "ktplRate": 5,
+    "ktplVnd": 169332397,
+    "lnstVnd": 3386647937,
+    "method": "table_vnd_sum"
+  },
+  "PBT": {
+    "ticker": "PBT",
+    "year": 2026,
+    "ktplRate": 33.61,
+    "ktplVnd": 6707185697,
+    "lnstVnd": 19955170488,
+    "method": "table_vnd_sum"
+  },
+  "PCC": {
+    "ticker": "PCC",
+    "year": 2026,
+    "ktplRate": 5,
+    "ktplVnd": 1189000000,
+    "lnstVnd": 23785921968,
+    "method": "table_vnd_sum"
+  },
+  "PCE": {
+    "ticker": "PCE",
+    "year": 2026,
+    "ktplRate": 20.8,
+    "ktplVnd": 5283531218,
+    "lnstVnd": 25395669030,
+    "method": "table_vnd_sum"
+  },
+  "PCH": {
+    "ticker": "PCH",
+    "year": 2026,
+    "ktplRate": 0,
+    "ktplVnd": 0,
+    "lnstVnd": 19041677606,
+    "method": "no_fund_text"
+  },
+  "PDC": {
+    "ticker": "PDC",
+    "year": 2026,
+    "ktplRate": 0,
+    "ktplVnd": null,
+    "lnstVnd": 1986476186,
+    "method": "direct_regex"
+  },
+  "PDN": {
+    "ticker": "PDN",
+    "year": 2026,
+    "ktplRate": 6.26,
+    "ktplVnd": null,
+    "lnstVnd": null,
+    "method": "direct_regex"
+  },
+  "PDR": {
+    "ticker": "PDR",
+    "year": 2026,
+    "ktplRate": 66.67,
+    "ktplVnd": 10300000000,
+    "lnstVnd": 15450000000,
+    "method": "table_vnd_sum"
+  },
+  "PDV": {
+    "ticker": "PDV",
+    "year": 2026,
+    "ktplRate": 5.58,
+    "ktplVnd": null,
+    "lnstVnd": null,
+    "method": "table_pct_sum"
+  },
+  "PET": {
+    "ticker": "PET",
+    "year": 2026,
+    "ktplRate": 2.06,
+    "ktplVnd": 3002432682,
+    "lnstVnd": 145880005434,
+    "method": "table_vnd_sum"
+  },
+  "PFL": {
+    "ticker": "PFL",
+    "year": 2026,
+    "ktplRate": 0,
+    "ktplVnd": 0,
+    "lnstVnd": 7354034569,
+    "method": "no_fund_text"
+  },
+  "PGB": {
+    "ticker": "PGB",
+    "year": 2026,
+    "ktplRate": 0,
+    "ktplVnd": null,
+    "lnstVnd": 580863057920,
+    "method": "direct_regex"
+  },
+  "PGC": {
+    "ticker": "PGC",
+    "year": 2026,
+    "ktplRate": 35.37,
+    "ktplVnd": 79245792234,
+    "lnstVnd": null,
+    "method": "table_pct_sum"
+  },
+  "PGI": {
+    "ticker": "PGI",
+    "year": 2026,
+    "ktplRate": 30.05,
+    "ktplVnd": 73795280411,
+    "lnstVnd": 245548590131,
+    "method": "table_vnd_sum"
+  },
+  "PGN": {
+    "ticker": "PGN",
+    "year": 2026,
+    "ktplRate": 0,
+    "ktplVnd": 0,
+    "lnstVnd": 1886273838,
+    "method": "table_zero"
+  },
+  "PGS": {
+    "ticker": "PGS",
+    "year": 2026,
+    "ktplRate": 8.7,
+    "ktplVnd": 10000000000,
+    "lnstVnd": 115002514043,
+    "method": "table_vnd_sum"
+  },
+  "PHN": {
+    "ticker": "PHN",
+    "year": 2026,
+    "ktplRate": 2.85,
+    "ktplVnd": 1000000000,
+    "lnstVnd": 35092607770,
+    "method": "table_vnd_sum"
+  },
+  "PHP": {
+    "ticker": "PHP",
+    "year": 2026,
+    "ktplRate": 6.76,
+    "ktplVnd": 66191000000,
+    "lnstVnd": 979629760627,
+    "method": "table_vnd_sum"
+  },
+  "PHR": {
+    "ticker": "PHR",
+    "year": 2026,
+    "ktplRate": 22.68,
+    "ktplVnd": null,
+    "lnstVnd": null,
+    "method": "table_pct_sum"
+  },
+  "PIC": {
+    "ticker": "PIC",
+    "year": 2026,
+    "ktplRate": 17.22,
+    "ktplVnd": 4416880000,
+    "lnstVnd": 25656665565,
+    "method": "table_vnd_sum"
+  },
+  "PIS": {
+    "ticker": "PIS",
+    "year": 2026,
+    "ktplRate": 5.82,
+    "ktplVnd": 1750000000,
+    "lnstVnd": 30051262862,
+    "method": "table_vnd_sum"
+  },
+  "PJC": {
+    "ticker": "PJC",
+    "year": 2026,
+    "ktplRate": 39.04,
+    "ktplVnd": 14285083333,
+    "lnstVnd": 36587539076,
+    "method": "table_vnd_sum"
+  },
+  "PLC": {
+    "ticker": "PLC",
+    "year": 2026,
+    "ktplRate": 0,
+    "ktplVnd": 0,
+    "lnstVnd": 12376775838,
+    "method": "no_fund_text"
+  },
+  "PMB": {
+    "ticker": "PMB",
+    "year": 2026,
+    "ktplRate": 40,
+    "ktplVnd": 31533278236,
+    "lnstVnd": 20173278236,
+    "method": "table_pct_sum"
+  },
+  "PMC": {
+    "ticker": "PMC",
+    "year": 2026,
+    "ktplRate": 27.73,
+    "ktplVnd": null,
+    "lnstVnd": null,
+    "method": "table_pct_sum"
+  },
+  "PMP": {
+    "ticker": "PMP",
+    "year": 2026,
+    "ktplRate": 15,
+    "ktplVnd": null,
+    "lnstVnd": null,
+    "method": "table_pct_sum"
+  },
+  "PMS": {
+    "ticker": "PMS",
+    "year": 2026,
+    "ktplRate": 5.5,
+    "ktplVnd": 1738400000,
+    "lnstVnd": 31634400702,
+    "method": "table_vnd_sum"
+  },
+  "PMW": {
+    "ticker": "PMW",
+    "year": 2026,
+    "ktplRate": 10,
+    "ktplVnd": null,
+    "lnstVnd": null,
+    "method": "table_pct_sum"
+  },
+  "PNP": {
+    "ticker": "PNP",
+    "year": 2026,
+    "ktplRate": 49.3,
+    "ktplVnd": 21196429902,
+    "lnstVnd": 42991527017,
+    "method": "table_vnd_sum"
+  },
+  "PNT": {
+    "ticker": "PNT",
+    "year": 2026,
+    "ktplRate": 10,
+    "ktplVnd": 694381311.8,
+    "lnstVnd": 6943813118,
+    "method": "table_vnd_sum"
+  },
+  "POS": {
+    "ticker": "POS",
+    "year": 2026,
+    "ktplRate": 13.7,
+    "ktplVnd": null,
+    "lnstVnd": null,
+    "method": "table_pct_sum"
+  },
+  "POT": {
+    "ticker": "POT",
+    "year": 2026,
+    "ktplRate": 19.85,
+    "ktplVnd": 2164799996,
+    "lnstVnd": 10903288646,
+    "method": "table_vnd_sum"
+  },
+  "POV": {
+    "ticker": "POV",
+    "year": 2026,
+    "ktplRate": 27.47,
+    "ktplVnd": 2849185183,
+    "lnstVnd": 10372962958,
+    "method": "table_vnd_sum"
+  },
+  "POW": {
+    "ticker": "POW",
+    "year": 2026,
+    "ktplRate": 15.5,
+    "ktplVnd": 260944563333,
+    "lnstVnd": 1683990407928,
+    "method": "table_vnd_sum"
+  },
+  "PPC": {
+    "ticker": "PPC",
+    "year": 2026,
+    "ktplRate": 31.52,
+    "ktplVnd": 52065256410,
+    "lnstVnd": 165179498132,
+    "method": "table_vnd_sum"
+  },
+  "PPS": {
+    "ticker": "PPS",
+    "year": 2026,
+    "ktplRate": 20,
+    "ktplVnd": 2988446102,
+    "lnstVnd": 14942230509,
+    "method": "table_vnd_sum"
+  },
+  "PPT": {
+    "ticker": "PPT",
+    "year": 2026,
+    "ktplRate": 0,
+    "ktplVnd": 0,
+    "lnstVnd": 4628607576,
+    "method": "table_zero"
+  },
+  "PPY": {
+    "ticker": "PPY",
+    "year": 2026,
+    "ktplRate": 9.79,
+    "ktplVnd": 127663815,
+    "lnstVnd": 1304095261,
+    "method": "table_vnd_sum"
+  },
+  "PRC": {
+    "ticker": "PRC",
+    "year": 2026,
+    "ktplRate": 0,
+    "ktplVnd": 0,
+    "lnstVnd": 2937321879,
+    "method": "table_zero"
+  },
+  "PRT": {
+    "ticker": "PRT",
+    "year": 2026,
+    "ktplRate": 21.3,
+    "ktplVnd": 12020890748,
+    "lnstVnd": 56433878280,
+    "method": "table_vnd_sum"
+  },
+  "PSN": {
+    "ticker": "PSN",
+    "year": 2026,
+    "ktplRate": 15,
+    "ktplVnd": null,
+    "lnstVnd": null,
+    "method": "direct_regex"
+  },
+  "PSW": {
+    "ticker": "PSW",
+    "year": 2026,
+    "ktplRate": 20,
+    "ktplVnd": null,
+    "lnstVnd": null,
+    "method": "table_pct_sum"
+  },
+  "PTB": {
+    "ticker": "PTB",
+    "year": 2026,
+    "ktplRate": 5,
+    "ktplVnd": null,
+    "lnstVnd": null,
+    "method": "table_pct_sum"
   }
 }

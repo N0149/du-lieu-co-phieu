@@ -1,3 +1,6 @@
+import fs from 'node:fs'
+import path from 'node:path'
+import { DatabaseSync } from 'node:sqlite'
 import crypto from 'crypto'
 
 const KEY_HEX = '19dd3af428f4cf7d68864cd4c87d8d1c5b489932e84b93ac6528a0dd403a5725'
@@ -81,108 +84,101 @@ function decryptBinaryBuffer(buf: Buffer): any {
   return JSON.parse(decrypted)
 }
 
-/** Lấy danh sách báo cáo thị trường với bộ lọc và phân trang */
+const DB_REPORTS_PATH = path.join(process.cwd(), 'data', 'industry_reports.db')
+
+/** Lấy danh sách báo cáo thị trường với bộ lọc và phân trang từ SQLite nội bộ (0ms, 100% offline) */
 export async function fetchMarketReports(
   page = 1,
   pageSize = 20,
   search = '',
   sourceFilter = ''
 ): Promise<MarketReportsResult> {
-  try {
-    const url = `https://api.ruatichsan.com/api/v1/data/public/analyst-reports/market?page=${page}&page_size=${pageSize}`
+  if (fs.existsSync(DB_REPORTS_PATH)) {
+    try {
+      const db = new DatabaseSync(DB_REPORTS_PATH, { readOnly: true })
+      try {
+        const conditions: string[] = []
+        const params: any[] = []
 
-    const res = await fetch(url, {
-      headers: {
-        'User-Agent':
-          'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
-        Accept: 'application/octet-stream, application/json',
-      },
-      next: { revalidate: 1800 }, // Cache 30 phút
-    })
-
-    if (!res.ok) {
-      throw new Error(`HTTP error ${res.status}`)
-    }
-
-    const arrayBuf = await res.arrayBuffer()
-    const buf = Buffer.from(arrayBuf)
-    const rawData = decryptBinaryBuffer(buf)
-
-    const rawReports = rawData?.reports || []
-    const total = rawData?.total || rawReports.length
-
-    // Chuẩn hóa danh sách báo cáo
-    const reports: AnalystReportItem[] = rawReports.map((r: any) => {
-      const rawDate = r.date || ''
-      let displayDate = rawDate
-      if (rawDate.includes('-')) {
-        const parts = rawDate.split('-')
-        if (parts.length === 3) {
-          displayDate = `${parts[2]}/${parts[1]}/${parts[0]}`
+        if (search && search.trim()) {
+          conditions.push('(title LIKE ? OR description LIKE ? OR source LIKE ?)')
+          const q = `%${search.trim()}%`
+          params.push(q, q, q)
         }
+
+        if (sourceFilter && sourceFilter !== 'ALL') {
+          conditions.push('source = ?')
+          params.push(sourceFilter)
+        }
+
+        const whereSql = conditions.length > 0 ? `WHERE ${conditions.join(' AND ')}` : ''
+
+        const countRow = db
+          .prepare(`SELECT COUNT(1) as total FROM industry_reports ${whereSql}`)
+          .get(...params) as any
+        const total = countRow?.total || 0
+        const totalPages = Math.max(1, Math.ceil(total / pageSize))
+        const offset = (Math.max(1, page) - 1) * pageSize
+
+        const rows = db
+          .prepare(
+            `SELECT id, slug, title, source, date, display_date, scope, sector_name,
+                    symbol, description, page_count, download_url, thumbnail_url,
+                    recommendation, target_price
+             FROM industry_reports
+             ${whereSql}
+             ORDER BY date DESC
+             LIMIT ? OFFSET ?`
+          )
+          .all(...params, pageSize, offset) as any[]
+
+        const sourceRows = db
+          .prepare(
+            `SELECT DISTINCT source FROM industry_reports WHERE source IS NOT NULL AND source != ''`
+          )
+          .all() as any[]
+        const availableSources = sourceRows.map((r) => r.source).sort()
+
+        const reports: AnalystReportItem[] = rows.map((r) => ({
+          id: String(r.id),
+          slug: r.slug || '',
+          title: r.title || 'Báo cáo phân tích thị trường',
+          source: r.source || 'Khác',
+          date: r.display_date || r.date || '',
+          rawDate: r.date || '',
+          symbol: r.symbol || null,
+          scope: r.scope || 'sector',
+          sectorName: r.sector_name || null,
+          description: r.description || '',
+          recommendation: r.recommendation || null,
+          targetPrice: r.target_price != null ? Number(r.target_price) : null,
+          pageCount: Number(r.page_count) || 1,
+          downloadUrl: r.download_url || '',
+          thumbnailUrl: r.thumbnail_url || '',
+        }))
+
+        return {
+          total,
+          page,
+          pageSize,
+          totalPages,
+          reports,
+          availableSources,
+        }
+      } finally {
+        db.close()
       }
-
-      const detectedSource = detectBrokerSource(r.title || '', r.description || '', r.source)
-
-      return {
-        id: String(r.id),
-        slug: r.slug || '',
-        title: r.title || 'Báo cáo phân tích thị trường',
-        source: detectedSource,
-        date: displayDate,
-        rawDate,
-        symbol: r.symbol || null,
-        scope: r.scope || 'market',
-        sectorName: r.sector_name || null,
-        description: r.description || '',
-        recommendation: r.recommendation || null,
-        targetPrice: r.target_price != null ? Number(r.target_price) : null,
-        pageCount: Number(r.page_count) || 1,
-        downloadUrl: r.download_url || (r.pdf_key ? `https://cdn.ruatichsan.com/${r.pdf_key}` : ''),
-        thumbnailUrl: r.thumbnail_url || (r.thumb_key ? `https://cdn.ruatichsan.com/${r.thumb_key}` : ''),
-      }
-    })
-
-    // Lọc tìm kiếm nếu có
-    let filteredReports = reports
-    if (search && search.trim()) {
-      const query = search.trim().toLowerCase()
-      filteredReports = filteredReports.filter(
-        (r) =>
-          r.title.toLowerCase().includes(query) ||
-          r.description.toLowerCase().includes(query) ||
-          (r.source && r.source.toLowerCase().includes(query))
-      )
+    } catch (err) {
+      console.error('[fetchMarketReports] Lỗi đọc SQLite:', err)
     }
+  }
 
-    if (sourceFilter && sourceFilter !== 'ALL') {
-      filteredReports = filteredReports.filter((r) => r.source === sourceFilter)
-    }
-
-    // Danh sách nguồn CTCK có sẵn
-    const availableSources = Array.from(
-      new Set(reports.map((r) => r.source).filter((s): s is string => Boolean(s && s !== '—')))
-    ).sort()
-
-    const totalPages = Math.ceil(total / pageSize)
-
-    return {
-      total,
-      page,
-      pageSize,
-      totalPages,
-      reports: filteredReports,
-      availableSources,
-    }
-  } catch (error) {
-    console.error('[Reports Service Error]:', error)
-    return {
-      total: 0,
-      page,
-      pageSize,
-      totalPages: 1,
-      reports: [],
-      availableSources: [],
-    }
+  return {
+    total: 0,
+    page,
+    pageSize,
+    totalPages: 1,
+    reports: [],
+    availableSources: [],
   }
 }

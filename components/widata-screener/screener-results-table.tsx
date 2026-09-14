@@ -24,6 +24,8 @@ import {
 interface ScreenerResultsTableProps {
   stocks: ScreenerStockItem[]
   conditions?: ActiveCondition[]
+  isFilterPanelOpen?: boolean
+  onToggleFilterPanel?: () => void
 }
 
 const PAGE_SIZE = 25
@@ -99,6 +101,8 @@ function getCriterionColor(
 export function ScreenerResultsTable({
   stocks,
   conditions,
+  isFilterPanelOpen = true,
+  onToggleFilterPanel,
 }: ScreenerResultsTableProps) {
   const [sortCriterionId, setSortCriterionId] = useState<string>('ticker')
   const [sortOrder, setSortOrder] = useState<'asc' | 'desc'>('asc')
@@ -249,12 +253,23 @@ export function ScreenerResultsTable({
           </div>
         </div>
 
-        {/* Nút Xuất CSV & Sao chép mã */}
+        {/* Nút Thu gọn bộ lọc, Xuất CSV & Sao chép mã */}
         <div className="flex items-center gap-2 text-xs">
+          {onToggleFilterPanel && (
+            <button
+              type="button"
+              onClick={onToggleFilterPanel}
+              className="flex h-8 items-center gap-1.5 rounded-lg border border-white/10 bg-[#1f2430] px-3 font-medium text-foreground transition-colors hover:bg-white/10 cursor-pointer"
+            >
+              <SlidersHorizontal className="size-3.5 text-primary" />
+              <span>{isFilterPanelOpen ? 'Thu gọn bộ lọc' : 'Mở rộng bộ lọc'}</span>
+            </button>
+          )}
+
           <button
             type="button"
             onClick={handleCopyTickers}
-            className="flex h-8 items-center gap-1.5 rounded-lg border border-white/10 bg-[#1f2430] px-3 font-medium text-foreground transition-colors hover:bg-white/10"
+            className="flex h-8 items-center gap-1.5 rounded-lg border border-white/10 bg-[#1f2430] px-3 font-medium text-foreground transition-colors hover:bg-white/10 cursor-pointer"
           >
             {copied ? (
               <Check className="size-3.5 text-positive" />
@@ -267,7 +282,7 @@ export function ScreenerResultsTable({
           <button
             type="button"
             onClick={handleExportCsv}
-            className="flex h-8 items-center gap-1.5 rounded-lg border border-white/10 bg-[#1f2430] px-3 font-medium text-foreground transition-colors hover:bg-white/10"
+            className="flex h-8 items-center gap-1.5 rounded-lg border border-white/10 bg-[#1f2430] px-3 font-medium text-foreground transition-colors hover:bg-white/10 cursor-pointer"
           >
             <Download className="size-3.5 text-muted-foreground" />
             <span>Xuất CSV</span>
@@ -283,7 +298,7 @@ export function ScreenerResultsTable({
               {/* Cột Mã CK (Cố định bên trái) */}
               <th
                 onClick={() => handleSort('ticker')}
-                className="sticky left-0 z-20 bg-[#1a1f2c] cursor-pointer px-4 py-3 hover:text-foreground whitespace-nowrap shadow-[2px_0_4px_rgba(0,0,0,0.3)] w-[120px]"
+                className="sticky left-0 z-20 bg-[#1a1f2c] cursor-pointer px-4 py-3 hover:text-foreground whitespace-nowrap shadow-[2px_0_4px_rgba(0,0,0,0.3)] w-[120px] min-w-[120px]"
               >
                 Mã CK {renderSortIcon('ticker')}
               </th>
@@ -293,7 +308,7 @@ export function ScreenerResultsTable({
                 <th
                   key={c.id}
                   onClick={() => handleSort(c.id)}
-                  className="cursor-pointer px-4 py-3 text-right hover:text-foreground whitespace-nowrap"
+                  className="cursor-pointer px-4 py-3 text-right hover:text-foreground whitespace-nowrap min-w-[160px]"
                 >
                   <span>{c.label}</span>
                   {renderSortIcon(c.id)}
@@ -321,7 +336,7 @@ export function ScreenerResultsTable({
                     className="group transition-colors hover:bg-white/[0.03]"
                   >
                     {/* Mã CK */}
-                    <td className="sticky left-0 z-10 bg-[#161a23] group-hover:bg-[#1d222e] px-4 py-2.5 font-bold shadow-[2px_0_4px_rgba(0,0,0,0.3)]">
+                    <td className="sticky left-0 z-10 bg-[#161a23] group-hover:bg-[#1d222e] px-4 py-2.5 font-bold shadow-[2px_0_4px_rgba(0,0,0,0.3)] w-[120px] min-w-[120px]">
                       <Link
                         href={stockHref}
                         className="inline-flex items-center gap-1.5 text-primary hover:underline"
@@ -342,7 +357,7 @@ export function ScreenerResultsTable({
                         <td
                           key={c.id}
                           className={cn(
-                            'px-4 py-2.5 text-right whitespace-nowrap',
+                            'px-4 py-2.5 text-right whitespace-nowrap min-w-[160px]',
                             getCriterionColor(val, c),
                           )}
                         >

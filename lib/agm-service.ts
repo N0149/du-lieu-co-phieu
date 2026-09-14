@@ -236,6 +236,20 @@ export function getAgmReport(ticker: string, targetYear = 2026): AgmReportData |
   const tableCount = (raw.match(/\|[\s-:]+\|/g) || []).length
 
   const agmKtpl = getAgmKtplInfo(sym)
+  let ktplRate = agmKtpl?.ktplRate ?? null
+  let ktplVnd = agmKtpl?.ktplVnd ?? null
+
+  // Fallback: nếu chưa có trong snapshot, bóc tách trực tiếp on-the-fly từ nội dung markdown
+  if (ktplRate === null && raw) {
+    const extracted = extractKtplFromMarkdown(raw, sym)
+    if (extracted !== null) {
+      ktplRate = extracted.rate
+      ktplVnd = extracted.ktplVnd ?? null
+      if (agmKtplCache) {
+        agmKtplCache[sym] = { ticker: sym, year: selectedYear, ktplRate, ktplVnd }
+      }
+    }
+  }
 
   return {
     ticker: sym,
@@ -245,14 +259,180 @@ export function getAgmReport(ticker: string, targetYear = 2026): AgmReportData |
     hasReport: true,
     sections,
     availableYears,
-    ktplRate: agmKtpl?.ktplRate ?? null,
-    ktplVnd: agmKtpl?.ktplVnd ?? null,
+    ktplRate,
+    ktplVnd,
     stats: {
       hasQa,
       hasCapitalIncrease,
       tableCount,
     },
   }
+}
+
+export function extractKtplFromMarkdown(content: string, ticker = ''): { rate: number; method: string; ktplVnd: number | null; lnstVnd: number | null } | null {
+  let targetText = content
+  const m2Match = content.match(/##\s+MỤC\s+2[:\s]+([\s\S]*?)(?=##\s+MỤC|\$)/i)
+  if (m2Match) targetText = m2Match[1]
+
+  const part2Split = targetText.split(/###\s*2\.?\s*Kế\s*hoạch/i)
+  const currentYearText = part2Split.length > 1 ? part2Split[0] : targetText
+  const lines = currentYearText.split('\n')
+
+  let lnst: number | null = null
+  for (const line of lines) {
+    if (!line.includes('|')) continue
+    if (/^\|?\s*[\d.*-]*\s*trích/i.test(line)) continue
+    if (/chưa\s*phân\s*phối\s*trên\s*bctc|lũy\s*kế|năm\s*2024|năm\s*trước|đầu\s*năm/i.test(line)) continue
+
+    if (/lợi\s*nhuận\s*sau\s*thuế|lnst/i.test(line) && /2025|năm\s*nay|phát\s*sinh/i.test(line)) {
+      const numMatches = [...line.matchAll(/\b\d{1,3}(?:[.,]\d{3})+(?:[.,]\d+)?\b/g)]
+      if (numMatches.length > 0) {
+        const vals = numMatches.map((m) => parseFloat(m[0].replace(/\./g, '').replace(',', '.'))).filter((v) => v > 100000000)
+        if (vals.length > 0) {
+          if (/kế\s*hoạch.*thực\s*hiện/i.test(currentYearText) && vals.length >= 2) {
+            lnst = vals[1]
+          } else {
+            lnst = vals[vals.length - 1]
+          }
+          break
+        }
+      }
+    }
+  }
+
+  if (!lnst) {
+    for (const line of lines) {
+      if (!line.includes('|')) continue
+      if (/^\|?\s*[\d.*-]*\s*trích/i.test(line)) continue
+      if (/chưa\s*phân\s*phối\s*trên\s*bctc|lũy\s*kế|năm\s*2024|năm\s*trước|đầu\s*năm|kế\s*hoạch\s*2026/i.test(line)) continue
+      if (/lợi\s*nhuận\s*sau\s*thuế|lnst/i.test(line)) {
+        const numMatches = [...line.matchAll(/\b\d{1,3}(?:[.,]\d{3})+(?:[.,]\d+)?\b/g)]
+        const vals = numMatches.map((m) => parseFloat(m[0].replace(/\./g, '').replace(',', '.'))).filter((v) => v > 100000000)
+        if (vals.length > 0) {
+          if (/kế\s*hoạch.*thực\s*hiện/i.test(currentYearText) && vals.length >= 2) {
+            lnst = vals[1]
+          } else {
+            lnst = vals[vals.length - 1]
+          }
+          break
+        }
+      }
+    }
+  }
+
+  const nonShareholderRegex = /(khen\s*thưởng|phúc\s*lợi|ktpl|thưởng\s*(?:ban\s*)?điều\s*hành|thưởng\s*người\s*quản\s*lý|thưởng\s*nql|thưởng\s*bđh|thù\s*lao\s*hđqt|thù\s*lao\s*(?:hội\s*đồng\s*quản\s*trị|bks|ban\s*kiểm\s*soát)|thưởng\s*(?:hđqt|hội\s*đồng\s*quản\s*trị)|công\s*tác\s*xã\s*hội|từ\s*thiện)/i
+  const equityRegex = /(đầu\s*tư\s*phát\s*triển|dự\s*trữ\s*(bắt\s*buộc|bổ\s*sung)|dự\s*phòng\s*tài\s*chính|cổ\s*tức|chưa\s*phân\s*phối|còn\s*lại|chuyển\s*sang|năm\s*trước|tích\s*lũy|thành\s*phần|chỉ\s*tiêu|cộng\s*các\s*quỹ|trích\s*lập\s*các\s*quỹ|tổng\s*lợi\s*nhuận|tổng\s*cộng)/i
+
+  const items: { text: string; vnd: number | null; pct: number | null; isTrongDo: boolean }[] = []
+  const seenLines = new Set<string>()
+
+  for (const line of lines) {
+    if (!line.includes('|')) continue
+    if (/kế\s*hoạch\s*2026|dự\s*kiến\s*2026/i.test(line)) continue
+    if (!nonShareholderRegex.test(line)) continue
+    if (equityRegex.test(line)) continue
+
+    const cleanKey = line.replace(/[^a-zA-Z0-9\u00C0-\u024F\u1E00-\u1EFF]/g, '').slice(0, 25)
+    if (seenLines.has(cleanKey)) continue
+    seenLines.add(cleanKey)
+
+    const isTrongDo = /trong\s*đó/i.test(line)
+    const numMatches = [...line.matchAll(/\b\d{1,3}(?:[.,]\d{3})+(?:[.,]\d+)?\b/g)]
+    const vals = numMatches.map((m) => parseFloat(m[0].replace(/\./g, '').replace(',', '.'))).filter((v) => v > 100000)
+
+    const pctMatch = line.match(/(?:~|\s)?(\d+(?:[.,]\d+)?)\s*%\s*(?:lnst)?/i)
+    let pct: number | null = null
+    if (pctMatch && !/tán\s*thành/i.test(line)) {
+      pct = parseFloat(pctMatch[1].replace(',', '.'))
+    }
+
+    let vnd: number | null = null
+    if (vals.length > 0) {
+      if (/kế\s*hoạch.*thực\s*hiện/i.test(currentYearText) && vals.length >= 2) {
+        vnd = vals[1]
+      } else {
+        vnd = vals[vals.length - 1]
+      }
+    }
+
+    if (vnd !== null || pct !== null) {
+      items.push({ text: line.trim(), vnd, pct, isTrongDo })
+    }
+  }
+
+  const parentItems = items.filter((it) => !it.isTrongDo)
+  const finalItems = parentItems.length > 0 ? parentItems : items
+
+  let totalVnd = 0
+  let totalPct = 0
+  finalItems.forEach((it) => {
+    if (it.vnd) totalVnd += it.vnd
+    if (it.pct) totalPct += it.pct
+  })
+
+  if (lnst && totalVnd > 0 && totalVnd < lnst) {
+    const rate = Math.round((totalVnd / lnst) * 10000) / 100
+    return {
+      rate,
+      method: 'table_vnd_sum',
+      ktplVnd: totalVnd,
+      lnstVnd: lnst,
+    }
+  }
+
+  if (totalPct > 0 && totalPct <= 100) {
+    return {
+      rate: Math.round(totalPct * 100) / 100,
+      method: 'table_pct_sum',
+      ktplVnd: totalVnd > 0 ? totalVnd : null,
+      lnstVnd: lnst ?? null,
+    }
+  }
+
+  const patterns = [
+    /(?:tỷ\s*lệ\s*trích\s*(?:lập\s*)?(?:quỹ\s*)?(?:khen\s*thưởng\s*[,/&]?\s*phúc\s*lợi|ktpl)|quỹ\s*khen\s*thưởng\s*[,/&]?\s*phúc\s*lợi)[^:\n*]{0,80}[:*]+\s*(?:có\s*trích[^*]+)?(?:\*\*)?([0-9]+(?:[.,][0-9]+)?)\s*%/i,
+    /(?:khen\s*thưởng\s*[,/&]?\s*phúc\s*lợi|ktpl)[^\n]{0,120}?(?:chiếm|tương\s*đương|tương\s*ứng)\s*(?:khoảng|~)?\s*(?:\*\*)?(\d+(?:[.,]\d+)?)\s*%/i,
+    /\(\s*(?:tương\s*đương|tương\s*ứng|chiếm)\s*(?:khoảng|~)?\s*(?:\*\*)?(\d+(?:[.,]\d+)?)\s*%\s*(?:\*\*)?\s*lnst/i,
+    /(?:khen\s*thưởng\s*[,/&]?\s*phúc\s*lợi|ktpl)\s*\(\s*0?(\d+(?:[.,]\d+)?)\s*%\s*lnst\s*\)/i,
+    /(?:trích|trích\s*lập)\s*(?:\*\*)?(\d+(?:[.,]\d+)?)\s*%(?:\*\*)?\s*(?:lnst|lợi\s*nhuận\s*sau\s*thuế)[^\n]{0,80}?(?:khen\s*thưởng|phúc\s*lợi|ktpl)/i,
+    /(?:khen\s*thưởng\s*[,/&]?\s*phúc\s*lợi|ktpl)[^\n]{0,50}?\(\s*(\d+(?:[.,]\d+)?)\s*%\s*\)/i,
+    /trích\s*(?:lập\s*)?(?:quỹ\s*)?(?:khen\s*thưởng\s*[,/&]?\s*phúc\s*lợi|ktpl)[^\n]{0,80}?(?:trích\s*)?(?:\*\*)?(\d+(?:[.,]\d+)?)\s*%(?:\*\*)?\s*(?:lnst|lợi\s*nhuận\s*sau\s*thuế)/i,
+    /trích\s*(\d+(?:[.,]\d+)?)\s*%\s*trên\s*lợi\s*nhuận\s*sau\s*thuế[^\n]{0,60}?(?:khen\s*thưởng|phúc\s*lợi|ktpl)/i,
+    /quỹ\s*khen\s*thưởng[^\n]{0,40}?trích\s*(\d+(?:[.,]\d+)?)\s*%/i,
+    /quỹ\s*phúc\s*lợi[^\n]{0,40}?trích\s*(\d+(?:[.,]\d+)?)\s*%/i,
+  ]
+
+  for (const pat of patterns) {
+    const m = targetText.match(pat)
+    if (m) {
+      const val = parseFloat(m[1].replace(',', '.'))
+      if (val <= 100) return { rate: val, method: 'direct_regex', ktplVnd: null, lnstVnd: lnst }
+    }
+  }
+
+  if (
+    /(?:không|chưa)\s*(?:thực\s*hiện\s*)?trích\s*(?:lập\s*)?(?:quỹ\s*)?(?:khen\s*thưởng|phúc\s*lợi|ktpl)/i.test(targetText) ||
+    /không\s*có\s*(?:báo\s*cáo\s*)?trích\s*lập\s*(?:riêng\s*)?(?:quỹ\s*)?(?:khen\s*thưởng|phúc\s*lợi|ktpl)/i.test(targetText) ||
+    /không\s*trích\s*(?:lập\s*)?quỹ\s*ktpl/i.test(targetText) ||
+    /tỷ\s*lệ\s*trích\s*lập\s*các\s*quỹ\s*khen\s*thưởng\s*phúc\s*lợi[^\n]{0,60}?0%/i.test(targetText) ||
+    /không\s*trích\s*(?:lập\s*)?(?:các\s*)?quỹ/i.test(targetText)
+  ) {
+    return { rate: 0, method: 'no_fund_text', ktplVnd: 0, lnstVnd: lnst }
+  }
+
+  for (const line of lines) {
+    if (!line.includes('|')) continue
+    if (!/khen\s*thưởng|ktpl|phúc\s*lợi/i.test(line)) continue
+    if (/\|\s*0\s*\|/i.test(line) || /\|\s*0\s*vnđ/i.test(line) || /\|\s*\*\*0\*\*\s*\|/i.test(line) || /\|\s*0%\s*\|/i.test(line)) {
+      return { rate: 0, method: 'table_zero', ktplVnd: 0, lnstVnd: lnst }
+    }
+  }
+
+  if (/(?:không|chưa)\s*(?:thực\s*hiện\s*)?trích\s*(?:lập\s*)?(?:quỹ\s*)?(?:khen\s*thưởng|phúc\s*lợi|ktpl)/i.test(content)) {
+    return { rate: 0, method: 'doc_no_fund', ktplVnd: 0, lnstVnd: null }
+  }
+
+  return null
 }
 
 let agmKtplCache: Record<string, { ticker: string; year: number; ktplRate: number; ktplVnd: number | null }> | null = null
@@ -273,8 +453,26 @@ export function getAllAgmKtpl(): Record<string, { ticker: string; year: number; 
 
 export function getAgmKtplInfo(ticker: string) {
   if (!ticker) return null
+  const sym = ticker.toUpperCase().trim()
   const map = getAllAgmKtpl()
-  return map[ticker.toUpperCase().trim()] || null
+  if (map[sym]) return map[sym]
+
+  // On-the-fly extract from file if not in snapshot
+  const filePath = path.join(process.cwd(), 'content', 'agm', '2026', `${sym}_ChiTiet_AGM_2026.md`)
+  const extPath = path.join(EXTERNAL_DIR, `${sym}_ChiTiet_AGM_2026.md`)
+  const targetFile = fs.existsSync(filePath) ? filePath : fs.existsSync(extPath) ? extPath : null
+  if (targetFile) {
+    try {
+      const content = fs.readFileSync(targetFile, 'utf-8')
+      const res = extractKtplFromMarkdown(content, sym)
+      if (res) {
+        const item = { ticker: sym, year: 2026, ktplRate: res.rate, ktplVnd: res.ktplVnd ?? null }
+        if (agmKtplCache) agmKtplCache[sym] = item
+        return item
+      }
+    } catch {}
+  }
+  return null
 }
 
 export function getAgmKtpl(ticker: string): number | null {

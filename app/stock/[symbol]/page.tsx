@@ -9,6 +9,24 @@ import {
   type StockDetailData,
 } from '@/lib/longlivestock'
 import { getReportsForTicker } from '@/lib/report-stocks'
+import { getLocalFinancialSnapshot } from '@/lib/local-financials'
+import { getBankAnalysisData } from '@/lib/banking-service'
+import { getStockEvaluation } from '@/lib/stock-evaluation-service'
+import { getCompanyFullProfile } from '@/lib/company-profile-service'
+import { getFinancialChartData } from '@/lib/financial-charts-service'
+import { getValuationHistory } from '@/lib/valuation-history-service'
+import { getDividendHistory } from '@/lib/dividend-history-service'
+import { getBusinessPlan } from '@/lib/business-plan-db'
+import { buildProfitStructureData } from '@/lib/profit-structure-service'
+import { buildCostBreakdownData } from '@/lib/cost-breakdown-service'
+import { buildDetailedBalanceSheetCashFlowData } from '@/lib/balance-sheet-cashflow-service'
+import { buildCapexFinancialData } from '@/lib/capex-financial-service'
+import { buildDebtDupontData } from '@/lib/debt-dupont-service'
+import { getAgmReport, getAvailableAgmTickers, getAgmKtpl } from '@/lib/agm-service'
+import { getBctcReport, getAvailableBctcTickers } from '@/lib/bctc-service'
+import { getFinancialStatements } from '@/lib/financial-statements-db'
+import { getStockArticles } from '@/lib/stock-articles-service'
+import { getLocalPriceWeekly } from '@/lib/stock-price-history-service'
 
 export async function generateMetadata({
   params,
@@ -58,69 +76,15 @@ export default async function StockDetailPage({
   const allStocks = getAllStocks()
   const manifestItem = allStocks.find((s) => s.t.toUpperCase() === ticker)
 
-  // Fetch full detailed data and core-card intelligence
-  const stockData = await fetchStockDetailData(ticker)
-
-  if (!stockData) {
+  if (!manifestItem) {
     notFound()
   }
 
-  // Lấy các bài báo cáo phân tích thực tế của mã từ kho dữ liệu
-  const reports = getReportsForTicker(ticker)
-
-  // Đọc dữ liệu chi tiết BCTC cục bộ áp dụng cho TẤT CẢ các mã cổ phiếu
-  const detailedSnapshot = await (async () => {
-    try {
-      const { getLocalFinancialSnapshot } = await import('@/lib/local-financials')
-      return getLocalFinancialSnapshot(
-        ticker,
-        stockData.company.name,
-        stockData.company.exchange,
-        stockData.financials
-      )
-    } catch {
-      return null
-    }
-  })()
-
-  // Find related stocks in same sector or group
-  const relatedStocks = allStocks
-    .filter(
-      (s) =>
-        s.t !== ticker &&
-        !s.st &&
-        (s.s === stockData?.company.sector || s.g === stockData?.company.icb_l1),
-    )
-    .sort((a, b) => (b.cap || 0) - (a.cap || 0))
-
-  // Dữ liệu phân tích & so sánh chuyên sâu ngành Ngân hàng (nếu là bank)
-  const { getBankAnalysisData } = await import('@/lib/banking-service')
-  const bankAnalysisData = getBankAnalysisData(ticker)
-
-  // Dữ liệu Đánh giá 360 & định giá P/E, P/B forward tổng hợp
-  const { getStockEvaluation } = await import('@/lib/stock-evaluation-service')
-  const evaluationData = await getStockEvaluation(ticker)
-
-  // Dữ liệu Hồ sơ doanh nghiệp mở rộng (Cổ đông, Công ty con/liên kết, Giao dịch nội bộ)
-  const { getCompanyFullProfile } = await import('@/lib/company-profile-service')
-  const companyProfileData = await getCompanyFullProfile(ticker)
-
-  // Dữ liệu Biểu đồ tài chính chuyên sâu (Quý & Năm)
-  const { getFinancialChartData } = await import('@/lib/financial-charts-service')
-  const { getValuationHistory } = await import('@/lib/valuation-history-service')
-  const { getDividendHistory } = await import('@/lib/dividend-history-service')
-  const { getBusinessPlan } = await import('@/lib/business-plan-db')
-  const { buildProfitStructureData } = await import('@/lib/profit-structure-service')
-  const { buildCostBreakdownData } = await import('@/lib/cost-breakdown-service')
-  const { buildDetailedBalanceSheetCashFlowData } = await import('@/lib/balance-sheet-cashflow-service')
-  const { buildCapexFinancialData } = await import('@/lib/capex-financial-service')
-  const { buildDebtDupontData } = await import('@/lib/debt-dupont-service')
-  const { getAgmReport, getAvailableAgmTickers, getAgmKtpl } = await import('@/lib/agm-service')
-  const { getBctcReport, getAvailableBctcTickers } = await import('@/lib/bctc-service')
-  const { getFinancialStatements } = await import('@/lib/financial-statements-db')
-  const { getStockArticles } = await import('@/lib/stock-articles-service')
-
+  // Chạy song song toàn bộ các dịch vụ dữ liệu nội bộ (100% Local-First) trong 1 Promise.all duy nhất
   const [
+    stockData,
+    evaluationData,
+    companyProfileData,
     financialChartQuarter,
     financialChartAnnual,
     valuationHistory,
@@ -135,6 +99,9 @@ export default async function StockDetailPage({
     availableBctcTickers,
     articlesData,
   ] = await Promise.all([
+    fetchStockDetailData(ticker, getLocalPriceWeekly(ticker)),
+    getStockEvaluation(ticker),
+    getCompanyFullProfile(ticker),
     getFinancialChartData(ticker, 'quarter'),
     getFinancialChartData(ticker, 'annual'),
     getValuationHistory(ticker),
@@ -147,8 +114,36 @@ export default async function StockDetailPage({
     Promise.resolve(getBctcReport(ticker, 'HopNhat')),
     Promise.resolve(getBctcReport(ticker, 'CongTyMe')),
     Promise.resolve(getAvailableBctcTickers()),
-    Promise.resolve(getStockArticles(ticker, stockData.company.name)),
+    Promise.resolve(getStockArticles(ticker, manifestItem.n)),
   ])
+
+  if (!stockData) {
+    notFound()
+  }
+
+  // Lấy các bài báo cáo phân tích thực tế của mã từ kho dữ liệu
+  const reports = getReportsForTicker(ticker)
+
+  // Đọc dữ liệu chi tiết BCTC cục bộ áp dụng cho TẤT CẢ các mã cổ phiếu
+  const detailedSnapshot = getLocalFinancialSnapshot(
+    ticker,
+    stockData.company.name,
+    stockData.company.exchange,
+    stockData.financials
+  )
+
+  // Find related stocks in same sector or group
+  const relatedStocks = allStocks
+    .filter(
+      (s) =>
+        s.t !== ticker &&
+        !s.st &&
+        (s.s === stockData?.company.sector || s.g === stockData?.company.icb_l1),
+    )
+    .sort((a, b) => (b.cap || 0) - (a.cap || 0))
+
+  // Dữ liệu phân tích & so sánh chuyên sâu ngành Ngân hàng (nếu là bank)
+  const bankAnalysisData = getBankAnalysisData(ticker)
 
   // Tính toán đồng thời các cụm biểu đồ chuyên sâu từ dữ liệu BCTC đã tải (0ms overhead)
   const profitStructureQuarter = buildProfitStructureData(ticker, 'quarter', financialStatementsQuarter)

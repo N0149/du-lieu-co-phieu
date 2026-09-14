@@ -2367,9 +2367,9 @@ export function GeneralDetailedFinancialCharts({
       </div>
 
       {/* ══════════════════════════════════════════════════════════ */}
-      {/* KHỐI 1: HIỆU QUẢ KINH DOANH CỐT LÕI (4 BIỂU ĐỒ)            */}
+      {/* KHỐI 1: HIỆU QUẢ KINH DOANH CỐT LÕI (3 BIỂU ĐỒ)            */}
       {/* ══════════════════════════════════════════════════════════ */}
-      <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-5">
+      <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-5">
         {/* ── BIỂU ĐỒ 1: DOANH THU THUẦN & TĂNG TRƯỞNG YoY ── */}
         <RevenueChartCard
           data={displayPoints}
@@ -2390,14 +2390,6 @@ export function GeneralDetailedFinancialCharts({
         <PlanChartCard
           planChartPoints={planChartPoints}
           latestPlan={latestPlan}
-        />
-
-        {/* ── BIỂU ĐỒ 4: CƠ CẤU LỢI NHUẬN TRƯỚC THUẾ (CHUẨN 100% WIDATA) ── */}
-        <ProfitStructureChartCard
-          profitPoints={profitPoints}
-          isQuarter={isQuarter}
-          globalQuarter={globalLockedQuarter}
-          latestProfit={latestProfit}
         />
       </div>
 
@@ -2515,16 +2507,24 @@ export function GeneralDetailedFinancialCharts({
       <MWGSegmentCharts symbol={symbol} />
 
       {/* ══════════════════════════════════════════════════════════ */}
-      {/* KHỐI 4: BÓC TÁCH & TỶ TRỌNG CHI PHÍ (CHUẨN WIDATA)         */}
+      {/* KHỐI: CƠ CẤU LỢI NHUẬN & BÓC TÁCH CHI PHÍ HOẠT ĐỘNG (CHUẨN HÓA) */}
       {/* ══════════════════════════════════════════════════════════ */}
       <div className="space-y-4 pt-2 border-t border-border/60">
         <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-muted-foreground">
           <Receipt className="size-4 text-rose-400" />
-          <span>Bóc Tách & Tỷ Trọng Chi Phí Hoạt Động (Phân Tích Sâu)</span>
+          <span>Cơ Cấu Lợi Nhuận & Bóc Tách Chi Phí Hoạt Động (Chuẩn Hóa)</span>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-5">
-          {/* Biểu đồ 8: Bóc Tách Chi Phí Kinh Doanh */}
+        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-5">
+          {/* ── BIỂU ĐỒ 1: CƠ CẤU LỢI NHUẬN TRƯỚC THUẾ (CHUẨN 100% WIDATA) ── */}
+          <ProfitStructureChartCard
+            profitPoints={profitPoints}
+            isQuarter={isQuarter}
+            globalQuarter={globalLockedQuarter}
+            latestProfit={latestProfit}
+          />
+
+          {/* ── BIỂU ĐỒ 2: BÓC TÁCH CHI PHÍ KINH DOANH ── */}
           <CostBreakdownChartCard
             costPoints={costPoints}
             isQuarter={isQuarter}
@@ -2532,7 +2532,7 @@ export function GeneralDetailedFinancialCharts({
             latestCost={latestCost}
           />
 
-          {/* Biểu đồ 9: Tỷ Trọng Chi Phí */}
+          {/* ── BIỂU ĐỒ 3: TỶ TRỌNG CHI PHÍ HOẠT ĐỘNG ── */}
           <CostRatioChartCard
             costPoints={costPoints}
             isQuarter={isQuarter}

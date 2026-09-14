@@ -1,0 +1,45 @@
+{
+  "symbol": "MLS",
+  "events": [
+    {
+      "date": "2014-12-31",
+      "cashVnd": 2200,
+      "stockPct": null,
+      "texts": [
+        "Trả cổ tức bằng tiền mặt - Cả năm 2014 - 2,200 VND"
+      ]
+    },
+    {
+      "date": "2015-12-31",
+      "cashVnd": 2800,
+      "stockPct": null,
+      "texts": [
+        "Trả cổ tức bằng tiền mặt - Cả năm 2015 - 2,800 VND"
+      ]
+    },
+    {
+      "date": "2020-11-26",
+      "cashVnd": 4300,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 43%"
+      ]
+    },
+    {
+      "date": "2021-06-14",
+      "cashVnd": 4000,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 40%"
+      ]
+    },
+    {
+      "date": "2021-10-19",
+      "cashVnd": 2710,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 27.1%"
+      ]
+    }
+  ]
+}

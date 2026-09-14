@@ -1,0 +1,61 @@
+{
+  "symbol": "NVP",
+  "events": [
+    {
+      "date": "2014-12-31",
+      "cashVnd": 76,
+      "stockPct": null,
+      "texts": [
+        "Trả cổ tức bằng tiền mặt - Cả năm 2014 - 76 VND"
+      ]
+    },
+    {
+      "date": "2021-07-28",
+      "cashVnd": 179.5,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 1.795%"
+      ]
+    },
+    {
+      "date": "2022-05-31",
+      "cashVnd": 118.6,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 1.186%"
+      ]
+    },
+    {
+      "date": "2023-05-28",
+      "cashVnd": 188,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 1.88%"
+      ]
+    },
+    {
+      "date": "2024-05-28",
+      "cashVnd": 220.00000000000003,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 2.20%"
+      ]
+    },
+    {
+      "date": "2025-05-28",
+      "cashVnd": 325,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 3.25%"
+      ]
+    },
+    {
+      "date": "2026-06-16",
+      "cashVnd": 350,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 3.5%"
+      ]
+    }
+  ]
+}

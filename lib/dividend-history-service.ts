@@ -1,5 +1,6 @@
 import fs from 'node:fs'
 import path from 'node:path'
+import { DatabaseSync } from 'node:sqlite'
 import crypto from 'node:crypto'
 
 export interface DividendEventItem {
@@ -32,6 +33,8 @@ async function decryptApiResponse(res: Response): Promise<any> {
   return JSON.parse(new TextDecoder().decode(decryptedBuf))
 }
 
+const DB_DIV_PATH = path.join(DATA_DIR, 'dividend_history.db')
+
 export async function getDividendHistory(symbol: string): Promise<DividendHistoryPayload | null> {
   const sym = symbol.toUpperCase().trim()
   const cacheFile = path.join(DIV_DIR, `${sym}.json`)
@@ -47,31 +50,22 @@ export async function getDividendHistory(symbol: string): Promise<DividendHistor
     } catch {}
   }
 
-  // 2. Fallback nếu chưa có
-  try {
-    const res = await fetch(`https://api.ruatichsan.com/api/v1/data/public/dividend-history/${sym}`, {
-      headers: {
-        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36',
-        Origin: 'https://ruatichsan.com',
-        Referer: `https://ruatichsan.com/company?symbol=${sym}`,
-      },
-      next: { revalidate: 86400 },
-    })
-    if (!res.ok) return null
-    const data = await decryptApiResponse(res)
-    if (data) {
+  // 2. Đọc từ SQLite dividend_history.db (1.436 mã, < 0.1ms)
+  if (fs.existsSync(DB_DIV_PATH)) {
+    try {
+      const db = new DatabaseSync(DB_DIV_PATH, { readOnly: true })
       try {
-        if (!fs.existsSync(DIV_DIR)) {
-          fs.mkdirSync(DIV_DIR, { recursive: true })
+        const row = db.prepare('SELECT events_json FROM dividend_history WHERE symbol = ?').get(sym) as any
+        if (row?.events_json) {
+          const events = JSON.parse(row.events_json)
+          if (Array.isArray(events)) {
+            return { symbol: sym, events }
+          }
         }
-        fs.writeFileSync(cacheFile, JSON.stringify(data, null, 2), 'utf-8')
-      } catch {
-        // Bỏ qua lỗi ghi disk trên môi trường read-only như Vercel
+      } finally {
+        db.close()
       }
-      return data as DividendHistoryPayload
-    }
-  } catch (err) {
-    console.error(`[DividendHistoryService] Lỗi nạp cho ${sym}:`, err)
+    } catch {}
   }
 
   return null

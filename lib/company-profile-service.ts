@@ -1,5 +1,6 @@
 import fs from 'node:fs'
 import path from 'node:path'
+import { DatabaseSync } from 'node:sqlite'
 import type {
   CompanyFullProfileData,
   ShareholderItem,
@@ -176,19 +177,32 @@ export function parseShareholderPayload(sym: string, d: any): CompanyFullProfile
   }
 }
 
+const DB_PROFILE_PATH = path.resolve(process.cwd(), 'data', 'company_profiles.db')
+
 export async function getCompanyFullProfile(symbol: string): Promise<CompanyFullProfileData | null> {
   const sym = symbol.toUpperCase().trim()
   if (!sym) return null
 
-  if (!fs.existsSync(CACHE_DIR)) {
+  // 1. Đọc trực tiếp từ SQLite company_profiles.db (đã có đủ 1.530 mã, < 0.2ms)
+  if (fs.existsSync(DB_PROFILE_PATH)) {
     try {
-      fs.mkdirSync(CACHE_DIR, { recursive: true })
+      const db = new DatabaseSync(DB_PROFILE_PATH, { readOnly: true })
+      try {
+        const row = db.prepare('SELECT raw_json FROM company_profiles WHERE symbol = ?').get(sym) as any
+        if (row?.raw_json) {
+          const parsed = JSON.parse(row.raw_json)
+          if (parsed?.co_cau_so_huu) {
+            return parseShareholderPayload(sym, parsed)
+          }
+        }
+      } finally {
+        db.close()
+      }
     } catch {}
   }
 
+  // 2. Dự phòng đọc từ local cache disk nếu có
   const cacheFile = path.join(CACHE_DIR, `${sym}.json`)
-
-  // 1. ƯU TIÊN HÀNG ĐẦU: Đọc từ local cache (Offline-First hoàn toàn không phụ thuộc ruatichsan)
   if (fs.existsSync(cacheFile)) {
     try {
       const cached = JSON.parse(fs.readFileSync(cacheFile, 'utf-8'))
@@ -201,19 +215,5 @@ export async function getCompanyFullProfile(symbol: string): Promise<CompanyFull
     } catch {}
   }
 
-  // 2. Fallback độc lập (nếu chưa cào kịp): Tự động lấy trực tiếp từ CafeF (không cần ruatichsan)
-  try {
-    const { fetchDirectCompanyProfile } = await import('./direct-market-bot')
-    const directResult = await fetchDirectCompanyProfile(sym)
-    if (directResult) {
-      try {
-        fs.writeFileSync(cacheFile, JSON.stringify(directResult, null, 2), 'utf-8')
-      } catch {}
-      return directResult
-    }
-    return null
-  } catch (err) {
-    console.error(`[getCompanyFullProfile] Lỗi lấy dữ liệu hồ sơ ${sym}:`, err)
-    return null
-  }
+  return null
 }

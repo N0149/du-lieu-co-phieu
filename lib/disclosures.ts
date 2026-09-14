@@ -205,6 +205,105 @@ export async function fetchLiveCafefDisclosures(): Promise<CorporateDisclosure[]
   }
 }
 
+/**
+ * Cào tức thì luồng công bố thông tin CafeF theo từng mã cổ phiếu (kèm link văn bản trực tiếp)
+ */
+export async function fetchLiveDisclosuresForSymbol(symbol: string): Promise<CorporateDisclosure[]> {
+  const sym = symbol.toUpperCase().trim()
+  if (!sym) return []
+  try {
+    const controller = new AbortController()
+    const timeoutId = setTimeout(() => controller.abort(), 6000)
+
+    const res = await fetch(
+      `https://cafef.vn/du-lieu/Ajax/Events_RelatedNews_New.aspx?symbol=${encodeURIComponent(sym)}&floorID=0&configID=0&PageIndex=1&PageSize=50&Type=2`,
+      {
+        headers: {
+          'User-Agent':
+            'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36',
+          Referer: 'https://cafef.vn/',
+        },
+        signal: controller.signal,
+      }
+    )
+    clearTimeout(timeoutId)
+
+    if (!res.ok) return []
+    const html = await res.text()
+    const records: CorporateDisclosure[] = []
+    const liRegex = /<li[^>]*>([\s\S]*?)<\/li>/gi
+    let liMatch: RegExpExecArray | null
+    while ((liMatch = liRegex.exec(html)) !== null) {
+      const liContent = liMatch[1]
+      const timeMatch = liContent.match(/<span class=["']timeTitle["']>([^<]+)<\/span>/i)
+      const linkMatch = liContent.match(
+        /<a class=['"]docnhanhTitle['"][^>]*href=['"]([^'"]+)['"][^>]*title=['"]([^'"]*)['"][^>]*>([\s\S]*?)<\/a>/i
+      )
+      if (!timeMatch || !linkMatch) continue
+
+      const rawTime = timeMatch[1].trim()
+      const publishedAt = parseVnDateTime(rawTime)
+      const rawHref = linkMatch[1].trim()
+      const fileUrl = rawHref.startsWith('http') ? rawHref : `https://cafef.vn${rawHref}`
+      const rawTitle = (linkMatch[2] || linkMatch[3] || '').replace(/<[^>]+>/g, '').trim()
+
+      const exchange = getStockExchange(sym)
+      const { docType, label, isImportant } = classifyDisclosure(rawTitle)
+      const id = `cf_${sym}_${publishedAt.replace(/[: -]/g, '')}_${Math.random().toString(36).slice(2, 6)}`
+
+      records.push({
+        id,
+        symbol: sym,
+        exchange,
+        company_name: '',
+        title: rawTitle,
+        doc_type: docType,
+        doc_type_label: label,
+        published_at: publishedAt,
+        file_url: fileUrl,
+        source: 'CafeF_Sở',
+        is_important: isImportant,
+      })
+    }
+
+    // Tự động lưu vào SQLite để các lần sau nạp tức thì
+    try {
+      if (fs.existsSync(DB_PATH) && records.length > 0) {
+        const db = new DatabaseSync(DB_PATH)
+        const stmt = db.prepare(`
+          INSERT INTO disclosures (
+            id, symbol, exchange, company_name, title, doc_type, doc_type_label,
+            published_at, file_url, source, is_important, created_at
+          ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, datetime('now', 'localtime'))
+          ON CONFLICT(id) DO UPDATE SET
+            file_url = excluded.file_url,
+            doc_type_label = excluded.doc_type_label
+        `)
+        for (const r of records) {
+          stmt.run(
+            r.id,
+            r.symbol,
+            r.exchange,
+            r.company_name || '',
+            r.title,
+            r.doc_type,
+            r.doc_type_label,
+            r.published_at,
+            r.file_url || '',
+            r.source,
+            r.is_important
+          )
+        }
+      }
+    } catch {}
+
+    return records
+  } catch (err) {
+    console.warn(`[Disclosures] Error fetching live CafeF for ${sym}:`, err)
+    return []
+  }
+}
+
 function getDisclosuresDb(): DatabaseSync | null {
   if (dbInstance) return dbInstance
   try {

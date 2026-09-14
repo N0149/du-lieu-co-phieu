@@ -1,5 +1,6 @@
 import fs from 'node:fs'
 import path from 'node:path'
+import { DatabaseSync } from 'node:sqlite'
 import crypto from 'node:crypto'
 
 export interface ValuationHistoryPayload {
@@ -41,6 +42,8 @@ async function decryptApiResponse(res: Response): Promise<any> {
   return JSON.parse(new TextDecoder().decode(decryptedBuf))
 }
 
+const DB_EVAL_PATH = path.join(DATA_DIR, 'stock_evaluations.db')
+
 export async function getValuationHistory(symbol: string): Promise<ValuationHistoryPayload | null> {
   const sym = symbol.toUpperCase().trim()
   const cacheFile = path.join(VAL_DIR, `${sym}.json`)
@@ -56,31 +59,22 @@ export async function getValuationHistory(symbol: string): Promise<ValuationHist
     } catch {}
   }
 
-  // 2. Fallback nếu chưa có
-  try {
-    const res = await fetch(`https://api.ruatichsan.com/api/v1/data/public/valuation/${sym}`, {
-      headers: {
-        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36',
-        Origin: 'https://ruatichsan.com',
-        Referer: `https://ruatichsan.com/company?symbol=${sym}`,
-      },
-      next: { revalidate: 86400 },
-    })
-    if (!res.ok) return null
-    const data = await decryptApiResponse(res)
-    if (data) {
+  // 2. Đọc từ SQLite stock_evaluations.db (chứa 1.368 mã đầy đủ chuỗi lịch sử định giá đa năm)
+  if (fs.existsSync(DB_EVAL_PATH)) {
+    try {
+      const db = new DatabaseSync(DB_EVAL_PATH, { readOnly: true })
       try {
-        if (!fs.existsSync(VAL_DIR)) {
-          fs.mkdirSync(VAL_DIR, { recursive: true })
+        const row = db.prepare('SELECT raw_json FROM stock_evaluations WHERE symbol = ?').get(sym) as any
+        if (row?.raw_json) {
+          const data = JSON.parse(row.raw_json)
+          if (data && Array.isArray(data.dates) && data.dates.length > 0) {
+            return data as ValuationHistoryPayload
+          }
         }
-        fs.writeFileSync(cacheFile, JSON.stringify(data, null, 2), 'utf-8')
-      } catch {
-        // Bỏ qua lỗi ghi disk trên môi trường read-only như Vercel
+      } finally {
+        db.close()
       }
-      return data as ValuationHistoryPayload
-    }
-  } catch (err) {
-    console.error(`[ValuationHistoryService] Lỗi nạp cho ${sym}:`, err)
+    } catch {}
   }
 
   return null

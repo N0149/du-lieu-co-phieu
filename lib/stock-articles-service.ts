@@ -156,7 +156,7 @@ const SEED_SPECIAL_ARTICLES: Record<string, CompanyArticleItem[]> = {
       id: 'lhg_seed_1',
       type: 'disclosure',
       title: 'LHG: Thông báo nhận được Bản án số 16/2026 ngày 29/06/2026 của Tòa án Nhân dân Khu vực 4 - Đà Nẵng',
-      link: 'https://s.cafef.vn/hose/LHG-cong-ty-co-phan-long-hau.chn',
+      link: '',
       publishedAt: '2026-09-04 17:43:00',
       formattedTime: '4/9 lúc 17:43',
       source: 'Sở GDCK HOSE',
@@ -247,7 +247,7 @@ const SEED_SPECIAL_ARTICLES: Record<string, CompanyArticleItem[]> = {
       id: 'mwg_seed_1',
       type: 'disclosure',
       title: 'MWG: Báo cáo kết quả kinh doanh 7 tháng đầu năm 2026 - Doanh thu chuỗi Điện Máy Xanh và Bách Hóa Xanh tăng trưởng ấn tượng',
-      link: 'https://s.cafef.vn/hose/MWG-cong-ty-co-phan-dau-tu-the-gioi-di-dong.chn',
+      link: '',
       publishedAt: '2026-08-28 17:30:00',
       formattedTime: '28/8 lúc 17:30',
       source: 'Sở GDCK HOSE',
@@ -315,7 +315,7 @@ const SEED_SPECIAL_ARTICLES: Record<string, CompanyArticleItem[]> = {
       id: 'mwg_seed_5',
       type: 'disclosure',
       title: 'MWG: Nghị quyết HĐQT về việc tạm ứng cổ tức đợt 1 năm 2025 bằng tiền tỷ lệ 5%',
-      link: 'https://s.cafef.vn/hose/MWG-cong-ty-co-phan-dau-tu-the-gioi-di-dong.chn',
+      link: '',
       publishedAt: '2026-08-10 16:20:00',
       formattedTime: '10/8 lúc 16:20',
       source: 'Sở GDCK HOSE',
@@ -330,26 +330,51 @@ const SEED_SPECIAL_ARTICLES: Record<string, CompanyArticleItem[]> = {
   ],
 }
 
-function getCompanyProfileFallbackLink(sym: string, companyName?: string, exchange?: string): string {
-  const map = getStockPriceMap()
-  const info = map.get(sym.toUpperCase())
-  const name = companyName || info?.name || sym
-  const slug = name
-    .toLowerCase()
-    .normalize('NFD')
-    .replace(/[\u0300-\u036f]/g, '')
-    .replace(/đ/g, 'd')
-    .replace(/[^a-z0-9]+/g, '-')
-    .replace(/^-+|-+$/g, '')
+/**
+ * Kiểm tra xem một URL có phải là link bài viết hoặc văn bản công bố thông tin thực sự hay không.
+ * Loại bỏ:
+ * 1. File ảnh / logo / thumbnail (.png, .jpg, .svg, ...)
+ * 2. Link hồ sơ tổng quan công ty chung chung của CafeF (không phải bài viết / sự kiện cụ thể),
+ *    ví dụ: https://s.cafef.vn/hose/MWG-cong-ty-co-phan-dau-tu-the-gioi-di-dong.chn
+ *           https://cafef.vn/du-lieu/upcom/aic-tong-cong-ty-co-phan-bao-hiem-hang-khong.chn
+ * 3. Link không hợp lệ hoặc không bắt đầu bằng http:// hoặc https://
+ */
+export function isRealArticleLink(url?: string | null): boolean {
+  if (!url || typeof url !== 'string') return false
+  const clean = url.trim()
+  if (!clean.startsWith('http://') && !clean.startsWith('https://')) return false
 
-  const ex = (exchange || 'HOSE').toLowerCase()
-  return `https://s.cafef.vn/${ex}/${sym.toUpperCase()}-${slug}.chn`
+  // Loại bỏ file ảnh
+  if (/\.(png|jpe?g|webp|gif|svg|ico)(\?.*)?$/i.test(clean)) return false
+
+  // Loại bỏ link trang hồ sơ công ty chung chung của CafeF (chỉ có /hose/, /hnx/, /upcom/ + tên cty)
+  if (
+    /s\.cafef\.vn\/(upcom|hose|hnx)\/[A-Z0-9]+-[^/]+\.chn/i.test(clean) ||
+    /cafef\.vn\/du-lieu\/(upcom|hose|hnx)\/[a-z0-9]+-[^/]+\.chn/i.test(clean)
+  ) {
+    return false
+  }
+
+  // Loại bỏ link trang dữ liệu rỗng hoặc không có ID sự kiện
+  if (/cafef\.vn\/du-lieu\/(upcom|hose|hnx)\/?$/i.test(clean)) return false
+
+  return true
+}
+
+export function cleanArticleLink(url?: string | null): string {
+  if (!url || !isRealArticleLink(url)) return ''
+  return url.trim()
 }
 
 function normalizeKey(str: string): string {
   return (str || '')
     .toLowerCase()
-    .replace(/[^\p{L}\p{N}]+/gu, ' ')
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '')
+    .replace(/đ/g, 'd')
+    .replace(/([a-z])([0-9])/g, '$1 $2')
+    .replace(/([0-9])([a-z])/g, '$1 $2')
+    .replace(/[^a-z0-9]+/g, ' ')
     .trim()
 }
 
@@ -367,12 +392,15 @@ export function getStockArticles(ticker: string, companyName = ''): StockArticle
   // 1. Nạp các bài viết mẫu đặc biệt (nếu có)
   const specialSeed = SEED_SPECIAL_ARTICLES[sym] || []
   for (const item of specialSeed) {
-    articlesMap.set(normalizeKey(item.title), item)
+    articlesMap.set(normalizeKey(item.title), {
+      ...item,
+      link: cleanArticleLink(item.link),
+    })
   }
 
   // 2. Lấy thông tin công bố (Corporate Disclosures) từ cơ sở dữ liệu dự án (giống hệt tab Tin Tức)
   try {
-    const disclosures = getDisclosuresBySymbol(sym, 80)
+    const disclosures = getDisclosuresBySymbol(sym, 100)
     for (const d of disclosures) {
       const titleClean = (d.title || '').trim()
       const key = normalizeKey(titleClean)
@@ -381,19 +409,20 @@ export function getStockArticles(ticker: string, companyName = ''): StockArticle
       const tags = extractMentionedTickers(titleClean, sym)
       const formattedTime = formatArticleTime(d.published_at)
       const isImg = /\.(png|jpe?g|webp|gif)(\?.*)?$/i.test(d.file_url || '')
-      const specificLink = !isImg && d.file_url && d.file_url.startsWith('http') ? d.file_url : ''
+      const realLink = cleanArticleLink(d.file_url)
       const docImageUrl = isImg ? d.file_url : undefined
-      // Nếu không có link file cụ thể, tạo link hồ sơ công bố chính thức của mã (không bao giờ lỗi 404)
-      const validLink = specificLink || getCompanyProfileFallbackLink(sym, d.company_name || companyName, d.exchange)
 
       const existing = articlesMap.get(key)
       if (existing) {
-        // Nâng cấp lên link văn bản cụ thể nếu bản ghi cũ chỉ có link hồ sơ
-        if (specificLink && (!existing.link || existing.link.includes('-cong-ty-'))) {
-          existing.link = specificLink
+        // Nâng cấp lên link văn bản cụ thể nếu bản ghi cũ chưa có link thực tế
+        if (realLink && !cleanArticleLink(existing.link)) {
+          existing.link = realLink
         }
         if (!existing.imageUrl && docImageUrl) {
           existing.imageUrl = docImageUrl
+        }
+        if (d.source === 'CafeF_Sở') {
+          existing.source = `Sở GDCK ${d.exchange || 'HOSE'}`
         }
         continue
       }
@@ -402,7 +431,7 @@ export function getStockArticles(ticker: string, companyName = ''): StockArticle
         id: d.id,
         type: 'disclosure',
         title: titleClean,
-        link: validLink,
+        link: realLink,
         imageUrl: docImageUrl,
         publishedAt: d.published_at,
         formattedTime: formattedTime || d.published_at,
@@ -426,8 +455,10 @@ export function getStockArticles(ticker: string, companyName = ''): StockArticle
                published_at, file_url, source, is_important
         FROM disclosures
         WHERE symbol = ? OR title LIKE ?
-        ORDER BY published_at DESC
-        LIMIT 60
+        ORDER BY
+          CASE WHEN file_url LIKE '%cafef.vn/du-lieu/%' OR file_url LIKE '%.pdf%' THEN 0 ELSE 1 END,
+          published_at DESC
+        LIMIT 100
       `)
       const rows = stmt.all(sym, `%${sym}%`) as CorporateDisclosure[]
       for (const d of rows) {
@@ -438,17 +469,19 @@ export function getStockArticles(ticker: string, companyName = ''): StockArticle
         const tags = extractMentionedTickers(titleClean, sym)
         const formattedTime = formatArticleTime(d.published_at)
         const isImg = /\.(png|jpe?g|webp|gif)(\?.*)?$/i.test(d.file_url || '')
-        const specificLink = !isImg && d.file_url && d.file_url.startsWith('http') ? d.file_url : ''
+        const realLink = cleanArticleLink(d.file_url)
         const docImageUrl = isImg ? d.file_url : undefined
-        const validLink = specificLink || getCompanyProfileFallbackLink(sym, d.company_name || companyName, d.exchange)
 
         const existing = articlesMap.get(key)
         if (existing) {
-          if (specificLink && (!existing.link || existing.link.includes('-cong-ty-'))) {
-            existing.link = specificLink
+          if (realLink && !cleanArticleLink(existing.link)) {
+            existing.link = realLink
           }
           if (!existing.imageUrl && docImageUrl) {
             existing.imageUrl = docImageUrl
+          }
+          if (d.source === 'CafeF_Sở') {
+            existing.source = `Sở GDCK ${d.exchange || 'HOSE'}`
           }
           continue
         }
@@ -457,7 +490,7 @@ export function getStockArticles(ticker: string, companyName = ''): StockArticle
           id: d.id,
           type: 'disclosure',
           title: titleClean,
-          link: validLink,
+          link: realLink,
           imageUrl: docImageUrl,
           publishedAt: d.published_at,
           formattedTime: formattedTime || d.published_at,
@@ -509,8 +542,8 @@ export function getStockArticles(ticker: string, companyName = ''): StockArticle
 
       const tags = extractMentionedTickers(titleClean, sym)
       const formattedTime = formatArticleTime(item.pubDate)
-      // Gán trực tiếp link bài viết gốc từ nguồn báo như tab Tin Tức
-      const validLink = item.link && item.link.startsWith('http') ? item.link : ''
+      // Gán trực tiếp link bài viết gốc từ nguồn báo nếu hợp lệ
+      const validLink = cleanArticleLink(item.link)
 
       articlesMap.set(key, {
         id: item.id,

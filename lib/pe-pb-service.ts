@@ -63,46 +63,7 @@ export async function getPePbRawData(): Promise<RawPePbData> {
     console.warn('[PePbService] Read local file error:', err)
   }
 
-  // 2. Fetch từ API ruatichsan và giải mã AES-256-GCM
-  try {
-    const res = await fetch('https://api.ruatichsan.com/api/v1/data/public/pe-pb', {
-      headers: {
-        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64)',
-        Accept: '*/*',
-      },
-      next: { revalidate: 3600 },
-    })
-
-    if (!res.ok) {
-      throw new Error(`Fetch pe-pb API failed: HTTP ${res.status}`)
-    }
-
-    const arrayBuffer = await res.arrayBuffer()
-    const rawBuf = Buffer.from(arrayBuffer)
-
-    const keyBytes = Buffer.from(AES_KEY_HALF1 + AES_KEY_HALF2, 'hex')
-    const iv = rawBuf.subarray(0, 12)
-    const ciphertextAndTag = rawBuf.subarray(12)
-    const tag = ciphertextAndTag.subarray(ciphertextAndTag.length - 16)
-    const ciphertext = ciphertextAndTag.subarray(0, ciphertextAndTag.length - 16)
-
-    const decipher = crypto.createDecipheriv('aes-256-gcm', keyBytes, iv)
-    decipher.setAuthTag(tag)
-    const decrypted = Buffer.concat([decipher.update(ciphertext), decipher.final()])
-
-    const parsed: RawPePbData = JSON.parse(decrypted.toString('utf-8'))
-
-    // Ghi cache vào local file
-    try {
-      fs.writeFileSync(localFile, JSON.stringify(parsed), 'utf-8')
-    } catch {}
-
-    cachedData = parsed
-    return parsed
-  } catch (error: any) {
-    console.error('[PePbService] Fetch & Decrypt error:', error)
-    throw error
-  }
+  return { tradingDates: [], PER: [], PBR: [] }
 }
 
 export function computeStats(values: number[], currentVal?: number): StatsBand | null {

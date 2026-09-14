@@ -45,34 +45,5 @@ export async function getFinancialChartData(
     } catch {}
   }
 
-  // 2. Fallback: Nếu máy chưa có cache thì kéo về và lưu lại
-  try {
-    const url = `https://api.ruatichsan.com/api/v1/data/public/chart/${periodType}/${sym}`
-    const res = await fetch(url, {
-      headers: {
-        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36',
-        Origin: 'https://ruatichsan.com',
-        Referer: `https://ruatichsan.com/company?symbol=${sym}`,
-      },
-      next: { revalidate: 86400 },
-    })
-
-    if (!res.ok) return null
-    const data = await decryptApiResponse(res)
-    if (data) {
-      try {
-        if (!fs.existsSync(targetDir)) {
-          fs.mkdirSync(targetDir, { recursive: true })
-        }
-        fs.writeFileSync(cacheFile, JSON.stringify(data, null, 2), 'utf-8')
-      } catch {
-        // Bỏ qua lỗi ghi disk trên môi trường read-only như Vercel
-      }
-      return data as FinancialChartPayload
-    }
-  } catch (err) {
-    console.error(`[FinancialChartsService] Lỗi tải chart cho ${sym}:`, err)
-  }
-
   return null
 }

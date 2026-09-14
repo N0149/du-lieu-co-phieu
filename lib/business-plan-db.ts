@@ -227,6 +227,5 @@ export async function getBusinessPlan(symbol: string): Promise<RawBusinessPlanPa
     console.error(`[getBusinessPlan] Lỗi đọc Supabase cho ${sym}:`, err)
   }
 
-  // 3. Online Fallback
-  return await fetchAndCacheBusinessPlan(sym)
+  return null
 }

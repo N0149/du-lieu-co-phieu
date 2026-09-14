@@ -247,30 +247,6 @@ export async function getFinancialStatements(
     return cloud;
   }
 
-  // 3. Online Fallback: Nếu là mã mới chưa có trên DB, tải online từ nguồn chính thức
-  try {
-    const endpoint = `${API_BASE_URL}/${periodType}/${encodeURIComponent(ticker)}`;
-    const res = await fetch(endpoint, {
-      headers: {
-        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
-        "Origin": "https://ruatichsan.com",
-        "Referer": `https://ruatichsan.com/company?symbol=${ticker}`,
-      },
-      next: { revalidate: 86400 },
-    });
-
-    if (res.ok) {
-      const data: RawFinancialStatementData = await decryptApiResponse(res);
-      if (data && Array.isArray(data.fiscalDates) && data.fiscalDates.length > 0) {
-        saveToSupabaseAsync(ticker, periodType, data);
-        saveLocalFinancialStatements(ticker, periodType, data);
-        return data;
-      }
-    }
-  } catch (err) {
-    console.error(`[getFinancialStatements] Fallback online error for ${ticker}:`, err);
-  }
-
   return null;
 }
 

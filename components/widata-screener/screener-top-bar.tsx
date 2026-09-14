@@ -10,6 +10,7 @@ import {
   Building2,
   Layers,
   Check,
+  SlidersHorizontal,
 } from 'lucide-react'
 import { POPULAR_SECTORS } from './screener-constants'
 import { cn } from '@/lib/utils'
@@ -26,6 +27,8 @@ interface ScreenerTopBarProps {
   isSidebarOpen: boolean
   onToggleSidebar: () => void
   totalCount: number
+  isFilterPanelOpen?: boolean
+  onToggleFilterPanel?: () => void
 }
 
 export function ScreenerTopBar({
@@ -40,6 +43,8 @@ export function ScreenerTopBar({
   isSidebarOpen,
   onToggleSidebar,
   totalCount,
+  isFilterPanelOpen = true,
+  onToggleFilterPanel,
 }: ScreenerTopBarProps) {
   const [tickerSearchOpen, setTickerSearchOpen] = useState(false)
   const [tickerQuery, setTickerQuery] = useState('')
@@ -216,12 +221,31 @@ export function ScreenerTopBar({
         </div>
       </div>
 
-      {/* Khối bên phải: Tổng số lượng mã */}
-      <div className="flex items-center gap-2 text-xs">
-        <span className="text-muted-foreground hidden sm:inline">Tìm thấy:</span>
-        <span className="rounded-md bg-primary/15 px-2.5 py-1 font-mono text-xs font-bold text-primary">
-          {totalCount.toLocaleString('vi-VN')} mã
-        </span>
+      {/* Khối bên phải: Nút Thu gọn/Mở bộ lọc + Tổng số lượng mã */}
+      <div className="flex items-center gap-2.5 text-xs">
+        {onToggleFilterPanel && (
+          <button
+            type="button"
+            onClick={onToggleFilterPanel}
+            title={isFilterPanelOpen ? 'Thu gọn khung chọn điều kiện lọc' : 'Mở rộng khung chọn điều kiện lọc'}
+            className={cn(
+              'flex h-9 items-center gap-1.5 rounded-lg border border-white/10 px-3 text-xs font-medium transition-colors cursor-pointer',
+              isFilterPanelOpen
+                ? 'bg-[#1f2430] text-muted-foreground hover:bg-white/10 hover:text-foreground'
+                : 'bg-primary text-primary-foreground font-semibold shadow-xs'
+            )}
+          >
+            <SlidersHorizontal className="size-3.5" />
+            <span>{isFilterPanelOpen ? 'Thu gọn bộ lọc' : 'Mở bộ lọc'}</span>
+          </button>
+        )}
+
+        <div className="flex items-center gap-2">
+          <span className="text-muted-foreground hidden sm:inline">Tìm thấy:</span>
+          <span className="rounded-md bg-primary/15 px-2.5 py-1 font-mono text-xs font-bold text-primary">
+            {totalCount.toLocaleString('vi-VN')} mã
+          </span>
+        </div>
       </div>
     </div>
   )
