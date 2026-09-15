@@ -1,6 +1,7 @@
 import fs from 'node:fs'
 import path from 'node:path'
 import { DatabaseSync } from 'node:sqlite'
+import { createClient, type SupabaseClient } from '@supabase/supabase-js'
 import type {
   CompanyFullProfileData,
   ShareholderItem,
@@ -8,6 +9,16 @@ import type {
   SubsidiaryItem,
   InsiderTradeItem,
 } from './company-profile-types'
+
+let supabaseInstance: SupabaseClient | null = null
+function getSupabase(): SupabaseClient | null {
+  if (supabaseInstance) return supabaseInstance
+  const url = process.env.NEXT_PUBLIC_SUPABASE_URL || 'https://pxtmuwrpuywrkclobfpa.supabase.co'
+  const key = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || 'sb_publishable_Jjx3eb2edh-gxHZKYEZIog_UyWNqV9Z'
+  if (!url || !key) return null
+  supabaseInstance = createClient(url, key)
+  return supabaseInstance
+}
 
 const CIPHER_KEY_HEX = '19dd3af428f4cf7d68864cd4c87d8d1c5b489932e84b93ac6528a0dd403a5725'
 
@@ -214,6 +225,27 @@ export async function getCompanyFullProfile(symbol: string): Promise<CompanyFull
       }
     } catch {}
   }
+
+  // 3. Đọc từ Supabase Cloud Database (<25ms, Vercel 24/7 khi tắt máy)
+  try {
+    const supabase = getSupabase()
+    if (supabase) {
+      const { data, error } = await supabase
+        .from('company_profiles')
+        .select('raw_json')
+        .eq('symbol', sym)
+        .maybeSingle()
+      if (!error && data?.raw_json) {
+        const parsed = typeof data.raw_json === 'string' ? JSON.parse(data.raw_json) : data.raw_json
+        if (parsed?.ownership) {
+          return parsed
+        }
+        if (parsed?.co_cau_so_huu) {
+          return parseShareholderPayload(sym, parsed)
+        }
+      }
+    }
+  } catch {}
 
   return null
 }

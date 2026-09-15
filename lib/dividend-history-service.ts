@@ -2,6 +2,7 @@ import fs from 'node:fs'
 import path from 'node:path'
 import { DatabaseSync } from 'node:sqlite'
 import crypto from 'node:crypto'
+import { createClient, type SupabaseClient } from '@supabase/supabase-js'
 
 export interface DividendEventItem {
   date: string
@@ -13,6 +14,16 @@ export interface DividendEventItem {
 export interface DividendHistoryPayload {
   symbol: string
   events: DividendEventItem[]
+}
+
+let supabaseInstance: SupabaseClient | null = null
+function getSupabase(): SupabaseClient | null {
+  if (supabaseInstance) return supabaseInstance
+  const url = process.env.NEXT_PUBLIC_SUPABASE_URL || 'https://pxtmuwrpuywrkclobfpa.supabase.co'
+  const key = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || 'sb_publishable_Jjx3eb2edh-gxHZKYEZIog_UyWNqV9Z'
+  if (!url || !key) return null
+  supabaseInstance = createClient(url, key)
+  return supabaseInstance
 }
 
 const DATA_DIR = path.join(process.cwd(), 'data')
@@ -67,6 +78,26 @@ export async function getDividendHistory(symbol: string): Promise<DividendHistor
       }
     } catch {}
   }
+
+  // 3. Đọc từ Supabase Cloud Database (<25ms, Vercel 24/7 khi tắt máy)
+  try {
+    const supabase = getSupabase()
+    if (supabase) {
+      const { data, error } = await supabase
+        .from('dividend_history')
+        .select('events_json')
+        .eq('symbol', sym)
+        .maybeSingle()
+      if (!error && data?.events_json) {
+        const events = Array.isArray(data.events_json)
+          ? data.events_json
+          : (typeof data.events_json === 'string' ? JSON.parse(data.events_json) : [])
+        if (events.length > 0) {
+          return { symbol: sym, events }
+        }
+      }
+    }
+  } catch {}
 
   return null
 }

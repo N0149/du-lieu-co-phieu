@@ -2,6 +2,17 @@ import fs from 'node:fs'
 import path from 'node:path'
 import { DatabaseSync } from 'node:sqlite'
 import crypto from 'node:crypto'
+import { createClient, type SupabaseClient } from '@supabase/supabase-js'
+
+let supabaseInstance: SupabaseClient | null = null
+function getSupabase(): SupabaseClient | null {
+  if (supabaseInstance) return supabaseInstance
+  const url = process.env.NEXT_PUBLIC_SUPABASE_URL || 'https://pxtmuwrpuywrkclobfpa.supabase.co'
+  const key = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || 'sb_publishable_Jjx3eb2edh-gxHZKYEZIog_UyWNqV9Z'
+  if (!url || !key) return null
+  supabaseInstance = createClient(url, key)
+  return supabaseInstance
+}
 
 export interface ValuationHistoryPayload {
   symbol: string
@@ -76,6 +87,24 @@ export async function getValuationHistory(symbol: string): Promise<ValuationHist
       }
     } catch {}
   }
+
+  // 3. Đọc từ Supabase Cloud Database (<25ms, Vercel 24/7 khi tắt máy)
+  try {
+    const supabase = getSupabase()
+    if (supabase) {
+      const { data, error } = await supabase
+        .from('stock_evaluations')
+        .select('raw_json')
+        .eq('symbol', sym)
+        .maybeSingle()
+      if (!error && data?.raw_json) {
+        const d = typeof data.raw_json === 'string' ? JSON.parse(data.raw_json) : data.raw_json
+        if (d && Array.isArray(d.dates) && d.dates.length > 0) {
+          return d as ValuationHistoryPayload
+        }
+      }
+    }
+  } catch {}
 
   return null
 }

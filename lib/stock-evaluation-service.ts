@@ -1,7 +1,18 @@
 import fs from 'node:fs'
 import path from 'node:path'
 import { DatabaseSync } from 'node:sqlite'
+import { createClient, type SupabaseClient } from '@supabase/supabase-js'
 import { getLiveStockQuote, type LiveStockQuote } from './live-quote-service'
+
+let supabaseInstance: SupabaseClient | null = null
+function getSupabase(): SupabaseClient | null {
+  if (supabaseInstance) return supabaseInstance
+  const url = process.env.NEXT_PUBLIC_SUPABASE_URL || 'https://pxtmuwrpuywrkclobfpa.supabase.co'
+  const key = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || 'sb_publishable_Jjx3eb2edh-gxHZKYEZIog_UyWNqV9Z'
+  if (!url || !key) return null
+  supabaseInstance = createClient(url, key)
+  return supabaseInstance
+}
 
 const CIPHER_KEY_HEX = '19dd3af428f4cf7d68864cd4c87d8d1c5b489932e84b93ac6528a0dd403a5725'
 
@@ -143,6 +154,19 @@ function getEvaluationFromDb(sym: string): any {
   }
 }
 
+let summaryCache: Record<string, any> | null = null
+function getStockEvaluationSummary(sym: string): any {
+  if (!summaryCache) {
+    const summaryPath = path.resolve(process.cwd(), 'data', 'stock_evaluations_summary.json')
+    if (fs.existsSync(summaryPath)) {
+      try {
+        summaryCache = JSON.parse(fs.readFileSync(summaryPath, 'utf-8'))
+      } catch {}
+    }
+  }
+  return summaryCache ? summaryCache[sym] || null : null
+}
+
 /**
  * Lấy khối lượng giao dịch bình quân 15 phiên gần nhất (KLGD TB15D)
  * Đọc trực tiếp từ kho dữ liệu lịch sử giá cục bộ (0ms, 100% offline)
@@ -183,12 +207,12 @@ export async function getStockEvaluation(symbol: string): Promise<StockEvaluatio
   ])
 
   // 2. Đọc dữ liệu đánh giá 360° từ SQLite nội bộ (1.368 mã, < 0.2ms)
-  const dbRow = getEvaluationFromDb(sym)
+  let dbRow = getEvaluationFromDb(sym)
 
   let valData: any = null
   if (dbRow?.raw_json) {
     try {
-      valData = JSON.parse(dbRow.raw_json)
+      valData = typeof dbRow.raw_json === 'string' ? JSON.parse(dbRow.raw_json) : dbRow.raw_json
     } catch {}
   }
 
@@ -200,6 +224,58 @@ export async function getStockEvaluation(symbol: string): Promise<StockEvaluatio
         valData = JSON.parse(fs.readFileSync(cacheFile, 'utf-8'))
       } catch {}
     }
+  }
+
+  // 2b. Fallback đọc từ tóm tắt siêu nhẹ bundle kèm web (0.01ms)
+  if (!dbRow && !valData) {
+    const sum = getStockEvaluationSummary(sym)
+    if (sum) {
+      dbRow = {
+        score360_total: sum.score,
+        score360_rating: sum.rating,
+        pe_vs_median: sum.pe_m,
+        pb_vs_median: sum.pb_m,
+        ps_vs_median: sum.ps_m,
+        pe_forward: sum.pe_f,
+        pb_forward: sum.pb_f,
+        pe_forward_vs_median: sum.pe_fm,
+        pb_forward_vs_median: sum.pb_fm,
+      }
+      valData = {
+        snapshot: {
+          price: sum.price,
+          market_cap_bn: sum.mc,
+          pe: sum.pe,
+          pb: sum.pb,
+          ps: sum.ps,
+          eps: sum.eps,
+          bvps: sum.bvps,
+        },
+        lastEps: sum.eps,
+        lastBvps: sum.bvps,
+        lastCirculationVol: sum.shares,
+      }
+    }
+  }
+
+  // 3. Fallback đọc từ Supabase Cloud Database (<25ms, Vercel 24/7 khi tắt máy)
+  if (!dbRow && !valData) {
+    try {
+      const supabase = getSupabase()
+      if (supabase) {
+        const { data, error } = await supabase
+          .from('stock_evaluations')
+          .select('*')
+          .eq('symbol', sym)
+          .maybeSingle()
+        if (!error && data) {
+          dbRow = data
+          if (data.raw_json) {
+            valData = typeof data.raw_json === 'string' ? JSON.parse(data.raw_json) : data.raw_json
+          }
+        }
+      }
+    } catch {}
   }
 
   const s = valData?.snapshot
