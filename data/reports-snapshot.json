@@ -1,5 +1,35 @@
 [
   {
+    "slug": "lhg-16-09-2026",
+    "ticker": "LHG",
+    "title": "[Báo Cáo So Sánh Chuyên Sâu] Bộ Tứ Hạ Tầng KCN & Logistics: LHG vs IDV vs SZB vs ILB (2026)",
+    "category": "RNAV",
+    "date": "16/09/2026",
+    "reportDate": "16/09/2026",
+    "driveDocId": "1us3wtAc2PTqxuwOYgPDhkpU7fAaksRjvF9KP_rRd4RI",
+    "summary": null,
+    "targetPrice": null,
+    "currentPrice": null,
+    "recommendation": null,
+    "upside": null,
+    "bonusWelfareRate": null
+  },
+  {
+    "slug": "szb-16-09-2026",
+    "ticker": "SZB",
+    "title": "[Báo Cáo So Sánh Chuyên Sâu] Bộ Ba BĐS KCN: SZB vs LHG vs IDV (2026)",
+    "category": "Phân Tích",
+    "date": "16/09/2026",
+    "reportDate": "16/09/2026",
+    "driveDocId": "1kn4mou_PY70XxjBfyS-S97QDR-cMn8CyTcA74gib9Rg",
+    "summary": null,
+    "targetPrice": null,
+    "currentPrice": 115,
+    "recommendation": null,
+    "upside": null,
+    "bonusWelfareRate": null
+  },
+  {
     "slug": "clm-22-08-2026",
     "ticker": "CLM",
     "title": "Phân tích cổ phiếu CLM",
