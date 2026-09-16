@@ -17,6 +17,7 @@ import {
   Star,
   Search,
   TrendingUp,
+  Pin,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 import type { PeerMetricItem } from "@/lib/peers-service";
@@ -271,16 +272,30 @@ function PeerTrendTooltip({
   );
 }
 
+export interface PeerScopeOption {
+  id: "l4" | "l2" | "custom";
+  label: string;
+  fullName: string;
+  count: number;
+  peers: string[];
+}
+
 interface PeerComparisonViewProps {
   currentTicker: string;
   sectorName?: string;
+  subGroupName?: string;
   initialPeers?: string[];
+  scopeOptions?: PeerScopeOption[];
+  quickSuggestions?: string[];
 }
 
 export function PeerComparisonView({
   currentTicker,
   sectorName = "Cùng nhóm ngành",
+  subGroupName,
   initialPeers = [],
+  scopeOptions = [],
+  quickSuggestions = [],
 }: PeerComparisonViewProps) {
   const tickerUpper = currentTicker.toUpperCase().trim();
 
@@ -291,6 +306,34 @@ export function PeerComparisonView({
   }, [tickerUpper, initialPeers]);
 
   const [peersList, setPeersList] = useState<string[]>(defaultPeers);
+
+  // Đồng bộ khi đổi mã hoặc danh sách ban đầu thay đổi
+  useEffect(() => {
+    if (initialPeers && initialPeers.length > 0) {
+      const list = [tickerUpper, ...initialPeers.map((s) => s.toUpperCase().trim())];
+      setPeersList(Array.from(new Set(list)).slice(0, 6));
+    }
+  }, [tickerUpper, initialPeers]);
+
+  const [activeScopeId, setActiveScopeId] = useState<string>(
+    scopeOptions && scopeOptions.length > 0 ? scopeOptions[0].id : "l4"
+  );
+  const [pinTargetRow, setPinTargetRow] = useState<boolean>(true);
+
+  // Chuyển đổi scope phân ngành (Cấp 4 / Cấp 2)
+  const handleSelectScope = (scope: PeerScopeOption) => {
+    setActiveScopeId(scope.id);
+    const list = [tickerUpper, ...scope.peers.map((s) => s.toUpperCase().trim())];
+    setPeersList(Array.from(new Set(list)).slice(0, 6));
+  };
+
+  const suggestions = useMemo(() => {
+    if (quickSuggestions && quickSuggestions.length > 0) {
+      return quickSuggestions.filter((s) => s.toUpperCase() !== tickerUpper);
+    }
+    return [];
+  }, [quickSuggestions, tickerUpper]);
+
   const [activeMetricIds, setActiveMetricIds] = useState<string[]>(DEFAULT_METRIC_IDS);
   const [period, setPeriod] = useState<"quarter" | "annual">("quarter");
   const [viewMode, setViewMode] = useState<"table" | "bar" | "trend">("table");
@@ -384,8 +427,9 @@ export function PeerComparisonView({
 
   // Sắp xếp dữ liệu
   const sortedPeers = useMemo(() => {
-    const list = [...peerData];
-    list.sort((a, b) => {
+    if (!peerData.length) return [];
+
+    const compareItems = (a: PeerMetricItem, b: PeerMetricItem) => {
       if (sortKey === "ticker") {
         return sortOrder === "asc"
           ? a.ticker.localeCompare(b.ticker)
@@ -399,9 +443,19 @@ export function PeerComparisonView({
       if (valB == null) return -1;
 
       return sortOrder === "asc" ? valA - valB : valB - valA;
-    });
+    };
+
+    if (pinTargetRow) {
+      const targetItem = peerData.find((p) => p.ticker === tickerUpper);
+      const otherItems = peerData.filter((p) => p.ticker !== tickerUpper);
+      otherItems.sort(compareItems);
+      return targetItem ? [targetItem, ...otherItems] : otherItems;
+    }
+
+    const list = [...peerData];
+    list.sort(compareItems);
     return list;
-  }, [peerData, sortKey, sortOrder]);
+  }, [peerData, sortKey, sortOrder, pinTargetRow, tickerUpper]);
 
   const handleSort = (key: string) => {
     if (sortKey === key) {
@@ -482,13 +536,18 @@ export function PeerComparisonView({
             <Scale className="size-4.5" />
           </div>
           <div>
-            <div className="flex items-center gap-2">
+            <div className="flex flex-wrap items-center gap-2">
               <h3 className="text-base font-bold text-foreground">So Sánh Doanh Nghiệp Cùng Ngành</h3>
               <span className="rounded bg-violet-500/15 px-2 py-0.5 text-xs font-bold text-violet-400">
                 {sectorName}
               </span>
+              {subGroupName && (
+                <span className="rounded bg-teal-500/15 px-2 py-0.5 text-xs font-bold text-teal-400 border border-teal-500/30">
+                  {subGroupName}
+                </span>
+              )}
             </div>
-            <p className="text-xs text-muted-foreground">
+            <p className="text-xs text-muted-foreground mt-0.5">
               Bóc tách đa chỉ tiêu tài chính & hiệu quả kinh doanh so với các đối thủ cùng ngành
             </p>
           </div>
@@ -534,7 +593,42 @@ export function PeerComparisonView({
         </div>
       </div>
 
-      {/* ── 3 CHẾ ĐỘ HIỂN THỊ (BẢNG, CỘT, XU HƯỚNG) ── */}
+      {/* ── BỘ CHỌN PHẠM VI PHÂN CẤP NGÀNH (CẤP 4 / CẤP 2) ── */}
+      {scopeOptions && scopeOptions.length > 1 && (
+        <div className="flex flex-wrap items-center gap-2 rounded-xl border border-border/80 bg-background/50 p-2.5">
+          <span className="text-xs font-bold text-muted-foreground mr-1 flex items-center gap-1.5">
+            <SlidersHorizontal className="size-3.5 text-primary" />
+            <span>Phạm vi so sánh:</span>
+          </span>
+          <div className="flex flex-wrap items-center gap-1.5">
+            {scopeOptions.map((sc) => {
+              const isActive = activeScopeId === sc.id;
+              return (
+                <button
+                  key={sc.id}
+                  type="button"
+                  onClick={() => handleSelectScope(sc)}
+                  className={cn(
+                    "flex items-center gap-1.5 rounded-lg px-3 py-1.5 text-xs transition-all cursor-pointer border",
+                    isActive
+                      ? "border-primary bg-primary/15 text-primary font-bold shadow-2xs"
+                      : "border-border bg-card text-muted-foreground hover:text-foreground hover:bg-muted font-medium"
+                  )}
+                  title={`So sánh theo ${sc.fullName} (${sc.count} doanh nghiệp)`}
+                >
+                  <span className={cn(isActive ? "text-primary" : "text-muted-foreground")}>{sc.label}:</span>
+                  <span className={cn(isActive ? "text-foreground font-bold" : "text-slate-300")}>{sc.fullName}</span>
+                  <span className="rounded-full bg-muted px-1.5 py-0.2 text-[10px] font-mono text-muted-foreground">
+                    {sc.count} mã
+                  </span>
+                </button>
+              );
+            })}
+          </div>
+        </div>
+      )}
+
+      {/* ── 3 CHẾ ĐỘ HIỂN THỊ (BẢNG, CỘT, XU HƯỚNG) & GHIM MÃ MỤC TIÊU ── */}
       <div className="flex flex-wrap items-center justify-between gap-3 pt-1">
         <div className="flex items-center rounded-xl border border-border bg-background p-0.5 text-xs font-bold">
           <button
@@ -578,32 +672,53 @@ export function PeerComparisonView({
           </button>
         </div>
 
-        {/* Chuyển đổi Theo Quý / Theo Năm */}
-        <div className="flex items-center rounded-xl border border-border bg-background p-0.5 text-xs font-bold">
+        {/* Nút Ghim mã mục tiêu lên đầu & Chuyển đổi Theo Quý / Theo Năm */}
+        <div className="flex flex-wrap items-center gap-2">
           <button
             type="button"
-            onClick={() => setPeriod("quarter")}
+            onClick={() => setPinTargetRow(!pinTargetRow)}
             className={cn(
-              "rounded-lg px-3 py-1.5 transition-colors cursor-pointer",
-              period === "quarter"
-                ? "bg-emerald-500/20 text-emerald-400 font-bold"
-                : "text-muted-foreground hover:text-foreground"
+              "inline-flex items-center gap-1.5 rounded-xl border px-3 py-1.5 text-xs font-semibold transition-all cursor-pointer",
+              pinTargetRow
+                ? "border-amber-500/50 bg-amber-500/15 text-amber-300 font-bold shadow-2xs"
+                : "border-border bg-background text-muted-foreground hover:text-foreground"
             )}
+            title={
+              pinTargetRow
+                ? `Đang ghim ${tickerUpper} ở dòng đầu tiên làm mốc đối chiếu chuẩn`
+                : `Bấm để ghim ${tickerUpper} lên dòng đầu bảng`
+            }
           >
-            Theo quý
+            <Pin className={cn("size-3.5", pinTargetRow && "fill-amber-400 text-amber-400")} />
+            <span>Ghim {tickerUpper} đầu bảng</span>
           </button>
-          <button
-            type="button"
-            onClick={() => setPeriod("annual")}
-            className={cn(
-              "rounded-lg px-3 py-1.5 transition-colors cursor-pointer",
-              period === "annual"
-                ? "bg-emerald-500/20 text-emerald-400 font-bold"
-                : "text-muted-foreground hover:text-foreground"
-            )}
-          >
-            Theo năm
-          </button>
+
+          <div className="flex items-center rounded-xl border border-border bg-background p-0.5 text-xs font-bold">
+            <button
+              type="button"
+              onClick={() => setPeriod("quarter")}
+              className={cn(
+                "rounded-lg px-3 py-1.5 transition-colors cursor-pointer",
+                period === "quarter"
+                  ? "bg-emerald-500/20 text-emerald-400 font-bold"
+                  : "text-muted-foreground hover:text-foreground"
+              )}
+            >
+              Theo quý
+            </button>
+            <button
+              type="button"
+              onClick={() => setPeriod("annual")}
+              className={cn(
+                "rounded-lg px-3 py-1.5 transition-colors cursor-pointer",
+                period === "annual"
+                  ? "bg-emerald-500/20 text-emerald-400 font-bold"
+                  : "text-muted-foreground hover:text-foreground"
+              )}
+            >
+              Theo năm
+            </button>
+          </div>
         </div>
       </div>
 
@@ -663,6 +778,41 @@ export function PeerComparisonView({
                 ))}
               </select>
             </div>
+
+            {/* Gợi ý nhanh các mã cùng ngành */}
+            {suggestions.length > 0 && (
+              <div className="flex flex-wrap items-center gap-1.5 pt-1 col-span-1 md:col-span-2 border-t border-border/40">
+                <span className="text-[11px] font-bold text-muted-foreground mr-1">
+                  Gợi ý cùng phân ngành:
+                </span>
+                {suggestions.map((sym) => {
+                  const isInList = peersList.includes(sym);
+                  return (
+                    <button
+                      key={sym}
+                      type="button"
+                      onClick={() => {
+                        if (isInList) {
+                          handleRemoveStock(sym);
+                        } else {
+                          setPeersList((prev) => [...prev, sym]);
+                        }
+                      }}
+                      className={cn(
+                        "inline-flex items-center gap-1 rounded-md px-2 py-0.5 text-[11px] font-bold transition-all cursor-pointer border",
+                        isInList
+                          ? "border-primary/50 bg-primary/20 text-primary"
+                          : "border-border/80 bg-card hover:bg-muted text-muted-foreground hover:text-foreground"
+                      )}
+                      title={isInList ? `Đang so sánh ${sym} (Bấm để gỡ)` : `Thêm ${sym} vào bảng so sánh`}
+                    >
+                      <span>{isInList ? "✓" : "+"}</span>
+                      <span>{sym}</span>
+                    </button>
+                  );
+                })}
+              </div>
+            )}
           </div>
 
           {/* Hàng 2: Badges chỉ tiêu đang xem */}
@@ -797,31 +947,40 @@ export function PeerComparisonView({
                           className={cn(
                             "group transition-colors",
                             isCurrent
-                              ? "bg-primary/5 font-semibold"
+                              ? "bg-amber-500/10 dark:bg-amber-500/[0.08] font-semibold border-l-4 border-l-amber-500"
                               : "hover:bg-muted/10 text-foreground"
                           )}
                         >
                           {/* STT */}
                           <td className="py-2.5 pl-3 pr-2 text-center text-muted-foreground font-medium">
-                            {idx + 1}
+                            {isCurrent && pinTargetRow ? (
+                              <span className="inline-flex items-center justify-center size-5 rounded-full bg-amber-500/20 text-amber-400 text-[10px] font-bold">
+                                ★
+                              </span>
+                            ) : (
+                              idx + 1
+                            )}
                           </td>
 
                           {/* Mã cổ phiếu (Sticky left) */}
                           <td
                             className={cn(
                               "py-2.5 px-3 sticky left-0 z-10 bg-card border-r border-border/60 shadow-[2px_0_5px_rgba(0,0,0,0.04)] group-hover:bg-muted/20 transition-colors",
-                              isCurrent && "bg-primary/[0.07]"
+                              isCurrent && "bg-amber-500/10 dark:bg-amber-500/[0.08]"
                             )}
                           >
                             <div className="flex items-center gap-1.5">
-                              {isCurrent && (
-                                <Star className="size-3 fill-amber-400 text-amber-400 shrink-0" />
-                              )}
+                              {isCurrent ? (
+                                <span className="inline-flex items-center gap-0.5 rounded bg-amber-500/20 px-1.5 py-0.5 text-[10px] font-bold text-amber-300 font-mono">
+                                  <Star className="size-2.5 fill-amber-400 text-amber-400" />
+                                  Mục tiêu
+                                </span>
+                              ) : null}
                               <Link
                                 href={`/stock/${p.ticker}`}
                                 className={cn(
-                                  "font-bold hover:underline",
-                                  isCurrent ? "text-primary" : "text-foreground"
+                                  "font-bold hover:underline font-mono",
+                                  isCurrent ? "text-amber-300 text-[13px]" : "text-foreground"
                                 )}
                               >
                                 {p.ticker}

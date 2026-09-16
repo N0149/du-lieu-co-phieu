@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useEffect, useMemo } from 'react'
+import React, { useState, useEffect, useMemo } from 'react'
 import { TrendingUp, FileText, CheckCircle2, AlertCircle, Calendar } from 'lucide-react'
 import { cn } from '@/lib/utils'
 import type { BusinessPlanYearData, RawBusinessPlanPayload } from '@/lib/business-plan-db'
@@ -162,19 +162,22 @@ export function BusinessPlanComparison({ ticker, plans = [] }: BusinessPlanCompa
           <p>Đang tải kế hoạch kinh doanh...</p>
         </div>
       ) : (
-        <div className="overflow-x-auto">
-          <table className="w-full text-left text-xs border-collapse">
+        <div className="overflow-x-auto scrollbar-thin">
+          <table className="w-full min-w-max text-left text-xs border-collapse">
             <thead>
               {/* Header Level 1: Years */}
               <tr className="border-b border-border/80 bg-muted/60 text-[11px] font-mono uppercase tracking-wider text-muted-foreground">
-                <th className="py-3 px-4 sticky left-0 bg-card border-r border-border/60 z-10 min-w-[160px] font-sans font-bold text-foreground shadow-[2px_0_5px_rgba(0,0,0,0.03)]">
+                <th
+                  rowSpan={2}
+                  className="py-3 px-4 sticky left-0 bg-card border-r border-border/60 z-20 min-w-[150px] font-sans font-bold text-foreground shadow-[2px_0_5px_rgba(0,0,0,0.03)]"
+                >
                   Chỉ tiêu (Tỷ đ)
                 </th>
                 {displayedItems.map((p) => (
                   <th
                     key={p.year}
                     colSpan={3}
-                    className="py-3 px-2 text-center border-l border-border/60 bg-muted/30"
+                    className="py-2.5 px-2 text-center border-l border-border/60 bg-muted/30"
                   >
                     <span className="font-bold text-foreground text-xs">{p.year}</span>
                   </th>
@@ -183,109 +186,106 @@ export function BusinessPlanComparison({ ticker, plans = [] }: BusinessPlanCompa
 
               {/* Header Level 2: Target / Actual / % Done */}
               <tr className="border-b border-border bg-muted/40 text-[10.5px] uppercase font-semibold text-muted-foreground">
-                <th className="py-2 px-4 sticky left-0 bg-card border-r border-border/60 z-10 shadow-[2px_0_5px_rgba(0,0,0,0.03)]"></th>
                 {displayedItems.map((p) => (
-                  <th key={`sub-${p.year}`} colSpan={3} className="p-0 border-l border-border/60">
-                    <div className="grid grid-cols-3 divide-x divide-border/40 text-right">
-                      <span className="py-2 px-2 text-[10.5px] text-muted-foreground">Kế hoạch</span>
-                      <span className="py-2 px-2 text-[10.5px] text-foreground font-medium">Thực hiện</span>
-                      <span className="py-2 px-2 text-[10.5px] text-muted-foreground">Đạt được</span>
-                    </div>
-                  </th>
+                  <React.Fragment key={`sub-${p.year}`}>
+                    <th className="py-2 px-2.5 text-right border-l border-border/60 min-w-[76px] whitespace-nowrap text-muted-foreground font-medium">
+                      Kế hoạch
+                    </th>
+                    <th className="py-2 px-2.5 text-right border-l border-border/30 min-w-[76px] whitespace-nowrap text-foreground font-semibold">
+                      Thực hiện
+                    </th>
+                    <th className="py-2 px-2.5 text-right border-l border-border/30 min-w-[72px] whitespace-nowrap text-muted-foreground font-medium">
+                      Đạt được
+                    </th>
+                  </React.Fragment>
                 ))}
               </tr>
             </thead>
 
             <tbody className="divide-y divide-border/60 font-mono">
               {/* ── ROW 1: DOANH THU ── */}
-              <tr className="hover:bg-muted/20 transition-colors">
-                <td className="py-3 px-4 font-sans font-bold text-foreground sticky left-0 bg-card border-r border-border/60 z-10 shadow-[2px_0_5px_rgba(0,0,0,0.03)]">
+              <tr className="hover:bg-muted/20 transition-colors group">
+                <td className="py-3 px-4 font-sans font-bold text-foreground sticky left-0 bg-card group-hover:bg-muted/10 border-r border-border/60 z-10 shadow-[2px_0_5px_rgba(0,0,0,0.03)] whitespace-nowrap min-w-[150px]">
                   Doanh thu
                 </td>
                 {displayedItems.map((p) => {
                   const ach = fmtPercent(p.revenueAchievement)
                   return (
-                    <td key={`rev-${p.year}`} colSpan={3} className="p-0 border-l border-border/60">
-                      <div className="grid grid-cols-3 divide-x divide-border/40 text-right items-center">
-                        <span className="py-3 px-2 text-muted-foreground">
-                          {fmt(p.targetRevenue)}
-                        </span>
-                        <span className="py-3 px-2 font-bold text-foreground">
-                          {fmt(p.actualRevenue)}
-                        </span>
-                        <span
-                          className={cn(
-                            'py-3 px-2 font-bold',
-                            ach.isSuccess === true && 'text-emerald-500',
-                            ach.isSuccess === false && 'text-rose-500'
-                          )}
-                        >
-                          {ach.text}
-                        </span>
-                      </div>
-                    </td>
+                    <React.Fragment key={`rev-${p.year}`}>
+                      <td className="py-3 px-2.5 text-right border-l border-border/60 text-muted-foreground whitespace-nowrap min-w-[76px]">
+                        {fmt(p.targetRevenue)}
+                      </td>
+                      <td className="py-3 px-2.5 text-right border-l border-border/30 font-bold text-foreground whitespace-nowrap min-w-[76px]">
+                        {fmt(p.actualRevenue)}
+                      </td>
+                      <td
+                        className={cn(
+                          'py-3 px-2.5 text-right border-l border-border/30 font-bold whitespace-nowrap min-w-[72px]',
+                          ach.isSuccess === true && 'text-emerald-500',
+                          ach.isSuccess === false && 'text-rose-500'
+                        )}
+                      >
+                        {ach.text}
+                      </td>
+                    </React.Fragment>
                   )
                 })}
               </tr>
 
               {/* ── ROW 2: LN TRƯỚC THUẾ ── */}
-              <tr className="hover:bg-muted/20 transition-colors">
-                <td className="py-3 px-4 font-sans font-bold text-foreground sticky left-0 bg-card border-r border-border/60 z-10 shadow-[2px_0_5px_rgba(0,0,0,0.03)]">
+              <tr className="hover:bg-muted/20 transition-colors group">
+                <td className="py-3 px-4 font-sans font-bold text-foreground sticky left-0 bg-card group-hover:bg-muted/10 border-r border-border/60 z-10 shadow-[2px_0_5px_rgba(0,0,0,0.03)] whitespace-nowrap min-w-[150px]">
                   LN trước thuế
                 </td>
                 {displayedItems.map((p) => {
                   const ach = fmtPercent(p.pbtAchievement)
                   return (
-                    <td key={`pbt-${p.year}`} colSpan={3} className="p-0 border-l border-border/60">
-                      <div className="grid grid-cols-3 divide-x divide-border/40 text-right items-center">
-                        <span className="py-3 px-2 text-muted-foreground">
-                          {fmt(p.targetPbt)}
-                        </span>
-                        <span className="py-3 px-2 font-bold text-foreground">
-                          {fmt(p.actualPbt)}
-                        </span>
-                        <span
-                          className={cn(
-                            'py-3 px-2 font-bold',
-                            ach.isSuccess === true && 'text-emerald-500',
-                            ach.isSuccess === false && 'text-rose-500'
-                          )}
-                        >
-                          {ach.text}
-                        </span>
-                      </div>
-                    </td>
+                    <React.Fragment key={`pbt-${p.year}`}>
+                      <td className="py-3 px-2.5 text-right border-l border-border/60 text-muted-foreground whitespace-nowrap min-w-[76px]">
+                        {fmt(p.targetPbt)}
+                      </td>
+                      <td className="py-3 px-2.5 text-right border-l border-border/30 font-bold text-foreground whitespace-nowrap min-w-[76px]">
+                        {fmt(p.actualPbt)}
+                      </td>
+                      <td
+                        className={cn(
+                          'py-3 px-2.5 text-right border-l border-border/30 font-bold whitespace-nowrap min-w-[72px]',
+                          ach.isSuccess === true && 'text-emerald-500',
+                          ach.isSuccess === false && 'text-rose-500'
+                        )}
+                      >
+                        {ach.text}
+                      </td>
+                    </React.Fragment>
                   )
                 })}
               </tr>
 
               {/* ── ROW 3: LN SAU THUẾ ── */}
-              <tr className="hover:bg-muted/20 transition-colors">
-                <td className="py-3 px-4 font-sans font-bold text-foreground sticky left-0 bg-card border-r border-border/60 z-10 shadow-[2px_0_5px_rgba(0,0,0,0.03)]">
+              <tr className="hover:bg-muted/20 transition-colors group">
+                <td className="py-3 px-4 font-sans font-bold text-foreground sticky left-0 bg-card group-hover:bg-muted/10 border-r border-border/60 z-10 shadow-[2px_0_5px_rgba(0,0,0,0.03)] whitespace-nowrap min-w-[150px]">
                   LN sau thuế
                 </td>
                 {displayedItems.map((p) => {
                   const ach = fmtPercent(p.patAchievement)
                   return (
-                    <td key={`pat-${p.year}`} colSpan={3} className="p-0 border-l border-border/60">
-                      <div className="grid grid-cols-3 divide-x divide-border/40 text-right items-center">
-                        <span className="py-3 px-2 text-muted-foreground">
-                          {fmt(p.targetPat)}
-                        </span>
-                        <span className="py-3 px-2 font-bold text-foreground">
-                          {fmt(p.actualPat)}
-                        </span>
-                        <span
-                          className={cn(
-                            'py-3 px-2 font-bold',
-                            ach.isSuccess === true && 'text-emerald-500',
-                            ach.isSuccess === false && 'text-rose-500'
-                          )}
-                        >
-                          {ach.text}
-                        </span>
-                      </div>
-                    </td>
+                    <React.Fragment key={`pat-${p.year}`}>
+                      <td className="py-3 px-2.5 text-right border-l border-border/60 text-muted-foreground whitespace-nowrap min-w-[76px]">
+                        {fmt(p.targetPat)}
+                      </td>
+                      <td className="py-3 px-2.5 text-right border-l border-border/30 font-bold text-foreground whitespace-nowrap min-w-[76px]">
+                        {fmt(p.actualPat)}
+                      </td>
+                      <td
+                        className={cn(
+                          'py-3 px-2.5 text-right border-l border-border/30 font-bold whitespace-nowrap min-w-[72px]',
+                          ach.isSuccess === true && 'text-emerald-500',
+                          ach.isSuccess === false && 'text-rose-500'
+                        )}
+                      >
+                        {ach.text}
+                      </td>
+                    </React.Fragment>
                   )
                 })}
               </tr>

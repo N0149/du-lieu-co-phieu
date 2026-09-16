@@ -12,8 +12,9 @@ import {
   ReferenceLine,
 } from 'recharts'
 import type { ValuationHistoryPayload } from '@/lib/valuation-history-service'
-import { Target, TrendingUp, TrendingDown, Clock, ShieldCheck } from 'lucide-react'
+import { Target, TrendingUp, TrendingDown, Clock, ShieldCheck, Maximize2 } from 'lucide-react'
 import { cn } from '@/lib/utils'
+import { ChartModal } from './ChartModal'
 
 interface ValuationBandsChartProps {
   symbol: string
@@ -64,6 +65,7 @@ function formatDateFromSec(sec: number): string {
 
 export function ValuationBandsChart({ symbol, data }: ValuationBandsChartProps) {
   const [timeframe, setTimeframe] = useState<TimeframeOption>('3Y')
+  const [expandedBand, setExpandedBand] = useState<'pe' | 'pb' | 'ps' | null>(null)
 
   // Lọc dữ liệu theo khung thời gian
   const filteredPoints = useMemo(() => {
@@ -185,22 +187,33 @@ export function ValuationBandsChart({ symbol, data }: ValuationBandsChartProps) 
           <div className="text-xs font-black uppercase tracking-wide text-foreground">
             ĐỊNH GIÁ P/E
           </div>
-          {currentPe != null && (
-            <div
-              className={cn(
-                'font-mono text-xs font-black px-2.5 py-0.5 rounded-md',
-                peDiffMed <= 0
-                  ? 'bg-emerald-500/15 text-emerald-400 border border-emerald-500/30'
-                  : 'bg-rose-500/15 text-rose-400 border border-rose-500/30'
-              )}
+          <div className="flex items-center gap-2">
+            {currentPe != null && (
+              <div
+                className={cn(
+                  'font-mono text-xs font-black px-2.5 py-0.5 rounded-md',
+                  peDiffMed <= 0
+                    ? 'bg-emerald-500/15 text-emerald-400 border border-emerald-500/30'
+                    : 'bg-rose-500/15 text-rose-400 border border-rose-500/30'
+                )}
+              >
+                {currentPe.toFixed(2)} LẦN:{' '}
+                {peDiffMed >= 0 ? `CAO HƠN TRUNG VỊ ${peDiffMed.toFixed(1)}%` : `THẤP HƠN TRUNG VỊ ${Math.abs(peDiffMed).toFixed(1)}%`}
+              </div>
+            )}
+            <button
+              type="button"
+              onClick={() => setExpandedBand('pe')}
+              className="flex items-center gap-1 text-[11px] font-semibold text-muted-foreground hover:text-foreground bg-muted/60 hover:bg-muted px-2 py-0.5 rounded-md border border-border/50 transition-colors cursor-pointer"
+              title="Phóng to / Mở rộng biểu đồ"
             >
-              {currentPe.toFixed(2)} LẦN:{' '}
-              {peDiffMed >= 0 ? `CAO HƠN TRUNG VỊ ${peDiffMed.toFixed(1)}%` : `THẤP HƠN TRUNG VỊ ${Math.abs(peDiffMed).toFixed(1)}%`}
-            </div>
-          )}
+              <Maximize2 className="size-3 text-sky-400" />
+              <span className="hidden sm:inline">Mở rộng</span>
+            </button>
+          </div>
         </div>
 
-        <div className="h-[260px] w-full">
+        <div className="h-[260px] w-full cursor-pointer group" onClick={() => setExpandedBand('pe')} title="Bấm vào để phóng lớn biểu đồ">
           <ResponsiveContainer width="100%" height={260}>
             <ComposedChart data={filteredPoints} margin={{ top: 10, right: 10, left: -15, bottom: 0 }}>
               <CartesianGrid strokeDasharray="3 3" stroke="#334155" opacity={0.25} />
@@ -231,22 +244,33 @@ export function ValuationBandsChart({ symbol, data }: ValuationBandsChartProps) 
           <div className="text-xs font-black uppercase tracking-wide text-foreground">
             ĐỊNH GIÁ P/B
           </div>
-          {currentPb != null && (
-            <div
-              className={cn(
-                'font-mono text-xs font-black px-2.5 py-0.5 rounded-md',
-                pbDiffMed <= 0
-                  ? 'bg-emerald-500/15 text-emerald-400 border border-emerald-500/30'
-                  : 'bg-rose-500/15 text-rose-400 border border-rose-500/30'
-              )}
+          <div className="flex items-center gap-2">
+            {currentPb != null && (
+              <div
+                className={cn(
+                  'font-mono text-xs font-black px-2.5 py-0.5 rounded-md',
+                  pbDiffMed <= 0
+                    ? 'bg-emerald-500/15 text-emerald-400 border border-emerald-500/30'
+                    : 'bg-rose-500/15 text-rose-400 border border-rose-500/30'
+                )}
+              >
+                {currentPb.toFixed(2)} LẦN:{' '}
+                {pbDiffMed >= 0 ? `CAO HƠN TRUNG VỊ ${pbDiffMed.toFixed(1)}%` : `THẤP HƠN TRUNG VỊ ${Math.abs(pbDiffMed).toFixed(1)}%`}
+              </div>
+            )}
+            <button
+              type="button"
+              onClick={() => setExpandedBand('pb')}
+              className="flex items-center gap-1 text-[11px] font-semibold text-muted-foreground hover:text-foreground bg-muted/60 hover:bg-muted px-2 py-0.5 rounded-md border border-border/50 transition-colors cursor-pointer"
+              title="Phóng to / Mở rộng biểu đồ"
             >
-              {currentPb.toFixed(2)} LẦN:{' '}
-              {pbDiffMed >= 0 ? `CAO HƠN TRUNG VỊ ${pbDiffMed.toFixed(1)}%` : `THẤP HƠN TRUNG VỊ ${Math.abs(pbDiffMed).toFixed(1)}%`}
-            </div>
-          )}
+              <Maximize2 className="size-3 text-emerald-400" />
+              <span className="hidden sm:inline">Mở rộng</span>
+            </button>
+          </div>
         </div>
 
-        <div className="h-[260px] w-full">
+        <div className="h-[260px] w-full cursor-pointer group" onClick={() => setExpandedBand('pb')} title="Bấm vào để phóng lớn biểu đồ">
           <ResponsiveContainer width="100%" height={260}>
             <ComposedChart data={filteredPoints} margin={{ top: 10, right: 10, left: -15, bottom: 0 }}>
               <CartesianGrid strokeDasharray="3 3" stroke="#334155" opacity={0.25} />
@@ -277,22 +301,33 @@ export function ValuationBandsChart({ symbol, data }: ValuationBandsChartProps) 
           <div className="text-xs font-black uppercase tracking-wide text-foreground">
             ĐỊNH GIÁ P/S
           </div>
-          {currentPs != null && (
-            <div
-              className={cn(
-                'font-mono text-xs font-black px-2.5 py-0.5 rounded-md',
-                psDiffMed <= 0
-                  ? 'bg-emerald-500/15 text-emerald-400 border border-emerald-500/30'
-                  : 'bg-rose-500/15 text-rose-400 border border-rose-500/30'
-              )}
+          <div className="flex items-center gap-2">
+            {currentPs != null && (
+              <div
+                className={cn(
+                  'font-mono text-xs font-black px-2.5 py-0.5 rounded-md',
+                  psDiffMed <= 0
+                    ? 'bg-emerald-500/15 text-emerald-400 border border-emerald-500/30'
+                    : 'bg-rose-500/15 text-rose-400 border border-rose-500/30'
+                )}
+              >
+                {currentPs.toFixed(2)} LẦN:{' '}
+                {psDiffMed >= 0 ? `CAO HƠN TRUNG VỊ ${psDiffMed.toFixed(1)}%` : `THẤP HƠN TRUNG VỊ ${Math.abs(psDiffMed).toFixed(1)}%`}
+              </div>
+            )}
+            <button
+              type="button"
+              onClick={() => setExpandedBand('ps')}
+              className="flex items-center gap-1 text-[11px] font-semibold text-muted-foreground hover:text-foreground bg-muted/60 hover:bg-muted px-2 py-0.5 rounded-md border border-border/50 transition-colors cursor-pointer"
+              title="Phóng to / Mở rộng biểu đồ"
             >
-              {currentPs.toFixed(2)} LẦN:{' '}
-              {psDiffMed >= 0 ? `CAO HƠN TRUNG VỊ ${psDiffMed.toFixed(1)}%` : `THẤP HƠN TRUNG VỊ ${Math.abs(psDiffMed).toFixed(1)}%`}
-            </div>
-          )}
+              <Maximize2 className="size-3 text-violet-400" />
+              <span className="hidden sm:inline">Mở rộng</span>
+            </button>
+          </div>
         </div>
 
-        <div className="h-[260px] w-full">
+        <div className="h-[260px] w-full cursor-pointer group" onClick={() => setExpandedBand('ps')} title="Bấm vào để phóng lớn biểu đồ">
           <ResponsiveContainer width="100%" height={260}>
             <ComposedChart data={filteredPoints} margin={{ top: 10, right: 10, left: -15, bottom: 0 }}>
               <CartesianGrid strokeDasharray="3 3" stroke="#334155" opacity={0.25} />
@@ -314,6 +349,95 @@ export function ValuationBandsChart({ symbol, data }: ValuationBandsChartProps) 
           </ResponsiveContainer>
         </div>
       </div>
-    </div>
+    
+      {/* MODAL PHÓNG TO DẢI ĐỊNH GIÁ */}
+      {expandedBand !== null && (
+        <ChartModal
+          isOpen={expandedBand !== null}
+          onClose={() => setExpandedBand(null)}
+          title={
+            expandedBand === 'pe'
+              ? `Dải Định Giá P/E Lịch Sử - ${symbol}`
+              : expandedBand === 'pb'
+              ? `Dải Định Giá P/B Lịch Sử - ${symbol}`
+              : `Dải Định Giá P/S Lịch Sử - ${symbol}`
+          }
+          subtitle={`Dải độ lệch chuẩn ±1SD, ±2SD và Trung vị lịch sử (${timeframe}) · Chuỗi dữ liệu ${filteredPoints.length} phiên`}
+          badge={
+            <span className="rounded-md bg-primary/10 border border-primary/20 px-2.5 py-1 text-xs font-bold text-primary font-mono">
+              {expandedBand === 'pe' && currentPe != null
+                ? `P/E: ${currentPe.toFixed(2)}x (Trung vị: ${peStats.median}x)`
+                : expandedBand === 'pb' && currentPb != null
+                ? `P/B: ${currentPb.toFixed(2)}x (Trung vị: ${pbStats.median}x)`
+                : expandedBand === 'ps' && currentPs != null
+                ? `P/S: ${currentPs.toFixed(2)}x (Trung vị: ${psStats.median}x)`
+                : 'Định giá'}
+            </span>
+          }
+        >
+          <div className="h-[500px] sm:h-[540px] w-full pt-2">
+            {expandedBand === 'pe' && (
+              <ResponsiveContainer width="100%" height={520}>
+                <ComposedChart data={filteredPoints} margin={{ top: 15, right: 20, left: -10, bottom: 0 }}>
+                  <CartesianGrid strokeDasharray="3 3" stroke="#334155" opacity={0.25} />
+                  <XAxis dataKey="displayDate" tick={{ fontSize: 11, fill: '#888' }} minTickGap={35} />
+                  <YAxis tick={{ fontSize: 11, fill: '#888' }} domain={['auto', 'auto']} unit="x" />
+                  <Tooltip
+                    contentStyle={{ backgroundColor: '#0f172a', borderColor: '#334155', borderRadius: '10px', fontSize: '12px', color: '#fff' }}
+                    formatter={(val: any) => [`${Number(val).toFixed(2)} lần`, 'P/E']}
+                  />
+                  <ReferenceLine y={peStats.plus2sd} stroke="#f43f5e" strokeDasharray="3 3" strokeWidth={1.5} label={{ value: `+2SD (${peStats.plus2sd})`, fill: '#f43f5e', fontSize: 11, position: 'insideTopRight' }} />
+                  <ReferenceLine y={peStats.plus1sd} stroke="#f59e0b" strokeDasharray="3 3" strokeWidth={1.5} label={{ value: `+1SD (${peStats.plus1sd})`, fill: '#f59e0b', fontSize: 11, position: 'insideTopRight' }} />
+                  <ReferenceLine y={peStats.median} stroke="#64748b" strokeWidth={2} strokeDasharray="4 4" label={{ value: `Trung vị (${peStats.median})`, fill: '#94a3b8', fontSize: 11, position: 'insideTopRight' }} />
+                  <ReferenceLine y={peStats.minus1sd} stroke="#10b981" strokeDasharray="3 3" strokeWidth={1.5} label={{ value: `-1SD (${peStats.minus1sd})`, fill: '#10b981', fontSize: 11, position: 'insideTopRight' }} />
+                  <ReferenceLine y={peStats.minus2sd} stroke="#059669" strokeDasharray="3 3" strokeWidth={1.5} label={{ value: `-2SD (${peStats.minus2sd})`, fill: '#059669', fontSize: 11, position: 'insideTopRight' }} />
+                  <Line type="monotone" dataKey="pe" name="P/E lịch sử" stroke="#3b82f6" strokeWidth={2.5} dot={false} />
+                </ComposedChart>
+              </ResponsiveContainer>
+            )}
+
+            {expandedBand === 'pb' && (
+              <ResponsiveContainer width="100%" height={520}>
+                <ComposedChart data={filteredPoints} margin={{ top: 15, right: 20, left: -10, bottom: 0 }}>
+                  <CartesianGrid strokeDasharray="3 3" stroke="#334155" opacity={0.25} />
+                  <XAxis dataKey="displayDate" tick={{ fontSize: 11, fill: '#888' }} minTickGap={35} />
+                  <YAxis tick={{ fontSize: 11, fill: '#888' }} domain={['auto', 'auto']} unit="x" />
+                  <Tooltip
+                    contentStyle={{ backgroundColor: '#0f172a', borderColor: '#334155', borderRadius: '10px', fontSize: '12px', color: '#fff' }}
+                    formatter={(val: any) => [`${Number(val).toFixed(2)} lần`, 'P/B']}
+                  />
+                  <ReferenceLine y={pbStats.plus2sd} stroke="#f43f5e" strokeDasharray="3 3" strokeWidth={1.5} label={{ value: `+2SD (${pbStats.plus2sd})`, fill: '#f43f5e', fontSize: 11, position: 'insideTopRight' }} />
+                  <ReferenceLine y={pbStats.plus1sd} stroke="#f59e0b" strokeDasharray="3 3" strokeWidth={1.5} label={{ value: `+1SD (${pbStats.plus1sd})`, fill: '#f59e0b', fontSize: 11, position: 'insideTopRight' }} />
+                  <ReferenceLine y={pbStats.median} stroke="#64748b" strokeWidth={2} strokeDasharray="4 4" label={{ value: `Trung vị (${pbStats.median})`, fill: '#94a3b8', fontSize: 11, position: 'insideTopRight' }} />
+                  <ReferenceLine y={pbStats.minus1sd} stroke="#10b981" strokeDasharray="3 3" strokeWidth={1.5} label={{ value: `-1SD (${pbStats.minus1sd})`, fill: '#10b981', fontSize: 11, position: 'insideTopRight' }} />
+                  <ReferenceLine y={pbStats.minus2sd} stroke="#059669" strokeDasharray="3 3" strokeWidth={1.5} label={{ value: `-2SD (${pbStats.minus2sd})`, fill: '#059669', fontSize: 11, position: 'insideTopRight' }} />
+                  <Line type="monotone" dataKey="pb" name="P/B lịch sử" stroke="#10b981" strokeWidth={2.5} dot={false} />
+                </ComposedChart>
+              </ResponsiveContainer>
+            )}
+
+            {expandedBand === 'ps' && (
+              <ResponsiveContainer width="100%" height={520}>
+                <ComposedChart data={filteredPoints} margin={{ top: 15, right: 20, left: -10, bottom: 0 }}>
+                  <CartesianGrid strokeDasharray="3 3" stroke="#334155" opacity={0.25} />
+                  <XAxis dataKey="displayDate" tick={{ fontSize: 11, fill: '#888' }} minTickGap={35} />
+                  <YAxis tick={{ fontSize: 11, fill: '#888' }} domain={['auto', 'auto']} unit="x" />
+                  <Tooltip
+                    contentStyle={{ backgroundColor: '#0f172a', borderColor: '#334155', borderRadius: '10px', fontSize: '12px', color: '#fff' }}
+                    formatter={(val: any) => [`${Number(val).toFixed(2)} lần`, 'P/S']}
+                  />
+                  <ReferenceLine y={psStats.plus2sd} stroke="#f43f5e" strokeDasharray="3 3" strokeWidth={1.5} label={{ value: `+2SD (${psStats.plus2sd})`, fill: '#f43f5e', fontSize: 11, position: 'insideTopRight' }} />
+                  <ReferenceLine y={psStats.plus1sd} stroke="#f59e0b" strokeDasharray="3 3" strokeWidth={1.5} label={{ value: `+1SD (${psStats.plus1sd})`, fill: '#f59e0b', fontSize: 11, position: 'insideTopRight' }} />
+                  <ReferenceLine y={psStats.median} stroke="#64748b" strokeWidth={2} strokeDasharray="4 4" label={{ value: `Trung vị (${psStats.median})`, fill: '#94a3b8', fontSize: 11, position: 'insideTopRight' }} />
+                  <ReferenceLine y={psStats.minus1sd} stroke="#10b981" strokeDasharray="3 3" strokeWidth={1.5} label={{ value: `-1SD (${psStats.minus1sd})`, fill: '#10b981', fontSize: 11, position: 'insideTopRight' }} />
+                  <ReferenceLine y={psStats.minus2sd} stroke="#059669" strokeDasharray="3 3" strokeWidth={1.5} label={{ value: `-2SD (${psStats.minus2sd})`, fill: '#059669', fontSize: 11, position: 'insideTopRight' }} />
+                  <Line type="monotone" dataKey="ps" name="P/S lịch sử" stroke="#8b5cf6" strokeWidth={2.5} dot={false} />
+                </ComposedChart>
+              </ResponsiveContainer>
+            )}
+          </div>
+        </ChartModal>
+      )}
+</div>
   )
 }

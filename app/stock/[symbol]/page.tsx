@@ -24,6 +24,7 @@ import { buildCapexFinancialData } from '@/lib/capex-financial-service'
 import { buildDebtDupontData } from '@/lib/debt-dupont-service'
 import { getAgmReport, getAvailableAgmTickers, getAgmKtpl } from '@/lib/agm-service'
 import { getBctcReport, getAvailableBctcTickers } from '@/lib/bctc-service'
+import { getStockIcbHierarchy } from '@/lib/icb-service'
 import { getFinancialStatements } from '@/lib/financial-statements-db'
 import { getStockArticles } from '@/lib/stock-articles-service'
 import { getLocalPriceWeekly } from '@/lib/stock-price-history-service'
@@ -132,15 +133,18 @@ export default async function StockDetailPage({
     stockData.financials
   )
 
-  // Find related stocks in same sector or group
-  const relatedStocks = allStocks
-    .filter(
-      (s) =>
-        s.t !== ticker &&
-        !s.st &&
-        (s.s === stockData?.company.sector || s.g === stockData?.company.icb_l1),
-    )
-    .sort((a, b) => (b.cap || 0) - (a.cap || 0))
+  // Lấy phân cấp ngành ICB chuyên sâu (Cấp 4, Cấp 2, Cấp 1) & danh sách đối thủ thực thụ
+  const icbHierarchy = getStockIcbHierarchy(ticker)
+  const relatedStocks = icbHierarchy?.l4Peers && icbHierarchy.l4Peers.length > 0
+    ? icbHierarchy.l4Peers
+    : allStocks
+        .filter(
+          (s) =>
+            s.t !== ticker &&
+            !s.st &&
+            (s.s === stockData?.company.sector || s.g === stockData?.company.icb_l1),
+        )
+        .sort((a, b) => (b.cap || 0) - (a.cap || 0))
 
   // Dữ liệu phân tích & so sánh chuyên sâu ngành Ngân hàng (nếu là bank)
   const bankAnalysisData = getBankAnalysisData(ticker)
@@ -167,6 +171,7 @@ export default async function StockDetailPage({
         <StockDetailView
           stockData={stockData}
           relatedStocks={relatedStocks}
+          icbHierarchy={icbHierarchy}
           reports={reports}
           detailedSnapshot={detailedSnapshot}
           initialFinancialStatements={financialStatementsQuarter}

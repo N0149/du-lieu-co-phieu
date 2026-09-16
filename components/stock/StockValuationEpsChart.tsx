@@ -12,8 +12,9 @@ import {
   CartesianGrid,
 } from 'recharts'
 import type { ValuationEpsPayload, ValuationEpsPoint } from '@/lib/valuation-eps-service'
-import { Target, TrendingUp, TrendingDown, Layers, Calculator, Info } from 'lucide-react'
+import { Target, TrendingUp, TrendingDown, Layers, Calculator, Info, Maximize2 } from 'lucide-react'
 import { cn } from '@/lib/utils'
+import { ChartModal } from './ChartModal'
 
 interface StockValuationEpsChartProps {
   symbol: string
@@ -38,6 +39,7 @@ export function StockValuationEpsChart({ symbol, initialData }: StockValuationEp
   const [loading, setLoading] = useState(!initialData)
   const [timeframe, setTimeframe] = useState<Timeframe>('3Y')
   const [viewMode, setViewMode] = useState<ViewMode>('FAIR_PE')
+  const [isExpanded, setIsExpanded] = useState(false)
 
   useEffect(() => {
     if (initialData) {
@@ -93,6 +95,84 @@ export function StockValuationEpsChart({ symbol, initialData }: StockValuationEp
 
   const { currentPrice, currentEps, currentPe, medianPe, fairValuePe, peDiffPercent } = data
   const isCheap = peDiffPercent != null && peDiffPercent <= 0
+
+  const renderChart = (chartHeight: number | `${number}%` = '100%') => (
+    <ResponsiveContainer width="100%" height={chartHeight}>
+      <ComposedChart data={filteredTimeline} margin={{ top: 15, right: 15, left: -10, bottom: 5 }}>
+        <defs>
+          <linearGradient id="colorValuationStep" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="5%" stopColor="#475569" stopOpacity={0.4} />
+            <stop offset="95%" stopColor="#334155" stopOpacity={0.15} />
+          </linearGradient>
+        </defs>
+        <CartesianGrid strokeDasharray="3 3" stroke="#334155" opacity={0.25} />
+        <XAxis
+          dataKey="date"
+          tick={{ fontSize: 10, fill: '#888' }}
+          minTickGap={35}
+        />
+        <YAxis
+          tick={{ fontSize: 10, fill: '#888' }}
+          domain={['auto', 'auto']}
+          tickFormatter={(val) => `${Math.round(val / 1000)}k`}
+        />
+        <Tooltip
+          content={({ active, payload }) => {
+            if (!active || !payload || !payload.length) return null
+            const pt = payload[0]?.payload as ValuationEpsPoint
+            if (!pt) return null
+            return (
+              <div className="rounded-xl border border-border/80 bg-slate-950/95 p-3 shadow-xl text-xs space-y-2 max-w-[260px]">
+                <div className="font-mono font-bold text-slate-300 border-b border-slate-800 pb-1.5 flex items-center justify-between">
+                  <span>{pt.date}</span>
+                  {pt.pe && (
+                    <span className="px-1.5 py-0.2 rounded text-[10px] font-mono bg-slate-800 text-cyan-400">
+                      P/E: {pt.pe}x
+                    </span>
+                  )}
+                </div>
+                <div className="space-y-1 font-mono">
+                  <div className="flex items-center justify-between text-indigo-400 font-bold">
+                    <span>Thị giá đóng cửa:</span>
+                    <span>{fmtPrice(pt.price)}</span>
+                  </div>
+                  <div className="flex items-center justify-between text-slate-300 font-bold">
+                    <span>Định giá P/E ({medianPe}x):</span>
+                    <span>{fmtPrice(pt.fairPricePe)}</span>
+                  </div>
+                  <div className="flex items-center justify-between text-emerald-400 font-bold">
+                    <span>EPS (TTM):</span>
+                    <span>{fmtPrice(pt.eps)}</span>
+                  </div>
+                </div>
+              </div>
+            )
+          }}
+        />
+
+        {/* Vùng diện tích bậc thang (Stepped Area chuẩn phong cách WiData) */}
+        <Area
+          type="stepAfter"
+          dataKey={viewMode === 'FAIR_PE' ? 'fairPricePe' : 'eps'}
+          name={viewMode === 'FAIR_PE' ? 'Định giá hợp lý theo P/E' : 'EPS (TTM)'}
+          stroke="#94a3b8"
+          strokeWidth={1.8}
+          fill="url(#colorValuationStep)"
+        />
+
+        {/* Đường giá thị trường (Line) */}
+        <Line
+          type="monotone"
+          dataKey="price"
+          name="Giá thị trường"
+          stroke="#38bdf8"
+          strokeWidth={2}
+          dot={false}
+          activeDot={{ r: 5, fill: '#38bdf8', stroke: '#fff' }}
+        />
+      </ComposedChart>
+    </ResponsiveContainer>
+  )
 
   return (
     <div className="w-full rounded-2xl border border-border bg-card p-4 sm:p-6 shadow-xs space-y-5">
@@ -165,6 +245,17 @@ export function StockValuationEpsChart({ symbol, initialData }: StockValuationEp
               </button>
             ))}
           </div>
+
+          {/* Nút Phóng to */}
+          <button
+            type="button"
+            onClick={() => setIsExpanded(true)}
+            className="flex items-center gap-1.5 rounded-xl border border-border bg-muted/40 hover:bg-muted px-2.5 sm:px-3 py-1 text-xs font-bold text-muted-foreground hover:text-foreground transition-all cursor-pointer"
+            title="Phóng to / Mở rộng biểu đồ"
+          >
+            <Maximize2 className="size-3.5 text-indigo-400" />
+            <span className="hidden sm:inline">Mở rộng</span>
+          </button>
         </div>
       </div>
 
@@ -228,82 +319,12 @@ export function StockValuationEpsChart({ symbol, initialData }: StockValuationEp
       </div>
 
       {/* ── BIỂU ĐỒ RECHARTS (WIDATA STEPPED AREA + LINE) ── */}
-      <div className="h-[300px] sm:h-[340px] w-full pt-2">
-        <ResponsiveContainer width="100%" height="100%">
-          <ComposedChart data={filteredTimeline} margin={{ top: 15, right: 15, left: -10, bottom: 5 }}>
-            <defs>
-              <linearGradient id="colorValuationStep" x1="0" y1="0" x2="0" y2="1">
-                <stop offset="5%" stopColor="#475569" stopOpacity={0.4} />
-                <stop offset="95%" stopColor="#334155" stopOpacity={0.15} />
-              </linearGradient>
-            </defs>
-            <CartesianGrid strokeDasharray="3 3" stroke="#334155" opacity={0.25} />
-            <XAxis
-              dataKey="date"
-              tick={{ fontSize: 10, fill: '#888' }}
-              minTickGap={35}
-            />
-            <YAxis
-              tick={{ fontSize: 10, fill: '#888' }}
-              domain={['auto', 'auto']}
-              tickFormatter={(val) => `${Math.round(val / 1000)}k`}
-            />
-            <Tooltip
-              content={({ active, payload }) => {
-                if (!active || !payload || !payload.length) return null
-                const pt = payload[0]?.payload as ValuationEpsPoint
-                if (!pt) return null
-                return (
-                  <div className="rounded-xl border border-border/80 bg-slate-950/95 p-3 shadow-xl text-xs space-y-2 max-w-[260px]">
-                    <div className="font-mono font-bold text-slate-300 border-b border-slate-800 pb-1.5 flex items-center justify-between">
-                      <span>{pt.date}</span>
-                      {pt.pe && (
-                        <span className="px-1.5 py-0.2 rounded text-[10px] font-mono bg-slate-800 text-cyan-400">
-                          P/E: {pt.pe}x
-                        </span>
-                      )}
-                    </div>
-                    <div className="space-y-1 font-mono">
-                      <div className="flex items-center justify-between text-indigo-400 font-bold">
-                        <span>Thị giá đóng cửa:</span>
-                        <span>{fmtPrice(pt.price)}</span>
-                      </div>
-                      <div className="flex items-center justify-between text-slate-300 font-bold">
-                        <span>Định giá P/E ({medianPe}x):</span>
-                        <span>{fmtPrice(pt.fairPricePe)}</span>
-                      </div>
-                      <div className="flex items-center justify-between text-emerald-400 font-bold">
-                        <span>EPS (TTM):</span>
-                        <span>{fmtPrice(pt.eps)}</span>
-                      </div>
-                    </div>
-                  </div>
-                )
-              }}
-            />
-
-            {/* Vùng diện tích bậc thang (Stepped Area chuẩn phong cách WiData) */}
-            <Area
-              type="stepAfter"
-              dataKey={viewMode === 'FAIR_PE' ? 'fairPricePe' : 'eps'}
-              name={viewMode === 'FAIR_PE' ? 'Định giá hợp lý theo P/E' : 'EPS (TTM)'}
-              stroke="#94a3b8"
-              strokeWidth={1.8}
-              fill="url(#colorValuationStep)"
-            />
-
-            {/* Đường giá thị trường (Line) */}
-            <Line
-              type="monotone"
-              dataKey="price"
-              name="Giá thị trường"
-              stroke="#38bdf8"
-              strokeWidth={2}
-              dot={false}
-              activeDot={{ r: 5, fill: '#38bdf8', stroke: '#fff' }}
-            />
-          </ComposedChart>
-        </ResponsiveContainer>
+      <div
+        className="h-[300px] sm:h-[340px] w-full pt-2 cursor-pointer group"
+        onClick={() => setIsExpanded(true)}
+        title="Bấm vào để phóng lớn biểu đồ"
+      >
+        {renderChart('100%')}
       </div>
 
       {/* ── CHÚ THÍCH (LEGEND) CHUẨN WIDATA ── */}
@@ -319,6 +340,49 @@ export function StockValuationEpsChart({ symbol, initialData }: StockValuationEp
           <span className="font-semibold text-muted-foreground">Giá thị trường (P/E)</span>
         </div>
       </div>
+
+      {/* ── MODAL PHÓNG TO ĐỊNH GIÁ EPS & P/E ── */}
+      {isExpanded && (
+        <ChartModal
+          isOpen={isExpanded}
+          onClose={() => setIsExpanded(false)}
+          title={`Định Giá Doanh Nghiệp (EPS & P/E) - ${symbol}`}
+          subtitle={`So sánh biến động thị giá với Định giá hợp lý P/E trung vị (${timeframe}) · Chuỗi dữ liệu ${filteredTimeline.length} phiên`}
+          badge={
+            <span className="rounded-md bg-primary/10 border border-primary/20 px-2.5 py-1 text-xs font-bold text-primary font-mono">
+              P/E: {currentPe}x (Trung vị: {medianPe}x)
+            </span>
+          }
+          headerExtra={
+            <div className="flex items-center gap-1.5 rounded-xl border border-border bg-muted/40 p-1">
+              <button
+                type="button"
+                onClick={() => setViewMode('FAIR_PE')}
+                className={cn(
+                  'rounded-lg px-2.5 py-1 text-xs font-bold transition-all cursor-pointer',
+                  viewMode === 'FAIR_PE' ? 'bg-primary text-primary-foreground shadow-xs' : 'text-muted-foreground hover:text-foreground'
+                )}
+              >
+                Định giá P/E
+              </button>
+              <button
+                type="button"
+                onClick={() => setViewMode('EPS')}
+                className={cn(
+                  'rounded-lg px-2.5 py-1 text-xs font-bold transition-all cursor-pointer',
+                  viewMode === 'EPS' ? 'bg-primary text-primary-foreground shadow-xs' : 'text-muted-foreground hover:text-foreground'
+                )}
+              >
+                EPS (TTM)
+              </button>
+            </div>
+          }
+        >
+          <div className="h-[480px] sm:h-[540px] w-full pt-2">
+            {renderChart(520)}
+          </div>
+        </ChartModal>
+      )}
     </div>
   )
 }

@@ -38,8 +38,10 @@ import {
   Percent,
   Wallet,
   Activity,
+  Maximize2,
 } from 'lucide-react'
 import { cn } from '@/lib/utils'
+import { ChartModal } from './ChartModal'
 import { WiDataStandardRow } from './WiDataStandardRow'
 import { MWGSegmentCharts } from './MWGSegmentCharts'
 
@@ -186,6 +188,96 @@ function createQuarterTickRenderer(activeQuarter: number | null) {
 // CÁC COMPONENT BIỂU ĐỒ ĐỘC LẬP (TỰ QUẢN LÝ HOVER RIÊNG BIỆT)
 // ══════════════════════════════════════════════════════════════════
 
+
+interface ExpandableChartCardProps {
+  title: string
+  icon: React.ComponentType<{ className?: string }>
+  iconColor?: string
+  hoverBorderColor?: string
+  activeQuarter?: number | null
+  isQuarter?: boolean
+  latestBadge?: React.ReactNode
+  modalTitle?: string
+  modalSubtitle?: string
+  onMouseLeave?: () => void
+  children: (height: number) => React.ReactNode
+}
+
+const ExpandableChartCard = React.memo(function ExpandableChartCard({
+  title,
+  icon: Icon,
+  iconColor = 'text-sky-400',
+  hoverBorderColor = 'hover:border-sky-500/40',
+  activeQuarter,
+  isQuarter,
+  latestBadge,
+  modalTitle,
+  modalSubtitle,
+  onMouseLeave,
+  children,
+}: ExpandableChartCardProps) {
+  const [isExpanded, setIsExpanded] = useState(false)
+
+  return (
+    <div
+      onMouseLeave={onMouseLeave}
+      className={cn(
+        'flex flex-col justify-between rounded-2xl border border-border/70 bg-card/90 p-4 sm:p-5 shadow-xs transition-colors',
+        hoverBorderColor
+      )}
+    >
+      <div className="flex items-center justify-between border-b border-border/50 pb-3 mb-3">
+        <div className="flex items-center gap-2 text-xs font-black uppercase text-foreground">
+          <Icon className={cn('size-4', iconColor)} />
+          <span>{title}</span>
+          {activeQuarter && isQuarter && (
+            <span className="text-[10px] text-amber-400 font-bold bg-amber-500/10 px-1.5 py-0.5 rounded border border-amber-500/30">
+              Q{activeQuarter} cùng kỳ
+            </span>
+          )}
+        </div>
+        <div className="flex items-center gap-2">
+          {latestBadge}
+          <button
+            type="button"
+            onClick={(e) => {
+              e.stopPropagation()
+              setIsExpanded(true)
+            }}
+            className="flex items-center gap-1 text-[11px] font-semibold text-muted-foreground hover:text-foreground bg-muted/60 hover:bg-muted px-2 py-0.5 rounded-md border border-border/50 transition-colors cursor-pointer"
+            title="Phóng to / Mở rộng biểu đồ"
+          >
+            <Maximize2 className="size-3 text-sky-400" />
+            <span className="hidden sm:inline">Mở rộng</span>
+          </button>
+        </div>
+      </div>
+
+      <div
+        className="h-[280px] w-full cursor-pointer group relative"
+        onClick={() => setIsExpanded(true)}
+        title="Bấm vào để phóng lớn biểu đồ"
+      >
+        {children(280)}
+      </div>
+
+      {isExpanded && (
+        <ChartModal
+          isOpen={isExpanded}
+          onClose={() => setIsExpanded(false)}
+          title={modalTitle || title}
+          subtitle={modalSubtitle}
+          badge={latestBadge}
+        >
+          <div className="h-[480px] sm:h-[540px] w-full pt-2">
+            {children(520)}
+          </div>
+        </ChartModal>
+      )}
+    </div>
+  )
+})
+
 // ── 1. Biểu đồ Doanh Thu Thuần ──
 const RevenueChartCard = React.memo(function RevenueChartCard({
   data,
@@ -229,27 +321,24 @@ const RevenueChartCard = React.memo(function RevenueChartCard({
   const tickRenderer = useMemo(() => isQuarter ? createQuarterTickRenderer(activeQuarter) : undefined, [isQuarter, activeQuarter])
 
   return (
-    <div
+    <ExpandableChartCard
+      title="Doanh Thu Thuần (Tỷ Đồng)"
+      icon={TrendingUp}
+      iconColor="text-sky-400"
+      hoverBorderColor="hover:border-sky-500/40"
+      activeQuarter={activeQuarter}
+      isQuarter={isQuarter}
       onMouseLeave={handleMouseLeave}
-      className="flex flex-col justify-between rounded-2xl border border-border/70 bg-card/90 p-4 sm:p-5 shadow-xs transition-colors hover:border-sky-500/40"
-    >
-      <div className="flex items-center justify-between border-b border-border/50 pb-3 mb-3">
-        <div className="flex items-center gap-2 text-xs font-black uppercase text-foreground">
-          <TrendingUp className="size-4 text-sky-400" />
-          <span>Doanh Thu Thuần (Tỷ Đồng)</span>
-          {activeQuarter && isQuarter && (
-            <span className="text-[10px] text-amber-400 font-bold bg-amber-500/10 px-1.5 py-0.5 rounded border border-amber-500/30">
-              Q{activeQuarter} cùng kỳ
-            </span>
-          )}
-        </div>
+      latestBadge={
         <span className="font-mono text-[11px] font-bold text-sky-400 bg-sky-500/10 border border-sky-500/20 px-2 py-0.5 rounded-md">
           {fmtNum(latest?.doanhThu)} tỷ {latest?.tangTruongDT != null ? `(${latest.tangTruongDT > 0 ? '+' : ''}${latest.tangTruongDT.toFixed(1)}%)` : ''}
         </span>
-      </div>
-
-      <div className="h-[280px] w-full">
-        <ResponsiveContainer width="100%" height={280}>
+      }
+      modalTitle="Doanh Thu Thuần (Tỷ Đồng) & Tăng Trưởng YoY"
+      modalSubtitle={`Dữ liệu tài chính chuỗi thời gian (${data.length} kỳ) · Theo ${isQuarter ? 'Quý' : 'Năm'}`}
+        >
+      {(height) => (
+        <ResponsiveContainer width="100%" height={height}>
           <ComposedChart
             data={data}
             margin={{ top: 10, right: 10, left: -10, bottom: 0 }}
@@ -307,8 +396,8 @@ const RevenueChartCard = React.memo(function RevenueChartCard({
             />
           </ComposedChart>
         </ResponsiveContainer>
-      </div>
-    </div>
+      )}
+    </ExpandableChartCard>
   )
 })
 
@@ -355,27 +444,24 @@ const ProfitChartCard = React.memo(function ProfitChartCard({
   const tickRenderer = useMemo(() => isQuarter ? createQuarterTickRenderer(activeQuarter) : undefined, [isQuarter, activeQuarter])
 
   return (
-    <div
+    <ExpandableChartCard
+      title="Lợi Nhuận Sau Thuế Công Ty Mẹ"
+      icon={TrendingUp}
+      iconColor="text-emerald-400"
+      hoverBorderColor="hover:border-emerald-500/40"
+      activeQuarter={activeQuarter}
+      isQuarter={isQuarter}
       onMouseLeave={handleMouseLeave}
-      className="flex flex-col justify-between rounded-2xl border border-border/70 bg-card/90 p-4 sm:p-5 shadow-xs transition-colors hover:border-emerald-500/40"
-    >
-      <div className="flex items-center justify-between border-b border-border/50 pb-3 mb-3">
-        <div className="flex items-center gap-2 text-xs font-black uppercase text-foreground">
-          <TrendingUp className="size-4 text-emerald-400" />
-          <span>Lợi Nhuận Sau Thuế Công Ty Mẹ</span>
-          {activeQuarter && isQuarter && (
-            <span className="text-[10px] text-amber-400 font-bold bg-amber-500/10 px-1.5 py-0.5 rounded border border-amber-500/30">
-              Q{activeQuarter} cùng kỳ
-            </span>
-          )}
-        </div>
+      latestBadge={
         <span className="font-mono text-[11px] font-bold text-emerald-400 bg-emerald-500/10 border border-emerald-500/20 px-2 py-0.5 rounded-md">
           {fmtNum(latest?.lnst)} tỷ {latest?.tangTruongLNST != null ? `(${latest.tangTruongLNST > 0 ? '+' : ''}${latest.tangTruongLNST.toFixed(1)}%)` : ''}
         </span>
-      </div>
-
-      <div className="h-[280px] w-full">
-        <ResponsiveContainer width="100%" height={280}>
+      }
+      modalTitle="Lợi Nhuận Sau Thuế Công Ty Mẹ & Tăng Trưởng YoY"
+      modalSubtitle={`Dữ liệu tài chính chuỗi thời gian (${data.length} kỳ) · Theo ${isQuarter ? 'Quý' : 'Năm'}`}
+        >
+      {(height) => (
+        <ResponsiveContainer width="100%" height={height}>
           <ComposedChart
             data={data}
             margin={{ top: 10, right: 10, left: -10, bottom: 0 }}
@@ -433,8 +519,8 @@ const ProfitChartCard = React.memo(function ProfitChartCard({
             />
           </ComposedChart>
         </ResponsiveContainer>
-      </div>
-    </div>
+      )}
+    </ExpandableChartCard>
   )
 })
 
@@ -447,20 +533,22 @@ const PlanChartCard = React.memo(function PlanChartCard({
   latestPlan: any
 }) {
   return (
-    <div className="flex flex-col justify-between rounded-2xl border border-border/70 bg-card/90 p-4 sm:p-5 shadow-xs transition-colors hover:border-amber-500/40">
-      <div className="flex items-center justify-between border-b border-border/50 pb-3 mb-3">
-        <div className="flex items-center gap-2 text-xs font-black uppercase text-foreground">
-          <Target className="size-4 text-amber-400" />
-          <span>KQKD Kế Hoạch & Thực Hiện (Năm)</span>
-        </div>
+    <ExpandableChartCard
+      title="KQKD Kế Hoạch & Thực Hiện (Năm)"
+      icon={Target}
+      iconColor="text-amber-400"
+      hoverBorderColor="hover:border-amber-500/40"
+      latestBadge={
         <span className="font-mono text-[11px] font-bold text-amber-400 bg-amber-500/10 border border-amber-500/20 px-2 py-0.5 rounded-md">
           {latestPlan?.pctDatLNST != null ? `Đạt ${latestPlan.pctDatLNST.toFixed(0)}% KH` : 'Dự phóng'}
         </span>
-      </div>
-
-      <div className="h-[280px] w-full">
-        {planChartPoints.length > 0 ? (
-          <ResponsiveContainer width="100%" height={280}>
+      }
+      modalTitle="Kết Quả Kinh Doanh Kế Hoạch & Thực Hiện (Năm)"
+      modalSubtitle="So sánh Doanh thu, Lợi nhuận thực hiện với Nghị quyết ĐHĐCĐ qua các năm"
+        >
+      {(height) =>
+        planChartPoints.length > 0 ? (
+          <ResponsiveContainer width="100%" height={height}>
             <ComposedChart data={planChartPoints} margin={{ top: 10, right: 10, left: -10, bottom: 0 }}>
               <CartesianGrid strokeDasharray="3 3" stroke="#334155" opacity={0.25} />
               <XAxis dataKey="year" tick={{ fontSize: 10, fill: '#888' }} />
@@ -479,9 +567,9 @@ const PlanChartCard = React.memo(function PlanChartCard({
           <div className="flex h-full items-center justify-center text-xs text-muted-foreground">
             Đang cập nhật số liệu kế hoạch kinh doanh
           </div>
-        )}
-      </div>
-    </div>
+        )
+      }
+    </ExpandableChartCard>
   )
 })
 
@@ -528,28 +616,25 @@ const ProfitStructureChartCard = React.memo(function ProfitStructureChartCard({
   const tickRenderer = useMemo(() => isQuarter ? createQuarterTickRenderer(activeQuarter) : undefined, [isQuarter, activeQuarter])
 
   return (
-    <div
+    <ExpandableChartCard
+      title="Cơ Cấu Lợi Nhuận Trước Thuế"
+      icon={PieChart}
+      iconColor="text-indigo-400"
+      hoverBorderColor="hover:border-indigo-500/40"
+      activeQuarter={activeQuarter}
+      isQuarter={isQuarter}
       onMouseLeave={handleMouseLeave}
-      className="flex flex-col justify-between rounded-2xl border border-border/70 bg-card/90 p-4 sm:p-5 shadow-xs transition-colors hover:border-indigo-500/40"
-    >
-      <div className="flex items-center justify-between border-b border-border/50 pb-3 mb-3">
-        <div className="flex items-center gap-2 text-xs font-black uppercase text-foreground">
-          <PieChart className="size-4 text-indigo-400" />
-          <span>Cơ Cấu Lợi Nhuận Trước Thuế</span>
-          {activeQuarter && isQuarter && (
-            <span className="text-[10px] text-amber-400 font-bold bg-amber-500/10 px-1.5 py-0.5 rounded border border-amber-500/30">
-              Q{activeQuarter} cùng kỳ
-            </span>
-          )}
-        </div>
-        <span className="font-mono text-[11px] font-bold text-orange-400 bg-orange-500/10 border border-orange-500/20 px-2 py-0.5 rounded-md">
+      latestBadge={
+        <span className="font-mono text-[11px] font-bold text-indigo-400 bg-indigo-500/10 border border-indigo-500/20 px-2 py-0.5 rounded-md">
           LNTT: {latestProfit?.lntt != null ? `${fmtNum(latestProfit.lntt)} tỷ` : '—'}
         </span>
-      </div>
-
-      <div className="h-[280px] w-full">
-        {profitPoints.length > 0 ? (
-          <ResponsiveContainer width="100%" height={280}>
+      }
+      modalTitle="Cơ Cấu Lợi Nhuận Trước Thuế (Chuẩn WiData)"
+      modalSubtitle={`Bóc tách Lợi nhuận HĐKD chính, Lợi nhuận tài chính & Lợi nhuận khác (${profitPoints.length} kỳ)`}
+        >
+      {(height) =>
+        profitPoints.length > 0 ? (
+          <ResponsiveContainer width="100%" height={height}>
             <ComposedChart
               data={profitPoints}
               margin={{ top: 10, right: 10, left: -10, bottom: 0 }}
@@ -662,9 +747,9 @@ const ProfitStructureChartCard = React.memo(function ProfitStructureChartCard({
           <div className="flex h-full items-center justify-center text-xs text-muted-foreground">
             Đang cập nhật chi tiết cơ cấu lợi nhuận
           </div>
-        )}
-      </div>
-    </div>
+        )
+      }
+    </ExpandableChartCard>
   )
 })
 
@@ -711,28 +796,25 @@ const DetailedAssetChartCard = React.memo(function DetailedAssetChartCard({
   const tickRenderer = useMemo(() => isQuarter ? createQuarterTickRenderer(activeQuarter) : undefined, [isQuarter, activeQuarter])
 
   return (
-    <div
+    <ExpandableChartCard
+      title="TÀI SẢN (Tỷ Đồng)"
+      icon={Wallet}
+      iconColor="text-sky-400"
+      hoverBorderColor="hover:border-sky-500/40"
+      activeQuarter={activeQuarter}
+      isQuarter={isQuarter}
       onMouseLeave={handleMouseLeave}
-      className="flex flex-col justify-between rounded-2xl border border-border/70 bg-card/90 p-4 sm:p-5 shadow-xs transition-colors hover:border-sky-500/40"
-    >
-      <div className="flex items-center justify-between border-b border-border/50 pb-3 mb-3">
-        <div className="flex items-center gap-2 text-xs font-black uppercase text-foreground">
-          <Wallet className="size-4 text-sky-400" />
-          <span>TÀI SẢN (Tỷ Đồng)</span>
-          {activeQuarter && isQuarter && (
-            <span className="text-[10px] text-amber-400 font-bold bg-amber-500/10 px-1.5 py-0.5 rounded border border-amber-500/30">
-              Q{activeQuarter} cùng kỳ
-            </span>
-          )}
-        </div>
+      latestBadge={
         <span className="font-mono text-[11px] font-bold text-sky-400 bg-sky-500/10 border border-sky-500/20 px-2 py-0.5 rounded-md">
           Tổng TS: {latestPoint?.tongTS != null ? `${fmtNum(latestPoint.tongTS)} tỷ` : '—'}
         </span>
-      </div>
-
-      <div className="h-[280px] w-full">
-        {balancePoints.length > 0 ? (
-          <ResponsiveContainer width="100%" height={280}>
+      }
+      modalTitle="Cơ Cấu Tài Sản (Bóc Tách Chi Tiết Chuẩn WiData)"
+      modalSubtitle={`Tiền mặt, Đầu tư ngắn hạn, Phải thu, Tồn kho, TSCĐ (${balancePoints.length} kỳ)`}
+        >
+      {(height) =>
+        balancePoints.length > 0 ? (
+          <ResponsiveContainer width="100%" height={height}>
             <ComposedChart
               data={balancePoints}
               margin={{ top: 10, right: 10, left: -10, bottom: 0 }}
@@ -799,9 +881,9 @@ const DetailedAssetChartCard = React.memo(function DetailedAssetChartCard({
           <div className="flex h-full items-center justify-center text-xs text-muted-foreground">
             Đang cập nhật số liệu bảng cân đối tài sản
           </div>
-        )}
-      </div>
-    </div>
+        )
+      }
+    </ExpandableChartCard>
   )
 })
 
@@ -848,28 +930,25 @@ const DetailedCapitalChartCard = React.memo(function DetailedCapitalChartCard({
   const tickRenderer = useMemo(() => isQuarter ? createQuarterTickRenderer(activeQuarter) : undefined, [isQuarter, activeQuarter])
 
   return (
-    <div
+    <ExpandableChartCard
+      title="NGUỒN VỐN (Tỷ Đồng)"
+      icon={Layers}
+      iconColor="text-emerald-400"
+      hoverBorderColor="hover:border-emerald-500/40"
+      activeQuarter={activeQuarter}
+      isQuarter={isQuarter}
       onMouseLeave={handleMouseLeave}
-      className="flex flex-col justify-between rounded-2xl border border-border/70 bg-card/90 p-4 sm:p-5 shadow-xs transition-colors hover:border-emerald-500/40"
-    >
-      <div className="flex items-center justify-between border-b border-border/50 pb-3 mb-3">
-        <div className="flex items-center gap-2 text-xs font-black uppercase text-foreground">
-          <DollarSign className="size-4 text-emerald-400" />
-          <span>NGUỒN VỐN (Tỷ Đồng)</span>
-          {activeQuarter && isQuarter && (
-            <span className="text-[10px] text-amber-400 font-bold bg-amber-500/10 px-1.5 py-0.5 rounded border border-amber-500/30">
-              Q{activeQuarter} cùng kỳ
-            </span>
-          )}
-        </div>
+      latestBadge={
         <span className="font-mono text-[11px] font-bold text-emerald-400 bg-emerald-500/10 border border-emerald-500/20 px-2 py-0.5 rounded-md">
           Tổng NV: {latestPoint?.tongNV != null ? `${fmtNum(latestPoint.tongNV)} tỷ` : '—'}
         </span>
-      </div>
-
-      <div className="h-[280px] w-full">
-        {balancePoints.length > 0 ? (
-          <ResponsiveContainer width="100%" height={280}>
+      }
+      modalTitle="Cơ Cấu Nguồn Vốn (Bóc Tách Chi Tiết Chuẩn WiData)"
+      modalSubtitle={`Vốn chủ sở hữu, Vay ngắn hạn, Vay dài hạn, Phải trả người bán (${balancePoints.length} kỳ)`}
+        >
+      {(height) =>
+        balancePoints.length > 0 ? (
+          <ResponsiveContainer width="100%" height={height}>
             <ComposedChart
               data={balancePoints}
               margin={{ top: 10, right: 10, left: -10, bottom: 0 }}
@@ -929,9 +1008,9 @@ const DetailedCapitalChartCard = React.memo(function DetailedCapitalChartCard({
           <div className="flex h-full items-center justify-center text-xs text-muted-foreground">
             Đang cập nhật số liệu bảng cân đối nguồn vốn
           </div>
-        )}
-      </div>
-    </div>
+        )
+      }
+    </ExpandableChartCard>
   )
 })
 
@@ -978,28 +1057,25 @@ const DetailedCashFlowChartCard = React.memo(function DetailedCashFlowChartCard(
   const tickRenderer = useMemo(() => isQuarter ? createQuarterTickRenderer(activeQuarter) : undefined, [isQuarter, activeQuarter])
 
   return (
-    <div
+    <ExpandableChartCard
+      title="LƯU CHUYỂN TIỀN (Tỷ Đồng)"
+      icon={Activity}
+      iconColor="text-amber-400"
+      hoverBorderColor="hover:border-amber-500/40"
+      activeQuarter={activeQuarter}
+      isQuarter={isQuarter}
       onMouseLeave={handleMouseLeave}
-      className="flex flex-col justify-between rounded-2xl border border-border/70 bg-card/90 p-4 sm:p-5 shadow-xs transition-colors hover:border-amber-500/40"
-    >
-      <div className="flex items-center justify-between border-b border-border/50 pb-3 mb-3">
-        <div className="flex items-center gap-2 text-xs font-black uppercase text-foreground">
-          <Activity className="size-4 text-amber-400" />
-          <span>LƯU CHUYỂN TIỀN (Tỷ Đồng)</span>
-          {activeQuarter && isQuarter && (
-            <span className="text-[10px] text-amber-400 font-bold bg-amber-500/10 px-1.5 py-0.5 rounded border border-amber-500/30">
-              Q{activeQuarter} cùng kỳ
-            </span>
-          )}
-        </div>
+      latestBadge={
         <span className="font-mono text-[11px] font-bold text-amber-400 bg-amber-500/10 border border-amber-500/20 px-2 py-0.5 rounded-md">
-          LCTT Thuần: {latestPoint?.netCash != null ? `${fmtNum(latestPoint.netCash)} tỷ` : '—'}
+          OCF: {latestPoint?.ocf != null ? `${fmtNum(latestPoint.ocf)} tỷ` : '—'}
         </span>
-      </div>
-
-      <div className="h-[280px] w-full">
-        {balancePoints.length > 0 ? (
-          <ResponsiveContainer width="100%" height={280}>
+      }
+      modalTitle="Lưu Chuyển Tiền Tệ Thuần (OCF, ICF, CFF)"
+      modalSubtitle={`Dòng tiền từ HĐKD, HĐ đầu tư & HĐ tài chính (${balancePoints.length} kỳ)`}
+        >
+      {(height) =>
+        balancePoints.length > 0 ? (
+          <ResponsiveContainer width="100%" height={height}>
             <ComposedChart
               data={balancePoints}
               margin={{ top: 10, right: 10, left: -10, bottom: 0 }}
@@ -1067,9 +1143,9 @@ const DetailedCashFlowChartCard = React.memo(function DetailedCashFlowChartCard(
           <div className="flex h-full items-center justify-center text-xs text-muted-foreground">
             Đang cập nhật số liệu báo cáo lưu chuyển tiền tệ
           </div>
-        )}
-      </div>
-    </div>
+        )
+      }
+    </ExpandableChartCard>
   )
 })
 
@@ -1116,33 +1192,25 @@ const DetailedCapexDepreciationCard = React.memo(function DetailedCapexDepreciat
   const tickRenderer = useMemo(() => isQuarter ? createQuarterTickRenderer(activeQuarter) : undefined, [isQuarter, activeQuarter])
 
   return (
-    <div
+    <ExpandableChartCard
+      title="CAPEX VÀ KHẤU HAO"
+      icon={TrendingUp}
+      iconColor="text-amber-400"
+      hoverBorderColor="hover:border-amber-500/40"
+      activeQuarter={activeQuarter}
+      isQuarter={isQuarter}
       onMouseLeave={handleMouseLeave}
-      className="flex flex-col justify-between rounded-2xl border border-border/70 bg-card/90 p-4 sm:p-5 shadow-xs transition-colors hover:border-amber-500/40"
-    >
-      <div className="flex items-center justify-between border-b border-border/50 pb-3 mb-3">
-        <div className="flex items-center gap-2 text-xs font-black uppercase text-foreground">
-          <TrendingUp className="size-4 text-amber-400" />
-          <span>CAPEX VÀ KHẤU HAO</span>
-          {activeQuarter && isQuarter && (
-            <span className="text-[10px] text-amber-400 font-bold bg-amber-500/10 px-1.5 py-0.5 rounded border border-amber-500/30">
-              Q{activeQuarter} cùng kỳ
-            </span>
-          )}
-        </div>
-        <div className="flex items-center gap-1.5 font-mono text-[10px] font-bold">
-          <span className="text-teal-400 bg-teal-500/10 border border-teal-500/20 px-1.5 py-0.5 rounded">
-            Capex: {latestPoint?.capex != null ? `${fmtNum(latestPoint.capex)} tỷ` : '—'}
-          </span>
-          <span className="text-amber-400 bg-amber-500/10 border border-amber-500/20 px-1.5 py-0.5 rounded">
-            KH: {latestPoint?.khauHaoAbs != null ? `${fmtNum(latestPoint.khauHaoAbs)} tỷ` : '—'}
-          </span>
-        </div>
-      </div>
-
-      <div className="h-[280px] w-full">
-        {capexPoints.length > 0 ? (
-          <ResponsiveContainer width="100%" height={280}>
+      latestBadge={
+        <span className="font-mono text-[11px] font-bold text-amber-400 bg-amber-500/10 border border-amber-500/20 px-2 py-0.5 rounded-md">
+          Capex: {latestPoint?.capex != null ? `${fmtNum(latestPoint.capex)} tỷ` : '—'}
+        </span>
+      }
+      modalTitle="Chi Đầu Tư TSCĐ (Capex) & Khấu Hao"
+      modalSubtitle={`Chi tiêu mua sắm TSCĐ và Chi phí khấu hao tài sản (${capexPoints.length} kỳ)`}
+        >
+      {(height) =>
+        capexPoints.length > 0 ? (
+          <ResponsiveContainer width="100%" height={height}>
             <ComposedChart
               data={capexPoints}
               margin={{ top: 10, right: 10, left: -10, bottom: 0 }}
@@ -1205,9 +1273,9 @@ const DetailedCapexDepreciationCard = React.memo(function DetailedCapexDepreciat
           <div className="flex h-full items-center justify-center text-xs text-muted-foreground">
             Chưa có dữ liệu Capex & Khấu hao
           </div>
-        )}
-      </div>
-    </div>
+        )
+      }
+    </ExpandableChartCard>
   )
 })
 
@@ -1254,28 +1322,25 @@ const DetailedProvisionCard = React.memo(function DetailedProvisionCard({
   const tickRenderer = useMemo(() => isQuarter ? createQuarterTickRenderer(activeQuarter) : undefined, [isQuarter, activeQuarter])
 
   return (
-    <div
+    <ExpandableChartCard
+      title="DỰ PHÒNG"
+      icon={Briefcase}
+      iconColor="text-purple-400"
+      hoverBorderColor="hover:border-purple-500/40"
+      activeQuarter={activeQuarter}
+      isQuarter={isQuarter}
       onMouseLeave={handleMouseLeave}
-      className="flex flex-col justify-between rounded-2xl border border-border/70 bg-card/90 p-4 sm:p-5 shadow-xs transition-colors hover:border-purple-500/40"
-    >
-      <div className="flex items-center justify-between border-b border-border/50 pb-3 mb-3">
-        <div className="flex items-center gap-2 text-xs font-black uppercase text-foreground">
-          <Briefcase className="size-4 text-purple-400" />
-          <span>DỰ PHÒNG</span>
-          {activeQuarter && isQuarter && (
-            <span className="text-[10px] text-amber-400 font-bold bg-amber-500/10 px-1.5 py-0.5 rounded border border-amber-500/30">
-              Q{activeQuarter} cùng kỳ
-            </span>
-          )}
-        </div>
+      latestBadge={
         <span className="font-mono text-[11px] font-bold text-purple-400 bg-purple-500/10 border border-purple-500/20 px-2 py-0.5 rounded-md">
           Tổng DP: {latestPoint?.tongDuPhong != null ? `${fmtNum(latestPoint.tongDuPhong)} tỷ` : '—'}
         </span>
-      </div>
-
-      <div className="h-[280px] w-full">
-        {provisionPoints.length > 0 ? (
-          <ResponsiveContainer width="100%" height={280}>
+      }
+      modalTitle="Chi Phí Dự Phòng (WiData Standard)"
+      modalSubtitle={`Dự phòng giảm giá hàng tồn kho, nợ khó đòi & đầu tư tài chính (${provisionPoints.length} kỳ)`}
+        >
+      {(height) =>
+        provisionPoints.length > 0 ? (
+          <ResponsiveContainer width="100%" height={height}>
             <ComposedChart
               data={provisionPoints}
               margin={{ top: 10, right: 10, left: -10, bottom: 0 }}
@@ -1328,9 +1393,9 @@ const DetailedProvisionCard = React.memo(function DetailedProvisionCard({
           <div className="flex h-full items-center justify-center text-xs text-muted-foreground">
             Chưa có dữ liệu Dự phòng
           </div>
-        )}
-      </div>
-    </div>
+        )
+      }
+    </ExpandableChartCard>
   )
 })
 
@@ -1377,33 +1442,25 @@ const DetailedFinancialRevenueExpenseCard = React.memo(function DetailedFinancia
   const tickRenderer = useMemo(() => isQuarter ? createQuarterTickRenderer(activeQuarter) : undefined, [isQuarter, activeQuarter])
 
   return (
-    <div
+    <ExpandableChartCard
+      title="DOANH THU & CHI PHÍ TÀI CHÍNH"
+      icon={DollarSign}
+      iconColor="text-sky-400"
+      hoverBorderColor="hover:border-sky-500/40"
+      activeQuarter={activeQuarter}
+      isQuarter={isQuarter}
       onMouseLeave={handleMouseLeave}
-      className="flex flex-col justify-between rounded-2xl border border-border/70 bg-card/90 p-4 sm:p-5 shadow-xs transition-colors hover:border-sky-500/40"
-    >
-      <div className="flex items-center justify-between border-b border-border/50 pb-3 mb-3">
-        <div className="flex items-center gap-2 text-xs font-black uppercase text-foreground">
-          <DollarSign className="size-4 text-sky-400" />
-          <span>DOANH THU & CHI PHÍ TÀI CHÍNH</span>
-          {activeQuarter && isQuarter && (
-            <span className="text-[10px] text-amber-400 font-bold bg-amber-500/10 px-1.5 py-0.5 rounded border border-amber-500/30">
-              Q{activeQuarter} cùng kỳ
-            </span>
-          )}
-        </div>
-        <div className="flex items-center gap-1.5 font-mono text-[10px] font-bold">
-          <span className="text-sky-400 bg-sky-500/10 border border-sky-500/20 px-1.5 py-0.5 rounded">
-            DT: {latestPoint?.dtTaiChinh != null ? `${fmtNum(latestPoint.dtTaiChinh)} tỷ` : '—'}
-          </span>
-          <span className="text-amber-400 bg-amber-500/10 border border-amber-500/20 px-1.5 py-0.5 rounded">
-            CP: {latestPoint?.tongCPTaiChinh != null ? `${fmtNum(latestPoint.tongCPTaiChinh)} tỷ` : '—'}
-          </span>
-        </div>
-      </div>
-
-      <div className="h-[280px] w-full">
-        {financialPoints.length > 0 ? (
-          <ResponsiveContainer width="100%" height={280}>
+      latestBadge={
+        <span className="font-mono text-[11px] font-bold text-sky-400 bg-sky-500/10 border border-sky-500/20 px-2 py-0.5 rounded-md">
+          DT TC: {latestPoint?.dtTaiChinh != null ? `${fmtNum(latestPoint.dtTaiChinh)} tỷ` : '—'}
+        </span>
+      }
+      modalTitle="Doanh Thu Tài Chính & Chi Phí Tài Chính"
+      modalSubtitle={`Doanh thu tài chính, Chi phí tài chính và riêng Chi phí lãi vay (${financialPoints.length} kỳ)`}
+        >
+      {(height) =>
+        financialPoints.length > 0 ? (
+          <ResponsiveContainer width="100%" height={height}>
             <ComposedChart
               data={financialPoints}
               margin={{ top: 10, right: 10, left: -10, bottom: 0 }}
@@ -1466,9 +1523,9 @@ const DetailedFinancialRevenueExpenseCard = React.memo(function DetailedFinancia
           <div className="flex h-full items-center justify-center text-xs text-muted-foreground">
             Chưa có dữ liệu Doanh thu & Chi phí tài chính
           </div>
-        )}
-      </div>
-    </div>
+        )
+      }
+    </ExpandableChartCard>
   )
 })
 
@@ -1515,28 +1572,25 @@ const DetailedDebtStructureCard = React.memo(function DetailedDebtStructureCard(
   const tickRenderer = useMemo(() => isQuarter ? createQuarterTickRenderer(activeQuarter) : undefined, [isQuarter, activeQuarter])
 
   return (
-    <div
+    <ExpandableChartCard
+      title="VAY VÀ NỢ THUÊ TÀI CHÍNH"
+      icon={Percent}
+      iconColor="text-rose-400"
+      hoverBorderColor="hover:border-rose-500/40"
+      activeQuarter={activeQuarter}
+      isQuarter={isQuarter}
       onMouseLeave={handleMouseLeave}
-      className="flex flex-col justify-between rounded-2xl border border-border/70 bg-card/90 p-4 sm:p-5 shadow-xs transition-colors hover:border-rose-500/40"
-    >
-      <div className="flex items-center justify-between border-b border-border/50 pb-3 mb-3">
-        <div className="flex items-center gap-2 text-xs font-black uppercase text-foreground">
-          <Layers className="size-4 text-rose-400" />
-          <span>VAY VÀ NỢ THUÊ TÀI CHÍNH</span>
-          {activeQuarter && isQuarter && (
-            <span className="text-[10px] text-amber-400 font-bold bg-amber-500/10 px-1.5 py-0.5 rounded border border-amber-500/30">
-              Q{activeQuarter} cùng kỳ
-            </span>
-          )}
-        </div>
+      latestBadge={
         <span className="font-mono text-[11px] font-bold text-rose-400 bg-rose-500/10 border border-rose-500/20 px-2 py-0.5 rounded-md">
-          Tổng nợ vay: {latestPoint?.tongNoVay != null ? `${fmtNum(latestPoint.tongNoVay)} tỷ` : '—'}
+          Tổng vay: {latestPoint?.tongVay != null ? `${fmtNum(latestPoint.tongVay)} tỷ` : '—'}
         </span>
-      </div>
-
-      <div className="h-[280px] w-full">
-        {debtPoints.length > 0 ? (
-          <ResponsiveContainer width="100%" height={280}>
+      }
+      modalTitle="Cơ Cấu Vay & Nợ Thuê Tài Chính (Ngắn Hạn & Dài Hạn)"
+      modalSubtitle={`Dư nợ vay ngắn hạn, dài hạn và Tỷ lệ Vay / VCSH (D/E) (${debtPoints.length} kỳ)`}
+        >
+      {(height) =>
+        debtPoints.length > 0 ? (
+          <ResponsiveContainer width="100%" height={height}>
             <ComposedChart
               data={debtPoints}
               margin={{ top: 10, right: 10, left: -10, bottom: 0 }}
@@ -1598,9 +1652,9 @@ const DetailedDebtStructureCard = React.memo(function DetailedDebtStructureCard(
           <div className="flex h-full items-center justify-center text-xs text-muted-foreground">
             Chưa có dữ liệu Vay & Nợ thuê tài chính
           </div>
-        )}
-      </div>
-    </div>
+        )
+      }
+    </ExpandableChartCard>
   )
 })
 
@@ -1647,33 +1701,25 @@ const DetailedDupontCard = React.memo(function DetailedDupontCard({
   const tickRenderer = useMemo(() => isQuarter ? createQuarterTickRenderer(activeQuarter) : undefined, [isQuarter, activeQuarter])
 
   return (
-    <div
+    <ExpandableChartCard
+      title="MÔ HÌNH DUPONT (PHÂN TÍCH ROE)"
+      icon={Activity}
+      iconColor="text-teal-400"
+      hoverBorderColor="hover:border-teal-500/40"
+      activeQuarter={activeQuarter}
+      isQuarter={isQuarter}
       onMouseLeave={handleMouseLeave}
-      className="flex flex-col justify-between rounded-2xl border border-border/70 bg-card/90 p-4 sm:p-5 shadow-xs transition-colors hover:border-teal-500/40"
-    >
-      <div className="flex items-center justify-between border-b border-border/50 pb-3 mb-3">
-        <div className="flex items-center gap-2 text-xs font-black uppercase text-foreground">
-          <Activity className="size-4 text-teal-400" />
-          <span>MÔ HÌNH DUPONT (PHÂN TÍCH ROE)</span>
-          {activeQuarter && isQuarter && (
-            <span className="text-[10px] text-amber-400 font-bold bg-amber-500/10 px-1.5 py-0.5 rounded border border-amber-500/30">
-              Q{activeQuarter} cùng kỳ
-            </span>
-          )}
-        </div>
-        <div className="flex items-center gap-1.5 font-mono text-[10px] font-bold">
-          <span className="text-teal-400 bg-teal-500/10 border border-teal-500/20 px-1.5 py-0.5 rounded">
-            ROE: {latestPoint?.roe != null ? `${latestPoint.roe}%` : '—'}
-          </span>
-          <span className="text-rose-400 bg-rose-500/10 border border-rose-500/20 px-1.5 py-0.5 rounded">
-            Đòn bẩy: {latestPoint?.equityMultiplier != null ? `${latestPoint.equityMultiplier}x` : '—'}
-          </span>
-        </div>
-      </div>
-
-      <div className="h-[280px] w-full">
-        {dupontPoints.length > 0 ? (
-          <ResponsiveContainer width="100%" height={280}>
+      latestBadge={
+        <span className="font-mono text-[11px] font-bold text-teal-400 bg-teal-500/10 border border-teal-500/20 px-2 py-0.5 rounded-md">
+          ROE: {latestPoint?.roe != null ? `${latestPoint.roe.toFixed(1)}%` : '—'}
+        </span>
+      }
+      modalTitle="Phân Tích Lợi Nhuận Mô Hình DuPont 3 Thành Phần"
+      modalSubtitle={`Biên ròng × Vòng quay tài sản × Đòn bẩy tài chính (${dupontPoints.length} kỳ)`}
+        >
+      {(height) =>
+        dupontPoints.length > 0 ? (
+          <ResponsiveContainer width="100%" height={height}>
             <ComposedChart
               data={dupontPoints}
               margin={{ top: 10, right: 10, left: -10, bottom: 0 }}
@@ -1739,9 +1785,9 @@ const DetailedDupontCard = React.memo(function DetailedDupontCard({
           <div className="flex h-full items-center justify-center text-xs text-muted-foreground">
             Chưa có dữ liệu Mô hình DuPont
           </div>
-        )}
-      </div>
-    </div>
+        )
+      }
+    </ExpandableChartCard>
   )
 })
 
@@ -1788,28 +1834,25 @@ const CostBreakdownChartCard = React.memo(function CostBreakdownChartCard({
   const tickRenderer = useMemo(() => isQuarter ? createQuarterTickRenderer(activeQuarter) : undefined, [isQuarter, activeQuarter])
 
   return (
-    <div
+    <ExpandableChartCard
+      title="Bóc Tách Chi Phí Kinh Doanh"
+      icon={Briefcase}
+      iconColor="text-rose-400"
+      hoverBorderColor="hover:border-rose-500/40"
+      activeQuarter={activeQuarter}
+      isQuarter={isQuarter}
       onMouseLeave={handleMouseLeave}
-      className="flex flex-col justify-between rounded-2xl border border-border/70 bg-card/90 p-4 sm:p-5 shadow-xs transition-colors hover:border-rose-500/40"
-    >
-      <div className="flex items-center justify-between border-b border-border/50 pb-3 mb-3">
-        <div className="flex items-center gap-2 text-xs font-black uppercase text-foreground">
-          <Receipt className="size-4 text-rose-400" />
-          <span>Bóc Tách Chi Phí Kinh Doanh</span>
-          {activeQuarter && isQuarter && (
-            <span className="text-[10px] text-amber-400 font-bold bg-amber-500/10 px-1.5 py-0.5 rounded border border-amber-500/30">
-              Q{activeQuarter} cùng kỳ
-            </span>
-          )}
-        </div>
+      latestBadge={
         <span className="font-mono text-[11px] font-bold text-rose-400 bg-rose-500/10 border border-rose-500/20 px-2 py-0.5 rounded-md">
-          Tổng CP: {latestCost?.tongChiPhi != null ? `${fmtNum(latestCost.tongChiPhi)} tỷ` : '—'}
+          CPBH: {latestCost?.cpBanHang != null ? `${fmtNum(latestCost.cpBanHang)} tỷ` : '—'}
         </span>
-      </div>
-
-      <div className="h-[280px] w-full">
-        {costPoints.length > 0 ? (
-          <ResponsiveContainer width="100%" height={280}>
+      }
+      modalTitle="Bóc Tách Chi Phí Bán Hàng & Quản Lý Doanh Nghiệp (SG&A)"
+      modalSubtitle={`Chi phí bán hàng, Chi phí QLDN và Tổng chi phí SG&A (${costPoints.length} kỳ)`}
+        >
+      {(height) =>
+        costPoints.length > 0 ? (
+          <ResponsiveContainer width="100%" height={height}>
             <ComposedChart
               data={costPoints}
               margin={{ top: 10, right: 10, left: -10, bottom: 0 }}
@@ -1882,9 +1925,9 @@ const CostBreakdownChartCard = React.memo(function CostBreakdownChartCard({
           <div className="flex h-full items-center justify-center text-xs text-muted-foreground">
             Đang cập nhật chi tiết bóc tách chi phí
           </div>
-        )}
-      </div>
-    </div>
+        )
+      }
+    </ExpandableChartCard>
   )
 })
 
@@ -1931,28 +1974,25 @@ const CostRatioChartCard = React.memo(function CostRatioChartCard({
   const tickRenderer = useMemo(() => isQuarter ? createQuarterTickRenderer(activeQuarter) : undefined, [isQuarter, activeQuarter])
 
   return (
-    <div
+    <ExpandableChartCard
+      title="Tỷ Trọng Chi Phí"
+      icon={PieChart}
+      iconColor="text-emerald-400"
+      hoverBorderColor="hover:border-emerald-500/40"
+      activeQuarter={activeQuarter}
+      isQuarter={isQuarter}
       onMouseLeave={handleMouseLeave}
-      className="flex flex-col justify-between rounded-2xl border border-border/70 bg-card/90 p-4 sm:p-5 shadow-xs transition-colors hover:border-emerald-500/40"
-    >
-      <div className="flex items-center justify-between border-b border-border/50 pb-3 mb-3">
-        <div className="flex items-center gap-2 text-xs font-black uppercase text-foreground">
-          <Percent className="size-4 text-emerald-400" />
-          <span>Tỷ Trọng Chi Phí</span>
-          {activeQuarter && isQuarter && (
-            <span className="text-[10px] text-amber-400 font-bold bg-amber-500/10 px-1.5 py-0.5 rounded border border-amber-500/30">
-              Q{activeQuarter} cùng kỳ
-            </span>
-          )}
-        </div>
+      latestBadge={
         <span className="font-mono text-[11px] font-bold text-emerald-400 bg-emerald-500/10 border border-emerald-500/20 px-2 py-0.5 rounded-md">
-          % Giá vốn: {latestCost?.pctGiaVon != null ? `${latestCost.pctGiaVon.toFixed(1)}%` : '—'}
+          SG&A/DTT: {latestCost?.sgaOverRev != null ? `${latestCost.sgaOverRev.toFixed(1)}%` : '—'}
         </span>
-      </div>
-
-      <div className="h-[280px] w-full">
-        {costPoints.length > 0 ? (
-          <ResponsiveContainer width="100%" height={280}>
+      }
+      modalTitle="Tỷ Trọng Chi Phí Hoạt Động Trên Doanh Thu Thuần"
+      modalSubtitle={`Tỷ lệ Chi phí bán hàng / DTT, Chi phí QLDN / DTT và SG&A / DTT (%) (${costPoints.length} kỳ)`}
+        >
+      {(height) =>
+        costPoints.length > 0 ? (
+          <ResponsiveContainer width="100%" height={height}>
             <ComposedChart
               data={costPoints}
               margin={{ top: 10, right: 10, left: -10, bottom: 0 }}
@@ -2031,9 +2071,9 @@ const CostRatioChartCard = React.memo(function CostRatioChartCard({
           <div className="flex h-full items-center justify-center text-xs text-muted-foreground">
             Đang cập nhật tỷ trọng chi phí
           </div>
-        )}
-      </div>
-    </div>
+        )
+      }
+    </ExpandableChartCard>
   )
 })
 

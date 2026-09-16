@@ -29,8 +29,10 @@ import {
   Calendar,
   Layers,
   ArrowUpRight,
+  Maximize2,
 } from 'lucide-react'
 import { cn } from '@/lib/utils'
+import { ChartModal } from './ChartModal'
 import { WiDataStandardRow } from './WiDataStandardRow'
 
 interface BankingDetailedFinancialChartsProps {
@@ -81,6 +83,7 @@ export function BankingDetailedFinancialCharts({
   annualData,
 }: BankingDetailedFinancialChartsProps) {
   const [periodType, setPeriodType] = useState<'quarter' | 'annual'>('quarter')
+  const [expandedChart, setExpandedChart] = useState<number | null>(null)
 
   const currentData = periodType === 'quarter' ? quarterData : annualData
 
@@ -225,7 +228,7 @@ export function BankingDetailedFinancialCharts({
 
           {loanByIndustry ? (
             <div className="space-y-4">
-              <div className="h-[210px] w-full flex items-center justify-center">
+              <div className="h-[210px] w-full flex items-center justify-center cursor-pointer group" onClick={() => setExpandedChart(1)} title="Bấm vào để phóng lớn biểu đồ">
                 <ResponsiveContainer width="100%" height={210}>
                   <PieChart>
                     <Pie
@@ -294,7 +297,7 @@ export function BankingDetailedFinancialCharts({
             </span>
           </div>
 
-          <div className="h-[280px] w-full">
+          <div className="h-[280px] w-full cursor-pointer group" onClick={() => setExpandedChart(2)} title="Bấm vào để phóng lớn biểu đồ">
             <ResponsiveContainer width="100%" height={280}>
               <ComposedChart data={chartPoints} margin={{ top: 10, right: 10, left: -15, bottom: 0 }}>
                 <CartesianGrid strokeDasharray="3 3" stroke="#334155" opacity={0.25} />
@@ -325,7 +328,7 @@ export function BankingDetailedFinancialCharts({
             </span>
           </div>
 
-          <div className="h-[280px] w-full">
+          <div className="h-[280px] w-full cursor-pointer group" onClick={() => setExpandedChart(3)} title="Bấm vào để phóng lớn biểu đồ">
             <ResponsiveContainer width="100%" height={280}>
               <ComposedChart data={chartPoints} margin={{ top: 10, right: 10, left: -15, bottom: 0 }}>
                 <CartesianGrid strokeDasharray="3 3" stroke="#334155" opacity={0.25} />
@@ -351,10 +354,21 @@ export function BankingDetailedFinancialCharts({
               <Layers className="size-4 text-violet-500" />
               <span>Cơ Cấu Nợ Xấu (Nhóm 2 Đến 5)</span>
             </div>
-            <span className="font-mono text-[11px] text-muted-foreground">4 nhóm nợ</span>
+            <div className="flex items-center gap-2">
+              <span className="font-mono text-[11px] text-muted-foreground">4 nhóm nợ</span>
+              <button
+                type="button"
+                onClick={() => setExpandedChart(4)}
+                className="flex items-center gap-1 text-[11px] font-semibold text-muted-foreground hover:text-foreground bg-muted/60 hover:bg-muted px-2 py-0.5 rounded-md border border-border/50 transition-colors cursor-pointer"
+                title="Phóng to / Mở rộng biểu đồ"
+              >
+                <Maximize2 className="size-3 text-violet-400" />
+                <span className="hidden sm:inline">Mở rộng</span>
+              </button>
+            </div>
           </div>
 
-          <div className="h-[280px] w-full">
+          <div className="h-[280px] w-full cursor-pointer group" onClick={() => setExpandedChart(4)} title="Bấm vào để phóng lớn biểu đồ">
             <ResponsiveContainer width="100%" height={280}>
               <LineChart data={chartPoints} margin={{ top: 10, right: 10, left: -15, bottom: 0 }}>
                 <CartesianGrid strokeDasharray="3 3" stroke="#334155" opacity={0.25} />
@@ -386,7 +400,7 @@ export function BankingDetailedFinancialCharts({
             </span>
           </div>
 
-          <div className="h-[280px] w-full">
+          <div className="h-[280px] w-full cursor-pointer group" onClick={() => setExpandedChart(5)} title="Bấm vào để phóng lớn biểu đồ">
             <ResponsiveContainer width="100%" height={280}>
               <ComposedChart data={chartPoints} margin={{ top: 10, right: 10, left: -10, bottom: 0 }}>
                 <CartesianGrid strokeDasharray="3 3" stroke="#334155" opacity={0.25} />
@@ -423,7 +437,7 @@ export function BankingDetailedFinancialCharts({
             </span>
           </div>
 
-          <div className="h-[280px] w-full">
+          <div className="h-[280px] w-full cursor-pointer group" onClick={() => setExpandedChart(6)} title="Bấm vào để phóng lớn biểu đồ">
             <ResponsiveContainer width="100%" height={280}>
               <ComposedChart data={chartPoints} margin={{ top: 10, right: 10, left: -10, bottom: 0 }}>
                 <CartesianGrid strokeDasharray="3 3" stroke="#334155" opacity={0.25} />
@@ -460,7 +474,7 @@ export function BankingDetailedFinancialCharts({
             </span>
           </div>
 
-          <div className="h-[280px] w-full">
+          <div className="h-[280px] w-full cursor-pointer group" onClick={() => setExpandedChart(7)} title="Bấm vào để phóng lớn biểu đồ">
             <ResponsiveContainer width="100%" height={280}>
               <ComposedChart data={chartPoints} margin={{ top: 10, right: 10, left: -15, bottom: 0 }}>
                 <CartesianGrid strokeDasharray="3 3" stroke="#334155" opacity={0.25} />
@@ -496,7 +510,7 @@ export function BankingDetailedFinancialCharts({
             </span>
           </div>
 
-          <div className="h-[280px] w-full">
+          <div className="h-[280px] w-full cursor-pointer group" onClick={() => setExpandedChart(8)} title="Bấm vào để phóng lớn biểu đồ">
             <ResponsiveContainer width="100%" height={280}>
               <ComposedChart data={chartPoints} margin={{ top: 10, right: 10, left: -15, bottom: 0 }}>
                 <CartesianGrid strokeDasharray="3 3" stroke="#334155" opacity={0.25} />
@@ -530,7 +544,7 @@ export function BankingDetailedFinancialCharts({
             </span>
           </div>
 
-          <div className="h-[280px] w-full">
+          <div className="h-[280px] w-full cursor-pointer group" onClick={() => setExpandedChart(9)} title="Bấm vào để phóng lớn biểu đồ">
             <ResponsiveContainer width="100%" height={280}>
               <LineChart data={chartPoints} margin={{ top: 10, right: 10, left: -15, bottom: 0 }}>
                 <CartesianGrid strokeDasharray="3 3" stroke="#334155" opacity={0.25} />

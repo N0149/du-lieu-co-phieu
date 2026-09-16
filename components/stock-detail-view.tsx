@@ -65,6 +65,7 @@ import type { CostBreakdownPayload } from '@/lib/cost-breakdown-service'
 import type { DetailedBalanceSheetPayload } from '@/lib/balance-sheet-cashflow-service'
 import type { CapexFinancialPayload } from '@/lib/capex-financial-service'
 import type { DebtDupontPayload } from '@/lib/debt-dupont-service'
+import type { StockIcbHierarchy } from '@/lib/icb-service'
 
 export type StockDetailTab =
   | 'profile'
@@ -110,6 +111,7 @@ interface StockDetailViewProps {
   initialFinancialStatements?: RawFinancialStatementData | null
   initialFinancialStatementsAnnual?: RawFinancialStatementData | null
   initialTab?: StockDetailTab
+  icbHierarchy?: StockIcbHierarchy | null
 }
 
 function fmt(n: number | null | undefined, dec = 0): string {
@@ -206,9 +208,13 @@ export function StockDetailView({
   initialFinancialStatements = null,
   initialFinancialStatementsAnnual = null,
   initialTab = 'charts',
+  icbHierarchy = null,
 }: StockDetailViewProps) {
   // Tab đang hiển thị trên thanh nút bấm (cập nhật NGAY LẬP TỨC để phản hồi giao diện không delay)
   const [activeTab, setActiveTab] = useState<StockDetailTab>(initialTab || 'charts')
+  const [expandedSvgChart, setExpandedSvgChart] = useState<'price' | 'revenue' | 'throughput' | null>(null)
+  // Phạm vi hiển thị danh sách cùng ngành ở cuối trang ('l4' chuyên sâu hoặc 'l2' nhóm ngành)
+  const [gridScope, setGridScope] = useState<'l4' | 'l2'>('l4')
   // Danh sách các tab đã từng được mount (để giữ cache không phải render lại từ đầu)
   const [mountedTabs, setMountedTabs] = useState<Set<StockDetailTab>>(
     () => new Set([initialTab || 'charts'])
@@ -1729,81 +1735,148 @@ export function StockDetailView({
           {/* A. Bảng & Biểu đồ So Sánh Doanh Nghiệp Cùng Ngành Chuyên Sâu (Chuẩn Ruatichsan) */}
           <PeerComparisonView
             currentTicker={ticker}
-            sectorName={company.sector || company.icb_l1 || 'Cùng nhóm ngành'}
-            initialPeers={relatedStocks.map((s) => s.t)}
+            sectorName={icbHierarchy?.l4.name || company.sector || company.icb_l1 || 'Cùng nhóm ngành'}
+            subGroupName={icbHierarchy?.subGroup}
+            initialPeers={icbHierarchy?.defaultPeerTickers || relatedStocks.map((s) => s.t)}
+            scopeOptions={icbHierarchy?.scopeOptions}
+            quickSuggestions={icbHierarchy?.quickSuggestions}
           />
 
           {/* B. Lưới Thẻ Toàn Bộ Cổ Phiếu Cùng Nhóm Ngành */}
-          <div className="rounded-2xl border border-border bg-card p-6 shadow-xs space-y-4">
-            <div className="flex flex-wrap items-center justify-between gap-2 border-b border-border/60 pb-3">
-              <div className="flex items-center gap-2">
-                <Users className="size-4 text-violet-500" />
-                <h3 className="text-sm font-bold uppercase tracking-wider text-foreground">
-                  Danh Sách Cổ Phiếu Cùng Ngành ({company.sector || company.icb_l1 || 'Cùng nhóm ngành'})
-                </h3>
-              </div>
-              <Link
-                href={`/tra-cuu`}
-                className="text-xs font-bold text-primary hover:underline"
-              >
-                Tra cứu bộ lọc toàn ngành →
-              </Link>
-            </div>
+          {(() => {
+            const currentGridStocks = icbHierarchy
+              ? (gridScope === 'l4' ? icbHierarchy.l4Peers : icbHierarchy.l2Peers)
+              : relatedStocks
+            const activeGridName = icbHierarchy
+              ? (gridScope === 'l4' ? (icbHierarchy.subGroup || icbHierarchy.l4.name) : icbHierarchy.l2.name)
+              : (company.sector || company.icb_l1 || 'Cùng nhóm ngành')
 
-            {relatedStocks.length > 0 ? (
-              <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 pt-1">
-                {relatedStocks.map((s) => {
-                  const w1 = s.w1
-                  const hasW1 = w1 != null
-                  const isW1Pos = hasW1 && w1 > 0
-                  const isW1Neg = hasW1 && w1 < 0
+            return (
+              <div className="rounded-2xl border border-border bg-card p-6 shadow-xs space-y-4">
+                <div className="flex flex-wrap items-center justify-between gap-3 border-b border-border/60 pb-3">
+                  <div className="space-y-1">
+                    <div className="flex items-center gap-2">
+                      <Users className="size-4 text-violet-500" />
+                      <h3 className="text-sm font-bold uppercase tracking-wider text-foreground">
+                        Danh Sách Cổ Phiếu Cùng Ngành: {activeGridName}
+                      </h3>
+                      <span className="rounded-full bg-primary/15 px-2 py-0.5 text-xs font-bold text-primary font-mono">
+                        {currentGridStocks.length} mã
+                      </span>
+                    </div>
 
-                  return (
+                    {icbHierarchy && (
+                      <div className="flex items-center gap-1.5 text-[11px] text-muted-foreground font-medium">
+                        <span>{icbHierarchy.l1.name}</span>
+                        <span className="text-muted-foreground/40">›</span>
+                        <span>{icbHierarchy.l2.name}</span>
+                        <span className="text-muted-foreground/40">›</span>
+                        <span className="text-primary font-bold">{icbHierarchy.l4.name}</span>
+                        {icbHierarchy.subGroup && (
+                          <>
+                            <span className="text-muted-foreground/40">›</span>
+                            <span className="text-teal-400 font-bold">{icbHierarchy.subGroup}</span>
+                          </>
+                        )}
+                      </div>
+                    )}
+                  </div>
+
+                  <div className="flex items-center gap-3">
+                    {icbHierarchy && (
+                      <div className="flex items-center rounded-xl border border-border bg-background p-0.5 text-xs font-semibold">
+                        <button
+                          type="button"
+                          onClick={() => setGridScope('l4')}
+                          className={cn(
+                            "rounded-lg px-2.5 py-1 transition-colors cursor-pointer",
+                            gridScope === 'l4'
+                              ? "bg-primary text-primary-foreground font-bold shadow-xs"
+                              : "text-muted-foreground hover:text-foreground"
+                          )}
+                        >
+                          Phân ngành Cấp 4 ({icbHierarchy.l4Peers.length})
+                        </button>
+                        <button
+                          type="button"
+                          onClick={() => setGridScope('l2')}
+                          className={cn(
+                            "rounded-lg px-2.5 py-1 transition-colors cursor-pointer",
+                            gridScope === 'l2'
+                              ? "bg-primary text-primary-foreground font-bold shadow-xs"
+                              : "text-muted-foreground hover:text-foreground"
+                          )}
+                        >
+                          Nhóm ngành Cấp 2 ({icbHierarchy.l2Peers.length})
+                        </button>
+                      </div>
+                    )}
+
                     <Link
-                      key={s.t}
-                      href={`/stock/${s.t}`}
-                      className="group flex flex-col justify-between rounded-xl border border-border bg-background p-3.5 transition-all hover:border-primary hover:shadow-xs"
+                      href={`/tra-cuu`}
+                      className="text-xs font-bold text-primary hover:underline hidden sm:inline-block"
                     >
-                      <div>
-                        <div className="font-mono text-base font-bold text-primary group-hover:underline">
-                          {s.t}
-                        </div>
-                        <div className="mt-1 line-clamp-1 text-[11px] text-muted-foreground" title={s.n}>
-                          {s.n}
-                        </div>
-                      </div>
-
-                      <div className="mt-3 flex items-baseline justify-between gap-1 pt-2 border-t border-border/60">
-                        <span className="font-mono text-xs font-bold text-foreground">
-                          {s.px != null ? `${fmt(s.px, s.px < 100 ? 1 : 0)} k₫` : '—'}
-                        </span>
-                        {hasW1 ? (
-                          <span
-                            className={cn(
-                              'font-mono text-[10px] font-bold',
-                              isW1Pos
-                                ? 'text-emerald-600 dark:text-emerald-400'
-                                : isW1Neg
-                                  ? 'text-rose-600 dark:text-rose-400'
-                                  : 'text-muted-foreground',
-                            )}
-                          >
-                            {isW1Pos ? '+' : ''}
-                            {fmt(w1, 1)}%
-                          </span>
-                        ) : null}
-                      </div>
+                      Tra cứu bộ lọc toàn ngành →
                     </Link>
-                  )
-                })}
+                  </div>
+                </div>
+
+                {currentGridStocks.length > 0 ? (
+                  <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 pt-1">
+                    {currentGridStocks.map((s) => {
+                      const w1 = s.w1
+                      const hasW1 = w1 != null
+                      const isW1Pos = hasW1 && w1 > 0
+                      const isW1Neg = hasW1 && w1 < 0
+
+                      return (
+                        <Link
+                          key={s.t}
+                          href={`/stock/${s.t}`}
+                          className="group flex flex-col justify-between rounded-xl border border-border bg-background p-3.5 transition-all hover:border-primary hover:shadow-xs"
+                        >
+                          <div>
+                            <div className="font-mono text-base font-bold text-primary group-hover:underline">
+                              {s.t}
+                            </div>
+                            <div className="mt-1 line-clamp-1 text-[11px] text-muted-foreground" title={s.n}>
+                              {s.n}
+                            </div>
+                          </div>
+
+                          <div className="mt-3 flex items-baseline justify-between gap-1 pt-2 border-t border-border/60">
+                            <span className="font-mono text-xs font-bold text-foreground">
+                              {s.px != null ? `${fmt(s.px, s.px < 100 ? 1 : 0)} k₫` : '—'}
+                            </span>
+                            {hasW1 ? (
+                              <span
+                                className={cn(
+                                  'font-mono text-[10px] font-bold',
+                                  isW1Pos
+                                    ? 'text-emerald-600 dark:text-emerald-400'
+                                    : isW1Neg
+                                      ? 'text-rose-600 dark:text-rose-400'
+                                      : 'text-muted-foreground',
+                                )}
+                              >
+                                {isW1Pos ? '+' : ''}
+                                {fmt(w1, 1)}%
+                              </span>
+                            ) : null}
+                          </div>
+                        </Link>
+                      )
+                    })}
+                  </div>
+                ) : (
+                  <div className="py-12 text-center text-sm text-muted-foreground">
+                    <Users className="mx-auto mb-2 size-8 text-muted-foreground/40" />
+                    <p>Chưa có danh sách đối thủ cùng ngành cụ thể cho mã này.</p>
+                  </div>
+                )}
               </div>
-            ) : (
-              <div className="py-12 text-center text-sm text-muted-foreground">
-                <Users className="mx-auto mb-2 size-8 text-muted-foreground/40" />
-                <p>Chưa có danh sách đối thủ cùng ngành cụ thể cho mã này.</p>
-              </div>
-            )}
-          </div>
+            )
+          })()}
         </div>
       )}
 

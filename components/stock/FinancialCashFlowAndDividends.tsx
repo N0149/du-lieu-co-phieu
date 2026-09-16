@@ -13,8 +13,9 @@ import {
 } from 'recharts'
 import type { FinancialChartPayload } from '@/lib/financial-charts-service'
 import type { DividendHistoryPayload } from '@/lib/dividend-history-service'
-import { History, BarChart3, Table as TableIcon, CheckCircle2 } from 'lucide-react'
+import { History, BarChart3, Table as TableIcon, CheckCircle2, Maximize2 } from 'lucide-react'
 import { cn } from '@/lib/utils'
+import { ChartModal } from './ChartModal'
 
 interface FinancialCashFlowAndDividendsProps {
   symbol: string
@@ -41,6 +42,7 @@ export function FinancialCashFlowAndDividends({
   dividendData,
 }: FinancialCashFlowAndDividendsProps) {
   const [viewMode, setViewMode] = useState<'chart' | 'table'>('chart')
+  const [isExpanded, setIsExpanded] = useState(false)
 
   // 1. Dữ liệu bảng chi tiết các đợt trả cổ tức (mới nhất trước)
   const dividendEvents = useMemo(() => {
@@ -162,12 +164,26 @@ export function FinancialCashFlowAndDividends({
                 <span>Bảng chi tiết ({dividendEvents.length})</span>
               </button>
             </div>
+
+            <button
+              type="button"
+              onClick={() => setIsExpanded(true)}
+              className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-border/50 bg-muted/60 hover:bg-muted text-xs font-semibold text-muted-foreground hover:text-foreground transition-all cursor-pointer"
+              title="Phóng to / Mở rộng biểu đồ"
+            >
+              <Maximize2 className="size-3.5 text-amber-400" />
+              <span>Mở rộng</span>
+            </button>
           </div>
         </div>
 
         {/* Nội dung View: Biểu đồ hoặc Bảng */}
         {viewMode === 'chart' ? (
-          <div className="h-[300px] w-full pt-1">
+          <div
+            className="h-[300px] w-full pt-1 cursor-pointer group"
+            onClick={() => setIsExpanded(true)}
+            title="Bấm vào để phóng lớn biểu đồ"
+          >
             <ResponsiveContainer width="100%" height={300}>
               <ComposedChart data={chartPoints} margin={{ top: 10, right: 15, left: -5, bottom: 0 }}>
                 <CartesianGrid strokeDasharray="3 3" stroke="#334155" opacity={0.25} />
@@ -247,6 +263,99 @@ export function FinancialCashFlowAndDividends({
           </div>
         )}
       </div>
+
+      {/* MODAL PHÓNG TO LỊCH SỬ CỔ TỨC */}
+      {isExpanded && (
+        <ChartModal
+          isOpen={isExpanded}
+          onClose={() => setIsExpanded(false)}
+          title={`Lịch Sử Trả Cổ Tức Doanh Nghiệp ${symbol}`}
+          subtitle={`Chi tiết ${dividendEvents.length} đợt chi trả cổ tức Tiền mặt (VNĐ/CP) & Cổ phiếu (%) qua các năm`}
+          badge={
+            <span className="rounded-full bg-emerald-500/10 px-2.5 py-1 text-xs font-bold text-emerald-400 border border-emerald-500/20">
+              {dividendEvents.length} đợt chi trả
+            </span>
+          }
+          footerExtra={
+            <div className="max-h-[220px] overflow-y-auto rounded-xl border border-border/70 scrollbar-thin">
+              <table className="w-full text-left text-xs">
+                <thead className="sticky top-0 z-10 bg-muted/90 text-[11px] font-bold uppercase tracking-wider text-muted-foreground backdrop-blur-sm border-b border-border">
+                  <tr>
+                    <th className="px-4 py-2 whitespace-nowrap">Ngày GDKHQ</th>
+                    <th className="px-4 py-2 whitespace-nowrap">Hình thức</th>
+                    <th className="px-4 py-2 text-right whitespace-nowrap">Tiền mặt (đ/cp)</th>
+                    <th className="px-4 py-2 text-right whitespace-nowrap">Cổ tức CP (%)</th>
+                    <th className="px-4 py-2 whitespace-nowrap">Nội dung</th>
+                  </tr>
+                </thead>
+                <tbody className="divide-y divide-border/40">
+                  {dividendEvents.map((evt, idx) => (
+                    <tr key={idx} className="hover:bg-muted/30 transition-colors">
+                      <td className="px-4 py-1.5 font-mono font-medium whitespace-nowrap">{evt.formattedDate}</td>
+                      <td className="px-4 py-1.5 whitespace-nowrap">
+                        <span className={cn('inline-flex items-center rounded px-1.5 py-0.5 text-[10px] font-semibold border', evt.typeBadge)}>
+                          {evt.typeLabel}
+                        </span>
+                      </td>
+                      <td className="px-4 py-1.5 text-right font-mono font-bold text-emerald-400 whitespace-nowrap">
+                        {evt.cashVnd > 0 ? `${fmtNum(evt.cashVnd)} đ` : '—'}
+                      </td>
+                      <td className="px-4 py-1.5 text-right font-mono font-bold text-amber-400 whitespace-nowrap">
+                        {evt.stockPct > 0 ? `${evt.stockPct}%` : '—'}
+                      </td>
+                      <td className="px-4 py-1.5 text-muted-foreground text-[11px] max-w-md truncate" title={evt.note}>
+                        {evt.note}
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          }
+        >
+          <div className="h-[480px] sm:h-[520px] w-full pt-2">
+            <ResponsiveContainer width="100%" height={520}>
+              <ComposedChart data={chartPoints} margin={{ top: 10, right: 20, left: 0, bottom: 0 }}>
+                <CartesianGrid strokeDasharray="3 3" stroke="#334155" opacity={0.25} />
+                <XAxis dataKey="year" tick={{ fontSize: 12, fill: '#94a3b8' }} />
+                <YAxis yAxisId="left" tick={{ fontSize: 11, fill: '#94a3b8' }} unit="đ" tickFormatter={(v) => fmtNum(v)} />
+                <YAxis yAxisId="right" orientation="right" tick={{ fontSize: 11, fill: '#94a3b8' }} unit="%" />
+                <Tooltip
+                  contentStyle={{
+                    backgroundColor: '#0f172a',
+                    borderColor: '#334155',
+                    borderRadius: '10px',
+                    fontSize: '12px',
+                    color: '#fff',
+                    boxShadow: '0 10px 25px -5px rgba(0, 0, 0, 0.4)',
+                  }}
+                  formatter={(val: any, name: any = '') => [
+                    String(name).includes('%') ? `${val}%` : `${fmtNum(val)} VNĐ/CP`,
+                    String(name),
+                  ]}
+                />
+                <Legend wrapperStyle={{ fontSize: '12px', paddingTop: '10px' }} />
+                <Bar
+                  yAxisId="left"
+                  dataKey="cashVnd"
+                  name="Tiền mặt (VNĐ/CP)"
+                  fill="#10b981"
+                  radius={[4, 4, 0, 0]}
+                  maxBarSize={48}
+                />
+                <Bar
+                  yAxisId="right"
+                  dataKey="stockPct"
+                  name="Cổ tức cổ phiếu (%)"
+                  fill="#f59e0b"
+                  radius={[4, 4, 0, 0]}
+                  maxBarSize={48}
+                />
+              </ComposedChart>
+            </ResponsiveContainer>
+          </div>
+        </ChartModal>
+      )}
     </div>
   )
 }

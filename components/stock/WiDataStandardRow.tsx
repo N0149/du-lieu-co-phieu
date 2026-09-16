@@ -19,6 +19,7 @@ import {
   ChevronDown,
 } from 'lucide-react'
 import { cn } from '@/lib/utils'
+import { ChartModal } from './ChartModal'
 import type { InsiderTradeItem } from '@/lib/company-profile-types'
 import type { ValuationEpsPayload, ValuationEpsPoint } from '@/lib/valuation-eps-service'
 import type { ConsensusTargetPayload, TargetPriceTimelinePoint } from '@/lib/consensus-target-price-service'
@@ -62,6 +63,7 @@ function WiDataValuationCard({ symbol }: { symbol: string }) {
   const [loading, setLoading] = useState(true)
   const [mounted, setMounted] = useState(false)
   const [mode, setMode] = useState<'day' | 'quarter'>('day')
+  const [isExpanded, setIsExpanded] = useState(false)
 
   useEffect(() => {
     setMounted(true)
@@ -90,120 +92,170 @@ function WiDataValuationCard({ symbol }: { symbol: string }) {
     return pts.filter((_, idx) => idx % step === 0 || idx === pts.length - 1)
   }, [data])
 
+  const renderValuationChart = (chartHeight: number | `${number}%` = 240) => {
+    if (!mounted || loading) {
+      return (
+        <div className="h-full flex items-center justify-center text-xs text-slate-500 animate-pulse">
+          Đang tải dữ liệu Định giá...
+        </div>
+      )
+    }
+    if (chartPoints.length === 0) {
+      return (
+        <div className="h-full flex items-center justify-center text-xs text-slate-500">
+          Không có dữ liệu định giá
+        </div>
+      )
+    }
+    return (
+      <ResponsiveContainer width="100%" height={chartHeight}>
+        <ComposedChart data={chartPoints} margin={{ top: 10, right: 10, left: -22, bottom: 0 }}>
+          <defs>
+            <linearGradient id="wdValuationFill" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="5%" stopColor="#475569" stopOpacity={0.45} />
+              <stop offset="95%" stopColor="#1e293b" stopOpacity={0.15} />
+            </linearGradient>
+          </defs>
+          <CartesianGrid strokeDasharray="3 3" stroke="#1f293d" opacity={0.4} />
+          <XAxis dataKey="date" tick={{ fontSize: 9, fill: '#64748b' }} minTickGap={25} />
+          <YAxis
+            tick={{ fontSize: 9, fill: '#64748b' }}
+            domain={['auto', 'auto']}
+            tickFormatter={(val) => `${Math.round(val / 1000)}K`}
+          />
+          <Tooltip
+            isAnimationActive={false}
+            content={({ active, payload }) => {
+              if (!active || !payload || !payload.length) return null
+              const pt = payload[0]?.payload as ValuationEpsPoint
+              if (!pt) return null
+              return (
+                <div className="rounded-lg border border-[#2d3d5a] bg-[#0c1017] p-2 shadow-xl text-[11px] font-mono space-y-1 text-slate-200">
+                  <div className="text-slate-400 border-b border-slate-800 pb-0.5">{pt.date}</div>
+                  <div className="flex justify-between gap-3 text-indigo-400 font-bold">
+                    <span>Giá đóng cửa:</span>
+                    <span>{fmtPrice(pt.price)}</span>
+                  </div>
+                  <div className="flex justify-between gap-3 text-slate-300">
+                    <span>Định giá P/E:</span>
+                    <span>{fmtPrice(pt.fairPricePe)}</span>
+                  </div>
+                  <div className="flex justify-between gap-3 text-emerald-400">
+                    <span>EPS (TTM):</span>
+                    <span>{fmtPrice(pt.eps)}</span>
+                  </div>
+                </div>
+              )
+            }}
+          />
+          <Area
+            type="stepAfter"
+            dataKey="fairPricePe"
+            name="EPS"
+            stroke="#94a3b8"
+            strokeWidth={1.8}
+            fill="url(#wdValuationFill)"
+            isAnimationActive={false}
+          />
+          <Line
+            type="monotone"
+            dataKey="price"
+            name="P/E"
+            stroke="#3b82f6"
+            strokeWidth={1.8}
+            dot={false}
+            isAnimationActive={false}
+          />
+        </ComposedChart>
+      </ResponsiveContainer>
+    )
+  }
+
   return (
-    <div className="flex flex-col rounded-xl border border-[#1f293d] bg-[#0c1017] p-3 sm:p-4 shadow-sm transition-all hover:border-[#2d3d5a]">
-      {/* Header */}
-      <div className="flex items-center justify-between border-b border-[#1b2334] pb-2 mb-2">
-        <div className="flex items-center gap-2">
-          <span className="text-xs font-bold uppercase tracking-wider text-slate-200">
-            ĐỊNH GIÁ
-          </span>
-        </div>
-        <div className="flex items-center gap-2 text-slate-400">
-          <div className="flex items-center gap-1 rounded bg-[#161f30] px-2 py-0.5 text-[11px] font-medium text-slate-300 border border-[#223048]">
-            <span>{mode === 'day' ? 'Ngày' : 'Quý'}</span>
-            <ChevronDown className="size-3 text-slate-400" />
+    <>
+      <div className="flex flex-col rounded-xl border border-[#1f293d] bg-[#0c1017] p-3 sm:p-4 shadow-sm transition-all hover:border-[#2d3d5a]">
+        {/* Header */}
+        <div className="flex items-center justify-between border-b border-[#1b2334] pb-2 mb-2">
+          <div className="flex items-center gap-2">
+            <span className="text-xs font-bold uppercase tracking-wider text-slate-200">
+              ĐỊNH GIÁ
+            </span>
           </div>
-          <button type="button" className="hover:text-slate-200 cursor-pointer p-0.5" title="Lịch">
-            <Calendar className="size-3.5" />
-          </button>
-          <button type="button" className="hover:text-slate-200 cursor-pointer p-0.5" title="Phóng to">
-            <Maximize2 className="size-3.5" />
-          </button>
-          <button type="button" className="hover:text-slate-200 cursor-pointer p-0.5" title="Cài đặt">
-            <Settings className="size-3.5" />
-          </button>
+          <div className="flex items-center gap-2 text-slate-400">
+            <div className="flex items-center gap-1 rounded bg-[#161f30] px-2 py-0.5 text-[11px] font-medium text-slate-300 border border-[#223048]">
+              <span>{mode === 'day' ? 'Ngày' : 'Quý'}</span>
+              <ChevronDown className="size-3 text-slate-400" />
+            </div>
+            <button
+              type="button"
+              onClick={() => setIsExpanded(true)}
+              className="hover:text-slate-200 cursor-pointer p-0.5 text-sky-400"
+              title="Phóng to / Mở rộng"
+            >
+              <Maximize2 className="size-3.5" />
+            </button>
+            <button type="button" className="hover:text-slate-200 cursor-pointer p-0.5" title="Cài đặt">
+              <Settings className="size-3.5" />
+            </button>
+          </div>
+        </div>
+
+        {/* Body Chart */}
+        <div
+          className="h-[240px] w-full relative cursor-pointer group"
+          onClick={() => setIsExpanded(true)}
+          title="Bấm vào để phóng lớn biểu đồ"
+        >
+          {renderValuationChart(240)}
+          <div className="absolute top-2 right-2 opacity-0 group-hover:opacity-100 transition-opacity bg-slate-900/80 text-sky-400 text-[10px] px-1.5 py-0.5 rounded border border-slate-700 pointer-events-none flex items-center gap-1 shadow">
+            <Maximize2 className="size-2.5" />
+            <span>Mở rộng</span>
+          </div>
+        </div>
+
+        {/* Footer Legend */}
+        <div className="flex items-center justify-start gap-5 pt-2 border-t border-[#1b2334] text-[11px] text-slate-400">
+          <div className="flex items-center gap-1.5">
+            <span className="w-3 h-2.5 bg-slate-600 border border-slate-400 rounded-xs inline-block" />
+            <span className="font-medium text-slate-300">EPS</span>
+          </div>
+          <div className="flex items-center gap-1.5">
+            <span className="w-3.5 h-0.5 bg-[#3b82f6] rounded inline-block" />
+            <span className="font-medium text-slate-300">P/E</span>
+          </div>
         </div>
       </div>
 
-      {/* Body Chart với Chiều Cao Cố Định 240px */}
-      <div className="h-[240px] w-full relative">
-        {!mounted || loading ? (
-          <div className="h-full flex items-center justify-center text-xs text-slate-500 animate-pulse">
-            Đang tải dữ liệu Định giá...
+      {isExpanded && (
+        <ChartModal
+          isOpen={isExpanded}
+          onClose={() => setIsExpanded(false)}
+          title="ĐỊNH GIÁ DOANH NGHIỆP"
+          subtitle={`${symbol} · Chuẩn WiData`}
+          badge={
+            <span className="text-[11px] font-mono text-slate-400">
+              {chartPoints.length} điểm dữ liệu
+            </span>
+          }
+          footerExtra={
+            <div className="flex items-center justify-start gap-5 text-xs text-slate-400">
+              <div className="flex items-center gap-1.5">
+                <span className="w-3 h-2.5 bg-slate-600 border border-slate-400 rounded-xs inline-block" />
+                <span className="font-medium text-slate-300">EPS (Định giá)</span>
+              </div>
+              <div className="flex items-center gap-1.5">
+                <span className="w-3.5 h-0.5 bg-[#3b82f6] rounded inline-block" />
+                <span className="font-medium text-slate-300">P/E (Thị giá)</span>
+              </div>
+            </div>
+          }
+        >
+          <div className="h-[520px] w-full">
+            {renderValuationChart(520)}
           </div>
-        ) : chartPoints.length > 0 ? (
-          <ResponsiveContainer width="100%" height={240}>
-            <ComposedChart data={chartPoints} margin={{ top: 10, right: 10, left: -22, bottom: 0 }}>
-              <defs>
-                <linearGradient id="wdValuationFill" x1="0" y1="0" x2="0" y2="1">
-                  <stop offset="5%" stopColor="#475569" stopOpacity={0.45} />
-                  <stop offset="95%" stopColor="#1e293b" stopOpacity={0.15} />
-                </linearGradient>
-              </defs>
-              <CartesianGrid strokeDasharray="3 3" stroke="#1f293d" opacity={0.4} />
-              <XAxis dataKey="date" tick={{ fontSize: 9, fill: '#64748b' }} minTickGap={25} />
-              <YAxis
-                tick={{ fontSize: 9, fill: '#64748b' }}
-                domain={['auto', 'auto']}
-                tickFormatter={(val) => `${Math.round(val / 1000)}K`}
-              />
-              <Tooltip
-                isAnimationActive={false}
-                content={({ active, payload }) => {
-                  if (!active || !payload || !payload.length) return null
-                  const pt = payload[0]?.payload as ValuationEpsPoint
-                  if (!pt) return null
-                  return (
-                    <div className="rounded-lg border border-[#2d3d5a] bg-[#0c1017] p-2 shadow-xl text-[11px] font-mono space-y-1 text-slate-200">
-                      <div className="text-slate-400 border-b border-slate-800 pb-0.5">{pt.date}</div>
-                      <div className="flex justify-between gap-3 text-indigo-400 font-bold">
-                        <span>Giá đóng cửa:</span>
-                        <span>{fmtPrice(pt.price)}</span>
-                      </div>
-                      <div className="flex justify-between gap-3 text-slate-300">
-                        <span>Định giá P/E:</span>
-                        <span>{fmtPrice(pt.fairPricePe)}</span>
-                      </div>
-                      <div className="flex justify-between gap-3 text-emerald-400">
-                        <span>EPS (TTM):</span>
-                        <span>{fmtPrice(pt.eps)}</span>
-                      </div>
-                    </div>
-                  )
-                }}
-              />
-              {/* Stepped Area EPS / Định giá */}
-              <Area
-                type="stepAfter"
-                dataKey="fairPricePe"
-                name="EPS"
-                stroke="#94a3b8"
-                strokeWidth={1.8}
-                fill="url(#wdValuationFill)"
-                isAnimationActive={false}
-              />
-              {/* Line Thị Giá */}
-              <Line
-                type="monotone"
-                dataKey="price"
-                name="P/E"
-                stroke="#3b82f6"
-                strokeWidth={1.8}
-                dot={false}
-                isAnimationActive={false}
-              />
-            </ComposedChart>
-          </ResponsiveContainer>
-        ) : (
-          <div className="h-full flex items-center justify-center text-xs text-slate-500">
-            Không có dữ liệu định giá
-          </div>
-        )}
-      </div>
-
-      {/* Footer Legend */}
-      <div className="flex items-center justify-start gap-5 pt-2 border-t border-[#1b2334] text-[11px] text-slate-400">
-        <div className="flex items-center gap-1.5">
-          <span className="w-3 h-2.5 bg-slate-600 border border-slate-400 rounded-xs inline-block" />
-          <span className="font-medium text-slate-300">EPS</span>
-        </div>
-        <div className="flex items-center gap-1.5">
-          <span className="w-3.5 h-0.5 bg-[#3b82f6] rounded inline-block" />
-          <span className="font-medium text-slate-300">P/E</span>
-        </div>
-      </div>
-    </div>
+        </ChartModal>
+      )}
+    </>
   )
 }
 
@@ -214,6 +266,7 @@ function WiDataConsensusCard({ symbol }: { symbol: string }) {
   const [data, setData] = useState<ConsensusTargetPayload | null>(null)
   const [loading, setLoading] = useState(true)
   const [mounted, setMounted] = useState(false)
+  const [isExpanded, setIsExpanded] = useState(false)
 
   useEffect(() => {
     setMounted(true)
@@ -242,131 +295,190 @@ function WiDataConsensusCard({ symbol }: { symbol: string }) {
     return pts.filter((_, idx) => idx % step === 0 || idx === pts.length - 1)
   }, [data])
 
-  return (
-    <div className="flex flex-col rounded-xl border border-[#1f293d] bg-[#0c1017] p-3 sm:p-4 shadow-sm transition-all hover:border-[#2d3d5a]">
-      {/* Header */}
-      <div className="flex items-center justify-between border-b border-[#1b2334] pb-2 mb-2">
-        <div className="flex items-center gap-2">
-          <span className="text-xs font-bold uppercase tracking-wider text-slate-200">
-            GIÁ KHUYẾN NGHỊ
-          </span>
-          {data?.upsidePercent != null && (
-            <span
-              className={cn(
-                'text-[10px] font-mono font-bold px-1.5 py-0.2 rounded',
-                data.upsidePercent >= 0
-                  ? 'bg-emerald-500/20 text-emerald-400'
-                  : 'bg-rose-500/20 text-rose-400'
-              )}
-            >
-              {data.upsidePercent > 0 ? '+' : ''}
-              {data.upsidePercent}%
-            </span>
-          )}
+  const renderConsensusChart = (chartHeight: number | `${number}%` = 240) => {
+    if (!mounted || loading) {
+      return (
+        <div className="h-full flex items-center justify-center text-xs text-slate-500 animate-pulse">
+          Đang tải giá mục tiêu CTCK...
         </div>
-        <div className="flex items-center gap-2 text-slate-400">
-          <button type="button" className="hover:text-slate-200 cursor-pointer p-0.5" title="Lịch">
-            <Calendar className="size-3.5" />
-          </button>
-          <button type="button" className="hover:text-slate-200 cursor-pointer p-0.5" title="Phóng to">
-            <Maximize2 className="size-3.5" />
-          </button>
-          <button type="button" className="hover:text-slate-200 cursor-pointer p-0.5" title="Cài đặt">
-            <Settings className="size-3.5" />
-          </button>
+      )
+    }
+    if (chartPoints.length === 0) {
+      return (
+        <div className="h-full flex items-center justify-center text-xs text-slate-500">
+          Chưa có dữ liệu khuyến nghị
         </div>
-      </div>
-
-      {/* Body Chart với Chiều Cao Cố Định 240px */}
-      <div className="h-[240px] w-full relative">
-        {!mounted || loading ? (
-          <div className="h-full flex items-center justify-center text-xs text-slate-500 animate-pulse">
-            Đang tải giá mục tiêu CTCK...
-          </div>
-        ) : chartPoints.length > 0 ? (
-          <ResponsiveContainer width="100%" height={240}>
-            <ComposedChart data={chartPoints} margin={{ top: 10, right: 10, left: -22, bottom: 0 }}>
-              <defs>
-                <linearGradient id="wdTargetGreenArea" x1="0" y1="0" x2="0" y2="1">
-                  <stop offset="5%" stopColor="#10b981" stopOpacity={0.25} />
-                  <stop offset="95%" stopColor="#10b981" stopOpacity={0.0} />
-                </linearGradient>
-              </defs>
-              <CartesianGrid strokeDasharray="3 3" stroke="#1f293d" opacity={0.4} />
-              <XAxis dataKey="date" tick={{ fontSize: 9, fill: '#64748b' }} minTickGap={25} />
-              <YAxis
-                tick={{ fontSize: 9, fill: '#64748b' }}
-                domain={['auto', 'auto']}
-                tickFormatter={(val) => `${Math.round(val / 1000)}K`}
-              />
-              <Tooltip
-                isAnimationActive={false}
-                content={({ active, payload }) => {
-                  if (!active || !payload || !payload.length) return null
-                  const pt = payload[0]?.payload as TargetPriceTimelinePoint
-                  if (!pt) return null
-                  return (
-                    <div className="rounded-lg border border-[#2d3d5a] bg-[#0c1017] p-2 shadow-xl text-[11px] font-mono space-y-1 text-slate-200">
-                      <div className="text-slate-400 border-b border-slate-800 pb-0.5">{pt.date}</div>
-                      <div className="flex justify-between gap-3 text-amber-500 font-bold">
-                        <span>Giá mục tiêu TB:</span>
-                        <span>{fmtPrice(pt.targetPrice)}</span>
-                      </div>
-                      <div className="flex justify-between gap-3 text-emerald-400 font-bold">
-                        <span>Giá hiện tại:</span>
-                        <span>{fmtPrice(pt.marketPrice)}</span>
-                      </div>
-                      {pt.upsidePercent != null && (
-                        <div className="text-[10px] text-slate-300">
-                          Dư địa: {pt.upsidePercent > 0 ? '+' : ''}
-                          {pt.upsidePercent}%
-                        </div>
-                      )}
+      )
+    }
+    return (
+      <ResponsiveContainer width="100%" height={chartHeight}>
+        <ComposedChart data={chartPoints} margin={{ top: 10, right: 10, left: -22, bottom: 0 }}>
+          <defs>
+            <linearGradient id="wdTargetGreenArea" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="5%" stopColor="#10b981" stopOpacity={0.25} />
+              <stop offset="95%" stopColor="#10b981" stopOpacity={0.0} />
+            </linearGradient>
+          </defs>
+          <CartesianGrid strokeDasharray="3 3" stroke="#1f293d" opacity={0.4} />
+          <XAxis dataKey="date" tick={{ fontSize: 9, fill: '#64748b' }} minTickGap={25} />
+          <YAxis
+            tick={{ fontSize: 9, fill: '#64748b' }}
+            domain={['auto', 'auto']}
+            tickFormatter={(val) => `${Math.round(val / 1000)}K`}
+          />
+          <Tooltip
+            isAnimationActive={false}
+            content={({ active, payload }) => {
+              if (!active || !payload || !payload.length) return null
+              const pt = payload[0]?.payload as TargetPriceTimelinePoint
+              if (!pt) return null
+              return (
+                <div className="rounded-lg border border-[#2d3d5a] bg-[#0c1017] p-2 shadow-xl text-[11px] font-mono space-y-1 text-slate-200">
+                  <div className="text-slate-400 border-b border-slate-800 pb-0.5">{pt.date}</div>
+                  <div className="flex justify-between gap-3 text-amber-500 font-bold">
+                    <span>Giá mục tiêu TB:</span>
+                    <span>{fmtPrice(pt.targetPrice)}</span>
+                  </div>
+                  <div className="flex justify-between gap-3 text-emerald-400 font-bold">
+                    <span>Giá hiện tại:</span>
+                    <span>{fmtPrice(pt.marketPrice)}</span>
+                  </div>
+                  {pt.upsidePercent != null && (
+                    <div className="text-[10px] text-slate-300">
+                      Dư địa: {pt.upsidePercent > 0 ? '+' : ''}
+                      {pt.upsidePercent}%
                     </div>
-                  )
-                }}
-              />
-              {/* Vùng Giá hiện tại (Green area) */}
-              <Area
-                type="monotone"
-                dataKey="marketPrice"
-                name="Giá hiện tại"
-                stroke="#10b981"
-                strokeWidth={1.8}
-                fill="url(#wdTargetGreenArea)"
-                isAnimationActive={false}
-              />
-              {/* Đường Giá mục tiêu trung bình (Orange stepped line) */}
-              <Line
-                type="stepAfter"
-                dataKey="targetPrice"
-                name="Giá mục tiêu trung bình"
-                stroke="#f97316"
-                strokeWidth={2}
-                dot={false}
-                isAnimationActive={false}
-              />
-            </ComposedChart>
-          </ResponsiveContainer>
-        ) : (
-          <div className="h-full flex items-center justify-center text-xs text-slate-500">
-            Chưa có dữ liệu khuyến nghị
+                  )}
+                </div>
+              )
+            }}
+          />
+          <Area
+            type="monotone"
+            dataKey="marketPrice"
+            name="Giá hiện tại"
+            stroke="#10b981"
+            strokeWidth={1.8}
+            fill="url(#wdTargetGreenArea)"
+            isAnimationActive={false}
+          />
+          <Line
+            type="stepAfter"
+            dataKey="targetPrice"
+            name="Giá mục tiêu trung bình"
+            stroke="#f97316"
+            strokeWidth={2}
+            dot={false}
+            isAnimationActive={false}
+          />
+        </ComposedChart>
+      </ResponsiveContainer>
+    )
+  }
+
+  return (
+    <>
+      <div className="flex flex-col rounded-xl border border-[#1f293d] bg-[#0c1017] p-3 sm:p-4 shadow-sm transition-all hover:border-[#2d3d5a]">
+        {/* Header */}
+        <div className="flex items-center justify-between border-b border-[#1b2334] pb-2 mb-2">
+          <div className="flex items-center gap-2">
+            <span className="text-xs font-bold uppercase tracking-wider text-slate-200">
+              GIÁ KHUYẾN NGHỊ
+            </span>
+            {data?.upsidePercent != null && (
+              <span
+                className={cn(
+                  'text-[10px] font-mono font-bold px-1.5 py-0.2 rounded',
+                  data.upsidePercent >= 0
+                    ? 'bg-emerald-500/20 text-emerald-400'
+                    : 'bg-rose-500/20 text-rose-400'
+                )}
+              >
+                {data.upsidePercent > 0 ? '+' : ''}
+                {data.upsidePercent}%
+              </span>
+            )}
           </div>
-        )}
+          <div className="flex items-center gap-2 text-slate-400">
+            <button
+              type="button"
+              onClick={() => setIsExpanded(true)}
+              className="hover:text-slate-200 cursor-pointer p-0.5 text-sky-400"
+              title="Phóng to / Mở rộng"
+            >
+              <Maximize2 className="size-3.5" />
+            </button>
+            <button type="button" className="hover:text-slate-200 cursor-pointer p-0.5" title="Cài đặt">
+              <Settings className="size-3.5" />
+            </button>
+          </div>
+        </div>
+
+        {/* Body Chart */}
+        <div
+          className="h-[240px] w-full relative cursor-pointer group"
+          onClick={() => setIsExpanded(true)}
+          title="Bấm vào để phóng lớn biểu đồ"
+        >
+          {renderConsensusChart(240)}
+          <div className="absolute top-2 right-2 opacity-0 group-hover:opacity-100 transition-opacity bg-slate-900/80 text-sky-400 text-[10px] px-1.5 py-0.5 rounded border border-slate-700 pointer-events-none flex items-center gap-1 shadow">
+            <Maximize2 className="size-2.5" />
+            <span>Mở rộng</span>
+          </div>
+        </div>
+
+        {/* Footer Legend */}
+        <div className="flex items-center justify-start gap-5 pt-2 border-t border-[#1b2334] text-[11px] text-slate-400">
+          <div className="flex items-center gap-1.5">
+            <span className="size-2 rounded-full bg-[#f97316]" />
+            <span className="font-medium text-slate-300">Giá mục tiêu trung bình</span>
+          </div>
+          <div className="flex items-center gap-1.5">
+            <span className="size-2 rounded-full bg-[#10b981]" />
+            <span className="font-medium text-slate-300">Giá hiện tại</span>
+          </div>
+        </div>
       </div>
 
-      {/* Footer Legend */}
-      <div className="flex items-center justify-start gap-5 pt-2 border-t border-[#1b2334] text-[11px] text-slate-400">
-        <div className="flex items-center gap-1.5">
-          <span className="size-2 rounded-full bg-[#f97316]" />
-          <span className="font-medium text-slate-300">Giá mục tiêu trung bình</span>
-        </div>
-        <div className="flex items-center gap-1.5">
-          <span className="size-2 rounded-full bg-[#10b981]" />
-          <span className="font-medium text-slate-300">Giá hiện tại</span>
-        </div>
-      </div>
-    </div>
+      {isExpanded && (
+        <ChartModal
+          isOpen={isExpanded}
+          onClose={() => setIsExpanded(false)}
+          title="GIÁ KHUYẾN NGHỊ MỤC TIÊU CTCK"
+          subtitle={`${symbol} · Chuẩn WiData`}
+          badge={
+            data?.upsidePercent != null ? (
+              <span
+                className={cn(
+                  'text-xs font-mono font-bold px-2 py-0.5 rounded',
+                  data.upsidePercent >= 0
+                    ? 'bg-emerald-500/20 text-emerald-400 border border-emerald-500/30'
+                    : 'bg-rose-500/20 text-rose-400 border border-rose-500/30'
+                )}
+              >
+                Dư địa: {data.upsidePercent > 0 ? '+' : ''}{data.upsidePercent}%
+              </span>
+            ) : undefined
+          }
+          footerExtra={
+            <div className="flex items-center justify-start gap-5 text-xs text-slate-400">
+              <div className="flex items-center gap-1.5">
+                <span className="size-2.5 rounded-full bg-[#f97316]" />
+                <span className="font-medium text-slate-300">Giá mục tiêu CTCK trung bình</span>
+              </div>
+              <div className="flex items-center gap-1.5">
+                <span className="size-2.5 rounded-full bg-[#10b981]" />
+                <span className="font-medium text-slate-300">Thị giá hiện tại</span>
+              </div>
+            </div>
+          }
+        >
+          <div className="h-[520px] w-full">
+            {renderConsensusChart(520)}
+          </div>
+        </ChartModal>
+      )}
+    </>
   )
 }
 
@@ -384,6 +496,7 @@ function WiDataInsiderCard({
   const [pricePayload, setPricePayload] = useState<StockPriceHistoryPayload | null>(null)
   const [loading, setLoading] = useState(true)
   const [mounted, setMounted] = useState(false)
+  const [isExpanded, setIsExpanded] = useState(false)
 
   useEffect(() => {
     setMounted(true)
@@ -464,123 +577,180 @@ function WiDataInsiderCard({
     return results
   }, [tradeList, filteredPrices])
 
-  return (
-    <div className="flex flex-col rounded-xl border border-[#1f293d] bg-[#0c1017] p-3 sm:p-4 shadow-sm transition-all hover:border-[#2d3d5a]">
-      {/* Header */}
-      <div className="flex items-center justify-between border-b border-[#1b2334] pb-2 mb-2">
-        <div className="flex items-center gap-2">
-          <span className="text-xs font-bold uppercase tracking-wider text-slate-200">
-            GIAO DỊCH NỘI BỘ QUA THỜI GIAN
-          </span>
-          {tradesWithPoints.length > 0 && (
-            <span className="text-[10px] font-mono px-1.5 py-0.2 rounded bg-cyan-500/20 text-cyan-400 font-bold">
-              {tradesWithPoints.length} điểm
-            </span>
-          )}
+  const renderInsiderChart = (chartHeight: number | `${number}%` = 240) => {
+    if (!mounted || loading) {
+      return (
+        <div className="h-full flex items-center justify-center text-xs text-slate-500 animate-pulse">
+          Đang tải dữ liệu giao dịch nội bộ...
         </div>
-        <div className="flex items-center gap-2 text-slate-400">
-          <button type="button" className="hover:text-slate-200 cursor-pointer p-0.5" title="Phóng to">
-            <Maximize2 className="size-3.5" />
-          </button>
-          <button type="button" className="hover:text-slate-200 cursor-pointer p-0.5" title="Cài đặt">
-            <Settings className="size-3.5" />
-          </button>
+      )
+    }
+    if (filteredPrices.length === 0) {
+      return (
+        <div className="h-full flex items-center justify-center text-xs text-slate-500">
+          Chưa có dữ liệu giá & giao dịch
         </div>
-      </div>
-
-      {/* Body Chart với Chiều Cao Cố Định 240px */}
-      <div className="h-[240px] w-full relative">
-        {!mounted || loading ? (
-          <div className="h-full flex items-center justify-center text-xs text-slate-500 animate-pulse">
-            Đang tải dữ liệu giao dịch nội bộ...
-          </div>
-        ) : filteredPrices.length > 0 ? (
-          <ResponsiveContainer width="100%" height={240}>
-            <ComposedChart data={filteredPrices} margin={{ top: 15, right: 10, left: -22, bottom: 0 }}>
-              <CartesianGrid strokeDasharray="3 3" stroke="#1f293d" opacity={0.4} />
-              <XAxis dataKey="date" tick={{ fontSize: 9, fill: '#64748b' }} minTickGap={25} />
-              <YAxis
-                tick={{ fontSize: 9, fill: '#64748b' }}
-                domain={['auto', 'auto']}
-                tickFormatter={(val) => `${Math.round(val / 1000)}K`}
-              />
-              <Tooltip
-                isAnimationActive={false}
-                content={({ active, payload }) => {
-                  if (!active || !payload || !payload.length) return null
-                  const pt = payload[0]?.payload as DailyPricePoint
-                  if (!pt) return null
-                  const dayTrades = tradesWithPoints.filter((t) => t.matchedDate === pt.date)
-                  return (
-                    <div className="rounded-lg border border-[#2d3d5a] bg-[#0c1017] p-2 shadow-xl text-[11px] font-mono space-y-1 text-slate-200 max-w-[240px]">
-                      <div className="text-slate-400 border-b border-slate-800 pb-0.5 flex justify-between">
-                        <span>{pt.date}</span>
-                        <span className="text-cyan-400 font-bold">{fmtPrice(pt.close)}</span>
-                      </div>
-                      {dayTrades.length > 0 ? (
-                        dayTrades.map((item, idx) => (
-                          <div key={idx} className="pt-0.5">
-                            <span className={cn('font-bold', item.isBuy ? 'text-emerald-400' : 'text-rose-400')}>
+      )
+    }
+    return (
+      <ResponsiveContainer width="100%" height={chartHeight}>
+        <ComposedChart data={filteredPrices} margin={{ top: 15, right: 10, left: -22, bottom: 0 }}>
+          <CartesianGrid strokeDasharray="3 3" stroke="#1f293d" opacity={0.4} />
+          <XAxis dataKey="date" tick={{ fontSize: 9, fill: '#64748b' }} minTickGap={25} />
+          <YAxis
+            tick={{ fontSize: 9, fill: '#64748b' }}
+            domain={['auto', 'auto']}
+            tickFormatter={(val) => `${Math.round(val / 1000)}K`}
+          />
+          <Tooltip
+            isAnimationActive={false}
+            content={({ active, payload }) => {
+              if (!active || !payload || !payload.length) return null
+              const pt = payload[0]?.payload as DailyPricePoint
+              if (!pt) return null
+              const dayTrades = tradesWithPoints.filter((t) => t.matchedDate === pt.date)
+              return (
+                <div className="rounded-lg border border-[#2d3d5a] bg-[#0c1017] p-2 shadow-xl text-[11px] font-mono space-y-1 text-slate-200 max-w-[280px]">
+                  <div className="text-slate-400 border-b border-slate-800 pb-0.5 flex justify-between">
+                    <span>{pt.date}</span>
+                    <span className="text-cyan-400 font-bold">{fmtPrice(pt.close)}</span>
+                  </div>
+                  {dayTrades.length > 0 ? (
+                    dayTrades.map((item, idx) => (
+                      <div key={idx} className="pt-0.5">
+                        <span className={cn('font-bold', item.isBuy ? 'text-emerald-400' : 'text-rose-400')}>
                               {item.isBuy ? '● MUA: ' : '● BÁN: '}
                               {fmtNum(item.trade.volumeTraded || item.trade.volumeRegistered)} CP
                             </span>
-                            <div className="text-[10px] text-slate-300 truncate">{item.trade.traderName}</div>
-                          </div>
-                        ))
-                      ) : (
-                        <div className="text-[10px] text-slate-500 italic">Không có GD nội bộ</div>
-                      )}
-                    </div>
-                  )
-                }}
-              />
-              {/* Line Thị Giá */}
-              <Line
-                type="monotone"
-                dataKey="close"
-                name="Giá hiện tại"
-                stroke="#0ea5e9"
-                strokeWidth={1.8}
-                dot={false}
-                isAnimationActive={false}
-              />
-              {/* Các điểm Mua / Bán */}
-              {tradesWithPoints.map((item, idx) => (
-                <ReferenceDot
-                  key={idx}
-                  x={item.matchedDate}
-                  y={item.price}
-                  r={5}
-                  fill={item.isBuy ? '#10b981' : '#f97316'}
-                  stroke="#ffffff"
-                  strokeWidth={1.5}
-                />
-              ))}
-            </ComposedChart>
-          </ResponsiveContainer>
-        ) : (
-          <div className="h-full flex items-center justify-center text-xs text-slate-500">
-            Chưa có dữ liệu giá & giao dịch
+                        <div className="text-[10px] text-slate-300 truncate">{item.trade.traderName}</div>
+                      </div>
+                    ))
+                  ) : (
+                    <div className="text-[10px] text-slate-500 italic">Không có GD nội bộ</div>
+                  )}
+                </div>
+              )
+            }}
+          />
+          <Line
+            type="monotone"
+            dataKey="close"
+            name="Giá hiện tại"
+            stroke="#0ea5e9"
+            strokeWidth={1.8}
+            dot={false}
+            isAnimationActive={false}
+          />
+          {tradesWithPoints.map((item, idx) => (
+            <ReferenceDot
+              key={idx}
+              x={item.matchedDate}
+              y={item.price}
+              r={5}
+              fill={item.isBuy ? '#10b981' : '#f97316'}
+              stroke="#ffffff"
+              strokeWidth={1.5}
+            />
+          ))}
+        </ComposedChart>
+      </ResponsiveContainer>
+    )
+  }
+
+  return (
+    <>
+      <div className="flex flex-col rounded-xl border border-[#1f293d] bg-[#0c1017] p-3 sm:p-4 shadow-sm transition-all hover:border-[#2d3d5a]">
+        {/* Header */}
+        <div className="flex items-center justify-between border-b border-[#1b2334] pb-2 mb-2">
+          <div className="flex items-center gap-2">
+            <span className="text-xs font-bold uppercase tracking-wider text-slate-200">
+              GIAO DỊCH NỘI BỘ QUA THỜI GIAN
+            </span>
+            {tradesWithPoints.length > 0 && (
+              <span className="text-[10px] font-mono px-1.5 py-0.2 rounded bg-cyan-500/20 text-cyan-400 font-bold">
+                {tradesWithPoints.length} điểm
+              </span>
+            )}
           </div>
-        )}
+          <div className="flex items-center gap-2 text-slate-400">
+            <button
+              type="button"
+              onClick={() => setIsExpanded(true)}
+              className="hover:text-slate-200 cursor-pointer p-0.5 text-sky-400"
+              title="Phóng to / Mở rộng"
+            >
+              <Maximize2 className="size-3.5" />
+            </button>
+            <button type="button" className="hover:text-slate-200 cursor-pointer p-0.5" title="Cài đặt">
+              <Settings className="size-3.5" />
+            </button>
+          </div>
+        </div>
+
+        {/* Body Chart */}
+        <div
+          className="h-[240px] w-full relative cursor-pointer group"
+          onClick={() => setIsExpanded(true)}
+          title="Bấm vào để phóng lớn biểu đồ"
+        >
+          {renderInsiderChart(240)}
+          <div className="absolute top-2 right-2 opacity-0 group-hover:opacity-100 transition-opacity bg-slate-900/80 text-sky-400 text-[10px] px-1.5 py-0.5 rounded border border-slate-700 pointer-events-none flex items-center gap-1 shadow">
+            <Maximize2 className="size-2.5" />
+            <span>Mở rộng</span>
+          </div>
+        </div>
+
+        {/* Footer Legend */}
+        <div className="flex items-center justify-start gap-5 pt-2 border-t border-[#1b2334] text-[11px] text-slate-400">
+          <div className="flex items-center gap-1.5">
+            <span className="size-2 rounded-full bg-[#10b981]" />
+            <span className="font-medium text-slate-300">Mua</span>
+          </div>
+          <div className="flex items-center gap-1.5">
+            <span className="size-2 rounded-full bg-[#f97316]" />
+            <span className="font-medium text-slate-300">Bán</span>
+          </div>
+          <div className="flex items-center gap-1.5">
+            <span className="w-3.5 h-0.5 bg-[#0ea5e9] rounded inline-block" />
+            <span className="font-medium text-slate-300">Giá hiện tại</span>
+          </div>
+        </div>
       </div>
 
-      {/* Footer Legend */}
-      <div className="flex items-center justify-start gap-5 pt-2 border-t border-[#1b2334] text-[11px] text-slate-400">
-        <div className="flex items-center gap-1.5">
-          <span className="size-2 rounded-full bg-[#10b981]" />
-          <span className="font-medium text-slate-300">Mua</span>
-        </div>
-        <div className="flex items-center gap-1.5">
-          <span className="size-2 rounded-full bg-[#f97316]" />
-          <span className="font-medium text-slate-300">Bán</span>
-        </div>
-        <div className="flex items-center gap-1.5">
-          <span className="w-3.5 h-0.5 bg-[#0ea5e9] rounded inline-block" />
-          <span className="font-medium text-slate-300">Giá hiện tại</span>
-        </div>
-      </div>
-    </div>
+      {isExpanded && (
+        <ChartModal
+          isOpen={isExpanded}
+          onClose={() => setIsExpanded(false)}
+          title="GIAO DỊCH NỘI BỘ QUA THỜI GIAN"
+          subtitle={`${symbol} · Chuẩn WiData`}
+          badge={
+            <span className="text-xs font-mono font-bold px-2 py-0.5 rounded bg-cyan-500/20 text-cyan-400 border border-cyan-500/30">
+              {tradesWithPoints.length} giao dịch khớp mốc thời gian
+            </span>
+          }
+          footerExtra={
+            <div className="flex items-center justify-start gap-5 text-xs text-slate-400">
+              <div className="flex items-center gap-1.5">
+                <span className="size-2.5 rounded-full bg-[#10b981]" />
+                <span className="font-medium text-slate-300">Mua nội bộ</span>
+              </div>
+              <div className="flex items-center gap-1.5">
+                <span className="size-2.5 rounded-full bg-[#f97316]" />
+                <span className="font-medium text-slate-300">Bán nội bộ</span>
+              </div>
+              <div className="flex items-center gap-1.5">
+                <span className="w-4 h-0.5 bg-[#0ea5e9] rounded inline-block" />
+                <span className="font-medium text-slate-300">Thị giá</span>
+              </div>
+            </div>
+          }
+        >
+          <div className="h-[520px] w-full">
+            {renderInsiderChart(520)}
+          </div>
+        </ChartModal>
+      )}
+    </>
   )
 }
 

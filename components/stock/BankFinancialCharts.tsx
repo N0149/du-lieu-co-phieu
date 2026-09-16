@@ -1,6 +1,6 @@
 'use client'
 
-import React from 'react'
+import React, { useState } from 'react'
 import { useRouter } from 'next/navigation'
 import {
   ResponsiveContainer,
@@ -17,7 +17,8 @@ import {
   Cell,
 } from 'recharts'
 import type { BankAnalysisData } from '@/lib/banking-types'
-import { Landmark, ExternalLink } from 'lucide-react'
+import { Landmark, ExternalLink, Maximize2 } from 'lucide-react'
+import { ChartModal } from './ChartModal'
 
 interface BankFinancialChartsProps {
   symbol: string
@@ -26,6 +27,7 @@ interface BankFinancialChartsProps {
 
 export function BankFinancialCharts({ symbol, data }: BankFinancialChartsProps) {
   const router = useRouter()
+  const [expandedChart, setExpandedChart] = useState<'radar' | 'loanTerm' | 'customerGroup' | null>(null)
 
   if (!data.isBank || !data.spider) {
     return null
@@ -102,16 +104,35 @@ export function BankFinancialCharts({ symbol, data }: BankFinancialChartsProps) 
               <span className="text-xs font-bold uppercase tracking-wider text-[#F0F3F6]">
                 So Sánh Trong Ngành Ngân Hàng
               </span>
-              <span className="text-[11px] font-semibold text-emerald-400">
-                {symbol} #{spider.overall_place}/{spider.totalBanks}
-              </span>
+              <div className="flex items-center gap-2">
+                <span className="text-[11px] font-semibold text-emerald-400">
+                  {symbol} #{spider.overall_place}/{spider.totalBanks}
+                </span>
+                <button
+                  type="button"
+                  onClick={() => setExpandedChart('radar')}
+                  className="flex items-center gap-1 text-[10px] font-medium text-slate-400 hover:text-white bg-white/5 hover:bg-white/10 px-1.5 py-0.5 rounded border border-white/10 transition-colors cursor-pointer"
+                  title="Mở rộng biểu đồ"
+                >
+                  <Maximize2 className="size-3 text-emerald-400" />
+                  <span className="hidden sm:inline">Mở rộng</span>
+                </button>
+              </div>
             </div>
             <p className="mt-1 text-[11px] text-[#8B98A5]">
               Vùng phủ càng rộng thể hiện năng lực tổng thể càng vượt trội so với trung vị ngành
             </p>
           </div>
 
-          <div className="my-2 h-72 w-full">
+          <div
+            className="my-2 h-72 w-full cursor-pointer group relative"
+            onClick={() => setExpandedChart('radar')}
+            title="Bấm vào để phóng lớn biểu đồ"
+          >
+            <div className="absolute top-2 right-2 opacity-0 group-hover:opacity-100 transition-opacity bg-slate-900/80 text-emerald-400 text-[10px] px-1.5 py-0.5 rounded border border-white/10 pointer-events-none flex items-center gap-1 shadow z-10">
+              <Maximize2 className="size-2.5" />
+              <span>Mở rộng</span>
+            </div>
             <ResponsiveContainer width="100%" height="100%">
               <RadarChart cx="50%" cy="50%" outerRadius="75%" data={spider.radarData}>
                 <PolarGrid stroke="#334155" strokeDasharray="3 3" />
@@ -171,14 +192,33 @@ export function BankFinancialCharts({ symbol, data }: BankFinancialChartsProps) 
                 <span className="text-xs font-bold uppercase tracking-wider text-[#F0F3F6]">
                   {loanTermChart.title}
                 </span>
-                <span className="text-[11px] text-[#8B98A5]">100% Stacked</span>
+                <div className="flex items-center gap-2">
+                  <span className="text-[11px] text-[#8B98A5]">100% Stacked</span>
+                  <button
+                    type="button"
+                    onClick={() => setExpandedChart('loanTerm')}
+                    className="flex items-center gap-1 text-[10px] font-medium text-slate-400 hover:text-white bg-white/5 hover:bg-white/10 px-1.5 py-0.5 rounded border border-white/10 transition-colors cursor-pointer"
+                    title="Mở rộng biểu đồ"
+                  >
+                    <Maximize2 className="size-3 text-amber-400" />
+                    <span className="hidden sm:inline">Mở rộng</span>
+                  </button>
+                </div>
               </div>
               <p className="mt-1 text-[11px] text-[#8B98A5]">
                 Tỷ trọng vay ngắn hạn vs trung, dài hạn (bấm vào cột để xem)
               </p>
             </div>
 
-            <div className="my-2 h-72 w-full">
+            <div
+              className="my-2 h-72 w-full cursor-pointer group relative"
+              onClick={() => setExpandedChart('loanTerm')}
+              title="Bấm vào để phóng lớn biểu đồ"
+            >
+              <div className="absolute top-2 right-2 opacity-0 group-hover:opacity-100 transition-opacity bg-slate-900/80 text-amber-400 text-[10px] px-1.5 py-0.5 rounded border border-white/10 pointer-events-none flex items-center gap-1 shadow z-10">
+                <Maximize2 className="size-2.5" />
+                <span>Mở rộng</span>
+              </div>
               <ResponsiveContainer width="100%" height="100%">
                 <BarChart
                   data={loanTermChart.items}
@@ -306,14 +346,33 @@ export function BankFinancialCharts({ symbol, data }: BankFinancialChartsProps) 
                 <span className="text-xs font-bold uppercase tracking-wider text-[#F0F3F6]">
                   {customerGroupChart.title}
                 </span>
-                <span className="text-[11px] text-[#8B98A5]">100% Stacked</span>
+                <div className="flex items-center gap-2">
+                  <span className="text-[11px] text-[#8B98A5]">100% Stacked</span>
+                  <button
+                    type="button"
+                    onClick={() => setExpandedChart('customerGroup')}
+                    className="flex items-center gap-1 text-[10px] font-medium text-slate-400 hover:text-white bg-white/5 hover:bg-white/10 px-1.5 py-0.5 rounded border border-white/10 transition-colors cursor-pointer"
+                    title="Mở rộng biểu đồ"
+                  >
+                    <Maximize2 className="size-3 text-amber-400" />
+                    <span className="hidden sm:inline">Mở rộng</span>
+                  </button>
+                </div>
               </div>
               <p className="mt-1 text-[11px] text-[#8B98A5]">
                 Tỷ lệ khách hàng cá nhân vs doanh nghiệp (bấm vào cột để xem)
               </p>
             </div>
 
-            <div className="my-2 h-72 w-full">
+            <div
+              className="my-2 h-72 w-full cursor-pointer group relative"
+              onClick={() => setExpandedChart('customerGroup')}
+              title="Bấm vào để phóng lớn biểu đồ"
+            >
+              <div className="absolute top-2 right-2 opacity-0 group-hover:opacity-100 transition-opacity bg-slate-900/80 text-amber-400 text-[10px] px-1.5 py-0.5 rounded border border-white/10 pointer-events-none flex items-center gap-1 shadow z-10">
+                <Maximize2 className="size-2.5" />
+                <span>Mở rộng</span>
+              </div>
               <ResponsiveContainer width="100%" height="100%">
                 <BarChart
                   data={customerGroupChart.items}
@@ -433,6 +492,342 @@ export function BankFinancialCharts({ symbol, data }: BankFinancialChartsProps) 
           </div>
         )}
       </div>
+
+      {/* ── MODAL PHÓNG TO BIỂU ĐỒ NGÂN HÀNG ── */}
+      {expandedChart === 'radar' && (
+        <ChartModal
+          isOpen={expandedChart === 'radar'}
+          onClose={() => setExpandedChart(null)}
+          title="SO SÁNH TOÀN DIỆN 11 CHỈ TIÊU NGÀNH NGÂN HÀNG"
+          subtitle={`Mã ${symbol} · Xếp hạng #${spider.overall_place}/${spider.totalBanks} toàn ngành · Chu kỳ ${spider.period}`}
+          badge={
+            <span className="text-xs font-mono font-bold px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-400 border border-emerald-500/30">
+              Điểm: {spider.overall_points}/{spider.max_points} đ
+            </span>
+          }
+          footerExtra={
+            <div className="flex items-center justify-between w-full text-xs text-slate-400">
+              <span>(Dữ liệu chuẩn hóa đến {spider.period} · Vùng phủ xanh càng lớn thể hiện năng lực vượt trội)</span>
+              <span className="text-emerald-400 font-semibold">11 chỉ tiêu chất lượng tài sản & hiệu quả sinh lời</span>
+            </div>
+          }
+        >
+          <div className="h-[520px] w-full">
+            <ResponsiveContainer width="100%" height={520}>
+              <RadarChart cx="50%" cy="50%" outerRadius="80%" data={spider.radarData}>
+                <PolarGrid stroke="#334155" strokeDasharray="3 3" />
+                <PolarAngleAxis
+                  dataKey="label"
+                  tick={{ fill: '#94a3b8', fontSize: 11, fontWeight: 600 }}
+                />
+                <PolarRadiusAxis domain={[0, 100]} axisLine={false} tick={false} />
+                <Radar
+                  name={symbol}
+                  dataKey="normalizedScore"
+                  stroke="#10b981"
+                  strokeWidth={2}
+                  fill="#10b981"
+                  fillOpacity={0.35}
+                />
+                <Tooltip
+                  content={({ active, payload }) => {
+                    if (active && payload && payload.length) {
+                      const item = payload[0].payload
+                      return (
+                        <div className="rounded-xl border border-white/10 bg-[#1a1f2c] p-3 text-xs shadow-xl backdrop-blur-md min-w-[200px]">
+                          <p className="font-bold text-[#F0F3F6] text-sm border-b border-white/10 pb-1">{item.label}</p>
+                          <div className="mt-2 space-y-1 text-xs">
+                            <p className="text-emerald-400">
+                              Giá trị {symbol}: <span className="font-bold">{item.formattedValue}</span>
+                            </p>
+                            <p className="text-amber-400">
+                              Thứ hạng ngành: <span className="font-bold">#{item.totalBanks - item.rank + 1} / {item.totalBanks}</span>
+                            </p>
+                            {item.industryMedian != null && (
+                              <p className="text-[#8B98A5]">
+                                Trung vị ngành: {item.industryMedian}{item.unit}
+                              </p>
+                            )}
+                          </div>
+                        </div>
+                      )
+                    }
+                    return null
+                  }}
+                />
+              </RadarChart>
+            </ResponsiveContainer>
+          </div>
+        </ChartModal>
+      )}
+
+      {expandedChart === 'loanTerm' && loanTermChart && (
+        <ChartModal
+          isOpen={expandedChart === 'loanTerm'}
+          onClose={() => setExpandedChart(null)}
+          title={loanTermChart.title}
+          subtitle="So sánh cơ cấu kỳ hạn vay giữa các ngân hàng niêm yết (Bấm vào cột để xem chi tiết từng mã)"
+          badge={
+            <span className="text-xs font-mono font-bold px-2 py-0.5 rounded bg-amber-500/20 text-amber-400 border border-amber-500/30">
+              100% Stacked
+            </span>
+          }
+          footerExtra={
+            <div className="flex flex-wrap items-center justify-start gap-5 text-xs text-slate-400">
+              <div className="flex items-center gap-1.5">
+                <span className="size-3 rounded-xs bg-amber-500" />
+                <span className="text-slate-300 font-medium">{loanTermChart.primaryLabel}</span>
+              </div>
+              <div className="flex items-center gap-1.5">
+                <span className="size-3 rounded-xs bg-slate-600" />
+                <span className="text-slate-300 font-medium">{loanTermChart.secondaryLabel}</span>
+              </div>
+              <span className="text-slate-500 italic text-[11px] ml-auto">👉 Bấm vào bất kỳ cột nào để mở trang chi tiết của ngân hàng đó</span>
+            </div>
+          }
+        >
+          <div className="h-[520px] w-full">
+            <ResponsiveContainer width="100%" height={520}>
+              <BarChart
+                data={loanTermChart.items}
+                margin={{ top: 15, right: 15, left: -20, bottom: 25 }}
+                onClick={(state: any) => {
+                  const sym = state?.activePayload?.[0]?.payload?.symbol || state?.activeLabel
+                  if (sym) handleNavigate(sym)
+                }}
+                className="cursor-pointer"
+              >
+                <XAxis
+                  dataKey="symbol"
+                  interval={0}
+                  angle={-45}
+                  textAnchor="end"
+                  tick={({ x, y, payload }) => {
+                    const isCur = payload.value === symbol
+                    return (
+                      <text
+                        x={x}
+                        y={y}
+                        dy={10}
+                        textAnchor="end"
+                        fill={isCur ? '#f59e0b' : '#94a3b8'}
+                        fontSize={isCur ? 12 : 10}
+                        fontWeight={isCur ? 800 : 500}
+                        transform={`rotate(-45, ${x}, ${y})`}
+                        className="cursor-pointer hover:fill-amber-400 transition-colors select-none"
+                        onClick={(e) => {
+                          e.stopPropagation()
+                          handleNavigate(payload.value)
+                        }}
+                      >
+                        {payload.value}
+                      </text>
+                    )
+                  }}
+                />
+                <YAxis
+                  domain={[0, 100]}
+                  tick={{ fill: '#64748b', fontSize: 10 }}
+                  tickFormatter={(v) => `${v}%`}
+                />
+                <Tooltip
+                  content={({ active, payload }) => {
+                    if (active && payload && payload.length) {
+                      const item = payload[0].payload
+                      return (
+                        <div className="rounded-xl border border-white/10 bg-[#1a1f2c] p-3 text-xs shadow-xl backdrop-blur-md min-w-[220px]">
+                          <div className="flex items-center justify-between gap-3 border-b border-white/10 pb-1.5 mb-1.5">
+                            <span className="font-extrabold text-amber-400 text-sm">{item.symbol}</span>
+                            <span className="flex items-center gap-0.5 text-xs text-emerald-400 font-semibold">
+                              Xem chi tiết <ExternalLink className="size-3" />
+                            </span>
+                          </div>
+                          <p className="text-amber-300">
+                            Cho vay Ngắn hạn: <span className="font-bold">{item.primaryPct}%</span>
+                          </p>
+                          <p className="text-slate-300">
+                            Cho vay Trung, Dài hạn: <span className="font-bold">{item.secondaryPct}%</span>
+                          </p>
+                          <p className="mt-2 border-t border-white/5 pt-1.5 text-[11px] text-[#8B98A5]">
+                            👉 Bấm vào cột để chuyển đến trang {item.symbol}
+                          </p>
+                        </div>
+                      )
+                    }
+                    return null
+                  }}
+                />
+                <Bar
+                  dataKey="primaryPct"
+                  stackId="term"
+                  cursor="pointer"
+                  onClick={(entry: any) => {
+                    if (entry?.symbol) handleNavigate(entry.symbol)
+                  }}
+                >
+                  {loanTermChart.items.map((entry, index) => (
+                    <Cell
+                      key={`cell-modal-nh-${index}`}
+                      fill={entry.isCurrent ? '#f59e0b' : '#475569'}
+                      className="hover:opacity-80 transition-opacity cursor-pointer"
+                    />
+                  ))}
+                </Bar>
+                <Bar
+                  dataKey="secondaryPct"
+                  stackId="term"
+                  cursor="pointer"
+                  onClick={(entry: any) => {
+                    if (entry?.symbol) handleNavigate(entry.symbol)
+                  }}
+                >
+                  {loanTermChart.items.map((entry, index) => (
+                    <Cell
+                      key={`cell-modal-dh-${index}`}
+                      fill={entry.isCurrent ? '#fbbf24' : '#1e293b'}
+                      className="hover:opacity-80 transition-opacity cursor-pointer"
+                    />
+                  ))}
+                </Bar>
+              </BarChart>
+            </ResponsiveContainer>
+          </div>
+        </ChartModal>
+      )}
+
+      {expandedChart === 'customerGroup' && customerGroupChart && (
+        <ChartModal
+          isOpen={expandedChart === 'customerGroup'}
+          onClose={() => setExpandedChart(null)}
+          title={customerGroupChart.title}
+          subtitle="So sánh tỷ trọng cho vay khách hàng cá nhân vs tổ chức giữa các ngân hàng (Bấm vào cột để xem từng mã)"
+          badge={
+            <span className="text-xs font-mono font-bold px-2 py-0.5 rounded bg-amber-500/20 text-amber-400 border border-amber-500/30">
+              100% Stacked
+            </span>
+          }
+          footerExtra={
+            <div className="flex flex-wrap items-center justify-start gap-5 text-xs text-slate-400">
+              <div className="flex items-center gap-1.5">
+                <span className="size-3 rounded-xs bg-amber-500" />
+                <span className="text-slate-300 font-medium">{customerGroupChart.primaryLabel}</span>
+              </div>
+              <div className="flex items-center gap-1.5">
+                <span className="size-3 rounded-xs bg-slate-600" />
+                <span className="text-slate-300 font-medium">{customerGroupChart.secondaryLabel}</span>
+              </div>
+              <span className="text-slate-500 italic text-[11px] ml-auto">👉 Bấm vào bất kỳ cột nào để mở trang chi tiết của ngân hàng đó</span>
+            </div>
+          }
+        >
+          <div className="h-[520px] w-full">
+            <ResponsiveContainer width="100%" height={520}>
+              <BarChart
+                data={customerGroupChart.items}
+                margin={{ top: 15, right: 15, left: -20, bottom: 25 }}
+                onClick={(state: any) => {
+                  const sym = state?.activePayload?.[0]?.payload?.symbol || state?.activeLabel
+                  if (sym) handleNavigate(sym)
+                }}
+                className="cursor-pointer"
+              >
+                <XAxis
+                  dataKey="symbol"
+                  interval={0}
+                  angle={-45}
+                  textAnchor="end"
+                  tick={({ x, y, payload }) => {
+                    const isCur = payload.value === symbol
+                    return (
+                      <text
+                        x={x}
+                        y={y}
+                        dy={10}
+                        textAnchor="end"
+                        fill={isCur ? '#f59e0b' : '#94a3b8'}
+                        fontSize={isCur ? 12 : 10}
+                        fontWeight={isCur ? 800 : 500}
+                        transform={`rotate(-45, ${x}, ${y})`}
+                        className="cursor-pointer hover:fill-amber-400 transition-colors select-none"
+                        onClick={(e) => {
+                          e.stopPropagation()
+                          handleNavigate(payload.value)
+                        }}
+                      >
+                        {payload.value}
+                      </text>
+                    )
+                  }}
+                />
+                <YAxis
+                  domain={[0, 100]}
+                  tick={{ fill: '#64748b', fontSize: 10 }}
+                  tickFormatter={(v) => `${v}%`}
+                />
+                <Tooltip
+                  content={({ active, payload }) => {
+                    if (active && payload && payload.length) {
+                      const item = payload[0].payload
+                      return (
+                        <div className="rounded-xl border border-white/10 bg-[#1a1f2c] p-3 text-xs shadow-xl backdrop-blur-md min-w-[220px]">
+                          <div className="flex items-center justify-between gap-3 border-b border-white/10 pb-1.5 mb-1.5">
+                            <span className="font-extrabold text-amber-400 text-sm">{item.symbol}</span>
+                            <span className="flex items-center gap-0.5 text-xs text-emerald-400 font-semibold">
+                              Xem chi tiết <ExternalLink className="size-3" />
+                            </span>
+                          </div>
+                          <p className="text-amber-300">
+                            Khách hàng cá nhân: <span className="font-bold">{item.primaryPct}%</span>
+                          </p>
+                          <p className="text-slate-300">
+                            Khách hàng tổ chức: <span className="font-bold">{item.secondaryPct}%</span>
+                          </p>
+                          <p className="mt-2 border-t border-white/5 pt-1.5 text-[11px] text-[#8B98A5]">
+                            👉 Bấm vào cột để chuyển đến trang {item.symbol}
+                          </p>
+                        </div>
+                      )
+                    }
+                    return null
+                  }}
+                />
+                <Bar
+                  dataKey="primaryPct"
+                  stackId="cust"
+                  cursor="pointer"
+                  onClick={(entry: any) => {
+                    if (entry?.symbol) handleNavigate(entry.symbol)
+                  }}
+                >
+                  {customerGroupChart.items.map((entry, index) => (
+                    <Cell
+                      key={`cell-modal-cn-${index}`}
+                      fill={entry.isCurrent ? '#f59e0b' : '#475569'}
+                      className="hover:opacity-80 transition-opacity cursor-pointer"
+                    />
+                  ))}
+                </Bar>
+                <Bar
+                  dataKey="secondaryPct"
+                  stackId="cust"
+                  cursor="pointer"
+                  onClick={(entry: any) => {
+                    if (entry?.symbol) handleNavigate(entry.symbol)
+                  }}
+                >
+                  {customerGroupChart.items.map((entry, index) => (
+                    <Cell
+                      key={`cell-modal-tc-${index}`}
+                      fill={entry.isCurrent ? '#fbbf24' : '#1e293b'}
+                      className="hover:opacity-80 transition-opacity cursor-pointer"
+                    />
+                  ))}
+                </Bar>
+              </BarChart>
+            </ResponsiveContainer>
+          </div>
+        </ChartModal>
+      )}
     </div>
   )
 }
