@@ -65,23 +65,52 @@ export function extractKtplFromMarkdown(content, ticker = '') {
   }
 
   // 2. Tìm tất cả các khoản trích lập KHÔNG THUỘC VỀ CỔ ĐÔNG (KTPL, Thưởng BĐH, Thù lao HĐQT/BKS, Từ thiện...)
-  const nonShareholderRegex = /(khen\s*thưởng|phúc\s*lợi|ktpl|thưởng\s*(?:ban\s*)?điều\s*hành|thưởng\s*người\s*quản\s*lý|thưởng\s*nql|thưởng\s*bđh|thù\s*lao\s*hđqt|thù\s*lao\s*(?:hội\s*đồng\s*quản\s*trị|bks|ban\s*kiểm\s*soát)|thưởng\s*(?:hđqt|hội\s*đồng\s*quản\s*trị)|công\s*tác\s*xã\s*hội|từ\s*thiện)/i
-  const equityRegex = /(đầu\s*tư\s*phát\s*triển|dự\s*trữ\s*(bắt\s*buộc|bổ\s*sung)|dự\s*phòng\s*tài\s*chính|cổ\s*tức|chưa\s*phân\s*phối|còn\s*lại|chuyển\s*sang|năm\s*trước|tích\s*lũy|thành\s*phần|chỉ\s*tiêu|cộng\s*các\s*quỹ|trích\s*lập\s*các\s*quỹ|tổng\s*lợi\s*nhuận|tổng\s*cộng)/i
+  const nonShareholderRegex = /(khen\s*thưởng|phúc\s*lợi|ktpl|quỹ\s*thưởng|thưởng\s*(?:ban\s*)?điều\s*hành|thưởng\s*người\s*quản\s*lý|thưởng\s*nql|thưởng\s*bđh|thưởng\s*(?:do\s*)?(?:hoàn\s*thành|vượt)|thù\s*lao\s*hđqt|thù\s*lao\s*(?:hội\s*đồng\s*quản\s*trị|bks|ban\s*kiểm\s*soát)|thưởng\s*(?:hđqt|hội\s*đồng\s*quản\s*trị|bks|ban\s*kiểm\s*soát|tổng\s*giám\s*đốc|tgđ|kế\s*toán\s*trưởng)|công\s*tác\s*xã\s*hội|từ\s*thiện|an\s*sinh\s*xã\s*hội)/i
+  const equityRegex = /(đầu\s*tư\s*phát\s*triển|dự\s*trữ\s*(bắt\s*buộc|bổ\s*sung)|dự\s*phòng\s*tài\s*chính|cổ\s*tức|chưa\s*phân\s*phối|còn\s*lại|chuyển\s*sang|năm\s*trước|tích\s*lũy|thành\s*phần|chỉ\s*tiêu|cộng\s*các\s*quỹ|trích\s*lập\s*các\s*quỹ|tổng\s*lợi\s*nhuận|tổng\s*cộng|cổ\s*phiếu\s*thưởng|thưởng\s*bằng\s*cổ\s*phiếu)/i
+
+  function getSttLevel(stt, nameCol, line) {
+    if (/trong\s*đó/i.test(line)) return 99
+    if (!stt || stt.trim() === '') return 99
+    const clean = stt.replace(/[*_~]/g, '').trim()
+    if (/^[-–—+•]/.test(clean)) return 99
+    if (/^\d+$/.test(clean)) return 1
+    if (/^[IVXLCDM]+$/i.test(clean)) return 1
+    if (/^[A-Z]$/.test(clean)) return 1
+    if (/^\d+\.\d+$/.test(clean)) return 2
+    if (/^[a-z]$/.test(clean)) return 2
+    if (/^\d+\.\d+\.\d+/.test(clean)) return 3
+    if (/^[a-z]\d+/.test(clean)) return 3
+    return 2
+  }
 
   const items = []
   const seenLines = new Set()
+  let activeParentLevel = null
 
   for (const line of lines) {
     if (!line.includes('|')) continue
     if (/kế\s*hoạch\s*2026|dự\s*kiến\s*2026/i.test(line)) continue
+
+    const cols = line.split('|').map((c) => c.trim())
+    const rawStt = cols[1] || ''
+    const nameCol = cols[2] || ''
+    const level = getSttLevel(rawStt, nameCol, line)
+
+    if (activeParentLevel !== null && level <= activeParentLevel) {
+      activeParentLevel = null
+    }
+
     if (!nonShareholderRegex.test(line)) continue
     if (equityRegex.test(line)) continue
+
+    if (activeParentLevel !== null && level > activeParentLevel) {
+      continue
+    }
 
     const cleanKey = line.replace(/[^a-zA-Z0-9\u00C0-\u024F\u1E00-\u1EFF]/g, '').slice(0, 25)
     if (seenLines.has(cleanKey)) continue
     seenLines.add(cleanKey)
 
-    const isTrongDo = /trong\s*đó/i.test(line)
     const numMatches = [...line.matchAll(/\b\d{1,3}(?:[.,]\d{3})+(?:[.,]\d+)?\b/g)]
     const vals = numMatches.map((m) => parseFloat(m[0].replace(/\./g, '').replace(',', '.'))).filter((v) => v > 100000)
 
@@ -101,17 +130,16 @@ export function extractKtplFromMarkdown(content, ticker = '') {
     }
 
     if (vnd !== null || pct !== null) {
-      items.push({ text: line.trim(), vnd, pct, isTrongDo })
+      items.push({ text: line.trim(), vnd, pct, level })
+      if (level < 99) {
+        activeParentLevel = level
+      }
     }
   }
 
-  // Nếu có dòng tổng và các dòng 'trong đó', ưu tiên dùng dòng cha
-  const parentItems = items.filter((it) => !it.isTrongDo)
-  const finalItems = parentItems.length > 0 ? parentItems : items
-
   let totalVnd = 0
   let totalPct = 0
-  finalItems.forEach((it) => {
+  items.forEach((it) => {
     if (it.vnd) totalVnd += it.vnd
     if (it.pct) totalPct += it.pct
   })
@@ -124,7 +152,7 @@ export function extractKtplFromMarkdown(content, ticker = '') {
       method: 'table_vnd_sum',
       ktplVnd: totalVnd,
       lnstVnd: lnst,
-      itemCount: finalItems.length,
+      itemCount: items.length,
     }
   }
 
@@ -134,7 +162,7 @@ export function extractKtplFromMarkdown(content, ticker = '') {
       method: 'table_pct_sum',
       ktplVnd: totalVnd > 0 ? totalVnd : null,
       lnstVnd: lnst ?? null,
-      itemCount: finalItems.length,
+      itemCount: items.length,
     }
   }
 

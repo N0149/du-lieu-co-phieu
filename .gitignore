@@ -28,6 +28,8 @@ __pycache__/
 # Large SQLite databases & local caches
 data/*.db
 data/**/*.db
+!data/maritime.db
+!data/corporate_disclosures.db
 data/*.db-shm
 data/*.db-wal
 data/**/*.db-shm

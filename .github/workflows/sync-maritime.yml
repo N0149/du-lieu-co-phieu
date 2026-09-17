@@ -1,0 +1,40 @@
+name: Sync Maritime Port Data
+
+on:
+  schedule:
+    # Chay 4 lan moi ngay theo gio Viet Nam (GMT+7):
+    # 06:00 (23:00 UTC), 12:00 (05:00 UTC), 18:00 (11:00 UTC), 21:00 (14:00 UTC)
+    - cron: '0 23 * * *'
+    - cron: '0 5 * * *'
+    - cron: '0 11 * * *'
+    - cron: '0 14 * * *'
+  workflow_dispatch: # Cho phep bam nut Run workflow thu cong tren GitHub
+
+jobs:
+  sync-maritime:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install Python dependencies
+        run: |
+          pip install requests beautifulsoup4
+
+      - name: Run Maritime Data Pipeline
+        run: |
+          python scripts/cangbien/run_pipeline.py
+
+      - name: Commit and push maritime updates
+        run: |
+          git config --global user.name 'github-actions[bot]'
+          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+          git add -f data/maritime/dashboard_summary.json data/maritime/freight_rates.json data/maritime/national_traffic.json data/maritime/stocks_intel.json data/maritime.db
+          git diff --quiet && git diff --staged --quiet || (git commit -m "chore(cang-bien): auto sync maritime port calls $(date +'%Y-%m-%d %H:%M')" && git push)

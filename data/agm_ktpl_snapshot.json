@@ -2,8 +2,8 @@
   "A32": {
     "ticker": "A32",
     "year": 2026,
-    "ktplRate": 65.16,
-    "ktplVnd": 33147454740,
+    "ktplRate": 66.58,
+    "ktplVnd": 33872308164,
     "lnstVnd": 50872308164,
     "method": "table_vnd_sum"
   },
@@ -386,8 +386,8 @@
   "BRR": {
     "ticker": "BRR",
     "year": 2026,
-    "ktplRate": 33.82,
-    "ktplVnd": 50786000000,
+    "ktplRate": 16.91,
+    "ktplVnd": 25393000000,
     "lnstVnd": 150157461524,
     "method": "table_vnd_sum"
   },
@@ -395,9 +395,9 @@
     "ticker": "BRS",
     "year": 2026,
     "ktplRate": 54.84,
-    "ktplVnd": 18442243012,
+    "ktplVnd": 9421121506,
     "lnstVnd": 17179851506,
-    "method": "table_pct_sum"
+    "method": "table_vnd_sum"
   },
   "BSA": {
     "ticker": "BSA",
@@ -410,8 +410,8 @@
   "BSH": {
     "ticker": "BSH",
     "year": 2026,
-    "ktplRate": 11.15,
-    "ktplVnd": 3293884850,
+    "ktplRate": 12.33,
+    "ktplVnd": 3641588118,
     "lnstVnd": 29540653535,
     "method": "table_vnd_sum"
   },
@@ -426,8 +426,8 @@
   "BSL": {
     "ticker": "BSL",
     "year": 2026,
-    "ktplRate": 22.36,
-    "ktplVnd": 9448000000,
+    "ktplRate": 24.09,
+    "ktplVnd": 10179106010,
     "lnstVnd": 42254215068,
     "method": "table_vnd_sum"
   },
@@ -466,8 +466,8 @@
   "BTP": {
     "ticker": "BTP",
     "year": 2026,
-    "ktplRate": 84.03,
-    "ktplVnd": 35772994400,
+    "ktplRate": 42.02,
+    "ktplVnd": 17886497200,
     "lnstVnd": 42570802456,
     "method": "table_vnd_sum"
   },
@@ -514,8 +514,8 @@
   "BWE": {
     "ticker": "BWE",
     "year": 2026,
-    "ktplRate": 14,
-    "ktplVnd": 113493704419,
+    "ktplRate": 17,
+    "ktplVnd": 137813783937,
     "lnstVnd": 810669317275,
     "method": "table_vnd_sum"
   },
@@ -570,8 +570,8 @@
   "CCA": {
     "ticker": "CCA",
     "year": 2026,
-    "ktplRate": 10.8,
-    "ktplVnd": 4700883822,
+    "ktplRate": 11.01,
+    "ktplVnd": 4790883822,
     "lnstVnd": 43508838222,
     "method": "table_vnd_sum"
   },
@@ -690,8 +690,8 @@
   "CMN": {
     "ticker": "CMN",
     "year": 2026,
-    "ktplRate": 17.16,
-    "ktplVnd": 3503191700,
+    "ktplRate": 27.93,
+    "ktplVnd": 6003191700,
     "lnstVnd": null,
     "method": "table_pct_sum"
   },
@@ -710,6 +710,14 @@
     "ktplVnd": 881349250,
     "lnstVnd": 18813492502,
     "method": "table_vnd_sum"
+  },
+  "CMW": {
+    "ticker": "CMW",
+    "year": 2026,
+    "ktplRate": 23,
+    "ktplVnd": null,
+    "lnstVnd": null,
+    "method": "table_pct_sum"
   },
   "CMX": {
     "ticker": "CMX",
@@ -754,16 +762,16 @@
   "CPC": {
     "ticker": "CPC",
     "year": 2026,
-    "ktplRate": 12.92,
-    "ktplVnd": 1167418715,
+    "ktplRate": 19.18,
+    "ktplVnd": 1733190715,
     "lnstVnd": 9036086715,
     "method": "table_vnd_sum"
   },
   "CQT": {
     "ticker": "CQT",
     "year": 2026,
-    "ktplRate": 44.43,
-    "ktplVnd": 4283787294,
+    "ktplRate": 22.21,
+    "ktplVnd": 2141893647,
     "lnstVnd": 9641893647,
     "method": "table_vnd_sum"
   },
@@ -858,8 +866,8 @@
   "D2D": {
     "ticker": "D2D",
     "year": 2026,
-    "ktplRate": 11.66,
-    "ktplVnd": 27967187450,
+    "ktplRate": 11.82,
+    "ktplVnd": 28367187450,
     "lnstVnd": 239896749690,
     "method": "table_vnd_sum"
   },
@@ -1138,8 +1146,8 @@
   "DP1": {
     "ticker": "DP1",
     "year": 2026,
-    "ktplRate": 4.71,
-    "ktplVnd": 5321294216,
+    "ktplRate": 13.42,
+    "ktplVnd": 15178318188,
     "lnstVnd": 113082355399,
     "method": "table_vnd_sum"
   },
@@ -1178,8 +1186,8 @@
   "DRC": {
     "ticker": "DRC",
     "year": 2026,
-    "ktplRate": 10,
-    "ktplVnd": 11848996519,
+    "ktplRate": 10.27,
+    "ktplVnd": 12164322519,
     "lnstVnd": 118489965190,
     "method": "table_vnd_sum"
   },
@@ -1266,8 +1274,8 @@
   "DWS": {
     "ticker": "DWS",
     "year": 2026,
-    "ktplRate": 61.18,
-    "ktplVnd": 31331416184,
+    "ktplRate": 30.59,
+    "ktplVnd": 15665708092,
     "lnstVnd": 51215440757,
     "method": "table_vnd_sum"
   },
@@ -1306,8 +1314,8 @@
   "EMS": {
     "ticker": "EMS",
     "year": 2026,
-    "ktplRate": 47.83,
-    "ktplVnd": 33251955549,
+    "ktplRate": 48.68,
+    "ktplVnd": 33844717610,
     "lnstVnd": 69524260866,
     "method": "table_vnd_sum"
   },
@@ -1410,7 +1418,7 @@
   "GAS": {
     "ticker": "GAS",
     "year": 2026,
-    "ktplRate": 3.3,
+    "ktplRate": 3.38,
     "ktplVnd": null,
     "lnstVnd": null,
     "method": "table_pct_sum"
@@ -1514,8 +1522,8 @@
   "GTS": {
     "ticker": "GTS",
     "year": 2026,
-    "ktplRate": 55.25,
-    "ktplVnd": 25196621769,
+    "ktplRate": 26.14,
+    "ktplVnd": 11921935825,
     "lnstVnd": 45601391286,
     "method": "table_vnd_sum"
   },
@@ -1610,8 +1618,8 @@
   "HCC": {
     "ticker": "HCC",
     "year": 2026,
-    "ktplRate": 8.88,
-    "ktplVnd": 2700000000,
+    "ktplRate": 4.93,
+    "ktplVnd": 1500000000,
     "lnstVnd": 30400012594,
     "method": "table_vnd_sum"
   },
@@ -1650,8 +1658,8 @@
   "HDM": {
     "ticker": "HDM",
     "year": 2026,
-    "ktplRate": 13.46,
-    "ktplVnd": 20294390845,
+    "ktplRate": 16.78,
+    "ktplVnd": 25294390845,
     "lnstVnd": 150784050073,
     "method": "table_vnd_sum"
   },
@@ -1666,24 +1674,24 @@
   "HDW": {
     "ticker": "HDW",
     "year": 2026,
-    "ktplRate": 52.23,
-    "ktplVnd": 25338623970,
+    "ktplRate": 26.11,
+    "ktplVnd": 12669311985,
     "lnstVnd": 48516171731,
     "method": "table_vnd_sum"
   },
   "HEP": {
     "ticker": "HEP",
     "year": 2026,
-    "ktplRate": 60,
-    "ktplVnd": 9834833730,
+    "ktplRate": 30,
+    "ktplVnd": 4917416865,
     "lnstVnd": 16391389551,
     "method": "table_vnd_sum"
   },
   "HGM": {
     "ticker": "HGM",
     "year": 2026,
-    "ktplRate": 4.2,
-    "ktplVnd": 20000000000,
+    "ktplRate": 4.63,
+    "ktplVnd": 22000000000,
     "lnstVnd": 475654254654,
     "method": "table_vnd_sum"
   },
@@ -1715,9 +1723,9 @@
     "ticker": "HIO",
     "year": 2026,
     "ktplRate": 8,
-    "ktplVnd": 1084377372,
+    "ktplVnd": 14639094526,
     "lnstVnd": 13554717154,
-    "method": "table_vnd_sum"
+    "method": "table_pct_sum"
   },
   "HJS": {
     "ticker": "HJS",
@@ -1810,8 +1818,8 @@
   "HPA": {
     "ticker": "HPA",
     "year": 2026,
-    "ktplRate": 5.62,
-    "ktplVnd": 90000000000,
+    "ktplRate": 2.81,
+    "ktplVnd": 45000000000,
     "lnstVnd": 1600250990769,
     "method": "table_vnd_sum"
   },
@@ -1834,8 +1842,8 @@
   "HPG": {
     "ticker": "HPG",
     "year": 2026,
-    "ktplRate": 4.32,
-    "ktplVnd": 670000000000,
+    "ktplRate": 2.16,
+    "ktplVnd": 335000000000,
     "lnstVnd": 15514931571606,
     "method": "table_vnd_sum"
   },
@@ -1906,8 +1914,8 @@
   "HTC": {
     "ticker": "HTC",
     "year": 2026,
-    "ktplRate": 3.12,
-    "ktplVnd": 777043484,
+    "ktplRate": 6.11,
+    "ktplVnd": 1521634420,
     "lnstVnd": 24908049020,
     "method": "table_vnd_sum"
   },
@@ -2154,8 +2162,8 @@
   "KGM": {
     "ticker": "KGM",
     "year": 2026,
-    "ktplRate": 21.12,
-    "ktplVnd": 2272128727,
+    "ktplRate": 40.07,
+    "ktplVnd": 4312128727,
     "lnstVnd": 10760643636,
     "method": "table_vnd_sum"
   },
@@ -2186,8 +2194,8 @@
   "KIP": {
     "ticker": "KIP",
     "year": 2026,
-    "ktplRate": 6.3,
-    "ktplVnd": 976536236,
+    "ktplRate": 17.81,
+    "ktplVnd": 2761536236,
     "lnstVnd": 15501536236,
     "method": "table_vnd_sum"
   },
@@ -2266,8 +2274,8 @@
   "L18": {
     "ticker": "L18",
     "year": 2026,
-    "ktplRate": 3,
-    "ktplVnd": 5000000000,
+    "ktplRate": 6,
+    "ktplVnd": 10000000000,
     "lnstVnd": 166786835892,
     "method": "table_vnd_sum"
   },
@@ -2402,7 +2410,7 @@
   "MBB": {
     "ticker": "MBB",
     "year": 2026,
-    "ktplRate": 10.5,
+    "ktplRate": 11,
     "ktplVnd": null,
     "lnstVnd": null,
     "method": "table_pct_sum"
@@ -2578,8 +2586,8 @@
   "MTG": {
     "ticker": "MTG",
     "year": 2026,
-    "ktplRate": 6.34,
-    "ktplVnd": 277435064,
+    "ktplRate": 7.15,
+    "ktplVnd": 312665583,
     "lnstVnd": 4374350649,
     "method": "table_vnd_sum"
   },
@@ -2610,8 +2618,8 @@
   "MTV": {
     "ticker": "MTV",
     "year": 2026,
-    "ktplRate": 61.94,
-    "ktplVnd": 6596325712,
+    "ktplRate": 64.5,
+    "ktplVnd": 6868875712,
     "lnstVnd": 10648875712,
     "method": "table_vnd_sum"
   },
@@ -2690,8 +2698,8 @@
   "NBT": {
     "ticker": "NBT",
     "year": 2026,
-    "ktplRate": 43.19,
-    "ktplVnd": 23330756592,
+    "ktplRate": 16.61,
+    "ktplVnd": 8973367920,
     "lnstVnd": 54020363371,
     "method": "table_vnd_sum"
   },
@@ -2810,16 +2818,16 @@
   "NNC": {
     "ticker": "NNC",
     "year": 2026,
-    "ktplRate": 4.61,
-    "ktplVnd": 10348211124,
+    "ktplRate": 5.92,
+    "ktplVnd": 13304842874,
     "lnstVnd": 224667025612,
     "method": "table_vnd_sum"
   },
   "NNT": {
     "ticker": "NNT",
     "year": 2026,
-    "ktplRate": 23.98,
-    "ktplVnd": 15662815158,
+    "ktplRate": 11.99,
+    "ktplVnd": 7831407579,
     "lnstVnd": 65308975459,
     "method": "table_vnd_sum"
   },
@@ -2866,15 +2874,15 @@
   "NTC": {
     "ticker": "NTC",
     "year": 2026,
-    "ktplRate": 4.09,
-    "ktplVnd": 13156000000,
+    "ktplRate": 2.04,
+    "ktplVnd": 6578000000,
     "lnstVnd": 321831802648,
     "method": "table_vnd_sum"
   },
   "NTH": {
     "ticker": "NTH",
     "year": 2026,
-    "ktplRate": 5,
+    "ktplRate": 15,
     "ktplVnd": null,
     "lnstVnd": null,
     "method": "table_pct_sum"
@@ -2986,8 +2994,8 @@
   "PAC": {
     "ticker": "PAC",
     "year": 2026,
-    "ktplRate": 10,
-    "ktplVnd": 11768290000,
+    "ktplRate": 10.46,
+    "ktplVnd": 12309717000,
     "lnstVnd": 117682877926,
     "method": "table_vnd_sum"
   },
@@ -3026,16 +3034,16 @@
   "PBT": {
     "ticker": "PBT",
     "year": 2026,
-    "ktplRate": 33.61,
-    "ktplVnd": 6707185697,
+    "ktplRate": 36.08,
+    "ktplVnd": 7198947736,
     "lnstVnd": 19955170488,
     "method": "table_vnd_sum"
   },
   "PCC": {
     "ticker": "PCC",
     "year": 2026,
-    "ktplRate": 5,
-    "ktplVnd": 1189000000,
+    "ktplRate": 7.73,
+    "ktplVnd": 1839000000,
     "lnstVnd": 23785921968,
     "method": "table_vnd_sum"
   },
@@ -3115,15 +3123,15 @@
     "ticker": "PGC",
     "year": 2026,
     "ktplRate": 35.37,
-    "ktplVnd": 79245792234,
+    "ktplVnd": 39622896117,
     "lnstVnd": null,
     "method": "table_pct_sum"
   },
   "PGI": {
     "ticker": "PGI",
     "year": 2026,
-    "ktplRate": 30.05,
-    "ktplVnd": 73795280411,
+    "ktplRate": 30.8,
+    "ktplVnd": 75640146411,
     "lnstVnd": 245548590131,
     "method": "table_vnd_sum"
   },
@@ -3138,8 +3146,8 @@
   "PGS": {
     "ticker": "PGS",
     "year": 2026,
-    "ktplRate": 8.7,
-    "ktplVnd": 10000000000,
+    "ktplRate": 9.57,
+    "ktplVnd": 11000000000,
     "lnstVnd": 115002514043,
     "method": "table_vnd_sum"
   },
@@ -3162,7 +3170,7 @@
   "PHR": {
     "ticker": "PHR",
     "year": 2026,
-    "ktplRate": 22.68,
+    "ktplRate": 11.34,
     "ktplVnd": null,
     "lnstVnd": null,
     "method": "table_pct_sum"
@@ -3178,16 +3186,16 @@
   "PIS": {
     "ticker": "PIS",
     "year": 2026,
-    "ktplRate": 5.82,
-    "ktplVnd": 1750000000,
+    "ktplRate": 3.16,
+    "ktplVnd": 950000000,
     "lnstVnd": 30051262862,
     "method": "table_vnd_sum"
   },
   "PJC": {
     "ticker": "PJC",
     "year": 2026,
-    "ktplRate": 39.04,
-    "ktplVnd": 14285083333,
+    "ktplRate": 40.6,
+    "ktplVnd": 14854252166,
     "lnstVnd": 36587539076,
     "method": "table_vnd_sum"
   },
@@ -3242,8 +3250,8 @@
   "PNP": {
     "ticker": "PNP",
     "year": 2026,
-    "ktplRate": 49.3,
-    "ktplVnd": 21196429902,
+    "ktplRate": 24.65,
+    "ktplVnd": 10598214951,
     "lnstVnd": 42991527017,
     "method": "table_vnd_sum"
   },
@@ -3274,8 +3282,8 @@
   "POV": {
     "ticker": "POV",
     "year": 2026,
-    "ktplRate": 27.47,
-    "ktplVnd": 2849185183,
+    "ktplRate": 30.36,
+    "ktplVnd": 3149185183,
     "lnstVnd": 10372962958,
     "method": "table_vnd_sum"
   },
@@ -3290,8 +3298,8 @@
   "PPC": {
     "ticker": "PPC",
     "year": 2026,
-    "ktplRate": 31.52,
-    "ktplVnd": 52065256410,
+    "ktplRate": 15.76,
+    "ktplVnd": 26032628205,
     "lnstVnd": 165179498132,
     "method": "table_vnd_sum"
   },
@@ -3314,8 +3322,8 @@
   "PPY": {
     "ticker": "PPY",
     "year": 2026,
-    "ktplRate": 9.79,
-    "ktplVnd": 127663815,
+    "ktplRate": 25,
+    "ktplVnd": 326023815,
     "lnstVnd": 1304095261,
     "method": "table_vnd_sum"
   },

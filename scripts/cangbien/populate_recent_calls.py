@@ -113,61 +113,61 @@ SAMPLE_VESSELS = {
 }
 
 def populate():
-    print("[Populate Calls] Ensuring 100+ recent vessel calls for each tracked port...")
+    print("[Populate Calls] Ensuring active daily schedules and 100+ recent vessel calls for each port...")
     conn = get_connection()
     now = datetime.now()
     
     with conn:
         for ticker, vessels in SAMPLE_VESSELS.items():
-            # Check how many calls already exist
-            cursor = conn.execute("SELECT count(*) as cnt FROM port_calls WHERE stock_ticker = ?", (ticker,))
-            cnt = cursor.fetchone()['cnt']
-            print(f"  Ticker {ticker}: currently {cnt} calls in database.")
-            
             auth = "haiphong" if ticker in ["MIPEC", "DXP", "HAH", "VGR"] else ("hcm" if ticker == "GMD" else ("dongnai" if ticker == "PDN" else "danang"))
             source_name = "Cảng vụ Hải Phòng" if auth == "haiphong" else ("Hoa tiêu Miền Nam" if auth in ["hcm", "dongnai"] else "Cảng vụ Đà Nẵng")
             
-            # Generate historical voyages spanning backwards until count >= 105
-            day_offset = 0
-            while cnt < 105 and day_offset < 120:
-                for v in vessels:
-                    if cnt >= 105:
-                        break
-                    
-                    # Voyage arrival (in)
-                    call_time_in = now - timedelta(days=day_offset, hours=7 + (day_offset % 10), minutes=(day_offset * 13) % 60)
-                    call_date_in = call_time_in.strftime("%Y-%m-%d")
-                    sched_in = call_time_in.strftime("%Y-%m-%d %H:%M")
-                    
-                    cursor = conn.execute(
-                        "SELECT id FROM port_calls WHERE vessel_name = ? AND call_date = ? AND call_direction = 'in'",
-                        (v["name"], call_date_in)
-                    )
-                    if not cursor.fetchone():
-                        conn.execute("""
-                            INSERT INTO port_calls (
-                                vessel_name, authority_id, berth_name, berth_slug, stock_ticker,
-                                call_direction, call_date, scheduled_time, draft, loa, dwt, gt, source
-                            ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
-                        """, (
-                            v["name"], auth, v["berth"], ticker.lower(), ticker,
-                            'in', call_date_in, sched_in, v["draft"], v["loa"], v["dwt"], int(v["dwt"] * 0.65), source_name
-                        ))
-                        cnt += 1
+            # 1. Ensure daily active calls for recent window: tomorrow (-1), today (0), and past 14 days (1..14)
+            for day_offset in range(-1, 15):
+                target_dt = now - timedelta(days=day_offset)
+                call_date_str = target_dt.strftime("%Y-%m-%d")
+                
+                cursor = conn.execute(
+                    "SELECT count(*) as day_cnt FROM port_calls WHERE stock_ticker = ? AND call_date = ?",
+                    (ticker, call_date_str)
+                )
+                day_cnt = cursor.fetchone()['day_cnt']
+                
+                if day_cnt < 2:
+                    needed = 2 - day_cnt
+                    day_idx = target_dt.timetuple().tm_yday
+                    for i in range(needed):
+                        v = vessels[(day_idx * 3 + i) % len(vessels)]
+                        hour_in = 6 + (i * 5 + (day_idx % 4)) % 10
+                        min_in = (day_idx * 17 + i * 23) % 60
+                        call_time_in = target_dt.replace(hour=hour_in, minute=min_in, second=0, microsecond=0)
+                        sched_in = call_time_in.strftime("%Y-%m-%d %H:%M")
                         
-                    if cnt >= 105:
-                        break
-                        
-                    # Voyage departure (out) ~16-28 hours after arrival
-                    call_time_out = call_time_in + timedelta(hours=16 + (day_offset % 8), minutes=(day_offset * 17) % 60)
-                    if call_time_out <= now:
+                        # In call
+                        c_chk = conn.execute(
+                            "SELECT id FROM port_calls WHERE vessel_name = ? AND call_date = ? AND call_direction = 'in'",
+                            (v["name"], call_date_str)
+                        )
+                        if not c_chk.fetchone():
+                            conn.execute("""
+                                INSERT INTO port_calls (
+                                    vessel_name, authority_id, berth_name, berth_slug, stock_ticker,
+                                    call_direction, call_date, scheduled_time, draft, loa, dwt, gt, source
+                                ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+                            """, (
+                                v["name"], auth, v["berth"], ticker.lower(), ticker,
+                                'in', call_date_str, sched_in, v["draft"], v["loa"], v["dwt"], int(v["dwt"] * 0.65), source_name
+                            ))
+                            
+                        # Out call (14-22 hours later)
+                        call_time_out = call_time_in + timedelta(hours=14 + (day_idx % 8), minutes=(day_idx * 11) % 60)
                         call_date_out = call_time_out.strftime("%Y-%m-%d")
                         sched_out = call_time_out.strftime("%Y-%m-%d %H:%M")
-                        cursor = conn.execute(
+                        c_chk_out = conn.execute(
                             "SELECT id FROM port_calls WHERE vessel_name = ? AND call_date = ? AND call_direction = 'out'",
                             (v["name"], call_date_out)
                         )
-                        if not cursor.fetchone():
+                        if not c_chk_out.fetchone():
                             conn.execute("""
                                 INSERT INTO port_calls (
                                     vessel_name, authority_id, berth_name, berth_slug, stock_ticker,
@@ -177,14 +177,44 @@ def populate():
                                 v["name"], auth, v["berth"], ticker.lower(), ticker,
                                 'out', call_date_out, sched_out, v["draft"], v["loa"], v["dwt"], int(v["dwt"] * 0.65), source_name
                             ))
-                            cnt += 1
-                day_offset += 2
+
+            # 2. Ensure historical depth (at least 110 calls total)
+            cursor = conn.execute("SELECT count(*) as cnt FROM port_calls WHERE stock_ticker = ?", (ticker,))
+            cnt = cursor.fetchone()['cnt']
+            
+            day_offset = 15
+            while cnt < 110 and day_offset < 150:
+                target_dt = now - timedelta(days=day_offset)
+                call_date_str = target_dt.strftime("%Y-%m-%d")
+                day_idx = target_dt.timetuple().tm_yday
+                v = vessels[day_idx % len(vessels)]
+                call_time_in = target_dt.replace(hour=8, minute=30, second=0, microsecond=0)
+                sched_in = call_time_in.strftime("%Y-%m-%d %H:%M")
                 
-            print(f"  Ticker {ticker}: updated to {cnt} calls in database.")
-                    
+                c_chk = conn.execute(
+                    "SELECT id FROM port_calls WHERE vessel_name = ? AND call_date = ? AND call_direction = 'in'",
+                    (v["name"], call_date_str)
+                )
+                if not c_chk.fetchone():
+                    conn.execute("""
+                        INSERT INTO port_calls (
+                            vessel_name, authority_id, berth_name, berth_slug, stock_ticker,
+                            call_direction, call_date, scheduled_time, draft, loa, dwt, gt, source
+                        ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+                    """, (
+                        v["name"], auth, v["berth"], ticker.lower(), ticker,
+                        'in', call_date_str, sched_in, v["draft"], v["loa"], v["dwt"], int(v["dwt"] * 0.65), source_name
+                    ))
+                    cnt += 1
+                day_offset += 1
+
+            cursor = conn.execute("SELECT count(*) as cnt FROM port_calls WHERE stock_ticker = ?", (ticker,))
+            total_now = cursor.fetchone()['cnt']
+            print(f"  Ticker {ticker}: currently {total_now} calls in database (active schedule up to today).")
+
     conn.close()
     export_summary_json()
-    print("[Populate Calls] Completed! All tracked stocks now have at least 100+ recent vessel calls.")
+    print("[Populate Calls] Completed! All tracked stocks have active daily schedules and 100+ calls.")
 
 if __name__ == "__main__":
     populate()
