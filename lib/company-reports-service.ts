@@ -33,8 +33,7 @@ async function getCryptoKey(): Promise<CryptoKey> {
 }
 
 async function decryptApiResponse(res: Response): Promise<any> {
-  const enc = res.headers.get('x-encrypted') || res.headers.get('X-Encrypted')
-  if (enc !== '1') {
+  if (res.headers.get('X-Encrypted') !== '1') {
     return await res.json()
   }
   const buf = await res.arrayBuffer()
@@ -238,83 +237,10 @@ export function saveLocalCompanyReports(symbol: string, reports: CompanyReportIt
   }
 }
 
-export async function fetchRemoteCompanyReports(symbol: string): Promise<CompanyReportItem[]> {
-  const ticker = symbol.toUpperCase().trim()
-  const allReports: CompanyReportItem[] = []
-
-  try {
-    let page = 1
-    let maxPages = 1
-
-    do {
-      const url = `${API_BASE_URL}/${encodeURIComponent(ticker)}?page=${page}&pageSize=20`
-      const res = await fetch(url, {
-        headers: {
-          'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36',
-          Origin: 'https://ruatichsan.com',
-          Referer: `https://ruatichsan.com/company?symbol=${ticker}`,
-        },
-        signal: AbortSignal.timeout(10000),
-      })
-
-      if (!res.ok) break
-
-      const data = await decryptApiResponse(res)
-      const rawList = Array.isArray(data?.reports) ? data.reports : []
-      if (rawList.length === 0) break
-
-      for (const item of rawList) {
-        const { rec, target } = extractRecAndTarget(
-          item.title || '',
-          item.description || '',
-          item.recommendation || null,
-          item.target_price ?? item.targetPrice ?? null
-        )
-
-        allReports.push({
-          id: String(item.id),
-          symbol: ticker,
-          title: item.title || 'Báo cáo phân tích doanh nghiệp',
-          slug: item.slug || '',
-          source: item.source || 'Khác',
-          date: item.date || '',
-          displayDate: item.display_date || item.displayDate || formatDisplayDate(item.date),
-          recommendation: rec,
-          targetPrice: target,
-          pageCount: Number(item.page_count ?? item.pageCount) || 0,
-          description: item.description || '',
-          downloadUrl: item.download_url || item.downloadUrl || '',
-          thumbnailUrl: item.thumbnail_url || item.thumbnailUrl || '',
-        })
-      }
-
-      const total = Number(data?.total) || 0
-      const pageSize = Number(data?.page_size) || rawList.length || 10
-      maxPages = Math.min(10, Math.ceil(total / pageSize))
-      page++
-    } while (page <= maxPages)
-
-    if (allReports.length > 0) {
-      saveLocalCompanyReports(ticker, allReports)
-    }
-
-    return allReports
-  } catch (err) {
-    console.error(`[fetchRemoteCompanyReports] Lỗi lấy báo cáo cho ${ticker}:`, err)
-    return allReports
-  }
-}
-
 export async function fetchAndCacheCompanyReports(symbol: string): Promise<CompanyReportItem[]> {
   const ticker = symbol.toUpperCase().trim()
 
   // 1. Đọc trực tiếp từ SQLite company_reports.db nội bộ (< 0.2ms)
   const local = getLocalCompanyReports(ticker)
-  if (local && local.length > 0) {
-    return local
-  }
-
-  // 2. Nếu SQLite chưa có hoặc rỗng, fetch trực tiếp từ API từ xa và tự động lưu cache
-  return await fetchRemoteCompanyReports(ticker)
+  return local || []
 }
-

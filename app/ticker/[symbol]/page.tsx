@@ -9,7 +9,6 @@ import type { TickerReport, TickerReportContent } from '@/lib/report'
 import { getTickerReport, getTickerContent } from '@/lib/report'
 import { getDisclosuresBySymbol } from '@/lib/disclosures'
 import { fmtPrice, fmtNum, fmtPct, fmtInt } from '@/lib/format'
-import { AiExportButton } from '@/components/AiExportButton'
 
 export function generateStaticParams() {
   return stocks.map((s) => ({ symbol: s.ticker }))
@@ -63,7 +62,6 @@ export default async function TickerPage({
                   {stock.sector}
                 </span>
                 <StatusTag updated={stock.updated} label={stock.status} />
-                <AiExportButton ticker={stock.ticker} companyName={stock.name} />
               </div>
             </div>
             <div className="lg:text-right">

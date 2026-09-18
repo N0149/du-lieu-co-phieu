@@ -89,19 +89,9 @@ def sync_national_data():
 def sync_stock_data():
     """Sync all maritime stock intelligence profiles and time-series metrics"""
     print("[DLCB Collector] Fetching stock intelligence data...")
-    target_file = TARGET_DATA_DIR / "stocks_intel.json"
-    
-    # Baseline: load existing snapshot first so missing network responses NEVER wipe out other stocks
-    all_stocks_intel = {}
-    if target_file.exists():
-        try:
-            with open(target_file, "r", encoding="utf-8") as f:
-                all_stocks_intel = json.load(f)
-        except Exception as e:
-            print(f"  [!] Notice reading existing stocks_intel.json: {e}")
-            all_stocks_intel = {}
-
     conn = get_connection()
+    all_stocks_intel = {}
+    
     with conn:
         for ticker in STOCK_TICKERS:
             try:
@@ -111,7 +101,6 @@ def sync_stock_data():
                     print(f"  [!] Skipped {ticker}: {data.get('error') if data else 'No data'}")
                     continue
                 
-                # Only overwrite in-memory map if valid payload received
                 all_stocks_intel[ticker] = data
                 
                 stock_record = {
@@ -156,7 +145,7 @@ def sync_stock_data():
                     
                 print(f"  [+] Synced {ticker}: {data.get('name')} ({len(monthly_list)} monthly periods)")
             except Exception as e:
-                print(f"  [x] Error syncing {ticker}: {e} (retained baseline data if available)")
+                print(f"  [x] Error syncing {ticker}: {e}")
 
         # Always inject MIPEC into database & snapshot
         try:
@@ -211,13 +200,11 @@ def sync_stock_data():
         }
     }
     
-    # SAFETY GUARD: Never write out an incomplete dataset that would cause 404 errors on production!
-    if len(all_stocks_intel) >= 12:
-        with open(target_file, "w", encoding="utf-8") as f:
-            json.dump(all_stocks_intel, f, ensure_ascii=False, indent=2)
-        print(f"[DLCB Collector] Successfully synced and verified {len(all_stocks_intel)} stocks intelligence datasets.")
-    else:
-        print(f"[DLCB Collector] CRITICAL WARNING: Only {len(all_stocks_intel)} stocks present. Refusing to overwrite stocks_intel.json to prevent 404 on web app!")
+    # Save combined snapshot for web app
+    with open(TARGET_DATA_DIR / "stocks_intel.json", "w", encoding="utf-8") as f:
+        json.dump(all_stocks_intel, f, ensure_ascii=False, indent=2)
+        
+    print(f"[DLCB Collector] Synced {len(all_stocks_intel)} stocks intelligence datasets (including MIPEC).")
 
 if __name__ == "__main__":
     init_db()

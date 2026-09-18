@@ -12,7 +12,7 @@
     "currentPrice": null,
     "recommendation": null,
     "upside": null,
-    "bonusWelfareRate": 12.66
+    "bonusWelfareRate": null
   },
   {
     "slug": "szb-16-09-2026",
@@ -117,7 +117,7 @@
     "currentPrice": 23.5,
     "recommendation": null,
     "upside": 20,
-    "bonusWelfareRate": 32.72
+    "bonusWelfareRate": 25.67
   },
   {
     "slug": "mkv-22-08-2026",
@@ -252,7 +252,7 @@
     "currentPrice": 20.8,
     "recommendation": null,
     "upside": 41.82692307692307,
-    "bonusWelfareRate": 7
+    "bonusWelfareRate": 8.77
   },
   {
     "slug": "cci-22-08-2026",
@@ -297,7 +297,7 @@
     "currentPrice": null,
     "recommendation": "MUA",
     "upside": 33,
-    "bonusWelfareRate": 4.72
+    "bonusWelfareRate": 16.86
   },
   {
     "slug": "gmx-22-08-2026",
@@ -312,7 +312,7 @@
     "currentPrice": 11,
     "recommendation": null,
     "upside": 18.5,
-    "bonusWelfareRate": 48.49
+    "bonusWelfareRate": 22
   },
   {
     "slug": "hdm-22-08-2026",
@@ -327,7 +327,7 @@
     "currentPrice": null,
     "recommendation": null,
     "upside": null,
-    "bonusWelfareRate": 16.78
+    "bonusWelfareRate": 13.46
   },
   {
     "slug": "btp-22-08-2026",
@@ -342,7 +342,7 @@
     "currentPrice": 7.47,
     "recommendation": null,
     "upside": 27.175368139223565,
-    "bonusWelfareRate": 42.02
+    "bonusWelfareRate": 50.5
   },
   {
     "slug": "abi-22-08-2026",
@@ -642,7 +642,7 @@
     "currentPrice": 32.9,
     "recommendation": null,
     "upside": 17.021276595744688,
-    "bonusWelfareRate": 21
+    "bonusWelfareRate": 10.31
   },
   {
     "slug": "cll-25-08-2026",
@@ -717,7 +717,7 @@
     "currentPrice": 15.2,
     "recommendation": "MUA",
     "upside": 21.7,
-    "bonusWelfareRate": 38.24
+    "bonusWelfareRate": 45.35
   },
   {
     "slug": "dcm-25-08-2026",
@@ -792,7 +792,7 @@
     "currentPrice": 18,
     "recommendation": null,
     "upside": 25,
-    "bonusWelfareRate": 34.85
+    "bonusWelfareRate": 27.21
   },
   {
     "slug": "bha-25-08-2026",
@@ -807,7 +807,7 @@
     "currentPrice": null,
     "recommendation": null,
     "upside": null,
-    "bonusWelfareRate": 6.73
+    "bonusWelfareRate": 6.7
   },
   {
     "slug": "pjt-25-08-2026",
@@ -867,7 +867,7 @@
     "currentPrice": 38.1,
     "recommendation": null,
     "upside": 11.54855643044619,
-    "bonusWelfareRate": 26.77
+    "bonusWelfareRate": 22.12
   },
   {
     "slug": "a32-22-08-2026",
@@ -882,7 +882,7 @@
     "currentPrice": null,
     "recommendation": "MUA",
     "upside": null,
-    "bonusWelfareRate": 66.58
+    "bonusWelfareRate": 65.16
   },
   {
     "slug": "smb-22-08-2026",
@@ -1212,7 +1212,7 @@
     "currentPrice": 12.3,
     "recommendation": null,
     "upside": 26.82926829268292,
-    "bonusWelfareRate": 27.15
+    "bonusWelfareRate": 24.9
   },
   {
     "slug": "bsl-22-08-2026",
@@ -1227,7 +1227,7 @@
     "currentPrice": 1,
     "recommendation": "MUA",
     "upside": null,
-    "bonusWelfareRate": 24.09
+    "bonusWelfareRate": null
   },
   {
     "slug": "avc-22-08-2026",
@@ -1242,7 +1242,7 @@
     "currentPrice": null,
     "recommendation": "MUA",
     "upside": 5,
-    "bonusWelfareRate": 4.12
+    "bonusWelfareRate": null
   },
   {
     "slug": "ag1-22-08-2026",
@@ -1257,7 +1257,7 @@
     "currentPrice": 11.7,
     "recommendation": "MUA",
     "upside": 58.119658119658126,
-    "bonusWelfareRate": 34.63
+    "bonusWelfareRate": 23
   },
   {
     "slug": "tku-22-08-2026",
@@ -1422,7 +1422,7 @@
     "currentPrice": 30.7,
     "recommendation": "MUA",
     "upside": 41.69381107491857,
-    "bonusWelfareRate": 2
+    "bonusWelfareRate": 0
   },
   {
     "slug": "amc-22-08-2026",
@@ -1467,7 +1467,7 @@
     "currentPrice": 30.4,
     "recommendation": "MUA",
     "upside": 16.77631578947369,
-    "bonusWelfareRate": 13.42
+    "bonusWelfareRate": 12.89
   },
   {
     "slug": "vet-22-08-2026",
@@ -1497,7 +1497,7 @@
     "currentPrice": null,
     "recommendation": "KHẢ QUAN",
     "upside": null,
-    "bonusWelfareRate": 3
+    "bonusWelfareRate": 4
   },
   {
     "slug": "ctb-22-08-2026",
@@ -1587,7 +1587,7 @@
     "currentPrice": 16.3,
     "recommendation": null,
     "upside": 38.03680981595091,
-    "bonusWelfareRate": 2
+    "bonusWelfareRate": 3.58
   },
   {
     "slug": "khs-22-08-2026",
@@ -1617,7 +1617,7 @@
     "currentPrice": 19,
     "recommendation": "MUA",
     "upside": null,
-    "bonusWelfareRate": 3.53
+    "bonusWelfareRate": 20
   },
   {
     "slug": "pov-22-08-2026",
@@ -1632,7 +1632,7 @@
     "currentPrice": 7,
     "recommendation": "MUA",
     "upside": 50,
-    "bonusWelfareRate": 30.36
+    "bonusWelfareRate": 15.09
   },
   {
     "slug": "hcc-22-08-2026",
@@ -1647,7 +1647,7 @@
     "currentPrice": 28.1,
     "recommendation": "MUA",
     "upside": 54.8,
-    "bonusWelfareRate": 4.93
+    "bonusWelfareRate": null
   },
   {
     "slug": "dvp-19-08-2026",
@@ -1737,7 +1737,7 @@
     "currentPrice": 9.82,
     "recommendation": null,
     "upside": 22.199592668024437,
-    "bonusWelfareRate": 7.22
+    "bonusWelfareRate": 5.77
   },
   {
     "slug": "l10-17-08-2026",
@@ -1752,7 +1752,7 @@
     "currentPrice": 25.4,
     "recommendation": "MUA",
     "upside": 18.110236220472448,
-    "bonusWelfareRate": 35
+    "bonusWelfareRate": 33
   },
   {
     "slug": "pvp-17-08-2026",
@@ -1782,7 +1782,7 @@
     "currentPrice": 26.8,
     "recommendation": null,
     "upside": 59.70149253731341,
-    "bonusWelfareRate": 6.44
+    "bonusWelfareRate": 9.16
   },
   {
     "slug": "dhb-18-08-2026",
@@ -1842,7 +1842,7 @@
     "currentPrice": 161.47,
     "recommendation": null,
     "upside": null,
-    "bonusWelfareRate": 2.04
+    "bonusWelfareRate": null
   },
   {
     "slug": "mdf-17-08-2026",
@@ -1902,7 +1902,7 @@
     "currentPrice": 23,
     "recommendation": null,
     "upside": 46.521739130434796,
-    "bonusWelfareRate": 10.71
+    "bonusWelfareRate": 10
   },
   {
     "slug": "idv-17-08-2026",
@@ -1917,7 +1917,7 @@
     "currentPrice": 20,
     "recommendation": null,
     "upside": 60,
-    "bonusWelfareRate": 7
+    "bonusWelfareRate": 2
   },
   {
     "slug": "aic-17-08-2026",
@@ -1962,7 +1962,7 @@
     "currentPrice": 7.3,
     "recommendation": null,
     "upside": 9.589041095890414,
-    "bonusWelfareRate": 5
+    "bonusWelfareRate": 0
   },
   {
     "slug": "szl-16-08-2026",
@@ -2052,7 +2052,7 @@
     "currentPrice": 7.1,
     "recommendation": "KHẢ QUAN",
     "upside": 66.19718309859157,
-    "bonusWelfareRate": 23.99
+    "bonusWelfareRate": 14.5
   },
   {
     "slug": "idv-21-04-2026",
@@ -2067,7 +2067,7 @@
     "currentPrice": null,
     "recommendation": null,
     "upside": null,
-    "bonusWelfareRate": 7
+    "bonusWelfareRate": null
   },
   {
     "slug": "snz-08-01-2026",
@@ -2112,7 +2112,7 @@
     "currentPrice": null,
     "recommendation": null,
     "upside": null,
-    "bonusWelfareRate": 20
+    "bonusWelfareRate": null
   },
   {
     "slug": "tid-29-12-2025",
@@ -2142,7 +2142,7 @@
     "currentPrice": null,
     "recommendation": null,
     "upside": null,
-    "bonusWelfareRate": 6
+    "bonusWelfareRate": null
   },
   {
     "slug": "sje-13-08-2026",
@@ -2172,7 +2172,7 @@
     "currentPrice": null,
     "recommendation": "MUA",
     "upside": null,
-    "bonusWelfareRate": 0
+    "bonusWelfareRate": null
   },
   {
     "slug": "vnf-04-01-2026",
@@ -2262,7 +2262,7 @@
     "currentPrice": null,
     "recommendation": null,
     "upside": null,
-    "bonusWelfareRate": 10
+    "bonusWelfareRate": null
   },
   {
     "slug": "lhg-22-05-2026",
@@ -2277,7 +2277,7 @@
     "currentPrice": 2,
     "recommendation": null,
     "upside": null,
-    "bonusWelfareRate": 12.66
+    "bonusWelfareRate": null
   },
   {
     "slug": "ral-28-05-2026",
@@ -2352,7 +2352,7 @@
     "currentPrice": 34.3,
     "recommendation": "MUA",
     "upside": 41.5,
-    "bonusWelfareRate": 72.29
+    "bonusWelfareRate": null
   },
   {
     "slug": "foc-30-12-2025",
@@ -2442,7 +2442,7 @@
     "currentPrice": null,
     "recommendation": null,
     "upside": null,
-    "bonusWelfareRate": 13.76
+    "bonusWelfareRate": null
   },
   {
     "slug": "hgm-16-08-2026",
@@ -2457,7 +2457,7 @@
     "currentPrice": 124.5,
     "recommendation": "THEO DÕI",
     "upside": -7.630522088353414,
-    "bonusWelfareRate": 4.63
+    "bonusWelfareRate": 4.2
   },
   {
     "slug": "dc4-09-01-2026",
@@ -2472,7 +2472,7 @@
     "currentPrice": null,
     "recommendation": null,
     "upside": null,
-    "bonusWelfareRate": 5
+    "bonusWelfareRate": null
   },
   {
     "slug": "ckd-15-08-2026",
@@ -2487,7 +2487,7 @@
     "currentPrice": null,
     "recommendation": null,
     "upside": null,
-    "bonusWelfareRate": 10
+    "bonusWelfareRate": null
   },
   {
     "slug": "s55-14-08-2026",
@@ -2547,7 +2547,7 @@
     "currentPrice": 25,
     "recommendation": "MUA",
     "upside": 54,
-    "bonusWelfareRate": 10.19
+    "bonusWelfareRate": 10
   },
   {
     "slug": "vlb-16-08-2026",
@@ -2637,7 +2637,7 @@
     "currentPrice": 40.5,
     "recommendation": null,
     "upside": 26.913580246913575,
-    "bonusWelfareRate": 5.92
+    "bonusWelfareRate": 5
   },
   {
     "slug": "dmc-15-08-2026",
@@ -2682,7 +2682,7 @@
     "currentPrice": 21.55,
     "recommendation": "MUA",
     "upside": 40.1,
-    "bonusWelfareRate": 5
+    "bonusWelfareRate": null
   },
   {
     "slug": "hmc-15-08-2026",
@@ -2697,7 +2697,7 @@
     "currentPrice": 10.75,
     "recommendation": "MUA",
     "upside": null,
-    "bonusWelfareRate": 15.05
+    "bonusWelfareRate": null
   },
   {
     "slug": "uic-15-08-2026",
@@ -2727,7 +2727,7 @@
     "currentPrice": null,
     "recommendation": null,
     "upside": null,
-    "bonusWelfareRate": 0
+    "bonusWelfareRate": null
   },
   {
     "slug": "ant-03-08-2026",
@@ -2772,7 +2772,7 @@
     "currentPrice": null,
     "recommendation": null,
     "upside": null,
-    "bonusWelfareRate": 2.42
+    "bonusWelfareRate": null
   },
   {
     "slug": "szb-09-08-2026",
@@ -2802,7 +2802,7 @@
     "currentPrice": 7,
     "recommendation": null,
     "upside": null,
-    "bonusWelfareRate": 0
+    "bonusWelfareRate": null
   },
   {
     "slug": "ilb-09-08-2026",
@@ -2832,7 +2832,7 @@
     "currentPrice": 0.3,
     "recommendation": null,
     "upside": null,
-    "bonusWelfareRate": 25.77
+    "bonusWelfareRate": null
   },
   {
     "slug": "abt-28-12-2025",
@@ -2847,6 +2847,6 @@
     "currentPrice": 2,
     "recommendation": null,
     "upside": null,
-    "bonusWelfareRate": 16.11
+    "bonusWelfareRate": null
   }
 ]

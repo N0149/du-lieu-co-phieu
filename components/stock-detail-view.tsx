@@ -32,7 +32,6 @@ import type { Report } from '@/lib/use-reports'
 import { cn } from '@/lib/utils'
 import { saveRecentSearch } from '@/lib/recent-searches'
 import { WatchlistStarButton } from '@/components/watchlist/WatchlistStarButton'
-import { AiExportButton } from '@/components/AiExportButton'
 import { BusinessPlanComparison, BusinessPlanYear } from '@/components/business-plan-comparison'
 import { FinancialStatementsExplorer } from '@/components/financial-statements-explorer'
 import type { RawFinancialStatementData } from '@/lib/financial-statements-db'
@@ -830,7 +829,6 @@ export function StockDetailView({
 
         <div className="flex items-center gap-2">
           <WatchlistStarButton ticker={ticker} showLabel size="sm" />
-          <AiExportButton ticker={ticker} companyName={company.name} />
 
           <button
             type="button"

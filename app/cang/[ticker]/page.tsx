@@ -38,15 +38,6 @@ interface Props {
   params: Promise<{ ticker: string }>
 }
 
-export async function generateStaticParams() {
-  const all = getAllStocksIntel()
-  const tickers = Object.keys(all)
-  return [
-    ...tickers.map((t) => ({ ticker: t.toLowerCase() })),
-    ...tickers.map((t) => ({ ticker: t.toUpperCase() })),
-  ]
-}
-
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { ticker } = await params
   const intel = getStockIntel(ticker)
