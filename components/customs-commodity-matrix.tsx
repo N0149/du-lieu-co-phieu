@@ -1,6 +1,6 @@
 'use client'
 
-import { useMemo, useState, useCallback, useEffect } from 'react'
+import { useMemo, useState, useCallback, useEffect, useRef } from 'react'
 import {
   AreaChart,
   Area,
@@ -168,23 +168,25 @@ export function CustomsCommodityMatrix({
   // Lọc raw rows theo Khung thời gian & Phân loại dữ liệu
   const relevantRows = useMemo(() => {
     return rows.filter((r) => {
-      // Khung thời gian
+      // Chỉ lấy cấp mặt hàng (dim_kind == 'commodity' hoặc null/undefined), loại bỏ triệt để tỉnh/thành (province) & vận tải (transport)
+      if (r.dim_kind && r.dim_kind !== 'commodity') return false
+
+      // Phân loại FDI/Main (mặc định 'main' là bảng mặt hàng chính thức)
+      if (datasetCategory !== 'ALL' && (r.dataset_category ?? 'main') !== datasetCategory) return false
+
+      // Khung thời gian:
+      // - THANG: Các tháng đã có số liệu cả tháng (chuẩn hóa đầy đủ)
+      // - KY: Từng kỳ 15 ngày (KY_1, KY_2), bao gồm số liệu mới nhất nửa đầu tháng 9 (KY_1 09/2026)
+      // - QUY: Khung theo Quý
       if (periodType === 'THANG' && r.period_type !== 'THANG') return false
       if (periodType === 'KY' && r.period_type !== 'KY_1' && r.period_type !== 'KY_2') return false
       if (periodType === 'QUY' && r.period_type !== 'QUY') return false
-
-
-      // Phân loại FDI/Main
-      if (datasetCategory !== 'ALL' && (r.dataset_category ?? 'main') !== datasetCategory) return false
-
-      // Chỉ lấy cấp mặt hàng (dim_kind == 'commodity' hoặc null)
-      if (r.dim_kind && r.dim_kind !== 'commodity') return false
 
       return true
     })
   }, [rows, periodType, datasetCategory])
 
-  // Danh sách các mốc thời gian (cột), sắp xếp theo thời gian tăng dần
+  // Danh sách các mốc thời gian (cột), sắp xếp theo thời gian tăng dần (từ trái qua phải)
   const periodColumns = useMemo(() => {
     const periodMap = new Map<string, PeriodColumn>()
 
@@ -211,7 +213,6 @@ export function CustomsCommodityMatrix({
           fullLabel = `Quý ${q}/${y}`
         }
 
-
         periodMap.set(key, {
           key,
           date: r.period_date,
@@ -232,10 +233,19 @@ export function CustomsCommodityMatrix({
     })
   }, [relevantRows])
 
-  // Danh sách cột hiển thị trên bảng (Đảo ngược để tháng mới nhất nằm bên trái)
+  // Danh sách cột hiển thị trên bảng: Từ trái qua phải theo thời gian (cũ -> mới, khớp với biểu đồ ở trên)
   const displayColumns = useMemo(() => {
-    return [...periodColumns].reverse()
+    return periodColumns
   }, [periodColumns])
+
+  const tableContainerRef = useRef<HTMLDivElement>(null)
+
+  // Tự động cuộn bảng sang phía bên phải để hiển thị ngay các mốc thời gian gần nhất (khớp biểu đồ)
+  useEffect(() => {
+    if (tableContainerRef.current) {
+      tableContainerRef.current.scrollLeft = tableContainerRef.current.scrollWidth
+    }
+  }, [displayColumns.length, periodType])
 
   // Pivot dữ liệu: Map từng Mặt hàng -> Dữ liệu theo từng kỳ
   const pivotData = useMemo(() => {
@@ -315,21 +325,37 @@ export function CustomsCommodityMatrix({
         const curCell = item.values[curKey]
         if (!curCell) continue
 
-        const prevKey = i > 0 ? periodColumns[i - 1].key : null
+        const curCol = periodColumns[i]
+        const prevCol = i > 0 ? periodColumns[i - 1] : null
+        const prevKey = prevCol ? prevCol.key : null
         const prevCell = prevKey ? item.values[prevKey] : null
 
-        curCell.exportMoM = calcPctChange(curCell.exportValue, prevCell?.exportValue)
-        curCell.importMoM = calcPctChange(curCell.importValue, prevCell?.importValue)
-        curCell.balanceMoM = calcPctChange(curCell.balanceValue, prevCell?.balanceValue)
+        const isSameType = !prevCol || curCol.periodType === prevCol.periodType
+        if (isSameType) {
+          curCell.exportMoM = calcPctChange(curCell.exportValue, prevCell?.exportValue)
+          curCell.importMoM = calcPctChange(curCell.importValue, prevCell?.importValue)
+          curCell.balanceMoM = calcPctChange(curCell.balanceValue, prevCell?.balanceValue)
+        } else {
+          curCell.exportMoM = null
+          curCell.importMoM = null
+          curCell.balanceMoM = null
+        }
 
         // Tính YoY (cùng kỳ năm trước)
         const yoyOffset = periodType === 'THANG' ? 12 : periodType === 'QUY' ? 4 : 24
-        const yoyKey = i >= yoyOffset ? periodColumns[i - yoyOffset].key : null
+        const yoyCol = i >= yoyOffset ? periodColumns[i - yoyOffset] : null
+        const yoyKey = yoyCol ? yoyCol.key : null
         const yoyCell = yoyKey ? item.values[yoyKey] : null
 
-        curCell.exportYoY = calcPctChange(curCell.exportValue, yoyCell?.exportValue)
-        curCell.importYoY = calcPctChange(curCell.importValue, yoyCell?.importValue)
-        curCell.balanceYoY = calcPctChange(curCell.balanceValue, yoyCell?.balanceValue)
+        if (yoyCol && curCol.periodType === yoyCol.periodType) {
+          curCell.exportYoY = calcPctChange(curCell.exportValue, yoyCell?.exportValue)
+          curCell.importYoY = calcPctChange(curCell.importValue, yoyCell?.importValue)
+          curCell.balanceYoY = calcPctChange(curCell.balanceValue, yoyCell?.balanceValue)
+        } else {
+          curCell.exportYoY = null
+          curCell.importYoY = null
+          curCell.balanceYoY = null
+        }
 
 
         const val =
@@ -387,6 +413,15 @@ export function CustomsCommodityMatrix({
     }
     return totals
   }, [filteredRows, periodColumns, tradeType])
+
+  // Map cán cân thương mại toàn quốc từ TCHQ theo key (period_date|period_type)
+  const tradeBalanceMap = useMemo(() => {
+    const map = new Map<string, TradeBalancePoint>()
+    for (const p of tradeBalanceData) {
+      map.set(`${p.period_date}|${p.period_type}`, p)
+    }
+    return map
+  }, [tradeBalanceData])
 
   // Màu sắc gán cho từng mặt hàng đang chọn
   const commodityColorMap = useMemo(() => {
@@ -1054,11 +1089,27 @@ export function CustomsCommodityMatrix({
                 }}
                 className="h-8 rounded-lg border border-border bg-background px-2 text-xs font-medium text-foreground outline-none focus:border-ring"
               >
-                <option value="THANG">Monthly (Tháng)</option>
-                <option value="KY">Kỳ 15 ngày</option>
+                <option value="THANG">Monthly (Tháng - Đến T8/2026)</option>
+                <option value="KY">Kỳ 15 ngày (Mới nhất: K1 09/2026)</option>
                 <option value="QUY">Quý (Quarterly)</option>
               </select>
             </div>
+
+            {/* Nút bấm nhanh xem số liệu nửa đầu tháng 9 */}
+            {periodType === 'THANG' && (
+              <button
+                type="button"
+                onClick={() => {
+                  setPeriodType('KY')
+                  setPage(1)
+                }}
+                className="inline-flex items-center gap-1.5 rounded-lg border border-emerald-500/30 bg-emerald-500/10 px-2.5 py-1 text-xs font-semibold text-emerald-400 hover:bg-emerald-500/20 transition-colors"
+                title="Bấm để xem số liệu nửa đầu tháng 9 (Kỳ 1 09/2026)"
+              >
+                <span className="size-1.5 rounded-full bg-emerald-400 animate-pulse" />
+                <span>Xem nửa đầu T9 (Kỳ 1)</span>
+              </button>
+            )}
 
             {/* Kiểu giá trị: Trị giá / Lượng / MoM% / YoY% */}
             <div className="flex items-center gap-1.5 text-xs text-muted-foreground">
@@ -1166,7 +1217,7 @@ export function CustomsCommodityMatrix({
 
       {/* ── BẢNG MA TRẬN THEO THÁNG (PIVOT TABLE) ───────────────────────────── */}
       <div className="overflow-hidden rounded-xl border border-white/8 bg-[#212631] shadow-[0_4px_20px_rgba(0,0,0,0.25)]">
-        <div className="overflow-x-auto">
+        <div ref={tableContainerRef} className="overflow-x-auto">
           <table className="w-full border-collapse text-xs">
             <thead>
               <tr className="border-b border-white/8 bg-[#1a1d26] text-[#9EACB9]">
@@ -1215,6 +1266,54 @@ export function CustomsCommodityMatrix({
                         )}
                       >
                         {fmtNum(tot / 1e6, 1)}
+                      </td>
+                    )
+                  })}
+                </tr>
+              )}
+
+              {filteredRows.length > 0 && valueType === 'value' && tradeBalanceData.length > 0 && !search && (
+                <tr className="border-b border-white/8 bg-sky-500/10 font-semibold text-xs">
+                  <td className="sticky left-0 z-10 bg-[#16222f] px-2 py-2 text-center text-sky-400">
+                    ★
+                  </td>
+                  <td className="sticky left-10 z-10 bg-[#16222f] px-3 py-2 text-sky-300">
+                    <div className="flex items-center gap-1.5">
+                      <span>TỔNG TOÀN QUỐC (Theo TCHQ)</span>
+                      <span className="rounded bg-sky-500/20 px-1 py-0.2 text-[9px] text-sky-300 font-normal">
+                        Toàn bộ hàng hóa
+                      </span>
+                    </div>
+                  </td>
+                  <td className="px-2.5 py-2 text-[#9EACB9]">Triệu USD</td>
+                  {displayColumns.map((col) => {
+                    const tbPoint = tradeBalanceMap.get(col.key)
+                    if (!tbPoint) {
+                      return (
+                        <td key={col.key} className="px-3 py-2 text-right text-muted-foreground/50">
+                          —
+                        </td>
+                      )
+                    }
+                    const val =
+                      tradeType === 'EXPORT'
+                        ? tbPoint.export
+                        : tradeType === 'IMPORT'
+                          ? tbPoint.import
+                          : tbPoint.balance
+                    const inMillions = val / 1e6
+                    const isNegative = inMillions < 0
+
+                    return (
+                      <td
+                        key={col.key}
+                        className={cn(
+                          'px-3 py-2 text-right tabular-nums font-bold text-sky-200',
+                          tradeType === 'BALANCE' && (isNegative ? 'text-rose-400' : 'text-emerald-400'),
+                        )}
+                        title={`Số liệu chính thức Tổng cục Hải quan: ${fmtNum(inMillions, 1)} triệu USD (${fmtNum(inMillions / 1000, 2)} tỷ USD)`}
+                      >
+                        {fmtNum(inMillions, 1)}
                       </td>
                     )
                   })}

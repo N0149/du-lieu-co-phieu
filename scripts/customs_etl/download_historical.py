@@ -74,10 +74,12 @@ def title_to_canonical_filename(item: dict) -> tuple[str | None, int | None, str
         return None, None, "no_url"
 
     # 1. Vận tải (theo quý)
-    m_vt = re.search(r"(xuất khẩu|nhập khẩu).*vận tải.*quý\s*([1-4])[/ -]*(\d{4})", title, re.IGNORECASE)
+    m_vt = re.search(r"(xuất khẩu|nhập khẩu).*vận tải.*quý\s*([1-4]|iv|iii|ii|i)[/ -]*(\d{4})", title, re.IGNORECASE)
     if m_vt:
         flow = "xuatkhau" if "xuất" in m_vt.group(1).lower() else "nhapkhau"
-        q = m_vt.group(2)
+        raw_q = m_vt.group(2).lower()
+        q_map = {'i': '1', 'ii': '2', 'iii': '3', 'iv': '4', '1': '1', '2': '2', '3': '3', '4': '4'}
+        q = q_map.get(raw_q, raw_q)
         y = int(m_vt.group(3))
         return f"{flow}theophuongthucvantai-Q{q}-{y}.pdf", y, "transport"
 
