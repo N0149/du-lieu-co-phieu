@@ -1,6 +1,6 @@
 {
   "status": "success",
-  "generated_at": "2026-09-18T00:54:00.602337",
+  "generated_at": "2026-09-18T00:57:23.374564",
   "kpis": {
     "total_port_authorities": 16,
     "total_calls_30d": 15635,
@@ -1590,6 +1590,23 @@
       "gt": 1599,
       "origin_port": "VAT CACH",
       "dest_port": "TAY NINH",
+      "source": "cvhh_haiphong"
+    },
+    {
+      "id": 2569,
+      "vessel_name": "HANSA COLOMBO",
+      "authority_id": "haiphong",
+      "berth_name": "Cảng Đình Vũ",
+      "stock_ticker": "DVP",
+      "call_direction": "out",
+      "call_date": "2026-09-18",
+      "scheduled_time": "2026-09-18 08:30:00",
+      "draft": 10.2,
+      "loa": 182.5,
+      "dwt": 24152,
+      "gt": 17964,
+      "origin_port": "NAM DINH VU",
+      "dest_port": "SINGAPORE",
       "source": "cvhh_haiphong"
     },
     {
@@ -21684,23 +21701,6 @@
       "gt": 17785,
       "origin_port": "TAN VU",
       "dest_port": "SINGAPORE",
-      "source": "cvhh_haiphong"
-    },
-    {
-      "id": 1217,
-      "vessel_name": "TIEN PHONG 03",
-      "authority_id": "haiphong",
-      "berth_name": "Cảng Đình Vũ",
-      "stock_ticker": "DVP",
-      "call_direction": "out",
-      "call_date": "2026-09-05",
-      "scheduled_time": "2026-09-05 08:00:00",
-      "draft": 3.0,
-      "loa": 30.8,
-      "dwt": 85,
-      "gt": 249,
-      "origin_port": "PTSC DINH VU",
-      "dest_port": "QUANG YEN",
       "source": "cvhh_haiphong"
     },
     {
