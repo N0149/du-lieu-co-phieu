@@ -30,6 +30,8 @@ data/*.db
 data/**/*.db
 !data/maritime.db
 !data/corporate_disclosures.db
+!data/company_reports.db
+!data/industry_reports.db
 data/*.db-shm
 data/*.db-wal
 data/**/*.db-shm
@@ -38,8 +40,6 @@ data/evaluation_cache/
 data/shareholder_cache/
 data/notes-cache/
 data/financial_statements.db
-data/company_reports.db
-data/industry_reports.db
 data/business_plans.db
 data/stock_evaluations.db
 
