@@ -152,12 +152,22 @@ export function saveLocalFinancialStatements(
   }
 }
 
+const FS_MEMORY_CACHE = new Map<string, { data: RawFinancialStatementData; expiresAt: number }>();
+const FS_CACHE_TTL_MS = 10 * 60 * 1000; // 10 phút bộ nhớ đệm RAM
+
 // Đọc BCTC từ Supabase Cloud Database (<25ms)
 export async function getSupabaseFinancialStatements(
   symbol: string,
   periodType: "quarter" | "annual" = "quarter"
 ): Promise<RawFinancialStatementData | null> {
   const ticker = symbol.toUpperCase().trim();
+  const cacheKey = `${ticker}_${periodType}`;
+  const now = Date.now();
+  const cached = FS_MEMORY_CACHE.get(cacheKey);
+  if (cached && cached.expiresAt > now) {
+    return cached.data;
+  }
+
   try {
     const supabase = getSupabase();
     if (!supabase) return null;
@@ -183,13 +193,16 @@ export async function getSupabaseFinancialStatements(
       return [];
     };
 
-    return {
+    const result: RawFinancialStatementData = {
       fiscalDates: parseJson(data.fiscal_dates),
       cdkt: parseJson(data.cdkt),
       kqkd: parseJson(data.kqkd),
       lctt: parseJson(data.lctt),
       dataSource: data.data_source || "Supabase",
     };
+
+    FS_MEMORY_CACHE.set(cacheKey, { data: result, expiresAt: now + FS_CACHE_TTL_MS });
+    return result;
   } catch (err) {
     console.error(`[getSupabaseFinancialStatements] Lỗi truy vấn ${ticker}:`, err);
     return null;

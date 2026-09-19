@@ -14,6 +14,9 @@ function getSupabase(): SupabaseClient | null {
   return supabaseInstance
 }
 
+const VAL_MEMORY_CACHE = new Map<string, { data: ValuationHistoryPayload; expiresAt: number }>()
+const VAL_CACHE_TTL_MS = 10 * 60 * 1000 // 10 phút RAM cache
+
 export interface ValuationHistoryPayload {
   symbol: string
   updated?: string
@@ -89,6 +92,12 @@ export async function getValuationHistory(symbol: string): Promise<ValuationHist
   }
 
   // 3. Đọc từ Supabase Cloud Database (<25ms, Vercel 24/7 khi tắt máy)
+  const now = Date.now()
+  const cachedVal = VAL_MEMORY_CACHE.get(sym)
+  if (cachedVal && cachedVal.expiresAt > now) {
+    return cachedVal.data
+  }
+
   try {
     const supabase = getSupabase()
     if (supabase) {
@@ -100,7 +109,9 @@ export async function getValuationHistory(symbol: string): Promise<ValuationHist
       if (!error && data?.raw_json) {
         const d = typeof data.raw_json === 'string' ? JSON.parse(data.raw_json) : data.raw_json
         if (d && Array.isArray(d.dates) && d.dates.length > 0) {
-          return d as ValuationHistoryPayload
+          const payload = d as ValuationHistoryPayload
+          VAL_MEMORY_CACHE.set(sym, { data: payload, expiresAt: now + VAL_CACHE_TTL_MS })
+          return payload
         }
       }
     }

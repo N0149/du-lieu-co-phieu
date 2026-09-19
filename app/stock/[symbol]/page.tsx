@@ -29,6 +29,10 @@ import { getFinancialStatements } from '@/lib/financial-statements-db'
 import { getStockArticles } from '@/lib/stock-articles-service'
 import { getLocalPriceWeekly } from '@/lib/stock-price-history-service'
 
+// Tối ưu hóa bộ nhớ đệm CDN Edge Vercel (ISR) 60 giây:
+// Người dùng tiếp theo truy cập sẽ nhận phản hồi < 50ms từ Edge CDN gần nhất (Singapore/Việt Nam)
+export const revalidate = 60
+
 export async function generateMetadata({
   params,
 }: {

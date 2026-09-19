@@ -43,6 +43,9 @@ function getSupabase(): SupabaseClient | null {
   return supabaseInstance
 }
 
+const PLAN_MEMORY_CACHE = new Map<string, { data: RawBusinessPlanPayload; expiresAt: number }>()
+const PLAN_CACHE_TTL_MS = 10 * 60 * 1000 // 10 phút RAM cache
+
 let dbInstance: DatabaseSync | null = null
 
 export function getBusinessPlanDb(): DatabaseSync {
@@ -204,6 +207,12 @@ export async function getBusinessPlan(symbol: string): Promise<RawBusinessPlanPa
   }
 
   // 2. Supabase Cloud (< 25ms)
+  const now = Date.now()
+  const cachedPlan = PLAN_MEMORY_CACHE.get(sym)
+  if (cachedPlan && cachedPlan.expiresAt > now) {
+    return cachedPlan.data
+  }
+
   try {
     const supabase = getSupabase()
     if (supabase) {
@@ -220,6 +229,7 @@ export async function getBusinessPlan(symbol: string): Promise<RawBusinessPlanPa
           data: Array.isArray(data.plan_data) ? data.plan_data : (data.plan_data.data || []),
         }
         saveBusinessPlanToDb(sym, parsed)
+        PLAN_MEMORY_CACHE.set(sym, { data: parsed, expiresAt: now + PLAN_CACHE_TTL_MS })
         return parsed
       }
     }

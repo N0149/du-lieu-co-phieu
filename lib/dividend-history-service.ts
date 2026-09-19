@@ -26,6 +26,9 @@ function getSupabase(): SupabaseClient | null {
   return supabaseInstance
 }
 
+const DIV_MEMORY_CACHE = new Map<string, { data: DividendHistoryPayload; expiresAt: number }>()
+const DIV_CACHE_TTL_MS = 10 * 60 * 1000 // 10 phút RAM cache
+
 const DATA_DIR = path.join(process.cwd(), 'data')
 const DIV_DIR = path.join(DATA_DIR, 'dividend_history')
 const CIPHER_KEY_HEX = '19dd3af428f4cf7d68864cd4c87d8d1c5b489932e84b93ac6528a0dd403a5725'
@@ -80,6 +83,12 @@ export async function getDividendHistory(symbol: string): Promise<DividendHistor
   }
 
   // 3. Đọc từ Supabase Cloud Database (<25ms, Vercel 24/7 khi tắt máy)
+  const now = Date.now()
+  const cachedDiv = DIV_MEMORY_CACHE.get(sym)
+  if (cachedDiv && cachedDiv.expiresAt > now) {
+    return cachedDiv.data
+  }
+
   try {
     const supabase = getSupabase()
     if (supabase) {
@@ -93,7 +102,9 @@ export async function getDividendHistory(symbol: string): Promise<DividendHistor
           ? data.events_json
           : (typeof data.events_json === 'string' ? JSON.parse(data.events_json) : [])
         if (events.length > 0) {
-          return { symbol: sym, events }
+          const payload: DividendHistoryPayload = { symbol: sym, events }
+          DIV_MEMORY_CACHE.set(sym, { data: payload, expiresAt: now + DIV_CACHE_TTL_MS })
+          return payload
         }
       }
     }

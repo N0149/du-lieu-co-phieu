@@ -259,6 +259,19 @@ export function GlobalSearchModal({ open, onClose }: GlobalSearchModalProps) {
     })
   }, [fullSearchPool, mainTab, dataSubFilter, query, recentSearches])
 
+  // Tự động tải đón đầu (prefetch) các mã hàng đầu để khi bấm là mở tức thì (< 0.1s)
+  useEffect(() => {
+    if (!open) return
+    const topItems = filteredResults.slice(0, 3)
+    for (const it of topItems) {
+      if (it.href && it.href.startsWith('/stock/')) {
+        try {
+          router.prefetch(it.href)
+        } catch {}
+      }
+    }
+  }, [open, filteredResults, router])
+
   // Select item action
   const handleSelectItem = useCallback(
     (item: SearchPaletteItem) => {
@@ -529,6 +542,11 @@ export function GlobalSearchModal({ open, onClose }: GlobalSearchModalProps) {
                 <div
                   key={item.id}
                   onClick={() => handleSelectItem(item as SearchPaletteItem)}
+                  onMouseEnter={() => {
+                    if (item.href?.startsWith('/stock/')) {
+                      try { router.prefetch(item.href) } catch {}
+                    }
+                  }}
                   className="group inline-flex cursor-pointer items-center gap-1 rounded-full border border-[#232a36] bg-[#141822] py-0.5 pl-2.5 pr-1.5 text-xs text-[#cbd5e1] hover:border-emerald-500/50 hover:bg-[#1a2230] hover:text-white transition-all shrink-0"
                 >
                   <span className="font-semibold text-emerald-400">
@@ -625,7 +643,12 @@ export function GlobalSearchModal({ open, onClose }: GlobalSearchModalProps) {
                   <li
                     data-index={idx}
                     onClick={() => handleSelectItem(item)}
-                    onMouseEnter={() => setActiveIndex(idx)}
+                    onMouseEnter={() => {
+                      setActiveIndex(idx)
+                      if (item.href?.startsWith('/stock/')) {
+                        try { router.prefetch(item.href) } catch {}
+                      }
+                    }}
                     className={cn(
                       'group flex cursor-pointer items-center justify-between px-4 py-2.5 transition-colors',
                       isSelected ? 'bg-[#161c28]' : 'hover:bg-[#121620]'

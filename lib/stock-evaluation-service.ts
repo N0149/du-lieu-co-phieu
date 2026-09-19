@@ -190,20 +190,43 @@ export function getAvgTradingVol15d(symbol: string): number | null {
   return null
 }
 
-export async function getStockEvaluation(symbol: string): Promise<StockEvaluationData | null> {
-  const sym = symbol.toUpperCase().trim()
-  if (!sym) return null
+const MONEY_COMPANY_CACHE = new Map<string, { data: any; expiresAt: number }>()
+const MONEY_CACHE_TTL_MS = 10 * 60 * 1000 // 10 phút RAM cache
 
-  // 1. Tải đồng thời live quote (timeout 800ms) và thông tin mở rộng từ 24hMoney (timeout 800ms)
-  const [liveQuote, moneyData] = await Promise.all([
-    getLiveStockQuote(sym).catch(() => null),
-    fetch(`https://api-finance-t19.24hmoney.vn/v2/ios/companies/index?symbol=${encodeURIComponent(sym.toLowerCase())}`, {
+async function fetchCompanyMoneyData(sym: string): Promise<any> {
+  const now = Date.now()
+  const cached = MONEY_COMPANY_CACHE.get(sym)
+  if (cached && cached.expiresAt > now) {
+    return cached.data
+  }
+
+  try {
+    const res = await fetch(`https://api-finance-t19.24hmoney.vn/v2/ios/companies/index?symbol=${encodeURIComponent(sym.toLowerCase())}`, {
       headers: { Accept: 'application/json' },
       signal: AbortSignal.timeout(800),
       next: { revalidate: 600 },
     })
-      .then(async (r) => (r.ok ? (await r.json())?.data : null))
-      .catch(() => null),
+    if (res.ok) {
+      const json = await res.json()
+      const d = json?.data || null
+      if (d) {
+        MONEY_COMPANY_CACHE.set(sym, { data: d, expiresAt: now + MONEY_CACHE_TTL_MS })
+      }
+      return d
+    }
+  } catch {}
+
+  return cached?.data || null
+}
+
+export async function getStockEvaluation(symbol: string): Promise<StockEvaluationData | null> {
+  const sym = symbol.toUpperCase().trim()
+  if (!sym) return null
+
+  // 1. Tải đồng thời live quote và thông tin mở rộng từ RAM cache hoặc 24hMoney
+  const [liveQuote, moneyData] = await Promise.all([
+    getLiveStockQuote(sym).catch(() => null),
+    fetchCompanyMoneyData(sym),
   ])
 
   // 2. Đọc dữ liệu đánh giá 360° từ SQLite nội bộ (1.368 mã, < 0.2ms)

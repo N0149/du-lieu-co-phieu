@@ -20,6 +20,9 @@ function getSupabase(): SupabaseClient | null {
   return supabaseInstance
 }
 
+const PROFILE_MEMORY_CACHE = new Map<string, { data: CompanyFullProfileData; expiresAt: number }>()
+const PROFILE_CACHE_TTL_MS = 10 * 60 * 1000 // 10 phút RAM cache
+
 const CIPHER_KEY_HEX = '19dd3af428f4cf7d68864cd4c87d8d1c5b489932e84b93ac6528a0dd403a5725'
 
 const SLICE_COLORS = [
@@ -227,6 +230,12 @@ export async function getCompanyFullProfile(symbol: string): Promise<CompanyFull
   }
 
   // 3. Đọc từ Supabase Cloud Database (<25ms, Vercel 24/7 khi tắt máy)
+  const now = Date.now()
+  const cachedProfile = PROFILE_MEMORY_CACHE.get(sym)
+  if (cachedProfile && cachedProfile.expiresAt > now) {
+    return cachedProfile.data
+  }
+
   try {
     const supabase = getSupabase()
     if (supabase) {
@@ -237,11 +246,15 @@ export async function getCompanyFullProfile(symbol: string): Promise<CompanyFull
         .maybeSingle()
       if (!error && data?.raw_json) {
         const parsed = typeof data.raw_json === 'string' ? JSON.parse(data.raw_json) : data.raw_json
+        let finalData: CompanyFullProfileData | null = null
         if (parsed?.ownership) {
-          return parsed
+          finalData = parsed
+        } else if (parsed?.co_cau_so_huu) {
+          finalData = parseShareholderPayload(sym, parsed)
         }
-        if (parsed?.co_cau_so_huu) {
-          return parseShareholderPayload(sym, parsed)
+        if (finalData) {
+          PROFILE_MEMORY_CACHE.set(sym, { data: finalData, expiresAt: now + PROFILE_CACHE_TTL_MS })
+          return finalData
         }
       }
     }

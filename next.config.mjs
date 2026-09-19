@@ -42,6 +42,7 @@ const nextConfig = {
       './data/price_history/**/*',
       './data/industry-reports.json',
       './data/reports-snapshot.json',
+      './data/stock_evaluations_summary.json',
     ],
   },
   outputFileTracingExcludes: {
