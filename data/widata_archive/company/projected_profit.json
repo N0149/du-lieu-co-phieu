@@ -1,0 +1,2822 @@
+{
+  "HPG": {
+    "meta": {
+      "total_page": 8,
+      "total_count": 37,
+      "page": 1,
+      "page_size": 5
+    },
+    "result": [
+      {
+        "id": 25591,
+        "mack": "HPG",
+        "ngay_congbo": "2026-09-18T00:00:00.000Z",
+        "value": 26190,
+        "value_diff": 5410,
+        "nguon": "MBS",
+        "unit": "Tỷ VND",
+        "full_count": "37"
+      },
+      {
+        "id": 25444,
+        "mack": "HPG",
+        "ngay_congbo": "2026-09-09T00:00:00.000Z",
+        "value": null,
+        "value_diff": null,
+        "nguon": "CTS",
+        "unit": "Tỷ VND",
+        "full_count": "37"
+      },
+      {
+        "id": 25342,
+        "mack": "HPG",
+        "ngay_congbo": "2026-08-24T00:00:00.000Z",
+        "value": 23329,
+        "value_diff": 1295,
+        "nguon": "DSC",
+        "unit": "Tỷ VND",
+        "full_count": "37"
+      },
+      {
+        "id": 25233,
+        "mack": "HPG",
+        "ngay_congbo": "2026-08-21T00:00:00.000Z",
+        "value": 24073,
+        "value_diff": -372,
+        "nguon": "SSV",
+        "unit": "Tỷ VND",
+        "full_count": "37"
+      },
+      {
+        "id": 25199,
+        "mack": "HPG",
+        "ngay_congbo": "2026-08-20T00:00:00.000Z",
+        "value": 27911,
+        "value_diff": -627,
+        "nguon": "BSC",
+        "unit": "Tỷ VND",
+        "full_count": "37"
+      }
+    ]
+  },
+  "VHM": {
+    "meta": {
+      "total_page": 5,
+      "total_count": 23,
+      "page": 1,
+      "page_size": 5
+    },
+    "result": [
+      {
+        "id": 25567,
+        "mack": "VHM",
+        "ngay_congbo": "2026-09-17T00:00:00.000Z",
+        "value": 61579,
+        "value_diff": 24491,
+        "nguon": "SSI",
+        "unit": "Tỷ VND",
+        "full_count": "23"
+      },
+      {
+        "id": 25432,
+        "mack": "VHM",
+        "ngay_congbo": "2026-09-07T00:00:00.000Z",
+        "value": 76874,
+        "value_diff": 28833,
+        "nguon": "SSV",
+        "unit": "Tỷ VND",
+        "full_count": "23"
+      },
+      {
+        "id": 25504,
+        "mack": "VHM",
+        "ngay_congbo": "2026-08-28T00:00:00.000Z",
+        "value": 59928,
+        "value_diff": 0,
+        "nguon": "Vietcap",
+        "unit": "Tỷ VND",
+        "full_count": "23"
+      },
+      {
+        "id": 25155,
+        "mack": "VHM",
+        "ngay_congbo": "2026-08-18T00:00:00.000Z",
+        "value": 95700,
+        "value_diff": null,
+        "nguon": "VFS",
+        "unit": "Tỷ VND",
+        "full_count": "23"
+      },
+      {
+        "id": 25109,
+        "mack": "VHM",
+        "ngay_congbo": "2026-08-10T00:00:00.000Z",
+        "value": 59824,
+        "value_diff": 0,
+        "nguon": "BSC",
+        "unit": "Tỷ VND",
+        "full_count": "23"
+      }
+    ]
+  },
+  "VIC": {
+    "meta": {
+      "total_page": 3,
+      "total_count": 12,
+      "page": 1,
+      "page_size": 5
+    },
+    "result": [
+      {
+        "id": 24936,
+        "mack": "VIC",
+        "ngay_congbo": "2026-08-11T00:00:00.000Z",
+        "value": 26642,
+        "value_diff": null,
+        "nguon": "TCBS",
+        "unit": "Tỷ VND",
+        "full_count": "12"
+      },
+      {
+        "id": 24976,
+        "mack": "VIC",
+        "ngay_congbo": "2026-08-10T00:00:00.000Z",
+        "value": null,
+        "value_diff": null,
+        "nguon": "VPBS",
+        "unit": "Tỷ VND",
+        "full_count": "12"
+      },
+      {
+        "id": 25200,
+        "mack": "VIC",
+        "ngay_congbo": "2026-08-07T00:00:00.000Z",
+        "value": null,
+        "value_diff": null,
+        "nguon": "BSC",
+        "unit": "Tỷ VND",
+        "full_count": "12"
+      },
+      {
+        "id": 24642,
+        "mack": "VIC",
+        "ngay_congbo": "2026-07-31T00:00:00.000Z",
+        "value": 26834,
+        "value_diff": 0,
+        "nguon": "Vietcap",
+        "unit": "Tỷ VND",
+        "full_count": "12"
+      },
+      {
+        "id": 23290,
+        "mack": "VIC",
+        "ngay_congbo": "2026-05-15T00:00:00.000Z",
+        "value": 30796,
+        "value_diff": null,
+        "nguon": "SSI",
+        "unit": "Tỷ VND",
+        "full_count": "12"
+      }
+    ]
+  },
+  "VCB": {
+    "meta": {
+      "total_page": 6,
+      "total_count": 29,
+      "page": 1,
+      "page_size": 5
+    },
+    "result": [
+      {
+        "id": 25521,
+        "mack": "VCB",
+        "ngay_congbo": "2026-09-15T00:00:00.000Z",
+        "value": 42418,
+        "value_diff": null,
+        "nguon": "BSC",
+        "unit": "Tỷ VND",
+        "full_count": "29"
+      },
+      {
+        "id": 25427,
+        "mack": "VCB",
+        "ngay_congbo": "2026-09-07T00:00:00.000Z",
+        "value": 40520,
+        "value_diff": 1832,
+        "nguon": "SHS",
+        "unit": "Tỷ VND",
+        "full_count": "29"
+      },
+      {
+        "id": 25415,
+        "mack": "VCB",
+        "ngay_congbo": "2026-09-03T00:00:00.000Z",
+        "value": null,
+        "value_diff": null,
+        "nguon": "VPBS",
+        "unit": "Tỷ VND",
+        "full_count": "29"
+      },
+      {
+        "id": 25316,
+        "mack": "VCB",
+        "ngay_congbo": "2026-08-26T00:00:00.000Z",
+        "value": 45495,
+        "value_diff": 5034,
+        "nguon": "SSV",
+        "unit": "Tỷ VND",
+        "full_count": "29"
+      },
+      {
+        "id": 25054,
+        "mack": "VCB",
+        "ngay_congbo": "2026-08-14T00:00:00.000Z",
+        "value": 45454,
+        "value_diff": 3605,
+        "nguon": "MBS",
+        "unit": "Tỷ VND",
+        "full_count": "29"
+      }
+    ]
+  },
+  "SSI": {
+    "meta": {
+      "total_page": 4,
+      "total_count": 16,
+      "page": 1,
+      "page_size": 5
+    },
+    "result": [
+      {
+        "id": 25578,
+        "mack": "SSI",
+        "ngay_congbo": "2026-08-27T00:00:00.000Z",
+        "value": null,
+        "value_diff": null,
+        "nguon": "VPBS",
+        "unit": "Tỷ VND",
+        "full_count": "16"
+      },
+      {
+        "id": 25290,
+        "mack": "SSI",
+        "ngay_congbo": "2026-08-21T00:00:00.000Z",
+        "value": null,
+        "value_diff": null,
+        "nguon": "BETA",
+        "unit": "Tỷ VND",
+        "full_count": "16"
+      },
+      {
+        "id": 24732,
+        "mack": "SSI",
+        "ngay_congbo": "2026-08-05T00:00:00.000Z",
+        "value": 5039,
+        "value_diff": null,
+        "nguon": "TCBS",
+        "unit": "Tỷ VND",
+        "full_count": "16"
+      },
+      {
+        "id": 24641,
+        "mack": "SSI",
+        "ngay_congbo": "2026-07-31T00:00:00.000Z",
+        "value": null,
+        "value_diff": null,
+        "nguon": "Vietcap",
+        "unit": "Tỷ VND",
+        "full_count": "16"
+      },
+      {
+        "id": 23540,
+        "mack": "SSI",
+        "ngay_congbo": "2026-05-26T00:00:00.000Z",
+        "value": 5715,
+        "value_diff": 1143,
+        "nguon": "DSC",
+        "unit": "Tỷ VND",
+        "full_count": "16"
+      }
+    ]
+  },
+  "MWG": {
+    "meta": {
+      "total_page": 8,
+      "total_count": 40,
+      "page": 1,
+      "page_size": 5
+    },
+    "result": [
+      {
+        "id": 25531,
+        "mack": "MWG",
+        "ngay_congbo": "2026-09-16T00:00:00.000Z",
+        "value": 11091,
+        "value_diff": 1386,
+        "nguon": "VDS",
+        "unit": "Tỷ VND",
+        "full_count": "40"
+      },
+      {
+        "id": 25386,
+        "mack": "MWG",
+        "ngay_congbo": "2026-09-03T00:00:00.000Z",
+        "value": 9530,
+        "value_diff": 1034,
+        "nguon": "MAS",
+        "unit": "Tỷ VND",
+        "full_count": "40"
+      },
+      {
+        "id": 25219,
+        "mack": "MWG",
+        "ngay_congbo": "2026-08-21T00:00:00.000Z",
+        "value": 10000,
+        "value_diff": 769,
+        "nguon": "NHSV",
+        "unit": "Tỷ VND",
+        "full_count": "40"
+      },
+      {
+        "id": 25240,
+        "mack": "MWG",
+        "ngay_congbo": "2026-08-21T00:00:00.000Z",
+        "value": 10920,
+        "value_diff": 1588,
+        "nguon": "SSI",
+        "unit": "Tỷ VND",
+        "full_count": "40"
+      },
+      {
+        "id": 25188,
+        "mack": "MWG",
+        "ngay_congbo": "2026-08-18T00:00:00.000Z",
+        "value": 11175,
+        "value_diff": null,
+        "nguon": "TCBS",
+        "unit": "Tỷ VND",
+        "full_count": "40"
+      }
+    ]
+  },
+  "FPT": {
+    "meta": {
+      "total_page": 7,
+      "total_count": 35,
+      "page": 1,
+      "page_size": 5
+    },
+    "result": [
+      {
+        "id": 25511,
+        "mack": "FPT",
+        "ngay_congbo": "2026-09-14T00:00:00.000Z",
+        "value": 10685,
+        "value_diff": 2915,
+        "nguon": "SSV",
+        "unit": "Tỷ VND",
+        "full_count": "35"
+      },
+      {
+        "id": 25365,
+        "mack": "FPT",
+        "ngay_congbo": "2026-08-27T00:00:00.000Z",
+        "value": 10300,
+        "value_diff": null,
+        "nguon": "TPS",
+        "unit": "Tỷ VND",
+        "full_count": "35"
+      },
+      {
+        "id": 25309,
+        "mack": "FPT",
+        "ngay_congbo": "2026-08-26T00:00:00.000Z",
+        "value": 10842,
+        "value_diff": 706,
+        "nguon": "MAS",
+        "unit": "Tỷ VND",
+        "full_count": "35"
+      },
+      {
+        "id": 25286,
+        "mack": "FPT",
+        "ngay_congbo": "2026-08-25T00:00:00.000Z",
+        "value": 10564,
+        "value_diff": 3810,
+        "nguon": "VDS",
+        "unit": "Tỷ VND",
+        "full_count": "35"
+      },
+      {
+        "id": 25019,
+        "mack": "FPT",
+        "ngay_congbo": "2026-08-13T00:00:00.000Z",
+        "value": 10736,
+        "value_diff": null,
+        "nguon": "TCBS",
+        "unit": "Tỷ VND",
+        "full_count": "35"
+      }
+    ]
+  },
+  "TCB": {
+    "meta": {
+      "total_page": 7,
+      "total_count": 35,
+      "page": 1,
+      "page_size": 5
+    },
+    "result": [
+      {
+        "id": 25459,
+        "mack": "TCB",
+        "ngay_congbo": "2026-09-09T00:00:00.000Z",
+        "value": 29784,
+        "value_diff": 509,
+        "nguon": "KBSV",
+        "unit": "Tỷ VND",
+        "full_count": "35"
+      },
+      {
+        "id": 25441,
+        "mack": "TCB",
+        "ngay_congbo": "2026-09-08T00:00:00.000Z",
+        "value": 28250,
+        "value_diff": 4530,
+        "nguon": "BVSC",
+        "unit": "Tỷ VND",
+        "full_count": "35"
+      },
+      {
+        "id": 25583,
+        "mack": "TCB",
+        "ngay_congbo": "2026-09-07T00:00:00.000Z",
+        "value": 29776,
+        "value_diff": null,
+        "nguon": "KAFI",
+        "unit": "Tỷ VND",
+        "full_count": "35"
+      },
+      {
+        "id": 25353,
+        "mack": "TCB",
+        "ngay_congbo": "2026-08-28T00:00:00.000Z",
+        "value": null,
+        "value_diff": null,
+        "nguon": "DNSE",
+        "unit": "Tỷ VND",
+        "full_count": "35"
+      },
+      {
+        "id": 25346,
+        "mack": "TCB",
+        "ngay_congbo": "2026-08-12T00:00:00.000Z",
+        "value": 29234,
+        "value_diff": null,
+        "nguon": "Vietcap",
+        "unit": "Tỷ VND",
+        "full_count": "35"
+      }
+    ]
+  },
+  "MBB": {
+    "meta": {
+      "total_page": 7,
+      "total_count": 33,
+      "page": 1,
+      "page_size": 5
+    },
+    "result": [
+      {
+        "id": 25544,
+        "mack": "MBB",
+        "ngay_congbo": "2026-09-16T00:00:00.000Z",
+        "value": 32317,
+        "value_diff": 7121,
+        "nguon": "SSI",
+        "unit": "Tỷ VND",
+        "full_count": "33"
+      },
+      {
+        "id": 25414,
+        "mack": "MBB",
+        "ngay_congbo": "2026-09-03T00:00:00.000Z",
+        "value": null,
+        "value_diff": null,
+        "nguon": "VPBS",
+        "unit": "Tỷ VND",
+        "full_count": "33"
+      },
+      {
+        "id": 25213,
+        "mack": "MBB",
+        "ngay_congbo": "2026-08-21T00:00:00.000Z",
+        "value": 31690,
+        "value_diff": 0,
+        "nguon": "NHSV",
+        "unit": "Tỷ VND",
+        "full_count": "33"
+      },
+      {
+        "id": 25194,
+        "mack": "MBB",
+        "ngay_congbo": "2026-08-19T00:00:00.000Z",
+        "value": 32953,
+        "value_diff": null,
+        "nguon": "BSC",
+        "unit": "Tỷ VND",
+        "full_count": "33"
+      },
+      {
+        "id": 25292,
+        "mack": "MBB",
+        "ngay_congbo": "2026-08-19T00:00:00.000Z",
+        "value": 31931,
+        "value_diff": null,
+        "nguon": "BETA",
+        "unit": "Tỷ VND",
+        "full_count": "33"
+      }
+    ]
+  },
+  "STB": {
+    "meta": {
+      "total_page": 5,
+      "total_count": 21,
+      "page": 1,
+      "page_size": 5
+    },
+    "result": [
+      {
+        "id": 25426,
+        "mack": "STB",
+        "ngay_congbo": "2026-09-08T00:00:00.000Z",
+        "value": 6797,
+        "value_diff": -1031,
+        "nguon": "NHSV",
+        "unit": "Tỷ VND",
+        "full_count": "21"
+      },
+      {
+        "id": 24898,
+        "mack": "STB",
+        "ngay_congbo": "2026-08-07T00:00:00.000Z",
+        "value": 6260,
+        "value_diff": null,
+        "nguon": "TCBS",
+        "unit": "Tỷ VND",
+        "full_count": "21"
+      },
+      {
+        "id": 24724,
+        "mack": "STB",
+        "ngay_congbo": "2026-08-04T00:00:00.000Z",
+        "value": null,
+        "value_diff": null,
+        "nguon": "VPBS",
+        "unit": "Tỷ VND",
+        "full_count": "21"
+      },
+      {
+        "id": 24680,
+        "mack": "STB",
+        "ngay_congbo": "2026-08-03T00:00:00.000Z",
+        "value": null,
+        "value_diff": null,
+        "nguon": "VNDS",
+        "unit": "Tỷ VND",
+        "full_count": "21"
+      },
+      {
+        "id": 24608,
+        "mack": "STB",
+        "ngay_congbo": "2026-07-31T00:00:00.000Z",
+        "value": null,
+        "value_diff": null,
+        "nguon": "Vietcap",
+        "unit": "Tỷ VND",
+        "full_count": "21"
+      }
+    ]
+  },
+  "VNM": {
+    "meta": {
+      "total_page": 7,
+      "total_count": 32,
+      "page": 1,
+      "page_size": 5
+    },
+    "result": [
+      {
+        "id": 25592,
+        "mack": "VNM",
+        "ngay_congbo": "2026-09-18T00:00:00.000Z",
+        "value": 9800,
+        "value_diff": 0,
+        "nguon": "NHSV",
+        "unit": "Tỷ VND",
+        "full_count": "32"
+      },
+      {
+        "id": 25545,
+        "mack": "VNM",
+        "ngay_congbo": "2026-09-16T00:00:00.000Z",
+        "value": 11216,
+        "value_diff": 933,
+        "nguon": "VDS",
+        "unit": "Tỷ VND",
+        "full_count": "32"
+      },
+      {
+        "id": 25577,
+        "mack": "VNM",
+        "ngay_congbo": "2026-09-15T00:00:00.000Z",
+        "value": 10780,
+        "value_diff": null,
+        "nguon": "VNDS",
+        "unit": "Tỷ VND",
+        "full_count": "32"
+      },
+      {
+        "id": 25209,
+        "mack": "VNM",
+        "ngay_congbo": "2026-08-21T00:00:00.000Z",
+        "value": 11795,
+        "value_diff": 1365,
+        "nguon": "BSC",
+        "unit": "Tỷ VND",
+        "full_count": "32"
+      },
+      {
+        "id": 25205,
+        "mack": "VNM",
+        "ngay_congbo": "2026-08-20T00:00:00.000Z",
+        "value": 10493,
+        "value_diff": 549,
+        "nguon": "SSI",
+        "unit": "Tỷ VND",
+        "full_count": "32"
+      }
+    ]
+  },
+  "MSN": {
+    "meta": {
+      "total_page": 5,
+      "total_count": 21,
+      "page": 1,
+      "page_size": 5
+    },
+    "result": [
+      {
+        "id": 25561,
+        "mack": "MSN",
+        "ngay_congbo": "2026-09-17T00:00:00.000Z",
+        "value": null,
+        "value_diff": null,
+        "nguon": "VCBS",
+        "unit": "Tỷ VND",
+        "full_count": "21"
+      },
+      {
+        "id": 25439,
+        "mack": "MSN",
+        "ngay_congbo": "2026-09-08T00:00:00.000Z",
+        "value": 9986,
+        "value_diff": 4844,
+        "nguon": "BSC",
+        "unit": "Tỷ VND",
+        "full_count": "21"
+      },
+      {
+        "id": 25437,
+        "mack": "MSN",
+        "ngay_congbo": "2026-09-08T00:00:00.000Z",
+        "value": 10384,
+        "value_diff": 2986,
+        "nguon": "VDS",
+        "unit": "Tỷ VND",
+        "full_count": "21"
+      },
+      {
+        "id": 25020,
+        "mack": "MSN",
+        "ngay_congbo": "2026-08-12T00:00:00.000Z",
+        "value": 9634,
+        "value_diff": null,
+        "nguon": "TCBS",
+        "unit": "Tỷ VND",
+        "full_count": "21"
+      },
+      {
+        "id": 24871,
+        "mack": "MSN",
+        "ngay_congbo": "2026-08-07T00:00:00.000Z",
+        "value": null,
+        "value_diff": null,
+        "nguon": "AGRISECO",
+        "unit": "Tỷ VND",
+        "full_count": "21"
+      }
+    ]
+  },
+  "GAS": {
+    "meta": {
+      "total_page": 5,
+      "total_count": 25,
+      "page": 1,
+      "page_size": 5
+    },
+    "result": [
+      {
+        "id": 25517,
+        "mack": "GAS",
+        "ngay_congbo": "2026-09-14T00:00:00.000Z",
+        "value": 13000,
+        "value_diff": null,
+        "nguon": "Vietcap",
+        "unit": "Tỷ VND",
+        "full_count": "25"
+      },
+      {
+        "id": 25586,
+        "mack": "GAS",
+        "ngay_congbo": "2026-09-11T00:00:00.000Z",
+        "value": 12977,
+        "value_diff": -602,
+        "nguon": "KBSV",
+        "unit": "Tỷ VND",
+        "full_count": "25"
+      },
+      {
+        "id": 25434,
+        "mack": "GAS",
+        "ngay_congbo": "2026-09-04T00:00:00.000Z",
+        "value": 15394,
+        "value_diff": -112,
+        "nguon": "TCBS",
+        "unit": "Tỷ VND",
+        "full_count": "25"
+      },
+      {
+        "id": 25182,
+        "mack": "GAS",
+        "ngay_congbo": "2026-08-18T00:00:00.000Z",
+        "value": 16005,
+        "value_diff": 2499,
+        "nguon": "SSI",
+        "unit": "Tỷ VND",
+        "full_count": "25"
+      },
+      {
+        "id": 25085,
+        "mack": "GAS",
+        "ngay_congbo": "2026-08-05T00:00:00.000Z",
+        "value": null,
+        "value_diff": null,
+        "nguon": "BETA",
+        "unit": "Tỷ VND",
+        "full_count": "25"
+      }
+    ]
+  },
+  "BID": {
+    "meta": {
+      "total_page": 5,
+      "total_count": 24,
+      "page": 1,
+      "page_size": 5
+    },
+    "result": [
+      {
+        "id": 25470,
+        "mack": "BID",
+        "ngay_congbo": "2026-09-07T00:00:00.000Z",
+        "value": null,
+        "value_diff": null,
+        "nguon": "VPBS",
+        "unit": "Tỷ VND",
+        "full_count": "24"
+      },
+      {
+        "id": 25239,
+        "mack": "BID",
+        "ngay_congbo": "2026-08-21T00:00:00.000Z",
+        "value": 32552,
+        "value_diff": 10952,
+        "nguon": "SSI",
+        "unit": "Tỷ VND",
+        "full_count": "24"
+      },
+      {
+        "id": 25036,
+        "mack": "BID",
+        "ngay_congbo": "2026-08-14T00:00:00.000Z",
+        "value": 31927,
+        "value_diff": 0,
+        "nguon": "NHSV",
+        "unit": "Tỷ VND",
+        "full_count": "24"
+      },
+      {
+        "id": 25230,
+        "mack": "BID",
+        "ngay_congbo": "2026-08-06T00:00:00.000Z",
+        "value": 31025,
+        "value_diff": -2520,
+        "nguon": "DSC",
+        "unit": "Tỷ VND",
+        "full_count": "24"
+      },
+      {
+        "id": 24813,
+        "mack": "BID",
+        "ngay_congbo": "2026-08-05T00:00:00.000Z",
+        "value": 34217,
+        "value_diff": 0,
+        "nguon": "TCBS",
+        "unit": "Tỷ VND",
+        "full_count": "24"
+      }
+    ]
+  },
+  "CTG": {
+    "meta": {
+      "total_page": 7,
+      "total_count": 31,
+      "page": 1,
+      "page_size": 5
+    },
+    "result": [
+      {
+        "id": 25563,
+        "mack": "CTG",
+        "ngay_congbo": "2026-09-17T00:00:00.000Z",
+        "value": 42929,
+        "value_diff": 33,
+        "nguon": "VDS",
+        "unit": "Tỷ VND",
+        "full_count": "31"
+      },
+      {
+        "id": 25340,
+        "mack": "CTG",
+        "ngay_congbo": "2026-08-27T00:00:00.000Z",
+        "value": 43318,
+        "value_diff": 8728,
+        "nguon": "SSI",
+        "unit": "Tỷ VND",
+        "full_count": "31"
+      },
+      {
+        "id": 25302,
+        "mack": "CTG",
+        "ngay_congbo": "2026-08-25T00:00:00.000Z",
+        "value": 39930,
+        "value_diff": null,
+        "nguon": "BETA",
+        "unit": "Tỷ VND",
+        "full_count": "31"
+      },
+      {
+        "id": 25235,
+        "mack": "CTG",
+        "ngay_congbo": "2026-08-21T00:00:00.000Z",
+        "value": null,
+        "value_diff": null,
+        "nguon": "KIS",
+        "unit": "Tỷ VND",
+        "full_count": "31"
+      },
+      {
+        "id": 25040,
+        "mack": "CTG",
+        "ngay_congbo": "2026-08-14T00:00:00.000Z",
+        "value": null,
+        "value_diff": null,
+        "nguon": "KAFI",
+        "unit": "Tỷ VND",
+        "full_count": "31"
+      }
+    ]
+  },
+  "VRE": {
+    "meta": {
+      "total_page": 5,
+      "total_count": 25,
+      "page": 1,
+      "page_size": 5
+    },
+    "result": [
+      {
+        "id": 25413,
+        "mack": "VRE",
+        "ngay_congbo": "2026-09-04T00:00:00.000Z",
+        "value": 5582,
+        "value_diff": 52,
+        "nguon": "Vietcap",
+        "unit": "Tỷ VND",
+        "full_count": "25"
+      },
+      {
+        "id": 25167,
+        "mack": "VRE",
+        "ngay_congbo": "2026-08-19T00:00:00.000Z",
+        "value": 6108,
+        "value_diff": 582,
+        "nguon": "BSC",
+        "unit": "Tỷ VND",
+        "full_count": "25"
+      },
+      {
+        "id": 24561,
+        "mack": "VRE",
+        "ngay_congbo": "2026-07-30T00:00:00.000Z",
+        "value": null,
+        "value_diff": null,
+        "nguon": "NHSV",
+        "unit": "Tỷ VND",
+        "full_count": "25"
+      },
+      {
+        "id": 24538,
+        "mack": "VRE",
+        "ngay_congbo": "2026-07-30T00:00:00.000Z",
+        "value": 5579,
+        "value_diff": -2,
+        "nguon": "ACBS",
+        "unit": "Tỷ VND",
+        "full_count": "25"
+      },
+      {
+        "id": 24542,
+        "mack": "VRE",
+        "ngay_congbo": "2026-07-29T00:00:00.000Z",
+        "value": 5454,
+        "value_diff": 0,
+        "nguon": "MBS",
+        "unit": "Tỷ VND",
+        "full_count": "25"
+      }
+    ]
+  },
+  "VJC": {
+    "meta": {
+      "total_page": 4,
+      "total_count": 17,
+      "page": 1,
+      "page_size": 5
+    },
+    "result": [
+      {
+        "id": 25422,
+        "mack": "VJC",
+        "ngay_congbo": "2026-09-07T00:00:00.000Z",
+        "value": 1152,
+        "value_diff": 4054,
+        "nguon": "FPTS",
+        "unit": "Tỷ VND",
+        "full_count": "17"
+      },
+      {
+        "id": 24933,
+        "mack": "VJC",
+        "ngay_congbo": "2026-08-10T00:00:00.000Z",
+        "value": 2503,
+        "value_diff": -1,
+        "nguon": "TCBS",
+        "unit": "Tỷ VND",
+        "full_count": "17"
+      },
+      {
+        "id": 24992,
+        "mack": "VJC",
+        "ngay_congbo": "2026-07-31T00:00:00.000Z",
+        "value": null,
+        "value_diff": null,
+        "nguon": "VNDS",
+        "unit": "Tỷ VND",
+        "full_count": "17"
+      },
+      {
+        "id": 24570,
+        "mack": "VJC",
+        "ngay_congbo": "2026-07-31T00:00:00.000Z",
+        "value": null,
+        "value_diff": null,
+        "nguon": "Vietcap",
+        "unit": "Tỷ VND",
+        "full_count": "17"
+      },
+      {
+        "id": 21261,
+        "mack": "VJC",
+        "ngay_congbo": "2025-09-16T00:00:00.000Z",
+        "value": 2723,
+        "value_diff": null,
+        "nguon": "VCBS",
+        "unit": "Tỷ VND",
+        "full_count": "17"
+      }
+    ]
+  },
+  "PLX": {
+    "meta": {
+      "total_page": 5,
+      "total_count": 25,
+      "page": 1,
+      "page_size": 5
+    },
+    "result": [
+      {
+        "id": 25385,
+        "mack": "PLX",
+        "ngay_congbo": "2026-09-03T00:00:00.000Z",
+        "value": null,
+        "value_diff": null,
+        "nguon": "KIS",
+        "unit": "Tỷ VND",
+        "full_count": "25"
+      },
+      {
+        "id": 25138,
+        "mack": "PLX",
+        "ngay_congbo": "2026-08-17T00:00:00.000Z",
+        "value": null,
+        "value_diff": null,
+        "nguon": "VPBS",
+        "unit": "Tỷ VND",
+        "full_count": "25"
+      },
+      {
+        "id": 25072,
+        "mack": "PLX",
+        "ngay_congbo": "2026-08-14T00:00:00.000Z",
+        "value": 4793,
+        "value_diff": null,
+        "nguon": "VFS",
+        "unit": "Tỷ VND",
+        "full_count": "25"
+      },
+      {
+        "id": 25004,
+        "mack": "PLX",
+        "ngay_congbo": "2026-08-12T00:00:00.000Z",
+        "value": 3199,
+        "value_diff": -941,
+        "nguon": "MAS",
+        "unit": "Tỷ VND",
+        "full_count": "25"
+      },
+      {
+        "id": 24823,
+        "mack": "PLX",
+        "ngay_congbo": "2026-08-07T00:00:00.000Z",
+        "value": 3689,
+        "value_diff": 1,
+        "nguon": "ACBS",
+        "unit": "Tỷ VND",
+        "full_count": "25"
+      }
+    ]
+  },
+  "POW": {
+    "meta": {
+      "total_page": 7,
+      "total_count": 32,
+      "page": 1,
+      "page_size": 5
+    },
+    "result": [
+      {
+        "id": 25351,
+        "mack": "POW",
+        "ngay_congbo": "2026-08-28T00:00:00.000Z",
+        "value": 6023,
+        "value_diff": null,
+        "nguon": "SHS",
+        "unit": "Tỷ VND",
+        "full_count": "32"
+      },
+      {
+        "id": 25314,
+        "mack": "POW",
+        "ngay_congbo": "2026-08-27T00:00:00.000Z",
+        "value": 6275,
+        "value_diff": 4575,
+        "nguon": "PHS",
+        "unit": "Tỷ VND",
+        "full_count": "32"
+      },
+      {
+        "id": 25363,
+        "mack": "POW",
+        "ngay_congbo": "2026-08-27T00:00:00.000Z",
+        "value": 6465,
+        "value_diff": null,
+        "nguon": "TCBS",
+        "unit": "Tỷ VND",
+        "full_count": "32"
+      },
+      {
+        "id": 25204,
+        "mack": "POW",
+        "ngay_congbo": "2026-08-20T00:00:00.000Z",
+        "value": 6068,
+        "value_diff": 3914,
+        "nguon": "MAS",
+        "unit": "Tỷ VND",
+        "full_count": "32"
+      },
+      {
+        "id": 25291,
+        "mack": "POW",
+        "ngay_congbo": "2026-08-18T00:00:00.000Z",
+        "value": null,
+        "value_diff": null,
+        "nguon": "BETA",
+        "unit": "Tỷ VND",
+        "full_count": "32"
+      }
+    ]
+  },
+  "SAB": {
+    "meta": {
+      "total_page": 4,
+      "total_count": 19,
+      "page": 1,
+      "page_size": 5
+    },
+    "result": [
+      {
+        "id": 25431,
+        "mack": "SAB",
+        "ngay_congbo": "2026-09-04T00:00:00.000Z",
+        "value": 4836,
+        "value_diff": 254,
+        "nguon": "SSI",
+        "unit": "Tỷ VND",
+        "full_count": "19"
+      },
+      {
+        "id": 25272,
+        "mack": "SAB",
+        "ngay_congbo": "2026-08-21T00:00:00.000Z",
+        "value": 4837,
+        "value_diff": null,
+        "nguon": "TCBS",
+        "unit": "Tỷ VND",
+        "full_count": "19"
+      },
+      {
+        "id": 24975,
+        "mack": "SAB",
+        "ngay_congbo": "2026-08-11T00:00:00.000Z",
+        "value": 4714,
+        "value_diff": null,
+        "nguon": "VNDS",
+        "unit": "Tỷ VND",
+        "full_count": "19"
+      },
+      {
+        "id": 24930,
+        "mack": "SAB",
+        "ngay_congbo": "2026-08-11T00:00:00.000Z",
+        "value": 4643,
+        "value_diff": -261,
+        "nguon": "SSV",
+        "unit": "Tỷ VND",
+        "full_count": "19"
+      },
+      {
+        "id": 25379,
+        "mack": "SAB",
+        "ngay_congbo": "2026-08-11T00:00:00.000Z",
+        "value": null,
+        "value_diff": null,
+        "nguon": "VPBS",
+        "unit": "Tỷ VND",
+        "full_count": "19"
+      }
+    ]
+  },
+  "VPB": {
+    "meta": {
+      "total_page": 7,
+      "total_count": 32,
+      "page": 1,
+      "page_size": 5
+    },
+    "result": [
+      {
+        "id": 25582,
+        "mack": "VPB",
+        "ngay_congbo": "2026-09-17T00:00:00.000Z",
+        "value": 34319,
+        "value_diff": null,
+        "nguon": "FPTS",
+        "unit": "Tỷ VND",
+        "full_count": "32"
+      },
+      {
+        "id": 25584,
+        "mack": "VPB",
+        "ngay_congbo": "2026-09-10T00:00:00.000Z",
+        "value": 29703,
+        "value_diff": null,
+        "nguon": "KAFI",
+        "unit": "Tỷ VND",
+        "full_count": "32"
+      },
+      {
+        "id": 24963,
+        "mack": "VPB",
+        "ngay_congbo": "2026-08-11T00:00:00.000Z",
+        "value": 33875,
+        "value_diff": 938,
+        "nguon": "MBS",
+        "unit": "Tỷ VND",
+        "full_count": "32"
+      },
+      {
+        "id": 24704,
+        "mack": "VPB",
+        "ngay_congbo": "2026-08-05T00:00:00.000Z",
+        "value": 30931,
+        "value_diff": 647,
+        "nguon": "BSC",
+        "unit": "Tỷ VND",
+        "full_count": "32"
+      },
+      {
+        "id": 24701,
+        "mack": "VPB",
+        "ngay_congbo": "2026-08-04T00:00:00.000Z",
+        "value": 32832,
+        "value_diff": 1292,
+        "nguon": "ACBS",
+        "unit": "Tỷ VND",
+        "full_count": "32"
+      }
+    ]
+  },
+  "GVR": {
+    "meta": {
+      "total_page": 4,
+      "total_count": 19,
+      "page": 1,
+      "page_size": 5
+    },
+    "result": [
+      {
+        "id": 24904,
+        "mack": "GVR",
+        "ngay_congbo": "2026-08-10T00:00:00.000Z",
+        "value": 7489,
+        "value_diff": 1081,
+        "nguon": "TCBS",
+        "unit": "Tỷ VND",
+        "full_count": "19"
+      },
+      {
+        "id": 24812,
+        "mack": "GVR",
+        "ngay_congbo": "2026-08-05T00:00:00.000Z",
+        "value": 8503,
+        "value_diff": 0,
+        "nguon": "SSI",
+        "unit": "Tỷ VND",
+        "full_count": "19"
+      },
+      {
+        "id": 24567,
+        "mack": "GVR",
+        "ngay_congbo": "2026-07-31T00:00:00.000Z",
+        "value": 6839,
+        "value_diff": 0,
+        "nguon": "Vietcap",
+        "unit": "Tỷ VND",
+        "full_count": "19"
+      },
+      {
+        "id": 24658,
+        "mack": "GVR",
+        "ngay_congbo": "2026-07-31T00:00:00.000Z",
+        "value": 6667,
+        "value_diff": null,
+        "nguon": "BVSC",
+        "unit": "Tỷ VND",
+        "full_count": "19"
+      },
+      {
+        "id": 23911,
+        "mack": "GVR",
+        "ngay_congbo": "2026-06-17T00:00:00.000Z",
+        "value": null,
+        "value_diff": null,
+        "nguon": "BSC",
+        "unit": "Tỷ VND",
+        "full_count": "19"
+      }
+    ]
+  },
+  "ACB": {
+    "meta": {
+      "total_page": 6,
+      "total_count": 28,
+      "page": 1,
+      "page_size": 5
+    },
+    "result": [
+      {
+        "id": 25483,
+        "mack": "ACB",
+        "ngay_congbo": "2026-09-11T00:00:00.000Z",
+        "value": 18264,
+        "value_diff": -1123,
+        "nguon": "VDS",
+        "unit": "Tỷ VND",
+        "full_count": "28"
+      },
+      {
+        "id": 25424,
+        "mack": "ACB",
+        "ngay_congbo": "2026-09-08T00:00:00.000Z",
+        "value": 18556,
+        "value_diff": -69,
+        "nguon": "KBSV",
+        "unit": "Tỷ VND",
+        "full_count": "28"
+      },
+      {
+        "id": 25146,
+        "mack": "ACB",
+        "ngay_congbo": "2026-08-17T00:00:00.000Z",
+        "value": 17813,
+        "value_diff": -42,
+        "nguon": "SSI",
+        "unit": "Tỷ VND",
+        "full_count": "28"
+      },
+      {
+        "id": 25039,
+        "mack": "ACB",
+        "ngay_congbo": "2026-08-14T00:00:00.000Z",
+        "value": null,
+        "value_diff": null,
+        "nguon": "KAFI",
+        "unit": "Tỷ VND",
+        "full_count": "28"
+      },
+      {
+        "id": 24999,
+        "mack": "ACB",
+        "ngay_congbo": "2026-08-12T00:00:00.000Z",
+        "value": 17700,
+        "value_diff": -307,
+        "nguon": "BVSC",
+        "unit": "Tỷ VND",
+        "full_count": "28"
+      }
+    ]
+  },
+  "HDB": {
+    "meta": {
+      "total_page": 6,
+      "total_count": 26,
+      "page": 1,
+      "page_size": 5
+    },
+    "result": [
+      {
+        "id": 25356,
+        "mack": "HDB",
+        "ngay_congbo": "2026-08-28T00:00:00.000Z",
+        "value": null,
+        "value_diff": null,
+        "nguon": "KIS",
+        "unit": "Tỷ VND",
+        "full_count": "26"
+      },
+      {
+        "id": 25360,
+        "mack": "HDB",
+        "ngay_congbo": "2026-08-28T00:00:00.000Z",
+        "value": 22697,
+        "value_diff": 1252,
+        "nguon": "SHS",
+        "unit": "Tỷ VND",
+        "full_count": "26"
+      },
+      {
+        "id": 25381,
+        "mack": "HDB",
+        "ngay_congbo": "2026-08-27T00:00:00.000Z",
+        "value": null,
+        "value_diff": null,
+        "nguon": "VPBS",
+        "unit": "Tỷ VND",
+        "full_count": "26"
+      },
+      {
+        "id": 25304,
+        "mack": "HDB",
+        "ngay_congbo": "2026-08-25T00:00:00.000Z",
+        "value": 20859,
+        "value_diff": -293,
+        "nguon": "BSC",
+        "unit": "Tỷ VND",
+        "full_count": "26"
+      },
+      {
+        "id": 25312,
+        "mack": "HDB",
+        "ngay_congbo": "2026-08-25T00:00:00.000Z",
+        "value": 23180,
+        "value_diff": 0,
+        "nguon": "MBS",
+        "unit": "Tỷ VND",
+        "full_count": "26"
+      }
+    ]
+  },
+  "SHB": {
+    "meta": {
+      "total_page": 3,
+      "total_count": 12,
+      "page": 1,
+      "page_size": 5
+    },
+    "result": [
+      {
+        "id": 25018,
+        "mack": "SHB",
+        "ngay_congbo": "2026-08-12T00:00:00.000Z",
+        "value": 15154,
+        "value_diff": null,
+        "nguon": "TCBS",
+        "unit": "Tỷ VND",
+        "full_count": "12"
+      },
+      {
+        "id": 22923,
+        "mack": "SHB",
+        "ngay_congbo": "2026-04-23T00:00:00.000Z",
+        "value": null,
+        "value_diff": null,
+        "nguon": "ABS",
+        "unit": "Tỷ VND",
+        "full_count": "12"
+      },
+      {
+        "id": 23414,
+        "mack": "SHB",
+        "ngay_congbo": "2026-03-13T00:00:00.000Z",
+        "value": 14039,
+        "value_diff": null,
+        "nguon": "SBBS",
+        "unit": "Tỷ VND",
+        "full_count": "12"
+      },
+      {
+        "id": 18899,
+        "mack": "SHB",
+        "ngay_congbo": "2024-10-01T00:00:00.000Z",
+        "value": null,
+        "value_diff": null,
+        "nguon": "DSC",
+        "unit": "Tỷ VND",
+        "full_count": "12"
+      },
+      {
+        "id": 9170,
+        "mack": "SHB",
+        "ngay_congbo": "2021-10-14T00:00:00.000Z",
+        "value": 5785,
+        "value_diff": null,
+        "nguon": "MAS",
+        "unit": "Tỷ VND",
+        "full_count": "12"
+      }
+    ]
+  },
+  "TPB": {
+    "meta": {
+      "total_page": 5,
+      "total_count": 22,
+      "page": 1,
+      "page_size": 5
+    },
+    "result": [
+      {
+        "id": 25059,
+        "mack": "TPB",
+        "ngay_congbo": "2026-08-13T00:00:00.000Z",
+        "value": 8657,
+        "value_diff": null,
+        "nguon": "TCBS",
+        "unit": "Tỷ VND",
+        "full_count": "22"
+      },
+      {
+        "id": 24974,
+        "mack": "TPB",
+        "ngay_congbo": "2026-08-07T00:00:00.000Z",
+        "value": null,
+        "value_diff": null,
+        "nguon": "VPBS",
+        "unit": "Tỷ VND",
+        "full_count": "22"
+      },
+      {
+        "id": 24882,
+        "mack": "TPB",
+        "ngay_congbo": "2026-08-07T00:00:00.000Z",
+        "value": 8255,
+        "value_diff": 0,
+        "nguon": "NHSV",
+        "unit": "Tỷ VND",
+        "full_count": "22"
+      },
+      {
+        "id": 24640,
+        "mack": "TPB",
+        "ngay_congbo": "2026-07-31T00:00:00.000Z",
+        "value": null,
+        "value_diff": null,
+        "nguon": "Vietcap",
+        "unit": "Tỷ VND",
+        "full_count": "22"
+      },
+      {
+        "id": 24005,
+        "mack": "TPB",
+        "ngay_congbo": "2026-06-25T00:00:00.000Z",
+        "value": 8175,
+        "value_diff": 1277,
+        "nguon": "MAS",
+        "unit": "Tỷ VND",
+        "full_count": "22"
+      }
+    ]
+  },
+  "VIB": {
+    "meta": {
+      "total_page": 5,
+      "total_count": 22,
+      "page": 1,
+      "page_size": 5
+    },
+    "result": [
+      {
+        "id": 25490,
+        "mack": "VIB",
+        "ngay_congbo": "2026-09-11T00:00:00.000Z",
+        "value": 8047,
+        "value_diff": null,
+        "nguon": "VNDS",
+        "unit": "Tỷ VND",
+        "full_count": "22"
+      },
+      {
+        "id": 25416,
+        "mack": "VIB",
+        "ngay_congbo": "2026-09-03T00:00:00.000Z",
+        "value": null,
+        "value_diff": null,
+        "nguon": "VPBS",
+        "unit": "Tỷ VND",
+        "full_count": "22"
+      },
+      {
+        "id": 25320,
+        "mack": "VIB",
+        "ngay_congbo": "2026-08-24T00:00:00.000Z",
+        "value": 7758,
+        "value_diff": null,
+        "nguon": "VFS",
+        "unit": "Tỷ VND",
+        "full_count": "22"
+      },
+      {
+        "id": 25383,
+        "mack": "VIB",
+        "ngay_congbo": "2026-08-24T00:00:00.000Z",
+        "value": 8711,
+        "value_diff": 110,
+        "nguon": "DSC",
+        "unit": "Tỷ VND",
+        "full_count": "22"
+      },
+      {
+        "id": 25166,
+        "mack": "VIB",
+        "ngay_congbo": "2026-08-18T00:00:00.000Z",
+        "value": 8467,
+        "value_diff": null,
+        "nguon": "Vietcap",
+        "unit": "Tỷ VND",
+        "full_count": "22"
+      }
+    ]
+  },
+  "LPB": {
+    "meta": {
+      "total_page": 3,
+      "total_count": 12,
+      "page": 1,
+      "page_size": 5
+    },
+    "result": [
+      {
+        "id": 24703,
+        "mack": "LPB",
+        "ngay_congbo": "2026-08-04T00:00:00.000Z",
+        "value": 12288,
+        "value_diff": 10095,
+        "nguon": "BSC",
+        "unit": "Tỷ VND",
+        "full_count": "12"
+      },
+      {
+        "id": 24387,
+        "mack": "LPB",
+        "ngay_congbo": "2026-07-21T00:00:00.000Z",
+        "value": 11828,
+        "value_diff": null,
+        "nguon": "TCBS",
+        "unit": "Tỷ VND",
+        "full_count": "12"
+      },
+      {
+        "id": 24395,
+        "mack": "LPB",
+        "ngay_congbo": "2026-07-20T00:00:00.000Z",
+        "value": null,
+        "value_diff": null,
+        "nguon": "Vietcap",
+        "unit": "Tỷ VND",
+        "full_count": "12"
+      },
+      {
+        "id": 18982,
+        "mack": "LPB",
+        "ngay_congbo": "2024-10-25T00:00:00.000Z",
+        "value": null,
+        "value_diff": null,
+        "nguon": "DSC",
+        "unit": "Tỷ VND",
+        "full_count": "12"
+      },
+      {
+        "id": 17130,
+        "mack": "LPB",
+        "ngay_congbo": "2024-01-23T00:00:00.000Z",
+        "value": null,
+        "value_diff": null,
+        "nguon": "VNDS",
+        "unit": "Tỷ VND",
+        "full_count": "12"
+      }
+    ]
+  },
+  "SSB": {
+    "meta": {
+      "total_page": 1,
+      "total_count": 1,
+      "page": 1,
+      "page_size": 5
+    },
+    "result": [
+      {
+        "id": 9205,
+        "mack": "SSB",
+        "ngay_congbo": "2021-10-19T00:00:00.000Z",
+        "value": null,
+        "value_diff": null,
+        "nguon": "SSI",
+        "unit": "Tỷ VND",
+        "full_count": "1"
+      }
+    ]
+  },
+  "MSB": {
+    "meta": {
+      "total_page": 4,
+      "total_count": 17,
+      "page": 1,
+      "page_size": 5
+    },
+    "result": [
+      {
+        "id": 25380,
+        "mack": "MSB",
+        "ngay_congbo": "2026-08-27T00:00:00.000Z",
+        "value": null,
+        "value_diff": null,
+        "nguon": "VPBS",
+        "unit": "Tỷ VND",
+        "full_count": "17"
+      },
+      {
+        "id": 25021,
+        "mack": "MSB",
+        "ngay_congbo": "2026-08-11T00:00:00.000Z",
+        "value": null,
+        "value_diff": null,
+        "nguon": "TCBS",
+        "unit": "Tỷ VND",
+        "full_count": "17"
+      },
+      {
+        "id": 25228,
+        "mack": "MSB",
+        "ngay_congbo": "2026-08-07T00:00:00.000Z",
+        "value": 6428,
+        "value_diff": 20,
+        "nguon": "DSC",
+        "unit": "Tỷ VND",
+        "full_count": "17"
+      },
+      {
+        "id": 24853,
+        "mack": "MSB",
+        "ngay_congbo": "2026-08-04T00:00:00.000Z",
+        "value": null,
+        "value_diff": null,
+        "nguon": "AGRISECO",
+        "unit": "Tỷ VND",
+        "full_count": "17"
+      },
+      {
+        "id": 24093,
+        "mack": "MSB",
+        "ngay_congbo": "2026-06-30T00:00:00.000Z",
+        "value": 7061,
+        "value_diff": 395,
+        "nguon": "VDS",
+        "unit": "Tỷ VND",
+        "full_count": "17"
+      }
+    ]
+  },
+  "DGC": {
+    "meta": {
+      "total_page": 6,
+      "total_count": 26,
+      "page": 1,
+      "page_size": 5
+    },
+    "result": [
+      {
+        "id": 25409,
+        "mack": "DGC",
+        "ngay_congbo": "2026-09-04T00:00:00.000Z",
+        "value": 1600,
+        "value_diff": null,
+        "nguon": "Vietcap",
+        "unit": "Tỷ VND",
+        "full_count": "26"
+      },
+      {
+        "id": 25265,
+        "mack": "DGC",
+        "ngay_congbo": "2026-08-24T00:00:00.000Z",
+        "value": null,
+        "value_diff": null,
+        "nguon": "SHS",
+        "unit": "Tỷ VND",
+        "full_count": "26"
+      },
+      {
+        "id": 25006,
+        "mack": "DGC",
+        "ngay_congbo": "2026-08-13T00:00:00.000Z",
+        "value": 1884,
+        "value_diff": 0,
+        "nguon": "MBS",
+        "unit": "Tỷ VND",
+        "full_count": "26"
+      },
+      {
+        "id": 24564,
+        "mack": "DGC",
+        "ngay_congbo": "2026-07-29T00:00:00.000Z",
+        "value": 1680,
+        "value_diff": null,
+        "nguon": "TCBS",
+        "unit": "Tỷ VND",
+        "full_count": "26"
+      },
+      {
+        "id": 24498,
+        "mack": "DGC",
+        "ngay_congbo": "2026-07-28T00:00:00.000Z",
+        "value": null,
+        "value_diff": null,
+        "nguon": "KIS",
+        "unit": "Tỷ VND",
+        "full_count": "26"
+      }
+    ]
+  },
+  "KBC": {
+    "meta": {
+      "total_page": 6,
+      "total_count": 28,
+      "page": 1,
+      "page_size": 5
+    },
+    "result": [
+      {
+        "id": 25473,
+        "mack": "KBC",
+        "ngay_congbo": "2026-09-09T00:00:00.000Z",
+        "value": 1345,
+        "value_diff": null,
+        "nguon": "NHSV",
+        "unit": "Tỷ VND",
+        "full_count": "28"
+      },
+      {
+        "id": 25440,
+        "mack": "KBC",
+        "ngay_congbo": "2026-09-08T00:00:00.000Z",
+        "value": 2224,
+        "value_diff": 884,
+        "nguon": "BVSC",
+        "unit": "Tỷ VND",
+        "full_count": "28"
+      },
+      {
+        "id": 25436,
+        "mack": "KBC",
+        "ngay_congbo": "2026-09-07T00:00:00.000Z",
+        "value": 1818,
+        "value_diff": -1304,
+        "nguon": "VDS",
+        "unit": "Tỷ VND",
+        "full_count": "28"
+      },
+      {
+        "id": 25401,
+        "mack": "KBC",
+        "ngay_congbo": "2026-09-04T00:00:00.000Z",
+        "value": 2544,
+        "value_diff": 440,
+        "nguon": "BSC",
+        "unit": "Tỷ VND",
+        "full_count": "28"
+      },
+      {
+        "id": 25315,
+        "mack": "KBC",
+        "ngay_congbo": "2026-08-26T00:00:00.000Z",
+        "value": 3053,
+        "value_diff": -359,
+        "nguon": "SSV",
+        "unit": "Tỷ VND",
+        "full_count": "28"
+      }
+    ]
+  },
+  "KDH": {
+    "meta": {
+      "total_page": 6,
+      "total_count": 27,
+      "page": 1,
+      "page_size": 5
+    },
+    "result": [
+      {
+        "id": 25370,
+        "mack": "KDH",
+        "ngay_congbo": "2026-08-28T00:00:00.000Z",
+        "value": 1531,
+        "value_diff": -72,
+        "nguon": "Vietcap",
+        "unit": "Tỷ VND",
+        "full_count": "27"
+      },
+      {
+        "id": 25334,
+        "mack": "KDH",
+        "ngay_congbo": "2026-08-26T00:00:00.000Z",
+        "value": 1470,
+        "value_diff": 498,
+        "nguon": "TCBS",
+        "unit": "Tỷ VND",
+        "full_count": "27"
+      },
+      {
+        "id": 25266,
+        "mack": "KDH",
+        "ngay_congbo": "2026-08-25T00:00:00.000Z",
+        "value": 1402,
+        "value_diff": 180,
+        "nguon": "SSI",
+        "unit": "Tỷ VND",
+        "full_count": "27"
+      },
+      {
+        "id": 25229,
+        "mack": "KDH",
+        "ngay_congbo": "2026-08-21T00:00:00.000Z",
+        "value": 1535,
+        "value_diff": 46,
+        "nguon": "ACBS",
+        "unit": "Tỷ VND",
+        "full_count": "27"
+      },
+      {
+        "id": 25056,
+        "mack": "KDH",
+        "ngay_congbo": "2026-08-14T00:00:00.000Z",
+        "value": null,
+        "value_diff": null,
+        "nguon": "NHSV",
+        "unit": "Tỷ VND",
+        "full_count": "27"
+      }
+    ]
+  },
+  "NLG": {
+    "meta": {
+      "total_page": 6,
+      "total_count": 27,
+      "page": 1,
+      "page_size": 5
+    },
+    "result": [
+      {
+        "id": 25419,
+        "mack": "NLG",
+        "ngay_congbo": "2026-09-08T00:00:00.000Z",
+        "value": 731,
+        "value_diff": -7,
+        "nguon": "BSC",
+        "unit": "Tỷ VND",
+        "full_count": "27"
+      },
+      {
+        "id": 25410,
+        "mack": "NLG",
+        "ngay_congbo": "2026-08-28T00:00:00.000Z",
+        "value": 697,
+        "value_diff": -13,
+        "nguon": "Vietcap",
+        "unit": "Tỷ VND",
+        "full_count": "27"
+      },
+      {
+        "id": 25335,
+        "mack": "NLG",
+        "ngay_congbo": "2026-08-27T00:00:00.000Z",
+        "value": 612,
+        "value_diff": null,
+        "nguon": "TCBS",
+        "unit": "Tỷ VND",
+        "full_count": "27"
+      },
+      {
+        "id": 25184,
+        "mack": "NLG",
+        "ngay_congbo": "2026-08-19T00:00:00.000Z",
+        "value": 770,
+        "value_diff": 114,
+        "nguon": "SSV",
+        "unit": "Tỷ VND",
+        "full_count": "27"
+      },
+      {
+        "id": 25108,
+        "mack": "NLG",
+        "ngay_congbo": "2026-08-18T00:00:00.000Z",
+        "value": null,
+        "value_diff": null,
+        "nguon": "AGRISECO",
+        "unit": "Tỷ VND",
+        "full_count": "27"
+      }
+    ]
+  },
+  "PDR": {
+    "meta": {
+      "total_page": 4,
+      "total_count": 17,
+      "page": 1,
+      "page_size": 5
+    },
+    "result": [
+      {
+        "id": 25466,
+        "mack": "PDR",
+        "ngay_congbo": "2026-09-10T00:00:00.000Z",
+        "value": 523,
+        "value_diff": null,
+        "nguon": "VFS",
+        "unit": "Tỷ VND",
+        "full_count": "17"
+      },
+      {
+        "id": 25299,
+        "mack": "PDR",
+        "ngay_congbo": "2026-08-24T00:00:00.000Z",
+        "value": null,
+        "value_diff": null,
+        "nguon": "YUANTA",
+        "unit": "Tỷ VND",
+        "full_count": "17"
+      },
+      {
+        "id": 25203,
+        "mack": "PDR",
+        "ngay_congbo": "2026-08-20T00:00:00.000Z",
+        "value": null,
+        "value_diff": null,
+        "nguon": "NHSV",
+        "unit": "Tỷ VND",
+        "full_count": "17"
+      },
+      {
+        "id": 22973,
+        "mack": "PDR",
+        "ngay_congbo": "2026-04-16T00:00:00.000Z",
+        "value": null,
+        "value_diff": null,
+        "nguon": "VPBS",
+        "unit": "Tỷ VND",
+        "full_count": "17"
+      },
+      {
+        "id": 22508,
+        "mack": "PDR",
+        "ngay_congbo": "2026-03-27T00:00:00.000Z",
+        "value": 1005,
+        "value_diff": 111,
+        "nguon": "MBS",
+        "unit": "Tỷ VND",
+        "full_count": "17"
+      }
+    ]
+  },
+  "DXG": {
+    "meta": {
+      "total_page": 5,
+      "total_count": 25,
+      "page": 1,
+      "page_size": 5
+    },
+    "result": [
+      {
+        "id": 25467,
+        "mack": "DXG",
+        "ngay_congbo": "2026-09-09T00:00:00.000Z",
+        "value": 796,
+        "value_diff": 0,
+        "nguon": "VFS",
+        "unit": "Tỷ VND",
+        "full_count": "25"
+      },
+      {
+        "id": 25390,
+        "mack": "DXG",
+        "ngay_congbo": "2026-09-03T00:00:00.000Z",
+        "value": 271,
+        "value_diff": null,
+        "nguon": "TCBS",
+        "unit": "Tỷ VND",
+        "full_count": "25"
+      },
+      {
+        "id": 25388,
+        "mack": "DXG",
+        "ngay_congbo": "2026-09-03T00:00:00.000Z",
+        "value": 178,
+        "value_diff": null,
+        "nguon": "NHSV",
+        "unit": "Tỷ VND",
+        "full_count": "25"
+      },
+      {
+        "id": 25503,
+        "mack": "DXG",
+        "ngay_congbo": "2026-08-28T00:00:00.000Z",
+        "value": 219,
+        "value_diff": -20,
+        "nguon": "Vietcap",
+        "unit": "Tỷ VND",
+        "full_count": "25"
+      },
+      {
+        "id": 25253,
+        "mack": "DXG",
+        "ngay_congbo": "2026-08-24T00:00:00.000Z",
+        "value": 497,
+        "value_diff": 230,
+        "nguon": "VCBS",
+        "unit": "Tỷ VND",
+        "full_count": "25"
+      }
+    ]
+  },
+  "DIG": {
+    "meta": {
+      "total_page": 3,
+      "total_count": 12,
+      "page": 1,
+      "page_size": 5
+    },
+    "result": [
+      {
+        "id": 19203,
+        "mack": "DIG",
+        "ngay_congbo": "2024-11-21T00:00:00.000Z",
+        "value": null,
+        "value_diff": null,
+        "nguon": "DSC",
+        "unit": "Tỷ VND",
+        "full_count": "12"
+      },
+      {
+        "id": 17730,
+        "mack": "DIG",
+        "ngay_congbo": "2024-04-12T00:00:00.000Z",
+        "value": 170,
+        "value_diff": null,
+        "nguon": "ABS",
+        "unit": "Tỷ VND",
+        "full_count": "12"
+      },
+      {
+        "id": 17603,
+        "mack": "DIG",
+        "ngay_congbo": "2024-03-22T00:00:00.000Z",
+        "value": 244,
+        "value_diff": 119,
+        "nguon": "Vietcap",
+        "unit": "Tỷ VND",
+        "full_count": "12"
+      },
+      {
+        "id": 12725,
+        "mack": "DIG",
+        "ngay_congbo": "2022-08-22T00:00:00.000Z",
+        "value": null,
+        "value_diff": null,
+        "nguon": "SSI",
+        "unit": "Tỷ VND",
+        "full_count": "12"
+      },
+      {
+        "id": 8591,
+        "mack": "DIG",
+        "ngay_congbo": "2021-08-16T00:00:00.000Z",
+        "value": null,
+        "value_diff": null,
+        "nguon": "FNS",
+        "unit": "Tỷ VND",
+        "full_count": "12"
+      }
+    ]
+  },
+  "CEO": {
+    "meta": {
+      "total_page": 1,
+      "total_count": 5,
+      "page": 1,
+      "page_size": 5
+    },
+    "result": [
+      {
+        "id": 23489,
+        "mack": "CEO",
+        "ngay_congbo": "2026-05-13T00:00:00.000Z",
+        "value": 359,
+        "value_diff": null,
+        "nguon": "BVSC",
+        "unit": "Tỷ VND",
+        "full_count": "5"
+      },
+      {
+        "id": 17438,
+        "mack": "CEO",
+        "ngay_congbo": "2024-03-07T00:00:00.000Z",
+        "value": null,
+        "value_diff": null,
+        "nguon": "ABS",
+        "unit": "Tỷ VND",
+        "full_count": "5"
+      },
+      {
+        "id": 7910,
+        "mack": "CEO",
+        "ngay_congbo": "2021-06-04T00:00:00.000Z",
+        "value": -67,
+        "value_diff": null,
+        "nguon": "BSC",
+        "unit": "Tỷ VND",
+        "full_count": "5"
+      },
+      {
+        "id": 1512,
+        "mack": "CEO",
+        "ngay_congbo": "2019-07-30T00:00:00.000Z",
+        "value": 302,
+        "value_diff": -115,
+        "nguon": "CTS",
+        "unit": "Tỷ VND",
+        "full_count": "5"
+      },
+      {
+        "id": 1546,
+        "mack": "CEO",
+        "ngay_congbo": "2019-07-22T00:00:00.000Z",
+        "value": 324,
+        "value_diff": null,
+        "nguon": "HSC",
+        "unit": "Tỷ VND",
+        "full_count": "5"
+      }
+    ]
+  },
+  "CII": {
+    "meta": {
+      "total_page": 1,
+      "total_count": 5,
+      "page": 1,
+      "page_size": 5
+    },
+    "result": [
+      {
+        "id": 22082,
+        "mack": "CII",
+        "ngay_congbo": "2026-02-04T00:00:00.000Z",
+        "value": 245,
+        "value_diff": null,
+        "nguon": "BVSC",
+        "unit": "Tỷ VND",
+        "full_count": "5"
+      },
+      {
+        "id": 20817,
+        "mack": "CII",
+        "ngay_congbo": "2025-08-01T00:00:00.000Z",
+        "value": null,
+        "value_diff": null,
+        "nguon": "VCBS",
+        "unit": "Tỷ VND",
+        "full_count": "5"
+      },
+      {
+        "id": 13344,
+        "mack": "CII",
+        "ngay_congbo": "2022-10-26T00:00:00.000Z",
+        "value": 746,
+        "value_diff": 0,
+        "nguon": "Vietcap",
+        "unit": "Tỷ VND",
+        "full_count": "5"
+      },
+      {
+        "id": 12618,
+        "mack": "CII",
+        "ngay_congbo": "2022-08-10T00:00:00.000Z",
+        "value": 839,
+        "value_diff": 94,
+        "nguon": "HSC",
+        "unit": "Tỷ VND",
+        "full_count": "5"
+      },
+      {
+        "id": 7368,
+        "mack": "CII",
+        "ngay_congbo": "2021-04-22T00:00:00.000Z",
+        "value": 544,
+        "value_diff": null,
+        "nguon": "MBS",
+        "unit": "Tỷ VND",
+        "full_count": "5"
+      }
+    ]
+  },
+  "VND": {
+    "meta": {
+      "total_page": 2,
+      "total_count": 8,
+      "page": 1,
+      "page_size": 5
+    },
+    "result": [
+      {
+        "id": 24565,
+        "mack": "VND",
+        "ngay_congbo": "2026-07-29T00:00:00.000Z",
+        "value": 2743,
+        "value_diff": null,
+        "nguon": "TCBS",
+        "unit": "Tỷ VND",
+        "full_count": "8"
+      },
+      {
+        "id": 23499,
+        "mack": "VND",
+        "ngay_congbo": "2026-01-27T00:00:00.000Z",
+        "value": 2481,
+        "value_diff": 0,
+        "nguon": "SBBS",
+        "unit": "Tỷ VND",
+        "full_count": "8"
+      },
+      {
+        "id": 19651,
+        "mack": "VND",
+        "ngay_congbo": "2025-01-24T00:00:00.000Z",
+        "value": null,
+        "value_diff": null,
+        "nguon": "Vietcap",
+        "unit": "Tỷ VND",
+        "full_count": "8"
+      },
+      {
+        "id": 19330,
+        "mack": "VND",
+        "ngay_congbo": "2024-12-05T00:00:00.000Z",
+        "value": null,
+        "value_diff": null,
+        "nguon": "DSC",
+        "unit": "Tỷ VND",
+        "full_count": "8"
+      },
+      {
+        "id": 13599,
+        "mack": "VND",
+        "ngay_congbo": "2022-11-07T00:00:00.000Z",
+        "value": null,
+        "value_diff": null,
+        "nguon": "KIS",
+        "unit": "Tỷ VND",
+        "full_count": "8"
+      }
+    ]
+  },
+  "VIX": {
+    "meta": {
+      "total_page": 1,
+      "total_count": 1,
+      "page": 1,
+      "page_size": 5
+    },
+    "result": [
+      {
+        "id": 25515,
+        "mack": "VIX",
+        "ngay_congbo": "2026-09-14T00:00:00.000Z",
+        "value": 889,
+        "value_diff": -197,
+        "nguon": "TCBS",
+        "unit": "Tỷ VND",
+        "full_count": "1"
+      }
+    ]
+  },
+  "VCI": {
+    "meta": {
+      "total_page": 2,
+      "total_count": 9,
+      "page": 1,
+      "page_size": 5
+    },
+    "result": [
+      {
+        "id": 25175,
+        "mack": "VCI",
+        "ngay_congbo": "2026-08-18T00:00:00.000Z",
+        "value": 1365,
+        "value_diff": -251,
+        "nguon": "NSI",
+        "unit": "Tỷ VND",
+        "full_count": "9"
+      },
+      {
+        "id": 25088,
+        "mack": "VCI",
+        "ngay_congbo": "2026-08-11T00:00:00.000Z",
+        "value": null,
+        "value_diff": null,
+        "nguon": "BETA",
+        "unit": "Tỷ VND",
+        "full_count": "9"
+      },
+      {
+        "id": 24550,
+        "mack": "VCI",
+        "ngay_congbo": "2026-07-29T00:00:00.000Z",
+        "value": 1210,
+        "value_diff": -400,
+        "nguon": "TCBS",
+        "unit": "Tỷ VND",
+        "full_count": "9"
+      },
+      {
+        "id": 23539,
+        "mack": "VCI",
+        "ngay_congbo": "2026-05-26T00:00:00.000Z",
+        "value": 2094,
+        "value_diff": 419,
+        "nguon": "DSC",
+        "unit": "Tỷ VND",
+        "full_count": "9"
+      },
+      {
+        "id": 23502,
+        "mack": "VCI",
+        "ngay_congbo": "2026-01-21T00:00:00.000Z",
+        "value": 1809,
+        "value_diff": 475,
+        "nguon": "SBBS",
+        "unit": "Tỷ VND",
+        "full_count": "9"
+      }
+    ]
+  },
+  "HCM": {
+    "meta": {
+      "total_page": 3,
+      "total_count": 11,
+      "page": 1,
+      "page_size": 5
+    },
+    "result": [
+      {
+        "id": 25301,
+        "mack": "HCM",
+        "ngay_congbo": "2026-08-26T00:00:00.000Z",
+        "value": null,
+        "value_diff": null,
+        "nguon": "BETA",
+        "unit": "Tỷ VND",
+        "full_count": "11"
+      },
+      {
+        "id": 25306,
+        "mack": "HCM",
+        "ngay_congbo": "2026-08-19T00:00:00.000Z",
+        "value": 1714,
+        "value_diff": null,
+        "nguon": "DSC",
+        "unit": "Tỷ VND",
+        "full_count": "11"
+      },
+      {
+        "id": 22913,
+        "mack": "HCM",
+        "ngay_congbo": "2026-04-24T00:00:00.000Z",
+        "value": null,
+        "value_diff": null,
+        "nguon": "VPBS",
+        "unit": "Tỷ VND",
+        "full_count": "11"
+      },
+      {
+        "id": 23181,
+        "mack": "HCM",
+        "ngay_congbo": "2026-04-24T00:00:00.000Z",
+        "value": null,
+        "value_diff": null,
+        "nguon": "CSI",
+        "unit": "Tỷ VND",
+        "full_count": "11"
+      },
+      {
+        "id": 23312,
+        "mack": "HCM",
+        "ngay_congbo": "2026-04-23T00:00:00.000Z",
+        "value": null,
+        "value_diff": null,
+        "nguon": "BMSC",
+        "unit": "Tỷ VND",
+        "full_count": "11"
+      }
+    ]
+  },
+  "BSI": {
+    "meta": {
+      "total_page": 1,
+      "total_count": 2,
+      "page": 1,
+      "page_size": 5
+    },
+    "result": [
+      {
+        "id": 22651,
+        "mack": "BSI",
+        "ngay_congbo": "2026-03-31T00:00:00.000Z",
+        "value": null,
+        "value_diff": null,
+        "nguon": "ABS",
+        "unit": "Tỷ VND",
+        "full_count": "2"
+      },
+      {
+        "id": 15427,
+        "mack": "BSI",
+        "ngay_congbo": "2023-04-28T00:00:00.000Z",
+        "value": 322,
+        "value_diff": null,
+        "nguon": "DSC",
+        "unit": "Tỷ VND",
+        "full_count": "2"
+      }
+    ]
+  },
+  "FTS": {
+    "meta": {
+      "total_page": 1,
+      "total_count": 2,
+      "page": 1,
+      "page_size": 5
+    },
+    "result": [
+      {
+        "id": 19467,
+        "mack": "FTS",
+        "ngay_congbo": "2024-12-24T00:00:00.000Z",
+        "value": null,
+        "value_diff": null,
+        "nguon": "DSC",
+        "unit": "Tỷ VND",
+        "full_count": "2"
+      },
+      {
+        "id": 7015,
+        "mack": "FTS",
+        "ngay_congbo": "2021-03-16T00:00:00.000Z",
+        "value": 269,
+        "value_diff": null,
+        "nguon": "CTS",
+        "unit": "Tỷ VND",
+        "full_count": "2"
+      }
+    ]
+  },
+  "CTS": {
+    "meta": {
+      "total_page": 1,
+      "total_count": 1,
+      "page": 1,
+      "page_size": 5
+    },
+    "result": [
+      {
+        "id": 25153,
+        "mack": "CTS",
+        "ngay_congbo": "2026-08-17T00:00:00.000Z",
+        "value": 175,
+        "value_diff": null,
+        "nguon": "TCBS",
+        "unit": "Tỷ VND",
+        "full_count": "1"
+      }
+    ]
+  },
+  "PVD": {
+    "meta": {
+      "total_page": 6,
+      "total_count": 28,
+      "page": 1,
+      "page_size": 5
+    },
+    "result": [
+      {
+        "id": 25492,
+        "mack": "PVD",
+        "ngay_congbo": "2026-09-14T00:00:00.000Z",
+        "value": null,
+        "value_diff": null,
+        "nguon": "BSC",
+        "unit": "Tỷ VND",
+        "full_count": "28"
+      },
+      {
+        "id": 25475,
+        "mack": "PVD",
+        "ngay_congbo": "2026-09-11T00:00:00.000Z",
+        "value": 1200,
+        "value_diff": -151,
+        "nguon": "NHSV",
+        "unit": "Tỷ VND",
+        "full_count": "28"
+      },
+      {
+        "id": 25430,
+        "mack": "PVD",
+        "ngay_congbo": "2026-09-08T00:00:00.000Z",
+        "value": 1084,
+        "value_diff": -290,
+        "nguon": "SSI",
+        "unit": "Tỷ VND",
+        "full_count": "28"
+      },
+      {
+        "id": 25324,
+        "mack": "PVD",
+        "ngay_congbo": "2026-08-21T00:00:00.000Z",
+        "value": 1045,
+        "value_diff": null,
+        "nguon": "Vietcap",
+        "unit": "Tỷ VND",
+        "full_count": "28"
+      },
+      {
+        "id": 25333,
+        "mack": "PVD",
+        "ngay_congbo": "2026-08-14T00:00:00.000Z",
+        "value": null,
+        "value_diff": null,
+        "nguon": "VPBS",
+        "unit": "Tỷ VND",
+        "full_count": "28"
+      }
+    ]
+  },
+  "PVS": {
+    "meta": {
+      "total_page": 7,
+      "total_count": 31,
+      "page": 1,
+      "page_size": 5
+    },
+    "result": [
+      {
+        "id": 25562,
+        "mack": "PVS",
+        "ngay_congbo": "2026-09-17T00:00:00.000Z",
+        "value": 2209,
+        "value_diff": 782,
+        "nguon": "VCBS",
+        "unit": "Tỷ VND",
+        "full_count": "31"
+      },
+      {
+        "id": 25249,
+        "mack": "PVS",
+        "ngay_congbo": "2026-08-24T00:00:00.000Z",
+        "value": 1875,
+        "value_diff": null,
+        "nguon": "BSC",
+        "unit": "Tỷ VND",
+        "full_count": "31"
+      },
+      {
+        "id": 25115,
+        "mack": "PVS",
+        "ngay_congbo": "2026-08-17T00:00:00.000Z",
+        "value": null,
+        "value_diff": null,
+        "nguon": "KIS",
+        "unit": "Tỷ VND",
+        "full_count": "31"
+      },
+      {
+        "id": 25327,
+        "mack": "PVS",
+        "ngay_congbo": "2026-08-14T00:00:00.000Z",
+        "value": null,
+        "value_diff": null,
+        "nguon": "VPBS",
+        "unit": "Tỷ VND",
+        "full_count": "31"
+      },
+      {
+        "id": 25084,
+        "mack": "PVS",
+        "ngay_congbo": "2026-08-13T00:00:00.000Z",
+        "value": null,
+        "value_diff": null,
+        "nguon": "BETA",
+        "unit": "Tỷ VND",
+        "full_count": "31"
+      }
+    ]
+  },
+  "PVT": {
+    "meta": {
+      "total_page": 7,
+      "total_count": 32,
+      "page": 1,
+      "page_size": 5
+    },
+    "result": [
+      {
+        "id": 25560,
+        "mack": "PVT",
+        "ngay_congbo": "2026-09-17T00:00:00.000Z",
+        "value": 1512,
+        "value_diff": 393,
+        "nguon": "MBS",
+        "unit": "Tỷ VND",
+        "full_count": "32"
+      },
+      {
+        "id": 25500,
+        "mack": "PVT",
+        "ngay_congbo": "2026-09-11T00:00:00.000Z",
+        "value": 1678,
+        "value_diff": 400,
+        "nguon": "SSI",
+        "unit": "Tỷ VND",
+        "full_count": "32"
+      },
+      {
+        "id": 25420,
+        "mack": "PVT",
+        "ngay_congbo": "2026-09-08T00:00:00.000Z",
+        "value": 1635,
+        "value_diff": 215,
+        "nguon": "BSC",
+        "unit": "Tỷ VND",
+        "full_count": "32"
+      },
+      {
+        "id": 25337,
+        "mack": "PVT",
+        "ngay_congbo": "2026-08-26T00:00:00.000Z",
+        "value": 1548,
+        "value_diff": 525,
+        "nguon": "BVSC",
+        "unit": "Tỷ VND",
+        "full_count": "32"
+      },
+      {
+        "id": 25131,
+        "mack": "PVT",
+        "ngay_congbo": "2026-08-13T00:00:00.000Z",
+        "value": 1625,
+        "value_diff": null,
+        "nguon": "Vietcap",
+        "unit": "Tỷ VND",
+        "full_count": "32"
+      }
+    ]
+  },
+  "BSR": {
+    "meta": {
+      "total_page": 6,
+      "total_count": 28,
+      "page": 1,
+      "page_size": 5
+    },
+    "result": [
+      {
+        "id": 25585,
+        "mack": "BSR",
+        "ngay_congbo": "2026-09-11T00:00:00.000Z",
+        "value": 18056,
+        "value_diff": 7401,
+        "nguon": "KBSV",
+        "unit": "Tỷ VND",
+        "full_count": "28"
+      },
+      {
+        "id": 25359,
+        "mack": "BSR",
+        "ngay_congbo": "2026-09-03T00:00:00.000Z",
+        "value": 24602,
+        "value_diff": 19445,
+        "nguon": "PHS",
+        "unit": "Tỷ VND",
+        "full_count": "28"
+      },
+      {
+        "id": 25293,
+        "mack": "BSR",
+        "ngay_congbo": "2026-08-25T00:00:00.000Z",
+        "value": 24665,
+        "value_diff": 16538,
+        "nguon": "BVSC",
+        "unit": "Tỷ VND",
+        "full_count": "28"
+      },
+      {
+        "id": 25296,
+        "mack": "BSR",
+        "ngay_congbo": "2026-08-25T00:00:00.000Z",
+        "value": null,
+        "value_diff": null,
+        "nguon": "KIS",
+        "unit": "Tỷ VND",
+        "full_count": "28"
+      },
+      {
+        "id": 25288,
+        "mack": "BSR",
+        "ngay_congbo": "2026-08-20T00:00:00.000Z",
+        "value": null,
+        "value_diff": null,
+        "nguon": "AGRISECO",
+        "unit": "Tỷ VND",
+        "full_count": "28"
+      }
+    ]
+  }
+}

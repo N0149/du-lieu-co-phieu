@@ -1,0 +1,158 @@
+{
+  "meta": {
+    "group": "Sản xuất và Dịch vụ",
+    "groupKey": "sanxuatvadichvu",
+    "name": "PMI Sản xuất",
+    "slug": "pmi-san-xuat",
+    "apiPath": "sanxuatvadichvu/pmi",
+    "defaultTimeFrame": "monthly",
+    "defaultValueType": "value",
+    "supportedTimeFrames": [
+      "monthly"
+    ],
+    "supportedValueTypes": [
+      "value"
+    ],
+    "unit": "Điểm",
+    "description": "Chỉ số nhà quản trị mua hàng PMI lĩnh vực sản xuất Việt Nam (ngưỡng 50 điểm).",
+    "updatedAt": "2026-09-19T10:14:33.370Z",
+    "latestPeriod": "08-2026",
+    "latestValue": 53.3
+  },
+  "datasets": {
+    "monthly": {
+      "value": {
+        "title": "PMI Sản xuất",
+        "headers": [
+          "08-2026",
+          "07-2026",
+          "06-2026",
+          "05-2026",
+          "04-2026",
+          "03-2026",
+          "02-2026",
+          "01-2026",
+          "12-2025",
+          "11-2025",
+          "10-2025",
+          "09-2025",
+          "08-2025",
+          "07-2025",
+          "06-2025",
+          "05-2025",
+          "04-2025",
+          "03-2025",
+          "02-2025"
+        ],
+        "parent": [
+          {
+            "title": "PMI SẢN XUẤT",
+            "child": [
+              {
+                "id": "265_giatri",
+                "column_name": "giatri",
+                "table_name": "265",
+                "name": "PMI",
+                "hasSub": false,
+                "level": 3,
+                "heading": 3,
+                "open": null,
+                "dateType": "thang",
+                "yAxis": 6,
+                "data": [
+                  [
+                    1788134400000,
+                    53.3
+                  ],
+                  [
+                    1785456000000,
+                    52.9
+                  ],
+                  [
+                    1782777600000,
+                    51.8
+                  ],
+                  [
+                    1780185600000,
+                    52.8
+                  ],
+                  [
+                    1777507200000,
+                    50.5
+                  ],
+                  [
+                    1774915200000,
+                    51.2
+                  ],
+                  [
+                    1772236800000,
+                    54.3
+                  ],
+                  [
+                    1769817600000,
+                    52.5
+                  ],
+                  [
+                    1767139200000,
+                    53
+                  ],
+                  [
+                    1764460800000,
+                    53.8
+                  ],
+                  [
+                    1761868800000,
+                    54.5
+                  ],
+                  [
+                    1759190400000,
+                    50.4
+                  ],
+                  [
+                    1756598400000,
+                    50.4
+                  ],
+                  [
+                    1753920000000,
+                    52.4
+                  ],
+                  [
+                    1751241600000,
+                    48.9
+                  ],
+                  [
+                    1748649600000,
+                    49.8
+                  ],
+                  [
+                    1745971200000,
+                    45.6
+                  ],
+                  [
+                    1743379200000,
+                    50.5
+                  ],
+                  [
+                    1740700800000,
+                    49.2
+                  ]
+                ],
+                "time_frame": "monthly",
+                "lingo": {
+                  "name": "PMI - Chỉ số sản xuất",
+                  "unit": "Điểm",
+                  "description": "Chỉ số PMI Sản xuất Việt Nam (Purchasing Managers' Index) là chỉ số tổng hợp đo lường tình trạng sức khỏe của ngành sản xuất. PMI trên 50 điểm cho thấy sự mở rộng so với tháng trước, dưới 50 điểm là thu hẹp, và 50 điểm là không thay đổi.\n\nPMI được thống kê dựa trên khảo sát hàng tháng với các nhà quản lý mua hàng về các yếu tố như sản lượng, đơn hàng mới, việc làm, tồn kho và giá cả. Mỗi yếu tố được gán trọng số và tổng hợp lại để tạo ra chỉ số PMI duy nhất, phản ánh bức tranh toàn cảnh về hoạt động sản xuất.",
+                  "frequency": "Ngày 1 hàng tháng",
+                  "last_updated": "2026-08-03T05:14:49.283Z",
+                  "source": "S&P Global",
+                  "note": null,
+                  "related_blog": null
+                }
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

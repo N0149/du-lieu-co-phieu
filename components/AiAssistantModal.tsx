@@ -338,7 +338,7 @@ export function AiAssistantModal({ open, onClose }: AiAssistantModalProps) {
                       rel="noopener noreferrer"
                       className="inline-flex items-center gap-1.5 rounded-md bg-emerald-600 px-3 py-1.5 text-xs font-semibold text-white transition-colors hover:bg-emerald-700"
                     >
-                      <MessageSquare className="size-3.5" /> Liên hệ Zalo: 0983.627.018 (Nguyễn Trung Nhật)
+                      <MessageSquare className="size-3.5" /> Liên hệ Zalo: 0983.627.018
                     </a>
                   </div>
                 </div>

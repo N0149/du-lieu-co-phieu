@@ -1,0 +1,2840 @@
+{
+  "updatedAt": "2026-09-19T10:35:30.419Z",
+  "data": [
+    {
+      "replace": "VIC",
+      "close": 241200,
+      "changedratio": 0,
+      "kl_giaodich": -1327790,
+      "gt_muarong": -319.90427
+    },
+    {
+      "replace": "SHB",
+      "close": 11800,
+      "changedratio": 1.72,
+      "kl_giaodich": 18758170,
+      "gt_muarong": 220.98651999999998
+    },
+    {
+      "replace": "HPG",
+      "close": 21550,
+      "changedratio": 1.65,
+      "kl_giaodich": 11631070,
+      "gt_muarong": 208.52051500000002
+    },
+    {
+      "replace": "STB",
+      "close": 78200,
+      "changedratio": 2.62,
+      "kl_giaodich": 2581130,
+      "gt_muarong": 201.67012000000003
+    },
+    {
+      "replace": "NVL",
+      "close": 12800,
+      "changedratio": 2.4,
+      "kl_giaodich": 15786710,
+      "gt_muarong": 201.28225999999998
+    },
+    {
+      "replace": "TCB",
+      "close": 31600,
+      "changedratio": -3.22,
+      "kl_giaodich": -6245000,
+      "gt_muarong": -198.881345
+    },
+    {
+      "replace": "MCH",
+      "close": 143000,
+      "changedratio": -1.79,
+      "kl_giaodich": 1146600,
+      "gt_muarong": 163.93053999999998
+    },
+    {
+      "replace": "CTG",
+      "close": 30250,
+      "changedratio": -3.66,
+      "kl_giaodich": -5328200,
+      "gt_muarong": -162.39992999999998
+    },
+    {
+      "replace": "HDB",
+      "close": 27500,
+      "changedratio": -0.36,
+      "kl_giaodich": 5003650,
+      "gt_muarong": 139.44138
+    },
+    {
+      "replace": "VHM",
+      "close": 71000,
+      "changedratio": -0.42,
+      "kl_giaodich": -903630,
+      "gt_muarong": -127.00040000000001
+    },
+    {
+      "replace": "SSI",
+      "close": 21400,
+      "changedratio": 1.18,
+      "kl_giaodich": 5890240,
+      "gt_muarong": 126.16686
+    },
+    {
+      "replace": "VJC",
+      "close": 129000,
+      "changedratio": 1.74,
+      "kl_giaodich": 979550,
+      "gt_muarong": 126.16582000000001
+    },
+    {
+      "replace": "VPB",
+      "close": 27450,
+      "changedratio": -2.66,
+      "kl_giaodich": -4253580,
+      "gt_muarong": -119.32176000000004
+    },
+    {
+      "replace": "VCK",
+      "close": 29700,
+      "changedratio": 3.3,
+      "kl_giaodich": 3944500,
+      "gt_muarong": 116.70586500000002
+    },
+    {
+      "replace": "MBB",
+      "close": 19900,
+      "changedratio": -3.16,
+      "kl_giaodich": -5182250,
+      "gt_muarong": -103.62377500000001
+    },
+    {
+      "replace": "SSB",
+      "close": 24100,
+      "changedratio": 2.77,
+      "kl_giaodich": 4292700,
+      "gt_muarong": 102.94838000000001
+    },
+    {
+      "replace": "VNM",
+      "close": 61200,
+      "changedratio": 1.66,
+      "kl_giaodich": 1664520,
+      "gt_muarong": 101.81897
+    },
+    {
+      "replace": "MSN",
+      "close": 68400,
+      "changedratio": 1.03,
+      "kl_giaodich": 1692580,
+      "gt_muarong": 87.24284000000003
+    },
+    {
+      "replace": "FPT",
+      "close": 71700,
+      "changedratio": -3.5,
+      "kl_giaodich": 1810510,
+      "gt_muarong": 71.54800999999998
+    },
+    {
+      "replace": "VCB",
+      "close": 59900,
+      "changedratio": 0.5,
+      "kl_giaodich": 948420,
+      "gt_muarong": 57.04672999999997
+    },
+    {
+      "replace": "VCI",
+      "close": 20650,
+      "changedratio": 3.25,
+      "kl_giaodich": 2437780,
+      "gt_muarong": 50.405045
+    },
+    {
+      "replace": "ACB",
+      "close": 21900,
+      "changedratio": -3.95,
+      "kl_giaodich": -2237500,
+      "gt_muarong": -49.136525000000006
+    },
+    {
+      "replace": "PNJ",
+      "close": 36750,
+      "changedratio": 0,
+      "kl_giaodich": 7257150,
+      "gt_muarong": -48.549835
+    },
+    {
+      "replace": "GEX",
+      "close": 24400,
+      "changedratio": 3.83,
+      "kl_giaodich": 2589060,
+      "gt_muarong": 44.95492
+    },
+    {
+      "replace": "HCM",
+      "close": 25500,
+      "changedratio": 0.79,
+      "kl_giaodich": 1542200,
+      "gt_muarong": 39.34585
+    },
+    {
+      "replace": "BSR",
+      "close": 30200,
+      "changedratio": -1.63,
+      "kl_giaodich": -1104990,
+      "gt_muarong": -32.665285
+    },
+    {
+      "replace": "VPL",
+      "close": 81200,
+      "changedratio": -5.03,
+      "kl_giaodich": -328750,
+      "gt_muarong": -27.013440000000003
+    },
+    {
+      "replace": "MSB",
+      "close": 12900,
+      "changedratio": 0,
+      "kl_giaodich": 1994600,
+      "gt_muarong": 26.222215
+    },
+    {
+      "replace": "DXG",
+      "close": 10600,
+      "changedratio": -1.85,
+      "kl_giaodich": -2403900,
+      "gt_muarong": -25.602445
+    },
+    {
+      "replace": "VPI",
+      "close": 62900,
+      "changedratio": -0.32,
+      "kl_giaodich": -327600,
+      "gt_muarong": -20.5143
+    },
+    {
+      "replace": "VRE",
+      "close": 25500,
+      "changedratio": -1.16,
+      "kl_giaodich": -798610,
+      "gt_muarong": -20.405029999999996
+    },
+    {
+      "replace": "DGW",
+      "close": 45500,
+      "changedratio": 0.22,
+      "kl_giaodich": 425200,
+      "gt_muarong": 19.595374999999997
+    },
+    {
+      "replace": "FRT",
+      "close": 130900,
+      "changedratio": 0.69,
+      "kl_giaodich": -138290,
+      "gt_muarong": -18.072699999999998
+    },
+    {
+      "replace": "TPB",
+      "close": 14100,
+      "changedratio": 0.36,
+      "kl_giaodich": -1243280,
+      "gt_muarong": -17.466445
+    },
+    {
+      "replace": "KDH",
+      "close": 15800,
+      "changedratio": 1.28,
+      "kl_giaodich": -1095220,
+      "gt_muarong": -17.29524
+    },
+    {
+      "replace": "PLX",
+      "close": 37400,
+      "changedratio": -1.06,
+      "kl_giaodich": -442800,
+      "gt_muarong": -16.620705
+    },
+    {
+      "replace": "TCX",
+      "close": 31500,
+      "changedratio": -0.94,
+      "kl_giaodich": -504900,
+      "gt_muarong": -16.021300000000004
+    },
+    {
+      "replace": "VSC",
+      "close": 13350,
+      "changedratio": 1.14,
+      "kl_giaodich": -1126700,
+      "gt_muarong": -15.297935
+    },
+    {
+      "replace": "GAS",
+      "close": 88000,
+      "changedratio": -0.68,
+      "kl_giaodich": -172500,
+      "gt_muarong": -15.13942
+    },
+    {
+      "replace": "VND",
+      "close": 15200,
+      "changedratio": 2.7,
+      "kl_giaodich": 952730,
+      "gt_muarong": 14.677715000000006
+    },
+    {
+      "replace": "SBT",
+      "close": 23200,
+      "changedratio": 0.87,
+      "kl_giaodich": 624200,
+      "gt_muarong": 14.485149999999999
+    },
+    {
+      "replace": "GMD",
+      "close": 77300,
+      "changedratio": 0.91,
+      "kl_giaodich": 182700,
+      "gt_muarong": 14.114640000000001
+    },
+    {
+      "replace": "VIX",
+      "close": 13150,
+      "changedratio": 2.33,
+      "kl_giaodich": 1684930,
+      "gt_muarong": 13.961979999999983
+    },
+    {
+      "replace": "VHC",
+      "close": 50100,
+      "changedratio": -1.18,
+      "kl_giaodich": -256900,
+      "gt_muarong": -12.91785
+    },
+    {
+      "replace": "KBC",
+      "close": 26000,
+      "changedratio": 0,
+      "kl_giaodich": -494900,
+      "gt_muarong": -12.856725
+    },
+    {
+      "replace": "PVD",
+      "close": 19200,
+      "changedratio": -0.26,
+      "kl_giaodich": -671000,
+      "gt_muarong": -12.854115
+    },
+    {
+      "replace": "TCH",
+      "close": 11850,
+      "changedratio": 1.28,
+      "kl_giaodich": 1015700,
+      "gt_muarong": 11.993935
+    },
+    {
+      "replace": "LPB",
+      "close": 48000,
+      "changedratio": 1.05,
+      "kl_giaodich": -244700,
+      "gt_muarong": -11.799625000000002
+    },
+    {
+      "replace": "NKG",
+      "close": 9890,
+      "changedratio": -1.1,
+      "kl_giaodich": -1109400,
+      "gt_muarong": -10.998999999999999
+    },
+    {
+      "replace": "HAG",
+      "close": 14050,
+      "changedratio": 0.36,
+      "kl_giaodich": 779500,
+      "gt_muarong": 10.93158
+    },
+    {
+      "replace": "BID",
+      "close": 35750,
+      "changedratio": -2.59,
+      "kl_giaodich": 199940,
+      "gt_muarong": -10.40725999999998
+    },
+    {
+      "replace": "DIG",
+      "close": 10200,
+      "changedratio": 0.99,
+      "kl_giaodich": 912000,
+      "gt_muarong": 9.28458
+    },
+    {
+      "replace": "PDR",
+      "close": 11500,
+      "changedratio": -0.43,
+      "kl_giaodich": 800500,
+      "gt_muarong": 5.75681
+    },
+    {
+      "replace": "BAF",
+      "close": 32050,
+      "changedratio": 0,
+      "kl_giaodich": -169900,
+      "gt_muarong": -5.44184
+    },
+    {
+      "replace": "EIB",
+      "close": 16400,
+      "changedratio": 0.92,
+      "kl_giaodich": -331780,
+      "gt_muarong": -5.386604999999999
+    },
+    {
+      "replace": "VTP",
+      "close": 49100,
+      "changedratio": -0.91,
+      "kl_giaodich": -104250,
+      "gt_muarong": -5.151035
+    },
+    {
+      "replace": "BVH",
+      "close": 68500,
+      "changedratio": -1.3,
+      "kl_giaodich": -74200,
+      "gt_muarong": -5.0802
+    },
+    {
+      "replace": "REE",
+      "close": 47050,
+      "changedratio": 3.86,
+      "kl_giaodich": 104080,
+      "gt_muarong": 4.828995
+    },
+    {
+      "replace": "SAB",
+      "close": 44300,
+      "changedratio": 0,
+      "kl_giaodich": -106900,
+      "gt_muarong": -4.753125
+    },
+    {
+      "replace": "VPX",
+      "close": 23900,
+      "changedratio": -0.21,
+      "kl_giaodich": -188800,
+      "gt_muarong": -4.5191
+    },
+    {
+      "replace": "DMX",
+      "close": 76000,
+      "changedratio": 0.13,
+      "kl_giaodich": 83200,
+      "gt_muarong": -3.6303799999999997
+    },
+    {
+      "replace": "BVB",
+      "close": 11750,
+      "changedratio": 6.82,
+      "kl_giaodich": 318900,
+      "gt_muarong": 3.5692850000000003
+    },
+    {
+      "replace": "PVT",
+      "close": 22800,
+      "changedratio": 0.88,
+      "kl_giaodich": -154970,
+      "gt_muarong": -3.472949999999999
+    },
+    {
+      "replace": "DCM",
+      "close": 33050,
+      "changedratio": 0.76,
+      "kl_giaodich": 91600,
+      "gt_muarong": 3.006170000000001
+    },
+    {
+      "replace": "VCG",
+      "close": 14400,
+      "changedratio": 0,
+      "kl_giaodich": -188140,
+      "gt_muarong": -2.7057650000000004
+    },
+    {
+      "replace": "DPG",
+      "close": 27100,
+      "changedratio": -1.28,
+      "kl_giaodich": -90500,
+      "gt_muarong": -2.44965
+    },
+    {
+      "replace": "MWG",
+      "close": 72500,
+      "changedratio": -0.82,
+      "kl_giaodich": -32100,
+      "gt_muarong": -2.33018
+    },
+    {
+      "replace": "VIB",
+      "close": 13600,
+      "changedratio": 0,
+      "kl_giaodich": 163640,
+      "gt_muarong": 2.2409649999999997
+    },
+    {
+      "replace": "HII",
+      "close": 10600,
+      "changedratio": 2.91,
+      "kl_giaodich": 206900,
+      "gt_muarong": 2.1874000000000002
+    },
+    {
+      "replace": "DBD",
+      "close": 46750,
+      "changedratio": 1.63,
+      "kl_giaodich": 37000,
+      "gt_muarong": 1.73443
+    },
+    {
+      "replace": "KDC",
+      "close": 51100,
+      "changedratio": -0.2,
+      "kl_giaodich": 33400,
+      "gt_muarong": 1.7088499999999998
+    },
+    {
+      "replace": "FTS",
+      "close": 21000,
+      "changedratio": 1.94,
+      "kl_giaodich": 80790,
+      "gt_muarong": 1.69754
+    },
+    {
+      "replace": "HAH",
+      "close": 47950,
+      "changedratio": 0.1,
+      "kl_giaodich": -30800,
+      "gt_muarong": -1.4815449999999997
+    },
+    {
+      "replace": "SIP",
+      "close": 49500,
+      "changedratio": 1.96,
+      "kl_giaodich": -28400,
+      "gt_muarong": -1.41626
+    },
+    {
+      "replace": "VAB",
+      "close": 9250,
+      "changedratio": 2.44,
+      "kl_giaodich": 152200,
+      "gt_muarong": 1.410159
+    },
+    {
+      "replace": "CDC",
+      "close": 20600,
+      "changedratio": 3,
+      "kl_giaodich": 63000,
+      "gt_muarong": 1.277805
+    },
+    {
+      "replace": "NAF",
+      "close": 48000,
+      "changedratio": 0,
+      "kl_giaodich": 23600,
+      "gt_muarong": 1.129415
+    },
+    {
+      "replace": "BFC",
+      "close": 47600,
+      "changedratio": -0.63,
+      "kl_giaodich": -23500,
+      "gt_muarong": -1.11935
+    },
+    {
+      "replace": "POW",
+      "close": 12600,
+      "changedratio": 0,
+      "kl_giaodich": 86550,
+      "gt_muarong": 1.1127000000000002
+    },
+    {
+      "replace": "HSG",
+      "close": 10150,
+      "changedratio": 0.5,
+      "kl_giaodich": 108800,
+      "gt_muarong": 1.1053300000000001
+    },
+    {
+      "replace": "BCM",
+      "close": 40250,
+      "changedratio": -0.49,
+      "kl_giaodich": -26800,
+      "gt_muarong": -1.091295
+    },
+    {
+      "replace": "NAB",
+      "close": 12000,
+      "changedratio": -1.64,
+      "kl_giaodich": -87400,
+      "gt_muarong": -1.071145
+    },
+    {
+      "replace": "GEE",
+      "close": 63900,
+      "changedratio": -1.69,
+      "kl_giaodich": -15770,
+      "gt_muarong": -1.0628400000000005
+    },
+    {
+      "replace": "TLG",
+      "close": 54300,
+      "changedratio": 3.23,
+      "kl_giaodich": -18800,
+      "gt_muarong": -1.04355
+    },
+    {
+      "replace": "AST",
+      "close": 63700,
+      "changedratio": 2.91,
+      "kl_giaodich": 16500,
+      "gt_muarong": 1.03135
+    },
+    {
+      "replace": "DHC",
+      "close": 36550,
+      "changedratio": 2.09,
+      "kl_giaodich": -27100,
+      "gt_muarong": -0.9871449999999999
+    },
+    {
+      "replace": "NT2",
+      "close": 20800,
+      "changedratio": 1.22,
+      "kl_giaodich": 45900,
+      "gt_muarong": 0.9489000000000001
+    },
+    {
+      "replace": "VVS",
+      "close": 82100,
+      "changedratio": 2.11,
+      "kl_giaodich": -10900,
+      "gt_muarong": -0.89018
+    },
+    {
+      "replace": "PAN",
+      "close": 18600,
+      "changedratio": -0.8,
+      "kl_giaodich": -46000,
+      "gt_muarong": -0.8609450000000001
+    },
+    {
+      "replace": "MSH",
+      "close": 30150,
+      "changedratio": 0.67,
+      "kl_giaodich": -28200,
+      "gt_muarong": -0.85141
+    },
+    {
+      "replace": "KOS",
+      "close": 30050,
+      "changedratio": -4.15,
+      "kl_giaodich": 28500,
+      "gt_muarong": 0.8246499999999999
+    },
+    {
+      "replace": "CII",
+      "close": 12900,
+      "changedratio": 0.39,
+      "kl_giaodich": -62900,
+      "gt_muarong": -0.82179
+    },
+    {
+      "replace": "HHP",
+      "close": 17200,
+      "changedratio": 1.18,
+      "kl_giaodich": 48200,
+      "gt_muarong": 0.821705
+    },
+    {
+      "replace": "DPR",
+      "close": 37850,
+      "changedratio": -0.26,
+      "kl_giaodich": -21200,
+      "gt_muarong": -0.80275
+    },
+    {
+      "replace": "DGC",
+      "close": 35950,
+      "changedratio": 1.84,
+      "kl_giaodich": -20700,
+      "gt_muarong": -0.7200449999999989
+    },
+    {
+      "replace": "OCB",
+      "close": 10500,
+      "changedratio": 1.45,
+      "kl_giaodich": 62400,
+      "gt_muarong": 0.6533500000000001
+    },
+    {
+      "replace": "MIG",
+      "close": 15700,
+      "changedratio": 0,
+      "kl_giaodich": -41600,
+      "gt_muarong": -0.6529200000000001
+    },
+    {
+      "replace": "TV2",
+      "close": 25750,
+      "changedratio": 0,
+      "kl_giaodich": -25100,
+      "gt_muarong": -0.64805
+    },
+    {
+      "replace": "FCN",
+      "close": 11200,
+      "changedratio": 2.75,
+      "kl_giaodich": 60100,
+      "gt_muarong": 0.634995
+    },
+    {
+      "replace": "EVF",
+      "close": 11800,
+      "changedratio": 0.85,
+      "kl_giaodich": -52400,
+      "gt_muarong": -0.617115
+    },
+    {
+      "replace": "PHR",
+      "close": 31550,
+      "changedratio": -0.47,
+      "kl_giaodich": -18300,
+      "gt_muarong": -0.57946
+    },
+    {
+      "replace": "DSE",
+      "close": 22500,
+      "changedratio": 0.45,
+      "kl_giaodich": -25700,
+      "gt_muarong": -0.57762
+    },
+    {
+      "replace": "CTR",
+      "close": 73000,
+      "changedratio": -0.14,
+      "kl_giaodich": 7700,
+      "gt_muarong": 0.56939
+    },
+    {
+      "replace": "PVP",
+      "close": 18100,
+      "changedratio": -0.28,
+      "kl_giaodich": -31000,
+      "gt_muarong": -0.564415
+    },
+    {
+      "replace": "SJD",
+      "close": 13950,
+      "changedratio": 0.36,
+      "kl_giaodich": -37300,
+      "gt_muarong": -0.51922
+    },
+    {
+      "replace": "BMP",
+      "close": 143500,
+      "changedratio": -0.14,
+      "kl_giaodich": -3580,
+      "gt_muarong": -0.51821
+    },
+    {
+      "replace": "HVN",
+      "close": 20900,
+      "changedratio": 3.47,
+      "kl_giaodich": -24300,
+      "gt_muarong": -0.5127299999999999
+    },
+    {
+      "replace": "KLB",
+      "close": 12800,
+      "changedratio": 5.79,
+      "kl_giaodich": 41300,
+      "gt_muarong": 0.5105249999999999
+    },
+    {
+      "replace": "VGC",
+      "close": 40500,
+      "changedratio": 1.63,
+      "kl_giaodich": 11700,
+      "gt_muarong": 0.4756799999999999
+    },
+    {
+      "replace": "KHG",
+      "close": 4550,
+      "changedratio": -1.09,
+      "kl_giaodich": -100200,
+      "gt_muarong": -0.457536
+    },
+    {
+      "replace": "TVS",
+      "close": 14300,
+      "changedratio": 0,
+      "kl_giaodich": -31400,
+      "gt_muarong": -0.45517
+    },
+    {
+      "replace": "LPS",
+      "close": 22350,
+      "changedratio": 0.9,
+      "kl_giaodich": 20200,
+      "gt_muarong": 0.45248
+    },
+    {
+      "replace": "DBC",
+      "close": 16050,
+      "changedratio": 0,
+      "kl_giaodich": -27300,
+      "gt_muarong": -0.44009
+    },
+    {
+      "replace": "IJC",
+      "close": 6920,
+      "changedratio": 0.14,
+      "kl_giaodich": 62600,
+      "gt_muarong": 0.434164
+    },
+    {
+      "replace": "SHI",
+      "close": 14450,
+      "changedratio": -0.69,
+      "kl_giaodich": 29200,
+      "gt_muarong": 0.41881
+    },
+    {
+      "replace": "CTD",
+      "close": 59000,
+      "changedratio": 0.34,
+      "kl_giaodich": 6740,
+      "gt_muarong": 0.39704
+    },
+    {
+      "replace": "HDG",
+      "close": 16100,
+      "changedratio": 0.31,
+      "kl_giaodich": -22100,
+      "gt_muarong": -0.35992999999999997
+    },
+    {
+      "replace": "CSV",
+      "close": 20900,
+      "changedratio": 0,
+      "kl_giaodich": 15900,
+      "gt_muarong": 0.334585
+    },
+    {
+      "replace": "BMI",
+      "close": 13950,
+      "changedratio": -1.41,
+      "kl_giaodich": 21600,
+      "gt_muarong": 0.303
+    },
+    {
+      "replace": "ANV",
+      "close": 16000,
+      "changedratio": 0,
+      "kl_giaodich": -15900,
+      "gt_muarong": -0.253535
+    },
+    {
+      "replace": "D2D",
+      "close": 30600,
+      "changedratio": 0.33,
+      "kl_giaodich": 8200,
+      "gt_muarong": 0.25076
+    },
+    {
+      "replace": "NLG",
+      "close": 24100,
+      "changedratio": 1.47,
+      "kl_giaodich": -9700,
+      "gt_muarong": -0.234195
+    },
+    {
+      "replace": "HDC",
+      "close": 11450,
+      "changedratio": 0,
+      "kl_giaodich": -20200,
+      "gt_muarong": -0.23287499999999997
+    },
+    {
+      "replace": "NCT",
+      "close": 84400,
+      "changedratio": 0.48,
+      "kl_giaodich": -2600,
+      "gt_muarong": -0.2187
+    },
+    {
+      "replace": "CMG",
+      "close": 23100,
+      "changedratio": 0.43,
+      "kl_giaodich": 9400,
+      "gt_muarong": 0.21713499999999997
+    },
+    {
+      "replace": "TCO",
+      "close": 10700,
+      "changedratio": -3.6,
+      "kl_giaodich": 19700,
+      "gt_muarong": 0.21255
+    },
+    {
+      "replace": "TNH",
+      "close": 6650,
+      "changedratio": -5,
+      "kl_giaodich": -27400,
+      "gt_muarong": -0.19227699999999998
+    },
+    {
+      "replace": "EVG",
+      "close": 4160,
+      "changedratio": 2.21,
+      "kl_giaodich": 42800,
+      "gt_muarong": 0.177859
+    },
+    {
+      "replace": "CTI",
+      "close": 15650,
+      "changedratio": -1.26,
+      "kl_giaodich": -11150,
+      "gt_muarong": -0.17368500000000003
+    },
+    {
+      "replace": "HHV",
+      "close": 9410,
+      "changedratio": 0.11,
+      "kl_giaodich": -17300,
+      "gt_muarong": -0.16417400000000001
+    },
+    {
+      "replace": "TDP",
+      "close": 29800,
+      "changedratio": 0.68,
+      "kl_giaodich": 4700,
+      "gt_muarong": 0.13327499999999998
+    },
+    {
+      "replace": "SCS",
+      "close": 44800,
+      "changedratio": 0,
+      "kl_giaodich": -2900,
+      "gt_muarong": -0.129805
+    },
+    {
+      "replace": "AAA",
+      "close": 7260,
+      "changedratio": -0.55,
+      "kl_giaodich": 16900,
+      "gt_muarong": 0.12195699999999998
+    },
+    {
+      "replace": "FMC",
+      "close": 32800,
+      "changedratio": -0.3,
+      "kl_giaodich": -3600,
+      "gt_muarong": -0.11844
+    },
+    {
+      "replace": "CTS",
+      "close": 21950,
+      "changedratio": 0,
+      "kl_giaodich": -5200,
+      "gt_muarong": -0.11749499999999999
+    },
+    {
+      "replace": "VOS",
+      "close": 11950,
+      "changedratio": -1.65,
+      "kl_giaodich": -9200,
+      "gt_muarong": -0.11587000000000003
+    },
+    {
+      "replace": "LBM",
+      "close": 28000,
+      "changedratio": 0.36,
+      "kl_giaodich": 4000,
+      "gt_muarong": 0.111915
+    },
+    {
+      "replace": "PC1",
+      "close": 20050,
+      "changedratio": 0,
+      "kl_giaodich": -5400,
+      "gt_muarong": -0.1113249999999999
+    },
+    {
+      "replace": "DPM",
+      "close": 22850,
+      "changedratio": -0.22,
+      "kl_giaodich": 5000,
+      "gt_muarong": 0.10313000000000017
+    },
+    {
+      "replace": "NTL",
+      "close": 12600,
+      "changedratio": 0.4,
+      "kl_giaodich": 8100,
+      "gt_muarong": 0.1021
+    },
+    {
+      "replace": "CTF",
+      "close": 21100,
+      "changedratio": 0,
+      "kl_giaodich": 4800,
+      "gt_muarong": 0.097555
+    },
+    {
+      "replace": "HHS",
+      "close": 10050,
+      "changedratio": 0.9,
+      "kl_giaodich": -9400,
+      "gt_muarong": -0.093568
+    },
+    {
+      "replace": "SMB",
+      "close": 40500,
+      "changedratio": 0,
+      "kl_giaodich": -2200,
+      "gt_muarong": -0.088685
+    },
+    {
+      "replace": "TCM",
+      "close": 16200,
+      "changedratio": -0.31,
+      "kl_giaodich": -5200,
+      "gt_muarong": -0.084755
+    },
+    {
+      "replace": "PTB",
+      "close": 29800,
+      "changedratio": 1.19,
+      "kl_giaodich": -2900,
+      "gt_muarong": -0.08412
+    },
+    {
+      "replace": "LCG",
+      "close": 6780,
+      "changedratio": -0.29,
+      "kl_giaodich": 12200,
+      "gt_muarong": 0.083438
+    },
+    {
+      "replace": "LHG",
+      "close": 26800,
+      "changedratio": 0,
+      "kl_giaodich": 3100,
+      "gt_muarong": 0.08290499999999999
+    },
+    {
+      "replace": "TNI",
+      "close": 5250,
+      "changedratio": -0.94,
+      "kl_giaodich": -15400,
+      "gt_muarong": -0.08105599999999999
+    },
+    {
+      "replace": "HAX",
+      "close": 8700,
+      "changedratio": 2.84,
+      "kl_giaodich": 9000,
+      "gt_muarong": 0.076416
+    },
+    {
+      "replace": "ELC",
+      "close": 13450,
+      "changedratio": -0.37,
+      "kl_giaodich": -5600,
+      "gt_muarong": -0.07476999999999999
+    },
+    {
+      "replace": "VDS",
+      "close": 10900,
+      "changedratio": 0,
+      "kl_giaodich": -6500,
+      "gt_muarong": -0.071765
+    },
+    {
+      "replace": "HVH",
+      "close": 10650,
+      "changedratio": 1.91,
+      "kl_giaodich": 6600,
+      "gt_muarong": 0.07086
+    },
+    {
+      "replace": "HSL",
+      "close": 9100,
+      "changedratio": 2.36,
+      "kl_giaodich": -7500,
+      "gt_muarong": -0.068368
+    },
+    {
+      "replace": "SZC",
+      "close": 17850,
+      "changedratio": 1.13,
+      "kl_giaodich": 3800,
+      "gt_muarong": 0.06687
+    },
+    {
+      "replace": "DVP",
+      "close": 73400,
+      "changedratio": 0.27,
+      "kl_giaodich": 870,
+      "gt_muarong": 0.06552
+    },
+    {
+      "replace": "HT1",
+      "close": 11800,
+      "changedratio": 0,
+      "kl_giaodich": -5500,
+      "gt_muarong": -0.065355
+    },
+    {
+      "replace": "ORS",
+      "close": 13400,
+      "changedratio": 0,
+      "kl_giaodich": -4800,
+      "gt_muarong": -0.06528
+    },
+    {
+      "replace": "BWE",
+      "close": 42100,
+      "changedratio": 0.48,
+      "kl_giaodich": -1520,
+      "gt_muarong": -0.062865
+    },
+    {
+      "replace": "DHA",
+      "close": 51200,
+      "changedratio": -4.66,
+      "kl_giaodich": -1100,
+      "gt_muarong": -0.06003
+    },
+    {
+      "replace": "SBG",
+      "close": 13750,
+      "changedratio": -0.72,
+      "kl_giaodich": 4300,
+      "gt_muarong": 0.05924
+    },
+    {
+      "replace": "APH",
+      "close": 6910,
+      "changedratio": 1.02,
+      "kl_giaodich": 8500,
+      "gt_muarong": 0.058547
+    },
+    {
+      "replace": "TCL",
+      "close": 29200,
+      "changedratio": 0.34,
+      "kl_giaodich": -2000,
+      "gt_muarong": -0.0584
+    },
+    {
+      "replace": "MZG",
+      "close": 11850,
+      "changedratio": -2.07,
+      "kl_giaodich": 6200,
+      "gt_muarong": 0.05769499999999994
+    },
+    {
+      "replace": "DSN",
+      "close": 37250,
+      "changedratio": -0.13,
+      "kl_giaodich": 1400,
+      "gt_muarong": 0.05124
+    },
+    {
+      "replace": "TAL",
+      "close": 22600,
+      "changedratio": 1.57,
+      "kl_giaodich": -2100,
+      "gt_muarong": -0.047455
+    },
+    {
+      "replace": "BIC",
+      "close": 21400,
+      "changedratio": 1.66,
+      "kl_giaodich": 2100,
+      "gt_muarong": 0.04432
+    },
+    {
+      "replace": "PET",
+      "close": 38900,
+      "changedratio": 0.65,
+      "kl_giaodich": -1000,
+      "gt_muarong": -0.0389
+    },
+    {
+      "replace": "GEG",
+      "close": 12350,
+      "changedratio": 0.41,
+      "kl_giaodich": 3100,
+      "gt_muarong": 0.03813
+    },
+    {
+      "replace": "GIL",
+      "close": 8370,
+      "changedratio": -0.95,
+      "kl_giaodich": -4400,
+      "gt_muarong": -0.03698
+    },
+    {
+      "replace": "HQC",
+      "close": 1920,
+      "changedratio": 0.52,
+      "kl_giaodich": 19300,
+      "gt_muarong": 0.036676999999999994
+    },
+    {
+      "replace": "DHG",
+      "close": 90500,
+      "changedratio": 0.56,
+      "kl_giaodich": 400,
+      "gt_muarong": 0.03619
+    },
+    {
+      "replace": "APG",
+      "close": 4600,
+      "changedratio": 0.66,
+      "kl_giaodich": 6800,
+      "gt_muarong": 0.031088
+    },
+    {
+      "replace": "GEL",
+      "close": 29000,
+      "changedratio": -0.34,
+      "kl_giaodich": 400,
+      "gt_muarong": -0.030085000000000583
+    },
+    {
+      "replace": "HPA",
+      "close": 27000,
+      "changedratio": 0.37,
+      "kl_giaodich": -1100,
+      "gt_muarong": -0.029845
+    },
+    {
+      "replace": "VCF",
+      "close": 293900,
+      "changedratio": -0.68,
+      "kl_giaodich": 100,
+      "gt_muarong": 0.0289
+    },
+    {
+      "replace": "ASM",
+      "close": 5220,
+      "changedratio": 1.16,
+      "kl_giaodich": -5200,
+      "gt_muarong": -0.027203
+    },
+    {
+      "replace": "CSM",
+      "close": 12450,
+      "changedratio": -0.4,
+      "kl_giaodich": -2000,
+      "gt_muarong": -0.02475
+    },
+    {
+      "replace": "CLC",
+      "close": 54000,
+      "changedratio": 0,
+      "kl_giaodich": -420,
+      "gt_muarong": -0.0216
+    },
+    {
+      "replace": "CRE",
+      "close": 6410,
+      "changedratio": 0.16,
+      "kl_giaodich": -3100,
+      "gt_muarong": -0.019839
+    },
+    {
+      "replace": "TMS",
+      "close": 38100,
+      "changedratio": 6.13,
+      "kl_giaodich": 500,
+      "gt_muarong": 0.01904
+    },
+    {
+      "replace": "SMC",
+      "close": 10000,
+      "changedratio": 1.01,
+      "kl_giaodich": 1900,
+      "gt_muarong": 0.018998
+    },
+    {
+      "replace": "SCR",
+      "close": 4180,
+      "changedratio": 0,
+      "kl_giaodich": -4500,
+      "gt_muarong": -0.018907
+    },
+    {
+      "replace": "VNL",
+      "close": 18850,
+      "changedratio": 0,
+      "kl_giaodich": 1000,
+      "gt_muarong": 0.0189
+    },
+    {
+      "replace": "BCE",
+      "close": 5610,
+      "changedratio": 0.54,
+      "kl_giaodich": 3100,
+      "gt_muarong": 0.017298
+    },
+    {
+      "replace": "JVC",
+      "close": 2780,
+      "changedratio": -0.36,
+      "kl_giaodich": 6200,
+      "gt_muarong": 0.017242
+    },
+    {
+      "replace": "TSA",
+      "close": 15300,
+      "changedratio": -0.65,
+      "kl_giaodich": -1100,
+      "gt_muarong": -0.016884999999999997
+    },
+    {
+      "replace": "PPC",
+      "close": 8780,
+      "changedratio": 0,
+      "kl_giaodich": 1900,
+      "gt_muarong": 0.016704
+    },
+    {
+      "replace": "LDG",
+      "close": 2570,
+      "changedratio": 6.64,
+      "kl_giaodich": 6200,
+      "gt_muarong": 0.015371
+    },
+    {
+      "replace": "IMP",
+      "close": 38050,
+      "changedratio": 3.12,
+      "kl_giaodich": 400,
+      "gt_muarong": 0.01502
+    },
+    {
+      "replace": "DSC",
+      "close": 10200,
+      "changedratio": 0.49,
+      "kl_giaodich": -1500,
+      "gt_muarong": -0.014985
+    },
+    {
+      "replace": "SGR",
+      "close": 10300,
+      "changedratio": 1.98,
+      "kl_giaodich": 1300,
+      "gt_muarong": 0.01312
+    },
+    {
+      "replace": "AGR",
+      "close": 12900,
+      "changedratio": 0,
+      "kl_giaodich": -1000,
+      "gt_muarong": -0.012944999999999998
+    },
+    {
+      "replace": "VTO",
+      "close": 10550,
+      "changedratio": -1.4,
+      "kl_giaodich": -1100,
+      "gt_muarong": -0.01178
+    },
+    {
+      "replace": "PAC",
+      "close": 14500,
+      "changedratio": 0.69,
+      "kl_giaodich": 800,
+      "gt_muarong": 0.011620000000000005
+    },
+    {
+      "replace": "TCI",
+      "close": 9700,
+      "changedratio": 1.04,
+      "kl_giaodich": -1200,
+      "gt_muarong": -0.011242
+    },
+    {
+      "replace": "ITD",
+      "close": 11300,
+      "changedratio": 0,
+      "kl_giaodich": -1000,
+      "gt_muarong": -0.0112
+    },
+    {
+      "replace": "CNG",
+      "close": 22200,
+      "changedratio": 0.45,
+      "kl_giaodich": 500,
+      "gt_muarong": 0.010375
+    },
+    {
+      "replace": "FCM",
+      "close": 2920,
+      "changedratio": 1.04,
+      "kl_giaodich": -2500,
+      "gt_muarong": -0.00721
+    },
+    {
+      "replace": "L10",
+      "close": 23600,
+      "changedratio": -1.26,
+      "kl_giaodich": 300,
+      "gt_muarong": 0.00708
+    },
+    {
+      "replace": "PLP",
+      "close": 3800,
+      "changedratio": 1.33,
+      "kl_giaodich": -1900,
+      "gt_muarong": -0.007079
+    },
+    {
+      "replace": "EVE",
+      "close": 8280,
+      "changedratio": -0.24,
+      "kl_giaodich": 800,
+      "gt_muarong": 0.006658
+    },
+    {
+      "replace": "GDT",
+      "close": 15750,
+      "changedratio": 1.61,
+      "kl_giaodich": -450,
+      "gt_muarong": -0.0062699999999999995
+    },
+    {
+      "replace": "HTN",
+      "close": 6810,
+      "changedratio": 1.34,
+      "kl_giaodich": -900,
+      "gt_muarong": -0.006084
+    },
+    {
+      "replace": "TMP",
+      "close": 53000,
+      "changedratio": -1.12,
+      "kl_giaodich": -100,
+      "gt_muarong": -0.005359999999999997
+    },
+    {
+      "replace": "VFG",
+      "close": 43850,
+      "changedratio": 0.46,
+      "kl_giaodich": 100,
+      "gt_muarong": 0.00439
+    },
+    {
+      "replace": "CKG",
+      "close": 5780,
+      "changedratio": -0.34,
+      "kl_giaodich": 700,
+      "gt_muarong": 0.00406
+    },
+    {
+      "replace": "AGG",
+      "close": 10000,
+      "changedratio": 0,
+      "kl_giaodich": -400,
+      "gt_muarong": -0.003996
+    },
+    {
+      "replace": "LSS",
+      "close": 7690,
+      "changedratio": -0.39,
+      "kl_giaodich": -500,
+      "gt_muarong": -0.003845
+    },
+    {
+      "replace": "VBB",
+      "close": 11150,
+      "changedratio": 2.29,
+      "kl_giaodich": -300,
+      "gt_muarong": -0.003295
+    },
+    {
+      "replace": "TBC",
+      "close": 32500,
+      "changedratio": 3.01,
+      "kl_giaodich": -100,
+      "gt_muarong": -0.00325
+    },
+    {
+      "replace": "TDH",
+      "close": 3150,
+      "changedratio": 0,
+      "kl_giaodich": -1000,
+      "gt_muarong": -0.00314
+    },
+    {
+      "replace": "TNT",
+      "close": 10400,
+      "changedratio": 1.96,
+      "kl_giaodich": 300,
+      "gt_muarong": 0.00299
+    },
+    {
+      "replace": "OGC",
+      "close": 2120,
+      "changedratio": 0.95,
+      "kl_giaodich": 1400,
+      "gt_muarong": 0.002947
+    },
+    {
+      "replace": "DLG",
+      "close": 2050,
+      "changedratio": 1.49,
+      "kl_giaodich": -1200,
+      "gt_muarong": -0.002436
+    },
+    {
+      "replace": "HTL",
+      "close": 22000,
+      "changedratio": 0,
+      "kl_giaodich": 100,
+      "gt_muarong": 0.0022
+    },
+    {
+      "replace": "ASG",
+      "close": 16000,
+      "changedratio": -1.84,
+      "kl_giaodich": -100,
+      "gt_muarong": -0.0016
+    },
+    {
+      "replace": "HPX",
+      "close": 4210,
+      "changedratio": 0.24,
+      "kl_giaodich": 300,
+      "gt_muarong": 0.001239
+    },
+    {
+      "replace": "TVB",
+      "close": 6190,
+      "changedratio": -0.16,
+      "kl_giaodich": 200,
+      "gt_muarong": 0.001236
+    },
+    {
+      "replace": "NHT",
+      "close": 11300,
+      "changedratio": 0.44,
+      "kl_giaodich": 100,
+      "gt_muarong": 0.001125
+    },
+    {
+      "replace": "KSB",
+      "close": 13200,
+      "changedratio": 1.15,
+      "kl_giaodich": 100,
+      "gt_muarong": 0.0010100000000000005
+    },
+    {
+      "replace": "CRC",
+      "close": 5160,
+      "changedratio": 0,
+      "kl_giaodich": 200,
+      "gt_muarong": 0.001007
+    },
+    {
+      "replace": "HAS",
+      "close": 9440,
+      "changedratio": -7,
+      "kl_giaodich": 100,
+      "gt_muarong": 0.000945
+    },
+    {
+      "replace": "STK",
+      "close": 7680,
+      "changedratio": 1.99,
+      "kl_giaodich": 100,
+      "gt_muarong": 0.00076
+    },
+    {
+      "replace": "MHC",
+      "close": 7290,
+      "changedratio": 0,
+      "kl_giaodich": -100,
+      "gt_muarong": -0.000729
+    },
+    {
+      "replace": "KMR",
+      "close": 2240,
+      "changedratio": -1.32,
+      "kl_giaodich": -100,
+      "gt_muarong": -0.000226
+    },
+    {
+      "replace": "BSI",
+      "close": 27350,
+      "changedratio": 1.3,
+      "kl_giaodich": 0,
+      "gt_muarong": 0.00008500000000000174
+    },
+    {
+      "replace": "SKG",
+      "close": 7310,
+      "changedratio": -0.68,
+      "kl_giaodich": 0,
+      "gt_muarong": -0.00007800000000000168
+    },
+    {
+      "replace": "QCG",
+      "close": 10100,
+      "changedratio": 0.5,
+      "kl_giaodich": 0,
+      "gt_muarong": -0.000060000000000001025
+    },
+    {
+      "replace": "TTF",
+      "close": 1460,
+      "changedratio": 0.69,
+      "kl_giaodich": 200,
+      "gt_muarong": 0.00001899999999999992
+    },
+    {
+      "replace": "GSP",
+      "close": 9830,
+      "changedratio": -0.41,
+      "kl_giaodich": 0,
+      "gt_muarong": 0
+    },
+    {
+      "replace": "PGC",
+      "close": 14500,
+      "changedratio": 5.45,
+      "kl_giaodich": 0,
+      "gt_muarong": 0
+    },
+    {
+      "replace": "PGD",
+      "close": null,
+      "changedratio": null,
+      "kl_giaodich": 0,
+      "gt_muarong": 0
+    },
+    {
+      "replace": "PGI",
+      "close": 22500,
+      "changedratio": 5.39,
+      "kl_giaodich": 0,
+      "gt_muarong": 0
+    },
+    {
+      "replace": "PGV",
+      "close": 21300,
+      "changedratio": 0,
+      "kl_giaodich": 0,
+      "gt_muarong": 0
+    },
+    {
+      "replace": "PHC",
+      "close": 4240,
+      "changedratio": 0.24,
+      "kl_giaodich": 0,
+      "gt_muarong": 0
+    },
+    {
+      "replace": "GMH",
+      "close": 6800,
+      "changedratio": 1.49,
+      "kl_giaodich": 0,
+      "gt_muarong": 0
+    },
+    {
+      "replace": "PIT",
+      "close": 11800,
+      "changedratio": 6.31,
+      "kl_giaodich": 0,
+      "gt_muarong": 0
+    },
+    {
+      "replace": "PJT",
+      "close": 8800,
+      "changedratio": -3.93,
+      "kl_giaodich": 0,
+      "gt_muarong": 0
+    },
+    {
+      "replace": "GHC",
+      "close": 24150,
+      "changedratio": -0.21,
+      "kl_giaodich": 0,
+      "gt_muarong": 0
+    },
+    {
+      "replace": "PMG",
+      "close": null,
+      "changedratio": null,
+      "kl_giaodich": 0,
+      "gt_muarong": 0
+    },
+    {
+      "replace": "PNC",
+      "close": null,
+      "changedratio": null,
+      "kl_giaodich": 0,
+      "gt_muarong": 0
+    },
+    {
+      "replace": "FIT",
+      "close": 3030,
+      "changedratio": -0.33,
+      "kl_giaodich": 0,
+      "gt_muarong": 0
+    },
+    {
+      "replace": "FIR",
+      "close": 2890,
+      "changedratio": 1.76,
+      "kl_giaodich": 0,
+      "gt_muarong": 0
+    },
+    {
+      "replace": "FDC",
+      "close": null,
+      "changedratio": null,
+      "kl_giaodich": 0,
+      "gt_muarong": 0
+    },
+    {
+      "replace": "PTC",
+      "close": 5480,
+      "changedratio": -0.18,
+      "kl_giaodich": 0,
+      "gt_muarong": 0
+    },
+    {
+      "replace": "PTL",
+      "close": 1740,
+      "changedratio": 0,
+      "kl_giaodich": 0,
+      "gt_muarong": 0
+    },
+    {
+      "replace": "DXV",
+      "close": null,
+      "changedratio": null,
+      "kl_giaodich": 0,
+      "gt_muarong": 0
+    },
+    {
+      "replace": "QNP",
+      "close": 30750,
+      "changedratio": -0.16,
+      "kl_giaodich": 0,
+      "gt_muarong": 0
+    },
+    {
+      "replace": "RAL",
+      "close": 74000,
+      "changedratio": -0.13,
+      "kl_giaodich": 0,
+      "gt_muarong": 0
+    },
+    {
+      "replace": "DXS",
+      "close": 5500,
+      "changedratio": 1.48,
+      "kl_giaodich": 0,
+      "gt_muarong": 0
+    },
+    {
+      "replace": "RYG",
+      "close": 8450,
+      "changedratio": -1.52,
+      "kl_giaodich": 0,
+      "gt_muarong": 0
+    },
+    {
+      "replace": "S4A",
+      "close": 32800,
+      "changedratio": 4.13,
+      "kl_giaodich": 0,
+      "gt_muarong": 0
+    },
+    {
+      "replace": "DTT",
+      "close": null,
+      "changedratio": null,
+      "kl_giaodich": 0,
+      "gt_muarong": 0
+    },
+    {
+      "replace": "SAM",
+      "close": 6200,
+      "changedratio": 0.49,
+      "kl_giaodich": 0,
+      "gt_muarong": 0
+    },
+    {
+      "replace": "SAV",
+      "close": 12200,
+      "changedratio": -2.01,
+      "kl_giaodich": 0,
+      "gt_muarong": 0
+    },
+    {
+      "replace": "SBA",
+      "close": 24500,
+      "changedratio": 1.66,
+      "kl_giaodich": 0,
+      "gt_muarong": 0
+    },
+    {
+      "replace": "DTL",
+      "close": 10750,
+      "changedratio": 0,
+      "kl_giaodich": 0,
+      "gt_muarong": 0
+    },
+    {
+      "replace": "DTA",
+      "close": 3380,
+      "changedratio": -0.59,
+      "kl_giaodich": 0,
+      "gt_muarong": 0
+    },
+    {
+      "replace": "SBV",
+      "close": 6330,
+      "changedratio": 1.77,
+      "kl_giaodich": 0,
+      "gt_muarong": 0
+    },
+    {
+      "replace": "SC5",
+      "close": 14550,
+      "changedratio": -6.13,
+      "kl_giaodich": 0,
+      "gt_muarong": 0
+    },
+    {
+      "replace": "DRL",
+      "close": 43000,
+      "changedratio": 1.9,
+      "kl_giaodich": 0,
+      "gt_muarong": 0
+    },
+    {
+      "replace": "DRH",
+      "close": 1660,
+      "changedratio": -0.6,
+      "kl_giaodich": 0,
+      "gt_muarong": 0
+    },
+    {
+      "replace": "SFC",
+      "close": null,
+      "changedratio": null,
+      "kl_giaodich": 0,
+      "gt_muarong": 0
+    },
+    {
+      "replace": "SFG",
+      "close": null,
+      "changedratio": null,
+      "kl_giaodich": 0,
+      "gt_muarong": 0
+    },
+    {
+      "replace": "SFI",
+      "close": 26200,
+      "changedratio": 0.38,
+      "kl_giaodich": 0,
+      "gt_muarong": 0
+    },
+    {
+      "replace": "SGN",
+      "close": 52500,
+      "changedratio": -0.57,
+      "kl_giaodich": 0,
+      "gt_muarong": 0
+    },
+    {
+      "replace": "SGT",
+      "close": 9100,
+      "changedratio": 1.34,
+      "kl_giaodich": 0,
+      "gt_muarong": 0
+    },
+    {
+      "replace": "SHA",
+      "close": 3960,
+      "changedratio": 0.25,
+      "kl_giaodich": 0,
+      "gt_muarong": 0
+    },
+    {
+      "replace": "DRC",
+      "close": 10050,
+      "changedratio": 0.5,
+      "kl_giaodich": 0,
+      "gt_muarong": 0
+    },
+    {
+      "replace": "DQC",
+      "close": 9800,
+      "changedratio": 1.14,
+      "kl_giaodich": 0,
+      "gt_muarong": 0
+    },
+    {
+      "replace": "SHP",
+      "close": 31500,
+      "changedratio": 0.16,
+      "kl_giaodich": 0,
+      "gt_muarong": 0
+    },
+    {
+      "replace": "DMC",
+      "close": 57900,
+      "changedratio": 6.24,
+      "kl_giaodich": 0,
+      "gt_muarong": 0
+    },
+    {
+      "replace": "SJS",
+      "close": 56700,
+      "changedratio": -0.18,
+      "kl_giaodich": 0,
+      "gt_muarong": 0
+    },
+    {
+      "replace": "SMA",
+      "close": 6200,
+      "changedratio": 0,
+      "kl_giaodich": 0,
+      "gt_muarong": 0
+    },
+    {
+      "replace": "DHM",
+      "close": 6900,
+      "changedratio": -0.29,
+      "kl_giaodich": 0,
+      "gt_muarong": 0
+    },
+    {
+      "replace": "DCL",
+      "close": 40500,
+      "changedratio": -4.59,
+      "kl_giaodich": 0,
+      "gt_muarong": 0
+    },
+    {
+      "replace": "SPM",
+      "close": 8600,
+      "changedratio": -2.05,
+      "kl_giaodich": 0,
+      "gt_muarong": 0
+    },
+    {
+      "replace": "SRC",
+      "close": null,
+      "changedratio": null,
+      "kl_giaodich": 0,
+      "gt_muarong": 0
+    },
+    {
+      "replace": "SRF",
+      "close": 7700,
+      "changedratio": 3.63,
+      "kl_giaodich": 0,
+      "gt_muarong": 0
+    },
+    {
+      "replace": "DC4",
+      "close": 6490,
+      "changedratio": -0.15,
+      "kl_giaodich": 0,
+      "gt_muarong": 0
+    },
+    {
+      "replace": "SSC",
+      "close": 22600,
+      "changedratio": 4.63,
+      "kl_giaodich": 0,
+      "gt_muarong": 0
+    },
+    {
+      "replace": "DBT",
+      "close": 13000,
+      "changedratio": -0.38,
+      "kl_giaodich": 0,
+      "gt_muarong": 0
+    },
+    {
+      "replace": "ST8",
+      "close": 2010,
+      "changedratio": -0.5,
+      "kl_giaodich": 0,
+      "gt_muarong": 0
+    },
+    {
+      "replace": "DAT",
+      "close": 7800,
+      "changedratio": 5.41,
+      "kl_giaodich": 0,
+      "gt_muarong": 0
+    },
+    {
+      "replace": "STG",
+      "close": 32750,
+      "changedratio": 0,
+      "kl_giaodich": 0,
+      "gt_muarong": 0
+    },
+    {
+      "replace": "SVC",
+      "close": 16950,
+      "changedratio": 0.59,
+      "kl_giaodich": 0,
+      "gt_muarong": 0
+    },
+    {
+      "replace": "SVD",
+      "close": 4750,
+      "changedratio": -1.04,
+      "kl_giaodich": 0,
+      "gt_muarong": 0
+    },
+    {
+      "replace": "SVT",
+      "close": 9200,
+      "changedratio": 0,
+      "kl_giaodich": 0,
+      "gt_muarong": 0
+    },
+    {
+      "replace": "DAH",
+      "close": 2150,
+      "changedratio": -0.46,
+      "kl_giaodich": 0,
+      "gt_muarong": 0
+    },
+    {
+      "replace": "SZL",
+      "close": 28100,
+      "changedratio": 0.36,
+      "kl_giaodich": 0,
+      "gt_muarong": 0
+    },
+    {
+      "replace": "CVT",
+      "close": null,
+      "changedratio": null,
+      "kl_giaodich": 0,
+      "gt_muarong": 0
+    },
+    {
+      "replace": "CRV",
+      "close": 22100,
+      "changedratio": 0,
+      "kl_giaodich": 0,
+      "gt_muarong": 0
+    },
+    {
+      "replace": "COM",
+      "close": null,
+      "changedratio": null,
+      "kl_giaodich": 0,
+      "gt_muarong": 0
+    },
+    {
+      "replace": "CMX",
+      "close": 4690,
+      "changedratio": 0.21,
+      "kl_giaodich": 0,
+      "gt_muarong": 0
+    },
+    {
+      "replace": "TCR",
+      "close": 2190,
+      "changedratio": 4.29,
+      "kl_giaodich": 0,
+      "gt_muarong": 0
+    },
+    {
+      "replace": "TCT",
+      "close": 17900,
+      "changedratio": 1.13,
+      "kl_giaodich": 0,
+      "gt_muarong": 0
+    },
+    {
+      "replace": "CMV",
+      "close": 8360,
+      "changedratio": -6.9,
+      "kl_giaodich": 0,
+      "gt_muarong": 0
+    },
+    {
+      "replace": "TDC",
+      "close": 6820,
+      "changedratio": 0.15,
+      "kl_giaodich": 0,
+      "gt_muarong": 0
+    },
+    {
+      "replace": "TDG",
+      "close": 2250,
+      "changedratio": 0,
+      "kl_giaodich": 0,
+      "gt_muarong": 0
+    },
+    {
+      "replace": "TDM",
+      "close": null,
+      "changedratio": null,
+      "kl_giaodich": 0,
+      "gt_muarong": 0
+    },
+    {
+      "replace": "CLW",
+      "close": 41800,
+      "changedratio": -6.7,
+      "kl_giaodich": 0,
+      "gt_muarong": 0
+    },
+    {
+      "replace": "TDW",
+      "close": null,
+      "changedratio": null,
+      "kl_giaodich": 0,
+      "gt_muarong": 0
+    },
+    {
+      "replace": "TEG",
+      "close": 5940,
+      "changedratio": 0.85,
+      "kl_giaodich": 0,
+      "gt_muarong": 0
+    },
+    {
+      "replace": "THG",
+      "close": 28300,
+      "changedratio": 0.71,
+      "kl_giaodich": 0,
+      "gt_muarong": 0
+    },
+    {
+      "replace": "TIP",
+      "close": 16300,
+      "changedratio": 1.24,
+      "kl_giaodich": 0,
+      "gt_muarong": 0
+    },
+    {
+      "replace": "TIX",
+      "close": null,
+      "changedratio": null,
+      "kl_giaodich": 0,
+      "gt_muarong": 0
+    },
+    {
+      "replace": "TLD",
+      "close": 8170,
+      "changedratio": 0,
+      "kl_giaodich": 0,
+      "gt_muarong": 0
+    },
+    {
+      "replace": "CLL",
+      "close": 27250,
+      "changedratio": 0.93,
+      "kl_giaodich": 0,
+      "gt_muarong": 0
+    },
+    {
+      "replace": "TLH",
+      "close": 3560,
+      "changedratio": 0.28,
+      "kl_giaodich": 0,
+      "gt_muarong": 0
+    },
+    {
+      "replace": "TMT",
+      "close": 10350,
+      "changedratio": -0.96,
+      "kl_giaodich": 0,
+      "gt_muarong": 0
+    },
+    {
+      "replace": "TN1",
+      "close": 12750,
+      "changedratio": -0.78,
+      "kl_giaodich": 0,
+      "gt_muarong": 0
+    },
+    {
+      "replace": "TNC",
+      "close": 27050,
+      "changedratio": 6.92,
+      "kl_giaodich": 0,
+      "gt_muarong": 0
+    },
+    {
+      "replace": "CIG",
+      "close": 7210,
+      "changedratio": -3.48,
+      "kl_giaodich": 0,
+      "gt_muarong": 0
+    },
+    {
+      "replace": "CHP",
+      "close": 25900,
+      "changedratio": -0.96,
+      "kl_giaodich": 0,
+      "gt_muarong": 0
+    },
+    {
+      "replace": "CCL",
+      "close": 3470,
+      "changedratio": -0.29,
+      "kl_giaodich": 0,
+      "gt_muarong": 0
+    },
+    {
+      "replace": "TPC",
+      "close": 13450,
+      "changedratio": -0.37,
+      "kl_giaodich": 0,
+      "gt_muarong": 0
+    },
+    {
+      "replace": "TRA",
+      "close": 36500,
+      "changedratio": 0.55,
+      "kl_giaodich": 0,
+      "gt_muarong": 0
+    },
+    {
+      "replace": "TRC",
+      "close": 21800,
+      "changedratio": -2.24,
+      "kl_giaodich": 0,
+      "gt_muarong": 0
+    },
+    {
+      "replace": "CCI",
+      "close": 16900,
+      "changedratio": -5.85,
+      "kl_giaodich": 0,
+      "gt_muarong": 0
+    },
+    {
+      "replace": "TSC",
+      "close": 1930,
+      "changedratio": -0.52,
+      "kl_giaodich": 0,
+      "gt_muarong": 0
+    },
+    {
+      "replace": "TTA",
+      "close": 11150,
+      "changedratio": 0,
+      "kl_giaodich": 0,
+      "gt_muarong": 0
+    },
+    {
+      "replace": "TTE",
+      "close": null,
+      "changedratio": null,
+      "kl_giaodich": 0,
+      "gt_muarong": 0
+    },
+    {
+      "replace": "CCC",
+      "close": 6780,
+      "changedratio": 1.35,
+      "kl_giaodich": 0,
+      "gt_muarong": 0
+    },
+    {
+      "replace": "C47",
+      "close": 8500,
+      "changedratio": 2.78,
+      "kl_giaodich": 0,
+      "gt_muarong": 0
+    },
+    {
+      "replace": "TVT",
+      "close": 15000,
+      "changedratio": 1.35,
+      "kl_giaodich": 0,
+      "gt_muarong": 0
+    },
+    {
+      "replace": "TYA",
+      "close": 16850,
+      "changedratio": 0.3,
+      "kl_giaodich": 0,
+      "gt_muarong": 0
+    },
+    {
+      "replace": "UIC",
+      "close": 57100,
+      "changedratio": 3.44,
+      "kl_giaodich": 0,
+      "gt_muarong": 0
+    },
+    {
+      "replace": "C32",
+      "close": 15050,
+      "changedratio": 0.33,
+      "kl_giaodich": 0,
+      "gt_muarong": 0
+    },
+    {
+      "replace": "VCA",
+      "close": 6510,
+      "changedratio": 2.84,
+      "kl_giaodich": 0,
+      "gt_muarong": 0
+    },
+    {
+      "replace": "BTT",
+      "close": null,
+      "changedratio": null,
+      "kl_giaodich": 0,
+      "gt_muarong": 0
+    },
+    {
+      "replace": "BTP",
+      "close": 7250,
+      "changedratio": 0.28,
+      "kl_giaodich": 0,
+      "gt_muarong": 0
+    },
+    {
+      "replace": "BRC",
+      "close": null,
+      "changedratio": null,
+      "kl_giaodich": 0,
+      "gt_muarong": 0
+    },
+    {
+      "replace": "BMC",
+      "close": 10800,
+      "changedratio": 1.89,
+      "kl_giaodich": 0,
+      "gt_muarong": 0
+    },
+    {
+      "replace": "VDP",
+      "close": 26600,
+      "changedratio": 6.4,
+      "kl_giaodich": 0,
+      "gt_muarong": 0
+    },
+    {
+      "replace": "BKG",
+      "close": 1780,
+      "changedratio": 0,
+      "kl_giaodich": 0,
+      "gt_muarong": 0
+    },
+    {
+      "replace": "BHN",
+      "close": 27500,
+      "changedratio": 0.73,
+      "kl_giaodich": 0,
+      "gt_muarong": 0
+    },
+    {
+      "replace": "ASP",
+      "close": 15150,
+      "changedratio": -0.66,
+      "kl_giaodich": 0,
+      "gt_muarong": 0
+    },
+    {
+      "replace": "ANT",
+      "close": 17950,
+      "changedratio": 0,
+      "kl_giaodich": 0,
+      "gt_muarong": 0
+    },
+    {
+      "replace": "VID",
+      "close": 4280,
+      "changedratio": -0.47,
+      "kl_giaodich": 0,
+      "gt_muarong": 0
+    },
+    {
+      "replace": "VIP",
+      "close": 9730,
+      "changedratio": 0.1,
+      "kl_giaodich": 0,
+      "gt_muarong": 0
+    },
+    {
+      "replace": "AFX",
+      "close": 9860,
+      "changedratio": 0,
+      "kl_giaodich": 0,
+      "gt_muarong": 0
+    },
+    {
+      "replace": "VMD",
+      "close": 13600,
+      "changedratio": 0,
+      "kl_giaodich": 0,
+      "gt_muarong": 0
+    },
+    {
+      "replace": "ADS",
+      "close": 7950,
+      "changedratio": 0,
+      "kl_giaodich": 0,
+      "gt_muarong": 0
+    },
+    {
+      "replace": "VNG",
+      "close": 5800,
+      "changedratio": -1.69,
+      "kl_giaodich": 0,
+      "gt_muarong": 0
+    },
+    {
+      "replace": "ADP",
+      "close": 23850,
+      "changedratio": -0.63,
+      "kl_giaodich": 0,
+      "gt_muarong": 0
+    },
+    {
+      "replace": "ADG",
+      "close": 8000,
+      "changedratio": -5.99,
+      "kl_giaodich": 0,
+      "gt_muarong": 0
+    },
+    {
+      "replace": "VNS",
+      "close": 6310,
+      "changedratio": 1.77,
+      "kl_giaodich": 0,
+      "gt_muarong": 0
+    },
+    {
+      "replace": "ACL",
+      "close": 11000,
+      "changedratio": -2.65,
+      "kl_giaodich": 0,
+      "gt_muarong": 0
+    },
+    {
+      "replace": "ACG",
+      "close": null,
+      "changedratio": null,
+      "kl_giaodich": 0,
+      "gt_muarong": 0
+    },
+    {
+      "replace": "VPD",
+      "close": 20650,
+      "changedratio": 0.73,
+      "kl_giaodich": 0,
+      "gt_muarong": 0
+    },
+    {
+      "replace": "VPG",
+      "close": 1480,
+      "changedratio": -1.99,
+      "kl_giaodich": 0,
+      "gt_muarong": 0
+    },
+    {
+      "replace": "VPH",
+      "close": 2940,
+      "changedratio": 0.68,
+      "kl_giaodich": 0,
+      "gt_muarong": 0
+    },
+    {
+      "replace": "ACC",
+      "close": 4420,
+      "changedratio": 0,
+      "kl_giaodich": 0,
+      "gt_muarong": 0
+    },
+    {
+      "replace": "ABT",
+      "close": 50500,
+      "changedratio": -0.79,
+      "kl_giaodich": 0,
+      "gt_muarong": 0
+    },
+    {
+      "replace": "VPS",
+      "close": 8740,
+      "changedratio": 2.82,
+      "kl_giaodich": 0,
+      "gt_muarong": 0
+    },
+    {
+      "replace": "ABS",
+      "close": 2900,
+      "changedratio": 0,
+      "kl_giaodich": 0,
+      "gt_muarong": 0
+    },
+    {
+      "replace": "VRC",
+      "close": 11300,
+      "changedratio": -1.31,
+      "kl_giaodich": 0,
+      "gt_muarong": 0
+    },
+    {
+      "replace": "ABR",
+      "close": 10900,
+      "changedratio": 0,
+      "kl_giaodich": 0,
+      "gt_muarong": 0
+    },
+    {
+      "replace": "AAT",
+      "close": 2050,
+      "changedratio": 0,
+      "kl_giaodich": 0,
+      "gt_muarong": 0
+    },
+    {
+      "replace": "VSH",
+      "close": 41200,
+      "changedratio": 0,
+      "kl_giaodich": 0,
+      "gt_muarong": 0
+    },
+    {
+      "replace": "VSI",
+      "close": 19100,
+      "changedratio": -6.83,
+      "kl_giaodich": 0,
+      "gt_muarong": 0
+    },
+    {
+      "replace": "VTB",
+      "close": 13500,
+      "changedratio": 1.5,
+      "kl_giaodich": 0,
+      "gt_muarong": 0
+    },
+    {
+      "replace": "AAN",
+      "close": 16050,
+      "changedratio": -0.31,
+      "kl_giaodich": 0,
+      "gt_muarong": 0
+    },
+    {
+      "replace": "AAM",
+      "close": 7600,
+      "changedratio": 1.33,
+      "kl_giaodich": 0,
+      "gt_muarong": 0
+    },
+    {
+      "replace": "YBM",
+      "close": 9970,
+      "changedratio": 4.95,
+      "kl_giaodich": 0,
+      "gt_muarong": 0
+    },
+    {
+      "replace": "LAF",
+      "close": 19850,
+      "changedratio": 4.47,
+      "kl_giaodich": 0,
+      "gt_muarong": 0
+    },
+    {
+      "replace": "YEG",
+      "close": 7090,
+      "changedratio": 0.85,
+      "kl_giaodich": 0,
+      "gt_muarong": 0
+    },
+    {
+      "replace": "LGC",
+      "close": null,
+      "changedratio": null,
+      "kl_giaodich": 0,
+      "gt_muarong": 0
+    },
+    {
+      "replace": "LGL",
+      "close": 4730,
+      "changedratio": -0.42,
+      "kl_giaodich": 0,
+      "gt_muarong": 0
+    },
+    {
+      "replace": "KHP",
+      "close": 9490,
+      "changedratio": 0,
+      "kl_giaodich": 0,
+      "gt_muarong": 0
+    },
+    {
+      "replace": "LIX",
+      "close": 24600,
+      "changedratio": 0,
+      "kl_giaodich": 0,
+      "gt_muarong": 0
+    },
+    {
+      "replace": "LM8",
+      "close": null,
+      "changedratio": null,
+      "kl_giaodich": 0,
+      "gt_muarong": 0
+    },
+    {
+      "replace": "ITC",
+      "close": 8970,
+      "changedratio": 1.59,
+      "kl_giaodich": 0,
+      "gt_muarong": 0
+    },
+    {
+      "replace": "ILB",
+      "close": 18950,
+      "changedratio": 0.26,
+      "kl_giaodich": 0,
+      "gt_muarong": 0
+    },
+    {
+      "replace": "IDI",
+      "close": 4750,
+      "changedratio": 0.21,
+      "kl_giaodich": 0,
+      "gt_muarong": 0
+    },
+    {
+      "replace": "MCM",
+      "close": 26450,
+      "changedratio": -0.19,
+      "kl_giaodich": 0,
+      "gt_muarong": 0
+    },
+    {
+      "replace": "MCP",
+      "close": 28000,
+      "changedratio": 0,
+      "kl_giaodich": 0,
+      "gt_muarong": 0
+    },
+    {
+      "replace": "MDG",
+      "close": 38850,
+      "changedratio": 2.64,
+      "kl_giaodich": 0,
+      "gt_muarong": 0
+    },
+    {
+      "replace": "ICT",
+      "close": 17000,
+      "changedratio": 0,
+      "kl_giaodich": 0,
+      "gt_muarong": 0
+    },
+    {
+      "replace": "HUB",
+      "close": 11200,
+      "changedratio": 0.9,
+      "kl_giaodich": 0,
+      "gt_muarong": 0
+    },
+    {
+      "replace": "HU1",
+      "close": 5590,
+      "changedratio": 6.48,
+      "kl_giaodich": 0,
+      "gt_muarong": 0
+    },
+    {
+      "replace": "HTV",
+      "close": null,
+      "changedratio": null,
+      "kl_giaodich": 0,
+      "gt_muarong": 0
+    },
+    {
+      "replace": "HTI",
+      "close": 18400,
+      "changedratio": -1.08,
+      "kl_giaodich": 0,
+      "gt_muarong": 0
+    },
+    {
+      "replace": "HTG",
+      "close": 33750,
+      "changedratio": -0.74,
+      "kl_giaodich": 0,
+      "gt_muarong": 0
+    },
+    {
+      "replace": "NAV",
+      "close": null,
+      "changedratio": null,
+      "kl_giaodich": 0,
+      "gt_muarong": 0
+    },
+    {
+      "replace": "NBB",
+      "close": 17100,
+      "changedratio": 0,
+      "kl_giaodich": 0,
+      "gt_muarong": 0
+    },
+    {
+      "replace": "HRC",
+      "close": 32050,
+      "changedratio": 0,
+      "kl_giaodich": 0,
+      "gt_muarong": 0
+    },
+    {
+      "replace": "NHA",
+      "close": 7080,
+      "changedratio": 2.02,
+      "kl_giaodich": 0,
+      "gt_muarong": 0
+    },
+    {
+      "replace": "NHH",
+      "close": 9680,
+      "changedratio": 0.52,
+      "kl_giaodich": 0,
+      "gt_muarong": 0
+    },
+    {
+      "replace": "HNA",
+      "close": 21950,
+      "changedratio": -0.23,
+      "kl_giaodich": 0,
+      "gt_muarong": 0
+    },
+    {
+      "replace": "NNC",
+      "close": 37500,
+      "changedratio": -0.66,
+      "kl_giaodich": 0,
+      "gt_muarong": 0
+    },
+    {
+      "replace": "NO1",
+      "close": 4000,
+      "changedratio": 0,
+      "kl_giaodich": 0,
+      "gt_muarong": 0
+    },
+    {
+      "replace": "NSC",
+      "close": 63500,
+      "changedratio": -1.55,
+      "kl_giaodich": 0,
+      "gt_muarong": 0
+    },
+    {
+      "replace": "HMC",
+      "close": 10650,
+      "changedratio": 0.47,
+      "kl_giaodich": 0,
+      "gt_muarong": 0
+    },
+    {
+      "replace": "NTC",
+      "close": 129000,
+      "changedratio": 0,
+      "kl_giaodich": 0,
+      "gt_muarong": 0
+    },
+    {
+      "replace": "HID",
+      "close": 5650,
+      "changedratio": -0.18,
+      "kl_giaodich": 0,
+      "gt_muarong": 0
+    },
+    {
+      "replace": "HCD",
+      "close": 6300,
+      "changedratio": 0,
+      "kl_giaodich": 0,
+      "gt_muarong": 0
+    },
+    {
+      "replace": "NVT",
+      "close": null,
+      "changedratio": null,
+      "kl_giaodich": 0,
+      "gt_muarong": 0
+    },
+    {
+      "replace": "OPC",
+      "close": 20000,
+      "changedratio": 0,
+      "kl_giaodich": 0,
+      "gt_muarong": 0
+    },
+    {
+      "replace": "HAR",
+      "close": 2430,
+      "changedratio": 0.41,
+      "kl_giaodich": 0,
+      "gt_muarong": 0
+    },
+    {
+      "replace": "HAP",
+      "close": 7000,
+      "changedratio": -2.78,
+      "kl_giaodich": 0,
+      "gt_muarong": 0
+    },
+    {
+      "replace": "GVR",
+      "close": 31900,
+      "changedratio": -0.93,
+      "kl_giaodich": 0,
+      "gt_muarong": 0
+    },
+    {
+      "replace": "PDN",
+      "close": 83900,
+      "changedratio": -0.12,
+      "kl_giaodich": 0,
+      "gt_muarong": 0
+    },
+    {
+      "replace": "GTA",
+      "close": 7910,
+      "changedratio": -6.94,
+      "kl_giaodich": 0,
+      "gt_muarong": 0
+    },
+    {
+      "replace": "PDV",
+      "close": 8500,
+      "changedratio": 0.83,
+      "kl_giaodich": 0,
+      "gt_muarong": 0
+    }
+  ]
+}

@@ -1,0 +1,333 @@
+{
+  "total": 17,
+  "updatedAt": "2026-09-19T10:14:40.176Z",
+  "indicators": [
+    {
+      "group": "Đầu tư",
+      "groupKey": "dautu",
+      "name": "Vốn đầu tư toàn xã hội",
+      "slug": "dau-tu-toan-xh",
+      "apiPath": "dautu/vondautuptxh",
+      "defaultTimeFrame": "quarterly",
+      "defaultValueType": "value",
+      "supportedTimeFrames": [
+        "quarterly",
+        "yearly"
+      ],
+      "supportedValueTypes": [
+        "value",
+        "qoq",
+        "yoy"
+      ],
+      "unit": "Nghìn tỷ VND",
+      "description": "Số liệu vốn đầu tư toàn xã hội từ khu vực nhà nước, tư nhân và FDI."
+    },
+    {
+      "group": "Đầu tư",
+      "groupKey": "dautu",
+      "name": "Vốn đầu tư NSNN",
+      "slug": "dau-tu-nsnn",
+      "apiPath": "dautu/vondautunsnn",
+      "defaultTimeFrame": "monthly",
+      "defaultValueType": "value",
+      "supportedTimeFrames": [
+        "monthly",
+        "quarterly",
+        "yearly"
+      ],
+      "supportedValueTypes": [
+        "value",
+        "yoy"
+      ],
+      "unit": "Tỷ VND",
+      "description": "Vốn đầu tư thực hiện từ nguồn ngân sách nhà nước qua các cấp quản lý."
+    },
+    {
+      "group": "Đầu tư",
+      "groupKey": "dautu",
+      "name": "Đăng ký kinh doanh",
+      "slug": "dang-ky-kd",
+      "apiPath": "dautu/dangkykinhdoanh",
+      "defaultTimeFrame": "monthly",
+      "defaultValueType": "value",
+      "supportedTimeFrames": [
+        "monthly",
+        "quarterly",
+        "yearly"
+      ],
+      "supportedValueTypes": [
+        "value",
+        "yoy"
+      ],
+      "unit": "Doanh nghiệp / Vốn",
+      "description": "Tình hình doanh nghiệp thành lập mới, quay trở lại và tạm ngừng hoạt động."
+    },
+    {
+      "group": "Hệ thống ngân hàng",
+      "groupKey": "hethongnganhang",
+      "name": "Cung tiền M2",
+      "slug": "cung-tien",
+      "apiPath": "hethongnganhang/cungtienhuydongtindung/m2",
+      "defaultTimeFrame": "monthly",
+      "defaultValueType": "value",
+      "supportedTimeFrames": [
+        "monthly",
+        "quarterly",
+        "yearly"
+      ],
+      "supportedValueTypes": [
+        "value",
+        "yoy"
+      ],
+      "unit": "Tỷ VND",
+      "description": "Chỉ số cung tiền M1, M2, thước đo thanh khoản của toàn nền kinh tế."
+    },
+    {
+      "group": "Hệ thống ngân hàng",
+      "groupKey": "hethongnganhang",
+      "name": "Tiền gửi khách hàng (Huy động)",
+      "slug": "huy-dong",
+      "apiPath": "hethongnganhang/cungtienhuydongtindung/huydong",
+      "defaultTimeFrame": "monthly",
+      "defaultValueType": "value",
+      "supportedTimeFrames": [
+        "monthly",
+        "quarterly",
+        "yearly"
+      ],
+      "supportedValueTypes": [
+        "value",
+        "yoy"
+      ],
+      "unit": "Tỷ VND",
+      "description": "Quy mô tiền gửi của các tổ chức kinh tế và dân cư vào hệ thống ngân hàng."
+    },
+    {
+      "group": "Hệ thống ngân hàng",
+      "groupKey": "hethongnganhang",
+      "name": "Tín dụng nền kinh tế",
+      "slug": "tin-dung",
+      "apiPath": "hethongnganhang/cungtienhuydongtindung/tindung",
+      "defaultTimeFrame": "monthly",
+      "defaultValueType": "value",
+      "supportedTimeFrames": [
+        "monthly",
+        "quarterly",
+        "yearly"
+      ],
+      "supportedValueTypes": [
+        "value",
+        "yoy"
+      ],
+      "unit": "Tỷ VND",
+      "description": "Dư nợ tín dụng đối với nền kinh tế, động lực tăng trưởng quan trọng."
+    },
+    {
+      "group": "Thị trường tiền tệ",
+      "groupKey": "thitruongtiente",
+      "name": "Bơm hút ròng SBV (OMO)",
+      "slug": "bom-hut-rong",
+      "apiPath": "thitruongtiente/thitruongmo/bomhutrong",
+      "defaultTimeFrame": "monthly",
+      "defaultValueType": "value",
+      "supportedTimeFrames": [
+        "monthly",
+        "quarterly"
+      ],
+      "supportedValueTypes": [
+        "value"
+      ],
+      "unit": "Tỷ VND",
+      "description": "Quy mô bơm hút thanh khoản của Ngân hàng Nhà nước qua thị trường mở OMO."
+    },
+    {
+      "group": "Tổng sản phẩm quốc nội",
+      "groupKey": "tongsanphamquocnoi",
+      "name": "GDP thực",
+      "slug": "gdp-thuc",
+      "apiPath": "tongsanphamquocnoi/gdpthuc",
+      "defaultTimeFrame": "quarterly",
+      "defaultValueType": "value",
+      "supportedTimeFrames": [
+        "quarterly",
+        "yearly"
+      ],
+      "supportedValueTypes": [
+        "value",
+        "qoq",
+        "yoy"
+      ],
+      "unit": "Tỷ VND",
+      "description": "Tổng sản phẩm quốc nội theo giá so sánh điều chỉnh lạm phát."
+    },
+    {
+      "group": "Tổng sản phẩm quốc nội",
+      "groupKey": "tongsanphamquocnoi",
+      "name": "GDP danh nghĩa",
+      "slug": "gdp-danh-nghia",
+      "apiPath": "tongsanphamquocnoi/gdpdanhnghia",
+      "defaultTimeFrame": "quarterly",
+      "defaultValueType": "value",
+      "supportedTimeFrames": [
+        "quarterly",
+        "yearly"
+      ],
+      "supportedValueTypes": [
+        "value",
+        "qoq",
+        "yoy"
+      ],
+      "unit": "Tỷ VND",
+      "description": "Tổng sản phẩm quốc nội theo giá hiện hành."
+    },
+    {
+      "group": "Sản xuất và Dịch vụ",
+      "groupKey": "sanxuatvadichvu",
+      "name": "PMI Sản xuất",
+      "slug": "pmi-san-xuat",
+      "apiPath": "sanxuatvadichvu/pmi",
+      "defaultTimeFrame": "monthly",
+      "defaultValueType": "value",
+      "supportedTimeFrames": [
+        "monthly"
+      ],
+      "supportedValueTypes": [
+        "value"
+      ],
+      "unit": "Điểm",
+      "description": "Chỉ số nhà quản trị mua hàng PMI lĩnh vực sản xuất Việt Nam (ngưỡng 50 điểm)."
+    },
+    {
+      "group": "Sản xuất và Dịch vụ",
+      "groupKey": "sanxuatvadichvu",
+      "name": "Chỉ số sản xuất công nghiệp (IIP)",
+      "slug": "iip",
+      "apiPath": "sanxuatvadichvu/iip",
+      "defaultTimeFrame": "monthly",
+      "defaultValueType": "yoy",
+      "supportedTimeFrames": [
+        "monthly"
+      ],
+      "supportedValueTypes": [
+        "yoy"
+      ],
+      "unit": "%",
+      "description": "Tốc độ tăng trưởng chỉ số sản xuất công nghiệp toàn ngành."
+    },
+    {
+      "group": "Tiêu dùng",
+      "groupKey": "tieudung",
+      "name": "Bán lẻ hàng hóa & dịch vụ",
+      "slug": "ban-le-hang-hoa-dich-vu",
+      "apiPath": "tieudung/banlehhdv",
+      "defaultTimeFrame": "monthly",
+      "defaultValueType": "value",
+      "supportedTimeFrames": [
+        "monthly",
+        "quarterly",
+        "yearly"
+      ],
+      "supportedValueTypes": [
+        "value",
+        "yoy"
+      ],
+      "unit": "Nghìn tỷ VND",
+      "description": "Tổng mức bán lẻ hàng hóa và doanh thu dịch vụ tiêu dùng."
+    },
+    {
+      "group": "Giá cả",
+      "groupKey": "giaca",
+      "name": "Chỉ số giá tiêu dùng (CPI)",
+      "slug": "chi-so-gia-cpi",
+      "apiPath": "giaca/chisogiatieudungcpi",
+      "defaultTimeFrame": "monthly",
+      "defaultValueType": "yoy",
+      "supportedTimeFrames": [
+        "monthly",
+        "yearly"
+      ],
+      "supportedValueTypes": [
+        "value",
+        "yoy"
+      ],
+      "unit": "% / Điểm",
+      "description": "Chỉ số giá tiêu dùng CPI đo lường tốc độ lạm phát theo rổ hàng hóa."
+    },
+    {
+      "group": "Giao dịch quốc tế",
+      "groupKey": "giaodichquocte",
+      "name": "Giá trị xuất khẩu",
+      "slug": "gia-tri-xuat-khau",
+      "apiPath": "giaodichquocte/giatrixuatnhapkhau/xuatkhau",
+      "defaultTimeFrame": "monthly",
+      "defaultValueType": "value",
+      "supportedTimeFrames": [
+        "monthly",
+        "quarterly",
+        "yearly"
+      ],
+      "supportedValueTypes": [
+        "value",
+        "yoy"
+      ],
+      "unit": "Triệu USD",
+      "description": "Kim ngạch xuất khẩu hàng hóa Việt Nam ra thị trường quốc tế."
+    },
+    {
+      "group": "Giao dịch quốc tế",
+      "groupKey": "giaodichquocte",
+      "name": "Giá trị nhập khẩu",
+      "slug": "gia-tri-nhap-khau",
+      "apiPath": "giaodichquocte/giatrixuatnhapkhau/nhapkhau",
+      "defaultTimeFrame": "monthly",
+      "defaultValueType": "value",
+      "supportedTimeFrames": [
+        "monthly",
+        "quarterly",
+        "yearly"
+      ],
+      "supportedValueTypes": [
+        "value",
+        "yoy"
+      ],
+      "unit": "Triệu USD",
+      "description": "Kim ngạch nhập khẩu hàng hóa phục vụ sản xuất và tiêu dùng."
+    },
+    {
+      "group": "Giao dịch quốc tế",
+      "groupKey": "giaodichquocte",
+      "name": "Cán cân thương mại XNK",
+      "slug": "can-can-xuat-nhap-khau",
+      "apiPath": "giaodichquocte/giatrixuatnhapkhau/can-can-xuat-nhap-khau",
+      "defaultTimeFrame": "monthly",
+      "defaultValueType": "value",
+      "supportedTimeFrames": [
+        "monthly",
+        "quarterly",
+        "yearly"
+      ],
+      "supportedValueTypes": [
+        "value"
+      ],
+      "unit": "Triệu USD",
+      "description": "Chênh lệch giữa kim ngạch xuất khẩu và nhập khẩu hàng hóa (Xuất siêu/Nhập siêu)."
+    },
+    {
+      "group": "Tài khóa",
+      "groupKey": "taikhoa",
+      "name": "Nợ Chính phủ",
+      "slug": "no-chinh-phu",
+      "apiPath": "taikhoa/nocong/vaynochinhphu",
+      "defaultTimeFrame": "yearly",
+      "defaultValueType": "value",
+      "supportedTimeFrames": [
+        "yearly"
+      ],
+      "supportedValueTypes": [
+        "value"
+      ],
+      "unit": "Tỷ VND",
+      "description": "Quy mô vay nợ trong và ngoài nước của Chính phủ."
+    }
+  ]
+}

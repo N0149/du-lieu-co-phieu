@@ -25,10 +25,10 @@ export default function ContactPage() {
         </div>
 
         <div className="space-y-4">
-          {/* Người phụ trách / Sáng lập */}
-          <ContactCard icon={<UserRound className="size-5" />} title="Người phụ trách / Sáng lập">
+          {/* Ban Quản Trị & Nghiên Cứu */}
+          <ContactCard icon={<UserRound className="size-5" />} title="Ban Quản Trị & Nghiên Cứu">
             <div className="flex items-center justify-between gap-3">
-              <p className="font-medium text-foreground">Nguyễn Trung Nhật</p>
+              <p className="font-medium text-foreground">Ban Biên Tập Dữ Liệu Đầu Tư</p>
               <span className="rounded bg-accent px-1.5 py-0.5 text-[10px] font-medium text-accent-foreground">
                 Quản trị nội dung
               </span>

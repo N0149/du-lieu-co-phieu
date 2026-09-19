@@ -1,0 +1,19 @@
+{
+  "updatedAt": "2026-09-19T10:35:31.320Z",
+  "hose": {
+    "increase_cp": "185",
+    "increase_s": 8411253067200,
+    "decrease_cp": "130",
+    "decrease_s": 9655752428800,
+    "sideway_cp": "67",
+    "sideway_s": 3962715715500
+  },
+  "hnx": {
+    "increase_cp": "82",
+    "increase_s": 266757302800,
+    "decrease_cp": "60",
+    "decrease_s": 179349844600,
+    "sideway_cp": "56",
+    "sideway_s": 129026519700
+  }
+}

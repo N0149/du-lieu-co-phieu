@@ -16,6 +16,7 @@ import {
   Check,
   Users,
   ArrowUpRight,
+  Globe,
   PieChart,
   Percent,
   Sparkles,
@@ -67,6 +68,8 @@ import type { DetailedBalanceSheetPayload } from '@/lib/balance-sheet-cashflow-s
 import type { CapexFinancialPayload } from '@/lib/capex-financial-service'
 import type { DebtDupontPayload } from '@/lib/debt-dupont-service'
 import type { StockIcbHierarchy } from '@/lib/icb-service'
+import type { CompanyWebsiteMeta } from '@/lib/company-website-service'
+import type { BctcCompanyDocumentsPayload } from '@/lib/bctc-document-service'
 
 export type StockDetailTab =
   | 'profile'
@@ -113,6 +116,8 @@ interface StockDetailViewProps {
   initialFinancialStatementsAnnual?: RawFinancialStatementData | null
   initialTab?: StockDetailTab
   icbHierarchy?: StockIcbHierarchy | null
+  companyWebsiteMeta?: CompanyWebsiteMeta | null
+  bctcDocuments?: BctcCompanyDocumentsPayload | null
 }
 
 function fmt(n: number | null | undefined, dec = 0): string {
@@ -210,6 +215,8 @@ export function StockDetailView({
   initialFinancialStatementsAnnual = null,
   initialTab = 'charts',
   icbHierarchy = null,
+  companyWebsiteMeta = null,
+  bctcDocuments = null,
 }: StockDetailViewProps) {
   // Tab đang hiển thị trên thanh nút bấm (cập nhật NGAY LẬP TỨC để phản hồi giao diện không delay)
   const [activeTab, setActiveTab] = useState<StockDetailTab>(initialTab || 'charts')
@@ -398,6 +405,11 @@ export function StockDetailView({
     is_port = false,
     coreCard = null,
   } = stockData
+
+  const rawWebsite = companyWebsiteMeta?.website?.trim()
+  const websiteUrl = rawWebsite
+    ? (rawWebsite.startsWith('http://') || rawWebsite.startsWith('https://') ? rawWebsite : `https://${rawWebsite}`)
+    : null
 
   // 1. Tính toán biến động giá 1 năm và YTD từ price_weekly
   const priceChanges = useMemo(() => {
@@ -829,6 +841,20 @@ export function StockDetailView({
         </Link>
 
         <div className="flex items-center gap-2">
+          {websiteUrl && (
+            <a
+              href={websiteUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1.5 rounded-xl border border-border bg-card px-3 py-1.5 text-xs font-semibold text-foreground shadow-2xs transition-all hover:bg-muted hover:border-emerald-500/50 hover:text-emerald-500 cursor-pointer group"
+              title={`Mở website chính thức của ${company.name} (${companyWebsiteMeta?.website})`}
+            >
+              <Globe className="size-3.5 text-emerald-500 group-hover:scale-110 transition-transform" />
+              <span className="hidden sm:inline">Website</span>
+              <ArrowUpRight className="size-3 text-muted-foreground group-hover:text-emerald-500 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+            </a>
+          )}
+
           <WatchlistStarButton ticker={ticker} showLabel size="sm" />
           <AiExportButton ticker={ticker} companyName={company.name} />
 
@@ -890,6 +916,19 @@ export function StockDetailView({
               <span className="rounded-full bg-secondary px-3 py-0.5 text-xs font-medium text-muted-foreground">
                 {company.icb_l1}
               </span>
+            )}
+            {websiteUrl && (
+              <a
+                href={websiteUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1.5 rounded-lg border border-emerald-500/40 bg-emerald-500/10 hover:bg-emerald-500/20 px-2.5 py-1 text-xs font-bold text-emerald-600 dark:text-emerald-400 transition-all shadow-2xs group cursor-pointer"
+                title={`Mở website chính thức của ${company.name} (${companyWebsiteMeta?.website})`}
+              >
+                <Globe className="size-3 text-emerald-500 group-hover:scale-110 transition-transform" />
+                <span>Website</span>
+                <ArrowUpRight className="size-3 opacity-70 group-hover:opacity-100 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+              </a>
             )}
           </div>
           <h2 className="text-base font-bold text-muted-foreground sm:text-lg">
@@ -2031,6 +2070,7 @@ export function StockDetailView({
             ticker={ticker}
             companyName={company.name}
             availableTickers={availableBctcTickers}
+            bctcDocuments={bctcDocuments}
           />
         </div>
       )}

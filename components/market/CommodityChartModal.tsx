@@ -287,14 +287,15 @@ export function CommodityChartModal({
                 <h3 className="text-base sm:text-lg font-bold text-[#F0F3F6]">
                   {data?.name || initialName || symbol}
                 </h3>
-                {data?.unit && (
+                {(data?.unit || unit) && (
                   <span className="rounded-md bg-white/5 border border-white/10 px-2 py-0.5 text-[11px] font-medium text-[#9EACB9]">
-                    {data.unit}
+                    {data?.unit || unit}
                   </span>
                 )}
               </div>
               <p className="text-xs text-[#9EACB9] mt-0.5">
-                Biểu đồ diễn biến giá hàng hóa thế giới ({data?.firstDate} – {data?.lastDate})
+                Biểu đồ diễn biến giá hàng hóa thế giới
+                {data?.firstDate ? ` (${data.firstDate} – ${data.lastDate})` : ''}
               </p>
             </div>
           </div>

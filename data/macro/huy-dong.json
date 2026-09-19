@@ -1,0 +1,1842 @@
+{
+  "meta": {
+    "group": "Hệ thống ngân hàng",
+    "groupKey": "hethongnganhang",
+    "name": "Tiền gửi khách hàng (Huy động)",
+    "slug": "huy-dong",
+    "apiPath": "hethongnganhang/cungtienhuydongtindung/huydong",
+    "defaultTimeFrame": "monthly",
+    "defaultValueType": "value",
+    "supportedTimeFrames": [
+      "monthly",
+      "quarterly",
+      "yearly"
+    ],
+    "supportedValueTypes": [
+      "value",
+      "yoy"
+    ],
+    "unit": "Tỷ VND",
+    "description": "Quy mô tiền gửi của các tổ chức kinh tế và dân cư vào hệ thống ngân hàng.",
+    "updatedAt": "2026-09-19T10:14:28.067Z",
+    "latestPeriod": "06-2026",
+    "latestValue": 17440361
+  },
+  "datasets": {
+    "monthly": {
+      "value": {
+        "title": "Tiền gửi",
+        "headers": [
+          "06-2026",
+          "05-2026",
+          "04-2026",
+          "03-2026",
+          "02-2026",
+          "01-2026",
+          "12-2025",
+          "11-2025",
+          "10-2025",
+          "09-2025",
+          "08-2025",
+          "07-2025",
+          "06-2025",
+          "05-2025",
+          "04-2025",
+          "03-2025",
+          "02-2025"
+        ],
+        "parent": [
+          {
+            "title": "TIỀN GỬI (Tỷ VND)",
+            "child": [
+              {
+                "id": "229_huy_dong_von_tong_tien_gui_1",
+                "column_name": "huy_dong_von_tong_tien_gui_1",
+                "table_name": "229",
+                "name": "Tổng tiền gửi",
+                "hasSub": false,
+                "level": 3,
+                "heading": 2,
+                "open": 1,
+                "dateType": "thang",
+                "yAxis": 17,
+                "data": [
+                  [
+                    1782777600000,
+                    17440361
+                  ],
+                  [
+                    1780185600000,
+                    16995128
+                  ],
+                  [
+                    1777507200000,
+                    16793661
+                  ],
+                  [
+                    1774915200000,
+                    16575580
+                  ],
+                  [
+                    1772236800000,
+                    16415112
+                  ],
+                  [
+                    1769817600000,
+                    16461627
+                  ],
+                  [
+                    1767139200000,
+                    16515887
+                  ],
+                  [
+                    1764460800000,
+                    16064674
+                  ],
+                  [
+                    1761868800000,
+                    15909571
+                  ],
+                  [
+                    1759190400000,
+                    15856057
+                  ],
+                  [
+                    1756598400000,
+                    15637226
+                  ],
+                  [
+                    1753920000000,
+                    15408102
+                  ],
+                  [
+                    1751241600000,
+                    15480058
+                  ],
+                  [
+                    1748649600000,
+                    15034903
+                  ],
+                  [
+                    1745971200000,
+                    14856774
+                  ],
+                  [
+                    1743379200000,
+                    14687694
+                  ],
+                  [
+                    1740700800000,
+                    14431146
+                  ]
+                ],
+                "time_frame": "monthly",
+                "lingo": {
+                  "name": "Tổng tiền gửi",
+                  "unit": "Tỷ VND",
+                  "description": "Tổng tiền gửi là tổng số tiền mà các cá nhân, tổ chức kinh tế (doanh nghiệp, tổ chức khác) và các thực thể khác gửi tại các tổ chức tín dụng (ngân hàng, tổ chức tài chính) trong hệ thống ngân hàng.",
+                  "frequency": "Độ trễ từ 1-3 tháng (ngày công bố không cố định)",
+                  "last_updated": "2026-09-17T08:48:53.624Z",
+                  "source": "Ngân hàng Nhà nước - SBV",
+                  "note": "Dữ liệu được Wigroup điều chỉnh lịch sử khi SBV thay đổi phương pháp luận (tháng 10/2025).",
+                  "related_blog": null
+                }
+              },
+              {
+                "id": "229_huy_dong_von_tien_gui_cua_tckt_1",
+                "column_name": "huy_dong_von_tien_gui_cua_tckt_1",
+                "table_name": "229",
+                "name": "Tiền gửi của TCKT",
+                "hasSub": false,
+                "level": 3,
+                "heading": 3,
+                "open": 1,
+                "dateType": "thang",
+                "yAxis": 17,
+                "data": [
+                  [
+                    1782777600000,
+                    6371536
+                  ],
+                  [
+                    1780185600000,
+                    6168130
+                  ],
+                  [
+                    1777507200000,
+                    6074860
+                  ],
+                  [
+                    1774915200000,
+                    6014229
+                  ],
+                  [
+                    1772236800000,
+                    5871211
+                  ],
+                  [
+                    1769817600000,
+                    6080119
+                  ],
+                  [
+                    1767139200000,
+                    6180504
+                  ],
+                  [
+                    1764460800000,
+                    5839701
+                  ],
+                  [
+                    1761868800000,
+                    5714809
+                  ],
+                  [
+                    1759190400000,
+                    5692222
+                  ],
+                  [
+                    1756598400000,
+                    5560360
+                  ],
+                  [
+                    1753920000000,
+                    5437671
+                  ],
+                  [
+                    1751241600000,
+                    5524603
+                  ],
+                  [
+                    1748649600000,
+                    5277270
+                  ],
+                  [
+                    1745971200000,
+                    5197943
+                  ],
+                  [
+                    1743379200000,
+                    5126425
+                  ],
+                  [
+                    1740700800000,
+                    5018701
+                  ]
+                ],
+                "time_frame": "monthly",
+                "lingo": {
+                  "name": "Tiền gửi của TCKT",
+                  "unit": "Tỷ VND",
+                  "description": "Chỉ số tiền gửi của tổ chức kinh tế (TCKT) tại Việt Nam là tổng lượng tiền mà các tổ chức kinh tế, doanh nghiệp, cơ sở kinh doanh,... đang gửi tiết kiệm tại các ngân hàng. Nó thể hiện khả năng thu hút vốn tiết kiệm từ các doanh nghiệp vào hệ thống ngân hàng, ngoài ra còn phản ánh mức độ tin tưởng của doanh nghiệp vào nền kinh tế và hệ thống tài chính của các ngân hàng. Dữ liệu được thống kê hàng tháng từ báo cáo của SBV, công bố trễ từ 2-3 tháng.",
+                  "frequency": "Độ trễ từ 1-3 tháng (ngày công bố không cố định)",
+                  "last_updated": "2026-09-17T08:48:53.651Z",
+                  "source": "Ngân hàng Nhà nước - SBV",
+                  "note": "Dữ liệu được Wigroup điều chỉnh lịch sử khi SBV thay đổi phương pháp luận (tháng 10/2025).",
+                  "related_blog": null
+                }
+              },
+              {
+                "id": "229_huy_dong_von_tien_gui_cua_dan_cu_1",
+                "column_name": "huy_dong_von_tien_gui_cua_dan_cu_1",
+                "table_name": "229",
+                "name": "Tiền gửi của dân cư",
+                "hasSub": false,
+                "level": 3,
+                "heading": 3,
+                "open": 1,
+                "dateType": "thang",
+                "yAxis": 17,
+                "data": [
+                  [
+                    1782777600000,
+                    11068825
+                  ],
+                  [
+                    1780185600000,
+                    10826998
+                  ],
+                  [
+                    1777507200000,
+                    10718801
+                  ],
+                  [
+                    1774915200000,
+                    10561351
+                  ],
+                  [
+                    1772236800000,
+                    10543901
+                  ],
+                  [
+                    1769817600000,
+                    10381508
+                  ],
+                  [
+                    1767139200000,
+                    10335383
+                  ],
+                  [
+                    1764460800000,
+                    10224973
+                  ],
+                  [
+                    1761868800000,
+                    10194762
+                  ],
+                  [
+                    1759190400000,
+                    10160374
+                  ],
+                  [
+                    1756598400000,
+                    10121583
+                  ],
+                  [
+                    1753920000000,
+                    10051710
+                  ],
+                  [
+                    1751241600000,
+                    9981548
+                  ],
+                  [
+                    1748649600000,
+                    9862854
+                  ],
+                  [
+                    1745971200000,
+                    9777980
+                  ],
+                  [
+                    1743379200000,
+                    9690224
+                  ],
+                  [
+                    1740700800000,
+                    9555564
+                  ]
+                ],
+                "time_frame": "monthly",
+                "lingo": {
+                  "name": "Tiền gửi của dân cư",
+                  "unit": "Tỷ VND",
+                  "description": "Chỉ số tiền gửi của dân cư tại Việt Nam là tổng lượng tiền mà các cá nhân, hộ gia đình,... đang gửi tiết kiệm tại các ngân hàng. Thể hiện khả năng thu hút vốn tiết kiệm từ các hộ gia đình và cá nhân vào hệ thống ngân hàng và phản ánh mức độ tin tưởng của dân cư vào nền kinh tế và hệ thống tài chính của các ngân hàng. Dữ liệu được thống kê hàng tháng từ báo cáo của SBV, công bố trễ từ 2-3 tháng.",
+                  "frequency": "Độ trễ từ 1-3 tháng (ngày công bố không cố định)",
+                  "last_updated": "2026-09-17T08:48:53.639Z",
+                  "source": "Ngân hàng Nhà nước - SBV",
+                  "note": "Dữ liệu được Wigroup điều chỉnh lịch sử khi SBV thay đổi phương pháp luận (tháng 10/2025).",
+                  "related_blog": null
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "yoy": {
+        "title": "Tiền gửi",
+        "headers": [
+          "06-2026",
+          "05-2026",
+          "04-2026",
+          "03-2026",
+          "02-2026",
+          "01-2026",
+          "12-2025",
+          "11-2025",
+          "10-2025",
+          "09-2025",
+          "08-2025",
+          "07-2025",
+          "06-2025",
+          "05-2025",
+          "04-2025",
+          "03-2025",
+          "02-2025"
+        ],
+        "parent": [
+          {
+            "title": "TIỀN GỬI",
+            "child": [
+              {
+                "id": "229_huy_dong_von_tong_tien_gui_1_yoy",
+                "column_name": "huy_dong_von_tong_tien_gui_1_yoy",
+                "table_name": "229",
+                "name": "Tổng tiền gửi",
+                "hasSub": false,
+                "level": 3,
+                "heading": 2,
+                "open": 1,
+                "dateType": "thang",
+                "yAxis": 1,
+                "data": [
+                  [
+                    1782777600000,
+                    12.66340862547156
+                  ],
+                  [
+                    1780185600000,
+                    13.037829376085766
+                  ],
+                  [
+                    1777507200000,
+                    13.037063093239487
+                  ],
+                  [
+                    1774915200000,
+                    12.853522139009705
+                  ],
+                  [
+                    1772236800000,
+                    13.747806307274557
+                  ],
+                  [
+                    1769817600000,
+                    14.901134414409384
+                  ],
+                  [
+                    1767139200000,
+                    14.415843751612837
+                  ],
+                  [
+                    1764460800000,
+                    14.894679170570175
+                  ],
+                  [
+                    1761868800000,
+                    14.856882011440083
+                  ],
+                  [
+                    1759190400000,
+                    15.30902102949438
+                  ],
+                  [
+                    1756598400000,
+                    15.956012247542375
+                  ],
+                  [
+                    1753920000000,
+                    15.567389900626052
+                  ],
+                  [
+                    1751241600000,
+                    15.111631838092379
+                  ],
+                  [
+                    1748649600000,
+                    14.306829335419533
+                  ],
+                  [
+                    1745971200000,
+                    14.073814720329858
+                  ],
+                  [
+                    1743379200000,
+                    12.681125564280443
+                  ],
+                  [
+                    1740700800000,
+                    11.91576351432571
+                  ]
+                ],
+                "time_frame": "monthly",
+                "lingo": {
+                  "name": "Tổng tiền gửi",
+                  "unit": "%",
+                  "description": "Tổng tiền gửi là tổng số tiền mà các cá nhân, tổ chức kinh tế (doanh nghiệp, tổ chức khác) và các thực thể khác gửi tại các tổ chức tín dụng (ngân hàng, tổ chức tài chính) trong hệ thống ngân hàng.",
+                  "frequency": "Độ trễ từ 1-3 tháng (ngày công bố không cố định)",
+                  "last_updated": "2026-09-17T08:48:53.624Z",
+                  "source": "Ngân hàng Nhà nước - SBV",
+                  "note": "Dữ liệu được Wigroup điều chỉnh lịch sử khi SBV thay đổi phương pháp luận (tháng 10/2025).",
+                  "related_blog": null
+                }
+              },
+              {
+                "id": "229_huy_dong_von_tien_gui_cua_tckt_1_yoy",
+                "column_name": "huy_dong_von_tien_gui_cua_tckt_1_yoy",
+                "table_name": "229",
+                "name": "Tiền gửi của TCKT",
+                "hasSub": false,
+                "level": 3,
+                "heading": 3,
+                "open": 1,
+                "dateType": "thang",
+                "yAxis": 1,
+                "data": [
+                  [
+                    1782777600000,
+                    15.330205627445084
+                  ],
+                  [
+                    1780185600000,
+                    16.881076768859657
+                  ],
+                  [
+                    1777507200000,
+                    16.870462026997988
+                  ],
+                  [
+                    1774915200000,
+                    17.31818957655676
+                  ],
+                  [
+                    1772236800000,
+                    16.98666647006865
+                  ],
+                  [
+                    1769817600000,
+                    19.982093812320894
+                  ],
+                  [
+                    1767139200000,
+                    18.250607706900162
+                  ],
+                  [
+                    1764460800000,
+                    17.8382792631744
+                  ],
+                  [
+                    1761868800000,
+                    17.106021889209696
+                  ],
+                  [
+                    1759190400000,
+                    18.000194448112516
+                  ],
+                  [
+                    1756598400000,
+                    19.2803313890754
+                  ],
+                  [
+                    1753920000000,
+                    17.8476271056406
+                  ],
+                  [
+                    1751241600000,
+                    17.324972540798043
+                  ],
+                  [
+                    1748649600000,
+                    15.405356703927476
+                  ],
+                  [
+                    1745971200000,
+                    15.336915961779082
+                  ],
+                  [
+                    1743379200000,
+                    13.477765315295272
+                  ],
+                  [
+                    1740700800000,
+                    12.86415419704705
+                  ]
+                ],
+                "time_frame": "monthly",
+                "lingo": {
+                  "name": "Tiền gửi của TCKT",
+                  "unit": "%",
+                  "description": "Chỉ số tiền gửi của tổ chức kinh tế (TCKT) tại Việt Nam là tổng lượng tiền mà các tổ chức kinh tế, doanh nghiệp, cơ sở kinh doanh,... đang gửi tiết kiệm tại các ngân hàng. Nó thể hiện khả năng thu hút vốn tiết kiệm từ các doanh nghiệp vào hệ thống ngân hàng, ngoài ra còn phản ánh mức độ tin tưởng của doanh nghiệp vào nền kinh tế và hệ thống tài chính của các ngân hàng. Dữ liệu được thống kê hàng tháng từ báo cáo của SBV, công bố trễ từ 2-3 tháng.",
+                  "frequency": "Độ trễ từ 1-3 tháng (ngày công bố không cố định)",
+                  "last_updated": "2026-09-17T08:48:53.651Z",
+                  "source": "Ngân hàng Nhà nước - SBV",
+                  "note": "Dữ liệu được Wigroup điều chỉnh lịch sử khi SBV thay đổi phương pháp luận (tháng 10/2025).",
+                  "related_blog": null
+                }
+              },
+              {
+                "id": "229_huy_dong_von_tien_gui_cua_dan_cu_1_yoy",
+                "column_name": "huy_dong_von_tien_gui_cua_dan_cu_1_yoy",
+                "table_name": "229",
+                "name": "Tiền gửi của dân cư",
+                "hasSub": false,
+                "level": 3,
+                "heading": 3,
+                "open": 1,
+                "dateType": "thang",
+                "yAxis": 1,
+                "data": [
+                  [
+                    1782777600000,
+                    10.89286952284355
+                  ],
+                  [
+                    1780185600000,
+                    9.775507170642493
+                  ],
+                  [
+                    1777507200000,
+                    9.62183395752497
+                  ],
+                  [
+                    1774915200000,
+                    8.989750907718955
+                  ],
+                  [
+                    1772236800000,
+                    10.343052487535012
+                  ],
+                  [
+                    1769817600000,
+                    11.336064996231961
+                  ],
+                  [
+                    1767139200000,
+                    12.770554740737719
+                  ],
+                  [
+                    1764460800000,
+                    12.598140963994597
+                  ],
+                  [
+                    1761868800000,
+                    12.621540479910424
+                  ],
+                  [
+                    1759190400000,
+                    12.571901824517278
+                  ],
+                  [
+                    1756598400000,
+                    12.673233049059737
+                  ],
+                  [
+                    1753920000000,
+                    13.310386528976823
+                  ],
+                  [
+                    1751241600000,
+                    12.868968029904055
+                  ],
+                  [
+                    1748649600000,
+                    13.209557401814248
+                  ],
+                  [
+                    1745971200000,
+                    12.823896283957719
+                  ],
+                  [
+                    1743379200000,
+                    11.890343070493328
+                  ],
+                  [
+                    1740700800000,
+                    10.983655528924665
+                  ]
+                ],
+                "time_frame": "monthly",
+                "lingo": {
+                  "name": "Tiền gửi của dân cư",
+                  "unit": "%",
+                  "description": "Chỉ số tiền gửi của dân cư tại Việt Nam là tổng lượng tiền mà các cá nhân, hộ gia đình,... đang gửi tiết kiệm tại các ngân hàng. Thể hiện khả năng thu hút vốn tiết kiệm từ các hộ gia đình và cá nhân vào hệ thống ngân hàng và phản ánh mức độ tin tưởng của dân cư vào nền kinh tế và hệ thống tài chính của các ngân hàng. Dữ liệu được thống kê hàng tháng từ báo cáo của SBV, công bố trễ từ 2-3 tháng.",
+                  "frequency": "Độ trễ từ 1-3 tháng (ngày công bố không cố định)",
+                  "last_updated": "2026-09-17T08:48:53.639Z",
+                  "source": "Ngân hàng Nhà nước - SBV",
+                  "note": "Dữ liệu được Wigroup điều chỉnh lịch sử khi SBV thay đổi phương pháp luận (tháng 10/2025).",
+                  "related_blog": null
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "quarterly": {
+      "value": {
+        "title": "Tiền gửi",
+        "headers": [
+          "06-2026",
+          "03-2026",
+          "12-2025",
+          "09-2025",
+          "06-2025",
+          "03-2025",
+          "12-2024",
+          "09-2024",
+          "06-2024",
+          "03-2024",
+          "12-2023",
+          "09-2023",
+          "06-2023",
+          "03-2023",
+          "12-2022",
+          "09-2022",
+          "06-2022",
+          "03-2022",
+          "12-2021"
+        ],
+        "parent": [
+          {
+            "title": "TIỀN GỬI (Tỷ VND)",
+            "child": [
+              {
+                "id": "229_huy_dong_von_tong_tien_gui_1_qtr",
+                "column_name": "huy_dong_von_tong_tien_gui_1_qtr",
+                "table_name": "229",
+                "name": "Tổng tiền gửi",
+                "hasSub": false,
+                "level": 3,
+                "heading": 2,
+                "open": 1,
+                "dateType": "quy",
+                "yAxis": 17,
+                "data": [
+                  [
+                    1782777600000,
+                    17440361
+                  ],
+                  [
+                    1774915200000,
+                    16575580
+                  ],
+                  [
+                    1767139200000,
+                    16515887
+                  ],
+                  [
+                    1759190400000,
+                    15856057
+                  ],
+                  [
+                    1751241600000,
+                    15480058
+                  ],
+                  [
+                    1743379200000,
+                    14687694
+                  ],
+                  [
+                    1735603200000,
+                    14434965
+                  ],
+                  [
+                    1727654400000,
+                    13750925
+                  ],
+                  [
+                    1719705600000,
+                    13447866
+                  ],
+                  [
+                    1711843200000,
+                    13034742
+                  ],
+                  [
+                    1703980800000,
+                    13104570
+                  ],
+                  [
+                    1696032000000,
+                    12423927
+                  ],
+                  [
+                    1688083200000,
+                    12117241
+                  ],
+                  [
+                    1680220800000,
+                    11703514
+                  ],
+                  [
+                    1672444800000,
+                    11580939
+                  ],
+                  [
+                    1664496000000,
+                    11190388
+                  ],
+                  [
+                    1656547200000,
+                    11236969
+                  ],
+                  [
+                    1648684800000,
+                    11110482
+                  ],
+                  [
+                    1640908800000,
+                    10724956
+                  ]
+                ],
+                "time_frame": "quarterly",
+                "lingo": {
+                  "name": "Tổng tiền gửi",
+                  "unit": "Tỷ VND",
+                  "description": "Tổng tiền gửi là tổng số tiền mà các cá nhân, tổ chức kinh tế (doanh nghiệp, tổ chức khác) và các thực thể khác gửi tại các tổ chức tín dụng (ngân hàng, tổ chức tài chính) trong hệ thống ngân hàng.",
+                  "frequency": "Độ trễ từ 1-3 tháng (ngày công bố không cố định)",
+                  "last_updated": "2026-09-17T08:48:53.624Z",
+                  "source": "Ngân hàng Nhà nước - SBV",
+                  "note": "Dữ liệu được Wigroup điều chỉnh lịch sử khi SBV thay đổi phương pháp luận (tháng 10/2025).",
+                  "related_blog": null
+                }
+              },
+              {
+                "id": "229_huy_dong_von_tien_gui_cua_tckt_1_qtr",
+                "column_name": "huy_dong_von_tien_gui_cua_tckt_1_qtr",
+                "table_name": "229",
+                "name": "Tiền gửi của TCKT",
+                "hasSub": false,
+                "level": 3,
+                "heading": 3,
+                "open": 1,
+                "dateType": "quy",
+                "yAxis": 17,
+                "data": [
+                  [
+                    1782777600000,
+                    6371536
+                  ],
+                  [
+                    1774915200000,
+                    6014229
+                  ],
+                  [
+                    1767139200000,
+                    6180504
+                  ],
+                  [
+                    1759190400000,
+                    5692222
+                  ],
+                  [
+                    1751241600000,
+                    5524603
+                  ],
+                  [
+                    1743379200000,
+                    5126425
+                  ],
+                  [
+                    1735603200000,
+                    5226615
+                  ],
+                  [
+                    1727654400000,
+                    4823909
+                  ],
+                  [
+                    1719705600000,
+                    4708804
+                  ],
+                  [
+                    1711843200000,
+                    4517559
+                  ],
+                  [
+                    1703980800000,
+                    4663902
+                  ],
+                  [
+                    1696032000000,
+                    4247276
+                  ],
+                  [
+                    1688083200000,
+                    4079147
+                  ],
+                  [
+                    1680220800000,
+                    3860888
+                  ],
+                  [
+                    1672444800000,
+                    4058547
+                  ],
+                  [
+                    1664496000000,
+                    3941792
+                  ],
+                  [
+                    1656547200000,
+                    3987147
+                  ],
+                  [
+                    1648684800000,
+                    3997959
+                  ],
+                  [
+                    1640908800000,
+                    3848348
+                  ]
+                ],
+                "time_frame": "quarterly",
+                "lingo": {
+                  "name": "Tiền gửi của TCKT",
+                  "unit": "Tỷ VND",
+                  "description": "Chỉ số tiền gửi của tổ chức kinh tế (TCKT) tại Việt Nam là tổng lượng tiền mà các tổ chức kinh tế, doanh nghiệp, cơ sở kinh doanh,... đang gửi tiết kiệm tại các ngân hàng. Nó thể hiện khả năng thu hút vốn tiết kiệm từ các doanh nghiệp vào hệ thống ngân hàng, ngoài ra còn phản ánh mức độ tin tưởng của doanh nghiệp vào nền kinh tế và hệ thống tài chính của các ngân hàng. Dữ liệu được thống kê hàng tháng từ báo cáo của SBV, công bố trễ từ 2-3 tháng.",
+                  "frequency": "Độ trễ từ 1-3 tháng (ngày công bố không cố định)",
+                  "last_updated": "2026-09-17T08:48:53.651Z",
+                  "source": "Ngân hàng Nhà nước - SBV",
+                  "note": "Dữ liệu được Wigroup điều chỉnh lịch sử khi SBV thay đổi phương pháp luận (tháng 10/2025).",
+                  "related_blog": null
+                }
+              },
+              {
+                "id": "229_huy_dong_von_tien_gui_cua_dan_cu_1_qtr",
+                "column_name": "huy_dong_von_tien_gui_cua_dan_cu_1_qtr",
+                "table_name": "229",
+                "name": "Tiền gửi của dân cư",
+                "hasSub": false,
+                "level": 3,
+                "heading": 3,
+                "open": 1,
+                "dateType": "quy",
+                "yAxis": 17,
+                "data": [
+                  [
+                    1782777600000,
+                    11068825
+                  ],
+                  [
+                    1774915200000,
+                    10561351
+                  ],
+                  [
+                    1767139200000,
+                    10335383
+                  ],
+                  [
+                    1759190400000,
+                    10160374
+                  ],
+                  [
+                    1751241600000,
+                    9981548
+                  ],
+                  [
+                    1743379200000,
+                    9690224
+                  ],
+                  [
+                    1735603200000,
+                    9164966
+                  ],
+                  [
+                    1727654400000,
+                    9025675
+                  ],
+                  [
+                    1719705600000,
+                    8843483
+                  ],
+                  [
+                    1711843200000,
+                    8660465
+                  ],
+                  [
+                    1703980800000,
+                    8474426
+                  ],
+                  [
+                    1696032000000,
+                    8366121
+                  ],
+                  [
+                    1688083200000,
+                    8280031
+                  ],
+                  [
+                    1680220800000,
+                    8147622
+                  ],
+                  [
+                    1672444800000,
+                    7609199
+                  ],
+                  [
+                    1664496000000,
+                    7314314
+                  ],
+                  [
+                    1656547200000,
+                    7289677
+                  ],
+                  [
+                    1648684800000,
+                    7101639
+                  ],
+                  [
+                    1640908800000,
+                    6875930
+                  ]
+                ],
+                "time_frame": "quarterly",
+                "lingo": {
+                  "name": "Tiền gửi của dân cư",
+                  "unit": "Tỷ VND",
+                  "description": "Chỉ số tiền gửi của dân cư tại Việt Nam là tổng lượng tiền mà các cá nhân, hộ gia đình,... đang gửi tiết kiệm tại các ngân hàng. Thể hiện khả năng thu hút vốn tiết kiệm từ các hộ gia đình và cá nhân vào hệ thống ngân hàng và phản ánh mức độ tin tưởng của dân cư vào nền kinh tế và hệ thống tài chính của các ngân hàng. Dữ liệu được thống kê hàng tháng từ báo cáo của SBV, công bố trễ từ 2-3 tháng.",
+                  "frequency": "Độ trễ từ 1-3 tháng (ngày công bố không cố định)",
+                  "last_updated": "2026-09-17T08:48:53.639Z",
+                  "source": "Ngân hàng Nhà nước - SBV",
+                  "note": "Dữ liệu được Wigroup điều chỉnh lịch sử khi SBV thay đổi phương pháp luận (tháng 10/2025).",
+                  "related_blog": null
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "yoy": {
+        "title": "Tiền gửi",
+        "headers": [
+          "06-2026",
+          "03-2026",
+          "12-2025",
+          "09-2025",
+          "06-2025",
+          "03-2025",
+          "12-2024",
+          "09-2024",
+          "06-2024",
+          "03-2024",
+          "12-2023",
+          "09-2023",
+          "06-2023",
+          "03-2023",
+          "12-2022",
+          "09-2022",
+          "06-2022",
+          "03-2022",
+          "12-2021"
+        ],
+        "parent": [
+          {
+            "title": "TIỀN GỬI",
+            "child": [
+              {
+                "id": "229_huy_dong_von_tong_tien_gui_1_qtr_yoy",
+                "column_name": "huy_dong_von_tong_tien_gui_1_qtr_yoy",
+                "table_name": "229",
+                "name": "Tổng tiền gửi",
+                "hasSub": false,
+                "level": 3,
+                "heading": 2,
+                "open": 1,
+                "dateType": "quy",
+                "yAxis": 1,
+                "data": [
+                  [
+                    1782777600000,
+                    12.66340862547156
+                  ],
+                  [
+                    1774915200000,
+                    12.853522139009705
+                  ],
+                  [
+                    1767139200000,
+                    14.415843751612837
+                  ],
+                  [
+                    1759190400000,
+                    15.30902102949438
+                  ],
+                  [
+                    1751241600000,
+                    15.111631838092379
+                  ],
+                  [
+                    1743379200000,
+                    12.681125564280443
+                  ],
+                  [
+                    1735603200000,
+                    10.152145396605917
+                  ],
+                  [
+                    1727654400000,
+                    10.680986776564286
+                  ],
+                  [
+                    1719705600000,
+                    10.981253900949895
+                  ],
+                  [
+                    1711843200000,
+                    11.37460082501717
+                  ],
+                  [
+                    1703980800000,
+                    13.156368408468433
+                  ],
+                  [
+                    1696032000000,
+                    11.023201340293117
+                  ],
+                  [
+                    1688083200000,
+                    7.833713877825951
+                  ],
+                  [
+                    1680220800000,
+                    5.337590214357936
+                  ],
+                  [
+                    1672444800000,
+                    7.981226216685644
+                  ],
+                  [
+                    1664496000000,
+                    8.25311932785173
+                  ],
+                  [
+                    1656547200000,
+                    10.228003973987022
+                  ],
+                  [
+                    1648684800000,
+                    11.504418384163326
+                  ],
+                  [
+                    1640908800000,
+                    9.241546834054942
+                  ]
+                ],
+                "time_frame": "quarterly",
+                "lingo": {
+                  "name": "Tổng tiền gửi",
+                  "unit": "%",
+                  "description": "Tổng tiền gửi là tổng số tiền mà các cá nhân, tổ chức kinh tế (doanh nghiệp, tổ chức khác) và các thực thể khác gửi tại các tổ chức tín dụng (ngân hàng, tổ chức tài chính) trong hệ thống ngân hàng.",
+                  "frequency": "Độ trễ từ 1-3 tháng (ngày công bố không cố định)",
+                  "last_updated": "2026-09-17T08:48:53.624Z",
+                  "source": "Ngân hàng Nhà nước - SBV",
+                  "note": "Dữ liệu được Wigroup điều chỉnh lịch sử khi SBV thay đổi phương pháp luận (tháng 10/2025).",
+                  "related_blog": null
+                }
+              },
+              {
+                "id": "229_huy_dong_von_tien_gui_cua_tckt_1_qtr_yoy",
+                "column_name": "huy_dong_von_tien_gui_cua_tckt_1_qtr_yoy",
+                "table_name": "229",
+                "name": "Tiền gửi của TCKT",
+                "hasSub": false,
+                "level": 3,
+                "heading": 3,
+                "open": 1,
+                "dateType": "quy",
+                "yAxis": 1,
+                "data": [
+                  [
+                    1782777600000,
+                    15.330205627445084
+                  ],
+                  [
+                    1774915200000,
+                    17.31818957655676
+                  ],
+                  [
+                    1767139200000,
+                    18.250607706900162
+                  ],
+                  [
+                    1759190400000,
+                    18.000194448112516
+                  ],
+                  [
+                    1751241600000,
+                    17.324972540798043
+                  ],
+                  [
+                    1743379200000,
+                    13.477765315295272
+                  ],
+                  [
+                    1735603200000,
+                    12.065283532973034
+                  ],
+                  [
+                    1727654400000,
+                    13.576537055750556
+                  ],
+                  [
+                    1719705600000,
+                    15.435996790505465
+                  ],
+                  [
+                    1711843200000,
+                    17.00828928474486
+                  ],
+                  [
+                    1703980800000,
+                    14.915559681827018
+                  ],
+                  [
+                    1696032000000,
+                    7.7498761984396936
+                  ],
+                  [
+                    1688083200000,
+                    2.3074142989962496
+                  ],
+                  [
+                    1680220800000,
+                    -3.4285244045774355
+                  ],
+                  [
+                    1672444800000,
+                    5.462058005149222
+                  ],
+                  [
+                    1664496000000,
+                    9.968185100003236
+                  ],
+                  [
+                    1656547200000,
+                    14.434782758439576
+                  ],
+                  [
+                    1648684800000,
+                    19.226818973183534
+                  ],
+                  [
+                    1640908800000,
+                    15.731227103197778
+                  ]
+                ],
+                "time_frame": "quarterly",
+                "lingo": {
+                  "name": "Tiền gửi của TCKT",
+                  "unit": "%",
+                  "description": "Chỉ số tiền gửi của tổ chức kinh tế (TCKT) tại Việt Nam là tổng lượng tiền mà các tổ chức kinh tế, doanh nghiệp, cơ sở kinh doanh,... đang gửi tiết kiệm tại các ngân hàng. Nó thể hiện khả năng thu hút vốn tiết kiệm từ các doanh nghiệp vào hệ thống ngân hàng, ngoài ra còn phản ánh mức độ tin tưởng của doanh nghiệp vào nền kinh tế và hệ thống tài chính của các ngân hàng. Dữ liệu được thống kê hàng tháng từ báo cáo của SBV, công bố trễ từ 2-3 tháng.",
+                  "frequency": "Độ trễ từ 1-3 tháng (ngày công bố không cố định)",
+                  "last_updated": "2026-09-17T08:48:53.651Z",
+                  "source": "Ngân hàng Nhà nước - SBV",
+                  "note": "Dữ liệu được Wigroup điều chỉnh lịch sử khi SBV thay đổi phương pháp luận (tháng 10/2025).",
+                  "related_blog": null
+                }
+              },
+              {
+                "id": "229_huy_dong_von_tien_gui_cua_dan_cu_1_qtr_yoy",
+                "column_name": "huy_dong_von_tien_gui_cua_dan_cu_1_qtr_yoy",
+                "table_name": "229",
+                "name": "Tiền gửi của dân cư",
+                "hasSub": false,
+                "level": 3,
+                "heading": 3,
+                "open": 1,
+                "dateType": "quy",
+                "yAxis": 1,
+                "data": [
+                  [
+                    1782777600000,
+                    10.89286952284355
+                  ],
+                  [
+                    1774915200000,
+                    8.989750907718955
+                  ],
+                  [
+                    1767139200000,
+                    12.770554740737719
+                  ],
+                  [
+                    1759190400000,
+                    12.571901824517278
+                  ],
+                  [
+                    1751241600000,
+                    12.868968029904055
+                  ],
+                  [
+                    1743379200000,
+                    11.890343070493328
+                  ],
+                  [
+                    1735603200000,
+                    8.148516489494392
+                  ],
+                  [
+                    1727654400000,
+                    7.883629701267767
+                  ],
+                  [
+                    1719705600000,
+                    6.804950367939444
+                  ],
+                  [
+                    1711843200000,
+                    6.294388718573346
+                  ],
+                  [
+                    1703980800000,
+                    11.370802629816884
+                  ],
+                  [
+                    1696032000000,
+                    14.380118217511582
+                  ],
+                  [
+                    1688083200000,
+                    13.585704826153478
+                  ],
+                  [
+                    1680220800000,
+                    14.728754869122465
+                  ],
+                  [
+                    1672444800000,
+                    10.664288321725207
+                  ],
+                  [
+                    1664496000000,
+                    6.54895411264366
+                  ],
+                  [
+                    1656547200000,
+                    6.165797253082221
+                  ],
+                  [
+                    1648684800000,
+                    4.269282135129993
+                  ],
+                  [
+                    1640908800000,
+                    3.084918040209224
+                  ]
+                ],
+                "time_frame": "quarterly",
+                "lingo": {
+                  "name": "Tiền gửi của dân cư",
+                  "unit": "%",
+                  "description": "Chỉ số tiền gửi của dân cư tại Việt Nam là tổng lượng tiền mà các cá nhân, hộ gia đình,... đang gửi tiết kiệm tại các ngân hàng. Thể hiện khả năng thu hút vốn tiết kiệm từ các hộ gia đình và cá nhân vào hệ thống ngân hàng và phản ánh mức độ tin tưởng của dân cư vào nền kinh tế và hệ thống tài chính của các ngân hàng. Dữ liệu được thống kê hàng tháng từ báo cáo của SBV, công bố trễ từ 2-3 tháng.",
+                  "frequency": "Độ trễ từ 1-3 tháng (ngày công bố không cố định)",
+                  "last_updated": "2026-09-17T08:48:53.639Z",
+                  "source": "Ngân hàng Nhà nước - SBV",
+                  "note": "Dữ liệu được Wigroup điều chỉnh lịch sử khi SBV thay đổi phương pháp luận (tháng 10/2025).",
+                  "related_blog": null
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "yearly": {
+      "value": {
+        "title": "Tiền gửi",
+        "headers": [
+          "12-2025",
+          "12-2024",
+          "12-2023",
+          "12-2022",
+          "12-2021",
+          "12-2020",
+          "12-2019",
+          "12-2018",
+          "12-2017",
+          "12-2016",
+          "12-2015",
+          "12-2014",
+          "12-2013",
+          "12-2012"
+        ],
+        "parent": [
+          {
+            "title": "TIỀN GỬI (Tỷ VND)",
+            "child": [
+              {
+                "id": "229_huy_dong_von_tong_tien_gui_1_yrl",
+                "column_name": "huy_dong_von_tong_tien_gui_1_yrl",
+                "table_name": "229",
+                "name": "Tổng tiền gửi",
+                "hasSub": false,
+                "level": 3,
+                "heading": 2,
+                "open": 1,
+                "dateType": "nam",
+                "yAxis": 17,
+                "data": [
+                  [
+                    1767139200000,
+                    16515887
+                  ],
+                  [
+                    1735603200000,
+                    14434965
+                  ],
+                  [
+                    1703980800000,
+                    13104570
+                  ],
+                  [
+                    1672444800000,
+                    11580939
+                  ],
+                  [
+                    1640908800000,
+                    10724956
+                  ],
+                  [
+                    1609372800000,
+                    9817653
+                  ],
+                  [
+                    1577750400000,
+                    8615209
+                  ],
+                  [
+                    1546214400000,
+                    7562227
+                  ],
+                  [
+                    1514678400000,
+                    6704926
+                  ],
+                  [
+                    1483142400000,
+                    5877339
+                  ],
+                  [
+                    1451520000000,
+                    4993241
+                  ],
+                  [
+                    1419984000000,
+                    4367992
+                  ],
+                  [
+                    1388448000000,
+                    3659202
+                  ],
+                  [
+                    1356912000000,
+                    2975841
+                  ]
+                ],
+                "time_frame": "yearly",
+                "lingo": {
+                  "name": "Tổng tiền gửi",
+                  "unit": "Tỷ VND",
+                  "description": "Tổng tiền gửi là tổng số tiền mà các cá nhân, tổ chức kinh tế (doanh nghiệp, tổ chức khác) và các thực thể khác gửi tại các tổ chức tín dụng (ngân hàng, tổ chức tài chính) trong hệ thống ngân hàng.",
+                  "frequency": "Độ trễ từ 1-3 tháng (ngày công bố không cố định)",
+                  "last_updated": "2026-09-17T08:48:53.624Z",
+                  "source": "Ngân hàng Nhà nước - SBV",
+                  "note": "Dữ liệu được Wigroup điều chỉnh lịch sử khi SBV thay đổi phương pháp luận (tháng 10/2025).",
+                  "related_blog": null
+                }
+              },
+              {
+                "id": "229_huy_dong_von_tien_gui_cua_tckt_1_yrl",
+                "column_name": "huy_dong_von_tien_gui_cua_tckt_1_yrl",
+                "table_name": "229",
+                "name": "Tiền gửi của TCKT",
+                "hasSub": false,
+                "level": 3,
+                "heading": 3,
+                "open": 1,
+                "dateType": "nam",
+                "yAxis": 17,
+                "data": [
+                  [
+                    1767139200000,
+                    6180504
+                  ],
+                  [
+                    1735603200000,
+                    5226615
+                  ],
+                  [
+                    1703980800000,
+                    4663902
+                  ],
+                  [
+                    1672444800000,
+                    4058547
+                  ],
+                  [
+                    1640908800000,
+                    3848348
+                  ],
+                  [
+                    1609372800000,
+                    3325246
+                  ],
+                  [
+                    1577750400000,
+                    2701344
+                  ],
+                  [
+                    1546214400000,
+                    2277828
+                  ],
+                  [
+                    1514678400000,
+                    1964078
+                  ],
+                  [
+                    1483142400000,
+                    1710321
+                  ],
+                  [
+                    1451520000000,
+                    1447792
+                  ],
+                  [
+                    1419984000000,
+                    1281348
+                  ],
+                  [
+                    1388448000000,
+                    1082832
+                  ],
+                  [
+                    1356912000000,
+                    885010
+                  ]
+                ],
+                "time_frame": "yearly",
+                "lingo": {
+                  "name": "Tiền gửi của TCKT",
+                  "unit": "Tỷ VND",
+                  "description": "Chỉ số tiền gửi của tổ chức kinh tế (TCKT) tại Việt Nam là tổng lượng tiền mà các tổ chức kinh tế, doanh nghiệp, cơ sở kinh doanh,... đang gửi tiết kiệm tại các ngân hàng. Nó thể hiện khả năng thu hút vốn tiết kiệm từ các doanh nghiệp vào hệ thống ngân hàng, ngoài ra còn phản ánh mức độ tin tưởng của doanh nghiệp vào nền kinh tế và hệ thống tài chính của các ngân hàng. Dữ liệu được thống kê hàng tháng từ báo cáo của SBV, công bố trễ từ 2-3 tháng.",
+                  "frequency": "Độ trễ từ 1-3 tháng (ngày công bố không cố định)",
+                  "last_updated": "2026-09-17T08:48:53.651Z",
+                  "source": "Ngân hàng Nhà nước - SBV",
+                  "note": "Dữ liệu được Wigroup điều chỉnh lịch sử khi SBV thay đổi phương pháp luận (tháng 10/2025).",
+                  "related_blog": null
+                }
+              },
+              {
+                "id": "229_huy_dong_von_tien_gui_cua_dan_cu_1_yrl",
+                "column_name": "huy_dong_von_tien_gui_cua_dan_cu_1_yrl",
+                "table_name": "229",
+                "name": "Tiền gửi của dân cư",
+                "hasSub": false,
+                "level": 3,
+                "heading": 3,
+                "open": 1,
+                "dateType": "nam",
+                "yAxis": 17,
+                "data": [
+                  [
+                    1767139200000,
+                    10335383
+                  ],
+                  [
+                    1735603200000,
+                    9164966
+                  ],
+                  [
+                    1703980800000,
+                    8474426
+                  ],
+                  [
+                    1672444800000,
+                    7609199
+                  ],
+                  [
+                    1640908800000,
+                    6875930
+                  ],
+                  [
+                    1609372800000,
+                    6670161
+                  ],
+                  [
+                    1577750400000,
+                    6265461
+                  ],
+                  [
+                    1546214400000,
+                    5677312
+                  ],
+                  [
+                    1514678400000,
+                    5139352
+                  ],
+                  [
+                    1483142400000,
+                    4526566
+                  ],
+                  [
+                    1451520000000,
+                    3855657
+                  ],
+                  [
+                    1419984000000,
+                    3344602
+                  ],
+                  [
+                    1388448000000,
+                    2783974
+                  ],
+                  [
+                    1356912000000,
+                    2255694
+                  ]
+                ],
+                "time_frame": "yearly",
+                "lingo": {
+                  "name": "Tiền gửi của dân cư",
+                  "unit": "Tỷ VND",
+                  "description": "Chỉ số tiền gửi của dân cư tại Việt Nam là tổng lượng tiền mà các cá nhân, hộ gia đình,... đang gửi tiết kiệm tại các ngân hàng. Thể hiện khả năng thu hút vốn tiết kiệm từ các hộ gia đình và cá nhân vào hệ thống ngân hàng và phản ánh mức độ tin tưởng của dân cư vào nền kinh tế và hệ thống tài chính của các ngân hàng. Dữ liệu được thống kê hàng tháng từ báo cáo của SBV, công bố trễ từ 2-3 tháng.",
+                  "frequency": "Độ trễ từ 1-3 tháng (ngày công bố không cố định)",
+                  "last_updated": "2026-09-17T08:48:53.639Z",
+                  "source": "Ngân hàng Nhà nước - SBV",
+                  "note": "Dữ liệu được Wigroup điều chỉnh lịch sử khi SBV thay đổi phương pháp luận (tháng 10/2025).",
+                  "related_blog": null
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "yoy": {
+        "title": "Tiền gửi",
+        "headers": [
+          "12-2025",
+          "12-2024",
+          "12-2023",
+          "12-2022",
+          "12-2021",
+          "12-2020",
+          "12-2019",
+          "12-2018",
+          "12-2017",
+          "12-2016",
+          "12-2015",
+          "12-2014",
+          "12-2013"
+        ],
+        "parent": [
+          {
+            "title": "TIỀN GỬI",
+            "child": [
+              {
+                "id": "229_huy_dong_von_tong_tien_gui_1_yrl_yoy",
+                "column_name": "huy_dong_von_tong_tien_gui_1_yrl_yoy",
+                "table_name": "229",
+                "name": "Tổng tiền gửi",
+                "hasSub": false,
+                "level": 3,
+                "heading": 2,
+                "open": 1,
+                "dateType": "nam",
+                "yAxis": 1,
+                "data": [
+                  [
+                    1767139200000,
+                    14.415843751612837
+                  ],
+                  [
+                    1735603200000,
+                    10.152145396605917
+                  ],
+                  [
+                    1703980800000,
+                    13.156368408468433
+                  ],
+                  [
+                    1672444800000,
+                    7.981226216685644
+                  ],
+                  [
+                    1640908800000,
+                    9.241546834054942
+                  ],
+                  [
+                    1609372800000,
+                    13.95722378876705
+                  ],
+                  [
+                    1577750400000,
+                    13.924231578872204
+                  ],
+                  [
+                    1546214400000,
+                    12.786136640434211
+                  ],
+                  [
+                    1514678400000,
+                    14.080981205950515
+                  ],
+                  [
+                    1483142400000,
+                    17.70589482862934
+                  ],
+                  [
+                    1451520000000,
+                    14.314334824789057
+                  ],
+                  [
+                    1419984000000,
+                    19.370070304946267
+                  ],
+                  [
+                    1388448000000,
+                    22.963626080828913
+                  ]
+                ],
+                "time_frame": "yearly",
+                "lingo": {
+                  "name": "Tổng tiền gửi",
+                  "unit": "%",
+                  "description": "Tổng tiền gửi là tổng số tiền mà các cá nhân, tổ chức kinh tế (doanh nghiệp, tổ chức khác) và các thực thể khác gửi tại các tổ chức tín dụng (ngân hàng, tổ chức tài chính) trong hệ thống ngân hàng.",
+                  "frequency": "Độ trễ từ 1-3 tháng (ngày công bố không cố định)",
+                  "last_updated": "2026-09-17T08:48:53.624Z",
+                  "source": "Ngân hàng Nhà nước - SBV",
+                  "note": "Dữ liệu được Wigroup điều chỉnh lịch sử khi SBV thay đổi phương pháp luận (tháng 10/2025).",
+                  "related_blog": null
+                }
+              },
+              {
+                "id": "229_huy_dong_von_tien_gui_cua_tckt_1_yrl_yoy",
+                "column_name": "huy_dong_von_tien_gui_cua_tckt_1_yrl_yoy",
+                "table_name": "229",
+                "name": "Tiền gửi của TCKT",
+                "hasSub": false,
+                "level": 3,
+                "heading": 3,
+                "open": 1,
+                "dateType": "nam",
+                "yAxis": 1,
+                "data": [
+                  [
+                    1767139200000,
+                    18.250607706900162
+                  ],
+                  [
+                    1735603200000,
+                    12.065283532973034
+                  ],
+                  [
+                    1703980800000,
+                    14.915559681827018
+                  ],
+                  [
+                    1672444800000,
+                    5.462058005149222
+                  ],
+                  [
+                    1640908800000,
+                    15.731227103197778
+                  ],
+                  [
+                    1609372800000,
+                    23.095984813485433
+                  ],
+                  [
+                    1577750400000,
+                    18.592975413420156
+                  ],
+                  [
+                    1546214400000,
+                    15.974416494660598
+                  ],
+                  [
+                    1514678400000,
+                    14.836805488560334
+                  ],
+                  [
+                    1483142400000,
+                    18.13306055013427
+                  ],
+                  [
+                    1451520000000,
+                    12.989757661462772
+                  ],
+                  [
+                    1419984000000,
+                    18.33303781195975
+                  ],
+                  [
+                    1388448000000,
+                    22.352515790782025
+                  ]
+                ],
+                "time_frame": "yearly",
+                "lingo": {
+                  "name": "Tiền gửi của TCKT",
+                  "unit": "%",
+                  "description": "Chỉ số tiền gửi của tổ chức kinh tế (TCKT) tại Việt Nam là tổng lượng tiền mà các tổ chức kinh tế, doanh nghiệp, cơ sở kinh doanh,... đang gửi tiết kiệm tại các ngân hàng. Nó thể hiện khả năng thu hút vốn tiết kiệm từ các doanh nghiệp vào hệ thống ngân hàng, ngoài ra còn phản ánh mức độ tin tưởng của doanh nghiệp vào nền kinh tế và hệ thống tài chính của các ngân hàng. Dữ liệu được thống kê hàng tháng từ báo cáo của SBV, công bố trễ từ 2-3 tháng.",
+                  "frequency": "Độ trễ từ 1-3 tháng (ngày công bố không cố định)",
+                  "last_updated": "2026-09-17T08:48:53.651Z",
+                  "source": "Ngân hàng Nhà nước - SBV",
+                  "note": "Dữ liệu được Wigroup điều chỉnh lịch sử khi SBV thay đổi phương pháp luận (tháng 10/2025).",
+                  "related_blog": null
+                }
+              },
+              {
+                "id": "229_huy_dong_von_tien_gui_cua_dan_cu_1_yrl_yoy",
+                "column_name": "huy_dong_von_tien_gui_cua_dan_cu_1_yrl_yoy",
+                "table_name": "229",
+                "name": "Tiền gửi của dân cư",
+                "hasSub": false,
+                "level": 3,
+                "heading": 3,
+                "open": 1,
+                "dateType": "nam",
+                "yAxis": 1,
+                "data": [
+                  [
+                    1767139200000,
+                    12.770554740737719
+                  ],
+                  [
+                    1735603200000,
+                    8.148516489494392
+                  ],
+                  [
+                    1703980800000,
+                    11.370802629816884
+                  ],
+                  [
+                    1672444800000,
+                    10.664288321725207
+                  ],
+                  [
+                    1640908800000,
+                    3.084918040209224
+                  ],
+                  [
+                    1609372800000,
+                    6.459221436379542
+                  ],
+                  [
+                    1577750400000,
+                    10.35963850498264
+                  ],
+                  [
+                    1546214400000,
+                    10.467467493956436
+                  ],
+                  [
+                    1514678400000,
+                    13.537547005831794
+                  ],
+                  [
+                    1483142400000,
+                    17.400640150303825
+                  ],
+                  [
+                    1451520000000,
+                    15.279994450759762
+                  ],
+                  [
+                    1419984000000,
+                    20.137688067489137
+                  ],
+                  [
+                    1388448000000,
+                    23.419843294347547
+                  ]
+                ],
+                "time_frame": "yearly",
+                "lingo": {
+                  "name": "Tiền gửi của dân cư",
+                  "unit": "%",
+                  "description": "Chỉ số tiền gửi của dân cư tại Việt Nam là tổng lượng tiền mà các cá nhân, hộ gia đình,... đang gửi tiết kiệm tại các ngân hàng. Thể hiện khả năng thu hút vốn tiết kiệm từ các hộ gia đình và cá nhân vào hệ thống ngân hàng và phản ánh mức độ tin tưởng của dân cư vào nền kinh tế và hệ thống tài chính của các ngân hàng. Dữ liệu được thống kê hàng tháng từ báo cáo của SBV, công bố trễ từ 2-3 tháng.",
+                  "frequency": "Độ trễ từ 1-3 tháng (ngày công bố không cố định)",
+                  "last_updated": "2026-09-17T08:48:53.639Z",
+                  "source": "Ngân hàng Nhà nước - SBV",
+                  "note": "Dữ liệu được Wigroup điều chỉnh lịch sử khi SBV thay đổi phương pháp luận (tháng 10/2025).",
+                  "related_blog": null
+                }
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

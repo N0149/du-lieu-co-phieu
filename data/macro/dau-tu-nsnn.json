@@ -1,0 +1,4551 @@
+{
+  "meta": {
+    "group": "Đầu tư",
+    "groupKey": "dautu",
+    "name": "Vốn đầu tư NSNN",
+    "slug": "dau-tu-nsnn",
+    "apiPath": "dautu/vondautunsnn",
+    "defaultTimeFrame": "monthly",
+    "defaultValueType": "value",
+    "supportedTimeFrames": [
+      "monthly",
+      "quarterly",
+      "yearly"
+    ],
+    "supportedValueTypes": [
+      "value",
+      "yoy"
+    ],
+    "unit": "Tỷ VND",
+    "description": "Vốn đầu tư thực hiện từ nguồn ngân sách nhà nước qua các cấp quản lý.",
+    "updatedAt": "2026-09-19T10:14:24.173Z",
+    "latestPeriod": "08-2026",
+    "latestValue": 105749.188
+  },
+  "datasets": {
+    "monthly": {
+      "value": {
+        "title": "Vốn đầu tư Ngân sách Nhà nước",
+        "headers": [
+          "08-2026",
+          "07-2026",
+          "06-2026",
+          "05-2026",
+          "04-2026",
+          "03-2026",
+          "02-2026",
+          "01-2026",
+          "12-2025",
+          "11-2025",
+          "10-2025",
+          "09-2025",
+          "08-2025",
+          "07-2025",
+          "06-2025",
+          "05-2025",
+          "04-2025",
+          "03-2025",
+          "02-2025",
+          "01-2025"
+        ],
+        "parent": [
+          {
+            "title": "VỐN ĐẦU TƯ NGÂN SÁCH NHÀ NƯỚC (Tỷ VND)",
+            "child": [
+              {
+                "id": "232_tong",
+                "column_name": "tong",
+                "table_name": "232",
+                "name": "Tổng",
+                "hasSub": false,
+                "level": 1,
+                "heading": 1,
+                "open": 1,
+                "dateType": "thang",
+                "yAxis": 17,
+                "data": [
+                  [
+                    1788134400000,
+                    105749.188
+                  ],
+                  [
+                    1785456000000,
+                    97700.58099999999
+                  ],
+                  [
+                    1782777600000,
+                    85177.519
+                  ],
+                  [
+                    1780185600000,
+                    67367.38739
+                  ],
+                  [
+                    1777507200000,
+                    56839.45355999999
+                  ],
+                  [
+                    1774915200000,
+                    48241.097
+                  ],
+                  [
+                    1772236800000,
+                    39840.883
+                  ],
+                  [
+                    1769817600000,
+                    44636.38200000001
+                  ],
+                  [
+                    1767139200000,
+                    100207.899
+                  ],
+                  [
+                    1764460800000,
+                    100207.899
+                  ],
+                  [
+                    1761868800000,
+                    90276.186
+                  ],
+                  [
+                    1759190400000,
+                    86622.06777
+                  ],
+                  [
+                    1756598400000,
+                    85212.8831587429
+                  ],
+                  [
+                    1753920000000,
+                    78306.981731533
+                  ],
+                  [
+                    1751241600000,
+                    71473.94236
+                  ],
+                  [
+                    1748649600000,
+                    58954.2698638838
+                  ],
+                  [
+                    1745971200000,
+                    49605.265
+                  ],
+                  [
+                    1743379200000,
+                    43970.575
+                  ],
+                  [
+                    1740700800000,
+                    37693.2542
+                  ],
+                  [
+                    1738281600000,
+                    36151.684
+                  ]
+                ],
+                "time_frame": "monthly",
+                "lingo": {
+                  "name": "Vốn NSNN Tổng (từ 2025)",
+                  "unit": "Tỷ VND",
+                  "description": "Chỉ số Vốn đầu tư ngân sách nhà nước (Vốn NSNN) là chỉ số phản ánh tổng số vốn mà Nhà nước đầu tư từ ngân sách để phát triển kinh tế và đảm bảo an sinh xã hội. Trong đó, Vốn NSNN tổng bao gồm: các khoản chi đầu tư cho cơ sở hạ tầng, giáo dục, y tế, và các dự án phát triển khác. Chỉ số này giúp đo lường quy mô và hiệu quả của việc phân bổ nguồn lực từ ngân sách nhà nước cho các chính sách đầu tư công và sự phát triển của nền kinh tế",
+                  "frequency": "Ngày 6 tháng sau",
+                  "last_updated": "2026-09-03T02:55:34.731Z",
+                  "source": "Tổng cục Thống kê - GSO",
+                  "note": "Dữ liệu sau sáp nhập bộ ngành. Cập nhật từ năm 2025",
+                  "related_blog": null
+                }
+              },
+              {
+                "id": "232_trung_uong",
+                "column_name": "trung_uong",
+                "table_name": "232",
+                "name": "Trung ương",
+                "hasSub": false,
+                "level": 2,
+                "heading": 2,
+                "open": 1,
+                "dateType": "thang",
+                "yAxis": 17,
+                "data": [
+                  [
+                    1788134400000,
+                    15048.113
+                  ],
+                  [
+                    1785456000000,
+                    14283.34
+                  ],
+                  [
+                    1782777600000,
+                    14081.31
+                  ],
+                  [
+                    1780185600000,
+                    10303.22
+                  ],
+                  [
+                    1777507200000,
+                    8085.31
+                  ],
+                  [
+                    1774915200000,
+                    6650.21
+                  ],
+                  [
+                    1772236800000,
+                    5435.43
+                  ],
+                  [
+                    1769817600000,
+                    5966.51
+                  ],
+                  [
+                    1767139200000,
+                    13302.51
+                  ],
+                  [
+                    1764460800000,
+                    13302.51
+                  ],
+                  [
+                    1761868800000,
+                    11710.7
+                  ],
+                  [
+                    1759190400000,
+                    11906.5
+                  ],
+                  [
+                    1756598400000,
+                    10896.72
+                  ],
+                  [
+                    1753920000000,
+                    10896.72
+                  ],
+                  [
+                    1751241600000,
+                    10042.12
+                  ],
+                  [
+                    1748649600000,
+                    8734.71999999999
+                  ],
+                  [
+                    1745971200000,
+                    7806.4
+                  ],
+                  [
+                    1743379200000,
+                    6788.29999999999
+                  ],
+                  [
+                    1740700800000,
+                    5456.82
+                  ],
+                  [
+                    1738281600000,
+                    4589.54
+                  ]
+                ],
+                "time_frame": "monthly",
+                "lingo": {
+                  "name": "Vốn NSNN Trung ương (từ 2025)",
+                  "unit": "Tỷ VND",
+                  "description": "Chỉ số Vốn NSNN Trung ương trong tiểu mục trong Tổng vốn NSNN, phản ánh tổng nguồn lực tài chính từ ngân sách nhà nước được phân bổ cho khu vực Trung ương để phân bổ cho các bộ ngành có liên quan như Bộ giao thông, Bộ y tế, Bộ giáo dục,... Dữ liệu được GSO tổng hợp, tính toán dựa trên các báo cáo tình hình sử dụng vốn ngân sách được các bộ và cơ quan nhà nước gửi về.",
+                  "frequency": "Ngày 6 tháng sau",
+                  "last_updated": "2026-09-03T02:55:34.731Z",
+                  "source": "Tổng cục Thống kê - GSO",
+                  "note": "Dữ liệu sau sáp nhập bộ ngành. Cập nhật từ năm 2025",
+                  "related_blog": null
+                }
+              },
+              {
+                "id": "232_bo_xay_dung_va_giao_thong",
+                "column_name": "bo_xay_dung_va_giao_thong",
+                "table_name": "232",
+                "name": "Bộ Xây dựng",
+                "hasSub": false,
+                "level": 3,
+                "heading": 3,
+                "open": 1,
+                "dateType": "thang",
+                "yAxis": 17,
+                "data": [
+                  [
+                    1788134400000,
+                    2507.421
+                  ],
+                  [
+                    1785456000000,
+                    2397.6000000000004
+                  ],
+                  [
+                    1782777600000,
+                    3073.61
+                  ],
+                  [
+                    1780185600000,
+                    2987.82
+                  ],
+                  [
+                    1777507200000,
+                    2963.42
+                  ],
+                  [
+                    1774915200000,
+                    3779.1
+                  ],
+                  [
+                    1772236800000,
+                    4038.41
+                  ],
+                  [
+                    1769817600000,
+                    4413.83
+                  ],
+                  [
+                    1767139200000,
+                    7957.31
+                  ],
+                  [
+                    1764460800000,
+                    7957.31
+                  ],
+                  [
+                    1761868800000,
+                    6847.63
+                  ],
+                  [
+                    1759190400000,
+                    7012.12
+                  ],
+                  [
+                    1756598400000,
+                    6523.71
+                  ],
+                  [
+                    1753920000000,
+                    6523.71
+                  ],
+                  [
+                    1751241600000,
+                    6234.71
+                  ],
+                  [
+                    1748649600000,
+                    5374.61
+                  ],
+                  [
+                    1745971200000,
+                    5008.24
+                  ],
+                  [
+                    1743379200000,
+                    4394.7
+                  ],
+                  [
+                    1740700800000,
+                    3367.78
+                  ],
+                  [
+                    1738281600000,
+                    2720.85
+                  ]
+                ],
+                "time_frame": "monthly",
+                "lingo": {
+                  "name": "Vốn NSNN Bộ Xây dựng (từ 2025)",
+                  "unit": "Tỷ VND",
+                  "description": "Chỉ số Vốn NSNN Bộ Xây dựng là một tiểu mục trong Vốn NSNN Trung ương, phản ánh tổng nguồn lực tài chính từ ngân sách nhà nước trung ương được phân bổ cho Bộ Xây dựng để thực hiện các dự án, chương trình đầu tư công thuộc thẩm quyền quản lý của bộ. Chỉ số này đo lường mức độ đầu tư của Nhà nước vào lĩnh vực xây dựng, bao gồm cả việc phát triển hạ tầng kỹ thuật, công trình công cộng, nhà ở xã hội và các dự án phục vụ mục tiêu phát triển kinh tế - xã hội. Dữ liệu được GSO tổng hợp, tính toán dựa trên các báo cáo tình hình sử dụng vốn ngân sách được các bộ và cơ quan nhà nước gửi về. Bộ Xây dựng mới là hợp nhất Bộ Xây dựng cũ với Bộ GTVT.",
+                  "frequency": "Ngày 6 tháng sau",
+                  "last_updated": "2026-09-03T02:55:34.731Z",
+                  "source": "Tổng cục Thống kê - GSO",
+                  "note": "Dữ liệu sau sáp nhập bộ ngành. Cập nhật từ năm 2025",
+                  "related_blog": null
+                }
+              },
+              {
+                "id": "232_bo_y_te_new",
+                "column_name": "bo_y_te_new",
+                "table_name": "232",
+                "name": "Bộ Y tế",
+                "hasSub": false,
+                "level": 3,
+                "heading": 3,
+                "open": null,
+                "dateType": "thang",
+                "yAxis": 17,
+                "data": [
+                  [
+                    1788134400000,
+                    143.71
+                  ],
+                  [
+                    1785456000000,
+                    113.60000000000001
+                  ],
+                  [
+                    1782777600000,
+                    97.91
+                  ],
+                  [
+                    1780185600000,
+                    89.80000000000001
+                  ],
+                  [
+                    1777507200000,
+                    85.64
+                  ],
+                  [
+                    1774915200000,
+                    77.81
+                  ],
+                  [
+                    1772236800000,
+                    63.73
+                  ],
+                  [
+                    1769817600000,
+                    67.52
+                  ],
+                  [
+                    1767139200000,
+                    448.21
+                  ],
+                  [
+                    1764460800000,
+                    448.21
+                  ],
+                  [
+                    1761868800000,
+                    443.22
+                  ],
+                  [
+                    1759190400000,
+                    426.21
+                  ],
+                  [
+                    1756598400000,
+                    265.82
+                  ],
+                  [
+                    1753920000000,
+                    265.82
+                  ],
+                  [
+                    1751241600000,
+                    259.12
+                  ],
+                  [
+                    1748649600000,
+                    232.92
+                  ],
+                  [
+                    1745971200000,
+                    201.321
+                  ],
+                  [
+                    1743379200000,
+                    168.21
+                  ],
+                  [
+                    1740700800000,
+                    133.52
+                  ],
+                  [
+                    1738281600000,
+                    120.34
+                  ]
+                ],
+                "time_frame": "monthly",
+                "lingo": {
+                  "name": "Vốn NSNN Bộ Y tế (từ 2025)",
+                  "unit": "Tỷ VND",
+                  "description": "Chỉ số Vốn NSNN Bộ Y tế là một tiểu mục trong Vốn NSNN Trung ương, phản ánh tổng nguồn lực tài chính mà Nhà nước phân bổ cho ngành y tế để thực hiện các mục tiêu phát triển hệ thống y tế công lập. Vốn này được sử dụng để đầu tư xây dựng cơ sở hạ tầng y tế, mua sắm trang thiết bị y tế hiện đại, nâng cao chất lượng dịch vụ khám chữa bệnh, đầu tư cho các chương trình phòng chống bệnh tật và chăm sóc sức khỏe cộng đồng.Dữ liệu được GSO tổng hợp, tính toán dựa trên các báo cáo tình hình sử dụng vốn ngân sách được các bộ và cơ quan nhà nước gửi về.",
+                  "frequency": "Ngày 6 tháng sau",
+                  "last_updated": "2026-09-03T02:55:34.731Z",
+                  "source": "Tổng cục Thống kê - GSO",
+                  "note": "Dữ liệu sau sáp nhập bộ ngành. Cập nhật từ năm 2025",
+                  "related_blog": null
+                }
+              },
+              {
+                "id": "232_bo_nong_nghiep_va_moi_truong",
+                "column_name": "bo_nong_nghiep_va_moi_truong",
+                "table_name": "232",
+                "name": "Bộ Nông nghiệp và Môi trường",
+                "hasSub": false,
+                "level": 3,
+                "heading": 3,
+                "open": 1,
+                "dateType": "thang",
+                "yAxis": 17,
+                "data": [
+                  [
+                    1788134400000,
+                    675.63
+                  ],
+                  [
+                    1785456000000,
+                    643.7320000000001
+                  ],
+                  [
+                    1782777600000,
+                    644.13
+                  ],
+                  [
+                    1780185600000,
+                    592.7199999999999
+                  ],
+                  [
+                    1777507200000,
+                    498.61
+                  ],
+                  [
+                    1774915200000,
+                    410.63
+                  ],
+                  [
+                    1772236800000,
+                    168.8
+                  ],
+                  [
+                    1769817600000,
+                    209.64
+                  ],
+                  [
+                    1767139200000,
+                    1729.71
+                  ],
+                  [
+                    1764460800000,
+                    1729.71
+                  ],
+                  [
+                    1761868800000,
+                    1584.53
+                  ],
+                  [
+                    1759190400000,
+                    1736.42
+                  ],
+                  [
+                    1756598400000,
+                    1698.21
+                  ],
+                  [
+                    1753920000000,
+                    1698.21
+                  ],
+                  [
+                    1751241600000,
+                    1660.3
+                  ],
+                  [
+                    1748649600000,
+                    1493.52
+                  ],
+                  [
+                    1745971200000,
+                    1178.33
+                  ],
+                  [
+                    1743379200000,
+                    889.64
+                  ],
+                  [
+                    1740700800000,
+                    817.43
+                  ],
+                  [
+                    1738281600000,
+                    682.13
+                  ]
+                ],
+                "time_frame": "monthly",
+                "lingo": {
+                  "name": "Vốn NSNN Bộ Nông nghiệp và Môi trường (từ 2025)",
+                  "unit": "Tỷ VND",
+                  "description": "Chỉ số Vốn NSNN Bộ Nông Nghiệp và Môi trường là một tiểu mục trong Vốn NSNN Trung ương, phản ánh tổng nguồn lực tài chính từ ngân sách trung ương được phân bổ cho Bộ NN và MT. Vốn này nhằm thực hiện các chương trình, dự án phục vụ xây dựng, phát triển nông nghiệp, nông thôn, đảm bảo an ninh lương thực, ứng phó biến đổi khí hậu, khai thác hợp lý tài nguyên thiên nhiên và bảo vệ môi trường, xử lý ô nhiễm. Dữ liệu được GSO tổng hợp, tính toán dựa trên các báo cáo tình hình sử dụng vốn ngân sách được các bộ và cơ quan nhà nước gửi về. Bộ Nông nghiệp và Môi trường hợp nhất Bộ NN và PTNN với Bộ Tài nguyên môi trường.",
+                  "frequency": "Ngày 6 tháng sau",
+                  "last_updated": "2026-09-03T02:55:34.731Z",
+                  "source": "Tổng cục Thống kê - GSO",
+                  "note": "Dữ liệu sau sáp nhập bộ ngành. Cập nhật từ năm 2025",
+                  "related_blog": null
+                }
+              },
+              {
+                "id": "232_bo_giao_duc_dao_tao_new",
+                "column_name": "bo_giao_duc_dao_tao_new",
+                "table_name": "232",
+                "name": "Bộ Giáo dục và Đào tạo",
+                "hasSub": false,
+                "level": 3,
+                "heading": 3,
+                "open": null,
+                "dateType": "thang",
+                "yAxis": 17,
+                "data": [
+                  [
+                    1788134400000,
+                    135.32
+                  ],
+                  [
+                    1785456000000,
+                    97.82
+                  ],
+                  [
+                    1782777600000,
+                    43.66
+                  ],
+                  [
+                    1780185600000,
+                    44.52
+                  ],
+                  [
+                    1777507200000,
+                    39.76
+                  ],
+                  [
+                    1774915200000,
+                    37.52
+                  ],
+                  [
+                    1772236800000,
+                    38.52
+                  ],
+                  [
+                    1769817600000,
+                    53.93
+                  ],
+                  [
+                    1767139200000,
+                    239.61
+                  ],
+                  [
+                    1764460800000,
+                    239.61
+                  ],
+                  [
+                    1761868800000,
+                    210.71
+                  ],
+                  [
+                    1759190400000,
+                    204.72
+                  ],
+                  [
+                    1756598400000,
+                    176.23
+                  ],
+                  [
+                    1753920000000,
+                    176.23
+                  ],
+                  [
+                    1751241600000,
+                    165.23
+                  ],
+                  [
+                    1748649600000,
+                    143.72
+                  ],
+                  [
+                    1745971200000,
+                    112.11
+                  ],
+                  [
+                    1743379200000,
+                    93.81
+                  ],
+                  [
+                    1740700800000,
+                    69.21
+                  ],
+                  [
+                    1738281600000,
+                    58.4
+                  ]
+                ],
+                "time_frame": "monthly",
+                "lingo": {
+                  "name": "Vốn NSNN Bộ Giáo dục - Đào tạo (từ 2025)",
+                  "unit": "Tỷ VND",
+                  "description": "Chỉ số Vốn NSNN Bộ Giáo dục - Đào tạo là một tiểu mục trong Vốn NSNN Trung ương, phản ánh tổng số vốn đầu tư từ ngân sách nhà nước dành cho ngành giáo dục và đào tạo. Vốn này được sử dụng để đầu tư xây dựng cơ sở hạ tầng giáo dục, mua sắm trang thiết bị dạy học, hỗ trợ các chương trình đào tạo và phát triển nguồn nhân lực chất lượng cao. Dữ liệu được GSO tổng hợp, tính toán dựa trên các báo cáo tình hình sử dụng vốn ngân sách được các bộ và cơ quan nhà nước gửi về.",
+                  "frequency": "Ngày 6 tháng sau",
+                  "last_updated": "2026-09-03T02:55:34.731Z",
+                  "source": "Tổng cục Thống kê - GSO",
+                  "note": "Dữ liệu sau sáp nhập bộ ngành. Cập nhật từ năm 2025",
+                  "related_blog": null
+                }
+              },
+              {
+                "id": "232_bo_van_hoa_the_thao_du_lich_new",
+                "column_name": "bo_van_hoa_the_thao_du_lich_new",
+                "table_name": "232",
+                "name": "Bộ Văn hóa, Thể thao và Du lịch",
+                "hasSub": false,
+                "level": 3,
+                "heading": 3,
+                "open": null,
+                "dateType": "thang",
+                "yAxis": 17,
+                "data": [
+                  [
+                    1788134400000,
+                    86.243
+                  ],
+                  [
+                    1785456000000,
+                    70.38900000000001
+                  ],
+                  [
+                    1782777600000,
+                    63.43000000000001
+                  ],
+                  [
+                    1780185600000,
+                    57.10999999999999
+                  ],
+                  [
+                    1777507200000,
+                    54.27999999999999
+                  ],
+                  [
+                    1774915200000,
+                    49.22
+                  ],
+                  [
+                    1772236800000,
+                    36.05
+                  ],
+                  [
+                    1769817600000,
+                    39.73
+                  ],
+                  [
+                    1767139200000,
+                    174.52
+                  ],
+                  [
+                    1764460800000,
+                    174.52
+                  ],
+                  [
+                    1761868800000,
+                    155.82
+                  ],
+                  [
+                    1759190400000,
+                    145.33
+                  ],
+                  [
+                    1756598400000,
+                    105.11
+                  ],
+                  [
+                    1753920000000,
+                    105.11
+                  ],
+                  [
+                    1751241600000,
+                    65.51
+                  ],
+                  [
+                    1748649600000,
+                    56.31
+                  ],
+                  [
+                    1745971200000,
+                    52.41
+                  ],
+                  [
+                    1743379200000,
+                    48.11
+                  ],
+                  [
+                    1740700800000,
+                    36.82
+                  ],
+                  [
+                    1738281600000,
+                    36.12
+                  ]
+                ],
+                "time_frame": "monthly",
+                "lingo": {
+                  "name": "Vốn NSNN Bộ Văn hóa, Thể thao và Du lịch (từ 2025)",
+                  "unit": "Tỷ VND",
+                  "description": "Chỉ số Vốn NSNN Bộ Văn hóa, Thể thao và Du lịch là một tiểu mục trong Vốn NSNN Trung ương, phản ánh tổng nguồn lực tài chính mà ngân sách trung ương cấp cho Bộ Văn hóa, Thể thao và Du lịch để đầu tư cho các hoạt động văn hóa, thể thao và du lịch, bao gồm việc xây dựng, tu sửa cơ sở hạ tầng, hỗ trợ các chương trình, dự án văn hóa, thể thao và du lịch nhằm phát triển ngành nghề này. Dữ liệu được GSO tổng hợp, tính toán dựa trên các báo cáo tình hình sử dụng vốn ngân sách được các bộ và cơ quan nhà nước gửi về.",
+                  "frequency": "Ngày 6 tháng sau",
+                  "last_updated": "2026-09-03T02:55:34.731Z",
+                  "source": "Tổng cục Thống kê - GSO",
+                  "note": "Dữ liệu sau sáp nhập bộ ngành. Cập nhật từ năm 2025",
+                  "related_blog": null
+                }
+              },
+              {
+                "id": "232_bo_cong_thuong_new",
+                "column_name": "bo_cong_thuong_new",
+                "table_name": "232",
+                "name": "Bộ Công Thương",
+                "hasSub": false,
+                "level": 3,
+                "heading": 3,
+                "open": null,
+                "dateType": "thang",
+                "yAxis": 17,
+                "data": [
+                  [
+                    1788134400000,
+                    null
+                  ],
+                  [
+                    1785456000000,
+                    7.12
+                  ],
+                  [
+                    1782777600000,
+                    6.51
+                  ],
+                  [
+                    1780185600000,
+                    5.359999999999999
+                  ],
+                  [
+                    1777507200000,
+                    5.22
+                  ],
+                  [
+                    1774915200000,
+                    4.850000000000001
+                  ],
+                  [
+                    1772236800000,
+                    3.93
+                  ],
+                  [
+                    1769817600000,
+                    8.139999999999999
+                  ],
+                  [
+                    1767139200000,
+                    49.52
+                  ],
+                  [
+                    1764460800000,
+                    49.52
+                  ],
+                  [
+                    1761868800000,
+                    30.1
+                  ],
+                  [
+                    1759190400000,
+                    27.76
+                  ],
+                  [
+                    1756598400000,
+                    21.5
+                  ],
+                  [
+                    1753920000000,
+                    21.5
+                  ],
+                  [
+                    1751241600000,
+                    20.1
+                  ],
+                  [
+                    1748649600000,
+                    15.92
+                  ],
+                  [
+                    1745971200000,
+                    12.732
+                  ],
+                  [
+                    1743379200000,
+                    16.01
+                  ],
+                  [
+                    1740700800000,
+                    12.72
+                  ],
+                  [
+                    1738281600000,
+                    17.64
+                  ]
+                ],
+                "time_frame": "monthly",
+                "lingo": {
+                  "name": "Vốn NSNN Bộ Công thương (từ 2025)",
+                  "unit": "Tỷ VND",
+                  "description": "Chỉ số Vốn NSNN Bộ Công Thương  là một tiểu mục trong Vốn NSNN Trung ương, phản ánh tổng nguồn lực tài chính mà ngân sách trung ương cấp cho Bộ Công Thương để đầu tư cho các hoạt động như đầu tư vào hạ tầng công nghiệp, dự án sản xuất, công nghệ cao, năng lượng và các lĩnh vực then chốt khác. Dữ liệu được GSO tổng hợp, tính toán dựa trên các báo cáo tình hình sử dụng vốn ngân sách được các bộ và cơ quan nhà nước gửi về.",
+                  "frequency": "Ngày 6 tháng sau",
+                  "last_updated": "2026-09-03T02:55:34.731Z",
+                  "source": "Tổng cục Thống kê - GSO",
+                  "note": "Dữ liệu sau sáp nhập bộ ngành. Cập nhật từ năm 2025",
+                  "related_blog": null
+                }
+              },
+              {
+                "id": "232_bo_khoa_hoc_va_thong_tin",
+                "column_name": "bo_khoa_hoc_va_thong_tin",
+                "table_name": "232",
+                "name": "Bộ Khoa học và Công nghệ",
+                "hasSub": false,
+                "level": 3,
+                "heading": 3,
+                "open": 1,
+                "dateType": "thang",
+                "yAxis": 17,
+                "data": [
+                  [
+                    1788134400000,
+                    null
+                  ],
+                  [
+                    1785456000000,
+                    null
+                  ],
+                  [
+                    1782777600000,
+                    1.77
+                  ],
+                  [
+                    1780185600000,
+                    1.77
+                  ],
+                  [
+                    1777507200000,
+                    2.27
+                  ],
+                  [
+                    1774915200000,
+                    2.55
+                  ],
+                  [
+                    1772236800000,
+                    2.5
+                  ],
+                  [
+                    1769817600000,
+                    4.14
+                  ],
+                  [
+                    1767139200000,
+                    43.8
+                  ],
+                  [
+                    1764460800000,
+                    43.8
+                  ],
+                  [
+                    1761868800000,
+                    44.83
+                  ],
+                  [
+                    1759190400000,
+                    58.52
+                  ],
+                  [
+                    1756598400000,
+                    41.62
+                  ],
+                  [
+                    1753920000000,
+                    41.62
+                  ],
+                  [
+                    1751241600000,
+                    37.43
+                  ],
+                  [
+                    1748649600000,
+                    32.42
+                  ],
+                  [
+                    1745971200000,
+                    30.52
+                  ],
+                  [
+                    1743379200000,
+                    26.51
+                  ],
+                  [
+                    1740700800000,
+                    21.43
+                  ],
+                  [
+                    1738281600000,
+                    14.229999999999999
+                  ]
+                ],
+                "time_frame": "monthly",
+                "lingo": {
+                  "name": "Vốn NSNN Bộ Khoa học và Công nghệ (từ 2025)",
+                  "unit": "Tỷ VND",
+                  "description": "Chỉ số Vốn NSNN Bộ Khoa học và Công nghệ là một tiểu mục trong Vốn NSNN Trung ương, phản ánh tổng nguồn lực tài chính từ ngân sách nhà nước trung ương được phân bổ cho Bộ khoa học và công nghệ. Vốn này được sử dụng để tài trợ cho các hoạt động nghiên cứu khoa học, hạ tầng số, phát triển công nghệ, an toàn thông tin, truyền thông và các dịch vụ công trực tuyến. Dữ liệu được GSO tổng hợp, tính toán dựa trên các báo cáo tình hình sử dụng vốn ngân sách được các bộ và cơ quan nhà nước gửi về. Bộ Khoa học và công nghệ mới là hợp nhất Bộ Khoa học và Công nghệ với Bộ Thông tin và truyền thông.",
+                  "frequency": "Ngày 6 tháng sau",
+                  "last_updated": "2026-09-03T02:55:34.731Z",
+                  "source": "Tổng cục Thống kê - GSO",
+                  "note": "Dữ liệu sau sáp nhập bộ ngành. Cập nhật từ năm 2025",
+                  "related_blog": null
+                }
+              },
+              {
+                "id": "232_dia_phuong",
+                "column_name": "dia_phuong",
+                "table_name": "232",
+                "name": "Địa phương",
+                "hasSub": false,
+                "level": 2,
+                "heading": 2,
+                "open": 1,
+                "dateType": "thang",
+                "yAxis": 17,
+                "data": [
+                  [
+                    1788134400000,
+                    90701.075
+                  ],
+                  [
+                    1785456000000,
+                    83417.241
+                  ],
+                  [
+                    1782777600000,
+                    71096.209
+                  ],
+                  [
+                    1780185600000,
+                    57064.16739000001
+                  ],
+                  [
+                    1777507200000,
+                    48754.14356
+                  ],
+                  [
+                    1774915200000,
+                    41590.887
+                  ],
+                  [
+                    1772236800000,
+                    34405.453
+                  ],
+                  [
+                    1769817600000,
+                    38669.872
+                  ],
+                  [
+                    1767139200000,
+                    86905.389
+                  ],
+                  [
+                    1764460800000,
+                    86905.389
+                  ],
+                  [
+                    1761868800000,
+                    78565.486
+                  ],
+                  [
+                    1759190400000,
+                    74715.56777
+                  ],
+                  [
+                    1756598400000,
+                    66673.24100000001
+                  ],
+                  [
+                    1753920000000,
+                    66673.2400000001
+                  ],
+                  [
+                    1751241600000,
+                    61431.82236
+                  ],
+                  [
+                    1748649600000,
+                    55128.54189
+                  ],
+                  [
+                    1745971200000,
+                    41798.865
+                  ],
+                  [
+                    1743379200000,
+                    37182.275
+                  ],
+                  [
+                    1740700800000,
+                    32236.4342
+                  ],
+                  [
+                    1738281600000,
+                    31562.144000000004
+                  ]
+                ],
+                "time_frame": "monthly",
+                "lingo": {
+                  "name": "Vốn NSNN Địa phương (từ 2025)",
+                  "unit": "Tỷ VND",
+                  "description": "Chỉ số Vốn NSNN Địa phương là một tiểu mục quan trọng trong tổng Vốn NSNN, phản ánh số vốn được NSNN nhà nước cấp cho chính quyền địa phương. Vốn NSNN Địa phương được sử dụng để đầu tư vào các dự án, công trình hạ tầng, chương trình xã hội và các hoạt động phát triển kinh tế tại cấp tỉnh, thành phố hoặc huyện. Chỉ số này giúp đánh giá hiệu quả quản lý và sử dụng vốn của chính quyền địa phương, đồng thời phản ánh mức độ đầu tư cho sự phát triển của từng khu vực. Dữ liệu được GSO tổng hợp, tính toán dựa trên các báo cáo tình hình sử dụng vốn ngân sách được các ban ngành và địa phương gửi về.",
+                  "frequency": "Ngày 6 tháng sau",
+                  "last_updated": "2026-09-03T02:55:34.731Z",
+                  "source": "Tổng cục Thống kê - GSO",
+                  "note": "Dữ liệu sau sáp nhập đơn vị hành chính. Cập nhật từ tháng 7 năm 2025",
+                  "related_blog": null
+                }
+              },
+              {
+                "id": "232_von_ngan_sach_nn_cap_tinh_new",
+                "column_name": "von_ngan_sach_nn_cap_tinh_new",
+                "table_name": "232",
+                "name": "Vốn ngân sách NN cấp tỉnh",
+                "hasSub": false,
+                "level": 3,
+                "heading": 3,
+                "open": null,
+                "dateType": "thang",
+                "yAxis": 17,
+                "data": [
+                  [
+                    1788134400000,
+                    75523.401
+                  ],
+                  [
+                    1785456000000,
+                    69603.261
+                  ],
+                  [
+                    1782777600000,
+                    57142.674
+                  ],
+                  [
+                    1780185600000,
+                    45470.48445000001
+                  ],
+                  [
+                    1777507200000,
+                    38242.86333
+                  ],
+                  [
+                    1774915200000,
+                    32296.042
+                  ],
+                  [
+                    1772236800000,
+                    26783.901
+                  ],
+                  [
+                    1769817600000,
+                    29919.38
+                  ],
+                  [
+                    1767139200000,
+                    72370.595
+                  ],
+                  [
+                    1764460800000,
+                    72370.595
+                  ],
+                  [
+                    1761868800000,
+                    65330.395
+                  ],
+                  [
+                    1759190400000,
+                    62274.48377
+                  ],
+                  [
+                    1756598400000,
+                    54792.273
+                  ],
+                  [
+                    1753920000000,
+                    55104.021
+                  ],
+                  [
+                    1751241600000,
+                    50131.67193
+                  ],
+                  [
+                    1748649600000,
+                    null
+                  ],
+                  [
+                    1745971200000,
+                    null
+                  ],
+                  [
+                    1743379200000,
+                    null
+                  ],
+                  [
+                    1740700800000,
+                    null
+                  ],
+                  [
+                    1738281600000,
+                    null
+                  ]
+                ],
+                "time_frame": "monthly",
+                "lingo": {
+                  "name": "Vốn ngân sách NN cấp tỉnh (từ 2025)",
+                  "unit": "Tỷ VND",
+                  "description": "Vốn NSNN cấp tỉnh là một tiểu mục quan trọng trong tổng Vốn NSNN địa phương, phản ánh nguồn vốn thuộc ngân sách nhà nước được phân bổ cho các tỉnh, thành phố trực thuộc trung ương để thực hiện các nhiệm vụ, dự án và chương trình đầu tư công theo quy định của pháp luật. Nguồn vốn này được quản lý và sử dụng bởi chính quyền địa phương, nhằm đáp ứng nhu cầu phát triển hạ tầng, cung cấp dịch vụ công và đảm bảo an sinh xã hội tại địa phương. Dữ liệu được GSO tổng hợp, tính toán dựa trên các báo cáo tình hình sử dụng vốn ngân sách được các ban ngành và địa phương gửi về.",
+                  "frequency": "Ngày 6 tháng sau",
+                  "last_updated": "2026-09-03T02:55:34.731Z",
+                  "source": "Tổng cục Thống kê - GSO",
+                  "note": "Dữ liệu sau sáp nhập đơn vị hành chính. Cập nhật từ tháng 7 năm 2025",
+                  "related_blog": null
+                }
+              },
+              {
+                "id": "232_von_ngan_sach_nn_cap_xa_new",
+                "column_name": "von_ngan_sach_nn_cap_xa_new",
+                "table_name": "232",
+                "name": "Vốn ngân sách NN cấp xã",
+                "hasSub": false,
+                "level": 3,
+                "heading": 3,
+                "open": null,
+                "dateType": "thang",
+                "yAxis": 17,
+                "data": [
+                  [
+                    1788134400000,
+                    15177.674
+                  ],
+                  [
+                    1785456000000,
+                    13813.98
+                  ],
+                  [
+                    1782777600000,
+                    13953.535
+                  ],
+                  [
+                    1780185600000,
+                    11593.68294
+                  ],
+                  [
+                    1777507200000,
+                    10511.28023
+                  ],
+                  [
+                    1774915200000,
+                    9294.845
+                  ],
+                  [
+                    1772236800000,
+                    7621.552
+                  ],
+                  [
+                    1769817600000,
+                    8750.492
+                  ],
+                  [
+                    1767139200000,
+                    14534.794
+                  ],
+                  [
+                    1764460800000,
+                    14534.794
+                  ],
+                  [
+                    1761868800000,
+                    13235.091
+                  ],
+                  [
+                    1759190400000,
+                    12441.084
+                  ],
+                  [
+                    1756598400000,
+                    11880.968
+                  ],
+                  [
+                    1753920000000,
+                    11569.22
+                  ],
+                  [
+                    1751241600000,
+                    11300.15043
+                  ],
+                  [
+                    1748649600000,
+                    null
+                  ],
+                  [
+                    1745971200000,
+                    null
+                  ],
+                  [
+                    1743379200000,
+                    null
+                  ],
+                  [
+                    1740700800000,
+                    null
+                  ],
+                  [
+                    1738281600000,
+                    null
+                  ]
+                ],
+                "time_frame": "monthly",
+                "lingo": {
+                  "name": "Vốn ngân sách NN cấp xã (từ 2025)",
+                  "unit": "Tỷ VND",
+                  "description": "Vốn NSNN cấp xã là một tiểu mục quan trọng trong tổng Vốn NSNN địa phương, phản ánh nguồn vốn từ ngân sách nhà nước được phân bổ cho cấp xã, nhằm phục vụ các hoạt động đầu tư và phát triển tại cấp cơ sở. Nguồn vốn này được sử dụng để đầu tư vào các dự án, công trình hạ tầng, giáo dục, y tế, văn hóa và các hoạt động xã hội khác trên địa bàn xã. Dữ liệu được GSO tổng hợp, tính toán dựa trên các báo cáo tình hình sử dụng vốn ngân sách được các ban ngành và địa phương gửi về.",
+                  "frequency": "Ngày 6 tháng sau",
+                  "last_updated": "2026-09-03T02:55:34.731Z",
+                  "source": "Tổng cục Thống kê - GSO",
+                  "note": "Dữ liệu sau sáp nhập đơn vị hành chính. Cập nhật từ tháng 7 năm 2025",
+                  "related_blog": null
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "yoy": {
+        "title": "Vốn đầu tư Ngân sách Nhà nước",
+        "headers": [
+          "08-2026",
+          "07-2026",
+          "06-2026",
+          "05-2026",
+          "04-2026",
+          "03-2026",
+          "02-2026",
+          "01-2026",
+          "12-2025",
+          "11-2025",
+          "10-2025",
+          "09-2025",
+          "08-2025",
+          "07-2025",
+          "06-2025",
+          "05-2025",
+          "04-2025",
+          "03-2025",
+          "02-2025",
+          "01-2025"
+        ],
+        "parent": [
+          {
+            "title": "VỐN ĐẦU TƯ NGÂN SÁCH NHÀ NƯỚC",
+            "child": [
+              {
+                "id": "232_tong_yoy",
+                "column_name": "tong_yoy",
+                "table_name": "232",
+                "name": "Tổng",
+                "hasSub": false,
+                "level": 1,
+                "heading": 1,
+                "open": 1,
+                "dateType": "thang",
+                "yAxis": 1,
+                "data": [
+                  [
+                    1788134400000,
+                    24.100000000000062
+                  ],
+                  [
+                    1785456000000,
+                    24.766117707046664
+                  ],
+                  [
+                    1782777600000,
+                    19.172828848558282
+                  ],
+                  [
+                    1780185600000,
+                    14.270582174184806
+                  ],
+                  [
+                    1777507200000,
+                    14.583509552866994
+                  ],
+                  [
+                    1774915200000,
+                    9.712226869901075
+                  ],
+                  [
+                    1772236800000,
+                    5.697647617806368
+                  ],
+                  [
+                    1769817600000,
+                    23.46971720598136
+                  ],
+                  [
+                    1767139200000,
+                    16.01039646701892
+                  ],
+                  [
+                    1764460800000,
+                    26.77678171385282
+                  ],
+                  [
+                    1761868800000,
+                    32.16230843725831
+                  ],
+                  [
+                    1759190400000,
+                    35.62399077265327
+                  ],
+                  [
+                    1756598400000,
+                    36.81269961197044
+                  ],
+                  [
+                    1753920000000,
+                    36.176020788751856
+                  ],
+                  [
+                    1751241600000,
+                    34.29759497662841
+                  ],
+                  [
+                    1748649600000,
+                    22.032337001049484
+                  ],
+                  [
+                    1745971200000,
+                    14.061908301981704
+                  ],
+                  [
+                    1743379200000,
+                    17.364575347332146
+                  ],
+                  [
+                    1740700800000,
+                    35.680646270035716
+                  ],
+                  [
+                    1738281600000,
+                    11.822578899527162
+                  ]
+                ],
+                "time_frame": "monthly",
+                "lingo": {
+                  "name": "Vốn NSNN Tổng (từ 2025)",
+                  "unit": "%",
+                  "description": "Chỉ số Vốn đầu tư ngân sách nhà nước (Vốn NSNN) là chỉ số phản ánh tổng số vốn mà Nhà nước đầu tư từ ngân sách để phát triển kinh tế và đảm bảo an sinh xã hội. Trong đó, Vốn NSNN tổng bao gồm: các khoản chi đầu tư cho cơ sở hạ tầng, giáo dục, y tế, và các dự án phát triển khác. Chỉ số này giúp đo lường quy mô và hiệu quả của việc phân bổ nguồn lực từ ngân sách nhà nước cho các chính sách đầu tư công và sự phát triển của nền kinh tế",
+                  "frequency": "Ngày 6 tháng sau",
+                  "last_updated": "2026-09-03T02:55:34.731Z",
+                  "source": "Tổng cục Thống kê - GSO",
+                  "note": "Dữ liệu sau sáp nhập bộ ngành. Cập nhật từ năm 2025",
+                  "related_blog": null
+                }
+              },
+              {
+                "id": "232_trung_uong_yoy",
+                "column_name": "trung_uong_yoy",
+                "table_name": "232",
+                "name": "Trung ương",
+                "hasSub": false,
+                "level": 2,
+                "heading": 2,
+                "open": 1,
+                "dateType": "thang",
+                "yAxis": 1,
+                "data": [
+                  [
+                    1788134400000,
+                    38.09763855545522
+                  ],
+                  [
+                    1785456000000,
+                    31.07926054812825
+                  ],
+                  [
+                    1782777600000,
+                    40.22248290201669
+                  ],
+                  [
+                    1780185600000,
+                    17.957072464830137
+                  ],
+                  [
+                    1777507200000,
+                    3.5728376716540375
+                  ],
+                  [
+                    1774915200000,
+                    -2.034235375572534
+                  ],
+                  [
+                    1772236800000,
+                    -0.3919865416121371
+                  ],
+                  [
+                    1769817600000,
+                    30.002353177006853
+                  ],
+                  [
+                    1767139200000,
+                    -3.7898907317242534
+                  ],
+                  [
+                    1764460800000,
+                    7.291112165000337
+                  ],
+                  [
+                    1761868800000,
+                    0.25760640925431244
+                  ],
+                  [
+                    1759190400000,
+                    2.800785003768738
+                  ],
+                  [
+                    1756598400000,
+                    -2.382057258958931
+                  ],
+                  [
+                    1753920000000,
+                    4.762756301357609
+                  ],
+                  [
+                    1751241600000,
+                    6.193900427224006
+                  ],
+                  [
+                    1748649600000,
+                    3.331069874626362
+                  ],
+                  [
+                    1745971200000,
+                    0.4640723571940152
+                  ],
+                  [
+                    1743379200000,
+                    7.0436260766174925
+                  ],
+                  [
+                    1740700800000,
+                    18.827236440683507
+                  ],
+                  [
+                    1738281600000,
+                    -4.412463031615772
+                  ]
+                ],
+                "time_frame": "monthly",
+                "lingo": {
+                  "name": "Vốn NSNN Trung ương (từ 2025)",
+                  "unit": "%",
+                  "description": "Chỉ số Vốn NSNN Trung ương trong tiểu mục trong Tổng vốn NSNN, phản ánh tổng nguồn lực tài chính từ ngân sách nhà nước được phân bổ cho khu vực Trung ương để phân bổ cho các bộ ngành có liên quan như Bộ giao thông, Bộ y tế, Bộ giáo dục,... Dữ liệu được GSO tổng hợp, tính toán dựa trên các báo cáo tình hình sử dụng vốn ngân sách được các bộ và cơ quan nhà nước gửi về.",
+                  "frequency": "Ngày 6 tháng sau",
+                  "last_updated": "2026-09-03T02:55:34.731Z",
+                  "source": "Tổng cục Thống kê - GSO",
+                  "note": "Dữ liệu sau sáp nhập bộ ngành. Cập nhật từ năm 2025",
+                  "related_blog": null
+                }
+              },
+              {
+                "id": "232_bo_xay_dung_va_giao_thong_yoy",
+                "column_name": "bo_xay_dung_va_giao_thong_yoy",
+                "table_name": "232",
+                "name": "Bộ Xây dựng",
+                "hasSub": false,
+                "level": 3,
+                "heading": 3,
+                "open": 1,
+                "dateType": "thang",
+                "yAxis": 1,
+                "data": [
+                  [
+                    1788134400000,
+                    -61.564493210151895
+                  ],
+                  [
+                    1785456000000,
+                    -63.24790648266093
+                  ],
+                  [
+                    1782777600000,
+                    -50.70163648349322
+                  ],
+                  [
+                    1780185600000,
+                    -44.408617555506346
+                  ],
+                  [
+                    1777507200000,
+                    -40.82911362075299
+                  ],
+                  [
+                    1774915200000,
+                    -14.007782101167313
+                  ],
+                  [
+                    1772236800000,
+                    19.913117840238957
+                  ],
+                  [
+                    1769817600000,
+                    62.222467243692236
+                  ],
+                  [
+                    1767139200000,
+                    null
+                  ],
+                  [
+                    1764460800000,
+                    null
+                  ],
+                  [
+                    1761868800000,
+                    null
+                  ],
+                  [
+                    1759190400000,
+                    null
+                  ],
+                  [
+                    1756598400000,
+                    null
+                  ],
+                  [
+                    1753920000000,
+                    null
+                  ],
+                  [
+                    1751241600000,
+                    null
+                  ],
+                  [
+                    1748649600000,
+                    null
+                  ],
+                  [
+                    1745971200000,
+                    null
+                  ],
+                  [
+                    1743379200000,
+                    null
+                  ],
+                  [
+                    1740700800000,
+                    null
+                  ],
+                  [
+                    1738281600000,
+                    null
+                  ]
+                ],
+                "time_frame": "monthly",
+                "lingo": {
+                  "name": "Vốn NSNN Bộ Xây dựng (từ 2025)",
+                  "unit": "%",
+                  "description": "Chỉ số Vốn NSNN Bộ Xây dựng là một tiểu mục trong Vốn NSNN Trung ương, phản ánh tổng nguồn lực tài chính từ ngân sách nhà nước trung ương được phân bổ cho Bộ Xây dựng để thực hiện các dự án, chương trình đầu tư công thuộc thẩm quyền quản lý của bộ. Chỉ số này đo lường mức độ đầu tư của Nhà nước vào lĩnh vực xây dựng, bao gồm cả việc phát triển hạ tầng kỹ thuật, công trình công cộng, nhà ở xã hội và các dự án phục vụ mục tiêu phát triển kinh tế - xã hội. Dữ liệu được GSO tổng hợp, tính toán dựa trên các báo cáo tình hình sử dụng vốn ngân sách được các bộ và cơ quan nhà nước gửi về. Bộ Xây dựng mới là hợp nhất Bộ Xây dựng cũ với Bộ GTVT.",
+                  "frequency": "Ngày 6 tháng sau",
+                  "last_updated": "2026-09-03T02:55:34.731Z",
+                  "source": "Tổng cục Thống kê - GSO",
+                  "note": "Dữ liệu sau sáp nhập bộ ngành. Cập nhật từ năm 2025",
+                  "related_blog": null
+                }
+              },
+              {
+                "id": "232_bo_y_te_new_yoy",
+                "column_name": "bo_y_te_new_yoy",
+                "table_name": "232",
+                "name": "Bộ Y tế",
+                "hasSub": false,
+                "level": 3,
+                "heading": 3,
+                "open": null,
+                "dateType": "thang",
+                "yAxis": 1,
+                "data": [
+                  [
+                    1788134400000,
+                    -45.93710029343164
+                  ],
+                  [
+                    1785456000000,
+                    -57.26431419757729
+                  ],
+                  [
+                    1782777600000,
+                    -62.214418030256255
+                  ],
+                  [
+                    1780185600000,
+                    -61.44599003949853
+                  ],
+                  [
+                    1777507200000,
+                    -57.460970291226445
+                  ],
+                  [
+                    1774915200000,
+                    -53.742345877177335
+                  ],
+                  [
+                    1772236800000,
+                    -52.269322947872986
+                  ],
+                  [
+                    1769817600000,
+                    -43.89230513544957
+                  ],
+                  [
+                    1767139200000,
+                    null
+                  ],
+                  [
+                    1764460800000,
+                    null
+                  ],
+                  [
+                    1761868800000,
+                    null
+                  ],
+                  [
+                    1759190400000,
+                    null
+                  ],
+                  [
+                    1756598400000,
+                    null
+                  ],
+                  [
+                    1753920000000,
+                    null
+                  ],
+                  [
+                    1751241600000,
+                    null
+                  ],
+                  [
+                    1748649600000,
+                    null
+                  ],
+                  [
+                    1745971200000,
+                    null
+                  ],
+                  [
+                    1743379200000,
+                    null
+                  ],
+                  [
+                    1740700800000,
+                    null
+                  ],
+                  [
+                    1738281600000,
+                    null
+                  ]
+                ],
+                "time_frame": "monthly",
+                "lingo": {
+                  "name": "Vốn NSNN Bộ Y tế (từ 2025)",
+                  "unit": "%",
+                  "description": "Chỉ số Vốn NSNN Bộ Y tế là một tiểu mục trong Vốn NSNN Trung ương, phản ánh tổng nguồn lực tài chính mà Nhà nước phân bổ cho ngành y tế để thực hiện các mục tiêu phát triển hệ thống y tế công lập. Vốn này được sử dụng để đầu tư xây dựng cơ sở hạ tầng y tế, mua sắm trang thiết bị y tế hiện đại, nâng cao chất lượng dịch vụ khám chữa bệnh, đầu tư cho các chương trình phòng chống bệnh tật và chăm sóc sức khỏe cộng đồng.Dữ liệu được GSO tổng hợp, tính toán dựa trên các báo cáo tình hình sử dụng vốn ngân sách được các bộ và cơ quan nhà nước gửi về.",
+                  "frequency": "Ngày 6 tháng sau",
+                  "last_updated": "2026-09-03T02:55:34.731Z",
+                  "source": "Tổng cục Thống kê - GSO",
+                  "note": "Dữ liệu sau sáp nhập bộ ngành. Cập nhật từ năm 2025",
+                  "related_blog": null
+                }
+              },
+              {
+                "id": "232_bo_nong_nghiep_va_moi_truong_yoy",
+                "column_name": "bo_nong_nghiep_va_moi_truong_yoy",
+                "table_name": "232",
+                "name": "Bộ Nông nghiệp và Môi trường",
+                "hasSub": false,
+                "level": 3,
+                "heading": 3,
+                "open": 1,
+                "dateType": "thang",
+                "yAxis": 1,
+                "data": [
+                  [
+                    1788134400000,
+                    -60.21516773543908
+                  ],
+                  [
+                    1785456000000,
+                    -62.093498448366226
+                  ],
+                  [
+                    1782777600000,
+                    -61.20399927723905
+                  ],
+                  [
+                    1780185600000,
+                    -60.31388933526167
+                  ],
+                  [
+                    1777507200000,
+                    -57.68502881196269
+                  ],
+                  [
+                    1774915200000,
+                    -53.84312755721415
+                  ],
+                  [
+                    1772236800000,
+                    -79.3499137540829
+                  ],
+                  [
+                    1769817600000,
+                    -69.26685529151335
+                  ],
+                  [
+                    1767139200000,
+                    null
+                  ],
+                  [
+                    1764460800000,
+                    null
+                  ],
+                  [
+                    1761868800000,
+                    null
+                  ],
+                  [
+                    1759190400000,
+                    null
+                  ],
+                  [
+                    1756598400000,
+                    null
+                  ],
+                  [
+                    1753920000000,
+                    null
+                  ],
+                  [
+                    1751241600000,
+                    null
+                  ],
+                  [
+                    1748649600000,
+                    null
+                  ],
+                  [
+                    1745971200000,
+                    null
+                  ],
+                  [
+                    1743379200000,
+                    null
+                  ],
+                  [
+                    1740700800000,
+                    null
+                  ],
+                  [
+                    1738281600000,
+                    null
+                  ]
+                ],
+                "time_frame": "monthly",
+                "lingo": {
+                  "name": "Vốn NSNN Bộ Nông nghiệp và Môi trường (từ 2025)",
+                  "unit": "%",
+                  "description": "Chỉ số Vốn NSNN Bộ Nông Nghiệp và Môi trường là một tiểu mục trong Vốn NSNN Trung ương, phản ánh tổng nguồn lực tài chính từ ngân sách trung ương được phân bổ cho Bộ NN và MT. Vốn này nhằm thực hiện các chương trình, dự án phục vụ xây dựng, phát triển nông nghiệp, nông thôn, đảm bảo an ninh lương thực, ứng phó biến đổi khí hậu, khai thác hợp lý tài nguyên thiên nhiên và bảo vệ môi trường, xử lý ô nhiễm. Dữ liệu được GSO tổng hợp, tính toán dựa trên các báo cáo tình hình sử dụng vốn ngân sách được các bộ và cơ quan nhà nước gửi về. Bộ Nông nghiệp và Môi trường hợp nhất Bộ NN và PTNN với Bộ Tài nguyên môi trường.",
+                  "frequency": "Ngày 6 tháng sau",
+                  "last_updated": "2026-09-03T02:55:34.731Z",
+                  "source": "Tổng cục Thống kê - GSO",
+                  "note": "Dữ liệu sau sáp nhập bộ ngành. Cập nhật từ năm 2025",
+                  "related_blog": null
+                }
+              },
+              {
+                "id": "232_bo_giao_duc_dao_tao_new_yoy",
+                "column_name": "bo_giao_duc_dao_tao_new_yoy",
+                "table_name": "232",
+                "name": "Bộ Giáo dục và Đào tạo",
+                "hasSub": false,
+                "level": 3,
+                "heading": 3,
+                "open": null,
+                "dateType": "thang",
+                "yAxis": 1,
+                "data": [
+                  [
+                    1788134400000,
+                    -23.213981728423082
+                  ],
+                  [
+                    1785456000000,
+                    -44.492992112580154
+                  ],
+                  [
+                    1782777600000,
+                    -73.57622707740725
+                  ],
+                  [
+                    1780185600000,
+                    -69.02310047314222
+                  ],
+                  [
+                    1777507200000,
+                    -64.53483186156454
+                  ],
+                  [
+                    1774915200000,
+                    -60.00426393774651
+                  ],
+                  [
+                    1772236800000,
+                    -44.34330299089726
+                  ],
+                  [
+                    1769817600000,
+                    -7.654109589041094
+                  ],
+                  [
+                    1767139200000,
+                    null
+                  ],
+                  [
+                    1764460800000,
+                    null
+                  ],
+                  [
+                    1761868800000,
+                    null
+                  ],
+                  [
+                    1759190400000,
+                    null
+                  ],
+                  [
+                    1756598400000,
+                    null
+                  ],
+                  [
+                    1753920000000,
+                    null
+                  ],
+                  [
+                    1751241600000,
+                    null
+                  ],
+                  [
+                    1748649600000,
+                    null
+                  ],
+                  [
+                    1745971200000,
+                    null
+                  ],
+                  [
+                    1743379200000,
+                    null
+                  ],
+                  [
+                    1740700800000,
+                    null
+                  ],
+                  [
+                    1738281600000,
+                    null
+                  ]
+                ],
+                "time_frame": "monthly",
+                "lingo": {
+                  "name": "Vốn NSNN Bộ Giáo dục - Đào tạo (từ 2025)",
+                  "unit": "%",
+                  "description": "Chỉ số Vốn NSNN Bộ Giáo dục - Đào tạo là một tiểu mục trong Vốn NSNN Trung ương, phản ánh tổng số vốn đầu tư từ ngân sách nhà nước dành cho ngành giáo dục và đào tạo. Vốn này được sử dụng để đầu tư xây dựng cơ sở hạ tầng giáo dục, mua sắm trang thiết bị dạy học, hỗ trợ các chương trình đào tạo và phát triển nguồn nhân lực chất lượng cao. Dữ liệu được GSO tổng hợp, tính toán dựa trên các báo cáo tình hình sử dụng vốn ngân sách được các bộ và cơ quan nhà nước gửi về.",
+                  "frequency": "Ngày 6 tháng sau",
+                  "last_updated": "2026-09-03T02:55:34.731Z",
+                  "source": "Tổng cục Thống kê - GSO",
+                  "note": "Dữ liệu sau sáp nhập bộ ngành. Cập nhật từ năm 2025",
+                  "related_blog": null
+                }
+              },
+              {
+                "id": "232_bo_van_hoa_the_thao_du_lich_new_yoy",
+                "column_name": "bo_van_hoa_the_thao_du_lich_new_yoy",
+                "table_name": "232",
+                "name": "Bộ Văn hóa, Thể thao và Du lịch",
+                "hasSub": false,
+                "level": 3,
+                "heading": 3,
+                "open": null,
+                "dateType": "thang",
+                "yAxis": 1,
+                "data": [
+                  [
+                    1788134400000,
+                    -17.9497669108553
+                  ],
+                  [
+                    1785456000000,
+                    -33.03301303396441
+                  ],
+                  [
+                    1782777600000,
+                    -3.1750877728591025
+                  ],
+                  [
+                    1780185600000,
+                    1.4207068016337951
+                  ],
+                  [
+                    1777507200000,
+                    3.5680213699675454
+                  ],
+                  [
+                    1774915200000,
+                    2.3072126377052573
+                  ],
+                  [
+                    1772236800000,
+                    -2.0912547528517194
+                  ],
+                  [
+                    1769817600000,
+                    9.994462901439645
+                  ],
+                  [
+                    1767139200000,
+                    null
+                  ],
+                  [
+                    1764460800000,
+                    null
+                  ],
+                  [
+                    1761868800000,
+                    null
+                  ],
+                  [
+                    1759190400000,
+                    null
+                  ],
+                  [
+                    1756598400000,
+                    null
+                  ],
+                  [
+                    1753920000000,
+                    null
+                  ],
+                  [
+                    1751241600000,
+                    null
+                  ],
+                  [
+                    1748649600000,
+                    null
+                  ],
+                  [
+                    1745971200000,
+                    null
+                  ],
+                  [
+                    1743379200000,
+                    null
+                  ],
+                  [
+                    1740700800000,
+                    null
+                  ],
+                  [
+                    1738281600000,
+                    null
+                  ]
+                ],
+                "time_frame": "monthly",
+                "lingo": {
+                  "name": "Vốn NSNN Bộ Văn hóa, Thể thao và Du lịch (từ 2025)",
+                  "unit": "%",
+                  "description": "Chỉ số Vốn NSNN Bộ Văn hóa, Thể thao và Du lịch là một tiểu mục trong Vốn NSNN Trung ương, phản ánh tổng nguồn lực tài chính mà ngân sách trung ương cấp cho Bộ Văn hóa, Thể thao và Du lịch để đầu tư cho các hoạt động văn hóa, thể thao và du lịch, bao gồm việc xây dựng, tu sửa cơ sở hạ tầng, hỗ trợ các chương trình, dự án văn hóa, thể thao và du lịch nhằm phát triển ngành nghề này. Dữ liệu được GSO tổng hợp, tính toán dựa trên các báo cáo tình hình sử dụng vốn ngân sách được các bộ và cơ quan nhà nước gửi về.",
+                  "frequency": "Ngày 6 tháng sau",
+                  "last_updated": "2026-09-03T02:55:34.731Z",
+                  "source": "Tổng cục Thống kê - GSO",
+                  "note": "Dữ liệu sau sáp nhập bộ ngành. Cập nhật từ năm 2025",
+                  "related_blog": null
+                }
+              },
+              {
+                "id": "232_bo_cong_thuong_new_yoy",
+                "column_name": "bo_cong_thuong_new_yoy",
+                "table_name": "232",
+                "name": "Bộ Công Thương",
+                "hasSub": false,
+                "level": 3,
+                "heading": 3,
+                "open": null,
+                "dateType": "thang",
+                "yAxis": 1,
+                "data": [
+                  [
+                    1788134400000,
+                    null
+                  ],
+                  [
+                    1785456000000,
+                    -66.88372093023254
+                  ],
+                  [
+                    1782777600000,
+                    -67.61194029850746
+                  ],
+                  [
+                    1780185600000,
+                    -66.33165829145729
+                  ],
+                  [
+                    1777507200000,
+                    -59.0009425070688
+                  ],
+                  [
+                    1774915200000,
+                    -69.70643347907557
+                  ],
+                  [
+                    1772236800000,
+                    -69.10377358490565
+                  ],
+                  [
+                    1769817600000,
+                    -53.854875283446724
+                  ],
+                  [
+                    1767139200000,
+                    null
+                  ],
+                  [
+                    1764460800000,
+                    null
+                  ],
+                  [
+                    1761868800000,
+                    null
+                  ],
+                  [
+                    1759190400000,
+                    null
+                  ],
+                  [
+                    1756598400000,
+                    null
+                  ],
+                  [
+                    1753920000000,
+                    null
+                  ],
+                  [
+                    1751241600000,
+                    null
+                  ],
+                  [
+                    1748649600000,
+                    null
+                  ],
+                  [
+                    1745971200000,
+                    null
+                  ],
+                  [
+                    1743379200000,
+                    null
+                  ],
+                  [
+                    1740700800000,
+                    null
+                  ],
+                  [
+                    1738281600000,
+                    null
+                  ]
+                ],
+                "time_frame": "monthly",
+                "lingo": {
+                  "name": "Vốn NSNN Bộ Công thương (từ 2025)",
+                  "unit": "%",
+                  "description": "Chỉ số Vốn NSNN Bộ Công Thương  là một tiểu mục trong Vốn NSNN Trung ương, phản ánh tổng nguồn lực tài chính mà ngân sách trung ương cấp cho Bộ Công Thương để đầu tư cho các hoạt động như đầu tư vào hạ tầng công nghiệp, dự án sản xuất, công nghệ cao, năng lượng và các lĩnh vực then chốt khác. Dữ liệu được GSO tổng hợp, tính toán dựa trên các báo cáo tình hình sử dụng vốn ngân sách được các bộ và cơ quan nhà nước gửi về.",
+                  "frequency": "Ngày 6 tháng sau",
+                  "last_updated": "2026-09-03T02:55:34.731Z",
+                  "source": "Tổng cục Thống kê - GSO",
+                  "note": "Dữ liệu sau sáp nhập bộ ngành. Cập nhật từ năm 2025",
+                  "related_blog": null
+                }
+              },
+              {
+                "id": "232_bo_khoa_hoc_va_thong_tin_yoy",
+                "column_name": "bo_khoa_hoc_va_thong_tin_yoy",
+                "table_name": "232",
+                "name": "Bộ Khoa học và Công nghệ",
+                "hasSub": false,
+                "level": 3,
+                "heading": 3,
+                "open": 1,
+                "dateType": "thang",
+                "yAxis": 1,
+                "data": [
+                  [
+                    1788134400000,
+                    null
+                  ],
+                  [
+                    1785456000000,
+                    null
+                  ],
+                  [
+                    1782777600000,
+                    -95.27117285599786
+                  ],
+                  [
+                    1780185600000,
+                    -94.5404071560765
+                  ],
+                  [
+                    1777507200000,
+                    -92.56225425950197
+                  ],
+                  [
+                    1774915200000,
+                    -90.3809883062995
+                  ],
+                  [
+                    1772236800000,
+                    -88.33411105926272
+                  ],
+                  [
+                    1769817600000,
+                    -70.90653548840478
+                  ],
+                  [
+                    1767139200000,
+                    null
+                  ],
+                  [
+                    1764460800000,
+                    null
+                  ],
+                  [
+                    1761868800000,
+                    null
+                  ],
+                  [
+                    1759190400000,
+                    null
+                  ],
+                  [
+                    1756598400000,
+                    null
+                  ],
+                  [
+                    1753920000000,
+                    null
+                  ],
+                  [
+                    1751241600000,
+                    null
+                  ],
+                  [
+                    1748649600000,
+                    null
+                  ],
+                  [
+                    1745971200000,
+                    null
+                  ],
+                  [
+                    1743379200000,
+                    null
+                  ],
+                  [
+                    1740700800000,
+                    null
+                  ],
+                  [
+                    1738281600000,
+                    null
+                  ]
+                ],
+                "time_frame": "monthly",
+                "lingo": {
+                  "name": "Vốn NSNN Bộ Khoa học và Công nghệ (từ 2025)",
+                  "unit": "%",
+                  "description": "Chỉ số Vốn NSNN Bộ Khoa học và Công nghệ là một tiểu mục trong Vốn NSNN Trung ương, phản ánh tổng nguồn lực tài chính từ ngân sách nhà nước trung ương được phân bổ cho Bộ khoa học và công nghệ. Vốn này được sử dụng để tài trợ cho các hoạt động nghiên cứu khoa học, hạ tầng số, phát triển công nghệ, an toàn thông tin, truyền thông và các dịch vụ công trực tuyến. Dữ liệu được GSO tổng hợp, tính toán dựa trên các báo cáo tình hình sử dụng vốn ngân sách được các bộ và cơ quan nhà nước gửi về. Bộ Khoa học và công nghệ mới là hợp nhất Bộ Khoa học và Công nghệ với Bộ Thông tin và truyền thông.",
+                  "frequency": "Ngày 6 tháng sau",
+                  "last_updated": "2026-09-03T02:55:34.731Z",
+                  "source": "Tổng cục Thống kê - GSO",
+                  "note": "Dữ liệu sau sáp nhập bộ ngành. Cập nhật từ năm 2025",
+                  "related_blog": null
+                }
+              },
+              {
+                "id": "232_dia_phuong_yoy",
+                "column_name": "dia_phuong_yoy",
+                "table_name": "232",
+                "name": "Địa phương",
+                "hasSub": false,
+                "level": 2,
+                "heading": 2,
+                "open": 1,
+                "dateType": "thang",
+                "yAxis": 1,
+                "data": [
+                  [
+                    1788134400000,
+                    36.03819709319363
+                  ],
+                  [
+                    1785456000000,
+                    25.113525306404576
+                  ],
+                  [
+                    1782777600000,
+                    15.731889871938359
+                  ],
+                  [
+                    1780185600000,
+                    3.5111131795617476
+                  ],
+                  [
+                    1777507200000,
+                    16.639874216680283
+                  ],
+                  [
+                    1774915200000,
+                    11.856757016616118
+                  ],
+                  [
+                    1772236800000,
+                    6.7284699869193405
+                  ],
+                  [
+                    1769817600000,
+                    22.519788262799885
+                  ],
+                  [
+                    1767139200000,
+                    19.78358832285808
+                  ],
+                  [
+                    1764460800000,
+                    38.72865419265312
+                  ],
+                  [
+                    1761868800000,
+                    38.76267869569365
+                  ],
+                  [
+                    1759190400000,
+                    42.89464574398155
+                  ],
+                  [
+                    1756598400000,
+                    30.420581803148057
+                  ],
+                  [
+                    1753920000000,
+                    41.54803651502921
+                  ],
+                  [
+                    1751241600000,
+                    40.37013768745587
+                  ],
+                  [
+                    1748649600000,
+                    38.315046076838215
+                  ],
+                  [
+                    1745971200000,
+                    17.019956615772376
+                  ],
+                  [
+                    1743379200000,
+                    19.467549107738865
+                  ],
+                  [
+                    1740700800000,
+                    39.01826150827734
+                  ],
+                  [
+                    1738281600000,
+                    14.654264407540197
+                  ]
+                ],
+                "time_frame": "monthly",
+                "lingo": {
+                  "name": "Vốn NSNN Địa phương (từ 2025)",
+                  "unit": "%",
+                  "description": "Chỉ số Vốn NSNN Địa phương là một tiểu mục quan trọng trong tổng Vốn NSNN, phản ánh số vốn được NSNN nhà nước cấp cho chính quyền địa phương. Vốn NSNN Địa phương được sử dụng để đầu tư vào các dự án, công trình hạ tầng, chương trình xã hội và các hoạt động phát triển kinh tế tại cấp tỉnh, thành phố hoặc huyện. Chỉ số này giúp đánh giá hiệu quả quản lý và sử dụng vốn của chính quyền địa phương, đồng thời phản ánh mức độ đầu tư cho sự phát triển của từng khu vực. Dữ liệu được GSO tổng hợp, tính toán dựa trên các báo cáo tình hình sử dụng vốn ngân sách được các ban ngành và địa phương gửi về.",
+                  "frequency": "Ngày 6 tháng sau",
+                  "last_updated": "2026-09-03T02:55:34.731Z",
+                  "source": "Tổng cục Thống kê - GSO",
+                  "note": "Dữ liệu sau sáp nhập đơn vị hành chính. Cập nhật từ tháng 7 năm 2025",
+                  "related_blog": null
+                }
+              },
+              {
+                "id": "232_von_ngan_sach_nn_cap_tinh_new_yoy",
+                "column_name": "von_ngan_sach_nn_cap_tinh_new_yoy",
+                "table_name": "232",
+                "name": "Vốn ngân sách NN cấp tỉnh",
+                "hasSub": false,
+                "level": 3,
+                "heading": 3,
+                "open": null,
+                "dateType": "thang",
+                "yAxis": 1,
+                "data": [
+                  [
+                    1788134400000,
+                    37.83586054186874
+                  ],
+                  [
+                    1785456000000,
+                    26.31248997237424
+                  ],
+                  [
+                    1782777600000,
+                    13.985175040221328
+                  ],
+                  [
+                    1780185600000,
+                    null
+                  ],
+                  [
+                    1777507200000,
+                    null
+                  ],
+                  [
+                    1774915200000,
+                    null
+                  ],
+                  [
+                    1772236800000,
+                    null
+                  ],
+                  [
+                    1769817600000,
+                    null
+                  ],
+                  [
+                    1767139200000,
+                    null
+                  ],
+                  [
+                    1764460800000,
+                    null
+                  ],
+                  [
+                    1761868800000,
+                    null
+                  ],
+                  [
+                    1759190400000,
+                    null
+                  ],
+                  [
+                    1756598400000,
+                    null
+                  ],
+                  [
+                    1753920000000,
+                    null
+                  ],
+                  [
+                    1751241600000,
+                    null
+                  ],
+                  [
+                    1748649600000,
+                    null
+                  ],
+                  [
+                    1745971200000,
+                    null
+                  ],
+                  [
+                    1743379200000,
+                    null
+                  ],
+                  [
+                    1740700800000,
+                    null
+                  ],
+                  [
+                    1738281600000,
+                    null
+                  ]
+                ],
+                "time_frame": "monthly",
+                "lingo": {
+                  "name": "Vốn ngân sách NN cấp tỉnh (từ 2025)",
+                  "unit": "%",
+                  "description": "Vốn NSNN cấp tỉnh là một tiểu mục quan trọng trong tổng Vốn NSNN địa phương, phản ánh nguồn vốn thuộc ngân sách nhà nước được phân bổ cho các tỉnh, thành phố trực thuộc trung ương để thực hiện các nhiệm vụ, dự án và chương trình đầu tư công theo quy định của pháp luật. Nguồn vốn này được quản lý và sử dụng bởi chính quyền địa phương, nhằm đáp ứng nhu cầu phát triển hạ tầng, cung cấp dịch vụ công và đảm bảo an sinh xã hội tại địa phương. Dữ liệu được GSO tổng hợp, tính toán dựa trên các báo cáo tình hình sử dụng vốn ngân sách được các ban ngành và địa phương gửi về.",
+                  "frequency": "Ngày 6 tháng sau",
+                  "last_updated": "2026-09-03T02:55:34.731Z",
+                  "source": "Tổng cục Thống kê - GSO",
+                  "note": "Dữ liệu sau sáp nhập đơn vị hành chính. Cập nhật từ tháng 7 năm 2025",
+                  "related_blog": null
+                }
+              },
+              {
+                "id": "232_von_ngan_sach_nn_cap_xa_new_yoy",
+                "column_name": "von_ngan_sach_nn_cap_xa_new_yoy",
+                "table_name": "232",
+                "name": "Vốn ngân sách NN cấp xã",
+                "hasSub": false,
+                "level": 3,
+                "heading": 3,
+                "open": null,
+                "dateType": "thang",
+                "yAxis": 1,
+                "data": [
+                  [
+                    1788134400000,
+                    27.747789574048177
+                  ],
+                  [
+                    1785456000000,
+                    19.40286380585727
+                  ],
+                  [
+                    1782777600000,
+                    23.480966792758
+                  ],
+                  [
+                    1780185600000,
+                    null
+                  ],
+                  [
+                    1777507200000,
+                    null
+                  ],
+                  [
+                    1774915200000,
+                    null
+                  ],
+                  [
+                    1772236800000,
+                    null
+                  ],
+                  [
+                    1769817600000,
+                    null
+                  ],
+                  [
+                    1767139200000,
+                    null
+                  ],
+                  [
+                    1764460800000,
+                    null
+                  ],
+                  [
+                    1761868800000,
+                    null
+                  ],
+                  [
+                    1759190400000,
+                    null
+                  ],
+                  [
+                    1756598400000,
+                    null
+                  ],
+                  [
+                    1753920000000,
+                    null
+                  ],
+                  [
+                    1751241600000,
+                    null
+                  ],
+                  [
+                    1748649600000,
+                    null
+                  ],
+                  [
+                    1745971200000,
+                    null
+                  ],
+                  [
+                    1743379200000,
+                    null
+                  ],
+                  [
+                    1740700800000,
+                    null
+                  ],
+                  [
+                    1738281600000,
+                    null
+                  ]
+                ],
+                "time_frame": "monthly",
+                "lingo": {
+                  "name": "Vốn ngân sách NN cấp xã (từ 2025)",
+                  "unit": "%",
+                  "description": "Vốn NSNN cấp xã là một tiểu mục quan trọng trong tổng Vốn NSNN địa phương, phản ánh nguồn vốn từ ngân sách nhà nước được phân bổ cho cấp xã, nhằm phục vụ các hoạt động đầu tư và phát triển tại cấp cơ sở. Nguồn vốn này được sử dụng để đầu tư vào các dự án, công trình hạ tầng, giáo dục, y tế, văn hóa và các hoạt động xã hội khác trên địa bàn xã. Dữ liệu được GSO tổng hợp, tính toán dựa trên các báo cáo tình hình sử dụng vốn ngân sách được các ban ngành và địa phương gửi về.",
+                  "frequency": "Ngày 6 tháng sau",
+                  "last_updated": "2026-09-03T02:55:34.731Z",
+                  "source": "Tổng cục Thống kê - GSO",
+                  "note": "Dữ liệu sau sáp nhập đơn vị hành chính. Cập nhật từ tháng 7 năm 2025",
+                  "related_blog": null
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "quarterly": {
+      "value": {
+        "title": "Vốn đầu tư Ngân sách Nhà nước",
+        "headers": [
+          "06-2026",
+          "03-2026",
+          "12-2025",
+          "09-2025",
+          "06-2025",
+          "03-2025"
+        ],
+        "parent": [
+          {
+            "title": "VỐN ĐẦU TƯ NGÂN SÁCH NHÀ NƯỚC (Tỷ VND)",
+            "child": [
+              {
+                "id": "232_tong_mtq",
+                "column_name": "tong_mtq",
+                "table_name": "232",
+                "name": "Tổng",
+                "hasSub": false,
+                "level": 1,
+                "heading": 1,
+                "open": 1,
+                "dateType": "quy",
+                "yAxis": 17,
+                "data": [
+                  [
+                    1782777600000,
+                    203237.25148
+                  ],
+                  [
+                    1774915200000,
+                    132321.362
+                  ],
+                  [
+                    1767139200000,
+                    302031.2340000001
+                  ],
+                  [
+                    1759190400000,
+                    246848.95577
+                  ],
+                  [
+                    1751241600000,
+                    178995.5890000001
+                  ],
+                  [
+                    1743379200000,
+                    118854.6949999999
+                  ]
+                ],
+                "time_frame": "quarterly",
+                "lingo": {
+                  "name": "Vốn NSNN Tổng (từ 2025)",
+                  "unit": "%",
+                  "description": "Chỉ số Vốn đầu tư ngân sách nhà nước (Vốn NSNN) là chỉ số phản ánh tổng số vốn mà Nhà nước đầu tư từ ngân sách để phát triển kinh tế và đảm bảo an sinh xã hội. Trong đó, Vốn NSNN tổng bao gồm: các khoản chi đầu tư cho cơ sở hạ tầng, giáo dục, y tế, và các dự án phát triển khác. Chỉ số này giúp đo lường quy mô và hiệu quả của việc phân bổ nguồn lực từ ngân sách nhà nước cho các chính sách đầu tư công và sự phát triển của nền kinh tế",
+                  "frequency": "Ngày 6 tháng sau",
+                  "last_updated": "2026-09-03T02:55:34.731Z",
+                  "source": "Tổng cục Thống kê - GSO",
+                  "note": "Dữ liệu sau sáp nhập bộ ngành. Cập nhật từ năm 2025",
+                  "related_blog": null
+                }
+              },
+              {
+                "id": "232_trung_uong_mtq",
+                "column_name": "trung_uong_mtq",
+                "table_name": "232",
+                "name": "Trung ương",
+                "hasSub": false,
+                "level": 2,
+                "heading": 2,
+                "open": 1,
+                "dateType": "quy",
+                "yAxis": 17,
+                "data": [
+                  [
+                    1782777600000,
+                    32342.74
+                  ],
+                  [
+                    1774915200000,
+                    17655.15
+                  ],
+                  [
+                    1767139200000,
+                    40630.65
+                  ],
+                  [
+                    1759190400000,
+                    34292.32
+                  ],
+                  [
+                    1751241600000,
+                    26597.54
+                  ],
+                  [
+                    1743379200000,
+                    16695.65999999999
+                  ]
+                ],
+                "time_frame": "quarterly",
+                "lingo": {
+                  "name": "Vốn NSNN Trung ương (từ 2025)",
+                  "unit": "%",
+                  "description": "Chỉ số Vốn NSNN Trung ương trong tiểu mục trong Tổng vốn NSNN, phản ánh tổng nguồn lực tài chính từ ngân sách nhà nước được phân bổ cho khu vực Trung ương để phân bổ cho các bộ ngành có liên quan như Bộ giao thông, Bộ y tế, Bộ giáo dục,... Dữ liệu được GSO tổng hợp, tính toán dựa trên các báo cáo tình hình sử dụng vốn ngân sách được các bộ và cơ quan nhà nước gửi về.",
+                  "frequency": "Ngày 6 tháng sau",
+                  "last_updated": "2026-09-03T02:55:34.731Z",
+                  "source": "Tổng cục Thống kê - GSO",
+                  "note": "Dữ liệu sau sáp nhập bộ ngành. Cập nhật từ năm 2025",
+                  "related_blog": null
+                }
+              },
+              {
+                "id": "232_bo_xay_dung_va_giao_thong_mtq",
+                "column_name": "bo_xay_dung_va_giao_thong_mtq",
+                "table_name": "232",
+                "name": "Bộ Xây dựng",
+                "hasSub": false,
+                "level": 3,
+                "heading": 3,
+                "open": 1,
+                "dateType": "quy",
+                "yAxis": 17,
+                "data": [
+                  [
+                    1782777600000,
+                    10192.75
+                  ],
+                  [
+                    1774915200000,
+                    9468.34
+                  ],
+                  [
+                    1767139200000,
+                    24218.25
+                  ],
+                  [
+                    1759190400000,
+                    20303.95
+                  ],
+                  [
+                    1751241600000,
+                    15885.06
+                  ],
+                  [
+                    1743379200000,
+                    10472.43
+                  ]
+                ],
+                "time_frame": "quarterly",
+                "lingo": {
+                  "name": "Vốn NSNN Bộ Xây dựng (từ 2025)",
+                  "unit": "%",
+                  "description": "Chỉ số Vốn NSNN Bộ Xây dựng là một tiểu mục trong Vốn NSNN Trung ương, phản ánh tổng nguồn lực tài chính từ ngân sách nhà nước trung ương được phân bổ cho Bộ Xây dựng để thực hiện các dự án, chương trình đầu tư công thuộc thẩm quyền quản lý của bộ. Chỉ số này đo lường mức độ đầu tư của Nhà nước vào lĩnh vực xây dựng, bao gồm cả việc phát triển hạ tầng kỹ thuật, công trình công cộng, nhà ở xã hội và các dự án phục vụ mục tiêu phát triển kinh tế - xã hội. Dữ liệu được GSO tổng hợp, tính toán dựa trên các báo cáo tình hình sử dụng vốn ngân sách được các bộ và cơ quan nhà nước gửi về. Bộ Xây dựng mới là hợp nhất Bộ Xây dựng cũ với Bộ GTVT.",
+                  "frequency": "Ngày 6 tháng sau",
+                  "last_updated": "2026-09-03T02:55:34.731Z",
+                  "source": "Tổng cục Thống kê - GSO",
+                  "note": "Dữ liệu sau sáp nhập bộ ngành. Cập nhật từ năm 2025",
+                  "related_blog": null
+                }
+              },
+              {
+                "id": "232_bo_y_te_new_mtq",
+                "column_name": "bo_y_te_new_mtq",
+                "table_name": "232",
+                "name": "Bộ Y tế",
+                "hasSub": false,
+                "level": 3,
+                "heading": 3,
+                "open": null,
+                "dateType": "quy",
+                "yAxis": 17,
+                "data": [
+                  [
+                    1782777600000,
+                    279.35
+                  ],
+                  [
+                    1774915200000,
+                    209.06
+                  ],
+                  [
+                    1767139200000,
+                    1460.35
+                  ],
+                  [
+                    1759190400000,
+                    1019.45
+                  ],
+                  [
+                    1751241600000,
+                    691.3609999999999
+                  ],
+                  [
+                    1743379200000,
+                    412.67
+                  ]
+                ],
+                "time_frame": "quarterly",
+                "lingo": {
+                  "name": "Vốn NSNN Bộ Y tế (từ 2025)",
+                  "unit": "%",
+                  "description": "Chỉ số Vốn NSNN Bộ Y tế là một tiểu mục trong Vốn NSNN Trung ương, phản ánh tổng nguồn lực tài chính mà Nhà nước phân bổ cho ngành y tế để thực hiện các mục tiêu phát triển hệ thống y tế công lập. Vốn này được sử dụng để đầu tư xây dựng cơ sở hạ tầng y tế, mua sắm trang thiết bị y tế hiện đại, nâng cao chất lượng dịch vụ khám chữa bệnh, đầu tư cho các chương trình phòng chống bệnh tật và chăm sóc sức khỏe cộng đồng.Dữ liệu được GSO tổng hợp, tính toán dựa trên các báo cáo tình hình sử dụng vốn ngân sách được các bộ và cơ quan nhà nước gửi về.",
+                  "frequency": "Ngày 6 tháng sau",
+                  "last_updated": "2026-09-03T02:55:34.731Z",
+                  "source": "Tổng cục Thống kê - GSO",
+                  "note": "Dữ liệu sau sáp nhập bộ ngành. Cập nhật từ năm 2025",
+                  "related_blog": null
+                }
+              },
+              {
+                "id": "232_bo_nong_nghiep_va_moi_truong_mtq",
+                "column_name": "bo_nong_nghiep_va_moi_truong_mtq",
+                "table_name": "232",
+                "name": "Bộ Nông nghiệp và Môi trường",
+                "hasSub": false,
+                "level": 3,
+                "heading": 3,
+                "open": 1,
+                "dateType": "quy",
+                "yAxis": 17,
+                "data": [
+                  [
+                    1782777600000,
+                    1803.46
+                  ],
+                  [
+                    1774915200000,
+                    789.0699999999999
+                  ],
+                  [
+                    1767139200000,
+                    5315.76
+                  ],
+                  [
+                    1759190400000,
+                    4891.06
+                  ],
+                  [
+                    1751241600000,
+                    3959.15
+                  ],
+                  [
+                    1743379200000,
+                    2286.199999999998
+                  ]
+                ],
+                "time_frame": "quarterly",
+                "lingo": {
+                  "name": "Vốn NSNN Bộ Nông nghiệp và Môi trường (từ 2025)",
+                  "unit": "%",
+                  "description": "Chỉ số Vốn NSNN Bộ Nông Nghiệp và Môi trường là một tiểu mục trong Vốn NSNN Trung ương, phản ánh tổng nguồn lực tài chính từ ngân sách trung ương được phân bổ cho Bộ NN và MT. Vốn này nhằm thực hiện các chương trình, dự án phục vụ xây dựng, phát triển nông nghiệp, nông thôn, đảm bảo an ninh lương thực, ứng phó biến đổi khí hậu, khai thác hợp lý tài nguyên thiên nhiên và bảo vệ môi trường, xử lý ô nhiễm. Dữ liệu được GSO tổng hợp, tính toán dựa trên các báo cáo tình hình sử dụng vốn ngân sách được các bộ và cơ quan nhà nước gửi về. Bộ Nông nghiệp và Môi trường hợp nhất Bộ NN và PTNN với Bộ Tài nguyên môi trường.",
+                  "frequency": "Ngày 6 tháng sau",
+                  "last_updated": "2026-09-03T02:55:34.731Z",
+                  "source": "Tổng cục Thống kê - GSO",
+                  "note": "Dữ liệu sau sáp nhập bộ ngành. Cập nhật từ năm 2025",
+                  "related_blog": null
+                }
+              },
+              {
+                "id": "232_bo_giao_duc_dao_tao_new_mtq",
+                "column_name": "bo_giao_duc_dao_tao_new_mtq",
+                "table_name": "232",
+                "name": "Bộ Giáo dục và Đào tạo",
+                "hasSub": false,
+                "level": 3,
+                "heading": 3,
+                "open": null,
+                "dateType": "quy",
+                "yAxis": 17,
+                "data": [
+                  [
+                    1782777600000,
+                    133.64
+                  ],
+                  [
+                    1774915200000,
+                    124.97
+                  ],
+                  [
+                    1767139200000,
+                    714.1300000000001
+                  ],
+                  [
+                    1759190400000,
+                    576.27
+                  ],
+                  [
+                    1751241600000,
+                    409.7599999999999
+                  ],
+                  [
+                    1743379200000,
+                    219.52
+                  ]
+                ],
+                "time_frame": "quarterly",
+                "lingo": {
+                  "name": "Vốn NSNN Bộ Giáo dục - Đào tạo (từ 2025)",
+                  "unit": "%",
+                  "description": "Chỉ số Vốn NSNN Bộ Giáo dục - Đào tạo là một tiểu mục trong Vốn NSNN Trung ương, phản ánh tổng số vốn đầu tư từ ngân sách nhà nước dành cho ngành giáo dục và đào tạo. Vốn này được sử dụng để đầu tư xây dựng cơ sở hạ tầng giáo dục, mua sắm trang thiết bị dạy học, hỗ trợ các chương trình đào tạo và phát triển nguồn nhân lực chất lượng cao. Dữ liệu được GSO tổng hợp, tính toán dựa trên các báo cáo tình hình sử dụng vốn ngân sách được các bộ và cơ quan nhà nước gửi về.",
+                  "frequency": "Ngày 6 tháng sau",
+                  "last_updated": "2026-09-03T02:55:34.731Z",
+                  "source": "Tổng cục Thống kê - GSO",
+                  "note": "Dữ liệu sau sáp nhập bộ ngành. Cập nhật từ năm 2025",
+                  "related_blog": null
+                }
+              },
+              {
+                "id": "232_bo_van_hoa_the_thao_du_lich_new_mtq",
+                "column_name": "bo_van_hoa_the_thao_du_lich_new_mtq",
+                "table_name": "232",
+                "name": "Bộ Văn hóa, Thể thao và Du lịch",
+                "hasSub": false,
+                "level": 3,
+                "heading": 3,
+                "open": null,
+                "dateType": "quy",
+                "yAxis": 17,
+                "data": [
+                  [
+                    1782777600000,
+                    180.62
+                  ],
+                  [
+                    1774915200000,
+                    125
+                  ],
+                  [
+                    1767139200000,
+                    554.6500000000001
+                  ],
+                  [
+                    1759190400000,
+                    376.16
+                  ],
+                  [
+                    1751241600000,
+                    162.93
+                  ],
+                  [
+                    1743379200000,
+                    122.35
+                  ]
+                ],
+                "time_frame": "quarterly",
+                "lingo": {
+                  "name": "Vốn NSNN Bộ Văn hóa, Thể thao và Du lịch (từ 2025)",
+                  "unit": "%",
+                  "description": "Chỉ số Vốn NSNN Bộ Văn hóa, Thể thao và Du lịch là một tiểu mục trong Vốn NSNN Trung ương, phản ánh tổng nguồn lực tài chính mà ngân sách trung ương cấp cho Bộ Văn hóa, Thể thao và Du lịch để đầu tư cho các hoạt động văn hóa, thể thao và du lịch, bao gồm việc xây dựng, tu sửa cơ sở hạ tầng, hỗ trợ các chương trình, dự án văn hóa, thể thao và du lịch nhằm phát triển ngành nghề này. Dữ liệu được GSO tổng hợp, tính toán dựa trên các báo cáo tình hình sử dụng vốn ngân sách được các bộ và cơ quan nhà nước gửi về.",
+                  "frequency": "Ngày 6 tháng sau",
+                  "last_updated": "2026-09-03T02:55:34.731Z",
+                  "source": "Tổng cục Thống kê - GSO",
+                  "note": "Dữ liệu sau sáp nhập bộ ngành. Cập nhật từ năm 2025",
+                  "related_blog": null
+                }
+              },
+              {
+                "id": "232_bo_cong_thuong_new_mtq",
+                "column_name": "bo_cong_thuong_new_mtq",
+                "table_name": "232",
+                "name": "Bộ Công Thương",
+                "hasSub": false,
+                "level": 3,
+                "heading": 3,
+                "open": null,
+                "dateType": "quy",
+                "yAxis": 17,
+                "data": [
+                  [
+                    1782777600000,
+                    16.79
+                  ],
+                  [
+                    1774915200000,
+                    16.92
+                  ],
+                  [
+                    1767139200000,
+                    149.84
+                  ],
+                  [
+                    1759190400000,
+                    73.58
+                  ],
+                  [
+                    1751241600000,
+                    49.85200000000001
+                  ],
+                  [
+                    1743379200000,
+                    46.67000000000001
+                  ]
+                ],
+                "time_frame": "quarterly",
+                "lingo": {
+                  "name": "Vốn NSNN Bộ Công thương (từ 2025)",
+                  "unit": "%",
+                  "description": "Chỉ số Vốn NSNN Bộ Công Thương  là một tiểu mục trong Vốn NSNN Trung ương, phản ánh tổng nguồn lực tài chính mà ngân sách trung ương cấp cho Bộ Công Thương để đầu tư cho các hoạt động như đầu tư vào hạ tầng công nghiệp, dự án sản xuất, công nghệ cao, năng lượng và các lĩnh vực then chốt khác. Dữ liệu được GSO tổng hợp, tính toán dựa trên các báo cáo tình hình sử dụng vốn ngân sách được các bộ và cơ quan nhà nước gửi về.",
+                  "frequency": "Ngày 6 tháng sau",
+                  "last_updated": "2026-09-03T02:55:34.731Z",
+                  "source": "Tổng cục Thống kê - GSO",
+                  "note": "Dữ liệu sau sáp nhập bộ ngành. Cập nhật từ năm 2025",
+                  "related_blog": null
+                }
+              },
+              {
+                "id": "232_bo_khoa_hoc_va_thong_tin_mtq",
+                "column_name": "bo_khoa_hoc_va_thong_tin_mtq",
+                "table_name": "232",
+                "name": "Bộ Khoa học và Công nghệ",
+                "hasSub": false,
+                "level": 3,
+                "heading": 3,
+                "open": 1,
+                "dateType": "quy",
+                "yAxis": 17,
+                "data": [
+                  [
+                    1782777600000,
+                    5.609999999999999
+                  ],
+                  [
+                    1774915200000,
+                    7.29
+                  ],
+                  [
+                    1767139200000,
+                    142.9
+                  ],
+                  [
+                    1759190400000,
+                    113.06
+                  ],
+                  [
+                    1751241600000,
+                    77.57
+                  ],
+                  [
+                    1743379200000,
+                    47.56999999999996
+                  ]
+                ],
+                "time_frame": "quarterly",
+                "lingo": {
+                  "name": "Vốn NSNN Bộ Khoa học và Công nghệ (từ 2025)",
+                  "unit": "%",
+                  "description": "Chỉ số Vốn NSNN Bộ Khoa học và Công nghệ là một tiểu mục trong Vốn NSNN Trung ương, phản ánh tổng nguồn lực tài chính từ ngân sách nhà nước trung ương được phân bổ cho Bộ khoa học và công nghệ. Vốn này được sử dụng để tài trợ cho các hoạt động nghiên cứu khoa học, hạ tầng số, phát triển công nghệ, an toàn thông tin, truyền thông và các dịch vụ công trực tuyến. Dữ liệu được GSO tổng hợp, tính toán dựa trên các báo cáo tình hình sử dụng vốn ngân sách được các bộ và cơ quan nhà nước gửi về. Bộ Khoa học và công nghệ mới là hợp nhất Bộ Khoa học và Công nghệ với Bộ Thông tin và truyền thông.",
+                  "frequency": "Ngày 6 tháng sau",
+                  "last_updated": "2026-09-03T02:55:34.731Z",
+                  "source": "Tổng cục Thống kê - GSO",
+                  "note": "Dữ liệu sau sáp nhập bộ ngành. Cập nhật từ năm 2025",
+                  "related_blog": null
+                }
+              },
+              {
+                "id": "232_dia_phuong_mtq",
+                "column_name": "dia_phuong_mtq",
+                "table_name": "232",
+                "name": "Địa phương",
+                "hasSub": false,
+                "level": 2,
+                "heading": 2,
+                "open": 1,
+                "dateType": "quy",
+                "yAxis": 17,
+                "data": [
+                  [
+                    1782777600000,
+                    170894.51148
+                  ],
+                  [
+                    1774915200000,
+                    114666.212
+                  ],
+                  [
+                    1767139200000,
+                    261400.584
+                  ],
+                  [
+                    1759190400000,
+                    212556.63577
+                  ],
+                  [
+                    1751241600000,
+                    152398.049
+                  ],
+                  [
+                    1743379200000,
+                    102159.035
+                  ]
+                ],
+                "time_frame": "quarterly",
+                "lingo": {
+                  "name": "Vốn NSNN Địa phương (từ 2025)",
+                  "unit": "%",
+                  "description": "Chỉ số Vốn NSNN Địa phương là một tiểu mục quan trọng trong tổng Vốn NSNN, phản ánh số vốn được NSNN nhà nước cấp cho chính quyền địa phương. Vốn NSNN Địa phương được sử dụng để đầu tư vào các dự án, công trình hạ tầng, chương trình xã hội và các hoạt động phát triển kinh tế tại cấp tỉnh, thành phố hoặc huyện. Chỉ số này giúp đánh giá hiệu quả quản lý và sử dụng vốn của chính quyền địa phương, đồng thời phản ánh mức độ đầu tư cho sự phát triển của từng khu vực. Dữ liệu được GSO tổng hợp, tính toán dựa trên các báo cáo tình hình sử dụng vốn ngân sách được các ban ngành và địa phương gửi về.",
+                  "frequency": "Ngày 6 tháng sau",
+                  "last_updated": "2026-09-03T02:55:34.731Z",
+                  "source": "Tổng cục Thống kê - GSO",
+                  "note": "Dữ liệu sau sáp nhập đơn vị hành chính. Cập nhật từ tháng 7 năm 2025",
+                  "related_blog": null
+                }
+              },
+              {
+                "id": "232_von_ngan_sach_nn_cap_tinh_new_mtq",
+                "column_name": "von_ngan_sach_nn_cap_tinh_new_mtq",
+                "table_name": "232",
+                "name": "Vốn ngân sách NN cấp tỉnh",
+                "hasSub": false,
+                "level": 3,
+                "heading": 3,
+                "open": null,
+                "dateType": "quy",
+                "yAxis": 17,
+                "data": [
+                  [
+                    1782777600000,
+                    136155.20394
+                  ],
+                  [
+                    1774915200000,
+                    88999.323
+                  ],
+                  [
+                    1767139200000,
+                    217147.3290000001
+                  ],
+                  [
+                    1759190400000,
+                    176425.71577
+                  ],
+                  [
+                    1751241600000,
+                    123544.2040000001
+                  ],
+                  [
+                    1743379200000,
+                    81055.42300000002
+                  ]
+                ],
+                "time_frame": "quarterly",
+                "lingo": {
+                  "name": "Vốn ngân sách NN cấp tỉnh (từ 2025)",
+                  "unit": "%",
+                  "description": "Vốn NSNN cấp tỉnh là một tiểu mục quan trọng trong tổng Vốn NSNN địa phương, phản ánh nguồn vốn thuộc ngân sách nhà nước được phân bổ cho các tỉnh, thành phố trực thuộc trung ương để thực hiện các nhiệm vụ, dự án và chương trình đầu tư công theo quy định của pháp luật. Nguồn vốn này được quản lý và sử dụng bởi chính quyền địa phương, nhằm đáp ứng nhu cầu phát triển hạ tầng, cung cấp dịch vụ công và đảm bảo an sinh xã hội tại địa phương. Dữ liệu được GSO tổng hợp, tính toán dựa trên các báo cáo tình hình sử dụng vốn ngân sách được các ban ngành và địa phương gửi về.",
+                  "frequency": "Ngày 6 tháng sau",
+                  "last_updated": "2026-09-03T02:55:34.731Z",
+                  "source": "Tổng cục Thống kê - GSO",
+                  "note": "Dữ liệu sau sáp nhập đơn vị hành chính. Cập nhật từ tháng 7 năm 2025",
+                  "related_blog": null
+                }
+              },
+              {
+                "id": "232_von_ngan_sach_nn_cap_xa_new_mtq",
+                "column_name": "von_ngan_sach_nn_cap_xa_new_mtq",
+                "table_name": "232",
+                "name": "Vốn ngân sách NN cấp xã",
+                "hasSub": false,
+                "level": 3,
+                "heading": 3,
+                "open": null,
+                "dateType": "quy",
+                "yAxis": 17,
+                "data": [
+                  [
+                    1782777600000,
+                    34739.30754000001
+                  ],
+                  [
+                    1774915200000,
+                    25666.889
+                  ],
+                  [
+                    1767139200000,
+                    44253.25499999999
+                  ],
+                  [
+                    1759190400000,
+                    36130.92
+                  ],
+                  [
+                    1751241600000,
+                    28853.845
+                  ],
+                  [
+                    1743379200000,
+                    21103.612
+                  ]
+                ],
+                "time_frame": "quarterly",
+                "lingo": {
+                  "name": "Vốn ngân sách NN cấp xã (từ 2025)",
+                  "unit": "%",
+                  "description": "Vốn NSNN cấp xã là một tiểu mục quan trọng trong tổng Vốn NSNN địa phương, phản ánh nguồn vốn từ ngân sách nhà nước được phân bổ cho cấp xã, nhằm phục vụ các hoạt động đầu tư và phát triển tại cấp cơ sở. Nguồn vốn này được sử dụng để đầu tư vào các dự án, công trình hạ tầng, giáo dục, y tế, văn hóa và các hoạt động xã hội khác trên địa bàn xã. Dữ liệu được GSO tổng hợp, tính toán dựa trên các báo cáo tình hình sử dụng vốn ngân sách được các ban ngành và địa phương gửi về.",
+                  "frequency": "Ngày 6 tháng sau",
+                  "last_updated": "2026-09-03T02:55:34.731Z",
+                  "source": "Tổng cục Thống kê - GSO",
+                  "note": "Dữ liệu sau sáp nhập đơn vị hành chính. Cập nhật từ tháng 7 năm 2025",
+                  "related_blog": null
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "yoy": {
+        "title": "Vốn đầu tư Ngân sách Nhà nước",
+        "headers": [
+          "06-2026",
+          "03-2026",
+          "12-2025",
+          "09-2025",
+          "06-2025",
+          "03-2025"
+        ],
+        "parent": [
+          {
+            "title": "VỐN ĐẦU TƯ NGÂN SÁCH NHÀ NƯỚC",
+            "child": [
+              {
+                "id": "232_tong_yym",
+                "column_name": "tong_yym",
+                "table_name": "232",
+                "name": "Tổng",
+                "hasSub": false,
+                "level": 1,
+                "heading": 1,
+                "open": 1,
+                "dateType": "quy",
+                "yAxis": 1,
+                "data": [
+                  [
+                    1782777600000,
+                    13.543161937917866
+                  ],
+                  [
+                    1774915200000,
+                    11.330361833834246
+                  ],
+                  [
+                    1767139200000,
+                    24.917687741317177
+                  ],
+                  [
+                    1759190400000,
+                    31.77707205908798
+                  ],
+                  [
+                    1751241600000,
+                    28.934057878549208
+                  ],
+                  [
+                    1743379200000,
+                    25.855269129803705
+                  ]
+                ],
+                "time_frame": "quarterly",
+                "lingo": {
+                  "name": "Vốn NSNN Tổng (từ 2025)",
+                  "unit": "%",
+                  "description": "Chỉ số Vốn đầu tư ngân sách nhà nước (Vốn NSNN) là chỉ số phản ánh tổng số vốn mà Nhà nước đầu tư từ ngân sách để phát triển kinh tế và đảm bảo an sinh xã hội. Trong đó, Vốn NSNN tổng bao gồm: các khoản chi đầu tư cho cơ sở hạ tầng, giáo dục, y tế, và các dự án phát triển khác. Chỉ số này giúp đo lường quy mô và hiệu quả của việc phân bổ nguồn lực từ ngân sách nhà nước cho các chính sách đầu tư công và sự phát triển của nền kinh tế",
+                  "frequency": "Ngày 6 tháng sau",
+                  "last_updated": "2026-09-03T02:55:34.731Z",
+                  "source": "Tổng cục Thống kê - GSO",
+                  "note": "Dữ liệu sau sáp nhập bộ ngành. Cập nhật từ năm 2025",
+                  "related_blog": null
+                }
+              },
+              {
+                "id": "232_trung_uong_yym",
+                "column_name": "trung_uong_yym",
+                "table_name": "232",
+                "name": "Trung ương",
+                "hasSub": false,
+                "level": 2,
+                "heading": 2,
+                "open": 1,
+                "dateType": "quy",
+                "yAxis": 1,
+                "data": [
+                  [
+                    1782777600000,
+                    21.60049388026111
+                  ],
+                  [
+                    1774915200000,
+                    5.746942618620726
+                  ],
+                  [
+                    1767139200000,
+                    8.19856662493779
+                  ],
+                  [
+                    1759190400000,
+                    4.114064132839214
+                  ],
+                  [
+                    1751241600000,
+                    4.17007051569922
+                  ],
+                  [
+                    1743379200000,
+                    4.0432818815722165
+                  ]
+                ],
+                "time_frame": "quarterly",
+                "lingo": {
+                  "name": "Vốn NSNN Trung ương (từ 2025)",
+                  "unit": "%",
+                  "description": "Chỉ số Vốn NSNN Trung ương trong tiểu mục trong Tổng vốn NSNN, phản ánh tổng nguồn lực tài chính từ ngân sách nhà nước được phân bổ cho khu vực Trung ương để phân bổ cho các bộ ngành có liên quan như Bộ giao thông, Bộ y tế, Bộ giáo dục,... Dữ liệu được GSO tổng hợp, tính toán dựa trên các báo cáo tình hình sử dụng vốn ngân sách được các bộ và cơ quan nhà nước gửi về.",
+                  "frequency": "Ngày 6 tháng sau",
+                  "last_updated": "2026-09-03T02:55:34.731Z",
+                  "source": "Tổng cục Thống kê - GSO",
+                  "note": "Dữ liệu sau sáp nhập bộ ngành. Cập nhật từ năm 2025",
+                  "related_blog": null
+                }
+              },
+              {
+                "id": "232_bo_xay_dung_va_giao_thong_yym",
+                "column_name": "bo_xay_dung_va_giao_thong_yym",
+                "table_name": "232",
+                "name": "Bộ Xây dựng",
+                "hasSub": false,
+                "level": 3,
+                "heading": 3,
+                "open": 1,
+                "dateType": "quy",
+                "yAxis": 1,
+                "data": [
+                  [
+                    1782777600000,
+                    -35.83436260234459
+                  ],
+                  [
+                    1774915200000,
+                    -9.587937088144779
+                  ],
+                  [
+                    1767139200000,
+                    2.2352382460028966
+                  ],
+                  [
+                    1759190400000,
+                    -2.16236923388282
+                  ],
+                  [
+                    1751241600000,
+                    -6.475039959078351
+                  ],
+                  [
+                    1743379200000,
+                    3.3747673898531505
+                  ]
+                ],
+                "time_frame": "quarterly",
+                "lingo": {
+                  "name": "Vốn NSNN Bộ Xây dựng (từ 2025)",
+                  "unit": "%",
+                  "description": "Chỉ số Vốn NSNN Bộ Xây dựng là một tiểu mục trong Vốn NSNN Trung ương, phản ánh tổng nguồn lực tài chính từ ngân sách nhà nước trung ương được phân bổ cho Bộ Xây dựng để thực hiện các dự án, chương trình đầu tư công thuộc thẩm quyền quản lý của bộ. Chỉ số này đo lường mức độ đầu tư của Nhà nước vào lĩnh vực xây dựng, bao gồm cả việc phát triển hạ tầng kỹ thuật, công trình công cộng, nhà ở xã hội và các dự án phục vụ mục tiêu phát triển kinh tế - xã hội. Dữ liệu được GSO tổng hợp, tính toán dựa trên các báo cáo tình hình sử dụng vốn ngân sách được các bộ và cơ quan nhà nước gửi về. Bộ Xây dựng mới là hợp nhất Bộ Xây dựng cũ với Bộ GTVT.",
+                  "frequency": "Ngày 6 tháng sau",
+                  "last_updated": "2026-09-03T02:55:34.731Z",
+                  "source": "Tổng cục Thống kê - GSO",
+                  "note": "Dữ liệu sau sáp nhập bộ ngành. Cập nhật từ năm 2025",
+                  "related_blog": null
+                }
+              },
+              {
+                "id": "232_bo_y_te_new_yym",
+                "column_name": "bo_y_te_new_yym",
+                "table_name": "232",
+                "name": "Bộ Y tế",
+                "hasSub": false,
+                "level": 3,
+                "heading": 3,
+                "open": null,
+                "dateType": "quy",
+                "yAxis": 1,
+                "data": [
+                  [
+                    1782777600000,
+                    -59.5941917464248
+                  ],
+                  [
+                    1774915200000,
+                    -49.33966607701068
+                  ],
+                  [
+                    1767139200000,
+                    206.1081183054898
+                  ],
+                  [
+                    1759190400000,
+                    170.65523283597938
+                  ],
+                  [
+                    1751241600000,
+                    169.87452774055006
+                  ],
+                  [
+                    1743379200000,
+                    166.18845408072366
+                  ]
+                ],
+                "time_frame": "quarterly",
+                "lingo": {
+                  "name": "Vốn NSNN Bộ Y tế (từ 2025)",
+                  "unit": "%",
+                  "description": "Chỉ số Vốn NSNN Bộ Y tế là một tiểu mục trong Vốn NSNN Trung ương, phản ánh tổng nguồn lực tài chính mà Nhà nước phân bổ cho ngành y tế để thực hiện các mục tiêu phát triển hệ thống y tế công lập. Vốn này được sử dụng để đầu tư xây dựng cơ sở hạ tầng y tế, mua sắm trang thiết bị y tế hiện đại, nâng cao chất lượng dịch vụ khám chữa bệnh, đầu tư cho các chương trình phòng chống bệnh tật và chăm sóc sức khỏe cộng đồng.Dữ liệu được GSO tổng hợp, tính toán dựa trên các báo cáo tình hình sử dụng vốn ngân sách được các bộ và cơ quan nhà nước gửi về.",
+                  "frequency": "Ngày 6 tháng sau",
+                  "last_updated": "2026-09-03T02:55:34.731Z",
+                  "source": "Tổng cục Thống kê - GSO",
+                  "note": "Dữ liệu sau sáp nhập bộ ngành. Cập nhật từ năm 2025",
+                  "related_blog": null
+                }
+              },
+              {
+                "id": "232_bo_nong_nghiep_va_moi_truong_yym",
+                "column_name": "bo_nong_nghiep_va_moi_truong_yym",
+                "table_name": "232",
+                "name": "Bộ Nông nghiệp và Môi trường",
+                "hasSub": false,
+                "level": 3,
+                "heading": 3,
+                "open": 1,
+                "dateType": "quy",
+                "yAxis": 1,
+                "data": [
+                  [
+                    1782777600000,
+                    -54.44830329742495
+                  ],
+                  [
+                    1774915200000,
+                    -65.48552182661182
+                  ],
+                  [
+                    1767139200000,
+                    54.66233732226563
+                  ],
+                  [
+                    1759190400000,
+                    65.34794480536269
+                  ],
+                  [
+                    1751241600000,
+                    51.11141481161822
+                  ],
+                  [
+                    1743379200000,
+                    39.520357616406585
+                  ]
+                ],
+                "time_frame": "quarterly",
+                "lingo": {
+                  "name": "Vốn NSNN Bộ Nông nghiệp và Môi trường (từ 2025)",
+                  "unit": "%",
+                  "description": "Chỉ số Vốn NSNN Bộ Nông Nghiệp và Môi trường là một tiểu mục trong Vốn NSNN Trung ương, phản ánh tổng nguồn lực tài chính từ ngân sách trung ương được phân bổ cho Bộ NN và MT. Vốn này nhằm thực hiện các chương trình, dự án phục vụ xây dựng, phát triển nông nghiệp, nông thôn, đảm bảo an ninh lương thực, ứng phó biến đổi khí hậu, khai thác hợp lý tài nguyên thiên nhiên và bảo vệ môi trường, xử lý ô nhiễm. Dữ liệu được GSO tổng hợp, tính toán dựa trên các báo cáo tình hình sử dụng vốn ngân sách được các bộ và cơ quan nhà nước gửi về. Bộ Nông nghiệp và Môi trường hợp nhất Bộ NN và PTNN với Bộ Tài nguyên môi trường.",
+                  "frequency": "Ngày 6 tháng sau",
+                  "last_updated": "2026-09-03T02:55:34.731Z",
+                  "source": "Tổng cục Thống kê - GSO",
+                  "note": "Dữ liệu sau sáp nhập bộ ngành. Cập nhật từ năm 2025",
+                  "related_blog": null
+                }
+              },
+              {
+                "id": "232_bo_giao_duc_dao_tao_new_yym",
+                "column_name": "bo_giao_duc_dao_tao_new_yym",
+                "table_name": "232",
+                "name": "Bộ Giáo dục và Đào tạo",
+                "hasSub": false,
+                "level": 3,
+                "heading": 3,
+                "open": null,
+                "dateType": "quy",
+                "yAxis": 1,
+                "data": [
+                  [
+                    1782777600000,
+                    -67.38578680203045
+                  ],
+                  [
+                    1774915200000,
+                    -43.07124635568513
+                  ],
+                  [
+                    1767139200000,
+                    68.67353205158494
+                  ],
+                  [
+                    1759190400000,
+                    84.02950756849972
+                  ],
+                  [
+                    1751241600000,
+                    79.09070208822595
+                  ],
+                  [
+                    1743379200000,
+                    63.30121413222521
+                  ]
+                ],
+                "time_frame": "quarterly",
+                "lingo": {
+                  "name": "Vốn NSNN Bộ Giáo dục - Đào tạo (từ 2025)",
+                  "unit": "%",
+                  "description": "Chỉ số Vốn NSNN Bộ Giáo dục - Đào tạo là một tiểu mục trong Vốn NSNN Trung ương, phản ánh tổng số vốn đầu tư từ ngân sách nhà nước dành cho ngành giáo dục và đào tạo. Vốn này được sử dụng để đầu tư xây dựng cơ sở hạ tầng giáo dục, mua sắm trang thiết bị dạy học, hỗ trợ các chương trình đào tạo và phát triển nguồn nhân lực chất lượng cao. Dữ liệu được GSO tổng hợp, tính toán dựa trên các báo cáo tình hình sử dụng vốn ngân sách được các bộ và cơ quan nhà nước gửi về.",
+                  "frequency": "Ngày 6 tháng sau",
+                  "last_updated": "2026-09-03T02:55:34.731Z",
+                  "source": "Tổng cục Thống kê - GSO",
+                  "note": "Dữ liệu sau sáp nhập bộ ngành. Cập nhật từ năm 2025",
+                  "related_blog": null
+                }
+              },
+              {
+                "id": "232_bo_van_hoa_the_thao_du_lich_new_yym",
+                "column_name": "bo_van_hoa_the_thao_du_lich_new_yym",
+                "table_name": "232",
+                "name": "Bộ Văn hóa, Thể thao và Du lịch",
+                "hasSub": false,
+                "level": 3,
+                "heading": 3,
+                "open": null,
+                "dateType": "quy",
+                "yAxis": 1,
+                "data": [
+                  [
+                    1782777600000,
+                    10.857423433376296
+                  ],
+                  [
+                    1774915200000,
+                    2.1659174499387053
+                  ],
+                  [
+                    1767139200000,
+                    120.5718603356399
+                  ],
+                  [
+                    1759190400000,
+                    71.1685475063706
+                  ],
+                  [
+                    1751241600000,
+                    57.357622553816945
+                  ],
+                  [
+                    1743379200000,
+                    32.63241334507471
+                  ]
+                ],
+                "time_frame": "quarterly",
+                "lingo": {
+                  "name": "Vốn NSNN Bộ Văn hóa, Thể thao và Du lịch (từ 2025)",
+                  "unit": "%",
+                  "description": "Chỉ số Vốn NSNN Bộ Văn hóa, Thể thao và Du lịch là một tiểu mục trong Vốn NSNN Trung ương, phản ánh tổng nguồn lực tài chính mà ngân sách trung ương cấp cho Bộ Văn hóa, Thể thao và Du lịch để đầu tư cho các hoạt động văn hóa, thể thao và du lịch, bao gồm việc xây dựng, tu sửa cơ sở hạ tầng, hỗ trợ các chương trình, dự án văn hóa, thể thao và du lịch nhằm phát triển ngành nghề này. Dữ liệu được GSO tổng hợp, tính toán dựa trên các báo cáo tình hình sử dụng vốn ngân sách được các bộ và cơ quan nhà nước gửi về.",
+                  "frequency": "Ngày 6 tháng sau",
+                  "last_updated": "2026-09-03T02:55:34.731Z",
+                  "source": "Tổng cục Thống kê - GSO",
+                  "note": "Dữ liệu sau sáp nhập bộ ngành. Cập nhật từ năm 2025",
+                  "related_blog": null
+                }
+              },
+              {
+                "id": "232_bo_cong_thuong_new_yym",
+                "column_name": "bo_cong_thuong_new_yym",
+                "table_name": "232",
+                "name": "Bộ Công Thương",
+                "hasSub": false,
+                "level": 3,
+                "heading": 3,
+                "open": null,
+                "dateType": "quy",
+                "yAxis": 1,
+                "data": [
+                  [
+                    1782777600000,
+                    -66.32030811201156
+                  ],
+                  [
+                    1774915200000,
+                    -63.7454467538033
+                  ],
+                  [
+                    1767139200000,
+                    -23.147150843719544
+                  ],
+                  [
+                    1759190400000,
+                    -55.58372570324761
+                  ],
+                  [
+                    1751241600000,
+                    -56.542626270966814
+                  ],
+                  [
+                    1743379200000,
+                    -53.383141133097155
+                  ]
+                ],
+                "time_frame": "quarterly",
+                "lingo": {
+                  "name": "Vốn NSNN Bộ Công thương (từ 2025)",
+                  "unit": "%",
+                  "description": "Chỉ số Vốn NSNN Bộ Công Thương  là một tiểu mục trong Vốn NSNN Trung ương, phản ánh tổng nguồn lực tài chính mà ngân sách trung ương cấp cho Bộ Công Thương để đầu tư cho các hoạt động như đầu tư vào hạ tầng công nghiệp, dự án sản xuất, công nghệ cao, năng lượng và các lĩnh vực then chốt khác. Dữ liệu được GSO tổng hợp, tính toán dựa trên các báo cáo tình hình sử dụng vốn ngân sách được các bộ và cơ quan nhà nước gửi về.",
+                  "frequency": "Ngày 6 tháng sau",
+                  "last_updated": "2026-09-03T02:55:34.731Z",
+                  "source": "Tổng cục Thống kê - GSO",
+                  "note": "Dữ liệu sau sáp nhập bộ ngành. Cập nhật từ năm 2025",
+                  "related_blog": null
+                }
+              },
+              {
+                "id": "232_bo_khoa_hoc_va_thong_tin_yym",
+                "column_name": "bo_khoa_hoc_va_thong_tin_yym",
+                "table_name": "232",
+                "name": "Bộ Khoa học và Công nghệ",
+                "hasSub": false,
+                "level": 3,
+                "heading": 3,
+                "open": 1,
+                "dateType": "quy",
+                "yAxis": 1,
+                "data": [
+                  [
+                    1782777600000,
+                    -92.76782261183448
+                  ],
+                  [
+                    1774915200000,
+                    -84.67521547193608
+                  ],
+                  [
+                    1767139200000,
+                    -33.62441358168052
+                  ],
+                  [
+                    1759190400000,
+                    -43.554667998003
+                  ],
+                  [
+                    1751241600000,
+                    -56.37676194684759
+                  ],
+                  [
+                    1743379200000,
+                    -40.63083674468363
+                  ]
+                ],
+                "time_frame": "quarterly",
+                "lingo": {
+                  "name": "Vốn NSNN Bộ Khoa học và Công nghệ (từ 2025)",
+                  "unit": "%",
+                  "description": "Chỉ số Vốn NSNN Bộ Khoa học và Công nghệ là một tiểu mục trong Vốn NSNN Trung ương, phản ánh tổng nguồn lực tài chính từ ngân sách nhà nước trung ương được phân bổ cho Bộ khoa học và công nghệ. Vốn này được sử dụng để tài trợ cho các hoạt động nghiên cứu khoa học, hạ tầng số, phát triển công nghệ, an toàn thông tin, truyền thông và các dịch vụ công trực tuyến. Dữ liệu được GSO tổng hợp, tính toán dựa trên các báo cáo tình hình sử dụng vốn ngân sách được các bộ và cơ quan nhà nước gửi về. Bộ Khoa học và công nghệ mới là hợp nhất Bộ Khoa học và Công nghệ với Bộ Thông tin và truyền thông.",
+                  "frequency": "Ngày 6 tháng sau",
+                  "last_updated": "2026-09-03T02:55:34.731Z",
+                  "source": "Tổng cục Thống kê - GSO",
+                  "note": "Dữ liệu sau sáp nhập bộ ngành. Cập nhật từ năm 2025",
+                  "related_blog": null
+                }
+              },
+              {
+                "id": "232_dia_phuong_yym",
+                "column_name": "dia_phuong_yym",
+                "table_name": "232",
+                "name": "Địa phương",
+                "hasSub": false,
+                "level": 2,
+                "heading": 2,
+                "open": 1,
+                "dateType": "quy",
+                "yAxis": 1,
+                "data": [
+                  [
+                    1782777600000,
+                    12.136941779353085
+                  ],
+                  [
+                    1774915200000,
+                    12.242849592304777
+                  ],
+                  [
+                    1767139200000,
+                    27.991811437895503
+                  ],
+                  [
+                    1759190400000,
+                    37.678801251811315
+                  ],
+                  [
+                    1751241600000,
+                    34.1908699644114
+                  ],
+                  [
+                    1743379200000,
+                    24.827660809934375
+                  ]
+                ],
+                "time_frame": "quarterly",
+                "lingo": {
+                  "name": "Vốn NSNN Địa phương (từ 2025)",
+                  "unit": "%",
+                  "description": "Chỉ số Vốn NSNN Địa phương là một tiểu mục quan trọng trong tổng Vốn NSNN, phản ánh số vốn được NSNN nhà nước cấp cho chính quyền địa phương. Vốn NSNN Địa phương được sử dụng để đầu tư vào các dự án, công trình hạ tầng, chương trình xã hội và các hoạt động phát triển kinh tế tại cấp tỉnh, thành phố hoặc huyện. Chỉ số này giúp đánh giá hiệu quả quản lý và sử dụng vốn của chính quyền địa phương, đồng thời phản ánh mức độ đầu tư cho sự phát triển của từng khu vực. Dữ liệu được GSO tổng hợp, tính toán dựa trên các báo cáo tình hình sử dụng vốn ngân sách được các ban ngành và địa phương gửi về.",
+                  "frequency": "Ngày 6 tháng sau",
+                  "last_updated": "2026-09-03T02:55:34.731Z",
+                  "source": "Tổng cục Thống kê - GSO",
+                  "note": "Dữ liệu sau sáp nhập đơn vị hành chính. Cập nhật từ tháng 7 năm 2025",
+                  "related_blog": null
+                }
+              },
+              {
+                "id": "232_von_ngan_sach_nn_cap_tinh_new_yym",
+                "column_name": "von_ngan_sach_nn_cap_tinh_new_yym",
+                "table_name": "232",
+                "name": "Vốn ngân sách NN cấp tỉnh",
+                "hasSub": false,
+                "level": 3,
+                "heading": 3,
+                "open": null,
+                "dateType": "quy",
+                "yAxis": 1,
+                "data": [
+                  [
+                    1782777600000,
+                    10.207682377394164
+                  ],
+                  [
+                    1774915200000,
+                    9.800578056325705
+                  ],
+                  [
+                    1767139200000,
+                    34.103327588927726
+                  ],
+                  [
+                    1759190400000,
+                    45.96455942752805
+                  ],
+                  [
+                    1751241600000,
+                    42.01980929599206
+                  ],
+                  [
+                    1743379200000,
+                    36.6309112751099
+                  ]
+                ],
+                "time_frame": "quarterly",
+                "lingo": {
+                  "name": "Vốn ngân sách NN cấp tỉnh (từ 2025)",
+                  "unit": "%",
+                  "description": "Vốn NSNN cấp tỉnh là một tiểu mục quan trọng trong tổng Vốn NSNN địa phương, phản ánh nguồn vốn thuộc ngân sách nhà nước được phân bổ cho các tỉnh, thành phố trực thuộc trung ương để thực hiện các nhiệm vụ, dự án và chương trình đầu tư công theo quy định của pháp luật. Nguồn vốn này được quản lý và sử dụng bởi chính quyền địa phương, nhằm đáp ứng nhu cầu phát triển hạ tầng, cung cấp dịch vụ công và đảm bảo an sinh xã hội tại địa phương. Dữ liệu được GSO tổng hợp, tính toán dựa trên các báo cáo tình hình sử dụng vốn ngân sách được các ban ngành và địa phương gửi về.",
+                  "frequency": "Ngày 6 tháng sau",
+                  "last_updated": "2026-09-03T02:55:34.731Z",
+                  "source": "Tổng cục Thống kê - GSO",
+                  "note": "Dữ liệu sau sáp nhập đơn vị hành chính. Cập nhật từ tháng 7 năm 2025",
+                  "related_blog": null
+                }
+              },
+              {
+                "id": "232_von_ngan_sach_nn_cap_xa_new_yym",
+                "column_name": "von_ngan_sach_nn_cap_xa_new_yym",
+                "table_name": "232",
+                "name": "Vốn ngân sách NN cấp xã",
+                "hasSub": false,
+                "level": 3,
+                "heading": 3,
+                "open": null,
+                "dateType": "quy",
+                "yAxis": 1,
+                "data": [
+                  [
+                    1782777600000,
+                    20.397498288356395
+                  ],
+                  [
+                    1774915200000,
+                    21.62320364874031
+                  ],
+                  [
+                    1767139200000,
+                    4.600593752029007
+                  ],
+                  [
+                    1759190400000,
+                    7.798745255152322
+                  ],
+                  [
+                    1751241600000,
+                    5.8557807609807035
+                  ],
+                  [
+                    1743379200000,
+                    8.837594605382321
+                  ]
+                ],
+                "time_frame": "quarterly",
+                "lingo": {
+                  "name": "Vốn ngân sách NN cấp xã (từ 2025)",
+                  "unit": "%",
+                  "description": "Vốn NSNN cấp xã là một tiểu mục quan trọng trong tổng Vốn NSNN địa phương, phản ánh nguồn vốn từ ngân sách nhà nước được phân bổ cho cấp xã, nhằm phục vụ các hoạt động đầu tư và phát triển tại cấp cơ sở. Nguồn vốn này được sử dụng để đầu tư vào các dự án, công trình hạ tầng, giáo dục, y tế, văn hóa và các hoạt động xã hội khác trên địa bàn xã. Dữ liệu được GSO tổng hợp, tính toán dựa trên các báo cáo tình hình sử dụng vốn ngân sách được các ban ngành và địa phương gửi về.",
+                  "frequency": "Ngày 6 tháng sau",
+                  "last_updated": "2026-09-03T02:55:34.731Z",
+                  "source": "Tổng cục Thống kê - GSO",
+                  "note": "Dữ liệu sau sáp nhập đơn vị hành chính. Cập nhật từ tháng 7 năm 2025",
+                  "related_blog": null
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "yearly": {
+      "value": {
+        "title": "Vốn đầu tư Ngân sách Nhà nước",
+        "headers": [
+          "12-2025"
+        ],
+        "parent": [
+          {
+            "title": "VỐN ĐẦU TƯ NGÂN SÁCH NHÀ NƯỚC (Tỷ VND)",
+            "child": [
+              {
+                "id": "232_tong_yrl",
+                "column_name": "tong_yrl",
+                "table_name": "232",
+                "name": "Tổng",
+                "hasSub": false,
+                "level": 1,
+                "heading": 1,
+                "open": 1,
+                "dateType": "nam",
+                "yAxis": 17,
+                "data": [
+                  [
+                    1767139200000,
+                    850687.41422
+                  ]
+                ],
+                "time_frame": "yearly",
+                "lingo": {
+                  "name": "Vốn NSNN Tổng (từ 2025)",
+                  "unit": "Tỷ VND",
+                  "description": "Chỉ số Vốn đầu tư ngân sách nhà nước (Vốn NSNN) là chỉ số phản ánh tổng số vốn mà Nhà nước đầu tư từ ngân sách để phát triển kinh tế và đảm bảo an sinh xã hội. Trong đó, Vốn NSNN tổng bao gồm: các khoản chi đầu tư cho cơ sở hạ tầng, giáo dục, y tế, và các dự án phát triển khác. Chỉ số này giúp đo lường quy mô và hiệu quả của việc phân bổ nguồn lực từ ngân sách nhà nước cho các chính sách đầu tư công và sự phát triển của nền kinh tế",
+                  "frequency": "Ngày 6 tháng sau",
+                  "last_updated": "2026-09-03T02:55:34.731Z",
+                  "source": "Tổng cục Thống kê - GSO",
+                  "note": "Dữ liệu sau sáp nhập bộ ngành. Cập nhật từ năm 2025",
+                  "related_blog": null
+                }
+              },
+              {
+                "id": "232_trung_uong_yrl",
+                "column_name": "trung_uong_yrl",
+                "table_name": "232",
+                "name": "Trung ương",
+                "hasSub": false,
+                "level": 2,
+                "heading": 2,
+                "open": 1,
+                "dateType": "nam",
+                "yAxis": 17,
+                "data": [
+                  [
+                    1767139200000,
+                    118391.87
+                  ]
+                ],
+                "time_frame": "yearly",
+                "lingo": {
+                  "name": "Vốn NSNN Trung ương (từ 2025)",
+                  "unit": "Tỷ VND",
+                  "description": "Chỉ số Vốn NSNN Trung ương trong tiểu mục trong Tổng vốn NSNN, phản ánh tổng nguồn lực tài chính từ ngân sách nhà nước được phân bổ cho khu vực Trung ương để phân bổ cho các bộ ngành có liên quan như Bộ giao thông, Bộ y tế, Bộ giáo dục,... Dữ liệu được GSO tổng hợp, tính toán dựa trên các báo cáo tình hình sử dụng vốn ngân sách được các bộ và cơ quan nhà nước gửi về.",
+                  "frequency": "Ngày 6 tháng sau",
+                  "last_updated": "2026-09-03T02:55:34.731Z",
+                  "source": "Tổng cục Thống kê - GSO",
+                  "note": "Dữ liệu sau sáp nhập bộ ngành. Cập nhật từ năm 2025",
+                  "related_blog": null
+                }
+              },
+              {
+                "id": "232_bo_xay_dung_va_giao_thong_yrl",
+                "column_name": "bo_xay_dung_va_giao_thong_yrl",
+                "table_name": "232",
+                "name": "Bộ Xây dựng",
+                "hasSub": false,
+                "level": 3,
+                "heading": 3,
+                "open": 1,
+                "dateType": "nam",
+                "yAxis": 17,
+                "data": [
+                  [
+                    1767139200000,
+                    71623.09000000001
+                  ]
+                ],
+                "time_frame": "yearly",
+                "lingo": {
+                  "name": "Vốn NSNN Bộ Xây dựng (từ 2025)",
+                  "unit": "Tỷ VND",
+                  "description": "Chỉ số Vốn NSNN Bộ Xây dựng là một tiểu mục trong Vốn NSNN Trung ương, phản ánh tổng nguồn lực tài chính từ ngân sách nhà nước trung ương được phân bổ cho Bộ Xây dựng để thực hiện các dự án, chương trình đầu tư công thuộc thẩm quyền quản lý của bộ. Chỉ số này đo lường mức độ đầu tư của Nhà nước vào lĩnh vực xây dựng, bao gồm cả việc phát triển hạ tầng kỹ thuật, công trình công cộng, nhà ở xã hội và các dự án phục vụ mục tiêu phát triển kinh tế - xã hội. Dữ liệu được GSO tổng hợp, tính toán dựa trên các báo cáo tình hình sử dụng vốn ngân sách được các bộ và cơ quan nhà nước gửi về. Bộ Xây dựng mới là hợp nhất Bộ Xây dựng cũ với Bộ GTVT.",
+                  "frequency": "Ngày 6 tháng sau",
+                  "last_updated": "2026-09-03T02:55:34.731Z",
+                  "source": "Tổng cục Thống kê - GSO",
+                  "note": "Dữ liệu sau sáp nhập bộ ngành. Cập nhật từ năm 2025",
+                  "related_blog": null
+                }
+              },
+              {
+                "id": "232_bo_y_te_new_yrl",
+                "column_name": "bo_y_te_new_yrl",
+                "table_name": "232",
+                "name": "Bộ Y tế",
+                "hasSub": false,
+                "level": 3,
+                "heading": 3,
+                "open": null,
+                "dateType": "nam",
+                "yAxis": 17,
+                "data": [
+                  [
+                    1767139200000,
+                    3598.431
+                  ]
+                ],
+                "time_frame": "yearly",
+                "lingo": {
+                  "name": "Vốn NSNN Bộ Y tế (từ 2025)",
+                  "unit": "Tỷ VND",
+                  "description": "Chỉ số Vốn NSNN Bộ Y tế là một tiểu mục trong Vốn NSNN Trung ương, phản ánh tổng nguồn lực tài chính mà Nhà nước phân bổ cho ngành y tế để thực hiện các mục tiêu phát triển hệ thống y tế công lập. Vốn này được sử dụng để đầu tư xây dựng cơ sở hạ tầng y tế, mua sắm trang thiết bị y tế hiện đại, nâng cao chất lượng dịch vụ khám chữa bệnh, đầu tư cho các chương trình phòng chống bệnh tật và chăm sóc sức khỏe cộng đồng.Dữ liệu được GSO tổng hợp, tính toán dựa trên các báo cáo tình hình sử dụng vốn ngân sách được các bộ và cơ quan nhà nước gửi về.",
+                  "frequency": "Ngày 6 tháng sau",
+                  "last_updated": "2026-09-03T02:55:34.731Z",
+                  "source": "Tổng cục Thống kê - GSO",
+                  "note": "Dữ liệu sau sáp nhập bộ ngành. Cập nhật từ năm 2025",
+                  "related_blog": null
+                }
+              },
+              {
+                "id": "232_bo_nong_nghiep_va_moi_truong_yrl",
+                "column_name": "bo_nong_nghiep_va_moi_truong_yrl",
+                "table_name": "232",
+                "name": "Bộ Nông nghiệp và Môi trường",
+                "hasSub": false,
+                "level": 3,
+                "heading": 3,
+                "open": 1,
+                "dateType": "nam",
+                "yAxis": 17,
+                "data": [
+                  [
+                    1767139200000,
+                    16967.17
+                  ]
+                ],
+                "time_frame": "yearly",
+                "lingo": {
+                  "name": "Vốn NSNN Bộ Nông nghiệp và Môi trường (từ 2025)",
+                  "unit": "Tỷ VND",
+                  "description": "Chỉ số Vốn NSNN Bộ Nông Nghiệp và Môi trường là một tiểu mục trong Vốn NSNN Trung ương, phản ánh tổng nguồn lực tài chính từ ngân sách trung ương được phân bổ cho Bộ NN và MT. Vốn này nhằm thực hiện các chương trình, dự án phục vụ xây dựng, phát triển nông nghiệp, nông thôn, đảm bảo an ninh lương thực, ứng phó biến đổi khí hậu, khai thác hợp lý tài nguyên thiên nhiên và bảo vệ môi trường, xử lý ô nhiễm. Dữ liệu được GSO tổng hợp, tính toán dựa trên các báo cáo tình hình sử dụng vốn ngân sách được các bộ và cơ quan nhà nước gửi về. Bộ Nông nghiệp và Môi trường hợp nhất Bộ NN và PTNN với Bộ Tài nguyên môi trường.",
+                  "frequency": "Ngày 6 tháng sau",
+                  "last_updated": "2026-09-03T02:55:34.731Z",
+                  "source": "Tổng cục Thống kê - GSO",
+                  "note": "Dữ liệu sau sáp nhập bộ ngành. Cập nhật từ năm 2025",
+                  "related_blog": null
+                }
+              },
+              {
+                "id": "232_bo_giao_duc_dao_tao_new_yrl",
+                "column_name": "bo_giao_duc_dao_tao_new_yrl",
+                "table_name": "232",
+                "name": "Bộ Giáo dục và Đào tạo",
+                "hasSub": false,
+                "level": 3,
+                "heading": 3,
+                "open": null,
+                "dateType": "nam",
+                "yAxis": 17,
+                "data": [
+                  [
+                    1767139200000,
+                    1932.88
+                  ]
+                ],
+                "time_frame": "yearly",
+                "lingo": {
+                  "name": "Vốn NSNN Bộ Giáo dục - Đào tạo (từ 2025)",
+                  "unit": "Tỷ VND",
+                  "description": "Chỉ số Vốn NSNN Bộ Giáo dục - Đào tạo là một tiểu mục trong Vốn NSNN Trung ương, phản ánh tổng số vốn đầu tư từ ngân sách nhà nước dành cho ngành giáo dục và đào tạo. Vốn này được sử dụng để đầu tư xây dựng cơ sở hạ tầng giáo dục, mua sắm trang thiết bị dạy học, hỗ trợ các chương trình đào tạo và phát triển nguồn nhân lực chất lượng cao. Dữ liệu được GSO tổng hợp, tính toán dựa trên các báo cáo tình hình sử dụng vốn ngân sách được các bộ và cơ quan nhà nước gửi về.",
+                  "frequency": "Ngày 6 tháng sau",
+                  "last_updated": "2026-09-03T02:55:34.731Z",
+                  "source": "Tổng cục Thống kê - GSO",
+                  "note": "Dữ liệu sau sáp nhập bộ ngành. Cập nhật từ năm 2025",
+                  "related_blog": null
+                }
+              },
+              {
+                "id": "232_bo_van_hoa_the_thao_du_lich_new_yrl",
+                "column_name": "bo_van_hoa_the_thao_du_lich_new_yrl",
+                "table_name": "232",
+                "name": "Bộ Văn hóa, Thể thao và Du lịch",
+                "hasSub": false,
+                "level": 3,
+                "heading": 3,
+                "open": null,
+                "dateType": "nam",
+                "yAxis": 17,
+                "data": [
+                  [
+                    1767139200000,
+                    1229.09
+                  ]
+                ],
+                "time_frame": "yearly",
+                "lingo": {
+                  "name": "Vốn NSNN Bộ Văn hóa, Thể thao và Du lịch (từ 2025)",
+                  "unit": "Tỷ VND",
+                  "description": "Chỉ số Vốn NSNN Bộ Văn hóa, Thể thao và Du lịch là một tiểu mục trong Vốn NSNN Trung ương, phản ánh tổng nguồn lực tài chính mà ngân sách trung ương cấp cho Bộ Văn hóa, Thể thao và Du lịch để đầu tư cho các hoạt động văn hóa, thể thao và du lịch, bao gồm việc xây dựng, tu sửa cơ sở hạ tầng, hỗ trợ các chương trình, dự án văn hóa, thể thao và du lịch nhằm phát triển ngành nghề này. Dữ liệu được GSO tổng hợp, tính toán dựa trên các báo cáo tình hình sử dụng vốn ngân sách được các bộ và cơ quan nhà nước gửi về.",
+                  "frequency": "Ngày 6 tháng sau",
+                  "last_updated": "2026-09-03T02:55:34.731Z",
+                  "source": "Tổng cục Thống kê - GSO",
+                  "note": "Dữ liệu sau sáp nhập bộ ngành. Cập nhật từ năm 2025",
+                  "related_blog": null
+                }
+              },
+              {
+                "id": "232_bo_cong_thuong_new_yrl",
+                "column_name": "bo_cong_thuong_new_yrl",
+                "table_name": "232",
+                "name": "Bộ Công Thương",
+                "hasSub": false,
+                "level": 3,
+                "heading": 3,
+                "open": null,
+                "dateType": "nam",
+                "yAxis": 17,
+                "data": [
+                  [
+                    1767139200000,
+                    312.642
+                  ]
+                ],
+                "time_frame": "yearly",
+                "lingo": {
+                  "name": "Vốn NSNN Bộ Công thương (từ 2025)",
+                  "unit": "Tỷ VND",
+                  "description": "Chỉ số Vốn NSNN Bộ Công Thương  là một tiểu mục trong Vốn NSNN Trung ương, phản ánh tổng nguồn lực tài chính mà ngân sách trung ương cấp cho Bộ Công Thương để đầu tư cho các hoạt động như đầu tư vào hạ tầng công nghiệp, dự án sản xuất, công nghệ cao, năng lượng và các lĩnh vực then chốt khác. Dữ liệu được GSO tổng hợp, tính toán dựa trên các báo cáo tình hình sử dụng vốn ngân sách được các bộ và cơ quan nhà nước gửi về.",
+                  "frequency": "Ngày 6 tháng sau",
+                  "last_updated": "2026-09-03T02:55:34.731Z",
+                  "source": "Tổng cục Thống kê - GSO",
+                  "note": "Dữ liệu sau sáp nhập bộ ngành. Cập nhật từ năm 2025",
+                  "related_blog": null
+                }
+              },
+              {
+                "id": "232_bo_khoa_hoc_va_thong_tin_yrl",
+                "column_name": "bo_khoa_hoc_va_thong_tin_yrl",
+                "table_name": "232",
+                "name": "Bộ Khoa học và Công nghệ",
+                "hasSub": false,
+                "level": 3,
+                "heading": 3,
+                "open": 1,
+                "dateType": "nam",
+                "yAxis": 17,
+                "data": [
+                  [
+                    1767139200000,
+                    432.9
+                  ]
+                ],
+                "time_frame": "yearly",
+                "lingo": {
+                  "name": "Vốn NSNN Bộ Khoa học và Công nghệ (từ 2025)",
+                  "unit": "Tỷ VND",
+                  "description": "Chỉ số Vốn NSNN Bộ Khoa học và Công nghệ là một tiểu mục trong Vốn NSNN Trung ương, phản ánh tổng nguồn lực tài chính từ ngân sách nhà nước trung ương được phân bổ cho Bộ khoa học và công nghệ. Vốn này được sử dụng để tài trợ cho các hoạt động nghiên cứu khoa học, hạ tầng số, phát triển công nghệ, an toàn thông tin, truyền thông và các dịch vụ công trực tuyến. Dữ liệu được GSO tổng hợp, tính toán dựa trên các báo cáo tình hình sử dụng vốn ngân sách được các bộ và cơ quan nhà nước gửi về. Bộ Khoa học và công nghệ mới là hợp nhất Bộ Khoa học và Công nghệ với Bộ Thông tin và truyền thông.",
+                  "frequency": "Ngày 6 tháng sau",
+                  "last_updated": "2026-09-03T02:55:34.731Z",
+                  "source": "Tổng cục Thống kê - GSO",
+                  "note": "Dữ liệu sau sáp nhập bộ ngành. Cập nhật từ năm 2025",
+                  "related_blog": null
+                }
+              },
+              {
+                "id": "232_dia_phuong_yrl",
+                "column_name": "dia_phuong_yrl",
+                "table_name": "232",
+                "name": "Địa phương",
+                "hasSub": false,
+                "level": 2,
+                "heading": 2,
+                "open": 1,
+                "dateType": "nam",
+                "yAxis": 17,
+                "data": [
+                  [
+                    1767139200000,
+                    732295.54422
+                  ]
+                ],
+                "time_frame": "yearly",
+                "lingo": {
+                  "name": "Vốn NSNN Địa phương (từ 2025)",
+                  "unit": "Tỷ VND",
+                  "description": "Chỉ số Vốn NSNN Địa phương là một tiểu mục quan trọng trong tổng Vốn NSNN, phản ánh số vốn được NSNN nhà nước cấp cho chính quyền địa phương. Vốn NSNN Địa phương được sử dụng để đầu tư vào các dự án, công trình hạ tầng, chương trình xã hội và các hoạt động phát triển kinh tế tại cấp tỉnh, thành phố hoặc huyện. Chỉ số này giúp đánh giá hiệu quả quản lý và sử dụng vốn của chính quyền địa phương, đồng thời phản ánh mức độ đầu tư cho sự phát triển của từng khu vực. Dữ liệu được GSO tổng hợp, tính toán dựa trên các báo cáo tình hình sử dụng vốn ngân sách được các ban ngành và địa phương gửi về.",
+                  "frequency": "Ngày 6 tháng sau",
+                  "last_updated": "2026-09-03T02:55:34.731Z",
+                  "source": "Tổng cục Thống kê - GSO",
+                  "note": "Dữ liệu sau sáp nhập đơn vị hành chính. Cập nhật từ tháng 7 năm 2025",
+                  "related_blog": null
+                }
+              },
+              {
+                "id": "232_von_ngan_sach_nn_cap_tinh_new_yrl",
+                "column_name": "von_ngan_sach_nn_cap_tinh_new_yrl",
+                "table_name": "232",
+                "name": "Vốn ngân sách NN cấp tỉnh",
+                "hasSub": false,
+                "level": 3,
+                "heading": 3,
+                "open": null,
+                "dateType": "nam",
+                "yAxis": 17,
+                "data": [
+                  [
+                    1767139200000,
+                    600734.21427
+                  ]
+                ],
+                "time_frame": "yearly",
+                "lingo": {
+                  "name": "Vốn ngân sách NN cấp tỉnh (từ 2025)",
+                  "unit": "Tỷ VND",
+                  "description": "Vốn NSNN cấp tỉnh là một tiểu mục quan trọng trong tổng Vốn NSNN địa phương, phản ánh nguồn vốn thuộc ngân sách nhà nước được phân bổ cho các tỉnh, thành phố trực thuộc trung ương để thực hiện các nhiệm vụ, dự án và chương trình đầu tư công theo quy định của pháp luật. Nguồn vốn này được quản lý và sử dụng bởi chính quyền địa phương, nhằm đáp ứng nhu cầu phát triển hạ tầng, cung cấp dịch vụ công và đảm bảo an sinh xã hội tại địa phương. Dữ liệu được GSO tổng hợp, tính toán dựa trên các báo cáo tình hình sử dụng vốn ngân sách được các ban ngành và địa phương gửi về.",
+                  "frequency": "Ngày 6 tháng sau",
+                  "last_updated": "2026-09-03T02:55:34.731Z",
+                  "source": "Tổng cục Thống kê - GSO",
+                  "note": "Dữ liệu sau sáp nhập đơn vị hành chính. Cập nhật từ tháng 7 năm 2025",
+                  "related_blog": null
+                }
+              },
+              {
+                "id": "232_von_ngan_sach_nn_cap_xa_new_yrl",
+                "column_name": "von_ngan_sach_nn_cap_xa_new_yrl",
+                "table_name": "232",
+                "name": "Vốn ngân sách NN cấp xã",
+                "hasSub": false,
+                "level": 3,
+                "heading": 3,
+                "open": null,
+                "dateType": "nam",
+                "yAxis": 17,
+                "data": [
+                  [
+                    1767139200000,
+                    131561.32995
+                  ]
+                ],
+                "time_frame": "yearly",
+                "lingo": {
+                  "name": "Vốn ngân sách NN cấp xã (từ 2025)",
+                  "unit": "Tỷ VND",
+                  "description": "Vốn NSNN cấp xã là một tiểu mục quan trọng trong tổng Vốn NSNN địa phương, phản ánh nguồn vốn từ ngân sách nhà nước được phân bổ cho cấp xã, nhằm phục vụ các hoạt động đầu tư và phát triển tại cấp cơ sở. Nguồn vốn này được sử dụng để đầu tư vào các dự án, công trình hạ tầng, giáo dục, y tế, văn hóa và các hoạt động xã hội khác trên địa bàn xã. Dữ liệu được GSO tổng hợp, tính toán dựa trên các báo cáo tình hình sử dụng vốn ngân sách được các ban ngành và địa phương gửi về.",
+                  "frequency": "Ngày 6 tháng sau",
+                  "last_updated": "2026-09-03T02:55:34.731Z",
+                  "source": "Tổng cục Thống kê - GSO",
+                  "note": "Dữ liệu sau sáp nhập đơn vị hành chính. Cập nhật từ tháng 7 năm 2025",
+                  "related_blog": null
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "yoy": {
+        "title": "Vốn đầu tư Ngân sách Nhà nước",
+        "headers": [
+          "12-2025"
+        ],
+        "parent": [
+          {
+            "title": "VỐN ĐẦU TƯ NGÂN SÁCH NHÀ NƯỚC",
+            "child": [
+              {
+                "id": "232_tong_yrl_yoy",
+                "column_name": "tong_yrl_yoy",
+                "table_name": "232",
+                "name": "Tổng",
+                "hasSub": false,
+                "level": 1,
+                "heading": 1,
+                "open": 1,
+                "dateType": "nam",
+                "yAxis": 1,
+                "data": [
+                  [
+                    1767139200000,
+                    26.584783946436396
+                  ]
+                ],
+                "time_frame": "yearly",
+                "lingo": {
+                  "name": "Vốn NSNN Tổng (từ 2025)",
+                  "unit": "%",
+                  "description": "Chỉ số Vốn đầu tư ngân sách nhà nước (Vốn NSNN) là chỉ số phản ánh tổng số vốn mà Nhà nước đầu tư từ ngân sách để phát triển kinh tế và đảm bảo an sinh xã hội. Trong đó, Vốn NSNN tổng bao gồm: các khoản chi đầu tư cho cơ sở hạ tầng, giáo dục, y tế, và các dự án phát triển khác. Chỉ số này giúp đo lường quy mô và hiệu quả của việc phân bổ nguồn lực từ ngân sách nhà nước cho các chính sách đầu tư công và sự phát triển của nền kinh tế",
+                  "frequency": "Ngày 6 tháng sau",
+                  "last_updated": "2026-09-03T02:55:34.731Z",
+                  "source": "Tổng cục Thống kê - GSO",
+                  "note": "Dữ liệu sau sáp nhập bộ ngành. Cập nhật từ năm 2025",
+                  "related_blog": null
+                }
+              },
+              {
+                "id": "232_trung_uong_yrl_yoy",
+                "column_name": "trung_uong_yrl_yoy",
+                "table_name": "232",
+                "name": "Trung ương",
+                "hasSub": false,
+                "level": 2,
+                "heading": 2,
+                "open": 1,
+                "dateType": "nam",
+                "yAxis": 1,
+                "data": [
+                  [
+                    1767139200000,
+                    6.193316322100706
+                  ]
+                ],
+                "time_frame": "yearly",
+                "lingo": {
+                  "name": "Vốn NSNN Trung ương (từ 2025)",
+                  "unit": "%",
+                  "description": "Chỉ số Vốn NSNN Trung ương trong tiểu mục trong Tổng vốn NSNN, phản ánh tổng nguồn lực tài chính từ ngân sách nhà nước được phân bổ cho khu vực Trung ương để phân bổ cho các bộ ngành có liên quan như Bộ giao thông, Bộ y tế, Bộ giáo dục,... Dữ liệu được GSO tổng hợp, tính toán dựa trên các báo cáo tình hình sử dụng vốn ngân sách được các bộ và cơ quan nhà nước gửi về.",
+                  "frequency": "Ngày 6 tháng sau",
+                  "last_updated": "2026-09-03T02:55:34.731Z",
+                  "source": "Tổng cục Thống kê - GSO",
+                  "note": "Dữ liệu sau sáp nhập bộ ngành. Cập nhật từ năm 2025",
+                  "related_blog": null
+                }
+              },
+              {
+                "id": "232_bo_xay_dung_va_giao_thong_yrl_yoy",
+                "column_name": "bo_xay_dung_va_giao_thong_yrl_yoy",
+                "table_name": "232",
+                "name": "Bộ Xây dựng",
+                "hasSub": false,
+                "level": 3,
+                "heading": 3,
+                "open": 1,
+                "dateType": "nam",
+                "yAxis": 1,
+                "data": [
+                  [
+                    1767139200000,
+                    1.1269906487690096
+                  ]
+                ],
+                "time_frame": "yearly",
+                "lingo": {
+                  "name": "Vốn NSNN Bộ Xây dựng (từ 2025)",
+                  "unit": "%",
+                  "description": "Chỉ số Vốn NSNN Bộ Xây dựng là một tiểu mục trong Vốn NSNN Trung ương, phản ánh tổng nguồn lực tài chính từ ngân sách nhà nước trung ương được phân bổ cho Bộ Xây dựng để thực hiện các dự án, chương trình đầu tư công thuộc thẩm quyền quản lý của bộ. Chỉ số này đo lường mức độ đầu tư của Nhà nước vào lĩnh vực xây dựng, bao gồm cả việc phát triển hạ tầng kỹ thuật, công trình công cộng, nhà ở xã hội và các dự án phục vụ mục tiêu phát triển kinh tế - xã hội. Dữ liệu được GSO tổng hợp, tính toán dựa trên các báo cáo tình hình sử dụng vốn ngân sách được các bộ và cơ quan nhà nước gửi về. Bộ Xây dựng mới là hợp nhất Bộ Xây dựng cũ với Bộ GTVT.",
+                  "frequency": "Ngày 6 tháng sau",
+                  "last_updated": "2026-09-03T02:55:34.731Z",
+                  "source": "Tổng cục Thống kê - GSO",
+                  "note": "Dữ liệu sau sáp nhập bộ ngành. Cập nhật từ năm 2025",
+                  "related_blog": null
+                }
+              },
+              {
+                "id": "232_bo_y_te_new_yrl_yoy",
+                "column_name": "bo_y_te_new_yrl_yoy",
+                "table_name": "232",
+                "name": "Bộ Y tế",
+                "hasSub": false,
+                "level": 3,
+                "heading": 3,
+                "open": null,
+                "dateType": "nam",
+                "yAxis": 1,
+                "data": [
+                  [
+                    1767139200000,
+                    189.69608900768029
+                  ]
+                ],
+                "time_frame": "yearly",
+                "lingo": {
+                  "name": "Vốn NSNN Bộ Y tế (từ 2025)",
+                  "unit": "%",
+                  "description": "Chỉ số Vốn NSNN Bộ Y tế là một tiểu mục trong Vốn NSNN Trung ương, phản ánh tổng nguồn lực tài chính mà Nhà nước phân bổ cho ngành y tế để thực hiện các mục tiêu phát triển hệ thống y tế công lập. Vốn này được sử dụng để đầu tư xây dựng cơ sở hạ tầng y tế, mua sắm trang thiết bị y tế hiện đại, nâng cao chất lượng dịch vụ khám chữa bệnh, đầu tư cho các chương trình phòng chống bệnh tật và chăm sóc sức khỏe cộng đồng.Dữ liệu được GSO tổng hợp, tính toán dựa trên các báo cáo tình hình sử dụng vốn ngân sách được các bộ và cơ quan nhà nước gửi về.",
+                  "frequency": "Ngày 6 tháng sau",
+                  "last_updated": "2026-09-03T02:55:34.731Z",
+                  "source": "Tổng cục Thống kê - GSO",
+                  "note": "Dữ liệu sau sáp nhập bộ ngành. Cập nhật từ năm 2025",
+                  "related_blog": null
+                }
+              },
+              {
+                "id": "232_bo_nong_nghiep_va_moi_truong_yrl_yoy",
+                "column_name": "bo_nong_nghiep_va_moi_truong_yrl_yoy",
+                "table_name": "232",
+                "name": "Bộ Nông nghiệp và Môi trường",
+                "hasSub": false,
+                "level": 3,
+                "heading": 3,
+                "open": 1,
+                "dateType": "nam",
+                "yAxis": 1,
+                "data": [
+                  [
+                    1767139200000,
+                    57.24041435728587
+                  ]
+                ],
+                "time_frame": "yearly",
+                "lingo": {
+                  "name": "Vốn NSNN Bộ Nông nghiệp và Môi trường (từ 2025)",
+                  "unit": "%",
+                  "description": "Chỉ số Vốn NSNN Bộ Nông Nghiệp và Môi trường là một tiểu mục trong Vốn NSNN Trung ương, phản ánh tổng nguồn lực tài chính từ ngân sách trung ương được phân bổ cho Bộ NN và MT. Vốn này nhằm thực hiện các chương trình, dự án phục vụ xây dựng, phát triển nông nghiệp, nông thôn, đảm bảo an ninh lương thực, ứng phó biến đổi khí hậu, khai thác hợp lý tài nguyên thiên nhiên và bảo vệ môi trường, xử lý ô nhiễm. Dữ liệu được GSO tổng hợp, tính toán dựa trên các báo cáo tình hình sử dụng vốn ngân sách được các bộ và cơ quan nhà nước gửi về. Bộ Nông nghiệp và Môi trường hợp nhất Bộ NN và PTNN với Bộ Tài nguyên môi trường.",
+                  "frequency": "Ngày 6 tháng sau",
+                  "last_updated": "2026-09-03T02:55:34.731Z",
+                  "source": "Tổng cục Thống kê - GSO",
+                  "note": "Dữ liệu sau sáp nhập bộ ngành. Cập nhật từ năm 2025",
+                  "related_blog": null
+                }
+              },
+              {
+                "id": "232_bo_giao_duc_dao_tao_new_yrl_yoy",
+                "column_name": "bo_giao_duc_dao_tao_new_yrl_yoy",
+                "table_name": "232",
+                "name": "Bộ Giáo dục và Đào tạo",
+                "hasSub": false,
+                "level": 3,
+                "heading": 3,
+                "open": null,
+                "dateType": "nam",
+                "yAxis": 1,
+                "data": [
+                  [
+                    1767139200000,
+                    70.33981951494643
+                  ]
+                ],
+                "time_frame": "yearly",
+                "lingo": {
+                  "name": "Vốn NSNN Bộ Giáo dục - Đào tạo (từ 2025)",
+                  "unit": "%",
+                  "description": "Chỉ số Vốn NSNN Bộ Giáo dục - Đào tạo là một tiểu mục trong Vốn NSNN Trung ương, phản ánh tổng số vốn đầu tư từ ngân sách nhà nước dành cho ngành giáo dục và đào tạo. Vốn này được sử dụng để đầu tư xây dựng cơ sở hạ tầng giáo dục, mua sắm trang thiết bị dạy học, hỗ trợ các chương trình đào tạo và phát triển nguồn nhân lực chất lượng cao. Dữ liệu được GSO tổng hợp, tính toán dựa trên các báo cáo tình hình sử dụng vốn ngân sách được các bộ và cơ quan nhà nước gửi về.",
+                  "frequency": "Ngày 6 tháng sau",
+                  "last_updated": "2026-09-03T02:55:34.731Z",
+                  "source": "Tổng cục Thống kê - GSO",
+                  "note": "Dữ liệu sau sáp nhập bộ ngành. Cập nhật từ năm 2025",
+                  "related_blog": null
+                }
+              },
+              {
+                "id": "232_bo_van_hoa_the_thao_du_lich_new_yrl_yoy",
+                "column_name": "bo_van_hoa_the_thao_du_lich_new_yrl_yoy",
+                "table_name": "232",
+                "name": "Bộ Văn hóa, Thể thao và Du lịch",
+                "hasSub": false,
+                "level": 3,
+                "heading": 3,
+                "open": null,
+                "dateType": "nam",
+                "yAxis": 1,
+                "data": [
+                  [
+                    1767139200000,
+                    73.60763874175463
+                  ]
+                ],
+                "time_frame": "yearly",
+                "lingo": {
+                  "name": "Vốn NSNN Bộ Văn hóa, Thể thao và Du lịch (từ 2025)",
+                  "unit": "%",
+                  "description": "Chỉ số Vốn NSNN Bộ Văn hóa, Thể thao và Du lịch là một tiểu mục trong Vốn NSNN Trung ương, phản ánh tổng nguồn lực tài chính mà ngân sách trung ương cấp cho Bộ Văn hóa, Thể thao và Du lịch để đầu tư cho các hoạt động văn hóa, thể thao và du lịch, bao gồm việc xây dựng, tu sửa cơ sở hạ tầng, hỗ trợ các chương trình, dự án văn hóa, thể thao và du lịch nhằm phát triển ngành nghề này. Dữ liệu được GSO tổng hợp, tính toán dựa trên các báo cáo tình hình sử dụng vốn ngân sách được các bộ và cơ quan nhà nước gửi về.",
+                  "frequency": "Ngày 6 tháng sau",
+                  "last_updated": "2026-09-03T02:55:34.731Z",
+                  "source": "Tổng cục Thống kê - GSO",
+                  "note": "Dữ liệu sau sáp nhập bộ ngành. Cập nhật từ năm 2025",
+                  "related_blog": null
+                }
+              },
+              {
+                "id": "232_bo_cong_thuong_new_yrl_yoy",
+                "column_name": "bo_cong_thuong_new_yrl_yoy",
+                "table_name": "232",
+                "name": "Bộ Công Thương",
+                "hasSub": false,
+                "level": 3,
+                "heading": 3,
+                "open": null,
+                "dateType": "nam",
+                "yAxis": 1,
+                "data": [
+                  [
+                    1767139200000,
+                    -46.72902928998621
+                  ]
+                ],
+                "time_frame": "yearly",
+                "lingo": {
+                  "name": "Vốn NSNN Bộ Công thương (từ 2025)",
+                  "unit": "%",
+                  "description": "Chỉ số Vốn NSNN Bộ Công Thương  là một tiểu mục trong Vốn NSNN Trung ương, phản ánh tổng nguồn lực tài chính mà ngân sách trung ương cấp cho Bộ Công Thương để đầu tư cho các hoạt động như đầu tư vào hạ tầng công nghiệp, dự án sản xuất, công nghệ cao, năng lượng và các lĩnh vực then chốt khác. Dữ liệu được GSO tổng hợp, tính toán dựa trên các báo cáo tình hình sử dụng vốn ngân sách được các bộ và cơ quan nhà nước gửi về.",
+                  "frequency": "Ngày 6 tháng sau",
+                  "last_updated": "2026-09-03T02:55:34.731Z",
+                  "source": "Tổng cục Thống kê - GSO",
+                  "note": "Dữ liệu sau sáp nhập bộ ngành. Cập nhật từ năm 2025",
+                  "related_blog": null
+                }
+              },
+              {
+                "id": "232_bo_khoa_hoc_va_thong_tin_yrl_yoy",
+                "column_name": "bo_khoa_hoc_va_thong_tin_yrl_yoy",
+                "table_name": "232",
+                "name": "Bộ Khoa học và Công nghệ",
+                "hasSub": false,
+                "level": 3,
+                "heading": 3,
+                "open": 1,
+                "dateType": "nam",
+                "yAxis": 1,
+                "data": [
+                  [
+                    1767139200000,
+                    -26.7314332137296
+                  ]
+                ],
+                "time_frame": "yearly",
+                "lingo": {
+                  "name": "Vốn NSNN Bộ Khoa học và Công nghệ (từ 2025)",
+                  "unit": "%",
+                  "description": "Chỉ số Vốn NSNN Bộ Khoa học và Công nghệ là một tiểu mục trong Vốn NSNN Trung ương, phản ánh tổng nguồn lực tài chính từ ngân sách nhà nước trung ương được phân bổ cho Bộ khoa học và công nghệ. Vốn này được sử dụng để tài trợ cho các hoạt động nghiên cứu khoa học, hạ tầng số, phát triển công nghệ, an toàn thông tin, truyền thông và các dịch vụ công trực tuyến. Dữ liệu được GSO tổng hợp, tính toán dựa trên các báo cáo tình hình sử dụng vốn ngân sách được các bộ và cơ quan nhà nước gửi về. Bộ Khoa học và công nghệ mới là hợp nhất Bộ Khoa học và Công nghệ với Bộ Thông tin và truyền thông.",
+                  "frequency": "Ngày 6 tháng sau",
+                  "last_updated": "2026-09-03T02:55:34.731Z",
+                  "source": "Tổng cục Thống kê - GSO",
+                  "note": "Dữ liệu sau sáp nhập bộ ngành. Cập nhật từ năm 2025",
+                  "related_blog": null
+                }
+              },
+              {
+                "id": "232_dia_phuong_yrl_yoy",
+                "column_name": "dia_phuong_yrl_yoy",
+                "table_name": "232",
+                "name": "Địa phương",
+                "hasSub": false,
+                "level": 2,
+                "heading": 2,
+                "open": 1,
+                "dateType": "nam",
+                "yAxis": 1,
+                "data": [
+                  [
+                    1767139200000,
+                    30.640471870077317
+                  ]
+                ],
+                "time_frame": "yearly",
+                "lingo": {
+                  "name": "Vốn NSNN Địa phương (từ 2025)",
+                  "unit": "%",
+                  "description": "Chỉ số Vốn NSNN Địa phương là một tiểu mục quan trọng trong tổng Vốn NSNN, phản ánh số vốn được NSNN nhà nước cấp cho chính quyền địa phương. Vốn NSNN Địa phương được sử dụng để đầu tư vào các dự án, công trình hạ tầng, chương trình xã hội và các hoạt động phát triển kinh tế tại cấp tỉnh, thành phố hoặc huyện. Chỉ số này giúp đánh giá hiệu quả quản lý và sử dụng vốn của chính quyền địa phương, đồng thời phản ánh mức độ đầu tư cho sự phát triển của từng khu vực. Dữ liệu được GSO tổng hợp, tính toán dựa trên các báo cáo tình hình sử dụng vốn ngân sách được các ban ngành và địa phương gửi về.",
+                  "frequency": "Ngày 6 tháng sau",
+                  "last_updated": "2026-09-03T02:55:34.731Z",
+                  "source": "Tổng cục Thống kê - GSO",
+                  "note": "Dữ liệu sau sáp nhập đơn vị hành chính. Cập nhật từ tháng 7 năm 2025",
+                  "related_blog": null
+                }
+              },
+              {
+                "id": "232_von_ngan_sach_nn_cap_tinh_new_yrl_yoy",
+                "column_name": "von_ngan_sach_nn_cap_tinh_new_yrl_yoy",
+                "table_name": "232",
+                "name": "Vốn ngân sách NN cấp tỉnh",
+                "hasSub": false,
+                "level": 3,
+                "heading": 3,
+                "open": null,
+                "dateType": "nam",
+                "yAxis": 1,
+                "data": [
+                  [
+                    1767139200000,
+                    36.269662009976415
+                  ]
+                ],
+                "time_frame": "yearly",
+                "lingo": {
+                  "name": "Vốn ngân sách NN cấp tỉnh (từ 2025)",
+                  "unit": "%",
+                  "description": "Vốn NSNN cấp tỉnh là một tiểu mục quan trọng trong tổng Vốn NSNN địa phương, phản ánh nguồn vốn thuộc ngân sách nhà nước được phân bổ cho các tỉnh, thành phố trực thuộc trung ương để thực hiện các nhiệm vụ, dự án và chương trình đầu tư công theo quy định của pháp luật. Nguồn vốn này được quản lý và sử dụng bởi chính quyền địa phương, nhằm đáp ứng nhu cầu phát triển hạ tầng, cung cấp dịch vụ công và đảm bảo an sinh xã hội tại địa phương. Dữ liệu được GSO tổng hợp, tính toán dựa trên các báo cáo tình hình sử dụng vốn ngân sách được các ban ngành và địa phương gửi về.",
+                  "frequency": "Ngày 6 tháng sau",
+                  "last_updated": "2026-09-03T02:55:34.731Z",
+                  "source": "Tổng cục Thống kê - GSO",
+                  "note": "Dữ liệu sau sáp nhập đơn vị hành chính. Cập nhật từ tháng 7 năm 2025",
+                  "related_blog": null
+                }
+              },
+              {
+                "id": "232_von_ngan_sach_nn_cap_xa_new_yrl_yoy",
+                "column_name": "von_ngan_sach_nn_cap_xa_new_yrl_yoy",
+                "table_name": "232",
+                "name": "Vốn ngân sách NN cấp xã",
+                "hasSub": false,
+                "level": 3,
+                "heading": 3,
+                "open": null,
+                "dateType": "nam",
+                "yAxis": 1,
+                "data": [
+                  [
+                    1767139200000,
+                    9.908840494131068
+                  ]
+                ],
+                "time_frame": "yearly",
+                "lingo": {
+                  "name": "Vốn ngân sách NN cấp xã (từ 2025)",
+                  "unit": "%",
+                  "description": "Vốn NSNN cấp xã là một tiểu mục quan trọng trong tổng Vốn NSNN địa phương, phản ánh nguồn vốn từ ngân sách nhà nước được phân bổ cho cấp xã, nhằm phục vụ các hoạt động đầu tư và phát triển tại cấp cơ sở. Nguồn vốn này được sử dụng để đầu tư vào các dự án, công trình hạ tầng, giáo dục, y tế, văn hóa và các hoạt động xã hội khác trên địa bàn xã. Dữ liệu được GSO tổng hợp, tính toán dựa trên các báo cáo tình hình sử dụng vốn ngân sách được các ban ngành và địa phương gửi về.",
+                  "frequency": "Ngày 6 tháng sau",
+                  "last_updated": "2026-09-03T02:55:34.731Z",
+                  "source": "Tổng cục Thống kê - GSO",
+                  "note": "Dữ liệu sau sáp nhập đơn vị hành chính. Cập nhật từ tháng 7 năm 2025",
+                  "related_blog": null
+                }
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

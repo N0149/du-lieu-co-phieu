@@ -22,6 +22,8 @@ import {
 } from "lucide-react"
 import { cn } from "@/lib/utils"
 import type { BctcReportData } from "@/lib/bctc-service"
+import { BctcDocumentSection } from "./BctcDocumentSection"
+import type { BctcCompanyDocumentsPayload } from "@/lib/bctc-document-service"
 
 interface StockBctcReportViewProps {
   bctcDataHopNhat: BctcReportData | null
@@ -29,6 +31,7 @@ interface StockBctcReportViewProps {
   ticker: string
   companyName?: string
   availableTickers?: string[]
+  bctcDocuments?: BctcCompanyDocumentsPayload | null
 }
 
 export function StockBctcReportView({
@@ -37,6 +40,7 @@ export function StockBctcReportView({
   ticker,
   companyName,
   availableTickers = [],
+  bctcDocuments = null,
 }: StockBctcReportViewProps) {
   // Chọn giữa Hợp nhất và Công ty mẹ
   const [selectedType, setSelectedType] = useState<'HopNhat' | 'CongTyMe'>(() => {
@@ -106,18 +110,28 @@ export function StockBctcReportView({
   // Khi chưa có dữ liệu Thuyết minh BCTC
   if (!currentData || !currentData.hasReport) {
     return (
-      <div className="rounded-2xl border border-border/70 bg-card/60 p-6 sm:p-10 text-center space-y-6">
-        <div className="mx-auto flex size-16 items-center justify-center rounded-2xl bg-muted/60 text-muted-foreground">
-          <FileSpreadsheet className="size-8 text-primary" />
-        </div>
-        <div className="max-w-md mx-auto space-y-2">
-          <h3 className="text-lg font-bold text-foreground">
-            Chưa có Thuyết minh BCTC cho {ticker}
-          </h3>
-          <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed">
-            Dữ liệu Thuyết minh Báo cáo tài chính của {companyName || ticker} đang được cập nhật hoặc file PDF đang trong tiến trình trích xuất tự động bằng Gemini.
-          </p>
-        </div>
+      <div className="space-y-6">
+        {/* Danh mục Tải File Gốc BCTC */}
+        {bctcDocuments && (
+          <BctcDocumentSection
+            documents={bctcDocuments}
+            companyName={companyName}
+            defaultExpanded={true}
+          />
+        )}
+
+        <div className="rounded-2xl border border-border/70 bg-card/60 p-6 sm:p-10 text-center space-y-6">
+          <div className="mx-auto flex size-16 items-center justify-center rounded-2xl bg-muted/60 text-muted-foreground">
+            <FileSpreadsheet className="size-8 text-primary" />
+          </div>
+          <div className="max-w-md mx-auto space-y-2">
+            <h3 className="text-lg font-bold text-foreground">
+              Thuyết minh BCTC số hóa đang được cập nhật
+            </h3>
+            <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed">
+              Các bảng biểu thuyết minh chi tiết của {companyName || ticker} đang trong tiến trình trích xuất tự động. Bạn có thể xem và tải trực tiếp bản scan Báo cáo tài chính gốc từ danh mục phía trên!
+            </p>
+          </div>
 
         {availableTickers.length > 0 && (
           <div className="pt-4 border-t border-border/50 max-w-2xl mx-auto text-left">
@@ -155,6 +169,7 @@ export function StockBctcReportView({
             </div>
           </div>
         )}
+        </div>
       </div>
     )
   }
@@ -205,6 +220,15 @@ export function StockBctcReportView({
 
   return (
     <div className="space-y-6">
+      {/* ── Danh mục Tải File Gốc BCTC ── */}
+      {bctcDocuments && (
+        <BctcDocumentSection
+          documents={bctcDocuments}
+          companyName={companyName}
+          defaultExpanded={false}
+        />
+      )}
+
       {/* ── 1. HEADER BÁO CÁO THUYẾT MINH BCTC ── */}
       <div className="relative overflow-hidden rounded-2xl border border-border/80 bg-linear-to-br from-card/90 via-card/60 to-background p-5 sm:p-7 shadow-sm">
         <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-5">

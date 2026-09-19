@@ -120,7 +120,7 @@ export default function PrivacyPage() {
             </p>
             <p className="mt-1 text-xs text-foreground">
               - Đơn vị quản lý: <strong>Dữ Liệu Đầu Tư (dulieudautu.com)</strong><br />
-              - Đại diện & Quản trị: <strong>Nguyễn Trung Nhật</strong><br />
+              - Bộ phận phụ trách: <strong>Ban Quản Trị Hệ Thống</strong><br />
               - Email hỗ trợ: <strong>trungnhat232@gmail.com</strong><br />
               - Điện thoại / Zalo: <strong>0983.627.018</strong><br />
               - Website chính thức: <a href="https://dulieudautu.com" className="text-primary hover:underline">https://dulieudautu.com</a>

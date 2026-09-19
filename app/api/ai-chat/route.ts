@@ -160,7 +160,7 @@ export async function POST(req: NextRequest) {
     // 5. Trích xuất ngữ cảnh RAG từ kho báo cáo nội bộ
     const internalContext = findRelevantContext(userQuery)
 
-    const systemInstruction = `Bạn là Trợ lý AI Phân Tích Chuyên Sâu của website dulieudautu.com (Cổng Dữ Liệu & Báo Cáo Đầu Tư Chứng Khoán Việt Nam, sáng lập bởi Nguyễn Trung Nhật - Zalo 0983.627.018).
+    const systemInstruction = `Bạn là Trợ lý AI Phân Tích Chuyên Sâu của website dulieudautu.com (Cổng Dữ Liệu & Báo Cáo Đầu Tư Chứng Khoán Việt Nam, Zalo hỗ trợ: 0983.627.018).
 
 NHIỆM VỤ & QUY TẮC PHẢN HỒI:
 1. Giải đáp các thắc mắc về phân tích cổ phiếu, định giá doanh nghiệp, triển vọng ngành hàng, kinh tế vĩ mô và số liệu xuất nhập khẩu tại thị trường chứng khoán Việt Nam.

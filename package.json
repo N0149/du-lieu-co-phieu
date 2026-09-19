@@ -26,7 +26,10 @@
     "sync-financial-charts": "node scripts/sync-financial-charts.mjs --banks",
     "sync-disclosures": "node scripts/sync-disclosures.mjs",
     "backup": "node scripts/backup.mjs",
-    "scheduler": "node scripts/scheduler-daemon.mjs"
+    "scheduler": "node scripts/scheduler-daemon.mjs",
+    "sync-macro": "node scripts/sync-macro-data.mjs",
+    "sync-widata-full": "node scripts/crawl-widata-full.mjs",
+    "sync-company-websites": "node scripts/crawl-company-websites.mjs"
   },
   "dependencies": {
     "@base-ui/react": "^1.5.0",

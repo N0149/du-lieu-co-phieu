@@ -28,6 +28,8 @@ import { getStockIcbHierarchy } from '@/lib/icb-service'
 import { getFinancialStatements } from '@/lib/financial-statements-db'
 import { getStockArticles } from '@/lib/stock-articles-service'
 import { getLocalPriceWeekly } from '@/lib/stock-price-history-service'
+import { getCompanyWebsiteMeta } from '@/lib/company-website-service'
+import { getCompanyBctcDocuments } from '@/lib/bctc-document-service'
 
 // Tối ưu hóa bộ nhớ đệm CDN Edge Vercel (ISR) 60 giây:
 // Người dùng tiếp theo truy cập sẽ nhận phản hồi < 50ms từ Edge CDN gần nhất (Singapore/Việt Nam)
@@ -103,6 +105,7 @@ export default async function StockDetailPage({
     bctcDataCongTyMe,
     availableBctcTickers,
     articlesData,
+    companyWebsiteMeta,
   ] = await Promise.all([
     fetchStockDetailData(ticker, getLocalPriceWeekly(ticker)),
     getStockEvaluation(ticker),
@@ -120,6 +123,7 @@ export default async function StockDetailPage({
     Promise.resolve(getBctcReport(ticker, 'CongTyMe')),
     Promise.resolve(getAvailableBctcTickers()),
     Promise.resolve(getStockArticles(ticker, manifestItem.n)),
+    Promise.resolve(getCompanyWebsiteMeta(ticker)),
   ])
 
   if (!stockData) {
@@ -206,6 +210,9 @@ export default async function StockDetailPage({
   // Tỷ lệ lợi nhuận trích ngoài cổ đông (KTPL, Thưởng BĐH, Thù lao HĐQT)
   const ktplRate = agmData?.ktplRate ?? getAgmKtpl(ticker)
 
+  // Danh mục file PDF/ZIP BCTC kiểm toán gốc & các cổng công bố thông tin chính thức
+  const bctcDocuments = getCompanyBctcDocuments(ticker, companyWebsiteMeta?.website)
+
   return (
     <div className="min-h-screen bg-background text-foreground">
       <SiteHeader />
@@ -244,6 +251,8 @@ export default async function StockDetailPage({
           ktplRate={ktplRate}
           articlesData={articlesData}
           initialTab={initialTab}
+          companyWebsiteMeta={companyWebsiteMeta}
+          bctcDocuments={bctcDocuments}
         />
       </main>
     </div>

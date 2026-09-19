@@ -1,0 +1,103 @@
+{
+  "updatedAt": "2026-09-19T10:35:30.927Z",
+  "hose": [
+    {
+      "mack": "STB",
+      "index_impact": 0.7986269562454049
+    },
+    {
+      "mack": "HPG",
+      "index_impact": 0.6207275938236442
+    },
+    {
+      "mack": "VCB",
+      "index_impact": 0.517431948031914
+    },
+    {
+      "mack": "MCH",
+      "index_impact": -0.6919489617774818
+    },
+    {
+      "mack": "FPT",
+      "index_impact": -0.8895197348223476
+    },
+    {
+      "mack": "ACB",
+      "index_impact": -1.0381857314440708
+    },
+    {
+      "mack": "VPB",
+      "index_impact": -1.1978070601068473
+    },
+    {
+      "mack": "MBB",
+      "index_impact": -1.3091459883286742
+    },
+    {
+      "mack": "BID",
+      "index_impact": -1.4891259462233455
+    },
+    {
+      "mack": "TCB",
+      "index_impact": -1.4908491629256526
+    },
+    {
+      "mack": "VPL",
+      "index_impact": -1.5855040300474328
+    },
+    {
+      "mack": "CTG",
+      "index_impact": -1.7779991248942746
+    }
+  ],
+  "hnx": [
+    {
+      "mack": "NVB",
+      "index_impact": 1.357647921613136
+    },
+    {
+      "mack": "BAB",
+      "index_impact": 0.2802176872058062
+    },
+    {
+      "mack": "HUT",
+      "index_impact": 0.12701551730343666
+    },
+    {
+      "mack": "MBS",
+      "index_impact": 0.11871416237651243
+    },
+    {
+      "mack": "PVI",
+      "index_impact": 0.09187927164990911
+    },
+    {
+      "mack": "DNP",
+      "index_impact": 0.06556108727414468
+    },
+    {
+      "mack": "SHS",
+      "index_impact": 0.05315509793005164
+    },
+    {
+      "mack": "IDC",
+      "index_impact": 0.04964769474668132
+    },
+    {
+      "mack": "CEO",
+      "index_impact": -0.10202717146413784
+    },
+    {
+      "mack": "KSV",
+      "index_impact": -0.13922501053807762
+    },
+    {
+      "mack": "KSF",
+      "index_impact": -0.31216168302259845
+    },
+    {
+      "mack": "THD",
+      "index_impact": -0.5086733627987492
+    }
+  ]
+}

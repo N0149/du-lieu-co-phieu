@@ -1,0 +1,1972 @@
+{
+  "meta": {
+    "group": "Giao dịch quốc tế",
+    "groupKey": "giaodichquocte",
+    "name": "Giá trị xuất khẩu",
+    "slug": "gia-tri-xuat-khau",
+    "apiPath": "giaodichquocte/giatrixuatnhapkhau/xuatkhau",
+    "defaultTimeFrame": "monthly",
+    "defaultValueType": "value",
+    "supportedTimeFrames": [
+      "monthly",
+      "quarterly",
+      "yearly"
+    ],
+    "supportedValueTypes": [
+      "value",
+      "yoy"
+    ],
+    "unit": "Triệu USD",
+    "description": "Kim ngạch xuất khẩu hàng hóa Việt Nam ra thị trường quốc tế.",
+    "updatedAt": "2026-09-19T10:14:37.654Z",
+    "latestPeriod": "08-2026",
+    "latestValue": 54794.764261
+  },
+  "datasets": {
+    "monthly": {
+      "value": {
+        "title": "Giá Trị Xuất Khẩu",
+        "headers": [
+          "08-2026",
+          "07-2026",
+          "06-2026",
+          "05-2026",
+          "04-2026",
+          "03-2026",
+          "02-2026",
+          "01-2026",
+          "12-2025",
+          "11-2025",
+          "10-2025",
+          "09-2025",
+          "08-2025",
+          "07-2025",
+          "06-2025",
+          "05-2025",
+          "04-2025",
+          "03-2025",
+          "02-2025"
+        ],
+        "parent": [
+          {
+            "title": "GIÁ TRỊ XUẤT KHẨU (Triệu USD)",
+            "child": [
+              {
+                "id": "278_tong",
+                "column_name": "tong",
+                "table_name": "278",
+                "name": "Tổng",
+                "hasSub": false,
+                "level": 2,
+                "heading": 2,
+                "open": 1,
+                "dateType": "thang",
+                "yAxis": 16,
+                "data": [
+                  [
+                    1788134400000,
+                    54794.764261
+                  ],
+                  [
+                    1785456000000,
+                    53095.70180329457
+                  ],
+                  [
+                    1782777600000,
+                    50809.06702966507
+                  ],
+                  [
+                    1780185600000,
+                    47037.48485378045
+                  ],
+                  [
+                    1777507200000,
+                    46025.20108931062
+                  ],
+                  [
+                    1774915200000,
+                    46326.29258422565
+                  ],
+                  [
+                    1772236800000,
+                    33112.65071101823
+                  ],
+                  [
+                    1769817600000,
+                    43323.805471
+                  ],
+                  [
+                    1767139200000,
+                    44077.885178
+                  ],
+                  [
+                    1764460800000,
+                    39312.862833
+                  ],
+                  [
+                    1761868800000,
+                    42707.813671
+                  ],
+                  [
+                    1759190400000,
+                    42762.641356
+                  ],
+                  [
+                    1756598400000,
+                    43482.916204
+                  ],
+                  [
+                    1753920000000,
+                    42472.225581
+                  ],
+                  [
+                    1751241600000,
+                    39650.888372000016
+                  ],
+                  [
+                    1748649600000,
+                    39778.80092000001
+                  ],
+                  [
+                    1745971200000,
+                    37634.773762
+                  ],
+                  [
+                    1743379200000,
+                    38608.70769
+                  ],
+                  [
+                    1740700800000,
+                    31248.789997
+                  ]
+                ],
+                "time_frame": "monthly",
+                "lingo": {
+                  "name": "XK Tổng",
+                  "unit": "Triệu USD",
+                  "description": "Chỉ số Giá trị xuất khẩu của Việt Nam đo lường tổng giá trị hàng hóa và dịch vụ mà Việt Nam xuất khẩu ra thị trường quốc tế. Dữ liệu được Tổng cục hải quan thống kê dựa trên dữ liệu từ các tờ khai hải quan do doanh nghiệp nộp khi thực hiện hoạt động xuất khẩu.",
+                  "frequency": "Hai tuần đầu mỗi tháng",
+                  "last_updated": "2026-09-07T06:54:31.302Z",
+                  "source": "Tổng cục Hải quan - CUSTOM",
+                  "note": null,
+                  "related_blog": null
+                }
+              },
+              {
+                "id": "278_trong_nuoc",
+                "column_name": "trong_nuoc",
+                "table_name": "278",
+                "name": "Khu vực trong nước",
+                "hasSub": false,
+                "level": 3,
+                "heading": 3,
+                "open": 1,
+                "dateType": "thang",
+                "yAxis": 16,
+                "data": [
+                  [
+                    1788134400000,
+                    10498.850069999993
+                  ],
+                  [
+                    1785456000000,
+                    10333.78230087911
+                  ],
+                  [
+                    1782777600000,
+                    10094.61411537936
+                  ],
+                  [
+                    1780185600000,
+                    9114.995976798462
+                  ],
+                  [
+                    1777507200000,
+                    9806.877115353866
+                  ],
+                  [
+                    1774915200000,
+                    9062.30961769699
+                  ],
+                  [
+                    1772236800000,
+                    6875.75945695245
+                  ],
+                  [
+                    1769817600000,
+                    9335.15053181888
+                  ],
+                  [
+                    1767139200000,
+                    9784.886263
+                  ],
+                  [
+                    1764460800000,
+                    8381.106748
+                  ],
+                  [
+                    1761868800000,
+                    8927.366437
+                  ],
+                  [
+                    1759190400000,
+                    8765.666607
+                  ],
+                  [
+                    1756598400000,
+                    9309.240767
+                  ],
+                  [
+                    1753920000000,
+                    9139.309721
+                  ],
+                  [
+                    1751241600000,
+                    8772.124403
+                  ],
+                  [
+                    1748649600000,
+                    8824.928948
+                  ],
+                  [
+                    1745971200000,
+                    9471.931373
+                  ],
+                  [
+                    1743379200000,
+                    9352.349768
+                  ],
+                  [
+                    1740700800000,
+                    7219.613728
+                  ]
+                ],
+                "time_frame": "monthly",
+                "lingo": {
+                  "name": "XK Khu vực trong nước",
+                  "unit": "Triệu USD",
+                  "description": "Chỉ số Xuất khẩu khu vực trong nước là một bộ phận quan trọng trong tổng giá trị xuất khẩu của Việt Nam. Chỉ số này phản ánh giá trị hàng hóa và dịch vụ do các doanh nghiệp trong nước sản xuất và xuất khẩu ra thị trường quốc tế. Khu vực trong nước bao gồm các doanh nghiệp thuộc các thành phần kinh tế như doanh nghiệp nhà nước, doanh nghiệp tư nhân, hợp tác xã và các đơn vị sự nghiệp. Dữ liệu được Tổng cục hải quan thống kê dựa trên dữ liệu từ các tờ khai hải quan do doanh nghiệp trong nước nộp khi thực hiện hoạt động xuất khẩu.",
+                  "frequency": "Hai tuần đầu mỗi tháng",
+                  "last_updated": "2026-09-07T06:54:31.302Z",
+                  "source": "Tổng cục Hải quan - CUSTOM",
+                  "note": null,
+                  "related_blog": null
+                }
+              },
+              {
+                "id": "278_fdi",
+                "column_name": "fdi",
+                "table_name": "278",
+                "name": "Khu vực FDI",
+                "hasSub": false,
+                "level": 3,
+                "heading": 3,
+                "open": 1,
+                "dateType": "thang",
+                "yAxis": 16,
+                "data": [
+                  [
+                    1788134400000,
+                    44295.914191
+                  ],
+                  [
+                    1785456000000,
+                    42761.91950241546
+                  ],
+                  [
+                    1782777600000,
+                    40714.45291428571
+                  ],
+                  [
+                    1780185600000,
+                    37922.48887698195
+                  ],
+                  [
+                    1777507200000,
+                    36218.32397395678
+                  ],
+                  [
+                    1774915200000,
+                    37263.982966528645
+                  ],
+                  [
+                    1772236800000,
+                    26236.891254065806
+                  ],
+                  [
+                    1769817600000,
+                    33988.654939181106
+                  ],
+                  [
+                    1767139200000,
+                    34292.998915
+                  ],
+                  [
+                    1764460800000,
+                    30931.756085
+                  ],
+                  [
+                    1761868800000,
+                    33780.447234
+                  ],
+                  [
+                    1759190400000,
+                    33996.974749
+                  ],
+                  [
+                    1756598400000,
+                    34173.675437
+                  ],
+                  [
+                    1753920000000,
+                    33332.91586
+                  ],
+                  [
+                    1751241600000,
+                    30878.763969
+                  ],
+                  [
+                    1748649600000,
+                    30953.871972000008
+                  ],
+                  [
+                    1745971200000,
+                    28162.842389
+                  ],
+                  [
+                    1743379200000,
+                    29256.357922
+                  ],
+                  [
+                    1740700800000,
+                    24029.176269
+                  ]
+                ],
+                "time_frame": "monthly",
+                "lingo": {
+                  "name": "XK Khu vực trong FDI",
+                  "unit": "Triệu USD",
+                  "description": "Chỉ số Xuất khẩu Khu vực trong FDI là một bộ phận quan trọng trong tổng xuất khẩu của Việt Nam, phản ánh giá trị xuất khẩu của các doanh nghiệp có vốn đầu tư nước ngoài (FDI). Dữ liệu được Tổng cục hải quan thống kê dựa trên dữ liệu từ các tờ khai hải quan do doanh nghiệp FDI nộp khi thực hiện hoạt động xuất khẩu.",
+                  "frequency": "Hai tuần đầu mỗi tháng",
+                  "last_updated": "2026-09-07T06:54:31.302Z",
+                  "source": "Tổng cục Hải quan - CUSTOM",
+                  "note": null,
+                  "related_blog": null
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "yoy": {
+        "title": "Giá Trị Xuất Khẩu",
+        "headers": [
+          "08-2026",
+          "07-2026",
+          "06-2026",
+          "05-2026",
+          "04-2026",
+          "03-2026",
+          "02-2026",
+          "01-2026",
+          "12-2025",
+          "11-2025",
+          "10-2025",
+          "09-2025",
+          "08-2025",
+          "07-2025",
+          "06-2025",
+          "05-2025",
+          "04-2025",
+          "03-2025",
+          "02-2025"
+        ],
+        "parent": [
+          {
+            "title": "GIÁ TRỊ XUẤT KHẨU",
+            "child": [
+              {
+                "id": "278_tong_yoy",
+                "column_name": "tong_yoy",
+                "table_name": "278",
+                "name": "Tổng",
+                "hasSub": false,
+                "level": 2,
+                "heading": 2,
+                "open": 1,
+                "dateType": "thang",
+                "yAxis": 1,
+                "data": [
+                  [
+                    1788134400000,
+                    26.014465092291616
+                  ],
+                  [
+                    1785456000000,
+                    25.012760873654326
+                  ],
+                  [
+                    1782777600000,
+                    28.141055890047966
+                  ],
+                  [
+                    1780185600000,
+                    18.24761874642359
+                  ],
+                  [
+                    1777507200000,
+                    22.29434772312216
+                  ],
+                  [
+                    1774915200000,
+                    19.989233921508777
+                  ],
+                  [
+                    1772236800000,
+                    5.9645852341711985
+                  ],
+                  [
+                    1769817600000,
+                    30.259910735667017
+                  ],
+                  [
+                    1767139200000,
+                    23.94628940841488
+                  ],
+                  [
+                    1764460800000,
+                    15.510164907728111
+                  ],
+                  [
+                    1761868800000,
+                    19.136904588416876
+                  ],
+                  [
+                    1759190400000,
+                    25.029950242539122
+                  ],
+                  [
+                    1756598400000,
+                    14.750193013835744
+                  ],
+                  [
+                    1753920000000,
+                    16.518713799723827
+                  ],
+                  [
+                    1751241600000,
+                    16.783569002618634
+                  ],
+                  [
+                    1748649600000,
+                    17.513750269456423
+                  ],
+                  [
+                    1745971200000,
+                    20.35345186848737
+                  ],
+                  [
+                    1743379200000,
+                    14.76983518594815
+                  ],
+                  [
+                    1740700800000,
+                    26.22696145868504
+                  ]
+                ],
+                "time_frame": "monthly",
+                "lingo": {
+                  "name": "XK Tổng",
+                  "unit": "%",
+                  "description": "Chỉ số Giá trị xuất khẩu của Việt Nam đo lường tổng giá trị hàng hóa và dịch vụ mà Việt Nam xuất khẩu ra thị trường quốc tế. Dữ liệu được Tổng cục hải quan thống kê dựa trên dữ liệu từ các tờ khai hải quan do doanh nghiệp nộp khi thực hiện hoạt động xuất khẩu.",
+                  "frequency": "Hai tuần đầu mỗi tháng",
+                  "last_updated": "2026-09-07T06:54:31.302Z",
+                  "source": "Tổng cục Hải quan - CUSTOM",
+                  "note": null,
+                  "related_blog": null
+                }
+              },
+              {
+                "id": "278_trong_nuoc_yoy",
+                "column_name": "trong_nuoc_yoy",
+                "table_name": "278",
+                "name": "Khu vực trong nước",
+                "hasSub": false,
+                "level": 3,
+                "heading": 3,
+                "open": 1,
+                "dateType": "thang",
+                "yAxis": 1,
+                "data": [
+                  [
+                    1788134400000,
+                    12.778800471215634
+                  ],
+                  [
+                    1785456000000,
+                    14.729450637308839
+                  ],
+                  [
+                    1782777600000,
+                    16.020972209443553
+                  ],
+                  [
+                    1780185600000,
+                    3.2869049768859537
+                  ],
+                  [
+                    1777507200000,
+                    3.5361926640287757
+                  ],
+                  [
+                    1774915200000,
+                    -3.1012543103917176
+                  ],
+                  [
+                    1772236800000,
+                    -4.762779339758471
+                  ],
+                  [
+                    1769817600000,
+                    14.277352999125483
+                  ],
+                  [
+                    1767139200000,
+                    -10.035122784582313
+                  ],
+                  [
+                    1764460800000,
+                    -18.025499131827324
+                  ],
+                  [
+                    1761868800000,
+                    -14.784175192790352
+                  ],
+                  [
+                    1759190400000,
+                    -9.334229924349014
+                  ],
+                  [
+                    1756598400000,
+                    -16.166976010674414
+                  ],
+                  [
+                    1753920000000,
+                    -9.773860252744528
+                  ],
+                  [
+                    1751241600000,
+                    -5.311377084195496
+                  ],
+                  [
+                    1748649600000,
+                    -9.479397552872246
+                  ],
+                  [
+                    1745971200000,
+                    0.2780230025089237
+                  ],
+                  [
+                    1743379200000,
+                    -2.926938781421374
+                  ],
+                  [
+                    1740700800000,
+                    10.493722754286283
+                  ]
+                ],
+                "time_frame": "monthly",
+                "lingo": {
+                  "name": "XK Khu vực trong nước",
+                  "unit": "%",
+                  "description": "Chỉ số Xuất khẩu khu vực trong nước là một bộ phận quan trọng trong tổng giá trị xuất khẩu của Việt Nam. Chỉ số này phản ánh giá trị hàng hóa và dịch vụ do các doanh nghiệp trong nước sản xuất và xuất khẩu ra thị trường quốc tế. Khu vực trong nước bao gồm các doanh nghiệp thuộc các thành phần kinh tế như doanh nghiệp nhà nước, doanh nghiệp tư nhân, hợp tác xã và các đơn vị sự nghiệp. Dữ liệu được Tổng cục hải quan thống kê dựa trên dữ liệu từ các tờ khai hải quan do doanh nghiệp trong nước nộp khi thực hiện hoạt động xuất khẩu.",
+                  "frequency": "Hai tuần đầu mỗi tháng",
+                  "last_updated": "2026-09-07T06:54:31.302Z",
+                  "source": "Tổng cục Hải quan - CUSTOM",
+                  "note": null,
+                  "related_blog": null
+                }
+              },
+              {
+                "id": "278_fdi_yoy",
+                "column_name": "fdi_yoy",
+                "table_name": "278",
+                "name": "Khu vực FDI",
+                "hasSub": false,
+                "level": 3,
+                "heading": 3,
+                "open": 1,
+                "dateType": "thang",
+                "yAxis": 1,
+                "data": [
+                  [
+                    1788134400000,
+                    29.619988557158855
+                  ],
+                  [
+                    1785456000000,
+                    27.78049720288419
+                  ],
+                  [
+                    1782777600000,
+                    31.548237396358736
+                  ],
+                  [
+                    1780185600000,
+                    22.5129085992394
+                  ],
+                  [
+                    1777507200000,
+                    28.60322645594584
+                  ],
+                  [
+                    1774915200000,
+                    27.370546483870868
+                  ],
+                  [
+                    1772236800000,
+                    9.187643223184374
+                  ],
+                  [
+                    1769817600000,
+                    35.46340954227707
+                  ],
+                  [
+                    1767139200000,
+                    38.91822589882405
+                  ],
+                  [
+                    1764460800000,
+                    29.91037248987431
+                  ],
+                  [
+                    1761868800000,
+                    33.1433114241478
+                  ],
+                  [
+                    1759190400000,
+                    38.57194431459902
+                  ],
+                  [
+                    1756598400000,
+                    27.565873380073004
+                  ],
+                  [
+                    1753920000000,
+                    26.636860034715088
+                  ],
+                  [
+                    1751241600000,
+                    25.07461234297607
+                  ],
+                  [
+                    1748649600000,
+                    28.432619735728547
+                  ],
+                  [
+                    1745971200000,
+                    29.042107271595043
+                  ],
+                  [
+                    1743379200000,
+                    21.872157165379548
+                  ],
+                  [
+                    1740700800000,
+                    31.868487939004464
+                  ]
+                ],
+                "time_frame": "monthly",
+                "lingo": {
+                  "name": "XK Khu vực trong FDI",
+                  "unit": "%",
+                  "description": "Chỉ số Xuất khẩu Khu vực trong FDI là một bộ phận quan trọng trong tổng xuất khẩu của Việt Nam, phản ánh giá trị xuất khẩu của các doanh nghiệp có vốn đầu tư nước ngoài (FDI). Dữ liệu được Tổng cục hải quan thống kê dựa trên dữ liệu từ các tờ khai hải quan do doanh nghiệp FDI nộp khi thực hiện hoạt động xuất khẩu.",
+                  "frequency": "Hai tuần đầu mỗi tháng",
+                  "last_updated": "2026-09-07T06:54:31.302Z",
+                  "source": "Tổng cục Hải quan - CUSTOM",
+                  "note": null,
+                  "related_blog": null
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "quarterly": {
+      "value": {
+        "title": "Giá Trị Xuất Khẩu",
+        "headers": [
+          "06-2026",
+          "03-2026",
+          "12-2025",
+          "09-2025",
+          "06-2025",
+          "03-2025",
+          "12-2024",
+          "09-2024",
+          "06-2024",
+          "03-2024",
+          "12-2023",
+          "09-2023",
+          "06-2023",
+          "03-2023",
+          "12-2022",
+          "09-2022",
+          "06-2022",
+          "03-2022",
+          "12-2021"
+        ],
+        "parent": [
+          {
+            "title": "GIÁ TRỊ XUẤT KHẨU (Triệu USD)",
+            "child": [
+              {
+                "id": "278_tong_mtq",
+                "column_name": "tong_mtq",
+                "table_name": "278",
+                "name": "Tổng",
+                "hasSub": false,
+                "level": 2,
+                "heading": 2,
+                "open": 1,
+                "dateType": "quy",
+                "yAxis": 16,
+                "data": [
+                  [
+                    1782777600000,
+                    143871.75297275616
+                  ],
+                  [
+                    1774915200000,
+                    122762.74876624388
+                  ],
+                  [
+                    1767139200000,
+                    126098.561682
+                  ],
+                  [
+                    1759190400000,
+                    128717.78314099999
+                  ],
+                  [
+                    1751241600000,
+                    117064.46305400002
+                  ],
+                  [
+                    1743379200000,
+                    103117.005717
+                  ],
+                  [
+                    1735603200000,
+                    105394.76345859122
+                  ],
+                  [
+                    1727654400000,
+                    108546.45413582755
+                  ],
+                  [
+                    1719705600000,
+                    99072.999268
+                  ],
+                  [
+                    1711843200000,
+                    93019.603841
+                  ],
+                  [
+                    1703980800000,
+                    95072.71082243224
+                  ],
+                  [
+                    1696032000000,
+                    93722.40363993036
+                  ],
+                  [
+                    1688083200000,
+                    86479.59052955589
+                  ],
+                  [
+                    1680220800000,
+                    79521.2185505137
+                  ],
+                  [
+                    1672444800000,
+                    88745.4899776129
+                  ],
+                  [
+                    1664496000000,
+                    95855.1493629071
+                  ],
+                  [
+                    1656547200000,
+                    97184.91942
+                  ],
+                  [
+                    1648684800000,
+                    89987.291816
+                  ],
+                  [
+                    1640908800000,
+                    95283.163575
+                  ]
+                ],
+                "time_frame": "quarterly",
+                "lingo": {
+                  "name": "XK Tổng",
+                  "unit": "%",
+                  "description": "Chỉ số Giá trị xuất khẩu của Việt Nam đo lường tổng giá trị hàng hóa và dịch vụ mà Việt Nam xuất khẩu ra thị trường quốc tế. Dữ liệu được Tổng cục hải quan thống kê dựa trên dữ liệu từ các tờ khai hải quan do doanh nghiệp nộp khi thực hiện hoạt động xuất khẩu.",
+                  "frequency": "Hai tuần đầu mỗi tháng",
+                  "last_updated": "2026-09-07T06:54:31.302Z",
+                  "source": "Tổng cục Hải quan - CUSTOM",
+                  "note": null,
+                  "related_blog": null
+                }
+              },
+              {
+                "id": "278_trong_nuoc_mtq",
+                "column_name": "trong_nuoc_mtq",
+                "table_name": "278",
+                "name": "Khu vực trong nước",
+                "hasSub": false,
+                "level": 3,
+                "heading": 3,
+                "open": 1,
+                "dateType": "quy",
+                "yAxis": 16,
+                "data": [
+                  [
+                    1782777600000,
+                    29016.487207531685
+                  ],
+                  [
+                    1774915200000,
+                    25273.21960646832
+                  ],
+                  [
+                    1767139200000,
+                    27093.359448
+                  ],
+                  [
+                    1759190400000,
+                    27081.99513
+                  ],
+                  [
+                    1751241600000,
+                    27068.984724
+                  ],
+                  [
+                    1743379200000,
+                    24740.817855
+                  ],
+                  [
+                    1735603200000,
+                    31455.152382879598
+                  ],
+                  [
+                    1727654400000,
+                    30901.950329773375
+                  ],
+                  [
+                    1719705600000,
+                    28458.933483
+                  ],
+                  [
+                    1711843200000,
+                    25883.170469
+                  ],
+                  [
+                    1703980800000,
+                    28588.471765987735
+                  ],
+                  [
+                    1696032000000,
+                    23978.744697492202
+                  ],
+                  [
+                    1688083200000,
+                    24710.43577195892
+                  ],
+                  [
+                    1680220800000,
+                    20447.128630548883
+                  ],
+                  [
+                    1672444800000,
+                    23513.356390326073
+                  ],
+                  [
+                    1664496000000,
+                    24297.23854368325
+                  ],
+                  [
+                    1656547200000,
+                    26420.545567
+                  ],
+                  [
+                    1648684800000,
+                    23918.743217
+                  ],
+                  [
+                    1640908800000,
+                    26670.001614
+                  ]
+                ],
+                "time_frame": "quarterly",
+                "lingo": {
+                  "name": "XK Khu vực trong nước",
+                  "unit": "%",
+                  "description": "Chỉ số Xuất khẩu khu vực trong nước là một bộ phận quan trọng trong tổng giá trị xuất khẩu của Việt Nam. Chỉ số này phản ánh giá trị hàng hóa và dịch vụ do các doanh nghiệp trong nước sản xuất và xuất khẩu ra thị trường quốc tế. Khu vực trong nước bao gồm các doanh nghiệp thuộc các thành phần kinh tế như doanh nghiệp nhà nước, doanh nghiệp tư nhân, hợp tác xã và các đơn vị sự nghiệp. Dữ liệu được Tổng cục hải quan thống kê dựa trên dữ liệu từ các tờ khai hải quan do doanh nghiệp trong nước nộp khi thực hiện hoạt động xuất khẩu.",
+                  "frequency": "Hai tuần đầu mỗi tháng",
+                  "last_updated": "2026-09-07T06:54:31.302Z",
+                  "source": "Tổng cục Hải quan - CUSTOM",
+                  "note": null,
+                  "related_blog": null
+                }
+              },
+              {
+                "id": "278_fdi_mtq",
+                "column_name": "fdi_mtq",
+                "table_name": "278",
+                "name": "Khu vực FDI",
+                "hasSub": false,
+                "level": 3,
+                "heading": 3,
+                "open": 1,
+                "dateType": "quy",
+                "yAxis": 16,
+                "data": [
+                  [
+                    1782777600000,
+                    114855.26576522444
+                  ],
+                  [
+                    1774915200000,
+                    97489.52915977556
+                  ],
+                  [
+                    1767139200000,
+                    99005.202234
+                  ],
+                  [
+                    1759190400000,
+                    101635.788011
+                  ],
+                  [
+                    1751241600000,
+                    89995.47833000001
+                  ],
+                  [
+                    1743379200000,
+                    78376.18786199999
+                  ],
+                  [
+                    1735603200000,
+                    73939.61107571165
+                  ],
+                  [
+                    1727654400000,
+                    77644.50380605421
+                  ],
+                  [
+                    1719705600000,
+                    70614.065785
+                  ],
+                  [
+                    1711843200000,
+                    67136.433372
+                  ],
+                  [
+                    1703980800000,
+                    66484.23905644452
+                  ],
+                  [
+                    1696032000000,
+                    69743.65894243814
+                  ],
+                  [
+                    1688083200000,
+                    61769.154757596996
+                  ],
+                  [
+                    1680220800000,
+                    59074.0899199648
+                  ],
+                  [
+                    1672444800000,
+                    65232.13358728679
+                  ],
+                  [
+                    1664496000000,
+                    71557.9108192238
+                  ],
+                  [
+                    1656547200000,
+                    70764.373853
+                  ],
+                  [
+                    1648684800000,
+                    66068.548599
+                  ],
+                  [
+                    1640908800000,
+                    68613.16196099999
+                  ]
+                ],
+                "time_frame": "quarterly",
+                "lingo": {
+                  "name": "XK Khu vực trong FDI",
+                  "unit": "%",
+                  "description": "Chỉ số Xuất khẩu Khu vực trong FDI là một bộ phận quan trọng trong tổng xuất khẩu của Việt Nam, phản ánh giá trị xuất khẩu của các doanh nghiệp có vốn đầu tư nước ngoài (FDI). Dữ liệu được Tổng cục hải quan thống kê dựa trên dữ liệu từ các tờ khai hải quan do doanh nghiệp FDI nộp khi thực hiện hoạt động xuất khẩu.",
+                  "frequency": "Hai tuần đầu mỗi tháng",
+                  "last_updated": "2026-09-07T06:54:31.302Z",
+                  "source": "Tổng cục Hải quan - CUSTOM",
+                  "note": null,
+                  "related_blog": null
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "yoy": {
+        "title": "Giá Trị Xuất Khẩu",
+        "headers": [
+          "06-2026",
+          "03-2026",
+          "12-2025",
+          "09-2025",
+          "06-2025",
+          "03-2025",
+          "12-2024",
+          "09-2024",
+          "06-2024",
+          "03-2024",
+          "12-2023",
+          "09-2023",
+          "06-2023",
+          "03-2023",
+          "12-2022",
+          "09-2022",
+          "06-2022",
+          "03-2022",
+          "12-2021"
+        ],
+        "parent": [
+          {
+            "title": "GIÁ TRỊ XUẤT KHẨU",
+            "child": [
+              {
+                "id": "278_tong_yym",
+                "column_name": "tong_yym",
+                "table_name": "278",
+                "name": "Tổng",
+                "hasSub": false,
+                "level": 2,
+                "heading": 2,
+                "open": 1,
+                "dateType": "quy",
+                "yAxis": 1,
+                "data": [
+                  [
+                    1782777600000,
+                    22.89959670031575
+                  ],
+                  [
+                    1774915200000,
+                    19.051894411248472
+                  ],
+                  [
+                    1767139200000,
+                    19.644048284754817
+                  ],
+                  [
+                    1759190400000,
+                    18.583130297311634
+                  ],
+                  [
+                    1751241600000,
+                    18.159805314192358
+                  ],
+                  [
+                    1743379200000,
+                    10.855133175217183
+                  ],
+                  [
+                    1735603200000,
+                    10.857008858659263
+                  ],
+                  [
+                    1727654400000,
+                    15.816976432710067
+                  ],
+                  [
+                    1719705600000,
+                    14.562289970764944
+                  ],
+                  [
+                    1711843200000,
+                    16.974570481351236
+                  ],
+                  [
+                    1703980800000,
+                    7.12962523100098
+                  ],
+                  [
+                    1696032000000,
+                    -2.2249672940388265
+                  ],
+                  [
+                    1688083200000,
+                    -11.015421892957832
+                  ],
+                  [
+                    1680220800000,
+                    -11.630612561256559
+                  ],
+                  [
+                    1672444800000,
+                    -6.8613103848521035
+                  ],
+                  [
+                    1664496000000,
+                    16.449281594977116
+                  ],
+                  [
+                    1656547200000,
+                    21.460954419105583
+                  ],
+                  [
+                    1648684800000,
+                    14.55258998817872
+                  ],
+                  [
+                    1640908800000,
+                    18.97265327428017
+                  ]
+                ],
+                "time_frame": "quarterly",
+                "lingo": {
+                  "name": "XK Tổng",
+                  "unit": "%",
+                  "description": "Chỉ số Giá trị xuất khẩu của Việt Nam đo lường tổng giá trị hàng hóa và dịch vụ mà Việt Nam xuất khẩu ra thị trường quốc tế. Dữ liệu được Tổng cục hải quan thống kê dựa trên dữ liệu từ các tờ khai hải quan do doanh nghiệp nộp khi thực hiện hoạt động xuất khẩu.",
+                  "frequency": "Hai tuần đầu mỗi tháng",
+                  "last_updated": "2026-09-07T06:54:31.302Z",
+                  "source": "Tổng cục Hải quan - CUSTOM",
+                  "note": null,
+                  "related_blog": null
+                }
+              },
+              {
+                "id": "278_trong_nuoc_yym",
+                "column_name": "trong_nuoc_yym",
+                "table_name": "278",
+                "name": "Khu vực trong nước",
+                "hasSub": false,
+                "level": 3,
+                "heading": 3,
+                "open": 1,
+                "dateType": "quy",
+                "yAxis": 1,
+                "data": [
+                  [
+                    1782777600000,
+                    7.478260298761024
+                  ],
+                  [
+                    1774915200000,
+                    2.151916539657651
+                  ],
+                  [
+                    1767139200000,
+                    -13.866704194552351
+                  ],
+                  [
+                    1759190400000,
+                    -12.361534333620781
+                  ],
+                  [
+                    1751241600000,
+                    -4.88405076680153
+                  ],
+                  [
+                    1743379200000,
+                    -4.413495693536397
+                  ],
+                  [
+                    1735603200000,
+                    10.027400696186946
+                  ],
+                  [
+                    1727654400000,
+                    28.87226049412516
+                  ],
+                  [
+                    1719705600000,
+                    15.169694883709116
+                  ],
+                  [
+                    1711843200000,
+                    26.585844578340645
+                  ],
+                  [
+                    1703980800000,
+                    21.646359812623437
+                  ],
+                  [
+                    1696032000000,
+                    -1.3108232263449815
+                  ],
+                  [
+                    1688083200000,
+                    -6.472651333805368
+                  ],
+                  [
+                    1680220800000,
+                    -14.51420149861261
+                  ],
+                  [
+                    1672444800000,
+                    -11.835939379984495
+                  ],
+                  [
+                    1664496000000,
+                    9.10344837089896
+                  ],
+                  [
+                    1656547200000,
+                    18.17629783168997
+                  ],
+                  [
+                    1648684800000,
+                    22.864837247573135
+                  ],
+                  [
+                    1640908800000,
+                    29.023039798114514
+                  ]
+                ],
+                "time_frame": "quarterly",
+                "lingo": {
+                  "name": "XK Khu vực trong nước",
+                  "unit": "%",
+                  "description": "Chỉ số Xuất khẩu khu vực trong nước là một bộ phận quan trọng trong tổng giá trị xuất khẩu của Việt Nam. Chỉ số này phản ánh giá trị hàng hóa và dịch vụ do các doanh nghiệp trong nước sản xuất và xuất khẩu ra thị trường quốc tế. Khu vực trong nước bao gồm các doanh nghiệp thuộc các thành phần kinh tế như doanh nghiệp nhà nước, doanh nghiệp tư nhân, hợp tác xã và các đơn vị sự nghiệp. Dữ liệu được Tổng cục hải quan thống kê dựa trên dữ liệu từ các tờ khai hải quan do doanh nghiệp trong nước nộp khi thực hiện hoạt động xuất khẩu.",
+                  "frequency": "Hai tuần đầu mỗi tháng",
+                  "last_updated": "2026-09-07T06:54:31.302Z",
+                  "source": "Tổng cục Hải quan - CUSTOM",
+                  "note": null,
+                  "related_blog": null
+                }
+              },
+              {
+                "id": "278_fdi_yym",
+                "column_name": "fdi_yym",
+                "table_name": "278",
+                "name": "Khu vực FDI",
+                "hasSub": false,
+                "level": 3,
+                "heading": 3,
+                "open": 1,
+                "dateType": "quy",
+                "yAxis": 1,
+                "data": [
+                  [
+                    1782777600000,
+                    27.52213901522565
+                  ],
+                  [
+                    1774915200000,
+                    24.386668730851223
+                  ],
+                  [
+                    1767139200000,
+                    33.90008520956653
+                  ],
+                  [
+                    1759190400000,
+                    30.89888276557587
+                  ],
+                  [
+                    1751241600000,
+                    27.446957386664256
+                  ],
+                  [
+                    1743379200000,
+                    16.741661606777665
+                  ],
+                  [
+                    1735603200000,
+                    11.21374347525823
+                  ],
+                  [
+                    1727654400000,
+                    11.32840602776077
+                  ],
+                  [
+                    1719705600000,
+                    14.319300728840176
+                  ],
+                  [
+                    1711843200000,
+                    13.647850458565314
+                  ],
+                  [
+                    1703980800000,
+                    1.919461161702296
+                  ],
+                  [
+                    1696032000000,
+                    -2.5353617175451038
+                  ],
+                  [
+                    1688083200000,
+                    -12.711508073382971
+                  ],
+                  [
+                    1680220800000,
+                    -10.586669190340093
+                  ],
+                  [
+                    1672444800000,
+                    -4.927667341194663
+                  ],
+                  [
+                    1664496000000,
+                    19.173754373646325
+                  ],
+                  [
+                    1656547200000,
+                    22.734615177440133
+                  ],
+                  [
+                    1648684800000,
+                    11.81397783045728
+                  ],
+                  [
+                    1640908800000,
+                    15.476232365441046
+                  ]
+                ],
+                "time_frame": "quarterly",
+                "lingo": {
+                  "name": "XK Khu vực trong FDI",
+                  "unit": "%",
+                  "description": "Chỉ số Xuất khẩu Khu vực trong FDI là một bộ phận quan trọng trong tổng xuất khẩu của Việt Nam, phản ánh giá trị xuất khẩu của các doanh nghiệp có vốn đầu tư nước ngoài (FDI). Dữ liệu được Tổng cục hải quan thống kê dựa trên dữ liệu từ các tờ khai hải quan do doanh nghiệp FDI nộp khi thực hiện hoạt động xuất khẩu.",
+                  "frequency": "Hai tuần đầu mỗi tháng",
+                  "last_updated": "2026-09-07T06:54:31.302Z",
+                  "source": "Tổng cục Hải quan - CUSTOM",
+                  "note": null,
+                  "related_blog": null
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "yearly": {
+      "value": {
+        "title": "Giá Trị Xuất Khẩu",
+        "headers": [
+          "12-2025",
+          "12-2024",
+          "12-2023",
+          "12-2022",
+          "12-2021",
+          "12-2020",
+          "12-2019",
+          "12-2018",
+          "12-2017",
+          "12-2016",
+          "12-2015",
+          "12-2014",
+          "12-2013",
+          "12-2012",
+          "12-2011",
+          "12-2010",
+          "12-2009"
+        ],
+        "parent": [
+          {
+            "title": "GIÁ TRỊ XUẤT KHẨU (Triệu USD)",
+            "child": [
+              {
+                "id": "278_tong_yrl",
+                "column_name": "tong_yrl",
+                "table_name": "278",
+                "name": "Tổng",
+                "hasSub": false,
+                "level": 2,
+                "heading": 2,
+                "open": 1,
+                "dateType": "nam",
+                "yAxis": 16,
+                "data": [
+                  [
+                    1767139200000,
+                    474997.81359400006
+                  ],
+                  [
+                    1735603200000,
+                    406033.8207034187
+                  ],
+                  [
+                    1703980800000,
+                    354795.92354243225
+                  ],
+                  [
+                    1672444800000,
+                    371772.85057652
+                  ],
+                  [
+                    1640908800000,
+                    336166.8395660001
+                  ],
+                  [
+                    1609372800000,
+                    282628.939
+                  ],
+                  [
+                    1577750400000,
+                    264267.64
+                  ],
+                  [
+                    1546214400000,
+                    243651.014
+                  ],
+                  [
+                    1514678400000,
+                    215042.811
+                  ],
+                  [
+                    1483142400000,
+                    176580.817
+                  ],
+                  [
+                    1451520000000,
+                    162016.913
+                  ],
+                  [
+                    1419984000000,
+                    150217.324
+                  ],
+                  [
+                    1388448000000,
+                    132032.854
+                  ],
+                  [
+                    1356912000000,
+                    114529.17
+                  ],
+                  [
+                    1325289600000,
+                    96905.674
+                  ],
+                  [
+                    1293753600000,
+                    72236.665
+                  ],
+                  [
+                    1262217600000,
+                    57096.33
+                  ]
+                ],
+                "time_frame": "yearly",
+                "lingo": {
+                  "name": "XK Tổng",
+                  "unit": "Triệu USD",
+                  "description": "Chỉ số Giá trị xuất khẩu của Việt Nam đo lường tổng giá trị hàng hóa và dịch vụ mà Việt Nam xuất khẩu ra thị trường quốc tế. Dữ liệu được Tổng cục hải quan thống kê dựa trên dữ liệu từ các tờ khai hải quan do doanh nghiệp nộp khi thực hiện hoạt động xuất khẩu.",
+                  "frequency": "Hai tuần đầu mỗi tháng",
+                  "last_updated": "2026-09-07T06:54:31.302Z",
+                  "source": "Tổng cục Hải quan - CUSTOM",
+                  "note": null,
+                  "related_blog": null
+                }
+              },
+              {
+                "id": "278_trong_nuoc_yrl",
+                "column_name": "trong_nuoc_yrl",
+                "table_name": "278",
+                "name": "Khu vực trong nước",
+                "hasSub": false,
+                "level": 3,
+                "heading": 3,
+                "open": 1,
+                "dateType": "nam",
+                "yAxis": 16,
+                "data": [
+                  [
+                    1767139200000,
+                    105913.71326299998
+                  ],
+                  [
+                    1735603200000,
+                    116699.20666465297
+                  ],
+                  [
+                    1703980800000,
+                    97724.78086598773
+                  ],
+                  [
+                    1672444800000,
+                    98149.88371800931
+                  ],
+                  [
+                    1640908800000,
+                    90764.32630600002
+                  ],
+                  [
+                    1609372800000,
+                    79769.67599999999
+                  ],
+                  [
+                    1577750400000,
+                    81109.682
+                  ],
+                  [
+                    1546214400000,
+                    71941.547
+                  ],
+                  [
+                    1514678400000,
+                    62517.86300000001
+                  ],
+                  [
+                    1483142400000,
+                    52706.399000000005
+                  ],
+                  [
+                    1451520000000,
+                    51460.267
+                  ],
+                  [
+                    1419984000000,
+                    56261.784
+                  ],
+                  [
+                    1388448000000,
+                    51109.04400000001
+                  ],
+                  [
+                    1356912000000,
+                    50489.043999999994
+                  ],
+                  [
+                    1325289600000,
+                    49022.873
+                  ],
+                  [
+                    1293753600000,
+                    38107.745
+                  ],
+                  [
+                    1262217600000,
+                    32918.642
+                  ]
+                ],
+                "time_frame": "yearly",
+                "lingo": {
+                  "name": "XK Khu vực trong nước",
+                  "unit": "Triệu USD",
+                  "description": "Chỉ số Xuất khẩu khu vực trong nước là một bộ phận quan trọng trong tổng giá trị xuất khẩu của Việt Nam. Chỉ số này phản ánh giá trị hàng hóa và dịch vụ do các doanh nghiệp trong nước sản xuất và xuất khẩu ra thị trường quốc tế. Khu vực trong nước bao gồm các doanh nghiệp thuộc các thành phần kinh tế như doanh nghiệp nhà nước, doanh nghiệp tư nhân, hợp tác xã và các đơn vị sự nghiệp. Dữ liệu được Tổng cục hải quan thống kê dựa trên dữ liệu từ các tờ khai hải quan do doanh nghiệp trong nước nộp khi thực hiện hoạt động xuất khẩu.",
+                  "frequency": "Hai tuần đầu mỗi tháng",
+                  "last_updated": "2026-09-07T06:54:31.302Z",
+                  "source": "Tổng cục Hải quan - CUSTOM",
+                  "note": null,
+                  "related_blog": null
+                }
+              },
+              {
+                "id": "278_fdi_yrl",
+                "column_name": "fdi_yrl",
+                "table_name": "278",
+                "name": "Khu vực FDI",
+                "hasSub": false,
+                "level": 3,
+                "heading": 3,
+                "open": 1,
+                "dateType": "nam",
+                "yAxis": 16,
+                "data": [
+                  [
+                    1767139200000,
+                    369084.10033099994
+                  ],
+                  [
+                    1735603200000,
+                    289334.61403876584
+                  ],
+                  [
+                    1703980800000,
+                    257071.14267644446
+                  ],
+                  [
+                    1672444800000,
+                    273622.96685851057
+                  ],
+                  [
+                    1640908800000,
+                    245402.51326
+                  ],
+                  [
+                    1609372800000,
+                    202859.263
+                  ],
+                  [
+                    1577750400000,
+                    183157.958
+                  ],
+                  [
+                    1546214400000,
+                    171709.467
+                  ],
+                  [
+                    1514678400000,
+                    152524.94799999997
+                  ],
+                  [
+                    1483142400000,
+                    123874.418
+                  ],
+                  [
+                    1451520000000,
+                    110556.64600000001
+                  ],
+                  [
+                    1419984000000,
+                    93955.54
+                  ],
+                  [
+                    1388448000000,
+                    80923.81000000003
+                  ],
+                  [
+                    1356912000000,
+                    64040.126000000004
+                  ],
+                  [
+                    1325289600000,
+                    47882.80100000001
+                  ],
+                  [
+                    1293753600000,
+                    34128.92
+                  ],
+                  [
+                    1262217600000,
+                    24177.688
+                  ]
+                ],
+                "time_frame": "yearly",
+                "lingo": {
+                  "name": "XK Khu vực trong FDI",
+                  "unit": "Triệu USD",
+                  "description": "Chỉ số Xuất khẩu Khu vực trong FDI là một bộ phận quan trọng trong tổng xuất khẩu của Việt Nam, phản ánh giá trị xuất khẩu của các doanh nghiệp có vốn đầu tư nước ngoài (FDI). Dữ liệu được Tổng cục hải quan thống kê dựa trên dữ liệu từ các tờ khai hải quan do doanh nghiệp FDI nộp khi thực hiện hoạt động xuất khẩu.",
+                  "frequency": "Hai tuần đầu mỗi tháng",
+                  "last_updated": "2026-09-07T06:54:31.302Z",
+                  "source": "Tổng cục Hải quan - CUSTOM",
+                  "note": null,
+                  "related_blog": null
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "yoy": {
+        "title": "Giá Trị Xuất Khẩu",
+        "headers": [
+          "12-2025",
+          "12-2024",
+          "12-2023",
+          "12-2022",
+          "12-2021",
+          "12-2020",
+          "12-2019",
+          "12-2018",
+          "12-2017",
+          "12-2016",
+          "12-2015",
+          "12-2014",
+          "12-2013",
+          "12-2012",
+          "12-2011",
+          "12-2010"
+        ],
+        "parent": [
+          {
+            "title": "GIÁ TRỊ XUẤT KHẨU",
+            "child": [
+              {
+                "id": "278_tong_yrl_yoy",
+                "column_name": "tong_yrl_yoy",
+                "table_name": "278",
+                "name": "Tổng",
+                "hasSub": false,
+                "level": 2,
+                "heading": 2,
+                "open": 1,
+                "dateType": "nam",
+                "yAxis": 1,
+                "data": [
+                  [
+                    1767139200000,
+                    16.984790274639483
+                  ],
+                  [
+                    1735603200000,
+                    14.44151236277059
+                  ],
+                  [
+                    1703980800000,
+                    -4.6061683586297475
+                  ],
+                  [
+                    1672444800000,
+                    10.591767783071116
+                  ],
+                  [
+                    1640908800000,
+                    18.94282332001398
+                  ],
+                  [
+                    1609372800000,
+                    6.9479937081967424
+                  ],
+                  [
+                    1577750400000,
+                    8.461539175043221
+                  ],
+                  [
+                    1546214400000,
+                    13.303491926544808
+                  ],
+                  [
+                    1514678400000,
+                    21.78152454691609
+                  ],
+                  [
+                    1483142400000,
+                    8.989125721707847
+                  ],
+                  [
+                    1451520000000,
+                    7.8550121156465424
+                  ],
+                  [
+                    1419984000000,
+                    13.772685698364139
+                  ],
+                  [
+                    1388448000000,
+                    15.283166725123376
+                  ],
+                  [
+                    1356912000000,
+                    18.186237474598244
+                  ],
+                  [
+                    1325289600000,
+                    34.15026012067419
+                  ],
+                  [
+                    1293753600000,
+                    26.517177198604514
+                  ]
+                ],
+                "time_frame": "yearly",
+                "lingo": {
+                  "name": "XK Tổng",
+                  "unit": "%",
+                  "description": "Chỉ số Giá trị xuất khẩu của Việt Nam đo lường tổng giá trị hàng hóa và dịch vụ mà Việt Nam xuất khẩu ra thị trường quốc tế. Dữ liệu được Tổng cục hải quan thống kê dựa trên dữ liệu từ các tờ khai hải quan do doanh nghiệp nộp khi thực hiện hoạt động xuất khẩu.",
+                  "frequency": "Hai tuần đầu mỗi tháng",
+                  "last_updated": "2026-09-07T06:54:31.302Z",
+                  "source": "Tổng cục Hải quan - CUSTOM",
+                  "note": null,
+                  "related_blog": null
+                }
+              },
+              {
+                "id": "278_trong_nuoc_yrl_yoy",
+                "column_name": "trong_nuoc_yrl_yoy",
+                "table_name": "278",
+                "name": "Khu vực trong nước",
+                "hasSub": false,
+                "level": 3,
+                "heading": 3,
+                "open": 1,
+                "dateType": "nam",
+                "yAxis": 1,
+                "data": [
+                  [
+                    1767139200000,
+                    -9.242130867818322
+                  ],
+                  [
+                    1735603200000,
+                    19.416186591081036
+                  ],
+                  [
+                    1703980800000,
+                    -0.4181691142782995
+                  ],
+                  [
+                    1672444800000,
+                    8.137070711140248
+                  ],
+                  [
+                    1640908800000,
+                    13.782994813718474
+                  ],
+                  [
+                    1609372800000,
+                    -1.652091300271663
+                  ],
+                  [
+                    1577750400000,
+                    12.743866906281553
+                  ],
+                  [
+                    1546214400000,
+                    15.07358624846149
+                  ],
+                  [
+                    1514678400000,
+                    18.615318417029414
+                  ],
+                  [
+                    1483142400000,
+                    2.4215420413578492
+                  ],
+                  [
+                    1451520000000,
+                    -8.534242355343725
+                  ],
+                  [
+                    1419984000000,
+                    10.081855571393561
+                  ],
+                  [
+                    1388448000000,
+                    1.227989185138889
+                  ],
+                  [
+                    1356912000000,
+                    2.9907896258956512
+                  ],
+                  [
+                    1325289600000,
+                    28.64280738731719
+                  ],
+                  [
+                    1293753600000,
+                    15.763417579619476
+                  ]
+                ],
+                "time_frame": "yearly",
+                "lingo": {
+                  "name": "XK Khu vực trong nước",
+                  "unit": "%",
+                  "description": "Chỉ số Xuất khẩu khu vực trong nước là một bộ phận quan trọng trong tổng giá trị xuất khẩu của Việt Nam. Chỉ số này phản ánh giá trị hàng hóa và dịch vụ do các doanh nghiệp trong nước sản xuất và xuất khẩu ra thị trường quốc tế. Khu vực trong nước bao gồm các doanh nghiệp thuộc các thành phần kinh tế như doanh nghiệp nhà nước, doanh nghiệp tư nhân, hợp tác xã và các đơn vị sự nghiệp. Dữ liệu được Tổng cục hải quan thống kê dựa trên dữ liệu từ các tờ khai hải quan do doanh nghiệp trong nước nộp khi thực hiện hoạt động xuất khẩu.",
+                  "frequency": "Hai tuần đầu mỗi tháng",
+                  "last_updated": "2026-09-07T06:54:31.302Z",
+                  "source": "Tổng cục Hải quan - CUSTOM",
+                  "note": null,
+                  "related_blog": null
+                }
+              },
+              {
+                "id": "278_fdi_yrl_yoy",
+                "column_name": "fdi_yrl_yoy",
+                "table_name": "278",
+                "name": "Khu vực FDI",
+                "hasSub": false,
+                "level": 3,
+                "heading": 3,
+                "open": 1,
+                "dateType": "nam",
+                "yAxis": 1,
+                "data": [
+                  [
+                    1767139200000,
+                    27.56306450134896
+                  ],
+                  [
+                    1735603200000,
+                    12.550405707313834
+                  ],
+                  [
+                    1703980800000,
+                    -6.035833866308494
+                  ],
+                  [
+                    1672444800000,
+                    11.499659568934995
+                  ],
+                  [
+                    1640908800000,
+                    20.97180559115015
+                  ],
+                  [
+                    1609372800000,
+                    10.756455911132168
+                  ],
+                  [
+                    1577750400000,
+                    6.6673615613750625
+                  ],
+                  [
+                    1546214400000,
+                    12.577954788091471
+                  ],
+                  [
+                    1514678400000,
+                    23.128689896246346
+                  ],
+                  [
+                    1483142400000,
+                    12.046107115080162
+                  ],
+                  [
+                    1451520000000,
+                    17.6691081760586
+                  ],
+                  [
+                    1419984000000,
+                    16.103702976911194
+                  ],
+                  [
+                    1388448000000,
+                    26.36422670373888
+                  ],
+                  [
+                    1356912000000,
+                    33.74348338561062
+                  ],
+                  [
+                    1325289600000,
+                    40.29978387830617
+                  ],
+                  [
+                    1293753600000,
+                    41.158741067384106
+                  ]
+                ],
+                "time_frame": "yearly",
+                "lingo": {
+                  "name": "XK Khu vực trong FDI",
+                  "unit": "%",
+                  "description": "Chỉ số Xuất khẩu Khu vực trong FDI là một bộ phận quan trọng trong tổng xuất khẩu của Việt Nam, phản ánh giá trị xuất khẩu của các doanh nghiệp có vốn đầu tư nước ngoài (FDI). Dữ liệu được Tổng cục hải quan thống kê dựa trên dữ liệu từ các tờ khai hải quan do doanh nghiệp FDI nộp khi thực hiện hoạt động xuất khẩu.",
+                  "frequency": "Hai tuần đầu mỗi tháng",
+                  "last_updated": "2026-09-07T06:54:31.302Z",
+                  "source": "Tổng cục Hải quan - CUSTOM",
+                  "note": null,
+                  "related_blog": null
+                }
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

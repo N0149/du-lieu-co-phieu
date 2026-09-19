@@ -1,0 +1,1145 @@
+{
+  "meta": {
+    "group": "Tài khóa",
+    "groupKey": "taikhoa",
+    "name": "Nợ Chính phủ",
+    "slug": "no-chinh-phu",
+    "apiPath": "taikhoa/nocong/vaynochinhphu",
+    "defaultTimeFrame": "yearly",
+    "defaultValueType": "value",
+    "supportedTimeFrames": [
+      "yearly"
+    ],
+    "supportedValueTypes": [
+      "value"
+    ],
+    "unit": "Tỷ VND",
+    "description": "Quy mô vay nợ trong và ngoài nước của Chính phủ.",
+    "updatedAt": "2026-09-19T10:14:40.173Z",
+    "latestPeriod": "12-2024",
+    "latestValue": 3656055.56
+  },
+  "datasets": {
+    "yearly": {
+      "value": {
+        "title": "Nợ Chính phủ",
+        "headers": [
+          "12-2024",
+          "12-2023",
+          "12-2022",
+          "12-2021",
+          "12-2020",
+          "12-2019",
+          "12-2018",
+          "12-2017",
+          "12-2016",
+          "12-2015",
+          "12-2014",
+          "12-2013"
+        ],
+        "parent": [
+          {
+            "title": "NỢ CHÍNH PHỦ (Tỷ VND)",
+            "child": [
+              {
+                "id": "274_du_no",
+                "column_name": "du_no",
+                "table_name": "274",
+                "name": "DƯ NỢ",
+                "hasSub": false,
+                "level": 1,
+                "heading": 1,
+                "open": 1,
+                "dateType": "nam",
+                "yAxis": 17,
+                "data": [
+                  [
+                    1735603200000,
+                    3656055.56
+                  ],
+                  [
+                    1703980800000,
+                    3428046.28
+                  ],
+                  [
+                    1672444800000,
+                    3248468.46
+                  ],
+                  [
+                    1640908800000,
+                    3284107.17
+                  ],
+                  [
+                    1609372800000,
+                    3138620.82
+                  ],
+                  [
+                    1577750400000,
+                    2897857.78
+                  ],
+                  [
+                    1546214400000,
+                    2767229.12
+                  ],
+                  [
+                    1514678400000,
+                    2587371.57
+                  ],
+                  [
+                    1483142400000,
+                    2373175.07
+                  ],
+                  [
+                    1451520000000,
+                    2064645.62
+                  ],
+                  [
+                    1419984000000,
+                    1826051.12
+                  ],
+                  [
+                    1388448000000,
+                    1528066.24
+                  ]
+                ],
+                "time_frame": "yearly",
+                "lingo": {
+                  "name": "DƯ NỢ",
+                  "unit": "Tỷ VND",
+                  "description": "Tổng dư nợ của chính phủ thể hiện tổng giá trị các khoản vay mà chính phủ đang nợ tại một thời điểm nhất định. Chỉ số này phản ánh nghĩa vụ tài chính của chính phủ đối với các chủ nợ trong và ngoài nước. Nó bao gồm nợ trong nước (phát hành trái phiếu chính phủ, vay từ ngân hàng nhà nước...) và nợ nước ngoài (vay từ các tổ chức quốc tế, chính phủ nước ngoài...). Dữ liệu được Bộ tài chính tổng hợp và công bố định kỳ hàng năm.",
+                  "frequency": "Độ trễ từ 2-3 quý (Ngày công bố không xác định)",
+                  "last_updated": "2025-09-06T03:11:17.964Z",
+                  "source": "Bộ Tài Chính - MOF",
+                  "note": null,
+                  "related_blog": null
+                }
+              },
+              {
+                "id": "274_du_no_no_nuoc_ngoai",
+                "column_name": "du_no_no_nuoc_ngoai",
+                "table_name": "274",
+                "name": "Nợ nước ngoài ",
+                "hasSub": false,
+                "level": 3,
+                "heading": 2,
+                "open": 1,
+                "dateType": "nam",
+                "yAxis": 17,
+                "data": [
+                  [
+                    1735603200000,
+                    892951.35
+                  ],
+                  [
+                    1703980800000,
+                    960418.98
+                  ],
+                  [
+                    1672444800000,
+                    974993.41
+                  ],
+                  [
+                    1640908800000,
+                    1076564.56
+                  ],
+                  [
+                    1609372800000,
+                    1136059.94
+                  ],
+                  [
+                    1577750400000,
+                    1104699.34
+                  ],
+                  [
+                    1546214400000,
+                    1067817.12
+                  ],
+                  [
+                    1514678400000,
+                    1040000.87
+                  ],
+                  [
+                    1483142400000,
+                    947494.88
+                  ],
+                  [
+                    1451520000000,
+                    867826.12
+                  ],
+                  [
+                    1419984000000,
+                    810125.34
+                  ],
+                  [
+                    1388448000000,
+                    763224.42
+                  ]
+                ],
+                "time_frame": "yearly",
+                "lingo": {
+                  "name": "Nợ nước ngoài ",
+                  "unit": "Tỷ VND",
+                  "description": "Dư nợ nước ngoài của Chính phủ là tổng giá trị các khoản vay mà Chính phủ Việt Nam vay từ các tổ chức, quốc gia nước ngoài và các tổ chức quốc tế. Chỉ số này phản ánh mức độ phụ thuộc của ngân sách nhà nước vào nguồn vốn bên ngoài. Dữ liệu được Bộ tài chính tổng hợp và công bố định kỳ hàng năm.",
+                  "frequency": "Độ trễ từ 2-3 quý (Ngày công bố không xác định)",
+                  "last_updated": "2025-09-06T03:11:17.964Z",
+                  "source": "Bộ Tài Chính - MOF",
+                  "note": null,
+                  "related_blog": null
+                }
+              },
+              {
+                "id": "274_du_no_no_trong_nuoc",
+                "column_name": "du_no_no_trong_nuoc",
+                "table_name": "274",
+                "name": "Nợ trong nước ",
+                "hasSub": false,
+                "level": 3,
+                "heading": 2,
+                "open": 1,
+                "dateType": "nam",
+                "yAxis": 17,
+                "data": [
+                  [
+                    1735603200000,
+                    2763104.21
+                  ],
+                  [
+                    1703980800000,
+                    2467627.3
+                  ],
+                  [
+                    1672444800000,
+                    2273475.05
+                  ],
+                  [
+                    1640908800000,
+                    2207542.61
+                  ],
+                  [
+                    1609372800000,
+                    2002560.88
+                  ],
+                  [
+                    1577750400000,
+                    1793158.44
+                  ],
+                  [
+                    1546214400000,
+                    1699412
+                  ],
+                  [
+                    1514678400000,
+                    1547370.7
+                  ],
+                  [
+                    1483142400000,
+                    1425680.19
+                  ],
+                  [
+                    1451520000000,
+                    1196819.5
+                  ],
+                  [
+                    1419984000000,
+                    1015925.78
+                  ],
+                  [
+                    1388448000000,
+                    764841.82
+                  ]
+                ],
+                "time_frame": "yearly",
+                "lingo": {
+                  "name": "Nợ trong nước ",
+                  "unit": "Tỷ VND",
+                  "description": "Dư nợ trong nước của chính phủ thể hiện tổng giá trị các khoản nợ mà chính phủ Việt Nam vay từ các tổ chức, cá nhân trong nước, bao gồm phát hành trái phiếu chính phủ, tín phiếu kho bạc, và các khoản vay từ ngân hàng thương mại nhà nước. Chỉ số này phản ánh mức độ phụ thuộc của chính phủ vào nguồn vốn trong nước để tài trợ cho các hoạt động và dự án công. Dữ liệu được Bộ tài chính tổng hợp và công bố định kỳ hàng năm.",
+                  "frequency": "Độ trễ từ 2-3 quý (Ngày công bố không xác định)",
+                  "last_updated": "2025-09-06T03:11:17.964Z",
+                  "source": "Bộ Tài Chính - MOF",
+                  "note": null,
+                  "related_blog": null
+                }
+              },
+              {
+                "id": "274_rut_von_trong_ky",
+                "column_name": "rut_von_trong_ky",
+                "table_name": "274",
+                "name": "RÚT VỐN TRONG KỲ",
+                "hasSub": false,
+                "level": 1,
+                "heading": 1,
+                "open": 1,
+                "dateType": "nam",
+                "yAxis": 17,
+                "data": [
+                  [
+                    1735603200000,
+                    565281.44
+                  ],
+                  [
+                    1703980800000,
+                    409057.77
+                  ],
+                  [
+                    1672444800000,
+                    260246.27
+                  ],
+                  [
+                    1640908800000,
+                    452901.24
+                  ],
+                  [
+                    1609372800000,
+                    444751.39
+                  ],
+                  [
+                    1577750400000,
+                    285044.89
+                  ],
+                  [
+                    1546214400000,
+                    318697.44
+                  ],
+                  [
+                    1514678400000,
+                    323284.69
+                  ],
+                  [
+                    1483142400000,
+                    444729.4
+                  ],
+                  [
+                    1451520000000,
+                    453217.77
+                  ],
+                  [
+                    1419984000000,
+                    534626.73
+                  ],
+                  [
+                    1388448000000,
+                    403899.96
+                  ]
+                ],
+                "time_frame": "yearly",
+                "lingo": {
+                  "name": "RÚT VỐN TRONG KỲ",
+                  "unit": "Tỷ VND",
+                  "description": "Tổng rút vốn của Chính phủ thể hiện tổng giá trị các khoản vay mà Chính phủ đã thực nhận trong một kỳ nhất định, bao gồm vay trong nước và vay nước ngoài. Chỉ số này phản ánh khả năng huy động vốn của Chính phủ để tài trợ cho các dự án đầu tư công, chi tiêu phát triển kinh tế - xã hội và bù đắp thâm hụt ngân sách. Dữ liệu được Bộ tài chính tổng hợp và công bố định kỳ hàng năm.",
+                  "frequency": "Độ trễ từ 2-3 quý (Ngày công bố không xác định)",
+                  "last_updated": "2025-09-06T03:11:17.964Z",
+                  "source": "Bộ Tài Chính - MOF",
+                  "note": null,
+                  "related_blog": null
+                }
+              },
+              {
+                "id": "274_rut_von_no_nuoc_ngoai",
+                "column_name": "rut_von_no_nuoc_ngoai",
+                "table_name": "274",
+                "name": "Nợ nước ngoài ",
+                "hasSub": false,
+                "level": 3,
+                "heading": 2,
+                "open": 1,
+                "dateType": "nam",
+                "yAxis": 17,
+                "data": [
+                  [
+                    1735603200000,
+                    26392.94
+                  ],
+                  [
+                    1703980800000,
+                    38608.8
+                  ],
+                  [
+                    1672444800000,
+                    45524.27
+                  ],
+                  [
+                    1640908800000,
+                    44688.24
+                  ],
+                  [
+                    1609372800000,
+                    51658.29
+                  ],
+                  [
+                    1577750400000,
+                    52515.11
+                  ],
+                  [
+                    1546214400000,
+                    68229.44
+                  ],
+                  [
+                    1514678400000,
+                    79063.99
+                  ],
+                  [
+                    1483142400000,
+                    88938.9
+                  ],
+                  [
+                    1451520000000,
+                    88510.72
+                  ],
+                  [
+                    1419984000000,
+                    134957.66
+                  ],
+                  [
+                    1388448000000,
+                    109607.76
+                  ]
+                ],
+                "time_frame": "yearly",
+                "lingo": {
+                  "name": "Nợ nước ngoài ",
+                  "unit": "Tỷ VND",
+                  "description": "Chỉ số rút vốn nước ngoài của chính phủ thể hiện lượng vốn mà chính phủ Việt Nam thực tế nhận được từ các khoản vay và viện trợ từ các tổ chức quốc tế, chính phủ nước ngoài và các nguồn khác. Chỉ số này phản ánh khả năng tiếp cận nguồn tài chính bên ngoài để bù đắp thâm hụt ngân sách, tài trợ cho các dự án phát triển kinh tế - xã hội quan trọng. Dữ liệu được Bộ tài chính tổng hợp và công bố định kỳ hàng năm.",
+                  "frequency": "Độ trễ từ 2-3 quý (Ngày công bố không xác định)",
+                  "last_updated": "2025-09-06T03:11:17.964Z",
+                  "source": "Bộ Tài Chính - MOF",
+                  "note": null,
+                  "related_blog": null
+                }
+              },
+              {
+                "id": "274_rut_von_no_trong_nuoc",
+                "column_name": "rut_von_no_trong_nuoc",
+                "table_name": "274",
+                "name": "Nợ trong nước ",
+                "hasSub": false,
+                "level": 3,
+                "heading": 2,
+                "open": 1,
+                "dateType": "nam",
+                "yAxis": 17,
+                "data": [
+                  [
+                    1735603200000,
+                    538888.5
+                  ],
+                  [
+                    1703980800000,
+                    370448.97
+                  ],
+                  [
+                    1672444800000,
+                    214722
+                  ],
+                  [
+                    1640908800000,
+                    408213
+                  ],
+                  [
+                    1609372800000,
+                    393093.1
+                  ],
+                  [
+                    1577750400000,
+                    232529.78
+                  ],
+                  [
+                    1546214400000,
+                    250468
+                  ],
+                  [
+                    1514678400000,
+                    244220.7
+                  ],
+                  [
+                    1483142400000,
+                    355790.5
+                  ],
+                  [
+                    1451520000000,
+                    364707.05
+                  ],
+                  [
+                    1419984000000,
+                    399669.07
+                  ],
+                  [
+                    1388448000000,
+                    294292.2
+                  ]
+                ],
+                "time_frame": "yearly",
+                "lingo": {
+                  "name": "Nợ trong nước ",
+                  "unit": "Tỷ VND",
+                  "description": "Chỉ số rút vốn trong nước thể hiện lượng vốn mà chính phủ Việt Nam thực tế nhận được từ các khoản vay và viện trợ từ các tổ chức tài chính, doanh nghiệp và cá nhân trong nước. Chỉ số này cho biết mức độ phụ thuộc của Chính phủ vào nguồn vốn nội địa để bù đắp thâm hụt ngân sách hoặc tài trợ cho các dự án đầu tư công.  Dữ liệu được Bộ tài chính tổng hợp và công bố định kỳ hàng năm.",
+                  "frequency": "Độ trễ từ 2-3 quý (Ngày công bố không xác định)",
+                  "last_updated": "2025-09-06T03:11:17.964Z",
+                  "source": "Bộ Tài Chính - MOF",
+                  "note": null,
+                  "related_blog": null
+                }
+              },
+              {
+                "id": "274_tong_tra_no_trong_ky",
+                "column_name": "tong_tra_no_trong_ky",
+                "table_name": "274",
+                "name": "TỔNG TRẢ NỢ TRONG KỲ",
+                "hasSub": false,
+                "level": 1,
+                "heading": 1,
+                "open": 1,
+                "dateType": "nam",
+                "yAxis": 17,
+                "data": [
+                  [
+                    1735603200000,
+                    446060.06
+                  ],
+                  [
+                    1703980800000,
+                    340512.7
+                  ],
+                  [
+                    1672444800000,
+                    316305.61
+                  ],
+                  [
+                    1640908800000,
+                    369170.14
+                  ],
+                  [
+                    1609372800000,
+                    362802.15
+                  ],
+                  [
+                    1577750400000,
+                    293834.98
+                  ],
+                  [
+                    1546214400000,
+                    250460.78
+                  ],
+                  [
+                    1514678400000,
+                    256377.74
+                  ],
+                  [
+                    1483142400000,
+                    250962.83
+                  ],
+                  [
+                    1451520000000,
+                    288701.32
+                  ],
+                  [
+                    1419984000000,
+                    260802.98
+                  ],
+                  [
+                    1388448000000,
+                    185840.28
+                  ]
+                ],
+                "time_frame": "yearly",
+                "lingo": {
+                  "name": "TỔNG TRẢ NỢ TRONG KỲ",
+                  "unit": "Tỷ VND",
+                  "description": "Tổng trả nợ của chính phủ thể hiện toàn bộ nghĩa vụ thanh toán nợ gốc và lãi mà chính phủ đã thực hiện trong một kỳ nhất định (thường là năm). Chỉ số này phản ánh số tiền mà chính phủ đã bỏ qua để thanh toán các khoản gốc và lãi. Dữ liệu được Bộ tài chính tổng hợp và công bố định kỳ hàng năm.",
+                  "frequency": "Độ trễ từ 2-3 quý (Ngày công bố không xác định)",
+                  "last_updated": "2025-09-06T03:11:17.964Z",
+                  "source": "Bộ Tài Chính - MOF",
+                  "note": null,
+                  "related_blog": null
+                }
+              },
+              {
+                "id": "274_tong_tra_no_nuoc_ngoai",
+                "column_name": "tong_tra_no_nuoc_ngoai",
+                "table_name": "274",
+                "name": "Nợ nước ngoài ",
+                "hasSub": false,
+                "level": 3,
+                "heading": 2,
+                "open": 1,
+                "dateType": "nam",
+                "yAxis": 17,
+                "data": [
+                  [
+                    1735603200000,
+                    110182.52
+                  ],
+                  [
+                    1703980800000,
+                    84480.28
+                  ],
+                  [
+                    1672444800000,
+                    79282.16
+                  ],
+                  [
+                    1640908800000,
+                    73084.91
+                  ],
+                  [
+                    1609372800000,
+                    81384.86
+                  ],
+                  [
+                    1577750400000,
+                    58819.63
+                  ],
+                  [
+                    1546214400000,
+                    51553.78
+                  ],
+                  [
+                    1514678400000,
+                    44015.36
+                  ],
+                  [
+                    1483142400000,
+                    46252.92
+                  ],
+                  [
+                    1451520000000,
+                    33355.36
+                  ],
+                  [
+                    1419984000000,
+                    52247.81
+                  ],
+                  [
+                    1388448000000,
+                    38778.72
+                  ]
+                ],
+                "time_frame": "yearly",
+                "lingo": {
+                  "name": "Nợ nước ngoài ",
+                  "unit": "Tỷ VND",
+                  "description": "Tổng trả nợ nước ngoài của chính phủ thể hiện tổng nghĩa vụ thanh toán nợ (gốc và lãi) mà Chính phủ đã trả cho các chủ nợ nước ngoài trong một giai đoạn nhất định (thường là một năm). Dữ liệu được Bộ tài chính tổng hợp và công bố định kỳ hàng năm.",
+                  "frequency": "Độ trễ từ 2-3 quý (Ngày công bố không xác định)",
+                  "last_updated": "2025-09-06T03:11:17.964Z",
+                  "source": "Bộ Tài Chính - MOF",
+                  "note": null,
+                  "related_blog": null
+                }
+              },
+              {
+                "id": "274_tong_tra_no_trong_nuoc",
+                "column_name": "tong_tra_no_trong_nuoc",
+                "table_name": "274",
+                "name": "Nợ trong nước ",
+                "hasSub": false,
+                "level": 3,
+                "heading": 2,
+                "open": 1,
+                "dateType": "nam",
+                "yAxis": 17,
+                "data": [
+                  [
+                    1735603200000,
+                    335877.54
+                  ],
+                  [
+                    1703980800000,
+                    256032.42
+                  ],
+                  [
+                    1672444800000,
+                    237023.45
+                  ],
+                  [
+                    1640908800000,
+                    296085.23
+                  ],
+                  [
+                    1609372800000,
+                    281417.29
+                  ],
+                  [
+                    1577750400000,
+                    235015.35
+                  ],
+                  [
+                    1546214400000,
+                    198907
+                  ],
+                  [
+                    1514678400000,
+                    212362.38
+                  ],
+                  [
+                    1483142400000,
+                    204709.91
+                  ],
+                  [
+                    1451520000000,
+                    255345.96
+                  ],
+                  [
+                    1419984000000,
+                    208555.17
+                  ],
+                  [
+                    1388448000000,
+                    147061.56
+                  ]
+                ],
+                "time_frame": "yearly",
+                "lingo": {
+                  "name": "Nợ trong nước ",
+                  "unit": "Tỷ VND",
+                  "description": "Tổng trả nợ trong nước của chính phủ là tổng số tiền mà chính phủ đã trả cho các khoản nợ vay từ các tổ chức, cá nhân trong nước, bao gồm cả gốc và lãi. Chỉ số này phản ánh nghĩa vụ tài chính của chính phủ đối với các chủ nợ trong nước và ảnh hưởng trực tiếp đến ngân sách nhà nước. Dữ liệu được Bộ tài chính tổng hợp và công bố định kỳ hàng năm.",
+                  "frequency": "Độ trễ từ 2-3 quý (Ngày công bố không xác định)",
+                  "last_updated": "2025-09-06T03:11:17.964Z",
+                  "source": "Bộ Tài Chính - MOF",
+                  "note": null,
+                  "related_blog": null
+                }
+              },
+              {
+                "id": "274_tong_tra_no_goc_trong_ky",
+                "column_name": "tong_tra_no_goc_trong_ky",
+                "table_name": "274",
+                "name": "Tổng trả nợ gốc trong kỳ",
+                "hasSub": false,
+                "level": 1,
+                "heading": 2,
+                "open": 1,
+                "dateType": "nam",
+                "yAxis": 17,
+                "data": [
+                  [
+                    1735603200000,
+                    333996.8
+                  ],
+                  [
+                    1703980800000,
+                    245515.18
+                  ],
+                  [
+                    1672444800000,
+                    214183.91
+                  ],
+                  [
+                    1640908800000,
+                    261698.83
+                  ],
+                  [
+                    1609372800000,
+                    248444.16
+                  ],
+                  [
+                    1577750400000,
+                    181795.89
+                  ],
+                  [
+                    1546214400000,
+                    137157.01
+                  ],
+                  [
+                    1514678400000,
+                    153303.48
+                  ],
+                  [
+                    1483142400000,
+                    160591.49
+                  ],
+                  [
+                    1451520000000,
+                    203442.79
+                  ],
+                  [
+                    1419984000000,
+                    187916.88
+                  ],
+                  [
+                    1388448000000,
+                    125818.05
+                  ]
+                ],
+                "time_frame": "yearly",
+                "lingo": {
+                  "name": "Tổng trả nợ gốc trong kỳ",
+                  "unit": "Tỷ VND",
+                  "description": "Tổng trả nợ gốc trong kỳ thể hiện tổng số tiền mà chính phủ đã thanh toán để trả các khoản nợ gốc trong một khoảng thời gian nhất định, thường là một năm. Chỉ số này cho thấy khả năng của chính phủ trong việc thực hiện nghĩa vụ trả nợ và quản lý nợ công. Dữ liệu được Bộ tài chính tổng hợp và công bố định kỳ hàng năm.",
+                  "frequency": "Độ trễ từ 2-3 quý (Ngày công bố không xác định)",
+                  "last_updated": "2025-09-06T03:11:17.964Z",
+                  "source": "Bộ Tài Chính - MOF",
+                  "note": null,
+                  "related_blog": null
+                }
+              },
+              {
+                "id": "274_no_goc_no_nuoc_ngoai",
+                "column_name": "no_goc_no_nuoc_ngoai",
+                "table_name": "274",
+                "name": "Nợ nước ngoài ",
+                "hasSub": false,
+                "level": 3,
+                "heading": 3,
+                "open": 1,
+                "dateType": "nam",
+                "yAxis": 17,
+                "data": [
+                  [
+                    1735603200000,
+                    90301.21
+                  ],
+                  [
+                    1703980800000,
+                    64906.4
+                  ],
+                  [
+                    1672444800000,
+                    64839.41
+                  ],
+                  [
+                    1640908800000,
+                    58561.07
+                  ],
+                  [
+                    1609372800000,
+                    64624.86
+                  ],
+                  [
+                    1577750400000,
+                    41896.61
+                  ],
+                  [
+                    1546214400000,
+                    35500.01
+                  ],
+                  [
+                    1514678400000,
+                    29765.88
+                  ],
+                  [
+                    1483142400000,
+                    33285.68
+                  ],
+                  [
+                    1451520000000,
+                    21963.96
+                  ],
+                  [
+                    1419984000000,
+                    40093.84
+                  ],
+                  [
+                    1388448000000,
+                    27735.89
+                  ]
+                ],
+                "time_frame": "yearly",
+                "lingo": {
+                  "name": "Nợ nước ngoài ",
+                  "unit": "Tỷ VND",
+                  "description": "Chỉ số Trả nợ gốc nước ngoài của chính phủ thể hiện nghĩa vụ tài chính mà chính phủ đã thanh toán hàng năm cho các khoản vay từ nước ngoài. Nó phản ánh khả năng của chính phủ trong việc quản lý và trả các khoản nợ đã vay, đồng thời là một yếu tố quan trọng đánh giá rủi ro vỡ nợ quốc gia. Dữ liệu được Bộ tài chính tổng hợp và công bố định kỳ hàng năm.",
+                  "frequency": "Độ trễ từ 2-3 quý (Ngày công bố không xác định)",
+                  "last_updated": "2025-09-06T03:11:17.964Z",
+                  "source": "Bộ Tài Chính - MOF",
+                  "note": null,
+                  "related_blog": null
+                }
+              },
+              {
+                "id": "274_no_goc_no_trong_nuoc",
+                "column_name": "no_goc_no_trong_nuoc",
+                "table_name": "274",
+                "name": "Nợ trong nước ",
+                "hasSub": false,
+                "level": 3,
+                "heading": 3,
+                "open": 1,
+                "dateType": "nam",
+                "yAxis": 17,
+                "data": [
+                  [
+                    1735603200000,
+                    243695.59
+                  ],
+                  [
+                    1703980800000,
+                    176608.78
+                  ],
+                  [
+                    1672444800000,
+                    149344.5
+                  ],
+                  [
+                    1640908800000,
+                    203137.76
+                  ],
+                  [
+                    1609372800000,
+                    183819.3
+                  ],
+                  [
+                    1577750400000,
+                    139899.28
+                  ],
+                  [
+                    1546214400000,
+                    101657
+                  ],
+                  [
+                    1514678400000,
+                    123537.6
+                  ],
+                  [
+                    1483142400000,
+                    127305.81
+                  ],
+                  [
+                    1451520000000,
+                    181478.83
+                  ],
+                  [
+                    1419984000000,
+                    147823.04
+                  ],
+                  [
+                    1388448000000,
+                    98082.16
+                  ]
+                ],
+                "time_frame": "yearly",
+                "lingo": {
+                  "name": "Nợ trong nước ",
+                  "unit": "Tỷ VND",
+                  "description": "Chỉ số Trả nợ gốc trong nước của chính phủ thể hiện nghĩa vụ tài chính mà chính phủ phải thanh toán cho các khoản vay đã vay từ các tổ chức, cá nhân trong nước. Chỉ số này phản ánh áp lực trả nợ trực tiếp lên ngân sách nhà nước và khả năng huy động vốn trong nước của chính phủ. Dữ liệu được Bộ tài chính tổng hợp và công bố định kỳ hàng năm.",
+                  "frequency": "Độ trễ từ 2-3 quý (Ngày công bố không xác định)",
+                  "last_updated": "2025-09-06T03:11:17.964Z",
+                  "source": "Bộ Tài Chính - MOF",
+                  "note": null,
+                  "related_blog": null
+                }
+              },
+              {
+                "id": "274_tong_tra_lai_va_phi_trong_ky",
+                "column_name": "tong_tra_lai_va_phi_trong_ky",
+                "table_name": "274",
+                "name": "Tổng trả lãi và phí trong kỳ",
+                "hasSub": false,
+                "level": 1,
+                "heading": 2,
+                "open": 1,
+                "dateType": "nam",
+                "yAxis": 17,
+                "data": [
+                  [
+                    1735603200000,
+                    112063.26
+                  ],
+                  [
+                    1703980800000,
+                    98997.52
+                  ],
+                  [
+                    1672444800000,
+                    102121.7
+                  ],
+                  [
+                    1640908800000,
+                    107471.32
+                  ],
+                  [
+                    1609372800000,
+                    114357.99
+                  ],
+                  [
+                    1577750400000,
+                    112039.09
+                  ],
+                  [
+                    1546214400000,
+                    113303.77
+                  ],
+                  [
+                    1514678400000,
+                    103074.26
+                  ],
+                  [
+                    1483142400000,
+                    90371.34
+                  ],
+                  [
+                    1451520000000,
+                    85258.53
+                  ],
+                  [
+                    1419984000000,
+                    72886.1
+                  ],
+                  [
+                    1388448000000,
+                    60022.23
+                  ]
+                ],
+                "time_frame": "yearly",
+                "lingo": {
+                  "name": "Tổng trả lãi và phí trong kỳ",
+                  "unit": "Tỷ VND",
+                  "description": "Tổng trả lãi và phí trong kỳ thể hiện tổng chi phí mà chính phủ đã trả cho các khoản nợ đã vay, bao gồm cả nợ trong nước và nợ nước ngoài. Chỉ số này giúp đo lường gánh nặng tài chính từ việc vay nợ quốc tế và dòng tiền trả nợ hàng năm của chính phủ. Dữ liệu được Bộ tài chính tổng hợp và công bố định kỳ hàng năm.",
+                  "frequency": "Độ trễ từ 2-3 quý (Ngày công bố không xác định)",
+                  "last_updated": "2025-09-06T03:11:17.964Z",
+                  "source": "Bộ Tài Chính - MOF",
+                  "note": null,
+                  "related_blog": null
+                }
+              },
+              {
+                "id": "274_lai_no_nuoc_ngoai",
+                "column_name": "lai_no_nuoc_ngoai",
+                "table_name": "274",
+                "name": "Nợ nước ngoài ",
+                "hasSub": false,
+                "level": 3,
+                "heading": 3,
+                "open": 1,
+                "dateType": "nam",
+                "yAxis": 17,
+                "data": [
+                  [
+                    1735603200000,
+                    19881.31
+                  ],
+                  [
+                    1703980800000,
+                    19573.88
+                  ],
+                  [
+                    1672444800000,
+                    14442.75
+                  ],
+                  [
+                    1640908800000,
+                    14523.84
+                  ],
+                  [
+                    1609372800000,
+                    16760
+                  ],
+                  [
+                    1577750400000,
+                    16923.02
+                  ],
+                  [
+                    1546214400000,
+                    16053.77
+                  ],
+                  [
+                    1514678400000,
+                    14249.48
+                  ],
+                  [
+                    1483142400000,
+                    12967.24
+                  ],
+                  [
+                    1451520000000,
+                    11391.4
+                  ],
+                  [
+                    1419984000000,
+                    12153.97
+                  ],
+                  [
+                    1388448000000,
+                    11042.83
+                  ]
+                ],
+                "time_frame": "yearly",
+                "lingo": {
+                  "name": "Nợ nước ngoài ",
+                  "unit": "Tỷ VND",
+                  "description": "Chỉ số Trả lãi nước ngoài của chính phủ thể hiện gánh nặng tài chính mà chính phủ phải chịu để thanh toán các khoản lãi vay từ các khoản nợ bằng ngoại tệ. Dữ liệu được Bộ tài chính tổng hợp và công bố định kỳ hàng năm.",
+                  "frequency": "Độ trễ từ 2-3 quý (Ngày công bố không xác định)",
+                  "last_updated": "2025-09-06T03:11:17.964Z",
+                  "source": "Bộ Tài Chính - MOF",
+                  "note": null,
+                  "related_blog": null
+                }
+              },
+              {
+                "id": "274_lai_no_trong_nuoc",
+                "column_name": "lai_no_trong_nuoc",
+                "table_name": "274",
+                "name": "Nợ trong nước ",
+                "hasSub": false,
+                "level": 3,
+                "heading": 3,
+                "open": 1,
+                "dateType": "nam",
+                "yAxis": 17,
+                "data": [
+                  [
+                    1735603200000,
+                    92181.95
+                  ],
+                  [
+                    1703980800000,
+                    79423.64
+                  ],
+                  [
+                    1672444800000,
+                    87678.95
+                  ],
+                  [
+                    1640908800000,
+                    92947.48
+                  ],
+                  [
+                    1609372800000,
+                    97597.99
+                  ],
+                  [
+                    1577750400000,
+                    95116.07
+                  ],
+                  [
+                    1546214400000,
+                    97250
+                  ],
+                  [
+                    1514678400000,
+                    88824.78
+                  ],
+                  [
+                    1483142400000,
+                    77404.1
+                  ],
+                  [
+                    1451520000000,
+                    73867.13
+                  ],
+                  [
+                    1419984000000,
+                    60732.13
+                  ],
+                  [
+                    1388448000000,
+                    48979.4
+                  ]
+                ],
+                "time_frame": "yearly",
+                "lingo": {
+                  "name": "Nợ trong nước ",
+                  "unit": "Tỷ VND",
+                  "description": "Chỉ số Trả lãi trong nước của chính phủ thể hiện tổng số tiền chính phủ chi trả cho việc trả lãi các khoản nợ vay bằng đồng nội tệ (VND) từ các tổ chức và cá nhân trong nước. Dữ liệu được Bộ tài chính tổng hợp và công bố định kỳ hàng năm.",
+                  "frequency": "Độ trễ từ 2-3 quý (Ngày công bố không xác định)",
+                  "last_updated": "2025-09-06T03:11:17.964Z",
+                  "source": "Bộ Tài Chính - MOF",
+                  "note": null,
+                  "related_blog": null
+                }
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

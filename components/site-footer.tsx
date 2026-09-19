@@ -41,10 +41,10 @@ export function SiteFooter() {
         {/* Đường kẻ phân cách */}
         <div className="my-6 h-px w-full bg-border/60" />
 
-        {/* Người phụ trách / Liên hệ */}
+        {/* Liên hệ & Hỗ trợ */}
         <p className="text-xs text-muted-foreground">
-          Người phụ trách: <span className="font-medium text-foreground">Nguyễn Trung Nhật</span>
-          {' · '}
+          Liên hệ & Hỗ trợ:
+          {' '}
           <a href="tel:0983627018" className="transition-colors hover:text-primary">
             Zalo 0983.627.018
           </a>
