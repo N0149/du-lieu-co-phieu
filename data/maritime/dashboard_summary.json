@@ -1,6 +1,6 @@
 {
   "status": "success",
-  "generated_at": "2026-09-19T00:47:13.806245",
+  "generated_at": "2026-09-19T00:52:52.152800",
   "kpis": {
     "total_port_authorities": 16,
     "total_calls_30d": 15635,
@@ -1814,6 +1814,23 @@
       "source": "Cảng vụ Hải Phòng"
     },
     {
+      "id": 2893,
+      "vessel_name": "BACH HOA 258",
+      "authority_id": "haiphong",
+      "berth_name": "VAT CACH",
+      "stock_ticker": null,
+      "call_direction": "out",
+      "call_date": "2026-09-19",
+      "scheduled_time": "2026-09-19 08:00:00",
+      "draft": 2.6,
+      "loa": 79.8,
+      "dwt": 4459,
+      "gt": 1999,
+      "origin_port": "VAT CACH",
+      "dest_port": "CHINFON",
+      "source": "cvhh_haiphong"
+    },
+    {
       "id": 2840,
       "vessel_name": "BIEN DONG MARINER",
       "authority_id": "hcm",
@@ -2678,6 +2695,23 @@
       "gt": 9734,
       "origin_port": "DINH VU",
       "dest_port": "CHINA",
+      "source": "cvhh_haiphong"
+    },
+    {
+      "id": 2892,
+      "vessel_name": "LAUTAN NAGA",
+      "authority_id": "haiphong",
+      "berth_name": "Nam Đình Vũ / Nam Hải",
+      "stock_ticker": "GMD",
+      "call_direction": "out",
+      "call_date": "2026-09-19",
+      "scheduled_time": "2026-09-19 00:00:00",
+      "draft": 3.6,
+      "loa": 64.0,
+      "dwt": 1500,
+      "gt": 949,
+      "origin_port": "NAM HAI",
+      "dest_port": "INDONESIA",
       "source": "cvhh_haiphong"
     },
     {
@@ -9103,23 +9137,6 @@
       "dwt": 6174,
       "gt": 4410,
       "origin_port": "Q.TE LONGAN 1",
-      "dest_port": "Biển Đông",
-      "source": "pilot_south"
-    },
-    {
-      "id": 2315,
-      "vessel_name": "THUAN HAI TK-3+THUAN HAI SL-3",
-      "authority_id": "hcm",
-      "berth_name": "Q.TE LONGAN 2",
-      "stock_ticker": null,
-      "call_direction": "out",
-      "call_date": "2026-09-17",
-      "scheduled_time": "2026-09-17 05:00:00",
-      "draft": 3.2,
-      "loa": 165.0,
-      "dwt": 6109,
-      "gt": 4364,
-      "origin_port": "Q.TE LONGAN 2",
       "dest_port": "Biển Đông",
       "source": "pilot_south"
     },
@@ -22433,23 +22450,6 @@
       "origin_port": null,
       "dest_port": null,
       "source": "Cảng vụ Hải Phòng"
-    },
-    {
-      "id": 1402,
-      "vessel_name": "MSC AMBITION",
-      "authority_id": "hcm",
-      "berth_name": "Gemalink (Cái Mép)",
-      "stock_ticker": "GMD",
-      "call_direction": "out",
-      "call_date": "2026-09-05",
-      "scheduled_time": "2026-09-05 06:55",
-      "draft": 14.6,
-      "loa": 380.0,
-      "dwt": 165000,
-      "gt": 107250,
-      "origin_port": null,
-      "dest_port": null,
-      "source": "Hoa tiêu Miền Nam"
     },
     {
       "id": 1194,

@@ -754,6 +754,19 @@
     "is_important": 0
   },
   {
+    "id": "vci_12156529",
+    "symbol": "BMI",
+    "exchange": "HOSE",
+    "company_name": "Tổng Công ty Cổ phần Bảo Minh",
+    "title": "BMI: Nhận được công văn của Bộ Tài chính về việc thay đổi địa điểm chi nhánh",
+    "doc_type": "KHAC",
+    "doc_type_label": "Công bố thông tin",
+    "published_at": "2026-09-18 17:21:25",
+    "file_url": "https://cdn.fiingroup.vn/medialib/127889/I/2024/11/29/10260703372810700_BMI.png",
+    "source": "Vietcap_FiinGroup",
+    "is_important": 0
+  },
+  {
     "id": "cf_BMI_2026-09-18_baf906a526",
     "symbol": "BMI",
     "exchange": "HOSE",
@@ -1011,6 +1024,19 @@
     "published_at": "2026-09-18 14:55:00",
     "file_url": "https://cafef.vn/du-lieu/AIC-2979220/aic-thay-doi-dia-diem-chi-nhanh-dbv.chn?utm_source=du-lieu.chn",
     "source": "CafeF_Sở",
+    "is_important": 0
+  },
+  {
+    "id": "vci_12156346",
+    "symbol": "AIC",
+    "exchange": "UPCOM",
+    "company_name": "Công ty Cổ phần Tập đoàn Bảo hiểm DBV",
+    "title": "AIC: Thay đổi địa điểm Chi nhánh DBV",
+    "doc_type": "KHAC",
+    "doc_type_label": "Công bố thông tin",
+    "published_at": "2026-09-18 14:55:00",
+    "file_url": "https://cdn.fiingroup.vn/medialib/127889/I/2025/05/12/11003545105830700_AIC.png",
+    "source": "Vietcap_FiinGroup",
     "is_important": 0
   },
   {
@@ -2570,32 +2596,6 @@
     "doc_type_label": "Công bố thông tin",
     "published_at": "2026-09-17 11:46:00",
     "file_url": "https://cafef.vn/du-lieu/HNX-2978225/hnx-ban-cong-bo-thong-tin-cua-ngan-hang-tmcp-phat-trien-thanh-pho-ho-chi-minh-hdb126033.chn?utm_source=du-lieu.chn",
-    "source": "CafeF_Sở",
-    "is_important": 0
-  },
-  {
-    "id": "cf_TED_2026-09-17_9f69d04561",
-    "symbol": "TED",
-    "exchange": "UPCOM",
-    "company_name": "Tổng Công ty Tư vấn Thiết kế Giao thông Vận tải - CTCP",
-    "title": "TED: Nhận được Quyết định xử phạt vi phạm hành chính về thuế",
-    "doc_type": "KHAC",
-    "doc_type_label": "Công bố thông tin",
-    "published_at": "2026-09-17 11:45:00",
-    "file_url": "https://cafef.vn/du-lieu/TED-2978230/ted-nhan-duoc-quyet-dinh-xu-phat-vi-pham-hanh-chinh-ve-thue.chn?utm_source=du-lieu.chn",
-    "source": "CafeF_Sở",
-    "is_important": 0
-  },
-  {
-    "id": "cf_HNX_2026-09-17_084a695894",
-    "symbol": "HNX",
-    "exchange": "UPCOM",
-    "company_name": "",
-    "title": "HNX: Quyết định chấp thuận niêm yết trái phiếu Ngân hàng TMCP Phát triển Thành phố Hồ Chí Minh (HDB126033)",
-    "doc_type": "KHAC",
-    "doc_type_label": "Công bố thông tin",
-    "published_at": "2026-09-17 11:45:00",
-    "file_url": "https://cafef.vn/du-lieu/HNX-2978224/hnx-quyet-dinh-chap-thuan-niem-yet-trai-phieu-ngan-hang-tmcp-phat-trien-thanh-pho-ho-chi-minh-hdb126033.chn?utm_source=du-lieu.chn",
     "source": "CafeF_Sở",
     "is_important": 0
   }
