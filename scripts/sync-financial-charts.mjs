@@ -55,7 +55,8 @@ async function fetchChartData(symbol, periodType) {
       "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
       "Origin": "https://ruatichsan.com",
       "Referer": `https://ruatichsan.com/company?symbol=${symbol}`
-    }
+    },
+    signal: AbortSignal.timeout(6000)
   });
 
   if (!res.ok) {
@@ -65,80 +66,119 @@ async function fetchChartData(symbol, periodType) {
   return await decryptApiResponse(res);
 }
 
-async function syncSymbol(symbol) {
+async function syncSymbol(symbol, force = false) {
   const sym = symbol.toUpperCase().trim();
-  let qSuccess = false;
-  let aSuccess = false;
+  const qPath = path.join(QUARTER_DIR, `${sym}.json`);
+  const aPath = path.join(ANNUAL_DIR, `${sym}.json`);
+
+  if (!force && fs.existsSync(qPath) && fs.existsSync(aPath)) {
+    return true;
+  }
+
+  let qSuccess = fs.existsSync(qPath);
+  let aSuccess = fs.existsSync(aPath);
 
   // 1. Quý
-  try {
-    const qData = await fetchChartData(sym, "quarter");
-    if (qData) {
-      const qPath = path.join(QUARTER_DIR, `${sym}.json`);
-      fs.writeFileSync(qPath, JSON.stringify(qData, null, 2), "utf-8");
-      qSuccess = true;
-    }
-  } catch (e) {
-    console.error(`  [${sym}] Lỗi tải dữ liệu Quý:`, e.message);
+  if (!qSuccess) {
+    try {
+      const qData = await fetchChartData(sym, "quarter");
+      if (qData) {
+        fs.writeFileSync(qPath, JSON.stringify(qData), "utf-8");
+        qSuccess = true;
+      }
+    } catch {}
   }
 
   // 2. Năm
-  try {
-    const aData = await fetchChartData(sym, "annual");
-    if (aData) {
-      const aPath = path.join(ANNUAL_DIR, `${sym}.json`);
-      fs.writeFileSync(aPath, JSON.stringify(aData, null, 2), "utf-8");
-      aSuccess = true;
-    }
-  } catch (e) {
-    console.error(`  [${sym}] Lỗi tải dữ liệu Năm:`, e.message);
+  if (!aSuccess) {
+    try {
+      const aData = await fetchChartData(sym, "annual");
+      if (aData) {
+        fs.writeFileSync(aPath, JSON.stringify(aData), "utf-8");
+        aSuccess = true;
+      }
+    } catch {}
   }
 
-  return qSuccess && aSuccess;
+  return qSuccess || aSuccess;
+}
+
+async function runPool(items, limit, workerFn) {
+  let index = 0;
+  let completed = 0;
+  const total = items.length;
+  let successCount = 0;
+
+  const workers = Array.from({ length: Math.min(limit, items.length) }, async () => {
+    while (index < items.length) {
+      const i = index++;
+      const item = items[i];
+      try {
+        const ok = await workerFn(item, i, total);
+        if (ok) successCount++;
+      } catch (err) {
+      } finally {
+        completed++;
+        if (completed % 25 === 0 || completed === total) {
+          process.stdout.write(`\r[${completed}/${total}] (${Math.round((completed / total) * 100)}%) - Thành công: ${successCount} mã`);
+        }
+      }
+    }
+  });
+
+  await Promise.all(workers);
+  process.stdout.write("\n");
+  return successCount;
 }
 
 async function main() {
   const args = process.argv.slice(2);
   let targets = [];
+  const force = args.includes("--force");
+  const concurrencyArg = args.find((a) => a.startsWith("--concurrency="));
+  const concurrency = concurrencyArg ? parseInt(concurrencyArg.split("=")[1], 10) : 8;
 
   const symArg = args.find((a) => a.startsWith("--symbol="));
+  const topArg = args.find((a) => a.startsWith("--top="));
+
   if (symArg) {
     targets = [symArg.split("=")[1].toUpperCase().trim()];
-  } else if (args.includes("--banks") || args.length === 0) {
+  } else if (topArg) {
+    const n = parseInt(topArg.split("=")[1], 10) || 50;
+    const manifestPath = path.join(DATA_DIR, "longlive_manifest.json");
+    if (fs.existsSync(manifestPath)) {
+      const mf = JSON.parse(fs.readFileSync(manifestPath, "utf-8"));
+      const items = (mf.items || []).filter(it => it.t && it.cap > 0).sort((a, b) => (b.cap || 0) - (a.cap || 0));
+      targets = items.slice(0, n).map(it => it.t);
+    } else {
+      targets = BANK_SYMBOLS;
+    }
+  } else if (args.includes("--banks")) {
     targets = BANK_SYMBOLS;
   } else if (args.includes("--all")) {
     const manifestPath = path.join(DATA_DIR, "longlive_manifest.json");
     if (fs.existsSync(manifestPath)) {
       const mf = JSON.parse(fs.readFileSync(manifestPath, "utf-8"));
-      targets = (mf.tickers || []).map((t) => (typeof t === "string" ? t : t.symbol));
+      targets = (mf.items || []).map((it) => it.t).filter(Boolean);
     } else {
       targets = BANK_SYMBOLS;
     }
+  } else {
+    targets = BANK_SYMBOLS;
   }
+
+  // Khử trùng lặp
+  targets = Array.from(new Set(targets.map(t => t.toUpperCase().trim())));
 
   console.log("===================================================================");
   console.log(`   🚀 BẮT ĐẦU TẢI DỮ LIỆU BIỂU ĐỒ TÀI CHÍNH (${targets.length} MÃ)`);
+  console.log(`   ⚡ Số luồng đồng thời: ${concurrency} workers`);
   console.log("===================================================================");
 
   const startTime = Date.now();
-  let successCount = 0;
-
-  for (let i = 0; i < targets.length; i++) {
-    const sym = targets[i];
-    process.stdout.write(`[${i + 1}/${targets.length}] Đang đồng bộ ${sym}... `);
-    const ok = await syncSymbol(sym);
-    if (ok) {
-      successCount++;
-      console.log("✅ OK (Đã lưu Quý & Năm)");
-    } else {
-      console.log("⚠️ Có lỗi");
-    }
-
-    // Nghỉ nhẹ 150ms để tải mượt mà
-    if (i < targets.length - 1) {
-      await new Promise((r) => setTimeout(r, 150));
-    }
-  }
+  const successCount = await runPool(targets, concurrency, async (sym) => {
+    return await syncSymbol(sym, force);
+  });
 
   const duration = ((Date.now() - startTime) / 1000).toFixed(1);
   console.log("===================================================================");

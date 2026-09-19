@@ -1,0 +1,480 @@
+{
+  "newFiscalDateYear": [
+    "2022-12-31",
+    "2023-12-31",
+    "2024-12-31",
+    "2025-12-31"
+  ],
+  "isNganHang": false,
+  "isChungKhoan": false,
+  "tongCongTaiSan": [
+    32723,
+    37800,
+    35576,
+    46926
+  ],
+  "tsTienTuongDuongTienDTTCNH": [
+    2164,
+    2080,
+    3216,
+    4992
+  ],
+  "tsDauTuNamGiuDenNgayDaoHan": [
+    429,
+    657,
+    439,
+    3300
+  ],
+  "tsKhoanPhaiThu": [
+    2013,
+    2617,
+    4098,
+    4663
+  ],
+  "tsHangTonKho": [
+    4541,
+    5045,
+    4669,
+    8676
+  ],
+  "tsTaiSanCoDinh": [
+    10187,
+    15245,
+    11292,
+    11327
+  ],
+  "tsTaiSanDoDangDaiHan": [
+    7285,
+    6279,
+    6369,
+    7188
+  ],
+  "tsKhac": [
+    6104,
+    5877,
+    5493,
+    6780
+  ],
+  "nvVonChuSoHuu": [
+    15849.884283673,
+    15899.469418053,
+    16686.510381474,
+    18962.402014171
+  ],
+  "nvVonDieuLe": [
+    null,
+    null,
+    null,
+    null
+  ],
+  "nvVayNganHan": [
+    2104,
+    3613,
+    2870,
+    5866
+  ],
+  "nvVayDaiHanTPCD": [
+    3675,
+    7735,
+    5177,
+    11614
+  ],
+  "nvKhac": [
+    5935,
+    6285,
+    6343,
+    6408
+  ],
+  "nvMuaTraTienTruocDtChuaTH": [
+    5159,
+    4268,
+    4499,
+    4076
+  ],
+  "nvCoPhieuQuy": [
+    0,
+    0,
+    0,
+    0
+  ],
+  "tsNguyenGiaTscdHuuHinh": [
+    16401.346830027,
+    22611.092201853,
+    18983.540475351,
+    21454.143558284
+  ],
+  "tsKhauHaoTscdHuuHinhLuyKe": [
+    -7043.58513192,
+    -8220.680744884,
+    -8508.651781847,
+    -10975.056119312
+  ],
+  "doanhSoThuan": [
+    15354.257274111,
+    14137.115160211,
+    12712.651643719,
+    14301.759484703
+  ],
+  "lnst": [
+    622.040750969,
+    440.507209178,
+    540.023104471,
+    480.524461432
+  ],
+  "coTucLNST": [
+    622,
+    441,
+    540,
+    481
+  ],
+  "lctThuanHDSXKD": [
+    4873,
+    3453,
+    4239,
+    1760
+  ],
+  "lctThuanHDDauTu": [
+    -3155,
+    -6481,
+    -2358,
+    -7409
+  ],
+  "lctThuanHDTC": [
+    -2690,
+    2941,
+    -767,
+    7408
+  ],
+  "lctThuanTrongKy": [
+    -972,
+    -87,
+    1113,
+    1759
+  ],
+  "coTucDaTra": [
+    1284,
+    980,
+    388,
+    654
+  ],
+  "ROECuoiKy": [
+    3.92,
+    2.77,
+    3.24,
+    2.54
+  ],
+  "ROACuoiKy": [
+    1.9,
+    1.17,
+    1.52,
+    1.03
+  ],
+  "nhToiThuNhapLaiThuan": [
+    null,
+    null,
+    null,
+    null
+  ],
+  "nhToiLaiThuanTuHDDV": [
+    null,
+    null,
+    null,
+    null
+  ],
+  "nhToiThuNhapTuHDKhac": [
+    84,
+    37,
+    155,
+    147
+  ],
+  "nhTsChoVayKhachHang": [
+    null,
+    null,
+    null,
+    null
+  ],
+  "nhChoVayKhachHang": [
+    null,
+    null,
+    null,
+    null
+  ],
+  "nhTsTienVangTienGuiNHNN": [
+    null,
+    null,
+    null,
+    null
+  ],
+  "nhTsTienGuiChoVayTCTDkhac": [
+    null,
+    null,
+    null,
+    null
+  ],
+  "nhTsChungKhoanKinhDoanh": [
+    300,
+    null,
+    null,
+    806
+  ],
+  "nhTsChungKhoanDauTu": [
+    null,
+    null,
+    null,
+    null
+  ],
+  "nhTsKhac": [
+    null,
+    null,
+    null,
+    null
+  ],
+  "nhNvVcsh": [
+    15850,
+    15899,
+    16687,
+    18962
+  ],
+  "nhNvTienGuiKhachHang": [
+    null,
+    null,
+    null,
+    null
+  ],
+  "nhNvGuiVayTCTDKhac": [
+    null,
+    null,
+    null,
+    null
+  ],
+  "nhNvPhatHanhGtoCoGia": [
+    null,
+    null,
+    null,
+    null
+  ],
+  "nhNvNoChinhPhuVaNHNN": [
+    null,
+    null,
+    null,
+    null
+  ],
+  "nhNvKhac": [
+    null,
+    null,
+    null,
+    null
+  ],
+  "nhSlNIM": [
+    null,
+    null,
+    null,
+    null
+  ],
+  "nhSlYOAE": [
+    null,
+    null,
+    null,
+    null
+  ],
+  "nhSlCOF": [
+    null,
+    null,
+    null,
+    null
+  ],
+  "nhToiTangTruongYoy": [
+    null,
+    -55.95,
+    318.92,
+    -5.16
+  ],
+  "nhTangTruongChoVayKhachHang": [
+    null,
+    null,
+    null,
+    null
+  ],
+  "nhTsTiLeLaiPhiTongTaiSan": [
+    0.26,
+    0.1,
+    0.44,
+    0.31
+  ],
+  "nhTsTiLeTaiSanVcsh": [
+    2.06,
+    2.38,
+    2.13,
+    2.47
+  ],
+  "bienLoiNhuanGop": [
+    27.9,
+    27.08,
+    28.96,
+    30.25
+  ],
+  "bienLoiNhuanRong": [
+    4.05,
+    3.12,
+    4.25,
+    3.36
+  ],
+  "tangTruongDoanhSoThuanYoY": [
+    null,
+    -7.93,
+    -10.07,
+    12.5
+  ],
+  "tangTruongLNSTYoY": [
+    null,
+    -29.1,
+    22.45,
+    -10.93
+  ],
+  "tiLePhaiThuTaiSan": [
+    6.15,
+    6.92,
+    11.52,
+    9.94
+  ],
+  "tiLeNovayRongVcsh": [
+    20,
+    54,
+    26,
+    48
+  ],
+  "nvTileVayRongVCSHQ": [
+    20,
+    54,
+    26,
+    48
+  ],
+  "hangTonKhoVongQuay": [
+    2.44,
+    2.15,
+    1.86,
+    1.49
+  ],
+  "coTucTiLeDaTra": [
+    206.43,
+    222.22,
+    71.85,
+    135.97
+  ],
+  "ckTsFVTPL": [
+    null,
+    null,
+    null,
+    null
+  ],
+  "ckTsHTM": [
+    null,
+    null,
+    null,
+    null
+  ],
+  "ckTsCacKhoanChoVay": [
+    null,
+    null,
+    null,
+    null
+  ],
+  "ckTsAFS": [
+    null,
+    null,
+    null,
+    null
+  ],
+  "ckTsTienVaTuongDuong": [
+    null,
+    null,
+    null,
+    null
+  ],
+  "ckTsKhac": [
+    null,
+    null,
+    null,
+    null
+  ],
+  "ckNvVonChuSoHuu": [
+    null,
+    null,
+    null,
+    null
+  ],
+  "ckNvVayTPNganHan": [
+    null,
+    null,
+    null,
+    null
+  ],
+  "ckNvVayTDaiHan": [
+    null,
+    null,
+    null,
+    null
+  ],
+  "ckNvKhac": [
+    null,
+    null,
+    null,
+    null
+  ],
+  "ckCcdtLaiFVTPL": [
+    null,
+    null,
+    null,
+    null
+  ],
+  "ckCcdtLaiHTM": [
+    null,
+    null,
+    null,
+    null
+  ],
+  "ckCcdtLaiKhoanVayVaPhaiThu": [
+    null,
+    null,
+    null,
+    null
+  ],
+  "ckCcdtLaiAFS": [
+    null,
+    null,
+    null,
+    null
+  ],
+  "ckCcdtDoanhThuMGCK": [
+    null,
+    null,
+    null,
+    null
+  ],
+  "ckCcdtKhac": [
+    null,
+    null,
+    null,
+    null
+  ],
+  "ckTsTiLeNoVayVCSH": [
+    null,
+    null,
+    null,
+    null
+  ],
+  "ckTsTiLeChoVayMarginVcsh": [
+    null,
+    null,
+    null,
+    null
+  ],
+  "ckNvTiLeVayRongVcsh": [
+    null,
+    null,
+    null,
+    null
+  ],
+  "dataSource": "kbs+vci",
+  "sourceSymbol": "GEL"
+}

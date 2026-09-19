@@ -1,0 +1,819 @@
+{
+  "newFiscalDateYear": [
+    "2018-12-31",
+    "2019-12-31",
+    "2020-12-31",
+    "2021-12-31",
+    "2022-12-31",
+    "2023-12-31",
+    "2024-12-31",
+    "2025-12-31"
+  ],
+  "isNganHang": false,
+  "isChungKhoan": false,
+  "tongCongTaiSan": [
+    1240.29761526,
+    1120.754424444,
+    1119.339316471,
+    1108.171242249,
+    1247,
+    1265,
+    1193,
+    1397
+  ],
+  "tsTienTuongDuongTienDTTCNH": [
+    1.417757972,
+    24.788536512,
+    108.731444161,
+    125.358613123,
+    218,
+    177,
+    285,
+    415
+  ],
+  "tsDauTuNamGiuDenNgayDaoHan": [
+    3.3,
+    3.3,
+    4.5,
+    91.7,
+    212,
+    424,
+    283,
+    425
+  ],
+  "tsKhoanPhaiThu": [
+    77.333403,
+    77.626297,
+    120.206951,
+    85.011577,
+    72,
+    92,
+    112,
+    83
+  ],
+  "tsHangTonKho": [
+    12.88033911,
+    17.103868716,
+    17.545072441,
+    14.163548531,
+    19,
+    20,
+    27,
+    32
+  ],
+  "tsTaiSanCoDinh": [
+    737.929022126,
+    619.235818095,
+    498.766583672,
+    452.716273699,
+    368,
+    273,
+    217,
+    179
+  ],
+  "tsTaiSanDoDangDaiHan": [
+    0.982,
+    0,
+    0,
+    0,
+    12,
+    0,
+    0,
+    0
+  ],
+  "tsKhac": [
+    406.455093,
+    378.699904,
+    369.589265,
+    339.22123,
+    346,
+    279,
+    269,
+    263
+  ],
+  "nvVonChuSoHuu": [
+    889.201175429,
+    966.080661249,
+    1049.70766241,
+    1058.709167049,
+    1167.247730864,
+    1174.946695779,
+    999.05182424,
+    1193.713409865
+  ],
+  "nvVonDieuLe": [
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null
+  ],
+  "nvVayNganHan": [
+    41.817388848,
+    28.544925898,
+    0,
+    0,
+    37,
+    0,
+    0,
+    0
+  ],
+  "nvVayDaiHanTPCD": [
+    231.250439985,
+    59.614208511,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "nvKhac": [
+    78.023223,
+    65.960976,
+    69.314225,
+    49.261591,
+    43,
+    89,
+    193,
+    201
+  ],
+  "nvMuaTraTienTruocDtChuaTH": [
+    0.005388,
+    0.553653,
+    0.317429,
+    0.200484,
+    0,
+    1,
+    1,
+    2
+  ],
+  "nvCoPhieuQuy": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "tsNguyenGiaTscdHuuHinh": [
+    1051.911171979,
+    1054.411171979,
+    1054.411171979,
+    1123.393608479,
+    1153.283975589,
+    1170.514923407,
+    1172.457383407,
+    1172.457383407
+  ],
+  "tsKhauHaoTscdHuuHinhLuyKe": [
+    -314.735643616,
+    -435.532372635,
+    -555.644588307,
+    -670.67733478,
+    -785.479384024,
+    -897.473621897,
+    -955.201372969,
+    -993.50374812
+  ],
+  "doanhSoThuan": [
+    757.329066444,
+    791.771660788,
+    742.674148054,
+    816.098788967,
+    817.563111327,
+    895.539757829,
+    1093.033466599,
+    1153.228375257
+  ],
+  "lnst": [
+    148.248651427,
+    133.47948582,
+    151.877001161,
+    203.751504639,
+    273.163563815,
+    271.430600553,
+    340.725434466,
+    496.674503625
+  ],
+  "coTucLNST": [
+    148.248651427,
+    133.47948582,
+    151.877001161,
+    203.751504639,
+    273,
+    271,
+    341,
+    497
+  ],
+  "lctThuanHDSXKD": [
+    199.514002627,
+    261.038117798,
+    273.151099383,
+    322.260627813,
+    368,
+    443,
+    456,
+    534
+  ],
+  "lctThuanHDDauTu": [
+    22.622887472,
+    -2.128860163,
+    -37.579186761,
+    -115.171379743,
+    -154,
+    -195,
+    156,
+    -117
+  ],
+  "lctThuanHDTC": [
+    -232,
+    -235.508694424,
+    -151.409134409,
+    -189.75,
+    -122,
+    -290,
+    -506,
+    -291
+  ],
+  "lctThuanTrongKy": [
+    -9.863109901,
+    23.400563211,
+    84.162778213,
+    17.33924807,
+    93,
+    -41,
+    106,
+    126
+  ],
+  "coTucDaTra": [
+    0,
+    50.6,
+    0,
+    189.75,
+    158,
+    253,
+    506,
+    291
+  ],
+  "ROECuoiKy": [
+    16.67,
+    13.82,
+    14.47,
+    19.25,
+    23.39,
+    23.06,
+    34.13,
+    41.62
+  ],
+  "ROACuoiKy": [
+    11.95,
+    11.91,
+    13.57,
+    18.39,
+    21.89,
+    21.42,
+    28.58,
+    35.58
+  ],
+  "nhToiThuNhapLaiThuan": [
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null
+  ],
+  "nhToiLaiThuanTuHDDV": [
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null
+  ],
+  "nhToiThuNhapTuHDKhac": [
+    null,
+    null,
+    null,
+    null,
+    2,
+    1,
+    1,
+    20
+  ],
+  "nhTsChoVayKhachHang": [
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null
+  ],
+  "nhChoVayKhachHang": [
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null
+  ],
+  "nhTsTienVangTienGuiNHNN": [
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null
+  ],
+  "nhTsTienGuiChoVayTCTDkhac": [
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null
+  ],
+  "nhTsChungKhoanKinhDoanh": [
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null
+  ],
+  "nhTsChungKhoanDauTu": [
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null
+  ],
+  "nhTsKhac": [
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null
+  ],
+  "nhNvVcsh": [
+    889.201175429,
+    966.080661249,
+    1049.70766241,
+    1058.709167049,
+    1167,
+    1175,
+    999,
+    1194
+  ],
+  "nhNvTienGuiKhachHang": [
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null
+  ],
+  "nhNvGuiVayTCTDKhac": [
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null
+  ],
+  "nhNvPhatHanhGtoCoGia": [
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null
+  ],
+  "nhNvNoChinhPhuVaNHNN": [
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null
+  ],
+  "nhNvKhac": [
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null
+  ],
+  "nhSlNIM": [
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null
+  ],
+  "nhSlYOAE": [
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null
+  ],
+  "nhSlCOF": [
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null
+  ],
+  "nhToiTangTruongYoy": [
+    null,
+    null,
+    null,
+    null,
+    null,
+    -50,
+    0,
+    1900
+  ],
+  "nhTangTruongChoVayKhachHang": [
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null
+  ],
+  "nhTsTiLeLaiPhiTongTaiSan": [
+    null,
+    null,
+    null,
+    null,
+    0.16,
+    0.08,
+    0.08,
+    1.43
+  ],
+  "nhTsTiLeTaiSanVcsh": [
+    1.39,
+    1.16,
+    1.07,
+    1.05,
+    1.07,
+    1.08,
+    1.19,
+    1.17
+  ],
+  "bienLoiNhuanGop": [
+    28.25,
+    23.96,
+    28.51,
+    35.23,
+    44.99,
+    40.96,
+    40.9,
+    52.21
+  ],
+  "bienLoiNhuanRong": [
+    19.58,
+    16.86,
+    20.45,
+    24.97,
+    33.37,
+    30.25,
+    31.2,
+    43.1
+  ],
+  "tangTruongDoanhSoThuanYoY": [
+    null,
+    4.55,
+    -6.2,
+    9.89,
+    0.18,
+    9.54,
+    21.99,
+    5.49
+  ],
+  "tangTruongLNSTYoY": [
+    null,
+    -9.96,
+    13.78,
+    34.16,
+    34.07,
+    -0.73,
+    25.83,
+    45.75
+  ],
+  "tiLePhaiThuTaiSan": [
+    6.24,
+    6.93,
+    10.74,
+    7.67,
+    5.77,
+    7.27,
+    9.39,
+    5.94
+  ],
+  "tiLeNovayRongVcsh": [
+    30,
+    6,
+    -11,
+    -21,
+    -34,
+    -51,
+    -57,
+    -70
+  ],
+  "nvTileVayRongVCSHQ": [
+    30,
+    6,
+    -11,
+    -21,
+    -34,
+    -51,
+    -57,
+    -70
+  ],
+  "hangTonKhoVongQuay": [
+    -42.19,
+    -40.16,
+    -30.65,
+    -33.34,
+    23.68,
+    27.13,
+    27.49,
+    18.68
+  ],
+  "coTucTiLeDaTra": [
+    0,
+    37.91,
+    0,
+    93.13,
+    57.88,
+    93.36,
+    148.39,
+    58.55
+  ],
+  "ckTsFVTPL": [
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null
+  ],
+  "ckTsHTM": [
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null
+  ],
+  "ckTsCacKhoanChoVay": [
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null
+  ],
+  "ckTsAFS": [
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null
+  ],
+  "ckTsTienVaTuongDuong": [
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null
+  ],
+  "ckTsKhac": [
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null
+  ],
+  "ckNvVonChuSoHuu": [
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null
+  ],
+  "ckNvVayTPNganHan": [
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null
+  ],
+  "ckNvVayTDaiHan": [
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null
+  ],
+  "ckNvKhac": [
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null
+  ],
+  "ckCcdtLaiFVTPL": [
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null
+  ],
+  "ckCcdtLaiHTM": [
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null
+  ],
+  "ckCcdtLaiKhoanVayVaPhaiThu": [
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null
+  ],
+  "ckCcdtLaiAFS": [
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null
+  ],
+  "ckCcdtDoanhThuMGCK": [
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null
+  ],
+  "ckCcdtKhac": [
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null
+  ],
+  "ckTsTiLeNoVayVCSH": [
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null
+  ],
+  "ckTsTiLeChoVayMarginVcsh": [
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null
+  ],
+  "ckNvTiLeVayRongVcsh": [
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null
+  ],
+  "dataSource": "kbs+vci",
+  "sourceSymbol": "VGR",
+  "PE": [
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null
+  ],
+  "PB": [
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null
+  ],
+  "fundamentalEnrichment": {
+    "source": "vnstock_data.Fundamental.equity.ratio"
+  }
+}

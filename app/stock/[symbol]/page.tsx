@@ -126,6 +126,44 @@ export default async function StockDetailPage({
     notFound()
   }
 
+  // Tự động chuyển đổi dữ liệu chuỗi năm tài chính sang financials nếu financials đang trống
+  if (stockData && (!stockData.financials || stockData.financials.length === 0) && financialChartAnnual?.newFiscalDateYear) {
+    const years = financialChartAnnual.newFiscalDateYear
+    const revs = financialChartAnnual.doanhSoThuan || []
+    const profs = financialChartAnnual.lnst || []
+    const assets = financialChartAnnual.tongCongTaiSan || []
+    const equity = financialChartAnnual.nvVonChuSoHuu || []
+    stockData.financials = years.map((yStr: string, idx: number) => {
+      const yr = parseInt(yStr.slice(0, 4), 10)
+      const r = revs[idx] != null ? Math.round(revs[idx]) : null
+      const p = profs[idx] != null ? Math.round(profs[idx]) : null
+      const net_margin = r && p != null && r > 0 ? Math.round((p / r) * 1000) / 10 : null
+      return {
+        year: yr,
+        revenue: r,
+        profit: p,
+        assets: assets[idx] != null ? Math.round(assets[idx]) : null,
+        equity: equity[idx] != null ? Math.round(equity[idx]) : null,
+        liabilities: null,
+        eps: null,
+        bvps: null,
+        roe: null,
+        roa: null,
+        gross_margin: null,
+        net_margin,
+        revenue_growth: null,
+        npat_growth: null,
+        current_ratio: null,
+        debt_to_equity: null,
+        operating_cash_flow: null,
+        investing_cash_flow: null,
+        financing_cash_flow: null,
+        free_cash_flow: null,
+        dividend: null,
+      }
+    })
+  }
+
   // Lấy các bài báo cáo phân tích thực tế của mã từ kho dữ liệu
   const reports = getReportsForTicker(ticker)
 
