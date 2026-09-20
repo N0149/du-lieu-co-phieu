@@ -1,3 +1,5 @@
+import fs from 'node:fs'
+import path from 'node:path'
 import type { Metadata } from 'next'
 import { Star } from 'lucide-react'
 import { SiteHeader } from '@/components/site-header'
@@ -23,18 +25,44 @@ export default async function WatchlistPage() {
     ? { email: serverWatchlist.userEmail || '', id: serverWatchlist.userId || '' }
     : null
 
-  // 2. Thu nhỏ payload manifest gửi sang Client
-  const allManifestStocks = allStocks.map((s) => ({
-    t: s.t,
-    n: s.n,
-    e: s.e,
-    px: s.px,
-    pe: s.pe,
-    pb: s.pb,
-    roe: s.roe,
-    dy: s.dy ?? null,
-    w1: s.w1 ?? null,
-  }))
+  // 1.1 Đọc dữ liệu biến động giá đa khung thời gian và sàn giao dịch
+  let priceChangesMap: Record<string, any> = {}
+  try {
+    const pPath = path.join(process.cwd(), 'data', 'stock_price_changes.json')
+    if (fs.existsSync(pPath)) {
+      priceChangesMap = JSON.parse(fs.readFileSync(pPath, 'utf-8'))
+    }
+  } catch {}
+
+  let exchangeMap: Record<string, string> = {}
+  try {
+    const exPath = path.join(process.cwd(), 'data', 'stock_exchanges.json')
+    if (fs.existsSync(exPath)) {
+      exchangeMap = JSON.parse(fs.readFileSync(exPath, 'utf-8'))
+    }
+  } catch {}
+
+  // 2. Thu nhỏ payload manifest gửi sang Client kèm đầy đủ chỉ số so sánh
+  const allManifestStocks = allStocks.map((s) => {
+    const pc = priceChangesMap[s.t]
+    return {
+      t: s.t,
+      n: s.n,
+      e: s.e || exchangeMap[s.t] || 'HOSE',
+      px: s.px,
+      cap: s.cap ?? null,
+      pe: s.pe,
+      pb: s.pb,
+      roe: s.roe,
+      dy: s.dy ?? null,
+      w1: pc?.change1w ?? s.w1 ?? null,
+      m1: pc?.change1m ?? null,
+      m3: pc?.change3m ?? null,
+      m6: pc?.change6m ?? null,
+      y1: pc?.change1y ?? null,
+      ytd: pc?.changeYtd ?? null,
+    }
+  })
 
   // 3. Map thông tin cổ phiếu định giá chuyên sâu
   const curatedStocks: Record<

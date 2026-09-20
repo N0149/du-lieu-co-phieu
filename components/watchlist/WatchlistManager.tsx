@@ -13,16 +13,15 @@ import {
   Loader2,
   AlertCircle,
   FolderHeart,
-  LayoutGrid,
-  List,
+  SlidersHorizontal,
+  ChevronDown,
   ArrowUpDown,
   ArrowUp,
   ArrowDown,
-  TrendingUp,
-  TrendingDown,
   ListPlus,
   Check,
   X,
+  RotateCcw,
 } from 'lucide-react'
 import { createClient } from '@/lib/supabase/client'
 import { getGuestWatchlist, addGuestTicker, removeGuestTicker, addBulkGuestTickers } from '@/lib/guest-watchlist'
@@ -34,17 +33,134 @@ import {
   addBulkTickersToWatchlist,
 } from '@/lib/watchlist-service'
 import { AuthModal } from '@/components/auth/AuthModal'
-import { fmtPrice, fmtNum, fmtPct } from '@/lib/format'
+import { fmtPrice, fmtNum, fmtPct, fmtBillion } from '@/lib/format'
 import { cn } from '@/lib/utils'
+
+export type CriteriaKey =
+  | 'cap'
+  | 'pe'
+  | 'pb'
+  | 'm1'
+  | 'm3'
+  | 'ytd'
+  | 'w1'
+  | 'm6'
+  | 'y1'
+  | 'roe'
+  | 'dy'
+  | 'upside'
+
+export interface CriteriaItem {
+  key: CriteriaKey
+  label: string
+  shortLabel: string
+  group: 'valuation' | 'price' | 'performance'
+  description: string
+}
+
+export const ALL_CRITERIA: CriteriaItem[] = [
+  // Định giá & Quy mô
+  { key: 'cap', label: 'Vốn Hóa (tỷ)', shortLabel: 'Vốn Hóa', group: 'valuation', description: 'Vốn hóa thị trường (tỷ VNĐ)' },
+  { key: 'pe', label: 'P/E', shortLabel: 'P/E', group: 'valuation', description: 'Hệ số Giá / Lợi nhuận mỗi cổ phiếu' },
+  { key: 'pb', label: 'P/B', shortLabel: 'P/B', group: 'valuation', description: 'Hệ số Giá / Giá trị sổ sách' },
+  // Biến động giá
+  { key: 'm1', label: '1 Tháng', shortLabel: '1 Tháng', group: 'price', description: 'Hiệu suất biến động giá 1 tháng gần nhất (%)' },
+  { key: 'm3', label: '3 Tháng', shortLabel: '3 Tháng', group: 'price', description: 'Hiệu suất biến động giá 3 tháng gần nhất (%)' },
+  { key: 'ytd', label: 'YTD', shortLabel: 'YTD', group: 'price', description: 'Hiệu suất biến động giá từ đầu năm đến nay (%)' },
+  { key: 'w1', label: '1 Tuần', shortLabel: '1 Tuần', group: 'price', description: 'Hiệu suất biến động giá 1 tuần gần nhất (%)' },
+  { key: 'm6', label: '6 Tháng', shortLabel: '6 Tháng', group: 'price', description: 'Hiệu suất biến động giá 6 tháng gần nhất (%)' },
+  { key: 'y1', label: '1 Năm', shortLabel: '1 Năm', group: 'price', description: 'Hiệu suất biến động giá 1 năm qua (%)' },
+  // Hiệu quả & Cổ tức
+  { key: 'roe', label: 'ROE', shortLabel: 'ROE', group: 'performance', description: 'Tỷ suất sinh lời trên vốn chủ sở hữu (%)' },
+  { key: 'dy', label: 'Cổ Tức', shortLabel: 'Cổ Tức', group: 'performance', description: 'Tỷ suất cổ tức tiền mặt hàng năm (%)' },
+  { key: 'upside', label: 'Upside', shortLabel: 'Upside', group: 'performance', description: 'Biên định giá so với giá trị thực (%)' },
+]
+
+export const DEFAULT_COLUMNS: CriteriaKey[] = ['cap', 'pe', 'pb', 'm1', 'm3', 'ytd']
+
+function renderCriteriaCell(s: StockInfo, key: CriteriaKey) {
+  switch (key) {
+    case 'cap':
+      return (
+        <span className="font-mono text-[#F0F3F6] font-medium">
+          {s.cap != null ? fmtBillion(s.cap) : '—'}
+        </span>
+      )
+    case 'pe':
+      return (
+        <span className="font-mono text-[#F0F3F6]">
+          {s.pe != null ? fmtNum(s.pe, 1) : '—'}
+        </span>
+      )
+    case 'pb':
+      return (
+        <span className="font-mono text-[#9EACB9]">
+          {s.pb != null ? fmtNum(s.pb, 1) : '—'}
+        </span>
+      )
+    case 'w1':
+    case 'm1':
+    case 'm3':
+    case 'm6':
+    case 'y1':
+    case 'ytd': {
+      const val = s[key]
+      if (val == null) return <span className="text-[#64748b]">—</span>
+      const isPos = val > 0
+      const isNeg = val < 0
+      return (
+        <span
+          className={cn(
+            'font-mono text-xs font-semibold inline-flex items-center gap-0.5',
+            isPos ? 'text-emerald-400' : isNeg ? 'text-rose-400' : 'text-[#8b949e]'
+          )}
+        >
+          {isPos ? '+' : ''}
+          {fmtNum(val, 1)}%
+        </span>
+      )
+    }
+    case 'roe':
+      return s.roe != null ? (
+        <span className={cn('font-mono font-semibold', s.roe >= 15 ? 'text-emerald-400 font-bold' : 'text-[#F0F3F6]')}>
+          {fmtNum(s.roe, 1)}%
+        </span>
+      ) : (
+        <span className="text-[#64748b]">—</span>
+      )
+    case 'dy':
+      return (
+        <span className="font-mono text-[#F0F3F6]">
+          {s.dy != null ? `${fmtNum(s.dy, 1)}%` : '—'}
+        </span>
+      )
+    case 'upside':
+      return s.upside != null ? (
+        <span className="font-mono font-bold text-emerald-400">
+          {fmtPct(s.upside, 0)}
+        </span>
+      ) : (
+        <span className="text-[#64748b] font-normal">—</span>
+      )
+    default:
+      return <span className="text-[#64748b]">—</span>
+  }
+}
 
 export type StockInfo = {
   ticker: string
   name: string
   exchange: string
   price: number | null
-  w1?: number | null
+  cap?: number | null
   pe?: number | null
   pb?: number | null
+  w1?: number | null
+  m1?: number | null
+  m3?: number | null
+  m6?: number | null
+  y1?: number | null
+  ytd?: number | null
   roe?: number | null
   dy?: number | null
   rnav?: number | null
@@ -52,7 +168,7 @@ export type StockInfo = {
   status?: string
 }
 
-type SortField = 'ticker' | 'price' | 'w1' | 'pe' | 'pb' | 'roe' | 'dy' | 'upside'
+type SortField = 'ticker' | 'price' | CriteriaKey
 
 type WatchlistManagerProps = {
   allManifestStocks: {
@@ -60,11 +176,17 @@ type WatchlistManagerProps = {
     n: string
     e: string
     px: number | null
-    pe: number | null
-    pb: number | null
-    roe: number | null
-    dy: number | null
+    cap?: number | null
+    pe?: number | null
+    pb?: number | null
+    roe?: number | null
+    dy?: number | null
     w1?: number | null
+    m1?: number | null
+    m3?: number | null
+    m6?: number | null
+    y1?: number | null
+    ytd?: number | null
   }[]
   curatedStocks: Record<string, { rnav: number; upside: number; mos: number; status: string; updated: boolean }>
   initialTickers?: string[]
@@ -82,7 +204,9 @@ export function WatchlistManager({
   const [loading, setLoading] = useState(false)
   const [query, setQuery] = useState('')
   const [filterQuery, setFilterQuery] = useState('')
-  const [viewMode, setViewMode] = useState<'table' | 'grid'>('table')
+  const [visibleColumns, setVisibleColumns] = useState<CriteriaKey[]>(DEFAULT_COLUMNS)
+  const [colPickerOpen, setColPickerOpen] = useState(false)
+  const [swapMenuCol, setSwapMenuCol] = useState<CriteriaKey | null>(null)
   const [sortField, setSortField] = useState<SortField | null>(null)
   const [sortAsc, setSortAsc] = useState(true)
   const [isPending, startTransition] = useTransition()
@@ -140,21 +264,72 @@ export function WatchlistManager({
     }
   }
 
-  // Khôi phục chế độ xem đã lưu
+  // Khôi phục danh sách cột đã lưu từ localStorage
   useEffect(() => {
     try {
-      const savedMode = localStorage.getItem('app_watchlist_view_mode')
-      if (savedMode === 'table' || savedMode === 'grid') {
-        setViewMode(savedMode)
+      const savedCols = localStorage.getItem('app_watchlist_columns')
+      if (savedCols) {
+        const parsed = JSON.parse(savedCols)
+        if (Array.isArray(parsed) && parsed.length > 0) {
+          const validKeys = ALL_CRITERIA.map((c) => c.key)
+          const clean = parsed.filter((k: any) => validKeys.includes(k))
+          if (clean.length > 0) {
+            setVisibleColumns(clean)
+          }
+        }
       }
     } catch {}
   }, [])
 
-  const handleToggleViewMode = (mode: 'table' | 'grid') => {
-    setViewMode(mode)
+  const handleToggleColumn = (key: CriteriaKey) => {
+    setVisibleColumns((prev) => {
+      let next: CriteriaKey[]
+      if (prev.includes(key)) {
+        if (prev.length <= 1) return prev // Giữ tối thiểu 1 cột so sánh
+        next = prev.filter((k) => k !== key)
+      } else {
+        next = [...prev, key]
+      }
+      try {
+        localStorage.setItem('app_watchlist_columns', JSON.stringify(next))
+      } catch {}
+      return next
+    })
+  }
+
+  const handleResetColumns = () => {
+    setVisibleColumns(DEFAULT_COLUMNS)
     try {
-      localStorage.setItem('app_watchlist_view_mode', mode)
+      localStorage.setItem('app_watchlist_columns', JSON.stringify(DEFAULT_COLUMNS))
     } catch {}
+  }
+
+  const handleSelectAllColumns = () => {
+    const all = ALL_CRITERIA.map((c) => c.key)
+    setVisibleColumns(all)
+    try {
+      localStorage.setItem('app_watchlist_columns', JSON.stringify(all))
+    } catch {}
+  }
+
+  const handleSwapColumn = (oldKey: CriteriaKey, newKey: CriteriaKey) => {
+    if (oldKey === newKey) {
+      setSwapMenuCol(null)
+      return
+    }
+    setVisibleColumns((prev) => {
+      let next: CriteriaKey[]
+      if (prev.includes(newKey)) {
+        next = prev.map((k) => (k === oldKey ? newKey : k === newKey ? oldKey : k))
+      } else {
+        next = prev.map((k) => (k === oldKey ? newKey : k))
+      }
+      try {
+        localStorage.setItem('app_watchlist_columns', JSON.stringify(next))
+      } catch {}
+      return next
+    })
+    setSwapMenuCol(null)
   }
 
   // Map nhanh danh mục manifest theo ticker
@@ -265,7 +440,7 @@ export function WatchlistManager({
       setSortAsc(!sortAsc)
     } else {
       setSortField(field)
-      setSortAsc(field === 'ticker' || field === 'pe')
+      setSortAsc(field === 'ticker' || field === 'pe' || field === 'pb')
     }
   }
 
@@ -281,13 +456,19 @@ export function WatchlistManager({
         name: manifest?.n || 'Cổ phiếu niêm yết',
         exchange: manifest?.e || 'HOSE',
         price,
+        cap: manifest?.cap ?? null,
+        pe: manifest?.pe ?? null,
+        pb: manifest?.pb ?? null,
         w1: manifest?.w1 ?? null,
-        pe: manifest?.pe,
-        pb: manifest?.pb,
-        roe: manifest?.roe,
-        dy: manifest?.dy,
-        rnav: curated?.rnav,
-        upside: curated?.upside,
+        m1: manifest?.m1 ?? null,
+        m3: manifest?.m3 ?? null,
+        m6: manifest?.m6 ?? null,
+        y1: manifest?.y1 ?? null,
+        ytd: manifest?.ytd ?? null,
+        roe: manifest?.roe ?? null,
+        dy: manifest?.dy ?? null,
+        rnav: curated?.rnav ?? null,
+        upside: curated?.upside ?? null,
         status: curated?.status,
       }
     })
@@ -445,37 +626,203 @@ export function WatchlistManager({
           )}
         </div>
 
-        {/* Công cụ chuyển chế độ xem: Dạng Bảng vs Dạng Thẻ */}
+        {/* Công cụ Tùy chỉnh cột & Số lượng mã */}
         <div className="flex items-center gap-2 shrink-0">
-          <div className="flex items-center rounded-lg border border-white/10 bg-[#0e1117] p-0.5">
+          <div className="relative">
             <button
               type="button"
-              onClick={() => handleToggleViewMode('table')}
+              onClick={() => setColPickerOpen(!colPickerOpen)}
               className={cn(
-                'flex items-center gap-1.5 rounded-md px-2.5 py-1 text-xs font-medium transition-all cursor-pointer',
-                viewMode === 'table'
-                  ? 'bg-emerald-500/20 text-emerald-400 font-bold shadow-xs'
-                  : 'text-[#9EACB9] hover:text-white'
+                'flex items-center gap-1.5 rounded-lg border px-2.5 py-1.5 text-xs font-semibold transition-all cursor-pointer shadow-xs',
+                colPickerOpen
+                  ? 'border-emerald-500/50 bg-emerald-500/15 text-emerald-400'
+                  : 'border-white/10 bg-[#0e1117] text-[#9EACB9] hover:text-white hover:border-white/20'
               )}
-              title="Xem dạng Bảng gọn gàng (hiển thị 100+ mã nhanh nhất)"
+              title="Tùy chỉnh các cột so sánh cổ phiếu"
             >
-              <List className="size-3.5" />
-              <span className="hidden sm:inline">Dạng Bảng</span>
+              <SlidersHorizontal className="size-3.5 text-emerald-400" />
+              <span>Tùy chỉnh cột</span>
+              <span className="rounded bg-emerald-500/20 px-1.5 py-0.2 text-[10px] font-mono font-bold text-emerald-400">
+                {visibleColumns.length}
+              </span>
             </button>
-            <button
-              type="button"
-              onClick={() => handleToggleViewMode('grid')}
-              className={cn(
-                'flex items-center gap-1.5 rounded-md px-2.5 py-1 text-xs font-medium transition-all cursor-pointer',
-                viewMode === 'grid'
-                  ? 'bg-emerald-500/20 text-emerald-400 font-bold shadow-xs'
-                  : 'text-[#9EACB9] hover:text-white'
-              )}
-              title="Xem dạng Thẻ (Grid)"
-            >
-              <LayoutGrid className="size-3.5" />
-              <span className="hidden sm:inline">Dạng Thẻ</span>
-            </button>
+
+            {/* Popover tùy chọn cột */}
+            {colPickerOpen && (
+              <>
+                <div
+                  className="fixed inset-0 z-40"
+                  onClick={() => setColPickerOpen(false)}
+                />
+                <div className="absolute right-0 top-full mt-2 w-80 rounded-2xl border border-white/15 bg-[#141822] p-3.5 shadow-2xl z-50 text-left animate-in fade-in duration-150">
+                  {/* Header */}
+                  <div className="flex items-center justify-between pb-2.5 border-b border-white/10">
+                    <div className="flex items-center gap-2">
+                      <SlidersHorizontal className="size-4 text-emerald-400" />
+                      <div>
+                        <h4 className="text-xs font-bold text-white">Tùy chọn cột so sánh</h4>
+                        <p className="text-[10px] text-[#9EACB9]">Bật/tắt các tiêu chí phân tích</p>
+                      </div>
+                    </div>
+                    <button
+                      type="button"
+                      onClick={() => setColPickerOpen(false)}
+                      className="rounded p-1 text-[#64748b] hover:bg-white/10 hover:text-white cursor-pointer transition-colors"
+                    >
+                      <X className="size-3.5" />
+                    </button>
+                  </div>
+
+                  {/* Thanh công cụ nhanh */}
+                  <div className="flex items-center justify-between py-2 border-b border-white/8 text-[11px]">
+                    <button
+                      type="button"
+                      onClick={handleResetColumns}
+                      className="flex items-center gap-1 text-emerald-400 hover:text-emerald-300 font-semibold cursor-pointer transition-colors"
+                    >
+                      <RotateCcw className="size-3" />
+                      <span>Mặc định (6 cột)</span>
+                    </button>
+                    <div className="flex items-center gap-2 text-[#9EACB9]">
+                      <button
+                        type="button"
+                        onClick={handleSelectAllColumns}
+                        className="hover:text-white cursor-pointer transition-colors"
+                      >
+                        Tất cả
+                      </button>
+                      <span>·</span>
+                      <span className="font-mono text-emerald-400 font-bold">
+                        {visibleColumns.length}/{ALL_CRITERIA.length}
+                      </span>
+                    </div>
+                  </div>
+
+                  {/* Danh sách tiêu chí theo nhóm */}
+                  <div className="mt-2 space-y-3 max-h-72 overflow-y-auto pr-1">
+                    {/* Nhóm Định giá & Quy mô */}
+                    <div>
+                      <div className="text-[10px] font-bold uppercase tracking-wider text-[#64748b] mb-1 px-1">
+                        Quy mô & Định giá
+                      </div>
+                      <div className="space-y-0.5">
+                        {ALL_CRITERIA.filter((c) => c.group === 'valuation').map((item) => {
+                          const isSelected = visibleColumns.includes(item.key)
+                          return (
+                            <button
+                              key={item.key}
+                              type="button"
+                              onClick={() => handleToggleColumn(item.key)}
+                              className={cn(
+                                'flex w-full items-center justify-between rounded-lg px-2.5 py-1.5 text-xs transition-colors cursor-pointer text-left',
+                                isSelected
+                                  ? 'bg-emerald-500/15 text-emerald-300 font-medium'
+                                  : 'text-[#9EACB9] hover:bg-white/5 hover:text-white'
+                              )}
+                            >
+                              <div className="flex items-center gap-2">
+                                <div
+                                  className={cn(
+                                    'flex size-4 items-center justify-center rounded border transition-colors',
+                                    isSelected
+                                      ? 'border-emerald-500 bg-emerald-500 text-black'
+                                      : 'border-white/20 bg-white/5'
+                                  )}
+                                >
+                                  {isSelected && <Check className="size-3 stroke-[3]" />}
+                                </div>
+                                <span>{item.label}</span>
+                              </div>
+                              <span className="text-[10px] text-[#64748b]">{item.shortLabel}</span>
+                            </button>
+                          )
+                        })}
+                      </div>
+                    </div>
+
+                    {/* Nhóm Biến động giá */}
+                    <div>
+                      <div className="text-[10px] font-bold uppercase tracking-wider text-[#64748b] mb-1 px-1">
+                        Biến động giá
+                      </div>
+                      <div className="space-y-0.5">
+                        {ALL_CRITERIA.filter((c) => c.group === 'price').map((item) => {
+                          const isSelected = visibleColumns.includes(item.key)
+                          return (
+                            <button
+                              key={item.key}
+                              type="button"
+                              onClick={() => handleToggleColumn(item.key)}
+                              className={cn(
+                                'flex w-full items-center justify-between rounded-lg px-2.5 py-1.5 text-xs transition-colors cursor-pointer text-left',
+                                isSelected
+                                  ? 'bg-emerald-500/15 text-emerald-300 font-medium'
+                                  : 'text-[#9EACB9] hover:bg-white/5 hover:text-white'
+                              )}
+                            >
+                              <div className="flex items-center gap-2">
+                                <div
+                                  className={cn(
+                                    'flex size-4 items-center justify-center rounded border transition-colors',
+                                    isSelected
+                                      ? 'border-emerald-500 bg-emerald-500 text-black'
+                                      : 'border-white/20 bg-white/5'
+                                  )}
+                                >
+                                  {isSelected && <Check className="size-3 stroke-[3]" />}
+                                </div>
+                                <span>{item.label}</span>
+                              </div>
+                              <span className="text-[10px] text-[#64748b]">{item.shortLabel}</span>
+                            </button>
+                          )
+                        })}
+                      </div>
+                    </div>
+
+                    {/* Nhóm Hiệu quả & Cổ tức */}
+                    <div>
+                      <div className="text-[10px] font-bold uppercase tracking-wider text-[#64748b] mb-1 px-1">
+                        Hiệu quả & Cổ tức
+                      </div>
+                      <div className="space-y-0.5">
+                        {ALL_CRITERIA.filter((c) => c.group === 'performance').map((item) => {
+                          const isSelected = visibleColumns.includes(item.key)
+                          return (
+                            <button
+                              key={item.key}
+                              type="button"
+                              onClick={() => handleToggleColumn(item.key)}
+                              className={cn(
+                                'flex w-full items-center justify-between rounded-lg px-2.5 py-1.5 text-xs transition-colors cursor-pointer text-left',
+                                isSelected
+                                  ? 'bg-emerald-500/15 text-emerald-300 font-medium'
+                                  : 'text-[#9EACB9] hover:bg-white/5 hover:text-white'
+                              )}
+                            >
+                              <div className="flex items-center gap-2">
+                                <div
+                                  className={cn(
+                                    'flex size-4 items-center justify-center rounded border transition-colors',
+                                    isSelected
+                                      ? 'border-emerald-500 bg-emerald-500 text-black'
+                                      : 'border-white/20 bg-white/5'
+                                  )}
+                                >
+                                  {isSelected && <Check className="size-3 stroke-[3]" />}
+                                </div>
+                                <span>{item.label}</span>
+                              </div>
+                              <span className="text-[10px] text-[#64748b]">{item.shortLabel}</span>
+                            </button>
+                          )
+                        })}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </>
+            )}
           </div>
 
           <span className="rounded-lg bg-white/5 px-2.5 py-1 text-xs font-mono font-semibold text-[#9EACB9] border border-white/8">
@@ -516,14 +863,14 @@ export function WatchlistManager({
             </div>
           )}
         </div>
-      ) : viewMode === 'table' ? (
+      ) : (
         /* ══════════════════════════════════════════════════════════════════
-           CHẾ ĐỘ 1: DẠNG BẢNG GỌN GÀNG (TABLE VIEW - TỐI ƯU CHO 100 MÃ)
+           BẢNG THEO DÕI & SO SÁNH CỔ PHIẾU (TABLE VIEW TỐI ƯU TỐC ĐỘ CAO)
            ══════════════════════════════════════════════════════════════════ */
         <div className="overflow-hidden rounded-xl border border-white/10 bg-[#12161f] shadow-lg">
           <div className="overflow-x-auto">
             <table className="w-full border-collapse text-left text-xs">
-              {/* Table Header với nút sắp xếp */}
+              {/* Table Header với nút sắp xếp và đổi tiêu chí trực tiếp */}
               <thead>
                 <tr className="border-b border-white/10 bg-[#0e1117] text-[11px] font-semibold text-[#8b949e] uppercase tracking-wider select-none">
                   <th className="py-2.5 pl-3 pr-2 w-10 text-center text-[#64748b]">#</th>
@@ -555,316 +902,180 @@ export function WatchlistManager({
                       )}
                     </div>
                   </th>
-                  <th
-                    onClick={() => handleSort('w1')}
-                    className="py-2.5 px-3 text-right cursor-pointer hover:text-white transition-colors"
-                  >
-                    <div className="flex items-center justify-end gap-1">
-                      <span>1 Tuần</span>
-                      {sortField === 'w1' ? (
-                        sortAsc ? <ArrowUp className="size-3 text-emerald-400" /> : <ArrowDown className="size-3 text-emerald-400" />
-                      ) : (
-                        <ArrowUpDown className="size-3 opacity-40" />
-                      )}
-                    </div>
-                  </th>
-                  <th
-                    onClick={() => handleSort('pe')}
-                    className="py-2.5 px-3 text-right cursor-pointer hover:text-white transition-colors"
-                  >
-                    <div className="flex items-center justify-end gap-1">
-                      <span>P/E</span>
-                      {sortField === 'pe' ? (
-                        sortAsc ? <ArrowUp className="size-3 text-emerald-400" /> : <ArrowDown className="size-3 text-emerald-400" />
-                      ) : (
-                        <ArrowUpDown className="size-3 opacity-40" />
-                      )}
-                    </div>
-                  </th>
-                  <th
-                    onClick={() => handleSort('pb')}
-                    className="py-2.5 px-3 text-right cursor-pointer hover:text-white transition-colors"
-                  >
-                    <div className="flex items-center justify-end gap-1">
-                      <span>P/B</span>
-                      {sortField === 'pb' ? (
-                        sortAsc ? <ArrowUp className="size-3 text-emerald-400" /> : <ArrowDown className="size-3 text-emerald-400" />
-                      ) : (
-                        <ArrowUpDown className="size-3 opacity-40" />
-                      )}
-                    </div>
-                  </th>
-                  <th
-                    onClick={() => handleSort('roe')}
-                    className="py-2.5 px-3 text-right cursor-pointer hover:text-white transition-colors"
-                  >
-                    <div className="flex items-center justify-end gap-1">
-                      <span>ROE</span>
-                      {sortField === 'roe' ? (
-                        sortAsc ? <ArrowUp className="size-3 text-emerald-400" /> : <ArrowDown className="size-3 text-emerald-400" />
-                      ) : (
-                        <ArrowUpDown className="size-3 opacity-40" />
-                      )}
-                    </div>
-                  </th>
-                  <th
-                    onClick={() => handleSort('dy')}
-                    className="py-2.5 px-3 text-right cursor-pointer hover:text-white transition-colors"
-                  >
-                    <div className="flex items-center justify-end gap-1">
-                      <span>Cổ Tức</span>
-                      {sortField === 'dy' ? (
-                        sortAsc ? <ArrowUp className="size-3 text-emerald-400" /> : <ArrowDown className="size-3 text-emerald-400" />
-                      ) : (
-                        <ArrowUpDown className="size-3 opacity-40" />
-                      )}
-                    </div>
-                  </th>
-                  <th
-                    onClick={() => handleSort('upside')}
-                    className="py-2.5 px-3 text-right cursor-pointer hover:text-white transition-colors"
-                  >
-                    <div className="flex items-center justify-end gap-1">
-                      <span>Upside</span>
-                      {sortField === 'upside' ? (
-                        sortAsc ? <ArrowUp className="size-3 text-emerald-400" /> : <ArrowDown className="size-3 text-emerald-400" />
-                      ) : (
-                        <ArrowUpDown className="size-3 opacity-40" />
-                      )}
-                    </div>
-                  </th>
+
+                  {/* Các cột so sánh tùy biến linh hoạt */}
+                  {visibleColumns.map((colKey) => {
+                    const crit = ALL_CRITERIA.find((c) => c.key === colKey)
+                    const isSorted = sortField === colKey
+                    const isSwapOpen = swapMenuCol === colKey
+
+                    return (
+                      <th
+                        key={colKey}
+                        className="py-2.5 px-3 text-right group/th relative whitespace-nowrap"
+                      >
+                        <div className="flex items-center justify-end gap-1">
+                          <button
+                            type="button"
+                            onClick={() => handleSort(colKey)}
+                            className="flex items-center gap-1 cursor-pointer hover:text-white transition-colors"
+                            title={`Sắp xếp theo ${crit?.label || colKey}`}
+                          >
+                            <span>{crit?.label || colKey}</span>
+                            {isSorted ? (
+                              sortAsc ? (
+                                <ArrowUp className="size-3 text-emerald-400" />
+                              ) : (
+                                <ArrowDown className="size-3 text-emerald-400" />
+                              )
+                            ) : (
+                              <ArrowUpDown className="size-3 opacity-30 group-hover/th:opacity-80" />
+                            )}
+                          </button>
+
+                          {/* Nút dropdown đổi tiêu chí cột này */}
+                          <button
+                            type="button"
+                            onClick={(e) => {
+                              e.stopPropagation()
+                              setSwapMenuCol(isSwapOpen ? null : colKey)
+                            }}
+                            className={cn(
+                              'rounded p-0.5 transition-colors cursor-pointer',
+                              isSwapOpen
+                                ? 'bg-emerald-500/20 text-emerald-400'
+                                : 'text-[#64748b] hover:bg-white/10 hover:text-white opacity-40 group-hover/th:opacity-100'
+                            )}
+                            title="Đổi tiêu chí cột này"
+                          >
+                            <ChevronDown className="size-3" />
+                          </button>
+                        </div>
+
+                        {/* Menu dropdown đổi nhanh tiêu chí */}
+                        {isSwapOpen && (
+                          <>
+                            <div
+                              className="fixed inset-0 z-40"
+                              onClick={(e) => {
+                                e.stopPropagation()
+                                setSwapMenuCol(null)
+                              }}
+                            />
+                            <div className="absolute right-0 top-full mt-1 w-48 rounded-xl border border-white/15 bg-[#161b26] p-1.5 shadow-2xl z-50 text-left font-normal normal-case animate-in fade-in duration-100">
+                              <div className="px-2 py-1 text-[10px] font-bold text-[#8b949e] border-b border-white/8 mb-1">
+                                Đổi cột thành:
+                              </div>
+                              <div className="max-h-56 overflow-y-auto space-y-0.5">
+                                {ALL_CRITERIA.map((item) => (
+                                  <button
+                                    key={item.key}
+                                    type="button"
+                                    onClick={(e) => {
+                                      e.stopPropagation()
+                                      handleSwapColumn(colKey, item.key)
+                                    }}
+                                    className={cn(
+                                      'w-full flex items-center justify-between rounded-md px-2 py-1.5 text-xs text-left cursor-pointer transition-colors',
+                                      colKey === item.key
+                                        ? 'bg-emerald-500/20 text-emerald-400 font-bold'
+                                        : 'text-[#9EACB9] hover:bg-white/5 hover:text-white'
+                                    )}
+                                  >
+                                    <span>{item.label}</span>
+                                    {colKey === item.key && <Check className="size-3 text-emerald-400" />}
+                                  </button>
+                                ))}
+                              </div>
+                            </div>
+                          </>
+                        )}
+                      </th>
+                    )
+                  })}
+
                   <th className="py-2.5 pr-3 pl-2 text-center w-16">Xóa</th>
                 </tr>
               </thead>
 
               {/* Table Rows */}
               <tbody className="divide-y divide-white/5">
-                {watchlistDetails.map((s, idx) => {
-                  const w1 = s.w1
-                  const isPositiveW1 = w1 != null && w1 > 0
-                  const isNegativeW1 = w1 != null && w1 < 0
+                {watchlistDetails.map((s, idx) => (
+                  <tr
+                    key={s.ticker}
+                    className="group hover:bg-white/[0.04] transition-colors"
+                  >
+                    {/* STT */}
+                    <td className="py-2.5 pl-3 pr-2 text-center font-mono text-[11px] text-[#64748b]">
+                      {idx + 1}
+                    </td>
 
-                  return (
-                    <tr
-                      key={s.ticker}
-                      className="group hover:bg-white/[0.04] transition-colors"
-                    >
-                      {/* STT */}
-                      <td className="py-2.5 pl-3 pr-2 text-center font-mono text-[11px] text-[#64748b]">
-                        {idx + 1}
-                      </td>
+                    {/* Mã CK */}
+                    <td className="py-2.5 px-3">
+                      <Link
+                        href={`/stock/${s.ticker}`}
+                        className="flex items-center gap-1.5 font-mono font-black text-sm text-white group-hover:text-emerald-400 transition-colors"
+                      >
+                        <Star className="size-3 fill-amber-400 text-amber-400 shrink-0" />
+                        <span>{s.ticker}</span>
+                      </Link>
+                    </td>
 
-                      {/* Mã CK */}
-                      <td className="py-2.5 px-3">
-                        <Link
-                          href={`/stock/${s.ticker}`}
-                          className="flex items-center gap-1.5 font-mono font-black text-sm text-white group-hover:text-emerald-400 transition-colors"
-                        >
-                          <Star className="size-3 fill-amber-400 text-amber-400 shrink-0" />
-                          <span>{s.ticker}</span>
-                        </Link>
-                      </td>
-
-                      {/* Sàn */}
-                      <td className="py-2.5 px-2 text-center">
-                        <span
-                          className={cn(
-                            'rounded px-1.5 py-0.5 text-[10px] font-mono font-bold',
-                            s.exchange === 'HOSE'
-                              ? 'bg-blue-500/15 text-blue-400 border border-blue-500/30'
-                              : s.exchange === 'HNX'
-                              ? 'bg-purple-500/15 text-purple-400 border border-purple-500/30'
-                              : 'bg-amber-500/15 text-amber-400 border border-amber-500/30'
-                          )}
-                        >
-                          {s.exchange}
-                        </span>
-                      </td>
-
-                      {/* Tên công ty */}
-                      <td className="py-2.5 px-3">
-                        <Link
-                          href={`/stock/${s.ticker}`}
-                          className="block truncate max-w-[240px] text-xs text-[#9EACB9] hover:text-white transition-colors"
-                          title={s.name}
-                        >
-                          {s.name}
-                        </Link>
-                      </td>
-
-                      {/* Thị giá */}
-                      <td className="py-2.5 px-3 text-right font-mono font-bold text-white text-[13px]">
-                        {s.price != null ? fmtPrice(s.price) : '—'}
-                      </td>
-
-                      {/* Biến động 1W */}
-                      <td className="py-2.5 px-3 text-right font-mono text-xs font-semibold">
-                        {w1 != null ? (
-                          <span
-                            className={cn(
-                              'inline-flex items-center gap-0.5',
-                              isPositiveW1
-                                ? 'text-emerald-400'
-                                : isNegativeW1
-                                ? 'text-rose-400'
-                                : 'text-[#8b949e]'
-                            )}
-                          >
-                            {isPositiveW1 ? '+' : ''}
-                            {fmtNum(w1, 1)}%
-                          </span>
-                        ) : (
-                          <span className="text-[#64748b]">—</span>
+                    {/* Sàn */}
+                    <td className="py-2.5 px-2 text-center">
+                      <span
+                        className={cn(
+                          'rounded px-1.5 py-0.5 text-[10px] font-mono font-bold',
+                          s.exchange === 'HOSE'
+                            ? 'bg-blue-500/15 text-blue-400 border border-blue-500/30'
+                            : s.exchange === 'HNX'
+                            ? 'bg-purple-500/15 text-purple-400 border border-purple-500/30'
+                            : 'bg-amber-500/15 text-amber-400 border border-amber-500/30'
                         )}
-                      </td>
+                      >
+                        {s.exchange}
+                      </span>
+                    </td>
 
-                      {/* P/E */}
-                      <td className="py-2.5 px-3 text-right font-mono text-[#F0F3F6]">
-                        {s.pe != null ? fmtNum(s.pe, 1) : '—'}
-                      </td>
+                    {/* Tên công ty */}
+                    <td className="py-2.5 px-3">
+                      <Link
+                        href={`/stock/${s.ticker}`}
+                        className="block truncate max-w-[240px] text-xs text-[#9EACB9] hover:text-white transition-colors"
+                        title={s.name}
+                      >
+                        {s.name}
+                      </Link>
+                    </td>
 
-                      {/* P/B */}
-                      <td className="py-2.5 px-3 text-right font-mono text-[#9EACB9]">
-                        {s.pb != null ? fmtNum(s.pb, 1) : '—'}
-                      </td>
+                    {/* Thị giá */}
+                    <td className="py-2.5 px-3 text-right font-mono font-bold text-white text-[13px]">
+                      {s.price != null ? fmtPrice(s.price) : '—'}
+                    </td>
 
-                      {/* ROE */}
-                      <td className="py-2.5 px-3 text-right font-mono font-semibold">
-                        {s.roe != null ? (
-                          <span className={s.roe >= 15 ? 'text-emerald-400 font-bold' : 'text-[#F0F3F6]'}>
-                            {fmtNum(s.roe, 1)}%
-                          </span>
-                        ) : (
-                          <span className="text-[#64748b]">—</span>
-                        )}
+                    {/* Các cột chỉ số so sánh động */}
+                    {visibleColumns.map((colKey) => (
+                      <td key={colKey} className="py-2.5 px-3 text-right">
+                        {renderCriteriaCell(s, colKey)}
                       </td>
+                    ))}
 
-                      {/* Cổ tức */}
-                      <td className="py-2.5 px-3 text-right font-mono text-[#F0F3F6]">
-                        {s.dy != null ? `${fmtNum(s.dy, 1)}%` : '—'}
-                      </td>
-
-                      {/* Upside */}
-                      <td className="py-2.5 px-3 text-right font-mono font-bold">
-                        {s.upside != null ? (
-                          <span className="text-emerald-400">{fmtPct(s.upside, 0)}</span>
-                        ) : (
-                          <span className="text-[#64748b] font-normal">—</span>
-                        )}
-                      </td>
-
-                      {/* Nút xóa */}
-                      <td className="py-2.5 pr-3 pl-2 text-center">
-                        <button
-                          type="button"
-                          onClick={(e) => handleRemoveTicker(s.ticker, e)}
-                          title={`Xóa ${s.ticker} khỏi danh mục`}
-                          className="flex size-7 items-center justify-center rounded-lg text-[#64748b] hover:bg-rose-500/10 hover:text-rose-400 transition-colors mx-auto cursor-pointer"
-                        >
-                          <Trash2 className="size-3.5" />
-                        </button>
-                      </td>
-                    </tr>
-                  )
-                })}
+                    {/* Nút xóa */}
+                    <td className="py-2.5 pr-3 pl-2 text-center">
+                      <button
+                        type="button"
+                        onClick={(e) => handleRemoveTicker(s.ticker, e)}
+                        title={`Xóa ${s.ticker} khỏi danh mục`}
+                        className="flex size-7 items-center justify-center rounded-lg text-[#64748b] hover:bg-rose-500/10 hover:text-rose-400 transition-colors mx-auto cursor-pointer"
+                      >
+                        <Trash2 className="size-3.5" />
+                      </button>
+                    </td>
+                  </tr>
+                ))}
               </tbody>
             </table>
           </div>
-        </div>
-      ) : (
-        /* ══════════════════════════════════════════════════════════════════
-           CHẾ ĐỘ 2: DẠNG THẺ (CARD GRID VIEW)
-           ══════════════════════════════════════════════════════════════════ */
-        <div className="grid gap-3 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
-          {watchlistDetails.map((s) => {
-            const w1 = s.w1
-            const isPositiveW1 = w1 != null && w1 > 0
-            const isNegativeW1 = w1 != null && w1 < 0
-
-            return (
-              <div
-                key={s.ticker}
-                className="group relative flex flex-col justify-between rounded-xl border border-white/10 bg-[#12161f] p-3.5 transition-all hover:border-emerald-500/40 hover:shadow-md"
-              >
-                {/* Header card */}
-                <div className="flex items-start justify-between gap-2">
-                  <Link href={`/stock/${s.ticker}`} className="flex-1 min-w-0">
-                    <div className="flex items-center gap-1.5">
-                      <Star className="size-3.5 fill-amber-400 text-amber-400 shrink-0" />
-                      <span className="font-mono text-base font-black text-white group-hover:text-emerald-400 transition-colors">
-                        {s.ticker}
-                      </span>
-                      <span className="rounded bg-white/10 px-1 py-0.2 text-[9px] font-mono text-[#9EACB9]">
-                        {s.exchange}
-                      </span>
-                    </div>
-                    <p className="mt-0.5 truncate text-[11px] text-[#9EACB9]">{s.name}</p>
-                  </Link>
-
-                  <div className="flex items-center gap-0.5">
-                    <button
-                      type="button"
-                      onClick={(e) => handleRemoveTicker(s.ticker, e)}
-                      title={`Bỏ theo dõi ${s.ticker}`}
-                      className="flex size-6 items-center justify-center rounded text-[#64748b] hover:bg-rose-500/10 hover:text-rose-400 transition-colors cursor-pointer"
-                    >
-                      <Trash2 className="size-3" />
-                    </button>
-                    <Link
-                      href={`/stock/${s.ticker}`}
-                      className="flex size-6 items-center justify-center rounded text-[#64748b] hover:bg-white/5 hover:text-white transition-colors"
-                      title="Mở phân tích chuyên sâu"
-                    >
-                      <ArrowUpRight className="size-3.5" />
-                    </Link>
-                  </div>
-                </div>
-
-                {/* Các chỉ số */}
-                <div className="mt-2.5 grid grid-cols-3 gap-1 border-t border-white/8 pt-2 text-center">
-                  <div>
-                    <p className="text-[9.5px] text-[#9EACB9]">Thị giá</p>
-                    <p className="font-mono text-xs font-bold text-white">
-                      {s.price != null ? fmtPrice(s.price) : '—'}
-                    </p>
-                  </div>
-                  <div>
-                    <p className="text-[9.5px] text-[#9EACB9]">1 Tuần</p>
-                    <p
-                      className={cn(
-                        'font-mono text-xs font-semibold',
-                        isPositiveW1
-                          ? 'text-emerald-400'
-                          : isNegativeW1
-                          ? 'text-rose-400'
-                          : 'text-[#8b949e]'
-                      )}
-                    >
-                      {w1 != null ? `${isPositiveW1 ? '+' : ''}${fmtNum(w1, 1)}%` : '—'}
-                    </p>
-                  </div>
-                  <div>
-                    <p className="text-[9.5px] text-[#9EACB9]">ROE</p>
-                    <p className="font-mono text-xs font-semibold text-emerald-400">
-                      {s.roe != null ? `${fmtNum(s.roe, 1)}%` : '—'}
-                    </p>
-                  </div>
-                </div>
-
-                {/* Footer thông số mở rộng */}
-                <div className="mt-2 flex items-center justify-between border-t border-white/8 pt-1.5 text-[10px] text-[#9EACB9]">
-                  <span>P/E: {s.pe != null ? fmtNum(s.pe, 1) : '—'}</span>
-                  {s.upside != null ? (
-                    <span className="font-semibold text-emerald-400 font-mono">
-                      Upside: {fmtPct(s.upside, 0)}
-                    </span>
-                  ) : (
-                    <span>Cổ tức: {s.dy != null ? `${fmtNum(s.dy, 1)}%` : '—'}</span>
-                  )}
-                </div>
-              </div>
-            )
-          })}
         </div>
       )}
 
