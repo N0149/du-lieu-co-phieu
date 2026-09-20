@@ -206,6 +206,7 @@ export function VerticalSidebarNav({
                   <Link
                     key={item.href}
                     href={item.href}
+                    prefetch={false}
                     onClick={() => setPendingHref(item.href)}
                     className={cn(
                       'group relative flex items-center rounded-lg text-xs font-medium transition-all',

@@ -93,7 +93,7 @@ export function SiteHeader({ hideSearch = false }: SiteHeaderProps) {
             </button>
 
             {/* Brand Logo */}
-            <Link href="/" className="flex shrink-0 items-center gap-2">
+            <Link href="/" prefetch={false} className="flex shrink-0 items-center gap-2">
               <span className="flex size-7.5 items-center justify-center rounded-lg bg-emerald-500/15 text-emerald-400 border border-emerald-500/30 shadow-sm">
                 <TrendingUp className="size-4" />
               </span>
@@ -205,6 +205,7 @@ export function SiteHeader({ hideSearch = false }: SiteHeaderProps) {
           {/* 1. Tin tức thị trường & Công bố thông tin (Mặc định trang chủ) */}
           <Link
             href="/"
+            prefetch={false}
             className={cn(
               'flex flex-col items-center gap-0.5 py-1 px-1.5 rounded-xl text-[10px] sm:text-[10.5px] font-semibold transition-all active:scale-90',
               pathname === '/' || pathname === '/tin-tuc'
@@ -219,6 +220,7 @@ export function SiteHeader({ hideSearch = false }: SiteHeaderProps) {
           {/* 2. Tra cứu Doanh nghiệp / Cổ phiếu (Mặc định MWG) */}
           <Link
             href="/stock/MWG"
+            prefetch={false}
             className={cn(
               'flex flex-col items-center gap-0.5 py-1 px-1.5 rounded-xl text-[10px] sm:text-[10.5px] font-semibold transition-all active:scale-90',
               pathname?.startsWith('/stock') ||
@@ -236,6 +238,7 @@ export function SiteHeader({ hideSearch = false }: SiteHeaderProps) {
           {/* 3. Thị trường */}
           <Link
             href="/thi-truong"
+            prefetch={false}
             className={cn(
               'flex flex-col items-center gap-0.5 py-1 px-1.5 rounded-xl text-[10px] sm:text-[10.5px] font-semibold transition-all active:scale-90',
               pathname?.startsWith('/thi-truong')
@@ -250,6 +253,7 @@ export function SiteHeader({ hideSearch = false }: SiteHeaderProps) {
           {/* 4. Báo cáo phân tích */}
           <Link
             href="/bao-cao"
+            prefetch={false}
             className={cn(
               'flex flex-col items-center gap-0.5 py-1 px-1.5 rounded-xl text-[10.5px] font-semibold transition-all active:scale-90',
               pathname?.startsWith('/bao-cao')

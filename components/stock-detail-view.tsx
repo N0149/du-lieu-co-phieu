@@ -53,8 +53,10 @@ import { ValuationBandsChart } from '@/components/stock/ValuationBandsChart'
 import { StockValuationEpsChart } from '@/components/stock/StockValuationEpsChart'
 import { StockEvaluationHeader } from '@/components/stock/StockEvaluationHeader'
 import { CompanyProfileEnhancement } from '@/components/stock/CompanyProfileEnhancement'
+import { TradingViewCandleChart } from '@/components/stock/TradingViewCandleChart'
 import { PeerComparisonView } from '@/components/peer-comparison-view'
 import type { DetailedFinancialSnapshot } from '@/lib/local-financials'
+import type { CandleDataPoint } from '@/lib/stock-price-history-service'
 import type { BankAnalysisData } from '@/lib/banking-types'
 import type { StockEvaluationData } from '@/lib/stock-evaluation-service'
 import type { CompanyFullProfileData } from '@/lib/company-profile-types'
@@ -72,6 +74,7 @@ import type { CompanyWebsiteMeta } from '@/lib/company-website-service'
 import type { BctcCompanyDocumentsPayload } from '@/lib/bctc-document-service'
 
 export type StockDetailTab =
+  | 'overview'
   | 'profile'
   | 'charts'
   | 'articles'
@@ -118,6 +121,7 @@ interface StockDetailViewProps {
   icbHierarchy?: StockIcbHierarchy | null
   companyWebsiteMeta?: CompanyWebsiteMeta | null
   bctcDocuments?: BctcCompanyDocumentsPayload | null
+  initialCandles?: CandleDataPoint[]
 }
 
 function fmt(n: number | null | undefined, dec = 0): string {
@@ -213,19 +217,20 @@ export function StockDetailView({
   articlesData = null,
   initialFinancialStatements = null,
   initialFinancialStatementsAnnual = null,
-  initialTab = 'charts',
+  initialTab = 'overview',
   icbHierarchy = null,
   companyWebsiteMeta = null,
   bctcDocuments = null,
+  initialCandles = [],
 }: StockDetailViewProps) {
   // Tab đang hiển thị trên thanh nút bấm (cập nhật NGAY LẬP TỨC để phản hồi giao diện không delay)
-  const [activeTab, setActiveTab] = useState<StockDetailTab>(initialTab || 'charts')
+  const [activeTab, setActiveTab] = useState<StockDetailTab>(initialTab || 'overview')
   const [expandedSvgChart, setExpandedSvgChart] = useState<'price' | 'revenue' | 'throughput' | null>(null)
   // Phạm vi hiển thị danh sách cùng ngành ở cuối trang ('l4' chuyên sâu hoặc 'l2' nhóm ngành)
   const [gridScope, setGridScope] = useState<'l4' | 'l2'>('l4')
   // Danh sách các tab đã từng được mount (để giữ cache không phải render lại từ đầu)
   const [mountedTabs, setMountedTabs] = useState<Set<StockDetailTab>>(
-    () => new Set([initialTab || 'charts'])
+    () => new Set([initialTab || 'overview'])
   )
   // Tab đang được nạp nội dung (nếu tab đó chưa từng được mount)
   const [loadingTab, setLoadingTab] = useState<StockDetailTab | null>(null)
@@ -758,11 +763,19 @@ export function StockDetailView({
   const TABS = useMemo(() => {
     return [
       {
+        id: 'overview' as StockDetailTab,
+        label: 'Tổng Quan & Đồ Thị',
+        shortLabel: 'Tổng quan',
+        icon: TrendingUp,
+        iconColor: 'text-emerald-500',
+        badge: 'LIVE',
+      },
+      {
         id: 'charts' as StockDetailTab,
         label: 'Biểu Đồ Tài Chính',
-        shortLabel: 'Biểu đồ',
+        shortLabel: 'Biểu đồ BCTC',
         icon: BarChart3,
-        iconColor: 'text-emerald-500',
+        iconColor: 'text-blue-500',
         badge: 'PRO',
       },
       {
@@ -1031,6 +1044,20 @@ export function StockDetailView({
         <TabLoadingSkeleton
           tabLabel={TABS.find((t) => t.id === activeTab)?.label}
         />
+      )}
+
+      {/* ══════════════════════════════════════════════════════════ */}
+      {/* TAB 0: TỔNG QUAN & ĐỒ THỊ KỸ THUẬT                        */}
+      {/* ══════════════════════════════════════════════════════════ */}
+      {mountedTabs.has('overview') && (
+        <div className={cn("animate-in fade-in-50 duration-200", (activeTab !== 'overview' || loadingTab === 'overview') && "hidden")}>
+          {/* Biểu Đồ Nến Kỹ Thuật TradingView (Toàn Màn Hình, Tối Ưu Mobile, Chuẩn FireAnt) */}
+          <TradingViewCandleChart
+            symbol={ticker}
+            companyName={company?.name}
+            initialCandles={initialCandles}
+          />
+        </div>
       )}
 
       {/* ══════════════════════════════════════════════════════════ */}

@@ -228,7 +228,16 @@ export function verifyApiOriginAccess(
   headers: Headers,
   host: string | null
 ): ApiOriginVerificationResult {
-  // 1. Ngoại lệ các route hệ thống, auth callback, cron job và bẫy honeypot
+  // 1. Cho phép môi trường phát triển cục bộ (localhost, 127.0.0.1)
+  if (
+    process.env.NODE_ENV !== 'production' ||
+    host?.includes('localhost') ||
+    host?.includes('127.0.0.1')
+  ) {
+    return { allowed: true }
+  }
+
+  // 2. Ngoại lệ các route hệ thống, auth callback, cron job và bẫy honeypot
   if (
     pathname === '/api/security/trap' ||
     pathname.startsWith('/api/auth/') ||
@@ -244,9 +253,9 @@ export function verifyApiOriginAccess(
   const origin = headers.get('origin')
   const accept = headers.get('accept') || ''
 
-  // 2. Nếu người dùng gõ/paste thẳng link API vào thanh địa chỉ trình duyệt
-  // (sec-fetch-dest === 'document', sec-fetch-mode === 'navigate', hoặc browser gửi accept: text/html)
-  if (secFetchDest === 'document' || secFetchMode === 'navigate' || accept.startsWith('text/html')) {
+  // 3. Nếu người dùng gõ/paste thẳng link API vào thanh địa chỉ trình duyệt
+  // (sec-fetch-dest === 'document' và sec-fetch-mode === 'navigate')
+  if (secFetchDest === 'document' && secFetchMode === 'navigate') {
     // Nếu là API cổ phiếu (vd: /api/stock/HPG/..., /api/financials/HPG, /api/business-plan/HPG)
     // Tự động chuyển hướng về trang giao diện /stock/HPG để xem trực tiếp
     const match = pathname.match(/\/(?:stock|financials|business-plan|reports\/company)\/([A-Za-z0-9]{3,4})/i)
@@ -254,15 +263,6 @@ export function verifyApiOriginAccess(
       return { allowed: false, redirectUrl: `/stock/${match[1].toUpperCase()}` }
     }
     return { allowed: false, redirectUrl: '/' }
-  }
-
-  // Cho phép môi trường phát triển cục bộ (localhost, 127.0.0.1)
-  if (
-    process.env.NODE_ENV !== 'production' ||
-    host?.includes('localhost') ||
-    host?.includes('127.0.0.1')
-  ) {
-    return { allowed: true }
   }
 
   // 3. Chặn các request Cross-Site (từ trang web đối thủ gọi sang trộm API)

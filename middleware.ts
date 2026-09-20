@@ -17,8 +17,9 @@ export const config = {
      * - _next/image (image optimization files)
      * - favicon.ico (favicon file)
      * - icon.svg, robots.txt, sitemap.xml
+     * - .well-known (Chrome devtools, browser app associations)
      */
-    '/((?!_next/static|_next/image|favicon.ico|icon.svg|robots.txt|sitemap.xml).*)',
+    '/((?!_next/static|_next/image|favicon.ico|icon.svg|robots.txt|sitemap.xml|\\.well-known).*)',
   ],
 }
 
@@ -156,27 +157,36 @@ export function middleware(request: NextRequest) {
     }
 
     // 5. Rate Limiting chung cho Web Pages (tối đa 150 requests / phút / IP để chống spam reload)
-    const pageLimiter = checkInMemoryRateLimit(`rl:page:${ip}`, {
-      windowMs: 60_000,
-      max: 150,
-    })
+    // Miễn trừ hoàn toàn cho môi trường phát triển (localhost / 127.0.0.1) và các request prefetch ngầm
+    const isPrefetch =
+      request.headers.get('next-router-prefetch') === '1' ||
+      request.headers.get('purpose') === 'prefetch' ||
+      request.headers.get('sec-purpose') === 'prefetch' ||
+      pathname.startsWith('/.well-known/')
 
-    if (!pageLimiter.success) {
-      console.warn(`[RateLimit Exceeded] IP: ${ip} tải trang quá nhanh trên ${pathname}`)
-      return new NextResponse(
-        `<html><body style="font-family: sans-serif; text-align: center; padding: 50px;">
-          <h2>Yêu cầu bị tạm dừng (429 Too Many Requests)</h2>
-          <p>Hệ thống ghi nhận quá nhiều lượt tải trang trong thời gian ngắn từ thiết bị của bạn.</p>
-          <p>Vui lòng chờ giây lát và tải lại trang.</p>
-        </body></html>`,
-        {
-          status: 429,
-          headers: {
-            'Content-Type': 'text/html; charset=utf-8',
-            'Retry-After': '60',
-          },
-        }
-      )
+    if (!isLocalhost && !isPrefetch) {
+      const pageLimiter = checkInMemoryRateLimit(`rl:page:${ip}`, {
+        windowMs: 60_000,
+        max: 150,
+      })
+
+      if (!pageLimiter.success) {
+        console.warn(`[RateLimit Exceeded] IP: ${ip} tải trang quá nhanh trên ${pathname}`)
+        return new NextResponse(
+          `<html><body style="font-family: sans-serif; text-align: center; padding: 50px;">
+            <h2>Yêu cầu bị tạm dừng (429 Too Many Requests)</h2>
+            <p>Hệ thống ghi nhận quá nhiều lượt tải trang trong thời gian ngắn từ thiết bị của bạn.</p>
+            <p>Vui lòng chờ giây lát và tải lại trang.</p>
+          </body></html>`,
+          {
+            status: 429,
+            headers: {
+              'Content-Type': 'text/html; charset=utf-8',
+              'Retry-After': '60',
+            },
+          }
+        )
+      }
     }
   }
 

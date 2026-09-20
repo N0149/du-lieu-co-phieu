@@ -23,6 +23,11 @@ export interface ScreenerStockItem {
   dy: number | null // Tỷ suất cổ tức % (Dividend yield)
   change1w: number | null // Biến động giá 1 tuần %
   change1m: number | null // Biến động giá 1 tháng %
+  change3m: number | null // Biến động giá 3 tháng %
+  change6m: number | null // Biến động giá 6 tháng %
+  change1y: number | null // Biến động giá 1 năm %
+  change3y: number | null // Biến động giá 3 năm %
+  changeYtd: number | null // Biến động giá từ đầu năm YTD %
   rsi14: number | null // RSI 14 phiên
   volume20d: number | null // Khối lượng giao dịch TB 20 phiên (cp)
   debtToEquity: number | null // Nợ vay / VCSH
@@ -318,6 +323,29 @@ export function getEnrichedScreenerStocks(): ScreenerStockItem[] {
       }
     } catch (err) {
       console.warn('Lỗi đọc dividend_history.db:', err)
+    }
+  }
+
+  // 3.1. XỬ LÝ BIẾN ĐỘNG GIÁ THỰC TẾ (1W, 1M, 3M, 6M, 1Y, 3Y, YTD) từ stock_price_changes.json
+  const priceChangesMap: Record<
+    string,
+    {
+      change1w: number | null
+      change1m: number | null
+      change3m: number | null
+      change6m: number | null
+      change1y: number | null
+      change3y: number | null
+      changeYtd: number | null
+    }
+  > = {}
+  const priceChangesPath = path.join(baseDir, 'data', 'stock_price_changes.json')
+  if (fs.existsSync(priceChangesPath)) {
+    try {
+      const pcData = JSON.parse(fs.readFileSync(priceChangesPath, 'utf-8'))
+      Object.assign(priceChangesMap, pcData)
+    } catch (err) {
+      console.warn('Lỗi đọc stock_price_changes.json:', err)
     }
   }
 
@@ -1082,7 +1110,16 @@ export function getEnrichedScreenerStocks(): ScreenerStockItem[] {
 
     // Tính ước lượng RSI dựa trên 1-week change
     let rsi14: number | null = null
-    const w1 = s.w1 != null ? Number(s.w1) : null
+    // Lấy biến động giá thực tế (1W, 1M, 3M, 6M, 1Y, 3Y, YTD)
+    const pc = priceChangesMap[sym]
+    const w1 = pc?.change1w ?? (s.w1 != null ? Number(s.w1) : null)
+    const m1 = pc?.change1m ?? (w1 != null ? Math.round(w1 * 2.2 * 10) / 10 : null)
+    const m3 = pc?.change3m ?? null
+    const m6 = pc?.change6m ?? null
+    const y1 = pc?.change1y ?? null
+    const y3 = pc?.change3y ?? null
+    const ytd = pc?.changeYtd ?? null
+
     if (w1 != null) {
       rsi14 = Math.min(88, Math.max(18, Math.round(50 + w1 * 3.5)))
     }
@@ -1177,7 +1214,12 @@ export function getEnrichedScreenerStocks(): ScreenerStockItem[] {
       div: exactCashDiv,
       dy: exactDy,
       change1w: w1,
-      change1m: w1 != null ? Math.round(w1 * 2.2 * 10) / 10 : null,
+      change1m: m1,
+      change3m: m3,
+      change6m: m6,
+      change1y: y1,
+      change3y: y3,
+      changeYtd: ytd,
       rsi14,
       volume20d: vol20d,
       debtToEquity,

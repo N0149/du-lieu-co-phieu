@@ -16,8 +16,19 @@ export async function GET(
 
   const { searchParams } = new URL(request.url)
   const years = parseInt(searchParams.get('years') || '3', 10)
+  const format = searchParams.get('format')
 
   try {
+    if (format === 'candles') {
+      const { getStockCandles } = await import('@/lib/stock-price-history-service')
+      const candles = await getStockCandles(ticker, years)
+      return NextResponse.json({ symbol: ticker, candles }, {
+        headers: {
+          'Cache-Control': 'public, s-maxage=3600, stale-while-revalidate=86400',
+        },
+      })
+    }
+
     const data = await getStockPriceHistory(ticker, years)
     if (!data) {
       return NextResponse.json(

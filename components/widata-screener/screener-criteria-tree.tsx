@@ -26,6 +26,7 @@ const CATEGORY_GROUPS = [
     subCategories: [
       'Báo cáo phân tích',
       'Báo cáo tài chính',
+      'Biến động giá',
       'Tỷ lệ LNST không thuộc cổ đông',
       'Cổ tức',
       'Định giá',

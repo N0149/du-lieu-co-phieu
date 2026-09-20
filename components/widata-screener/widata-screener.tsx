@@ -81,21 +81,40 @@ export function WiDataScreener({ initialStocks }: WiDataScreenerProps) {
           // Bỏ chọn chỉ tiêu
           return prev.filter((c) => c.criterionId !== criterion.id)
         } else {
-          // Thêm chỉ tiêu với giá trị mặc định
+          // Tính cận biên min và max thực tế từ danh sách stocks hiện có
+          let actualMin = criterion.min
+          let actualMax = criterion.max
+
+          if (stocks.length > 0) {
+            let minVal = Infinity
+            let maxVal = -Infinity
+            for (const s of stocks) {
+              const v = criterion.getter(s)
+              if (v != null && !isNaN(v)) {
+                if (v < minVal) minVal = v
+                if (v > maxVal) maxVal = v
+              }
+            }
+            if (minVal !== Infinity && maxVal !== -Infinity) {
+              actualMin = Math.floor(minVal * 100) / 100
+              actualMax = Math.ceil(maxVal * 100) / 100
+            }
+          }
+
           return [
             ...prev,
             {
               criterionId: criterion.id,
-              operator: criterion.defaultValue.operator,
-              value1: criterion.defaultValue.value1,
-              value2: criterion.defaultValue.value2,
+              operator: 'between',
+              value1: actualMin,
+              value2: actualMax,
             },
           ]
         }
       })
       setActivePresetId(null)
     },
-    [],
+    [stocks],
   )
 
   // Cập nhật giá trị hoặc toán tử của điều kiện
@@ -296,6 +315,7 @@ export function WiDataScreener({ initialStocks }: WiDataScreenerProps) {
           <div className="flex-1 min-w-0 overflow-y-auto p-4">
             <ScreenerConditionsBuilder
               conditions={conditions}
+              stocks={stocks}
               onUpdateCondition={handleUpdateCondition}
               onRemoveCondition={handleRemoveCondition}
               onResetConditions={handleResetConditions}

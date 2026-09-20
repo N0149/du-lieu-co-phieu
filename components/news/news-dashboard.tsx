@@ -621,14 +621,14 @@ export function NewsDashboard({
             </div>
           ) : (
             <div className="divide-y divide-[#141820]">
-              {filteredDisclosures.slice(0, visibleCount).map((item) => {
+              {filteredDisclosures.slice(0, visibleCount).map((item, idx) => {
                 const priceInfo = stockPriceMap[item.symbol]
                 const isImportant = Boolean(item.is_important)
                 const inWatchlist = userWatchlist.includes(item.symbol.toUpperCase())
 
                 return (
                   <div
-                    key={item.id}
+                    key={`${item.id || 'disc'}-${item.symbol || ''}-${idx}`}
                     className={cn(
                       'transition-colors hover:bg-[#121620]',
                       isImportant && 'bg-amber-500/[0.03]'

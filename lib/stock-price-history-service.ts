@@ -6,6 +6,20 @@ export interface DailyPricePoint {
   date: string // DD/MM/YYYY
   close: number // Giá đóng cửa theo VNĐ (ví dụ 73100)
   volume?: number
+  open?: number // Giá mở cửa theo VNĐ
+  high?: number // Giá cao nhất theo VNĐ
+  low?: number // Giá thấp nhất theo VNĐ
+}
+
+export interface CandleDataPoint {
+  time: string // 'YYYY-MM-DD'
+  open: number // Đơn vị k VNĐ (ví dụ 27.50)
+  high: number
+  low: number
+  close: number
+  volume: number
+  dateStr: string // 'DD/MM/YYYY'
+  timestamp: number
 }
 
 export interface StockPriceHistoryPayload {
@@ -22,6 +36,14 @@ function formatDDMMYYYY(sec: number): string {
   const month = String(d.getMonth() + 1).padStart(2, '0')
   const year = d.getFullYear()
   return `${day}/${month}/${year}`
+}
+
+function formatYYYYMMDD(sec: number): string {
+  const d = new Date(sec * 1000)
+  const year = d.getFullYear()
+  const month = String(d.getMonth() + 1).padStart(2, '0')
+  const day = String(d.getDate()).padStart(2, '0')
+  return `${year}-${month}-${day}`
 }
 
 /**
@@ -55,7 +77,7 @@ export function getLocalPriceWeekly(ticker: string): { d: string; c: number; v: 
 /**
  * Lấy lịch sử giá ngày của mã cổ phiếu trong N năm gần nhất.
  * Ưu tiên:
- * 1. Đọc cache nội bộ từ data/price_history/{symbol}.json (nếu có và còn mới).
+ * 1. Đọc cache nội bộ từ data/price_history/{symbol}.json nếu đã có đầy đủ OHLC.
  * 2. Lấy từ VNDirect TradingView Dchart API.
  * 3. Fallback sang DNSE Entrade API nếu VNDirect gặp lỗi.
  */
@@ -75,12 +97,17 @@ export async function getStockPriceHistory(
   const cacheFile = path.join(CACHE_DIR, `${sym}.json`)
   const now = Date.now()
 
-  // 1. Kiểm tra cache đĩa cục bộ (Offline-First, không gọi mạng bên thứ 3)
+  let cachedPayload: StockPriceHistoryPayload | null = null
+  // 1. Kiểm tra cache đĩa cục bộ
   if (fs.existsSync(cacheFile)) {
     try {
       const cached = JSON.parse(fs.readFileSync(cacheFile, 'utf-8'))
       if (cached && Array.isArray(cached.points) && cached.points.length > 0) {
-        return cached as StockPriceHistoryPayload
+        cachedPayload = cached as StockPriceHistoryPayload
+        // Nếu cache đã có sẵn trường open (full OHLCV), dùng ngay
+        if (cached.points[0]?.open != null) {
+          return cachedPayload
+        }
       }
     } catch {}
   }
@@ -88,7 +115,9 @@ export async function getStockPriceHistory(
   const toSec = Math.floor(now / 1000)
   const fromSec = toSec - Math.max(1, years) * 365 * 86400
 
-  // 2. Dự phòng nạp từ VNDirect DChart API (chỉ khi máy chưa từng có file)
+  const toVnd = (raw: number) => (raw < 500 ? Math.round(raw * 1000) : Math.round(raw))
+
+  // 2. Dự phòng nạp từ VNDirect DChart API (để lấy đủ OHLCV)
   try {
     const vnUrl = `https://dchart-api.vndirect.com.vn/dchart/history?resolution=D&symbol=${sym}&from=${fromSec}&to=${toSec}`
     const res = await fetch(vnUrl, {
@@ -96,7 +125,7 @@ export async function getStockPriceHistory(
         'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36',
         Accept: 'application/json',
       },
-      signal: AbortSignal.timeout(1500),
+      signal: AbortSignal.timeout(3000),
       next: { revalidate: 3600 },
     })
 
@@ -105,17 +134,25 @@ export async function getStockPriceHistory(
       if (data && data.s === 'ok' && Array.isArray(data.t) && data.t.length > 0) {
         const points: DailyPricePoint[] = []
         const times = data.t
-        const closes = data.c
+        const opens = data.o || []
+        const highs = data.h || []
+        const lows = data.l || []
+        const closes = data.c || []
         const volumes = data.v || []
 
         for (let i = 0; i < times.length; i++) {
           const rawClose = Number(closes[i]) || 0
-          // VNDirect trả về đơn vị nghìn đồng nếu < 500
-          const closeVnd = rawClose < 500 ? Math.round(rawClose * 1000) : Math.round(rawClose)
+          const rawOpen = Number(opens[i]) || rawClose
+          const rawHigh = Number(highs[i]) || Math.max(rawOpen, rawClose)
+          const rawLow = Number(lows[i]) || Math.min(rawOpen, rawClose)
+
           points.push({
             time: times[i],
             date: formatDDMMYYYY(times[i]),
-            close: closeVnd,
+            open: toVnd(rawOpen),
+            high: toVnd(rawHigh),
+            low: toVnd(rawLow),
+            close: toVnd(rawClose),
             volume: Number(volumes[i]) || 0,
           })
         }
@@ -145,6 +182,7 @@ export async function getStockPriceHistory(
         'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36',
         Accept: 'application/json',
       },
+      signal: AbortSignal.timeout(3000),
       next: { revalidate: 3600 },
     })
 
@@ -153,16 +191,25 @@ export async function getStockPriceHistory(
       if (data && Array.isArray(data.t) && data.t.length > 0) {
         const points: DailyPricePoint[] = []
         const times = data.t
-        const closes = data.c
+        const opens = data.o || []
+        const highs = data.h || []
+        const lows = data.l || []
+        const closes = data.c || []
         const volumes = data.v || []
 
         for (let i = 0; i < times.length; i++) {
           const rawClose = Number(closes[i]) || 0
-          const closeVnd = rawClose < 500 ? Math.round(rawClose * 1000) : Math.round(rawClose)
+          const rawOpen = Number(opens[i]) || rawClose
+          const rawHigh = Number(highs[i]) || Math.max(rawOpen, rawClose)
+          const rawLow = Number(lows[i]) || Math.min(rawOpen, rawClose)
+
           points.push({
             time: times[i],
             date: formatDDMMYYYY(times[i]),
-            close: closeVnd,
+            open: toVnd(rawOpen),
+            high: toVnd(rawHigh),
+            low: toVnd(rawLow),
+            close: toVnd(rawClose),
             volume: Number(volumes[i]) || 0,
           })
         }
@@ -184,15 +231,74 @@ export async function getStockPriceHistory(
     console.warn(`[StockPriceHistory] Lỗi nạp DNSE cho ${sym}:`, e)
   }
 
-  // 4. Fallback cuối cùng: đọc lại cache cũ nếu có dù đã hết hạn
-  if (fs.existsSync(cacheFile)) {
-    try {
-      const cached = JSON.parse(fs.readFileSync(cacheFile, 'utf-8'))
-      if (cached && Array.isArray(cached.points) && cached.points.length > 0) {
-        return cached as StockPriceHistoryPayload
+  // 4. Fallback cuối cùng: dùng cache cũ đã nạp (dù thiếu OHLC thì tự ước lượng)
+  if (cachedPayload) {
+    const enrichedPoints = cachedPayload.points.map((pt) => {
+      const c = pt.close || 0
+      return {
+        ...pt,
+        open: pt.open ?? c,
+        high: pt.high ?? c,
+        low: pt.low ?? c,
       }
-    } catch {}
+    })
+    return {
+      ...cachedPayload,
+      points: enrichedPoints,
+    }
   }
 
   return null
+}
+
+/**
+ * Lấy danh sách nến chuẩn cho TradingView (Lightweight Charts)
+ * Đơn vị giá: k VNĐ (ví dụ 27.50, 34.63 như trên biểu đồ FireAnt)
+ */
+export async function getStockCandles(
+  symbol: string,
+  years: number = 3
+): Promise<CandleDataPoint[]> {
+  const history = await getStockPriceHistory(symbol, years)
+  if (!history || !Array.isArray(history.points) || history.points.length === 0) return []
+
+  // Sắp xếp các điểm theo unix timestamp tăng dần
+  const sortedPoints = [...history.points].sort((a, b) => a.time - b.time)
+
+  const candleMap = new Map<string, CandleDataPoint>()
+
+  for (const pt of sortedPoints) {
+    const timeStr = formatYYYYMMDD(pt.time)
+    if (!timeStr) continue
+
+    const openVal = Math.round(((pt.open ?? pt.close) / 1000) * 100) / 100
+    const highVal = Math.round(((pt.high ?? pt.close) / 1000) * 100) / 100
+    const lowVal = Math.round(((pt.low ?? pt.close) / 1000) * 100) / 100
+    const closeVal = Math.round((pt.close / 1000) * 100) / 100
+    const vol = pt.volume || 0
+
+    if (candleMap.has(timeStr)) {
+      // Nếu cùng 1 ngày có nhiều điểm: gộp nến để tạo ra nến hợp nhất
+      const existing = candleMap.get(timeStr)!
+      existing.high = Math.max(existing.high, highVal, closeVal)
+      existing.low = Math.min(existing.low, lowVal, closeVal)
+      existing.close = closeVal
+      existing.volume = (existing.volume || 0) + vol
+      existing.timestamp = pt.time
+    } else {
+      candleMap.set(timeStr, {
+        time: timeStr,
+        open: openVal,
+        high: Math.max(highVal, openVal, closeVal),
+        low: Math.min(lowVal, openVal, closeVal),
+        close: closeVal,
+        volume: vol,
+        dateStr: pt.date,
+        timestamp: pt.time,
+      })
+    }
+  }
+
+  // Đảm bảo danh sách trả về strictly sorted theo thời gian
+  return Array.from(candleMap.values()).sort((a, b) => a.time.localeCompare(b.time))
 }

@@ -269,33 +269,112 @@ export function getAgmReport(ticker: string, targetYear = 2026): AgmReportData |
   }
 }
 
+function parseThousand(str: string): number | null {
+  if (!str) return null
+  const clean = str.replace(/[*_~()$\\]/g, '').trim()
+  if (clean === '' || clean === '-') return null
+  const commas = (clean.match(/,/g) || []).length
+  const dots = (clean.match(/\./g) || []).length
+  if (commas > 1 && dots <= 1) return parseFloat(clean.replace(/,/g, ''))
+  return parseFloat(clean.replace(/\./g, '').replace(',', '.'))
+}
+
+function splitPlan2026(targetText: string): string {
+  const headingRegex = /\n#{3,4}\s+(?![^\n]*\b2\.1\b)(?![^\n]*\b2025\b)[^\n]*(?:kế\s*hoạch|dự\s*kiến|bảng\s*2)[^\n]*2026[^\n]*/gi
+  const match = headingRegex.exec(targetText)
+  if (match) {
+    return targetText.slice(0, match.index)
+  }
+  return targetText
+}
+
+function stripFundBalanceSections(targetText: string): string {
+  return targetText.replace(
+    /\n#{3,4}\s+(?:bảng\s*)?(?:tình\s*hình\s*(?:số\s*dư\s*)?(?:các\s*)?quỹ|số\s*dư\s*(?:các\s*)?quỹ|biến\s*động\s*(?:các\s*)?quỹ)[\s\S]*?(?=\n#{2,4}\s+|$)/gi,
+    ''
+  )
+}
+
 export function extractKtplFromMarkdown(content: string, ticker = ''): { rate: number; method: string; ktplVnd: number | null; lnstVnd: number | null } | null {
   let targetText = content
-  const m2Match = content.match(/##\s+MỤC\s+2[:\s]+([\s\S]*?)(?=##\s+MỤC|\$)/i)
+  // Lookahead fix: (?=##\s+MỤC|$)
+  const m2Match = content.match(/##\s+MỤC\s+2[:\s]+([\s\S]*?)(?=##\s+MỤC|$)/i)
   if (m2Match) targetText = m2Match[1]
 
-  const part2Split = targetText.split(/###\s*2\.?\s*Kế\s*hoạch/i)
-  const currentYearText = part2Split.length > 1 ? part2Split[0] : targetText
+  // Split out 2026 plan tables and fund balance movement tables
+  let currentYearText = splitPlan2026(targetText)
+  currentYearText = stripFundBalanceSections(currentYearText)
   const lines = currentYearText.split('\n')
+
+  // Detect unit
+  const isTrieuDong = /triệu\s*đồng|trđ|\(trđ\)/i.test(currentYearText)
+  const isTyDong = /tỷ\s*đồng|\(tỷ\s*đồng\)/i.test(currentYearText)
+  const minVal = isTyDong ? 0.001 : isTrieuDong ? 0.5 : 100000
+  const minLnstVal = isTyDong ? 0.1 : isTrieuDong ? 50 : 100000000
+
+  // Track header columns
+  let headerCols: string[] | null = null
+  let thucHienColIdx = -1
+
+  for (const line of lines) {
+    if (!line.includes('|')) continue
+    const cols = line.split('|').map((c) => c.trim()).filter((_, i, arr) => i > 0 && i < arr.length - 1)
+    if (cols.some((c) => /chỉ\s*tiêu|nội\s*dung|thuyết\s*minh|khoản\s*mục/i.test(c))) {
+      headerCols = cols
+      thucHienColIdx = cols.findIndex((c) => /thực\s*hiện/i.test(c) && !/tỷ\s*lệ|%/i.test(c))
+      break
+    }
+  }
+
+  function isNoteCol(idx: number, cellText: string): boolean {
+    if (headerCols && headerCols[idx] && /ghi\s*chú|diễn\s*giải|căn\s*cứ|quy\s*định|giải\s*trình/i.test(headerCols[idx])) return true
+    if (/^trong\s*đó:|^căn\s*cứ:|^theo\s*nđ/i.test(cellText.replace(/[*_~]/g, '').trim())) return true
+    return false
+  }
 
   let lnst: number | null = null
   for (const line of lines) {
     if (!line.includes('|')) continue
-    if (/^\|?\s*[\d.*-]*\s*trích/i.test(line)) continue
-    if (/chưa\s*phân\s*phối\s*trên\s*bctc|lũy\s*kế|năm\s*2024|năm\s*trước|đầu\s*năm/i.test(line)) continue
+    const cols = line.split('|').map((c) => c.trim()).filter((_, i, arr) => i > 0 && i < arr.length - 1)
+    if (cols.length < 2) continue
 
-    if (/lợi\s*nhuận\s*sau\s*thuế|lnst/i.test(line) && /2025|năm\s*nay|phát\s*sinh/i.test(line)) {
-      const numMatches = [...line.matchAll(/\b\d{1,3}(?:[.,]\d{3})+(?:[.,]\d+)?\b/g)]
-      if (numMatches.length > 0) {
-        const vals = numMatches.map((m) => parseFloat(m[0].replace(/\./g, '').replace(',', '.'))).filter((v) => v > 100000000)
-        if (vals.length > 0) {
-          if (/kế\s*hoạch.*thực\s*hiện/i.test(currentYearText) && vals.length >= 2) {
-            lnst = vals[1]
-          } else {
-            lnst = vals[vals.length - 1]
-          }
-          break
+    let nameCol = cols[1] || ''
+    if (cols[0] && (cols[0].length > 10 || /^(Lợi\s*nhuận|Trích|Quỹ|Doanh\s*thu|Cổ\s*tức|Tổng|Chỉ\s*tiêu|Nội\s*dung)/i.test(cols[0].replace(/[*_~]/g, '').trim()))) {
+      nameCol = cols[0]
+    }
+
+    if (/^[\d.*-]*\s*trích|^[\d.*-]*\s*quỹ|chi\s*trả\s*cổ\s*tức|chia\s*cổ\s*tức/i.test(nameCol)) continue
+    if (/chưa\s*phân\s*phối\s*trên\s*bctc|năm\s*2024|năm\s*trước|đầu\s*năm/i.test(line)) continue
+
+    if (/lợi\s*nhuận\s*sau\s*thuế|lnst/i.test(nameCol) && /2025|năm\s*nay|phát\s*sinh|thực\s*hiện/i.test(line)) {
+      const vals: number[] = []
+      for (let i = 0; i < cols.length; i++) {
+        if (cols[i] === nameCol || isNoteCol(i, cols[i])) continue
+        const c = cols[i]
+        if (/^(triệu\s*đồng|đồng|tỷ\s*đồng|vnđ|%|đvt)$/i.test(c.replace(/[*_~]/g, '').trim())) continue
+        const numMatches = [...c.matchAll(/\b\d{1,3}(?:[.,]\d{3})*(?:[.,]\d+)?\b/g)]
+        for (const m of numMatches) {
+          const v = parseThousand(m[0])
+          if (v !== null && v > minLnstVal && !c.includes('%')) vals.push(v)
         }
+      }
+      if (vals.length > 0) {
+        if (thucHienColIdx !== -1 && cols[thucHienColIdx]) {
+          const m = cols[thucHienColIdx].match(/\b\d{1,3}(?:[.,]\d{3})*(?:[.,]\d+)?\b/)
+          if (m) {
+            const v = parseThousand(m[0])
+            if (v && v > minLnstVal) {
+              lnst = v
+              break
+            }
+          }
+        }
+        if (/kế\s*hoạch.*thực\s*hiện/i.test(currentYearText) && vals.length >= 2) {
+          lnst = vals[1]
+        } else {
+          lnst = vals[vals.length - 1]
+        }
+        break
       }
     }
   }
@@ -303,12 +382,40 @@ export function extractKtplFromMarkdown(content: string, ticker = ''): { rate: n
   if (!lnst) {
     for (const line of lines) {
       if (!line.includes('|')) continue
-      if (/^\|?\s*[\d.*-]*\s*trích/i.test(line)) continue
-      if (/chưa\s*phân\s*phối\s*trên\s*bctc|lũy\s*kế|năm\s*2024|năm\s*trước|đầu\s*năm|kế\s*hoạch\s*2026/i.test(line)) continue
-      if (/lợi\s*nhuận\s*sau\s*thuế|lnst/i.test(line)) {
-        const numMatches = [...line.matchAll(/\b\d{1,3}(?:[.,]\d{3})+(?:[.,]\d+)?\b/g)]
-        const vals = numMatches.map((m) => parseFloat(m[0].replace(/\./g, '').replace(',', '.'))).filter((v) => v > 100000000)
+      const cols = line.split('|').map((c) => c.trim()).filter((_, i, arr) => i > 0 && i < arr.length - 1)
+      if (cols.length < 2) continue
+
+      let nameCol = cols[1] || ''
+      if (cols[0] && (cols[0].length > 10 || /^(Lợi\s*nhuận|Trích|Quỹ|Doanh\s*thu|Cổ\s*tức|Tổng|Chỉ\s*tiêu|Nội\s*dung)/i.test(cols[0].replace(/[*_~]/g, '').trim()))) {
+        nameCol = cols[0]
+      }
+
+      if (/^[\d.*-]*\s*trích|^[\d.*-]*\s*quỹ|chi\s*trả\s*cổ\s*tức|chia\s*cổ\s*tức/i.test(nameCol)) continue
+      if (/chưa\s*phân\s*phối\s*trên\s*bctc|năm\s*2024|năm\s*trước|đầu\s*năm|kế\s*hoạch\s*2026/i.test(line)) continue
+
+      if (/lợi\s*nhuận\s*sau\s*thuế|lnst|lợi\s*nhuận\s*được\s*phân\s*phối|lợi\s*nhuận\s*(?:thực\s*hiện\s*)?phân\s*phối|lợi\s*nhuận\s*sử\s*dụng\s*để\s*phân\s*phối|tổng\s*lợi\s*nhuận\s*phân\s*phối/i.test(nameCol)) {
+        const vals: number[] = []
+        for (let i = 0; i < cols.length; i++) {
+          if (cols[i] === nameCol || isNoteCol(i, cols[i])) continue
+          const c = cols[i]
+          if (/^(triệu\s*đồng|đồng|tỷ\s*đồng|vnđ|%|đvt)$/i.test(c.replace(/[*_~]/g, '').trim())) continue
+          const numMatches = [...c.matchAll(/\b\d{1,3}(?:[.,]\d{3})*(?:[.,]\d+)?\b/g)]
+          for (const m of numMatches) {
+            const v = parseThousand(m[0])
+            if (v !== null && v > minLnstVal && !c.includes('%')) vals.push(v)
+          }
+        }
         if (vals.length > 0) {
+          if (thucHienColIdx !== -1 && cols[thucHienColIdx]) {
+            const m = cols[thucHienColIdx].match(/\b\d{1,3}(?:[.,]\d{3})*(?:[.,]\d+)?\b/)
+            if (m) {
+              const v = parseThousand(m[0])
+              if (v && v > minLnstVal) {
+                lnst = v
+                break
+              }
+            }
+          }
           if (/kế\s*hoạch.*thực\s*hiện/i.test(currentYearText) && vals.length >= 2) {
             lnst = vals[1]
           } else {
@@ -320,19 +427,48 @@ export function extractKtplFromMarkdown(content: string, ticker = ''): { rate: n
     }
   }
 
-  const nonShareholderRegex = /(khen\s*thưởng|phúc\s*lợi|ktpl|quỹ\s*thưởng|thưởng\s*(?:ban\s*)?điều\s*hành|thưởng\s*người\s*quản\s*lý|thưởng\s*nql|thưởng\s*bđh|thưởng\s*(?:do\s*)?(?:hoàn\s*thành|vượt)|thù\s*lao\s*hđqt|thù\s*lao\s*(?:hội\s*đồng\s*quản\s*trị|bks|ban\s*kiểm\s*soát)|thưởng\s*(?:hđqt|hội\s*đồng\s*quản\s*trị|bks|ban\s*kiểm\s*soát|tổng\s*giám\s*đốc|tgđ|kế\s*toán\s*trưởng)|công\s*tác\s*xã\s*hội|từ\s*thiện|an\s*sinh\s*xã\s*hội)/i
-  const equityRegex = /(đầu\s*tư\s*phát\s*triển|dự\s*trữ\s*(bắt\s*buộc|bổ\s*sung)|dự\s*phòng\s*tài\s*chính|cổ\s*tức|chưa\s*phân\s*phối|còn\s*lại|chuyển\s*sang|năm\s*trước|tích\s*lũy|thành\s*phần|chỉ\s*tiêu|cộng\s*các\s*quỹ|trích\s*lập\s*các\s*quỹ|tổng\s*lợi\s*nhuận|tổng\s*cộng|cổ\s*phiếu\s*thưởng|thưởng\s*bằng\s*cổ\s*phiếu)/i
+  // Fallback LNST if still null
+  if (!lnst) {
+    for (const line of lines) {
+      if (!line.includes('|')) continue
+      const cols = line.split('|').map((c) => c.trim()).filter((_, i, arr) => i > 0 && i < arr.length - 1)
+      if (cols.length < 2) continue
+      let nameCol = cols[1] || ''
+      if (cols[0] && (cols[0].length > 10 || /^(Lợi\s*nhuận|Trích|Quỹ|Doanh\s*thu|Cổ\s*tức|Tổng|Chỉ\s*tiêu|Nội\s*dung)/i.test(cols[0].replace(/[*_~]/g, '').trim()))) {
+        nameCol = cols[0]
+      }
+      if (/lợi\s*nhuận\s*sau\s*thuế\s*chưa\s*phân\s*phối\s*lũy\s*kế|lợi\s*nhuận\s*sau\s*thuế\s*dùng\s*để\s*trích/i.test(nameCol)) {
+        for (let i = 0; i < cols.length; i++) {
+          if (cols[i] === nameCol || isNoteCol(i, cols[i])) continue
+          const c = cols[i]
+          const numMatches = [...c.matchAll(/\b\d{1,3}(?:[.,]\d{3})*(?:[.,]\d+)?\b/g)]
+          for (const m of numMatches) {
+            const v = parseThousand(m[0])
+            if (v !== null && v > minLnstVal && !c.includes('%')) {
+              lnst = v
+              break
+            }
+          }
+          if (lnst) break
+        }
+        if (lnst) break
+      }
+    }
+  }
+
+  const nonShareholderRegex = /(khen\s*thưởng|phúc\s*lợi|ktpl|quỹ\s*thưởng|trích\s*thưởng|thưởng\s*(?:cho\s*)?(?:ban\s*)?(?:bgđ|bđh|hđqt|bks|ubkt|nql|tgđ|giám\s*đốc|điều\s*hành|quản\s*lý|kiểm\s*soát|cán\s*bộ|nhân\s*viên|lao\s*động|chủ\s*chốt|người\s*quản\s*lý)|thưởng\s*(?:do\s*)?(?:hoàn\s*thành|vượt|hiệu\s*quả)|thưởng\s*(?:hội\s*đồng\s*quản\s*trị|ban\s*kiểm\s*soát|ban\s*giám\s*đốc|ban\s*điều\s*hành|thành\s*viên)|thù\s*lao\s*hđqt|thù\s*lao\s*(?:hội\s*đồng\s*quản\s*trị|bks|ban\s*kiểm\s*soát|ubkt)|công\s*tác\s*xã\s*hội|từ\s*thiện|an\s*sinh\s*xã\s*hội)/i
+  const pureEquityRegex = /^(?:trích\s*(?:lập\s*)?)?(quỹ\s*đầu\s*tư\s*phát\s*triển|quỹ\s*đtpt|quỹ\s*dự\s*trữ|quỹ\s*dự\s*phòng|cổ\s*tức|cổ\s*phiếu\s*thưởng|thưởng\s*bằng\s*cổ\s*phiếu|lợi\s*nhuận\s*(?:còn\s*lại|chưa\s*(?:phân\s*phối|chia)|chuyển\s*sang|để\s*lại|năm\s*trước)|lnst\s*còn\s*lại)/i
 
   function getSttLevel(stt: string, nameCol: string, line: string): number {
-    if (/trong\s*đó/i.test(line)) return 99
-    if (!stt || stt.trim() === '') return 99
-    const clean = stt.replace(/[*_~]/g, '').trim()
-    if (/^[-–—+•]/.test(clean)) return 99
-    if (/^\d+$/.test(clean)) return 1
-    if (/^[IVXLCDM]+$/i.test(clean)) return 1
-    if (/^[A-Z]$/.test(clean)) return 1
-    if (/^\d+\.\d+$/.test(clean)) return 2
-    if (/^[a-z]$/.test(clean)) return 2
+    if (/trong\s*đó/i.test(line) || /trong\s*đó/i.test(nameCol)) return 99
+    const clean = (stt || '').replace(/[*_~]/g, '').trim()
+    const cleanName = (nameCol || '').replace(/[*_~]/g, '').trim()
+    if (/^\+/.test(clean) || /^\+/.test(cleanName)) return 4
+    if (/^[-–—•]/.test(cleanName)) return 3
+    if (!clean || clean === '') return 99
+    if (/^\d+$/.test(clean) || /^[IVXLCDM]+$/i.test(clean) || /^[A-Z]$/.test(clean)) return 1
+    if (/^\d+\.\d+$/.test(clean) || /^[a-z]$/.test(clean)) return 2
+    if (/^[-–—•]/.test(clean)) return 2
     if (/^\d+\.\d+\.\d+/.test(clean)) return 3
     if (/^[a-z]\d+/.test(clean)) return 3
     return 2
@@ -341,24 +477,59 @@ export function extractKtplFromMarkdown(content: string, ticker = ''): { rate: n
   const items: { text: string; vnd: number | null; pct: number | null; level: number }[] = []
   const seenLines = new Set<string>()
   let activeParentLevel: number | null = null
+  let activeCombinedLevel: number | null = null
+  let hasExplicitZeroRow = false
 
   for (const line of lines) {
     if (!line.includes('|')) continue
     if (/kế\s*hoạch\s*2026|dự\s*kiến\s*2026/i.test(line)) continue
 
-    const cols = line.split('|').map((c) => c.trim())
-    const rawStt = cols[1] || ''
-    const nameCol = cols[2] || ''
+    const cols = line.split('|').map((c) => c.trim()).filter((_, i, arr) => i > 0 && i < arr.length - 1)
+    if (cols.length < 2) continue
+
+    let rawStt = cols[0] || ''
+    let nameCol = cols[1] || ''
+    let valueColumns = cols.slice(2)
+
+    if (cols[0] && (cols[0].length > 10 || /^(Lợi\s*nhuận|Trích|Quỹ|Doanh\s*thu|Cổ\s*tức|Tổng|Chỉ\s*tiêu|Nội\s*dung)/i.test(cols[0].replace(/[*_~]/g, '').trim()))) {
+      nameCol = cols[0]
+      rawStt = ''
+      valueColumns = cols.slice(1)
+    }
+
     const level = getSttLevel(rawStt, nameCol, line)
 
     if (activeParentLevel !== null && level <= activeParentLevel) {
       activeParentLevel = null
     }
+    const cleanName = nameCol.replace(/[*_~]/g, '').trim()
+    if (activeCombinedLevel !== null && level <= activeCombinedLevel && !/^[-–—•+]/.test(cleanName)) {
+      activeCombinedLevel = null
+    }
 
-    if (!nonShareholderRegex.test(line)) continue
-    if (equityRegex.test(line)) continue
+    if (!nonShareholderRegex.test(cleanName) && /lợi\s*nhuận\s*sau\s*thuế|lnst|doanh\s*thu/i.test(cleanName)) continue
+
+    if (!nonShareholderRegex.test(cleanName)) {
+      if (!nonShareholderRegex.test(line) || pureEquityRegex.test(cleanName)) continue
+    } else {
+      if (pureEquityRegex.test(cleanName)) continue
+    }
 
     if (activeParentLevel !== null && level > activeParentLevel) {
+      continue
+    }
+    if (activeCombinedLevel !== null) {
+      const isSubOfCombined = level > activeCombinedLevel ||
+                              /^[-–—•+]/.test(cleanName) ||
+                              /^[-–—•+]/.test(rawStt.replace(/[*_~]/g, '').trim()) ||
+                              /trong\s*đó/i.test(line) ||
+                              /%\s*(?:quỹ\s*)?ktpl/i.test(line)
+      if (isSubOfCombined) {
+        continue
+      }
+    }
+
+    if (/tán\s*thành|thông\s*qua|biểu\s*quyết/i.test(line) && !/lnst|lợi\s*nhuận|tháng\s*lương/i.test(line)) {
       continue
     }
 
@@ -366,26 +537,73 @@ export function extractKtplFromMarkdown(content: string, ticker = ''): { rate: n
     if (seenLines.has(cleanKey)) continue
     seenLines.add(cleanKey)
 
-    const numMatches = [...line.matchAll(/\b\d{1,3}(?:[.,]\d{3})+(?:[.,]\d+)?\b/g)]
-    const vals = numMatches.map((m) => parseFloat(m[0].replace(/\./g, '').replace(',', '.'))).filter((v) => v > 100000)
+    const valueColsText = valueColumns.join(' | ')
+    const isZeroRow = /(?:^|[^\d.,])0+(?:[.,]0+)?\s*%|\b0\s*(?:đồng|vnđ)|\b0\s*\(|không\s*trích|chưa\s*trích/i.test(valueColsText) ||
+                      (valueColumns.length > 0 && valueColumns.every((c) => {
+                        const cl = c.replace(/[*_~]/g, '').trim()
+                        return cl === '0' || cl === '0,0' || cl === '0.0' || cl === '-' || /(?:^|[^\d.,])0+(?:[.,]0+)?\s*%/.test(cl)
+                      }))
 
-    const pctMatch = line.match(/(?:~|\s)?(\d+(?:[.,]\d+)?)\s*%\s*(?:lnst)?/i)
+    if (isZeroRow) {
+      hasExplicitZeroRow = true
+      items.push({ text: line.trim(), vnd: 0, pct: 0, level })
+      continue
+    }
+
+    const vals: number[] = []
+    for (let i = 0; i < cols.length; i++) {
+      if (cols[i] === nameCol || isNoteCol(i, cols[i])) continue
+      const c = cols[i]
+      if (/^(triệu\s*đồng|đồng|tỷ\s*đồng|vnđ|%|đvt)$/i.test(c.replace(/[*_~]/g, '').trim())) continue
+      if (/^\s*\d+\s*tháng/i.test(c.replace(/[*_~]/g, '').trim())) continue
+
+      const numMatches = [...c.matchAll(/\b\d{1,3}(?:[.,]\d{3})*(?:[.,]\d+)?\b/g)]
+      for (const m of numMatches) {
+        const idx = c.indexOf(m[0])
+        const after = c.slice(idx + m[0].length, idx + m[0].length + 10)
+        if (/^\s*tháng/i.test(after)) continue
+
+        const val = parseThousand(m[0])
+        if (val !== null && val >= minVal) {
+          if (c.includes('%') && val <= 100 && !c.toLowerCase().includes('tỷ') && !c.toLowerCase().includes('triệu')) {
+            continue
+          }
+          vals.push(val)
+        }
+      }
+    }
+
+    const pctMatch = valueColsText.match(/(?:~|\s)?([*_~]*\d+(?:[.,]\d+)?)[*_~]*\s*%/i)
     let pct: number | null = null
-    if (pctMatch && !/tán\s*thành/i.test(line)) {
-      pct = parseFloat(pctMatch[1].replace(',', '.'))
+    if (pctMatch && !/tán\s*thành|thông\s*qua|biểu\s*quyết/i.test(valueColsText)) {
+      const p = parseThousand(pctMatch[1])
+      if (p !== null && p <= 100) pct = p
     }
 
     let vnd: number | null = null
     if (vals.length > 0) {
-      if (/kế\s*hoạch.*thực\s*hiện/i.test(currentYearText) && vals.length >= 2) {
-        vnd = vals[1]
-      } else {
-        vnd = vals[vals.length - 1]
+      if (thucHienColIdx !== -1 && cols[thucHienColIdx]) {
+        const m = cols[thucHienColIdx].match(/\b\d{1,3}(?:[.,]\d{3})*(?:[.,]\d+)?\b/)
+        if (m) {
+          const v = parseThousand(m[0])
+          if (v && v >= minVal) vnd = v
+        }
+      }
+      if (vnd === null) {
+        if (/kế\s*hoạch.*thực\s*hiện/i.test(currentYearText) && vals.length >= 2) {
+          vnd = vals[1]
+        } else {
+          vnd = vals[vals.length - 1]
+        }
       }
     }
 
     if (vnd !== null || pct !== null) {
       items.push({ text: line.trim(), vnd, pct, level })
+      const isCombinedKtpl = /(?:khen\s*thưởng.*phúc\s*lợi|phúc\s*lợi.*khen\s*thưởng|ktpl)/i.test(cleanName)
+      if (isCombinedKtpl) {
+        activeCombinedLevel = level
+      }
       if (level < 99) {
         activeParentLevel = level
       }
@@ -394,10 +612,21 @@ export function extractKtplFromMarkdown(content: string, ticker = ''): { rate: n
 
   let totalVnd = 0
   let totalPct = 0
+  let positiveCount = 0
   items.forEach((it) => {
-    if (it.vnd) totalVnd += it.vnd
-    if (it.pct) totalPct += it.pct
+    if (it.vnd) {
+      totalVnd += it.vnd
+      positiveCount++
+    }
+    if (it.pct) {
+      totalPct += it.pct
+      positiveCount++
+    }
   })
+
+  if (positiveCount === 0 && hasExplicitZeroRow) {
+    return { rate: 0, method: 'table_zero', ktplVnd: 0, lnstVnd: lnst }
+  }
 
   if (lnst && totalVnd > 0 && totalVnd < lnst) {
     const rate = Math.round((totalVnd / lnst) * 10000) / 100
@@ -419,13 +648,13 @@ export function extractKtplFromMarkdown(content: string, ticker = ''): { rate: n
   }
 
   const patterns = [
-    /(?:tỷ\s*lệ\s*trích\s*(?:lập\s*)?(?:quỹ\s*)?(?:khen\s*thưởng\s*[,/&]?\s*phúc\s*lợi|ktpl)|quỹ\s*khen\s*thưởng\s*[,/&]?\s*phúc\s*lợi)[^:\n*]{0,80}[:*]+\s*(?:có\s*trích[^*]+)?(?:\*\*)?([0-9]+(?:[.,][0-9]+)?)\s*%/i,
-    /(?:khen\s*thưởng\s*[,/&]?\s*phúc\s*lợi|ktpl)[^\n]{0,120}?(?:chiếm|tương\s*đương|tương\s*ứng)\s*(?:khoảng|~)?\s*(?:\*\*)?(\d+(?:[.,]\d+)?)\s*%/i,
+    /(?:tỷ\s*lệ\s*trích\s*(?:lập\s*)?(?:quỹ\s*)?(?:khen\s*thưởng\s*(?:[,/&\-–—]|và)?\s*phúc\s*lợi|ktpl)|quỹ\s*khen\s*thưởng\s*(?:[,/&\-–—]|và)?\s*phúc\s*lợi)[^:\n*]{0,80}[:*]+\s*(?:có\s*trích[^*]+)?(?:\*\*)?([0-9]+(?:[.,][0-9]+)?)\s*%(?:\*\*)?/i,
+    /(?:khen\s*thưởng\s*(?:[,/&\-–—]|và)?\s*phúc\s*lợi|ktpl)[^\n]{0,120}?(?:chiếm|tương\s*đương|tương\s*ứng)\s*(?:khoảng|~)?\s*(?:\*\*)?(\d+(?:[.,]\d+)?)\s*%(?:\*\*)?/i,
     /\(\s*(?:tương\s*đương|tương\s*ứng|chiếm)\s*(?:khoảng|~)?\s*(?:\*\*)?(\d+(?:[.,]\d+)?)\s*%\s*(?:\*\*)?\s*lnst/i,
     /(?:khen\s*thưởng\s*[,/&]?\s*phúc\s*lợi|ktpl)\s*\(\s*0?(\d+(?:[.,]\d+)?)\s*%\s*lnst\s*\)/i,
     /(?:trích|trích\s*lập)\s*(?:\*\*)?(\d+(?:[.,]\d+)?)\s*%(?:\*\*)?\s*(?:lnst|lợi\s*nhuận\s*sau\s*thuế)[^\n]{0,80}?(?:khen\s*thưởng|phúc\s*lợi|ktpl)/i,
     /(?:khen\s*thưởng\s*[,/&]?\s*phúc\s*lợi|ktpl)[^\n]{0,50}?\(\s*(\d+(?:[.,]\d+)?)\s*%\s*\)/i,
-    /trích\s*(?:lập\s*)?(?:quỹ\s*)?(?:khen\s*thưởng\s*[,/&]?\s*phúc\s*lợi|ktpl)[^\n]{0,80}?(?:trích\s*)?(?:\*\*)?(\d+(?:[.,]\d+)?)\s*%(?:\*\*)?\s*(?:lnst|lợi\s*nhuận\s*sau\s*thuế)/i,
+    /trích\s*(?:lập\s*)?(?:quỹ\s*)?(?:khen\s*thưởng\s*(?:[,/&\-–—]|và)?\s*phúc\s*lợi|ktpl)[^\n]{0,80}?(?:trích\s*)?(?:\*\*)?(\d+(?:[.,]\d+)?)\s*%(?:\*\*)?\s*(?:lnst|lợi\s*nhuận\s*sau\s*thuế)/i,
     /trích\s*(\d+(?:[.,]\d+)?)\s*%\s*trên\s*lợi\s*nhuận\s*sau\s*thuế[^\n]{0,60}?(?:khen\s*thưởng|phúc\s*lợi|ktpl)/i,
     /quỹ\s*khen\s*thưởng[^\n]{0,40}?trích\s*(\d+(?:[.,]\d+)?)\s*%/i,
     /quỹ\s*phúc\s*lợi[^\n]{0,40}?trích\s*(\d+(?:[.,]\d+)?)\s*%/i,
@@ -434,13 +663,13 @@ export function extractKtplFromMarkdown(content: string, ticker = ''): { rate: n
   for (const pat of patterns) {
     const m = targetText.match(pat)
     if (m) {
-      const val = parseFloat(m[1].replace(',', '.'))
-      if (val <= 100) return { rate: val, method: 'direct_regex', ktplVnd: null, lnstVnd: lnst }
+      const val = parseThousand(m[1])
+      if (val !== null && val <= 100) return { rate: val, method: 'direct_regex', ktplVnd: null, lnstVnd: lnst }
     }
   }
 
   if (
-    /(?:không|chưa)\s*(?:thực\s*hiện\s*)?trích\s*(?:lập\s*)?(?:quỹ\s*)?(?:khen\s*thưởng|phúc\s*lợi|ktpl)/i.test(targetText) ||
+    /(?:không|chưa)\s*(?:thực\s*hiện\s*)?trích\s*(?:lập\s*)?(?:các\s*)?(?:quỹ\s*)?(?:này|khen\s*thưởng|phúc\s*lợi|ktpl)/i.test(targetText) ||
     /không\s*có\s*(?:báo\s*cáo\s*)?trích\s*lập\s*(?:riêng\s*)?(?:quỹ\s*)?(?:khen\s*thưởng|phúc\s*lợi|ktpl)/i.test(targetText) ||
     /không\s*trích\s*(?:lập\s*)?quỹ\s*ktpl/i.test(targetText) ||
     /tỷ\s*lệ\s*trích\s*lập\s*các\s*quỹ\s*khen\s*thưởng\s*phúc\s*lợi[^\n]{0,60}?0%/i.test(targetText) ||
@@ -452,7 +681,7 @@ export function extractKtplFromMarkdown(content: string, ticker = ''): { rate: n
   for (const line of lines) {
     if (!line.includes('|')) continue
     if (!/khen\s*thưởng|ktpl|phúc\s*lợi/i.test(line)) continue
-    if (/\|\s*0\s*\|/i.test(line) || /\|\s*0\s*vnđ/i.test(line) || /\|\s*\*\*0\*\*\s*\|/i.test(line) || /\|\s*0%\s*\|/i.test(line)) {
+    if (/\|\s*0\s*\|/i.test(line) || /\|\s*0\s*vnđ/i.test(line) || /\|\s*\*\*0\*\*\s*\|/i.test(line) || /\|\s*0%\s*\|/i.test(line) || /\|\s*0%\s*\([^)]*\)\s*\|/i.test(line) || /\|\s*\*\*0%\s*\([^)]*\)\*\*\s*\|/i.test(line) || /\|\s*\*\*0%\*\*\s*\|/i.test(line) || /\|\s*0\s*\(/i.test(line)) {
       return { rate: 0, method: 'table_zero', ktplVnd: 0, lnstVnd: lnst }
     }
   }

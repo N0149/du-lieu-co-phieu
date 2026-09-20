@@ -27,7 +27,7 @@ import { getBctcReport, getAvailableBctcTickers } from '@/lib/bctc-service'
 import { getStockIcbHierarchy } from '@/lib/icb-service'
 import { getFinancialStatements } from '@/lib/financial-statements-db'
 import { getStockArticles } from '@/lib/stock-articles-service'
-import { getLocalPriceWeekly } from '@/lib/stock-price-history-service'
+import { getLocalPriceWeekly, getStockCandles } from '@/lib/stock-price-history-service'
 import { getCompanyWebsiteMeta } from '@/lib/company-website-service'
 import { getCompanyBctcDocuments } from '@/lib/bctc-document-service'
 
@@ -65,10 +65,12 @@ export default async function StockDetailPage({
 }) {
   const { symbol } = await params
   const sParams = searchParams ? await searchParams : {}
-  const rawTab = sParams?.tab?.toLowerCase()
-  let initialTab: 'profile' | 'charts' | 'articles' | 'community' | 'financials' | 'peers' | 'reports' | 'agm' | 'bctc' = 'charts'
+  const rawTab = sParams.tab?.toLowerCase()
+  let initialTab: 'overview' | 'profile' | 'charts' | 'articles' | 'community' | 'financials' | 'peers' | 'reports' | 'agm' | 'bctc' = 'overview'
 
-  if (rawTab === 'profile') initialTab = 'profile'
+  if (rawTab === 'overview' || rawTab === 'tong-quan' || rawTab === 'do-thi' || rawTab === 'chart') initialTab = 'overview'
+  else if (rawTab === 'charts' || rawTab === 'financial-charts' || rawTab === 'tai-chinh' || rawTab === 'bctc-chart') initialTab = 'charts'
+  else if (rawTab === 'profile') initialTab = 'profile'
   else if (rawTab === 'articles' || rawTab === 'news' || rawTab === 'bai-viet' || rawTab === 'tin-tuc') initialTab = 'articles'
   else if (rawTab === 'community' || rawTab === 'cong-dong' || rawTab === 'thao-luan' || rawTab === 'dien-dan') initialTab = 'community'
   else if (rawTab === 'financials') initialTab = 'financials'
@@ -76,7 +78,6 @@ export default async function StockDetailPage({
   else if (rawTab === 'reports') initialTab = 'reports'
   else if (rawTab === 'agm' || rawTab === 'dhcd' || rawTab === 'dhcd-2026' || rawTab === 'dai-hoi-co-dong') initialTab = 'agm'
   else if (rawTab === 'bctc' || rawTab === 'thuyet-minh' || rawTab === 'thuyetminh' || rawTab === 'notes') initialTab = 'bctc'
-  else if (rawTab === 'charts' || rawTab === 'financial-charts') initialTab = 'charts'
 
   const ticker = symbol.toUpperCase().trim()
 
@@ -106,6 +107,7 @@ export default async function StockDetailPage({
     availableBctcTickers,
     articlesData,
     companyWebsiteMeta,
+    initialCandles,
   ] = await Promise.all([
     fetchStockDetailData(ticker, getLocalPriceWeekly(ticker)),
     getStockEvaluation(ticker),
@@ -124,6 +126,7 @@ export default async function StockDetailPage({
     Promise.resolve(getAvailableBctcTickers()),
     Promise.resolve(getStockArticles(ticker, manifestItem.n)),
     Promise.resolve(getCompanyWebsiteMeta(ticker)),
+    getStockCandles(ticker, 5).catch(() => []),
   ])
 
   if (!stockData) {
@@ -253,6 +256,7 @@ export default async function StockDetailPage({
           initialTab={initialTab}
           companyWebsiteMeta={companyWebsiteMeta}
           bctcDocuments={bctcDocuments}
+          initialCandles={initialCandles}
         />
       </main>
     </div>

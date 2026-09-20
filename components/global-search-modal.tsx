@@ -259,18 +259,6 @@ export function GlobalSearchModal({ open, onClose }: GlobalSearchModalProps) {
     })
   }, [fullSearchPool, mainTab, dataSubFilter, query, recentSearches])
 
-  // Tự động tải đón đầu (prefetch) các mã hàng đầu để khi bấm là mở tức thì (< 0.1s)
-  useEffect(() => {
-    if (!open) return
-    const topItems = filteredResults.slice(0, 3)
-    for (const it of topItems) {
-      if (it.href && it.href.startsWith('/stock/')) {
-        try {
-          router.prefetch(it.href)
-        } catch {}
-      }
-    }
-  }, [open, filteredResults, router])
 
   // Select item action
   const handleSelectItem = useCallback(
