@@ -82,23 +82,36 @@ export function BankingDetailedFinancialCharts({
   quarterData,
   annualData,
 }: BankingDetailedFinancialChartsProps) {
-  const [periodType, setPeriodType] = useState<'quarter' | 'annual'>('quarter')
+  const hasQuarter = Boolean(quarterData?.newFiscalDateQuarter && quarterData.newFiscalDateQuarter.length > 0)
+  const hasAnnual = Boolean(annualData?.newFiscalDateYear && annualData.newFiscalDateYear.length > 0)
+
+  const [periodType, setPeriodType] = useState<'quarter' | 'annual'>(() => {
+    if (hasQuarter) return 'quarter'
+    if (hasAnnual) return 'annual'
+    return 'quarter'
+  })
   const [expandedChart, setExpandedChart] = useState<number | null>(null)
 
-  const currentData = periodType === 'quarter' ? quarterData : annualData
+  const effectivePeriodType = useMemo<'quarter' | 'annual'>(() => {
+    if (periodType === 'quarter' && !hasQuarter && hasAnnual) return 'annual'
+    if (periodType === 'annual' && !hasAnnual && hasQuarter) return 'quarter'
+    return periodType
+  }, [periodType, hasQuarter, hasAnnual])
+
+  const currentData = effectivePeriodType === 'quarter' ? quarterData : annualData
 
   // Chuẩn bị dữ liệu đa kỳ cho các biểu đồ
   const chartPoints = useMemo(() => {
     if (!currentData) return []
     const dates: string[] =
-      periodType === 'quarter'
+      effectivePeriodType === 'quarter'
         ? currentData.newFiscalDateQuarter || []
         : currentData.newFiscalDateYear || []
 
     return dates.map((d, i) => {
       return {
         date: d,
-        displayDate: fmtPeriod(d, periodType === 'quarter'),
+        displayDate: fmtPeriod(d, effectivePeriodType === 'quarter'),
         // 1. Tài sản (Tỷ đồng)
         tsChoVay: currentData.nhTsChoVayKhachHang?.[i] || 0,
         tsTienGuiTCTD: currentData.nhTsTienGuiChoVayTCTDkhac?.[i] || 0,
@@ -138,7 +151,7 @@ export function BankingDetailedFinancialCharts({
         casa: currentData.nhnxCasa?.[i] != null ? Number(currentData.nhnxCasa[i]) : null,
       }
     })
-  }, [currentData, periodType])
+  }, [currentData, effectivePeriodType])
 
   // Lấy dữ liệu Top 10 cho vay theo ngành kỳ gần nhất
   const loanByIndustry = useMemo(() => {
@@ -147,7 +160,7 @@ export function BankingDetailedFinancialCharts({
     return list[list.length - 1]
   }, [currentData])
 
-  if (!currentData || chartPoints.length === 0) {
+  if ((!hasQuarter && !hasAnnual) || chartPoints.length === 0) {
     return null
   }
 
@@ -183,26 +196,38 @@ export function BankingDetailedFinancialCharts({
         <div className="flex items-center rounded-xl border border-border bg-muted/40 p-1 shrink-0">
           <button
             type="button"
-            onClick={() => setPeriodType('quarter')}
+            disabled={!hasQuarter}
+            onClick={() => {
+              if (!hasQuarter) return
+              setPeriodType('quarter')
+            }}
             className={cn(
-              'flex items-center gap-1.5 rounded-lg px-3.5 py-1.5 text-xs font-bold transition-all cursor-pointer',
-              periodType === 'quarter'
+              'flex items-center gap-1.5 rounded-lg px-3.5 py-1.5 text-xs font-bold transition-all',
+              !hasQuarter ? 'opacity-40 cursor-not-allowed text-muted-foreground' : 'cursor-pointer',
+              effectivePeriodType === 'quarter'
                 ? 'bg-primary text-primary-foreground shadow-xs'
                 : 'text-muted-foreground hover:text-foreground'
             )}
+            title={!hasQuarter ? 'Ngân hàng chưa có báo cáo tài chính quý' : undefined}
           >
             <Calendar className="size-3.5" />
             <span>Theo Quý ({quarterData?.newFiscalDateQuarter?.length || 0} kỳ)</span>
           </button>
           <button
             type="button"
-            onClick={() => setPeriodType('annual')}
+            disabled={!hasAnnual}
+            onClick={() => {
+              if (!hasAnnual) return
+              setPeriodType('annual')
+            }}
             className={cn(
-              'flex items-center gap-1.5 rounded-lg px-3.5 py-1.5 text-xs font-bold transition-all cursor-pointer',
-              periodType === 'annual'
+              'flex items-center gap-1.5 rounded-lg px-3.5 py-1.5 text-xs font-bold transition-all',
+              !hasAnnual ? 'opacity-40 cursor-not-allowed text-muted-foreground' : 'cursor-pointer',
+              effectivePeriodType === 'annual'
                 ? 'bg-primary text-primary-foreground shadow-xs'
                 : 'text-muted-foreground hover:text-foreground'
             )}
+            title={!hasAnnual ? 'Ngân hàng chưa có báo cáo tài chính năm' : undefined}
           >
             <Layers className="size-3.5" />
             <span>Theo Năm ({annualData?.newFiscalDateYear?.length || 0} năm)</span>

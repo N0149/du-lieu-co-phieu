@@ -2096,16 +2096,31 @@ export function GeneralDetailedFinancialCharts({
   debtDupontQuarter = null,
   debtDupontAnnual = null,
 }: GeneralDetailedFinancialChartsProps) {
-  const [periodType, setPeriodType] = useState<'quarter' | 'annual'>('quarter')
+  const hasQuarter = Boolean(quarterData?.newFiscalDateQuarter && quarterData.newFiscalDateQuarter.length > 0)
+  const hasAnnual = Boolean(annualData?.newFiscalDateYear && annualData.newFiscalDateYear.length > 0)
+
+  // Khởi tạo kỳ: ưu tiên 'quarter' nếu có dữ liệu quý; nếu chỉ có dữ liệu năm (như các mã UPCoM) thì tự động chọn 'annual'
+  const [periodType, setPeriodType] = useState<'quarter' | 'annual'>(() => {
+    if (hasQuarter) return 'quarter'
+    if (hasAnnual) return 'annual'
+    return 'quarter'
+  })
   const [globalLockedQuarter, setGlobalLockedQuarter] = useState<number | null>(null)
 
-  const currentData = periodType === 'quarter' ? quarterData : annualData
+  // Tự động chuyển kỳ hiệu lực nếu kỳ đang chọn không có dữ liệu mà kỳ còn lại có dữ liệu
+  const effectivePeriodType = useMemo<'quarter' | 'annual'>(() => {
+    if (periodType === 'quarter' && !hasQuarter && hasAnnual) return 'annual'
+    if (periodType === 'annual' && !hasAnnual && hasQuarter) return 'quarter'
+    return periodType
+  }, [periodType, hasQuarter, hasAnnual])
+
+  const currentData = effectivePeriodType === 'quarter' ? quarterData : annualData
 
   // 1. Dữ liệu chuỗi thời gian cho các biểu đồ tài chính cơ bản
   const chartPoints = useMemo(() => {
     if (!currentData) return []
     const dates: string[] =
-      periodType === 'quarter'
+      effectivePeriodType === 'quarter'
         ? currentData.newFiscalDateQuarter || []
         : currentData.newFiscalDateYear || []
 
@@ -2113,11 +2128,11 @@ export function GeneralDetailedFinancialCharts({
       const nguyenGia = currentData.tsNguyenGiaTscdHuuHinh?.[i] || 0
       const khauHao = Math.abs(currentData.tsKhauHaoTscdHuuHinhLuyKe?.[i] || 0)
       const pctKhauHao = nguyenGia > 0 ? (khauHao / nguyenGia) * 100 : null
-      const qNum = periodType === 'quarter' ? Math.ceil(parseInt(d.split('-')[1], 10) / 3) : null
+      const qNum = effectivePeriodType === 'quarter' ? Math.ceil(parseInt(d.split('-')[1], 10) / 3) : null
 
       return {
         date: d,
-        displayDate: fmtPeriod(d, periodType === 'quarter'),
+        displayDate: fmtPeriod(d, effectivePeriodType === 'quarter'),
         quarterNum: qNum,
         doanhThu: currentData.doanhSoThuan?.[i] || 0,
         tangTruongDT: currentData.tangTruongDoanhSoThuanYoY?.[i] != null ? Number(currentData.tangTruongDoanhSoThuanYoY[i]) : null,
@@ -2133,14 +2148,14 @@ export function GeneralDetailedFinancialCharts({
         vongQuayTonKho: currentData.hangTonKhoVongQuay?.[i] != null ? Number(currentData.hangTonKhoVongQuay[i]) : null,
       }
     })
-  }, [currentData, periodType])
+  }, [currentData, effectivePeriodType])
 
   const displayPoints = useMemo(() => {
-    if (periodType === 'quarter') {
+    if (effectivePeriodType === 'quarter') {
       return chartPoints.slice(-20)
     }
     return chartPoints
-  }, [chartPoints, periodType])
+  }, [chartPoints, effectivePeriodType])
 
   // 2. Dữ liệu Kế hoạch & Dự phóng KQKD
   const planChartPoints = useMemo(() => {
@@ -2179,7 +2194,7 @@ export function GeneralDetailedFinancialCharts({
 
   // 3. Dữ liệu CƠ CẤU LỢI NHUẬN TRƯỚC THUẾ
   const currentProfitStructure =
-    periodType === 'quarter' ? profitStructureQuarter : profitStructureAnnual
+    effectivePeriodType === 'quarter' ? profitStructureQuarter : profitStructureAnnual
 
   const profitPoints = useMemo(() => {
     if (!currentProfitStructure?.points || currentProfitStructure.points.length === 0) {
@@ -2187,17 +2202,17 @@ export function GeneralDetailedFinancialCharts({
     }
     const pointsWithQ = currentProfitStructure.points.map((p) => ({
       ...p,
-      quarterNum: periodType === 'quarter' ? Math.ceil(parseInt(p.date.split('-')[1], 10) / 3) : null,
+      quarterNum: effectivePeriodType === 'quarter' ? Math.ceil(parseInt(p.date.split('-')[1], 10) / 3) : null,
     }))
-    if (periodType === 'quarter') {
+    if (effectivePeriodType === 'quarter') {
       return pointsWithQ.slice(-20)
     }
     return pointsWithQ
-  }, [currentProfitStructure, periodType])
+  }, [currentProfitStructure, effectivePeriodType])
 
   // 4. Dữ liệu BẢNG CÂN ĐỐI (TÀI SẢN, NGUỒN VỐN & LƯU CHUYỂN TIỀN - Chuẩn 100% WiData)
   const currentBalanceSheet =
-    periodType === 'quarter' ? balanceSheetQuarter : balanceSheetAnnual
+    effectivePeriodType === 'quarter' ? balanceSheetQuarter : balanceSheetAnnual
 
   const balancePoints = useMemo(() => {
     if (!currentBalanceSheet?.points || currentBalanceSheet.points.length === 0) {
@@ -2205,17 +2220,17 @@ export function GeneralDetailedFinancialCharts({
     }
     const pointsWithQ = currentBalanceSheet.points.map((p) => ({
       ...p,
-      quarterNum: periodType === 'quarter' ? Math.ceil(parseInt(p.date.split('-')[1], 10) / 3) : null,
+      quarterNum: effectivePeriodType === 'quarter' ? Math.ceil(parseInt(p.date.split('-')[1], 10) / 3) : null,
     }))
-    if (periodType === 'quarter') {
+    if (effectivePeriodType === 'quarter') {
       return pointsWithQ.slice(-20)
     }
     return pointsWithQ
-  }, [currentBalanceSheet, periodType])
+  }, [currentBalanceSheet, effectivePeriodType])
 
   // 5. Dữ liệu BÓC TÁCH CHI PHÍ & TỶ TRỌNG CHI PHÍ
   const currentCostBreakdown =
-    periodType === 'quarter' ? costBreakdownQuarter : costBreakdownAnnual
+    effectivePeriodType === 'quarter' ? costBreakdownQuarter : costBreakdownAnnual
 
   const costPoints = useMemo(() => {
     if (!currentCostBreakdown?.points || currentCostBreakdown.points.length === 0) {
@@ -2223,17 +2238,17 @@ export function GeneralDetailedFinancialCharts({
     }
     const pointsWithQ = currentCostBreakdown.points.map((p) => ({
       ...p,
-      quarterNum: periodType === 'quarter' ? Math.ceil(parseInt(p.date.split('-')[1], 10) / 3) : null,
+      quarterNum: effectivePeriodType === 'quarter' ? Math.ceil(parseInt(p.date.split('-')[1], 10) / 3) : null,
     }))
-    if (periodType === 'quarter') {
+    if (effectivePeriodType === 'quarter') {
       return pointsWithQ.slice(-20)
     }
     return pointsWithQ
-  }, [currentCostBreakdown, periodType])
+  }, [currentCostBreakdown, effectivePeriodType])
 
   // 6. Dữ liệu CAPEX & KHẤU HAO, DỰ PHÒNG, DOANH THU & CP TÀI CHÍNH (Chuẩn WiData)
   const currentCapexFinancial =
-    periodType === 'quarter' ? capexFinancialQuarter : capexFinancialAnnual
+    effectivePeriodType === 'quarter' ? capexFinancialQuarter : capexFinancialAnnual
 
   const capexFinancialPoints = useMemo(() => {
     if (!currentCapexFinancial?.points || currentCapexFinancial.points.length === 0) {
@@ -2241,17 +2256,17 @@ export function GeneralDetailedFinancialCharts({
     }
     const pointsWithQ = currentCapexFinancial.points.map((p) => ({
       ...p,
-      quarterNum: periodType === 'quarter' ? Math.ceil(parseInt(p.date.split('-')[1], 10) / 3) : null,
+      quarterNum: effectivePeriodType === 'quarter' ? Math.ceil(parseInt(p.date.split('-')[1], 10) / 3) : null,
     }))
-    if (periodType === 'quarter') {
+    if (effectivePeriodType === 'quarter') {
       return pointsWithQ.slice(-20)
     }
     return pointsWithQ
-  }, [currentCapexFinancial, periodType])
+  }, [currentCapexFinancial, effectivePeriodType])
 
   // 7. Dữ liệu VAY & NỢ THUÊ TÀI CHÍNH & MÔ HÌNH DUPONT (Chuẩn WiData)
   const currentDebtDupont =
-    periodType === 'quarter' ? debtDupontQuarter : debtDupontAnnual
+    effectivePeriodType === 'quarter' ? debtDupontQuarter : debtDupontAnnual
 
   const debtDupontPoints = useMemo(() => {
     if (!currentDebtDupont?.points || currentDebtDupont.points.length === 0) {
@@ -2259,15 +2274,15 @@ export function GeneralDetailedFinancialCharts({
     }
     const pointsWithQ = currentDebtDupont.points.map((p) => ({
       ...p,
-      quarterNum: periodType === 'quarter' ? Math.ceil(parseInt(p.date.split('-')[1], 10) / 3) : null,
+      quarterNum: effectivePeriodType === 'quarter' ? Math.ceil(parseInt(p.date.split('-')[1], 10) / 3) : null,
     }))
-    if (periodType === 'quarter') {
+    if (effectivePeriodType === 'quarter') {
       return pointsWithQ.slice(-20)
     }
     return pointsWithQ
-  }, [currentDebtDupont, periodType])
+  }, [currentDebtDupont, effectivePeriodType])
 
-  if (!currentData || chartPoints.length === 0) return null
+  if ((!hasQuarter && !hasAnnual) || chartPoints.length === 0) return null
 
   const latest = chartPoints[chartPoints.length - 1]
   const latestPlan = planChartPoints[planChartPoints.length - 1]
@@ -2276,7 +2291,7 @@ export function GeneralDetailedFinancialCharts({
   const latestCost = costPoints[costPoints.length - 1]
   const latestCapex = capexFinancialPoints[capexFinancialPoints.length - 1]
   const latestDebtDupont = debtDupontPoints[debtDupontPoints.length - 1]
-  const isQuarter = periodType === 'quarter'
+  const isQuarter = effectivePeriodType === 'quarter'
 
   return (
     <div className="w-full space-y-6">
@@ -2324,32 +2339,40 @@ export function GeneralDetailedFinancialCharts({
           <div className="flex items-center rounded-xl border border-border bg-muted/40 p-1 shrink-0">
             <button
               type="button"
+              disabled={!hasQuarter}
               onClick={() => {
+                if (!hasQuarter) return
                 setPeriodType('quarter')
                 setGlobalLockedQuarter(null)
               }}
               className={cn(
-                'flex items-center gap-1.5 rounded-lg px-3.5 py-1.5 text-xs font-bold transition-all cursor-pointer',
+                'flex items-center gap-1.5 rounded-lg px-3.5 py-1.5 text-xs font-bold transition-all',
+                !hasQuarter ? 'opacity-40 cursor-not-allowed text-muted-foreground' : 'cursor-pointer',
                 isQuarter
                   ? 'bg-primary text-primary-foreground shadow-xs'
                   : 'text-muted-foreground hover:text-foreground'
               )}
+              title={!hasQuarter ? 'Doanh nghiệp chưa có báo cáo tài chính quý' : undefined}
             >
               <Calendar className="size-3.5" />
               <span>Theo Quý ({quarterData?.newFiscalDateQuarter?.length || 0} kỳ)</span>
             </button>
             <button
               type="button"
+              disabled={!hasAnnual}
               onClick={() => {
+                if (!hasAnnual) return
                 setPeriodType('annual')
                 setGlobalLockedQuarter(null)
               }}
               className={cn(
-                'flex items-center gap-1.5 rounded-lg px-3.5 py-1.5 text-xs font-bold transition-all cursor-pointer',
+                'flex items-center gap-1.5 rounded-lg px-3.5 py-1.5 text-xs font-bold transition-all',
+                !hasAnnual ? 'opacity-40 cursor-not-allowed text-muted-foreground' : 'cursor-pointer',
                 !isQuarter
                   ? 'bg-primary text-primary-foreground shadow-xs'
                   : 'text-muted-foreground hover:text-foreground'
               )}
+              title={!hasAnnual ? 'Doanh nghiệp chưa có báo cáo tài chính năm' : undefined}
             >
               <Layers className="size-3.5" />
               <span>Theo Năm ({annualData?.newFiscalDateYear?.length || 0} năm)</span>
