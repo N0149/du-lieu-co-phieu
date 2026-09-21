@@ -75,6 +75,58 @@ export function getLocalPriceWeekly(ticker: string): { d: string; c: number; v: 
 }
 
 /**
+ * Đọc nến giá TradingView trực tiếp từ cache nội bộ (0ms, 100% offline, không gọi network bên ngoài)
+ */
+export function getLocalStockCandles(symbol: string): CandleDataPoint[] {
+  try {
+    const sym = symbol.toUpperCase().trim()
+    const p = path.join(CACHE_DIR, `${sym}.json`)
+    if (!fs.existsSync(p)) return []
+    const raw = fs.readFileSync(p, 'utf-8')
+    const parsed = JSON.parse(raw)
+    if (!parsed || !Array.isArray(parsed.points) || parsed.points.length === 0) return []
+
+    const sortedPoints = [...parsed.points].sort((a: any, b: any) => a.time - b.time)
+    const candleMap = new Map<string, CandleDataPoint>()
+
+    for (const pt of sortedPoints) {
+      const timeStr = formatYYYYMMDD(pt.time)
+      if (!timeStr) continue
+
+      const openVal = Math.round(((pt.open ?? pt.close) / 1000) * 100) / 100
+      const highVal = Math.round(((pt.high ?? pt.close) / 1000) * 100) / 100
+      const lowVal = Math.round(((pt.low ?? pt.close) / 1000) * 100) / 100
+      const closeVal = Math.round((pt.close / 1000) * 100) / 100
+      const vol = pt.volume || 0
+
+      if (candleMap.has(timeStr)) {
+        const existing = candleMap.get(timeStr)!
+        existing.high = Math.max(existing.high, highVal, closeVal)
+        existing.low = Math.min(existing.low, lowVal, closeVal)
+        existing.close = closeVal
+        existing.volume = (existing.volume || 0) + vol
+        existing.timestamp = pt.time
+      } else {
+        candleMap.set(timeStr, {
+          time: timeStr,
+          open: openVal,
+          high: Math.max(highVal, openVal, closeVal),
+          low: Math.min(lowVal, openVal, closeVal),
+          close: closeVal,
+          volume: vol,
+          dateStr: pt.date || formatDDMMYYYY(pt.time),
+          timestamp: pt.time,
+        })
+      }
+    }
+
+    return Array.from(candleMap.values()).sort((a, b) => a.time.localeCompare(b.time))
+  } catch {
+    return []
+  }
+}
+
+/**
  * Lấy lịch sử giá ngày của mã cổ phiếu trong N năm gần nhất.
  * Ưu tiên:
  * 1. Đọc cache nội bộ từ data/price_history/{symbol}.json nếu đã có đầy đủ OHLC.

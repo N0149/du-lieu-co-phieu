@@ -27,7 +27,7 @@ import { getBctcReport, getAvailableBctcTickers } from '@/lib/bctc-service'
 import { getStockIcbHierarchy } from '@/lib/icb-service'
 import { getFinancialStatements } from '@/lib/financial-statements-db'
 import { getStockArticles } from '@/lib/stock-articles-service'
-import { getLocalPriceWeekly, getStockCandles } from '@/lib/stock-price-history-service'
+import { getLocalPriceWeekly, getLocalStockCandles } from '@/lib/stock-price-history-service'
 import { getCompanyWebsiteMeta } from '@/lib/company-website-service'
 import { getCompanyBctcDocuments } from '@/lib/bctc-document-service'
 
@@ -126,7 +126,7 @@ export default async function StockDetailPage({
     Promise.resolve(getAvailableBctcTickers()),
     Promise.resolve(getStockArticles(ticker, manifestItem.n)),
     Promise.resolve(getCompanyWebsiteMeta(ticker)),
-    getStockCandles(ticker, 5).catch(() => []),
+    Promise.resolve(getLocalStockCandles(ticker)),
   ])
 
   if (!stockData) {

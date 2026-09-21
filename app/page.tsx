@@ -3,10 +3,11 @@ import { SiteHeader } from '@/components/site-header'
 import { NewsDashboard, NewsSnapshotItem } from '@/components/news/news-dashboard'
 import { getCachedNews, fetchAllRssFeeds } from '@/lib/rss-news-service'
 import { getRecentMarketDisclosures } from '@/lib/disclosures'
-import { getUserWatchlist } from '@/lib/watchlist-service'
 import manifestRaw from '@/data/longlive_manifest.json'
 
-export const dynamic = 'force-dynamic'
+// Kích hoạt bộ nhớ đệm CDN Edge Vercel (ISR) 60 giây:
+// Người dùng truy cập dulieudautu.com nhận ngay HTML siêu tốc < 50ms từ CDN Singapore/Việt Nam
+export const revalidate = 60
 
 export const metadata: Metadata = {
   title: 'Công Bố Thông Tin 3 Sàn & Tin Tức Doanh Nghiệp Realtime | Dữ Liệu Đầu Tư',
@@ -57,13 +58,12 @@ function getStockPriceMap(): Record<string, { px: number | null; w1: number | nu
 }
 
 export default async function HomePage() {
-  const [initialNews, initialDisclosures, userWatchlistResult] = await Promise.all([
+  const [initialNews, initialDisclosures] = await Promise.all([
     getInitialNews(),
     getRecentMarketDisclosures({ limit: 200 }),
-    getUserWatchlist(),
   ])
 
-  const initialWatchlist = userWatchlistResult.items.map((it) => it.ticker)
+  const initialWatchlist: string[] = []
   const stockPriceMap = getStockPriceMap()
 
   // Calculate trending tickers

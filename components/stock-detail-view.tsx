@@ -2,6 +2,7 @@
 
 import { useMemo, useState, useRef, useEffect, useCallback, startTransition } from 'react'
 import Link from 'next/link'
+import dynamic from 'next/dynamic'
 import {
   ArrowLeft,
   Building2,
@@ -34,27 +35,12 @@ import { cn } from '@/lib/utils'
 import { saveRecentSearch } from '@/lib/recent-searches'
 import { WatchlistStarButton } from '@/components/watchlist/WatchlistStarButton'
 import { AiExportButton } from '@/components/AiExportButton'
-import { BusinessPlanComparison, BusinessPlanYear } from '@/components/business-plan-comparison'
-import { FinancialStatementsExplorer } from '@/components/financial-statements-explorer'
 import type { RawFinancialStatementData } from '@/lib/financial-statements-db'
-import { CompanyReportsTab } from '@/components/reports/CompanyReportsTab'
-import { StockAgmReportView } from '@/components/stock/StockAgmReportView'
-import { StockBctcReportView } from '@/components/stock/StockBctcReportView'
-import { StockArticlesTab } from '@/components/stock/StockArticlesTab'
-import { StockCommunityTab } from '@/components/stock/StockCommunityTab'
 import type { StockArticlesPayload } from '@/lib/stock-articles-service'
 import type { AgmReportData } from '@/lib/agm-service'
 import type { BctcReportData } from '@/lib/bctc-service'
-import { BankFinancialCharts } from '@/components/stock/BankFinancialCharts'
-import { BankingDetailedFinancialCharts } from '@/components/stock/BankingDetailedFinancialCharts'
-import { GeneralDetailedFinancialCharts } from '@/components/stock/GeneralDetailedFinancialCharts'
-import { FinancialCashFlowAndDividends } from '@/components/stock/FinancialCashFlowAndDividends'
-import { ValuationBandsChart } from '@/components/stock/ValuationBandsChart'
-import { StockValuationEpsChart } from '@/components/stock/StockValuationEpsChart'
 import { StockEvaluationHeader } from '@/components/stock/StockEvaluationHeader'
-import { CompanyProfileEnhancement } from '@/components/stock/CompanyProfileEnhancement'
 import { TradingViewCandleChart } from '@/components/stock/TradingViewCandleChart'
-import { PeerComparisonView } from '@/components/peer-comparison-view'
 import type { DetailedFinancialSnapshot } from '@/lib/local-financials'
 import type { CandleDataPoint } from '@/lib/stock-price-history-service'
 import type { BankAnalysisData } from '@/lib/banking-types'
@@ -184,6 +170,127 @@ function TabLoadingSkeleton({ tabLabel }: { tabLabel?: string }) {
     </div>
   )
 }
+
+// Tối ưu hóa Code-Splitting: Tải bất đồng bộ theo tab (giảm 80% bundle JS ban đầu)
+const CompanyProfileEnhancement = dynamic(
+  () => import('@/components/stock/CompanyProfileEnhancement').then((m) => m.CompanyProfileEnhancement),
+  {
+    loading: () => <TabLoadingSkeleton tabLabel="Hồ sơ doanh nghiệp" />,
+    ssr: false,
+  }
+)
+
+const BankingDetailedFinancialCharts = dynamic(
+  () => import('@/components/stock/BankingDetailedFinancialCharts').then((m) => m.BankingDetailedFinancialCharts),
+  {
+    loading: () => <TabLoadingSkeleton tabLabel="Biểu đồ tài chính ngân hàng" />,
+    ssr: false,
+  }
+)
+
+const GeneralDetailedFinancialCharts = dynamic(
+  () => import('@/components/stock/GeneralDetailedFinancialCharts').then((m) => m.GeneralDetailedFinancialCharts),
+  {
+    loading: () => <TabLoadingSkeleton tabLabel="Biểu đồ tài chính" />,
+    ssr: false,
+  }
+)
+
+const FinancialCashFlowAndDividends = dynamic(
+  () => import('@/components/stock/FinancialCashFlowAndDividends').then((m) => m.FinancialCashFlowAndDividends),
+  {
+    loading: () => <TabLoadingSkeleton tabLabel="Dòng tiền & Cổ tức" />,
+    ssr: false,
+  }
+)
+
+const StockValuationEpsChart = dynamic(
+  () => import('@/components/stock/StockValuationEpsChart').then((m) => m.StockValuationEpsChart),
+  {
+    loading: () => <TabLoadingSkeleton tabLabel="Định giá EPS & P/E" />,
+    ssr: false,
+  }
+)
+
+const ValuationBandsChart = dynamic(
+  () => import('@/components/stock/ValuationBandsChart').then((m) => m.ValuationBandsChart),
+  {
+    loading: () => <TabLoadingSkeleton tabLabel="Dải định giá P/E & P/B Bands" />,
+    ssr: false,
+  }
+)
+
+const BankFinancialCharts = dynamic(
+  () => import('@/components/stock/BankFinancialCharts').then((m) => m.BankFinancialCharts),
+  {
+    loading: () => <TabLoadingSkeleton tabLabel="Chỉ tiêu ngân hàng" />,
+    ssr: false,
+  }
+)
+
+const StockArticlesTab = dynamic(
+  () => import('@/components/stock/StockArticlesTab').then((m) => m.StockArticlesTab),
+  {
+    loading: () => <TabLoadingSkeleton tabLabel="Tin tức & Bài viết" />,
+    ssr: false,
+  }
+)
+
+const StockCommunityTab = dynamic(
+  () => import('@/components/stock/StockCommunityTab').then((m) => m.StockCommunityTab),
+  {
+    loading: () => <TabLoadingSkeleton tabLabel="Cộng đồng thảo luận" />,
+    ssr: false,
+  }
+)
+
+const BusinessPlanComparison = dynamic(
+  () => import('@/components/business-plan-comparison').then((m) => m.BusinessPlanComparison),
+  {
+    loading: () => <TabLoadingSkeleton tabLabel="Kế hoạch kinh doanh" />,
+    ssr: false,
+  }
+)
+
+const FinancialStatementsExplorer = dynamic(
+  () => import('@/components/financial-statements-explorer').then((m) => m.FinancialStatementsExplorer),
+  {
+    loading: () => <TabLoadingSkeleton tabLabel="Báo cáo tài chính" />,
+    ssr: false,
+  }
+)
+
+const PeerComparisonView = dynamic(
+  () => import('@/components/peer-comparison-view').then((m) => m.PeerComparisonView),
+  {
+    loading: () => <TabLoadingSkeleton tabLabel="So sánh ngành" />,
+    ssr: false,
+  }
+)
+
+const CompanyReportsTab = dynamic(
+  () => import('@/components/reports/CompanyReportsTab').then((m) => m.CompanyReportsTab),
+  {
+    loading: () => <TabLoadingSkeleton tabLabel="Báo cáo phân tích" />,
+    ssr: false,
+  }
+)
+
+const StockAgmReportView = dynamic(
+  () => import('@/components/stock/StockAgmReportView').then((m) => m.StockAgmReportView),
+  {
+    loading: () => <TabLoadingSkeleton tabLabel="Đại hội cổ đông" />,
+    ssr: false,
+  }
+)
+
+const StockBctcReportView = dynamic(
+  () => import('@/components/stock/StockBctcReportView').then((m) => m.StockBctcReportView),
+  {
+    loading: () => <TabLoadingSkeleton tabLabel="Thuyết minh BCTC" />,
+    ssr: false,
+  }
+)
 
 export function StockDetailView({
   stockData,

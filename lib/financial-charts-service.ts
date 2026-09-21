@@ -52,7 +52,7 @@ async function fetchRemoteChartData(
         Origin: 'https://ruatichsan.com',
         Referer: `https://ruatichsan.com/company?symbol=${sym}`,
       },
-      signal: AbortSignal.timeout(4000),
+      signal: AbortSignal.timeout(800),
       next: { revalidate: 86400 },
     })
     if (!res.ok) return null
