@@ -1,5 +1,44 @@
 [
   {
+    "id": "cf_THM_2026-09-21_7fbecc3096",
+    "symbol": "THM",
+    "exchange": "UPCOM",
+    "company_name": "Công ty Cổ phần Tứ Hải Hà Nam",
+    "title": "THM: Nghị quyết Đại hội đồng cổ đông bất thường năm 2026",
+    "doc_type": "DHDCD",
+    "doc_type_label": "ĐHĐCĐ",
+    "published_at": "2026-09-21 23:29:00",
+    "file_url": "https://cafef.vn/du-lieu/THM-2981230/thm-nghi-quyet-dai-hoi-dong-co-dong-bat-thuong-nam-2026.chn?utm_source=du-lieu.chn",
+    "source": "CafeF_Sở",
+    "is_important": 1
+  },
+  {
+    "id": "cf_QNC_2026-09-21_482e0cad8e",
+    "symbol": "QNC",
+    "exchange": "UPCOM",
+    "company_name": "Công ty Cổ phần Xi măng và Xây dựng Quảng Ninh",
+    "title": "QNC: Đính chính Nghị quyết Hội đồng quản trị",
+    "doc_type": "KHAC",
+    "doc_type_label": "Công bố thông tin",
+    "published_at": "2026-09-21 23:11:00",
+    "file_url": "https://cafef.vn/du-lieu/QNC-2981228/qnc-dinh-chinh-nghi-quyet-hoi-dong-quan-tri.chn?utm_source=du-lieu.chn",
+    "source": "CafeF_Sở",
+    "is_important": 0
+  },
+  {
+    "id": "cf_VNZ_2026-09-21_2a9c743f20",
+    "symbol": "VNZ",
+    "exchange": "UPCOM",
+    "company_name": "Công ty Cổ phần Tập đoàn VNG",
+    "title": "VNZ: Thông báo gia hạn lần thứ 2 thời gian nhận tiền mua cổ phiếu theo chương trình ESOP",
+    "doc_type": "KHAC",
+    "doc_type_label": "Công bố thông tin",
+    "published_at": "2026-09-21 22:55:00",
+    "file_url": "https://cafef.vn/du-lieu/VNZ-2981223/vnz-thong-bao-gia-han-lan-thu-2-thoi-gian-nhan-tien-mua-co-phieu-theo-chuong-trinh-esop.chn?utm_source=du-lieu.chn",
+    "source": "CafeF_Sở",
+    "is_important": 0
+  },
+  {
     "id": "cf_SCS_2026-09-21_1b7f34d92c",
     "symbol": "SCS",
     "exchange": "HOSE",
@@ -2557,45 +2596,6 @@
     "doc_type_label": "Giao dịch nội bộ",
     "published_at": "2026-09-17 18:01:00",
     "file_url": "https://cafef.vn/du-lieu/EVG-2978642/evg-thong-bao-giao-dich-co-phieu-cua-nguoi-noi-bo-le-dinh-vinh.chn?utm_source=du-lieu.chn",
-    "source": "CafeF_Sở",
-    "is_important": 0
-  },
-  {
-    "id": "cf_ELC_2026-09-17_9f081d1190",
-    "symbol": "ELC",
-    "exchange": "HOSE",
-    "company_name": "Công ty Cổ phần Công nghệ - Viễn thông ELCOM",
-    "title": "ELC: CBTT thay đổi số lượng CP có quyền biểu quyết đang lưu hành",
-    "doc_type": "KHAC",
-    "doc_type_label": "Công bố thông tin",
-    "published_at": "2026-09-17 17:59:00",
-    "file_url": "https://cafef.vn/du-lieu/ELC-2978641/elc-cbtt-thay-doi-so-luong-cp-co-quyen-bieu-quyet-dang-luu-hanh.chn?utm_source=du-lieu.chn",
-    "source": "CafeF_Sở",
-    "is_important": 0
-  },
-  {
-    "id": "cf_AAN_2026-09-17_e0eb07d84c",
-    "symbol": "AAN",
-    "exchange": "HOSE",
-    "company_name": "",
-    "title": "AAN: Nghị quyết HĐQT về việc thay đổi đơn vị cung cấp dịch vụ kiểm toán BCTC 2026",
-    "doc_type": "BCTC_SOAT_XET",
-    "doc_type_label": "BCTC & Soát xét",
-    "published_at": "2026-09-17 17:59:00",
-    "file_url": "https://cafef.vn/du-lieu/AAN-2978640/aan-nghi-quyet-hdqt-ve-viec-thay-doi-don-vi-cung-cap-dich-vu-kiem-toan-bctc-2026.chn?utm_source=du-lieu.chn",
-    "source": "CafeF_Sở",
-    "is_important": 1
-  },
-  {
-    "id": "cf_PIT_2026-09-17_ea1aaf712e",
-    "symbol": "PIT",
-    "exchange": "HOSE",
-    "company_name": "Công ty Cổ phần Xuất nhập khẩu Petrolimex",
-    "title": "PIT: Thông báo giao dịch cổ phiếu của Người nội bộ Lê Thúy Đào",
-    "doc_type": "GIAO_DICH_NOI_BO",
-    "doc_type_label": "Giao dịch nội bộ",
-    "published_at": "2026-09-17 17:59:00",
-    "file_url": "https://cafef.vn/du-lieu/PIT-2978639/pit-thong-bao-giao-dich-co-phieu-cua-nguoi-noi-bo-le-thuy-dao.chn?utm_source=du-lieu.chn",
     "source": "CafeF_Sở",
     "is_important": 0
   }
