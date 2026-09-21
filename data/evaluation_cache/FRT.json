@@ -1,0 +1,27 @@
+{
+  "symbol": "FRT",
+  "score360": {
+    "total": 5.2,
+    "ratingText": "KHÁ",
+    "peVsMedian": 39.2044,
+    "pbVsMedian": 36.174038,
+    "psVsMedian": -5,
+    "peForward": 27.81,
+    "peForwardVsMedian": -15,
+    "pbForward": 5.54,
+    "pbForwardVsMedian": -10
+  },
+  "price": null,
+  "metrics": {
+    "marketCap": 23406900000000,
+    "pe": 31.6022,
+    "eps": 4667.3905593591,
+    "volume10d": 387972,
+    "pb": 6.02175475,
+    "ps": null,
+    "bvps": null,
+    "sharesOut": 178815054,
+    "evEbitda": 19.4804,
+    "beta": 0.902082
+  }
+}

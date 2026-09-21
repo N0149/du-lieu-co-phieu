@@ -1,0 +1,27 @@
+{
+  "symbol": "LPB",
+  "score360": {
+    "total": 7,
+    "ratingText": "TỐT",
+    "peVsMedian": 0.060600000000000875,
+    "pbVsMedian": 11.294388270399999,
+    "psVsMedian": -5,
+    "peForward": 10.59,
+    "peForwardVsMedian": -15,
+    "pbForward": 2.68,
+    "pbForwardVsMedian": -10
+  },
+  "price": null,
+  "metrics": {
+    "marketCap": 143390000000000,
+    "pe": 12.0303,
+    "eps": 3823.6693686139,
+    "volume10d": 2313656,
+    "pb": 2.9117985338,
+    "ps": null,
+    "bvps": null,
+    "sharesOut": 2987282100,
+    "evEbitda": null,
+    "beta": 0.350057
+  }
+}

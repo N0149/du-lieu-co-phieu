@@ -1,0 +1,27 @@
+{
+  "symbol": "VCK",
+  "score360": {
+    "total": 6.2,
+    "ratingText": "KHÁ",
+    "peVsMedian": 20.742400000000004,
+    "pbVsMedian": 12.3871040784,
+    "psVsMedian": -5,
+    "peForward": 19.69,
+    "peForwardVsMedian": -15,
+    "pbForward": 2.8,
+    "pbForwardVsMedian": -10
+  },
+  "price": null,
+  "metrics": {
+    "marketCap": 72317100000000,
+    "pe": 22.3712,
+    "eps": 1613.6790033099,
+    "volume10d": 2759889,
+    "pb": 3.0483880098,
+    "ps": null,
+    "bvps": null,
+    "sharesOut": 2434919704,
+    "evEbitda": 21.5722,
+    "beta": null
+  }
+}

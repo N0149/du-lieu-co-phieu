@@ -1,0 +1,27 @@
+{
+  "symbol": "BAB",
+  "score360": {
+    "total": 8.8,
+    "ratingText": "XUẤT SẮC",
+    "peVsMedian": -4.189640000000001,
+    "pbVsMedian": -4.7175465256,
+    "psVsMedian": -5,
+    "peForward": 8.72,
+    "peForwardVsMedian": -15,
+    "pbForward": 0.84,
+    "pbForwardVsMedian": -10
+  },
+  "price": null,
+  "metrics": {
+    "marketCap": 12678100000000,
+    "pe": 9.90518,
+    "eps": 1140.8173970963,
+    "volume10d": 3253,
+    "pb": 0.9103066843,
+    "ps": null,
+    "bvps": null,
+    "sharesOut": 1152550716,
+    "evEbitda": null,
+    "beta": 0.576512
+  }
+}

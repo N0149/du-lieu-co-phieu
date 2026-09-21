@@ -1,0 +1,27 @@
+{
+  "symbol": "VGC",
+  "score360": {
+    "total": 7,
+    "ratingText": "TỐT",
+    "peVsMedian": 4.021000000000001,
+    "pbVsMedian": 6.206255255999999,
+    "psVsMedian": -5,
+    "peForward": 12.33,
+    "peForwardVsMedian": -15,
+    "pbForward": 2.09,
+    "pbForwardVsMedian": -10
+  },
+  "price": null,
+  "metrics": {
+    "marketCap": 18158200000000,
+    "pe": 14.0105,
+    "eps": 3129.7920708041,
+    "volume10d": 313110,
+    "pb": 2.275781907,
+    "ps": null,
+    "bvps": null,
+    "sharesOut": 448350000,
+    "evEbitda": 5.66395,
+    "beta": 0.330244
+  }
+}

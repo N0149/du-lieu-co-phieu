@@ -1,0 +1,27 @@
+{
+  "symbol": "PAP",
+  "score360": {
+    "total": 6.2,
+    "ratingText": "KHÁ",
+    "peVsMedian": -48.419200000000004,
+    "pbVsMedian": 24.609114141600003,
+    "psVsMedian": -5,
+    "peForward": -10.74,
+    "peForwardVsMedian": -15,
+    "pbForward": 4.21,
+    "pbForwardVsMedian": -10
+  },
+  "price": null,
+  "metrics": {
+    "marketCap": 9996360000000,
+    "pe": -12.2096,
+    "eps": -2048.3948877749,
+    "volume10d": 1194,
+    "pb": 4.5761392677,
+    "ps": null,
+    "bvps": null,
+    "sharesOut": 357000000,
+    "evEbitda": -127.268,
+    "beta": 0.127252
+  }
+}

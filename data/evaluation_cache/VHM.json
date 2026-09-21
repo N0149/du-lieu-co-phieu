@@ -1,0 +1,27 @@
+{
+  "symbol": "VHM",
+  "score360": {
+    "total": 7,
+    "ratingText": "TỐT",
+    "peVsMedian": 5.6080000000000005,
+    "pbVsMedian": 8.840781020000001,
+    "psVsMedian": -5,
+    "peForward": 13.03,
+    "peForwardVsMedian": -15,
+    "pbForward": 2.4,
+    "pbForwardVsMedian": -10
+  },
+  "price": null,
+  "metrics": {
+    "marketCap": 583253000000000,
+    "pe": 14.804,
+    "eps": 10199.9154211947,
+    "volume10d": 10733031,
+    "pb": 2.6050976275,
+    "ps": null,
+    "bvps": null,
+    "sharesOut": 8214824008,
+    "evEbitda": 18.0152,
+    "beta": 1.70802
+  }
+}

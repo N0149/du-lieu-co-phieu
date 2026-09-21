@@ -1,0 +1,27 @@
+{
+  "symbol": "HSG",
+  "score360": {
+    "total": 7.8,
+    "ratingText": "TỐT",
+    "peVsMedian": 7.524000000000001,
+    "pbVsMedian": -5.0250993856,
+    "psVsMedian": -5,
+    "peForward": 13.87,
+    "peForwardVsMedian": -15,
+    "pbForward": 0.8,
+    "pbForwardVsMedian": -10
+  },
+  "price": null,
+  "metrics": {
+    "marketCap": 8193720000000,
+    "pe": 15.762,
+    "eps": 1011.9265673267,
+    "volume10d": 2195845,
+    "pb": 0.8718625768,
+    "ps": null,
+    "bvps": null,
+    "sharesOut": 807262704,
+    "evEbitda": 8.99592,
+    "beta": 0.846164
+  }
+}

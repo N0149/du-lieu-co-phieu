@@ -1,0 +1,27 @@
+{
+  "symbol": "MWG",
+  "score360": {
+    "total": 6.2,
+    "ratingText": "KHÁ",
+    "peVsMedian": 11.852200000000003,
+    "pbVsMedian": 18.846123888,
+    "psVsMedian": -5,
+    "peForward": 15.77,
+    "peForwardVsMedian": -15,
+    "pbForward": 3.55,
+    "pbForwardVsMedian": -10
+  },
+  "price": null,
+  "metrics": {
+    "marketCap": 106988000000000,
+    "pe": 17.9261,
+    "eps": 4775.1716003045,
+    "volume10d": 2523406,
+    "pb": 3.855765486,
+    "ps": null,
+    "bvps": null,
+    "sharesOut": 1475694086,
+    "evEbitda": 16.6497,
+    "beta": 1.10827
+  }
+}

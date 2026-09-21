@@ -1,0 +1,27 @@
+{
+  "symbol": "BID",
+  "score360": {
+    "total": 8,
+    "ratingText": "XUẤT SẮC",
+    "peVsMedian": -4.854140000000001,
+    "pbVsMedian": 2.1277216824000007,
+    "psVsMedian": -5,
+    "peForward": 8.42,
+    "peForwardVsMedian": -15,
+    "pbForward": 1.62,
+    "pbForwardVsMedian": -10
+  },
+  "price": null,
+  "metrics": {
+    "marketCap": 278072000000000,
+    "pe": 9.57293,
+    "eps": 4256.7970553471,
+    "volume10d": 4178701,
+    "pb": 1.7659652103,
+    "ps": null,
+    "bvps": null,
+    "sharesOut": 7778229473,
+    "evEbitda": null,
+    "beta": 0.790487
+  }
+}

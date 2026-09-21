@@ -1,0 +1,27 @@
+{
+  "symbol": "VND",
+  "score360": {
+    "total": 7.8,
+    "ratingText": "TỐT",
+    "peVsMedian": 1.1448,
+    "pbVsMedian": -2.2702885896,
+    "psVsMedian": -5,
+    "peForward": 11.06,
+    "peForwardVsMedian": -15,
+    "pbForward": 1.12,
+    "pbForwardVsMedian": -10
+  },
+  "price": null,
+  "metrics": {
+    "marketCap": 23139000000000,
+    "pe": 12.5724,
+    "eps": 1328.3092356884,
+    "volume10d": 11048836,
+    "pb": 1.2162139263,
+    "ps": null,
+    "bvps": null,
+    "sharesOut": 1522299908,
+    "evEbitda": 15.3861,
+    "beta": 1.00349
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "symbol": "MCH",
+  "score360": {
+    "total": 5.2,
+    "ratingText": "KHÁ",
+    "peVsMedian": 26.5678,
+    "pbVsMedian": 67.9825727504,
+    "psVsMedian": -5,
+    "peForward": 22.25,
+    "peForwardVsMedian": -15,
+    "pbForward": 9.2,
+    "pbForwardVsMedian": -10
+  },
+  "price": null,
+  "metrics": {
+    "marketCap": 186959000000000,
+    "pe": 25.2839,
+    "eps": 5517.3462877159,
+    "volume10d": 789942,
+    "pb": 9.9978215938,
+    "ps": null,
+    "bvps": null,
+    "sharesOut": 1307404949,
+    "evEbitda": 23.5402,
+    "beta": null
+  }
+}

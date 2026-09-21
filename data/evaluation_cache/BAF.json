@@ -1,0 +1,27 @@
+{
+  "symbol": "BAF",
+  "score360": {
+    "total": 6,
+    "ratingText": "KHÁ",
+    "peVsMedian": 139.8868,
+    "pbVsMedian": 9.597807122399999,
+    "psVsMedian": -5,
+    "peForward": 72.11,
+    "peForwardVsMedian": -15,
+    "pbForward": 2.48,
+    "pbForwardVsMedian": -10
+  },
+  "price": null,
+  "metrics": {
+    "marketCap": 11692600000000,
+    "pe": 81.9434,
+    "eps": 439.9376876617,
+    "volume10d": 1372010,
+    "pb": 2.6997258903,
+    "ps": null,
+    "bvps": null,
+    "sharesOut": 364824906,
+    "evEbitda": 22.7965,
+    "beta": 0.530243
+  }
+}

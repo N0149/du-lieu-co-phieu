@@ -1,0 +1,27 @@
+{
+  "symbol": "F88",
+  "score360": {
+    "total": 6.2,
+    "ratingText": "KHÁ",
+    "peVsMedian": 21.9878,
+    "pbVsMedian": 42.124618504,
+    "psVsMedian": -5,
+    "peForward": 20.23,
+    "peForwardVsMedian": -15,
+    "pbForward": 6.22,
+    "pbForwardVsMedian": -10
+  },
+  "price": null,
+  "metrics": {
+    "marketCap": 14014000000000,
+    "pe": 22.9939,
+    "eps": 6543.2682888713,
+    "volume10d": 83919,
+    "pb": 6.765577313,
+    "ps": null,
+    "bvps": null,
+    "sharesOut": 231265102,
+    "evEbitda": 179.442,
+    "beta": 2.33974
+  }
+}

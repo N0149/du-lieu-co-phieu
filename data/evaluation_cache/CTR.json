@@ -1,0 +1,27 @@
+{
+  "symbol": "CTR",
+  "score360": {
+    "total": 6.2,
+    "ratingText": "KHÁ",
+    "peVsMedian": 8.768,
+    "pbVsMedian": 26.0257734144,
+    "psVsMedian": -5,
+    "peForward": 14.42,
+    "peForwardVsMedian": -15,
+    "pbForward": 4.37,
+    "pbForwardVsMedian": -10
+  },
+  "price": null,
+  "metrics": {
+    "marketCap": 9352000000000,
+    "pe": 16.384,
+    "eps": 5242.9297294293,
+    "volume10d": 169597,
+    "pb": 4.7532216768,
+    "ps": null,
+    "bvps": null,
+    "sharesOut": 128109533,
+    "evEbitda": 9.18973,
+    "beta": 1.03152
+  }
+}

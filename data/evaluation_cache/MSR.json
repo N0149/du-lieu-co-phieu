@@ -1,0 +1,27 @@
+{
+  "symbol": "MSR",
+  "score360": {
+    "total": 5.2,
+    "ratingText": "KHÁ",
+    "peVsMedian": 7895.64,
+    "pbVsMedian": 17.3803643792,
+    "psVsMedian": -5,
+    "peForward": 3484.64,
+    "peForwardVsMedian": -15,
+    "pbForward": 3.38,
+    "pbForwardVsMedian": -10
+  },
+  "price": null,
+  "metrics": {
+    "marketCap": 52076300000000,
+    "pe": 3959.82,
+    "eps": 10.2724234865,
+    "volume10d": 1567358,
+    "pb": 3.6725455474,
+    "ps": null,
+    "bvps": null,
+    "sharesOut": 1104973420,
+    "evEbitda": 30.0212,
+    "beta": 2.78979
+  }
+}

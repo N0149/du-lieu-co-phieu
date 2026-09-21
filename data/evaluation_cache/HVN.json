@@ -1,0 +1,27 @@
+{
+  "symbol": "HVN",
+  "score360": {
+    "total": 7.2,
+    "ratingText": "TỐT",
+    "peVsMedian": -8.47246,
+    "pbVsMedian": 82.8520182976,
+    "psVsMedian": -5,
+    "peForward": 6.83,
+    "peForwardVsMedian": -15,
+    "pbForward": 10.91,
+    "pbForwardVsMedian": -10
+  },
+  "price": null,
+  "metrics": {
+    "marketCap": 65030300000000,
+    "pe": 7.76377,
+    "eps": 2910.9561633681,
+    "volume10d": 1034855,
+    "pb": 11.8565022872,
+    "ps": null,
+    "bvps": null,
+    "sharesOut": 3111498211,
+    "evEbitda": 5.05988,
+    "beta": 1.03068
+  }
+}

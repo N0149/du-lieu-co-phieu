@@ -1,0 +1,27 @@
+{
+  "symbol": "DGC",
+  "score360": {
+    "total": 8.8,
+    "ratingText": "XUẤT SẮC",
+    "peVsMedian": -10.86772,
+    "pbVsMedian": -1.4482700800000003,
+    "psVsMedian": -5,
+    "peForward": 5.78,
+    "peForwardVsMedian": -15,
+    "pbForward": 1.21,
+    "pbForwardVsMedian": -10
+  },
+  "price": null,
+  "metrics": {
+    "marketCap": 13653000000000,
+    "pe": 6.56614,
+    "eps": 7965.1064109007,
+    "volume10d": 970160,
+    "pb": 1.31896624,
+    "ps": null,
+    "bvps": null,
+    "sharesOut": 379778413,
+    "evEbitda": 6.61393,
+    "beta": 0.866939
+  }
+}

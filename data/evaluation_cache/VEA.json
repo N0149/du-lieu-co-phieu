@@ -1,0 +1,27 @@
+{
+  "symbol": "VEA",
+  "score360": {
+    "total": 8,
+    "ratingText": "XUẤT SẮC",
+    "peVsMedian": -11.63752,
+    "pbVsMedian": 1.1815334096,
+    "psVsMedian": -5,
+    "peForward": 5.44,
+    "peForwardVsMedian": -15,
+    "pbForward": 1.52,
+    "pbForwardVsMedian": -10
+  },
+  "price": null,
+  "metrics": {
+    "marketCap": 49240000000000,
+    "pe": 6.18124,
+    "eps": 5379.6640739344,
+    "volume10d": 335273,
+    "pb": 1.6476916762,
+    "ps": null,
+    "bvps": null,
+    "sharesOut": 1328800000,
+    "evEbitda": 297.15,
+    "beta": 1.02937
+  }
+}

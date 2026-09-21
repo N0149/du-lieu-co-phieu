@@ -1,0 +1,27 @@
+{
+  "symbol": "SAB",
+  "score360": {
+    "total": 7,
+    "ratingText": "TỐT",
+    "peVsMedian": 3.950199999999999,
+    "pbVsMedian": 11.3801872544,
+    "psVsMedian": -5,
+    "peForward": 12.3,
+    "peForwardVsMedian": -15,
+    "pbForward": 2.69,
+    "pbForwardVsMedian": -10
+  },
+  "price": null,
+  "metrics": {
+    "marketCap": 56817500000000,
+    "pe": 13.9751,
+    "eps": 3448.9861227076,
+    "volume10d": 457004,
+    "pb": 2.9225234068,
+    "ps": null,
+    "bvps": null,
+    "sharesOut": 1282562372,
+    "evEbitda": 12.1517,
+    "beta": 0.424064
+  }
+}

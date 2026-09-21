@@ -1,0 +1,27 @@
+{
+  "symbol": "SEA",
+  "score360": {
+    "total": 6,
+    "ratingText": "KHÁ",
+    "peVsMedian": 30.513399999999997,
+    "pbVsMedian": 6.286673518400001,
+    "psVsMedian": -5,
+    "peForward": 23.99,
+    "peForwardVsMedian": -15,
+    "pbForward": 2.1,
+    "pbForwardVsMedian": -10
+  },
+  "price": null,
+  "metrics": {
+    "marketCap": 8749330000000,
+    "pe": 27.2567,
+    "eps": 1646.4233527268,
+    "volume10d": 12842,
+    "pb": 2.2858341898,
+    "ps": null,
+    "bvps": null,
+    "sharesOut": 124990500,
+    "evEbitda": 142.322,
+    "beta": 1.48973
+  }
+}

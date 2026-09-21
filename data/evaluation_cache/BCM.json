@@ -1,0 +1,27 @@
+{
+  "symbol": "BCM",
+  "score360": {
+    "total": 7,
+    "ratingText": "TỐT",
+    "peVsMedian": 7.574200000000001,
+    "pbVsMedian": 7.4138673016,
+    "psVsMedian": -5,
+    "peForward": 13.89,
+    "peForwardVsMedian": -15,
+    "pbForward": 2.23,
+    "pbForwardVsMedian": -10
+  },
+  "price": null,
+  "metrics": {
+    "marketCap": 41658800000000,
+    "pe": 15.7871,
+    "eps": 3382.5008429053,
+    "volume10d": 568003,
+    "pb": 2.4267334127,
+    "ps": null,
+    "bvps": null,
+    "sharesOut": 1035000000,
+    "evEbitda": 28.7213,
+    "beta": 0.972197
+  }
+}

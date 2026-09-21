@@ -1,0 +1,27 @@
+{
+  "symbol": "SJG",
+  "score360": {
+    "total": 8.8,
+    "ratingText": "XUẤT SẮC",
+    "peVsMedian": -11.72838,
+    "pbVsMedian": -0.9392556392000007,
+    "psVsMedian": -5,
+    "peForward": 5.4,
+    "peForwardVsMedian": -15,
+    "pbForward": 1.27,
+    "pbForwardVsMedian": -10
+  },
+  "price": null,
+  "metrics": {
+    "marketCap": 9350370000000,
+    "pe": 6.13581,
+    "eps": 3773.7450167251,
+    "volume10d": 316,
+    "pb": 1.3825930451,
+    "ps": null,
+    "bvps": null,
+    "sharesOut": 449537112,
+    "evEbitda": 10.8891,
+    "beta": 0.244798
+  }
+}

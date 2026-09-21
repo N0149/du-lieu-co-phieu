@@ -1,0 +1,27 @@
+{
+  "symbol": "STB",
+  "score360": {
+    "total": 7,
+    "ratingText": "TỐT",
+    "peVsMedian": 19.233199999999997,
+    "pbVsMedian": 5.155860724,
+    "psVsMedian": -5,
+    "peForward": 19.02,
+    "peForwardVsMedian": -15,
+    "pbForward": 1.97,
+    "pbForwardVsMedian": -10
+  },
+  "price": null,
+  "metrics": {
+    "marketCap": 147424000000000,
+    "pe": 21.6166,
+    "eps": 3150.3615209655,
+    "volume10d": 3453752,
+    "pb": 2.1444825905,
+    "ps": null,
+    "bvps": null,
+    "sharesOut": 1885215716,
+    "evEbitda": null,
+    "beta": 0.861311
+  }
+}

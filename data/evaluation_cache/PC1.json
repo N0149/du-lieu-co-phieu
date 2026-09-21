@@ -1,0 +1,27 @@
+{
+  "symbol": "PC1",
+  "score360": {
+    "total": 8.8,
+    "ratingText": "XUẤT SẮC",
+    "peVsMedian": -7.728300000000001,
+    "pbVsMedian": -1.5883904351999991,
+    "psVsMedian": -5,
+    "peForward": 7.16,
+    "peForwardVsMedian": -15,
+    "pbForward": 1.2,
+    "pbForwardVsMedian": -10
+  },
+  "price": null,
+  "metrics": {
+    "marketCap": 8246270000000,
+    "pe": 8.13585,
+    "eps": 2532.0039707955,
+    "volume10d": 1377410,
+    "pb": 1.3014511956,
+    "ps": null,
+    "bvps": null,
+    "sharesOut": 411285343,
+    "evEbitda": 6.49609,
+    "beta": 0.754657
+  }
+}

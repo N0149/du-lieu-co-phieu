@@ -1,0 +1,27 @@
+{
+  "symbol": "VPI",
+  "score360": {
+    "total": 5.2,
+    "ratingText": "KHÁ",
+    "peVsMedian": 76.6084,
+    "pbVsMedian": 17.9470909288,
+    "psVsMedian": -5,
+    "peForward": 44.27,
+    "peForwardVsMedian": -15,
+    "pbForward": 3.44,
+    "pbForwardVsMedian": -10
+  },
+  "price": null,
+  "metrics": {
+    "marketCap": 22144200000000,
+    "pe": 50.3042,
+    "eps": 1220.57355634,
+    "volume10d": 2406237,
+    "pb": 3.7433863661,
+    "ps": null,
+    "bvps": null,
+    "sharesOut": 352054374,
+    "evEbitda": 50.2063,
+    "beta": 0.108492
+  }
+}

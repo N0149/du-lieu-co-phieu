@@ -1,0 +1,27 @@
+{
+  "symbol": "ACV",
+  "score360": {
+    "total": 7,
+    "ratingText": "TỐT",
+    "peVsMedian": 5.167000000000002,
+    "pbVsMedian": 6.063915253600001,
+    "psVsMedian": -5,
+    "peForward": 12.83,
+    "peForwardVsMedian": -15,
+    "pbForward": 2.08,
+    "pbForwardVsMedian": -10
+  },
+  "price": null,
+  "metrics": {
+    "marketCap": 142362000000000,
+    "pe": 14.5835,
+    "eps": 3018.832396279,
+    "volume10d": 346250,
+    "pb": 2.2579894067,
+    "ps": null,
+    "bvps": null,
+    "sharesOut": 3582324023,
+    "evEbitda": 9.68848,
+    "beta": 1.79869
+  }
+}

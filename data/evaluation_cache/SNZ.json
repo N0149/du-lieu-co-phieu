@@ -1,0 +1,27 @@
+{
+  "symbol": "SNZ",
+  "score360": {
+    "total": 8,
+    "ratingText": "XUẤT SẮC",
+    "peVsMedian": -6.232220000000002,
+    "pbVsMedian": 0.5179892232000007,
+    "psVsMedian": -5,
+    "peForward": 7.82,
+    "peForwardVsMedian": -15,
+    "pbForward": 1.44,
+    "pbForwardVsMedian": -10
+  },
+  "price": null,
+  "metrics": {
+    "marketCap": 9621250000000,
+    "pe": 8.88389,
+    "eps": 3407.1771905258,
+    "volume10d": 596,
+    "pb": 1.5647486529,
+    "ps": null,
+    "bvps": null,
+    "sharesOut": 376491800,
+    "evEbitda": 5.60266,
+    "beta": 0.957582
+  }
+}

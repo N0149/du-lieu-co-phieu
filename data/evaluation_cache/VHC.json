@@ -1,0 +1,27 @@
+{
+  "symbol": "VHC",
+  "score360": {
+    "total": 8.8,
+    "ratingText": "XUẤT SẮC",
+    "peVsMedian": -4.3759000000000015,
+    "pbVsMedian": -0.4165106896000008,
+    "psVsMedian": -5,
+    "peForward": 8.63,
+    "peForwardVsMedian": -15,
+    "pbForward": 1.33,
+    "pbForwardVsMedian": -10
+  },
+  "price": null,
+  "metrics": {
+    "marketCap": 10493600000000,
+    "pe": 9.81205,
+    "eps": 6318.7628814171,
+    "volume10d": 293833,
+    "pb": 1.4479361638,
+    "ps": null,
+    "bvps": null,
+    "sharesOut": 209453159,
+    "evEbitda": 7.45504,
+    "beta": 1.06129
+  }
+}

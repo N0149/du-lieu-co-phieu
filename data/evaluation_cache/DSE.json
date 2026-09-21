@@ -1,0 +1,27 @@
+{
+  "symbol": "DSE",
+  "score360": {
+    "total": 6,
+    "ratingText": "KHÁ",
+    "peVsMedian": 38.2856,
+    "pbVsMedian": 6.992050022400001,
+    "psVsMedian": -5,
+    "peForward": 27.41,
+    "peForwardVsMedian": -15,
+    "pbForward": 2.18,
+    "pbForwardVsMedian": -10
+  },
+  "price": null,
+  "metrics": {
+    "marketCap": 9635620000000,
+    "pe": 31.1428,
+    "eps": 765.8268505666,
+    "volume10d": 465723,
+    "pb": 2.3740062528,
+    "ps": null,
+    "bvps": null,
+    "sharesOut": 428249806,
+    "evEbitda": 43.0684,
+    "beta": 0.413205
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "symbol": "DHG",
+  "score360": {
+    "total": 6.2,
+    "ratingText": "KHÁ",
+    "peVsMedian": 6.5562000000000005,
+    "pbVsMedian": 13.180515375199999,
+    "psVsMedian": -5,
+    "peForward": 13.44,
+    "peForwardVsMedian": -15,
+    "pbForward": 2.9,
+    "pbForwardVsMedian": -10
+  },
+  "price": null,
+  "metrics": {
+    "marketCap": 11832500000000,
+    "pe": 15.2781,
+    "eps": 6519.1565686284,
+    "volume10d": 8011,
+    "pb": 3.1475644219,
+    "ps": null,
+    "bvps": null,
+    "sharesOut": 130746071,
+    "evEbitda": 12.6862,
+    "beta": 0.30471
+  }
+}

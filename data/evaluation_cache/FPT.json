@@ -1,0 +1,27 @@
+{
+  "symbol": "FPT",
+  "score360": {
+    "total": 6.2,
+    "ratingText": "KHÁ",
+    "peVsMedian": 2.6156000000000006,
+    "pbVsMedian": 15.420341650400001,
+    "psVsMedian": -5,
+    "peForward": 11.71,
+    "peForwardVsMedian": -15,
+    "pbForward": 3.15,
+    "pbForwardVsMedian": -10
+  },
+  "price": null,
+  "metrics": {
+    "marketCap": 122917000000000,
+    "pe": 13.3078,
+    "eps": 5515.573995291,
+    "volume10d": 7130691,
+    "pb": 3.4275427063,
+    "ps": null,
+    "bvps": null,
+    "sharesOut": 1714326422,
+    "evEbitda": 10.2003,
+    "beta": 0.586958
+  }
+}

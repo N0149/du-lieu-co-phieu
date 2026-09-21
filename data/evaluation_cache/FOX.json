@@ -1,0 +1,27 @@
+{
+  "symbol": "FOX",
+  "score360": {
+    "total": 6.2,
+    "ratingText": "KHÁ",
+    "peVsMedian": 10.9662,
+    "pbVsMedian": 31.8758629752,
+    "psVsMedian": -5,
+    "peForward": 15.39,
+    "peForwardVsMedian": -15,
+    "pbForward": 5.05,
+    "pbForwardVsMedian": -10
+  },
+  "price": null,
+  "metrics": {
+    "marketCap": 44982600000000,
+    "pe": 17.4831,
+    "eps": 4626.6468289675,
+    "volume10d": 60399,
+    "pb": 5.4844828719,
+    "ps": null,
+    "bvps": null,
+    "sharesOut": 738763463,
+    "evEbitda": 12.8716,
+    "beta": 1.48609
+  }
+}

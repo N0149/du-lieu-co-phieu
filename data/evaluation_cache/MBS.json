@@ -1,0 +1,27 @@
+{
+  "symbol": "MBS",
+  "score360": {
+    "total": 7,
+    "ratingText": "TỐT",
+    "peVsMedian": -1.4483999999999995,
+    "pbVsMedian": 2.7284206183999995,
+    "psVsMedian": -5,
+    "peForward": 9.92,
+    "peForwardVsMedian": -15,
+    "pbForward": 1.69,
+    "pbForwardVsMedian": -10
+  },
+  "price": null,
+  "metrics": {
+    "marketCap": 17015900000000,
+    "pe": 11.2758,
+    "eps": 1862.3990650674,
+    "volume10d": 2934823,
+    "pb": 1.8410525773,
+    "ps": null,
+    "bvps": null,
+    "sharesOut": 1000933410,
+    "evEbitda": 15.6598,
+    "beta": 1.21655
+  }
+}

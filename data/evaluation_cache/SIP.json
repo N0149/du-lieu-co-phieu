@@ -1,0 +1,27 @@
+{
+  "symbol": "SIP",
+  "score360": {
+    "total": 7,
+    "ratingText": "TỐT",
+    "peVsMedian": -1.7811999999999983,
+    "pbVsMedian": 10.817422997600001,
+    "psVsMedian": -5,
+    "peForward": 9.78,
+    "peForwardVsMedian": -15,
+    "pbForward": 2.62,
+    "pbForwardVsMedian": -10
+  },
+  "price": null,
+  "metrics": {
+    "marketCap": 11984600000000,
+    "pe": 11.1094,
+    "eps": 5463.8628182179,
+    "volume10d": 69207,
+    "pb": 2.8521778747,
+    "ps": null,
+    "bvps": null,
+    "sharesOut": 242112943,
+    "evEbitda": 12.1006,
+    "beta": 0.752597
+  }
+}

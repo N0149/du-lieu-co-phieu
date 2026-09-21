@@ -1,0 +1,27 @@
+{
+  "symbol": "VCI",
+  "score360": {
+    "total": 7,
+    "ratingText": "TỐT",
+    "peVsMedian": 17.7798,
+    "pbVsMedian": 1.9679268784000001,
+    "psVsMedian": -5,
+    "peForward": 18.38,
+    "peForwardVsMedian": -15,
+    "pbForward": 1.61,
+    "pbForwardVsMedian": -10
+  },
+  "price": null,
+  "metrics": {
+    "marketCap": 23793600000000,
+    "pe": 20.8899,
+    "eps": 1311.6357505443,
+    "volume10d": 10980209,
+    "pb": 1.7459908598,
+    "ps": null,
+    "bvps": null,
+    "sharesOut": 1152231925,
+    "evEbitda": 18.1698,
+    "beta": 0.848477
+  }
+}

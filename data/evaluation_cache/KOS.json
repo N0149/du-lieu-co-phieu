@@ -1,0 +1,27 @@
+{
+  "symbol": "KOS",
+  "score360": {
+    "total": 5.2,
+    "ratingText": "KHÁ",
+    "peVsMedian": 846.66,
+    "pbVsMedian": 16.3169111112,
+    "psVsMedian": -5,
+    "peForward": 383.09,
+    "peForwardVsMedian": -15,
+    "pbForward": 3.26,
+    "pbForwardVsMedian": -10
+  },
+  "price": null,
+  "metrics": {
+    "marketCap": 6505260000000,
+    "pe": 435.33,
+    "eps": 87.5197233701,
+    "volume10d": 228201,
+    "pb": 3.5396138889,
+    "ps": null,
+    "bvps": null,
+    "sharesOut": 216481335,
+    "evEbitda": 50.3101,
+    "beta": 0.131175
+  }
+}

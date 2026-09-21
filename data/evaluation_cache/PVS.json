@@ -1,0 +1,27 @@
+{
+  "symbol": "PVS",
+  "score360": {
+    "total": 7.8,
+    "ratingText": "TỐT",
+    "peVsMedian": -2.9849999999999994,
+    "pbVsMedian": -1.6742881504000007,
+    "psVsMedian": -5,
+    "peForward": 9.25,
+    "peForwardVsMedian": -15,
+    "pbForward": 1.19,
+    "pbForwardVsMedian": -10
+  },
+  "price": null,
+  "metrics": {
+    "marketCap": 20436300000000,
+    "pe": 10.5075,
+    "eps": 3616.4512929555,
+    "volume10d": 4004685,
+    "pb": 1.2907139812,
+    "ps": null,
+    "bvps": null,
+    "sharesOut": 613704118,
+    "evEbitda": 7.65738,
+    "beta": 2.16482
+  }
+}

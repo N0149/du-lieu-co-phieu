@@ -1,0 +1,27 @@
+{
+  "symbol": "IDC",
+  "score360": {
+    "total": 8,
+    "ratingText": "XUẤT SẮC",
+    "peVsMedian": -6.241,
+    "pbVsMedian": 9.2445928856,
+    "psVsMedian": -5,
+    "peForward": 7.81,
+    "peForwardVsMedian": -15,
+    "pbForward": 2.44,
+    "pbForwardVsMedian": -10
+  },
+  "price": null,
+  "metrics": {
+    "marketCap": 13441800000000,
+    "pe": 8.8795,
+    "eps": 5090.3753671247,
+    "volume10d": 1268947,
+    "pb": 2.6555741107,
+    "ps": null,
+    "bvps": null,
+    "sharesOut": 417446864,
+    "evEbitda": 6.10076,
+    "beta": 1.68542
+  }
+}

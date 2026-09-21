@@ -1,0 +1,27 @@
+{
+  "symbol": "HNG",
+  "score360": {
+    "total": 6.2,
+    "ratingText": "KHÁ",
+    "peVsMedian": -39.77708,
+    "pbVsMedian": 47.6309076032,
+    "psVsMedian": -5,
+    "peForward": -6.94,
+    "peForwardVsMedian": -15,
+    "pbForward": 6.86,
+    "pbForwardVsMedian": -10
+  },
+  "price": null,
+  "metrics": {
+    "marketCap": 6847540000000,
+    "pe": -7.88854,
+    "eps": -890.4051264012,
+    "volume10d": 989656,
+    "pb": 7.4538634504,
+    "ps": null,
+    "bvps": null,
+    "sharesOut": 1108553895,
+    "evEbitda": 28.1407,
+    "beta": 0.853631
+  }
+}

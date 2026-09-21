@@ -1,0 +1,27 @@
+{
+  "symbol": "SHB",
+  "score360": {
+    "total": 8.8,
+    "ratingText": "XUẤT SẮC",
+    "peVsMedian": -12.72926,
+    "pbVsMedian": -4.0839778008,
+    "psVsMedian": -5,
+    "peForward": 4.96,
+    "peForwardVsMedian": -15,
+    "pbForward": 0.91,
+    "pbForwardVsMedian": -10
+  },
+  "price": null,
+  "metrics": {
+    "marketCap": 63055700000000,
+    "pe": 5.63537,
+    "eps": 2581.9076272948,
+    "volume10d": 44386355,
+    "pb": 0.9895027749,
+    "ps": null,
+    "bvps": null,
+    "sharesOut": 5343703838,
+    "evEbitda": null,
+    "beta": 0.666815
+  }
+}

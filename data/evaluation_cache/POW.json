@@ -1,0 +1,27 @@
+{
+  "symbol": "POW",
+  "score360": {
+    "total": 7.8,
+    "ratingText": "TỐT",
+    "peVsMedian": 7.366599999999998,
+    "pbVsMedian": -2.4597927231999996,
+    "psVsMedian": -5,
+    "peForward": 13.8,
+    "peForwardVsMedian": -15,
+    "pbForward": 1.1,
+    "pbForwardVsMedian": -10
+  },
+  "price": null,
+  "metrics": {
+    "marketCap": 38654900000000,
+    "pe": 15.6833,
+    "eps": 848.0353994133,
+    "volume10d": 5795233,
+    "pb": 1.1925259096,
+    "ps": null,
+    "bvps": null,
+    "sharesOut": 3067845688,
+    "evEbitda": 10.1131,
+    "beta": 0.802651
+  }
+}

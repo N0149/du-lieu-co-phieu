@@ -1,0 +1,27 @@
+{
+  "symbol": "SSB",
+  "score360": {
+    "total": 8.8,
+    "ratingText": "XUẤT SẮC",
+    "peVsMedian": -6.761600000000001,
+    "pbVsMedian": -2.5853956272000005,
+    "psVsMedian": -5,
+    "peForward": 7.58,
+    "peForwardVsMedian": -15,
+    "pbForward": 1.08,
+    "pbForwardVsMedian": -10
+  },
+  "price": null,
+  "metrics": {
+    "marketCap": 83598100000000,
+    "pe": 8.6192,
+    "eps": 1937.5338627905,
+    "volume10d": 4581504,
+    "pb": 1.1768255466,
+    "ps": null,
+    "bvps": null,
+    "sharesOut": 3468800000,
+    "evEbitda": null,
+    "beta": 0.226216
+  }
+}

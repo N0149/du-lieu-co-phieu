@@ -1,0 +1,27 @@
+{
+  "symbol": "FTS",
+  "score360": {
+    "total": 7,
+    "ratingText": "TỐT",
+    "peVsMedian": 23.4516,
+    "pbVsMedian": 5.277995586399999,
+    "psVsMedian": -5,
+    "peForward": 20.88,
+    "peForwardVsMedian": -15,
+    "pbForward": 1.99,
+    "pbForwardVsMedian": -10
+  },
+  "price": null,
+  "metrics": {
+    "marketCap": 8004060000000,
+    "pe": 23.7258,
+    "eps": 1161.1809841882,
+    "volume10d": 698030,
+    "pb": 2.1597494483,
+    "ps": null,
+    "bvps": null,
+    "sharesOut": 381145750,
+    "evEbitda": 33.1189,
+    "beta": 0.852084
+  }
+}

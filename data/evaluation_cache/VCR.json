@@ -1,0 +1,27 @@
+{
+  "symbol": "VCR",
+  "score360": {
+    "total": 6.2,
+    "ratingText": "KHÁ",
+    "peVsMedian": -251.764,
+    "pbVsMedian": 34.8751416064,
+    "psVsMedian": -5,
+    "peForward": -100.22,
+    "peForwardVsMedian": -15,
+    "pbForward": 5.39,
+    "pbForwardVsMedian": -10
+  },
+  "price": null,
+  "metrics": {
+    "marketCap": 10080000000000,
+    "pe": -113.882,
+    "eps": -368.8020683619,
+    "volume10d": 2841,
+    "pb": 5.8593927008,
+    "ps": null,
+    "bvps": null,
+    "sharesOut": 210000000,
+    "evEbitda": -347.467,
+    "beta": 1.90313
+  }
+}

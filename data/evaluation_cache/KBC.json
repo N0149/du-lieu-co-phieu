@@ -1,0 +1,27 @@
+{
+  "symbol": "KBC",
+  "score360": {
+    "total": 7.8,
+    "ratingText": "TỐT",
+    "peVsMedian": 3.743400000000001,
+    "pbVsMedian": -1.6715457808000007,
+    "psVsMedian": -5,
+    "peForward": 12.21,
+    "peForwardVsMedian": -15,
+    "pbForward": 1.19,
+    "pbForwardVsMedian": -10
+  },
+  "price": null,
+  "metrics": {
+    "marketCap": 24485600000000,
+    "pe": 13.8717,
+    "eps": 2451.0403215711,
+    "volume10d": 1217474,
+    "pb": 1.2910567774,
+    "ps": null,
+    "bvps": null,
+    "sharesOut": 941754759,
+    "evEbitda": 19.6531,
+    "beta": 1.36595
+  }
+}

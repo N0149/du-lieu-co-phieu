@@ -1,0 +1,27 @@
+{
+  "symbol": "BVB",
+  "score360": {
+    "total": 7.8,
+    "ratingText": "TỐT",
+    "peVsMedian": 15.643799999999999,
+    "pbVsMedian": -3.5520321952000007,
+    "psVsMedian": -5,
+    "peForward": 17.44,
+    "peForwardVsMedian": -15,
+    "pbForward": 0.97,
+    "pbForwardVsMedian": -10
+  },
+  "price": null,
+  "metrics": {
+    "marketCap": 7529630000000,
+    "pe": 19.8219,
+    "eps": 620.2245178889,
+    "volume10d": 895862,
+    "pb": 1.0559959756,
+    "ps": null,
+    "bvps": null,
+    "sharesOut": 640820000,
+    "evEbitda": null,
+    "beta": 1.62476
+  }
+}

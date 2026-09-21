@@ -1,0 +1,27 @@
+{
+  "symbol": "VAB",
+  "score360": {
+    "total": 8.8,
+    "ratingText": "XUẤT SẮC",
+    "peVsMedian": -11.07428,
+    "pbVsMedian": -5.2794121328,
+    "psVsMedian": -5,
+    "peForward": 5.69,
+    "peForwardVsMedian": -15,
+    "pbForward": 0.77,
+    "pbForwardVsMedian": -10
+  },
+  "price": null,
+  "metrics": {
+    "marketCap": 8344190000000,
+    "pe": 6.46286,
+    "eps": 1616.9321725288,
+    "volume10d": 500333,
+    "pb": 0.8400734834,
+    "ps": null,
+    "bvps": null,
+    "sharesOut": 902075041,
+    "evEbitda": null,
+    "beta": 0.421153
+  }
+}

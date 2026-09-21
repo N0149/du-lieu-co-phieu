@@ -1,0 +1,27 @@
+{
+  "symbol": "VSH",
+  "score360": {
+    "total": 7,
+    "ratingText": "TỐT",
+    "peVsMedian": -0.25560000000000116,
+    "pbVsMedian": 4.5519563191999985,
+    "psVsMedian": -5,
+    "peForward": 10.45,
+    "peForwardVsMedian": -15,
+    "pbForward": 1.9,
+    "pbForwardVsMedian": -10
+  },
+  "price": null,
+  "metrics": {
+    "marketCap": 9733140000000,
+    "pe": 11.8722,
+    "eps": 3651.3943702109,
+    "volume10d": 6211,
+    "pb": 2.0689945399,
+    "ps": null,
+    "bvps": null,
+    "sharesOut": 236241246,
+    "evEbitda": 7.33854,
+    "beta": 0.00890348
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "symbol": "IDP",
+  "score360": {
+    "total": 5.2,
+    "ratingText": "KHÁ",
+    "peVsMedian": 173.4494,
+    "pbVsMedian": 30.0897668696,
+    "psVsMedian": -5,
+    "peForward": 86.88,
+    "peForwardVsMedian": -15,
+    "pbForward": 4.84,
+    "pbForwardVsMedian": -10
+  },
+  "price": null,
+  "metrics": {
+    "marketCap": 14740400000000,
+    "pe": 98.7247,
+    "eps": 2836.1689974149,
+    "volume10d": 10,
+    "pb": 5.2612208587,
+    "ps": null,
+    "bvps": null,
+    "sharesOut": 61804472,
+    "evEbitda": 37.2682,
+    "beta": 0.252912
+  }
+}

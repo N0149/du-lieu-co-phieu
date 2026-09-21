@@ -1,0 +1,27 @@
+{
+  "symbol": "VIB",
+  "score360": {
+    "total": 8.8,
+    "ratingText": "XUẤT SẮC",
+    "peVsMedian": -7.806979999999999,
+    "pbVsMedian": -1.9269028543999998,
+    "psVsMedian": -5,
+    "peForward": 7.12,
+    "peForwardVsMedian": -15,
+    "pbForward": 1.16,
+    "pbForwardVsMedian": -10
+  },
+  "price": null,
+  "metrics": {
+    "marketCap": 50692500000000,
+    "pe": 8.09651,
+    "eps": 2142.8973399275,
+    "volume10d": 4471964,
+    "pb": 1.2591371432,
+    "ps": null,
+    "bvps": null,
+    "sharesOut": 3727386252,
+    "evEbitda": null,
+    "beta": 0.767116
+  }
+}

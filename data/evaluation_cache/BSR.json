@@ -1,0 +1,27 @@
+{
+  "symbol": "BSR",
+  "score360": {
+    "total": 7,
+    "ratingText": "TỐT",
+    "peVsMedian": 21.3322,
+    "pbVsMedian": 3.6310010320000004,
+    "psVsMedian": -5,
+    "peForward": 19.95,
+    "peForwardVsMedian": -15,
+    "pbForward": 1.8,
+    "pbForwardVsMedian": -10
+  },
+  "price": null,
+  "metrics": {
+    "marketCap": 151220000000000,
+    "pe": 22.6661,
+    "eps": 1041.202322641,
+    "volume10d": 15204347,
+    "pb": 1.953875129,
+    "ps": null,
+    "bvps": null,
+    "sharesOut": 5007299686,
+    "evEbitda": 18.0016,
+    "beta": 1.15738
+  }
+}

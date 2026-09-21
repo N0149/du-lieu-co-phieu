@@ -1,0 +1,27 @@
+{
+  "symbol": "DXG",
+  "score360": {
+    "total": 6.8,
+    "ratingText": "TỐT",
+    "peVsMedian": 109.00219999999999,
+    "pbVsMedian": -2.3999696208000003,
+    "psVsMedian": -5,
+    "peForward": 58.52,
+    "peForwardVsMedian": -15,
+    "pbForward": 1.1,
+    "pbForwardVsMedian": -10
+  },
+  "price": null,
+  "metrics": {
+    "marketCap": 13441900000000,
+    "pe": 66.5011,
+    "eps": 230.8234126309,
+    "volume10d": 10545376,
+    "pb": 1.2000037974,
+    "ps": null,
+    "bvps": null,
+    "sharesOut": 1268104965,
+    "evEbitda": 27.6258,
+    "beta": 0.930857
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "symbol": "OIL",
+  "score360": {
+    "total": 6.8,
+    "ratingText": "TỐT",
+    "peVsMedian": 45.4144,
+    "pbVsMedian": -0.5277013264000008,
+    "psVsMedian": -5,
+    "peForward": 30.54,
+    "peForwardVsMedian": -15,
+    "pbForward": 1.32,
+    "pbForwardVsMedian": -10
+  },
+  "price": null,
+  "metrics": {
+    "marketCap": 14777100000000,
+    "pe": 34.7072,
+    "eps": 420.3445808972,
+    "volume10d": 3713586,
+    "pb": 1.4340373342,
+    "ps": null,
+    "bvps": null,
+    "sharesOut": 1034229500,
+    "evEbitda": 29.5264,
+    "beta": 2.76514
+  }
+}

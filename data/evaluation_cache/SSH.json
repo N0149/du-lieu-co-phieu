@@ -1,0 +1,27 @@
+{
+  "symbol": "SSH",
+  "score360": {
+    "total": 6.2,
+    "ratingText": "KHÁ",
+    "peVsMedian": -151.5402,
+    "pbVsMedian": 24.8026148848,
+    "psVsMedian": -5,
+    "peForward": -56.12,
+    "peForwardVsMedian": -15,
+    "pbForward": 4.23,
+    "pbForwardVsMedian": -10
+  },
+  "price": null,
+  "metrics": {
+    "marketCap": 22500000000000,
+    "pe": -63.7701,
+    "eps": -1064.762534368,
+    "volume10d": 13,
+    "pb": 4.6003268606,
+    "ps": null,
+    "bvps": null,
+    "sharesOut": 375000000,
+    "evEbitda": 259.712,
+    "beta": 0.473224
+  }
+}

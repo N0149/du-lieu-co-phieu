@@ -1,0 +1,27 @@
+{
+  "symbol": "GEL",
+  "score360": {
+    "total": 6,
+    "ratingText": "KHÁ",
+    "peVsMedian": 83.2638,
+    "pbVsMedian": 11.271471340000002,
+    "psVsMedian": -5,
+    "peForward": 47.2,
+    "peForwardVsMedian": -15,
+    "pbForward": 2.68,
+    "pbForwardVsMedian": -10
+  },
+  "price": null,
+  "metrics": {
+    "marketCap": 25810000000000,
+    "pe": 53.6319,
+    "eps": 584.5406712971,
+    "volume10d": 2002314,
+    "pb": 2.9089339175,
+    "ps": null,
+    "bvps": null,
+    "sharesOut": 890000000,
+    "evEbitda": 9.69065,
+    "beta": null
+  }
+}

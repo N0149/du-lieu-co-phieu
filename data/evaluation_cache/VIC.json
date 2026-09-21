@@ -1,0 +1,27 @@
+{
+  "symbol": "VIC",
+  "score360": {
+    "total": 5.2,
+    "ratingText": "KHÁ",
+    "peVsMedian": 283.25,
+    "pbVsMedian": 82.2063059832,
+    "psVsMedian": -5,
+    "peForward": 135.19,
+    "peForwardVsMedian": -15,
+    "pbForward": 10.83,
+    "pbForwardVsMedian": -10
+  },
+  "price": null,
+  "metrics": {
+    "marketCap": 1872240000000000,
+    "pe": 153.625,
+    "eps": 1467.8631609706,
+    "volume10d": 5550801,
+    "pb": 11.7757882479,
+    "ps": null,
+    "bvps": null,
+    "sharesOut": 7762186429,
+    "evEbitda": 56.7709,
+    "beta": 1.74536
+  }
+}

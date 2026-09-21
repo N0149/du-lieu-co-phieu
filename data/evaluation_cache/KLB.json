@@ -1,0 +1,27 @@
+{
+  "symbol": "KLB",
+  "score360": {
+    "total": 8.8,
+    "ratingText": "XUẤT SẮC",
+    "peVsMedian": -14.96382,
+    "pbVsMedian": -4.0286393272,
+    "psVsMedian": -5,
+    "peForward": 3.98,
+    "peForwardVsMedian": -15,
+    "pbForward": 0.92,
+    "pbForwardVsMedian": -10
+  },
+  "price": null,
+  "metrics": {
+    "marketCap": 9587050000000,
+    "pe": 4.51809,
+    "eps": 3209.3231690629,
+    "volume10d": 352720,
+    "pb": 0.9964200841,
+    "ps": null,
+    "bvps": null,
+    "sharesOut": 748988337,
+    "evEbitda": null,
+    "beta": null
+  }
+}

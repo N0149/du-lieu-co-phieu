@@ -1,0 +1,27 @@
+{
+  "symbol": "NTP",
+  "score360": {
+    "total": 7,
+    "ratingText": "TỐT",
+    "peVsMedian": -3.6380000000000017,
+    "pbVsMedian": 7.109327243199999,
+    "psVsMedian": -5,
+    "peForward": 8.96,
+    "peForwardVsMedian": -15,
+    "pbForward": 2.2,
+    "pbForwardVsMedian": -10
+  },
+  "price": null,
+  "metrics": {
+    "marketCap": 10775400000000,
+    "pe": 10.181,
+    "eps": 5804.9367223829,
+    "volume10d": 292947,
+    "pb": 2.3886659054,
+    "ps": null,
+    "bvps": null,
+    "sharesOut": 205245204,
+    "evEbitda": 9.08747,
+    "beta": 0.690958
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "symbol": "ACB",
+  "score360": {
+    "total": 8.8,
+    "ratingText": "XUẤT SẮC",
+    "peVsMedian": -8.48288,
+    "pbVsMedian": -1.7396990159999994,
+    "psVsMedian": -5,
+    "peForward": 6.83,
+    "peForwardVsMedian": -15,
+    "pbForward": 1.18,
+    "pbForwardVsMedian": -10
+  },
+  "price": null,
+  "metrics": {
+    "marketCap": 127117000000000,
+    "pe": 7.75856,
+    "eps": 3041.8033083122,
+    "volume10d": 6726804,
+    "pb": 1.282537623,
+    "ps": null,
+    "bvps": null,
+    "sharesOut": 5804421957,
+    "evEbitda": null,
+    "beta": 0.39837
+  }
+}

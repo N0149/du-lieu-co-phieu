@@ -1,0 +1,27 @@
+{
+  "symbol": "HCM",
+  "score360": {
+    "total": 7,
+    "ratingText": "TỐT",
+    "peVsMedian": 14.403799999999997,
+    "pbVsMedian": 4.604271518400001,
+    "psVsMedian": -5,
+    "peForward": 16.9,
+    "peForwardVsMedian": -15,
+    "pbForward": 1.91,
+    "pbForwardVsMedian": -10
+  },
+  "price": null,
+  "metrics": {
+    "marketCap": 34984600000000,
+    "pe": 19.2019,
+    "eps": 1455.5846727149,
+    "volume10d": 3875221,
+    "pb": 2.0755339398,
+    "ps": null,
+    "bvps": null,
+    "sharesOut": 1371945838,
+    "evEbitda": 35.6595,
+    "beta": 1.16843
+  }
+}

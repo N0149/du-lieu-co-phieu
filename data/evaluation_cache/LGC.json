@@ -1,0 +1,27 @@
+{
+  "symbol": "LGC",
+  "score360": {
+    "total": 6.2,
+    "ratingText": "KHÁ",
+    "peVsMedian": 25.32,
+    "pbVsMedian": 13.0435673848,
+    "psVsMedian": -5,
+    "peForward": 21.7,
+    "peForwardVsMedian": -15,
+    "pbForward": 2.88,
+    "pbForwardVsMedian": -10
+  },
+  "price": null,
+  "metrics": {
+    "marketCap": 13746000000000,
+    "pe": 24.66,
+    "eps": 2627.7402897161,
+    "volume10d": null,
+    "pb": 3.1304459231,
+    "ps": null,
+    "bvps": null,
+    "sharesOut": 212130308,
+    "evEbitda": 13.8774,
+    "beta": 0.427614
+  }
+}

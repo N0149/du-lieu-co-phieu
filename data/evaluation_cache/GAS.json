@@ -1,0 +1,27 @@
+{
+  "symbol": "GAS",
+  "score360": {
+    "total": 7,
+    "ratingText": "TỐT",
+    "peVsMedian": 10.068800000000003,
+    "pbVsMedian": 10.799188676,
+    "psVsMedian": -5,
+    "peForward": 14.99,
+    "peForwardVsMedian": -15,
+    "pbForward": 2.62,
+    "pbForwardVsMedian": -10
+  },
+  "price": null,
+  "metrics": {
+    "marketCap": 212340000000000,
+    "pe": 17.0344,
+    "eps": 4596.5760611062,
+    "volume10d": 1921986,
+    "pb": 2.8498985845,
+    "ps": null,
+    "bvps": null,
+    "sharesOut": 2412949756,
+    "evEbitda": 11.4381,
+    "beta": 0.921229
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "symbol": "DIG",
+  "score360": {
+    "total": 7.8,
+    "ratingText": "TỐT",
+    "peVsMedian": 5.753799999999998,
+    "pbVsMedian": -2.609101796799999,
+    "psVsMedian": -5,
+    "peForward": 13.09,
+    "peForwardVsMedian": -15,
+    "pbForward": 1.08,
+    "pbForwardVsMedian": -10
+  },
+  "price": null,
+  "metrics": {
+    "marketCap": 8611010000000,
+    "pe": 14.8769,
+    "eps": 988.1080558202,
+    "volume10d": 3651205,
+    "pb": 1.1738622754,
+    "ps": null,
+    "bvps": null,
+    "sharesOut": 844217062,
+    "evEbitda": 15.1106,
+    "beta": 0.889318
+  }
+}

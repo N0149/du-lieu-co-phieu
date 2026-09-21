@@ -1,0 +1,27 @@
+{
+  "symbol": "PVI",
+  "score360": {
+    "total": 7,
+    "ratingText": "TỐT",
+    "peVsMedian": 8.706800000000001,
+    "pbVsMedian": 5.6311503224,
+    "psVsMedian": -5,
+    "peForward": 14.39,
+    "peForwardVsMedian": -15,
+    "pbForward": 2.03,
+    "pbForwardVsMedian": -10
+  },
+  "price": null,
+  "metrics": {
+    "marketCap": 16851300000000,
+    "pe": 16.3534,
+    "eps": 4708.499248484,
+    "volume10d": 14551,
+    "pb": 2.2038937903,
+    "ps": null,
+    "bvps": null,
+    "sharesOut": 257664972,
+    "evEbitda": -24.2876,
+    "beta": 0.914253
+  }
+}

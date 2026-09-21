@@ -1,0 +1,27 @@
+{
+  "symbol": "BWE",
+  "score360": {
+    "total": 8,
+    "ratingText": "XUẤT SẮC",
+    "peVsMedian": -4.693200000000001,
+    "pbVsMedian": 0.8030905120000007,
+    "psVsMedian": -5,
+    "peForward": 8.49,
+    "peForwardVsMedian": -15,
+    "pbForward": 1.47,
+    "pbForwardVsMedian": -10
+  },
+  "price": null,
+  "metrics": {
+    "marketCap": 10581700000000,
+    "pe": 9.6534,
+    "eps": 4506.1827772148,
+    "volume10d": 13843,
+    "pb": 1.600386314,
+    "ps": null,
+    "bvps": null,
+    "sharesOut": 251347021,
+    "evEbitda": 8.37826,
+    "beta": 0.341269
+  }
+}

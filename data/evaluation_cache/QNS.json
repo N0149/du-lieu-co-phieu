@@ -1,0 +1,27 @@
+{
+  "symbol": "QNS",
+  "score360": {
+    "total": 8,
+    "ratingText": "XUẤT SẮC",
+    "peVsMedian": -6.39378,
+    "pbVsMedian": 0.6780813719999994,
+    "psVsMedian": -5,
+    "peForward": 7.75,
+    "peForwardVsMedian": -15,
+    "pbForward": 1.46,
+    "pbForwardVsMedian": -10
+  },
+  "price": null,
+  "metrics": {
+    "marketCap": 18275400000000,
+    "pe": 8.80311,
+    "eps": 5212.8176051275,
+    "volume10d": 306591,
+    "pb": 1.5847601715,
+    "ps": null,
+    "bvps": null,
+    "sharesOut": 367648153,
+    "evEbitda": 7.93643,
+    "beta": 0.180631
+  }
+}

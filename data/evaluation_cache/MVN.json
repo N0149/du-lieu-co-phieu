@@ -1,0 +1,27 @@
+{
+  "symbol": "MVN",
+  "score360": {
+    "total": 5.2,
+    "ratingText": "KHÁ",
+    "peVsMedian": 45.00279999999999,
+    "pbVsMedian": 26.1258732632,
+    "psVsMedian": -5,
+    "peForward": 30.36,
+    "peForwardVsMedian": -15,
+    "pbForward": 4.38,
+    "pbForwardVsMedian": -10
+  },
+  "price": null,
+  "metrics": {
+    "marketCap": 72182900000000,
+    "pe": 34.5014,
+    "eps": 1621.6723892043,
+    "volume10d": 15050,
+    "pb": 4.7657341579,
+    "ps": null,
+    "bvps": null,
+    "sharesOut": 1200588000,
+    "evEbitda": 22.3942,
+    "beta": 4.37947
+  }
+}

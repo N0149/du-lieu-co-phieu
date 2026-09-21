@@ -1,0 +1,27 @@
+{
+  "symbol": "VCF",
+  "score360": {
+    "total": 6.2,
+    "ratingText": "KHÁ",
+    "peVsMedian": 7.895800000000001,
+    "pbVsMedian": 46.1167770744,
+    "psVsMedian": -5,
+    "peForward": 14.03,
+    "peForwardVsMedian": -15,
+    "pbForward": 6.68,
+    "pbForwardVsMedian": -10
+  },
+  "price": null,
+  "metrics": {
+    "marketCap": 7811610000000,
+    "pe": 15.9479,
+    "eps": 19482.1774653314,
+    "volume10d": 201,
+    "pb": 7.2645971343,
+    "ps": null,
+    "bvps": null,
+    "sharesOut": 26579135,
+    "evEbitda": 11.7413,
+    "beta": 0.371226
+  }
+}

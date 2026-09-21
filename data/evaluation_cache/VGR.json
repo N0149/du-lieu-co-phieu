@@ -1,0 +1,27 @@
+{
+  "symbol": "VGR",
+  "score360": {
+    "total": 6.2,
+    "ratingText": "KHÁ",
+    "peVsMedian": -0.8889999999999993,
+    "pbVsMedian": 26.4635178984,
+    "psVsMedian": -5,
+    "peForward": 10.17,
+    "peForwardVsMedian": -15,
+    "pbForward": 4.42,
+    "pbForwardVsMedian": -10
+  },
+  "price": null,
+  "metrics": {
+    "marketCap": 10169000000000,
+    "pe": 11.5555,
+    "eps": 6040.4347982101,
+    "volume10d": 9593,
+    "pb": 4.8079397373,
+    "ps": null,
+    "bvps": null,
+    "sharesOut": 82224959,
+    "evEbitda": 9.61991,
+    "beta": -0.547096
+  }
+}

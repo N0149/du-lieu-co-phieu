@@ -1,0 +1,27 @@
+{
+  "symbol": "SSI",
+  "score360": {
+    "total": 7,
+    "ratingText": "TỐT",
+    "peVsMedian": 4.851199999999999,
+    "pbVsMedian": 5.5661594008,
+    "psVsMedian": -5,
+    "peForward": 12.69,
+    "peForwardVsMedian": -15,
+    "pbForward": 2.02,
+    "pbForwardVsMedian": -10
+  },
+  "price": null,
+  "metrics": {
+    "marketCap": 64227900000000,
+    "pe": 14.4256,
+    "eps": 1951.3962349143,
+    "volume10d": 20742193,
+    "pb": 2.1957699251,
+    "ps": null,
+    "bvps": null,
+    "sharesOut": 3001302333,
+    "evEbitda": 17.6783,
+    "beta": 0.782433
+  }
+}

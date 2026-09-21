@@ -1,0 +1,27 @@
+{
+  "symbol": "CII",
+  "score360": {
+    "total": 6.8,
+    "ratingText": "TỐT",
+    "peVsMedian": 167.5152,
+    "pbVsMedian": -0.37669813279999964,
+    "psVsMedian": -5,
+    "peForward": 84.27,
+    "peForwardVsMedian": -15,
+    "pbForward": 1.34,
+    "pbForwardVsMedian": -10
+  },
+  "price": null,
+  "metrics": {
+    "marketCap": 8668610000000,
+    "pe": 95.7576,
+    "eps": 201.5506168619,
+    "volume10d": 8322112,
+    "pb": 1.4529127334,
+    "ps": null,
+    "bvps": null,
+    "sharesOut": 671985291,
+    "evEbitda": 17.0946,
+    "beta": 0.941799
+  }
+}

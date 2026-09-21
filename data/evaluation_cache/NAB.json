@@ -1,0 +1,27 @@
+{
+  "symbol": "NAB",
+  "score360": {
+    "total": 8.8,
+    "ratingText": "XUẤT SẮC",
+    "peVsMedian": -12.43146,
+    "pbVsMedian": -3.7403713272,
+    "psVsMedian": -5,
+    "peForward": 5.09,
+    "peForwardVsMedian": -15,
+    "pbForward": 0.95,
+    "pbForwardVsMedian": -10
+  },
+  "price": null,
+  "metrics": {
+    "marketCap": 25905900000000,
+    "pe": 5.78427,
+    "eps": 2437.6446012623,
+    "volume10d": 1627421,
+    "pb": 1.0324535841,
+    "ps": null,
+    "bvps": null,
+    "sharesOut": 2158822282,
+    "evEbitda": null,
+    "beta": 0.569993
+  }
+}

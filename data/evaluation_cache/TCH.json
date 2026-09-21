@@ -1,0 +1,27 @@
+{
+  "symbol": "TCH",
+  "score360": {
+    "total": 6.8,
+    "ratingText": "TỐT",
+    "peVsMedian": 62.0616,
+    "pbVsMedian": -0.5746588991999992,
+    "psVsMedian": -5,
+    "peForward": 37.87,
+    "peForwardVsMedian": -15,
+    "pbForward": 1.31,
+    "pbForwardVsMedian": -10
+  },
+  "price": null,
+  "metrics": {
+    "marketCap": 11889300000000,
+    "pe": 43.0308,
+    "eps": 415.9815116386,
+    "volume10d": 4649931,
+    "pb": 1.4281676376,
+    "ps": null,
+    "bvps": null,
+    "sharesOut": 1003312808,
+    "evEbitda": 43.1627,
+    "beta": 0.970326
+  }
+}

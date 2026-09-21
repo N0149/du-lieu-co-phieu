@@ -1,0 +1,27 @@
+{
+  "symbol": "SJS",
+  "score360": {
+    "total": 5.2,
+    "ratingText": "KHÁ",
+    "peVsMedian": 72.4922,
+    "pbVsMedian": 28.7212277784,
+    "psVsMedian": -5,
+    "peForward": 42.46,
+    "peForwardVsMedian": -15,
+    "pbForward": 4.68,
+    "pbForwardVsMedian": -10
+  },
+  "price": null,
+  "metrics": {
+    "marketCap": 16866800000000,
+    "pe": 48.2461,
+    "eps": 1216.6778860644,
+    "volume10d": 25783,
+    "pb": 5.0901534723,
+    "ps": null,
+    "bvps": null,
+    "sharesOut": 297474828,
+    "evEbitda": 39.7187,
+    "beta": 0.780289
+  }
+}

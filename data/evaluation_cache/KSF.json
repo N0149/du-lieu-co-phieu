@@ -1,0 +1,27 @@
+{
+  "symbol": "KSF",
+  "score360": {
+    "total": 6.2,
+    "ratingText": "KHÁ",
+    "peVsMedian": 1.1630000000000003,
+    "pbVsMedian": 26.612497772799998,
+    "psVsMedian": -5,
+    "peForward": 11.07,
+    "peForwardVsMedian": -15,
+    "pbForward": 4.44,
+    "pbForwardVsMedian": -10
+  },
+  "price": null,
+  "metrics": {
+    "marketCap": 70993200000000,
+    "pe": 12.5815,
+    "eps": 7312.3152601036,
+    "volume10d": 136501,
+    "pb": 4.8265622216,
+    "ps": null,
+    "bvps": null,
+    "sharesOut": 899787308,
+    "evEbitda": 8.84674,
+    "beta": 1.23516
+  }
+}

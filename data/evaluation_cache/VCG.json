@@ -1,0 +1,27 @@
+{
+  "symbol": "VCG",
+  "score360": {
+    "total": 8.8,
+    "ratingText": "XUẤT SẮC",
+    "peVsMedian": -15.9573,
+    "pbVsMedian": -1.5185428311999996,
+    "psVsMedian": -5,
+    "peForward": 3.54,
+    "peForwardVsMedian": -15,
+    "pbForward": 1.21,
+    "pbForwardVsMedian": -10
+  },
+  "price": null,
+  "metrics": {
+    "marketCap": 10053700000000,
+    "pe": 4.02135,
+    "eps": 5669.7368162159,
+    "volume10d": 2167965,
+    "pb": 1.3101821461,
+    "ps": null,
+    "bvps": null,
+    "sharesOut": 698176245,
+    "evEbitda": 10.5017,
+    "beta": 0.53812
+  }
+}

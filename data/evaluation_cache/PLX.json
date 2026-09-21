@@ -1,0 +1,27 @@
+{
+  "symbol": "PLX",
+  "score360": {
+    "total": 7,
+    "ratingText": "TỐT",
+    "peVsMedian": 12.760399999999997,
+    "pbVsMedian": 3.0105948256,
+    "psVsMedian": -5,
+    "peForward": 16.17,
+    "peForwardVsMedian": -15,
+    "pbForward": 1.73,
+    "pbForwardVsMedian": -10
+  },
+  "price": null,
+  "metrics": {
+    "marketCap": 48391000000000,
+    "pe": 18.3802,
+    "eps": 2105.5222984619,
+    "volume10d": 6041621,
+    "pb": 1.8763243532,
+    "ps": null,
+    "bvps": null,
+    "sharesOut": 1293878081,
+    "evEbitda": 13.6709,
+    "beta": 1.34331
+  }
+}

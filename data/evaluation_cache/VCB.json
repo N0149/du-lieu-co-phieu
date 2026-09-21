@@ -1,0 +1,27 @@
+{
+  "symbol": "VCB",
+  "score360": {
+    "total": 7,
+    "ratingText": "TỐT",
+    "peVsMedian": 4.4084,
+    "pbVsMedian": 5.8066049016,
+    "psVsMedian": -5,
+    "peForward": 12.5,
+    "peForwardVsMedian": -15,
+    "pbForward": 2.05,
+    "pbForwardVsMedian": -10
+  },
+  "price": null,
+  "metrics": {
+    "marketCap": 500505000000000,
+    "pe": 14.2042,
+    "eps": 4210.0323964582,
+    "volume10d": 5341007,
+    "pb": 2.2258256127,
+    "ps": null,
+    "bvps": null,
+    "sharesOut": 8355675094,
+    "evEbitda": null,
+    "beta": 0.851802
+  }
+}

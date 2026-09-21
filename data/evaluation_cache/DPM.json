@@ -1,0 +1,27 @@
+{
+  "symbol": "DPM",
+  "score360": {
+    "total": 7,
+    "ratingText": "TỐT",
+    "peVsMedian": 9.576799999999999,
+    "pbVsMedian": 0.6973961864000007,
+    "psVsMedian": -5,
+    "peForward": 14.77,
+    "peForwardVsMedian": -15,
+    "pbForward": 1.46,
+    "pbForwardVsMedian": -10
+  },
+  "price": null,
+  "metrics": {
+    "marketCap": 15536300000000,
+    "pe": 16.7884,
+    "eps": 1578.4698240411,
+    "volume10d": 4013865,
+    "pb": 1.5871745233,
+    "ps": null,
+    "bvps": null,
+    "sharesOut": 679925021,
+    "evEbitda": 15.7671,
+    "beta": 0.216509
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "symbol": "TCX",
+  "score360": {
+    "total": 7,
+    "ratingText": "TỐT",
+    "peVsMedian": 13.580800000000004,
+    "pbVsMedian": 9.386282192,
+    "psVsMedian": -5,
+    "peForward": 16.54,
+    "peForwardVsMedian": -15,
+    "pbForward": 2.46,
+    "pbForwardVsMedian": -10
+  },
+  "price": null,
+  "metrics": {
+    "marketCap": 104874000000000,
+    "pe": 18.7904,
+    "eps": 2714.1516145979,
+    "volume10d": 2282156,
+    "pb": 2.673285274,
+    "ps": null,
+    "bvps": null,
+    "sharesOut": 3329343990,
+    "evEbitda": 16.0993,
+    "beta": 0.681787
+  }
+}

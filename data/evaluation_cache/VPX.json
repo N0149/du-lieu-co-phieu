@@ -1,0 +1,27 @@
+{
+  "symbol": "VPX",
+  "score360": {
+    "total": 7,
+    "ratingText": "TỐT",
+    "peVsMedian": 1.0097999999999985,
+    "pbVsMedian": 0.7471686359999996,
+    "psVsMedian": -5,
+    "peForward": 11,
+    "peForwardVsMedian": -15,
+    "pbForward": 1.47,
+    "pbForwardVsMedian": -10
+  },
+  "price": null,
+  "metrics": {
+    "marketCap": 44812500000000,
+    "pe": 12.5049,
+    "eps": 2299.1010770543,
+    "volume10d": 655873,
+    "pb": 1.5933960795,
+    "ps": null,
+    "bvps": null,
+    "sharesOut": 1875000000,
+    "evEbitda": 14.1719,
+    "beta": null
+  }
+}

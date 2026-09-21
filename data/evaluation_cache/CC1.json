@@ -1,0 +1,27 @@
+{
+  "symbol": "CC1",
+  "score360": {
+    "total": 5.2,
+    "ratingText": "KHÁ",
+    "peVsMedian": 98.883,
+    "pbVsMedian": 14.023587798400001,
+    "psVsMedian": -5,
+    "peForward": 54.07,
+    "peForwardVsMedian": -15,
+    "pbForward": 2.99,
+    "pbForwardVsMedian": -10
+  },
+  "price": null,
+  "metrics": {
+    "marketCap": 18988600000000,
+    "pe": 61.4415,
+    "eps": 587.5510560409,
+    "volume10d": 563,
+    "pb": 3.2529484748,
+    "ps": null,
+    "bvps": null,
+    "sharesOut": 498388905,
+    "evEbitda": 54.16,
+    "beta": 1.68253
+  }
+}

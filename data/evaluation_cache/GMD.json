@@ -1,0 +1,27 @@
+{
+  "symbol": "GMD",
+  "score360": {
+    "total": 7,
+    "ratingText": "TỐT",
+    "peVsMedian": 12.087400000000002,
+    "pbVsMedian": 7.5528179792,
+    "psVsMedian": -5,
+    "peForward": 15.88,
+    "peForwardVsMedian": -15,
+    "pbForward": 2.25,
+    "pbForwardVsMedian": -10
+  },
+  "price": null,
+  "metrics": {
+    "marketCap": 33462600000000,
+    "pe": 18.0437,
+    "eps": 4173.1988896221,
+    "volume10d": 703672,
+    "pb": 2.4441022474,
+    "ps": null,
+    "bvps": null,
+    "sharesOut": 432892509,
+    "evEbitda": 16.4649,
+    "beta": 0.907812
+  }
+}

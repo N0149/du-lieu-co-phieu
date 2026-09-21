@@ -1,0 +1,27 @@
+{
+  "symbol": "ORS",
+  "score360": {
+    "total": 6.8,
+    "ratingText": "TỐT",
+    "peVsMedian": 52.27419999999999,
+    "pbVsMedian": -3.210470409599999,
+    "psVsMedian": -5,
+    "peForward": 33.56,
+    "peForwardVsMedian": -15,
+    "pbForward": 1.01,
+    "pbForwardVsMedian": -10
+  },
+  "price": null,
+  "metrics": {
+    "marketCap": 8360670000000,
+    "pe": 38.1371,
+    "eps": 352.6747873138,
+    "volume10d": 2506329,
+    "pb": 1.0986911988,
+    "ps": null,
+    "bvps": null,
+    "sharesOut": 623930904,
+    "evEbitda": 16.3216,
+    "beta": 0.405801
+  }
+}

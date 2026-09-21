@@ -1,0 +1,27 @@
+{
+  "symbol": "REE",
+  "score360": {
+    "total": 7,
+    "ratingText": "TỐT",
+    "peVsMedian": 1.7001999999999988,
+    "pbVsMedian": 0.4126193952000001,
+    "psVsMedian": -5,
+    "peForward": 11.31,
+    "peForwardVsMedian": -15,
+    "pbForward": 1.43,
+    "pbForwardVsMedian": -10
+  },
+  "price": null,
+  "metrics": {
+    "marketCap": 29330900000000,
+    "pe": 12.8501,
+    "eps": 4669.2288625631,
+    "volume10d": 338925,
+    "pb": 1.5515774244,
+    "ps": null,
+    "bvps": null,
+    "sharesOut": 623399036,
+    "evEbitda": 9.88014,
+    "beta": 0.452852
+  }
+}

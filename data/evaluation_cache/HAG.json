@@ -1,0 +1,27 @@
+{
+  "symbol": "HAG",
+  "score360": {
+    "total": 8,
+    "ratingText": "XUẤT SẮC",
+    "peVsMedian": -6.90446,
+    "pbVsMedian": 0.5094672784000007,
+    "psVsMedian": -5,
+    "peForward": 7.52,
+    "peForwardVsMedian": -15,
+    "pbForward": 1.44,
+    "pbForwardVsMedian": -10
+  },
+  "price": null,
+  "metrics": {
+    "marketCap": 17807000000000,
+    "pe": 8.54777,
+    "eps": 1906.9299909016,
+    "volume10d": 1654102,
+    "pb": 1.5636834098,
+    "ps": null,
+    "bvps": null,
+    "sharesOut": 1267399283,
+    "evEbitda": 10.4076,
+    "beta": 0.81741
+  }
+}

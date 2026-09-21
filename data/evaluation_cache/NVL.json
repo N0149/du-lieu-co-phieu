@@ -1,0 +1,27 @@
+{
+  "symbol": "NVL",
+  "score360": {
+    "total": 7.8,
+    "ratingText": "TỐT",
+    "peVsMedian": 22.3782,
+    "pbVsMedian": -3.9174194688000004,
+    "psVsMedian": -5,
+    "peForward": 20.41,
+    "peForwardVsMedian": -15,
+    "pbForward": 0.93,
+    "pbForwardVsMedian": -10
+  },
+  "price": null,
+  "metrics": {
+    "marketCap": 30746500000000,
+    "pe": 23.1891,
+    "eps": 884.0376624453,
+    "volume10d": 14879357,
+    "pb": 1.0103225664,
+    "ps": null,
+    "bvps": null,
+    "sharesOut": 2402067972,
+    "evEbitda": 33.3038,
+    "beta": 1.17316
+  }
+}

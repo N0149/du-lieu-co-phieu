@@ -1,0 +1,27 @@
+{
+  "symbol": "VNM",
+  "score360": {
+    "total": 6.2,
+    "ratingText": "KHÁ",
+    "peVsMedian": 3.0512000000000015,
+    "pbVsMedian": 21.182779432799997,
+    "psVsMedian": -5,
+    "peForward": 11.9,
+    "peForwardVsMedian": -15,
+    "pbForward": 3.82,
+    "pbForwardVsMedian": -10
+  },
+  "price": null,
+  "metrics": {
+    "marketCap": 127905000000000,
+    "pe": 13.5256,
+    "eps": 4502.5848130901,
+    "volume10d": 2682166,
+    "pb": 4.1478474291,
+    "ps": null,
+    "bvps": null,
+    "sharesOut": 2089955445,
+    "evEbitda": 10.5048,
+    "beta": 0.532679
+  }
+}

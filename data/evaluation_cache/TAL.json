@@ -1,0 +1,27 @@
+{
+  "symbol": "TAL",
+  "score360": {
+    "total": 7,
+    "ratingText": "TỐT",
+    "peVsMedian": 21.602600000000002,
+    "pbVsMedian": 11.494980456,
+    "psVsMedian": -5,
+    "peForward": 20.07,
+    "peForwardVsMedian": -15,
+    "pbForward": 2.7,
+    "pbForwardVsMedian": -10
+  },
+  "price": null,
+  "metrics": {
+    "marketCap": 11390400000000,
+    "pe": 22.8013,
+    "eps": 1977.9536844637,
+    "volume10d": 83886,
+    "pb": 2.936872557,
+    "ps": null,
+    "bvps": null,
+    "sharesOut": 503999708,
+    "evEbitda": 19.7019,
+    "beta": 0.758226
+  }
+}

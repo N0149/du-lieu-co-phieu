@@ -1,0 +1,27 @@
+{
+  "symbol": "MBB",
+  "score360": {
+    "total": 8,
+    "ratingText": "XUẤT SẮC",
+    "peVsMedian": -8.3586,
+    "pbVsMedian": 0.3071018088000006,
+    "psVsMedian": -5,
+    "peForward": 6.88,
+    "peForwardVsMedian": -15,
+    "pbForward": 1.42,
+    "pbForwardVsMedian": -10
+  },
+  "price": null,
+  "metrics": {
+    "marketCap": 200368000000000,
+    "pe": 7.8207,
+    "eps": 3324.5113771513,
+    "volume10d": 13375162,
+    "pb": 1.5383877261,
+    "ps": null,
+    "bvps": null,
+    "sharesOut": 10068749885,
+    "evEbitda": null,
+    "beta": 0.82968
+  }
+}

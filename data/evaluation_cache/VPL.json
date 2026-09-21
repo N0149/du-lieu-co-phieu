@@ -1,0 +1,27 @@
+{
+  "symbol": "VPL",
+  "score360": {
+    "total": 5.2,
+    "ratingText": "KHÁ",
+    "peVsMedian": 250.20800000000003,
+    "pbVsMedian": 21.0484127728,
+    "psVsMedian": -5,
+    "peForward": 120.65,
+    "peForwardVsMedian": -15,
+    "pbForward": 3.8,
+    "pbForwardVsMedian": -10
+  },
+  "price": null,
+  "metrics": {
+    "marketCap": 145616000000000,
+    "pe": 137.104,
+    "eps": 614.8599635223,
+    "volume10d": 1491811,
+    "pb": 4.1310515966,
+    "ps": null,
+    "bvps": null,
+    "sharesOut": 1793300377,
+    "evEbitda": 24.2137,
+    "beta": 0.91273
+  }
+}

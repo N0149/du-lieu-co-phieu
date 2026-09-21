@@ -1,0 +1,27 @@
+{
+  "symbol": "HDB",
+  "score360": {
+    "total": 8,
+    "ratingText": "XUẤT SẮC",
+    "peVsMedian": -8.80324,
+    "pbVsMedian": 2.0944947632,
+    "psVsMedian": -5,
+    "peForward": 6.69,
+    "peForwardVsMedian": -15,
+    "pbForward": 1.62,
+    "pbForwardVsMedian": -10
+  },
+  "price": null,
+  "metrics": {
+    "marketCap": 137645000000000,
+    "pe": 7.59838,
+    "eps": 3500.7453001642,
+    "volume10d": 11192351,
+    "pb": 1.7618118454,
+    "ps": null,
+    "bvps": null,
+    "sharesOut": 5005276323,
+    "evEbitda": null,
+    "beta": 0.960787
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "symbol": "PGB",
+  "score360": {
+    "total": 7.8,
+    "ratingText": "TỐT",
+    "peVsMedian": -1.3976000000000006,
+    "pbVsMedian": -2.3063140184,
+    "psVsMedian": -5,
+    "peForward": 9.95,
+    "peForwardVsMedian": -15,
+    "pbForward": 1.11,
+    "pbForwardVsMedian": -10
+  },
+  "price": null,
+  "metrics": {
+    "marketCap": 7146040000000,
+    "pe": 11.3012,
+    "eps": 1029.6275819184,
+    "volume10d": 9652,
+    "pb": 1.2117107477,
+    "ps": null,
+    "bvps": null,
+    "sharesOut": 732702236,
+    "evEbitda": null,
+    "beta": 1.18299
+  }
+}

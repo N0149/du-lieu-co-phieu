@@ -1,0 +1,27 @@
+{
+  "symbol": "KDC",
+  "score360": {
+    "total": 6,
+    "ratingText": "KHÁ",
+    "peVsMedian": 26.9782,
+    "pbVsMedian": 2.9818900488000004,
+    "psVsMedian": -5,
+    "peForward": 22.43,
+    "peForwardVsMedian": -15,
+    "pbForward": 1.72,
+    "pbForwardVsMedian": -10
+  },
+  "price": null,
+  "metrics": {
+    "marketCap": 14121200000000,
+    "pe": 25.4891,
+    "eps": 1802.7325577369,
+    "volume10d": 73376,
+    "pb": 1.8727362561,
+    "ps": null,
+    "bvps": null,
+    "sharesOut": 276345300,
+    "evEbitda": 52.9606,
+    "beta": -0.0172454
+  }
+}

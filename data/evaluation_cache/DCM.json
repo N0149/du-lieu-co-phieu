@@ -1,0 +1,27 @@
+{
+  "symbol": "DCM",
+  "score360": {
+    "total": 7,
+    "ratingText": "TỐT",
+    "peVsMedian": -1.4984000000000002,
+    "pbVsMedian": 4.389249758399998,
+    "psVsMedian": -5,
+    "peForward": 9.9,
+    "peForwardVsMedian": -15,
+    "pbForward": 1.88,
+    "pbForwardVsMedian": -10
+  },
+  "price": null,
+  "metrics": {
+    "marketCap": 17496700000000,
+    "pe": 11.2508,
+    "eps": 3701.9501973857,
+    "volume10d": 3639776,
+    "pb": 2.0486562198,
+    "ps": null,
+    "bvps": null,
+    "sharesOut": 529400000,
+    "evEbitda": 9.85264,
+    "beta": -0.0348487
+  }
+}

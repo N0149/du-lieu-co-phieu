@@ -1,0 +1,27 @@
+{
+  "symbol": "GEX",
+  "score360": {
+    "total": 7,
+    "ratingText": "TỐT",
+    "peVsMedian": 23.748800000000003,
+    "pbVsMedian": 3.8763900263999993,
+    "psVsMedian": -5,
+    "peForward": 21.01,
+    "peForwardVsMedian": -15,
+    "pbForward": 1.83,
+    "pbForwardVsMedian": -10
+  },
+  "price": null,
+  "metrics": {
+    "marketCap": 31926700000000,
+    "pe": 23.8744,
+    "eps": 1637.7363165743,
+    "volume10d": 10427042,
+    "pb": 1.9845487533,
+    "ps": null,
+    "bvps": null,
+    "sharesOut": 1308471358,
+    "evEbitda": 7.89041,
+    "beta": 1.81202
+  }
+}

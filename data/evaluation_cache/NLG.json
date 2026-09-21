@@ -1,0 +1,27 @@
+{
+  "symbol": "NLG",
+  "score360": {
+    "total": 7.8,
+    "ratingText": "TỐT",
+    "peVsMedian": 6.508199999999999,
+    "pbVsMedian": -3.556344898400001,
+    "psVsMedian": -5,
+    "peForward": 13.42,
+    "peForwardVsMedian": -15,
+    "pbForward": 0.97,
+    "pbForwardVsMedian": -10
+  },
+  "price": null,
+  "metrics": {
+    "marketCap": 11690800000000,
+    "pe": 15.2541,
+    "eps": 1806.0766359957,
+    "volume10d": 1961649,
+    "pb": 1.0554568877,
+    "ps": null,
+    "bvps": null,
+    "sharesOut": 485097383,
+    "evEbitda": 19.298,
+    "beta": 0.845852
+  }
+}

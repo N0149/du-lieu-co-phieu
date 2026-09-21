@@ -1,0 +1,27 @@
+{
+  "symbol": "SBT",
+  "score360": {
+    "total": 7,
+    "ratingText": "TỐT",
+    "peVsMedian": 25.6614,
+    "pbVsMedian": 1.0491600352,
+    "psVsMedian": -5,
+    "peForward": 21.85,
+    "peForwardVsMedian": -15,
+    "pbForward": 1.5,
+    "pbForwardVsMedian": -10
+  },
+  "price": null,
+  "metrics": {
+    "marketCap": 21683500000000,
+    "pe": 24.8307,
+    "eps": 825.5915415549,
+    "volume10d": 1239955,
+    "pb": 1.6311450044,
+    "ps": null,
+    "bvps": null,
+    "sharesOut": 934634155,
+    "evEbitda": 22.4992,
+    "beta": 0.321261
+  }
+}

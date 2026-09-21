@@ -1,0 +1,27 @@
+{
+  "symbol": "PNJ",
+  "score360": {
+    "total": 7,
+    "ratingText": "TỐT",
+    "peVsMedian": 0.23560000000000159,
+    "pbVsMedian": 8.7543363192,
+    "psVsMedian": -5,
+    "peForward": 10.66,
+    "peForwardVsMedian": -15,
+    "pbForward": 2.39,
+    "pbForwardVsMedian": -10
+  },
+  "price": null,
+  "metrics": {
+    "marketCap": 18805800000000,
+    "pe": 12.1178,
+    "eps": 5553.821356975,
+    "volume10d": 3975894,
+    "pb": 2.5942920399,
+    "ps": null,
+    "bvps": null,
+    "sharesOut": 511721959,
+    "evEbitda": 9.99075,
+    "beta": 0.796218
+  }
+}

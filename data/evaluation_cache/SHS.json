@@ -1,0 +1,27 @@
+{
+  "symbol": "SHS",
+  "score360": {
+    "total": 7.8,
+    "ratingText": "TỐT",
+    "peVsMedian": 0.13980000000000103,
+    "pbVsMedian": -1.6651740904000008,
+    "psVsMedian": -5,
+    "peForward": 10.62,
+    "peForwardVsMedian": -15,
+    "pbForward": 1.19,
+    "pbForwardVsMedian": -10
+  },
+  "price": null,
+  "metrics": {
+    "marketCap": 12952300000000,
+    "pe": 12.0699,
+    "eps": 1499.5923155895,
+    "volume10d": 7806688,
+    "pb": 1.2918532387,
+    "ps": null,
+    "bvps": null,
+    "sharesOut": 899462220,
+    "evEbitda": 11.5525,
+    "beta": 1.22281
+  }
+}

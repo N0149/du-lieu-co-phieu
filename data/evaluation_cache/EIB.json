@@ -1,0 +1,27 @@
+{
+  "symbol": "EIB",
+  "score360": {
+    "total": 6,
+    "ratingText": "KHÁ",
+    "peVsMedian": 47.596599999999995,
+    "pbVsMedian": 0.5201594895999992,
+    "psVsMedian": -5,
+    "peForward": 31.5,
+    "peForwardVsMedian": -15,
+    "pbForward": 1.44,
+    "pbForwardVsMedian": -10
+  },
+  "price": null,
+  "metrics": {
+    "marketCap": 30548600000000,
+    "pe": 35.7983,
+    "eps": 610.364753576,
+    "volume10d": 4716632,
+    "pb": 1.5650199362,
+    "ps": null,
+    "bvps": null,
+    "sharesOut": 1862720607,
+    "evEbitda": null,
+    "beta": 1.00506
+  }
+}

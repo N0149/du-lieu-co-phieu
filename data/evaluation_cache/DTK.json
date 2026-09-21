@@ -1,0 +1,27 @@
+{
+  "symbol": "DTK",
+  "score360": {
+    "total": 7.8,
+    "ratingText": "TỐT",
+    "peVsMedian": -0.23179999999999978,
+    "pbVsMedian": -4.887063808,
+    "psVsMedian": -5,
+    "peForward": 10.46,
+    "peForwardVsMedian": -15,
+    "pbForward": 0.82,
+    "pbForwardVsMedian": -10
+  },
+  "price": null,
+  "metrics": {
+    "marketCap": 7305610000000,
+    "pe": 11.8841,
+    "eps": 959.2678326791,
+    "volume10d": 4084,
+    "pb": 0.889117024,
+    "ps": null,
+    "bvps": null,
+    "sharesOut": 682767475,
+    "evEbitda": 5.12196,
+    "beta": 0.575994
+  }
+}

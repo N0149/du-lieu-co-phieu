@@ -1,0 +1,27 @@
+{
+  "symbol": "KSV",
+  "score360": {
+    "total": 6.2,
+    "ratingText": "KHÁ",
+    "peVsMedian": 6.716999999999999,
+    "pbVsMedian": 35.2547859672,
+    "psVsMedian": -5,
+    "peForward": 13.52,
+    "peForwardVsMedian": -15,
+    "pbForward": 5.43,
+    "pbForwardVsMedian": -10
+  },
+  "price": null,
+  "metrics": {
+    "marketCap": 30060000000000,
+    "pe": 15.3585,
+    "eps": 9851.236509755,
+    "volume10d": 35256,
+    "pb": 5.9068482459,
+    "ps": null,
+    "bvps": null,
+    "sharesOut": 299999812,
+    "evEbitda": 8.23506,
+    "beta": 2.3445
+  }
+}

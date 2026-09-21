@@ -1,0 +1,27 @@
+{
+  "symbol": "PVT",
+  "score360": {
+    "total": 8.8,
+    "ratingText": "XUẤT SẮC",
+    "peVsMedian": -4.075620000000001,
+    "pbVsMedian": -2.4637637320000003,
+    "psVsMedian": -5,
+    "peForward": 8.77,
+    "peForwardVsMedian": -15,
+    "pbForward": 1.1,
+    "pbForwardVsMedian": -10
+  },
+  "price": null,
+  "metrics": {
+    "marketCap": 11785800000000,
+    "pe": 9.96219,
+    "eps": 2208.3502961513,
+    "volume10d": 7566574,
+    "pb": 1.1920295335,
+    "ps": null,
+    "bvps": null,
+    "sharesOut": 516918938,
+    "evEbitda": 4.44001,
+    "beta": 0.725462
+  }
+}

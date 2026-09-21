@@ -1,0 +1,27 @@
+{
+  "symbol": "CTG",
+  "score360": {
+    "total": 8,
+    "ratingText": "XUẤT SẮC",
+    "peVsMedian": -8.37834,
+    "pbVsMedian": 0.11731404000000012,
+    "psVsMedian": -5,
+    "peForward": 6.87,
+    "peForwardVsMedian": -15,
+    "pbForward": 1.39,
+    "pbForwardVsMedian": -10
+  },
+  "price": null,
+  "metrics": {
+    "marketCap": 234950000000000,
+    "pe": 7.81083,
+    "eps": 4455.3531447886,
+    "volume10d": 8391052,
+    "pb": 1.514664255,
+    "ps": null,
+    "bvps": null,
+    "sharesOut": 7766944637,
+    "evEbitda": null,
+    "beta": 1.02574
+  }
+}

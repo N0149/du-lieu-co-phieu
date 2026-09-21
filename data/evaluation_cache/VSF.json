@@ -1,0 +1,27 @@
+{
+  "symbol": "VSF",
+  "score360": {
+    "total": 5.2,
+    "ratingText": "KHÁ",
+    "peVsMedian": 894.404,
+    "pbVsMedian": 33.2265614656,
+    "psVsMedian": -5,
+    "peForward": 404.1,
+    "peForwardVsMedian": -15,
+    "pbForward": 5.2,
+    "pbForwardVsMedian": -10
+  },
+  "price": null,
+  "metrics": {
+    "marketCap": 12950500000000,
+    "pe": 459.202,
+    "eps": 56.818103736,
+    "volume10d": 44144,
+    "pb": 5.6533201832,
+    "ps": null,
+    "bvps": null,
+    "sharesOut": 500000000,
+    "evEbitda": 49.4127,
+    "beta": 0.0298628
+  }
+}

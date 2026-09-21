@@ -1,0 +1,27 @@
+{
+  "symbol": "TDM",
+  "score360": {
+    "total": 6,
+    "ratingText": "KHÁ",
+    "peVsMedian": 36.0148,
+    "pbVsMedian": 7.599697624000001,
+    "psVsMedian": -5,
+    "peForward": 26.41,
+    "peForwardVsMedian": -15,
+    "pbForward": 2.25,
+    "pbForwardVsMedian": -10
+  },
+  "price": null,
+  "metrics": {
+    "marketCap": 7308160000000,
+    "pe": 30.0074,
+    "eps": 1899.5327724677,
+    "volume10d": 6800,
+    "pb": 2.449962203,
+    "ps": null,
+    "bvps": null,
+    "sharesOut": 122210000,
+    "evEbitda": 29.4302,
+    "beta": 0.209647
+  }
+}

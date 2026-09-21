@@ -1,0 +1,27 @@
+{
+  "symbol": "NVB",
+  "score360": {
+    "total": 6,
+    "ratingText": "KHÁ",
+    "peVsMedian": 370194,
+    "pbVsMedian": 0.34671626879999984,
+    "psVsMedian": -5,
+    "peForward": 162895.92,
+    "peForwardVsMedian": -15,
+    "pbForward": 1.42,
+    "pbForwardVsMedian": -10
+  },
+  "price": null,
+  "metrics": {
+    "marketCap": 37435300000000,
+    "pe": 185109,
+    "eps": 0.0588842432,
+    "volume10d": 498609,
+    "pb": 1.5433395336,
+    "ps": null,
+    "bvps": null,
+    "sharesOut": 2924632751,
+    "evEbitda": null,
+    "beta": 0.508692
+  }
+}

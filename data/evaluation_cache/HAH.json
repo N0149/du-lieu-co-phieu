@@ -1,0 +1,27 @@
+{
+  "symbol": "HAH",
+  "score360": {
+    "total": 8,
+    "ratingText": "XUẤT SẮC",
+    "peVsMedian": -8.53422,
+    "pbVsMedian": 6.3093523552000015,
+    "psVsMedian": -5,
+    "peForward": 6.8,
+    "peForwardVsMedian": -15,
+    "pbForward": 2.11,
+    "pbForwardVsMedian": -10
+  },
+  "price": null,
+  "metrics": {
+    "marketCap": 9198750000000,
+    "pe": 7.73289,
+    "eps": 7125.4073932783,
+    "volume10d": 692381,
+    "pb": 2.2886690444,
+    "ps": null,
+    "bvps": null,
+    "sharesOut": 191840401,
+    "evEbitda": 5.16893,
+    "beta": 1.12469
+  }
+}

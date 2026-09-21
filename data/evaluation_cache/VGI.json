@@ -1,0 +1,27 @@
+{
+  "symbol": "VGI",
+  "score360": {
+    "total": 5.2,
+    "ratingText": "KHÁ",
+    "peVsMedian": 34.6128,
+    "pbVsMedian": 41.184925584,
+    "psVsMedian": -5,
+    "peForward": 25.79,
+    "peForwardVsMedian": -15,
+    "pbForward": 6.12,
+    "pbForwardVsMedian": -10
+  },
+  "price": null,
+  "metrics": {
+    "marketCap": 244911000000000,
+    "pe": 29.3064,
+    "eps": 3056.2558190787,
+    "volume10d": 209162,
+    "pb": 6.648115698,
+    "ps": null,
+    "bvps": null,
+    "sharesOut": 3043811200,
+    "evEbitda": 17.2124,
+    "beta": 5.72583
+  }
+}

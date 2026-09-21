@@ -1,0 +1,27 @@
+{
+  "symbol": "KDH",
+  "score360": {
+    "total": 6,
+    "ratingText": "KHÁ",
+    "peVsMedian": 30.2586,
+    "pbVsMedian": 0.3109545255999997,
+    "psVsMedian": -5,
+    "peForward": 23.87,
+    "peForwardVsMedian": -15,
+    "pbForward": 1.42,
+    "pbForwardVsMedian": -10
+  },
+  "price": null,
+  "metrics": {
+    "marketCap": 17731000000000,
+    "pe": 27.1293,
+    "eps": 936.2585484204,
+    "volume10d": 4708906,
+    "pb": 1.5388693157,
+    "ps": null,
+    "bvps": null,
+    "sharesOut": 1122214899,
+    "evEbitda": 17.6478,
+    "beta": 0.780607
+  }
+}

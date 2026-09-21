@@ -1,0 +1,27 @@
+{
+  "symbol": "CEO",
+  "score360": {
+    "total": 6,
+    "ratingText": "KHÁ",
+    "peVsMedian": 89.3028,
+    "pbVsMedian": 0.9391201079999991,
+    "psVsMedian": -5,
+    "peForward": 49.85,
+    "peForwardVsMedian": -15,
+    "pbForward": 1.49,
+    "pbForwardVsMedian": -10
+  },
+  "price": null,
+  "metrics": {
+    "marketCap": 6851420000000,
+    "pe": 56.6514,
+    "eps": 312.4370583844,
+    "volume10d": 4837533,
+    "pb": 1.6173900135,
+    "ps": null,
+    "bvps": null,
+    "sharesOut": 595775755,
+    "evEbitda": 31.0776,
+    "beta": 1.72367
+  }
+}

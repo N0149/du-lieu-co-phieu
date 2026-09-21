@@ -1,0 +1,27 @@
+{
+  "symbol": "BSI",
+  "score360": {
+    "total": 7,
+    "ratingText": "TỐT",
+    "peVsMedian": 12.432200000000002,
+    "pbVsMedian": 1.0145523488000006,
+    "psVsMedian": -5,
+    "peForward": 16.03,
+    "peForwardVsMedian": -15,
+    "pbForward": 1.5,
+    "pbForwardVsMedian": -10
+  },
+  "price": null,
+  "metrics": {
+    "marketCap": 7381810000000,
+    "pe": 18.2161,
+    "eps": 2011.958250946,
+    "volume10d": 310368,
+    "pb": 1.6268190436,
+    "ps": null,
+    "bvps": null,
+    "sharesOut": 269901549,
+    "evEbitda": 18.1153,
+    "beta": 0.628873
+  }
+}

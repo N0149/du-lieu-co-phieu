@@ -1,0 +1,27 @@
+{
+  "symbol": "AIG",
+  "score360": {
+    "total": 8.8,
+    "ratingText": "XUẤT SẮC",
+    "peVsMedian": -6.9803,
+    "pbVsMedian": -1.8632870167999993,
+    "psVsMedian": -5,
+    "peForward": 7.49,
+    "peForwardVsMedian": -15,
+    "pbForward": 1.17,
+    "pbForwardVsMedian": -10
+  },
+  "price": null,
+  "metrics": {
+    "marketCap": 9430140000000,
+    "pe": 8.50985,
+    "eps": 5287.9869190561,
+    "volume10d": 9473,
+    "pb": 1.2670891229,
+    "ps": null,
+    "bvps": null,
+    "sharesOut": 196191443,
+    "evEbitda": 8.01473,
+    "beta": 0.281531
+  }
+}

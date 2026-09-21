@@ -1,0 +1,27 @@
+{
+  "symbol": "PGV",
+  "score360": {
+    "total": 8,
+    "ratingText": "XUẤT SẮC",
+    "peVsMedian": -9.53848,
+    "pbVsMedian": 0.245946408,
+    "psVsMedian": -5,
+    "peForward": 6.36,
+    "peForwardVsMedian": -15,
+    "pbForward": 1.41,
+    "pbForwardVsMedian": -10
+  },
+  "price": null,
+  "metrics": {
+    "marketCap": 25844200000000,
+    "pe": 7.23076,
+    "eps": 3312.2360760895,
+    "volume10d": 3275,
+    "pb": 1.530743301,
+    "ps": null,
+    "bvps": null,
+    "sharesOut": 1213344881,
+    "evEbitda": 5.06774,
+    "beta": 0.33023
+  }
+}

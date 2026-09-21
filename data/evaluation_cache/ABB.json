@@ -1,0 +1,27 @@
+{
+  "symbol": "ABB",
+  "score360": {
+    "total": 8.8,
+    "ratingText": "XUẤT SẮC",
+    "peVsMedian": -11.88388,
+    "pbVsMedian": -1.7129776176,
+    "psVsMedian": -5,
+    "peForward": 5.33,
+    "peForwardVsMedian": -15,
+    "pbForward": 1.18,
+    "pbForwardVsMedian": -10
+  },
+  "price": null,
+  "metrics": {
+    "marketCap": 28536500000000,
+    "pe": 6.05806,
+    "eps": 2552.3010758175,
+    "volume10d": 819086,
+    "pb": 1.2858777978,
+    "ps": null,
+    "bvps": null,
+    "sharesOut": 1606783948,
+    "evEbitda": null,
+    "beta": 0.547968
+  }
+}

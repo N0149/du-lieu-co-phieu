@@ -1,0 +1,27 @@
+{
+  "symbol": "VRE",
+  "score360": {
+    "total": 7.8,
+    "ratingText": "TỐT",
+    "peVsMedian": -3.6948000000000008,
+    "pbVsMedian": -1.1759021591999996,
+    "psVsMedian": -5,
+    "peForward": 8.93,
+    "peForwardVsMedian": -15,
+    "pbForward": 1.24,
+    "pbForwardVsMedian": -10
+  },
+  "price": null,
+  "metrics": {
+    "marketCap": 57944100000000,
+    "pe": 10.1526,
+    "eps": 2836.7168967166,
+    "volume10d": 5334223,
+    "pb": 1.3530122301,
+    "ps": null,
+    "bvps": null,
+    "sharesOut": 2272318410,
+    "evEbitda": 13.0898,
+    "beta": 1.34648
+  }
+}

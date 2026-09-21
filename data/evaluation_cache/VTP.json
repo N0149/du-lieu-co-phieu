@@ -1,0 +1,27 @@
+{
+  "symbol": "VTP",
+  "score360": {
+    "total": 6.2,
+    "ratingText": "KHÁ",
+    "peVsMedian": 18.1766,
+    "pbVsMedian": 29.266406076800003,
+    "psVsMedian": -5,
+    "peForward": 18.56,
+    "peForwardVsMedian": -15,
+    "pbForward": 4.75,
+    "pbForwardVsMedian": -10
+  },
+  "price": null,
+  "metrics": {
+    "marketCap": 9912560000000,
+    "pe": 21.0883,
+    "eps": 3224.5366495284,
+    "volume10d": 449551,
+    "pb": 5.1583007596,
+    "ps": null,
+    "bvps": null,
+    "sharesOut": 201885171,
+    "evEbitda": 18.2723,
+    "beta": 0.725341
+  }
+}

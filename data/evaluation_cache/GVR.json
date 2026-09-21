@@ -1,0 +1,27 @@
+{
+  "symbol": "GVR",
+  "score360": {
+    "total": 7,
+    "ratingText": "TỐT",
+    "peVsMedian": 25.6376,
+    "pbVsMedian": 6.753706214400001,
+    "psVsMedian": -5,
+    "peForward": 21.84,
+    "peForwardVsMedian": -15,
+    "pbForward": 2.16,
+    "pbForwardVsMedian": -10
+  },
+  "price": null,
+  "metrics": {
+    "marketCap": 127600000000000,
+    "pe": 24.8188,
+    "eps": 1329.6378912628,
+    "volume10d": 2069917,
+    "pb": 2.3442132768,
+    "ps": null,
+    "bvps": null,
+    "sharesOut": 4000000000,
+    "evEbitda": 16.5567,
+    "beta": 1.38817
+  }
+}

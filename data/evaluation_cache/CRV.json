@@ -1,0 +1,27 @@
+{
+  "symbol": "CRV",
+  "score360": {
+    "total": 6,
+    "ratingText": "KHÁ",
+    "peVsMedian": 193.2,
+    "pbVsMedian": 9.477303719999998,
+    "psVsMedian": -5,
+    "peForward": 95.57,
+    "peForwardVsMedian": -15,
+    "pbForward": 2.47,
+    "pbForwardVsMedian": -10
+  },
+  "price": null,
+  "metrics": {
+    "marketCap": 15191500000000,
+    "pe": 108.6,
+    "eps": 257.8271936671,
+    "volume10d": 1322,
+    "pb": 2.684662965,
+    "ps": null,
+    "bvps": null,
+    "sharesOut": 687399875,
+    "evEbitda": 85.8567,
+    "beta": 0.580101
+  }
+}

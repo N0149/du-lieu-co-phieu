@@ -1,0 +1,27 @@
+{
+  "symbol": "TPB",
+  "score360": {
+    "total": 8.8,
+    "ratingText": "XUẤT SẮC",
+    "peVsMedian": -11.7804,
+    "pbVsMedian": -3.4757715632000004,
+    "psVsMedian": -5,
+    "peForward": 5.38,
+    "peForwardVsMedian": -15,
+    "pbForward": 0.98,
+    "pbForwardVsMedian": -10
+  },
+  "price": null,
+  "metrics": {
+    "marketCap": 39114100000000,
+    "pe": 6.1098,
+    "eps": 2659.6595830555,
+    "volume10d": 6746788,
+    "pb": 1.0655285546,
+    "ps": null,
+    "bvps": null,
+    "sharesOut": 2774046873,
+    "evEbitda": null,
+    "beta": 0.813672
+  }
+}

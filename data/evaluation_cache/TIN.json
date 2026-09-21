@@ -1,0 +1,27 @@
+{
+  "symbol": "TIN",
+  "score360": {
+    "total": 6.2,
+    "ratingText": "KHÁ",
+    "peVsMedian": 5.323599999999999,
+    "pbVsMedian": 50.9438905568,
+    "psVsMedian": -5,
+    "peForward": 12.9,
+    "peForwardVsMedian": -15,
+    "pbForward": 7.24,
+    "pbForwardVsMedian": -10
+  },
+  "price": null,
+  "metrics": {
+    "marketCap": 8836090000000,
+    "pe": 14.6618,
+    "eps": 11764.1424469702,
+    "volume10d": 13175,
+    "pb": 7.8679863196,
+    "ps": null,
+    "bvps": null,
+    "sharesOut": 91178331,
+    "evEbitda": null,
+    "beta": 0.732756
+  }
+}

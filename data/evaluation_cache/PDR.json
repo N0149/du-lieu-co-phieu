@@ -1,0 +1,27 @@
+{
+  "symbol": "PDR",
+  "score360": {
+    "total": 6.8,
+    "ratingText": "TỐT",
+    "peVsMedian": 37.9778,
+    "pbVsMedian": -1.3872961727999993,
+    "psVsMedian": -5,
+    "peForward": 27.27,
+    "peForwardVsMedian": -15,
+    "pbForward": 1.22,
+    "pbForwardVsMedian": -10
+  },
+  "price": null,
+  "metrics": {
+    "marketCap": 11474800000000,
+    "pe": 30.9889,
+    "eps": 530.8344497361,
+    "volume10d": 3865147,
+    "pb": 1.3265879784,
+    "ps": null,
+    "bvps": null,
+    "sharesOut": 997809379,
+    "evEbitda": 47.1722,
+    "beta": 0.625211
+  }
+}

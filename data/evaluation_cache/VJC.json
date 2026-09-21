@@ -1,0 +1,27 @@
+{
+  "symbol": "VJC",
+  "score360": {
+    "total": 5.2,
+    "ratingText": "KHÁ",
+    "peVsMedian": 72.5552,
+    "pbVsMedian": 22.400672028800003,
+    "psVsMedian": -5,
+    "peForward": 42.48,
+    "peForwardVsMedian": -15,
+    "pbForward": 3.96,
+    "pbForwardVsMedian": -10
+  },
+  "price": null,
+  "metrics": {
+    "marketCap": 99213000000000,
+    "pe": 48.2776,
+    "eps": 3728.4366191854,
+    "volume10d": 1125374,
+    "pb": 4.3000840036,
+    "ps": null,
+    "bvps": null,
+    "sharesOut": 769092961,
+    "evEbitda": 30.7302,
+    "beta": 1.03605
+  }
+}

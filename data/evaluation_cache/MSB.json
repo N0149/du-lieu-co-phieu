@@ -1,0 +1,27 @@
+{
+  "symbol": "MSB",
+  "score360": {
+    "total": 8.8,
+    "ratingText": "XUẤT SẮC",
+    "peVsMedian": -10.03114,
+    "pbVsMedian": -4.5906900472,
+    "psVsMedian": -5,
+    "peForward": 6.15,
+    "peForwardVsMedian": -15,
+    "pbForward": 0.85,
+    "pbForwardVsMedian": -10
+  },
+  "price": null,
+  "metrics": {
+    "marketCap": 48297600000000,
+    "pe": 6.98443,
+    "eps": 1804.0128205128,
+    "volume10d": 3064517,
+    "pb": 0.9261637441,
+    "ps": null,
+    "bvps": null,
+    "sharesOut": 3744000000,
+    "evEbitda": null,
+    "beta": 0.630025
+  }
+}

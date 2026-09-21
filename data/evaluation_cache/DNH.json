@@ -1,0 +1,27 @@
+{
+  "symbol": "DNH",
+  "score360": {
+    "total": 6.2,
+    "ratingText": "KHÁ",
+    "peVsMedian": 18.468400000000003,
+    "pbVsMedian": 18.3778743296,
+    "psVsMedian": -5,
+    "peForward": 18.69,
+    "peForwardVsMedian": -15,
+    "pbForward": 3.49,
+    "pbForwardVsMedian": -10
+  },
+  "price": null,
+  "metrics": {
+    "marketCap": 19008000000000,
+    "pe": 21.2342,
+    "eps": 2166.3143533239,
+    "volume10d": 130,
+    "pb": 3.7972342912,
+    "ps": null,
+    "bvps": null,
+    "sharesOut": 422400000,
+    "evEbitda": 13.4207,
+    "beta": 1.66605
+  }
+}

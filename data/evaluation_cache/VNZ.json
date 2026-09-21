@@ -1,0 +1,27 @@
+{
+  "symbol": "VNZ",
+  "score360": {
+    "total": 6.2,
+    "ratingText": "KHÁ",
+    "peVsMedian": -97.2652,
+    "pbVsMedian": 127.291871152,
+    "psVsMedian": -5,
+    "peForward": -32.24,
+    "peForwardVsMedian": -15,
+    "pbForward": 16.02,
+    "pbForwardVsMedian": -10
+  },
+  "price": null,
+  "metrics": {
+    "marketCap": 17033300000000,
+    "pe": -36.6326,
+    "eps": -9014.4365724586,
+    "volume10d": 2277,
+    "pb": 17.411483894,
+    "ps": null,
+    "bvps": null,
+    "sharesOut": 29726465,
+    "evEbitda": 10.649,
+    "beta": 0.414651
+  }
+}

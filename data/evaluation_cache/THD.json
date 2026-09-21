@@ -1,0 +1,27 @@
+{
+  "symbol": "THD",
+  "score360": {
+    "total": 6,
+    "ratingText": "KHÁ",
+    "peVsMedian": 215.566,
+    "pbVsMedian": 9.8396366232,
+    "psVsMedian": -5,
+    "peForward": 105.41,
+    "peForwardVsMedian": -15,
+    "pbForward": 2.51,
+    "pbForwardVsMedian": -10
+  },
+  "price": null,
+  "metrics": {
+    "marketCap": 48202000000000,
+    "pe": 119.783,
+    "eps": 261.3051692378,
+    "volume10d": 7181,
+    "pb": 2.7299545779,
+    "ps": null,
+    "bvps": null,
+    "sharesOut": 384999972,
+    "evEbitda": -7514.21,
+    "beta": 0.0690499
+  }
+}
