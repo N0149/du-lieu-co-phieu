@@ -1,0 +1,27 @@
+{
+  "symbol": "BHN",
+  "score360": {
+    "total": 7.8,
+    "ratingText": "TỐT",
+    "peVsMedian": 5.685199999999998,
+    "pbVsMedian": -0.21874275040000057,
+    "psVsMedian": -5,
+    "peForward": 13.06,
+    "peForwardVsMedian": -15,
+    "pbForward": 1.35,
+    "pbForwardVsMedian": -10
+  },
+  "price": null,
+  "metrics": {
+    "marketCap": 6374500000000,
+    "pe": 14.8426,
+    "eps": 2021.211217459,
+    "volume10d": 2013,
+    "pb": 1.4726571562,
+    "ps": null,
+    "bvps": null,
+    "sharesOut": 231800000,
+    "evEbitda": 11.5538,
+    "beta": 0.372311
+  }
+}
