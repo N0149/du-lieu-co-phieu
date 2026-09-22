@@ -2522,6 +2522,19 @@
     "is_important": 0
   },
   {
+    "id": "cf_CBS_2026-09-21_87281a84df",
+    "symbol": "CBS",
+    "exchange": "UPCOM",
+    "company_name": "Công ty Cổ phần Mía đường Cao Bằng",
+    "title": "CBS: Tài liệu họp Đại hội đồng cổ đông",
+    "doc_type": "DHDCD",
+    "doc_type_label": "ĐHĐCĐ",
+    "published_at": "2026-09-21 00:00:00",
+    "file_url": "https://cafef.vn/du-lieu/CBS-2980862/cbs-tai-lieu-hop-dai-hoi-dong-co-dong.chn?utm_source=du-lieu.chn",
+    "source": "CafeF_Sở",
+    "is_important": 0
+  },
+  {
     "id": "cf_VTB_2026-09-18_afc4e01049",
     "symbol": "VTB",
     "exchange": "HOSE",
@@ -2583,19 +2596,6 @@
     "doc_type_label": "Giao dịch nội bộ",
     "published_at": "2026-09-18 18:13:00",
     "file_url": "https://cafef.vn/du-lieu/VIB-2979489/vib-bao-cao-ket-qua-giao-dich-co-phieu-cua-nguoi-noi-bo-an-thanh-son.chn?utm_source=du-lieu.chn",
-    "source": "CafeF_Sở",
-    "is_important": 0
-  },
-  {
-    "id": "cf_SSB_2026-09-18_1bf1457da9",
-    "symbol": "SSB",
-    "exchange": "HOSE",
-    "company_name": "Ngân hàng Thương mại Cổ phần Đông Nam Á",
-    "title": "SSB: Thông báo giao dịch cổ phiếu của người có liên quan đến người nội bộ Lê Tuấn Anh, Nguyễn Tường Huy",
-    "doc_type": "GIAO_DICH_NOI_BO",
-    "doc_type_label": "Giao dịch nội bộ",
-    "published_at": "2026-09-18 18:12:00",
-    "file_url": "https://cafef.vn/du-lieu/SSB-2979488/ssb-thong-bao-giao-dich-co-phieu-cua-nguoi-co-lien-quan-den-nguoi-noi-bo-le-tuan-anh-nguyen-tuong-huy.chn?utm_source=du-lieu.chn",
     "source": "CafeF_Sở",
     "is_important": 0
   }
