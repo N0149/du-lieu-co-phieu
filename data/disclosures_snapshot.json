@@ -1,5 +1,18 @@
 [
   {
+    "id": "cf_HNX_2026-09-22_e72e37f683",
+    "symbol": "HNX",
+    "exchange": "UPCOM",
+    "company_name": "",
+    "title": "HNX: Số liệu Quản lý Sở hữu của Nhà đầu tư nước ngoài tại ngày 22/09/2026",
+    "doc_type": "KHAC",
+    "doc_type_label": "Công bố thông tin",
+    "published_at": "2026-09-22 08:05:00",
+    "file_url": "https://cafef.vn/du-lieu/HNX-2981315/hnx-so-lieu-quan-ly-so-huu-cua-nha-dau-tu-nuoc-ngoai-tai-ngay-22092026.chn?utm_source=du-lieu.chn",
+    "source": "CafeF_Sở",
+    "is_important": 0
+  },
+  {
     "id": "cf_THM_2026-09-21_7fbecc3096",
     "symbol": "THM",
     "exchange": "UPCOM",
@@ -840,7 +853,7 @@
     "doc_type": "KHAC",
     "doc_type_label": "Công bố thông tin",
     "published_at": "2026-09-21 15:36:00",
-    "file_url": "https://cafef.vn/du-lieu/FCM-2980923/fcm-thong-bao-ngay-hieu-luc-ty-le-so-huu-nuoc-ngoai-toi-da.chn?utm_source=du-lieu.chn",
+    "file_url": "https://cafef.vn/du-lieu/FCM-2981252/fcm-thong-bao-ngay-hieu-luc-ty-le-so-huu-nuoc-ngoai-toi-da.chn?utm_source=du-lieu.chn",
     "source": "CafeF_Sở",
     "is_important": 0
   },
@@ -2583,19 +2596,6 @@
     "doc_type_label": "Công bố thông tin",
     "published_at": "2026-09-18 11:18:00",
     "file_url": "https://cafef.vn/du-lieu/PHS-2979064/phs-giay-phep-dieu-chinh-giay-phep-thanh-lap-va-hoat-dong-kinh-doanh-chung-khoan.chn?utm_source=du-lieu.chn",
-    "source": "CafeF_Sở",
-    "is_important": 0
-  },
-  {
-    "id": "cf_EVG_2026-09-17_d8591fdc5b",
-    "symbol": "EVG",
-    "exchange": "HOSE",
-    "company_name": "Công ty Cổ phần Tập đoàn Everland",
-    "title": "EVG: Thông báo giao dịch cổ phiếu của người nội bộ Lê Đình Vinh",
-    "doc_type": "GIAO_DICH_NOI_BO",
-    "doc_type_label": "Giao dịch nội bộ",
-    "published_at": "2026-09-17 18:01:00",
-    "file_url": "https://cafef.vn/du-lieu/EVG-2978642/evg-thong-bao-giao-dich-co-phieu-cua-nguoi-noi-bo-le-dinh-vinh.chn?utm_source=du-lieu.chn",
     "source": "CafeF_Sở",
     "is_important": 0
   }
