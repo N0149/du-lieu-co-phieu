@@ -230,24 +230,67 @@ export function GlobalSearchModal({ open, onClose }: GlobalSearchModalProps) {
       return list.slice(0, 15)
     }
 
-    const termNorm = removeVietnameseAccents(term)
+    const termNorm = removeVietnameseAccents(term).toLowerCase()
+    const termUpper = term.trim().toUpperCase()
+
     const matches = list.filter((item) => {
       const textToSearch = `${item.ticker || ''} ${item.title} ${item.subtitle || ''} ${(item.keywords || []).join(' ')}`.toLowerCase()
-      const textNorm = removeVietnameseAccents(textToSearch)
+      const textNorm = removeVietnameseAccents(textToSearch).toLowerCase()
       return textNorm.includes(termNorm)
     })
 
-    // Nếu có mã trong recent khớp từ khóa, ưu tiên đưa lên đầu và gắn cờ isRecent
+    // Tính điểm phù hợp (Relevance Score) để ưu tiên đúng mã người dùng tìm kiếm (VD: TIN, GAS, MBB...)
     const recentMap = new Map(
       recentSearches.map((r) => [r.ticker ? r.ticker.toUpperCase() : r.id, r])
     )
 
+    const getScore = (item: SearchPaletteItem) => {
+      const ticker = (item.ticker || '').toUpperCase()
+      const titleNorm = removeVietnameseAccents(item.title || '').toLowerCase()
+      const subtitleNorm = removeVietnameseAccents(item.subtitle || '').toLowerCase()
+      const isStock = item.category === 'stock' || Boolean(item.ticker)
+      const isRecent = recentMap.has(ticker || item.id)
+
+      let score = 0
+      if (isRecent) score += 5000
+
+      // 1. Khớp chính xác 100% mã cổ phiếu (VD: gõ "TIN" -> mã TIN lên vị trí #1 ngay lập tức)
+      if (ticker && ticker === termUpper) {
+        score += 100000
+      }
+      // 2. Mã cổ phiếu bắt đầu bằng từ khóa (VD: gõ "TI" -> TIN, TIP, TID)
+      else if (ticker && ticker.startsWith(termUpper)) {
+        score += 50000 - (ticker.length - termUpper.length) * 1000
+      }
+      // 3. Mã cổ phiếu chứa từ khóa
+      else if (ticker && ticker.includes(termUpper)) {
+        score += 20000
+      }
+      // 4. Tiêu đề bắt đầu bằng từ khóa hoặc từ độc lập
+      else if (titleNorm.startsWith(termNorm) || titleNorm.includes(' ' + termNorm)) {
+        score += isStock ? 15000 : 8000
+      }
+      // 5. Tiêu đề chứa từ khóa
+      else if (titleNorm.includes(termNorm)) {
+        score += isStock ? 5000 : 3000
+      }
+      // 6. Subtitle hoặc keywords
+      else if (subtitleNorm.includes(termNorm)) {
+        score += 1000
+      } else {
+        score += 100
+      }
+
+      return score
+    }
+
     const sorted = [...matches].sort((a, b) => {
+      const scoreA = getScore(a)
+      const scoreB = getScore(b)
+      if (scoreA !== scoreB) return scoreB - scoreA
       const aKey = a.ticker ? a.ticker.toUpperCase() : a.id
       const bKey = b.ticker ? b.ticker.toUpperCase() : b.id
-      const aRecent = recentMap.has(aKey) ? 1 : 0
-      const bRecent = recentMap.has(bKey) ? 1 : 0
-      return bRecent - aRecent
+      return aKey.localeCompare(bKey)
     })
 
     return sorted.slice(0, 20).map((item) => {

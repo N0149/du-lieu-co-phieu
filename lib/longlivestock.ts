@@ -1,7 +1,10 @@
 import manifestRaw from '@/data/longlive_manifest.json'
 import indicesRaw from '@/data/longlive_indices.json'
 import coreCardsRaw from '@/data/company_core_cards.json'
+import exchangeMapRaw from '@/data/stock_exchanges.json'
 import { getLiveStockQuote } from './live-quote-service'
+
+const exchangeMap = exchangeMapRaw as Record<string, string>
 
 export type StockManifestItem = {
   t: string // Ticker (e.g. "HPG")
@@ -168,9 +171,17 @@ export function getIndicesData(): MarketIndicesData {
   return indicesRaw as unknown as MarketIndicesData
 }
 
+let cachedAllStocks: StockManifestItem[] | null = null
+
 export function getAllStocks(): StockManifestItem[] {
+  if (cachedAllStocks) return cachedAllStocks
   const data = getManifestData()
-  return data.items || []
+  const items = data.items || []
+  cachedAllStocks = items.map((s) => ({
+    ...s,
+    e: s.e || exchangeMap[s.t] || 'UPCOM',
+  }))
+  return cachedAllStocks
 }
 
 export function getStockByTicker(ticker: string): StockManifestItem | undefined {

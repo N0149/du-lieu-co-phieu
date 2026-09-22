@@ -429,9 +429,19 @@ export function WatchlistManager({
   const searchResults = useMemo(() => {
     if (!query.trim()) return []
     const q = query.trim().toUpperCase()
+    const qLower = query.trim().toLowerCase()
     return allManifestStocks
-      .filter((s) => s.t.toUpperCase().includes(q) || s.n.toLowerCase().includes(query.toLowerCase()))
-      .slice(0, 6)
+      .filter((s) => s.t.toUpperCase().includes(q) || s.n.toLowerCase().includes(qLower))
+      .sort((a, b) => {
+        const aT = a.t.toUpperCase()
+        const bT = b.t.toUpperCase()
+        if (aT === q && bT !== q) return -1
+        if (bT === q && aT !== q) return 1
+        if (aT.startsWith(q) && !bT.startsWith(q)) return -1
+        if (bT.startsWith(q) && !aT.startsWith(q)) return 1
+        return aT.localeCompare(bT)
+      })
+      .slice(0, 8)
   }, [query, allManifestStocks])
 
   // Sắp xếp
