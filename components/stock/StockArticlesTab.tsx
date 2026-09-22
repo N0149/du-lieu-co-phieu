@@ -154,8 +154,22 @@ export function StockArticlesTab({
   const [commentText, setCommentText] = useState('')
   const [submittingComment, setSubmittingComment] = useState(false)
   const commentInputRef = useRef<HTMLTextAreaElement>(null)
+  const [articlesData, setArticlesData] = useState<StockArticlesPayload | null>(initialArticles || null)
+  const items = useMemo(() => articlesData?.items || [], [articlesData])
 
-  const items = useMemo(() => initialArticles?.items || [], [initialArticles])
+  // Client-side fallback: Nếu danh sách bài viết đang rỗng, tự động fetch từ /api/stock/[symbol]/articles
+  useEffect(() => {
+    if (!articlesData || articlesData.items.length === 0) {
+      fetch(`/api/stock/${encodeURIComponent(symbol)}/articles`)
+        .then((r) => r.json())
+        .then((res) => {
+          if (res.success && res.data && res.data.items?.length > 0) {
+            setArticlesData(res.data)
+          }
+        })
+        .catch(() => {})
+    }
+  }, [symbol, articlesData])
 
   // Khởi tạo trạng thái đăng nhập
   useEffect(() => {

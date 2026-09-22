@@ -35,10 +35,11 @@ const SNAPSHOT_PATH = path.join(DATA_DIR, "disclosures_snapshot.json");
 const USER_AGENT =
   "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36";
 
-// 21 mã danh mục nòng cốt của dulieudautu.com
+// Danh mục nòng cốt của dulieudautu.com
 export const CORE_WATCHLIST = [
   "ABT", "AIC", "AMS", "ANV", "ASP", "BAX", "BCC", "BLI", "BMI", "BTD",
-  "BTP", "CAT", "CBS", "CCI", "CCS", "CDN", "CKD", "CLX", "CMW", "CNT", "DAN"
+  "BTP", "CAT", "CBS", "CCI", "CCS", "CDN", "CKD", "CLX", "CMW", "CNT", "DAN",
+  "DRI"
 ];
 
 let stockExchanges = {};
@@ -462,11 +463,23 @@ async function syncTickersDisclosures(db, tickers) {
 
     try {
       // 1. Quét từ CafeF có link văn bản gốc trực tiếp (file_url)
-      const cfRecords = await fetchCafefDisclosures(1, 50, sym);
-      // 2. Quét thêm từ Vietcap IQ (để bổ sung thêm các tin phân tích / thumbnail)
-      const vcRecords = await fetchVietcapNews(sym, 0, 50);
+      let cfRecords = [];
+      try {
+        cfRecords = await fetchCafefDisclosures(1, 50, sym);
+      } catch (e) {
+        console.warn(`[!] Lỗi CafeF cho ${sym}:`, e.message);
+      }
 
-      const saved = insertDisclosures(db, [...cfRecords, ...vcRecords]);
+      // 2. Quét thêm từ Vietcap IQ (nếu khả dụng, không để lỗi 403 chặn việc lưu dữ liệu)
+      let vcRecords = [];
+      try {
+        vcRecords = await fetchVietcapNews(sym, 0, 50);
+      } catch (e) {
+        // Bỏ qua lỗi Vietcap chặn bot hoặc đổi API
+      }
+
+      const allRecords = [...cfRecords, ...vcRecords];
+      const saved = insertDisclosures(db, allRecords);
       totalSaved += saved;
       console.log(`OK (${saved} văn bản)`);
     } catch (err) {

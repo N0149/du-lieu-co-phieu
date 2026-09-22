@@ -3,7 +3,7 @@ import path from 'node:path'
 import { DatabaseSync } from 'node:sqlite'
 import manifestRaw from '@/data/longlive_manifest.json'
 import type { CorporateDisclosure } from '@/lib/disclosures'
-import { getDisclosuresBySymbol } from '@/lib/disclosures'
+import { getDisclosuresBySymbol, fetchLiveDisclosuresForSymbol } from '@/lib/disclosures'
 import { getCachedNews, type RawNewsItem } from '@/lib/rss-news-service'
 
 export type ArticleTickerTag = {
@@ -587,4 +587,27 @@ export function getStockArticles(ticker: string, companyName = ''): StockArticle
     newsCount,
     items: allItems,
   }
+}
+
+/**
+ * Trích xuất bài viết và công bố thông tin (Async)
+ * Tự động kích hoạt fetch trực tiếp từ CafeF nếu mã chưa có thông tin công bố trong hệ thống
+ */
+export async function getStockArticlesAsync(ticker: string, companyName = ''): Promise<StockArticlesPayload> {
+  const sym = ticker.toUpperCase().trim()
+  let payload = getStockArticles(sym, companyName)
+
+  // Nếu mã chưa có disclosure nào, tự động fetch trực tiếp từ CafeF (~150ms)
+  if (payload.disclosureCount === 0) {
+    try {
+      const live = await fetchLiveDisclosuresForSymbol(sym)
+      if (live && live.length > 0) {
+        payload = getStockArticles(sym, companyName)
+      }
+    } catch (e) {
+      console.warn(`[StockArticlesService] Live fetch failed for ${sym}:`, e)
+    }
+  }
+
+  return payload
 }

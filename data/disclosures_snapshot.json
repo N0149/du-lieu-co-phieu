@@ -2509,6 +2509,19 @@
     "is_important": 0
   },
   {
+    "id": "cf_DRI_2026-09-21_b83ce331a1",
+    "symbol": "DRI",
+    "exchange": "UPCOM",
+    "company_name": "Công ty Cổ phần Đầu tư Cao su Đắk Lắk",
+    "title": "DRI: Nghị quyết Hội đồng quản trị Về kết quả triển khai thực hiện Nghị quyết của HĐQT",
+    "doc_type": "NGHI_QUYET_HDQT",
+    "doc_type_label": "Nghị quyết HĐQT",
+    "published_at": "2026-09-21 00:00:00",
+    "file_url": "https://cafef.vn/du-lieu/DRI-2980838/dri-nghi-quyet-hoi-dong-quan-tri-ve-ket-qua-trien-khai-thuc-hien-nghi-quyet-cua-hdqt.chn?utm_source=du-lieu.chn",
+    "source": "CafeF_Sở",
+    "is_important": 0
+  },
+  {
     "id": "cf_VTB_2026-09-18_afc4e01049",
     "symbol": "VTB",
     "exchange": "HOSE",
@@ -2583,19 +2596,6 @@
     "doc_type_label": "Giao dịch nội bộ",
     "published_at": "2026-09-18 18:12:00",
     "file_url": "https://cafef.vn/du-lieu/SSB-2979488/ssb-thong-bao-giao-dich-co-phieu-cua-nguoi-co-lien-quan-den-nguoi-noi-bo-le-tuan-anh-nguyen-tuong-huy.chn?utm_source=du-lieu.chn",
-    "source": "CafeF_Sở",
-    "is_important": 0
-  },
-  {
-    "id": "cf_VIB_2026-09-18_29285b7a58",
-    "symbol": "VIB",
-    "exchange": "HOSE",
-    "company_name": "Ngân hàng Thương mại Cổ phần Quốc tế Việt Nam",
-    "title": "VIB: Báo cáo kết quả giao dịch cổ phiếu của người nội bộ Hàn Ngọc Vũ",
-    "doc_type": "GIAO_DICH_NOI_BO",
-    "doc_type_label": "Giao dịch nội bộ",
-    "published_at": "2026-09-18 18:12:00",
-    "file_url": "https://cafef.vn/du-lieu/VIB-2979487/vib-bao-cao-ket-qua-giao-dich-co-phieu-cua-nguoi-noi-bo-han-ngoc-vu.chn?utm_source=du-lieu.chn",
     "source": "CafeF_Sở",
     "is_important": 0
   }

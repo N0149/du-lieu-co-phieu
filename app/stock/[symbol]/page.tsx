@@ -26,7 +26,7 @@ import { getAgmReport, getAvailableAgmTickers, getAgmKtpl } from '@/lib/agm-serv
 import { getBctcReport, getAvailableBctcTickers } from '@/lib/bctc-service'
 import { getStockIcbHierarchy } from '@/lib/icb-service'
 import { getFinancialStatements } from '@/lib/financial-statements-db'
-import { getStockArticles } from '@/lib/stock-articles-service'
+import { getStockArticles, getStockArticlesAsync } from '@/lib/stock-articles-service'
 import { getLocalPriceWeekly, getLocalStockCandles } from '@/lib/stock-price-history-service'
 import { getCompanyWebsiteMeta } from '@/lib/company-website-service'
 import { getCompanyBctcDocuments } from '@/lib/bctc-document-service'
@@ -124,7 +124,7 @@ export default async function StockDetailPage({
     Promise.resolve(getBctcReport(ticker, 'HopNhat')),
     Promise.resolve(getBctcReport(ticker, 'CongTyMe')),
     Promise.resolve(getAvailableBctcTickers()),
-    Promise.resolve(getStockArticles(ticker, manifestItem.n)),
+    getStockArticlesAsync(ticker, manifestItem.n),
     Promise.resolve(getCompanyWebsiteMeta(ticker)),
     Promise.resolve(getLocalStockCandles(ticker)),
   ])

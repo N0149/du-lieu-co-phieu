@@ -28,6 +28,8 @@ import {
   TrendingUp,
   Scale,
   Building2,
+  ChevronLeft,
+  ChevronRight,
 } from 'lucide-react'
 import { cn } from '@/lib/utils'
 import { fmtInt, fmtNum } from '@/lib/format'
@@ -194,22 +196,23 @@ export function CustomsCommodityMatrix({
       const key = `${r.period_date}|${r.period_type}`
       if (!periodMap.has(key)) {
         const [y, m] = r.period_date.split('-')
+        const yShort = y.slice(2)
         let label = `${m}-${y}`
-        let shortLabel = `${m}/${y}`
+        let shortLabel = `${m}/${yShort}`
         let fullLabel = `Tháng ${m}/${y}`
 
         if (r.period_type === 'KY_1') {
           label = `${m}-${y} (K1)`
-          shortLabel = `${m}/${y}-K1`
+          shortLabel = `${m}/${yShort} (K1)`
           fullLabel = `Kỳ 1 Tháng ${m}/${y}`
         } else if (r.period_type === 'KY_2') {
           label = `${m}-${y} (K2)`
-          shortLabel = `${m}/${y}-K2`
+          shortLabel = `${m}/${yShort} (K2)`
           fullLabel = `Kỳ 2 Tháng ${m}/${y}`
         } else if (r.period_type === 'QUY') {
           const q = Math.floor((Number(m) - 1) / 3) + 1
           label = `Q${q}-${y}`
-          shortLabel = `Q${q}/${y}`
+          shortLabel = `Q${q}/${yShort}`
           fullLabel = `Quý ${q}/${y}`
         }
 
@@ -239,13 +242,56 @@ export function CustomsCommodityMatrix({
   }, [periodColumns])
 
   const tableContainerRef = useRef<HTMLDivElement>(null)
+  // Chiều rộng cố định của 3 cột ghim (Freeze Pane):
+  // Cột 1 (#): 44px + Cột 2 (Mặt hàng): 280px + Cột 3 (ĐVT): 60px = 384px
+  const STICKY_PANE_WIDTH = 384
+  const [colWidth, setColWidth] = useState<number>(116)
 
-  // Tự động cuộn bảng sang phía bên phải để hiển thị ngay các mốc thời gian gần nhất (khớp biểu đồ)
+  // Tự động căn chỉnh độ rộng cột ngày tháng chia đều cho khung nhìn còn lại,
+  // và cuộn kịch sang phải để kỳ mới nhất luôn hiển thị trọn vẹn 100% không bị cắt cụt số ở cả 2 mép
   useEffect(() => {
-    if (tableContainerRef.current) {
-      tableContainerRef.current.scrollLeft = tableContainerRef.current.scrollWidth
+    const el = tableContainerRef.current
+    if (!el) return
+
+    const updateLayoutAndScroll = () => {
+      if (!el) return
+      const clientWidth = el.clientWidth
+      const availableWidth = clientWidth - STICKY_PANE_WIDTH
+      if (availableWidth <= 0) return
+
+      // Tính toán số cột hiển thị vừa vặn trong khoảng nhìn (mỗi cột khoảng 112px - 124px)
+      const targetWidth = 114
+      const numCols = Math.max(1, Math.floor(availableWidth / targetWidth))
+      const calculatedWidth = Math.round((availableWidth / numCols) * 10) / 10
+      setColWidth((prev) => (Math.abs(calculatedWidth - prev) >= 0.5 ? calculatedWidth : prev))
+
+      // Cuộn kịch sang phải để hiển thị kỳ gần nhất (VD: Kỳ 1 Tháng 9/2026)
+      requestAnimationFrame(() => {
+        if (!el) return
+        el.scrollLeft = el.scrollWidth - el.clientWidth
+      })
     }
-  }, [displayColumns.length, periodType])
+
+    updateLayoutAndScroll()
+    const rAF = requestAnimationFrame(updateLayoutAndScroll)
+    const t1 = setTimeout(updateLayoutAndScroll, 100)
+    const t2 = setTimeout(updateLayoutAndScroll, 350)
+
+    window.addEventListener('resize', updateLayoutAndScroll)
+
+    const ro = typeof ResizeObserver !== 'undefined' ? new ResizeObserver(() => {
+      updateLayoutAndScroll()
+    }) : null
+    if (ro) ro.observe(el)
+
+    return () => {
+      cancelAnimationFrame(rAF)
+      clearTimeout(t1)
+      clearTimeout(t2)
+      window.removeEventListener('resize', updateLayoutAndScroll)
+      if (ro) ro.disconnect()
+    }
+  }, [displayColumns.length, displayColumns[displayColumns.length - 1]?.key, periodType])
 
   // Pivot dữ liệu: Map từng Mặt hàng -> Dữ liệu theo từng kỳ
   const pivotData = useMemo(() => {
@@ -531,6 +577,16 @@ export function CustomsCommodityMatrix({
       return pt
     })
   }, [periodColumns, selectedCommodities, pivotData, tradeType, chartMode, chartRange])
+
+  // Khoảng cách nhãn trục X thông minh để nhãn đồ thị không bao giờ bị đè dính lên nhau
+  const xAxisInterval = useMemo(() => {
+    const len = chartData.length
+    if (len <= 14) return 0
+    if (len <= 24) return 1
+    if (len <= 48) return 3
+    if (len <= 72) return 5
+    return Math.ceil(len / 12)
+  }, [chartData.length])
 
   // Bật/tắt chọn mặt hàng vào biểu đồ -> tự động bật biểu đồ mặt hàng
   const toggleCommodity = useCallback((name: string) => {
@@ -860,18 +916,18 @@ export function CustomsCommodityMatrix({
                 <div className="relative h-68 w-full sm:h-80">
                   <ResponsiveContainer width="100%" height="100%">
                     {chartType === 'bar' ? (
-                      <BarChart data={chartData} margin={{ top: 10, right: 12, left: -8, bottom: 0 }}>
+                      <BarChart data={chartData} margin={{ top: 10, right: 16, left: -4, bottom: 24 }}>
                         <CartesianGrid strokeDasharray="3 3" stroke="currentColor" opacity={0.08} vertical={false} />
                         <XAxis
                           dataKey="label"
                           tickLine={false}
-                          axisLine={false}
-                          interval={chartData.length > 24 ? 'preserveEnd' : 0}
-                          angle={chartData.length > 12 ? -30 : 0}
-                          textAnchor={chartData.length > 12 ? 'end' : 'middle'}
-                          height={chartData.length > 12 ? 38 : 24}
-                          tick={{ fontSize: chartData.length > 20 ? 10 : 11 }}
-                          dy={chartData.length > 12 ? 4 : 6}
+                          axisLine={{ stroke: '#ffffff', opacity: 0.1 }}
+                          interval={xAxisInterval}
+                          angle={0}
+                          textAnchor="middle"
+                          height={24}
+                          tick={{ fontSize: 11, fill: '#9EACB9' }}
+                          dy={6}
                         />
                         <YAxis
                           tickFormatter={(v) => (chartMode === 'pct' ? `${v}%` : fmtInt(v))}
@@ -897,7 +953,7 @@ export function CustomsCommodityMatrix({
                         ))}
                       </BarChart>
                     ) : selectedCommodities.length === 1 ? (
-                      <AreaChart data={chartData} margin={{ top: 10, right: 12, left: -8, bottom: 0 }}>
+                      <AreaChart data={chartData} margin={{ top: 10, right: 16, left: -4, bottom: 24 }}>
                         <defs>
                           <linearGradient id="wiDataAreaGrad" x1="0" y1="0" x2="0" y2="1">
                             <stop
@@ -916,13 +972,13 @@ export function CustomsCommodityMatrix({
                         <XAxis
                           dataKey="label"
                           tickLine={false}
-                          axisLine={false}
-                          interval={chartData.length > 24 ? 'preserveEnd' : 0}
-                          angle={chartData.length > 12 ? -30 : 0}
-                          textAnchor={chartData.length > 12 ? 'end' : 'middle'}
-                          height={chartData.length > 12 ? 38 : 24}
-                          tick={{ fontSize: chartData.length > 20 ? 10 : 11 }}
-                          dy={chartData.length > 12 ? 4 : 6}
+                          axisLine={{ stroke: '#ffffff', opacity: 0.1 }}
+                          interval={xAxisInterval}
+                          angle={0}
+                          textAnchor="middle"
+                          height={24}
+                          tick={{ fontSize: 11, fill: '#9EACB9' }}
+                          dy={6}
                         />
                         <YAxis
                           tickFormatter={(v) => (chartMode === 'pct' ? `${v}%` : fmtInt(v))}
@@ -949,18 +1005,18 @@ export function CustomsCommodityMatrix({
                         />
                       </AreaChart>
                     ) : (
-                      <LineChart data={chartData} margin={{ top: 10, right: 12, left: -8, bottom: 0 }}>
+                      <LineChart data={chartData} margin={{ top: 10, right: 16, left: -4, bottom: 24 }}>
                         <CartesianGrid strokeDasharray="3 3" stroke="currentColor" opacity={0.08} vertical={false} />
                         <XAxis
                           dataKey="label"
                           tickLine={false}
-                          axisLine={false}
-                          interval={chartData.length > 24 ? 'preserveEnd' : 0}
-                          angle={chartData.length > 12 ? -30 : 0}
-                          textAnchor={chartData.length > 12 ? 'end' : 'middle'}
-                          height={chartData.length > 12 ? 38 : 24}
-                          tick={{ fontSize: chartData.length > 20 ? 10 : 11 }}
-                          dy={chartData.length > 12 ? 4 : 6}
+                          axisLine={{ stroke: '#ffffff', opacity: 0.1 }}
+                          interval={xAxisInterval}
+                          angle={0}
+                          textAnchor="middle"
+                          height={24}
+                          tick={{ fontSize: 11, fill: '#9EACB9' }}
+                          dy={6}
                         />
                         <YAxis
                           tickFormatter={(v) => (chartMode === 'pct' ? `${v}%` : fmtInt(v))}
@@ -1174,6 +1230,37 @@ export function CustomsCommodityMatrix({
           </div>
 
           <div className="flex items-center gap-2">
+            {/* Nút điều hướng các kỳ thời gian */}
+            <div className="flex items-center rounded-lg border border-border bg-background p-0.5 text-xs">
+              <button
+                type="button"
+                onClick={() => {
+                  if (tableContainerRef.current) {
+                    tableContainerRef.current.scrollBy({ left: -colWidth * 2, behavior: 'smooth' })
+                  }
+                }}
+                className="inline-flex h-7 items-center gap-1 rounded-md px-2 text-xs font-medium text-muted-foreground hover:bg-secondary hover:text-foreground transition-colors"
+                title="Xem các kỳ cũ hơn"
+              >
+                <ChevronLeft className="size-3.5" />
+                <span className="hidden sm:inline">Kỳ cũ hơn</span>
+              </button>
+              <div className="h-4 w-px bg-border/80" />
+              <button
+                type="button"
+                onClick={() => {
+                  if (tableContainerRef.current) {
+                    tableContainerRef.current.scrollBy({ left: colWidth * 2, behavior: 'smooth' })
+                  }
+                }}
+                className="inline-flex h-7 items-center gap-1 rounded-md px-2 text-xs font-medium text-muted-foreground hover:bg-secondary hover:text-foreground transition-colors"
+                title="Xem các kỳ mới hơn"
+              >
+                <span className="hidden sm:inline">Kỳ mới hơn</span>
+                <ChevronRight className="size-3.5" />
+              </button>
+            </div>
+
             <button
               type="button"
               onClick={exportToCsv}
@@ -1217,23 +1304,27 @@ export function CustomsCommodityMatrix({
 
       {/* ── BẢNG MA TRẬN THEO THÁNG (PIVOT TABLE) ───────────────────────────── */}
       <div className="overflow-hidden rounded-xl border border-white/8 bg-[#212631] shadow-[0_4px_20px_rgba(0,0,0,0.25)]">
-        <div ref={tableContainerRef} className="overflow-x-auto">
-          <table className="w-full border-collapse text-xs">
+        <div
+          ref={tableContainerRef}
+          className="overflow-x-auto scroll-smooth [scroll-padding-left:384px] [scroll-snap-type:x_proximity]"
+        >
+          <table className="w-max min-w-full border-separate border-spacing-0 text-xs">
             <thead>
-              <tr className="border-b border-white/8 bg-[#1a1d26] text-[#9EACB9]">
-                <th className="sticky left-0 z-20 w-10 bg-[#1a1d26] px-2 py-3 text-center font-medium backdrop-blur">
+              <tr className="bg-[#1a1d26] text-[#9EACB9]">
+                <th className="sticky left-0 z-20 w-11 min-w-[44px] max-w-[44px] bg-[#1a1d26] px-2 py-3 text-center font-medium border-b border-white/8">
                   #
                 </th>
-                <th className="sticky left-10 z-20 min-w-[200px] max-w-[260px] bg-[#1a1d26] px-3 py-3 text-left font-semibold uppercase tracking-wider text-[#F0F3F6] backdrop-blur sm:min-w-[240px]">
+                <th className="sticky left-[44px] z-20 w-[280px] min-w-[280px] max-w-[280px] bg-[#1a1d26] px-3 py-3 text-left font-semibold uppercase tracking-wider text-[#F0F3F6] border-b border-white/8">
                   Mặt hàng
                 </th>
-                <th className="min-w-[70px] px-2.5 py-3 text-left font-medium uppercase tracking-wider text-[#9EACB9]">
+                <th className="sticky left-[324px] z-20 w-[60px] min-w-[60px] max-w-[60px] bg-[#1a1d26] px-1 py-3 text-center font-medium uppercase tracking-wider text-[#9EACB9] border-b border-r border-white/8 shadow-[3px_0_6px_-2px_rgba(0,0,0,0.4)]">
                   ĐVT
                 </th>
                 {displayColumns.map((col) => (
                   <th
                     key={col.key}
-                    className="min-w-[105px] px-3 py-3 text-right tabular-nums font-semibold uppercase tracking-wider text-[#F0F3F6]"
+                    style={{ width: `${colWidth}px`, minWidth: `${colWidth}px`, maxWidth: `${colWidth}px` }}
+                    className="snap-start whitespace-nowrap px-3 py-3 text-right tabular-nums font-semibold uppercase tracking-wider text-[#F0F3F6] border-b border-white/8"
                   >
                     {col.label}
                   </th>
@@ -1242,55 +1333,32 @@ export function CustomsCommodityMatrix({
             </thead>
 
             <tbody>
-              {filteredRows.length > 0 && valueType === 'value' && (
-                <tr className="border-b border-white/8 bg-emerald-500/5 font-semibold">
-                  <td className="sticky left-0 z-10 bg-[#1e2330] px-2 py-2.5 text-center text-emerald-400">
-                    ∑
-                  </td>
-                  <td className="sticky left-10 z-10 bg-[#1e2330] px-3 py-2.5 text-emerald-400">
-                    TỔNG CỘNG ({filteredRows.length} mặt hàng)
-                  </td>
-                  <td className="px-2.5 py-2.5 text-[#9EACB9]">Triệu USD</td>
-                  {displayColumns.map((col) => {
-                    const tot = columnTotals[col.key]?.value ?? 0
-                    return (
-                      <td
-                        key={col.key}
-                        className={cn(
-                          'px-3 py-2.5 text-right tabular-nums font-bold',
-                          tradeType === 'BALANCE'
-                            ? tot >= 0
-                              ? 'text-emerald-400'
-                              : 'text-rose-400'
-                            : 'text-[#F0F3F6]',
-                        )}
-                      >
-                        {fmtNum(tot / 1e6, 1)}
-                      </td>
-                    )
-                  })}
-                </tr>
-              )}
-
+              {/* 1. TỔNG TOÀN QUỐC THEO HẢI QUAN (ĐƯA LÊN TRÊN ĐẦU) */}
               {filteredRows.length > 0 && valueType === 'value' && tradeBalanceData.length > 0 && !search && (
-                <tr className="border-b border-white/8 bg-sky-500/10 font-semibold text-xs">
-                  <td className="sticky left-0 z-10 bg-[#16222f] px-2 py-2 text-center text-sky-400">
+                <tr className="bg-sky-500/10 font-semibold text-xs">
+                  <td className="sticky left-0 z-10 w-11 min-w-[44px] max-w-[44px] bg-[#16222f] px-2 py-2.5 text-center text-sky-400 font-bold border-b border-white/8">
                     ★
                   </td>
-                  <td className="sticky left-10 z-10 bg-[#16222f] px-3 py-2 text-sky-300">
-                    <div className="flex items-center gap-1.5">
-                      <span>TỔNG TOÀN QUỐC (Theo TCHQ)</span>
-                      <span className="rounded bg-sky-500/20 px-1 py-0.2 text-[9px] text-sky-300 font-normal">
+                  <td className="sticky left-[44px] z-10 w-[280px] min-w-[280px] max-w-[280px] bg-[#16222f] px-3 py-2.5 text-sky-300 border-b border-white/8">
+                    <div className="flex items-center gap-1.5 whitespace-nowrap">
+                      <span className="font-bold">TỔNG TOÀN QUỐC (Theo TCHQ)</span>
+                      <span className="rounded bg-sky-500/20 px-1 py-0.5 text-[9px] text-sky-300 font-normal">
                         Toàn bộ hàng hóa
                       </span>
                     </div>
                   </td>
-                  <td className="px-2.5 py-2 text-[#9EACB9]">Triệu USD</td>
+                  <td className="sticky left-[324px] z-10 w-[60px] min-w-[60px] max-w-[60px] bg-[#16222f] px-1 py-2.5 text-center text-[11px] text-[#9EACB9] border-b border-r border-white/8 shadow-[3px_0_6px_-2px_rgba(0,0,0,0.4)]">
+                    Tr.USD
+                  </td>
                   {displayColumns.map((col) => {
                     const tbPoint = tradeBalanceMap.get(col.key)
                     if (!tbPoint) {
                       return (
-                        <td key={col.key} className="px-3 py-2 text-right text-muted-foreground/50">
+                        <td
+                          key={col.key}
+                          style={{ width: `${colWidth}px`, minWidth: `${colWidth}px`, maxWidth: `${colWidth}px` }}
+                          className="px-3 py-2.5 text-right text-muted-foreground/50 border-b border-white/8 whitespace-nowrap"
+                        >
                           —
                         </td>
                       )
@@ -1307,13 +1375,48 @@ export function CustomsCommodityMatrix({
                     return (
                       <td
                         key={col.key}
+                        style={{ width: `${colWidth}px`, minWidth: `${colWidth}px`, maxWidth: `${colWidth}px` }}
                         className={cn(
-                          'px-3 py-2 text-right tabular-nums font-bold text-sky-200',
+                          'px-3 py-2.5 text-right tabular-nums font-bold text-sky-200 border-b border-white/8 whitespace-nowrap',
                           tradeType === 'BALANCE' && (isNegative ? 'text-rose-400' : 'text-emerald-400'),
                         )}
                         title={`Số liệu chính thức Tổng cục Hải quan: ${fmtNum(inMillions, 1)} triệu USD (${fmtNum(inMillions / 1000, 2)} tỷ USD)`}
                       >
                         {fmtNum(inMillions, 1)}
+                      </td>
+                    )
+                  })}
+                </tr>
+              )}
+
+              {/* 2. TỔNG CỘNG CÁC MẶT HÀNG ĐANG THEO DÕI */}
+              {filteredRows.length > 0 && valueType === 'value' && (
+                <tr className="bg-emerald-500/5 font-semibold">
+                  <td className="sticky left-0 z-10 w-11 min-w-[44px] max-w-[44px] bg-[#1e2330] px-2 py-2.5 text-center text-emerald-400 font-bold border-b border-white/8">
+                    ∑
+                  </td>
+                  <td className="sticky left-[44px] z-10 w-[280px] min-w-[280px] max-w-[280px] bg-[#1e2330] px-3 py-2.5 text-emerald-400 font-bold border-b border-white/8 whitespace-nowrap truncate">
+                    TỔNG CỘNG ({filteredRows.length} mặt hàng)
+                  </td>
+                  <td className="sticky left-[324px] z-10 w-[60px] min-w-[60px] max-w-[60px] bg-[#1e2330] px-1 py-2.5 text-center text-[11px] text-[#9EACB9] border-b border-r border-white/8 shadow-[3px_0_6px_-2px_rgba(0,0,0,0.4)]">
+                    Tr.USD
+                  </td>
+                  {displayColumns.map((col) => {
+                    const tot = columnTotals[col.key]?.value ?? 0
+                    return (
+                      <td
+                        key={col.key}
+                        style={{ width: `${colWidth}px`, minWidth: `${colWidth}px`, maxWidth: `${colWidth}px` }}
+                        className={cn(
+                          'px-3 py-2.5 text-right tabular-nums font-bold border-b border-white/8 whitespace-nowrap',
+                          tradeType === 'BALANCE'
+                            ? tot >= 0
+                              ? 'text-emerald-400'
+                              : 'text-rose-400'
+                            : 'text-[#F0F3F6]',
+                        )}
+                      >
+                        {fmtNum(tot / 1e6, 1)}
                       </td>
                     )
                   })}
@@ -1339,16 +1442,16 @@ export function CustomsCommodityMatrix({
                       key={row.name}
                       onClick={() => toggleCommodity(row.name)}
                       className={cn(
-                        'group cursor-pointer border-b border-white/5 transition-colors',
+                        'group cursor-pointer transition-colors',
                         isSelected
-                          ? 'bg-primary/15 hover:bg-primary/20 border-l-2 border-l-primary font-medium'
+                          ? 'bg-primary/15 hover:bg-primary/20 font-medium'
                           : 'hover:bg-white/[0.04]',
                       )}
                     >
                       <td
                         className={cn(
-                          'sticky left-0 z-10 px-2.5 py-2.5 text-center cursor-pointer transition-colors',
-                          isSelected ? 'bg-[#1e2330]' : 'bg-card group-hover:bg-accent/40',
+                          'sticky left-0 z-10 w-11 min-w-[44px] max-w-[44px] px-2 py-2.5 text-center cursor-pointer transition-colors border-b border-white/5',
+                          isSelected ? 'bg-[#1e2330]' : 'bg-[#1a1d26] group-hover:bg-[#252b3b]',
                         )}
                         onClick={(e) => {
                           e.stopPropagation()
@@ -1370,20 +1473,20 @@ export function CustomsCommodityMatrix({
 
                       <td
                         className={cn(
-                          'sticky left-10 z-10 px-3 py-2.5 font-medium transition-colors',
+                          'sticky left-[44px] z-10 w-[280px] min-w-[280px] max-w-[280px] px-3 py-2.5 font-medium transition-colors border-b border-white/5',
                           isSelected
                             ? 'bg-[#1e2330] text-foreground font-semibold'
-                            : 'bg-card group-hover:bg-accent/40 text-foreground',
+                            : 'bg-[#1a1d26] group-hover:bg-[#252b3b] text-foreground',
                         )}
                       >
-                        <div className="flex items-center gap-2">
+                        <div className="flex items-center gap-2 min-w-0">
                           {isSelected && (
                             <span
                               className="size-2 shrink-0 rounded-full"
                               style={{ backgroundColor: seriesColor }}
                             />
                           )}
-                          <span className="truncate">{row.name}</span>
+                          <span className="truncate" title={row.name}>{row.name}</span>
                           {(() => {
                             const matched = getStocksForCustomsCommodity(row.name)
                             if (matched.length === 0) return null
@@ -1394,19 +1497,24 @@ export function CustomsCommodityMatrix({
                                   e.stopPropagation()
                                   onSwitchToTierA?.()
                                 }}
-                                className="ml-1 inline-flex shrink-0 items-center gap-0.5 rounded border border-primary/20 bg-primary/10 px-1.5 py-0.5 text-[10px] font-semibold text-primary transition-colors hover:bg-primary/20"
+                                className="ml-auto inline-flex shrink-0 items-center gap-0.5 rounded border border-primary/20 bg-primary/10 px-1.5 py-0.5 text-[10px] font-semibold text-primary transition-colors hover:bg-primary/20"
                                 title={`Có ${matched.length} mã niêm yết Tier A liên quan: ${matched.map((s) => s.ticker).join(', ')}. Bấm để xem phân loại.`}
                               >
                                 <Building2 className="size-2.5" />
-                                <span>{matched.length} mã CP</span>
+                                <span>{matched.length} mã</span>
                               </button>
                             )
                           })()}
                         </div>
                       </td>
 
-
-                      <td className="px-2.5 py-2.5 text-muted-foreground">
+                      <td
+                        className={cn(
+                          'sticky left-[324px] z-10 w-[60px] min-w-[60px] max-w-[60px] px-1 py-2.5 text-center text-muted-foreground border-b border-r border-white/5 shadow-[3px_0_6px_-2px_rgba(0,0,0,0.4)] text-[11px] truncate',
+                          isSelected ? 'bg-[#1e2330]' : 'bg-[#1a1d26] group-hover:bg-[#252b3b]',
+                        )}
+                        title={row.unit ?? '—'}
+                      >
                         {row.unit ?? '—'}
                       </td>
 
@@ -1415,7 +1523,8 @@ export function CustomsCommodityMatrix({
                         return (
                           <td
                             key={col.key}
-                            className="px-3 py-2.5 text-right tabular-nums text-foreground"
+                            style={{ width: `${colWidth}px`, minWidth: `${colWidth}px`, maxWidth: `${colWidth}px` }}
+                            className="px-3 py-2.5 text-right tabular-nums text-foreground border-b border-white/5 whitespace-nowrap"
                           >
                             <CellDisplay
                               cell={cell}
