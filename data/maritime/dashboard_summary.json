@@ -1,6 +1,6 @@
 {
   "status": "success",
-  "generated_at": "2026-09-22T09:39:45.086675",
+  "generated_at": "2026-09-22T14:07:39.255124",
   "kpis": {
     "total_port_authorities": 16,
     "total_calls_30d": 15635,
@@ -522,6 +522,23 @@
       "source": "cvhh_haiphong"
     },
     {
+      "id": 3745,
+      "vessel_name": "LUCKY BLESSING",
+      "authority_id": "haiphong",
+      "berth_name": "Tân Vũ",
+      "stock_ticker": "PHP",
+      "call_direction": "out",
+      "call_date": "2026-09-23",
+      "scheduled_time": "2026-09-23 12:30:00",
+      "draft": 8.8,
+      "loa": 182.8,
+      "dwt": 24116,
+      "gt": 17609,
+      "origin_port": "TAN VU",
+      "dest_port": "SINGAPORE",
+      "source": "cvhh_haiphong"
+    },
+    {
       "id": 3681,
       "vessel_name": "HUY HOANG 222",
       "authority_id": "haiphong",
@@ -570,6 +587,23 @@
       "gt": 833,
       "origin_port": "TU LONG",
       "dest_port": "PHUC SON",
+      "source": "cvhh_haiphong"
+    },
+    {
+      "id": 3744,
+      "vessel_name": "PRIDE PACIFIC",
+      "authority_id": "haiphong",
+      "berth_name": "Cảng Đình Vũ",
+      "stock_ticker": "DVP",
+      "call_direction": "out",
+      "call_date": "2026-09-23",
+      "scheduled_time": "2026-09-23 08:30:00",
+      "draft": 7.0,
+      "loa": 147.0,
+      "dwt": 15208,
+      "gt": 12545,
+      "origin_port": "NAM DINH VU",
+      "dest_port": "CHINA",
       "source": "cvhh_haiphong"
     },
     {
@@ -717,7 +751,7 @@
       "call_direction": "out",
       "call_date": "2026-09-23",
       "scheduled_time": "2026-09-23 06:30:00",
-      "draft": 8.7,
+      "draft": 8.9,
       "loa": 168.8,
       "dwt": 19104,
       "gt": 15167,
@@ -913,6 +947,23 @@
       "source": "cvhh_haiphong"
     },
     {
+      "id": 3743,
+      "vessel_name": "HAIAN PARK",
+      "authority_id": "haiphong",
+      "berth_name": "Cảng Hải An",
+      "stock_ticker": "HAH",
+      "call_direction": "out",
+      "call_date": "2026-09-23",
+      "scheduled_time": "2026-09-23 02:30:00",
+      "draft": 7.1,
+      "loa": 144.8,
+      "dwt": 12649,
+      "gt": 9413,
+      "origin_port": "HAI AN",
+      "dest_port": "HONG KONG",
+      "source": "cvhh_haiphong"
+    },
+    {
       "id": 3685,
       "vessel_name": "OPEC CAPRI",
       "authority_id": "haiphong",
@@ -947,6 +998,23 @@
       "source": "cvhh_haiphong"
     },
     {
+      "id": 3746,
+      "vessel_name": "MACSTAR NINH BINH",
+      "authority_id": "haiphong",
+      "berth_name": "HICT",
+      "stock_ticker": null,
+      "call_direction": "shift",
+      "call_date": "2026-09-23",
+      "scheduled_time": "2026-09-23 01:30:00",
+      "draft": 3.0,
+      "loa": 80.0,
+      "dwt": 2983,
+      "gt": 1808,
+      "origin_port": "HICT",
+      "dest_port": "MPC PORT",
+      "source": "cvhh_haiphong"
+    },
+    {
       "id": 3686,
       "vessel_name": "ROSA",
       "authority_id": "haiphong",
@@ -961,6 +1029,23 @@
       "gt": 4490,
       "origin_port": "CHINA",
       "dest_port": "EURO DINH VU",
+      "source": "cvhh_haiphong"
+    },
+    {
+      "id": 3742,
+      "vessel_name": "LALIT BHUM",
+      "authority_id": "haiphong",
+      "berth_name": "Cảng Đình Vũ",
+      "stock_ticker": "DVP",
+      "call_direction": "out",
+      "call_date": "2026-09-23",
+      "scheduled_time": "2026-09-23 00:30:00",
+      "draft": 8.2,
+      "loa": 172.0,
+      "dwt": 19779,
+      "gt": 18341,
+      "origin_port": "NAM DINH VU",
+      "dest_port": "CHINA",
       "source": "cvhh_haiphong"
     },
     {
@@ -8852,23 +8937,6 @@
       "source": "cvhh_haiphong"
     },
     {
-      "id": 3106,
-      "vessel_name": "BLUE HORIZON",
-      "authority_id": "hcm",
-      "berth_name": "Cảng Quốc tế SP-ITC",
-      "stock_ticker": null,
-      "call_direction": "in",
-      "call_date": "2026-09-20",
-      "scheduled_time": "2026-09-20 18:15:00",
-      "draft": 3.5,
-      "loa": 86.0,
-      "dwt": 4127,
-      "gt": 2948,
-      "origin_port": "Biển Đông",
-      "dest_port": "SP.ITC 2",
-      "source": "pilot_south"
-    },
-    {
       "id": 3112,
       "vessel_name": "DE HAN NO.1",
       "authority_id": "hcm",
@@ -12915,40 +12983,6 @@
       "source": "cvhh_haiphong"
     },
     {
-      "id": 2732,
-      "vessel_name": "MORNING HOPE",
-      "authority_id": "haiphong",
-      "berth_name": "Cảng Đình Vũ",
-      "stock_ticker": "DVP",
-      "call_direction": "out",
-      "call_date": "2026-09-17",
-      "scheduled_time": "2026-09-17 18:30:00",
-      "draft": 4.6,
-      "loa": 100.0,
-      "dwt": 4979,
-      "gt": 4301,
-      "origin_port": "EURO DINH VU",
-      "dest_port": "MALAYSIA",
-      "source": "cvhh_haiphong"
-    },
-    {
-      "id": 2229,
-      "vessel_name": "DONG HO",
-      "authority_id": "haiphong",
-      "berth_name": "Cảng Đình Vũ",
-      "stock_ticker": "DVP",
-      "call_direction": "out",
-      "call_date": "2026-09-17",
-      "scheduled_time": "2026-09-17 18:30:00",
-      "draft": 6.3,
-      "loa": 119.2,
-      "dwt": 8673,
-      "gt": 6543,
-      "origin_port": "DINH VU",
-      "dest_port": "CUA LO",
-      "source": "cvhh_haiphong"
-    },
-    {
       "id": 2297,
       "vessel_name": "PACIFIC EXPRESS",
       "authority_id": "hcm",
@@ -14544,23 +14578,6 @@
       "gt": 12559,
       "origin_port": "HAI AN",
       "dest_port": "HO CHI MINH",
-      "source": "cvhh_haiphong"
-    },
-    {
-      "id": 2150,
-      "vessel_name": "CMA CGM ANDROMEDA",
-      "authority_id": "haiphong",
-      "berth_name": "HTIT (Lạch Huyện 3-4)",
-      "stock_ticker": "PHP",
-      "call_direction": "out",
-      "call_date": "2026-09-15",
-      "scheduled_time": "2026-09-15 04:30:00",
-      "draft": 11.5,
-      "loa": 363.6,
-      "dwt": 131008,
-      "gt": 131332,
-      "origin_port": "HHIT",
-      "dest_port": "CHINA",
       "source": "cvhh_haiphong"
     },
     {
@@ -22005,23 +22022,6 @@
       "loa": 172.0,
       "dwt": 21500,
       "gt": 13975,
-      "origin_port": null,
-      "dest_port": null,
-      "source": "Cảng vụ Hải Phòng"
-    },
-    {
-      "id": 2015,
-      "vessel_name": "HAIAN WEST",
-      "authority_id": "haiphong",
-      "berth_name": "Cảng Hải An",
-      "stock_ticker": "HAH",
-      "call_direction": "out",
-      "call_date": "2026-09-08",
-      "scheduled_time": "2026-09-08 07:26",
-      "draft": 7.6,
-      "loa": 148.0,
-      "dwt": 13760,
-      "gt": 8944,
       "origin_port": null,
       "dest_port": null,
       "source": "Cảng vụ Hải Phòng"
