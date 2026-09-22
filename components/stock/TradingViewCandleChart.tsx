@@ -136,7 +136,7 @@ export function TradingViewCandleChart({
     if (!candles || candles.length === 0) return []
     const map = new Map<string, CandleDataPoint>()
     for (const c of candles) {
-      if (!c || !c.time || typeof c.time !== 'string' || !/^\d{4}-\d{2}-\d{2}$/.test(c.time)) continue
+      if (!c || !c.time) continue
       if (map.has(c.time)) {
         const existing = map.get(c.time)!
         existing.high = Math.max(existing.high, c.high)

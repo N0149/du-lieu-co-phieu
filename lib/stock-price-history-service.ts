@@ -31,9 +31,7 @@ export interface StockPriceHistoryPayload {
 const CACHE_DIR = path.join(process.cwd(), 'data', 'price_history')
 
 function formatDDMMYYYY(sec: number): string {
-  if (!sec || isNaN(sec)) return ''
   const d = new Date(sec * 1000)
-  if (isNaN(d.getTime())) return ''
   const day = String(d.getDate()).padStart(2, '0')
   const month = String(d.getMonth() + 1).padStart(2, '0')
   const year = d.getFullYear()
@@ -41,9 +39,7 @@ function formatDDMMYYYY(sec: number): string {
 }
 
 function formatYYYYMMDD(sec: number): string {
-  if (!sec || isNaN(sec)) return ''
   const d = new Date(sec * 1000)
-  if (isNaN(d.getTime())) return ''
   const year = d.getFullYear()
   const month = String(d.getMonth() + 1).padStart(2, '0')
   const day = String(d.getDate()).padStart(2, '0')
@@ -90,33 +86,18 @@ export function getLocalStockCandles(symbol: string): CandleDataPoint[] {
     const parsed = JSON.parse(raw)
     if (!parsed || !Array.isArray(parsed.points) || parsed.points.length === 0) return []
 
-    const sortedPoints = [...parsed.points].sort((a: any, b: any) => (Number(a.time) || 0) - (Number(b.time) || 0))
+    const sortedPoints = [...parsed.points].sort((a: any, b: any) => a.time - b.time)
     const candleMap = new Map<string, CandleDataPoint>()
 
     for (const pt of sortedPoints) {
-      let sec = typeof pt.time === 'number' ? pt.time : Number(pt.time)
-      if ((!sec || isNaN(sec)) && pt.date) {
-        if (pt.date.includes('/')) {
-          const parts = pt.date.split('/')
-          if (parts.length === 3) sec = Math.floor(new Date(`${parts[2]}-${parts[1]}-${parts[0]}`).getTime() / 1000)
-        } else if (pt.date.includes('-')) {
-          sec = Math.floor(new Date(pt.date).getTime() / 1000)
-        }
-      }
-      const timeStr = formatYYYYMMDD(sec)
-      if (!timeStr || !/^\d{4}-\d{2}-\d{2}$/.test(timeStr)) continue
+      const timeStr = formatYYYYMMDD(pt.time)
+      if (!timeStr) continue
 
-      const rawClose = Number(pt.close) || 0
-      const toK = (val: any) => {
-        const n = Number(val) || rawClose
-        return n > 500 ? Math.round((n / 1000) * 100) / 100 : Math.round(n * 100) / 100
-      }
-
-      const openVal = toK(pt.open)
-      const highVal = toK(pt.high)
-      const lowVal = toK(pt.low)
-      const closeVal = toK(pt.close)
-      const vol = Number(pt.volume) || 0
+      const openVal = Math.round(((pt.open ?? pt.close) / 1000) * 100) / 100
+      const highVal = Math.round(((pt.high ?? pt.close) / 1000) * 100) / 100
+      const lowVal = Math.round(((pt.low ?? pt.close) / 1000) * 100) / 100
+      const closeVal = Math.round((pt.close / 1000) * 100) / 100
+      const vol = pt.volume || 0
 
       if (candleMap.has(timeStr)) {
         const existing = candleMap.get(timeStr)!
@@ -124,7 +105,7 @@ export function getLocalStockCandles(symbol: string): CandleDataPoint[] {
         existing.low = Math.min(existing.low, lowVal, closeVal)
         existing.close = closeVal
         existing.volume = (existing.volume || 0) + vol
-        existing.timestamp = sec
+        existing.timestamp = pt.time
       } else {
         candleMap.set(timeStr, {
           time: timeStr,
@@ -133,8 +114,8 @@ export function getLocalStockCandles(symbol: string): CandleDataPoint[] {
           low: Math.min(lowVal, openVal, closeVal),
           close: closeVal,
           volume: vol,
-          dateStr: pt.date || formatDDMMYYYY(sec),
-          timestamp: sec,
+          dateStr: pt.date || formatDDMMYYYY(pt.time),
+          timestamp: pt.time,
         })
       }
     }
