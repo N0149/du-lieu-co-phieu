@@ -11,12 +11,15 @@ import {
   SlidersHorizontal,
   ExternalLink,
   Star,
+  Users,
 } from 'lucide-react'
 import { cn } from '@/lib/utils'
 import type { CorporateDisclosure } from '@/lib/disclosures'
 import { getGuestWatchlist } from '@/lib/guest-watchlist'
 import { createClient } from '@/lib/supabase/client'
 import { getUserWatchlist } from '@/lib/watchlist-service'
+import { InsiderActionsView } from '@/components/news/insider-actions-view'
+import type { InsiderActionRecord } from '@/lib/insider-actions-service'
 
 export type NewsSnapshotItem = {
   id: string
@@ -30,12 +33,13 @@ export type NewsSnapshotItem = {
   summary?: string
 }
 
-type TabType = 'cong-bo' | 'all' | 'thi-truong' | 'co-phieu' | 'saved'
+type TabType = 'cong-bo' | 'giao-dich-noi-bo' | 'all' | 'thi-truong' | 'co-phieu' | 'saved'
 
 interface NewsDashboardProps {
   initialNews?: NewsSnapshotItem[]
   initialTrending?: { ticker: string; count: number }[]
   initialDisclosures?: CorporateDisclosure[]
+  initialInsiderActions?: InsiderActionRecord[]
   stockPriceMap?: Record<string, { px: number | null; w1: number | null }>
   defaultTab?: TabType
   initialWatchlist?: string[]
@@ -95,6 +99,7 @@ function formatRelativeTime(dateStr: string): string {
 export function NewsDashboard({
   initialNews = [],
   initialDisclosures = [],
+  initialInsiderActions = [],
   stockPriceMap = {},
   defaultTab = 'cong-bo',
   initialWatchlist = [],
@@ -115,6 +120,7 @@ export function NewsDashboard({
   const [lastUpdated, setLastUpdated] = useState<Date>(new Date())
   const [, setTick] = useState(0)
   const [mounted, setMounted] = useState(false)
+  const [insiderRefreshTrigger, setInsiderRefreshTrigger] = useState(0)
 
   useEffect(() => {
     setMounted(true)
@@ -378,6 +384,20 @@ export function NewsDashboard({
 
             <button
               type="button"
+              onClick={() => setActiveTab('giao-dich-noi-bo')}
+              className={cn(
+                'flex items-center gap-1.5 rounded px-3.5 py-1 text-[13px] font-medium transition-all shrink-0',
+                activeTab === 'giao-dich-noi-bo'
+                  ? 'bg-[#1e2430] text-[#38bdf8] font-bold border border-[#0284c7]/40 shadow-xs'
+                  : 'text-[#8b949e] hover:bg-[#161a22] hover:text-[#38bdf8]'
+              )}
+            >
+              <Users className="size-3.5" />
+              <span>Giao dịch nội bộ</span>
+            </button>
+
+            <button
+              type="button"
               onClick={() => setActiveTab('all')}
               className={cn(
                 'rounded px-3.5 py-1 text-[13px] font-medium transition-all shrink-0',
@@ -490,6 +510,8 @@ export function NewsDashboard({
               onClick={() => {
                 if (activeTab === 'cong-bo') {
                   fetchDisclosures(true)
+                } else if (activeTab === 'giao-dich-noi-bo') {
+                  setInsiderRefreshTrigger((t) => t + 1)
                 } else {
                   fetchNews(true)
                 }
@@ -500,7 +522,13 @@ export function NewsDashboard({
             >
               <RefreshCw className={cn('size-3.5', isRefreshing && 'animate-spin text-emerald-400')} />
               <span className="hidden sm:inline font-medium text-[11px]">
-                {isRefreshing ? (activeTab === 'cong-bo' ? 'Đang quét Sở…' : 'Đang quét RSS…') : 'Làm mới'}
+                {isRefreshing
+                  ? activeTab === 'cong-bo'
+                    ? 'Đang quét Sở…'
+                    : activeTab === 'giao-dich-noi-bo'
+                    ? 'Đang quét CĐNB…'
+                    : 'Đang quét RSS…'
+                  : 'Làm mới'}
               </span>
             </button>
           </div>
@@ -570,7 +598,17 @@ export function NewsDashboard({
         </div>
       </div>
 
-      {activeTab === 'cong-bo' ? (
+      {activeTab === 'giao-dich-noi-bo' ? (
+        <InsiderActionsView
+          initialActions={initialInsiderActions}
+          disclosures={disclosures}
+          userWatchlist={userWatchlist}
+          watchlistOnly={watchlistOnly}
+          searchQuery={searchQuery}
+          onSearchChange={setSearchQuery}
+          refreshTrigger={insiderRefreshTrigger}
+        />
+      ) : activeTab === 'cong-bo' ? (
         <div className="w-full">
 
           {/* Desktop Table Header (>= md) */}

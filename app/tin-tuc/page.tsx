@@ -4,6 +4,7 @@ import { NewsDashboard, NewsSnapshotItem } from '@/components/news/news-dashboar
 import { getCachedNews, fetchAllRssFeeds } from '@/lib/rss-news-service'
 import { getRecentMarketDisclosures } from '@/lib/disclosures'
 import { getUserWatchlist } from '@/lib/watchlist-service'
+import { getInsiderActions } from '@/lib/insider-actions-service'
 import manifestRaw from '@/data/longlive_manifest.json'
 
 export const dynamic = 'force-dynamic'
@@ -57,10 +58,22 @@ function getStockPriceMap(): Record<string, { px: number | null; w1: number | nu
   return map
 }
 
-export default async function NewsPage() {
-  const [initialNews, userWatchlistResult] = await Promise.all([
+interface NewsPageProps {
+  searchParams?: Promise<{ tab?: string }>
+}
+
+export default async function NewsPage(props: NewsPageProps) {
+  const searchParams = props.searchParams ? await props.searchParams : {}
+  const rawTab = searchParams?.tab
+  let defaultTab: any = 'cong-bo'
+  if (rawTab === 'giao-dich-noi-bo' || rawTab === 'insider' || rawTab === 'noi-bo') {
+    defaultTab = 'giao-dich-noi-bo'
+  }
+
+  const [initialNews, userWatchlistResult, initialInsiderActions] = await Promise.all([
     getInitialNews(),
     getUserWatchlist(),
+    getInsiderActions({ limit: 80 }).catch(() => []),
   ])
   const initialDisclosures = getRecentMarketDisclosures({ limit: 200 })
   const initialWatchlist = userWatchlistResult.items.map((it) => it.ticker)
@@ -90,8 +103,10 @@ export default async function NewsPage() {
         <NewsDashboard
           initialNews={initialNews}
           initialDisclosures={initialDisclosures}
+          initialInsiderActions={initialInsiderActions}
           initialTrending={initialTrending}
           stockPriceMap={stockPriceMap}
+          defaultTab={defaultTab}
           initialWatchlist={initialWatchlist}
         />
       </main>
