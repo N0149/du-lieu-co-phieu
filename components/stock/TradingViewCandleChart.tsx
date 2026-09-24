@@ -21,6 +21,8 @@ import {
   RotateCcw,
   Activity,
   Loader2,
+  ZoomIn,
+  ZoomOut,
 } from 'lucide-react'
 import { cn } from '@/lib/utils'
 
@@ -291,11 +293,12 @@ export function TradingViewCandleChart({
       },
       handleScale: {
         axisPressedMouseMove: true,
-        mouseWheel: true,
+        mouseWheel: false, // Tắt phóng to thu nhỏ bằng con lăn chuột để không bị giật khi cuộn trang
         pinch: true,
+        axisDoubleClickReset: true,
       },
       handleScroll: {
-        mouseWheel: true,
+        mouseWheel: false, // Tắt cuộn nến bằng con lăn chuột để cuộn trang web tự nhiên
         pressedMouseMove: true,
         horzTouchDrag: true,
         vertTouchDrag: false, // Để cuộn trang mượt mà trên điện thoại
@@ -515,6 +518,59 @@ export function TradingViewCandleChart({
     applyTimeframeRange(tf)
   }
 
+  // Phóng to biểu đồ (Zoom In)
+  const handleZoomIn = () => {
+    if (!chartRef.current) return
+    const range = chartRef.current.timeScale().getVisibleLogicalRange()
+    if (!range) return
+    const span = range.to - range.from
+    if (span <= 12) return // Không thu hẹp dưới 12 cây nến
+    const delta = span * 0.15
+    chartRef.current.timeScale().setVisibleLogicalRange({
+      from: range.from + delta,
+      to: range.to - delta,
+    })
+  }
+
+  // Thu nhỏ biểu đồ (Zoom Out)
+  const handleZoomOut = () => {
+    if (!chartRef.current) return
+    const range = chartRef.current.timeScale().getVisibleLogicalRange()
+    if (!range) return
+    const span = range.to - range.from
+    const delta = span * 0.18
+    chartRef.current.timeScale().setVisibleLogicalRange({
+      from: Math.max(0, range.from - delta),
+      to: range.to + delta,
+    })
+  }
+
+  // Chỉ khi giữ phím Ctrl (hoặc Cmd) thì mới lăn chuột để zoom nhanh (tránh vô tình zoom khi cuộn trang)
+  useEffect(() => {
+    const el = containerRef.current
+    if (!el) return
+
+    const handleWheel = (e: WheelEvent) => {
+      if (e.ctrlKey || e.metaKey) {
+        e.preventDefault()
+        if (!chartRef.current) return
+        const range = chartRef.current.timeScale().getVisibleLogicalRange()
+        if (!range) return
+        const span = range.to - range.from
+        const factor = e.deltaY < 0 ? 0.15 : -0.15
+        if (factor > 0 && span <= 12) return
+        const delta = span * factor
+        chartRef.current.timeScale().setVisibleLogicalRange({
+          from: range.from + delta,
+          to: range.to - delta,
+        })
+      }
+    }
+
+    el.addEventListener('wheel', handleWheel, { passive: false })
+    return () => el.removeEventListener('wheel', handleWheel)
+  }, [])
+
   // Đặt lại góc nhìn vừa vặn toàn bộ
   const handleResetZoom = () => {
     if (chartRef.current) {
@@ -594,8 +650,26 @@ export function TradingViewCandleChart({
               )}
             </div>
 
-            {/* Nút tiện ích bên phải: Reset Zoom & Fullscreen */}
+            {/* Nút tiện ích bên phải: Phóng to (+), Thu nhỏ (-), Reset Zoom & Fullscreen */}
             <div className="flex items-center gap-1 shrink-0">
+              <button
+                type="button"
+                onClick={handleZoomIn}
+                className="flex size-7 sm:size-8 items-center justify-center rounded-lg text-muted-foreground hover:bg-white/5 hover:text-white transition-all cursor-pointer"
+                title="Phóng to nến (+)"
+                aria-label="Phóng to nến"
+              >
+                <ZoomIn className="size-3.5" />
+              </button>
+              <button
+                type="button"
+                onClick={handleZoomOut}
+                className="flex size-7 sm:size-8 items-center justify-center rounded-lg text-muted-foreground hover:bg-white/5 hover:text-white transition-all cursor-pointer"
+                title="Thu nhỏ nến (-)"
+                aria-label="Thu nhỏ nến"
+              >
+                <ZoomOut className="size-3.5" />
+              </button>
               <button
                 type="button"
                 onClick={handleResetZoom}

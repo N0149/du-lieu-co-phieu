@@ -793,13 +793,11 @@ export function FinancialStatementsExplorer({
   const canGoForward = currentOffset > 0;
 
   const handlePrevPeriods = () => {
-    const step = Math.min(4, count || 4);
-    setDateOffset((prev) => Math.min(prev + step, maxOffset));
+    setDateOffset((prev) => Math.min(prev + 1, maxOffset));
   };
 
   const handleNextPeriods = () => {
-    const step = Math.min(4, count || 4);
-    setDateOffset((prev) => Math.max(0, prev - step));
+    setDateOffset((prev) => Math.max(0, prev - 1));
   };
 
   // Lấy các dòng dữ liệu của tab hiện tại (cdkt, kqkd, lctt)
@@ -1078,7 +1076,7 @@ export function FinancialStatementsExplorer({
                           onClick={handlePrevPeriods}
                           disabled={!canGoBack}
                           className="size-6.5 rounded flex items-center justify-center bg-[#252f3f] border border-slate-700 text-slate-300 hover:text-white hover:bg-slate-700 disabled:opacity-25 disabled:cursor-not-allowed cursor-pointer transition-colors"
-                          title="Lùi về các kỳ trước trong quá khứ"
+                          title={periodMode === "quarter" ? "Lùi về 1 quý trước" : "Lùi về 1 năm trước"}
                         >
                           <ChevronLeft className="size-3.5" />
                         </button>
@@ -1087,7 +1085,7 @@ export function FinancialStatementsExplorer({
                           onClick={handleNextPeriods}
                           disabled={!canGoForward}
                           className="size-6.5 rounded flex items-center justify-center bg-[#252f3f] border border-slate-700 text-slate-300 hover:text-white hover:bg-slate-700 disabled:opacity-25 disabled:cursor-not-allowed cursor-pointer transition-colors"
-                          title="Tiến tới các kỳ gần đây"
+                          title={periodMode === "quarter" ? "Tiến tới 1 quý sau" : "Tiến tới 1 năm sau"}
                         >
                           <ChevronRight className="size-3.5" />
                         </button>
