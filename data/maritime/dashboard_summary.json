@@ -1,6 +1,6 @@
 {
   "status": "success",
-  "generated_at": "2026-09-24T14:18:46.701340",
+  "generated_at": "2026-09-24T15:43:38.873967",
   "kpis": {
     "total_port_authorities": 16,
     "total_calls_30d": 15635,
@@ -1029,6 +1029,23 @@
       "gt": 10421,
       "origin_port": "CHUA VE",
       "dest_port": "HONG KONG",
+      "source": "cvhh_haiphong"
+    },
+    {
+      "id": 4210,
+      "vessel_name": "GREAT LADY",
+      "authority_id": "haiphong",
+      "berth_name": "19 - 9",
+      "stock_ticker": null,
+      "call_direction": "in",
+      "call_date": "2026-09-25",
+      "scheduled_time": "2026-09-25 01:30:00",
+      "draft": 6.7,
+      "loa": 118.0,
+      "dwt": 7130,
+      "gt": 5036,
+      "origin_port": "CHINA",
+      "dest_port": "19 - 9",
       "source": "cvhh_haiphong"
     },
     {
@@ -8765,23 +8782,6 @@
       "origin_port": "HICT",
       "dest_port": "CHINA",
       "source": "cvhh_haiphong"
-    },
-    {
-      "id": 3729,
-      "vessel_name": "QUANG VINH STAR",
-      "authority_id": "hcm",
-      "berth_name": "N.BE",
-      "stock_ticker": null,
-      "call_direction": "out",
-      "call_date": "2026-09-22",
-      "scheduled_time": "2026-09-22 16:30:00",
-      "draft": 5.0,
-      "loa": 114.0,
-      "dwt": 7496,
-      "gt": 5355,
-      "origin_port": "N.BE",
-      "dest_port": "Biển Đông",
-      "source": "pilot_south"
     },
     {
       "id": 3664,
