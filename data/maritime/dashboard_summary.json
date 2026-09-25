@@ -1,6 +1,6 @@
 {
   "status": "success",
-  "generated_at": "2026-09-25T01:01:21.465930",
+  "generated_at": "2026-09-25T01:12:24.762991",
   "kpis": {
     "total_port_authorities": 16,
     "total_calls_30d": 15635,
@@ -469,6 +469,23 @@
       "origin_port": null,
       "dest_port": null,
       "source": "Cảng vụ Hải Phòng"
+    },
+    {
+      "id": 4343,
+      "vessel_name": "OCEAN DIGNITY",
+      "authority_id": "haiphong",
+      "berth_name": "CHINA",
+      "stock_ticker": null,
+      "call_direction": "out",
+      "call_date": "2026-09-26",
+      "scheduled_time": "2026-09-26 09:30:00",
+      "draft": 8.3,
+      "loa": 142.7,
+      "dwt": 12775,
+      "gt": 9610,
+      "origin_port": "CHINA",
+      "dest_port": "DINH VU",
+      "source": "cvhh_haiphong"
     },
     {
       "id": 4340,
@@ -1057,7 +1074,7 @@
       "call_direction": "out",
       "call_date": "2026-09-25",
       "scheduled_time": "2026-09-25 14:30:00",
-      "draft": 10.5,
+      "draft": 11.1,
       "loa": 234.6,
       "dwt": 49659,
       "gt": 34610,
@@ -1278,7 +1295,7 @@
       "call_direction": "out",
       "call_date": "2026-09-25",
       "scheduled_time": "2026-09-25 12:30:00",
-      "draft": 10.3,
+      "draft": 11.5,
       "loa": 231.0,
       "dwt": 42101,
       "gt": 35991,
@@ -1437,6 +1454,23 @@
       "gt": 4963,
       "origin_port": "EURO DINH VU",
       "dest_port": "CHINA",
+      "source": "cvhh_haiphong"
+    },
+    {
+      "id": 4342,
+      "vessel_name": "DACINCO 06",
+      "authority_id": "haiphong",
+      "berth_name": "BACH DANG",
+      "stock_ticker": null,
+      "call_direction": "out",
+      "call_date": "2026-09-25",
+      "scheduled_time": "2026-09-25 10:00:00",
+      "draft": 2.4,
+      "loa": 69.9,
+      "dwt": 1951,
+      "gt": 999,
+      "origin_port": "BACH DANG",
+      "dest_port": "BEN KIEN",
       "source": "cvhh_haiphong"
     },
     {
@@ -8886,23 +8920,6 @@
       "source": "pilot_south"
     },
     {
-      "id": 3675,
-      "vessel_name": "HA LONG 68",
-      "authority_id": "haiphong",
-      "berth_name": "PETEC",
-      "stock_ticker": null,
-      "call_direction": "out",
-      "call_date": "2026-09-23",
-      "scheduled_time": "2026-09-23 04:30:00",
-      "draft": 2.4,
-      "loa": 68.1,
-      "dwt": 1416,
-      "gt": 783,
-      "origin_port": "PETEC",
-      "dest_port": "HA TINH",
-      "source": "cvhh_haiphong"
-    },
-    {
       "id": 3674,
       "vessel_name": "TS LIANYUNGANG",
       "authority_id": "haiphong",
@@ -9037,23 +9054,6 @@
       "origin_port": null,
       "dest_port": null,
       "source": "Cảng vụ Hải Phòng"
-    },
-    {
-      "id": 4005,
-      "vessel_name": "PVOIL NINH BINH",
-      "authority_id": "haiphong",
-      "berth_name": "BACH DANG",
-      "stock_ticker": null,
-      "call_direction": "out",
-      "call_date": "2026-09-23",
-      "scheduled_time": "2026-09-23 04:00:00",
-      "draft": 2.4,
-      "loa": 54.9,
-      "dwt": 764,
-      "gt": 427,
-      "origin_port": "BACH DANG",
-      "dest_port": "NINH BINH",
-      "source": "cvhh_haiphong"
     },
     {
       "id": 3869,
