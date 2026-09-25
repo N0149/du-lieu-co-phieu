@@ -1,6 +1,6 @@
 {
   "status": "success",
-  "updated_at": "2026-09-25T10:01:25.509983",
+  "updated_at": "2026-09-25T14:47:08.532055",
   "indices": {
     "BDI": {
       "symbol": "BDI",
@@ -14,14 +14,14 @@
         "HNA"
       ],
       "summary": "Đo lường chi phí thuê tàu vận tải hàng rời (than đá, quặng sắt, ngũ cốc) toàn cầu. Tác động trực tiếp tới biên lợi nhuận của VOS và các đội tàu hàng khô.",
-      "source": "Breakwave BDRY Proxy",
+      "source": "Baltic Exchange / Hellenic",
       "latest_date": "2026-09-25",
-      "latest_value": 1848,
-      "previous_value": 1919,
-      "change_val": -71,
-      "change_pct": -0.13,
+      "latest_value": 3426.0,
+      "previous_value": 3380,
+      "change_val": 46.0,
+      "change_pct": -0.9,
       "stats_52w": {
-        "high": 2245,
+        "high": 3426.0,
         "low": 1520
       },
       "stats_10y": {
@@ -3301,93 +3301,93 @@
         },
         {
           "date": "2026-06-19",
-          "value": 2077,
-          "change_val": 24,
-          "change_pct": 1.17
+          "value": 2148,
+          "change_val": 95,
+          "change_pct": 4.63
         },
         {
           "date": "2026-06-26",
-          "value": 2110,
-          "change_val": 33,
-          "change_pct": 1.59
+          "value": 2259,
+          "change_val": 111,
+          "change_pct": 5.17
         },
         {
           "date": "2026-07-03",
-          "value": 2150,
-          "change_val": 40,
-          "change_pct": 1.9
+          "value": 2384,
+          "change_val": 125,
+          "change_pct": 5.53
         },
         {
           "date": "2026-07-10",
-          "value": 2188,
-          "change_val": 38,
-          "change_pct": 1.77
+          "value": 2516,
+          "change_val": 132,
+          "change_pct": 5.54
         },
         {
           "date": "2026-07-17",
-          "value": 2220,
-          "change_val": 32,
-          "change_pct": 1.46
+          "value": 2649,
+          "change_val": 133,
+          "change_pct": 5.29
         },
         {
           "date": "2026-07-24",
-          "value": 2241,
-          "change_val": 21,
-          "change_pct": 0.95
+          "value": 2778,
+          "change_val": 129,
+          "change_pct": 4.87
         },
         {
           "date": "2026-07-31",
-          "value": 2245,
-          "change_val": 4,
-          "change_pct": 0.18
+          "value": 2895,
+          "change_val": 117,
+          "change_pct": 4.21
         },
         {
           "date": "2026-08-07",
-          "value": 2233,
-          "change_val": -12,
-          "change_pct": -0.53
+          "value": 2997,
+          "change_val": 102,
+          "change_pct": 3.52
         },
         {
           "date": "2026-08-14",
-          "value": 2200,
-          "change_val": -33,
-          "change_pct": -1.48
+          "value": 3079,
+          "change_val": 82,
+          "change_pct": 2.74
         },
         {
           "date": "2026-08-21",
-          "value": 2147,
-          "change_val": -53,
-          "change_pct": -2.41
+          "value": 3136,
+          "change_val": 57,
+          "change_pct": 1.85
         },
         {
           "date": "2026-08-28",
-          "value": 2074,
-          "change_val": -73,
-          "change_pct": -3.4
+          "value": 3166,
+          "change_val": 30,
+          "change_pct": 0.96
         },
         {
           "date": "2026-09-04",
-          "value": 2009,
-          "change_val": -65,
-          "change_pct": -3.13
+          "value": 3211,
+          "change_val": 45,
+          "change_pct": 1.42
         },
         {
           "date": "2026-09-11",
-          "value": 1966,
-          "change_val": -43,
-          "change_pct": -2.14
+          "value": 3295,
+          "change_val": 84,
+          "change_pct": 2.62
         },
         {
           "date": "2026-09-18",
-          "value": 1919,
-          "change_val": -47,
-          "change_pct": -2.39
+          "value": 3380,
+          "change_val": 85,
+          "change_pct": 2.58
         },
         {
           "date": "2026-09-25",
-          "value": 1848,
-          "change_val": -71,
-          "change_pct": -0.13
+          "value": 3426.0,
+          "change_val": 46.0,
+          "change_pct": -0.9
         }
       ]
     },
