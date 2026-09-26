@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useEffect, useMemo, useCallback } from 'react'
+import { useState, useEffect, useMemo, useCallback, useRef } from 'react'
 import Link from 'next/link'
 import {
   Search,
@@ -126,17 +126,6 @@ export function NewsDashboard({
     setMounted(true)
   }, [])
 
-  // Fetch disclosures if empty
-  useEffect(() => {
-    if (disclosures.length === 0) {
-      fetch('/api/disclosures?limit=200')
-        .then((r) => r.json())
-        .then((d) => {
-          if (d.data && Array.isArray(d.data)) setDisclosures(d.data)
-        })
-        .catch(() => {})
-    }
-  }, [disclosures.length])
 
   // Load saved bookmarks & đồng bộ Watchlist thực tế của người dùng
   useEffect(() => {
@@ -248,12 +237,20 @@ export function NewsDashboard({
     }
   }, [fetchNews, news.length])
 
-  // Tự động kéo disclosures mới khi người dùng chuyển sang tab 'cong-bo'
+  // Tự động kéo disclosures khi người dùng chuyển sang tab 'cong-bo' nếu chưa có dữ liệu
+  const isInitialDiscMount = useRef(true)
   useEffect(() => {
-    if (activeTab === 'cong-bo') {
+    if (isInitialDiscMount.current) {
+      isInitialDiscMount.current = false
+      if (disclosures.length === 0) {
+        fetchDisclosures(false)
+      }
+      return
+    }
+    if (activeTab === 'cong-bo' && disclosures.length === 0) {
       fetchDisclosures(false)
     }
-  }, [activeTab, fetchDisclosures])
+  }, [activeTab, fetchDisclosures, disclosures.length])
 
   // TỰ ĐỘNG CẬP NHẬT: Polling mỗi 60 giây (tự động phát hiện tab hiện tại để fetch nguồn tương ứng)
   useEffect(() => {

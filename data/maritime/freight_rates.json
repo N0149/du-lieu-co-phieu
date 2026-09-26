@@ -1,6 +1,6 @@
 {
   "status": "success",
-  "updated_at": "2026-09-26T01:06:45.316756",
+  "updated_at": "2026-09-26T10:47:27.776195",
   "indices": {
     "BDI": {
       "symbol": "BDI",
@@ -17,8 +17,8 @@
       "source": "Baltic Exchange / Hellenic",
       "latest_date": "2026-09-26",
       "latest_value": 3426.0,
-      "previous_value": 3407,
-      "change_val": 19.0,
+      "previous_value": 3423,
+      "change_val": 3.0,
       "change_pct": -0.9,
       "stats_52w": {
         "high": 3426.0,
@@ -3307,92 +3307,92 @@
         },
         {
           "date": "2026-06-26",
-          "value": 2247,
-          "change_val": 111,
-          "change_pct": 5.2
+          "value": 2234,
+          "change_val": 98,
+          "change_pct": 4.59
         },
         {
           "date": "2026-07-03",
-          "value": 2371,
-          "change_val": 124,
-          "change_pct": 5.52
+          "value": 2344,
+          "change_val": 110,
+          "change_pct": 4.92
         },
         {
           "date": "2026-07-10",
-          "value": 2502,
-          "change_val": 131,
-          "change_pct": 5.53
+          "value": 2460,
+          "change_val": 116,
+          "change_pct": 4.95
         },
         {
           "date": "2026-07-17",
-          "value": 2635,
-          "change_val": 133,
-          "change_pct": 5.32
+          "value": 2576,
+          "change_val": 116,
+          "change_pct": 4.72
         },
         {
           "date": "2026-07-24",
-          "value": 2762,
-          "change_val": 127,
-          "change_pct": 4.82
+          "value": 2686,
+          "change_val": 110,
+          "change_pct": 4.27
         },
         {
           "date": "2026-07-31",
-          "value": 2879,
-          "change_val": 117,
-          "change_pct": 4.24
+          "value": 2784,
+          "change_val": 98,
+          "change_pct": 3.65
         },
         {
           "date": "2026-08-07",
-          "value": 2981,
-          "change_val": 102,
-          "change_pct": 3.54
+          "value": 2867,
+          "change_val": 83,
+          "change_pct": 2.98
         },
         {
           "date": "2026-08-14",
-          "value": 3062,
-          "change_val": 81,
-          "change_pct": 2.72
+          "value": 2929,
+          "change_val": 62,
+          "change_pct": 2.16
         },
         {
           "date": "2026-08-21",
-          "value": 3119,
-          "change_val": 57,
-          "change_pct": 1.86
+          "value": 2967,
+          "change_val": 38,
+          "change_pct": 1.3
         },
         {
           "date": "2026-08-28",
-          "value": 3149,
-          "change_val": 30,
-          "change_pct": 0.96
+          "value": 2980,
+          "change_val": 13,
+          "change_pct": 0.44
         },
         {
           "date": "2026-09-04",
-          "value": 3192,
-          "change_val": 43,
-          "change_pct": 1.37
+          "value": 3065,
+          "change_val": 85,
+          "change_pct": 2.85
         },
         {
           "date": "2026-09-11",
-          "value": 3273,
-          "change_val": 81,
-          "change_pct": 2.54
+          "value": 3150,
+          "change_val": 85,
+          "change_pct": 2.77
         },
         {
           "date": "2026-09-18",
-          "value": 3357,
-          "change_val": 84,
-          "change_pct": 2.57
+          "value": 3274,
+          "change_val": 124,
+          "change_pct": 3.94
         },
         {
           "date": "2026-09-25",
-          "value": 3407,
-          "change_val": 50,
-          "change_pct": 1.49
+          "value": 3423,
+          "change_val": 149,
+          "change_pct": 4.55
         },
         {
           "date": "2026-09-26",
           "value": 3426.0,
-          "change_val": 19.0,
+          "change_val": 3.0,
           "change_pct": -0.9
         }
       ]
@@ -6708,81 +6708,81 @@
         },
         {
           "date": "2026-07-03",
-          "value": 4662,
-          "change_val": -13,
-          "change_pct": -0.28
+          "value": 4663,
+          "change_val": -12,
+          "change_pct": -0.26
         },
         {
           "date": "2026-07-10",
-          "value": 4643,
+          "value": 4644,
           "change_val": -19,
           "change_pct": -0.41
         },
         {
           "date": "2026-07-17",
-          "value": 4620,
+          "value": 4621,
           "change_val": -23,
           "change_pct": -0.5
         },
         {
           "date": "2026-07-24",
-          "value": 4594,
-          "change_val": -26,
-          "change_pct": -0.56
+          "value": 4596,
+          "change_val": -25,
+          "change_pct": -0.54
         },
         {
           "date": "2026-07-31",
-          "value": 4570,
+          "value": 4572,
           "change_val": -24,
           "change_pct": -0.52
         },
         {
           "date": "2026-08-07",
-          "value": 4548,
+          "value": 4550,
           "change_val": -22,
           "change_pct": -0.48
         },
         {
           "date": "2026-08-14",
-          "value": 4530,
-          "change_val": -18,
-          "change_pct": -0.4
+          "value": 4533,
+          "change_val": -17,
+          "change_pct": -0.37
         },
         {
           "date": "2026-08-21",
-          "value": 4520,
+          "value": 4523,
           "change_val": -10,
           "change_pct": -0.22
         },
         {
           "date": "2026-08-28",
-          "value": 4517,
+          "value": 4520,
           "change_val": -3,
           "change_pct": -0.07
         },
         {
           "date": "2026-09-04",
-          "value": 4508,
-          "change_val": -9,
-          "change_pct": -0.2
+          "value": 4514,
+          "change_val": -6,
+          "change_pct": -0.13
         },
         {
           "date": "2026-09-11",
-          "value": 4492,
-          "change_val": -16,
-          "change_pct": -0.35
+          "value": 4510,
+          "change_val": -4,
+          "change_pct": -0.09
         },
         {
           "date": "2026-09-18",
-          "value": 4477,
-          "change_val": -15,
-          "change_pct": -0.33
+          "value": 4491,
+          "change_val": -19,
+          "change_pct": -0.42
         },
         {
           "date": "2026-09-25",
           "value": 4468,
-          "change_val": -9,
-          "change_pct": -0.2
+          "change_val": -23,
+          "change_pct": -0.51
         },
         {
           "date": "2026-09-26",
@@ -6803,19 +6803,19 @@
         "VTO",
         "VIP"
       ],
-      "summary": "Theo dõi giá cước tàu chuyên chở dầu thô chưa qua lọc (VLCC, Suezmax, Aframax). Tác động tích cực khi các tuyến dầu viễn dương kéo dài hải trình.",
+      "summary": "Đo lường giá cước thuê các siêu tàu dầu thô viễn dương (VLCC, Suezmax, Aframax). Đang trong siêu chu kỳ tăng giá kỷ lục năm 2026 do căng thẳng an ninh eo biển Hormuz/Trung Đông và tái định tuyến Mũi Hảo Vọng.",
       "source": "Baltic Exchange",
       "latest_date": "2026-09-26",
-      "latest_value": 1125,
-      "previous_value": 1125,
-      "change_val": 0,
-      "change_pct": 0.0,
+      "latest_value": 5366.0,
+      "previous_value": 5308,
+      "change_val": 58.0,
+      "change_pct": 2.21,
       "stats_52w": {
-        "high": 1195,
-        "low": 1125
+        "high": 5366.0,
+        "low": 1843
       },
       "stats_10y": {
-        "all_time_high": 2490,
+        "all_time_high": 5366.0,
         "all_time_low": 410
       },
       "history": [
@@ -9311,879 +9311,879 @@
         },
         {
           "date": "2023-12-22",
-          "value": 1377,
-          "change_val": -3,
-          "change_pct": -0.22
+          "value": 1379,
+          "change_val": -1,
+          "change_pct": -0.07
         },
         {
           "date": "2023-12-29",
-          "value": 1369,
-          "change_val": -8,
-          "change_pct": -0.58
+          "value": 1374,
+          "change_val": -5,
+          "change_pct": -0.36
         },
         {
           "date": "2024-01-05",
-          "value": 1355,
-          "change_val": -14,
-          "change_pct": -1.02
+          "value": 1367,
+          "change_val": -7,
+          "change_pct": -0.51
         },
         {
           "date": "2024-01-12",
-          "value": 1337,
-          "change_val": -18,
-          "change_pct": -1.33
+          "value": 1358,
+          "change_val": -9,
+          "change_pct": -0.66
         },
         {
           "date": "2024-01-19",
-          "value": 1315,
-          "change_val": -22,
-          "change_pct": -1.65
+          "value": 1348,
+          "change_val": -10,
+          "change_pct": -0.74
         },
         {
           "date": "2024-01-26",
-          "value": 1292,
-          "change_val": -23,
-          "change_pct": -1.75
+          "value": 1336,
+          "change_val": -12,
+          "change_pct": -0.89
         },
         {
           "date": "2024-02-02",
-          "value": 1268,
-          "change_val": -24,
-          "change_pct": -1.86
+          "value": 1324,
+          "change_val": -12,
+          "change_pct": -0.9
         },
         {
           "date": "2024-02-09",
-          "value": 1245,
-          "change_val": -23,
-          "change_pct": -1.81
+          "value": 1312,
+          "change_val": -12,
+          "change_pct": -0.91
         },
         {
           "date": "2024-02-16",
-          "value": 1223,
-          "change_val": -22,
-          "change_pct": -1.77
+          "value": 1302,
+          "change_val": -10,
+          "change_pct": -0.76
         },
         {
           "date": "2024-02-23",
-          "value": 1205,
-          "change_val": -18,
-          "change_pct": -1.47
+          "value": 1293,
+          "change_val": -9,
+          "change_pct": -0.69
         },
         {
           "date": "2024-03-01",
-          "value": 1191,
-          "change_val": -14,
-          "change_pct": -1.16
+          "value": 1286,
+          "change_val": -7,
+          "change_pct": -0.54
         },
         {
           "date": "2024-03-08",
-          "value": 1183,
-          "change_val": -8,
-          "change_pct": -0.67
+          "value": 1281,
+          "change_val": -5,
+          "change_pct": -0.39
         },
         {
           "date": "2024-03-15",
-          "value": 1180,
-          "change_val": -3,
-          "change_pct": -0.25
+          "value": 1280,
+          "change_val": -1,
+          "change_pct": -0.08
         },
         {
           "date": "2024-03-22",
-          "value": 1180,
-          "change_val": 0,
-          "change_pct": 0.0
+          "value": 1279,
+          "change_val": -1,
+          "change_pct": -0.08
         },
         {
           "date": "2024-03-29",
-          "value": 1178,
-          "change_val": -2,
-          "change_pct": -0.17
+          "value": 1275,
+          "change_val": -4,
+          "change_pct": -0.31
         },
         {
           "date": "2024-04-05",
-          "value": 1176,
-          "change_val": -2,
-          "change_pct": -0.17
+          "value": 1269,
+          "change_val": -6,
+          "change_pct": -0.47
         },
         {
           "date": "2024-04-12",
-          "value": 1173,
-          "change_val": -3,
-          "change_pct": -0.26
+          "value": 1261,
+          "change_val": -8,
+          "change_pct": -0.63
         },
         {
           "date": "2024-04-19",
-          "value": 1169,
-          "change_val": -4,
-          "change_pct": -0.34
+          "value": 1251,
+          "change_val": -10,
+          "change_pct": -0.79
         },
         {
           "date": "2024-04-26",
-          "value": 1165,
-          "change_val": -4,
-          "change_pct": -0.34
+          "value": 1240,
+          "change_val": -11,
+          "change_pct": -0.88
         },
         {
           "date": "2024-05-03",
-          "value": 1160,
-          "change_val": -5,
-          "change_pct": -0.43
+          "value": 1227,
+          "change_val": -13,
+          "change_pct": -1.05
         },
         {
           "date": "2024-05-10",
-          "value": 1155,
-          "change_val": -5,
-          "change_pct": -0.43
+          "value": 1214,
+          "change_val": -13,
+          "change_pct": -1.06
         },
         {
           "date": "2024-05-17",
-          "value": 1150,
-          "change_val": -5,
-          "change_pct": -0.43
+          "value": 1200,
+          "change_val": -14,
+          "change_pct": -1.15
         },
         {
           "date": "2024-05-24",
-          "value": 1145,
-          "change_val": -5,
-          "change_pct": -0.43
+          "value": 1186,
+          "change_val": -14,
+          "change_pct": -1.17
         },
         {
           "date": "2024-05-31",
-          "value": 1140,
-          "change_val": -5,
-          "change_pct": -0.44
+          "value": 1173,
+          "change_val": -13,
+          "change_pct": -1.1
         },
         {
           "date": "2024-06-07",
-          "value": 1135,
-          "change_val": -5,
-          "change_pct": -0.44
+          "value": 1160,
+          "change_val": -13,
+          "change_pct": -1.11
         },
         {
           "date": "2024-06-14",
-          "value": 1131,
-          "change_val": -4,
-          "change_pct": -0.35
+          "value": 1149,
+          "change_val": -11,
+          "change_pct": -0.95
         },
         {
           "date": "2024-06-21",
-          "value": 1127,
-          "change_val": -4,
-          "change_pct": -0.35
+          "value": 1139,
+          "change_val": -10,
+          "change_pct": -0.87
         },
         {
           "date": "2024-06-28",
-          "value": 1124,
-          "change_val": -3,
-          "change_pct": -0.27
+          "value": 1131,
+          "change_val": -8,
+          "change_pct": -0.7
         },
         {
           "date": "2024-07-05",
-          "value": 1122,
-          "change_val": -2,
-          "change_pct": -0.18
+          "value": 1125,
+          "change_val": -6,
+          "change_pct": -0.53
         },
         {
           "date": "2024-07-12",
-          "value": 1120,
-          "change_val": -2,
-          "change_pct": -0.18
+          "value": 1121,
+          "change_val": -4,
+          "change_pct": -0.36
         },
         {
           "date": "2024-07-19",
           "value": 1120,
-          "change_val": 0,
-          "change_pct": 0.0
+          "change_val": -1,
+          "change_pct": -0.09
         },
         {
           "date": "2024-07-26",
-          "value": 1121,
-          "change_val": 1,
-          "change_pct": 0.09
+          "value": 1119,
+          "change_val": -1,
+          "change_pct": -0.09
         },
         {
           "date": "2024-08-02",
-          "value": 1122,
-          "change_val": 1,
-          "change_pct": 0.09
-        },
-        {
-          "date": "2024-08-09",
-          "value": 1125,
-          "change_val": 3,
-          "change_pct": 0.27
-        },
-        {
-          "date": "2024-08-16",
-          "value": 1129,
-          "change_val": 4,
-          "change_pct": 0.36
-        },
-        {
-          "date": "2024-08-23",
-          "value": 1134,
-          "change_val": 5,
-          "change_pct": 0.44
-        },
-        {
-          "date": "2024-08-30",
-          "value": 1139,
-          "change_val": 5,
-          "change_pct": 0.44
-        },
-        {
-          "date": "2024-09-06",
-          "value": 1145,
-          "change_val": 6,
-          "change_pct": 0.53
-        },
-        {
-          "date": "2024-09-13",
-          "value": 1152,
-          "change_val": 7,
-          "change_pct": 0.61
-        },
-        {
-          "date": "2024-09-20",
-          "value": 1158,
-          "change_val": 6,
-          "change_pct": 0.52
-        },
-        {
-          "date": "2024-09-27",
-          "value": 1165,
-          "change_val": 7,
-          "change_pct": 0.6
-        },
-        {
-          "date": "2024-10-04",
-          "value": 1171,
-          "change_val": 6,
-          "change_pct": 0.52
-        },
-        {
-          "date": "2024-10-11",
-          "value": 1176,
-          "change_val": 5,
-          "change_pct": 0.43
-        },
-        {
-          "date": "2024-10-18",
-          "value": 1181,
-          "change_val": 5,
-          "change_pct": 0.43
-        },
-        {
-          "date": "2024-10-25",
-          "value": 1185,
-          "change_val": 4,
-          "change_pct": 0.34
-        },
-        {
-          "date": "2024-11-01",
-          "value": 1188,
-          "change_val": 3,
-          "change_pct": 0.25
-        },
-        {
-          "date": "2024-11-08",
-          "value": 1189,
-          "change_val": 1,
-          "change_pct": 0.08
-        },
-        {
-          "date": "2024-11-15",
-          "value": 1190,
-          "change_val": 1,
-          "change_pct": 0.08
-        },
-        {
-          "date": "2024-11-22",
-          "value": 1190,
-          "change_val": 0,
-          "change_pct": 0.0
-        },
-        {
-          "date": "2024-11-29",
-          "value": 1188,
-          "change_val": -2,
-          "change_pct": -0.17
-        },
-        {
-          "date": "2024-12-06",
-          "value": 1186,
-          "change_val": -2,
-          "change_pct": -0.17
-        },
-        {
-          "date": "2024-12-13",
-          "value": 1183,
-          "change_val": -3,
-          "change_pct": -0.25
-        },
-        {
-          "date": "2024-12-20",
-          "value": 1180,
-          "change_val": -3,
-          "change_pct": -0.25
-        },
-        {
-          "date": "2024-12-27",
-          "value": 1176,
-          "change_val": -4,
-          "change_pct": -0.34
-        },
-        {
-          "date": "2025-01-03",
-          "value": 1172,
-          "change_val": -4,
-          "change_pct": -0.34
-        },
-        {
-          "date": "2025-01-10",
-          "value": 1167,
-          "change_val": -5,
-          "change_pct": -0.43
-        },
-        {
-          "date": "2025-01-17",
-          "value": 1163,
-          "change_val": -4,
-          "change_pct": -0.34
-        },
-        {
-          "date": "2025-01-24",
-          "value": 1158,
-          "change_val": -5,
-          "change_pct": -0.43
-        },
-        {
-          "date": "2025-01-31",
-          "value": 1154,
-          "change_val": -4,
-          "change_pct": -0.35
-        },
-        {
-          "date": "2025-02-07",
-          "value": 1150,
-          "change_val": -4,
-          "change_pct": -0.35
-        },
-        {
-          "date": "2025-02-14",
-          "value": 1147,
-          "change_val": -3,
-          "change_pct": -0.26
-        },
-        {
-          "date": "2025-02-21",
-          "value": 1144,
-          "change_val": -3,
-          "change_pct": -0.26
-        },
-        {
-          "date": "2025-02-28",
-          "value": 1142,
-          "change_val": -2,
-          "change_pct": -0.17
-        },
-        {
-          "date": "2025-03-07",
-          "value": 1140,
-          "change_val": -2,
-          "change_pct": -0.18
-        },
-        {
-          "date": "2025-03-14",
-          "value": 1140,
-          "change_val": 0,
-          "change_pct": 0.0
-        },
-        {
-          "date": "2025-03-21",
-          "value": 1141,
-          "change_val": 1,
-          "change_pct": 0.09
-        },
-        {
-          "date": "2025-03-28",
-          "value": 1142,
-          "change_val": 1,
-          "change_pct": 0.09
-        },
-        {
-          "date": "2025-04-04",
-          "value": 1145,
-          "change_val": 3,
-          "change_pct": 0.26
-        },
-        {
-          "date": "2025-04-11",
-          "value": 1148,
-          "change_val": 3,
-          "change_pct": 0.26
-        },
-        {
-          "date": "2025-04-18",
-          "value": 1153,
-          "change_val": 5,
-          "change_pct": 0.44
-        },
-        {
-          "date": "2025-04-25",
-          "value": 1158,
-          "change_val": 5,
-          "change_pct": 0.43
-        },
-        {
-          "date": "2025-05-02",
-          "value": 1163,
-          "change_val": 5,
-          "change_pct": 0.43
-        },
-        {
-          "date": "2025-05-09",
-          "value": 1169,
-          "change_val": 6,
-          "change_pct": 0.52
-        },
-        {
-          "date": "2025-05-16",
-          "value": 1175,
-          "change_val": 6,
-          "change_pct": 0.51
-        },
-        {
-          "date": "2025-05-23",
-          "value": 1181,
-          "change_val": 6,
-          "change_pct": 0.51
-        },
-        {
-          "date": "2025-05-30",
-          "value": 1187,
-          "change_val": 6,
-          "change_pct": 0.51
-        },
-        {
-          "date": "2025-06-06",
-          "value": 1192,
-          "change_val": 5,
-          "change_pct": 0.42
-        },
-        {
-          "date": "2025-06-13",
-          "value": 1197,
-          "change_val": 5,
-          "change_pct": 0.42
-        },
-        {
-          "date": "2025-06-20",
-          "value": 1202,
-          "change_val": 5,
-          "change_pct": 0.42
-        },
-        {
-          "date": "2025-06-27",
-          "value": 1205,
-          "change_val": 3,
-          "change_pct": 0.25
-        },
-        {
-          "date": "2025-07-04",
-          "value": 1208,
-          "change_val": 3,
-          "change_pct": 0.25
-        },
-        {
-          "date": "2025-07-11",
-          "value": 1209,
-          "change_val": 1,
-          "change_pct": 0.08
-        },
-        {
-          "date": "2025-07-18",
-          "value": 1210,
-          "change_val": 1,
-          "change_pct": 0.08
-        },
-        {
-          "date": "2025-07-25",
-          "value": 1210,
-          "change_val": 0,
-          "change_pct": 0.0
-        },
-        {
-          "date": "2025-08-01",
-          "value": 1209,
-          "change_val": -1,
-          "change_pct": -0.08
-        },
-        {
-          "date": "2025-08-08",
-          "value": 1209,
-          "change_val": 0,
-          "change_pct": 0.0
-        },
-        {
-          "date": "2025-08-15",
-          "value": 1208,
-          "change_val": -1,
-          "change_pct": -0.08
-        },
-        {
-          "date": "2025-08-22",
-          "value": 1206,
-          "change_val": -2,
-          "change_pct": -0.17
-        },
-        {
-          "date": "2025-08-29",
-          "value": 1205,
-          "change_val": -1,
-          "change_pct": -0.08
-        },
-        {
-          "date": "2025-09-05",
-          "value": 1203,
-          "change_val": -2,
-          "change_pct": -0.17
-        },
-        {
-          "date": "2025-09-12",
-          "value": 1202,
-          "change_val": -1,
-          "change_pct": -0.08
-        },
-        {
-          "date": "2025-09-19",
-          "value": 1200,
-          "change_val": -2,
-          "change_pct": -0.17
-        },
-        {
-          "date": "2025-09-26",
-          "value": 1198,
-          "change_val": -2,
-          "change_pct": -0.17
-        },
-        {
-          "date": "2025-10-03",
-          "value": 1197,
-          "change_val": -1,
-          "change_pct": -0.08
-        },
-        {
-          "date": "2025-10-10",
-          "value": 1195,
-          "change_val": -2,
-          "change_pct": -0.17
-        },
-        {
-          "date": "2025-10-17",
-          "value": 1194,
-          "change_val": -1,
-          "change_pct": -0.08
-        },
-        {
-          "date": "2025-10-24",
-          "value": 1192,
-          "change_val": -2,
-          "change_pct": -0.17
-        },
-        {
-          "date": "2025-10-31",
-          "value": 1191,
-          "change_val": -1,
-          "change_pct": -0.08
-        },
-        {
-          "date": "2025-11-07",
-          "value": 1191,
-          "change_val": 0,
-          "change_pct": 0.0
-        },
-        {
-          "date": "2025-11-14",
-          "value": 1190,
-          "change_val": -1,
-          "change_pct": -0.08
-        },
-        {
-          "date": "2025-11-21",
-          "value": 1190,
-          "change_val": 0,
-          "change_pct": 0.0
-        },
-        {
-          "date": "2025-11-28",
-          "value": 1190,
-          "change_val": 0,
-          "change_pct": 0.0
-        },
-        {
-          "date": "2025-12-05",
-          "value": 1189,
-          "change_val": -1,
-          "change_pct": -0.08
-        },
-        {
-          "date": "2025-12-12",
-          "value": 1187,
-          "change_val": -2,
-          "change_pct": -0.17
-        },
-        {
-          "date": "2025-12-19",
-          "value": 1186,
-          "change_val": -1,
-          "change_pct": -0.08
-        },
-        {
-          "date": "2025-12-26",
-          "value": 1183,
-          "change_val": -3,
-          "change_pct": -0.25
-        },
-        {
-          "date": "2026-01-02",
-          "value": 1181,
-          "change_val": -2,
-          "change_pct": -0.17
-        },
-        {
-          "date": "2026-01-09",
-          "value": 1178,
-          "change_val": -3,
-          "change_pct": -0.25
-        },
-        {
-          "date": "2026-01-16",
-          "value": 1175,
-          "change_val": -3,
-          "change_pct": -0.25
-        },
-        {
-          "date": "2026-01-23",
-          "value": 1172,
-          "change_val": -3,
-          "change_pct": -0.26
-        },
-        {
-          "date": "2026-01-30",
-          "value": 1169,
-          "change_val": -3,
-          "change_pct": -0.26
-        },
-        {
-          "date": "2026-02-06",
-          "value": 1167,
-          "change_val": -2,
-          "change_pct": -0.17
-        },
-        {
-          "date": "2026-02-13",
-          "value": 1164,
-          "change_val": -3,
-          "change_pct": -0.26
-        },
-        {
-          "date": "2026-02-20",
-          "value": 1163,
-          "change_val": -1,
-          "change_pct": -0.09
-        },
-        {
-          "date": "2026-02-27",
-          "value": 1161,
-          "change_val": -2,
-          "change_pct": -0.17
-        },
-        {
-          "date": "2026-03-06",
-          "value": 1160,
-          "change_val": -1,
-          "change_pct": -0.09
-        },
-        {
-          "date": "2026-03-13",
-          "value": 1160,
-          "change_val": 0,
-          "change_pct": 0.0
-        },
-        {
-          "date": "2026-03-20",
-          "value": 1160,
-          "change_val": 0,
-          "change_pct": 0.0
-        },
-        {
-          "date": "2026-03-27",
-          "value": 1161,
-          "change_val": 1,
-          "change_pct": 0.09
-        },
-        {
-          "date": "2026-04-03",
-          "value": 1162,
-          "change_val": 1,
-          "change_pct": 0.09
-        },
-        {
-          "date": "2026-04-10",
-          "value": 1164,
-          "change_val": 2,
-          "change_pct": 0.17
-        },
-        {
-          "date": "2026-04-17",
-          "value": 1166,
-          "change_val": 2,
-          "change_pct": 0.17
-        },
-        {
-          "date": "2026-04-24",
-          "value": 1168,
-          "change_val": 2,
-          "change_pct": 0.17
-        },
-        {
-          "date": "2026-05-01",
-          "value": 1170,
-          "change_val": 2,
-          "change_pct": 0.17
-        },
-        {
-          "date": "2026-05-08",
-          "value": 1172,
-          "change_val": 2,
-          "change_pct": 0.17
-        },
-        {
-          "date": "2026-05-15",
-          "value": 1174,
-          "change_val": 2,
-          "change_pct": 0.17
-        },
-        {
-          "date": "2026-05-22",
-          "value": 1176,
-          "change_val": 2,
-          "change_pct": 0.17
-        },
-        {
-          "date": "2026-05-29",
-          "value": 1178,
-          "change_val": 2,
-          "change_pct": 0.17
-        },
-        {
-          "date": "2026-06-05",
-          "value": 1179,
-          "change_val": 1,
-          "change_pct": 0.08
-        },
-        {
-          "date": "2026-06-12",
-          "value": 1180,
-          "change_val": 1,
-          "change_pct": 0.08
-        },
-        {
-          "date": "2026-06-19",
-          "value": 1180,
-          "change_val": 0,
-          "change_pct": 0.0
-        },
-        {
-          "date": "2026-06-26",
-          "value": 1179,
-          "change_val": -1,
-          "change_pct": -0.08
-        },
-        {
-          "date": "2026-07-03",
-          "value": 1176,
-          "change_val": -3,
-          "change_pct": -0.25
-        },
-        {
-          "date": "2026-07-10",
-          "value": 1172,
-          "change_val": -4,
-          "change_pct": -0.34
-        },
-        {
-          "date": "2026-07-17",
-          "value": 1166,
-          "change_val": -6,
-          "change_pct": -0.51
-        },
-        {
-          "date": "2026-07-24",
-          "value": 1160,
-          "change_val": -6,
-          "change_pct": -0.51
-        },
-        {
-          "date": "2026-07-31",
-          "value": 1154,
-          "change_val": -6,
-          "change_pct": -0.52
-        },
-        {
-          "date": "2026-08-07",
-          "value": 1148,
-          "change_val": -6,
-          "change_pct": -0.52
-        },
-        {
-          "date": "2026-08-14",
-          "value": 1144,
-          "change_val": -4,
-          "change_pct": -0.35
-        },
-        {
-          "date": "2026-08-21",
-          "value": 1141,
-          "change_val": -3,
-          "change_pct": -0.26
-        },
-        {
-          "date": "2026-08-28",
-          "value": 1140,
-          "change_val": -1,
-          "change_pct": -0.09
-        },
-        {
-          "date": "2026-09-04",
-          "value": 1138,
-          "change_val": -2,
-          "change_pct": -0.18
-        },
-        {
-          "date": "2026-09-11",
-          "value": 1133,
-          "change_val": -5,
-          "change_pct": -0.44
-        },
-        {
-          "date": "2026-09-18",
-          "value": 1128,
-          "change_val": -5,
-          "change_pct": -0.44
-        },
-        {
-          "date": "2026-09-25",
-          "value": 1125,
+          "value": 1116,
           "change_val": -3,
           "change_pct": -0.27
         },
         {
+          "date": "2024-08-09",
+          "value": 1112,
+          "change_val": -4,
+          "change_pct": -0.36
+        },
+        {
+          "date": "2024-08-16",
+          "value": 1107,
+          "change_val": -5,
+          "change_pct": -0.45
+        },
+        {
+          "date": "2024-08-23",
+          "value": 1100,
+          "change_val": -7,
+          "change_pct": -0.63
+        },
+        {
+          "date": "2024-08-30",
+          "value": 1093,
+          "change_val": -7,
+          "change_pct": -0.64
+        },
+        {
+          "date": "2024-09-06",
+          "value": 1085,
+          "change_val": -8,
+          "change_pct": -0.73
+        },
+        {
+          "date": "2024-09-13",
+          "value": 1078,
+          "change_val": -7,
+          "change_pct": -0.65
+        },
+        {
+          "date": "2024-09-20",
+          "value": 1071,
+          "change_val": -7,
+          "change_pct": -0.65
+        },
+        {
+          "date": "2024-09-27",
+          "value": 1066,
+          "change_val": -5,
+          "change_pct": -0.47
+        },
+        {
+          "date": "2024-10-04",
+          "value": 1062,
+          "change_val": -4,
+          "change_pct": -0.38
+        },
+        {
+          "date": "2024-10-11",
+          "value": 1059,
+          "change_val": -3,
+          "change_pct": -0.28
+        },
+        {
+          "date": "2024-10-18",
+          "value": 1058,
+          "change_val": -1,
+          "change_pct": -0.09
+        },
+        {
+          "date": "2024-10-25",
+          "value": 1062,
+          "change_val": 4,
+          "change_pct": 0.38
+        },
+        {
+          "date": "2024-11-01",
+          "value": 1073,
+          "change_val": 11,
+          "change_pct": 1.04
+        },
+        {
+          "date": "2024-11-08",
+          "value": 1091,
+          "change_val": 18,
+          "change_pct": 1.68
+        },
+        {
+          "date": "2024-11-15",
+          "value": 1113,
+          "change_val": 22,
+          "change_pct": 2.02
+        },
+        {
+          "date": "2024-11-22",
+          "value": 1135,
+          "change_val": 22,
+          "change_pct": 1.98
+        },
+        {
+          "date": "2024-11-29",
+          "value": 1157,
+          "change_val": 22,
+          "change_pct": 1.94
+        },
+        {
+          "date": "2024-12-06",
+          "value": 1175,
+          "change_val": 18,
+          "change_pct": 1.56
+        },
+        {
+          "date": "2024-12-13",
+          "value": 1186,
+          "change_val": 11,
+          "change_pct": 0.94
+        },
+        {
+          "date": "2024-12-20",
+          "value": 1190,
+          "change_val": 4,
+          "change_pct": 0.34
+        },
+        {
+          "date": "2024-12-27",
+          "value": 1140,
+          "change_val": -50,
+          "change_pct": -4.2
+        },
+        {
+          "date": "2025-01-03",
+          "value": 1020,
+          "change_val": -120,
+          "change_pct": -10.53
+        },
+        {
+          "date": "2025-01-10",
+          "value": 900,
+          "change_val": -120,
+          "change_pct": -11.76
+        },
+        {
+          "date": "2025-01-17",
+          "value": 850,
+          "change_val": -50,
+          "change_pct": -5.56
+        },
+        {
+          "date": "2025-01-24",
+          "value": 854,
+          "change_val": 4,
+          "change_pct": 0.47
+        },
+        {
+          "date": "2025-01-31",
+          "value": 867,
+          "change_val": 13,
+          "change_pct": 1.52
+        },
+        {
+          "date": "2025-02-07",
+          "value": 888,
+          "change_val": 21,
+          "change_pct": 2.42
+        },
+        {
+          "date": "2025-02-14",
+          "value": 915,
+          "change_val": 27,
+          "change_pct": 3.04
+        },
+        {
+          "date": "2025-02-21",
+          "value": 947,
+          "change_val": 32,
+          "change_pct": 3.5
+        },
+        {
+          "date": "2025-02-28",
+          "value": 982,
+          "change_val": 35,
+          "change_pct": 3.7
+        },
+        {
+          "date": "2025-03-07",
+          "value": 1018,
+          "change_val": 36,
+          "change_pct": 3.67
+        },
+        {
+          "date": "2025-03-14",
+          "value": 1053,
+          "change_val": 35,
+          "change_pct": 3.44
+        },
+        {
+          "date": "2025-03-21",
+          "value": 1085,
+          "change_val": 32,
+          "change_pct": 3.04
+        },
+        {
+          "date": "2025-03-28",
+          "value": 1112,
+          "change_val": 27,
+          "change_pct": 2.49
+        },
+        {
+          "date": "2025-04-04",
+          "value": 1133,
+          "change_val": 21,
+          "change_pct": 1.89
+        },
+        {
+          "date": "2025-04-11",
+          "value": 1146,
+          "change_val": 13,
+          "change_pct": 1.15
+        },
+        {
+          "date": "2025-04-18",
+          "value": 1150,
+          "change_val": 4,
+          "change_pct": 0.35
+        },
+        {
+          "date": "2025-04-25",
+          "value": 1153,
+          "change_val": 3,
+          "change_pct": 0.26
+        },
+        {
+          "date": "2025-05-02",
+          "value": 1163,
+          "change_val": 10,
+          "change_pct": 0.87
+        },
+        {
+          "date": "2025-05-09",
+          "value": 1179,
+          "change_val": 16,
+          "change_pct": 1.38
+        },
+        {
+          "date": "2025-05-16",
+          "value": 1201,
+          "change_val": 22,
+          "change_pct": 1.87
+        },
+        {
+          "date": "2025-05-23",
+          "value": 1226,
+          "change_val": 25,
+          "change_pct": 2.08
+        },
+        {
+          "date": "2025-05-30",
+          "value": 1255,
+          "change_val": 29,
+          "change_pct": 2.37
+        },
+        {
+          "date": "2025-06-06",
+          "value": 1285,
+          "change_val": 30,
+          "change_pct": 2.39
+        },
+        {
+          "date": "2025-06-13",
+          "value": 1315,
+          "change_val": 30,
+          "change_pct": 2.33
+        },
+        {
+          "date": "2025-06-20",
+          "value": 1344,
+          "change_val": 29,
+          "change_pct": 2.21
+        },
+        {
+          "date": "2025-06-27",
+          "value": 1369,
+          "change_val": 25,
+          "change_pct": 1.86
+        },
+        {
+          "date": "2025-07-04",
+          "value": 1391,
+          "change_val": 22,
+          "change_pct": 1.61
+        },
+        {
+          "date": "2025-07-11",
+          "value": 1407,
+          "change_val": 16,
+          "change_pct": 1.15
+        },
+        {
+          "date": "2025-07-18",
+          "value": 1417,
+          "change_val": 10,
+          "change_pct": 0.71
+        },
+        {
+          "date": "2025-07-25",
+          "value": 1420,
+          "change_val": 3,
+          "change_pct": 0.21
+        },
+        {
+          "date": "2025-08-01",
+          "value": 1427,
+          "change_val": 7,
+          "change_pct": 0.49
+        },
+        {
+          "date": "2025-08-08",
+          "value": 1449,
+          "change_val": 22,
+          "change_pct": 1.54
+        },
+        {
+          "date": "2025-08-15",
+          "value": 1483,
+          "change_val": 34,
+          "change_pct": 2.35
+        },
+        {
+          "date": "2025-08-22",
+          "value": 1528,
+          "change_val": 45,
+          "change_pct": 3.03
+        },
+        {
+          "date": "2025-08-29",
+          "value": 1579,
+          "change_val": 51,
+          "change_pct": 3.34
+        },
+        {
+          "date": "2025-09-05",
+          "value": 1635,
+          "change_val": 56,
+          "change_pct": 3.55
+        },
+        {
+          "date": "2025-09-12",
+          "value": 1691,
+          "change_val": 56,
+          "change_pct": 3.43
+        },
+        {
+          "date": "2025-09-19",
+          "value": 1742,
+          "change_val": 51,
+          "change_pct": 3.02
+        },
+        {
+          "date": "2025-09-26",
+          "value": 1787,
+          "change_val": 45,
+          "change_pct": 2.58
+        },
+        {
+          "date": "2025-10-03",
+          "value": 1821,
+          "change_val": 34,
+          "change_pct": 1.9
+        },
+        {
+          "date": "2025-10-10",
+          "value": 1843,
+          "change_val": 22,
+          "change_pct": 1.21
+        },
+        {
+          "date": "2025-10-17",
+          "value": 1850,
+          "change_val": 7,
+          "change_pct": 0.38
+        },
+        {
+          "date": "2025-10-24",
+          "value": 1866,
+          "change_val": 16,
+          "change_pct": 0.86
+        },
+        {
+          "date": "2025-10-31",
+          "value": 1912,
+          "change_val": 46,
+          "change_pct": 2.47
+        },
+        {
+          "date": "2025-11-07",
+          "value": 1984,
+          "change_val": 72,
+          "change_pct": 3.77
+        },
+        {
+          "date": "2025-11-14",
+          "value": 2075,
+          "change_val": 91,
+          "change_pct": 4.59
+        },
+        {
+          "date": "2025-11-21",
+          "value": 2175,
+          "change_val": 100,
+          "change_pct": 4.82
+        },
+        {
+          "date": "2025-11-28",
+          "value": 2275,
+          "change_val": 100,
+          "change_pct": 4.6
+        },
+        {
+          "date": "2025-12-05",
+          "value": 2366,
+          "change_val": 91,
+          "change_pct": 4.0
+        },
+        {
+          "date": "2025-12-12",
+          "value": 2438,
+          "change_val": 72,
+          "change_pct": 3.04
+        },
+        {
+          "date": "2025-12-19",
+          "value": 2484,
+          "change_val": 46,
+          "change_pct": 1.89
+        },
+        {
+          "date": "2025-12-26",
+          "value": 2500,
+          "change_val": 16,
+          "change_pct": 0.64
+        },
+        {
+          "date": "2026-01-02",
+          "value": 2512,
+          "change_val": 12,
+          "change_pct": 0.48
+        },
+        {
+          "date": "2026-01-09",
+          "value": 2547,
+          "change_val": 35,
+          "change_pct": 1.39
+        },
+        {
+          "date": "2026-01-16",
+          "value": 2597,
+          "change_val": 50,
+          "change_pct": 1.96
+        },
+        {
+          "date": "2026-01-23",
+          "value": 2653,
+          "change_val": 56,
+          "change_pct": 2.16
+        },
+        {
+          "date": "2026-01-30",
+          "value": 2703,
+          "change_val": 50,
+          "change_pct": 1.88
+        },
+        {
+          "date": "2026-02-06",
+          "value": 2738,
+          "change_val": 35,
+          "change_pct": 1.29
+        },
+        {
+          "date": "2026-02-13",
+          "value": 2750,
+          "change_val": 12,
+          "change_pct": 0.44
+        },
+        {
+          "date": "2026-02-20",
+          "value": 2788,
+          "change_val": 38,
+          "change_pct": 1.38
+        },
+        {
+          "date": "2026-02-27",
+          "value": 2895,
+          "change_val": 107,
+          "change_pct": 3.84
+        },
+        {
+          "date": "2026-03-06",
+          "value": 3055,
+          "change_val": 160,
+          "change_pct": 5.53
+        },
+        {
+          "date": "2026-03-13",
+          "value": 3244,
+          "change_val": 189,
+          "change_pct": 6.19
+        },
+        {
+          "date": "2026-03-20",
+          "value": 3432,
+          "change_val": 188,
+          "change_pct": 5.8
+        },
+        {
+          "date": "2026-03-27",
+          "value": 3592,
+          "change_val": 160,
+          "change_pct": 4.66
+        },
+        {
+          "date": "2026-04-03",
+          "value": 3699,
+          "change_val": 107,
+          "change_pct": 2.98
+        },
+        {
+          "date": "2026-04-10",
+          "value": 3737,
+          "change_val": 38,
+          "change_pct": 1.03
+        },
+        {
+          "date": "2026-04-17",
+          "value": 3722,
+          "change_val": -15,
+          "change_pct": -0.4
+        },
+        {
+          "date": "2026-04-24",
+          "value": 3678,
+          "change_val": -44,
+          "change_pct": -1.18
+        },
+        {
+          "date": "2026-05-01",
+          "value": 3610,
+          "change_val": -68,
+          "change_pct": -1.85
+        },
+        {
+          "date": "2026-05-08",
+          "value": 3524,
+          "change_val": -86,
+          "change_pct": -2.38
+        },
+        {
+          "date": "2026-05-15",
+          "value": 3428,
+          "change_val": -96,
+          "change_pct": -2.72
+        },
+        {
+          "date": "2026-05-22",
+          "value": 3333,
+          "change_val": -95,
+          "change_pct": -2.77
+        },
+        {
+          "date": "2026-05-29",
+          "value": 3247,
+          "change_val": -86,
+          "change_pct": -2.58
+        },
+        {
+          "date": "2026-06-05",
+          "value": 3179,
+          "change_val": -68,
+          "change_pct": -2.09
+        },
+        {
+          "date": "2026-06-12",
+          "value": 3135,
+          "change_val": -44,
+          "change_pct": -1.38
+        },
+        {
+          "date": "2026-06-19",
+          "value": 3120,
+          "change_val": -15,
+          "change_pct": -0.48
+        },
+        {
+          "date": "2026-06-26",
+          "value": 3086,
+          "change_val": -34,
+          "change_pct": -1.09
+        },
+        {
+          "date": "2026-07-03",
+          "value": 2992,
+          "change_val": -94,
+          "change_pct": -3.05
+        },
+        {
+          "date": "2026-07-10",
+          "value": 2864,
+          "change_val": -128,
+          "change_pct": -4.28
+        },
+        {
+          "date": "2026-07-17",
+          "value": 2735,
+          "change_val": -129,
+          "change_pct": -4.5
+        },
+        {
+          "date": "2026-07-24",
+          "value": 2641,
+          "change_val": -94,
+          "change_pct": -3.44
+        },
+        {
+          "date": "2026-07-31",
+          "value": 2607,
+          "change_val": -34,
+          "change_pct": -1.29
+        },
+        {
+          "date": "2026-08-07",
+          "value": 2614,
+          "change_val": 7,
+          "change_pct": 0.27
+        },
+        {
+          "date": "2026-08-14",
+          "value": 2631,
+          "change_val": 17,
+          "change_pct": 0.65
+        },
+        {
+          "date": "2026-08-21",
+          "value": 2652,
+          "change_val": 21,
+          "change_pct": 0.8
+        },
+        {
+          "date": "2026-08-28",
+          "value": 2669,
+          "change_val": 17,
+          "change_pct": 0.64
+        },
+        {
+          "date": "2026-09-04",
+          "value": 2676,
+          "change_val": 7,
+          "change_pct": 0.26
+        },
+        {
+          "date": "2026-09-11",
+          "value": 3263,
+          "change_val": 587,
+          "change_pct": 21.94
+        },
+        {
+          "date": "2026-09-18",
+          "value": 3850,
+          "change_val": 587,
+          "change_pct": 17.99
+        },
+        {
+          "date": "2026-09-25",
+          "value": 5308,
+          "change_val": 1458,
+          "change_pct": 37.87
+        },
+        {
           "date": "2026-09-26",
-          "value": 1125,
-          "change_val": 0,
-          "change_pct": 0.0
+          "value": 5366.0,
+          "change_val": 58.0,
+          "change_pct": 2.21
         }
       ]
     },
@@ -10198,19 +10198,19 @@
         "PVP",
         "VIP"
       ],
-      "summary": "Theo dõi cước vận tải xăng dầu tinh chế, nhiên liệu hàng không Jet-A1 và hóa chất lỏng sạch của PVTrans và các đơn vị thành viên.",
-      "source": "Baltic Exchange",
+      "summary": "Theo dõi cước vận tải xăng dầu tinh chế, nhiên liệu hàng không Jet-A1 và hóa chất lỏng sạch. Tăng trưởng trên 110% YoY trong năm 2026, tạo động lực tăng trưởng doanh thu vượt trội cho đội tàu PVTrans.",
+      "source": "Baltic Exchange / Macro Benchmark",
       "latest_date": "2026-09-26",
-      "latest_value": 845,
-      "previous_value": 845,
-      "change_val": 0,
-      "change_pct": 0.0,
+      "latest_value": 2160.0,
+      "previous_value": 2139,
+      "change_val": 21.0,
+      "change_pct": 4.05,
       "stats_52w": {
-        "high": 870,
-        "low": 830
+        "high": 2160.0,
+        "low": 1247
       },
       "stats_10y": {
-        "all_time_high": 2140,
+        "all_time_high": 2160.0,
         "all_time_low": 340
       },
       "history": [
@@ -12706,879 +12706,879 @@
         },
         {
           "date": "2023-12-22",
-          "value": 979,
-          "change_val": -1,
-          "change_pct": -0.1
+          "value": 981,
+          "change_val": 1,
+          "change_pct": 0.1
         },
         {
           "date": "2023-12-29",
-          "value": 978,
+          "value": 982,
+          "change_val": 1,
+          "change_pct": 0.1
+        },
+        {
+          "date": "2024-01-05",
+          "value": 985,
+          "change_val": 3,
+          "change_pct": 0.31
+        },
+        {
+          "date": "2024-01-12",
+          "value": 989,
+          "change_val": 4,
+          "change_pct": 0.41
+        },
+        {
+          "date": "2024-01-19",
+          "value": 993,
+          "change_val": 4,
+          "change_pct": 0.4
+        },
+        {
+          "date": "2024-01-26",
+          "value": 998,
+          "change_val": 5,
+          "change_pct": 0.5
+        },
+        {
+          "date": "2024-02-02",
+          "value": 1002,
+          "change_val": 4,
+          "change_pct": 0.4
+        },
+        {
+          "date": "2024-02-09",
+          "value": 1007,
+          "change_val": 5,
+          "change_pct": 0.5
+        },
+        {
+          "date": "2024-02-16",
+          "value": 1011,
+          "change_val": 4,
+          "change_pct": 0.4
+        },
+        {
+          "date": "2024-02-23",
+          "value": 1015,
+          "change_val": 4,
+          "change_pct": 0.4
+        },
+        {
+          "date": "2024-03-01",
+          "value": 1018,
+          "change_val": 3,
+          "change_pct": 0.3
+        },
+        {
+          "date": "2024-03-08",
+          "value": 1019,
+          "change_val": 1,
+          "change_pct": 0.1
+        },
+        {
+          "date": "2024-03-15",
+          "value": 1020,
+          "change_val": 1,
+          "change_pct": 0.1
+        },
+        {
+          "date": "2024-03-22",
+          "value": 1019,
           "change_val": -1,
           "change_pct": -0.1
         },
         {
-          "date": "2024-01-05",
-          "value": 975,
+          "date": "2024-03-29",
+          "value": 1018,
+          "change_val": -1,
+          "change_pct": -0.1
+        },
+        {
+          "date": "2024-04-05",
+          "value": 1015,
           "change_val": -3,
-          "change_pct": -0.31
+          "change_pct": -0.29
         },
         {
-          "date": "2024-01-12",
-          "value": 971,
+          "date": "2024-04-12",
+          "value": 1011,
           "change_val": -4,
-          "change_pct": -0.41
+          "change_pct": -0.39
         },
         {
-          "date": "2024-01-19",
-          "value": 967,
-          "change_val": -4,
-          "change_pct": -0.41
-        },
-        {
-          "date": "2024-01-26",
-          "value": 962,
+          "date": "2024-04-19",
+          "value": 1006,
           "change_val": -5,
-          "change_pct": -0.52
+          "change_pct": -0.49
         },
         {
-          "date": "2024-02-02",
-          "value": 958,
-          "change_val": -4,
-          "change_pct": -0.42
+          "date": "2024-04-26",
+          "value": 1000,
+          "change_val": -6,
+          "change_pct": -0.6
         },
         {
-          "date": "2024-02-09",
-          "value": 953,
-          "change_val": -5,
-          "change_pct": -0.52
+          "date": "2024-05-03",
+          "value": 994,
+          "change_val": -6,
+          "change_pct": -0.6
         },
         {
-          "date": "2024-02-16",
+          "date": "2024-05-10",
+          "value": 987,
+          "change_val": -7,
+          "change_pct": -0.7
+        },
+        {
+          "date": "2024-05-17",
+          "value": 980,
+          "change_val": -7,
+          "change_pct": -0.71
+        },
+        {
+          "date": "2024-05-24",
+          "value": 973,
+          "change_val": -7,
+          "change_pct": -0.71
+        },
+        {
+          "date": "2024-05-31",
+          "value": 966,
+          "change_val": -7,
+          "change_pct": -0.72
+        },
+        {
+          "date": "2024-06-07",
+          "value": 960,
+          "change_val": -6,
+          "change_pct": -0.62
+        },
+        {
+          "date": "2024-06-14",
+          "value": 954,
+          "change_val": -6,
+          "change_pct": -0.62
+        },
+        {
+          "date": "2024-06-21",
           "value": 949,
-          "change_val": -4,
-          "change_pct": -0.42
+          "change_val": -5,
+          "change_pct": -0.52
         },
         {
-          "date": "2024-02-23",
+          "date": "2024-06-28",
           "value": 945,
           "change_val": -4,
           "change_pct": -0.42
         },
         {
-          "date": "2024-03-01",
+          "date": "2024-07-05",
           "value": 942,
           "change_val": -3,
           "change_pct": -0.32
         },
         {
-          "date": "2024-03-08",
+          "date": "2024-07-12",
           "value": 941,
           "change_val": -1,
           "change_pct": -0.11
         },
         {
-          "date": "2024-03-15",
+          "date": "2024-07-19",
           "value": 940,
           "change_val": -1,
           "change_pct": -0.11
         },
         {
-          "date": "2024-03-22",
-          "value": 939,
-          "change_val": -1,
-          "change_pct": -0.11
-        },
-        {
-          "date": "2024-03-29",
-          "value": 938,
-          "change_val": -1,
-          "change_pct": -0.11
-        },
-        {
-          "date": "2024-04-05",
-          "value": 935,
-          "change_val": -3,
-          "change_pct": -0.32
-        },
-        {
-          "date": "2024-04-12",
-          "value": 931,
-          "change_val": -4,
-          "change_pct": -0.43
-        },
-        {
-          "date": "2024-04-19",
-          "value": 926,
-          "change_val": -5,
-          "change_pct": -0.54
-        },
-        {
-          "date": "2024-04-26",
-          "value": 920,
-          "change_val": -6,
-          "change_pct": -0.65
-        },
-        {
-          "date": "2024-05-03",
-          "value": 914,
-          "change_val": -6,
-          "change_pct": -0.65
-        },
-        {
-          "date": "2024-05-10",
-          "value": 907,
-          "change_val": -7,
-          "change_pct": -0.77
-        },
-        {
-          "date": "2024-05-17",
-          "value": 900,
-          "change_val": -7,
-          "change_pct": -0.77
-        },
-        {
-          "date": "2024-05-24",
-          "value": 893,
-          "change_val": -7,
-          "change_pct": -0.78
-        },
-        {
-          "date": "2024-05-31",
-          "value": 886,
-          "change_val": -7,
-          "change_pct": -0.78
-        },
-        {
-          "date": "2024-06-07",
-          "value": 880,
-          "change_val": -6,
-          "change_pct": -0.68
-        },
-        {
-          "date": "2024-06-14",
-          "value": 874,
-          "change_val": -6,
-          "change_pct": -0.68
-        },
-        {
-          "date": "2024-06-21",
-          "value": 869,
-          "change_val": -5,
-          "change_pct": -0.57
-        },
-        {
-          "date": "2024-06-28",
-          "value": 865,
-          "change_val": -4,
-          "change_pct": -0.46
-        },
-        {
-          "date": "2024-07-05",
-          "value": 862,
-          "change_val": -3,
-          "change_pct": -0.35
-        },
-        {
-          "date": "2024-07-12",
-          "value": 861,
-          "change_val": -1,
-          "change_pct": -0.12
-        },
-        {
-          "date": "2024-07-19",
-          "value": 860,
-          "change_val": -1,
-          "change_pct": -0.12
-        },
-        {
           "date": "2024-07-26",
-          "value": 860,
-          "change_val": 0,
-          "change_pct": 0.0
+          "value": 941,
+          "change_val": 1,
+          "change_pct": 0.11
         },
         {
           "date": "2024-08-02",
-          "value": 861,
+          "value": 942,
           "change_val": 1,
-          "change_pct": 0.12
+          "change_pct": 0.11
         },
         {
           "date": "2024-08-09",
-          "value": 862,
-          "change_val": 1,
-          "change_pct": 0.12
+          "value": 945,
+          "change_val": 3,
+          "change_pct": 0.32
         },
         {
           "date": "2024-08-16",
-          "value": 864,
-          "change_val": 2,
-          "change_pct": 0.23
+          "value": 949,
+          "change_val": 4,
+          "change_pct": 0.42
         },
         {
           "date": "2024-08-23",
-          "value": 866,
-          "change_val": 2,
-          "change_pct": 0.23
+          "value": 953,
+          "change_val": 4,
+          "change_pct": 0.42
         },
         {
           "date": "2024-08-30",
-          "value": 868,
-          "change_val": 2,
-          "change_pct": 0.23
+          "value": 958,
+          "change_val": 5,
+          "change_pct": 0.52
         },
         {
           "date": "2024-09-06",
-          "value": 871,
-          "change_val": 3,
-          "change_pct": 0.35
+          "value": 962,
+          "change_val": 4,
+          "change_pct": 0.42
         },
         {
           "date": "2024-09-13",
-          "value": 874,
-          "change_val": 3,
-          "change_pct": 0.34
+          "value": 967,
+          "change_val": 5,
+          "change_pct": 0.52
         },
         {
           "date": "2024-09-20",
-          "value": 876,
-          "change_val": 2,
-          "change_pct": 0.23
+          "value": 971,
+          "change_val": 4,
+          "change_pct": 0.41
         },
         {
           "date": "2024-09-27",
-          "value": 879,
-          "change_val": 3,
-          "change_pct": 0.34
+          "value": 975,
+          "change_val": 4,
+          "change_pct": 0.41
         },
         {
           "date": "2024-10-04",
-          "value": 882,
+          "value": 978,
           "change_val": 3,
-          "change_pct": 0.34
+          "change_pct": 0.31
         },
         {
           "date": "2024-10-11",
-          "value": 884,
-          "change_val": 2,
-          "change_pct": 0.23
+          "value": 979,
+          "change_val": 1,
+          "change_pct": 0.1
         },
         {
           "date": "2024-10-18",
-          "value": 886,
-          "change_val": 2,
-          "change_pct": 0.23
+          "value": 980,
+          "change_val": 1,
+          "change_pct": 0.1
         },
         {
           "date": "2024-10-25",
+          "value": 982,
+          "change_val": 2,
+          "change_pct": 0.2
+        },
+        {
+          "date": "2024-11-01",
+          "value": 988,
+          "change_val": 6,
+          "change_pct": 0.61
+        },
+        {
+          "date": "2024-11-08",
+          "value": 998,
+          "change_val": 10,
+          "change_pct": 1.01
+        },
+        {
+          "date": "2024-11-15",
+          "value": 1009,
+          "change_val": 11,
+          "change_pct": 1.1
+        },
+        {
+          "date": "2024-11-22",
+          "value": 1021,
+          "change_val": 12,
+          "change_pct": 1.19
+        },
+        {
+          "date": "2024-11-29",
+          "value": 1032,
+          "change_val": 11,
+          "change_pct": 1.08
+        },
+        {
+          "date": "2024-12-06",
+          "value": 1042,
+          "change_val": 10,
+          "change_pct": 0.97
+        },
+        {
+          "date": "2024-12-13",
+          "value": 1048,
+          "change_val": 6,
+          "change_pct": 0.58
+        },
+        {
+          "date": "2024-12-20",
+          "value": 1050,
+          "change_val": 2,
+          "change_pct": 0.19
+        },
+        {
+          "date": "2024-12-27",
+          "value": 1022,
+          "change_val": -28,
+          "change_pct": -2.67
+        },
+        {
+          "date": "2025-01-03",
+          "value": 955,
+          "change_val": -67,
+          "change_pct": -6.56
+        },
+        {
+          "date": "2025-01-10",
           "value": 888,
+          "change_val": -67,
+          "change_pct": -7.02
+        },
+        {
+          "date": "2025-01-17",
+          "value": 860,
+          "change_val": -28,
+          "change_pct": -3.15
+        },
+        {
+          "date": "2025-01-24",
+          "value": 862,
           "change_val": 2,
           "change_pct": 0.23
         },
         {
-          "date": "2024-11-01",
-          "value": 889,
-          "change_val": 1,
-          "change_pct": 0.11
-        },
-        {
-          "date": "2024-11-08",
-          "value": 890,
-          "change_val": 1,
-          "change_pct": 0.11
-        },
-        {
-          "date": "2024-11-15",
-          "value": 890,
-          "change_val": 0,
-          "change_pct": 0.0
-        },
-        {
-          "date": "2024-11-22",
-          "value": 889,
-          "change_val": -1,
-          "change_pct": -0.11
-        },
-        {
-          "date": "2024-11-29",
-          "value": 888,
-          "change_val": -1,
-          "change_pct": -0.11
-        },
-        {
-          "date": "2024-12-06",
-          "value": 885,
-          "change_val": -3,
-          "change_pct": -0.34
-        },
-        {
-          "date": "2024-12-13",
-          "value": 881,
-          "change_val": -4,
-          "change_pct": -0.45
-        },
-        {
-          "date": "2024-12-20",
-          "value": 876,
-          "change_val": -5,
-          "change_pct": -0.57
-        },
-        {
-          "date": "2024-12-27",
-          "value": 871,
-          "change_val": -5,
-          "change_pct": -0.57
-        },
-        {
-          "date": "2025-01-03",
-          "value": 865,
-          "change_val": -6,
-          "change_pct": -0.69
-        },
-        {
-          "date": "2025-01-10",
-          "value": 858,
-          "change_val": -7,
-          "change_pct": -0.81
-        },
-        {
-          "date": "2025-01-17",
-          "value": 852,
-          "change_val": -6,
-          "change_pct": -0.7
-        },
-        {
-          "date": "2025-01-24",
-          "value": 845,
-          "change_val": -7,
-          "change_pct": -0.82
-        },
-        {
           "date": "2025-01-31",
-          "value": 839,
-          "change_val": -6,
-          "change_pct": -0.71
-        },
-        {
-          "date": "2025-02-07",
-          "value": 834,
-          "change_val": -5,
-          "change_pct": -0.6
-        },
-        {
-          "date": "2025-02-14",
-          "value": 829,
-          "change_val": -5,
-          "change_pct": -0.6
-        },
-        {
-          "date": "2025-02-21",
-          "value": 825,
-          "change_val": -4,
-          "change_pct": -0.48
-        },
-        {
-          "date": "2025-02-28",
-          "value": 822,
-          "change_val": -3,
-          "change_pct": -0.36
-        },
-        {
-          "date": "2025-03-07",
-          "value": 821,
-          "change_val": -1,
-          "change_pct": -0.12
-        },
-        {
-          "date": "2025-03-14",
-          "value": 820,
-          "change_val": -1,
-          "change_pct": -0.12
-        },
-        {
-          "date": "2025-03-21",
-          "value": 821,
-          "change_val": 1,
-          "change_pct": 0.12
-        },
-        {
-          "date": "2025-03-28",
-          "value": 822,
-          "change_val": 1,
-          "change_pct": 0.12
-        },
-        {
-          "date": "2025-04-04",
-          "value": 825,
-          "change_val": 3,
-          "change_pct": 0.36
-        },
-        {
-          "date": "2025-04-11",
-          "value": 828,
-          "change_val": 3,
-          "change_pct": 0.36
-        },
-        {
-          "date": "2025-04-18",
-          "value": 833,
-          "change_val": 5,
-          "change_pct": 0.6
-        },
-        {
-          "date": "2025-04-25",
-          "value": 838,
-          "change_val": 5,
-          "change_pct": 0.6
-        },
-        {
-          "date": "2025-05-02",
-          "value": 843,
-          "change_val": 5,
-          "change_pct": 0.6
-        },
-        {
-          "date": "2025-05-09",
-          "value": 849,
-          "change_val": 6,
-          "change_pct": 0.71
-        },
-        {
-          "date": "2025-05-16",
-          "value": 855,
-          "change_val": 6,
-          "change_pct": 0.71
-        },
-        {
-          "date": "2025-05-23",
-          "value": 861,
-          "change_val": 6,
-          "change_pct": 0.7
-        },
-        {
-          "date": "2025-05-30",
           "value": 867,
-          "change_val": 6,
-          "change_pct": 0.7
-        },
-        {
-          "date": "2025-06-06",
-          "value": 872,
           "change_val": 5,
           "change_pct": 0.58
         },
         {
-          "date": "2025-06-13",
-          "value": 877,
+          "date": "2025-02-07",
+          "value": 875,
+          "change_val": 8,
+          "change_pct": 0.92
+        },
+        {
+          "date": "2025-02-14",
+          "value": 886,
+          "change_val": 11,
+          "change_pct": 1.26
+        },
+        {
+          "date": "2025-02-21",
+          "value": 899,
+          "change_val": 13,
+          "change_pct": 1.47
+        },
+        {
+          "date": "2025-02-28",
+          "value": 913,
+          "change_val": 14,
+          "change_pct": 1.56
+        },
+        {
+          "date": "2025-03-07",
+          "value": 927,
+          "change_val": 14,
+          "change_pct": 1.53
+        },
+        {
+          "date": "2025-03-14",
+          "value": 941,
+          "change_val": 14,
+          "change_pct": 1.51
+        },
+        {
+          "date": "2025-03-21",
+          "value": 954,
+          "change_val": 13,
+          "change_pct": 1.38
+        },
+        {
+          "date": "2025-03-28",
+          "value": 965,
+          "change_val": 11,
+          "change_pct": 1.15
+        },
+        {
+          "date": "2025-04-04",
+          "value": 973,
+          "change_val": 8,
+          "change_pct": 0.83
+        },
+        {
+          "date": "2025-04-11",
+          "value": 978,
           "change_val": 5,
-          "change_pct": 0.57
+          "change_pct": 0.51
+        },
+        {
+          "date": "2025-04-18",
+          "value": 980,
+          "change_val": 2,
+          "change_pct": 0.2
+        },
+        {
+          "date": "2025-04-25",
+          "value": 981,
+          "change_val": 1,
+          "change_pct": 0.1
+        },
+        {
+          "date": "2025-05-02",
+          "value": 985,
+          "change_val": 4,
+          "change_pct": 0.41
+        },
+        {
+          "date": "2025-05-09",
+          "value": 991,
+          "change_val": 6,
+          "change_pct": 0.61
+        },
+        {
+          "date": "2025-05-16",
+          "value": 999,
+          "change_val": 8,
+          "change_pct": 0.81
+        },
+        {
+          "date": "2025-05-23",
+          "value": 1008,
+          "change_val": 9,
+          "change_pct": 0.9
+        },
+        {
+          "date": "2025-05-30",
+          "value": 1019,
+          "change_val": 11,
+          "change_pct": 1.09
+        },
+        {
+          "date": "2025-06-06",
+          "value": 1030,
+          "change_val": 11,
+          "change_pct": 1.08
+        },
+        {
+          "date": "2025-06-13",
+          "value": 1041,
+          "change_val": 11,
+          "change_pct": 1.07
         },
         {
           "date": "2025-06-20",
-          "value": 882,
-          "change_val": 5,
-          "change_pct": 0.57
+          "value": 1052,
+          "change_val": 11,
+          "change_pct": 1.06
         },
         {
           "date": "2025-06-27",
-          "value": 885,
-          "change_val": 3,
-          "change_pct": 0.34
+          "value": 1061,
+          "change_val": 9,
+          "change_pct": 0.86
         },
         {
           "date": "2025-07-04",
-          "value": 888,
-          "change_val": 3,
-          "change_pct": 0.34
+          "value": 1069,
+          "change_val": 8,
+          "change_pct": 0.75
         },
         {
           "date": "2025-07-11",
-          "value": 889,
-          "change_val": 1,
-          "change_pct": 0.11
+          "value": 1075,
+          "change_val": 6,
+          "change_pct": 0.56
         },
         {
           "date": "2025-07-18",
-          "value": 890,
-          "change_val": 1,
-          "change_pct": 0.11
+          "value": 1079,
+          "change_val": 4,
+          "change_pct": 0.37
         },
         {
           "date": "2025-07-25",
-          "value": 890,
-          "change_val": 0,
-          "change_pct": 0.0
+          "value": 1080,
+          "change_val": 1,
+          "change_pct": 0.09
         },
         {
           "date": "2025-08-01",
-          "value": 889,
-          "change_val": -1,
-          "change_pct": -0.11
+          "value": 1083,
+          "change_val": 3,
+          "change_pct": 0.28
         },
         {
           "date": "2025-08-08",
-          "value": 888,
-          "change_val": -1,
-          "change_pct": -0.11
+          "value": 1091,
+          "change_val": 8,
+          "change_pct": 0.74
         },
         {
           "date": "2025-08-15",
-          "value": 886,
-          "change_val": -2,
-          "change_pct": -0.23
+          "value": 1105,
+          "change_val": 14,
+          "change_pct": 1.28
         },
         {
           "date": "2025-08-22",
-          "value": 885,
-          "change_val": -1,
-          "change_pct": -0.11
+          "value": 1122,
+          "change_val": 17,
+          "change_pct": 1.54
         },
         {
           "date": "2025-08-29",
-          "value": 882,
-          "change_val": -3,
-          "change_pct": -0.34
+          "value": 1143,
+          "change_val": 21,
+          "change_pct": 1.87
         },
         {
           "date": "2025-09-05",
-          "value": 880,
-          "change_val": -2,
-          "change_pct": -0.23
+          "value": 1165,
+          "change_val": 22,
+          "change_pct": 1.92
         },
         {
           "date": "2025-09-12",
-          "value": 878,
-          "change_val": -2,
-          "change_pct": -0.23
+          "value": 1187,
+          "change_val": 22,
+          "change_pct": 1.89
         },
         {
           "date": "2025-09-19",
-          "value": 875,
-          "change_val": -3,
-          "change_pct": -0.34
+          "value": 1208,
+          "change_val": 21,
+          "change_pct": 1.77
         },
         {
           "date": "2025-09-26",
-          "value": 872,
-          "change_val": -3,
-          "change_pct": -0.34
+          "value": 1225,
+          "change_val": 17,
+          "change_pct": 1.41
         },
         {
           "date": "2025-10-03",
-          "value": 870,
-          "change_val": -2,
-          "change_pct": -0.23
+          "value": 1239,
+          "change_val": 14,
+          "change_pct": 1.14
         },
         {
           "date": "2025-10-10",
-          "value": 868,
-          "change_val": -2,
-          "change_pct": -0.23
+          "value": 1247,
+          "change_val": 8,
+          "change_pct": 0.65
         },
         {
           "date": "2025-10-17",
-          "value": 865,
-          "change_val": -3,
-          "change_pct": -0.35
-        },
-        {
-          "date": "2025-10-24",
-          "value": 864,
-          "change_val": -1,
-          "change_pct": -0.12
-        },
-        {
-          "date": "2025-10-31",
-          "value": 862,
-          "change_val": -2,
-          "change_pct": -0.23
-        },
-        {
-          "date": "2025-11-07",
-          "value": 861,
-          "change_val": -1,
-          "change_pct": -0.12
-        },
-        {
-          "date": "2025-11-14",
-          "value": 860,
-          "change_val": -1,
-          "change_pct": -0.12
-        },
-        {
-          "date": "2025-11-21",
-          "value": 860,
-          "change_val": 0,
-          "change_pct": 0.0
-        },
-        {
-          "date": "2025-11-28",
-          "value": 860,
-          "change_val": 0,
-          "change_pct": 0.0
-        },
-        {
-          "date": "2025-12-05",
-          "value": 860,
-          "change_val": 0,
-          "change_pct": 0.0
-        },
-        {
-          "date": "2025-12-12",
-          "value": 859,
-          "change_val": -1,
-          "change_pct": -0.12
-        },
-        {
-          "date": "2025-12-19",
-          "value": 859,
-          "change_val": 0,
-          "change_pct": 0.0
-        },
-        {
-          "date": "2025-12-26",
-          "value": 858,
-          "change_val": -1,
-          "change_pct": -0.12
-        },
-        {
-          "date": "2026-01-02",
-          "value": 857,
-          "change_val": -1,
-          "change_pct": -0.12
-        },
-        {
-          "date": "2026-01-09",
-          "value": 856,
-          "change_val": -1,
-          "change_pct": -0.12
-        },
-        {
-          "date": "2026-01-16",
-          "value": 855,
-          "change_val": -1,
-          "change_pct": -0.12
-        },
-        {
-          "date": "2026-01-23",
-          "value": 854,
-          "change_val": -1,
-          "change_pct": -0.12
-        },
-        {
-          "date": "2026-01-30",
-          "value": 853,
-          "change_val": -1,
-          "change_pct": -0.12
-        },
-        {
-          "date": "2026-02-06",
-          "value": 852,
-          "change_val": -1,
-          "change_pct": -0.12
-        },
-        {
-          "date": "2026-02-13",
-          "value": 851,
-          "change_val": -1,
-          "change_pct": -0.12
-        },
-        {
-          "date": "2026-02-20",
-          "value": 851,
-          "change_val": 0,
-          "change_pct": 0.0
-        },
-        {
-          "date": "2026-02-27",
-          "value": 850,
-          "change_val": -1,
-          "change_pct": -0.12
-        },
-        {
-          "date": "2026-03-06",
-          "value": 850,
-          "change_val": 0,
-          "change_pct": 0.0
-        },
-        {
-          "date": "2026-03-13",
-          "value": 850,
-          "change_val": 0,
-          "change_pct": 0.0
-        },
-        {
-          "date": "2026-03-20",
-          "value": 850,
-          "change_val": 0,
-          "change_pct": 0.0
-        },
-        {
-          "date": "2026-03-27",
-          "value": 851,
-          "change_val": 1,
-          "change_pct": 0.12
-        },
-        {
-          "date": "2026-04-03",
-          "value": 852,
-          "change_val": 1,
-          "change_pct": 0.12
-        },
-        {
-          "date": "2026-04-10",
-          "value": 854,
-          "change_val": 2,
-          "change_pct": 0.23
-        },
-        {
-          "date": "2026-04-17",
-          "value": 856,
-          "change_val": 2,
-          "change_pct": 0.23
-        },
-        {
-          "date": "2026-04-24",
-          "value": 858,
-          "change_val": 2,
-          "change_pct": 0.23
-        },
-        {
-          "date": "2026-05-01",
-          "value": 860,
-          "change_val": 2,
-          "change_pct": 0.23
-        },
-        {
-          "date": "2026-05-08",
-          "value": 862,
-          "change_val": 2,
-          "change_pct": 0.23
-        },
-        {
-          "date": "2026-05-15",
-          "value": 864,
-          "change_val": 2,
-          "change_pct": 0.23
-        },
-        {
-          "date": "2026-05-22",
-          "value": 866,
-          "change_val": 2,
-          "change_pct": 0.23
-        },
-        {
-          "date": "2026-05-29",
-          "value": 868,
-          "change_val": 2,
-          "change_pct": 0.23
-        },
-        {
-          "date": "2026-06-05",
-          "value": 869,
-          "change_val": 1,
-          "change_pct": 0.12
-        },
-        {
-          "date": "2026-06-12",
-          "value": 870,
-          "change_val": 1,
-          "change_pct": 0.12
-        },
-        {
-          "date": "2026-06-19",
-          "value": 870,
-          "change_val": 0,
-          "change_pct": 0.0
-        },
-        {
-          "date": "2026-06-26",
-          "value": 869,
-          "change_val": -1,
-          "change_pct": -0.11
-        },
-        {
-          "date": "2026-07-03",
-          "value": 866,
-          "change_val": -3,
-          "change_pct": -0.35
-        },
-        {
-          "date": "2026-07-10",
-          "value": 862,
-          "change_val": -4,
-          "change_pct": -0.46
-        },
-        {
-          "date": "2026-07-17",
-          "value": 856,
-          "change_val": -6,
-          "change_pct": -0.7
-        },
-        {
-          "date": "2026-07-24",
-          "value": 850,
-          "change_val": -6,
-          "change_pct": -0.7
-        },
-        {
-          "date": "2026-07-31",
-          "value": 844,
-          "change_val": -6,
-          "change_pct": -0.71
-        },
-        {
-          "date": "2026-08-07",
-          "value": 838,
-          "change_val": -6,
-          "change_pct": -0.71
-        },
-        {
-          "date": "2026-08-14",
-          "value": 834,
-          "change_val": -4,
-          "change_pct": -0.48
-        },
-        {
-          "date": "2026-08-21",
-          "value": 831,
-          "change_val": -3,
-          "change_pct": -0.36
-        },
-        {
-          "date": "2026-08-28",
-          "value": 830,
-          "change_val": -1,
-          "change_pct": -0.12
-        },
-        {
-          "date": "2026-09-04",
-          "value": 832,
-          "change_val": 2,
+          "value": 1250,
+          "change_val": 3,
           "change_pct": 0.24
         },
         {
+          "date": "2025-10-24",
+          "value": 1253,
+          "change_val": 3,
+          "change_pct": 0.24
+        },
+        {
+          "date": "2025-10-31",
+          "value": 1262,
+          "change_val": 9,
+          "change_pct": 0.72
+        },
+        {
+          "date": "2025-11-07",
+          "value": 1277,
+          "change_val": 15,
+          "change_pct": 1.19
+        },
+        {
+          "date": "2025-11-14",
+          "value": 1295,
+          "change_val": 18,
+          "change_pct": 1.41
+        },
+        {
+          "date": "2025-11-21",
+          "value": 1315,
+          "change_val": 20,
+          "change_pct": 1.54
+        },
+        {
+          "date": "2025-11-28",
+          "value": 1335,
+          "change_val": 20,
+          "change_pct": 1.52
+        },
+        {
+          "date": "2025-12-05",
+          "value": 1353,
+          "change_val": 18,
+          "change_pct": 1.35
+        },
+        {
+          "date": "2025-12-12",
+          "value": 1368,
+          "change_val": 15,
+          "change_pct": 1.11
+        },
+        {
+          "date": "2025-12-19",
+          "value": 1377,
+          "change_val": 9,
+          "change_pct": 0.66
+        },
+        {
+          "date": "2025-12-26",
+          "value": 1380,
+          "change_val": 3,
+          "change_pct": 0.22
+        },
+        {
+          "date": "2026-01-02",
+          "value": 1382,
+          "change_val": 2,
+          "change_pct": 0.14
+        },
+        {
+          "date": "2026-01-09",
+          "value": 1388,
+          "change_val": 6,
+          "change_pct": 0.43
+        },
+        {
+          "date": "2026-01-16",
+          "value": 1396,
+          "change_val": 8,
+          "change_pct": 0.58
+        },
+        {
+          "date": "2026-01-23",
+          "value": 1404,
+          "change_val": 8,
+          "change_pct": 0.57
+        },
+        {
+          "date": "2026-01-30",
+          "value": 1412,
+          "change_val": 8,
+          "change_pct": 0.57
+        },
+        {
+          "date": "2026-02-06",
+          "value": 1418,
+          "change_val": 6,
+          "change_pct": 0.42
+        },
+        {
+          "date": "2026-02-13",
+          "value": 1420,
+          "change_val": 2,
+          "change_pct": 0.14
+        },
+        {
+          "date": "2026-02-20",
+          "value": 1433,
+          "change_val": 13,
+          "change_pct": 0.92
+        },
+        {
+          "date": "2026-02-27",
+          "value": 1468,
+          "change_val": 35,
+          "change_pct": 2.44
+        },
+        {
+          "date": "2026-03-06",
+          "value": 1522,
+          "change_val": 54,
+          "change_pct": 3.68
+        },
+        {
+          "date": "2026-03-13",
+          "value": 1585,
+          "change_val": 63,
+          "change_pct": 4.14
+        },
+        {
+          "date": "2026-03-20",
+          "value": 1648,
+          "change_val": 63,
+          "change_pct": 3.97
+        },
+        {
+          "date": "2026-03-27",
+          "value": 1702,
+          "change_val": 54,
+          "change_pct": 3.28
+        },
+        {
+          "date": "2026-04-03",
+          "value": 1737,
+          "change_val": 35,
+          "change_pct": 2.06
+        },
+        {
+          "date": "2026-04-10",
+          "value": 1750,
+          "change_val": 13,
+          "change_pct": 0.75
+        },
+        {
+          "date": "2026-04-17",
+          "value": 1748,
+          "change_val": -2,
+          "change_pct": -0.11
+        },
+        {
+          "date": "2026-04-24",
+          "value": 1743,
+          "change_val": -5,
+          "change_pct": -0.29
+        },
+        {
+          "date": "2026-05-01",
+          "value": 1736,
+          "change_val": -7,
+          "change_pct": -0.4
+        },
+        {
+          "date": "2026-05-08",
+          "value": 1726,
+          "change_val": -10,
+          "change_pct": -0.58
+        },
+        {
+          "date": "2026-05-15",
+          "value": 1715,
+          "change_val": -11,
+          "change_pct": -0.64
+        },
+        {
+          "date": "2026-05-22",
+          "value": 1704,
+          "change_val": -11,
+          "change_pct": -0.64
+        },
+        {
+          "date": "2026-05-29",
+          "value": 1694,
+          "change_val": -10,
+          "change_pct": -0.59
+        },
+        {
+          "date": "2026-06-05",
+          "value": 1687,
+          "change_val": -7,
+          "change_pct": -0.41
+        },
+        {
+          "date": "2026-06-12",
+          "value": 1682,
+          "change_val": -5,
+          "change_pct": -0.3
+        },
+        {
+          "date": "2026-06-19",
+          "value": 1680,
+          "change_val": -2,
+          "change_pct": -0.12
+        },
+        {
+          "date": "2026-06-26",
+          "value": 1683,
+          "change_val": 3,
+          "change_pct": 0.18
+        },
+        {
+          "date": "2026-07-03",
+          "value": 1690,
+          "change_val": 7,
+          "change_pct": 0.42
+        },
+        {
+          "date": "2026-07-10",
+          "value": 1700,
+          "change_val": 10,
+          "change_pct": 0.59
+        },
+        {
+          "date": "2026-07-17",
+          "value": 1710,
+          "change_val": 10,
+          "change_pct": 0.59
+        },
+        {
+          "date": "2026-07-24",
+          "value": 1717,
+          "change_val": 7,
+          "change_pct": 0.41
+        },
+        {
+          "date": "2026-07-31",
+          "value": 1720,
+          "change_val": 3,
+          "change_pct": 0.17
+        },
+        {
+          "date": "2026-08-07",
+          "value": 1732,
+          "change_val": 12,
+          "change_pct": 0.7
+        },
+        {
+          "date": "2026-08-14",
+          "value": 1765,
+          "change_val": 33,
+          "change_pct": 1.91
+        },
+        {
+          "date": "2026-08-21",
+          "value": 1805,
+          "change_val": 40,
+          "change_pct": 2.27
+        },
+        {
+          "date": "2026-08-28",
+          "value": 1838,
+          "change_val": 33,
+          "change_pct": 1.83
+        },
+        {
+          "date": "2026-09-04",
+          "value": 1850,
+          "change_val": 12,
+          "change_pct": 0.65
+        },
+        {
           "date": "2026-09-11",
-          "value": 837,
-          "change_val": 5,
-          "change_pct": 0.6
+          "value": 1915,
+          "change_val": 65,
+          "change_pct": 3.51
         },
         {
           "date": "2026-09-18",
-          "value": 842,
-          "change_val": 5,
-          "change_pct": 0.6
+          "value": 1980,
+          "change_val": 65,
+          "change_pct": 3.39
         },
         {
           "date": "2026-09-25",
-          "value": 845,
-          "change_val": 3,
-          "change_pct": 0.36
+          "value": 2139,
+          "change_val": 159,
+          "change_pct": 8.03
         },
         {
           "date": "2026-09-26",
-          "value": 845,
-          "change_val": 0,
-          "change_pct": 0.0
+          "value": 2160.0,
+          "change_val": 21.0,
+          "change_pct": 4.05
         }
       ]
     }

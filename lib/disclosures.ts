@@ -32,10 +32,12 @@ const SNAPSHOT_PATH = path.join(DATA_DIR, 'disclosures_snapshot.json')
 let cachedSnapshot: CorporateDisclosure[] | null = null
 let dbInstance: DatabaseSync | null = null
 
-// In-memory cache cho Live Disclosures (Serverless revalidation)
-let inMemoryLiveDisclosures: CorporateDisclosure[] | null = null
-let lastLiveFetchTime = 0
-let isLiveFetching = false
+// In-memory cache cho Live Disclosures (lưu trên globalThis để giữ cache qua các lần HMR)
+const globalForDisclosures = globalThis as unknown as {
+  __inMemoryLiveDisclosures?: CorporateDisclosure[] | null
+  __lastLiveFetchTime?: number
+  __isLiveFetching?: boolean
+}
 const LIVE_TTL_MS = 3 * 60 * 1000 // 3 phút cache
 
 let stockExchangesCache: Record<string, string> | null = null
@@ -397,16 +399,16 @@ export async function getLiveMarketDisclosures(options?: {
   // 1. Kiểm tra cache trong bộ nhớ
   if (
     !forceRefresh &&
-    inMemoryLiveDisclosures &&
-    inMemoryLiveDisclosures.length > 0 &&
-    now - lastLiveFetchTime < LIVE_TTL_MS
+    globalForDisclosures.__inMemoryLiveDisclosures &&
+    globalForDisclosures.__inMemoryLiveDisclosures.length > 0 &&
+    now - (globalForDisclosures.__lastLiveFetchTime || 0) < LIVE_TTL_MS
   ) {
-    return filterDisclosures(inMemoryLiveDisclosures, { exchange, docType, importantOnly, limit })
+    return filterDisclosures(globalForDisclosures.__inMemoryLiveDisclosures, { exchange, docType, importantOnly, limit })
   }
 
   // 2. Nếu đang cào hoặc cần cào mới:
-  if (!isLiveFetching) {
-    isLiveFetching = true
+  if (!globalForDisclosures.__isLiveFetching) {
+    globalForDisclosures.__isLiveFetching = true
     try {
       const liveItems = await fetchLiveCafefDisclosures()
       if (liveItems && liveItems.length > 0) {
@@ -430,19 +432,28 @@ export async function getLiveMarketDisclosures(options?: {
           (a, b) => new Date(b.published_at).getTime() - new Date(a.published_at).getTime()
         )
 
-        inMemoryLiveDisclosures = merged
-        lastLiveFetchTime = now
+        globalForDisclosures.__inMemoryLiveDisclosures = merged
+        globalForDisclosures.__lastLiveFetchTime = now
+      } else {
+        if (!globalForDisclosures.__inMemoryLiveDisclosures || globalForDisclosures.__inMemoryLiveDisclosures.length === 0) {
+          globalForDisclosures.__inMemoryLiveDisclosures = getRecentMarketDisclosures({ limit: 300 })
+        }
+        globalForDisclosures.__lastLiveFetchTime = now
       }
     } catch (e) {
       console.warn('[Disclosures] Live fetch failed, using cached base:', e)
+      if (!globalForDisclosures.__inMemoryLiveDisclosures || globalForDisclosures.__inMemoryLiveDisclosures.length === 0) {
+        globalForDisclosures.__inMemoryLiveDisclosures = getRecentMarketDisclosures({ limit: 300 })
+      }
+      globalForDisclosures.__lastLiveFetchTime = now
     } finally {
-      isLiveFetching = false
+      globalForDisclosures.__isLiveFetching = false
     }
   }
 
   const pool =
-    inMemoryLiveDisclosures && inMemoryLiveDisclosures.length > 0
-      ? inMemoryLiveDisclosures
+    globalForDisclosures.__inMemoryLiveDisclosures && globalForDisclosures.__inMemoryLiveDisclosures.length > 0
+      ? globalForDisclosures.__inMemoryLiveDisclosures
       : getRecentMarketDisclosures({ limit: 200 })
 
   return filterDisclosures(pool, { exchange, docType, importantOnly, limit })

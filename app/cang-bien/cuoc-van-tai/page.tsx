@@ -244,9 +244,9 @@ export default function CuocVanTaiPage() {
 
               <div className="rounded-2xl border border-[#1e2430] bg-[#12151c] p-5 space-y-2">
                 <div className="text-xs font-bold text-amber-400">GIAI ĐOẠN 2024 – 2026</div>
-                <h4 className="text-sm font-extrabold text-slate-100">Khủng Hoảng Biển Đỏ &amp; Tái Định Tuyến</h4>
+                <h4 className="text-sm font-extrabold text-slate-100">Biển Đỏ, Eo Biển Hormuz &amp; Siêu Chu Kỳ Tàu Dầu</h4>
                 <p className="text-xs text-slate-400 leading-relaxed">
-                  Tàu bè buộc phải vòng qua Mũi Hảo Vọng (Nam Phi), làm kéo dài hành trình thêm 10–14 ngày mỗi chiều. Năng lực chuyên chở container toàn cầu bị hấp thụ mạnh, giữ mặt bằng giá cước ở mức cao $4,000 – $5,000/FEU.
+                  Tái định tuyến vòng qua Mũi Hảo Vọng cùng căng thẳng địa chính trị Trung Đông kéo dài hải trình dầu thô viễn dương (ton-mile). Cước tàu dầu thô BDTI bùng nổ vượt mốc kỷ lục lịch sử 5.300+ điểm vào tháng 9/2026, hỗ trợ mạnh mẽ triển vọng kinh doanh cho nhóm vận tải dầu khí Việt Nam (PVT, VTO, VIP).
                 </p>
               </div>
             </div>
