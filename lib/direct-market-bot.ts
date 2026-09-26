@@ -167,8 +167,38 @@ export async function fetchDirectCompanyProfile(symbol: string): Promise<Company
       try {
         const json = await tradesRes.value.json()
         const rawList: any[] = json.Data?.Data || []
+        const dedupedList: any[] = []
+        const handledKeys = new Set<string>()
 
         for (const t of rawList) {
+          const name = (t.TransactionMan || '').trim()
+          const planBuy = Number(t.PlanBuyVolume) || 0
+          const planSell = Number(t.PlanSellVolume) || 0
+          const planBegin = t.PlanBeginDate || ''
+          const planEnd = t.PlanEndDate || ''
+
+          const roundKey = `${name}_${planBuy}_${planSell}_${planBegin}_${planEnd}`
+          if (roundKey && roundKey !== '____') {
+            if (handledKeys.has(roundKey)) continue
+            const matches = rawList.filter((m) => {
+              const mKey = `${(m.TransactionMan || '').trim()}_${Number(m.PlanBuyVolume) || 0}_${Number(m.PlanSellVolume) || 0}_${m.PlanBeginDate || ''}_${m.PlanEndDate || ''}`
+              return mKey === roundKey
+            })
+            let best = matches[0]
+            for (const m of matches) {
+              if ((Number(m.RealBuyVolume) || 0) > 0 || (Number(m.RealSellVolume) || 0) > 0 || m.RealEndDate) {
+                best = m
+                break
+              }
+            }
+            handledKeys.add(roundKey)
+            dedupedList.push(best)
+          } else {
+            dedupedList.push(t)
+          }
+        }
+
+        for (const t of dedupedList) {
           const realBuy = Number(t.RealBuyVolume) || 0
           const realSell = Number(t.RealSellVolume) || 0
           const planBuy = Number(t.PlanBuyVolume) || 0

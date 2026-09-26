@@ -30,6 +30,7 @@
     "scheduler": "node scripts/scheduler-daemon.mjs",
     "sync-macro": "node scripts/sync-macro-data.mjs",
     "sync-widata-full": "node scripts/crawl-widata-full.mjs",
+    "sync-widata-reports": "node scripts/sync-widata-reports.mjs",
     "sync-company-websites": "node scripts/crawl-company-websites.mjs"
   },
   "dependencies": {

@@ -29,7 +29,6 @@ async function getInitialNews(): Promise<NewsSnapshotItem[]> {
   try {
     const cached = getCachedNews()
     if (cached && cached.length > 0) {
-      fetchAllRssFeeds(false).catch(() => {})
       return cached
     }
     return await fetchAllRssFeeds(false)

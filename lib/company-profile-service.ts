@@ -141,9 +141,40 @@ export function parseShareholderPayload(sym: string, d: any): CompanyFullProfile
     })
   }
 
-  // 3. Lịch sử giao dịch nội bộ
+  // 3. Lịch sử giao dịch nội bộ (khử trùng lặp giữa bản tin đăng ký và báo cáo kết quả cùng đợt)
   const rawTrades: any[] = d.giao_dich_noi_bo || []
-  const insiderTrades: InsiderTradeItem[] = rawTrades.map((t) => {
+  const dedupedRawTrades: any[] = []
+  const handledKeys = new Set<string>()
+
+  for (const t of rawTrades) {
+    const name = (t.transaction_name || '').trim()
+    const planBuy = Number(t.plan_buy) || 0
+    const planSell = Number(t.plan_sell) || 0
+    const planBegin = t.plan_begin_date || ''
+    const planEnd = t.plan_end_date || ''
+
+    const roundKey = `${name}_${planBuy}_${planSell}_${planBegin}_${planEnd}`
+    if (roundKey && roundKey !== '____') {
+      if (handledKeys.has(roundKey)) continue
+      const matches = rawTrades.filter((m) => {
+        const mKey = `${(m.transaction_name || '').trim()}_${Number(m.plan_buy) || 0}_${Number(m.plan_sell) || 0}_${m.plan_begin_date || ''}_${m.plan_end_date || ''}`
+        return mKey === roundKey
+      })
+      let best = matches[0]
+      for (const m of matches) {
+        if ((Number(m.real_buy) || 0) > 0 || (Number(m.real_sell) || 0) > 0 || m.real_end_date) {
+          best = m
+          break
+        }
+      }
+      handledKeys.add(roundKey)
+      dedupedRawTrades.push(best)
+    } else {
+      dedupedRawTrades.push(t)
+    }
+  }
+
+  const insiderTrades: InsiderTradeItem[] = dedupedRawTrades.map((t) => {
     const realBuy = Number(t.real_buy) || 0
     const realSell = Number(t.real_sell) || 0
     const planBuy = Number(t.plan_buy) || 0

@@ -2,21 +2,23 @@ name: Sync Analyst Reports Daily at 20:00
 
 on:
   schedule:
-    # Chạy mỗi ngày lúc 13:00 UTC = 20:00 GMT+7 (Giờ Việt Nam)
+    # Chạy tự động 1 ngày 1 lần lúc 13:00 UTC = 20:00 tối GMT+7 (Giờ Việt Nam)
     - cron: '0 13 * * *'
   workflow_dispatch: # Cho phép bấm nút "Run workflow" thủ công trên GitHub
 
 jobs:
   sync-reports:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Set up Node.js
+      - name: Set up Node.js 22 (Hỗ trợ node:sqlite)
         uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version: 22
 
       - name: Run daily sync for Industry and Company reports
         run: |
@@ -26,5 +28,6 @@ jobs:
         run: |
           git config --global user.name 'github-actions[bot]'
           git config --global user.email 'github-actions[bot]@users.noreply.github.com'
-          git add data/industry-reports.json data/industry_reports.db data/company_reports.db data/company_reports_summary.json
-          git diff --quiet && git diff --staged --quiet || (git commit -m "chore(data): auto sync daily analyst reports $(date +'%Y-%m-%d %H:%M')" && git push)
+          git add data/industry-reports.json data/industry_reports.db data/company_reports.db data/company_reports_summary.json data/widata_archive/reports/
+          git diff --quiet && git diff --staged --quiet || (git commit -m "chore(data): auto sync daily analyst reports $(date +'%Y-%m-%d %H:%M')" && git pull --rebase origin main && git push)
+

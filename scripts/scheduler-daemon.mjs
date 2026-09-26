@@ -27,6 +27,7 @@ let lastRunInsiderDate1836 = "";
 let lastRunDisclosures1200 = "";
 let lastRunDisclosures1800 = "";
 let lastRunDisclosures2030 = "";
+let lastRunReports2000 = "";
 let lastRunShareholdersMonth = "";
 
 function runCommand(cmd, taskName) {
@@ -91,7 +92,13 @@ function checkAndRunSchedule() {
     runCommand("node scripts/crawl-direct-market.mjs --mode=insider", "GIAO DỊCH NỘI BỘ LẦN 2 (18:36 TỐI)");
   }
 
-  // 6. Công bố thông tin 3 Sàn Lần 3: 20:30 tối (Quét chốt ngày)
+  // 6a. Báo cáo phân tích CTCK (1 ngày 1 lần): 20:00 tối hàng ngày
+  if (hours === 20 && minutes === 0 && lastRunReports2000 !== dateStr) {
+    lastRunReports2000 = dateStr;
+    runCommand("node scripts/sync-daily-reports.mjs", "BÁO CÁO PHÂN TÍCH CỔ PHIẾU & NGÀNH (20:00 TỐI)");
+  }
+
+  // 6b. Công bố thông tin 3 Sàn Lần 3: 20:30 tối (Quét chốt ngày)
   if (hours === 20 && minutes === 30 && lastRunDisclosures2030 !== dateStr) {
     lastRunDisclosures2030 = dateStr;
     runCommand("node scripts/sync-disclosures.mjs", "CÔNG BỐ THÔNG TIN 3 SÀN (20:30 TỐI)");
@@ -113,6 +120,7 @@ console.log("   • 12:06 hàng ngày           : Cập nhật Giao dịch nội
 console.log("   • 16:16 hàng ngày           : Cập nhật Chỉ số Định giá (P/E, P/B, Điểm 360°)");
 console.log("   • 18:00 hàng ngày           : Cập nhật Công bố thông tin 3 Sàn (Lần 2 - Bắt BCTC/Giải trình)");
 console.log("   • 18:36 hàng ngày           : Cập nhật Giao dịch nội bộ (Lần 2 - Chốt ngày)");
+console.log("   • 20:00 hàng ngày           : Cập nhật Báo cáo phân tích Cổ phiếu & Ngành (1 ngày 1 lần)");
 console.log("   • 20:30 hàng ngày           : Cập nhật Công bố thông tin 3 Sàn (Lần 3 - Chốt tối)");
 console.log("   • 23:00 ngày 1 hàng tháng   : Cập nhật Cơ cấu Cổ đông & Công ty con");
 console.log("-------------------------------------------------------------------");

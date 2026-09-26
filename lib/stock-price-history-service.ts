@@ -215,9 +215,11 @@ export async function getStockPriceHistory(
           points,
         }
 
-        try {
-          fs.writeFileSync(cacheFile, JSON.stringify(payload), 'utf-8')
-        } catch {}
+        if (process.env.NODE_ENV !== 'development') {
+          try {
+            fs.writeFileSync(cacheFile, JSON.stringify(payload), 'utf-8')
+          } catch {}
+        }
 
         return payload
       }
@@ -272,9 +274,11 @@ export async function getStockPriceHistory(
           points,
         }
 
-        try {
-          fs.writeFileSync(cacheFile, JSON.stringify(payload), 'utf-8')
-        } catch {}
+        if (process.env.NODE_ENV !== 'development') {
+          try {
+            fs.writeFileSync(cacheFile, JSON.stringify(payload), 'utf-8')
+          } catch {}
+        }
 
         return payload
       }

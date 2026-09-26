@@ -13,9 +13,12 @@ import {
   Layers,
   Building2,
   Sparkles,
+  Globe2,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { CompanyReportsTab } from "@/components/reports/CompanyReportsTab";
 import { IndustryReportsTab } from "@/components/reports/IndustryReportsTab";
+import { MacroReportsTab } from "@/components/reports/MacroReportsTab";
 import industryData from "@/data/industry-reports.json";
 
 interface Report {
@@ -301,16 +304,29 @@ export default function ReportsPage() {
   );
 }
 
+export type MainTab = "company" | "industry" | "macro" | "bond_ir" | "rnav";
+
 function ReportsPageInner() {
   const searchParams = useSearchParams();
   const tickerParam = searchParams.get("ticker") ?? "";
   const searchParam = searchParams.get("search") ?? "";
   const tabParam = (searchParams.get("tab") as CategoryKey) ?? "all";
-  const viewParam = searchParams.get("view") as "industry" | "company" | null;
+  const viewParam = searchParams.get("view") as string | null;
 
-  const [mainTab, setMainTab] = useState<"industry" | "company">(
-    viewParam === "company" || tickerParam ? "company" : "industry"
-  );
+  const [mainTab, setMainTab] = useState<MainTab>(() => {
+    if (viewParam === "industry") return "industry";
+    if (viewParam === "macro") return "macro";
+    if (viewParam === "bond_ir") return "bond_ir";
+    if (viewParam === "rnav") return "rnav";
+    return "company";
+  });
+
+  const [stats, setStats] = useState({
+    company: 3994,
+    industry: (industryData as any)?.total || (Array.isArray(industryData) ? industryData.length : 377),
+    macroStrategyTotal: 50,
+    bondIrTotal: 50,
+  });
 
   const [reports, setReports] = useState<Report[]>([]);
   const [loading, setLoading] = useState(true);
@@ -318,11 +334,20 @@ function ReportsPageInner() {
   const [sortBy, setSortBy] = useState<"newest" | "oldest" | "upside">("newest");
   const [tab, setTab] = useState<CategoryKey>(tabParam);
 
-  const industryCount = industryData.total || 0;
-
   const stockManifestMap = useMemo(() => {
     const all = getAllStocks();
     return new Map(all.map((s) => [s.t.toUpperCase(), s]));
+  }, []);
+
+  useEffect(() => {
+    fetch("/api/analyst-reports?type=stats")
+      .then((res) => res.json())
+      .then((data) => {
+        if (data?.success && data?.stats) {
+          setStats(data.stats);
+        }
+      })
+      .catch(() => {});
   }, []);
 
   useEffect(() => {
@@ -448,13 +473,35 @@ function ReportsPageInner() {
             </div>
           </div>
 
-          {/* CHUYỂN ĐỔI CHUYÊN MỤC CHÍNH (MAIN TABS) */}
-          <div className="mt-5 flex items-center gap-2 border-t border-border/50 pt-4">
+          {/* CHUYỂN ĐỔI CHUYÊN MỤC CHÍNH (MAIN TABS THEO PHONG CÁCH WIDATA) */}
+          <div className="mt-5 flex items-center gap-2 overflow-x-auto pb-1 scrollbar-none border-t border-border/50 pt-4">
+            <button
+              type="button"
+              onClick={() => setMainTab("company")}
+              className={cn(
+                "inline-flex items-center gap-2 rounded-xl px-3.5 py-2 text-xs sm:text-sm font-bold transition-all cursor-pointer whitespace-nowrap",
+                mainTab === "company"
+                  ? "bg-emerald-500 text-white shadow-md shadow-emerald-500/20"
+                  : "bg-card text-muted-foreground border border-border hover:bg-muted hover:text-foreground"
+              )}
+            >
+              <Building2 className="size-4" />
+              <span>Báo Cáo Doanh Nghiệp</span>
+              <span
+                className={cn(
+                  "rounded-full px-2 py-0.5 text-[10px] font-mono font-bold",
+                  mainTab === "company" ? "bg-white/20 text-white" : "bg-muted text-muted-foreground"
+                )}
+              >
+                {stats.company.toLocaleString("vi-VN")}
+              </span>
+            </button>
+
             <button
               type="button"
               onClick={() => setMainTab("industry")}
               className={cn(
-                "inline-flex items-center gap-2 rounded-xl px-4 py-2.5 text-xs sm:text-sm font-bold transition-all cursor-pointer",
+                "inline-flex items-center gap-2 rounded-xl px-3.5 py-2 text-xs sm:text-sm font-bold transition-all cursor-pointer whitespace-nowrap",
                 mainTab === "industry"
                   ? "bg-emerald-500 text-white shadow-md shadow-emerald-500/20"
                   : "bg-card text-muted-foreground border border-border hover:bg-muted hover:text-foreground"
@@ -465,33 +512,73 @@ function ReportsPageInner() {
               <span
                 className={cn(
                   "rounded-full px-2 py-0.5 text-[10px] font-mono font-bold",
-                  mainTab === "industry"
-                    ? "bg-white/20 text-white"
-                    : "bg-muted text-muted-foreground"
+                  mainTab === "industry" ? "bg-white/20 text-white" : "bg-muted text-muted-foreground"
                 )}
               >
-                {industryCount}
+                {stats.industry.toLocaleString("vi-VN")}
               </span>
             </button>
 
             <button
               type="button"
-              onClick={() => setMainTab("company")}
+              onClick={() => setMainTab("macro")}
               className={cn(
-                "inline-flex items-center gap-2 rounded-xl px-4 py-2.5 text-xs sm:text-sm font-bold transition-all cursor-pointer",
-                mainTab === "company"
+                "inline-flex items-center gap-2 rounded-xl px-3.5 py-2 text-xs sm:text-sm font-bold transition-all cursor-pointer whitespace-nowrap",
+                mainTab === "macro"
                   ? "bg-emerald-500 text-white shadow-md shadow-emerald-500/20"
                   : "bg-card text-muted-foreground border border-border hover:bg-muted hover:text-foreground"
               )}
             >
-              <Building2 className="size-4" />
-              <span>Định Giá & RNAV Độc Quyền</span>
+              <Globe2 className="size-4" />
+              <span>Thị Trường & Vĩ Mô</span>
               <span
                 className={cn(
                   "rounded-full px-2 py-0.5 text-[10px] font-mono font-bold",
-                  mainTab === "company"
-                    ? "bg-white/20 text-white"
-                    : "bg-muted text-muted-foreground"
+                  mainTab === "macro" ? "bg-white/20 text-white" : "bg-muted text-muted-foreground"
+                )}
+              >
+                {stats.macroStrategyTotal.toLocaleString("vi-VN")}
+              </span>
+            </button>
+
+            <button
+              type="button"
+              onClick={() => setMainTab("bond_ir")}
+              className={cn(
+                "inline-flex items-center gap-2 rounded-xl px-3.5 py-2 text-xs sm:text-sm font-bold transition-all cursor-pointer whitespace-nowrap",
+                mainTab === "bond_ir"
+                  ? "bg-emerald-500 text-white shadow-md shadow-emerald-500/20"
+                  : "bg-card text-muted-foreground border border-border hover:bg-muted hover:text-foreground"
+              )}
+            >
+              <FileText className="size-4" />
+              <span>Trái Phiếu & Tin IR</span>
+              <span
+                className={cn(
+                  "rounded-full px-2 py-0.5 text-[10px] font-mono font-bold",
+                  mainTab === "bond_ir" ? "bg-white/20 text-white" : "bg-muted text-muted-foreground"
+                )}
+              >
+                {stats.bondIrTotal.toLocaleString("vi-VN")}
+              </span>
+            </button>
+
+            <button
+              type="button"
+              onClick={() => setMainTab("rnav")}
+              className={cn(
+                "inline-flex items-center gap-2 rounded-xl px-3.5 py-2 text-xs sm:text-sm font-bold transition-all cursor-pointer whitespace-nowrap",
+                mainTab === "rnav"
+                  ? "bg-emerald-500 text-white shadow-md shadow-emerald-500/20"
+                  : "bg-card text-muted-foreground border border-border hover:bg-muted hover:text-foreground"
+              )}
+            >
+              <Sparkles className="size-4" />
+              <span>Định Giá RNAV Độc Quyền</span>
+              <span
+                className={cn(
+                  "rounded-full px-2 py-0.5 text-[10px] font-mono font-bold",
+                  mainTab === "rnav" ? "bg-white/20 text-white" : "bg-muted text-muted-foreground"
                 )}
               >
                 {reports.length}
@@ -500,10 +587,24 @@ function ReportsPageInner() {
           </div>
         </div>
 
-        {/* NỘI DUNG THEO TAB ĐƯỢC CHỌN */}
-        {mainTab === "industry" ? (
+        {/* NỘI DUNG THEO TAB ĐƯỢC CHỌN (TƯƠNG TỰ WIDATA) */}
+        {mainTab === "company" && (
+          <CompanyReportsTab initialTicker={tickerParam} />
+        )}
+
+        {mainTab === "industry" && (
           <IndustryReportsTab />
-        ) : (
+        )}
+
+        {mainTab === "macro" && (
+          <MacroReportsTab subType="macro_strategy" />
+        )}
+
+        {mainTab === "bond_ir" && (
+          <MacroReportsTab subType="bond_ir" />
+        )}
+
+        {mainTab === "rnav" && (
           <div className="flex flex-col gap-5">
             {/* Thanh công cụ tìm kiếm & sắp xếp cho Báo cáo doanh nghiệp */}
             <div className="flex flex-col sm:flex-row gap-3">

@@ -331,13 +331,15 @@ export function StockDetailView({
   initialCandles = [],
 }: StockDetailViewProps) {
   // Tab đang hiển thị trên thanh nút bấm (cập nhật NGAY LẬP TỨC để phản hồi giao diện không delay)
-  const [activeTab, setActiveTab] = useState<StockDetailTab>(initialTab || 'overview')
+  const [activeTab, setActiveTab] = useState<StockDetailTab>(
+    initialTab === 'profile' ? 'overview' : (initialTab || 'overview')
+  )
   const [expandedSvgChart, setExpandedSvgChart] = useState<'price' | 'revenue' | 'throughput' | null>(null)
   // Phạm vi hiển thị danh sách cùng ngành ở cuối trang ('l4' chuyên sâu hoặc 'l2' nhóm ngành)
   const [gridScope, setGridScope] = useState<'l4' | 'l2'>('l4')
   // Danh sách các tab đã từng được mount (để giữ cache không phải render lại từ đầu)
   const [mountedTabs, setMountedTabs] = useState<Set<StockDetailTab>>(
-    () => new Set([initialTab || 'overview'])
+    () => new Set([initialTab === 'profile' ? 'overview' : (initialTab || 'overview')])
   )
   // Tab đang được nạp nội dung (nếu tab đó chưa từng được mount)
   const [loadingTab, setLoadingTab] = useState<StockDetailTab | null>(null)
@@ -432,14 +434,15 @@ export function StockDetailView({
   // Nhờ đó khi người dùng bấm vào tab nào thì tab đó ĐÃ CÓ SẴN trong DOM -> Hiển thị tức thì 0ms, siêu mượt!
   useEffect(() => {
     const tabsToPreload: StockDetailTab[] = [
-      'profile',
+      'charts',
       'articles',
       'community',
       'peers',
       'reports',
       'agm',
       'financials',
-    ].filter((t) => t !== (initialTab || 'charts')) as StockDetailTab[]
+      'bctc',
+    ].filter((t) => t !== (initialTab || 'overview')) as StockDetailTab[]
 
     let step = 0
     const interval = setInterval(() => {
@@ -871,8 +874,8 @@ export function StockDetailView({
     return [
       {
         id: 'overview' as StockDetailTab,
-        label: 'Tổng Quan & Đồ Thị',
-        shortLabel: 'Tổng quan',
+        label: 'Tổng Quan & Hồ Sơ',
+        shortLabel: 'Tổng quan & Hồ sơ',
         icon: TrendingUp,
         iconColor: 'text-emerald-500',
         badge: 'LIVE',
@@ -884,13 +887,6 @@ export function StockDetailView({
         icon: BarChart3,
         iconColor: 'text-blue-500',
         badge: 'PRO',
-      },
-      {
-        id: 'profile' as StockDetailTab,
-        label: 'Hồ Sơ Doanh Nghiệp',
-        shortLabel: 'Hồ sơ',
-        icon: Building2,
-        iconColor: 'text-indigo-500',
       },
       {
         id: 'articles' as StockDetailTab,
@@ -1154,222 +1150,213 @@ export function StockDetailView({
       )}
 
       {/* ══════════════════════════════════════════════════════════ */}
-      {/* TAB 0: TỔNG QUAN & ĐỒ THỊ KỸ THUẬT                        */}
+      {/* TAB 0: TỔNG QUAN & HỒ SƠ DOANH NGHIỆP                      */}
       {/* ══════════════════════════════════════════════════════════ */}
       {mountedTabs.has('overview') && (
-        <div className={cn("animate-in fade-in-50 duration-200", (activeTab !== 'overview' || loadingTab === 'overview') && "hidden")}>
-          {/* Biểu Đồ Nến Kỹ Thuật TradingView (Toàn Màn Hình, Tối Ưu Mobile, Chuẩn FireAnt) */}
-          <TradingViewCandleChart
-            symbol={ticker}
-            companyName={company?.name}
-            initialCandles={initialCandles}
-          />
-        </div>
-      )}
-
-      {/* ══════════════════════════════════════════════════════════ */}
-      {/* TAB 1: HỒ SƠ DOANH NGHIỆP                                 */}
-      {/* ══════════════════════════════════════════════════════════ */}
-      {mountedTabs.has('profile') && (
-        <div className={cn("space-y-5 animate-in fade-in-50 duration-200", (activeTab !== 'profile' || loadingTab === 'profile') && "hidden")}>
-
-          {/* Mảng kinh doanh cốt lõi (Core Card) */}
-          <div className="overflow-hidden rounded-2xl border border-border bg-card shadow-xs">
-            <div className="flex flex-wrap items-center gap-3.5 border-b border-border bg-muted/40 p-4 sm:p-5">
-              <div className="flex size-12 shrink-0 items-center justify-center rounded-xl bg-primary/10 font-mono text-xl font-black text-primary">
-                {coreCard?.monogram || ticker[0]}
-              </div>
-
-              <div className="min-w-0 flex-1">
-                <h3 className="truncate text-base font-bold text-foreground">
-                  {coreCard?.companyName || company.name}
-                </h3>
-                <p className="truncate text-xs text-muted-foreground">
-                  {coreCard?.subtitle || profile || company.sector}
-                </p>
-              </div>
-
-              {coreCard?.mainMarketTag && (
-                <div className="rounded-full border border-amber-500/30 bg-amber-500/10 px-3.5 py-1 text-xs font-semibold text-amber-700 dark:text-amber-300">
-                  {coreCard.mainMarketTag}
-                </div>
-              )}
+        <div className={cn("space-y-5 animate-in fade-in-50 duration-200", (activeTab !== 'overview' || loadingTab === 'overview') && "hidden")}>
+          {/* HÀNG HERO: Đồ Thị Nến Kỹ Thuật (Trái) & Thông Tin Doanh Nghiệp (Phải) */}
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-5 items-stretch">
+            {/* Cột Trái (lg:col-span-7 xl:col-span-7): Đồ Thị Kỹ Thuật Nến Thu Nhỏ */}
+            <div className="lg:col-span-7 xl:col-span-7 flex flex-col min-w-0">
+              <TradingViewCandleChart
+                symbol={ticker}
+                companyName={company?.name}
+                initialCandles={initialCandles}
+                className="w-full h-[460px] sm:h-[500px] lg:h-[560px]"
+              />
             </div>
 
-            <div className="p-5 sm:p-6 space-y-5">
-              {coreCard?.segments && coreCard.segments.length > 0 ? (
-                <div className="space-y-3">
-                  <div className="text-[11px] font-bold uppercase tracking-wider text-muted-foreground">
-                    Mảng kinh doanh cốt lõi
+            {/* Cột Phải (lg:col-span-5 xl:col-span-5): Tóm Tắt Doanh Nghiệp & Thông Tin Cốt Lõi */}
+            <div className="lg:col-span-5 xl:col-span-5 flex flex-col min-w-0">
+              <div className="flex flex-col h-full rounded-2xl border border-border bg-card shadow-xs overflow-hidden">
+                {/* Header Thẻ Doanh Nghiệp */}
+                <div className="flex items-center gap-3.5 border-b border-border bg-muted/40 p-4 sm:p-5 shrink-0">
+                  <div className="flex size-11 shrink-0 items-center justify-center rounded-xl bg-primary/10 font-mono text-lg font-black text-primary">
+                    {coreCard?.monogram || ticker[0]}
                   </div>
-                  <div className="overflow-x-auto rounded-xl border border-border">
-                    <table className="w-full text-left text-xs">
-                      <thead className="border-b border-border bg-muted/50 font-semibold uppercase tracking-wider text-muted-foreground text-[10.5px]">
-                        <tr>
-                          <th className="px-4 py-3 min-w-[280px]">Mảng sản phẩm</th>
-                          <th className="px-4 py-3 min-w-[220px]">Vai trò</th>
-                          <th className="px-4 py-3 min-w-[100px]">Phân khúc</th>
-                        </tr>
-                      </thead>
-                      <tbody className="divide-y divide-border/60">
-                        {coreCard.segments.map((seg, i) => (
-                          <tr key={i} className="hover:bg-muted/25 transition-colors">
-                            <td className="px-4 py-3.5 align-top">
-                              <div className="font-bold text-foreground text-[13px]">{seg.segment}</div>
-                              <div className="mt-1 text-[12px] leading-relaxed text-muted-foreground">
-                                {seg.description}
-                              </div>
-                            </td>
-                            <td className="px-4 py-3.5 align-top text-[12px] leading-relaxed text-foreground/90 font-medium">
-                              {seg.role}
-                            </td>
-                            <td className="px-4 py-3.5 align-top">
-                              <span className="inline-block rounded-full border border-primary/40 bg-primary/10 px-2.5 py-0.5 text-[11px] font-bold text-primary whitespace-nowrap">
-                                {seg.tag}
-                              </span>
-                            </td>
-                          </tr>
-                        ))}
-                      </tbody>
-                    </table>
+
+                  <div className="min-w-0 flex-1">
+                    <div className="flex items-center gap-2">
+                      <h3 className="truncate text-base font-bold text-foreground">
+                        {coreCard?.companyName || company.name}
+                      </h3>
+                    </div>
+                    <p className="truncate text-xs text-muted-foreground mt-0.5">
+                      {coreCard?.subtitle || company.sector || profile}
+                    </p>
                   </div>
-                </div>
-              ) : (
-                <div className="space-y-3">
-                  <p className="text-xs leading-relaxed text-foreground/90 sm:text-sm">
-                    {coreCard?.snippet || profile || 'Chưa có mô tả chi tiết hoạt động doanh nghiệp.'}
-                  </p>
-                  {coreCard?.pills && coreCard.pills.length > 0 && (
-                    <div className="flex flex-wrap gap-1.5 pt-1">
-                      {coreCard.pills.map((pill, i) => (
-                        <span
-                          key={i}
-                          className="rounded-full border border-primary/30 bg-primary/10 px-3 py-1 text-[11px] font-semibold text-primary"
-                        >
-                          {pill}
-                        </span>
-                      ))}
+
+                  {coreCard?.mainMarketTag && (
+                    <div className="shrink-0 rounded-full border border-amber-500/30 bg-amber-500/10 px-3 py-1 text-xs font-semibold text-amber-700 dark:text-amber-300">
+                      {coreCard.mainMarketTag}
                     </div>
                   )}
                 </div>
-              )}
 
-              {/* Bento Columns (Thị trường đầu ra & Động lực) */}
-              {coreCard?.bentoCards && coreCard.bentoCards.length > 0 && (
-                <div className="grid grid-cols-1 gap-4 md:grid-cols-2 pt-1">
-                  {coreCard.bentoCards.map((card, idx) => (
-                    <div
-                      key={idx}
-                      className="rounded-xl border border-border bg-muted/20 p-4 shadow-2xs space-y-2.5"
-                    >
-                      <h4 className="text-xs font-bold text-foreground sm:text-[13px]">
-                        {card.title}
-                      </h4>
-                      <ul className="space-y-2 text-xs leading-relaxed text-muted-foreground">
-                        {card.items.map((item, itemIdx) => (
-                          <li key={itemIdx} className="flex items-start gap-2">
-                            <span className="mt-1 size-1.5 shrink-0 rounded-full bg-primary" />
-                            <span dangerouslySetInnerHTML={{ __html: item }} />
-                          </li>
-                        ))}
-                      </ul>
+                {/* Nội Dung Tóm Tắt & Chỉ Số Cốt Lõi */}
+                <div className="p-4 sm:p-5 space-y-4 flex-1 overflow-y-auto">
+                  {/* Lưới Thông Số Niêm Yết & Tài Chính Nhanh */}
+                  <div className="grid grid-cols-2 gap-2.5 sm:grid-cols-3">
+                    {company.exchange && (
+                      <div className="rounded-lg bg-muted/40 p-2.5 border border-border/40">
+                        <div className="text-[10px] uppercase tracking-wider text-muted-foreground font-semibold">
+                          Sàn niêm yết
+                        </div>
+                        <div className="mt-0.5 text-xs font-bold text-foreground">{company.exchange}</div>
+                      </div>
+                    )}
+
+                    {company.sector && (
+                      <div className="rounded-lg bg-muted/40 p-2.5 border border-border/40">
+                        <div className="text-[10px] uppercase tracking-wider text-muted-foreground font-semibold">
+                          Ngành
+                        </div>
+                        <div className="mt-0.5 text-xs font-bold text-foreground truncate" title={company.sector}>
+                          {company.sector}
+                        </div>
+                      </div>
+                    )}
+
+                    {financials.length > 0 && (
+                      <div className="rounded-lg bg-muted/40 p-2.5 border border-border/40 col-span-2 sm:col-span-1">
+                        <div className="text-[10px] uppercase tracking-wider text-muted-foreground font-semibold">
+                          Dữ liệu BCTC
+                        </div>
+                        <div className="mt-0.5 text-xs font-bold text-foreground">
+                          {financials[0]?.year} – {financials[financials.length - 1]?.year} ({financials.length} năm)
+                        </div>
+                      </div>
+                    )}
+
+                    {bonusWelfareRate != null && (
+                      <div className="rounded-lg border border-amber-500/30 bg-amber-500/10 p-2.5 col-span-2 sm:col-span-3">
+                        <div className="text-[10.5px] uppercase tracking-wider font-bold text-amber-700 dark:text-amber-300 flex items-center justify-between">
+                          <span>Trích Quỹ KTPL</span>
+                          <span className="text-[9px] font-semibold opacity-80">LNST</span>
+                        </div>
+                        <div className="mt-0.5 text-xs font-black text-amber-800 dark:text-amber-200">
+                          {bonusWelfareRate}% {adjustedPE != null ? `(P/E sau trích: ${adjustedPE.toFixed(1)}x)` : ''}
+                        </div>
+                      </div>
+                    )}
+                  </div>
+
+                  {/* Giới Thiệu / Hồ Sơ Tóm Tắt */}
+                  <div className="space-y-2">
+                    <div className="text-[11px] font-bold uppercase tracking-wider text-muted-foreground">
+                      Hồ sơ hoạt động
                     </div>
-                  ))}
-                </div>
-              )}
-
-              {coreCard?.citation && (
-                <div className="border-t border-dashed border-border pt-3 text-[11px] text-muted-foreground leading-relaxed">
-                  <span dangerouslySetInnerHTML={{ __html: coreCard.citation }} />
-                </div>
-              )}
-            </div>
-          </div>
-
-          {/* Hồ sơ doanh nghiệp & Thông tin niêm yết */}
-          <div className="rounded-2xl border border-border bg-card p-6 shadow-xs space-y-4">
-            <h3 className="flex items-center gap-2 text-sm font-bold uppercase tracking-wider text-foreground">
-              <Building2 className="size-4 text-primary" />
-              <span>Hồ Sơ Doanh Nghiệp & Thông Tin Niêm Yết</span>
-            </h3>
-
-            <p className="text-xs leading-relaxed text-muted-foreground sm:text-sm">
-              {profile || 'Chưa có mô tả chi tiết hồ sơ doanh nghiệp.'}
-            </p>
-
-            <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 md:grid-cols-4 pt-2">
-              {company.icb_l1 && (
-                <div className="rounded-lg bg-muted/40 p-2.5">
-                  <div className="text-[10.5px] uppercase tracking-wider text-muted-foreground">
-                    Nhóm ngành
+                    <p className="text-xs leading-relaxed text-foreground/90 sm:text-sm line-clamp-5 sm:line-clamp-6">
+                      {coreCard?.snippet || profile || 'Chưa có mô tả chi tiết hoạt động doanh nghiệp.'}
+                    </p>
+                    {coreCard?.pills && coreCard.pills.length > 0 && (
+                      <div className="flex flex-wrap gap-1.5 pt-1">
+                        {coreCard.pills.map((pill, i) => (
+                          <span
+                            key={i}
+                            className="rounded-full border border-primary/30 bg-primary/10 px-2.5 py-0.5 text-[11px] font-semibold text-primary"
+                          >
+                            {pill}
+                          </span>
+                        ))}
+                      </div>
+                    )}
                   </div>
-                  <div className="mt-0.5 text-xs font-bold text-foreground">{company.icb_l1}</div>
-                </div>
-              )}
 
-              {company.sector && (
-                <div className="rounded-lg bg-muted/40 p-2.5">
-                  <div className="text-[10.5px] uppercase tracking-wider text-muted-foreground">
-                    Ngành (ICB cấp 4)
-                  </div>
-                  <div className="mt-0.5 text-xs font-bold text-foreground">{company.sector}</div>
-                </div>
-              )}
+                  {/* Bento Highlights (Thị trường đầu ra & Động lực nếu có) */}
+                  {coreCard?.bentoCards && coreCard.bentoCards.length > 0 && (
+                    <div className="space-y-2 pt-2 border-t border-border/60">
+                      {coreCard.bentoCards.map((card, idx) => (
+                        <div
+                          key={idx}
+                          className="rounded-xl border border-border bg-muted/20 p-3 shadow-2xs space-y-1.5"
+                        >
+                          <h4 className="text-xs font-bold text-foreground">
+                            {card.title}
+                          </h4>
+                          <ul className="space-y-1 text-xs leading-relaxed text-muted-foreground">
+                            {card.items.slice(0, 3).map((item, itemIdx) => (
+                              <li key={itemIdx} className="flex items-start gap-1.5">
+                                <span className="mt-1 size-1 shrink-0 rounded-full bg-primary" />
+                                <span dangerouslySetInnerHTML={{ __html: item }} />
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+                      ))}
+                    </div>
+                  )}
 
-              {company.exchange && (
-                <div className="rounded-lg bg-muted/40 p-2.5">
-                  <div className="text-[10.5px] uppercase tracking-wider text-muted-foreground">
-                    Sàn niêm yết
-                  </div>
-                  <div className="mt-0.5 text-xs font-bold text-foreground">{company.exchange}</div>
-                </div>
-              )}
-
-              {financials.length > 0 && (
-                <div className="rounded-lg bg-muted/40 p-2.5">
-                  <div className="text-[10.5px] uppercase tracking-wider text-muted-foreground">
-                    Dữ liệu tài chính
-                  </div>
-                  <div className="mt-0.5 text-xs font-bold text-foreground">
-                    {financials[0]?.year} – {financials[financials.length - 1]?.year} ({financials.length} năm)
-                  </div>
-                </div>
-              )}
-
-              {bonusWelfareRate != null && (
-                <div className="rounded-lg border border-amber-500/30 bg-amber-500/10 p-2.5">
-                  <div className="text-[10.5px] uppercase tracking-wider font-bold text-amber-700 dark:text-amber-300 flex items-center justify-between">
-                    <span>Trích Quỹ KTPL</span>
-                    <span className="text-[9px] font-semibold opacity-75">LNST</span>
-                  </div>
-                  <div className="mt-0.5 text-xs font-black text-amber-800 dark:text-amber-200">
-                    {bonusWelfareRate}% {adjustedPE != null ? `(P/E: ${adjustedPE.toFixed(1)}x)` : ''}
-                  </div>
-                </div>
-              )}
-            </div>
-
-            {/* Ngành nghề đăng ký */}
-            {company.business_lines && company.business_lines.length > 0 && (
-              <div className="border-t border-border/60 pt-3">
-                <div className="text-[11px] font-bold uppercase tracking-wider text-muted-foreground">
-                  Ngành nghề kinh doanh đăng ký ({company.business_lines.length} ngành nghề)
-                </div>
-                <div className="mt-2.5 flex flex-wrap gap-1.5">
-                  {company.business_lines.map((line, i) => (
-                    <span
-                      key={i}
-                      className="rounded-md border border-border bg-secondary/40 px-2.5 py-1 text-[11px] text-foreground/80 font-medium"
-                    >
-                      • {line}
-                    </span>
-                  ))}
+                  {coreCard?.citation && (
+                    <div className="border-t border-dashed border-border pt-2 text-[10.5px] text-muted-foreground leading-relaxed">
+                      <span dangerouslySetInnerHTML={{ __html: coreCard.citation }} />
+                    </div>
+                  )}
                 </div>
               </div>
-            )}
+            </div>
           </div>
 
-          {/* Nâng cấp Hồ Sơ Doanh Nghiệp (Cơ cấu cổ đông PieChart, Công ty con & liên kết, Giao dịch nội bộ) */}
+          {/* Mảng Kinh Doanh Cốt Lõi (Bảng chi tiết nếu có) */}
+          {coreCard?.segments && coreCard.segments.length > 0 && (
+            <div className="overflow-hidden rounded-2xl border border-border bg-card p-5 sm:p-6 shadow-xs space-y-3">
+              <div className="text-[11px] font-bold uppercase tracking-wider text-muted-foreground">
+                Chi Tiết Mảng Kinh Doanh Cốt Lõi
+              </div>
+              <div className="overflow-x-auto rounded-xl border border-border">
+                <table className="w-full text-left text-xs">
+                  <thead className="border-b border-border bg-muted/50 font-semibold uppercase tracking-wider text-muted-foreground text-[10.5px]">
+                    <tr>
+                      <th className="px-4 py-3 min-w-[280px]">Mảng sản phẩm</th>
+                      <th className="px-4 py-3 min-w-[220px]">Vai trò</th>
+                      <th className="px-4 py-3 min-w-[100px]">Phân khúc</th>
+                    </tr>
+                  </thead>
+                  <tbody className="divide-y divide-border/60">
+                    {coreCard.segments.map((seg, i) => (
+                      <tr key={i} className="hover:bg-muted/25 transition-colors">
+                        <td className="px-4 py-3.5 align-top">
+                          <div className="font-bold text-foreground text-[13px]">{seg.segment}</div>
+                          <div className="mt-1 text-[12px] leading-relaxed text-muted-foreground">
+                            {seg.description}
+                          </div>
+                        </td>
+                        <td className="px-4 py-3.5 align-top text-[12px] leading-relaxed text-foreground/90 font-medium">
+                          {seg.role}
+                        </td>
+                        <td className="px-4 py-3.5 align-top">
+                          <span className="inline-block rounded-full border border-primary/40 bg-primary/10 px-2.5 py-0.5 text-[11px] font-bold text-primary whitespace-nowrap">
+                            {seg.tag}
+                          </span>
+                        </td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          )}
+
+          {/* Ngành Nghề Kinh Doanh Đăng Ký */}
+          {company.business_lines && company.business_lines.length > 0 && (
+            <div className="rounded-2xl border border-border bg-card p-5 sm:p-6 shadow-xs space-y-3">
+              <div className="text-[11px] font-bold uppercase tracking-wider text-muted-foreground">
+                Ngành nghề kinh doanh đăng ký ({company.business_lines.length} ngành nghề)
+              </div>
+              <div className="flex flex-wrap gap-1.5">
+                {company.business_lines.map((line, i) => (
+                  <span
+                    key={i}
+                    className="rounded-md border border-border bg-secondary/40 px-2.5 py-1 text-[11px] text-foreground/80 font-medium"
+                  >
+                    • {line}
+                  </span>
+                ))}
+              </div>
+            </div>
+          )}
+
+          {/* Nâng Cấp Hồ Sơ Doanh Nghiệp (Cơ Cấu Cổ Đông, Công Ty Con & Liên Kết, Ban Lãnh Đạo, Giao Dịch Nội Bộ) */}
           {companyProfileData ? (
             <CompanyProfileEnhancement symbol={ticker} data={companyProfileData} />
           ) : shareholderData.items.length > 0 ? (

@@ -68,9 +68,8 @@ export default async function StockDetailPage({
   const rawTab = sParams.tab?.toLowerCase()
   let initialTab: 'overview' | 'profile' | 'charts' | 'articles' | 'community' | 'financials' | 'peers' | 'reports' | 'agm' | 'bctc' = 'overview'
 
-  if (rawTab === 'overview' || rawTab === 'tong-quan' || rawTab === 'do-thi' || rawTab === 'chart') initialTab = 'overview'
+  if (rawTab === 'overview' || rawTab === 'tong-quan' || rawTab === 'do-thi' || rawTab === 'chart' || rawTab === 'profile' || rawTab === 'ho-so') initialTab = 'overview'
   else if (rawTab === 'charts' || rawTab === 'financial-charts' || rawTab === 'tai-chinh' || rawTab === 'bctc-chart') initialTab = 'charts'
-  else if (rawTab === 'profile') initialTab = 'profile'
   else if (rawTab === 'articles' || rawTab === 'news' || rawTab === 'bai-viet' || rawTab === 'tin-tuc') initialTab = 'articles'
   else if (rawTab === 'community' || rawTab === 'cong-dong' || rawTab === 'thao-luan' || rawTab === 'dien-dan') initialTab = 'community'
   else if (rawTab === 'financials') initialTab = 'financials'

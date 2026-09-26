@@ -95,13 +95,15 @@ export async function getFinancialChartData(
       expiresAt: Date.now() + CACHE_TTL_MS,
     })
 
-    // Tự động ghi vào ổ đĩa để các lần sau đạt tốc độ < 0.1ms
-    try {
-      if (!fs.existsSync(targetDir)) {
-        fs.mkdirSync(targetDir, { recursive: true })
-      }
-      fs.writeFileSync(cacheFile, JSON.stringify(remoteData), 'utf-8')
-    } catch {}
+    // Tự động ghi vào ổ đĩa để các lần sau đạt tốc độ < 0.1ms (bỏ qua trên dev để tránh kích hoạt HMR)
+    if (process.env.NODE_ENV !== 'development') {
+      try {
+        if (!fs.existsSync(targetDir)) {
+          fs.mkdirSync(targetDir, { recursive: true })
+        }
+        fs.writeFileSync(cacheFile, JSON.stringify(remoteData), 'utf-8')
+      } catch {}
+    }
 
     return remoteData
   }

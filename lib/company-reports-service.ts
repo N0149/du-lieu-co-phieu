@@ -237,10 +237,76 @@ export function saveLocalCompanyReports(symbol: string, reports: CompanyReportIt
   }
 }
 
+const lastLiveCheckByTicker = new Map<string, number>()
+const LIVE_CHECK_TTL_MS = 30 * 60 * 1000 // 30 phút
+
+async function fetchLiveReportsForTicker(ticker: string): Promise<CompanyReportItem[]> {
+  const controller = new AbortController()
+  const timer = setTimeout(() => controller.abort(), 2800)
+  try {
+    const res = await fetch(`${API_BASE_URL}/${encodeURIComponent(ticker)}?page=1&page_size=20`, {
+      headers: {
+        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36',
+        Origin: 'https://ruatichsan.com',
+      },
+      signal: controller.signal,
+      cache: 'no-store',
+    })
+    if (!res.ok) return []
+    const data = await decryptApiResponse(res)
+    const rawList: any[] = data?.reports || []
+    return rawList.map((r) => {
+      const date = String(r.date || '').slice(0, 10)
+      const title = String(r.title || '').trim()
+      const desc = String(r.description || '').trim()
+      const { rec, target } = extractRecAndTarget(title, desc, r.recommendation, r.target_price)
+      return {
+        id: String(r.id),
+        symbol: ticker,
+        title,
+        slug: r.slug || '',
+        source: (r.source || 'Khác').trim(),
+        date,
+        displayDate: formatDisplayDate(date),
+        recommendation: rec,
+        targetPrice: target,
+        pageCount: Number(r.page_count) || 0,
+        description: desc,
+        downloadUrl: r.download_url || '',
+        thumbnailUrl: r.thumbnail_url || '',
+      }
+    })
+  } catch {
+    return []
+  } finally {
+    clearTimeout(timer)
+  }
+}
+
 export async function fetchAndCacheCompanyReports(symbol: string): Promise<CompanyReportItem[]> {
   const ticker = symbol.toUpperCase().trim()
 
   // 1. Đọc trực tiếp từ SQLite company_reports.db nội bộ (< 0.2ms)
-  const local = getLocalCompanyReports(ticker)
-  return local || []
+  const local = getLocalCompanyReports(ticker) || []
+
+  // 2. Tự động kiểm tra bài phân tích mới online (mỗi 30 phút/mã) để luôn có báo cáo mới nhất
+  const now = Date.now()
+  const lastCheck = lastLiveCheckByTicker.get(ticker) || 0
+  if (now - lastCheck > LIVE_CHECK_TTL_MS) {
+    lastLiveCheckByTicker.set(ticker, now)
+    const liveReports = await fetchLiveReportsForTicker(ticker)
+    if (liveReports.length > 0) {
+      saveLocalCompanyReports(ticker, liveReports)
+      const mergedMap = new Map<string, CompanyReportItem>()
+      for (const item of [...liveReports, ...local]) {
+        if (!mergedMap.has(item.id)) {
+          mergedMap.set(item.id, item)
+        }
+      }
+      return Array.from(mergedMap.values()).sort((a, b) => (b.date || '').localeCompare(a.date || ''))
+    }
+  }
+
+  return local
 }
+

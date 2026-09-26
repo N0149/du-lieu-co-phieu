@@ -605,24 +605,35 @@ export async function fetchTinNhanhCKNews(): Promise<RawNewsItem[]> {
   return items
 }
 
-// In-memory cache
-let inMemoryNewsCache: RawNewsItem[] | null = null
-let lastFetchedTimestamp = 0
-let isFetchingInProgress = false
+// In-memory cache (lưu trên globalThis để giữ ổn định qua các lần HMR trên môi trường dev)
+const globalForRss = globalThis as unknown as {
+  __inMemoryNewsCache?: RawNewsItem[] | null
+  __lastFetchedTimestamp?: number
+  __isFetchingInProgress?: boolean
+}
 
 export async function fetchAllRssFeeds(force = false): Promise<RawNewsItem[]> {
   const now = Date.now()
   const TTL = 180 * 1000 // 3 phút cache
 
-  if (!force && inMemoryNewsCache && inMemoryNewsCache.length > 0 && now - lastFetchedTimestamp < TTL) {
-    return inMemoryNewsCache
+  if (
+    !force &&
+    globalForRss.__inMemoryNewsCache &&
+    globalForRss.__inMemoryNewsCache.length > 0 &&
+    now - (globalForRss.__lastFetchedTimestamp || 0) < TTL
+  ) {
+    return globalForRss.__inMemoryNewsCache
   }
 
-  if (isFetchingInProgress && inMemoryNewsCache && inMemoryNewsCache.length > 0) {
-    return inMemoryNewsCache
+  if (
+    globalForRss.__isFetchingInProgress &&
+    globalForRss.__inMemoryNewsCache &&
+    globalForRss.__inMemoryNewsCache.length > 0
+  ) {
+    return globalForRss.__inMemoryNewsCache
   }
 
-  isFetchingInProgress = true
+  globalForRss.__isFetchingInProgress = true
 
   try {
     const rssFetchTasks = RSS_SOURCES.map(async (source) => {
@@ -663,9 +674,9 @@ export async function fetchAllRssFeeds(force = false): Promise<RawNewsItem[]> {
       }
     }
 
-    if (allItems.length === 0 && inMemoryNewsCache) {
-      isFetchingInProgress = false
-      return inMemoryNewsCache
+    if (allItems.length === 0 && globalForRss.__inMemoryNewsCache) {
+      globalForRss.__isFetchingInProgress = false
+      return globalForRss.__inMemoryNewsCache
     }
 
     const seenLinks = new Set<string>()
@@ -717,25 +728,19 @@ export async function fetchAllRssFeeds(force = false): Promise<RawNewsItem[]> {
     // Sắp xếp giảm dần theo thời gian công bố
     uniqueItems.sort((a, b) => new Date(b.pubDate).getTime() - new Date(a.pubDate).getTime())
 
-    inMemoryNewsCache = uniqueItems
-    lastFetchedTimestamp = Date.now()
+    globalForRss.__inMemoryNewsCache = uniqueItems
+    globalForRss.__lastFetchedTimestamp = Date.now()
 
-    // Lưu vào file data/news_snapshot.json trong background
-    try {
-      const dataDir = path.join(process.cwd(), 'data')
-      if (fs.existsSync(dataDir)) {
-        const outputPath = path.join(dataDir, 'news_snapshot.json')
-        fs.writeFileSync(outputPath, JSON.stringify(uniqueItems, null, 2), 'utf8')
-      }
-    } catch {}
+    // Lưu ý: Không ghi đè file data/news_snapshot.json trực tiếp trong runtime của Next.js server
+    // để tránh kích hoạt Turbopack/HMR reload trang liên tục trên môi trường development.
 
     return uniqueItems
   } catch (err) {
     console.warn('[RSS Service] Fetch error, falling back to cache/bundled:', err)
-    if (inMemoryNewsCache) return inMemoryNewsCache
+    if (globalForRss.__inMemoryNewsCache) return globalForRss.__inMemoryNewsCache
     return (newsSnapshotRaw as unknown as RawNewsItem[]) || []
   } finally {
-    isFetchingInProgress = false
+    globalForRss.__isFetchingInProgress = false
   }
 }
 
@@ -771,20 +776,28 @@ export function getCachedNews(): RawNewsItem[] {
     })
   }
 
-  if (inMemoryNewsCache && inMemoryNewsCache.length > 0) {
-    return sanitizeList(inMemoryNewsCache)
+  if (globalForRss.__inMemoryNewsCache && globalForRss.__inMemoryNewsCache.length > 0) {
+    return sanitizeList(globalForRss.__inMemoryNewsCache)
   }
   try {
     const filePath = path.join(process.cwd(), 'data', 'news_snapshot.json')
     if (fs.existsSync(filePath)) {
       const content = fs.readFileSync(filePath, 'utf-8')
-      inMemoryNewsCache = sanitizeList(JSON.parse(content))
-      return inMemoryNewsCache || []
+      globalForRss.__inMemoryNewsCache = sanitizeList(JSON.parse(content))
+      if (!globalForRss.__lastFetchedTimestamp) {
+        globalForRss.__lastFetchedTimestamp = Date.now()
+      }
+      return globalForRss.__inMemoryNewsCache || []
     }
   } catch {}
-  return sanitizeList((newsSnapshotRaw as unknown as RawNewsItem[]) || [])
+  const fallback = sanitizeList((newsSnapshotRaw as unknown as RawNewsItem[]) || [])
+  globalForRss.__inMemoryNewsCache = fallback
+  if (!globalForRss.__lastFetchedTimestamp) {
+    globalForRss.__lastFetchedTimestamp = Date.now()
+  }
+  return fallback
 }
 
 export function getLastFetchedTime(): number {
-  return lastFetchedTimestamp
+  return globalForRss.__lastFetchedTimestamp || 0
 }

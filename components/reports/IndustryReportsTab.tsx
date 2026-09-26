@@ -59,12 +59,40 @@ export function IndustryReportsTab() {
   const pageSize = 15;
 
   const rawReports: IndustryReportItem[] = useMemo(() => {
-    return (industryData.reports as IndustryReportItem[]) || [];
+    const list: any[] = Array.isArray(industryData)
+      ? industryData
+      : (industryData as any)?.reports || [];
+    return list.map((r: any) => ({
+      id: String(r.id || ""),
+      slug: r.slug || "",
+      title: r.title || "",
+      source: r.source || "Khác",
+      date: r.date || "",
+      displayDate: r.displayDate || r.display_date || r.date || "",
+      scope: r.scope || "sector",
+      sectorName: r.sectorName || r.sector_name || "Ngành chung",
+      symbol: r.symbol || null,
+      description: r.description || "",
+      pageCount: Number(r.pageCount || r.page_count) || 0,
+      downloadUrl: r.downloadUrl || r.download_url || "",
+      thumbnailUrl: r.thumbnailUrl || r.thumbnail_url || "",
+      recommendation: r.recommendation || null,
+      targetPrice: r.targetPrice != null ? Number(r.targetPrice) : r.target_price != null ? Number(r.target_price) : null,
+    }));
   }, []);
 
   const availableSectors = useMemo(() => {
-    return (industryData.availableSectors as string[]) || [];
-  }, []);
+    if (!Array.isArray(industryData) && (industryData as any)?.availableSectors?.length) {
+      return (industryData as any).availableSectors as string[];
+    }
+    const set = new Set<string>();
+    for (const r of rawReports) {
+      if (r.sectorName && r.sectorName !== "Ngành chung") {
+        set.add(r.sectorName);
+      }
+    }
+    return Array.from(set).sort();
+  }, [rawReports]);
 
   const availableSources = useMemo(() => {
     const sources = new Set<string>();
