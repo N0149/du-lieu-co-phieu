@@ -20,6 +20,9 @@ import {
   ChevronRight,
   Sparkles,
   Landmark,
+  Gavel,
+  Zap,
+  Fish,
 } from 'lucide-react'
 import { cn } from '@/lib/utils'
 
@@ -98,6 +101,27 @@ export const NAV_GROUPS: NavGroup[] = [
         icon: Anchor,
         badge: 'Tàu bè',
         description: 'Tình báo hàng hải & sản lượng cảng biển',
+      },
+      {
+        label: 'Đấu Thầu & ĐTC',
+        href: '/dau-thau',
+        icon: Gavel,
+        badge: 'Mới',
+        description: 'Tình báo đấu thầu y tế (ETC), cổ phiếu Dược & đại dự án ĐTC',
+      },
+      {
+        label: 'Ngành Điện & NSMO',
+        href: '/nganh-dien',
+        icon: Zap,
+        badge: 'Hồ chứa',
+        description: 'Dữ liệu điều độ NSMO, thủy văn hồ chứa & 36 cổ phiếu điện',
+      },
+      {
+        label: 'Thủy Sản & VASEP',
+        href: '/thuy-san',
+        icon: Fish,
+        badge: 'Q3/2026',
+        description: 'Tình báo VASEP, giá nguyên liệu & so sánh 12 cổ phiếu',
       },
       {
         label: 'Xuất nhập khẩu',

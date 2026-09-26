@@ -1,0 +1,1167 @@
+{
+  "forecast": {
+    "kpis": {
+      "total_projects": 71,
+      "total_capital_vnd": 3883505403104111.0,
+      "total_capital_billion_vnd": 3883505.4,
+      "status_breakdown": {
+        "preparing": {
+          "count": 44,
+          "capital_vnd": 3255198403104111.0,
+          "capital_billion_vnd": 3255198.4
+        },
+        "construction": {
+          "count": 11,
+          "capital_vnd": 433890000000000.0,
+          "capital_billion_vnd": 433890.0
+        },
+        "completed": {
+          "count": 16,
+          "capital_vnd": 194417000000000.0,
+          "capital_billion_vnd": 194417.0
+        }
+      },
+      "packages_kpi": {
+        "total_count": 80,
+        "total_price_vnd": 327413859261511.0,
+        "total_price_billion_vnd": 327413.9,
+        "awarded_price_billion_vnd": 193530.9
+      },
+      "ncr_ratio": 18.98,
+      "current_quarter": "2026-Q3"
+    },
+    "forecast_current": {
+      "quarter": "2026-Q3",
+      "status": "TĂNG MẠNH",
+      "score": 85,
+      "net_pressure_billion": 60008.4,
+      "completion_billion": 0.0,
+      "absorption_billion": 60008.4
+    },
+    "turning_point_quarter": "2026-Q4",
+    "top_completion_quarters": [
+      {
+        "quarter": "2029-Q4",
+        "absorption_billion": 153411.0,
+        "completion_billion": 555159.4,
+        "cumulative_completed_billion": 1719345.3,
+        "net_pressure_billion": -401748.4,
+        "ratio": 0.28,
+        "rate_pressure_score": -85,
+        "rate_trend": "GIẢM MẠNH",
+        "completing_projects": [
+          {
+            "code": "PR2600061415",
+            "name": "“Đầu tư phương tiện, thiết bị phục vụ công tác tu bổ, phục chế hồ sơ, tài liệu nghiệp vụ Công an nhân dân”",
+            "capital_billion": 538000.0,
+            "sector": "Hạ tầng giao thông"
+          },
+          {
+            "code": "PR2400067471",
+            "name": "Dự án Chống chịu khí hậu và chuyển đổi tổng hợp vùng Đồng bằng sông Cửu Long (MERIT)",
+            "capital_billion": 5801.2,
+            "sector": "Hạ tầng giao thông"
+          },
+          {
+            "code": "PR2600068111",
+            "name": "Xây dựng cầu Cửa Đại trên tuyến đường bộ ven biển kết nối tỉnh Bến Tre với tỉnh Tiền Giang (nay là tỉnh Vĩnh Long với tỉnh Đồng Tháp)",
+            "capital_billion": 4564.7,
+            "sector": "Hạ tầng giao thông"
+          },
+          {
+            "code": "PR2600065730",
+            "name": "Hệ thống đèn chiếu sáng trên đường Trung tâm xã và đường Quang Khương",
+            "capital_billion": 3905.5,
+            "sector": "Hạ tầng giao thông"
+          },
+          {
+            "code": "PR2600063587",
+            "name": "Dự án sửa chữa lớn mặt đường, thay thế bổ sung hệ thống an toàn giao thông đoạn Km0+000-Km123+080 thuộc đường cao tốc Nội Bài – Lào Cai",
+            "capital_billion": 2887.9,
+            "sector": "Hạ tầng giao thông"
+          }
+        ]
+      },
+      {
+        "quarter": "2030-Q1",
+        "absorption_billion": 106063.3,
+        "completion_billion": 319285.5,
+        "cumulative_completed_billion": 2038630.8,
+        "net_pressure_billion": -213222.2,
+        "ratio": 0.33,
+        "rate_pressure_score": -85,
+        "rate_trend": "GIẢM MẠNH",
+        "completing_projects": [
+          {
+            "code": "PR2600067563",
+            "name": "Xây dựng thay thế và cải tạo, nâng cấp Trường Trung học phổ thông An Lạc, quận Bình Tân",
+            "capital_billion": 231233.3,
+            "sector": "Hạ tầng giao thông"
+          },
+          {
+            "code": "PR2600065346",
+            "name": "Dự án thành phần 3: Đầu tư xây dựng tuyến đường bộ cao tốc Bắc Kạn - Cao Bằng",
+            "capital_billion": 27688.4,
+            "sector": "Hạ tầng giao thông"
+          },
+          {
+            "code": "PR2600065290",
+            "name": "Dự án đầu tư xây dựng tuyến đường từ thành phố Thái Bình đi huyện Hưng Hà kết nối với tỉnh Hưng Yên (nay là từ phường Thái Bình đến xã Hưng Hà)",
+            "capital_billion": 9596.3,
+            "sector": "Hạ tầng giao thông"
+          },
+          {
+            "code": "PR2600069686",
+            "name": "Nạo vét, cải tạo môi trường kết hợp chỉnh trang đô thị trục thoát nước rạch Bà Lớn",
+            "capital_billion": 9228.2,
+            "sector": "Đô thị & Nhà ở"
+          },
+          {
+            "code": "PR2600068320",
+            "name": "Xây dựng tuyến đường bộ ven biển kết nối tỉnh Bến Tre với tỉnh Tiền Giang và Trà Vinh (tỉnh Vĩnh Long với tỉnh Đồng Tháp)",
+            "capital_billion": 7904.6,
+            "sector": "Hạ tầng giao thông"
+          },
+          {
+            "code": "PR2600066490",
+            "name": "Đầu tư xây dựng tuyến chính và tuyến kết nối thuộc dự án đường Tân An - Bình Hiệp, Dự án thành phần 6.1: Đầu tư xây dựng tuyến chính và các tuyến kết nối (Không bao gồm tuyến kết nối với đường cao tốc CT.01).",
+            "capital_billion": 6759.6,
+            "sector": "Hạ tầng giao thông"
+          },
+          {
+            "code": "PR2600066985",
+            "name": "Xây dựng cải tạo, mở rộng đường Tôn Thất Thuyết và công viên cây xanh dọc bờ kênh Tẻ",
+            "capital_billion": 5554.4,
+            "sector": "Hạ tầng giao thông"
+          },
+          {
+            "code": "PR2600064365",
+            "name": "Tạo lập quỹ đất vùng phụ cận các điểm kết nối giao thông và các tuyến giao thông có tiềm năng phát triển để tổ chức đấu giá quyền sử dụng đất tại phường Nhơn Trạch,\nthành phố Đồng Nai (khu đất khoảng 358 ha)",
+            "capital_billion": 3303.9,
+            "sector": "Hạ tầng giao thông"
+          },
+          {
+            "code": "PR2600064402",
+            "name": "Bồi thường, hỗ trợ, tái định cư thuộc địa phận thành phố Hà Nội thuộc Dự án đầu tư xây dựng tuyến đường sắt Lào Cai - Hà Nội - Hải Phòng (đoạn qua địa bàn xã Phù Đổng, thành phố Hà Nội)",
+            "capital_billion": 3274.6,
+            "sector": "Đường sắt đô thị"
+          },
+          {
+            "code": "PR2600062073",
+            "name": "Dự án thành phần số 1: Nâng cấp, cải tạo, gia cố kênh Kim Sơn từ cống Báo Đáp đến cống Kênh Cầu thuộc Dự án Nâng cấp, hiện đại hóa và cải thiện môi trường nước hệ thống thủy lợi Bắc Hưng Hải",
+            "capital_billion": 2912.2,
+            "sector": "Thủy lợi & Ứng phó BĐKH"
+          },
+          {
+            "code": "PR2600070617",
+            "name": "Xây dựng các công trình cơ sở hạ tầng lưỡng dụng phục vụ phát triển KT-XH vùng đồng bào dân tộc thiểu số và miền núi, kết hợp đảm bảo QP-AN ở khu vực biên giới tỉnh Lào Cai",
+            "capital_billion": 2407.9,
+            "sector": "Hạ tầng giao thông"
+          },
+          {
+            "code": "PR2600063803",
+            "name": "Dự án xây dựng tuyến đường từ thị trấn Phước Long, huyện Phước Long đi Ba Đình, huyện Hồng Dân",
+            "capital_billion": 1471.0,
+            "sector": "Hạ tầng giao thông"
+          },
+          {
+            "code": "PR2600067582",
+            "name": "Dự án đầu tư xây dựng tuyến đường từ đường Hồ Sen đến nút giao thông Quán Mau",
+            "capital_billion": 1244.1,
+            "sector": "Hạ tầng giao thông"
+          },
+          {
+            "code": "PR2600068116",
+            "name": "Đường Bắc Nam phục vụ Khu công nghiệp Phú Thuận và Cụm công nghiệp Phong Nẫm (ĐT.DK.08), liên huyện Bình Đại - Giồng Trôm, tỉnh Bến Tre (giai đoạn 2)",
+            "capital_billion": 1220.0,
+            "sector": "Hạ tầng giao thông"
+          },
+          {
+            "code": "PR2600067175",
+            "name": "Nâng cấp, mở rộng các tuyến đường thôn Vĩnh Thái",
+            "capital_billion": 1200.0,
+            "sector": "Hạ tầng giao thông"
+          },
+          {
+            "code": "PR2600068113",
+            "name": "Đại lộ Đông Tây (Giai đoạn 2)",
+            "capital_billion": 1150.0,
+            "sector": "Hạ tầng giao thông"
+          },
+          {
+            "code": "PR2600068245",
+            "name": "Dự án thành phần 2: Nâng cấp, mở rộng đường ĐT.744B (đoạn từ ĐT.749F đến đường ĐT.744 Bưng Còng)",
+            "capital_billion": 1106.1,
+            "sector": "Hạ tầng giao thông"
+          },
+          {
+            "code": "PR2600067884",
+            "name": "Dự án thành phần 1: Bồi thường, hỗ trợ, tái định cư, giải phóng mặt bằng, thuộc dự án đầu tư: Đoạn tuyến cao tốc Sơn La - Điện Biên - Cửa khẩu Tây Trang (giai đoạn 1)",
+            "capital_billion": 1024.1,
+            "sector": "Năng lượng & Điện lực"
+          },
+          {
+            "code": "PR2600067079",
+            "name": "Dự án ĐTXD Nhà ở cho gia đình lực lượng vũ trang trong Quân đội tại phường Phương Liệt, thành phố Hà Nội",
+            "capital_billion": 1006.7,
+            "sector": "Đô thị & Nhà ở"
+          }
+        ]
+      },
+      {
+        "quarter": "2026-Q4",
+        "absorption_billion": 61718.0,
+        "completion_billion": 303386.0,
+        "cumulative_completed_billion": 499372.2,
+        "net_pressure_billion": -241668.0,
+        "ratio": 0.2,
+        "rate_pressure_score": -85,
+        "rate_trend": "GIẢM MẠNH",
+        "completing_projects": [
+          {
+            "code": "PR_LONG_THANH_G1",
+            "name": "Dự án Đầu tư xây dựng Cảng Hàng không Quốc tế Long Thành - Giai đoạn 1",
+            "capital_billion": 109111.0,
+            "sector": "Cảng hàng không"
+          },
+          {
+            "code": "PR_VANH_DAI_3_HCM",
+            "name": "Dự án Đầu tư xây dựng đường Vành đai 3 Thành phố Hồ Chí Minh",
+            "capital_billion": 75378.0,
+            "sector": "Hạ tầng giao thông"
+          },
+          {
+            "code": "PR_CT_CANTHO_CAMAU",
+            "name": "Dự án Xây dựng công trình đường bộ cao tốc Bắc - Nam: Đoạn Cần Thơ - Cà Mau",
+            "capital_billion": 27523.0,
+            "sector": "Hạ tầng giao thông"
+          },
+          {
+            "code": "PR_CT_KHANHHOA_BMT",
+            "name": "Dự án Đầu tư xây dựng đường bộ cao tốc Khánh Hòa - Buôn Ma Thuột (Giai đoạn 1)",
+            "capital_billion": 21935.0,
+            "sector": "Hạ tầng giao thông"
+          },
+          {
+            "code": "PR_CT_QUANGNGAI_HOAINHON",
+            "name": "Dự án Xây dựng công trình cao tốc Bắc - Nam: Đoạn Quảng Ngãi - Hoài Nhơn",
+            "capital_billion": 20469.0,
+            "sector": "Hạ tầng giao thông"
+          },
+          {
+            "code": "PR_CT_BIENHOA_VUNGTAU",
+            "name": "Dự án Đầu tư xây dựng đường bộ cao tốc Biên Hòa - Vũng Tàu (Giai đoạn 1)",
+            "capital_billion": 17829.0,
+            "sector": "Hạ tầng giao thông"
+          },
+          {
+            "code": "PR_CT_DONGDANG_TRALINH",
+            "name": "Dự án Đầu tư xây dựng tuyến cao tốc Đồng Đăng (Lạng Sơn) - Trà Lĩnh (Cao Bằng) theo hình thức PPP",
+            "capital_billion": 14331.0,
+            "sector": "Hạ tầng giao thông"
+          },
+          {
+            "code": "PR_CT_TUYENQUANG_HAGIANG",
+            "name": "Dự án Cao tốc Tuyên Quang - Hà Giang (Giai đoạn 1)",
+            "capital_billion": 10000.0,
+            "sector": "Hạ tầng giao thông"
+          },
+          {
+            "code": "PR_CAU_RACH_MIEU_2",
+            "name": "Dự án Đầu tư xây dựng cầu Rạch Miễu 2 nối tỉnh Tiền Giang và Bến Tre",
+            "capital_billion": 6810.0,
+            "sector": "Cầu đường bộ"
+          }
+        ]
+      }
+    ],
+    "thesis_analysis": {
+      "capital_sink_phase": "Trong giai đoạn 2023 - 2024, nền kinh tế chứng kiến sự mở mới đồng loạt của hàng loạt đại dự án: 12 dự án thành phần Cao tốc Bắc - Nam giai đoạn 2 (hơn 147.000 tỷ), Vành đai 3 TP.HCM (75.378 tỷ), Vành đai 4 Hà Nội (85.813 tỷ), và Sân bay Long Thành Giai đoạn 1 (109.111 tỷ). Giai đoạn này là đỉnh điểm thâm dụng vốn (Capital Sinking): Kho bạc Nhà nước tăng cường phát hành Trái phiếu Chính phủ, doanh nghiệp xây lắp ồ ạt vay vốn ngân hàng để bảo lãnh dự thầu, mua máy móc vật tư. Cầu vốn tín dụng dồn dập khiến thanh khoản bị hút cạn, gây hiệu ứng chèn lấn (crowding-out) và đẩy mặt bằng lãi suất tăng/neo cao.",
+      "maturation_cliff_phase": "Từ quý 3/2025 đến hết năm 2026 (đặc biệt là mốc đảo chiều tại 2026-Q4), chu kỳ thâm dụng vốn chính thức chuyển sang giai đoạn Điểm rơi Hoàn thành (Capital Maturation). Khối lượng công trình hoàn thành đưa vào khai thác lên tới hàng trăm nghìn tỷ đồng (với các đỉnh hoàn thành lớn nhất tại 2029-Q4 (555,159 tỷ), 2030-Q1 (319,286 tỷ), 2026-Q4 (303,386 tỷ)). Khi các dự án trọng điểm hoàn thành: (1) Dòng tiền thanh quyết toán được giải phóng từ Kho bạc về nhà thầu, doanh nghiệp hoàn trả nợ vay ngân hàng, thanh khoản hệ thống ngân hàng được bù đắp trở lại dồi dào; (2) Hạ tầng giao thông thông suốt giúp giảm chi phí logistics (chiếm ~16% GDP), tăng tốc độ chu chuyển tiền tệ (V), hạ áp lực lạm phát chi phí đẩy. Đây chính là cơ sở kinh tế vững chắc để Ngân hàng Nhà nước hạ Lãi suất Điều hành và lãi suất thị trường bước vào xu hướng GIẢM.",
+      "strategic_implication": "KẾT LUẬN DỰ BÁO LÃI SUẤT: 1. Ngắn hạn (Quý hiện tại): Áp lực lãi suất duy trì TRUNG TÍNH ĐẾN GIẢM NHẸ do một số đoạn cao tốc đã về đích. 2. Trung hạn (2026 - 2027): XU HƯỚNG LÃI SUẤT GIẢM RÕ NÉT khi điểm rơi hoàn thành của các đại dự án nghìn tỷ đạt cực đại (2026-Q4). 3. Dài hạn (2028+): Cần theo dõi tiến độ khởi công Đường sắt tốc độ cao Bắc - Nam (67 tỷ USD) và Cảng Cần Giờ; nếu các siêu dự án này mở mới rầm rộ vào 2027-2028, chu kỳ thâm dụng vốn mới sẽ kích hoạt trở lại làm lãi suất đảo chiều tăng."
+    },
+    "sector_list": [
+      {
+        "sector": "Đường sắt cao tốc",
+        "count": 1,
+        "capital_billion": 1713594.0,
+        "percent": 44.1
+      },
+      {
+        "sector": "Hạ tầng giao thông",
+        "count": 54,
+        "capital_billion": 1511073.6,
+        "percent": 38.9
+      },
+      {
+        "sector": "Năng lượng & Dầu khí",
+        "count": 1,
+        "capital_billion": 298000.0,
+        "percent": 7.7
+      },
+      {
+        "sector": "Cảng biển & Logistics",
+        "count": 1,
+        "capital_billion": 129000.0,
+        "percent": 3.3
+      },
+      {
+        "sector": "Cảng hàng không",
+        "count": 1,
+        "capital_billion": 109111.0,
+        "percent": 2.8
+      },
+      {
+        "sector": "Đường sắt đô thị",
+        "count": 3,
+        "capital_billion": 59531.6,
+        "percent": 1.5
+      },
+      {
+        "sector": "Năng lượng điện",
+        "count": 1,
+        "capital_billion": 22356.0,
+        "percent": 0.6
+      },
+      {
+        "sector": "Đô thị & Nhà ở",
+        "count": 4,
+        "capital_billion": 21000.5,
+        "percent": 0.5
+      },
+      {
+        "sector": "Cầu đường bộ",
+        "count": 2,
+        "capital_billion": 11813.0,
+        "percent": 0.3
+      },
+      {
+        "sector": "Năng lượng & Điện lực",
+        "count": 2,
+        "capital_billion": 5113.5,
+        "percent": 0.1
+      },
+      {
+        "sector": "Thủy lợi & Ứng phó BĐKH",
+        "count": 1,
+        "capital_billion": 2912.2,
+        "percent": 0.1
+      }
+    ],
+    "timeline": [
+      {
+        "quarter": "2023-Q1",
+        "absorption_billion": 33744.1,
+        "completion_billion": 0.0,
+        "cumulative_completed_billion": 0.0,
+        "net_pressure_billion": 33744.1,
+        "ratio": 674.88,
+        "rate_pressure_score": 85,
+        "rate_trend": "TĂNG MẠNH",
+        "completing_projects": []
+      },
+      {
+        "quarter": "2023-Q2",
+        "absorption_billion": 52096.7,
+        "completion_billion": 43141.0,
+        "cumulative_completed_billion": 43141.0,
+        "net_pressure_billion": 8955.7,
+        "ratio": 1.21,
+        "rate_pressure_score": 0,
+        "rate_trend": "ĐI NGANG / TRUNG TÍNH",
+        "completing_projects": [
+          {
+            "code": "PR_CT_PHANTHIET_DAUGIAY",
+            "name": "Dự án Xây dựng công trình cao tốc Bắc - Nam: Đoạn Phan Thiết - Dầu Giây",
+            "capital_billion": 12577.0,
+            "sector": "Hạ tầng giao thông"
+          },
+          {
+            "code": "PR_CT_MAISON_QL45",
+            "name": "Dự án Xây dựng công trình cao tốc Bắc - Nam: Đoạn Mai Sơn - Quốc lộ 45",
+            "capital_billion": 12111.0,
+            "sector": "Hạ tầng giao thông"
+          },
+          {
+            "code": "PR_CT_VINHHAO_PHANTIET",
+            "name": "Dự án Xây dựng công trình cao tốc Bắc - Nam: Đoạn Vĩnh Hảo - Phan Thiết",
+            "capital_billion": 10853.0,
+            "sector": "Hạ tầng giao thông"
+          },
+          {
+            "code": "PR_CT_NHATRANG_CAMLAM",
+            "name": "Dự án Xây dựng công trình cao tốc Bắc - Nam: Đoạn Nha Trang - Cam Lâm theo hình thức PPP",
+            "capital_billion": 7600.0,
+            "sector": "Hạ tầng giao thông"
+          }
+        ]
+      },
+      {
+        "quarter": "2023-Q3",
+        "absorption_billion": 37497.7,
+        "completion_billion": 12827.0,
+        "cumulative_completed_billion": 55968.0,
+        "net_pressure_billion": 24670.7,
+        "ratio": 2.91,
+        "rate_pressure_score": 50,
+        "rate_trend": "TĂNG NHẸ",
+        "completing_projects": [
+          {
+            "code": "PR_CT_NGHISON_DIENCHAU",
+            "name": "Dự án Xây dựng công trình cao tốc Bắc - Nam: Đoạn Nghi Sơn - Diễn Châu",
+            "capital_billion": 7293.0,
+            "sector": "Hạ tầng giao thông"
+          },
+          {
+            "code": "PR_CT_QL45_NGHISON",
+            "name": "Dự án Xây dựng công trình cao tốc Bắc - Nam: Đoạn Quốc lộ 45 - Nghi Sơn",
+            "capital_billion": 5534.0,
+            "sector": "Hạ tầng giao thông"
+          }
+        ]
+      },
+      {
+        "quarter": "2023-Q4",
+        "absorption_billion": 41323.4,
+        "completion_billion": 9829.0,
+        "cumulative_completed_billion": 65797.0,
+        "net_pressure_billion": 31494.4,
+        "ratio": 4.18,
+        "rate_pressure_score": 85,
+        "rate_trend": "TĂNG MẠNH",
+        "completing_projects": [
+          {
+            "code": "PR_CAU_MY_THUAN_2",
+            "name": "Dự án Đầu tư xây dựng cầu Mỹ Thuận 2 và đường dẫn hai đầu cầu",
+            "capital_billion": 5003.0,
+            "sector": "Cầu đường bộ"
+          },
+          {
+            "code": "PR_CT_MYTHUAN_CANTHO",
+            "name": "Dự án Đầu tư xây dựng đường bộ cao tốc Mỹ Thuận - Cần Thơ (Giai đoạn 1)",
+            "capital_billion": 4826.0,
+            "sector": "Hạ tầng giao thông"
+          }
+        ]
+      },
+      {
+        "quarter": "2024-Q1",
+        "absorption_billion": 50003.0,
+        "completion_billion": 0.0,
+        "cumulative_completed_billion": 65797.0,
+        "net_pressure_billion": 50003.0,
+        "ratio": 1000.06,
+        "rate_pressure_score": 85,
+        "rate_trend": "TĂNG MẠNH",
+        "completing_projects": []
+      },
+      {
+        "quarter": "2024-Q2",
+        "absorption_billion": 58930.0,
+        "completion_billion": 20082.0,
+        "cumulative_completed_billion": 85879.0,
+        "net_pressure_billion": 38848.0,
+        "ratio": 2.93,
+        "rate_pressure_score": 85,
+        "rate_trend": "TĂNG MẠNH",
+        "completing_projects": [
+          {
+            "code": "PR_CT_DIENCHAU_BAIVOT",
+            "name": "Dự án Xây dựng công trình cao tốc Bắc - Nam: Đoạn Diễn Châu - Bãi Vọt theo hình thức PPP",
+            "capital_billion": 11157.0,
+            "sector": "Hạ tầng giao thông"
+          },
+          {
+            "code": "PR_CT_CAMLAM_VINHHAO",
+            "name": "Dự án Xây dựng công trình cao tốc Bắc - Nam: Đoạn Cam Lâm - Vĩnh Hảo theo hình thức PPP",
+            "capital_billion": 8925.0,
+            "sector": "Hạ tầng giao thông"
+          }
+        ]
+      },
+      {
+        "quarter": "2024-Q3",
+        "absorption_billion": 52054.7,
+        "completion_billion": 34856.0,
+        "cumulative_completed_billion": 120735.0,
+        "net_pressure_billion": 17198.7,
+        "ratio": 1.49,
+        "rate_pressure_score": 50,
+        "rate_trend": "TĂNG NHẸ",
+        "completing_projects": [
+          {
+            "code": "PR_500KV_MACH_3",
+            "name": "Dự án Đường dây 500kV mạch 3 từ Quảng Trạch đến Phố Nối (4 cung đoạn)",
+            "capital_billion": 22356.0,
+            "sector": "Năng lượng điện"
+          },
+          {
+            "code": "PR_METRO_NHON_GA_HN",
+            "name": "Tuyến đường sắt đô thị thí điểm TP Hà Nội: Đoạn Nhổn - Ga Hà Nội (Đoạn trên cao 8.5km)",
+            "capital_billion": 12500.0,
+            "sector": "Đường sắt đô thị"
+          }
+        ]
+      },
+      {
+        "quarter": "2024-Q4",
+        "absorption_billion": 52392.0,
+        "completion_billion": 43757.0,
+        "cumulative_completed_billion": 164492.0,
+        "net_pressure_billion": 8635.0,
+        "ratio": 1.2,
+        "rate_pressure_score": 0,
+        "rate_trend": "ĐI NGANG / TRUNG TÍNH",
+        "completing_projects": [
+          {
+            "code": "PR_METRO_1_HCM",
+            "name": "Dự án Xây dựng tuyến đường sắt đô thị số 1 TP.HCM (Tuyến Bến Thành - Suối Tiên)",
+            "capital_billion": 43757.0,
+            "sector": "Đường sắt đô thị"
+          }
+        ]
+      },
+      {
+        "quarter": "2025-Q1",
+        "absorption_billion": 54540.6,
+        "completion_billion": 1569.2,
+        "cumulative_completed_billion": 166061.2,
+        "net_pressure_billion": 52971.4,
+        "ratio": 33.68,
+        "rate_pressure_score": 85,
+        "rate_trend": "TĂNG MẠNH",
+        "completing_projects": [
+          {
+            "code": "PR2600069387",
+            "name": "Đường tỉnh 926B, tỉnh Hậu Giang kết nối tuyến Quản Lộ Phụng Hiệp, tỉnh Sóc Trăng",
+            "capital_billion": 1569.2,
+            "sector": "Hạ tầng giao thông"
+          }
+        ]
+      },
+      {
+        "quarter": "2025-Q2",
+        "absorption_billion": 58476.9,
+        "completion_billion": 17377.0,
+        "cumulative_completed_billion": 183438.2,
+        "net_pressure_billion": 41099.9,
+        "ratio": 3.36,
+        "rate_pressure_score": 85,
+        "rate_trend": "TĂNG MẠNH",
+        "completing_projects": [
+          {
+            "code": "PR_CT_HAMNGHI_VUNGANG",
+            "name": "Dự án Xây dựng công trình cao tốc Bắc - Nam: Đoạn Hàm Nghi - Vũng Áng",
+            "capital_billion": 9734.0,
+            "sector": "Hạ tầng giao thông"
+          },
+          {
+            "code": "PR_CT_BAIVOT_HAMNGHI",
+            "name": "Dự án Xây dựng công trình cao tốc Bắc - Nam: Đoạn Bãi Vọt - Hàm Nghi",
+            "capital_billion": 7643.0,
+            "sector": "Hạ tầng giao thông"
+          }
+        ]
+      },
+      {
+        "quarter": "2025-Q3",
+        "absorption_billion": 59715.5,
+        "completion_billion": 0.0,
+        "cumulative_completed_billion": 183438.2,
+        "net_pressure_billion": 59715.5,
+        "ratio": 1194.31,
+        "rate_pressure_score": 85,
+        "rate_trend": "TĂNG MẠNH",
+        "completing_projects": []
+      },
+      {
+        "quarter": "2025-Q4",
+        "absorption_billion": 60266.0,
+        "completion_billion": 12548.0,
+        "cumulative_completed_billion": 195986.2,
+        "net_pressure_billion": 47718.0,
+        "ratio": 4.78,
+        "rate_pressure_score": 85,
+        "rate_trend": "TĂNG MẠNH",
+        "completing_projects": [
+          {
+            "code": "PR_CT_VUNGANG_BUNG",
+            "name": "Dự án Xây dựng công trình cao tốc Bắc - Nam: Đoạn Vũng Áng - Bùng",
+            "capital_billion": 12548.0,
+            "sector": "Hạ tầng giao thông"
+          }
+        ]
+      },
+      {
+        "quarter": "2026-Q1",
+        "absorption_billion": 60406.4,
+        "completion_billion": 0.0,
+        "cumulative_completed_billion": 195986.2,
+        "net_pressure_billion": 60406.4,
+        "ratio": 1208.13,
+        "rate_pressure_score": 85,
+        "rate_trend": "TĂNG MẠNH",
+        "completing_projects": []
+      },
+      {
+        "quarter": "2026-Q2",
+        "absorption_billion": 60727.1,
+        "completion_billion": 0.0,
+        "cumulative_completed_billion": 195986.2,
+        "net_pressure_billion": 60727.1,
+        "ratio": 1214.54,
+        "rate_pressure_score": 85,
+        "rate_trend": "TĂNG MẠNH",
+        "completing_projects": []
+      },
+      {
+        "quarter": "2026-Q3",
+        "absorption_billion": 60008.4,
+        "completion_billion": 0.0,
+        "cumulative_completed_billion": 195986.2,
+        "net_pressure_billion": 60008.4,
+        "ratio": 1200.17,
+        "rate_pressure_score": 85,
+        "rate_trend": "TĂNG MẠNH",
+        "completing_projects": []
+      },
+      {
+        "quarter": "2026-Q4",
+        "absorption_billion": 61718.0,
+        "completion_billion": 303386.0,
+        "cumulative_completed_billion": 499372.2,
+        "net_pressure_billion": -241668.0,
+        "ratio": 0.2,
+        "rate_pressure_score": -85,
+        "rate_trend": "GIẢM MẠNH",
+        "completing_projects": [
+          {
+            "code": "PR_LONG_THANH_G1",
+            "name": "Dự án Đầu tư xây dựng Cảng Hàng không Quốc tế Long Thành - Giai đoạn 1",
+            "capital_billion": 109111.0,
+            "sector": "Cảng hàng không"
+          },
+          {
+            "code": "PR_VANH_DAI_3_HCM",
+            "name": "Dự án Đầu tư xây dựng đường Vành đai 3 Thành phố Hồ Chí Minh",
+            "capital_billion": 75378.0,
+            "sector": "Hạ tầng giao thông"
+          },
+          {
+            "code": "PR_CT_CANTHO_CAMAU",
+            "name": "Dự án Xây dựng công trình đường bộ cao tốc Bắc - Nam: Đoạn Cần Thơ - Cà Mau",
+            "capital_billion": 27523.0,
+            "sector": "Hạ tầng giao thông"
+          },
+          {
+            "code": "PR_CT_KHANHHOA_BMT",
+            "name": "Dự án Đầu tư xây dựng đường bộ cao tốc Khánh Hòa - Buôn Ma Thuột (Giai đoạn 1)",
+            "capital_billion": 21935.0,
+            "sector": "Hạ tầng giao thông"
+          },
+          {
+            "code": "PR_CT_QUANGNGAI_HOAINHON",
+            "name": "Dự án Xây dựng công trình cao tốc Bắc - Nam: Đoạn Quảng Ngãi - Hoài Nhơn",
+            "capital_billion": 20469.0,
+            "sector": "Hạ tầng giao thông"
+          },
+          {
+            "code": "PR_CT_BIENHOA_VUNGTAU",
+            "name": "Dự án Đầu tư xây dựng đường bộ cao tốc Biên Hòa - Vũng Tàu (Giai đoạn 1)",
+            "capital_billion": 17829.0,
+            "sector": "Hạ tầng giao thông"
+          },
+          {
+            "code": "PR_CT_DONGDANG_TRALINH",
+            "name": "Dự án Đầu tư xây dựng tuyến cao tốc Đồng Đăng (Lạng Sơn) - Trà Lĩnh (Cao Bằng) theo hình thức PPP",
+            "capital_billion": 14331.0,
+            "sector": "Hạ tầng giao thông"
+          },
+          {
+            "code": "PR_CT_TUYENQUANG_HAGIANG",
+            "name": "Dự án Cao tốc Tuyên Quang - Hà Giang (Giai đoạn 1)",
+            "capital_billion": 10000.0,
+            "sector": "Hạ tầng giao thông"
+          },
+          {
+            "code": "PR_CAU_RACH_MIEU_2",
+            "name": "Dự án Đầu tư xây dựng cầu Rạch Miễu 2 nối tỉnh Tiền Giang và Bến Tre",
+            "capital_billion": 6810.0,
+            "sector": "Cầu đường bộ"
+          }
+        ]
+      },
+      {
+        "quarter": "2027-Q1",
+        "absorption_billion": 110559.8,
+        "completion_billion": 0.0,
+        "cumulative_completed_billion": 499372.2,
+        "net_pressure_billion": 110559.8,
+        "ratio": 2211.2,
+        "rate_pressure_score": 85,
+        "rate_trend": "TĂNG MẠNH",
+        "completing_projects": []
+      },
+      {
+        "quarter": "2027-Q2",
+        "absorption_billion": 144140.3,
+        "completion_billion": 44691.0,
+        "cumulative_completed_billion": 544063.2,
+        "net_pressure_billion": 99449.3,
+        "ratio": 3.22,
+        "rate_pressure_score": 85,
+        "rate_trend": "TĂNG MẠNH",
+        "completing_projects": [
+          {
+            "code": "PR_CT_CHAUDOC_CANTHO_SOCTRANG",
+            "name": "Dự án Đầu tư xây dựng đường bộ cao tốc Châu Đốc - Cần Thơ - Sóc Trăng (Giai đoạn 1)",
+            "capital_billion": 44691.0,
+            "sector": "Hạ tầng giao thông"
+          }
+        ]
+      },
+      {
+        "quarter": "2027-Q3",
+        "absorption_billion": 185462.4,
+        "completion_billion": 1460.0,
+        "cumulative_completed_billion": 545523.2,
+        "net_pressure_billion": 184002.4,
+        "ratio": 122.82,
+        "rate_pressure_score": 85,
+        "rate_trend": "TĂNG MẠNH",
+        "completing_projects": [
+          {
+            "code": "PR2600069966",
+            "name": "Đầu tư xây dựng hạ tầng trạm BTS cho thuê năm 2024",
+            "capital_billion": 1460.0,
+            "sector": "Hạ tầng giao thông"
+          }
+        ]
+      },
+      {
+        "quarter": "2027-Q4",
+        "absorption_billion": 231650.1,
+        "completion_billion": 111353.0,
+        "cumulative_completed_billion": 656876.2,
+        "net_pressure_billion": 120297.1,
+        "ratio": 2.08,
+        "rate_pressure_score": 85,
+        "rate_trend": "TĂNG MẠNH",
+        "completing_projects": [
+          {
+            "code": "PR_VANH_DAI_4_HN",
+            "name": "Dự án Đầu tư xây dựng đường Vành đai 4 - Vùng Thủ đô Hà Nội",
+            "capital_billion": 85813.0,
+            "sector": "Hạ tầng giao thông"
+          },
+          {
+            "code": "PR_CT_GIANGHIA_CHONTHANH",
+            "name": "Dự án Đầu tư xây dựng đường cao tốc Bắc - Nam phía Tây đoạn Gia Nghĩa (Đắk Nông) - Chơn Thành (Bình Phước)",
+            "capital_billion": 25540.0,
+            "sector": "Hạ tầng giao thông"
+          }
+        ]
+      },
+      {
+        "quarter": "2028-Q1",
+        "absorption_billion": 273749.2,
+        "completion_billion": 4089.5,
+        "cumulative_completed_billion": 660965.7,
+        "net_pressure_billion": 269659.7,
+        "ratio": 66.13,
+        "rate_pressure_score": 85,
+        "rate_trend": "TĂNG MẠNH",
+        "completing_projects": [
+          {
+            "code": "PR2600070258",
+            "name": "Đường dây 500 kV Đức Hòa - Chơn Thành",
+            "capital_billion": 4089.5,
+            "sector": "Năng lượng & Điện lực"
+          }
+        ]
+      },
+      {
+        "quarter": "2028-Q2",
+        "absorption_billion": 306095.5,
+        "completion_billion": 8660.3,
+        "cumulative_completed_billion": 669626.0,
+        "net_pressure_billion": 297435.2,
+        "ratio": 35.14,
+        "rate_pressure_score": 85,
+        "rate_trend": "TĂNG MẠNH",
+        "completing_projects": [
+          {
+            "code": "PR2600066902",
+            "name": "Nạo vét, xây dựng hạ tầng, cải tạo môi trường bờ Bắc kênh Đôi trên địa bàn Quận 8",
+            "capital_billion": 7300.3,
+            "sector": "Hạ tầng giao thông"
+          },
+          {
+            "code": "PR2600065528",
+            "name": "Đầu tư xây dựng và kinh doanh hạ tầng khu công nghiệp Bắc Đồng Phú giai đoạn 2",
+            "capital_billion": 1360.0,
+            "sector": "Hạ tầng giao thông"
+          }
+        ]
+      },
+      {
+        "quarter": "2028-Q3",
+        "absorption_billion": 320037.8,
+        "completion_billion": 1075.6,
+        "cumulative_completed_billion": 670701.6,
+        "net_pressure_billion": 318962.2,
+        "ratio": 284.33,
+        "rate_pressure_score": 85,
+        "rate_trend": "TĂNG MẠNH",
+        "completing_projects": [
+          {
+            "code": "PR2600069032",
+            "name": "Đường Nguyễn Phong Sắc, thành phố Vũng Tàu",
+            "capital_billion": 1075.6,
+            "sector": "Hạ tầng giao thông"
+          }
+        ]
+      },
+      {
+        "quarter": "2028-Q4",
+        "absorption_billion": 313001.7,
+        "completion_billion": 298000.0,
+        "cumulative_completed_billion": 968701.6,
+        "net_pressure_billion": 15001.7,
+        "ratio": 1.05,
+        "rate_pressure_score": 50,
+        "rate_trend": "TĂNG NHẸ",
+        "completing_projects": [
+          {
+            "code": "PR_KHI_DIEN_LO_B_OMON",
+            "name": "Chuỗi dự án Khí - Điện Lô B Ô Môn (Nhà máy điện Ô Môn III & Ô Môn IV)",
+            "capital_billion": 298000.0,
+            "sector": "Năng lượng & Dầu khí"
+          }
+        ]
+      },
+      {
+        "quarter": "2029-Q1",
+        "absorption_billion": 283786.2,
+        "completion_billion": 36116.0,
+        "cumulative_completed_billion": 1004817.6,
+        "net_pressure_billion": 247670.2,
+        "ratio": 7.85,
+        "rate_pressure_score": 85,
+        "rate_trend": "TĂNG MẠNH",
+        "completing_projects": [
+          {
+            "code": "PR2500020550",
+            "name": "Dự án đường cao tốc Đà Nẵng - Quảng Ngãi",
+            "capital_billion": 34516.0,
+            "sector": "Hạ tầng giao thông"
+          },
+          {
+            "code": "PR2600065564",
+            "name": "Dự án thành phần 1: Đầu tư xây dựng Quốc lộ 15D đoạn từ Cảng Mỹ Thủy đến cao tốc Cam Lộ - La Sơn thuộc Dự án Quốc lộ 15D đoạn từ Cảng Mỹ Thủy đến cao tốc Cam Lộ - La Sơn",
+            "capital_billion": 1600.0,
+            "sector": "Hạ tầng giao thông"
+          }
+        ]
+      },
+      {
+        "quarter": "2029-Q2",
+        "absorption_billion": 245110.2,
+        "completion_billion": 46958.6,
+        "cumulative_completed_billion": 1051776.2,
+        "net_pressure_billion": 198151.6,
+        "ratio": 5.21,
+        "rate_pressure_score": 85,
+        "rate_trend": "TĂNG MẠNH",
+        "completing_projects": [
+          {
+            "code": "PR2600063841",
+            "name": "Khu đất đấu giá QSDĐ tại khu vực Lò Ngói, thôn Hữu Phúc, xã Bắc Bình, huyện Lập Thạch",
+            "capital_billion": 45828.0,
+            "sector": "Hạ tầng giao thông"
+          },
+          {
+            "code": "PR2600069967",
+            "name": "Nhà ở gia đình lực lượng vũ trang trong quân đội tại phường Bãi Cháy, thành phố Quảng Ninh",
+            "capital_billion": 1130.6,
+            "sector": "Đô thị & Nhà ở"
+          }
+        ]
+      },
+      {
+        "quarter": "2029-Q3",
+        "absorption_billion": 199758.2,
+        "completion_billion": 112409.7,
+        "cumulative_completed_billion": 1164185.9,
+        "net_pressure_billion": 87348.5,
+        "ratio": 1.78,
+        "rate_pressure_score": 85,
+        "rate_trend": "TĂNG MẠNH",
+        "completing_projects": [
+          {
+            "code": "PR2600064080",
+            "name": "Đầu tư giàn mềm và máy khấu vỉa dốc mỏ Tràng Bạch-Công ty Than Uông Bí",
+            "capital_billion": 97758.5,
+            "sector": "Hạ tầng giao thông"
+          },
+          {
+            "code": "PR2600070269",
+            "name": "Dự án bồi thường, hỗ trợ, tái định cư độc lập phục vụ triển khai Dự án đầu tư Khu đô thị đa mục tiêu tại các xã Thư Lâm, xã Đông Anh, thành phố Hà Nội",
+            "capital_billion": 9634.9,
+            "sector": "Đô thị & Nhà ở"
+          },
+          {
+            "code": "20190945439",
+            "name": "Xây dựng đường Liên phường Thới An - Thạnh Xuân (tuyến 2)",
+            "capital_billion": 3563.2,
+            "sector": "Hạ tầng giao thông"
+          },
+          {
+            "code": "PR2600070625",
+            "name": "Đường Thừa Đức đi Long Khánh, huyện Cẩm Mỹ (nay là xã Xuân Đường và xã Xuân Quế, tỉnh Đồng Nai)",
+            "capital_billion": 1453.1,
+            "sector": "Hạ tầng giao thông"
+          }
+        ]
+      },
+      {
+        "quarter": "2029-Q4",
+        "absorption_billion": 153411.0,
+        "completion_billion": 555159.4,
+        "cumulative_completed_billion": 1719345.3,
+        "net_pressure_billion": -401748.4,
+        "ratio": 0.28,
+        "rate_pressure_score": -85,
+        "rate_trend": "GIẢM MẠNH",
+        "completing_projects": [
+          {
+            "code": "PR2600061415",
+            "name": "“Đầu tư phương tiện, thiết bị phục vụ công tác tu bổ, phục chế hồ sơ, tài liệu nghiệp vụ Công an nhân dân”",
+            "capital_billion": 538000.0,
+            "sector": "Hạ tầng giao thông"
+          },
+          {
+            "code": "PR2400067471",
+            "name": "Dự án Chống chịu khí hậu và chuyển đổi tổng hợp vùng Đồng bằng sông Cửu Long (MERIT)",
+            "capital_billion": 5801.2,
+            "sector": "Hạ tầng giao thông"
+          },
+          {
+            "code": "PR2600068111",
+            "name": "Xây dựng cầu Cửa Đại trên tuyến đường bộ ven biển kết nối tỉnh Bến Tre với tỉnh Tiền Giang (nay là tỉnh Vĩnh Long với tỉnh Đồng Tháp)",
+            "capital_billion": 4564.7,
+            "sector": "Hạ tầng giao thông"
+          },
+          {
+            "code": "PR2600065730",
+            "name": "Hệ thống đèn chiếu sáng trên đường Trung tâm xã và đường Quang Khương",
+            "capital_billion": 3905.5,
+            "sector": "Hạ tầng giao thông"
+          },
+          {
+            "code": "PR2600063587",
+            "name": "Dự án sửa chữa lớn mặt đường, thay thế bổ sung hệ thống an toàn giao thông đoạn Km0+000-Km123+080 thuộc đường cao tốc Nội Bài – Lào Cai",
+            "capital_billion": 2887.9,
+            "sector": "Hạ tầng giao thông"
+          }
+        ]
+      },
+      {
+        "quarter": "2030-Q1",
+        "absorption_billion": 106063.3,
+        "completion_billion": 319285.5,
+        "cumulative_completed_billion": 2038630.8,
+        "net_pressure_billion": -213222.2,
+        "ratio": 0.33,
+        "rate_pressure_score": -85,
+        "rate_trend": "GIẢM MẠNH",
+        "completing_projects": [
+          {
+            "code": "PR2600067563",
+            "name": "Xây dựng thay thế và cải tạo, nâng cấp Trường Trung học phổ thông An Lạc, quận Bình Tân",
+            "capital_billion": 231233.3,
+            "sector": "Hạ tầng giao thông"
+          },
+          {
+            "code": "PR2600065346",
+            "name": "Dự án thành phần 3: Đầu tư xây dựng tuyến đường bộ cao tốc Bắc Kạn - Cao Bằng",
+            "capital_billion": 27688.4,
+            "sector": "Hạ tầng giao thông"
+          },
+          {
+            "code": "PR2600065290",
+            "name": "Dự án đầu tư xây dựng tuyến đường từ thành phố Thái Bình đi huyện Hưng Hà kết nối với tỉnh Hưng Yên (nay là từ phường Thái Bình đến xã Hưng Hà)",
+            "capital_billion": 9596.3,
+            "sector": "Hạ tầng giao thông"
+          },
+          {
+            "code": "PR2600069686",
+            "name": "Nạo vét, cải tạo môi trường kết hợp chỉnh trang đô thị trục thoát nước rạch Bà Lớn",
+            "capital_billion": 9228.2,
+            "sector": "Đô thị & Nhà ở"
+          },
+          {
+            "code": "PR2600068320",
+            "name": "Xây dựng tuyến đường bộ ven biển kết nối tỉnh Bến Tre với tỉnh Tiền Giang và Trà Vinh (tỉnh Vĩnh Long với tỉnh Đồng Tháp)",
+            "capital_billion": 7904.6,
+            "sector": "Hạ tầng giao thông"
+          },
+          {
+            "code": "PR2600066490",
+            "name": "Đầu tư xây dựng tuyến chính và tuyến kết nối thuộc dự án đường Tân An - Bình Hiệp, Dự án thành phần 6.1: Đầu tư xây dựng tuyến chính và các tuyến kết nối (Không bao gồm tuyến kết nối với đường cao tốc CT.01).",
+            "capital_billion": 6759.6,
+            "sector": "Hạ tầng giao thông"
+          },
+          {
+            "code": "PR2600066985",
+            "name": "Xây dựng cải tạo, mở rộng đường Tôn Thất Thuyết và công viên cây xanh dọc bờ kênh Tẻ",
+            "capital_billion": 5554.4,
+            "sector": "Hạ tầng giao thông"
+          },
+          {
+            "code": "PR2600064365",
+            "name": "Tạo lập quỹ đất vùng phụ cận các điểm kết nối giao thông và các tuyến giao thông có tiềm năng phát triển để tổ chức đấu giá quyền sử dụng đất tại phường Nhơn Trạch,\nthành phố Đồng Nai (khu đất khoảng 358 ha)",
+            "capital_billion": 3303.9,
+            "sector": "Hạ tầng giao thông"
+          },
+          {
+            "code": "PR2600064402",
+            "name": "Bồi thường, hỗ trợ, tái định cư thuộc địa phận thành phố Hà Nội thuộc Dự án đầu tư xây dựng tuyến đường sắt Lào Cai - Hà Nội - Hải Phòng (đoạn qua địa bàn xã Phù Đổng, thành phố Hà Nội)",
+            "capital_billion": 3274.6,
+            "sector": "Đường sắt đô thị"
+          },
+          {
+            "code": "PR2600062073",
+            "name": "Dự án thành phần số 1: Nâng cấp, cải tạo, gia cố kênh Kim Sơn từ cống Báo Đáp đến cống Kênh Cầu thuộc Dự án Nâng cấp, hiện đại hóa và cải thiện môi trường nước hệ thống thủy lợi Bắc Hưng Hải",
+            "capital_billion": 2912.2,
+            "sector": "Thủy lợi & Ứng phó BĐKH"
+          },
+          {
+            "code": "PR2600070617",
+            "name": "Xây dựng các công trình cơ sở hạ tầng lưỡng dụng phục vụ phát triển KT-XH vùng đồng bào dân tộc thiểu số và miền núi, kết hợp đảm bảo QP-AN ở khu vực biên giới tỉnh Lào Cai",
+            "capital_billion": 2407.9,
+            "sector": "Hạ tầng giao thông"
+          },
+          {
+            "code": "PR2600063803",
+            "name": "Dự án xây dựng tuyến đường từ thị trấn Phước Long, huyện Phước Long đi Ba Đình, huyện Hồng Dân",
+            "capital_billion": 1471.0,
+            "sector": "Hạ tầng giao thông"
+          },
+          {
+            "code": "PR2600067582",
+            "name": "Dự án đầu tư xây dựng tuyến đường từ đường Hồ Sen đến nút giao thông Quán Mau",
+            "capital_billion": 1244.1,
+            "sector": "Hạ tầng giao thông"
+          },
+          {
+            "code": "PR2600068116",
+            "name": "Đường Bắc Nam phục vụ Khu công nghiệp Phú Thuận và Cụm công nghiệp Phong Nẫm (ĐT.DK.08), liên huyện Bình Đại - Giồng Trôm, tỉnh Bến Tre (giai đoạn 2)",
+            "capital_billion": 1220.0,
+            "sector": "Hạ tầng giao thông"
+          },
+          {
+            "code": "PR2600067175",
+            "name": "Nâng cấp, mở rộng các tuyến đường thôn Vĩnh Thái",
+            "capital_billion": 1200.0,
+            "sector": "Hạ tầng giao thông"
+          },
+          {
+            "code": "PR2600068113",
+            "name": "Đại lộ Đông Tây (Giai đoạn 2)",
+            "capital_billion": 1150.0,
+            "sector": "Hạ tầng giao thông"
+          },
+          {
+            "code": "PR2600068245",
+            "name": "Dự án thành phần 2: Nâng cấp, mở rộng đường ĐT.744B (đoạn từ ĐT.749F đến đường ĐT.744 Bưng Còng)",
+            "capital_billion": 1106.1,
+            "sector": "Hạ tầng giao thông"
+          },
+          {
+            "code": "PR2600067884",
+            "name": "Dự án thành phần 1: Bồi thường, hỗ trợ, tái định cư, giải phóng mặt bằng, thuộc dự án đầu tư: Đoạn tuyến cao tốc Sơn La - Điện Biên - Cửa khẩu Tây Trang (giai đoạn 1)",
+            "capital_billion": 1024.1,
+            "sector": "Năng lượng & Điện lực"
+          },
+          {
+            "code": "PR2600067079",
+            "name": "Dự án ĐTXD Nhà ở cho gia đình lực lượng vũ trang trong Quân đội tại phường Phương Liệt, thành phố Hà Nội",
+            "capital_billion": 1006.7,
+            "sector": "Đô thị & Nhà ở"
+          }
+        ]
+      },
+      {
+        "quarter": "2030-Q2",
+        "absorption_billion": 72285.6,
+        "completion_billion": 0.0,
+        "cumulative_completed_billion": 2038630.8,
+        "net_pressure_billion": 72285.6,
+        "ratio": 1445.71,
+        "rate_pressure_score": 85,
+        "rate_trend": "TĂNG MẠNH",
+        "completing_projects": []
+      },
+      {
+        "quarter": "2030-Q3",
+        "absorption_billion": 49854.5,
+        "completion_billion": 0.0,
+        "cumulative_completed_billion": 2038630.8,
+        "net_pressure_billion": 49854.5,
+        "ratio": 997.09,
+        "rate_pressure_score": 85,
+        "rate_trend": "TĂNG MẠNH",
+        "completing_projects": []
+      },
+      {
+        "quarter": "2030-Q4",
+        "absorption_billion": 32358.4,
+        "completion_billion": 129000.0,
+        "cumulative_completed_billion": 2167630.8,
+        "net_pressure_billion": -96641.6,
+        "ratio": 0.25,
+        "rate_pressure_score": -85,
+        "rate_trend": "GIẢM MẠNH",
+        "completing_projects": [
+          {
+            "code": "PR_CANG_QUOC_TE_CAN_GIO",
+            "name": "Dự án Cảng trung chuyển quốc tế Cần Giờ",
+            "capital_billion": 129000.0,
+            "sector": "Cảng biển & Logistics"
+          }
+        ]
+      }
+    ]
+  },
+  "kpis": {
+    "total_projects": 71,
+    "total_capital_vnd": 3883505403104111.0,
+    "total_capital_billion_vnd": 3883505.4,
+    "status_breakdown": {
+      "preparing": {
+        "count": 44,
+        "capital_vnd": 3255198403104111.0,
+        "capital_billion_vnd": 3255198.4
+      },
+      "construction": {
+        "count": 11,
+        "capital_vnd": 433890000000000.0,
+        "capital_billion_vnd": 433890.0
+      },
+      "completed": {
+        "count": 16,
+        "capital_vnd": 194417000000000.0,
+        "capital_billion_vnd": 194417.0
+      }
+    },
+    "packages_kpi": {
+      "total_count": 80,
+      "total_price_vnd": 327413859261511.0,
+      "total_price_billion_vnd": 327413.9,
+      "awarded_price_billion_vnd": 193530.9
+    },
+    "ncr_ratio": 18.98,
+    "current_quarter": "2026-Q3"
+  }
+}

@@ -12,6 +12,10 @@ import {
   ExternalLink,
   Star,
   Users,
+  Gavel,
+  Zap,
+  Fish,
+  Anchor,
 } from 'lucide-react'
 import { cn } from '@/lib/utils'
 import type { CorporateDisclosure } from '@/lib/disclosures'
@@ -446,6 +450,45 @@ export function NewsDashboard({
                 Đã lưu ({savedIds.length})
               </button>
             )}
+
+            {/* Quick Thematic Tags: Đấu Thầu, Điện, Thủy Sản, Cảng Biển */}
+            <div className="h-4 w-px bg-white/10 mx-1 shrink-0 hidden sm:block" />
+
+            <Link
+              href="/dau-thau"
+              className="flex items-center gap-1.5 rounded-lg px-2.5 py-1 text-xs font-semibold text-emerald-400 bg-emerald-500/10 border border-emerald-500/20 hover:bg-emerald-500/20 transition-all shrink-0"
+              title="Tình báo đấu thầu y tế & ĐTC"
+            >
+              <Gavel className="size-3.5" />
+              <span>Đấu Thầu</span>
+            </Link>
+
+            <Link
+              href="/nganh-dien"
+              className="flex items-center gap-1.5 rounded-lg px-2.5 py-1 text-xs font-semibold text-amber-400 bg-amber-500/10 border border-amber-500/20 hover:bg-amber-500/20 transition-all shrink-0"
+              title="Dữ liệu điều độ NSMO & hồ chứa EAV"
+            >
+              <Zap className="size-3.5" />
+              <span>Ngành Điện</span>
+            </Link>
+
+            <Link
+              href="/thuy-san"
+              className="flex items-center gap-1.5 rounded-lg px-2.5 py-1 text-xs font-semibold text-cyan-400 bg-cyan-500/10 border border-cyan-500/20 hover:bg-cyan-500/20 transition-all shrink-0"
+              title="Tình báo VASEP & giá nguyên liệu"
+            >
+              <Fish className="size-3.5" />
+              <span>Thủy Sản</span>
+            </Link>
+
+            <Link
+              href="/cang-bien"
+              className="flex items-center gap-1.5 rounded-lg px-2.5 py-1 text-xs font-semibold text-teal-400 bg-teal-500/10 border border-teal-500/20 hover:bg-teal-500/20 transition-all shrink-0"
+              title="Tình báo hàng hải & cảng biển"
+            >
+              <Anchor className="size-3.5" />
+              <span>Cảng Biển</span>
+            </Link>
           </div>
 
           {/* Right: Search Input & Filter Dropdown (WiData Style) */}

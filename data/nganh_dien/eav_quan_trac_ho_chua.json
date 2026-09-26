@@ -1,0 +1,373 @@
+{
+  "source": "https://hochuathuydien.evn.com.vn/ & EAV",
+  "updatedAt": "2026-09-26T19:28:45.782838",
+  "totalReservoirs": 16,
+  "reservoirs": [
+    {
+      "lakeName": "Thác Mơ",
+      "region": "Đông Nam Bộ",
+      "riverBasin": "Sông Bé",
+      "htl": 217.45,
+      "hdbt": 218.0,
+      "hc": 198.0,
+      "waterStoragePercent": 97.2,
+      "qve": 385,
+      "qxm": 215,
+      "qxt": 0,
+      "capacityMW": 150,
+      "affectedStocks": [
+        {
+          "ticker": "TMP",
+          "plantName": "Thủy điện Thác Mơ",
+          "relationship": "Trực tiếp sở hữu",
+          "note": "Hồ chứa điều tiết năm, nước dồi dào chạy full 150MW"
+        },
+        {
+          "ticker": "SJD",
+          "plantName": "Thủy điện Cần Đơn (180MW)",
+          "relationship": "Hạ lưu bậc thang (hưởng nước xả)",
+          "note": "Nằm ngay bậc thang dưới hồ Thác Mơ, hưởng trọn lưu lượng xả máy 215 m3/s"
+        }
+      ]
+    },
+    {
+      "lakeName": "Buôn Kuốp",
+      "region": "Tây Nguyên",
+      "riverBasin": "Sông Srêpốk",
+      "htl": 411.85,
+      "hdbt": 412.0,
+      "hc": 409.0,
+      "waterStoragePercent": 95.0,
+      "qve": 410,
+      "qxm": 345,
+      "qxt": 0,
+      "capacityMW": 280,
+      "affectedStocks": [
+        {
+          "ticker": "PGV",
+          "plantName": "Thủy điện Buôn Kuốp (280MW)",
+          "relationship": "Trực tiếp sở hữu",
+          "note": "EVNGENCO 3 vận hành tối đa công suất"
+        },
+        {
+          "ticker": "BSA",
+          "plantName": "Thủy điện Srepok 4A (64MW)",
+          "relationship": "Hạ lưu bậc thang (hưởng nước xả)",
+          "note": "Hạ du nhận nước phát điện liên tục, biên lãi gộp tăng mạnh"
+        },
+        {
+          "ticker": "DRL",
+          "plantName": "Thủy điện Đrây H'linh 2 (16MW)",
+          "relationship": "Hạ lưu bậc thang (hưởng nước xả)",
+          "note": "Bậc thang kế tiếp trên sông Srêpốk, chạy full 16MW theo biểu giá ACT"
+        }
+      ]
+    },
+    {
+      "lakeName": "Srêpốk 3",
+      "region": "Tây Nguyên",
+      "riverBasin": "Sông Srêpốk",
+      "htl": 271.8,
+      "hdbt": 272.0,
+      "hc": 269.0,
+      "waterStoragePercent": 93.3,
+      "qve": 445,
+      "qxm": 420,
+      "qxt": 0,
+      "capacityMW": 220,
+      "affectedStocks": [
+        {
+          "ticker": "PGV",
+          "plantName": "Thủy điện Srêpốk 3 (220MW)",
+          "relationship": "Trực tiếp sở hữu",
+          "note": "Phát điện đồng bộ cùng Buôn Kuốp"
+        },
+        {
+          "ticker": "BSA",
+          "plantName": "Srepok 4A",
+          "relationship": "Hạ lưu bậc thang (hưởng nước xả)",
+          "note": "Tăng sản lượng thương phẩm Q3"
+        }
+      ]
+    },
+    {
+      "lakeName": "Thượng Kon Tum",
+      "region": "Tây Nguyên",
+      "riverBasin": "Sông Đăk Snghé",
+      "htl": 1159.2,
+      "hdbt": 1160.0,
+      "hc": 1138.0,
+      "waterStoragePercent": 96.4,
+      "qve": 135,
+      "qxm": 78,
+      "qxt": 0,
+      "capacityMW": 220,
+      "affectedStocks": [
+        {
+          "ticker": "VSH",
+          "plantName": "Thủy điện Thượng Kon Tum (220MW)",
+          "relationship": "Trực tiếp sở hữu",
+          "note": "Cột nước hữu dụng cực cao 840m, mỗi m3 nước tạo ra 2.1 kWh điện!"
+        },
+        {
+          "ticker": "REE",
+          "plantName": "VSH (công ty liên kết)",
+          "relationship": "Cổ đông chi phối / liên kết",
+          "note": "Sở hữu 50.8% VSH, đóng góp LNST hợp nhất lớn"
+        }
+      ]
+    },
+    {
+      "lakeName": "Sông Ba Hạ",
+      "region": "Duyên Hải Nam Trung Bộ",
+      "riverBasin": "Sông Ba",
+      "htl": 104.7,
+      "hdbt": 105.0,
+      "hc": 101.0,
+      "waterStoragePercent": 92.5,
+      "qve": 520,
+      "qxm": 380,
+      "qxt": 0,
+      "capacityMW": 220,
+      "affectedStocks": [
+        {
+          "ticker": "SBH",
+          "plantName": "Thủy điện Sông Ba Hạ (220MW)",
+          "relationship": "Trực tiếp sở hữu",
+          "note": "Nhà máy lớn đã hết khấu hao, phát tối đa công suất"
+        }
+      ]
+    },
+    {
+      "lakeName": "A Vương",
+      "region": "Duyên Hải Nam Trung Bộ",
+      "riverBasin": "Sông Vu Gia",
+      "htl": 379.1,
+      "hdbt": 380.0,
+      "hc": 340.0,
+      "waterStoragePercent": 97.8,
+      "qve": 195,
+      "qxm": 110,
+      "qxt": 0,
+      "capacityMW": 210,
+      "affectedStocks": [
+        {
+          "ticker": "TV1",
+          "plantName": "Thủy điện Sông Bung 5 (57MW)",
+          "relationship": "Hạ lưu bậc thang (hưởng nước xả)",
+          "note": "Hạ lưu đón dòng xả từ các hồ thủy điện Quảng Nam"
+        }
+      ]
+    },
+    {
+      "lakeName": "Đa Nhim",
+      "region": "Tây Nguyên",
+      "riverBasin": "Sông Đa Nhim",
+      "htl": 1041.8,
+      "hdbt": 1042.0,
+      "hc": 1032.0,
+      "waterStoragePercent": 98.0,
+      "qve": 68,
+      "qxm": 42,
+      "qxt": 0,
+      "capacityMW": 240,
+      "affectedStocks": [
+        {
+          "ticker": "REE",
+          "plantName": "Thủy điện Đa Nhim - Hàm Thuận - Đa Mi",
+          "relationship": "Cổ đông chi phối / liên kết",
+          "note": "Sở hữu cổ phần chi phối tại DNH"
+        }
+      ]
+    },
+    {
+      "lakeName": "Hàm Thuận",
+      "region": "Đông Nam Bộ",
+      "riverBasin": "Sông La Ngà",
+      "htl": 604.5,
+      "hdbt": 605.0,
+      "hc": 575.0,
+      "waterStoragePercent": 98.3,
+      "qve": 185,
+      "qxm": 125,
+      "qxt": 0,
+      "capacityMW": 300,
+      "affectedStocks": [
+        {
+          "ticker": "REE",
+          "plantName": "Cụm Hàm Thuận - Đa Mi",
+          "relationship": "Cổ đông chi phối / liên kết",
+          "note": "Tích nước đỉnh cao trước mùa khô"
+        }
+      ]
+    },
+    {
+      "lakeName": "Ialy",
+      "region": "Tây Nguyên",
+      "riverBasin": "Sông Sê San",
+      "htl": 514.8,
+      "hdbt": 515.0,
+      "hc": 490.0,
+      "waterStoragePercent": 99.2,
+      "qve": 620,
+      "qxm": 480,
+      "qxt": 0,
+      "capacityMW": 720,
+      "affectedStocks": [
+        {
+          "ticker": "EIC",
+          "plantName": "Thủy điện Hạ Sê San 2",
+          "relationship": "Hạ lưu bậc thang (hưởng nước xả)",
+          "note": "Bậc thang cuối đón nước từ Ialy, Pleikrông, Sê San 3, 4"
+        }
+      ]
+    },
+    {
+      "lakeName": "Hủa Na",
+      "region": "Bắc Trung Bộ",
+      "riverBasin": "Sông Chu",
+      "htl": 239.5,
+      "hdbt": 240.0,
+      "hc": 215.0,
+      "waterStoragePercent": 98.0,
+      "qve": 295,
+      "qxm": 180,
+      "qxt": 0,
+      "capacityMW": 180,
+      "affectedStocks": [
+        {
+          "ticker": "POW",
+          "plantName": "Thủy điện Hủa Na (180MW)",
+          "relationship": "Trực tiếp sở hữu",
+          "note": "Nhà máy thủy điện chủ lực của POW, biên lãi gộp >65%"
+        }
+      ]
+    },
+    {
+      "lakeName": "ĐakDrinh",
+      "region": "Duyên Hải Nam Trung Bộ",
+      "riverBasin": "Sông Trà Khúc",
+      "htl": 409.6,
+      "hdbt": 410.0,
+      "hc": 375.0,
+      "waterStoragePercent": 98.8,
+      "qve": 220,
+      "qxm": 140,
+      "qxt": 0,
+      "capacityMW": 125,
+      "affectedStocks": [
+        {
+          "ticker": "POW",
+          "plantName": "Thủy điện ĐakDrinh (125MW)",
+          "relationship": "Trực tiếp sở hữu",
+          "note": "Mưa bão miền Trung dồi dào, chạy tối đa 125MW"
+        }
+      ]
+    },
+    {
+      "lakeName": "Thác Bà",
+      "region": "Đông Bắc Bộ",
+      "riverBasin": "Sông Chảy",
+      "htl": 57.8,
+      "hdbt": 58.0,
+      "hc": 46.0,
+      "waterStoragePercent": 98.3,
+      "qve": 410,
+      "qxm": 310,
+      "qxt": 0,
+      "capacityMW": 120,
+      "affectedStocks": [
+        {
+          "ticker": "TBC",
+          "plantName": "Thủy điện Thác Bà (120MW)",
+          "relationship": "Trực tiếp sở hữu",
+          "note": "Nhà máy thủy điện đầu tiên, đã hết sạch khấu hao"
+        }
+      ]
+    },
+    {
+      "lakeName": "Sơn La",
+      "region": "Tây Bắc Bộ",
+      "riverBasin": "Sông Đà",
+      "htl": 214.6,
+      "hdbt": 215.0,
+      "hc": 175.0,
+      "waterStoragePercent": 99.0,
+      "qve": 2850,
+      "qxm": 1950,
+      "qxt": 0,
+      "capacityMW": 2400,
+      "affectedStocks": [
+        {
+          "ticker": "SD9",
+          "plantName": "Thủy điện Nậm Mu / Sông Đà",
+          "relationship": "Hạ lưu bậc thang (hưởng nước xả)",
+          "note": "Lưu vực sông Đà nước về lớn"
+        }
+      ]
+    },
+    {
+      "lakeName": "Hòa Bình",
+      "region": "Tây Bắc Bộ",
+      "riverBasin": "Sông Đà",
+      "htl": 116.8,
+      "hdbt": 117.0,
+      "hc": 80.0,
+      "waterStoragePercent": 99.5,
+      "qve": 2450,
+      "qxm": 1850,
+      "qxt": 0,
+      "capacityMW": 1920,
+      "affectedStocks": [
+        {
+          "ticker": "SD3",
+          "plantName": "Các dự án thủy điện Tây Bắc",
+          "relationship": "Hạ lưu bậc thang (hưởng nước xả)",
+          "note": "Hưởng lợi chung từ chu kỳ La Nina"
+        }
+      ]
+    },
+    {
+      "lakeName": "Tuyên Quang",
+      "region": "Đông Bắc Bộ",
+      "riverBasin": "Sông Gâm",
+      "htl": 119.5,
+      "hdbt": 120.0,
+      "hc": 90.0,
+      "waterStoragePercent": 98.3,
+      "qve": 890,
+      "qxm": 580,
+      "qxt": 0,
+      "capacityMW": 342,
+      "affectedStocks": [
+        {
+          "ticker": "HJS",
+          "plantName": "Thủy điện Nậm Mu, Nậm Ngần",
+          "relationship": "Hạ lưu bậc thang (hưởng nước xả)",
+          "note": "Lưu vực sông Lô - sông Gâm ghi nhận lượng mưa lũ dồi dào"
+        }
+      ]
+    },
+    {
+      "lakeName": "Bản Vẽ",
+      "region": "Bắc Trung Bộ",
+      "riverBasin": "Sông Cả",
+      "htl": 199.2,
+      "hdbt": 200.0,
+      "hc": 155.0,
+      "waterStoragePercent": 98.2,
+      "qve": 460,
+      "qxm": 310,
+      "qxt": 0,
+      "capacityMW": 320,
+      "affectedStocks": [
+        {
+          "ticker": "HPD",
+          "plantName": "Thủy điện Hương Sơn",
+          "relationship": "Hạ lưu bậc thang (hưởng nước xả)",
+          "note": "Mưa bão Bắc Trung Bộ hỗ trợ tích nước tối đa"
+        }
+      ]
+    }
+  ]
+}

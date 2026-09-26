@@ -1,0 +1,79 @@
+{
+  "source": "https://www.nsmo.vn/",
+  "api": "Dashboard/GetBcsxChartDataPhanBoTheoLoaiHinh",
+  "updatedAt": "2026-09-26T19:28:45.781668",
+  "totalGenerationMWh": 1023185.44,
+  "totalGenerationMillionKWh": 1023.19,
+  "data": [
+    {
+      "fuel": "Thủy điện",
+      "generationMWh": 382535.38,
+      "generationMillionKWh": 382.54,
+      "percentage": 37.39,
+      "color": "#06b6d4"
+    },
+    {
+      "fuel": "NĐ Than",
+      "generationMWh": 484625.59,
+      "generationMillionKWh": 484.63,
+      "percentage": 47.36,
+      "color": "#3b82f6"
+    },
+    {
+      "fuel": "NĐ Dầu (DO)",
+      "generationMWh": 0.0,
+      "generationMillionKWh": 0.0,
+      "percentage": 0.0,
+      "color": "#3b82f6"
+    },
+    {
+      "fuel": "NĐ Dầu (FO)",
+      "generationMWh": 0.0,
+      "generationMillionKWh": 0.0,
+      "percentage": 0.0,
+      "color": "#3b82f6"
+    },
+    {
+      "fuel": "TBK",
+      "generationMWh": 50238.85,
+      "generationMillionKWh": 50.24,
+      "percentage": 4.91,
+      "color": "#3b82f6"
+    },
+    {
+      "fuel": "TBK chạy dầu",
+      "generationMWh": 7096.06,
+      "generationMillionKWh": 7.1,
+      "percentage": 0.69,
+      "color": "#3b82f6"
+    },
+    {
+      "fuel": "Mặt trời",
+      "generationMWh": 35943.1,
+      "generationMillionKWh": 35.94,
+      "percentage": 3.51,
+      "color": "#eab308"
+    },
+    {
+      "fuel": "Gió",
+      "generationMWh": 20843.84,
+      "generationMillionKWh": 20.84,
+      "percentage": 2.04,
+      "color": "#14b8a6"
+    },
+    {
+      "fuel": "Sinh khối",
+      "generationMWh": 3095.98,
+      "generationMillionKWh": 3.1,
+      "percentage": 0.3,
+      "color": "#3b82f6"
+    },
+    {
+      "fuel": "MTMN",
+      "generationMWh": 38806.65,
+      "generationMillionKWh": 38.81,
+      "percentage": 3.79,
+      "color": "#3b82f6"
+    }
+  ]
+}

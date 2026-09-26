@@ -1,0 +1,62 @@
+{
+  "source": "Cục Điều tiết Điện lực (EAV) - Bộ Công Thương",
+  "regulation": "Thông tư 32/2014/TT-BCT & Quyết định biểu giá chi phí tránh được hàng năm",
+  "applicableTo": "Nhà máy thủy điện nhỏ có công suất đặt <= 30 MW",
+  "affectedStocks": [
+    "HJS",
+    "DRL",
+    "HPD",
+    "NED",
+    "SEB",
+    "SD9",
+    "SD3",
+    "S55",
+    "SJE",
+    "GHC"
+  ],
+  "updatedAt": "2026-09-26T19:28:45.783363",
+  "tariffs": {
+    "MienBac": {
+      "MuaKho": {
+        "CaoDiem": 3180,
+        "BinhThuong": 1350,
+        "ThapDiem": 720
+      },
+      "MuaMua": {
+        "CaoDiem": 2180,
+        "BinhThuong": 1180,
+        "ThapDiem": 680
+      }
+    },
+    "MienTrung": {
+      "MuaKho": {
+        "CaoDiem": 3090,
+        "BinhThuong": 1320,
+        "ThapDiem": 710
+      },
+      "MuaMua": {
+        "CaoDiem": 2120,
+        "BinhThuong": 1150,
+        "ThapDiem": 670
+      }
+    },
+    "MienNam": {
+      "MuaKho": {
+        "CaoDiem": 3250,
+        "BinhThuong": 1380,
+        "ThapDiem": 750
+      },
+      "MuaMua": {
+        "CaoDiem": 2240,
+        "BinhThuong": 1210,
+        "ThapDiem": 690
+      }
+    }
+  },
+  "timeSlots": {
+    "CaoDiem": "Sáng 09:30 - 11:30 (2h), Tối 17:00 - 20:00 (3h) -> Tổng 5h/ngày (Trừ Chủ Nhật)",
+    "BinhThuong": "Thứ 2 đến Thứ 7: 04:00 - 09:30, 11:30 - 17:00, 20:00 - 22:00; Chủ Nhật: 04:00 - 22:00",
+    "ThapDiem": "Tất cả các ngày: 22:00 - 04:00 sáng hôm sau (6h/ngày)"
+  },
+  "keyInsight": "Các nhà máy có hồ điều tiết ngày (HJS, DRL) tích nước ban ngày và ban đêm để dồn phát vào 5 tiếng cao điểm, kéo giá bán điện bình quân thực tế lên tới 1.180 - 1.250 đ/kWh."
+}

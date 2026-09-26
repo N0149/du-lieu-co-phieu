@@ -1,0 +1,89 @@
+{
+  "source": "https://www.nsmo.vn/",
+  "api": "Dashboard/GetBcsxChartDataPhanBoTheoChuSoHuu",
+  "updatedAt": "2026-09-26T19:28:45.595228",
+  "totalGenerationMWh": 719788.62,
+  "totalGenerationMillionKWh": 719.79,
+  "data": [
+    {
+      "owner": "EVN",
+      "generationMWh": 90199.06,
+      "generationMillionKWh": 90.2,
+      "percentage": 12.53,
+      "color": "#1e40af",
+      "associatedStock": ""
+    },
+    {
+      "owner": "EVNGENCO 1",
+      "generationMWh": 109946.31,
+      "generationMillionKWh": 109.95,
+      "percentage": 15.27,
+      "color": "#0284c7",
+      "associatedStock": ""
+    },
+    {
+      "owner": "EVNGENCO 2",
+      "generationMWh": 70122.18,
+      "generationMillionKWh": 70.12,
+      "percentage": 9.74,
+      "color": "#0d9488",
+      "associatedStock": ""
+    },
+    {
+      "owner": "EVNGENCO 3",
+      "generationMWh": 110900.95,
+      "generationMillionKWh": 110.9,
+      "percentage": 15.41,
+      "color": "#2563eb",
+      "associatedStock": "Gắn với PGV (EVNGENCO 3)"
+    },
+    {
+      "owner": "PVN",
+      "generationMWh": 55062.05,
+      "generationMillionKWh": 55.06,
+      "percentage": 7.65,
+      "color": "#e11d48",
+      "associatedStock": "Gắn với POW (Tổng Công ty Điện lực Dầu khí)"
+    },
+    {
+      "owner": "TKV",
+      "generationMWh": 19949.99,
+      "generationMillionKWh": 19.95,
+      "percentage": 2.77,
+      "color": "#d97706",
+      "associatedStock": "Gắn với DTK (Tổng Công ty Điện lực TKV)"
+    },
+    {
+      "owner": "BOT",
+      "generationMWh": 131716.76,
+      "generationMillionKWh": 131.72,
+      "percentage": 18.3,
+      "color": "#7c3aed",
+      "associatedStock": ""
+    },
+    {
+      "owner": "JSC",
+      "generationMWh": 99325.42,
+      "generationMillionKWh": 99.33,
+      "percentage": 13.8,
+      "color": "#3b82f6",
+      "associatedStock": ""
+    },
+    {
+      "owner": "Nhập khẩu",
+      "generationMWh": 12580.61,
+      "generationMillionKWh": 12.58,
+      "percentage": 1.75,
+      "color": "#3b82f6",
+      "associatedStock": ""
+    },
+    {
+      "owner": "Khác",
+      "generationMWh": 19985.3,
+      "generationMillionKWh": 19.99,
+      "percentage": 2.78,
+      "color": "#64748b",
+      "associatedStock": ""
+    }
+  ]
+}

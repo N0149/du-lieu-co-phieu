@@ -1,0 +1,496 @@
+{
+  "source": "https://www.nsmo.vn/ (Thị trường điện CGMM)",
+  "updatedAt": "2026-09-26T19:28:45.782237",
+  "unit": "VNĐ/kWh",
+  "summary": {
+    "maxSmp": 2310,
+    "maxTime": "19:00 (Cao điểm tối)",
+    "minSmp": 1070,
+    "minTime": "04:00 (Thấp điểm đêm)",
+    "solarValleyMin": 1160,
+    "solarValleyTime": "12:30 (Mặt trời phát đỉnh)",
+    "avgDaySmp": 1685.5
+  },
+  "cycles": [
+    {
+      "cycle": 1,
+      "time": "00:30",
+      "smpNorth": 1340,
+      "smpCentral": 1310,
+      "smpSouth": 1290,
+      "smpAvg": 1313.3,
+      "isPeak": false,
+      "isSolarValley": false
+    },
+    {
+      "cycle": 2,
+      "time": "01:00",
+      "smpNorth": 1280,
+      "smpCentral": 1260,
+      "smpSouth": 1240,
+      "smpAvg": 1260.0,
+      "isPeak": false,
+      "isSolarValley": false
+    },
+    {
+      "cycle": 3,
+      "time": "01:30",
+      "smpNorth": 1220,
+      "smpCentral": 1200,
+      "smpSouth": 1180,
+      "smpAvg": 1200.0,
+      "isPeak": false,
+      "isSolarValley": false
+    },
+    {
+      "cycle": 4,
+      "time": "02:00",
+      "smpNorth": 1180,
+      "smpCentral": 1160,
+      "smpSouth": 1150,
+      "smpAvg": 1163.3,
+      "isPeak": false,
+      "isSolarValley": false
+    },
+    {
+      "cycle": 5,
+      "time": "02:30",
+      "smpNorth": 1150,
+      "smpCentral": 1140,
+      "smpSouth": 1120,
+      "smpAvg": 1136.7,
+      "isPeak": false,
+      "isSolarValley": false
+    },
+    {
+      "cycle": 6,
+      "time": "03:00",
+      "smpNorth": 1120,
+      "smpCentral": 1110,
+      "smpSouth": 1100,
+      "smpAvg": 1110.0,
+      "isPeak": false,
+      "isSolarValley": false
+    },
+    {
+      "cycle": 7,
+      "time": "03:30",
+      "smpNorth": 1100,
+      "smpCentral": 1090,
+      "smpSouth": 1080,
+      "smpAvg": 1090.0,
+      "isPeak": false,
+      "isSolarValley": false
+    },
+    {
+      "cycle": 8,
+      "time": "04:00",
+      "smpNorth": 1090,
+      "smpCentral": 1080,
+      "smpSouth": 1070,
+      "smpAvg": 1080.0,
+      "isPeak": false,
+      "isSolarValley": false
+    },
+    {
+      "cycle": 9,
+      "time": "04:30",
+      "smpNorth": 1120,
+      "smpCentral": 1100,
+      "smpSouth": 1090,
+      "smpAvg": 1103.3,
+      "isPeak": false,
+      "isSolarValley": false
+    },
+    {
+      "cycle": 10,
+      "time": "05:00",
+      "smpNorth": 1180,
+      "smpCentral": 1150,
+      "smpSouth": 1140,
+      "smpAvg": 1156.7,
+      "isPeak": false,
+      "isSolarValley": false
+    },
+    {
+      "cycle": 11,
+      "time": "05:30",
+      "smpNorth": 1290,
+      "smpCentral": 1250,
+      "smpSouth": 1230,
+      "smpAvg": 1256.7,
+      "isPeak": false,
+      "isSolarValley": false
+    },
+    {
+      "cycle": 12,
+      "time": "06:00",
+      "smpNorth": 1420,
+      "smpCentral": 1380,
+      "smpSouth": 1350,
+      "smpAvg": 1383.3,
+      "isPeak": false,
+      "isSolarValley": false
+    },
+    {
+      "cycle": 13,
+      "time": "06:30",
+      "smpNorth": 1580,
+      "smpCentral": 1520,
+      "smpSouth": 1490,
+      "smpAvg": 1530.0,
+      "isPeak": false,
+      "isSolarValley": false
+    },
+    {
+      "cycle": 14,
+      "time": "07:00",
+      "smpNorth": 1720,
+      "smpCentral": 1650,
+      "smpSouth": 1610,
+      "smpAvg": 1660.0,
+      "isPeak": false,
+      "isSolarValley": false
+    },
+    {
+      "cycle": 15,
+      "time": "07:30",
+      "smpNorth": 1840,
+      "smpCentral": 1760,
+      "smpSouth": 1720,
+      "smpAvg": 1773.3,
+      "isPeak": false,
+      "isSolarValley": false
+    },
+    {
+      "cycle": 16,
+      "time": "08:00",
+      "smpNorth": 1920,
+      "smpCentral": 1850,
+      "smpSouth": 1800,
+      "smpAvg": 1856.7,
+      "isPeak": true,
+      "isSolarValley": false
+    },
+    {
+      "cycle": 17,
+      "time": "08:30",
+      "smpNorth": 1980,
+      "smpCentral": 1910,
+      "smpSouth": 1860,
+      "smpAvg": 1916.7,
+      "isPeak": true,
+      "isSolarValley": false
+    },
+    {
+      "cycle": 18,
+      "time": "09:00",
+      "smpNorth": 2040,
+      "smpCentral": 1960,
+      "smpSouth": 1900,
+      "smpAvg": 1966.7,
+      "isPeak": true,
+      "isSolarValley": false
+    },
+    {
+      "cycle": 19,
+      "time": "09:30",
+      "smpNorth": 2080,
+      "smpCentral": 1990,
+      "smpSouth": 1920,
+      "smpAvg": 1996.7,
+      "isPeak": true,
+      "isSolarValley": false
+    },
+    {
+      "cycle": 20,
+      "time": "10:00",
+      "smpNorth": 2050,
+      "smpCentral": 1970,
+      "smpSouth": 1910,
+      "smpAvg": 1976.7,
+      "isPeak": true,
+      "isSolarValley": false
+    },
+    {
+      "cycle": 21,
+      "time": "10:30",
+      "smpNorth": 1980,
+      "smpCentral": 1900,
+      "smpSouth": 1850,
+      "smpAvg": 1910.0,
+      "isPeak": true,
+      "isSolarValley": false
+    },
+    {
+      "cycle": 22,
+      "time": "11:00",
+      "smpNorth": 1820,
+      "smpCentral": 1750,
+      "smpSouth": 1680,
+      "smpAvg": 1750.0,
+      "isPeak": false,
+      "isSolarValley": false
+    },
+    {
+      "cycle": 23,
+      "time": "11:30",
+      "smpNorth": 1540,
+      "smpCentral": 1480,
+      "smpSouth": 1390,
+      "smpAvg": 1470.0,
+      "isPeak": false,
+      "isSolarValley": true
+    },
+    {
+      "cycle": 24,
+      "time": "12:00",
+      "smpNorth": 1350,
+      "smpCentral": 1280,
+      "smpSouth": 1190,
+      "smpAvg": 1273.3,
+      "isPeak": false,
+      "isSolarValley": true
+    },
+    {
+      "cycle": 25,
+      "time": "12:30",
+      "smpNorth": 1320,
+      "smpCentral": 1240,
+      "smpSouth": 1160,
+      "smpAvg": 1240.0,
+      "isPeak": false,
+      "isSolarValley": true
+    },
+    {
+      "cycle": 26,
+      "time": "13:00",
+      "smpNorth": 1380,
+      "smpCentral": 1290,
+      "smpSouth": 1210,
+      "smpAvg": 1293.3,
+      "isPeak": false,
+      "isSolarValley": true
+    },
+    {
+      "cycle": 27,
+      "time": "13:30",
+      "smpNorth": 1510,
+      "smpCentral": 1420,
+      "smpSouth": 1350,
+      "smpAvg": 1426.7,
+      "isPeak": false,
+      "isSolarValley": false
+    },
+    {
+      "cycle": 28,
+      "time": "14:00",
+      "smpNorth": 1690,
+      "smpCentral": 1610,
+      "smpSouth": 1540,
+      "smpAvg": 1613.3,
+      "isPeak": false,
+      "isSolarValley": false
+    },
+    {
+      "cycle": 29,
+      "time": "14:30",
+      "smpNorth": 1820,
+      "smpCentral": 1740,
+      "smpSouth": 1680,
+      "smpAvg": 1746.7,
+      "isPeak": false,
+      "isSolarValley": false
+    },
+    {
+      "cycle": 30,
+      "time": "15:00",
+      "smpNorth": 1910,
+      "smpCentral": 1830,
+      "smpSouth": 1760,
+      "smpAvg": 1833.3,
+      "isPeak": false,
+      "isSolarValley": false
+    },
+    {
+      "cycle": 31,
+      "time": "15:30",
+      "smpNorth": 1950,
+      "smpCentral": 1870,
+      "smpSouth": 1810,
+      "smpAvg": 1876.7,
+      "isPeak": false,
+      "isSolarValley": false
+    },
+    {
+      "cycle": 32,
+      "time": "16:00",
+      "smpNorth": 1980,
+      "smpCentral": 1900,
+      "smpSouth": 1840,
+      "smpAvg": 1906.7,
+      "isPeak": false,
+      "isSolarValley": false
+    },
+    {
+      "cycle": 33,
+      "time": "16:30",
+      "smpNorth": 2020,
+      "smpCentral": 1940,
+      "smpSouth": 1880,
+      "smpAvg": 1946.7,
+      "isPeak": false,
+      "isSolarValley": false
+    },
+    {
+      "cycle": 34,
+      "time": "17:00",
+      "smpNorth": 2080,
+      "smpCentral": 2010,
+      "smpSouth": 1950,
+      "smpAvg": 2013.3,
+      "isPeak": false,
+      "isSolarValley": false
+    },
+    {
+      "cycle": 35,
+      "time": "17:30",
+      "smpNorth": 2150,
+      "smpCentral": 2080,
+      "smpSouth": 2020,
+      "smpAvg": 2083.3,
+      "isPeak": true,
+      "isSolarValley": false
+    },
+    {
+      "cycle": 36,
+      "time": "18:00",
+      "smpNorth": 2220,
+      "smpCentral": 2160,
+      "smpSouth": 2090,
+      "smpAvg": 2156.7,
+      "isPeak": true,
+      "isSolarValley": false
+    },
+    {
+      "cycle": 37,
+      "time": "18:30",
+      "smpNorth": 2280,
+      "smpCentral": 2210,
+      "smpSouth": 2140,
+      "smpAvg": 2210.0,
+      "isPeak": true,
+      "isSolarValley": false
+    },
+    {
+      "cycle": 38,
+      "time": "19:00",
+      "smpNorth": 2310,
+      "smpCentral": 2250,
+      "smpSouth": 2180,
+      "smpAvg": 2246.7,
+      "isPeak": true,
+      "isSolarValley": false
+    },
+    {
+      "cycle": 39,
+      "time": "19:30",
+      "smpNorth": 2290,
+      "smpCentral": 2220,
+      "smpSouth": 2150,
+      "smpAvg": 2220.0,
+      "isPeak": true,
+      "isSolarValley": false
+    },
+    {
+      "cycle": 40,
+      "time": "20:00",
+      "smpNorth": 2240,
+      "smpCentral": 2180,
+      "smpSouth": 2100,
+      "smpAvg": 2173.3,
+      "isPeak": true,
+      "isSolarValley": false
+    },
+    {
+      "cycle": 41,
+      "time": "20:30",
+      "smpNorth": 2150,
+      "smpCentral": 2090,
+      "smpSouth": 2020,
+      "smpAvg": 2086.7,
+      "isPeak": false,
+      "isSolarValley": false
+    },
+    {
+      "cycle": 42,
+      "time": "21:00",
+      "smpNorth": 2010,
+      "smpCentral": 1950,
+      "smpSouth": 1880,
+      "smpAvg": 1946.7,
+      "isPeak": false,
+      "isSolarValley": false
+    },
+    {
+      "cycle": 43,
+      "time": "21:30",
+      "smpNorth": 1860,
+      "smpCentral": 1810,
+      "smpSouth": 1750,
+      "smpAvg": 1806.7,
+      "isPeak": false,
+      "isSolarValley": false
+    },
+    {
+      "cycle": 44,
+      "time": "22:00",
+      "smpNorth": 1720,
+      "smpCentral": 1680,
+      "smpSouth": 1620,
+      "smpAvg": 1673.3,
+      "isPeak": false,
+      "isSolarValley": false
+    },
+    {
+      "cycle": 45,
+      "time": "22:30",
+      "smpNorth": 1580,
+      "smpCentral": 1540,
+      "smpSouth": 1490,
+      "smpAvg": 1536.7,
+      "isPeak": false,
+      "isSolarValley": false
+    },
+    {
+      "cycle": 46,
+      "time": "23:00",
+      "smpNorth": 1480,
+      "smpCentral": 1440,
+      "smpSouth": 1390,
+      "smpAvg": 1436.7,
+      "isPeak": false,
+      "isSolarValley": false
+    },
+    {
+      "cycle": 47,
+      "time": "23:30",
+      "smpNorth": 1400,
+      "smpCentral": 1370,
+      "smpSouth": 1320,
+      "smpAvg": 1363.3,
+      "isPeak": false,
+      "isSolarValley": false
+    },
+    {
+      "cycle": 48,
+      "time": "24:00",
+      "smpNorth": 1350,
+      "smpCentral": 1320,
+      "smpSouth": 1280,
+      "smpAvg": 1316.7,
+      "isPeak": false,
+      "isSolarValley": false
+    }
+  ]
+}
