@@ -26,6 +26,8 @@ export const metadata: Metadata = {
     'Theo dõi biến động chỉ số cước vận tải biển toàn cầu lịch sử 10 năm (2016-2026): Baltic Dry Index (BDI), Drewry World Container (WCI), Baltic Tanker (BDTI, BCTI) và tác động trực tiếp tới cổ phiếu HAH, VOS, PVT, GMD.',
 }
 
+export const revalidate = 60
+
 export default function CuocVanTaiPage() {
   const freightData = getFreightRates()
   const indices = freightData?.indices || {}
