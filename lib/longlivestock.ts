@@ -1,4 +1,6 @@
 import manifestRaw from '@/data/longlive_manifest.json'
+import customStocksRaw from '@/data/custom_stocks_manifest.json'
+import ruatichsanStocksRaw from '@/data/ruatichsan_stocks_map.json'
 import indicesRaw from '@/data/longlive_indices.json'
 import coreCardsRaw from '@/data/company_core_cards.json'
 import exchangeMapRaw from '@/data/stock_exchanges.json'
@@ -177,7 +179,15 @@ export function getAllStocks(): StockManifestItem[] {
   if (cachedAllStocks) return cachedAllStocks
   const data = getManifestData()
   const items = data.items || []
-  cachedAllStocks = items.map((s) => ({
+  
+  // Tự động gộp các mã cổ phiếu bổ sung từ custom_stocks_manifest (không bao giờ bị ghi đè bởi GitHub Action sync)
+  const existingSet = new Set(items.map((s) => s.t.toUpperCase()))
+  const customItems = ((customStocksRaw as unknown as StockManifestItem[]) || []).filter(
+    (cs) => !existingSet.has(cs.t.toUpperCase())
+  )
+
+  const combined = [...items, ...customItems]
+  cachedAllStocks = combined.map((s) => ({
     ...s,
     e: s.e || exchangeMap[s.t] || 'UPCOM',
   }))
@@ -186,7 +196,35 @@ export function getAllStocks(): StockManifestItem[] {
 
 export function getStockByTicker(ticker: string): StockManifestItem | undefined {
   const tNorm = ticker.toUpperCase().trim()
-  return getAllStocks().find((s) => s.t.toUpperCase() === tNorm)
+  const found = getAllStocks().find((s) => s.t.toUpperCase() === tNorm)
+  if (found) return found
+
+  // Dự phòng: Tìm từ danh mục toàn bộ cổ phiếu TTCK Việt Nam (Ruatichsan fallback)
+  const ruaMap = (ruatichsanStocksRaw as Record<string, { symbol: string; name: string; shortName?: string; exchange?: string }>) || {}
+  const ruaItem = ruaMap[tNorm]
+  if (ruaItem) {
+    const fallbackItem: StockManifestItem = {
+      t: ruaItem.symbol || tNorm,
+      n: ruaItem.name || ruaItem.shortName || tNorm,
+      s: 'Đang cập nhật ngành',
+      e: ruaItem.exchange || exchangeMap[tNorm] || 'UPCOM',
+      et: 'nonbank',
+      px: null,
+      cap: null,
+      pe: null,
+      pb: null,
+      roe: null,
+      port: false,
+      g: 'Khác',
+      s2: 'Khác',
+      w1: null,
+      d: new Date().toISOString().split('T')[0],
+      div: null,
+    }
+    return fallbackItem
+  }
+
+  return undefined
 }
 
 /**

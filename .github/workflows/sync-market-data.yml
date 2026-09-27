@@ -59,6 +59,19 @@ jobs:
           async function main() {
             await fetchAndSave('https://longlivestock.com/data/indices.json', 'data/longlive_indices.json');
             await fetchAndSave('https://longlivestock.com/data/manifest.json', 'data/longlive_manifest.json');
+            try {
+              if (fs.existsSync('data/custom_stocks_manifest.json')) {
+                const manifest = JSON.parse(fs.readFileSync('data/longlive_manifest.json', 'utf8'));
+                const custom = JSON.parse(fs.readFileSync('data/custom_stocks_manifest.json', 'utf8'));
+                const existing = new Set(manifest.items.map(i => i.t.toUpperCase()));
+                for (const c of custom) {
+                  if (!existing.has(c.t.toUpperCase())) manifest.items.push(c);
+                }
+                manifest.count = manifest.items.length;
+                fs.writeFileSync('data/longlive_manifest.json', JSON.stringify(manifest, null, 2));
+                console.log('Merged custom stocks into manifest:', manifest.count);
+              }
+            } catch (e) { console.error('Failed to merge custom stocks:', e.message); }
             console.log('Market data sync done!');
           }
           main().catch(console.error);
