@@ -1,6 +1,6 @@
 {
   "status": "success",
-  "updated_at": "2026-09-26T17:41:44.831894",
+  "updated_at": "2026-09-27T01:01:09.821574",
   "indices": {
     "BDI": {
       "symbol": "BDI",
@@ -15,10 +15,10 @@
       ],
       "summary": "Đo lường chi phí thuê tàu vận tải hàng rời (than đá, quặng sắt, ngũ cốc) toàn cầu. Tác động trực tiếp tới biên lợi nhuận của VOS và các đội tàu hàng khô.",
       "source": "Baltic Exchange / Hellenic",
-      "latest_date": "2026-09-26",
+      "latest_date": "2026-09-27",
       "latest_value": 3426.0,
-      "previous_value": 3423,
-      "change_val": 3.0,
+      "previous_value": 3415,
+      "change_val": 11.0,
       "change_pct": -0.9,
       "stats_52w": {
         "high": 3426.0,
@@ -3379,20 +3379,20 @@
         },
         {
           "date": "2026-09-18",
-          "value": 3274,
-          "change_val": 124,
-          "change_pct": 3.94
+          "value": 3261,
+          "change_val": 111,
+          "change_pct": 3.52
         },
         {
           "date": "2026-09-25",
-          "value": 3423,
-          "change_val": 149,
-          "change_pct": 4.55
+          "value": 3415,
+          "change_val": 154,
+          "change_pct": 4.72
         },
         {
-          "date": "2026-09-26",
+          "date": "2026-09-27",
           "value": 3426.0,
-          "change_val": 3.0,
+          "change_val": 11.0,
           "change_pct": -0.9
         }
       ]
@@ -3410,10 +3410,10 @@
       ],
       "summary": "Đo lường giá cước giao ngay cho 1 container 40ft (FEU) trên các tuyến xuyên đại dương. Kim chỉ nam doanh thu cho HAH và các liên doanh cảng nước sâu của Gemadept.",
       "source": "Drewry Shipping Consultants",
-      "latest_date": "2026-09-26",
+      "latest_date": "2026-09-27",
       "latest_value": 4468.0,
-      "previous_value": 4468,
-      "change_val": 0.0,
+      "previous_value": 4470,
+      "change_val": -2.0,
       "change_pct": -1.0,
       "stats_52w": {
         "high": 4680,
@@ -6774,20 +6774,20 @@
         },
         {
           "date": "2026-09-18",
-          "value": 4491,
-          "change_val": -19,
-          "change_pct": -0.42
+          "value": 4493,
+          "change_val": -17,
+          "change_pct": -0.38
         },
         {
           "date": "2026-09-25",
-          "value": 4468,
+          "value": 4470,
           "change_val": -23,
           "change_pct": -0.51
         },
         {
-          "date": "2026-09-26",
+          "date": "2026-09-27",
           "value": 4468.0,
-          "change_val": 0.0,
+          "change_val": -2.0,
           "change_pct": -1.0
         }
       ]
@@ -6805,10 +6805,10 @@
       ],
       "summary": "Đo lường giá cước thuê các siêu tàu dầu thô viễn dương (VLCC, Suezmax, Aframax). Đang trong siêu chu kỳ tăng giá kỷ lục năm 2026 do căng thẳng an ninh eo biển Hormuz/Trung Đông và tái định tuyến Mũi Hảo Vọng.",
       "source": "Baltic Exchange",
-      "latest_date": "2026-09-26",
+      "latest_date": "2026-09-27",
       "latest_value": 5366.0,
-      "previous_value": 5308,
-      "change_val": 58.0,
+      "previous_value": 5279,
+      "change_val": 87.0,
       "change_pct": 2.21,
       "stats_52w": {
         "high": 5366.0,
@@ -10175,14 +10175,14 @@
         },
         {
           "date": "2026-09-25",
-          "value": 5308,
-          "change_val": 1458,
-          "change_pct": 37.87
+          "value": 5279,
+          "change_val": 1429,
+          "change_pct": 37.12
         },
         {
-          "date": "2026-09-26",
+          "date": "2026-09-27",
           "value": 5366.0,
-          "change_val": 58.0,
+          "change_val": 87.0,
           "change_pct": 2.21
         }
       ]
@@ -10200,10 +10200,10 @@
       ],
       "summary": "Theo dõi cước vận tải xăng dầu tinh chế, nhiên liệu hàng không Jet-A1 và hóa chất lỏng sạch. Tăng trưởng trên 110% YoY trong năm 2026, tạo động lực tăng trưởng doanh thu vượt trội cho đội tàu PVTrans.",
       "source": "Baltic Exchange / Macro Benchmark",
-      "latest_date": "2026-09-26",
+      "latest_date": "2026-09-27",
       "latest_value": 2160.0,
-      "previous_value": 2139,
-      "change_val": 21.0,
+      "previous_value": 2118,
+      "change_val": 42.0,
       "change_pct": 4.05,
       "stats_52w": {
         "high": 2160.0,
@@ -13570,14 +13570,14 @@
         },
         {
           "date": "2026-09-25",
-          "value": 2139,
-          "change_val": 159,
-          "change_pct": 8.03
+          "value": 2118,
+          "change_val": 138,
+          "change_pct": 6.97
         },
         {
-          "date": "2026-09-26",
+          "date": "2026-09-27",
           "value": 2160.0,
-          "change_val": 21.0,
+          "change_val": 42.0,
           "change_pct": 4.05
         }
       ]
