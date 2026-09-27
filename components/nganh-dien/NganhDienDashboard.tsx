@@ -505,8 +505,8 @@ export function NganhDienDashboard() {
                 </div>
                 <div className="text-slate-300 font-semibold">{comp1.name}</div>
                 <div className="grid grid-cols-4 gap-2 py-1 text-[11px] text-slate-400 border-y border-white/5">
-                  <div>Công suất: <strong className="text-white">{comp1.totalCapacityMW.toLocaleString()} MW</strong></div>
-                  <div>Vốn hóa: <strong className="text-white">{comp1.marketCap.toLocaleString()} Tỷ</strong></div>
+                  <div>Công suất: <strong className="text-white">{comp1.totalCapacityMW.toLocaleString('vi-VN')} MW</strong></div>
+                  <div>Vốn hóa: <strong className="text-white">{comp1.marketCap.toLocaleString('vi-VN')} Tỷ</strong></div>
                   <div>P/E thực tế: <strong className="text-amber-300">{comp1.peAdjusted || Math.round(comp1.pe * 1.11 * 10) / 10}x</strong></div>
                   <div>LN Q3 YoY: <strong className="text-emerald-400">+{comp1.q3Forecast.profitGrowthYoY}%</strong></div>
                 </div>
@@ -524,8 +524,8 @@ export function NganhDienDashboard() {
                 </div>
                 <div className="text-slate-300 font-semibold">{comp2.name}</div>
                 <div className="grid grid-cols-4 gap-2 py-1 text-[11px] text-slate-400 border-y border-white/5">
-                  <div>Công suất: <strong className="text-white">{comp2.totalCapacityMW.toLocaleString()} MW</strong></div>
-                  <div>Vốn hóa: <strong className="text-white">{comp2.marketCap.toLocaleString()} Tỷ</strong></div>
+                  <div>Công suất: <strong className="text-white">{comp2.totalCapacityMW.toLocaleString('vi-VN')} MW</strong></div>
+                  <div>Vốn hóa: <strong className="text-white">{comp2.marketCap.toLocaleString('vi-VN')} Tỷ</strong></div>
                   <div>P/E thực tế: <strong className="text-amber-300">{comp2.peAdjusted || Math.round(comp2.pe * 1.11 * 10) / 10}x</strong></div>
                   <div>LN Q3 YoY: <strong className="text-emerald-400">+{comp2.q3Forecast.profitGrowthYoY}%</strong></div>
                 </div>
@@ -658,12 +658,12 @@ export function NganhDienDashboard() {
 
                             {/* Công suất */}
                             <td className="py-3 px-3 text-right font-mono font-bold text-amber-400">
-                              ⚡ {stock.totalCapacityMW.toLocaleString()} MW
+                              ⚡ {stock.totalCapacityMW.toLocaleString('vi-VN')} MW
                             </td>
 
                             {/* Vốn Hóa */}
                             <td className="py-3 px-3 text-right font-mono">
-                              <span className="font-bold text-white">{stock.marketCap.toLocaleString()}</span>
+                              <span className="font-bold text-white">{stock.marketCap.toLocaleString('vi-VN')}</span>
                               <span className="text-[10px] text-slate-500 block">Tỷ VNĐ</span>
                             </td>
 
@@ -679,7 +679,7 @@ export function NganhDienDashboard() {
 
                             {/* LNST Q3 Dự phóng */}
                             <td className="py-3 px-3 text-right font-mono">
-                              <span className="font-bold text-amber-300">{stock.q3Forecast.profitEst.toLocaleString()}</span>
+                              <span className="font-bold text-amber-300">{stock.q3Forecast.profitEst.toLocaleString('vi-VN')}</span>
                               <span className="text-[10px] text-slate-500 block">Tỷ VNĐ</span>
                             </td>
 
@@ -779,7 +779,7 @@ export function NganhDienDashboard() {
                                   <div className="flex items-center justify-between">
                                     <span className="text-xs font-bold text-amber-400 uppercase tracking-wider flex items-center gap-1.5">
                                       <Building2 className="size-3.5" />
-                                      <span>Danh Sách Toàn Bộ Nhà Máy Điện &amp; Giá Bán Điện ({stock.powerPlants.length} nhà máy - {stock.totalCapacityMW.toLocaleString()} MW):</span>
+                                      <span>Danh Sách Toàn Bộ Nhà Máy Điện &amp; Giá Bán Điện ({stock.powerPlants.length} nhà máy - {stock.totalCapacityMW.toLocaleString('vi-VN')} MW):</span>
                                     </span>
                                     <button
                                       type="button"
@@ -824,7 +824,7 @@ export function NganhDienDashboard() {
                                             <td className="p-2.5 text-right whitespace-nowrap">
                                               {plant.estSellingPrice ? (
                                                 <div className="font-mono">
-                                                  <span className="font-black text-amber-300">{plant.estSellingPrice.toLocaleString()}</span>
+                                                  <span className="font-black text-amber-300">{plant.estSellingPrice.toLocaleString('vi-VN')}</span>
                                                   <span className="text-[10px] text-slate-400 ml-1">đ/kWh</span>
                                                 </div>
                                               ) : (
@@ -921,11 +921,11 @@ export function NganhDienDashboard() {
                       <div className="flex flex-wrap items-center gap-4 text-xs font-mono">
                         <div>
                           <span className="text-[10px] text-slate-500 block font-sans">Công suất</span>
-                          <strong className="text-amber-400">⚡ {stock.totalCapacityMW.toLocaleString()} MW</strong>
+                          <strong className="text-amber-400">⚡ {stock.totalCapacityMW.toLocaleString('vi-VN')} MW</strong>
                         </div>
                         <div>
                           <span className="text-[10px] text-slate-500 block font-sans">Vốn hóa</span>
-                          <strong className="text-white">{stock.marketCap.toLocaleString()} Tỷ</strong>
+                          <strong className="text-white">{stock.marketCap.toLocaleString('vi-VN')} Tỷ</strong>
                         </div>
                         <div>
                           <span className="text-[10px] text-slate-500 block font-sans">P/E Thực tế</span>
@@ -1051,7 +1051,7 @@ export function NganhDienDashboard() {
                                     <td className="p-2 text-right whitespace-nowrap">
                                       {plant.estSellingPrice ? (
                                         <div className="font-mono">
-                                          <span className="font-black text-amber-300">{plant.estSellingPrice.toLocaleString()}</span>
+                                          <span className="font-black text-amber-300">{plant.estSellingPrice.toLocaleString('vi-VN')}</span>
                                           <span className="text-[10px] text-slate-400 ml-1">đ/kWh</span>
                                         </div>
                                       ) : (
@@ -1231,10 +1231,10 @@ export function NganhDienDashboard() {
                         </div>
                       </td>
                       <td className="py-3 px-3 font-bold text-cyan-400">
-                        {res.qve.toLocaleString()} m³/s
+                        {res.qve.toLocaleString('vi-VN')} m³/s
                       </td>
                       <td className="py-3 px-3 font-bold text-emerald-400">
-                        {res.qxm.toLocaleString()} m³/s
+                        {res.qxm.toLocaleString('vi-VN')} m³/s
                       </td>
                       <td className="py-3 px-3 text-slate-400">
                         {res.qxt > 0 ? (
@@ -1329,7 +1329,7 @@ export function NganhDienDashboard() {
                   <Tooltip
                     contentStyle={{ backgroundColor: '#0f1218', borderColor: '#334155', borderRadius: '8px' }}
                     labelStyle={{ color: '#fff', fontWeight: 'bold' }}
-                    formatter={(val: any) => [`${val.toLocaleString()} đ/kWh`]}
+                    formatter={(val: any) => [`${val.toLocaleString('vi-VN')} đ/kWh`]}
                   />
                   <Line type="monotone" dataKey="smpHT" name="Hệ Thống" stroke="#a855f7" strokeWidth={3} dot={false} />
                   <Line type="monotone" dataKey="smpMB" name="Miền Bắc" stroke="#06b6d4" strokeWidth={2} dot={false} />
@@ -1361,7 +1361,7 @@ export function NganhDienDashboard() {
                     <YAxis dataKey="category" type="category" stroke="#64748b" tick={{ fontSize: 11 }} width={120} />
                     <Tooltip
                       contentStyle={{ backgroundColor: '#0f1218', borderColor: '#334155', borderRadius: '8px' }}
-                      formatter={(val: any) => [`${val.toLocaleString()} MWh`, 'Sản lượng']}
+                      formatter={(val: any) => [`${val.toLocaleString('vi-VN')} MWh`, 'Sản lượng']}
                     />
                     <Bar dataKey="generationMWh" radius={[0, 4, 4, 0]}>
                       {DAILY_GENERATION_BY_FUEL.map((entry, index) => (
@@ -1402,7 +1402,7 @@ export function NganhDienDashboard() {
                     <YAxis dataKey="owner" type="category" stroke="#64748b" tick={{ fontSize: 11 }} width={140} />
                     <Tooltip
                       contentStyle={{ backgroundColor: '#0f1218', borderColor: '#334155', borderRadius: '8px' }}
-                      formatter={(val: any) => [`${val.toLocaleString()} MWh`, 'Sản lượng']}
+                      formatter={(val: any) => [`${val.toLocaleString('vi-VN')} MWh`, 'Sản lượng']}
                     />
                     <Bar dataKey="generationMWh" radius={[0, 4, 4, 0]}>
                       {DAILY_GENERATION_BY_OWNER.map((entry, index) => (
@@ -1518,7 +1518,7 @@ export function NganhDienDashboard() {
               <div className="space-y-1.5">
                 <div className="flex justify-between items-center text-xs">
                   <span className="font-semibold text-slate-400">Giá Thị Trường SMP Bình Quân:</span>
-                  <strong className="text-purple-400 font-mono text-sm">{simSmpPrice.toLocaleString()} đ/kWh</strong>
+                  <strong className="text-purple-400 font-mono text-sm">{simSmpPrice.toLocaleString('vi-VN')} đ/kWh</strong>
                 </div>
                 <input
                   type="range"
@@ -1731,7 +1731,7 @@ export function NganhDienDashboard() {
                   </div>
                   <p className="text-xs text-slate-400 mt-0.5">{selectedStock.name}</p>
                   <div className="flex items-center gap-4 mt-1.5 text-xs font-mono">
-                    <span className="text-slate-400">Vốn hóa: <strong className="text-white">{selectedStock.marketCap.toLocaleString()} Tỷ</strong></span>
+                    <span className="text-slate-400">Vốn hóa: <strong className="text-white">{selectedStock.marketCap.toLocaleString('vi-VN')} Tỷ</strong></span>
                     <span className="text-slate-400">P/E Thực tế: <strong className="text-amber-400">{selectedStock.peAdjusted || Math.round(selectedStock.pe * 1.11 * 10) / 10}x</strong> <span className="text-slate-500 text-[10px]">(Báo cáo: {selectedStock.pe}x)</span></span>
                   </div>
                 </div>
@@ -1748,7 +1748,7 @@ export function NganhDienDashboard() {
             <div className="space-y-2">
               <h3 className="text-xs font-bold text-amber-400 uppercase tracking-wider flex items-center gap-2">
                 <Building2 className="size-4" />
-                <span>Danh Sách Nhà Máy Điện Sở Hữu (Tổng: {selectedStock.totalCapacityMW.toLocaleString()} MW)</span>
+                <span>Danh Sách Nhà Máy Điện Sở Hữu (Tổng: {selectedStock.totalCapacityMW.toLocaleString('vi-VN')} MW)</span>
               </h3>
               <div className="rounded-lg border border-white/10 bg-[#0f1218] overflow-x-auto">
                 <table className="w-full text-left text-xs min-w-[750px]">
@@ -1780,7 +1780,7 @@ export function NganhDienDashboard() {
                         <td className="p-2.5 text-right whitespace-nowrap">
                           {plant.estSellingPrice ? (
                             <div className="font-mono">
-                              <span className="font-black text-amber-300">{plant.estSellingPrice.toLocaleString()}</span>
+                              <span className="font-black text-amber-300">{plant.estSellingPrice.toLocaleString('vi-VN')}</span>
                               <span className="text-[10px] text-slate-400 ml-1">đ/kWh</span>
                             </div>
                           ) : (
