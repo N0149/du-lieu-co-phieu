@@ -19,6 +19,8 @@ import {
   Users2,
   Landmark,
   ShieldCheck,
+  Minimize2,
+  Maximize2,
 } from "lucide-react"
 import { cn } from "@/lib/utils"
 import type { BctcReportData } from "@/lib/bctc-service"
@@ -55,6 +57,7 @@ export function StockBctcReportView({
   const [searchKeyword, setSearchKeyword] = useState<string>("")
   const [tickerSearch, setTickerSearch] = useState<string>("")
   const [copied, setCopied] = useState<boolean>(false)
+  const [isCompactLayout, setIsCompactLayout] = useState<boolean>(true)
 
   const filteredTickers = useMemo(() => {
     if (!tickerSearch.trim()) return availableTickers
@@ -305,6 +308,21 @@ export function StockBctcReportView({
               <Printer className="size-3.5" />
               <span>In BCTC</span>
             </button>
+
+            <button
+              type="button"
+              onClick={() => setIsCompactLayout(!isCompactLayout)}
+              className={cn(
+                "inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl border text-xs font-medium transition-colors cursor-pointer",
+                isCompactLayout
+                  ? "bg-emerald-500/15 border-emerald-500/30 text-emerald-400 hover:bg-emerald-500/25"
+                  : "border-border bg-background/80 hover:bg-muted text-foreground"
+              )}
+              title={isCompactLayout ? "Chuyển sang xem bố cục rộng toàn màn hình" : "Chuyển sang bố cục gọn gàng (dễ đọc, đỡ đảo mắt)"}
+            >
+              {isCompactLayout ? <Minimize2 className="size-3.5" /> : <Maximize2 className="size-3.5" />}
+              <span>{isCompactLayout ? "Bố cục: Gọn (Đỡ đảo mắt)" : "Bố cục: Toàn màn hình"}</span>
+            </button>
           </div>
         </div>
       </div>
@@ -417,7 +435,10 @@ export function StockBctcReportView({
               </div>
 
               <div
-                className="agm-markdown-content text-xs sm:text-sm leading-relaxed text-foreground/90 space-y-4"
+                className={cn(
+                  "agm-markdown-content text-xs sm:text-sm leading-relaxed text-foreground/90 space-y-4",
+                  isCompactLayout ? "agm-compact-layout" : "agm-wide-layout"
+                )}
                 dangerouslySetInnerHTML={{ __html: sec.contentHtml }}
               />
             </div>

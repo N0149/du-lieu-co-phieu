@@ -46,12 +46,65 @@ const SECTION_SHORT_TITLES: Record<number, string> = {
 function formatMarkdownToHtml(markdown: string): string {
   let html = marked.parse(markdown, { gfm: true, breaks: true }) as string
 
-  // Wrap tables with responsive overflow container
-  html = html.replace(
-    /<table>/g,
-    '<div class="agm-table-wrapper overflow-x-auto rounded-xl border border-border/80 my-4 shadow-2xs"><table>'
-  )
-  html = html.replace(/<\/table>/g, '</table></div>')
+  // Xử lý bảng biểu: Tự động phân loại cột số liệu vs cột văn bản
+  html = html.replace(/<table>([\s\S]*?)<\/table>/gi, (match, tableInner) => {
+    const theadMatch = tableInner.match(/<thead>([\s\S]*?)<\/thead>/i)
+    const tbodyMatch = tableInner.match(/<tbody>([\s\S]*?)<\/tbody>/i)
+    const numRegex = /^[\s\d.,()%\-–—+*]+$/
+
+    // Phát hiện cột nào là cột số liệu dựa vào dữ liệu trong tbody
+    const colIsNumeric: boolean[] = []
+    if (tbodyMatch) {
+      const rows = tbodyMatch[1].match(/<tr[^>]*>[\s\S]*?<\/tr>/gi) || []
+      rows.forEach((r: string) => {
+        const cells = r.match(/<td[^>]*>[\s\S]*?<\/td>/gi) || []
+        cells.forEach((c: string, colIdx: number) => {
+          const rawText = c.replace(/<[^>]+>/g, '').trim()
+          if (rawText.length > 0) {
+            const isNum = numRegex.test(rawText)
+            if (colIsNumeric[colIdx] === undefined) {
+              colIsNumeric[colIdx] = isNum
+            } else if (!isNum) {
+              colIsNumeric[colIdx] = false
+            }
+          }
+        })
+      })
+    }
+
+    let newTable = tableInner
+
+    // Gắn class agm-th-num hoặc agm-th-text cho thead
+    if (theadMatch) {
+      let colIdx = 0
+      const newTheadContent = theadMatch[1].replace(/<th([^>]*)>([\s\S]*?)<\/th>/gi, (_m: string, attrs: string, content: string) => {
+        const isNumCol = colIsNumeric[colIdx] === true
+        colIdx++
+        const cls = isNumCol ? 'agm-th-num' : 'agm-th-text'
+        return `<th${attrs} class="${cls}">${content}</th>`
+      })
+      newTable = newTable.replace(theadMatch[1], newTheadContent)
+    }
+
+    // Gắn class agm-td-num hoặc agm-td-text cho tbody
+    if (tbodyMatch) {
+      const newTbodyContent = tbodyMatch[1].replace(/<tr([^>]*)>([\s\S]*?)<\/tr>/gi, (_trMatch: string, trAttrs: string, trContent: string) => {
+        let colIdx = 0
+        const newTrContent = trContent.replace(/<td([^>]*)>([\s\S]*?)<\/td>/gi, (_tdMatch: string, tdAttrs: string, tdContent: string) => {
+          const rawText = tdContent.replace(/<[^>]+>/g, '').trim()
+          const isNum = rawText.length > 0 && numRegex.test(rawText)
+          const isNumCol = colIsNumeric[colIdx] === true
+          colIdx++
+          const cls = isNum || isNumCol ? 'agm-td-num' : 'agm-td-text'
+          return `<td${tdAttrs} class="${cls}">${tdContent}</td>`
+        })
+        return `<tr${trAttrs}>${newTrContent}</tr>`
+      })
+      newTable = newTable.replace(tbodyMatch[1], newTbodyContent)
+    }
+
+    return `<div class="agm-table-wrapper overflow-x-auto rounded-xl border border-border/80 my-4 shadow-2xs"><table>${newTable}</table></div>`
+  })
 
   return html
 }

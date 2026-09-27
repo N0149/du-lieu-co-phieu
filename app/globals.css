@@ -256,32 +256,113 @@
 }
 
 .agm-table-wrapper {
+  width: fit-content;
   max-width: 100%;
+  min-width: min(100%, 520px);
+  margin: 1.25rem 0;
+  border-radius: 0.75rem;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+  overflow-x: auto;
+  background: rgba(18, 22, 31, 0.45);
 }
 
 .agm-table-wrapper table {
-  width: 100%;
-  border-collapse: collapse;
-  font-size: 0.85rem;
-  text-align: left;
+  width: auto;
+  min-width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  font-size: 0.84rem;
+  line-height: 1.5;
 }
 
+/* Tiêu đề cột */
 .agm-table-wrapper thead th {
   background-color: rgba(255, 255, 255, 0.05);
   color: #f0f3f6;
   font-weight: 700;
-  padding: 10px 14px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+  padding: 8px 16px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.14);
   white-space: nowrap;
 }
 
+/* Cột đầu tiên (Tên chỉ tiêu/khoản mục): căn trái, tự động co giãn theo nội dung */
+.agm-table-wrapper thead th:first-child,
+.agm-table-wrapper tbody td:first-child {
+  text-align: left !important;
+  min-width: 200px;
+  max-width: 440px;
+  padding: 8px 18px 8px 14px;
+  white-space: normal;
+  word-break: normal;
+}
+
+/* Cột chứa dữ liệu văn bản (Địa chỉ, Hoạt động chính, Tên công ty con...): tự do xuống dòng, không bị đè chữ */
+.agm-table-wrapper thead th.agm-th-text,
+.agm-table-wrapper tbody td.agm-td-text {
+  text-align: left !important;
+  white-space: normal !important;
+  word-break: normal;
+  min-width: 140px;
+  padding: 8px 16px;
+}
+
+/* Cột số liệu: căn phải, font sans rõ ràng (số 0 và 8 phân biệt hoàn toàn), tabular-nums thẳng hàng */
+.agm-table-wrapper thead th.agm-th-num,
+.agm-table-wrapper tbody td.agm-td-num,
+.agm-table-wrapper .agm-num-cell {
+  text-align: right !important;
+  white-space: nowrap;
+  min-width: 110px;
+  padding: 7px 16px;
+  font-family: var(--font-inter), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  font-variant-numeric: tabular-nums;
+  font-feature-settings: "tnum" 1;
+  letter-spacing: -0.01em;
+  color: rgba(240, 243, 246, 0.95);
+}
+
 .agm-table-wrapper tbody td {
-  padding: 8px 14px;
+  padding: 7px 14px;
   border-bottom: 1px solid rgba(255, 255, 255, 0.06);
   color: rgba(240, 243, 246, 0.88);
 }
 
+/* Dòng khi hover chuột: highlight để mắt dễ dò hàng ngang */
+.agm-table-wrapper tbody tr {
+  transition: background-color 0.15s ease;
+}
+
 .agm-table-wrapper tbody tr:hover {
-  background-color: rgba(255, 255, 255, 0.03);
+  background-color: rgba(56, 189, 248, 0.08);
+}
+
+/* Dòng in đậm hoặc Tổng cộng */
+.agm-table-wrapper tbody tr:has(strong) {
+  background-color: rgba(255, 255, 255, 0.025);
+}
+
+.agm-table-wrapper tbody tr:has(strong) td {
+  color: #38bdf8;
+  font-weight: 700;
+}
+
+.agm-table-wrapper tbody tr:last-child td {
+  border-bottom: none;
+}
+
+/* ── Chế độ xem toàn màn hình (khi người dùng chủ động chọn "Bố cục: Toàn màn hình") ── */
+.agm-wide-layout .agm-table-wrapper {
+  width: 100% !important;
+  max-width: 100% !important;
+}
+
+.agm-wide-layout .agm-table-wrapper table {
+  width: 100% !important;
+}
+
+.agm-wide-layout .agm-table-wrapper thead th:first-child,
+.agm-wide-layout .agm-table-wrapper tbody td:first-child {
+  max-width: none !important;
 }
 

@@ -52,3 +52,7 @@ audit_bctc.py
 run_gemini_extract_bctc.py
 run_extract_complete_bctc.py
 Chay_Trich_Xuat_BCTC.bat
+check_account_quota.py
+.gemini_quota_cache.json
+go-bo-vi-mo-khoi-web-chinh.bat
+khoi-phuc-vi-mo-ve-web-chinh.bat

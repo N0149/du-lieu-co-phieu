@@ -173,7 +173,7 @@ export function FinancialNoteModal({
           {currentNote ? (
             <div className="space-y-4">
               <div
-                className="agm-markdown-content text-xs sm:text-sm leading-relaxed text-foreground/90"
+                className="agm-markdown-content agm-compact-layout text-xs sm:text-sm leading-relaxed text-foreground/90"
                 dangerouslySetInnerHTML={{ __html: currentNote.contentHtml }}
               />
             </div>

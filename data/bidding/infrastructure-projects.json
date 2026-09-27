@@ -17,11 +17,10 @@
       "start_date": "2027-01-01",
       "expected_completion_date": "2035-12-31",
       "duration_months": 108,
+      "remaining_months": 111,
       "sector": "Đường sắt cao tốc",
       "source": "muasamcong",
-      "raw_data": "",
-      "updated_at": "2026-09-26T11:35:33.197057",
-      "remaining_months": 111
+      "updated_at": "2026-09-26T11:35:33.197057"
     },
     {
       "id": "83c05c01-7de5-474f-b174-1e0a3fe3d363",
@@ -40,11 +39,10 @@
       "start_date": "2027-01-03",
       "expected_completion_date": "2029-12-18",
       "duration_months": 36,
+      "remaining_months": 38,
       "sector": "Hạ tầng giao thông",
       "source": "muasamcong",
-      "raw_data": "{\"id\": \"83c05c01-7de5-474f-b174-1e0a3fe3d363\", \"locations\": [{\"provCode\": \"01\", \"provName\": \"Thành phố Hà Nội\"}], \"publicDate\": \"2026-09-03T08:31:33.106\", \"investTotal\": 538000000000000.0, \"investorName\": \"Cục Hồ sơ nghiệp vụ\", \"investorCode\": \"vnz000005097\", \"location\": \"Thành phố Hà Nội\", \"name\": \"“Đầu tư phương tiện, thiết bị phục vụ công tác tu bổ, phục chế hồ sơ, tài liệu nghiệp vụ Công an nhân dân”\", \"provCode\": \"01\", \"stepCode\": \"project-step-1\", \"type\": \"es-bidp-project-p\", \"decisionDate\": \"2026-07-07T23:59:59\", \"score\": \"NaN\", \"pgroup\": \"NB\", \"pno\": \"PR2600061415\", \"pversion\": \"00\", \"pnoStand\": \"PR2600061415-00\"}",
-      "updated_at": "2026-09-26T11:35:48.818108",
-      "remaining_months": 38
+      "updated_at": "2026-09-26T11:35:48.818108"
     },
     {
       "id": "SEED_LOB_OMON",
@@ -63,11 +61,10 @@
       "start_date": "2024-11-01",
       "expected_completion_date": "2028-12-31",
       "duration_months": 50,
+      "remaining_months": 27,
       "sector": "Năng lượng & Dầu khí",
       "source": "muasamcong",
-      "raw_data": "",
-      "updated_at": "2026-09-26T11:35:32.813726",
-      "remaining_months": 27
+      "updated_at": "2026-09-26T11:35:32.813726"
     },
     {
       "id": "4ad9428b-55ed-4e2c-8c16-2e91548fb898",
@@ -86,11 +83,10 @@
       "start_date": "2027-03-10",
       "expected_completion_date": "2030-02-22",
       "duration_months": 36,
+      "remaining_months": 40,
       "sector": "Hạ tầng giao thông",
       "source": "muasamcong",
-      "raw_data": "{\"id\": \"4ad9428b-55ed-4e2c-8c16-2e91548fb898\", \"locations\": [{\"provCode\": \"79\", \"provName\": \"Thành phố Hồ Chí Minh\", \"districtCode\": \"27460\", \"districtName\": \"Phường An Lạc\"}], \"publicDate\": \"2026-09-18T11:35:01.59\", \"districtCode\": \"27460\", \"investTotal\": 231233291000000.0, \"investorName\": \"Ban Quản lý dự án đầu tư xây dựng phường An Lạc\", \"investorCode\": \"vn0304708901\", \"location\": \"Thành phố Hồ Chí Minh\", \"name\": \"Xây dựng thay thế và cải tạo, nâng cấp Trường Trung học phổ thông An Lạc, quận Bình Tân\", \"provCode\": \"79\", \"stepCode\": \"project-step-1\", \"type\": \"es-bidp-project-p\", \"decisionDate\": \"2026-09-11T23:59:59\", \"score\": \"NaN\", \"pgroup\": \"NB\", \"pno\": \"PR2600067563\", \"pversion\": \"00\", \"pnoStand\": \"PR2600067563-00\"}",
-      "updated_at": "2026-09-26T11:35:44.001656",
-      "remaining_months": 40
+      "updated_at": "2026-09-26T11:35:44.001656"
     },
     {
       "id": "SEED_CANG_CANGIO",
@@ -109,11 +105,10 @@
       "start_date": "2025-06-01",
       "expected_completion_date": "2030-12-31",
       "duration_months": 66,
+      "remaining_months": 51,
       "sector": "Cảng biển & Logistics",
       "source": "muasamcong",
-      "raw_data": "",
-      "updated_at": "2026-09-26T11:35:33.797045",
-      "remaining_months": 51
+      "updated_at": "2026-09-26T11:35:33.797045"
     },
     {
       "id": "SEED_LT_G1",
@@ -132,11 +127,10 @@
       "start_date": "2021-01-05",
       "expected_completion_date": "2026-12-31",
       "duration_months": 68,
+      "remaining_months": 3,
       "sector": "Cảng hàng không",
       "source": "muasamcong",
-      "raw_data": "",
-      "updated_at": "2026-09-26T11:35:27.770871",
-      "remaining_months": 3
+      "updated_at": "2026-09-26T11:35:27.770871"
     },
     {
       "id": "dcb1322d-e8bf-442a-ba45-3fdc5942ed9f",
@@ -155,11 +149,10 @@
       "start_date": "2026-10-12",
       "expected_completion_date": "2029-09-26",
       "duration_months": 36,
+      "remaining_months": 36,
       "sector": "Hạ tầng giao thông",
       "source": "muasamcong",
-      "raw_data": "{\"id\": \"dcb1322d-e8bf-442a-ba45-3fdc5942ed9f\", \"locations\": [{\"provCode\": \"22\", \"provName\": \"Thành phố Quảng Ninh\", \"districtCode\": \"07114\", \"districtName\": \"Phường Hoàng Quế\"}], \"publicDate\": \"2026-09-09T11:01:37.527\", \"districtCode\": \"07114\", \"investTotal\": 97758546546000.0, \"investorName\": \"CHI NHÁNH TẬP ĐOÀN CÔNG NGHIỆP THAN – KHOÁNG SẢN VIỆT NAM  - CÔNG TY THAN UÔNG BÍ - TKV\", \"investorCode\": \"vnz000017220\", \"location\": \"Thành phố Quảng Ninh\", \"name\": \"Đầu tư giàn mềm và máy khấu vỉa dốc mỏ Tràng Bạch-Công ty Than Uông Bí\", \"provCode\": \"22\", \"stepCode\": \"project-step-1\", \"type\": \"es-bidp-project-p\", \"decisionDate\": \"2026-04-15T23:59:59\", \"score\": \"NaN\", \"pgroup\": \"NC\", \"pno\": \"PR2600064080\", \"pversion\": \"00\", \"pnoStand\": \"PR2600064080-00\"}",
-      "updated_at": "2026-09-26T11:35:47.391068",
-      "remaining_months": 36
+      "updated_at": "2026-09-26T11:35:47.391068"
     },
     {
       "id": "SEED_VD4_HN",
@@ -178,11 +171,10 @@
       "start_date": "2023-06-25",
       "expected_completion_date": "2027-12-31",
       "duration_months": 54,
+      "remaining_months": 15,
       "sector": "Hạ tầng giao thông",
       "source": "muasamcong",
-      "raw_data": "",
-      "updated_at": "2026-09-26T11:35:28.706049",
-      "remaining_months": 15
+      "updated_at": "2026-09-26T11:35:28.706049"
     },
     {
       "id": "SEED_VD3_HCM",
@@ -201,11 +193,10 @@
       "start_date": "2023-06-18",
       "expected_completion_date": "2026-12-31",
       "duration_months": 36,
+      "remaining_months": 3,
       "sector": "Hạ tầng giao thông",
       "source": "muasamcong",
-      "raw_data": "",
-      "updated_at": "2026-09-26T11:35:28.263768",
-      "remaining_months": 3
+      "updated_at": "2026-09-26T11:35:28.263768"
     },
     {
       "id": "c8483094-f001-40b7-a5fa-bb18dc9147cc",
@@ -224,11 +215,10 @@
       "start_date": "2026-04-22",
       "expected_completion_date": "2029-04-06",
       "duration_months": 36,
+      "remaining_months": 30,
       "sector": "Hạ tầng giao thông",
       "source": "muasamcong",
-      "raw_data": "{\"id\": \"c8483094-f001-40b7-a5fa-bb18dc9147cc\", \"publicDate\": \"2026-09-08T16:53:18.019\", \"investTotal\": 45828000000000.0, \"investorName\": \"BAN QLDA XÃ THÁI HÒA\", \"investorCode\": \"vn2500748164\", \"name\": \"Khu đất đấu giá QSDĐ tại khu vực Lò Ngói, thôn Hữu Phúc, xã Bắc Bình, huyện Lập Thạch\", \"stepCode\": \"project-step-1\", \"type\": \"es-bidp-project-p\", \"decisionDate\": \"2025-10-24T23:59:59\", \"score\": \"NaN\", \"pgroup\": \"NC\", \"pno\": \"PR2600063841\", \"pversion\": \"00\", \"pnoStand\": \"PR2600063841-00\"}",
-      "updated_at": "2026-09-26T11:35:47.548138",
-      "remaining_months": 30
+      "updated_at": "2026-09-26T11:35:47.548138"
     },
     {
       "id": "SEED_CT_CDCTST",
@@ -247,11 +237,10 @@
       "start_date": "2023-06-17",
       "expected_completion_date": "2027-06-30",
       "duration_months": 48,
+      "remaining_months": 9,
       "sector": "Hạ tầng giao thông",
       "source": "muasamcong",
-      "raw_data": "",
-      "updated_at": "2026-09-26T11:35:31.204424",
-      "remaining_months": 9
+      "updated_at": "2026-09-26T11:35:31.204424"
     },
     {
       "id": "SEED_METRO_1_HCM",
@@ -270,11 +259,10 @@
       "start_date": "2012-08-28",
       "expected_completion_date": "2024-12-22",
       "duration_months": 148,
+      "remaining_months": 0,
       "sector": "Đường sắt đô thị",
       "source": "muasamcong",
-      "raw_data": "",
-      "updated_at": "2026-09-26T12:10:47.284204",
-      "remaining_months": 0
+      "updated_at": "2026-09-26T12:10:47.284204"
     },
     {
       "id": "b66334ea-3d0b-4e6b-bae0-cb6056ca2f40",
@@ -293,11 +281,10 @@
       "start_date": "2026-03-08",
       "expected_completion_date": "2029-02-20",
       "duration_months": 36,
+      "remaining_months": 28,
       "sector": "Hạ tầng giao thông",
       "source": "muasamcong",
-      "raw_data": "{\"id\": \"b66334ea-3d0b-4e6b-bae0-cb6056ca2f40\", \"locations\": [{\"provCode\": \"501\", \"provName\": \"Thành phố Đà Nẵng\"}, {\"provCode\": \"505\", \"provName\": \"Tỉnh Quảng Ngãi\"}, {\"provCode\": \"503\", \"provName\": \"Tỉnh Quảng Nam\"}], \"publicDate\": \"2026-09-04T17:44:27.738\", \"investTotal\": 34516000000000.0, \"investorName\": \"Tổng công ty đầu tư phát triển đường cao tốc Việt Nam - Công ty TNHH Một thành viên\", \"investorCode\": \"vn0101573511\", \"location\": \"Thành phố Đà Nẵng,Tỉnh Quảng Nam,Tỉnh Quảng Ngãi\", \"name\": \"Dự án đường cao tốc Đà Nẵng - Quảng Ngãi\", \"provCode\": \"501\", \"stepCode\": \"project-step-1\", \"type\": \"es-bidp-project-p\", \"decisionDate\": \"2025-09-09T23:59:59\", \"score\": \"NaN\", \"pgroup\": \"DAQG\", \"pno\": \"PR2500020550\", \"pversion\": \"01\", \"pnoStand\": \"PR2500020550-01\"}",
-      "updated_at": "2026-09-26T11:35:48.057876",
-      "remaining_months": 28
+      "updated_at": "2026-09-26T11:35:48.057876"
     },
     {
       "id": "66d7a5fb-bd7d-46bd-ad12-bb6efef78482",
@@ -316,11 +303,10 @@
       "start_date": "2027-03-13",
       "expected_completion_date": "2030-02-25",
       "duration_months": 36,
+      "remaining_months": 41,
       "sector": "Hạ tầng giao thông",
       "source": "muasamcong",
-      "raw_data": "{\"id\": \"66d7a5fb-bd7d-46bd-ad12-bb6efef78482\", \"locations\": [{\"provCode\": \"04\", \"provName\": \"Tỉnh Cao Bằng\"}, {\"provCode\": \"19\", \"provName\": \"Tỉnh Thái Nguyên\"}], \"publicDate\": \"2026-09-15T15:06:57.81\", \"investTotal\": 27688359715000.0, \"investorName\": \"Ban Quản lý dự án đầu tư và xây dựng tỉnh Cao Bằng\", \"investorCode\": \"vn4800895212\", \"location\": \"Tỉnh Cao Bằng,Tỉnh Thái Nguyên\", \"name\": \"Dự án thành phần 3: Đầu tư xây dựng tuyến đường bộ cao tốc Bắc Kạn - Cao Bằng\", \"provCode\": \"04\", \"stepCode\": \"project-step-1\", \"type\": \"es-bidp-project-p\", \"decisionDate\": \"2026-09-14T23:59:59\", \"score\": \"NaN\", \"pgroup\": \"NA\", \"pno\": \"PR2600065346\", \"pversion\": \"01\", \"pnoStand\": \"PR2600065346-01\"}",
-      "updated_at": "2026-09-26T11:35:46.249635",
-      "remaining_months": 41
+      "updated_at": "2026-09-26T11:35:46.249635"
     },
     {
       "id": "SEED_CT_CTCM",
@@ -339,11 +325,10 @@
       "start_date": "2023-01-01",
       "expected_completion_date": "2026-12-31",
       "duration_months": 36,
+      "remaining_months": 3,
       "sector": "Hạ tầng giao thông",
       "source": "muasamcong",
-      "raw_data": "",
-      "updated_at": "2026-09-26T11:35:29.164448",
-      "remaining_months": 3
+      "updated_at": "2026-09-26T11:35:29.164448"
     },
     {
       "id": "SEED_CT_GNCT",
@@ -362,11 +347,10 @@
       "start_date": "2025-03-01",
       "expected_completion_date": "2027-12-31",
       "duration_months": 34,
+      "remaining_months": 15,
       "sector": "Hạ tầng giao thông",
       "source": "muasamcong",
-      "raw_data": "",
-      "updated_at": "2026-09-26T11:35:33.496985",
-      "remaining_months": 15
+      "updated_at": "2026-09-26T11:35:33.496985"
     },
     {
       "id": "SEED_500KV_M3",
@@ -385,11 +369,10 @@
       "start_date": "2024-01-18",
       "expected_completion_date": "2024-08-29",
       "duration_months": 7,
+      "remaining_months": 0,
       "sector": "Năng lượng điện",
       "source": "muasamcong",
-      "raw_data": "",
-      "updated_at": "2026-09-26T12:10:47.534893",
-      "remaining_months": 0
+      "updated_at": "2026-09-26T12:10:47.534893"
     },
     {
       "id": "SEED_CT_KHBM",
@@ -408,11 +391,10 @@
       "start_date": "2023-06-18",
       "expected_completion_date": "2026-12-31",
       "duration_months": 42,
+      "remaining_months": 3,
       "sector": "Hạ tầng giao thông",
       "source": "muasamcong",
-      "raw_data": "",
-      "updated_at": "2026-09-26T11:35:30.921116",
-      "remaining_months": 3
+      "updated_at": "2026-09-26T11:35:30.921116"
     },
     {
       "id": "SEED_CT_QNHN",
@@ -431,11 +413,10 @@
       "start_date": "2023-01-01",
       "expected_completion_date": "2026-12-31",
       "duration_months": 45,
+      "remaining_months": 3,
       "sector": "Hạ tầng giao thông",
       "source": "muasamcong",
-      "raw_data": "",
-      "updated_at": "2026-09-26T11:35:29.606103",
-      "remaining_months": 3
+      "updated_at": "2026-09-26T11:35:29.606103"
     },
     {
       "id": "SEED_CT_BHVT",
@@ -454,11 +435,10 @@
       "start_date": "2023-06-18",
       "expected_completion_date": "2026-12-31",
       "duration_months": 36,
+      "remaining_months": 3,
       "sector": "Hạ tầng giao thông",
       "source": "muasamcong",
-      "raw_data": "",
-      "updated_at": "2026-09-26T11:35:30.538320",
-      "remaining_months": 3
+      "updated_at": "2026-09-26T11:35:30.538320"
     },
     {
       "id": "SEED_CT_DDTL",
@@ -477,11 +457,10 @@
       "start_date": "2024-01-01",
       "expected_completion_date": "2026-12-31",
       "duration_months": 36,
+      "remaining_months": 3,
       "sector": "Hạ tầng giao thông",
       "source": "muasamcong",
-      "raw_data": "",
-      "updated_at": "2026-09-26T11:35:32.162169",
-      "remaining_months": 3
+      "updated_at": "2026-09-26T11:35:32.162169"
     },
     {
       "id": "SEED_CT_PTDG",
@@ -500,11 +479,10 @@
       "start_date": "2020-09-30",
       "expected_completion_date": "2023-04-29",
       "duration_months": 31,
+      "remaining_months": 0,
       "sector": "Hạ tầng giao thông",
       "source": "muasamcong",
-      "raw_data": "",
-      "updated_at": "2026-09-26T12:10:49.566989",
-      "remaining_months": 0
+      "updated_at": "2026-09-26T12:10:49.566989"
     },
     {
       "id": "SEED_CT_VAB",
@@ -523,11 +501,10 @@
       "start_date": "2023-01-01",
       "expected_completion_date": "2025-10-19",
       "duration_months": 34,
+      "remaining_months": 0,
       "sector": "Hạ tầng giao thông",
       "source": "muasamcong",
-      "raw_data": "",
-      "updated_at": "2026-09-26T12:10:46.523791",
-      "remaining_months": 0
+      "updated_at": "2026-09-26T12:10:46.523791"
     },
     {
       "id": "SEED_METRO_NHON",
@@ -546,11 +523,10 @@
       "start_date": "2014-09-01",
       "expected_completion_date": "2024-08-08",
       "duration_months": 119,
+      "remaining_months": 0,
       "sector": "Đường sắt đô thị",
       "source": "muasamcong",
-      "raw_data": "",
-      "updated_at": "2026-09-26T12:10:47.776217",
-      "remaining_months": 0
+      "updated_at": "2026-09-26T12:10:47.776217"
     },
     {
       "id": "SEED_CT_MSQL45",
@@ -569,11 +545,10 @@
       "start_date": "2020-09-30",
       "expected_completion_date": "2023-04-29",
       "duration_months": 31,
+      "remaining_months": 0,
       "sector": "Hạ tầng giao thông",
       "source": "muasamcong",
-      "raw_data": "",
-      "updated_at": "2026-09-26T12:10:50.359452",
-      "remaining_months": 0
+      "updated_at": "2026-09-26T12:10:50.359452"
     },
     {
       "id": "SEED_CT_DCBV",
@@ -592,11 +567,10 @@
       "start_date": "2021-05-22",
       "expected_completion_date": "2024-06-30",
       "duration_months": 37,
+      "remaining_months": 0,
       "sector": "Hạ tầng giao thông",
       "source": "muasamcong",
-      "raw_data": "",
-      "updated_at": "2026-09-26T12:10:48.001324",
-      "remaining_months": 0
+      "updated_at": "2026-09-26T12:10:48.001324"
     },
     {
       "id": "SEED_CT_VHPT",
@@ -615,11 +589,10 @@
       "start_date": "2020-09-30",
       "expected_completion_date": "2023-05-19",
       "duration_months": 32,
+      "remaining_months": 0,
       "sector": "Hạ tầng giao thông",
       "source": "muasamcong",
-      "raw_data": "",
-      "updated_at": "2026-09-26T12:10:50.092678",
-      "remaining_months": 0
+      "updated_at": "2026-09-26T12:10:50.092678"
     },
     {
       "id": "SEED_CT_TQHG",
@@ -638,11 +611,10 @@
       "start_date": "2023-05-28",
       "expected_completion_date": "2026-12-31",
       "duration_months": 37,
+      "remaining_months": 3,
       "sector": "Hạ tầng giao thông",
       "source": "muasamcong",
-      "raw_data": "",
-      "updated_at": "2026-09-26T11:35:32.472221",
-      "remaining_months": 3
+      "updated_at": "2026-09-26T11:35:32.472221"
     },
     {
       "id": "SEED_CT_HNVA",
@@ -661,11 +633,10 @@
       "start_date": "2023-01-01",
       "expected_completion_date": "2025-04-30",
       "duration_months": 28,
+      "remaining_months": 0,
       "sector": "Hạ tầng giao thông",
       "source": "muasamcong",
-      "raw_data": "",
-      "updated_at": "2026-09-26T12:10:46.979323",
-      "remaining_months": 0
+      "updated_at": "2026-09-26T12:10:46.979323"
     },
     {
       "id": "bec1cb10-30ff-4af1-95d4-87d8063e5017",
@@ -684,11 +655,10 @@
       "start_date": "2026-10-03",
       "expected_completion_date": "2029-09-17",
       "duration_months": 36,
+      "remaining_months": 35,
       "sector": "Đô thị & Nhà ở",
       "source": "muasamcong",
-      "raw_data": "{\"id\": \"bec1cb10-30ff-4af1-95d4-87d8063e5017\", \"publicDate\": \"2026-09-25T09:21:52.948\", \"investTotal\": 9634899000000.0, \"investorName\": \"Ủy ban nhân dân xã Đông Anh\", \"investorCode\": \"vn0111118631\", \"name\": \"Dự án bồi thường, hỗ trợ, tái định cư độc lập phục vụ triển khai Dự án đầu tư Khu đô thị đa mục tiêu tại các xã Thư Lâm, xã Đông Anh, thành phố Hà Nội\", \"stepCode\": \"project-step-1\", \"type\": \"es-bidp-project-p\", \"decisionDate\": \"2026-04-06T23:59:59\", \"score\": \"NaN\", \"pgroup\": \"NA\", \"pno\": \"PR2600070269\", \"pversion\": \"00\", \"pnoStand\": \"PR2600070269-00\"}",
-      "updated_at": "2026-09-26T11:35:41.591243",
-      "remaining_months": 35
+      "updated_at": "2026-09-26T11:35:41.591243"
     },
     {
       "id": "a2b1d728-83de-4600-bfdc-c1bc4e7a314d",
@@ -707,11 +677,10 @@
       "start_date": "2027-03-06",
       "expected_completion_date": "2030-02-18",
       "duration_months": 36,
+      "remaining_months": 40,
       "sector": "Hạ tầng giao thông",
       "source": "muasamcong",
-      "raw_data": "{\"id\": \"a2b1d728-83de-4600-bfdc-c1bc4e7a314d\", \"locations\": [{\"provCode\": \"33\", \"provName\": \"Tỉnh Hưng Yên\", \"districtCode\": \"13225\", \"districtName\": \"Phường Thái Bình\"}, {\"provCode\": \"33\", \"provName\": \"Tỉnh Hưng Yên\", \"districtCode\": \"12763\", \"districtName\": \"Xã Nam Tiên Hưng\"}, {\"provCode\": \"33\", \"provName\": \"Tỉnh Hưng Yên\", \"districtCode\": \"12754\", \"districtName\": \"Xã Tiên Hưng\"}, {\"provCode\": \"33\", \"provName\": \"Tỉnh Hưng Yên\", \"districtCode\": \"12685\", \"districtName\": \"Xã Hồng Minh\"}, {\"provCode\": \"33\", \"provName\": \"Tỉnh Hưng Yên\", \"districtCode\": \"12586\", \"districtName\": \"Xã Hưng Hà\"}, {\"provCode\": \"33\", \"provName\": \"Tỉnh Hưng Yên\", \"districtCode\": \"12634\", \"districtName\": \"Xã Tiên La\"}, {\"provCode\": \"33\", \"provName\": \"Tỉnh Hưng Yên\", \"districtCode\": \"12595\", \"districtName\": \"Xã Ngự Thiên\"}], \"publicDate\": \"2026-09-12T10:31:23.643\", \"districtCode\": \"13225\", \"investTotal\": 9596318759000.0, \"investorName\": \"Ban Quản lý dự án đầu tư xây dựng số 02\", \"investorCode\": \"vnz000007207\", \"location\": \"Tỉnh Hưng Yên,Tỉnh Hưng Yên,Tỉnh Hưng Yên,Tỉnh Hưng Yên,Tỉnh Hưng Yên,Tỉnh Hưng Yên,Tỉnh Hưng Yên\", \"name\": \"Dự án đầu tư xây dựng tuyến đường từ thành phố Thái Bình đi huyện Hưng Hà kết nối với tỉnh Hưng Yên (nay là từ phường Thái Bình đến xã Hưng Hà)\", \"provCode\": \"33\", \"stepCode\": \"project-step-1\", \"type\": \"es-bidp-project-p\", \"decisionDate\": \"2026-09-07T23:59:59\", \"score\": \"NaN\", \"pgroup\": \"NA\", \"pno\": \"PR2600065290\", \"pversion\": \"00\", \"pnoStand\": \"PR2600065290-00\"}",
-      "updated_at": "2026-09-26T11:35:46.891015",
-      "remaining_months": 40
+      "updated_at": "2026-09-26T11:35:46.891015"
     },
     {
       "id": "3126f25f-6fb0-4d4d-bef7-f0a9af94ca5f",
@@ -730,11 +699,10 @@
       "start_date": "2027-03-06",
       "expected_completion_date": "2030-02-18",
       "duration_months": 36,
+      "remaining_months": 40,
       "sector": "Đô thị & Nhà ở",
       "source": "muasamcong",
-      "raw_data": "{\"id\": \"3126f25f-6fb0-4d4d-bef7-f0a9af94ca5f\", \"locations\": [{\"provCode\": \"79\", \"provName\": \"Thành phố Hồ Chí Minh\", \"districtCode\": \"27619\", \"districtName\": \"Xã Bình Hưng\"}, {\"provCode\": \"79\", \"provName\": \"Thành phố Hồ Chí Minh\", \"districtCode\": \"27424\", \"districtName\": \"Phường Bình Đông\"}], \"publicDate\": \"2026-09-24T08:59:19.89\", \"districtCode\": \"27619\", \"investTotal\": 9228238000000.0, \"investorName\": \"Ban Quản lý Dự án đầu tư xây dựng hạ tầng đô thị Thành phố Hồ Chí Minh\", \"investorCode\": \"vn0318872563\", \"location\": \"Thành phố Hồ Chí Minh,Thành phố Hồ Chí Minh\", \"name\": \"Nạo vét, cải tạo môi trường kết hợp chỉnh trang đô thị trục thoát nước rạch Bà Lớn\", \"provCode\": \"79\", \"stepCode\": \"project-step-1\", \"type\": \"es-bidp-project-p\", \"decisionDate\": \"2026-09-07T23:59:59\", \"score\": \"NaN\", \"pgroup\": \"NA\", \"pno\": \"PR2600069686\", \"pversion\": \"00\", \"pnoStand\": \"PR2600069686-00\"}",
-      "updated_at": "2026-09-26T11:35:42.283330",
-      "remaining_months": 40
+      "updated_at": "2026-09-26T11:35:42.283330"
     },
     {
       "id": "SEED_CT_CLVH",
@@ -753,11 +721,10 @@
       "start_date": "2021-11-30",
       "expected_completion_date": "2024-04-26",
       "duration_months": 29,
+      "remaining_months": 0,
       "sector": "Hạ tầng giao thông",
       "source": "muasamcong",
-      "raw_data": "",
-      "updated_at": "2026-09-26T12:10:48.275059",
-      "remaining_months": 0
+      "updated_at": "2026-09-26T12:10:48.275059"
     },
     {
       "id": "77a39523-46e0-494e-a473-7cacdd9ce668",
@@ -776,11 +743,10 @@
       "start_date": "2027-02-12",
       "expected_completion_date": "2030-01-27",
       "duration_months": 36,
+      "remaining_months": 40,
       "sector": "Hạ tầng giao thông",
       "source": "muasamcong",
-      "raw_data": "{\"id\": \"77a39523-46e0-494e-a473-7cacdd9ce668\", \"locations\": [{\"provCode\": \"86\", \"provName\": \"Tỉnh Vĩnh Long\", \"districtCode\": \"29167\", \"districtName\": \"Xã Tân Thủy\"}, {\"provCode\": \"86\", \"provName\": \"Tỉnh Vĩnh Long\", \"districtCode\": \"29221\", \"districtName\": \"Xã Thạnh Hải\"}, {\"provCode\": \"86\", \"provName\": \"Tỉnh Vĩnh Long\", \"districtCode\": \"29224\", \"districtName\": \"Xã An Qui\"}, {\"provCode\": \"86\", \"provName\": \"Tỉnh Vĩnh Long\", \"districtCode\": \"29125\", \"districtName\": \"Xã Bảo Thạnh\"}], \"publicDate\": \"2026-09-21T14:12:34.624\", \"districtCode\": \"29167\", \"investTotal\": 7904600000000.0, \"investorName\": \"Ban Quản lý dự án giao thông tỉnh Vĩnh Long\", \"investorCode\": \"vn1501157726\", \"location\": \"Tỉnh Vĩnh Long,Tỉnh Vĩnh Long,Tỉnh Vĩnh Long,Tỉnh Vĩnh Long\", \"name\": \"Xây dựng tuyến đường bộ ven biển kết nối tỉnh Bến Tre với tỉnh Tiền Giang và Trà Vinh (tỉnh Vĩnh Long với tỉnh Đồng Tháp)\", \"provCode\": \"86\", \"stepCode\": \"project-step-1\", \"type\": \"es-bidp-project-p\", \"decisionDate\": \"2026-08-16T23:59:59\", \"score\": \"NaN\", \"pgroup\": \"NA\", \"pno\": \"PR2600068320\", \"pversion\": \"00\", \"pnoStand\": \"PR2600068320-00\"}",
-      "updated_at": "2026-09-26T11:35:42.809458",
-      "remaining_months": 40
+      "updated_at": "2026-09-26T11:35:42.809458"
     },
     {
       "id": "SEED_CT_BVHN",
@@ -799,11 +765,10 @@
       "start_date": "2023-01-01",
       "expected_completion_date": "2025-04-30",
       "duration_months": 28,
+      "remaining_months": 0,
       "sector": "Hạ tầng giao thông",
       "source": "muasamcong",
-      "raw_data": "",
-      "updated_at": "2026-09-26T12:10:46.746305",
-      "remaining_months": 0
+      "updated_at": "2026-09-26T12:10:46.746305"
     },
     {
       "id": "SEED_CT_NTCL",
@@ -822,11 +787,10 @@
       "start_date": "2021-09-04",
       "expected_completion_date": "2023-05-19",
       "duration_months": 20,
+      "remaining_months": 0,
       "sector": "Hạ tầng giao thông",
       "source": "muasamcong",
-      "raw_data": "",
-      "updated_at": "2026-09-26T12:10:49.834297",
-      "remaining_months": 0
+      "updated_at": "2026-09-26T12:10:49.834297"
     },
     {
       "id": "ef971065-df8b-4ecf-abcd-cc02f2f94b86",
@@ -845,11 +809,10 @@
       "start_date": "2025-04-28",
       "expected_completion_date": "2028-04-12",
       "duration_months": 36,
+      "remaining_months": 18,
       "sector": "Hạ tầng giao thông",
       "source": "muasamcong",
-      "raw_data": "{\"id\": \"ef971065-df8b-4ecf-abcd-cc02f2f94b86\", \"locations\": [{\"provCode\": \"79\", \"provName\": \"Thành phố Hồ Chí Minh\", \"districtCode\": \"27418\", \"districtName\": \"Phường Chánh Hưng\"}], \"publicDate\": \"2026-09-17T08:31:58.473\", \"districtCode\": \"27418\", \"investTotal\": 7300278780094, \"investorName\": \"Ban Quản lý dự án đầu tư xây dựng phường Chánh Hưng\", \"investorCode\": \"vnz000007294\", \"location\": \"Thành phố Hồ Chí Minh\", \"name\": \"Nạo vét, xây dựng hạ tầng, cải tạo môi trường bờ Bắc kênh Đôi trên địa bàn Quận 8\", \"provCode\": \"79\", \"stepCode\": \"project-step-1\", \"type\": \"es-bidp-project-p\", \"decisionDate\": \"2024-10-30T23:59:59\", \"score\": \"NaN\", \"pgroup\": \"NA\", \"pno\": \"PR2600066902\", \"pversion\": \"00\", \"pnoStand\": \"PR2600066902-00\"}",
-      "updated_at": "2026-09-26T11:35:45.926081",
-      "remaining_months": 18
+      "updated_at": "2026-09-26T11:35:45.926081"
     },
     {
       "id": "SEED_CT_NSDC",
@@ -868,11 +831,10 @@
       "start_date": "2021-07-02",
       "expected_completion_date": "2023-09-01",
       "duration_months": 26,
+      "remaining_months": 0,
       "sector": "Hạ tầng giao thông",
       "source": "muasamcong",
-      "raw_data": "",
-      "updated_at": "2026-09-26T12:10:49.325772",
-      "remaining_months": 0
+      "updated_at": "2026-09-26T12:10:49.325772"
     },
     {
       "id": "SEED_CAU_RACH_MIEU_2",
@@ -891,11 +853,10 @@
       "start_date": "2022-03-29",
       "expected_completion_date": "2026-12-31",
       "duration_months": 45,
+      "remaining_months": 3,
       "sector": "Cầu đường bộ",
       "source": "muasamcong",
-      "raw_data": "",
-      "updated_at": "2026-09-26T11:35:34.072071",
-      "remaining_months": 3
+      "updated_at": "2026-09-26T11:35:34.072071"
     },
     {
       "id": "f6857cd2-7d6b-41ae-b0e4-e120ccab40fb",
@@ -914,11 +875,10 @@
       "start_date": "2027-02-23",
       "expected_completion_date": "2030-02-07",
       "duration_months": 36,
+      "remaining_months": 40,
       "sector": "Hạ tầng giao thông",
       "source": "muasamcong",
-      "raw_data": "{\"id\": \"f6857cd2-7d6b-41ae-b0e4-e120ccab40fb\", \"locations\": [{\"provCode\": \"80\", \"provName\": \"Tỉnh Tây Ninh\", \"districtCode\": \"27715\", \"districtName\": \"Phường Khánh Hậu\"}, {\"provCode\": \"80\", \"provName\": \"Tỉnh Tây Ninh\", \"districtCode\": \"28066\", \"districtName\": \"Xã Mỹ An\"}, {\"provCode\": \"80\", \"provName\": \"Tỉnh Tây Ninh\", \"districtCode\": \"27889\", \"districtName\": \"Xã Tân Tây\"}, {\"provCode\": \"80\", \"provName\": \"Tỉnh Tây Ninh\", \"districtCode\": \"27865\", \"districtName\": \"Xã Thạnh Hóa\"}, {\"provCode\": \"80\", \"provName\": \"Tỉnh Tây Ninh\", \"districtCode\": \"27877\", \"districtName\": \"Xã Thạnh Phước\"}, {\"provCode\": \"80\", \"provName\": \"Tỉnh Tây Ninh\", \"districtCode\": \"27823\", \"districtName\": \"Xã Mộc Hoá\"}, {\"provCode\": \"80\", \"provName\": \"Tỉnh Tây Ninh\", \"districtCode\": \"27787\", \"districtName\": \"Phường Kiến Tường\"}, {\"provCode\": \"80\", \"provName\": \"Tỉnh Tây Ninh\", \"districtCode\": \"27817\", \"districtName\": \"Xã Tuyên Thạnh\"}, {\"provCode\": \"80\", \"provName\": \"Tỉnh Tây Ninh\", \"districtCode\": \"27793\", \"districtName\": \"Xã Bình Hiệp\"}], \"publicDate\": \"2026-09-16T11:00:10.125\", \"districtCode\": \"27715\", \"investTotal\": 6759623431000.0, \"investorName\": \"BAN QUẢN LÝ DỰ ÁN ĐẦU TƯ XÂY DỰNG CÔNG TRÌNH GIAO THÔNG TỈNH TÂY NINH\", \"investorCode\": \"vn1102147652\", \"location\": \"Tỉnh Tây Ninh,Tỉnh Tây Ninh,Tỉnh Tây Ninh,Tỉnh Tây Ninh,Tỉnh Tây Ninh,Tỉnh Tây Ninh,Tỉnh Tây Ninh,Tỉnh Tây Ninh,Tỉnh Tây Ninh\", \"name\": \"Đầu tư xây dựng tuyến chính và tuyến kết nối thuộc dự án đường Tân An - Bình Hiệp, Dự án thành phần 6.1: Đầu tư xây dựng tuyến chính và các tuyến kết nối (Không bao gồm tuyến kết nối với đường cao tốc CT.01).\", \"provCode\": \"80\", \"stepCode\": \"project-step-1\", \"type\": \"es-bidp-project-p\", \"decisionDate\": \"2026-08-27T23:59:59\", \"score\": \"NaN\", \"pgroup\": \"NA\", \"pno\": \"PR2600066490\", \"pversion\": \"00\", \"pnoStand\": \"PR2600066490-00\"}",
-      "updated_at": "2026-09-26T11:35:46.097047",
-      "remaining_months": 40
+      "updated_at": "2026-09-26T11:35:46.097047"
     },
     {
       "id": "07d347f5-5fad-4a83-9ab0-16f14f80b0ea",
@@ -937,11 +897,10 @@
       "start_date": "2026-10-26",
       "expected_completion_date": "2029-10-10",
       "duration_months": 36,
+      "remaining_months": 36,
       "sector": "Hạ tầng giao thông",
       "source": "muasamcong",
-      "raw_data": "{\"id\": \"07d347f5-5fad-4a83-9ab0-16f14f80b0ea\", \"locations\": [{\"provCode\": \"82\", \"provName\": \"Tỉnh Đồng Tháp\"}, {\"provCode\": \"92\", \"provName\": \"Thành phố Cần Thơ\"}, {\"provCode\": \"86\", \"provName\": \"Tỉnh Vĩnh Long\"}, {\"provCode\": \"80\", \"provName\": \"Tỉnh Tây Ninh\"}, {\"provCode\": \"01\", \"provName\": \"Thành phố Hà Nội\"}], \"publicDate\": \"2026-09-04T10:41:32.32\", \"investTotal\": 5801234000000.0, \"investorName\": \"Ban Quản lý Trung ương các Dự án Thủy lợi\", \"investorCode\": \"vn0101531127\", \"location\": \"Thành phố Cần Thơ,Thành phố Hà Nội,Tỉnh Tây Ninh,Tỉnh Vĩnh Long,Tỉnh Đồng Tháp\", \"name\": \"Dự án Chống chịu khí hậu và chuyển đổi tổng hợp vùng Đồng bằng sông Cửu Long (MERIT)\", \"provCode\": \"82\", \"stepCode\": \"project-step-1\", \"type\": \"es-bidp-project-p\", \"decisionDate\": \"2026-04-29T23:59:59\", \"score\": \"NaN\", \"pgroup\": \"NA\", \"pno\": \"PR2400067471\", \"pversion\": \"02\", \"pnoStand\": \"PR2400067471-02\"}",
-      "updated_at": "2026-09-26T11:35:48.350698",
-      "remaining_months": 36
+      "updated_at": "2026-09-26T11:35:48.350698"
     },
     {
       "id": "ea94ce86-ee52-48fe-88b4-957f7ee00a83",
@@ -960,11 +919,10 @@
       "start_date": "2027-03-15",
       "expected_completion_date": "2030-02-27",
       "duration_months": 36,
+      "remaining_months": 41,
       "sector": "Hạ tầng giao thông",
       "source": "muasamcong",
-      "raw_data": "{\"id\": \"ea94ce86-ee52-48fe-88b4-957f7ee00a83\", \"locations\": [{\"provCode\": \"79\", \"provName\": \"Thành phố Hồ Chí Minh\", \"districtCode\": \"27286\", \"districtName\": \"Phường Vĩnh Hội\"}, {\"provCode\": \"79\", \"provName\": \"Thành phố Hồ Chí Minh\", \"districtCode\": \"27265\", \"districtName\": \"Phường Khánh Hội\"}, {\"provCode\": \"79\", \"provName\": \"Thành phố Hồ Chí Minh\", \"districtCode\": \"27259\", \"districtName\": \"Phường Xóm Chiếu\"}], \"publicDate\": \"2026-09-17T10:06:46.421\", \"districtCode\": \"27286\", \"investTotal\": 5554378000000.0, \"investorName\": \"Ban Quản lý dự án đầu tư xây dựng các công trình giao thông\", \"investorCode\": \"vn0302282248\", \"location\": \"Thành phố Hồ Chí Minh,Thành phố Hồ Chí Minh,Thành phố Hồ Chí Minh\", \"name\": \"Xây dựng cải tạo, mở rộng đường Tôn Thất Thuyết và công viên cây xanh dọc bờ kênh Tẻ\", \"provCode\": \"79\", \"stepCode\": \"project-step-1\", \"type\": \"es-bidp-project-p\", \"decisionDate\": \"2026-09-16T23:59:59\", \"score\": \"NaN\", \"pgroup\": \"NA\", \"pno\": \"PR2600066985\", \"pversion\": \"00\", \"pnoStand\": \"PR2600066985-00\"}",
-      "updated_at": "2026-09-26T11:35:45.756334",
-      "remaining_months": 41
+      "updated_at": "2026-09-26T11:35:45.756334"
     },
     {
       "id": "SEED_CT_QL45_NS",
@@ -983,11 +941,10 @@
       "start_date": "2021-07-01",
       "expected_completion_date": "2023-09-01",
       "duration_months": 26,
+      "remaining_months": 0,
       "sector": "Hạ tầng giao thông",
       "source": "muasamcong",
-      "raw_data": "",
-      "updated_at": "2026-09-26T12:10:49.075368",
-      "remaining_months": 0
+      "updated_at": "2026-09-26T12:10:49.075368"
     },
     {
       "id": "SEED_CAU_MT2",
@@ -1006,11 +963,10 @@
       "start_date": "2020-02-27",
       "expected_completion_date": "2023-12-24",
       "duration_months": 46,
+      "remaining_months": 0,
       "sector": "Cầu đường bộ",
       "source": "muasamcong",
-      "raw_data": "",
-      "updated_at": "2026-09-26T12:10:48.541984",
-      "remaining_months": 0
+      "updated_at": "2026-09-26T12:10:48.541984"
     },
     {
       "id": "SEED_CT_MTCT",
@@ -1029,11 +985,10 @@
       "start_date": "2021-01-04",
       "expected_completion_date": "2023-12-24",
       "duration_months": 35,
+      "remaining_months": 0,
       "sector": "Hạ tầng giao thông",
       "source": "muasamcong",
-      "raw_data": "",
-      "updated_at": "2026-09-26T12:10:48.809200",
-      "remaining_months": 0
+      "updated_at": "2026-09-26T12:10:48.809200"
     },
     {
       "id": "7d5d9b59-3e9c-4794-b347-4fa647a706e9",
@@ -1052,11 +1007,10 @@
       "start_date": "2026-12-02",
       "expected_completion_date": "2029-11-16",
       "duration_months": 36,
+      "remaining_months": 37,
       "sector": "Hạ tầng giao thông",
       "source": "muasamcong",
-      "raw_data": "{\"id\": \"7d5d9b59-3e9c-4794-b347-4fa647a706e9\", \"locations\": [{\"provCode\": \"86\", \"provName\": \"Tỉnh Vĩnh Long\", \"districtCode\": \"29050\", \"districtName\": \"Xã Bình Đại\"}, {\"provCode\": \"82\", \"provName\": \"Tỉnh Đồng Tháp\", \"districtCode\": \"28696\", \"districtName\": \"Xã Tân Phú Đông\"}], \"publicDate\": \"2026-09-21T08:08:03.071\", \"districtCode\": \"29050\", \"investTotal\": 4564700000000.0, \"investorName\": \"Ban Quản lý dự án giao thông tỉnh Vĩnh Long\", \"investorCode\": \"vn1501157726\", \"location\": \"Tỉnh Vĩnh Long,Tỉnh Đồng Tháp\", \"name\": \"Xây dựng cầu Cửa Đại trên tuyến đường bộ ven biển kết nối tỉnh Bến Tre với tỉnh Tiền Giang (nay là tỉnh Vĩnh Long với tỉnh Đồng Tháp)\", \"provCode\": \"86\", \"stepCode\": \"project-step-1\", \"type\": \"es-bidp-project-p\", \"decisionDate\": \"2026-06-05T23:59:59\", \"score\": \"NaN\", \"pgroup\": \"NB\", \"pno\": \"PR2600068111\", \"pversion\": \"00\", \"pnoStand\": \"PR2600068111-00\"}",
-      "updated_at": "2026-09-26T11:35:43.329948",
-      "remaining_months": 37
+      "updated_at": "2026-09-26T11:35:43.329948"
     },
     {
       "id": "3149f98a-622f-41f3-abc3-10aa90e27ade",
@@ -1075,11 +1029,10 @@
       "start_date": "2025-04-04",
       "expected_completion_date": "2028-03-19",
       "duration_months": 36,
+      "remaining_months": 17,
       "sector": "Năng lượng & Điện lực",
       "source": "muasamcong",
-      "raw_data": "{\"id\": \"3149f98a-622f-41f3-abc3-10aa90e27ade\", \"publicDate\": \"2026-09-25T09:16:16.378\", \"investTotal\": 4089467000000.0, \"investorName\": \"TỔNG CÔNG TY TRUYỀN TẢI ĐIỆN QUỐC GIA\", \"investorCode\": \"vn0102743068\", \"name\": \"Đường dây 500 kV Đức Hòa - Chơn Thành\", \"stepCode\": \"project-step-1\", \"type\": \"es-bidp-project-p\", \"decisionDate\": \"2024-10-06T23:59:59\", \"score\": \"NaN\", \"pgroup\": \"NB\", \"pno\": \"PR2600070258\", \"pversion\": \"00\", \"pnoStand\": \"PR2600070258-00\"}",
-      "updated_at": "2026-09-26T11:35:41.758313",
-      "remaining_months": 17
+      "updated_at": "2026-09-26T11:35:41.758313"
     },
     {
       "id": "5fba2785-4fc4-4753-91d8-dc17a2d4743f",
@@ -1098,11 +1051,10 @@
       "start_date": "2026-12-09",
       "expected_completion_date": "2029-11-23",
       "duration_months": 36,
+      "remaining_months": 37,
       "sector": "Hạ tầng giao thông",
       "source": "muasamcong",
-      "raw_data": "{\"id\": \"5fba2785-4fc4-4753-91d8-dc17a2d4743f\", \"publicDate\": \"2026-09-14T15:22:33.622\", \"investTotal\": 3905535000000.0, \"investorName\": \"Phòng Kinh tế xã Tân Thuận Bình\", \"investorCode\": \"vn1201705749\", \"name\": \"Hệ thống đèn chiếu sáng trên đường Trung tâm xã và đường Quang Khương\", \"stepCode\": \"project-step-1\", \"type\": \"es-bidp-project-p\", \"decisionDate\": \"2026-06-12T23:59:59\", \"score\": \"NaN\", \"pgroup\": \"NC\", \"pno\": \"PR2600065730\", \"pversion\": \"00\", \"pnoStand\": \"PR2600065730-00\"}",
-      "updated_at": "2026-09-26T11:35:46.415358",
-      "remaining_months": 37
+      "updated_at": "2026-09-26T11:35:46.415358"
     },
     {
       "id": "26e3c1c5-0a9f-44ee-9190-1eb076589df6",
@@ -1121,11 +1073,10 @@
       "start_date": "2026-08-24",
       "expected_completion_date": "2029-08-08",
       "duration_months": 36,
+      "remaining_months": 34,
       "sector": "Hạ tầng giao thông",
       "source": "muasamcong",
-      "raw_data": "{\"id\": \"26e3c1c5-0a9f-44ee-9190-1eb076589df6\", \"locations\": [{\"provCode\": \"79\", \"provName\": \"Thành phố Hồ Chí Minh\", \"districtCode\": \"26773\", \"districtName\": \"Phường Thới An\"}], \"publicDate\": \"2026-09-17T16:29:40.967\", \"districtCode\": \"26773\", \"investTotal\": 3563232215298, \"investorName\": \"Ban Quản lý dự án đầu tư xây dựng các công trình giao thông\", \"investorCode\": \"vn0302282248\", \"location\": \"Thành phố Hồ Chí Minh\", \"name\": \"Xây dựng đường Liên phường Thới An - Thạnh Xuân (tuyến 2)\", \"provCode\": \"79\", \"stepCode\": \"project-step-1\", \"type\": \"es-bidp-project-p\", \"decisionDate\": \"2026-02-25T23:59:59\", \"score\": \"NaN\", \"pgroup\": \"NA\", \"pno\": \"20190945439\", \"pversion\": \"01\", \"pnoStand\": \"20190945439-01\"}",
-      "updated_at": "2026-09-26T11:35:44.176332",
-      "remaining_months": 34
+      "updated_at": "2026-09-26T11:35:44.176332"
     },
     {
       "id": "38a7bdbc-0413-4fca-bb78-d714c16815bc",
@@ -1144,11 +1095,10 @@
       "start_date": "2027-02-27",
       "expected_completion_date": "2030-02-11",
       "duration_months": 36,
+      "remaining_months": 40,
       "sector": "Hạ tầng giao thông",
       "source": "muasamcong",
-      "raw_data": "{\"id\": \"38a7bdbc-0413-4fca-bb78-d714c16815bc\", \"locations\": [{\"provCode\": \"75\", \"provName\": \"Thành phố Đồng Nai\", \"districtCode\": \"26485\", \"districtName\": \"Phường Nhơn Trạch\"}], \"publicDate\": \"2026-09-10T10:29:37.523\", \"districtCode\": \"26485\", \"investTotal\": 3303911417641, \"investorName\": \"Trung tâm Phát triển quỹ đất thành phố Đồng Nai\", \"investorCode\": \"vn3603997686\", \"location\": \"Thành phố Đồng Nai\", \"name\": \"Tạo lập quỹ đất vùng phụ cận các điểm kết nối giao thông và các tuyến giao thông có tiềm năng phát triển để tổ chức đấu giá quyền sử dụng đất tại phường Nhơn Trạch,\\nthành phố Đồng Nai (khu đất khoảng 358 ha)\", \"provCode\": \"75\", \"stepCode\": \"project-step-1\", \"type\": \"es-bidp-project-p\", \"decisionDate\": \"2026-08-31T23:59:59\", \"score\": \"NaN\", \"pgroup\": \"NA\", \"pno\": \"PR2600064365\", \"pversion\": \"00\", \"pnoStand\": \"PR2600064365-00\"}",
-      "updated_at": "2026-09-26T11:35:47.049279",
-      "remaining_months": 40
+      "updated_at": "2026-09-26T11:35:47.049279"
     },
     {
       "id": "6964ff9c-0c25-4e37-8b70-be266a5a652b",
@@ -1167,11 +1117,10 @@
       "start_date": "2027-02-07",
       "expected_completion_date": "2030-01-22",
       "duration_months": 36,
+      "remaining_months": 39,
       "sector": "Đường sắt đô thị",
       "source": "muasamcong",
-      "raw_data": "{\"id\": \"6964ff9c-0c25-4e37-8b70-be266a5a652b\", \"locations\": [{\"provCode\": \"01\", \"provName\": \"Thành phố Hà Nội\", \"districtCode\": \"00541\", \"districtName\": \"Xã Phù Đổng\"}], \"publicDate\": \"2026-09-10T09:04:42.978\", \"districtCode\": \"00541\", \"investTotal\": 3274552472000.0, \"investorName\": \"Ủy ban nhân dân xã Phù Đổng\", \"investorCode\": \"vnz000040160\", \"location\": \"Thành phố Hà Nội\", \"name\": \"Bồi thường, hỗ trợ, tái định cư thuộc địa phận thành phố Hà Nội thuộc Dự án đầu tư xây dựng tuyến đường sắt Lào Cai - Hà Nội - Hải Phòng (đoạn qua địa bàn xã Phù Đổng, thành phố Hà Nội)\", \"provCode\": \"01\", \"stepCode\": \"project-step-1\", \"type\": \"es-bidp-project-p\", \"decisionDate\": \"2026-08-11T23:59:59\", \"score\": \"NaN\", \"pgroup\": \"NA\", \"pno\": \"PR2600064402\", \"pversion\": \"00\", \"pnoStand\": \"PR2600064402-00\"}",
-      "updated_at": "2026-09-26T11:35:47.207535",
-      "remaining_months": 39
+      "updated_at": "2026-09-26T11:35:47.207535"
     },
     {
       "id": "7c1bc4ab-e14d-4ccb-b9f7-8eeb43769320",
@@ -1190,11 +1139,10 @@
       "start_date": "2027-02-25",
       "expected_completion_date": "2030-02-09",
       "duration_months": 36,
+      "remaining_months": 40,
       "sector": "Thủy lợi & Ứng phó BĐKH",
       "source": "muasamcong",
-      "raw_data": "{\"id\": \"7c1bc4ab-e14d-4ccb-b9f7-8eeb43769320\", \"locations\": [{\"provCode\": \"33\", \"provName\": \"Tỉnh Hưng Yên\"}, {\"provCode\": \"01\", \"provName\": \"Thành phố Hà Nội\"}], \"publicDate\": \"2026-09-03T09:12:22.858\", \"investTotal\": 2912234445000.0, \"investorName\": \"Ban Quản lý Đầu tư và Xây dựng Thủy lợi 1\", \"investorCode\": \"vn0104164676\", \"location\": \"Thành phố Hà Nội,Tỉnh Hưng Yên\", \"name\": \"Dự án thành phần số 1: Nâng cấp, cải tạo, gia cố kênh Kim Sơn từ cống Báo Đáp đến cống Kênh Cầu thuộc Dự án Nâng cấp, hiện đại hóa và cải thiện môi trường nước hệ thống thủy lợi Bắc Hưng Hải\", \"provCode\": \"33\", \"stepCode\": \"project-step-1\", \"type\": \"es-bidp-project-p\", \"decisionDate\": \"2026-08-29T23:59:59\", \"score\": \"NaN\", \"pgroup\": \"NA\", \"pno\": \"PR2600062073\", \"pversion\": \"01\", \"pnoStand\": \"PR2600062073-01\"}",
-      "updated_at": "2026-09-26T11:35:48.659021",
-      "remaining_months": 40
+      "updated_at": "2026-09-26T11:35:48.659021"
     },
     {
       "id": "e189c3f7-f4b2-4537-93e1-d12d042decf9",
@@ -1213,11 +1161,10 @@
       "start_date": "2026-11-14",
       "expected_completion_date": "2029-10-29",
       "duration_months": 36,
+      "remaining_months": 37,
       "sector": "Hạ tầng giao thông",
       "source": "muasamcong",
-      "raw_data": "{\"id\": \"e189c3f7-f4b2-4537-93e1-d12d042decf9\", \"locations\": [{\"provCode\": \"01\", \"provName\": \"Thành phố Hà Nội\"}, {\"provCode\": \"25\", \"provName\": \"Tỉnh Phú Thọ\"}, {\"provCode\": \"15\", \"provName\": \"Tỉnh Lào Cai\"}], \"publicDate\": \"2026-09-08T10:55:20.756\", \"investTotal\": 2887905221000.0, \"investorName\": \"Tổng công ty đầu tư phát triển đường cao tốc Việt Nam - Công ty TNHH Một thành viên\", \"investorCode\": \"vn0101573511\", \"location\": \"Thành phố Hà Nội,Tỉnh Lào Cai,Tỉnh Phú Thọ\", \"name\": \"Dự án sửa chữa lớn mặt đường, thay thế bổ sung hệ thống an toàn giao thông đoạn Km0+000-Km123+080 thuộc đường cao tốc Nội Bài – Lào Cai\", \"provCode\": \"01\", \"stepCode\": \"project-step-1\", \"type\": \"es-bidp-project-p\", \"decisionDate\": \"2026-05-18T23:59:59\", \"score\": \"NaN\", \"pgroup\": \"NB\", \"pno\": \"PR2600063587\", \"pversion\": \"00\", \"pnoStand\": \"PR2600063587-00\"}",
-      "updated_at": "2026-09-26T11:35:47.916031",
-      "remaining_months": 37
+      "updated_at": "2026-09-26T11:35:47.916031"
     },
     {
       "id": "cdf42cef-a019-4ae0-a4f6-8393503c1640",
@@ -1236,11 +1183,10 @@
       "start_date": "2027-03-23",
       "expected_completion_date": "2030-03-07",
       "duration_months": 36,
+      "remaining_months": 41,
       "sector": "Hạ tầng giao thông",
       "source": "muasamcong",
-      "raw_data": "{\"id\": \"cdf42cef-a019-4ae0-a4f6-8393503c1640\", \"locations\": [{\"provCode\": \"15\", \"provName\": \"Tỉnh Lào Cai\"}], \"publicDate\": \"2026-09-25T16:55:02.766\", \"investTotal\": 2407900000000.0, \"investorName\": \"Ban Chỉ huy Bộ đội Biên phòng - Bộ chỉ huy Quân sự tỉnh Lào Cai\", \"investorCode\": \"vnz000006252\", \"location\": \"Tỉnh Lào Cai\", \"name\": \"Xây dựng các công trình cơ sở hạ tầng lưỡng dụng phục vụ phát triển KT-XH vùng đồng bào dân tộc thiểu số và miền núi, kết hợp đảm bảo QP-AN ở khu vực biên giới tỉnh Lào Cai\", \"provCode\": \"15\", \"stepCode\": \"project-step-1\", \"type\": \"es-bidp-project-p\", \"decisionDate\": \"2026-09-24T23:59:59\", \"score\": \"NaN\", \"pgroup\": \"NB\", \"pno\": \"PR2600070617\", \"pversion\": \"00\", \"pnoStand\": \"PR2600070617-00\"}",
-      "updated_at": "2026-09-26T11:35:41.440115",
-      "remaining_months": 41
+      "updated_at": "2026-09-26T11:35:41.440115"
     },
     {
       "id": "d7419312-136a-4aa0-b79f-51bfaa0e701e",
@@ -1259,11 +1205,10 @@
       "start_date": "2026-04-01",
       "expected_completion_date": "2029-03-16",
       "duration_months": 36,
+      "remaining_months": 29,
       "sector": "Hạ tầng giao thông",
       "source": "muasamcong",
-      "raw_data": "{\"id\": \"d7419312-136a-4aa0-b79f-51bfaa0e701e\", \"publicDate\": \"2026-09-14T11:07:34.033\", \"investTotal\": 1600000000000.0, \"investorName\": \"BAN QUẢN LÝ DỰ ÁN ĐẦU TƯ XÂY DỰNG CÔNG TRÌNH GIAO THÔNG\", \"investorCode\": \"vn3101159190\", \"name\": \"Dự án thành phần 1: Đầu tư xây dựng Quốc lộ 15D đoạn từ Cảng Mỹ Thủy đến cao tốc Cam Lộ - La Sơn thuộc Dự án Quốc lộ 15D đoạn từ Cảng Mỹ Thủy đến cao tốc Cam Lộ - La Sơn\", \"stepCode\": \"project-step-1\", \"type\": \"es-bidp-project-p\", \"decisionDate\": \"2025-10-03T23:59:59\", \"score\": \"NaN\", \"pgroup\": \"NB\", \"pno\": \"PR2600065564\", \"pversion\": \"00\", \"pnoStand\": \"PR2600065564-00\"}",
-      "updated_at": "2026-09-26T11:35:46.572213",
-      "remaining_months": 29
+      "updated_at": "2026-09-26T11:35:46.572213"
     },
     {
       "id": "74c58a68-0ef2-4dd0-96ae-9dec1bee0283",
@@ -1282,11 +1227,10 @@
       "start_date": "2022-04-12",
       "expected_completion_date": "2025-03-27",
       "duration_months": 36,
+      "remaining_months": 0,
       "sector": "Hạ tầng giao thông",
       "source": "muasamcong",
-      "raw_data": "{\"id\": \"74c58a68-0ef2-4dd0-96ae-9dec1bee0283\", \"publicDate\": \"2026-09-23T14:13:45.642\", \"investTotal\": 1569200000000.0, \"investorName\": \"Ban Quản lý dự án đầu tư xây dựng công trình giao thông và nông nghiệp thành phố Cần Thơ\", \"investorCode\": \"vn1800809747\", \"name\": \"Đường tỉnh 926B, tỉnh Hậu Giang kết nối tuyến Quản Lộ Phụng Hiệp, tỉnh Sóc Trăng\", \"stepCode\": \"project-step-1\", \"type\": \"es-bidp-project-p\", \"decisionDate\": \"2021-10-14T23:59:59\", \"score\": \"NaN\", \"pgroup\": \"NA\", \"pno\": \"PR2600069387\", \"pversion\": \"00\", \"pnoStand\": \"PR2600069387-00\"}",
-      "updated_at": "2026-09-26T11:35:42.450031",
-      "remaining_months": 0
+      "updated_at": "2026-09-26T11:35:42.450031"
     },
     {
       "id": "3d27141b-cbf5-4307-8c08-1ad4d9c97aca",
@@ -1305,11 +1249,10 @@
       "start_date": "2027-02-21",
       "expected_completion_date": "2030-02-05",
       "duration_months": 36,
+      "remaining_months": 40,
       "sector": "Hạ tầng giao thông",
       "source": "muasamcong",
-      "raw_data": "{\"id\": \"3d27141b-cbf5-4307-8c08-1ad4d9c97aca\", \"publicDate\": \"2026-09-08T16:23:31.956\", \"investTotal\": 1470961000000.0, \"investorName\": \"Ban Quản lý dự án xây dựng công trình giao thông tỉnh Cà Mau\", \"investorCode\": \"vn2001404577\", \"name\": \"Dự án xây dựng tuyến đường từ thị trấn Phước Long, huyện Phước Long đi Ba Đình, huyện Hồng Dân\", \"stepCode\": \"project-step-1\", \"type\": \"es-bidp-project-p\", \"decisionDate\": \"2026-08-25T23:59:59\", \"score\": \"NaN\", \"pgroup\": \"NB\", \"pno\": \"PR2600063803\", \"pversion\": \"00\", \"pnoStand\": \"PR2600063803-00\"}",
-      "updated_at": "2026-09-26T11:35:47.732138",
-      "remaining_months": 40
+      "updated_at": "2026-09-26T11:35:47.732138"
     },
     {
       "id": "c467b100-fd9e-4b7e-897b-6d908a9675ff",
@@ -1328,11 +1271,10 @@
       "start_date": "2024-08-13",
       "expected_completion_date": "2027-07-29",
       "duration_months": 36,
+      "remaining_months": 10,
       "sector": "Hạ tầng giao thông",
       "source": "muasamcong",
-      "raw_data": "{\"id\": \"c467b100-fd9e-4b7e-897b-6d908a9675ff\", \"publicDate\": \"2026-09-24T15:39:57.225\", \"investTotal\": 1460021924762, \"investorName\": \"TỔNG CÔNG TY CỔ PHẦN CÔNG TRÌNH VIETTEL\", \"investorCode\": \"vn0104753865\", \"name\": \"Đầu tư xây dựng hạ tầng trạm BTS cho thuê năm 2024\", \"stepCode\": \"project-step-1\", \"type\": \"es-bidp-project-p\", \"decisionDate\": \"2024-02-15T23:59:59\", \"score\": \"NaN\", \"pgroup\": \"NB\", \"pno\": \"PR2600069966\", \"pversion\": \"00\", \"pnoStand\": \"PR2600069966-00\"}",
-      "updated_at": "2026-09-26T11:35:41.941409",
-      "remaining_months": 10
+      "updated_at": "2026-09-26T11:35:41.941409"
     },
     {
       "id": "adc4fd87-428b-411f-a310-8ac66223abfa",
@@ -1351,11 +1293,10 @@
       "start_date": "2026-09-20",
       "expected_completion_date": "2029-09-04",
       "duration_months": 36,
+      "remaining_months": 35,
       "sector": "Hạ tầng giao thông",
       "source": "muasamcong",
-      "raw_data": "{\"id\": \"adc4fd87-428b-411f-a310-8ac66223abfa\", \"locations\": [{\"provCode\": \"75\", \"provName\": \"Thành phố Đồng Nai\", \"districtCode\": \"26347\", \"districtName\": \"Xã Xuân Đường\"}, {\"provCode\": \"75\", \"provName\": \"Thành phố Đồng Nai\", \"districtCode\": \"26329\", \"districtName\": \"Xã Xuân Quế\"}], \"publicDate\": \"2026-09-25T17:05:19.226\", \"districtCode\": \"26347\", \"investTotal\": 1453065280826, \"investorName\": \"Ban Quản lý dự án Đầu tư xây dựng Công trình giao thông thành phố Đồng Nai\", \"investorCode\": \"vnz000010141\", \"location\": \"Thành phố Đồng Nai,Thành phố Đồng Nai\", \"name\": \"Đường Thừa Đức đi Long Khánh, huyện Cẩm Mỹ (nay là xã Xuân Đường và xã Xuân Quế, tỉnh Đồng Nai)\", \"provCode\": \"75\", \"stepCode\": \"project-step-1\", \"type\": \"es-bidp-project-p\", \"decisionDate\": \"2026-03-24T23:59:59\", \"score\": \"NaN\", \"pgroup\": \"NB\", \"pno\": \"PR2600070625\", \"pversion\": \"00\", \"pnoStand\": \"PR2600070625-00\"}",
-      "updated_at": "2026-09-26T11:35:41.305431",
-      "remaining_months": 35
+      "updated_at": "2026-09-26T11:35:41.305431"
     },
     {
       "id": "484b5a2b-359f-4c48-adc3-9850991d026d",
@@ -1374,11 +1315,10 @@
       "start_date": "2025-07-15",
       "expected_completion_date": "2028-06-29",
       "duration_months": 36,
+      "remaining_months": 21,
       "sector": "Hạ tầng giao thông",
       "source": "muasamcong",
-      "raw_data": "{\"id\": \"484b5a2b-359f-4c48-adc3-9850991d026d\", \"locations\": [{\"provCode\": \"75\", \"provName\": \"Thành phố Đồng Nai\", \"districtCode\": \"25363\", \"districtName\": \"Phường Đồng Phú\"}, {\"provCode\": \"75\", \"provName\": \"Thành phố Đồng Nai\", \"districtCode\": \"25195\", \"districtName\": \"Phường Bình Phước\"}], \"publicDate\": \"2026-09-14T09:29:10.352\", \"districtCode\": \"25363\", \"investTotal\": 1360000000000.0, \"investorName\": \"CÔNG TY CỔ PHẦN KHU CÔNG NGHIỆP BẮC ĐỒNG PHÚ\", \"investorCode\": \"vn3800565639\", \"location\": \"Thành phố Đồng Nai,Thành phố Đồng Nai\", \"name\": \"Đầu tư xây dựng và kinh doanh hạ tầng khu công nghiệp Bắc Đồng Phú giai đoạn 2\", \"provCode\": \"75\", \"stepCode\": \"project-step-1\", \"type\": \"es-bidp-project-p\", \"decisionDate\": \"2025-01-16T23:59:59\", \"score\": \"NaN\", \"pgroup\": \"NB\", \"pno\": \"PR2600065528\", \"pversion\": \"00\", \"pnoStand\": \"PR2600065528-00\"}",
-      "updated_at": "2026-09-26T11:35:46.721951",
-      "remaining_months": 21
+      "updated_at": "2026-09-26T11:35:46.721951"
     },
     {
       "id": "7735b347-0123-4b10-a6fa-ea3c2a929d1c",
@@ -1397,11 +1337,10 @@
       "start_date": "2027-03-08",
       "expected_completion_date": "2030-02-20",
       "duration_months": 36,
+      "remaining_months": 40,
       "sector": "Hạ tầng giao thông",
       "source": "muasamcong",
-      "raw_data": "{\"id\": \"7735b347-0123-4b10-a6fa-ea3c2a929d1c\", \"publicDate\": \"2026-09-18T12:26:52.375\", \"investTotal\": 1244147000000.0, \"investorName\": \"Ban Quản lý dự án đầu tư xây dựng công trình giao thông Hải Phòng\", \"investorCode\": \"vn0200408364\", \"name\": \"Dự án đầu tư xây dựng tuyến đường từ đường Hồ Sen đến nút giao thông Quán Mau\", \"stepCode\": \"project-step-1\", \"type\": \"es-bidp-project-p\", \"decisionDate\": \"2026-09-09T23:59:59\", \"score\": \"NaN\", \"pgroup\": \"NB\", \"pno\": \"PR2600067582\", \"pversion\": \"00\", \"pnoStand\": \"PR2600067582-00\"}",
-      "updated_at": "2026-09-26T11:35:43.836553",
-      "remaining_months": 40
+      "updated_at": "2026-09-26T11:35:43.836553"
     },
     {
       "id": "f0ad5a75-e75f-4a69-b526-90c3524d9661",
@@ -1420,11 +1359,10 @@
       "start_date": "2027-01-23",
       "expected_completion_date": "2030-01-07",
       "duration_months": 36,
+      "remaining_months": 39,
       "sector": "Hạ tầng giao thông",
       "source": "muasamcong",
-      "raw_data": "{\"id\": \"f0ad5a75-e75f-4a69-b526-90c3524d9661\", \"locations\": [{\"provCode\": \"86\", \"provName\": \"Tỉnh Vĩnh Long\", \"districtCode\": \"28993\", \"districtName\": \"Xã Lương Phú\"}, {\"provCode\": \"86\", \"provName\": \"Tỉnh Vĩnh Long\", \"districtCode\": \"29062\", \"districtName\": \"Xã Phú Thuận\"}, {\"provCode\": \"86\", \"provName\": \"Tỉnh Vĩnh Long\", \"districtCode\": \"29083\", \"districtName\": \"Xã Châu Hưng\"}, {\"provCode\": \"86\", \"provName\": \"Tỉnh Vĩnh Long\", \"districtCode\": \"29413\", \"districtName\": \"Xã Long Hòa\"}], \"publicDate\": \"2026-09-21T08:01:21.575\", \"districtCode\": \"28993\", \"investTotal\": 1220000000000.0, \"investorName\": \"Ban Quản lý dự án giao thông tỉnh Vĩnh Long\", \"investorCode\": \"vn1501157726\", \"location\": \"Tỉnh Vĩnh Long,Tỉnh Vĩnh Long,Tỉnh Vĩnh Long,Tỉnh Vĩnh Long\", \"name\": \"Đường Bắc Nam phục vụ Khu công nghiệp Phú Thuận và Cụm công nghiệp Phong Nẫm (ĐT.DK.08), liên huyện Bình Đại - Giồng Trôm, tỉnh Bến Tre (giai đoạn 2)\", \"provCode\": \"86\", \"stepCode\": \"project-step-1\", \"type\": \"es-bidp-project-p\", \"decisionDate\": \"2026-07-27T23:59:59\", \"score\": \"NaN\", \"pgroup\": \"NB\", \"pno\": \"PR2600068116\", \"pversion\": \"00\", \"pnoStand\": \"PR2600068116-00\"}",
-      "updated_at": "2026-09-26T11:35:43.487450",
-      "remaining_months": 39
+      "updated_at": "2026-09-26T11:35:43.487450"
     },
     {
       "id": "0d0ee6bf-cb33-4ecd-a81d-c96679630fc1",
@@ -1443,11 +1381,10 @@
       "start_date": "2027-03-16",
       "expected_completion_date": "2030-02-28",
       "duration_months": 36,
+      "remaining_months": 41,
       "sector": "Hạ tầng giao thông",
       "source": "muasamcong",
-      "raw_data": "{\"id\": \"0d0ee6bf-cb33-4ecd-a81d-c96679630fc1\", \"locations\": [{\"provCode\": \"52\", \"provName\": \"Tỉnh Gia Lai\", \"districtCode\": \"21796\", \"districtName\": \"Xã Vĩnh Thịnh\"}], \"publicDate\": \"2026-09-17T15:00:22.989\", \"districtCode\": \"21796\", \"investTotal\": 1200000000000.0, \"investorName\": \"Phòng Kinh tế xã Vĩnh Thịnh\", \"investorCode\": \"vn4101668062\", \"location\": \"Tỉnh Gia Lai\", \"name\": \"Nâng cấp, mở rộng các tuyến đường thôn Vĩnh Thái\", \"provCode\": \"52\", \"stepCode\": \"project-step-1\", \"type\": \"es-bidp-project-p\", \"decisionDate\": \"2026-09-17T23:59:59\", \"score\": \"NaN\", \"pgroup\": \"NC\", \"pno\": \"PR2600067175\", \"pversion\": \"00\", \"pnoStand\": \"PR2600067175-00\"}",
-      "updated_at": "2026-09-26T11:35:44.334685",
-      "remaining_months": 41
+      "updated_at": "2026-09-26T11:35:44.334685"
     },
     {
       "id": "1055c91f-b72c-42ee-b215-a241079b36a9",
@@ -1466,11 +1403,10 @@
       "start_date": "2011-07-23",
       "expected_completion_date": "2014-07-07",
       "duration_months": 36,
+      "remaining_months": 0,
       "sector": "Hạ tầng giao thông",
       "source": "muasamcong",
-      "raw_data": "{\"id\": \"1055c91f-b72c-42ee-b215-a241079b36a9\", \"locations\": [{\"provCode\": \"01\", \"provName\": \"Thành phố Hà Nội\", \"districtCode\": \"00136\", \"districtName\": \"Phường Phúc Lợi\"}], \"publicDate\": \"2026-09-04T10:48:21.259\", \"districtCode\": \"00136\", \"investTotal\": 1191402000000.0, \"investorName\": \"CÔNG TY CỔ PHẦN HANEL \", \"investorCode\": \"vn0100102206\", \"location\": \"Thành phố Hà Nội\", \"name\": \"Khu công viên công nghệ phần mềm Hà Nội\", \"provCode\": \"01\", \"stepCode\": \"project-step-1\", \"type\": \"es-bidp-project-p\", \"decisionDate\": \"2011-01-24T23:59:59\", \"score\": \"NaN\", \"pgroup\": \"NB\", \"pno\": \"PR2600062486\", \"pversion\": \"00\", \"pnoStand\": \"PR2600062486-00\"}",
-      "updated_at": "2026-09-26T11:35:48.200357",
-      "remaining_months": 0
+      "updated_at": "2026-09-26T11:35:48.200357"
     },
     {
       "id": "91368445-6fbb-4723-917d-36a884bd19d9",
@@ -1489,11 +1425,10 @@
       "start_date": "2027-01-21",
       "expected_completion_date": "2030-01-05",
       "duration_months": 36,
+      "remaining_months": 39,
       "sector": "Hạ tầng giao thông",
       "source": "muasamcong",
-      "raw_data": "{\"id\": \"91368445-6fbb-4723-917d-36a884bd19d9\", \"locations\": [{\"provCode\": \"86\", \"provName\": \"Tỉnh Vĩnh Long\", \"districtCode\": \"28789\", \"districtName\": \"Phường Bến Tre\"}, {\"provCode\": \"86\", \"provName\": \"Tỉnh Vĩnh Long\", \"districtCode\": \"28783\", \"districtName\": \"Phường Sơn Đông\"}, {\"provCode\": \"86\", \"provName\": \"Tỉnh Vĩnh Long\", \"districtCode\": \"28756\", \"districtName\": \"Phường Phú Khương\"}], \"publicDate\": \"2026-09-21T08:09:28.989\", \"districtCode\": \"28789\", \"investTotal\": 1150000000000.0, \"investorName\": \"Ban Quản lý dự án giao thông tỉnh Vĩnh Long\", \"investorCode\": \"vn1501157726\", \"location\": \"Tỉnh Vĩnh Long,Tỉnh Vĩnh Long,Tỉnh Vĩnh Long\", \"name\": \"Đại lộ Đông Tây (Giai đoạn 2)\", \"provCode\": \"86\", \"stepCode\": \"project-step-1\", \"type\": \"es-bidp-project-p\", \"decisionDate\": \"2026-07-25T23:59:59\", \"score\": \"NaN\", \"pgroup\": \"NB\", \"pno\": \"PR2600068113\", \"pversion\": \"00\", \"pnoStand\": \"PR2600068113-00\"}",
-      "updated_at": "2026-09-26T11:35:43.144587",
-      "remaining_months": 39
+      "updated_at": "2026-09-26T11:35:43.144587"
     },
     {
       "id": "59513e43-8810-432e-bcda-3bae419354e2",
@@ -1512,11 +1447,10 @@
       "start_date": "2026-07-04",
       "expected_completion_date": "2029-06-18",
       "duration_months": 36,
+      "remaining_months": 32,
       "sector": "Đô thị & Nhà ở",
       "source": "muasamcong",
-      "raw_data": "{\"id\": \"59513e43-8810-432e-bcda-3bae419354e2\", \"locations\": [{\"provCode\": \"22\", \"provName\": \"Thành phố Quảng Ninh\", \"districtCode\": \"06673\", \"districtName\": \"Phường Bãi Cháy\"}], \"publicDate\": \"2026-09-24T15:27:02.507\", \"districtCode\": \"06673\", \"investTotal\": 1130590000000.0, \"investorName\": \"TỔNG CÔNG TY THÀNH AN                                                                           (CÔNG TY TNHH 1TV)\", \"investorCode\": \"vn0100108663\", \"location\": \"Thành phố Quảng Ninh\", \"name\": \"Nhà ở gia đình lực lượng vũ trang trong quân đội tại phường Bãi Cháy, thành phố Quảng Ninh\", \"provCode\": \"22\", \"stepCode\": \"project-step-1\", \"type\": \"es-bidp-project-p\", \"decisionDate\": \"2026-01-05T23:59:59\", \"score\": \"NaN\", \"pgroup\": \"NB\", \"pno\": \"PR2600069967\", \"pversion\": \"00\", \"pnoStand\": \"PR2600069967-00\"}",
-      "updated_at": "2026-09-26T11:35:42.108354",
-      "remaining_months": 32
+      "updated_at": "2026-09-26T11:35:42.108354"
     },
     {
       "id": "f63e82cc-55bd-428b-81b1-7379c7ddf713",
@@ -1535,11 +1469,10 @@
       "start_date": "2027-02-09",
       "expected_completion_date": "2030-01-24",
       "duration_months": 36,
+      "remaining_months": 40,
       "sector": "Hạ tầng giao thông",
       "source": "muasamcong",
-      "raw_data": "{\"id\": \"f63e82cc-55bd-428b-81b1-7379c7ddf713\", \"locations\": [{\"provCode\": \"79\", \"provName\": \"Thành phố Hồ Chí Minh\", \"districtCode\": \"25843\", \"districtName\": \"Phường Tây Nam\"}, {\"provCode\": \"79\", \"provName\": \"Thành phố Hồ Chí Minh\", \"districtCode\": \"25807\", \"districtName\": \"Xã Thanh An\"}], \"publicDate\": \"2026-09-21T10:38:33.731\", \"districtCode\": \"25843\", \"investTotal\": 1106118417000.0, \"investorName\": \"Ban QLDA Đầu tư Xây dựng xã Thanh An\", \"investorCode\": \"vn3703476479\", \"location\": \"Thành phố Hồ Chí Minh,Thành phố Hồ Chí Minh\", \"name\": \"Dự án thành phần 2: Nâng cấp, mở rộng đường ĐT.744B (đoạn từ ĐT.749F đến đường ĐT.744 Bưng Còng)\", \"provCode\": \"79\", \"stepCode\": \"project-step-1\", \"type\": \"es-bidp-project-p\", \"decisionDate\": \"2026-08-13T23:59:59\", \"score\": \"NaN\", \"pgroup\": \"NB\", \"pno\": \"PR2600068245\", \"pversion\": \"00\", \"pnoStand\": \"PR2600068245-00\"}",
-      "updated_at": "2026-09-26T11:35:42.967922",
-      "remaining_months": 40
+      "updated_at": "2026-09-26T11:35:42.967922"
     },
     {
       "id": "77991bfd-4acf-42ad-9ad5-145ec46bb4a9",
@@ -1558,11 +1491,10 @@
       "start_date": "2011-02-15",
       "expected_completion_date": "2014-01-30",
       "duration_months": 36,
+      "remaining_months": 0,
       "sector": "Hạ tầng giao thông",
       "source": "muasamcong",
-      "raw_data": "{\"id\": \"77991bfd-4acf-42ad-9ad5-145ec46bb4a9\", \"locations\": [{\"provCode\": \"92\", \"provName\": \"Thành phố Cần Thơ\", \"districtCode\": \"31360\", \"districtName\": \"Xã Thạnh Xuân\"}], \"publicDate\": \"2026-09-03T21:05:46.562\", \"districtCode\": \"31360\", \"investTotal\": 1089303654000.0, \"investorName\": \"công ty phát triển hạ tầng khu công nghiệp Hậu Giang\", \"investorCode\": \"vn6300018922\", \"location\": \"Thành phố Cần Thơ\", \"name\": \"Xây dựng kết cấu hạ tầng Khu công nghiệp Tân Phú Thạnh - giai đoạn 1, huyện Châu Thành A\", \"provCode\": \"92\", \"stepCode\": \"project-step-1\", \"type\": \"es-bidp-project-p\", \"decisionDate\": \"2010-08-19T23:59:59\", \"score\": \"NaN\", \"pgroup\": \"NB\", \"pno\": \"PR2600062381\", \"pversion\": \"00\", \"pnoStand\": \"PR2600062381-00\"}",
-      "updated_at": "2026-09-26T11:35:48.500957",
-      "remaining_months": 0
+      "updated_at": "2026-09-26T11:35:48.500957"
     },
     {
       "id": "4b98e376-7a1b-49c2-b9c8-b13a4e586125",
@@ -1581,11 +1513,10 @@
       "start_date": "2025-10-01",
       "expected_completion_date": "2028-09-15",
       "duration_months": 36,
+      "remaining_months": 23,
       "sector": "Hạ tầng giao thông",
       "source": "muasamcong",
-      "raw_data": "{\"id\": \"4b98e376-7a1b-49c2-b9c8-b13a4e586125\", \"locations\": [{\"provCode\": \"79\", \"provName\": \"Thành phố Hồ Chí Minh\", \"districtCode\": \"26545\", \"districtName\": \"Xã Long Sơn\"}], \"publicDate\": \"2026-09-22T16:54:01.995\", \"districtCode\": \"26545\", \"investTotal\": 1075572000000.0, \"investorName\": \"Ban Quản lý dự án đầu tư xây dựng các công trình giao thông\", \"investorCode\": \"vn0302282248\", \"location\": \"Thành phố Hồ Chí Minh\", \"name\": \"Đường Nguyễn Phong Sắc, thành phố Vũng Tàu\", \"provCode\": \"79\", \"stepCode\": \"project-step-1\", \"type\": \"es-bidp-project-p\", \"decisionDate\": \"2025-04-04T23:59:59\", \"score\": \"NaN\", \"pgroup\": \"NB\", \"pno\": \"PR2600069032\", \"pversion\": \"00\", \"pnoStand\": \"PR2600069032-00\"}",
-      "updated_at": "2026-09-26T11:35:42.634490",
-      "remaining_months": 23
+      "updated_at": "2026-09-26T11:35:42.634490"
     },
     {
       "id": "d85d125d-be45-4e49-bef9-b0cf0dae1e54",
@@ -1604,11 +1535,10 @@
       "start_date": "2027-03-06",
       "expected_completion_date": "2030-02-18",
       "duration_months": 36,
+      "remaining_months": 40,
       "sector": "Năng lượng & Điện lực",
       "source": "muasamcong",
-      "raw_data": "{\"id\": \"d85d125d-be45-4e49-bef9-b0cf0dae1e54\", \"locations\": [{\"provCode\": \"11\", \"provName\": \"Tỉnh Điện Biên\", \"districtCode\": \"03127\", \"districtName\": \"Phường Điện Biên Phủ\"}, {\"provCode\": \"11\", \"provName\": \"Tỉnh Điện Biên\", \"districtCode\": \"03334\", \"districtName\": \"Phường Mường Thanh\"}, {\"provCode\": \"11\", \"provName\": \"Tỉnh Điện Biên\", \"districtCode\": \"03256\", \"districtName\": \"Xã Mường Ảng\"}, {\"provCode\": \"11\", \"provName\": \"Tỉnh Điện Biên\", \"districtCode\": \"03325\", \"districtName\": \"Xã Mường Phăng\"}, {\"provCode\": \"11\", \"provName\": \"Tỉnh Điện Biên\", \"districtCode\": \"03313\", \"districtName\": \"Xã Mường Lạn\"}], \"publicDate\": \"2026-09-19T09:13:07.298\", \"districtCode\": \"03127\", \"investTotal\": 1024079829490.0, \"investorName\": \"Ban Quản lý dự án các công trình Giao thông tỉnh Điện Biên\", \"investorCode\": \"vn5600203522\", \"location\": \"Tỉnh Điện Biên,Tỉnh Điện Biên,Tỉnh Điện Biên,Tỉnh Điện Biên,Tỉnh Điện Biên\", \"name\": \"Dự án thành phần 1: Bồi thường, hỗ trợ, tái định cư, giải phóng mặt bằng, thuộc dự án đầu tư: Đoạn tuyến cao tốc Sơn La - Điện Biên - Cửa khẩu Tây Trang (giai đoạn 1)\", \"provCode\": \"11\", \"stepCode\": \"project-step-1\", \"type\": \"es-bidp-project-p\", \"decisionDate\": \"2026-09-07T23:59:59\", \"score\": \"NaN\", \"pgroup\": \"NB\", \"pno\": \"PR2600067884\", \"pversion\": \"00\", \"pnoStand\": \"PR2600067884-00\"}",
-      "updated_at": "2026-09-26T11:35:43.645901",
-      "remaining_months": 40
+      "updated_at": "2026-09-26T11:35:43.645901"
     },
     {
       "id": "9aa706af-f078-4004-8d9e-96a6717e8a12",
@@ -1627,11 +1557,10 @@
       "start_date": "2027-03-13",
       "expected_completion_date": "2030-02-25",
       "duration_months": 36,
+      "remaining_months": 41,
       "sector": "Đô thị & Nhà ở",
       "source": "muasamcong",
-      "raw_data": "{\"id\": \"9aa706af-f078-4004-8d9e-96a6717e8a12\", \"locations\": [{\"provCode\": \"01\", \"provName\": \"Thành phố Hà Nội\", \"districtCode\": \"00352\", \"districtName\": \"Phường Phương Liệt\"}], \"publicDate\": \"2026-09-17T11:50:15.072\", \"districtCode\": \"00352\", \"investTotal\": 1006736996000.0, \"investorName\": \"TỔNG CÔNG TY 319 BỘ QUỐC PHÒNG\", \"investorCode\": \"vn0100108984\", \"location\": \"Thành phố Hà Nội\", \"name\": \"Dự án ĐTXD Nhà ở cho gia đình lực lượng vũ trang trong Quân đội tại phường Phương Liệt, thành phố Hà Nội\", \"provCode\": \"01\", \"stepCode\": \"project-step-1\", \"type\": \"es-bidp-project-p\", \"decisionDate\": \"2026-09-14T23:59:59\", \"score\": \"NaN\", \"pgroup\": \"NB\", \"pno\": \"PR2600067079\", \"pversion\": \"00\", \"pnoStand\": \"PR2600067079-00\"}",
-      "updated_at": "2026-09-26T11:35:44.510240",
-      "remaining_months": 41
+      "updated_at": "2026-09-26T11:35:44.510240"
     }
   ],
   "packages": [
@@ -1653,7 +1582,6 @@
       "award_date": "2023-08-25",
       "duration_days": 0,
       "source": "muasamcong",
-      "raw_data": "",
       "updated_at": "2026-09-26T11:35:27.916156"
     },
     {
@@ -1674,7 +1602,6 @@
       "award_date": "",
       "duration_days": 0,
       "source": "muasamcong",
-      "raw_data": "",
       "updated_at": "2026-09-26T11:35:32.995177"
     },
     {
@@ -1695,7 +1622,6 @@
       "award_date": "",
       "duration_days": 0,
       "source": "muasamcong",
-      "raw_data": "",
       "updated_at": "2026-09-26T11:35:33.936471"
     },
     {
@@ -1716,7 +1642,6 @@
       "award_date": "",
       "duration_days": 0,
       "source": "muasamcong",
-      "raw_data": "",
       "updated_at": "2026-09-26T11:35:33.636365"
     },
     {
@@ -1737,7 +1662,6 @@
       "award_date": "2022-12-26",
       "duration_days": 0,
       "source": "muasamcong",
-      "raw_data": "",
       "updated_at": "2026-09-26T11:35:29.431306"
     },
     {
@@ -1758,7 +1682,6 @@
       "award_date": null,
       "duration_days": 0,
       "source": "muasamcong",
-      "raw_data": "{\"id\": \"b1f3f662-a955-48e4-aba7-e5e6efe4556f\", \"notifyId\": \"b1f3f662-a955-48e4-aba7-e5e6efe4556f\", \"bidCloseDate\": \"2026-10-14T08:30:00\", \"bidForm\": \"DTRR\", \"bidMode\": \"1_MTHS\", \"bidName\": [\"Gói thầu thuốc generic\"], \"investField\": [\"HH\"], \"isInternet\": 1, \"locations\": [{\"provCode\": \"79\", \"provName\": \"Thành phố Hồ Chí Minh\", \"districtCode\": \"27316\", \"districtName\": \"Phường An Đông\"}], \"notifyNo\": \"IB2600554874\", \"notifyVersion\": \"00\", \"notifyNoStand\": \"IB2600554874-00\", \"processApply\": \"LDT\", \"publicDate\": \"2026-09-25T10:08:53.574\", \"status\": \"01\", \"investorName\": \"Bệnh Viện An Bình\", \"investorCode\": \"vn0301514626\", \"bidOpenDate\": \"2026-10-14T08:30:00\", \"originalPublicDate\": \"2026-09-25T10:08:53.574\", \"planType\": \"TX\", \"planNo\": \"PL2600287943\", \"stepCode\": \"notify-contractor-step-1-tbmt\", \"type\": \"es-notify-contractor\", \"statusForNotify\": \"\", \"numPetition\": 0, \"numClarifyReq\": 1, \"numBidderTech\": 0, \"bidId\": \"c6ed61e3-e1f4-4821-a521-b3a7fa694edc\", \"createdBy\": \"vn0301514626\", \"bidPrice\": [10837144529420.0], \"numPetitionHsmt\": 0, \"numPetitionLcnt\": 0, \"numPetitionKqlcnt\": 0, \"score\": \"NaN\", \"isMedicine\": 1, \"medicines\": 0, \"isDomestic\": 1}",
       "updated_at": "2026-09-26T11:35:50.209665"
     },
     {
@@ -1779,7 +1702,6 @@
       "award_date": "2026-09-16T14:55:54",
       "duration_days": 0,
       "source": "muasamcong",
-      "raw_data": "{\"id\": \"IB2600540915\", \"notifyId\": \"IB2600540915\", \"inputResultId\": \"a7fc2c2b-dd14-47de-8e54-146a8e64088d\", \"bidCloseDate\": \"2026-09-16T14:55:56.151\", \"bidForm\": \"DPG\", \"bidMode\": \"1_MTHS\", \"bidName\": [\"Gói thầu 1: Cung cấp 34 thuốc biệt dược gốc, sinh phẩm tham chiếu thuộc nhóm tim mạch, tiểu đường, ung thư và điều hòa miễn dịch lần đầu thực hiện đàm phán giá (Mã hiệu: BDG.25.01)\"], \"investField\": [\"HH\"], \"isInternet\": 0, \"notifyNo\": \"IB2600540915\", \"notifyVersion\": \"00\", \"notifyNoStand\": \"IB2600540915-null\", \"processApply\": \"LDT\", \"publicDate\": \"2026-09-16T14:55:54\", \"publicDateKqlcnt\": \"2026-09-16T14:55:54\", \"status\": \"IS_PUBLISH\", \"investorName\": \"Trung tâm Mua sắm tập trung thuốc Quốc gia\", \"investorCode\": \"vnz000012701\", \"isPass\": 0, \"bidField\": \"HH\", \"planType\": \"TX\", \"planNo\": \"PL2500273819\", \"planVersion\": \"01\", \"stepCode\": \"notify-contractor-step-4-kqlcnt\", \"type\": \"es-notify-contractor\", \"statusForNotify\": \"KCNTTT\", \"winningCode\": [], \"decisionDate\": \"2026-08-27T23:59:59\", \"contractorName\": [], \"bidWinningPrice\": [], \"numPetition\": 0, \"numClarifyReq\": 0, \"numBidderTech\": 0, \"numBidderJoin\": 0, \"bidId\": \"1fc27c27-d8df-4ae1-a3fd-b3d67d7694b8\", \"bidPrice\": [10157117173220.0], \"numPetitionHsmt\": 0, \"numPetitionLcnt\": 0, \"numPetitionKqlcnt\": 0, \"caseKHKQ\": 1, \"score\": \"NaN\", \"isMedicine\": 1, \"medicines\": 1, \"winningContractorName\": []}",
       "updated_at": "2026-09-26T11:35:51.546058"
     },
     {
@@ -1800,7 +1722,6 @@
       "award_date": "2022-12-25",
       "duration_days": 0,
       "source": "muasamcong",
-      "raw_data": "",
       "updated_at": "2026-09-26T11:35:29.298425"
     },
     {
@@ -1821,7 +1742,6 @@
       "award_date": "2023-08-24",
       "duration_days": 0,
       "source": "muasamcong",
-      "raw_data": "",
       "updated_at": "2026-09-26T11:35:28.080189"
     },
     {
@@ -1842,7 +1762,6 @@
       "award_date": "2021-05-15",
       "duration_days": 0,
       "source": "muasamcong",
-      "raw_data": "",
       "updated_at": "2026-09-26T12:10:48.131090"
     },
     {
@@ -1863,7 +1782,6 @@
       "award_date": "2022-12-28",
       "duration_days": 0,
       "source": "muasamcong",
-      "raw_data": "",
       "updated_at": "2026-09-26T11:35:30.097492"
     },
     {
@@ -1884,7 +1802,6 @@
       "award_date": "2023-12-30",
       "duration_days": 0,
       "source": "muasamcong",
-      "raw_data": "",
       "updated_at": "2026-09-26T11:35:32.321004"
     },
     {
@@ -1905,7 +1822,6 @@
       "award_date": "2026-09-16T15:32:25",
       "duration_days": 0,
       "source": "muasamcong",
-      "raw_data": "{\"id\": \"IB2600541153\", \"notifyId\": \"IB2600541153\", \"inputResultId\": \"369231ea-775e-4ce2-8af3-0dbe9a4e55de\", \"bidCloseDate\": \"2026-09-16T15:32:27.911\", \"bidForm\": \"DPG\", \"bidMode\": \"1_MTHS\", \"bidName\": [\"Gói thầu 2: Cung cấp 35 thuốc biệt dược gốc, sinh phẩm tham chiếu (không bao gồm nhóm tim mạch, tiểu đường, ung thư và điều hòa miễn dịch) lần đầu thực hiện đàm phán giá (Mã hiệu: BDG.25.02)\"], \"investField\": [\"HH\"], \"isInternet\": 0, \"notifyNo\": \"IB2600541153\", \"notifyVersion\": \"00\", \"notifyNoStand\": \"IB2600541153-null\", \"processApply\": \"LDT\", \"publicDate\": \"2026-09-16T15:32:25\", \"publicDateKqlcnt\": \"2026-09-16T15:32:25\", \"status\": \"IS_PUBLISH\", \"investorName\": \"Trung tâm Mua sắm tập trung thuốc Quốc gia\", \"investorCode\": \"vnz000012701\", \"isPass\": 0, \"bidField\": \"HH\", \"planType\": \"TX\", \"planNo\": \"PL2500273819\", \"planVersion\": \"01\", \"stepCode\": \"notify-contractor-step-4-kqlcnt\", \"type\": \"es-notify-contractor\", \"statusForNotify\": \"KCNTTT\", \"winningCode\": [], \"decisionDate\": \"2026-08-27T23:59:59\", \"contractorName\": [], \"bidWinningPrice\": [], \"numPetition\": 0, \"numClarifyReq\": 0, \"numBidderTech\": 0, \"numBidderJoin\": 0, \"bidId\": \"780e5323-344e-47e8-9eb9-97aff6104448\", \"bidPrice\": [5536106000207.0], \"numPetitionHsmt\": 0, \"numPetitionLcnt\": 0, \"numPetitionKqlcnt\": 0, \"caseKHKQ\": 1, \"score\": \"NaN\", \"isMedicine\": 1, \"medicines\": 1, \"winningContractorName\": []}",
       "updated_at": "2026-09-26T11:35:51.354110"
     },
     {
@@ -1926,7 +1842,6 @@
       "award_date": "2026-09-04T17:32:04",
       "duration_days": 0,
       "source": "muasamcong",
-      "raw_data": "{\"id\": \"IB2600509175\", \"notifyId\": \"IB2600509175\", \"inputResultId\": \"3c4b561f-fc54-4ca5-be17-3222645d5f76\", \"bidCloseDate\": \"2026-09-04T17:32:07.146\", \"bidForm\": \"CDT\", \"bidMode\": \"1_MTHS\", \"bidName\": [\"Gói thầu XL03: Thi công xây dựng công trình đoạn từ Km31+125 - Km50+170\"], \"investField\": [\"XL\"], \"isInternet\": 0, \"notifyNo\": \"IB2600509175\", \"notifyVersion\": \"00\", \"notifyNoStand\": \"IB2600509175-null\", \"processApply\": \"LDT\", \"publicDate\": \"2026-09-04T17:32:04\", \"publicDateKqlcnt\": \"2026-09-04T17:32:04\", \"status\": \"IS_PUBLISH\", \"investorName\": \"Ban Quản lý dự án công trình giao thông Nghệ An\", \"investorCode\": \"vnz000023742\", \"isPass\": 1, \"bidField\": \"XL\", \"planType\": \"DTPT\", \"planNo\": \"PL2600120204\", \"planVersion\": \"01\", \"stepCode\": \"notify-contractor-step-4-kqlcnt\", \"type\": \"es-notify-contractor\", \"statusForNotify\": \"CNTTT\", \"winningCode\": [\"vn2900324850\"], \"decisionDate\": \"2026-08-26T23:59:59\", \"contractorName\": [\"Liên danh xây dựng Gói thầu XL03\"], \"ventureName\": \"Liên danh xây dựng Gói thầu XL03\", \"bidWinningPrice\": [5196817479000.0], \"numPetition\": 0, \"numClarifyReq\": 0, \"numBidderTech\": 0, \"numBidderJoin\": 0, \"bidId\": \"ce271a5f-17e3-46cf-988d-3ba64f1f6d06\", \"bidPrice\": [5470335000000.0], \"numPetitionHsmt\": 0, \"numPetitionLcnt\": 0, \"numPetitionKqlcnt\": 0, \"caseKHKQ\": 1, \"score\": \"NaN\", \"winningContractorName\": []}",
       "updated_at": "2026-09-26T11:35:52.889656"
     },
     {
@@ -1947,7 +1862,6 @@
       "award_date": "2021-11-15",
       "duration_days": 0,
       "source": "muasamcong",
-      "raw_data": "",
       "updated_at": "2026-09-26T12:10:48.411571"
     },
     {
@@ -1968,7 +1882,6 @@
       "award_date": "2026-08-04T17:09:03",
       "duration_days": 0,
       "source": "muasamcong",
-      "raw_data": "{\"id\": \"IB2600424920\", \"notifyId\": \"IB2600424920\", \"inputResultId\": \"5a17497f-eab6-48ce-8afb-7ad7ac854971\", \"bidCloseDate\": \"2026-08-04T17:09:05.761\", \"bidForm\": \"CDT\", \"bidMode\": \"1_MTHS\", \"bidName\": [\"Gói thầu XL02: Thi công xây dựng công trình đoạn từ Km6+300 - Km31+125\"], \"investField\": [\"XL\"], \"isInternet\": 0, \"notifyNo\": \"IB2600424920\", \"notifyVersion\": \"00\", \"notifyNoStand\": \"IB2600424920-null\", \"processApply\": \"LDT\", \"publicDate\": \"2026-08-04T17:09:03\", \"publicDateKqlcnt\": \"2026-08-04T17:09:03\", \"status\": \"IS_PUBLISH\", \"investorName\": \"Ban Quản lý dự án công trình giao thông Nghệ An\", \"investorCode\": \"vnz000023742\", \"isPass\": 1, \"bidField\": \"XL\", \"planType\": \"DTPT\", \"planNo\": \"PL2600120204\", \"planVersion\": \"01\", \"stepCode\": \"notify-contractor-step-4-kqlcnt\", \"type\": \"es-notify-contractor\", \"statusForNotify\": \"CNTTT\", \"winningCode\": [\"vn3100196175\"], \"decisionDate\": \"2026-07-29T23:59:59\", \"contractorName\": [\"Liên danh xây dựng cao tốc gói thầu XL02\"], \"ventureName\": \"Liên danh xây dựng cao tốc gói thầu XL02\", \"bidWinningPrice\": [5093710951000.0], \"numPetition\": 0, \"numClarifyReq\": 0, \"numBidderTech\": 0, \"numBidderJoin\": 0, \"bidId\": \"5fa1aad7-b0b1-4127-b070-d89bdbb17625\", \"bidPrice\": [5361801000000.0], \"numPetitionHsmt\": 0, \"numPetitionLcnt\": 0, \"numPetitionKqlcnt\": 0, \"caseKHKQ\": 1, \"score\": \"NaN\", \"winningContractorName\": []}",
       "updated_at": "2026-09-26T11:35:56.846767"
     },
     {
@@ -1989,7 +1902,6 @@
       "award_date": "2022-12-25",
       "duration_days": 0,
       "source": "muasamcong",
-      "raw_data": "",
       "updated_at": "2026-09-26T12:10:46.857469"
     },
     {
@@ -2010,7 +1922,6 @@
       "award_date": "2016-10-15",
       "duration_days": 0,
       "source": "muasamcong",
-      "raw_data": "",
       "updated_at": "2026-09-26T11:35:31.673368"
     },
     {
@@ -2031,7 +1942,6 @@
       "award_date": "2016-11-10",
       "duration_days": 0,
       "source": "muasamcong",
-      "raw_data": "",
       "updated_at": "2026-09-26T12:10:47.411268"
     },
     {
@@ -2052,7 +1962,6 @@
       "award_date": "2022-12-25",
       "duration_days": 0,
       "source": "muasamcong",
-      "raw_data": "",
       "updated_at": "2026-09-26T12:10:46.635723"
     },
     {
@@ -2073,7 +1982,6 @@
       "award_date": "2022-12-26",
       "duration_days": 0,
       "source": "muasamcong",
-      "raw_data": "",
       "updated_at": "2026-09-26T11:35:29.946044"
     },
     {
@@ -2094,7 +2002,6 @@
       "award_date": "2026-09-04T14:46:33",
       "duration_days": 0,
       "source": "muasamcong",
-      "raw_data": "{\"id\": \"a5510fc6-2999-4268-9ec0-b3600e6e28d8\", \"notifyId\": \"a5510fc6-2999-4268-9ec0-b3600e6e28d8\", \"inputResultId\": \"307ace05-4968-403e-9b68-79bf736fa296\", \"bidOpenId\": \"8d611948-b161-477f-b206-e60c9f4c8d60\", \"bidCloseDate\": \"2026-08-24T09:00:00\", \"bidForm\": \"DTRR\", \"bidMode\": \"1_MTHS\", \"bidName\": [\"Gói thầu số 20: Thi công xây dựng công trình (bao gồm lập mô hình BIM, thí nghiệm chuyên nghành)\"], \"investField\": [\"XL\"], \"isInternet\": 1, \"locations\": [{\"provCode\": \"37\", \"provName\": \"Tỉnh Ninh Bình\"}], \"notifyNo\": \"IB2600423422\", \"notifyVersion\": \"01\", \"notifyNoStand\": \"IB2600423422-01\", \"processApply\": \"LDT\", \"publicDate\": \"2026-08-13T16:50:08.223\", \"publicDateKqmt\": \"2026-08-13T16:50:08.223\", \"publicDateKqlcnt\": \"2026-09-04T14:46:33\", \"status\": \"IS_PUBLISH\", \"investorName\": \"Ban Quản lý dự án đầu tư xây dựng số 1 tỉnh Ninh Bình\", \"investorCode\": \"vn2700999373\", \"bidOpenDate\": \"2026-08-24T09:00:00\", \"originalPublicDate\": \"2026-08-06T16:38:28.58\", \"isPass\": 1, \"bidField\": \"XL\", \"planType\": \"DTPT\", \"planNo\": \"PL2600240348\", \"stepCode\": \"notify-contractor-step-4-kqlcnt\", \"type\": \"es-notify-contractor\", \"statusForNotify\": \"CNTTT\", \"winningCode\": [\"vn2700277508\", \"vn2700281889\"], \"decisionDate\": \"2026-09-04T23:59:59\", \"contractorName\": [\"Liên Danh Xuân Thành – Cường Thịnh Thi\"], \"ventureName\": \"Liên Danh Xuân Thành – Cường Thịnh Thi\", \"bidWinningPrice\": [4478557516000.0], \"numPetition\": 0, \"numClarifyReq\": 0, \"numBidderTech\": 1, \"numBidderJoin\": 1, \"bidId\": \"8f7f114e-b3ff-4d9a-a677-1514f90eb3fb\", \"createdBy\": \"vn2700999373\", \"bidPrice\": [4495625147000.0], \"numPetitionHsmt\": 0, \"numPetitionLcnt\": 0, \"numPetitionKqlcnt\": 0, \"score\": \"NaN\", \"workType\": \"KHAC\", \"winningContractorName\": [\"CÔNG TY TNHH ĐẦU TƯ XÂY DỰNG VÀ PHÁT TRIỂN XUÂN THÀNH\", \"CÔNG TY CỔ PHẦN TẬP ĐOÀN ĐẦU TƯ XÂY DỰNG CƯỜNG THỊNH THI\"], \"isDomestic\": 1, \"bidRealityOpenDate\": \"2026-08-24T09:24:59\"}",
       "updated_at": "2026-09-26T11:35:55.857294"
     },
     {
@@ -2115,7 +2022,6 @@
       "award_date": "2021-08-30",
       "duration_days": 0,
       "source": "muasamcong",
-      "raw_data": "",
       "updated_at": "2026-09-26T12:10:49.953868"
     },
     {
@@ -2136,7 +2042,6 @@
       "award_date": "2026-09-03T17:55:27",
       "duration_days": 0,
       "source": "muasamcong",
-      "raw_data": "{\"id\": \"IB2600505117\", \"notifyId\": \"IB2600505117\", \"inputResultId\": \"cf4bb359-82b9-4bdf-9af4-c035492c31e9\", \"bidCloseDate\": \"2026-09-03T17:55:30.03\", \"bidForm\": \"CDTRG\", \"bidMode\": \"1_MTHS\", \"bidName\": [\"Gói thầu số 08: Cung cấp, lắp đặt thiết bị và xây lắp công trình tại các nút giao thông không có đèn tín hiệu giao thông và trên các tuyến phố\"], \"investField\": [\"HON_HOP\"], \"isInternet\": 0, \"notifyNo\": \"IB2600505117\", \"notifyVersion\": \"00\", \"notifyNoStand\": \"IB2600505117-null\", \"processApply\": \"LDT\", \"publicDate\": \"2026-09-03T17:55:27\", \"publicDateKqlcnt\": \"2026-09-03T17:55:27\", \"status\": \"IS_PUBLISH\", \"investorName\": \"Công an Thành phố Hà Nội\", \"investorCode\": \"vn0100110503\", \"isPass\": 1, \"bidField\": \"HON_HOP\", \"planType\": \"DTPT\", \"planNo\": \"PL2600247008\", \"planVersion\": \"00\", \"stepCode\": \"notify-contractor-step-4-kqlcnt\", \"type\": \"es-notify-contractor\", \"statusForNotify\": \"CNTTT\", \"winningCode\": [\"vn0100686209\"], \"decisionDate\": \"2026-08-25T23:59:59\", \"contractorName\": [\"Liên danh MOBIFONE - GIAO THÔNG 236 - BẠCH ĐẰNG - VIỆT HƯNG - DOHOME VIỆT NAM - VCAD - TELNET – TTV – CƠ ĐIỆN VIỆT\"], \"ventureName\": \"Liên danh MOBIFONE - GIAO THÔNG 236 - BẠCH ĐẰNG - VIỆT HƯNG - DOHOME VIỆT NAM - VCAD - TELNET – TTV – CƠ ĐIỆN VIỆT\", \"bidWinningPrice\": [3791076870000.0], \"numPetition\": 0, \"numClarifyReq\": 0, \"numBidderTech\": 0, \"numBidderJoin\": 0, \"bidId\": \"3bb992e1-b952-41e3-ba0a-640380f87afd\", \"bidPrice\": [3968110662000.0], \"numPetitionHsmt\": 0, \"numPetitionLcnt\": 0, \"numPetitionKqlcnt\": 0, \"caseKHKQ\": 1, \"score\": \"NaN\", \"winningContractorName\": []}",
       "updated_at": "2026-09-26T11:35:54.481781"
     },
     {
@@ -2157,7 +2062,6 @@
       "award_date": "2022-12-24",
       "duration_days": 0,
       "source": "muasamcong",
-      "raw_data": "",
       "updated_at": "2026-09-26T11:35:29.790653"
     },
     {
@@ -2178,7 +2082,6 @@
       "award_date": "2022-12-25",
       "duration_days": 0,
       "source": "muasamcong",
-      "raw_data": "",
       "updated_at": "2026-09-26T12:10:47.115669"
     },
     {
@@ -2199,7 +2102,6 @@
       "award_date": "2014-08-15",
       "duration_days": 0,
       "source": "muasamcong",
-      "raw_data": "",
       "updated_at": "2026-09-26T12:10:47.879071"
     },
     {
@@ -2220,7 +2122,6 @@
       "award_date": "2023-06-14",
       "duration_days": 0,
       "source": "muasamcong",
-      "raw_data": "",
       "updated_at": "2026-09-26T11:35:31.357164"
     },
     {
@@ -2241,7 +2142,6 @@
       "award_date": null,
       "duration_days": 0,
       "source": "muasamcong",
-      "raw_data": "{\"id\": \"806707a9-b6ff-4284-a3a8-2103a9eb66ca\", \"notifyId\": \"806707a9-b6ff-4284-a3a8-2103a9eb66ca\", \"bidOpenId\": \"c036f76b-2ebd-40af-b299-93fb8a30be07\", \"bidCloseDate\": \"2026-09-18T14:00:00\", \"bidForm\": \"DTRR\", \"bidMode\": \"1_HTHS\", \"bidName\": [\"Thiết kế, mua sắm và thi công xây lắp\"], \"investField\": [\"HON_HOP\"], \"isInternet\": 0, \"locations\": [{\"provCode\": \"79\", \"provName\": \"Thành phố Hồ Chí Minh\"}], \"notifyNo\": \"IB2600412126\", \"notifyVersion\": \"01\", \"notifyNoStand\": \"IB2600412126-01\", \"processApply\": \"LDT\", \"publicDate\": \"2026-08-27T16:44:47.181\", \"publicDateKqmt\": \"2026-09-19T12:27:35\", \"status\": \"01\", \"investorName\": \"CHI NHÁNH TỔNG CÔNG TY KHÍ VIỆT NAM - CÔNG TY CỔ PHẦN - CÔNG TY QUẢN LÝ DỰ ÁN KHÍ\", \"investorCode\": \"vnz000021937\", \"bidOpenDate\": \"2026-09-18T14:15:00\", \"originalPublicDate\": \"2026-07-30T15:16:48.343\", \"planType\": \"DTPT\", \"planNo\": \"PL2600228602\", \"stepCode\": \"notify-contractor-step-2-kqmt\", \"type\": \"es-notify-contractor\", \"statusForNotify\": \"\", \"numPetition\": 0, \"numClarifyReq\": 7, \"numBidderTech\": 0, \"bidId\": \"2fe722cf-c27f-4950-ae1d-e258d1fd9d8d\", \"createdBy\": \"vnz000021937\", \"bidPrice\": [2699480746250.0], \"numPetitionHsmt\": 0, \"numPetitionLcnt\": 0, \"numPetitionKqlcnt\": 0, \"score\": \"NaN\", \"isDomestic\": 0}",
       "updated_at": "2026-09-26T11:35:54.991206"
     },
     {
@@ -2262,7 +2162,6 @@
       "award_date": null,
       "duration_days": 0,
       "source": "muasamcong",
-      "raw_data": "{\"id\": \"7aa4f06e-be2b-4b66-9953-294b92d992ff\", \"notifyId\": \"7aa4f06e-be2b-4b66-9953-294b92d992ff\", \"bidCloseDate\": \"2026-09-26T14:30:00\", \"bidForm\": \"DTRR\", \"bidMode\": \"1_MTHS\", \"bidName\": [\"Xây lắp cống cống An Hóa và cống Bến Tre /XL3-JICA3.\"], \"investField\": [\"XL\"], \"isInternet\": 0, \"locations\": [{\"provCode\": \"86\", \"provName\": \"Tỉnh Vĩnh Long\"}], \"notifyNo\": \"IB2600444230\", \"notifyVersion\": \"03\", \"notifyNoStand\": \"IB2600444230-03\", \"processApply\": \"KHAC\", \"procuringEntityCode\": \"vn1800776562\", \"procuringEntityName\": \"Ban Quản lý Đầu tư và Xây dựng Thủy lợi 10\", \"publicDate\": \"2026-09-21T08:34:33.633\", \"status\": \"03\", \"investorName\": \"Ban Quản lý Đầu tư và Xây dựng Thủy lợi 10\", \"investorCode\": \"vn1800776562\", \"bidOpenDate\": \"2026-09-26T14:30:00\", \"originalPublicDate\": \"2026-08-12T15:41:19.615\", \"planType\": \"DTPT\", \"planNo\": \"PL2600254098\", \"stepCode\": \"notify-contractor-step-1-tbmt\", \"type\": \"es-notify-contractor\", \"statusForNotify\": \"DHTBMT\", \"numPetition\": 0, \"numClarifyReq\": 0, \"numBidderTech\": 0, \"bidId\": \"337e1ecd-c9e3-45f4-9aaa-12c7c6e7ffef\", \"createdBy\": \"vn1800776562\", \"bidPrice\": [2392431000000.0], \"numPetitionHsmt\": 0, \"numPetitionLcnt\": 0, \"numPetitionKqlcnt\": 0, \"score\": \"NaN\", \"isDomestic\": 0, \"pname\": \"Quản lý nước Bến Tre sử dụng ODA vốn vay của Chính phủ Nhật Bản\"}",
       "updated_at": "2026-09-26T11:35:50.497801"
     },
     {
@@ -2283,7 +2182,6 @@
       "award_date": "2026-09-07T15:52:03",
       "duration_days": 0,
       "source": "muasamcong",
-      "raw_data": "{\"id\": \"6eca3dfe-8cd8-42e5-95e9-8776a55b270c\", \"notifyId\": \"6eca3dfe-8cd8-42e5-95e9-8776a55b270c\", \"inputResultId\": \"938d464c-cfa8-4e15-b48b-c32b528ac813\", \"bidOpenId\": \"1a631aad-92d1-415e-9360-36751e9128e5\", \"bidCloseDate\": \"2026-08-28T08:00:00\", \"bidForm\": \"DTRR\", \"bidMode\": \"1_MTHS\", \"bidName\": [\"Gói thầu số 21: Thi công xây dựng, lắp đặt thiết bị +đảm bảo ATGT\"], \"investField\": [\"XL\"], \"isInternet\": 1, \"locations\": [{\"provCode\": \"37\", \"provName\": \"Tỉnh Ninh Bình\", \"districtCode\": \"13495\", \"districtName\": \"Xã Thanh Liêm\"}, {\"provCode\": \"37\", \"provName\": \"Tỉnh Ninh Bình\", \"districtCode\": \"13807\", \"districtName\": \"Xã Tân Minh\"}, {\"provCode\": \"37\", \"provName\": \"Tỉnh Ninh Bình\", \"districtCode\": \"13822\", \"districtName\": \"Xã Phong Doanh\"}, {\"provCode\": \"37\", \"provName\": \"Tỉnh Ninh Bình\", \"districtCode\": \"13795\", \"districtName\": \"Xã Ý Yên\"}], \"notifyNo\": \"IB2600440123\", \"notifyVersion\": \"00\", \"notifyNoStand\": \"IB2600440123-00\", \"processApply\": \"LDT\", \"publicDate\": \"2026-08-10T19:37:56.073\", \"publicDateKqmt\": \"2026-08-10T19:37:56.073\", \"publicDateKqlcnt\": \"2026-09-07T15:52:03\", \"status\": \"IS_PUBLISH\", \"investorName\": \"Trung tâm phát triển quỹ đất tỉnh Ninh Bình\", \"investorCode\": \"vn0700918395\", \"bidOpenDate\": \"2026-08-28T08:00:00\", \"originalPublicDate\": \"2026-08-10T19:37:56.073\", \"isPass\": 1, \"bidField\": \"XL\", \"planType\": \"DTPT\", \"planNo\": \"PL2600165970\", \"stepCode\": \"notify-contractor-step-4-kqlcnt\", \"type\": \"es-notify-contractor\", \"statusForNotify\": \"CNTTT\", \"winningCode\": [\"vn2700281889\", \"vn2700274056\", \"vn0106071201\"], \"decisionDate\": \"2026-09-07T23:59:59\", \"contractorName\": [\"Liên danh thi công tuyến Thanh Liêm – Cao Bồ\"], \"ventureName\": \"Liên danh thi công tuyến Thanh Liêm – Cao Bồ\", \"bidWinningPrice\": [2379789897000.0], \"numPetition\": 0, \"numClarifyReq\": 0, \"numBidderTech\": 1, \"numBidderJoin\": 1, \"bidId\": \"6f455111-f022-4e50-a6d1-6266f7ece9aa\", \"createdBy\": \"vn0700918395\", \"bidPrice\": [2387677065000.0], \"numPetitionHsmt\": 0, \"numPetitionLcnt\": 0, \"numPetitionKqlcnt\": 0, \"score\": \"NaN\", \"workType\": \"CTDB\", \"winningContractorName\": [\"CÔNG TY CỔ PHẦN TẬP ĐOÀN XÂY DỰNG ĐÔNG DƯƠNG\", \"CÔNG TY CỔ PHẦN TẬP ĐOÀN XÂY DỰNG 168 VIỆT NAM\", \"CÔNG TY CỔ PHẦN ĐẦU TƯ XÂY DỰNG VÀ XUẤT NHẬP KHẨU 168 VIỆT NAM\", \"CÔNG TY TNHH XÂY DỰNG VÀ THƯƠNG MẠI THÀNH TRUNG\", \"CÔNG TY CỔ PHẦN TẬP ĐOÀN ĐẦU TƯ XÂY DỰNG CƯỜNG THỊNH THI\"], \"isDomestic\": 1, \"bidRealityOpenDate\": \"2026-08-28T08:11:24\"}",
       "updated_at": "2026-09-26T11:35:56.016882"
     },
     {
@@ -2304,7 +2202,6 @@
       "award_date": null,
       "duration_days": 0,
       "source": "muasamcong",
-      "raw_data": "{\"id\": \"5023e499-d422-4f7f-bac3-da67b5319b25\", \"notifyId\": \"5023e499-d422-4f7f-bac3-da67b5319b25\", \"bidCloseDate\": \"2026-10-09T09:00:00\", \"bidForm\": \"DTRR\", \"bidMode\": \"1_HTHS\", \"bidName\": [\"Thiết kế, cung cấp và lắp đặt hệ thống xử lý khí thải Dây chuyền 2 Công ty Cổ phần Nhiệt điện Phả Lại\"], \"investField\": [\"HON_HOP\"], \"isInternet\": 0, \"locations\": [{\"provCode\": \"31\", \"provName\": \"Thành phố Hải Phòng\", \"districtCode\": \"10546\", \"districtName\": \"Phường Chí Linh\"}], \"notifyNo\": \"IB2600504953\", \"notifyVersion\": \"00\", \"notifyNoStand\": \"IB2600504953-00\", \"processApply\": \"LDT\", \"publicDate\": \"2026-09-03T18:31:35.737\", \"status\": \"01\", \"investorName\": \"Công ty cổ phần Nhiệt điện Phả Lại\", \"investorCode\": \"vn0800296583\", \"bidOpenDate\": \"2026-10-09T10:00:00\", \"originalPublicDate\": \"2026-09-03T18:31:35.737\", \"planType\": \"DTPT\", \"planNo\": \"PL2600065575\", \"stepCode\": \"notify-contractor-step-1-tbmt\", \"type\": \"es-notify-contractor\", \"statusForNotify\": \"\", \"numPetition\": 0, \"numClarifyReq\": 7, \"numBidderTech\": 0, \"bidId\": \"6864e10c-b906-4554-9a20-e48f405edd37\", \"createdBy\": \"vn0800296583-08\", \"bidPrice\": [2339577616272.0], \"numPetitionHsmt\": 0, \"numPetitionLcnt\": 0, \"numPetitionKqlcnt\": 0, \"score\": \"NaN\", \"isDomestic\": 0}",
       "updated_at": "2026-09-26T11:35:53.206508"
     },
     {
@@ -2325,7 +2222,6 @@
       "award_date": "2020-09-28",
       "duration_days": 0,
       "source": "muasamcong",
-      "raw_data": "",
       "updated_at": "2026-09-26T12:10:49.687123"
     },
     {
@@ -2346,7 +2242,6 @@
       "award_date": "2026-08-28T07:34:59",
       "duration_days": 0,
       "source": "muasamcong",
-      "raw_data": "{\"id\": \"be7a103d-dba4-475e-b9cb-ebe7084c2e98\", \"notifyId\": \"be7a103d-dba4-475e-b9cb-ebe7084c2e98\", \"inputResultId\": \"0d7891ce-d253-4a16-a868-e71ccba1494d\", \"bidOpenId\": \"5ac33e29-fe1d-4cea-9fca-f495fda39a8d\", \"bidCloseDate\": \"2026-08-23T08:00:00\", \"bidForm\": \"DTRR\", \"bidMode\": \"1_MTHS\", \"bidName\": [\"Gói thầu số 20: Thi công xây lắp và bảo hiểm công trình\"], \"investField\": [\"XL\"], \"isInternet\": 1, \"locations\": [{\"provCode\": \"33\", \"provName\": \"Tỉnh Hưng Yên\"}], \"notifyNo\": \"IB2600420382\", \"notifyVersion\": \"00\", \"notifyNoStand\": \"IB2600420382-00\", \"processApply\": \"LDT\", \"publicDate\": \"2026-08-05T09:07:26.385\", \"publicDateKqmt\": \"2026-08-05T09:07:26.385\", \"publicDateKqlcnt\": \"2026-08-28T07:34:59\", \"status\": \"IS_PUBLISH\", \"investorName\": \"Ban Quản lý dự án đầu tư xây dựng số 1\", \"investorCode\": \"vnz000023753\", \"bidOpenDate\": \"2026-08-23T08:00:00\", \"originalPublicDate\": \"2026-08-05T09:07:26.385\", \"isPass\": 1, \"bidField\": \"XL\", \"planType\": \"DTPT\", \"planNo\": \"PL2600053293\", \"stepCode\": \"notify-contractor-step-4-kqlcnt\", \"type\": \"es-notify-contractor\", \"statusForNotify\": \"CNTTT\", \"winningCode\": [\"vn0101511949\", \"vn0302310209\"], \"decisionDate\": \"2026-08-28T23:59:59\", \"contractorName\": [\"Liên danh G20 đường bên Di sản\"], \"ventureName\": \"Liên danh G20 đường bên Di sản\", \"bidWinningPrice\": [2259920214000.0], \"numPetition\": 0, \"numClarifyReq\": 0, \"numBidderTech\": 1, \"numBidderJoin\": 1, \"bidId\": \"924173eb-ef30-4832-85d9-70d5d1052b57\", \"createdBy\": \"vnz000023753\", \"bidPrice\": [2272124143000.0], \"numPetitionHsmt\": 0, \"numPetitionLcnt\": 0, \"numPetitionKqlcnt\": 0, \"score\": \"NaN\", \"workType\": \"CTDB\", \"winningContractorName\": [\"CÔNG TY CỔ PHẦN LIZEN\", \"CÔNG TY CỔ PHẦN ĐẦU TƯ VÀ XÂY DỰNG GIAO THÔNG PHƯƠNG THÀNH\"], \"isDomestic\": 1, \"bidRealityOpenDate\": \"2026-08-23T08:01:12\"}",
       "updated_at": "2026-09-26T11:35:56.501185"
     },
     {
@@ -2367,7 +2262,6 @@
       "award_date": "2023-06-10",
       "duration_days": 0,
       "source": "muasamcong",
-      "raw_data": "",
       "updated_at": "2026-09-26T11:35:28.407482"
     },
     {
@@ -2388,7 +2282,6 @@
       "award_date": "2023-06-12",
       "duration_days": 0,
       "source": "muasamcong",
-      "raw_data": "",
       "updated_at": "2026-09-26T11:35:28.564418"
     },
     {
@@ -2409,7 +2302,6 @@
       "award_date": null,
       "duration_days": 0,
       "source": "muasamcong",
-      "raw_data": "{\"id\": \"6f7d94f3-a54f-45ad-878a-8021f62006a4\", \"notifyId\": \"6f7d94f3-a54f-45ad-878a-8021f62006a4\", \"bidOpenId\": \"22ccd52d-748b-489d-92ac-a2d365a43ba1\", \"bidCloseDate\": \"2026-09-21T15:00:00\", \"bidForm\": \"DTRR\", \"bidMode\": \"1_MTHS\", \"bidName\": [\"Trang bị hệ thống thiết bị vô tuyến 5G và dịch vụ\"], \"investField\": [\"HH\"], \"isInternet\": 0, \"locations\": [{\"provCode\": \"22\", \"provName\": \"Tỉnh Quảng Ninh\"}, {\"provCode\": \"79\", \"provName\": \"Thành phố Hồ Chí Minh\"}, {\"provCode\": \"82\", \"provName\": \"Tỉnh Đồng Tháp\"}, {\"provCode\": \"86\", \"provName\": \"Tỉnh Vĩnh Long\"}, {\"provCode\": \"31\", \"provName\": \"Thành phố Hải Phòng\"}, {\"provCode\": \"48\", \"provName\": \"Thành phố Đà Nẵng\"}, {\"provCode\": \"56\", \"provName\": \"Tỉnh Khánh Hòa\"}, {\"provCode\": \"75\", \"provName\": \"Thành phố Đồng Nai\"}, {\"provCode\": \"80\", \"provName\": \"Tỉnh Tây Ninh\"}, {\"provCode\": \"92\", \"provName\": \"Thành phố Cần Thơ\"}, {\"provCode\": \"91\", \"provName\": \"Tỉnh An Giang\"}], \"notifyNo\": \"IB2600490006\", \"notifyVersion\": \"00\", \"notifyNoStand\": \"IB2600490006-00\", \"processApply\": \"KHAC\", \"procuringEntityCode\": \"vn0106884817\", \"procuringEntityName\": \"Tổng công ty Hạ tầng mạng\", \"publicDate\": \"2026-08-27T17:00:59.774\", \"publicDateKqmt\": \"2026-09-22T09:07:55\", \"status\": \"01\", \"investorName\": \"Tổng công ty Hạ tầng mạng\", \"investorCode\": \"vn0106884817\", \"bidOpenDate\": \"2026-09-21T15:00:00\", \"originalPublicDate\": \"2026-08-27T17:00:59.774\", \"planType\": \"DTPT\", \"planNo\": \"PL2600263982\", \"stepCode\": \"notify-contractor-step-2-kqmt\", \"type\": \"es-notify-contractor\", \"statusForNotify\": \"\", \"numPetition\": 0, \"numClarifyReq\": 0, \"numBidderTech\": 0, \"bidId\": \"0e58202e-caaf-4117-93be-bd4b92b55496\", \"createdBy\": \"vn0106884817-87\", \"bidPrice\": [2080973995443.03], \"numPetitionHsmt\": 0, \"numPetitionLcnt\": 0, \"numPetitionKqlcnt\": 0, \"score\": \"NaN\", \"isDomestic\": 0, \"pname\": \"Trang bị hệ thống truy nhập vô tuyến 5G khu vực TP. Hồ Chí Minh, các tỉnh Nam bộ, Hải Phòng, Quảng Ninh, Đà Nẵng, Khánh Hòa mạng Vinaphone giai đoạn 2026-2027 thuộc kế hoạch triển khai mạng 5G theo Nghị quyết 57-NQ/TW\"}",
       "updated_at": "2026-09-26T11:35:54.812413"
     },
     {
@@ -2430,7 +2322,6 @@
       "award_date": "2026-08-17T14:36:18",
       "duration_days": 0,
       "source": "muasamcong",
-      "raw_data": "{\"id\": \"6a6ec8c8-93fd-4c00-96c4-9a410105368a\", \"notifyId\": \"6a6ec8c8-93fd-4c00-96c4-9a410105368a\", \"inputResultId\": \"915b7897-a620-4e14-ab8f-37bf5919dee7\", \"bidOpenId\": \"76b8dcf1-57c8-4c70-ab7b-87bc6dbb73d6\", \"bidCloseDate\": \"2026-08-09T11:00:00\", \"bidForm\": \"DTRR\", \"bidMode\": \"1_MTHS\", \"bidName\": [\"Gói thầu số 20: Thi công xây dựng công trình và lập thiết kế bản vẽ thi công, lập ứng dụng mô hình thông tin công trình BIM: Phân đoạn từ Km9+143,67 đến Km10+698 (Không bao gồm cầu vượt Quốc lộ 1A)\"], \"investField\": [\"HON_HOP\"], \"isInternet\": 1, \"locations\": [{\"provCode\": \"01\", \"provName\": \"Thành phố Hà Nội\", \"districtCode\": \"09568\", \"districtName\": \"Phường Phú Lương\"}, {\"provCode\": \"01\", \"provName\": \"Thành phố Hà Nội\", \"districtCode\": \"09552\", \"districtName\": \"Phường Kiến Hưng\"}, {\"provCode\": \"01\", \"provName\": \"Thành phố Hà Nội\", \"districtCode\": \"00664\", \"districtName\": \"Xã Đại Thanh\"}, {\"provCode\": \"01\", \"provName\": \"Thành phố Hà Nội\", \"districtCode\": \"00679\", \"districtName\": \"Xã Ngọc Hồi\"}, {\"provCode\": \"01\", \"provName\": \"Thành phố Hà Nội\", \"districtCode\": \"00640\", \"districtName\": \"Xã Thanh Trì\"}, {\"provCode\": \"01\", \"provName\": \"Thành phố Hà Nội\", \"districtCode\": \"00685\", \"districtName\": \"Xã Nam Phù\"}], \"notifyNo\": \"IB2600362882\", \"notifyVersion\": \"00\", \"notifyNoStand\": \"IB2600362882-00\", \"processApply\": \"LDT\", \"publicDate\": \"2026-07-22T11:50:43.885\", \"publicDateKqmt\": \"2026-07-22T11:50:43.885\", \"publicDateKqlcnt\": \"2026-08-17T14:36:18\", \"status\": \"IS_PUBLISH\", \"investorName\": \"Ban Quản lý dự án đầu tư xây dựng công trình dân dụng thành phố Hà Nội\", \"investorCode\": \"vnz000023864\", \"bidOpenDate\": \"2026-08-09T11:00:00\", \"originalPublicDate\": \"2026-07-22T11:50:43.885\", \"isPass\": 1, \"bidField\": \"HON_HOP\", \"planType\": \"DTPT\", \"planNo\": \"PL2600200307\", \"stepCode\": \"notify-contractor-step-4-kqlcnt\", \"type\": \"es-notify-contractor\", \"statusForNotify\": \"CNTTT\", \"winningCode\": [\"vn0313822745\", \"vn3300101075\", \"vn0101028386\", \"vn0900292605\", \"vn0100108663\", \"vn0102235836\", \"vn0102783374\"], \"decisionDate\": \"2026-08-17T23:59:59\", \"contractorName\": [\"Liên danh Gói thầu số 20\"], \"ventureName\": \"Liên danh Gói thầu số 20\", \"bidWinningPrice\": [2043532609000.0], \"numPetition\": 0, \"numClarifyReq\": 0, \"numBidderTech\": 1, \"numBidderJoin\": 1, \"bidId\": \"329027db-da02-4060-bcf8-62dbf107d2a2\", \"createdBy\": \"vnz000023864-01\", \"bidPrice\": [2045762985000.0], \"numPetitionHsmt\": 0, \"numPetitionLcnt\": 0, \"numPetitionKqlcnt\": 0, \"score\": \"NaN\", \"winningContractorName\": [\"CÔNG TY CP TẬP ĐOÀN DKNEC\", \"CÔNG TY CỔ PHẦN XÂY DỰNG VÀ DỊCH VỤ KỸ THUẬT VIỆT HƯNG\", \"CÔNG TY CỔ PHẦN XÂY DỰNG TRUNG NAM 18 E&C\", \"CÔNG TY CỔ PHẦN TỔNG CÔNG TY CÔNG TRÌNH ĐƯỜNG SẮT VIỆT NAM\", \"CÔNG TY CỔ PHẦN VINADELTA\", \"TỔNG CÔNG TY THÀNH AN                                                                           (CÔNG TY TNHH 1TV)\", \"CÔNG TY CỔ PHẦN XÂY DỰNG HẠ TẦNG BẮC TRUNG NAM \", \"CÔNG TY CỔ PHẦN TẬP ĐOÀN DKNEC\", \"CÔNG TY CỔ PHẦN THƯƠNG MẠI VÀ DỊCH VỤ HỢP LỰC\", \"CÔNG TY CỔ PHẦN TỔNG CÔNG TY CÔNG TRÌNH ĐƯỜNG SẮT\"], \"isDomestic\": 1, \"bidRealityOpenDate\": \"2026-08-09T11:04:36\"}",
       "updated_at": "2026-09-26T11:35:57.180415"
     },
     {
@@ -2451,7 +2342,6 @@
       "award_date": "2026-09-25T08:59:35",
       "duration_days": 0,
       "source": "muasamcong",
-      "raw_data": "{\"id\": \"a1068666-8382-46f4-8d04-4c256366ae11\", \"notifyId\": \"a1068666-8382-46f4-8d04-4c256366ae11\", \"inputResultId\": \"a1ae4806-3835-43d8-8fff-47e01409d1d5\", \"bidOpenId\": \"9a043e10-5a04-460c-88ec-2fd4b751cfbc\", \"bidCloseDate\": \"2026-09-15T08:00:00\", \"bidForm\": \"DTRR\", \"bidMode\": \"1_MTHS\", \"bidName\": [\"Gói thầu số 24: Thi công xây dựng công trình\"], \"investField\": [\"XL\"], \"isInternet\": 1, \"locations\": [{\"provCode\": \"51\", \"provName\": \"Tỉnh Quảng Ngãi\", \"districtCode\": \"21028\", \"districtName\": \"Phường Nghĩa Lộ\"}, {\"provCode\": \"51\", \"provName\": \"Tỉnh Quảng Ngãi\", \"districtCode\": \"21172\", \"districtName\": \"Phường Trương Quang Trọng\"}], \"notifyNo\": \"IB2600478261\", \"notifyVersion\": \"00\", \"notifyNoStand\": \"IB2600478261-00\", \"processApply\": \"LDT\", \"publicDate\": \"2026-08-28T08:05:53.671\", \"publicDateKqmt\": \"2026-08-28T08:05:53.671\", \"publicDateKqlcnt\": \"2026-09-25T08:59:35\", \"status\": \"IS_PUBLISH\", \"investorName\": \"Ban quản lý dự án đầu tư xây dựng các công trình giao thông tỉnh Quảng Ngãi\", \"investorCode\": \"vnz000011293\", \"bidOpenDate\": \"2026-09-15T08:00:00\", \"originalPublicDate\": \"2026-08-28T08:05:53.671\", \"isPass\": 1, \"bidField\": \"XL\", \"planType\": \"DTPT\", \"planNo\": \"PL2500191624\", \"stepCode\": \"notify-contractor-step-4-kqlcnt\", \"type\": \"es-notify-contractor\", \"statusForNotify\": \"CNTTT\", \"winningCode\": [\"vn0101604015\", \"vn5800577571\", \"vn0100512636\", \"vn0102740677\"], \"decisionDate\": \"2026-09-25T23:59:59\", \"contractorName\": [\"Liên danh Trà Khúc 1\"], \"ventureName\": \"Liên danh Trà Khúc 1\", \"bidWinningPrice\": [2043143043000.0], \"numPetition\": 0, \"numClarifyReq\": 6, \"numBidderTech\": 1, \"numBidderJoin\": 1, \"bidId\": \"8b77cc17-f218-4dcf-886e-ca0d48119ce4\", \"createdBy\": \"vnz000011293\", \"bidPrice\": [2043332458000.0], \"numPetitionHsmt\": 0, \"numPetitionLcnt\": 0, \"numPetitionKqlcnt\": 0, \"score\": \"NaN\", \"workType\": \"KHAC\", \"winningContractorName\": [\"CÔNG TY TNHH THIẾT BỊ XÂY DỰNG CÔNG NGHỆ NAM ANH\", \"CÔNG TY TNHH XÂY DỰNG THÀNH PHÁT\", \"CÔNG TY CỔ PHẦN ĐẦU TƯ XÂY DỰNG HẠ TẦNG KHANG NGUYÊN\", \"CÔNG TY CỔ PHẦN XÂY DỰNG VÀ LẮP MÁY TRUNG NAM\"], \"isDomestic\": 1, \"bidRealityOpenDate\": \"2026-09-15T08:11:03\"}",
       "updated_at": "2026-09-26T11:35:54.640332"
     },
     {
@@ -2472,7 +2362,6 @@
       "award_date": "2023-06-22",
       "duration_days": 0,
       "source": "muasamcong",
-      "raw_data": "",
       "updated_at": "2026-09-26T11:35:29.014223"
     },
     {
@@ -2493,7 +2382,6 @@
       "award_date": "2020-09-28",
       "duration_days": 0,
       "source": "muasamcong",
-      "raw_data": "",
       "updated_at": "2026-09-26T12:10:50.214301"
     },
     {
@@ -2514,7 +2402,6 @@
       "award_date": null,
       "duration_days": 0,
       "source": "muasamcong",
-      "raw_data": "{\"id\": \"1894fb62-321f-4acb-a521-511df29a0b83\", \"notifyId\": \"1894fb62-321f-4acb-a521-511df29a0b83\", \"bidCloseDate\": \"2026-10-06T09:00:00\", \"bidForm\": \"DTRR\", \"bidMode\": \"1_MTHS\", \"bidName\": [\"Mua nhiên liệu diesel năm 2027 - 2028 (giai đoạn 1) cho các Chi nhánh Xí nghiệp đầu máy của Tổng công ty Đường sắt Việt Nam\"], \"investField\": [\"HH\"], \"isInternet\": 1, \"locations\": [{\"provCode\": \"37\", \"provName\": \"Tỉnh Ninh Bình\"}, {\"provCode\": \"22\", \"provName\": \"Tỉnh Quảng Ninh\"}, {\"provCode\": \"40\", \"provName\": \"Tỉnh Nghệ An\"}, {\"provCode\": \"38\", \"provName\": \"Tỉnh Thanh Hóa\"}, {\"provCode\": \"79\", \"provName\": \"Thành phố Hồ Chí Minh\"}, {\"provCode\": \"48\", \"provName\": \"Thành phố Đà Nẵng\"}, {\"provCode\": \"56\", \"provName\": \"Tỉnh Khánh Hòa\"}], \"notifyNo\": \"IB2600476341\", \"notifyVersion\": \"00\", \"notifyNoStand\": \"IB2600476341-00\", \"processApply\": \"LDT\", \"publicDate\": \"2026-09-18T13:49:01.499\", \"status\": \"01\", \"investorName\": \"CÔNG TY TRÁCH NHIỆM HỮU HẠN MỘT THÀNH VIÊN - TẬP ĐOÀN ĐƯỜNG SẮT QUỐC GIA VIỆT NAM\", \"investorCode\": \"vn0100105052\", \"bidOpenDate\": \"2026-10-06T09:00:00\", \"originalPublicDate\": \"2026-09-18T13:49:01.499\", \"planType\": \"TX\", \"planNo\": \"PL2600244351\", \"stepCode\": \"notify-contractor-step-1-tbmt\", \"type\": \"es-notify-contractor\", \"statusForNotify\": \"\", \"numPetition\": 0, \"numClarifyReq\": 0, \"numBidderTech\": 0, \"bidId\": \"c1853425-f0ad-48b7-8925-33a4a8452684\", \"createdBy\": \"vn0100105052\", \"bidPrice\": [1882149848748.0], \"numPetitionHsmt\": 0, \"numPetitionLcnt\": 0, \"numPetitionKqlcnt\": 0, \"score\": \"NaN\", \"isMedicine\": 0, \"isDomestic\": 1}",
       "updated_at": "2026-09-26T11:35:51.005316"
     },
     {
@@ -2535,7 +2422,6 @@
       "award_date": "2024-01-15",
       "duration_days": 0,
       "source": "muasamcong",
-      "raw_data": "",
       "updated_at": "2026-09-26T12:10:47.642127"
     },
     {
@@ -2556,7 +2442,6 @@
       "award_date": "2023-06-15",
       "duration_days": 0,
       "source": "muasamcong",
-      "raw_data": "",
       "updated_at": "2026-09-26T11:35:30.674045"
     },
     {
@@ -2577,7 +2462,6 @@
       "award_date": null,
       "duration_days": 0,
       "source": "muasamcong",
-      "raw_data": "{\"id\": \"c5393b5b-6b10-427c-b7ca-a7f959efd238\", \"notifyId\": \"c5393b5b-6b10-427c-b7ca-a7f959efd238\", \"bidCloseDate\": \"2026-11-20T10:00:00\", \"bidForm\": \"DTRR\", \"bidMode\": \"1_MTHS\", \"bidName\": [\"XL01: Tổng thầu xây lắp - Dự án thủy điện Xekaman 4\"], \"investField\": [\"XL\"], \"isInternet\": 0, \"locations\": [{\"provCode\": \"825\", \"provName\": \"Ngoài lãnh thổ Việt Nam\"}], \"notifyNo\": \"IB2600546789\", \"notifyVersion\": \"00\", \"notifyNoStand\": \"IB2600546789-00\", \"processApply\": \"KHAC\", \"procuringEntityCode\": \"vn0101389382\", \"procuringEntityName\": \"CÔNG TY CỔ PHẦN ĐIỆN VIỆT LÀO\", \"publicDate\": \"2026-09-19T10:34:30.42\", \"status\": \"01\", \"investorName\": \"CÔNG TY CỔ PHẦN ĐIỆN VIỆT LÀO\", \"investorCode\": \"vn0101389382\", \"bidOpenDate\": \"2026-11-20T10:30:00\", \"originalPublicDate\": \"2026-09-19T10:34:30.42\", \"planType\": \"KHAC\", \"planNo\": \"PL2600313030\", \"stepCode\": \"notify-contractor-step-1-tbmt\", \"type\": \"es-notify-contractor\", \"statusForNotify\": \"\", \"numPetition\": 0, \"numClarifyReq\": 0, \"numBidderTech\": 0, \"bidId\": \"b303e678-4d92-43dc-ab76-2e291190ce7a\", \"createdBy\": \"vn0101389382\", \"bidPrice\": [1835281871322.0], \"numPetitionHsmt\": 0, \"numPetitionLcnt\": 0, \"numPetitionKqlcnt\": 0, \"score\": \"NaN\", \"isDomestic\": 1, \"pname\": \"Dự án thủy điện Xekaman 4\"}",
       "updated_at": "2026-09-26T11:35:50.838774"
     },
     {
@@ -2598,7 +2482,6 @@
       "award_date": null,
       "duration_days": 0,
       "source": "muasamcong",
-      "raw_data": "{\"id\": \"9ca2a549-1a13-4736-b26f-13903371e053\", \"notifyId\": \"9ca2a549-1a13-4736-b26f-13903371e053\", \"bidOpenId\": \"7268fd0f-0725-48cc-b1d0-22527279f03c\", \"bidCloseDate\": \"2026-09-22T09:00:00\", \"bidForm\": \"DTRR\", \"bidMode\": \"1_HTHS\", \"bidName\": [\"08EPC-XLKTUB-2026: Thiết kế, cung cấp vật tư thiết bị, xây dựng và lắp đặt công trình Nâng cấp, cải tạo hệ thống xử lý khí thải lò hơi tổ máy 300MW và 330 MW Nhà máy Nhiệt điện Uông Bí (bao gồm bảo hiểm xây lắp công trình)\"], \"investField\": [\"HON_HOP\"], \"isInternet\": 0, \"locations\": [{\"provCode\": \"22\", \"provName\": \"Tỉnh Quảng Ninh\", \"districtCode\": \"06811\", \"districtName\": \"Phường Uông Bí\"}], \"notifyNo\": \"IB2600460051\", \"notifyVersion\": \"01\", \"notifyNoStand\": \"IB2600460051-01\", \"processApply\": \"LDT\", \"publicDate\": \"2026-09-12T00:06:18.417\", \"publicDateKqmt\": \"2026-09-22T14:49:54\", \"status\": \"01\", \"investorName\": \"TỔNG CÔNG TY PHÁT ĐIỆN 1\", \"investorCode\": \"vn5701662152\", \"bidOpenDate\": \"2026-09-22T10:00:00\", \"originalPublicDate\": \"2026-08-18T18:51:56.146\", \"planType\": \"KHAC\", \"planNo\": \"PL2600076752\", \"stepCode\": \"notify-contractor-step-2-kqmt\", \"type\": \"es-notify-contractor\", \"statusForNotify\": \"\", \"numPetition\": 3, \"numClarifyReq\": 6, \"numBidderTech\": 0, \"bidId\": \"ff3d7ad8-1f69-4101-a9a2-5f9833115934\", \"createdBy\": \"vn5701662152-16\", \"bidPrice\": [1830260492273.0], \"numPetitionHsmt\": 3, \"numPetitionLcnt\": 0, \"numPetitionKqlcnt\": 0, \"score\": \"NaN\", \"isDomestic\": 0}",
       "updated_at": "2026-09-26T11:35:52.400429"
     },
     {
@@ -2619,7 +2502,6 @@
       "award_date": "2021-06-25",
       "duration_days": 0,
       "source": "muasamcong",
-      "raw_data": "",
       "updated_at": "2026-09-26T12:10:49.428812"
     },
     {
@@ -2640,7 +2522,6 @@
       "award_date": "2026-07-30T17:47:47",
       "duration_days": 0,
       "source": "muasamcong",
-      "raw_data": "{\"id\": \"IB2600413365\", \"notifyId\": \"IB2600413365\", \"inputResultId\": \"a9d33e91-74c9-48a6-bdfb-b919d2fbf267\", \"bidCloseDate\": \"2026-07-30T17:47:49.206\", \"bidForm\": \"CDT\", \"bidMode\": \"1_MTHS\", \"bidName\": [\"Tổng thầu EPC (Khảo sát, thiết kế BVTC - Cung cấp thiết bị -Xây lắp công trình)\"], \"investField\": [\"HON_HOP\"], \"isInternet\": 0, \"notifyNo\": \"IB2600413365\", \"notifyVersion\": \"00\", \"notifyNoStand\": \"IB2600413365-null\", \"processApply\": \"LDT\", \"publicDate\": \"2026-07-30T17:47:47\", \"publicDateKqlcnt\": \"2026-07-30T17:47:47\", \"status\": \"IS_PUBLISH\", \"investorName\": \"Ban Quản lý dự án đầu tư xây dựng các công trình giao thông\", \"investorCode\": \"vn0302282248\", \"isPass\": 1, \"bidField\": \"HON_HOP\", \"planType\": \"DTPT\", \"planNo\": \"PL2600180451\", \"planVersion\": \"01\", \"stepCode\": \"notify-contractor-step-4-kqlcnt\", \"type\": \"es-notify-contractor\", \"statusForNotify\": \"CNTTT\", \"winningCode\": [\"vn4201946958\"], \"decisionDate\": \"2026-06-29T23:59:59\", \"contractorName\": [\"Liên Danh SGC- Trung Chính - Trí Nam- VECC- Hưng Phú\"], \"ventureName\": \"Liên Danh SGC- Trung Chính - Trí Nam- VECC- Hưng Phú\", \"bidWinningPrice\": [1618020198049.0], \"numPetition\": 0, \"numClarifyReq\": 0, \"numBidderTech\": 0, \"numBidderJoin\": 0, \"bidId\": \"db599ce1-cf6c-492c-a420-2566ed7a5a33\", \"bidPrice\": [1818000222527.0], \"numPetitionHsmt\": 0, \"numPetitionLcnt\": 0, \"numPetitionKqlcnt\": 0, \"caseKHKQ\": 1, \"score\": \"NaN\", \"winningContractorName\": []}",
       "updated_at": "2026-09-26T11:35:57.013312"
     },
     {
@@ -2661,7 +2542,6 @@
       "award_date": null,
       "duration_days": 0,
       "source": "muasamcong",
-      "raw_data": "{\"id\": \"f9cb937b-0007-4860-85f2-678f58b8073d\", \"notifyId\": \"f9cb937b-0007-4860-85f2-678f58b8073d\", \"bidOpenId\": \"0868d607-c698-4013-a738-acf36bdfaafc\", \"bidCloseDate\": \"2026-09-21T14:00:00\", \"bidForm\": \"DTRR\", \"bidMode\": \"1_MTHS\", \"bidName\": [\"Trang bị hệ thống thiết bị vô tuyến 5G và dịch vụ\"], \"investField\": [\"HH\"], \"isInternet\": 0, \"locations\": [{\"provCode\": \"01\", \"provName\": \"Thành phố Hà Nội\"}, {\"provCode\": \"11\", \"provName\": \"Tỉnh Điện Biên\"}, {\"provCode\": \"12\", \"provName\": \"Tỉnh Lai Châu\"}, {\"provCode\": \"04\", \"provName\": \"Tỉnh Cao Bằng\"}, {\"provCode\": \"14\", \"provName\": \"Tỉnh Sơn La\"}, {\"provCode\": \"20\", \"provName\": \"Tỉnh Lạng Sơn\"}, {\"provCode\": \"68\", \"provName\": \"Tỉnh Lâm Đồng\"}, {\"provCode\": \"96\", \"provName\": \"Tỉnh Cà Mau\"}, {\"provCode\": \"51\", \"provName\": \"Tỉnh Quảng Ngãi\"}, {\"provCode\": \"52\", \"provName\": \"Tỉnh Gia Lai\"}, {\"provCode\": \"66\", \"provName\": \"Tỉnh Đắk Lắk\"}, {\"provCode\": \"08\", \"provName\": \"Tỉnh Tuyên Quang\"}, {\"provCode\": \"15\", \"provName\": \"Tỉnh Lào Cai\"}, {\"provCode\": \"75\", \"provName\": \"Thành phố Đồng Nai\"}, {\"provCode\": \"80\", \"provName\": \"Tỉnh Tây Ninh\"}, {\"provCode\": \"56\", \"provName\": \"Tỉnh Khánh Hòa\"}, {\"provCode\": \"91\", \"provName\": \"Tỉnh An Giang\"}, {\"provCode\": \"92\", \"provName\": \"Thành phố Cần Thơ\"}], \"notifyNo\": \"IB2600485284\", \"notifyVersion\": \"00\", \"notifyNoStand\": \"IB2600485284-00\", \"processApply\": \"KHAC\", \"procuringEntityCode\": \"vn0106884817\", \"procuringEntityName\": \"Tổng công ty Hạ tầng mạng\", \"publicDate\": \"2026-08-27T16:03:42.217\", \"publicDateKqmt\": \"2026-09-22T09:09:48\", \"status\": \"01\", \"investorName\": \"Tổng công ty Hạ tầng mạng\", \"investorCode\": \"vn0106884817\", \"bidOpenDate\": \"2026-09-21T14:15:00\", \"originalPublicDate\": \"2026-08-27T16:03:42.217\", \"planType\": \"DTPT\", \"planNo\": \"PL2600264042\", \"stepCode\": \"notify-contractor-step-2-kqmt\", \"type\": \"es-notify-contractor\", \"statusForNotify\": \"\", \"numPetition\": 0, \"numClarifyReq\": 0, \"numBidderTech\": 0, \"bidId\": \"115fd778-1dc5-4f20-951f-b4f832c87b1b\", \"createdBy\": \"vn0106884817-85\", \"bidPrice\": [1811787883720.0], \"numPetitionHsmt\": 0, \"numPetitionLcnt\": 0, \"numPetitionKqlcnt\": 0, \"score\": \"NaN\", \"isDomestic\": 0, \"pname\": \"Trang bị hệ thống truy nhập vô tuyến 5G khu vực Tp. Hà Nội, các tỉnh biên giới và Nam bộ mạng Vinaphone giai đoạn 2026-2027 thuộc kế hoạch triển khai mạng 5G theo Nghị quyết 57-NQ/TW\"}",
       "updated_at": "2026-09-26T11:35:55.157690"
     },
     {
@@ -2682,7 +2562,6 @@
       "award_date": "2021-06-25",
       "duration_days": 0,
       "source": "muasamcong",
-      "raw_data": "",
       "updated_at": "2026-09-26T12:10:49.186837"
     },
     {
@@ -2703,7 +2582,6 @@
       "award_date": "2020-09-28",
       "duration_days": 0,
       "source": "muasamcong",
-      "raw_data": "",
       "updated_at": "2026-09-26T12:10:50.482957"
     },
     {
@@ -2724,7 +2602,6 @@
       "award_date": null,
       "duration_days": 0,
       "source": "muasamcong",
-      "raw_data": "{\"id\": \"1760941f-4b7f-4bfb-8b0d-feadad2129f7\", \"notifyId\": \"1760941f-4b7f-4bfb-8b0d-feadad2129f7\", \"bidCloseDate\": \"2026-10-02T08:00:00\", \"bidForm\": \"DTRR\", \"bidMode\": \"1_MTHS\", \"bidName\": [\"Gói thầu số 05: Thi công xây dựng công trình\"], \"investField\": [\"XL\"], \"isInternet\": 1, \"locations\": [{\"provCode\": \"38\", \"provName\": \"Tỉnh Thanh Hóa\", \"districtCode\": \"16531\", \"districtName\": \"Phường Sầm Sơn\"}, {\"provCode\": \"38\", \"provName\": \"Tỉnh Thanh Hóa\", \"districtCode\": \"16000\", \"districtName\": \"Xã Hoằng Thanh\"}, {\"provCode\": \"38\", \"provName\": \"Tỉnh Thanh Hóa\", \"districtCode\": \"15976\", \"districtName\": \"Xã Hoằng Châu\"}], \"notifyNo\": \"IB2600509909\", \"notifyVersion\": \"00\", \"notifyNoStand\": \"IB2600509909-00\", \"processApply\": \"LDT\", \"publicDate\": \"2026-09-13T17:48:53.886\", \"status\": \"01\", \"investorName\": \"BAN QLDA ĐẦU TƯ CÔNG TRÌNH GIAO THÔNG THANH HÓA\", \"investorCode\": \"vnz000007733\", \"bidOpenDate\": \"2026-10-02T08:00:00\", \"originalPublicDate\": \"2026-09-13T17:48:53.886\", \"planType\": \"DTPT\", \"planNo\": \"PL2600056094\", \"stepCode\": \"notify-contractor-step-1-tbmt\", \"type\": \"es-notify-contractor\", \"statusForNotify\": \"\", \"numPetition\": 0, \"numClarifyReq\": 0, \"numBidderTech\": 0, \"bidId\": \"fef59110-e3f9-4a8f-b0f2-9be7608576ba\", \"createdBy\": \"vnz000007733\", \"bidPrice\": [1609774892000.0], \"numPetitionHsmt\": 0, \"numPetitionLcnt\": 0, \"numPetitionKqlcnt\": 0, \"score\": \"NaN\", \"workType\": \"CTDB\", \"isDomestic\": 1}",
       "updated_at": "2026-09-26T11:35:52.241945"
     },
     {
@@ -2745,7 +2622,6 @@
       "award_date": null,
       "duration_days": 0,
       "source": "muasamcong",
-      "raw_data": "{\"id\": \"c7d01acf-ea7c-4a7a-b1c2-1a4c8bd16d8c\", \"notifyId\": \"c7d01acf-ea7c-4a7a-b1c2-1a4c8bd16d8c\", \"bidOpenId\": \"9c301a50-bba4-4022-adc2-8b4ac9359266\", \"bidCloseDate\": \"2026-08-20T14:30:00\", \"bidForm\": \"DTRR\", \"bidMode\": \"1_MTHS\", \"bidName\": [\"Gói thầu NH2026- VT05: Mua than nhập khẩu cho Nhà máy Nhiệt điện Vĩnh Tân 4 giai đoạn cuối năm 2026\"], \"investField\": [\"HH\"], \"isInternet\": 0, \"locations\": [{\"provCode\": \"68\", \"provName\": \"Tỉnh Lâm Đồng\", \"districtCode\": \"22981\", \"districtName\": \"Xã Vĩnh Hảo\"}], \"notifyNo\": \"IB2600370300\", \"notifyVersion\": \"00\", \"notifyNoStand\": \"IB2600370300-00\", \"processApply\": \"LDT\", \"publicDate\": \"2026-07-15T13:13:06.316\", \"publicDateKqmt\": \"2026-08-21T10:37:52\", \"status\": \"01\", \"investorName\": \"NHÀ MÁY NHIỆT ĐIỆN VĨNH TÂN 4 - CHI NHÁNH TẬP ĐOÀN ĐIỆN LỰC VIỆT NAM\", \"investorCode\": \"vnz000006181\", \"bidOpenDate\": \"2026-08-20T15:00:00\", \"originalPublicDate\": \"2026-07-15T13:13:06.316\", \"planType\": \"TX\", \"planNo\": \"PL2600201478\", \"stepCode\": \"notify-contractor-step-2-kqmt\", \"type\": \"es-notify-contractor\", \"statusForNotify\": \"\", \"numPetition\": 0, \"numClarifyReq\": 1, \"numBidderTech\": 0, \"bidId\": \"7d70222d-c49f-47cc-bd7b-2161a53308c5\", \"createdBy\": \"vnz000006181-14\", \"bidPrice\": [1560651786000.0], \"numPetitionHsmt\": 0, \"numPetitionLcnt\": 0, \"numPetitionKqlcnt\": 0, \"score\": \"NaN\", \"isDomestic\": 0}",
       "updated_at": "2026-09-26T11:35:57.519869"
     },
     {
@@ -2766,7 +2642,6 @@
       "award_date": null,
       "duration_days": 0,
       "source": "muasamcong",
-      "raw_data": "{\"id\": \"29b85aca-6104-4830-873c-ac014e992210\", \"notifyId\": \"29b85aca-6104-4830-873c-ac014e992210\", \"bidOpenId\": \"01824d2b-af37-445b-be56-8c7772c6a796\", \"bidCloseDate\": \"2026-09-22T17:00:00\", \"bidForm\": \"DTRR\", \"bidMode\": \"1_MTHS\", \"bidName\": [\"Gói thầu thuốc generic\"], \"investField\": [\"HH\"], \"isInternet\": 1, \"locations\": [{\"provCode\": \"79\", \"provName\": \"Thành phố Hồ Chí Minh\", \"districtCode\": \"26842\", \"districtName\": \"Phường Tăng Nhơn Phú\"}], \"notifyNo\": \"IB2600505171\", \"notifyVersion\": \"00\", \"notifyNoStand\": \"IB2600505171-00\", \"processApply\": \"LDT\", \"publicDate\": \"2026-09-04T16:38:51.805\", \"publicDateKqmt\": \"2026-09-04T16:38:51.805\", \"status\": \"OPEN_BID\", \"investorName\": \"BỆNH VIỆN UNG BƯỚU\", \"investorCode\": \"vn0301483294\", \"bidOpenDate\": \"2026-09-22T17:00:00\", \"originalPublicDate\": \"2026-09-04T16:38:51.805\", \"bidField\": \"HH\", \"planType\": \"TX\", \"planNo\": \"PL2600287304\", \"stepCode\": \"notify-contractor-step-2-kqmt\", \"type\": \"es-notify-contractor\", \"statusForNotify\": \"DXT\", \"numPetition\": 0, \"numClarifyReq\": 2, \"numBidderTech\": 0, \"numBidderJoin\": 120, \"bidId\": \"b8feafde-535f-4f40-8da1-28f451141def\", \"createdBy\": \"vn0301483294\", \"bidPrice\": [1547722699035.0], \"numPetitionHsmt\": 0, \"numPetitionLcnt\": 0, \"numPetitionKqlcnt\": 0, \"score\": \"NaN\", \"isMedicine\": 1, \"medicines\": 0, \"isDomestic\": 1, \"bidRealityOpenDate\": \"2026-09-22T17:21:42\"}",
       "updated_at": "2026-09-26T11:35:53.055460"
     },
     {
@@ -2787,7 +2662,6 @@
       "award_date": "2023-06-12",
       "duration_days": 0,
       "source": "muasamcong",
-      "raw_data": "",
       "updated_at": "2026-09-26T11:35:31.048358"
     },
     {
@@ -2808,7 +2682,6 @@
       "award_date": null,
       "duration_days": 0,
       "source": "muasamcong",
-      "raw_data": "{\"id\": \"c3b11b17-1e75-4dce-90a1-c2697bd04763\", \"notifyId\": \"c3b11b17-1e75-4dce-90a1-c2697bd04763\", \"bidCloseDate\": \"2026-10-02T10:00:00\", \"bidForm\": \"DTRR\", \"bidMode\": \"1_MTHS\", \"bidName\": [\"Thi công xây dựng công trình\"], \"investField\": [\"HON_HOP\"], \"isInternet\": 1, \"locations\": [{\"provCode\": \"01\", \"provName\": \"Thành phố Hà Nội\", \"districtCode\": \"00602\", \"districtName\": \"Phường Đông Ngạc\"}], \"notifyNo\": \"IB2600534990\", \"notifyVersion\": \"00\", \"notifyNoStand\": \"IB2600534990-00\", \"processApply\": \"LDT\", \"publicDate\": \"2026-09-14T19:04:33.107\", \"status\": \"01\", \"investorName\": \"Ban quản lý dự án Đầu tư xây dựng chuyên ngành - Học viện Chính trị quốc gia Hồ Chí Minh\", \"investorCode\": \"vnz000009727\", \"bidOpenDate\": \"2026-10-02T10:00:00\", \"originalPublicDate\": \"2026-09-14T19:04:33.107\", \"planType\": \"DTPT\", \"planNo\": \"PL2600303937\", \"stepCode\": \"notify-contractor-step-1-tbmt\", \"type\": \"es-notify-contractor\", \"statusForNotify\": \"\", \"numPetition\": 0, \"numClarifyReq\": 1, \"numBidderTech\": 0, \"bidId\": \"206612a1-1bc4-42f6-af95-367e1d2083f0\", \"createdBy\": \"vnz000009727\", \"bidPrice\": [1499776694680.0], \"numPetitionHsmt\": 0, \"numPetitionLcnt\": 0, \"numPetitionKqlcnt\": 0, \"score\": \"NaN\", \"isDomestic\": 1}",
       "updated_at": "2026-09-26T11:35:52.045544"
     },
     {
@@ -2829,7 +2702,6 @@
       "award_date": "2023-06-20",
       "duration_days": 0,
       "source": "muasamcong",
-      "raw_data": "",
       "updated_at": "2026-09-26T11:35:28.865839"
     },
     {
@@ -2850,7 +2722,6 @@
       "award_date": null,
       "duration_days": 0,
       "source": "muasamcong",
-      "raw_data": "{\"id\": \"2a190ca0-a8bc-4d4a-b59c-17589a8d2d5d\", \"notifyId\": \"2a190ca0-a8bc-4d4a-b59c-17589a8d2d5d\", \"bidCloseDate\": \"2026-10-06T14:30:00\", \"bidForm\": \"DTRR\", \"bidMode\": \"1_MTHS\", \"bidName\": [\"Xây lắp cống Thủ Cửu và cống Cái Quao/XL1-JICA3.\"], \"investField\": [\"XL\"], \"isInternet\": 0, \"locations\": [{\"provCode\": \"86\", \"provName\": \"Tỉnh Vĩnh Long\"}], \"notifyNo\": \"IB2600444219\", \"notifyVersion\": \"02\", \"notifyNoStand\": \"IB2600444219-02\", \"processApply\": \"KHAC\", \"procuringEntityCode\": \"vn1800776562\", \"procuringEntityName\": \"Ban Quản lý Đầu tư và Xây dựng Thủy lợi 10\", \"publicDate\": \"2026-09-21T08:28:28.067\", \"status\": \"01\", \"investorName\": \"Ban Quản lý Đầu tư và Xây dựng Thủy lợi 10\", \"investorCode\": \"vn1800776562\", \"bidOpenDate\": \"2026-10-06T14:30:00\", \"originalPublicDate\": \"2026-08-12T10:04:08.552\", \"planType\": \"DTPT\", \"planNo\": \"PL2600254098\", \"stepCode\": \"notify-contractor-step-1-tbmt\", \"type\": \"es-notify-contractor\", \"statusForNotify\": \"\", \"numPetition\": 0, \"numClarifyReq\": 0, \"numBidderTech\": 0, \"bidId\": \"402c1e3d-3d27-4173-a857-db2fd9b679c2\", \"createdBy\": \"vn1800776562\", \"bidPrice\": [1477089000000.0], \"numPetitionHsmt\": 0, \"numPetitionLcnt\": 0, \"numPetitionKqlcnt\": 0, \"score\": \"NaN\", \"isDomestic\": 0, \"pname\": \"Quản lý nước Bến Tre sử dụng ODA vốn vay của Chính phủ Nhật Bản\"}",
       "updated_at": "2026-09-26T11:35:50.664488"
     },
     {
@@ -2871,7 +2742,6 @@
       "award_date": "2020-08-25",
       "duration_days": 0,
       "source": "muasamcong",
-      "raw_data": "",
       "updated_at": "2026-09-26T12:10:48.678987"
     },
     {
@@ -2892,7 +2762,6 @@
       "award_date": null,
       "duration_days": 0,
       "source": "muasamcong",
-      "raw_data": "{\"id\": \"604b9bf5-adf9-4e82-80ba-7758fbc750fe\", \"notifyId\": \"604b9bf5-adf9-4e82-80ba-7758fbc750fe\", \"bidCloseDate\": \"2026-09-27T09:00:00\", \"bidForm\": \"DTRR\", \"bidMode\": \"1_MTHS\", \"bidName\": [\"Gói thầu số 25-TP1: Xây dựng tuyến kè gia cố bờ kênh Kim Sơn từ cống Báo Đáp đến cống Kênh Cầu\"], \"investField\": [\"XL\"], \"isInternet\": 1, \"locations\": [{\"provCode\": \"01\", \"provName\": \"Thành phố Hà Nội\", \"districtCode\": \"00565\", \"districtName\": \"Xã Gia Lâm\"}, {\"provCode\": \"33\", \"provName\": \"Tỉnh Hưng Yên\", \"districtCode\": \"11986\", \"districtName\": \"Xã Như Quỳnh\"}, {\"provCode\": \"33\", \"provName\": \"Tỉnh Hưng Yên\", \"districtCode\": \"12025\", \"districtName\": \"Xã Phụng Công\"}, {\"provCode\": \"33\", \"provName\": \"Tỉnh Hưng Yên\", \"districtCode\": \"12031\", \"districtName\": \"Xã Nghĩa Trụ\"}, {\"provCode\": \"33\", \"provName\": \"Tỉnh Hưng Yên\", \"districtCode\": \"12070\", \"districtName\": \"Xã Hoàn Long\"}], \"notifyNo\": \"IB2600513360\", \"notifyVersion\": \"00\", \"notifyNoStand\": \"IB2600513360-00\", \"processApply\": \"LDT\", \"publicDate\": \"2026-09-08T16:14:01.714\", \"status\": \"01\", \"investorName\": \"Ban Quản lý Đầu tư và Xây dựng Thủy lợi 1\", \"investorCode\": \"vn0104164676\", \"bidOpenDate\": \"2026-09-27T09:00:00\", \"originalPublicDate\": \"2026-09-08T16:14:01.714\", \"planType\": \"DTPT\", \"planNo\": \"PL2600291856\", \"stepCode\": \"notify-contractor-step-1-tbmt\", \"type\": \"es-notify-contractor\", \"statusForNotify\": \"\", \"numPetition\": 0, \"numClarifyReq\": 0, \"numBidderTech\": 0, \"bidId\": \"52f4ba67-d13f-4ffd-9f67-070ba4ff1f34\", \"createdBy\": \"vn0104164676\", \"bidPrice\": [1371701002000.0], \"numPetitionHsmt\": 0, \"numPetitionLcnt\": 0, \"numPetitionKqlcnt\": 0, \"score\": \"NaN\", \"workType\": \"CTTL\", \"isDomestic\": 1}",
       "updated_at": "2026-09-26T11:35:52.704111"
     },
     {
@@ -2913,7 +2782,6 @@
       "award_date": null,
       "duration_days": 0,
       "source": "muasamcong",
-      "raw_data": "{\"id\": \"414a3b6e-3961-4553-90b4-f4597889ea89\", \"notifyId\": \"414a3b6e-3961-4553-90b4-f4597889ea89\", \"bidOpenId\": \"03452ecc-472d-4498-925d-874228c68903\", \"bidCloseDate\": \"2026-09-03T14:00:00\", \"bidForm\": \"DTRR\", \"bidMode\": \"1_HTHS\", \"bidName\": [\"Mua sắm cổng trục Goliath PTSC M&C 01 (Procurement of the PTSC M&C 01 Goliath Crane)\"], \"investField\": [\"HH\"], \"isInternet\": 0, \"locations\": [{\"provCode\": \"79\", \"provName\": \"Thành phố Hồ Chí Minh\", \"districtCode\": \"26536\", \"districtName\": \"Phường Rạch Dừa\"}], \"notifyNo\": \"IB2600380517\", \"notifyVersion\": \"03\", \"notifyNoStand\": \"IB2600380517-03\", \"processApply\": \"KHAC\", \"procuringEntityCode\": \"vn3500790168\", \"procuringEntityName\": \"CÔNG TY TNHH MỘT THÀNH VIÊN DỊCH VỤ CƠ KHÍ HÀNG HẢI PTSC\", \"publicDate\": \"2026-08-21T16:44:48.702\", \"publicDateKqmt\": \"2026-09-04T08:25:44\", \"status\": \"01\", \"investorName\": \"CÔNG TY TNHH MỘT THÀNH VIÊN DỊCH VỤ CƠ KHÍ HÀNG HẢI PTSC\", \"investorCode\": \"vn3500790168\", \"bidOpenDate\": \"2026-09-03T16:00:00\", \"originalPublicDate\": \"2026-07-20T02:05:20.094\", \"planType\": \"DTPT\", \"planNo\": \"PL2600212631\", \"stepCode\": \"notify-contractor-step-2-kqmt\", \"type\": \"es-notify-contractor\", \"statusForNotify\": \"\", \"numPetition\": 0, \"numClarifyReq\": 0, \"numBidderTech\": 0, \"bidId\": \"95694995-ebf5-46cd-bb18-63a508d2efe8\", \"createdBy\": \"vn3500790168-02\", \"bidPrice\": [1362900000000.0], \"numPetitionHsmt\": 0, \"numPetitionLcnt\": 0, \"numPetitionKqlcnt\": 0, \"score\": \"NaN\", \"isDomestic\": 0, \"pname\": \"Cổng trục Goliath PTSC M&C 01\"}",
       "updated_at": "2026-09-26T11:35:55.491630"
     },
     {
@@ -2934,7 +2802,6 @@
       "award_date": null,
       "duration_days": 0,
       "source": "muasamcong",
-      "raw_data": "{\"id\": \"306321e1-87b9-4479-b6bd-10b71f49946e\", \"notifyId\": \"306321e1-87b9-4479-b6bd-10b71f49946e\", \"bidCloseDate\": \"2026-10-07T10:00:00\", \"bidForm\": \"DTRR\", \"bidMode\": \"1_MTHS\", \"bidName\": [\"Gói thầu số 35-XL: Thi công xây dựng công trình bổ sung đoạn tuyến QL60 từ QL91B đến QL60 hiện hữu (bao gồm khảo sát, thiết kế bản vẽ thi công, lập mô hình thông tin công trình BIM)\"], \"investField\": [\"XL\"], \"isInternet\": 1, \"locations\": [{\"provCode\": \"92\", \"provName\": \"Thành phố Cần Thơ\", \"districtCode\": \"31645\", \"districtName\": \"Xã Đại Ngãi\"}, {\"provCode\": \"92\", \"provName\": \"Thành phố Cần Thơ\", \"districtCode\": \"31507\", \"districtName\": \"Phường Sóc Trăng\"}], \"notifyNo\": \"IB2600460627\", \"notifyVersion\": \"01\", \"notifyNoStand\": \"IB2600460627-01\", \"processApply\": \"LDT\", \"publicDate\": \"2026-09-25T15:53:25.582\", \"status\": \"01\", \"investorName\": \"Ban Quản lý dự án 85\", \"investorCode\": \"vn2900368953\", \"bidOpenDate\": \"2026-10-07T10:00:00\", \"originalPublicDate\": \"2026-08-19T14:35:04.581\", \"planType\": \"DTPT\", \"planNo\": \"PL2600260213\", \"stepCode\": \"notify-contractor-step-1-tbmt\", \"type\": \"es-notify-contractor\", \"statusForNotify\": \"\", \"numPetition\": 0, \"numClarifyReq\": 0, \"numBidderTech\": 0, \"bidId\": \"5e42234f-b174-4961-8f06-1f9210c758dd\", \"createdBy\": \"vn2900368953\", \"bidPrice\": [1358382003672.0], \"numPetitionHsmt\": 0, \"numPetitionLcnt\": 0, \"numPetitionKqlcnt\": 0, \"score\": \"NaN\", \"workType\": \"CTDB\", \"isDomestic\": 1}",
       "updated_at": "2026-09-26T11:35:50.051281"
     },
     {
@@ -2955,7 +2822,6 @@
       "award_date": "2020-09-29",
       "duration_days": 0,
       "source": "muasamcong",
-      "raw_data": "",
       "updated_at": "2026-09-26T11:35:34.824849"
     },
     {
@@ -2976,7 +2842,6 @@
       "award_date": null,
       "duration_days": 0,
       "source": "muasamcong",
-      "raw_data": "{\"id\": \"c83ca5bd-bdb3-4e24-84e2-b9c54cb7e199\", \"notifyId\": \"c83ca5bd-bdb3-4e24-84e2-b9c54cb7e199\", \"bidCloseDate\": \"2026-10-09T15:00:00\", \"bidForm\": \"DTRR\", \"bidMode\": \"1_MTHS\", \"bidName\": [\"Gói 13: Thi công xây lắp công trình (bao gồm quản lý BIM trong quá trình thi công)\"], \"investField\": [\"XL\"], \"isInternet\": 1, \"locations\": [{\"provCode\": \"92\", \"provName\": \"Thành phố Cần Thơ\", \"districtCode\": \"31299\", \"districtName\": \"Xã Phong Điền\"}, {\"provCode\": \"92\", \"provName\": \"Thành phố Cần Thơ\", \"districtCode\": \"31150\", \"districtName\": \"Phường An Bình\"}], \"notifyNo\": \"IB2600544001\", \"notifyVersion\": \"00\", \"notifyNoStand\": \"IB2600544001-00\", \"processApply\": \"LDT\", \"publicDate\": \"2026-09-21T20:40:17.64\", \"status\": \"01\", \"investorName\": \"Ban Quản lý dự án đầu tư xây dựng công trình giao thông và nông nghiệp thành phố Cần Thơ\", \"investorCode\": \"vn1800809747\", \"bidOpenDate\": \"2026-10-09T15:00:00\", \"originalPublicDate\": \"2026-09-21T20:40:17.64\", \"planType\": \"DTPT\", \"planNo\": \"PL2600276052\", \"stepCode\": \"notify-contractor-step-1-tbmt\", \"type\": \"es-notify-contractor\", \"statusForNotify\": \"\", \"numPetition\": 0, \"numClarifyReq\": 0, \"numBidderTech\": 0, \"bidId\": \"00054c3b-b317-498e-9be9-50265b1ab077\", \"createdBy\": \"vn1800809747\", \"bidPrice\": [1304011811797.0], \"numPetitionHsmt\": 0, \"numPetitionLcnt\": 0, \"numPetitionKqlcnt\": 0, \"score\": \"NaN\", \"workType\": \"CTDB\", \"isDomestic\": 1}",
       "updated_at": "2026-09-26T11:35:50.353520"
     },
     {
@@ -2997,7 +2862,6 @@
       "award_date": "2026-09-21T17:40:25",
       "duration_days": 0,
       "source": "muasamcong",
-      "raw_data": "{\"id\": \"2acc23c2-fb1e-4e00-b2c5-81b04a868324\", \"notifyId\": \"2acc23c2-fb1e-4e00-b2c5-81b04a868324\", \"inputResultId\": \"44263bf5-b614-4692-afc2-f2c24d27ad82\", \"bidOpenId\": \"a47f622a-bbc1-4e15-9784-7458bdb84d1b\", \"bidCloseDate\": \"2026-08-25T09:00:00\", \"bidForm\": \"DTRR\", \"bidMode\": \"1_MTHS\", \"bidName\": [\"XL01: Thi công xây dựng công trình\"], \"investField\": [\"XL\"], \"isInternet\": 1, \"locations\": [{\"provCode\": \"79\", \"provName\": \"Thành phố Hồ Chí Minh\", \"districtCode\": \"27511\", \"districtName\": \"Xã Nhuận Đức\"}, {\"provCode\": \"79\", \"provName\": \"Thành phố Hồ Chí Minh\", \"districtCode\": \"27496\", \"districtName\": \"Xã Tân An Hội\"}], \"notifyNo\": \"IB2600433125\", \"notifyVersion\": \"01\", \"notifyNoStand\": \"IB2600433125-01\", \"processApply\": \"LDT\", \"publicDate\": \"2026-08-13T17:56:40.593\", \"publicDateKqmt\": \"2026-08-13T17:56:40.593\", \"publicDateKqlcnt\": \"2026-09-21T17:40:25\", \"status\": \"IS_PUBLISH\", \"investorName\": \"Ban Quản lý dự án đầu tư xây dựng các công trình giao thông\", \"investorCode\": \"vn0302282248\", \"bidOpenDate\": \"2026-08-25T09:00:00\", \"originalPublicDate\": \"2026-08-07T14:26:51.352\", \"isPass\": 1, \"bidField\": \"XL\", \"planType\": \"DTPT\", \"planNo\": \"PL2600138887\", \"stepCode\": \"notify-contractor-step-4-kqlcnt\", \"type\": \"es-notify-contractor\", \"statusForNotify\": \"CNTTT\", \"winningCode\": [\"vn0300460907\", \"vn0313412435\", \"vn0305984693\", \"vn0304762507\", \"vn0303598004\"], \"decisionDate\": \"2026-09-21T23:59:59\", \"contractorName\": [\"LIÊN DANH DỰ ÁN ĐƯỜNG VÀNH ĐAI 4\"], \"ventureName\": \"LIÊN DANH DỰ ÁN ĐƯỜNG VÀNH ĐAI 4\", \"bidWinningPrice\": [1289997216570.0], \"numPetition\": 0, \"numClarifyReq\": 0, \"numBidderTech\": 1, \"numBidderJoin\": 1, \"bidId\": \"c270122d-242b-49f0-8f94-7a59a2659cb5\", \"createdBy\": \"vn0302282248\", \"bidPrice\": [1292666231092.0], \"numPetitionHsmt\": 0, \"numPetitionLcnt\": 0, \"numPetitionKqlcnt\": 0, \"score\": \"NaN\", \"workType\": \"CTDB\", \"winningContractorName\": [\"CÔNG TY CỔ PHẦN CÔNG TRÌNH GIAO THÔNG SÀI GÒN\", \"CÔNG TY TNHH XÂY DỰNG - THƯƠNG MẠI TÂN PHÚC TIẾN\", \"CÔNG TY TNHH ĐẦU TƯ - XÂY DỰNG NGUYÊN CÁT\", \"CÔNG TY TNHH THƯƠNG MẠI DỊCH VỤ THI CÔNG XÂY DỰNG CẦU ĐƯỜNG HỒNG AN\", \"CÔNG TY CỔ PHẦN ĐẦU TƯ XÂY DỰNG ĐẠI ĐÔNG HẢI\"], \"isDomestic\": 1, \"bidRealityOpenDate\": \"2026-08-25T09:26:31\"}",
       "updated_at": "2026-09-26T11:35:55.689509"
     },
     {
@@ -3018,7 +2882,6 @@
       "award_date": "2022-09-01",
       "duration_days": 0,
       "source": "muasamcong",
-      "raw_data": "",
       "updated_at": "2026-09-26T11:35:34.218949"
     },
     {
@@ -3039,7 +2902,6 @@
       "award_date": "2023-05-25",
       "duration_days": 0,
       "source": "muasamcong",
-      "raw_data": "",
       "updated_at": "2026-09-26T11:35:32.628145"
     },
     {
@@ -3060,7 +2922,6 @@
       "award_date": "",
       "duration_days": 0,
       "source": "muasamcong",
-      "raw_data": "",
       "updated_at": "2026-09-26T11:35:33.337312"
     },
     {
@@ -3081,7 +2942,6 @@
       "award_date": null,
       "duration_days": 0,
       "source": "muasamcong",
-      "raw_data": "{\"id\": \"478c0aa2-dec3-4b0b-aec9-256099a85243\", \"notifyId\": \"478c0aa2-dec3-4b0b-aec9-256099a85243\", \"bidCloseDate\": \"2026-10-05T09:30:00\", \"bidForm\": \"DTRR\", \"bidMode\": \"1_MTHS\", \"bidName\": [\"XL03: Thi công xây dựng công trình đoạn qua tỉnh Tây Ninh\"], \"investField\": [\"XL\"], \"isInternet\": 1, \"locations\": [{\"provCode\": \"79\", \"provName\": \"Thành phố Hồ Chí Minh\"}, {\"provCode\": \"80\", \"provName\": \"Tỉnh Tây Ninh\"}], \"notifyNo\": \"IB2600538785\", \"notifyVersion\": \"00\", \"notifyNoStand\": \"IB2600538785-00\", \"processApply\": \"LDT\", \"publicDate\": \"2026-09-16T17:25:18.619\", \"status\": \"01\", \"investorName\": \"Ban Quản lý dự án đầu tư xây dựng các công trình giao thông\", \"investorCode\": \"vn0302282248\", \"bidOpenDate\": \"2026-10-05T09:30:00\", \"originalPublicDate\": \"2026-09-16T17:25:18.619\", \"planType\": \"DTPT\", \"planNo\": \"PL2500193531\", \"stepCode\": \"notify-contractor-step-1-tbmt\", \"type\": \"es-notify-contractor\", \"statusForNotify\": \"\", \"numPetition\": 0, \"numClarifyReq\": 0, \"numBidderTech\": 0, \"bidId\": \"a9982e2b-a159-4004-ae09-8dba14e37cc8\", \"createdBy\": \"vn0302282248\", \"bidPrice\": [1248126992042.0], \"numPetitionHsmt\": 0, \"numPetitionLcnt\": 0, \"numPetitionKqlcnt\": 0, \"score\": \"NaN\", \"workType\": \"CTDB\", \"isDomestic\": 1}",
       "updated_at": "2026-09-26T11:35:51.179075"
     },
     {
@@ -3102,7 +2962,6 @@
       "award_date": "2026-08-20T14:47:08",
       "duration_days": 0,
       "source": "muasamcong",
-      "raw_data": "{\"id\": \"d15221b7-133b-473e-9b24-55fa454696c0\", \"notifyId\": \"d15221b7-133b-473e-9b24-55fa454696c0\", \"inputResultId\": \"1a0a89a7-b36b-4c7c-9b86-c152f891b684\", \"bidOpenId\": \"9e83b5aa-e89e-4698-9933-eab228ba470c\", \"bidCloseDate\": \"2026-08-15T09:30:00\", \"bidForm\": \"DTRR\", \"bidMode\": \"1_MTHS\", \"bidName\": [\"Xây lắp công trình\"], \"investField\": [\"XL\"], \"isInternet\": 1, \"locations\": [{\"provCode\": \"48\", \"provName\": \"Thành phố Đà Nẵng\", \"districtCode\": \"20314\", \"districtName\": \"Phường Hòa Xuân\"}, {\"provCode\": \"48\", \"provName\": \"Thành phố Đà Nẵng\", \"districtCode\": \"20257\", \"districtName\": \"Phường Hòa Cường\"}], \"notifyNo\": \"IB2600399139\", \"notifyVersion\": \"02\", \"notifyNoStand\": \"IB2600399139-02\", \"processApply\": \"LDT\", \"publicDate\": \"2026-08-04T18:29:20.61\", \"publicDateKqmt\": \"2026-08-04T18:29:20.61\", \"publicDateKqlcnt\": \"2026-08-20T14:47:08\", \"status\": \"IS_PUBLISH\", \"investorName\": \"Ban Quản lý dự án đầu tư xây dựng các công trình giao thông và nông nghiệp Đà Nẵng\", \"investorCode\": \"vn0402262069\", \"bidOpenDate\": \"2026-08-15T10:10:00\", \"originalPublicDate\": \"2026-07-27T10:00:55.099\", \"isPass\": 1, \"bidField\": \"XL\", \"planType\": \"DTPT\", \"planNo\": \"PL2600058588\", \"stepCode\": \"notify-contractor-step-4-kqlcnt\", \"type\": \"es-notify-contractor\", \"statusForNotify\": \"CNTTT\", \"winningCode\": [\"vn4000443802\", \"vn0401315409\", \"vn4000386463\", \"vn0313365915\", \"vn0102054565\", \"vn0400101965\"], \"decisionDate\": \"2026-08-20T23:59:59\", \"contractorName\": [\"Liên danh Nhà thầu thi công Cụm nút giao thông Hòa Xuân\"], \"ventureName\": \"Liên danh Nhà thầu thi công Cụm nút giao thông Hòa Xuân\", \"bidWinningPrice\": [1179944744725.0], \"numPetition\": 0, \"numClarifyReq\": 1, \"numBidderTech\": 1, \"numBidderJoin\": 1, \"bidId\": \"ff4af1b8-aac9-4a75-bc00-b0aa0d5cd705\", \"createdBy\": \"vn0402262069\", \"bidPrice\": [1185887000000.0], \"numPetitionHsmt\": 0, \"numPetitionLcnt\": 0, \"numPetitionKqlcnt\": 0, \"score\": \"NaN\", \"workType\": \"CTDB\", \"winningContractorName\": [\"CÔNG TY TNHH XÂY DỰNG VÀ THƯƠNG MẠI NHẤT HUY\", \"CÔNG TY CỔ PHẦN TẬP ĐOÀN ĐÈO CẢ\", \"CÔNG TY CỔ PHẦN THƯƠNG MẠI, TƯ VẤN VÀ XÂY DỰNG VĨNH HƯNG \", \"CÔNG TY TNHH ĐẦU TƯ XÂY DỰNG DACINCO\", \"CÔNG TY CỔ PHẦN ĐẦU TƯ HẠ TẦNG GIAO THÔNG ĐÈO CẢ\", \"CÔNG TY TNHH PHƯỚC THỊNH PHÁT\"], \"isDomestic\": 1, \"bidRealityOpenDate\": \"2026-08-15T10:10:39\"}",
       "updated_at": "2026-09-26T11:35:56.677084"
     },
     {
@@ -3123,7 +2982,6 @@
       "award_date": "2026-08-14T15:09:21",
       "duration_days": 0,
       "source": "muasamcong",
-      "raw_data": "{\"id\": \"a1f1a7aa-97d5-4e59-90c2-3beab92f1b9e\", \"notifyId\": \"a1f1a7aa-97d5-4e59-90c2-3beab92f1b9e\", \"inputResultId\": \"2320f863-21d9-48d6-ae38-c3020a5e701f\", \"bidOpenId\": \"cbf1fa2a-94a2-46d0-b6b5-381da737e44b\", \"bidCloseDate\": \"2026-07-27T09:30:00\", \"bidForm\": \"DTRR\", \"bidMode\": \"1_MTHS\", \"bidName\": [\"Xây lắp 1 (Phần cầu nhịp chính vượt Kênh Tẻ, cầu cạn trên đường Nguyễn Khoái, cầu nhánh N1, N2; Phần cầu vượt rạch Bến Nghé và nút giao với đường Võ Văn Kiệt)\"], \"investField\": [\"XL\"], \"isInternet\": 1, \"locations\": [{\"provCode\": \"79\", \"provName\": \"Thành phố Hồ Chí Minh\", \"districtCode\": \"27475\", \"districtName\": \"Phường Tân Hưng\"}, {\"provCode\": \"79\", \"provName\": \"Thành phố Hồ Chí Minh\", \"districtCode\": \"27286\", \"districtName\": \"Phường Vĩnh Hội\"}, {\"provCode\": \"79\", \"provName\": \"Thành phố Hồ Chí Minh\", \"districtCode\": \"26758\", \"districtName\": \"Phường Cầu Ông Lãnh\"}], \"notifyNo\": \"IB2600330493\", \"notifyVersion\": \"02\", \"notifyNoStand\": \"IB2600330493-02\", \"processApply\": \"LDT\", \"publicDate\": \"2026-07-16T11:29:58.907\", \"publicDateKqmt\": \"2026-07-16T11:29:58.907\", \"publicDateKqlcnt\": \"2026-08-14T15:09:21\", \"status\": \"IS_PUBLISH\", \"investorName\": \"Ban Quản lý dự án đầu tư xây dựng các công trình giao thông\", \"investorCode\": \"vn0302282248\", \"bidOpenDate\": \"2026-07-27T09:30:00\", \"originalPublicDate\": \"2026-06-30T20:57:05.61\", \"isPass\": 1, \"bidField\": \"XL\", \"planType\": \"DTPT\", \"planNo\": \"PL2500068883\", \"stepCode\": \"notify-contractor-step-4-kqlcnt\", \"type\": \"es-notify-contractor\", \"statusForNotify\": \"CNTTT\", \"winningCode\": [\"vn0305984693\", \"vn0600642753\", \"vn0100512636\", \"vn4100444239\", \"vn2900329305\", \"vn0303292859\"], \"decisionDate\": \"2026-08-14T23:59:59\", \"contractorName\": [\"LIÊN DANH XÂY LẮP CẦU ĐƯỜNG NGUYỄN KHOÁI\"], \"ventureName\": \"LIÊN DANH XÂY LẮP CẦU ĐƯỜNG NGUYỄN KHOÁI\", \"bidWinningPrice\": [1167878335234.0], \"numPetition\": 0, \"numClarifyReq\": 0, \"numBidderTech\": 1, \"numBidderJoin\": 1, \"bidId\": \"2102049c-10a0-4fce-828b-cbc3deb061b8\", \"createdBy\": \"vn0302282248\", \"bidPrice\": [1170174444511.0], \"numPetitionHsmt\": 0, \"numPetitionLcnt\": 0, \"numPetitionKqlcnt\": 0, \"score\": \"NaN\", \"workType\": \"CTCAU\", \"winningContractorName\": [\"CÔNG TY TNHH TÂN LẬP\", \"CÔNG TY CỔ PHẦN XÂY DỰNG CÔNG TRÌNH GIAO THÔNG THÁI SƠN\", \"CÔNG TY CP XÂY DỰNG VÀ ĐẦU TƯ 492\", \"CÔNG TY TNHH XÂY DỰNG THÀNH PHÁT\", \"CÔNG TY TNHH THƯƠNG MẠI DỊCH VỤ THI CÔNG XÂY DỰNG CẦU ĐƯỜNG HỒNG AN\", \"CÔNG TY CỔ PHẦN XÂY DỰNG NASACO\"], \"isDomestic\": 1, \"bidRealityOpenDate\": \"2026-07-27T09:54:42\"}",
       "updated_at": "2026-09-26T11:35:57.351145"
     },
     {
@@ -3144,7 +3002,6 @@
       "award_date": "2020-12-28",
       "duration_days": 0,
       "source": "muasamcong",
-      "raw_data": "",
       "updated_at": "2026-09-26T12:10:48.929130"
     },
     {
@@ -3165,7 +3022,6 @@
       "award_date": "2020-09-28",
       "duration_days": 0,
       "source": "muasamcong",
-      "raw_data": "",
       "updated_at": "2026-09-26T11:35:34.527708"
     },
     {
@@ -3186,7 +3042,6 @@
       "award_date": null,
       "duration_days": 0,
       "source": "muasamcong",
-      "raw_data": "{\"id\": \"31be1a54-b1e6-4f77-ba7c-12c9034d548f\", \"notifyId\": \"31be1a54-b1e6-4f77-ba7c-12c9034d548f\", \"bidCloseDate\": \"2026-10-02T10:10:00\", \"bidForm\": \"DTRR\", \"bidMode\": \"1_MTHS\", \"bidName\": [\"Gói 05:  Vật tư y tế kỹ thuật cao 2026 - 2027\"], \"investField\": [\"HH\"], \"isInternet\": 1, \"locations\": [{\"provCode\": \"79\", \"provName\": \"Thành phố Hồ Chí Minh\", \"districtCode\": \"27163\", \"districtName\": \"Phường Hòa Hưng\"}], \"notifyNo\": \"IB2600394991\", \"notifyVersion\": \"00\", \"notifyNoStand\": \"IB2600394991-00\", \"processApply\": \"LDT\", \"publicDate\": \"2026-09-11T11:58:09.666\", \"status\": \"01\", \"investorName\": \"BỆNH VIỆN NHÂN DÂN 115\", \"investorCode\": \"vn0301479869\", \"bidOpenDate\": \"2026-10-02T10:10:00\", \"originalPublicDate\": \"2026-09-11T11:58:09.666\", \"planType\": \"TX\", \"planNo\": \"PL2600205956\", \"stepCode\": \"notify-contractor-step-1-tbmt\", \"type\": \"es-notify-contractor\", \"statusForNotify\": \"\", \"numPetition\": 0, \"numClarifyReq\": 7, \"numBidderTech\": 0, \"bidId\": \"c1ade3c6-8b16-43b7-966a-9c238f071a83\", \"createdBy\": \"vn0301479869\", \"bidPrice\": [1126793477280.0], \"numPetitionHsmt\": 0, \"numPetitionLcnt\": 0, \"numPetitionKqlcnt\": 0, \"score\": \"NaN\", \"isMedicine\": 0, \"isDomestic\": 1}",
       "updated_at": "2026-09-26T11:35:52.545700"
     },
     {
@@ -3207,7 +3062,6 @@
       "award_date": "2026-08-28T15:24:28",
       "duration_days": 0,
       "source": "muasamcong",
-      "raw_data": "{\"id\": \"81021d7d-1489-4788-8e89-c51019a09618\", \"notifyId\": \"81021d7d-1489-4788-8e89-c51019a09618\", \"inputResultId\": \"7165b089-2f4f-44fd-bd1a-739128a59a49\", \"bidOpenId\": \"3f6d8589-4c56-4b20-a58f-4ac1be22af74\", \"bidCloseDate\": \"2026-08-21T10:30:00\", \"bidForm\": \"DTRR\", \"bidMode\": \"1_MTHS\", \"bidName\": [\"Gói thầu số 05: Mua sắm 766 xe ô tô lắp đặt thiết bị kỹ thuật nghiệp vụ phục vụ chỉ huy, chiến đấu\"], \"investField\": [\"HH\"], \"isInternet\": 1, \"locations\": [{\"provCode\": \"79\", \"provName\": \"Thành phố Hồ Chí Minh\"}, {\"provCode\": \"86\", \"provName\": \"Tỉnh Vĩnh Long\"}], \"notifyNo\": \"IB2600398532\", \"notifyVersion\": \"01\", \"notifyNoStand\": \"IB2600398532-01\", \"processApply\": \"LDT\", \"publicDate\": \"2026-08-10T17:13:22.123\", \"publicDateKqmt\": \"2026-08-10T17:13:22.123\", \"publicDateKqlcnt\": \"2026-08-28T15:24:28\", \"status\": \"IS_PUBLISH\", \"investorName\": \"Cục Trang bị và kho vận\", \"investorCode\": \"vnz000013009\", \"bidOpenDate\": \"2026-08-21T10:30:00\", \"originalPublicDate\": \"2026-08-01T14:30:29.148\", \"isPass\": 1, \"bidField\": \"HH\", \"planType\": \"DTPT\", \"planNo\": \"PL2600229237\", \"stepCode\": \"notify-contractor-step-4-kqlcnt\", \"type\": \"es-notify-contractor\", \"statusForNotify\": \"CNTTT\", \"winningCode\": [\"vn0102198510\"], \"decisionDate\": \"2026-08-28T23:59:59\", \"contractorName\": [\"CÔNG TY TNHH THƯƠNG MẠI VÀ DỊCH VỤ TỔNG HỢP VIỆT NHẬT\"], \"bidWinningPrice\": [1118360000000.0], \"numPetition\": 0, \"numClarifyReq\": 0, \"numBidderTech\": 2, \"numBidderJoin\": 2, \"bidId\": \"4b5c6d7f-2c7a-4460-9016-288755f2eddd\", \"createdBy\": \"vnz000013009-01\", \"bidPrice\": [1122190000000.0], \"numPetitionHsmt\": 0, \"numPetitionLcnt\": 0, \"numPetitionKqlcnt\": 0, \"score\": \"NaN\", \"isMedicine\": 0, \"winningContractorName\": [], \"isDomestic\": 1, \"bidRealityOpenDate\": \"2026-08-21T10:37:48\"}",
       "updated_at": "2026-09-26T11:35:56.341327"
     },
     {
@@ -3228,7 +3082,6 @@
       "award_date": "2026-09-11T15:57:14",
       "duration_days": 0,
       "source": "muasamcong",
-      "raw_data": "{\"id\": \"c88827b4-4566-4088-bdda-bf16faa4dfdc\", \"notifyId\": \"c88827b4-4566-4088-bdda-bf16faa4dfdc\", \"inputResultId\": \"32abbdc9-01c5-400f-8d9e-e139394f9405\", \"bidOpenId\": \"8eeb42c0-27ec-4bb0-816f-4475f51c649e\", \"bidCloseDate\": \"2026-09-05T08:00:00\", \"bidForm\": \"DTRR\", \"bidMode\": \"1_MTHS\", \"bidName\": [\"Gói thầu số 11: Thi công xây dựng\"], \"investField\": [\"XL\"], \"isInternet\": 1, \"locations\": [{\"provCode\": \"01\", \"provName\": \"Thành phố Hà Nội\"}], \"notifyNo\": \"IB2600458424\", \"notifyVersion\": \"01\", \"notifyNoStand\": \"IB2600458424-01\", \"processApply\": \"LDT\", \"publicDate\": \"2026-08-25T16:34:01.628\", \"publicDateKqmt\": \"2026-08-25T16:34:01.628\", \"publicDateKqlcnt\": \"2026-09-11T15:57:14\", \"status\": \"IS_PUBLISH\", \"investorName\": \"Ủy ban nhân dân phường Sơn Tây\", \"investorCode\": \"vn0111120172\", \"bidOpenDate\": \"2026-09-05T08:00:00\", \"originalPublicDate\": \"2026-08-18T09:54:26.77\", \"isPass\": 1, \"bidField\": \"XL\", \"planType\": \"DTPT\", \"planNo\": \"PL2600003726\", \"stepCode\": \"notify-contractor-step-4-kqlcnt\", \"type\": \"es-notify-contractor\", \"statusForNotify\": \"CNTTT\", \"winningCode\": [\"vn0500448784\", \"vn2800177761\"], \"decisionDate\": \"2026-09-11T23:59:59\", \"contractorName\": [\"Liên danh Quảng Tây - Miền Trung\"], \"ventureName\": \"Liên danh Quảng Tây - Miền Trung\", \"bidWinningPrice\": [1114272054675.0], \"numPetition\": 0, \"numClarifyReq\": 0, \"numBidderTech\": 1, \"numBidderJoin\": 1, \"bidId\": \"da4e9c1d-b08b-4dc0-a234-ddc0d31fba56\", \"createdBy\": \"vn0111120172-01\", \"bidPrice\": [1118285694000.0], \"numPetitionHsmt\": 0, \"numPetitionLcnt\": 0, \"numPetitionKqlcnt\": 0, \"score\": \"NaN\", \"workType\": \"CTDB\", \"winningContractorName\": [\"CÔNG TY CỔ PHẦN QUẢNG TÂY\", \"CÔNG TY CỔ PHẦN TẬP ĐOÀN  XÂY DỰNG MIỀN TRUNG\", \"CÔNG TY CỔ PHẦN TẬP ĐOÀN  XÂY DỰNG MIỀN TRUNG \"], \"isDomestic\": 1, \"bidRealityOpenDate\": \"2026-09-05T08:00:46\"}",
       "updated_at": "2026-09-26T11:35:55.335391"
     },
     {
@@ -3249,7 +3102,6 @@
       "award_date": null,
       "duration_days": 0,
       "source": "muasamcong",
-      "raw_data": "{\"id\": \"65acc596-a3e4-46e5-a8f9-65ea700ac727\", \"notifyId\": \"65acc596-a3e4-46e5-a8f9-65ea700ac727\", \"bidOpenId\": \"01691826-18d7-4df4-a6c3-b6859bf8a29d\", \"bidCloseDate\": \"2026-07-28T11:00:00\", \"bidForm\": \"DTRR\", \"bidMode\": \"1_MTHS\", \"bidName\": [\"Gói thầu số 11: Thi công xây dựng\"], \"investField\": [\"XL\"], \"isInternet\": 1, \"locations\": [{\"provCode\": \"01\", \"provName\": \"Thành phố Hà Nội\"}], \"notifyNo\": \"IB2600327410\", \"notifyVersion\": \"00\", \"notifyNoStand\": \"IB2600327410-00\", \"processApply\": \"LDT\", \"publicDate\": \"2026-07-10T09:00:59.228\", \"publicDateKqmt\": \"2026-07-10T09:00:59.228\", \"status\": \"CANCEL_BID\", \"investorName\": \"Ủy ban nhân dân phường Sơn Tây\", \"investorCode\": \"vn0111120172\", \"bidOpenDate\": \"2026-07-28T11:00:00\", \"originalPublicDate\": \"2026-07-10T09:00:59.228\", \"bidField\": \"XL\", \"planType\": \"DTPT\", \"planNo\": \"PL2600003726\", \"stepCode\": \"notify-contractor-step-2-kqmt\", \"type\": \"es-notify-contractor\", \"statusForNotify\": \"DHT\", \"numPetition\": 0, \"numClarifyReq\": 0, \"numBidderTech\": 0, \"numBidderJoin\": 1, \"bidId\": \"da4e9c1d-b08b-4dc0-a234-ddc0d31fba56\", \"createdBy\": \"vn0111120172-01\", \"bidPrice\": [1118285694000.0], \"numPetitionHsmt\": 0, \"numPetitionLcnt\": 0, \"numPetitionKqlcnt\": 0, \"score\": \"NaN\", \"workType\": \"CTDB\", \"isDomestic\": 1, \"bidRealityOpenDate\": \"2026-07-28T11:04:25\"}",
       "updated_at": "2026-09-26T11:35:57.686342"
     },
     {
@@ -3270,7 +3122,6 @@
       "award_date": null,
       "duration_days": 0,
       "source": "muasamcong",
-      "raw_data": "{\"id\": \"344915ab-a3d4-4c07-8cc8-5e892d6cf701\", \"notifyId\": \"344915ab-a3d4-4c07-8cc8-5e892d6cf701\", \"bidOpenId\": \"c91e726d-27de-47df-aa29-2d7a398d0380\", \"bidCloseDate\": \"2026-09-26T09:00:00\", \"bidForm\": \"DTRR\", \"bidMode\": \"1_MTHS\", \"bidName\": [\"Gói thầu số 1\"], \"investField\": [\"HH\"], \"isInternet\": 1, \"locations\": [{\"provCode\": \"824\", \"provName\": \"Toàn quốc\"}], \"notifyNo\": \"IB2600498553\", \"notifyVersion\": \"01\", \"notifyNoStand\": \"IB2600498553-01\", \"processApply\": \"LDT\", \"publicDate\": \"2026-09-15T11:37:03.554\", \"publicDateKqmt\": \"2026-09-15T11:37:03.554\", \"status\": \"OPEN_BID\", \"investorName\": \"Cục Trang bị và kho vận\", \"investorCode\": \"vnz000013009\", \"bidOpenDate\": \"2026-09-26T09:00:00\", \"originalPublicDate\": \"2026-08-28T23:07:02.303\", \"bidField\": \"HH\", \"planType\": \"KHAC\", \"planNo\": \"PL2600285257\", \"stepCode\": \"notify-contractor-step-2-kqmt\", \"type\": \"es-notify-contractor\", \"statusForNotify\": \"DXT\", \"numPetition\": 0, \"numClarifyReq\": 0, \"numBidderTech\": 0, \"numBidderJoin\": 1, \"bidId\": \"518de2c2-bae8-4b15-b15d-d08b8e67e634\", \"createdBy\": \"vnz000013009-01\", \"bidPrice\": [1057200000000.0], \"numPetitionHsmt\": 0, \"numPetitionLcnt\": 0, \"numPetitionKqlcnt\": 0, \"score\": \"NaN\", \"isMedicine\": 0, \"isDomestic\": 1, \"bidRealityOpenDate\": \"2026-09-26T10:29:41\"}",
       "updated_at": "2026-09-26T11:35:51.887271"
     },
     {
@@ -3291,7 +3142,6 @@
       "award_date": "2026-08-28T15:23:46",
       "duration_days": 0,
       "source": "muasamcong",
-      "raw_data": "{\"id\": \"46b3f902-ec33-4acb-9593-2e5c4f6b334b\", \"notifyId\": \"46b3f902-ec33-4acb-9593-2e5c4f6b334b\", \"inputResultId\": \"aa39a015-bd46-4acb-886a-3f0a4da28388\", \"bidOpenId\": \"138092de-6eaa-491c-a877-c23982b95985\", \"bidCloseDate\": \"2026-08-21T10:00:00\", \"bidForm\": \"DTRR\", \"bidMode\": \"1_MTHS\", \"bidName\": [\"Gói thầu số 04: Mua sắm 704 xe ô tô lắp đặt thiết bị kỹ thuật nghiệp vụ phục vụ chỉ huy, chiến đấu\"], \"investField\": [\"HH\"], \"isInternet\": 1, \"locations\": [{\"provCode\": \"48\", \"provName\": \"Thành phố Đà Nẵng\"}, {\"provCode\": \"52\", \"provName\": \"Tỉnh Gia Lai\"}], \"notifyNo\": \"IB2600398521\", \"notifyVersion\": \"02\", \"notifyNoStand\": \"IB2600398521-02\", \"processApply\": \"LDT\", \"publicDate\": \"2026-08-10T17:23:28.235\", \"publicDateKqmt\": \"2026-08-10T17:23:28.235\", \"publicDateKqlcnt\": \"2026-08-28T15:23:46\", \"status\": \"IS_PUBLISH\", \"investorName\": \"Cục Trang bị và kho vận\", \"investorCode\": \"vnz000013009\", \"bidOpenDate\": \"2026-08-21T10:00:00\", \"originalPublicDate\": \"2026-08-01T14:29:26.887\", \"isPass\": 1, \"bidField\": \"HH\", \"planType\": \"DTPT\", \"planNo\": \"PL2600229237\", \"stepCode\": \"notify-contractor-step-4-kqlcnt\", \"type\": \"es-notify-contractor\", \"statusForNotify\": \"CNTTT\", \"winningCode\": [\"vn0102198510\"], \"decisionDate\": \"2026-08-28T23:59:59\", \"contractorName\": [\"CÔNG TY TNHH THƯƠNG MẠI VÀ DỊCH VỤ TỔNG HỢP VIỆT NHẬT\"], \"bidWinningPrice\": [1027840000000.0], \"numPetition\": 0, \"numClarifyReq\": 0, \"numBidderTech\": 2, \"numBidderJoin\": 2, \"bidId\": \"242b33b0-2a32-41f3-8971-a4247e32c4a6\", \"createdBy\": \"vnz000013009-01\", \"bidPrice\": [1031360000000.0], \"numPetitionHsmt\": 0, \"numPetitionLcnt\": 0, \"numPetitionKqlcnt\": 0, \"score\": \"NaN\", \"isMedicine\": 0, \"winningContractorName\": [], \"isDomestic\": 1, \"bidRealityOpenDate\": \"2026-08-21T10:36:55\"}",
       "updated_at": "2026-09-26T11:35:56.176850"
     },
     {
@@ -3312,8 +3162,10 @@
       "award_date": null,
       "duration_days": 0,
       "source": "muasamcong",
-      "raw_data": "{\"id\": \"0a4aab78-afea-41b8-a851-86e0eb34374a\", \"notifyId\": \"0a4aab78-afea-41b8-a851-86e0eb34374a\", \"bidOpenId\": \"a5aa36c6-73b4-48c3-8df4-e84021d39e56\", \"bidCloseDate\": \"2026-09-26T09:45:00\", \"bidForm\": \"DTRR\", \"bidMode\": \"1_MTHS\", \"bidName\": [\"Gói thầu số 4\"], \"investField\": [\"HH\"], \"isInternet\": 1, \"locations\": [{\"provCode\": \"824\", \"provName\": \"Toàn quốc\"}], \"notifyNo\": \"IB2600498609\", \"notifyVersion\": \"01\", \"notifyNoStand\": \"IB2600498609-01\", \"processApply\": \"LDT\", \"publicDate\": \"2026-09-15T14:53:47.39\", \"publicDateKqmt\": \"2026-09-15T14:53:47.39\", \"status\": \"OPEN_BID\", \"investorName\": \"Cục Trang bị và kho vận\", \"investorCode\": \"vnz000013009\", \"bidOpenDate\": \"2026-09-26T09:45:00\", \"originalPublicDate\": \"2026-08-28T23:11:24.122\", \"bidField\": \"HH\", \"planType\": \"KHAC\", \"planNo\": \"PL2600285257\", \"stepCode\": \"notify-contractor-step-2-kqmt\", \"type\": \"es-notify-contractor\", \"statusForNotify\": \"DXT\", \"numPetition\": 0, \"numClarifyReq\": 0, \"numBidderTech\": 0, \"numBidderJoin\": 1, \"bidId\": \"d0b270b8-7038-41bf-b94d-6f713e628ec8\", \"createdBy\": \"vnz000013009-01\", \"bidPrice\": [1024800000000.0], \"numPetitionHsmt\": 0, \"numPetitionLcnt\": 0, \"numPetitionKqlcnt\": 0, \"score\": \"NaN\", \"isMedicine\": 0, \"isDomestic\": 1, \"bidRealityOpenDate\": \"2026-09-26T10:44:17\"}",
       "updated_at": "2026-09-26T11:35:51.721381"
     }
-  ]
+  ],
+  "synced_at": "2026-09-27T11:34:36.749404",
+  "total_projects": 71,
+  "total_packages": 80
 }

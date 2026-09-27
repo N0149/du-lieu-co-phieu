@@ -19,7 +19,6 @@ import {
   PanelLeftOpen,
   ChevronRight,
   Sparkles,
-  Landmark,
   Gavel,
   Zap,
   Fish,
@@ -63,13 +62,7 @@ export const NAV_GROUPS: NavGroup[] = [
         icon: TrendingUp,
         description: 'Định giá P/E, P/B, vĩ mô & margin CTCK',
       },
-      {
-        label: 'Dữ liệu Vĩ mô',
-        href: '/vi-mo',
-        icon: Landmark,
-        badge: 'Mới',
-        description: 'GDP, cung tiền M2, tín dụng & đầu tư toàn xã hội',
-      },
+
       {
         label: 'Ngành ICB',
         href: '/nganh',

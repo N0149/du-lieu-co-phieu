@@ -43,6 +43,7 @@ const nextConfig = {
       './data/industry-reports.json',
       './data/reports-snapshot.json',
       './data/stock_evaluations_summary.json',
+      './content/bctc/**/*',
     ],
   },
   outputFileTracingExcludes: {

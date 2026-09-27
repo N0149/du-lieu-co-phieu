@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-09-26T01:25:41.610Z",
-  "total": 377,
+  "updatedAt": "2026-09-27T13:07:15.815Z",
+  "total": 388,
   "availableSectors": [
     "Bán lẻ",
     "Bảo hiểm",
@@ -9,7 +9,6 @@
     "Bất động sản dân cư",
     "Bất động sản khu công nghiệp",
     "Cao su",
-    "Chưa phân loại",
     "Chứng khoán",
     "Công nghệ",
     "Công nghệ và Viễn thông",
@@ -47,6 +46,57 @@
   ],
   "reports": [
     {
+      "id": "22271",
+      "slug": "bao-cao-nganh-thuong-mai-dien-tu-thang-092026",
+      "title": "Báo cáo ngành Thương mại điện tử: Tháng 09/2026",
+      "source": "SHS",
+      "date": "2026-09-25",
+      "displayDate": "25/09/2026",
+      "scope": "sector",
+      "sectorName": "Công nghệ",
+      "symbol": null,
+      "description": "Thị trường thương mại điện tử bán lẻ Việt Nam đạt quy mô 38,5 tỷ USD năm 2025 và tiếp tục duy trì đà tăng trưởng hai chữ số trong 6 tháng đầu năm 2026. Thị trường mang cấu trúc song mã khi Shopee (chiếm 55% thị phần GMV H1/2026) và TikTok Shop (chiếm 43%) nắm giữ gần 98% tổng giá trị giao dịch. Trong chu kỳ 12 tháng từ tháng 5/2025 đến 4/2026, thị phần GMV của TikTok Shop tăng từ 33% lên 44%, còn Shopee giảm từ 61% xuống 53% do sự bùng nổ của mô hình shoppertainment. Cả ba sàn lớn đồng loạt tăng phí từ tháng 5/2026, trong đó Shopee nâng phí xử lý giao dịch từ 4,91% lên 6%. Tổng số gian hàng có doanh thu H1/2026 đạt 436.000 cửa hàng, nhưng số lượng nhà bán hàng giảm 25-27% svck. Doanh thu bình quân mỗi người bán tăng mạnh: Shopee đạt 831,7 triệu đồng (tăng 44%), TikTok Shop đạt 532,7 triệu đồng (tăng 65%). Khung pháp lý siết chặt hơn với Luật Thương mại điện tử mới hiệu lực từ 1/7/2026, định danh VNeID và đề xuất hạ ngưỡng miễn thuế hàng nhập khẩu giá trị nhỏ.",
+      "pageCount": 22,
+      "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/sector/bao-cao-nganh-thuong-mai-dien-tu-thang-092026-22271.pdf",
+      "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/sector/bao-cao-nganh-thuong-mai-dien-tu-thang-092026-22271.jpg",
+      "recommendation": null,
+      "targetPrice": null
+    },
+    {
+      "id": "22269",
+      "slug": "bao-cao-nganh-nang-luong-viet-nam-doi-pho-voi-cu-soc-gia-nhien-lieu-nhu-the-nao",
+      "title": "Báo cáo ngành Năng lượng: Việt Nam đối phó với cú sốc giá nhiên liệu như thế nào?",
+      "source": "YSVN",
+      "date": "2026-09-25",
+      "displayDate": "25/09/2026",
+      "scope": "sector",
+      "sectorName": "Năng lượng",
+      "symbol": null,
+      "description": "Giá xăng dầu bán lẻ tại Việt Nam tăng đến 50% trong giai đoạn từ 23/02 đến 16/03/2026 do biến động địa chính trị Vùng Vịnh, cao hơn các nước lân cận như Thái Lan (+1%), Campuchia (+19%), Trung Quốc (+10%) và Lào (+33%). Từ 16/03 đến 09/04, giá xăng dầu nội địa lập tức giảm 10% nhờ các biện pháp điều tiết của Chính phủ. Quỹ Bình ổn giá xăng dầu được kích hoạt cùng gói hỗ trợ 8.000 tỷ đồng từ ngân sách nhà nước, trong đó tính đến cuối Q2/2026 mới giải ngân khoảng 700 tỷ đồng, tạo dư địa hỗ trợ lớn cho giai đoạn cuối năm. Nhập khẩu xăng dầu 8 tháng đầu năm 2026 tăng 20% svck, chủ yếu từ Singapore, Hàn Quốc và Malaysia (chiếm hơn 70%). Công suất lọc dầu nội địa tăng kỷ lục với BSR đạt 124% công suất thiết kế trong 6 tháng đầu năm và NSR đạt 100% công suất. Đợt điều chỉnh giá ngày 24/09 ghi nhận E10 RON95 tăng 5,7% và DO tăng 1,8%, giúp thị trường trong nước tránh đứt gãy nguồn cung.",
+      "pageCount": 4,
+      "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/sector/bao-cao-nganh-nang-luong-viet-nam-doi-pho-voi-cu-soc-gia-nhien-lieu-nhu-the-nao-22269.pdf",
+      "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/sector/bao-cao-nganh-nang-luong-viet-nam-doi-pho-voi-cu-soc-gia-nhien-lieu-nhu-the-nao-22269.jpg",
+      "recommendation": null,
+      "targetPrice": null
+    },
+    {
+      "id": "22266",
+      "slug": "bao-cao-nganh-tieu-dung-ban-le-du-bao-kqkd-q326-ban-le-hien-dai-tiep-da-mo-rong",
+      "title": "Báo cáo ngành Tiêu dùng - Bán lẻ: Dự báo KQKD Q3/26 - Bán lẻ hiện đại tiếp đà mở rộng",
+      "source": "MBS",
+      "date": "2026-09-25",
+      "displayDate": "25/09/2026",
+      "scope": "sector",
+      "sectorName": "Bán lẻ",
+      "symbol": null,
+      "description": "Lũy kế 8 tháng đầu năm 2026, tổng mức bán lẻ hàng hóa và dịch vụ tiêu dùng tăng 14% svck, riêng bán lẻ hàng hóa tăng 13,3%. Trong Q3/2026, kết quả kinh doanh phân hóa rõ giữa các nhóm ngành. Phân khúc bán lẻ điện tử và ICT-CE tăng trưởng bứt phá: MWG dự báo lợi nhuận sau thuế Q3 đạt 3.456 tỷ đồng (tăng 95% svck), lũy kế năm đạt 12.965 tỷ đồng (tăng 84%); DGW dự báo lợi nhuận sau thuế Q3 đạt 481 tỷ đồng (tăng 190% svck) với doanh thu tháng 7 và 8 đạt lần lượt 3.186 và 3.842 tỷ đồng; FRT dự kiến đạt biên lợi nhuận ròng 3% nhờ chuỗi Long Châu tăng trưởng doanh thu 30% svck. Chuỗi Bách Hóa Xanh đạt doanh thu trung bình 3,6 nghìn tỷ đồng mỗi tháng và đóng góp 630 tỷ đồng lợi nhuận. MSN dự báo lợi nhuận sau thuế Q3 tăng 230% svck đạt 3.984 tỷ đồng nhờ giá Vonfram duy trì ở mức 3.000 USD/mtu và chuỗi WinMart mở rộng quy mô cửa hàng 20%. Trái lại, PNJ dự báo lợi nhuận sau thuế Q3 giảm 62% svck xuống 186 tỷ đồng do lượt mua giảm còn 60% cùng kỳ.",
+      "pageCount": 4,
+      "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/sector/bao-cao-nganh-tieu-dung-ban-le-du-bao-kqkd-q326-ban-le-hien-dai-tiep-da-mo-rong-22266.pdf",
+      "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/sector/bao-cao-nganh-tieu-dung-ban-le-du-bao-kqkd-q326-ban-le-hien-dai-tiep-da-mo-rong-22266.jpg",
+      "recommendation": null,
+      "targetPrice": null
+    },
+    {
       "id": "wd_ind_25710",
       "slug": "ngan-hang-bao-cao-nganh-ngan-hang-quy-2-2026-diem-nhin-tu-bang-can-doi-wd_ind_25710",
       "title": "Báo cáo ngành Ngân hàng Quý 2/2026: Điểm nhìn từ bảng cân đối",
@@ -61,8 +111,7 @@
       "downloadUrl": "https://cdn02.wigroup.vn/baocaophantich/ar_25620_PSI_2026-09-24.pdf",
       "thumbnailUrl": "",
       "recommendation": null,
-      "targetPrice": null,
-      "created_at": "2026-09-26 01:09:19"
+      "targetPrice": null
     },
     {
       "id": "wd_ind_25709",
@@ -79,8 +128,7 @@
       "downloadUrl": "https://cdn02.wigroup.vn/baocaophantich/ar_25622_MBS_2026-09-24.pdf",
       "thumbnailUrl": "",
       "recommendation": null,
-      "targetPrice": null,
-      "created_at": "2026-09-26 01:09:19"
+      "targetPrice": null
     },
     {
       "id": "wd_ind_25702",
@@ -97,8 +145,7 @@
       "downloadUrl": "https://cdn02.wigroup.vn/baocaophantich/ar_25606_PSI_2026-09-24.pdf",
       "thumbnailUrl": "",
       "recommendation": null,
-      "targetPrice": null,
-      "created_at": "2026-09-26 01:09:19"
+      "targetPrice": null
     },
     {
       "id": "wd_ind_25670",
@@ -115,8 +162,7 @@
       "downloadUrl": "https://cdn02.wigroup.vn/baocaophantich/ar_25566_Vietcap_2026-09-24.pdf",
       "thumbnailUrl": "",
       "recommendation": null,
-      "targetPrice": null,
-      "created_at": "2026-09-26 01:09:19"
+      "targetPrice": null
     },
     {
       "id": "wd_ind_25669",
@@ -133,8 +179,7 @@
       "downloadUrl": "https://cdn02.wigroup.vn/baocaophantich/ar_25570_MBS_2026-09-24.pdf",
       "thumbnailUrl": "",
       "recommendation": null,
-      "targetPrice": null,
-      "created_at": "2026-09-26 01:09:19"
+      "targetPrice": null
     },
     {
       "id": "wd_ind_25668",
@@ -151,8 +196,126 @@
       "downloadUrl": "https://cdn02.wigroup.vn/baocaophantich/ar_25569_MBS_2026-09-24.pdf",
       "thumbnailUrl": "",
       "recommendation": null,
-      "targetPrice": null,
-      "created_at": "2026-09-26 01:09:19"
+      "targetPrice": null
+    },
+    {
+      "id": "22268",
+      "slug": "bao-cao-nganh-xay-dung-dau-tu-cong-q32026-diem-tua-tang-truong",
+      "title": "Báo cáo ngành Xây dựng - Đầu tư công: Q3/2026 - Điểm tựa tăng trưởng",
+      "source": "PSI",
+      "date": "2026-09-24",
+      "displayDate": "24/09/2026",
+      "scope": "sector",
+      "sectorName": "Xây dựng",
+      "symbol": null,
+      "description": "Tính đến hết tháng 8/2026, cả nước đã giải ngân được hơn 509.558 tỷ đồng vốn đầu tư công, đạt 49,8% kế hoạch năm và tăng 24,5% về giá trị tuyệt đối so với cùng kỳ năm trước. Áp lực chi phí giá vốn duy trì ở mức cao khi giá nguyên vật liệu xây dựng và nhiên liệu như dầu thô, dầu diesel liên tục gia tăng, gây áp lực lên biên lợi nhuận của các nhà thầu thi công. Về tiến độ các dự án hạ tầng trọng điểm, Sân bay Quốc tế Long Thành đã hoàn thành khoảng 80% tổng khối lượng thi công giai đoạn 1, tập trung hoàn thiện nhà ga hành khách và đường cất hạ cánh. Dự án Sân bay Gia Bình được đẩy nhanh công tác giải phóng mặt bằng, bồi thường, di dời tái định cư tại khu Đỗ Xá và xã Gia Bình trong tháng 9/2026 nhằm hướng tới mốc phục vụ Hội nghị APEC 2027. Tiến độ giải ngân vốn đầu tư công tiếp tục đóng vai trò là điểm tựa quan trọng thúc đẩy đà tăng trưởng kinh tế trong các quý cuối năm.",
+      "pageCount": 14,
+      "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/sector/bao-cao-nganh-xay-dung-dau-tu-cong-q32026-diem-tua-tang-truong-22268.pdf",
+      "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/sector/bao-cao-nganh-xay-dung-dau-tu-cong-q32026-diem-tua-tang-truong-22268.jpg",
+      "recommendation": null,
+      "targetPrice": null
+    },
+    {
+      "id": "22267",
+      "slug": "bao-cao-nganh-ngan-hang-q22026-diem-nhin-tu-bang-can-doi",
+      "title": "Báo cáo ngành Ngân hàng: Q2/2026 - Điểm nhìn từ bảng cân đối",
+      "source": "PSI",
+      "date": "2026-09-24",
+      "displayDate": "24/09/2026",
+      "scope": "sector",
+      "sectorName": "Ngân hàng",
+      "symbol": null,
+      "description": "Tăng trưởng tín dụng toàn hệ thống tăng tốc trong Q2/2026, đạt 7,73% tại cuối tháng 6. Trong 28 ngân hàng niêm yết 6 tháng đầu năm 2026, tổng thu nhập hoạt động tăng trưởng với trung vị 13,3%, trong khi lợi nhuận trước thuế tăng trưởng trung vị 24,5%. Tỷ lệ nợ xấu trung bình của 27 ngân hàng niêm yết duy trì ở mức 2,0% trong Q2/2026, tuy nhiên tỷ lệ nợ nhóm 2 gia tăng từ 1,23% (Q1) lên 1,40% (Q2), phản ánh áp lực nợ xấu tiềm ẩn tích tụ. Chất lượng tài sản phân hóa: tỷ lệ nợ xấu giảm tại PGB (từ 4,03% xuống 2,93%), VBB (từ 3,35% xuống 1,87%), TPB (từ 2,17% xuống 1,86%), nhưng tăng tại STB (từ 6,62% lên 7,54%), HDB (từ 2,60% lên 2,79%), BVB (từ 3,11% lên 3,22%). Tỷ lệ bao phủ nợ xấu giảm ở các ngân hàng lớn như BID (từ 86,9% xuống 75,9%) và CTG (từ 167,2% xuống 134,0%). Tỷ lệ tiền gửi không kỳ hạn (CASA) sụt giảm do lãi suất huy động tăng, khiến chi phí vốn gia tăng và biên lãi ròng (NIM) thu hẹp.",
+      "pageCount": 22,
+      "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/sector/bao-cao-nganh-ngan-hang-q22026-diem-nhin-tu-bang-can-doi-22267.pdf",
+      "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/sector/bao-cao-nganh-ngan-hang-q22026-diem-nhin-tu-bang-can-doi-22267.jpg",
+      "recommendation": null,
+      "targetPrice": null
+    },
+    {
+      "id": "22265",
+      "slug": "bao-cao-nganh-ngan-hang-du-bao-loi-nhuan-q326-duy-tri-tang-truong-cao",
+      "title": "Báo cáo ngành Ngân hàng: Dự báo lợi nhuận Q3/26 duy trì tăng trưởng cao",
+      "source": "MBS",
+      "date": "2026-09-24",
+      "displayDate": "24/09/2026",
+      "scope": "sector",
+      "sectorName": "Ngân hàng",
+      "symbol": null,
+      "description": "Lợi nhuận sau thuế của các ngân hàng niêm yết dự báo tăng 19,1% svck trong Q3/2026, đạt 66.912 tỷ đồng, lũy kế cả năm 2026 dự báo tăng 23,1% đạt 271.687 tỷ đồng. Sự tăng trưởng này được dẫn dắt bởi nhóm ngân hàng quốc doanh với thu nhập lãi thuần dự kiến tăng 22,1% svck, cao hơn đáng kể so với mức tăng 14,1% của nhóm ngân hàng thương mại cổ phần tư nhân. Tín dụng toàn ngành đến cuối Q3/2026 ước tăng khoảng 12% so với đầu năm nhờ cho vay doanh nghiệp lớn và khu vực FDI. Lợi nhuận trước thuế Q3/2026 của VCB dự báo đạt 14.567 tỷ đồng (tăng 29,1%), CTG đạt 7.500 tỷ đồng (tăng 58,7%), VPB đạt 11.649 tỷ đồng (tăng 27%), TCB đạt 9.700 tỷ đồng (tăng 17,5%). Tỷ lệ nợ xấu hình thành trên bình quân dư nợ giảm nhẹ 5 điểm cơ bản trong 6 tháng đầu năm, áp lực nợ xấu tập trung ở nhóm khách hàng SME và bán lẻ. Định giá ngành điều chỉnh về mức P/B 2026F trung bình toàn ngành 1,5x và ROE đạt 17,3%.",
+      "pageCount": 6,
+      "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/sector/bao-cao-nganh-ngan-hang-du-bao-loi-nhuan-q326-duy-tri-tang-truong-cao-22265.pdf",
+      "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/sector/bao-cao-nganh-ngan-hang-du-bao-loi-nhuan-q326-duy-tri-tang-truong-cao-22265.jpg",
+      "recommendation": null,
+      "targetPrice": null
+    },
+    {
+      "id": "22248",
+      "slug": "bao-cao-nganh-logistics-du-bao-kqkd-q32026-loi-nhuan-but-pha-trong-mua-cao-diem",
+      "title": "Báo cáo ngành Logistics: Dự báo KQKD Q3/2026 - Lợi nhuận bứt phá trong mùa cao điểm",
+      "source": "MBS",
+      "date": "2026-09-24",
+      "displayDate": "24/09/2026",
+      "scope": "sector",
+      "sectorName": "Vận tải & Logistics",
+      "symbol": null,
+      "description": "Trong quý 3/2026, kim ngạch xuất nhập khẩu tăng 29,6% svck và tổng lưu lượng hàng hóa qua cảng biển tăng 21,7% svck, thúc đẩy lợi nhuận nhóm cảng biển và vận tải biển bứt phá. Doanh nghiệp khai thác cảng nước sâu ghi nhận đà tăng trưởng cao: GMD dự báo lợi nhuận ròng quý 3/2026 đạt 587 tỷ đồng (+86% svck) nhờ sản lượng khai thác toàn hệ thống tăng 6,3% svck và Gemalink tăng 27,3% svck; PHP đạt 430 tỷ đồng (+65% svck) nhờ tăng giá dịch vụ ~17% svck và đóng góp từ bến 3,4 Lạch Huyện; VSC đạt 146 tỷ đồng (+85% svck) do sản lượng tăng 6% svck và đóng góp từ HAH. HAH dự báo lợi nhuận ròng đạt 339 tỷ đồng (+12% svck) nhờ gia hạn hợp đồng cho thuê tàu giá cước cao. Đối với nhóm bưu chính chuyển phát, VTP chịu áp lực chi phí nhiên liệu gia tăng (chi phí nhiên liệu đường bộ tăng 52,3% svck) nhưng lợi nhuận ròng vẫn dự báo đạt 95 tỷ đồng (+11% svck) nhờ áp dụng phụ phí và quy mô đội xe mở rộng.",
+      "pageCount": 3,
+      "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/sector/bao-cao-nganh-logistics-du-bao-kqkd-q32026-loi-nhuan-but-pha-trong-mua-cao-diem-22248.pdf",
+      "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/sector/bao-cao-nganh-logistics-du-bao-kqkd-q32026-loi-nhuan-but-pha-trong-mua-cao-diem-22248.jpg",
+      "recommendation": null,
+      "targetPrice": null
+    },
+    {
+      "id": "22247",
+      "slug": "bao-cao-nganh-dien-tang-cuong-huy-dong-nhiet-dien",
+      "title": "Báo cáo ngành Điện: Tăng cường huy động nhiệt điện",
+      "source": "MBS",
+      "date": "2026-09-24",
+      "displayDate": "24/09/2026",
+      "scope": "sector",
+      "sectorName": "Điện",
+      "symbol": null,
+      "description": "Tiêu thụ điện 8 tháng đầu năm 2026 tăng 9,7% svck. Huy động nhiệt điện tăng mạnh với điện khí tăng ~37% svck và điện than tăng ~13% svck để bù đắp cho sự sụt giảm của thủy điện (~13% svck trong tháng 7-8 do ảnh hưởng El-Nino). Tổng lợi nhuận ròng quý 3/2026 của các doanh nghiệp ngành điện theo dõi ước tính tăng trưởng 10% svck. Nhóm nhiệt điện ghi nhận KQKD tích cực: POW dự báo lợi nhuận ròng đạt 1.086 tỷ đồng (+34% svck) nhờ sản lượng Qc giao cao ~4 tỷ kWh và lãi tỷ giá; NT2 đạt 270 tỷ đồng (+26% svck) do sản lượng tăng 21% svck và doanh thu tài chính tăng; QTP đạt 62 tỷ đồng (+88% svck) nhờ sản lượng tăng 18% svck đạt ~1,3 tỷ kWh. Nhóm thủy điện và NLTT chịu ảnh hưởng tiêu cực từ thời tiết: REE dự báo lợi nhuận ròng đạt 733 tỷ đồng (+9% svck), HDG đạt 246 tỷ đồng (-14% svck), PC1 đạt 176 tỷ đồng (-42% svck) do mảng xây lắp điện và thủy điện suy giảm.",
+      "pageCount": 3,
+      "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/sector/bao-cao-nganh-dien-tang-cuong-huy-dong-nhiet-dien-22247.pdf",
+      "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/sector/bao-cao-nganh-dien-tang-cuong-huy-dong-nhiet-dien-22247.jpg",
+      "recommendation": null,
+      "targetPrice": null
+    },
+    {
+      "id": "22246",
+      "slug": "bao-cao-nganh-bds-khu-cong-nghiep-du-bao-kqkd-q32026-loi-nhuan-co-su-phan-hoa",
+      "title": "Báo cáo ngành BĐS Khu công nghiệp: Dự báo KQKD Q3/2026 - Lợi nhuận có sự phân hóa",
+      "source": "MBS",
+      "date": "2026-09-24",
+      "displayDate": "24/09/2026",
+      "scope": "sector",
+      "sectorName": "Bất động sản khu công nghiệp",
+      "symbol": null,
+      "description": "Trong 8 tháng đầu năm 2026, vốn FDI giải ngân vào ngành công nghiệp chế biến, chế tạo đạt 14,2 tỷ USD (+13% svck), còn vốn FDI đăng ký mới đạt 12,2 tỷ USD (+86% svck). Tổng lợi nhuận ròng quý 3/2026 của các doanh nghiệp bất động sản khu công nghiệp theo dõi dự phóng tăng trưởng 52% svck nhưng có sự phân hóa rõ rệt. Doanh nghiệp như BCM được dự báo lợi nhuận ròng đạt 1.817 tỷ đồng (+337% svck) nhờ bàn giao khoảng 400 căn tại dự án KTĐC Hòa Lợi; KBC đạt 528 tỷ đồng (+72% svck) nhờ bàn giao khoảng 20 ha đất KCN; VGC đạt 168 tỷ đồng (+83% svck) nhờ mảng vật liệu xây dựng và phục hồi bàn giao đất KCN 25-30 ha. PHR và GVR dự báo lợi nhuận tăng trưởng mạnh nhờ giá cao su neo cao (+30% svck) và tiền đền bù đất. Ngược lại, IDC dự báo lợi nhuận ròng giảm 49% svck xuống 428 tỷ đồng do diện tích đất KCN bàn giao giảm còn 20 ha.",
+      "pageCount": 3,
+      "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/sector/bao-cao-nganh-bds-khu-cong-nghiep-du-bao-kqkd-q32026-loi-nhuan-co-su-phan-hoa-22246.pdf",
+      "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/sector/bao-cao-nganh-bds-khu-cong-nghiep-du-bao-kqkd-q32026-loi-nhuan-co-su-phan-hoa-22246.jpg",
+      "recommendation": null,
+      "targetPrice": null
+    },
+    {
+      "id": "22245",
+      "slug": "bao-cao-nganh-nang-luong-xung-dot-my-iran-keo-dai-khien-gia-dau-nam-20262027-neo-cao",
+      "title": "Báo cáo ngành Năng lượng: Xung đột Mỹ - Iran kéo dài khiến giá dầu năm 2026/2027 neo cao",
+      "source": "Vietcap",
+      "date": "2026-09-24",
+      "displayDate": "24/09/2026",
+      "scope": "sector",
+      "sectorName": "Năng lượng",
+      "symbol": null,
+      "description": "Dự báo giá dầu Brent kịch bản cơ sở năm 2026 được điều chỉnh tăng 8% lên 90 USD/thùng (+31% YoY) và năm 2027 tăng 7% lên 75 USD/thùng (-16% YoY) do thị trường thắt chặt hơn dự kiến. Giả định giá dầu nhiên liệu (FO) trung bình năm 2026 được điều chỉnh tăng 7% lên 570 USD/tấn (+37% YoY), còn giá than trộn dự báo tăng 4% lên 3,0 triệu đồng/tấn (+32% YoY). Hoạt động thăm dò và khai thác trong nước có triển vọng tích cực nhờ cơ chế đặc thù cho PVN kỳ vọng được phê duyệt trong quý 4/2026, cùng tiến độ khả quan tại dự án Cá Voi Xanh (5 tỷ USD) và Sư Tử Vàng (1,9 tỷ USD). EIA dự báo thị trường dầu toàn cầu thiếu hụt 2,0 triệu thùng/ngày trong năm 2026 trước khi chuyển sang dư cung 3,0 triệu thùng/ngày trong quý 1/2027. Nguồn cung xăng dầu trong nước được Petrolimex (sản lượng 8T2026 tăng 16% YoY) và PVOIL (sản lượng nửa đầu năm tăng 25% YoY) đảm bảo đến cuối năm nhờ đa dạng hóa nguồn nhập khẩu.",
+      "pageCount": 31,
+      "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/sector/bao-cao-nganh-nang-luong-xung-dot-my-iran-keo-dai-khien-gia-dau-nam-20262027-neo-cao-22245.pdf",
+      "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/sector/bao-cao-nganh-nang-luong-xung-dot-my-iran-keo-dai-khien-gia-dau-nam-20262027-neo-cao-22245.jpg",
+      "recommendation": null,
+      "targetPrice": null
     },
     {
       "id": "wd_ind_25642",
@@ -169,8 +332,24 @@
       "downloadUrl": "",
       "thumbnailUrl": "",
       "recommendation": null,
-      "targetPrice": null,
-      "created_at": "2026-09-26 01:09:19"
+      "targetPrice": null
+    },
+    {
+      "id": "22273",
+      "slug": "bao-cao-nganh-thep-q22026-tu-quang-den-ton-ma",
+      "title": "Báo cáo ngành Thép: Q2/2026 - Từ quặng đến tôn mạ",
+      "source": "TCBS",
+      "date": "2026-09-22",
+      "displayDate": "22/09/2026",
+      "scope": "sector",
+      "sectorName": "Kim loại và khai khoáng",
+      "symbol": null,
+      "description": "Sản lượng thép thô 6 tháng đầu năm 2026 đạt 15,18 triệu tấn (tăng 26,9% svck), trong khi sản xuất tôn mạ giảm 14,4% và sản lượng bán hàng giảm 9,5% svck. Doanh thu thuần Q2/2026 của 12 doanh nghiệp niêm yết đạt 95.006 tỷ đồng (tăng 24,5% svck), lợi nhuận sau thuế cổ đông công ty mẹ đạt 7.285 tỷ đồng (tăng 54,5% svck). Tăng trưởng tập trung ở nhóm thượng nguồn: HPG đạt doanh thu Q2 55.159 tỷ đồng (tăng 53,6%) và lợi nhuận sau thuế công ty mẹ 6.371 tỷ đồng (tăng 49,7%), lũy kế 6 tháng đạt 15.365 tỷ đồng (tăng 102,2%), chiếm đa số lợi nhuận toàn ngành nhờ đóng góp từ dự án Dung Quất 2. Nhóm tôn mạ phân hóa: HSG đạt doanh thu Q2 tăng 5,1%, NKG tăng 9,0%, trong khi GDA giảm 28,0%. Nguyên giá tài sản cố định hữu hình của HPG đạt 186.818 tỷ đồng, gấp 3,6 lần tổng 11 doanh nghiệp còn lại. Ngành thép đối mặt rủi ro từ thuế chống bán phá giá AD20 và chi phí tài chính gia tăng.",
+      "pageCount": 23,
+      "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/sector/bao-cao-nganh-thep-q22026-tu-quang-den-ton-ma-22273.pdf",
+      "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/sector/bao-cao-nganh-thep-q22026-tu-quang-den-ton-ma-22273.jpg",
+      "recommendation": null,
+      "targetPrice": null
     },
     {
       "id": "wd_ind_25637",
@@ -187,8 +366,7 @@
       "downloadUrl": "https://cdn02.wigroup.vn/baocaophantich/ar_25489_FPTS_2026-09-21.pdf",
       "thumbnailUrl": "",
       "recommendation": null,
-      "targetPrice": null,
-      "created_at": "2026-09-26 01:09:19"
+      "targetPrice": null
     },
     {
       "id": "wd_ind_25629",
@@ -205,8 +383,7 @@
       "downloadUrl": "",
       "thumbnailUrl": "",
       "recommendation": null,
-      "targetPrice": null,
-      "created_at": "2026-09-26 01:09:19"
+      "targetPrice": null
     },
     {
       "id": "wd_ind_25621",
@@ -223,8 +400,7 @@
       "downloadUrl": "https://cdn02.wigroup.vn/baocaophantich/ar_25475_KAFI_2026-09-21.pdf",
       "thumbnailUrl": "",
       "recommendation": null,
-      "targetPrice": null,
-      "created_at": "2026-09-26 01:09:19"
+      "targetPrice": null
     },
     {
       "id": "wd_ind_25616",
@@ -241,8 +417,7 @@
       "downloadUrl": "https://cdn02.wigroup.vn/baocaophantich/ar_25443_VISRATING_2026-09-18.pdf",
       "thumbnailUrl": "",
       "recommendation": null,
-      "targetPrice": null,
-      "created_at": "2026-09-26 01:09:20"
+      "targetPrice": null
     },
     {
       "id": "wd_ind_25614",
@@ -259,8 +434,7 @@
       "downloadUrl": "https://cdn02.wigroup.vn/baocaophantich/ar_25445_TPS_2026-09-18.pdf",
       "thumbnailUrl": "",
       "recommendation": null,
-      "targetPrice": null,
-      "created_at": "2026-09-26 01:09:20"
+      "targetPrice": null
     },
     {
       "id": "wd_ind_25613",
@@ -277,8 +451,7 @@
       "downloadUrl": "",
       "thumbnailUrl": "",
       "recommendation": null,
-      "targetPrice": null,
-      "created_at": "2026-09-26 01:09:20"
+      "targetPrice": null
     },
     {
       "id": "wd_ind_25612",
@@ -295,8 +468,7 @@
       "downloadUrl": "",
       "thumbnailUrl": "",
       "recommendation": null,
-      "targetPrice": null,
-      "created_at": "2026-09-26 01:09:20"
+      "targetPrice": null
     },
     {
       "id": "wd_ind_25601",
@@ -313,8 +485,7 @@
       "downloadUrl": "https://cdn02.wigroup.vn/baocaophantich/ar_25462_VPB_BSC_2026-09-18.pdf",
       "thumbnailUrl": "",
       "recommendation": null,
-      "targetPrice": null,
-      "created_at": "2026-09-26 01:09:21"
+      "targetPrice": null
     },
     {
       "id": "22205",
@@ -331,8 +502,7 @@
       "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/sector/bao-cao-nganh-chung-khoan-cac-cong-ty-chung-khoan-lien-ket-voi-ngan-hang-dan-dat-tang-truong-22205.pdf",
       "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/sector/bao-cao-nganh-chung-khoan-cac-cong-ty-chung-khoan-lien-ket-voi-ngan-hang-dan-dat-tang-truong-22205.jpg",
       "recommendation": null,
-      "targetPrice": null,
-      "created_at": "2026-09-26 00:11:59"
+      "targetPrice": null
     },
     {
       "id": "wd_ind_25610",
@@ -349,8 +519,7 @@
       "downloadUrl": "",
       "thumbnailUrl": "",
       "recommendation": null,
-      "targetPrice": null,
-      "created_at": "2026-09-26 01:09:21"
+      "targetPrice": null
     },
     {
       "id": "wd_ind_25570",
@@ -367,8 +536,7 @@
       "downloadUrl": "",
       "thumbnailUrl": "",
       "recommendation": null,
-      "targetPrice": null,
-      "created_at": "2026-09-26 01:09:21"
+      "targetPrice": null
     },
     {
       "id": "22198",
@@ -385,8 +553,7 @@
       "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/sector/bao-cao-nganh-thep-huong-toi-mot-nen-cong-nghiep-tu-chu-22198.pdf",
       "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/sector/bao-cao-nganh-thep-huong-toi-mot-nen-cong-nghiep-tu-chu-22198.jpg",
       "recommendation": null,
-      "targetPrice": null,
-      "created_at": "2026-09-26 00:11:59"
+      "targetPrice": null
     },
     {
       "id": "wd_ind_25554",
@@ -403,8 +570,7 @@
       "downloadUrl": "",
       "thumbnailUrl": "",
       "recommendation": null,
-      "targetPrice": null,
-      "created_at": "2026-09-26 01:09:21"
+      "targetPrice": null
     },
     {
       "id": "wd_ind_25514",
@@ -421,8 +587,7 @@
       "downloadUrl": "",
       "thumbnailUrl": "",
       "recommendation": null,
-      "targetPrice": null,
-      "created_at": "2026-09-26 01:09:21"
+      "targetPrice": null
     },
     {
       "id": "22169",
@@ -439,8 +604,7 @@
       "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/sector/bao-cao-nganh-phan-bon-thieu-hut-ure-ngan-han-tren-the-gioi-22169.pdf",
       "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/sector/bao-cao-nganh-phan-bon-thieu-hut-ure-ngan-han-tren-the-gioi-22169.jpg",
       "recommendation": null,
-      "targetPrice": null,
-      "created_at": "2026-09-26 00:11:59"
+      "targetPrice": null
     },
     {
       "id": "22149",
@@ -457,8 +621,7 @@
       "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/sector/bao-cao-nganh-ngan-hang-loi-nhuan-tang-toc-nhung-chat-luong-tai-san-can-theo-doi-22149.pdf",
       "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/sector/bao-cao-nganh-ngan-hang-loi-nhuan-tang-toc-nhung-chat-luong-tai-san-can-theo-doi-22149.jpg",
       "recommendation": null,
-      "targetPrice": null,
-      "created_at": "2026-09-26 00:11:59"
+      "targetPrice": null
     },
     {
       "id": "22148",
@@ -475,8 +638,7 @@
       "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/sector/bao-cao-nganh-ngan-hang-tich-luy-dong-luc-22148.pdf",
       "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/sector/bao-cao-nganh-ngan-hang-tich-luy-dong-luc-22148.jpg",
       "recommendation": null,
-      "targetPrice": null,
-      "created_at": "2026-09-26 00:11:59"
+      "targetPrice": null
     },
     {
       "id": "wd_ind_25506",
@@ -493,8 +655,7 @@
       "downloadUrl": "https://cdn02.wigroup.vn/baocaophantich/ar_25350_VISRATING_2026-09-14.pdf",
       "thumbnailUrl": "",
       "recommendation": null,
-      "targetPrice": null,
-      "created_at": "2026-09-26 01:09:22"
+      "targetPrice": null
     },
     {
       "id": "wd_ind_25505",
@@ -511,8 +672,7 @@
       "downloadUrl": "https://cdn02.wigroup.vn/baocaophantich/ar_25351_VIETNAMBIZ_2026-09-14.pdf",
       "thumbnailUrl": "",
       "recommendation": null,
-      "targetPrice": null,
-      "created_at": "2026-09-26 01:09:25"
+      "targetPrice": null
     },
     {
       "id": "22123",
@@ -529,8 +689,7 @@
       "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/sector/bao-cao-nganh-xay-dung-nhu-cau-tang-manh-nhung-muc-do-tin-nhiem-ngay-cang-phan-hoa-22123.pdf",
       "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/sector/bao-cao-nganh-xay-dung-nhu-cau-tang-manh-nhung-muc-do-tin-nhiem-ngay-cang-phan-hoa-22123.jpg",
       "recommendation": null,
-      "targetPrice": null,
-      "created_at": "2026-09-26 00:11:59"
+      "targetPrice": null
     },
     {
       "id": "wd_ind_25497",
@@ -547,8 +706,7 @@
       "downloadUrl": "https://cdn02.wigroup.vn/baocaophantich/ar_25346_MBS_2026-09-11.pdf",
       "thumbnailUrl": "",
       "recommendation": null,
-      "targetPrice": null,
-      "created_at": "2026-09-26 01:09:25"
+      "targetPrice": null
     },
     {
       "id": "wd_ind_25481",
@@ -565,8 +723,7 @@
       "downloadUrl": "",
       "thumbnailUrl": "",
       "recommendation": null,
-      "targetPrice": null,
-      "created_at": "2026-09-26 01:09:25"
+      "targetPrice": null
     },
     {
       "id": "wd_ind_25480",
@@ -583,8 +740,7 @@
       "downloadUrl": "",
       "thumbnailUrl": "",
       "recommendation": null,
-      "targetPrice": null,
-      "created_at": "2026-09-26 01:09:25"
+      "targetPrice": null
     },
     {
       "id": "22117",
@@ -601,8 +757,7 @@
       "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/sector/bao-cao-nganh-cao-su-don-dau-chu-ky-moi-22117.pdf",
       "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/sector/bao-cao-nganh-cao-su-don-dau-chu-ky-moi-22117.jpg",
       "recommendation": null,
-      "targetPrice": null,
-      "created_at": "2026-09-26 00:11:59"
+      "targetPrice": null
     },
     {
       "id": "wd_ind_25463",
@@ -619,8 +774,7 @@
       "downloadUrl": "",
       "thumbnailUrl": "",
       "recommendation": null,
-      "targetPrice": null,
-      "created_at": "2026-09-26 01:09:25"
+      "targetPrice": null
     },
     {
       "id": "vc_37202",
@@ -637,8 +791,7 @@
       "downloadUrl": "https://www.vietcap.com.vn/api/cms-api/uploads/file/202609/CapnhatVM-20260909.pdf",
       "thumbnailUrl": "",
       "recommendation": null,
-      "targetPrice": null,
-      "created_at": "2026-09-26 00:19:10"
+      "targetPrice": null
     },
     {
       "id": "wd_ind_25450",
@@ -655,8 +808,7 @@
       "downloadUrl": "",
       "thumbnailUrl": "",
       "recommendation": null,
-      "targetPrice": null,
-      "created_at": "2026-09-26 01:09:25"
+      "targetPrice": null
     },
     {
       "id": "wd_ind_25449",
@@ -673,8 +825,7 @@
       "downloadUrl": "",
       "thumbnailUrl": "",
       "recommendation": null,
-      "targetPrice": null,
-      "created_at": "2026-09-26 01:09:25"
+      "targetPrice": null
     },
     {
       "id": "22058",
@@ -691,8 +842,7 @@
       "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/sector/bao-cao-nganh-dau-khi-luat-dau-khi-nam-2026-duoc-thong-qua-22058.pdf",
       "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/sector/bao-cao-nganh-dau-khi-luat-dau-khi-nam-2026-duoc-thong-qua-22058.jpg",
       "recommendation": null,
-      "targetPrice": null,
-      "created_at": "2026-09-26 00:11:59"
+      "targetPrice": null
     },
     {
       "id": "wd_ind_25435",
@@ -709,8 +859,7 @@
       "downloadUrl": "",
       "thumbnailUrl": "",
       "recommendation": null,
-      "targetPrice": null,
-      "created_at": "2026-09-26 01:09:25"
+      "targetPrice": null
     },
     {
       "id": "wd_ind_25407",
@@ -727,8 +876,7 @@
       "downloadUrl": "https://cdn02.wigroup.vn/baocaophantich/25407_Vietcap_2026-09-04.pdf",
       "thumbnailUrl": "",
       "recommendation": null,
-      "targetPrice": null,
-      "created_at": "2026-09-26 01:09:26"
+      "targetPrice": null
     },
     {
       "id": "vc_37162",
@@ -745,8 +893,7 @@
       "downloadUrl": "https://www.vietcap.com.vn/trung-tam-phan-tich/cap-nhat-vi-mo-quoc-hoi-thong-qua-15-luat-13-nghi-quyet-tai-ky-hop-khong-thuong-le",
       "thumbnailUrl": "",
       "recommendation": null,
-      "targetPrice": null,
-      "created_at": "2026-09-26 00:19:10"
+      "targetPrice": null
     },
     {
       "id": "22011",
@@ -763,8 +910,7 @@
       "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/sector/bao-cao-nganh-phan-bon-gia-ure-giam-do-nguon-cung-tu-trung-quoc-tang-22011.pdf",
       "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/sector/bao-cao-nganh-phan-bon-gia-ure-giam-do-nguon-cung-tu-trung-quoc-tang-22011.jpg",
       "recommendation": null,
-      "targetPrice": null,
-      "created_at": "2026-09-26 00:11:59"
+      "targetPrice": null
     },
     {
       "id": "wd_ind_25354",
@@ -781,8 +927,7 @@
       "downloadUrl": "https://cdn02.wigroup.vn/baocaophantich/25354_KAFI_2026-09-03.pdf",
       "thumbnailUrl": "",
       "recommendation": null,
-      "targetPrice": null,
-      "created_at": "2026-09-26 01:09:26"
+      "targetPrice": null
     },
     {
       "id": "wd_ind_25373",
@@ -799,8 +944,7 @@
       "downloadUrl": "https://cdn02.wigroup.vn/baocaophantich/25373_VIETNAMBIZ_2026-09-01.pdf",
       "thumbnailUrl": "",
       "recommendation": null,
-      "targetPrice": null,
-      "created_at": "2026-09-26 01:09:26"
+      "targetPrice": null
     },
     {
       "id": "wd_ind_25394",
@@ -817,8 +961,7 @@
       "downloadUrl": "",
       "thumbnailUrl": "",
       "recommendation": null,
-      "targetPrice": null,
-      "created_at": "2026-09-26 01:09:26"
+      "targetPrice": null
     },
     {
       "id": "wd_ind_25366",
@@ -835,8 +978,7 @@
       "downloadUrl": "https://cdn02.wigroup.vn/baocaophantich/25366_VCBS_2026-08-28.pdf",
       "thumbnailUrl": "",
       "recommendation": null,
-      "targetPrice": null,
-      "created_at": "2026-09-26 01:09:26"
+      "targetPrice": null
     },
     {
       "id": "wd_ind_25364",
@@ -853,8 +995,7 @@
       "downloadUrl": "",
       "thumbnailUrl": "",
       "recommendation": null,
-      "targetPrice": null,
-      "created_at": "2026-09-26 01:09:26"
+      "targetPrice": null
     },
     {
       "id": "21985",
@@ -871,8 +1012,7 @@
       "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/sector/bao-cao-nganh-det-may-trien-vong-2h2026-21985.pdf",
       "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/sector/bao-cao-nganh-det-may-trien-vong-2h2026-21985.jpg",
       "recommendation": null,
-      "targetPrice": null,
-      "created_at": "2026-09-26 00:11:59"
+      "targetPrice": null
     },
     {
       "id": "wd_ind_25339",
@@ -889,8 +1029,7 @@
       "downloadUrl": "https://cdn02.wigroup.vn/baocaophantich/25339_MAS_2026-08-27.pdf",
       "thumbnailUrl": "",
       "recommendation": null,
-      "targetPrice": null,
-      "created_at": "2026-09-26 01:09:26"
+      "targetPrice": null
     },
     {
       "id": "wd_ind_25329",
@@ -907,8 +1046,7 @@
       "downloadUrl": "https://cdn02.wigroup.vn/baocaophantich/25329_MAS_2026-08-27.pdf",
       "thumbnailUrl": "",
       "recommendation": null,
-      "targetPrice": null,
-      "created_at": "2026-09-26 01:09:26"
+      "targetPrice": null
     },
     {
       "id": "21877",
@@ -925,8 +1063,7 @@
       "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/sector/bao-cao-nganh-phan-bon-gieo-mua-moi-gat-mua-vang-21877.pdf",
       "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/sector/bao-cao-nganh-phan-bon-gieo-mua-moi-gat-mua-vang-21877.jpg",
       "recommendation": null,
-      "targetPrice": null,
-      "created_at": "2026-09-26 00:11:59"
+      "targetPrice": null
     },
     {
       "id": "21876",
@@ -943,8 +1080,7 @@
       "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/sector/bao-cao-nganh-ca-tra-thach-thuc-lien-tiep-21876.pdf",
       "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/sector/bao-cao-nganh-ca-tra-thach-thuc-lien-tiep-21876.jpg",
       "recommendation": null,
-      "targetPrice": null,
-      "created_at": "2026-09-26 00:11:59"
+      "targetPrice": null
     },
     {
       "id": "wd_ind_25319",
@@ -961,8 +1097,7 @@
       "downloadUrl": "",
       "thumbnailUrl": "",
       "recommendation": null,
-      "targetPrice": null,
-      "created_at": "2026-09-26 01:09:26"
+      "targetPrice": null
     },
     {
       "id": "wd_ind_25294",
@@ -979,8 +1114,7 @@
       "downloadUrl": "https://cdn02.wigroup.vn/baocaophantich/25294_GTJA_2026-08-26.pdf",
       "thumbnailUrl": "",
       "recommendation": null,
-      "targetPrice": null,
-      "created_at": "2026-09-26 01:09:26"
+      "targetPrice": null
     },
     {
       "id": "21873",
@@ -997,8 +1131,7 @@
       "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/sector/bao-cao-nganh-chung-khoan-cap-nhat-kqkd-1h2026-truoc-them-nang-hang-21873.pdf",
       "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/sector/bao-cao-nganh-chung-khoan-cap-nhat-kqkd-1h2026-truoc-them-nang-hang-21873.jpg",
       "recommendation": null,
-      "targetPrice": null,
-      "created_at": "2026-09-26 00:11:59"
+      "targetPrice": null
     },
     {
       "id": "wd_ind_25274",
@@ -1015,8 +1148,7 @@
       "downloadUrl": "https://cdn02.wigroup.vn/baocaophantich/25274_VCOSA_2026-08-25.pdf",
       "thumbnailUrl": "",
       "recommendation": null,
-      "targetPrice": null,
-      "created_at": "2026-09-26 01:09:27"
+      "targetPrice": null
     },
     {
       "id": "wd_ind_25237",
@@ -1033,8 +1165,7 @@
       "downloadUrl": "https://cdn02.wigroup.vn/baocaophantich/25237_YUANTA_2026-08-24.pdf",
       "thumbnailUrl": "",
       "recommendation": null,
-      "targetPrice": null,
-      "created_at": "2026-09-26 01:09:27"
+      "targetPrice": null
     },
     {
       "id": "21803",
@@ -1051,8 +1182,7 @@
       "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/sector/bao-cao-nganh-cang-bien-giu-vung-da-tang-truong-21803.pdf",
       "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/sector/bao-cao-nganh-cang-bien-giu-vung-da-tang-truong-21803.jpg",
       "recommendation": null,
-      "targetPrice": null,
-      "created_at": "2026-09-01 21:55:35"
+      "targetPrice": null
     },
     {
       "id": "21764",
@@ -1069,8 +1199,7 @@
       "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/sector/bao-cao-nganh-dau-khi-an-ninh-nang-luong-kich-hoat-chu-ky-dau-tu-21764.pdf",
       "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/sector/bao-cao-nganh-dau-khi-an-ninh-nang-luong-kich-hoat-chu-ky-dau-tu-21764.jpg",
       "recommendation": null,
-      "targetPrice": null,
-      "created_at": "2026-09-01 21:55:35"
+      "targetPrice": null
     },
     {
       "id": "21739",
@@ -1087,8 +1216,7 @@
       "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/sector/bao-cao-nganh-det-may-cai-thien-tich-cuc-trong-q2-2026-21739.pdf",
       "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/sector/bao-cao-nganh-det-may-cai-thien-tich-cuc-trong-q2-2026-21739.jpg",
       "recommendation": null,
-      "targetPrice": null,
-      "created_at": "2026-09-01 21:55:35"
+      "targetPrice": null
     },
     {
       "id": "21743",
@@ -1105,8 +1233,7 @@
       "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/sector/bao-cao-nganh-chung-khoan-q22026-21743.pdf",
       "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/sector/bao-cao-nganh-chung-khoan-q22026-21743.jpg",
       "recommendation": null,
-      "targetPrice": null,
-      "created_at": "2026-09-01 21:55:35"
+      "targetPrice": null
     },
     {
       "id": "21742",
@@ -1123,8 +1250,7 @@
       "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/sector/bao-cao-nganh-ngan-hang-q22026-21742.pdf",
       "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/sector/bao-cao-nganh-ngan-hang-q22026-21742.jpg",
       "recommendation": null,
-      "targetPrice": null,
-      "created_at": "2026-09-01 21:55:35"
+      "targetPrice": null
     },
     {
       "id": "21741",
@@ -1141,8 +1267,7 @@
       "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/sector/bao-cao-nganh-bds-dan-cu-q22026-21741.pdf",
       "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/sector/bao-cao-nganh-bds-dan-cu-q22026-21741.jpg",
       "recommendation": null,
-      "targetPrice": null,
-      "created_at": "2026-09-01 21:55:35"
+      "targetPrice": null
     },
     {
       "id": "21714",
@@ -1159,8 +1284,7 @@
       "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/sector/bao-cao-nganh-chung-khoan-cap-nhat-ket-qua-kinh-doanh-quy-2-2026-21714.pdf",
       "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/sector/bao-cao-nganh-chung-khoan-cap-nhat-ket-qua-kinh-doanh-quy-2-2026-21714.jpg",
       "recommendation": null,
-      "targetPrice": null,
-      "created_at": "2026-09-01 21:55:35"
+      "targetPrice": null
     },
     {
       "id": "21652",
@@ -1177,8 +1301,7 @@
       "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/sector/bao-cao-nganh-dau-khi-lan-song-dau-tu-tu-cac-du-an-trong-diem-21652.pdf",
       "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/sector/bao-cao-nganh-dau-khi-lan-song-dau-tu-tu-cac-du-an-trong-diem-21652.jpg",
       "recommendation": null,
-      "targetPrice": null,
-      "created_at": "2026-09-01 21:55:35"
+      "targetPrice": null
     },
     {
       "id": "21655",
@@ -1195,8 +1318,7 @@
       "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/sector/bao-cao-nganh-bat-dong-san-1h2026-21655.pdf",
       "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/sector/bao-cao-nganh-bat-dong-san-1h2026-21655.jpg",
       "recommendation": null,
-      "targetPrice": null,
-      "created_at": "2026-09-01 21:55:35"
+      "targetPrice": null
     },
     {
       "id": "21516",
@@ -1213,8 +1335,7 @@
       "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/sector/bao-cao-nganh-bat-dong-san-dinh-gia-doanh-nghiep-va-tac-dong-cua-lai-suat-21516.pdf",
       "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/sector/bao-cao-nganh-bat-dong-san-dinh-gia-doanh-nghiep-va-tac-dong-cua-lai-suat-21516.jpg",
       "recommendation": null,
-      "targetPrice": null,
-      "created_at": "2026-09-01 21:55:35"
+      "targetPrice": null
     },
     {
       "id": "21610",
@@ -1231,8 +1352,7 @@
       "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/sector/bao-cao-nganh-ngan-hang-loi-nhuan-tang-truong-tich-cuc-nhung-chat-luong-tai-san-can-duoc-theo-doi-21610.pdf",
       "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/sector/bao-cao-nganh-ngan-hang-loi-nhuan-tang-truong-tich-cuc-nhung-chat-luong-tai-san-can-duoc-theo-doi-21610.jpg",
       "recommendation": null,
-      "targetPrice": null,
-      "created_at": "2026-09-01 21:55:35"
+      "targetPrice": null
     },
     {
       "id": "21327",
@@ -1249,8 +1369,7 @@
       "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/sector/bao-cao-nganh-cong-nghe-ai-va-ha-tang-so-mo-ra-chu-ky-tang-truong-moi-21327.pdf",
       "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/sector/bao-cao-nganh-cong-nghe-ai-va-ha-tang-so-mo-ra-chu-ky-tang-truong-moi-21327.jpg",
       "recommendation": null,
-      "targetPrice": null,
-      "created_at": "2026-09-01 21:55:35"
+      "targetPrice": null
     },
     {
       "id": "21265",
@@ -1267,8 +1386,7 @@
       "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/sector/bao-cao-nganh-thep-q22026-21265.pdf",
       "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/sector/bao-cao-nganh-thep-q22026-21265.jpg",
       "recommendation": null,
-      "targetPrice": null,
-      "created_at": "2026-09-01 21:55:35"
+      "targetPrice": null
     },
     {
       "id": "21171",
@@ -1285,8 +1403,7 @@
       "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/sector/bao-cao-nganh-bds-khu-cong-nghiep-bao-cao-thi-truong-1h2026-21171.pdf",
       "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/sector/bao-cao-nganh-bds-khu-cong-nghiep-bao-cao-thi-truong-1h2026-21171.jpg",
       "recommendation": null,
-      "targetPrice": null,
-      "created_at": "2026-09-26 00:11:59"
+      "targetPrice": null
     },
     {
       "id": "21169",
@@ -1303,8 +1420,7 @@
       "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/sector/bao-cao-nganh-cntt-vien-thong-tien-toi-ky-nguyen-chuyen-doi-ai-21169.pdf",
       "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/sector/bao-cao-nganh-cntt-vien-thong-tien-toi-ky-nguyen-chuyen-doi-ai-21169.jpg",
       "recommendation": null,
-      "targetPrice": null,
-      "created_at": "2026-09-26 00:11:59"
+      "targetPrice": null
     },
     {
       "id": "21157",
@@ -1321,8 +1437,7 @@
       "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/sector/bao-cao-nganh-xay-dung-thep-tang-truong-trong-thach-thuc-21157.pdf",
       "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/sector/bao-cao-nganh-xay-dung-thep-tang-truong-trong-thach-thuc-21157.jpg",
       "recommendation": null,
-      "targetPrice": null,
-      "created_at": "2026-09-26 00:11:59"
+      "targetPrice": null
     },
     {
       "id": "21164",
@@ -1339,8 +1454,7 @@
       "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/sector/bao-cao-nganh-dien-cap-nhat-nua-dau-nam-2026-21164.pdf",
       "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/sector/bao-cao-nganh-dien-cap-nhat-nua-dau-nam-2026-21164.jpg",
       "recommendation": null,
-      "targetPrice": null,
-      "created_at": "2026-09-26 00:11:59"
+      "targetPrice": null
     },
     {
       "id": "21153",
@@ -1357,8 +1471,7 @@
       "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/sector/bao-cao-nganh-tieu-dung-ban-le-buoc-dem-vung-chac-tu-tieu-dung-thiet-yeu-21153.pdf",
       "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/sector/bao-cao-nganh-tieu-dung-ban-le-buoc-dem-vung-chac-tu-tieu-dung-thiet-yeu-21153.jpg",
       "recommendation": null,
-      "targetPrice": null,
-      "created_at": "2026-09-26 00:11:59"
+      "targetPrice": null
     },
     {
       "id": "21150",
@@ -1375,8 +1488,7 @@
       "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/sector/bao-cao-nganh-khu-cong-nghiep-hoi-thao-ve-phat-trien-va-thu-hut-dau-tu-kcn-tai-viet-nam-21150.pdf",
       "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/sector/bao-cao-nganh-khu-cong-nghiep-hoi-thao-ve-phat-trien-va-thu-hut-dau-tu-kcn-tai-viet-nam-21150.jpg",
       "recommendation": null,
-      "targetPrice": null,
-      "created_at": "2026-09-26 00:11:59"
+      "targetPrice": null
     },
     {
       "id": "21154",
@@ -1393,8 +1505,7 @@
       "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/sector/bao-cao-nganh-logistics-vung-tay-cheo-lai-song-lon-21154.pdf",
       "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/sector/bao-cao-nganh-logistics-vung-tay-cheo-lai-song-lon-21154.jpg",
       "recommendation": null,
-      "targetPrice": null,
-      "created_at": "2026-09-26 00:11:59"
+      "targetPrice": null
     },
     {
       "id": "21125",
@@ -1411,8 +1522,7 @@
       "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/sector/bao-cao-nganh-dau-khi-tu-gieng-dau-den-loi-nhuan-21125.pdf",
       "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/sector/bao-cao-nganh-dau-khi-tu-gieng-dau-den-loi-nhuan-21125.jpg",
       "recommendation": null,
-      "targetPrice": null,
-      "created_at": "2026-09-26 00:11:59"
+      "targetPrice": null
     },
     {
       "id": "21113",
@@ -1429,8 +1539,7 @@
       "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/sector/bao-cao-nganh-bds-khu-cong-nghiep-buoc-vao-chu-ky-phat-trien-moi-21113.pdf",
       "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/sector/bao-cao-nganh-bds-khu-cong-nghiep-buoc-vao-chu-ky-phat-trien-moi-21113.jpg",
       "recommendation": null,
-      "targetPrice": null,
-      "created_at": "2026-09-26 00:11:59"
+      "targetPrice": null
     },
     {
       "id": "21108",
@@ -1447,8 +1556,7 @@
       "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/sector/bao-cao-nganh-dien-mot-chu-ky-moi-dang-lo-dien-21108.pdf",
       "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/sector/bao-cao-nganh-dien-mot-chu-ky-moi-dang-lo-dien-21108.jpg",
       "recommendation": null,
-      "targetPrice": null,
-      "created_at": "2026-09-26 00:11:59"
+      "targetPrice": null
     },
     {
       "id": "21093",
@@ -1465,8 +1573,7 @@
       "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/sector/bao-cao-nganh-bat-dong-san-dan-cu-thi-truong-am-dam-trong-boi-canh-lai-suat-cao-21093.pdf",
       "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/sector/bao-cao-nganh-bat-dong-san-dan-cu-thi-truong-am-dam-trong-boi-canh-lai-suat-cao-21093.jpg",
       "recommendation": null,
-      "targetPrice": null,
-      "created_at": "2026-09-26 00:11:59"
+      "targetPrice": null
     },
     {
       "id": "21097",
@@ -1483,8 +1590,7 @@
       "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/sector/bao-cao-nganh-ban-le-nam-tang-truong-cua-cac-doanh-nghiep-lon-21097.pdf",
       "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/sector/bao-cao-nganh-ban-le-nam-tang-truong-cua-cac-doanh-nghiep-lon-21097.jpg",
       "recommendation": null,
-      "targetPrice": null,
-      "created_at": "2026-09-26 00:11:59"
+      "targetPrice": null
     },
     {
       "id": "21096",
@@ -1501,8 +1607,7 @@
       "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/sector/bao-cao-nganh-thuy-san-noi-luc-on-dinh-dinh-gia-dan-tro-nen-hap-dan-21096.pdf",
       "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/sector/bao-cao-nganh-thuy-san-noi-luc-on-dinh-dinh-gia-dan-tro-nen-hap-dan-21096.jpg",
       "recommendation": null,
-      "targetPrice": null,
-      "created_at": "2026-09-26 00:11:59"
+      "targetPrice": null
     },
     {
       "id": "21095",
@@ -1519,8 +1624,7 @@
       "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/sector/bao-cao-nganh-sua-trien-vong-tich-cuc-voi-doanh-nghiep-dau-nganh-21095.pdf",
       "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/sector/bao-cao-nganh-sua-trien-vong-tich-cuc-voi-doanh-nghiep-dau-nganh-21095.jpg",
       "recommendation": null,
-      "targetPrice": null,
-      "created_at": "2026-09-26 00:11:59"
+      "targetPrice": null
     },
     {
       "id": "21083",
@@ -1537,8 +1641,7 @@
       "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/sector/bao-cao-nganh-dien-chinh-sach-linh-hoat-thuc-day-moi-truong-dau-tu-21083.pdf",
       "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/sector/bao-cao-nganh-dien-chinh-sach-linh-hoat-thuc-day-moi-truong-dau-tu-21083.jpg",
       "recommendation": null,
-      "targetPrice": null,
-      "created_at": "2026-09-26 00:11:59"
+      "targetPrice": null
     },
     {
       "id": "21082",
@@ -1555,8 +1658,7 @@
       "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/sector/bao-cao-nganh-ngan-hang-ap-luc-huy-dong-gia-tang-21082.pdf",
       "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/sector/bao-cao-nganh-ngan-hang-ap-luc-huy-dong-gia-tang-21082.jpg",
       "recommendation": null,
-      "targetPrice": null,
-      "created_at": "2026-09-26 00:11:59"
+      "targetPrice": null
     },
     {
       "id": "21081",
@@ -1573,8 +1675,7 @@
       "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/sector/bao-cao-nganh-cong-nghe-ai-la-dong-luc-dan-dat-tang-truong-21081.pdf",
       "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/sector/bao-cao-nganh-cong-nghe-ai-la-dong-luc-dan-dat-tang-truong-21081.jpg",
       "recommendation": null,
-      "targetPrice": null,
-      "created_at": "2026-09-26 00:11:59"
+      "targetPrice": null
     },
     {
       "id": "21080",
@@ -1591,8 +1692,7 @@
       "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/sector/bao-cao-nganh-bat-dong-san-dan-cu-cac-yeu-to-cot-loi-van-dang-duoc-duy-tri-21080.pdf",
       "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/sector/bao-cao-nganh-bat-dong-san-dan-cu-cac-yeu-to-cot-loi-van-dang-duoc-duy-tri-21080.jpg",
       "recommendation": null,
-      "targetPrice": null,
-      "created_at": "2026-09-26 00:11:59"
+      "targetPrice": null
     },
     {
       "id": "21079",
@@ -1609,8 +1709,7 @@
       "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/sector/bao-cao-nganh-bds-khu-cong-nghiep-tang-truong-ve-chat-va-luong-21079.pdf",
       "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/sector/bao-cao-nganh-bds-khu-cong-nghiep-tang-truong-ve-chat-va-luong-21079.jpg",
       "recommendation": null,
-      "targetPrice": null,
-      "created_at": "2026-09-26 00:11:59"
+      "targetPrice": null
     },
     {
       "id": "21078",
@@ -1627,8 +1726,7 @@
       "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/sector/bao-cao-nganh-xay-dung-nguon-cung-cong-viec-tich-cuc-21078.pdf",
       "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/sector/bao-cao-nganh-xay-dung-nguon-cung-cong-viec-tich-cuc-21078.jpg",
       "recommendation": null,
-      "targetPrice": null,
-      "created_at": "2026-09-26 00:11:59"
+      "targetPrice": null
     },
     {
       "id": "21075",
@@ -1645,8 +1743,7 @@
       "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/sector/bao-cao-nganh-logistics-san-luong-tang-ap-luc-chi-phi-hien-huu-21075.pdf",
       "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/sector/bao-cao-nganh-logistics-san-luong-tang-ap-luc-chi-phi-hien-huu-21075.jpg",
       "recommendation": null,
-      "targetPrice": null,
-      "created_at": "2026-09-26 00:11:59"
+      "targetPrice": null
     },
     {
       "id": "21074",
@@ -1663,8 +1760,7 @@
       "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/sector/bao-cao-nganh-dau-khi-trien-vong-giua-cac-phan-khuc-co-su-phan-hoa-21074.pdf",
       "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/sector/bao-cao-nganh-dau-khi-trien-vong-giua-cac-phan-khuc-co-su-phan-hoa-21074.jpg",
       "recommendation": null,
-      "targetPrice": null,
-      "created_at": "2026-09-26 00:11:59"
+      "targetPrice": null
     },
     {
       "id": "21100",
@@ -1681,8 +1777,7 @@
       "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/sector/bao-cao-nganh-ngan-hang-sua-doi-quy-dinh-ve-thanh-khoan-21100.pdf",
       "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/sector/bao-cao-nganh-ngan-hang-sua-doi-quy-dinh-ve-thanh-khoan-21100.jpg",
       "recommendation": null,
-      "targetPrice": null,
-      "created_at": "2026-09-26 00:11:59"
+      "targetPrice": null
     },
     {
       "id": "21050",
@@ -1699,8 +1794,7 @@
       "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/sector/bao-cao-nganh-duoc-2h2026-21050.pdf",
       "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/sector/bao-cao-nganh-duoc-2h2026-21050.jpg",
       "recommendation": null,
-      "targetPrice": null,
-      "created_at": "2026-09-26 00:11:59"
+      "targetPrice": null
     },
     {
       "id": "21049",
@@ -1717,8 +1811,7 @@
       "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/sector/bao-cao-nganh-ban-le-suc-mua-phuc-hoi-but-pha-nho-chien-luoc-da-kenh-21049.pdf",
       "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/sector/bao-cao-nganh-ban-le-suc-mua-phuc-hoi-but-pha-nho-chien-luoc-da-kenh-21049.jpg",
       "recommendation": null,
-      "targetPrice": null,
-      "created_at": "2026-09-26 00:11:59"
+      "targetPrice": null
     },
     {
       "id": "21022",
@@ -1735,8 +1828,7 @@
       "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/sector/bao-cao-nganh-bds-nha-o-du-phong-kqkd-q2-2026-21022.pdf",
       "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/sector/bao-cao-nganh-bds-nha-o-du-phong-kqkd-q2-2026-21022.jpg",
       "recommendation": null,
-      "targetPrice": null,
-      "created_at": "2026-09-26 00:11:59"
+      "targetPrice": null
     },
     {
       "id": "21058",
@@ -1753,8 +1845,7 @@
       "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/sector/bao-cao-nganh-dien-huy-dong-nhiet-dien-toi-uu-trong-boi-canh-nhu-cau-dien-toan-quoc-tang-manh-21058.pdf",
       "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/sector/bao-cao-nganh-dien-huy-dong-nhiet-dien-toi-uu-trong-boi-canh-nhu-cau-dien-toan-quoc-tang-manh-21058.jpg",
       "recommendation": null,
-      "targetPrice": null,
-      "created_at": "2026-09-26 00:11:59"
+      "targetPrice": null
     },
     {
       "id": "20978",
@@ -1771,8 +1862,7 @@
       "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/sector/bao-cao-nganh-xay-dung-vat-lieu-kqkd-phan-hoa-do-gia-nguyen-vat-lieu-tang-cao-20978.pdf",
       "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/sector/bao-cao-nganh-xay-dung-vat-lieu-kqkd-phan-hoa-do-gia-nguyen-vat-lieu-tang-cao-20978.jpg",
       "recommendation": null,
-      "targetPrice": null,
-      "created_at": "2026-09-26 00:11:59"
+      "targetPrice": null
     },
     {
       "id": "20976",
@@ -1789,8 +1879,7 @@
       "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/sector/bao-cao-nganh-bat-dong-san-du-bao-kqkd-q22026-thi-truong-am-dam-truoc-ap-luc-tu-nen-lai-suat-cao-20976.pdf",
       "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/sector/bao-cao-nganh-bat-dong-san-du-bao-kqkd-q22026-thi-truong-am-dam-truoc-ap-luc-tu-nen-lai-suat-cao-20976.jpg",
       "recommendation": null,
-      "targetPrice": null,
-      "created_at": "2026-09-26 00:11:59"
+      "targetPrice": null
     },
     {
       "id": "20975",
@@ -1807,8 +1896,7 @@
       "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/sector/bao-cao-nganh-ngan-hang-nh-chat-luong-tot-xung-dang-dinh-gia-cao-hon-20975.pdf",
       "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/sector/bao-cao-nganh-ngan-hang-nh-chat-luong-tot-xung-dang-dinh-gia-cao-hon-20975.jpg",
       "recommendation": null,
-      "targetPrice": null,
-      "created_at": "2026-09-26 00:11:59"
+      "targetPrice": null
     },
     {
       "id": "20974",
@@ -1825,8 +1913,7 @@
       "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/sector/bao-cao-nganh-bds-khu-cong-nghiep-doi-moi-chinh-sach-thu-hut-von-fdi-va-du-bao-kqkd-q226-20974.pdf",
       "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/sector/bao-cao-nganh-bds-khu-cong-nghiep-doi-moi-chinh-sach-thu-hut-von-fdi-va-du-bao-kqkd-q226-20974.jpg",
       "recommendation": null,
-      "targetPrice": null,
-      "created_at": "2026-09-26 00:11:59"
+      "targetPrice": null
     },
     {
       "id": "20973",
@@ -1843,8 +1930,7 @@
       "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/sector/bao-cao-nganh-dau-khi-du-bao-kqkd-q22026-kha-quan-nho-boi-canh-vi-mo-thuan-loi-20973.pdf",
       "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/sector/bao-cao-nganh-dau-khi-du-bao-kqkd-q22026-kha-quan-nho-boi-canh-vi-mo-thuan-loi-20973.jpg",
       "recommendation": null,
-      "targetPrice": null,
-      "created_at": "2026-09-26 00:11:59"
+      "targetPrice": null
     },
     {
       "id": "20972",
@@ -1861,8 +1947,7 @@
       "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/sector/bao-cao-nganh-hang-khong-thang-062026-20972.pdf",
       "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/sector/bao-cao-nganh-hang-khong-thang-062026-20972.jpg",
       "recommendation": null,
-      "targetPrice": null,
-      "created_at": "2026-09-26 00:11:59"
+      "targetPrice": null
     },
     {
       "id": "20940",
@@ -1879,8 +1964,7 @@
       "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/sector/bao-cao-nganh-ngan-hang-thong-tu-252026tt-nhnn-noi-long-mot-so-ty-le-thanh-khoan-20940.pdf",
       "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/sector/bao-cao-nganh-ngan-hang-thong-tu-252026tt-nhnn-noi-long-mot-so-ty-le-thanh-khoan-20940.jpg",
       "recommendation": null,
-      "targetPrice": null,
-      "created_at": "2026-09-26 00:11:59"
+      "targetPrice": null
     },
     {
       "id": "20939",
@@ -1897,8 +1981,7 @@
       "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/sector/bao-cao-nganh-logistics-buoc-vao-mua-cao-diem-voi-buc-tranh-phan-hoa-truoc-ap-luc-nhien-lieu-20939.pdf",
       "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/sector/bao-cao-nganh-logistics-buoc-vao-mua-cao-diem-voi-buc-tranh-phan-hoa-truoc-ap-luc-nhien-lieu-20939.jpg",
       "recommendation": null,
-      "targetPrice": null,
-      "created_at": "2026-09-26 00:11:59"
+      "targetPrice": null
     },
     {
       "id": "20938",
@@ -1915,8 +1998,7 @@
       "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/sector/bao-cao-nganh-tieu-dung-ban-le-mot-quy-ghi-nhan-kqkd-tich-cuc-cua-doanh-nghiep-ban-le-20938.pdf",
       "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/sector/bao-cao-nganh-tieu-dung-ban-le-mot-quy-ghi-nhan-kqkd-tich-cuc-cua-doanh-nghiep-ban-le-20938.jpg",
       "recommendation": null,
-      "targetPrice": null,
-      "created_at": "2026-09-26 00:11:59"
+      "targetPrice": null
     },
     {
       "id": "20924",
@@ -1933,8 +2015,7 @@
       "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/sector/bao-cao-nganh-nhua-pvc-chinh-sach-han-che-canh-tranh-khong-lanh-manh-cua-trung-quoc-20924.pdf",
       "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/sector/bao-cao-nganh-nhua-pvc-chinh-sach-han-che-canh-tranh-khong-lanh-manh-cua-trung-quoc-20924.jpg",
       "recommendation": null,
-      "targetPrice": null,
-      "created_at": "2026-09-26 00:11:59"
+      "targetPrice": null
     },
     {
       "id": "20868",
@@ -1951,8 +2032,7 @@
       "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/sector/bao-cao-nganh-bds-khu-cong-nghiep-thang-062026-20868.pdf",
       "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/sector/bao-cao-nganh-bds-khu-cong-nghiep-thang-062026-20868.jpg",
       "recommendation": null,
-      "targetPrice": null,
-      "created_at": "2026-09-26 00:11:59"
+      "targetPrice": null
     },
     {
       "id": "20843",
@@ -1969,8 +2049,7 @@
       "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/sector/bao-cao-nganh-ngan-hang-vung-vang-truoc-bien-dong-20843.pdf",
       "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/sector/bao-cao-nganh-ngan-hang-vung-vang-truoc-bien-dong-20843.jpg",
       "recommendation": null,
-      "targetPrice": null,
-      "created_at": "2026-09-26 00:11:59"
+      "targetPrice": null
     },
     {
       "id": "20842",
@@ -1987,8 +2066,7 @@
       "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/sector/bao-cao-nganh-ngan-hang-dinh-huong-thanh-khoan-go-nut-that-20842.pdf",
       "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/sector/bao-cao-nganh-ngan-hang-dinh-huong-thanh-khoan-go-nut-that-20842.jpg",
       "recommendation": null,
-      "targetPrice": null,
-      "created_at": "2026-09-26 00:11:59"
+      "targetPrice": null
     },
     {
       "id": "20810",
@@ -2005,8 +2083,7 @@
       "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/sector/bao-cao-nganh-xay-dung-ha-tang-vuot-gio-nguoc-don-song-lon-20810.pdf",
       "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/sector/bao-cao-nganh-xay-dung-ha-tang-vuot-gio-nguoc-don-song-lon-20810.jpg",
       "recommendation": null,
-      "targetPrice": null,
-      "created_at": "2026-09-26 00:11:59"
+      "targetPrice": null
     },
     {
       "id": "20774",
@@ -2023,8 +2100,7 @@
       "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/sector/bao-cao-nganh-nang-luong-gia-dau-du-kien-se-tiep-tuc-tang-do-xung-dot-keo-dai-20774.pdf",
       "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/sector/bao-cao-nganh-nang-luong-gia-dau-du-kien-se-tiep-tuc-tang-do-xung-dot-keo-dai-20774.jpg",
       "recommendation": null,
-      "targetPrice": null,
-      "created_at": "2026-09-26 00:11:59"
+      "targetPrice": null
     },
     {
       "id": "20743",
@@ -2041,8 +2117,7 @@
       "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/sector/bao-cao-nganh-dau-khi-kqkd-q12026-but-pha-nho-gia-dau-tang-cao-20743.pdf",
       "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/sector/bao-cao-nganh-dau-khi-kqkd-q12026-but-pha-nho-gia-dau-tang-cao-20743.jpg",
       "recommendation": null,
-      "targetPrice": null,
-      "created_at": "2026-09-26 00:11:59"
+      "targetPrice": null
     },
     {
       "id": "20742",
@@ -2059,8 +2134,7 @@
       "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/sector/bao-cao-nganh-thuy-san-nganh-ca-tang-truong-theo-chieu-sau-20742.pdf",
       "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/sector/bao-cao-nganh-thuy-san-nganh-ca-tang-truong-theo-chieu-sau-20742.jpg",
       "recommendation": null,
-      "targetPrice": null,
-      "created_at": "2026-09-26 00:11:59"
+      "targetPrice": null
     },
     {
       "id": "20741",
@@ -2077,8 +2151,7 @@
       "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/sector/bao-cao-nganh-logistics-chi-phi-logistics-tang-tro-lai-20741.pdf",
       "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/sector/bao-cao-nganh-logistics-chi-phi-logistics-tang-tro-lai-20741.jpg",
       "recommendation": null,
-      "targetPrice": null,
-      "created_at": "2026-09-26 00:11:59"
+      "targetPrice": null
     },
     {
       "id": "20731",
@@ -2095,8 +2168,7 @@
       "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/sector/bao-cao-nganh-dau-khi-tang-tinh-chu-dong-trong-nguon-cung-20731.pdf",
       "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/sector/bao-cao-nganh-dau-khi-tang-tinh-chu-dong-trong-nguon-cung-20731.jpg",
       "recommendation": null,
-      "targetPrice": null,
-      "created_at": "2026-09-26 00:11:59"
+      "targetPrice": null
     },
     {
       "id": "20715",
@@ -2113,8 +2185,7 @@
       "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/sector/bao-cao-nganh-ngan-hang-tang-truong-co-chon-loc-20715.pdf",
       "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/sector/bao-cao-nganh-ngan-hang-tang-truong-co-chon-loc-20715.jpg",
       "recommendation": null,
-      "targetPrice": null,
-      "created_at": "2026-09-26 00:11:59"
+      "targetPrice": null
     },
     {
       "id": "20713",
@@ -2131,8 +2202,7 @@
       "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/sector/bao-cao-nganh-dien-chay-dua-voi-thoi-gian-20713.pdf",
       "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/sector/bao-cao-nganh-dien-chay-dua-voi-thoi-gian-20713.jpg",
       "recommendation": null,
-      "targetPrice": null,
-      "created_at": "2026-09-26 00:11:59"
+      "targetPrice": null
     },
     {
       "id": "20707",
@@ -2149,8 +2219,7 @@
       "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/sector/bao-cao-nganh-bds-khu-cong-nghiep-dong-von-fdi-dinh-hinh-lai-cuoc-choi-20707.pdf",
       "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/sector/bao-cao-nganh-bds-khu-cong-nghiep-dong-von-fdi-dinh-hinh-lai-cuoc-choi-20707.jpg",
       "recommendation": null,
-      "targetPrice": null,
-      "created_at": "2026-09-26 00:11:59"
+      "targetPrice": null
     },
     {
       "id": "20706",
@@ -2167,8 +2236,7 @@
       "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/sector/bao-cao-nganh-ban-le-tu-mo-rong-thi-phan-sang-toi-uu-loi-nhuan-20706.pdf",
       "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/sector/bao-cao-nganh-ban-le-tu-mo-rong-thi-phan-sang-toi-uu-loi-nhuan-20706.jpg",
       "recommendation": null,
-      "targetPrice": null,
-      "created_at": "2026-09-26 00:11:59"
+      "targetPrice": null
     },
     {
       "id": "20705",
@@ -2185,8 +2253,7 @@
       "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/sector/bao-cao-nganh-ngan-hang-dinh-gia-van-o-muc-thap-20705.pdf",
       "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/sector/bao-cao-nganh-ngan-hang-dinh-gia-van-o-muc-thap-20705.jpg",
       "recommendation": null,
-      "targetPrice": null,
-      "created_at": "2026-09-26 00:11:59"
+      "targetPrice": null
     },
     {
       "id": "20704",
@@ -2203,8 +2270,7 @@
       "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/sector/bao-cao-nganh-thep-mo-dau-chu-ky-tang-truong-gia-thep-20704.pdf",
       "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/sector/bao-cao-nganh-thep-mo-dau-chu-ky-tang-truong-gia-thep-20704.jpg",
       "recommendation": null,
-      "targetPrice": null,
-      "created_at": "2026-09-26 00:11:59"
+      "targetPrice": null
     },
     {
       "id": "20702",
@@ -2221,8 +2287,7 @@
       "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/sector/bao-cao-nganh-thuc-pham-do-uong-trong-diem-la-quan-tri-chi-phi-20702.pdf",
       "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/sector/bao-cao-nganh-thuc-pham-do-uong-trong-diem-la-quan-tri-chi-phi-20702.jpg",
       "recommendation": null,
-      "targetPrice": null,
-      "created_at": "2026-09-26 00:11:59"
+      "targetPrice": null
     },
     {
       "id": "20701",
@@ -2239,8 +2304,7 @@
       "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/sector/bao-cao-nganh-det-may-chuyen-trong-tam-sang-nang-cao-chat-luong-cot-loi-20701.pdf",
       "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/sector/bao-cao-nganh-det-may-chuyen-trong-tam-sang-nang-cao-chat-luong-cot-loi-20701.jpg",
       "recommendation": null,
-      "targetPrice": null,
-      "created_at": "2026-09-26 00:11:59"
+      "targetPrice": null
     },
     {
       "id": "20703",
@@ -2257,8 +2321,7 @@
       "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/sector/bao-cao-nganh-xuat-nhap-khau-chuyen-dich-tu-luong-sang-chat-20703.pdf",
       "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/sector/bao-cao-nganh-xuat-nhap-khau-chuyen-dich-tu-luong-sang-chat-20703.jpg",
       "recommendation": null,
-      "targetPrice": null,
-      "created_at": "2026-09-26 00:11:59"
+      "targetPrice": null
     },
     {
       "id": "20596",
@@ -2275,8 +2338,7 @@
       "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/sector/bao-cao-nganh-ngan-hang-q12026-20596.pdf",
       "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/sector/bao-cao-nganh-ngan-hang-q12026-20596.jpg",
       "recommendation": null,
-      "targetPrice": null,
-      "created_at": "2026-09-26 00:11:59"
+      "targetPrice": null
     },
     {
       "id": "20589",
@@ -2293,8 +2355,7 @@
       "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/sector/bao-cao-nganh-ngan-hang-q12026-20589.pdf",
       "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/sector/bao-cao-nganh-ngan-hang-q12026-20589.jpg",
       "recommendation": null,
-      "targetPrice": null,
-      "created_at": "2026-09-26 00:11:59"
+      "targetPrice": null
     },
     {
       "id": "20588",
@@ -2311,8 +2372,7 @@
       "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/sector/bao-cao-nganh-ban-le-kqkd-q12026-tang-truong-vuot-troi-trien-vong-duy-tri-tich-cuc-20588.pdf",
       "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/sector/bao-cao-nganh-ban-le-kqkd-q12026-tang-truong-vuot-troi-trien-vong-duy-tri-tich-cuc-20588.jpg",
       "recommendation": null,
-      "targetPrice": null,
-      "created_at": "2026-09-26 00:11:59"
+      "targetPrice": null
     },
     {
       "id": "20587",
@@ -2329,8 +2389,7 @@
       "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/sector/bao-cao-nganh-dien-el-nino-xuat-hien-trong-boi-canh-luong-tieu-thu-dien-tang-manh-20587.pdf",
       "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/sector/bao-cao-nganh-dien-el-nino-xuat-hien-trong-boi-canh-luong-tieu-thu-dien-tang-manh-20587.jpg",
       "recommendation": null,
-      "targetPrice": null,
-      "created_at": "2026-09-26 00:11:59"
+      "targetPrice": null
     },
     {
       "id": "20718",
@@ -2347,8 +2406,7 @@
       "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/sector/bao-cao-nganh-ngan-hang-vung-nen-tang-truong-phan-hoa-mo-ra-co-hoi-20718.pdf",
       "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/sector/bao-cao-nganh-ngan-hang-vung-nen-tang-truong-phan-hoa-mo-ra-co-hoi-20718.jpg",
       "recommendation": null,
-      "targetPrice": null,
-      "created_at": "2026-09-26 00:11:59"
+      "targetPrice": null
     },
     {
       "id": "20569",
@@ -2365,8 +2423,7 @@
       "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/sector/bao-cao-nganh-san-xuat-phan-bon-dong-luc-tang-truong-lnst-du-phong-nam-2026-van-duoc-duy-tri-20569.pdf",
       "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/sector/bao-cao-nganh-san-xuat-phan-bon-dong-luc-tang-truong-lnst-du-phong-nam-2026-van-duoc-duy-tri-20569.jpg",
       "recommendation": null,
-      "targetPrice": null,
-      "created_at": "2026-09-26 00:11:59"
+      "targetPrice": null
     },
     {
       "id": "20553",
@@ -2383,8 +2440,7 @@
       "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/sector/bao-cao-nganh-ngan-hang-tang-truong-giam-toc-20553.pdf",
       "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/sector/bao-cao-nganh-ngan-hang-tang-truong-giam-toc-20553.jpg",
       "recommendation": null,
-      "targetPrice": null,
-      "created_at": "2026-09-26 00:11:59"
+      "targetPrice": null
     },
     {
       "id": "20551",
@@ -2401,8 +2457,7 @@
       "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/sector/bao-cao-nganh-dau-khi-trien-vong-tich-cuc-tai-phan-khuc-thuong-nguon-trung-nguon-20551.pdf",
       "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/sector/bao-cao-nganh-dau-khi-trien-vong-tich-cuc-tai-phan-khuc-thuong-nguon-trung-nguon-20551.jpg",
       "recommendation": null,
-      "targetPrice": null,
-      "created_at": "2026-09-26 00:11:59"
+      "targetPrice": null
     },
     {
       "id": "20547",
@@ -2419,8 +2474,7 @@
       "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/sector/bao-cao-nganh-khoang-san-that-chat-kiem-soat-tai-nguyen-quoc-gia-20547.pdf",
       "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/sector/bao-cao-nganh-khoang-san-that-chat-kiem-soat-tai-nguyen-quoc-gia-20547.jpg",
       "recommendation": null,
-      "targetPrice": null,
-      "created_at": "2026-09-26 00:11:59"
+      "targetPrice": null
     },
     {
       "id": "20606",
@@ -2437,8 +2491,7 @@
       "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/sector/bao-cao-nganh-ngan-hang-buc-tranh-kqkd-q12026-20606.pdf",
       "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/sector/bao-cao-nganh-ngan-hang-buc-tranh-kqkd-q12026-20606.jpg",
       "recommendation": null,
-      "targetPrice": null,
-      "created_at": "2026-09-26 00:11:59"
+      "targetPrice": null
     },
     {
       "id": "20549",
@@ -2455,8 +2508,7 @@
       "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/sector/bao-cao-nganh-bds-nha-o-su-dich-chuyen-chinh-sach-hieu-ro-noi-lo-ngai-20549.pdf",
       "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/sector/bao-cao-nganh-bds-nha-o-su-dich-chuyen-chinh-sach-hieu-ro-noi-lo-ngai-20549.jpg",
       "recommendation": null,
-      "targetPrice": null,
-      "created_at": "2026-09-26 00:11:59"
+      "targetPrice": null
     },
     {
       "id": "20548",
@@ -2473,8 +2525,7 @@
       "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/sector/bao-cao-nganh-ban-le-co-hoi-tich-luy-cho-nha-dau-tu-dai-han-20548.pdf",
       "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/sector/bao-cao-nganh-ban-le-co-hoi-tich-luy-cho-nha-dau-tu-dai-han-20548.jpg",
       "recommendation": null,
-      "targetPrice": null,
-      "created_at": "2026-09-26 00:11:59"
+      "targetPrice": null
     },
     {
       "id": "20545",
@@ -2491,8 +2542,7 @@
       "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/sector/bao-cao-nganh-hang-khong-thang-052026-20545.pdf",
       "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/sector/bao-cao-nganh-hang-khong-thang-052026-20545.jpg",
       "recommendation": null,
-      "targetPrice": null,
-      "created_at": "2026-09-26 00:11:59"
+      "targetPrice": null
     },
     {
       "id": "20546",
@@ -2509,8 +2559,7 @@
       "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/sector/bao-cao-nganh-cang-bien-vung-vang-truoc-ap-luc-dia-chinh-tri-20546.pdf",
       "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/sector/bao-cao-nganh-cang-bien-vung-vang-truoc-ap-luc-dia-chinh-tri-20546.jpg",
       "recommendation": null,
-      "targetPrice": null,
-      "created_at": "2026-09-26 00:11:59"
+      "targetPrice": null
     },
     {
       "id": "20509",
@@ -2527,8 +2576,7 @@
       "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/sector/bao-cao-nganh-bat-dong-san-dan-cu-q12026-20509.pdf",
       "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/sector/bao-cao-nganh-bat-dong-san-dan-cu-q12026-20509.jpg",
       "recommendation": null,
-      "targetPrice": null,
-      "created_at": "2026-09-26 00:11:59"
+      "targetPrice": null
     },
     {
       "id": "20482",
@@ -2545,8 +2593,7 @@
       "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/sector/bao-cao-nganh-ngan-hang-tung-buoc-tien-gan-toi-chuan-muc-basel-iii-20482.pdf",
       "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/sector/bao-cao-nganh-ngan-hang-tung-buoc-tien-gan-toi-chuan-muc-basel-iii-20482.jpg",
       "recommendation": null,
-      "targetPrice": null,
-      "created_at": "2026-09-26 00:11:59"
+      "targetPrice": null
     },
     {
       "id": "20481",
@@ -2563,8 +2610,7 @@
       "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/sector/bao-cao-nganh-thuong-mai-dien-tu-thang-052026-20481.pdf",
       "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/sector/bao-cao-nganh-thuong-mai-dien-tu-thang-052026-20481.jpg",
       "recommendation": null,
-      "targetPrice": null,
-      "created_at": "2026-09-26 00:11:59"
+      "targetPrice": null
     },
     {
       "id": "20460",
@@ -2581,8 +2627,7 @@
       "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/sector/bao-cao-nganh-ca-tra-thach-thuc-phia-truoc-20460.pdf",
       "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/sector/bao-cao-nganh-ca-tra-thach-thuc-phia-truoc-20460.jpg",
       "recommendation": null,
-      "targetPrice": null,
-      "created_at": "2026-09-26 00:11:59"
+      "targetPrice": null
     },
     {
       "id": "20459",
@@ -2599,8 +2644,7 @@
       "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/sector/bao-cao-nganh-ngan-hang-tang-truong-loi-nhuan-toan-nganh-giam-toc-trong-q126-20459.pdf",
       "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/sector/bao-cao-nganh-ngan-hang-tang-truong-loi-nhuan-toan-nganh-giam-toc-trong-q126-20459.jpg",
       "recommendation": null,
-      "targetPrice": null,
-      "created_at": "2026-09-26 00:11:59"
+      "targetPrice": null
     },
     {
       "id": "20508",
@@ -2617,8 +2661,7 @@
       "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/sector/bao-cao-nganh-chung-khoan-q12026-20508.pdf",
       "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/sector/bao-cao-nganh-chung-khoan-q12026-20508.jpg",
       "recommendation": null,
-      "targetPrice": null,
-      "created_at": "2026-09-26 00:11:59"
+      "targetPrice": null
     },
     {
       "id": "20507",
@@ -2635,8 +2678,7 @@
       "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/sector/bao-cao-nganh-ngan-hang-q12026-20507.pdf",
       "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/sector/bao-cao-nganh-ngan-hang-q12026-20507.jpg",
       "recommendation": null,
-      "targetPrice": null,
-      "created_at": "2026-09-26 00:11:59"
+      "targetPrice": null
     },
     {
       "id": "20403",
@@ -2653,8 +2695,7 @@
       "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/sector/bao-cao-nganh-det-may-tin-hieu-suy-yeu-o-cac-thi-truong-chinh-20403.pdf",
       "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/sector/bao-cao-nganh-det-may-tin-hieu-suy-yeu-o-cac-thi-truong-chinh-20403.jpg",
       "recommendation": null,
-      "targetPrice": null,
-      "created_at": "2026-09-26 00:11:59"
+      "targetPrice": null
     },
     {
       "id": "20402",
@@ -2671,8 +2712,7 @@
       "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/sector/bao-cao-nganh-ngan-hang-danh-gia-tac-dong-cua-thong-tu-082026tt-nhnn-20402.pdf",
       "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/sector/bao-cao-nganh-ngan-hang-danh-gia-tac-dong-cua-thong-tu-082026tt-nhnn-20402.jpg",
       "recommendation": null,
-      "targetPrice": null,
-      "created_at": "2026-09-26 00:11:59"
+      "targetPrice": null
     },
     {
       "id": "20368",
@@ -2689,8 +2729,7 @@
       "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/sector/bao-cao-nganh-bat-dong-san-nha-o-luong-giao-dich-so-cap-quy-1-ghi-nhan-tang-yoy-20368.pdf",
       "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/sector/bao-cao-nganh-bat-dong-san-nha-o-luong-giao-dich-so-cap-quy-1-ghi-nhan-tang-yoy-20368.jpg",
       "recommendation": null,
-      "targetPrice": null,
-      "created_at": "2026-09-26 00:11:59"
+      "targetPrice": null
     },
     {
       "id": "20366",
@@ -2707,8 +2746,7 @@
       "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/sector/bao-cao-nganh-ngan-hang-cap-nhat-thong-tu-082026-sua-doi-bo-sung-thong-tu-222019tt-nhnn-20366.pdf",
       "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/sector/bao-cao-nganh-ngan-hang-cap-nhat-thong-tu-082026-sua-doi-bo-sung-thong-tu-222019tt-nhnn-20366.jpg",
       "recommendation": null,
-      "targetPrice": null,
-      "created_at": "2026-09-26 00:11:59"
+      "targetPrice": null
     },
     {
       "id": "20365",
@@ -2725,8 +2763,7 @@
       "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/sector/bao-cao-nganh-ngan-hang-xay-dung-nen-mong-20365.pdf",
       "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/sector/bao-cao-nganh-ngan-hang-xay-dung-nen-mong-20365.jpg",
       "recommendation": null,
-      "targetPrice": null,
-      "created_at": "2026-09-26 00:11:59"
+      "targetPrice": null
     },
     {
       "id": "20417",
@@ -2743,8 +2780,7 @@
       "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/sector/bao-cao-nganh-chung-khoan-lieu-co-con-dong-luc-tang-truong-20417.pdf",
       "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/sector/bao-cao-nganh-chung-khoan-lieu-co-con-dong-luc-tang-truong-20417.jpg",
       "recommendation": null,
-      "targetPrice": null,
-      "created_at": "2026-09-26 00:11:59"
+      "targetPrice": null
     },
     {
       "id": "20323",
@@ -2761,8 +2797,7 @@
       "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/sector/bao-cao-nganh-ngan-hang-du-thao-thong-tu-thay-the-thong-tu-222019tt-nhnn-20323.pdf",
       "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/sector/bao-cao-nganh-ngan-hang-du-thao-thong-tu-thay-the-thong-tu-222019tt-nhnn-20323.jpg",
       "recommendation": null,
-      "targetPrice": null,
-      "created_at": "2026-09-26 00:11:59"
+      "targetPrice": null
     },
     {
       "id": "20320",
@@ -2779,8 +2814,7 @@
       "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/sector/bao-cao-nganh-ngan-hang-cap-nhat-kqkd-q12026-va-chinh-sach-20320.pdf",
       "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/sector/bao-cao-nganh-ngan-hang-cap-nhat-kqkd-q12026-va-chinh-sach-20320.jpg",
       "recommendation": null,
-      "targetPrice": null,
-      "created_at": "2026-09-26 00:11:59"
+      "targetPrice": null
     },
     {
       "id": "20292",
@@ -2797,8 +2831,7 @@
       "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/sector/bao-cao-nganh-phan-bon-kqkd-q12026-bung-no-trien-vong-ca-nam-tich-cuc-20292.pdf",
       "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/sector/bao-cao-nganh-phan-bon-kqkd-q12026-bung-no-trien-vong-ca-nam-tich-cuc-20292.jpg",
       "recommendation": null,
-      "targetPrice": null,
-      "created_at": "2026-09-26 00:11:59"
+      "targetPrice": null
     },
     {
       "id": "20364",
@@ -2815,8 +2848,7 @@
       "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/sector/bao-cao-nganh-ngan-hang-lo-trinh-chuyen-tiep-basel-iii-trong-tam-kiem-soat-20364.pdf",
       "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/sector/bao-cao-nganh-ngan-hang-lo-trinh-chuyen-tiep-basel-iii-trong-tam-kiem-soat-20364.jpg",
       "recommendation": null,
-      "targetPrice": null,
-      "created_at": "2026-09-26 00:11:59"
+      "targetPrice": null
     },
     {
       "id": "20363",
@@ -2833,8 +2865,7 @@
       "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/sector/bao-cao-nganh-ngan-hang-loi-nhuan-tang-manh-nhung-nim-va-chat-luong-tai-san-can-chu-y-20363.pdf",
       "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/sector/bao-cao-nganh-ngan-hang-loi-nhuan-tang-manh-nhung-nim-va-chat-luong-tai-san-can-chu-y-20363.jpg",
       "recommendation": null,
-      "targetPrice": null,
-      "created_at": "2026-09-26 00:11:59"
+      "targetPrice": null
     },
     {
       "id": "20133",
@@ -2851,8 +2882,7 @@
       "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/sector/bao-cao-nganh-o-to-gia-han-luc-day-chinh-sach-20133.pdf",
       "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/sector/bao-cao-nganh-o-to-gia-han-luc-day-chinh-sach-20133.jpg",
       "recommendation": null,
-      "targetPrice": null,
-      "created_at": "2026-09-26 00:11:59"
+      "targetPrice": null
     },
     {
       "id": "20074",
@@ -2869,8 +2899,7 @@
       "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/sector/bao-cao-nganh-bat-dong-san-nha-o-tin-dung-that-chat-se-thuc-day-su-phan-hoa-cua-cac-chu-dau-tu-20074.pdf",
       "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/sector/bao-cao-nganh-bat-dong-san-nha-o-tin-dung-that-chat-se-thuc-day-su-phan-hoa-cua-cac-chu-dau-tu-20074.jpg",
       "recommendation": null,
-      "targetPrice": null,
-      "created_at": "2026-09-26 00:11:59"
+      "targetPrice": null
     },
     {
       "id": "20372",
@@ -2887,8 +2916,7 @@
       "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/sector/bao-cao-nganh-phan-bon-huong-loi-tu-cu-soc-nguon-cung-toan-cau-20372.pdf",
       "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/sector/bao-cao-nganh-phan-bon-huong-loi-tu-cu-soc-nguon-cung-toan-cau-20372.jpg",
       "recommendation": null,
-      "targetPrice": null,
-      "created_at": "2026-09-26 00:11:59"
+      "targetPrice": null
     },
     {
       "id": "20132",
@@ -2905,8 +2933,7 @@
       "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/sector/bao-cao-nganh-bat-dong-san-cap-nhat-2026-20132.pdf",
       "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/sector/bao-cao-nganh-bat-dong-san-cap-nhat-2026-20132.jpg",
       "recommendation": null,
-      "targetPrice": null,
-      "created_at": "2026-09-26 00:11:59"
+      "targetPrice": null
     },
     {
       "id": "20012",
@@ -2923,8 +2950,7 @@
       "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/sector/bao-cao-nganh-thep-thang-042026-20012.pdf",
       "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/sector/bao-cao-nganh-thep-thang-042026-20012.jpg",
       "recommendation": null,
-      "targetPrice": null,
-      "created_at": "2026-09-26 00:11:59"
+      "targetPrice": null
     },
     {
       "id": "19967",
@@ -2941,8 +2967,7 @@
       "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/sector/bao-cao-nganh-thep-ton-ma-chu-ky-ton-kho-thuc-day-bien-loi-nhuan-19967.pdf",
       "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/sector/bao-cao-nganh-thep-ton-ma-chu-ky-ton-kho-thuc-day-bien-loi-nhuan-19967.jpg",
       "recommendation": null,
-      "targetPrice": null,
-      "created_at": "2026-09-26 00:11:59"
+      "targetPrice": null
     },
     {
       "id": "19970",
@@ -2959,8 +2984,7 @@
       "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/sector/bao-cao-nganh-bat-dong-san-thi-truong-hoi-phuc-co-chon-loc-19970.pdf",
       "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/sector/bao-cao-nganh-bat-dong-san-thi-truong-hoi-phuc-co-chon-loc-19970.jpg",
       "recommendation": null,
-      "targetPrice": null,
-      "created_at": "2026-09-26 00:11:59"
+      "targetPrice": null
     },
     {
       "id": "19968",
@@ -2977,8 +3001,7 @@
       "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/sector/bao-cao-nganh-bat-dong-san-co-hoi-mo-ra-sau-giai-doan-thu-thach-19968.pdf",
       "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/sector/bao-cao-nganh-bat-dong-san-co-hoi-mo-ra-sau-giai-doan-thu-thach-19968.jpg",
       "recommendation": null,
-      "targetPrice": null,
-      "created_at": "2026-09-26 00:11:59"
+      "targetPrice": null
     },
     {
       "id": "19912",
@@ -2995,8 +3018,7 @@
       "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/sector/bao-cao-nganh-dien-binh-minh-ruc-ro-19912.pdf",
       "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/sector/bao-cao-nganh-dien-binh-minh-ruc-ro-19912.jpg",
       "recommendation": null,
-      "targetPrice": null,
-      "created_at": "2026-09-26 00:11:59"
+      "targetPrice": null
     },
     {
       "id": "19810",
@@ -3013,8 +3035,7 @@
       "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/sector/bao-cao-nganh-hoa-chat-phan-bon-vi-the-chien-luoc-va-chu-ky-phuc-hoi-19810.pdf",
       "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/sector/bao-cao-nganh-hoa-chat-phan-bon-vi-the-chien-luoc-va-chu-ky-phuc-hoi-19810.jpg",
       "recommendation": null,
-      "targetPrice": null,
-      "created_at": "2026-09-26 00:11:59"
+      "targetPrice": null
     },
     {
       "id": "19782",
@@ -3031,8 +3052,7 @@
       "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/sector/bao-cao-nganh-ngan-hang-vung-vang-giua-song-ngam-19782.pdf",
       "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/sector/bao-cao-nganh-ngan-hang-vung-vang-giua-song-ngam-19782.jpg",
       "recommendation": null,
-      "targetPrice": null,
-      "created_at": "2026-09-26 00:11:59"
+      "targetPrice": null
     },
     {
       "id": "19781",
@@ -3049,8 +3069,7 @@
       "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/sector/bao-cao-nganh-dau-khi-thuong-nguon-dan-dat-tang-truong-19781.pdf",
       "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/sector/bao-cao-nganh-dau-khi-thuong-nguon-dan-dat-tang-truong-19781.jpg",
       "recommendation": null,
-      "targetPrice": null,
-      "created_at": "2026-09-26 00:11:59"
+      "targetPrice": null
     },
     {
       "id": "19972",
@@ -3067,8 +3086,7 @@
       "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/sector/bao-cao-nganh-ngan-hang-tang-truong-duy-tri-trien-vong-phuc-hoi-19972.pdf",
       "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/sector/bao-cao-nganh-ngan-hang-tang-truong-duy-tri-trien-vong-phuc-hoi-19972.jpg",
       "recommendation": null,
-      "targetPrice": null,
-      "created_at": "2026-09-26 00:11:59"
+      "targetPrice": null
     },
     {
       "id": "19755",
@@ -3085,8 +3103,7 @@
       "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/sector/bao-cao-nganh-ngan-hang-lai-suat-on-dinh-hon-noi-long-19755.pdf",
       "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/sector/bao-cao-nganh-ngan-hang-lai-suat-on-dinh-hon-noi-long-19755.jpg",
       "recommendation": null,
-      "targetPrice": null,
-      "created_at": "2026-09-26 00:11:59"
+      "targetPrice": null
     },
     {
       "id": "19742",
@@ -3103,8 +3120,7 @@
       "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/sector/bao-cao-nganh-ngan-hang-ngoc-trong-cat-19742.pdf",
       "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/sector/bao-cao-nganh-ngan-hang-ngoc-trong-cat-19742.jpg",
       "recommendation": null,
-      "targetPrice": null,
-      "created_at": "2026-09-26 00:11:59"
+      "targetPrice": null
     },
     {
       "id": "19754",
@@ -3121,8 +3137,7 @@
       "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/sector/bao-cao-nganh-dau-khi-du-bao-kqkd-q12026-tang-truong-but-pha-nho-gia-dau-tang-cao-19754.pdf",
       "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/sector/bao-cao-nganh-dau-khi-du-bao-kqkd-q12026-tang-truong-but-pha-nho-gia-dau-tang-cao-19754.jpg",
       "recommendation": null,
-      "targetPrice": null,
-      "created_at": "2026-09-26 00:11:59"
+      "targetPrice": null
     },
     {
       "id": "19702",
@@ -3139,8 +3154,7 @@
       "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/sector/bao-cao-nganh-dien-vai-tro-quan-trong-cua-nltt-trong-boi-canh-rui-ro-an-ninh-nang-luong-19702.pdf",
       "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/sector/bao-cao-nganh-dien-vai-tro-quan-trong-cua-nltt-trong-boi-canh-rui-ro-an-ninh-nang-luong-19702.jpg",
       "recommendation": null,
-      "targetPrice": null,
-      "created_at": "2026-09-26 00:11:59"
+      "targetPrice": null
     },
     {
       "id": "19701",
@@ -3157,8 +3171,7 @@
       "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/sector/bao-cao-nganh-tieu-dung-ban-le-ban-le-hien-dai-tiep-da-mo-rong-19701.pdf",
       "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/sector/bao-cao-nganh-tieu-dung-ban-le-ban-le-hien-dai-tiep-da-mo-rong-19701.jpg",
       "recommendation": null,
-      "targetPrice": null,
-      "created_at": "2026-09-26 00:11:59"
+      "targetPrice": null
     },
     {
       "id": "19716",
@@ -3175,8 +3188,7 @@
       "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/sector/bao-cao-nganh-xay-dung-dau-tu-cong-cap-nhat-cac-du-an-trong-diem-q12026-19716.pdf",
       "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/sector/bao-cao-nganh-xay-dung-dau-tu-cong-cap-nhat-cac-du-an-trong-diem-q12026-19716.jpg",
       "recommendation": null,
-      "targetPrice": null,
-      "created_at": "2026-09-26 00:11:59"
+      "targetPrice": null
     },
     {
       "id": "19666",
@@ -3193,8 +3205,7 @@
       "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/sector/bao-cao-nganh-bat-dong-san-dan-cu-lui-mot-buoc-de-tien-ba-buoc-19666.pdf",
       "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/sector/bao-cao-nganh-bat-dong-san-dan-cu-lui-mot-buoc-de-tien-ba-buoc-19666.jpg",
       "recommendation": null,
-      "targetPrice": null,
-      "created_at": "2026-09-26 00:11:59"
+      "targetPrice": null
     },
     {
       "id": "19634",
@@ -3211,8 +3222,7 @@
       "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/sector/bao-cao-nganh-bat-dong-san-dan-dung-lua-thu-vang-19634.pdf",
       "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/sector/bao-cao-nganh-bat-dong-san-dan-dung-lua-thu-vang-19634.jpg",
       "recommendation": null,
-      "targetPrice": null,
-      "created_at": "2026-09-26 00:11:59"
+      "targetPrice": null
     },
     {
       "id": "19631",
@@ -3229,8 +3239,7 @@
       "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/sector/bao-cao-nganh-dien-tu-bung-no-nhu-cau-den-chuyen-dich-nang-luong-19631.pdf",
       "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/sector/bao-cao-nganh-dien-tu-bung-no-nhu-cau-den-chuyen-dich-nang-luong-19631.jpg",
       "recommendation": null,
-      "targetPrice": null,
-      "created_at": "2026-09-26 00:11:59"
+      "targetPrice": null
     },
     {
       "id": "19610",
@@ -3247,8 +3256,7 @@
       "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/sector/bao-cao-nganh-bat-dong-san-du-bao-kqkd-q12026-19610.pdf",
       "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/sector/bao-cao-nganh-bat-dong-san-du-bao-kqkd-q12026-19610.jpg",
       "recommendation": null,
-      "targetPrice": null,
-      "created_at": "2026-09-26 00:11:59"
+      "targetPrice": null
     },
     {
       "id": "19624",
@@ -3265,8 +3273,7 @@
       "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/sector/bao-cao-nganh-dien-dau-tu-cho-tang-truong-phan-1-19624.pdf",
       "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/sector/bao-cao-nganh-dien-dau-tu-cho-tang-truong-phan-1-19624.jpg",
       "recommendation": null,
-      "targetPrice": null,
-      "created_at": "2026-09-26 00:11:59"
+      "targetPrice": null
     },
     {
       "id": "19674",
@@ -3283,8 +3290,7 @@
       "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/sector/bao-cao-nganh-thep-trien-vong-nam-2026-19674.pdf",
       "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/sector/bao-cao-nganh-thep-trien-vong-nam-2026-19674.jpg",
       "recommendation": null,
-      "targetPrice": null,
-      "created_at": "2026-09-26 00:11:59"
+      "targetPrice": null
     },
     {
       "id": "19592",
@@ -3301,8 +3307,7 @@
       "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/sector/bao-cao-nganh-xuat-khau-thuy-san-det-may-tai-cau-truc-dong-chay-thuong-mai-truoc-ap-luc-thue-quan-19592.pdf",
       "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/sector/bao-cao-nganh-xuat-khau-thuy-san-det-may-tai-cau-truc-dong-chay-thuong-mai-truoc-ap-luc-thue-quan-19592.jpg",
       "recommendation": null,
-      "targetPrice": null,
-      "created_at": "2026-09-26 00:11:59"
+      "targetPrice": null
     },
     {
       "id": "19591",
@@ -3319,8 +3324,7 @@
       "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/sector/bao-cao-nganh-ngan-hang-loi-nhuan-toan-nganh-trong-q126-du-bao-tang-truong-20-svck-19591.pdf",
       "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/sector/bao-cao-nganh-ngan-hang-loi-nhuan-toan-nganh-trong-q126-du-bao-tang-truong-20-svck-19591.jpg",
       "recommendation": null,
-      "targetPrice": null,
-      "created_at": "2026-09-26 00:11:59"
+      "targetPrice": null
     },
     {
       "id": "19574",
@@ -3337,8 +3341,7 @@
       "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/sector/bao-cao-nganh-thep-gia-thep-phuc-hoi-tro-thanh-dong-luc-tang-truong-19574.pdf",
       "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/sector/bao-cao-nganh-thep-gia-thep-phuc-hoi-tro-thanh-dong-luc-tang-truong-19574.jpg",
       "recommendation": null,
-      "targetPrice": null,
-      "created_at": "2026-09-26 00:11:59"
+      "targetPrice": null
     },
     {
       "id": "19541",
@@ -3355,8 +3358,7 @@
       "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/sector/bao-cao-nganh-thuy-san-phan-hoa-giua-cac-doanh-nghiep-19541.pdf",
       "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/sector/bao-cao-nganh-thuy-san-phan-hoa-giua-cac-doanh-nghiep-19541.jpg",
       "recommendation": null,
-      "targetPrice": null,
-      "created_at": "2026-09-26 00:11:59"
+      "targetPrice": null
     },
     {
       "id": "19542",
@@ -3373,8 +3375,7 @@
       "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/sector/bao-cao-nganh-phan-bon-gia-ban-ure-trung-binh-tang-manh-ho-tro-mo-rong-lnst-nam-2026-19542.pdf",
       "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/sector/bao-cao-nganh-phan-bon-gia-ban-ure-trung-binh-tang-manh-ho-tro-mo-rong-lnst-nam-2026-19542.jpg",
       "recommendation": null,
-      "targetPrice": null,
-      "created_at": "2026-09-26 00:11:59"
+      "targetPrice": null
     },
     {
       "id": "19510",
@@ -3391,8 +3392,7 @@
       "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/sector/bao-cao-nganh-thep-mexico-ap-thue-chong-ban-pha-gia-tam-thoi-doi-voi-thep-hrc-tu-viet-nam-19510.pdf",
       "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/sector/bao-cao-nganh-thep-mexico-ap-thue-chong-ban-pha-gia-tam-thoi-doi-voi-thep-hrc-tu-viet-nam-19510.jpg",
       "recommendation": null,
-      "targetPrice": null,
-      "created_at": "2026-09-26 00:11:59"
+      "targetPrice": null
     },
     {
       "id": "19504",
@@ -3409,8 +3409,7 @@
       "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/sector/bao-cao-nganh-xay-lap-dau-tu-cong-on-dinh-song-hanh-tang-truong-19504.pdf",
       "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/sector/bao-cao-nganh-xay-lap-dau-tu-cong-on-dinh-song-hanh-tang-truong-19504.jpg",
       "recommendation": null,
-      "targetPrice": null,
-      "created_at": "2026-09-26 00:11:59"
+      "targetPrice": null
     },
     {
       "id": "19524",
@@ -3427,8 +3426,7 @@
       "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/sector/bao-cao-nganh-dau-khi-thang-032026-19524.pdf",
       "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/sector/bao-cao-nganh-dau-khi-thang-032026-19524.jpg",
       "recommendation": null,
-      "targetPrice": null,
-      "created_at": "2026-09-26 00:11:59"
+      "targetPrice": null
     },
     {
       "id": "19506",
@@ -3445,8 +3443,7 @@
       "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/sector/bao-cao-nganh-dien-buoc-ngoat-chu-ky-5-nam-19506.pdf",
       "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/sector/bao-cao-nganh-dien-buoc-ngoat-chu-ky-5-nam-19506.jpg",
       "recommendation": null,
-      "targetPrice": null,
-      "created_at": "2026-09-26 00:11:59"
+      "targetPrice": null
     },
     {
       "id": "19503",
@@ -3463,8 +3460,7 @@
       "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/sector/bao-cao-nganh-phan-bon-thang-032026-19503.pdf",
       "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/sector/bao-cao-nganh-phan-bon-thang-032026-19503.jpg",
       "recommendation": null,
-      "targetPrice": null,
-      "created_at": "2026-09-26 00:11:59"
+      "targetPrice": null
     },
     {
       "id": "19449",
@@ -3481,8 +3477,7 @@
       "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/sector/bao-cao-nganh-nang-luong-nhiet-dien-gap-thach-thuc-thoi-diem-de-chuyen-sang-nang-luong-tai-tao-19449.pdf",
       "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/sector/bao-cao-nganh-nang-luong-nhiet-dien-gap-thach-thuc-thoi-diem-de-chuyen-sang-nang-luong-tai-tao-19449.jpg",
       "recommendation": null,
-      "targetPrice": null,
-      "created_at": "2026-09-26 00:11:59"
+      "targetPrice": null
     },
     {
       "id": "19433",
@@ -3499,8 +3494,7 @@
       "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/sector/bao-cao-nganh-phan-bon-hoa-chat-chien-su-trung-dong-day-manh-gia-phan-bon-19433.pdf",
       "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/sector/bao-cao-nganh-phan-bon-hoa-chat-chien-su-trung-dong-day-manh-gia-phan-bon-19433.jpg",
       "recommendation": null,
-      "targetPrice": null,
-      "created_at": "2026-09-26 00:11:59"
+      "targetPrice": null
     },
     {
       "id": "19401",
@@ -3517,8 +3511,7 @@
       "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/sector/bao-cao-nganh-thuy-san-ca-tra-buoc-ngoat-moi-cua-nganh-19401.pdf",
       "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/sector/bao-cao-nganh-thuy-san-ca-tra-buoc-ngoat-moi-cua-nganh-19401.jpg",
       "recommendation": null,
-      "targetPrice": null,
-      "created_at": "2026-09-26 00:11:59"
+      "targetPrice": null
     },
     {
       "id": "19373",
@@ -3535,8 +3528,7 @@
       "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/sector/bao-cao-nganh-xay-dung-dinh-gia-hap-dan-cho-mot-nam-dau-tu-cong-but-toc-19373.pdf",
       "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/sector/bao-cao-nganh-xay-dung-dinh-gia-hap-dan-cho-mot-nam-dau-tu-cong-but-toc-19373.jpg",
       "recommendation": null,
-      "targetPrice": null,
-      "created_at": "2026-09-26 00:11:59"
+      "targetPrice": null
     },
     {
       "id": "19341",
@@ -3553,8 +3545,7 @@
       "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/sector/bao-cao-nganh-thep-my-ap-thue-chong-ban-pha-gia-so-bo-hon-130-voi-thep-cot-be-tong-viet-nam-19341.pdf",
       "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/sector/bao-cao-nganh-thep-my-ap-thue-chong-ban-pha-gia-so-bo-hon-130-voi-thep-cot-be-tong-viet-nam-19341.jpg",
       "recommendation": null,
-      "targetPrice": null,
-      "created_at": "2026-09-26 00:11:59"
+      "targetPrice": null
     },
     {
       "id": "19331",
@@ -3571,8 +3562,7 @@
       "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/sector/bao-cao-nganh-nang-luong-gia-dau-tang-so-voi-cung-ky-trong-nam-2026-do-rui-ro-chinh-tri-leo-thang-19331.pdf",
       "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/sector/bao-cao-nganh-nang-luong-gia-dau-tang-so-voi-cung-ky-trong-nam-2026-do-rui-ro-chinh-tri-leo-thang-19331.jpg",
       "recommendation": null,
-      "targetPrice": null,
-      "created_at": "2026-09-26 00:11:59"
+      "targetPrice": null
     },
     {
       "id": "19330",
@@ -3589,8 +3579,7 @@
       "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/sector/bao-cao-nganh-dien-nhiet-dien-buoc-vao-chu-ky-19330.pdf",
       "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/sector/bao-cao-nganh-dien-nhiet-dien-buoc-vao-chu-ky-19330.jpg",
       "recommendation": null,
-      "targetPrice": null,
-      "created_at": "2026-09-26 00:11:59"
+      "targetPrice": null
     },
     {
       "id": "19284",
@@ -3607,8 +3596,7 @@
       "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/sector/bao-cao-nganh-phan-bon-bien-dong-bat-ngo-trong-ngan-han-19284.pdf",
       "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/sector/bao-cao-nganh-phan-bon-bien-dong-bat-ngo-trong-ngan-han-19284.jpg",
       "recommendation": null,
-      "targetPrice": null,
-      "created_at": "2026-09-26 00:11:59"
+      "targetPrice": null
     },
     {
       "id": "19381",
@@ -3625,8 +3613,7 @@
       "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/sector/bao-cao-nganh-dau-khi-quy-42025-19381.pdf",
       "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/sector/bao-cao-nganh-dau-khi-quy-42025-19381.jpg",
       "recommendation": null,
-      "targetPrice": null,
-      "created_at": "2026-09-26 00:11:59"
+      "targetPrice": null
     },
     {
       "id": "19240",
@@ -3643,8 +3630,7 @@
       "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/sector/bao-cao-nganh-dau-khi-gia-dau-tang-cao-do-xung-dot-o-trung-dong-19240.pdf",
       "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/sector/bao-cao-nganh-dau-khi-gia-dau-tang-cao-do-xung-dot-o-trung-dong-19240.jpg",
       "recommendation": null,
-      "targetPrice": null,
-      "created_at": "2026-09-26 00:11:59"
+      "targetPrice": null
     },
     {
       "id": "19382",
@@ -3661,8 +3647,7 @@
       "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/sector/bao-cao-nganh-bds-khu-cong-nghiep-quy-42025-19382.pdf",
       "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/sector/bao-cao-nganh-bds-khu-cong-nghiep-quy-42025-19382.jpg",
       "recommendation": null,
-      "targetPrice": null,
-      "created_at": "2026-09-26 00:11:59"
+      "targetPrice": null
     },
     {
       "id": "19237",
@@ -3679,8 +3664,7 @@
       "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/sector/bao-cao-nganh-cang-bien-boi-canh-nganh-cang-noi-dia-ho-tro-trien-vong-tich-cuc-cho-gmd-19237.pdf",
       "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/sector/bao-cao-nganh-cang-bien-boi-canh-nganh-cang-noi-dia-ho-tro-trien-vong-tich-cuc-cho-gmd-19237.jpg",
       "recommendation": null,
-      "targetPrice": null,
-      "created_at": "2026-09-26 00:11:59"
+      "targetPrice": null
     },
     {
       "id": "19263",
@@ -3697,8 +3681,7 @@
       "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/sector/bao-cao-nganh-ngan-hang-cap-nhat-2025-chat-luong-tai-san-va-loi-nhuan-phan-hoa-19263.pdf",
       "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/sector/bao-cao-nganh-ngan-hang-cap-nhat-2025-chat-luong-tai-san-va-loi-nhuan-phan-hoa-19263.jpg",
       "recommendation": null,
-      "targetPrice": null,
-      "created_at": "2026-09-26 00:11:59"
+      "targetPrice": null
     },
     {
       "id": "19165",
@@ -3715,8 +3698,7 @@
       "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/sector/bao-cao-nganh-san-xuat-phan-bon-chi-phi-khi-thap-hon-thuc-day-tang-truong-nam-2026-19165.pdf",
       "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/sector/bao-cao-nganh-san-xuat-phan-bon-chi-phi-khi-thap-hon-thuc-day-tang-truong-nam-2026-19165.jpg",
       "recommendation": null,
-      "targetPrice": null,
-      "created_at": "2026-09-26 00:11:59"
+      "targetPrice": null
     },
     {
       "id": "19383",
@@ -3733,8 +3715,7 @@
       "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/sector/bao-cao-nganh-chung-khoan-quy-42025-19383.pdf",
       "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/sector/bao-cao-nganh-chung-khoan-quy-42025-19383.jpg",
       "recommendation": null,
-      "targetPrice": null,
-      "created_at": "2026-09-26 00:11:59"
+      "targetPrice": null
     },
     {
       "id": "19127",
@@ -3751,8 +3732,7 @@
       "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/sector/bao-cao-nganh-ngan-hang-tiep-noi-cau-chuyen-tang-truong-19127.pdf",
       "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/sector/bao-cao-nganh-ngan-hang-tiep-noi-cau-chuyen-tang-truong-19127.jpg",
       "recommendation": null,
-      "targetPrice": null,
-      "created_at": "2026-09-26 00:11:59"
+      "targetPrice": null
     },
     {
       "id": "19099",
@@ -3769,8 +3749,7 @@
       "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/sector/bao-cao-nganh-ngan-hang-dat-ke-hoach-19099.pdf",
       "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/sector/bao-cao-nganh-ngan-hang-dat-ke-hoach-19099.jpg",
       "recommendation": null,
-      "targetPrice": null,
-      "created_at": "2026-09-26 00:11:59"
+      "targetPrice": null
     },
     {
       "id": "19076",
@@ -3787,8 +3766,7 @@
       "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/sector/bao-cao-nganh-ngan-hang-khep-lai-mot-nam-nhieu-dau-an-19076.pdf",
       "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/sector/bao-cao-nganh-ngan-hang-khep-lai-mot-nam-nhieu-dau-an-19076.jpg",
       "recommendation": null,
-      "targetPrice": null,
-      "created_at": "2026-09-26 00:11:59"
+      "targetPrice": null
     },
     {
       "id": "19049",
@@ -3805,8 +3783,7 @@
       "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/sector/bao-cao-nganh-logistics-mo-rong-cong-suat-don-dau-tang-truong-19049.pdf",
       "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/sector/bao-cao-nganh-logistics-mo-rong-cong-suat-don-dau-tang-truong-19049.jpg",
       "recommendation": null,
-      "targetPrice": null,
-      "created_at": "2026-09-26 00:11:59"
+      "targetPrice": null
     },
     {
       "id": "19023",
@@ -3823,8 +3800,7 @@
       "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/sector/bao-cao-nganh-bat-dong-san-nha-o-sang-loc-trong-chu-ky-moi-19023.pdf",
       "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/sector/bao-cao-nganh-bat-dong-san-nha-o-sang-loc-trong-chu-ky-moi-19023.jpg",
       "recommendation": null,
-      "targetPrice": null,
-      "created_at": "2026-09-26 00:11:59"
+      "targetPrice": null
     },
     {
       "id": "19022",
@@ -3841,8 +3817,7 @@
       "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/sector/bao-cao-nganh-dien-tien-ich-cong-cong-tu-loi-noi-den-hanh-dong-19022.pdf",
       "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/sector/bao-cao-nganh-dien-tien-ich-cong-cong-tu-loi-noi-den-hanh-dong-19022.jpg",
       "recommendation": null,
-      "targetPrice": null,
-      "created_at": "2026-09-26 00:11:59"
+      "targetPrice": null
     },
     {
       "id": "18977",
@@ -3859,8 +3834,7 @@
       "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/sector/bao-cao-nganh-bat-dong-san-nha-o-trien-vong-tang-truong-giao-dich-bds-so-cap-duy-tri-tich-cuc-18977.pdf",
       "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/sector/bao-cao-nganh-bat-dong-san-nha-o-trien-vong-tang-truong-giao-dich-bds-so-cap-duy-tri-tich-cuc-18977.jpg",
       "recommendation": null,
-      "targetPrice": null,
-      "created_at": "2026-09-26 00:11:59"
+      "targetPrice": null
     },
     {
       "id": "18926",
@@ -3877,8 +3851,7 @@
       "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/sector/bao-cao-nganh-ban-le-diem-sang-ban-le-hien-dai-trong-boi-canh-tieu-dung-than-trong-18926.pdf",
       "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/sector/bao-cao-nganh-ban-le-diem-sang-ban-le-hien-dai-trong-boi-canh-tieu-dung-than-trong-18926.jpg",
       "recommendation": null,
-      "targetPrice": null,
-      "created_at": "2026-09-26 00:11:59"
+      "targetPrice": null
     },
     {
       "id": "18844",
@@ -3895,8 +3868,7 @@
       "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/sector/bao-cao-nganh-bds-khu-cong-nghiep-vung-vang-truoc-nhung-con-gio-18844.pdf",
       "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/sector/bao-cao-nganh-bds-khu-cong-nghiep-vung-vang-truoc-nhung-con-gio-18844.jpg",
       "recommendation": null,
-      "targetPrice": null,
-      "created_at": "2026-09-26 00:11:59"
+      "targetPrice": null
     },
     {
       "id": "18722",
@@ -3913,8 +3885,7 @@
       "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/sector/bao-cao-nganh-bds-khu-cong-nghiep-sau-con-mua-troi-lai-rang-18722.pdf",
       "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/sector/bao-cao-nganh-bds-khu-cong-nghiep-sau-con-mua-troi-lai-rang-18722.jpg",
       "recommendation": null,
-      "targetPrice": null,
-      "created_at": "2026-09-26 00:11:59"
+      "targetPrice": null
     },
     {
       "id": "18758",
@@ -3931,8 +3902,7 @@
       "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/sector/bao-cao-nganh-vat-lieu-xay-dung-khac-trien-vong-phan-hoa-giua-cac-nguon-nguyen-lieu-18758.pdf",
       "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/sector/bao-cao-nganh-vat-lieu-xay-dung-khac-trien-vong-phan-hoa-giua-cac-nguon-nguyen-lieu-18758.jpg",
       "recommendation": null,
-      "targetPrice": null,
-      "created_at": "2026-09-26 00:11:59"
+      "targetPrice": null
     },
     {
       "id": "18757",
@@ -3949,8 +3919,7 @@
       "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/sector/bao-cao-nganh-bat-dong-san-dan-dung-tai-can-bang-sau-giai-doan-tang-truong-lech-pha-18757.pdf",
       "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/sector/bao-cao-nganh-bat-dong-san-dan-dung-tai-can-bang-sau-giai-doan-tang-truong-lech-pha-18757.jpg",
       "recommendation": null,
-      "targetPrice": null,
-      "created_at": "2026-09-26 00:11:59"
+      "targetPrice": null
     },
     {
       "id": "18667",
@@ -3967,8 +3936,7 @@
       "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/sector/bao-cao-nganh-logistics-thang-012026-18667.pdf",
       "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/sector/bao-cao-nganh-logistics-thang-012026-18667.jpg",
       "recommendation": null,
-      "targetPrice": null,
-      "created_at": "2026-09-26 00:11:59"
+      "targetPrice": null
     },
     {
       "id": "19091",
@@ -3985,8 +3953,7 @@
       "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/sector/bao-cao-nganh-nhua-trien-vong-phan-hoa-giua-cac-mang-san-pham-19091.pdf",
       "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/sector/bao-cao-nganh-nhua-trien-vong-phan-hoa-giua-cac-mang-san-pham-19091.jpg",
       "recommendation": null,
-      "targetPrice": null,
-      "created_at": "2026-09-26 00:11:59"
+      "targetPrice": null
     },
     {
       "id": "18647",
@@ -4003,8 +3970,7 @@
       "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/sector/bao-cao-nganh-dau-khi-cap-nhat-thi-truong-kinh-doanh-xang-dau-nam-2026-18647.pdf",
       "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/sector/bao-cao-nganh-dau-khi-cap-nhat-thi-truong-kinh-doanh-xang-dau-nam-2026-18647.jpg",
       "recommendation": null,
-      "targetPrice": null,
-      "created_at": "2026-09-26 00:11:59"
+      "targetPrice": null
     },
     {
       "id": "18631",
@@ -4021,8 +3987,7 @@
       "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/sector/bao-cao-nganh-ngan-hang-vung-da-tang-truong-18631.pdf",
       "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/sector/bao-cao-nganh-ngan-hang-vung-da-tang-truong-18631.jpg",
       "recommendation": null,
-      "targetPrice": null,
-      "created_at": "2026-09-26 00:11:59"
+      "targetPrice": null
     },
     {
       "id": "18618",
@@ -4039,8 +4004,7 @@
       "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/sector/bao-cao-nganh-ban-le-don-song-18618.pdf",
       "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/sector/bao-cao-nganh-ban-le-don-song-18618.jpg",
       "recommendation": null,
-      "targetPrice": null,
-      "created_at": "2026-09-26 00:11:59"
+      "targetPrice": null
     },
     {
       "id": "18759",
@@ -4057,8 +4021,7 @@
       "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/sector/bao-cao-nganh-cong-nghe-vien-thong-thuyen-to-no-luc-vuot-song-lon-18759.pdf",
       "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/sector/bao-cao-nganh-cong-nghe-vien-thong-thuyen-to-no-luc-vuot-song-lon-18759.jpg",
       "recommendation": null,
-      "targetPrice": null,
-      "created_at": "2026-09-26 00:11:59"
+      "targetPrice": null
     },
     {
       "id": "18604",
@@ -4075,8 +4038,7 @@
       "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/sector/bao-cao-nganh-ict-ride-the-ai-wave-18604.pdf",
       "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/sector/bao-cao-nganh-ict-ride-the-ai-wave-18604.jpg",
       "recommendation": null,
-      "targetPrice": null,
-      "created_at": "2026-09-26 00:11:59"
+      "targetPrice": null
     },
     {
       "id": "18586",
@@ -4093,8 +4055,7 @@
       "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/sector/bao-cao-nganh-xay-dung-va-vlxd-buoc-vao-chu-ki-tang-truong-18586.pdf",
       "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/sector/bao-cao-nganh-xay-dung-va-vlxd-buoc-vao-chu-ki-tang-truong-18586.jpg",
       "recommendation": null,
-      "targetPrice": null,
-      "created_at": "2026-09-26 00:11:59"
+      "targetPrice": null
     },
     {
       "id": "18585",
@@ -4111,8 +4072,7 @@
       "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/sector/bao-cao-nganh-phan-bon-bien-dong-chinh-sach-va-dia-chinh-tri-chi-phoi-trien-vong-18585.pdf",
       "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/sector/bao-cao-nganh-phan-bon-bien-dong-chinh-sach-va-dia-chinh-tri-chi-phoi-trien-vong-18585.jpg",
       "recommendation": null,
-      "targetPrice": null,
-      "created_at": "2026-09-26 00:11:59"
+      "targetPrice": null
     },
     {
       "id": "18579",
@@ -4129,8 +4089,7 @@
       "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/sector/bao-cao-nganh-dien-tu-tieu-dung-nang-cap-cong-nghe-tro-thanh-dong-luc-tang-truong-18579.pdf",
       "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/sector/bao-cao-nganh-dien-tu-tieu-dung-nang-cap-cong-nghe-tro-thanh-dong-luc-tang-truong-18579.jpg",
       "recommendation": null,
-      "targetPrice": null,
-      "created_at": "2026-09-26 00:11:59"
+      "targetPrice": null
     },
     {
       "id": "18566",
@@ -4147,8 +4106,7 @@
       "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/sector/bao-cao-nganh-bds-khu-cong-nghiep-sau-phep-thu-chu-ky-moi-bat-dau-18566.pdf",
       "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/sector/bao-cao-nganh-bds-khu-cong-nghiep-sau-phep-thu-chu-ky-moi-bat-dau-18566.jpg",
       "recommendation": null,
-      "targetPrice": null,
-      "created_at": "2026-09-26 00:11:59"
+      "targetPrice": null
     },
     {
       "id": "18565",
@@ -4165,8 +4123,7 @@
       "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/sector/bao-cao-nganh-cang-bien-on-dinh-trong-vung-bien-dong-18565.pdf",
       "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/sector/bao-cao-nganh-cang-bien-on-dinh-trong-vung-bien-dong-18565.jpg",
       "recommendation": null,
-      "targetPrice": null,
-      "created_at": "2026-09-26 00:11:59"
+      "targetPrice": null
     },
     {
       "id": "18764",
@@ -4183,8 +4140,7 @@
       "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/sector/bao-cao-nganh-tieu-dung-ho-moc-them-canh-18764.pdf",
       "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/sector/bao-cao-nganh-tieu-dung-ho-moc-them-canh-18764.jpg",
       "recommendation": null,
-      "targetPrice": null,
-      "created_at": "2026-09-26 00:11:59"
+      "targetPrice": null
     },
     {
       "id": "18562",
@@ -4201,8 +4157,7 @@
       "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/sector/bao-cao-nganh-nhiet-dien-gia-cong-suat-thi-truong-nam-2026-thap-hon-ky-vong-18562.pdf",
       "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/sector/bao-cao-nganh-nhiet-dien-gia-cong-suat-thi-truong-nam-2026-thap-hon-ky-vong-18562.jpg",
       "recommendation": null,
-      "targetPrice": null,
-      "created_at": "2026-09-26 00:11:59"
+      "targetPrice": null
     },
     {
       "id": "18544",
@@ -4219,8 +4174,7 @@
       "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/sector/bao-cao-nganh-thep-trien-vong-2026-18544.pdf",
       "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/sector/bao-cao-nganh-thep-trien-vong-2026-18544.jpg",
       "recommendation": null,
-      "targetPrice": null,
-      "created_at": "2026-09-26 00:11:59"
+      "targetPrice": null
     },
     {
       "id": "18523",
@@ -4237,8 +4191,7 @@
       "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/sector/bao-cao-nganh-ngan-hang-vung-nhip-tang-truong-18523.pdf",
       "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/sector/bao-cao-nganh-ngan-hang-vung-nhip-tang-truong-18523.jpg",
       "recommendation": null,
-      "targetPrice": null,
-      "created_at": "2026-09-26 00:11:59"
+      "targetPrice": null
     },
     {
       "id": "18516",
@@ -4255,8 +4208,7 @@
       "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/sector/bao-cao-nganh-det-may-phan-hoa-giua-bien-dong-dia-chinh-tri-18516.pdf",
       "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/sector/bao-cao-nganh-det-may-phan-hoa-giua-bien-dong-dia-chinh-tri-18516.jpg",
       "recommendation": null,
-      "targetPrice": null,
-      "created_at": "2026-09-26 00:11:59"
+      "targetPrice": null
     },
     {
       "id": "18509",
@@ -4273,8 +4225,7 @@
       "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/sector/bao-cao-nganh-dau-khi-trien-vong-dau-khi-lng-nang-luong-tai-tao-18509.pdf",
       "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/sector/bao-cao-nganh-dau-khi-trien-vong-dau-khi-lng-nang-luong-tai-tao-18509.jpg",
       "recommendation": null,
-      "targetPrice": null,
-      "created_at": "2026-09-26 00:11:59"
+      "targetPrice": null
     },
     {
       "id": "18508",
@@ -4291,8 +4242,7 @@
       "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/sector/bao-cao-nganh-nuoc-1h2026-18508.pdf",
       "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/sector/bao-cao-nganh-nuoc-1h2026-18508.jpg",
       "recommendation": null,
-      "targetPrice": null,
-      "created_at": "2026-09-26 00:11:59"
+      "targetPrice": null
     },
     {
       "id": "18507",
@@ -4309,8 +4259,7 @@
       "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/sector/bao-cao-nganh-dien-tang-toc-trien-khai-du-an-moi-18507.pdf",
       "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/sector/bao-cao-nganh-dien-tang-toc-trien-khai-du-an-moi-18507.jpg",
       "recommendation": null,
-      "targetPrice": null,
-      "created_at": "2026-09-26 00:11:59"
+      "targetPrice": null
     },
     {
       "id": "18503",
@@ -4327,8 +4276,7 @@
       "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/sector/bao-cao-nganh-bat-dong-san-dan-cu-huong-loi-tu-day-manh-ha-tang-va-thao-go-phap-ly-18503.pdf",
       "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/sector/bao-cao-nganh-bat-dong-san-dan-cu-huong-loi-tu-day-manh-ha-tang-va-thao-go-phap-ly-18503.jpg",
       "recommendation": null,
-      "targetPrice": null,
-      "created_at": "2026-09-26 00:11:59"
+      "targetPrice": null
     },
     {
       "id": "18502",
@@ -4345,8 +4293,7 @@
       "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/sector/bao-cao-nganh-tieu-dung-trien-vong-tich-cuc-va-dinh-gia-hap-dan-18502.pdf",
       "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/sector/bao-cao-nganh-tieu-dung-trien-vong-tich-cuc-va-dinh-gia-hap-dan-18502.jpg",
       "recommendation": null,
-      "targetPrice": null,
-      "created_at": "2026-09-26 00:11:59"
+      "targetPrice": null
     },
     {
       "id": "18501",
@@ -4363,8 +4310,7 @@
       "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/sector/bao-cao-nganh-ngan-hang-day-manh-tang-truong-tin-dung-18501.pdf",
       "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/sector/bao-cao-nganh-ngan-hang-day-manh-tang-truong-tin-dung-18501.jpg",
       "recommendation": null,
-      "targetPrice": null,
-      "created_at": "2026-09-26 00:11:59"
+      "targetPrice": null
     },
     {
       "id": "18500",
@@ -4381,8 +4327,7 @@
       "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/sector/bao-cao-nganh-chung-khoan-dong-luc-tu-tang-truong-kinh-te-cao-va-dong-tien-ngoai-quay-tro-lai-18500.pdf",
       "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/sector/bao-cao-nganh-chung-khoan-dong-luc-tu-tang-truong-kinh-te-cao-va-dong-tien-ngoai-quay-tro-lai-18500.jpg",
       "recommendation": null,
-      "targetPrice": null,
-      "created_at": "2026-09-26 00:11:59"
+      "targetPrice": null
     },
     {
       "id": "18498",
@@ -4399,8 +4344,7 @@
       "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/sector/bao-cao-nganh-vat-lieu-xay-dung-nhu-cau-trong-nuoc-la-dong-luc-chinh-18498.pdf",
       "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/sector/bao-cao-nganh-vat-lieu-xay-dung-nhu-cau-trong-nuoc-la-dong-luc-chinh-18498.jpg",
       "recommendation": null,
-      "targetPrice": null,
-      "created_at": "2026-09-26 00:11:59"
+      "targetPrice": null
     },
     {
       "id": "18492",
@@ -4417,8 +4361,7 @@
       "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/sector/bao-cao-nganh-dien-tai-dinh-hinh-trien-vong-kha-quan-18492.pdf",
       "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/sector/bao-cao-nganh-dien-tai-dinh-hinh-trien-vong-kha-quan-18492.jpg",
       "recommendation": null,
-      "targetPrice": null,
-      "created_at": "2026-09-26 00:11:59"
+      "targetPrice": null
     },
     {
       "id": "18497",
@@ -4435,8 +4378,7 @@
       "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/sector/bao-cao-nganh-cong-nghe-hoi-phuc-sau-kho-khan-ngan-han-18497.pdf",
       "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/sector/bao-cao-nganh-cong-nghe-hoi-phuc-sau-kho-khan-ngan-han-18497.jpg",
       "recommendation": null,
-      "targetPrice": null,
-      "created_at": "2026-09-26 00:11:59"
+      "targetPrice": null
     },
     {
       "id": "18496",
@@ -4453,8 +4395,7 @@
       "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/sector/bao-cao-nganh-dien-tang-truong-tren-co-so-can-bang-cung-cau-18496.pdf",
       "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/sector/bao-cao-nganh-dien-tang-truong-tren-co-so-can-bang-cung-cau-18496.jpg",
       "recommendation": null,
-      "targetPrice": null,
-      "created_at": "2026-09-26 00:11:59"
+      "targetPrice": null
     },
     {
       "id": "18499",
@@ -4471,8 +4412,7 @@
       "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/sector/bao-cao-nganh-logistics-cau-chuyen-thuong-mai-phuc-hoi-va-mo-rong-cong-suat-18499.pdf",
       "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/sector/bao-cao-nganh-logistics-cau-chuyen-thuong-mai-phuc-hoi-va-mo-rong-cong-suat-18499.jpg",
       "recommendation": null,
-      "targetPrice": null,
-      "created_at": "2026-09-26 00:11:59"
+      "targetPrice": null
     },
     {
       "id": "18491",
@@ -4489,8 +4429,7 @@
       "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/sector/bao-cao-nganh-cang-van-tai-bien-trien-vong-kha-quan-18491.pdf",
       "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/sector/bao-cao-nganh-cang-van-tai-bien-trien-vong-kha-quan-18491.jpg",
       "recommendation": null,
-      "targetPrice": null,
-      "created_at": "2026-09-26 00:11:59"
+      "targetPrice": null
     },
     {
       "id": "18485",
@@ -4507,8 +4446,7 @@
       "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/sector/bao-cao-nganh-bds-khu-cong-nghiep-thach-thuc-ngan-han-mo-ra-du-dia-trong-dai-han-18485.pdf",
       "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/sector/bao-cao-nganh-bds-khu-cong-nghiep-thach-thuc-ngan-han-mo-ra-du-dia-trong-dai-han-18485.jpg",
       "recommendation": null,
-      "targetPrice": null,
-      "created_at": "2026-09-26 00:11:59"
+      "targetPrice": null
     },
     {
       "id": "18484",
@@ -4525,8 +4463,7 @@
       "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/sector/bao-cao-nganh-xay-dung-nguon-cung-cong-viec-tich-cuc-18484.pdf",
       "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/sector/bao-cao-nganh-xay-dung-nguon-cung-cong-viec-tich-cuc-18484.jpg",
       "recommendation": null,
-      "targetPrice": null,
-      "created_at": "2026-09-26 00:11:59"
+      "targetPrice": null
     },
     {
       "id": "18482",
@@ -4543,8 +4480,7 @@
       "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/sector/bao-cao-nganh-bao-hiem-buoc-vao-pha-tang-truong-moi-18482.pdf",
       "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/sector/bao-cao-nganh-bao-hiem-buoc-vao-pha-tang-truong-moi-18482.jpg",
       "recommendation": null,
-      "targetPrice": null,
-      "created_at": "2026-09-26 00:11:59"
+      "targetPrice": null
     },
     {
       "id": "18480",
@@ -4561,8 +4497,7 @@
       "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/sector/bao-cao-nganh-dien-trien-vong-dai-han-van-duy-tri-18480.pdf",
       "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/sector/bao-cao-nganh-dien-trien-vong-dai-han-van-duy-tri-18480.jpg",
       "recommendation": null,
-      "targetPrice": null,
-      "created_at": "2026-09-26 00:11:59"
+      "targetPrice": null
     },
     {
       "id": "18478",
@@ -4579,8 +4514,7 @@
       "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/sector/bao-cao-nganh-bds-khu-cong-nghiep-tiep-da-tang-truong-18478.pdf",
       "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/sector/bao-cao-nganh-bds-khu-cong-nghiep-tiep-da-tang-truong-18478.jpg",
       "recommendation": null,
-      "targetPrice": null,
-      "created_at": "2026-09-26 00:11:59"
+      "targetPrice": null
     },
     {
       "id": "18456",
@@ -4597,8 +4531,7 @@
       "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/sector/bao-cao-nganh-ca-tra-trien-vong-duy-tri-tich-cuc-18456.pdf",
       "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/sector/bao-cao-nganh-ca-tra-trien-vong-duy-tri-tich-cuc-18456.jpg",
       "recommendation": null,
-      "targetPrice": null,
-      "created_at": "2026-09-26 00:11:59"
+      "targetPrice": null
     },
     {
       "id": "18756",
@@ -4615,8 +4548,7 @@
       "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/sector/bao-cao-nganh-vat-lieu-xay-dung-truc-xuong-song-cua-ha-tang-va-do-thi-18756.pdf",
       "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/sector/bao-cao-nganh-vat-lieu-xay-dung-truc-xuong-song-cua-ha-tang-va-do-thi-18756.jpg",
       "recommendation": null,
-      "targetPrice": null,
-      "created_at": "2026-09-26 00:11:59"
+      "targetPrice": null
     },
     {
       "id": "18448",
@@ -4633,8 +4565,7 @@
       "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/sector/bao-cao-nganh-dau-khi-diem-sang-den-tu-thuong-nguon-18448.pdf",
       "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/sector/bao-cao-nganh-dau-khi-diem-sang-den-tu-thuong-nguon-18448.jpg",
       "recommendation": null,
-      "targetPrice": null,
-      "created_at": "2026-09-26 00:11:59"
+      "targetPrice": null
     },
     {
       "id": "18440",
@@ -4651,8 +4582,7 @@
       "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/sector/bao-cao-nganh-du-bao-kqkd-4q2025-va-2026-18440.pdf",
       "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/sector/bao-cao-nganh-du-bao-kqkd-4q2025-va-2026-18440.jpg",
       "recommendation": null,
-      "targetPrice": null,
-      "created_at": "2026-09-26 00:11:59"
+      "targetPrice": null
     },
     {
       "id": "18429",
@@ -4669,8 +4599,7 @@
       "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/sector/bao-cao-nganh-du-bao-loi-nhuan-q42025-ve-dich-thanh-cong-18429.pdf",
       "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/sector/bao-cao-nganh-du-bao-loi-nhuan-q42025-ve-dich-thanh-cong-18429.jpg",
       "recommendation": null,
-      "targetPrice": null,
-      "created_at": "2026-09-26 00:11:59"
+      "targetPrice": null
     },
     {
       "id": "18419",
@@ -4687,8 +4616,7 @@
       "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/sector/bao-cao-nganh-bds-khu-cong-nghiep-loi-nhuan-tang-manh-trien-vong-cho-thue-con-chiu-ap-luc-18419.pdf",
       "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/sector/bao-cao-nganh-bds-khu-cong-nghiep-loi-nhuan-tang-manh-trien-vong-cho-thue-con-chiu-ap-luc-18419.jpg",
       "recommendation": null,
-      "targetPrice": null,
-      "created_at": "2026-09-26 00:11:59"
+      "targetPrice": null
     },
     {
       "id": "18416",
@@ -4705,8 +4633,7 @@
       "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/sector/bao-cao-nganh-thep-ket-qua-kinh-doanh-kha-quan-18416.pdf",
       "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/sector/bao-cao-nganh-thep-ket-qua-kinh-doanh-kha-quan-18416.jpg",
       "recommendation": null,
-      "targetPrice": null,
-      "created_at": "2026-09-26 00:11:59"
+      "targetPrice": null
     },
     {
       "id": "18415",
@@ -4723,8 +4650,7 @@
       "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/sector/bao-cao-nganh-phan-bon-gieo-hat-tot-gat-mua-vang-18415.pdf",
       "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/sector/bao-cao-nganh-phan-bon-gieo-hat-tot-gat-mua-vang-18415.jpg",
       "recommendation": null,
-      "targetPrice": null,
-      "created_at": "2026-09-26 00:11:59"
+      "targetPrice": null
     },
     {
       "id": "18413",
@@ -4741,8 +4667,7 @@
       "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/sector/bao-cao-nganh-ngan-hang-thach-thuc-ngan-han-kha-quan-dai-han-18413.pdf",
       "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/sector/bao-cao-nganh-ngan-hang-thach-thuc-ngan-han-kha-quan-dai-han-18413.jpg",
       "recommendation": null,
-      "targetPrice": null,
-      "created_at": "2026-09-26 00:11:59"
+      "targetPrice": null
     },
     {
       "id": "18377",
@@ -4759,8 +4684,7 @@
       "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/sector/bao-cao-nganh-ngan-hang-nhung-no-luc-huong-toi-muc-tieu-tang-truong-hai-con-so-18377.pdf",
       "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/sector/bao-cao-nganh-ngan-hang-nhung-no-luc-huong-toi-muc-tieu-tang-truong-hai-con-so-18377.jpg",
       "recommendation": null,
-      "targetPrice": null,
-      "created_at": "2026-09-26 00:11:59"
+      "targetPrice": null
     },
     {
       "id": "18376",
@@ -4777,8 +4701,7 @@
       "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/sector/bao-cao-nganh-tieu-dung-ban-le-thiet-yeu-moi-la-chan-ai-18376.pdf",
       "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/sector/bao-cao-nganh-tieu-dung-ban-le-thiet-yeu-moi-la-chan-ai-18376.jpg",
       "recommendation": null,
-      "targetPrice": null,
-      "created_at": "2026-09-26 00:11:59"
+      "targetPrice": null
     },
     {
       "id": "18380",
@@ -4795,8 +4718,7 @@
       "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/sector/bao-cao-nganh-ngan-hang-nhtm-quoc-doanh-tang-lai-suat-huy-dong-18380.pdf",
       "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/sector/bao-cao-nganh-ngan-hang-nhtm-quoc-doanh-tang-lai-suat-huy-dong-18380.jpg",
       "recommendation": null,
-      "targetPrice": null,
-      "created_at": "2026-09-26 00:11:59"
+      "targetPrice": null
     },
     {
       "id": "18340",
@@ -4813,8 +4735,7 @@
       "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/sector/bao-cao-nganh-bds-khu-cong-nghiep-trien-vong-2026-phuc-hoi-sau-cu-soc-thue-quan-18340.pdf",
       "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/sector/bao-cao-nganh-bds-khu-cong-nghiep-trien-vong-2026-phuc-hoi-sau-cu-soc-thue-quan-18340.jpg",
       "recommendation": null,
-      "targetPrice": null,
-      "created_at": "2026-09-26 00:11:59"
+      "targetPrice": null
     },
     {
       "id": "18339",
@@ -4831,8 +4752,7 @@
       "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/sector/bao-cao-nganh-xay-dung-va-nganh-thep-diem-khoi-dau-cua-chu-ki-tang-truong-18339.pdf",
       "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/sector/bao-cao-nganh-xay-dung-va-nganh-thep-diem-khoi-dau-cua-chu-ki-tang-truong-18339.jpg",
       "recommendation": null,
-      "targetPrice": null,
-      "created_at": "2026-09-26 00:11:59"
+      "targetPrice": null
     },
     {
       "id": "18398",
@@ -4849,8 +4769,7 @@
       "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/sector/bao-cao-nganh-ngan-hang-len-ga-nhung-khong-buong-phanh-18398.pdf",
       "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/sector/bao-cao-nganh-ngan-hang-len-ga-nhung-khong-buong-phanh-18398.jpg",
       "recommendation": null,
-      "targetPrice": null,
-      "created_at": "2026-09-26 00:11:59"
+      "targetPrice": null
     },
     {
       "id": "18347",
@@ -4867,8 +4786,7 @@
       "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/sector/bao-cao-nganh-bat-dong-san-nha-o-chu-ky-mo-rong-dinh-hinh-boi-nang-luc-thuc-thi-18347.pdf",
       "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/sector/bao-cao-nganh-bat-dong-san-nha-o-chu-ky-mo-rong-dinh-hinh-boi-nang-luc-thuc-thi-18347.jpg",
       "recommendation": null,
-      "targetPrice": null,
-      "created_at": "2026-09-26 00:11:59"
+      "targetPrice": null
     },
     {
       "id": "18338",
@@ -4885,8 +4803,7 @@
       "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/sector/bao-cao-nganh-bat-dong-san-dan-cu-nam-bat-thoi-co-trong-giai-doan-mo-rong-18338.pdf",
       "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/sector/bao-cao-nganh-bat-dong-san-dan-cu-nam-bat-thoi-co-trong-giai-doan-mo-rong-18338.jpg",
       "recommendation": null,
-      "targetPrice": null,
-      "created_at": "2026-09-26 00:11:59"
+      "targetPrice": null
     },
     {
       "id": "18336",
@@ -4903,8 +4820,7 @@
       "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/sector/bao-cao-nganh-hang-khong-xu-huong-phuc-hoi-tiep-dien-18336.pdf",
       "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/sector/bao-cao-nganh-hang-khong-xu-huong-phuc-hoi-tiep-dien-18336.jpg",
       "recommendation": null,
-      "targetPrice": null,
-      "created_at": "2026-09-26 00:11:59"
+      "targetPrice": null
     },
     {
       "id": "18337",
@@ -4921,8 +4837,7 @@
       "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/sector/bao-cao-nganh-dien-nhu-cau-tieu-thu-phuc-hoi-moi-truong-dau-tu-cai-thien-18337.pdf",
       "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/sector/bao-cao-nganh-dien-nhu-cau-tieu-thu-phuc-hoi-moi-truong-dau-tu-cai-thien-18337.jpg",
       "recommendation": null,
-      "targetPrice": null,
-      "created_at": "2026-09-26 00:11:59"
+      "targetPrice": null
     },
     {
       "id": "18316",
@@ -4939,8 +4854,7 @@
       "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/sector/bao-cao-nganh-thuc-pham-ban-giao-huong-mua-xuan-18316.pdf",
       "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/sector/bao-cao-nganh-thuc-pham-ban-giao-huong-mua-xuan-18316.jpg",
       "recommendation": null,
-      "targetPrice": null,
-      "created_at": "2026-09-26 00:11:59"
+      "targetPrice": null
     },
     {
       "id": "18331",
@@ -4957,8 +4871,7 @@
       "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/sector/bao-cao-nganh-bat-dong-san-dan-cu-trien-vong-2026-phia-nam-la-tam-diem-18331.pdf",
       "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/sector/bao-cao-nganh-bat-dong-san-dan-cu-trien-vong-2026-phia-nam-la-tam-diem-18331.jpg",
       "recommendation": null,
-      "targetPrice": null,
-      "created_at": "2026-09-26 00:11:59"
+      "targetPrice": null
     },
     {
       "id": "18346",
@@ -4975,8 +4888,7 @@
       "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/sector/bao-cao-nganh-ngan-hang-thoi-diem-tich-luy-18346.pdf",
       "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/sector/bao-cao-nganh-ngan-hang-thoi-diem-tich-luy-18346.jpg",
       "recommendation": null,
-      "targetPrice": null,
-      "created_at": "2026-09-26 00:11:59"
+      "targetPrice": null
     },
     {
       "id": "18275",
@@ -4993,8 +4905,7 @@
       "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/sector/bao-cao-nganh-ngan-hang-trien-vong-tang-truong-khong-dong-deu-18275.pdf",
       "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/sector/bao-cao-nganh-ngan-hang-trien-vong-tang-truong-khong-dong-deu-18275.jpg",
       "recommendation": null,
-      "targetPrice": null,
-      "created_at": "2026-09-26 00:11:59"
+      "targetPrice": null
     },
     {
       "id": "18249",
@@ -5011,8 +4922,7 @@
       "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/sector/bao-cao-nganh-ha-tang-giao-thong-trien-vong-2026-18249.pdf",
       "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/sector/bao-cao-nganh-ha-tang-giao-thong-trien-vong-2026-18249.jpg",
       "recommendation": null,
-      "targetPrice": null,
-      "created_at": "2026-09-26 00:11:59"
+      "targetPrice": null
     },
     {
       "id": "18248",
@@ -5029,8 +4939,7 @@
       "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/sector/bao-cao-nganh-chung-khoan-sua-doi-ty-le-an-toan-tai-chinh-18248.pdf",
       "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/sector/bao-cao-nganh-chung-khoan-sua-doi-ty-le-an-toan-tai-chinh-18248.jpg",
       "recommendation": null,
-      "targetPrice": null,
-      "created_at": "2026-09-26 00:11:59"
+      "targetPrice": null
     },
     {
       "id": "18247",
@@ -5047,8 +4956,7 @@
       "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/sector/bao-cao-nganh-bat-dong-san-nha-o-cap-nhat-q32025-18247.pdf",
       "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/sector/bao-cao-nganh-bat-dong-san-nha-o-cap-nhat-q32025-18247.jpg",
       "recommendation": null,
-      "targetPrice": null,
-      "created_at": "2026-09-26 00:11:59"
+      "targetPrice": null
     },
     {
       "id": "18481",
@@ -5065,8 +4973,7 @@
       "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/sector/bao-cao-nganh-xay-dung-duong-dai-tu-nen-mong-18481.pdf",
       "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/sector/bao-cao-nganh-xay-dung-duong-dai-tu-nen-mong-18481.jpg",
       "recommendation": null,
-      "targetPrice": null,
-      "created_at": "2026-09-26 00:11:59"
+      "targetPrice": null
     },
     {
       "id": "18246",
@@ -5083,8 +4990,7 @@
       "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/sector/bao-cao-nganh-ngan-hang-cap-nhat-9t2025-18246.pdf",
       "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/sector/bao-cao-nganh-ngan-hang-cap-nhat-9t2025-18246.jpg",
       "recommendation": null,
-      "targetPrice": null,
-      "created_at": "2026-09-26 00:11:59"
+      "targetPrice": null
     },
     {
       "id": "18245",
@@ -5101,8 +5007,7 @@
       "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/sector/bao-cao-nganh-chung-khoan-cap-nhat-9t2025-18245.pdf",
       "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/sector/bao-cao-nganh-chung-khoan-cap-nhat-9t2025-18245.jpg",
       "recommendation": null,
-      "targetPrice": null,
-      "created_at": "2026-09-26 00:11:59"
+      "targetPrice": null
     },
     {
       "id": "18031",
@@ -5119,8 +5024,7 @@
       "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/sector/bao-cao-nganh-bat-dong-san-dan-cu-quy-32025-18031.pdf",
       "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/sector/bao-cao-nganh-bat-dong-san-dan-cu-quy-32025-18031.jpg",
       "recommendation": null,
-      "targetPrice": null,
-      "created_at": "2026-09-26 00:11:59"
+      "targetPrice": null
     },
     {
       "id": "18029",
@@ -5137,8 +5041,7 @@
       "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/sector/bao-cao-nganh-ngan-hang-vuot-qua-bien-dong-18029.pdf",
       "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/sector/bao-cao-nganh-ngan-hang-vuot-qua-bien-dong-18029.jpg",
       "recommendation": null,
-      "targetPrice": null,
-      "created_at": "2026-09-26 00:11:59"
+      "targetPrice": null
     },
     {
       "id": "18030",
@@ -5155,8 +5058,7 @@
       "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/sector/bao-cao-nganh-chung-khoan-khi-chinh-sach-di-vao-cuoc-song-18030.pdf",
       "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/sector/bao-cao-nganh-chung-khoan-khi-chinh-sach-di-vao-cuoc-song-18030.jpg",
       "recommendation": null,
-      "targetPrice": null,
-      "created_at": "2026-09-26 00:11:59"
+      "targetPrice": null
     },
     {
       "id": "13925",
@@ -5173,8 +5075,7 @@
       "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/sector/bao-cao-nganh-van-tai-hang-hoa-hang-khong-dong-luc-moi-13925.pdf",
       "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/sector/bao-cao-nganh-van-tai-hang-hoa-hang-khong-dong-luc-moi-13925.jpg",
       "recommendation": null,
-      "targetPrice": null,
-      "created_at": "2026-09-26 00:11:59"
+      "targetPrice": null
     },
     {
       "id": "13743",
@@ -5191,8 +5092,7 @@
       "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/sector/bao-cao-nganh-ngan-hang-bao-cao-kqkd-q12024-13743.pdf",
       "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/sector/bao-cao-nganh-ngan-hang-bao-cao-kqkd-q12024-13743.jpg",
       "recommendation": null,
-      "targetPrice": null,
-      "created_at": "2026-09-26 00:11:59"
+      "targetPrice": null
     },
     {
       "id": "13715",
@@ -5209,8 +5109,7 @@
       "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/sector/bao-cao-nganh-food-beverage-viet-nam-13715.pdf",
       "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/sector/bao-cao-nganh-food-beverage-viet-nam-13715.jpg",
       "recommendation": null,
-      "targetPrice": null,
-      "created_at": "2026-09-26 00:11:59"
+      "targetPrice": null
     },
     {
       "id": "13669",
@@ -5227,8 +5126,7 @@
       "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/sector/bao-cao-nganh-ngan-hang-13669.pdf",
       "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/sector/bao-cao-nganh-ngan-hang-13669.jpg",
       "recommendation": null,
-      "targetPrice": null,
-      "created_at": "2026-09-26 00:11:59"
+      "targetPrice": null
     },
     {
       "id": "12502",
@@ -5245,8 +5143,7 @@
       "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/sector/bao-cao-nganh-xang-dau-on-dinh-nguon-cung-nhu-cau-chung-lai-crackspread-suy-giam-12502.pdf",
       "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/sector/bao-cao-nganh-xang-dau-on-dinh-nguon-cung-nhu-cau-chung-lai-crackspread-suy-giam-12502.jpg",
       "recommendation": null,
-      "targetPrice": null,
-      "created_at": "2026-09-26 00:11:59"
+      "targetPrice": null
     },
     {
       "id": "12473",
@@ -5263,8 +5160,7 @@
       "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/sector/bao-cao-nganh-nong-nghiep-gia-gao-neo-cao-12473.pdf",
       "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/sector/bao-cao-nganh-nong-nghiep-gia-gao-neo-cao-12473.jpg",
       "recommendation": null,
-      "targetPrice": null,
-      "created_at": "2026-09-26 00:11:59"
+      "targetPrice": null
     },
     {
       "id": "12362",
@@ -5281,8 +5177,7 @@
       "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/sector/bao-cao-nganh-thuy-san-tong-quan-nganh-thuy-san-4t2023-12362.pdf",
       "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/sector/bao-cao-nganh-thuy-san-tong-quan-nganh-thuy-san-4t2023-12362.jpg",
       "recommendation": null,
-      "targetPrice": null,
-      "created_at": "2026-09-26 00:11:59"
+      "targetPrice": null
     },
     {
       "id": "12296",
@@ -5299,8 +5194,7 @@
       "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/sector/bao-cao-nganh-det-may-hy-vong-le-loi-12296.pdf",
       "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/sector/bao-cao-nganh-det-may-hy-vong-le-loi-12296.jpg",
       "recommendation": null,
-      "targetPrice": null,
-      "created_at": "2026-09-26 00:11:59"
+      "targetPrice": null
     },
     {
       "id": "12265",
@@ -5317,8 +5211,7 @@
       "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/sector/bao-cao-nganh-chan-nuoi-heo-ru-bun-dung-day-12265.pdf",
       "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/sector/bao-cao-nganh-chan-nuoi-heo-ru-bun-dung-day-12265.jpg",
       "recommendation": null,
-      "targetPrice": null,
-      "created_at": "2026-09-26 00:11:59"
+      "targetPrice": null
     },
     {
       "id": "12193",
@@ -5335,8 +5228,7 @@
       "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/sector/bao-cao-nganh-cong-nghe-thong-tin-thang-52023-12193.pdf",
       "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/sector/bao-cao-nganh-cong-nghe-thong-tin-thang-52023-12193.jpg",
       "recommendation": null,
-      "targetPrice": null,
-      "created_at": "2026-09-26 00:11:59"
+      "targetPrice": null
     },
     {
       "id": "12186",
@@ -5353,8 +5245,7 @@
       "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/sector/bao-cao-nganh-dien-quy-hoach-dien-viii-va-mot-vai-tac-dong-den-nganh-dien-12186.pdf",
       "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/sector/bao-cao-nganh-dien-quy-hoach-dien-viii-va-mot-vai-tac-dong-den-nganh-dien-12186.jpg",
       "recommendation": null,
-      "targetPrice": null,
-      "created_at": "2026-09-26 00:11:59"
+      "targetPrice": null
     },
     {
       "id": "11048",
@@ -5371,8 +5262,7 @@
       "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/sector/bao-cao-nganh-det-may-don-cho-buoc-ngoat-tu-doanh-nghiep-soi-11048.pdf",
       "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/sector/bao-cao-nganh-det-may-don-cho-buoc-ngoat-tu-doanh-nghiep-soi-11048.jpg",
       "recommendation": null,
-      "targetPrice": null,
-      "created_at": "2026-09-26 00:11:59"
+      "targetPrice": null
     },
     {
       "id": "11046",
@@ -5389,8 +5279,7 @@
       "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/sector/bao-cao-nganh-ict-mang-ban-buon-11046.pdf",
       "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/sector/bao-cao-nganh-ict-mang-ban-buon-11046.jpg",
       "recommendation": null,
-      "targetPrice": null,
-      "created_at": "2026-09-26 00:11:59"
+      "targetPrice": null
     },
     {
       "id": "11039",
@@ -5407,8 +5296,7 @@
       "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/sector/bao-cao-nganh-ngan-hang-chat-luong-tai-san-la-dieu-kien-tien-quyet-11039.pdf",
       "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/sector/bao-cao-nganh-ngan-hang-chat-luong-tai-san-la-dieu-kien-tien-quyet-11039.jpg",
       "recommendation": null,
-      "targetPrice": null,
-      "created_at": "2026-09-26 00:11:59"
+      "targetPrice": null
     },
     {
       "id": "11024",
@@ -5425,8 +5313,7 @@
       "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/sector/bao-cao-nganh-ngan-hang-he-qua-cua-chu-ky-tien-re-va-bung-no-bat-dong-san-11024.pdf",
       "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/sector/bao-cao-nganh-ngan-hang-he-qua-cua-chu-ky-tien-re-va-bung-no-bat-dong-san-11024.jpg",
       "recommendation": null,
-      "targetPrice": null,
-      "created_at": "2026-09-26 00:11:59"
+      "targetPrice": null
     },
     {
       "id": "10995",
@@ -5443,8 +5330,7 @@
       "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/sector/bao-cao-nganh-khu-cong-nghiep-thi-truong-tram-lang-trong-nua-dau-2023-10995.pdf",
       "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/sector/bao-cao-nganh-khu-cong-nghiep-thi-truong-tram-lang-trong-nua-dau-2023-10995.jpg",
       "recommendation": null,
-      "targetPrice": null,
-      "created_at": "2026-09-26 00:11:59"
+      "targetPrice": null
     },
     {
       "id": "10981",
@@ -5461,8 +5347,7 @@
       "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/sector/bao-cao-nganh-det-may-yeu-to-ho-tro-tu-cac-fta-10981.pdf",
       "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/sector/bao-cao-nganh-det-may-yeu-to-ho-tro-tu-cac-fta-10981.jpg",
       "recommendation": null,
-      "targetPrice": null,
-      "created_at": "2026-09-26 00:11:59"
+      "targetPrice": null
     },
     {
       "id": "10980",
@@ -5479,8 +5364,7 @@
       "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/sector/bao-cao-nganh-cang-bien-ap-luc-tu-nhu-cau-suy-yeu-10980.pdf",
       "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/sector/bao-cao-nganh-cang-bien-ap-luc-tu-nhu-cau-suy-yeu-10980.jpg",
       "recommendation": null,
-      "targetPrice": null,
-      "created_at": "2026-09-26 00:11:59"
+      "targetPrice": null
     },
     {
       "id": "10951",
@@ -5497,8 +5381,7 @@
       "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/sector/bao-cao-nganh-ngan-hang-danh-gia-tac-dong-thong-tu-222019-sua-doi-10951.pdf",
       "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/sector/bao-cao-nganh-ngan-hang-danh-gia-tac-dong-thong-tu-222019-sua-doi-10951.jpg",
       "recommendation": null,
-      "targetPrice": null,
-      "created_at": "2026-09-26 00:11:59"
+      "targetPrice": null
     },
     {
       "id": "10959",
@@ -5515,8 +5398,7 @@
       "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/sector/bao-cao-nganh-bat-dong-san-khu-cong-nghiep-nguon-cung-han-che-trien-vong-tich-cuc-trong-6-thang-da-10959.pdf",
       "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/sector/bao-cao-nganh-bat-dong-san-khu-cong-nghiep-nguon-cung-han-che-trien-vong-tich-cuc-trong-6-thang-da-10959.jpg",
       "recommendation": null,
-      "targetPrice": null,
-      "created_at": "2026-09-26 00:11:59"
+      "targetPrice": null
     },
     {
       "id": "10927",
@@ -5533,8 +5415,7 @@
       "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/sector/bao-cao-nganh-bat-dong-san-khu-cong-nghiep-nguon-cung-han-che-trien-vong-tich-cuc-trong-6-thang-da-10927.pdf",
       "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/sector/bao-cao-nganh-bat-dong-san-khu-cong-nghiep-nguon-cung-han-che-trien-vong-tich-cuc-trong-6-thang-da-10927.jpg",
       "recommendation": null,
-      "targetPrice": null,
-      "created_at": "2026-09-26 00:11:59"
+      "targetPrice": null
     },
     {
       "id": "10922",
@@ -5551,8 +5432,7 @@
       "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/sector/bao-cao-nganh-det-may-nam-2023-nhieu-thach-thuc-10922.pdf",
       "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/sector/bao-cao-nganh-det-may-nam-2023-nhieu-thach-thuc-10922.jpg",
       "recommendation": null,
-      "targetPrice": null,
-      "created_at": "2026-09-26 00:11:59"
+      "targetPrice": null
     },
     {
       "id": "10942",
@@ -5569,8 +5449,7 @@
       "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/sector/bao-cao-nganh-thep-bien-loi-nhuan-co-the-cai-thien-nho-gia-ban-on-dinh-nhung-nhu-cau-van-con-rui-r-10942.pdf",
       "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/sector/bao-cao-nganh-thep-bien-loi-nhuan-co-the-cai-thien-nho-gia-ban-on-dinh-nhung-nhu-cau-van-con-rui-r-10942.jpg",
       "recommendation": null,
-      "targetPrice": null,
-      "created_at": "2026-09-26 00:11:59"
+      "targetPrice": null
     },
     {
       "id": "10941",
@@ -5587,8 +5466,7 @@
       "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/sector/bao-cao-nganh-xay-dung-dung-xay-dat-nuoc-10941.pdf",
       "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/sector/bao-cao-nganh-xay-dung-dung-xay-dat-nuoc-10941.jpg",
       "recommendation": null,
-      "targetPrice": null,
-      "created_at": "2026-09-26 00:11:59"
+      "targetPrice": null
     },
     {
       "id": "10913",
@@ -5605,8 +5483,7 @@
       "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/sector/bao-cao-nganh-thuy-san-loi-nhuan-nam-2023-giam-do-muc-nen-so-sanh-cao-10913.pdf",
       "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/sector/bao-cao-nganh-thuy-san-loi-nhuan-nam-2023-giam-do-muc-nen-so-sanh-cao-10913.jpg",
       "recommendation": null,
-      "targetPrice": null,
-      "created_at": "2026-09-26 00:11:59"
+      "targetPrice": null
     },
     {
       "id": "10936",
@@ -5623,8 +5500,7 @@
       "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/sector/bao-cao-nganh-cay-trong-2022-la-mot-nam-thuan-loi-10936.pdf",
       "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/sector/bao-cao-nganh-cay-trong-2022-la-mot-nam-thuan-loi-10936.jpg",
       "recommendation": null,
-      "targetPrice": null,
-      "created_at": "2026-09-26 00:11:59"
+      "targetPrice": null
     },
     {
       "id": "10911",
@@ -5641,8 +5517,7 @@
       "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/sector/bao-cao-nganh-ngan-hang-nam-2023-10911.pdf",
       "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/sector/bao-cao-nganh-ngan-hang-nam-2023-10911.jpg",
       "recommendation": null,
-      "targetPrice": null,
-      "created_at": "2026-09-26 00:11:59"
+      "targetPrice": null
     },
     {
       "id": "10904",
@@ -5659,8 +5534,7 @@
       "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/sector/bao-cao-nganh-ngan-hang-chung-toi-thay-co-trong-nguy-10904.pdf",
       "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/sector/bao-cao-nganh-ngan-hang-chung-toi-thay-co-trong-nguy-10904.jpg",
       "recommendation": null,
-      "targetPrice": null,
-      "created_at": "2026-09-26 00:11:59"
+      "targetPrice": null
     },
     {
       "id": "10862",
@@ -5677,8 +5551,7 @@
       "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/sector/bao-cao-nganh-chan-nuoi-va-khuyen-nghi-kha-quan-voi-dbc-10862.pdf",
       "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/sector/bao-cao-nganh-chan-nuoi-va-khuyen-nghi-kha-quan-voi-dbc-10862.jpg",
       "recommendation": null,
-      "targetPrice": null,
-      "created_at": "2026-09-26 00:11:59"
+      "targetPrice": null
     },
     {
       "id": "10834",
@@ -5695,8 +5568,7 @@
       "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/sector/bao-cao-nganh-dau-khi-su-lua-chon-van-con-hap-dan-trong-thi-truong-nhieu-dong-10834.pdf",
       "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/sector/bao-cao-nganh-dau-khi-su-lua-chon-van-con-hap-dan-trong-thi-truong-nhieu-dong-10834.jpg",
       "recommendation": null,
-      "targetPrice": null,
-      "created_at": "2026-09-26 00:11:59"
+      "targetPrice": null
     },
     {
       "id": "10827",
@@ -5713,8 +5585,7 @@
       "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/sector/bao-cao-nganh-tieu-dung-khi-hau-bao-that-chat-10827.pdf",
       "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/sector/bao-cao-nganh-tieu-dung-khi-hau-bao-that-chat-10827.jpg",
       "recommendation": null,
-      "targetPrice": null,
-      "created_at": "2026-09-26 00:11:59"
+      "targetPrice": null
     },
     {
       "id": "10819",
@@ -5731,8 +5602,7 @@
       "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/sector/bao-cao-nganh-xuat-khau-xu-huong-giam-toc-10819.pdf",
       "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/sector/bao-cao-nganh-xuat-khau-xu-huong-giam-toc-10819.jpg",
       "recommendation": null,
-      "targetPrice": null,
-      "created_at": "2026-09-26 00:11:59"
+      "targetPrice": null
     },
     {
       "id": "10802",
@@ -5749,8 +5619,7 @@
       "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/sector/bao-cao-nganh-dien-san-sang-cho-tang-truong-xanh-10802.pdf",
       "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/sector/bao-cao-nganh-dien-san-sang-cho-tang-truong-xanh-10802.jpg",
       "recommendation": null,
-      "targetPrice": null,
-      "created_at": "2026-09-26 00:11:59"
+      "targetPrice": null
     },
     {
       "id": "10772",
@@ -5767,8 +5636,7 @@
       "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/sector/bao-cao-nganh-xay-dung-vat-lieu-xay-dung-tim-kiem-su-phuc-hoi-trong-thoi-diem-kho-khan-10772.pdf",
       "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/sector/bao-cao-nganh-xay-dung-vat-lieu-xay-dung-tim-kiem-su-phuc-hoi-trong-thoi-diem-kho-khan-10772.jpg",
       "recommendation": null,
-      "targetPrice": null,
-      "created_at": "2026-09-26 00:11:59"
+      "targetPrice": null
     },
     {
       "id": "10759",
@@ -5785,8 +5653,7 @@
       "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/sector/bao-cao-nganh-dien-chu-trong-den-co-tuc-hon-muc-do-tang-truong-10759.pdf",
       "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/sector/bao-cao-nganh-dien-chu-trong-den-co-tuc-hon-muc-do-tang-truong-10759.jpg",
       "recommendation": null,
-      "targetPrice": null,
-      "created_at": "2026-09-26 00:11:59"
+      "targetPrice": null
     },
     {
       "id": "10753",
@@ -5803,8 +5670,7 @@
       "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/sector/bao-cao-nganh-ngan-hang-cap-nhat-ket-qua-9t2022-va-trien-vong-10753.pdf",
       "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/sector/bao-cao-nganh-ngan-hang-cap-nhat-ket-qua-9t2022-va-trien-vong-10753.jpg",
       "recommendation": null,
-      "targetPrice": null,
-      "created_at": "2026-09-26 00:11:59"
+      "targetPrice": null
     },
     {
       "id": "10730",
@@ -5821,8 +5687,7 @@
       "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/sector/bao-cao-nganh-det-may-kho-khan-ngay-cang-ro-net-trong-nhung-thang-cuoi-nam-10730.pdf",
       "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/sector/bao-cao-nganh-det-may-kho-khan-ngay-cang-ro-net-trong-nhung-thang-cuoi-nam-10730.jpg",
       "recommendation": null,
-      "targetPrice": null,
-      "created_at": "2026-09-26 00:11:59"
+      "targetPrice": null
     },
     {
       "id": "10680",
@@ -5839,8 +5704,7 @@
       "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/sector/bao-cao-nganh-dien-nhiet-dien-se-but-pha-trong-2023-10680.pdf",
       "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/sector/bao-cao-nganh-dien-nhiet-dien-se-but-pha-trong-2023-10680.jpg",
       "recommendation": null,
-      "targetPrice": null,
-      "created_at": "2026-09-26 00:11:59"
+      "targetPrice": null
     },
     {
       "id": "10686",
@@ -5857,8 +5721,7 @@
       "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/sector/bao-cao-nganh-ban-le-mua-le-hoi-toi-gan-10686.pdf",
       "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/sector/bao-cao-nganh-ban-le-mua-le-hoi-toi-gan-10686.jpg",
       "recommendation": null,
-      "targetPrice": null,
-      "created_at": "2026-09-26 00:11:59"
+      "targetPrice": null
     },
     {
       "id": "10682",
@@ -5875,8 +5738,7 @@
       "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/sector/bao-cao-nganh-fb-ky-vong-bien-loi-nhuan-gop-mo-rong-trong-4q22f-10682.pdf",
       "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/sector/bao-cao-nganh-fb-ky-vong-bien-loi-nhuan-gop-mo-rong-trong-4q22f-10682.jpg",
       "recommendation": null,
-      "targetPrice": null,
-      "created_at": "2026-09-26 00:11:59"
+      "targetPrice": null
     },
     {
       "id": "10671",
@@ -5893,8 +5755,7 @@
       "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/sector/bao-cao-nganh-thuy-san-xu-huong-tang-chung-lai-trong-3q22-10671.pdf",
       "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/sector/bao-cao-nganh-thuy-san-xu-huong-tang-chung-lai-trong-3q22-10671.jpg",
       "recommendation": null,
-      "targetPrice": null,
-      "created_at": "2026-09-26 00:11:59"
+      "targetPrice": null
     },
     {
       "id": "10652",
@@ -5911,8 +5772,7 @@
       "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/sector/bao-cao-nganh-det-may-xuat-khau-gap-kho-do-nhu-cau-the-gioi-suy-giam-10652.pdf",
       "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/sector/bao-cao-nganh-det-may-xuat-khau-gap-kho-do-nhu-cau-the-gioi-suy-giam-10652.jpg",
       "recommendation": null,
-      "targetPrice": null,
-      "created_at": "2026-09-26 00:11:59"
+      "targetPrice": null
     },
     {
       "id": "10647",
@@ -5929,8 +5789,7 @@
       "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/sector/bao-cao-nganh-thep-ket-qua-thap-hon-ky-vong-10647.pdf",
       "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/sector/bao-cao-nganh-thep-ket-qua-thap-hon-ky-vong-10647.jpg",
       "recommendation": null,
-      "targetPrice": null,
-      "created_at": "2026-09-26 00:11:59"
+      "targetPrice": null
     },
     {
       "id": "10646",
@@ -5947,8 +5806,7 @@
       "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/sector/bao-cao-nganh-phan-bon-san-luong-xuat-khau-van-con-nhieu-hua-hen-10646.pdf",
       "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/sector/bao-cao-nganh-phan-bon-san-luong-xuat-khau-van-con-nhieu-hua-hen-10646.jpg",
       "recommendation": null,
-      "targetPrice": null,
-      "created_at": "2026-09-26 00:11:59"
+      "targetPrice": null
     },
     {
       "id": "10608",
@@ -5965,8 +5823,7 @@
       "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/sector/bao-cao-nganh-duoc-chien-truong-eu-gmp-ngay-cang-khoc-liet-hon-10608.pdf",
       "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/sector/bao-cao-nganh-duoc-chien-truong-eu-gmp-ngay-cang-khoc-liet-hon-10608.jpg",
       "recommendation": null,
-      "targetPrice": null,
-      "created_at": "2026-09-26 00:11:59"
+      "targetPrice": null
     },
     {
       "id": "10607",
@@ -5983,8 +5840,7 @@
       "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/sector/bao-cao-nganh-phan-bon-co-hoi-cuoi-cung-10607.pdf",
       "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/sector/bao-cao-nganh-phan-bon-co-hoi-cuoi-cung-10607.jpg",
       "recommendation": null,
-      "targetPrice": null,
-      "created_at": "2026-09-26 00:11:59"
+      "targetPrice": null
     },
     {
       "id": "10596",
@@ -6001,8 +5857,7 @@
       "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/sector/bao-cao-nganh-ngan-hang-quy-32022-10596.pdf",
       "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/sector/bao-cao-nganh-ngan-hang-quy-32022-10596.jpg",
       "recommendation": null,
-      "targetPrice": null,
-      "created_at": "2026-09-26 00:11:59"
+      "targetPrice": null
     },
     {
       "id": "10592",
@@ -6019,8 +5874,7 @@
       "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/sector/bao-cao-nganh-thep-quy-32022-giai-doan-kho-khan-nhat-trong-10-nam-10592.pdf",
       "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/sector/bao-cao-nganh-thep-quy-32022-giai-doan-kho-khan-nhat-trong-10-nam-10592.jpg",
       "recommendation": null,
-      "targetPrice": null,
-      "created_at": "2026-09-26 00:11:59"
+      "targetPrice": null
     },
     {
       "id": "10566",
@@ -6037,8 +5891,7 @@
       "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/sector/bao-cao-nganh-ngan-hang-ket-qua-quy-3-tich-cuc-dinh-gia-hap-dan-10566.pdf",
       "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/sector/bao-cao-nganh-ngan-hang-ket-qua-quy-3-tich-cuc-dinh-gia-hap-dan-10566.jpg",
       "recommendation": null,
-      "targetPrice": null,
-      "created_at": "2026-09-26 00:11:59"
+      "targetPrice": null
     },
     {
       "id": "10574",
@@ -6055,8 +5908,7 @@
       "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/sector/bao-cao-nganh-hoa-chat-dinh-gia-re-trong-boi-canh-kinh-doanh-thuan-loi-10574.pdf",
       "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/sector/bao-cao-nganh-hoa-chat-dinh-gia-re-trong-boi-canh-kinh-doanh-thuan-loi-10574.jpg",
       "recommendation": null,
-      "targetPrice": null,
-      "created_at": "2026-09-26 00:11:59"
+      "targetPrice": null
     },
     {
       "id": "10569",
@@ -6073,8 +5925,7 @@
       "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/sector/bao-cao-nganh-bao-hiem-thang-102022-10569.pdf",
       "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/sector/bao-cao-nganh-bao-hiem-thang-102022-10569.jpg",
       "recommendation": null,
-      "targetPrice": null,
-      "created_at": "2026-09-26 00:11:59"
+      "targetPrice": null
     },
     {
       "id": "10568",
@@ -6091,8 +5942,7 @@
       "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/sector/bao-cao-nganh-dien-trien-vong-nganh-dien-viet-nam-quy-32022-10568.pdf",
       "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/sector/bao-cao-nganh-dien-trien-vong-nganh-dien-viet-nam-quy-32022-10568.jpg",
       "recommendation": null,
-      "targetPrice": null,
-      "created_at": "2026-09-26 00:11:59"
+      "targetPrice": null
     },
     {
       "id": "10544",
@@ -6109,8 +5959,7 @@
       "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/sector/bao-cao-nganh-hang-khong-chao-don-du-khach-quoc-te-10544.pdf",
       "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/sector/bao-cao-nganh-hang-khong-chao-don-du-khach-quoc-te-10544.jpg",
       "recommendation": null,
-      "targetPrice": null,
-      "created_at": "2026-09-26 00:11:59"
+      "targetPrice": null
     },
     {
       "id": "10513",
@@ -6127,8 +5976,7 @@
       "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/sector/bao-cao-nganh-gao-tan-dung-thoi-co-10513.pdf",
       "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/sector/bao-cao-nganh-gao-tan-dung-thoi-co-10513.jpg",
       "recommendation": null,
-      "targetPrice": null,
-      "created_at": "2026-09-26 00:11:59"
+      "targetPrice": null
     },
     {
       "id": "10494",
@@ -6145,8 +5993,7 @@
       "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/sector/bao-cao-nganh-thep-cap-nhat-hoat-dong-san-xuat-thep-thang-9-10494.pdf",
       "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/sector/bao-cao-nganh-thep-cap-nhat-hoat-dong-san-xuat-thep-thang-9-10494.jpg",
       "recommendation": null,
-      "targetPrice": null,
-      "created_at": "2026-09-26 00:11:59"
+      "targetPrice": null
     },
     {
       "id": "10470",
@@ -6163,8 +6010,7 @@
       "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/sector/bao-cao-nganh-ngan-hang-so-sanh-tuong-quan-kha-nang-dap-ung-rui-ro-thanh-khoan-giua-cac-ngan-hang-n-10470.pdf",
       "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/sector/bao-cao-nganh-ngan-hang-so-sanh-tuong-quan-kha-nang-dap-ung-rui-ro-thanh-khoan-giua-cac-ngan-hang-n-10470.jpg",
       "recommendation": null,
-      "targetPrice": null,
-      "created_at": "2026-09-26 00:11:59"
+      "targetPrice": null
     },
     {
       "id": "10446",
@@ -6181,8 +6027,7 @@
       "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/sector/bao-cao-nganh-dau-khi-opec-cat-giam-manh-san-luong-dau-10446.pdf",
       "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/sector/bao-cao-nganh-dau-khi-opec-cat-giam-manh-san-luong-dau-10446.jpg",
       "recommendation": null,
-      "targetPrice": null,
-      "created_at": "2026-09-26 00:11:59"
+      "targetPrice": null
     },
     {
       "id": "10439",
@@ -6199,8 +6044,7 @@
       "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/sector/bao-cao-nganh-ngan-hang-mot-so-ngan-hang-duoc-dieu-chinh-han-muc-tin-dung-10439.pdf",
       "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/sector/bao-cao-nganh-ngan-hang-mot-so-ngan-hang-duoc-dieu-chinh-han-muc-tin-dung-10439.jpg",
       "recommendation": null,
-      "targetPrice": null,
-      "created_at": "2026-09-26 00:11:59"
+      "targetPrice": null
     },
     {
       "id": "10437",
@@ -6217,8 +6061,7 @@
       "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/sector/bao-cao-nganh-nong-nghiep-cuoc-dua-3f-ngay-cang-gay-can-10437.pdf",
       "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/sector/bao-cao-nganh-nong-nghiep-cuoc-dua-3f-ngay-cang-gay-can-10437.jpg",
       "recommendation": null,
-      "targetPrice": null,
-      "created_at": "2026-09-26 00:11:59"
+      "targetPrice": null
     },
     {
       "id": "10427",
@@ -6235,8 +6078,7 @@
       "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/sector/bao-cao-nganh-cay-trong-10427.pdf",
       "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/sector/bao-cao-nganh-cay-trong-10427.jpg",
       "recommendation": null,
-      "targetPrice": null,
-      "created_at": "2026-09-26 00:11:59"
+      "targetPrice": null
     },
     {
       "id": "10438",
@@ -6253,8 +6095,7 @@
       "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/sector/bao-cao-nganh-cang-va-van-tai-bien-doi-mat-voi-thach-thuc-do-nhu-cau-toan-cau-giam-nhanh-hon-du-kie-10438.pdf",
       "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/sector/bao-cao-nganh-cang-va-van-tai-bien-doi-mat-voi-thach-thuc-do-nhu-cau-toan-cau-giam-nhanh-hon-du-kie-10438.jpg",
       "recommendation": null,
-      "targetPrice": null,
-      "created_at": "2026-09-26 00:11:59"
+      "targetPrice": null
     },
     {
       "id": "10425",
@@ -6271,8 +6112,7 @@
       "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/sector/bao-cao-nganh-nang-luong-10425.pdf",
       "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/sector/bao-cao-nganh-nang-luong-10425.jpg",
       "recommendation": null,
-      "targetPrice": null,
-      "created_at": "2026-09-26 00:11:59"
+      "targetPrice": null
     },
     {
       "id": "10423",
@@ -6289,8 +6129,7 @@
       "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/sector/bao-cao-nganh-det-may-kho-khan-bua-vay-nganh-det-may-cho-den-nua-dau-nam-2023-10423.pdf",
       "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/sector/bao-cao-nganh-det-may-kho-khan-bua-vay-nganh-det-may-cho-den-nua-dau-nam-2023-10423.jpg",
       "recommendation": null,
-      "targetPrice": null,
-      "created_at": "2026-09-26 00:11:59"
+      "targetPrice": null
     },
     {
       "id": "10388",
@@ -6307,8 +6146,7 @@
       "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/sector/bao-cao-nganh-san-xuat-gao-trien-vong-nganh-gao-theo-da-tang-gia-10388.pdf",
       "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/sector/bao-cao-nganh-san-xuat-gao-trien-vong-nganh-gao-theo-da-tang-gia-10388.jpg",
       "recommendation": null,
-      "targetPrice": null,
-      "created_at": "2026-09-26 00:11:59"
+      "targetPrice": null
     },
     {
       "id": "10385",
@@ -6325,8 +6163,7 @@
       "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/sector/bao-cao-nganh-thep-cap-nhat-hoat-dong-san-xuat-thep-thang-8-10385.pdf",
       "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/sector/bao-cao-nganh-thep-cap-nhat-hoat-dong-san-xuat-thep-thang-8-10385.jpg",
       "recommendation": null,
-      "targetPrice": null,
-      "created_at": "2026-09-26 00:11:59"
+      "targetPrice": null
     },
     {
       "id": "10379",
@@ -6343,8 +6180,7 @@
       "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/sector/bao-cao-nganh-phan-bon-ky-vong-gia-tang-bien-lng-nho-gia-gas-dau-vao-giam-10379.pdf",
       "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/sector/bao-cao-nganh-phan-bon-ky-vong-gia-tang-bien-lng-nho-gia-gas-dau-vao-giam-10379.jpg",
       "recommendation": null,
-      "targetPrice": null,
-      "created_at": "2026-09-26 00:11:59"
+      "targetPrice": null
     },
     {
       "id": "10381",
@@ -6361,8 +6197,7 @@
       "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/sector/bao-cao-nganh-dien-nhiet-dien-se-toa-sang-dau-nam-2023-10381.pdf",
       "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/sector/bao-cao-nganh-dien-nhiet-dien-se-toa-sang-dau-nam-2023-10381.jpg",
       "recommendation": null,
-      "targetPrice": null,
-      "created_at": "2026-09-26 00:11:59"
+      "targetPrice": null
     },
     {
       "id": "10374",
@@ -6379,8 +6214,7 @@
       "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/sector/bao-cao-nganh-det-may-mang-may-mac-tich-cuc-10374.pdf",
       "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/sector/bao-cao-nganh-det-may-mang-may-mac-tich-cuc-10374.jpg",
       "recommendation": null,
-      "targetPrice": null,
-      "created_at": "2026-09-26 00:11:59"
+      "targetPrice": null
     },
     {
       "id": "10371",
@@ -6397,8 +6231,7 @@
       "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/sector/bao-cao-nganh-thuy-san-cap-nhat-xuat-khau-thuy-san-thang-8-10371.pdf",
       "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/sector/bao-cao-nganh-thuy-san-cap-nhat-xuat-khau-thuy-san-thang-8-10371.jpg",
       "recommendation": null,
-      "targetPrice": null,
-      "created_at": "2026-09-26 00:11:59"
+      "targetPrice": null
     },
     {
       "id": "10378",
@@ -6415,8 +6248,7 @@
       "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/sector/bao-cao-nganh-thep-det-qua-vung-nuoc-xoay-10378.pdf",
       "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/sector/bao-cao-nganh-thep-det-qua-vung-nuoc-xoay-10378.jpg",
       "recommendation": null,
-      "targetPrice": null,
-      "created_at": "2026-09-26 00:11:59"
+      "targetPrice": null
     },
     {
       "id": "10357",
@@ -6433,8 +6265,7 @@
       "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/sector/bao-cao-nganh-det-may-cap-nhat-tinh-hinh-xuat-khau-thang-8-10357.pdf",
       "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/sector/bao-cao-nganh-det-may-cap-nhat-tinh-hinh-xuat-khau-thang-8-10357.jpg",
       "recommendation": null,
-      "targetPrice": null,
-      "created_at": "2026-09-26 00:11:59"
+      "targetPrice": null
     },
     {
       "id": "10349",
@@ -6451,8 +6282,7 @@
       "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/sector/bao-cao-nganh-ngan-hang-h2-2022-10349.pdf",
       "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/sector/bao-cao-nganh-ngan-hang-h2-2022-10349.jpg",
       "recommendation": null,
-      "targetPrice": null,
-      "created_at": "2026-09-26 00:11:59"
+      "targetPrice": null
     },
     {
       "id": "10356",
@@ -6469,8 +6299,7 @@
       "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/sector/bao-cao-nganh-ban-le-diem-sang-tu-san-pham-cong-nghe-trong-quy-32022-10356.pdf",
       "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/sector/bao-cao-nganh-ban-le-diem-sang-tu-san-pham-cong-nghe-trong-quy-32022-10356.jpg",
       "recommendation": null,
-      "targetPrice": null,
-      "created_at": "2026-09-26 00:11:59"
+      "targetPrice": null
     },
     {
       "id": "10317",
@@ -6487,8 +6316,7 @@
       "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/sector/bao-cao-nganh-bat-dong-san-nha-o-van-con-do-nhung-kho-khan-10317.pdf",
       "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/sector/bao-cao-nganh-bat-dong-san-nha-o-van-con-do-nhung-kho-khan-10317.jpg",
       "recommendation": null,
-      "targetPrice": null,
-      "created_at": "2026-09-26 00:11:59"
+      "targetPrice": null
     },
     {
       "id": "10306",
@@ -6505,8 +6333,7 @@
       "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/sector/bao-cao-nganh-ngan-hang-cap-nhat-q22022-trung-lap-10306.pdf",
       "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/sector/bao-cao-nganh-ngan-hang-cap-nhat-q22022-trung-lap-10306.jpg",
       "recommendation": null,
-      "targetPrice": null,
-      "created_at": "2026-09-26 00:11:59"
+      "targetPrice": null
     },
     {
       "id": "10294",
@@ -6523,8 +6350,7 @@
       "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/sector/bao-cao-nganh-chung-khoan-dau-soi-lua-bong-10294.pdf",
       "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/sector/bao-cao-nganh-chung-khoan-dau-soi-lua-bong-10294.jpg",
       "recommendation": null,
-      "targetPrice": null,
-      "created_at": "2026-09-26 00:11:59"
+      "targetPrice": null
     },
     {
       "id": "10290",
@@ -6541,8 +6367,7 @@
       "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/sector/bao-cao-nganh-thep-10290.pdf",
       "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/sector/bao-cao-nganh-thep-10290.jpg",
       "recommendation": null,
-      "targetPrice": null,
-      "created_at": "2026-09-26 00:11:59"
+      "targetPrice": null
     },
     {
       "id": "10275",
@@ -6559,8 +6384,7 @@
       "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/sector/bao-cao-nganh-cang-bien-duy-tri-on-dinh-10275.pdf",
       "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/sector/bao-cao-nganh-cang-bien-duy-tri-on-dinh-10275.jpg",
       "recommendation": null,
-      "targetPrice": null,
-      "created_at": "2026-09-26 00:11:59"
+      "targetPrice": null
     },
     {
       "id": "10268",
@@ -6577,8 +6401,7 @@
       "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/sector/bao-cao-nganh-ngan-hang-cap-nhat-ket-qua-6t2022-va-trien-vong-10268.pdf",
       "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/sector/bao-cao-nganh-ngan-hang-cap-nhat-ket-qua-6t2022-va-trien-vong-10268.jpg",
       "recommendation": null,
-      "targetPrice": null,
-      "created_at": "2026-09-26 00:11:59"
+      "targetPrice": null
     },
     {
       "id": "10265",
@@ -6595,8 +6418,7 @@
       "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/sector/bao-cao-nganh-det-may-10265.pdf",
       "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/sector/bao-cao-nganh-det-may-10265.jpg",
       "recommendation": null,
-      "targetPrice": null,
-      "created_at": "2026-09-26 00:11:59"
+      "targetPrice": null
     },
     {
       "id": "10271",
@@ -6613,8 +6435,7 @@
       "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/sector/bao-cao-nganh-dien-quy-3-hua-hen-mua-boi-thu-cho-thuy-dien-10271.pdf",
       "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/sector/bao-cao-nganh-dien-quy-3-hua-hen-mua-boi-thu-cho-thuy-dien-10271.jpg",
       "recommendation": null,
-      "targetPrice": null,
-      "created_at": "2026-09-26 00:11:59"
+      "targetPrice": null
     },
     {
       "id": "10299",
@@ -6631,8 +6452,7 @@
       "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/sector/bao-cao-nganh-thuy-san-xu-huong-tang-truong-manh-me-10299.pdf",
       "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/sector/bao-cao-nganh-thuy-san-xu-huong-tang-truong-manh-me-10299.jpg",
       "recommendation": null,
-      "targetPrice": null,
-      "created_at": "2026-09-26 00:11:59"
+      "targetPrice": null
     },
     {
       "id": "10182",
@@ -6649,8 +6469,7 @@
       "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/sector/bao-cao-nganh-san-xuat-va-che-bien-thit-10182.pdf",
       "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/sector/bao-cao-nganh-san-xuat-va-che-bien-thit-10182.jpg",
       "recommendation": null,
-      "targetPrice": null,
-      "created_at": "2026-09-26 00:11:59"
+      "targetPrice": null
     },
     {
       "id": "10202",
@@ -6667,8 +6486,7 @@
       "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/sector/bao-cao-nganh-hang-khong-10202.pdf",
       "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/sector/bao-cao-nganh-hang-khong-10202.jpg",
       "recommendation": null,
-      "targetPrice": null,
-      "created_at": "2026-09-26 00:11:59"
+      "targetPrice": null
     },
     {
       "id": "10145",
@@ -6685,8 +6503,7 @@
       "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/sector/bao-cao-nganh-ngan-hang-10145.pdf",
       "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/sector/bao-cao-nganh-ngan-hang-10145.jpg",
       "recommendation": null,
-      "targetPrice": null,
-      "created_at": "2026-09-26 00:11:59"
+      "targetPrice": null
     },
     {
       "id": "10117",
@@ -6703,8 +6520,7 @@
       "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/sector/bao-cao-nganh-ban-le-10117.pdf",
       "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/sector/bao-cao-nganh-ban-le-10117.jpg",
       "recommendation": null,
-      "targetPrice": null,
-      "created_at": "2026-09-26 00:11:59"
+      "targetPrice": null
     },
     {
       "id": "10111",
@@ -6721,8 +6537,7 @@
       "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/sector/bao-cao-nganh-bao-hiem-luat-kinh-doanh-bao-hiem-2022-10111.pdf",
       "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/sector/bao-cao-nganh-bao-hiem-luat-kinh-doanh-bao-hiem-2022-10111.jpg",
       "recommendation": null,
-      "targetPrice": null,
-      "created_at": "2026-09-26 00:11:59"
+      "targetPrice": null
     },
     {
       "id": "10114",
@@ -6739,8 +6554,7 @@
       "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/sector/bao-cao-nganh-y-te-trien-vong-nganh-cham-soc-suc-khoe-nua-cuoi-nam-2022-va-nam-2023-10114.pdf",
       "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/sector/bao-cao-nganh-y-te-trien-vong-nganh-cham-soc-suc-khoe-nua-cuoi-nam-2022-va-nam-2023-10114.jpg",
       "recommendation": null,
-      "targetPrice": null,
-      "created_at": "2026-09-26 00:11:59"
+      "targetPrice": null
     },
     {
       "id": "10046",
@@ -6757,8 +6571,7 @@
       "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/sector/bao-cao-nganh-dau-khi-nhu-cau-phuc-hoi-va-gia-dau-van-duy-tri-o-muc-cao-10046.pdf",
       "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/sector/bao-cao-nganh-dau-khi-nhu-cau-phuc-hoi-va-gia-dau-van-duy-tri-o-muc-cao-10046.jpg",
       "recommendation": null,
-      "targetPrice": null,
-      "created_at": "2026-09-26 00:11:59"
+      "targetPrice": null
     },
     {
       "id": "10045",
@@ -6775,8 +6588,7 @@
       "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/sector/bao-cao-nganh-ngan-hang-ky-vong-tin-dung-tiep-tuc-tang-truong-nho-phuc-hoi-kinh-te-goi-ho-tro-lai-10045.pdf",
       "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/sector/bao-cao-nganh-ngan-hang-ky-vong-tin-dung-tiep-tuc-tang-truong-nho-phuc-hoi-kinh-te-goi-ho-tro-lai-10045.jpg",
       "recommendation": null,
-      "targetPrice": null,
-      "created_at": "2026-09-26 00:11:59"
+      "targetPrice": null
     },
     {
       "id": "10040",
@@ -6793,8 +6605,7 @@
       "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/sector/bao-cao-nganh-xay-dung-ky-vong-tien-do-dau-tu-cong-tang-toc-trong-nua-cuoi-2022-10040.pdf",
       "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/sector/bao-cao-nganh-xay-dung-ky-vong-tien-do-dau-tu-cong-tang-toc-trong-nua-cuoi-2022-10040.jpg",
       "recommendation": null,
-      "targetPrice": null,
-      "created_at": "2026-09-26 00:11:59"
+      "targetPrice": null
     },
     {
       "id": "9905",
@@ -6811,8 +6622,7 @@
       "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/sector/bao-cao-nganh-trien-vong-nganh-thep-va-ton-ma-2022-9905.pdf",
       "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/sector/bao-cao-nganh-trien-vong-nganh-thep-va-ton-ma-2022-9905.jpg",
       "recommendation": null,
-      "targetPrice": null,
-      "created_at": "2026-09-26 00:11:59"
+      "targetPrice": null
     },
     {
       "id": "8477",
@@ -6829,8 +6639,7 @@
       "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/sector/bao-cao-nganh-dien-trien-vong-tich-cuc-trong-dai-han-mac-du-con-nhieu-diem-nghen-trong-2021-8477.pdf",
       "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/sector/bao-cao-nganh-dien-trien-vong-tich-cuc-trong-dai-han-mac-du-con-nhieu-diem-nghen-trong-2021-8477.jpg",
       "recommendation": null,
-      "targetPrice": null,
-      "created_at": "2026-09-26 00:11:59"
+      "targetPrice": null
     }
   ]
 }

@@ -1133,35 +1133,5 @@
         ]
       }
     ]
-  },
-  "kpis": {
-    "total_projects": 71,
-    "total_capital_vnd": 3883505403104111.0,
-    "total_capital_billion_vnd": 3883505.4,
-    "status_breakdown": {
-      "preparing": {
-        "count": 44,
-        "capital_vnd": 3255198403104111.0,
-        "capital_billion_vnd": 3255198.4
-      },
-      "construction": {
-        "count": 11,
-        "capital_vnd": 433890000000000.0,
-        "capital_billion_vnd": 433890.0
-      },
-      "completed": {
-        "count": 16,
-        "capital_vnd": 194417000000000.0,
-        "capital_billion_vnd": 194417.0
-      }
-    },
-    "packages_kpi": {
-      "total_count": 80,
-      "total_price_vnd": 327413859261511.0,
-      "total_price_billion_vnd": 327413.9,
-      "awarded_price_billion_vnd": 193530.9
-    },
-    "ncr_ratio": 18.98,
-    "current_quarter": "2026-Q3"
   }
 }
