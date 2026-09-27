@@ -430,44 +430,25 @@ export function StockDetailView({
     }
   }, [initialTab])
 
-  // Tự động nạp trước các tab còn lại vào nền khi rảnh rỗi (Idle Pre-mount)
-  // Nhờ đó khi người dùng bấm vào tab nào thì tab đó ĐÃ CÓ SẴN trong DOM -> Hiển thị tức thì 0ms, siêu mượt!
-  useEffect(() => {
-    const tabsToPreload: StockDetailTab[] = [
-      'charts',
-      'articles',
-      'community',
-      'peers',
-      'reports',
-      'agm',
-      'financials',
-      'bctc',
-    ].filter((t) => t !== (initialTab || 'overview')) as StockDetailTab[]
+  const prefetchTab = useCallback((tabId: StockDetailTab) => {
+    setMountedTabs((prev) => {
+      if (prev.has(tabId)) return prev
+      return new Set(prev).add(tabId)
+    })
+  }, [])
 
-    let step = 0
-    const interval = setInterval(() => {
-      if (step >= tabsToPreload.length) {
-        clearInterval(interval)
-        return
+  // Nhẹ nhàng nạp trước tab biểu đồ tài chính sau 2.5s khi người dùng đã xem xong tổng quan
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      if (typeof window !== 'undefined' && 'requestIdleCallback' in window) {
+        window.requestIdleCallback(() => {
+          setMountedTabs((prev) => new Set(prev).add('charts'))
+        })
+      } else {
+        setMountedTabs((prev) => new Set(prev).add('charts'))
       }
-      const nextTab = tabsToPreload[step]
-      setMountedTabs((prev) => {
-        if (prev.has(nextTab)) return prev
-        const updated = new Set(prev)
-        updated.add(nextTab)
-        return updated
-      })
-      step++
-    }, 200)
-
-    return () => clearInterval(interval)
-  }, [initialTab])
-
-  // Dọn dẹp timer khi unmount
-  useEffect(() => {
-    return () => {
-      if (switchTimerRef.current) clearTimeout(switchTimerRef.current)
-    }
+    }, 2500)
+    return () => clearTimeout(timer)
   }, [])
 
   const handleTabChange = (tabId: StockDetailTab) => {
@@ -485,26 +466,12 @@ export function StockDetailView({
       window.history.replaceState({}, '', url.toString())
     }
 
-    if (switchTimerRef.current) {
-      clearTimeout(switchTimerRef.current)
-      switchTimerRef.current = null
-    }
-
-    // 2. Nếu tab này đã mount: Chuyển hiển thị ngay tức thì 0ms (siêu mượt)
-    if (mountedTabs.has(tabId)) {
-      setLoadingTab(null)
-      return
-    }
-
-    // 3. Nếu tab này chưa kịp mount trong nền:
-    // Bật loading để tab đổi trước, sau đó nạp nội dung trang vào sau
-    setLoadingTab(tabId)
-    switchTimerRef.current = setTimeout(() => {
+    // 2. Kích hoạt mount tab bằng concurrent transition tức thì, không gây lag giao diện
+    if (!mountedTabs.has(tabId)) {
       startTransition(() => {
         setMountedTabs((prev) => new Set(prev).add(tabId))
-        setLoadingTab(null)
       })
-    }, 100)
+    }
   }
 
   const {
@@ -1096,6 +1063,8 @@ export function StockDetailView({
                 }}
                 type="button"
                 onClick={() => handleTabChange(tab.id)}
+                onMouseEnter={() => prefetchTab(tab.id)}
+                onTouchStart={() => prefetchTab(tab.id)}
                 className={cn(
                   'group relative flex items-center gap-1.5 sm:gap-2 rounded-xl px-2.5 py-2 sm:px-3.5 sm:py-2.5 text-xs sm:text-[13px] font-bold transition-all whitespace-nowrap cursor-pointer shrink-0 min-h-[38px] touch-manipulation active:scale-95',
                   isActive

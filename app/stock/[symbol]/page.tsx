@@ -123,7 +123,7 @@ export default async function StockDetailPage({
     Promise.resolve(getBctcReport(ticker, 'HopNhat')),
     Promise.resolve(getBctcReport(ticker, 'CongTyMe')),
     Promise.resolve(getAvailableBctcTickers()),
-    getStockArticlesAsync(ticker, manifestItem.n),
+    Promise.resolve(getStockArticles(ticker, manifestItem.n)),
     Promise.resolve(getCompanyWebsiteMeta(ticker)),
     Promise.resolve(getLocalStockCandles(ticker)),
   ])

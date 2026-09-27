@@ -1,6 +1,5 @@
 import manifestRaw from '@/data/longlive_manifest.json'
 import customStocksRaw from '@/data/custom_stocks_manifest.json'
-import ruatichsanStocksRaw from '@/data/ruatichsan_stocks_map.json'
 import indicesRaw from '@/data/longlive_indices.json'
 import coreCardsRaw from '@/data/company_core_cards.json'
 import exchangeMapRaw from '@/data/stock_exchanges.json'
@@ -194,14 +193,31 @@ export function getAllStocks(): StockManifestItem[] {
   return cachedAllStocks
 }
 
+let ruatichsanStocksMapCache: Record<string, { symbol: string; name: string; shortName?: string; exchange?: string }> | null = null
+
+function getRuatichsanStocksMap(): Record<string, { symbol: string; name: string; shortName?: string; exchange?: string }> | null {
+  if (typeof window !== 'undefined') return null
+  if (!ruatichsanStocksMapCache) {
+    try {
+      const fs = require('node:fs')
+      const path = require('node:path')
+      const p = path.join(process.cwd(), 'data', 'ruatichsan_stocks_map.json')
+      if (fs.existsSync(p)) {
+        ruatichsanStocksMapCache = JSON.parse(fs.readFileSync(p, 'utf-8'))
+      }
+    } catch {}
+  }
+  return ruatichsanStocksMapCache
+}
+
 export function getStockByTicker(ticker: string): StockManifestItem | undefined {
   const tNorm = ticker.toUpperCase().trim()
   const found = getAllStocks().find((s) => s.t.toUpperCase() === tNorm)
   if (found) return found
 
-  // Dự phòng: Tìm từ danh mục toàn bộ cổ phiếu TTCK Việt Nam (Ruatichsan fallback)
-  const ruaMap = (ruatichsanStocksRaw as Record<string, { symbol: string; name: string; shortName?: string; exchange?: string }>) || {}
-  const ruaItem = ruaMap[tNorm]
+  // Dự phòng: Tìm từ danh mục toàn bộ cổ phiếu TTCK Việt Nam (Ruatichsan fallback - chỉ chạy trên server)
+  const ruaMap = getRuatichsanStocksMap()
+  const ruaItem = ruaMap ? ruaMap[tNorm] : null
   if (ruaItem) {
     const fallbackItem: StockManifestItem = {
       t: ruaItem.symbol || tNorm,
