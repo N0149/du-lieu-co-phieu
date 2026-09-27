@@ -1,0 +1,27 @@
+{
+  "symbol": "DBC",
+  "score360": {
+    "total": 8.8,
+    "ratingText": "XUẤT SẮC",
+    "peVsMedian": -12.45478,
+    "pbVsMedian": -3.3753366544,
+    "psVsMedian": -5,
+    "peForward": 5.08,
+    "peForwardVsMedian": -15,
+    "pbForward": 0.99,
+    "pbForwardVsMedian": -10
+  },
+  "price": null,
+  "metrics": {
+    "marketCap": 6767430000000,
+    "pe": 5.77261,
+    "eps": 3915.0389675758,
+    "volume10d": 922469,
+    "pb": 1.0780829182,
+    "ps": null,
+    "bvps": null,
+    "sharesOut": 431046499,
+    "evEbitda": 5.68394,
+    "beta": 0.826563
+  }
+}
