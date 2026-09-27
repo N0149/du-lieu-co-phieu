@@ -220,6 +220,7 @@ export function getStockByTicker(ticker: string): StockManifestItem | undefined 
       w1: null,
       d: new Date().toISOString().split('T')[0],
       div: null,
+      dy: null,
     }
     return fallbackItem
   }

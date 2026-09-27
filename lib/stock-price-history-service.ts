@@ -31,7 +31,9 @@ export interface StockPriceHistoryPayload {
 const CACHE_DIR = path.join(process.cwd(), 'data', 'price_history')
 
 function formatDDMMYYYY(sec: number): string {
+  if (!sec || isNaN(sec)) return ''
   const d = new Date(sec * 1000)
+  if (isNaN(d.getTime())) return ''
   const day = String(d.getDate()).padStart(2, '0')
   const month = String(d.getMonth() + 1).padStart(2, '0')
   const year = d.getFullYear()
@@ -39,11 +41,55 @@ function formatDDMMYYYY(sec: number): string {
 }
 
 function formatYYYYMMDD(sec: number): string {
+  if (!sec || isNaN(sec)) return ''
   const d = new Date(sec * 1000)
+  if (isNaN(d.getTime())) return ''
   const year = d.getFullYear()
   const month = String(d.getMonth() + 1).padStart(2, '0')
   const day = String(d.getDate()).padStart(2, '0')
   return `${year}-${month}-${day}`
+}
+
+function parseDateToTimeAndStrings(pt: any): { timeStr: string; dateStr: string; timestamp: number } | null {
+  let timeStr = ''
+  let dateStr = ''
+  let timestamp = 0
+
+  if (pt.time && typeof pt.time === 'number' && !isNaN(pt.time)) {
+    timestamp = pt.time
+    timeStr = formatYYYYMMDD(pt.time)
+    dateStr = pt.date || formatDDMMYYYY(pt.time)
+  }
+
+  // Fallback to pt.date if timeStr is missing or invalid
+  if (!timeStr || timeStr.includes('NaN')) {
+    const rawDate = typeof pt.date === 'string' ? pt.date.trim() : ''
+    if (/^\d{4}-\d{2}-\d{2}$/.test(rawDate)) {
+      timeStr = rawDate
+      const [y, m, d] = rawDate.split('-')
+      dateStr = `${d}/${m}/${y}`
+      timestamp = Math.floor(new Date(`${rawDate}T00:00:00Z`).getTime() / 1000)
+    } else if (/^\d{2}\/\d{2}\/\d{4}$/.test(rawDate)) {
+      dateStr = rawDate
+      const [d, m, y] = rawDate.split('/')
+      timeStr = `${y}-${m}-${d}`
+      timestamp = Math.floor(new Date(`${y}-${m}-${d}T00:00:00Z`).getTime() / 1000)
+    }
+  }
+
+  if (!timeStr || timeStr.includes('NaN') || !/^\d{4}-\d{2}-\d{2}$/.test(timeStr)) {
+    return null
+  }
+
+  return { timeStr, dateStr, timestamp }
+}
+
+function normalizePriceUnit(val: number | undefined | null, fallback: number = 0): number {
+  if (val == null || isNaN(val)) return fallback
+  if (val < 500) {
+    return Math.round(val * 100) / 100
+  }
+  return Math.round((val / 1000) * 100) / 100
 }
 
 /**
@@ -57,18 +103,17 @@ export function getLocalPriceWeekly(ticker: string): { d: string; c: number; v: 
     const parsed = JSON.parse(raw)
     if (!parsed || !Array.isArray(parsed.points)) return []
 
-    return parsed.points.map((pt: any) => {
-      let d = pt.date || ''
-      if (d.includes('/')) {
-        const parts = d.split('/')
-        if (parts.length === 3) d = `${parts[2]}-${parts[1]}-${parts[0]}`
-      }
-      return {
-        d,
-        c: pt.close ? Math.round((pt.close / 1000) * 100) / 100 : 0,
-        v: pt.volume || 0,
-      }
-    })
+    return parsed.points
+      .map((pt: any) => {
+        const info = parseDateToTimeAndStrings(pt)
+        if (!info) return null
+        return {
+          d: info.timeStr,
+          c: normalizePriceUnit(pt.close, 0),
+          v: pt.volume || 0,
+        }
+      })
+      .filter(Boolean) as { d: string; c: number; v: number }[]
   } catch {
     return []
   }
@@ -86,17 +131,18 @@ export function getLocalStockCandles(symbol: string): CandleDataPoint[] {
     const parsed = JSON.parse(raw)
     if (!parsed || !Array.isArray(parsed.points) || parsed.points.length === 0) return []
 
-    const sortedPoints = [...parsed.points].sort((a: any, b: any) => a.time - b.time)
+    const sortedPoints = [...parsed.points].sort((a: any, b: any) => (a.time || 0) - (b.time || 0))
     const candleMap = new Map<string, CandleDataPoint>()
 
     for (const pt of sortedPoints) {
-      const timeStr = formatYYYYMMDD(pt.time)
-      if (!timeStr) continue
+      const info = parseDateToTimeAndStrings(pt)
+      if (!info) continue
 
-      const openVal = Math.round(((pt.open ?? pt.close) / 1000) * 100) / 100
-      const highVal = Math.round(((pt.high ?? pt.close) / 1000) * 100) / 100
-      const lowVal = Math.round(((pt.low ?? pt.close) / 1000) * 100) / 100
-      const closeVal = Math.round((pt.close / 1000) * 100) / 100
+      const { timeStr, dateStr, timestamp } = info
+      const closeVal = normalizePriceUnit(pt.close, 0)
+      const openVal = normalizePriceUnit(pt.open, closeVal)
+      const highVal = normalizePriceUnit(pt.high, Math.max(openVal, closeVal))
+      const lowVal = normalizePriceUnit(pt.low, Math.min(openVal, closeVal))
       const vol = pt.volume || 0
 
       if (candleMap.has(timeStr)) {
@@ -105,7 +151,7 @@ export function getLocalStockCandles(symbol: string): CandleDataPoint[] {
         existing.low = Math.min(existing.low, lowVal, closeVal)
         existing.close = closeVal
         existing.volume = (existing.volume || 0) + vol
-        existing.timestamp = pt.time
+        existing.timestamp = timestamp
       } else {
         candleMap.set(timeStr, {
           time: timeStr,
@@ -114,8 +160,8 @@ export function getLocalStockCandles(symbol: string): CandleDataPoint[] {
           low: Math.min(lowVal, openVal, closeVal),
           close: closeVal,
           volume: vol,
-          dateStr: pt.date || formatDDMMYYYY(pt.time),
-          timestamp: pt.time,
+          dateStr: dateStr || pt.date,
+          timestamp: timestamp,
         })
       }
     }
@@ -155,10 +201,38 @@ export async function getStockPriceHistory(
     try {
       const cached = JSON.parse(fs.readFileSync(cacheFile, 'utf-8'))
       if (cached && Array.isArray(cached.points) && cached.points.length > 0) {
-        cachedPayload = cached as StockPriceHistoryPayload
-        // Nếu cache đã có sẵn trường open (full OHLCV), dùng ngay
-        if (cached.points[0]?.open != null) {
-          return cachedPayload
+        const normalizedPoints: DailyPricePoint[] = []
+        for (const pt of cached.points) {
+          const info = parseDateToTimeAndStrings(pt)
+          if (!info) continue
+          const toVnd = (val: number | undefined | null, fallback: number = 0) => {
+            if (val == null || isNaN(val)) return fallback
+            return val < 500 ? Math.round(val * 1000) : Math.round(val)
+          }
+          const c = toVnd(pt.close, 0)
+          const o = toVnd(pt.open, c)
+          const h = toVnd(pt.high, Math.max(o, c))
+          const l = toVnd(pt.low, Math.min(o, c))
+          normalizedPoints.push({
+            time: info.timestamp,
+            date: info.dateStr,
+            open: o,
+            high: h,
+            low: l,
+            close: c,
+            volume: pt.volume || 0,
+          })
+        }
+        if (normalizedPoints.length > 0) {
+          cachedPayload = {
+            symbol: sym,
+            updatedAt: cached.updatedAt || new Date().toISOString(),
+            points: normalizedPoints,
+          }
+          // Nếu cache đã có sẵn trường open (full OHLCV), dùng ngay
+          if (cached.points[0]?.open != null) {
+            return cachedPayload
+          }
         }
       }
     } catch {}
@@ -319,18 +393,19 @@ export async function getStockCandles(
   if (!history || !Array.isArray(history.points) || history.points.length === 0) return []
 
   // Sắp xếp các điểm theo unix timestamp tăng dần
-  const sortedPoints = [...history.points].sort((a, b) => a.time - b.time)
+  const sortedPoints = [...history.points].sort((a, b) => (a.time || 0) - (b.time || 0))
 
   const candleMap = new Map<string, CandleDataPoint>()
 
   for (const pt of sortedPoints) {
-    const timeStr = formatYYYYMMDD(pt.time)
-    if (!timeStr) continue
+    const info = parseDateToTimeAndStrings(pt)
+    if (!info) continue
 
-    const openVal = Math.round(((pt.open ?? pt.close) / 1000) * 100) / 100
-    const highVal = Math.round(((pt.high ?? pt.close) / 1000) * 100) / 100
-    const lowVal = Math.round(((pt.low ?? pt.close) / 1000) * 100) / 100
-    const closeVal = Math.round((pt.close / 1000) * 100) / 100
+    const { timeStr, dateStr, timestamp } = info
+    const closeVal = normalizePriceUnit(pt.close, 0)
+    const openVal = normalizePriceUnit(pt.open, closeVal)
+    const highVal = normalizePriceUnit(pt.high, Math.max(openVal, closeVal))
+    const lowVal = normalizePriceUnit(pt.low, Math.min(openVal, closeVal))
     const vol = pt.volume || 0
 
     if (candleMap.has(timeStr)) {
@@ -340,7 +415,7 @@ export async function getStockCandles(
       existing.low = Math.min(existing.low, lowVal, closeVal)
       existing.close = closeVal
       existing.volume = (existing.volume || 0) + vol
-      existing.timestamp = pt.time
+      existing.timestamp = timestamp
     } else {
       candleMap.set(timeStr, {
         time: timeStr,
@@ -349,8 +424,8 @@ export async function getStockCandles(
         low: Math.min(lowVal, openVal, closeVal),
         close: closeVal,
         volume: vol,
-        dateStr: pt.date,
-        timestamp: pt.time,
+        dateStr: dateStr || pt.date,
+        timestamp: timestamp,
       })
     }
   }
