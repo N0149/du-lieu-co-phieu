@@ -49,8 +49,10 @@ const nextConfig = {
     '*': [
       'data/evaluation_cache/**',
       'data/shareholder_cache/**',
+      'data/notes-cache/**',
       'data/*.db',
       'data/**/*.db',
+      'scripts/**',
     ],
   },
   images: {
