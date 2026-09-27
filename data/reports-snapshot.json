@@ -1,5 +1,20 @@
 [
   {
+    "slug": "tot-15-08-2026",
+    "ticker": "TOT",
+    "title": "Phân Tích Cổ Phiếu TOT",
+    "category": "Phân Tích",
+    "date": "15/08/2026",
+    "reportDate": "15/08/2026",
+    "driveDocId": "1MMPUeOBuEYePpIIeZJB-YeRFL1d1jKVXG8s5TMOnczo",
+    "summary": null,
+    "targetPrice": null,
+    "currentPrice": null,
+    "recommendation": null,
+    "upside": null,
+    "bonusWelfareRate": null
+  },
+  {
     "slug": "pph-21-09-2026",
     "ticker": "PPH",
     "title": "Báo Cáo Nghiên Cứu & Định Giá Chuyên Sâu - Tổng Công ty Cổ phần Phong Phú (2026)",
@@ -2785,21 +2800,6 @@
     "summary": null,
     "targetPrice": null,
     "currentPrice": 40.9,
-    "recommendation": null,
-    "upside": null,
-    "bonusWelfareRate": null
-  },
-  {
-    "slug": "tot-15-08-2026",
-    "ticker": "TOT",
-    "title": "Phân Tích Cổ Phiếu TOT",
-    "category": "Phân Tích",
-    "date": "15/08/2026",
-    "reportDate": "15/08/2026",
-    "driveDocId": "1MMPUeOBuEYePpIIeZJB-YeRFL1d1jKVXG8s5TMOnczo",
-    "summary": null,
-    "targetPrice": null,
-    "currentPrice": null,
     "recommendation": null,
     "upside": null,
     "bonusWelfareRate": null
