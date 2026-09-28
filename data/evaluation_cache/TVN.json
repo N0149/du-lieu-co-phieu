@@ -1,0 +1,27 @@
+{
+  "symbol": "TVN",
+  "score360": {
+    "total": 7.8,
+    "ratingText": "TỐT",
+    "peVsMedian": -2.6769999999999996,
+    "pbVsMedian": -6.6917398968,
+    "psVsMedian": -5,
+    "peForward": 9.38,
+    "peForwardVsMedian": -15,
+    "pbForward": 0.61,
+    "pbForwardVsMedian": -10
+  },
+  "price": null,
+  "metrics": {
+    "marketCap": 5949450000000,
+    "pe": 10.6615,
+    "eps": 805.891769854,
+    "volume10d": 370260,
+    "pb": 0.6635325129,
+    "ps": null,
+    "bvps": null,
+    "sharesOut": 678000000,
+    "evEbitda": 19.9697,
+    "beta": 2.91525
+  }
+}
