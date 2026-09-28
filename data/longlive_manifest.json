@@ -672,7 +672,7 @@
       "roe": 30.8,
       "port": false,
       "g": "Hàng Tiêu dùng",
-      "s2": "Th���c phẩm và đồ uống",
+      "s2": "Thực phẩm và đồ uống",
       "w1": null,
       "d": "2026-09-25",
       "div": 1400,
@@ -1110,7 +1110,7 @@
     {
       "t": "APP",
       "n": "Công ty Cổ phần Phát triển Phụ gia và Sản phẩm dầu mỏ",
-      "s": "Hóa chất cơ bản - Sản phẩm nhựa, cao su, hóa chất",
+      "s": "Hóa chất c�� bản - Sản phẩm nhựa, cao su, hóa chất",
       "e": "",
       "et": "nonbank",
       "px": 3.9,
@@ -1385,7 +1385,7 @@
     {
       "t": "AVF",
       "n": "Công ty Cổ phần Việt An",
-      "s": "Nông sản, thủy sản, đồn điền",
+      "s": "Nông sản, thủy sản, đồn đi���n",
       "e": "",
       "et": "nonbank",
       "px": 0.4,
@@ -2141,7 +2141,7 @@
     },
     {
       "t": "BID",
-      "n": "Ngân hàng Thương mại C��� phần Đầu tư và Phát triển Việt Nam",
+      "n": "Ngân hàng Thương mại Cổ phần Đầu tư và Phát triển Việt Nam",
       "s": "Ngân hàng",
       "e": "",
       "et": "bank",
@@ -2780,7 +2780,7 @@
       "roe": 0.9,
       "port": false,
       "g": "Công nghiệp",
-      "s2": "Hàng & Dịch v��� Công nghiệp",
+      "s2": "Hàng & Dịch vụ Công nghiệp",
       "w1": null,
       "d": "2026-08-24",
       "div": 100,
@@ -2970,7 +2970,7 @@
     },
     {
       "t": "BTD",
-      "n": "Công ty Cổ phần Bê t��ng ly tâm Thủ Đức",
+      "n": "Công ty Cổ phần Bê tông ly tâm Thủ Đức",
       "s": "Thiết bị, vật liệu xây dựng",
       "e": "",
       "et": "nonbank",
@@ -3250,7 +3250,7 @@
     },
     {
       "t": "BVN",
-      "n": "C��ng ty Cổ phần Bông Việt Nam",
+      "n": "Công ty Cổ phần Bông Việt Nam",
       "s": "Quần áo và đồ phụ kiện",
       "e": "",
       "et": "nonbank",
@@ -3331,7 +3331,7 @@
     {
       "t": "BWS",
       "n": "Công ty Cổ phần Cấp Nước Bà Rịa - Vũng Tàu",
-      "s": "Cung cấp n��ớc sạch",
+      "s": "Cung cấp nước sạch",
       "e": "",
       "et": "nonbank",
       "px": 28.5,
@@ -19217,7 +19217,7 @@
     {
       "t": "PLP",
       "n": "Công ty Cổ phần Sản xuất và Công nghệ Nhựa Pha Lê",
-      "s": "Hóa chất cơ bản - Sản phẩm nhựa, cao su, hóa chất",
+      "s": "H��a chất cơ bản - Sản phẩm nhựa, cao su, hóa chất",
       "e": "",
       "et": "nonbank",
       "px": 3.68,
@@ -29514,7 +29514,7 @@
     },
     {
       "t": "VHM",
-      "n": "Công ty Cổ phần Vinhomes",
+      "n": "Công ty C��� phần Vinhomes",
       "s": "Các công ty đầu cơ và phát triển bất động sản",
       "e": "",
       "et": "nonbank",
@@ -29907,7 +29907,7 @@
       "pb": 0.62,
       "roe": 1.9,
       "port": false,
-      "g": "C��ng nghệ Thông tin",
+      "g": "Công nghệ Thông tin",
       "s2": "Công nghệ Thông tin",
       "w1": 9.37,
       "d": "2026-09-24",
@@ -31034,7 +31034,7 @@
     {
       "t": "VSH",
       "n": "Công ty Cổ phần Thủy điện Vĩnh Sơn - Sông Hinh",
-      "s": "Sản xuất và cung cấp điện truyền thống",
+      "s": "Sản xuất và cung cấp đi��n truyền thống",
       "e": "",
       "et": "nonbank",
       "px": 41.2,
