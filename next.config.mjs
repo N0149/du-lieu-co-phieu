@@ -42,8 +42,20 @@ const nextConfig = {
       './data/price_history/**/*',
       './data/industry-reports.json',
       './data/reports-snapshot.json',
+      './data/company_reports_snapshot.json',
+      './data/industry_reports_snapshot.json',
       './data/stock_evaluations_summary.json',
       './content/bctc/**/*',
+    ],
+    '/api/analyst-reports': [
+      './data/company_reports_snapshot.json',
+      './data/industry_reports_snapshot.json',
+      './data/widata_archive/reports/**/*',
+    ],
+    '/bao-cao': [
+      './data/company_reports_snapshot.json',
+      './data/industry_reports_snapshot.json',
+      './data/widata_archive/reports/**/*',
     ],
   },
   outputFileTracingExcludes: {

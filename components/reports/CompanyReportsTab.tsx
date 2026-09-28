@@ -79,7 +79,13 @@ export function CompanyReportsTab({
         limit: String(pageSize),
       });
 
-      if (search.trim()) params.set("search", search.trim());
+      const effectiveSymbol = (symbol || initialTicker || "").trim().toUpperCase();
+      if (effectiveSymbol) {
+        params.set("symbol", effectiveSymbol);
+      }
+      if (search.trim() && search.trim().toUpperCase() !== effectiveSymbol) {
+        params.set("search", search.trim());
+      }
       if (selectedSource !== "all") params.set("source", selectedSource);
       if (selectedRec !== "all") params.set("recommendation", selectedRec);
 
@@ -118,7 +124,7 @@ export function CompanyReportsTab({
   }, [search]);
 
   const resetFilters = () => {
-    setSearch("");
+    setSearch(defaultTicker);
     setSelectedSource("all");
     setSelectedRec("all");
     setPage(1);
