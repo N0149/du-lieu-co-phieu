@@ -1,0 +1,27 @@
+{
+  "symbol": "NT2",
+  "score360": {
+    "total": 8,
+    "ratingText": "XUẤT SẮC",
+    "peVsMedian": -10.60312,
+    "pbVsMedian": 0.46431774720000085,
+    "psVsMedian": -5,
+    "peForward": 5.89,
+    "peForwardVsMedian": -15,
+    "pbForward": 1.43,
+    "pbForwardVsMedian": -10
+  },
+  "price": null,
+  "metrics": {
+    "marketCap": 5987820000000,
+    "pe": 6.69844,
+    "eps": 3926.2901005696,
+    "volume10d": 364412,
+    "pb": 1.5580397184,
+    "ps": null,
+    "bvps": null,
+    "sharesOut": 287876029,
+    "evEbitda": 5.15288,
+    "beta": 0.730766
+  }
+}
