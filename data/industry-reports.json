@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-09-28T13:13:51.713Z",
-  "total": 394,
+  "updatedAt": "2026-09-29T13:07:22.685Z",
+  "total": 395,
   "availableSectors": [
     "Bán lẻ",
     "Bảo hiểm",
@@ -46,6 +46,23 @@
     "Điện"
   ],
   "reports": [
+    {
+      "id": "wd_ind_25762",
+      "slug": "thep-vung-da-vuot-thach-thuc-wd_ind_25762",
+      "title": "Vững đà vượt thách thức",
+      "source": "PSI",
+      "date": "2026-09-28",
+      "displayDate": "28/09/2026",
+      "scope": "sector",
+      "sectorName": "Thép",
+      "symbol": null,
+      "description": "Vững đà vượt thách thức",
+      "pageCount": 0,
+      "downloadUrl": "https://cdn02.wigroup.vn/baocaophantich/ar_25656_PSI_2026-09-28.pdf",
+      "thumbnailUrl": "",
+      "recommendation": null,
+      "targetPrice": null
+    },
     {
       "id": "wd_ind_25742",
       "slug": "dau-khi-du-bao-kqkd-q3-2026-duy-tri-tang-truong-manh-nho-gia-dau-neo-cao-wd_ind_25742",

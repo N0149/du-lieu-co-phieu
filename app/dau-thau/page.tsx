@@ -22,7 +22,7 @@ import {
 export const metadata: Metadata = {
   title: 'Đấu Thầu Y Tế (ETC), Cổ Phiếu Dược & Đại Dự Án ĐTC | Dữ Liệu Cổ Phiếu',
   description:
-    'Hệ thống đấu thầu Quốc gia: Theo dõi chi tiết các gói thầu trúng kênh ETC của các doanh nghiệp Dược niêm yết (DP1, DTP, DAN, TRA, CDP, DTG) dự phóng kết quả kinh doanh quý 3/2026, cùng tiến độ 71 đại dự án đầu tư công ≥ 1.000 tỷ và điểm đảo chiều lãi suất vĩ mô.',
+    'Hệ thống đấu thầu Quốc gia: Theo dõi chi tiết các gói thầu trúng kênh ETC của các doanh nghiệp Dược niêm yết (DP1, DTP, DAN, TRA, CDP, DTG) dự phóng kết quả kinh doanh quý 3/2026, cùng tiến độ các đại dự án đầu tư công trọng điểm quy mô ≥ 500 tỷ từ Hệ thống Mua sắm công (Bộ KH&ĐT) và điểm đảo chiều lãi suất vĩ mô.',
 };
 
 export default function DauThauPage() {

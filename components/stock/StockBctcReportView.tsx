@@ -21,6 +21,7 @@ import {
   ShieldCheck,
   Minimize2,
   Maximize2,
+  TrendingUp,
 } from "lucide-react"
 import { cn } from "@/lib/utils"
 import type { BctcReportData } from "@/lib/bctc-service"
@@ -208,6 +209,8 @@ export function StockBctcReportView({
 
   const getSectionIcon = (num: number) => {
     switch (num) {
+      case 0:
+        return <TrendingUp className="size-4 text-rose-400 shrink-0" />
       case 1:
         return <Building2 className="size-4 text-sky-400 shrink-0" />
       case 2:
@@ -363,6 +366,7 @@ export function StockBctcReportView({
                 key={sec.id}
                 ref={(el) => { tabButtonRefs.current[sec.id] = el }}
                 onClick={() => setSelectedSectionId(sec.id)}
+                title={sec.title}
                 className={cn(
                   "inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold whitespace-nowrap transition-all",
                   selectedSectionId === sec.id

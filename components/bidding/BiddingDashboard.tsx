@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState, useMemo, useRef } from 'react';
+import React, { useState, useMemo, useRef, useEffect } from 'react';
 import Link from 'next/link';
 import {
   HealthcareContractor,
@@ -78,10 +78,57 @@ export function BiddingDashboard({
   // ------------------ INFRASTRUCTURE STATE ------------------
   const [infraStatus, setInfraStatus] = useState<string>('ALL');
   const [infraTime, setInfraTime] = useState<string>('ALL');
+  const [infraMinCapital, setInfraMinCapital] = useState<number>(0);
   const [infraSearch, setInfraSearch] = useState<string>('');
   const [infraSortField, setInfraSortField] = useState<string>('total_capital');
   const [infraSortOrder, setInfraSortOrder] = useState<'asc' | 'desc'>('desc');
   const [selectedProject, setSelectedProject] = useState<InfrastructureProject | null>(null);
+  const [infraPage, setInfraPage] = useState<number>(1);
+  const [infraPageSize, setInfraPageSize] = useState<number>(50);
+
+  // Custom date range filters for Khởi Công and Dự Kiến / Khánh Thành
+  const [timeTarget, setTimeTarget] = useState<'completion' | 'start'>('completion');
+  const [infraStartFrom, setInfraStartFrom] = useState<string>('');
+  const [infraStartTo, setInfraStartTo] = useState<string>('');
+  const [infraEndFrom, setInfraEndFrom] = useState<string>('');
+  const [infraEndTo, setInfraEndTo] = useState<string>('');
+  const [openDatePopover, setOpenDatePopover] = useState<'start' | 'end' | null>(null);
+
+  useEffect(() => {
+    const handleClickOutside = (e: MouseEvent) => {
+      if (openDatePopover) {
+        const target = e.target as HTMLElement;
+        if (!target.closest('.date-range-popover-container')) {
+          setOpenDatePopover(null);
+        }
+      }
+    };
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, [openDatePopover]);
+
+  const handleInfraSort = (field: string) => {
+    if (infraSortField === field) {
+      setInfraSortOrder((prev) => (prev === 'desc' ? 'asc' : 'desc'));
+    } else {
+      setInfraSortField(field);
+      setInfraSortOrder(field === 'remaining_months' ? 'asc' : 'desc');
+    }
+  };
+
+  const infraKPIs = useMemo(() => {
+    const list = infrastructure.projects || [];
+    const totalCapital = list.reduce((sum, p) => sum + (p.total_capital || 0), 0);
+    const constructionCount = list.filter((p) => p.status === 'Đang thi công').length;
+    const completedCount = list.filter((p) => p.status === 'Đã hoàn thành').length;
+    const preparingCount = list.filter((p) => p.status === 'Đang chuẩn bị').length;
+    return {
+      total_capital: totalCapital,
+      construction_count: constructionCount,
+      completed_count: completedCount,
+      preparing_count: preparingCount,
+    };
+  }, [infrastructure.projects]);
 
   // Focus Stocks (The 6 stocks requested)
   const FOCUS_STOCKS = ['DP1', 'DTP', 'DAN', 'TRA', 'CDP', 'DTG'];
@@ -171,6 +218,7 @@ export function BiddingDashboard({
     return (infrastructure.projects || [])
       .filter((p) => {
         if (infraStatus !== 'ALL' && p.status !== infraStatus) return false;
+        if (infraMinCapital > 0 && (p.total_capital || 0) < infraMinCapital) return false;
         if (infraSearch.trim()) {
           const q = infraSearch.toLowerCase();
           const match =
@@ -190,16 +238,112 @@ export function BiddingDashboard({
         } else if (infraTime === 'RECENT_COMPLETED') {
           if (p.status !== 'Đã hoàn thành') return false;
         }
+
+        // Custom Date Range: Khởi công
+        if (infraStartFrom) {
+          if (!p.start_date || p.start_date < infraStartFrom) return false;
+        }
+        if (infraStartTo) {
+          if (!p.start_date || p.start_date > infraStartTo) return false;
+        }
+
+        // Custom Date Range: Dự kiến / Khánh thành
+        if (infraEndFrom) {
+          if (!p.expected_completion_date || p.expected_completion_date < infraEndFrom) return false;
+        }
+        if (infraEndTo) {
+          if (!p.expected_completion_date || p.expected_completion_date > infraEndTo) return false;
+        }
+
         return true;
       })
       .sort((a, b) => {
-        let valA = (a as any)[infraSortField];
-        let valB = (b as any)[infraSortField];
-        if (valA === undefined) valA = 0;
-        if (valB === undefined) valB = 0;
-        return infraSortOrder === 'desc' ? (valB > valA ? 1 : -1) : valA > valB ? 1 : -1;
+        if (infraSortField === 'expected_completion_date' || infraSortField === 'start_date') {
+          const rawA = a[infraSortField as keyof InfrastructureProject] as string | undefined;
+          const rawB = b[infraSortField as keyof InfrastructureProject] as string | undefined;
+          const timeA = rawA ? new Date(rawA).getTime() : 0;
+          const timeB = rawB ? new Date(rawB).getTime() : 0;
+          return infraSortOrder === 'desc' ? timeB - timeA : timeA - timeB;
+        }
+        if (infraSortField === 'total_capital' || infraSortField === 'remaining_months') {
+          const numA = (a as any)[infraSortField] ?? 0;
+          const numB = (b as any)[infraSortField] ?? 0;
+          return infraSortOrder === 'desc' ? numB - numA : numA - numB;
+        }
+        const strA = String((a as any)[infraSortField] || '');
+        const strB = String((b as any)[infraSortField] || '');
+        return infraSortOrder === 'desc'
+          ? strB.localeCompare(strA, 'vi')
+          : strA.localeCompare(strB, 'vi');
       });
-  }, [infrastructure.projects, infraStatus, infraTime, infraSearch, infraSortField, infraSortOrder]);
+  }, [
+    infrastructure.projects,
+    infraStatus,
+    infraMinCapital,
+    infraTime,
+    infraSearch,
+    infraSortField,
+    infraSortOrder,
+    infraStartFrom,
+    infraStartTo,
+    infraEndFrom,
+    infraEndTo,
+  ]);
+
+  useEffect(() => {
+    setInfraPage(1);
+  }, [
+    infraStatus,
+    infraMinCapital,
+    infraTime,
+    infraSearch,
+    infraSortField,
+    infraSortOrder,
+    infraStartFrom,
+    infraStartTo,
+    infraEndFrom,
+    infraEndTo,
+  ]);
+
+  const totalInfraPages = Math.max(1, Math.ceil(filteredProjects.length / infraPageSize));
+
+  const pagedProjects = useMemo(() => {
+    const start = (infraPage - 1) * infraPageSize;
+    return filteredProjects.slice(start, start + infraPageSize);
+  }, [filteredProjects, infraPage, infraPageSize]);
+
+  const paginationRange = useMemo(() => {
+    const current = infraPage;
+    const total = totalInfraPages;
+    if (total <= 7) {
+      return Array.from({ length: total }, (_, i) => i + 1);
+    }
+    const delta = 1;
+    const range: (number | string)[] = [];
+    const left = current - delta;
+    const right = current + delta + 1;
+    let l: number | undefined;
+
+    for (let i = 1; i <= total; i++) {
+      if (i === 1 || i === total || (i >= left && i < right)) {
+        range.push(i);
+      }
+    }
+
+    const withDots: (number | string)[] = [];
+    for (const i of range) {
+      if (l !== undefined) {
+        if (typeof i === 'number' && i - l === 2) {
+          withDots.push(l + 1);
+        } else if (typeof i === 'number' && i - l !== 1) {
+          withDots.push('...');
+        }
+      }
+      withDots.push(i);
+      l = typeof i === 'number' ? i : l;
+    }
+    return withDots;
+  }, [infraPage, totalInfraPages]);
 
   const sortedModalPackages = useMemo(() => {
     if (!selectedContractor?.packages_2026) return [];
@@ -785,22 +929,30 @@ export function BiddingDashboard({
             </div>
           )}
 
+          {/* DATA SCOPE DISCLAIMER BANNER */}
+          <div className="flex items-start gap-3 p-3.5 rounded-xl border border-sky-500/20 bg-sky-500/[0.04] text-xs text-slate-300">
+            <span className="text-base shrink-0">ℹ️</span>
+            <div className="leading-relaxed">
+              <strong className="text-sky-300 font-bold">Nguồn dữ liệu &amp; Phạm vi:</strong> Danh mục hiện tại theo dõi <strong>{infrastructure.projects.length} Đại dự án Trọng điểm Quốc gia (quy mô ≥ 500 tỷ)</strong> được trích xuất và đối soát trực tiếp từ <strong>Hệ thống Mua sắm công (Bộ Kế hoạch &amp; Đầu tư - muasamcong.mpi.gov.vn)</strong> kết hợp dữ liệu giám sát thực tế các trục huyết mạch (Cao tốc Bắc - Nam, Metro đô thị, Lưới điện 500kV, Cảng hàng không quốc tế).
+            </div>
+          </div>
+
           {/* INFRASTRUCTURE KPIS */}
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4">
             <div className="p-4 rounded-xl border border-[#1e2430] bg-[#141822]">
               <div className="text-xs text-slate-400 font-semibold mb-1">TỔNG VỐN THEO DÕI</div>
               <div className="text-xl sm:text-2xl font-extrabold text-sky-400">
-                {formatBillion(macroForecast?.kpis?.total_capital || 0)}
+                {formatBillion(infraKPIs.total_capital)}
               </div>
               <div className="text-[11px] text-slate-500 mt-0.5">
-                {infrastructure.projects.length} Đại dự án ≥ 1.000 tỷ
+                {infrastructure.projects.length} Đại dự án quy mô lớn
               </div>
             </div>
 
             <div className="p-4 rounded-xl border border-[#1e2430] bg-[#141822]">
               <div className="text-xs text-slate-400 font-semibold mb-1">ĐANG THI CÔNG</div>
               <div className="text-xl sm:text-2xl font-extrabold text-emerald-400">
-                {macroForecast?.kpis?.status_counts?.['Đang thi công'] || 0} Dự án
+                {infraKPIs.construction_count} Dự án
               </div>
               <div className="text-[11px] text-slate-500 mt-0.5">Đã có nhà thầu xây lắp chính</div>
             </div>
@@ -808,7 +960,7 @@ export function BiddingDashboard({
             <div className="p-4 rounded-xl border border-[#1e2430] bg-[#141822]">
               <div className="text-xs text-slate-400 font-semibold mb-1">ĐÃ HOÀN THÀNH</div>
               <div className="text-xl sm:text-2xl font-extrabold text-teal-400">
-                {macroForecast?.kpis?.status_counts?.['Đã hoàn thành'] || 0} Dự án
+                {infraKPIs.completed_count} Dự án
               </div>
               <div className="text-[11px] text-slate-500 mt-0.5">Hết giai đoạn thâm dụng vốn</div>
             </div>
@@ -816,7 +968,7 @@ export function BiddingDashboard({
             <div className="p-4 rounded-xl border border-[#1e2430] bg-[#141822]">
               <div className="text-xs text-slate-400 font-semibold mb-1">ĐANG CHUẨN BỊ</div>
               <div className="text-xl sm:text-2xl font-extrabold text-amber-400">
-                {macroForecast?.kpis?.status_counts?.['Đang chuẩn bị'] || 0} Dự án
+                {infraKPIs.preparing_count} Dự án
               </div>
               <div className="text-[11px] text-slate-500 mt-0.5">Chuẩn bị đấu thầu gói xây lắp</div>
             </div>
@@ -824,16 +976,66 @@ export function BiddingDashboard({
 
           {/* INFRASTRUCTURE FILTERS */}
           <div className="p-4 rounded-xl border border-[#1e2430] bg-[#141822] space-y-3">
+            {/* QUICK PRESET BUTTON FOR USER'S DIRECT REQUEST */}
+            <div className="flex flex-wrap items-center justify-between gap-2 p-2.5 rounded-lg bg-gradient-to-r from-emerald-950/40 via-sky-950/30 to-[#141822] border border-emerald-500/30">
+              <div className="flex flex-wrap items-center gap-2">
+                <span className="text-xs font-bold text-emerald-400 flex items-center gap-1.5">
+                  <Sparkles className="size-3.5 text-emerald-400" />
+                  <span>Bộ lọc nhanh:</span>
+                </span>
+                <button
+                  type="button"
+                  onClick={() => {
+                    setInfraStatus('Đã hoàn thành');
+                    setInfraTime('RECENT_COMPLETED');
+                    setInfraMinCapital(500e9);
+                    setInfraSortField('expected_completion_date');
+                    setInfraSortOrder('desc');
+                    setInfraSearch('');
+                  }}
+                  className={cn(
+                    "px-3 py-1.5 rounded-lg text-xs font-bold transition-all flex items-center gap-1.5 shadow-sm",
+                    infraStatus === 'Đã hoàn thành' &&
+                      infraTime === 'RECENT_COMPLETED' &&
+                      infraMinCapital === 500e9 &&
+                      infraSortField === 'expected_completion_date' &&
+                      infraSortOrder === 'desc'
+                      ? "bg-emerald-500 text-slate-950 shadow-md shadow-emerald-500/25 ring-2 ring-emerald-400/50"
+                      : "bg-emerald-500/15 hover:bg-emerald-500/25 text-emerald-300 border border-emerald-500/30 hover:border-emerald-500/50"
+                  )}
+                >
+                  <Award className="size-3.5" />
+                  <span>Dự án khánh thành gần nhất (Quy mô ≥ 500 tỷ)</span>
+                </button>
+              </div>
+
+              <div className="text-[11px] text-slate-400">
+                Đang lọc: <strong className="text-sky-300 font-bold">{filteredProjects.length.toLocaleString('vi-VN')}</strong> / {infrastructure.projects.length.toLocaleString('vi-VN')} dự án
+                {totalInfraPages > 1 && (
+                  <span className="ml-1.5 text-slate-500">
+                    (Trang <strong className="text-white font-bold">{infraPage}</strong>/{totalInfraPages})
+                  </span>
+                )}
+              </div>
+            </div>
+
+            {/* TRẠNG THÁI */}
             <div className="flex flex-wrap items-center gap-2">
               <span className="text-xs text-slate-400 font-bold mr-1">TRẠNG THÁI:</span>
               {['ALL', 'Đang thi công', 'Đang chuẩn bị', 'Đã hoàn thành'].map((st) => (
                 <button
                   key={st}
                   type="button"
-                  onClick={() => setInfraStatus(st)}
+                  onClick={() => {
+                    setInfraStatus(st);
+                    if (st === 'Đã hoàn thành' && infraTime === 'ALL') {
+                      setInfraSortField('expected_completion_date');
+                      setInfraSortOrder('desc');
+                    }
+                  }}
                   className={`px-3 py-1.5 rounded-lg text-xs font-semibold transition-all ${
                     infraStatus === st
-                      ? 'bg-sky-500/20 text-sky-300 border border-sky-500/40'
+                      ? 'bg-sky-500/20 text-sky-300 border border-sky-500/40 shadow-xs font-bold'
                       : 'text-slate-400 hover:text-slate-200 bg-white/[0.03] border border-transparent'
                   }`}
                 >
@@ -842,40 +1044,218 @@ export function BiddingDashboard({
               ))}
             </div>
 
-            <div className="flex flex-wrap items-center justify-between gap-3 pt-2 border-t border-white/5">
-              <div className="flex flex-wrap items-center gap-1.5">
-                <span className="text-xs text-slate-400 font-bold mr-1">LỌC THỜI GIAN:</span>
-                {[
-                  { id: 'ALL', label: 'Mọi thời gian' },
-                  { id: 'SOON_COMPLETING', label: '⚡ Sắp hoàn thành (< 12 tháng)' },
-                  { id: 'YEAR_2026', label: '🎯 Hoàn thành trong năm 2026' },
-                  { id: 'RECENT_STARTED', label: '🚀 Mới khởi công (2024-2026)' },
-                  { id: 'RECENT_COMPLETED', label: '✅ Mới hoàn thành gần đây' },
-                ].map((t) => (
-                  <button
-                    key={t.id}
-                    type="button"
-                    onClick={() => setInfraTime(t.id)}
-                    className={`px-2.5 py-1 rounded-md text-xs font-semibold transition-all ${
-                      infraTime === t.id
-                        ? 'bg-teal-500/20 text-teal-300 border border-teal-500/40'
-                        : 'text-slate-400 hover:text-slate-200 bg-white/[0.03] border border-transparent'
-                    }`}
-                  >
-                    {t.label}
-                  </button>
-                ))}
+            {/* QUY MÔ VỐN */}
+            <div className="flex flex-wrap items-center gap-2 pt-2 border-t border-white/5">
+              <span className="text-xs text-slate-400 font-bold mr-1">QUY MÔ VỐN:</span>
+              {[
+                { label: 'Tất cả quy mô', min: 0 },
+                { label: '≥ 500 tỷ', min: 500e9 },
+                { label: '≥ 1.000 tỷ', min: 1000e9 },
+                { label: '≥ 5.000 tỷ', min: 5000e9 },
+                { label: '≥ 10.000 tỷ', min: 10000e9 },
+                { label: '≥ 50.000 tỷ', min: 50000e9 },
+              ].map((cap) => (
+                <button
+                  key={cap.label}
+                  type="button"
+                  onClick={() => setInfraMinCapital(cap.min)}
+                  className={`px-2.5 py-1 rounded-md text-xs font-semibold transition-all ${
+                    infraMinCapital === cap.min
+                      ? 'bg-amber-500/20 text-amber-300 border border-amber-500/40 shadow-xs font-bold'
+                      : 'text-slate-400 hover:text-slate-200 bg-white/[0.03] border border-transparent'
+                  }`}
+                >
+                  {cap.label}
+                </button>
+              ))}
+            </div>
+
+            {/* LỌC THỜI GIAN & TÌM KIẾM */}
+            <div className="flex flex-col gap-2.5 pt-2 border-t border-white/5">
+              <div className="flex flex-wrap items-center justify-between gap-3">
+                <div className="flex flex-wrap items-center gap-1.5">
+                  <span className="text-xs text-slate-400 font-bold mr-1">LỌC THỜI GIAN:</span>
+                  {[
+                    { id: 'ALL', label: 'Mọi thời gian' },
+                    { id: 'RECENT_COMPLETED', label: '🏆 Mới khánh thành gần đây' },
+                    { id: 'SOON_COMPLETING', label: '⚡ Sắp hoàn thành (< 12 tháng)' },
+                    { id: 'YEAR_2026', label: '🎯 Hoàn thành trong năm 2026' },
+                    { id: 'RECENT_STARTED', label: '🚀 Mới khởi công (2024-2026)' },
+                  ].map((t) => (
+                    <button
+                      key={t.id}
+                      type="button"
+                      onClick={() => {
+                        setInfraTime(t.id);
+                        if (t.id === 'RECENT_COMPLETED') {
+                          setInfraStatus('Đã hoàn thành');
+                          setInfraSortField('expected_completion_date');
+                          setInfraSortOrder('desc');
+                        } else if (t.id === 'SOON_COMPLETING') {
+                          if (infraStatus === 'Đã hoàn thành') {
+                            setInfraStatus('Đang thi công');
+                          }
+                        } else if (t.id === 'YEAR_2026') {
+                          setInfraSortField('expected_completion_date');
+                          setInfraSortOrder('desc');
+                        }
+                      }}
+                      className={`px-2.5 py-1 rounded-md text-xs font-semibold transition-all ${
+                        infraTime === t.id
+                          ? 'bg-teal-500/20 text-teal-300 border border-teal-500/40 font-bold shadow-xs'
+                          : 'text-slate-400 hover:text-slate-200 bg-white/[0.03] border border-transparent'
+                      }`}
+                    >
+                      {t.label}
+                    </button>
+                  ))}
+                </div>
+
+                <div className="relative min-w-[240px]">
+                  <Search className="size-3.5 absolute left-3 top-1/2 -translate-y-1/2 text-slate-500" />
+                  <input
+                    type="text"
+                    value={infraSearch}
+                    onChange={(e) => setInfraSearch(e.target.value)}
+                    placeholder="Tìm theo tên dự án, mã, chủ đầu tư..."
+                    className="w-full pl-9 pr-3 py-1.5 rounded-lg bg-black/30 border border-white/10 text-xs text-white placeholder:text-slate-500 focus:outline-none focus:border-sky-500"
+                  />
+                </div>
               </div>
 
-              <div className="relative min-w-[240px]">
-                <Search className="size-3.5 absolute left-3 top-1/2 -translate-y-1/2 text-slate-500" />
-                <input
-                  type="text"
-                  value={infraSearch}
-                  onChange={(e) => setInfraSearch(e.target.value)}
-                  placeholder="Tìm theo tên dự án, mã, chủ đầu tư..."
-                  className="w-full pl-9 pr-3 py-1.5 rounded-lg bg-black/30 border border-white/10 text-xs text-white placeholder:text-slate-500 focus:outline-none focus:border-sky-500"
-                />
+              {/* CHỌN KHOẢNG THỜI GIAN TÙY BIẾN */}
+              <div className="flex flex-wrap items-center gap-2 pt-2 border-t border-white/5 text-xs">
+                <span className="text-xs text-slate-400 font-bold mr-1 flex items-center gap-1">
+                  <Calendar className="size-3.5 text-teal-400" />
+                  CHỌN KHOẢNG THỜI GIAN:
+                </span>
+
+                {/* Chọn cột mục tiêu */}
+                <div className="inline-flex rounded-lg p-0.5 bg-black/40 border border-white/10">
+                  <button
+                    type="button"
+                    onClick={() => setTimeTarget('completion')}
+                    className={cn(
+                      "px-2.5 py-0.5 rounded-md text-xs font-semibold transition-all flex items-center gap-1",
+                      timeTarget === 'completion'
+                        ? "bg-emerald-500 text-slate-950 font-bold shadow-xs"
+                        : "text-slate-400 hover:text-white"
+                    )}
+                  >
+                    <span>Dự kiến / Khánh thành</span>
+                    {(infraEndFrom || infraEndTo) && (
+                      <span className="size-1.5 rounded-full bg-emerald-400" />
+                    )}
+                  </button>
+                  <button
+                    type="button"
+                    onClick={() => setTimeTarget('start')}
+                    className={cn(
+                      "px-2.5 py-0.5 rounded-md text-xs font-semibold transition-all flex items-center gap-1",
+                      timeTarget === 'start'
+                        ? "bg-sky-500 text-slate-950 font-bold shadow-xs"
+                        : "text-slate-400 hover:text-white"
+                    )}
+                  >
+                    <span>Khởi công</span>
+                    {(infraStartFrom || infraStartTo) && (
+                      <span className="size-1.5 rounded-full bg-sky-400" />
+                    )}
+                  </button>
+                </div>
+
+                {/* Nút chọn nhanh mốc năm */}
+                <div className="flex items-center gap-1">
+                  {[
+                    { label: '2024', from: '2024-01-01', to: '2024-12-31' },
+                    { label: '2025', from: '2025-01-01', to: '2025-12-31' },
+                    { label: '2026', from: '2026-01-01', to: '2026-12-31' },
+                    { label: '2027', from: '2027-01-01', to: '2027-12-31' },
+                    { label: '2028-2030', from: '2028-01-01', to: '2030-12-31' },
+                  ].map((y) => {
+                    const isSelected =
+                      timeTarget === 'completion'
+                        ? infraEndFrom === y.from && infraEndTo === y.to
+                        : infraStartFrom === y.from && infraStartTo === y.to;
+                    return (
+                      <button
+                        key={y.label}
+                        type="button"
+                        onClick={() => {
+                          if (timeTarget === 'completion') {
+                            setInfraEndFrom(isSelected ? '' : y.from);
+                            setInfraEndTo(isSelected ? '' : y.to);
+                            if (!isSelected) {
+                              setInfraSortField('expected_completion_date');
+                              setInfraSortOrder('desc');
+                            }
+                          } else {
+                            setInfraStartFrom(isSelected ? '' : y.from);
+                            setInfraStartTo(isSelected ? '' : y.to);
+                            if (!isSelected) {
+                              setInfraSortField('start_date');
+                              setInfraSortOrder('desc');
+                            }
+                          }
+                        }}
+                        className={cn(
+                          "px-2 py-0.5 rounded text-xs font-semibold transition-all",
+                          isSelected
+                            ? timeTarget === 'completion'
+                              ? "bg-emerald-500/20 text-emerald-300 border border-emerald-500/50 font-bold"
+                              : "bg-sky-500/20 text-sky-300 border border-sky-500/50 font-bold"
+                            : "bg-white/[0.03] hover:bg-white/[0.08] text-slate-400 hover:text-white border border-transparent"
+                        )}
+                      >
+                        {y.label}
+                      </button>
+                    );
+                  })}
+                </div>
+
+                {/* Input chọn ngày Từ - Đến */}
+                <div className="flex items-center gap-1.5 ml-1">
+                  <span className="text-[11px] text-slate-400">Từ:</span>
+                  <input
+                    type="date"
+                    value={timeTarget === 'completion' ? infraEndFrom : infraStartFrom}
+                    onChange={(e) => {
+                      if (timeTarget === 'completion') setInfraEndFrom(e.target.value);
+                      else setInfraStartFrom(e.target.value);
+                    }}
+                    className="bg-black/40 border border-white/10 rounded px-2 py-0.5 text-xs text-white focus:outline-none focus:border-teal-500 scheme-dark"
+                  />
+                  <span className="text-[11px] text-slate-400">Đến:</span>
+                  <input
+                    type="date"
+                    value={timeTarget === 'completion' ? infraEndTo : infraStartTo}
+                    onChange={(e) => {
+                      if (timeTarget === 'completion') setInfraEndTo(e.target.value);
+                      else setInfraStartTo(e.target.value);
+                    }}
+                    className="bg-black/40 border border-white/10 rounded px-2 py-0.5 text-xs text-white focus:outline-none focus:border-teal-500 scheme-dark"
+                  />
+                  {((timeTarget === 'completion' && (infraEndFrom || infraEndTo)) ||
+                    (timeTarget === 'start' && (infraStartFrom || infraStartTo))) && (
+                    <button
+                      type="button"
+                      onClick={() => {
+                        if (timeTarget === 'completion') {
+                          setInfraEndFrom('');
+                          setInfraEndTo('');
+                        } else {
+                          setInfraStartFrom('');
+                          setInfraStartTo('');
+                        }
+                      }}
+                      className="px-2 py-0.5 rounded text-xs bg-red-500/20 text-red-300 border border-red-500/30 hover:bg-red-500/30 transition-all flex items-center gap-0.5 font-medium"
+                      title="Xóa khoảng thời gian này"
+                    >
+                      <X className="size-3" />
+                      <span>Xóa</span>
+                    </button>
+                  )}
+                </div>
               </div>
             </div>
           </div>
@@ -885,76 +1265,568 @@ export function BiddingDashboard({
             <div className="overflow-x-auto">
               <table className="w-full text-left text-xs border-collapse">
                 <thead>
-                  <tr className="border-b border-[#1e2430] bg-black/20 text-slate-400 font-semibold">
+                  <tr className="border-b border-[#1e2430] bg-black/20 text-slate-400 font-semibold select-none">
                     <th className="py-3 px-3">Mã Dự Án</th>
                     <th className="py-3 px-3 min-w-[260px]">Tên Đại Dự Án</th>
                     <th className="py-3 px-3">Chủ Đầu Tư</th>
-                    <th className="py-3 px-3 text-right">Tổng Mức Đầu Tư</th>
-                    <th className="py-3 px-3">Trạng Thái</th>
-                    <th className="py-3 px-3">Khởi Công</th>
-                    <th className="py-3 px-3">Dự Kiến Hoàn Thành</th>
-                    <th className="py-3 px-3 text-right">Còn Lại</th>
+
+                    {/* TỔNG MỨC ĐẦU TƯ (SORTABLE) */}
+                    <th
+                      onClick={() => handleInfraSort('total_capital')}
+                      className={cn(
+                        "py-3 px-3 text-right cursor-pointer hover:text-white transition-colors group",
+                        infraSortField === 'total_capital' && "text-sky-300 font-bold bg-white/[0.04]"
+                      )}
+                      title="Click để đổi chiều sắp xếp Tổng mức đầu tư (Lớn ⇄ Bé)"
+                    >
+                      <div className="inline-flex items-center gap-1 justify-end">
+                        <span>Tổng Mức Đầu Tư</span>
+                        <span className="text-[11px] text-sky-400 font-mono font-bold">
+                          {infraSortField === 'total_capital' ? (infraSortOrder === 'desc' ? '↓ Lớn' : '↑ Bé') : '⇅'}
+                        </span>
+                      </div>
+                    </th>
+
+                    {/* TRẠNG THÁI (SORTABLE) */}
+                    <th
+                      onClick={() => handleInfraSort('status')}
+                      className={cn(
+                        "py-3 px-3 cursor-pointer hover:text-white transition-colors group",
+                        infraSortField === 'status' && "text-sky-300 font-bold bg-white/[0.04]"
+                      )}
+                      title="Click để sắp xếp theo Trạng thái"
+                    >
+                      <div className="inline-flex items-center gap-1">
+                        <span>Trạng Thái</span>
+                        <span className="text-[11px] text-sky-400 font-mono font-bold">
+                          {infraSortField === 'status' ? (infraSortOrder === 'desc' ? '↓' : '↑') : '⇅'}
+                        </span>
+                      </div>
+                    </th>
+
+                    {/* KHỞI CÔNG (SORTABLE & FILTERABLE) */}
+                    <th
+                      className={cn(
+                        "py-3 px-3 relative select-none",
+                        infraSortField === 'start_date' && "bg-white/[0.04]"
+                      )}
+                    >
+                      <div className="flex items-center justify-between gap-1">
+                        <div
+                          onClick={() => handleInfraSort('start_date')}
+                          className="cursor-pointer hover:text-white transition-colors flex items-center gap-1"
+                          title="Click để đổi chiều sắp xếp Ngày khởi công (Gần ⇄ Xa)"
+                        >
+                          <span className={cn(infraSortField === 'start_date' ? "text-sky-300 font-bold" : "text-slate-400")}>
+                            Khởi Công
+                          </span>
+                          <span className="text-[11px] text-sky-400 font-mono font-bold">
+                            {infraSortField === 'start_date' ? (infraSortOrder === 'desc' ? '↓ Gần' : '↑ Xa') : '⇅'}
+                          </span>
+                        </div>
+
+                        {/* Nút bật popover lọc khoảng ngày khởi công */}
+                        <div className="relative date-range-popover-container">
+                          <button
+                            type="button"
+                            onClick={(e) => {
+                              e.stopPropagation();
+                              setOpenDatePopover(openDatePopover === 'start' ? null : 'start');
+                            }}
+                            className={cn(
+                              "px-1.5 py-0.5 rounded text-[10.5px] flex items-center gap-1 transition-all",
+                              (infraStartFrom || infraStartTo)
+                                ? "bg-sky-500 text-slate-950 font-bold shadow-xs"
+                                : "text-slate-400 hover:text-white bg-white/5 hover:bg-white/10"
+                            )}
+                            title="Lọc khoảng thời gian Khởi công"
+                          >
+                            <Calendar className="size-3" />
+                            {(infraStartFrom || infraStartTo) && (
+                              <span className="font-mono">
+                                {infraStartFrom && infraStartTo && infraStartFrom.slice(0, 4) === infraStartTo.slice(0, 4)
+                                  ? infraStartFrom.slice(0, 4)
+                                  : 'Lọc'}
+                              </span>
+                            )}
+                          </button>
+
+                          {/* Popover lọc ngày khởi công */}
+                          {openDatePopover === 'start' && (
+                            <div
+                              onClick={(e) => e.stopPropagation()}
+                              className="absolute top-full left-0 z-50 mt-2 w-72 rounded-xl bg-[#131722] border border-[#232b3c] p-3 shadow-2xl text-slate-200 text-xs animate-in fade-in"
+                            >
+                              <div className="flex items-center justify-between border-b border-white/10 pb-2 mb-2.5">
+                                <span className="font-bold text-white flex items-center gap-1.5">
+                                  <Calendar className="size-3.5 text-sky-400" />
+                                  Khoảng ngày Khởi công
+                                </span>
+                                <button
+                                  type="button"
+                                  onClick={() => setOpenDatePopover(null)}
+                                  className="text-slate-400 hover:text-white p-0.5 rounded hover:bg-white/5"
+                                >
+                                  <X className="size-3.5" />
+                                </button>
+                              </div>
+
+                              <div className="space-y-2.5">
+                                <div>
+                                  <div className="text-[11px] text-slate-400 mb-1">Mốc năm nhanh:</div>
+                                  <div className="grid grid-cols-3 gap-1">
+                                    {[
+                                      { label: '2024', from: '2024-01-01', to: '2024-12-31' },
+                                      { label: '2025', from: '2025-01-01', to: '2025-12-31' },
+                                      { label: '2026', from: '2026-01-01', to: '2026-12-31' },
+                                      { label: '2027', from: '2027-01-01', to: '2027-12-31' },
+                                      { label: '2028-2030', from: '2028-01-01', to: '2030-12-31' },
+                                      { label: 'Tất cả', from: '', to: '' },
+                                    ].map((y) => {
+                                      const active = infraStartFrom === y.from && infraStartTo === y.to;
+                                      return (
+                                        <button
+                                          key={y.label}
+                                          type="button"
+                                          onClick={() => {
+                                            setInfraStartFrom(y.from);
+                                            setInfraStartTo(y.to);
+                                            if (y.from) {
+                                              setInfraSortField('start_date');
+                                              setInfraSortOrder('desc');
+                                            }
+                                          }}
+                                          className={cn(
+                                            "py-1 rounded text-center text-[11px] font-medium transition-colors",
+                                            active
+                                              ? "bg-sky-500 text-slate-950 font-bold"
+                                              : "bg-white/5 hover:bg-white/10 text-slate-300"
+                                          )}
+                                        >
+                                          {y.label}
+                                        </button>
+                                      );
+                                    })}
+                                  </div>
+                                </div>
+
+                                <div className="space-y-1.5 pt-2 border-t border-white/5">
+                                  <div className="text-[11px] text-slate-400">Tùy chọn khoảng ngày:</div>
+                                  <div className="grid grid-cols-2 gap-1.5">
+                                    <div>
+                                      <span className="text-[10px] text-slate-500 block mb-0.5">Từ ngày:</span>
+                                      <input
+                                        type="date"
+                                        value={infraStartFrom}
+                                        onChange={(e) => setInfraStartFrom(e.target.value)}
+                                        className="w-full bg-black/40 border border-white/10 rounded px-2 py-1 text-xs text-white focus:outline-none focus:border-sky-500 scheme-dark"
+                                      />
+                                    </div>
+                                    <div>
+                                      <span className="text-[10px] text-slate-500 block mb-0.5">Đến ngày:</span>
+                                      <input
+                                        type="date"
+                                        value={infraStartTo}
+                                        onChange={(e) => setInfraStartTo(e.target.value)}
+                                        className="w-full bg-black/40 border border-white/10 rounded px-2 py-1 text-xs text-white focus:outline-none focus:border-sky-500 scheme-dark"
+                                      />
+                                    </div>
+                                  </div>
+                                </div>
+
+                                <div className="flex items-center justify-between pt-2 border-t border-white/5">
+                                  {(infraStartFrom || infraStartTo) ? (
+                                    <button
+                                      type="button"
+                                      onClick={() => {
+                                        setInfraStartFrom('');
+                                        setInfraStartTo('');
+                                      }}
+                                      className="text-xs text-red-400 hover:text-red-300"
+                                    >
+                                      Xóa lọc
+                                    </button>
+                                  ) : <span />}
+                                  <button
+                                    type="button"
+                                    onClick={() => setOpenDatePopover(null)}
+                                    className="px-3 py-1 bg-sky-500 text-slate-950 font-bold rounded-lg text-xs hover:bg-sky-400 transition-colors ml-auto"
+                                  >
+                                    Đóng
+                                  </button>
+                                </div>
+                              </div>
+                            </div>
+                          )}
+                        </div>
+                      </div>
+                    </th>
+
+                    {/* DỰ KIẾN HOÀN THÀNH / KHÁNH THÀNH (SORTABLE & FILTERABLE) */}
+                    <th
+                      className={cn(
+                        "py-3 px-3 relative select-none",
+                        infraSortField === 'expected_completion_date' && "bg-emerald-500/[0.08]"
+                      )}
+                    >
+                      <div className="flex items-center justify-between gap-1">
+                        <div
+                          onClick={() => handleInfraSort('expected_completion_date')}
+                          className="cursor-pointer hover:text-white transition-colors flex items-center gap-1"
+                          title="Click để đổi chiều sắp xếp Ngày khánh thành / hoàn thành (Gần nhất ⇄ Xa nhất)"
+                        >
+                          <span className={cn(infraSortField === 'expected_completion_date' ? "text-emerald-300 font-bold" : "text-slate-400")}>
+                            Dự Kiến / Khánh Thành
+                          </span>
+                          <span className="text-[11px] text-emerald-400 font-mono font-extrabold">
+                            {infraSortField === 'expected_completion_date' ? (infraSortOrder === 'desc' ? '↓ Gần nhất' : '↑ Xa nhất') : '⇅'}
+                          </span>
+                        </div>
+
+                        {/* Nút bật popover lọc khoảng ngày hoàn thành */}
+                        <div className="relative date-range-popover-container">
+                          <button
+                            type="button"
+                            onClick={(e) => {
+                              e.stopPropagation();
+                              setOpenDatePopover(openDatePopover === 'end' ? null : 'end');
+                            }}
+                            className={cn(
+                              "px-1.5 py-0.5 rounded text-[10.5px] flex items-center gap-1 transition-all",
+                              (infraEndFrom || infraEndTo)
+                                ? "bg-emerald-500 text-slate-950 font-bold shadow-xs"
+                                : "text-slate-400 hover:text-white bg-white/5 hover:bg-white/10"
+                            )}
+                            title="Lọc khoảng thời gian Khánh thành / Hoàn thành"
+                          >
+                            <Calendar className="size-3" />
+                            {(infraEndFrom || infraEndTo) && (
+                              <span className="font-mono">
+                                {infraEndFrom && infraEndTo && infraEndFrom.slice(0, 4) === infraEndTo.slice(0, 4)
+                                  ? infraEndFrom.slice(0, 4)
+                                  : 'Lọc'}
+                              </span>
+                            )}
+                          </button>
+
+                          {/* Popover lọc ngày hoàn thành */}
+                          {openDatePopover === 'end' && (
+                            <div
+                              onClick={(e) => e.stopPropagation()}
+                              className="absolute top-full right-0 z-50 mt-2 w-72 rounded-xl bg-[#131722] border border-[#232b3c] p-3 shadow-2xl text-slate-200 text-xs animate-in fade-in"
+                            >
+                              <div className="flex items-center justify-between border-b border-white/10 pb-2 mb-2.5">
+                                <span className="font-bold text-white flex items-center gap-1.5">
+                                  <Calendar className="size-3.5 text-emerald-400" />
+                                  Khoảng ngày Khánh thành
+                                </span>
+                                <button
+                                  type="button"
+                                  onClick={() => setOpenDatePopover(null)}
+                                  className="text-slate-400 hover:text-white p-0.5 rounded hover:bg-white/5"
+                                >
+                                  <X className="size-3.5" />
+                                </button>
+                              </div>
+
+                              <div className="space-y-2.5">
+                                <div>
+                                  <div className="text-[11px] text-slate-400 mb-1">Mốc năm nhanh:</div>
+                                  <div className="grid grid-cols-3 gap-1">
+                                    {[
+                                      { label: '2024', from: '2024-01-01', to: '2024-12-31' },
+                                      { label: '2025', from: '2025-01-01', to: '2025-12-31' },
+                                      { label: '2026', from: '2026-01-01', to: '2026-12-31' },
+                                      { label: '2027', from: '2027-01-01', to: '2027-12-31' },
+                                      { label: '2028-2030', from: '2028-01-01', to: '2030-12-31' },
+                                      { label: 'Tất cả', from: '', to: '' },
+                                    ].map((y) => {
+                                      const active = infraEndFrom === y.from && infraEndTo === y.to;
+                                      return (
+                                        <button
+                                          key={y.label}
+                                          type="button"
+                                          onClick={() => {
+                                            setInfraEndFrom(y.from);
+                                            setInfraEndTo(y.to);
+                                            if (y.from) {
+                                              setInfraSortField('expected_completion_date');
+                                              setInfraSortOrder('desc');
+                                            }
+                                          }}
+                                          className={cn(
+                                            "py-1 rounded text-center text-[11px] font-medium transition-colors",
+                                            active
+                                              ? "bg-emerald-500 text-slate-950 font-bold"
+                                              : "bg-white/5 hover:bg-white/10 text-slate-300"
+                                          )}
+                                        >
+                                          {y.label}
+                                        </button>
+                                      );
+                                    })}
+                                  </div>
+                                </div>
+
+                                <div className="space-y-1.5 pt-2 border-t border-white/5">
+                                  <div className="text-[11px] text-slate-400">Tùy chọn khoảng ngày:</div>
+                                  <div className="grid grid-cols-2 gap-1.5">
+                                    <div>
+                                      <span className="text-[10px] text-slate-500 block mb-0.5">Từ ngày:</span>
+                                      <input
+                                        type="date"
+                                        value={infraEndFrom}
+                                        onChange={(e) => setInfraEndFrom(e.target.value)}
+                                        className="w-full bg-black/40 border border-white/10 rounded px-2 py-1 text-xs text-white focus:outline-none focus:border-emerald-500 scheme-dark"
+                                      />
+                                    </div>
+                                    <div>
+                                      <span className="text-[10px] text-slate-500 block mb-0.5">Đến ngày:</span>
+                                      <input
+                                        type="date"
+                                        value={infraEndTo}
+                                        onChange={(e) => setInfraEndTo(e.target.value)}
+                                        className="w-full bg-black/40 border border-white/10 rounded px-2 py-1 text-xs text-white focus:outline-none focus:border-emerald-500 scheme-dark"
+                                      />
+                                    </div>
+                                  </div>
+                                </div>
+
+                                <div className="flex items-center justify-between pt-2 border-t border-white/5">
+                                  {(infraEndFrom || infraEndTo) ? (
+                                    <button
+                                      type="button"
+                                      onClick={() => {
+                                        setInfraEndFrom('');
+                                        setInfraEndTo('');
+                                      }}
+                                      className="text-xs text-red-400 hover:text-red-300"
+                                    >
+                                      Xóa lọc
+                                    </button>
+                                  ) : <span />}
+                                  <button
+                                    type="button"
+                                    onClick={() => setOpenDatePopover(null)}
+                                    className="px-3 py-1 bg-emerald-500 text-slate-950 font-bold rounded-lg text-xs hover:bg-emerald-400 transition-colors ml-auto"
+                                  >
+                                    Đóng
+                                  </button>
+                                </div>
+                              </div>
+                            </div>
+                          )}
+                        </div>
+                      </div>
+                    </th>
+
+                    {/* CÒN LẠI (SORTABLE) */}
+                    <th
+                      onClick={() => handleInfraSort('remaining_months')}
+                      className={cn(
+                        "py-3 px-3 text-right cursor-pointer hover:text-white transition-colors group",
+                        infraSortField === 'remaining_months' && "text-sky-300 font-bold bg-white/[0.04]"
+                      )}
+                      title="Click để đổi chiều sắp xếp Số tháng còn lại (Ít ⇄ Nhiều)"
+                    >
+                      <div className="inline-flex items-center gap-1 justify-end">
+                        <span>Còn Lại</span>
+                        <span className="text-[11px] text-sky-400 font-mono font-bold">
+                          {infraSortField === 'remaining_months' ? (infraSortOrder === 'asc' ? '↑ Ít' : '↓ Nhiều') : '⇅'}
+                        </span>
+                      </div>
+                    </th>
+
                     <th className="py-3 px-3 text-center">Chi Tiết</th>
                   </tr>
                 </thead>
                 <tbody className="divide-y divide-white/5">
-                  {filteredProjects.map((p) => {
-                    const statusColor =
-                      p.status === 'Đã hoàn thành'
-                        ? 'bg-emerald-500/15 text-emerald-400 border-emerald-500/30'
-                        : p.status === 'Đang thi công'
-                        ? 'bg-sky-500/15 text-sky-400 border-sky-500/30'
-                        : 'bg-amber-500/15 text-amber-400 border-amber-500/30';
+                  {filteredProjects.length === 0 ? (
+                    <tr>
+                      <td colSpan={9} className="py-12 text-center text-slate-400 text-xs">
+                        <p className="mb-2">Không tìm thấy dự án nào phù hợp với bộ lọc hiện tại.</p>
+                        <button
+                          type="button"
+                          onClick={() => {
+                            setInfraStatus('ALL');
+                            setInfraMinCapital(0);
+                            setInfraTime('ALL');
+                            setInfraSearch('');
+                            setInfraStartFrom('');
+                            setInfraStartTo('');
+                            setInfraEndFrom('');
+                            setInfraEndTo('');
+                          }}
+                          className="px-3 py-1.5 text-xs font-semibold bg-sky-500/20 text-sky-300 border border-sky-500/30 rounded-lg hover:bg-sky-500/30 transition-colors inline-flex items-center gap-1.5"
+                        >
+                          <span>↺ Đặt lại toàn bộ bộ lọc</span>
+                        </button>
+                      </td>
+                    </tr>
+                  ) : (
+                    pagedProjects.map((p) => {
+                      const statusColor =
+                        p.status === 'Đã hoàn thành'
+                          ? 'bg-emerald-500/15 text-emerald-400 border-emerald-500/30'
+                          : p.status === 'Đang thi công'
+                          ? 'bg-sky-500/15 text-sky-400 border-sky-500/30'
+                          : 'bg-amber-500/15 text-amber-400 border-amber-500/30';
 
-                    return (
-                      <tr key={p.id} className="hover:bg-white/[0.02] transition-colors">
-                        <td className="py-3 px-3 font-mono text-[11px] text-sky-400 font-bold">
-                          {p.code}
-                        </td>
-                        <td className="py-3 px-3">
-                          <div className="font-bold text-white text-xs">{p.name}</div>
-                          <div className="text-[11px] text-slate-400">{p.location || 'Toàn quốc'}</div>
-                        </td>
-                        <td className="py-3 px-3 text-slate-300 text-[11px] max-w-[200px] truncate">
-                          {p.investor_name}
-                        </td>
-                        <td className="py-3 px-3 text-right font-extrabold text-white text-xs">
-                          {formatBillion(p.total_capital)}
-                        </td>
-                        <td className="py-3 px-3">
-                          <span
-                            className={`px-2 py-0.5 rounded-full text-[10.5px] font-bold border ${statusColor}`}
-                          >
-                            {p.status}
-                          </span>
-                        </td>
-                        <td className="py-3 px-3 text-slate-400 text-[11px]">
-                          {formatDate(p.start_date)}
-                        </td>
-                        <td className="py-3 px-3 text-slate-200 font-semibold text-[11px]">
-                          {formatDate(p.expected_completion_date)}
-                        </td>
-                        <td className="py-3 px-3 text-right font-bold text-teal-400 text-[11px]">
-                          {p.status === 'Đã hoàn thành'
-                            ? '0 thg'
-                            : p.remaining_months > 0
-                            ? `${p.remaining_months} thg`
-                            : '--'}
-                        </td>
-                        <td className="py-3 px-3 text-center">
-                          <button
-                            type="button"
-                            onClick={() => setSelectedProject(p)}
-                            className="px-2.5 py-1 rounded bg-white/5 hover:bg-white/10 text-slate-200 text-xs font-semibold transition-all"
-                          >
-                            Hồ Sơ
-                          </button>
-                        </td>
-                      </tr>
-                    );
-                  })}
+                      return (
+                        <tr
+                          key={p.id}
+                          onClick={() => setSelectedProject(p)}
+                          className="hover:bg-sky-500/[0.06] transition-colors cursor-pointer group"
+                        >
+                          <td className="py-3 px-3 font-mono text-[11px] text-sky-400 font-bold group-hover:text-sky-300">
+                            {p.code}
+                          </td>
+                          <td className="py-3 px-3">
+                            <div className="font-bold text-white text-xs group-hover:text-sky-200 transition-colors">
+                              {p.name}
+                            </div>
+                            <div className="text-[11px] text-slate-400">{p.location || 'Toàn quốc'}</div>
+                          </td>
+                          <td className="py-3 px-3 text-slate-300 text-[11px] max-w-[200px] truncate">
+                            {p.investor_name}
+                          </td>
+                          <td className="py-3 px-3 text-right font-extrabold text-white text-xs">
+                            {formatBillion(p.total_capital)}
+                          </td>
+                          <td className="py-3 px-3">
+                            <span
+                              className={`px-2 py-0.5 rounded-full text-[10.5px] font-bold border ${statusColor}`}
+                            >
+                              {p.status}
+                            </span>
+                          </td>
+                          <td className="py-3 px-3 text-slate-400 text-[11px]">
+                            {formatDate(p.start_date)}
+                          </td>
+                          <td className="py-3 px-3 text-[11px]">
+                            {p.status === 'Đã hoàn thành' ? (
+                              <span className="text-emerald-400 font-bold flex items-center gap-1">
+                                <CheckCircle2 className="size-3 text-emerald-400 shrink-0" />
+                                {formatDate(p.expected_completion_date)}
+                              </span>
+                            ) : (
+                              <span className="text-slate-200 font-semibold">
+                                {formatDate(p.expected_completion_date)}
+                              </span>
+                            )}
+                          </td>
+                          <td className="py-3 px-3 text-right font-bold text-teal-400 text-[11px]">
+                            {p.status === 'Đã hoàn thành'
+                              ? '0 thg'
+                              : p.remaining_months > 0
+                              ? `${p.remaining_months} thg`
+                              : '--'}
+                          </td>
+                          <td className="py-3 px-3 text-center">
+                            <button
+                              type="button"
+                              onClick={(e) => {
+                                e.stopPropagation();
+                                setSelectedProject(p);
+                              }}
+                              className="px-2.5 py-1 rounded bg-white/5 group-hover:bg-sky-500/20 group-hover:text-sky-300 text-slate-200 text-xs font-semibold transition-all border border-white/5 group-hover:border-sky-500/30"
+                            >
+                              Hồ Sơ
+                            </button>
+                          </td>
+                        </tr>
+                      );
+                    })
+                  )}
                 </tbody>
               </table>
+            </div>
+
+            {/* PAGINATION BAR */}
+            <div className="flex flex-col sm:flex-row items-center justify-between gap-3 px-4 py-3 bg-[#10141d] border-t border-[#1e2430] text-xs text-slate-400">
+              <div className="flex items-center gap-2 flex-wrap">
+                <span>
+                  Hiển thị <strong className="text-white font-bold">{filteredProjects.length === 0 ? 0 : (infraPage - 1) * infraPageSize + 1}</strong> - <strong className="text-white font-bold">{Math.min(infraPage * infraPageSize, filteredProjects.length)}</strong> trong <strong className="text-white font-bold">{filteredProjects.length.toLocaleString('vi-VN')}</strong> dự án
+                </span>
+                <span className="text-slate-600">|</span>
+                <span className="text-slate-400">Số dòng:</span>
+                <select
+                  value={infraPageSize}
+                  onChange={(e) => {
+                    setInfraPageSize(Number(e.target.value));
+                    setInfraPage(1);
+                  }}
+                  className="bg-[#181d28] border border-white/10 rounded px-2 py-0.5 text-xs text-slate-200 focus:outline-none focus:border-sky-500"
+                >
+                  <option value={25}>25 / trang</option>
+                  <option value={50}>50 / trang</option>
+                  <option value={100}>100 / trang</option>
+                </select>
+              </div>
+
+              {totalInfraPages > 1 && (
+                <div className="flex items-center gap-1">
+                  <button
+                    type="button"
+                    disabled={infraPage === 1}
+                    onClick={() => setInfraPage(1)}
+                    className="px-2 py-1 rounded bg-white/5 hover:bg-white/10 disabled:opacity-30 disabled:pointer-events-none text-slate-300 transition-colors"
+                    title="Trang đầu"
+                  >
+                    «
+                  </button>
+                  <button
+                    type="button"
+                    disabled={infraPage === 1}
+                    onClick={() => setInfraPage((p) => Math.max(1, p - 1))}
+                    className="px-2 py-1 rounded bg-white/5 hover:bg-white/10 disabled:opacity-30 disabled:pointer-events-none text-slate-300 transition-colors flex items-center gap-0.5"
+                    title="Trang trước"
+                  >
+                    <ChevronLeft className="size-3.5" />
+                  </button>
+
+                  {paginationRange.map((item, idx) =>
+                    typeof item === 'number' ? (
+                      <button
+                        key={idx}
+                        type="button"
+                        onClick={() => setInfraPage(item)}
+                        className={cn(
+                          "min-w-[28px] h-7 px-1.5 rounded text-xs font-semibold transition-all",
+                          infraPage === item
+                            ? "bg-sky-500 text-slate-950 font-bold shadow-sm"
+                            : "bg-white/5 hover:bg-white/10 text-slate-300"
+                        )}
+                      >
+                        {item}
+                      </button>
+                    ) : (
+                      <span key={idx} className="px-1 text-slate-600 select-none">
+                        {item}
+                      </span>
+                    )
+                  )}
+
+                  <button
+                    type="button"
+                    disabled={infraPage === totalInfraPages}
+                    onClick={() => setInfraPage((p) => Math.min(totalInfraPages, p + 1))}
+                    className="px-2 py-1 rounded bg-white/5 hover:bg-white/10 disabled:opacity-30 disabled:pointer-events-none text-slate-300 transition-colors flex items-center gap-0.5"
+                    title="Trang kế tiếp"
+                  >
+                    <ChevronRight className="size-3.5" />
+                  </button>
+                  <button
+                    type="button"
+                    disabled={infraPage === totalInfraPages}
+                    onClick={() => setInfraPage(totalInfraPages)}
+                    className="px-2 py-1 rounded bg-white/5 hover:bg-white/10 disabled:opacity-30 disabled:pointer-events-none text-slate-300 transition-colors"
+                    title="Trang cuối"
+                  >
+                    »
+                  </button>
+                </div>
+              )}
             </div>
           </div>
         </div>

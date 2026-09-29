@@ -15,6 +15,8 @@ import {
   BarChart3,
   TrendingUp,
   TrendingDown,
+  Minimize2,
+  Maximize2,
 } from "lucide-react";
 import {
   ResponsiveContainer,
@@ -670,6 +672,7 @@ export function FinancialStatementsExplorer({
   const [showYoY, setShowYoY] = useState<boolean>(false); // Mặc định tắt để bảng gọn gàng
   const [showQoQ, setShowQoQ] = useState<boolean>(false); // Mặc định tắt để bảng gọn gàng
   const [unit, setUnit] = useState<FinancialUnit>("mil"); // Mặc định 1.000.000 (Triệu đồng) khớp ảnh
+  const [isCompactLayout, setIsCompactLayout] = useState<boolean>(true); // Mặc định bố cục gọn gàng, đỡ đảo mắt
   const [loading, setLoading] = useState<boolean>(false);
   const [chartModalItem, setChartModalItem] = useState<{
     title: string;
@@ -1020,6 +1023,21 @@ export function FinancialStatementsExplorer({
               <Download className="size-3" />
               <span>Excel</span>
             </button>
+
+            <button
+              type="button"
+              onClick={() => setIsCompactLayout(!isCompactLayout)}
+              className={cn(
+                "inline-flex items-center gap-1 rounded px-2.5 py-1 text-[11px] font-semibold border transition-all cursor-pointer",
+                isCompactLayout
+                  ? "border-emerald-500/40 bg-emerald-500/15 text-emerald-400 hover:bg-emerald-500/25"
+                  : "border-slate-700 bg-[#1b222d] text-slate-300 hover:text-white hover:bg-slate-700/60"
+              )}
+              title={isCompactLayout ? "Chuyển sang xem rộng toàn màn hình" : "Chuyển sang bố cục gọn (đỡ đảo mắt)"}
+            >
+              {isCompactLayout ? <Minimize2 className="size-3" /> : <Maximize2 className="size-3" />}
+              <span>{isCompactLayout ? "Bố cục: Gọn" : "Toàn màn hình"}</span>
+            </button>
           </div>
         )}
       </div>
@@ -1058,17 +1076,32 @@ export function FinancialStatementsExplorer({
           </button>
         </div>
       ) : (
-        <div className="relative overflow-hidden rounded-xl border border-slate-800 bg-[#141922] shadow-sm">
+        <div
+          className={cn(
+            "relative overflow-hidden rounded-xl border border-slate-800 bg-[#141922] shadow-sm transition-all",
+            isCompactLayout ? "w-fit max-w-full" : "w-full"
+          )}
+        >
           <div className="overflow-x-auto">
             <table
               onMouseLeave={() => setHoveredColIdx(null)}
-              className="w-full text-left border-collapse select-none"
+              className={cn(
+                "text-left border-collapse select-none transition-all",
+                isCompactLayout ? "w-auto" : "w-full"
+              )}
               style={RUATICHSAN_FONT_STYLE}
             >
               <thead>
                 <tr className="sticky top-0 z-20 bg-[#161c24] text-slate-300 border-b border-slate-700/70">
                   {/* Cột 1: Controls (◀, ▶, Theo quý, 1.000.000) */}
-                  <th className="py-2 px-3 sticky left-0 z-30 bg-[#161c24] border-r border-slate-700/60 min-w-[280px] sm:min-w-[340px]">
+                  <th
+                    className={cn(
+                      "py-2 px-3 sticky left-0 z-30 bg-[#161c24] border-r border-slate-700/60 transition-all",
+                      isCompactLayout
+                        ? "w-[310px] sm:w-[350px] min-w-[280px] max-w-[380px]"
+                        : "min-w-[280px] sm:min-w-[340px]"
+                    )}
+                  >
                     <div className="flex items-center gap-1.5 sm:gap-2">
                       <div className="flex items-center gap-0.5">
                         <button
@@ -1246,7 +1279,10 @@ export function FinancialStatementsExplorer({
                         {/* Cột tiêu chí (Sticky Left) */}
                         <td
                           className={cn(
-                            "py-2 sm:py-2.5 pr-2 sticky left-0 z-10 border-r border-slate-700/60 shadow-[2px_0_5px_rgba(0,0,0,0.12)] transition-colors min-w-[280px] sm:min-w-[340px]",
+                            "py-2 sm:py-2.5 pr-2 sticky left-0 z-10 border-r border-slate-700/60 shadow-[2px_0_5px_rgba(0,0,0,0.12)] transition-colors",
+                            isCompactLayout
+                              ? "w-[310px] sm:w-[350px] min-w-[280px] max-w-[380px]"
+                              : "min-w-[280px] sm:min-w-[340px]",
                             stickyBgClass,
                             padLeftClass
                           )}
@@ -1440,7 +1476,10 @@ export function FinancialStatementsExplorer({
                         <tr className="group transition-colors border-b border-slate-800/80 bg-purple-950/20 hover:bg-purple-950/30">
                           <td
                             className={cn(
-                              "py-1.5 pr-2 sticky left-0 z-10 bg-[#1e1b2e] border-r border-slate-700/60 shadow-[2px_0_5px_rgba(0,0,0,0.12)]",
+                              "py-1.5 pr-2 sticky left-0 z-10 bg-[#1e1b2e] border-r border-slate-700/60 shadow-[2px_0_5px_rgba(0,0,0,0.12)] transition-colors",
+                              isCompactLayout
+                                ? "w-[310px] sm:w-[350px] min-w-[280px] max-w-[380px]"
+                                : "min-w-[280px] sm:min-w-[340px]",
                               subRowPadLeft
                             )}
                           >
@@ -1479,7 +1518,10 @@ export function FinancialStatementsExplorer({
                         <tr className="group transition-colors border-b border-slate-800/80 bg-sky-950/20 hover:bg-sky-950/30">
                           <td
                             className={cn(
-                              "py-1.5 pr-2 sticky left-0 z-10 bg-[#172230] border-r border-slate-700/60 shadow-[2px_0_5px_rgba(0,0,0,0.12)]",
+                              "py-1.5 pr-2 sticky left-0 z-10 bg-[#172230] border-r border-slate-700/60 shadow-[2px_0_5px_rgba(0,0,0,0.12)] transition-colors",
+                              isCompactLayout
+                                ? "w-[310px] sm:w-[350px] min-w-[280px] max-w-[380px]"
+                                : "min-w-[280px] sm:min-w-[340px]",
                               subRowPadLeft
                             )}
                           >

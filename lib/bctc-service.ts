@@ -37,6 +37,7 @@ export interface BctcReportData {
 }
 
 const SECTION_SHORT_TITLES: Record<number, string> = {
+  0: '0. Giải trình KQKD',
   1: '1. Thông tin chung',
   2: '2. Thuyết minh CĐKT',
   3: '3. Thuyết minh KQKD',
@@ -216,8 +217,8 @@ export function getBctcReport(
     }
   }
 
-  // Tách các Phần: ## PHẦN 1, ## PHẦN 2, ## PHẦN 3, ## PHẦN 4...
-  const sectionRegex = /^##\s+PHẦN\s+(\d+)[:\s]+([^\n]+)/gim
+  // Tách các Phần: # PHẦN, ## PHẦN, ### PHẦN 0, 1, 2, 3, 4...
+  const sectionRegex = /^#{1,4}\s*(?:##)?\s*PHẦN\s+(\d+)[:\s]+([^\n]+)/gim
   const matches: { number: number; title: string; index: number }[] = []
   let match: RegExpExecArray | null
 
@@ -238,36 +239,38 @@ export function getBctcReport(
 
     const firstLineBreak = sectionRaw.indexOf('\n')
     const bodyMarkdown = firstLineBreak !== -1 ? sectionRaw.slice(firstLineBreak + 1).trim() : ''
-    const secTableCount = (bodyMarkdown.match(/\|[\s-:]+\|/g) || []).length
+    const contentHtml = formatMarkdownToHtml(bodyMarkdown)
+    const secTableCount = (contentHtml.match(/<table/gi) || []).length
 
     sections.push({
       id: `phan-${current.number}`,
       number: current.number,
       title: `PHẦN ${current.number}: ${current.title}`,
       shortTitle: SECTION_SHORT_TITLES[current.number] || `Phần ${current.number}`,
-      contentHtml: formatMarkdownToHtml(bodyMarkdown),
+      contentHtml,
       rawMarkdown: bodyMarkdown,
       hasContent: bodyMarkdown.length > 0,
       tableCount: secTableCount,
     })
   }
 
-  // Nếu không regex được ## PHẦN, đưa toàn bộ vào 1 section
+  // Nếu không regex được PHẦN, đưa toàn bộ vào 1 section
   if (sections.length === 0) {
-    const totalTableCount = (raw.match(/\|[\s-:]+\|/g) || []).length
+    const contentHtml = formatMarkdownToHtml(raw)
+    const totalTableCount = (contentHtml.match(/<table/gi) || []).length
     sections.push({
       id: 'toan-bo',
       number: 1,
       title: 'Toàn bộ nội dung Thuyết minh BCTC',
       shortTitle: 'Toàn bộ Thuyết minh',
-      contentHtml: formatMarkdownToHtml(raw),
+      contentHtml,
       rawMarkdown: raw,
       hasContent: raw.length > 0,
       tableCount: totalTableCount,
     })
   }
 
-  const totalTableCount = (raw.match(/\|[\s-:]+\|/g) || []).length
+  const totalTableCount = sections.reduce((acc, s) => acc + s.tableCount, 0)
   const notes = extractNotesFromRaw(raw)
 
   return {
@@ -299,7 +302,8 @@ export function extractNotesFromRaw(rawMarkdown: string): BctcNoteItem[] {
   const finishCurrentNote = () => {
     if (!currentNote) return
     const body = currentNote.lines.join('\n').trim()
-    const tableCount = (body.match(/\|[\s-:]+\|/g) || []).length
+    const contentHtml = formatMarkdownToHtml(body)
+    const tableCount = (contentHtml.match(/<table/gi) || []).length
     notes.push({
       id: currentNote.id,
       sectionNumber: currentNote.sectionNumber,
@@ -307,7 +311,7 @@ export function extractNotesFromRaw(rawMarkdown: string): BctcNoteItem[] {
       title: currentNote.title,
       rawTitle: currentNote.rawTitle,
       rawMarkdown: body,
-      contentHtml: formatMarkdownToHtml(body),
+      contentHtml,
       tableCount,
     })
     currentNote = null
@@ -315,25 +319,25 @@ export function extractNotesFromRaw(rawMarkdown: string): BctcNoteItem[] {
 
   for (let i = 0; i < lines.length; i++) {
     const line = lines[i]
-    const secMatch = line.match(/^##\s+PHẦN\s+(\d+)[:\s]+([^\r\n]+)/i)
+    const secMatch = line.match(/^#{1,4}\s*(?:##)?\s*PHẦN\s+(\d+)[:\s]+([^\r\n]+)/i)
     if (secMatch) {
       finishCurrentNote()
       currentSection = parseInt(secMatch[1], 10)
       continue
     }
 
-    const h3Match = line.match(/^###\s+(?:Thuyết minh\s+(\d+)[:\s]+|(\d+)[\.\s]+)?([^\r\n]+)/i)
-    if (h3Match) {
+    const noteMatch = line.match(/^#{2,3}\s+(?:Thuyết minh\s+(\d+)[:\s]+|(\d+)[\.\s]+)?([^\r\n]+)/i)
+    if (noteMatch && !line.match(/^#+\s*PHẦN/i)) {
       finishCurrentNote()
-      const noteNum = h3Match[1] || h3Match[2] || ''
-      const rawTitle = (h3Match[3] || '').trim()
+      const noteNum = noteMatch[1] || noteMatch[2] || ''
+      const rawTitle = (noteMatch[3] || '').trim()
       const title = rawTitle.replace(/^[\d\.\s]+/, '').trim()
       currentNote = {
         id: `sec-${currentSection}-note-${noteNum || notes.length + 1}`,
         sectionNumber: currentSection,
         noteNumber: noteNum,
         title: title || rawTitle,
-        rawTitle: line.replace(/^###\s+/, '').trim(),
+        rawTitle: line.replace(/^#{2,3}\s+/, '').trim(),
         lines: [],
       }
     } else if (currentNote) {
