@@ -1,6 +1,6 @@
 {
   "status": "success",
-  "generated_at": "2026-09-30T16:35:32.006512",
+  "generated_at": "2026-09-30T16:41:41.006494",
   "kpis": {
     "total_port_authorities": 16,
     "total_calls_30d": 15635,
@@ -978,6 +978,23 @@
       "gt": 9742,
       "origin_port": "MPC PORT",
       "dest_port": "CHINA",
+      "source": "cvhh_haiphong"
+    },
+    {
+      "id": 5591,
+      "vessel_name": "ERASMUS LEO",
+      "authority_id": "haiphong",
+      "berth_name": "VIP Green Port",
+      "stock_ticker": "VGR",
+      "call_direction": "in",
+      "call_date": "2026-10-01",
+      "scheduled_time": "2026-10-01 01:30:00",
+      "draft": 8.8,
+      "loa": 172.1,
+      "dwt": 23927,
+      "gt": 20920,
+      "origin_port": "MALAYSIA",
+      "dest_port": "VIP GREEN PORT",
       "source": "cvhh_haiphong"
     },
     {
@@ -21172,23 +21189,6 @@
       "loa": 162.0,
       "dwt": 18500,
       "gt": 12025,
-      "origin_port": null,
-      "dest_port": null,
-      "source": "Cảng vụ Hải Phòng"
-    },
-    {
-      "id": 2061,
-      "vessel_name": "CNC TIGER",
-      "authority_id": "haiphong",
-      "berth_name": "VIP Green Port",
-      "stock_ticker": "VGR",
-      "call_direction": "in",
-      "call_date": "2026-09-11",
-      "scheduled_time": "2026-09-11 12:36",
-      "draft": 9.2,
-      "loa": 172.0,
-      "dwt": 22000,
-      "gt": 14300,
       "origin_port": null,
       "dest_port": null,
       "source": "Cảng vụ Hải Phòng"
