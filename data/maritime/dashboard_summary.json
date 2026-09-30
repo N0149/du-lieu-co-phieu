@@ -1,6 +1,6 @@
 {
   "status": "success",
-  "generated_at": "2026-09-30T16:02:43.112220",
+  "generated_at": "2026-09-30T16:35:32.006512",
   "kpis": {
     "total_port_authorities": 16,
     "total_calls_30d": 15635,
@@ -978,6 +978,23 @@
       "gt": 9742,
       "origin_port": "MPC PORT",
       "dest_port": "CHINA",
+      "source": "cvhh_haiphong"
+    },
+    {
+      "id": 5590,
+      "vessel_name": "ORIENTAL BRIGHT",
+      "authority_id": "haiphong",
+      "berth_name": "Cảng Đình Vũ",
+      "stock_ticker": "DVP",
+      "call_direction": "in",
+      "call_date": "2026-10-01",
+      "scheduled_time": "2026-10-01 01:30:00",
+      "draft": 9.1,
+      "loa": 161.9,
+      "dwt": 17765,
+      "gt": 13596,
+      "origin_port": "CHINA",
+      "dest_port": "NAM DINH VU",
       "source": "cvhh_haiphong"
     },
     {
@@ -12385,23 +12402,6 @@
       "gt": 34610,
       "origin_port": "HTIT",
       "dest_port": "SINGAPORE",
-      "source": "cvhh_haiphong"
-    },
-    {
-      "id": 4153,
-      "vessel_name": "TAICHUNG",
-      "authority_id": "haiphong",
-      "berth_name": "Cảng Đình Vũ",
-      "stock_ticker": "DVP",
-      "call_direction": "out",
-      "call_date": "2026-09-25",
-      "scheduled_time": "2026-09-25 14:30:00",
-      "draft": 9.7,
-      "loa": 183.2,
-      "dwt": 24316,
-      "gt": 16705,
-      "origin_port": "NAM HAI DINH VU",
-      "dest_port": "HONG KONG",
       "source": "cvhh_haiphong"
     },
     {
