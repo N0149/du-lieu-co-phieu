@@ -1,0 +1,23 @@
+# VC3 - BÁO CÁO CHI TIẾT ĐHĐCĐ THƯỜNG NIÊN NĂM 2026
+---
+
+## MỤC 1: BÁO CÁO KẾT QUẢ HOẠT ĐỘNG SXKD & ĐTXD 2025, KẾ HOẠCH SXKD & ĐTXD 2026
+
+### 1.1. Bối cảnh hoạt động, Thuận lợi & Khó khăn của Doanh nghiệp
+
+#### Bối cảnh hoạt động và Thị trường bất động sản năm 2025
+Năm 2025 ghi nhận sự phục hồi rõ nét nhưng không đồng đều của thị trường bất động sản Việt Nam. Theo dữ liệu nghiên cứu từ Viện Nghiên cứu đánh giá thị trường bất động sản Việt Nam (VARS IRE), nguồn cung mới năm 2025 tăng trưởng khoảng 50% so với năm 2024. Đáng chú ý, nguồn cung đang tiến gần mốc "đỉnh" của năm 2018 khi hàng loạt dự án được phê duyệt mới và tái khởi động. Đặc biệt, có khoảng 1.759 dự án nhà đất được tháo gỡ khó khăn pháp lý tại các thành phố lớn như Hà Nội, TP. Hồ Chí Minh, Đà Nẵng, Khánh Hòa và Tây Ninh. Trên cả nước có tổng cộng 3,297 dự án với quy mô khoảng 5,9 triệu căn hộ/đất nền, tổng mức đầu tư lên tới 7,42 triệu tỷ đồng.
+
+Mặc dù nguồn cung tăng mạnh nhưng khả năng hấp thụ của thị trường vẫn duy trì ở mức khá tốt. Tỷ lệ hấp thụ của các dự án mới đạt trên 60%, thậm chí nhiều dự án "cháy hàng" trong thời gian ngắn nhờ nhu cầu ở thực và nhu cầu đầu tư trung, dài hạn vẫn duy trì ở mức cao. Song song với sự phục hồi của giao dịch, mặt bằng giá bất động sản tiếp tục xu hướng tăng. Từ cuối quý IV/2025, giá bất động sản có dấu hiệu chững lại và đi ngang tại một số thị trường, nhưng thực tế chưa ghi nhận dấu hiệu giảm sâu. Lượng tồn kho tăng nhẹ nhưng mang ý nghĩa tích cực, phản ánh kỳ vọng phục hồi của doanh nghiệp trong bối cảnh nhiều dự án được tháo gỡ pháp lý và thị trường xuất hiện các tín hiệu tích cực, tạo tiền đề bổ sung nguồn cung và cải thiện thanh khoản.
+
+#### Thuận lợi đối với Công ty Cổ phần Tập đoàn Nam Mê Kông (Mekong Group)
+*   **Hỗ trợ từ chính sách vĩ mô:** Tổng vốn đầu tư công năm 2026 ước đạt 1 triệu tỷ đồng, mức cao nhất trong khu vực Đông Nam Á, trong đó 80% là đầu tư cho cơ sở hạ tầng. Đây là bệ đỡ cực kỳ vững chắc cho thị trường bất động sản nói chung và các dự án của Mekong Group nói riêng.
+*   **Hoàn thiện khung pháp lý:** Nhiều cơ chế, chính sách mới được ban hành, đặc biệt là Luật Đất đai, Luật Kinh doanh bất động sản (với các vướng mắc cũ dần được tháo gỡ) sẽ được chỉnh sửa và thông suốt trong thời gian tới, giúp doanh nghiệp đẩy nhanh tiến độ pháp lý dự án.
+*   **Định hướng phân khúc phù hợp:** Bất động sản nhà ở và nhà nước quan tâm là ngành có tác động và tính lan tỏa lớn đến nền kinh tế. Mekong Group tập trung mạnh vào phân khúc nhà ở đô thị và nhà ở xã hội, đáp ứng đúng nhu cầu thực tế của thị trường.
+*   **Nền tảng nội lực vững vàng:** Công ty sở hữu nền tảng tài chính ổn định, bộ máy nhân sự chuyên nghiệp, đoàn kết, xác định rõ mục tiêu và định hướng phát triển trung - dài hạn. Đồng thời, doanh nghiệp có nhiều đối tác tiềm năng giàu kinh nghiệm về quản lý, có năng lực tài chính tốt mong muốn hợp tác đầu tư.
+
+#### Khó khăn và Thách thức doanh nghiệp phải đối mặt
+*   **Biến động địa chính trị toàn cầu:** Diễn biến địa chính trị tại Trung Đông đang tạo ra nhiều ẩn số cho kinh tế toàn cầu, tác động trực tiếp qua giá năng lượng, lạm phát và tâm lý thị trường. Các tín hiệu ban đầu cho thấy ảnh hưởng có thể lan rộng và kéo dài, trong đó bất động sản là lĩnh vực chịu tác động theo chu kỳ. Năng lượng và kênh tác động trực tiếp và rõ rệt nhất trong bối cảnh hiện nay. Khi giá dầu tăng, áp lực lạm phát gia tăng, kéo theo sự suy giảm thu nhập khả dụng của hộ gia đình.
+*   **Lệch pha cung - cầu thị trường:** Thị trường nhà ở vẫn đối mặt với tình trạng mất cân đối nghiêm trọng. Trong khi các sản phẩm cao cấp, hạng sang rất nhiều thì phân khúc nhà ở thương mại giá phù hợp, nhà ở xã hội lại rất thiếu. Bất động sản nghỉ dưỡng còn nhiều khó khăn, thách thức, nhất là pháp lý còn những vướng mắc chưa được giải quyết triệt để.
+*   **Chi phí đầu vào tăng cao:** Lĩnh vực xây dựng vẫn gặp khó khăn do thiếu hụt nguyên vật liệu, giá cả biến động ở mức cao, chi phí đấu thầu đầu vào tăng mạnh làm thu hẹp biên lợi nhuận của doanh nghiệp.
+*   **Khó khăn nội tại trong năm 2025:** Trong năm 2025, kết quả kinh doanh của Công ty chưa đạt kế hoạch chủ yếu do thị trường bất động sản Việt Nam phải đối mặt với nhiều thách thức, khó khăn, thanh khoản bất động sản duy trì ở mức thấp, áp lực về nguồn vốn nền cũng ảnh hưởng đến các Dự án của Công ty. Thanh khoản cải thiện rõ rệt từ nửa cuối năm, song cấu trúc thị trường chưa lành mạnh, khiến doanh nghiệp khó chuyển hóa thành doanh thu - lợi nhuận. Bên cạnh đó, đối với các dự án đang triển khai, doanh thu chỉ được ghi nhận khi
