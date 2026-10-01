@@ -762,7 +762,7 @@
     {
       "t": "AIG",
       "n": "Công ty Cổ phần Nguyên liệu Á Châu AIG",
-      "s": "Sản phẩm thực ph��m",
+      "s": "Sản phẩm thực phẩm",
       "e": "",
       "et": "nonbank",
       "px": 47.2,
@@ -1217,7 +1217,7 @@
     {
       "t": "ASM",
       "n": "Công ty Cổ phần Tập đoàn Sao Mai",
-      "s": "Các công ty đầu c�� và phát triển bất động sản",
+      "s": "Các công ty đầu cơ và phát triển bất động sản",
       "e": "",
       "et": "nonbank",
       "px": 5.02,
@@ -1551,7 +1551,7 @@
     },
     {
       "t": "BBT",
-      "n": "Công ty Cổ phần Bông B���ch Tuyết",
+      "n": "Công ty Cổ phần Bông Bạch Tuyết",
       "s": "Vật tư y tế",
       "e": "",
       "et": "nonbank",
@@ -2211,7 +2211,7 @@
       "pb": 0.9,
       "roe": 20,
       "port": false,
-      "g": "Nguyên vật liệu",
+      "g": "Nguy��n vật liệu",
       "s2": "Tài nguyên Cơ bản",
       "w1": -5.71,
       "d": "2026-10-01",
@@ -2541,7 +2541,7 @@
     },
     {
       "t": "BNW",
-      "n": "C��ng ty Cổ phần Nước sạch Bắc Ninh",
+      "n": "Công ty Cổ phần Nước sạch Bắc Ninh",
       "s": "Cung cấp nước sạch",
       "e": "",
       "et": "nonbank",
@@ -3675,7 +3675,7 @@
       "roe": 30.6,
       "port": false,
       "g": "Hàng Tiêu dùng",
-      "s2": "Thực phẩm và đồ uống",
+      "s2": "Thực ph���m và đồ uống",
       "w1": 0,
       "d": "2026-10-01",
       "div": 1000,
@@ -4532,7 +4532,7 @@
     },
     {
       "t": "CLM",
-      "n": "Công ty Cổ phần Xuất nhập khẩu Than - Vinacomin",
+      "n": "Công ty Cổ ph���n Xuất nhập khẩu Than - Vinacomin",
       "s": "Khai thác than",
       "e": "",
       "et": "nonbank",
@@ -6793,7 +6793,7 @@
     },
     {
       "t": "DLT",
-      "n": "Công ty Cổ phần Du lịch và Thương mại - Vinacomin",
+      "n": "Công ty Cổ phần Du l��ch và Thương mại - Vinacomin",
       "s": "Công nghiệp đa ngành",
       "e": "",
       "et": "nonbank",
@@ -7348,7 +7348,7 @@
     {
       "t": "DQC",
       "n": "Công ty Cổ phần Tập đoàn Điện Quang",
-      "s": "Sản phẩm gia dụng kh��ng lâu bền",
+      "s": "Sản phẩm gia dụng không lâu bền",
       "e": "",
       "et": "nonbank",
       "px": 9.66,
@@ -7641,7 +7641,7 @@
     },
     {
       "t": "DST",
-      "n": "Công ty Cổ phần ��ầu tư Sao Thăng Long",
+      "n": "Công ty Cổ phần Đầu t�� Sao Thăng Long",
       "s": "Xây dựng, xây lắp",
       "e": "",
       "et": "nonbank",
@@ -12417,7 +12417,7 @@
       "pb": 0.55,
       "roe": 12.3,
       "port": false,
-      "g": "Công nghiệp",
+      "g": "Công nghi���p",
       "s2": "Xây dựng và Vật liệu",
       "w1": -1.22,
       "d": "2026-10-01",
@@ -30945,7 +30945,7 @@
     },
     {
       "t": "VSE",
-      "n": "Công ty Cổ phần Dịch vụ ��ường cao tốc Việt Nam",
+      "n": "Công ty Cổ phần Dịch vụ Đường cao tốc Việt Nam",
       "s": "Xây dựng, xây lắp",
       "e": "",
       "et": "nonbank",
