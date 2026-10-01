@@ -1,6 +1,6 @@
 {
   "status": "success",
-  "generated_at": "2026-10-01T17:17:46.335773",
+  "generated_at": "2026-10-01T19:23:00.670998",
   "kpis": {
     "total_port_authorities": 16,
     "total_calls_30d": 15635,
@@ -7662,6 +7662,23 @@
       "source": "cvhh_haiphong"
     },
     {
+      "id": 5855,
+      "vessel_name": "GOLD STAR 19",
+      "authority_id": "haiphong",
+      "berth_name": "Cảng Đình Vũ",
+      "stock_ticker": "DVP",
+      "call_direction": "in",
+      "call_date": "2026-09-30",
+      "scheduled_time": "2026-09-30 01:30:00",
+      "draft": 7.5,
+      "loa": 117.6,
+      "dwt": 9130,
+      "gt": 6190,
+      "origin_port": "DUNG QUAT",
+      "dest_port": "EURO DINH VU",
+      "source": "cvhh_haiphong"
+    },
+    {
       "id": 5835,
       "vessel_name": "ORIENTAL BRIGHT",
       "authority_id": "haiphong",
@@ -11331,23 +11348,6 @@
       "gt": 16738,
       "origin_port": "NAM DINH VU",
       "dest_port": "CHINA",
-      "source": "cvhh_haiphong"
-    },
-    {
-      "id": 4942,
-      "vessel_name": "YM HORIZON",
-      "authority_id": "haiphong",
-      "berth_name": "Cảng Đình Vũ",
-      "stock_ticker": "DVP",
-      "call_direction": "out",
-      "call_date": "2026-09-28",
-      "scheduled_time": "2026-09-28 12:30:00",
-      "draft": 7.8,
-      "loa": 168.8,
-      "dwt": 19104,
-      "gt": 15167,
-      "origin_port": "NAM DINH VU",
-      "dest_port": "DA NANG",
       "source": "cvhh_haiphong"
     },
     {

@@ -1,6 +1,6 @@
 {
   "status": "success",
-  "updated_at": "2026-10-01T17:17:46.251893",
+  "updated_at": "2026-10-01T19:23:00.572785",
   "indices": {
     "BDI": {
       "symbol": "BDI",
@@ -16,10 +16,10 @@
       "summary": "Đo lường chi phí thuê tàu vận tải hàng rời (than đá, quặng sắt, ngũ cốc) toàn cầu. Tác động trực tiếp tới biên lợi nhuận của VOS và các đội tàu hàng khô.",
       "source": "Breakwave BDRY Proxy",
       "latest_date": "2026-10-01",
-      "latest_value": 1749,
-      "previous_value": 1830,
+      "latest_value": 1750,
+      "previous_value": 1831,
       "change_val": -81,
-      "change_pct": -8.43,
+      "change_pct": -8.33,
       "stats_52w": {
         "high": 2248,
         "low": 1520
@@ -3349,15 +3349,15 @@
         },
         {
           "date": "2026-08-14",
-          "value": 2164,
-          "change_val": -48,
-          "change_pct": -2.17
+          "value": 2165,
+          "change_val": -47,
+          "change_pct": -2.12
         },
         {
           "date": "2026-08-21",
           "value": 2096,
-          "change_val": -68,
-          "change_pct": -3.14
+          "change_val": -69,
+          "change_pct": -3.19
         },
         {
           "date": "2026-08-28",
@@ -3373,27 +3373,27 @@
         },
         {
           "date": "2026-09-11",
-          "value": 1916,
-          "change_val": -49,
-          "change_pct": -2.49
+          "value": 1917,
+          "change_val": -48,
+          "change_pct": -2.44
         },
         {
           "date": "2026-09-18",
-          "value": 1857,
+          "value": 1858,
           "change_val": -59,
           "change_pct": -3.08
         },
         {
           "date": "2026-09-25",
-          "value": 1830,
+          "value": 1831,
           "change_val": -27,
           "change_pct": -1.45
         },
         {
           "date": "2026-10-01",
-          "value": 1749,
+          "value": 1750,
           "change_val": -81,
-          "change_pct": -8.43
+          "change_pct": -8.33
         }
       ]
     },
