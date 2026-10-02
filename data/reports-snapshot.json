@@ -1,5 +1,20 @@
 [
   {
+    "slug": "abt-28-12-2025",
+    "ticker": "ABT",
+    "title": "ABT",
+    "category": "Phân Tích",
+    "date": "28/12/2025",
+    "reportDate": "28/12/2025",
+    "driveDocId": "16jWb0YJG80enU4k0Lr5lPKfEQeSQC2-AYNnmmqNG9-s",
+    "summary": null,
+    "targetPrice": null,
+    "currentPrice": null,
+    "recommendation": null,
+    "upside": null,
+    "bonusWelfareRate": null
+  },
+  {
     "slug": "vsm-12-08-2026",
     "ticker": "VSM",
     "title": "Định Giá Cổ Phiếu VSM",
@@ -2875,21 +2890,6 @@
     "summary": null,
     "targetPrice": null,
     "currentPrice": 0.3,
-    "recommendation": null,
-    "upside": null,
-    "bonusWelfareRate": null
-  },
-  {
-    "slug": "abt-28-12-2025",
-    "ticker": "ABT",
-    "title": "ABT",
-    "category": "Phân Tích",
-    "date": "28/12/2025",
-    "reportDate": "28/12/2025",
-    "driveDocId": "16jWb0YJG80enU4k0Lr5lPKfEQeSQC2-AYNnmmqNG9-s",
-    "summary": null,
-    "targetPrice": null,
-    "currentPrice": 2,
     "recommendation": null,
     "upside": null,
     "bonusWelfareRate": null
