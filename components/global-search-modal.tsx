@@ -316,6 +316,9 @@ export function GlobalSearchModal({ open, onClose }: GlobalSearchModalProps) {
         href: item.href,
         icon: item.icon,
       })
+      if (typeof window !== 'undefined') {
+        window.dispatchEvent(new CustomEvent('app-navigation-start'))
+      }
       onClose()
       router.push(item.href)
     },
@@ -338,6 +341,9 @@ export function GlobalSearchModal({ open, onClose }: GlobalSearchModalProps) {
       if (selected) {
         handleSelectItem(selected)
       } else if (query.trim()) {
+        if (typeof window !== 'undefined') {
+          window.dispatchEvent(new CustomEvent('app-navigation-start'))
+        }
         onClose()
         // If it looks like a ticker, go to stock and save recent
         const t = query.trim().toUpperCase()
