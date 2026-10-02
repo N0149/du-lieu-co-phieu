@@ -1,5 +1,31 @@
 [
   {
+    "id": "cf_ND2_2026-10-02_668bf4891d",
+    "symbol": "ND2",
+    "exchange": "UPCOM",
+    "company_name": "Công ty Cổ phần Đầu tư và Phát triển điện Miền Bắc 2",
+    "title": "ND2: Thay đổi người công bố thông tin",
+    "doc_type": "KHAC",
+    "doc_type_label": "Công bố thông tin",
+    "published_at": "2026-10-02 08:40:00",
+    "file_url": "https://cafef.vn/du-lieu/ND2-2989211/nd2-thay-doi-nguoi-cong-bo-thong-tin.chn?utm_source=du-lieu.chn",
+    "source": "CafeF_Sở",
+    "is_important": 0
+  },
+  {
+    "id": "cf_VTK_2026-10-02_cba9f5894c",
+    "symbol": "VTK",
+    "exchange": "UPCOM",
+    "company_name": "Công ty Cổ phần Tư vấn và Dịch vụ Viettel",
+    "title": "VTK: Quy chế Công bố thông tin Công ty Cổ phần Tư vấn và Dịch vụ Viettel",
+    "doc_type": "KHAC",
+    "doc_type_label": "Công bố thông tin",
+    "published_at": "2026-10-02 08:38:00",
+    "file_url": "https://cafef.vn/du-lieu/VTK-2989210/vtk-quy-che-cong-bo-thong-tin-cong-ty-co-phan-tu-van-va-dich-vu-viettel.chn?utm_source=du-lieu.chn",
+    "source": "CafeF_Sở",
+    "is_important": 0
+  },
+  {
     "id": "cf_TIE_2026-10-01_2426880a4f",
     "symbol": "TIE",
     "exchange": "UPCOM",
@@ -1300,6 +1326,19 @@
     "is_important": 0
   },
   {
+    "id": "cf_PSD_2026-10-01_5457fc7ea2",
+    "symbol": "PSD",
+    "exchange": "HNX",
+    "company_name": "Công ty Cổ phần Dịch vụ Phân phối Tổng hợp Dầu khí",
+    "title": "PSD: Niêm yết 16.208.218 cổ phiếu trả cổ tức năm 2025",
+    "doc_type": "CO_TUC",
+    "doc_type_label": "Cổ tức & Quyền",
+    "published_at": "2026-10-01 00:00:00",
+    "file_url": "https://cafef.vn/du-lieu/PSD-2988988/psd-niem-yet-16208218-co-phieu-tra-co-tuc-nam-2025.chn?utm_source=du-lieu.chn",
+    "source": "CafeF_Sở",
+    "is_important": 1
+  },
+  {
     "id": "cf_IMP_2026-09-30_918b0074e2",
     "symbol": "IMP",
     "exchange": "HOSE",
@@ -2557,45 +2596,6 @@
     "doc_type_label": "Công bố thông tin",
     "published_at": "2026-09-30 10:44:00",
     "file_url": "https://cafef.vn/du-lieu/AGR-2987522/agr-quyet-dinh-ve-viec-ky-hop-dong-cho-vay-theo-han-muc-tai-vietcombank-chi-nhanh-thanh-xuan.chn?utm_source=du-lieu.chn",
-    "source": "CafeF_Sở",
-    "is_important": 0
-  },
-  {
-    "id": "cf_BSR_2026-09-30_097591f3d4",
-    "symbol": "BSR",
-    "exchange": "HOSE",
-    "company_name": "Công ty Cổ phần - Tổng Công ty Lọc Hoá dầu Việt Nam",
-    "title": "BSR: Thông báo thay đổi nhân sự (kèm Quyết định)",
-    "doc_type": "KHAC",
-    "doc_type_label": "Công bố thông tin",
-    "published_at": "2026-09-30 10:43:00",
-    "file_url": "https://cafef.vn/du-lieu/BSR-2987521/bsr-thong-bao-thay-doi-nhan-su-kem-quyet-dinh.chn?utm_source=du-lieu.chn",
-    "source": "CafeF_Sở",
-    "is_important": 0
-  },
-  {
-    "id": "cf_KHD_2026-09-30_e4f9c3fded",
-    "symbol": "KHD",
-    "exchange": "UPCOM",
-    "company_name": "Công ty Cổ phần Khai thác, Chế biến Khoáng sản Hải Dương",
-    "title": "KHD: Ký hợp đồng kiểm toán báo cáo tài chính năm 2026",
-    "doc_type": "BCTC_SOAT_XET",
-    "doc_type_label": "BCTC & Soát xét",
-    "published_at": "2026-09-30 10:02:00",
-    "file_url": "https://cafef.vn/du-lieu/KHD-2987486/khd-ky-hop-dong-kiem-toan-bao-cao-tai-chinh-nam-2026.chn?utm_source=du-lieu.chn",
-    "source": "CafeF_Sở",
-    "is_important": 1
-  },
-  {
-    "id": "cf_AIC_2026-09-30_32977728a9",
-    "symbol": "AIC",
-    "exchange": "UPCOM",
-    "company_name": "Công ty Cổ phần Tập đoàn Bảo hiểm DBV",
-    "title": "AIC: Bổ nhiệm ông Phạm Quang Trình giữ chức Phó Tổng giám đốc",
-    "doc_type": "NGHI_QUYET_HDQT",
-    "doc_type_label": "Nghị quyết HĐQT",
-    "published_at": "2026-09-30 00:00:00",
-    "file_url": "https://cafef.vn/du-lieu/AIC-2987492/aic-bo-nhiem-ong-pham-quang-trinh-giu-chuc-pho-tong-giam-doc.chn?utm_source=du-lieu.chn",
     "source": "CafeF_Sở",
     "is_important": 0
   }
