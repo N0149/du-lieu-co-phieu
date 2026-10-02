@@ -22,9 +22,12 @@ export async function GET(
     if (format === 'candles') {
       const { getStockCandles } = await import('@/lib/stock-price-history-service')
       const candles = await getStockCandles(ticker, years)
-      return NextResponse.json({ symbol: ticker, candles }, {
+      const hasData = Array.isArray(candles) && candles.length > 0
+      return NextResponse.json({ symbol: ticker, candles: candles || [] }, {
         headers: {
-          'Cache-Control': 'public, s-maxage=3600, stale-while-revalidate=86400',
+          'Cache-Control': hasData
+            ? 'public, s-maxage=3600, stale-while-revalidate=86400'
+            : 'no-cache, no-store, must-revalidate',
         },
       })
     }

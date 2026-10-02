@@ -46,6 +46,92 @@ function formatCompactNumber(num: number | null | undefined): string {
   return num.toLocaleString('vi-VN')
 }
 
+// Chuyển đổi dữ liệu Entrade sang định dạng nến TradingView
+function parseEntradeToCandles(data: any): CandleDataPoint[] {
+  if (!data || !Array.isArray(data.t) || data.t.length === 0) return []
+  const times = data.t
+  const opens = data.o || []
+  const highs = data.h || []
+  const lows = data.l || []
+  const closes = data.c || []
+  const volumes = data.v || []
+  const candles: CandleDataPoint[] = []
+
+  for (let i = 0; i < times.length; i++) {
+    const t = times[i]
+    const d = new Date(t * 1000)
+    if (isNaN(d.getTime())) continue
+    const yyyy = d.getFullYear()
+    const mm = String(d.getMonth() + 1).padStart(2, '0')
+    const dd = String(d.getDate()).padStart(2, '0')
+    const timeStr = `${yyyy}-${mm}-${dd}`
+    const dateStr = `${dd}/${mm}/${yyyy}`
+
+    const rawClose = Number(closes[i]) || 0
+    const rawOpen = Number(opens[i]) || rawClose
+    const rawHigh = Number(highs[i]) || Math.max(rawOpen, rawClose)
+    const rawLow = Number(lows[i]) || Math.min(rawOpen, rawClose)
+
+    const toK = (val: number) => (val > 500 ? Math.round((val / 1000) * 100) / 100 : Math.round(val * 100) / 100)
+
+    candles.push({
+      time: timeStr,
+      open: toK(rawOpen),
+      high: toK(rawHigh),
+      low: toK(rawLow),
+      close: toK(rawClose),
+      volume: Number(volumes[i]) || 0,
+      dateStr,
+      timestamp: t,
+    })
+  }
+
+  return candles.sort((a, b) => a.time.localeCompare(b.time))
+}
+
+// Chuyển đổi dữ liệu VNDirect Dchart sang định dạng nến TradingView
+function parseVndirectToCandles(data: any): CandleDataPoint[] {
+  if (!data || data.s !== 'ok' || !Array.isArray(data.t) || data.t.length === 0) return []
+  const times = data.t
+  const opens = data.o || []
+  const highs = data.h || []
+  const lows = data.l || []
+  const closes = data.c || []
+  const volumes = data.v || []
+  const candles: CandleDataPoint[] = []
+
+  for (let i = 0; i < times.length; i++) {
+    const t = times[i]
+    const d = new Date(t * 1000)
+    if (isNaN(d.getTime())) continue
+    const yyyy = d.getFullYear()
+    const mm = String(d.getMonth() + 1).padStart(2, '0')
+    const dd = String(d.getDate()).padStart(2, '0')
+    const timeStr = `${yyyy}-${mm}-${dd}`
+    const dateStr = `${dd}/${mm}/${yyyy}`
+
+    const rawClose = Number(closes[i]) || 0
+    const rawOpen = Number(opens[i]) || rawClose
+    const rawHigh = Number(highs[i]) || Math.max(rawOpen, rawClose)
+    const rawLow = Number(lows[i]) || Math.min(rawOpen, rawClose)
+
+    const toK = (val: number) => (val > 500 ? Math.round((val / 1000) * 100) / 100 : Math.round(val * 100) / 100)
+
+    candles.push({
+      time: timeStr,
+      open: toK(rawOpen),
+      high: toK(rawHigh),
+      low: toK(rawLow),
+      close: toK(rawClose),
+      volume: Number(volumes[i]) || 0,
+      dateStr,
+      timestamp: t,
+    })
+  }
+
+  return candles.sort((a, b) => a.time.localeCompare(b.time))
+}
+
 export function TradingViewCandleChart({
   symbol,
   companyName,
@@ -65,6 +151,7 @@ export function TradingViewCandleChart({
   const [candles, setCandles] = useState<CandleDataPoint[]>(initialCandles || [])
   const [loading, setLoading] = useState<boolean>(!initialCandles || initialCandles.length === 0)
   const [error, setError] = useState<string | null>(null)
+  const [reloadKey, setReloadKey] = useState<number>(0)
 
   // Chỉ báo hiển thị
   const [showMA20, setShowMA20] = useState<boolean>(true)
@@ -91,13 +178,14 @@ export function TradingViewCandleChart({
     ma50?: number
   } | null>(null)
 
-  // 1. Nạp dữ liệu nến nếu chưa có sẵn từ SSR
+  // 1. Nạp dữ liệu nến: Ưu tiên SSR -> API Nội Bộ -> Fallback Entrade Open CORS -> VNDirect
   useEffect(() => {
     let isMounted = true
 
-    if (initialCandles && initialCandles.length > 0) {
+    if (reloadKey === 0 && initialCandles && initialCandles.length > 0) {
       setCandles(initialCandles)
       setLoading(false)
+      setError(null)
       return
     }
 
@@ -105,17 +193,73 @@ export function TradingViewCandleChart({
       try {
         setLoading(true)
         setError(null)
-        const res = await fetch(`/api/stock/${encodeURIComponent(symbol)}/prices?format=candles&years=5`)
-        if (!res.ok) {
-          throw new Error(`Không thể nạp dữ liệu nến cho ${symbol}`)
-        }
-        const data = await res.json()
-        if (isMounted) {
-          if (data && Array.isArray(data.candles) && data.candles.length > 0) {
-            setCandles(data.candles)
-          } else {
-            setError(`Chưa có dữ liệu nến cho mã ${symbol}`)
+
+        const sym = symbol.toUpperCase().trim()
+
+        // Bước 1: Thử gọi qua API nội bộ
+        try {
+          const res = await fetch(`/api/stock/${encodeURIComponent(sym)}/prices?format=candles&years=5`)
+          if (res.ok) {
+            const data = await res.json()
+            if (data && Array.isArray(data.candles) && data.candles.length > 0) {
+              if (isMounted) {
+                setCandles(data.candles)
+                setLoading(false)
+                return
+              }
+            }
           }
+        } catch {
+          // Bỏ qua lỗi API nội bộ để tiếp tục fallback
+        }
+
+        // Bước 2: Fallback trực tiếp từ Client sang DNSE Entrade (Open CORS, cực kỳ ổn định & tức thì)
+        const toSec = Math.floor(Date.now() / 1000)
+        const fromSec = toSec - 5 * 365 * 86400
+
+        try {
+          const entradeRes = await fetch(
+            `https://services.entrade.com.vn/chart-api/v2/ohlcs/stock?from=${fromSec}&to=${toSec}&symbol=${sym}&resolution=1D`,
+            { signal: AbortSignal.timeout(6000) }
+          )
+          if (entradeRes.ok) {
+            const entradeData = await entradeRes.json()
+            const parsed = parseEntradeToCandles(entradeData)
+            if (parsed.length > 0) {
+              if (isMounted) {
+                setCandles(parsed)
+                setLoading(false)
+                return
+              }
+            }
+          }
+        } catch {
+          // Tiếp tục thử VNDirect
+        }
+
+        // Bước 3: Fallback tiếp tục sang VNDirect Dchart API
+        try {
+          const vnRes = await fetch(
+            `https://dchart-api.vndirect.com.vn/dchart/history?resolution=D&symbol=${sym}&from=${fromSec}&to=${toSec}`,
+            { signal: AbortSignal.timeout(6000) }
+          )
+          if (vnRes.ok) {
+            const vnData = await vnRes.json()
+            const parsed = parseVndirectToCandles(vnData)
+            if (parsed.length > 0) {
+              if (isMounted) {
+                setCandles(parsed)
+                setLoading(false)
+                return
+              }
+            }
+          }
+        } catch {
+          // Kết thúc chuỗi fallback
+        }
+
+        if (isMounted) {
+          setError(`Chưa thể nạp dữ liệu nến kỹ thuật cho ${sym}. Vui lòng thử lại.`)
         }
       } catch (err: any) {
         if (isMounted) {
@@ -131,7 +275,7 @@ export function TradingViewCandleChart({
     return () => {
       isMounted = false
     }
-  }, [symbol, initialCandles])
+  }, [symbol, initialCandles, reloadKey])
 
   // 2. Đảm bảo nến luôn được khử trùng lặp ngày và sắp xếp tăng dần nghiêm ngặt theo thời gian
   const validCandles = useMemo(() => {
@@ -847,6 +991,7 @@ export function TradingViewCandleChart({
               onClick={() => {
                 setLoading(true)
                 setError(null)
+                setReloadKey((k) => k + 1)
               }}
               className="mt-2 rounded-xl bg-primary/20 px-3.5 py-1.5 text-xs font-bold text-primary hover:bg-primary/30 transition-all cursor-pointer"
             >

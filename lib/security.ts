@@ -274,12 +274,25 @@ export function verifyApiOriginAccess(
   // - Trình duyệt chuẩn gửi sec-fetch-site: 'same-origin' hoặc 'same-site'
   const hasSameOriginSec = secFetchSite === 'same-origin' || secFetchSite === 'same-site'
 
+  // Chuẩn hóa host hiện tại (bỏ www và port)
+  const cleanHost = (host || '').replace(/^www\./i, '').split(':')[0].toLowerCase()
+
   // - Hoặc có referer hợp lệ trỏ từ host của website
   let isMatchingReferer = false
-  if (referer && host) {
+  if (referer) {
     try {
       const refUrl = new URL(referer)
-      if (refUrl.host === host || refUrl.host.endsWith(host)) {
+      const cleanRefHost = refUrl.hostname.replace(/^www\./i, '').toLowerCase()
+      if (
+        refUrl.host === host ||
+        refUrl.hostname === host ||
+        cleanRefHost === cleanHost ||
+        cleanRefHost.endsWith('dulieudautu.com') ||
+        cleanHost.endsWith(cleanRefHost) ||
+        cleanRefHost.endsWith(cleanHost) ||
+        refUrl.hostname === 'localhost' ||
+        refUrl.hostname === '127.0.0.1'
+      ) {
         isMatchingReferer = true
       }
     } catch {}
@@ -287,10 +300,20 @@ export function verifyApiOriginAccess(
 
   // - Hoặc origin trùng khớp host
   let isMatchingOrigin = false
-  if (origin && host) {
+  if (origin) {
     try {
       const originUrl = new URL(origin)
-      if (originUrl.host === host || originUrl.host.endsWith(host)) {
+      const cleanOriginHost = originUrl.hostname.replace(/^www\./i, '').toLowerCase()
+      if (
+        originUrl.host === host ||
+        originUrl.hostname === host ||
+        cleanOriginHost === cleanHost ||
+        cleanOriginHost.endsWith('dulieudautu.com') ||
+        cleanHost.endsWith(cleanOriginHost) ||
+        cleanOriginHost.endsWith(cleanHost) ||
+        originUrl.hostname === 'localhost' ||
+        originUrl.hostname === '127.0.0.1'
+      ) {
         isMatchingOrigin = true
       }
     } catch {}
@@ -313,14 +336,18 @@ export function isSameOriginOrDirect(headers: Headers, host: string | null): boo
     return true
   }
 
+  const cleanHost = (host || '').replace(/^www\./i, '').split(':')[0].toLowerCase()
+
   const referer = headers.get('referer')
-  if (referer && host && referer.includes(host)) {
-    return true
+  if (referer) {
+    if (cleanHost && referer.toLowerCase().includes(cleanHost)) return true
+    if (referer.includes('dulieudautu.com') || referer.includes('localhost') || referer.includes('127.0.0.1')) return true
   }
 
   const origin = headers.get('origin')
-  if (origin && host && origin.includes(host)) {
-    return true
+  if (origin) {
+    if (cleanHost && origin.toLowerCase().includes(cleanHost)) return true
+    if (origin.includes('dulieudautu.com') || origin.includes('localhost') || origin.includes('127.0.0.1')) return true
   }
 
   return false

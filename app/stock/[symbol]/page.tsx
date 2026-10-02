@@ -27,7 +27,7 @@ import { getBctcReport, getAvailableBctcTickers } from '@/lib/bctc-service'
 import { getStockIcbHierarchy } from '@/lib/icb-service'
 import { getFinancialStatements } from '@/lib/financial-statements-db'
 import { getStockArticles, getStockArticlesAsync } from '@/lib/stock-articles-service'
-import { getLocalPriceWeekly, getLocalStockCandles } from '@/lib/stock-price-history-service'
+import { getLocalPriceWeekly, getLocalStockCandles, getStockCandles } from '@/lib/stock-price-history-service'
 import { getCompanyWebsiteMeta } from '@/lib/company-website-service'
 import { getCompanyBctcDocuments } from '@/lib/bctc-document-service'
 
@@ -122,7 +122,15 @@ export default async function StockDetailPage({
     getStockEvaluation(ticker),
     getFinancialChartData(ticker, 'quarter'),
     getFinancialChartData(ticker, 'annual'),
-    Promise.resolve(getLocalStockCandles(ticker)),
+    (async () => {
+      const local = getLocalStockCandles(ticker)
+      if (local && local.length > 0) return local
+      try {
+        return await getStockCandles(ticker, 3)
+      } catch {
+        return []
+      }
+    })(),
     Promise.resolve(getCompanyWebsiteMeta(ticker)),
 
     // Nhóm 2: Dữ liệu theo tab (chỉ tải SSR nếu người dùng truy cập trực tiếp tab đó qua URL)

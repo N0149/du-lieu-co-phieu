@@ -30,11 +30,18 @@ export interface InsiderTradeItem {
   traderName: string
   traderPosition?: string
   leaderName?: string
+  leaderPosition?: string
   tradeDate: string
   action: 'BUY' | 'SELL' | 'NONE'
+  volumeBefore?: number
   volumeTraded: number
   volumeRegistered: number
   volumeAfter: number
+  ownershipRate?: number
+  planBeginDate?: string
+  planEndDate?: string
+  realEndDate?: string
+  publishedDate?: string
 }
 
 export interface CompanyFullProfileData {
