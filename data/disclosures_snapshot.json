@@ -1,5 +1,18 @@
 [
   {
+    "id": "cf_PVL_2026-10-04_bb6c8540bf",
+    "symbol": "PVL",
+    "exchange": "UPCOM",
+    "company_name": "Công ty Cổ phần Địa ốc Dầu khí",
+    "title": "PVL: Nhận được Quyết định đình chỉ xét xử phúc thẩm vụ án kinh doanh thương mại",
+    "doc_type": "KHAC",
+    "doc_type_label": "Công bố thông tin",
+    "published_at": "2026-10-04 20:14:00",
+    "file_url": "https://cafef.vn/du-lieu/PVL-2990843/pvl-nhan-duoc-quyet-dinh-dinh-chi-xet-xu-phuc-tham-vu-an-kinh-doanh-thuong-mai.chn?utm_source=du-lieu.chn",
+    "source": "CafeF_Sở",
+    "is_important": 0
+  },
+  {
     "id": "cf_VPG_2026-10-02_ac2fa3e2c5",
     "symbol": "VPG",
     "exchange": "HOSE",
@@ -2585,18 +2598,5 @@
     "file_url": "https://cafef.vn/du-lieu/TTF-2988571/ttf-quyet-dinh-ve-viec-dua-co-phieu-vao-dien-kiem-soat.chn?utm_source=du-lieu.chn",
     "source": "CafeF_Sở",
     "is_important": 1
-  },
-  {
-    "id": "cf_PTB_2026-10-01_60d8632726",
-    "symbol": "PTB",
-    "exchange": "HOSE",
-    "company_name": "Công ty Cổ phần Phú Tài",
-    "title": "PTB: Thông báo giao dịch cổ phiếu của người nội bộ Lê Văn Lộc",
-    "doc_type": "GIAO_DICH_NOI_BO",
-    "doc_type_label": "Giao dịch nội bộ",
-    "published_at": "2026-10-01 10:52:00",
-    "file_url": "https://cafef.vn/du-lieu/PTB-2988567/ptb-thong-bao-giao-dich-co-phieu-cua-nguoi-noi-bo-le-van-loc.chn?utm_source=du-lieu.chn",
-    "source": "CafeF_Sở",
-    "is_important": 0
   }
 ]

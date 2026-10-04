@@ -11,18 +11,17 @@
     "pbForward": 2.48,
     "pbForwardVsMedian": -10
   },
-  "price": 80600,
+  "price": null,
   "metrics": {
-    "marketCap": 13428,
-    "pe": 19.38,
-    "eps": 4159.1,
-    "volume10d": 4090,
-    "pb": 1.86,
+    "marketCap": 13456700000000,
+    "pe": 1.16874,
+    "eps": 92449.4595271065,
+    "volume10d": 3722,
+    "pb": 2.6964924105,
     "ps": null,
-    "bvps": 43313.8,
+    "bvps": null,
     "sharesOut": 166601050,
     "evEbitda": 1.29899,
-    "beta": 0.74896,
-    "bookValue": 7216
+    "beta": 0.74896
   }
 }
