@@ -1,6 +1,6 @@
 {
   "status": "success",
-  "updated_at": "2026-10-03T17:51:43.513242",
+  "updated_at": "2026-10-04T02:14:39.418070",
   "indices": {
     "BDI": {
       "symbol": "BDI",
@@ -15,13 +15,13 @@
       ],
       "summary": "Đo lường chi phí thuê tàu vận tải hàng rời (than đá, quặng sắt, ngũ cốc) toàn cầu. Tác động trực tiếp tới biên lợi nhuận của VOS và các đội tàu hàng khô.",
       "source": "Baltic Exchange / Hellenic",
-      "latest_date": "2026-10-03",
+      "latest_date": "2026-10-04",
       "latest_value": 3148.0,
-      "previous_value": 3166,
-      "change_val": -18.0,
+      "previous_value": 3162,
+      "change_val": -14.0,
       "change_pct": 1.2,
       "stats_52w": {
-        "high": 3166,
+        "high": 3162,
         "low": 1520
       },
       "stats_10y": {
@@ -3379,26 +3379,26 @@
         },
         {
           "date": "2026-09-18",
-          "value": 3004,
-          "change_val": 41,
-          "change_pct": 1.38
+          "value": 3000,
+          "change_val": 37,
+          "change_pct": 1.25
         },
         {
           "date": "2026-09-25",
-          "value": 3110,
-          "change_val": 106,
-          "change_pct": 3.53
+          "value": 3100,
+          "change_val": 100,
+          "change_pct": 3.33
         },
         {
           "date": "2026-10-02",
-          "value": 3166,
-          "change_val": 56,
-          "change_pct": 1.8
+          "value": 3162,
+          "change_val": 62,
+          "change_pct": 2.0
         },
         {
-          "date": "2026-10-03",
+          "date": "2026-10-04",
           "value": 3148.0,
-          "change_val": -18.0,
+          "change_val": -14.0,
           "change_pct": 1.2
         }
       ]
@@ -3416,10 +3416,10 @@
       ],
       "summary": "Đo lường giá cước giao ngay cho 1 container 40ft (FEU) trên các tuyến xuyên đại dương. Kim chỉ nam doanh thu cho HAH và các liên doanh cảng nước sâu của Gemadept.",
       "source": "Drewry Shipping Consultants",
-      "latest_date": "2026-10-03",
+      "latest_date": "2026-10-04",
       "latest_value": 4434.0,
-      "previous_value": 4436,
-      "change_val": -2.0,
+      "previous_value": 4437,
+      "change_val": -3.0,
       "change_pct": -1.0,
       "stats_52w": {
         "high": 4680,
@@ -6780,26 +6780,26 @@
         },
         {
           "date": "2026-09-18",
-          "value": 4473,
-          "change_val": -12,
-          "change_pct": -0.27
+          "value": 4474,
+          "change_val": -11,
+          "change_pct": -0.25
         },
         {
           "date": "2026-09-25",
-          "value": 4450,
-          "change_val": -23,
-          "change_pct": -0.51
+          "value": 4452,
+          "change_val": -22,
+          "change_pct": -0.49
         },
         {
           "date": "2026-10-02",
-          "value": 4436,
-          "change_val": -14,
-          "change_pct": -0.31
+          "value": 4437,
+          "change_val": -15,
+          "change_pct": -0.34
         },
         {
-          "date": "2026-10-03",
+          "date": "2026-10-04",
           "value": 4434.0,
-          "change_val": -2.0,
+          "change_val": -3.0,
           "change_pct": -1.0
         }
       ]
@@ -6817,10 +6817,10 @@
       ],
       "summary": "Đo lường giá cước thuê các siêu tàu dầu thô viễn dương (VLCC, Suezmax, Aframax). Đang trong siêu chu kỳ tăng giá kỷ lục năm 2026 do căng thẳng an ninh eo biển Hormuz/Trung Đông và tái định tuyến Mũi Hảo Vọng.",
       "source": "Baltic Exchange",
-      "latest_date": "2026-10-03",
+      "latest_date": "2026-10-04",
       "latest_value": 5366.0,
-      "previous_value": 5363,
-      "change_val": 3.0,
+      "previous_value": 5355,
+      "change_val": 11.0,
       "change_pct": 2.21,
       "stats_52w": {
         "high": 5366.0,
@@ -10193,14 +10193,14 @@
         },
         {
           "date": "2026-10-02",
-          "value": 5363,
-          "change_val": 110,
-          "change_pct": 2.09
+          "value": 5355,
+          "change_val": 102,
+          "change_pct": 1.94
         },
         {
-          "date": "2026-10-03",
+          "date": "2026-10-04",
           "value": 5366.0,
-          "change_val": 3.0,
+          "change_val": 11.0,
           "change_pct": 2.21
         }
       ]
@@ -10218,10 +10218,10 @@
       ],
       "summary": "Theo dõi cước vận tải xăng dầu tinh chế, nhiên liệu hàng không Jet-A1 và hóa chất lỏng sạch. Tăng trưởng trên 110% YoY trong năm 2026, tạo động lực tăng trưởng doanh thu vượt trội cho đội tàu PVTrans.",
       "source": "Baltic Exchange / Macro Benchmark",
-      "latest_date": "2026-10-03",
+      "latest_date": "2026-10-04",
       "latest_value": 2160.0,
-      "previous_value": 2158,
-      "change_val": 2.0,
+      "previous_value": 2153,
+      "change_val": 7.0,
       "change_pct": 4.05,
       "stats_52w": {
         "high": 2160.0,
@@ -13588,20 +13588,20 @@
         },
         {
           "date": "2026-09-25",
-          "value": 2084,
-          "change_val": 104,
-          "change_pct": 5.25
+          "value": 2083,
+          "change_val": 103,
+          "change_pct": 5.2
         },
         {
           "date": "2026-10-02",
-          "value": 2158,
-          "change_val": 74,
-          "change_pct": 3.55
+          "value": 2153,
+          "change_val": 70,
+          "change_pct": 3.36
         },
         {
-          "date": "2026-10-03",
+          "date": "2026-10-04",
           "value": 2160.0,
-          "change_val": 2.0,
+          "change_val": 7.0,
           "change_pct": 4.05
         }
       ]
