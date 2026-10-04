@@ -1,6 +1,6 @@
 {
   "status": "success",
-  "generated_at": "2026-10-04T02:14:39.529196",
+  "generated_at": "2026-10-04T02:19:12.535897",
   "kpis": {
     "total_port_authorities": 16,
     "total_calls_30d": 15635,
@@ -520,6 +520,23 @@
       "origin_port": null,
       "dest_port": null,
       "source": "Hoa tiêu Miền Nam"
+    },
+    {
+      "id": 6505,
+      "vessel_name": "OOCL BERLIN",
+      "authority_id": "haiphong",
+      "berth_name": "HICT",
+      "stock_ticker": null,
+      "call_direction": "out",
+      "call_date": "2026-10-05",
+      "scheduled_time": "2026-10-05 08:30:00",
+      "draft": 10.2,
+      "loa": 366.5,
+      "dwt": 144143,
+      "gt": 141003,
+      "origin_port": "HICT",
+      "dest_port": "CHINA",
+      "source": "cvhh_haiphong"
     },
     {
       "id": 6390,
@@ -9173,23 +9190,6 @@
       "origin_port": "LONG AN(NEO)",
       "dest_port": "Biển Đông",
       "source": "pilot_south"
-    },
-    {
-      "id": 5859,
-      "vessel_name": "BITUMEN HEIWA",
-      "authority_id": "haiphong",
-      "berth_name": "VAT CACH",
-      "stock_ticker": null,
-      "call_direction": "out",
-      "call_date": "2026-10-02",
-      "scheduled_time": "2026-10-02 11:00:00",
-      "draft": 4.6,
-      "loa": 96.5,
-      "dwt": 3606,
-      "gt": 3604,
-      "origin_port": "VAT CACH",
-      "dest_port": "CHINA",
-      "source": "cvhh_haiphong"
     },
     {
       "id": 6120,
