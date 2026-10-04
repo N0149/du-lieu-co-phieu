@@ -92,7 +92,7 @@ export default async function StockDetailPage({
   const isFinancialsTab = initialTab === 'financials'
   const isAgmTab = initialTab === 'agm'
   const isBctcTab = initialTab === 'bctc'
-  const isProfileTab = initialTab === 'profile'
+  const isProfileTab = initialTab === 'profile' || initialTab === 'overview'
   const isArticlesTab = initialTab === 'articles'
 
   // Chạy song song dữ liệu theo tab (On-Demand Data Streaming - Chuẩn FireAnt < 0.2s)
@@ -133,18 +133,18 @@ export default async function StockDetailPage({
     })(),
     Promise.resolve(getCompanyWebsiteMeta(ticker)),
 
-    // Nhóm 2: Dữ liệu theo tab (chỉ tải SSR nếu người dùng truy cập trực tiếp tab đó qua URL)
+    // Nhóm 2: Dữ liệu theo tab & nội dung cốt lõi (100% Local-First / SQLite / Disk)
     isProfileTab ? getCompanyFullProfile(ticker) : Promise.resolve(null),
-    isChartsTab ? getValuationHistory(ticker) : Promise.resolve(null),
-    isChartsTab ? getDividendHistory(ticker) : Promise.resolve(null),
-    (isChartsTab || isFinancialsTab) ? getBusinessPlan(ticker) : Promise.resolve(null),
-    isFinancialsTab ? getFinancialStatements(ticker, 'quarter') : Promise.resolve(null),
-    isFinancialsTab ? getFinancialStatements(ticker, 'annual') : Promise.resolve(null),
-    isAgmTab ? Promise.resolve(getAgmReport(ticker, 2026)) : Promise.resolve(null),
-    isAgmTab ? Promise.resolve(getAvailableAgmTickers(2026)) : Promise.resolve([]),
-    (isBctcTab || isFinancialsTab) ? Promise.resolve(getBctcReport(ticker, 'HopNhat')) : Promise.resolve(null),
-    (isBctcTab || isFinancialsTab) ? Promise.resolve(getBctcReport(ticker, 'CongTyMe')) : Promise.resolve(null),
-    isBctcTab ? Promise.resolve(getAvailableBctcTickers()) : Promise.resolve([]),
+    getValuationHistory(ticker),
+    getDividendHistory(ticker),
+    getBusinessPlan(ticker),
+    getFinancialStatements(ticker, 'quarter'),
+    getFinancialStatements(ticker, 'annual'),
+    Promise.resolve(getAgmReport(ticker, 2026)),
+    Promise.resolve(getAvailableAgmTickers(2026)),
+    Promise.resolve(getBctcReport(ticker, 'HopNhat')),
+    Promise.resolve(getBctcReport(ticker, 'CongTyMe')),
+    Promise.resolve(getAvailableBctcTickers()),
     isArticlesTab ? Promise.resolve(getStockArticles(ticker, manifestItem.n)) : Promise.resolve(null),
   ])
 
@@ -217,23 +217,23 @@ export default async function StockDetailPage({
   // Dữ liệu phân tích & so sánh chuyên sâu ngành Ngân hàng (nếu là bank)
   const bankAnalysisData = getBankAnalysisData(ticker)
 
-  // Tính toán đồng thời các cụm biểu đồ chuyên sâu từ dữ liệu BCTC đã tải (chỉ khi có dữ liệu BCTC)
-  const profitStructureQuarter = financialStatementsQuarter ? buildProfitStructureData(ticker, 'quarter', financialStatementsQuarter) : null
-  const profitStructureAnnual = financialStatementsAnnual ? buildProfitStructureData(ticker, 'annual', financialStatementsAnnual) : null
-  const costBreakdownQuarter = financialStatementsQuarter ? buildCostBreakdownData(ticker, 'quarter', financialStatementsQuarter) : null
-  const costBreakdownAnnual = financialStatementsAnnual ? buildCostBreakdownData(ticker, 'annual', financialStatementsAnnual) : null
-  const balanceSheetQuarter = financialStatementsQuarter ? buildDetailedBalanceSheetCashFlowData(ticker, 'quarter', financialStatementsQuarter) : null
-  const balanceSheetAnnual = financialStatementsAnnual ? buildDetailedBalanceSheetCashFlowData(ticker, 'annual', financialStatementsAnnual) : null
-  const capexFinancialQuarter = financialStatementsQuarter ? buildCapexFinancialData(ticker, 'quarter', financialStatementsQuarter) : null
-  const capexFinancialAnnual = financialStatementsAnnual ? buildCapexFinancialData(ticker, 'annual', financialStatementsAnnual) : null
-  const debtDupontQuarter = financialStatementsQuarter ? buildDebtDupontData(ticker, 'quarter', financialStatementsQuarter) : null
-  const debtDupontAnnual = financialStatementsAnnual ? buildDebtDupontData(ticker, 'annual', financialStatementsAnnual) : null
+  // Tính toán đồng thời các cụm biểu đồ chuyên sâu từ dữ liệu BCTC đã tải (0ms overhead)
+  const profitStructureQuarter = buildProfitStructureData(ticker, 'quarter', financialStatementsQuarter)
+  const profitStructureAnnual = buildProfitStructureData(ticker, 'annual', financialStatementsAnnual)
+  const costBreakdownQuarter = buildCostBreakdownData(ticker, 'quarter', financialStatementsQuarter)
+  const costBreakdownAnnual = buildCostBreakdownData(ticker, 'annual', financialStatementsAnnual)
+  const balanceSheetQuarter = buildDetailedBalanceSheetCashFlowData(ticker, 'quarter', financialStatementsQuarter)
+  const balanceSheetAnnual = buildDetailedBalanceSheetCashFlowData(ticker, 'annual', financialStatementsAnnual)
+  const capexFinancialQuarter = buildCapexFinancialData(ticker, 'quarter', financialStatementsQuarter)
+  const capexFinancialAnnual = buildCapexFinancialData(ticker, 'annual', financialStatementsAnnual)
+  const debtDupontQuarter = buildDebtDupontData(ticker, 'quarter', financialStatementsQuarter)
+  const debtDupontAnnual = buildDebtDupontData(ticker, 'annual', financialStatementsAnnual)
 
   // Tỷ lệ lợi nhuận trích ngoài cổ đông (KTPL, Thưởng BĐH, Thù lao HĐQT)
   const ktplRate = agmData?.ktplRate ?? getAgmKtpl(ticker)
 
   // Danh mục file PDF/ZIP BCTC kiểm toán gốc & các cổng công bố thông tin chính thức
-  const bctcDocuments = isBctcTab ? getCompanyBctcDocuments(ticker, companyWebsiteMeta?.website) : null
+  const bctcDocuments = getCompanyBctcDocuments(ticker, companyWebsiteMeta?.website)
 
   return (
     <div className="min-h-screen bg-background text-foreground">

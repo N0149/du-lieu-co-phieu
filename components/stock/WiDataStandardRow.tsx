@@ -262,7 +262,7 @@ function WiDataValuationCard({ symbol }: { symbol: string }) {
 /* ════════════════════════════════════════════════════════════════
    CARD 2: GIÁ KHUYẾN NGHỊ (CHUẨN WIDATA 100%)
    ════════════════════════════════════════════════════════════════ */
-function WiDataConsensusCard({ symbol }: { symbol: string }) {
+export function WiDataConsensusCard({ symbol }: { symbol: string }) {
   const [data, setData] = useState<ConsensusTargetPayload | null>(null)
   const [loading, setLoading] = useState(true)
   const [mounted, setMounted] = useState(false)
@@ -485,7 +485,7 @@ function WiDataConsensusCard({ symbol }: { symbol: string }) {
 /* ════════════════════════════════════════════════════════════════
    CARD 3: GIAO DỊCH NỘI BỘ QUA THỜI GIAN (CHUẨN WIDATA 100%)
    ════════════════════════════════════════════════════════════════ */
-function WiDataInsiderCard({
+export function WiDataInsiderCard({
   symbol,
   trades: propsTrades = [],
 }: {

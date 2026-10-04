@@ -219,6 +219,155 @@ async function fetchCompanyMoneyData(sym: string): Promise<any> {
   return cached?.data || null
 }
 
+const DB_FIN_PATH = path.resolve(process.cwd(), 'data', 'financial_statements.db')
+
+export interface TtmCalculatedMetrics {
+  eps: number | null
+  pe: number | null
+  pb: number | null
+  bvps: number | null
+  bookValueBn: number | null
+  marketCapBn: number | null
+  sharesOut: number | null
+  lnstTtmBn: number | null
+  latestQuarter?: string
+}
+
+/**
+ * Tính toán chỉ tiêu TTM (Trailing Twelve Months) chuẩn xác 4 quý gần nhất từ BCTC kiểm toán
+ * Đảm bảo P/E, EPS, P/B, BVPS và Vốn chủ sở hữu luôn phản ánh đúng thực tế kinh doanh
+ */
+export function calculateTtmFromFinancialStatements(
+  symbol: string,
+  price: number | null,
+  knownSharesOut: number | null
+): TtmCalculatedMetrics | null {
+  if (!fs.existsSync(DB_FIN_PATH)) return null
+
+  try {
+    const db = new DatabaseSync(DB_FIN_PATH, { readOnly: true })
+    try {
+      const row = db
+        .prepare('SELECT fiscal_dates, cdkt, kqkd FROM financial_statements WHERE symbol = ? AND period_type = ?')
+        .get(symbol, 'quarter') as any
+
+      if (!row) return null
+
+      const dates = typeof row.fiscal_dates === 'string' ? JSON.parse(row.fiscal_dates) : row.fiscal_dates
+      const kqkd = typeof row.kqkd === 'string' ? JSON.parse(row.kqkd) : row.kqkd
+      const cdkt = typeof row.cdkt === 'string' ? JSON.parse(row.cdkt) : row.cdkt
+
+      if (!Array.isArray(dates) || dates.length === 0 || !Array.isArray(kqkd)) return null
+
+      // Tìm dòng Lợi nhuận sau thuế của Cổ đông Công ty mẹ (ƯU TIÊN TUYỆT ĐỐI theo chuẩn kế toán)
+      let profitRow = kqkd.find((r: any) => {
+        const name = (r[0] || '').toLowerCase()
+        return (
+          name.includes('cổ đông của công ty mẹ') ||
+          name.includes('cổ đông công ty mẹ') ||
+          name.includes('phân bổ cho chủ sở hữu') ||
+          name.includes('phân bổ cho công ty mẹ')
+        )
+      })
+      if (!profitRow) {
+        profitRow = kqkd.find((r: any) => {
+          const name = (r[0] || '').toLowerCase()
+          return name.includes('cổ đông') && (name.includes('mẹ') || name.includes('chính'))
+        })
+      }
+      if (!profitRow) {
+        profitRow = kqkd.find((r: any) => {
+          const name = (r[0] || '').toLowerCase()
+          return (
+            name === 'lãi/(lỗ) thuần sau thuế' ||
+            name === 'lợi nhuận sau thuế thu nhập doanh nghiệp' ||
+            name === 'lãi thuần sau thuế'
+          )
+        })
+      }
+      if (!profitRow) {
+        profitRow = kqkd.find((r: any) => {
+          const name = (r[0] || '').toLowerCase()
+          return name.includes('sau thuế') && !name.includes('chi phí thuế') && !name.includes('hoãn lại')
+        })
+      }
+      if (!profitRow) {
+        profitRow = kqkd.find((r: any) => (r[0] || '').toLowerCase().includes('sau thuế'))
+      }
+
+      // Tìm dòng Vốn chủ sở hữu
+      const equityRow = Array.isArray(cdkt)
+        ? cdkt.find((r: any) => {
+            const name = (r[0] || '').toLowerCase()
+            return name === 'vốn chủ sở hữu' || name === 'nguồn vốn chủ sở hữu'
+          })
+        : null
+
+      if (!profitRow) return null
+
+      const profitVals = profitRow.slice(3)
+      if (profitVals.length === 0) return null
+
+      // Lấy 4 quý gần nhất
+      const last4Profits = profitVals.slice(-4)
+      if (last4Profits.length === 0) return null
+
+      const lnstTtmVnd = last4Profits.reduce((sum: number, v: any) => sum + (Number(v) || 0), 0)
+
+      let latestEquityVnd: number | null = null
+      if (equityRow) {
+        const eqVals = equityRow.slice(3).filter((v: any) => v != null)
+        if (eqVals.length > 0) {
+          latestEquityVnd = Number(eqVals[eqVals.length - 1]) || null
+        }
+      }
+
+      // Xác định số cổ phiếu lưu hành
+      let shares = knownSharesOut && knownSharesOut > 0 ? knownSharesOut : null
+
+      // Nếu chưa có sharesOut, có thể suy ra từ Vốn góp / 10.000 (mệnh giá 10k/cp)
+      if (!shares && Array.isArray(cdkt)) {
+        const charterCapRow = cdkt.find((r: any) => {
+          const name = (r[0] || '').toLowerCase()
+          return name === 'vốn góp' || name === 'vốn đầu tư của chủ sở hữu' || name === 'vốn điều lệ'
+        })
+        if (charterCapRow) {
+          const capVals = charterCapRow.slice(3).filter((v: any) => v != null)
+          if (capVals.length > 0) {
+            const charterCapVnd = Number(capVals[capVals.length - 1])
+            if (charterCapVnd > 0) {
+              shares = Math.round(charterCapVnd / 10000)
+            }
+          }
+        }
+      }
+
+      const eps = shares && shares > 0 ? Math.round((lnstTtmVnd / shares) * 10) / 10 : null
+      const bvps = shares && shares > 0 && latestEquityVnd ? Math.round((latestEquityVnd / shares) * 10) / 10 : null
+      const pe = price && eps && eps > 0 ? Math.round((price / eps) * 100) / 100 : null
+      const pb = price && bvps && bvps > 0 ? Math.round((price / bvps) * 100) / 100 : null
+      const marketCapBn = price && shares ? Math.round((price * shares) / 1_000_000_000) : null
+      const bookValueBn = latestEquityVnd ? Math.round(latestEquityVnd / 1_000_000_000) : null
+
+      return {
+        eps,
+        pe,
+        pb,
+        bvps,
+        bookValueBn,
+        marketCapBn,
+        sharesOut: shares,
+        lnstTtmBn: Math.round(lnstTtmVnd / 1_000_000_000),
+        latestQuarter: dates[dates.length - 1],
+      }
+    } finally {
+      db.close()
+    }
+  } catch {
+    return null
+  }
+}
+
 export async function getStockEvaluation(symbol: string): Promise<StockEvaluationData | null> {
   const sym = symbol.toUpperCase().trim()
   if (!sym) return null
@@ -250,34 +399,32 @@ export async function getStockEvaluation(symbol: string): Promise<StockEvaluatio
   }
 
   // 2b. Fallback đọc từ tóm tắt siêu nhẹ bundle kèm web (0.01ms)
-  if (!dbRow && !valData) {
-    const sum = getStockEvaluationSummary(sym)
-    if (sum) {
-      dbRow = {
-        score360_total: sum.score,
-        score360_rating: sum.rating,
-        pe_vs_median: sum.pe_m,
-        pb_vs_median: sum.pb_m,
-        ps_vs_median: sum.ps_m,
-        pe_forward: sum.pe_f,
-        pb_forward: sum.pb_f,
-        pe_forward_vs_median: sum.pe_fm,
-        pb_forward_vs_median: sum.pb_fm,
-      }
-      valData = {
-        snapshot: {
-          price: sum.price,
-          market_cap_bn: sum.mc,
-          pe: sum.pe,
-          pb: sum.pb,
-          ps: sum.ps,
-          eps: sum.eps,
-          bvps: sum.bvps,
-        },
-        lastEps: sum.eps,
-        lastBvps: sum.bvps,
-        lastCirculationVol: sum.shares,
-      }
+  const sum = getStockEvaluationSummary(sym)
+  if (!dbRow && !valData && sum) {
+    dbRow = {
+      score360_total: sum.score,
+      score360_rating: sum.rating,
+      pe_vs_median: sum.pe_m,
+      pb_vs_median: sum.pb_m,
+      ps_vs_median: sum.ps_m,
+      pe_forward: sum.pe_f,
+      pb_forward: sum.pb_f,
+      pe_forward_vs_median: sum.pe_fm,
+      pb_forward_vs_median: sum.pb_fm,
+    }
+    valData = {
+      snapshot: {
+        price: sum.price,
+        market_cap_bn: sum.mc,
+        pe: sum.pe,
+        pb: sum.pb,
+        ps: sum.ps,
+        eps: sum.eps,
+        bvps: sum.bvps,
+      },
+      lastEps: sum.eps,
+      lastBvps: sum.bvps,
+      lastCirculationVol: sum.shares,
     }
   }
 
@@ -318,6 +465,61 @@ export async function getStockEvaluation(symbol: string): Promise<StockEvaluatio
   const localVol15d = getAvgTradingVol15d(sym)
   const volumeFinal = localVol15d ?? moneyData?.avg_trading_vol ?? liveQuote?.volume ?? null
 
+  const currentPriceForTtm = liveQuote?.price ?? s?.price ?? sum?.price ?? null
+  const rawSharesOut =
+    valData?.metrics?.sharesOut ??
+    valData?.lastCirculationVol ??
+    sum?.shares ??
+    moneyData?.circulation_vol ??
+    null
+
+  // 4. Tính toán TTM 4 quý gần nhất từ BCTC thực tế (ưu tiên số 1 để chỉ số chuẩn xác tuyệt đối)
+  const ttmMetrics = calculateTtmFromFinancialStatements(sym, currentPriceForTtm, rawSharesOut)
+
+  const finalSharesOut = ttmMetrics?.sharesOut ?? rawSharesOut
+  const finalEps =
+    ttmMetrics?.eps ??
+    valData?.metrics?.eps ??
+    valData?.lastEps ??
+    s?.eps ??
+    sum?.eps ??
+    moneyData?.eps ??
+    null
+  const finalBvps =
+    ttmMetrics?.bvps ??
+    valData?.metrics?.bvps ??
+    valData?.lastBvps ??
+    s?.bvps ??
+    sum?.bvps ??
+    null
+  const finalBookValue =
+    ttmMetrics?.bookValueBn ??
+    (finalBvps && finalSharesOut ? Math.round((finalBvps * finalSharesOut) / 1_000_000_000) : null) ??
+    (bookValue ? Math.round(bookValue / 1_000_000_000) : null)
+
+  // P/E ưu tiên theo Live Price / EPS TTM
+  let finalPe = ttmMetrics?.pe ?? null
+  if (!finalPe && currentPriceForTtm && finalEps && finalEps > 0) {
+    finalPe = Math.round((currentPriceForTtm / finalEps) * 100) / 100
+  }
+  if (!finalPe) {
+    finalPe = valData?.metrics?.pe ?? s?.pe ?? sum?.pe ?? moneyData?.pe ?? null
+  }
+
+  // P/B ưu tiên theo Live Price / BVPS
+  let finalPb = ttmMetrics?.pb ?? null
+  if (!finalPb && currentPriceForTtm && finalBvps && finalBvps > 0) {
+    finalPb = Math.round((currentPriceForTtm / finalBvps) * 100) / 100
+  }
+  if (!finalPb) {
+    finalPb = valData?.metrics?.pb ?? s?.pb ?? sum?.pb ?? moneyData?.pb ?? null
+  }
+
+  let finalMarketCap = ttmMetrics?.marketCapBn ?? s?.market_cap_bn ?? sum?.mc ?? null
+  if (!finalMarketCap && currentPriceForTtm && finalSharesOut && finalSharesOut > 0) {
+    finalMarketCap = Math.round((currentPriceForTtm * finalSharesOut) / 1_000_000_000)
+  }
+
   const result: StockEvaluationData = {
     symbol: sym,
     score360:
@@ -334,21 +536,21 @@ export async function getStockEvaluation(symbol: string): Promise<StockEvaluatio
             pbForwardVsMedian: dbRow?.pb_forward_vs_median ?? s?.pb_forward_vs_median ?? null,
           }
         : null,
-    price: s?.price != null ? s.price : null,
+    price: currentPriceForTtm,
     metrics: {
-      marketCap: s?.market_cap_bn ?? null,
-      pe: s?.pe ?? moneyData?.pe ?? null,
-      eps: s?.eps ?? valData?.lastEps ?? null,
+      marketCap: finalMarketCap,
+      pe: finalPe,
+      eps: finalEps,
       volume10d: volumeFinal,
-      pb: s?.pb ?? moneyData?.pb ?? null,
-      ps: s?.ps ?? valData?.ps?.at(-1) ?? null,
-      bvps: s?.bvps ?? valData?.lastBvps ?? null,
-      sharesOut: valData?.lastCirculationVol ?? moneyData?.circulation_vol ?? null,
-      evEbitda: moneyData?.ev_per_ebitda || null,
-      beta: moneyData?.the_beta ?? null,
+      pb: finalPb,
+      ps: s?.ps ?? sum?.ps ?? valData?.ps?.at(-1) ?? null,
+      bvps: finalBvps,
+      sharesOut: finalSharesOut,
+      evEbitda: moneyData?.ev_per_ebitda || valData?.metrics?.evEbitda || null,
+      beta: moneyData?.the_beta ?? valData?.metrics?.beta ?? null,
       auditor: auditor !== '—' ? auditor : null,
       isBig4,
-      bookValue,
+      bookValue: finalBookValue,
     },
   }
 

@@ -47,6 +47,9 @@ const nextConfig = {
       './data/stock_evaluations_summary.json',
       './content/bctc/**/*',
     ],
+    '/api/stock/[symbol]/bctc': [
+      './content/bctc/**/*',
+    ],
     '/api/analyst-reports': [
       './data/company_reports_snapshot.json',
       './data/industry_reports_snapshot.json',

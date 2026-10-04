@@ -183,7 +183,7 @@ async function syncValuationOnly(sym, evalDb, now) {
 
 // 2. Cập nhật Giao dịch nội bộ (CafeF)
 async function syncInsiderOnly(sym, profileDb, now) {
-  const tradesRes = await fetch(`https://cafef.vn/du-lieu/Ajax/PageNew/DataHistory/GDCoDong.ashx?Symbol=${sym}&PageIndex=1&PageSize=30`, {
+  const tradesRes = await fetch(`https://cafef.vn/du-lieu/Ajax/PageNew/DataHistory/GDCoDong.ashx?Symbol=${sym}&PageIndex=1&PageSize=100`, {
     headers: { "User-Agent": USER_AGENT, Referer: "https://cafef.vn/" },
   });
   if (!tradesRes.ok) return;
@@ -196,30 +196,55 @@ async function syncInsiderOnly(sym, profileDb, now) {
     const realSell = Number(t.RealSellVolume) || 0;
     const planBuy = Number(t.PlanBuyVolume) || 0;
     const planSell = Number(t.PlanSellVolume) || 0;
-    let action = "NONE";
-    let volumeTraded = 0;
-    let volumeRegistered = 0;
-    if (realBuy > 0 || planBuy > 0) {
-      action = "BUY";
-      volumeTraded = realBuy;
-      volumeRegistered = planBuy;
-    } else if (realSell > 0 || planSell > 0) {
-      action = "SELL";
-      volumeTraded = realSell;
-      volumeRegistered = planSell;
-    }
     const tradeDate = parseDateMs(t.RealEndDate || t.PlanEndDate || t.PlanBeginDate || t.PublishedDate);
-    insiderTrades.push({
-      traderName: t.TransactionMan || "—",
-      traderPosition: t.TransactionManPosition || "",
-      leaderName: t.RelatedMan || "",
+    const volumeBefore = t.VolumeBeforeTransaction != null ? Number(t.VolumeBeforeTransaction) : undefined;
+    const volumeAfter = Number(t.VolumeAfterTransaction) || 0;
+    const ownershipRate = Number(t.TyLeSoHuu) || undefined;
+
+    const base = {
+      traderName: (t.TransactionMan || "—").replace(/<[^>]+>/g, "").trim(),
+      traderPosition: (t.TransactionManPosition || "").trim(),
+      leaderName: (t.RelatedMan || "").replace(/<[^>]+>/g, "").trim(),
+      leaderPosition: (t.RelatedManPosition || "").trim(),
       tradeDate,
-      action,
-      volumeTraded,
-      volumeRegistered,
-      volumeAfter: Number(t.VolumeAfterTransaction) || 0,
-    });
+      volumeBefore,
+      volumeAfter,
+      ownershipRate,
+    };
+
+    if (realSell > 0 || planSell > 0) {
+      insiderTrades.push({
+        ...base,
+        action: "SELL",
+        volumeTraded: realSell,
+        volumeRegistered: planSell,
+      });
+    }
+    if (realBuy > 0 || planBuy > 0) {
+      insiderTrades.push({
+        ...base,
+        action: "BUY",
+        volumeTraded: realBuy,
+        volumeRegistered: planBuy,
+      });
+    }
+    if (realSell === 0 && planSell === 0 && realBuy === 0 && planBuy === 0) {
+      insiderTrades.push({
+        ...base,
+        action: "NONE",
+        volumeTraded: 0,
+        volumeRegistered: 0,
+      });
+    }
   }
+
+  insiderTrades.sort((a, b) => {
+    const parseTs = (s) => {
+      const p = (s || "").split("/");
+      return p.length === 3 ? new Date(Number(p[2]), Number(p[1]) - 1, Number(p[0])).getTime() : 0;
+    };
+    return parseTs(b.tradeDate) - parseTs(a.tradeDate);
+  });
 
   // Đọc dữ liệu cũ để ghép vào (bảo toàn cơ cấu cổ đông và công ty con)
   const cacheFile = path.join(DATA_DIR, "shareholder_cache", `${sym}.json`);
@@ -346,39 +371,37 @@ async function syncShareholdersOnly(sym, profileDb, now) {
       if (parsed.insiderTrades && parsed.insiderTrades.length > 0) {
         existingTrades = parsed.insiderTrades;
       } else if (parsed.giao_dich_noi_bo && parsed.giao_dich_noi_bo.length > 0) {
-        existingTrades = parsed.giao_dich_noi_bo.map((t) => {
+        existingTrades = []
+        for (const t of parsed.giao_dich_noi_bo) {
           const realBuy = Number(t.real_buy) || 0;
           const realSell = Number(t.real_sell) || 0;
           const planBuy = Number(t.plan_buy) || 0;
           const planSell = Number(t.plan_sell) || 0;
-          let action = "NONE";
-          let volumeTraded = 0;
-          let volumeRegistered = 0;
-          if (realBuy > 0 || planBuy > 0) {
-            action = "BUY";
-            volumeTraded = realBuy;
-            volumeRegistered = planBuy;
-          } else if (realSell > 0 || planSell > 0) {
-            action = "SELL";
-            volumeTraded = realSell;
-            volumeRegistered = planSell;
-          }
           let tradeDate = t.real_end_date || t.plan_end_date || t.plan_begin_date || t.published_date || "";
           if (tradeDate && tradeDate.includes("-")) {
             const parts = tradeDate.split("-");
             if (parts.length === 3) tradeDate = `${parts[2]}/${parts[1]}/${parts[0]}`;
           }
-          return {
-            traderName: t.transaction_name || "—",
-            traderPosition: t.transaction_position || "",
-            leaderName: t.leader_name || "",
+          const base = {
+            traderName: (t.transaction_name || "—").replace(/<[^>]+>/g, "").trim(),
+            traderPosition: (t.transaction_position || "").trim(),
+            leaderName: (t.leader_name || "").replace(/<[^>]+>/g, "").trim(),
+            leaderPosition: (t.leader_position || "").trim(),
             tradeDate,
-            action,
-            volumeTraded,
-            volumeRegistered,
+            volumeBefore: t.volume_before != null ? Number(t.volume_before) : undefined,
             volumeAfter: Number(t.volume_after) || 0,
+            ownershipRate: Number(t.ownership_rate || t.ty_le_so_huu) || undefined,
           };
-        });
+          if (realSell > 0 || planSell > 0) {
+            existingTrades.push({ ...base, action: "SELL", volumeTraded: realSell, volumeRegistered: planSell });
+          }
+          if (realBuy > 0 || planBuy > 0) {
+            existingTrades.push({ ...base, action: "BUY", volumeTraded: realBuy, volumeRegistered: planBuy });
+          }
+          if (realSell === 0 && planSell === 0 && realBuy === 0 && planBuy === 0) {
+            existingTrades.push({ ...base, action: "NONE", volumeTraded: 0, volumeRegistered: 0 });
+          }
+        }
       }
     } catch {}
   }
@@ -386,7 +409,7 @@ async function syncShareholdersOnly(sym, profileDb, now) {
   // Nếu vẫn chưa có giao dịch nội bộ, tự động lấy luôn từ CafeF
   if (existingTrades.length === 0) {
     try {
-      const tradesRes = await fetch(`https://cafef.vn/du-lieu/Ajax/PageNew/DataHistory/GDCoDong.ashx?Symbol=${sym}&PageIndex=1&PageSize=30`, {
+      const tradesRes = await fetch(`https://cafef.vn/du-lieu/Ajax/PageNew/DataHistory/GDCoDong.ashx?Symbol=${sym}&PageIndex=1&PageSize=100`, {
         headers: { "User-Agent": USER_AGENT, Referer: "https://cafef.vn/" },
       });
       if (tradesRes.ok) {
@@ -397,29 +420,26 @@ async function syncShareholdersOnly(sym, profileDb, now) {
           const realSell = Number(t.RealSellVolume) || 0;
           const planBuy = Number(t.PlanBuyVolume) || 0;
           const planSell = Number(t.PlanSellVolume) || 0;
-          let action = "NONE";
-          let volumeTraded = 0;
-          let volumeRegistered = 0;
-          if (realBuy > 0 || planBuy > 0) {
-            action = "BUY";
-            volumeTraded = realBuy;
-            volumeRegistered = planBuy;
-          } else if (realSell > 0 || planSell > 0) {
-            action = "SELL";
-            volumeTraded = realSell;
-            volumeRegistered = planSell;
-          }
           const tradeDate = parseDateMs(t.RealEndDate || t.PlanEndDate || t.PlanBeginDate || t.PublishedDate);
-          existingTrades.push({
-            traderName: t.TransactionMan || "—",
-            traderPosition: t.TransactionManPosition || "",
-            leaderName: t.RelatedMan || "",
+          const base = {
+            traderName: (t.TransactionMan || "—").replace(/<[^>]+>/g, "").trim(),
+            traderPosition: (t.TransactionManPosition || "").trim(),
+            leaderName: (t.RelatedMan || "").replace(/<[^>]+>/g, "").trim(),
+            leaderPosition: (t.RelatedManPosition || "").trim(),
             tradeDate,
-            action,
-            volumeTraded,
-            volumeRegistered,
+            volumeBefore: t.VolumeBeforeTransaction != null ? Number(t.VolumeBeforeTransaction) : undefined,
             volumeAfter: Number(t.VolumeAfterTransaction) || 0,
-          });
+            ownershipRate: Number(t.TyLeSoHuu) || undefined,
+          };
+          if (realSell > 0 || planSell > 0) {
+            existingTrades.push({ ...base, action: "SELL", volumeTraded: realSell, volumeRegistered: planSell });
+          }
+          if (realBuy > 0 || planBuy > 0) {
+            existingTrades.push({ ...base, action: "BUY", volumeTraded: realBuy, volumeRegistered: planBuy });
+          }
+          if (realSell === 0 && planSell === 0 && realBuy === 0 && planBuy === 0) {
+            existingTrades.push({ ...base, action: "NONE", volumeTraded: 0, volumeRegistered: 0 });
+          }
         }
       }
     } catch {}

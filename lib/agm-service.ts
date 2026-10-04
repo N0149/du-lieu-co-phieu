@@ -74,7 +74,14 @@ export function hasAgmReport(ticker: string, year = 2026): boolean {
   return false
 }
 
+let _cachedAgmTickers: { year: number; list: string[]; time: number } | null = null
+
 export function getAvailableAgmTickers(year = 2026): string[] {
+  const now = Date.now()
+  if (_cachedAgmTickers && _cachedAgmTickers.year === year && now - _cachedAgmTickers.time < 60000) {
+    return _cachedAgmTickers.list
+  }
+
   const tickerSet = new Set<string>()
 
   // 1. Thư mục nội bộ
@@ -102,7 +109,9 @@ export function getAvailableAgmTickers(year = 2026): string[] {
     }
   }
 
-  return Array.from(tickerSet).sort((a, b) => a.localeCompare(b))
+  const result = Array.from(tickerSet).sort((a, b) => a.localeCompare(b))
+  _cachedAgmTickers = { year, list: result, time: now }
+  return result
 }
 
 export function getAgmReport(ticker: string, targetYear = 2026): AgmReportData | null {

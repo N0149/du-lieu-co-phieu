@@ -22,6 +22,7 @@ import {
   Minimize2,
   Maximize2,
   TrendingUp,
+  Loader2,
 } from "lucide-react"
 import { cn } from "@/lib/utils"
 import type { BctcReportData } from "@/lib/bctc-service"
@@ -45,6 +46,50 @@ export function StockBctcReportView({
   availableTickers = [],
   bctcDocuments = null,
 }: StockBctcReportViewProps) {
+  const [dataHopNhat, setDataHopNhat] = useState<BctcReportData | null>(bctcDataHopNhat)
+  const [dataCongTyMe, setDataCongTyMe] = useState<BctcReportData | null>(bctcDataCongTyMe)
+  const [tickers, setTickers] = useState<string[]>(availableTickers)
+  const [docs, setDocs] = useState<BctcCompanyDocumentsPayload | null>(bctcDocuments)
+  const [isLoading, setIsLoading] = useState<boolean>(!bctcDataHopNhat && !bctcDataCongTyMe && (!availableTickers || availableTickers.length === 0))
+
+  useEffect(() => {
+    if (bctcDataHopNhat || bctcDataCongTyMe) {
+      setDataHopNhat(bctcDataHopNhat)
+      setDataCongTyMe(bctcDataCongTyMe)
+      setTickers(availableTickers)
+      setDocs(bctcDocuments)
+      setIsLoading(false)
+      return
+    }
+
+    let isMounted = true
+    setIsLoading(true)
+    fetch(`/api/stock/${encodeURIComponent(ticker)}/bctc`)
+      .then((res) => {
+        if (!res.ok) throw new Error("Lỗi tải Thuyết minh BCTC")
+        return res.json()
+      })
+      .then((res) => {
+        if (!isMounted) return
+        if (res.bctcDataHopNhat) setDataHopNhat(res.bctcDataHopNhat)
+        if (res.bctcDataCongTyMe) setDataCongTyMe(res.bctcDataCongTyMe)
+        if (res.availableTickers && Array.isArray(res.availableTickers)) {
+          setTickers(res.availableTickers)
+        }
+        if (res.bctcDocuments) setDocs(res.bctcDocuments)
+      })
+      .catch((err) => {
+        console.error("Lỗi tải BCTC:", err)
+      })
+      .finally(() => {
+        if (isMounted) setIsLoading(false)
+      })
+
+    return () => {
+      isMounted = false
+    }
+  }, [bctcDataHopNhat, bctcDataCongTyMe, availableTickers, bctcDocuments, ticker])
+
   // Chọn giữa Hợp nhất và Công ty mẹ
   const [selectedType, setSelectedType] = useState<'HopNhat' | 'CongTyMe'>(() => {
     if (bctcDataHopNhat?.hasReport) return 'HopNhat'
@@ -52,7 +97,14 @@ export function StockBctcReportView({
     return 'HopNhat'
   })
 
-  const currentData = selectedType === 'HopNhat' ? bctcDataHopNhat : bctcDataCongTyMe
+  // Đồng bộ selectedType khi data nạp xong
+  useEffect(() => {
+    if (selectedType === 'HopNhat' && !dataHopNhat?.hasReport && dataCongTyMe?.hasReport) {
+      setSelectedType('CongTyMe')
+    }
+  }, [dataHopNhat, dataCongTyMe, selectedType])
+
+  const currentData = selectedType === 'HopNhat' ? dataHopNhat : dataCongTyMe
 
   const [selectedSectionId, setSelectedSectionId] = useState<string>("all")
   const [searchKeyword, setSearchKeyword] = useState<string>("")
@@ -61,10 +113,10 @@ export function StockBctcReportView({
   const [isCompactLayout, setIsCompactLayout] = useState<boolean>(true)
 
   const filteredTickers = useMemo(() => {
-    if (!tickerSearch.trim()) return availableTickers
+    if (!tickerSearch.trim()) return tickers
     const query = tickerSearch.toUpperCase().trim()
-    return availableTickers.filter((sym) => sym.includes(query))
-  }, [availableTickers, tickerSearch])
+    return tickers.filter((sym) => sym.includes(query))
+  }, [tickers, tickerSearch])
 
   // Quản lý thanh điều hướng tab phần
   const tabsContainerRef = useRef<HTMLDivElement>(null)
@@ -111,14 +163,23 @@ export function StockBctcReportView({
     })
   }
 
+  if (isLoading) {
+    return (
+      <div className="flex flex-col items-center justify-center p-12 space-y-3 rounded-2xl border border-border/70 bg-card/60">
+        <Loader2 className="size-8 animate-spin text-primary" />
+        <p className="text-xs text-muted-foreground font-mono">Đang tải Thuyết minh BCTC {ticker}...</p>
+      </div>
+    )
+  }
+
   // Khi chưa có dữ liệu Thuyết minh BCTC
   if (!currentData || !currentData.hasReport) {
     return (
       <div className="space-y-6">
         {/* Danh mục Tải File Gốc BCTC */}
-        {bctcDocuments && (
+        {docs && (
           <BctcDocumentSection
-            documents={bctcDocuments}
+            documents={docs}
             companyName={companyName}
             defaultExpanded={true}
           />
@@ -137,11 +198,11 @@ export function StockBctcReportView({
             </p>
           </div>
 
-        {availableTickers.length > 0 && (
+        {tickers.length > 0 && (
           <div className="pt-4 border-t border-border/50 max-w-2xl mx-auto text-left">
             <div className="flex flex-wrap items-center justify-between gap-2 mb-3">
               <p className="text-xs font-semibold text-muted-foreground uppercase tracking-wider">
-                Các mã đã có Thuyết minh BCTC ({availableTickers.length} mã):
+                Các mã đã có Thuyết minh BCTC ({tickers.length} mã):
               </p>
               <div className="relative">
                 <Search className="size-3 absolute left-2 top-1/2 -translate-y-1/2 text-muted-foreground pointer-events-none" />
@@ -227,9 +288,9 @@ export function StockBctcReportView({
   return (
     <div className="space-y-6">
       {/* ── Danh mục Tải File Gốc BCTC ── */}
-      {bctcDocuments && (
+      {docs && (
         <BctcDocumentSection
-          documents={bctcDocuments}
+          documents={docs}
           companyName={companyName}
           defaultExpanded={false}
         />

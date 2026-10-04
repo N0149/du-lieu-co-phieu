@@ -21,6 +21,7 @@ import {
   ChevronDown,
   Layers,
   ArrowUpRight,
+  Loader2,
 } from "lucide-react"
 import { cn } from "@/lib/utils"
 import type { AgmReportData } from "@/lib/agm-service"
@@ -38,7 +39,43 @@ export function StockAgmReportView({
   companyName,
   availableTickers = [],
 }: StockAgmReportViewProps) {
+  const [data, setData] = useState<AgmReportData | null>(agmData)
+  const [tickers, setTickers] = useState<string[]>(availableTickers)
+  const [isLoading, setIsLoading] = useState<boolean>(!agmData && (!availableTickers || availableTickers.length === 0))
 
+  useEffect(() => {
+    if (agmData) {
+      setData(agmData)
+      setTickers(availableTickers)
+      setIsLoading(false)
+      return
+    }
+
+    let isMounted = true
+    setIsLoading(true)
+    fetch(`/api/stock/${encodeURIComponent(ticker)}/agm`)
+      .then((res) => {
+        if (!res.ok) throw new Error("Lỗi khi nạp dữ liệu ĐHĐCĐ")
+        return res.json()
+      })
+      .then((res) => {
+        if (!isMounted) return
+        setData(res.agmData || null)
+        if (res.availableTickers && Array.isArray(res.availableTickers)) {
+          setTickers(res.availableTickers)
+        }
+      })
+      .catch((err) => {
+        console.error("Lỗi tải ĐHĐCĐ:", err)
+      })
+      .finally(() => {
+        if (isMounted) setIsLoading(false)
+      })
+
+    return () => {
+      isMounted = false
+    }
+  }, [agmData, availableTickers, ticker])
 
   const [selectedSectionId, setSelectedSectionId] = useState<string>("all")
   const [searchKeyword, setSearchKeyword] = useState<string>("")
@@ -46,10 +83,10 @@ export function StockAgmReportView({
   const [copied, setCopied] = useState<boolean>(false)
 
   const filteredTickers = useMemo(() => {
-    if (!tickerSearch.trim()) return availableTickers
+    if (!tickerSearch.trim()) return tickers
     const query = tickerSearch.toUpperCase().trim()
-    return availableTickers.filter((sym) => sym.includes(query))
-  }, [availableTickers, tickerSearch])
+    return tickers.filter((sym) => sym.includes(query))
+  }, [tickers, tickerSearch])
 
   // Quản lý thanh điều hướng tab phần: hỗ trợ cuộn mượt và nút mũi tên
   const tabsContainerRef = useRef<HTMLDivElement>(null)
@@ -104,8 +141,17 @@ export function StockAgmReportView({
     }
   }
 
+  if (isLoading) {
+    return (
+      <div className="flex flex-col items-center justify-center p-12 space-y-3 rounded-2xl border border-border/70 bg-card/60">
+        <Loader2 className="size-8 animate-spin text-primary" />
+        <p className="text-xs text-muted-foreground font-mono">Đang tải Báo cáo ĐHĐCĐ {ticker}...</p>
+      </div>
+    )
+  }
+
   // Empty state khi mã chưa có dữ liệu ĐHĐCĐ
-  if (!agmData || !agmData.hasReport) {
+  if (!data || !data.hasReport) {
     return (
       <div className="rounded-2xl border border-border/70 bg-card/60 p-6 sm:p-10 text-center space-y-6">
         <div className="mx-auto flex size-16 items-center justify-center rounded-2xl bg-muted/60 text-muted-foreground">
@@ -120,11 +166,11 @@ export function StockAgmReportView({
           </p>
         </div>
 
-        {availableTickers.length > 0 && (
+        {tickers.length > 0 && (
           <div className="pt-4 border-t border-border/50 max-w-2xl mx-auto text-left">
             <div className="flex flex-wrap items-center justify-between gap-2 mb-3">
               <p className="text-xs font-semibold text-muted-foreground uppercase tracking-wider">
-                Các mã đã có Báo cáo ĐHĐCĐ 2026 ({availableTickers.length} mã):
+                Các mã đã có Báo cáo ĐHĐCĐ 2026 ({tickers.length} mã):
               </p>
               <div className="relative">
                 <Search className="size-3 absolute left-2 top-1/2 -translate-y-1/2 text-muted-foreground pointer-events-none" />
@@ -164,18 +210,16 @@ export function StockAgmReportView({
     )
   }
 
-  const { title, subtitle, year, sections, stats } = agmData
+  const { title, subtitle, year, sections, stats } = data
 
   // Lọc section theo tab chọn
   const visibleSections = useMemo(() => {
-
-
     if (selectedSectionId === "all") return sections
     return sections.filter((s) => s.id === selectedSectionId)
   }, [sections, selectedSectionId])
 
   const handleCopy = () => {
-    if (typeof window === "undefined" || !agmData) return
+    if (typeof window === "undefined" || !data) return
     const fullText = `${title}\n\n` + sections.map((s) => `${s.title}\n\n${s.rawMarkdown}`).join("\n\n---\n\n")
     navigator.clipboard.writeText(fullText).then(() => {
       setCopied(true)

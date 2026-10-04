@@ -113,7 +113,7 @@ const customTooltipStyle: React.CSSProperties = {
 }
 
 // Tooltip hiển thị chi tiết số liệu (Pure Component, 0 delay)
-const CustomChartTooltip = React.memo(function CustomChartTooltip({ active, payload, label }: any) {
+export const CustomChartTooltip = React.memo(function CustomChartTooltip({ active, payload, label }: any) {
   if (!active || !payload || payload.length === 0) return null
   const qNum = getQuarter(payload[0]?.payload)
 
@@ -189,7 +189,7 @@ function createQuarterTickRenderer(activeQuarter: number | null) {
 // ══════════════════════════════════════════════════════════════════
 
 
-interface ExpandableChartCardProps {
+export interface ExpandableChartCardProps {
   title: string
   icon: React.ComponentType<{ className?: string }>
   iconColor?: string
@@ -199,11 +199,12 @@ interface ExpandableChartCardProps {
   latestBadge?: React.ReactNode
   modalTitle?: string
   modalSubtitle?: string
+  cardHeight?: number
   onMouseLeave?: () => void
   children: (height: number) => React.ReactNode
 }
 
-const ExpandableChartCard = React.memo(function ExpandableChartCard({
+export const ExpandableChartCard = React.memo(function ExpandableChartCard({
   title,
   icon: Icon,
   iconColor = 'text-sky-400',
@@ -213,10 +214,12 @@ const ExpandableChartCard = React.memo(function ExpandableChartCard({
   latestBadge,
   modalTitle,
   modalSubtitle,
+  cardHeight,
   onMouseLeave,
   children,
 }: ExpandableChartCardProps) {
   const [isExpanded, setIsExpanded] = useState(false)
+  const effectiveHeight = cardHeight || 280
 
   return (
     <div
@@ -254,11 +257,12 @@ const ExpandableChartCard = React.memo(function ExpandableChartCard({
       </div>
 
       <div
-        className="h-[280px] w-full cursor-pointer group relative"
+        className="w-full cursor-pointer group relative"
+        style={{ height: effectiveHeight, minHeight: effectiveHeight }}
         onClick={() => setIsExpanded(true)}
         title="Bấm vào để phóng lớn biểu đồ"
       >
-        {children(280)}
+        {children(effectiveHeight)}
       </div>
 
       {isExpanded && (
@@ -279,16 +283,18 @@ const ExpandableChartCard = React.memo(function ExpandableChartCard({
 })
 
 // ── 1. Biểu đồ Doanh Thu Thuần ──
-const RevenueChartCard = React.memo(function RevenueChartCard({
+export const RevenueChartCard = React.memo(function RevenueChartCard({
   data,
   isQuarter,
   globalQuarter,
   latest,
+  cardHeight,
 }: {
   data: any[]
   isQuarter: boolean
   globalQuarter: number | null
   latest: any
+  cardHeight?: number
 }) {
   const [localHoverQuarter, setLocalHoverQuarter] = useState<number | null>(null)
   const lastRef = useRef<number | null>(null)
@@ -322,6 +328,7 @@ const RevenueChartCard = React.memo(function RevenueChartCard({
 
   return (
     <ExpandableChartCard
+      cardHeight={cardHeight}
       title="Doanh Thu Thuần (Tỷ Đồng)"
       icon={TrendingUp}
       iconColor="text-sky-400"
@@ -402,16 +409,18 @@ const RevenueChartCard = React.memo(function RevenueChartCard({
 })
 
 // ── 2. Biểu đồ LNST Công Ty Mẹ ──
-const ProfitChartCard = React.memo(function ProfitChartCard({
+export const ProfitChartCard = React.memo(function ProfitChartCard({
   data,
   isQuarter,
   globalQuarter,
   latest,
+  cardHeight,
 }: {
   data: any[]
   isQuarter: boolean
   globalQuarter: number | null
   latest: any
+  cardHeight?: number
 }) {
   const [localHoverQuarter, setLocalHoverQuarter] = useState<number | null>(null)
   const lastRef = useRef<number | null>(null)
@@ -445,6 +454,7 @@ const ProfitChartCard = React.memo(function ProfitChartCard({
 
   return (
     <ExpandableChartCard
+      cardHeight={cardHeight}
       title="Lợi Nhuận Sau Thuế Công Ty Mẹ"
       icon={TrendingUp}
       iconColor="text-emerald-400"
@@ -754,16 +764,18 @@ const ProfitStructureChartCard = React.memo(function ProfitStructureChartCard({
 })
 
 // ── 5. Biểu đồ TÀI SẢN (Bóc Tách Chi Tiết Chuẩn 100% WiData) ──
-const DetailedAssetChartCard = React.memo(function DetailedAssetChartCard({
+export const DetailedAssetChartCard = React.memo(function DetailedAssetChartCard({
   balancePoints,
   isQuarter,
   globalQuarter,
   latestPoint,
+  cardHeight,
 }: {
   balancePoints: any[]
   isQuarter: boolean
   globalQuarter: number | null
   latestPoint: any
+  cardHeight?: number
 }) {
   const [localHoverQuarter, setLocalHoverQuarter] = useState<number | null>(null)
   const lastRef = useRef<number | null>(null)
@@ -797,6 +809,7 @@ const DetailedAssetChartCard = React.memo(function DetailedAssetChartCard({
 
   return (
     <ExpandableChartCard
+      cardHeight={cardHeight}
       title="TÀI SẢN (Tỷ Đồng)"
       icon={Wallet}
       iconColor="text-sky-400"
@@ -888,16 +901,18 @@ const DetailedAssetChartCard = React.memo(function DetailedAssetChartCard({
 })
 
 // ── 6. Biểu đồ NGUỒN VỐN (Bóc Tách Chi Tiết Chuẩn 100% WiData) ──
-const DetailedCapitalChartCard = React.memo(function DetailedCapitalChartCard({
+export const DetailedCapitalChartCard = React.memo(function DetailedCapitalChartCard({
   balancePoints,
   isQuarter,
   globalQuarter,
   latestPoint,
+  cardHeight,
 }: {
   balancePoints: any[]
   isQuarter: boolean
   globalQuarter: number | null
   latestPoint: any
+  cardHeight?: number
 }) {
   const [localHoverQuarter, setLocalHoverQuarter] = useState<number | null>(null)
   const lastRef = useRef<number | null>(null)
@@ -931,6 +946,7 @@ const DetailedCapitalChartCard = React.memo(function DetailedCapitalChartCard({
 
   return (
     <ExpandableChartCard
+      cardHeight={cardHeight}
       title="NGUỒN VỐN (Tỷ Đồng)"
       icon={Layers}
       iconColor="text-emerald-400"
@@ -1015,16 +1031,18 @@ const DetailedCapitalChartCard = React.memo(function DetailedCapitalChartCard({
 })
 
 // ── 7. Biểu đồ LƯU CHUYỂN TIỀN (Chuẩn 100% WiData) ──
-const DetailedCashFlowChartCard = React.memo(function DetailedCashFlowChartCard({
+export const DetailedCashFlowChartCard = React.memo(function DetailedCashFlowChartCard({
   balancePoints,
   isQuarter,
   globalQuarter,
   latestPoint,
+  cardHeight,
 }: {
   balancePoints: any[]
   isQuarter: boolean
   globalQuarter: number | null
   latestPoint: any
+  cardHeight?: number
 }) {
   const [localHoverQuarter, setLocalHoverQuarter] = useState<number | null>(null)
   const lastRef = useRef<number | null>(null)
@@ -1058,6 +1076,7 @@ const DetailedCashFlowChartCard = React.memo(function DetailedCashFlowChartCard(
 
   return (
     <ExpandableChartCard
+      cardHeight={cardHeight}
       title="LƯU CHUYỂN TIỀN (Tỷ Đồng)"
       icon={Activity}
       iconColor="text-amber-400"

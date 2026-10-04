@@ -54,7 +54,7 @@ export async function fetchDirectCompanyProfile(symbol: string): Promise<Company
         headers: { 'User-Agent': USER_AGENT, 'Referer': 'https://cafef.vn/' },
         next: { revalidate: 3600 },
       }),
-      fetch(`https://cafef.vn/du-lieu/Ajax/PageNew/DataHistory/GDCoDong.ashx?Symbol=${sym}&PageIndex=1&PageSize=30`, {
+      fetch(`https://cafef.vn/du-lieu/Ajax/PageNew/DataHistory/GDCoDong.ashx?Symbol=${sym}&PageIndex=1&PageSize=100`, {
         headers: { 'User-Agent': USER_AGENT, 'Referer': 'https://cafef.vn/' },
         next: { revalidate: 3600 },
       }),
@@ -177,12 +177,17 @@ export async function fetchDirectCompanyProfile(symbol: string): Promise<Company
           const planBegin = t.PlanBeginDate || ''
           const planEnd = t.PlanEndDate || ''
 
-          const roundKey = `${name}_${planBuy}_${planSell}_${planBegin}_${planEnd}`
-          if (roundKey && roundKey !== '____') {
+          const hasPlan = (planBuy > 0 || planSell > 0) && Boolean(planBegin || planEnd)
+          if (hasPlan) {
+            const roundKey = `${name}_${planBuy}_${planSell}_${planBegin}_${planEnd}`
             if (handledKeys.has(roundKey)) continue
             const matches = rawList.filter((m) => {
-              const mKey = `${(m.TransactionMan || '').trim()}_${Number(m.PlanBuyVolume) || 0}_${Number(m.PlanSellVolume) || 0}_${m.PlanBeginDate || ''}_${m.PlanEndDate || ''}`
-              return mKey === roundKey
+              const mName = (m.TransactionMan || '').trim()
+              const mPlanBuy = Number(m.PlanBuyVolume) || 0
+              const mPlanSell = Number(m.PlanSellVolume) || 0
+              const mPlanBegin = m.PlanBeginDate || ''
+              const mPlanEnd = m.PlanEndDate || ''
+              return `${mName}_${mPlanBuy}_${mPlanSell}_${mPlanBegin}_${mPlanEnd}` === roundKey
             })
             let best = matches[0]
             for (const m of matches) {
@@ -194,6 +199,14 @@ export async function fetchDirectCompanyProfile(symbol: string): Promise<Company
             handledKeys.add(roundKey)
             dedupedList.push(best)
           } else {
+            const realBuy = Number(t.RealBuyVolume) || 0
+            const realSell = Number(t.RealSellVolume) || 0
+            const realEnd = t.RealEndDate || ''
+            const pubDate = t.PublishedDate || ''
+            const volAfter = t.VolumeAfterTransaction ?? ''
+            const exactKey = `${name}_${realBuy}_${realSell}_${realEnd}_${pubDate}_${volAfter}`
+            if (handledKeys.has(exactKey)) continue
+            handledKeys.add(exactKey)
             dedupedList.push(t)
           }
         }
@@ -204,33 +217,55 @@ export async function fetchDirectCompanyProfile(symbol: string): Promise<Company
           const planBuy = Number(t.PlanBuyVolume) || 0
           const planSell = Number(t.PlanSellVolume) || 0
 
-          let action: 'BUY' | 'SELL' | 'NONE' = 'NONE'
-          let volumeTraded = 0
-          let volumeRegistered = 0
+          const tradeDate = parseDateMs(t.RealEndDate || t.PlanEndDate || t.PlanBeginDate || t.PublishedDate)
+          const volumeBefore = t.VolumeBeforeTransaction != null ? Number(t.VolumeBeforeTransaction) : undefined
+          const volumeAfter = Number(t.VolumeAfterTransaction) || 0
+          const ownershipRate = Number(t.TyLeSoHuu) || undefined
 
-          if (realBuy > 0 || planBuy > 0) {
-            action = 'BUY'
-            volumeTraded = realBuy
-            volumeRegistered = planBuy
-          } else if (realSell > 0 || planSell > 0) {
-            action = 'SELL'
-            volumeTraded = realSell
-            volumeRegistered = planSell
+          const base = {
+            traderName: (t.TransactionMan || '—').replace(/<[^>]+>/g, '').trim(),
+            traderPosition: (t.TransactionManPosition || '').trim(),
+            leaderName: (t.RelatedMan || '').replace(/<[^>]+>/g, '').trim(),
+            leaderPosition: (t.RelatedManPosition || '').trim(),
+            tradeDate,
+            volumeBefore,
+            volumeAfter,
+            ownershipRate,
           }
 
-          const tradeDate = parseDateMs(t.RealEndDate || t.PlanEndDate || t.PlanBeginDate || t.PublishedDate)
-
-          insiderTrades.push({
-            traderName: t.TransactionMan || '—',
-            traderPosition: t.TransactionManPosition || '',
-            leaderName: t.RelatedMan || '',
-            tradeDate,
-            action,
-            volumeTraded,
-            volumeRegistered,
-            volumeAfter: Number(t.VolumeAfterTransaction) || 0,
-          })
+          if (realSell > 0 || planSell > 0) {
+            insiderTrades.push({
+              ...base,
+              action: 'SELL',
+              volumeTraded: realSell,
+              volumeRegistered: planSell,
+            })
+          }
+          if (realBuy > 0 || planBuy > 0) {
+            insiderTrades.push({
+              ...base,
+              action: 'BUY',
+              volumeTraded: realBuy,
+              volumeRegistered: planBuy,
+            })
+          }
+          if (realSell === 0 && planSell === 0 && realBuy === 0 && planBuy === 0) {
+            insiderTrades.push({
+              ...base,
+              action: 'NONE',
+              volumeTraded: 0,
+              volumeRegistered: 0,
+            })
+          }
         }
+
+        insiderTrades.sort((a, b) => {
+          const parseTs = (s: string) => {
+            const p = s.split('/')
+            return p.length === 3 ? new Date(Number(p[2]), Number(p[1]) - 1, Number(p[0])).getTime() : 0
+          }
+          return parseTs(b.tradeDate) - parseTs(a.tradeDate)
+        })
       } catch {}
     }
 

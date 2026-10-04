@@ -128,7 +128,14 @@ export function hasBctcReport(ticker: string): boolean {
   return false
 }
 
+let _cachedBctcTickers: { list: string[]; time: number } | null = null
+
 export function getAvailableBctcTickers(): string[] {
+  const now = Date.now()
+  if (_cachedBctcTickers && now - _cachedBctcTickers.time < 60000) {
+    return _cachedBctcTickers.list
+  }
+
   const tickerSet = new Set<string>()
 
   // 1. Quét từ LOCAL_DIR
@@ -155,7 +162,9 @@ export function getAvailableBctcTickers(): string[] {
     }
   }
 
-  return Array.from(tickerSet).sort((a, b) => a.localeCompare(b))
+  const result = Array.from(tickerSet).sort((a, b) => a.localeCompare(b))
+  _cachedBctcTickers = { list: result, time: now }
+  return result
 }
 
 export function getBctcReport(

@@ -276,6 +276,31 @@ const CompanyReportsTab = dynamic(
   }
 )
 
+const WiDataConsensusCard = dynamic(
+  () => import('@/components/stock/WiDataStandardRow').then((m) => m.WiDataConsensusCard),
+  {
+    loading: () => <TabLoadingSkeleton tabLabel="Giá khuyến nghị CTCK" />,
+    ssr: false,
+  }
+)
+
+const WiDataInsiderCard = dynamic(
+  () => import('@/components/stock/WiDataStandardRow').then((m) => m.WiDataInsiderCard),
+  {
+    loading: () => <TabLoadingSkeleton tabLabel="Giao dịch nội bộ" />,
+    ssr: false,
+  }
+)
+
+// ════════════════════════════════════════════════════════════════════════════
+// FEATURE FLAG: CẤT TAB BIỂU ĐỒ TÀI CHÍNH
+// - Đặt `false`: Tắt hoàn toàn tab Biểu Đồ Tài Chính để web siêu nhẹ, không tốn tài nguyên.
+// - 2 biểu đồ quan trọng (Giá Khuyến Nghị & Giao Dịch Nội Bộ) đã được chuyển sang tab Tổng quan & Hồ sơ.
+// - Các biểu đồ tài chính cơ bản đã được tích hợp trực tiếp vào tab Báo Cáo Tài Chính.
+// - Khi nào bạn muốn xóa vĩnh viễn: có thể xóa file GeneralDetailedFinancialCharts và cờ này.
+// ════════════════════════════════════════════════════════════════════════════
+const ENABLE_FINANCIAL_CHARTS_TAB = false;
+
 const StockAgmReportView = dynamic(
   () => import('@/components/stock/StockAgmReportView').then((m) => m.StockAgmReportView),
   {
@@ -331,16 +356,21 @@ export function StockDetailView({
   initialCandles = [],
 }: StockDetailViewProps) {
   // Tab đang hiển thị trên thanh nút bấm (cập nhật NGAY LẬP TỨC để phản hồi giao diện không delay)
-  const [activeTab, setActiveTab] = useState<StockDetailTab>(
-    initialTab === 'profile' ? 'overview' : (initialTab || 'overview')
-  )
+  const [activeTab, setActiveTab] = useState<StockDetailTab>(() => {
+    if (!initialTab || initialTab === 'profile') return 'overview'
+    if (initialTab === 'charts' && !ENABLE_FINANCIAL_CHARTS_TAB) return 'overview'
+    return initialTab
+  })
   const [expandedSvgChart, setExpandedSvgChart] = useState<'price' | 'revenue' | 'throughput' | null>(null)
   // Phạm vi hiển thị danh sách cùng ngành ở cuối trang ('l4' chuyên sâu hoặc 'l2' nhóm ngành)
   const [gridScope, setGridScope] = useState<'l4' | 'l2'>('l4')
   // Danh sách các tab đã từng được mount (để giữ cache không phải render lại từ đầu)
-  const [mountedTabs, setMountedTabs] = useState<Set<StockDetailTab>>(
-    () => new Set([initialTab === 'profile' ? 'overview' : (initialTab || 'overview')])
-  )
+  const [mountedTabs, setMountedTabs] = useState<Set<StockDetailTab>>(() => {
+    const startTab = (!initialTab || initialTab === 'profile' || (initialTab === 'charts' && !ENABLE_FINANCIAL_CHARTS_TAB))
+      ? 'overview'
+      : initialTab
+    return new Set([startTab])
+  })
   // Tab đang được nạp nội dung (nếu tab đó chưa từng được mount)
   const [loadingTab, setLoadingTab] = useState<StockDetailTab | null>(null)
   const switchTimerRef = useRef<NodeJS.Timeout | null>(null)
@@ -422,13 +452,33 @@ export function StockDetailView({
     }
   }
 
-  // Cập nhật khi initialTab thay đổi từ URL bên ngoài
+  // Cập nhật khi initialTab thay đổi từ URL bên ngoài (chỉ chạy khi prop initialTab thực sự thay đổi)
+  const prevInitialTabRef = useRef(initialTab)
   useEffect(() => {
-    if (initialTab && initialTab !== activeTab) {
-      setActiveTab(initialTab)
-      setMountedTabs((prev) => new Set(prev).add(initialTab))
+    if (prevInitialTabRef.current !== initialTab) {
+      prevInitialTabRef.current = initialTab
+      const resolved = (!initialTab || initialTab === 'profile' || (initialTab === 'charts' && !ENABLE_FINANCIAL_CHARTS_TAB))
+        ? 'overview'
+        : initialTab
+      setActiveTab(resolved)
+      setMountedTabs((prev) => new Set(prev).add(resolved))
     }
   }, [initialTab])
+
+  // Lắng nghe nút Back/Forward của trình duyệt để đồng bộ tab
+  useEffect(() => {
+    const handlePopState = () => {
+      const params = new URLSearchParams(window.location.search)
+      const tabParam = params.get('tab') as StockDetailTab | null
+      const resolved = (!tabParam || tabParam === 'profile' || (tabParam === 'charts' && !ENABLE_FINANCIAL_CHARTS_TAB))
+        ? 'overview'
+        : tabParam
+      setActiveTab(resolved)
+      setMountedTabs((prev) => new Set(prev).add(resolved))
+    }
+    window.addEventListener('popstate', handlePopState)
+    return () => window.removeEventListener('popstate', handlePopState)
+  }, [])
 
   const prefetchTab = useCallback((tabId: StockDetailTab) => {
     setMountedTabs((prev) => {
@@ -437,8 +487,9 @@ export function StockDetailView({
     })
   }, [])
 
-  // Nhẹ nhàng nạp trước tab biểu đồ tài chính sau 2.5s khi người dùng đã xem xong tổng quan
+  // Nhẹ nhàng nạp trước tab biểu đồ tài chính sau 2.5s khi người dùng đã xem xong tổng quan (chỉ chạy khi cờ bật)
   useEffect(() => {
+    if (!ENABLE_FINANCIAL_CHARTS_TAB) return
     const timer = setTimeout(() => {
       if (typeof window !== 'undefined' && 'requestIdleCallback' in window) {
         window.requestIdleCallback(() => {
@@ -836,9 +887,16 @@ export function StockDetailView({
     return { W, H, padL, padR, padB, grid, bars }
   }, [is_port, throughput])
 
-  // Cấu hình danh sách 7 Tabs chuẩn (hỗ trợ cả nhãn đầy đủ và nhãn gọn cho màn hình laptop/máy tính nhỏ)
+  // Cấu hình danh sách các Tabs chuẩn (hỗ trợ cả nhãn đầy đủ và nhãn gọn cho màn hình laptop/máy tính nhỏ)
   const TABS = useMemo(() => {
-    return [
+    const list: Array<{
+      id: StockDetailTab
+      label: string
+      shortLabel: string
+      icon: any
+      iconColor: string
+      badge?: string
+    }> = [
       {
         id: 'overview' as StockDetailTab,
         label: 'Tổng Quan & Hồ Sơ',
@@ -847,14 +905,20 @@ export function StockDetailView({
         iconColor: 'text-emerald-500',
         badge: 'LIVE',
       },
-      {
+    ]
+
+    if (ENABLE_FINANCIAL_CHARTS_TAB) {
+      list.push({
         id: 'charts' as StockDetailTab,
         label: 'Biểu Đồ Tài Chính',
         shortLabel: 'Biểu đồ BCTC',
         icon: BarChart3,
         iconColor: 'text-blue-500',
         badge: 'PRO',
-      },
+      })
+    }
+
+    list.push(
       {
         id: 'articles' as StockDetailTab,
         label: 'Bài Viết & Sự Kiện',
@@ -908,7 +972,9 @@ export function StockDetailView({
         iconColor: 'text-teal-400',
         badge: (bctcDataHopNhat?.hasReport || bctcDataCongTyMe?.hasReport) ? 'MỚI' : undefined,
       },
-    ]
+    )
+
+    return list
   }, [agmData, articlesData, bctcDataHopNhat, bctcDataCongTyMe])
 
   return (
@@ -979,54 +1045,42 @@ export function StockDetailView({
         </div>
       )}
 
-      <div className="flex flex-wrap items-center justify-between gap-3 px-1">
-        <div className="space-y-1">
-          <div className="flex flex-wrap items-center gap-2">
-            <h1 className="font-mono text-3xl font-black tracking-tight text-foreground sm:text-4xl">
+      {/* ── 1. HEADER CÔNG TY & 2. BẢNG TỔNG HỢP KPI (THU GỌN LIỀN MẠCH) ── */}
+      <div className="space-y-2">
+        <div className="flex flex-wrap items-baseline justify-between gap-x-3 gap-y-1 px-1">
+          <div className="flex flex-wrap items-baseline gap-x-2.5 gap-y-1">
+            <h1 className="font-mono text-2xl sm:text-3xl font-black tracking-tight text-foreground">
               {ticker}
             </h1>
             {company.exchange && (
-              <span className="rounded-md bg-secondary px-2.5 py-0.5 font-mono text-xs font-bold text-secondary-foreground uppercase">
+              <span className="rounded-md bg-secondary px-2 py-0.5 font-mono text-[11px] font-bold text-secondary-foreground uppercase">
                 {company.exchange}
               </span>
             )}
+            <h2 className="text-sm sm:text-base font-semibold text-muted-foreground truncate max-w-xl">
+              {company.name}
+            </h2>
             {company.sector && (
-              <span className="rounded-full border border-primary/30 bg-primary/10 px-3 py-0.5 text-xs font-semibold text-primary">
+              <span className="rounded-full border border-primary/30 bg-primary/10 px-2.5 py-0.5 text-[11px] font-semibold text-primary">
                 {company.sector}
               </span>
             )}
-            {company.icb_l1 && (
-              <span className="rounded-full bg-secondary px-3 py-0.5 text-xs font-medium text-muted-foreground">
+            {company.icb_l1 && company.icb_l1 !== company.sector && (
+              <span className="rounded-full bg-secondary px-2.5 py-0.5 text-[11px] font-medium text-muted-foreground hidden md:inline-flex">
                 {company.icb_l1}
               </span>
             )}
-            {websiteUrl && (
-              <a
-                href={websiteUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-1.5 rounded-lg border border-emerald-500/40 bg-emerald-500/10 hover:bg-emerald-500/20 px-2.5 py-1 text-xs font-bold text-emerald-600 dark:text-emerald-400 transition-all shadow-2xs group cursor-pointer"
-                title={`Mở website chính thức của ${company.name} (${companyWebsiteMeta?.website})`}
-              >
-                <Globe className="size-3 text-emerald-500 group-hover:scale-110 transition-transform" />
-                <span>Website</span>
-                <ArrowUpRight className="size-3 opacity-70 group-hover:opacity-100 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
-              </a>
-            )}
           </div>
-          <h2 className="text-base font-bold text-muted-foreground sm:text-lg">
-            {company.name}
-          </h2>
         </div>
-      </div>
 
-      {/* ── 2. BẢNG TỔNG HỢP: ĐÁNH GIÁ 360° & GIÁ + 10 THẺ KPI (CHUẨN RUATICHSAN) ── */}
-      <StockEvaluationHeader
-        stockData={stockData}
-        evaluationData={evaluationData}
-        priceChanges={priceChanges}
-        ktplRate={bonusWelfareRate}
-      />
+        {/* ── 2. BẢNG TỔNG HỢP: ĐÁNH GIÁ 360° & GIÁ + 12 CHỈ TIÊU KPI ── */}
+        <StockEvaluationHeader
+          stockData={stockData}
+          evaluationData={evaluationData}
+          priceChanges={priceChanges}
+          ktplRate={bonusWelfareRate}
+        />
+      </div>
 
       {/* ── 3. THANH ĐIỀU HƯỚNG TAB CHÍNH (TƯƠNG THÍCH MỌI KÍCH THƯỚC MÀN HÌNH TỪ LAPTOP ĐẾN DESKTOP) ── */}
       <div className="sticky top-14 z-30 relative group">
@@ -1266,6 +1320,21 @@ export function StockDetailView({
             </div>
           </div>
 
+          {/* ── CẶP BIỂU ĐỒ THỊ TRƯỜNG: GIÁ KHUYẾN NGHỊ CTCK & GIAO DỊCH NỘI BỘ ── */}
+          <div className="space-y-3 pt-1">
+            <div className="flex items-center justify-between">
+              <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-muted-foreground">
+                <span className="size-2 rounded-full bg-cyan-400" />
+                <span>Khuyến Nghị Định Giá &amp; Giao Dịch Nội Bộ</span>
+              </div>
+              <span className="text-[11px] font-mono text-muted-foreground">Phân tích thị trường</span>
+            </div>
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-5">
+              <WiDataConsensusCard symbol={ticker} />
+              <WiDataInsiderCard symbol={ticker} trades={companyProfileData?.insiderTrades} />
+            </div>
+          </div>
+
           {/* Mảng Kinh Doanh Cốt Lõi (Bảng chi tiết nếu có) */}
           {coreCard?.segments && coreCard.segments.length > 0 && (
             <div className="overflow-hidden rounded-2xl border border-border bg-card p-5 sm:p-6 shadow-xs space-y-3">
@@ -1385,7 +1454,7 @@ export function StockDetailView({
       {/* ══════════════════════════════════════════════════════════ */}
       {/* TAB 2: BIỂU ĐỒ TÀI CHÍNH                                 */}
       {/* ══════════════════════════════════════════════════════════ */}
-      {mountedTabs.has('charts') && (
+      {ENABLE_FINANCIAL_CHARTS_TAB && mountedTabs.has('charts') && (
         <div className={cn("space-y-6 animate-in fade-in-50 duration-200", (activeTab !== 'charts' || loadingTab === 'charts') && "hidden")}>
           {/* 9 Biểu đồ tài chính chuyên biệt ngành Ngân hàng (Chuỗi thời gian Quý / Năm) */}
           {(financialChartQuarter?.isNganHang || financialChartAnnual?.isNganHang || bankAnalysisData?.isBank) && (financialChartQuarter || financialChartAnnual) && (

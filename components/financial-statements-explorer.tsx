@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useMemo, useEffect, Fragment } from "react";
+import { useSearchParams } from "next/navigation";
 import {
   FileSpreadsheet,
   Download,
@@ -36,8 +37,9 @@ import { WiDataFinancialRatiosDashboard } from "@/components/stock/WiDataFinanci
 import type { BctcReportData, BctcNoteItem } from "@/lib/bctc-service";
 import { findMatchingNote, getNoteShortBadge } from "@/lib/bctc-note-matcher";
 import { FinancialNoteModal } from "@/components/stock/financial-note-modal";
+import { FinancialStatementsSideCharts } from "@/components/stock/FinancialStatementsSideCharts";
 
-export type FinancialTab = "cdkt" | "kqkd" | "lctt" | "ratios";
+export type FinancialTab = "cdkt" | "kqkd" | "lctt" | "lctt_direct" | "ratios";
 export type FinancialUnit = "bil" | "mil" | "thou" | "one";
 
 interface FinancialStatementsExplorerProps {
@@ -276,45 +278,7 @@ function buildStatementTree(rows: any[][], tab: FinancialTab): StatementTreeNode
   }
 
   if (tab === "lctt") {
-    let curActivityParent: number | null = null;
-    const items: StatementTreeNode[] = rows.map((r, idx) => {
-      const cleanName = String(r[0] || "").replace(/^_+/, "").trim();
-      const isActivity =
-        cleanName.includes("sản xuất kinh doanh") ||
-        cleanName.includes("hoạt động kinh doanh") ||
-        cleanName.includes("hoạt động đầu tư") ||
-        cleanName.includes("hoạt động tài chính");
-
-      let level = 1;
-      let parentId: number | null = null;
-
-      if (isActivity) {
-        level = 0;
-        curActivityParent = idx;
-        parentId = null;
-      } else {
-        level = 1;
-        parentId = curActivityParent;
-      }
-
-      return {
-        idx,
-        row: r,
-        name: String(r[0] || ""),
-        displayName: cleanName,
-        level,
-        parentId,
-        hasChildren: false,
-      };
-    });
-
-    items.forEach((item) => {
-      if (item.parentId != null && items[item.parentId]) {
-        items[item.parentId].hasChildren = true;
-      }
-    });
-
-    return items;
+    return buildLcttTree(rows);
   }
 
   return rows.map((r, idx) => ({
@@ -326,6 +290,419 @@ function buildStatementTree(rows: any[][], tab: FinancialTab): StatementTreeNode
     parentId: null,
     hasChildren: false,
   }));
+}
+
+function getLcttPriority(name: string, group: "adj" | "vld" | "dt" | "tc"): number {
+  const s = name.toLowerCase();
+  if (group === "adj") {
+    if (s.includes("khấu hao")) return 1;
+    if (s.includes("dự phòng")) return 2;
+    if (s.includes("chênh lệch tỷ giá") || s.includes("tỷ giá hối đoái")) return 3;
+    if (s.includes("thanh lý tài sản") || s.includes("thanh lý tscđ")) return 4;
+    if (s.includes("hoạt động đầu tư")) return 5;
+    if (s.includes("chi phí lãi vay") || s.includes("lãi vay")) return 6;
+    if (s.includes("thu lãi") || s.includes("cổ tức")) return 7;
+    if (s.includes("phân bổ") || s.includes("lợi thế thương mại")) return 8;
+    if (s.includes("công ty liên kết")) return 9;
+    if (s.includes("xóa sổ")) return 10;
+    if (s.includes("lãi tiền gửi") || s.includes("thu nhập lãi")) return 11;
+    if (s.includes("điều chỉnh khác")) return 12;
+    return 99;
+  }
+  if (group === "vld") {
+    if (s.includes("phải thu")) return 1;
+    if (s.includes("hàng tồn kho")) return 2;
+    if (s.includes("phải trả")) return 3;
+    if (s.includes("chi phí trả trước")) return 4;
+    if (s.includes("chứng khoán kinh doanh")) return 5;
+    if (s.includes("lãi vay đã trả")) return 6;
+    if (s.includes("thuế thu nhập") || s.includes("thuế tndn")) return 7;
+    if (s.includes("thu khác")) return 8;
+    if (s.includes("chi khác")) return 9;
+    return 99;
+  }
+  if (group === "dt") {
+    if (s.includes("mua sắm") || s.includes("xây dựng")) return 1;
+    if (s.includes("thanh lý") || s.includes("nhượng bán")) return 2;
+    if (s.includes("cho vay") || s.includes("mua các công cụ nợ")) return 3;
+    if (s.includes("thu hồi cho vay") || s.includes("bán lại các công cụ nợ")) return 4;
+    if (s.includes("đầu tư góp vốn") || s.includes("chi đầu tư")) return 5;
+    if (s.includes("thu hồi đầu tư") || s.includes("thu từ đầu tư")) return 6;
+    if (s.includes("thu lãi") || s.includes("cổ tức")) return 7;
+    return 99;
+  }
+  if (group === "tc") {
+    if (s.includes("phát hành") || s.includes("tăng vốn")) return 1;
+    if (s.includes("trả lại vốn") || s.includes("trả vốn") || s.includes("mua lại")) return 2;
+    if (s.includes("đi vay") || s.includes("thu được các khoản")) return 3;
+    if (s.includes("trả nợ gốc vay")) return 4;
+    if (s.includes("thuê tài chính")) return 5;
+    if (s.includes("cổ tức")) return 6;
+    if (s.includes("tiền lãi đã nhận")) return 7;
+    return 99;
+  }
+  return 99;
+}
+
+function buildLcttTree(rows: any[][]): StatementTreeNode[] {
+  if (!rows || rows.length === 0) return [];
+
+  const usedIndices = new Set<number>();
+
+  const findRows = (pred: (name: string) => boolean): { origIdx: number; row: any[] }[] => {
+    const res: { origIdx: number; row: any[] }[] = [];
+    rows.forEach((r, idx) => {
+      if (usedIndices.has(idx)) return;
+      const name = String(r[0] || "").replace(/^_+/, "").trim();
+      if (pred(name)) {
+        res.push({ origIdx: idx, row: r });
+        usedIndices.add(idx);
+      }
+    });
+    return res;
+  };
+
+  const findOne = (pred: (name: string) => boolean): { origIdx: number; row: any[] } | null => {
+    for (let idx = 0; idx < rows.length; idx++) {
+      if (usedIndices.has(idx)) continue;
+      const r = rows[idx];
+      const name = String(r[0] || "").replace(/^_+/, "").trim();
+      if (pred(name)) {
+        usedIndices.add(idx);
+        return { origIdx: idx, row: r };
+      }
+    }
+    return null;
+  };
+
+  // 1. Lợi nhuận trước thuế (Mục 1)
+  const lntt = findOne((n) => {
+    const s = n.toLowerCase();
+    return s.includes("lợi nhuận trước thuế") || s.includes("lợi nhuận/(lỗ) trước thuế");
+  });
+
+  // 4. Dòng tổng kết Lưu chuyển tiền thuần từ HĐKD
+  const kdTotal = findOne((n) => {
+    const s = n.toLowerCase();
+    return (
+      s.includes("lưu chuyển tiền thuần từ hoạt động kinh doanh") ||
+      s.includes("lưu chuyển tiền tệ ròng từ các hoạt động sản xuất kinh doanh") ||
+      s.includes("lưu chuyển tiền thuần từ các hoạt động sản xuất kinh doanh")
+    );
+  });
+
+  // 5. Dòng tổng kết Lưu chuyển tiền thuần từ HĐ Đầu tư
+  const dtTotal = findOne((n) => {
+    const s = n.toLowerCase();
+    return s.includes("lưu chuyển tiền thuần từ hoạt động đầu tư");
+  });
+
+  // 6. Dòng tổng kết Lưu chuyển tiền thuần từ HĐ Tài chính
+  const tcTotal = findOne((n) => {
+    const s = n.toLowerCase();
+    return s.includes("lưu chuyển tiền thuần từ hoạt động tài chính");
+  });
+
+  // 7. Các chỉ tiêu cuối kỳ
+  const netInPeriod = findOne((n) => n.toLowerCase().includes("lưu chuyển tiền thuần trong kỳ"));
+  const cashStart = findOne((n) => n.toLowerCase().includes("đầu kỳ") && !n.toLowerCase().includes("điều chỉnh lại"));
+  const fxEffect = findOne((n) => n.toLowerCase().includes("thay đổi tỷ giá") || n.toLowerCase().includes("quy đổi ngoại tệ"));
+  const cashEnd = findOne((n) => n.toLowerCase().includes("cuối kỳ") && !n.toLowerCase().includes("điều chỉnh lại"));
+
+  // 2. Các khoản điều chỉnh
+  const adjKeywords = [
+    "khấu hao", "dự phòng", "chênh lệch tỷ giá", "thanh lý tài sản cố định",
+    "thanh lý tscđ", "hoạt động đầu tư", "chi phí lãi vay", "thu lãi và cổ tức",
+    "phân bổ lợi thế thương mại", "điều chỉnh khác", "công ty liên kết",
+    "xóa sổ tài sản cố định", "lãi tiền gửi", "thu nhập lãi", "chi trực tiếp từ lợi nhuận"
+  ];
+  const adjRows = findRows((n) => {
+    const s = n.toLowerCase();
+    return adjKeywords.some((kw) => s.includes(kw)) && !s.includes("vốn lưu động");
+  }).sort((a, b) => {
+    return (
+      getLcttPriority(String(a.row[0] || ""), "adj") -
+      getLcttPriority(String(b.row[0] || ""), "adj")
+    );
+  });
+
+  // 3. Lợi nhuận từ HĐKD trước thay đổi vốn lưu động & các khoản vốn lưu động
+  const vldParent = findOne((n) => n.toLowerCase().includes("vốn lưu động"));
+  const vldKeywords = [
+    "phải thu", "hàng tồn kho", "phải trả", "chi phí trả trước", "chứng khoán kinh doanh",
+    "lãi vay đã trả", "thuế thu nhập", "thu khác từ hoạt động kinh doanh",
+    "chi khác cho hoạt động kinh doanh", "thu khác từ hđkd", "chi khác cho hđkd"
+  ];
+  const vldRows = findRows((n) => {
+    const s = n.toLowerCase();
+    return vldKeywords.some((kw) => s.includes(kw));
+  }).sort((a, b) => {
+    return (
+      getLcttPriority(String(a.row[0] || ""), "vld") -
+      getLcttPriority(String(b.row[0] || ""), "vld")
+    );
+  });
+
+  // Chi tiết HĐ Đầu tư
+  const dtKeywords = [
+    "mua sắm", "xây dựng tscđ", "thanh lý, nhượng bán", "cho vay", "công cụ nợ",
+    "góp vốn", "thu lãi cho vay, cổ tức"
+  ];
+  const dtRows = findRows((n) => {
+    const s = n.toLowerCase();
+    return dtKeywords.some((kw) => s.includes(kw));
+  }).sort((a, b) => {
+    return (
+      getLcttPriority(String(a.row[0] || ""), "dt") -
+      getLcttPriority(String(b.row[0] || ""), "dt")
+    );
+  });
+
+  // Chi tiết HĐ Tài chính
+  const tcKeywords = [
+    "phát hành cổ phiếu", "tăng vốn cổ phần", "trả lại vốn góp", "trả vốn góp",
+    "mua lại cổ phiếu", "đi vay", "trả nợ gốc", "cổ tức", "tiền lãi đã nhận"
+  ];
+  const tcRows = findRows((n) => {
+    const s = n.toLowerCase();
+    return tcKeywords.some((kw) => s.includes(kw));
+  }).sort((a, b) => {
+    return (
+      getLcttPriority(String(a.row[0] || ""), "tc") -
+      getLcttPriority(String(b.row[0] || ""), "tc")
+    );
+  });
+
+  // Bất kỳ hàng nào còn sót lại
+  const remainingRows: { origIdx: number; row: any[] }[] = [];
+  rows.forEach((r, idx) => {
+    if (!usedIndices.has(idx)) {
+      remainingRows.push({ origIdx: idx, row: r });
+    }
+  });
+
+  // Fallback an toàn: Nếu không nhận diện được bất kỳ cấu trúc LCTT cơ bản nào
+  if (!lntt && !kdTotal && !dtTotal && !tcTotal && adjRows.length === 0 && vldRows.length === 0) {
+    return rows.map((r, idx) => ({
+      idx,
+      row: r,
+      name: String(r[0] || ""),
+      displayName: String(r[0] || "").replace(/^_+/, "").trim(),
+      level: 0,
+      parentId: null,
+      hasChildren: false,
+    }));
+  }
+
+  // Tạo cây nodes chuẩn mực Mẫu B03-DN / FireAnt
+  const items: StatementTreeNode[] = [];
+
+  const addNode = (
+    name: string,
+    displayName: string,
+    level: number,
+    parentId: number | null,
+    row: any[],
+    hasChildren = false
+  ): number => {
+    const newIdx = items.length;
+    items.push({
+      idx: newIdx,
+      row,
+      name,
+      displayName,
+      level,
+      parentId,
+      hasChildren,
+    });
+    return newIdx;
+  };
+
+  // 1. Dòng Lợi nhuận trước thuế
+  if (lntt) {
+    addNode(
+      String(lntt.row[0] || ""),
+      "1. Lợi nhuận trước thuế",
+      1,
+      null,
+      lntt.row,
+      false
+    );
+  }
+
+  // 2. Dòng Điều chỉnh cho các khoản (Tổng hợp)
+  const numCols = rows[0]?.length ? rows[0].length - 3 : 0;
+  const existingDieuChinh = findOne((n) => n.toLowerCase().includes("điều chỉnh cho các khoản"));
+  let dieuChinhRowData = existingDieuChinh?.row;
+
+  if (!dieuChinhRowData) {
+    const synthAdjVals: (number | null)[] = new Array(numCols).fill(0);
+    // Tính theo công thức chuẩn VAS: Điều chỉnh = Lợi nhuận trước VLĐ - Lợi nhuận trước thuế
+    if (vldParent && lntt) {
+      for (let c = 0; c < numCols; c++) {
+        const vVld = vldParent.row[3 + c];
+        const vLntt = lntt.row[3 + c];
+        if (vVld != null && vLntt != null) {
+          synthAdjVals[c] = Number(vVld) - Number(vLntt);
+        }
+      }
+    } else {
+      adjRows.forEach(({ row }) => {
+        for (let c = 0; c < numCols; c++) {
+          const v = row[3 + c];
+          if (v != null && !isNaN(Number(v))) {
+            synthAdjVals[c] = (synthAdjVals[c] || 0) + Number(v);
+          }
+        }
+      });
+    }
+
+    dieuChinhRowData = [
+      "2. Điều chỉnh cho các khoản",
+      0,
+      "virtual_dieu_chinh",
+      ...synthAdjVals,
+    ];
+  }
+
+  const dieuChinhParentIdx = addNode(
+    "2. Điều chỉnh cho các khoản",
+    "2. Điều chỉnh cho các khoản",
+    1,
+    null,
+    dieuChinhRowData,
+    adjRows.length > 0
+  );
+
+  adjRows.forEach(({ row }) => {
+    const clean = String(row[0] || "").replace(/^_+/, "").trim();
+    addNode(String(row[0] || ""), clean, 2, dieuChinhParentIdx, row, false);
+  });
+
+  // 3. Lợi nhuận từ HĐKD trước thay đổi vốn lưu động
+  const vldRowData = vldParent?.row || [
+    "3. Lợi nhuận từ HĐKD trước thay đổi vốn lưu động",
+    0,
+    "virtual_vld",
+    ...new Array(numCols).fill(0),
+  ];
+  const vldParentIdx = addNode(
+    String(vldRowData[0] || ""),
+    "3. Lợi nhuận từ HĐKD trước thay đổi vốn lưu động",
+    1,
+    null,
+    vldRowData,
+    vldRows.length > 0
+  );
+
+  vldRows.forEach(({ row }) => {
+    const clean = String(row[0] || "").replace(/^_+/, "").trim();
+    addNode(String(row[0] || ""), clean, 2, vldParentIdx, row, false);
+  });
+
+  // 4. Lưu chuyển tiền thuần từ HĐKD
+  if (kdTotal) {
+    addNode(
+      String(kdTotal.row[0] || ""),
+      "Lưu chuyển tiền thuần từ hoạt động kinh doanh",
+      0,
+      null,
+      kdTotal.row,
+      false
+    );
+  }
+
+  // 5. Lưu chuyển tiền thuần từ HĐ Đầu tư
+  const dtRowData = dtTotal?.row || [
+    "Lưu chuyển tiền thuần từ hoạt động đầu tư",
+    0,
+    "virtual_dt",
+    ...new Array(numCols).fill(0),
+  ];
+  const dtParentIdx = addNode(
+    String(dtRowData[0] || ""),
+    "Lưu chuyển tiền thuần từ hoạt động đầu tư",
+    0,
+    null,
+    dtRowData,
+    dtRows.length > 0
+  );
+
+  dtRows.forEach(({ row }) => {
+    const clean = String(row[0] || "").replace(/^_+/, "").trim();
+    addNode(String(row[0] || ""), clean, 2, dtParentIdx, row, false);
+  });
+
+  // 6. Lưu chuyển tiền thuần từ HĐ Tài chính
+  const tcRowData = tcTotal?.row || [
+    "Lưu chuyển tiền thuần từ hoạt động tài chính",
+    0,
+    "virtual_tc",
+    ...new Array(numCols).fill(0),
+  ];
+  const tcParentIdx = addNode(
+    String(tcRowData[0] || ""),
+    "Lưu chuyển tiền thuần từ hoạt động tài chính",
+    0,
+    null,
+    tcRowData,
+    tcRows.length > 0
+  );
+
+  tcRows.forEach(({ row }) => {
+    const clean = String(row[0] || "").replace(/^_+/, "").trim();
+    addNode(String(row[0] || ""), clean, 2, tcParentIdx, row, false);
+  });
+
+  // 7. Các chỉ tiêu cuối kỳ
+  if (netInPeriod) {
+    addNode(
+      String(netInPeriod.row[0] || ""),
+      "Lưu chuyển tiền thuần trong kỳ",
+      0,
+      null,
+      netInPeriod.row,
+      false
+    );
+  }
+  if (cashStart) {
+    addNode(
+      String(cashStart.row[0] || ""),
+      "Tiền và tương đương tiền đầu kỳ",
+      1,
+      null,
+      cashStart.row,
+      false
+    );
+  }
+  if (fxEffect) {
+    addNode(
+      String(fxEffect.row[0] || ""),
+      "Ảnh hưởng của thay đổi tỷ giá hối đoái quy đổi ngoại tệ",
+      1,
+      null,
+      fxEffect.row,
+      false
+    );
+  }
+  if (cashEnd) {
+    addNode(
+      String(cashEnd.row[0] || ""),
+      "Tiền và tương đương tiền cuối kỳ",
+      0,
+      null,
+      cashEnd.row,
+      false
+    );
+  }
+
+  // 8. Bổ sung các hàng còn lại (nếu có để không bị sót bất kỳ dữ liệu nào)
+  remainingRows.forEach(({ row }) => {
+    const clean = String(row[0] || "").replace(/^_+/, "").trim();
+    addNode(String(row[0] || ""), clean, 1, null, row, false);
+  });
+
+  return items;
 }
 
 // Biểu đồ xu hướng mini dạng cột (5-6 cột cyan) chuẩn FireAnt / Simplize
@@ -665,7 +1042,13 @@ export function FinancialStatementsExplorer({
   bctcDataCongTyMe,
   onSelectTab,
 }: FinancialStatementsExplorerProps) {
-  const [activeTab, setActiveTab] = useState<FinancialTab>("cdkt");
+  const searchParams = useSearchParams();
+  const urlSubtab = searchParams?.get("subtab");
+  const [activeTab, setActiveTab] = useState<FinancialTab>(
+    urlSubtab === "lctt" || urlSubtab === "kqkd" || urlSubtab === "cdkt" || urlSubtab === "ratios" || urlSubtab === "lctt_direct"
+      ? (urlSubtab as FinancialTab)
+      : "cdkt"
+  );
   const [periodMode, setPeriodMode] = useState<"quarter" | "annual">("quarter");
   const [periodCount, setPeriodCount] = useState<number>(5);
   const [dateOffset, setDateOffset] = useState<number>(0);
@@ -673,6 +1056,11 @@ export function FinancialStatementsExplorer({
   const [showQoQ, setShowQoQ] = useState<boolean>(false); // Mặc định tắt để bảng gọn gàng
   const [unit, setUnit] = useState<FinancialUnit>("mil"); // Mặc định 1.000.000 (Triệu đồng) khớp ảnh
   const [isCompactLayout, setIsCompactLayout] = useState<boolean>(true); // Mặc định bố cục gọn gàng, đỡ đảo mắt
+  const [showSideCharts, setShowSideCharts] = useState<boolean>(true); // Bật biểu đồ bên cạnh tab BCTC
+  const [selectedRowForSideChart, setSelectedRowForSideChart] = useState<{
+    title: string;
+    allValues: (number | null)[];
+  } | null>(null);
   const [loading, setLoading] = useState<boolean>(false);
   const [chartModalItem, setChartModalItem] = useState<{
     title: string;
@@ -819,9 +1207,10 @@ export function FinancialStatementsExplorer({
     return buildStatementTree(currentRows, activeTab);
   }, [currentRows, activeTab]);
 
-  // Reset trạng thái thu gọn khi chuyển tab (cdkt, kqkd, lctt)
+  // Reset trạng thái thu gọn & hàng chọn khi chuyển tab (cdkt, kqkd, lctt)
   useEffect(() => {
     setCollapsedSet(new Set());
+    setSelectedRowForSideChart(null);
   }, [activeTab]);
 
   const toggleCollapse = (idx: number) => {
@@ -857,12 +1246,12 @@ export function FinancialStatementsExplorer({
 
   // Xuất file CSV
   const handleExportCsv = () => {
-    if (!selectedDates.length || !currentRows.length) return;
+    if (!selectedDates.length || !treeNodes.length) return;
 
     const headers = ["Chỉ tiêu", ...selectedDates.map((d) => formatPeriodLabel(d, periodMode))];
-    const rows = currentRows.map((row) => {
-      const name = row[0];
-      const vals = (row.slice(3) as (number | null)[]).slice(startIndex, endIndex);
+    const rows = treeNodes.map((node) => {
+      const name = node.displayName;
+      const vals = (node.row.slice(3) as (number | null)[]).slice(startIndex, endIndex);
       const formattedVals = vals.map((v) => (v != null ? (v / unitDivider).toFixed(2) : ""));
       return [`"${name.replace(/"/g, '""')}"`, ...formattedVals];
     });
@@ -909,15 +1298,30 @@ export function FinancialStatementsExplorer({
           </button>
           <button
             type="button"
-            onClick={() => setActiveTab("lctt")}
+            onClick={() => setActiveTab("lctt_direct")}
             className={cn(
               "rounded-lg px-3 py-1.5 text-xs font-bold transition-all cursor-pointer",
+              activeTab === "lctt_direct"
+                ? "bg-emerald-500/20 text-emerald-400 border border-emerald-500/30 shadow-2xs"
+                : "border border-slate-800/80 bg-[#1b222d] text-slate-400 hover:text-slate-200"
+            )}
+          >
+            LCTT Trực Tiếp
+          </button>
+          <button
+            type="button"
+            onClick={() => setActiveTab("lctt")}
+            className={cn(
+              "rounded-lg px-3 py-1.5 text-xs font-bold transition-all cursor-pointer flex items-center gap-1.5",
               activeTab === "lctt"
                 ? "bg-emerald-500/20 text-emerald-400 border border-emerald-500/30 shadow-2xs"
                 : "border border-slate-800/80 bg-[#1b222d] text-slate-400 hover:text-slate-200"
             )}
           >
-            Lưu Chuyển Tiền Tệ
+            <span>LCTT Gián Tiếp</span>
+            <span className="text-[10px] font-mono px-1 py-0.2 rounded bg-emerald-500/20 text-emerald-300 font-bold border border-emerald-500/30">
+              Chuẩn
+            </span>
           </button>
           <button
             type="button"
@@ -945,7 +1349,7 @@ export function FinancialStatementsExplorer({
         </div>
 
         {/* Các công cụ phụ bên phải: Mở hết/Gọn hết, Số kỳ, QoQ/YoY, Xuất Excel */}
-        {activeTab !== "ratios" && (
+        {activeTab !== "ratios" && activeTab !== "lctt_direct" && (
           <div className="flex flex-wrap items-center gap-1.5 text-xs">
             <div className="flex items-center gap-1 mr-1">
               <button
@@ -1038,6 +1442,21 @@ export function FinancialStatementsExplorer({
               {isCompactLayout ? <Minimize2 className="size-3" /> : <Maximize2 className="size-3" />}
               <span>{isCompactLayout ? "Bố cục: Gọn" : "Toàn màn hình"}</span>
             </button>
+
+            <button
+              type="button"
+              onClick={() => setShowSideCharts(!showSideCharts)}
+              className={cn(
+                "inline-flex items-center gap-1 rounded px-2.5 py-1 text-[11px] font-semibold border transition-all cursor-pointer",
+                showSideCharts
+                  ? "border-teal-500/40 bg-teal-500/15 text-teal-300 hover:bg-teal-500/25"
+                  : "border-slate-700 bg-[#1b222d] text-slate-400 hover:text-white hover:bg-slate-700/60"
+              )}
+              title={showSideCharts ? "Tắt cột biểu đồ bên cạnh để mở rộng bảng" : "Bật cột biểu đồ phân tích bên cạnh bảng BCTC"}
+            >
+              <BarChart3 className={cn("size-3", showSideCharts ? "text-teal-400" : "text-slate-400")} />
+              <span>{showSideCharts ? "Biểu đồ: Bật" : "Biểu đồ: Tắt"}</span>
+            </button>
           </div>
         )}
       </div>
@@ -1045,6 +1464,31 @@ export function FinancialStatementsExplorer({
       {/* ── BẢNG BCTC CHÍNH HOẶC DASHBOARD CHỈ SỐ TÀI CHÍNH ── */}
       {activeTab === "ratios" ? (
         <WiDataFinancialRatiosDashboard ticker={ticker} />
+      ) : activeTab === "lctt_direct" ? (
+        <div className="rounded-2xl border border-slate-800 bg-[#161c24] p-8 sm:p-12 text-center max-w-2xl mx-auto my-8 shadow-lg">
+          <div className="size-14 rounded-2xl bg-teal-500/10 border border-teal-500/20 text-teal-400 flex items-center justify-center mx-auto mb-4">
+            <FileSpreadsheet className="size-7" />
+          </div>
+          <span className="text-xs uppercase font-bold tracking-wider text-teal-400 bg-teal-500/10 border border-teal-500/25 px-2.5 py-1 rounded-full">
+            Mẫu B03a-DN (Trực Tiếp)
+          </span>
+          <h3 className="text-lg font-bold text-white mt-3 mb-2">
+            Báo Cáo Lưu Chuyển Tiền Tệ Theo Phương Pháp Trực Tiếp
+          </h3>
+          <p className="text-sm text-slate-300 leading-relaxed max-w-lg mx-auto mb-6">
+            Theo quy định tại Thông tư 200/2014/TT-BTC của Bộ Tài chính, <strong className="text-white">{ticker}</strong> và hầu hết các doanh nghiệp niêm yết trên thị trường chứng khoán Việt Nam lựa chọn lập và công bố báo cáo theo <strong className="text-emerald-400">Phương pháp Gián tiếp (Mẫu B03-DN)</strong> để giải trình chi tiết biến động từ Lợi nhuận kế toán sang Dòng tiền kinh doanh thực tế.
+          </p>
+          <div className="flex flex-wrap items-center justify-center gap-3">
+            <button
+              type="button"
+              onClick={() => setActiveTab("lctt")}
+              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-teal-500 text-slate-950 font-bold hover:bg-teal-400 transition-colors cursor-pointer text-sm shadow-md"
+            >
+              <span>Xem Báo Cáo LCTT Gián Tiếp (Đầy đủ)</span>
+              <ChevronRight className="size-4" />
+            </button>
+          </div>
+        </div>
       ) : loading ? (
         <div className="py-20 text-center text-muted-foreground text-sm">
           <div className="inline-block size-6 border-2 border-emerald-500 border-t-transparent rounded-full animate-spin mb-2"></div>
@@ -1076,21 +1520,26 @@ export function FinancialStatementsExplorer({
           </button>
         </div>
       ) : (
-        <div
-          className={cn(
-            "relative overflow-hidden rounded-xl border border-slate-800 bg-[#141922] shadow-sm transition-all",
-            isCompactLayout ? "w-fit max-w-full" : "w-full"
-          )}
-        >
-          <div className="overflow-x-auto">
-            <table
-              onMouseLeave={() => setHoveredColIdx(null)}
-              className={cn(
-                "text-left border-collapse select-none transition-all",
-                isCompactLayout ? "w-auto" : "w-full"
-              )}
-              style={RUATICHSAN_FONT_STYLE}
-            >
+        <div className={cn("w-full items-start", (showSideCharts || isCompactLayout) ? "grid grid-cols-1 lg:grid-cols-12 gap-3.5" : "block")}>
+          {/* CỘT TRÁI: BẢNG BÁO CÁO TÀI CHÍNH */}
+          <div
+            className={cn(
+              "min-w-0 w-full",
+              !showSideCharts && !isCompactLayout
+                ? "w-full"
+                : "lg:col-span-7 xl:col-span-8 2xl:col-span-8"
+            )}
+          >
+            <div className="relative overflow-hidden rounded-xl border border-slate-800 bg-[#141922] shadow-sm transition-all w-full">
+              <div className="overflow-x-auto w-full">
+                <table
+                  onMouseLeave={() => setHoveredColIdx(null)}
+                  className={cn(
+                    "text-left border-collapse select-none transition-all",
+                    isCompactLayout ? "w-max min-w-full" : "w-full min-w-full"
+                  )}
+                  style={RUATICHSAN_FONT_STYLE}
+                >
               <thead>
                 <tr className="sticky top-0 z-20 bg-[#161c24] text-slate-300 border-b border-slate-700/70">
                   {/* Cột 1: Controls (◀, ▶, Theo quý, 1.000.000) */}
@@ -1271,11 +1720,12 @@ export function FinancialStatementsExplorer({
                   const noteCongTyMe = findMatchingNote(node.displayName || node.name, activeTab, bctcDataCongTyMe?.notes);
                   const matchedNote = noteHopNhat || noteCongTyMe;
                   const isClickableNote = Boolean(matchedNote);
+                  const isSelectedThisRow = selectedRowForSideChart?.title === node.displayName;
 
                   return (
                     <Fragment key={rowCode}>
                       {/* 1. DÒNG CHÍNH */}
-                      <tr className={cn("group transition-colors", rowBgClass)}>
+                      <tr className={cn("group transition-colors", rowBgClass, isSelectedThisRow && "bg-teal-500/10")}>
                         {/* Cột tiêu chí (Sticky Left) */}
                         <td
                           className={cn(
@@ -1362,19 +1812,29 @@ export function FinancialStatementsExplorer({
                               onClick={(e) => {
                                 e.stopPropagation();
                                 if (hasAnyData) {
-                                  setChartModalItem({
-                                    title: node.displayName,
-                                    allValues,
-                                  });
+                                  if (showSideCharts) {
+                                    setSelectedRowForSideChart({
+                                      title: node.displayName,
+                                      allValues,
+                                    });
+                                  } else {
+                                    setChartModalItem({
+                                      title: node.displayName,
+                                      allValues,
+                                    });
+                                  }
                                 }
                               }}
                               className={cn(
                                 "w-[48px] min-w-[48px] max-w-[48px] px-1 py-2 sm:py-2.5 text-center align-middle transition-colors select-none",
-                                hasAnyData && "cursor-pointer hover:bg-teal-500/20 group/spark"
+                                hasAnyData && "cursor-pointer hover:bg-teal-500/20 group/spark",
+                                isSelectedThisRow && "bg-teal-500/20 ring-1 ring-inset ring-teal-500/40"
                               )}
                               title={
                                 hasAnyData
-                                  ? `Bấm để phóng to biểu đồ chi tiết: ${node.displayName}`
+                                  ? showSideCharts
+                                    ? `Bấm để xem biểu đồ chi tiết bên cạnh: ${node.displayName}`
+                                    : `Bấm để phóng to biểu đồ chi tiết: ${node.displayName}`
                                   : undefined
                               }
                             >
@@ -1562,7 +2022,27 @@ export function FinancialStatementsExplorer({
             </table>
           </div>
         </div>
+      </div>
+
+      {/* CỘT PHẢI: BIỂU ĐỒ NGỮ CẢNH THEO SUB-TAB HOẶC CHỈ TIÊU ĐANG CHỌN */}
+      {showSideCharts && (
+        <div className="lg:col-span-5 xl:col-span-4 2xl:col-span-4 w-full min-w-0 lg:sticky lg:top-20 space-y-3">
+          <FinancialStatementsSideCharts
+            ticker={ticker}
+            activeTab={activeTab as "cdkt" | "kqkd" | "lctt"}
+            periodMode={periodMode}
+            statementData={statementData}
+            startIndex={startIndex}
+            endIndex={endIndex}
+            selectedRowChart={selectedRowForSideChart}
+            onClearSelectedRow={() => setSelectedRowForSideChart(null)}
+            onExpandModal={(item) => setChartModalItem(item)}
+            onCloseSidePanel={() => setShowSideCharts(false)}
+          />
+        </div>
       )}
+    </div>
+  )}
 
       {chartModalItem && (
         <FinancialItemChartModal

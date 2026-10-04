@@ -9,6 +9,7 @@ import type {
   SubsidiaryItem,
   InsiderTradeItem,
 } from './company-profile-types'
+import { fetchDirectCompanyProfile } from './direct-market-bot'
 
 let supabaseInstance: SupabaseClient | null = null
 function getSupabase(): SupabaseClient | null {
@@ -141,28 +142,67 @@ export function parseShareholderPayload(sym: string, d: any): CompanyFullProfile
     })
   }
 
-  // 3. Lịch sử giao dịch nội bộ (khử trùng lặp giữa bản tin đăng ký và báo cáo kết quả cùng đợt)
-  const rawTrades: any[] = d.giao_dich_noi_bo || []
+function parseAnyDateToVn(dateStr: string | null | undefined): string {
+  if (!dateStr) return ''
+  const match = String(dateStr).match(/\/Date\((\d+)\)\//)
+  if (match) {
+    const d = new Date(parseInt(match[1], 10))
+    const day = String(d.getDate()).padStart(2, '0')
+    const month = String(d.getMonth() + 1).padStart(2, '0')
+    const year = d.getFullYear()
+    return `${day}/${month}/${year}`
+  }
+  let s = String(dateStr)
+  if (s.includes('T')) {
+    s = s.split('T')[0]
+  }
+  if (s.includes('-')) {
+    const parts = s.split('-')
+    if (parts.length === 3) return `${parts[2]}/${parts[1]}/${parts[0]}`
+  }
+  return s
+}
+
+function getTradeTimestamp(dStr: string): number {
+  if (!dStr) return 0
+  const parts = dStr.split('/')
+  if (parts.length === 3) {
+    return new Date(Number(parts[2]), Number(parts[1]) - 1, Number(parts[0])).getTime()
+  }
+  return 0
+}
+
+  // 3. Lịch sử giao dịch nội bộ
+  const rawTrades: any[] = d.giao_dich_noi_bo || d.co_cau_so_huu?.giao_dich_noi_bo || d.insiderTrades || []
   const dedupedRawTrades: any[] = []
   const handledKeys = new Set<string>()
 
   for (const t of rawTrades) {
-    const name = (t.transaction_name || '').trim()
-    const planBuy = Number(t.plan_buy) || 0
-    const planSell = Number(t.plan_sell) || 0
-    const planBegin = t.plan_begin_date || ''
-    const planEnd = t.plan_end_date || ''
+    const name = (t.transaction_name || t.TransactionMan || t.traderName || '').trim()
+    const planBuy = Number(t.plan_buy ?? t.PlanBuyVolume ?? (t.action === 'BUY' ? t.volumeRegistered : 0)) || 0
+    const planSell = Number(t.plan_sell ?? t.PlanSellVolume ?? (t.action === 'SELL' ? t.volumeRegistered : 0)) || 0
+    const planBegin = t.plan_begin_date || t.PlanBeginDate || t.planBeginDate || ''
+    const planEnd = t.plan_end_date || t.PlanEndDate || t.planEndDate || ''
 
-    const roundKey = `${name}_${planBuy}_${planSell}_${planBegin}_${planEnd}`
-    if (roundKey && roundKey !== '____') {
+    const hasPlan = (planBuy > 0 || planSell > 0) && Boolean(planBegin || planEnd)
+
+    if (hasPlan) {
+      const roundKey = `${name}_${planBuy}_${planSell}_${planBegin}_${planEnd}`
       if (handledKeys.has(roundKey)) continue
       const matches = rawTrades.filter((m) => {
-        const mKey = `${(m.transaction_name || '').trim()}_${Number(m.plan_buy) || 0}_${Number(m.plan_sell) || 0}_${m.plan_begin_date || ''}_${m.plan_end_date || ''}`
-        return mKey === roundKey
+        const mName = (m.transaction_name || m.TransactionMan || m.traderName || '').trim()
+        const mPlanBuy = Number(m.plan_buy ?? m.PlanBuyVolume ?? (m.action === 'BUY' ? m.volumeRegistered : 0)) || 0
+        const mPlanSell = Number(m.plan_sell ?? m.PlanSellVolume ?? (m.action === 'SELL' ? m.volumeRegistered : 0)) || 0
+        const mPlanBegin = m.plan_begin_date || m.PlanBeginDate || m.planBeginDate || ''
+        const mPlanEnd = m.plan_end_date || m.PlanEndDate || m.planEndDate || ''
+        return `${mName}_${mPlanBuy}_${mPlanSell}_${mPlanBegin}_${mPlanEnd}` === roundKey
       })
       let best = matches[0]
       for (const m of matches) {
-        if ((Number(m.real_buy) || 0) > 0 || (Number(m.real_sell) || 0) > 0 || m.real_end_date) {
+        const mRealBuy = Number(m.real_buy ?? m.RealBuyVolume ?? (m.action === 'BUY' ? m.volumeTraded : 0)) || 0
+        const mRealSell = Number(m.real_sell ?? m.RealSellVolume ?? (m.action === 'SELL' ? m.volumeTraded : 0)) || 0
+        const mRealEnd = m.real_end_date || m.RealEndDate || m.realEndDate
+        if (mRealBuy > 0 || mRealSell > 0 || mRealEnd) {
           best = m
           break
         }
@@ -170,49 +210,78 @@ export function parseShareholderPayload(sym: string, d: any): CompanyFullProfile
       handledKeys.add(roundKey)
       dedupedRawTrades.push(best)
     } else {
+      // Giao dịch trực tiếp không qua đăng ký trước
+      const realBuy = Number(t.real_buy ?? t.RealBuyVolume ?? (t.action === 'BUY' ? t.volumeTraded : 0)) || 0
+      const realSell = Number(t.real_sell ?? t.RealSellVolume ?? (t.action === 'SELL' ? t.volumeTraded : 0)) || 0
+      const realEnd = t.real_end_date || t.RealEndDate || t.realEndDate || t.tradeDate || ''
+      const pubDate = t.published_date || t.PublishedDate || t.publishedDate || ''
+      const volAfter = t.volume_after ?? t.VolumeAfterTransaction ?? t.volumeAfter ?? ''
+      const exactKey = `${name}_${realBuy}_${realSell}_${realEnd}_${pubDate}_${volAfter}`
+      if (handledKeys.has(exactKey)) continue
+      handledKeys.add(exactKey)
       dedupedRawTrades.push(t)
     }
   }
 
-  const insiderTrades: InsiderTradeItem[] = dedupedRawTrades.map((t) => {
-    const realBuy = Number(t.real_buy) || 0
-    const realSell = Number(t.real_sell) || 0
-    const planBuy = Number(t.plan_buy) || 0
-    const planSell = Number(t.plan_sell) || 0
-
-    let action: 'BUY' | 'SELL' | 'NONE' = 'NONE'
-    let volumeTraded = 0
-    let volumeRegistered = 0
-
-    if (realBuy > 0 || planBuy > 0) {
-      action = 'BUY'
-      volumeTraded = realBuy
-      volumeRegistered = planBuy
-    } else if (realSell > 0 || planSell > 0) {
-      action = 'SELL'
-      volumeTraded = realSell
-      volumeRegistered = planSell
+  const insiderTrades: InsiderTradeItem[] = []
+  for (const t of dedupedRawTrades) {
+    if (t.action && (t.volumeTraded != null || t.volumeRegistered != null) && t.tradeDate && !t.real_buy && !t.RealBuyVolume && !t.real_sell && !t.RealSellVolume) {
+      insiderTrades.push(t)
+      continue
     }
 
-    let tradeDate = t.real_end_date || t.plan_end_date || t.plan_begin_date || t.published_date || ''
-    if (tradeDate && tradeDate.includes('-')) {
-      const parts = tradeDate.split('-')
-      if (parts.length === 3) {
-        tradeDate = `${parts[2]}/${parts[1]}/${parts[0]}`
-      }
-    }
+    const realBuy = Number(t.real_buy ?? t.RealBuyVolume ?? (t.action === 'BUY' ? t.volumeTraded : 0)) || 0
+    const realSell = Number(t.real_sell ?? t.RealSellVolume ?? (t.action === 'SELL' ? t.volumeTraded : 0)) || 0
+    const planBuy = Number(t.plan_buy ?? t.PlanBuyVolume ?? (t.action === 'BUY' ? t.volumeRegistered : 0)) || 0
+    const planSell = Number(t.plan_sell ?? t.PlanSellVolume ?? (t.action === 'SELL' ? t.volumeRegistered : 0)) || 0
 
-    return {
-      traderName: t.transaction_name || '—',
-      traderPosition: t.transaction_position || '',
-      leaderName: t.leader_name || '',
+    const rawDate = t.real_end_date || t.RealEndDate || t.realEndDate || t.plan_end_date || t.PlanEndDate || t.planEndDate || t.plan_begin_date || t.PlanBeginDate || t.published_date || t.PublishedDate || t.tradeDate || ''
+    const tradeDate = parseAnyDateToVn(rawDate)
+
+    const volBeforeRaw = t.volume_before ?? t.VolumeBeforeTransaction ?? t.volumeBefore
+    const volumeBefore = (volBeforeRaw != null && volBeforeRaw !== '') ? Number(volBeforeRaw) : undefined
+    const volumeAfter = Number(t.volume_after ?? t.VolumeAfterTransaction ?? t.volumeAfter) || 0
+    const ownershipRate = Number(t.ownership_rate || t.ty_le_so_huu || t.TyLeSoHuu || t.ownershipRate) || undefined
+
+    const base = {
+      traderName: (t.transaction_name || t.TransactionMan || t.traderName || '—').replace(/<[^>]+>/g, '').trim(),
+      traderPosition: (t.transaction_position || t.TransactionManPosition || t.traderPosition || '').trim(),
+      leaderName: (t.leader_name || t.RelatedMan || t.leaderName || '').replace(/<[^>]+>/g, '').trim(),
+      leaderPosition: (t.leader_position || t.RelatedManPosition || t.leaderPosition || '').trim(),
       tradeDate,
-      action,
-      volumeTraded,
-      volumeRegistered,
-      volumeAfter: Number(t.volume_after) || 0,
+      volumeBefore,
+      volumeAfter,
+      ownershipRate,
     }
-  })
+
+    if (realSell > 0 || planSell > 0) {
+      insiderTrades.push({
+        ...base,
+        action: 'SELL',
+        volumeTraded: realSell,
+        volumeRegistered: planSell,
+      })
+    }
+    if (realBuy > 0 || planBuy > 0) {
+      insiderTrades.push({
+        ...base,
+        action: 'BUY',
+        volumeTraded: realBuy,
+        volumeRegistered: planBuy,
+      })
+    }
+    if (realSell === 0 && planSell === 0 && realBuy === 0 && planBuy === 0) {
+      insiderTrades.push({
+        ...base,
+        action: t.action || 'NONE',
+        volumeTraded: 0,
+        volumeRegistered: 0,
+      })
+    }
+  }
+
+  // Sắp xếp ngày mới nhất lên đầu
+  insiderTrades.sort((a, b) => getTradeTimestamp(b.tradeDate) - getTradeTimestamp(a.tradeDate))
 
   return {
     symbol: sym,
@@ -236,6 +305,9 @@ export async function getCompanyFullProfile(symbol: string): Promise<CompanyFull
         const row = db.prepare('SELECT raw_json FROM company_profiles WHERE symbol = ?').get(sym) as any
         if (row?.raw_json) {
           const parsed = JSON.parse(row.raw_json)
+          if (parsed?.ownership) {
+            return parsed
+          }
           if (parsed?.co_cau_so_huu) {
             return parseShareholderPayload(sym, parsed)
           }
@@ -288,6 +360,15 @@ export async function getCompanyFullProfile(symbol: string): Promise<CompanyFull
           return finalData
         }
       }
+    }
+  } catch {}
+
+  // 4. Nếu chưa có trên cơ sở dữ liệu, tự động fetch trực tiếp từ CafeF
+  try {
+    const directProfile = await fetchDirectCompanyProfile(sym)
+    if (directProfile) {
+      PROFILE_MEMORY_CACHE.set(sym, { data: directProfile, expiresAt: now + PROFILE_CACHE_TTL_MS })
+      return directProfile
     }
   } catch {}
 
