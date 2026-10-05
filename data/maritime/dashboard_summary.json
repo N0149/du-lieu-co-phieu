@@ -1,6 +1,6 @@
 {
   "status": "success",
-  "generated_at": "2026-10-05T19:33:12.220812",
+  "generated_at": "2026-10-05T21:26:39.400984",
   "kpis": {
     "total_port_authorities": 16,
     "total_calls_30d": 15635,
@@ -11674,6 +11674,23 @@
       "source": "cvhh_haiphong"
     },
     {
+      "id": 6857,
+      "vessel_name": "YM HARMONY",
+      "authority_id": "haiphong",
+      "berth_name": "Cảng Đình Vũ",
+      "stock_ticker": "DVP",
+      "call_direction": "in",
+      "call_date": "2026-10-02",
+      "scheduled_time": "2026-10-02 01:30:00",
+      "draft": 8.4,
+      "loa": 168.8,
+      "dwt": 19104,
+      "gt": 15167,
+      "origin_port": "HONG KONG",
+      "dest_port": "NAM DINH VU",
+      "source": "cvhh_haiphong"
+    },
+    {
       "id": 6360,
       "vessel_name": "ROSA",
       "authority_id": "haiphong",
@@ -12232,23 +12249,6 @@
       "gt": 17280,
       "origin_port": "NAM HAI DINH VU",
       "dest_port": "SINGAPORE",
-      "source": "cvhh_haiphong"
-    },
-    {
-      "id": 5635,
-      "vessel_name": "CNC URANUS",
-      "authority_id": "haiphong",
-      "berth_name": "Cảng Đình Vũ",
-      "stock_ticker": "DVP",
-      "call_direction": "out",
-      "call_date": "2026-10-01",
-      "scheduled_time": "2026-10-01 10:30:00",
-      "draft": 7.4,
-      "loa": 169.9,
-      "dwt": 23367,
-      "gt": 18870,
-      "origin_port": "NAM DINH VU",
-      "dest_port": "CHINA",
       "source": "cvhh_haiphong"
     },
     {
