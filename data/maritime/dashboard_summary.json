@@ -1,6 +1,6 @@
 {
   "status": "success",
-  "generated_at": "2026-10-05T12:04:59.256213",
+  "generated_at": "2026-10-05T23:22:11.342712",
   "kpis": {
     "total_port_authorities": 16,
     "total_calls_30d": 15635,
@@ -226,7 +226,7 @@
       "category": "port",
       "pure_play": 1,
       "scope_note": null,
-      "total_calls": 37016,
+      "total_calls": 37512,
       "total_dwt": 0
     },
     {
@@ -236,7 +236,7 @@
       "category": "port",
       "pure_play": 1,
       "scope_note": null,
-      "total_calls": 32496,
+      "total_calls": 32589,
       "total_dwt": 0
     },
     {
@@ -246,7 +246,7 @@
       "category": "multi",
       "pure_play": 0,
       "scope_note": "Doanh thu BCTC là HỢP NHẤT nhiều cảng/ngành — KHÔNG quy riêng về bến theo dõi. Chỉ dùng số liệu trọng tải tàu (DWT) làm tham chiếu quy mô.",
-      "total_calls": 26936,
+      "total_calls": 27274,
       "total_dwt": 0
     },
     {
@@ -256,7 +256,7 @@
       "category": "fleet",
       "pure_play": 0,
       "scope_note": "Mã hãng tàu — doanh thu vận tải biển không gắn 1 bến cảng. DWT đội tàu = tham chiếu sức chở, không phải throughput cảng.",
-      "total_calls": 12351,
+      "total_calls": 12458,
       "total_dwt": 0
     },
     {
@@ -266,7 +266,7 @@
       "category": "port",
       "pure_play": 1,
       "scope_note": null,
-      "total_calls": 12336,
+      "total_calls": 12300,
       "total_dwt": 0
     },
     {
@@ -276,7 +276,7 @@
       "category": "port",
       "pure_play": 0,
       "scope_note": "Doanh thu BCTC là HỢP NHẤT nhiều cảng/ngành — KHÔNG quy riêng về bến theo dõi. Chỉ dùng số liệu trọng tải tàu (DWT) làm tham chiếu quy mô.",
-      "total_calls": 9054,
+      "total_calls": 9106,
       "total_dwt": 0
     },
     {
@@ -286,7 +286,7 @@
       "category": "port",
       "pure_play": 1,
       "scope_note": null,
-      "total_calls": 8682,
+      "total_calls": 8710,
       "total_dwt": 0
     },
     {
@@ -296,7 +296,7 @@
       "category": "port",
       "pure_play": 1,
       "scope_note": null,
-      "total_calls": 5720,
+      "total_calls": 5744,
       "total_dwt": 0
     },
     {
@@ -306,7 +306,7 @@
       "category": "port",
       "pure_play": 1,
       "scope_note": null,
-      "total_calls": 4505,
+      "total_calls": 4468,
       "total_dwt": 0
     },
     {
@@ -316,7 +316,7 @@
       "category": "port",
       "pure_play": 1,
       "scope_note": null,
-      "total_calls": 4317,
+      "total_calls": 4354,
       "total_dwt": 0
     },
     {
@@ -326,7 +326,7 @@
       "category": "port",
       "pure_play": 1,
       "scope_note": null,
-      "total_calls": 3754,
+      "total_calls": 3761,
       "total_dwt": 0
     },
     {
@@ -336,7 +336,7 @@
       "category": "port",
       "pure_play": 1,
       "scope_note": null,
-      "total_calls": 921,
+      "total_calls": 900,
       "total_dwt": 0
     },
     {
@@ -346,8 +346,8 @@
       "category": "port",
       "pure_play": 1,
       "scope_note": "Cảng chuyên dụng và tổng hợp tại khu vực Đình Vũ, Hải Phòng (thuộc Công ty Cổ phần Hóa dầu Quân đội). Tiếp nhận tàu hàng tổng hợp, xăng dầu và container.",
-      "total_calls": 722,
-      "total_dwt": 4785941
+      "total_calls": 762,
+      "total_dwt": 5074664
     }
   ],
   "recent_port_calls": [
@@ -13969,6 +13969,23 @@
       "source": "pilot_south"
     },
     {
+      "id": 4989,
+      "vessel_name": "AULAC EAGLE",
+      "authority_id": "hcm",
+      "berth_name": "Cảng MIPEC (Đình Vũ)",
+      "stock_ticker": "MIPEC",
+      "call_direction": "in",
+      "call_date": "2026-09-28",
+      "scheduled_time": "2026-09-28 16:30:00",
+      "draft": 8.1,
+      "loa": 129.0,
+      "dwt": 11954,
+      "gt": 8539,
+      "origin_port": "Biển Đông",
+      "dest_port": "SHELL 4",
+      "source": "pilot_south"
+    },
+    {
       "id": 5371,
       "vessel_name": "FORTUNE NAVIGATOR",
       "authority_id": "haiphong",
@@ -14613,6 +14630,23 @@
       "origin_port": "VIP GREEN PORT",
       "dest_port": "NGHI SON",
       "source": "cvhh_haiphong"
+    },
+    {
+      "id": 4905,
+      "vessel_name": "AULAC EAGLE",
+      "authority_id": "hcm",
+      "berth_name": "Cảng MIPEC (Đình Vũ)",
+      "stock_ticker": "MIPEC",
+      "call_direction": "in",
+      "call_date": "2026-09-27",
+      "scheduled_time": "2026-09-27 16:30:00",
+      "draft": 8.1,
+      "loa": 129.0,
+      "dwt": 11954,
+      "gt": 8539,
+      "origin_port": "Biển Đông",
+      "dest_port": "SHELL 4",
+      "source": "pilot_south"
     },
     {
       "id": 4743,
@@ -18151,6 +18185,23 @@
       "source": "cvhh_haiphong"
     },
     {
+      "id": 2828,
+      "vessel_name": "LUCKY DRAGON",
+      "authority_id": "hcm",
+      "berth_name": "Cảng MIPEC (Đình Vũ)",
+      "stock_ticker": "MIPEC",
+      "call_direction": "in",
+      "call_date": "2026-09-19",
+      "scheduled_time": "2026-09-19 17:30:00",
+      "draft": 4.0,
+      "loa": 79.0,
+      "dwt": 2261,
+      "gt": 1615,
+      "origin_port": "Biển Đông",
+      "dest_port": "CALTEX 2",
+      "source": "pilot_south"
+    },
+    {
       "id": 2995,
       "vessel_name": "BLUE HORIZON",
       "authority_id": "hcm",
@@ -18506,6 +18557,23 @@
       "origin_port": "HAI AN",
       "dest_port": "NAM HAI DINH VU",
       "source": "cvhh_haiphong"
+    },
+    {
+      "id": 2656,
+      "vessel_name": "LUCKY DRAGON",
+      "authority_id": "hcm",
+      "berth_name": "Cảng MIPEC (Đình Vũ)",
+      "stock_ticker": "MIPEC",
+      "call_direction": "in",
+      "call_date": "2026-09-18",
+      "scheduled_time": "2026-09-18 17:30:00",
+      "draft": 4.0,
+      "loa": 79.0,
+      "dwt": 2261,
+      "gt": 1615,
+      "origin_port": "Biển Đông",
+      "dest_port": "CALTEX 2",
+      "source": "pilot_south"
     },
     {
       "id": 2508,
@@ -18950,6 +19018,23 @@
       "source": "Cảng vụ Hải Phòng"
     },
     {
+      "id": 2482,
+      "vessel_name": "LUCKY DRAGON",
+      "authority_id": "hcm",
+      "berth_name": "Cảng MIPEC (Đình Vũ)",
+      "stock_ticker": "MIPEC",
+      "call_direction": "in",
+      "call_date": "2026-09-18",
+      "scheduled_time": "2026-09-18",
+      "draft": 4.0,
+      "loa": 79.0,
+      "dwt": 2261,
+      "gt": 1615,
+      "origin_port": "Biển Đông",
+      "dest_port": "CALTEX 2",
+      "source": "pilot_south"
+    },
+    {
       "id": 2284,
       "vessel_name": "MERATUS JAYAGIRI",
       "authority_id": "hcm",
@@ -19322,6 +19407,23 @@
       "origin_port": null,
       "dest_port": null,
       "source": "Cảng vụ Hải Phòng"
+    },
+    {
+      "id": 2258,
+      "vessel_name": "LUCKY DRAGON",
+      "authority_id": "hcm",
+      "berth_name": "Cảng MIPEC (Đình Vũ)",
+      "stock_ticker": "MIPEC",
+      "call_direction": "in",
+      "call_date": "2026-09-17",
+      "scheduled_time": "2026-09-17",
+      "draft": 4.0,
+      "loa": 79.0,
+      "dwt": 2261,
+      "gt": 1615,
+      "origin_port": "Biển Đông",
+      "dest_port": "CALTEX 2",
+      "source": "pilot_south"
     },
     {
       "id": 2427,
@@ -22073,108 +22175,6 @@
       "loa": 110.0,
       "dwt": 7200,
       "gt": 4680,
-      "origin_port": null,
-      "dest_port": null,
-      "source": "Cảng vụ Hải Phòng"
-    },
-    {
-      "id": 1756,
-      "vessel_name": "PHUONG DONG OIL",
-      "authority_id": "haiphong",
-      "berth_name": "Cảng MIPEC (Đình Vũ)",
-      "stock_ticker": "MIPEC",
-      "call_direction": "out",
-      "call_date": "2026-09-12",
-      "scheduled_time": "2026-09-12 07:10",
-      "draft": 6.1,
-      "loa": 105.0,
-      "dwt": 6800,
-      "gt": 4420,
-      "origin_port": null,
-      "dest_port": null,
-      "source": "Cảng vụ Hải Phòng"
-    },
-    {
-      "id": 1754,
-      "vessel_name": "BIEN DONG SUN",
-      "authority_id": "haiphong",
-      "berth_name": "Cảng MIPEC (Đình Vũ)",
-      "stock_ticker": "MIPEC",
-      "call_direction": "out",
-      "call_date": "2026-09-12",
-      "scheduled_time": "2026-09-12 07:10",
-      "draft": 7.2,
-      "loa": 126.0,
-      "dwt": 10500,
-      "gt": 6825,
-      "origin_port": null,
-      "dest_port": null,
-      "source": "Cảng vụ Hải Phòng"
-    },
-    {
-      "id": 1752,
-      "vessel_name": "DUC MINH 28",
-      "authority_id": "haiphong",
-      "berth_name": "Cảng MIPEC (Đình Vũ)",
-      "stock_ticker": "MIPEC",
-      "call_direction": "out",
-      "call_date": "2026-09-12",
-      "scheduled_time": "2026-09-12 07:10",
-      "draft": 6.7,
-      "loa": 115.0,
-      "dwt": 8200,
-      "gt": 5330,
-      "origin_port": null,
-      "dest_port": null,
-      "source": "Cảng vụ Hải Phòng"
-    },
-    {
-      "id": 1750,
-      "vessel_name": "FORTUNE STAR",
-      "authority_id": "haiphong",
-      "berth_name": "Cảng MIPEC (Đình Vũ)",
-      "stock_ticker": "MIPEC",
-      "call_direction": "out",
-      "call_date": "2026-09-12",
-      "scheduled_time": "2026-09-12 07:10",
-      "draft": 7.7,
-      "loa": 148.0,
-      "dwt": 15200,
-      "gt": 9880,
-      "origin_port": null,
-      "dest_port": null,
-      "source": "Cảng vụ Hải Phòng"
-    },
-    {
-      "id": 1748,
-      "vessel_name": "VIET THUAN 16",
-      "authority_id": "haiphong",
-      "berth_name": "Cảng MIPEC (Đình Vũ)",
-      "stock_ticker": "MIPEC",
-      "call_direction": "out",
-      "call_date": "2026-09-12",
-      "scheduled_time": "2026-09-12 07:10",
-      "draft": 7.5,
-      "loa": 140.0,
-      "dwt": 13500,
-      "gt": 8775,
-      "origin_port": null,
-      "dest_port": null,
-      "source": "Cảng vụ Hải Phòng"
-    },
-    {
-      "id": 1746,
-      "vessel_name": "MIPEC PHOENIX",
-      "authority_id": "haiphong",
-      "berth_name": "Cảng MIPEC (Đình Vũ)",
-      "stock_ticker": "MIPEC",
-      "call_direction": "out",
-      "call_date": "2026-09-12",
-      "scheduled_time": "2026-09-12 07:10",
-      "draft": 8.0,
-      "loa": 150.0,
-      "dwt": 16800,
-      "gt": 10920,
       "origin_port": null,
       "dest_port": null,
       "source": "Cảng vụ Hải Phòng"

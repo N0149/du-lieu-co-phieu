@@ -38,6 +38,8 @@ interface Props {
   params: Promise<{ ticker: string }>
 }
 
+export const revalidate = 60
+
 export async function generateStaticParams() {
   const all = getAllStocksIntel()
   const tickers = Object.keys(all)

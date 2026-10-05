@@ -190,7 +190,12 @@ export function NewsDashboard({
   }, [])
 
   // Fetch news data (Hỗ trợ force refresh và background polling)
+  const isFetchingNewsRef = useRef(false)
+  const hasFetchedNewsRef = useRef(initialNews.length > 0)
+
   const fetchNews = useCallback(async (force = false) => {
+    if (isFetchingNewsRef.current) return
+    isFetchingNewsRef.current = true
     if (force) setIsRefreshing(true)
     else if (news.length === 0) setIsLoading(true)
 
@@ -201,18 +206,25 @@ export function NewsDashboard({
         if (data.items && Array.isArray(data.items)) {
           setNews(data.items)
           setLastUpdated(new Date(data.lastUpdated || Date.now()))
+          hasFetchedNewsRef.current = true
         }
       }
     } catch (err) {
       console.error('Error fetching news:', err)
     } finally {
+      isFetchingNewsRef.current = false
       setIsLoading(false)
       setIsRefreshing(false)
     }
   }, [news.length])
 
   // Fetch disclosures data (Hỗ trợ force refresh và polling)
+  const isFetchingDiscRef = useRef(false)
+  const hasFetchedDiscRef = useRef(initialDisclosures.length > 0)
+
   const fetchDisclosures = useCallback(async (force = false) => {
+    if (isFetchingDiscRef.current) return
+    isFetchingDiscRef.current = true
     if (force) setIsRefreshing(true)
     try {
       const res = await fetch(`/api/disclosures?limit=200${force ? '&refresh=true' : ''}`)
@@ -221,36 +233,30 @@ export function NewsDashboard({
         if (data.data && Array.isArray(data.data)) {
           setDisclosures(data.data)
           setLastUpdated(new Date())
+          hasFetchedDiscRef.current = true
         }
       }
     } catch (err) {
       console.error('Error fetching disclosures:', err)
     } finally {
+      isFetchingDiscRef.current = false
       if (force) setIsRefreshing(false)
     }
   }, [])
 
-  // Initial fetch if empty
+  // Initial fetch for news if empty and not on cong-bo/insider
   useEffect(() => {
-    if (news.length === 0) {
+    if (!hasFetchedNewsRef.current && (activeTab === 'all' || activeTab === 'thi-truong' || activeTab === 'co-phieu')) {
       fetchNews(false)
     }
-  }, [fetchNews, news.length])
+  }, [activeTab, fetchNews])
 
-  // Tự động kéo disclosures khi người dùng chuyển sang tab 'cong-bo' nếu chưa có dữ liệu
-  const isInitialDiscMount = useRef(true)
+  // Initial fetch for disclosures if empty and activeTab is cong-bo
   useEffect(() => {
-    if (isInitialDiscMount.current) {
-      isInitialDiscMount.current = false
-      if (disclosures.length === 0) {
-        fetchDisclosures(false)
-      }
-      return
-    }
-    if (activeTab === 'cong-bo' && disclosures.length === 0) {
+    if (activeTab === 'cong-bo' && !hasFetchedDiscRef.current) {
       fetchDisclosures(false)
     }
-  }, [activeTab, fetchDisclosures, disclosures.length])
+  }, [activeTab, fetchDisclosures])
 
   // TỰ ĐỘNG CẬP NHẬT: Polling mỗi 60 giây (tự động phát hiện tab hiện tại để fetch nguồn tương ứng)
   useEffect(() => {
