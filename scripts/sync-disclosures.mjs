@@ -39,7 +39,9 @@ const USER_AGENT =
 export const CORE_WATCHLIST = [
   "ABT", "AIC", "AMS", "ANV", "ASP", "BAX", "BCC", "BLI", "BMI", "BTD",
   "BTP", "CAT", "CBS", "CCI", "CCS", "CDN", "CKD", "CLX", "CMW", "CNT", "DAN",
-  "DRI"
+  "DRI", "DXP", "HAH", "GMD", "PHP", "VSC", "TCL", "SGP", "MWG", "FPT", "HPG",
+  "VNM", "SSI", "VND", "TCB", "MBB", "ACB", "VCB", "VHM", "VIC", "VRE", "DGW",
+  "FRT", "AAM", "DHA", "KDH", "NLG", "PVD", "PVS", "PVT", "DCM", "DPM", "REE"
 ];
 
 let stockExchanges = {};
@@ -102,6 +104,7 @@ export function initDisclosuresDb() {
     CREATE INDEX IF NOT EXISTS idx_disclosures_published ON disclosures(published_at DESC);
     CREATE INDEX IF NOT EXISTS idx_disclosures_doc_type ON disclosures(doc_type);
     CREATE INDEX IF NOT EXISTS idx_disclosures_important ON disclosures(is_important);
+    CREATE INDEX IF NOT EXISTS idx_disclosures_symbol_pub ON disclosures(symbol, published_at DESC);
   `);
   return db;
 }

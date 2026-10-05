@@ -1,7 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server'
-import { getStockArticles } from '@/lib/stock-articles-service'
+import { getStockArticlesAsync } from '@/lib/stock-articles-service'
 import { getStockByTicker } from '@/lib/longlivestock'
-import { fetchLiveDisclosuresForSymbol } from '@/lib/disclosures'
 
 export const dynamic = 'force-dynamic'
 
@@ -17,22 +16,7 @@ export async function GET(
     }
 
     const manifestStock = getStockByTicker(ticker)
-    let articles = getStockArticles(ticker, manifestStock?.n || '')
-
-    // Nếu mã này chưa có disclosure nào hoặc các disclosure chưa có direct link từ CafeF,
-    // tự động fetch trực tiếp từ CafeF (~150ms) để nạp link văn bản chính thống
-    const hasDirectLinks = articles.items.some(
-      (it) => it.type === 'disclosure' && it.link && it.link.includes('cafef.vn/du-lieu/')
-    )
-
-    if (!hasDirectLinks || articles.disclosureCount === 0) {
-      try {
-        await fetchLiveDisclosuresForSymbol(ticker)
-        articles = getStockArticles(ticker, manifestStock?.n || '')
-      } catch (e) {
-        console.warn(`[ArticlesRoute] Live disclosure fetch fallback for ${ticker}:`, e)
-      }
-    }
+    const articles = await getStockArticlesAsync(ticker, manifestStock?.n || '')
 
     return NextResponse.json({
       success: true,

@@ -155,21 +155,38 @@ export function StockArticlesTab({
   const [submittingComment, setSubmittingComment] = useState(false)
   const commentInputRef = useRef<HTMLTextAreaElement>(null)
   const [articlesData, setArticlesData] = useState<StockArticlesPayload | null>(initialArticles || null)
+  const [isLoading, setIsLoading] = useState(!initialArticles || initialArticles.items.length === 0)
   const items = useMemo(() => articlesData?.items || [], [articlesData])
 
-  // Client-side fallback: Nếu danh sách bài viết đang rỗng, tự động fetch từ /api/stock/[symbol]/articles
+  // Cập nhật khi initialArticles thay đổi từ SSR
   useEffect(() => {
-    if (!articlesData || articlesData.items.length === 0) {
+    if (initialArticles && initialArticles.items.length > 0) {
+      setArticlesData(initialArticles)
+      setIsLoading(false)
+    }
+  }, [initialArticles])
+
+  // Client-side fallback: Nếu danh sách bài viết đang rỗng hoặc chưa có, tự động fetch từ /api/stock/[symbol]/articles
+  useEffect(() => {
+    let isCancelled = false
+    if (!initialArticles || initialArticles.items.length === 0) {
+      setIsLoading(true)
       fetch(`/api/stock/${encodeURIComponent(symbol)}/articles`)
         .then((r) => r.json())
         .then((res) => {
-          if (res.success && res.data && res.data.items?.length > 0) {
+          if (!isCancelled && res.success && res.data) {
             setArticlesData(res.data)
           }
         })
         .catch(() => {})
+        .finally(() => {
+          if (!isCancelled) setIsLoading(false)
+        })
     }
-  }, [symbol, articlesData])
+    return () => {
+      isCancelled = true
+    }
+  }, [symbol, initialArticles])
 
   // Khởi tạo trạng thái đăng nhập
   useEffect(() => {
@@ -660,7 +677,23 @@ export function StockArticlesTab({
 
       {/* ── 2. DANH SÁCH BÀI VIẾT (CHUẨN GIAO DIỆN FIREANT) ── */}
       <div className="rounded-2xl border border-border bg-card shadow-xs overflow-hidden">
-        {displayedItems.length === 0 ? (
+        {isLoading ? (
+          <div className="p-5 sm:p-6 space-y-4">
+            {[1, 2, 3, 4, 5].map((i) => (
+              <div key={i} className="flex items-start gap-3 sm:gap-4 animate-pulse">
+                <div className="size-16 sm:size-20 rounded-xl bg-muted/60 shrink-0" />
+                <div className="flex-1 space-y-2.5 py-1">
+                  <div className="flex items-center gap-2">
+                    <div className="h-4 bg-muted/70 rounded w-16" />
+                    <div className="h-4 bg-muted/50 rounded w-24" />
+                  </div>
+                  <div className="h-4.5 bg-muted/70 rounded w-4/5" />
+                  <div className="h-3.5 bg-muted/40 rounded w-2/5" />
+                </div>
+              </div>
+            ))}
+          </div>
+        ) : displayedItems.length === 0 ? (
           <div className="flex flex-col items-center justify-center p-12 text-center text-muted-foreground">
             <Newspaper className="size-10 mb-2 opacity-40" />
             <p className="text-sm font-semibold text-foreground">Không tìm thấy bài viết hoặc công bố nào</p>

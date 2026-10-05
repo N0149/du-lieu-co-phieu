@@ -3,15 +3,18 @@
 import { useState, useMemo, useEffect, useRef, useCallback } from 'react'
 import type { ScreenerStockItem } from '@/lib/screener-data-service'
 import { ScreenerTopBar } from './screener-top-bar'
-import { ScreenerPresetSidebar } from './screener-preset-sidebar'
+import { ScreenerSavedFiltersPanel } from './screener-saved-filters-panel'
 import { ScreenerCriteriaTree } from './screener-criteria-tree'
 import { ScreenerConditionsBuilder } from './screener-conditions-builder'
 import { ScreenerResultsTable } from './screener-results-table'
+import { CustomRatioModal } from './custom-ratio-modal'
 import {
   type ActiveCondition,
   type PresetFilter,
   type ScreenerCriterion,
+  type CustomRatioConfig,
   CRITERIA_MAP,
+  calcCustomRatioValue,
 } from './screener-constants'
 
 interface WiDataScreenerProps {
@@ -29,12 +32,16 @@ export function WiDataScreener({ initialStocks }: WiDataScreenerProps) {
   const [selectedExchange, setSelectedExchange] = useState<string>('')
   const [selectedSector, setSelectedSector] = useState<string>('')
   const [selectedTickers, setSelectedTickers] = useState<string[]>([])
-  const [isSidebarOpen, setIsSidebarOpen] = useState<boolean>(true)
+  const [isSavedPanelOpen, setIsSavedPanelOpen] = useState<boolean>(true)
   const [isFilterPanelOpen, setIsFilterPanelOpen] = useState<boolean>(true)
 
   // Trạng thái điều kiện lọc
   const [conditions, setConditions] = useState<ActiveCondition[]>([])
   const [activePresetId, setActivePresetId] = useState<string | null>(null)
+
+  // Trạng thái modal thiết kế tỷ lệ tùy chỉnh
+  const [isCustomRatioModalOpen, setIsCustomRatioModalOpen] = useState<boolean>(false)
+  const [editingCustomRatio, setEditingCustomRatio] = useState<CustomRatioConfig | null>(null)
 
   // Bộ lọc cá nhân lưu trong LocalStorage
   const [customPresets, setCustomPresets] = useState<PresetFilter[]>([])
@@ -189,6 +196,53 @@ export function WiDataScreener({ initialStocks }: WiDataScreenerProps) {
     })
   }, [])
 
+  // Lưu hoặc cập nhật tỷ lệ BCTC tự thiết kế
+  const handleSaveCustomRatio = useCallback(
+    (config: CustomRatioConfig) => {
+      let actualMin = 0
+      let actualMax = 10
+      if (stocks.length > 0) {
+        let minVal = Infinity
+        let maxVal = -Infinity
+        for (const s of stocks) {
+          const v = calcCustomRatioValue(s, config)
+          if (v != null && !isNaN(v)) {
+            if (v < minVal) minVal = v
+            if (v > maxVal) maxVal = v
+          }
+        }
+        if (minVal !== Infinity && maxVal !== -Infinity) {
+          actualMin = Math.floor(minVal * 100) / 100
+          actualMax = Math.ceil(maxVal * 100) / 100
+        }
+      }
+
+      setConditions((prev) => {
+        const existingIndex = prev.findIndex((c) => c.criterionId === config.id)
+        if (existingIndex >= 0) {
+          const next = [...prev]
+          next[existingIndex] = {
+            ...next[existingIndex],
+            customRatio: config,
+          }
+          return next
+        }
+        return [
+          ...prev,
+          {
+            criterionId: config.id,
+            operator: 'between',
+            value1: actualMin,
+            value2: actualMax,
+            customRatio: config,
+          },
+        ]
+      })
+      setActivePresetId(null)
+    },
+    [stocks],
+  )
+
   // Cuộn tới bảng kết quả khi bấm Lọc dữ liệu
   const handleRunFilter = useCallback(() => {
     if (tableRef.current) {
@@ -232,10 +286,15 @@ export function WiDataScreener({ initialStocks }: WiDataScreenerProps) {
 
       // 4. Lọc theo từng điều kiện chỉ tiêu
       for (const cond of conditions) {
-        const meta = CRITERIA_MAP.get(cond.criterionId)
-        if (!meta) continue
+        let val: number | null = null
+        if (cond.customRatio) {
+          val = calcCustomRatioValue(stock, cond.customRatio)
+        } else {
+          const meta = CRITERIA_MAP.get(cond.criterionId)
+          if (!meta) continue
+          val = meta.getter(stock)
+        }
 
-        const val = meta.getter(stock)
         // Nếu cổ phiếu thiếu dữ liệu chỉ tiêu này -> không thỏa mãn
         if (val == null || isNaN(val)) {
           return false
@@ -271,7 +330,7 @@ export function WiDataScreener({ initialStocks }: WiDataScreenerProps) {
 
   return (
     <div className="flex min-h-screen flex-col bg-[#0f1218] text-foreground">
-      {/* 1. TOP BAR: Lọc Sàn, Ngành, Mã CK, Bật/Tắt Sidebar, Ẩn/Hiện Bộ lọc */}
+      {/* 1. TOP BAR: Lọc Sàn, Ngành, Mã CK, Bật/Tắt Bộ lọc cá nhân, Ẩn/Hiện Bộ lọc */}
       <ScreenerTopBar
         selectedExchange={selectedExchange}
         onChangeExchange={setSelectedExchange}
@@ -281,38 +340,31 @@ export function WiDataScreener({ initialStocks }: WiDataScreenerProps) {
         onToggleTicker={handleToggleTicker}
         onClearTickers={handleClearTickers}
         allTickers={allTickerOptions}
-        isSidebarOpen={isSidebarOpen}
-        onToggleSidebar={() => setIsSidebarOpen((prev) => !prev)}
+        isSavedPanelOpen={isSavedPanelOpen}
+        onToggleSavedPanel={() => setIsSavedPanelOpen((prev) => !prev)}
+        savedCount={customPresets.length}
         totalCount={filteredStocks.length}
         isFilterPanelOpen={isFilterPanelOpen}
         onToggleFilterPanel={() => setIsFilterPanelOpen((prev) => !prev)}
       />
 
-      {/* 2. KHU VỰC THIẾT LẬP BỘ LỌC 3 CỘT (CÓ THỂ THU GỌN / MỞ RỘNG) */}
+      {/* 2. KHU VỰC THIẾT LẬP BỘ LỌC (CÂY CHỈ TIÊU TRÁI -> KHUNG ĐIỀU KIỆN GIỮA -> BỘ LỌC CÁ NHÂN PHẢI) */}
       {isFilterPanelOpen && (
         <div className="flex flex-col lg:flex-row border-b border-white/10 bg-[#0f1218] shrink-0 h-auto lg:h-[450px]">
-          {/* CỘT 1: BỘ LỌC CÓ SẴN & CÁ NHÂN (Sidebar Trái) */}
-          {isSidebarOpen && (
-            <aside className="w-full shrink-0 border-b border-white/10 lg:w-56 lg:border-b-0 lg:border-r overflow-y-auto">
-              <ScreenerPresetSidebar
-                customPresets={customPresets}
-                activePresetId={activePresetId}
-                onSelectPreset={handleSelectPreset}
-                onDeleteCustomPreset={handleDeleteCustomPreset}
-              />
-            </aside>
-          )}
-
-          {/* CỘT 2: CÂY CHỈ TIÊU LỌC (Cột giữa chia đôi chuẩn WiData) */}
+          {/* CỘT 1 (BÊN TRÁI): CÂY CHỈ TIÊU LỌC */}
           <aside className="w-full shrink-0 border-b border-white/10 lg:w-[380px] xl:w-[420px] lg:border-b-0 lg:border-r overflow-hidden">
             <ScreenerCriteriaTree
               activeCriterionIds={activeCriterionIds}
               onToggleCriterion={handleToggleCriterion}
+              onOpenCustomRatioModal={() => {
+                setEditingCustomRatio(null)
+                setIsCustomRatioModalOpen(true)
+              }}
             />
           </aside>
 
-          {/* CỘT 3: KHUNG THIẾT LẬP ĐIỀU KIỆN (Không gian chính bên phải) */}
-          <div className="flex-1 min-w-0 overflow-y-auto p-4">
+          {/* CỘT 2 (Ở GIỮA): KHUNG THIẾT LẬP ĐIỀU KIỆN & THANH TRƯỢT */}
+          <div className="flex-1 min-w-0 overflow-y-auto p-4 border-b border-white/10 lg:border-b-0 lg:border-r">
             <ScreenerConditionsBuilder
               conditions={conditions}
               stocks={stocks}
@@ -321,9 +373,29 @@ export function WiDataScreener({ initialStocks }: WiDataScreenerProps) {
               onResetConditions={handleResetConditions}
               onSavePreset={handleSavePreset}
               onRunFilter={handleRunFilter}
+              onOpenCustomRatioModal={() => {
+                setEditingCustomRatio(null)
+                setIsCustomRatioModalOpen(true)
+              }}
+              onEditCustomRatio={(cfg) => {
+                setEditingCustomRatio(cfg)
+                setIsCustomRatioModalOpen(true)
+              }}
               matchingCount={filteredStocks.length}
             />
           </div>
+
+          {/* CỘT 3 (BÊN PHẢI): BỘ LỌC CÁ NHÂN ĐÃ LƯU (GỌN GÀNG, TIỆN DỤNG) */}
+          {isSavedPanelOpen && (
+            <aside className="w-full shrink-0 lg:w-64 xl:w-72 overflow-y-auto bg-[#141822]">
+              <ScreenerSavedFiltersPanel
+                customPresets={customPresets}
+                activePresetId={activePresetId}
+                onSelectPreset={handleSelectPreset}
+                onDeleteCustomPreset={handleDeleteCustomPreset}
+              />
+            </aside>
+          )}
         </div>
       )}
 
@@ -336,6 +408,14 @@ export function WiDataScreener({ initialStocks }: WiDataScreenerProps) {
           onToggleFilterPanel={() => setIsFilterPanelOpen((prev) => !prev)}
         />
       </div>
+
+      {/* 4. MODAL THIẾT KẾ TỶ LỆ BCTC TÙY CHỈNH */}
+      <CustomRatioModal
+        isOpen={isCustomRatioModalOpen}
+        onClose={() => setIsCustomRatioModalOpen(false)}
+        onSaveRatio={handleSaveCustomRatio}
+        editingConfig={editingCustomRatio}
+      />
     </div>
   )
 }

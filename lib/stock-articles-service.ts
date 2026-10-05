@@ -384,7 +384,11 @@ function normalizeKey(str: string): string {
  *  1. Tin tức báo chí: getCachedNews() & news_snapshot.json (từ @/lib/rss-news-service)
  *  2. Công bố thông tin: getDisclosuresBySymbol() & corporate_disclosures.db / disclosures_snapshot.json (từ @/lib/disclosures)
  */
-export function getStockArticles(ticker: string, companyName = ''): StockArticlesPayload {
+export function getStockArticles(
+  ticker: string,
+  companyName = '',
+  liveDisclosures?: CorporateDisclosure[]
+): StockArticlesPayload {
   const sym = ticker.toUpperCase().trim()
   const nameLower = (companyName || '').toLowerCase()
   const articlesMap = new Map<string, CompanyArticleItem>()
@@ -398,10 +402,11 @@ export function getStockArticles(ticker: string, companyName = ''): StockArticle
     })
   }
 
-  // 2. Lấy thông tin công bố (Corporate Disclosures) từ cơ sở dữ liệu dự án (giống hệt tab Tin Tức)
+  // 2. Lấy thông tin công bố (Corporate Disclosures) từ cơ sở dữ liệu dự án hoặc live disclosures
   try {
-    const disclosures = getDisclosuresBySymbol(sym, 100)
-    for (const d of disclosures) {
+    const dbDisclosures = getDisclosuresBySymbol(sym, 100)
+    const allDisclosures = [...(liveDisclosures || []), ...dbDisclosures]
+    for (const d of allDisclosures) {
       const titleClean = (d.title || '').trim()
       const key = normalizeKey(titleClean)
       if (!key) continue
@@ -597,12 +602,17 @@ export async function getStockArticlesAsync(ticker: string, companyName = ''): P
   const sym = ticker.toUpperCase().trim()
   let payload = getStockArticles(sym, companyName)
 
-  // Nếu mã chưa có disclosure nào, tự động fetch trực tiếp từ CafeF (~150ms)
-  if (payload.disclosureCount === 0) {
+  // Nếu mã chưa có disclosure nào hoặc chưa có link văn bản trực tiếp từ CafeF,
+  // tự động fetch trực tiếp từ CafeF (~150ms)
+  const hasDirectLinks = payload.items.some(
+    (it) => it.type === 'disclosure' && it.link && it.link.includes('cafef.vn/du-lieu/')
+  )
+
+  if (payload.disclosureCount === 0 || !hasDirectLinks) {
     try {
       const live = await fetchLiveDisclosuresForSymbol(sym)
       if (live && live.length > 0) {
-        payload = getStockArticles(sym, companyName)
+        payload = getStockArticles(sym, companyName, live)
       }
     } catch (e) {
       console.warn(`[StockArticlesService] Live fetch failed for ${sym}:`, e)

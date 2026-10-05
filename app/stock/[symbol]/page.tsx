@@ -145,7 +145,7 @@ export default async function StockDetailPage({
     Promise.resolve(getBctcReport(ticker, 'HopNhat')),
     Promise.resolve(getBctcReport(ticker, 'CongTyMe')),
     Promise.resolve(getAvailableBctcTickers()),
-    isArticlesTab ? Promise.resolve(getStockArticles(ticker, manifestItem.n)) : Promise.resolve(null),
+    isArticlesTab ? getStockArticlesAsync(ticker, manifestItem.n) : Promise.resolve(null),
   ])
 
   if (!stockData) {

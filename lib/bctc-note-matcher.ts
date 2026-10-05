@@ -6,6 +6,7 @@ export function normalizeBctcStr(s: string): string {
   if (!s) return "";
   return s
     .toLowerCase()
+    .replace(/đ/g, "d")
     .normalize("NFD")
     .replace(/[\u0300-\u036f]/g, "")
     .replace(/[^a-z0-9]/g, " ")
@@ -46,9 +47,10 @@ const NOTE_RULES: NoteRule[] = [
       "dau tu tai chinh",
       "chung khoan kinh doanh",
       "dau tu nam giu den ngay dao han",
+      "cac khoan dau tu tai chinh ngan han",
     ],
     excludeRowKeywords: ["du phong giam gia hang ton kho"],
-    noteKeywords: ["cac khoan dau tu tai chinh", "dau tu tai chinh", "dau tu nam giu"],
+    noteKeywords: ["cac khoan dau tu tai chinh", "dau tu tai chinh", "dau tu nam giu", "chung khoan kinh doanh"],
   },
   {
     tabs: ["cdkt"],
@@ -60,25 +62,32 @@ const NOTE_RULES: NoteRule[] = [
       "phai thu ngan han",
     ],
     excludeRowKeywords: ["phai thu khac", "tra truoc nguoi ban", "phai thu cho vay"],
-    noteKeywords: ["phai thu ngan han cua khach hang", "phai thu cua khach hang", "phai thu khach hang"],
+    noteKeywords: [
+      "phai thu ngan han cua khach hang",
+      "phai thu cua khach hang",
+      "phai thu khach hang",
+      "phai thu ngan han va dai han",
+      "phai thu ngan han",
+      "cac khoan phai thu",
+    ],
   },
   {
     tabs: ["cdkt"],
     section: 2,
     rowKeywords: ["tra truoc nguoi ban", "tra truoc cho nguoi ban"],
-    noteKeywords: ["tra truoc cho nguoi ban", "tra truoc nguoi ban"],
+    noteKeywords: ["tra truoc cho nguoi ban", "tra truoc nguoi ban", "phai thu ngan han va dai han", "phai thu"],
   },
   {
     tabs: ["cdkt"],
     section: 2,
     rowKeywords: ["phai thu khac", "phai thu ngan han khac"],
-    noteKeywords: ["phai thu ngan han khac", "phai thu khac"],
+    noteKeywords: ["phai thu ngan han khac", "phai thu khac", "phai thu ngan han va dai han"],
   },
   {
     tabs: ["cdkt"],
     section: 2,
     rowKeywords: ["no qua han", "du phong phai thu ngan han kho doi", "du phong phai thu kho doi"],
-    noteKeywords: ["no qua han", "du phong phai thu"],
+    noteKeywords: ["no qua han", "du phong phai thu", "phai thu ngan han va dai han"],
   },
   {
     tabs: ["cdkt"],

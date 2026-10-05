@@ -1,8 +1,8 @@
 'use client'
 
 import { useState } from 'react'
-import { Sparkles } from 'lucide-react'
-import { AiExportModal } from '@/components/AiExportModal'
+import { Sparkles, Bot } from 'lucide-react'
+import { AiAssistantModal } from '@/components/AiAssistantModal'
 
 interface AiExportButtonProps {
   ticker: string
@@ -38,18 +38,21 @@ export function AiExportButton({
         type="button"
         onClick={() => setOpen(true)}
         className={`${baseStyle} ${className}`}
-        title={`Nạp toàn bộ BCTC & ĐHĐCĐ của ${ticker} vào Gemini, ChatGPT, Claude hoặc NotebookLM`}
+        title={`Hỏi đáp chuyên sâu BCTC 16 năm, Thuyết minh & ĐHĐCĐ của ${ticker} bằng Trợ lý AI`}
       >
         <Sparkles className="size-3.5 text-primary animate-pulse" />
-        <span>Nạp vào AI Cá Nhân</span>
+        <span>Hỏi AI về {ticker}</span>
       </button>
 
-      <AiExportModal
+      <AiAssistantModal
         open={open}
         onClose={() => setOpen(false)}
-        ticker={ticker}
-        companyName={companyName}
+        initialTicker={ticker}
+        initialCompanyName={companyName}
       />
     </>
   )
 }
+
+// Alias thuận tiện cho các thành phần khác
+export const StockAiChatButton = AiExportButton

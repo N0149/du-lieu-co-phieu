@@ -30,7 +30,26 @@ export interface ScreenerStockItem {
   changeYtd: number | null // Biến động giá từ đầu năm YTD %
   rsi14: number | null // RSI 14 phiên
   volume20d: number | null // Khối lượng giao dịch TB 20 phiên (cp)
-  debtToEquity: number | null // Nợ vay / VCSH
+  debtToEquity: number | null // Nợ phải trả / VCSH
+  financialDebtToEquity?: number | null // Nợ tài chính (chịu lãi) / VCSH (lần)
+  shortTermDebtToCash?: number | null // Nợ tài chính ngắn hạn / (Tiền & ĐTTC ngắn hạn) (lần)
+  interestCoverageQ?: number | null // Hệ số chi trả lãi vay EBIT / Lãi vay (lần)
+
+  // Khoản mục Cân đối kế toán (Tỷ VND)
+  totalDebtQ?: number | null // Tổng nợ vay tài chính chịu lãi (Tỷ VND)
+  shortTermDebtQ?: number | null // Vay và nợ thuê TC ngắn hạn (Tỷ VND)
+  longTermDebtQ?: number | null // Vay và nợ thuê TC dài hạn (Tỷ VND)
+  cashQ?: number | null // Tiền và tương đương tiền (Tỷ VND)
+  shortTermInvestQ?: number | null // Đầu tư tài chính ngắn hạn / Tiền gửi (Tỷ VND)
+  totalCashQ?: number | null // Tổng tiền mặt & tiền gửi ngắn hạn (Tỷ VND)
+  receivablesQ?: number | null // Các khoản phải thu ngắn hạn (Tỷ VND)
+  inventoryQ?: number | null // Hàng tồn kho (Tỷ VND)
+  wipQ?: number | null // Chi phí xây dựng cơ bản dở dang (Tỷ VND)
+
+  // Khoản mục Kết quả kinh doanh (Tỷ VND)
+  interestExpenseQ?: number | null // Chi phí lãi vay (Tỷ VND)
+  finExpenseQ?: number | null // Chi phí tài chính (Tỷ VND)
+
   netMargin: number | null // Biên LN ròng %
   grossMargin: number | null // Biên LN gộp %
   revGrowthYoY: number | null // Tăng trưởng Doanh thu YoY %
@@ -50,6 +69,9 @@ export interface ScreenerStockItem {
   isPort: boolean
 
   // Báo cáo tài chính (Tỷ VND)
+  revQ?: number | null
+  revTtm?: number | null
+  revY?: number | null
   cfoInvQ?: number | null
   cfoInvTtm?: number | null
   cfoInvY?: number | null
@@ -107,11 +129,8 @@ export interface ScreenerStockItem {
   grossProfitY?: number | null
   sellingExpQ?: number | null
   adminExpQ?: number | null
-  inventoryQ?: number | null
   inventoryY?: number | null
-  receivablesQ?: number | null
   receivablesY?: number | null
-  wipQ?: number | null
   wipY?: number | null
 
   // BCTC Ngân hàng
@@ -352,6 +371,17 @@ export function getEnrichedScreenerStocks(): ScreenerStockItem[] {
   // 4. XỬ LÝ BÁO CÁO TÀI CHÍNH THỰC TẾ từ financial_statements.db (1.368 mã)
   interface FinancialMetrics {
     debtToEquity: number | null
+    financialDebtToEquity: number | null
+    shortTermDebtToCash: number | null
+    interestCoverageQ: number | null
+    totalDebtQ: number | null
+    shortTermDebtQ: number | null
+    longTermDebtQ: number | null
+    cashQ: number | null
+    shortTermInvestQ: number | null
+    totalCashQ: number | null
+    interestExpenseQ: number | null
+    finExpenseQ: number | null
     cashRatio: number | null
     capexGrowth: number | null
     netMargin: number | null
@@ -612,28 +642,66 @@ export function getEnrichedScreenerStocks(): ScreenerStockItem[] {
           const revTtm = getTtmValInTy(rRevQ)
           const revY = getLatestValInTy(rRevA)
 
-          // Tiền & nợ vay để tính Net Debt
-          const rTienQ = findFsRow(cdkt, ['tiền và các khoản tương đương tiền', 'tiền'])
+          // Tiền & nợ vay để tính Net Debt, Nợ tài chính/VCSH, Nợ ngắn hạn/Tiền
+          const rTienQ = findFsRow(cdkt, ['tiền và các khoản tương đương tiền', 'tiền và tương đương tiền', 'tiền'])
           const rDttQ = findFsRow(cdkt, ['đầu tư tài chính ngắn hạn'])
           const rVayNganQ = findFsRow(cdkt, ['vay và nợ thuê tài chính ngắn hạn', 'vay ngắn hạn'])
           const rVayDaiQ = findFsRow(cdkt, ['vay và nợ thuê tài chính dài hạn', 'vay dài hạn'])
+          const vayNganValQ = getLatestValInTy(rVayNganQ) || 0
+          const vayDaiValQ = getLatestValInTy(rVayDaiQ) || 0
           const cashValQ = (getLatestValInTy(rTienQ) || 0) + (getLatestValInTy(rDttQ) || 0)
-          const debtValQ = (getLatestValInTy(rVayNganQ) || 0) + (getLatestValInTy(rVayDaiQ) || 0)
+          const debtValQ = vayNganValQ + vayDaiValQ
           const netDebtQ = debtValQ - cashValQ
 
-          const rTienA = findFsRow(cdktA, ['tiền và các khoản tương đương tiền', 'tiền'])
+          const rTienA = findFsRow(cdktA, ['tiền và các khoản tương đương tiền', 'tiền và tương đương tiền', 'tiền'])
           const rDttA = findFsRow(cdktA, ['đầu tư tài chính ngắn hạn'])
           const rVayNganA = findFsRow(cdktA, ['vay và nợ thuê tài chính ngắn hạn', 'vay ngắn hạn'])
           const rVayDaiA = findFsRow(cdktA, ['vay và nợ thuê tài chính dài hạn', 'vay dài hạn'])
+          const vayNganValA = getLatestValInTy(rVayNganA) || 0
+          const vayDaiValA = getLatestValInTy(rVayDaiA) || 0
           const cashValA = (getLatestValInTy(rTienA) || 0) + (getLatestValInTy(rDttA) || 0)
-          const debtValA = (getLatestValInTy(rVayNganA) || 0) + (getLatestValInTy(rVayDaiA) || 0)
+          const debtValA = vayNganValA + vayDaiValA
           const netDebtA = debtValA - cashValA
+
+          // 1. Nợ phải trả lãi (Nợ tài chính) & Tiền mặt
+          const equityUse = equityQ ?? equityY
+          const totalDebtQ = debtValQ > 0 ? debtValQ : debtValA
+          const shortTermDebtQ = vayNganValQ > 0 ? vayNganValQ : vayNganValA
+          const longTermDebtQ = vayDaiValQ > 0 ? vayDaiValQ : vayDaiValA
+          const cashQ = (getLatestValInTy(rTienQ) ?? getLatestValInTy(rTienA)) ?? 0
+          const shortTermInvestQ = (getLatestValInTy(rDttQ) ?? getLatestValInTy(rDttA)) ?? 0
+          const totalCashQ = cashValQ > 0 ? cashValQ : cashValA
+
+          let financialDebtToEquity: number | null = null
+          if (equityUse != null && equityUse !== 0) {
+            financialDebtToEquity = Math.round((totalDebtQ / equityUse) * 100) / 100
+          }
+
+          // 2. Nợ tài chính ngắn hạn / (Tiền & ĐTTC ngắn hạn)
+          let shortTermDebtToCash: number | null = null
+          if (shortTermDebtQ > 0) {
+            shortTermDebtToCash = totalCashQ > 0 ? Math.round((shortTermDebtQ / totalCashQ) * 100) / 100 : 999
+          } else if (rVayNganQ || rVayNganA) {
+            shortTermDebtToCash = 0
+          }
 
           // Chi phí lãi vay & Khấu hao
           const rInterestQ = findFsRow(kqkd, ['chi phí lãi vay', 'chi phí lãi'])
           const rInterestA = findFsRow(kqkdA, ['chi phí lãi vay', 'chi phí lãi'])
           const interestTtm = Math.abs(getTtmValInTy(rInterestQ) || 0)
           const interestY = Math.abs(getLatestValInTy(rInterestA) || 0)
+          const interestExpenseQ = Math.abs(getLatestValInTy(rInterestQ) ?? getLatestValInTy(rInterestA) ?? 0)
+
+          const rFinExpQ = findFsRow(kqkd, ['chi phí tài chính'])
+          const rFinExpA = findFsRow(kqkdA, ['chi phí tài chính'])
+          const finExpenseQ = Math.abs(getLatestValInTy(rFinExpQ) ?? getLatestValInTy(rFinExpA) ?? 0)
+
+          // 3. Hệ số chi trả lãi vay (Interest Coverage = EBIT / Chi phí lãi vay)
+          const ebitValQ = (ebtQ || 0) + interestExpenseQ
+          let interestCoverageQ: number | null = null
+          if (interestExpenseQ > 0) {
+            interestCoverageQ = Math.round((ebitValQ / interestExpenseQ) * 100) / 100
+          }
 
           const rDeprQ = findFsRow(lctt, ['khấu hao tscđ và bđsđt', 'khấu hao'])
           const rDeprA = findFsRow(lcttA, ['khấu hao tscđ và bđsđt', 'khấu hao'])
@@ -666,13 +734,13 @@ export function getEnrichedScreenerStocks(): ScreenerStockItem[] {
           const rAdminQ = findFsRow(kqkd, ['chi phí quản lý doanh nghiệp'])
           const adminExpQ = rAdminQ ? Math.abs(getLatestValInTy(rAdminQ) || 0) : null
 
-          const rInventoryQ = findFsRow(cdkt, ['hàng tồn kho'])
-          const rInventoryA = findFsRow(cdktA, ['hàng tồn kho'])
+          const rInventoryQ = findFsRow(cdkt, ['hàng tồn kho, ròng', 'hàng tồn kho'])
+          const rInventoryA = findFsRow(cdktA, ['hàng tồn kho, ròng', 'hàng tồn kho'])
           const inventoryQ = getLatestValInTy(rInventoryQ)
           const inventoryY = getLatestValInTy(rInventoryA)
 
-          const rReceivablesQ = findFsRow(cdkt, ['phải thu khách hàng', 'phải thu ngắn hạn của khách hàng', 'các khoản phải thu', 'các khoản phải thu ngắn hạn'])
-          const rReceivablesA = findFsRow(cdktA, ['phải thu khách hàng', 'phải thu ngắn hạn của khách hàng', 'các khoản phải thu', 'các khoản phải thu ngắn hạn'])
+          const rReceivablesQ = findFsRow(cdkt, ['các khoản phải thu ngắn hạn', 'các khoản phải thu', 'phải thu ngắn hạn', 'phải thu khách hàng'])
+          const rReceivablesA = findFsRow(cdktA, ['các khoản phải thu ngắn hạn', 'các khoản phải thu', 'phải thu ngắn hạn', 'phải thu khách hàng'])
           const receivablesQ = getLatestValInTy(rReceivablesQ)
           const receivablesY = getLatestValInTy(rReceivablesA)
 
@@ -787,6 +855,17 @@ export function getEnrichedScreenerStocks(): ScreenerStockItem[] {
 
           financialMap.set(sym, {
             debtToEquity,
+            financialDebtToEquity,
+            shortTermDebtToCash,
+            interestCoverageQ,
+            totalDebtQ,
+            shortTermDebtQ,
+            longTermDebtQ,
+            cashQ,
+            shortTermInvestQ,
+            totalCashQ,
+            interestExpenseQ,
+            finExpenseQ,
             cashRatio,
             capexGrowth,
             netMargin,
@@ -1223,6 +1302,25 @@ export function getEnrichedScreenerStocks(): ScreenerStockItem[] {
       rsi14,
       volume20d: vol20d,
       debtToEquity,
+      financialDebtToEquity: fMetrics?.financialDebtToEquity ?? null,
+      shortTermDebtToCash: fMetrics?.shortTermDebtToCash ?? null,
+      interestCoverageQ: fMetrics?.interestCoverageQ ?? null,
+
+      // Khoản mục CĐKT cốt lõi (Tỷ VND)
+      totalDebtQ: fMetrics?.totalDebtQ ?? null,
+      shortTermDebtQ: fMetrics?.shortTermDebtQ ?? null,
+      longTermDebtQ: fMetrics?.longTermDebtQ ?? null,
+      cashQ: fMetrics?.cashQ ?? null,
+      shortTermInvestQ: fMetrics?.shortTermInvestQ ?? null,
+      totalCashQ: fMetrics?.totalCashQ ?? null,
+      receivablesQ: fMetrics?.receivablesQ ?? null,
+      inventoryQ: fMetrics?.inventoryQ ?? null,
+      wipQ: fMetrics?.wipQ ?? null,
+
+      // Khoản mục KQKD cốt lõi (Tỷ VND)
+      interestExpenseQ: fMetrics?.interestExpenseQ ?? null,
+      finExpenseQ: fMetrics?.finExpenseQ ?? null,
+
       netMargin,
       grossMargin,
       revGrowthYoY,
@@ -1242,6 +1340,9 @@ export function getEnrichedScreenerStocks(): ScreenerStockItem[] {
       isPort: Boolean(s.port),
 
       // Báo cáo tài chính
+      revQ: fMetrics?.revQ ?? null,
+      revTtm: fMetrics?.revTtm ?? null,
+      revY: fMetrics?.revY ?? null,
       cfoInvQ: fMetrics?.cfoInvQ ?? null,
       cfoInvTtm: fMetrics?.cfoInvTtm ?? null,
       cfoInvY: fMetrics?.cfoInvY ?? null,
@@ -1299,11 +1400,8 @@ export function getEnrichedScreenerStocks(): ScreenerStockItem[] {
       grossProfitY: fMetrics?.grossProfitY ?? null,
       sellingExpQ: fMetrics?.sellingExpQ ?? null,
       adminExpQ: fMetrics?.adminExpQ ?? null,
-      inventoryQ: fMetrics?.inventoryQ ?? null,
       inventoryY: fMetrics?.inventoryY ?? null,
-      receivablesQ: fMetrics?.receivablesQ ?? null,
       receivablesY: fMetrics?.receivablesY ?? null,
-      wipQ: fMetrics?.wipQ ?? null,
       wipY: fMetrics?.wipY ?? null,
 
       // BCTC Ngân hàng

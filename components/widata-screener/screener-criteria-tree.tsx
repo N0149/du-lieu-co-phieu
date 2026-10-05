@@ -7,6 +7,7 @@ import {
   ChevronRight,
   Info,
   Check,
+  Calculator,
 } from 'lucide-react'
 import {
   type ScreenerCriterion,
@@ -17,6 +18,7 @@ import { cn } from '@/lib/utils'
 interface ScreenerCriteriaTreeProps {
   activeCriterionIds: Set<string>
   onToggleCriterion: (criterion: ScreenerCriterion) => void
+  onOpenCustomRatioModal?: () => void
 }
 
 const CATEGORY_GROUPS = [
@@ -24,18 +26,20 @@ const CATEGORY_GROUPS = [
     id: 'chung',
     label: 'Chỉ số chung',
     subCategories: [
-      'Báo cáo phân tích',
-      'Báo cáo tài chính',
-      'Biến động giá',
-      'Tỷ lệ LNST không thuộc cổ đông',
-      'Cổ tức',
+      'Quy mô & Vốn hóa',
+      'Cân đối kế toán (CĐKT)',
+      'Kết quả kinh doanh (KQKD)',
+      'Lưu chuyển tiền tệ (LCTT)',
+      'Sức khỏe tài chính & Đòn bẩy',
       'Định giá',
       'Hiệu quả hoạt động',
-      'Kế hoạch kinh doanh',
-      'Phân tích kỹ thuật',
-      'Sức khỏe tài chính',
+      'Biến động giá',
+      'Cổ tức',
       'Tăng trưởng cùng kỳ',
-      'Tăng trưởng kỳ trước',
+      'Kế hoạch kinh doanh',
+      'Tỷ lệ LNST không thuộc cổ đông',
+      'Báo cáo phân tích',
+      'Phân tích kỹ thuật',
       'Khác',
     ],
   },
@@ -64,9 +68,10 @@ const CATEGORY_GROUPS = [
 export function ScreenerCriteriaTree({
   activeCriterionIds,
   onToggleCriterion,
+  onOpenCustomRatioModal,
 }: ScreenerCriteriaTreeProps) {
   const [searchQuery, setSearchQuery] = useState('')
-  const [selectedSubCategory, setSelectedSubCategory] = useState<string>('Cổ tức')
+  const [selectedSubCategory, setSelectedSubCategory] = useState<string>('Quy mô & Vốn hóa')
   const [expandedGroups, setExpandedGroups] = useState<Record<string, boolean>>({
     chung: true,
     phi_tai_chinh: false,
@@ -99,8 +104,8 @@ export function ScreenerCriteriaTree({
 
   return (
     <div className="flex h-full w-full flex-col border-r border-white/10 bg-[#161a23] text-foreground">
-      {/* Ô tìm kiếm điều kiện lọc */}
-      <div className="border-b border-white/10 bg-[#121620] p-2.5">
+      {/* Ô tìm kiếm điều kiện lọc & Nút thiết kế tỷ lệ */}
+      <div className="border-b border-white/10 bg-[#121620] p-2 space-y-1.5">
         <div className="relative">
           <Search className="absolute left-2.5 top-1/2 size-3.5 -translate-y-1/2 text-muted-foreground" />
           <input
@@ -111,6 +116,17 @@ export function ScreenerCriteriaTree({
             className="h-8 w-full rounded border border-white/15 bg-[#1a202c] pl-8 pr-3 text-xs text-foreground placeholder:text-muted-foreground focus:border-primary focus:outline-none"
           />
         </div>
+
+        {onOpenCustomRatioModal && (
+          <button
+            type="button"
+            onClick={onOpenCustomRatioModal}
+            className="flex w-full items-center justify-center gap-1.5 rounded-md border border-indigo-500/30 bg-indigo-500/15 py-1.5 text-xs font-semibold text-indigo-400 hover:bg-indigo-500/25 active:scale-98 transition-all"
+          >
+            <Calculator className="size-3.5" />
+            <span>Tự thiết kế tỷ lệ BCTC (A / B)</span>
+          </button>
+        )}
       </div>
 
       {/* Nội dung: Nếu đang Search thì hiện kết quả, nếu không thì hiện 2 sub-panel chuẩn WiData */}

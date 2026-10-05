@@ -1,11 +1,13 @@
 'use client'
 
 import { useState, useMemo, useEffect, useRef } from 'react'
-import { RotateCcw, Save, Filter, X } from 'lucide-react'
+import { RotateCcw, Save, Filter, X, Calculator, Pencil } from 'lucide-react'
 import {
   type ActiveCondition,
   type ScreenerCriterion,
+  type CustomRatioConfig,
   CRITERIA_MAP,
+  calcCustomRatioValue,
 } from './screener-constants'
 import type { ScreenerStockItem } from '@/lib/screener-data-service'
 import { cn } from '@/lib/utils'
@@ -21,6 +23,8 @@ interface ScreenerConditionsBuilderProps {
   onResetConditions: () => void
   onSavePreset: (name: string) => void
   onRunFilter: () => void
+  onOpenCustomRatioModal?: () => void
+  onEditCustomRatio?: (config: CustomRatioConfig) => void
   matchingCount: number
 }
 
@@ -118,6 +122,7 @@ function ConditionRow({
   actualMax,
   onUpdate,
   onRemove,
+  onEdit,
 }: {
   cond: ActiveCondition
   meta: ScreenerCriterion
@@ -125,6 +130,7 @@ function ConditionRow({
   actualMax: number
   onUpdate: (updates: Partial<ActiveCondition>) => void
   onRemove: () => void
+  onEdit?: () => void
 }) {
   const minBound = Math.min(actualMin, cond.value1)
   const maxBound = Math.max(actualMax, cond.value2 ?? actualMax)
@@ -162,9 +168,26 @@ function ConditionRow({
       {/* HÀNG TRÊN: Tên chỉ tiêu (Trái) & 2 ô pill input + nút (x) (Phải) */}
       <div className="flex items-center justify-between gap-3">
         {/* Tên chỉ tiêu */}
-        <span className="text-xs md:text-[13px] font-medium text-[#e2e8f0] truncate" title={meta.label}>
-          {meta.label}
-        </span>
+        <div className="flex items-center gap-1.5 min-w-0 pr-2">
+          <span className="text-xs md:text-[13px] font-medium text-[#e2e8f0] truncate" title={meta.label}>
+            {meta.label}
+          </span>
+          {cond.customRatio && (
+            <span className="shrink-0 rounded bg-indigo-500/25 border border-indigo-400/30 px-1.5 py-0.2 text-[10px] font-semibold text-indigo-300">
+              Tùy chỉnh
+            </span>
+          )}
+          {onEdit && (
+            <button
+              type="button"
+              onClick={onEdit}
+              title="Chỉnh sửa công thức tỷ lệ"
+              className="text-muted-foreground hover:text-indigo-400 transition-colors shrink-0 p-0.5"
+            >
+              <Pencil className="size-3" />
+            </button>
+          )}
+        </div>
 
         {/* Cụm input pill & nút xóa */}
         <div className="flex items-center gap-1.5 shrink-0">
@@ -247,6 +270,8 @@ export function ScreenerConditionsBuilder({
   onResetConditions,
   onSavePreset,
   onRunFilter,
+  onOpenCustomRatioModal,
+  onEditCustomRatio,
   matchingCount,
 }: ScreenerConditionsBuilderProps) {
   const [isSaveModalOpen, setIsSaveModalOpen] = useState(false)
@@ -258,7 +283,22 @@ export function ScreenerConditionsBuilder({
     if (stocks.length === 0) return map
 
     for (const cond of conditions) {
-      const meta = CRITERIA_MAP.get(cond.criterionId)
+      let meta: ScreenerCriterion | undefined = CRITERIA_MAP.get(cond.criterionId)
+      if (!meta && cond.customRatio) {
+        meta = {
+          id: cond.criterionId,
+          label: cond.customRatio.name,
+          category: 'chung',
+          subCategory: 'Tỷ lệ tùy chỉnh',
+          unit: cond.customRatio.unit,
+          min: 0,
+          max: 10,
+          step: cond.customRatio.unit === '%' ? 1 : 0.05,
+          defaultValue: { operator: 'between', value1: 0, value2: 10 },
+          description: `Tỷ lệ BCTC tùy chỉnh: ${cond.customRatio.name}`,
+          getter: (s: ScreenerStockItem) => calcCustomRatioValue(s, cond.customRatio!),
+        }
+      }
       if (!meta) continue
 
       let minVal = Infinity
@@ -335,15 +375,28 @@ export function ScreenerConditionsBuilder({
 
       {/* Khung chứa: Header màu xanh navy chuẩn ảnh WiData */}
       <div className="overflow-hidden rounded-lg border border-[#212c42] bg-[#0e131f] shadow-sm">
-        {/* Header: Thanh màu xanh navy "CHỈ TIÊU ĐÃ CHỌN" */}
-        <div className="bg-[#1c2e56] px-4 py-2.5 flex items-center justify-between">
-          <span className="text-xs font-bold uppercase tracking-wider text-white">
-            CHỈ TIÊU ĐÃ CHỌN
-          </span>
-          {conditions.length > 0 && (
-            <span className="rounded-full bg-white/15 px-2 py-0.5 text-[11px] font-semibold text-white">
-              {conditions.length}
+        {/* Header: Thanh màu xanh navy "CHỈ TIÊU ĐÃ CHỌN" & Nút tạo tỷ lệ tùy chỉnh */}
+        <div className="bg-[#1c2e56] px-4 py-2 flex items-center justify-between">
+          <div className="flex items-center gap-2">
+            <span className="text-xs font-bold uppercase tracking-wider text-white">
+              CHỈ TIÊU ĐÃ CHỌN
             </span>
+            {conditions.length > 0 && (
+              <span className="rounded-full bg-white/15 px-2 py-0.5 text-[11px] font-semibold text-white">
+                {conditions.length}
+              </span>
+            )}
+          </div>
+
+          {onOpenCustomRatioModal && (
+            <button
+              type="button"
+              onClick={onOpenCustomRatioModal}
+              className="flex items-center gap-1.5 rounded bg-indigo-500/25 border border-indigo-400/40 px-2.5 py-1 text-xs font-semibold text-indigo-300 hover:bg-indigo-500/40 hover:text-white transition-all shadow-xs"
+            >
+              <Calculator className="size-3.5" />
+              <span>+ Tự tạo tỷ lệ BCTC</span>
+            </button>
           )}
         </div>
 
@@ -353,7 +406,7 @@ export function ScreenerConditionsBuilder({
             /* Trạng thái chưa có điều kiện */
             <div className="flex h-36 w-full flex-col items-center justify-center p-6 text-center">
               <p className="text-xs font-medium text-[#3b82f6]">
-                Chọn các chỉ tiêu ở cây bên trái để thiết lập bộ lọc.
+                Chọn các chỉ tiêu ở cây bên trái hoặc bấm &ldquo;+ Tự tạo tỷ lệ BCTC&rdquo; để thiết lập bộ lọc.
               </p>
               <p className="mt-1 text-[11px] text-muted-foreground">
                 Hỗ trợ kéo thanh trượt 2 đầu hoặc nhập số trực tiếp.
@@ -363,7 +416,22 @@ export function ScreenerConditionsBuilder({
             /* Danh sách các dòng chỉ tiêu với slider 2 đầu */
             <div className="space-y-1">
               {conditions.map((cond) => {
-                const meta = CRITERIA_MAP.get(cond.criterionId)
+                let meta: ScreenerCriterion | undefined = CRITERIA_MAP.get(cond.criterionId)
+                if (!meta && cond.customRatio) {
+                  meta = {
+                    id: cond.criterionId,
+                    label: cond.customRatio.name,
+                    category: 'chung',
+                    subCategory: 'Tỷ lệ tùy chỉnh',
+                    unit: cond.customRatio.unit,
+                    min: 0,
+                    max: 10,
+                    step: cond.customRatio.unit === '%' ? 1 : 0.05,
+                    defaultValue: { operator: 'between', value1: 0, value2: 10 },
+                    description: `Tỷ lệ BCTC tùy chỉnh: ${cond.customRatio.name}`,
+                    getter: (s: ScreenerStockItem) => calcCustomRatioValue(s, cond.customRatio!),
+                  }
+                }
                 if (!meta) return null
 
                 const bounds = actualBoundsMap.get(cond.criterionId)
@@ -379,6 +447,7 @@ export function ScreenerConditionsBuilder({
                     actualMax={actualMax}
                     onUpdate={(updates) => onUpdateCondition(cond.criterionId, updates)}
                     onRemove={() => onRemoveCondition(cond.criterionId)}
+                    onEdit={cond.customRatio && onEditCustomRatio ? () => onEditCustomRatio(cond.customRatio!) : undefined}
                   />
                 )
               })}

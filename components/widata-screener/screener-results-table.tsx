@@ -19,6 +19,7 @@ import {
   CRITERIA_MAP,
   type ActiveCondition,
   type ScreenerCriterion,
+  calcCustomRatioValue,
 } from './screener-constants'
 
 interface ScreenerResultsTableProps {
@@ -37,6 +38,10 @@ function formatCriterionValue(
 ): string {
   if (val == null || isNaN(val)) return '—'
 
+  if (criterion.subCategory === 'Tỷ lệ tùy chỉnh') {
+    return criterion.unit === '%' ? `${val.toFixed(1)}%` : `${val.toFixed(2)} lần`
+  }
+
   if (criterion.id === 'pb') {
     return val.toFixed(2)
   }
@@ -53,6 +58,10 @@ function formatCriterionValue(
   }
   if (criterion.unit === 'Tỷ VND' || criterion.unit === 'Tỷ') {
     return val.toLocaleString('vi-VN', { maximumFractionDigits: 1 })
+  }
+  if (criterion.id === 'financialDebtToEquity' || criterion.id === 'shortTermDebtToCash') {
+    if (val >= 999) return '> 999'
+    return val.toFixed(2)
   }
   if (criterion.unit === 'Lần') {
     return val.toFixed(1)
@@ -72,6 +81,33 @@ function getCriterionColor(
   criterion: ScreenerCriterion,
 ): string {
   if (val == null || isNaN(val)) return 'text-muted-foreground'
+
+  if (criterion.id === 'financialDebtToEquity') {
+    if (val > 2.0 || val < 0) return 'text-rose-400 font-bold' // Rủi ro đòn bẩy cao / Âm vốn
+    if (val > 1.2) return 'text-amber-400 font-semibold'
+    if (val <= 0.3) return 'text-emerald-400 font-semibold'
+    return 'text-foreground font-mono'
+  }
+
+  if (criterion.id === 'shortTermDebtToCash') {
+    if (val > 5.0) return 'text-rose-400 font-bold' // Cạn kiệt thanh khoản tiền mặt
+    if (val > 2.0) return 'text-amber-400 font-semibold'
+    if (val <= 0.8) return 'text-emerald-400 font-semibold'
+    return 'text-foreground font-mono'
+  }
+
+  if (criterion.id === 'interestCoverage') {
+    if (val < 1.0) return 'text-rose-400 font-bold' // Lợi nhuận không đủ trả lãi vay
+    if (val < 2.0) return 'text-amber-400 font-semibold'
+    if (val >= 4.0) return 'text-emerald-400 font-semibold'
+    return 'text-foreground font-mono'
+  }
+
+  if (criterion.id === 'interest_expense_q') {
+    if (val > 500) return 'text-rose-400 font-bold' // Chi phí lãi vay cực lớn
+    if (val > 150) return 'text-amber-400 font-semibold'
+    return 'text-foreground font-mono'
+  }
 
   if (
     criterion.id.includes('Growth') ||
@@ -124,7 +160,22 @@ export function ScreenerResultsTable({
     for (const cond of conditions) {
       if (!seen.has(cond.criterionId)) {
         seen.add(cond.criterionId)
-        const meta = CRITERIA_MAP.get(cond.criterionId)
+        let meta = CRITERIA_MAP.get(cond.criterionId)
+        if (!meta && cond.customRatio) {
+          meta = {
+            id: cond.criterionId,
+            label: cond.customRatio.name,
+            category: 'chung',
+            subCategory: 'Tỷ lệ tùy chỉnh',
+            unit: cond.customRatio.unit,
+            min: 0,
+            max: 10,
+            step: cond.customRatio.unit === '%' ? 1 : 0.05,
+            defaultValue: { operator: 'between', value1: 0, value2: 10 },
+            description: `Tỷ lệ BCTC tùy chỉnh: ${cond.customRatio.name}`,
+            getter: (s: ScreenerStockItem) => calcCustomRatioValue(s, cond.customRatio!),
+          }
+        }
         if (meta) result.push(meta)
       }
     }
@@ -140,7 +191,10 @@ export function ScreenerResultsTable({
           : b.ticker.localeCompare(a.ticker)
       }
 
-      const meta = CRITERIA_MAP.get(sortCriterionId)
+      let meta = CRITERIA_MAP.get(sortCriterionId)
+      if (!meta) {
+        meta = activeCriteria.find((c) => c.id === sortCriterionId)
+      }
       const av = meta ? meta.getter(a) : (a as any)[sortCriterionId]
       const bv = meta ? meta.getter(b) : (b as any)[sortCriterionId]
 
@@ -310,7 +364,14 @@ export function ScreenerResultsTable({
                   onClick={() => handleSort(c.id)}
                   className="cursor-pointer px-4 py-3 text-right hover:text-foreground whitespace-nowrap min-w-[160px]"
                 >
-                  <span>{c.label}</span>
+                  <span className="inline-flex items-center gap-1">
+                    {c.label}
+                    {c.subCategory === 'Tỷ lệ tùy chỉnh' && (
+                      <span className="rounded bg-indigo-500/25 border border-indigo-400/30 px-1 py-0.2 text-[9px] font-bold text-indigo-300">
+                        Tùy chỉnh
+                      </span>
+                    )}
+                  </span>
                   {renderSortIcon(c.id)}
                 </th>
               ))}

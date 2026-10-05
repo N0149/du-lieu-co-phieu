@@ -13,27 +13,39 @@ export async function GET(
       return NextResponse.json({ error: 'Mã cổ phiếu không hợp lệ' }, { status: 400 })
     }
 
-    const bundle = await buildStockAiBundle(symbol)
     const { searchParams } = new URL(request.url)
     const format = searchParams.get('format')
 
-    // Nếu yêu cầu tải file trực tiếp (.md)
+    // Chặn hoàn toàn việc cào/tải file .md thô hàng loạt để bảo vệ tài sản trí tuệ và cơ sở dữ liệu
     if (format === 'download' || format === 'file') {
-      const filename = `${symbol.toUpperCase()}_Ho_So_AI_${new Date().toISOString().slice(0, 10)}.md`
-      return new NextResponse(bundle.markdownContent, {
-        status: 200,
-        headers: {
-          'Content-Type': 'text/markdown; charset=utf-8',
-          'Content-Disposition': `attachment; filename="${filename}"`,
+      return NextResponse.json(
+        {
+          error: 'DOWNLOAD_DEPRECATED',
+          message:
+            'Tính năng tải file thô đã được chuyển đổi thành Trợ lý AI Native trực tiếp trên website dulieudautu.com để bảo vệ bản quyền dữ liệu và mang lại trải nghiệm hỏi đáp tương tác trực quan.',
         },
-      })
+        { status: 403 }
+      )
     }
 
-    return NextResponse.json(bundle)
-  } catch (error: any) {
+    const bundle = await buildStockAiBundle(symbol)
+
+    // Trả về metadata và compact prompt cho frontend
+    return NextResponse.json({
+      symbol: bundle.symbol,
+      companyName: bundle.companyName,
+      exchange: bundle.exchange,
+      sector: bundle.sector,
+      updatedDate: bundle.updatedDate,
+      compactPrompt: bundle.compactPrompt,
+      metrics: bundle.metrics,
+      pdfLinks: bundle.pdfLinks,
+    })
+  } catch (error: unknown) {
     console.error('[ai-bundle] Lỗi khi tạo gói dữ liệu AI:', error)
+    const message = error instanceof Error ? error.message : String(error)
     return NextResponse.json(
-      { error: 'Lỗi server khi tổng hợp dữ liệu AI', message: error?.message },
+      { error: 'Lỗi server khi tổng hợp dữ liệu AI', message },
       { status: 500 }
     )
   }

@@ -37,7 +37,12 @@ const globalForDisclosures = globalThis as unknown as {
   __inMemoryLiveDisclosures?: CorporateDisclosure[] | null
   __lastLiveFetchTime?: number
   __isLiveFetching?: boolean
+  __liveSymbolDisclosuresMap?: Map<string, { data: CorporateDisclosure[]; timestamp: number }>
 }
+if (!globalForDisclosures.__liveSymbolDisclosuresMap) {
+  globalForDisclosures.__liveSymbolDisclosuresMap = new Map()
+}
+const liveSymbolDisclosuresMap = globalForDisclosures.__liveSymbolDisclosuresMap
 const LIVE_TTL_MS = 3 * 60 * 1000 // 3 phút cache
 
 let stockExchangesCache: Record<string, string> | null = null
@@ -268,7 +273,12 @@ export async function fetchLiveDisclosuresForSymbol(symbol: string): Promise<Cor
       })
     }
 
-    // Tự động lưu vào SQLite để các lần sau nạp tức thì
+    // Lưu vào bộ nhớ RAM tức thì để phục vụ serverless / Vercel (kể cả khi filesystem read-only)
+    if (records.length > 0) {
+      liveSymbolDisclosuresMap.set(sym, { data: records, timestamp: Date.now() })
+    }
+
+    // Tự động lưu vào SQLite để các lần sau nạp tức thì (nếu môi trường cho phép ghi)
     try {
       if (fs.existsSync(DB_PATH) && records.length > 0) {
         const db = new DatabaseSync(DB_PATH)
@@ -334,12 +344,15 @@ function loadSnapshot(): CorporateDisclosure[] {
 }
 
 /**
- * Lấy danh sách công bố thông tin của 1 mã cổ phiếu
+ * Lấy danh sách công bố thông tin của 1 mã cổ phiếu (kết hợp RAM Cache, SQLite và Snapshot)
  */
 export function getDisclosuresBySymbol(symbol: string, limit: number = 50): CorporateDisclosure[] {
   const sym = symbol.toUpperCase().trim()
+  const memCached = liveSymbolDisclosuresMap.get(sym)
+  const memRecords = memCached?.data || []
 
   // 1. Thử lấy từ cơ sở dữ liệu SQLite cục bộ
+  let dbRows: CorporateDisclosure[] = []
   try {
     const db = getDisclosuresDb()
     if (db) {
@@ -348,19 +361,37 @@ export function getDisclosuresBySymbol(symbol: string, limit: number = 50): Corp
                published_at, file_url, source, is_important
         FROM disclosures
         WHERE symbol = ?
-        ORDER BY published_at DESC
+        ORDER BY
+          CASE WHEN file_url LIKE '%cafef.vn/du-lieu/%' OR file_url LIKE '%.pdf%' THEN 0 ELSE 1 END,
+          published_at DESC
         LIMIT ?
       `)
       const rows = stmt.all(sym, limit) as CorporateDisclosure[]
       if (rows && rows.length > 0) {
-        return rows.map((r) => ({ ...r }))
+        dbRows = rows.map((r) => ({ ...r }))
       }
     }
   } catch (err) {
     console.warn(`[Disclosures] SQLite read error for ${sym}:`, err)
   }
 
-  // 2. Fallback sang snapshot JSON
+  // 2. Trộn dữ liệu từ RAM và SQLite (ưu tiên bản ghi có direct link và mới nhất)
+  if (memRecords.length > 0 || dbRows.length > 0) {
+    const map = new Map<string, CorporateDisclosure>()
+    for (const r of memRecords) {
+      map.set(r.id || r.title, r)
+    }
+    for (const r of dbRows) {
+      if (!map.has(r.id || r.title)) {
+        map.set(r.id || r.title, r)
+      }
+    }
+    return Array.from(map.values())
+      .sort((a, b) => new Date(b.published_at).getTime() - new Date(a.published_at).getTime())
+      .slice(0, limit)
+  }
+
+  // 3. Fallback sang snapshot JSON nếu cả SQLite và RAM đều rỗng
   const snapshot = loadSnapshot()
   return snapshot.filter((item) => item.symbol?.toUpperCase() === sym).slice(0, limit)
 }

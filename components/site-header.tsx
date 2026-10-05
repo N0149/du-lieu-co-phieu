@@ -12,12 +12,14 @@ import {
   Building2,
   FileText,
   Newspaper,
+  Sparkles,
 } from 'lucide-react'
 import { StockSearch } from '@/components/stock-search'
 import { ThemeToggle } from '@/components/theme-toggle'
 import { TrialBadge } from '@/components/TrialBadge'
 import { UserNav } from '@/components/auth/UserNav'
 import { VerticalSidebarNav, NAV_GROUPS } from '@/components/vertical-sidebar-nav'
+import { AiAssistantModal } from '@/components/AiAssistantModal'
 import { cn } from '@/lib/utils'
 
 interface SiteHeaderProps {
@@ -28,6 +30,7 @@ export function SiteHeader({ hideSearch = false }: SiteHeaderProps) {
   const pathname = usePathname()
   const [menuOpen, setMenuOpen] = useState(false)
   const [collapsed, setCollapsed] = useState(false)
+  const [aiModalOpen, setAiModalOpen] = useState(false)
 
   // Initialize sidebar collapsed state from localStorage and sync html attribute
   useEffect(() => {
@@ -117,6 +120,16 @@ export function SiteHeader({ hideSearch = false }: SiteHeaderProps) {
 
           {/* Right Action Tools */}
           <div className="flex items-center gap-2">
+            <button
+              type="button"
+              onClick={() => setAiModalOpen(true)}
+              className="inline-flex items-center gap-1.5 rounded-xl border border-emerald-500/30 bg-emerald-500/10 px-2.5 py-1.5 text-xs font-semibold text-emerald-400 transition-all hover:bg-emerald-500/20 hover:border-emerald-500/50 shadow-2xs cursor-pointer select-none"
+              title="Mở Trợ lý AI Phân Tích Cổ Phiếu & Dữ Liệu Chuyên Sâu"
+            >
+              <Sparkles className="size-3.5 text-emerald-400 animate-pulse" />
+              <span className="hidden sm:inline">Hỏi AI</span>
+            </button>
+
             <div className="hidden sm:flex items-center gap-2">
               <TrialBadge />
               <ThemeToggle />
@@ -280,6 +293,11 @@ export function SiteHeader({ hideSearch = false }: SiteHeaderProps) {
           </button>
         </div>
       </nav>
+
+      <AiAssistantModal
+        open={aiModalOpen}
+        onClose={() => setAiModalOpen(false)}
+      />
     </>
   )
 }

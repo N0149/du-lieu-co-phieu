@@ -1,0 +1,1550 @@
+{
+  "PDN": {
+    "ticker": "PDN",
+    "ir_link": "https://www.dongnaiport.com.vn/bao-cao-tai-chinh",
+    "status": "found_link",
+    "score": 95,
+    "reason": "Matched bctc_href (score 95): 'bã¡o cã¡o tã i chã­nh'",
+    "batch": "Distill_Batch_01_Ngay_15_20.json",
+    "stt": 15,
+    "domain": "www.dongnaiport.com.vn"
+  },
+  "UDJ": {
+    "ticker": "UDJ",
+    "ir_link": "https://becamexudj.com.vn/chuyen-muc/co-dong/bao-cao-tai-chinh/",
+    "status": "found_link",
+    "score": 100,
+    "reason": "Matched bctc_text (score 100): 'báo cáo tài chính'",
+    "batch": "Distill_Batch_01_Ngay_15_20.json",
+    "stt": 5,
+    "domain": "becamexudj.com.vn"
+  },
+  "NTC": {
+    "ticker": "NTC",
+    "ir_link": "https://namtanuyen.com.vn/quan-he-co-dong",
+    "status": "probed",
+    "score": 60,
+    "reason": "Probed path '/quan-he-co-dong' returned 200",
+    "batch": "Distill_Batch_01_Ngay_15_20.json",
+    "stt": 4,
+    "domain": "namtanuyen.com.vn"
+  },
+  "HWS": {
+    "ticker": "HWS",
+    "ir_link": "https://huewaco.com.vn/co-dong/bao-cao-tai-chinh?ReturnUrl=%2F",
+    "status": "found_link",
+    "score": 100,
+    "reason": "Matched bctc_text (score 100): 'báo cáo tài chính'",
+    "batch": "Distill_Batch_01_Ngay_15_20.json",
+    "stt": 6,
+    "domain": "huewaco.com.vn"
+  },
+  "BBS": {
+    "ticker": "BBS",
+    "ir_link": "https://butsonpackaging.vn/blogs/bao-cao-tai-chinh",
+    "status": "found_link",
+    "score": 100,
+    "reason": "Matched bctc_text (score 100): 'báo cáo tài chính'",
+    "batch": "Distill_Batch_01_Ngay_15_20.json",
+    "stt": 11,
+    "domain": "butsonpackaging.vn"
+  },
+  "SBL": {
+    "ticker": "SBL",
+    "ir_link": "https://biasaigonbaclieu.com/quan-he-co-đong.aspx",
+    "status": "found_link",
+    "score": 70,
+    "reason": "Matched ir_text (score 70): 'quan hệ cổ đông'",
+    "batch": "Distill_Batch_01_Ngay_15_20.json",
+    "stt": 7,
+    "domain": "biasaigonbaclieu.com"
+  },
+  "NAV": {
+    "ticker": "NAV",
+    "ir_link": "https://navifico.vn/vi/vi/co-dong.html",
+    "status": "found_link",
+    "score": 50,
+    "reason": "Matched shareholder_text (score 50): 'cổ đông'",
+    "batch": "Distill_Batch_01_Ngay_15_20.json",
+    "stt": 10,
+    "domain": "navifico.vn"
+  },
+  "VRG": {
+    "ticker": "VRG",
+    "ir_link": "https://vrg-vn.com/bao-cao-tai-chinh.html",
+    "status": "found_link",
+    "score": 100,
+    "reason": "Matched bctc_text (score 100): 'báo cáo tài chính'",
+    "batch": "Distill_Batch_01_Ngay_15_20.json",
+    "stt": 1,
+    "domain": "vrg-vn.com"
+  },
+  "MCM": {
+    "ticker": "MCM",
+    "ir_link": "https://mcmilk.com.vn/quan-he-co-dong/bao-cao-tai-chinh/",
+    "status": "found_link",
+    "score": 100,
+    "reason": "Matched bctc_text (score 100): 'báo cáo tài chính'",
+    "batch": "Distill_Batch_02_Ngay_20_21.json",
+    "stt": 22,
+    "domain": "mcmilk.com.vn"
+  },
+  "IFS": {
+    "ticker": "IFS",
+    "ir_link": "https://wonderfarmonline.com/shareholders/quan-he-co-dong",
+    "status": "found_link",
+    "score": 80,
+    "reason": "Matched cbtt_text (score 80): 'thông tin tài chính'",
+    "batch": "Distill_Batch_02_Ngay_20_21.json",
+    "stt": 20,
+    "domain": "wonderfarmonline.com"
+  },
+  "DDV": {
+    "ticker": "DDV",
+    "ir_link": "https://dap-vinachem.com.vn/cong-bo-thong-tin/cbtt-bao-cao-tai-chinh-kiem-toan-6-thang-dau-nam-2025-1756182104",
+    "status": "found_link",
+    "score": 100,
+    "reason": "Matched bctc_text (score 100): 'cbtt báo cáo tài chính kiểm toán 6 tháng đầu năm 2'",
+    "batch": "Distill_Batch_01_Ngay_15_20.json",
+    "stt": 18,
+    "domain": "dap-vinachem.com.vn"
+  },
+  "LIX": {
+    "ticker": "LIX",
+    "ir_link": "http://lixco.com/co-dong/quan-he-co-dong-25.html",
+    "status": "found_link",
+    "score": 70,
+    "reason": "Matched ir_text (score 70): 'quan hệ cổ đông'",
+    "batch": "Distill_Batch_01_Ngay_15_20.json",
+    "stt": 9,
+    "domain": "lixco.com"
+  },
+  "HTI": {
+    "ticker": "HTI",
+    "ir_link": "https://idico-idi.com.vn/index.php/quanhecodong",
+    "status": "found_link",
+    "score": 70,
+    "reason": "Matched ir_text (score 70): 'quan hệ cổ đông'",
+    "batch": "Distill_Batch_01_Ngay_15_20.json",
+    "stt": 3,
+    "domain": "idico-idi.com.vn"
+  },
+  "HND": {
+    "ticker": "HND",
+    "ir_link": "http://ndhp.com.vn/QuanHeCoDong",
+    "status": "found_link",
+    "score": 70,
+    "reason": "Matched ir_text (score 70): 'quan hệ cổ đông'",
+    "batch": "Distill_Batch_02_Ngay_20_21.json",
+    "stt": 19,
+    "domain": "ndhp.com.vn"
+  },
+  "BMC": {
+    "ticker": "BMC",
+    "ir_link": "http://bimico.vn/VanBan/Nhom_VanBan/16",
+    "status": "found_link",
+    "score": 100,
+    "reason": "Matched bctc_text (score 100): 'báo cáo tài chính'",
+    "batch": "Distill_Batch_02_Ngay_20_21.json",
+    "stt": 25,
+    "domain": "bimico.vn"
+  },
+  "CDN": {
+    "ticker": "CDN",
+    "ir_link": "https://danangport.com/dieu-le-quy-che/",
+    "status": "found_link",
+    "score": 70,
+    "reason": "Matched ir_text (score 70): 'quan hệ cổ đông'",
+    "batch": "Distill_Batch_01_Ngay_15_20.json",
+    "stt": 17,
+    "domain": "danangport.com"
+  },
+  "BAX": {
+    "ticker": "BAX",
+    "ir_link": "https://bauxeo.com.vn/bao-cao-tai-chinh/",
+    "status": "found_link",
+    "score": 100,
+    "reason": "Matched bctc_text (score 100): 'báo cáo tài chính'",
+    "batch": "Distill_Batch_01_Ngay_15_20.json",
+    "stt": 2,
+    "domain": "bauxeo.com.vn"
+  },
+  "LM8": {
+    "ticker": "LM8",
+    "ir_link": "https://lilama18.com.vn/vi/news/85/cong-bo-thong-tin-ve-viec-chuyen-nhuong-von-co-phan-cua-cong-ty-co-phan-lilama-18-dau-tu-tai-cong-ty-co-phan-lilama-18-1",
+    "status": "found_link",
+    "score": 80,
+    "reason": "Matched cbtt_text (score 80): 'công bố thông tin về việc chuyển nhượng vốn cổ phầ'",
+    "batch": "Distill_Batch_01_Ngay_15_20.json",
+    "stt": 14,
+    "domain": "lilama18.com.vn"
+  },
+  "CMD": {
+    "ticker": "CMD",
+    "ir_link": "https://cmid.com.vn/tin-tuc-bao-cao-tai-chinh-7",
+    "status": "found_link",
+    "score": 100,
+    "reason": "Matched bctc_text (score 100): 'báo cáo tài chính'",
+    "batch": "Distill_Batch_02_Ngay_20_21.json",
+    "stt": 27,
+    "domain": "cmid.com.vn"
+  },
+  "D2D": {
+    "ticker": "D2D",
+    "ir_link": "https://www.d2d.com.vn/quan-he-co-dong",
+    "status": "found_link",
+    "score": 70,
+    "reason": "Matched ir_text (score 70): 'quan hệ cổ đông'",
+    "batch": "Distill_Batch_01_Ngay_15_20.json",
+    "stt": 13,
+    "domain": "d2d.com.vn"
+  },
+  "LAF": {
+    "ticker": "LAF",
+    "ir_link": "https://lafooco.vn/quan-he-co-dong/",
+    "status": "found_link",
+    "score": 70,
+    "reason": "Matched ir_text (score 70): 'quan hệ cổ đông'",
+    "batch": "Distill_Batch_02_Ngay_20_21.json",
+    "stt": 21,
+    "domain": "lafooco.vn"
+  },
+  "PMB": {
+    "ticker": "PMB",
+    "ir_link": "https://pmb.vn/bao-cao-tai-chinh",
+    "status": "found_link",
+    "score": 100,
+    "reason": "Matched bctc_text (score 100): 'báo cáo tài chính'",
+    "batch": "Distill_Batch_03_Ngay_21_22.json",
+    "stt": 32,
+    "domain": "pmb.vn"
+  },
+  "CLH": {
+    "ticker": "CLH",
+    "ir_link": "https://ximanglahien.com.vn/co-dong",
+    "status": "found_link",
+    "score": 50,
+    "reason": "Matched shareholder_text (score 50): 'cổ đông'",
+    "batch": "Distill_Batch_02_Ngay_20_21.json",
+    "stt": 26,
+    "domain": "ximanglahien.com.vn"
+  },
+  "SCS": {
+    "ticker": "SCS",
+    "ir_link": "https://scsc.vn/info_category.aspx?IDCAT=36",
+    "status": "found_link",
+    "score": 100,
+    "reason": "Matched bctc_text (score 100): 'financial reports'",
+    "batch": "Distill_Batch_03_Ngay_21_22.json",
+    "stt": 35,
+    "domain": "scsc.vn"
+  },
+  "QTP": {
+    "ticker": "QTP",
+    "ir_link": "https://tpcquangninh.com.vn/c3/pages-c/Bao-cao-tai-chinh-5-216",
+    "status": "found_link",
+    "score": 100,
+    "reason": "Matched bctc_text (score 100): 'báo cáo tài chính'",
+    "batch": "Distill_Batch_03_Ngay_21_22.json",
+    "stt": 33,
+    "domain": "quangninhtpc.com.vn"
+  },
+  "LAW": {
+    "ticker": "LAW",
+    "ir_link": "https://lawaco.com.vn/trang-chu/quan-he-co-dong/",
+    "status": "found_link",
+    "score": 70,
+    "reason": "Matched ir_text (score 70): 'quan hệ cổ đông'",
+    "batch": "Distill_Batch_01_Ngay_15_20.json",
+    "stt": 8,
+    "domain": "lawaco.com.vn"
+  },
+  "GSM": {
+    "ticker": "GSM",
+    "ir_link": "https://thuydienhuongson.vn/quan-he/",
+    "status": "found_link",
+    "score": 70,
+    "reason": "Matched ir_text (score 70): 'quan hệ cổ đông'",
+    "batch": "Distill_Batch_02_Ngay_20_21.json",
+    "stt": 28,
+    "domain": "thuydienhuongson.vn"
+  },
+  "ALC": {
+    "ticker": "ALC",
+    "ir_link": "https://aulac.com.vn/quan-he-co-dong/5/thong-bao.html",
+    "status": "found_link",
+    "reason": "Direct IR page on aulac.com.vn",
+    "batch": "Distill_Batch_02_Ngay_20_21.json",
+    "stt": 24,
+    "domain": "aulac.com.vn"
+  },
+  "GMX": {
+    "ticker": "GMX",
+    "ir_link": "https://myxuan-vt.com.vn/vn/quan-he-co-dong.html",
+    "status": "found_link",
+    "score": 65,
+    "reason": "Matched ir_href (score 65): 'quan há» cá» äã´ng'",
+    "batch": "Distill_Batch_04_Ngay_22_22.json",
+    "stt": 41,
+    "domain": "myxuan-vt.com.vn"
+  },
+  "VNA": {
+    "ticker": "VNA",
+    "ir_link": "https://vinaship.com.vn/bao-cao-tai-chinh-da-kiem-toan-6-thang-nam-2026/",
+    "status": "found_link",
+    "score": 100,
+    "reason": "Matched bctc_text (score 100): 'báo cáo tài chính đã kiểm toán 6 tháng năm 2026'",
+    "batch": "Distill_Batch_02_Ngay_20_21.json",
+    "stt": 23,
+    "domain": "vinaship.com.vn"
+  },
+  "KTL": {
+    "ticker": "KTL",
+    "ir_link": "https://tlmw.com.vn/gioi-thieu-to-chuc-cong-bo-thong-tin",
+    "status": "found_link",
+    "score": 80,
+    "reason": "Matched cbtt_text (score 80): 'giới thiệu tổ chức công bố thông tin'",
+    "batch": "Distill_Batch_04_Ngay_22_22.json",
+    "stt": 43,
+    "domain": "tlmw.com.vn"
+  },
+  "DTG": {
+    "ticker": "DTG",
+    "ir_link": "https://tipharco.vn/quan-he-co-dong/bao-cao-tai-chinh/2026-BCTC",
+    "status": "found_link",
+    "score": 100,
+    "reason": "Matched bctc_text (score 100): 'báo cáo tài chính'",
+    "batch": "Distill_Batch_03_Ngay_21_22.json",
+    "stt": 39,
+    "domain": "tipharco.vn"
+  },
+  "NBP": {
+    "ticker": "NBP",
+    "ir_link": "https://nbtpc.com.vn/d4/news/Bao-cao-Tai-chinh-ban-nien-nam-2026-6-5457.aspx",
+    "status": "found_link",
+    "score": 100,
+    "reason": "Matched bctc_text (score 100): 'báo cáo tài chính bán niên năm 2026 (14/08/2026)'",
+    "batch": "Distill_Batch_04_Ngay_22_22.json",
+    "stt": 45,
+    "domain": "nbtpc.com.vn"
+  },
+  "DPC": {
+    "ticker": "DPC",
+    "ir_link": "https://danaplast.vn/quan-he-co-dong/",
+    "status": "found_link",
+    "score": 70,
+    "reason": "Matched ir_text (score 70): 'quan hệ cổ đông'",
+    "batch": "Distill_Batch_03_Ngay_21_22.json",
+    "stt": 37,
+    "domain": "danaplast.vn"
+  },
+  "HDM": {
+    "ticker": "HDM",
+    "ir_link": "https://huegatex.com.vn/vi/co-dong",
+    "status": "found_link",
+    "score": 50,
+    "reason": "Matched shareholder_text (score 50): 'thông tin cổ đông'",
+    "batch": "Distill_Batch_02_Ngay_20_21.json",
+    "stt": 29,
+    "domain": "huegatex.com.vn"
+  },
+  "DHB": {
+    "ticker": "DHB",
+    "ir_link": "https://ezir.fpts.com.vn/thongtindoanhnghiepclient/DHB",
+    "status": "found_link",
+    "score": 70,
+    "reason": "Matched ir_text (score 70): 'quan hệ cổ đông'",
+    "batch": "Distill_Batch_03_Ngay_21_22.json",
+    "stt": 36,
+    "domain": "damhabac.com.vn"
+  },
+  "PHN": {
+    "ticker": "PHN",
+    "ir_link": "http://habaco.com.vn/danh-sach-tin/59/thong-tin-tai-chinh.html",
+    "status": "found_link",
+    "score": 80,
+    "reason": "Matched cbtt_text (score 80): 'thông tin tài chính'",
+    "batch": "Distill_Batch_04_Ngay_22_22.json",
+    "stt": 46,
+    "domain": "habaco.com.vn"
+  },
+  "NCS": {
+    "ticker": "NCS",
+    "ir_link": "https://noibaicatering.com.vn/quan-he-co-dong/bao-cao-tai-chinh/",
+    "status": "found_link",
+    "score": 100,
+    "reason": "Matched bctc_text (score 100): 'báo cáo tài chính'",
+    "batch": "Distill_Batch_03_Ngay_21_22.json",
+    "stt": 30,
+    "domain": "noibaicatering.com.vn"
+  },
+  "DRC": {
+    "ticker": "DRC",
+    "ir_link": "https://drc.com.vn/tin-co-dong/",
+    "status": "found_link",
+    "score": 50,
+    "reason": "Matched shareholder_text (score 50): 'tin cổ đông'",
+    "batch": "Distill_Batch_03_Ngay_21_22.json",
+    "stt": 38,
+    "domain": "drc.com.vn"
+  },
+  "HPD": {
+    "ticker": "HPD",
+    "ir_link": "https://thuydiendakdoa.vn/thong-tin-co-dong/300/k-iacute-nh-gui-qu-yacute-co-d-ocirc-ng-b-aacute-o-c-aacute-o-t-agrave-i-ch-iacute-nh-6-th-aacute-ng-dau-nam-2026-d-atilde-kiem-to-aacute-n",
+    "status": "found_link",
+    "score": 100,
+    "reason": "Matched bctc_text (score 100): 'kính gá»­i quý cá» äông: báo cáo tài chính 6 thá'",
+    "batch": "Distill_Batch_04_Ngay_22_22.json",
+    "stt": 42,
+    "domain": "thuydiendakdoa.vn"
+  },
+  "VAF": {
+    "ticker": "VAF",
+    "ir_link": "https://vandienfmp.vn/bao-cao-tai-chinh/",
+    "status": "found_link",
+    "score": 95,
+    "reason": "Matched bctc_href (score 95): 'bã¡o cã¡o tã i chã­nh'",
+    "batch": "Distill_Batch_05_Ngay_22_23.json",
+    "stt": 53,
+    "domain": "vandienfmp.vn"
+  },
+  "SFN": {
+    "ticker": "SFN",
+    "ir_link": "http://sfn.vn/quan-he-co-dong",
+    "status": "probed",
+    "score": 60,
+    "reason": "Probed path '/quan-he-co-dong' returned 200",
+    "batch": "Distill_Batch_04_Ngay_22_22.json",
+    "stt": 51,
+    "domain": "sfn.vn"
+  },
+  "POV": {
+    "ticker": "POV",
+    "ir_link": "https://pvoilvungang.com.vn/detail/sec/id/275",
+    "status": "found_link",
+    "score": 100,
+    "reason": "Matched bctc_text (score 100): 'báo cáo tài chính'",
+    "batch": "Distill_Batch_04_Ngay_22_22.json",
+    "stt": 47,
+    "domain": "pvoilvungang.com.vn"
+  },
+  "BLI": {
+    "ticker": "BLI",
+    "ir_link": "https://baolonginsurance.com.vn/nha-dau-tu#section-1",
+    "status": "found_link",
+    "score": 100,
+    "reason": "Matched bctc_text (score 100): 'báo cáo tài chính'",
+    "batch": "Distill_Batch_05_Ngay_22_23.json",
+    "stt": 56,
+    "domain": "baolonginsurance.com.vn"
+  },
+  "SAS": {
+    "ticker": "SAS",
+    "ir_link": "https://www.sasco.com.vn/shareholders",
+    "status": "found_link",
+    "score": 20,
+    "reason": "Direct Shareholder page on sasco.com.vn",
+    "batch": "Distill_Batch_03_Ngay_21_22.json",
+    "stt": 34,
+    "domain": "sasco.com.vn"
+  },
+  "PPY": {
+    "ticker": "PPY",
+    "ir_link": "https://pvoilphuyen.com.vn/tin-tuc-bao-cao-tai-chinh-quy-ii-nam-2026-24-1708",
+    "status": "found_link",
+    "score": 100,
+    "reason": "Matched bctc_text (score 100): 'báo cáo tài chính quý ii năm 2026'",
+    "batch": "Distill_Batch_04_Ngay_22_22.json",
+    "stt": 48,
+    "domain": "pvoilphuyen.com.vn"
+  },
+  "SKG": {
+    "ticker": "SKG",
+    "ir_link": "https://superdong.com.vn/quan-he-co-dong",
+    "status": "probed",
+    "score": 60,
+    "reason": "Probed path '/quan-he-co-dong' returned 200",
+    "batch": "Distill_Batch_01_Ngay_15_20.json",
+    "stt": 16,
+    "domain": "superdong.com.vn"
+  },
+  "VLB": {
+    "ticker": "VLB",
+    "ir_link": "https://bbcc.com.vn/tin-tuc/bao-cao-tai-chinh-ban-nien-nam-2026-kem-giai-trinh-loi-nhuan-sau-thue-thay-doi-tren-10.html",
+    "status": "found_link",
+    "score": 100,
+    "reason": "Matched bctc_text (score 100): 'báo cáo tài chính bán niên năm 2026 kèm giải trình'",
+    "batch": "Distill_Batch_05_Ngay_22_23.json",
+    "stt": 54,
+    "domain": "bbcc.com.vn"
+  },
+  "SPB": {
+    "ticker": "SPB",
+    "ir_link": "https://phubaispinning.com/bao-cao-tai-chinh",
+    "status": "found_link",
+    "score": 100,
+    "reason": "Matched bctc_text (score 100): 'báo cáo tài chính'",
+    "batch": "Distill_Batch_05_Ngay_22_23.json",
+    "stt": 52,
+    "domain": "phubaispinning.com"
+  },
+  "CCS": {
+    "ticker": "CCS",
+    "ir_link": "https://chipsang.vn/quan-he-co-dong",
+    "status": "found_link",
+    "score": 70,
+    "reason": "Matched ir_text (score 70): 'quan hệ cổ đông'",
+    "batch": "Distill_Batch_05_Ngay_22_23.json",
+    "stt": 57,
+    "domain": "chipsang.vn"
+  },
+  "SED": {
+    "ticker": "SED",
+    "ir_link": "https://phuongnam.edu.vn/codong",
+    "status": "found_link",
+    "score": 50,
+    "reason": "Matched shareholder_text (score 50): 'cổ đông'",
+    "batch": "Distill_Batch_05_Ngay_22_23.json",
+    "stt": 62,
+    "domain": "phuongnam.edu.vn"
+  },
+  "LAS": {
+    "ticker": "LAS",
+    "ir_link": "https://supelamthao.vn/category/co-dong/bao-cao-tai-chinh/",
+    "status": "found_link",
+    "score": 100,
+    "reason": "Matched bctc_text (score 100): 'báo cáo tài chính'",
+    "batch": "Distill_Batch_04_Ngay_22_22.json",
+    "stt": 44,
+    "domain": "supelamthao.vn"
+  },
+  "CPC": {
+    "ticker": "CPC",
+    "ir_link": "https://tstcantho.com.vn/cpcstock.html",
+    "status": "found_link",
+    "score": 20,
+    "reason": "Direct stock/IR page on tstcantho.com.vn",
+    "batch": "Distill_Batch_05_Ngay_22_23.json",
+    "stt": 59,
+    "domain": "tstcantho.com.vn"
+  },
+  "TOT": {
+    "ticker": "TOT",
+    "ir_link": "https://transimextrans.com.vn/danh-muc/bao-cao-tai-chinh/",
+    "status": "found_link",
+    "score": 100,
+    "reason": "Matched bctc_text (score 100): 'báo cáo tài chính'",
+    "batch": "Distill_Batch_05_Ngay_22_23.json",
+    "stt": 63,
+    "domain": "transimextrans.com.vn"
+  },
+  "PAT": {
+    "ticker": "PAT",
+    "ir_link": "https://pacvietnam.vn/category/bao-cao-tai-chinh/",
+    "status": "found_link",
+    "score": 100,
+    "reason": "Matched bctc_text (score 100): 'báo cáo tài chính'",
+    "batch": "Distill_Batch_05_Ngay_22_23.json",
+    "stt": 61,
+    "domain": "pacvietnam.vn"
+  },
+  "CDP": {
+    "ticker": "CDP",
+    "ir_link": "https://codupha.com.vn/quan-he-co-dong/bao-cao-tai-chinh/",
+    "status": "found_link",
+    "score": 100,
+    "reason": "Matched bctc_text (score 100): 'báo cáo tài chính'",
+    "batch": "Distill_Batch_06_Ngay_23_24.json",
+    "stt": 66,
+    "domain": "codupha.com.vn"
+  },
+  "DHA": {
+    "ticker": "DHA",
+    "ir_link": "http://hoaan.com.vn/thong-tin-co-dong-shareholder-information/nam-2026-year-2026/thong-bao-ve-giao-dich-co-phieu-cua-to-chuc-co-lien-quan-nguoi-noi-bo-notice-of-transaction-in-shares-of-affiliated-organization-of-internal-person-n527",
+    "status": "found_link",
+    "score": 45,
+    "reason": "Matched shareholder_href (score 45): ''",
+    "batch": "Distill_Batch_06_Ngay_23_24.json",
+    "stt": 68,
+    "domain": "hoaan.com.vn"
+  },
+  "CAT": {
+    "ticker": "CAT",
+    "ir_link": "https://seaprimexco.com/vi/shareholder_relation",
+    "status": "found_link",
+    "score": 70,
+    "reason": "Matched ir_text (score 70): 'quan hệ cổ đông'",
+    "batch": "Distill_Batch_06_Ngay_23_24.json",
+    "stt": 65,
+    "domain": "seaprimexco.com"
+  },
+  "PSD": {
+    "ticker": "PSD",
+    "ir_link": "https://www.psd.com.vn/quan-he-co-dong/",
+    "status": "found_link",
+    "score": 70,
+    "reason": "Matched ir_text (score 70): 'quan hệ cổ đông'",
+    "batch": "Distill_Batch_04_Ngay_22_22.json",
+    "stt": 49,
+    "domain": "psd.com.vn"
+  },
+  "GCF": {
+    "ticker": "GCF",
+    "ir_link": "https://gcfood.com.vn/vie/bai-viet/bao-cao-tai-chinh-hop-nhat-quy-iii-nam-2024",
+    "status": "found_link",
+    "score": 100,
+    "reason": "Matched bctc_text (score 100): 'báo cáo tài chính hợp nhất quý iii năm 2024'",
+    "batch": "Distill_Batch_07_Ngay_25_26.json",
+    "stt": 71,
+    "domain": "gcfood.com.vn"
+  },
+  "HAG": {
+    "ticker": "HAG",
+    "ir_link": "https://hagl.com.vn/storage/app/media/file-co-dong-upload/Bao-cao-tai-chinh/2026/Ban%20nien/BCTC%20T%E1%BB%95ng%20h%E1%BB%A3p%20HAG%20b%C3%A1n%20ni%C3%AAn%202026%20%C4%91%C3%A3%20%C4%91%C6%B0%E1%BB%A3c%20so%C3%A1t%20x%C3%A9t%20-%20V.pdf",
+    "status": "found_link",
+    "score": 80,
+    "reason": "Matched bctc_href (score 80): ''",
+    "batch": "Distill_Batch_07_Ngay_25_26.json",
+    "stt": 72,
+    "domain": "hagl.com.vn"
+  },
+  "PVI": {
+    "ticker": "PVI",
+    "ir_link": "https://pviholdings.com.vn/announcement-bctc?menu=42",
+    "status": "found_link",
+    "score": 95,
+    "reason": "Matched bctc_href (score 95): 'kqkd định kỳ'",
+    "batch": "Distill_Batch_06_Ngay_23_24.json",
+    "stt": 69,
+    "domain": "pviholdings.com.vn"
+  },
+  "ICN": {
+    "ticker": "ICN",
+    "ir_link": "http://idicoconac.vn/vn-37-0/quan-he-co-dong.html",
+    "status": "found_link",
+    "score": 20,
+    "reason": "Direct IR page on idicoconac.vn",
+    "batch": "Distill_Batch_07_Ngay_25_26.json",
+    "stt": 74,
+    "domain": "idicoconac.vn"
+  },
+  "MSN": {
+    "ticker": "MSN",
+    "ir_link": "https://www.masangroup.com/investor-relations/",
+    "status": "found_link",
+    "score": 70,
+    "reason": "Matched ir_text (score 70): 'investor relations'",
+    "batch": "Distill_Batch_07_Ngay_25_26.json",
+    "stt": 76,
+    "domain": "masangroup.com"
+  },
+  "PAN": {
+    "ticker": "PAN",
+    "ir_link": "https://thepangroup.vn/investor-relation/investor-library/financial-statements/",
+    "status": "found_link",
+    "score": 100,
+    "reason": "Matched bctc_text (score 100): 'financial statements'",
+    "batch": "Distill_Batch_07_Ngay_25_26.json",
+    "stt": 78,
+    "domain": "thepangroup.vn"
+  },
+  "CMF": {
+    "ticker": "CMF",
+    "ir_link": "https://cholimexfood.com.vn/tin-co-dong/bao-cao-tai-chinh/",
+    "status": "found_link",
+    "score": 100,
+    "reason": "Matched bctc_text (score 100): 'báo cáo tài chính'",
+    "batch": "Distill_Batch_05_Ngay_22_23.json",
+    "stt": 58,
+    "domain": "cholimexfood.com.vn"
+  },
+  "NED": {
+    "ticker": "NED",
+    "ir_link": "https://ned.vn/bao-cao-tai-chinh",
+    "status": "found_link",
+    "score": 100,
+    "reason": "Matched bctc_text (score 100): 'báo cáo tài chính'",
+    "batch": "Distill_Batch_07_Ngay_25_26.json",
+    "stt": 77,
+    "domain": "ned.vn"
+  },
+  "LBE": {
+    "ticker": "LBE",
+    "ir_link": "https://lva.com.vn/bao-cao-tai-chinh-df,118",
+    "status": "found_link",
+    "score": 100,
+    "reason": "Matched bctc_text (score 100): 'báo cáo tài chính'",
+    "batch": "Distill_Batch_07_Ngay_25_26.json",
+    "stt": 75,
+    "domain": "lva.com.vn"
+  },
+  "HVT": {
+    "ticker": "HVT",
+    "ir_link": "https://vitrichem.vn/quan-he-co-dong/bao-cao-tai-chinh/",
+    "status": "found_link",
+    "score": 100,
+    "reason": "Matched bctc_text (score 100): 'báo cáo tài chính'",
+    "batch": "Distill_Batch_07_Ngay_25_26.json",
+    "stt": 73,
+    "domain": "vitrichem.vn"
+  },
+  "MWG": {
+    "ticker": "MWG",
+    "ir_link": "https://mwg.vn/cong-bo-thong-tin",
+    "status": "found_link",
+    "score": 80,
+    "reason": "Matched cbtt_text (score 80): 'công bố thông tin'",
+    "batch": "Distill_Batch_08_Ngay_26_29.json",
+    "stt": 83,
+    "domain": "mwg.vn"
+  },
+  "GMH": {
+    "ticker": "GMH",
+    "ir_link": "https://minhhungqt.vn/quan-he-co-dong",
+    "status": "probed",
+    "score": 60,
+    "reason": "Probed path '/quan-he-co-dong' returned 200",
+    "batch": "Distill_Batch_04_Ngay_22_22.json",
+    "stt": 40,
+    "domain": "minhhungqt.vn"
+  },
+  "HD6": {
+    "ticker": "HD6",
+    "ir_link": "https://handico6.com.vn/du-an-toa-nha-thap-hoa-kim-cuong/",
+    "status": "found_link",
+    "score": 80,
+    "reason": "Matched cbtt_text (score 80): 'công bố thông tin dự án diamond light by handico6 '",
+    "batch": "Distill_Batch_08_Ngay_26_29.json",
+    "stt": 82,
+    "domain": "handico6.com.vn"
+  },
+  "HMS": {
+    "ticker": "HMS",
+    "ir_link": "https://ezir.fpts.com.vn/thongtindoanhnghiepclient/HMS",
+    "status": "ezir_fallback",
+    "score": 20,
+    "reason": "Company website hcmcc.com.vn is under server maintenance; using EZIR",
+    "batch": "Distill_Batch_05_Ngay_22_23.json",
+    "stt": 60,
+    "domain": "hcmcc.com.vn"
+  },
+  "VBC": {
+    "ticker": "VBC",
+    "ir_link": "https://nhuabaobivinh.com/?x=267/tin-tuc/bao-cao-tai-chinh-giua-nien-do-2026-tu-0101-den-30062026",
+    "status": "found_link",
+    "score": 100,
+    "reason": "Matched bctc_text (score 100): 'báo cáo tài chính giữa niên độ 2026 từ 01/01 đến 3'",
+    "batch": "Distill_Batch_08_Ngay_26_29.json",
+    "stt": 81,
+    "domain": "nhuabaobivinh.com"
+  },
+  "GEG": {
+    "ticker": "GEG",
+    "ir_link": "https://geccom.vn/quan-he-nha-dau-tu",
+    "status": "found_link",
+    "score": 70,
+    "reason": "Matched ir_text (score 70): 'quan hệ nhà đầu tư'",
+    "batch": "Distill_Batch_08_Ngay_26_29.json",
+    "stt": 86,
+    "domain": "geccom.vn"
+  },
+  "ADS": {
+    "ticker": "ADS",
+    "ir_link": "https://damsanjsc.vn/co-dong/#cong-bo-thong-tin",
+    "status": "found_link",
+    "score": 80,
+    "reason": "Matched cbtt_text (score 80): 'công bố thông tin'",
+    "batch": "Distill_Batch_08_Ngay_26_29.json",
+    "stt": 88,
+    "domain": "damsanjsc.vn"
+  },
+  "DSH": {
+    "ticker": "DSH",
+    "ir_link": "https://htds.vn/quan-he-co-dong?category=bao-cao-tai-chinh",
+    "status": "found_link",
+    "score": 100,
+    "reason": "Matched bctc_text (score 100): 'báo cáo tài chính'",
+    "batch": "Distill_Batch_08_Ngay_26_29.json",
+    "stt": 85,
+    "domain": "htds.vn"
+  },
+  "AIG": {
+    "ticker": "AIG",
+    "ir_link": "https://asiagroup-vn.com/quan-he-nha-dau-tu/#tab5",
+    "status": "found_link",
+    "score": 100,
+    "reason": "Matched bctc_text (score 100): 'báo cáo tài chính'",
+    "batch": "Distill_Batch_09_Ngay_29_30.json",
+    "stt": 92,
+    "domain": "asiagroup-vn.com"
+  },
+  "PRE": {
+    "ticker": "PRE",
+    "ir_link": "https://www.hanoire.com/en/financial-statement",
+    "status": "found_link",
+    "score": 100,
+    "reason": "Matched bctc_text (score 100): 'financial statement'",
+    "batch": "Distill_Batch_07_Ngay_25_26.json",
+    "stt": 80,
+    "domain": "hanoire.com"
+  },
+  "DBC": {
+    "ticker": "DBC",
+    "ir_link": "https://dabaco.vn/quan-he-co-dong/",
+    "status": "found_link",
+    "score": 70,
+    "reason": "Matched ir_text (score 70): 'quan hệ cổ đông'",
+    "batch": "Distill_Batch_06_Ngay_23_24.json",
+    "stt": 67,
+    "domain": "dabaco.com.vn"
+  },
+  "DCM": {
+    "ticker": "DCM",
+    "ir_link": "https://mail.pvcfc.com.vn/owa/auth/logon.aspx?url=https%3a%2f%2fmail.pvcfc.com.vn%2fowa%2fquan-he-co-dong&reason=0",
+    "status": "probed",
+    "score": 60,
+    "reason": "Probed path '/quan-he-co-dong' returned 200",
+    "batch": "Distill_Batch_08_Ngay_26_29.json",
+    "stt": 89,
+    "domain": "pvcfc.com.vn"
+  },
+  "ANT": {
+    "ticker": "ANT",
+    "ir_link": "https://antesco.com/cap-nhat-tai-chinh/",
+    "status": "found_link",
+    "score": 70,
+    "reason": "Matched ir_text (score 70): 'quan hệ cổ đông'",
+    "batch": "Distill_Batch_09_Ngay_29_30.json",
+    "stt": 95,
+    "domain": "antesco.com"
+  },
+  "PVB": {
+    "ticker": "PVB",
+    "ir_link": "https://pvcoating.vn/bao-cao-tai-chinh.html",
+    "status": "found_link",
+    "score": 100,
+    "reason": "Matched bctc_text (score 100): 'báo cáo tài chính'",
+    "batch": "Distill_Batch_04_Ngay_22_22.json",
+    "stt": 50,
+    "domain": "pvcoating.vn"
+  },
+  "AMS": {
+    "ticker": "AMS",
+    "ir_link": "https://amecc.com.vn/bao-cao-tai-chinh-l70093.html",
+    "status": "found_link",
+    "score": 100,
+    "reason": "Matched bctc_text (score 100): 'báo cáo tài chính'",
+    "batch": "Distill_Batch_09_Ngay_29_30.json",
+    "stt": 94,
+    "domain": "amecc.com.vn"
+  },
+  "ALT": {
+    "ticker": "ALT",
+    "ir_link": "https://alta.com.vn/quan-he-co-dong/",
+    "status": "found_link",
+    "score": 100,
+    "reason": "Matched bctc_text (score 100): 'báo cáo tài chính'",
+    "batch": "Distill_Batch_09_Ngay_29_30.json",
+    "stt": 93,
+    "domain": "alta.com.vn"
+  },
+  "CKD": {
+    "ticker": "CKD",
+    "ir_link": "https://ckda.vn/financial-report",
+    "status": "found_link",
+    "score": 100,
+    "reason": "Matched bctc_text (score 100): 'financial report'",
+    "batch": "Distill_Batch_09_Ngay_29_30.json",
+    "stt": 97,
+    "domain": "ckda.vn"
+  },
+  "AIC": {
+    "ticker": "AIC",
+    "ir_link": "https://ezir.fpts.com.vn/thongtindoanhnghiepclient/AIC",
+    "status": "ezir_fallback",
+    "score": 20,
+    "reason": "Company website under rebranding transition; using EZIR",
+    "batch": "Distill_Batch_06_Ngay_23_24.json",
+    "stt": 64,
+    "domain": "dbvi.com.vn"
+  },
+  "POT": {
+    "ticker": "POT",
+    "ir_link": "https://postef.com.vn/2026/08/17/pot-cong-bo-thong-tin-107/",
+    "status": "found_link",
+    "score": 100,
+    "reason": "Matched bctc_text (score 100): 'pot – công bố thông tin 1.1.vi_bctc hợp nhất bán n'",
+    "batch": "Distill_Batch_07_Ngay_25_26.json",
+    "stt": 79,
+    "domain": "postef.com.vn"
+  },
+  "HSM": {
+    "ticker": "HSM",
+    "ir_link": "https://hanosimex.com.vn/bctc-nam-2023/",
+    "status": "found_link",
+    "score": 100,
+    "reason": "Matched bctc_text (score 100): 'bctc năm 2023'",
+    "batch": "Distill_Batch_08_Ngay_26_29.json",
+    "stt": 90,
+    "domain": "hanosimex.com.vn"
+  },
+  "DHC": {
+    "ticker": "DHC",
+    "ir_link": "https://dohacobentre.com.vn/bao-cao-tai-chinh",
+    "status": "found_link",
+    "score": 100,
+    "reason": "Matched bctc_text (score 100): 'báo cáo tài chính'",
+    "batch": "Distill_Batch_09_Ngay_29_30.json",
+    "stt": 99,
+    "domain": "dohacobentre.com.vn"
+  },
+  "GDA": {
+    "ticker": "GDA",
+    "ir_link": "https://tondonga.com.vn/cong-bo-thong-tin",
+    "status": "found_link",
+    "score": 75,
+    "reason": "Matched cbtt_href (score 75): 'thông tin nhà đầu tư'",
+    "batch": "Distill_Batch_09_Ngay_29_30.json",
+    "stt": 103,
+    "domain": "tondonga.com.vn"
+  },
+  "AAA": {
+    "ticker": "AAA",
+    "ir_link": "https://anphatbioplastics.com/quan-he-co-dong/bao-cao-dinh-ky/aaa-bao-cao-tai-chinh-rieng-ban-nien-soat-xet-nam-2026.html",
+    "status": "found_link",
+    "score": 100,
+    "reason": "Matched bctc_text (score 100): 'aaa: báo cáo tài chính riêng bán niên soát xét năm'",
+    "batch": "Distill_Batch_09_Ngay_29_30.json",
+    "stt": 91,
+    "domain": "anphatbioplastics.com"
+  },
+  "HHV": {
+    "ticker": "HHV",
+    "ir_link": "https://hhv.com.vn/bao-cao-tai-chinh/",
+    "status": "found_link",
+    "score": 100,
+    "reason": "Matched bctc_text (score 100): 'báo cáo tài chính'",
+    "batch": "Distill_Batch_10_Ngay_30_30.json",
+    "stt": 106,
+    "domain": "hhv.com.vn"
+  },
+  "VSI": {
+    "ticker": "VSI",
+    "ir_link": "http://waseco.com.vn/quan-he-co-dong/bao-cao-tai-chinh/",
+    "status": "found_link",
+    "score": 100,
+    "reason": "Matched bctc_text (score 100): 'báo cáo tài chính'",
+    "batch": "Distill_Batch_05_Ngay_22_23.json",
+    "stt": 55,
+    "domain": "waseco.com.vn"
+  },
+  "C47": {
+    "ticker": "C47",
+    "ir_link": "https://www.xaydung47.vn/chuyen-muc/quan-he-co-dong/bao-cao-tai-chinh/",
+    "status": "found_link",
+    "score": 100,
+    "reason": "Matched bctc_text (score 100): 'báo cáo tài chính'",
+    "batch": "Distill_Batch_09_Ngay_29_30.json",
+    "stt": 96,
+    "domain": "xaydung47.vn"
+  },
+  "DVN": {
+    "ticker": "DVN",
+    "ir_link": "https://vinapharm.com.vn/vn/bao-cao-tai-chinh",
+    "status": "found_link",
+    "score": 100,
+    "reason": "Matched bctc_text (score 100): 'báo cáo tài chính'",
+    "batch": "Distill_Batch_09_Ngay_29_30.json",
+    "stt": 102,
+    "domain": "vinapharm.com.vn"
+  },
+  "DTK": {
+    "ticker": "DTK",
+    "ir_link": "https://www.dienluctkv.vn/category/quan-he-co-dong/bao-cao-tai-chinh/",
+    "status": "found_link",
+    "score": 100,
+    "reason": "Matched bctc_text (score 100): 'báo cáo tài chính'",
+    "batch": "Distill_Batch_09_Ngay_29_30.json",
+    "stt": 101,
+    "domain": "dienluctkv.vn"
+  },
+  "VHC": {
+    "ticker": "VHC",
+    "ir_link": "https://www.vinhhoan.com//investors/",
+    "status": "found_link",
+    "score": 65,
+    "reason": "Matched ir_href (score 65): 'investors'",
+    "batch": "Distill_Batch_08_Ngay_26_29.json",
+    "stt": 84,
+    "domain": "vinhhoan.com"
+  },
+  "HPA": {
+    "ticker": "HPA",
+    "ir_link": "https://nongnghiep.hoaphat.com.vn/quan-he-co-dong/bao-cao-tai-chinh",
+    "status": "found_link",
+    "score": 100,
+    "reason": "Matched bctc_text (score 100): 'báo cáo tài chính'",
+    "batch": "Distill_Batch_10_Ngay_30_30.json",
+    "stt": 107,
+    "domain": "nongnghiep.hoaphat.com.vn"
+  },
+  "HPG": {
+    "ticker": "HPG",
+    "ir_link": "https://www.hoaphat.com.vn/quan-he-co-dong/bao-cao-tai-chinh",
+    "status": "found_link",
+    "score": 100,
+    "reason": "Matched bctc_text (score 100): 'báo cáo tài chính'",
+    "batch": "Distill_Batch_10_Ngay_30_30.json",
+    "stt": 108,
+    "domain": "www.hoaphat.com.vn"
+  },
+  "IDC": {
+    "ticker": "IDC",
+    "ir_link": "https://idico.com.vn/vi/quan-he-co-dong/cong-bo-thong-tin",
+    "status": "found_link",
+    "score": 80,
+    "reason": "Matched cbtt_text (score 80): 'công bố thông tin'",
+    "batch": "Distill_Batch_10_Ngay_30_30.json",
+    "stt": 111,
+    "domain": "idico.com.vn"
+  },
+  "HTL": {
+    "ticker": "HTL",
+    "ir_link": "https://www.truonglong.com/pages/quan-he-co-dong",
+    "status": "found_link",
+    "score": 70,
+    "reason": "Matched ir_text (score 70): 'quan hệ cổ đông'",
+    "batch": "Distill_Batch_10_Ngay_30_30.json",
+    "stt": 109,
+    "domain": "truonglong.com"
+  },
+  "KSV": {
+    "ticker": "KSV",
+    "ir_link": "https://vimico.vn/cong-bo-thong-tin/",
+    "status": "found_link",
+    "score": 80,
+    "reason": "Matched cbtt_text (score 80): 'công bố thông tin'",
+    "batch": "Distill_Batch_10_Ngay_30_30.json",
+    "stt": 114,
+    "domain": "vimico.vn"
+  },
+  "M10": {
+    "ticker": "M10",
+    "ir_link": "https://garco10.com.vn/quan-he-co-dong/",
+    "status": "found_link",
+    "score": 70,
+    "reason": "Matched ir_text (score 70): 'quan hệ cổ đông'",
+    "batch": "Distill_Batch_10_Ngay_30_30.json",
+    "stt": 118,
+    "domain": "garco10.vn"
+  },
+  "GDT": {
+    "ticker": "GDT",
+    "ir_link": "https://goducthanh.com/vn/download/bao-cao-tai-chinh-3.html",
+    "status": "found_link",
+    "score": 100,
+    "reason": "Matched bctc_text (score 100): 'báo cáo tài chính'",
+    "batch": "Distill_Batch_09_Ngay_29_30.json",
+    "stt": 104,
+    "domain": "goducthanh.com"
+  },
+  "HDA": {
+    "ticker": "HDA",
+    "ir_link": "https://hangsondonga.com.vn/bao-cao-tai-chinh-quy-1-nam-2026/",
+    "status": "found_link",
+    "score": 100,
+    "reason": "Matched bctc_text (score 100): 'báo cáo tài chính quý 1 năm 2026 quý cổ đông vui l'",
+    "batch": "Distill_Batch_09_Ngay_29_30.json",
+    "stt": 105,
+    "domain": "hangsondonga.com.vn"
+  },
+  "CLX": {
+    "ticker": "CLX",
+    "ir_link": "https://www.cholimex.vn/vi/bao-cao-tai-chinh/",
+    "status": "found_link",
+    "score": 100,
+    "reason": "Matched bctc_text (score 100): 'báo cáo tài chính'",
+    "batch": "Distill_Batch_09_Ngay_29_30.json",
+    "stt": 98,
+    "domain": "cholimex.vn"
+  },
+  "L18": {
+    "ticker": "L18",
+    "ir_link": "https://licogi18.com.vn/giai-trinh-cl-lnst-bctc-giua-nien-do-nam-2026-10056042/",
+    "status": "found_link",
+    "score": 100,
+    "reason": "Matched bctc_text (score 100): 'giải trình cl lnst bctc hợp nhất giữa niên độ năm '",
+    "batch": "Distill_Batch_10_Ngay_30_30.json",
+    "stt": 115,
+    "domain": "licogi18.com.vn"
+  },
+  "ILB": {
+    "ticker": "ILB",
+    "ir_link": "https://icdlongbinh.com/bao-cao-tai-chinh",
+    "status": "found_link",
+    "score": 95,
+    "reason": "Matched bctc_href (score 95): 'bã¡o cã¡o tã i chã­nh'",
+    "batch": "Distill_Batch_10_Ngay_30_30.json",
+    "stt": 112,
+    "domain": "icdlongbinh.com"
+  },
+  "MSH": {
+    "ticker": "MSH",
+    "ir_link": "https://www.songhong.vn/bao-cao-tai-chinh-dinh-ky",
+    "status": "found_link",
+    "score": 100,
+    "reason": "Matched bctc_text (score 100): 'báo cáo tài chính định kỳ'",
+    "batch": "Distill_Batch_10_Ngay_30_30.json",
+    "stt": 121,
+    "domain": "songhong.vn"
+  },
+  "MZG": {
+    "ticker": "MZG",
+    "ir_link": "https://miza.vn/vi/quan-he-co-dong/cong-bo-thong-tin",
+    "status": "found_link",
+    "score": 80,
+    "reason": "Matched cbtt_text (score 80): 'công bố thông tin'",
+    "batch": "Distill_Batch_10_Ngay_30_30.json",
+    "stt": 123,
+    "domain": "miza.vn"
+  },
+  "PGC": {
+    "ticker": "PGC",
+    "ir_link": "https://pgas.petrolimex.com.vn/ndt.html",
+    "status": "found_link",
+    "score": 50,
+    "reason": "Matched shareholder_text (score 50): 'nhà đầu tư'",
+    "batch": "Distill_Batch_11_Ngay_30_30.json",
+    "stt": 126,
+    "domain": "pgas.petrolimex.com.vn"
+  },
+  "LCG": {
+    "ticker": "LCG",
+    "ir_link": "https://lizen.vn/vi/document-category/bao-cao-tai-chinh",
+    "status": "found_link",
+    "score": 100,
+    "reason": "Matched bctc_text (score 100): 'báo cáo tài chính'",
+    "batch": "Distill_Batch_10_Ngay_30_30.json",
+    "stt": 116,
+    "domain": "lizen.vn"
+  },
+  "ILS": {
+    "ticker": "ILS",
+    "ir_link": "https://ils.com.vn/quan-he-co-dong/#bao-cao-tai-chinh-1",
+    "status": "found_link",
+    "score": 100,
+    "reason": "Matched bctc_text (score 100): 'báo cáo tài chính'",
+    "batch": "Distill_Batch_10_Ngay_30_30.json",
+    "stt": 113,
+    "domain": "ils.com.vn"
+  },
+  "NHT": {
+    "ticker": "NHT",
+    "ir_link": "https://namhoatoys.vn/bao-cao-tai-chinh",
+    "status": "found_link",
+    "score": 100,
+    "reason": "Matched bctc_text (score 100): 'báo cáo tài chính'",
+    "batch": "Distill_Batch_11_Ngay_30_30.json",
+    "stt": 125,
+    "domain": "namhoatoys.vn"
+  },
+  "PJT": {
+    "ticker": "PJT",
+    "ir_link": "https://pjtaco.petrolimex.com.vn/ndt.html",
+    "status": "found_link",
+    "score": 50,
+    "reason": "Matched shareholder_text (score 50): 'nhà đầu tư'",
+    "batch": "Distill_Batch_11_Ngay_30_30.json",
+    "stt": 129,
+    "domain": "pjtaco.petrolimex.com.vn"
+  },
+  "MTA": {
+    "ticker": "MTA",
+    "ir_link": "https://mitraco.com.vn/reviewed-interim-consolidated-financial-statements-for-the-accounting-period-from-01-january-2026-to-30-june-2026/",
+    "status": "found_link",
+    "score": 100,
+    "reason": "Matched bctc_text (score 100): 'reviewed interim consolidated financial statements'",
+    "batch": "Distill_Batch_10_Ngay_30_30.json",
+    "stt": 122,
+    "domain": "MITRACO.com.vn"
+  },
+  "PMS": {
+    "ticker": "PMS",
+    "ir_link": "https://pmsc.petrolimex.com.vn/nd/tin-hd/bao-cao-tai-chinh-hop-nhat-quy-2-nam-2023-bao-cao-tai-chinh-hop-nhat-quy-2-nam-2023.html",
+    "status": "found_link",
+    "score": 100,
+    "reason": "Matched bctc_text (score 100): 'báo cáo tài chính hợp nhất quý 2 năm 2023'",
+    "batch": "Distill_Batch_11_Ngay_30_30.json",
+    "stt": 130,
+    "domain": "pmsc.petrolimex.com.vn"
+  },
+  "POW": {
+    "ticker": "POW",
+    "ir_link": "https://pvpower.vn/vi/tag/bao-cao-tai-chinh-10.htm",
+    "status": "found_link",
+    "score": 100,
+    "reason": "Matched bctc_text (score 100): 'báo cáo tài chính/báo cáo thường niên'",
+    "batch": "Distill_Batch_11_Ngay_30_30.json",
+    "stt": 131,
+    "domain": "pvpower.vn"
+  },
+  "NDT": {
+    "ticker": "NDT",
+    "ir_link": "https://natexco.com.vn/cong-bo-thong-tin-dinh-ky-bao-cao-tai-chinh-giua-nien-2026-n14544.aspx",
+    "status": "found_link",
+    "score": 100,
+    "reason": "Matched bctc_text (score 100): 'công bố thông tin định kỳ báo cáo tài chính giữa n'",
+    "batch": "Distill_Batch_10_Ngay_30_30.json",
+    "stt": 124,
+    "domain": "Natexco.com.vn"
+  },
+  "PHP": {
+    "ticker": "PHP",
+    "ir_link": "https://haiphongport.com.vn/vi/bao-cao-tai-chinh",
+    "status": "found_link",
+    "score": 100,
+    "reason": "Matched bctc_text (score 100): 'báo cáo tài chính'",
+    "batch": "Distill_Batch_11_Ngay_30_30.json",
+    "stt": 128,
+    "domain": "haiphongport.com.vn"
+  },
+  "MPC": {
+    "ticker": "MPC",
+    "ir_link": "https://minhphu.com/quan-he-co-dong/",
+    "status": "found_link",
+    "score": 70,
+    "reason": "Matched ir_text (score 70): 'quan hệ cổ đông'",
+    "batch": "Distill_Batch_10_Ngay_30_30.json",
+    "stt": 120,
+    "domain": "minhphu.com"
+  },
+  "LLM": {
+    "ticker": "LLM",
+    "ir_link": "https://lilama.com.vn/bao-cao-tai-chinh-rieng-hop-nhat-va-giai-trinh-ve-viec-thay-doi-lnst-06-thang-dau-nam-2026",
+    "status": "found_link",
+    "score": 100,
+    "reason": "Matched bctc_text (score 100): 'báo cáo tài chính riêng, hợp nhất và giải trình về'",
+    "batch": "Distill_Batch_10_Ngay_30_30.json",
+    "stt": 117,
+    "domain": "lilama.com.vn"
+  },
+  "MNB": {
+    "ticker": "MNB",
+    "ir_link": "https://nhabe.com.vn/investor-relations/",
+    "status": "found_link",
+    "score": 70,
+    "reason": "Matched ir_text (score 70): 'investor relations'",
+    "batch": "Distill_Batch_10_Ngay_30_30.json",
+    "stt": 119,
+    "domain": "nhabe.com.vn"
+  },
+  "PTB": {
+    "ticker": "PTB",
+    "ir_link": "https://phutai.com.vn/vi/investor-relations",
+    "status": "found_link",
+    "score": 70,
+    "reason": "Matched ir_text (score 70): 'quan hệ cổ đông'",
+    "batch": "Distill_Batch_11_Ngay_30_30.json",
+    "stt": 132,
+    "domain": "phutai.com.vn"
+  },
+  "SIP": {
+    "ticker": "SIP",
+    "ir_link": "https://saigonvrg.com.vn/quan-he-co-dong",
+    "status": "found_link",
+    "reason": "Direct IR page on saigonvrg.com.vn",
+    "batch": "Distill_Batch_11_Ngay_30_30.json",
+    "stt": 136,
+    "domain": "saigonvrg.com"
+  },
+  "DPG": {
+    "ticker": "DPG",
+    "ir_link": "https://datphuong.com.vn/documents/tap-doan-dat-phuong/bao-cao-tai-chinh",
+    "status": "found_link",
+    "score": 100,
+    "reason": "Matched bctc_text (score 100): 'báo cáo tài chính'",
+    "batch": "Distill_Batch_09_Ngay_29_30.json",
+    "stt": 100,
+    "domain": "datphuong.com.vn"
+  },
+  "SBB": {
+    "ticker": "SBB",
+    "ir_link": "https://sabibeco.com/quan-he-co-dong",
+    "status": "probed",
+    "score": 60,
+    "reason": "Probed path '/quan-he-co-dong' returned 200",
+    "batch": "Distill_Batch_11_Ngay_30_30.json",
+    "stt": 135,
+    "domain": "sabibeco.com"
+  },
+  "SJE": {
+    "ticker": "SJE",
+    "ir_link": "https://songda11.com.vn/quan-he-co-dong/bao-cao-tai-chinh",
+    "status": "found_link",
+    "score": 95,
+    "reason": "Matched bctc_href (score 95): 'bã¡o cã¡o tã i chã­nh'",
+    "batch": "Distill_Batch_11_Ngay_30_30.json",
+    "stt": 137,
+    "domain": "songda11.com.vn"
+  },
+  "S55": {
+    "ticker": "S55",
+    "ir_link": "https://songda505.com.vn/chuyen-muc/co-dong/bao-cao-tai-chanh/",
+    "status": "found_link",
+    "score": 100,
+    "reason": "Matched bctc_text (score 100): 'báo cáo tài chính'",
+    "batch": "Distill_Batch_11_Ngay_30_30.json",
+    "stt": 134,
+    "domain": "songda505.com.vn"
+  },
+  "SPC": {
+    "ticker": "SPC",
+    "ir_link": "https://spchcmc.vn/VN/Quan-He-Co-Dong.html",
+    "status": "found_link",
+    "score": 70,
+    "reason": "Matched ir_text (score 70): 'quan hệ cổ đông'",
+    "batch": "Distill_Batch_12_Ngay_30_30.json",
+    "stt": 140,
+    "domain": "spchcmc.vn/VN/Trang-Chu.html"
+  },
+  "RAL": {
+    "ticker": "RAL",
+    "ir_link": "https://rangdong.com.vn/category/bao-cao-tai-chinh",
+    "status": "found_link",
+    "score": 100,
+    "reason": "Matched bctc_text (score 100): 'báo cáo tài chính'",
+    "batch": "Distill_Batch_11_Ngay_30_30.json",
+    "stt": 133,
+    "domain": "rangdong.com.vn"
+  },
+  "TV1": {
+    "ticker": "TV1",
+    "ir_link": "https://pecc1.com.vn/c3/pages-t/Bao-cao-tai-chinh-5-453.aspx",
+    "status": "found_link",
+    "score": 100,
+    "reason": "Matched bctc_text (score 100): 'báo cáo tài chính'",
+    "batch": "Distill_Batch_12_Ngay_30_30.json",
+    "stt": 145,
+    "domain": "pecc1.com.vn"
+  },
+  "SJG": {
+    "ticker": "SJG",
+    "ir_link": "https://songda.vn/van-ban",
+    "status": "found_link",
+    "score": 70,
+    "reason": "Matched ir_text (score 70): 'quan hệ cổ đông'",
+    "batch": "Distill_Batch_11_Ngay_30_30.json",
+    "stt": 138,
+    "domain": "songda.vn"
+  },
+  "VC6": {
+    "ticker": "VC6",
+    "ir_link": "http://visicons.vn/danh-muc-tin/bao-cao-tai-chinh.html",
+    "status": "found_link",
+    "score": 20,
+    "reason": "Direct BCTC page on visicons.vn",
+    "batch": "Distill_Batch_12_Ngay_30_30.json",
+    "stt": 146,
+    "domain": "visicons.vn"
+  },
+  "SKV": {
+    "ticker": "SKV",
+    "ir_link": "https://yensaokhanhhoasanest.com.vn/lienhecodong",
+    "status": "found_link",
+    "score": 50,
+    "reason": "Matched shareholder_text (score 50): 'liên hệ cổ đông'",
+    "batch": "Distill_Batch_11_Ngay_30_30.json",
+    "stt": 139,
+    "domain": "yensaokhanhhoasanest.com.vn"
+  },
+  "VGG": {
+    "ticker": "VGG",
+    "ir_link": "https://viettien.com.vn/quan-he-co-dong",
+    "status": "probed",
+    "score": 60,
+    "reason": "Probed path '/quan-he-co-dong' returned 200",
+    "batch": "Distill_Batch_12_Ngay_30_30.json",
+    "stt": 151,
+    "domain": "viettien.com.vn"
+  },
+  "TRV": {
+    "ticker": "TRV",
+    "ir_link": "https://cophanvantaiduongsat.vn/category/quan-he-co-dong/bao-cao-tai-chinh/",
+    "status": "found_link",
+    "score": 100,
+    "reason": "Matched bctc_text (score 100): 'báo cáo tài chính'",
+    "batch": "Distill_Batch_12_Ngay_30_30.json",
+    "stt": 144,
+    "domain": "cophanvantaiduongsat.vn"
+  },
+  "VEA": {
+    "ticker": "VEA",
+    "ir_link": "https://veamcorp.com/bao-cao-tai-chinh",
+    "status": "found_link",
+    "score": 100,
+    "reason": "Matched bctc_text (score 100): 'báo cáo tài chính'",
+    "batch": "Distill_Batch_12_Ngay_30_30.json",
+    "stt": 149,
+    "domain": "veamcorp.com"
+  },
+  "TCW": {
+    "ticker": "TCW",
+    "ir_link": "https://tancangwarehousing.com.vn/quan-he-co-dong/thong-bao-co-dong",
+    "status": "found_link",
+    "score": 65,
+    "reason": "Matched ir_href (score 65): 'thông báo cổ đông'",
+    "batch": "Distill_Batch_12_Ngay_30_30.json",
+    "stt": 141,
+    "domain": "tancangwarehousing.com.vn"
+  },
+  "ICT": {
+    "ticker": "ICT",
+    "ir_link": "https://www.ctin.vn/bao-cao-tai-chinh/",
+    "status": "found_link",
+    "score": 100,
+    "reason": "Matched bctc_text (score 100): 'báo cáo tài chính'",
+    "batch": "Distill_Batch_10_Ngay_30_30.json",
+    "stt": 110,
+    "domain": "ctin.vn"
+  },
+  "VGS": {
+    "ticker": "VGS",
+    "ir_link": "https://thepvietduc.com.vn/qhcd-dm/bao-cao-tai-chinh/",
+    "status": "found_link",
+    "score": 100,
+    "reason": "Matched bctc_text (score 100): 'báo cáo tài chính'",
+    "batch": "Distill_Batch_12_Ngay_30_30.json",
+    "stt": 152,
+    "domain": "vgpipe.com.vn"
+  },
+  "VNF": {
+    "ticker": "VNF",
+    "ir_link": "https://vinafreight.com/thong-tin-co-dong.html",
+    "status": "found_link",
+    "score": 45,
+    "reason": "Matched shareholder_href (score 45): 'thông tin đầu tư'",
+    "batch": "Distill_Batch_12_Ngay_30_30.json",
+    "stt": 154,
+    "domain": "vinafreight.com"
+  },
+  "PGV": {
+    "ticker": "PGV",
+    "ir_link": "https://www.genco3.com/quan-he-nha-dau-tu.html",
+    "status": "found_link",
+    "score": 20,
+    "reason": "Direct Investor page on genco3.com",
+    "batch": "Distill_Batch_11_Ngay_30_30.json",
+    "stt": 127,
+    "domain": "genco3.com"
+  },
+  "VNL": {
+    "ticker": "VNL",
+    "ir_link": "https://vinalinklogistics.com/ban-tin/vinalink-logistics-dat-danh-hieu-doanh-nghiep-dat-chuan-cong-bo-thong-tin-nam-2025-tai-ir-awards-1816.html",
+    "status": "found_link",
+    "score": 80,
+    "reason": "Matched cbtt_text (score 80): 'vinalink logistics đạt danh hiệu “doanh nghiệp đạt'",
+    "batch": "Distill_Batch_12_Ngay_30_30.json",
+    "stt": 155,
+    "domain": "vinalinklogistics.com"
+  },
+  "TOS": {
+    "ticker": "TOS",
+    "ir_link": "https://tancangoffshore.com/quan-he-co-dong/",
+    "status": "found_link",
+    "score": 65,
+    "reason": "Matched ir_href (score 65): 'cổ đông'",
+    "batch": "Distill_Batch_12_Ngay_30_30.json",
+    "stt": 143,
+    "domain": "tancangoffshore.com"
+  },
+  "DGC": {
+    "ticker": "DGC",
+    "ir_link": "https://ducgiangchem.vn/category/quan-he-co-dong/bao-cao-tai-chinh/",
+    "status": "found_link",
+    "score": 100,
+    "reason": "Matched bctc_text (score 100): 'báo cáo tài chính'",
+    "batch": "Distill_Batch_07_Ngay_25_26.json",
+    "stt": 70,
+    "domain": "ducgiangchem.vn"
+  },
+  "VCP": {
+    "ticker": "VCP",
+    "ir_link": "https://vcpholdings.com.vn/bao-cao-tai-chinh.htm",
+    "status": "found_link",
+    "score": 100,
+    "reason": "Matched bctc_text (score 100): 'báo cáo tài chính'",
+    "batch": "Distill_Batch_12_Ngay_30_30.json",
+    "stt": 147,
+    "domain": "vcpholdings.com.vn"
+  },
+  "TID": {
+    "ticker": "TID",
+    "ir_link": "https://tinnghiacorp.com.vn/cong-bo-thong-tin/",
+    "status": "found_link",
+    "score": 80,
+    "reason": "Matched cbtt_text (score 80): 'công bố thông tin'",
+    "batch": "Distill_Batch_12_Ngay_30_30.json",
+    "stt": 142,
+    "domain": "tinnghiacorp.com.vn"
+  },
+  "VGT": {
+    "ticker": "VGT",
+    "ir_link": "https://vinatex.com.vn/quan-he-co-dong-2/",
+    "status": "found_link",
+    "score": 70,
+    "reason": "Matched ir_text (score 70): 'quan hệ cổ đông'",
+    "batch": "Distill_Batch_12_Ngay_30_30.json",
+    "stt": 153,
+    "domain": "vinatex.com.vn"
+  },
+  "VCS": {
+    "ticker": "VCS",
+    "ir_link": "https://vicostone.com/vi-vn/financial-reports",
+    "status": "found_link",
+    "score": 100,
+    "reason": "Matched bctc_text (score 100): 'báo cáo tài chính'",
+    "batch": "Distill_Batch_12_Ngay_30_30.json",
+    "stt": 148,
+    "domain": "vicostone.com"
+  },
+  "VFR": {
+    "ticker": "VFR",
+    "ir_link": "http://www.vitranschart.com.vn/quan-he-co-dong/bao-cao-tai-chinh/",
+    "status": "found_link",
+    "score": 20,
+    "reason": "Direct BCTC page on vitranschart.com.vn",
+    "batch": "Distill_Batch_12_Ngay_30_30.json",
+    "stt": 150,
+    "domain": "vietfracht.com.vn"
+  },
+  "SD5": {
+    "ticker": "SD5",
+    "ir_link": "https://songda5.com.vn/en/relations/financial-report-c9",
+    "status": "found_link",
+    "score": 100,
+    "reason": "Matched bctc_text (score 100): 'financial report'",
+    "batch": "Distill_Batch_08_Ngay_26_29.json",
+    "stt": 87,
+    "domain": "songda5.com.vn"
+  },
+  "CLC": {
+    "ticker": "CLC",
+    "ir_link": "http://catloi.com.vn/index.php?option=com_content&task=view&id=1543&Itemid=1",
+    "status": "found_link",
+    "score": 100,
+    "reason": "Matched bctc_text (score 100): 'bctc giá»¯a niãªn äá» näm 2026 äã£ soã¡t xã©t'",
+    "batch": "Distill_Batch_01_Ngay_15_20.json",
+    "stt": 12,
+    "domain": "catloi.com.vn"
+  },
+  "NST": {
+    "ticker": "NST",
+    "ir_link": "https://nganson.vn/tai-lieu/bao-cao-tai-chinh",
+    "status": "found_link",
+    "score": 100,
+    "reason": "Matched bctc_text (score 100): 'báo cáo tài chính'",
+    "batch": "Distill_Batch_03_Ngay_21_22.json",
+    "stt": 31,
+    "domain": "nganson.vn"
+  }
+}

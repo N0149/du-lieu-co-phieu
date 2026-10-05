@@ -3,14 +3,13 @@
 import { useState, useRef, useEffect } from 'react'
 import {
   ChevronDown,
-  ChevronsLeft,
-  ChevronsRight,
   Search,
   X,
   Building2,
   Layers,
   Check,
   SlidersHorizontal,
+  Bookmark,
 } from 'lucide-react'
 import { POPULAR_SECTORS } from './screener-constants'
 import { cn } from '@/lib/utils'
@@ -24,8 +23,9 @@ interface ScreenerTopBarProps {
   onToggleTicker: (ticker: string) => void
   onClearTickers: () => void
   allTickers: { ticker: string; name: string }[]
-  isSidebarOpen: boolean
-  onToggleSidebar: () => void
+  isSavedPanelOpen?: boolean
+  onToggleSavedPanel?: () => void
+  savedCount?: number
   totalCount: number
   isFilterPanelOpen?: boolean
   onToggleFilterPanel?: () => void
@@ -40,8 +40,9 @@ export function ScreenerTopBar({
   onToggleTicker,
   onClearTickers,
   allTickers,
-  isSidebarOpen,
-  onToggleSidebar,
+  isSavedPanelOpen = true,
+  onToggleSavedPanel,
+  savedCount = 0,
   totalCount,
   isFilterPanelOpen = true,
   onToggleFilterPanel,
@@ -76,22 +77,8 @@ export function ScreenerTopBar({
 
   return (
     <div className="flex flex-wrap items-center justify-between gap-3 border-b border-white/10 bg-[#161a22] px-4 py-3 text-sm text-foreground shadow-sm">
-      {/* Khối bên trái: Nút thu gọn sidebar + Các bộ lọc nhanh */}
+      {/* Khối bên trái: Các bộ lọc nhanh Sàn / Ngành / Mã */}
       <div className="flex flex-wrap items-center gap-2 sm:gap-3">
-        {/* Nút bật/tắt Sidebar */}
-        <button
-          type="button"
-          onClick={onToggleSidebar}
-          title={isSidebarOpen ? 'Thu gọn thanh bộ lọc' : 'Mở rộng thanh bộ lọc'}
-          className="flex h-9 w-9 items-center justify-center rounded-lg border border-white/10 bg-[#1f2430] text-muted-foreground transition-colors hover:bg-white/10 hover:text-foreground active:scale-95"
-        >
-          {isSidebarOpen ? (
-            <ChevronsLeft className="size-4" />
-          ) : (
-            <ChevronsRight className="size-4" />
-          )}
-        </button>
-
         {/* Chọn Sàn */}
         <div className="relative min-w-[130px]">
           <select
@@ -221,8 +208,30 @@ export function ScreenerTopBar({
         </div>
       </div>
 
-      {/* Khối bên phải: Nút Thu gọn/Mở bộ lọc + Tổng số lượng mã */}
-      <div className="flex items-center gap-2.5 text-xs">
+      {/* Khối bên phải: Nút Bộ lọc cá nhân + Nút Thu gọn/Mở bộ lọc + Tổng số lượng mã */}
+      <div className="flex items-center gap-2 text-xs">
+        {onToggleSavedPanel && (
+          <button
+            type="button"
+            onClick={onToggleSavedPanel}
+            title={isSavedPanelOpen ? 'Thu gọn danh sách bộ lọc đã lưu' : 'Mở danh sách bộ lọc đã lưu'}
+            className={cn(
+              'flex h-9 items-center gap-1.5 rounded-lg border border-white/10 px-3 text-xs font-medium transition-colors cursor-pointer',
+              isSavedPanelOpen
+                ? 'bg-primary/20 text-primary border-primary/40 font-semibold'
+                : 'bg-[#1f2430] text-muted-foreground hover:bg-white/10 hover:text-foreground'
+            )}
+          >
+            <Bookmark className="size-3.5" />
+            <span className="hidden sm:inline">Bộ lọc của tôi</span>
+            {savedCount > 0 && (
+              <span className="rounded-full bg-primary/25 px-1.5 py-0.2 text-[10px] font-bold text-primary">
+                {savedCount}
+              </span>
+            )}
+          </button>
+        )}
+
         {onToggleFilterPanel && (
           <button
             type="button"
@@ -236,12 +245,11 @@ export function ScreenerTopBar({
             )}
           >
             <SlidersHorizontal className="size-3.5" />
-            <span>{isFilterPanelOpen ? 'Thu gọn bộ lọc' : 'Mở bộ lọc'}</span>
+            <span>{isFilterPanelOpen ? 'Thu gọn' : 'Mở bộ lọc'}</span>
           </button>
         )}
 
         <div className="flex items-center gap-2">
-          <span className="text-muted-foreground hidden sm:inline">Tìm thấy:</span>
           <span className="rounded-md bg-primary/15 px-2.5 py-1 font-mono text-xs font-bold text-primary">
             {totalCount.toLocaleString('vi-VN')} mã
           </span>
