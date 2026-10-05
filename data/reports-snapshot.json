@@ -83,9 +83,9 @@
     "reportDate": "21/09/2026",
     "driveDocId": "1BR8pmn36YgXYm67zzhLkua5PGDCwRObJjSvWqAIvX0Y",
     "summary": null,
-    "targetPrice": null,
+    "targetPrice": 33.5,
     "currentPrice": null,
-    "recommendation": null,
+    "recommendation": "THEO DÕI",
     "upside": null,
     "bonusWelfareRate": null
   },
@@ -98,11 +98,11 @@
     "reportDate": "21/09/2026",
     "driveDocId": "1583_i5kQ4v3h4i-vf7zLvSw051A_NxZjQzwdJLmnc9Y",
     "summary": null,
-    "targetPrice": null,
-    "currentPrice": null,
-    "recommendation": null,
-    "upside": null,
-    "bonusWelfareRate": null
+    "targetPrice": 63.5,
+    "currentPrice": 37,
+    "recommendation": "MUA",
+    "upside": 71.62162162162163,
+    "bonusWelfareRate": 15.55
   },
   {
     "slug": "lhg-16-09-2026",
@@ -162,7 +162,7 @@
     "currentPrice": null,
     "recommendation": null,
     "upside": null,
-    "bonusWelfareRate": null
+    "bonusWelfareRate": 12.6
   },
   {
     "slug": "eic-22-08-2026",
@@ -173,11 +173,11 @@
     "reportDate": "22/08/2026",
     "driveDocId": "1pwsvTwCVg5tUhtq4jyrc07Wi5w2dNOBzCJWS2YMVRBo",
     "summary": null,
-    "targetPrice": null,
-    "currentPrice": null,
+    "targetPrice": 21.5,
+    "currentPrice": 18.6,
     "recommendation": null,
-    "upside": null,
-    "bonusWelfareRate": null
+    "upside": 15.591397849462357,
+    "bonusWelfareRate": 6.5
   },
   {
     "slug": "lpt-22-08-2026",
@@ -207,7 +207,7 @@
     "currentPrice": null,
     "recommendation": null,
     "upside": null,
-    "bonusWelfareRate": null
+    "bonusWelfareRate": 5
   },
   {
     "slug": "dna-22-08-2026",
@@ -353,11 +353,11 @@
     "reportDate": "22/08/2026",
     "driveDocId": "12AUIRQSyL7bujalXCxXSRkGW_PcF6W-WwepohXJagNw",
     "summary": null,
-    "targetPrice": null,
-    "currentPrice": null,
+    "targetPrice": 29.5,
+    "currentPrice": 20.8,
     "recommendation": null,
-    "upside": null,
-    "bonusWelfareRate": null
+    "upside": 41.82692307692307,
+    "bonusWelfareRate": 8.77
   },
   {
     "slug": "cci-22-08-2026",
@@ -414,10 +414,10 @@
     "driveDocId": "1iXH45GZUT56Mf7w5p1k9J0v0TzUiuYICCs0aSfESheY",
     "summary": null,
     "targetPrice": null,
-    "currentPrice": null,
+    "currentPrice": 11,
     "recommendation": null,
-    "upside": null,
-    "bonusWelfareRate": null
+    "upside": 18.5,
+    "bonusWelfareRate": 22
   },
   {
     "slug": "hdm-22-08-2026",
@@ -458,11 +458,11 @@
     "reportDate": "22/08/2026",
     "driveDocId": "1hQHTV2QoM0GM2jEUTLR907dHEoK-LW1aHGkPKhLlU50",
     "summary": null,
-    "targetPrice": null,
-    "currentPrice": null,
-    "recommendation": null,
-    "upside": null,
-    "bonusWelfareRate": null
+    "targetPrice": 24.5,
+    "currentPrice": 18.9,
+    "recommendation": "MUA",
+    "upside": 29.62962962962964,
+    "bonusWelfareRate": 36.58
   },
   {
     "slug": "fmc-28-08-2026",
@@ -563,11 +563,11 @@
     "reportDate": "29/08/2026",
     "driveDocId": "1JpzPMI6Xe-c6NIoeXjw3arBWgWXZAJIJCIH4GtTj05g",
     "summary": null,
-    "targetPrice": null,
-    "currentPrice": null,
+    "targetPrice": 36.8,
+    "currentPrice": 28.5,
     "recommendation": null,
-    "upside": null,
-    "bonusWelfareRate": null
+    "upside": 29.12280701754385,
+    "bonusWelfareRate": 6.8
   },
   {
     "slug": "hhp-28-08-2026",
@@ -743,11 +743,11 @@
     "reportDate": "25/08/2026",
     "driveDocId": "12JORgp_jePA7isi53OuUWEjjLLybp2B8ZzAx5AcbJsM",
     "summary": null,
-    "targetPrice": null,
-    "currentPrice": null,
+    "targetPrice": 38.5,
+    "currentPrice": 32.9,
     "recommendation": null,
-    "upside": null,
-    "bonusWelfareRate": null
+    "upside": 17.021276595744688,
+    "bonusWelfareRate": 10.31
   },
   {
     "slug": "cll-25-08-2026",
@@ -773,11 +773,11 @@
     "reportDate": "25/08/2026",
     "driveDocId": "1zBnWr6_nop3MIrlsPehArsBveRv5sFxdTMo44MSkYCQ",
     "summary": null,
-    "targetPrice": null,
-    "currentPrice": null,
+    "targetPrice": 35.5,
+    "currentPrice": 23.45,
     "recommendation": null,
-    "upside": null,
-    "bonusWelfareRate": null
+    "upside": 51.3859275053305,
+    "bonusWelfareRate": 5.39
   },
   {
     "slug": "cap-25-08-2026",
@@ -893,11 +893,11 @@
     "reportDate": "25/08/2026",
     "driveDocId": "1tzYmPLOBq5-hgago8aVeXqg5C-WJwY6VxJ3ygFNKMJQ",
     "summary": null,
-    "targetPrice": null,
-    "currentPrice": null,
+    "targetPrice": 22.5,
+    "currentPrice": 18,
     "recommendation": null,
-    "upside": null,
-    "bonusWelfareRate": null
+    "upside": 25,
+    "bonusWelfareRate": 27.21
   },
   {
     "slug": "bha-25-08-2026",
@@ -1058,11 +1058,11 @@
     "reportDate": "22/08/2026",
     "driveDocId": "1-n4GevBzYtW7IeJUKstGvrFTAnFQw76_chu0xSvqP6g",
     "summary": null,
-    "targetPrice": null,
-    "currentPrice": null,
+    "targetPrice": 15,
+    "currentPrice": 13,
     "recommendation": null,
-    "upside": null,
-    "bonusWelfareRate": null
+    "upside": 15.384615384615385,
+    "bonusWelfareRate": 3.7
   },
   {
     "slug": "dpr-22-08-2026",
@@ -1073,11 +1073,11 @@
     "reportDate": "22/08/2026",
     "driveDocId": "1QEitgE2XdZCpWGgMVWUCrl7Ue60WEOx0VcBK2cXqIHk",
     "summary": null,
-    "targetPrice": null,
-    "currentPrice": null,
+    "targetPrice": 49.4,
+    "currentPrice": 36.3,
     "recommendation": null,
-    "upside": null,
-    "bonusWelfareRate": null
+    "upside": 36.08815426997246,
+    "bonusWelfareRate": 17.62
   },
   {
     "slug": "adc-22-08-2026",
@@ -1092,7 +1092,7 @@
     "currentPrice": null,
     "recommendation": null,
     "upside": null,
-    "bonusWelfareRate": null
+    "bonusWelfareRate": 15
   },
   {
     "slug": "dri-22-08-2026",
@@ -1195,7 +1195,7 @@
     "summary": null,
     "targetPrice": null,
     "currentPrice": null,
-    "recommendation": null,
+    "recommendation": "THEO DÕI",
     "upside": null,
     "bonusWelfareRate": null
   },
@@ -1208,11 +1208,11 @@
     "reportDate": "22/08/2026",
     "driveDocId": "1-He5ayuurjNCKdTJIqtmE2qln41yoaS2iYPhR8QuOF8",
     "summary": null,
-    "targetPrice": null,
-    "currentPrice": null,
+    "targetPrice": 45.5,
+    "currentPrice": 39,
     "recommendation": null,
-    "upside": null,
-    "bonusWelfareRate": null
+    "upside": 16.666666666666664,
+    "bonusWelfareRate": 10
   },
   {
     "slug": "frt-22-08-2026",
@@ -1285,9 +1285,9 @@
     "summary": null,
     "targetPrice": null,
     "currentPrice": null,
-    "recommendation": null,
+    "recommendation": "KHẢ QUAN",
     "upside": null,
-    "bonusWelfareRate": null
+    "bonusWelfareRate": 12.96
   },
   {
     "slug": "btd-22-08-2026",
@@ -1403,11 +1403,11 @@
     "reportDate": "22/08/2026",
     "driveDocId": "1NdvMKvbxc6Pc8NMbUNhGgfJvMiPK2AL1IXBKwYUZxso",
     "summary": null,
-    "targetPrice": null,
-    "currentPrice": null,
+    "targetPrice": 38.5,
+    "currentPrice": 32.2,
     "recommendation": null,
-    "upside": null,
-    "bonusWelfareRate": null
+    "upside": 19.6,
+    "bonusWelfareRate": 3.04
   },
   {
     "slug": "chs-22-08-2026",
@@ -1448,11 +1448,11 @@
     "reportDate": "22/08/2026",
     "driveDocId": "1_So6kvDPAt08ogjbLtL7NEBYcG7-ZnN_ybDtJUn-7Jk",
     "summary": null,
-    "targetPrice": null,
-    "currentPrice": null,
-    "recommendation": null,
-    "upside": null,
-    "bonusWelfareRate": null
+    "targetPrice": 24.3,
+    "currentPrice": 14.7,
+    "recommendation": "KHẢ QUAN",
+    "upside": 65.30612244897961,
+    "bonusWelfareRate": 12.67
   },
   {
     "slug": "tv3-22-08-2026",
@@ -1540,7 +1540,7 @@
     "summary": null,
     "targetPrice": null,
     "currentPrice": null,
-    "recommendation": null,
+    "recommendation": "MUA",
     "upside": null,
     "bonusWelfareRate": null
   },
@@ -1553,11 +1553,11 @@
     "reportDate": "22/08/2026",
     "driveDocId": "1v4L8wZ3B8hnB4PCVKyq4k21N7VOuoW5CkQA8AM0rWYg",
     "summary": null,
-    "targetPrice": null,
-    "currentPrice": null,
-    "recommendation": null,
-    "upside": null,
-    "bonusWelfareRate": null
+    "targetPrice": 26.2,
+    "currentPrice": 20.7,
+    "recommendation": "MUA",
+    "upside": 26.570048309178745,
+    "bonusWelfareRate": 5
   },
   {
     "slug": "dp1-22-08-2026",
@@ -1600,9 +1600,9 @@
     "summary": null,
     "targetPrice": null,
     "currentPrice": null,
-    "recommendation": null,
+    "recommendation": "KHẢ QUAN",
     "upside": null,
-    "bonusWelfareRate": null
+    "bonusWelfareRate": 4
   },
   {
     "slug": "ctb-22-08-2026",
@@ -1613,11 +1613,11 @@
     "reportDate": "22/08/2026",
     "driveDocId": "1bonkjY7aCanVnziCipitDK7LWuClFWMllTFeOITyAwY",
     "summary": null,
-    "targetPrice": null,
-    "currentPrice": null,
-    "recommendation": null,
-    "upside": null,
-    "bonusWelfareRate": null
+    "targetPrice": 23.4,
+    "currentPrice": 16.1,
+    "recommendation": "MUA",
+    "upside": 45.34161490683228,
+    "bonusWelfareRate": 1
   },
   {
     "slug": "pat-22-08-2026",
@@ -1632,7 +1632,7 @@
     "currentPrice": null,
     "recommendation": null,
     "upside": null,
-    "bonusWelfareRate": null
+    "bonusWelfareRate": 6.03
   },
   {
     "slug": "pre-22-08-2026",
@@ -1645,7 +1645,7 @@
     "summary": null,
     "targetPrice": null,
     "currentPrice": null,
-    "recommendation": null,
+    "recommendation": "MUA",
     "upside": null,
     "bonusWelfareRate": null
   },
@@ -1658,11 +1658,11 @@
     "reportDate": "22/08/2026",
     "driveDocId": "1PXEuemokrYjcd0P8DZa6bmpsLVYcFo2hRdfxjWN7co4",
     "summary": null,
-    "targetPrice": null,
-    "currentPrice": null,
+    "targetPrice": 35.25,
+    "currentPrice": 21.1,
     "recommendation": null,
-    "upside": null,
-    "bonusWelfareRate": null
+    "upside": 67.06161137440758,
+    "bonusWelfareRate": 8
   },
   {
     "slug": "udj-22-08-2026",
@@ -1674,10 +1674,10 @@
     "driveDocId": "13uCNGnyeeRQVQTODVMN1PbjMP8yVHdd8F1TSTDSK1Lw",
     "summary": null,
     "targetPrice": null,
-    "currentPrice": null,
+    "currentPrice": 6.6,
     "recommendation": null,
     "upside": null,
-    "bonusWelfareRate": null
+    "bonusWelfareRate": 5
   },
   {
     "slug": "hpd-22-08-2026",
@@ -1688,11 +1688,11 @@
     "reportDate": "22/08/2026",
     "driveDocId": "1BNofvB5EBje-Fpkb-fZ8-D_OVj-u0yetyWtZUjpx-vA",
     "summary": null,
-    "targetPrice": null,
-    "currentPrice": null,
+    "targetPrice": 22.5,
+    "currentPrice": 16.3,
     "recommendation": null,
-    "upside": null,
-    "bonusWelfareRate": null
+    "upside": 38.03680981595091,
+    "bonusWelfareRate": 3.58
   },
   {
     "slug": "khs-22-08-2026",
@@ -1703,11 +1703,11 @@
     "reportDate": "22/08/2026",
     "driveDocId": "1yazVlMWgy_Ew4kFv4as9Jq5kTqK6ghrgaH8XoBmQ_1E",
     "summary": null,
-    "targetPrice": null,
-    "currentPrice": null,
-    "recommendation": null,
-    "upside": null,
-    "bonusWelfareRate": null
+    "targetPrice": 18.5,
+    "currentPrice": 13.2,
+    "recommendation": "MUA",
+    "upside": 40.15151515151516,
+    "bonusWelfareRate": 8
   },
   {
     "slug": "adp-22-08-2026",
@@ -1719,10 +1719,10 @@
     "driveDocId": "1jm0s3w2RNIjAmjU4W49IgfvIzbmcs2l4UVPua7WfOm4",
     "summary": null,
     "targetPrice": null,
-    "currentPrice": null,
-    "recommendation": null,
+    "currentPrice": 19,
+    "recommendation": "MUA",
     "upside": null,
-    "bonusWelfareRate": null
+    "bonusWelfareRate": 20
   },
   {
     "slug": "pov-22-08-2026",
@@ -1763,11 +1763,11 @@
     "reportDate": "19/08/2026",
     "driveDocId": "1SQVAYEyeO66V_eeVDicpgJcI7Iz8_UC3ljIGoi8DoXQ",
     "summary": null,
-    "targetPrice": null,
-    "currentPrice": null,
+    "targetPrice": 87.6,
+    "currentPrice": 76.9,
     "recommendation": null,
-    "upside": null,
-    "bonusWelfareRate": null
+    "upside": 13.914174252275666,
+    "bonusWelfareRate": 24.26
   },
   {
     "slug": "tta-18-08-2026",
@@ -1793,11 +1793,11 @@
     "reportDate": "19/08/2026",
     "driveDocId": "18EnRKtK7IK0GGzlm_szxPvqSk0P2ZUt6FibWNiaQXnQ",
     "summary": null,
-    "targetPrice": null,
-    "currentPrice": null,
-    "recommendation": null,
-    "upside": null,
-    "bonusWelfareRate": null
+    "targetPrice": 41,
+    "currentPrice": 33.1,
+    "recommendation": "MUA",
+    "upside": 23.86706948640483,
+    "bonusWelfareRate": 10.5
   },
   {
     "slug": "bts-19-08-2026",
@@ -1808,11 +1808,11 @@
     "reportDate": "19/08/2026",
     "driveDocId": "1FXlZtZzWmM4NJxqrU8LyQOv9p9gVjUkAGsRGPpcOE8I",
     "summary": null,
-    "targetPrice": null,
-    "currentPrice": null,
-    "recommendation": null,
-    "upside": null,
-    "bonusWelfareRate": null
+    "targetPrice": 5.5,
+    "currentPrice": 5,
+    "recommendation": "THEO DÕI",
+    "upside": 10,
+    "bonusWelfareRate": 0
   },
   {
     "slug": "cat-20-08-2026",
@@ -1838,11 +1838,11 @@
     "reportDate": "17/08/2026",
     "driveDocId": "13Z0o4X5EW0LnMRTVYuubw2sq0v3mlmX6LTdynpWgyp4",
     "summary": null,
-    "targetPrice": null,
-    "currentPrice": null,
+    "targetPrice": 12,
+    "currentPrice": 9.82,
     "recommendation": null,
-    "upside": null,
-    "bonusWelfareRate": null
+    "upside": 22.199592668024437,
+    "bonusWelfareRate": 5.77
   },
   {
     "slug": "l10-17-08-2026",
@@ -1883,11 +1883,11 @@
     "reportDate": "18/08/2026",
     "driveDocId": "1mZ4YggBhOXU-G1CUfe4y3SRwq9lcxOBt-1mWbUi_w7k",
     "summary": null,
-    "targetPrice": null,
-    "currentPrice": null,
+    "targetPrice": 42.8,
+    "currentPrice": 26.8,
     "recommendation": null,
-    "upside": null,
-    "bonusWelfareRate": null
+    "upside": 59.70149253731341,
+    "bonusWelfareRate": 9.16
   },
   {
     "slug": "dhb-18-08-2026",
@@ -1898,11 +1898,11 @@
     "reportDate": "18/08/2026",
     "driveDocId": "10X433xnoR7dTMwidkGnKFRKrAYhHZgV5IGP-Pw3yRbg",
     "summary": null,
-    "targetPrice": null,
-    "currentPrice": null,
+    "targetPrice": 16.5,
+    "currentPrice": 10.9,
     "recommendation": null,
-    "upside": null,
-    "bonusWelfareRate": null
+    "upside": 51.376146788990816,
+    "bonusWelfareRate": 0
   },
   {
     "slug": "clh-17-08-2026",
@@ -1944,7 +1944,7 @@
     "driveDocId": "1SNhwLXLZyNEzWp2z9FmwcZWrd0igym_SOQIzeMUyHY0",
     "summary": null,
     "targetPrice": null,
-    "currentPrice": null,
+    "currentPrice": 161.47,
     "recommendation": null,
     "upside": null,
     "bonusWelfareRate": null
@@ -2033,11 +2033,11 @@
     "reportDate": "17/08/2026",
     "driveDocId": "1t9T83YcGXpwbekKTsrTbLv_WnmIxjBCZ4QeEFGuPPCE",
     "summary": null,
-    "targetPrice": null,
-    "currentPrice": null,
+    "targetPrice": 12.65,
+    "currentPrice": 8.5,
     "recommendation": null,
-    "upside": null,
-    "bonusWelfareRate": null
+    "upside": 48.82352941176471,
+    "bonusWelfareRate": 0
   },
   {
     "slug": "pdv-18-08-2026",
@@ -2394,7 +2394,7 @@
     "driveDocId": "1Grv1Zhw770KYHNDe5x9cBOyQ8_HmfgPLiPcSflkYIC8",
     "summary": null,
     "targetPrice": null,
-    "currentPrice": null,
+    "currentPrice": 5.8,
     "recommendation": null,
     "upside": null,
     "bonusWelfareRate": null
@@ -2634,10 +2634,10 @@
     "driveDocId": "1s9fAp6l7ZTBrwROLKKgDTDpp9CJVlBZ6rRBE4rLOh8I",
     "summary": null,
     "targetPrice": null,
-    "currentPrice": null,
-    "recommendation": null,
-    "upside": null,
-    "bonusWelfareRate": null
+    "currentPrice": 25,
+    "recommendation": "MUA",
+    "upside": 54,
+    "bonusWelfareRate": 10
   },
   {
     "slug": "vlb-16-08-2026",
@@ -2678,11 +2678,11 @@
     "reportDate": "16/08/2026",
     "driveDocId": "1vp25Clt3xTqr5cuWYix9g90Kq5de0CrluBEUq2vWaI4",
     "summary": null,
-    "targetPrice": null,
-    "currentPrice": null,
+    "targetPrice": 8.5,
+    "currentPrice": 6.97,
     "recommendation": null,
-    "upside": null,
-    "bonusWelfareRate": null
+    "upside": 21.951219512195127,
+    "bonusWelfareRate": 0
   },
   {
     "slug": "ttt-16-08-2026",
@@ -2753,11 +2753,11 @@
     "reportDate": "15/08/2026",
     "driveDocId": "1gcqsYbyXU8hoPLU2Xh_iwp3RBdWjjKvMZd-Q9WM0PK0",
     "summary": null,
-    "targetPrice": null,
+    "targetPrice": 37.05,
     "currentPrice": null,
-    "recommendation": null,
-    "upside": null,
-    "bonusWelfareRate": null
+    "recommendation": "MUA",
+    "upside": 30,
+    "bonusWelfareRate": 12.66
   },
   {
     "slug": "nt2-15-08-2026",
@@ -2768,10 +2768,10 @@
     "reportDate": "15/08/2026",
     "driveDocId": "10WFTQq_9A7nNT7GkOrH1ErIATJiYSvUKzdgGK7aPbLM",
     "summary": null,
-    "targetPrice": null,
-    "currentPrice": null,
-    "recommendation": null,
-    "upside": null,
+    "targetPrice": 30.2,
+    "currentPrice": 21.55,
+    "recommendation": "MUA",
+    "upside": 40.1,
     "bonusWelfareRate": null
   },
   {
@@ -2798,10 +2798,10 @@
     "reportDate": "15/08/2026",
     "driveDocId": "1RWlqMsuouzR2p2xGjg1FzlR2RQ1rw2vJc9yWcCebSkk",
     "summary": null,
-    "targetPrice": null,
-    "currentPrice": null,
-    "recommendation": null,
-    "upside": null,
+    "targetPrice": 82.5,
+    "currentPrice": 55,
+    "recommendation": "MUA",
+    "upside": 50,
     "bonusWelfareRate": null
   },
   {
@@ -2829,7 +2829,7 @@
     "driveDocId": "1c-2tEPLm2U70B0FFQHe469bYnPkwF3zygyrpTHxXlVU",
     "summary": null,
     "targetPrice": null,
-    "currentPrice": null,
+    "currentPrice": 40.9,
     "recommendation": null,
     "upside": null,
     "bonusWelfareRate": null
@@ -2874,7 +2874,7 @@
     "driveDocId": "1DHWf8gF0Qdei0GtW-z0qgAmZhnLqCk0STn7azhKPhaI",
     "summary": null,
     "targetPrice": null,
-    "currentPrice": null,
+    "currentPrice": 7,
     "recommendation": null,
     "upside": null,
     "bonusWelfareRate": null
