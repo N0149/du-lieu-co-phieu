@@ -1,6 +1,6 @@
 {
   "status": "success",
-  "generated_at": "2026-10-05T01:23:59.874641",
+  "generated_at": "2026-10-05T01:28:54.927226",
   "kpis": {
     "total_port_authorities": 16,
     "total_calls_30d": 15635,
@@ -758,6 +758,23 @@
       "origin_port": null,
       "dest_port": null,
       "source": "Cảng vụ Hải Phòng"
+    },
+    {
+      "id": 6743,
+      "vessel_name": "HENG HUI",
+      "authority_id": "haiphong",
+      "berth_name": "Tân Vũ",
+      "stock_ticker": "PHP",
+      "call_direction": "out",
+      "call_date": "2026-10-05",
+      "scheduled_time": "2026-10-05 22:30:00",
+      "draft": 5.0,
+      "loa": 126.0,
+      "dwt": 8097,
+      "gt": 5779,
+      "origin_port": "TAN VU",
+      "dest_port": "CHINA",
+      "source": "cvhh_haiphong"
     },
     {
       "id": 6686,
@@ -15598,23 +15615,6 @@
       "gt": 13267,
       "origin_port": "HAI AN",
       "dest_port": "HONG KONG",
-      "source": "cvhh_haiphong"
-    },
-    {
-      "id": 4711,
-      "vessel_name": "SKY IRIS",
-      "authority_id": "haiphong",
-      "berth_name": "Tân Vũ",
-      "stock_ticker": "PHP",
-      "call_direction": "out",
-      "call_date": "2026-09-25",
-      "scheduled_time": "2026-09-25 14:30:00",
-      "draft": 7.1,
-      "loa": 137.6,
-      "dwt": 12312,
-      "gt": 9940,
-      "origin_port": "TAN VU",
-      "dest_port": "CHINA",
       "source": "cvhh_haiphong"
     },
     {
