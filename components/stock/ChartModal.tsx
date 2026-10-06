@@ -1,6 +1,7 @@
 'use client'
 
 import React, { useEffect, useState } from 'react'
+import { createPortal } from 'react-dom'
 import { X, Maximize2, Minimize2 } from 'lucide-react'
 import { cn } from '@/lib/utils'
 
@@ -26,6 +27,11 @@ export function ChartModal({
   children,
 }: ChartModalProps) {
   const [isFullscreen, setIsFullscreen] = useState(false)
+  const [mounted, setMounted] = useState(false)
+
+  useEffect(() => {
+    setMounted(true)
+  }, [])
 
   // Lắng nghe phím Escape để đóng modal
   useEffect(() => {
@@ -48,20 +54,22 @@ export function ChartModal({
     }
   }, [isOpen, onClose])
 
-  if (!isOpen) return null
+  if (!isOpen || !mounted) return null
 
-  return (
+  return createPortal(
     <div
-      className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 p-2 sm:p-4 md:p-6 backdrop-blur-md animate-in fade-in duration-150"
+      className="portal-modal-overlay fixed inset-0 z-[99999] flex items-center justify-center bg-black/80 p-2 sm:p-4 md:p-6 backdrop-blur-md animate-in fade-in duration-150"
+      style={{ zIndex: 999999 }}
       onClick={onClose}
     >
       <div
         className={cn(
-          'relative w-full rounded-2xl border border-border/80 bg-card p-4 sm:p-6 shadow-2xl flex flex-col text-foreground overflow-y-auto transition-all duration-200',
+          'portal-modal-content relative w-full rounded-2xl border border-border/80 bg-card p-4 sm:p-6 shadow-2xl flex flex-col text-foreground overflow-y-auto transition-all duration-200',
           isFullscreen
             ? 'max-w-[98vw] h-[96vh] max-h-[96vh]'
             : 'max-w-6xl xl:max-w-7xl max-h-[92vh]'
         )}
+        style={{ zIndex: 1000000 }}
         onClick={(e) => e.stopPropagation()}
       >
         {/* Modal Header */}
@@ -119,6 +127,7 @@ export function ChartModal({
           </div>
         )}
       </div>
-    </div>
+    </div>,
+    document.body
   )
 }

@@ -1,6 +1,7 @@
 'use client'
 
 import { useState, useEffect, useRef, useMemo, useCallback } from 'react'
+import { createPortal } from 'react-dom'
 import {
   Calendar,
   Sparkles,
@@ -688,6 +689,11 @@ export function ValuationChartsSection({ initialValuation }: ValuationChartsSect
   const [loading, setLoading] = useState<boolean>(false)
 
   const [modalChart, setModalChart] = useState<'PE' | 'PB' | null>(null)
+  const [mounted, setMounted] = useState(false)
+
+  useEffect(() => {
+    setMounted(true)
+  }, [])
 
   useEffect(() => {
     if (initialValuation?.current?.ymd && initialValuation?.points?.length) {
@@ -705,6 +711,15 @@ export function ValuationChartsSection({ initialValuation }: ValuationChartsSect
     window.addEventListener('keydown', handleKeyDown)
     return () => window.removeEventListener('keydown', handleKeyDown)
   }, [])
+
+  useEffect(() => {
+    if (!modalChart) return
+    const prev = document.body.style.overflow
+    document.body.style.overflow = 'hidden'
+    return () => {
+      document.body.style.overflow = prev
+    }
+  }, [modalChart])
 
   const handlePeriodChange = async (newPeriod: string) => {
     setPeriod(newPeriod)
@@ -833,13 +848,15 @@ export function ValuationChartsSection({ initialValuation }: ValuationChartsSect
       </div>
 
       {/* MODAL PHÓNG TO TOÀN MÀN HÌNH (POPUP MODAL) */}
-      {modalChart && (
+      {modalChart && mounted && createPortal(
         <div
-          className="fixed inset-0 z-50 flex items-center justify-center bg-black/85 p-4 backdrop-blur-sm animate-in fade-in duration-150"
+          className="portal-modal-overlay fixed inset-0 z-[99999] flex items-center justify-center bg-black/85 p-4 backdrop-blur-sm animate-in fade-in duration-150"
+          style={{ zIndex: 999999 }}
           onClick={() => setModalChart(null)}
         >
           <div
-            className="relative flex flex-col w-full max-w-5xl rounded-3xl border border-white/20 bg-[#161a23] p-5 sm:p-7 shadow-2xl max-h-[92vh] overflow-y-auto"
+            className="portal-modal-content relative flex flex-col w-full max-w-5xl rounded-3xl border border-white/20 bg-[#161a23] p-5 sm:p-7 shadow-2xl max-h-[92vh] overflow-y-auto"
+            style={{ zIndex: 1000000 }}
             onClick={(e) => e.stopPropagation()}
             id="modal-chart-container"
           >
@@ -905,7 +922,8 @@ export function ValuationChartsSection({ initialValuation }: ValuationChartsSect
               )}
             </div>
           </div>
-        </div>
+        </div>,
+        document.body
       )}
     </div>
   )

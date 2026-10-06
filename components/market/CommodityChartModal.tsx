@@ -1,6 +1,7 @@
 'use client'
 
 import { useState, useEffect, useRef, useMemo } from 'react'
+import { createPortal } from 'react-dom'
 import {
   X,
   Download,
@@ -67,13 +68,24 @@ export function CommodityChartModal({
   const [hoverIndex, setHoverIndex] = useState<number | null>(null)
   const svgRef = useRef<SVGSVGElement | null>(null)
 
-  // Đóng modal khi bấm Escape
+  const [mounted, setMounted] = useState(false)
+
+  useEffect(() => {
+    setMounted(true)
+  }, [])
+
+  // Đóng modal khi bấm Escape và khóa cuộn trang
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
       if (e.key === 'Escape') onClose()
     }
     window.addEventListener('keydown', handleKeyDown)
-    return () => window.removeEventListener('keydown', handleKeyDown)
+    const prevOverflow = document.body.style.overflow
+    document.body.style.overflow = 'hidden'
+    return () => {
+      window.removeEventListener('keydown', handleKeyDown)
+      document.body.style.overflow = prevOverflow
+    }
   }, [onClose])
 
   // Fetch dữ liệu lịch sử
@@ -263,17 +275,19 @@ export function CommodityChartModal({
     img.src = blobURL
   }
 
-  if (!symbol) return null
+  if (!symbol || !mounted) return null
 
   const isUp = (data?.changePercent ?? 0) >= 0
 
-  return (
+  return createPortal(
     <div
-      className="fixed inset-0 z-50 flex items-center justify-center bg-black/85 p-4 backdrop-blur-sm animate-in fade-in duration-150"
+      className="portal-modal-overlay fixed inset-0 z-[99999] flex items-center justify-center bg-black/85 p-4 backdrop-blur-sm animate-in fade-in duration-150"
+      style={{ zIndex: 999999 }}
       onClick={onClose}
     >
       <div
-        className="relative flex flex-col w-full max-w-4xl rounded-3xl border border-white/20 bg-[#161a23] p-5 sm:p-7 shadow-2xl max-h-[92vh] overflow-y-auto"
+        className="portal-modal-content relative flex flex-col w-full max-w-4xl rounded-3xl border border-white/20 bg-[#161a23] p-5 sm:p-7 shadow-2xl max-h-[92vh] overflow-y-auto"
+        style={{ zIndex: 1000000 }}
         onClick={(e) => e.stopPropagation()}
       >
         {/* Header Modal */}
@@ -620,6 +634,7 @@ export function CommodityChartModal({
           )}
         </div>
       </div>
-    </div>
+    </div>,
+    document.body
   )
 }

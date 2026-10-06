@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useMemo, useEffect, Fragment } from "react";
+import { createPortal } from "react-dom";
 import { useSearchParams } from "next/navigation";
 import {
   FileSpreadsheet,
@@ -769,6 +770,11 @@ function FinancialItemChartModal({
 }: FinancialItemChartModalProps) {
   const [rangeCount, setRangeCount] = useState<number>(16);
   const [modalUnit, setModalUnit] = useState<FinancialUnit>(initialUnit);
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
@@ -777,7 +783,12 @@ function FinancialItemChartModal({
       }
     };
     window.addEventListener("keydown", handleKeyDown);
-    return () => window.removeEventListener("keydown", handleKeyDown);
+    const origOverflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    return () => {
+      window.removeEventListener("keydown", handleKeyDown);
+      document.body.style.overflow = origOverflow;
+    };
   }, [onClose]);
 
   const modalUnitDivider =
@@ -839,15 +850,18 @@ function FinancialItemChartModal({
     };
   }, [chartData]);
 
-  return (
+  if (!mounted) return null;
+
+  return createPortal(
     <div
-      className="fixed inset-0 z-50 flex items-center justify-center bg-black/75 p-3 sm:p-5 backdrop-blur-sm animate-in fade-in duration-150"
+      className="portal-modal-overlay fixed inset-0 z-[99999] flex items-center justify-center bg-black/75 p-3 sm:p-5 backdrop-blur-sm animate-in fade-in duration-150"
+      style={{ zIndex: 999999 }}
       onClick={onClose}
     >
       <div
-        className="relative w-full max-w-4xl rounded-2xl border border-slate-700/80 bg-[#121722] p-4 sm:p-6 shadow-2xl animate-in zoom-in-95 duration-150 flex flex-col gap-4 text-foreground max-h-[92vh] overflow-y-auto"
+        className="portal-modal-content relative w-full max-w-4xl rounded-2xl border border-slate-700/80 bg-[#121722] p-4 sm:p-6 shadow-2xl animate-in zoom-in-95 duration-150 flex flex-col gap-4 text-foreground max-h-[92vh] overflow-y-auto"
         onClick={(e) => e.stopPropagation()}
-        style={RUATICHSAN_FONT_STYLE}
+        style={{ ...RUATICHSAN_FONT_STYLE, zIndex: 1000000 }}
       >
         {/* Modal Header */}
         <div className="flex flex-wrap items-start justify-between gap-3 border-b border-slate-800 pb-3.5">
@@ -1030,7 +1044,8 @@ function FinancialItemChartModal({
           </ResponsiveContainer>
         </div>
       </div>
-    </div>
+    </div>,
+    document.body
   );
 }
 

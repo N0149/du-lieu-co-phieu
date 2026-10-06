@@ -10,6 +10,7 @@ import type {
   InsiderTradeItem,
 } from './company-profile-types'
 import { fetchDirectCompanyProfile } from './direct-market-bot'
+import { getInsiderActions } from './insider-actions-service'
 
 let supabaseInstance: SupabaseClient | null = null
 function getSupabase(): SupabaseClient | null {
@@ -61,6 +62,36 @@ async function decryptApiResponse(res: Response): Promise<any> {
 }
 
 const CACHE_DIR = path.join(process.cwd(), 'data', 'shareholder_cache')
+
+function parseAnyDateToVn(dateStr: string | null | undefined): string {
+  if (!dateStr) return ''
+  const match = String(dateStr).match(/\/Date\((\d+)\)\//)
+  if (match) {
+    const d = new Date(parseInt(match[1], 10))
+    const day = String(d.getDate()).padStart(2, '0')
+    const month = String(d.getMonth() + 1).padStart(2, '0')
+    const year = d.getFullYear()
+    return `${day}/${month}/${year}`
+  }
+  let s = String(dateStr)
+  if (s.includes('T')) {
+    s = s.split('T')[0]
+  }
+  if (s.includes('-')) {
+    const parts = s.split('-')
+    if (parts.length === 3) return `${parts[2]}/${parts[1]}/${parts[0]}`
+  }
+  return s
+}
+
+function getTradeTimestamp(dStr: string): number {
+  if (!dStr) return 0
+  const parts = dStr.split('/')
+  if (parts.length === 3) {
+    return new Date(Number(parts[2]), Number(parts[1]) - 1, Number(parts[0])).getTime()
+  }
+  return 0
+}
 
 export function parseShareholderPayload(sym: string, d: any): CompanyFullProfileData {
   // 1. Phân tích cơ cấu cổ đông
@@ -141,36 +172,6 @@ export function parseShareholderPayload(sym: string, d: any): CompanyFullProfile
       note: o.Note || o.TradeCenter || '',
     })
   }
-
-function parseAnyDateToVn(dateStr: string | null | undefined): string {
-  if (!dateStr) return ''
-  const match = String(dateStr).match(/\/Date\((\d+)\)\//)
-  if (match) {
-    const d = new Date(parseInt(match[1], 10))
-    const day = String(d.getDate()).padStart(2, '0')
-    const month = String(d.getMonth() + 1).padStart(2, '0')
-    const year = d.getFullYear()
-    return `${day}/${month}/${year}`
-  }
-  let s = String(dateStr)
-  if (s.includes('T')) {
-    s = s.split('T')[0]
-  }
-  if (s.includes('-')) {
-    const parts = s.split('-')
-    if (parts.length === 3) return `${parts[2]}/${parts[1]}/${parts[0]}`
-  }
-  return s
-}
-
-function getTradeTimestamp(dStr: string): number {
-  if (!dStr) return 0
-  const parts = dStr.split('/')
-  if (parts.length === 3) {
-    return new Date(Number(parts[2]), Number(parts[1]) - 1, Number(parts[0])).getTime()
-  }
-  return 0
-}
 
   // 3. Lịch sử giao dịch nội bộ
   const rawTrades: any[] = d.giao_dich_noi_bo || d.co_cau_so_huu?.giao_dich_noi_bo || d.insiderTrades || []
@@ -291,11 +292,91 @@ function getTradeTimestamp(dStr: string): number {
   }
 }
 
+async function enrichTradesIfSparse(sym: string, profile: CompanyFullProfileData): Promise<CompanyFullProfileData> {
+  if (profile.insiderTrades.length > 25) return profile
+
+  try {
+    const [directProfile, stockbizList] = await Promise.allSettled([
+      fetchDirectCompanyProfile(sym),
+      getInsiderActions({ symbol: sym }),
+    ])
+
+    const extraTrades: InsiderTradeItem[] = []
+
+    if (stockbizList.status === 'fulfilled' && Array.isArray(stockbizList.value)) {
+      for (const s of stockbizList.value) {
+        extraTrades.push({
+          traderName: s.name,
+          traderPosition: s.position,
+          tradeDate: s.date,
+          action: s.actionType === 'SELL' ? 'SELL' : s.actionType === 'BUY' ? 'BUY' : 'NONE',
+          volumeTraded: !s.isRegistration ? s.shares : 0,
+          volumeRegistered: s.isRegistration ? s.shares : 0,
+          volumeAfter: 0,
+        })
+      }
+    }
+
+    if (directProfile.status === 'fulfilled' && directProfile.value?.insiderTrades) {
+      extraTrades.push(...directProfile.value.insiderTrades)
+    }
+
+    if (extraTrades.length > 0) {
+      const merged = [...profile.insiderTrades]
+      const seen = new Set(
+        merged.map(
+          (t) => `${t.traderName.trim()}_${t.action}_${t.volumeTraded}_${t.volumeRegistered}_${t.tradeDate}`
+        )
+      )
+
+      for (const et of extraTrades) {
+        const key = `${et.traderName.trim()}_${et.action}_${et.volumeTraded}_${et.volumeRegistered}_${et.tradeDate}`
+        if (!seen.has(key)) {
+          seen.add(key)
+          merged.push(et)
+        }
+      }
+
+      merged.sort((a, b) => getTradeTimestamp(b.tradeDate) - getTradeTimestamp(a.tradeDate))
+      profile.insiderTrades = merged
+
+      // Cập nhật ngầm lên Supabase để lần sau không cần cào lại
+      const supabase = getSupabase()
+      if (supabase && merged.length > 20) {
+        void (async () => {
+          try {
+            await supabase
+              .from('company_profiles')
+              .update({
+                raw_json: JSON.stringify({
+                  symbol: sym,
+                  ownership: profile.ownership,
+                  subsidiaries: profile.subsidiaries,
+                  giao_dich_noi_bo: merged,
+                }),
+                updated_at: new Date().toISOString(),
+              })
+              .eq('symbol', sym)
+          } catch {}
+        })()
+      }
+    }
+  } catch {}
+
+  return profile
+}
+
 const DB_PROFILE_PATH = path.resolve(process.cwd(), 'data', 'company_profiles.db')
 
 export async function getCompanyFullProfile(symbol: string): Promise<CompanyFullProfileData | null> {
   const sym = symbol.toUpperCase().trim()
   if (!sym) return null
+
+  const now = Date.now()
+  const cachedProfile = PROFILE_MEMORY_CACHE.get(sym)
+  if (cachedProfile && cachedProfile.expiresAt > now) {
+    return cachedProfile.data
+  }
 
   // 1. Đọc trực tiếp từ SQLite company_profiles.db (đã có đủ 1.530 mã, < 0.2ms)
   if (fs.existsSync(DB_PROFILE_PATH)) {
@@ -305,11 +386,18 @@ export async function getCompanyFullProfile(symbol: string): Promise<CompanyFull
         const row = db.prepare('SELECT raw_json FROM company_profiles WHERE symbol = ?').get(sym) as any
         if (row?.raw_json) {
           const parsed = JSON.parse(row.raw_json)
+          let finalData: CompanyFullProfileData | null = null
           if (parsed?.ownership) {
-            return parsed
+            finalData = parsed
+          } else if (parsed?.co_cau_so_huu) {
+            finalData = parseShareholderPayload(sym, parsed)
           }
-          if (parsed?.co_cau_so_huu) {
-            return parseShareholderPayload(sym, parsed)
+          if (finalData) {
+            if (finalData.insiderTrades.length <= 25) {
+              finalData = await enrichTradesIfSparse(sym, finalData)
+            }
+            PROFILE_MEMORY_CACHE.set(sym, { data: finalData, expiresAt: now + PROFILE_CACHE_TTL_MS })
+            return finalData
           }
         }
       } finally {
@@ -323,22 +411,23 @@ export async function getCompanyFullProfile(symbol: string): Promise<CompanyFull
   if (fs.existsSync(cacheFile)) {
     try {
       const cached = JSON.parse(fs.readFileSync(cacheFile, 'utf-8'))
+      let finalData: CompanyFullProfileData | null = null
       if (cached?.ownership) {
-        return cached
+        finalData = cached
+      } else if (cached?.co_cau_so_huu) {
+        finalData = parseShareholderPayload(sym, cached)
       }
-      if (cached?.co_cau_so_huu) {
-        return parseShareholderPayload(sym, cached)
+      if (finalData) {
+        if (finalData.insiderTrades.length <= 25) {
+          finalData = await enrichTradesIfSparse(sym, finalData)
+        }
+        PROFILE_MEMORY_CACHE.set(sym, { data: finalData, expiresAt: now + PROFILE_CACHE_TTL_MS })
+        return finalData
       }
     } catch {}
   }
 
   // 3. Đọc từ Supabase Cloud Database (<25ms, Vercel 24/7 khi tắt máy)
-  const now = Date.now()
-  const cachedProfile = PROFILE_MEMORY_CACHE.get(sym)
-  if (cachedProfile && cachedProfile.expiresAt > now) {
-    return cachedProfile.data
-  }
-
   try {
     const supabase = getSupabase()
     if (supabase) {
@@ -356,6 +445,9 @@ export async function getCompanyFullProfile(symbol: string): Promise<CompanyFull
           finalData = parseShareholderPayload(sym, parsed)
         }
         if (finalData) {
+          if (finalData.insiderTrades.length <= 25) {
+            finalData = await enrichTradesIfSparse(sym, finalData)
+          }
           PROFILE_MEMORY_CACHE.set(sym, { data: finalData, expiresAt: now + PROFILE_CACHE_TTL_MS })
           return finalData
         }
@@ -367,8 +459,9 @@ export async function getCompanyFullProfile(symbol: string): Promise<CompanyFull
   try {
     const directProfile = await fetchDirectCompanyProfile(sym)
     if (directProfile) {
-      PROFILE_MEMORY_CACHE.set(sym, { data: directProfile, expiresAt: now + PROFILE_CACHE_TTL_MS })
-      return directProfile
+      const enriched = await enrichTradesIfSparse(sym, directProfile)
+      PROFILE_MEMORY_CACHE.set(sym, { data: enriched, expiresAt: now + PROFILE_CACHE_TTL_MS })
+      return enriched
     }
   } catch {}
 

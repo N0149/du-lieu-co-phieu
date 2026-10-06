@@ -1,5 +1,7 @@
 'use client'
 
+import { useState, useEffect } from 'react'
+import { createPortal } from 'react-dom'
 import { X, ExternalLink, Calendar, PieChart, ShieldCheck } from 'lucide-react'
 import Link from 'next/link'
 import { Fund } from '@/lib/funds-data'
@@ -11,7 +13,22 @@ interface FundDetailModalProps {
 }
 
 export function FundDetailModal({ fund, onClose }: FundDetailModalProps) {
-  if (!fund) return null
+  const [mounted, setMounted] = useState(false)
+
+  useEffect(() => {
+    setMounted(true)
+  }, [])
+
+  useEffect(() => {
+    if (!fund) return
+    const prev = document.body.style.overflow
+    document.body.style.overflow = 'hidden'
+    return () => {
+      document.body.style.overflow = prev
+    }
+  }, [fund])
+
+  if (!fund || !mounted) return null
 
   const getCategoryLabel = (category: string) => {
     switch (category) {
@@ -26,10 +43,14 @@ export function FundDetailModal({ fund, onClose }: FundDetailModalProps) {
     }
   }
 
-  return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 p-4 backdrop-blur-sm animate-in fade-in duration-200">
+  return createPortal(
+    <div
+      className="portal-modal-overlay fixed inset-0 z-[99999] flex items-center justify-center bg-black/70 p-4 backdrop-blur-sm animate-in fade-in duration-200"
+      style={{ zIndex: 999999 }}
+    >
       <div
-        className="relative flex max-h-[90vh] w-full max-w-2xl flex-col rounded-2xl border border-white/10 bg-[#161922] shadow-2xl overflow-hidden text-[#D0D7DE]"
+        className="portal-modal-content relative flex max-h-[90vh] w-full max-w-2xl flex-col rounded-2xl border border-white/10 bg-[#161922] shadow-2xl overflow-hidden text-[#D0D7DE]"
+        style={{ zIndex: 1000000 }}
         onClick={(e) => e.stopPropagation()}
       >
         {/* Header modal */}
@@ -216,6 +237,7 @@ export function FundDetailModal({ fund, onClose }: FundDetailModalProps) {
           </button>
         </div>
       </div>
-    </div>
+    </div>,
+    document.body
   )
 }

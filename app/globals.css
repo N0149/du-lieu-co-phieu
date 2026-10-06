@@ -366,3 +366,16 @@
   max-width: none !important;
 }
 
+/* ── Universal Fullscreen Modal Overlay (Đảm bảo luôn đè trên mọi sticky header/table) ── */
+.portal-modal-overlay {
+  position: fixed !important;
+  inset: 0 !important;
+  z-index: 999999 !important;
+}
+
+.portal-modal-content {
+  position: relative !important;
+  z-index: 1000000 !important;
+}
+
+

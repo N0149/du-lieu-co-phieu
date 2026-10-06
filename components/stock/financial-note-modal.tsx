@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { createPortal } from "react-dom";
 import {
   X,
   FileSpreadsheet,
@@ -43,6 +44,11 @@ export function FinancialNoteModal({
   onNavigateToFullReport,
 }: FinancialNoteModalProps) {
   const [selectedType, setSelectedType] = useState<"HopNhat" | "CongTyMe">(initialReportType);
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   // Đồng bộ loại báo cáo khởi tạo khi mở modal
   useEffect(() => {
@@ -70,13 +76,16 @@ export function FinancialNoteModal({
     };
   }, [isOpen, onClose]);
 
-  if (!isOpen) return null;
+  if (!isOpen || !mounted) return null;
 
   const currentNote = selectedType === "HopNhat" ? noteHopNhat : noteCongTyMe;
   const otherNote = selectedType === "HopNhat" ? noteCongTyMe : noteHopNhat;
 
-  return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4 md:p-6 bg-black/80 backdrop-blur-xs animate-in fade-in-0 duration-200">
+  return createPortal(
+    <div
+      className="portal-modal-overlay fixed inset-0 z-[99999] flex items-center justify-center p-3 sm:p-4 md:p-6 bg-black/80 backdrop-blur-xs animate-in fade-in-0 duration-200"
+      style={{ zIndex: 999999 }}
+    >
       {/* Click ngoài để đóng */}
       <div className="fixed inset-0" onClick={onClose} aria-hidden="true" />
 
@@ -84,7 +93,8 @@ export function FinancialNoteModal({
       <div
         role="dialog"
         aria-modal="true"
-        className="relative z-10 flex flex-col w-full max-w-4xl max-h-[90vh] rounded-2xl border border-border/90 bg-card shadow-2xl overflow-hidden animate-in zoom-in-95 duration-200"
+        className="portal-modal-content relative z-10 flex flex-col w-full max-w-4xl max-h-[90vh] rounded-2xl border border-border/90 bg-card shadow-2xl overflow-hidden animate-in zoom-in-95 duration-200"
+        style={{ zIndex: 1000000 }}
       >
         {/* ── HEADER ── */}
         <div className="flex flex-col gap-3 p-4 sm:p-5 border-b border-border bg-muted/40 shrink-0">
@@ -232,6 +242,7 @@ export function FinancialNoteModal({
           </div>
         </div>
       </div>
-    </div>
+    </div>,
+    document.body
   );
 }
