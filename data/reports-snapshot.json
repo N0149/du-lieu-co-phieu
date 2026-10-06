@@ -1,5 +1,20 @@
 [
   {
+    "slug": "agm-05-10-2026",
+    "ticker": "AGM",
+    "title": "ket_qua_trich_xuat_AGM",
+    "category": "Phân Tích",
+    "date": "05/10/2026",
+    "reportDate": "05/10/2026",
+    "driveDocId": "1QuxZm4GH236jvypG4KJLWwpYrtkFhVtP",
+    "summary": null,
+    "targetPrice": null,
+    "currentPrice": null,
+    "recommendation": null,
+    "upside": null,
+    "bonusWelfareRate": null
+  },
+  {
     "slug": "hub-04-10-2026",
     "ticker": "HUB",
     "title": "_RNAV_BangTinh_ChuyenNghiep.xlsx",

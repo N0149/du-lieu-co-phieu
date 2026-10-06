@@ -1,0 +1,27 @@
+{
+  "symbol": "ALC",
+  "score360": {
+    "total": 8.9,
+    "ratingText": "RẤT TỐT",
+    "peVsMedian": -11.41,
+    "pbVsMedian": -12.5,
+    "psVsMedian": -29.11,
+    "peForward": 8.43,
+    "peForwardVsMedian": 19.49,
+    "pbForward": 0.69,
+    "pbForwardVsMedian": -13.75
+  },
+  "price": 21500,
+  "metrics": {
+    "marketCap": 1214000000000,
+    "pe": 6.25,
+    "eps": 3442,
+    "volume10d": 50000,
+    "pb": 0.7,
+    "ps": 1.12,
+    "bvps": 30716,
+    "sharesOut": 56470620,
+    "evEbitda": null,
+    "beta": 0.8
+  }
+}

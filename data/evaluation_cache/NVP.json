@@ -1,0 +1,30 @@
+{
+  "symbol": "NVP",
+  "score360": {
+    "total": 8.8,
+    "ratingText": "XUẤT SẮC",
+    "peVsMedian": -5.823419999999999,
+    "pbVsMedian": -4.458418108,
+    "psVsMedian": -5,
+    "peForward": 8,
+    "peForwardVsMedian": -15,
+    "pbForward": 0.87,
+    "pbForwardVsMedian": -10
+  },
+  "price": null,
+  "metrics": {
+    "marketCap": 138134000000,
+    "pe": 9.08829,
+    "eps": 1386.3998078081,
+    "volume10d": 354,
+    "pb": 0.9426977365,
+    "ps": null,
+    "bvps": null,
+    "sharesOut": 10963000,
+    "evEbitda": 3.53308,
+    "beta": 1.58803,
+    "auditor": "VACO",
+    "isBig4": false,
+    "bookValue": 13365.8960996078
+  }
+}
