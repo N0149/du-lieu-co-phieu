@@ -45,6 +45,36 @@
     "bonusWelfareRate": null
   },
   {
+    "slug": "mwg-07-10-2026",
+    "ticker": "MWG",
+    "title": "MWG_ThuyetMinh_CongTyMe.md",
+    "category": "Phân Tích",
+    "date": "07/10/2026",
+    "reportDate": "07/10/2026",
+    "driveDocId": "18BJOPKieFEff4MH7yLIqGLv-0c80VjDk",
+    "summary": null,
+    "targetPrice": null,
+    "currentPrice": null,
+    "recommendation": null,
+    "upside": null,
+    "bonusWelfareRate": null
+  },
+  {
+    "slug": "mwg-07-10-2026",
+    "ticker": "MWG",
+    "title": "MWG_ThuyetMinh_HopNhat.md",
+    "category": "Phân Tích",
+    "date": "07/10/2026",
+    "reportDate": "07/10/2026",
+    "driveDocId": "17010klF1nNvpc3Fm74Zf6XPJy01e-0I6",
+    "summary": null,
+    "targetPrice": null,
+    "currentPrice": null,
+    "recommendation": null,
+    "upside": null,
+    "bonusWelfareRate": null
+  },
+  {
     "slug": "hub-04-10-2026",
     "ticker": "HUB",
     "title": "_RNAV_BangTinh_ChuyenNghiep.xlsx",
@@ -131,6 +161,21 @@
     "targetPrice": 33.5,
     "currentPrice": null,
     "recommendation": "THEO DÕI",
+    "upside": null,
+    "bonusWelfareRate": null
+  },
+  {
+    "slug": "mwg-07-10-2026",
+    "ticker": "MWG",
+    "title": "MWG_ChiTiet_AGM_2026.md",
+    "category": "Phân Tích",
+    "date": "07/10/2026",
+    "reportDate": "07/10/2026",
+    "driveDocId": "1vWWf2rFP7c-1flWj-ansNHWsAi45ljvR",
+    "summary": null,
+    "targetPrice": null,
+    "currentPrice": null,
+    "recommendation": null,
     "upside": null,
     "bonusWelfareRate": null
   },
