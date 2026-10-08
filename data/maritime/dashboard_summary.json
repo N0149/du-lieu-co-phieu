@@ -1,6 +1,6 @@
 {
   "status": "success",
-  "generated_at": "2026-10-08T02:22:23.806449",
+  "generated_at": "2026-10-08T02:24:07.128168",
   "kpis": {
     "total_port_authorities": 16,
     "total_calls_30d": 15635,
@@ -2202,6 +2202,23 @@
       "gt": 21265,
       "origin_port": "NAM HAI DINH VU",
       "dest_port": "RUSSIAN FEDERATION",
+      "source": "cvhh_haiphong"
+    },
+    {
+      "id": 7554,
+      "vessel_name": "VIET THANG 126",
+      "authority_id": "haiphong",
+      "berth_name": "Khu neo Vật Cách",
+      "stock_ticker": null,
+      "call_direction": "out",
+      "call_date": "2026-10-08",
+      "scheduled_time": "2026-10-08 10:00:00",
+      "draft": 2.9,
+      "loa": 78.6,
+      "dwt": 3234,
+      "gt": 1599,
+      "origin_port": "Khu neo Vật Cách",
+      "dest_port": "NINH BINH",
       "source": "cvhh_haiphong"
     },
     {
@@ -9053,23 +9070,6 @@
       "gt": 17542,
       "origin_port": "DOAN XA",
       "dest_port": "HON GAI",
-      "source": "cvhh_haiphong"
-    },
-    {
-      "id": 6861,
-      "vessel_name": "HEUNG-A SARAH",
-      "authority_id": "haiphong",
-      "berth_name": "GREEN PORT",
-      "stock_ticker": null,
-      "call_direction": "out",
-      "call_date": "2026-10-06",
-      "scheduled_time": "2026-10-06 16:00:00",
-      "draft": 7.9,
-      "loa": 141.0,
-      "dwt": 11820,
-      "gt": 9599,
-      "origin_port": "GREEN PORT",
-      "dest_port": "CHINA",
       "source": "cvhh_haiphong"
     },
     {
