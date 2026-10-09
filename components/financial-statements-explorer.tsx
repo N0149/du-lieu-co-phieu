@@ -54,16 +54,6 @@ interface FinancialStatementsExplorerProps {
   onSelectTab?: (tab: any) => void;
 }
 
-function getQuarterFromIso(isoDate: string): string {
-  if (!isoDate) return "";
-  const parts = isoDate.split("-");
-  if (parts.length < 2) return "";
-  const month = parseInt(parts[1], 10);
-  if (month >= 1 && month <= 3) return "Q1";
-  if (month >= 4 && month <= 6) return "Q2";
-  if (month >= 7 && month <= 9) return "Q3";
-  return "Q4";
-}
 
 function formatPeriodLabel(isoDate: string, mode: "quarter" | "annual"): string {
   if (!isoDate) return "";
@@ -1187,13 +1177,6 @@ export function FinancialStatementsExplorer({
     return allFiscalDates.slice(startIndex, endIndex);
   }, [allFiscalDates, startIndex, endIndex]);
 
-  // Xác định quý đang được hover (ví dụ "Q2" để tô sáng toàn bộ Q2.2024, Q2.2025, Q2.2026)
-  const hoveredQuarter = useMemo(() => {
-    if (periodMode !== "quarter" || hoveredColIdx == null || !selectedDates[hoveredColIdx]) {
-      return null;
-    }
-    return getQuarterFromIso(selectedDates[hoveredColIdx]);
-  }, [periodMode, hoveredColIdx, selectedDates]);
 
   const canGoBack = startIndex > 0;
   const canGoForward = currentOffset > 0;
@@ -1627,23 +1610,17 @@ export function FinancialStatementsExplorer({
                   {/* Cột 3..N: Các quý */}
                   {selectedDates.map((dateStr, idx) => {
                     const isLatest = idx === selectedDates.length - 1 && currentOffset === 0;
-                    const colQuarter = periodMode === "quarter" ? getQuarterFromIso(dateStr) : null;
                     const isDirectHover = hoveredColIdx === idx;
-                    const isSameQuarterHover = hoveredQuarter != null && colQuarter === hoveredQuarter;
 
                     const thHighlightStyle: React.CSSProperties = {
                       ...RUATICHSAN_FONT_STYLE,
                       backgroundColor: isDirectHover
                         ? "rgba(14, 165, 233, 0.32)"
-                        : isSameQuarterHover
-                        ? "rgba(14, 165, 233, 0.18)"
                         : isLatest
                         ? "rgba(14, 165, 233, 0.08)"
                         : undefined,
                       borderBottom: isDirectHover
                         ? "2.5px solid rgb(56, 189, 248)"
-                        : isSameQuarterHover
-                        ? "2px solid rgba(56, 189, 248, 0.75)"
                         : isLatest
                         ? "2px solid rgba(56, 189, 248, 0.5)"
                         : undefined,
@@ -1656,11 +1633,11 @@ export function FinancialStatementsExplorer({
                         style={thHighlightStyle}
                         className={cn(
                           "w-[92px] sm:w-[100px] min-w-[85px] max-w-[110px] px-2.5 sm:px-3 py-2 text-right whitespace-nowrap text-xs sm:text-[13px] font-bold cursor-pointer transition-colors select-none tracking-tight",
-                          (isDirectHover || isSameQuarterHover || isLatest)
+                          (isDirectHover || isLatest)
                             ? "text-sky-200 font-bold"
                             : "text-slate-200 hover:text-white"
                         )}
-                        title={`Xem so sánh cùng kỳ ${formatPeriodLabel(dateStr, periodMode)}`}
+                        title={formatPeriodLabel(dateStr, periodMode)}
                       >
                         {formatPeriodLabel(dateStr, periodMode)}
                       </th>
@@ -1870,22 +1847,16 @@ export function FinancialStatementsExplorer({
                           const formatted = fmtValue(val, unitDivider);
                           const isLatest = isLatestColumn(cIdx);
                           const colDate = selectedDates[cIdx];
-                          const colQuarter = periodMode === "quarter" ? getQuarterFromIso(colDate) : null;
                           const isDirectHover = hoveredColIdx === cIdx;
-                          const isSameQuarterHover = hoveredQuarter != null && colQuarter === hoveredQuarter;
 
                           const cellStyle: React.CSSProperties = {
                             backgroundColor: isDirectHover
                               ? "rgba(14, 165, 233, 0.28)"
-                              : isSameQuarterHover
-                              ? "rgba(14, 165, 233, 0.15)"
                               : isLatest
                               ? "rgba(14, 165, 233, 0.04)"
                               : undefined,
                             boxShadow: isDirectHover
                               ? "inset 1px 0 0 rgba(56, 189, 248, 0.35), inset -1px 0 0 rgba(56, 189, 248, 0.35)"
-                              : isSameQuarterHover
-                              ? "inset 1px 0 0 rgba(56, 189, 248, 0.18), inset -1px 0 0 rgba(56, 189, 248, 0.18)"
                               : undefined,
                           };
 
@@ -1934,7 +1905,7 @@ export function FinancialStatementsExplorer({
                                 <span
                                   className={cn(
                                     isMajor || isSub ? "font-bold text-white" : "font-semibold text-slate-100",
-                                    (isDirectHover || isSameQuarterHover) && "text-sky-200 font-bold",
+                                    isDirectHover && "text-sky-200 font-bold",
                                     isClickableNote && "group-hover/num:underline underline-offset-2"
                                   )}
                                 >

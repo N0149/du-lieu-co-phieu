@@ -1,5 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server'
-import snapshot from '@/data/customs_trade_snapshot.json'
+import fs from 'fs'
+import path from 'path'
+import zlib from 'zlib'
 import { getClientIp, checkInMemoryRateLimit } from '@/lib/security'
 
 export const dynamic = 'force-dynamic'
@@ -32,61 +34,80 @@ export type CustomsTradeRow = {
   period_type: 'KY_1' | 'KY_2' | 'THANG' | 'QUY'
   period_date: string // ISO YYYY-MM-DD (ngày đầu kỳ)
   trade_type: 'EXPORT' | 'IMPORT'
-  status: 'SO_BO' | 'CHINH_THUC'
-  dim_kind: 'commodity' | 'country' | 'matrix' | 'province' | 'transport'
+  status?: 'SO_BO' | 'CHINH_THUC'
+  dim_kind?: 'commodity' | 'country' | 'matrix' | 'province' | 'transport'
   name: string
   unit: string | null
   quantity: number | null // Lượng kỳ báo cáo
   value_usd: number | null // Trị giá kỳ báo cáo (USD)
-  quantity_acc: number | null // Lượng lũy kế
-  value_acc: number | null // Trị giá lũy kế (USD)
-  code: string | null
-  category: string | null
-  iso_code: string | null
-  continent: string | null
-  dataset_category: 'main' | 'fdi' | 'matrix' | 'province' | 'transport'
+  quantity_acc?: number | null // Lượng lũy kế
+  value_acc?: number | null // Trị giá lũy kế (USD)
+  code?: string | null
+  category?: string | null
+  iso_code?: string | null
+  continent?: string | null
+  dataset_category?: 'main' | 'fdi' | 'matrix' | 'province' | 'transport'
 }
 
-import fs from 'fs'
-import path from 'path'
-import zlib from 'zlib'
+interface PrecomputedCache {
+  raw: string
+  gzip: Buffer
+  etag: string
+  mtime: number
+}
 
-// Chuẩn bị sẵn buffer nén gzip để trả về ngay tức thì (<1ms), giảm kích thước từ 13MB xuống còn 1.26MB
-let cachedRawJson: string | null = null
-let cachedGzipBuffer: Buffer | null = null
-let cachedMtime: number = 0
+const COMMODITY_PATH = path.join(process.cwd(), 'data', 'customs_commodity_snapshot.json')
+const FULL_PATH = path.join(process.cwd(), 'data', 'customs_trade_snapshot.json')
+const MATRIX_PATH = path.join(process.cwd(), 'data', 'customs_matrix_detail.json')
 
-function getPrecomputedPayload(): { raw: string; gzip: Buffer } {
-  try {
-    const filePath = path.join(process.cwd(), 'data', 'customs_trade_snapshot.json')
-    const stats = fs.statSync(filePath)
-    if (!cachedRawJson || !cachedGzipBuffer || stats.mtimeMs > cachedMtime) {
-      cachedMtime = stats.mtimeMs
-      cachedRawJson = fs.readFileSync(filePath, 'utf-8')
-      cachedGzipBuffer = zlib.gzipSync(Buffer.from(cachedRawJson), { level: 6 })
-    }
-  } catch {
-    if (!cachedRawJson || !cachedGzipBuffer) {
-      cachedRawJson = JSON.stringify(snapshot)
-      cachedGzipBuffer = zlib.gzipSync(Buffer.from(cachedRawJson), { level: 6 })
-    }
+let cachedCommodity: PrecomputedCache | null = null
+let cachedFull: PrecomputedCache | null = null
+
+function getPrecomputedPayload(type: 'commodity' | 'full' = 'commodity'): PrecomputedCache {
+  let fileName = type === 'full' ? 'customs_trade_snapshot.json' : 'customs_commodity_snapshot.json'
+  let filePath = path.join(process.cwd(), 'data', fileName)
+
+  // Fallback nếu file commodity chưa được build thì dùng file trade snapshot
+  if (!fs.existsSync(filePath)) {
+    fileName = 'customs_trade_snapshot.json'
+    filePath = path.join(process.cwd(), 'data', fileName)
   }
-  return {
-    raw: cachedRawJson ?? JSON.stringify(snapshot),
-    gzip: cachedGzipBuffer ?? zlib.gzipSync(Buffer.from(JSON.stringify(snapshot)), { level: 6 }),
+
+  const stats = fs.statSync(filePath)
+  const cacheRef = type === 'full' ? cachedFull : cachedCommodity
+
+  if (!cacheRef || stats.mtimeMs > cacheRef.mtime) {
+    const raw = fs.readFileSync(filePath, 'utf-8')
+    const gzip = zlib.gzipSync(Buffer.from(raw), { level: 6 })
+    const etag = `W/"${stats.size}-${Math.round(stats.mtimeMs)}"`
+    const item: PrecomputedCache = {
+      raw,
+      gzip,
+      etag,
+      mtime: stats.mtimeMs,
+    }
+    if (type === 'full') {
+      cachedFull = item
+    } else {
+      cachedCommodity = item
+    }
+    return item
   }
+
+  return cacheRef
 }
 
 /**
  * API phục vụ snapshot thống kê XNK (xuất từ scripts/customs_etl).
- * Snapshot được tạo bằng: `python scripts/customs_etl/main.py --export-json`
- * → ghi `data/customs_trade_snapshot.json`, rồi commit + push để Vercel cập nhật.
+ * - Mặc định: Phục vụ customs_commodity_snapshot.json (chỉ 495KB gzip, tải siêu nhanh <50ms)
+ * - Tham số full=1: Phục vụ toàn bộ customs_trade_snapshot.json (bao gồm số liệu tỉnh/thành, phương thức vận tải)
+ * - Tích hợp HTTP ETag (304 Not Modified) và Cache-Control (30 phút trong trình duyệt)
  */
 export async function GET(req: NextRequest) {
   const ip = getClientIp(req.headers)
   const limiter = checkInMemoryRateLimit(`rl:trade:${ip}`, {
     windowMs: 60_000,
-    max: 40,
+    max: 100,
   })
 
   if (!limiter.success) {
@@ -97,21 +118,35 @@ export async function GET(req: NextRequest) {
   }
 
   const includeMatrix = req.nextUrl.searchParams.get('include_matrix') === '1'
+  const isFull = req.nextUrl.searchParams.get('full') === '1'
+
+  // Trình duyệt cache 30 phút, stale-while-revalidate 1 ngày
+  const cacheControlHeader = 'public, max-age=1800, stale-while-revalidate=86400'
+
   if (!includeMatrix) {
+    const { raw, gzip, etag } = getPrecomputedPayload(isFull ? 'full' : 'commodity')
+
+    // Conditional request: Nếu trình duyệt đã có version này, trả 304 ngay lập tức (0 bytes transferred)
+    const ifNoneMatch = req.headers.get('if-none-match')
+    if (ifNoneMatch && ifNoneMatch === etag) {
+      return new NextResponse(null, {
+        status: 304,
+        headers: {
+          ETag: etag,
+          'Cache-Control': cacheControlHeader,
+          'X-Robots-Tag': 'noindex',
+        },
+      })
+    }
+
     const acceptsGzip = req.headers.get('accept-encoding')?.includes('gzip')
-    const { raw, gzip } = getPrecomputedPayload()
-
-    const cacheControlHeader =
-      process.env.NODE_ENV === 'development'
-        ? 'no-cache, no-store, must-revalidate'
-        : 'public, s-maxage=300, stale-while-revalidate=1800'
-
     if (acceptsGzip) {
       return new NextResponse(gzip as unknown as BodyInit, {
         status: 200,
         headers: {
           'Content-Type': 'application/json; charset=utf-8',
           'Content-Encoding': 'gzip',
+          ETag: etag,
           'Cache-Control': cacheControlHeader,
           'X-Robots-Tag': 'noindex',
         },
@@ -122,25 +157,32 @@ export async function GET(req: NextRequest) {
       status: 200,
       headers: {
         'Content-Type': 'application/json; charset=utf-8',
+        ETag: etag,
         'Cache-Control': cacheControlHeader,
         'X-Robots-Tag': 'noindex',
       },
     })
   }
 
-  let payload = snapshot as unknown as CustomsTradeSnapshot
+  // Chế độ include_matrix: load payload và ghép matrix_rows
   try {
-    const matrixFile = require('@/data/customs_matrix_detail.json')
-    payload = { ...payload, matrix_rows: matrixFile.matrix_rows }
+    const { raw } = getPrecomputedPayload('full')
+    let payload = JSON.parse(raw) as CustomsTradeSnapshot
+    if (fs.existsSync(MATRIX_PATH)) {
+      const matrixRaw = fs.readFileSync(MATRIX_PATH, 'utf-8')
+      const matrixData = JSON.parse(matrixRaw)
+      payload = { ...payload, matrix_rows: matrixData.matrix_rows }
+    }
+    return NextResponse.json(payload, {
+      headers: {
+        'Cache-Control': 'public, max-age=3600, stale-while-revalidate=86400',
+        'X-Robots-Tag': 'noindex',
+      },
+    })
   } catch {
-    // Giữ nguyên payload snapshot chính
+    return NextResponse.json(
+      { error: 'Không thể tải dữ liệu ma trận chi tiết.' },
+      { status: 500 }
+    )
   }
-
-  return NextResponse.json(payload, {
-    headers: {
-      'Cache-Control': 'public, s-maxage=3600, stale-while-revalidate=86400',
-      'X-Robots-Tag': 'noindex',
-    },
-  })
 }
-

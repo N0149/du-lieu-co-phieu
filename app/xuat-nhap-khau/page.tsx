@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import { SiteHeader } from '@/components/site-header'
 import { CustomsTradeViewer } from '@/components/customs-trade-viewer'
 import type { TradeBalancePoint } from '@/components/TradeBalanceChart'
-import snapshot from '@/data/customs_trade_snapshot.json'
+import tradeBalance from '@/data/customs_trade_balance.json'
 
 export const metadata: Metadata = {
   title: 'Thống Kê Xuất Nhập Khẩu - Phân Tích Chuyên Sâu Cổ Phiếu',
@@ -18,10 +18,7 @@ export default async function XuatNhapKhauPage({
   const params = await searchParams
   const defaultViewMode = params?.ticker || params?.tab === 'tier-a' ? 'tier_a' : 'matrix'
   const initialTicker = params?.ticker ?? null
-  const rawData = snapshot as unknown as {
-    trade_balance?: TradeBalancePoint[]
-  }
-  const tradeBalance = rawData.trade_balance ?? []
+  const tradeBalanceData = (tradeBalance ?? []) as TradeBalancePoint[]
 
   return (
     <div className="min-h-screen">
@@ -44,7 +41,7 @@ export default async function XuatNhapKhauPage({
         </div>
 
         <CustomsTradeViewer
-          tradeBalanceData={tradeBalance}
+          tradeBalanceData={tradeBalanceData}
           defaultViewMode={defaultViewMode}
           initialTicker={initialTicker}
         />

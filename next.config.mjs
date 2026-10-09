@@ -60,6 +60,18 @@ const nextConfig = {
       './data/industry_reports_snapshot.json',
       './data/widata_archive/reports/**/*',
     ],
+    '/api/customs-trade': [
+      './data/customs_*.json',
+    ],
+    '/api/news/china': [
+      './data/china_news_snapshot.json',
+    ],
+    '/thuy-san': [
+      './data/thuy_san_*.json',
+    ],
+    '/xuat-nhap-khau': [
+      './data/customs_*.json',
+    ],
   },
   outputFileTracingExcludes: {
     '*': [

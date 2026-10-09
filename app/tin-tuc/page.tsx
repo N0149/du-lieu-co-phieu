@@ -5,6 +5,7 @@ import { getCachedNews, fetchAllRssFeeds } from '@/lib/rss-news-service'
 import { getRecentMarketDisclosures } from '@/lib/disclosures'
 import { getUserWatchlist } from '@/lib/watchlist-service'
 import { getInsiderActions } from '@/lib/insider-actions-service'
+import { getCachedChinaNews } from '@/lib/china-news-service'
 import manifestRaw from '@/data/longlive_manifest.json'
 
 export const dynamic = 'force-dynamic'
@@ -66,6 +67,8 @@ export default async function NewsPage(props: NewsPageProps) {
   let defaultTab: any = 'cong-bo'
   if (rawTab === 'giao-dich-noi-bo' || rawTab === 'insider' || rawTab === 'noi-bo') {
     defaultTab = 'giao-dich-noi-bo'
+  } else if (rawTab === 'china' || rawTab === 'trung-quoc') {
+    defaultTab = 'china'
   }
 
   const [initialNews, userWatchlistResult, initialInsiderActions] = await Promise.all([
@@ -76,6 +79,7 @@ export default async function NewsPage(props: NewsPageProps) {
   const initialDisclosures = getRecentMarketDisclosures({ limit: 200 })
   const initialWatchlist = userWatchlistResult.items.map((it) => it.ticker)
   const stockPriceMap = getStockPriceMap()
+  const chinaSnapshot = getCachedChinaNews()
 
   // Calculate trending tickers
   const tickerCounts: Record<string, number> = {}
@@ -102,6 +106,8 @@ export default async function NewsPage(props: NewsPageProps) {
           initialNews={initialNews}
           initialDisclosures={initialDisclosures}
           initialInsiderActions={initialInsiderActions}
+          initialChinaNews={chinaSnapshot.items}
+          chinaNewsDateStr={chinaSnapshot.dateStr}
           initialTrending={initialTrending}
           stockPriceMap={stockPriceMap}
           defaultTab={defaultTab}

@@ -97,6 +97,25 @@ export function CustomsTradeViewer({
     }
   }, [rows])
 
+  // Lazy-load snapshot đầy đủ (1.26MB) khi người dùng chủ động chọn danh mục Tỉnh/Thành hoặc Vận tải ở tab Danh sách
+  useEffect(() => {
+    if ((category === 'province' || category === 'transport') && rows) {
+      const hasCategory = rows.some((r) => r.dataset_category === category)
+      if (!hasCategory) {
+        fetch('/api/customs-trade?full=1')
+          .then((res) => (res.ok ? res.json() : null))
+          .then((data: { rows?: CustomsTradeRow[] } | CustomsTradeRow[] | null) => {
+            const list = Array.isArray(data) ? data : data?.rows ?? []
+            if (list.length > 0) {
+              cachedCustomsRows = list
+              setRows(list)
+            }
+          })
+          .catch(() => {})
+      }
+    }
+  }, [category, rows])
+
 
   const periodOptions = useMemo(() => {
     if (!rows) return [] as string[]

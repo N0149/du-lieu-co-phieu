@@ -57,13 +57,18 @@ export interface RawMaterialWeeklyPrice {
 
 export interface VasepMarketData {
   sector: 'Cá tra' | 'Tôm' | 'Cá ngừ' | 'Surimi & Chả cá' | 'Nhuyễn thể 2 vỏ' | 'Bột cá';
-  total8mUSD: number; // Triệu USD
+  total8mUSD: number; // Triệu USD (tương thích)
   growth8mYoY: number; // %
   augustUSD: number; // Triệu USD
   augustGrowthYoY: number; // %
+  total9mUSD: number; // Triệu USD (Lũy kế 9 tháng 2026)
+  growth9mYoY: number; // %
+  septemberUSD: number; // Triệu USD (Tháng 9/2026)
+  septemberGrowthYoY: number; // %
   topMarkets: {
     country: string;
-    val8mUSD: number;
+    val8mUSD: number; // Tương thích
+    val9mUSD?: number; // Triệu USD (9 tháng 2026)
     growthYoY: number;
     sharePercent: number;
   }[];
@@ -108,11 +113,11 @@ export const SEAFOOD_STOCKS: SeafoodStockIntel[] = [
       profitGrowthYoY: 14.2,
       drivers: [
         'Mảng Collagen & Gelatin tiếp tục mở rộng công suất, biên lợi nhuận gộp duy trì đỉnh >35%',
-        'Xuất khẩu cá tra sang EU và thị trường nội địa tăng trưởng 2 chữ số bù đắp cho thị trường Mỹ',
+        'Xuất khẩu cá tra toàn ngành tháng 9 tăng vọt +18.6% YoY đạt 214 triệu USD; VHC đoạt giải Nhất Seafood Excellence Asia 2026 cho sản phẩm giá trị gia tăng',
         'Thuế chống bán phá giá POR20 sơ bộ duy trì 0 USD/kg giúp vị thế độc tôn tại Mỹ được giữ nguyên',
       ],
       headwinds: ['Thị trường Mỹ phục hồi chậm hơn kỳ vọng; áp lực cước container lạnh đi Bờ Đông nước Mỹ'],
-      vasepSignal: 'VASEP ghi nhận xuất khẩu sang EU tăng trưởng tích cực nhờ giá cá tuyết cạnh tranh tăng phi mã, giúp VHC đẩy mạnh giá bán trung bình FOB.',
+      vasepSignal: 'Dữ liệu VASEP tháng 9/2026 chỉ rõ xuất khẩu cá tra bứt phá +18.6% YoY đạt 214 triệu USD; VHC đoạt giải Seafood Excellence Asia khẳng định giá trị gia tăng vượt trội.',
     },
   },
   {
@@ -337,17 +342,17 @@ export const SEAFOOD_STOCKS: SeafoodStockIntel[] = [
     q3Forecast: {
       rating: 'TĂNG TRƯỞNG MẠNH',
       ratingBadgeColor: 'emerald',
-      revenueEst: 2350,
+      revenueEst: 2370,
       profitEst: 118.0,
       revenueGrowthYoY: 31.0,
       profitGrowthYoY: 28.5,
       drivers: [
-        'Doanh số tháng 8/2026 của Sao Ta đã được VASEP ghi nhận tăng trưởng vượt bậc +32% YoY',
-        'Vùng nuôi tôm mới Vĩnh Thuận đưa vào thu hoạch rộ trong Quý 3, giúp tăng mạnh tỷ lệ tự chủ nguyên liệu tươi chất lượng cao',
-        'Thị trường Nhật Bản bước vào mùa nhập hàng phục vụ năm mới, đơn hàng chế biến sâu của FMC kín lịch sản xuất',
+        'Doanh số Q3 thực tế vừa công bố đạt 91,15 triệu USD (~2.370 tỷ VNĐ) bám sát dự báo; tháng 9 đạt 23,28 triệu USD',
+        'Vụ nuôi tôm chính trong Q3 thu hoạch đạt sản lượng lớn, FMC chính thức thông báo đã hoàn thành kế hoạch lợi nhuận 9 tháng 2026',
+        'Đơn hàng tôm chế biến sâu (duỗi, tẩm bột) sang Nhật Bản và EU duy trì kín lịch sản xuất cho mùa lễ hội cuối năm',
       ],
       headwinds: ['Biến động tỷ giá đồng Yên Nhật; thuế chống trợ cấp CVD tôm sơ bộ của Mỹ'],
-      vasepSignal: 'VASEP đánh giá FMC là điểm sáng tăng trưởng xuất sắc nhất ngành tôm 8 tháng 2026 nhờ năng lực chế biến sản phẩm phức tạp.',
+      vasepSignal: 'FMC vừa công bố doanh số Q3 đạt 91,15 triệu USD (~2.370 tỷ VNĐ). Vụ nuôi tôm chính thắng lớn giúp công ty hoàn thành kế hoạch lợi nhuận 9 tháng, khẳng định chính xác dự phóng tăng trưởng biên lợi nhuận.',
     },
   },
   {
@@ -553,6 +558,20 @@ export const SEAFOOD_STOCKS: SeafoodStockIntel[] = [
 // -------------------------------------------------------------
 export const WEEKLY_MATERIAL_PRICES: RawMaterialWeeklyPrice[] = [
   {
+    period: '26/9 – 02/10/2026',
+    dateFormatted: '02/10/2026',
+    region: 'Đồng Tháp / An Giang / Cà Mau',
+    pangasius_white_meat: 33000, // 32.000 - 34.500
+    pangasius_change_wow: 500,
+    pangasius_fingerling: 58500, // 52.000 - 65.000
+    white_shrimp_100: 91000,
+    white_shrimp_50: 112000,
+    white_shrimp_30: 132000,
+    black_tiger_shrimp_30: 160000,
+    clam_mussel: 28500,
+    tilapia: 46500,
+  },
+  {
     period: '19/9 – 25/9/2026',
     dateFormatted: '25/09/2026',
     region: 'Đồng Tháp / An Giang / Cà Mau',
@@ -667,7 +686,7 @@ export const WEEKLY_MATERIAL_PRICES: RawMaterialWeeklyPrice[] = [
 ];
 
 // -------------------------------------------------------------
-// DỮ LIỆU XUẤT KHẨU TOÀN NGÀNH VASEP 8 THÁNG 2026
+// DỮ LIỆU XUẤT KHẨU TOÀN NGÀNH VASEP 9 THÁNG 2026 (CẬP NHẬT T9/2026)
 // -------------------------------------------------------------
 export const VASEP_SECTOR_STATS: VasepMarketData[] = [
   {
@@ -676,14 +695,18 @@ export const VASEP_SECTOR_STATS: VasepMarketData[] = [
     growth8mYoY: 10.0,
     augustUSD: 205,
     augustGrowthYoY: 6.0,
+    total9mUSD: 1740,
+    growth9mYoY: 10.7,
+    septemberUSD: 214,
+    septemberGrowthYoY: 18.6,
     topMarkets: [
-      { country: 'Trung Quốc & HK', val8mUSD: 417, growthYoY: 29.0, sharePercent: 27.8 },
-      { country: 'Hoa Kỳ', val8mUSD: 225, growthYoY: -4.5, sharePercent: 15.0 },
-      { country: 'Châu Âu (EU)', val8mUSD: 185, growthYoY: 8.2, sharePercent: 12.3 },
-      { country: 'Brazil', val8mUSD: 125, growthYoY: 26.4, sharePercent: 8.3 },
-      { country: 'CPTPP (ASEAN, Nhật, Mexico)', val8mUSD: 310, growthYoY: 11.2, sharePercent: 20.7 },
+      { country: 'Trung Quốc & HK', val8mUSD: 417, val9mUSD: 485, growthYoY: 28.5, sharePercent: 27.9 },
+      { country: 'Hoa Kỳ', val8mUSD: 225, val9mUSD: 258, growthYoY: -3.8, sharePercent: 14.8 },
+      { country: 'Châu Âu (EU)', val8mUSD: 185, val9mUSD: 212, growthYoY: 9.5, sharePercent: 12.2 },
+      { country: 'Brazil', val8mUSD: 125, val9mUSD: 145, growthYoY: 25.8, sharePercent: 8.3 },
+      { country: 'CPTPP (ASEAN, Nhật, Mexico)', val8mUSD: 310, val9mUSD: 360, growthYoY: 11.8, sharePercent: 20.7 },
     ],
-    marketDrivers: 'Trung Quốc và Brazil là 2 đầu tàu tăng trưởng mạnh mẽ nhất; trong khi thị trường Mỹ chịu áp lực nền cao nhưng giữ đơn giá tốt.',
+    marketDrivers: 'Cá tra là ngôi sao sáng nhất tháng 9 khi tăng vọt +18.6% YoY đạt 214 triệu USD. Thị trường Trung Quốc & ASEAN bứt phá mạnh, giá cá tra nguyên liệu trong nước neo đỉnh 33.000 đ/kg hỗ trợ biên lợi nhuận ANV, ACL, VHC.',
   },
   {
     sector: 'Tôm',
@@ -691,14 +714,35 @@ export const VASEP_SECTOR_STATS: VasepMarketData[] = [
     growth8mYoY: 12.0,
     augustUSD: 410,
     augustGrowthYoY: 14.0,
+    total9mUSD: 3750,
+    growth9mYoY: 11.0,
+    septemberUSD: 467,
+    septemberGrowthYoY: 3.9,
     topMarkets: [
-      { country: 'Hoa Kỳ', val8mUSD: 520, growthYoY: 6.8, sharePercent: 18.6 },
-      { country: 'Nhật Bản', val8mUSD: 430, growthYoY: 9.5, sharePercent: 15.4 },
-      { country: 'Trung Quốc & HK', val8mUSD: 450, growthYoY: 21.0, sharePercent: 16.1 },
-      { country: 'Châu Âu (EU)', val8mUSD: 360, growthYoY: 17.5, sharePercent: 12.9 },
-      { country: 'Hàn Quốc & Úc', val8mUSD: 380, growthYoY: 12.0, sharePercent: 13.6 },
+      { country: 'Hoa Kỳ', val8mUSD: 520, val9mUSD: 690, growthYoY: 6.2, sharePercent: 18.4 },
+      { country: 'Trung Quốc & HK', val8mUSD: 450, val9mUSD: 605, growthYoY: 19.5, sharePercent: 16.1 },
+      { country: 'Nhật Bản', val8mUSD: 430, val9mUSD: 575, growthYoY: 9.8, sharePercent: 15.3 },
+      { country: 'Châu Âu (EU)', val8mUSD: 360, val9mUSD: 485, growthYoY: 16.8, sharePercent: 12.9 },
+      { country: 'Hàn Quốc & Úc', val8mUSD: 380, val9mUSD: 510, growthYoY: 11.2, sharePercent: 13.6 },
     ],
-    marketDrivers: 'Phân khúc tôm chế biến sâu giá trị gia tăng (FMC) và tôm sinh thái hữu cơ (CMX) tăng trưởng ấn tượng tại Nhật Bản và EU.',
+    marketDrivers: 'Kim ngạch tôm 9 tháng đạt 3,75 tỷ USD. FMC (Sao Ta) đã chốt doanh số Q3 đạt 91,15 triệu USD (~2.370 tỷ VNĐ) và công bố hoàn thành chỉ tiêu lợi nhuận 9 tháng nhờ sản lượng tôm tự nuôi vụ chính thu hoạch thắng lớn.',
+  },
+  {
+    sector: 'Cá ngừ',
+    total8mUSD: 660,
+    growth8mYoY: 15.0,
+    augustUSD: 85,
+    augustGrowthYoY: 12.0,
+    total9mUSD: 742,
+    growth9mYoY: 14.5,
+    septemberUSD: 82,
+    septemberGrowthYoY: 8.0,
+    topMarkets: [
+      { country: 'Hoa Kỳ', val8mUSD: 290, val9mUSD: 325, growthYoY: 12.0, sharePercent: 43.8 },
+      { country: 'Châu Âu (EU)', val8mUSD: 145, val9mUSD: 165, growthYoY: 18.0, sharePercent: 22.2 },
+      { country: 'CPTPP & Khác', val8mUSD: 225, val9mUSD: 252, growthYoY: 15.0, sharePercent: 34.0 },
+    ],
+    marketDrivers: 'Cá ngừ đóng hộp chế biến và loin đông lạnh tăng trưởng tốt tại thị trường Bắc Mỹ và EU nhờ nhu cầu thực phẩm tiện lợi.',
   },
   {
     sector: 'Surimi & Chả cá',
@@ -706,13 +750,17 @@ export const VASEP_SECTOR_STATS: VasepMarketData[] = [
     growth8mYoY: 8.8,
     augustUSD: 32,
     augustGrowthYoY: 11.0,
+    total9mUSD: 250,
+    growth9mYoY: 9.1,
+    septemberUSD: 35,
+    septemberGrowthYoY: 9.5,
     topMarkets: [
-      { country: 'Hàn Quốc', val8mUSD: 85, growthYoY: 16.5, sharePercent: 39.5 },
-      { country: 'Thái Lan', val8mUSD: 42, growthYoY: 9.0, sharePercent: 19.5 },
-      { country: 'Trung Quốc', val8mUSD: 38, growthYoY: 12.0, sharePercent: 17.7 },
-      { country: 'Nhật Bản', val8mUSD: 30, growthYoY: 5.5, sharePercent: 14.0 },
+      { country: 'Hàn Quốc', val8mUSD: 85, val9mUSD: 98, growthYoY: 16.0, sharePercent: 39.2 },
+      { country: 'Thái Lan', val8mUSD: 42, val9mUSD: 49, growthYoY: 9.0, sharePercent: 19.6 },
+      { country: 'Trung Quốc', val8mUSD: 38, val9mUSD: 44, growthYoY: 11.5, sharePercent: 17.6 },
+      { country: 'Nhật Bản', val8mUSD: 30, val9mUSD: 35, growthYoY: 5.5, sharePercent: 14.0 },
     ],
-    marketDrivers: 'Hàn Quốc là bạn hàng lớn nhất tiêu thụ chả cá Việt Nam làm món bánh cá truyền thống (KHS hưởng lợi).',
+    marketDrivers: 'Hàn Quốc duy trì nhu cầu nhập khẩu chả cá ổn định làm bánh Odeng truyền thống; KHS tại Kiên Giang giữ vững đơn hàng.',
   },
   {
     sector: 'Nhuyễn thể 2 vỏ',
@@ -720,13 +768,17 @@ export const VASEP_SECTOR_STATS: VasepMarketData[] = [
     growth8mYoY: 15.2,
     augustUSD: 14.5,
     augustGrowthYoY: 18.0,
+    total9mUSD: 114,
+    growth9mYoY: 15.8,
+    septemberUSD: 16,
+    septemberGrowthYoY: 14.2,
     topMarkets: [
-      { country: 'Ý (Italy)', val8mUSD: 38, growthYoY: 26.0, sharePercent: 38.8 },
-      { country: 'Tây Ban Nha', val8mUSD: 24, growthYoY: 19.5, sharePercent: 24.5 },
-      { country: 'Bồ Đào Nha & Pháp', val8mUSD: 16, growthYoY: 12.0, sharePercent: 16.3 },
-      { country: 'Nhật Bản & Mỹ', val8mUSD: 12, growthYoY: 8.0, sharePercent: 12.2 },
+      { country: 'Ý (Italy)', val8mUSD: 38, val9mUSD: 44, growthYoY: 25.0, sharePercent: 38.6 },
+      { country: 'Tây Ban Nha', val8mUSD: 24, val9mUSD: 28, growthYoY: 19.0, sharePercent: 24.5 },
+      { country: 'Bồ Đào Nha & Pháp', val8mUSD: 16, val9mUSD: 19, growthYoY: 12.0, sharePercent: 16.7 },
+      { country: 'Nhật Bản & Mỹ', val8mUSD: 12, val9mUSD: 14, growthYoY: 8.0, sharePercent: 12.3 },
     ],
-    marketDrivers: 'Nghêu sạch đạt chứng chỉ MSC của Bến Tre (ABT) chiếm lĩnh thị phần ẩm thực Địa Trung Hải tại Nam Âu.',
+    marketDrivers: 'Nghêu sạch Bến Tre đạt chuẩn MSC (ABT) duy trì thị phần ẩm thực Nam Âu (Ý, Tây Ban Nha), biên lãi gộp đỉnh 18-22%.',
   },
   {
     sector: 'Bột cá',
@@ -734,10 +786,14 @@ export const VASEP_SECTOR_STATS: VasepMarketData[] = [
     growth8mYoY: 7.2,
     augustUSD: 21,
     augustGrowthYoY: 8.5,
+    total9mUSD: 168,
+    growth9mYoY: 7.5,
+    septemberUSD: 23,
+    septemberGrowthYoY: 8.0,
     topMarkets: [
-      { country: 'Trung Quốc', val8mUSD: 98, growthYoY: 9.5, sharePercent: 67.6 },
-      { country: 'Đài Loan & ASEAN', val8mUSD: 32, growthYoY: 6.0, sharePercent: 22.1 },
+      { country: 'Trung Quốc', val8mUSD: 98, val9mUSD: 114, growthYoY: 9.2, sharePercent: 67.8 },
+      { country: 'Đài Loan & ASEAN', val8mUSD: 32, val9mUSD: 37, growthYoY: 6.0, sharePercent: 22.0 },
     ],
-    marketDrivers: 'Nhu cầu bột cá làm thức ăn chăn nuôi tại Trung Quốc và nội địa neo ở mức cao do nguồn cung bột cá từ Nam Mỹ hạn chế.',
+    marketDrivers: 'Nhu cầu bột cá làm thức ăn chăn nuôi tại Trung Quốc và nội địa neo cao do sản lượng bột cá khai thác từ Nam Mỹ (Peru) bị giới hạn hạn ngạch.',
   },
 ];

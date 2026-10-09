@@ -1,6 +1,6 @@
 'use client'
 
-import React, { useState, useMemo, useCallback, useRef } from 'react'
+import React, { useState, useMemo } from 'react'
 import {
   ResponsiveContainer,
   ComposedChart,
@@ -8,7 +8,6 @@ import {
   Area,
   Bar,
   Line,
-  Cell,
   XAxis,
   YAxis,
   Tooltip,
@@ -31,9 +30,6 @@ import {
   Target,
   Sparkles,
   PieChart,
-  Eye,
-  Lock,
-  RotateCcw,
   Receipt,
   Percent,
   Wallet,
@@ -156,51 +152,20 @@ export const CustomChartTooltip = React.memo(function CustomChartTooltip({ activ
   )
 })
 
-// Helper render XAxis tick với hiệu ứng sáng cùng kỳ
-function createQuarterTickRenderer(activeQuarter: number | null) {
-  return function QuarterTick(props: any) {
-    const { x, y, payload } = props
-    const val = payload?.value
-    const qMatch = val && typeof val === 'string' ? val.match(/Q([1-4])/i) : null
-    const q = qMatch ? parseInt(qMatch[1], 10) : null
-    const isHighlighted = activeQuarter != null && q === activeQuarter
-    const isDimmed = activeQuarter != null && q !== activeQuarter
-
-    return (
-      <g transform={`translate(${x},${y})`}>
-        <text
-          x={0}
-          y={0}
-          dy={10}
-          textAnchor="middle"
-          fill={isHighlighted ? '#fbbf24' : isDimmed ? '#475569' : '#94a3b8'}
-          fontWeight={isHighlighted ? 700 : 400}
-          fontSize={isHighlighted ? 11 : 9.5}
-        >
-          {val}
-        </text>
-      </g>
-    )
-  }
-}
-
 // ══════════════════════════════════════════════════════════════════
-// CÁC COMPONENT BIỂU ĐỒ ĐỘC LẬP (TỰ QUẢN LÝ HOVER RIÊNG BIỆT)
+// CÁC COMPONENT BIỂU ĐỒ ĐỘC LẬP
 // ══════════════════════════════════════════════════════════════════
-
 
 export interface ExpandableChartCardProps {
   title: string
   icon: React.ComponentType<{ className?: string }>
   iconColor?: string
   hoverBorderColor?: string
-  activeQuarter?: number | null
   isQuarter?: boolean
   latestBadge?: React.ReactNode
   modalTitle?: string
   modalSubtitle?: string
   cardHeight?: number
-  onMouseLeave?: () => void
   children: (height: number) => React.ReactNode
 }
 
@@ -209,13 +174,10 @@ export const ExpandableChartCard = React.memo(function ExpandableChartCard({
   icon: Icon,
   iconColor = 'text-sky-400',
   hoverBorderColor = 'hover:border-sky-500/40',
-  activeQuarter,
-  isQuarter,
   latestBadge,
   modalTitle,
   modalSubtitle,
   cardHeight,
-  onMouseLeave,
   children,
 }: ExpandableChartCardProps) {
   const [isExpanded, setIsExpanded] = useState(false)
@@ -223,7 +185,6 @@ export const ExpandableChartCard = React.memo(function ExpandableChartCard({
 
   return (
     <div
-      onMouseLeave={onMouseLeave}
       className={cn(
         'flex flex-col justify-between rounded-2xl border border-border/70 bg-card/90 p-4 sm:p-5 shadow-xs transition-colors',
         hoverBorderColor
@@ -233,11 +194,6 @@ export const ExpandableChartCard = React.memo(function ExpandableChartCard({
         <div className="flex items-center gap-2 text-xs font-black uppercase text-foreground">
           <Icon className={cn('size-4', iconColor)} />
           <span>{title}</span>
-          {activeQuarter && isQuarter && (
-            <span className="text-[10px] text-amber-400 font-bold bg-amber-500/10 px-1.5 py-0.5 rounded border border-amber-500/30">
-              Q{activeQuarter} cùng kỳ
-            </span>
-          )}
         </div>
         <div className="flex items-center gap-2">
           {latestBadge}
@@ -286,46 +242,14 @@ export const ExpandableChartCard = React.memo(function ExpandableChartCard({
 export const RevenueChartCard = React.memo(function RevenueChartCard({
   data,
   isQuarter,
-  globalQuarter,
   latest,
   cardHeight,
 }: {
   data: any[]
   isQuarter: boolean
-  globalQuarter: number | null
   latest: any
   cardHeight?: number
 }) {
-  const [localHoverQuarter, setLocalHoverQuarter] = useState<number | null>(null)
-  const lastRef = useRef<number | null>(null)
-  const activeQuarter = globalQuarter ?? localHoverQuarter
-
-  const handleMouseMove = useCallback((e: any) => {
-    if (!isQuarter || globalQuarter != null) return
-    let q: number | null = null
-    if (e?.activePayload && e.activePayload.length > 0) {
-      q = getQuarter(e.activePayload[0]?.payload)
-    }
-    if (!q && e?.activeLabel && typeof e.activeLabel === 'string') {
-      const m = e.activeLabel.match(/Q([1-4])/i)
-      if (m) q = parseInt(m[1], 10)
-    }
-    if (!q && typeof e?.activeTooltipIndex === 'number' && data[e.activeTooltipIndex]) {
-      q = getQuarter(data[e.activeTooltipIndex])
-    }
-    if (q && q >= 1 && q <= 4 && lastRef.current !== q) {
-      lastRef.current = q
-      setLocalHoverQuarter(q)
-    }
-  }, [isQuarter, globalQuarter, data])
-
-  const handleMouseLeave = useCallback(() => {
-    lastRef.current = null
-    setLocalHoverQuarter(null)
-  }, [])
-
-  const tickRenderer = useMemo(() => isQuarter ? createQuarterTickRenderer(activeQuarter) : undefined, [isQuarter, activeQuarter])
-
   return (
     <ExpandableChartCard
       cardHeight={cardHeight}
@@ -333,9 +257,6 @@ export const RevenueChartCard = React.memo(function RevenueChartCard({
       icon={TrendingUp}
       iconColor="text-sky-400"
       hoverBorderColor="hover:border-sky-500/40"
-      activeQuarter={activeQuarter}
-      isQuarter={isQuarter}
-      onMouseLeave={handleMouseLeave}
       latestBadge={
         <span className="font-mono text-[11px] font-bold text-sky-400 bg-sky-500/10 border border-sky-500/20 px-2 py-0.5 rounded-md">
           {fmtNum(latest?.doanhThu)} tỷ {latest?.tangTruongDT != null ? `(${latest.tangTruongDT > 0 ? '+' : ''}${latest.tangTruongDT.toFixed(1)}%)` : ''}
@@ -343,37 +264,20 @@ export const RevenueChartCard = React.memo(function RevenueChartCard({
       }
       modalTitle="Doanh Thu Thuần (Tỷ Đồng) & Tăng Trưởng YoY"
       modalSubtitle={`Dữ liệu tài chính chuỗi thời gian (${data.length} kỳ) · Theo ${isQuarter ? 'Quý' : 'Năm'}`}
-        >
+    >
       {(height) => (
         <ResponsiveContainer width="100%" height={height}>
           <ComposedChart
             data={data}
             margin={{ top: 10, right: 10, left: -10, bottom: 0 }}
-            onMouseMove={handleMouseMove}
           >
             <CartesianGrid strokeDasharray="3 3" stroke="#334155" opacity={0.25} />
-            <XAxis dataKey="displayDate" tick={tickRenderer || { fontSize: 10, fill: '#888' }} />
+            <XAxis dataKey="displayDate" tick={{ fontSize: 9.5, fill: '#888' }} />
             <YAxis yAxisId="left" tick={{ fontSize: 10, fill: '#888' }} />
             <YAxis yAxisId="right" orientation="right" tick={{ fontSize: 10, fill: '#888' }} unit="%" />
             <Tooltip content={<CustomChartTooltip />} isAnimationActive={false} animationDuration={0} cursor={{ fill: 'rgba(255, 255, 255, 0.05)' }} />
             <Legend wrapperStyle={{ fontSize: '10.5px', paddingTop: '4px' }} />
-            <Bar yAxisId="left" dataKey="doanhThu" name="Doanh thu thuần" radius={[3, 3, 0, 0]} isAnimationActive={false}>
-              {data.map((entry, index) => {
-                const q = getQuarter(entry)
-                const isMatch = activeQuarter == null || q === activeQuarter
-                return (
-                  <Cell
-                    key={`dt-cell-${index}`}
-                    fill="#38bdf8"
-                    fillOpacity={isMatch ? 1 : 0.15}
-                    stroke={activeQuarter != null && isMatch ? '#ffffff' : 'none'}
-                    strokeWidth={activeQuarter != null && isMatch ? 2 : 0}
-                    className="cursor-pointer"
-                    style={{ transition: 'fill-opacity 40ms ease-out' }}
-                  />
-                )
-              })}
-            </Bar>
+            <Bar yAxisId="left" dataKey="doanhThu" name="Doanh thu thuần" fill="#38bdf8" radius={[3, 3, 0, 0]} isAnimationActive={false} />
             <Line
               yAxisId="right"
               type="monotone"
@@ -381,25 +285,9 @@ export const RevenueChartCard = React.memo(function RevenueChartCard({
               name="Tăng trưởng YoY (%)"
               stroke="#f97316"
               strokeWidth={2}
+              dot={{ r: 2.5, fill: '#f97316' }}
+              activeDot={{ r: 5 }}
               isAnimationActive={false}
-              dot={(props: any) => {
-                const { cx, cy, payload } = props
-                if (!cx || !cy) return null
-                const q = getQuarter(payload)
-                const isMatch = activeQuarter != null && q === activeQuarter
-                if (!isMatch) return null
-                return (
-                  <circle
-                    key={`dt-dot-${cx}-${cy}`}
-                    cx={cx}
-                    cy={cy}
-                    r={5}
-                    fill="#f97316"
-                    stroke="#ffffff"
-                    strokeWidth={2}
-                  />
-                )
-              }}
             />
           </ComposedChart>
         </ResponsiveContainer>
@@ -412,46 +300,14 @@ export const RevenueChartCard = React.memo(function RevenueChartCard({
 export const ProfitChartCard = React.memo(function ProfitChartCard({
   data,
   isQuarter,
-  globalQuarter,
   latest,
   cardHeight,
 }: {
   data: any[]
   isQuarter: boolean
-  globalQuarter: number | null
   latest: any
   cardHeight?: number
 }) {
-  const [localHoverQuarter, setLocalHoverQuarter] = useState<number | null>(null)
-  const lastRef = useRef<number | null>(null)
-  const activeQuarter = globalQuarter ?? localHoverQuarter
-
-  const handleMouseMove = useCallback((e: any) => {
-    if (!isQuarter || globalQuarter != null) return
-    let q: number | null = null
-    if (e?.activePayload && e.activePayload.length > 0) {
-      q = getQuarter(e.activePayload[0]?.payload)
-    }
-    if (!q && e?.activeLabel && typeof e.activeLabel === 'string') {
-      const m = e.activeLabel.match(/Q([1-4])/i)
-      if (m) q = parseInt(m[1], 10)
-    }
-    if (!q && typeof e?.activeTooltipIndex === 'number' && data[e.activeTooltipIndex]) {
-      q = getQuarter(data[e.activeTooltipIndex])
-    }
-    if (q && q >= 1 && q <= 4 && lastRef.current !== q) {
-      lastRef.current = q
-      setLocalHoverQuarter(q)
-    }
-  }, [isQuarter, globalQuarter, data])
-
-  const handleMouseLeave = useCallback(() => {
-    lastRef.current = null
-    setLocalHoverQuarter(null)
-  }, [])
-
-  const tickRenderer = useMemo(() => isQuarter ? createQuarterTickRenderer(activeQuarter) : undefined, [isQuarter, activeQuarter])
-
   return (
     <ExpandableChartCard
       cardHeight={cardHeight}
@@ -459,9 +315,6 @@ export const ProfitChartCard = React.memo(function ProfitChartCard({
       icon={TrendingUp}
       iconColor="text-emerald-400"
       hoverBorderColor="hover:border-emerald-500/40"
-      activeQuarter={activeQuarter}
-      isQuarter={isQuarter}
-      onMouseLeave={handleMouseLeave}
       latestBadge={
         <span className="font-mono text-[11px] font-bold text-emerald-400 bg-emerald-500/10 border border-emerald-500/20 px-2 py-0.5 rounded-md">
           {fmtNum(latest?.lnst)} tỷ {latest?.tangTruongLNST != null ? `(${latest.tangTruongLNST > 0 ? '+' : ''}${latest.tangTruongLNST.toFixed(1)}%)` : ''}
@@ -469,37 +322,20 @@ export const ProfitChartCard = React.memo(function ProfitChartCard({
       }
       modalTitle="Lợi Nhuận Sau Thuế Công Ty Mẹ & Tăng Trưởng YoY"
       modalSubtitle={`Dữ liệu tài chính chuỗi thời gian (${data.length} kỳ) · Theo ${isQuarter ? 'Quý' : 'Năm'}`}
-        >
+    >
       {(height) => (
         <ResponsiveContainer width="100%" height={height}>
           <ComposedChart
             data={data}
             margin={{ top: 10, right: 10, left: -10, bottom: 0 }}
-            onMouseMove={handleMouseMove}
           >
             <CartesianGrid strokeDasharray="3 3" stroke="#334155" opacity={0.25} />
-            <XAxis dataKey="displayDate" tick={tickRenderer || { fontSize: 10, fill: '#888' }} />
+            <XAxis dataKey="displayDate" tick={{ fontSize: 9.5, fill: '#888' }} />
             <YAxis yAxisId="left" tick={{ fontSize: 10, fill: '#888' }} />
             <YAxis yAxisId="right" orientation="right" tick={{ fontSize: 10, fill: '#888' }} unit="%" />
             <Tooltip content={<CustomChartTooltip />} isAnimationActive={false} animationDuration={0} cursor={{ fill: 'rgba(255, 255, 255, 0.05)' }} />
             <Legend wrapperStyle={{ fontSize: '10.5px', paddingTop: '4px' }} />
-            <Bar yAxisId="left" dataKey="lnst" name="LNST cổ đông mẹ" radius={[3, 3, 0, 0]} isAnimationActive={false}>
-              {data.map((entry, index) => {
-                const q = getQuarter(entry)
-                const isMatch = activeQuarter == null || q === activeQuarter
-                return (
-                  <Cell
-                    key={`lnst-cell-${index}`}
-                    fill="#2dd4bf"
-                    fillOpacity={isMatch ? 1 : 0.15}
-                    stroke={activeQuarter != null && isMatch ? '#ffffff' : 'none'}
-                    strokeWidth={activeQuarter != null && isMatch ? 2 : 0}
-                    className="cursor-pointer"
-                    style={{ transition: 'fill-opacity 40ms ease-out' }}
-                  />
-                )
-              })}
-            </Bar>
+            <Bar yAxisId="left" dataKey="lnst" name="LNST cổ đông mẹ" fill="#2dd4bf" radius={[3, 3, 0, 0]} isAnimationActive={false} />
             <Line
               yAxisId="right"
               type="monotone"
@@ -507,25 +343,9 @@ export const ProfitChartCard = React.memo(function ProfitChartCard({
               name="Tăng trưởng YoY (%)"
               stroke="#eab308"
               strokeWidth={2}
+              dot={{ r: 2.5, fill: '#eab308' }}
+              activeDot={{ r: 5 }}
               isAnimationActive={false}
-              dot={(props: any) => {
-                const { cx, cy, payload } = props
-                if (!cx || !cy) return null
-                const q = getQuarter(payload)
-                const isMatch = activeQuarter != null && q === activeQuarter
-                if (!isMatch) return null
-                return (
-                  <circle
-                    key={`lnst-dot-${cx}-${cy}`}
-                    cx={cx}
-                    cy={cy}
-                    r={5}
-                    fill="#eab308"
-                    stroke="#ffffff"
-                    strokeWidth={2}
-                  />
-                )
-              }}
             />
           </ComposedChart>
         </ResponsiveContainer>
@@ -586,54 +406,18 @@ const PlanChartCard = React.memo(function PlanChartCard({
 // ── 4. Biểu đồ Cơ Cấu Lợi Nhuận Trước Thuế ──
 const ProfitStructureChartCard = React.memo(function ProfitStructureChartCard({
   profitPoints,
-  isQuarter,
-  globalQuarter,
   latestProfit,
 }: {
   profitPoints: any[]
-  isQuarter: boolean
-  globalQuarter: number | null
+  isQuarter?: boolean
   latestProfit: any
 }) {
-  const [localHoverQuarter, setLocalHoverQuarter] = useState<number | null>(null)
-  const lastRef = useRef<number | null>(null)
-  const activeQuarter = globalQuarter ?? localHoverQuarter
-
-  const handleMouseMove = useCallback((e: any) => {
-    if (!isQuarter || globalQuarter != null) return
-    let q: number | null = null
-    if (e?.activePayload && e.activePayload.length > 0) {
-      q = getQuarter(e.activePayload[0]?.payload)
-    }
-    if (!q && e?.activeLabel && typeof e.activeLabel === 'string') {
-      const m = e.activeLabel.match(/Q([1-4])/i)
-      if (m) q = parseInt(m[1], 10)
-    }
-    if (!q && typeof e?.activeTooltipIndex === 'number' && profitPoints[e.activeTooltipIndex]) {
-      q = getQuarter(profitPoints[e.activeTooltipIndex])
-    }
-    if (q && q >= 1 && q <= 4 && lastRef.current !== q) {
-      lastRef.current = q
-      setLocalHoverQuarter(q)
-    }
-  }, [isQuarter, globalQuarter, profitPoints])
-
-  const handleMouseLeave = useCallback(() => {
-    lastRef.current = null
-    setLocalHoverQuarter(null)
-  }, [])
-
-  const tickRenderer = useMemo(() => isQuarter ? createQuarterTickRenderer(activeQuarter) : undefined, [isQuarter, activeQuarter])
-
   return (
     <ExpandableChartCard
       title="Cơ Cấu Lợi Nhuận Trước Thuế"
       icon={PieChart}
       iconColor="text-indigo-400"
       hoverBorderColor="hover:border-indigo-500/40"
-      activeQuarter={activeQuarter}
-      isQuarter={isQuarter}
-      onMouseLeave={handleMouseLeave}
       latestBadge={
         <span className="font-mono text-[11px] font-bold text-indigo-400 bg-indigo-500/10 border border-indigo-500/20 px-2 py-0.5 rounded-md">
           LNTT: {latestProfit?.lntt != null ? `${fmtNum(latestProfit.lntt)} tỷ` : '—'}
@@ -641,88 +425,23 @@ const ProfitStructureChartCard = React.memo(function ProfitStructureChartCard({
       }
       modalTitle="Cơ Cấu Lợi Nhuận Trước Thuế (Chuẩn WiData)"
       modalSubtitle={`Bóc tách Lợi nhuận HĐKD chính, Lợi nhuận tài chính & Lợi nhuận khác (${profitPoints.length} kỳ)`}
-        >
+    >
       {(height) =>
         profitPoints.length > 0 ? (
           <ResponsiveContainer width="100%" height={height}>
             <ComposedChart
               data={profitPoints}
               margin={{ top: 10, right: 10, left: -10, bottom: 0 }}
-              onMouseMove={handleMouseMove}
             >
               <CartesianGrid strokeDasharray="3 3" stroke="#334155" opacity={0.25} />
-              <XAxis dataKey="displayDate" tick={tickRenderer || { fontSize: 10, fill: '#888' }} />
+              <XAxis dataKey="displayDate" tick={{ fontSize: 9.5, fill: '#888' }} />
               <YAxis yAxisId="left" tick={{ fontSize: 10, fill: '#888' }} tickFormatter={(v) => `${Math.round(v)}`} />
               <Tooltip content={<CustomChartTooltip />} isAnimationActive={false} animationDuration={0} cursor={{ fill: 'rgba(255, 255, 255, 0.05)' }} />
               <Legend wrapperStyle={{ fontSize: '9.5px', paddingTop: '4px' }} />
-              <Bar yAxisId="left" dataKey="lnKDChinh" name="Lợi nhuận thuần từ HĐKD chính" stackId="pbt" isAnimationActive={false}>
-                {profitPoints.map((entry, index) => {
-                  const q = getQuarter(entry)
-                  const isMatch = activeQuarter == null || q === activeQuarter
-                  return (
-                    <Cell
-                      key={`pbt-kd-${index}`}
-                      fill="#4f46e5"
-                      fillOpacity={isMatch ? 1 : 0.15}
-                      stroke={activeQuarter != null && isMatch ? '#ffffff' : 'none'}
-                      strokeWidth={activeQuarter != null && isMatch ? 1.5 : 0}
-                      className="cursor-pointer"
-                      style={{ transition: 'fill-opacity 40ms ease-out' }}
-                    />
-                  )
-                })}
-              </Bar>
-              <Bar yAxisId="left" dataKey="lnLDLK" name="Lãi lỗ từ công ty LDLK" stackId="pbt" isAnimationActive={false}>
-                {profitPoints.map((entry, index) => {
-                  const q = getQuarter(entry)
-                  const isMatch = activeQuarter == null || q === activeQuarter
-                  return (
-                    <Cell
-                      key={`pbt-ldlk-${index}`}
-                      fill="#14b8a6"
-                      fillOpacity={isMatch ? 1 : 0.15}
-                      stroke={activeQuarter != null && isMatch ? '#ffffff' : 'none'}
-                      strokeWidth={activeQuarter != null && isMatch ? 1.5 : 0}
-                      className="cursor-pointer"
-                      style={{ transition: 'fill-opacity 40ms ease-out' }}
-                    />
-                  )
-                })}
-              </Bar>
-              <Bar yAxisId="left" dataKey="lnTaiChinh" name="Lợi nhuận tài chính" stackId="pbt" isAnimationActive={false}>
-                {profitPoints.map((entry, index) => {
-                  const q = getQuarter(entry)
-                  const isMatch = activeQuarter == null || q === activeQuarter
-                  return (
-                    <Cell
-                      key={`pbt-tc-${index}`}
-                      fill="#facc15"
-                      fillOpacity={isMatch ? 1 : 0.15}
-                      stroke={activeQuarter != null && isMatch ? '#ffffff' : 'none'}
-                      strokeWidth={activeQuarter != null && isMatch ? 1.5 : 0}
-                      className="cursor-pointer"
-                      style={{ transition: 'fill-opacity 40ms ease-out' }}
-                    />
-                  )
-                })}
-              </Bar>
-              <Bar yAxisId="left" dataKey="lnKhac" name="Lợi nhuận khác (*)" stackId="pbt" radius={[2, 2, 0, 0]} isAnimationActive={false}>
-                {profitPoints.map((entry, index) => {
-                  const q = getQuarter(entry)
-                  const isMatch = activeQuarter == null || q === activeQuarter
-                  return (
-                    <Cell
-                      key={`pbt-khac-${index}`}
-                      fill="#d946ef"
-                      fillOpacity={isMatch ? 1 : 0.15}
-                      stroke={activeQuarter != null && isMatch ? '#ffffff' : 'none'}
-                      strokeWidth={activeQuarter != null && isMatch ? 1.5 : 0}
-                      className="cursor-pointer"
-                      style={{ transition: 'fill-opacity 40ms ease-out' }}
-                    />
-                  )
-                })}
-              </Bar>
+              <Bar yAxisId="left" dataKey="lnKDChinh" name="Lợi nhuận thuần từ HĐKD chính" stackId="pbt" fill="#4f46e5" isAnimationActive={false} />
+              <Bar yAxisId="left" dataKey="lnLDLK" name="Lãi lỗ từ công ty LDLK" stackId="pbt" fill="#14b8a6" isAnimationActive={false} />
+              <Bar yAxisId="left" dataKey="lnTaiChinh" name="Lợi nhuận tài chính" stackId="pbt" fill="#facc15" isAnimationActive={false} />
+              <Bar yAxisId="left" dataKey="lnKhac" name="Lợi nhuận khác (*)" stackId="pbt" fill="#d946ef" radius={[2, 2, 0, 0]} isAnimationActive={false} />
               <Line
                 yAxisId="left"
                 type="monotone"
@@ -730,26 +449,9 @@ const ProfitStructureChartCard = React.memo(function ProfitStructureChartCard({
                 name="Lợi nhuận trước thuế (LNTT)"
                 stroke="#f97316"
                 strokeWidth={2.2}
-                isAnimationActive={false}
-                dot={(props: any) => {
-                  const { cx, cy, payload } = props
-                  if (!cx || !cy) return null
-                  const q = getQuarter(payload)
-                  const isMatch = activeQuarter != null && q === activeQuarter
-                  return (
-                    <circle
-                      key={`pbt-dot-${cx}-${cy}`}
-                      cx={cx}
-                      cy={cy}
-                      r={isMatch ? 5.5 : 2.5}
-                      fill="#f97316"
-                      stroke={isMatch ? '#ffffff' : 'none'}
-                      strokeWidth={isMatch ? 2 : 0}
-                      opacity={activeQuarter == null || isMatch ? 1 : 0.15}
-                    />
-                  )
-                }}
+                dot={{ r: 2.5, fill: '#f97316' }}
                 activeDot={{ r: 5 }}
+                isAnimationActive={false}
               />
             </ComposedChart>
           </ResponsiveContainer>
@@ -767,46 +469,14 @@ const ProfitStructureChartCard = React.memo(function ProfitStructureChartCard({
 export const DetailedAssetChartCard = React.memo(function DetailedAssetChartCard({
   balancePoints,
   isQuarter,
-  globalQuarter,
   latestPoint,
   cardHeight,
 }: {
   balancePoints: any[]
-  isQuarter: boolean
-  globalQuarter: number | null
+  isQuarter?: boolean
   latestPoint: any
   cardHeight?: number
 }) {
-  const [localHoverQuarter, setLocalHoverQuarter] = useState<number | null>(null)
-  const lastRef = useRef<number | null>(null)
-  const activeQuarter = globalQuarter ?? localHoverQuarter
-
-  const handleMouseMove = useCallback((e: any) => {
-    if (!isQuarter || globalQuarter != null) return
-    let q: number | null = null
-    if (e?.activePayload && e.activePayload.length > 0) {
-      q = getQuarter(e.activePayload[0]?.payload)
-    }
-    if (!q && e?.activeLabel && typeof e.activeLabel === 'string') {
-      const m = e.activeLabel.match(/Q([1-4])/i)
-      if (m) q = parseInt(m[1], 10)
-    }
-    if (!q && typeof e?.activeTooltipIndex === 'number' && balancePoints[e.activeTooltipIndex]) {
-      q = getQuarter(balancePoints[e.activeTooltipIndex])
-    }
-    if (q && q >= 1 && q <= 4 && lastRef.current !== q) {
-      lastRef.current = q
-      setLocalHoverQuarter(q)
-    }
-  }, [isQuarter, globalQuarter, balancePoints])
-
-  const handleMouseLeave = useCallback(() => {
-    lastRef.current = null
-    setLocalHoverQuarter(null)
-  }, [])
-
-  const tickRenderer = useMemo(() => isQuarter ? createQuarterTickRenderer(activeQuarter) : undefined, [isQuarter, activeQuarter])
-
   return (
     <ExpandableChartCard
       cardHeight={cardHeight}
@@ -814,9 +484,6 @@ export const DetailedAssetChartCard = React.memo(function DetailedAssetChartCard
       icon={Wallet}
       iconColor="text-sky-400"
       hoverBorderColor="hover:border-sky-500/40"
-      activeQuarter={activeQuarter}
-      isQuarter={isQuarter}
-      onMouseLeave={handleMouseLeave}
       latestBadge={
         <span className="font-mono text-[11px] font-bold text-sky-400 bg-sky-500/10 border border-sky-500/20 px-2 py-0.5 rounded-md">
           Tổng TS: {latestPoint?.tongTS != null ? `${fmtNum(latestPoint.tongTS)} tỷ` : '—'}
@@ -824,70 +491,27 @@ export const DetailedAssetChartCard = React.memo(function DetailedAssetChartCard
       }
       modalTitle="Cơ Cấu Tài Sản (Bóc Tách Chi Tiết Chuẩn WiData)"
       modalSubtitle={`Tiền mặt, Đầu tư ngắn hạn, Phải thu, Tồn kho, TSCĐ (${balancePoints.length} kỳ)`}
-        >
+    >
       {(height) =>
         balancePoints.length > 0 ? (
           <ResponsiveContainer width="100%" height={height}>
             <ComposedChart
               data={balancePoints}
               margin={{ top: 10, right: 10, left: -10, bottom: 0 }}
-              onMouseMove={handleMouseMove}
             >
               <CartesianGrid strokeDasharray="3 3" stroke="#334155" opacity={0.25} />
-              <XAxis dataKey="displayDate" tick={tickRenderer || { fontSize: 10, fill: '#888' }} />
+              <XAxis dataKey="displayDate" tick={{ fontSize: 9.5, fill: '#888' }} />
               <YAxis yAxisId="left" tick={{ fontSize: 10, fill: '#888' }} tickFormatter={(v) => `${Math.round(v)}`} />
               <Tooltip content={<CustomChartTooltip />} isAnimationActive={false} animationDuration={0} cursor={{ fill: 'rgba(255, 255, 255, 0.05)' }} />
               <Legend wrapperStyle={{ fontSize: '9px', paddingTop: '4px' }} />
               {/* Stacked Bars chuẩn 100% hình ảnh WiData: TS khác -> ĐTTC dài hạn -> TSCĐ -> Tồn kho -> Phải thu -> ĐTTC ngắn hạn -> Tiền */}
-              <Bar yAxisId="left" dataKey="tsKhac" name="Tài sản khác" stackId="ts" fill="#64748b" isAnimationActive={false}>
-                {balancePoints.map((entry, index) => {
-                  const q = getQuarter(entry)
-                  const isMatch = activeQuarter == null || q === activeQuarter
-                  return <Cell key={`ts-k-${index}`} fillOpacity={isMatch ? 1 : 0.15} stroke={activeQuarter != null && isMatch ? '#ffffff' : 'none'} strokeWidth={activeQuarter != null && isMatch ? 1.5 : 0} style={{ transition: 'fill-opacity 40ms ease-out' }} />
-                })}
-              </Bar>
-              <Bar yAxisId="left" dataKey="dtdh" name="Đầu tư tài chính dài hạn" stackId="ts" fill="#334155" isAnimationActive={false}>
-                {balancePoints.map((entry, index) => {
-                  const q = getQuarter(entry)
-                  const isMatch = activeQuarter == null || q === activeQuarter
-                  return <Cell key={`ts-dtdh-${index}`} fillOpacity={isMatch ? 1 : 0.15} stroke={activeQuarter != null && isMatch ? '#ffffff' : 'none'} strokeWidth={activeQuarter != null && isMatch ? 1.5 : 0} style={{ transition: 'fill-opacity 40ms ease-out' }} />
-                })}
-              </Bar>
-              <Bar yAxisId="left" dataKey="tscd" name="Tài sản cố định" stackId="ts" fill="#f43f5e" isAnimationActive={false}>
-                {balancePoints.map((entry, index) => {
-                  const q = getQuarter(entry)
-                  const isMatch = activeQuarter == null || q === activeQuarter
-                  return <Cell key={`ts-cd-${index}`} fillOpacity={isMatch ? 1 : 0.15} stroke={activeQuarter != null && isMatch ? '#ffffff' : 'none'} strokeWidth={activeQuarter != null && isMatch ? 1.5 : 0} style={{ transition: 'fill-opacity 40ms ease-out' }} />
-                })}
-              </Bar>
-              <Bar yAxisId="left" dataKey="tk" name="Hàng tồn kho" stackId="ts" fill="#f59e0b" isAnimationActive={false}>
-                {balancePoints.map((entry, index) => {
-                  const q = getQuarter(entry)
-                  const isMatch = activeQuarter == null || q === activeQuarter
-                  return <Cell key={`ts-tk-${index}`} fillOpacity={isMatch ? 1 : 0.15} stroke={activeQuarter != null && isMatch ? '#ffffff' : 'none'} strokeWidth={activeQuarter != null && isMatch ? 1.5 : 0} style={{ transition: 'fill-opacity 40ms ease-out' }} />
-                })}
-              </Bar>
-              <Bar yAxisId="left" dataKey="pt" name="Các khoản phải thu" stackId="ts" fill="#c084fc" isAnimationActive={false}>
-                {balancePoints.map((entry, index) => {
-                  const q = getQuarter(entry)
-                  const isMatch = activeQuarter == null || q === activeQuarter
-                  return <Cell key={`ts-pt-${index}`} fillOpacity={isMatch ? 1 : 0.15} stroke={activeQuarter != null && isMatch ? '#ffffff' : 'none'} strokeWidth={activeQuarter != null && isMatch ? 1.5 : 0} style={{ transition: 'fill-opacity 40ms ease-out' }} />
-                })}
-              </Bar>
-              <Bar yAxisId="left" dataKey="dtnh" name="Đầu tư tài chính ngắn hạn" stackId="ts" fill="#2dd4bf" isAnimationActive={false}>
-                {balancePoints.map((entry, index) => {
-                  const q = getQuarter(entry)
-                  const isMatch = activeQuarter == null || q === activeQuarter
-                  return <Cell key={`ts-dtnh-${index}`} fillOpacity={isMatch ? 1 : 0.15} stroke={activeQuarter != null && isMatch ? '#ffffff' : 'none'} strokeWidth={activeQuarter != null && isMatch ? 1.5 : 0} style={{ transition: 'fill-opacity 40ms ease-out' }} />
-                })}
-              </Bar>
-              <Bar yAxisId="left" dataKey="tien" name="Tiền và tương đương tiền" stackId="ts" fill="#38bdf8" radius={[2, 2, 0, 0]} isAnimationActive={false}>
-                {balancePoints.map((entry, index) => {
-                  const q = getQuarter(entry)
-                  const isMatch = activeQuarter == null || q === activeQuarter
-                  return <Cell key={`ts-tien-${index}`} fillOpacity={isMatch ? 1 : 0.15} stroke={activeQuarter != null && isMatch ? '#ffffff' : 'none'} strokeWidth={activeQuarter != null && isMatch ? 1.5 : 0} style={{ transition: 'fill-opacity 40ms ease-out' }} />
-                })}
-              </Bar>
+              <Bar yAxisId="left" dataKey="tsKhac" name="Tài sản khác" stackId="ts" fill="#64748b" isAnimationActive={false} />
+              <Bar yAxisId="left" dataKey="dtdh" name="Đầu tư tài chính dài hạn" stackId="ts" fill="#334155" isAnimationActive={false} />
+              <Bar yAxisId="left" dataKey="tscd" name="Tài sản cố định" stackId="ts" fill="#f43f5e" isAnimationActive={false} />
+              <Bar yAxisId="left" dataKey="tk" name="Hàng tồn kho" stackId="ts" fill="#f59e0b" isAnimationActive={false} />
+              <Bar yAxisId="left" dataKey="pt" name="Các khoản phải thu" stackId="ts" fill="#c084fc" isAnimationActive={false} />
+              <Bar yAxisId="left" dataKey="dtnh" name="Đầu tư tài chính ngắn hạn" stackId="ts" fill="#2dd4bf" isAnimationActive={false} />
+              <Bar yAxisId="left" dataKey="tien" name="Tiền và tương đương tiền" stackId="ts" fill="#38bdf8" radius={[2, 2, 0, 0]} isAnimationActive={false} />
             </ComposedChart>
           </ResponsiveContainer>
         ) : (
@@ -904,46 +528,14 @@ export const DetailedAssetChartCard = React.memo(function DetailedAssetChartCard
 export const DetailedCapitalChartCard = React.memo(function DetailedCapitalChartCard({
   balancePoints,
   isQuarter,
-  globalQuarter,
   latestPoint,
   cardHeight,
 }: {
   balancePoints: any[]
-  isQuarter: boolean
-  globalQuarter: number | null
+  isQuarter?: boolean
   latestPoint: any
   cardHeight?: number
 }) {
-  const [localHoverQuarter, setLocalHoverQuarter] = useState<number | null>(null)
-  const lastRef = useRef<number | null>(null)
-  const activeQuarter = globalQuarter ?? localHoverQuarter
-
-  const handleMouseMove = useCallback((e: any) => {
-    if (!isQuarter || globalQuarter != null) return
-    let q: number | null = null
-    if (e?.activePayload && e.activePayload.length > 0) {
-      q = getQuarter(e.activePayload[0]?.payload)
-    }
-    if (!q && e?.activeLabel && typeof e.activeLabel === 'string') {
-      const m = e.activeLabel.match(/Q([1-4])/i)
-      if (m) q = parseInt(m[1], 10)
-    }
-    if (!q && typeof e?.activeTooltipIndex === 'number' && balancePoints[e.activeTooltipIndex]) {
-      q = getQuarter(balancePoints[e.activeTooltipIndex])
-    }
-    if (q && q >= 1 && q <= 4 && lastRef.current !== q) {
-      lastRef.current = q
-      setLocalHoverQuarter(q)
-    }
-  }, [isQuarter, globalQuarter, balancePoints])
-
-  const handleMouseLeave = useCallback(() => {
-    lastRef.current = null
-    setLocalHoverQuarter(null)
-  }, [])
-
-  const tickRenderer = useMemo(() => isQuarter ? createQuarterTickRenderer(activeQuarter) : undefined, [isQuarter, activeQuarter])
-
   return (
     <ExpandableChartCard
       cardHeight={cardHeight}
@@ -951,9 +543,6 @@ export const DetailedCapitalChartCard = React.memo(function DetailedCapitalChart
       icon={Layers}
       iconColor="text-emerald-400"
       hoverBorderColor="hover:border-emerald-500/40"
-      activeQuarter={activeQuarter}
-      isQuarter={isQuarter}
-      onMouseLeave={handleMouseLeave}
       latestBadge={
         <span className="font-mono text-[11px] font-bold text-emerald-400 bg-emerald-500/10 border border-emerald-500/20 px-2 py-0.5 rounded-md">
           Tổng NV: {latestPoint?.tongNV != null ? `${fmtNum(latestPoint.tongNV)} tỷ` : '—'}
@@ -961,63 +550,26 @@ export const DetailedCapitalChartCard = React.memo(function DetailedCapitalChart
       }
       modalTitle="Cơ Cấu Nguồn Vốn (Bóc Tách Chi Tiết Chuẩn WiData)"
       modalSubtitle={`Vốn chủ sở hữu, Vay ngắn hạn, Vay dài hạn, Phải trả người bán (${balancePoints.length} kỳ)`}
-        >
+    >
       {(height) =>
         balancePoints.length > 0 ? (
           <ResponsiveContainer width="100%" height={height}>
             <ComposedChart
               data={balancePoints}
               margin={{ top: 10, right: 10, left: -10, bottom: 0 }}
-              onMouseMove={handleMouseMove}
             >
               <CartesianGrid strokeDasharray="3 3" stroke="#334155" opacity={0.25} />
-              <XAxis dataKey="displayDate" tick={tickRenderer || { fontSize: 10, fill: '#888' }} />
+              <XAxis dataKey="displayDate" tick={{ fontSize: 9.5, fill: '#888' }} />
               <YAxis yAxisId="left" tick={{ fontSize: 10, fill: '#888' }} tickFormatter={(v) => `${Math.round(v)}`} />
               <Tooltip content={<CustomChartTooltip />} isAnimationActive={false} animationDuration={0} cursor={{ fill: 'rgba(255, 255, 255, 0.05)' }} />
               <Legend wrapperStyle={{ fontSize: '9px', paddingTop: '4px' }} />
               {/* Stacked Bars chuẩn 100% WiData: VCSH -> Người mua trả trước -> Phải trả người bán -> Nguồn vốn khác -> Vay dài hạn -> Vay ngắn hạn */}
-              <Bar yAxisId="left" dataKey="vcsh" name="Vốn chủ sở hữu" stackId="nv" fill="#3b82f6" isAnimationActive={false}>
-                {balancePoints.map((entry, index) => {
-                  const q = getQuarter(entry)
-                  const isMatch = activeQuarter == null || q === activeQuarter
-                  return <Cell key={`nv-vcsh-${index}`} fillOpacity={isMatch ? 1 : 0.15} stroke={activeQuarter != null && isMatch ? '#ffffff' : 'none'} strokeWidth={activeQuarter != null && isMatch ? 1.5 : 0} style={{ transition: 'fill-opacity 40ms ease-out' }} />
-                })}
-              </Bar>
-              <Bar yAxisId="left" dataKey="nmtt" name="Người mua trả trước" stackId="nv" fill="#f97316" isAnimationActive={false}>
-                {balancePoints.map((entry, index) => {
-                  const q = getQuarter(entry)
-                  const isMatch = activeQuarter == null || q === activeQuarter
-                  return <Cell key={`nv-nmtt-${index}`} fillOpacity={isMatch ? 1 : 0.15} stroke={activeQuarter != null && isMatch ? '#ffffff' : 'none'} strokeWidth={activeQuarter != null && isMatch ? 1.5 : 0} style={{ transition: 'fill-opacity 40ms ease-out' }} />
-                })}
-              </Bar>
-              <Bar yAxisId="left" dataKey="ptnb" name="Phải trả người bán" stackId="nv" fill="#a855f7" isAnimationActive={false}>
-                {balancePoints.map((entry, index) => {
-                  const q = getQuarter(entry)
-                  const isMatch = activeQuarter == null || q === activeQuarter
-                  return <Cell key={`nv-ptnb-${index}`} fillOpacity={isMatch ? 1 : 0.15} stroke={activeQuarter != null && isMatch ? '#ffffff' : 'none'} strokeWidth={activeQuarter != null && isMatch ? 1.5 : 0} style={{ transition: 'fill-opacity 40ms ease-out' }} />
-                })}
-              </Bar>
-              <Bar yAxisId="left" dataKey="nvKhac" name="Nguồn vốn khác" stackId="nv" fill="#64748b" isAnimationActive={false}>
-                {balancePoints.map((entry, index) => {
-                  const q = getQuarter(entry)
-                  const isMatch = activeQuarter == null || q === activeQuarter
-                  return <Cell key={`nv-k-${index}`} fillOpacity={isMatch ? 1 : 0.15} stroke={activeQuarter != null && isMatch ? '#ffffff' : 'none'} strokeWidth={activeQuarter != null && isMatch ? 1.5 : 0} style={{ transition: 'fill-opacity 40ms ease-out' }} />
-                })}
-              </Bar>
-              <Bar yAxisId="left" dataKey="vdh" name="Vay và thuê tài chính dài hạn" stackId="nv" fill="#facc15" isAnimationActive={false}>
-                {balancePoints.map((entry, index) => {
-                  const q = getQuarter(entry)
-                  const isMatch = activeQuarter == null || q === activeQuarter
-                  return <Cell key={`nv-vdh-${index}`} fillOpacity={isMatch ? 1 : 0.15} stroke={activeQuarter != null && isMatch ? '#ffffff' : 'none'} strokeWidth={activeQuarter != null && isMatch ? 1.5 : 0} style={{ transition: 'fill-opacity 40ms ease-out' }} />
-                })}
-              </Bar>
-              <Bar yAxisId="left" dataKey="vnh" name="Vay và thuê tài chính ngắn hạn" stackId="nv" fill="#f43f5e" radius={[2, 2, 0, 0]} isAnimationActive={false}>
-                {balancePoints.map((entry, index) => {
-                  const q = getQuarter(entry)
-                  const isMatch = activeQuarter == null || q === activeQuarter
-                  return <Cell key={`nv-vnh-${index}`} fillOpacity={isMatch ? 1 : 0.15} stroke={activeQuarter != null && isMatch ? '#ffffff' : 'none'} strokeWidth={activeQuarter != null && isMatch ? 1.5 : 0} style={{ transition: 'fill-opacity 40ms ease-out' }} />
-                })}
-              </Bar>
+              <Bar yAxisId="left" dataKey="vcsh" name="Vốn chủ sở hữu" stackId="nv" fill="#3b82f6" isAnimationActive={false} />
+              <Bar yAxisId="left" dataKey="nmtt" name="Người mua trả trước" stackId="nv" fill="#f97316" isAnimationActive={false} />
+              <Bar yAxisId="left" dataKey="ptnb" name="Phải trả người bán" stackId="nv" fill="#a855f7" isAnimationActive={false} />
+              <Bar yAxisId="left" dataKey="nvKhac" name="Nguồn vốn khác" stackId="nv" fill="#64748b" isAnimationActive={false} />
+              <Bar yAxisId="left" dataKey="vdh" name="Vay và thuê tài chính dài hạn" stackId="nv" fill="#facc15" isAnimationActive={false} />
+              <Bar yAxisId="left" dataKey="vnh" name="Vay và thuê tài chính ngắn hạn" stackId="nv" fill="#f43f5e" radius={[2, 2, 0, 0]} isAnimationActive={false} />
             </ComposedChart>
           </ResponsiveContainer>
         ) : (
@@ -1034,46 +586,14 @@ export const DetailedCapitalChartCard = React.memo(function DetailedCapitalChart
 export const DetailedCashFlowChartCard = React.memo(function DetailedCashFlowChartCard({
   balancePoints,
   isQuarter,
-  globalQuarter,
   latestPoint,
   cardHeight,
 }: {
   balancePoints: any[]
-  isQuarter: boolean
-  globalQuarter: number | null
+  isQuarter?: boolean
   latestPoint: any
   cardHeight?: number
 }) {
-  const [localHoverQuarter, setLocalHoverQuarter] = useState<number | null>(null)
-  const lastRef = useRef<number | null>(null)
-  const activeQuarter = globalQuarter ?? localHoverQuarter
-
-  const handleMouseMove = useCallback((e: any) => {
-    if (!isQuarter || globalQuarter != null) return
-    let q: number | null = null
-    if (e?.activePayload && e.activePayload.length > 0) {
-      q = getQuarter(e.activePayload[0]?.payload)
-    }
-    if (!q && e?.activeLabel && typeof e.activeLabel === 'string') {
-      const m = e.activeLabel.match(/Q([1-4])/i)
-      if (m) q = parseInt(m[1], 10)
-    }
-    if (!q && typeof e?.activeTooltipIndex === 'number' && balancePoints[e.activeTooltipIndex]) {
-      q = getQuarter(balancePoints[e.activeTooltipIndex])
-    }
-    if (q && q >= 1 && q <= 4 && lastRef.current !== q) {
-      lastRef.current = q
-      setLocalHoverQuarter(q)
-    }
-  }, [isQuarter, globalQuarter, balancePoints])
-
-  const handleMouseLeave = useCallback(() => {
-    lastRef.current = null
-    setLocalHoverQuarter(null)
-  }, [])
-
-  const tickRenderer = useMemo(() => isQuarter ? createQuarterTickRenderer(activeQuarter) : undefined, [isQuarter, activeQuarter])
-
   return (
     <ExpandableChartCard
       cardHeight={cardHeight}
@@ -1081,9 +601,6 @@ export const DetailedCashFlowChartCard = React.memo(function DetailedCashFlowCha
       icon={Activity}
       iconColor="text-amber-400"
       hoverBorderColor="hover:border-amber-500/40"
-      activeQuarter={activeQuarter}
-      isQuarter={isQuarter}
-      onMouseLeave={handleMouseLeave}
       latestBadge={
         <span className="font-mono text-[11px] font-bold text-amber-400 bg-amber-500/10 border border-amber-500/20 px-2 py-0.5 rounded-md">
           OCF: {latestPoint?.ocf != null ? `${fmtNum(latestPoint.ocf)} tỷ` : '—'}
@@ -1091,42 +608,23 @@ export const DetailedCashFlowChartCard = React.memo(function DetailedCashFlowCha
       }
       modalTitle="Lưu Chuyển Tiền Tệ Thuần (OCF, ICF, CFF)"
       modalSubtitle={`Dòng tiền từ HĐKD, HĐ đầu tư & HĐ tài chính (${balancePoints.length} kỳ)`}
-        >
+    >
       {(height) =>
         balancePoints.length > 0 ? (
           <ResponsiveContainer width="100%" height={height}>
             <ComposedChart
               data={balancePoints}
               margin={{ top: 10, right: 10, left: -10, bottom: 0 }}
-              onMouseMove={handleMouseMove}
             >
               <CartesianGrid strokeDasharray="3 3" stroke="#334155" opacity={0.25} />
-              <XAxis dataKey="displayDate" tick={tickRenderer || { fontSize: 10, fill: '#888' }} />
+              <XAxis dataKey="displayDate" tick={{ fontSize: 9.5, fill: '#888' }} />
               <YAxis yAxisId="left" tick={{ fontSize: 10, fill: '#888' }} tickFormatter={(v) => `${Math.round(v)}`} />
               <Tooltip content={<CustomChartTooltip />} isAnimationActive={false} animationDuration={0} cursor={{ fill: 'rgba(255, 255, 255, 0.05)' }} />
               <Legend wrapperStyle={{ fontSize: '9px', paddingTop: '4px' }} />
               {/* Stacked Bars với stackId="cf": Recharts tự động xếp các giá trị dương lên trên 0, giá trị âm xuống dưới 0 chuẩn 100% WiData */}
-              <Bar yAxisId="left" dataKey="cff" name="LCTT từ hoạt động tài chính" stackId="cf" fill="#facc15" isAnimationActive={false}>
-                {balancePoints.map((entry, index) => {
-                  const q = getQuarter(entry)
-                  const isMatch = activeQuarter == null || q === activeQuarter
-                  return <Cell key={`cf-cff-${index}`} fillOpacity={isMatch ? 1 : 0.15} stroke={activeQuarter != null && isMatch ? '#ffffff' : 'none'} strokeWidth={activeQuarter != null && isMatch ? 1.5 : 0} style={{ transition: 'fill-opacity 40ms ease-out' }} />
-                })}
-              </Bar>
-              <Bar yAxisId="left" dataKey="icf" name="LCTT từ hoạt động đầu tư" stackId="cf" fill="#14b8a6" isAnimationActive={false}>
-                {balancePoints.map((entry, index) => {
-                  const q = getQuarter(entry)
-                  const isMatch = activeQuarter == null || q === activeQuarter
-                  return <Cell key={`cf-icf-${index}`} fillOpacity={isMatch ? 1 : 0.15} stroke={activeQuarter != null && isMatch ? '#ffffff' : 'none'} strokeWidth={activeQuarter != null && isMatch ? 1.5 : 0} style={{ transition: 'fill-opacity 40ms ease-out' }} />
-                })}
-              </Bar>
-              <Bar yAxisId="left" dataKey="ocf" name="LCTT từ hoạt động kinh doanh" stackId="cf" fill="#6366f1" isAnimationActive={false}>
-                {balancePoints.map((entry, index) => {
-                  const q = getQuarter(entry)
-                  const isMatch = activeQuarter == null || q === activeQuarter
-                  return <Cell key={`cf-ocf-${index}`} fillOpacity={isMatch ? 1 : 0.15} stroke={activeQuarter != null && isMatch ? '#ffffff' : 'none'} strokeWidth={activeQuarter != null && isMatch ? 1.5 : 0} style={{ transition: 'fill-opacity 40ms ease-out' }} />
-                })}
-              </Bar>
+              <Bar yAxisId="left" dataKey="cff" name="LCTT từ hoạt động tài chính" stackId="cf" fill="#facc15" isAnimationActive={false} />
+              <Bar yAxisId="left" dataKey="icf" name="LCTT từ hoạt động đầu tư" stackId="cf" fill="#14b8a6" isAnimationActive={false} />
+              <Bar yAxisId="left" dataKey="ocf" name="LCTT từ hoạt động kinh doanh" stackId="cf" fill="#6366f1" isAnimationActive={false} />
               {/* Line Lưu chuyển tiền thuần trong kỳ (Đường đỏ hồng uốn lượn) */}
               <Line
                 yAxisId="left"
@@ -1135,26 +633,9 @@ export const DetailedCashFlowChartCard = React.memo(function DetailedCashFlowCha
                 name="Lưu chuyển tiền thuần trong kỳ"
                 stroke="#f43f5e"
                 strokeWidth={2.2}
-                isAnimationActive={false}
-                dot={(props: any) => {
-                  const { cx, cy, payload } = props
-                  if (!cx || !cy) return null
-                  const q = getQuarter(payload)
-                  const isMatch = activeQuarter != null && q === activeQuarter
-                  return (
-                    <circle
-                      key={`cf-net-dot-${cx}-${cy}`}
-                      cx={cx}
-                      cy={cy}
-                      r={isMatch ? 5.5 : 2.5}
-                      fill="#f43f5e"
-                      stroke={isMatch ? '#ffffff' : 'none'}
-                      strokeWidth={isMatch ? 2 : 0}
-                      opacity={activeQuarter == null || isMatch ? 1 : 0.2}
-                    />
-                  )
-                }}
+                dot={{ r: 2.5, fill: '#f43f5e' }}
                 activeDot={{ r: 5 }}
+                isAnimationActive={false}
               />
             </ComposedChart>
           </ResponsiveContainer>
@@ -1171,54 +652,18 @@ export const DetailedCashFlowChartCard = React.memo(function DetailedCashFlowCha
 // ── 7B. Biểu đồ CAPEX VÀ KHẤU HAO (Chuẩn 100% WiData) ──
 const DetailedCapexDepreciationCard = React.memo(function DetailedCapexDepreciationCard({
   capexPoints,
-  isQuarter,
-  globalQuarter,
   latestPoint,
 }: {
   capexPoints: any[]
-  isQuarter: boolean
-  globalQuarter: number | null
+  isQuarter?: boolean
   latestPoint: any
 }) {
-  const [localHoverQuarter, setLocalHoverQuarter] = useState<number | null>(null)
-  const lastRef = useRef<number | null>(null)
-  const activeQuarter = globalQuarter ?? localHoverQuarter
-
-  const handleMouseMove = useCallback((e: any) => {
-    if (!isQuarter || globalQuarter != null) return
-    let q: number | null = null
-    if (e?.activePayload && e.activePayload.length > 0) {
-      q = getQuarter(e.activePayload[0]?.payload)
-    }
-    if (!q && e?.activeLabel && typeof e.activeLabel === 'string') {
-      const m = e.activeLabel.match(/Q([1-4])/i)
-      if (m) q = parseInt(m[1], 10)
-    }
-    if (!q && typeof e?.activeTooltipIndex === 'number' && capexPoints[e.activeTooltipIndex]) {
-      q = getQuarter(capexPoints[e.activeTooltipIndex])
-    }
-    if (q && q >= 1 && q <= 4 && lastRef.current !== q) {
-      lastRef.current = q
-      setLocalHoverQuarter(q)
-    }
-  }, [isQuarter, globalQuarter, capexPoints])
-
-  const handleMouseLeave = useCallback(() => {
-    lastRef.current = null
-    setLocalHoverQuarter(null)
-  }, [])
-
-  const tickRenderer = useMemo(() => isQuarter ? createQuarterTickRenderer(activeQuarter) : undefined, [isQuarter, activeQuarter])
-
   return (
     <ExpandableChartCard
       title="CAPEX VÀ KHẤU HAO"
       icon={TrendingUp}
       iconColor="text-amber-400"
       hoverBorderColor="hover:border-amber-500/40"
-      activeQuarter={activeQuarter}
-      isQuarter={isQuarter}
-      onMouseLeave={handleMouseLeave}
       latestBadge={
         <span className="font-mono text-[11px] font-bold text-amber-400 bg-amber-500/10 border border-amber-500/20 px-2 py-0.5 rounded-md">
           Capex: {latestPoint?.capex != null ? `${fmtNum(latestPoint.capex)} tỷ` : '—'}
@@ -1226,55 +671,23 @@ const DetailedCapexDepreciationCard = React.memo(function DetailedCapexDepreciat
       }
       modalTitle="Chi Đầu Tư TSCĐ (Capex) & Khấu Hao"
       modalSubtitle={`Chi tiêu mua sắm TSCĐ và Chi phí khấu hao tài sản (${capexPoints.length} kỳ)`}
-        >
+    >
       {(height) =>
         capexPoints.length > 0 ? (
           <ResponsiveContainer width="100%" height={height}>
             <ComposedChart
               data={capexPoints}
               margin={{ top: 10, right: 10, left: -10, bottom: 0 }}
-              onMouseMove={handleMouseMove}
             >
               <CartesianGrid strokeDasharray="3 3" stroke="#334155" opacity={0.25} />
-              <XAxis dataKey="displayDate" tick={tickRenderer || { fontSize: 10, fill: '#888' }} />
+              <XAxis dataKey="displayDate" tick={{ fontSize: 9.5, fill: '#888' }} />
               <YAxis yAxisId="left" tick={{ fontSize: 10, fill: '#888' }} tickFormatter={(v) => `${Math.round(v)}`} />
               <Tooltip content={<CustomChartTooltip />} isAnimationActive={false} animationDuration={0} cursor={{ fill: 'rgba(255, 255, 255, 0.05)' }} />
               <Legend wrapperStyle={{ fontSize: '9px', paddingTop: '4px' }} />
-              
               {/* Cột Chi mua sắm xây dựng TSCĐ (Dương) */}
-              <Bar yAxisId="left" dataKey="capex" name="Tiền chi mua sắm xây dựng TSCĐ" fill="#0d9488" isAnimationActive={false}>
-                {capexPoints.map((entry, index) => {
-                  const q = getQuarter(entry)
-                  const isMatch = activeQuarter == null || q === activeQuarter
-                  return (
-                    <Cell
-                      key={`capex-bar-${index}`}
-                      fillOpacity={isMatch ? 1 : 0.15}
-                      stroke={activeQuarter != null && isMatch ? '#ffffff' : 'none'}
-                      strokeWidth={activeQuarter != null && isMatch ? 1.5 : 0}
-                      style={{ transition: 'fill-opacity 40ms ease-out' }}
-                    />
-                  )
-                })}
-              </Bar>
-
+              <Bar yAxisId="left" dataKey="capex" name="Tiền chi mua sắm xây dựng TSCĐ" fill="#0d9488" isAnimationActive={false} />
               {/* Cột Khấu hao tài sản cố định (Âm dưới 0 như chuẩn WiData) */}
-              <Bar yAxisId="left" dataKey="khauHao" name="Khấu hao tài sản cố định" fill="#eab308" isAnimationActive={false}>
-                {capexPoints.map((entry, index) => {
-                  const q = getQuarter(entry)
-                  const isMatch = activeQuarter == null || q === activeQuarter
-                  return (
-                    <Cell
-                      key={`kh-bar-${index}`}
-                      fillOpacity={isMatch ? 1 : 0.15}
-                      stroke={activeQuarter != null && isMatch ? '#ffffff' : 'none'}
-                      strokeWidth={activeQuarter != null && isMatch ? 1.5 : 0}
-                      style={{ transition: 'fill-opacity 40ms ease-out' }}
-                    />
-                  )
-                })}
-              </Bar>
-
+              <Bar yAxisId="left" dataKey="khauHao" name="Khấu hao tài sản cố định" fill="#eab308" isAnimationActive={false} />
               {/* Đường Line Area CAPEX màu cam/nâu bao đỉnh */}
               <Area
                 yAxisId="left"
@@ -1301,54 +714,18 @@ const DetailedCapexDepreciationCard = React.memo(function DetailedCapexDepreciat
 // ── 7C. Biểu đồ DỰ PHÒNG (Chuẩn 100% WiData) ──
 const DetailedProvisionCard = React.memo(function DetailedProvisionCard({
   provisionPoints,
-  isQuarter,
-  globalQuarter,
   latestPoint,
 }: {
   provisionPoints: any[]
-  isQuarter: boolean
-  globalQuarter: number | null
+  isQuarter?: boolean
   latestPoint: any
 }) {
-  const [localHoverQuarter, setLocalHoverQuarter] = useState<number | null>(null)
-  const lastRef = useRef<number | null>(null)
-  const activeQuarter = globalQuarter ?? localHoverQuarter
-
-  const handleMouseMove = useCallback((e: any) => {
-    if (!isQuarter || globalQuarter != null) return
-    let q: number | null = null
-    if (e?.activePayload && e.activePayload.length > 0) {
-      q = getQuarter(e.activePayload[0]?.payload)
-    }
-    if (!q && e?.activeLabel && typeof e.activeLabel === 'string') {
-      const m = e.activeLabel.match(/Q([1-4])/i)
-      if (m) q = parseInt(m[1], 10)
-    }
-    if (!q && typeof e?.activeTooltipIndex === 'number' && provisionPoints[e.activeTooltipIndex]) {
-      q = getQuarter(provisionPoints[e.activeTooltipIndex])
-    }
-    if (q && q >= 1 && q <= 4 && lastRef.current !== q) {
-      lastRef.current = q
-      setLocalHoverQuarter(q)
-    }
-  }, [isQuarter, globalQuarter, provisionPoints])
-
-  const handleMouseLeave = useCallback(() => {
-    lastRef.current = null
-    setLocalHoverQuarter(null)
-  }, [])
-
-  const tickRenderer = useMemo(() => isQuarter ? createQuarterTickRenderer(activeQuarter) : undefined, [isQuarter, activeQuarter])
-
   return (
     <ExpandableChartCard
       title="DỰ PHÒNG"
       icon={Briefcase}
       iconColor="text-purple-400"
       hoverBorderColor="hover:border-purple-500/40"
-      activeQuarter={activeQuarter}
-      isQuarter={isQuarter}
-      onMouseLeave={handleMouseLeave}
       latestBadge={
         <span className="font-mono text-[11px] font-bold text-purple-400 bg-purple-500/10 border border-purple-500/20 px-2 py-0.5 rounded-md">
           Tổng DP: {latestPoint?.tongDuPhong != null ? `${fmtNum(latestPoint.tongDuPhong)} tỷ` : '—'}
@@ -1356,56 +733,23 @@ const DetailedProvisionCard = React.memo(function DetailedProvisionCard({
       }
       modalTitle="Chi Phí Dự Phòng (WiData Standard)"
       modalSubtitle={`Dự phòng giảm giá hàng tồn kho, nợ khó đòi & đầu tư tài chính (${provisionPoints.length} kỳ)`}
-        >
+    >
       {(height) =>
         provisionPoints.length > 0 ? (
           <ResponsiveContainer width="100%" height={height}>
             <ComposedChart
               data={provisionPoints}
               margin={{ top: 10, right: 10, left: -10, bottom: 0 }}
-              onMouseMove={handleMouseMove}
             >
               <CartesianGrid strokeDasharray="3 3" stroke="#334155" opacity={0.25} />
-              <XAxis dataKey="displayDate" tick={tickRenderer || { fontSize: 10, fill: '#888' }} />
+              <XAxis dataKey="displayDate" tick={{ fontSize: 9.5, fill: '#888' }} />
               <YAxis yAxisId="left" tick={{ fontSize: 10, fill: '#888' }} tickFormatter={(v) => `${Math.round(v)}`} />
               <Tooltip content={<CustomChartTooltip />} isAnimationActive={false} animationDuration={0} cursor={{ fill: 'rgba(255, 255, 255, 0.05)' }} />
               <Legend wrapperStyle={{ fontSize: '9px', paddingTop: '4px' }} />
-
-              {/* Dự phòng phải thu dài hạn */}
-              <Bar yAxisId="left" dataKey="dpPhaiThuDH" name="Dự phòng phải thu dài hạn" stackId="dp" fill="#dc2626" isAnimationActive={false}>
-                {provisionPoints.map((entry, index) => {
-                  const q = getQuarter(entry)
-                  const isMatch = activeQuarter == null || q === activeQuarter
-                  return <Cell key={`dp-ptdh-${index}`} fillOpacity={isMatch ? 1 : 0.15} stroke={activeQuarter != null && isMatch ? '#ffffff' : 'none'} strokeWidth={activeQuarter != null && isMatch ? 1.5 : 0} style={{ transition: 'fill-opacity 40ms ease-out' }} />
-                })}
-              </Bar>
-
-              {/* Dự phòng tổn thất đầu tư vào đơn vị khác */}
-              <Bar yAxisId="left" dataKey="dpDauTuTC" name="Dự phòng tổn thất đầu tư vào đơn vị khác" stackId="dp" fill="#ec4899" isAnimationActive={false}>
-                {provisionPoints.map((entry, index) => {
-                  const q = getQuarter(entry)
-                  const isMatch = activeQuarter == null || q === activeQuarter
-                  return <Cell key={`dp-dttc-${index}`} fillOpacity={isMatch ? 1 : 0.15} stroke={activeQuarter != null && isMatch ? '#ffffff' : 'none'} strokeWidth={activeQuarter != null && isMatch ? 1.5 : 0} style={{ transition: 'fill-opacity 40ms ease-out' }} />
-                })}
-              </Bar>
-
-              {/* Dự phòng hàng tồn kho */}
-              <Bar yAxisId="left" dataKey="dpHangTonKho" name="Dự phòng hàng tồn kho" stackId="dp" fill="#eab308" isAnimationActive={false}>
-                {provisionPoints.map((entry, index) => {
-                  const q = getQuarter(entry)
-                  const isMatch = activeQuarter == null || q === activeQuarter
-                  return <Cell key={`dp-htk-${index}`} fillOpacity={isMatch ? 1 : 0.15} stroke={activeQuarter != null && isMatch ? '#ffffff' : 'none'} strokeWidth={activeQuarter != null && isMatch ? 1.5 : 0} style={{ transition: 'fill-opacity 40ms ease-out' }} />
-                })}
-              </Bar>
-
-              {/* Dự phòng phải thu ngắn hạn khó đòi */}
-              <Bar yAxisId="left" dataKey="dpPhaiThuNH" name="Dự phòng phải thu ngắn hạn khó đòi" stackId="dp" fill="#6366f1" isAnimationActive={false}>
-                {provisionPoints.map((entry, index) => {
-                  const q = getQuarter(entry)
-                  const isMatch = activeQuarter == null || q === activeQuarter
-                  return <Cell key={`dp-ptnh-${index}`} fillOpacity={isMatch ? 1 : 0.15} stroke={activeQuarter != null && isMatch ? '#ffffff' : 'none'} strokeWidth={activeQuarter != null && isMatch ? 1.5 : 0} style={{ transition: 'fill-opacity 40ms ease-out' }} />
-                })}
-              </Bar>
+              <Bar yAxisId="left" dataKey="dpPhaiThuDH" name="Dự phòng phải thu dài hạn" stackId="dp" fill="#dc2626" isAnimationActive={false} />
+              <Bar yAxisId="left" dataKey="dpDauTuTC" name="Dự phòng tổn thất đầu tư vào đơn vị khác" stackId="dp" fill="#ec4899" isAnimationActive={false} />
+              <Bar yAxisId="left" dataKey="dpHangTonKho" name="Dự phòng hàng tồn kho" stackId="dp" fill="#eab308" isAnimationActive={false} />
+              <Bar yAxisId="left" dataKey="dpPhaiThuNH" name="Dự phòng phải thu ngắn hạn khó đòi" stackId="dp" fill="#6366f1" isAnimationActive={false} />
             </ComposedChart>
           </ResponsiveContainer>
         ) : (
@@ -1421,54 +765,18 @@ const DetailedProvisionCard = React.memo(function DetailedProvisionCard({
 // ── 7D. Biểu đồ DOANH THU & CHI PHÍ TÀI CHÍNH (Chuẩn 100% WiData) ──
 const DetailedFinancialRevenueExpenseCard = React.memo(function DetailedFinancialRevenueExpenseCard({
   financialPoints,
-  isQuarter,
-  globalQuarter,
   latestPoint,
 }: {
   financialPoints: any[]
-  isQuarter: boolean
-  globalQuarter: number | null
+  isQuarter?: boolean
   latestPoint: any
 }) {
-  const [localHoverQuarter, setLocalHoverQuarter] = useState<number | null>(null)
-  const lastRef = useRef<number | null>(null)
-  const activeQuarter = globalQuarter ?? localHoverQuarter
-
-  const handleMouseMove = useCallback((e: any) => {
-    if (!isQuarter || globalQuarter != null) return
-    let q: number | null = null
-    if (e?.activePayload && e.activePayload.length > 0) {
-      q = getQuarter(e.activePayload[0]?.payload)
-    }
-    if (!q && e?.activeLabel && typeof e.activeLabel === 'string') {
-      const m = e.activeLabel.match(/Q([1-4])/i)
-      if (m) q = parseInt(m[1], 10)
-    }
-    if (!q && typeof e?.activeTooltipIndex === 'number' && financialPoints[e.activeTooltipIndex]) {
-      q = getQuarter(financialPoints[e.activeTooltipIndex])
-    }
-    if (q && q >= 1 && q <= 4 && lastRef.current !== q) {
-      lastRef.current = q
-      setLocalHoverQuarter(q)
-    }
-  }, [isQuarter, globalQuarter, financialPoints])
-
-  const handleMouseLeave = useCallback(() => {
-    lastRef.current = null
-    setLocalHoverQuarter(null)
-  }, [])
-
-  const tickRenderer = useMemo(() => isQuarter ? createQuarterTickRenderer(activeQuarter) : undefined, [isQuarter, activeQuarter])
-
   return (
     <ExpandableChartCard
       title="DOANH THU & CHI PHÍ TÀI CHÍNH"
       icon={DollarSign}
       iconColor="text-sky-400"
       hoverBorderColor="hover:border-sky-500/40"
-      activeQuarter={activeQuarter}
-      isQuarter={isQuarter}
-      onMouseLeave={handleMouseLeave}
       latestBadge={
         <span className="font-mono text-[11px] font-bold text-sky-400 bg-sky-500/10 border border-sky-500/20 px-2 py-0.5 rounded-md">
           DT TC: {latestPoint?.dtTaiChinh != null ? `${fmtNum(latestPoint.dtTaiChinh)} tỷ` : '—'}
@@ -1476,40 +784,21 @@ const DetailedFinancialRevenueExpenseCard = React.memo(function DetailedFinancia
       }
       modalTitle="Doanh Thu Tài Chính & Chi Phí Tài Chính"
       modalSubtitle={`Doanh thu tài chính, Chi phí tài chính và riêng Chi phí lãi vay (${financialPoints.length} kỳ)`}
-        >
+    >
       {(height) =>
         financialPoints.length > 0 ? (
           <ResponsiveContainer width="100%" height={height}>
             <ComposedChart
               data={financialPoints}
               margin={{ top: 10, right: 10, left: -10, bottom: 0 }}
-              onMouseMove={handleMouseMove}
             >
               <CartesianGrid strokeDasharray="3 3" stroke="#334155" opacity={0.25} />
-              <XAxis dataKey="displayDate" tick={tickRenderer || { fontSize: 10, fill: '#888' }} />
+              <XAxis dataKey="displayDate" tick={{ fontSize: 9.5, fill: '#888' }} />
               <YAxis yAxisId="left" tick={{ fontSize: 10, fill: '#888' }} tickFormatter={(v) => `${Math.round(v)}`} />
               <Tooltip content={<CustomChartTooltip />} isAnimationActive={false} animationDuration={0} cursor={{ fill: 'rgba(255, 255, 255, 0.05)' }} />
               <Legend wrapperStyle={{ fontSize: '9px', paddingTop: '4px' }} />
-
-              {/* Chi phí tài chính khác */}
-              <Bar yAxisId="left" dataKey="cpTaiChinhKhac" name="Chi phí tài chính khác" stackId="cptc" fill="#8b5cf6" isAnimationActive={false}>
-                {financialPoints.map((entry, index) => {
-                  const q = getQuarter(entry)
-                  const isMatch = activeQuarter == null || q === activeQuarter
-                  return <Cell key={`cptc-k-${index}`} fillOpacity={isMatch ? 1 : 0.15} stroke={activeQuarter != null && isMatch ? '#ffffff' : 'none'} strokeWidth={activeQuarter != null && isMatch ? 1.5 : 0} style={{ transition: 'fill-opacity 40ms ease-out' }} />
-                })}
-              </Bar>
-
-              {/* Chi phí lãi vay */}
-              <Bar yAxisId="left" dataKey="cpLaiVay" name="Chi phí lãi vay" stackId="cptc" fill="#eab308" isAnimationActive={false}>
-                {financialPoints.map((entry, index) => {
-                  const q = getQuarter(entry)
-                  const isMatch = activeQuarter == null || q === activeQuarter
-                  return <Cell key={`cptc-lv-${index}`} fillOpacity={isMatch ? 1 : 0.15} stroke={activeQuarter != null && isMatch ? '#ffffff' : 'none'} strokeWidth={activeQuarter != null && isMatch ? 1.5 : 0} style={{ transition: 'fill-opacity 40ms ease-out' }} />
-                })}
-              </Bar>
-
-              {/* Đường Doanh thu tài chính Line */}
+              <Bar yAxisId="left" dataKey="cpTaiChinhKhac" name="Chi phí tài chính khác" stackId="cptc" fill="#8b5cf6" isAnimationActive={false} />
+              <Bar yAxisId="left" dataKey="cpLaiVay" name="Chi phí lãi vay" stackId="cptc" fill="#eab308" isAnimationActive={false} />
               <Line
                 yAxisId="left"
                 type="monotone"
@@ -1517,24 +806,9 @@ const DetailedFinancialRevenueExpenseCard = React.memo(function DetailedFinancia
                 name="Doanh thu tài chính"
                 stroke="#38bdf8"
                 strokeWidth={2.5}
+                dot={{ r: 2.5, fill: '#38bdf8' }}
+                activeDot={{ r: 5 }}
                 isAnimationActive={false}
-                dot={(props: any) => {
-                  const { cx, cy, payload } = props
-                  const q = getQuarter(payload)
-                  const isMatch = activeQuarter == null || q === activeQuarter
-                  return (
-                    <circle
-                      key={`dttc-dot-${props.index}`}
-                      cx={cx}
-                      cy={cy}
-                      r={activeQuarter != null && isMatch ? 4.5 : 2.5}
-                      fill={isMatch ? '#38bdf8' : '#334155'}
-                      stroke={activeQuarter != null && isMatch ? '#ffffff' : 'none'}
-                      strokeWidth={1.5}
-                      style={{ transition: 'all 40ms ease-out' }}
-                    />
-                  )
-                }}
               />
             </ComposedChart>
           </ResponsiveContainer>
@@ -1551,54 +825,18 @@ const DetailedFinancialRevenueExpenseCard = React.memo(function DetailedFinancia
 // ── 7E. Biểu đồ VAY VÀ NỢ THUÊ TÀI CHÍNH (Chuẩn 100% WiData) ──
 const DetailedDebtStructureCard = React.memo(function DetailedDebtStructureCard({
   debtPoints,
-  isQuarter,
-  globalQuarter,
   latestPoint,
 }: {
   debtPoints: any[]
-  isQuarter: boolean
-  globalQuarter: number | null
+  isQuarter?: boolean
   latestPoint: any
 }) {
-  const [localHoverQuarter, setLocalHoverQuarter] = useState<number | null>(null)
-  const lastRef = useRef<number | null>(null)
-  const activeQuarter = globalQuarter ?? localHoverQuarter
-
-  const handleMouseMove = useCallback((e: any) => {
-    if (!isQuarter || globalQuarter != null) return
-    let q: number | null = null
-    if (e?.activePayload && e.activePayload.length > 0) {
-      q = getQuarter(e.activePayload[0]?.payload)
-    }
-    if (!q && e?.activeLabel && typeof e.activeLabel === 'string') {
-      const m = e.activeLabel.match(/Q([1-4])/i)
-      if (m) q = parseInt(m[1], 10)
-    }
-    if (!q && typeof e?.activeTooltipIndex === 'number' && debtPoints[e.activeTooltipIndex]) {
-      q = getQuarter(debtPoints[e.activeTooltipIndex])
-    }
-    if (q && q >= 1 && q <= 4 && lastRef.current !== q) {
-      lastRef.current = q
-      setLocalHoverQuarter(q)
-    }
-  }, [isQuarter, globalQuarter, debtPoints])
-
-  const handleMouseLeave = useCallback(() => {
-    lastRef.current = null
-    setLocalHoverQuarter(null)
-  }, [])
-
-  const tickRenderer = useMemo(() => isQuarter ? createQuarterTickRenderer(activeQuarter) : undefined, [isQuarter, activeQuarter])
-
   return (
     <ExpandableChartCard
       title="VAY VÀ NỢ THUÊ TÀI CHÍNH"
       icon={Percent}
       iconColor="text-rose-400"
       hoverBorderColor="hover:border-rose-500/40"
-      activeQuarter={activeQuarter}
-      isQuarter={isQuarter}
-      onMouseLeave={handleMouseLeave}
       latestBadge={
         <span className="font-mono text-[11px] font-bold text-rose-400 bg-rose-500/10 border border-rose-500/20 px-2 py-0.5 rounded-md">
           Tổng vay: {latestPoint?.tongVay != null ? `${fmtNum(latestPoint.tongVay)} tỷ` : '—'}
@@ -1606,65 +844,24 @@ const DetailedDebtStructureCard = React.memo(function DetailedDebtStructureCard(
       }
       modalTitle="Cơ Cấu Vay & Nợ Thuê Tài Chính (Ngắn Hạn & Dài Hạn)"
       modalSubtitle={`Dư nợ vay ngắn hạn, dài hạn và Tỷ lệ Vay / VCSH (D/E) (${debtPoints.length} kỳ)`}
-        >
+    >
       {(height) =>
         debtPoints.length > 0 ? (
           <ResponsiveContainer width="100%" height={height}>
             <ComposedChart
               data={debtPoints}
               margin={{ top: 10, right: 10, left: -10, bottom: 0 }}
-              onMouseMove={handleMouseMove}
             >
               <CartesianGrid strokeDasharray="3 3" stroke="#334155" opacity={0.25} />
-              <XAxis dataKey="displayDate" tick={tickRenderer || { fontSize: 10, fill: '#888' }} />
+              <XAxis dataKey="displayDate" tick={{ fontSize: 9.5, fill: '#888' }} />
               <YAxis yAxisId="left" tick={{ fontSize: 10, fill: '#888' }} tickFormatter={(v) => `${Math.round(v)}`} />
               <Tooltip content={<CustomChartTooltip />} isAnimationActive={false} animationDuration={0} cursor={{ fill: 'rgba(255, 255, 255, 0.05)' }} />
               <Legend wrapperStyle={{ fontSize: '9px', paddingTop: '4px' }} />
-
-              {/* Vay ngắn hạn */}
-              <Bar yAxisId="left" dataKey="vayNganHan" name="Vay và thuê TC ngắn hạn" stackId="debt" fill="#f43f5e" isAnimationActive={false}>
-                {debtPoints.map((entry, index) => {
-                  const q = getQuarter(entry)
-                  const isMatch = activeQuarter == null || q === activeQuarter
-                  return <Cell key={`debt-vnh-${index}`} fillOpacity={isMatch ? 1 : 0.15} stroke={activeQuarter != null && isMatch ? '#ffffff' : 'none'} strokeWidth={activeQuarter != null && isMatch ? 1.5 : 0} style={{ transition: 'fill-opacity 40ms ease-out' }} />
-                })}
-              </Bar>
-
-              {/* Vay dài hạn */}
-              <Bar yAxisId="left" dataKey="vayDaiHan" name="Vay và thuê TC dài hạn" stackId="debt" fill="#f97316" isAnimationActive={false}>
-                {debtPoints.map((entry, index) => {
-                  const q = getQuarter(entry)
-                  const isMatch = activeQuarter == null || q === activeQuarter
-                  return <Cell key={`debt-vdh-${index}`} fillOpacity={isMatch ? 1 : 0.15} stroke={activeQuarter != null && isMatch ? '#ffffff' : 'none'} strokeWidth={activeQuarter != null && isMatch ? 1.5 : 0} style={{ transition: 'fill-opacity 40ms ease-out' }} />
-                })}
-              </Bar>
-
-              {/* Thuê tài chính */}
-              <Bar yAxisId="left" dataKey="thueTaiChinh" name="Thuê tài chính" stackId="debt" fill="#10b981" isAnimationActive={false}>
-                {debtPoints.map((entry, index) => {
-                  const q = getQuarter(entry)
-                  const isMatch = activeQuarter == null || q === activeQuarter
-                  return <Cell key={`debt-ttc-${index}`} fillOpacity={isMatch ? 1 : 0.15} stroke={activeQuarter != null && isMatch ? '#ffffff' : 'none'} strokeWidth={activeQuarter != null && isMatch ? 1.5 : 0} style={{ transition: 'fill-opacity 40ms ease-out' }} />
-                })}
-              </Bar>
-
-              {/* Trái phiếu phát hành */}
-              <Bar yAxisId="left" dataKey="traiPhieu" name="Trái phiếu phát hành" stackId="debt" fill="#eab308" isAnimationActive={false}>
-                {debtPoints.map((entry, index) => {
-                  const q = getQuarter(entry)
-                  const isMatch = activeQuarter == null || q === activeQuarter
-                  return <Cell key={`debt-tp-${index}`} fillOpacity={isMatch ? 1 : 0.15} stroke={activeQuarter != null && isMatch ? '#ffffff' : 'none'} strokeWidth={activeQuarter != null && isMatch ? 1.5 : 0} style={{ transition: 'fill-opacity 40ms ease-out' }} />
-                })}
-              </Bar>
-
-              {/* Nợ dài hạn khác */}
-              <Bar yAxisId="left" dataKey="noDHKhac" name="Nợ dài hạn khác" stackId="debt" fill="#8b5cf6" radius={[2, 2, 0, 0]} isAnimationActive={false}>
-                {debtPoints.map((entry, index) => {
-                  const q = getQuarter(entry)
-                  const isMatch = activeQuarter == null || q === activeQuarter
-                  return <Cell key={`debt-k-${index}`} fillOpacity={isMatch ? 1 : 0.15} stroke={activeQuarter != null && isMatch ? '#ffffff' : 'none'} strokeWidth={activeQuarter != null && isMatch ? 1.5 : 0} style={{ transition: 'fill-opacity 40ms ease-out' }} />
-                })}
-              </Bar>
+              <Bar yAxisId="left" dataKey="vayNganHan" name="Vay và thuê TC ngắn hạn" stackId="debt" fill="#f43f5e" isAnimationActive={false} />
+              <Bar yAxisId="left" dataKey="vayDaiHan" name="Vay và thuê TC dài hạn" stackId="debt" fill="#f97316" isAnimationActive={false} />
+              <Bar yAxisId="left" dataKey="thueTaiChinh" name="Thuê tài chính" stackId="debt" fill="#10b981" isAnimationActive={false} />
+              <Bar yAxisId="left" dataKey="traiPhieu" name="Trái phiếu phát hành" stackId="debt" fill="#eab308" isAnimationActive={false} />
+              <Bar yAxisId="left" dataKey="noDHKhac" name="Nợ dài hạn khác" stackId="debt" fill="#8b5cf6" radius={[2, 2, 0, 0]} isAnimationActive={false} />
             </ComposedChart>
           </ResponsiveContainer>
         ) : (
@@ -1680,54 +877,18 @@ const DetailedDebtStructureCard = React.memo(function DetailedDebtStructureCard(
 // ── 7F. Biểu đồ MÔ HÌNH DUPONT (Chuẩn 100% WiData) ──
 const DetailedDupontCard = React.memo(function DetailedDupontCard({
   dupontPoints,
-  isQuarter,
-  globalQuarter,
   latestPoint,
 }: {
   dupontPoints: any[]
-  isQuarter: boolean
-  globalQuarter: number | null
+  isQuarter?: boolean
   latestPoint: any
 }) {
-  const [localHoverQuarter, setLocalHoverQuarter] = useState<number | null>(null)
-  const lastRef = useRef<number | null>(null)
-  const activeQuarter = globalQuarter ?? localHoverQuarter
-
-  const handleMouseMove = useCallback((e: any) => {
-    if (!isQuarter || globalQuarter != null) return
-    let q: number | null = null
-    if (e?.activePayload && e.activePayload.length > 0) {
-      q = getQuarter(e.activePayload[0]?.payload)
-    }
-    if (!q && e?.activeLabel && typeof e.activeLabel === 'string') {
-      const m = e.activeLabel.match(/Q([1-4])/i)
-      if (m) q = parseInt(m[1], 10)
-    }
-    if (!q && typeof e?.activeTooltipIndex === 'number' && dupontPoints[e.activeTooltipIndex]) {
-      q = getQuarter(dupontPoints[e.activeTooltipIndex])
-    }
-    if (q && q >= 1 && q <= 4 && lastRef.current !== q) {
-      lastRef.current = q
-      setLocalHoverQuarter(q)
-    }
-  }, [isQuarter, globalQuarter, dupontPoints])
-
-  const handleMouseLeave = useCallback(() => {
-    lastRef.current = null
-    setLocalHoverQuarter(null)
-  }, [])
-
-  const tickRenderer = useMemo(() => isQuarter ? createQuarterTickRenderer(activeQuarter) : undefined, [isQuarter, activeQuarter])
-
   return (
     <ExpandableChartCard
       title="MÔ HÌNH DUPONT (PHÂN TÍCH ROE)"
       icon={Activity}
       iconColor="text-teal-400"
       hoverBorderColor="hover:border-teal-500/40"
-      activeQuarter={activeQuarter}
-      isQuarter={isQuarter}
-      onMouseLeave={handleMouseLeave}
       latestBadge={
         <span className="font-mono text-[11px] font-bold text-teal-400 bg-teal-500/10 border border-teal-500/20 px-2 py-0.5 rounded-md">
           ROE: {latestPoint?.roe != null ? `${latestPoint.roe.toFixed(1)}%` : '—'}
@@ -1735,33 +896,24 @@ const DetailedDupontCard = React.memo(function DetailedDupontCard({
       }
       modalTitle="Phân Tích Lợi Nhuận Mô Hình DuPont 3 Thành Phần"
       modalSubtitle={`Biên ròng × Vòng quay tài sản × Đòn bẩy tài chính (${dupontPoints.length} kỳ)`}
-        >
+    >
       {(height) =>
         dupontPoints.length > 0 ? (
           <ResponsiveContainer width="100%" height={height}>
             <ComposedChart
               data={dupontPoints}
               margin={{ top: 10, right: 10, left: -10, bottom: 0 }}
-              onMouseMove={handleMouseMove}
             >
               <CartesianGrid strokeDasharray="3 3" stroke="#334155" opacity={0.25} />
-              <XAxis dataKey="displayDate" tick={tickRenderer || { fontSize: 10, fill: '#888' }} />
+              <XAxis dataKey="displayDate" tick={{ fontSize: 9.5, fill: '#888' }} />
               {/* Trục trái: Tỷ lệ % (ROE và Biên lãi ròng) */}
               <YAxis yAxisId="left" tick={{ fontSize: 10, fill: '#888' }} tickFormatter={(v) => `${Math.round(v)}%`} />
               {/* Trục phải: Hệ số lần/vòng (Đòn bẩy tài chính và Vòng quay tài sản) */}
               <YAxis yAxisId="right" orientation="right" tick={{ fontSize: 10, fill: '#888' }} tickFormatter={(v) => `${Number(v).toFixed(1)}x`} />
               <Tooltip content={<CustomChartTooltip />} isAnimationActive={false} animationDuration={0} cursor={{ fill: 'rgba(255, 255, 255, 0.05)' }} />
               <Legend wrapperStyle={{ fontSize: '9px', paddingTop: '4px' }} />
-
               {/* Cột ROE (%) */}
-              <Bar yAxisId="left" dataKey="roe" name="ROE (%)" fill="#14b8a6" radius={[2, 2, 0, 0]} isAnimationActive={false}>
-                {dupontPoints.map((entry, index) => {
-                  const q = getQuarter(entry)
-                  const isMatch = activeQuarter == null || q === activeQuarter
-                  return <Cell key={`dupont-roe-${index}`} fillOpacity={isMatch ? 1 : 0.15} stroke={activeQuarter != null && isMatch ? '#ffffff' : 'none'} strokeWidth={activeQuarter != null && isMatch ? 1.5 : 0} style={{ transition: 'fill-opacity 40ms ease-out' }} />
-                })}
-              </Bar>
-
+              <Bar yAxisId="left" dataKey="roe" name="ROE (%)" fill="#14b8a6" radius={[2, 2, 0, 0]} isAnimationActive={false} />
               {/* Line: Đòn bẩy tài chính (Tổng tài sản / Vốn chủ sở hữu) */}
               <Line
                 yAxisId="right"
@@ -1773,7 +925,6 @@ const DetailedDupontCard = React.memo(function DetailedDupontCard({
                 isAnimationActive={false}
                 dot={{ r: 3, fill: '#f43f5e' }}
               />
-
               {/* Line: Vòng quay tài sản */}
               <Line
                 yAxisId="right"
@@ -1786,7 +937,6 @@ const DetailedDupontCard = React.memo(function DetailedDupontCard({
                 isAnimationActive={false}
                 dot={{ r: 2.5, fill: '#eab308' }}
               />
-
               {/* Line: Biên lợi nhuận ròng (%) */}
               <Line
                 yAxisId="left"
@@ -1813,54 +963,18 @@ const DetailedDupontCard = React.memo(function DetailedDupontCard({
 // ── 8. Biểu đồ BÓC TÁCH CHI PHÍ KINH DOANH (Chuẩn 100% WiData) ──
 const CostBreakdownChartCard = React.memo(function CostBreakdownChartCard({
   costPoints,
-  isQuarter,
-  globalQuarter,
   latestCost,
 }: {
   costPoints: any[]
-  isQuarter: boolean
-  globalQuarter: number | null
+  isQuarter?: boolean
   latestCost: any
 }) {
-  const [localHoverQuarter, setLocalHoverQuarter] = useState<number | null>(null)
-  const lastRef = useRef<number | null>(null)
-  const activeQuarter = globalQuarter ?? localHoverQuarter
-
-  const handleMouseMove = useCallback((e: any) => {
-    if (!isQuarter || globalQuarter != null) return
-    let q: number | null = null
-    if (e?.activePayload && e.activePayload.length > 0) {
-      q = getQuarter(e.activePayload[0]?.payload)
-    }
-    if (!q && e?.activeLabel && typeof e.activeLabel === 'string') {
-      const m = e.activeLabel.match(/Q([1-4])/i)
-      if (m) q = parseInt(m[1], 10)
-    }
-    if (!q && typeof e?.activeTooltipIndex === 'number' && costPoints[e.activeTooltipIndex]) {
-      q = getQuarter(costPoints[e.activeTooltipIndex])
-    }
-    if (q && q >= 1 && q <= 4 && lastRef.current !== q) {
-      lastRef.current = q
-      setLocalHoverQuarter(q)
-    }
-  }, [isQuarter, globalQuarter, costPoints])
-
-  const handleMouseLeave = useCallback(() => {
-    lastRef.current = null
-    setLocalHoverQuarter(null)
-  }, [])
-
-  const tickRenderer = useMemo(() => isQuarter ? createQuarterTickRenderer(activeQuarter) : undefined, [isQuarter, activeQuarter])
-
   return (
     <ExpandableChartCard
       title="Bóc Tách Chi Phí Kinh Doanh"
       icon={Briefcase}
       iconColor="text-rose-400"
       hoverBorderColor="hover:border-rose-500/40"
-      activeQuarter={activeQuarter}
-      isQuarter={isQuarter}
-      onMouseLeave={handleMouseLeave}
       latestBadge={
         <span className="font-mono text-[11px] font-bold text-rose-400 bg-rose-500/10 border border-rose-500/20 px-2 py-0.5 rounded-md">
           CPBH: {latestCost?.cpBanHang != null ? `${fmtNum(latestCost.cpBanHang)} tỷ` : '—'}
@@ -1868,48 +982,23 @@ const CostBreakdownChartCard = React.memo(function CostBreakdownChartCard({
       }
       modalTitle="Bóc Tách Chi Phí Bán Hàng & Quản Lý Doanh Nghiệp (SG&A)"
       modalSubtitle={`Chi phí bán hàng, Chi phí QLDN và Tổng chi phí SG&A (${costPoints.length} kỳ)`}
-        >
+    >
       {(height) =>
         costPoints.length > 0 ? (
           <ResponsiveContainer width="100%" height={height}>
             <ComposedChart
               data={costPoints}
               margin={{ top: 10, right: 10, left: -10, bottom: 0 }}
-              onMouseMove={handleMouseMove}
             >
               <CartesianGrid strokeDasharray="3 3" stroke="#334155" opacity={0.25} />
-              <XAxis dataKey="displayDate" tick={tickRenderer || { fontSize: 10, fill: '#888' }} />
+              <XAxis dataKey="displayDate" tick={{ fontSize: 9.5, fill: '#888' }} />
               <YAxis yAxisId="left" tick={{ fontSize: 10, fill: '#888' }} tickFormatter={(v) => `${Math.round(v)}`} />
               <Tooltip content={<CustomChartTooltip />} isAnimationActive={false} animationDuration={0} cursor={{ fill: 'rgba(255, 255, 255, 0.05)' }} />
               <Legend wrapperStyle={{ fontSize: '9.5px', paddingTop: '4px' }} />
-              <Bar yAxisId="left" dataKey="giaVon" name="Chi phí giá vốn" stackId="cost" fill="#f87171" isAnimationActive={false}>
-                {costPoints.map((entry, index) => {
-                  const q = getQuarter(entry)
-                  const isMatch = activeQuarter == null || q === activeQuarter
-                  return <Cell key={`cost-gv-${index}`} fillOpacity={isMatch ? 1 : 0.15} stroke={activeQuarter != null && isMatch ? '#ffffff' : 'none'} strokeWidth={activeQuarter != null && isMatch ? 1.5 : 0} style={{ transition: 'fill-opacity 40ms ease-out' }} />
-                })}
-              </Bar>
-              <Bar yAxisId="left" dataKey="cpBanHang" name="Chi phí bán hàng" stackId="cost" fill="#2dd4bf" isAnimationActive={false}>
-                {costPoints.map((entry, index) => {
-                  const q = getQuarter(entry)
-                  const isMatch = activeQuarter == null || q === activeQuarter
-                  return <Cell key={`cost-bh-${index}`} fillOpacity={isMatch ? 1 : 0.15} stroke={activeQuarter != null && isMatch ? '#ffffff' : 'none'} strokeWidth={activeQuarter != null && isMatch ? 1.5 : 0} style={{ transition: 'fill-opacity 40ms ease-out' }} />
-                })}
-              </Bar>
-              <Bar yAxisId="left" dataKey="cpQuanLy" name="Chi phí quản lý" stackId="cost" fill="#818cf8" isAnimationActive={false}>
-                {costPoints.map((entry, index) => {
-                  const q = getQuarter(entry)
-                  const isMatch = activeQuarter == null || q === activeQuarter
-                  return <Cell key={`cost-ql-${index}`} fillOpacity={isMatch ? 1 : 0.15} stroke={activeQuarter != null && isMatch ? '#ffffff' : 'none'} strokeWidth={activeQuarter != null && isMatch ? 1.5 : 0} style={{ transition: 'fill-opacity 40ms ease-out' }} />
-                })}
-              </Bar>
-              <Bar yAxisId="left" dataKey="cpLaiVay" name="Chi phí lãi vay" stackId="cost" fill="#facc15" radius={[2, 2, 0, 0]} isAnimationActive={false}>
-                {costPoints.map((entry, index) => {
-                  const q = getQuarter(entry)
-                  const isMatch = activeQuarter == null || q === activeQuarter
-                  return <Cell key={`cost-lv-${index}`} fillOpacity={isMatch ? 1 : 0.15} stroke={activeQuarter != null && isMatch ? '#ffffff' : 'none'} strokeWidth={activeQuarter != null && isMatch ? 1.5 : 0} style={{ transition: 'fill-opacity 40ms ease-out' }} />
-                })}
-              </Bar>
+              <Bar yAxisId="left" dataKey="giaVon" name="Chi phí giá vốn" stackId="cost" fill="#f87171" isAnimationActive={false} />
+              <Bar yAxisId="left" dataKey="cpBanHang" name="Chi phí bán hàng" stackId="cost" fill="#2dd4bf" isAnimationActive={false} />
+              <Bar yAxisId="left" dataKey="cpQuanLy" name="Chi phí quản lý" stackId="cost" fill="#818cf8" isAnimationActive={false} />
+              <Bar yAxisId="left" dataKey="cpLaiVay" name="Chi phí lãi vay" stackId="cost" fill="#facc15" radius={[2, 2, 0, 0]} isAnimationActive={false} />
               <Line
                 yAxisId="left"
                 type="monotone"
@@ -1917,26 +1006,9 @@ const CostBreakdownChartCard = React.memo(function CostBreakdownChartCard({
                 name="Doanh thu thuần"
                 stroke="#e2e8f0"
                 strokeWidth={2.2}
-                isAnimationActive={false}
-                dot={(props: any) => {
-                  const { cx, cy, payload } = props
-                  if (!cx || !cy) return null
-                  const q = getQuarter(payload)
-                  const isMatch = activeQuarter != null && q === activeQuarter
-                  return (
-                    <circle
-                      key={`cost-dt-dot-${cx}-${cy}`}
-                      cx={cx}
-                      cy={cy}
-                      r={isMatch ? 5.5 : 2.5}
-                      fill="#e2e8f0"
-                      stroke={isMatch ? '#ffffff' : 'none'}
-                      strokeWidth={isMatch ? 2 : 0}
-                      opacity={activeQuarter == null || isMatch ? 1 : 0.2}
-                    />
-                  )
-                }}
+                dot={{ r: 2.5, fill: '#e2e8f0' }}
                 activeDot={{ r: 5 }}
+                isAnimationActive={false}
               />
             </ComposedChart>
           </ResponsiveContainer>
@@ -1953,54 +1025,18 @@ const CostBreakdownChartCard = React.memo(function CostBreakdownChartCard({
 // ── 9. Biểu đồ TỶ TRỌNG CHI PHÍ (% Trên Doanh Thu - Chuẩn 100% WiData) ──
 const CostRatioChartCard = React.memo(function CostRatioChartCard({
   costPoints,
-  isQuarter,
-  globalQuarter,
   latestCost,
 }: {
   costPoints: any[]
-  isQuarter: boolean
-  globalQuarter: number | null
+  isQuarter?: boolean
   latestCost: any
 }) {
-  const [localHoverQuarter, setLocalHoverQuarter] = useState<number | null>(null)
-  const lastRef = useRef<number | null>(null)
-  const activeQuarter = globalQuarter ?? localHoverQuarter
-
-  const handleMouseMove = useCallback((e: any) => {
-    if (!isQuarter || globalQuarter != null) return
-    let q: number | null = null
-    if (e?.activePayload && e.activePayload.length > 0) {
-      q = getQuarter(e.activePayload[0]?.payload)
-    }
-    if (!q && e?.activeLabel && typeof e.activeLabel === 'string') {
-      const m = e.activeLabel.match(/Q([1-4])/i)
-      if (m) q = parseInt(m[1], 10)
-    }
-    if (!q && typeof e?.activeTooltipIndex === 'number' && costPoints[e.activeTooltipIndex]) {
-      q = getQuarter(costPoints[e.activeTooltipIndex])
-    }
-    if (q && q >= 1 && q <= 4 && lastRef.current !== q) {
-      lastRef.current = q
-      setLocalHoverQuarter(q)
-    }
-  }, [isQuarter, globalQuarter, costPoints])
-
-  const handleMouseLeave = useCallback(() => {
-    lastRef.current = null
-    setLocalHoverQuarter(null)
-  }, [])
-
-  const tickRenderer = useMemo(() => isQuarter ? createQuarterTickRenderer(activeQuarter) : undefined, [isQuarter, activeQuarter])
-
   return (
     <ExpandableChartCard
       title="Tỷ Trọng Chi Phí"
       icon={PieChart}
       iconColor="text-emerald-400"
       hoverBorderColor="hover:border-emerald-500/40"
-      activeQuarter={activeQuarter}
-      isQuarter={isQuarter}
-      onMouseLeave={handleMouseLeave}
       latestBadge={
         <span className="font-mono text-[11px] font-bold text-emerald-400 bg-emerald-500/10 border border-emerald-500/20 px-2 py-0.5 rounded-md">
           SG&A/DTT: {latestCost?.sgaOverRev != null ? `${latestCost.sgaOverRev.toFixed(1)}%` : '—'}
@@ -2008,17 +1044,16 @@ const CostRatioChartCard = React.memo(function CostRatioChartCard({
       }
       modalTitle="Tỷ Trọng Chi Phí Hoạt Động Trên Doanh Thu Thuần"
       modalSubtitle={`Tỷ lệ Chi phí bán hàng / DTT, Chi phí QLDN / DTT và SG&A / DTT (%) (${costPoints.length} kỳ)`}
-        >
+    >
       {(height) =>
         costPoints.length > 0 ? (
           <ResponsiveContainer width="100%" height={height}>
             <ComposedChart
               data={costPoints}
               margin={{ top: 10, right: 10, left: -10, bottom: 0 }}
-              onMouseMove={handleMouseMove}
             >
               <CartesianGrid strokeDasharray="3 3" stroke="#334155" opacity={0.25} />
-              <XAxis dataKey="displayDate" tick={tickRenderer || { fontSize: 10, fill: '#888' }} />
+              <XAxis dataKey="displayDate" tick={{ fontSize: 9.5, fill: '#888' }} />
               <YAxis yAxisId="left" tick={{ fontSize: 10, fill: '#888' }} unit="%" domain={[0, 'auto']} />
               <Tooltip content={<CustomChartTooltip />} isAnimationActive={false} animationDuration={0} cursor={{ stroke: '#94a3b8', strokeWidth: 1, strokeDasharray: '3 3' }} />
               <Legend wrapperStyle={{ fontSize: '9.5px', paddingTop: '4px' }} />
@@ -2040,15 +1075,9 @@ const CostRatioChartCard = React.memo(function CostRatioChartCard({
                 name="% Chi phí bán hàng"
                 stroke="#2dd4bf"
                 strokeWidth={2}
+                dot={{ r: 2.5, fill: '#2dd4bf' }}
+                activeDot={{ r: 5 }}
                 isAnimationActive={false}
-                dot={(props: any) => {
-                  const { cx, cy, payload } = props
-                  if (!cx || !cy) return null
-                  const q = getQuarter(payload)
-                  const isMatch = activeQuarter != null && q === activeQuarter
-                  if (!isMatch) return null
-                  return <circle cx={cx} cy={cy} r={4.5} fill="#2dd4bf" stroke="#ffffff" strokeWidth={1.5} />
-                }}
               />
               <Line
                 yAxisId="left"
@@ -2057,15 +1086,9 @@ const CostRatioChartCard = React.memo(function CostRatioChartCard({
                 name="% Chi phí quản lý"
                 stroke="#818cf8"
                 strokeWidth={2}
+                dot={{ r: 2.5, fill: '#818cf8' }}
+                activeDot={{ r: 5 }}
                 isAnimationActive={false}
-                dot={(props: any) => {
-                  const { cx, cy, payload } = props
-                  if (!cx || !cy) return null
-                  const q = getQuarter(payload)
-                  const isMatch = activeQuarter != null && q === activeQuarter
-                  if (!isMatch) return null
-                  return <circle cx={cx} cy={cy} r={4.5} fill="#818cf8" stroke="#ffffff" strokeWidth={1.5} />
-                }}
               />
               <Line
                 yAxisId="left"
@@ -2074,15 +1097,9 @@ const CostRatioChartCard = React.memo(function CostRatioChartCard({
                 name="% Chi phí lãi vay"
                 stroke="#facc15"
                 strokeWidth={2}
+                dot={{ r: 2.5, fill: '#facc15' }}
+                activeDot={{ r: 5 }}
                 isAnimationActive={false}
-                dot={(props: any) => {
-                  const { cx, cy, payload } = props
-                  if (!cx || !cy) return null
-                  const q = getQuarter(payload)
-                  const isMatch = activeQuarter != null && q === activeQuarter
-                  if (!isMatch) return null
-                  return <circle cx={cx} cy={cy} r={4.5} fill="#facc15" stroke="#ffffff" strokeWidth={1.5} />
-                }}
               />
             </ComposedChart>
           </ResponsiveContainer>
@@ -2124,7 +1141,6 @@ export function GeneralDetailedFinancialCharts({
     if (hasAnnual) return 'annual'
     return 'quarter'
   })
-  const [globalLockedQuarter, setGlobalLockedQuarter] = useState<number | null>(null)
 
   // Tự động chuyển kỳ hiệu lực nếu kỳ đang chọn không có dữ liệu mà kỳ còn lại có dữ liệu
   const effectivePeriodType = useMemo<'quarter' | 'annual'>(() => {
@@ -2332,24 +1348,9 @@ export function GeneralDetailedFinancialCharts({
                   {latest?.displayDate}
                 </span>
 
-                {/* Huy hiệu khi ghim toàn cục */}
-                {globalLockedQuarter && isQuarter && (
-                  <div className="flex items-center gap-1.5 rounded-md border border-amber-500/50 bg-amber-500/20 px-2.5 py-0.5 text-xs font-bold text-amber-300 animate-in fade-in zoom-in-95 duration-150">
-                    <Lock className="size-3 text-amber-400" />
-                    <span>Đang lọc tất cả bảng: Quý {globalLockedQuarter}</span>
-                    <button
-                      type="button"
-                      onClick={() => setGlobalLockedQuarter(null)}
-                      className="ml-1 cursor-pointer text-[10px] text-amber-300 hover:text-white"
-                      title="Bỏ lọc toàn bộ"
-                    >
-                      ✕
-                    </button>
-                  </div>
-                )}
               </div>
               <p className="text-xs text-muted-foreground">
-                Chuỗi dữ liệu BCTC kiểm toán ({displayPoints.length} kỳ) · Rê chuột vào bảng nào thì riêng bảng đó sáng cùng kỳ siêu nhạy (0 delay)
+                Chuỗi dữ liệu BCTC kiểm toán ({displayPoints.length} kỳ)
               </p>
             </div>
           </div>
@@ -2362,7 +1363,6 @@ export function GeneralDetailedFinancialCharts({
               onClick={() => {
                 if (!hasQuarter) return
                 setPeriodType('quarter')
-                setGlobalLockedQuarter(null)
               }}
               className={cn(
                 'flex items-center gap-1.5 rounded-lg px-3.5 py-1.5 text-xs font-bold transition-all',
@@ -2382,7 +1382,6 @@ export function GeneralDetailedFinancialCharts({
               onClick={() => {
                 if (!hasAnnual) return
                 setPeriodType('annual')
-                setGlobalLockedQuarter(null)
               }}
               className={cn(
                 'flex items-center gap-1.5 rounded-lg px-3.5 py-1.5 text-xs font-bold transition-all',
@@ -2398,54 +1397,6 @@ export function GeneralDetailedFinancialCharts({
             </button>
           </div>
         </div>
-
-        {/* Thanh nút bấm nhanh Soi Cùng Kỳ Toàn Bộ (Khi muốn áp dụng cho mọi bảng) */}
-        {isQuarter && (
-          <div className="flex flex-wrap items-center gap-1.5 pt-2 border-t border-border/40">
-            <span className="text-[11px] font-bold text-muted-foreground flex items-center gap-1 mr-1">
-              <Eye className="size-3.5 text-sky-400" />
-              Lọc cùng kỳ toàn bộ bảng:
-            </span>
-            {[
-              { label: 'Mặc định (tự do theo bảng)', q: null },
-              { label: 'Quý 1 tất cả bảng', q: 1 },
-              { label: 'Quý 2 tất cả bảng', q: 2 },
-              { label: 'Quý 3 tất cả bảng', q: 3 },
-              { label: 'Quý 4 tất cả bảng', q: 4 },
-            ].map((btn) => {
-              const isSelected = globalLockedQuarter === btn.q
-              return (
-                <button
-                  key={btn.label}
-                  type="button"
-                  onClick={() => setGlobalLockedQuarter((prev) => (prev === btn.q ? null : btn.q))}
-                  className={cn(
-                    'px-2.5 py-1 text-[11px] font-bold rounded-lg border transition-all cursor-pointer flex items-center gap-1',
-                    isSelected && globalLockedQuarter !== null
-                      ? 'bg-amber-500 text-slate-950 border-amber-400 font-extrabold shadow-md'
-                      : isSelected && globalLockedQuarter === null
-                      ? 'bg-muted text-foreground border-border/80'
-                      : 'bg-card/80 border-border/60 text-muted-foreground hover:text-foreground hover:bg-muted/60'
-                  )}
-                >
-                  {isSelected && globalLockedQuarter !== null && <Lock className="size-2.5" />}
-                  <span>{btn.label}</span>
-                </button>
-              )
-            })}
-            {globalLockedQuarter !== null && (
-              <button
-                type="button"
-                onClick={() => setGlobalLockedQuarter(null)}
-                className="px-2 py-1 text-[10px] font-medium text-muted-foreground hover:text-rose-400 flex items-center gap-1 cursor-pointer transition-colors"
-                title="Bỏ lọc toàn bộ"
-              >
-                <RotateCcw className="size-3" />
-                <span>Đặt lại</span>
-              </button>
-            )}
-          </div>
-        )}
       </div>
 
       {/* ══════════════════════════════════════════════════════════ */}
@@ -2456,7 +1407,6 @@ export function GeneralDetailedFinancialCharts({
         <RevenueChartCard
           data={displayPoints}
           isQuarter={isQuarter}
-          globalQuarter={globalLockedQuarter}
           latest={latest}
         />
 
@@ -2464,7 +1414,6 @@ export function GeneralDetailedFinancialCharts({
         <ProfitChartCard
           data={displayPoints}
           isQuarter={isQuarter}
-          globalQuarter={globalLockedQuarter}
           latest={latest}
         />
 
@@ -2490,7 +1439,6 @@ export function GeneralDetailedFinancialCharts({
           <DetailedAssetChartCard
             balancePoints={balancePoints}
             isQuarter={isQuarter}
-            globalQuarter={globalLockedQuarter}
             latestPoint={latestBalance}
           />
 
@@ -2498,7 +1446,6 @@ export function GeneralDetailedFinancialCharts({
           <DetailedCapitalChartCard
             balancePoints={balancePoints}
             isQuarter={isQuarter}
-            globalQuarter={globalLockedQuarter}
             latestPoint={latestBalance}
           />
 
@@ -2506,7 +1453,6 @@ export function GeneralDetailedFinancialCharts({
           <DetailedCashFlowChartCard
             balancePoints={balancePoints}
             isQuarter={isQuarter}
-            globalQuarter={globalLockedQuarter}
             latestPoint={latestBalance}
           />
         </div>
@@ -2526,7 +1472,6 @@ export function GeneralDetailedFinancialCharts({
           <DetailedCapexDepreciationCard
             capexPoints={capexFinancialPoints}
             isQuarter={isQuarter}
-            globalQuarter={globalLockedQuarter}
             latestPoint={latestCapex}
           />
 
@@ -2534,7 +1479,6 @@ export function GeneralDetailedFinancialCharts({
           <DetailedProvisionCard
             provisionPoints={capexFinancialPoints}
             isQuarter={isQuarter}
-            globalQuarter={globalLockedQuarter}
             latestPoint={latestCapex}
           />
 
@@ -2542,7 +1486,6 @@ export function GeneralDetailedFinancialCharts({
           <DetailedFinancialRevenueExpenseCard
             financialPoints={capexFinancialPoints}
             isQuarter={isQuarter}
-            globalQuarter={globalLockedQuarter}
             latestPoint={latestCapex}
           />
         </div>
@@ -2562,7 +1505,6 @@ export function GeneralDetailedFinancialCharts({
           <DetailedDebtStructureCard
             debtPoints={debtDupontPoints}
             isQuarter={isQuarter}
-            globalQuarter={globalLockedQuarter}
             latestPoint={latestDebtDupont}
           />
 
@@ -2570,7 +1512,6 @@ export function GeneralDetailedFinancialCharts({
           <DetailedDupontCard
             dupontPoints={debtDupontPoints}
             isQuarter={isQuarter}
-            globalQuarter={globalLockedQuarter}
             latestPoint={latestDebtDupont}
           />
         </div>
@@ -2602,7 +1543,6 @@ export function GeneralDetailedFinancialCharts({
           <ProfitStructureChartCard
             profitPoints={profitPoints}
             isQuarter={isQuarter}
-            globalQuarter={globalLockedQuarter}
             latestProfit={latestProfit}
           />
 
@@ -2610,7 +1550,6 @@ export function GeneralDetailedFinancialCharts({
           <CostBreakdownChartCard
             costPoints={costPoints}
             isQuarter={isQuarter}
-            globalQuarter={globalLockedQuarter}
             latestCost={latestCost}
           />
 
@@ -2618,7 +1557,6 @@ export function GeneralDetailedFinancialCharts({
           <CostRatioChartCard
             costPoints={costPoints}
             isQuarter={isQuarter}
-            globalQuarter={globalLockedQuarter}
             latestCost={latestCost}
           />
         </div>

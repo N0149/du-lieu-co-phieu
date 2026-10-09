@@ -515,7 +515,6 @@ export function FinancialStatementsSideCharts({
           <DetailedAssetChartCard
             balancePoints={balancePoints}
             isQuarter={isQuarter}
-            globalQuarter={null}
             latestPoint={latestBalance}
             cardHeight={215}
           />
@@ -524,7 +523,6 @@ export function FinancialStatementsSideCharts({
           <DetailedCapitalChartCard
             balancePoints={balancePoints}
             isQuarter={isQuarter}
-            globalQuarter={null}
             latestPoint={latestBalance}
             cardHeight={215}
           />
@@ -538,7 +536,6 @@ export function FinancialStatementsSideCharts({
           <RevenueChartCard
             data={kqkdPoints}
             isQuarter={isQuarter}
-            globalQuarter={null}
             latest={latestKqkd}
             cardHeight={215}
           />
@@ -547,7 +544,6 @@ export function FinancialStatementsSideCharts({
           <ProfitChartCard
             data={kqkdPoints}
             isQuarter={isQuarter}
-            globalQuarter={null}
             latest={latestKqkd}
             cardHeight={215}
           />
@@ -561,7 +557,6 @@ export function FinancialStatementsSideCharts({
           <DetailedCashFlowChartCard
             balancePoints={balancePoints}
             isQuarter={isQuarter}
-            globalQuarter={null}
             latestPoint={latestBalance}
             cardHeight={240}
           />

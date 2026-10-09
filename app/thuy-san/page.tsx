@@ -16,7 +16,7 @@ import {
 export const metadata: Metadata = {
   title: 'Tình Báo Thủy Sản VASEP & So Sánh Dự Báo Lợi Nhuận Quý 3/2026 | Dữ Liệu Cổ Phiếu',
   description:
-    'Hệ thống tình báo ngành Thủy sản kết nối trực tiếp dữ liệu VASEP: Bóc tách kim ngạch xuất khẩu 8 tháng, biến động giá nguyên liệu hàng tuần (cá tra, tôm, nghêu) và so sánh dự phóng lợi nhuận Quý 3/2026 của 12 cổ phiếu niêm yết (VHC, ANV, FMC, MPC, IDI, CAT, ABT, CMX, CCA, KHS, AAM, ACL).',
+    'Hệ thống tình báo ngành Thủy sản kết nối trực tiếp dữ liệu VASEP: Bóc tách kim ngạch xuất khẩu 9 tháng đầu năm (cập nhật mới nhất T9/2026), biến động giá nguyên liệu hàng tuần (cá tra, tôm, nghêu) và so sánh dự phóng lợi nhuận Quý 3/2026 của 12 cổ phiếu niêm yết (VHC, ANV, FMC, MPC, IDI, CAT, ABT, CMX, CCA, KHS, AAM, ACL).',
 };
 
 export default function ThuySanPage() {
@@ -62,7 +62,7 @@ export default function ThuySanPage() {
                 Tình Báo Thủy Sản &amp; Dự Báo Lợi Nhuận 12 Cổ Phiếu Niêm Yết
               </h1>
               <p className="text-sm sm:text-base text-slate-400 leading-relaxed max-w-3xl">
-                Bóc tách số liệu kim ngạch xuất khẩu 8 tháng đầu năm, diễn biến giá nguyên liệu hàng tuần từ VASEP
+                Bóc tách số liệu kim ngạch xuất khẩu 9 tháng đầu năm (cập nhật mới nhất Tháng 9/2026), diễn biến giá nguyên liệu hàng tuần từ VASEP
                 và so sánh trực diện triển vọng kết quả kinh doanh Quý 3/2026 của 12 cổ phiếu tiêu biểu:{' '}
                 <strong className="text-white">VHC</strong>, <strong className="text-white">ANV</strong>,{' '}
                 <strong className="text-white">FMC</strong>, <strong className="text-white">MPC</strong>,{' '}

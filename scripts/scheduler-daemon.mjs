@@ -29,6 +29,7 @@ let lastRunDisclosures1800 = "";
 let lastRunDisclosures2030 = "";
 let lastRunReports2000 = "";
 let lastRunShareholdersMonth = "";
+let lastRunChinaNewsDate0645 = "";
 
 function runCommand(cmd, taskName) {
   const timeStr = new Date().toLocaleTimeString("vi-VN");
@@ -55,6 +56,12 @@ function checkAndRunSchedule() {
   const dayOfMonth = now.getDate();
   const hours = now.getHours();
   const minutes = now.getMinutes();
+
+  // 0. Điểm tin Trung Quốc 24h (AI & Kinh tế): 06:45 sáng hàng ngày (1 lần/ngày bảo toàn API)
+  if (hours === 6 && minutes === 45 && lastRunChinaNewsDate0645 !== dateStr) {
+    lastRunChinaNewsDate0645 = dateStr;
+    runCommand("node scripts/news/sync-china-news.mjs", "ĐIỂM TIN TRUNG QUỐC 24H (06:45 SÁNG)");
+  }
 
   // 1. Giao dịch nội bộ Lần 1: 12:06 trưa hàng ngày (Đón đầu phiên chiều)
   if (hours === 12 && minutes === 6 && lastRunInsiderDate1206 !== dateStr) {

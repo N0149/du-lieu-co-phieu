@@ -240,6 +240,35 @@ def do_export_json(args: argparse.Namespace) -> None:
     out_path.parent.mkdir(parents=True, exist_ok=True)
     out_path.write_text(json.dumps(payload, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
 
+    # 1. Xuất file Cán cân thương mại siêu nhẹ (chỉ ~71 KB) phục vụ SSR trang XNK
+    tb_path = out_path.parent / "customs_trade_balance.json"
+    tb_path.write_text(json.dumps(payload["trade_balance"], ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
+
+    # 2. Xuất file Commodity snapshot (~7.4 MB raw / 495 KB gzip) phục vụ Ma trận XNK & 57 mã Tier A
+    commodity_rows = [
+        {
+            "period_type": r["period_type"],
+            "period_date": r["period_date"],
+            "trade_type": r["trade_type"],
+            "name": r["name"],
+            "unit": r.get("unit"),
+            "quantity": r.get("quantity"),
+            "value_usd": r.get("value_usd"),
+            "code": r.get("code"),
+            "category": r.get("category"),
+            "dataset_category": r.get("dataset_category", "main"),
+        }
+        for r in clean_rows
+        if r.get("dim_kind") in (None, "commodity")
+    ]
+    comm_payload = {
+        "generated_at": payload["generated_at"],
+        "rows": commodity_rows,
+        "trade_balance": payload["trade_balance"],
+    }
+    comm_path = out_path.parent / "customs_commodity_snapshot.json"
+    comm_path.write_text(json.dumps(comm_payload, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
+
     if matrix_rows:
         matrix_path = out_path.parent / "customs_matrix_detail.json"
         matrix_payload = {
@@ -249,8 +278,9 @@ def do_export_json(args: argparse.Namespace) -> None:
         matrix_path.write_text(json.dumps(matrix_payload, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
 
     log.info(
-        "Đã xuất %d dòng + %d kỳ cán cân → %s (%s dòng ma trận tách riêng)",
+        "Đã xuất %d dòng (trong đó %d dòng mặt hàng) + %d kỳ cán cân → %s (%s dòng ma trận tách riêng)",
         len(payload["rows"]),
+        len(commodity_rows),
         len(payload["trade_balance"]),
         out_path,
         len(matrix_rows) if matrix_rows else 0,

@@ -1145,14 +1145,14 @@ export function CustomsCommodityMatrix({
                 }}
                 className="h-8 rounded-lg border border-border bg-background px-2 text-xs font-medium text-foreground outline-none focus:border-ring"
               >
-                <option value="THANG">Monthly (Tháng - Đến T8/2026)</option>
-                <option value="KY">Kỳ 15 ngày (Mới nhất: K1 09/2026)</option>
+                <option value="THANG">Monthly (Tháng - Đến T9/2026)</option>
+                <option value="KY">Kỳ 15 ngày (Mới nhất: K2 09/2026)</option>
                 <option value="QUY">Quý (Quarterly)</option>
               </select>
             </div>
 
-            {/* Nút bấm nhanh xem số liệu nửa đầu tháng 9 */}
-            {periodType === 'THANG' && (
+            {/* Nút bấm nhanh chuyển đổi xem theo kỳ 15 ngày hoặc xem cả tháng */}
+            {periodType === 'THANG' ? (
               <button
                 type="button"
                 onClick={() => {
@@ -1160,10 +1160,23 @@ export function CustomsCommodityMatrix({
                   setPage(1)
                 }}
                 className="inline-flex items-center gap-1.5 rounded-lg border border-emerald-500/30 bg-emerald-500/10 px-2.5 py-1 text-xs font-semibold text-emerald-400 hover:bg-emerald-500/20 transition-colors"
-                title="Bấm để xem số liệu nửa đầu tháng 9 (Kỳ 1 09/2026)"
+                title="Bấm để xem số liệu chi tiết từng kỳ 15 ngày (Mới nhất: Kỳ 2 09/2026)"
               >
                 <span className="size-1.5 rounded-full bg-emerald-400 animate-pulse" />
-                <span>Xem nửa đầu T9 (Kỳ 1)</span>
+                <span>Xem kỳ 15 ngày (Kỳ 2 T9)</span>
+              </button>
+            ) : (
+              <button
+                type="button"
+                onClick={() => {
+                  setPeriodType('THANG')
+                  setPage(1)
+                }}
+                className="inline-flex items-center gap-1.5 rounded-lg border border-sky-500/30 bg-sky-500/10 px-2.5 py-1 text-xs font-semibold text-sky-400 hover:bg-sky-500/20 transition-colors"
+                title="Bấm để xem số liệu tổng hợp cả tháng (Đến Tháng 9/2026)"
+              >
+                <span className="size-1.5 rounded-full bg-sky-400" />
+                <span>Xem cả Tháng (T9/2026)</span>
               </button>
             )}
 

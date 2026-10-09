@@ -120,52 +120,52 @@ export function ThuySanDashboard() {
 
   return (
     <div className="space-y-6">
-      {/* 1. TOP KPI STRIP - METRICS CỐT LÕI TỪ VASEP THÁNG 8 & 9/2026 */}
+      {/* 1. TOP KPI STRIP - METRICS CỐT LÕI TỪ VASEP THÁNG 9 & 9T/2026 */}
       <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3">
         <div className="rounded-xl border border-white/10 bg-[#141721] p-3.5 shadow-sm">
           <div className="flex items-center justify-between text-xs text-slate-400">
-            <span>Xuất Khẩu Thủy Sản 8T</span>
+            <span>Xuất Khẩu Thủy Sản 9T</span>
             <span className="flex items-center text-emerald-400 font-semibold text-[11px]">
-              <TrendingUp className="size-3 mr-0.5" /> +11.2%
+              <TrendingUp className="size-3 mr-0.5" /> +11.4%
             </span>
           </div>
           <div className="mt-1.5 flex items-baseline gap-1.5">
-            <span className="text-xl sm:text-2xl font-black text-white">6,30</span>
+            <span className="text-xl sm:text-2xl font-black text-white">9,10</span>
             <span className="text-xs text-slate-400">tỷ USD</span>
           </div>
           <div className="mt-1 text-[11px] text-slate-400 truncate">
-            Tháng 8 đạt 950 tr USD (+13% YoY)
+            Tháng 9 đạt 1,135 tỷ USD (+11.9% YoY)
           </div>
         </div>
 
         <div className="rounded-xl border border-white/10 bg-[#141721] p-3.5 shadow-sm">
           <div className="flex items-center justify-between text-xs text-slate-400">
-            <span>Cá Tra 8T (1,5 tỷ USD)</span>
+            <span>Cá Tra 9T (1,74 tỷ USD)</span>
             <span className="flex items-center text-emerald-400 font-semibold text-[11px]">
-              <TrendingUp className="size-3 mr-0.5" /> +10.0%
+              <TrendingUp className="size-3 mr-0.5" /> +10.7%
             </span>
           </div>
           <div className="mt-1.5 flex items-baseline gap-1.5">
-            <span className="text-xl sm:text-2xl font-black text-cyan-400">Trung Quốc +29%</span>
+            <span className="text-xl sm:text-2xl font-black text-cyan-400">Tháng 9 +18.6%</span>
           </div>
           <div className="mt-1 text-[11px] text-slate-400 truncate">
-            Brazil +26% | Mỹ chịu áp lực nền cao
+            Đạt 214 tr USD | Trung Quốc &amp; ASEAN bứt phá
           </div>
         </div>
 
         <div className="rounded-xl border border-white/10 bg-[#141721] p-3.5 shadow-sm">
           <div className="flex items-center justify-between text-xs text-slate-400">
-            <span>Tôm Xuất Khẩu 8T</span>
+            <span>Tôm Xuất Khẩu 9T</span>
             <span className="flex items-center text-emerald-400 font-semibold text-[11px]">
-              <TrendingUp className="size-3 mr-0.5" /> +12.0%
+              <TrendingUp className="size-3 mr-0.5" /> +11.0%
             </span>
           </div>
           <div className="mt-1.5 flex items-baseline gap-1.5">
-            <span className="text-xl sm:text-2xl font-black text-emerald-400">2,80</span>
+            <span className="text-xl sm:text-2xl font-black text-emerald-400">3,75</span>
             <span className="text-xs text-slate-400">tỷ USD</span>
           </div>
           <div className="mt-1 text-[11px] text-slate-400 truncate">
-            FMC tháng 8 tăng vọt +32% YoY
+            FMC chốt DT Q3 đạt 91,15 tr USD (~2.370 tỷ đ)
           </div>
         </div>
 
@@ -173,15 +173,15 @@ export function ThuySanDashboard() {
           <div className="flex items-center justify-between text-xs text-slate-400">
             <span>Giá Cá Tra Nguyên Liệu</span>
             <span className="flex items-center text-amber-400 font-semibold text-[11px]">
-              <TrendingUp className="size-3 mr-0.5" /> +1.000 đ
+              <TrendingUp className="size-3 mr-0.5" /> +500 đ
             </span>
           </div>
           <div className="mt-1.5 flex items-baseline gap-1.5">
-            <span className="text-xl sm:text-2xl font-black text-amber-400">31 - 34k</span>
+            <span className="text-xl sm:text-2xl font-black text-amber-400">32.5 - 34.5k</span>
             <span className="text-xs text-slate-400">đ/kg</span>
           </div>
           <div className="mt-1 text-[11px] text-slate-400 truncate">
-            Tuần 25/09 | Cá giống +7.000 đ/kg
+            Tuần 02/10 | Cá giống 58 - 62k đ/kg
           </div>
         </div>
 
@@ -191,10 +191,10 @@ export function ThuySanDashboard() {
             <span className="rounded bg-emerald-500/20 px-1.5 py-0.5 text-[10px] font-bold text-emerald-300">VASEP</span>
           </div>
           <div className="mt-1.5 flex items-baseline gap-1.5">
-            <span className="text-base font-black text-emerald-400">ANV • FMC • ACL</span>
+            <span className="text-base font-black text-emerald-400">FMC • ANV • ACL</span>
           </div>
           <div className="mt-1 text-[11px] text-slate-300 truncate">
-            Điểm rơi lợi nhuận vượt trội Q3
+            Đã có số liệu kiểm chứng T9 &amp; Q3
           </div>
         </div>
       </div>
@@ -233,7 +233,7 @@ export function ThuySanDashboard() {
             <Calendar className="size-4" />
             <span>Bảng Giá Nguyên Liệu Hàng Tuần</span>
             <span className="ml-1 rounded bg-amber-400/20 text-amber-300 px-1.5 py-0.2 text-[10px] font-bold">
-              25/09
+              02/10
             </span>
           </button>
 
@@ -931,24 +931,29 @@ export function ThuySanDashboard() {
                     <h3 className="text-base font-bold text-white">{sec.sector}</h3>
                   </div>
                   <div className="text-right">
-                    <span className="text-xs text-slate-400">Lũy kế 8 Tháng: </span>
-                    <span className="text-sm font-black text-emerald-400">
-                      {sec.total8mUSD.toLocaleString()} tr USD (+{sec.growth8mYoY}%)
-                    </span>
+                    <div className="flex items-baseline justify-end gap-1.5">
+                      <span className="text-xs text-slate-400">Lũy kế 9 Tháng: </span>
+                      <span className="text-sm font-black text-emerald-400">
+                        {sec.total9mUSD.toLocaleString()} tr USD (+{sec.growth9mYoY}%)
+                      </span>
+                    </div>
+                    <div className="text-[11px] text-cyan-300 font-semibold">
+                      Tháng 9: {sec.septemberUSD.toLocaleString()} tr USD (+{sec.septemberGrowthYoY}%)
+                    </div>
                   </div>
                 </div>
 
                 {/* Market Breakdown Table */}
                 <div className="space-y-2">
                   <div className="text-[11px] font-semibold text-slate-400 uppercase tracking-wider">
-                    Thị Trường Nhập Khẩu Trọng Điểm:
+                    Thị Trường Nhập Khẩu Trọng Điểm (9T/2026):
                   </div>
                   {sec.topMarkets.map((m, mIdx) => (
                     <div key={mIdx} className="space-y-1">
                       <div className="flex justify-between text-xs">
                         <span className="text-slate-200 font-medium">{m.country}</span>
                         <div className="flex items-center gap-2">
-                          <span className="text-white font-bold">{m.val8mUSD} tr USD</span>
+                          <span className="text-white font-bold">{m.val9mUSD} tr USD</span>
                           <span className={cn(
                             'text-[11px] font-bold',
                             m.growthYoY > 0 ? 'text-emerald-400' : 'text-rose-400'
