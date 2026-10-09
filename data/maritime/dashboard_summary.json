@@ -1,12 +1,12 @@
 {
   "status": "success",
-  "generated_at": "2026-10-09T17:22:07.072130",
+  "generated_at": "2026-10-09T19:22:58.425022",
   "kpis": {
     "total_port_authorities": 16,
     "total_calls_30d": 15635,
     "total_dwt_30d": 210046708,
     "tracked_stocks_count": 13,
-    "live_port_calls_count": 1344
+    "live_port_calls_count": 1345
   },
   "port_authorities": [
     {
@@ -1066,6 +1066,23 @@
       "source": "cvhh_haiphong"
     },
     {
+      "id": 7961,
+      "vessel_name": "SINAR SIGLI",
+      "authority_id": "hcm",
+      "berth_name": "Cảng Quốc tế SP-ITC",
+      "stock_ticker": null,
+      "call_direction": "in",
+      "call_date": "2026-10-09",
+      "scheduled_time": "2026-10-09 23:30:00",
+      "draft": 7.9,
+      "loa": 172.0,
+      "dwt": 27921,
+      "gt": 19944,
+      "origin_port": "Biển Đông",
+      "dest_port": "SP.ITC",
+      "source": "pilot_south"
+    },
+    {
       "id": 7919,
       "vessel_name": "PROCYON LEADER",
       "authority_id": "hcm",
@@ -1273,7 +1290,7 @@
       "id": 7912,
       "vessel_name": "HAI BINH",
       "authority_id": "hcm",
-      "berth_name": "Q.TE LONGAN-N.BE 8",
+      "berth_name": "Q.TE LONGAN-N.BE 5",
       "stock_ticker": null,
       "call_direction": "shift",
       "call_date": "2026-10-09",
@@ -1282,7 +1299,7 @@
       "loa": 91.0,
       "dwt": 3571,
       "gt": 2551,
-      "origin_port": "Q.TE LONGAN-N.BE 8",
+      "origin_port": "Q.TE LONGAN-N.BE 5",
       "dest_port": "Biển Đông",
       "source": "pilot_south"
     },
@@ -2458,6 +2475,40 @@
       "origin_port": "PETEC",
       "dest_port": "NGHI SON",
       "source": "cvhh_haiphong"
+    },
+    {
+      "id": 7959,
+      "vessel_name": "ARIUS",
+      "authority_id": "hcm",
+      "berth_name": "N.BE 2",
+      "stock_ticker": null,
+      "call_direction": "out",
+      "call_date": "2026-10-09",
+      "scheduled_time": "2026-10-09 12:00:00",
+      "draft": 3.1,
+      "loa": 59.0,
+      "dwt": 557,
+      "gt": 398,
+      "origin_port": "N.BE 2",
+      "dest_port": "Biển Đông",
+      "source": "pilot_south"
+    },
+    {
+      "id": 7958,
+      "vessel_name": "VIET THUAN 26-02",
+      "authority_id": "hcm",
+      "berth_name": "Tân Thuận (K12/K15)",
+      "stock_ticker": "SGP",
+      "call_direction": "out",
+      "call_date": "2026-10-09",
+      "scheduled_time": "2026-10-09 12:00:00",
+      "draft": 7.0,
+      "loa": 156.0,
+      "dwt": 21086,
+      "gt": 15062,
+      "origin_port": "K12A",
+      "dest_port": "Biển Đông",
+      "source": "pilot_south"
     },
     {
       "id": 7895,
@@ -4092,6 +4143,23 @@
       "source": "pilot_south"
     },
     {
+      "id": 7960,
+      "vessel_name": "ARIUS",
+      "authority_id": "hcm",
+      "berth_name": "Tân Cảng Cát Lái",
+      "stock_ticker": "TCL",
+      "call_direction": "shift",
+      "call_date": "2026-10-09",
+      "scheduled_time": "2026-10-09 04:00:00",
+      "draft": 3.1,
+      "loa": 59.0,
+      "dwt": 557,
+      "gt": 398,
+      "origin_port": "C.LAI - N.BE 2",
+      "dest_port": "Biển Đông",
+      "source": "pilot_south"
+    },
+    {
       "id": 7730,
       "vessel_name": "VIETSUN DYNAMIC",
       "authority_id": "hcm",
@@ -4313,6 +4381,23 @@
       "source": "pilot_south"
     },
     {
+      "id": 7964,
+      "vessel_name": "PHU QUOC 126",
+      "authority_id": "hcm",
+      "berth_name": "H.LONG 1",
+      "stock_ticker": null,
+      "call_direction": "in",
+      "call_date": "2026-10-09",
+      "scheduled_time": "2026-10-09 02:30:00",
+      "draft": 5.6,
+      "loa": 93.0,
+      "dwt": 3646,
+      "gt": 2605,
+      "origin_port": "Biển Đông",
+      "dest_port": "H.LONG 1",
+      "source": "pilot_south"
+    },
+    {
       "id": 7940,
       "vessel_name": "PACIFIC GRACE",
       "authority_id": "haiphong",
@@ -4429,6 +4514,23 @@
       "gt": 4589,
       "origin_port": "Q.TE LONGAN 1",
       "dest_port": "Biển Đông",
+      "source": "pilot_south"
+    },
+    {
+      "id": 7963,
+      "vessel_name": "ASL QINGDAO",
+      "authority_id": "hcm",
+      "berth_name": "Cảng Quốc tế SP-ITC",
+      "stock_ticker": null,
+      "call_direction": "in",
+      "call_date": "2026-10-09",
+      "scheduled_time": "2026-10-09 01:30:00",
+      "draft": 9.9,
+      "loa": 172.0,
+      "dwt": 26213,
+      "gt": 18724,
+      "origin_port": "Biển Đông",
+      "dest_port": "SP.ITC",
       "source": "pilot_south"
     },
     {
@@ -4549,6 +4651,23 @@
       "origin_port": "LACH HUYEN 2",
       "dest_port": "THI CONG NAO VET",
       "source": "cvhh_haiphong"
+    },
+    {
+      "id": 7962,
+      "vessel_name": "SUNSHINE 01",
+      "authority_id": "hcm",
+      "berth_name": "Q.TE LONGAN 4",
+      "stock_ticker": null,
+      "call_direction": "in",
+      "call_date": "2026-10-09",
+      "scheduled_time": "2026-10-09 00:30:00",
+      "draft": 5.3,
+      "loa": 98.0,
+      "dwt": 4142,
+      "gt": 2959,
+      "origin_port": "Biển Đông",
+      "dest_port": "Q.TE LONGAN 4",
+      "source": "pilot_south"
     },
     {
       "id": 7957,
@@ -9532,57 +9651,6 @@
       "source": "pilot_south"
     },
     {
-      "id": 7587,
-      "vessel_name": "FANG CHENG GANG",
-      "authority_id": "hcm",
-      "berth_name": "LATACA",
-      "stock_ticker": null,
-      "call_direction": "in",
-      "call_date": "2026-10-08",
-      "scheduled_time": "2026-10-08",
-      "draft": 6.6,
-      "loa": 107.0,
-      "dwt": 7690,
-      "gt": 5493,
-      "origin_port": "Biển Đông",
-      "dest_port": "LATACA",
-      "source": "pilot_south"
-    },
-    {
-      "id": 7586,
-      "vessel_name": "LUCKY STAR 06",
-      "authority_id": "hcm",
-      "berth_name": "ESSO 1",
-      "stock_ticker": null,
-      "call_direction": "in",
-      "call_date": "2026-10-08",
-      "scheduled_time": "2026-10-08",
-      "draft": 7.8,
-      "loa": 120.0,
-      "dwt": 11566,
-      "gt": 8262,
-      "origin_port": "Biển Đông",
-      "dest_port": "ESSO 1",
-      "source": "pilot_south"
-    },
-    {
-      "id": 7585,
-      "vessel_name": "KISO",
-      "authority_id": "hcm",
-      "berth_name": "PVOIL",
-      "stock_ticker": null,
-      "call_direction": "in",
-      "call_date": "2026-10-08",
-      "scheduled_time": "2026-10-08",
-      "draft": 8.5,
-      "loa": 170.0,
-      "dwt": 27188,
-      "gt": 19420,
-      "origin_port": "Biển Đông",
-      "dest_port": "PVOIL",
-      "source": "pilot_south"
-    },
-    {
       "id": 7494,
       "vessel_name": "VINACOMIN HANOI",
       "authority_id": "hcm",
@@ -9597,40 +9665,6 @@
       "gt": 5570,
       "origin_port": "Biển Đông",
       "dest_port": "SG H.PHUOC",
-      "source": "pilot_south"
-    },
-    {
-      "id": 7453,
-      "vessel_name": "TRUONG HAI STAR 3",
-      "authority_id": "hcm",
-      "berth_name": "Cảng VICT",
-      "stock_ticker": null,
-      "call_direction": "in",
-      "call_date": "2026-10-08",
-      "scheduled_time": "2026-10-08",
-      "draft": 7.0,
-      "loa": 133.0,
-      "dwt": 9356,
-      "gt": 6683,
-      "origin_port": "Biển Đông",
-      "dest_port": "VICT 4",
-      "source": "pilot_south"
-    },
-    {
-      "id": 7452,
-      "vessel_name": "CMA CGM FUJI",
-      "authority_id": "hcm",
-      "berth_name": "Cảng Quốc tế SP-ITC",
-      "stock_ticker": null,
-      "call_direction": "in",
-      "call_date": "2026-10-08",
-      "scheduled_time": "2026-10-08",
-      "draft": 9.0,
-      "loa": 185.0,
-      "dwt": 35231,
-      "gt": 25165,
-      "origin_port": "Biển Đông",
-      "dest_port": "SP.ITC",
       "source": "pilot_south"
     },
     {
@@ -9886,23 +9920,6 @@
       "gt": 2769,
       "origin_port": "Biển Đông",
       "dest_port": "TT2",
-      "source": "pilot_south"
-    },
-    {
-      "id": 7164,
-      "vessel_name": "VIETSUN HARMONY",
-      "authority_id": "hcm",
-      "berth_name": "Tân Thuận (K12/K15)",
-      "stock_ticker": "SGP",
-      "call_direction": "out",
-      "call_date": "2026-10-07",
-      "scheduled_time": "2026-10-07 22:00:00",
-      "draft": 7.2,
-      "loa": 117.0,
-      "dwt": 7473,
-      "gt": 5338,
-      "origin_port": "K15B",
-      "dest_port": "Biển Đông",
       "source": "pilot_south"
     },
     {
