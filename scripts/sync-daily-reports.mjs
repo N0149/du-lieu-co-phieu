@@ -16,6 +16,8 @@ import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { DatabaseSync } from "node:sqlite";
 
+import { exportSnapshots } from "./export-report-snapshots.mjs";
+
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 const DATA_DIR = path.resolve(__dirname, "../data");
@@ -607,6 +609,14 @@ async function main() {
       });
     } catch (e) {
       console.warn("⚠️ Bỏ qua bước đồng bộ WiData:", e.message);
+    }
+
+    // 5. Xuất snapshot JSON đồng bộ cho môi trường Vercel Serverless
+    try {
+      console.log("\n--- BƯỚC 5: XUẤT SNAPSHOT JSON CHO VERCEL PRODUCTION ---");
+      exportSnapshots();
+    } catch (e) {
+      console.warn("⚠️ Bỏ qua xuất snapshot:", e.message);
     }
 
     const dbInd = new DatabaseSync(path.join(DATA_DIR, "industry_reports.db"), { readOnly: true });

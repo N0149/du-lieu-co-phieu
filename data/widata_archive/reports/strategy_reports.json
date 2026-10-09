@@ -1,5 +1,95 @@
 [
   {
+    "id": 25882,
+    "title": "Báo cáo lần đầu Chiến lược đầu tư Ứng dụng mô hình học máy trong tối ưu vị thế đầu tư dựa trên tỷ lệ Risk/Reward - Tháng 10/2026",
+    "source": "FPTS",
+    "date": "2026-10-07T00:00:00.000Z",
+    "url": "https://cdn02.wigroup.vn/baocaophantich/ar_25857_FPTS_2026-10-07.pdf",
+    "category": "Báo cáo Chiến lược",
+    "created_at": "2026-10-09T12:35:28.190Z"
+  },
+  {
+    "id": 25868,
+    "title": "Báo cáo Cập nhật Chiến lược đầu tư kết hợp yếu tố Biến động thấp và Giá trị - Tháng 10/2026",
+    "source": "FPTS",
+    "date": "2026-10-07T00:00:00.000Z",
+    "url": "https://cdn02.wigroup.vn/baocaophantich/ar_25838_FPTS_2026-10-07.pdf",
+    "category": "Báo cáo Chiến lược",
+    "created_at": "2026-10-09T12:35:28.190Z"
+  },
+  {
+    "id": 25883,
+    "title": "Triển vọng TTCK Việt Nam 4Q2026",
+    "source": "KBSV",
+    "date": "2026-10-07T00:00:00.000Z",
+    "url": "https://cdn02.wigroup.vn/baocaophantich/ar_25827_KBSV_2026-10-07.pdf",
+    "category": "Báo cáo Chiến lược",
+    "created_at": "2026-10-09T12:35:28.190Z"
+  },
+  {
+    "id": 25885,
+    "title": "Dự báo danh mục VNDiamond trong kỳ rà soát Q4/26",
+    "source": "MBS",
+    "date": "2026-10-08T00:00:00.000Z",
+    "url": "https://cdn02.wigroup.vn/baocaophantich/ar_25855_MBS_2026-10-08.pdf",
+    "category": "Báo cáo Chiến lược",
+    "created_at": "2026-10-09T12:35:28.190Z"
+  },
+  {
+    "id": 25862,
+    "title": "Báo cáo Chiến lược Quý 4/2026: Tìm về giá trị",
+    "source": "KAFI",
+    "date": "2026-10-01T00:00:00.000Z",
+    "url": "https://cdn02.wigroup.vn/baocaophantich/ar_25821_KAFI_2026-10-01.pdf",
+    "category": "Báo cáo Chiến lược",
+    "created_at": "2026-10-07T13:23:00.020Z"
+  },
+  {
+    "id": 25865,
+    "title": "Báo cáo triển vọng quý 4/2026: Cơ hội trong giai đoạn tích lũy & phân hóa",
+    "source": "FPTS",
+    "date": "2026-10-06T00:00:00.000Z",
+    "url": "https://cdn02.wigroup.vn/baocaophantich/ar_25819_FPTS_2026-10-06.pdf",
+    "category": "Báo cáo Chiến lược",
+    "created_at": "2026-10-07T13:23:00.020Z"
+  },
+  {
+    "id": 25857,
+    "title": "Báo cáo tổng kết thị trường tháng 9/2026: Thanh khoản thấp, khối ngoại tiếp tục bán ròng tạo áp lực lên VN-Index",
+    "source": "Vietcap",
+    "date": "2026-10-02T00:00:00.000Z",
+    "url": "https://cdn02.wigroup.vn/baocaophantich/25857_Vietcap_2026-10-06.pdf",
+    "category": "Báo cáo Chiến lược",
+    "created_at": "2026-10-06T22:48:50.786Z"
+  },
+  {
+    "id": 25859,
+    "title": "Tổng hợp Dự báo KQKD Q3/2026",
+    "source": "VPBS",
+    "date": "2026-10-05T00:00:00.000Z",
+    "url": "https://cdn02.wigroup.vn/baocaophantich/ar_25801_VPBS_2026-10-05.pdf",
+    "category": "Báo cáo Chiến lược",
+    "created_at": "2026-10-06T22:48:50.786Z"
+  },
+  {
+    "id": 25854,
+    "title": "Báo cáo triển vọng thị trường tháng 10: Vững tay chèo",
+    "source": "VDS",
+    "date": "2026-10-05T00:00:00.000Z",
+    "url": "https://cdn02.wigroup.vn/baocaophantich/ar_25798_VDS_2026-10-05.pdf",
+    "category": "Báo cáo Chiến lược",
+    "created_at": "2026-10-06T22:48:50.786Z"
+  },
+  {
+    "id": 25856,
+    "title": "Chiến lược thị trường tháng 10/2026: Tìm điểm cân bằng ngắn hạn",
+    "source": "Vietcap",
+    "date": "2026-10-05T00:00:00.000Z",
+    "url": "https://cdn02.wigroup.vn/baocaophantich/25856_Vietcap_2026-10-06.pdf",
+    "category": "Báo cáo Chiến lược",
+    "created_at": "2026-10-06T22:48:50.786Z"
+  },
+  {
     "id": 25820,
     "title": "Chiến lược tháng: Fed tăng lãi suất – Phép thử vĩ mô đối với Việt Nam",
     "source": "MAS",

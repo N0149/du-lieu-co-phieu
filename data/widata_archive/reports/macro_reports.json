@@ -1,5 +1,95 @@
 [
   {
+    "id": 25881,
+    "title": "Báo cáo vĩ mô tháng 9/2026: Bứt tốc trong giai đoạn cuối năm",
+    "source": "DSC",
+    "date": "2026-10-06T00:00:00.000Z",
+    "url": "https://cdn02.wigroup.vn/baocaophantich/ar_25830_DSC_2026-10-06.pdf",
+    "category": "Báo cáo Vĩ mô",
+    "created_at": "2026-10-09T12:35:26.443Z"
+  },
+  {
+    "id": 25871,
+    "title": "Báo cáo vĩ mô Tháng 9/2026",
+    "source": "VIKKIBANKS",
+    "date": "2026-10-07T00:00:00.000Z",
+    "url": "https://cdn02.wigroup.vn/baocaophantich/ar_25839_VIKKIBANKS_2026-10-07.pdf",
+    "category": "Báo cáo Vĩ mô",
+    "created_at": "2026-10-09T12:35:26.443Z"
+  },
+  {
+    "id": 25895,
+    "title": "Kinh tế tăng trưởng mạnh trong quý 3",
+    "source": "Vietcap",
+    "date": "2026-10-08T00:00:00.000Z",
+    "url": "https://cdn02.wigroup.vn/baocaophantich/ar_25863_Vietcap_2026-10-08.pdf",
+    "category": "Báo cáo Vĩ mô",
+    "created_at": "2026-10-09T12:35:26.443Z"
+  },
+  {
+    "id": 25873,
+    "title": "Cập nhật Vĩ mô – tháng 9/2026: Sản xuất và đầu tư dẫn dắt tăng trưởng trong môi trường lãi suất cao",
+    "source": "ACBS",
+    "date": "2026-10-08T00:00:00.000Z",
+    "url": "https://cdn02.wigroup.vn/baocaophantich/ar_25856_ACBS_2026-10-08.pdf",
+    "category": "Báo cáo Vĩ mô",
+    "created_at": "2026-10-09T12:35:26.443Z"
+  },
+  {
+    "id": 25878,
+    "title": "Bức tranh vĩ mô Quý 3/2026: Tăng trưởng GDP bứt phá 9.95% nhưng lạm phát vượt ngưỡng 5%",
+    "source": "DNSE",
+    "date": "2026-10-08T00:00:00.000Z",
+    "url": "https://cdn02.wigroup.vn/baocaophantich/ar_25843_DNSE_2026-10-08.pdf",
+    "category": "Báo cáo Vĩ mô",
+    "created_at": "2026-10-09T12:35:26.443Z"
+  },
+  {
+    "id": 25893,
+    "title": "Báo cáo vĩ mô 09/2026",
+    "source": "VFS",
+    "date": "2026-10-09T00:00:00.000Z",
+    "url": "https://cdn02.wigroup.vn/baocaophantich/ar_25870_VFS_2026-10-09.pdf",
+    "category": "Báo cáo Vĩ mô",
+    "created_at": "2026-10-09T12:35:26.443Z"
+  },
+  {
+    "id": 25887,
+    "title": "Báo cáo vĩ mô tháng 9/2026",
+    "source": "NSI",
+    "date": "2026-10-09T00:00:00.000Z",
+    "url": "https://cdn02.wigroup.vn/baocaophantich/ar_25867_NSI_2026-10-09.pdf",
+    "category": "Báo cáo Vĩ mô",
+    "created_at": "2026-10-09T12:35:26.443Z"
+  },
+  {
+    "id": 25861,
+    "title": "Báo cáo vĩ mô Tháng 09/2026",
+    "source": "BETA",
+    "date": "2026-10-05T00:00:00.000Z",
+    "url": "https://cdn02.wigroup.vn/baocaophantich/ar_25818_BETA_2026-10-05.pdf",
+    "category": "Báo cáo Vĩ mô",
+    "created_at": "2026-10-07T13:22:58.234Z"
+  },
+  {
+    "id": 25866,
+    "title": "Vĩ mô tháng 09/2026: Tăng trưởng khởi sắc, tiến gần hơn tới mục tiêu cả năm",
+    "source": "KAFI",
+    "date": "2026-10-06T00:00:00.000Z",
+    "url": "https://cdn02.wigroup.vn/baocaophantich/ar_25820_KAFI_2026-10-06.pdf",
+    "category": "Báo cáo Vĩ mô",
+    "created_at": "2026-10-07T13:22:58.234Z"
+  },
+  {
+    "id": 25847,
+    "title": "Cập nhật kinh tế vĩ mô Q3/2026 và 9 tháng năm 2026",
+    "source": "AGRISECO",
+    "date": "2026-10-06T00:00:00.000Z",
+    "url": "https://cdn02.wigroup.vn/baocaophantich/ar_25816_AGRISECO_2026-10-06.pdf",
+    "category": "Báo cáo Vĩ mô",
+    "created_at": "2026-10-06T22:48:49.041Z"
+  },
+  {
     "id": 25823,
     "title": "Lạm phát do giá nhiên liệu tăng lên 4.89%",
     "source": "SSV",

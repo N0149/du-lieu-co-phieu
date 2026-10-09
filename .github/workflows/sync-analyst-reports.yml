@@ -28,6 +28,7 @@ jobs:
         run: |
           git config --global user.name 'github-actions[bot]'
           git config --global user.email 'github-actions[bot]@users.noreply.github.com'
-          git add data/industry-reports.json data/industry_reports.db data/company_reports.db data/company_reports_summary.json data/widata_archive/reports/
+          git add data/company_reports_snapshot.json data/industry_reports_snapshot.json data/industry-reports.json data/company_reports_summary.json data/widata_archive/reports/
           git diff --quiet && git diff --staged --quiet || (git commit -m "chore(data): auto sync daily analyst reports $(date +'%Y-%m-%d %H:%M')" && git pull --rebase origin main && git push)
+
 
