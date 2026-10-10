@@ -182,6 +182,19 @@
     "is_important": 0
   },
   {
+    "id": "vci_12186952",
+    "symbol": "KDH",
+    "exchange": "HOSE",
+    "company_name": "Công ty Cổ phần Đầu tư và Kinh doanh nhà Khang Điền",
+    "title": "KDH: Báo cáo kết quả giao dịch cổ phiếu ESOP của Người nội bộ Mai Trần Thanh Trang, Ngô Thị Thanh Tâm, Vương Văn Minh, Lê Hoàng Khởi",
+    "doc_type": "GIAO_DICH_NOI_BO",
+    "doc_type_label": "Giao dịch nội bộ",
+    "published_at": "2026-10-09 17:13:17",
+    "file_url": "https://cdn.fiingroup.vn/medialib/127889/I/2024/11/26/11005669610870700_KDH.png",
+    "source": "Vietcap_FiinGroup",
+    "is_important": 0
+  },
+  {
     "id": "cf_KDH_2026-10-09_acb125d0ae",
     "symbol": "KDH",
     "exchange": "HOSE",
@@ -208,6 +221,19 @@
     "is_important": 0
   },
   {
+    "id": "vci_12186947",
+    "symbol": "KDH",
+    "exchange": "HOSE",
+    "company_name": "Công ty Cổ phần Đầu tư và Kinh doanh nhà Khang Điền",
+    "title": "KDH: Báo cáo kết quả giao dịch cổ phiếu ESOP của người có liên quan đến Người nội bộ Mai Trần Thùy Trang",
+    "doc_type": "GIAO_DICH_NOI_BO",
+    "doc_type_label": "Giao dịch nội bộ",
+    "published_at": "2026-10-09 17:11:32",
+    "file_url": "https://cdn.fiingroup.vn/medialib/127889/I/2024/11/26/11005669610870700_KDH.png",
+    "source": "Vietcap_FiinGroup",
+    "is_important": 0
+  },
+  {
     "id": "cf_KDH_2026-10-09_7ec8ec691b",
     "symbol": "KDH",
     "exchange": "HOSE",
@@ -231,6 +257,19 @@
     "published_at": "2026-10-09 17:10:00",
     "file_url": "https://cafef.vn/du-lieu/VNG-2994822/vng-thong-bao-thay-doi-nhan-su-tai-bo-nhiem-giam-doc-tai-chinh-ke-toan-truong-kem-quyet-dinh.chn?utm_source=du-lieu.chn",
     "source": "CafeF_Sở",
+    "is_important": 0
+  },
+  {
+    "id": "vci_12186948",
+    "symbol": "ANV",
+    "exchange": "HOSE",
+    "company_name": "Công ty Cổ phần Nam Việt",
+    "title": "ANV: Báo cáo kết quả giao dịch cổ phiếu của Người nội bộ Doãn Chí Thiên",
+    "doc_type": "GIAO_DICH_NOI_BO",
+    "doc_type_label": "Giao dịch nội bộ",
+    "published_at": "2026-10-09 17:09:55",
+    "file_url": "https://cdn.fiingroup.vn/medialib/74/I/2024/11/27/16252299516980700_ANV.jpg",
+    "source": "Vietcap_FiinGroup",
     "is_important": 0
   },
   {
@@ -452,6 +491,19 @@
     "published_at": "2026-10-09 16:37:00",
     "file_url": "https://cafef.vn/du-lieu/CBS-2994779/cbs-nghi-quyet-dai-hoi-dong-co-dong-thuong-nien-nam-2026.chn?utm_source=du-lieu.chn",
     "source": "CafeF_Sở",
+    "is_important": 0
+  },
+  {
+    "id": "vci_12186901",
+    "symbol": "CBS",
+    "exchange": "UPCOM",
+    "company_name": "Công ty Cổ phần Mía đường Cao Bằng",
+    "title": "CBS: Nghị quyết Đại hội đồng cổ đông thường niên năm 2026",
+    "doc_type": "DHDCD",
+    "doc_type_label": "ĐHĐCĐ",
+    "published_at": "2026-10-09 16:37:00",
+    "file_url": "https://cdn.fiingroup.vn/medialib/127889/I/2024/12/19/10345744434690700_CBS.png",
+    "source": "Vietcap_FiinGroup",
     "is_important": 0
   },
   {
@@ -702,6 +754,32 @@
     "is_important": 0
   },
   {
+    "id": "vci_12186809",
+    "symbol": "AIC",
+    "exchange": "UPCOM",
+    "company_name": "Công ty Cổ phần Tập đoàn Bảo hiểm DBV",
+    "title": "AIC: Thay đổi địa điểm Chi nhánh DBV",
+    "doc_type": "KHAC",
+    "doc_type_label": "Công bố thông tin",
+    "published_at": "2026-10-09 15:33:00",
+    "file_url": "https://cdn.fiingroup.vn/medialib/127889/I/2025/05/12/11003545105830700_AIC.png",
+    "source": "Vietcap_FiinGroup",
+    "is_important": 0
+  },
+  {
+    "id": "vci_12186841",
+    "symbol": "AIC",
+    "exchange": "UPCOM",
+    "company_name": "Công ty Cổ phần Tập đoàn Bảo hiểm DBV",
+    "title": "AIC: Thay đổi địa điểm Chi nhánh DBV",
+    "doc_type": "KHAC",
+    "doc_type_label": "Công bố thông tin",
+    "published_at": "2026-10-09 15:32:00",
+    "file_url": "https://cdn.fiingroup.vn/medialib/127889/I/2025/05/12/11003545105830700_AIC.png",
+    "source": "Vietcap_FiinGroup",
+    "is_important": 0
+  },
+  {
     "id": "cf_TMG_2026-10-09_a6e8521beb",
     "symbol": "TMG",
     "exchange": "UPCOM",
@@ -780,6 +858,19 @@
     "is_important": 0
   },
   {
+    "id": "vci_12186290",
+    "symbol": "ANV",
+    "exchange": "HOSE",
+    "company_name": "Công ty Cổ phần Nam Việt",
+    "title": "ANV: Thông báo ngày ĐKCC chi trả cổ tức năm 2025 và tạm ứng cổ tức năm 2026",
+    "doc_type": "CO_TUC",
+    "doc_type_label": "Cổ tức & Quyền",
+    "published_at": "2026-10-09 10:59:50",
+    "file_url": "https://cdn.fiingroup.vn/medialib/74/I/2024/11/27/16252299516980700_ANV.jpg",
+    "source": "Vietcap_FiinGroup",
+    "is_important": 1
+  },
+  {
     "id": "cf_ANV_2026-10-09_ddb7d5f6c4",
     "symbol": "ANV",
     "exchange": "HOSE",
@@ -790,6 +881,19 @@
     "published_at": "2026-10-09 10:59:00",
     "file_url": "https://cafef.vn/du-lieu/ANV-2994482/anv-thong-bao-ngay-dkcc-chi-tra-co-tuc-nam-2025-va-tam-ung-co-tuc-nam-2026.chn?utm_source=du-lieu.chn",
     "source": "CafeF_Sở",
+    "is_important": 1
+  },
+  {
+    "id": "vci_12186291",
+    "symbol": "ANV",
+    "exchange": "HOSE",
+    "company_name": "Công ty Cổ phần Nam Việt",
+    "title": "ANV: Biên bản, Nghị quyết HĐQT về chi trả cổ tức năm 2025 và tạm ứng cổ tức năm 2026",
+    "doc_type": "CO_TUC",
+    "doc_type_label": "Cổ tức & Quyền",
+    "published_at": "2026-10-09 10:58:27",
+    "file_url": "https://cdn.fiingroup.vn/medialib/74/I/2024/11/27/16252299516980700_ANV.jpg",
+    "source": "Vietcap_FiinGroup",
     "is_important": 1
   },
   {
@@ -1178,7 +1282,7 @@
     "doc_type": "KHAC",
     "doc_type_label": "Công bố thông tin",
     "published_at": "2026-10-09 00:00:00",
-    "file_url": "https://cafef.vn/du-lieu/AIC-2994693/aic-thay-doi-dia-diem-chi-nhanh-dbv.chn?utm_source=du-lieu.chn",
+    "file_url": "https://cafef.vn/du-lieu/AIC-2994700/aic-thay-doi-dia-diem-chi-nhanh-dbv.chn?utm_source=du-lieu.chn",
     "source": "CafeF_Sở",
     "is_important": 0
   },
@@ -1557,6 +1661,19 @@
     "published_at": "2026-10-08 18:18:00",
     "file_url": "https://cafef.vn/du-lieu/WSS-2994078/wss-nghi-quyet-hoi-dong-quan-tri.chn?utm_source=du-lieu.chn",
     "source": "CafeF_Sở",
+    "is_important": 0
+  },
+  {
+    "id": "vci_12185473",
+    "symbol": "PVS",
+    "exchange": "HNX",
+    "company_name": "Tổng Công ty Cổ phần Dịch vụ Kỹ thuật Dầu khí Việt Nam",
+    "title": "PVS: Nghị quyết Hội đồng quản trị",
+    "doc_type": "NGHI_QUYET_HDQT",
+    "doc_type_label": "Nghị quyết HĐQT",
+    "published_at": "2026-10-08 18:18:00",
+    "file_url": "https://cdn.fiingroup.vn/medialib/74/I/2024/11/26/14110141848510700_PVS.gif",
+    "source": "Vietcap_FiinGroup",
     "is_important": 0
   },
   {
@@ -2481,122 +2598,5 @@
     "file_url": "https://cafef.vn/du-lieu/DMX-2993805/dmx-thong-bao-duong-dan-tai-lieu-hop-dhdcd-bat-thuong-nam-2026.chn?utm_source=du-lieu.chn",
     "source": "CafeF_Sở",
     "is_important": 1
-  },
-  {
-    "id": "cf_LPS_2026-10-08_bb1fe88ab4",
-    "symbol": "LPS",
-    "exchange": "HOSE",
-    "company_name": "",
-    "title": "LPS: Thông báo về việc thay đổi mẫu dấu 03 chi nhánh",
-    "doc_type": "KHAC",
-    "doc_type_label": "Công bố thông tin",
-    "published_at": "2026-10-08 14:29:00",
-    "file_url": "https://cafef.vn/du-lieu/LPS-2993804/lps-thong-bao-ve-viec-thay-doi-mau-dau-03-chi-nhanh.chn?utm_source=du-lieu.chn",
-    "source": "CafeF_Sở",
-    "is_important": 0
-  },
-  {
-    "id": "cf_VBB_2026-10-08_8351d81df1",
-    "symbol": "VBB",
-    "exchange": "HOSE",
-    "company_name": "Ngân hàng Thương mại Cổ phần Việt Nam Thương Tín",
-    "title": "VBB: Nghị quyết HĐQT số 202/2026 ngày 07/10/2026",
-    "doc_type": "NGHI_QUYET_HDQT",
-    "doc_type_label": "Nghị quyết HĐQT",
-    "published_at": "2026-10-08 14:27:00",
-    "file_url": "https://cafef.vn/du-lieu/VBB-2993801/vbb-nghi-quyet-hdqt-so-2022026-ngay-07102026.chn?utm_source=du-lieu.chn",
-    "source": "CafeF_Sở",
-    "is_important": 0
-  },
-  {
-    "id": "cf_VBB_2026-10-08_0065589b90",
-    "symbol": "VBB",
-    "exchange": "HOSE",
-    "company_name": "Ngân hàng Thương mại Cổ phần Việt Nam Thương Tín",
-    "title": "VBB: Thông báo chào bán thêm cổ phiếu ra công chúng",
-    "doc_type": "KHAC",
-    "doc_type_label": "Công bố thông tin",
-    "published_at": "2026-10-08 14:26:00",
-    "file_url": "https://cafef.vn/du-lieu/VBB-2993797/vbb-thong-bao-chao-ban-them-co-phieu-ra-cong-chung.chn?utm_source=du-lieu.chn",
-    "source": "CafeF_Sở",
-    "is_important": 0
-  },
-  {
-    "id": "cf_VBB_2026-10-08_89e57893b0",
-    "symbol": "VBB",
-    "exchange": "HOSE",
-    "company_name": "Ngân hàng Thương mại Cổ phần Việt Nam Thương Tín",
-    "title": "VBB: Giấy chứng nhận đăng ký chào bán thêm cổ phiếu ra công chúng",
-    "doc_type": "KHAC",
-    "doc_type_label": "Công bố thông tin",
-    "published_at": "2026-10-08 14:25:00",
-    "file_url": "https://cafef.vn/du-lieu/VBB-2993790/vbb-giay-chung-nhan-dang-ky-chao-ban-them-co-phieu-ra-cong-chung.chn?utm_source=du-lieu.chn",
-    "source": "CafeF_Sở",
-    "is_important": 0
-  },
-  {
-    "id": "cf_VBB_2026-10-08_7deb9595d1",
-    "symbol": "VBB",
-    "exchange": "HOSE",
-    "company_name": "Ngân hàng Thương mại Cổ phần Việt Nam Thương Tín",
-    "title": "VBB: Bản cáo bạch chào bán thêm cổ phiếu ra công chúng",
-    "doc_type": "KHAC",
-    "doc_type_label": "Công bố thông tin",
-    "published_at": "2026-10-08 14:24:00",
-    "file_url": "https://cafef.vn/du-lieu/VBB-2993787/vbb-ban-cao-bach-chao-ban-them-co-phieu-ra-cong-chung.chn?utm_source=du-lieu.chn",
-    "source": "CafeF_Sở",
-    "is_important": 0
-  },
-  {
-    "id": "cf_AGG_2026-10-08_eb29a63f64",
-    "symbol": "AGG",
-    "exchange": "HOSE",
-    "company_name": "Công ty Cổ phần Đầu tư và Phát triển Bất động sản An Gia",
-    "title": "AGG: Giấy chứng nhận đăng ký doanh nghiệp thay đổi lần thứ 20",
-    "doc_type": "KHAC",
-    "doc_type_label": "Công bố thông tin",
-    "published_at": "2026-10-08 14:21:00",
-    "file_url": "https://cafef.vn/du-lieu/AGG-2993784/agg-giay-chung-nhan-dang-ky-doanh-nghiep-thay-doi-lan-thu-20.chn?utm_source=du-lieu.chn",
-    "source": "CafeF_Sở",
-    "is_important": 0
-  },
-  {
-    "id": "vci_12185267",
-    "symbol": "ACB",
-    "exchange": "HOSE",
-    "company_name": "Ngân hàng Thương mại Cổ phần Á Châu",
-    "title": "ACB: Nghị quyết HĐQT về việc thay đổi địa điểm đặt trụ sở Chi nhánh Trần Duy Hưng",
-    "doc_type": "NGHI_QUYET_HDQT",
-    "doc_type_label": "Nghị quyết HĐQT",
-    "published_at": "2026-10-08 14:20:28",
-    "file_url": "https://cdn.fiingroup.vn/medialib/127889/I/2024/11/25/16373468562400700_ACB1.png",
-    "source": "Vietcap_FiinGroup",
-    "is_important": 0
-  },
-  {
-    "id": "cf_ACB_2026-10-08_4cc764653c",
-    "symbol": "ACB",
-    "exchange": "HOSE",
-    "company_name": "Ngân hàng Thương mại Cổ phần Á Châu",
-    "title": "ACB: Nghị quyết HĐQT về việc thay đổi địa điểm đặt trụ sở Chi nhánh Trần Duy Hưng",
-    "doc_type": "NGHI_QUYET_HDQT",
-    "doc_type_label": "Nghị quyết HĐQT",
-    "published_at": "2026-10-08 14:20:00",
-    "file_url": "https://cafef.vn/du-lieu/ACB-2993773/acb-nghi-quyet-hdqt-ve-viec-thay-doi-dia-diem-dat-tru-so-chi-nhanh-tran-duy-hung.chn?utm_source=du-lieu.chn",
-    "source": "CafeF_Sở",
-    "is_important": 0
-  },
-  {
-    "id": "vci_12185078",
-    "symbol": "ACB",
-    "exchange": "HOSE",
-    "company_name": "Ngân hàng Thương mại Cổ phần Á Châu",
-    "title": "ACB: Nghị quyết HĐQT về các hợp đồng, giao dịch giữa ACB và ACBI",
-    "doc_type": "NGHI_QUYET_HDQT",
-    "doc_type_label": "Nghị quyết HĐQT",
-    "published_at": "2026-10-08 14:19:04",
-    "file_url": "https://cdn.fiingroup.vn/medialib/127889/I/2024/11/25/16373468562400700_ACB1.png",
-    "source": "Vietcap_FiinGroup",
-    "is_important": 0
   }
 ]
