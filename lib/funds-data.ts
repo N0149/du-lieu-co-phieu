@@ -1,4 +1,5 @@
 // Dữ liệu quỹ mở Việt Nam (Open-ended Mutual Funds Vietnam)
+// Tự động đồng bộ từ hệ thống dữ liệu thị trường Fmarket
 
 export type FundCategory = 'equity' | 'bond' | 'balanced'
 
@@ -15,21 +16,25 @@ export interface Fund {
   name: string
   category: FundCategory
   issuer: string // Dragon Capital, VinaCapital, VCBF, SSIAM,...
+  issuerFullName?: string
   nav: number // Giá NAV gần nhất (VND)
   navDate: string // Ngày cập nhật NAV (dd/MM/yyyy)
-  ytdReturn: number // % Lợi nhuận từ đầu năm
-  return1Y: number // % Lợi nhuận 1 năm
-  return3Y: number // % Lợi nhuận 3 năm
+  ytdReturn: number | null // % Lợi nhuận từ đầu năm (YTD)
+  return1Y: number | null // % Lợi nhuận 1 năm
+  return3Y: number | null // % Lợi nhuận 3 năm
+  returnInception?: number | null // % Lợi nhuận từ khi thành lập
   aumBillionVnd?: number // Quy mô tài sản (tỷ VNĐ)
   managementFee?: number // % Phí quản lý hàng năm
   inceptionDate?: string
   holdings: FundHolding[]
   description: string
+  fmarketId?: number
 }
 
 export interface StockHoldingStats {
   rank: number
   symbol: string
+  name?: string
   industry: string
   fundCount: number
   avgWeight: number
@@ -49,620 +54,4986 @@ export const FUND_CATEGORIES: { key: FundCategory | 'all'; label: string }[] = [
   { key: 'balanced', label: 'Cân bằng' },
 ]
 
-export const FUND_ISSUERS = [
-  'Tất cả tổ chức',
-  'DRAGON CAPITAL',
-  'VINACAPITAL',
-  'VIETCOMBANK_FUND',
-  'MIRAE_ASSET',
-  'SSIAM',
-  'IPAAM',
-  'BAOVIET_FUND',
-  'TECHCOM_CAPITAL',
-  'MBCAPITAL',
-  'ABF',
-  'LPBA',
+export const FUND_ISSUERS: string[] = [
+  "Tất cả tổ chức",
+  "DCVFM",
+  "UOBAM VIETNAM",
+  "SSIAM",
+  "AMBER CAPITAL",
+  "KIM",
+  "VIETINBANK CAPITAL",
+  "LPBA",
+  "ABF",
+  "LIGHTHOUSE CAPITAL",
+  "HDCAPITAL",
+  "EASTSPRING VIET NAM",
+  "MBCAPITAL",
+  "VDAM",
+  "VIETCOMBANK FUND",
+  "VINACAPITAL",
+  "TCAM",
+  "MANULIFE INVESTMENTS",
+  "VCAM",
+  "IPA PARTNER",
+  "PHFM",
+  "PVCB CAPITAL",
+  "NTP AM",
+  "MIRAE ASSET",
+  "SGIC",
+  "BAOVIETFUND",
+  "DFVN"
 ]
 
 export const FUNDS_DATA: Fund[] = [
   {
-    id: 'dcds',
-    code: 'DCDS',
-    name: 'Quỹ Đầu Tư Chứng Khoán Năng Động DC',
-    category: 'equity',
-    issuer: 'DRAGON CAPITAL',
-    nav: 82450.12,
-    navDate: '28/08/2026',
-    ytdReturn: 16.82,
-    return1Y: 28.45,
-    return3Y: 46.12,
-    aumBillionVnd: 7850,
-    managementFee: 1.8,
-    inceptionDate: '20/05/2004',
-    description: 'Quỹ mở cổ phiếu đầu tiên tại Việt Nam, tập trung vào các doanh nghiệp tăng trưởng đầu ngành và định giá hấp dẫn.',
-    holdings: [
-      { symbol: 'HPG', name: 'Tập đoàn Hòa Phát', industry: 'Vật liệu xây dựng', weight: 8.9 },
-      { symbol: 'MWG', name: 'Thế Giới Di Động', industry: 'Bán lẻ', weight: 8.1 },
-      { symbol: 'FPT', name: 'Tập đoàn FPT', industry: 'Công nghệ và thông tin', weight: 7.5 },
-      { symbol: 'CTG', name: 'VietinBank', industry: 'Ngân hàng', weight: 6.8 },
-      { symbol: 'TCB', name: 'Techcombank', industry: 'Ngân hàng', weight: 5.9 },
-      { symbol: 'STB', name: 'Sacombank', industry: 'Ngân hàng', weight: 5.2 },
-      { symbol: 'MBB', name: 'Ngân hàng Quân Đội', industry: 'Ngân hàng', weight: 4.8 },
-      { symbol: 'VHM', name: 'Vinhomes', industry: 'Bất động sản', weight: 4.5 },
-      { symbol: 'KDH', name: 'Nhà Khang Điền', industry: 'Bất động sản', weight: 4.1 },
-      { symbol: 'VND', name: 'Chứng khoán VNDIRECT', industry: 'Chứng khoán', weight: 3.8 },
-    ],
+    "id": "dcba",
+    "fmarketId": 118,
+    "code": "DCBA",
+    "name": "QUỸ ĐẦU TƯ CÂN BẰNG DC",
+    "category": "balanced",
+    "issuer": "DCVFM",
+    "issuerFullName": "CÔNG TY CỔ PHẦN QUẢN LÝ QUỸ DRAGON CAPITAL VIỆT NAM",
+    "nav": 9824.9,
+    "navDate": "09/10/2026",
+    "ytdReturn": -1.75,
+    "return1Y": null,
+    "return3Y": null,
+    "returnInception": -1.75,
+    "managementFee": 1.6,
+    "inceptionDate": "29/07/2026",
+    "description": "Quỹ cân bằng, kết hợp giữa tăng trưởng và giảm rủi ro, lý tưởng cho bước chuyển từ tiết kiệm sang đầu tư.",
+    "holdings": []
   },
   {
-    id: 'veof',
-    code: 'VEOF',
-    name: 'Quỹ Đầu Tư Cổ Phiếu Hưng Thịnh VinaCapital',
-    category: 'equity',
-    issuer: 'VINACAPITAL',
-    nav: 33420.45,
-    navDate: '28/08/2026',
-    ytdReturn: 18.25,
-    return1Y: 31.10,
-    return3Y: 52.80,
-    aumBillionVnd: 5120,
-    managementFee: 1.75,
-    inceptionDate: '01/07/2014',
-    description: 'Chiến lược đầu tư chủ động tập trung vào các cổ phiếu vốn hóa lớn và trung bình có tiềm năng tăng trưởng vượt trội.',
-    holdings: [
-      { symbol: 'FPT', name: 'Tập đoàn FPT', industry: 'Công nghệ và thông tin', weight: 9.4 },
-      { symbol: 'HPG', name: 'Tập đoàn Hòa Phát', industry: 'Vật liệu xây dựng', weight: 8.2 },
-      { symbol: 'MBB', name: 'Ngân hàng Quân Đội', industry: 'Ngân hàng', weight: 7.6 },
-      { symbol: 'ACB', name: 'Ngân hàng Á Châu', industry: 'Ngân hàng', weight: 7.1 },
-      { symbol: 'TCB', name: 'Techcombank', industry: 'Ngân hàng', weight: 6.3 },
-      { symbol: 'CTG', name: 'VietinBank', industry: 'Ngân hàng', weight: 5.8 },
-      { symbol: 'MWG', name: 'Thế Giới Di Động', industry: 'Bán lẻ', weight: 5.4 },
-      { symbol: 'GMD', name: 'Gemadept', industry: 'Cảng & Vận tải biển', weight: 4.9 },
-      { symbol: 'VRE', name: 'Vincom Retail', industry: 'Bất động sản', weight: 4.2 },
-      { symbol: 'MSN', name: 'Tập đoàn Masan', industry: 'Thực phẩm - Đồ uống', weight: 3.9 },
-    ],
+    "id": "ummf",
+    "fmarketId": 117,
+    "code": "UMMF",
+    "name": "QUỸ ĐẦU TƯ UNITED DÒNG TIỀN LINH HOẠT",
+    "category": "bond",
+    "issuer": "UOBAM VIETNAM",
+    "issuerFullName": "CÔNG TY CỔ PHẦN QUẢN LÝ QUỸ UOB ASSET MANAGEMENT (VIỆT NAM)",
+    "nav": 10000,
+    "navDate": "09/10/2026",
+    "ytdReturn": null,
+    "return1Y": null,
+    "return3Y": null,
+    "returnInception": 0,
+    "managementFee": 0.6,
+    "inceptionDate": "",
+    "description": "Quỹ đầu tư vào tài sản như sau: Tài sản chiếm tỷ trọng cao trong danh mục đầu tư  (ví dụ: Trái phiếu doanh nghiệp,  Trái phiếu chính phủ, Chứng chỉ tiền gửi, Công cụ thị trường tiền tệ,…) và tài sản chiếm tỷ trọng vừa/thấp trong danh mục đầu tư (ví dụ: Trái phiếu doanh nghiệp,  Trái phiếu chính phủ, Chứng chỉ tiền gửi, Công cụ thị trường tiền tệ,…).",
+    "holdings": []
   },
   {
-    id: 'vcbf-bcf',
-    code: 'VCBF-BCF',
-    name: 'Quỹ Đầu Tư Cổ Phiếu Hàng Đầu VCBF',
-    category: 'equity',
-    issuer: 'VIETCOMBANK_FUND',
-    nav: 35820.60,
-    navDate: '28/08/2026',
-    ytdReturn: 15.60,
-    return1Y: 27.80,
-    return3Y: 48.90,
-    aumBillionVnd: 4650,
-    managementFee: 1.6,
-    inceptionDate: '22/08/2014',
-    description: 'Đầu tư vào các cổ phiếu hàng đầu có vị thế độc quyền hoặc lợi thế cạnh tranh bền vững tại thị trường Việt Nam.',
-    holdings: [
-      { symbol: 'HPG', name: 'Tập đoàn Hòa Phát', industry: 'Vật liệu xây dựng', weight: 9.1 },
-      { symbol: 'CTG', name: 'VietinBank', industry: 'Ngân hàng', weight: 8.5 },
-      { symbol: 'MBB', name: 'Ngân hàng Quân Đội', industry: 'Ngân hàng', weight: 7.8 },
-      { symbol: 'FPT', name: 'Tập đoàn FPT', industry: 'Công nghệ và thông tin', weight: 7.2 },
-      { symbol: 'ACB', name: 'Ngân hàng Á Châu', industry: 'Ngân hàng', weight: 6.9 },
-      { symbol: 'MWG', name: 'Thế Giới Di Động', industry: 'Bán lẻ', weight: 6.2 },
-      { symbol: 'VCB', name: 'Vietcombank', industry: 'Ngân hàng', weight: 5.8 },
-      { symbol: 'VHM', name: 'Vinhomes', industry: 'Bất động sản', weight: 4.8 },
-      { symbol: 'VHC', name: 'Vĩnh Hoàn', industry: 'Nông - Lâm - Ngư', weight: 4.3 },
-      { symbol: 'MSN', name: 'Tập đoàn Masan', industry: 'Thực phẩm - Đồ uống', weight: 3.9 },
-    ],
+    "id": "ssi-pdf",
+    "fmarketId": 116,
+    "code": "SSI-PDF",
+    "name": "QUỸ ĐẦU TƯ CỔ TỨC TĂNG TRƯỞNG KÉP SSI",
+    "category": "equity",
+    "issuer": "SSIAM",
+    "issuerFullName": "CÔNG TY TNHH QUẢN LÝ QUỸ SSI",
+    "nav": 10075.08,
+    "navDate": "09/10/2026",
+    "ytdReturn": null,
+    "return1Y": null,
+    "return3Y": null,
+    "returnInception": 0.75,
+    "managementFee": 1.9,
+    "inceptionDate": "",
+    "description": "Quỹ đầu tư vào các cổ phiếu có lịch sử và tiềm năng chi trả cổ tức cao, ổn định; hướng tới tăng trưởng vốn dài hạn cho Nhà đầu tư.",
+    "holdings": []
   },
   {
-    id: 'vcbf-mgf',
-    code: 'VCBF-MGF',
-    name: 'Quỹ Đầu Tư Cổ Phiếu Tăng Trưởng VCBF',
-    category: 'equity',
-    issuer: 'VIETCOMBANK_FUND',
-    nav: 28450.30,
-    navDate: '28/08/2026',
-    ytdReturn: 17.40,
-    return1Y: 29.80,
-    return3Y: 49.30,
-    aumBillionVnd: 3820,
-    managementFee: 1.7,
-    inceptionDate: '20/10/2021',
-    description: 'Tìm kiếm cơ hội sinh lời vượt trội thông qua việc đầu tư vào các doanh nghiệp tăng trưởng nhanh trong nền kinh tế Việt Nam.',
-    holdings: [
-      { symbol: 'FPT', name: 'Tập đoàn FPT', industry: 'Công nghệ và thông tin', weight: 9.8 },
-      { symbol: 'MWG', name: 'Thế Giới Di Động', industry: 'Bán lẻ', weight: 8.4 },
-      { symbol: 'CTG', name: 'VietinBank', industry: 'Ngân hàng', weight: 7.9 },
-      { symbol: 'TCB', name: 'Techcombank', industry: 'Ngân hàng', weight: 7.2 },
-      { symbol: 'HPG', name: 'Tập đoàn Hòa Phát', industry: 'Vật liệu xây dựng', weight: 6.7 },
-      { symbol: 'MBB', name: 'Ngân hàng Quân Đội', industry: 'Ngân hàng', weight: 6.1 },
-      { symbol: 'FRT', name: 'Bán lẻ FPT', industry: 'Bán lẻ', weight: 5.5 },
-      { symbol: 'GMD', name: 'Gemadept', industry: 'Cảng & Vận tải biển', weight: 4.6 },
-      { symbol: 'HAH', name: 'Vận tải Hải An', industry: 'Cảng & Vận tải biển', weight: 3.8 },
-      { symbol: 'PNJ', name: 'Vàng bạc Phú Nhuận', industry: 'Bán lẻ', weight: 3.7 },
-    ],
+    "id": "aeif",
+    "fmarketId": 115,
+    "code": "AEIF",
+    "name": "QUỸ ĐẦU TƯ CỔ PHIẾU AMBER",
+    "category": "equity",
+    "issuer": "AMBER CAPITAL",
+    "issuerFullName": "CÔNG TY CỔ PHẦN QUẢN LÝ QUỸ AMBER",
+    "nav": 9090.01,
+    "navDate": "09/10/2026",
+    "ytdReturn": -9.1,
+    "return1Y": null,
+    "return3Y": null,
+    "returnInception": -9.1,
+    "managementFee": 1.35,
+    "inceptionDate": "11/05/2026",
+    "description": "AEIF là quỹ mở đầu tư cổ phiếu đầu tư vào các cổ phiếu đầu ngành, cơ bản tốt có lợi thế cạnh tranh kết hợp cùng việc tối ưu hóa định lượng để kiểm soát rủi ro, hướng tới mục tiêu tăng trưởng bền vững cho nhà đầu tư.",
+    "holdings": [
+      {
+        "symbol": "EVF",
+        "name": "EVF",
+        "industry": "Tài chính khác",
+        "weight": 17.39
+      },
+      {
+        "symbol": "EIB",
+        "name": "Eximbank",
+        "industry": "Ngân hàng",
+        "weight": 17.1
+      },
+      {
+        "symbol": "PIV",
+        "name": "PIV",
+        "industry": "Bất động sản",
+        "weight": 3.65
+      },
+      {
+        "symbol": "VCB",
+        "name": "Vietcombank",
+        "industry": "Ngân hàng",
+        "weight": 1.21
+      },
+      {
+        "symbol": "VNM",
+        "name": "Vinamilk",
+        "industry": "Thực phẩm - Đồ uống",
+        "weight": 1.11
+      },
+      {
+        "symbol": "CTG",
+        "name": "VietinBank",
+        "industry": "Ngân hàng",
+        "weight": 1.03
+      },
+      {
+        "symbol": "FPT",
+        "name": "Tập đoàn FPT",
+        "industry": "Công nghệ và thông tin",
+        "weight": 0.88
+      },
+      {
+        "symbol": "TCB",
+        "name": "Techcombank",
+        "industry": "Ngân hàng",
+        "weight": 0.81
+      },
+      {
+        "symbol": "BID",
+        "name": "BIDV",
+        "industry": "Ngân hàng",
+        "weight": 0.8
+      },
+      {
+        "symbol": "MSN",
+        "name": "Tập đoàn Masan",
+        "industry": "Thực phẩm - Đồ uống",
+        "weight": 0.8
+      }
+    ]
   },
   {
-    id: 'vesaf',
-    code: 'VESAF',
-    name: 'Quỹ Đầu Tư Cổ Phiếu Tiếp Cận Thị Trường VinaCapital',
-    category: 'equity',
-    issuer: 'VINACAPITAL',
-    nav: 38750.90,
-    navDate: '28/08/2026',
-    ytdReturn: 19.80,
-    return1Y: 34.60,
-    return3Y: 62.40,
-    aumBillionVnd: 4100,
-    managementFee: 1.8,
-    inceptionDate: '18/04/2017',
-    description: 'Tập trung vào các cổ phiếu vốn hóa vừa và nhỏ (Mid-cap & Small-cap) có tiềm năng tăng trưởng thần tốc và biên lợi nhuận cao.',
-    holdings: [
-      { symbol: 'FPT', name: 'Tập đoàn FPT', industry: 'Công nghệ và thông tin', weight: 9.5 },
-      { symbol: 'MBB', name: 'Ngân hàng Quân Đội', industry: 'Ngân hàng', weight: 8.1 },
-      { symbol: 'MWG', name: 'Thế Giới Di Động', industry: 'Bán lẻ', weight: 7.8 },
-      { symbol: 'CTG', name: 'VietinBank', industry: 'Ngân hàng', weight: 6.9 },
-      { symbol: 'HPG', name: 'Tập đoàn Hòa Phát', industry: 'Vật liệu xây dựng', weight: 6.4 },
-      { symbol: 'GMD', name: 'Gemadept', industry: 'Cảng & Vận tải biển', weight: 5.5 },
-      { symbol: 'KDH', name: 'Nhà Khang Điền', industry: 'Bất động sản', weight: 4.8 },
-      { symbol: 'STB', name: 'Sacombank', industry: 'Ngân hàng', weight: 4.5 },
-      { symbol: 'DGC', name: 'Hóa chất Đức Giang', industry: 'Sản xuất Nhựa - Hóa chất', weight: 4.2 },
-      { symbol: 'NLG', name: 'Nam Long', industry: 'Bất động sản', weight: 3.9 },
-    ],
+    "id": "ksif",
+    "fmarketId": 114,
+    "code": "KSIF",
+    "name": "QUỸ ĐẦU TƯ TRÁI PHIẾU CHIẾN LƯỢC KIM",
+    "category": "bond",
+    "issuer": "KIM",
+    "issuerFullName": "CÔNG TY TNHH QUẢN LÝ QUỸ KIM VIỆT NAM",
+    "nav": 10204.43,
+    "navDate": "09/10/2026",
+    "ytdReturn": null,
+    "return1Y": null,
+    "return3Y": null,
+    "returnInception": 2.04,
+    "managementFee": 1.2,
+    "inceptionDate": "",
+    "description": "KSIF hướng tới lợi nhuận vượt lãi suất tiền gửi 6 tháng, đảm bảo tính thanh khoản cao, đầu tư đa dạng và linh hoạt vào trái phiếu doanh nghiệp chất lượng cao và các công cụ tiền tệ.",
+    "holdings": [
+      {
+        "symbol": "MSN123009",
+        "name": "MSN123009",
+        "industry": "Thực phẩm - Đồ uống",
+        "weight": 37.83
+      },
+      {
+        "symbol": "BAF126003",
+        "name": "BAF126003",
+        "industry": "Nông - Lâm - Ngư",
+        "weight": 22.29
+      },
+      {
+        "symbol": "SHS12601-OTC",
+        "name": "SHS12601-OTC",
+        "industry": "Khác",
+        "weight": 19.71
+      },
+      {
+        "symbol": "NLG12501",
+        "name": "NLG12501",
+        "industry": "Bất động sản",
+        "weight": 15.97
+      }
+    ]
   },
   {
-    id: 'ssiam-vnlx',
-    code: 'SSIAM-VNX50',
-    name: 'Quỹ Đầu Tư Cổ Phiếu SSIAM VNX50',
-    category: 'equity',
-    issuer: 'SSIAM',
-    nav: 24350.20,
-    navDate: '28/08/2026',
-    ytdReturn: 14.80,
-    return1Y: 25.40,
-    return3Y: 41.50,
-    aumBillionVnd: 2950,
-    managementFee: 1.5,
-    inceptionDate: '15/09/2014',
-    description: 'Mô phỏng và đầu tư trọng tâm vào rổ chỉ số 50 cổ phiếu hàng đầu thị trường chứng khoán Việt Nam.',
-    holdings: [
-      { symbol: 'HPG', name: 'Tập đoàn Hòa Phát', industry: 'Vật liệu xây dựng', weight: 8.8 },
-      { symbol: 'TCB', name: 'Techcombank', industry: 'Ngân hàng', weight: 8.2 },
-      { symbol: 'VPB', name: 'VPBank', industry: 'Ngân hàng', weight: 7.7 },
-      { symbol: 'FPT', name: 'Tập đoàn FPT', industry: 'Công nghệ và thông tin', weight: 7.1 },
-      { symbol: 'MBB', name: 'Ngân hàng Quân Đội', industry: 'Ngân hàng', weight: 6.5 },
-      { symbol: 'MWG', name: 'Thế Giới Di Động', industry: 'Bán lẻ', weight: 6.0 },
-      { symbol: 'VHM', name: 'Vinhomes', industry: 'Bất động sản', weight: 5.3 },
-      { symbol: 'MSN', name: 'Tập đoàn Masan', industry: 'Thực phẩm - Đồ uống', weight: 4.9 },
-      { symbol: 'SSI', name: 'Chứng khoán SSI', industry: 'Chứng khoán', weight: 4.5 },
-      { symbol: 'VCB', name: 'Vietcombank', industry: 'Ngân hàng', weight: 4.2 },
-    ],
+    "id": "vbif",
+    "fmarketId": 113,
+    "code": "VBIF",
+    "name": "QUỸ ĐẦU TƯ CÂN BẰNG VIETINBANK",
+    "category": "balanced",
+    "issuer": "VIETINBANK CAPITAL",
+    "issuerFullName": "CÔNG TY TNHH MTV QUẢN LÝ QUỸ NGÂN HÀNG THƯƠNG MẠI CỔ PHẦN CÔNG THƯƠNG VIỆT NAM",
+    "nav": 10115.63,
+    "navDate": "09/10/2026",
+    "ytdReturn": null,
+    "return1Y": null,
+    "return3Y": null,
+    "returnInception": 1.16,
+    "managementFee": 1.5,
+    "inceptionDate": "",
+    "description": "Quỹ hướng tới mục tiêu là mang lại hiệu suất sinh lời ổn định đi kèm mức rủi ro được kiểm soát, tạo cơ hội tăng trưởng bền vững cho nhà đầu tư.",
+    "holdings": [
+      {
+        "symbol": "BID",
+        "name": "BIDV",
+        "industry": "Ngân hàng",
+        "weight": 0.01
+      },
+      {
+        "symbol": "VPB",
+        "name": "VPBank",
+        "industry": "Ngân hàng",
+        "weight": 0.01
+      },
+      {
+        "symbol": "BAF126003",
+        "name": "BAF126003",
+        "industry": "Nông - Lâm - Ngư",
+        "weight": 17.5
+      },
+      {
+        "symbol": "SHS12601",
+        "name": "SHS12601",
+        "industry": "Chứng khoán",
+        "weight": 17.47
+      },
+      {
+        "symbol": "SHB125017",
+        "name": "SHB125017",
+        "industry": "Ngân hàng",
+        "weight": 4.21
+      },
+      {
+        "symbol": "LPB125006",
+        "name": "LPB125006",
+        "industry": "Ngân hàng",
+        "weight": 4.09
+      }
+    ]
   },
   {
-    id: 'mafeg',
-    code: 'MAFEG',
-    name: 'Quỹ Đầu Tư Cổ Phiếu Tăng Trưởng Mirae Asset Việt Nam',
-    category: 'equity',
-    issuer: 'MIRAE_ASSET',
-    nav: 21650.75,
-    navDate: '28/08/2026',
-    ytdReturn: 15.20,
-    return1Y: 26.80,
-    return3Y: 43.10,
-    aumBillionVnd: 2100,
-    managementFee: 1.65,
-    inceptionDate: '12/12/2019',
-    description: 'Tận dụng kinh nghiệm toàn cầu của Tập đoàn Mirae Asset để tìm kiếm doanh nghiệp tăng trưởng dẫn đầu thị trường.',
-    holdings: [
-      { symbol: 'HPG', name: 'Tập đoàn Hòa Phát', industry: 'Vật liệu xây dựng', weight: 8.7 },
-      { symbol: 'CTG', name: 'VietinBank', industry: 'Ngân hàng', weight: 8.0 },
-      { symbol: 'MWG', name: 'Thế Giới Di Động', industry: 'Bán lẻ', weight: 7.6 },
-      { symbol: 'MBB', name: 'Ngân hàng Quân Đội', industry: 'Ngân hàng', weight: 6.9 },
-      { symbol: 'TCB', name: 'Techcombank', industry: 'Ngân hàng', weight: 6.5 },
-      { symbol: 'FPT', name: 'Tập đoàn FPT', industry: 'Công nghệ và thông tin', weight: 6.1 },
-      { symbol: 'VHM', name: 'Vinhomes', industry: 'Bất động sản', weight: 5.4 },
-      { symbol: 'STB', name: 'Sacombank', industry: 'Ngân hàng', weight: 4.8 },
-      { symbol: 'VCI', name: 'Chứng khoán Vietcap', industry: 'Chứng khoán', weight: 4.2 },
-      { symbol: 'ACB', name: 'Ngân hàng Á Châu', industry: 'Ngân hàng', weight: 4.0 },
-    ],
+    "id": "lplf",
+    "fmarketId": 97,
+    "code": "LPLF",
+    "name": "QUỸ ĐẦU TƯ DOANH NGHIỆP DẪN ĐẦU LP ",
+    "category": "equity",
+    "issuer": "LPBA",
+    "issuerFullName": "CÔNG TY CỔ PHẦN QUẢN LÝ QUỸ LPB",
+    "nav": 9363.34,
+    "navDate": "09/10/2026",
+    "ytdReturn": null,
+    "return1Y": null,
+    "return3Y": null,
+    "returnInception": -6.37,
+    "managementFee": 1.75,
+    "inceptionDate": "",
+    "description": "Mục tiêu đầu tư của Quỹ là tối đa hóa tăng trưởng giá trị tài sản cho nhà đầu tư thông qua việc đầu tư vào cổ phiếu của các doanh nghiệp có vị thế đầu ngành, có nền tảng tài chính vững chắc, năng lực cạnh tranh bền vững và tiềm năng tăng trưởng cao, được hưởng lợi từ chính sách ưu tiên phát triển của Nhà nước.",
+    "holdings": [
+      {
+        "symbol": "PVT",
+        "name": "Vận tải Dầu khí",
+        "industry": "Vận tải - Kho bãi",
+        "weight": 9.18
+      },
+      {
+        "symbol": "MSN",
+        "name": "Tập đoàn Masan",
+        "industry": "Thực phẩm - Đồ uống",
+        "weight": 7.98
+      },
+      {
+        "symbol": "HPG",
+        "name": "Tập đoàn Hòa Phát",
+        "industry": "Vật liệu xây dựng",
+        "weight": 5.83
+      },
+      {
+        "symbol": "STB",
+        "name": "Sacombank",
+        "industry": "Ngân hàng",
+        "weight": 5.71
+      },
+      {
+        "symbol": "VIC",
+        "name": "Tập đoàn Vingroup",
+        "industry": "Bất động sản",
+        "weight": 5.71
+      },
+      {
+        "symbol": "HAH",
+        "name": "Vận tải Hải An",
+        "industry": "Vận tải - Kho bãi",
+        "weight": 4.03
+      },
+      {
+        "symbol": "VIB",
+        "name": "VIBank",
+        "industry": "Ngân hàng",
+        "weight": 3.66
+      },
+      {
+        "symbol": "FPT",
+        "name": "Tập đoàn FPT",
+        "industry": "Công nghệ và thông tin",
+        "weight": 3.1
+      },
+      {
+        "symbol": "LPB",
+        "name": "LPBank",
+        "industry": "Ngân hàng",
+        "weight": 2.89
+      },
+      {
+        "symbol": "VCB",
+        "name": "Vietcombank",
+        "industry": "Ngân hàng",
+        "weight": 2.8
+      }
+    ]
   },
   {
-    id: 'dcbc',
-    code: 'DCBC',
-    name: 'Quỹ Đầu Tư Doanh Nghiệp Hàng Đầu DC',
-    category: 'equity',
-    issuer: 'DRAGON CAPITAL',
-    nav: 44210.30,
-    navDate: '28/08/2026',
-    ytdReturn: 16.10,
-    return1Y: 27.90,
-    return3Y: 45.30,
-    aumBillionVnd: 3450,
-    managementFee: 1.7,
-    inceptionDate: '29/07/2008',
-    description: 'Tập trung đầu tư vào các doanh nghiệp niêm yết có năng lực quản trị xuất sắc và dòng tiền kinh doanh lành mạnh.',
-    holdings: [
-      { symbol: 'HPG', name: 'Tập đoàn Hòa Phát', industry: 'Vật liệu xây dựng', weight: 9.3 },
-      { symbol: 'MWG', name: 'Thế Giới Di Động', industry: 'Bán lẻ', weight: 8.6 },
-      { symbol: 'CTG', name: 'VietinBank', industry: 'Ngân hàng', weight: 7.9 },
-      { symbol: 'MBB', name: 'Ngân hàng Quân Đội', industry: 'Ngân hàng', weight: 7.1 },
-      { symbol: 'TCB', name: 'Techcombank', industry: 'Ngân hàng', weight: 6.4 },
-      { symbol: 'FPT', name: 'Tập đoàn FPT', industry: 'Công nghệ và thông tin', weight: 6.0 },
-      { symbol: 'VCB', name: 'Vietcombank', industry: 'Ngân hàng', weight: 5.3 },
-      { symbol: 'VHM', name: 'Vinhomes', industry: 'Bất động sản', weight: 4.7 },
-      { symbol: 'MSN', name: 'Tập đoàn Masan', industry: 'Thực phẩm - Đồ uống', weight: 4.1 },
-      { symbol: 'KDH', name: 'Nhà Khang Điền', industry: 'Bất động sản', weight: 3.6 },
-    ],
-  },
-
-  // Quỹ Trái phiếu (Bond funds)
-  {
-    id: 'vcbf-fif',
-    code: 'VCBF-FIF',
-    name: 'Quỹ Đầu Tư Trái Phiếu VCBF',
-    category: 'bond',
-    issuer: 'VIETCOMBANK_FUND',
-    nav: 16123.50,
-    navDate: '27/08/2026',
-    ytdReturn: 5.07,
-    return1Y: 8.45,
-    return3Y: 23.72,
-    aumBillionVnd: 2890,
-    managementFee: 0.9,
-    inceptionDate: '09/08/2019',
-    description: 'Chiến lược bảo toàn vốn và tạo thu nhập định kỳ ổn định thông qua danh mục trái phiếu doanh nghiệp chất lượng cao và trái phiếu chính phủ.',
-    holdings: [
-      { symbol: 'TP-VIC', name: 'Trái phiếu Vingroup', industry: 'Bất động sản', weight: 14.5 },
-      { symbol: 'TP-MSN', name: 'Trái phiếu Masan Group', industry: 'Thực phẩm - Đồ uống', weight: 13.2 },
-      { symbol: 'TP-NVL', name: 'Trái phiếu Novaland', industry: 'Bất động sản', weight: 8.6 },
-      { symbol: 'TP-GELEX', name: 'Trái phiếu Gelex', industry: 'Thiết bị điện & Năng lượng', weight: 8.1 },
-      { symbol: 'TP-TCB', name: 'Trái phiếu Techcombank', industry: 'Ngân hàng', weight: 7.9 },
-    ],
-  },
-  {
-    id: 'maff',
-    code: 'MAFF',
-    name: 'Quỹ Đầu Tư Trái Phiếu Mirae Asset Việt Nam',
-    category: 'bond',
-    issuer: 'MIRAE_ASSET',
-    nav: 13969.80,
-    navDate: '28/08/2026',
-    ytdReturn: 5.00,
-    return1Y: 8.60,
-    return3Y: 24.07,
-    aumBillionVnd: 1850,
-    managementFee: 0.85,
-    inceptionDate: '15/10/2020',
-    description: 'Đầu tư an toàn vào các công cụ có thu nhập cố định, chứng chỉ tiền gửi ngân hàng và trái phiếu doanh nghiệp xếp hạng tín nhiệm cao.',
-    holdings: [
-      { symbol: 'TP-MBB', name: 'Trái phiếu MBBank', industry: 'Ngân hàng', weight: 15.2 },
-      { symbol: 'TP-BIDV', name: 'Trái phiếu BIDV', industry: 'Ngân hàng', weight: 14.8 },
-      { symbol: 'TP-REE', name: 'Trái phiếu REE Corp', industry: 'Năng lượng & Cơ điện', weight: 11.3 },
-      { symbol: 'TP-VHM', name: 'Trái phiếu Vinhomes', industry: 'Bất động sản', weight: 9.7 },
-    ],
-  },
-  {
-    id: 'abbf',
-    code: 'ABBF',
-    name: 'Quỹ Đầu Tư Trái Phiếu An Bình',
-    category: 'bond',
-    issuer: 'ABF',
-    nav: 14581.10,
-    navDate: '28/08/2026',
-    ytdReturn: 4.80,
-    return1Y: 8.20,
-    return3Y: 20.12,
-    aumBillionVnd: 1200,
-    managementFee: 0.8,
-    inceptionDate: '10/05/2018',
-    description: 'Bảo toàn tài sản cho nhà đầu tư với danh mục trái phiếu an toàn, thanh khoản cao.',
-    holdings: [
-      { symbol: 'TP-VCB', name: 'Trái phiếu Vietcombank', industry: 'Ngân hàng', weight: 18.5 },
-      { symbol: 'TP-CTG', name: 'Trái phiếu VietinBank', industry: 'Ngân hàng', weight: 16.2 },
-      { symbol: 'TP-VND', name: 'Trái phiếu VNDIRECT', industry: 'Chứng khoán', weight: 10.4 },
-    ],
+    "id": "abef",
+    "fmarketId": 96,
+    "code": "ABEF",
+    "name": "QUỸ ĐẦU TƯ CỔ PHIẾU AN BÌNH THỊNH VƯỢNG",
+    "category": "equity",
+    "issuer": "ABF",
+    "issuerFullName": "CÔNG TY CỔ PHẦN QUẢN LÝ QUỸ ĐẦU TƯ CHỨNG KHOÁN AN BÌNH",
+    "nav": 9092.7,
+    "navDate": "09/10/2026",
+    "ytdReturn": null,
+    "return1Y": null,
+    "return3Y": null,
+    "returnInception": -9.07,
+    "managementFee": 1.7,
+    "inceptionDate": "",
+    "description": "Quỹ Cổ phiếu An Bình Thịnh Vượng (ABEF) là quỹ đầu tư cổ phiếu theo phương pháp quản lý chủ động, tập trung vào các xu hướng tăng trưởng dài hạn của nền kinh tế. Quỹ xây dựng danh mục đa dạng từ các cổ phiếu chất lượng cao, được lựa chọn thông qua kết hợp phân tích vĩ mô, định lượng và cơ bản, nhằm tối ưu hóa lợi nhuận và mang lại tăng trưởng vượt trội trong dài hạn.",
+    "holdings": [
+      {
+        "symbol": "ABB",
+        "name": "ABB",
+        "industry": "Ngân hàng",
+        "weight": 6.55
+      },
+      {
+        "symbol": "VPB",
+        "name": "VPBank",
+        "industry": "Ngân hàng",
+        "weight": 6.09
+      },
+      {
+        "symbol": "TCB",
+        "name": "Techcombank",
+        "industry": "Ngân hàng",
+        "weight": 5.64
+      },
+      {
+        "symbol": "VCB",
+        "name": "Vietcombank",
+        "industry": "Ngân hàng",
+        "weight": 5.03
+      },
+      {
+        "symbol": "MBB",
+        "name": "Ngân hàng Quân Đội",
+        "industry": "Ngân hàng",
+        "weight": 4.96
+      },
+      {
+        "symbol": "HPG",
+        "name": "Tập đoàn Hòa Phát",
+        "industry": "Vật liệu xây dựng",
+        "weight": 4.66
+      },
+      {
+        "symbol": "GMD",
+        "name": "Gemadept",
+        "industry": "Vận tải - Kho bãi",
+        "weight": 4.65
+      },
+      {
+        "symbol": "FPT",
+        "name": "Tập đoàn FPT",
+        "industry": "Công nghệ và thông tin",
+        "weight": 4.58
+      },
+      {
+        "symbol": "SSI",
+        "name": "Chứng khoán SSI",
+        "industry": "Chứng khoán",
+        "weight": 4.48
+      },
+      {
+        "symbol": "CTG",
+        "name": "VietinBank",
+        "industry": "Ngân hàng",
+        "weight": 4.33
+      }
+    ]
   },
   {
-    id: 'vff',
-    code: 'VFF',
-    name: 'Quỹ Đầu Tư Trái Phiếu Bảo Thịnh VinaCapital',
-    category: 'bond',
-    issuer: 'VINACAPITAL',
-    nav: 26735.40,
-    navDate: '27/08/2026',
-    ytdReturn: 4.75,
-    return1Y: 8.15,
-    return3Y: 23.37,
-    aumBillionVnd: 2430,
-    managementFee: 0.95,
-    inceptionDate: '01/04/2013',
-    description: 'Một trong những quỹ trái phiếu uy tín nhất Việt Nam với lịch sử sinh lời ổn định và quản trị rủi ro khắt khe.',
-    holdings: [
-      { symbol: 'TP-MSN', name: 'Trái phiếu Masan Consumer', industry: 'Thực phẩm - Đồ uống', weight: 16.8 },
-      { symbol: 'TP-VIC', name: 'Trái phiếu Vingroup', industry: 'Bất động sản', weight: 12.5 },
-      { symbol: 'TP-TCB', name: 'Trái phiếu Techcombank', industry: 'Ngân hàng', weight: 11.2 },
-      { symbol: 'TP-KBC', name: 'Trái phiếu Kinh Bắc', industry: 'Bất động sản', weight: 8.3 },
-    ],
+    "id": "lhfcf",
+    "fmarketId": 93,
+    "code": "LHFCF",
+    "name": "QUỸ ĐẦU TƯ TRÁI PHIẾU DÒNG TIỀN LINH HOẠT LIGHTHOUSE",
+    "category": "bond",
+    "issuer": "LIGHTHOUSE CAPITAL",
+    "issuerFullName": "CÔNG TY CỔ PHẦN QUẢN LÝ QUỸ ĐẦU TƯ LIGHTHOUSE",
+    "nav": 10320.46,
+    "navDate": "09/10/2026",
+    "ytdReturn": 3.2,
+    "return1Y": null,
+    "return3Y": null,
+    "returnInception": 3.2,
+    "managementFee": 0.9,
+    "inceptionDate": "",
+    "description": "Quỹ đầu tư vào các công cụ tài chính ngắn hạn có tính thanh khoản cao mang lại lợi nhuận ổn định và khả năng linh hoạt trong đầu tư ngắn hạn.",
+    "holdings": [
+      {
+        "symbol": "SHB125010",
+        "name": "SHB125010",
+        "industry": "Ngân hàng",
+        "weight": 19.1
+      },
+      {
+        "symbol": "VHM121025",
+        "name": "VHM121025",
+        "industry": "Bất động sản",
+        "weight": 19.03
+      },
+      {
+        "symbol": "DSE125018",
+        "name": "DSE125018",
+        "industry": "Chứng khoán",
+        "weight": 18.94
+      },
+      {
+        "symbol": "HDB125025",
+        "name": "HDB125025",
+        "industry": "Ngân hàng",
+        "weight": 17.04
+      },
+      {
+        "symbol": "CTG121031",
+        "name": "CTG121031",
+        "industry": "Ngân hàng",
+        "weight": 15.45
+      },
+      {
+        "symbol": "BAF126003",
+        "name": "BAF126003",
+        "industry": "Nông - Lâm - Ngư",
+        "weight": 5.68
+      }
+    ]
   },
   {
-    id: 'lpbf',
-    code: 'LPBF',
-    name: 'Quỹ Đầu Tư Trái Phiếu LPBank',
-    category: 'bond',
-    issuer: 'LPBA',
-    nav: 10778.20,
-    navDate: '28/08/2026',
-    ytdReturn: 4.69,
-    return1Y: 7.95,
-    return3Y: 18.50,
-    aumBillionVnd: 980,
-    managementFee: 0.8,
-    inceptionDate: '12/03/2022',
-    description: 'Danh mục tập trung vào tiền gửi kỳ hạn và trái phiếu ngân hàng, rủi ro biến động cực thấp.',
-    holdings: [
-      { symbol: 'TP-LPB', name: 'Trái phiếu LPBank', industry: 'Ngân hàng', weight: 22.0 },
-      { symbol: 'TP-BIDV', name: 'Trái phiếu BIDV', industry: 'Ngân hàng', weight: 18.4 },
-      { symbol: 'TP-CTG', name: 'Trái phiếu VietinBank', industry: 'Ngân hàng', weight: 14.1 },
-    ],
+    "id": "gdegf",
+    "fmarketId": 92,
+    "code": "GDEGF",
+    "name": "QUỸ ĐẦU TƯ CỔ PHIẾU TĂNG TRƯỞNG RỒNG VÀNG",
+    "category": "equity",
+    "issuer": "HDCAPITAL",
+    "issuerFullName": "CÔNG TY CỔ PHẦN QUẢN LÝ QUỸ HD",
+    "nav": 8293.25,
+    "navDate": "09/10/2026",
+    "ytdReturn": -9.2,
+    "return1Y": -16.27,
+    "return3Y": null,
+    "returnInception": -17.07,
+    "managementFee": 1.2,
+    "inceptionDate": "30/06/2025",
+    "description": "Quỹ Đầu tư Cổ phiếu Tăng trưởng Rồng Vàng (GDEGF) được Ủy ban Chứng khoán Nhà nước cấp giấy chứng nhận đăng ký thành lập ngày 22/07/2025. Quỹ hướng đến tối đa hóa lợi nhuận đầu tư và sự tăng trưởng đầu tư trong trung và dài hạn thông qua phân bổ tỷ trọng đa số vào các cổ phiếu của các công ty vốn hóa vừa và lớn, có tiềm năng tăng trưởng cao.",
+    "holdings": [
+      {
+        "symbol": "PHP",
+        "name": "PHP",
+        "industry": "Vận tải - Kho bãi",
+        "weight": 9.76
+      },
+      {
+        "symbol": "HPG",
+        "name": "Tập đoàn Hòa Phát",
+        "industry": "Vật liệu xây dựng",
+        "weight": 8.22
+      },
+      {
+        "symbol": "MBB",
+        "name": "Ngân hàng Quân Đội",
+        "industry": "Ngân hàng",
+        "weight": 6.38
+      },
+      {
+        "symbol": "MSN",
+        "name": "Tập đoàn Masan",
+        "industry": "Thực phẩm - Đồ uống",
+        "weight": 4.8
+      },
+      {
+        "symbol": "FPT",
+        "name": "Tập đoàn FPT",
+        "industry": "Công nghệ và thông tin",
+        "weight": 4.66
+      },
+      {
+        "symbol": "MWG",
+        "name": "Thế Giới Di Động",
+        "industry": "Bán lẻ",
+        "weight": 4.36
+      },
+      {
+        "symbol": "VNM",
+        "name": "Vinamilk",
+        "industry": "Thực phẩm - Đồ uống",
+        "weight": 4.13
+      },
+      {
+        "symbol": "CTG",
+        "name": "VietinBank",
+        "industry": "Ngân hàng",
+        "weight": 3.66
+      },
+      {
+        "symbol": "DGW",
+        "name": "Thế Giới Số (Digiworld)",
+        "industry": "Bán buôn",
+        "weight": 3.62
+      },
+      {
+        "symbol": "PVD",
+        "name": "Khoan Dầu khí",
+        "industry": "Khai khoáng",
+        "weight": 3.61
+      }
+    ]
   },
   {
-    id: 'dcbf',
-    code: 'DCBF',
-    name: 'Quỹ Đầu Tư Trái Phiếu DC',
-    category: 'bond',
-    issuer: 'DRAGON CAPITAL',
-    nav: 28410.60,
-    navDate: '28/08/2026',
-    ytdReturn: 4.88,
-    return1Y: 8.30,
-    return3Y: 22.90,
-    aumBillionVnd: 2650,
-    managementFee: 0.9,
-    inceptionDate: '24/12/2013',
-    description: 'Quỹ mở trái phiếu của Dragon Capital, tối ưu lợi tức thu nhập cố định vượt lãi suất ngân hàng.',
-    holdings: [
-      { symbol: 'TP-VHM', name: 'Trái phiếu Vinhomes', industry: 'Bất động sản', weight: 15.8 },
-      { symbol: 'TP-MSN', name: 'Trái phiếu Masan Group', industry: 'Thực phẩm - Đồ uống', weight: 14.2 },
-      { symbol: 'TP-MBB', name: 'Trái phiếu MBBank', industry: 'Ngân hàng', weight: 12.6 },
-    ],
-  },
-
-  // Quỹ Cân bằng (Balanced funds)
-  {
-    id: 'vcbf-tbf',
-    code: 'VCBF-TBF',
-    name: 'Quỹ Đầu Tư Cân Bằng Chiến Lược VCBF',
-    category: 'balanced',
-    issuer: 'VIETCOMBANK_FUND',
-    nav: 32150.80,
-    navDate: '28/08/2026',
-    ytdReturn: 10.45,
-    return1Y: 18.30,
-    return3Y: 36.40,
-    aumBillionVnd: 1980,
-    managementFee: 1.4,
-    inceptionDate: '24/12/2013',
-    description: 'Phân bổ linh hoạt 50% cổ phiếu và 50% trái phiếu, cân bằng hài hòa giữa tăng trưởng và phòng thủ rủi ro.',
-    holdings: [
-      { symbol: 'HPG', name: 'Tập đoàn Hòa Phát', industry: 'Vật liệu xây dựng', weight: 6.2 },
-      { symbol: 'CTG', name: 'VietinBank', industry: 'Ngân hàng', weight: 5.8 },
-      { symbol: 'FPT', name: 'Tập đoàn FPT', industry: 'Công nghệ và thông tin', weight: 5.1 },
-      { symbol: 'MWG', name: 'Thế Giới Di Động', industry: 'Bán lẻ', weight: 4.5 },
-      { symbol: 'TP-BIDV', name: 'Trái phiếu BIDV', industry: 'Ngân hàng', weight: 8.5 },
-      { symbol: 'TP-VCB', name: 'Trái phiếu Vietcombank', industry: 'Ngân hàng', weight: 7.9 },
-    ],
-  },
-  {
-    id: 'vibf',
-    code: 'VIBF',
-    name: 'Quỹ Đầu Tư Cân Bằng Tuệ Sáng VinaCapital',
-    category: 'balanced',
-    issuer: 'VINACAPITAL',
-    nav: 22680.40,
-    navDate: '28/08/2026',
-    ytdReturn: 11.20,
-    return1Y: 19.50,
-    return3Y: 38.70,
-    aumBillionVnd: 1650,
-    managementFee: 1.45,
-    inceptionDate: '02/07/2019',
-    description: 'Chiến lược phân bổ tài sản linh hoạt theo chu kỳ kinh tế, giảm thiểu biến động thị trường.',
-    holdings: [
-      { symbol: 'FPT', name: 'Tập đoàn FPT', industry: 'Công nghệ và thông tin', weight: 6.5 },
-      { symbol: 'MBB', name: 'Ngân hàng Quân Đội', industry: 'Ngân hàng', weight: 5.9 },
-      { symbol: 'HPG', name: 'Tập đoàn Hòa Phát', industry: 'Vật liệu xây dựng', weight: 5.4 },
-      { symbol: 'TCB', name: 'Techcombank', industry: 'Ngân hàng', weight: 4.8 },
-      { symbol: 'TP-MSN', name: 'Trái phiếu Masan Consumer', industry: 'Thực phẩm - Đồ uống', weight: 8.2 },
-    ],
-  },
-  {
-    id: 'ssiam-bca',
-    code: 'SSIAM-BCA',
-    name: 'Quỹ Đầu Tư Cân Bằng SSIAM',
-    category: 'balanced',
-    issuer: 'SSIAM',
-    nav: 19450.90,
-    navDate: '28/08/2026',
-    ytdReturn: 9.80,
-    return1Y: 17.10,
-    return3Y: 33.50,
-    aumBillionVnd: 1120,
-    managementFee: 1.35,
-    inceptionDate: '10/01/2020',
-    description: 'Kết hợp tỷ trọng cổ phiếu bluechip và trái phiếu doanh nghiệp hàng đầu để tạo ra dòng tiền bền vững.',
-    holdings: [
-      { symbol: 'HPG', name: 'Tập đoàn Hòa Phát', industry: 'Vật liệu xây dựng', weight: 5.9 },
-      { symbol: 'TCB', name: 'Techcombank', industry: 'Ngân hàng', weight: 5.3 },
-      { symbol: 'MWG', name: 'Thế Giới Di Động', industry: 'Bán lẻ', weight: 4.7 },
-      { symbol: 'TP-CTG', name: 'Trái phiếu VietinBank', industry: 'Ngân hàng', weight: 8.0 },
-    ],
+    "id": "usif",
+    "fmarketId": 91,
+    "code": "USIF",
+    "name": "QUỸ ĐẦU TƯ TRÁI PHIẾU UNITED THU NHẬP ỔN ĐỊNH",
+    "category": "bond",
+    "issuer": "UOBAM VIETNAM",
+    "issuerFullName": "CÔNG TY CỔ PHẦN QUẢN LÝ QUỸ UOB ASSET MANAGEMENT (VIỆT NAM)",
+    "nav": 10384.01,
+    "navDate": "09/10/2026",
+    "ytdReturn": 3.84,
+    "return1Y": null,
+    "return3Y": null,
+    "returnInception": 3.84,
+    "managementFee": 0.6,
+    "inceptionDate": "",
+    "description": "USIF là một quỹ đầu tư trái phiếu dạng mở, cung cấp chứng chỉ quỹ ra công chúng. Mục tiêu của quỹ là tìm kiếm nguồn thu nhập ổn định thường xuyên đồng thời bảo toàn vốn cho Nhà đầu tư thông qua việc xây dựng một danh mục đầu tư đa dạng gồm các loại tiền gửi, công cụ thị trường tiền tệ và trái phiếu doanh nghiệp có chất lượng tín dụng tốt. Quỹ cũng định hướng chi trả lợi tức hàng năm.",
+    "holdings": [
+      {
+        "symbol": "HDB125012",
+        "name": "HDB125012",
+        "industry": "Ngân hàng",
+        "weight": 13.64
+      },
+      {
+        "symbol": "MSN123009",
+        "name": "MSN123009",
+        "industry": "Thực phẩm - Đồ uống",
+        "weight": 8.76
+      },
+      {
+        "symbol": "BAF126003",
+        "name": "BAF126003",
+        "industry": "Nông - Lâm - Ngư",
+        "weight": 8.59
+      },
+      {
+        "symbol": "KBCL12601 bond",
+        "name": "KBCL12601 bond",
+        "industry": "Bất động sản",
+        "weight": 8.58
+      },
+      {
+        "symbol": "NAB125004",
+        "name": "NAB125004",
+        "industry": "Ngân hàng",
+        "weight": 7.16
+      },
+      {
+        "symbol": "VND125033",
+        "name": "VND125033",
+        "industry": "Chứng khoán",
+        "weight": 7.15
+      },
+      {
+        "symbol": "DSE125018",
+        "name": "DSE125018",
+        "industry": "Chứng khoán",
+        "weight": 7.14
+      },
+      {
+        "symbol": "BCM12403",
+        "name": "BCM12403",
+        "industry": "Bất động sản",
+        "weight": 2.86
+      },
+      {
+        "symbol": "TDP124010",
+        "name": "TDP124010",
+        "industry": "Sản xuất Nhựa - Hóa chất",
+        "weight": 1.72
+      }
+    ]
   },
   {
-    id: 'bvfed',
-    code: 'BVFED',
-    name: 'Quỹ Đầu Tư Cổ Phiếu Năng Động Bảo Việt',
-    category: 'equity',
-    issuer: 'BAOVIET_FUND',
-    nav: 23140.50,
-    navDate: '28/08/2026',
-    ytdReturn: 14.30,
-    return1Y: 24.80,
-    return3Y: 39.70,
-    aumBillionVnd: 1850,
-    managementFee: 1.6,
-    inceptionDate: '15/01/2014',
-    description: 'Quỹ mở cổ phiếu của Bảo Việt Fund, tập trung vào doanh nghiệp tăng trưởng dài hạn và trả cổ tức đều.',
-    holdings: [
-      { symbol: 'HPG', name: 'Tập đoàn Hòa Phát', industry: 'Vật liệu xây dựng', weight: 8.4 },
-      { symbol: 'CTG', name: 'VietinBank', industry: 'Ngân hàng', weight: 7.7 },
-      { symbol: 'MBB', name: 'Ngân hàng Quân Đội', industry: 'Ngân hàng', weight: 7.2 },
-      { symbol: 'VCB', name: 'Vietcombank', industry: 'Ngân hàng', weight: 6.4 },
-      { symbol: 'MWG', name: 'Thế Giới Di Động', industry: 'Bán lẻ', weight: 5.8 },
-      { symbol: 'VHM', name: 'Vinhomes', industry: 'Bất động sản', weight: 5.1 },
-      { symbol: 'MSN', name: 'Tập đoàn Masan', industry: 'Thực phẩm - Đồ uống', weight: 4.5 },
-    ],
+    "id": "ssi-ef",
+    "fmarketId": 90,
+    "code": "SSI-EF",
+    "name": "QUỸ ĐẦU TƯ KIẾN TẠO TƯƠNG LAI SSI",
+    "category": "balanced",
+    "issuer": "SSIAM",
+    "issuerFullName": "CÔNG TY TNHH QUẢN LÝ QUỸ SSI",
+    "nav": 9428.92,
+    "navDate": "09/10/2026",
+    "ytdReturn": -4.06,
+    "return1Y": null,
+    "return3Y": null,
+    "returnInception": -5.71,
+    "managementFee": 1.75,
+    "inceptionDate": "",
+    "description": "Quỹ đầu tư vào cổ phiếu của doanh nghiệp quản trị tốt, minh bạch, tài chính vững và tài sản có thu nhập cố định, hướng tới tăng trưởng tài sản ròng dài hạn.",
+    "holdings": [
+      {
+        "symbol": "VCB",
+        "name": "Vietcombank",
+        "industry": "Ngân hàng",
+        "weight": 3.84
+      },
+      {
+        "symbol": "TCB",
+        "name": "Techcombank",
+        "industry": "Ngân hàng",
+        "weight": 3.62
+      },
+      {
+        "symbol": "MBB",
+        "name": "Ngân hàng Quân Đội",
+        "industry": "Ngân hàng",
+        "weight": 3.39
+      },
+      {
+        "symbol": "VPB",
+        "name": "VPBank",
+        "industry": "Ngân hàng",
+        "weight": 3.31
+      },
+      {
+        "symbol": "HDB",
+        "name": "HDBank",
+        "industry": "Ngân hàng",
+        "weight": 3.19
+      },
+      {
+        "symbol": "HPG",
+        "name": "Tập đoàn Hòa Phát",
+        "industry": "Vật liệu xây dựng",
+        "weight": 2.98
+      },
+      {
+        "symbol": "STB",
+        "name": "Sacombank",
+        "industry": "Ngân hàng",
+        "weight": 2.91
+      },
+      {
+        "symbol": "MWG",
+        "name": "Thế Giới Di Động",
+        "industry": "Bán lẻ",
+        "weight": 2.88
+      },
+      {
+        "symbol": "BCM12406",
+        "name": "BCM12406",
+        "industry": "Bất động sản",
+        "weight": 18.52
+      },
+      {
+        "symbol": "MSN123009",
+        "name": "MSN123009",
+        "industry": "Thực phẩm - Đồ uống",
+        "weight": 15.16
+      }
+    ]
   },
   {
-    id: 'tceat',
-    code: 'TCEAT',
-    name: 'Quỹ Đầu Tư Cổ Phiếu Tăng Trưởng Techcom',
-    category: 'equity',
-    issuer: 'TECHCOM_CAPITAL',
-    nav: 18940.20,
-    navDate: '28/08/2026',
-    ytdReturn: 15.90,
-    return1Y: 27.20,
-    return3Y: 42.60,
-    aumBillionVnd: 2340,
-    managementFee: 1.6,
-    inceptionDate: '18/09/2015',
-    description: 'Tận dụng hệ sinh thái tài chính Techcombank để lựa chọn các cổ phiếu dẫn dắt xu hướng tiêu dùng và tài chính.',
-    holdings: [
-      { symbol: 'TCB', name: 'Techcombank', industry: 'Ngân hàng', weight: 9.6 },
-      { symbol: 'HPG', name: 'Tập đoàn Hòa Phát', industry: 'Vật liệu xây dựng', weight: 8.5 },
-      { symbol: 'MWG', name: 'Thế Giới Di Động', industry: 'Bán lẻ', weight: 7.8 },
-      { symbol: 'MSN', name: 'Tập đoàn Masan', industry: 'Thực phẩm - Đồ uống', weight: 6.9 },
-      { symbol: 'VHM', name: 'Vinhomes', industry: 'Bất động sản', weight: 6.0 },
-      { symbol: 'MBB', name: 'Ngân hàng Quân Đội', industry: 'Ngân hàng', weight: 5.4 },
-      { symbol: 'CTG', name: 'VietinBank', industry: 'Ngân hàng', weight: 4.9 },
-    ],
+    "id": "evesg",
+    "fmarketId": 89,
+    "code": "EVESG",
+    "name": "QUỸ ĐẦU TƯ CỔ PHIẾU ESG EASTSPRING INVESTMENTS VIỆT NAM",
+    "category": "equity",
+    "issuer": "EASTSPRING VIET NAM",
+    "issuerFullName": "CÔNG TY TNHH QUẢN LÝ QUỸ EASTSPRING INVESTMENTS",
+    "nav": 12026,
+    "navDate": "09/10/2026",
+    "ytdReturn": -1.53,
+    "return1Y": -1.68,
+    "return3Y": null,
+    "returnInception": 20.26,
+    "managementFee": 1.3,
+    "inceptionDate": "27/09/2024",
+    "description": "Mục tiêu đầu tư của Quỹ là mang lại lợi nhuận tối ưu cho Nhà Đầu Tư trong dài hạn thông qua một danh mục đầu tư đa dạng vào các công ty có triển vọng tăng trưởng bền vững với mô hình kinh doanh phù hợp và có nỗ lực cải thiện các vấn đề liên quan đến Môi trường, Xã hội và Quản trị doanh nghiệp (Environmental – Social – Governance; viết tắt là ESG). \nMỗi công ty trong danh mục đầu tư sẽ được đánh giá thẻ điểm ESG theo quy trình đầu tư của Eastspring Việt Nam.",
+    "holdings": [
+      {
+        "symbol": "VIC",
+        "name": "Tập đoàn Vingroup",
+        "industry": "Bất động sản",
+        "weight": 18.05
+      },
+      {
+        "symbol": "VCB",
+        "name": "Vietcombank",
+        "industry": "Ngân hàng",
+        "weight": 8.84
+      },
+      {
+        "symbol": "VHM",
+        "name": "CTCP Vinhomes",
+        "industry": "Bất động sản",
+        "weight": 6.85
+      },
+      {
+        "symbol": "VPB",
+        "name": "VPBank",
+        "industry": "Ngân hàng",
+        "weight": 4.74
+      },
+      {
+        "symbol": "BID",
+        "name": "BIDV",
+        "industry": "Ngân hàng",
+        "weight": 4.03
+      },
+      {
+        "symbol": "STB",
+        "name": "Sacombank",
+        "industry": "Ngân hàng",
+        "weight": 3.67
+      },
+      {
+        "symbol": "TCB",
+        "name": "Techcombank",
+        "industry": "Ngân hàng",
+        "weight": 3.54
+      },
+      {
+        "symbol": "MBB",
+        "name": "Ngân hàng Quân Đội",
+        "industry": "Ngân hàng",
+        "weight": 3.34
+      },
+      {
+        "symbol": "CTG",
+        "name": "VietinBank",
+        "industry": "Ngân hàng",
+        "weight": 2.8
+      },
+      {
+        "symbol": "HDB",
+        "name": "HDBank",
+        "industry": "Ngân hàng",
+        "weight": 2.65
+      }
+    ]
   },
   {
-    id: 'mbvf',
-    code: 'MBVF',
-    name: 'Quỹ Đầu Tư Giá Trị MB Capital',
-    category: 'equity',
-    issuer: 'MBCAPITAL',
-    nav: 19820.60,
-    navDate: '28/08/2026',
-    ytdReturn: 14.50,
-    return1Y: 25.10,
-    return3Y: 40.80,
-    aumBillionVnd: 1540,
-    managementFee: 1.6,
-    inceptionDate: '25/04/2014',
-    description: 'Tìm kiếm các doanh nghiệp có mức định giá thấp hơn giá trị thực tế và tỷ lệ cổ tức hấp dẫn.',
-    holdings: [
-      { symbol: 'MBB', name: 'Ngân hàng Quân Đội', industry: 'Ngân hàng', weight: 9.4 },
-      { symbol: 'HPG', name: 'Tập đoàn Hòa Phát', industry: 'Vật liệu xây dựng', weight: 8.2 },
-      { symbol: 'CTG', name: 'VietinBank', industry: 'Ngân hàng', weight: 7.5 },
-      { symbol: 'ACB', name: 'Ngân hàng Á Châu', industry: 'Ngân hàng', weight: 6.8 },
-      { symbol: 'MWG', name: 'Thế Giới Di Động', industry: 'Bán lẻ', weight: 6.1 },
-      { symbol: 'VHM', name: 'Vinhomes', industry: 'Bất động sản', weight: 5.2 },
-      { symbol: 'STB', name: 'Sacombank', industry: 'Ngân hàng', weight: 4.6 },
-    ],
+    "id": "mbam",
+    "fmarketId": 88,
+    "code": "MBAM",
+    "name": "QUỸ ĐẦU TƯ TRÁI PHIẾU DÒNG TIỀN LINH HOẠT MB",
+    "category": "bond",
+    "issuer": "MBCAPITAL",
+    "issuerFullName": "CÔNG TY CỔ PHẦN QUẢN LÝ QUỸ ĐẦU TƯ MB",
+    "nav": 11412,
+    "navDate": "09/10/2026",
+    "ytdReturn": 3.29,
+    "return1Y": 4.45,
+    "return3Y": null,
+    "returnInception": 14.12,
+    "managementFee": 1.5,
+    "inceptionDate": "11/04/2024",
+    "description": "Là sản phẩm quỹ mở trái phiếu mang lại giải pháp đầu tư linh hoạt ở kỳ ngắn hạn, lợi nhuận ổn định và hấp dẫn cho nhà đầu tư.",
+    "holdings": [
+      {
+        "symbol": "BAF126003",
+        "name": "BAF126003",
+        "industry": "Nông - Lâm - Ngư",
+        "weight": 24.95
+      },
+      {
+        "symbol": "VHM121025",
+        "name": "VHM121025",
+        "industry": "Bất động sản",
+        "weight": 18.28
+      },
+      {
+        "symbol": "NLG12501",
+        "name": "NLG12501",
+        "industry": "Bất động sản",
+        "weight": 14.32
+      },
+      {
+        "symbol": "VIC123029",
+        "name": "VIC123029",
+        "industry": "Bất động sản",
+        "weight": 1.7
+      },
+      {
+        "symbol": "DSE125004",
+        "name": "DSE125004",
+        "industry": "Chứng khoán",
+        "weight": 0.14
+      }
+    ]
   },
   {
-    id: 'vmeef',
-    code: 'VMEEF',
-    name: 'Quỹ Đầu Tư Cổ Phiếu Kinh Tế Hiện Đại VinaCapital',
-    category: 'equity',
-    issuer: 'VINACAPITAL',
-    nav: 17450.30,
-    navDate: '28/08/2026',
-    ytdReturn: 17.90,
-    return1Y: 30.50,
-    return3Y: 50.10,
-    aumBillionVnd: 2800,
-    managementFee: 1.75,
-    inceptionDate: '04/05/2023',
-    description: 'Tập trung đầu tư vào các doanh nghiệp hưởng lợi từ tăng trưởng kinh tế dài hạn, quá trình số hóa và tiêu dùng hiện đại.',
-    holdings: [
-      { symbol: 'FPT', name: 'Tập đoàn FPT', industry: 'Công nghệ và thông tin', weight: 9.7 },
-      { symbol: 'MWG', name: 'Thế Giới Di Động', industry: 'Bán lẻ', weight: 8.8 },
-      { symbol: 'CTG', name: 'VietinBank', industry: 'Ngân hàng', weight: 7.6 },
-      { symbol: 'MBB', name: 'Ngân hàng Quân Đội', industry: 'Ngân hàng', weight: 7.2 },
-      { symbol: 'HPG', name: 'Tập đoàn Hòa Phát', industry: 'Vật liệu xây dựng', weight: 6.8 },
-      { symbol: 'GMD', name: 'Gemadept', industry: 'Cảng & Vận tải biển', weight: 5.4 },
-      { symbol: 'FRT', name: 'Bán lẻ FPT', industry: 'Bán lẻ', weight: 4.8 },
-    ],
+    "id": "bmff",
+    "fmarketId": 87,
+    "code": "BMFF",
+    "name": "QUỸ ĐẦU TƯ TĂNG TRƯỞNG BORDIER - MB FLAGSHIP",
+    "category": "equity",
+    "issuer": "MBCAPITAL",
+    "issuerFullName": "CÔNG TY CỔ PHẦN QUẢN LÝ QUỸ ĐẦU TƯ MB",
+    "nav": 15715,
+    "navDate": "09/10/2026",
+    "ytdReturn": -0.79,
+    "return1Y": -3.67,
+    "return3Y": 45.36,
+    "returnInception": 57.15,
+    "managementFee": 1.8,
+    "inceptionDate": "03/01/2023",
+    "description": "BMFF là sản phẩm quỹ mở cổ phiếu với mục tiêu đem lại tăng trưởng 15 – 20%/năm và quản trị rủi ro chặt chẽ chuyên nghiệp.",
+    "holdings": [
+      {
+        "symbol": "ACB",
+        "name": "Ngân hàng Á Châu",
+        "industry": "Ngân hàng",
+        "weight": 11.72
+      },
+      {
+        "symbol": "TCB",
+        "name": "Techcombank",
+        "industry": "Ngân hàng",
+        "weight": 8.25
+      },
+      {
+        "symbol": "VIB",
+        "name": "VIBank",
+        "industry": "Ngân hàng",
+        "weight": 5.58
+      },
+      {
+        "symbol": "TPB",
+        "name": "TPBank",
+        "industry": "Ngân hàng",
+        "weight": 4.63
+      },
+      {
+        "symbol": "HPG",
+        "name": "Tập đoàn Hòa Phát",
+        "industry": "Vật liệu xây dựng",
+        "weight": 3.38
+      },
+      {
+        "symbol": "CTG",
+        "name": "VietinBank",
+        "industry": "Ngân hàng",
+        "weight": 3.35
+      },
+      {
+        "symbol": "QNS",
+        "name": "Đường Quảng Ngãi",
+        "industry": "Thực phẩm - Đồ uống",
+        "weight": 3.34
+      },
+      {
+        "symbol": "TCI",
+        "name": "TCI",
+        "industry": "Chứng khoán",
+        "weight": 3.23
+      },
+      {
+        "symbol": "NLG12501",
+        "name": "NLG12501",
+        "industry": "Bất động sản",
+        "weight": 3.71
+      },
+      {
+        "symbol": "DSE125018",
+        "name": "DSE125018",
+        "industry": "Chứng khoán",
+        "weight": 3.68
+      }
+    ]
   },
   {
-    id: 'vlbf',
-    code: 'VLBF',
-    name: 'Quỹ Đầu Tư Trái Phiếu Bảo Toàn VinaCapital',
-    category: 'bond',
-    issuer: 'VINACAPITAL',
-    nav: 12450.60,
-    navDate: '28/08/2026',
-    ytdReturn: 4.90,
-    return1Y: 8.35,
-    return3Y: 22.50,
-    aumBillionVnd: 1420,
-    managementFee: 0.85,
-    inceptionDate: '10/06/2021',
-    description: 'Quỹ trái phiếu ngắn hạn mang tính thanh khoản cao, phù hợp cho nhà đầu tư cần gửi tiền sinh lời tối ưu hơn tiết kiệm.',
-    holdings: [
-      { symbol: 'TP-MBB', name: 'Trái phiếu MBBank', industry: 'Ngân hàng', weight: 16.5 },
-      { symbol: 'TP-TCB', name: 'Trái phiếu Techcombank', industry: 'Ngân hàng', weight: 15.2 },
-      { symbol: 'TP-VCB', name: 'Trái phiếu Vietcombank', industry: 'Ngân hàng', weight: 14.8 },
-    ],
+    "id": "kdef",
+    "fmarketId": 86,
+    "code": "KDEF",
+    "name": "QUỸ ĐẦU TƯ CỔ PHIẾU CỔ TỨC TĂNG TRƯỞNG KIM",
+    "category": "equity",
+    "issuer": "KIM",
+    "issuerFullName": "CÔNG TY TNHH QUẢN LÝ QUỸ KIM VIỆT NAM",
+    "nav": 11179.34,
+    "navDate": "09/10/2026",
+    "ytdReturn": -13.45,
+    "return1Y": -14.65,
+    "return3Y": null,
+    "returnInception": 11.79,
+    "managementFee": 1.7,
+    "inceptionDate": "",
+    "description": "KDEF là Quỹ mở cổ phiếu với mục tiêu đầu tư vào các công ty mang lại thu nhập cổ tức hấp dẫn và có tiềm năng tăng trưởng vốn mạnh mẽ trong dài hạn.",
+    "holdings": [
+      {
+        "symbol": "VIC",
+        "name": "Tập đoàn Vingroup",
+        "industry": "Bất động sản",
+        "weight": 15.45
+      },
+      {
+        "symbol": "VHM",
+        "name": "CTCP Vinhomes",
+        "industry": "Bất động sản",
+        "weight": 8.39
+      },
+      {
+        "symbol": "VCB",
+        "name": "Vietcombank",
+        "industry": "Ngân hàng",
+        "weight": 5.92
+      },
+      {
+        "symbol": "VPB",
+        "name": "VPBank",
+        "industry": "Ngân hàng",
+        "weight": 4.48
+      },
+      {
+        "symbol": "TCB",
+        "name": "Techcombank",
+        "industry": "Ngân hàng",
+        "weight": 4.26
+      },
+      {
+        "symbol": "MBB",
+        "name": "Ngân hàng Quân Đội",
+        "industry": "Ngân hàng",
+        "weight": 4.07
+      },
+      {
+        "symbol": "MWG",
+        "name": "Thế Giới Di Động",
+        "industry": "Bán lẻ",
+        "weight": 2.96
+      },
+      {
+        "symbol": "CTG",
+        "name": "VietinBank",
+        "industry": "Ngân hàng",
+        "weight": 2.94
+      },
+      {
+        "symbol": "STB",
+        "name": "Sacombank",
+        "industry": "Ngân hàng",
+        "weight": 2.9
+      },
+      {
+        "symbol": "VNM",
+        "name": "Vinamilk",
+        "industry": "Thực phẩm - Đồ uống",
+        "weight": 2.86
+      }
+    ]
   },
   {
-    id: 'ssiam-caif',
-    code: 'SSIAM-CAIF',
-    name: 'Quỹ Đầu Tư Cổ Phiếu Tăng Trưởng SSIAM CAIF',
-    category: 'equity',
-    issuer: 'SSIAM',
-    nav: 22180.40,
-    navDate: '28/08/2026',
-    ytdReturn: 16.40,
-    return1Y: 28.10,
-    return3Y: 44.70,
-    aumBillionVnd: 2150,
-    managementFee: 1.7,
-    inceptionDate: '18/06/2019',
-    description: 'Lựa chọn các cổ phiếu vốn hóa lớn và vừa có lợi thế kinh doanh độc tôn và định giá hấp dẫn.',
-    holdings: [
-      { symbol: 'HPG', name: 'Tập đoàn Hòa Phát', industry: 'Vật liệu xây dựng', weight: 9.0 },
-      { symbol: 'TCB', name: 'Techcombank', industry: 'Ngân hàng', weight: 8.1 },
-      { symbol: 'CTG', name: 'VietinBank', industry: 'Ngân hàng', weight: 7.4 },
-      { symbol: 'MWG', name: 'Thế Giới Di Động', industry: 'Bán lẻ', weight: 6.8 },
-      { symbol: 'FPT', name: 'Tập đoàn FPT', industry: 'Công nghệ và thông tin', weight: 6.5 },
-      { symbol: 'MBB', name: 'Ngân hàng Quân Đội', industry: 'Ngân hàng', weight: 5.9 },
-    ],
+    "id": "rvpif",
+    "fmarketId": 83,
+    "code": "RVPIF",
+    "name": "QUỸ ĐẦU TƯ THỊNH VƯỢNG RỒNG VIỆT",
+    "category": "equity",
+    "issuer": "VDAM",
+    "issuerFullName": "CÔNG TY CỔ PHẦN QUẢN LÝ QUỸ RỒNG VIỆT",
+    "nav": 9546.68,
+    "navDate": "09/10/2026",
+    "ytdReturn": -13.25,
+    "return1Y": -18.83,
+    "return3Y": null,
+    "returnInception": -4.53,
+    "managementFee": 1.5,
+    "inceptionDate": "",
+    "description": "Quỹ hướng tới việc tạo ra lợi nhuận dài hạn thông qua chiến lược đầu tư tập trung vào cổ phiếu niêm yết và các tài sản tài chính khác theo quy định.",
+    "holdings": [
+      {
+        "symbol": "ACB",
+        "name": "Ngân hàng Á Châu",
+        "industry": "Ngân hàng",
+        "weight": 6.28
+      },
+      {
+        "symbol": "CTG",
+        "name": "VietinBank",
+        "industry": "Ngân hàng",
+        "weight": 5.7
+      },
+      {
+        "symbol": "MWG",
+        "name": "Thế Giới Di Động",
+        "industry": "Bán lẻ",
+        "weight": 5.68
+      },
+      {
+        "symbol": "VCB",
+        "name": "Vietcombank",
+        "industry": "Ngân hàng",
+        "weight": 5.46
+      },
+      {
+        "symbol": "KBC",
+        "name": "Kinh Bắc",
+        "industry": "Bất động sản",
+        "weight": 4.78
+      },
+      {
+        "symbol": "HPG",
+        "name": "Tập đoàn Hòa Phát",
+        "industry": "Vật liệu xây dựng",
+        "weight": 4.59
+      },
+      {
+        "symbol": "KDH",
+        "name": "Nhà Khang Điền",
+        "industry": "Bất động sản",
+        "weight": 4.33
+      },
+      {
+        "symbol": "MSN",
+        "name": "Tập đoàn Masan",
+        "industry": "Thực phẩm - Đồ uống",
+        "weight": 4.33
+      },
+      {
+        "symbol": "GEL",
+        "name": "GEL",
+        "industry": "Vật liệu xây dựng",
+        "weight": 3.7
+      },
+      {
+        "symbol": "FPT",
+        "name": "Tập đoàn FPT",
+        "industry": "Công nghệ và thông tin",
+        "weight": 3.26
+      }
+    ]
   },
+  {
+    "id": "vcbf-aif",
+    "fmarketId": 82,
+    "code": "VCBF-AIF",
+    "name": "QUỸ ĐẦU TƯ THU NHẬP CHỦ ĐỘNG VCBF",
+    "category": "equity",
+    "issuer": "VIETCOMBANK FUND",
+    "issuerFullName": "CÔNG TY TNHH QUẢN LÝ QUỸ ĐẦU TƯ CHỨNG KHOÁN VIETCOMBANK",
+    "nav": 10835.72,
+    "navDate": "09/10/2026",
+    "ytdReturn": -5.9,
+    "return1Y": -4.94,
+    "return3Y": null,
+    "returnInception": 8.36,
+    "managementFee": 1.9,
+    "inceptionDate": "",
+    "description": "Mục tiêu đầu tư là tăng trưởng tài sản từ tăng giá cổ phiếu và thu nhập cổ tức nhưng tập trung chủ yếu vào gia tăng thu nhập cổ tức thông qua phân bổ tỷ trọng cao hơn vào cổ phiếu cổ tức cao.",
+    "holdings": [
+      {
+        "symbol": "MBB",
+        "name": "Ngân hàng Quân Đội",
+        "industry": "Ngân hàng",
+        "weight": 6.09
+      },
+      {
+        "symbol": "VNM",
+        "name": "Vinamilk",
+        "industry": "Thực phẩm - Đồ uống",
+        "weight": 5.68
+      },
+      {
+        "symbol": "ACB",
+        "name": "Ngân hàng Á Châu",
+        "industry": "Ngân hàng",
+        "weight": 5.4
+      },
+      {
+        "symbol": "TCB",
+        "name": "Techcombank",
+        "industry": "Ngân hàng",
+        "weight": 4.37
+      },
+      {
+        "symbol": "MWG",
+        "name": "Thế Giới Di Động",
+        "industry": "Bán lẻ",
+        "weight": 4.1
+      },
+      {
+        "symbol": "FPT",
+        "name": "Tập đoàn FPT",
+        "industry": "Công nghệ và thông tin",
+        "weight": 3.97
+      },
+      {
+        "symbol": "BWE",
+        "name": "BWE",
+        "industry": "Tiện ích",
+        "weight": 3.78
+      },
+      {
+        "symbol": "CTG",
+        "name": "VietinBank",
+        "industry": "Ngân hàng",
+        "weight": 3.75
+      },
+      {
+        "symbol": "TLG",
+        "name": "TLG",
+        "industry": "Sản xuất Phụ trợ",
+        "weight": 3.27
+      },
+      {
+        "symbol": "BVH",
+        "name": "Tập đoàn Bảo Việt",
+        "industry": "Bảo hiểm",
+        "weight": 3.05
+      }
+    ]
+  },
+  {
+    "id": "enf",
+    "fmarketId": 81,
+    "code": "ENF",
+    "name": "QUỸ ĐẦU TƯ NĂNG ĐỘNG EASTSPRING INVESTMENTS VIỆT NAM",
+    "category": "balanced",
+    "issuer": "EASTSPRING VIET NAM",
+    "issuerFullName": "CÔNG TY TNHH QUẢN LÝ QUỸ EASTSPRING INVESTMENTS",
+    "nav": 40183,
+    "navDate": "09/10/2026",
+    "ytdReturn": -3.53,
+    "return1Y": -4.42,
+    "return3Y": 32.87,
+    "returnInception": 301.83,
+    "managementFee": 1.5,
+    "inceptionDate": "04/03/2014",
+    "description": "Quỹ ENF hướng đến việc gia tăng một cách ổn định và bền vững vốn đầu tư thông qua đa dạng hóa các tài sản trong danh mục bao gồm cổ phiếu, trái phiếu và tiền gửi ngân hàng.",
+    "holdings": [
+      {
+        "symbol": "VIC",
+        "name": "Tập đoàn Vingroup",
+        "industry": "Bất động sản",
+        "weight": 7.92
+      },
+      {
+        "symbol": "VCB",
+        "name": "Vietcombank",
+        "industry": "Ngân hàng",
+        "weight": 6.08
+      },
+      {
+        "symbol": "STB",
+        "name": "Sacombank",
+        "industry": "Ngân hàng",
+        "weight": 3.73
+      },
+      {
+        "symbol": "VPB",
+        "name": "VPBank",
+        "industry": "Ngân hàng",
+        "weight": 3.45
+      },
+      {
+        "symbol": "MBB",
+        "name": "Ngân hàng Quân Đội",
+        "industry": "Ngân hàng",
+        "weight": 3.21
+      },
+      {
+        "symbol": "VHM",
+        "name": "CTCP Vinhomes",
+        "industry": "Bất động sản",
+        "weight": 3.21
+      },
+      {
+        "symbol": "TCB",
+        "name": "Techcombank",
+        "industry": "Ngân hàng",
+        "weight": 2.34
+      },
+      {
+        "symbol": "BID",
+        "name": "BIDV",
+        "industry": "Ngân hàng",
+        "weight": 2.13
+      },
+      {
+        "symbol": "CTG",
+        "name": "VietinBank",
+        "industry": "Ngân hàng",
+        "weight": 1.88
+      },
+      {
+        "symbol": "HPG",
+        "name": "Tập đoàn Hòa Phát",
+        "industry": "Vật liệu xây dựng",
+        "weight": 1.88
+      }
+    ]
+  },
+  {
+    "id": "vdef",
+    "fmarketId": 80,
+    "code": "VDEF",
+    "name": "QUỸ ĐẦU TƯ CỔ PHIẾU CƠ HỘI TIÊN PHONG VINACAPITAL",
+    "category": "equity",
+    "issuer": "VINACAPITAL",
+    "issuerFullName": "CÔNG TY CỔ PHẦN QUẢN LÝ QUỸ VINACAPITAL",
+    "nav": 11576.61,
+    "navDate": "09/10/2026",
+    "ytdReturn": -1.71,
+    "return1Y": -0.58,
+    "return3Y": null,
+    "returnInception": 15.77,
+    "managementFee": 1.75,
+    "inceptionDate": "04/06/2024",
+    "description": "Quỹ VDEF đầu tư vào cổ phiếu của những doanh nghiệp ít được thị trường chú ý và đang được định giá hấp dẫn. Thông qua chiến lược quản lý chủ động và xây dựng danh mục đầu tư một cách kỷ luật, Quỹ hướng tới mục tiêu đạt lợi nhuận vượt trội trong trung và dài hạn cho nhà đầu tư, đồng thời tối ưu hóa mối tương quan giữa lợi nhuận và rủi ro. Quỹ theo đuổi chiến lược đầu tư chủ động với mức độ tập trung cao, ưu tiên cổ phiếu vốn hóa vừa và nhỏ có mô hình kinh doanh khả năng mở rộng hoặc được kỳ vọng có bước đột phá, kèm theo các động lực đủ mạnh để mở ra dư địa định giá cao hơn, điều chỉnh tỷ trọng ngành nghề và cổ phiếu phù hợp với từng chu kỳ kinh tế dưới quy trình kiểm soát rủi ro kỷ luật.",
+    "holdings": [
+      {
+        "symbol": "PHR",
+        "name": "PHR",
+        "industry": "Sản xuất Nhựa - Hóa chất",
+        "weight": 7.56
+      },
+      {
+        "symbol": "MBB",
+        "name": "Ngân hàng Quân Đội",
+        "industry": "Ngân hàng",
+        "weight": 6.57
+      },
+      {
+        "symbol": "HDB",
+        "name": "HDBank",
+        "industry": "Ngân hàng",
+        "weight": 5.94
+      },
+      {
+        "symbol": "VCB",
+        "name": "Vietcombank",
+        "industry": "Ngân hàng",
+        "weight": 5.91
+      },
+      {
+        "symbol": "CTG",
+        "name": "VietinBank",
+        "industry": "Ngân hàng",
+        "weight": 4.93
+      },
+      {
+        "symbol": "DPR",
+        "name": "DPR",
+        "industry": "Sản xuất Nhựa - Hóa chất",
+        "weight": 4.88
+      },
+      {
+        "symbol": "REE",
+        "name": "Cơ Điện Lạnh",
+        "industry": "Thiết bị điện",
+        "weight": 4.72
+      },
+      {
+        "symbol": "PVI",
+        "name": "Bảo hiểm PVI",
+        "industry": "Bảo hiểm",
+        "weight": 4.65
+      },
+      {
+        "symbol": "PHP",
+        "name": "PHP",
+        "industry": "Vận tải - Kho bãi",
+        "weight": 4.53
+      },
+      {
+        "symbol": "HPG",
+        "name": "Tập đoàn Hòa Phát",
+        "industry": "Vật liệu xây dựng",
+        "weight": 4.52
+      }
+    ]
+  },
+  {
+    "id": "tcgf",
+    "fmarketId": 79,
+    "code": "TCGF",
+    "name": "QUỸ ĐẦU TƯ TĂNG TRƯỞNG THÀNH CÔNG",
+    "category": "equity",
+    "issuer": "TCAM",
+    "issuerFullName": "CÔNG TY TNHH QUẢN LÝ QUỸ THÀNH CÔNG",
+    "nav": 10243.97,
+    "navDate": "09/10/2026",
+    "ytdReturn": -14.76,
+    "return1Y": -20.46,
+    "return3Y": null,
+    "returnInception": 2.44,
+    "managementFee": 1.5,
+    "inceptionDate": "01/01/1970",
+    "description": "Quỹ TCGF đặt mục tiêu lợi nhuận dài hạn với chiến lược đầu tư linh hoạt vào cổ phiếu của DN đầu ngành, chủ chốt của nền kinh tế, phù hợp từng giai đoạn thị trường.",
+    "holdings": [
+      {
+        "symbol": "F88",
+        "name": "F88",
+        "industry": "Tài chính khác",
+        "weight": 14.36
+      },
+      {
+        "symbol": "CTG",
+        "name": "VietinBank",
+        "industry": "Ngân hàng",
+        "weight": 9.56
+      },
+      {
+        "symbol": "MWG",
+        "name": "Thế Giới Di Động",
+        "industry": "Bán lẻ",
+        "weight": 6.57
+      },
+      {
+        "symbol": "TCB",
+        "name": "Techcombank",
+        "industry": "Ngân hàng",
+        "weight": 5.91
+      },
+      {
+        "symbol": "ACB",
+        "name": "Ngân hàng Á Châu",
+        "industry": "Ngân hàng",
+        "weight": 3.83
+      },
+      {
+        "symbol": "SHB",
+        "name": "SHB",
+        "industry": "Ngân hàng",
+        "weight": 2.49
+      },
+      {
+        "symbol": "HPG",
+        "name": "Tập đoàn Hòa Phát",
+        "industry": "Vật liệu xây dựng",
+        "weight": 1.83
+      },
+      {
+        "symbol": "TCX",
+        "name": "TCX",
+        "industry": "Chứng khoán",
+        "weight": 0.53
+      }
+    ]
+  },
+  {
+    "id": "uvdif",
+    "fmarketId": 78,
+    "code": "UVDIF",
+    "name": "QUỸ ĐẦU TƯ UNITED THU NHẬP NĂNG ĐỘNG VIỆT NAM",
+    "category": "balanced",
+    "issuer": "UOBAM VIETNAM",
+    "issuerFullName": "CÔNG TY CỔ PHẦN QUẢN LÝ QUỸ UOB ASSET MANAGEMENT (VIỆT NAM)",
+    "nav": 10621.69,
+    "navDate": "09/10/2026",
+    "ytdReturn": -0.38,
+    "return1Y": 0.62,
+    "return3Y": null,
+    "returnInception": 10.22,
+    "managementFee": 1.5,
+    "inceptionDate": "01/01/1970",
+    "description": "Mục tiêu đầu tư của Quỹ là tìm kiếm đồng thời nguồn thu nhập đều đặn định kỳ và tăng trưởng về vốn gốc trong dài hạn thông qua việc xây dựng một danh mục đầu tư đa dạng gồm các tài sản có thu nhập cố định và cổ phiếu chất lượng cao. Quỹ cũng hướng đến mục tiêu chi trả lợi tức mỗi năm.",
+    "holdings": [
+      {
+        "symbol": "VIC",
+        "name": "Tập đoàn Vingroup",
+        "industry": "Bất động sản",
+        "weight": 5.42
+      },
+      {
+        "symbol": "HDB125012",
+        "name": "HDB125012",
+        "industry": "Ngân hàng",
+        "weight": 8.5
+      },
+      {
+        "symbol": "BAF126003",
+        "name": "BAF126003",
+        "industry": "Nông - Lâm - Ngư",
+        "weight": 7.81
+      },
+      {
+        "symbol": "VHM121025",
+        "name": "VHM121025",
+        "industry": "Bất động sản",
+        "weight": 7.49
+      },
+      {
+        "symbol": "TDP124010",
+        "name": "TDP124010",
+        "industry": "Sản xuất Nhựa - Hóa chất",
+        "weight": 7.18
+      },
+      {
+        "symbol": "NLG12501",
+        "name": "NLG12501",
+        "industry": "Bất động sản",
+        "weight": 4.86
+      },
+      {
+        "symbol": "LPB121036",
+        "name": "LPB121036",
+        "industry": "Ngân hàng",
+        "weight": 4.32
+      },
+      {
+        "symbol": "SHB125010",
+        "name": "SHB125010",
+        "industry": "Ngân hàng",
+        "weight": 3.68
+      },
+      {
+        "symbol": "NAB125004",
+        "name": "NAB125004",
+        "industry": "Ngân hàng",
+        "weight": 3.65
+      },
+      {
+        "symbol": "VND125033",
+        "name": "VND125033",
+        "industry": "Chứng khoán",
+        "weight": 3.65
+      }
+    ]
+  },
+  {
+    "id": "mdi",
+    "fmarketId": 77,
+    "code": "MDI",
+    "name": "QUỸ ĐẦU TƯ NĂNG ĐỘNG MANULIFE",
+    "category": "balanced",
+    "issuer": "MANULIFE INVESTMENTS",
+    "issuerFullName": "CÔNG TY TNHH QUẢN LÝ QUỸ MANULIFE INVESTMENT (VIỆT NAM)",
+    "nav": 11722,
+    "navDate": "09/10/2026",
+    "ytdReturn": -3.99,
+    "return1Y": -5.68,
+    "return3Y": null,
+    "returnInception": 17.22,
+    "managementFee": 1.75,
+    "inceptionDate": "30/11/2023",
+    "description": "Quỹ MDI quản lý bởi Manulife Investments Việt Nam đầu tư vào cổ phiếu, chứng khoán thu nhập cố định và chủ động điều chỉnh tỷ lệ đầu tư tài sản nhằm cân bằng rủi ro, lợi nhuận đầu tư trung, dài hạn.",
+    "holdings": [
+      {
+        "symbol": "VIC",
+        "name": "Tập đoàn Vingroup",
+        "industry": "Bất động sản",
+        "weight": 5.3
+      },
+      {
+        "symbol": "VCB",
+        "name": "Vietcombank",
+        "industry": "Ngân hàng",
+        "weight": 4.43
+      },
+      {
+        "symbol": "MWG",
+        "name": "Thế Giới Di Động",
+        "industry": "Bán lẻ",
+        "weight": 3.45
+      },
+      {
+        "symbol": "VHM",
+        "name": "CTCP Vinhomes",
+        "industry": "Bất động sản",
+        "weight": 2.58
+      },
+      {
+        "symbol": "MBB",
+        "name": "Ngân hàng Quân Đội",
+        "industry": "Ngân hàng",
+        "weight": 2.39
+      },
+      {
+        "symbol": "FPT",
+        "name": "Tập đoàn FPT",
+        "industry": "Công nghệ và thông tin",
+        "weight": 2.16
+      },
+      {
+        "symbol": "MSN",
+        "name": "Tập đoàn Masan",
+        "industry": "Thực phẩm - Đồ uống",
+        "weight": 2.06
+      },
+      {
+        "symbol": "TCB",
+        "name": "Techcombank",
+        "industry": "Ngân hàng",
+        "weight": 1.81
+      },
+      {
+        "symbol": "HPG",
+        "name": "Tập đoàn Hòa Phát",
+        "industry": "Vật liệu xây dựng",
+        "weight": 1.8
+      },
+      {
+        "symbol": "VPB",
+        "name": "VPBank",
+        "industry": "Ngân hàng",
+        "weight": 1.76
+      }
+    ]
+  },
+  {
+    "id": "lhcdf",
+    "fmarketId": 76,
+    "code": "LHCDF",
+    "name": "QUỸ ĐẦU TƯ NĂNG ĐỘNG LIGHTHOUSE",
+    "category": "equity",
+    "issuer": "LIGHTHOUSE CAPITAL",
+    "issuerFullName": "CÔNG TY CỔ PHẦN QUẢN LÝ QUỸ ĐẦU TƯ LIGHTHOUSE",
+    "nav": 10612.79,
+    "navDate": "09/10/2026",
+    "ytdReturn": -8.4,
+    "return1Y": -14.19,
+    "return3Y": null,
+    "returnInception": 6.13,
+    "managementFee": 1.5,
+    "inceptionDate": "01/01/1970",
+    "description": "Quỹ LHCDF đầu tư linh hoạt và chọn lọc vào những cổ phiếu có nền tảng và tiềm năng tăng trưởng tốt nhằm gia tăng giá trị trong trung và dài hạn.",
+    "holdings": [
+      {
+        "symbol": "NAB",
+        "name": "NAB",
+        "industry": "Ngân hàng",
+        "weight": 18.36
+      },
+      {
+        "symbol": "DBD",
+        "name": "DBD",
+        "industry": "Chăm sóc sức khỏe",
+        "weight": 10.55
+      },
+      {
+        "symbol": "KDH",
+        "name": "Nhà Khang Điền",
+        "industry": "Bất động sản",
+        "weight": 5.13
+      },
+      {
+        "symbol": "MWG",
+        "name": "Thế Giới Di Động",
+        "industry": "Bán lẻ",
+        "weight": 4.83
+      },
+      {
+        "symbol": "HPG",
+        "name": "Tập đoàn Hòa Phát",
+        "industry": "Vật liệu xây dựng",
+        "weight": 4.79
+      },
+      {
+        "symbol": "CTG",
+        "name": "VietinBank",
+        "industry": "Ngân hàng",
+        "weight": 4.62
+      },
+      {
+        "symbol": "NTP",
+        "name": "Nhựa Tiền Phong",
+        "industry": "Sản xuất Nhựa - Hóa chất",
+        "weight": 4.52
+      },
+      {
+        "symbol": "VIX",
+        "name": "VIX",
+        "industry": "Chứng khoán",
+        "weight": 3.83
+      },
+      {
+        "symbol": "MBB",
+        "name": "Ngân hàng Quân Đội",
+        "industry": "Ngân hàng",
+        "weight": 3.73
+      },
+      {
+        "symbol": "HHS",
+        "name": "HHS",
+        "industry": "Bán buôn",
+        "weight": 3.32
+      }
+    ]
+  },
+  {
+    "id": "vcamdf",
+    "fmarketId": 75,
+    "code": "VCAMDF",
+    "name": "QUỸ ĐẦU TƯ BẢN VIỆT DISCOVERY",
+    "category": "equity",
+    "issuer": "VCAM",
+    "issuerFullName": "CÔNG TY CỔ PHẦN QUẢN LÝ QUỸ ĐẦU TƯ CHỨNG KHOÁN BẢN VIỆT",
+    "nav": 10365.42,
+    "navDate": "09/10/2026",
+    "ytdReturn": -5.77,
+    "return1Y": -7.99,
+    "return3Y": null,
+    "returnInception": 3.65,
+    "managementFee": 1.5,
+    "inceptionDate": "01/01/1970",
+    "description": "Quỹ tập trung cổ phiếu vốn hóa vừa và nhỏ, có lợi thế cạnh tranh, nền tảng tài chính tốt, định giá chưa phản ánh đúng giá trị và tiềm năng tăng trưởng dài hạn.",
+    "holdings": [
+      {
+        "symbol": "HDB",
+        "name": "HDBank",
+        "industry": "Ngân hàng",
+        "weight": 9.12
+      },
+      {
+        "symbol": "VNM",
+        "name": "Vinamilk",
+        "industry": "Thực phẩm - Đồ uống",
+        "weight": 6.27
+      },
+      {
+        "symbol": "TLG",
+        "name": "TLG",
+        "industry": "Sản xuất Phụ trợ",
+        "weight": 5.55
+      },
+      {
+        "symbol": "BVH",
+        "name": "Tập đoàn Bảo Việt",
+        "industry": "Bảo hiểm",
+        "weight": 4.94
+      },
+      {
+        "symbol": "IDC",
+        "name": "Tổng Công ty IDICO",
+        "industry": "Tiện ích",
+        "weight": 4.46
+      },
+      {
+        "symbol": "TCB",
+        "name": "Techcombank",
+        "industry": "Ngân hàng",
+        "weight": 4.42
+      },
+      {
+        "symbol": "PHR",
+        "name": "PHR",
+        "industry": "Sản xuất Nhựa - Hóa chất",
+        "weight": 4.41
+      },
+      {
+        "symbol": "BID",
+        "name": "BIDV",
+        "industry": "Ngân hàng",
+        "weight": 4.4
+      },
+      {
+        "symbol": "VCB",
+        "name": "Vietcombank",
+        "industry": "Ngân hàng",
+        "weight": 4.37
+      },
+      {
+        "symbol": "CTG",
+        "name": "VietinBank",
+        "industry": "Ngân hàng",
+        "weight": 4.34
+      }
+    ]
+  },
+  {
+    "id": "mafeqi",
+    "fmarketId": 72,
+    "code": "MAFEQI",
+    "name": "QUỸ ĐẦU TƯ CỔ PHIẾU MANULIFE",
+    "category": "equity",
+    "issuer": "MANULIFE INVESTMENTS",
+    "issuerFullName": "CÔNG TY TNHH QUẢN LÝ QUỸ MANULIFE INVESTMENT (VIỆT NAM)",
+    "nav": 19505,
+    "navDate": "09/10/2026",
+    "ytdReturn": -7.1,
+    "return1Y": -9.41,
+    "return3Y": 33.86,
+    "returnInception": 95.05,
+    "managementFee": 1.75,
+    "inceptionDate": "01/10/2014",
+    "description": "Quỹ MAFEQI quản lý bởi Manulife Investments Việt Nam đầu tư đa dạng có chọn lọc vào 20-50 cổ phiếu các doanh nghiệp hàng đầu Việt Nam với mục tiêu gia tăng giá trị đầu tư trung, dài hạn.",
+    "holdings": [
+      {
+        "symbol": "VIC",
+        "name": "Tập đoàn Vingroup",
+        "industry": "Bất động sản",
+        "weight": 12.15
+      },
+      {
+        "symbol": "VCB",
+        "name": "Vietcombank",
+        "industry": "Ngân hàng",
+        "weight": 8.54
+      },
+      {
+        "symbol": "VHM",
+        "name": "CTCP Vinhomes",
+        "industry": "Bất động sản",
+        "weight": 4.97
+      },
+      {
+        "symbol": "MWG",
+        "name": "Thế Giới Di Động",
+        "industry": "Bán lẻ",
+        "weight": 4.83
+      },
+      {
+        "symbol": "MBB",
+        "name": "Ngân hàng Quân Đội",
+        "industry": "Ngân hàng",
+        "weight": 4.58
+      },
+      {
+        "symbol": "CTG",
+        "name": "VietinBank",
+        "industry": "Ngân hàng",
+        "weight": 4.51
+      },
+      {
+        "symbol": "FPT",
+        "name": "Tập đoàn FPT",
+        "industry": "Công nghệ và thông tin",
+        "weight": 4.27
+      },
+      {
+        "symbol": "TCB",
+        "name": "Techcombank",
+        "industry": "Ngân hàng",
+        "weight": 3.56
+      },
+      {
+        "symbol": "BSR",
+        "name": "Lọc hóa dầu Bình Sơn",
+        "industry": "Sản xuất",
+        "weight": 3.52
+      },
+      {
+        "symbol": "HPG",
+        "name": "Tập đoàn Hòa Phát",
+        "industry": "Vật liệu xây dựng",
+        "weight": 3.45
+      }
+    ]
+  },
+  {
+    "id": "mafbal",
+    "fmarketId": 71,
+    "code": "MAFBAL",
+    "name": "QUỸ ĐẦU TƯ CÂN BẰNG MANULIFE",
+    "category": "balanced",
+    "issuer": "MANULIFE INVESTMENTS",
+    "issuerFullName": "CÔNG TY TNHH QUẢN LÝ QUỸ MANULIFE INVESTMENT (VIỆT NAM)",
+    "nav": 17574,
+    "navDate": "09/10/2026",
+    "ytdReturn": -2.25,
+    "return1Y": -3.75,
+    "return3Y": 25.71,
+    "returnInception": 75.74,
+    "managementFee": 1.2,
+    "inceptionDate": "29/09/2017",
+    "description": "Quỹ MAFBAL quản lý bởi Manulife Investments Việt Nam phân bổ đầu tư cân bằng vào cổ phiếu và chứng khoán thu nhập cố định với mục tiêu cân bằng rủi ro & lợi nhuận đầu tư trung, dài hạn.",
+    "holdings": [
+      {
+        "symbol": "VIC",
+        "name": "Tập đoàn Vingroup",
+        "industry": "Bất động sản",
+        "weight": 4.31
+      },
+      {
+        "symbol": "VCB",
+        "name": "Vietcombank",
+        "industry": "Ngân hàng",
+        "weight": 3.69
+      },
+      {
+        "symbol": "VHM",
+        "name": "CTCP Vinhomes",
+        "industry": "Bất động sản",
+        "weight": 2.64
+      },
+      {
+        "symbol": "MWG",
+        "name": "Thế Giới Di Động",
+        "industry": "Bán lẻ",
+        "weight": 2.17
+      },
+      {
+        "symbol": "MBB",
+        "name": "Ngân hàng Quân Đội",
+        "industry": "Ngân hàng",
+        "weight": 2.04
+      },
+      {
+        "symbol": "CTG",
+        "name": "VietinBank",
+        "industry": "Ngân hàng",
+        "weight": 1.94
+      },
+      {
+        "symbol": "MSN123010",
+        "name": "MSN123010",
+        "industry": "Thực phẩm - Đồ uống",
+        "weight": 4.49
+      },
+      {
+        "symbol": "VIC124005",
+        "name": "VIC124005",
+        "industry": "Bất động sản",
+        "weight": 3.87
+      },
+      {
+        "symbol": "VHM121025",
+        "name": "VHM121025",
+        "industry": "Bất động sản",
+        "weight": 3.86
+      },
+      {
+        "symbol": "TCXC12602",
+        "name": "TCXC12602",
+        "industry": "Chứng khoán",
+        "weight": 3.21
+      }
+    ]
+  },
+  {
+    "id": "vcambf",
+    "fmarketId": 70,
+    "code": "VCAMBF",
+    "name": "QUỸ ĐẦU TƯ CÂN BẰNG BẢN VIỆT",
+    "category": "balanced",
+    "issuer": "VCAM",
+    "issuerFullName": "CÔNG TY CỔ PHẦN QUẢN LÝ QUỸ ĐẦU TƯ CHỨNG KHOÁN BẢN VIỆT",
+    "nav": 21150.7,
+    "navDate": "09/10/2026",
+    "ytdReturn": -3.26,
+    "return1Y": -5.65,
+    "return3Y": 28.16,
+    "returnInception": 111.51,
+    "managementFee": 1.2,
+    "inceptionDate": "11/04/2014",
+    "description": "VCAMBF tuân theo chiến lược phân bổ tài sản chủ động với tỷ lệ 50% - 70% dành cho cổ phiếu niêm yết và phần còn lại dành cho tài sản có thu nhập cố định.",
+    "holdings": [
+      {
+        "symbol": "ACB",
+        "name": "Ngân hàng Á Châu",
+        "industry": "Ngân hàng",
+        "weight": 3.98
+      },
+      {
+        "symbol": "MBB",
+        "name": "Ngân hàng Quân Đội",
+        "industry": "Ngân hàng",
+        "weight": 3.89
+      },
+      {
+        "symbol": "STB",
+        "name": "Sacombank",
+        "industry": "Ngân hàng",
+        "weight": 3.27
+      },
+      {
+        "symbol": "ABB",
+        "name": "ABB",
+        "industry": "Ngân hàng",
+        "weight": 2.97
+      },
+      {
+        "symbol": "VPB",
+        "name": "VPBank",
+        "industry": "Ngân hàng",
+        "weight": 2.97
+      },
+      {
+        "symbol": "HPG",
+        "name": "Tập đoàn Hòa Phát",
+        "industry": "Vật liệu xây dựng",
+        "weight": 2.75
+      },
+      {
+        "symbol": "BVH",
+        "name": "Tập đoàn Bảo Việt",
+        "industry": "Bảo hiểm",
+        "weight": 2.59
+      },
+      {
+        "symbol": "TCB",
+        "name": "Techcombank",
+        "industry": "Ngân hàng",
+        "weight": 2.57
+      },
+      {
+        "symbol": "VCB",
+        "name": "Vietcombank",
+        "industry": "Ngân hàng",
+        "weight": 2.57
+      },
+      {
+        "symbol": "BSR",
+        "name": "Lọc hóa dầu Bình Sơn",
+        "industry": "Sản xuất",
+        "weight": 2.38
+      }
+    ]
+  },
+  {
+    "id": "lpbf",
+    "fmarketId": 69,
+    "code": "LPBF",
+    "name": "QUỸ ĐẦU TƯ TRÁI PHIẾU LP",
+    "category": "bond",
+    "issuer": "LPBA",
+    "issuerFullName": "CÔNG TY CỔ PHẦN QUẢN LÝ QUỸ LPB",
+    "nav": 10874.39,
+    "navDate": "09/10/2026",
+    "ytdReturn": 5.62,
+    "return1Y": 7.34,
+    "return3Y": null,
+    "returnInception": 8.93,
+    "managementFee": 1.2,
+    "inceptionDate": "01/01/1970",
+    "description": "Quỹ Đầu tư Trái phiếu LP (LPBF) hướng tới mục tiêu mang lại lợi nhuận ổn định, hấp dẫn và bền vững cho Nhà đầu tư thông qua việc đầu tư vào danh mục trái phiếu niêm yết của các doanh nghiệp hàng đầu, chứng chỉ tiền gửi của các tổ chức phát hành uy tín và các tài sản có thu nhập cố định khác. Quỹ LPBF phù hợp với nhà đầu tư tìm kiếm giải pháp tích lũy an toàn, ổn định và linh hoạt, hướng đến tăng trưởng tài sản bền vững.",
+    "holdings": [
+      {
+        "symbol": "DSE125018",
+        "name": "DSE125018",
+        "industry": "Chứng khoán",
+        "weight": 17.86
+      },
+      {
+        "symbol": "LPB125007",
+        "name": "LPB125007",
+        "industry": "Ngân hàng",
+        "weight": 17.59
+      },
+      {
+        "symbol": "HDB125012",
+        "name": "HDB125012",
+        "industry": "Ngân hàng",
+        "weight": 17.07
+      },
+      {
+        "symbol": "BAF126003",
+        "name": "BAF126003",
+        "industry": "Nông - Lâm - Ngư",
+        "weight": 15.5
+      },
+      {
+        "symbol": "VIC124003",
+        "name": "VIC124003",
+        "industry": "Bất động sản",
+        "weight": 9.12
+      },
+      {
+        "symbol": "KBCL12601",
+        "name": "KBCL12601",
+        "industry": "Bất động sản",
+        "weight": 8.95
+      },
+      {
+        "symbol": "VIC124005",
+        "name": "VIC124005",
+        "industry": "Bất động sản",
+        "weight": 8.78
+      }
+    ]
+  },
+  {
+    "id": "vndcf",
+    "fmarketId": 40,
+    "code": "VNDCF",
+    "name": "QUỸ ĐẦU TƯ TRÁI PHIẾU LINH HOẠT VND",
+    "category": "bond",
+    "issuer": "IPA PARTNER",
+    "issuerFullName": "CÔNG TY TNHH QUẢN LÝ QUỸ ĐẦU TƯ IPA PARTNER",
+    "nav": 11915.17,
+    "navDate": "09/10/2026",
+    "ytdReturn": 4.57,
+    "return1Y": 6.03,
+    "return3Y": 18.55,
+    "returnInception": 19.15,
+    "managementFee": 0.9,
+    "inceptionDate": "04/08/2023",
+    "description": "Quỹ VNDCF giúp tối ưu lợi nhuận cho nguồn tiền nhàn rỗi ngắn hạn của Nhà đầu tư, phù hợp với dòng tiền đầu tư dưới 06 tháng.",
+    "holdings": [
+      {
+        "symbol": "CVT122009",
+        "name": "CVT122009",
+        "industry": "Vật liệu xây dựng",
+        "weight": 16.37
+      },
+      {
+        "symbol": "NLG12501",
+        "name": "NLG12501",
+        "industry": "Bất động sản",
+        "weight": 7.24
+      },
+      {
+        "symbol": "VHM121025",
+        "name": "VHM121025",
+        "industry": "Bất động sản",
+        "weight": 5.7
+      },
+      {
+        "symbol": "VBA123036",
+        "name": "VBA123036",
+        "industry": "Ngân hàng",
+        "weight": 5.36
+      },
+      {
+        "symbol": "VBA121033",
+        "name": "VBA121033",
+        "industry": "Ngân hàng",
+        "weight": 3.29
+      }
+    ]
+  },
+  {
+    "id": "vmeef",
+    "fmarketId": 68,
+    "code": "VMEEF",
+    "name": "QUỸ ĐẦU TƯ CỔ PHIẾU KINH TẾ HIỆN ĐẠI VINACAPITAL",
+    "category": "equity",
+    "issuer": "VINACAPITAL",
+    "issuerFullName": "CÔNG TY CỔ PHẦN QUẢN LÝ QUỸ VINACAPITAL",
+    "nav": 14998.71,
+    "navDate": "09/10/2026",
+    "ytdReturn": -8.3,
+    "return1Y": -12.62,
+    "return3Y": 38.34,
+    "returnInception": 49.99,
+    "managementFee": 1.75,
+    "inceptionDate": "11/04/2023",
+    "description": "Quỹ VMEEF đầu tư vào cổ phiếu của những doanh nghiệp có triển vọng tốt về tăng trưởng doanh thu và lợi nhuận trong dài hạn, gắn liền với các động lực phát triển kinh tế hiện đại của Việt Nam. Thông qua chiến lược quản lý chủ động và xây dựng danh mục đầu tư một cách kỷ luật, Quỹ hướng tới mục tiêu mang lại lợi nhuận vượt trội trong trung và dài hạn cho nhà đầu tư, đồng thời tối ưu hóa mối tương quan giữa lợi nhuận và rủi ro. Quỹ áp dụng cách tiếp cận chủ động để xây dựng danh mục đón đầu các động lực tăng trưởng cốt lõi như đô thị hóa, sự bùng nổ của tầng lớp trung lưu và số hóa, tập trung vào các doanh nghiệp cung cấp giải pháp trong lĩnh vực dịch vụ tài chính, bán lẻ hiện đại, bất động sản đô thị và giải pháp ứng dụng công nghệ tại vùng định giá hợp lý, điều chỉnh tỷ trọng ngành nghề và cổ phiếu phù hợp với từng chu kỳ kinh tế dưới quy trình kiểm soát rủi ro kỷ luật.",
+    "holdings": [
+      {
+        "symbol": "HPG",
+        "name": "Tập đoàn Hòa Phát",
+        "industry": "Vật liệu xây dựng",
+        "weight": 8.55
+      },
+      {
+        "symbol": "VCB",
+        "name": "Vietcombank",
+        "industry": "Ngân hàng",
+        "weight": 7.61
+      },
+      {
+        "symbol": "MBB",
+        "name": "Ngân hàng Quân Đội",
+        "industry": "Ngân hàng",
+        "weight": 7.01
+      },
+      {
+        "symbol": "CTG",
+        "name": "VietinBank",
+        "industry": "Ngân hàng",
+        "weight": 6.48
+      },
+      {
+        "symbol": "ACB",
+        "name": "Ngân hàng Á Châu",
+        "industry": "Ngân hàng",
+        "weight": 5.41
+      },
+      {
+        "symbol": "TCB",
+        "name": "Techcombank",
+        "industry": "Ngân hàng",
+        "weight": 4.88
+      },
+      {
+        "symbol": "MWG",
+        "name": "Thế Giới Di Động",
+        "industry": "Bán lẻ",
+        "weight": 4.55
+      },
+      {
+        "symbol": "REE",
+        "name": "Cơ Điện Lạnh",
+        "industry": "Thiết bị điện",
+        "weight": 4.02
+      },
+      {
+        "symbol": "NLG",
+        "name": "Nam Long",
+        "industry": "Bất động sản",
+        "weight": 3.51
+      },
+      {
+        "symbol": "HDB",
+        "name": "HDBank",
+        "industry": "Ngân hàng",
+        "weight": 3.47
+      }
+    ]
+  },
+  {
+    "id": "dcip",
+    "fmarketId": 67,
+    "code": "DCIP",
+    "name": "QUỸ ĐẦU TƯ TRÁI PHIẾU GIA TĂNG THU NHẬP CỐ ĐỊNH DC",
+    "category": "bond",
+    "issuer": "DCVFM",
+    "issuerFullName": "CÔNG TY CỔ PHẦN QUẢN LÝ QUỸ DRAGON CAPITAL VIỆT NAM",
+    "nav": 12423.8,
+    "navDate": "09/10/2026",
+    "ytdReturn": 4.74,
+    "return1Y": 6.15,
+    "return3Y": 18.54,
+    "returnInception": 24.24,
+    "managementFee": 1.2,
+    "inceptionDate": "24/05/2021",
+    "description": "DCIP – Quỹ đầu tư trái phiếu gia tăng thu nhập cố định DC là quỹ mở được thiết kế đặc biệt cho các nhu cầu đầu tư ngắn hạn (dưới 6 tháng) thông qua một danh mục đầu tư đa dạng hóa, bao gồm các tài sản có tính phòng vệ như trái phiếu, chứng chỉ tiền gửi.",
+    "holdings": [
+      {
+        "symbol": "BAF126003",
+        "name": "BAF126003",
+        "industry": "Nông - Lâm - Ngư",
+        "weight": 11.21
+      },
+      {
+        "symbol": "VPI124001",
+        "name": "VPI124001",
+        "industry": "Bất động sản",
+        "weight": 9.64
+      },
+      {
+        "symbol": "MSN123008",
+        "name": "MSN123008",
+        "industry": "Thực phẩm - Đồ uống",
+        "weight": 8.03
+      },
+      {
+        "symbol": "DSE125018",
+        "name": "DSE125018",
+        "industry": "Chứng khoán",
+        "weight": 7.96
+      },
+      {
+        "symbol": "KBCL12601 bond",
+        "name": "KBCL12601 bond",
+        "industry": "Bất động sản",
+        "weight": 4.78
+      }
+    ]
+  },
+  {
+    "id": "phvsf",
+    "fmarketId": 66,
+    "code": "PHVSF",
+    "name": "QUỸ ĐẦU TƯ CHỌN LỌC PHÚ HƯNG VIỆT NAM",
+    "category": "equity",
+    "issuer": "PHFM",
+    "issuerFullName": "CÔNG TY CỔ PHẦN QUẢN LÝ QUỸ PHÚ HƯNG",
+    "nav": 12726.51,
+    "navDate": "09/10/2026",
+    "ytdReturn": -5.3,
+    "return1Y": -10.28,
+    "return3Y": 21.72,
+    "returnInception": 27.27,
+    "managementFee": 1.5,
+    "inceptionDate": "21/11/2022",
+    "description": "Quỹ PHVSF đầu tư vào các loại chứng khoán niêm yết tại Việt Nam. Quỹ áp dụng nguyên tắc đầu tư thận trọng với chiến lược đầu tư giá trị nhằm đạt mục tiêu gia tăng ổn định giá trị tài sản cho Nhà đầu tư trong trung và dài hạn.",
+    "holdings": [
+      {
+        "symbol": "VPB",
+        "name": "VPBank",
+        "industry": "Ngân hàng",
+        "weight": 5.35
+      },
+      {
+        "symbol": "MBB",
+        "name": "Ngân hàng Quân Đội",
+        "industry": "Ngân hàng",
+        "weight": 4.24
+      },
+      {
+        "symbol": "HDB",
+        "name": "HDBank",
+        "industry": "Ngân hàng",
+        "weight": 4.21
+      },
+      {
+        "symbol": "VHM",
+        "name": "CTCP Vinhomes",
+        "industry": "Bất động sản",
+        "weight": 4.21
+      },
+      {
+        "symbol": "VCB",
+        "name": "Vietcombank",
+        "industry": "Ngân hàng",
+        "weight": 4.18
+      },
+      {
+        "symbol": "MSN",
+        "name": "Tập đoàn Masan",
+        "industry": "Thực phẩm - Đồ uống",
+        "weight": 4.05
+      },
+      {
+        "symbol": "VNM",
+        "name": "Vinamilk",
+        "industry": "Thực phẩm - Đồ uống",
+        "weight": 4.05
+      },
+      {
+        "symbol": "MWG",
+        "name": "Thế Giới Di Động",
+        "industry": "Bán lẻ",
+        "weight": 3.81
+      },
+      {
+        "symbol": "ACB",
+        "name": "Ngân hàng Á Châu",
+        "industry": "Ngân hàng",
+        "weight": 3.61
+      },
+      {
+        "symbol": "TCB",
+        "name": "Techcombank",
+        "industry": "Ngân hàng",
+        "weight": 3.58
+      }
+    ]
+  },
+  {
+    "id": "abbf",
+    "fmarketId": 65,
+    "code": "ABBF",
+    "name": "QUỸ ĐẦU TƯ TRÁI PHIẾU AN BÌNH",
+    "category": "bond",
+    "issuer": "ABF",
+    "issuerFullName": "CÔNG TY CỔ PHẦN QUẢN LÝ QUỸ ĐẦU TƯ CHỨNG KHOÁN AN BÌNH",
+    "nav": 14719.87,
+    "navDate": "09/10/2026",
+    "ytdReturn": 5.8,
+    "return1Y": 7.26,
+    "return3Y": 20.27,
+    "returnInception": 47.2,
+    "managementFee": 0.525,
+    "inceptionDate": "03/11/2020",
+    "description": "Quỹ trái phiếu có quy mô lớn nhất nền tảng Fmarket năm 2024 với chiến lược tăng trưởng lợi nhuận ổn định đề cao sự an toàn, đạt giải quốc tế \"Nhà đầu tư Trái phiếu tốt nhất VN\" của Asia Asset Management.",
+    "holdings": [
+      {
+        "symbol": "DSE125018",
+        "name": "DSE125018",
+        "industry": "Chứng khoán",
+        "weight": 16.82
+      },
+      {
+        "symbol": "MSN123008",
+        "name": "MSN123008",
+        "industry": "Thực phẩm - Đồ uống",
+        "weight": 14.99
+      },
+      {
+        "symbol": "TNG124027",
+        "name": "TNG124027",
+        "industry": "Sản xuất Hàng gia dụng",
+        "weight": 8.75
+      },
+      {
+        "symbol": "HDB125011",
+        "name": "HDB125011",
+        "industry": "Ngân hàng",
+        "weight": 7.08
+      },
+      {
+        "symbol": "HDB124023",
+        "name": "HDB124023",
+        "industry": "Ngân hàng",
+        "weight": 5.76
+      },
+      {
+        "symbol": "VIC124003",
+        "name": "VIC124003",
+        "industry": "Bất động sản",
+        "weight": 5.35
+      },
+      {
+        "symbol": "SHB125017",
+        "name": "SHB125017",
+        "industry": "Ngân hàng",
+        "weight": 5.02
+      },
+      {
+        "symbol": "VIC124005",
+        "name": "VIC124005",
+        "industry": "Bất động sản",
+        "weight": 4.84
+      },
+      {
+        "symbol": "MSN123009",
+        "name": "MSN123009",
+        "industry": "Thực phẩm - Đồ uống",
+        "weight": 3.61
+      },
+      {
+        "symbol": "VND125032",
+        "name": "VND125032",
+        "industry": "Chứng khoán",
+        "weight": 3.47
+      }
+    ]
+  },
+  {
+    "id": "lhbf",
+    "fmarketId": 64,
+    "code": "LHBF",
+    "name": "QUỸ ĐẦU TƯ TRÁI PHIẾU LIGHTHOUSE",
+    "category": "bond",
+    "issuer": "LIGHTHOUSE CAPITAL",
+    "issuerFullName": "CÔNG TY CỔ PHẦN QUẢN LÝ QUỸ ĐẦU TƯ LIGHTHOUSE",
+    "nav": 15380.78,
+    "navDate": "09/10/2026",
+    "ytdReturn": 4.95,
+    "return1Y": 6.11,
+    "return3Y": 28.07,
+    "returnInception": 53.81,
+    "managementFee": 1,
+    "inceptionDate": "29/12/2022",
+    "description": "Quỹ LHBF tập trung vào các tài sản có thu nhập cố định có chất lượng tốt. Quỹ có mức rủi ro thấp, phù hợp cho mục đích đầu tư trung và dài hạn.",
+    "holdings": [
+      {
+        "symbol": "VHM121025",
+        "name": "VHM121025",
+        "industry": "Bất động sản",
+        "weight": 12.75
+      },
+      {
+        "symbol": "MSN123009",
+        "name": "MSN123009",
+        "industry": "Thực phẩm - Đồ uống",
+        "weight": 10.63
+      },
+      {
+        "symbol": "CII425021",
+        "name": "CII425021",
+        "industry": "Xây dựng",
+        "weight": 7.64
+      },
+      {
+        "symbol": "BAF126003",
+        "name": "BAF126003",
+        "industry": "Nông - Lâm - Ngư",
+        "weight": 7.44
+      },
+      {
+        "symbol": "CTG123019",
+        "name": "CTG123019",
+        "industry": "Ngân hàng",
+        "weight": 6.95
+      },
+      {
+        "symbol": "DSE125004",
+        "name": "DSE125004",
+        "industry": "Chứng khoán",
+        "weight": 5.91
+      },
+      {
+        "symbol": "MSN123008",
+        "name": "MSN123008",
+        "industry": "Thực phẩm - Đồ uống",
+        "weight": 5.91
+      },
+      {
+        "symbol": "CTD126006",
+        "name": "CTD126006",
+        "industry": "Xây dựng",
+        "weight": 5.32
+      },
+      {
+        "symbol": "DSE125018",
+        "name": "DSE125018",
+        "industry": "Chứng khoán",
+        "weight": 5.32
+      },
+      {
+        "symbol": "NLG12501",
+        "name": "NLG12501",
+        "industry": "Bất động sản",
+        "weight": 5.32
+      }
+    ]
+  },
+  {
+    "id": "vcamfi",
+    "fmarketId": 63,
+    "code": "VCAMFI",
+    "name": "QUỸ ĐẦU TƯ TRÁI PHIẾU BẢN VIỆT",
+    "category": "bond",
+    "issuer": "VCAM",
+    "issuerFullName": "CÔNG TY CỔ PHẦN QUẢN LÝ QUỸ ĐẦU TƯ CHỨNG KHOÁN BẢN VIỆT",
+    "nav": 12546.67,
+    "navDate": "09/10/2026",
+    "ytdReturn": 3.05,
+    "return1Y": 4.34,
+    "return3Y": 17.89,
+    "returnInception": 25.47,
+    "managementFee": 1,
+    "inceptionDate": "22/09/2022",
+    "description": "Mục tiêu đầu tư của Quỹ là mang lại lợi nhuận dài hạn bằng cách đầu tư chủ yếu vào trái phiếu, công cụ thị trường tiền tệ, tiền gửi có kỳ hạn và các công cụ có thu nhập cố định khác.",
+    "holdings": [
+      {
+        "symbol": "MSN123008",
+        "name": "MSN123008",
+        "industry": "Thực phẩm - Đồ uống",
+        "weight": 3.54
+      },
+      {
+        "symbol": "VHM121025",
+        "name": "VHM121025",
+        "industry": "Bất động sản",
+        "weight": 2.42
+      },
+      {
+        "symbol": "VBA121033",
+        "name": "VBA121033",
+        "industry": "Ngân hàng",
+        "weight": 2.39
+      },
+      {
+        "symbol": "NLG12501",
+        "name": "NLG12501",
+        "industry": "Bất động sản",
+        "weight": 2
+      },
+      {
+        "symbol": "LPB121036",
+        "name": "LPB121036",
+        "industry": "Ngân hàng",
+        "weight": 1.51
+      },
+      {
+        "symbol": "VBA123036",
+        "name": "VBA123036",
+        "industry": "Ngân hàng",
+        "weight": 1.51
+      },
+      {
+        "symbol": "CTG121031",
+        "name": "CTG121031",
+        "industry": "Ngân hàng",
+        "weight": 1.5
+      }
+    ]
+  },
+  {
+    "id": "hdbond",
+    "fmarketId": 62,
+    "code": "HDBOND",
+    "name": "QUỸ ĐẦU TƯ TRÁI PHIẾU LỢI TỨC CAO HD",
+    "category": "bond",
+    "issuer": "HDCAPITAL",
+    "issuerFullName": "CÔNG TY CỔ PHẦN QUẢN LÝ QUỸ HD",
+    "nav": 11934.79,
+    "navDate": "09/10/2026",
+    "ytdReturn": -2.87,
+    "return1Y": -0.95,
+    "return3Y": 11.24,
+    "returnInception": 19.35,
+    "managementFee": 0.95,
+    "inceptionDate": "30/12/2022",
+    "description": "Quỹ HDBOND đầu tư tập trung vào các tài sản có thu nhập cố định như Trái phiếu doanh nghiệp niêm yết, chứng chỉ tiền gửi có lợi suất cao nhằm tối đa hóa lợi nhuận trong dài hạn. Quản lý chủ động, hướng tới mục tiêu gia tăng tài sản ổn định cho khách hàng.",
+    "holdings": [
+      {
+        "symbol": "HSG",
+        "name": "Tập đoàn Hoa Sen",
+        "industry": "Vật liệu xây dựng",
+        "weight": 2.98
+      },
+      {
+        "symbol": "VPB",
+        "name": "VPBank",
+        "industry": "Ngân hàng",
+        "weight": 2.73
+      },
+      {
+        "symbol": "TDP124010",
+        "name": "TDP124010",
+        "industry": "Sản xuất Nhựa - Hóa chất",
+        "weight": 16.73
+      },
+      {
+        "symbol": "CMX123035",
+        "name": "CMX123035",
+        "industry": "Chế biến thủy sản",
+        "weight": 13.07
+      },
+      {
+        "symbol": "TNG124027",
+        "name": "TNG124027",
+        "industry": "Sản xuất Hàng gia dụng",
+        "weight": 13.07
+      },
+      {
+        "symbol": "MSN123008",
+        "name": "MSN123008",
+        "industry": "Thực phẩm - Đồ uống",
+        "weight": 9.32
+      },
+      {
+        "symbol": "VPI124001",
+        "name": "VPI124001",
+        "industry": "Bất động sản",
+        "weight": 9.25
+      },
+      {
+        "symbol": "CII425021",
+        "name": "CII425021",
+        "industry": "Xây dựng",
+        "weight": 7.76
+      },
+      {
+        "symbol": "CII426028",
+        "name": "CII426028",
+        "industry": "Xây dựng",
+        "weight": 2.9
+      },
+      {
+        "symbol": "BAF126003",
+        "name": "BAF126003",
+        "industry": "Nông - Lâm - Ngư",
+        "weight": 2.04
+      }
+    ]
+  },
+  {
+    "id": "pbif",
+    "fmarketId": 61,
+    "code": "PBIF",
+    "name": "QUỸ ĐẦU TƯ CÂN BẰNG PVCOM",
+    "category": "balanced",
+    "issuer": "PVCB CAPITAL",
+    "issuerFullName": "CÔNG TY CỔ PHẦN QUẢN LÝ QUỸ NGÂN HÀNG TMCP ĐẠI CHÚNG VIỆT NAM",
+    "nav": 5956.04,
+    "navDate": "09/10/2026",
+    "ytdReturn": -41.37,
+    "return1Y": -33.97,
+    "return3Y": -42.96,
+    "returnInception": -40.44,
+    "managementFee": 1.3,
+    "inceptionDate": "01/01/1970",
+    "description": "Quỹ xây dựng một danh mục kết hợp tối ưu và linh hoạt giữa cổ phiếu, tập trung vào các cổ phiếu của doanh nghiệp có vốn hóa lớn, thanh khoản cao trên thị trường chứng khoán và các tài sản có thu nhập cố định nhằm tối đa hóa lợi nhuận cho nhà đầu tư.",
+    "holdings": [
+      {
+        "symbol": "PC1",
+        "name": "Tập đoàn PC1",
+        "industry": "Xây dựng",
+        "weight": 4.84
+      },
+      {
+        "symbol": "CTG",
+        "name": "VietinBank",
+        "industry": "Ngân hàng",
+        "weight": 4.5
+      },
+      {
+        "symbol": "VIB",
+        "name": "VIBank",
+        "industry": "Ngân hàng",
+        "weight": 4.45
+      },
+      {
+        "symbol": "GVR",
+        "name": "GVR",
+        "industry": "Sản xuất Nhựa - Hóa chất",
+        "weight": 4.44
+      },
+      {
+        "symbol": "VCB",
+        "name": "Vietcombank",
+        "industry": "Ngân hàng",
+        "weight": 4.44
+      },
+      {
+        "symbol": "FPT",
+        "name": "Tập đoàn FPT",
+        "industry": "Công nghệ và thông tin",
+        "weight": 4.2
+      },
+      {
+        "symbol": "BID",
+        "name": "BIDV",
+        "industry": "Ngân hàng",
+        "weight": 3.59
+      },
+      {
+        "symbol": "VTP",
+        "name": "VTP",
+        "industry": "Vận tải - Kho bãi",
+        "weight": 1.75
+      },
+      {
+        "symbol": "MSN123009",
+        "name": "MSN123009",
+        "industry": "Thực phẩm - Đồ uống",
+        "weight": 8.84
+      },
+      {
+        "symbol": "VHM121025",
+        "name": "VHM121025",
+        "industry": "Bất động sản",
+        "weight": 6.65
+      }
+    ]
+  },
+  {
+    "id": "uveef",
+    "fmarketId": 58,
+    "code": "UVEEF",
+    "name": "QUỸ ĐẦU TƯ CỔ PHIẾU UNITED ESG VIỆT NAM",
+    "category": "equity",
+    "issuer": "UOBAM VIETNAM",
+    "issuerFullName": "CÔNG TY CỔ PHẦN QUẢN LÝ QUỸ UOB ASSET MANAGEMENT (VIỆT NAM)",
+    "nav": 16350.82,
+    "navDate": "09/10/2026",
+    "ytdReturn": -10.8,
+    "return1Y": -9.05,
+    "return3Y": 34.23,
+    "returnInception": 63.51,
+    "managementFee": 1.75,
+    "inceptionDate": "30/09/2022",
+    "description": "Quỹ UVEEF đầu tư vào cổ phiếu niêm yết có nền tảng cơ bản tốt, đạt tiêu chuẩn cao các chuẩn mực ESG và có triển vọng tăng trưởng bền vững trong dài hạn.",
+    "holdings": [
+      {
+        "symbol": "VIC",
+        "name": "Tập đoàn Vingroup",
+        "industry": "Bất động sản",
+        "weight": 20.25
+      },
+      {
+        "symbol": "VHM",
+        "name": "CTCP Vinhomes",
+        "industry": "Bất động sản",
+        "weight": 6.69
+      },
+      {
+        "symbol": "VCB",
+        "name": "Vietcombank",
+        "industry": "Ngân hàng",
+        "weight": 5.69
+      },
+      {
+        "symbol": "MBB",
+        "name": "Ngân hàng Quân Đội",
+        "industry": "Ngân hàng",
+        "weight": 4.54
+      },
+      {
+        "symbol": "TCB",
+        "name": "Techcombank",
+        "industry": "Ngân hàng",
+        "weight": 4.33
+      },
+      {
+        "symbol": "CTG",
+        "name": "VietinBank",
+        "industry": "Ngân hàng",
+        "weight": 4.18
+      },
+      {
+        "symbol": "HPG",
+        "name": "Tập đoàn Hòa Phát",
+        "industry": "Vật liệu xây dựng",
+        "weight": 3.92
+      },
+      {
+        "symbol": "HDB",
+        "name": "HDBank",
+        "industry": "Ngân hàng",
+        "weight": 3.77
+      },
+      {
+        "symbol": "GMD",
+        "name": "Gemadept",
+        "industry": "Vận tải - Kho bãi",
+        "weight": 3.5
+      },
+      {
+        "symbol": "MWG",
+        "name": "Thế Giới Di Động",
+        "industry": "Bán lẻ",
+        "weight": 3.43
+      }
+    ]
+  },
+  {
+    "id": "vlbf",
+    "fmarketId": 53,
+    "code": "VLBF",
+    "name": "QUỸ ĐẦU TƯ TRÁI PHIẾU THANH KHOẢN VINACAPITAL",
+    "category": "bond",
+    "issuer": "VINACAPITAL",
+    "issuerFullName": "CÔNG TY CỔ PHẦN QUẢN LÝ QUỸ VINACAPITAL",
+    "nav": 12797.02,
+    "navDate": "09/10/2026",
+    "ytdReturn": 4.11,
+    "return1Y": 5.34,
+    "return3Y": 14.96,
+    "returnInception": 27.97,
+    "managementFee": 0.9,
+    "inceptionDate": "13/08/2021",
+    "description": "Quỹ tối ưu lợi nhuận bằng cách đầu tư vào tài sản có thu nhập cố định tốt, thanh khoản linh hoạt, phù hợp với nhà đầu tư có mục đích đầu tư ngắn hoặc trung hạn.",
+    "holdings": [
+      {
+        "symbol": "MSN123010",
+        "name": "MSN123010",
+        "industry": "Thực phẩm - Đồ uống",
+        "weight": 15.46
+      },
+      {
+        "symbol": "VHM12612",
+        "name": "VHM12612",
+        "industry": "Bất động sản",
+        "weight": 8.79
+      },
+      {
+        "symbol": "HDC12501",
+        "name": "HDC12501",
+        "industry": "Bất động sản",
+        "weight": 6.6
+      },
+      {
+        "symbol": "VHM121025",
+        "name": "VHM121025",
+        "industry": "Bất động sản",
+        "weight": 0.67
+      }
+    ]
+  },
+  {
+    "id": "ntppf",
+    "fmarketId": 52,
+    "code": "NTPPF",
+    "name": "QUỸ ĐẦU TƯ CỔ PHIẾU TRIỂN VỌNG NTP",
+    "category": "equity",
+    "issuer": "NTP AM",
+    "issuerFullName": "CÔNG TY CỔ PHẦN QUẢN LÝ QUỸ NTP",
+    "nav": 9587.39,
+    "navDate": "09/10/2026",
+    "ytdReturn": -11.26,
+    "return1Y": -17.46,
+    "return3Y": -4.71,
+    "returnInception": -4.13,
+    "managementFee": 1.75,
+    "inceptionDate": "12/06/2022",
+    "description": "Quỹ áp dụng chiến lược đầu tư chủ động, phần lớn tài sản sẽ được phân bổ vào những doanh nghiệp vốn hóa lớn trên thị trường, mang tính tiêu biểu.",
+    "holdings": [
+      {
+        "symbol": "MBB",
+        "name": "Ngân hàng Quân Đội",
+        "industry": "Ngân hàng",
+        "weight": 11.3
+      },
+      {
+        "symbol": "HCM",
+        "name": "Chứng khoán HSC",
+        "industry": "Chứng khoán",
+        "weight": 6.3
+      },
+      {
+        "symbol": "FPT",
+        "name": "Tập đoàn FPT",
+        "industry": "Công nghệ và thông tin",
+        "weight": 5.6
+      },
+      {
+        "symbol": "STB",
+        "name": "Sacombank",
+        "industry": "Ngân hàng",
+        "weight": 5.2
+      },
+      {
+        "symbol": "TCB",
+        "name": "Techcombank",
+        "industry": "Ngân hàng",
+        "weight": 4.6
+      },
+      {
+        "symbol": "HPG",
+        "name": "Tập đoàn Hòa Phát",
+        "industry": "Vật liệu xây dựng",
+        "weight": 4.3
+      },
+      {
+        "symbol": "MWG",
+        "name": "Thế Giới Di Động",
+        "industry": "Bán lẻ",
+        "weight": 4.1
+      },
+      {
+        "symbol": "GMD",
+        "name": "Gemadept",
+        "industry": "Vận tải - Kho bãi",
+        "weight": 4
+      },
+      {
+        "symbol": "MSN",
+        "name": "Tập đoàn Masan",
+        "industry": "Thực phẩm - Đồ uống",
+        "weight": 4
+      },
+      {
+        "symbol": "CTD",
+        "name": "CTD",
+        "industry": "Xây dựng",
+        "weight": 4
+      }
+    ]
+  },
+  {
+    "id": "asbf",
+    "fmarketId": 51,
+    "code": "ASBF",
+    "name": "QUỸ ĐẦU TƯ TRÁI PHIẾU AN TOÀN AMBER",
+    "category": "bond",
+    "issuer": "AMBER CAPITAL",
+    "issuerFullName": "CÔNG TY CỔ PHẦN QUẢN LÝ QUỸ AMBER",
+    "nav": 13245.3,
+    "navDate": "09/10/2026",
+    "ytdReturn": 5.05,
+    "return1Y": 6.24,
+    "return3Y": 18.18,
+    "returnInception": 32.45,
+    "managementFee": 0.85,
+    "inceptionDate": "25/05/2021",
+    "description": "ASBF là quỹ đầu tư trái phiếu siêu an toàn trên thị trường với mục tiêu tối ưu hóa lợi nhuận và đảm bảo an toàn cho vốn ngay cả khi thị trường nhiều biến động.",
+    "holdings": [
+      {
+        "symbol": "MSN123009",
+        "name": "MSN123009",
+        "industry": "Thực phẩm - Đồ uống",
+        "weight": 9.15
+      },
+      {
+        "symbol": "CII425021",
+        "name": "CII425021",
+        "industry": "Xây dựng",
+        "weight": 8.77
+      }
+    ]
+  },
+  {
+    "id": "maff",
+    "fmarketId": 50,
+    "code": "MAFF",
+    "name": "QUỸ ĐẦU TƯ TRÁI PHIẾU LINH HOẠT MIRAE ASSET VIỆT NAM",
+    "category": "bond",
+    "issuer": "MIRAE ASSET",
+    "issuerFullName": "CÔNG TY TNHH QUẢN LÝ QUỸ MIREA ASSET VIỆT NAM",
+    "nav": 14054.09,
+    "navDate": "09/10/2026",
+    "ytdReturn": 5.64,
+    "return1Y": 6.87,
+    "return3Y": 23.27,
+    "returnInception": 40.54,
+    "managementFee": 0.8,
+    "inceptionDate": "17/12/2021",
+    "description": "Mục tiêu của Quỹ là tạo ra lợi nhuận hấp dẫn, cạnh tranh hơn sản phẩm thu nhập cố định khác trên cơ sở linh hoạt kết hợp các nhóm sản phẩm có lợi suất hấp dẫn.",
+    "holdings": [
+      {
+        "symbol": "VHM121025",
+        "name": "VHM121025",
+        "industry": "Bất động sản",
+        "weight": 11.24
+      },
+      {
+        "symbol": "BVB125003",
+        "name": "BVB125003",
+        "industry": "Ngân hàng",
+        "weight": 11.16
+      },
+      {
+        "symbol": "BAF126003",
+        "name": "BAF126003",
+        "industry": "Nông - Lâm - Ngư",
+        "weight": 7.52
+      },
+      {
+        "symbol": "LPB121036",
+        "name": "LPB121036",
+        "industry": "Ngân hàng",
+        "weight": 6.57
+      },
+      {
+        "symbol": "NLG12501",
+        "name": "NLG12501",
+        "industry": "Bất động sản",
+        "weight": 5.98
+      },
+      {
+        "symbol": "MSN123010",
+        "name": "MSN123010",
+        "industry": "Thực phẩm - Đồ uống",
+        "weight": 4.06
+      },
+      {
+        "symbol": "MSN123008",
+        "name": "MSN123008",
+        "industry": "Thực phẩm - Đồ uống",
+        "weight": 3.22
+      },
+      {
+        "symbol": "LPB122011",
+        "name": "LPB122011",
+        "industry": "Ngân hàng",
+        "weight": 3
+      },
+      {
+        "symbol": "LPB125027",
+        "name": "LPB125027",
+        "industry": "Ngân hàng",
+        "weight": 2.73
+      },
+      {
+        "symbol": "VBA123036",
+        "name": "VBA123036",
+        "industry": "Ngân hàng",
+        "weight": 1.7
+      }
+    ]
+  },
+  {
+    "id": "vlgf",
+    "fmarketId": 49,
+    "code": "VLGF",
+    "name": "QUỸ ĐẦU TƯ TĂNG TRƯỞNG DÀI HẠN VIỆT NAM",
+    "category": "equity",
+    "issuer": "SSIAM",
+    "issuerFullName": "CÔNG TY TNHH QUẢN LÝ QUỸ SSI",
+    "nav": 11904.1,
+    "navDate": "09/10/2026",
+    "ytdReturn": -11.13,
+    "return1Y": -11.38,
+    "return3Y": 26.11,
+    "returnInception": 19.04,
+    "managementFee": 1.5,
+    "inceptionDate": "16/11/2021",
+    "description": "Quỹ đầu tư tập trung vào các cổ phiếu chất lượng cao của các công ty có quản trị tốt, có vị thế hàng đầu trong ngành, có triển vọng tăng trưởng dài hạn.",
+    "holdings": [
+      {
+        "symbol": "MWG",
+        "name": "Thế Giới Di Động",
+        "industry": "Bán lẻ",
+        "weight": 12.44
+      },
+      {
+        "symbol": "VCB",
+        "name": "Vietcombank",
+        "industry": "Ngân hàng",
+        "weight": 7.61
+      },
+      {
+        "symbol": "CTG",
+        "name": "VietinBank",
+        "industry": "Ngân hàng",
+        "weight": 7.14
+      },
+      {
+        "symbol": "ACB",
+        "name": "Ngân hàng Á Châu",
+        "industry": "Ngân hàng",
+        "weight": 5.28
+      },
+      {
+        "symbol": "GMD",
+        "name": "Gemadept",
+        "industry": "Vận tải - Kho bãi",
+        "weight": 4.98
+      },
+      {
+        "symbol": "TCB",
+        "name": "Techcombank",
+        "industry": "Ngân hàng",
+        "weight": 4.97
+      },
+      {
+        "symbol": "VHM",
+        "name": "CTCP Vinhomes",
+        "industry": "Bất động sản",
+        "weight": 4.88
+      },
+      {
+        "symbol": "MSN",
+        "name": "Tập đoàn Masan",
+        "industry": "Thực phẩm - Đồ uống",
+        "weight": 4.55
+      },
+      {
+        "symbol": "MBB",
+        "name": "Ngân hàng Quân Đội",
+        "industry": "Ngân hàng",
+        "weight": 4.54
+      },
+      {
+        "symbol": "HDB",
+        "name": "HDBank",
+        "industry": "Ngân hàng",
+        "weight": 4.51
+      }
+    ]
+  },
+  {
+    "id": "mbvf",
+    "fmarketId": 47,
+    "code": "MBVF",
+    "name": "QUỸ ĐẦU TƯ GIÁ TRỊ MB CAPITAL",
+    "category": "equity",
+    "issuer": "MBCAPITAL",
+    "issuerFullName": "CÔNG TY CỔ PHẦN QUẢN LÝ QUỸ ĐẦU TƯ MB",
+    "nav": 26521,
+    "navDate": "09/10/2026",
+    "ytdReturn": -1.35,
+    "return1Y": -4.53,
+    "return3Y": 46.86,
+    "returnInception": 165.21,
+    "managementFee": 1.5,
+    "inceptionDate": "25/04/2014",
+    "description": "Quỹ đầu tư trung và dài hạn vào các cổ phiếu được định giá rẻ so với lợi nhuận hoặc tài sản, nhằm tối ưu hóa hiệu quả đầu tư.",
+    "holdings": [
+      {
+        "symbol": "ACB",
+        "name": "Ngân hàng Á Châu",
+        "industry": "Ngân hàng",
+        "weight": 11.87
+      },
+      {
+        "symbol": "TCB",
+        "name": "Techcombank",
+        "industry": "Ngân hàng",
+        "weight": 10.3
+      },
+      {
+        "symbol": "TPB",
+        "name": "TPBank",
+        "industry": "Ngân hàng",
+        "weight": 4.82
+      },
+      {
+        "symbol": "VIB",
+        "name": "VIBank",
+        "industry": "Ngân hàng",
+        "weight": 4.79
+      },
+      {
+        "symbol": "QTP",
+        "name": "QTP",
+        "industry": "Tiện ích",
+        "weight": 3.78
+      },
+      {
+        "symbol": "CTG",
+        "name": "VietinBank",
+        "industry": "Ngân hàng",
+        "weight": 3.47
+      },
+      {
+        "symbol": "QNS",
+        "name": "Đường Quảng Ngãi",
+        "industry": "Thực phẩm - Đồ uống",
+        "weight": 3.39
+      },
+      {
+        "symbol": "TCI",
+        "name": "TCI",
+        "industry": "Chứng khoán",
+        "weight": 3.31
+      },
+      {
+        "symbol": "DPR",
+        "name": "DPR",
+        "industry": "Sản xuất Nhựa - Hóa chất",
+        "weight": 3.22
+      },
+      {
+        "symbol": "DSE125018",
+        "name": "DSE125018",
+        "industry": "Chứng khoán",
+        "weight": 3.9
+      }
+    ]
+  },
+  {
+    "id": "mbbond",
+    "fmarketId": 48,
+    "code": "MBBOND",
+    "name": "QUỸ ĐẦU TƯ TRÁI PHIẾU MB",
+    "category": "bond",
+    "issuer": "MBCAPITAL",
+    "issuerFullName": "CÔNG TY CỔ PHẦN QUẢN LÝ QUỸ ĐẦU TƯ MB",
+    "nav": 17170,
+    "navDate": "09/10/2026",
+    "ytdReturn": 5.34,
+    "return1Y": 6.93,
+    "return3Y": 24.65,
+    "returnInception": 71.7,
+    "managementFee": 1.2,
+    "inceptionDate": "26/03/2018",
+    "description": "Quỹ MBBOND đầu tư vào các loại trái phiếu, các công cụ có thu nhập cố định mang đến cho Nhà đầu tư nguồn thu nhập hấp dẫn, ổn định và an toàn.",
+    "holdings": [
+      {
+        "symbol": "NVL122001",
+        "name": "NVL122001",
+        "industry": "Bất động sản",
+        "weight": 64.29
+      },
+      {
+        "symbol": "VDS12504",
+        "name": "VDS12504",
+        "industry": "Chứng khoán",
+        "weight": 5.56
+      },
+      {
+        "symbol": "NLG12501",
+        "name": "NLG12501",
+        "industry": "Bất động sản",
+        "weight": 0.37
+      }
+    ]
+  },
+  {
+    "id": "vcbf-mgf",
+    "fmarketId": 46,
+    "code": "VCBF-MGF",
+    "name": "QUỸ ĐẦU TƯ CỔ PHIẾU TĂNG TRƯỞNG VCBF",
+    "category": "equity",
+    "issuer": "VIETCOMBANK FUND",
+    "issuerFullName": "CÔNG TY TNHH QUẢN LÝ QUỸ ĐẦU TƯ CHỨNG KHOÁN VIETCOMBANK",
+    "nav": 13377.29,
+    "navDate": "09/10/2026",
+    "ytdReturn": -6.59,
+    "return1Y": -9.73,
+    "return3Y": 30.08,
+    "returnInception": 33.77,
+    "managementFee": 1.9,
+    "inceptionDate": "29/10/2021",
+    "description": "VCBF-MGF là quỹ mở cổ phiếu với mục tiêu đầu tư chính của Quỹ là tăng trưởng tài sản đầu tư trong trung và dài hạn.",
+    "holdings": [
+      {
+        "symbol": "MBB",
+        "name": "Ngân hàng Quân Đội",
+        "industry": "Ngân hàng",
+        "weight": 8.46
+      },
+      {
+        "symbol": "DGW",
+        "name": "Thế Giới Số (Digiworld)",
+        "industry": "Bán buôn",
+        "weight": 6.19
+      },
+      {
+        "symbol": "ACB",
+        "name": "Ngân hàng Á Châu",
+        "industry": "Ngân hàng",
+        "weight": 5.79
+      },
+      {
+        "symbol": "FPT",
+        "name": "Tập đoàn FPT",
+        "industry": "Công nghệ và thông tin",
+        "weight": 5.15
+      },
+      {
+        "symbol": "BVH",
+        "name": "Tập đoàn Bảo Việt",
+        "industry": "Bảo hiểm",
+        "weight": 5.06
+      },
+      {
+        "symbol": "MWG",
+        "name": "Thế Giới Di Động",
+        "industry": "Bán lẻ",
+        "weight": 5.05
+      },
+      {
+        "symbol": "BWE",
+        "name": "BWE",
+        "industry": "Tiện ích",
+        "weight": 4.8
+      },
+      {
+        "symbol": "CTD",
+        "name": "CTD",
+        "industry": "Xây dựng",
+        "weight": 4.42
+      },
+      {
+        "symbol": "PVS",
+        "name": "Dịch vụ Kỹ thuật Dầu khí",
+        "industry": "Khai khoáng",
+        "weight": 3.86
+      },
+      {
+        "symbol": "TLG",
+        "name": "TLG",
+        "industry": "Sản xuất Phụ trợ",
+        "weight": 3.32
+      }
+    ]
+  },
+  {
+    "id": "pvbf",
+    "fmarketId": 45,
+    "code": "PVBF",
+    "name": "QUỸ ĐẦU TƯ TRÁI PHIẾU PVCOM",
+    "category": "bond",
+    "issuer": "PVCB CAPITAL",
+    "issuerFullName": "CÔNG TY CỔ PHẦN QUẢN LÝ QUỸ NGÂN HÀNG TMCP ĐẠI CHÚNG VIỆT NAM",
+    "nav": 15723.71,
+    "navDate": "09/10/2026",
+    "ytdReturn": 3.75,
+    "return1Y": 4.67,
+    "return3Y": 20.22,
+    "returnInception": 57.24,
+    "managementFee": 0.5,
+    "inceptionDate": "07/02/2020",
+    "description": "Quỹ đầu tư chủ yếu vào trái phiếu Chính phủ, trái phiếu doanh nghiệp hàng đầu nhằm mang lại lợi nhuận kỳ vọng bền vững và độ an toàn cao.",
+    "holdings": [
+      {
+        "symbol": "MSN123009",
+        "name": "MSN123009",
+        "industry": "Thực phẩm - Đồ uống",
+        "weight": 22.35
+      },
+      {
+        "symbol": "VHM121025",
+        "name": "VHM121025",
+        "industry": "Bất động sản",
+        "weight": 20.99
+      },
+      {
+        "symbol": "KBCL12601",
+        "name": "KBCL12601",
+        "industry": "Bất động sản",
+        "weight": 12.88
+      }
+    ]
+  },
+  {
+    "id": "tblf",
+    "fmarketId": 41,
+    "code": "TBLF",
+    "name": "QUỸ ĐẦU TƯ CỔ PHIẾU TĂNG TRƯỞNG BALLAD VIỆT NAM",
+    "category": "equity",
+    "issuer": "SGIC",
+    "issuerFullName": "CÔNG TY CỔ PHẦN QUẢN LÝ QUỸ ĐẦU TƯ SGI",
+    "nav": 11280.75,
+    "navDate": "09/10/2026",
+    "ytdReturn": 2.9,
+    "return1Y": 5.27,
+    "return3Y": 42.38,
+    "returnInception": 12.81,
+    "managementFee": 1.3,
+    "inceptionDate": "30/09/2021",
+    "description": "Quỹ Ballad Việt Nam hướng tới mục tiêu lợi nhuận vượt trội nhờ phân bổ tập trung vào những cổ phiếu hàng đầu có lợi thế cạnh tranh mạnh mẽ.",
+    "holdings": [
+      {
+        "symbol": "MWG",
+        "name": "Thế Giới Di Động",
+        "industry": "Bán lẻ",
+        "weight": 4.24
+      },
+      {
+        "symbol": "VIP",
+        "name": "VIP",
+        "industry": "Vận tải - Kho bãi",
+        "weight": 4.05
+      },
+      {
+        "symbol": "FMC",
+        "name": "Thực phẩm Sao Ta",
+        "industry": "Chế biến thủy sản",
+        "weight": 3.91
+      },
+      {
+        "symbol": "TLG",
+        "name": "TLG",
+        "industry": "Sản xuất Phụ trợ",
+        "weight": 3.87
+      },
+      {
+        "symbol": "DRI",
+        "name": "DRI",
+        "industry": "Sản phẩm cao su",
+        "weight": 2.67
+      },
+      {
+        "symbol": "DPR",
+        "name": "DPR",
+        "industry": "Sản xuất Nhựa - Hóa chất",
+        "weight": 2.26
+      },
+      {
+        "symbol": "FPT",
+        "name": "Tập đoàn FPT",
+        "industry": "Công nghệ và thông tin",
+        "weight": 2.03
+      },
+      {
+        "symbol": "BWE",
+        "name": "BWE",
+        "industry": "Tiện ích",
+        "weight": 1.37
+      },
+      {
+        "symbol": "SIP",
+        "name": "SIP",
+        "industry": "Tiện ích",
+        "weight": 1.04
+      },
+      {
+        "symbol": "PNJ",
+        "name": "Vàng bạc Phú Nhuận",
+        "industry": "Sản xuất Phụ trợ",
+        "weight": 0.97
+      }
+    ]
+  },
+  {
+    "id": "vndbf",
+    "fmarketId": 37,
+    "code": "VNDBF",
+    "name": "QUỸ ĐẦU TƯ TRÁI PHIẾU VND",
+    "category": "bond",
+    "issuer": "IPA PARTNER",
+    "issuerFullName": "CÔNG TY TNHH QUẢN LÝ QUỸ ĐẦU TƯ IPA PARTNER",
+    "nav": 16383.54,
+    "navDate": "09/10/2026",
+    "ytdReturn": 5.56,
+    "return1Y": 7.16,
+    "return3Y": 24.35,
+    "returnInception": 63.84,
+    "managementFee": 1.1,
+    "inceptionDate": "05/07/2019",
+    "description": "Quỹ tìm kiếm lợi nhuận ổn định và dài hạn cho Nhà đầu tư thông qua việc đầu tư vào các tài sản có thu nhập cố định có uy tín và có chất lượng tín dụng cao.",
+    "holdings": [
+      {
+        "symbol": "CVT122009",
+        "name": "CVT122009",
+        "industry": "Vật liệu xây dựng",
+        "weight": 19.46
+      },
+      {
+        "symbol": "NLG12501",
+        "name": "NLG12501",
+        "industry": "Bất động sản",
+        "weight": 12.72
+      },
+      {
+        "symbol": "TCX126011",
+        "name": "TCX126011",
+        "industry": "Chứng khoán",
+        "weight": 8.65
+      },
+      {
+        "symbol": "VHM121025",
+        "name": "VHM121025",
+        "industry": "Bất động sản",
+        "weight": 8.6
+      },
+      {
+        "symbol": "MSN123008",
+        "name": "MSN123008",
+        "industry": "Thực phẩm - Đồ uống",
+        "weight": 7.48
+      },
+      {
+        "symbol": "VBA123036",
+        "name": "VBA123036",
+        "industry": "Ngân hàng",
+        "weight": 5.38
+      },
+      {
+        "symbol": "KBCL12601",
+        "name": "KBCL12601",
+        "industry": "Bất động sản",
+        "weight": 5.35
+      },
+      {
+        "symbol": "HDB125011",
+        "name": "HDB125011",
+        "industry": "Ngân hàng",
+        "weight": 1.04
+      },
+      {
+        "symbol": "CII426028",
+        "name": "CII426028",
+        "industry": "Xây dựng",
+        "weight": 0.91
+      },
+      {
+        "symbol": "CTG121031",
+        "name": "CTG121031",
+        "industry": "Ngân hàng",
+        "weight": 0.12
+      }
+    ]
+  },
+  {
+    "id": "vndaf",
+    "fmarketId": 38,
+    "code": "VNDAF",
+    "name": "QUỸ ĐẦU TƯ CHỦ ĐỘNG VND",
+    "category": "equity",
+    "issuer": "IPA PARTNER",
+    "issuerFullName": "CÔNG TY TNHH QUẢN LÝ QUỸ ĐẦU TƯ IPA PARTNER",
+    "nav": 18049.76,
+    "navDate": "09/10/2026",
+    "ytdReturn": -2.72,
+    "return1Y": -1.2,
+    "return3Y": 25.87,
+    "returnInception": 80.5,
+    "managementFee": 1.5,
+    "inceptionDate": "12/01/2018",
+    "description": "Quỹ đầu tư vào các doanh nghiệp niêm yết hàng đầu, có hiệu quả kinh doanh tốt nhất nhằm mang lại sự tăng trưởng tài sản trong dài hạn.",
+    "holdings": [
+      {
+        "symbol": "FPT",
+        "name": "Tập đoàn FPT",
+        "industry": "Công nghệ và thông tin",
+        "weight": 9.68
+      },
+      {
+        "symbol": "VNM",
+        "name": "Vinamilk",
+        "industry": "Thực phẩm - Đồ uống",
+        "weight": 6.78
+      },
+      {
+        "symbol": "VIB",
+        "name": "VIBank",
+        "industry": "Ngân hàng",
+        "weight": 3.99
+      },
+      {
+        "symbol": "EIB",
+        "name": "Eximbank",
+        "industry": "Ngân hàng",
+        "weight": 3.87
+      },
+      {
+        "symbol": "SSI",
+        "name": "Chứng khoán SSI",
+        "industry": "Chứng khoán",
+        "weight": 1.18
+      },
+      {
+        "symbol": "REE",
+        "name": "Cơ Điện Lạnh",
+        "industry": "Thiết bị điện",
+        "weight": 1.04
+      },
+      {
+        "symbol": "HCM",
+        "name": "Chứng khoán HSC",
+        "industry": "Chứng khoán",
+        "weight": 0.91
+      },
+      {
+        "symbol": "BID",
+        "name": "BIDV",
+        "industry": "Ngân hàng",
+        "weight": 0.27
+      }
+    ]
+  },
+  {
+    "id": "magef",
+    "fmarketId": 35,
+    "code": "MAGEF",
+    "name": "QUỸ ĐẦU TƯ CỔ PHIẾU TĂNG TRƯỞNG MIRAE ASSET VIỆT NAM",
+    "category": "equity",
+    "issuer": "MIRAE ASSET",
+    "issuerFullName": "CÔNG TY TNHH QUẢN LÝ QUỸ MIREA ASSET VIỆT NAM",
+    "nav": 20645.49,
+    "navDate": "09/10/2026",
+    "ytdReturn": -6.87,
+    "return1Y": -6.04,
+    "return3Y": 48.73,
+    "returnInception": 106.45,
+    "managementFee": 1.75,
+    "inceptionDate": "23/07/2019",
+    "description": "Quỹ đầu tư vào các cổ phiếu niêm yết có tiềm năng tăng trưởng tốt, cổ phiếu của các công ty đứng đầu ngành nhằm gia tăng giá trị tài sản ròng trong dài hạn.",
+    "holdings": [
+      {
+        "symbol": "VIC",
+        "name": "Tập đoàn Vingroup",
+        "industry": "Bất động sản",
+        "weight": 11.34
+      },
+      {
+        "symbol": "HPG",
+        "name": "Tập đoàn Hòa Phát",
+        "industry": "Vật liệu xây dựng",
+        "weight": 9.6
+      },
+      {
+        "symbol": "MBB",
+        "name": "Ngân hàng Quân Đội",
+        "industry": "Ngân hàng",
+        "weight": 5.27
+      },
+      {
+        "symbol": "CTG",
+        "name": "VietinBank",
+        "industry": "Ngân hàng",
+        "weight": 5.14
+      },
+      {
+        "symbol": "TCB",
+        "name": "Techcombank",
+        "industry": "Ngân hàng",
+        "weight": 4.83
+      },
+      {
+        "symbol": "VPB",
+        "name": "VPBank",
+        "industry": "Ngân hàng",
+        "weight": 4.63
+      },
+      {
+        "symbol": "MWG",
+        "name": "Thế Giới Di Động",
+        "industry": "Bán lẻ",
+        "weight": 4.62
+      },
+      {
+        "symbol": "VEA",
+        "name": "VEA",
+        "industry": "Sản xuất Thiết bị, máy móc",
+        "weight": 4.31
+      },
+      {
+        "symbol": "MSN",
+        "name": "Tập đoàn Masan",
+        "industry": "Thực phẩm - Đồ uống",
+        "weight": 4.23
+      },
+      {
+        "symbol": "VCB",
+        "name": "Vietcombank",
+        "industry": "Ngân hàng",
+        "weight": 4.18
+      }
+    ]
+  },
+  {
+    "id": "vcbf-bcf",
+    "fmarketId": 32,
+    "code": "VCBF-BCF",
+    "name": "QUỸ ĐẦU TƯ CỔ PHIẾU HÀNG ĐẦU VCBF",
+    "category": "equity",
+    "issuer": "VIETCOMBANK FUND",
+    "issuerFullName": "CÔNG TY TNHH QUẢN LÝ QUỸ ĐẦU TƯ CHỨNG KHOÁN VIETCOMBANK",
+    "nav": 40568.74,
+    "navDate": "09/10/2026",
+    "ytdReturn": -7.7,
+    "return1Y": -7.26,
+    "return3Y": 45.09,
+    "returnInception": 305.69,
+    "managementFee": 1.9,
+    "inceptionDate": "22/08/2014",
+    "description": "Quỹ đầu tư chủ yếu vào cổ phiếu, sử dụng phân tích các chỉ số cơ bản để lựa chọn công ty đầu tư nhằm gia tăng tài sản của quỹ trong trung và dài hạn.",
+    "holdings": [
+      {
+        "symbol": "MBB",
+        "name": "Ngân hàng Quân Đội",
+        "industry": "Ngân hàng",
+        "weight": 9.59
+      },
+      {
+        "symbol": "MWG",
+        "name": "Thế Giới Di Động",
+        "industry": "Bán lẻ",
+        "weight": 6
+      },
+      {
+        "symbol": "MSN",
+        "name": "Tập đoàn Masan",
+        "industry": "Thực phẩm - Đồ uống",
+        "weight": 5.94
+      },
+      {
+        "symbol": "CTG",
+        "name": "VietinBank",
+        "industry": "Ngân hàng",
+        "weight": 5.56
+      },
+      {
+        "symbol": "HPG",
+        "name": "Tập đoàn Hòa Phát",
+        "industry": "Vật liệu xây dựng",
+        "weight": 5.39
+      },
+      {
+        "symbol": "FPT",
+        "name": "Tập đoàn FPT",
+        "industry": "Công nghệ và thông tin",
+        "weight": 4.97
+      },
+      {
+        "symbol": "TCB",
+        "name": "Techcombank",
+        "industry": "Ngân hàng",
+        "weight": 4.18
+      },
+      {
+        "symbol": "ACB",
+        "name": "Ngân hàng Á Châu",
+        "industry": "Ngân hàng",
+        "weight": 4.11
+      },
+      {
+        "symbol": "VPB",
+        "name": "VPBank",
+        "industry": "Ngân hàng",
+        "weight": 3.93
+      },
+      {
+        "symbol": "BVH",
+        "name": "Tập đoàn Bảo Việt",
+        "industry": "Bảo hiểm",
+        "weight": 3.75
+      }
+    ]
+  },
+  {
+    "id": "vcbf-fif",
+    "fmarketId": 33,
+    "code": "VCBF-FIF",
+    "name": "QUỸ ĐẦU TƯ TRÁI PHIẾU VCBF",
+    "category": "bond",
+    "issuer": "VIETCOMBANK FUND",
+    "issuerFullName": "CÔNG TY TNHH QUẢN LÝ QUỸ ĐẦU TƯ CHỨNG KHOÁN VIETCOMBANK",
+    "nav": 16241,
+    "navDate": "09/10/2026",
+    "ytdReturn": 5.83,
+    "return1Y": 6.83,
+    "return3Y": 23.06,
+    "returnInception": 62.41,
+    "managementFee": 0.8,
+    "inceptionDate": "09/08/2019",
+    "description": "Quỹ đầu tư 100% tài sản vào các trái phiếu có chất lượng tín dụng tốt nhằm bảo toàn vốn ban đầu và mang lại thu nhập ổn định thường xuyên.",
+    "holdings": [
+      {
+        "symbol": "MSN123008",
+        "name": "MSN123008",
+        "industry": "Thực phẩm - Đồ uống",
+        "weight": 13.49
+      },
+      {
+        "symbol": "TNG124027",
+        "name": "TNG124027",
+        "industry": "Sản xuất Hàng gia dụng",
+        "weight": 10.4
+      },
+      {
+        "symbol": "CTD126006",
+        "name": "CTD126006",
+        "industry": "Xây dựng",
+        "weight": 10
+      },
+      {
+        "symbol": "VHM121025",
+        "name": "VHM121025",
+        "industry": "Bất động sản",
+        "weight": 9.7
+      },
+      {
+        "symbol": "DSE125018",
+        "name": "DSE125018",
+        "industry": "Chứng khoán",
+        "weight": 6.94
+      },
+      {
+        "symbol": "BCM12406",
+        "name": "BCM12406",
+        "industry": "Bất động sản",
+        "weight": 5.57
+      },
+      {
+        "symbol": "MSN123010",
+        "name": "MSN123010",
+        "industry": "Thực phẩm - Đồ uống",
+        "weight": 3.51
+      },
+      {
+        "symbol": "NLG12501",
+        "name": "NLG12501",
+        "industry": "Bất động sản",
+        "weight": 2.08
+      },
+      {
+        "symbol": "HDC12501",
+        "name": "HDC12501",
+        "industry": "Bất động sản",
+        "weight": 1.7
+      },
+      {
+        "symbol": "VBA124019",
+        "name": "VBA124019",
+        "industry": "Ngân hàng",
+        "weight": 0.89
+      }
+    ]
+  },
+  {
+    "id": "vcbf-tbf",
+    "fmarketId": 31,
+    "code": "VCBF-TBF",
+    "name": "QUỸ ĐẦU TƯ CÂN BẰNG CHIẾN LƯỢC VCBF",
+    "category": "balanced",
+    "issuer": "VIETCOMBANK FUND",
+    "issuerFullName": "CÔNG TY TNHH QUẢN LÝ QUỸ ĐẦU TƯ CHỨNG KHOÁN VIETCOMBANK",
+    "nav": 37610.24,
+    "navDate": "09/10/2026",
+    "ytdReturn": -2.36,
+    "return1Y": -1.76,
+    "return3Y": 39.35,
+    "returnInception": 276.1,
+    "managementFee": 1.5,
+    "inceptionDate": "24/12/2013",
+    "description": "Quỹ phân bổ tài sản vào Cổ phiếu và Tài sản có thu nhập cố định tùy thuộc vào điều kiện thị trường . Mục tiêu là mang lại lợi nhuận dài hạn.",
+    "holdings": [
+      {
+        "symbol": "MBB",
+        "name": "Ngân hàng Quân Đội",
+        "industry": "Ngân hàng",
+        "weight": 5.73
+      },
+      {
+        "symbol": "MWG",
+        "name": "Thế Giới Di Động",
+        "industry": "Bán lẻ",
+        "weight": 3.9
+      },
+      {
+        "symbol": "MSN",
+        "name": "Tập đoàn Masan",
+        "industry": "Thực phẩm - Đồ uống",
+        "weight": 3.56
+      },
+      {
+        "symbol": "CTG",
+        "name": "VietinBank",
+        "industry": "Ngân hàng",
+        "weight": 3.29
+      },
+      {
+        "symbol": "HPG",
+        "name": "Tập đoàn Hòa Phát",
+        "industry": "Vật liệu xây dựng",
+        "weight": 3.04
+      },
+      {
+        "symbol": "FPT",
+        "name": "Tập đoàn FPT",
+        "industry": "Công nghệ và thông tin",
+        "weight": 2.99
+      },
+      {
+        "symbol": "TCB",
+        "name": "Techcombank",
+        "industry": "Ngân hàng",
+        "weight": 2.58
+      },
+      {
+        "symbol": "MSN123010",
+        "name": "MSN123010",
+        "industry": "Thực phẩm - Đồ uống",
+        "weight": 3.74
+      },
+      {
+        "symbol": "CTD126006",
+        "name": "CTD126006",
+        "industry": "Xây dựng",
+        "weight": 3.7
+      },
+      {
+        "symbol": "MSN123008",
+        "name": "MSN123008",
+        "industry": "Thực phẩm - Đồ uống",
+        "weight": 2.74
+      }
+    ]
+  },
+  {
+    "id": "veof",
+    "fmarketId": 20,
+    "code": "VEOF",
+    "name": "QUỸ ĐẦU TƯ CỔ PHIẾU DOANH NGHIỆP HÀNG ĐẦU VINACAPITAL",
+    "category": "equity",
+    "issuer": "VINACAPITAL",
+    "issuerFullName": "CÔNG TY CỔ PHẦN QUẢN LÝ QUỸ VINACAPITAL",
+    "nav": 32238.41,
+    "navDate": "09/10/2026",
+    "ytdReturn": -8.72,
+    "return1Y": -12.48,
+    "return3Y": 31.85,
+    "returnInception": 222.38,
+    "managementFee": 1.75,
+    "inceptionDate": "01/07/2014",
+    "description": "Quỹ VEOF đầu tư vào cổ phiếu của những công ty đầu ngành trong những lĩnh vực đại diện nền kinh tế Việt Nam, có quy mô lớn hoặc lợi thế cạnh tranh khác biệt. Thông qua chiến lược quản lý chủ động và xây dựng danh mục đầu tư một cách kỷ luật, Quỹ hướng tới mục tiêu mang lại lợi nhuận vượt trội trong trung và dài hạn cho nhà đầu tư, đồng thời tối ưu hóa mối tương quan giữa lợi nhuận và rủi ro. Quỹ tập trung lựa chọn cổ phiếu của các doanh nghiệp có tiềm năng tăng trưởng cao đang được định giá thấp so với giá trị nội tại, ưu tiên cổ phiếu vốn hóa lớn và vừa của các công ty đầu ngành, điều chỉnh tỷ trọng ngành nghề và cổ phiếu phù hợp với từng chu kỳ kinh tế dưới quy trình kiểm soát rủi ro kỷ luật.",
+    "holdings": [
+      {
+        "symbol": "MBB",
+        "name": "Ngân hàng Quân Đội",
+        "industry": "Ngân hàng",
+        "weight": 7.94
+      },
+      {
+        "symbol": "CTG",
+        "name": "VietinBank",
+        "industry": "Ngân hàng",
+        "weight": 6.46
+      },
+      {
+        "symbol": "MWG",
+        "name": "Thế Giới Di Động",
+        "industry": "Bán lẻ",
+        "weight": 5.51
+      },
+      {
+        "symbol": "HPG",
+        "name": "Tập đoàn Hòa Phát",
+        "industry": "Vật liệu xây dựng",
+        "weight": 5.39
+      },
+      {
+        "symbol": "VCB",
+        "name": "Vietcombank",
+        "industry": "Ngân hàng",
+        "weight": 5.33
+      },
+      {
+        "symbol": "HDB",
+        "name": "HDBank",
+        "industry": "Ngân hàng",
+        "weight": 4.81
+      },
+      {
+        "symbol": "STB",
+        "name": "Sacombank",
+        "industry": "Ngân hàng",
+        "weight": 4.75
+      },
+      {
+        "symbol": "PHR",
+        "name": "PHR",
+        "industry": "Sản xuất Nhựa - Hóa chất",
+        "weight": 4.65
+      },
+      {
+        "symbol": "FRT",
+        "name": "Bán lẻ FPT (Long Châu)",
+        "industry": "Bán lẻ",
+        "weight": 4.61
+      },
+      {
+        "symbol": "TCB",
+        "name": "Techcombank",
+        "industry": "Ngân hàng",
+        "weight": 3.96
+      }
+    ]
+  },
+  {
+    "id": "vff",
+    "fmarketId": 21,
+    "code": "VFF",
+    "name": "QUỸ ĐẦU TƯ TRÁI PHIẾU NÂNG CAO VINACAPITAL",
+    "category": "bond",
+    "issuer": "VINACAPITAL",
+    "issuerFullName": "CÔNG TY CỔ PHẦN QUẢN LÝ QUỸ VINACAPITAL",
+    "nav": 27037.33,
+    "navDate": "09/10/2026",
+    "ytdReturn": 5.93,
+    "return1Y": 8.1,
+    "return3Y": 23.58,
+    "returnInception": 170.37,
+    "managementFee": 0.95,
+    "inceptionDate": "01/04/2013",
+    "description": "Quỹ VFF đầu tư vào các công cụ có thu nhập cố định như trái phiếu doanh nghiệp, chứng chỉ tiền gửi, tiền gửi. Thông qua xây dựng danh mục đa dạng chất lượng cao trên nền tảng kỷ luật quản trị rủi ro nghiêm ngặt, Quỹ hướng tới lợi nhuận bền vững. Quỹ tập trung phân bổ vào các tổ chức phát hành có nền tảng tài chính vững mạnh và dòng tiền ổn định, mọi tài sản đều phải vượt qua quy trình thẩm định nghiêm ngặt và đạt điểm tín nhiệm cao theo hệ thống xếp hạng nội bộ của VinaCapital nhằm đảm bảo chất lượng tín dụng tối ưu và bảo toàn vốn. Quỹ kết hợp phân tích định lượng và định tính cùng nguyên tắc đa dạng hóa nhiều ngành nghề để tối ưu hóa tỷ suất sinh lời trên mỗi đơn vị rủi ro, duy trì lợi nhuận ổn định dài hạn và thanh khoản hợp lý, chủ động ứng phó trước biến động thị trường.",
+    "holdings": [
+      {
+        "symbol": "VHM12612",
+        "name": "VHM12612",
+        "industry": "Bất động sản",
+        "weight": 12.44
+      },
+      {
+        "symbol": "BAF126003",
+        "name": "BAF126003",
+        "industry": "Nông - Lâm - Ngư",
+        "weight": 12.15
+      },
+      {
+        "symbol": "MSN123010",
+        "name": "MSN123010",
+        "industry": "Thực phẩm - Đồ uống",
+        "weight": 9.93
+      },
+      {
+        "symbol": "MSN123008",
+        "name": "MSN123008",
+        "industry": "Thực phẩm - Đồ uống",
+        "weight": 9.48
+      },
+      {
+        "symbol": "SHB125010",
+        "name": "SHB125010",
+        "industry": "Ngân hàng",
+        "weight": 8.89
+      },
+      {
+        "symbol": "SBT426026",
+        "name": "SBT426026",
+        "industry": "Thực phẩm - Đồ uống",
+        "weight": 8.24
+      },
+      {
+        "symbol": "DSE125018",
+        "name": "DSE125018",
+        "industry": "Chứng khoán",
+        "weight": 8.22
+      },
+      {
+        "symbol": "DSE125004",
+        "name": "DSE125004",
+        "industry": "Chứng khoán",
+        "weight": 3.72
+      },
+      {
+        "symbol": "HDC12501",
+        "name": "HDC12501",
+        "industry": "Bất động sản",
+        "weight": 3.05
+      },
+      {
+        "symbol": "HDC425001",
+        "name": "HDC425001",
+        "industry": "Bất động sản",
+        "weight": 3.03
+      }
+    ]
+  },
+  {
+    "id": "vibf",
+    "fmarketId": 22,
+    "code": "VIBF",
+    "name": "QUỸ ĐẦU TƯ CÂN BẰNG GẮN KẾT VINACAPITAL",
+    "category": "balanced",
+    "issuer": "VINACAPITAL",
+    "issuerFullName": "CÔNG TY CỔ PHẦN QUẢN LÝ QUỸ VINACAPITAL",
+    "nav": 19179.59,
+    "navDate": "09/10/2026",
+    "ytdReturn": -3.19,
+    "return1Y": -4.42,
+    "return3Y": 27.73,
+    "returnInception": 91.8,
+    "managementFee": 1.75,
+    "inceptionDate": "02/07/2019",
+    "description": "Quỹ VIBF đầu tư vào cổ phiếu và các tài sản có thu nhập cố định. Thông qua chiến lược phân bổ linh hoạt kết hợp sự ổn định từ công cụ thu nhập cố định với tiềm năng tăng trưởng từ danh mục cổ phiếu trên nền tảng kỷ luật quản trị rủi ro nghiêm ngặt, Quỹ hướng tới mục tiêu tối ưu hóa lợi nhuận. Quỹ phân bổ linh hoạt giữa cổ phiếu và trái phiếu tùy theo điều kiện thị trường nhằm tối đa hóa lợi nhuận trên một đơn vị rủi ro. Danh mục cổ phiếu áp dụng chiến lược chủ động tăng trưởng với mức định giá hợp lý, ưu tiên doanh nghiệp có lợi thế cạnh tranh rõ rệt, khả năng gia tăng thị phần và đội ngũ lãnh đạo có năng lực quản trị tốt, minh bạch. Danh mục thu nhập cố định tập trung vào trái phiếu doanh nghiệp, chứng chỉ tiền gửi và các công cụ khác được thẩm định nghiêm ngặt qua Hệ thống xếp hạng tín nhiệm nội bộ của VinaCapital nhằm đảm bảo chất lượng tín dụng cao, giảm biến động và gia tăng hiệu quả danh mục.",
+    "holdings": [
+      {
+        "symbol": "VCB",
+        "name": "Vietcombank",
+        "industry": "Ngân hàng",
+        "weight": 4.95
+      },
+      {
+        "symbol": "MBB",
+        "name": "Ngân hàng Quân Đội",
+        "industry": "Ngân hàng",
+        "weight": 3.89
+      },
+      {
+        "symbol": "HPG",
+        "name": "Tập đoàn Hòa Phát",
+        "industry": "Vật liệu xây dựng",
+        "weight": 3.49
+      },
+      {
+        "symbol": "DGW",
+        "name": "Thế Giới Số (Digiworld)",
+        "industry": "Bán buôn",
+        "weight": 2.64
+      },
+      {
+        "symbol": "TCB",
+        "name": "Techcombank",
+        "industry": "Ngân hàng",
+        "weight": 2.64
+      },
+      {
+        "symbol": "MSN123010",
+        "name": "MSN123010",
+        "industry": "Thực phẩm - Đồ uống",
+        "weight": 13.06
+      },
+      {
+        "symbol": "NLG12501",
+        "name": "NLG12501",
+        "industry": "Bất động sản",
+        "weight": 3.77
+      },
+      {
+        "symbol": "BCM12406",
+        "name": "BCM12406",
+        "industry": "Bất động sản",
+        "weight": 3.76
+      },
+      {
+        "symbol": "HDC12502",
+        "name": "HDC12502",
+        "industry": "Bất động sản",
+        "weight": 3.46
+      },
+      {
+        "symbol": "MSN123008",
+        "name": "MSN123008",
+        "industry": "Thực phẩm - Đồ uống",
+        "weight": 3.03
+      }
+    ]
+  },
+  {
+    "id": "vesaf",
+    "fmarketId": 23,
+    "code": "VESAF",
+    "name": "QUỸ ĐẦU TƯ CỔ PHIẾU TĂNG TRƯỞNG CHIẾN LƯỢC VINACAPITAL",
+    "category": "equity",
+    "issuer": "VINACAPITAL",
+    "issuerFullName": "CÔNG TY CỔ PHẦN QUẢN LÝ QUỸ VINACAPITAL",
+    "nav": 31370.49,
+    "navDate": "09/10/2026",
+    "ytdReturn": -6.55,
+    "return1Y": -11.83,
+    "return3Y": 19.76,
+    "returnInception": 213.7,
+    "managementFee": 1.75,
+    "inceptionDate": "18/04/2017",
+    "description": "Quỹ VESAF đầu tư vào cổ phiếu của những doanh nghiệp có nền tảng vững chắc và những công ty chưa được thị trường đánh giá hợp lý. Thông qua chiến lược quản lý chủ động và xây dựng danh mục đầu tư một cách kỷ luật, Quỹ hướng tới mục tiêu mang lại lợi nhuận vượt trội trong trung và dài hạn cho nhà đầu tư, đồng thời tối ưu hóa mối tương quan giữa lợi nhuận và rủi ro. Quỹ tập trung lựa chọn hai nhóm chính: (1) cổ phiếu của các doanh nghiệp có nền tảng vững chắc, khả năng tăng trưởng kép cao trong nhiều năm và đang giao dịch ở mức định giá hợp lý; (2) cổ phiếu chưa được thị trường chú ý nhưng có nhiều chất xúc tác gia tăng giá trị doanh nghiệp, điều chỉnh tỷ trọng ngành nghề và cổ phiếu phù hợp với từng chu kỳ kinh tế dưới quy trình kiểm soát rủi ro kỷ luật.",
+    "holdings": [
+      {
+        "symbol": "BVH",
+        "name": "Tập đoàn Bảo Việt",
+        "industry": "Bảo hiểm",
+        "weight": 5.92
+      },
+      {
+        "symbol": "VCB",
+        "name": "Vietcombank",
+        "industry": "Ngân hàng",
+        "weight": 5.9
+      },
+      {
+        "symbol": "MBB",
+        "name": "Ngân hàng Quân Đội",
+        "industry": "Ngân hàng",
+        "weight": 5.89
+      },
+      {
+        "symbol": "HPG",
+        "name": "Tập đoàn Hòa Phát",
+        "industry": "Vật liệu xây dựng",
+        "weight": 5.84
+      },
+      {
+        "symbol": "MWG",
+        "name": "Thế Giới Di Động",
+        "industry": "Bán lẻ",
+        "weight": 5.7
+      },
+      {
+        "symbol": "CTG",
+        "name": "VietinBank",
+        "industry": "Ngân hàng",
+        "weight": 5.27
+      },
+      {
+        "symbol": "TCB",
+        "name": "Techcombank",
+        "industry": "Ngân hàng",
+        "weight": 4.5
+      },
+      {
+        "symbol": "CTR",
+        "name": "Công trình Viettel",
+        "industry": "Công nghệ và thông tin",
+        "weight": 4.29
+      },
+      {
+        "symbol": "IDC",
+        "name": "Tổng Công ty IDICO",
+        "industry": "Tiện ích",
+        "weight": 4.26
+      },
+      {
+        "symbol": "ACB",
+        "name": "Ngân hàng Á Châu",
+        "industry": "Ngân hàng",
+        "weight": 4.22
+      }
+    ]
+  },
+  {
+    "id": "dcbf",
+    "fmarketId": 27,
+    "code": "DCBF",
+    "name": "QUỸ ĐẦU TƯ TRÁI PHIẾU DC",
+    "category": "bond",
+    "issuer": "DCVFM",
+    "issuerFullName": "CÔNG TY CỔ PHẦN QUẢN LÝ QUỸ DRAGON CAPITAL VIỆT NAM",
+    "nav": 30652.84,
+    "navDate": "09/10/2026",
+    "ytdReturn": 5.73,
+    "return1Y": 7.49,
+    "return3Y": 23.74,
+    "returnInception": 206.53,
+    "managementFee": 1.2,
+    "inceptionDate": "10/06/2013",
+    "description": "Quỹ DCBF đầu tư vào trái phiếu chính phủ, trái phiếu doanh nghiệp và các công cụ tiền tệ khác để tạo ra thu nhập ổn định.",
+    "holdings": [
+      {
+        "symbol": "BAF126003",
+        "name": "BAF126003",
+        "industry": "Nông - Lâm - Ngư",
+        "weight": 15.88
+      },
+      {
+        "symbol": "VPI124001",
+        "name": "VPI124001",
+        "industry": "Bất động sản",
+        "weight": 12.08
+      },
+      {
+        "symbol": "DSE125018",
+        "name": "DSE125018",
+        "industry": "Chứng khoán",
+        "weight": 10.57
+      },
+      {
+        "symbol": "MSN123008",
+        "name": "MSN123008",
+        "industry": "Thực phẩm - Đồ uống",
+        "weight": 10.13
+      },
+      {
+        "symbol": "MSN123009",
+        "name": "MSN123009",
+        "industry": "Thực phẩm - Đồ uống",
+        "weight": 5.87
+      },
+      {
+        "symbol": "HDC12501",
+        "name": "HDC12501",
+        "industry": "Bất động sản",
+        "weight": 5.29
+      },
+      {
+        "symbol": "VHM12612",
+        "name": "VHM12612",
+        "industry": "Bất động sản",
+        "weight": 5.24
+      },
+      {
+        "symbol": "KBCL12601 bond",
+        "name": "KBCL12601 bond",
+        "industry": "Bất động sản",
+        "weight": 4.24
+      }
+    ]
+  },
+  {
+    "id": "dcde",
+    "fmarketId": 25,
+    "code": "DCDE",
+    "name": "QUỸ ĐẦU TƯ CỔ PHIẾU TẬP TRUNG CỔ TỨC DC",
+    "category": "equity",
+    "issuer": "DCVFM",
+    "issuerFullName": "CÔNG TY CỔ PHẦN QUẢN LÝ QUỸ DRAGON CAPITAL VIỆT NAM",
+    "nav": 24582.29,
+    "navDate": "09/10/2026",
+    "ytdReturn": -14.58,
+    "return1Y": -21.05,
+    "return3Y": 19.9,
+    "returnInception": 191.82,
+    "managementFee": 1.93,
+    "inceptionDate": "28/02/2008",
+    "description": "Quỹ DCDE ưu tiên lựa chọn các doanh nghiệp có mức chi trả cổ tức tăng trưởng đều đặn vào danh mục.",
+    "holdings": [
+      {
+        "symbol": "MWG",
+        "name": "Thế Giới Di Động",
+        "industry": "Bán lẻ",
+        "weight": 5.95
+      },
+      {
+        "symbol": "VPB",
+        "name": "VPBank",
+        "industry": "Ngân hàng",
+        "weight": 5.78
+      },
+      {
+        "symbol": "TCB",
+        "name": "Techcombank",
+        "industry": "Ngân hàng",
+        "weight": 5.64
+      },
+      {
+        "symbol": "VHM",
+        "name": "CTCP Vinhomes",
+        "industry": "Bất động sản",
+        "weight": 5.58
+      },
+      {
+        "symbol": "BID",
+        "name": "BIDV",
+        "industry": "Ngân hàng",
+        "weight": 5.1
+      },
+      {
+        "symbol": "HDB",
+        "name": "HDBank",
+        "industry": "Ngân hàng",
+        "weight": 3.06
+      },
+      {
+        "symbol": "VCB",
+        "name": "Vietcombank",
+        "industry": "Ngân hàng",
+        "weight": 2.95
+      },
+      {
+        "symbol": "MBB",
+        "name": "Ngân hàng Quân Đội",
+        "industry": "Ngân hàng",
+        "weight": 2.76
+      },
+      {
+        "symbol": "HPG",
+        "name": "Tập đoàn Hòa Phát",
+        "industry": "Vật liệu xây dựng",
+        "weight": 2.59
+      },
+      {
+        "symbol": "DMX",
+        "name": "DMX",
+        "industry": "Bán lẻ",
+        "weight": 2.45
+      }
+    ]
+  },
+  {
+    "id": "dcds",
+    "fmarketId": 28,
+    "code": "DCDS",
+    "name": "QUỸ ĐẦU TƯ CHỨNG KHOÁN NĂNG ĐỘNG DC",
+    "category": "equity",
+    "issuer": "DCVFM",
+    "issuerFullName": "CÔNG TY CỔ PHẦN QUẢN LÝ QUỸ DRAGON CAPITAL VIỆT NAM",
+    "nav": 93099.64,
+    "navDate": "09/10/2026",
+    "ytdReturn": -13.09,
+    "return1Y": -14.79,
+    "return3Y": 45.57,
+    "returnInception": 831,
+    "managementFee": 1.95,
+    "inceptionDate": "20/05/2004",
+    "description": "DCDS là quỹ cổ phiếu có danh mục gồm cổ phiếu tăng trưởng và các tài sản tài chính đa dạng nhằm hướng đến lợi nhuận vượt trội và linh hoạt thích ứng thị trường.",
+    "holdings": [
+      {
+        "symbol": "VIC",
+        "name": "Tập đoàn Vingroup",
+        "industry": "Bất động sản",
+        "weight": 11.2
+      },
+      {
+        "symbol": "BID",
+        "name": "BIDV",
+        "industry": "Ngân hàng",
+        "weight": 7.73
+      },
+      {
+        "symbol": "VPB",
+        "name": "VPBank",
+        "industry": "Ngân hàng",
+        "weight": 6.4
+      },
+      {
+        "symbol": "TCB",
+        "name": "Techcombank",
+        "industry": "Ngân hàng",
+        "weight": 5.85
+      },
+      {
+        "symbol": "MWG",
+        "name": "Thế Giới Di Động",
+        "industry": "Bán lẻ",
+        "weight": 5.54
+      },
+      {
+        "symbol": "VHM",
+        "name": "CTCP Vinhomes",
+        "industry": "Bất động sản",
+        "weight": 3.93
+      },
+      {
+        "symbol": "HDB",
+        "name": "HDBank",
+        "industry": "Ngân hàng",
+        "weight": 3.57
+      },
+      {
+        "symbol": "HPG",
+        "name": "Tập đoàn Hòa Phát",
+        "industry": "Vật liệu xây dựng",
+        "weight": 2.88
+      },
+      {
+        "symbol": "FPT",
+        "name": "Tập đoàn FPT",
+        "industry": "Công nghệ và thông tin",
+        "weight": 2.67
+      },
+      {
+        "symbol": "GMD",
+        "name": "Gemadept",
+        "industry": "Vận tải - Kho bãi",
+        "weight": 2
+      }
+    ]
+  },
+  {
+    "id": "bvpf",
+    "fmarketId": 14,
+    "code": "BVPF",
+    "name": "QUỸ ĐẦU TƯ CỔ PHIẾU TRIỂN VỌNG BẢO VIỆT",
+    "category": "equity",
+    "issuer": "BAOVIETFUND",
+    "issuerFullName": "CÔNG TY TNHH QUẢN LÝ QUỸ BẢO VIỆT",
+    "nav": 20377,
+    "navDate": "09/10/2026",
+    "ytdReturn": -10.34,
+    "return1Y": -12.08,
+    "return3Y": 23.01,
+    "returnInception": 103.77,
+    "managementFee": 1.5,
+    "inceptionDate": "29/12/2016",
+    "description": "Quỹ hướng tới mục tiêu tạo ra lợi nhuận có tính chất bền vững và dài hạn cho nhà đầu tư thông qua việc khai thác hiệu quả cơ hội đầu tư vào các doanh nghiệp có nền tảng hoạt động tốt và triển vọng phát triển tại Việt Nam.",
+    "holdings": [
+      {
+        "symbol": "ACB",
+        "name": "Ngân hàng Á Châu",
+        "industry": "Ngân hàng",
+        "weight": 8.77
+      },
+      {
+        "symbol": "FPT",
+        "name": "Tập đoàn FPT",
+        "industry": "Công nghệ và thông tin",
+        "weight": 8.31
+      },
+      {
+        "symbol": "MBB",
+        "name": "Ngân hàng Quân Đội",
+        "industry": "Ngân hàng",
+        "weight": 7.77
+      },
+      {
+        "symbol": "QTP",
+        "name": "QTP",
+        "industry": "Tiện ích",
+        "weight": 6.24
+      },
+      {
+        "symbol": "TCB",
+        "name": "Techcombank",
+        "industry": "Ngân hàng",
+        "weight": 5.83
+      },
+      {
+        "symbol": "MWG",
+        "name": "Thế Giới Di Động",
+        "industry": "Bán lẻ",
+        "weight": 4.85
+      },
+      {
+        "symbol": "REE",
+        "name": "Cơ Điện Lạnh",
+        "industry": "Thiết bị điện",
+        "weight": 4.77
+      },
+      {
+        "symbol": "CTG",
+        "name": "VietinBank",
+        "industry": "Ngân hàng",
+        "weight": 4.51
+      },
+      {
+        "symbol": "VIB",
+        "name": "VIBank",
+        "industry": "Ngân hàng",
+        "weight": 4.22
+      },
+      {
+        "symbol": "ND2",
+        "name": "ND2",
+        "industry": "Xây dựng",
+        "weight": 3.79
+      }
+    ]
+  },
+  {
+    "id": "bvbf",
+    "fmarketId": 13,
+    "code": "BVBF",
+    "name": "QUỸ ĐẦU TƯ TRÁI PHIẾU BẢO VIỆT ",
+    "category": "bond",
+    "issuer": "BAOVIETFUND",
+    "issuerFullName": "CÔNG TY TNHH QUẢN LÝ QUỸ BẢO VIỆT",
+    "nav": 22837,
+    "navDate": "09/10/2026",
+    "ytdReturn": 4.89,
+    "return1Y": 5.92,
+    "return3Y": 20.68,
+    "returnInception": 138.37,
+    "managementFee": 0.5,
+    "inceptionDate": "20/05/2016",
+    "description": "Là sản phẩm đầu tư trong lĩnh vực Trái phiếu, phục vụ nhà đầu tư đại chúng, hướng tới mục tiêu tối ưu hóa lợi nhuận cho nhà đầu tư trên cơ sở tận dụng hiệu quả các cơ hội đầu tư lãi suất cố định.",
+    "holdings": [
+      {
+        "symbol": "NAB125004",
+        "name": "NAB125004",
+        "industry": "Ngân hàng",
+        "weight": 9.77
+      },
+      {
+        "symbol": "SHB125010",
+        "name": "SHB125010",
+        "industry": "Ngân hàng",
+        "weight": 9
+      },
+      {
+        "symbol": "VBA124019",
+        "name": "VBA124019",
+        "industry": "Ngân hàng",
+        "weight": 7.89
+      }
+    ]
+  },
+  {
+    "id": "bvfed",
+    "fmarketId": 12,
+    "code": "BVFED",
+    "name": "QUỸ ĐẦU TƯ CỔ PHIẾU NĂNG ĐỘNG BẢO VIỆT",
+    "category": "equity",
+    "issuer": "BAOVIETFUND",
+    "issuerFullName": "CÔNG TY TNHH QUẢN LÝ QUỸ BẢO VIỆT",
+    "nav": 29302,
+    "navDate": "09/10/2026",
+    "ytdReturn": -5.59,
+    "return1Y": -8.87,
+    "return3Y": 52.71,
+    "returnInception": 193.02,
+    "managementFee": 1,
+    "inceptionDate": "08/01/2014",
+    "description": "Là sản phẩm đầu tư vào rổ cổ phiếu VN30 gồm những cổ phiếu lớn, đầu ngành và có chất lượng tốt nhất. Mục tiêu của quỹ là tối đa hóa lợi nhuận dài hạn cho nhà đầu tư\ntrên cơ sở kết hợp giữa tăng trưởng vốn đầu tư và các dòng thu nhập từ tài sản đầu tư.",
+    "holdings": [
+      {
+        "symbol": "HPG",
+        "name": "Tập đoàn Hòa Phát",
+        "industry": "Vật liệu xây dựng",
+        "weight": 9.23
+      },
+      {
+        "symbol": "VPB",
+        "name": "VPBank",
+        "industry": "Ngân hàng",
+        "weight": 6.24
+      },
+      {
+        "symbol": "FPT",
+        "name": "Tập đoàn FPT",
+        "industry": "Công nghệ và thông tin",
+        "weight": 6.21
+      },
+      {
+        "symbol": "ACB",
+        "name": "Ngân hàng Á Châu",
+        "industry": "Ngân hàng",
+        "weight": 5.52
+      },
+      {
+        "symbol": "MBB",
+        "name": "Ngân hàng Quân Đội",
+        "industry": "Ngân hàng",
+        "weight": 5.16
+      },
+      {
+        "symbol": "TCB",
+        "name": "Techcombank",
+        "industry": "Ngân hàng",
+        "weight": 5.14
+      },
+      {
+        "symbol": "HDB",
+        "name": "HDBank",
+        "industry": "Ngân hàng",
+        "weight": 5.11
+      },
+      {
+        "symbol": "SHB",
+        "name": "SHB",
+        "industry": "Ngân hàng",
+        "weight": 4.31
+      },
+      {
+        "symbol": "MWG",
+        "name": "Thế Giới Di Động",
+        "industry": "Bán lẻ",
+        "weight": 4.15
+      },
+      {
+        "symbol": "LPB",
+        "name": "LPBank",
+        "industry": "Ngân hàng",
+        "weight": 2.87
+      }
+    ]
+  },
+  {
+    "id": "dfvn-caf",
+    "fmarketId": 29,
+    "code": "DFVN-CAF",
+    "name": "QUỸ ĐẦU TƯ TĂNG TRƯỞNG DFVN",
+    "category": "equity",
+    "issuer": "DFVN",
+    "issuerFullName": "CÔNG TY TNHH MTV QUẢN LÝ QUỸ DAIICHI LIFE VIỆT NAM",
+    "nav": 16550.11,
+    "navDate": "09/10/2026",
+    "ytdReturn": -6.24,
+    "return1Y": -8.67,
+    "return3Y": 17.67,
+    "returnInception": 65.5,
+    "managementFee": 1.5,
+    "inceptionDate": "03/01/2019",
+    "description": "Quỹ đầu tư vào danh mục cổ phiếu niêm yết trên TTCK VN một cách chủ động và linh hoạt, nhằm tăng trưởng tài sản cao hơn mức tăng của Thị trường trong dài hạn.",
+    "holdings": [
+      {
+        "symbol": "HDB",
+        "name": "HDBank",
+        "industry": "Ngân hàng",
+        "weight": 5.11
+      },
+      {
+        "symbol": "VCB",
+        "name": "Vietcombank",
+        "industry": "Ngân hàng",
+        "weight": 4.93
+      },
+      {
+        "symbol": "GMD",
+        "name": "Gemadept",
+        "industry": "Vận tải - Kho bãi",
+        "weight": 4.87
+      },
+      {
+        "symbol": "MWG",
+        "name": "Thế Giới Di Động",
+        "industry": "Bán lẻ",
+        "weight": 4.82
+      },
+      {
+        "symbol": "BSR",
+        "name": "Lọc hóa dầu Bình Sơn",
+        "industry": "Sản xuất",
+        "weight": 4.75
+      },
+      {
+        "symbol": "SAB",
+        "name": "Sabeco",
+        "industry": "Thực phẩm - Đồ uống",
+        "weight": 4.53
+      },
+      {
+        "symbol": "VPB",
+        "name": "VPBank",
+        "industry": "Ngân hàng",
+        "weight": 4.28
+      },
+      {
+        "symbol": "PVT",
+        "name": "Vận tải Dầu khí",
+        "industry": "Vận tải - Kho bãi",
+        "weight": 4.17
+      },
+      {
+        "symbol": "PVD",
+        "name": "Khoan Dầu khí",
+        "industry": "Khai khoáng",
+        "weight": 3.86
+      },
+      {
+        "symbol": "MBB",
+        "name": "Ngân hàng Quân Đội",
+        "industry": "Ngân hàng",
+        "weight": 3.85
+      }
+    ]
+  },
+  {
+    "id": "dfvn-fix",
+    "fmarketId": 30,
+    "code": "DFVN-FIX",
+    "name": "QUỸ ĐẦU TƯ TRÁI PHIẾU DFVN",
+    "category": "bond",
+    "issuer": "DFVN",
+    "issuerFullName": "CÔNG TY TNHH MTV QUẢN LÝ QUỸ DAIICHI LIFE VIỆT NAM",
+    "nav": 12462.01,
+    "navDate": "09/10/2026",
+    "ytdReturn": 4.49,
+    "return1Y": 5.79,
+    "return3Y": 13.03,
+    "returnInception": 24.62,
+    "managementFee": 0.9,
+    "inceptionDate": "04/02/2021",
+    "description": "Quỹ đầu tư vào các tài sản có thu nhập cố định có chất lượng tín dụng tốt hướng tới mục tiêu tăng trưởng bền vững trong trung và dài hạn.",
+    "holdings": [
+      {
+        "symbol": "HDB125011",
+        "name": "HDB125011",
+        "industry": "Ngân hàng",
+        "weight": 12.37
+      },
+      {
+        "symbol": "VBA123036",
+        "name": "VBA123036",
+        "industry": "Ngân hàng",
+        "weight": 10.81
+      },
+      {
+        "symbol": "VBA124019",
+        "name": "VBA124019",
+        "industry": "Ngân hàng",
+        "weight": 7.21
+      },
+      {
+        "symbol": "CTG121031",
+        "name": "CTG121031",
+        "industry": "Ngân hàng",
+        "weight": 2.17
+      },
+      {
+        "symbol": "CTG123019",
+        "name": "CTG123019",
+        "industry": "Ngân hàng",
+        "weight": 0.21
+      },
+      {
+        "symbol": "CTG123033",
+        "name": "CTG123033",
+        "industry": "Ngân hàng",
+        "weight": 0.04
+      }
+    ]
+  },
+  {
+    "id": "ssibf",
+    "fmarketId": 8,
+    "code": "SSIBF",
+    "name": "QUỸ ĐẦU TƯ TRÁI PHIẾU SSI",
+    "category": "bond",
+    "issuer": "SSIAM",
+    "issuerFullName": "CÔNG TY TNHH QUẢN LÝ QUỸ SSI",
+    "nav": 17125.5,
+    "navDate": "09/10/2026",
+    "ytdReturn": 3.87,
+    "return1Y": 4.85,
+    "return3Y": 18.67,
+    "returnInception": 71.26,
+    "managementFee": 1,
+    "inceptionDate": "30/08/2017",
+    "description": "Mục tiêu đầu tư của Quỹ là tối ưu hóa lợi nhuận cho Nhà Đầu Tư trên cơ sở tận dụng hiệu quả các cơ hội đầu tư vào các công cụ có thu nhập cố định.",
+    "holdings": [
+      {
+        "symbol": "BCM12406",
+        "name": "BCM12406",
+        "industry": "Bất động sản",
+        "weight": 17.01
+      },
+      {
+        "symbol": "MSN123009",
+        "name": "MSN123009",
+        "industry": "Thực phẩm - Đồ uống",
+        "weight": 11.23
+      }
+    ]
+  },
+  {
+    "id": "ssisca",
+    "fmarketId": 11,
+    "code": "SSISCA",
+    "name": "QUỸ ĐẦU TƯ LỢI THẾ CẠNH TRANH BỀN VỮNG SSI",
+    "category": "equity",
+    "issuer": "SSIAM",
+    "issuerFullName": "CÔNG TY TNHH QUẢN LÝ QUỸ SSI",
+    "nav": 40944.55,
+    "navDate": "09/10/2026",
+    "ytdReturn": -10.14,
+    "return1Y": -12.36,
+    "return3Y": 34.47,
+    "returnInception": 309.45,
+    "managementFee": 1.75,
+    "inceptionDate": "26/09/2014",
+    "description": "Quỹ tăng trưởng NAV thông qua việc chủ động và linh hoạt đầu tư vào cổ phiếu của các công ty có lợi thế cạnh trạnh bền vững và các tài sản có thu nhập cố định.",
+    "holdings": [
+      {
+        "symbol": "TCB",
+        "name": "Techcombank",
+        "industry": "Ngân hàng",
+        "weight": 6.43
+      },
+      {
+        "symbol": "HDB",
+        "name": "HDBank",
+        "industry": "Ngân hàng",
+        "weight": 5.97
+      },
+      {
+        "symbol": "MWG",
+        "name": "Thế Giới Di Động",
+        "industry": "Bán lẻ",
+        "weight": 4.81
+      },
+      {
+        "symbol": "MBB",
+        "name": "Ngân hàng Quân Đội",
+        "industry": "Ngân hàng",
+        "weight": 4.72
+      },
+      {
+        "symbol": "VCB",
+        "name": "Vietcombank",
+        "industry": "Ngân hàng",
+        "weight": 4.72
+      },
+      {
+        "symbol": "HPG",
+        "name": "Tập đoàn Hòa Phát",
+        "industry": "Vật liệu xây dựng",
+        "weight": 4.49
+      },
+      {
+        "symbol": "CTG",
+        "name": "VietinBank",
+        "industry": "Ngân hàng",
+        "weight": 4.37
+      },
+      {
+        "symbol": "VPB",
+        "name": "VPBank",
+        "industry": "Ngân hàng",
+        "weight": 4.36
+      },
+      {
+        "symbol": "PHR",
+        "name": "PHR",
+        "industry": "Sản xuất Nhựa - Hóa chất",
+        "weight": 3.94
+      },
+      {
+        "symbol": "VHM",
+        "name": "CTCP Vinhomes",
+        "industry": "Bất động sản",
+        "weight": 3.9
+      }
+    ]
+  }
 ]
 
-// Thống kê Top 10 cổ phiếu được quỹ nắm giữ nhiều nhất
+// Thống kê Top 10 cổ phiếu được quỹ nắm giữ nhiều nhất (Tính toán từ danh mục thực tế của 69 quỹ)
 export const TOP_STOCK_HOLDINGS: StockHoldingStats[] = [
-  { rank: 1, symbol: 'HPG', industry: 'Vật liệu xây dựng', fundCount: 33, avgWeight: 5.65 },
-  { rank: 2, symbol: 'CTG', industry: 'Ngân hàng', fundCount: 31, avgWeight: 4.76 },
-  { rank: 3, symbol: 'MWG', industry: 'Bán lẻ', fundCount: 31, avgWeight: 4.42 },
-  { rank: 4, symbol: 'MBB', industry: 'Ngân hàng', fundCount: 28, avgWeight: 5.92 },
-  { rank: 5, symbol: 'TCB', industry: 'Ngân hàng', fundCount: 23, avgWeight: 4.67 },
-  { rank: 6, symbol: 'VCB', industry: 'Ngân hàng', fundCount: 20, avgWeight: 4.48 },
-  { rank: 7, symbol: 'ACB', industry: 'Ngân hàng', fundCount: 18, avgWeight: 6.47 },
-  { rank: 8, symbol: 'VHM', industry: 'Bất động sản', fundCount: 15, avgWeight: 5.21 },
-  { rank: 9, symbol: 'STB', industry: 'Ngân hàng', fundCount: 14, avgWeight: 4.36 },
-  { rank: 10, symbol: 'MSN', industry: 'Thực phẩm - Đồ uống', fundCount: 12, avgWeight: 4.00 },
+  {
+    "rank": 1,
+    "symbol": "MBB",
+    "name": "Ngân hàng Quân Đội",
+    "industry": "Ngân hàng",
+    "fundCount": 30,
+    "avgWeight": 5.24
+  },
+  {
+    "rank": 2,
+    "symbol": "TCB",
+    "name": "Techcombank",
+    "industry": "Ngân hàng",
+    "fundCount": 30,
+    "avgWeight": 4.51
+  },
+  {
+    "rank": 3,
+    "symbol": "MWG",
+    "name": "Thế Giới Di Động",
+    "industry": "Bán lẻ",
+    "fundCount": 28,
+    "avgWeight": 4.83
+  },
+  {
+    "rank": 4,
+    "symbol": "CTG",
+    "name": "VietinBank",
+    "industry": "Ngân hàng",
+    "fundCount": 27,
+    "avgWeight": 4.43
+  },
+  {
+    "rank": 5,
+    "symbol": "VCB",
+    "name": "Vietcombank",
+    "industry": "Ngân hàng",
+    "fundCount": 26,
+    "avgWeight": 5.05
+  },
+  {
+    "rank": 6,
+    "symbol": "HPG",
+    "name": "Tập đoàn Hòa Phát",
+    "industry": "Vật liệu xây dựng",
+    "fundCount": 26,
+    "avgWeight": 4.59
+  },
+  {
+    "rank": 7,
+    "symbol": "FPT",
+    "name": "Tập đoàn FPT",
+    "industry": "Công nghệ và thông tin",
+    "fundCount": 18,
+    "avgWeight": 4.37
+  },
+  {
+    "rank": 8,
+    "symbol": "VPB",
+    "name": "VPBank",
+    "industry": "Ngân hàng",
+    "fundCount": 17,
+    "avgWeight": 4.15
+  },
+  {
+    "rank": 9,
+    "symbol": "ACB",
+    "name": "Ngân hàng Á Châu",
+    "industry": "Ngân hàng",
+    "fundCount": 14,
+    "avgWeight": 6.13
+  },
+  {
+    "rank": 10,
+    "symbol": "HDB",
+    "name": "HDBank",
+    "industry": "Ngân hàng",
+    "fundCount": 14,
+    "avgWeight": 4.61
+  }
 ]
 
 // Thống kê Top 10 ngành được phân bổ nhiều nhất
 export const TOP_INDUSTRY_HOLDINGS: IndustryHoldingStats[] = [
-  { rank: 1, industry: 'Ngân hàng', fundCount: 40, avgWeight: 26.82 },
-  { rank: 2, industry: 'Bất động sản', fundCount: 37, avgWeight: 11.65 },
-  { rank: 3, industry: 'Vật liệu xây dựng', fundCount: 37, avgWeight: 5.79 },
-  { rank: 4, industry: 'Thực phẩm - Đồ uống', fundCount: 37, avgWeight: 5.76 },
-  { rank: 5, industry: 'Chứng khoán', fundCount: 38, avgWeight: 4.65 },
-  { rank: 6, industry: 'Bán lẻ', fundCount: 38, avgWeight: 4.59 },
-  { rank: 7, industry: 'Nông - Lâm - Ngư', fundCount: 15, avgWeight: 4.05 },
-  { rank: 8, industry: 'Sản xuất Nhựa - Hóa chất', fundCount: 30, avgWeight: 4.04 },
-  { rank: 9, industry: 'Công nghệ và thông tin', fundCount: 28, avgWeight: 4.04 },
-  { rank: 10, industry: 'Cảng & Vận tải biển', fundCount: 32, avgWeight: 3.68 },
+  {
+    "rank": 1,
+    "industry": "Ngân hàng",
+    "fundCount": 42,
+    "avgWeight": 27.58
+  },
+  {
+    "rank": 2,
+    "industry": "Vật liệu xây dựng",
+    "fundCount": 39,
+    "avgWeight": 4.22
+  },
+  {
+    "rank": 3,
+    "industry": "Thực phẩm - Đồ uống",
+    "fundCount": 38,
+    "avgWeight": 6.03
+  },
+  {
+    "rank": 4,
+    "industry": "Bán lẻ",
+    "fundCount": 38,
+    "avgWeight": 4.89
+  },
+  {
+    "rank": 5,
+    "industry": "Vận tải - Kho bãi",
+    "fundCount": 38,
+    "avgWeight": 3.66
+  },
+  {
+    "rank": 6,
+    "industry": "Bất động sản",
+    "fundCount": 37,
+    "avgWeight": 10.81
+  },
+  {
+    "rank": 7,
+    "industry": "Chứng khoán",
+    "fundCount": 37,
+    "avgWeight": 4.17
+  },
+  {
+    "rank": 8,
+    "industry": "Công nghệ và thông tin",
+    "fundCount": 36,
+    "avgWeight": 3.98
+  },
+  {
+    "rank": 9,
+    "industry": "Sản xuất Nhựa - Hóa chất",
+    "fundCount": 31,
+    "avgWeight": 4.06
+  },
+  {
+    "rank": 10,
+    "industry": "Tiện ích",
+    "fundCount": 31,
+    "avgWeight": 3.37
+  }
 ]

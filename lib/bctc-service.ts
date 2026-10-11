@@ -53,8 +53,9 @@ function formatMarkdownToHtml(markdown: string): string {
     const tbodyMatch = tableInner.match(/<tbody>([\s\S]*?)<\/tbody>/i)
     const numRegex = /^[\s\d.,()%\-–—+*]+$/
 
-    // Phát hiện cột nào là cột số liệu dựa vào dữ liệu trong tbody
+    // Phát hiện cột nào là cột số liệu và cột tỷ lệ % dựa vào dữ liệu trong tbody
     const colIsNumeric: boolean[] = []
+    const colIsPct: boolean[] = []
     if (tbodyMatch) {
       const rows = tbodyMatch[1].match(/<tr[^>]*>[\s\S]*?<\/tr>/gi) || []
       rows.forEach((r: string) => {
@@ -63,10 +64,13 @@ function formatMarkdownToHtml(markdown: string): string {
           const rawText = c.replace(/<[^>]+>/g, '').trim()
           if (rawText.length > 0) {
             const isNum = numRegex.test(rawText)
+            const isPct = /%$/.test(rawText) || /^\d+([.,]\d+)?\s*%$/.test(rawText)
             if (colIsNumeric[colIdx] === undefined) {
               colIsNumeric[colIdx] = isNum
-            } else if (!isNum) {
-              colIsNumeric[colIdx] = false
+              colIsPct[colIdx] = isPct
+            } else {
+              if (!isNum) colIsNumeric[colIdx] = false
+              if (!isPct) colIsPct[colIdx] = false
             }
           }
         })
@@ -75,19 +79,20 @@ function formatMarkdownToHtml(markdown: string): string {
 
     let newTable = tableInner
 
-    // Gắn class agm-th-num hoặc agm-th-text cho thead
+    // Gắn class agm-th-num (hoặc agm-th-pct) hoặc agm-th-text cho thead
     if (theadMatch) {
       let colIdx = 0
       const newTheadContent = theadMatch[1].replace(/<th([^>]*)>([\s\S]*?)<\/th>/gi, (_m: string, attrs: string, content: string) => {
         const isNumCol = colIsNumeric[colIdx] === true
+        const isPctCol = colIsPct[colIdx] === true
         colIdx++
-        const cls = isNumCol ? 'agm-th-num' : 'agm-th-text'
+        const cls = isNumCol ? (isPctCol ? 'agm-th-num agm-th-pct' : 'agm-th-num') : 'agm-th-text'
         return `<th${attrs} class="${cls}">${content}</th>`
       })
       newTable = newTable.replace(theadMatch[1], newTheadContent)
     }
 
-    // Gắn class agm-td-num hoặc agm-td-text cho tbody
+    // Gắn class agm-td-num (hoặc agm-td-pct) hoặc agm-td-text cho tbody
     if (tbodyMatch) {
       const newTbodyContent = tbodyMatch[1].replace(/<tr([^>]*)>([\s\S]*?)<\/tr>/gi, (_trMatch: string, trAttrs: string, trContent: string) => {
         let colIdx = 0
@@ -95,8 +100,9 @@ function formatMarkdownToHtml(markdown: string): string {
           const rawText = tdContent.replace(/<[^>]+>/g, '').trim()
           const isNum = rawText.length > 0 && numRegex.test(rawText)
           const isNumCol = colIsNumeric[colIdx] === true
+          const isPctCol = colIsPct[colIdx] === true
           colIdx++
-          const cls = isNum || isNumCol ? 'agm-td-num' : 'agm-td-text'
+          const cls = (isNum || isNumCol) ? (isPctCol ? 'agm-td-num agm-td-pct' : 'agm-td-num') : 'agm-td-text'
           return `<td${tdAttrs} class="${cls}">${tdContent}</td>`
         })
         return `<tr${trAttrs}>${newTrContent}</tr>`
@@ -104,7 +110,7 @@ function formatMarkdownToHtml(markdown: string): string {
       newTable = newTable.replace(tbodyMatch[1], newTbodyContent)
     }
 
-    return `<div class="agm-table-wrapper overflow-x-auto rounded-xl border border-border/80 my-4 shadow-2xs"><table>${newTable}</table></div>`
+    return `<div class="agm-table-wrapper overflow-x-auto rounded-xl border border-border/80 my-2 sm:my-3 shadow-2xs"><table>${newTable}</table></div>`
   })
 
   return html

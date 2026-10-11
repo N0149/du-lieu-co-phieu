@@ -2,115 +2,157 @@
   "symbol": "CAT",
   "events": [
     {
-      "date": "2019-03-22",
-      "cashVnd": 1500,
+      "date": "2026-06-04",
+      "cashVnd": 500,
       "stockPct": null,
+      "execDate": "2026-06-24",
+      "eventTitle": "Cổ tức đợt 2/2025 bằng tiền, tỷ lệ 500đ/CP",
+      "eventType": "cash",
       "texts": [
-        "Trả cổ tức bằng tiền mặt - Cả năm 2018 - 1,500 VND"
+        "Cổ tức đợt 2/2025 bằng tiền, tỷ lệ 500đ/CP"
       ]
     },
     {
-      "date": "2020-04-13",
-      "cashVnd": 1800,
+      "date": "2026-06-04",
+      "cashVnd": 500,
       "stockPct": null,
+      "execDate": "2026-06-24",
+      "eventTitle": "Cổ tức đợt 1/2026 bằng tiền, tỷ lệ 500đ/CP",
+      "eventType": "cash",
       "texts": [
-        "Trả cổ tức bằng tiền mặt - Cả năm 2019 - 1,800 VND"
-      ]
-    },
-    {
-      "date": "2020-09-16",
-      "cashVnd": 1000,
-      "stockPct": null,
-      "texts": [
-        "Trả cổ tức bằng tiền mặt - Đợt 1 2020 - 1,000 VND"
-      ]
-    },
-    {
-      "date": "2021-04-12",
-      "cashVnd": 2000,
-      "stockPct": null,
-      "texts": [
-        "Trả cổ tức bằng tiền mặt - Đợt 2 2020 - 2,000 VND"
-      ]
-    },
-    {
-      "date": "2021-09-23",
-      "cashVnd": 1000,
-      "stockPct": null,
-      "texts": [
-        "Trả cổ tức bằng tiền mặt - Đợt 1 2021 - 1,000 VND"
-      ]
-    },
-    {
-      "date": "2022-04-08",
-      "cashVnd": 2000,
-      "stockPct": null,
-      "texts": [
-        "Trả cổ tức bằng tiền mặt - Đợt 2 2021 - 2,000 VND"
-      ]
-    },
-    {
-      "date": "2023-04-19",
-      "cashVnd": 1000,
-      "stockPct": null,
-      "texts": [
-        "Trả cổ tức bằng tiền mặt - Cả năm 2022 - 1,000 VND"
-      ]
-    },
-    {
-      "date": "2023-10-23",
-      "cashVnd": 1000,
-      "stockPct": null,
-      "texts": [
-        "Trả cổ tức bằng tiền mặt - Đợt 1 2023 - 1,000 VND"
-      ]
-    },
-    {
-      "date": "2024-05-08",
-      "cashVnd": 1000,
-      "stockPct": null,
-      "texts": [
-        "Trả cổ tức bằng tiền mặt - Đợt 2 2023 - 1,000 VND"
-      ]
-    },
-    {
-      "date": "2025-08-28",
-      "cashVnd": 2000,
-      "stockPct": null,
-      "texts": [
-        "Trả cổ tức bằng tiền mặt - Cả năm 2024 - 2,000 VND"
+        "Cổ tức đợt 1/2026 bằng tiền, tỷ lệ 500đ/CP"
       ]
     },
     {
       "date": "2025-12-16",
       "cashVnd": 1500,
       "stockPct": null,
+      "execDate": "2026-01-08",
+      "eventTitle": "Cổ tức đợt 1/2025 bằng tiền, tỷ lệ 1.500đ/CP",
+      "eventType": "cash",
       "texts": [
-        "Trả cổ tức bằng tiền mặt - Đợt 1 2025 - 1,500 VND"
+        "Cổ tức đợt 1/2025 bằng tiền, tỷ lệ 1.500đ/CP"
       ]
     },
     {
       "date": "2025-12-16",
       "cashVnd": null,
       "stockPct": 0.5,
+      "execDate": "2026-02-12",
+      "eventTitle": "Phát hành CP cho CĐHH, tỷ lệ 2:1, giá 10000đ/CP",
+      "eventType": "rights",
       "texts": [
-        "Phát hành cổ phiếu - Quyền mua CP cho Cổ đông hiện hữu tỉ lệ 50.0%"
+        "Phát hành CP cho CĐHH, tỷ lệ 2:1, giá 10000đ/CP"
       ]
     },
     {
-      "date": "2026-06-04",
-      "cashVnd": 500,
+      "date": "2025-08-28",
+      "cashVnd": 2000,
       "stockPct": null,
+      "execDate": "2025-09-22",
+      "eventTitle": "Cổ tức đợt 1/2024 bằng tiền, tỷ lệ 2.000đ/CP",
+      "eventType": "cash",
       "texts": [
-        "Trả cổ tức bằng tiền mặt - Đợt 1 2026 - 500 VND"
+        "Cổ tức đợt 1/2024 bằng tiền, tỷ lệ 2.000đ/CP"
       ]
     },
     {
-      "date": "2026-06-04",
-      "cashVnd": 500,
+      "date": "2024-05-08",
+      "cashVnd": 1000,
       "stockPct": null,
+      "execDate": "2024-05-29",
+      "eventTitle": "Cổ tức đợt 2/2023 bằng tiền, tỷ lệ 1.000đ/CP",
+      "eventType": "cash",
       "texts": [
-        "Trả cổ tức bằng tiền mặt - Đợt 2 2025 - 500 VND"
+        "Cổ tức đợt 2/2023 bằng tiền, tỷ lệ 1.000đ/CP"
+      ]
+    },
+    {
+      "date": "2023-10-23",
+      "cashVnd": 1000,
+      "stockPct": null,
+      "execDate": "2023-11-10",
+      "eventTitle": "Cổ tức đợt 1/2023 bằng tiền, tỷ lệ 1.000đ/CP",
+      "eventType": "cash",
+      "texts": [
+        "Cổ tức đợt 1/2023 bằng tiền, tỷ lệ 1.000đ/CP"
+      ]
+    },
+    {
+      "date": "2023-04-19",
+      "cashVnd": 1000,
+      "stockPct": null,
+      "execDate": "2023-05-09",
+      "eventTitle": "Cổ tức đợt 1/2022 bằng tiền, tỷ lệ 1.000đ/CP",
+      "eventType": "cash",
+      "texts": [
+        "Cổ tức đợt 1/2022 bằng tiền, tỷ lệ 1.000đ/CP"
+      ]
+    },
+    {
+      "date": "2022-04-08",
+      "cashVnd": 2000,
+      "stockPct": null,
+      "execDate": "2022-04-28",
+      "eventTitle": "Cổ tức đợt 2/2021 bằng tiền, tỷ lệ 2.000đ/CP",
+      "eventType": "cash",
+      "texts": [
+        "Cổ tức đợt 2/2021 bằng tiền, tỷ lệ 2.000đ/CP"
+      ]
+    },
+    {
+      "date": "2021-09-23",
+      "cashVnd": 1000,
+      "stockPct": null,
+      "execDate": "2021-10-12",
+      "eventTitle": "Cổ tức đợt 1/2021 bằng tiền, tỷ lệ 1.000đ/CP",
+      "eventType": "cash",
+      "texts": [
+        "Cổ tức đợt 1/2021 bằng tiền, tỷ lệ 1.000đ/CP"
+      ]
+    },
+    {
+      "date": "2021-04-12",
+      "cashVnd": 2000,
+      "stockPct": null,
+      "execDate": "2021-04-29",
+      "eventTitle": "Cổ tức đợt 2/2020 bằng tiền, tỷ lệ 2.000đ/CP",
+      "eventType": "cash",
+      "texts": [
+        "Cổ tức đợt 2/2020 bằng tiền, tỷ lệ 2.000đ/CP"
+      ]
+    },
+    {
+      "date": "2020-09-16",
+      "cashVnd": 1000,
+      "stockPct": null,
+      "execDate": "2020-10-06",
+      "eventTitle": "Cổ tức đợt 1/2020 bằng tiền, tỷ lệ 1.000đ/CP",
+      "eventType": "cash",
+      "texts": [
+        "Cổ tức đợt 1/2020 bằng tiền, tỷ lệ 1.000đ/CP"
+      ]
+    },
+    {
+      "date": "2020-04-13",
+      "cashVnd": 1800,
+      "stockPct": null,
+      "execDate": "2020-05-05",
+      "eventTitle": "Cổ tức năm 2019 bằng tiền, tỷ lệ 1.800đ/CP",
+      "eventType": "cash",
+      "texts": [
+        "Cổ tức năm 2019 bằng tiền, tỷ lệ 1.800đ/CP"
+      ]
+    },
+    {
+      "date": "2019-03-22",
+      "cashVnd": 1500,
+      "stockPct": null,
+      "execDate": "2019-04-12",
+      "eventTitle": "Cổ tức năm 2018 bằng tiền, tỷ lệ 1.500đ/CP",
+      "eventType": "cash",
+      "texts": [
+        "Cổ tức năm 2018 bằng tiền, tỷ lệ 1.500đ/CP"
       ]
     }
   ]

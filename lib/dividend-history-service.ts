@@ -9,11 +9,116 @@ export interface DividendEventItem {
   cashVnd: number | null
   stockPct: number | null
   texts: string[]
+  execDate?: string | null
+  eventTitle?: string
+  eventType?: 'cash' | 'stock' | 'rights' | 'other'
 }
 
 export interface DividendHistoryPayload {
   symbol: string
   events: DividendEventItem[]
+}
+
+export function formatEventTitle(text: string, cashVnd: number | null, stockPct: number | null): string {
+  if (!text) {
+    if (cashVnd && cashVnd > 0) return `Cổ tức bằng tiền, tỷ lệ ${cashVnd.toLocaleString('vi-VN')}đ/CP`
+    if (stockPct && stockPct > 0) {
+      const p = stockPct <= 1 ? stockPct * 100 : stockPct
+      return `Cổ tức bằng cổ phiếu, tỷ lệ ${Math.round(p)}%`
+    }
+    return 'Sự kiện doanh nghiệp'
+  }
+
+  // Khớp mẫu: "Trả cổ tức bằng tiền mặt - Đợt 2 2025 - 500 VND"
+  const m1 = text.match(/Trả cổ tức bằng tiền mặt\s*-\s*Đợt\s*(\d+)\s*(\d{4})\s*-\s*([\d,.]+)\s*VND/i)
+  if (m1) {
+    const val = m1[3].replace(/,/g, '.')
+    return `Cổ tức đợt ${m1[1]}/${m1[2]} bằng tiền, tỷ lệ ${val}đ/CP`
+  }
+
+  // Khớp mẫu: "Trả cổ tức bằng tiền mặt - Cả năm 2024 - 2,000 VND"
+  const m2 = text.match(/Trả cổ tức bằng tiền mặt\s*-\s*Cả năm\s*(\d{4})\s*-\s*([\d,.]+)\s*VND/i)
+  if (m2) {
+    const val = m2[2].replace(/,/g, '.')
+    return `Cổ tức năm ${m2[1]} bằng tiền, tỷ lệ ${val}đ/CP`
+  }
+
+  // Khớp mẫu quyền mua: "Phát hành cổ phiếu - Quyền mua CP cho Cổ đông hiện hữu tỉ lệ 50.0%"
+  const m3 = text.match(/Quyền mua CP cho Cổ đông hiện hữu\s*tỉ lệ\s*([\d.]+)%/i)
+  if (m3) {
+    const pct = parseFloat(m3[1])
+    let ratio = `${pct}%`
+    if (Math.abs(pct - 50) < 0.1) ratio = '2:1'
+    else if (Math.abs(pct - 100) < 0.1) ratio = '1:1'
+    else if (Math.abs(pct - 20) < 0.1) ratio = '5:1'
+    else if (Math.abs(pct - 25) < 0.1) ratio = '4:1'
+    return `Phát hành CP cho CĐHH, tỷ lệ ${ratio}, giá 10000đ/CP`
+  }
+
+  // Khớp mẫu: "Trả cổ tức bằng cổ phiếu - Tỷ lệ 10%"
+  const m4 = text.match(/Trả cổ tức bằng cổ phiếu\s*-\s*(.*)/i)
+  if (m4) {
+    return `Cổ tức bằng cổ phiếu, ${m4[1].trim()}`
+  }
+
+  return text
+    .replace(/^Trả cổ tức bằng tiền mặt - /i, 'Cổ tức bằng tiền: ')
+    .replace(/^Trả cổ tức bằng cổ phiếu - /i, 'Cổ tức bằng cổ phiếu: ')
+    .replace(/^Phát hành cổ phiếu - /i, 'Phát hành CP: ')
+}
+
+let corporateEventsCache: Record<string, Array<{ gd_khq?: string; ngay_thuc_hien?: string | null; title_event?: string }>> | null = null
+
+function getCorporateEventsMap() {
+  if (corporateEventsCache !== null) return corporateEventsCache
+  try {
+    const p = path.join(process.cwd(), 'data', 'widata_archive', 'company', 'corporate_events.json')
+    if (fs.existsSync(p)) {
+      corporateEventsCache = JSON.parse(fs.readFileSync(p, 'utf-8'))
+      return corporateEventsCache
+    }
+  } catch {}
+  corporateEventsCache = {}
+  return corporateEventsCache
+}
+
+function enrichEvents(sym: string, rawEvents: DividendEventItem[]): DividendEventItem[] {
+  if (!Array.isArray(rawEvents) || rawEvents.length === 0) return []
+
+  const corpMap = getCorporateEventsMap()
+  const corpList = corpMap ? corpMap[sym.toUpperCase()] : null
+
+  return rawEvents.map((e) => {
+    const rawText = e.texts?.[0] || ''
+    const title = e.eventTitle || formatEventTitle(rawText, e.cashVnd, e.stockPct)
+
+    let exec = e.execDate || null
+    if (!exec && corpList && corpList.length > 0) {
+      const match = corpList.find((c) => c.gd_khq === e.date && c.ngay_thuc_hien)
+      if (match?.ngay_thuc_hien) {
+        exec = match.ngay_thuc_hien
+      }
+    }
+
+    const hasCash = e.cashVnd != null && e.cashVnd > 0
+    const hasStock = e.stockPct != null && e.stockPct > 0
+    const isRights =
+      rawText.toLowerCase().includes('quyền mua') ||
+      rawText.toLowerCase().includes('phát hành') ||
+      rawText.toLowerCase().includes('cđhh')
+
+    let type: 'cash' | 'stock' | 'rights' | 'other' = 'cash'
+    if (isRights) type = 'rights'
+    else if (hasStock) type = 'stock'
+    else if (hasCash) type = 'cash'
+
+    return {
+      ...e,
+      eventTitle: title,
+      execDate: exec,
+      eventType: type,
+    }
+  })
 }
 
 let supabaseInstance: SupabaseClient | null = null
@@ -59,7 +164,10 @@ export async function getDividendHistory(symbol: string): Promise<DividendHistor
       const raw = fs.readFileSync(cacheFile, 'utf-8')
       const data = JSON.parse(raw)
       if (data && Array.isArray(data.events)) {
-        return data as DividendHistoryPayload
+        return {
+          symbol: sym,
+          events: enrichEvents(sym, data.events),
+        }
       }
     } catch {}
   }
@@ -73,7 +181,10 @@ export async function getDividendHistory(symbol: string): Promise<DividendHistor
         if (row?.events_json) {
           const events = JSON.parse(row.events_json)
           if (Array.isArray(events)) {
-            return { symbol: sym, events }
+            return {
+              symbol: sym,
+              events: enrichEvents(sym, events),
+            }
           }
         }
       } finally {
@@ -102,7 +213,10 @@ export async function getDividendHistory(symbol: string): Promise<DividendHistor
           ? data.events_json
           : (typeof data.events_json === 'string' ? JSON.parse(data.events_json) : [])
         if (events.length > 0) {
-          const payload: DividendHistoryPayload = { symbol: sym, events }
+          const payload: DividendHistoryPayload = {
+            symbol: sym,
+            events: enrichEvents(sym, events),
+          }
           DIV_MEMORY_CACHE.set(sym, { data: payload, expiresAt: now + DIV_CACHE_TTL_MS })
           return payload
         }

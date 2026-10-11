@@ -10,6 +10,7 @@ interface FundFiltersProps {
   onSelectIssuer: (issuer: string) => void
   searchQuery: string
   onSearchChange: (q: string) => void
+  issuers?: string[]
 }
 
 export function FundFilters({
@@ -19,6 +20,7 @@ export function FundFilters({
   onSelectIssuer,
   searchQuery,
   onSearchChange,
+  issuers = FUND_ISSUERS,
 }: FundFiltersProps) {
   return (
     <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
@@ -51,7 +53,7 @@ export function FundFilters({
             onChange={(e) => onSelectIssuer(e.target.value)}
             className="w-full sm:w-auto appearance-none rounded-lg border border-white/8 bg-[#181C26] px-3 py-1.5 pr-8 text-xs font-medium text-[#F0F3F6] focus:border-blue-500 focus:outline-none"
           >
-            {FUND_ISSUERS.map((issuer) => (
+            {issuers.map((issuer) => (
               <option key={issuer} value={issuer} className="bg-[#181C26] text-white">
                 {issuer === 'Tất cả tổ chức' ? 'Chọn tổ chức phát hành' : issuer}
               </option>

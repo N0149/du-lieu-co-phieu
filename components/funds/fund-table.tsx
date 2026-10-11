@@ -3,9 +3,9 @@
 import { useState } from 'react'
 import { ArrowUpDown, ArrowUp, ArrowDown, Info } from 'lucide-react'
 import { Fund } from '@/lib/funds-data'
-import { fmtNum } from '@/lib/format'
+import { fmtNum, fmtPct } from '@/lib/format'
 
-type SortField = 'nav' | 'ytdReturn' | 'return1Y' | 'return3Y' | 'name'
+type SortField = 'nav' | 'ytdReturn' | 'return1Y' | 'return3Y' | 'returnInception' | 'name'
 type SortOrder = 'asc' | 'desc'
 
 interface FundTableProps {
@@ -27,8 +27,8 @@ export function FundTable({ funds, onSelectFund }: FundTableProps) {
   }
 
   const sortedFunds = [...funds].sort((a, b) => {
-    let aVal = a[sortField] ?? 0
-    let bVal = b[sortField] ?? 0
+    let aVal = a[sortField] ?? -999999
+    let bVal = b[sortField] ?? -999999
 
     if (typeof aVal === 'string') {
       return sortOrder === 'asc'
@@ -113,11 +113,21 @@ export function FundTable({ funds, onSelectFund }: FundTableProps) {
 
               <th
                 onClick={() => handleSort('return3Y')}
-                className="cursor-pointer py-3 pl-3 pr-5 text-right transition-colors hover:text-white"
+                className="cursor-pointer py-3 px-3 text-right transition-colors hover:text-white"
               >
                 <div className="flex items-center justify-end gap-1.5">
                   <span>Lợi nhuận 3 năm</span>
                   {getSortIcon('return3Y')}
+                </div>
+              </th>
+
+              <th
+                onClick={() => handleSort('returnInception')}
+                className="cursor-pointer py-3 pl-3 pr-5 text-right transition-colors hover:text-white"
+              >
+                <div className="flex items-center justify-end gap-1.5">
+                  <span>Từ khi lập</span>
+                  {getSortIcon('returnInception')}
                 </div>
               </th>
             </tr>
@@ -126,7 +136,7 @@ export function FundTable({ funds, onSelectFund }: FundTableProps) {
           <tbody className="divide-y divide-white/6 text-[#D0D7DE]">
             {sortedFunds.length === 0 ? (
               <tr>
-                <td colSpan={6} className="py-8 text-center text-[#8B949E]">
+                <td colSpan={7} className="py-8 text-center text-[#8B949E]">
                   Không tìm thấy quỹ mở phù hợp với bộ lọc hiện tại.
                 </td>
               </tr>
@@ -179,12 +189,14 @@ export function FundTable({ funds, onSelectFund }: FundTableProps) {
                   <td className="py-3 px-3 text-right font-mono font-semibold">
                     <span
                       className={`inline-block px-1.5 py-0.5 rounded ${
-                        fund.ytdReturn >= 0
+                        fund.ytdReturn == null
+                          ? 'text-[#8B949E]'
+                          : fund.ytdReturn >= 0
                           ? 'text-emerald-400 bg-emerald-500/10'
                           : 'text-rose-400 bg-rose-500/10'
                       }`}
                     >
-                      {fund.ytdReturn >= 0 ? `+${fund.ytdReturn.toFixed(2)}%` : `${fund.ytdReturn.toFixed(2)}%`}
+                      {fmtPct(fund.ytdReturn, 2)}
                     </span>
                   </td>
 
@@ -192,21 +204,45 @@ export function FundTable({ funds, onSelectFund }: FundTableProps) {
                   <td className="py-3 px-3 text-right font-mono font-semibold">
                     <span
                       className={
-                        fund.return1Y >= 0 ? 'text-emerald-400' : 'text-rose-400'
+                        fund.return1Y == null
+                          ? 'text-[#8B949E]'
+                          : fund.return1Y >= 0
+                          ? 'text-emerald-400'
+                          : 'text-rose-400'
                       }
                     >
-                      {fund.return1Y >= 0 ? `+${fund.return1Y.toFixed(2)}%` : `${fund.return1Y.toFixed(2)}%`}
+                      {fmtPct(fund.return1Y, 2)}
                     </span>
                   </td>
 
                   {/* Lợi nhuận 3 năm */}
+                  <td className="py-3 px-3 text-right font-mono font-semibold">
+                    <span
+                      className={
+                        fund.return3Y == null
+                          ? 'text-[#8B949E]'
+                          : fund.return3Y >= 0
+                          ? 'text-emerald-400'
+                          : 'text-rose-400'
+                      }
+                    >
+                      {fmtPct(fund.return3Y, 2)}
+                    </span>
+                  </td>
+
+                  {/* Lợi nhuận từ khi thành lập */}
                   <td className="py-3 pl-3 pr-5 text-right font-mono font-semibold">
                     <span
                       className={
-                        fund.return3Y >= 0 ? 'text-emerald-400' : 'text-rose-400'
+                        fund.returnInception == null
+                          ? 'text-[#8B949E]'
+                          : fund.returnInception >= 0
+                          ? 'text-emerald-400'
+                          : 'text-rose-400'
                       }
+                      title={`Từ ngày ${fund.inceptionDate || 'IPO'}`}
                     >
-                      {fund.return3Y >= 0 ? `+${fund.return3Y.toFixed(2)}%` : `${fund.return3Y.toFixed(2)}%`}
+                      {fmtPct(fund.returnInception, 2)}
                     </span>
                   </td>
                 </tr>

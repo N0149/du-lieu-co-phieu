@@ -1101,9 +1101,6 @@ export function FinancialStatementsExplorer({
     });
   };
 
-  // Cột đang được rê chuột (hover) để tô sáng đồng loạt các quý cùng kỳ
-  const [hoveredColIdx, setHoveredColIdx] = useState<number | null>(null);
-
   const [quarterData, setQuarterData] = useState<RawFinancialStatementData | null>(initialData || null);
   const [annualData, setAnnualData] = useState<RawFinancialStatementData | null>(initialAnnualData || null);
 
@@ -1531,7 +1528,6 @@ export function FinancialStatementsExplorer({
             <div className="relative overflow-hidden rounded-xl border border-slate-800 bg-[#141922] shadow-sm transition-all w-full">
               <div className="overflow-x-auto w-full">
                 <table
-                  onMouseLeave={() => setHoveredColIdx(null)}
                   className={cn(
                     "text-left border-collapse select-none transition-all",
                     isCompactLayout ? "w-max min-w-full" : "w-full min-w-full"
@@ -1610,18 +1606,13 @@ export function FinancialStatementsExplorer({
                   {/* Cột 3..N: Các quý */}
                   {selectedDates.map((dateStr, idx) => {
                     const isLatest = idx === selectedDates.length - 1 && currentOffset === 0;
-                    const isDirectHover = hoveredColIdx === idx;
 
                     const thHighlightStyle: React.CSSProperties = {
                       ...RUATICHSAN_FONT_STYLE,
-                      backgroundColor: isDirectHover
-                        ? "rgba(14, 165, 233, 0.32)"
-                        : isLatest
+                      backgroundColor: isLatest
                         ? "rgba(14, 165, 233, 0.08)"
                         : undefined,
-                      borderBottom: isDirectHover
-                        ? "2.5px solid rgb(56, 189, 248)"
-                        : isLatest
+                      borderBottom: isLatest
                         ? "2px solid rgba(56, 189, 248, 0.5)"
                         : undefined,
                     };
@@ -1629,13 +1620,12 @@ export function FinancialStatementsExplorer({
                     return (
                       <th
                         key={dateStr}
-                        onMouseEnter={() => setHoveredColIdx(idx)}
                         style={thHighlightStyle}
                         className={cn(
-                          "w-[92px] sm:w-[100px] min-w-[85px] max-w-[110px] px-2.5 sm:px-3 py-2 text-right whitespace-nowrap text-xs sm:text-[13px] font-bold cursor-pointer transition-colors select-none tracking-tight",
-                          (isDirectHover || isLatest)
+                          "w-[92px] sm:w-[100px] min-w-[85px] max-w-[110px] px-2.5 sm:px-3 py-2 text-right whitespace-nowrap text-xs sm:text-[13px] font-bold transition-colors select-none tracking-tight",
+                          isLatest
                             ? "text-sky-200 font-bold"
-                            : "text-slate-200 hover:text-white"
+                            : "text-slate-200"
                         )}
                         title={formatPeriodLabel(dateStr, periodMode)}
                       >
@@ -1711,7 +1701,6 @@ export function FinancialStatementsExplorer({
                   const noteHopNhat = findMatchingNote(node.displayName || node.name, activeTab, bctcDataHopNhat?.notes);
                   const noteCongTyMe = findMatchingNote(node.displayName || node.name, activeTab, bctcDataCongTyMe?.notes);
                   const matchedNote = noteHopNhat || noteCongTyMe;
-                  const isClickableNote = Boolean(matchedNote);
                   const isSelectedThisRow = selectedRowForSideChart?.title === node.displayName;
 
                   return (
@@ -1847,45 +1836,18 @@ export function FinancialStatementsExplorer({
                           const formatted = fmtValue(val, unitDivider);
                           const isLatest = isLatestColumn(cIdx);
                           const colDate = selectedDates[cIdx];
-                          const isDirectHover = hoveredColIdx === cIdx;
 
                           const cellStyle: React.CSSProperties = {
-                            backgroundColor: isDirectHover
-                              ? "rgba(14, 165, 233, 0.28)"
-                              : isLatest
+                            backgroundColor: isLatest
                               ? "rgba(14, 165, 233, 0.04)"
-                              : undefined,
-                            boxShadow: isDirectHover
-                              ? "inset 1px 0 0 rgba(56, 189, 248, 0.35), inset -1px 0 0 rgba(56, 189, 248, 0.35)"
                               : undefined,
                           };
 
                           return (
                             <td
                               key={cIdx}
-                              onMouseEnter={() => setHoveredColIdx(cIdx)}
-                              onClick={() => {
-                                if (isClickableNote) {
-                                  const periodLbl = formatPeriodLabel(colDate, periodMode);
-                                  openNoteModal(
-                                    node.displayName,
-                                    periodLbl,
-                                    formatted,
-                                    noteHopNhat,
-                                    noteCongTyMe
-                                  );
-                                }
-                              }}
                               style={cellStyle}
-                              title={
-                                isClickableNote
-                                  ? `Bấm để xem Thuyết minh (${formatPeriodLabel(colDate, periodMode)}): ${matchedNote?.rawTitle || matchedNote?.title}`
-                                  : undefined
-                              }
-                              className={cn(
-                                "w-[92px] sm:w-[100px] min-w-[85px] max-w-[110px] px-2.5 sm:px-3 py-2 sm:py-2.5 text-right whitespace-nowrap align-middle font-mono tabular-nums tracking-tight transition-colors text-[13px] sm:text-[13.5px]",
-                                isClickableNote && "cursor-pointer hover:bg-emerald-500/20 active:bg-emerald-500/30 select-none group/num"
-                              )}
+                              className="w-[92px] sm:w-[100px] min-w-[85px] max-w-[110px] px-2.5 sm:px-3 py-2 sm:py-2.5 text-right whitespace-nowrap align-middle font-mono tabular-nums tracking-tight text-[13px] sm:text-[13.5px]"
                             >
                               {val == null ? (
                                 <span className="text-slate-600 font-sans">—</span>
@@ -1895,8 +1857,7 @@ export function FinancialStatementsExplorer({
                                 <span
                                   className={cn(
                                     "text-rose-400 font-semibold",
-                                    isMajor && "font-bold text-[14px]",
-                                    isClickableNote && "group-hover/num:underline underline-offset-2"
+                                    isMajor && "font-bold text-[14px]"
                                   )}
                                 >
                                   {formatted}
@@ -1904,9 +1865,7 @@ export function FinancialStatementsExplorer({
                               ) : (
                                 <span
                                   className={cn(
-                                    isMajor || isSub ? "font-bold text-white" : "font-semibold text-slate-100",
-                                    isDirectHover && "text-sky-200 font-bold",
-                                    isClickableNote && "group-hover/num:underline underline-offset-2"
+                                    isMajor || isSub ? "font-bold text-white" : "font-semibold text-slate-100"
                                   )}
                                 >
                                   {formatted}

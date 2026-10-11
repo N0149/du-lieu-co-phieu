@@ -10,6 +10,8 @@ import {
   Calendar,
   Layers,
   FileText,
+  Maximize2,
+  Minimize2,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 import type { BctcNoteItem } from "@/lib/bctc-service";
@@ -44,6 +46,7 @@ export function FinancialNoteModal({
   onNavigateToFullReport,
 }: FinancialNoteModalProps) {
   const [selectedType, setSelectedType] = useState<"HopNhat" | "CongTyMe">(initialReportType);
+  const [isFullscreen, setIsFullscreen] = useState(false);
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
@@ -83,68 +86,86 @@ export function FinancialNoteModal({
 
   return createPortal(
     <div
-      className="portal-modal-overlay fixed inset-0 z-[99999] flex items-center justify-center p-3 sm:p-4 md:p-6 bg-black/80 backdrop-blur-xs animate-in fade-in-0 duration-200"
+      className={cn(
+        "portal-modal-overlay fixed inset-0 z-[99999] flex items-center justify-center bg-black/80 backdrop-blur-xs animate-in fade-in-0 duration-200",
+        isFullscreen ? "p-0" : "p-2 sm:p-4 md:p-6"
+      )}
       style={{ zIndex: 999999 }}
     >
-      {/* Click ngoài để đóng */}
-      <div className="fixed inset-0" onClick={onClose} aria-hidden="true" />
+      {/* Click ngoài để đóng (khi không fullscreen) */}
+      {!isFullscreen && <div className="fixed inset-0" onClick={onClose} aria-hidden="true" />}
 
       {/* Hộp thoại Modal chính */}
       <div
         role="dialog"
         aria-modal="true"
-        className="portal-modal-content relative z-10 flex flex-col w-full max-w-4xl max-h-[90vh] rounded-2xl border border-border/90 bg-card shadow-2xl overflow-hidden animate-in zoom-in-95 duration-200"
+        className={cn(
+          "portal-modal-content relative z-10 flex flex-col bg-card border border-border/90 shadow-2xl transition-all duration-200 animate-in zoom-in-95",
+          isFullscreen
+            ? "fixed inset-0 w-full h-full max-w-none max-h-none rounded-none border-0"
+            : "w-[96vw] max-w-5xl xl:max-w-6xl 2xl:max-w-7xl max-h-[92vh] rounded-2xl overflow-hidden"
+        )}
         style={{ zIndex: 1000000 }}
       >
         {/* ── HEADER ── */}
-        <div className="flex flex-col gap-3 p-4 sm:p-5 border-b border-border bg-muted/40 shrink-0">
+        <div className="flex flex-col gap-2.5 p-3 sm:px-4 sm:py-3 border-b border-border bg-muted/40 shrink-0">
           <div className="flex items-start justify-between gap-3">
             <div className="flex items-center gap-2.5 min-w-0">
-              <div className="size-9 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-400 shrink-0 shadow-2xs">
-                <FileSpreadsheet className="size-5" />
+              <div className="size-8 sm:size-9 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-400 shrink-0 shadow-2xs">
+                <FileSpreadsheet className="size-4 sm:size-5" />
               </div>
               <div className="min-w-0">
-                <div className="flex items-center gap-2 flex-wrap">
-                  <span className="text-[11px] font-black uppercase tracking-wider px-2 py-0.5 rounded-md bg-primary/15 text-primary border border-primary/20">
+                <div className="flex items-center gap-1.5 sm:gap-2 flex-wrap">
+                  <span className="text-[10.5px] sm:text-[11px] font-black uppercase tracking-wider px-2 py-0.5 rounded-md bg-primary/15 text-primary border border-primary/20">
                     {ticker} · Thuyết Minh BCTC
                   </span>
                   {periodLabel && (
-                    <span className="inline-flex items-center gap-1 text-[11px] font-semibold text-muted-foreground bg-muted px-2 py-0.5 rounded-md border border-border/60">
+                    <span className="inline-flex items-center gap-1 text-[10.5px] sm:text-[11px] font-semibold text-muted-foreground bg-muted px-2 py-0.5 rounded-md border border-border/60">
                       <Calendar className="size-3" />
                       {periodLabel}
                     </span>
                   )}
                   {cellValueFormatted && cellValueFormatted !== "—" && (
-                    <span className="text-[12px] font-mono font-bold text-sky-400 bg-sky-500/10 px-2.5 py-0.5 rounded-md border border-sky-500/20">
+                    <span className="text-[11px] sm:text-[12px] font-mono font-bold text-sky-400 bg-sky-500/10 px-2 py-0.5 rounded-md border border-sky-500/20">
                       Giá trị: {cellValueFormatted}
                     </span>
                   )}
                 </div>
-                <h2 className="text-base sm:text-lg font-bold text-foreground mt-1 truncate">
+                <h2 className="text-sm sm:text-base font-bold text-foreground mt-0.5 sm:mt-1 truncate">
                   {rowName}
                 </h2>
               </div>
             </div>
 
-            <button
-              type="button"
-              onClick={onClose}
-              className="size-8 rounded-lg border border-border/80 bg-background/80 hover:bg-muted text-muted-foreground hover:text-foreground flex items-center justify-center transition-colors shrink-0 cursor-pointer"
-              title="Đóng (Esc)"
-            >
-              <X className="size-4" />
-            </button>
+            <div className="flex items-center gap-1 shrink-0">
+              <button
+                type="button"
+                onClick={() => setIsFullscreen(!isFullscreen)}
+                className="size-8 rounded-lg border border-border/80 bg-background/80 hover:bg-muted text-muted-foreground hover:text-foreground flex items-center justify-center transition-colors cursor-pointer"
+                title={isFullscreen ? "Thu nhỏ (phóng to/thu nhỏ)" : "Toàn màn hình"}
+              >
+                {isFullscreen ? <Minimize2 className="size-4" /> : <Maximize2 className="size-4" />}
+              </button>
+              <button
+                type="button"
+                onClick={onClose}
+                className="size-8 rounded-lg border border-border/80 bg-background/80 hover:bg-muted text-muted-foreground hover:text-foreground flex items-center justify-center transition-colors cursor-pointer"
+                title="Đóng (Esc)"
+              >
+                <X className="size-4" />
+              </button>
+            </div>
           </div>
 
           {/* Thanh công cụ chuyển đổi Hợp nhất / Công ty mẹ */}
-          <div className="flex flex-wrap items-center justify-between gap-2 pt-1">
+          <div className="flex flex-wrap items-center justify-between gap-2 pt-0.5">
             <div className="inline-flex items-center p-0.5 rounded-lg bg-background/80 border border-border shadow-2xs">
               <button
                 type="button"
                 onClick={() => setSelectedType("HopNhat")}
                 disabled={!hasHopNhat}
                 className={cn(
-                  "px-3 py-1 rounded-md text-xs font-bold transition-all cursor-pointer",
+                  "px-2.5 py-0.5 sm:px-3 sm:py-1 rounded-md text-xs font-bold transition-all cursor-pointer",
                   selectedType === "HopNhat"
                     ? "bg-primary text-primary-foreground shadow-xs"
                     : "text-muted-foreground hover:text-foreground",
@@ -158,7 +179,7 @@ export function FinancialNoteModal({
                 onClick={() => setSelectedType("CongTyMe")}
                 disabled={!hasCongTyMe}
                 className={cn(
-                  "px-3 py-1 rounded-md text-xs font-bold transition-all cursor-pointer",
+                  "px-2.5 py-0.5 sm:px-3 sm:py-1 rounded-md text-xs font-bold transition-all cursor-pointer",
                   selectedType === "CongTyMe"
                     ? "bg-primary text-primary-foreground shadow-xs"
                     : "text-muted-foreground hover:text-foreground",
@@ -170,18 +191,18 @@ export function FinancialNoteModal({
             </div>
 
             {currentNote && (
-              <span className="text-[11.5px] font-medium text-emerald-400/90 bg-emerald-500/10 border border-emerald-500/20 px-2.5 py-1 rounded-lg flex items-center gap-1.5">
-                <FileText className="size-3.5" />
-                {currentNote.rawTitle || currentNote.title}
+              <span className="text-[11px] sm:text-[11.5px] font-medium text-emerald-400/90 bg-emerald-500/10 border border-emerald-500/20 px-2 py-0.5 sm:px-2.5 sm:py-1 rounded-lg flex items-center gap-1.5 max-w-full truncate">
+                <FileText className="size-3.5 shrink-0" />
+                <span className="truncate">{currentNote.rawTitle || currentNote.title}</span>
               </span>
             )}
           </div>
         </div>
 
         {/* ── NỘI DUNG THUYẾT MINH CHI TIẾT (SCROLLABLE) ── */}
-        <div className="flex-1 overflow-y-auto p-4 sm:p-6 space-y-4">
+        <div className="flex-1 overflow-y-auto p-3 sm:p-4 space-y-3">
           {currentNote ? (
-            <div className="space-y-4">
+            <div className="space-y-3">
               <div
                 className="agm-markdown-content agm-compact-layout text-xs sm:text-sm leading-relaxed text-foreground/90"
                 dangerouslySetInnerHTML={{ __html: currentNote.contentHtml }}
@@ -212,7 +233,7 @@ export function FinancialNoteModal({
         </div>
 
         {/* ── FOOTER ── */}
-        <div className="flex items-center justify-between gap-3 p-3.5 sm:p-4 border-t border-border bg-muted/30 shrink-0">
+        <div className="flex items-center justify-between gap-3 p-2.5 sm:px-4 sm:py-2.5 border-t border-border bg-muted/30 shrink-0">
           <div className="text-[11px] sm:text-xs text-muted-foreground">
             Dữ liệu trích xuất từ Báo cáo tài chính chính thức có kiểm toán/soát xét
           </div>

@@ -72,6 +72,9 @@ const nextConfig = {
     '/xuat-nhap-khau': [
       './data/customs_*.json',
     ],
+    '/api/funds': [
+      './data/funds_snapshot.json',
+    ],
   },
   outputFileTracingExcludes: {
     '*': [

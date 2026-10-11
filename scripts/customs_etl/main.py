@@ -226,6 +226,52 @@ def do_export_json(args: argparse.Namespace) -> None:
         log.info("Đã bổ sung %d dòng THANG từ KY_1 + KY_2.", len(synthesized_thang))
         rows.extend(synthesized_thang)
 
+    # Điền khuyết các dòng mặt hàng FDI Xuất khẩu Tháng 03/2025 từ lũy kế T4 trừ T2
+    fdi_t2 = [r for r in rows if r.period_date.isoformat() == "2025-02-01" and r.period_type == "THANG" and r.trade_type == "EXPORT" and r.dataset_category == "fdi"]
+    fdi_t4 = [r for r in rows if r.period_date.isoformat() == "2025-04-01" and r.period_type == "THANG" and r.trade_type == "EXPORT" and r.dataset_category == "fdi"]
+    fdi_t3_existing = [r for r in rows if r.period_date.isoformat() == "2025-03-01" and r.period_type == "THANG" and r.trade_type == "EXPORT" and r.dataset_category == "fdi"]
+
+    if fdi_t2 and fdi_t4 and not fdi_t3_existing:
+        map_t2 = {r.name: r for r in fdi_t2}
+        synth_fdi_t3 = []
+        for r4 in fdi_t4:
+            r2 = map_t2.get(r4.name)
+            val2_acc = r2.value_acc if r2 and r2.value_acc else 0.0
+            val4_acc = r4.value_acc or 0.0
+            val4_ky = r4.value_usd or 0.0
+            val3 = (val4_acc - val4_ky) - val2_acc
+            if val3 <= 0 and val4_ky == 0:
+                continue
+            qty2_acc = r2.quantity_acc if r2 and r2.quantity_acc else 0.0
+            qty4_acc = r4.quantity_acc or 0.0
+            qty4_ky = r4.quantity or 0.0
+            qty3 = (qty4_acc - qty4_ky) - qty2_acc if r4.quantity_acc is not None else None
+
+            synth_row = parser_mod.ParsedRow(
+                period_type="THANG",
+                period_date=date(2025, 3, 1),
+                trade_type="EXPORT",
+                status="SO_BO",
+                dim_kind="commodity",
+                name=r4.name,
+                raw_name=r4.raw_name,
+                unit=r4.unit,
+                quantity=max(0.0, qty3) if qty3 is not None else None,
+                value_usd=max(0.0, val3),
+                quantity_acc=val4_acc - val4_ky if r4.quantity_acc is not None else None,
+                value_acc=val4_acc - val4_ky,
+                code=r4.code,
+                category=r4.category,
+                iso_code=r4.iso_code,
+                continent=r4.continent,
+                source_file="synthesized_fdi_t3_from_acc",
+                dataset_category="fdi",
+            )
+            synth_fdi_t3.append(synth_row)
+        if synth_fdi_t3:
+            log.info("Đã bổ sung %d dòng mặt hàng FDI Xuất khẩu Tháng 03/2025 từ lũy kế T4-T2.", len(synth_fdi_t3))
+            rows.extend(synth_fdi_t3)
+
     if args.limit:
         rows = rows[: args.limit]
         matrix_rows = matrix_rows[: args.limit]

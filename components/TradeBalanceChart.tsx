@@ -531,17 +531,17 @@ export function TradeBalanceChart({ data }: { data: TradeBalancePoint[] }) {
   const [range, setRange] = useState<RangeKey>('month')
   const [timeHorizon, setTimeHorizon] = useState<TimeHorizon>('2y')
 
-  // Bật/tắt linh hoạt từng loại cột theo yêu cầu người dùng
+  // Bật/tắt linh hoạt từng loại cột theo yêu cầu người dùng (Mặc định lọc sẵn: Chỉ Cán cân)
   const [visibleSeries, setVisibleSeries] = useState<{
     export: boolean
     import: boolean
     total: boolean
     balance: boolean
   }>({
-    export: true,
-    import: true,
-    total: true,
-    balance: false,
+    export: false,
+    import: false,
+    total: false,
+    balance: true,
   })
 
   const is15d = range === '15d'

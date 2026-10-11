@@ -1,13 +1,11 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { revalidatePath } from 'next/cache'
-import fs from 'fs'
-import path from 'path'
-import { FUNDS_DATA, TOP_STOCK_HOLDINGS, TOP_INDUSTRY_HOLDINGS, Fund } from '@/lib/funds-data'
+import { syncFundsFromFmarket } from '@/lib/fund-service'
 
 export const dynamic = 'force-dynamic'
 
 /**
- * Route tự động đồng bộ & cập nhật dữ liệu Quỹ Mở hàng tuần
+ * Route tự động đồng bộ & cập nhật dữ liệu Quỹ Mở hàng tuần từ Fmarket
  * Kích hoạt bởi:
  * 1. Vercel Cron Job hàng tuần (ví dụ: 20:00 tối Chủ Nhật)
  * 2. Gọi thủ công: GET /api/sync-funds?secret=YOUR_CRON_SECRET
@@ -41,79 +39,31 @@ async function handleSyncFunds(request: NextRequest) {
     }
   }
 
-  const syncLog: {
-    timestamp: string
-    updatedFundsCount: number
-    topStocksUpdated: boolean
-    topIndustriesUpdated: boolean
-    errors: string[]
-  } = {
-    timestamp: new Date().toISOString(),
-    updatedFundsCount: 0,
-    topStocksUpdated: false,
-    topIndustriesUpdated: false,
-    errors: [],
-  }
-
+  const startTime = Date.now()
   try {
-    // 2. Lấy danh sách quỹ hiện có làm baseline
-    let fundsList: Fund[] = [...FUNDS_DATA]
+    // 2. Đồng bộ trực tiếp từ Fmarket API và tính toán lại toàn bộ Top Holdings
+    const snapshot = await syncFundsFromFmarket()
 
-    // 3. Tiến hành cập nhật ngày cập nhật mới nhất (định kỳ tuần)
-    const now = new Date()
-    const formattedDate = `${String(now.getDate()).padStart(2, '0')}/${String(now.getMonth() + 1).padStart(2, '0')}/${now.getFullYear()}`
-
-    // Cập nhật lại ngày NAV mới nhất cho các quỹ
-    fundsList = fundsList.map((f) => ({
-      ...f,
-      navDate: formattedDate,
-    }))
-
-    syncLog.updatedFundsCount = fundsList.length
-    syncLog.topStocksUpdated = true
-    syncLog.topIndustriesUpdated = true
-
-    // 4. Lưu snapshot dữ liệu vào thư mục data (nếu môi trường cho phép ghi file)
-    const dataDir = path.join(process.cwd(), 'data')
-    if (!fs.existsSync(dataDir)) {
-      try {
-        fs.mkdirSync(dataDir, { recursive: true })
-      } catch {}
-    }
-
-    const fundsCachePath = path.join(dataDir, 'funds_snapshot.json')
-    try {
-      fs.writeFileSync(
-        fundsCachePath,
-        JSON.stringify(
-          {
-            lastUpdated: new Date().toISOString(),
-            formattedDate,
-            fundsCount: fundsList.length,
-            funds: fundsList,
-            topStocks: TOP_STOCK_HOLDINGS,
-            topIndustries: TOP_INDUSTRY_HOLDINGS,
-          },
-          null,
-          2
-        ),
-        'utf-8'
-      )
-    } catch (err: any) {
-      // Trên môi trường read-only serverless, việc ghi file bỏ qua an toàn vì revalidatePath đã purge cache
-    }
-
-    // 5. Làm tươi (Revalidate) lại trang /quy-mo để khách xem thấy dữ liệu mới ngay
+    // 3. Làm tươi (Revalidate) lại trang /quy-mo để khách xem thấy dữ liệu mới ngay
     try {
       revalidatePath('/quy-mo')
     } catch (revalidateErr: any) {
-      syncLog.errors.push(`Revalidate error: ${revalidateErr.message}`)
+      console.warn('[Sync Funds] Revalidate warning:', revalidateErr)
     }
+
+    const durationMs = Date.now() - startTime
 
     return NextResponse.json({
       success: true,
-      message: `Đồng bộ dữ liệu ${fundsList.length} quỹ mở thành công cho tuần này!`,
-      data: syncLog,
+      message: `Đồng bộ thành công ${snapshot.funds.length} quỹ mở thực tế từ hệ thống Fmarket!`,
+      data: {
+        timestamp: snapshot.lastUpdated,
+        formattedDate: snapshot.formattedDate,
+        updatedFundsCount: snapshot.funds.length,
+        topStocksCount: snapshot.topStocks.length,
+        topIndustriesCount: snapshot.topIndustries.length,
+        durationMs,
+      },
     })
   } catch (error: any) {
     console.error('[Sync Funds] Error:', error)

@@ -117,6 +117,15 @@ def build_trade_balance(
                 "import_fdi": round(k1.get("import_fdi", 0) + k2.get("import_fdi", 0), 2),
             }
 
+        # Bổ sung số liệu FDI xuất khẩu cho Tháng 03/2025:
+        # File 2025-t3-xuatkhaucuafdi.pdf không có trên portal TCHQ.
+        # Trị giá chính xác tính từ lũy kế 4T của TCHQ trừ T4 (99.086.097.324 - 25.635.845.260 = 73.450.252.064)
+        # trừ lũy kế 2T của TCHQ (46.092.231.499) -> 27.358.020.565 USD.
+        if thang_key in periods:
+            rec = periods[thang_key]
+            if rec.get("export_fdi", 0.0) == 0.0 and m == "2025-03-01":
+                rec["export_fdi"] = 27358020565.0
+
     series: list[dict[str, Any]] = []
     for key in sorted(periods, key=lambda k: (k[1], PERIOD_RANK.get(k[0], 99))):
         rec = periods[key]

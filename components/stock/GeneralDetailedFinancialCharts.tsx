@@ -1,6 +1,6 @@
 'use client'
 
-import React, { useState, useMemo } from 'react'
+import React, { useState, useMemo, useCallback, useRef } from 'react'
 import {
   ResponsiveContainer,
   ComposedChart,
@@ -108,26 +108,64 @@ const customTooltipStyle: React.CSSProperties = {
   pointerEvents: 'none',
 }
 
-// Tooltip hiển thị chi tiết số liệu (Pure Component, 0 delay)
-export const CustomChartTooltip = React.memo(function CustomChartTooltip({ active, payload, label }: any) {
+// Tooltip hiển thị chi tiết số liệu (Gọn gàng theo khoản mục được chọn, 0 delay)
+export const CustomChartTooltip = React.memo(function CustomChartTooltip({
+  active,
+  payload,
+  label,
+  activeItem,
+}: any) {
   if (!active || !payload || payload.length === 0) return null
   const qNum = getQuarter(payload[0]?.payload)
 
+  // Nếu người dùng đang hover vào một khoản mục cụ thể (activeItem):
+  // Chỉ hiển thị đúng khoản mục đó để gọn gàng, không che đi biểu đồ
+  let displayPayload = payload
+  if (activeItem) {
+    const matched = payload.filter(
+      (item: any) => item.dataKey === activeItem || item.name === activeItem
+    )
+    if (matched.length > 0) {
+      displayPayload = matched
+    }
+  }
+
+  const rowData = payload[0]?.payload || {}
+
   return (
-    <div style={customTooltipStyle} className="p-3 shadow-2xl border border-slate-700/80 rounded-xl min-w-[190px]">
-      <div className="font-mono font-bold text-xs text-sky-400 border-b border-slate-700/60 pb-1.5 mb-1.5 flex items-center justify-between">
+    <div
+      style={customTooltipStyle}
+      className="p-2 sm:p-2.5 shadow-2xl border border-slate-700/80 rounded-xl min-w-[140px] max-w-[280px]"
+    >
+      <div className="font-mono font-bold text-xs text-sky-400 border-b border-slate-700/60 pb-1 mb-1.5 flex items-center justify-between gap-2">
         <span>{label}</span>
         {qNum && (
-          <span className="text-[10px] text-amber-300 font-extrabold bg-amber-500/20 px-1.5 py-0.5 rounded border border-amber-500/40">
+          <span className="text-[10px] text-amber-300 font-extrabold bg-amber-500/20 px-1.5 py-0.5 rounded border border-amber-500/40 shrink-0">
             Quý {qNum}
           </span>
         )}
       </div>
       <div className="space-y-1 text-[11px]">
-        {payload.map((item: any, idx: number) => {
+        {displayPayload.map((item: any, idx: number) => {
           if (item.value == null) return null
           const isPct = String(item.name).includes('%') || String(item.name).includes('YoY')
           const isRatio = String(item.name).includes('lần') || String(item.name).includes('Vòng')
+
+          // Tính % trên tổng tài sản / tổng nguồn vốn / tổng doanh thu / tổng vay nếu đang hiển thị 1 mục:
+          let itemPct: number | null = null
+          if (activeItem && !isPct && !isRatio && typeof item.value === 'number') {
+            const total =
+              rowData.tongTS ||
+              rowData.tongNV ||
+              rowData.tongVay ||
+              rowData.doanhThuThuan ||
+              rowData.doanhThu ||
+              (rowData.lntt ? Math.abs(rowData.lntt) : null)
+            if (total && typeof total === 'number' && Math.abs(total) > 0) {
+              itemPct = (Math.abs(item.value) / Math.abs(total)) * 100
+            }
+          }
+
           return (
             <div key={idx} className="flex items-center justify-between gap-3">
               <span className="flex items-center gap-1.5 text-slate-300">
@@ -135,14 +173,14 @@ export const CustomChartTooltip = React.memo(function CustomChartTooltip({ activ
                   className="size-2 rounded-full shrink-0"
                   style={{ backgroundColor: item.color || item.fill || '#38bdf8' }}
                 />
-                <span className="truncate max-w-[140px]">{item.name}:</span>
+                <span className="truncate max-w-[150px]">{item.name}:</span>
               </span>
               <span className="font-mono font-bold text-white shrink-0">
                 {isPct
                   ? `${Number(item.value).toFixed(1)}%`
                   : isRatio
                   ? `${Number(item.value).toFixed(2)} lần`
-                  : `${fmtNum(item.value)} tỷ`}
+                  : `${fmtNum(item.value)} tỷ${itemPct != null ? ` (${itemPct.toFixed(1)}%)` : ''}`}
               </span>
             </div>
           )
@@ -151,6 +189,92 @@ export const CustomChartTooltip = React.memo(function CustomChartTooltip({ activ
     </div>
   )
 })
+
+// Hook quản lý highlight khoản mục (Series / Bar Highlight chuẩn WiData)
+export function useSeriesHighlight() {
+  const [hoveredKey, setHoveredKey] = useState<string | null>(null)
+  const timeoutRef = useRef<NodeJS.Timeout | null>(null)
+
+  const handleMouseEnter = useCallback((key: string) => {
+    if (timeoutRef.current) {
+      clearTimeout(timeoutRef.current)
+      timeoutRef.current = null
+    }
+    setHoveredKey(key)
+  }, [])
+
+  const handleMouseLeave = useCallback(() => {
+    if (timeoutRef.current) clearTimeout(timeoutRef.current)
+    timeoutRef.current = setTimeout(() => {
+      setHoveredKey(null)
+    }, 150)
+  }, [])
+
+  const handleChartMouseLeave = useCallback(() => {
+    if (timeoutRef.current) {
+      clearTimeout(timeoutRef.current)
+      timeoutRef.current = null
+    }
+    setHoveredKey(null)
+  }, [])
+
+  const handleLegendEnter = useCallback((entry: any) => {
+    if (timeoutRef.current) {
+      clearTimeout(timeoutRef.current)
+      timeoutRef.current = null
+    }
+    if (entry?.dataKey) {
+      setHoveredKey(String(entry.dataKey))
+    }
+  }, [])
+
+  const handleLegendLeave = useCallback(() => {
+    if (timeoutRef.current) clearTimeout(timeoutRef.current)
+    setHoveredKey(null)
+  }, [])
+
+  const getBarProps = useCallback(
+    (key: string) => ({
+      fillOpacity: hoveredKey ? (hoveredKey === key ? 1 : 0.15) : 1,
+      onMouseEnter: () => handleMouseEnter(key),
+      onMouseLeave: handleMouseLeave,
+    }),
+    [hoveredKey, handleMouseEnter, handleMouseLeave]
+  )
+
+  const getLineProps = useCallback(
+    (key: string) => ({
+      strokeOpacity: hoveredKey ? (hoveredKey === key ? 1 : 0.2) : 1,
+      strokeWidth: hoveredKey === key ? 3.5 : 2,
+      onMouseEnter: () => handleMouseEnter(key),
+      onMouseLeave: handleMouseLeave,
+    }),
+    [hoveredKey, handleMouseEnter, handleMouseLeave]
+  )
+
+  const getAreaProps = useCallback(
+    (key: string, baseFillOpacity = 0.22) => ({
+      strokeOpacity: hoveredKey ? (hoveredKey === key ? 1 : 0.2) : 1,
+      fillOpacity: hoveredKey ? (hoveredKey === key ? Math.min(0.5, baseFillOpacity * 1.5) : 0.05) : baseFillOpacity,
+      strokeWidth: hoveredKey === key ? 3 : 2,
+      onMouseEnter: () => handleMouseEnter(key),
+      onMouseLeave: handleMouseLeave,
+    }),
+    [hoveredKey, handleMouseEnter, handleMouseLeave]
+  )
+
+  return {
+    hoveredKey,
+    handleMouseEnter,
+    handleMouseLeave,
+    handleChartMouseLeave,
+    handleLegendEnter,
+    handleLegendLeave,
+    getBarProps,
+    getLineProps,
+    getAreaProps,
+  }
+}
 
 // ══════════════════════════════════════════════════════════════════
 // CÁC COMPONENT BIỂU ĐỒ ĐỘC LẬP
@@ -250,6 +374,9 @@ export const RevenueChartCard = React.memo(function RevenueChartCard({
   latest: any
   cardHeight?: number
 }) {
+  const { hoveredKey, handleChartMouseLeave, handleLegendEnter, handleLegendLeave, getBarProps, getLineProps } =
+    useSeriesHighlight()
+
   return (
     <ExpandableChartCard
       cardHeight={cardHeight}
@@ -270,23 +397,33 @@ export const RevenueChartCard = React.memo(function RevenueChartCard({
           <ComposedChart
             data={data}
             margin={{ top: 10, right: 10, left: -10, bottom: 0 }}
+            onMouseLeave={handleChartMouseLeave}
           >
             <CartesianGrid strokeDasharray="3 3" stroke="#334155" opacity={0.25} />
             <XAxis dataKey="displayDate" tick={{ fontSize: 9.5, fill: '#888' }} />
             <YAxis yAxisId="left" tick={{ fontSize: 10, fill: '#888' }} />
             <YAxis yAxisId="right" orientation="right" tick={{ fontSize: 10, fill: '#888' }} unit="%" />
-            <Tooltip content={<CustomChartTooltip />} isAnimationActive={false} animationDuration={0} cursor={{ fill: 'rgba(255, 255, 255, 0.05)' }} />
-            <Legend wrapperStyle={{ fontSize: '10.5px', paddingTop: '4px' }} />
-            <Bar yAxisId="left" dataKey="doanhThu" name="Doanh thu thuần" fill="#38bdf8" radius={[3, 3, 0, 0]} isAnimationActive={false} />
+            <Tooltip
+              content={<CustomChartTooltip activeItem={hoveredKey} />}
+              isAnimationActive={false}
+              animationDuration={0}
+              cursor={{ fill: 'rgba(255, 255, 255, 0.05)' }}
+            />
+            <Legend
+              wrapperStyle={{ fontSize: '10.5px', paddingTop: '4px' }}
+              onMouseEnter={handleLegendEnter}
+              onMouseLeave={handleLegendLeave}
+            />
+            <Bar yAxisId="left" dataKey="doanhThu" name="Doanh thu thuần" fill="#38bdf8" radius={[3, 3, 0, 0]} {...getBarProps('doanhThu')} isAnimationActive={false} />
             <Line
               yAxisId="right"
               type="monotone"
               dataKey="tangTruongDT"
               name="Tăng trưởng YoY (%)"
               stroke="#f97316"
-              strokeWidth={2}
               dot={{ r: 2.5, fill: '#f97316' }}
               activeDot={{ r: 5 }}
+              {...getLineProps('tangTruongDT')}
               isAnimationActive={false}
             />
           </ComposedChart>
@@ -308,6 +445,9 @@ export const ProfitChartCard = React.memo(function ProfitChartCard({
   latest: any
   cardHeight?: number
 }) {
+  const { hoveredKey, handleChartMouseLeave, handleLegendEnter, handleLegendLeave, getBarProps, getLineProps } =
+    useSeriesHighlight()
+
   return (
     <ExpandableChartCard
       cardHeight={cardHeight}
@@ -328,23 +468,33 @@ export const ProfitChartCard = React.memo(function ProfitChartCard({
           <ComposedChart
             data={data}
             margin={{ top: 10, right: 10, left: -10, bottom: 0 }}
+            onMouseLeave={handleChartMouseLeave}
           >
             <CartesianGrid strokeDasharray="3 3" stroke="#334155" opacity={0.25} />
             <XAxis dataKey="displayDate" tick={{ fontSize: 9.5, fill: '#888' }} />
             <YAxis yAxisId="left" tick={{ fontSize: 10, fill: '#888' }} />
             <YAxis yAxisId="right" orientation="right" tick={{ fontSize: 10, fill: '#888' }} unit="%" />
-            <Tooltip content={<CustomChartTooltip />} isAnimationActive={false} animationDuration={0} cursor={{ fill: 'rgba(255, 255, 255, 0.05)' }} />
-            <Legend wrapperStyle={{ fontSize: '10.5px', paddingTop: '4px' }} />
-            <Bar yAxisId="left" dataKey="lnst" name="LNST cổ đông mẹ" fill="#2dd4bf" radius={[3, 3, 0, 0]} isAnimationActive={false} />
+            <Tooltip
+              content={<CustomChartTooltip activeItem={hoveredKey} />}
+              isAnimationActive={false}
+              animationDuration={0}
+              cursor={{ fill: 'rgba(255, 255, 255, 0.05)' }}
+            />
+            <Legend
+              wrapperStyle={{ fontSize: '10.5px', paddingTop: '4px' }}
+              onMouseEnter={handleLegendEnter}
+              onMouseLeave={handleLegendLeave}
+            />
+            <Bar yAxisId="left" dataKey="lnst" name="LNST cổ đông mẹ" fill="#2dd4bf" radius={[3, 3, 0, 0]} {...getBarProps('lnst')} isAnimationActive={false} />
             <Line
               yAxisId="right"
               type="monotone"
               dataKey="tangTruongLNST"
               name="Tăng trưởng YoY (%)"
               stroke="#eab308"
-              strokeWidth={2}
               dot={{ r: 2.5, fill: '#eab308' }}
               activeDot={{ r: 5 }}
+              {...getLineProps('tangTruongLNST')}
               isAnimationActive={false}
             />
           </ComposedChart>
@@ -362,6 +512,9 @@ const PlanChartCard = React.memo(function PlanChartCard({
   planChartPoints: any[]
   latestPlan: any
 }) {
+  const { hoveredKey, handleChartMouseLeave, handleLegendEnter, handleLegendLeave, getBarProps, getLineProps } =
+    useSeriesHighlight()
+
   return (
     <ExpandableChartCard
       title="KQKD Kế Hoạch & Thực Hiện (Năm)"
@@ -375,22 +528,34 @@ const PlanChartCard = React.memo(function PlanChartCard({
       }
       modalTitle="Kết Quả Kinh Doanh Kế Hoạch & Thực Hiện (Năm)"
       modalSubtitle="So sánh Doanh thu, Lợi nhuận thực hiện với Nghị quyết ĐHĐCĐ qua các năm"
-        >
+    >
       {(height) =>
         planChartPoints.length > 0 ? (
           <ResponsiveContainer width="100%" height={height}>
-            <ComposedChart data={planChartPoints} margin={{ top: 10, right: 10, left: -10, bottom: 0 }}>
+            <ComposedChart
+              data={planChartPoints}
+              margin={{ top: 10, right: 10, left: -10, bottom: 0 }}
+              onMouseLeave={handleChartMouseLeave}
+            >
               <CartesianGrid strokeDasharray="3 3" stroke="#334155" opacity={0.25} />
               <XAxis dataKey="year" tick={{ fontSize: 10, fill: '#888' }} />
               <YAxis yAxisId="left" tick={{ fontSize: 10, fill: '#888' }} />
               <YAxis yAxisId="right" orientation="right" tick={{ fontSize: 10, fill: '#888' }} unit="%" />
-              <Tooltip content={<CustomChartTooltip />} isAnimationActive={false} animationDuration={0} />
-              <Legend wrapperStyle={{ fontSize: '10px', paddingTop: '4px' }} />
-              <Bar yAxisId="left" dataKey="keHoachDT" name="DT Kế hoạch" fill="#6366f1" radius={[2, 2, 0, 0]} isAnimationActive={false} />
-              <Bar yAxisId="left" dataKey="thucHienDT" name="DT Thực hiện" fill="#0ea5e9" radius={[2, 2, 0, 0]} isAnimationActive={false} />
-              <Bar yAxisId="left" dataKey="keHoachLNST" name="LNST Kế hoạch" fill="#f59e0b" radius={[2, 2, 0, 0]} isAnimationActive={false} />
-              <Bar yAxisId="left" dataKey="thucHienLNST" name="LNST Thực hiện" fill="#10b981" radius={[2, 2, 0, 0]} isAnimationActive={false} />
-              <Line yAxisId="right" type="monotone" dataKey="pctDatLNST" name="% Đạt LNST" stroke="#fbbf24" strokeWidth={2.2} dot={{ r: 3.5, fill: '#fbbf24' }} isAnimationActive={false} />
+              <Tooltip
+                content={<CustomChartTooltip activeItem={hoveredKey} />}
+                isAnimationActive={false}
+                animationDuration={0}
+              />
+              <Legend
+                wrapperStyle={{ fontSize: '10px', paddingTop: '4px' }}
+                onMouseEnter={handleLegendEnter}
+                onMouseLeave={handleLegendLeave}
+              />
+              <Bar yAxisId="left" dataKey="keHoachDT" name="DT Kế hoạch" fill="#6366f1" radius={[2, 2, 0, 0]} {...getBarProps('keHoachDT')} isAnimationActive={false} />
+              <Bar yAxisId="left" dataKey="thucHienDT" name="DT Thực hiện" fill="#0ea5e9" radius={[2, 2, 0, 0]} {...getBarProps('thucHienDT')} isAnimationActive={false} />
+              <Bar yAxisId="left" dataKey="keHoachLNST" name="LNST Kế hoạch" fill="#f59e0b" radius={[2, 2, 0, 0]} {...getBarProps('keHoachLNST')} isAnimationActive={false} />
+              <Bar yAxisId="left" dataKey="thucHienLNST" name="LNST Thực hiện" fill="#10b981" radius={[2, 2, 0, 0]} {...getBarProps('thucHienLNST')} isAnimationActive={false} />
+              <Line yAxisId="right" type="monotone" dataKey="pctDatLNST" name="% Đạt LNST" stroke="#fbbf24" dot={{ r: 3.5, fill: '#fbbf24' }} {...getLineProps('pctDatLNST')} isAnimationActive={false} />
             </ComposedChart>
           </ResponsiveContainer>
         ) : (
@@ -412,6 +577,9 @@ const ProfitStructureChartCard = React.memo(function ProfitStructureChartCard({
   isQuarter?: boolean
   latestProfit: any
 }) {
+  const { hoveredKey, handleChartMouseLeave, handleLegendEnter, handleLegendLeave, getBarProps, getLineProps } =
+    useSeriesHighlight()
+
   return (
     <ExpandableChartCard
       title="Cơ Cấu Lợi Nhuận Trước Thuế"
@@ -432,25 +600,35 @@ const ProfitStructureChartCard = React.memo(function ProfitStructureChartCard({
             <ComposedChart
               data={profitPoints}
               margin={{ top: 10, right: 10, left: -10, bottom: 0 }}
+              onMouseLeave={handleChartMouseLeave}
             >
               <CartesianGrid strokeDasharray="3 3" stroke="#334155" opacity={0.25} />
               <XAxis dataKey="displayDate" tick={{ fontSize: 9.5, fill: '#888' }} />
               <YAxis yAxisId="left" tick={{ fontSize: 10, fill: '#888' }} tickFormatter={(v) => `${Math.round(v)}`} />
-              <Tooltip content={<CustomChartTooltip />} isAnimationActive={false} animationDuration={0} cursor={{ fill: 'rgba(255, 255, 255, 0.05)' }} />
-              <Legend wrapperStyle={{ fontSize: '9.5px', paddingTop: '4px' }} />
-              <Bar yAxisId="left" dataKey="lnKDChinh" name="Lợi nhuận thuần từ HĐKD chính" stackId="pbt" fill="#4f46e5" isAnimationActive={false} />
-              <Bar yAxisId="left" dataKey="lnLDLK" name="Lãi lỗ từ công ty LDLK" stackId="pbt" fill="#14b8a6" isAnimationActive={false} />
-              <Bar yAxisId="left" dataKey="lnTaiChinh" name="Lợi nhuận tài chính" stackId="pbt" fill="#facc15" isAnimationActive={false} />
-              <Bar yAxisId="left" dataKey="lnKhac" name="Lợi nhuận khác (*)" stackId="pbt" fill="#d946ef" radius={[2, 2, 0, 0]} isAnimationActive={false} />
+              <Tooltip
+                content={<CustomChartTooltip activeItem={hoveredKey} />}
+                isAnimationActive={false}
+                animationDuration={0}
+                cursor={{ fill: 'rgba(255, 255, 255, 0.05)' }}
+              />
+              <Legend
+                wrapperStyle={{ fontSize: '9.5px', paddingTop: '4px' }}
+                onMouseEnter={handleLegendEnter}
+                onMouseLeave={handleLegendLeave}
+              />
+              <Bar yAxisId="left" dataKey="lnKDChinh" name="Lợi nhuận thuần từ HĐKD chính" stackId="pbt" fill="#4f46e5" {...getBarProps('lnKDChinh')} isAnimationActive={false} />
+              <Bar yAxisId="left" dataKey="lnLDLK" name="Lãi lỗ từ công ty LDLK" stackId="pbt" fill="#14b8a6" {...getBarProps('lnLDLK')} isAnimationActive={false} />
+              <Bar yAxisId="left" dataKey="lnTaiChinh" name="Lợi nhuận tài chính" stackId="pbt" fill="#facc15" {...getBarProps('lnTaiChinh')} isAnimationActive={false} />
+              <Bar yAxisId="left" dataKey="lnKhac" name="Lợi nhuận khác (*)" stackId="pbt" fill="#d946ef" radius={[2, 2, 0, 0]} {...getBarProps('lnKhac')} isAnimationActive={false} />
               <Line
                 yAxisId="left"
                 type="monotone"
                 dataKey="lntt"
                 name="Lợi nhuận trước thuế (LNTT)"
                 stroke="#f97316"
-                strokeWidth={2.2}
                 dot={{ r: 2.5, fill: '#f97316' }}
                 activeDot={{ r: 5 }}
+                {...getLineProps('lntt')}
                 isAnimationActive={false}
               />
             </ComposedChart>
@@ -477,6 +655,9 @@ export const DetailedAssetChartCard = React.memo(function DetailedAssetChartCard
   latestPoint: any
   cardHeight?: number
 }) {
+  const { hoveredKey, handleChartMouseLeave, handleLegendEnter, handleLegendLeave, getBarProps } =
+    useSeriesHighlight()
+
   return (
     <ExpandableChartCard
       cardHeight={cardHeight}
@@ -498,20 +679,30 @@ export const DetailedAssetChartCard = React.memo(function DetailedAssetChartCard
             <ComposedChart
               data={balancePoints}
               margin={{ top: 10, right: 10, left: -10, bottom: 0 }}
+              onMouseLeave={handleChartMouseLeave}
             >
               <CartesianGrid strokeDasharray="3 3" stroke="#334155" opacity={0.25} />
               <XAxis dataKey="displayDate" tick={{ fontSize: 9.5, fill: '#888' }} />
               <YAxis yAxisId="left" tick={{ fontSize: 10, fill: '#888' }} tickFormatter={(v) => `${Math.round(v)}`} />
-              <Tooltip content={<CustomChartTooltip />} isAnimationActive={false} animationDuration={0} cursor={{ fill: 'rgba(255, 255, 255, 0.05)' }} />
-              <Legend wrapperStyle={{ fontSize: '9px', paddingTop: '4px' }} />
+              <Tooltip
+                content={<CustomChartTooltip activeItem={hoveredKey} />}
+                isAnimationActive={false}
+                animationDuration={0}
+                cursor={{ fill: 'rgba(255, 255, 255, 0.05)' }}
+              />
+              <Legend
+                wrapperStyle={{ fontSize: '9px', paddingTop: '4px' }}
+                onMouseEnter={handleLegendEnter}
+                onMouseLeave={handleLegendLeave}
+              />
               {/* Stacked Bars chuẩn 100% hình ảnh WiData: TS khác -> ĐTTC dài hạn -> TSCĐ -> Tồn kho -> Phải thu -> ĐTTC ngắn hạn -> Tiền */}
-              <Bar yAxisId="left" dataKey="tsKhac" name="Tài sản khác" stackId="ts" fill="#64748b" isAnimationActive={false} />
-              <Bar yAxisId="left" dataKey="dtdh" name="Đầu tư tài chính dài hạn" stackId="ts" fill="#334155" isAnimationActive={false} />
-              <Bar yAxisId="left" dataKey="tscd" name="Tài sản cố định" stackId="ts" fill="#f43f5e" isAnimationActive={false} />
-              <Bar yAxisId="left" dataKey="tk" name="Hàng tồn kho" stackId="ts" fill="#f59e0b" isAnimationActive={false} />
-              <Bar yAxisId="left" dataKey="pt" name="Các khoản phải thu" stackId="ts" fill="#c084fc" isAnimationActive={false} />
-              <Bar yAxisId="left" dataKey="dtnh" name="Đầu tư tài chính ngắn hạn" stackId="ts" fill="#2dd4bf" isAnimationActive={false} />
-              <Bar yAxisId="left" dataKey="tien" name="Tiền và tương đương tiền" stackId="ts" fill="#38bdf8" radius={[2, 2, 0, 0]} isAnimationActive={false} />
+              <Bar yAxisId="left" dataKey="tsKhac" name="Tài sản khác" stackId="ts" fill="#64748b" {...getBarProps('tsKhac')} isAnimationActive={false} />
+              <Bar yAxisId="left" dataKey="dtdh" name="Đầu tư tài chính dài hạn" stackId="ts" fill="#334155" {...getBarProps('dtdh')} isAnimationActive={false} />
+              <Bar yAxisId="left" dataKey="tscd" name="Tài sản cố định" stackId="ts" fill="#f43f5e" {...getBarProps('tscd')} isAnimationActive={false} />
+              <Bar yAxisId="left" dataKey="tk" name="Hàng tồn kho" stackId="ts" fill="#f59e0b" {...getBarProps('tk')} isAnimationActive={false} />
+              <Bar yAxisId="left" dataKey="pt" name="Các khoản phải thu" stackId="ts" fill="#c084fc" {...getBarProps('pt')} isAnimationActive={false} />
+              <Bar yAxisId="left" dataKey="dtnh" name="Đầu tư tài chính ngắn hạn" stackId="ts" fill="#2dd4bf" {...getBarProps('dtnh')} isAnimationActive={false} />
+              <Bar yAxisId="left" dataKey="tien" name="Tiền và tương đương tiền" stackId="ts" fill="#38bdf8" radius={[2, 2, 0, 0]} {...getBarProps('tien')} isAnimationActive={false} />
             </ComposedChart>
           </ResponsiveContainer>
         ) : (
@@ -536,6 +727,9 @@ export const DetailedCapitalChartCard = React.memo(function DetailedCapitalChart
   latestPoint: any
   cardHeight?: number
 }) {
+  const { hoveredKey, handleChartMouseLeave, handleLegendEnter, handleLegendLeave, getBarProps } =
+    useSeriesHighlight()
+
   return (
     <ExpandableChartCard
       cardHeight={cardHeight}
@@ -557,19 +751,29 @@ export const DetailedCapitalChartCard = React.memo(function DetailedCapitalChart
             <ComposedChart
               data={balancePoints}
               margin={{ top: 10, right: 10, left: -10, bottom: 0 }}
+              onMouseLeave={handleChartMouseLeave}
             >
               <CartesianGrid strokeDasharray="3 3" stroke="#334155" opacity={0.25} />
               <XAxis dataKey="displayDate" tick={{ fontSize: 9.5, fill: '#888' }} />
               <YAxis yAxisId="left" tick={{ fontSize: 10, fill: '#888' }} tickFormatter={(v) => `${Math.round(v)}`} />
-              <Tooltip content={<CustomChartTooltip />} isAnimationActive={false} animationDuration={0} cursor={{ fill: 'rgba(255, 255, 255, 0.05)' }} />
-              <Legend wrapperStyle={{ fontSize: '9px', paddingTop: '4px' }} />
+              <Tooltip
+                content={<CustomChartTooltip activeItem={hoveredKey} />}
+                isAnimationActive={false}
+                animationDuration={0}
+                cursor={{ fill: 'rgba(255, 255, 255, 0.05)' }}
+              />
+              <Legend
+                wrapperStyle={{ fontSize: '9px', paddingTop: '4px' }}
+                onMouseEnter={handleLegendEnter}
+                onMouseLeave={handleLegendLeave}
+              />
               {/* Stacked Bars chuẩn 100% WiData: VCSH -> Người mua trả trước -> Phải trả người bán -> Nguồn vốn khác -> Vay dài hạn -> Vay ngắn hạn */}
-              <Bar yAxisId="left" dataKey="vcsh" name="Vốn chủ sở hữu" stackId="nv" fill="#3b82f6" isAnimationActive={false} />
-              <Bar yAxisId="left" dataKey="nmtt" name="Người mua trả trước" stackId="nv" fill="#f97316" isAnimationActive={false} />
-              <Bar yAxisId="left" dataKey="ptnb" name="Phải trả người bán" stackId="nv" fill="#a855f7" isAnimationActive={false} />
-              <Bar yAxisId="left" dataKey="nvKhac" name="Nguồn vốn khác" stackId="nv" fill="#64748b" isAnimationActive={false} />
-              <Bar yAxisId="left" dataKey="vdh" name="Vay và thuê tài chính dài hạn" stackId="nv" fill="#facc15" isAnimationActive={false} />
-              <Bar yAxisId="left" dataKey="vnh" name="Vay và thuê tài chính ngắn hạn" stackId="nv" fill="#f43f5e" radius={[2, 2, 0, 0]} isAnimationActive={false} />
+              <Bar yAxisId="left" dataKey="vcsh" name="Vốn chủ sở hữu" stackId="nv" fill="#3b82f6" {...getBarProps('vcsh')} isAnimationActive={false} />
+              <Bar yAxisId="left" dataKey="nmtt" name="Người mua trả trước" stackId="nv" fill="#f97316" {...getBarProps('nmtt')} isAnimationActive={false} />
+              <Bar yAxisId="left" dataKey="ptnb" name="Phải trả người bán" stackId="nv" fill="#a855f7" {...getBarProps('ptnb')} isAnimationActive={false} />
+              <Bar yAxisId="left" dataKey="nvKhac" name="Nguồn vốn khác" stackId="nv" fill="#64748b" {...getBarProps('nvKhac')} isAnimationActive={false} />
+              <Bar yAxisId="left" dataKey="vdh" name="Vay và thuê tài chính dài hạn" stackId="nv" fill="#facc15" {...getBarProps('vdh')} isAnimationActive={false} />
+              <Bar yAxisId="left" dataKey="vnh" name="Vay và thuê tài chính ngắn hạn" stackId="nv" fill="#f43f5e" radius={[2, 2, 0, 0]} {...getBarProps('vnh')} isAnimationActive={false} />
             </ComposedChart>
           </ResponsiveContainer>
         ) : (
@@ -594,6 +798,9 @@ export const DetailedCashFlowChartCard = React.memo(function DetailedCashFlowCha
   latestPoint: any
   cardHeight?: number
 }) {
+  const { hoveredKey, handleChartMouseLeave, handleLegendEnter, handleLegendLeave, getBarProps, getLineProps } =
+    useSeriesHighlight()
+
   return (
     <ExpandableChartCard
       cardHeight={cardHeight}
@@ -615,16 +822,26 @@ export const DetailedCashFlowChartCard = React.memo(function DetailedCashFlowCha
             <ComposedChart
               data={balancePoints}
               margin={{ top: 10, right: 10, left: -10, bottom: 0 }}
+              onMouseLeave={handleChartMouseLeave}
             >
               <CartesianGrid strokeDasharray="3 3" stroke="#334155" opacity={0.25} />
               <XAxis dataKey="displayDate" tick={{ fontSize: 9.5, fill: '#888' }} />
               <YAxis yAxisId="left" tick={{ fontSize: 10, fill: '#888' }} tickFormatter={(v) => `${Math.round(v)}`} />
-              <Tooltip content={<CustomChartTooltip />} isAnimationActive={false} animationDuration={0} cursor={{ fill: 'rgba(255, 255, 255, 0.05)' }} />
-              <Legend wrapperStyle={{ fontSize: '9px', paddingTop: '4px' }} />
+              <Tooltip
+                content={<CustomChartTooltip activeItem={hoveredKey} />}
+                isAnimationActive={false}
+                animationDuration={0}
+                cursor={{ fill: 'rgba(255, 255, 255, 0.05)' }}
+              />
+              <Legend
+                wrapperStyle={{ fontSize: '9px', paddingTop: '4px' }}
+                onMouseEnter={handleLegendEnter}
+                onMouseLeave={handleLegendLeave}
+              />
               {/* Stacked Bars với stackId="cf": Recharts tự động xếp các giá trị dương lên trên 0, giá trị âm xuống dưới 0 chuẩn 100% WiData */}
-              <Bar yAxisId="left" dataKey="cff" name="LCTT từ hoạt động tài chính" stackId="cf" fill="#facc15" isAnimationActive={false} />
-              <Bar yAxisId="left" dataKey="icf" name="LCTT từ hoạt động đầu tư" stackId="cf" fill="#14b8a6" isAnimationActive={false} />
-              <Bar yAxisId="left" dataKey="ocf" name="LCTT từ hoạt động kinh doanh" stackId="cf" fill="#6366f1" isAnimationActive={false} />
+              <Bar yAxisId="left" dataKey="cff" name="LCTT từ hoạt động tài chính" stackId="cf" fill="#facc15" {...getBarProps('cff')} isAnimationActive={false} />
+              <Bar yAxisId="left" dataKey="icf" name="LCTT từ hoạt động đầu tư" stackId="cf" fill="#14b8a6" {...getBarProps('icf')} isAnimationActive={false} />
+              <Bar yAxisId="left" dataKey="ocf" name="LCTT từ hoạt động kinh doanh" stackId="cf" fill="#6366f1" {...getBarProps('ocf')} isAnimationActive={false} />
               {/* Line Lưu chuyển tiền thuần trong kỳ (Đường đỏ hồng uốn lượn) */}
               <Line
                 yAxisId="left"
@@ -632,9 +849,9 @@ export const DetailedCashFlowChartCard = React.memo(function DetailedCashFlowCha
                 dataKey="netCash"
                 name="Lưu chuyển tiền thuần trong kỳ"
                 stroke="#f43f5e"
-                strokeWidth={2.2}
                 dot={{ r: 2.5, fill: '#f43f5e' }}
                 activeDot={{ r: 5 }}
+                {...getLineProps('netCash')}
                 isAnimationActive={false}
               />
             </ComposedChart>
@@ -658,6 +875,9 @@ const DetailedCapexDepreciationCard = React.memo(function DetailedCapexDepreciat
   isQuarter?: boolean
   latestPoint: any
 }) {
+  const { hoveredKey, handleChartMouseLeave, handleLegendEnter, handleLegendLeave, getBarProps } =
+    useSeriesHighlight()
+
   return (
     <ExpandableChartCard
       title="CAPEX VÀ KHẤU HAO"
@@ -678,16 +898,26 @@ const DetailedCapexDepreciationCard = React.memo(function DetailedCapexDepreciat
             <ComposedChart
               data={capexPoints}
               margin={{ top: 10, right: 10, left: -10, bottom: 0 }}
+              onMouseLeave={handleChartMouseLeave}
             >
               <CartesianGrid strokeDasharray="3 3" stroke="#334155" opacity={0.25} />
               <XAxis dataKey="displayDate" tick={{ fontSize: 9.5, fill: '#888' }} />
               <YAxis yAxisId="left" tick={{ fontSize: 10, fill: '#888' }} tickFormatter={(v) => `${Math.round(v)}`} />
-              <Tooltip content={<CustomChartTooltip />} isAnimationActive={false} animationDuration={0} cursor={{ fill: 'rgba(255, 255, 255, 0.05)' }} />
-              <Legend wrapperStyle={{ fontSize: '9px', paddingTop: '4px' }} />
+              <Tooltip
+                content={<CustomChartTooltip activeItem={hoveredKey} />}
+                isAnimationActive={false}
+                animationDuration={0}
+                cursor={{ fill: 'rgba(255, 255, 255, 0.05)' }}
+              />
+              <Legend
+                wrapperStyle={{ fontSize: '9px', paddingTop: '4px' }}
+                onMouseEnter={handleLegendEnter}
+                onMouseLeave={handleLegendLeave}
+              />
               {/* Cột Chi mua sắm xây dựng TSCĐ (Dương) */}
-              <Bar yAxisId="left" dataKey="capex" name="Tiền chi mua sắm xây dựng TSCĐ" fill="#0d9488" isAnimationActive={false} />
+              <Bar yAxisId="left" dataKey="capex" name="Tiền chi mua sắm xây dựng TSCĐ" fill="#0d9488" {...getBarProps('capex')} isAnimationActive={false} />
               {/* Cột Khấu hao tài sản cố định (Âm dưới 0 như chuẩn WiData) */}
-              <Bar yAxisId="left" dataKey="khauHao" name="Khấu hao tài sản cố định" fill="#eab308" isAnimationActive={false} />
+              <Bar yAxisId="left" dataKey="khauHao" name="Khấu hao tài sản cố định" fill="#eab308" {...getBarProps('khauHao')} isAnimationActive={false} />
               {/* Đường Line Area CAPEX màu cam/nâu bao đỉnh */}
               <Area
                 yAxisId="left"
@@ -697,6 +927,7 @@ const DetailedCapexDepreciationCard = React.memo(function DetailedCapexDepreciat
                 stroke="#f97316"
                 strokeWidth={2}
                 fill="rgba(249, 115, 22, 0.15)"
+                fillOpacity={hoveredKey ? (hoveredKey === 'capex' ? 0.35 : 0.05) : 0.15}
                 isAnimationActive={false}
               />
             </ComposedChart>
@@ -720,6 +951,9 @@ const DetailedProvisionCard = React.memo(function DetailedProvisionCard({
   isQuarter?: boolean
   latestPoint: any
 }) {
+  const { hoveredKey, handleChartMouseLeave, handleLegendEnter, handleLegendLeave, getBarProps } =
+    useSeriesHighlight()
+
   return (
     <ExpandableChartCard
       title="DỰ PHÒNG"
@@ -740,16 +974,26 @@ const DetailedProvisionCard = React.memo(function DetailedProvisionCard({
             <ComposedChart
               data={provisionPoints}
               margin={{ top: 10, right: 10, left: -10, bottom: 0 }}
+              onMouseLeave={handleChartMouseLeave}
             >
               <CartesianGrid strokeDasharray="3 3" stroke="#334155" opacity={0.25} />
               <XAxis dataKey="displayDate" tick={{ fontSize: 9.5, fill: '#888' }} />
               <YAxis yAxisId="left" tick={{ fontSize: 10, fill: '#888' }} tickFormatter={(v) => `${Math.round(v)}`} />
-              <Tooltip content={<CustomChartTooltip />} isAnimationActive={false} animationDuration={0} cursor={{ fill: 'rgba(255, 255, 255, 0.05)' }} />
-              <Legend wrapperStyle={{ fontSize: '9px', paddingTop: '4px' }} />
-              <Bar yAxisId="left" dataKey="dpPhaiThuDH" name="Dự phòng phải thu dài hạn" stackId="dp" fill="#dc2626" isAnimationActive={false} />
-              <Bar yAxisId="left" dataKey="dpDauTuTC" name="Dự phòng tổn thất đầu tư vào đơn vị khác" stackId="dp" fill="#ec4899" isAnimationActive={false} />
-              <Bar yAxisId="left" dataKey="dpHangTonKho" name="Dự phòng hàng tồn kho" stackId="dp" fill="#eab308" isAnimationActive={false} />
-              <Bar yAxisId="left" dataKey="dpPhaiThuNH" name="Dự phòng phải thu ngắn hạn khó đòi" stackId="dp" fill="#6366f1" isAnimationActive={false} />
+              <Tooltip
+                content={<CustomChartTooltip activeItem={hoveredKey} />}
+                isAnimationActive={false}
+                animationDuration={0}
+                cursor={{ fill: 'rgba(255, 255, 255, 0.05)' }}
+              />
+              <Legend
+                wrapperStyle={{ fontSize: '9px', paddingTop: '4px' }}
+                onMouseEnter={handleLegendEnter}
+                onMouseLeave={handleLegendLeave}
+              />
+              <Bar yAxisId="left" dataKey="dpPhaiThuDH" name="Dự phòng phải thu dài hạn" stackId="dp" fill="#dc2626" {...getBarProps('dpPhaiThuDH')} isAnimationActive={false} />
+              <Bar yAxisId="left" dataKey="dpDauTuTC" name="Dự phòng tổn thất đầu tư vào đơn vị khác" stackId="dp" fill="#ec4899" {...getBarProps('dpDauTuTC')} isAnimationActive={false} />
+              <Bar yAxisId="left" dataKey="dpHangTonKho" name="Dự phòng hàng tồn kho" stackId="dp" fill="#eab308" {...getBarProps('dpHangTonKho')} isAnimationActive={false} />
+              <Bar yAxisId="left" dataKey="dpPhaiThuNH" name="Dự phòng phải thu ngắn hạn khó đòi" stackId="dp" fill="#6366f1" {...getBarProps('dpPhaiThuNH')} isAnimationActive={false} />
             </ComposedChart>
           </ResponsiveContainer>
         ) : (
@@ -771,6 +1015,9 @@ const DetailedFinancialRevenueExpenseCard = React.memo(function DetailedFinancia
   isQuarter?: boolean
   latestPoint: any
 }) {
+  const { hoveredKey, handleChartMouseLeave, handleLegendEnter, handleLegendLeave, getBarProps, getLineProps } =
+    useSeriesHighlight()
+
   return (
     <ExpandableChartCard
       title="DOANH THU & CHI PHÍ TÀI CHÍNH"
@@ -791,23 +1038,33 @@ const DetailedFinancialRevenueExpenseCard = React.memo(function DetailedFinancia
             <ComposedChart
               data={financialPoints}
               margin={{ top: 10, right: 10, left: -10, bottom: 0 }}
+              onMouseLeave={handleChartMouseLeave}
             >
               <CartesianGrid strokeDasharray="3 3" stroke="#334155" opacity={0.25} />
               <XAxis dataKey="displayDate" tick={{ fontSize: 9.5, fill: '#888' }} />
               <YAxis yAxisId="left" tick={{ fontSize: 10, fill: '#888' }} tickFormatter={(v) => `${Math.round(v)}`} />
-              <Tooltip content={<CustomChartTooltip />} isAnimationActive={false} animationDuration={0} cursor={{ fill: 'rgba(255, 255, 255, 0.05)' }} />
-              <Legend wrapperStyle={{ fontSize: '9px', paddingTop: '4px' }} />
-              <Bar yAxisId="left" dataKey="cpTaiChinhKhac" name="Chi phí tài chính khác" stackId="cptc" fill="#8b5cf6" isAnimationActive={false} />
-              <Bar yAxisId="left" dataKey="cpLaiVay" name="Chi phí lãi vay" stackId="cptc" fill="#eab308" isAnimationActive={false} />
+              <Tooltip
+                content={<CustomChartTooltip activeItem={hoveredKey} />}
+                isAnimationActive={false}
+                animationDuration={0}
+                cursor={{ fill: 'rgba(255, 255, 255, 0.05)' }}
+              />
+              <Legend
+                wrapperStyle={{ fontSize: '9px', paddingTop: '4px' }}
+                onMouseEnter={handleLegendEnter}
+                onMouseLeave={handleLegendLeave}
+              />
+              <Bar yAxisId="left" dataKey="cpTaiChinhKhac" name="Chi phí tài chính khác" stackId="cptc" fill="#8b5cf6" {...getBarProps('cpTaiChinhKhac')} isAnimationActive={false} />
+              <Bar yAxisId="left" dataKey="cpLaiVay" name="Chi phí lãi vay" stackId="cptc" fill="#eab308" {...getBarProps('cpLaiVay')} isAnimationActive={false} />
               <Line
                 yAxisId="left"
                 type="monotone"
                 dataKey="dtTaiChinh"
                 name="Doanh thu tài chính"
                 stroke="#38bdf8"
-                strokeWidth={2.5}
                 dot={{ r: 2.5, fill: '#38bdf8' }}
                 activeDot={{ r: 5 }}
+                {...getLineProps('dtTaiChinh')}
                 isAnimationActive={false}
               />
             </ComposedChart>
@@ -831,6 +1088,9 @@ const DetailedDebtStructureCard = React.memo(function DetailedDebtStructureCard(
   isQuarter?: boolean
   latestPoint: any
 }) {
+  const { hoveredKey, handleChartMouseLeave, handleLegendEnter, handleLegendLeave, getBarProps } =
+    useSeriesHighlight()
+
   return (
     <ExpandableChartCard
       title="VAY VÀ NỢ THUÊ TÀI CHÍNH"
@@ -851,17 +1111,27 @@ const DetailedDebtStructureCard = React.memo(function DetailedDebtStructureCard(
             <ComposedChart
               data={debtPoints}
               margin={{ top: 10, right: 10, left: -10, bottom: 0 }}
+              onMouseLeave={handleChartMouseLeave}
             >
               <CartesianGrid strokeDasharray="3 3" stroke="#334155" opacity={0.25} />
               <XAxis dataKey="displayDate" tick={{ fontSize: 9.5, fill: '#888' }} />
               <YAxis yAxisId="left" tick={{ fontSize: 10, fill: '#888' }} tickFormatter={(v) => `${Math.round(v)}`} />
-              <Tooltip content={<CustomChartTooltip />} isAnimationActive={false} animationDuration={0} cursor={{ fill: 'rgba(255, 255, 255, 0.05)' }} />
-              <Legend wrapperStyle={{ fontSize: '9px', paddingTop: '4px' }} />
-              <Bar yAxisId="left" dataKey="vayNganHan" name="Vay và thuê TC ngắn hạn" stackId="debt" fill="#f43f5e" isAnimationActive={false} />
-              <Bar yAxisId="left" dataKey="vayDaiHan" name="Vay và thuê TC dài hạn" stackId="debt" fill="#f97316" isAnimationActive={false} />
-              <Bar yAxisId="left" dataKey="thueTaiChinh" name="Thuê tài chính" stackId="debt" fill="#10b981" isAnimationActive={false} />
-              <Bar yAxisId="left" dataKey="traiPhieu" name="Trái phiếu phát hành" stackId="debt" fill="#eab308" isAnimationActive={false} />
-              <Bar yAxisId="left" dataKey="noDHKhac" name="Nợ dài hạn khác" stackId="debt" fill="#8b5cf6" radius={[2, 2, 0, 0]} isAnimationActive={false} />
+              <Tooltip
+                content={<CustomChartTooltip activeItem={hoveredKey} />}
+                isAnimationActive={false}
+                animationDuration={0}
+                cursor={{ fill: 'rgba(255, 255, 255, 0.05)' }}
+              />
+              <Legend
+                wrapperStyle={{ fontSize: '9px', paddingTop: '4px' }}
+                onMouseEnter={handleLegendEnter}
+                onMouseLeave={handleLegendLeave}
+              />
+              <Bar yAxisId="left" dataKey="vayNganHan" name="Vay và thuê TC ngắn hạn" stackId="debt" fill="#f43f5e" {...getBarProps('vayNganHan')} isAnimationActive={false} />
+              <Bar yAxisId="left" dataKey="vayDaiHan" name="Vay và thuê TC dài hạn" stackId="debt" fill="#f97316" {...getBarProps('vayDaiHan')} isAnimationActive={false} />
+              <Bar yAxisId="left" dataKey="thueTaiChinh" name="Thuê tài chính" stackId="debt" fill="#10b981" {...getBarProps('thueTaiChinh')} isAnimationActive={false} />
+              <Bar yAxisId="left" dataKey="traiPhieu" name="Trái phiếu phát hành" stackId="debt" fill="#eab308" {...getBarProps('traiPhieu')} isAnimationActive={false} />
+              <Bar yAxisId="left" dataKey="noDHKhac" name="Nợ dài hạn khác" stackId="debt" fill="#8b5cf6" radius={[2, 2, 0, 0]} {...getBarProps('noDHKhac')} isAnimationActive={false} />
             </ComposedChart>
           </ResponsiveContainer>
         ) : (
@@ -883,6 +1153,9 @@ const DetailedDupontCard = React.memo(function DetailedDupontCard({
   isQuarter?: boolean
   latestPoint: any
 }) {
+  const { hoveredKey, handleChartMouseLeave, handleLegendEnter, handleLegendLeave, getBarProps, getLineProps } =
+    useSeriesHighlight()
+
   return (
     <ExpandableChartCard
       title="MÔ HÌNH DUPONT (PHÂN TÍCH ROE)"
@@ -903,6 +1176,7 @@ const DetailedDupontCard = React.memo(function DetailedDupontCard({
             <ComposedChart
               data={dupontPoints}
               margin={{ top: 10, right: 10, left: -10, bottom: 0 }}
+              onMouseLeave={handleChartMouseLeave}
             >
               <CartesianGrid strokeDasharray="3 3" stroke="#334155" opacity={0.25} />
               <XAxis dataKey="displayDate" tick={{ fontSize: 9.5, fill: '#888' }} />
@@ -910,10 +1184,19 @@ const DetailedDupontCard = React.memo(function DetailedDupontCard({
               <YAxis yAxisId="left" tick={{ fontSize: 10, fill: '#888' }} tickFormatter={(v) => `${Math.round(v)}%`} />
               {/* Trục phải: Hệ số lần/vòng (Đòn bẩy tài chính và Vòng quay tài sản) */}
               <YAxis yAxisId="right" orientation="right" tick={{ fontSize: 10, fill: '#888' }} tickFormatter={(v) => `${Number(v).toFixed(1)}x`} />
-              <Tooltip content={<CustomChartTooltip />} isAnimationActive={false} animationDuration={0} cursor={{ fill: 'rgba(255, 255, 255, 0.05)' }} />
-              <Legend wrapperStyle={{ fontSize: '9px', paddingTop: '4px' }} />
+              <Tooltip
+                content={<CustomChartTooltip activeItem={hoveredKey} />}
+                isAnimationActive={false}
+                animationDuration={0}
+                cursor={{ fill: 'rgba(255, 255, 255, 0.05)' }}
+              />
+              <Legend
+                wrapperStyle={{ fontSize: '9px', paddingTop: '4px' }}
+                onMouseEnter={handleLegendEnter}
+                onMouseLeave={handleLegendLeave}
+              />
               {/* Cột ROE (%) */}
-              <Bar yAxisId="left" dataKey="roe" name="ROE (%)" fill="#14b8a6" radius={[2, 2, 0, 0]} isAnimationActive={false} />
+              <Bar yAxisId="left" dataKey="roe" name="ROE (%)" fill="#14b8a6" radius={[2, 2, 0, 0]} {...getBarProps('roe')} isAnimationActive={false} />
               {/* Line: Đòn bẩy tài chính (Tổng tài sản / Vốn chủ sở hữu) */}
               <Line
                 yAxisId="right"
@@ -921,9 +1204,9 @@ const DetailedDupontCard = React.memo(function DetailedDupontCard({
                 dataKey="equityMultiplier"
                 name="Tổng tài sản/Vốn chủ sở hữu (Đòn bẩy)"
                 stroke="#f43f5e"
-                strokeWidth={2.2}
-                isAnimationActive={false}
                 dot={{ r: 3, fill: '#f43f5e' }}
+                {...getLineProps('equityMultiplier')}
+                isAnimationActive={false}
               />
               {/* Line: Vòng quay tài sản */}
               <Line
@@ -932,10 +1215,10 @@ const DetailedDupontCard = React.memo(function DetailedDupontCard({
                 dataKey="assetTurnover"
                 name="Vòng quay tài sản (lần)"
                 stroke="#eab308"
-                strokeWidth={2}
                 strokeDasharray="4 2"
-                isAnimationActive={false}
                 dot={{ r: 2.5, fill: '#eab308' }}
+                {...getLineProps('assetTurnover')}
+                isAnimationActive={false}
               />
               {/* Line: Biên lợi nhuận ròng (%) */}
               <Line
@@ -944,9 +1227,9 @@ const DetailedDupontCard = React.memo(function DetailedDupontCard({
                 dataKey="netMargin"
                 name="Biên lãi ròng (%)"
                 stroke="#6366f1"
-                strokeWidth={2}
-                isAnimationActive={false}
                 dot={{ r: 2.5, fill: '#6366f1' }}
+                {...getLineProps('netMargin')}
+                isAnimationActive={false}
               />
             </ComposedChart>
           </ResponsiveContainer>
@@ -969,6 +1252,9 @@ const CostBreakdownChartCard = React.memo(function CostBreakdownChartCard({
   isQuarter?: boolean
   latestCost: any
 }) {
+  const { hoveredKey, handleChartMouseLeave, handleLegendEnter, handleLegendLeave, getBarProps, getLineProps } =
+    useSeriesHighlight()
+
   return (
     <ExpandableChartCard
       title="Bóc Tách Chi Phí Kinh Doanh"
@@ -989,25 +1275,35 @@ const CostBreakdownChartCard = React.memo(function CostBreakdownChartCard({
             <ComposedChart
               data={costPoints}
               margin={{ top: 10, right: 10, left: -10, bottom: 0 }}
+              onMouseLeave={handleChartMouseLeave}
             >
               <CartesianGrid strokeDasharray="3 3" stroke="#334155" opacity={0.25} />
               <XAxis dataKey="displayDate" tick={{ fontSize: 9.5, fill: '#888' }} />
               <YAxis yAxisId="left" tick={{ fontSize: 10, fill: '#888' }} tickFormatter={(v) => `${Math.round(v)}`} />
-              <Tooltip content={<CustomChartTooltip />} isAnimationActive={false} animationDuration={0} cursor={{ fill: 'rgba(255, 255, 255, 0.05)' }} />
-              <Legend wrapperStyle={{ fontSize: '9.5px', paddingTop: '4px' }} />
-              <Bar yAxisId="left" dataKey="giaVon" name="Chi phí giá vốn" stackId="cost" fill="#f87171" isAnimationActive={false} />
-              <Bar yAxisId="left" dataKey="cpBanHang" name="Chi phí bán hàng" stackId="cost" fill="#2dd4bf" isAnimationActive={false} />
-              <Bar yAxisId="left" dataKey="cpQuanLy" name="Chi phí quản lý" stackId="cost" fill="#818cf8" isAnimationActive={false} />
-              <Bar yAxisId="left" dataKey="cpLaiVay" name="Chi phí lãi vay" stackId="cost" fill="#facc15" radius={[2, 2, 0, 0]} isAnimationActive={false} />
+              <Tooltip
+                content={<CustomChartTooltip activeItem={hoveredKey} />}
+                isAnimationActive={false}
+                animationDuration={0}
+                cursor={{ fill: 'rgba(255, 255, 255, 0.05)' }}
+              />
+              <Legend
+                wrapperStyle={{ fontSize: '9.5px', paddingTop: '4px' }}
+                onMouseEnter={handleLegendEnter}
+                onMouseLeave={handleLegendLeave}
+              />
+              <Bar yAxisId="left" dataKey="giaVon" name="Chi phí giá vốn" stackId="cost" fill="#f87171" {...getBarProps('giaVon')} isAnimationActive={false} />
+              <Bar yAxisId="left" dataKey="cpBanHang" name="Chi phí bán hàng" stackId="cost" fill="#2dd4bf" {...getBarProps('cpBanHang')} isAnimationActive={false} />
+              <Bar yAxisId="left" dataKey="cpQuanLy" name="Chi phí quản lý" stackId="cost" fill="#818cf8" {...getBarProps('cpQuanLy')} isAnimationActive={false} />
+              <Bar yAxisId="left" dataKey="cpLaiVay" name="Chi phí lãi vay" stackId="cost" fill="#facc15" radius={[2, 2, 0, 0]} {...getBarProps('cpLaiVay')} isAnimationActive={false} />
               <Line
                 yAxisId="left"
                 type="monotone"
                 dataKey="doanhThuThuan"
                 name="Doanh thu thuần"
                 stroke="#e2e8f0"
-                strokeWidth={2.2}
                 dot={{ r: 2.5, fill: '#e2e8f0' }}
                 activeDot={{ r: 5 }}
+                {...getLineProps('doanhThuThuan')}
                 isAnimationActive={false}
               />
             </ComposedChart>
@@ -1031,6 +1327,16 @@ const CostRatioChartCard = React.memo(function CostRatioChartCard({
   isQuarter?: boolean
   latestCost: any
 }) {
+  const {
+    hoveredKey,
+    handleMouseEnter,
+    handleMouseLeave,
+    handleChartMouseLeave,
+    handleLegendEnter,
+    handleLegendLeave,
+    getLineProps,
+  } = useSeriesHighlight()
+
   return (
     <ExpandableChartCard
       title="Tỷ Trọng Chi Phí"
@@ -1051,12 +1357,22 @@ const CostRatioChartCard = React.memo(function CostRatioChartCard({
             <ComposedChart
               data={costPoints}
               margin={{ top: 10, right: 10, left: -10, bottom: 0 }}
+              onMouseLeave={handleChartMouseLeave}
             >
               <CartesianGrid strokeDasharray="3 3" stroke="#334155" opacity={0.25} />
               <XAxis dataKey="displayDate" tick={{ fontSize: 9.5, fill: '#888' }} />
               <YAxis yAxisId="left" tick={{ fontSize: 10, fill: '#888' }} unit="%" domain={[0, 'auto']} />
-              <Tooltip content={<CustomChartTooltip />} isAnimationActive={false} animationDuration={0} cursor={{ stroke: '#94a3b8', strokeWidth: 1, strokeDasharray: '3 3' }} />
-              <Legend wrapperStyle={{ fontSize: '9.5px', paddingTop: '4px' }} />
+              <Tooltip
+                content={<CustomChartTooltip activeItem={hoveredKey} />}
+                isAnimationActive={false}
+                animationDuration={0}
+                cursor={{ stroke: '#94a3b8', strokeWidth: 1, strokeDasharray: '3 3' }}
+              />
+              <Legend
+                wrapperStyle={{ fontSize: '9.5px', paddingTop: '4px' }}
+                onMouseEnter={handleLegendEnter}
+                onMouseLeave={handleLegendLeave}
+              />
               <Area
                 yAxisId="left"
                 type="monotone"
@@ -1064,8 +1380,11 @@ const CostRatioChartCard = React.memo(function CostRatioChartCard({
                 name="% Chi phí giá vốn"
                 stroke="#f87171"
                 fill="#f87171"
-                fillOpacity={0.22}
-                strokeWidth={2}
+                strokeOpacity={hoveredKey ? (hoveredKey === 'pctGiaVon' ? 1 : 0.2) : 1}
+                fillOpacity={hoveredKey ? (hoveredKey === 'pctGiaVon' ? 0.35 : 0.05) : 0.22}
+                strokeWidth={hoveredKey === 'pctGiaVon' ? 3 : 2}
+                onMouseEnter={() => handleMouseEnter('pctGiaVon')}
+                onMouseLeave={handleMouseLeave}
                 isAnimationActive={false}
               />
               <Line
@@ -1074,9 +1393,9 @@ const CostRatioChartCard = React.memo(function CostRatioChartCard({
                 dataKey="pctBanHang"
                 name="% Chi phí bán hàng"
                 stroke="#2dd4bf"
-                strokeWidth={2}
                 dot={{ r: 2.5, fill: '#2dd4bf' }}
                 activeDot={{ r: 5 }}
+                {...getLineProps('pctBanHang')}
                 isAnimationActive={false}
               />
               <Line
@@ -1085,9 +1404,9 @@ const CostRatioChartCard = React.memo(function CostRatioChartCard({
                 dataKey="pctQuanLy"
                 name="% Chi phí quản lý"
                 stroke="#818cf8"
-                strokeWidth={2}
                 dot={{ r: 2.5, fill: '#818cf8' }}
                 activeDot={{ r: 5 }}
+                {...getLineProps('pctQuanLy')}
                 isAnimationActive={false}
               />
               <Line
@@ -1096,16 +1415,16 @@ const CostRatioChartCard = React.memo(function CostRatioChartCard({
                 dataKey="pctLaiVay"
                 name="% Chi phí lãi vay"
                 stroke="#facc15"
-                strokeWidth={2}
                 dot={{ r: 2.5, fill: '#facc15' }}
                 activeDot={{ r: 5 }}
+                {...getLineProps('pctLaiVay')}
                 isAnimationActive={false}
               />
             </ComposedChart>
           </ResponsiveContainer>
         ) : (
           <div className="flex h-full items-center justify-center text-xs text-muted-foreground">
-            Đang cập nhật tỷ trọng chi phí
+            Đang cập nhật chi tiết tỷ trọng chi phí
           </div>
         )
       }

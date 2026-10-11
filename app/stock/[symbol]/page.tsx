@@ -66,10 +66,11 @@ export default async function StockDetailPage({
   const { symbol } = await params
   const sParams = searchParams ? await searchParams : {}
   const rawTab = sParams.tab?.toLowerCase()
-  let initialTab: 'overview' | 'profile' | 'charts' | 'articles' | 'community' | 'financials' | 'peers' | 'reports' | 'agm' | 'bctc' = 'overview'
+  let initialTab: 'overview' | 'profile' | 'dividends' | 'charts' | 'articles' | 'community' | 'financials' | 'peers' | 'reports' | 'agm' | 'bctc' = 'overview'
 
   if (rawTab === 'overview' || rawTab === 'tong-quan' || rawTab === 'do-thi' || rawTab === 'chart') initialTab = 'overview'
   else if (rawTab === 'profile' || rawTab === 'ho-so') initialTab = 'profile'
+  else if (rawTab === 'dividends' || rawTab === 'dividend' || rawTab === 'co-tuc' || rawTab === 'cotuc') initialTab = 'dividends'
   else if (rawTab === 'charts' || rawTab === 'financial-charts' || rawTab === 'tai-chinh' || rawTab === 'bctc-chart') initialTab = 'charts'
   else if (rawTab === 'articles' || rawTab === 'news' || rawTab === 'bai-viet' || rawTab === 'tin-tuc') initialTab = 'articles'
   else if (rawTab === 'community' || rawTab === 'cong-dong' || rawTab === 'thao-luan' || rawTab === 'dien-dan') initialTab = 'community'
@@ -92,7 +93,7 @@ export default async function StockDetailPage({
   const isFinancialsTab = initialTab === 'financials'
   const isAgmTab = initialTab === 'agm'
   const isBctcTab = initialTab === 'bctc'
-  const isProfileTab = initialTab === 'profile' || initialTab === 'overview'
+  const isProfileTab = initialTab === 'profile' || initialTab === 'overview' || initialTab === 'dividends'
   const isArticlesTab = initialTab === 'articles'
 
   // Chạy song song dữ liệu theo tab (On-Demand Data Streaming - Chuẩn FireAnt < 0.2s)

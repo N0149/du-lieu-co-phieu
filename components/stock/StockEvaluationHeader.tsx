@@ -244,7 +244,12 @@ export function StockEvaluationHeader({
   // Kiểm toán
   const auditorDisplay = m?.auditor || '—'
 
-  // 3a. Danh sách 9 tiêu chí cơ bản cho Chế độ Mở rộng (3 cột x 3 hàng)
+  // ROE (từ BCTC năm gần nhất)
+  const roeVal = latestFin?.roe != null ? latestFin.roe : null
+  const roeDisplay = roeVal != null
+    ? `${fmtNum(roeVal > 1 ? roeVal : roeVal * 100, 1)}%`
+    : '—'
+
   // 3a. Danh sách 9 tiêu chí cơ bản cho Chế độ Mở rộng (3 cột x 3 hàng)
   const basicMetrics = [
     // Hàng 1
@@ -267,7 +272,7 @@ export function StockEvaluationHeader({
     { label: 'Kiểm toán', value: auditorDisplay, isAuditor: true },
   ]
 
-  // 3b. Danh sách 11 chỉ tiêu đầy đủ cho Chế độ Thu gọn (Lưới 6 cột x 2 hàng siêu gọn)
+  // 3b. Danh sách 12 chỉ tiêu đầy đủ cho Chế độ Thu gọn (Lưới 6 cột x 2 hàng siêu gọn)
   const compactMetrics = [
     // Hàng 1 (Desktop 6 cột): Định giá cốt lõi & ĐHĐCĐ
     {
@@ -329,6 +334,12 @@ export function StockEvaluationHeader({
       tooltip: 'Giá trị doanh nghiệp trên EBITDA',
     },
     {
+      id: 'roe',
+      label: 'ROE',
+      value: roeDisplay,
+      tooltip: 'Tỷ suất sinh lời trên vốn chủ sở hữu (ROE)',
+    },
+    {
       id: 'vol15d',
       label: 'KLGD TB15D',
       value: volDisplay,
@@ -344,7 +355,6 @@ export function StockEvaluationHeader({
       id: 'auditor',
       label: 'Kiểm toán',
       value: auditorDisplay,
-      colSpan: 2,
       highlight: auditorDisplay !== '—' ? ('orange' as const) : null,
       tooltip: 'Đơn vị kiểm toán độc lập thực hiện kiểm toán BCTC',
     },
@@ -360,9 +370,9 @@ export function StockEvaluationHeader({
       {/* ── CHẾ ĐỘ THU GỌN (COMPACT MODE) ── */}
       {isCompact ? (
         <div className="space-y-2.5">
-          {/* Hàng 1: Live Quote + ĐHĐCĐ Mini Pill + Nút chuyển chế độ */}
+          {/* Hàng 1: Live Quote + ĐHĐCĐ Mini Pill (dồn gọn sang bên trái) + Nút Mở rộng */}
           <div className="flex flex-wrap items-center justify-between gap-2">
-            <div className="flex flex-wrap items-baseline gap-2 sm:gap-2.5">
+            <div className="flex flex-wrap items-center gap-2 sm:gap-2.5">
               <span
                 className={cn(
                   'font-sans text-xl sm:text-2xl font-black tracking-tight tabular-nums',
@@ -398,17 +408,15 @@ export function StockEvaluationHeader({
               </span>
 
               {dateDisplay && (
-                <span className="text-[11px] text-muted-foreground font-medium ml-1">
+                <span className="text-[11px] text-muted-foreground font-medium ml-0.5">
                   Đóng cửa {dateDisplay}
                 </span>
               )}
-            </div>
 
-            {/* Bên phải: Điểm nhấn ĐHĐCĐ & Nút Mở rộng */}
-            <div className="flex items-center gap-2">
+              {/* Điểm nhấn ĐHĐCĐ & P/E thực tế: Đặt liền mạch ngay cạnh giá */}
               {ktplRate != null && (
                 <div
-                  className="hidden md:inline-flex items-center gap-1.5 rounded-lg border border-amber-500/30 bg-amber-500/10 px-2 py-0.5 text-[11px]"
+                  className="inline-flex items-center gap-1.5 rounded-lg border border-amber-500/30 bg-amber-500/10 px-2 py-0.5 text-[11px]"
                   title="Tỷ lệ trích ngoài cổ đông theo ĐHĐCĐ & P/E thực tế"
                 >
                   <Sparkles className="size-3 text-amber-500" />
@@ -427,17 +435,18 @@ export function StockEvaluationHeader({
                   )}
                 </div>
               )}
-
-              <button
-                type="button"
-                onClick={toggleCompact}
-                className="inline-flex items-center gap-1 rounded-lg border border-border/70 bg-muted/50 hover:bg-muted px-2.5 py-1 text-xs font-semibold text-muted-foreground hover:text-foreground transition-all cursor-pointer select-none"
-                title="Mở rộng để xem thẻ chỉ số chi tiết theo bố cục lớn"
-              >
-                <span>Mở rộng</span>
-                <ChevronDown className="size-3.5" />
-              </button>
             </div>
+
+            {/* Bên phải: Nút Mở rộng */}
+            <button
+              type="button"
+              onClick={toggleCompact}
+              className="inline-flex items-center gap-1 rounded-lg border border-border/70 bg-muted/50 hover:bg-muted px-2.5 py-1 text-xs font-semibold text-muted-foreground hover:text-foreground transition-all cursor-pointer select-none ml-auto"
+              title="Mở rộng để xem thẻ chỉ số chi tiết theo bố cục lớn"
+            >
+              <span>Mở rộng</span>
+              <ChevronDown className="size-3.5" />
+            </button>
           </div>
 
           {/* Hàng 2: Lưới chỉ tiêu 6 cột x 2 hàng siêu gọn, đủ 100% thông tin */}
@@ -475,15 +484,11 @@ export function StockEvaluationHeader({
                 )
               }
 
-              // 2. CÁC Ô CHỈ TIÊU CƠ BẢN CÒN LẠI (VỐN HÓA, SÁCH, P/E BÁO CÁO, P/B, EPS, V.V.)
-              const isColSpan2 = (item as any).colSpan === 2
+              // 2. CÁC Ô CHỈ TIÊU CƠ BẢN CÒN LẠI (VỐN HÓA, SÁCH, P/E BÁO CÁO, P/B, EPS, ROE, V.V.)
               return (
                 <div
                   key={item.id}
-                  className={cn(
-                    "min-w-0 flex flex-col justify-between rounded-xl p-2 sm:p-2.5 border border-border/60 bg-muted/20 dark:bg-[#161c24]/50 shadow-2xs transition-all",
-                    isColSpan2 && "col-span-2 sm:col-span-1 md:col-span-2 lg:col-span-2"
-                  )}
+                  className="min-w-0 flex flex-col justify-between rounded-xl p-2 sm:p-2.5 border border-border/60 bg-muted/20 dark:bg-[#161c24]/50 shadow-2xs transition-all"
                   title={item.tooltip}
                 >
                   <span className="text-[11px] text-muted-foreground font-medium tracking-tight truncate">

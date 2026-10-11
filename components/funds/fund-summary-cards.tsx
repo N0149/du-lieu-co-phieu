@@ -2,9 +2,17 @@
 
 import Link from 'next/link'
 import { TrendingUp, Layers, ArrowUpRight } from 'lucide-react'
-import { TOP_STOCK_HOLDINGS, TOP_INDUSTRY_HOLDINGS } from '@/lib/funds-data'
+import { TOP_STOCK_HOLDINGS, TOP_INDUSTRY_HOLDINGS, StockHoldingStats, IndustryHoldingStats } from '@/lib/funds-data'
 
-export function FundSummaryCards() {
+interface FundSummaryCardsProps {
+  topStocks?: StockHoldingStats[]
+  topIndustries?: IndustryHoldingStats[]
+}
+
+export function FundSummaryCards({
+  topStocks = TOP_STOCK_HOLDINGS,
+  topIndustries = TOP_INDUSTRY_HOLDINGS,
+}: FundSummaryCardsProps) {
   return (
     <div className="grid grid-cols-1 gap-6 lg:grid-cols-2">
       {/* Cột Trái: Top 10 cổ phiếu được nắm giữ nhiều nhất */}
@@ -37,7 +45,7 @@ export function FundSummaryCards() {
               </tr>
             </thead>
             <tbody className="divide-y divide-white/6 text-[#D0D7DE]">
-              {TOP_STOCK_HOLDINGS.map((item) => (
+              {topStocks.map((item) => (
                 <tr
                   key={item.symbol}
                   className="transition-colors hover:bg-white/[0.03]"
@@ -99,7 +107,7 @@ export function FundSummaryCards() {
               </tr>
             </thead>
             <tbody className="divide-y divide-white/6 text-[#D0D7DE]">
-              {TOP_INDUSTRY_HOLDINGS.map((item) => (
+              {topIndustries.map((item) => (
                 <tr
                   key={item.industry}
                   className="transition-colors hover:bg-white/[0.03]"

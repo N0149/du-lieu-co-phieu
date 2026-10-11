@@ -259,12 +259,12 @@
   width: fit-content;
   max-width: 100%;
   min-width: min(100%, 520px);
-  margin: 1.25rem 0;
+  margin: 0.75rem 0;
   border-radius: 0.75rem;
   border: 1px solid rgba(255, 255, 255, 0.08);
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
   overflow-x: auto;
-  background: rgba(18, 22, 31, 0.45);
+  background: rgba(18, 22, 31, 0.55);
 }
 
 .agm-table-wrapper table {
@@ -272,49 +272,62 @@
   min-width: 100%;
   border-collapse: separate;
   border-spacing: 0;
-  font-size: 0.84rem;
-  line-height: 1.5;
+  font-size: 0.83rem;
+  line-height: 1.45;
 }
 
-/* Tiêu đề cột */
+/* Tiêu đề cột: cho phép xuống dòng tự nhiên, KHÔNG ép dãn ngang vô lý */
 .agm-table-wrapper thead th {
-  background-color: rgba(255, 255, 255, 0.05);
+  background-color: #171d26;
   color: #f0f3f6;
   font-weight: 700;
-  padding: 8px 16px;
+  padding: 8px 12px;
   border-bottom: 1px solid rgba(255, 255, 255, 0.14);
-  white-space: nowrap;
+  white-space: normal;
+  word-break: normal;
+  vertical-align: bottom;
+  line-height: 1.35;
 }
 
-/* Cột đầu tiên (Tên chỉ tiêu/khoản mục): căn trái, tự động co giãn theo nội dung */
+/* Cột đầu tiên (Tên chỉ tiêu/khoản mục): căn trái, độ rộng vừa vặn với tên công ty/danh mục */
 .agm-table-wrapper thead th:first-child,
 .agm-table-wrapper tbody td:first-child {
   text-align: left !important;
-  min-width: 200px;
+  min-width: 220px;
   max-width: 440px;
-  padding: 8px 18px 8px 14px;
+  padding: 7px 14px 7px 12px;
   white-space: normal;
   word-break: normal;
 }
 
-/* Cột chứa dữ liệu văn bản (Địa chỉ, Hoạt động chính, Tên công ty con...): tự do xuống dòng, không bị đè chữ */
+/* Cột chứa dữ liệu văn bản (Địa chỉ, Hoạt động chính, Diễn giải...): tự do xuống dòng, không bị đè chữ */
 .agm-table-wrapper thead th.agm-th-text,
 .agm-table-wrapper tbody td.agm-td-text {
   text-align: left !important;
   white-space: normal !important;
   word-break: normal;
-  min-width: 140px;
-  padding: 8px 16px;
+  min-width: 120px;
+  max-width: 320px;
+  padding: 7px 12px;
 }
 
 /* Cột số liệu: căn phải, font sans rõ ràng (số 0 và 8 phân biệt hoàn toàn), tabular-nums thẳng hàng */
-.agm-table-wrapper thead th.agm-th-num,
+.agm-table-wrapper thead th.agm-th-num {
+  text-align: right !important;
+  white-space: normal;
+  word-break: normal;
+  min-width: 90px;
+  max-width: 160px;
+  padding: 8px 12px;
+  vertical-align: bottom;
+}
+
 .agm-table-wrapper tbody td.agm-td-num,
 .agm-table-wrapper .agm-num-cell {
   text-align: right !important;
   white-space: nowrap;
-  min-width: 110px;
-  padding: 7px 16px;
+  min-width: 85px;
+  padding: 6px 12px;
   font-family: var(--font-inter), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   font-variant-numeric: tabular-nums;
   font-feature-settings: "tnum" 1;
@@ -322,8 +335,17 @@
   color: rgba(240, 243, 246, 0.95);
 }
 
+/* Cột tỷ lệ phần trăm (%): thu gọn vừa vặn, không bị chiếm diện tích thừa */
+.agm-table-wrapper thead th.agm-th-pct,
+.agm-table-wrapper tbody td.agm-td-pct {
+  min-width: 65px !important;
+  max-width: 90px !important;
+  padding: 6px 10px !important;
+  text-align: right !important;
+}
+
 .agm-table-wrapper tbody td {
-  padding: 7px 14px;
+  padding: 6px 12px;
   border-bottom: 1px solid rgba(255, 255, 255, 0.06);
   color: rgba(240, 243, 246, 0.88);
 }
@@ -349,6 +371,70 @@
 
 .agm-table-wrapper tbody tr:last-child td {
   border-bottom: none;
+}
+
+/* ── Chế độ Compact Layout (Tối ưu diện tích, ít khoảng trống, dễ nhìn trong Modal & BCTC) ── */
+.agm-compact-layout .agm-table-wrapper {
+  margin: 0.5rem 0;
+  border-radius: 0.625rem;
+}
+
+.agm-compact-layout .agm-table-wrapper table {
+  font-size: 0.81rem;
+  line-height: 1.38;
+}
+
+.agm-compact-layout .agm-table-wrapper thead th {
+  padding: 6px 10px;
+  font-size: 0.79rem;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background-color: #161c24;
+}
+
+.agm-compact-layout .agm-table-wrapper tbody td {
+  padding: 5px 10px;
+}
+
+.agm-compact-layout .agm-table-wrapper thead th:first-child,
+.agm-compact-layout .agm-table-wrapper tbody td:first-child {
+  padding: 5px 12px 5px 10px;
+  min-width: 200px;
+  max-width: 400px;
+}
+
+.agm-compact-layout .agm-table-wrapper thead th.agm-th-num {
+  padding: 6px 10px;
+  min-width: 85px;
+  max-width: 150px;
+}
+
+.agm-compact-layout .agm-table-wrapper tbody td.agm-td-num {
+  padding: 5px 10px;
+  min-width: 80px;
+}
+
+.agm-compact-layout .agm-table-wrapper thead th.agm-th-pct,
+.agm-compact-layout .agm-table-wrapper tbody td.agm-td-pct {
+  min-width: 60px !important;
+  max-width: 80px !important;
+  padding: 5px 8px !important;
+}
+
+.agm-compact-layout h4 {
+  margin-top: 0.65rem;
+  margin-bottom: 0.3rem;
+  font-size: 0.92rem;
+}
+
+.agm-compact-layout p {
+  margin: 0.35rem 0;
+  font-size: 0.8rem;
+}
+
+.agm-compact-layout hr {
+  margin: 0.8rem 0;
 }
 
 /* ── Chế độ xem toàn màn hình (khi người dùng chủ động chọn "Bố cục: Toàn màn hình") ── */

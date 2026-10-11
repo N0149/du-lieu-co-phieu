@@ -5,7 +5,7 @@ import { createPortal } from 'react-dom'
 import { X, ExternalLink, Calendar, PieChart, ShieldCheck } from 'lucide-react'
 import Link from 'next/link'
 import { Fund } from '@/lib/funds-data'
-import { fmtNum } from '@/lib/format'
+import { fmtNum, fmtPct } from '@/lib/format'
 
 interface FundDetailModalProps {
   fund: Fund | null
@@ -82,7 +82,7 @@ export function FundDetailModal({ fund, onClose }: FundDetailModalProps) {
         {/* Modal body */}
         <div className="flex-1 overflow-y-auto p-5 space-y-6">
           {/* Thông tin thống kê nhanh */}
-          <div className="grid grid-cols-2 gap-3 sm:grid-cols-4">
+          <div className="grid grid-cols-2 gap-3 sm:grid-cols-5">
             <div className="rounded-xl border border-white/6 bg-white/[0.02] p-3 text-center">
               <div className="text-[11px] text-[#9EACB9]">Giá NAV gần nhất</div>
               <div className="mt-1 font-mono text-base font-bold text-[#F0F3F6]">
@@ -95,10 +95,14 @@ export function FundDetailModal({ fund, onClose }: FundDetailModalProps) {
               <div className="text-[11px] text-[#9EACB9]">Lợi nhuận YTD</div>
               <div
                 className={`mt-1 font-mono text-base font-bold ${
-                  fund.ytdReturn >= 0 ? 'text-emerald-400' : 'text-rose-400'
+                  fund.ytdReturn == null
+                    ? 'text-[#8B949E]'
+                    : fund.ytdReturn >= 0
+                    ? 'text-emerald-400'
+                    : 'text-rose-400'
                 }`}
               >
-                {fund.ytdReturn >= 0 ? `+${fund.ytdReturn.toFixed(2)}%` : `${fund.ytdReturn.toFixed(2)}%`}
+                {fmtPct(fund.ytdReturn, 2)}
               </div>
               <div className="text-[10px] text-[#8B949E] mt-0.5">Từ đầu năm</div>
             </div>
@@ -107,10 +111,14 @@ export function FundDetailModal({ fund, onClose }: FundDetailModalProps) {
               <div className="text-[11px] text-[#9EACB9]">Lợi nhuận 1 năm</div>
               <div
                 className={`mt-1 font-mono text-base font-bold ${
-                  fund.return1Y >= 0 ? 'text-emerald-400' : 'text-rose-400'
+                  fund.return1Y == null
+                    ? 'text-[#8B949E]'
+                    : fund.return1Y >= 0
+                    ? 'text-emerald-400'
+                    : 'text-rose-400'
                 }`}
               >
-                {fund.return1Y >= 0 ? `+${fund.return1Y.toFixed(2)}%` : `${fund.return1Y.toFixed(2)}%`}
+                {fmtPct(fund.return1Y, 2)}
               </div>
               <div className="text-[10px] text-[#8B949E] mt-0.5">12 tháng gần nhất</div>
             </div>
@@ -119,12 +127,34 @@ export function FundDetailModal({ fund, onClose }: FundDetailModalProps) {
               <div className="text-[11px] text-[#9EACB9]">Lợi nhuận 3 năm</div>
               <div
                 className={`mt-1 font-mono text-base font-bold ${
-                  fund.return3Y >= 0 ? 'text-emerald-400' : 'text-rose-400'
+                  fund.return3Y == null
+                    ? 'text-[#8B949E]'
+                    : fund.return3Y >= 0
+                    ? 'text-emerald-400'
+                    : 'text-rose-400'
                 }`}
               >
-                {fund.return3Y >= 0 ? `+${fund.return3Y.toFixed(2)}%` : `${fund.return3Y.toFixed(2)}%`}
+                {fmtPct(fund.return3Y, 2)}
               </div>
               <div className="text-[10px] text-[#8B949E] mt-0.5">Tích lũy 36 tháng</div>
+            </div>
+
+            <div className="col-span-2 sm:col-span-1 rounded-xl border border-white/6 bg-white/[0.02] p-3 text-center">
+              <div className="text-[11px] text-[#9EACB9]">Từ khi lập</div>
+              <div
+                className={`mt-1 font-mono text-base font-bold ${
+                  fund.returnInception == null
+                    ? 'text-[#8B949E]'
+                    : fund.returnInception >= 0
+                    ? 'text-emerald-400'
+                    : 'text-rose-400'
+                }`}
+              >
+                {fmtPct(fund.returnInception, 2)}
+              </div>
+              <div className="text-[10px] text-[#8B949E] mt-0.5">
+                {fund.inceptionDate ? `Từ ${fund.inceptionDate}` : 'Từ khi thành lập'}
+              </div>
             </div>
           </div>
 
@@ -171,55 +201,61 @@ export function FundDetailModal({ fund, onClose }: FundDetailModalProps) {
               </span>
             </div>
 
-            <div className="overflow-hidden rounded-xl border border-white/8 bg-[#141720]">
-              <table className="w-full text-left text-xs">
-                <thead>
-                  <tr className="border-b border-white/6 bg-white/[0.02] text-[11px] text-[#9EACB9]">
-                    <th className="py-2.5 pl-4 pr-2">Mã tài sản</th>
-                    <th className="py-2.5 px-3">Tên tài sản</th>
-                    <th className="py-2.5 px-3">Ngành nghề</th>
-                    <th className="py-2.5 pl-3 pr-4 text-right">Tỷ trọng</th>
-                  </tr>
-                </thead>
-                <tbody className="divide-y divide-white/6">
-                  {fund.holdings.map((h) => {
-                    const isStock = !h.symbol.startsWith('TP-')
-                    return (
-                      <tr key={h.symbol} className="hover:bg-white/[0.02]">
-                        <td className="py-2.5 pl-4 pr-2 font-mono font-bold">
-                          {isStock ? (
-                            <Link
-                              href={`/stock/${h.symbol}`}
-                              className="text-emerald-400 hover:underline inline-flex items-center gap-1"
-                            >
-                              {h.symbol}
-                              <ExternalLink className="size-2.5 opacity-70" />
-                            </Link>
-                          ) : (
-                            <span className="text-amber-400">{h.symbol}</span>
-                          )}
-                        </td>
-                        <td className="py-2.5 px-3 text-[#F0F3F6]">{h.name}</td>
-                        <td className="py-2.5 px-3 text-[#9EACB9]">{h.industry}</td>
-                        <td className="py-2.5 pl-3 pr-4 text-right">
-                          <div className="inline-flex items-center gap-2">
-                            <div className="h-1.5 w-12 overflow-hidden rounded-full bg-white/10">
-                              <div
-                                className="h-full rounded-full bg-emerald-500"
-                                style={{ width: `${Math.min(100, h.weight * 5)}%` }}
-                              />
+            {fund.holdings.length === 0 ? (
+              <div className="rounded-xl border border-white/8 bg-[#141720] p-6 text-center text-xs text-[#8B949E]">
+                Chưa có dữ liệu danh mục nắm giữ chi tiết cho quỹ này từ báo cáo gần nhất.
+              </div>
+            ) : (
+              <div className="overflow-hidden rounded-xl border border-white/8 bg-[#141720]">
+                <table className="w-full text-left text-xs">
+                  <thead>
+                    <tr className="border-b border-white/6 bg-white/[0.02] text-[11px] text-[#9EACB9]">
+                      <th className="py-2.5 pl-4 pr-2">Mã tài sản</th>
+                      <th className="py-2.5 px-3">Tên tài sản</th>
+                      <th className="py-2.5 px-3">Ngành nghề</th>
+                      <th className="py-2.5 pl-3 pr-4 text-right">Tỷ trọng</th>
+                    </tr>
+                  </thead>
+                  <tbody className="divide-y divide-white/6">
+                    {fund.holdings.map((h, idx) => {
+                      const isStock = !h.symbol.startsWith('TP-') && !h.symbol.match(/\d{4,}/)
+                      return (
+                        <tr key={`${h.symbol}-${idx}`} className="hover:bg-white/[0.02]">
+                          <td className="py-2.5 pl-4 pr-2 font-mono font-bold">
+                            {isStock ? (
+                              <Link
+                                href={`/stock/${h.symbol}`}
+                                className="text-emerald-400 hover:underline inline-flex items-center gap-1"
+                              >
+                                {h.symbol}
+                                <ExternalLink className="size-2.5 opacity-70" />
+                              </Link>
+                            ) : (
+                              <span className="text-amber-400">{h.symbol}</span>
+                            )}
+                          </td>
+                          <td className="py-2.5 px-3 text-[#F0F3F6]">{h.name}</td>
+                          <td className="py-2.5 px-3 text-[#9EACB9]">{h.industry}</td>
+                          <td className="py-2.5 pl-3 pr-4 text-right">
+                            <div className="inline-flex items-center gap-2">
+                              <div className="h-1.5 w-12 overflow-hidden rounded-full bg-white/10">
+                                <div
+                                  className="h-full rounded-full bg-emerald-500"
+                                  style={{ width: `${Math.min(100, h.weight * 5)}%` }}
+                                />
+                              </div>
+                              <span className="font-mono font-semibold text-emerald-400">
+                                {h.weight.toFixed(1)}%
+                              </span>
                             </div>
-                            <span className="font-mono font-semibold text-emerald-400">
-                              {h.weight.toFixed(1)}%
-                            </span>
-                          </div>
-                        </td>
-                      </tr>
-                    )
-                  })}
-                </tbody>
-              </table>
-            </div>
+                          </td>
+                        </tr>
+                      )
+                    })}
+                  </tbody>
+                </table>
+              </div>
+            )}
           </div>
         </div>
 

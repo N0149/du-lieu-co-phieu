@@ -392,7 +392,30 @@ export async function getCompanyFullProfile(symbol: string): Promise<CompanyFull
           } else if (parsed?.co_cau_so_huu) {
             finalData = parseShareholderPayload(sym, parsed)
           }
+function enrichShareholdersFromLeaders(sym: string): ShareholderItem[] {
+  try {
+    const p = path.join(process.cwd(), 'data', 'widata_archive', 'company', 'board_and_leaders.json')
+    if (fs.existsSync(p)) {
+      const data = JSON.parse(fs.readFileSync(p, 'utf-8'))
+      const list = data[sym.toUpperCase()] || []
+      return list
+        .filter((l: any) => l.share != null && l.share > 0)
+        .map((l: any) => ({
+          name: l.name,
+          shares: Number(l.share).toLocaleString('vi-VN'),
+          rate: parseFloat(l.ratio) || 0,
+          updated: l.last_update ? parseAnyDateToVn(l.last_update) : '—',
+        }))
+        .sort((a: any, b: any) => b.rate - a.rate)
+    }
+  } catch {}
+  return []
+}
+
           if (finalData) {
+            if (finalData.ownership && (!finalData.ownership.shareholders || finalData.ownership.shareholders.length === 0)) {
+              finalData.ownership.shareholders = enrichShareholdersFromLeaders(sym)
+            }
             if (finalData.insiderTrades.length <= 25) {
               finalData = await enrichTradesIfSparse(sym, finalData)
             }

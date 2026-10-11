@@ -28,6 +28,7 @@ import {
   Newspaper,
   ScrollText,
   MessageSquare,
+  Coins,
 } from 'lucide-react'
 import type { StockDetailData, StockManifestItem } from '@/lib/longlivestock'
 import type { Report } from '@/lib/use-reports'
@@ -62,6 +63,7 @@ import type { BctcCompanyDocumentsPayload } from '@/lib/bctc-document-service'
 export type StockDetailTab =
   | 'overview'
   | 'profile'
+  | 'dividends'
   | 'charts'
   | 'articles'
   | 'community'
@@ -293,13 +295,31 @@ const WiDataInsiderCard = dynamic(
 )
 
 // ════════════════════════════════════════════════════════════════════════════
-// FEATURE FLAG: CẤT TAB BIỂU ĐỒ TÀI CHÍNH
-// - Đặt `false`: Tắt hoàn toàn tab Biểu Đồ Tài Chính để web siêu nhẹ, không tốn tài nguyên.
-// - 2 biểu đồ quan trọng (Giá Khuyến Nghị & Giao Dịch Nội Bộ) đã được chuyển sang tab Tổng quan & Hồ sơ.
-// - Các biểu đồ tài chính cơ bản đã được tích hợp trực tiếp vào tab Báo Cáo Tài Chính.
-// - Khi nào bạn muốn xóa vĩnh viễn: có thể xóa file GeneralDetailedFinancialCharts và cờ này.
+// TÙY CHỌN: CỜ BẬT/TẮT CÁC TAB TẠM ẨN ĐỂ TIẾT KIỆM TÀI NGUYÊN (FEATURE FLAGS)
+// - Hiện tại Tab 0 "Tổng Quan & Hồ Sơ" đã tích hợp đầy đủ mọi biểu đồ cốt lõi.
+// - Tạm cất các tab chưa cần thiết (Cộng đồng, So sánh ngành) để tiết kiệm tài nguyên hệ thống.
+// - Khi nào cần triển khai lại tab nào: chỉ cần đổi cờ tương ứng thành `true`.
 // ════════════════════════════════════════════════════════════════════════════
 const ENABLE_FINANCIAL_CHARTS_TAB = false;
+const ENABLE_COMMUNITY_TAB = false; // Tạm cất tab Cộng đồng
+const ENABLE_PEERS_TAB = false;     // Tạm cất tab So sánh trong ngành
+
+function resolveValidTab(tab: StockDetailTab | string | null | undefined): StockDetailTab {
+  if (!tab || tab === 'profile') return 'overview'
+  if (tab === 'co-tuc' || tab === 'dividend' || tab === 'dividends') return 'dividends'
+  if (tab === 'charts' && !ENABLE_FINANCIAL_CHARTS_TAB) return 'overview'
+  if (tab === 'community' && !ENABLE_COMMUNITY_TAB) return 'overview'
+  if (tab === 'peers' && !ENABLE_PEERS_TAB) return 'overview'
+  return tab as StockDetailTab
+}
+
+const StockDividendsTab = dynamic(
+  () => import('@/components/stock/StockDividendsTab').then((m) => m.StockDividendsTab),
+  {
+    loading: () => <TabLoadingSkeleton tabLabel="Lịch sử cổ tức & tăng vốn" />,
+    ssr: false,
+  }
+)
 
 const StockAgmReportView = dynamic(
   () => import('@/components/stock/StockAgmReportView').then((m) => m.StockAgmReportView),
@@ -356,21 +376,12 @@ export function StockDetailView({
   initialCandles = [],
 }: StockDetailViewProps) {
   // Tab đang hiển thị trên thanh nút bấm (cập nhật NGAY LẬP TỨC để phản hồi giao diện không delay)
-  const [activeTab, setActiveTab] = useState<StockDetailTab>(() => {
-    if (!initialTab || initialTab === 'profile') return 'overview'
-    if (initialTab === 'charts' && !ENABLE_FINANCIAL_CHARTS_TAB) return 'overview'
-    return initialTab
-  })
+  const [activeTab, setActiveTab] = useState<StockDetailTab>(() => resolveValidTab(initialTab))
   const [expandedSvgChart, setExpandedSvgChart] = useState<'price' | 'revenue' | 'throughput' | null>(null)
   // Phạm vi hiển thị danh sách cùng ngành ở cuối trang ('l4' chuyên sâu hoặc 'l2' nhóm ngành)
   const [gridScope, setGridScope] = useState<'l4' | 'l2'>('l4')
   // Danh sách các tab đã từng được mount (để giữ cache không phải render lại từ đầu)
-  const [mountedTabs, setMountedTabs] = useState<Set<StockDetailTab>>(() => {
-    const startTab = (!initialTab || initialTab === 'profile' || (initialTab === 'charts' && !ENABLE_FINANCIAL_CHARTS_TAB))
-      ? 'overview'
-      : initialTab
-    return new Set([startTab])
-  })
+  const [mountedTabs, setMountedTabs] = useState<Set<StockDetailTab>>(() => new Set([resolveValidTab(initialTab)]))
   // Tab đang được nạp nội dung (nếu tab đó chưa từng được mount)
   const [loadingTab, setLoadingTab] = useState<StockDetailTab | null>(null)
   const switchTimerRef = useRef<NodeJS.Timeout | null>(null)
@@ -457,9 +468,7 @@ export function StockDetailView({
   useEffect(() => {
     if (prevInitialTabRef.current !== initialTab) {
       prevInitialTabRef.current = initialTab
-      const resolved = (!initialTab || initialTab === 'profile' || (initialTab === 'charts' && !ENABLE_FINANCIAL_CHARTS_TAB))
-        ? 'overview'
-        : initialTab
+      const resolved = resolveValidTab(initialTab)
       setActiveTab(resolved)
       setMountedTabs((prev) => new Set(prev).add(resolved))
     }
@@ -470,9 +479,7 @@ export function StockDetailView({
     const handlePopState = () => {
       const params = new URLSearchParams(window.location.search)
       const tabParam = params.get('tab') as StockDetailTab | null
-      const resolved = (!tabParam || tabParam === 'profile' || (tabParam === 'charts' && !ENABLE_FINANCIAL_CHARTS_TAB))
-        ? 'overview'
-        : tabParam
+      const resolved = resolveValidTab(tabParam)
       setActiveTab(resolved)
       setMountedTabs((prev) => new Set(prev).add(resolved))
     }
@@ -905,6 +912,16 @@ export function StockDetailView({
         iconColor: 'text-emerald-500',
         badge: 'LIVE',
       },
+      {
+        id: 'dividends' as StockDetailTab,
+        label: 'Cổ Tức & Tăng Vốn',
+        shortLabel: 'Cổ tức',
+        icon: Coins,
+        iconColor: 'text-amber-500',
+        badge: dividendHistory?.events && dividendHistory.events.length > 0
+          ? `${dividendHistory.events.length}`
+          : undefined,
+      },
     ]
 
     if (ENABLE_FINANCIAL_CHARTS_TAB) {
@@ -918,36 +935,44 @@ export function StockDetailView({
       })
     }
 
-    list.push(
-      {
-        id: 'articles' as StockDetailTab,
-        label: 'Bài Viết & Sự Kiện',
-        shortLabel: 'Bài viết',
-        icon: Newspaper,
-        iconColor: 'text-amber-500',
-        badge: articlesData && articlesData.total > 0 ? `${articlesData.total}` : undefined,
-      },
-      {
+    list.push({
+      id: 'articles' as StockDetailTab,
+      label: 'Bài Viết & Sự Kiện',
+      shortLabel: 'Bài viết',
+      icon: Newspaper,
+      iconColor: 'text-amber-500',
+      badge: articlesData && articlesData.total > 0 ? `${articlesData.total}` : undefined,
+    })
+
+    if (ENABLE_COMMUNITY_TAB) {
+      list.push({
         id: 'community' as StockDetailTab,
         label: 'Cộng Đồng',
         shortLabel: 'Cộng đồng',
         icon: MessageSquare,
         iconColor: 'text-sky-500',
-      },
-      {
-        id: 'financials' as StockDetailTab,
-        label: 'Báo Cáo Tài Chính',
-        shortLabel: 'BCTC',
-        icon: FileSpreadsheet,
-        iconColor: 'text-amber-500',
-      },
-      {
+      })
+    }
+
+    list.push({
+      id: 'financials' as StockDetailTab,
+      label: 'Báo Cáo Tài Chính',
+      shortLabel: 'BCTC',
+      icon: FileSpreadsheet,
+      iconColor: 'text-amber-500',
+    })
+
+    if (ENABLE_PEERS_TAB) {
+      list.push({
         id: 'peers' as StockDetailTab,
         label: 'So sánh trong ngành',
         shortLabel: 'So sánh',
         icon: Users,
         iconColor: 'text-violet-500',
-      },
+      })
+    }
+
+    list.push(
       {
         id: 'reports' as StockDetailTab,
         label: 'Báo Cáo Phân Tích',
@@ -975,10 +1000,10 @@ export function StockDetailView({
     )
 
     return list
-  }, [agmData, articlesData, bctcDataHopNhat, bctcDataCongTyMe])
+  }, [agmData, articlesData, bctcDataHopNhat, bctcDataCongTyMe, dividendHistory])
 
   return (
-    <div className="space-y-5 pb-12">
+    <div className="space-y-5 pb-12 w-full">
       {/* ── 0. BREADCRUMB & ACTION BAR ── */}
       <div className="flex flex-wrap items-center justify-between gap-3">
         <Link
@@ -1103,7 +1128,7 @@ export function StockDetailView({
         <div
           ref={tabsContainerRef}
           onWheel={handleTabsWheel}
-          className="flex items-center gap-1 sm:gap-1.5 overflow-x-auto rounded-2xl border border-border/80 bg-card/95 p-1 sm:p-1.5 backdrop-blur-md shadow-xs scrollbar-none scroll-smooth touch-pan-x"
+          className="flex items-center gap-1 sm:gap-1.5 overflow-x-auto rounded-2xl border border-border/80 bg-card/95 p-1 sm:p-1.5 backdrop-blur-md shadow-xs scrollbar-none scroll-smooth touch-pan-x w-full"
         >
           {TABS.map((tab) => {
             const Icon = tab.icon
@@ -1880,6 +1905,26 @@ export function StockDetailView({
       )}
 
       {/* ══════════════════════════════════════════════════════════ */}
+      {/* TAB: CỔ TỨC & TĂNG VỐN (CHUẨN 100% LOCAL-FIRST)           */}
+      {/* ══════════════════════════════════════════════════════════ */}
+      {mountedTabs.has('dividends') && (
+        <div className={cn("space-y-5 animate-in fade-in-50 duration-200", (activeTab !== 'dividends' || loadingTab === 'dividends') && "hidden")}>
+          <StockDividendsTab
+            symbol={ticker}
+            companyName={company.name}
+            dividendData={dividendHistory}
+            dividendYield={
+              stockData.valuation.dividend && market.price
+                ? (stockData.valuation.dividend / (market.price * 1000)) * 100
+                : null
+            }
+            currentPrice={market.price ? market.price * 1000 : undefined}
+            companyProfileData={companyProfileData}
+          />
+        </div>
+      )}
+
+      {/* ══════════════════════════════════════════════════════════ */}
       {/* TAB 2.5: BÀI VIẾT & SỰ KIỆN DOANH NGHIỆP                  */}
       {/* ══════════════════════════════════════════════════════════ */}
       {mountedTabs.has('articles') && (
@@ -1895,7 +1940,7 @@ export function StockDetailView({
       {/* ══════════════════════════════════════════════════════════ */}
       {/* TAB 2.6: CỘNG ĐỒNG THẢO LUẬN & PHÂN TÍCH (CHUẨN FIREANT)   */}
       {/* ══════════════════════════════════════════════════════════ */}
-      {mountedTabs.has('community') && (
+      {ENABLE_COMMUNITY_TAB && mountedTabs.has('community') && (
         <div className={cn("space-y-5 animate-in fade-in-50 duration-200", (activeTab !== 'community' || loadingTab === 'community') && "hidden")}>
           <StockCommunityTab
             symbol={ticker}
@@ -1930,7 +1975,7 @@ export function StockDetailView({
       {/* ══════════════════════════════════════════════════════════ */}
       {/* TAB 4: SO SÁNH TRONG NGÀNH                               */}
       {/* ══════════════════════════════════════════════════════════ */}
-      {mountedTabs.has('peers') && (
+      {ENABLE_PEERS_TAB && mountedTabs.has('peers') && (
         <div className={cn("space-y-6 animate-in fade-in-50 duration-200", (activeTab !== 'peers' || loadingTab === 'peers') && "hidden")}>
           {/* A. Bảng & Biểu đồ So Sánh Doanh Nghiệp Cùng Ngành Chuyên Sâu (Chuẩn Ruatichsan) */}
           <PeerComparisonView

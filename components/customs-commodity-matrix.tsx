@@ -128,8 +128,8 @@ export function CustomsCommodityMatrix({
   initialSearch?: string
   onSwitchToTierA?: () => void
 }) {
-  // Bộ lọc chính
-  const [tradeType, setTradeType] = useState<TradeType>('EXPORT')
+  // Bộ lọc chính: Mặc định lọc sẵn Cán cân xuất nhập khẩu
+  const [tradeType, setTradeType] = useState<TradeType>('BALANCE')
   const [periodType, setPeriodType] = useState<PeriodType>('THANG')
   const [datasetCategory, setDatasetCategory] = useState<DatasetCategory>('main')
   const [valueType, setValueType] = useState<ValueDisplayType>('value')
@@ -143,7 +143,8 @@ export function CustomsCommodityMatrix({
     }
   }, [initialSearch])
 
-  const [chartView, setChartView] = useState<ChartView>('commodity')
+  // Mặc định mở Biểu đồ Cán cân thương mại Tổng thể
+  const [chartView, setChartView] = useState<ChartView>('balance')
   const [chartType, setChartType] = useState<ChartType>('line')
   const [chartRange, setChartRange] = useState<string>('3y')
   const [isChartVisible, setIsChartVisible] = useState<boolean>(true)
