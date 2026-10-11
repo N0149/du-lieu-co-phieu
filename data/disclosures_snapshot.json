@@ -1,5 +1,44 @@
 [
   {
+    "id": "cf_FPT_2026-10-11_bba010c464",
+    "symbol": "FPT",
+    "exchange": "HOSE",
+    "company_name": "Công ty Cổ phần FPT",
+    "title": "Một tập đoàn Việt Nam đãi ngộ đặc biệt cho nhân sự là Tiến sĩ: Thu nhập tối thiểu 500 triệu/năm, hỗ trợ khi mua nhà 2 tỷ, ô tô 1 tỷ",
+    "doc_type": "KHAC",
+    "doc_type_label": "Công bố thông tin",
+    "published_at": "2026-10-11 00:02:00",
+    "file_url": "https://cafef.vn/mot-tap-doan-viet-nam-dai-ngo-dac-biet-cho-nhan-su-la-tien-si-thu-nhap-toi-thieu-500-trieunam-ho-tro-khi-mua-nha-2-ty-o-to-1-ty-188261010234254643.chn?utm_source=du-lieu.chn",
+    "source": "CafeF_Sở",
+    "is_important": 0
+  },
+  {
+    "id": "cf_VHM_2026-10-10_b2913a7989",
+    "symbol": "VHM",
+    "exchange": "HOSE",
+    "company_name": "Công ty Cổ phần Vinhomes",
+    "title": "Siêu dự án gần 1 triệu tỷ ở Hà Nội có SVĐ lớn nhất thế giới: Có thể mang về doanh số sớm hơn dự kiến",
+    "doc_type": "KHAC",
+    "doc_type_label": "Công bố thông tin",
+    "published_at": "2026-10-10 10:58:00",
+    "file_url": "https://cafef.vn/sieu-du-an-gan-1-trieu-ty-o-ha-noi-co-svd-lon-nhat-the-gioi-co-the-mang-ve-doanh-so-som-hon-du-kien-188261010105835311.chn?utm_source=du-lieu.chn",
+    "source": "CafeF_Sở",
+    "is_important": 0
+  },
+  {
+    "id": "cf_FPT_2026-10-10_5fbdffce80",
+    "symbol": "FPT",
+    "exchange": "HOSE",
+    "company_name": "Công ty Cổ phần FPT",
+    "title": "Chỉ trong 44 ngày, “cánh tay” 78 tỷ USD của Toyota 2 lần tìm đến FPT: Điều gì ở chip Việt khiến gã khổng lồ Nhật Bản quan tâm?",
+    "doc_type": "KHAC",
+    "doc_type_label": "Công bố thông tin",
+    "published_at": "2026-10-10 10:44:00",
+    "file_url": "https://cafef.vn/chi-trong-44-ngay-canh-tay-78-ty-usd-cua-toyota-2-lan-tim-den-fpt-dieu-gi-o-chip-viet-khien-ga-khong-lo-nhat-ban-quan-tam-188261010104436758.chn?utm_source=du-lieu.chn",
+    "source": "CafeF_Sở",
+    "is_important": 0
+  },
+  {
     "id": "cf_DC4_2026-10-09_9a2d303747",
     "symbol": "DC4",
     "exchange": "HOSE",
@@ -1547,6 +1586,19 @@
     "is_important": 0
   },
   {
+    "id": "cf_PPE_2026-10-09_e65c7a1115",
+    "symbol": "PPE",
+    "exchange": "HNX",
+    "company_name": "Công ty Cổ phần Tư vấn Đầu tư PP Enterprise",
+    "title": "PPE: Ông Trương Xuân Bình-Giám đốc đăng ký bán toàn bộ 95.200 cổ phiếu",
+    "doc_type": "KHAC",
+    "doc_type_label": "Công bố thông tin",
+    "published_at": "2026-10-09 00:00:00",
+    "file_url": "https://cafef.vn/du-lieu/PPE-2994708/ppe-ong-truong-xuan-binhgiam-doc-dang-ky-ban-toan-bo-95200-co-phieu.chn?utm_source=du-lieu.chn",
+    "source": "CafeF_Sở",
+    "is_important": 0
+  },
+  {
     "id": "cf_SDG_2026-10-08_f82629af04",
     "symbol": "SDG",
     "exchange": "HNX",
@@ -2544,58 +2596,6 @@
     "doc_type_label": "Cổ tức & Quyền",
     "published_at": "2026-10-08 14:36:00",
     "file_url": "https://cafef.vn/du-lieu/ADG-2993811/adg-thong-bao-ve-ngay-dang-ky-cuoi-cung-de-thuc-hien-quyen-tham-du-dhdcd-bat-thuong-nam-2026.chn?utm_source=du-lieu.chn",
-    "source": "CafeF_Sở",
-    "is_important": 1
-  },
-  {
-    "id": "cf_DIG_2026-10-08_ed8f97c725",
-    "symbol": "DIG",
-    "exchange": "HOSE",
-    "company_name": "Tổng Công ty Cổ phần Đầu tư Phát triển Xây dựng",
-    "title": "DIG: Thông báo giao dịch cổ phiếu của người có liên quan của Người nội bộ Vũ Thị Thu Hương",
-    "doc_type": "GIAO_DICH_NOI_BO",
-    "doc_type_label": "Giao dịch nội bộ",
-    "published_at": "2026-10-08 14:34:00",
-    "file_url": "https://cafef.vn/du-lieu/DIG-2993810/dig-thong-bao-giao-dich-co-phieu-cua-nguoi-co-lien-quan-cua-nguoi-noi-bo-vu-thi-thu-huong.chn?utm_source=du-lieu.chn",
-    "source": "CafeF_Sở",
-    "is_important": 0
-  },
-  {
-    "id": "cf_VPB_2026-10-08_8e1ab59870",
-    "symbol": "VPB",
-    "exchange": "HOSE",
-    "company_name": "Ngân hàng Thương mại Cổ phần Việt Nam Thịnh Vượng",
-    "title": "VPB: Thông báo nhận được công văn của UBCKNN về việc nhận được tài liệu báo cáo kết quả đợt phát hành cổ phiếu để trả cổ tức",
-    "doc_type": "CO_TUC",
-    "doc_type_label": "Cổ tức & Quyền",
-    "published_at": "2026-10-08 14:33:00",
-    "file_url": "https://cafef.vn/du-lieu/VPB-2993809/vpb-thong-bao-nhan-duoc-cong-van-cua-ubcknn-ve-viec-nhan-duoc-tai-lieu-bao-cao-ket-qua-dot-phat-hanh-co-phieu-de-tra-co-tuc.chn?utm_source=du-lieu.chn",
-    "source": "CafeF_Sở",
-    "is_important": 1
-  },
-  {
-    "id": "cf_PNJ_2026-10-08_1b04df968a",
-    "symbol": "PNJ",
-    "exchange": "HOSE",
-    "company_name": "Công ty Cổ phần Vàng bạc Đá quý Phú Nhuận",
-    "title": "PNJ: Báo cáo kết quả giao dịch cổ phiếu của người có liên quan đến Người nội bộ Cao Ngọc Duy",
-    "doc_type": "GIAO_DICH_NOI_BO",
-    "doc_type_label": "Giao dịch nội bộ",
-    "published_at": "2026-10-08 14:31:00",
-    "file_url": "https://cafef.vn/du-lieu/PNJ-2993808/pnj-bao-cao-ket-qua-giao-dich-co-phieu-cua-nguoi-co-lien-quan-den-nguoi-noi-bo-cao-ngoc-duy.chn?utm_source=du-lieu.chn",
-    "source": "CafeF_Sở",
-    "is_important": 0
-  },
-  {
-    "id": "cf_DMX_2026-10-08_504379df17",
-    "symbol": "DMX",
-    "exchange": "HOSE",
-    "company_name": "",
-    "title": "DMX: Thông báo đường dẫn tài liệu họp ĐHĐCĐ bất thường năm 2026",
-    "doc_type": "DHDCD",
-    "doc_type_label": "ĐHĐCĐ",
-    "published_at": "2026-10-08 14:30:00",
-    "file_url": "https://cafef.vn/du-lieu/DMX-2993805/dmx-thong-bao-duong-dan-tai-lieu-hop-dhdcd-bat-thuong-nam-2026.chn?utm_source=du-lieu.chn",
     "source": "CafeF_Sở",
     "is_important": 1
   }
