@@ -181,12 +181,59 @@ def strip_accents(text):
     res = ''.join([c for c in nfkd if not unicodedata.combining(c)])
     return res.replace('đ', 'd').replace('Đ', 'D')
 
-def is_q3_2026(text):
+def is_valid_recent_bctc_date(date_pub):
     """
-    Nhận diện tài liệu BCTC Quý 3/2026 theo tiêu chí 'Lọc nhầm còn hơn bỏ sót':
+    Kiểm tra ngày công bố có thuộc đợt BCTC hiện tại (mùa BCTC tháng 10/2026) hay không:
+    - BCTC quý mới chỉ công bố từ cuối tháng 9 (>= 20/09/2026) và trong tháng 10, tháng 11/2026.
+    - LOẠI BỎ TRIỆT ĐỂ các tài liệu công bố từ tháng 1 đến tháng 8/2026 (ví dụ tháng 7 của CAP).
+    - Nếu không có ngày công bố (trên website không ghi ngày): trả về True để không bỏ sót.
+    """
+    if not date_pub:
+        return True
+    dp = str(date_pub).strip()
+    
+    # 1. Trích xuất ngày, tháng, năm từ định dạng DD/MM/YYYY hoặc DD/MM/YY
+    m = re.search(r'(\d{1,2})/(\d{1,2})/(2026|26)', dp)
+    if m:
+        day = int(m.group(1))
+        month = int(m.group(2))
+        if month in [10, 11, 12]:
+            return True
+        if month == 9 and day >= 20:
+            return True
+        # Bất kỳ tháng 1 đến tháng 8, hoặc tháng 9 trước ngày 20 đều là kỳ cũ
+        return False
+        
+    # 2. Định dạng YYYY-MM-DD
+    m2 = re.search(r'2026-(\d{1,2})-(\d{1,2})', dp)
+    if m2:
+        month = int(m2.group(1))
+        day = int(m2.group(2))
+        if month in [10, 11, 12]:
+            return True
+        if month == 9 and day >= 20:
+            return True
+        return False
+        
+    # 3. Chuỗi dạng '10/2026' hoặc '11/2026'
+    if '10/2026' in dp or '10/26' in dp or '11/2026' in dp or '12/2026' in dp:
+        return True
+        
+    # Nếu có rõ ràng tháng 01 đến 08
+    for mo in range(1, 9):
+        if f'/{mo:02d}/2026' in dp or f'/{mo:02d}/26' in dp or f'/{mo}/2026' in dp:
+            return False
+            
+    return True
+
+def is_q3_2026(text, ticker=""):
+    """
+    Nhận diện tài liệu BCTC Quý 3/2026 (hoặc Quý mới cho các mã niên độ đặc thù như CAP)
+    theo tiêu chí 'Lọc nhầm còn hơn bỏ sót':
     - Bỏ dấu tiếng Việt (xử lý toàn bộ biến thể gõ quý/qúy/quỳ)
     - Cho phép cả niên độ 2025-2026 (như SFC)
-    - Loại bỏ văn bản hành chính không liên quan
+    - Đối với mã CAP: niên độ kết thúc 30/09, kỳ mới ra vào tháng 10 này là Quý 4/2026 hoặc BCTC năm 2026/niên độ 2025-2026!
+      (Báo cáo ra vào tháng 7 là Quý 3 cũ, không chấp nhận)
     """
     if not text:
         return False, ""
@@ -201,17 +248,32 @@ def is_q3_2026(text):
     # 2. Kiểm tra năm 2026 (chấp nhận cả niên độ 2025-2026, thư mục /2026/, _2026)
     has_2026 = bool(re.search(r'(?<!\d)(?:2026|\'26)(?!\d)', clean)) or ('2025-2026' in clean) or ('/2026/' in clean) or ('_2026' in clean)
     
-    # Nếu có năm cũ (2018-2024, 2022) gắn liền với Quý 3 và HOÀN TOÀN KHÔNG có 2026 -> loại bỏ
-    has_old = bool(re.search(r'(?:quy\s*3|q3|quy\s*iii|quarter\s*3)[_\s\-/]*(?:201[89]|202[0-4])(?!\d)', clean))
+    # Nếu có năm cũ (2018-2024, 2022) gắn liền với Quý và HOÀN TOÀN KHÔNG có 2026 -> loại bỏ
+    has_old = bool(re.search(r'(?:quy\s*[1-4]|q[1-4]|quarter\s*[1-4])[_\s\-/]*(?:201[89]|202[0-4])(?!\d)', clean))
     if has_old and not has_2026:
         return False, ""
         
-    # 3. Điều kiện Quý 3:
-    has_q3 = bool(re.search(r'(?:(?<![a-zA-Z0-9])|^)(?:quy\s*3|q3|quy\s*iii|quarter\s*3|q\.3|q_3)(?![a-zA-Z0-9])', clean))
-    
-    # 4. Điều kiện BCTC / Tài chính / Giải trình / KQKD:
+    # 3. Điều kiện BCTC / Tài chính / Giải trình / KQKD:
     has_bctc = any(k in clean for k in ['tai chinh', 'bctc', 'financial', 'fs', 'giai trinh', 'kqkd', 'kinh doanh'])
-    
+    if not has_bctc:
+        return False, ""
+        
+    # 4. Điều kiện Quý:
+    is_cap = (str(ticker).upper() == 'CAP')
+    if is_cap:
+        # Với CAP: BCTC Quý 3 ra vào tháng 7 là kỳ CŨ, TUYỆT ĐỐI KHÔNG nhận Quý 3!
+        has_q3 = bool(re.search(r'(?:(?<![a-zA-Z0-9])|^)(?:quy\s*3|q3|quy\s*iii|quarter\s*3|q\.3|q_3)(?![a-zA-Z0-9])', clean))
+        if has_q3:
+            return False, ""
+        # Kỳ mới tháng 10 của CAP là Quý 4/2026 hoặc BCTC năm 2026 (hoặc niên độ 2025-2026 kết thúc năm)
+        has_q4 = bool(re.search(r'(?:(?<![a-zA-Z0-9])|^)(?:quy\s*4|q4|quy\s*iv|quarter\s*4|q\.4|q_4)(?![a-zA-Z0-9])', clean))
+        has_annual = any(k in clean for k in ['bctc nam', 'tai chinh nam', 'kiem toan nam'])
+        if (has_q4 or has_annual) and has_2026:
+            return True, text
+        return False, ""
+        
+    # Cho các mã thông thường:
+    has_q3 = bool(re.search(r'(?:(?<![a-zA-Z0-9])|^)(?:quy\s*3|q3|quy\s*iii|quarter\s*3|q\.3|q_3)(?![a-zA-Z0-9])', clean))
     if has_q3 and has_bctc and has_2026:
         return True, text
         
@@ -229,7 +291,8 @@ def check_fpts_ezir(ticker):
     """
     Quét dữ liệu chuẩn hóa từ cổng EzIR FPTS:
     - Thu thập ngày công bố gần nhất, tiêu đề tài liệu mới nhất, và link tải PDF trực tiếp.
-    - Phát hiện BCTC Quý 3/2026 (Ưu tiên BCTC Hợp nhất nếu có cả riêng lẫn hợp nhất).
+    - Phát hiện BCTC Quý 3/2026 (hoặc Quý mới của kỳ tháng 10).
+    - Ưu tiên BCTC Hợp nhất nếu có cả riêng lẫn hợp nhất.
     """
     url = f"https://gateway.fpts.com.vn/news/api/gateway/v1/mobile/list?folder=86&code={ticker}&pageSize=10&selectedPage=1&newsType=2"
     try:
@@ -251,9 +314,13 @@ def check_fpts_ezir(ticker):
                 i_raw_url = item.get('URL', '')
                 doc_url = i_raw_url.replace('\\', '/').strip() if i_raw_url else f"https://ezir.fpts.com.vn/TinTuc/TinTucDN?code={ticker}"
                 
-                is_recent = ('2026' in date_pub) or ('/26' in date_pub) or ('2026' in title) or ('10/' in date_pub)
-                matched, snippet = is_q3_2026(title)
-                if matched and is_recent:
+                # CHỈ CHẤP NHẬN BCTC CÔNG BỐ TRONG ĐỢT THÁNG 10/2026 (hoặc cuối tháng 9)
+                # LOẠI BỎ TRIỆT ĐỂ BCTC CÔNG BỐ THÁNG 01 - 08/2026 (như tháng 7 của CAP)
+                if not is_valid_recent_bctc_date(date_pub):
+                    continue
+                    
+                matched, snippet = is_q3_2026(title, ticker=ticker)
+                if matched:
                     b_type = classify_bctc_type(title)
                     q3_found_items.append({
                         'title': title,
@@ -322,7 +389,12 @@ def check_company_website(ticker, uri):
             unquote_h = urllib.parse.unquote(h)
             combo = (t + " " + unquote_h).strip()
             
-            matched, snippet = is_q3_2026(combo)
+            # Nếu link hoặc văn bản có chứa ngày tháng cũ (tháng 01-08/2026) -> bỏ qua
+            m_date = re.search(r'(\d{1,2})/(\d{1,2})/(2026|26)', combo)
+            if m_date and not is_valid_recent_bctc_date(m_date.group(0)):
+                continue
+            
+            matched, snippet = is_q3_2026(combo, ticker=ticker)
             if matched:
                 is_file = any(h.lower().endswith(ext) for ext in ['.pdf', '.zip', '.rar', '.xlsx', '.docx'])
                 is_hop_nhat = any(k in combo.lower() for k in ['hợp nhất', 'hop nhat'])
@@ -366,7 +438,10 @@ def check_company_website(ticker, uri):
         for tag in soup.find_all(['tr', 'li', 'p']):
             block_text = tag.get_text(separator=' ', strip=True)
             if len(block_text) < 250:
-                matched, snippet = is_q3_2026(block_text)
+                m_date = re.search(r'(\d{1,2})/(\d{1,2})/(2026|26)', block_text)
+                if m_date and not is_valid_recent_bctc_date(m_date.group(0)):
+                    continue
+                matched, snippet = is_q3_2026(block_text, ticker=ticker)
                 if matched:
                     a_tag = tag.find('a', href=True)
                     doc_url = urllib.parse.urljoin(clean_uri, a_tag['href']) if a_tag else clean_uri
