@@ -22,6 +22,8 @@ import { InsiderActionsView } from '@/components/news/insider-actions-view'
 import type { InsiderActionRecord } from '@/lib/insider-actions-service'
 import { ChinaNewsView } from '@/components/news/china-news-view'
 import type { ChinaNewsItem } from '@/lib/china-news-service'
+import { BctcQ3View } from '@/components/news/bctc-q3-view'
+import type { BctcAlertItem } from '@/lib/bctc-alerts-service'
 
 export type NewsSnapshotItem = {
   id: string
@@ -35,7 +37,7 @@ export type NewsSnapshotItem = {
   summary?: string
 }
 
-type TabType = 'cong-bo' | 'giao-dich-noi-bo' | 'all' | 'thi-truong' | 'co-phieu' | 'china' | 'saved'
+type TabType = 'bctc-q3' | 'cong-bo' | 'giao-dich-noi-bo' | 'all' | 'thi-truong' | 'co-phieu' | 'china' | 'saved'
 
 interface NewsDashboardProps {
   initialNews?: NewsSnapshotItem[]
@@ -43,6 +45,7 @@ interface NewsDashboardProps {
   initialDisclosures?: CorporateDisclosure[]
   initialInsiderActions?: InsiderActionRecord[]
   initialChinaNews?: ChinaNewsItem[]
+  initialBctcAlerts?: BctcAlertItem[]
   chinaNewsDateStr?: string
   stockPriceMap?: Record<string, { px: number | null; w1: number | null }>
   defaultTab?: TabType
@@ -105,12 +108,13 @@ export function NewsDashboard({
   initialDisclosures = [],
   initialInsiderActions = [],
   initialChinaNews = [],
+  initialBctcAlerts = [],
   chinaNewsDateStr = '',
   stockPriceMap = {},
-  defaultTab = 'cong-bo',
+  defaultTab = 'bctc-q3',
   initialWatchlist = [],
 }: NewsDashboardProps) {
-  const [activeTab, setActiveTab] = useState<TabType>(defaultTab || 'cong-bo')
+  const [activeTab, setActiveTab] = useState<TabType>(defaultTab || 'bctc-q3')
   const [searchQuery, setSearchQuery] = useState('')
   const [selectedSource, setSelectedSource] = useState<string>('all')
   const [savedIds, setSavedIds] = useState<string[]>([])
@@ -393,8 +397,28 @@ export function NewsDashboard({
       {/* Top Header Navigation */}
       <div className="sticky top-0 z-30 border-b border-[#1f242d] bg-[#0b0d11]/95 backdrop-blur">
         <div className="flex h-12 w-full items-center justify-between px-3 sm:px-4 lg:px-6">
-          {/* Left: Navigation Tabs (Tài liệu mới nhất đưa lên ĐẦU TIÊN) */}
+          {/* Left: Navigation Tabs (BCTC Quý 3 đưa lên ĐẦU TIÊN) */}
           <div className="flex items-center gap-1.5 overflow-x-auto no-scrollbar py-1">
+            <button
+              type="button"
+              onClick={() => setActiveTab('bctc-q3')}
+              className={cn(
+                'flex items-center gap-1.5 rounded px-3.5 py-1 text-[13px] font-medium transition-all shrink-0 cursor-pointer',
+                activeTab === 'bctc-q3'
+                  ? 'bg-amber-500/20 text-amber-300 font-bold border border-amber-500/50 shadow-xs ring-1 ring-amber-500/30'
+                  : 'text-[#8b949e] hover:bg-[#161a22] hover:text-amber-300'
+              )}
+            >
+              <span className="relative flex size-2">
+                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-amber-400 opacity-75"></span>
+                <span className="relative inline-flex size-2 rounded-full bg-amber-500"></span>
+              </span>
+              <span>BCTC Quý 3</span>
+              <span className="ml-0.5 inline-flex items-center px-1.5 py-0.2 text-[9.5px] font-black rounded bg-amber-500/25 text-amber-300 border border-amber-500/40">
+                HOT
+              </span>
+            </button>
+
             <button
               type="button"
               onClick={() => setActiveTab('cong-bo')}
@@ -491,7 +515,7 @@ export function NewsDashboard({
           </div>
 
           {/* Right: Search Input & Filter Dropdown (WiData Style) */}
-          {activeTab !== 'china' ? (
+          {activeTab !== 'china' && activeTab !== 'bctc-q3' ? (
           <div className="flex items-center gap-3">
             {/* Filter by Source dropdown */}
             <div className="hidden sm:block">
@@ -576,8 +600,8 @@ export function NewsDashboard({
         </div>
       </div>
 
-      {/* Sub-bar bộ lọc nhanh: Watchlist đưa lên ĐẦU TIÊN cho toàn bộ tab (trừ tab Trung Quốc) */}
-      {activeTab !== 'china' && (
+      {/* Sub-bar bộ lọc nhanh: Watchlist đưa lên ĐẦU TIÊN cho toàn bộ tab (trừ tab Trung Quốc và BCTC Q3) */}
+      {activeTab !== 'china' && activeTab !== 'bctc-q3' && (
         <div className="border-b border-[#181d26] bg-[#0d1118] px-3 sm:px-4 lg:px-6 py-2">
           <div className="flex items-center justify-between gap-3 overflow-x-auto no-scrollbar">
             <div className="flex items-center gap-2 shrink-0">
@@ -641,7 +665,15 @@ export function NewsDashboard({
         </div>
       )}
 
-      {activeTab === 'china' ? (
+      {activeTab === 'bctc-q3' ? (
+        <div className="w-full px-3 sm:px-4 lg:px-6 py-4">
+          <BctcQ3View
+            initialAlerts={initialBctcAlerts}
+            stockPriceMap={stockPriceMap}
+            userWatchlist={userWatchlist}
+          />
+        </div>
+      ) : activeTab === 'china' ? (
         <ChinaNewsView
           initialItems={chinaNews}
           dateStr={chinaDateStr}
