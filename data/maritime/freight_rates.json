@@ -1,6 +1,6 @@
 {
   "status": "success",
-  "updated_at": "2026-10-11T18:44:29.018781",
+  "updated_at": "2026-10-12T01:55:24.867039",
   "indices": {
     "BDI": {
       "symbol": "BDI",
@@ -15,13 +15,13 @@
       ],
       "summary": "Đo lường chi phí thuê tàu vận tải hàng rời (than đá, quặng sắt, ngũ cốc) toàn cầu. Tác động trực tiếp tới biên lợi nhuận của VOS và các đội tàu hàng khô.",
       "source": "Baltic Exchange / Hellenic",
-      "latest_date": "2026-10-11",
+      "latest_date": "2026-10-12",
       "latest_value": 2917.0,
-      "previous_value": 2948,
-      "change_val": -31.0,
+      "previous_value": 2946,
+      "change_val": -29.0,
       "change_pct": -0.9,
       "stats_52w": {
-        "high": 2948,
+        "high": 2946,
         "low": 1520
       },
       "stats_10y": {
@@ -3379,32 +3379,32 @@
         },
         {
           "date": "2026-09-18",
-          "value": 2838,
-          "change_val": 0,
-          "change_pct": 0.0
+          "value": 2836,
+          "change_val": -2,
+          "change_pct": -0.07
         },
         {
           "date": "2026-09-25",
-          "value": 2885,
-          "change_val": 47,
-          "change_pct": 1.66
+          "value": 2879,
+          "change_val": 43,
+          "change_pct": 1.52
         },
         {
           "date": "2026-10-02",
-          "value": 2935,
-          "change_val": 50,
-          "change_pct": 1.73
+          "value": 2928,
+          "change_val": 49,
+          "change_pct": 1.7
         },
         {
           "date": "2026-10-09",
-          "value": 2948,
-          "change_val": 13,
-          "change_pct": 0.44
+          "value": 2946,
+          "change_val": 18,
+          "change_pct": 0.61
         },
         {
-          "date": "2026-10-11",
+          "date": "2026-10-12",
           "value": 2917.0,
-          "change_val": -31.0,
+          "change_val": -29.0,
           "change_pct": -0.9
         }
       ]
@@ -3422,10 +3422,10 @@
       ],
       "summary": "Đo lường giá cước giao ngay cho 1 container 40ft (FEU) trên các tuyến xuyên đại dương. Kim chỉ nam doanh thu cho HAH và các liên doanh cảng nước sâu của Gemadept.",
       "source": "Drewry Shipping Consultants",
-      "latest_date": "2026-10-11",
+      "latest_date": "2026-10-12",
       "latest_value": 4351.0,
-      "previous_value": 4359,
-      "change_val": -8.0,
+      "previous_value": 4360,
+      "change_val": -9.0,
       "change_pct": -2.0,
       "stats_52w": {
         "high": 4680,
@@ -6792,26 +6792,26 @@
         },
         {
           "date": "2026-09-25",
-          "value": 4397,
-          "change_val": -21,
-          "change_pct": -0.48
+          "value": 4398,
+          "change_val": -20,
+          "change_pct": -0.45
         },
         {
           "date": "2026-10-02",
-          "value": 4375,
+          "value": 4376,
           "change_val": -22,
           "change_pct": -0.5
         },
         {
           "date": "2026-10-09",
-          "value": 4359,
+          "value": 4360,
           "change_val": -16,
           "change_pct": -0.37
         },
         {
-          "date": "2026-10-11",
+          "date": "2026-10-12",
           "value": 4351.0,
-          "change_val": -8.0,
+          "change_val": -9.0,
           "change_pct": -2.0
         }
       ]
@@ -6829,10 +6829,10 @@
       ],
       "summary": "Đo lường giá cước thuê các siêu tàu dầu thô viễn dương (VLCC, Suezmax, Aframax). Đang trong siêu chu kỳ tăng giá kỷ lục năm 2026 do căng thẳng an ninh eo biển Hormuz/Trung Đông và tái định tuyến Mũi Hảo Vọng.",
       "source": "Baltic Exchange",
-      "latest_date": "2026-10-11",
+      "latest_date": "2026-10-12",
       "latest_value": 5366.0,
-      "previous_value": 5362,
-      "change_val": 4.0,
+      "previous_value": 5358,
+      "change_val": 8.0,
       "change_pct": 2.21,
       "stats_52w": {
         "high": 5366.0,
@@ -10205,20 +10205,20 @@
         },
         {
           "date": "2026-10-02",
-          "value": 5303,
-          "change_val": 52,
-          "change_pct": 0.99
+          "value": 5298,
+          "change_val": 47,
+          "change_pct": 0.9
         },
         {
           "date": "2026-10-09",
-          "value": 5362,
-          "change_val": 59,
-          "change_pct": 1.11
+          "value": 5358,
+          "change_val": 60,
+          "change_pct": 1.13
         },
         {
-          "date": "2026-10-11",
+          "date": "2026-10-12",
           "value": 5366.0,
-          "change_val": 4.0,
+          "change_val": 8.0,
           "change_pct": 2.21
         }
       ]
@@ -10236,10 +10236,10 @@
       ],
       "summary": "Theo dõi cước vận tải xăng dầu tinh chế, nhiên liệu hàng không Jet-A1 và hóa chất lỏng sạch. Tăng trưởng trên 110% YoY trong năm 2026, tạo động lực tăng trưởng doanh thu vượt trội cho đội tàu PVTrans.",
       "source": "Baltic Exchange / Macro Benchmark",
-      "latest_date": "2026-10-11",
+      "latest_date": "2026-10-12",
       "latest_value": 2160.0,
-      "previous_value": 2157,
-      "change_val": 3.0,
+      "previous_value": 2155,
+      "change_val": 5.0,
       "change_pct": 4.05,
       "stats_52w": {
         "high": 2160.0,
@@ -13606,26 +13606,26 @@
         },
         {
           "date": "2026-09-25",
-          "value": 2079,
-          "change_val": 99,
-          "change_pct": 5.0
+          "value": 2078,
+          "change_val": 98,
+          "change_pct": 4.95
         },
         {
           "date": "2026-10-02",
-          "value": 2118,
-          "change_val": 39,
-          "change_pct": 1.88
+          "value": 2115,
+          "change_val": 37,
+          "change_pct": 1.78
         },
         {
           "date": "2026-10-09",
-          "value": 2157,
-          "change_val": 39,
-          "change_pct": 1.84
+          "value": 2155,
+          "change_val": 40,
+          "change_pct": 1.89
         },
         {
-          "date": "2026-10-11",
+          "date": "2026-10-12",
           "value": 2160.0,
-          "change_val": 3.0,
+          "change_val": 5.0,
           "change_pct": 4.05
         }
       ]
