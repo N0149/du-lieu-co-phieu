@@ -1,5 +1,44 @@
 [
   {
+    "id": "cf_DSH_2026-10-12_c5856bdc04",
+    "symbol": "DSH",
+    "exchange": "UPCOM",
+    "company_name": "Công ty Cổ phần Đông Sơn Holdings",
+    "title": "DSH: Quyết định của HOSE về việc chấp thuận niêm yết cổ phiếu DSH",
+    "doc_type": "KHAC",
+    "doc_type_label": "Công bố thông tin",
+    "published_at": "2026-10-12 08:52:00",
+    "file_url": "https://cafef.vn/du-lieu/DSH-2995891/dsh-quyet-dinh-cua-hose-ve-viec-chap-thuan-niem-yet-co-phieu-dsh.chn?utm_source=du-lieu.chn",
+    "source": "CafeF_Sở",
+    "is_important": 0
+  },
+  {
+    "id": "cf_HUT_2026-10-12_a5d4776297",
+    "symbol": "HUT",
+    "exchange": "HNX",
+    "company_name": "Công ty Cổ phần Tasco",
+    "title": "HUT: Thông báo chào bán trái phiếu ra công chúng và Bản Cáo Bạch",
+    "doc_type": "KHAC",
+    "doc_type_label": "Công bố thông tin",
+    "published_at": "2026-10-12 08:41:00",
+    "file_url": "https://cafef.vn/du-lieu/HUT-2995887/hut-thong-bao-chao-ban-trai-phieu-ra-cong-chung-va-ban-cao-bach.chn?utm_source=du-lieu.chn",
+    "source": "CafeF_Sở",
+    "is_important": 0
+  },
+  {
+    "id": "cf_HNX_2026-10-12_1b9de5376f",
+    "symbol": "HNX",
+    "exchange": "UPCOM",
+    "company_name": "",
+    "title": "HNX: Số liệu Quản lý Sở hữu của Nhà đầu tư nước ngoài tại ngày 12/10/2026",
+    "doc_type": "KHAC",
+    "doc_type_label": "Công bố thông tin",
+    "published_at": "2026-10-12 08:27:00",
+    "file_url": "https://cafef.vn/du-lieu/HNX-2995886/hnx-so-lieu-quan-ly-so-huu-cua-nha-dau-tu-nuoc-ngoai-tai-ngay-12102026.chn?utm_source=du-lieu.chn",
+    "source": "CafeF_Sở",
+    "is_important": 0
+  },
+  {
     "id": "cf_FPT_2026-10-11_bba010c464",
     "symbol": "FPT",
     "exchange": "HOSE",
@@ -88,6 +127,19 @@
     "published_at": "2026-10-09 17:53:00",
     "file_url": "https://cafef.vn/du-lieu/PDV-2994863/pdv-nghi-quyet-hdqt-ve-viec-ban-hanh-dieu-le-cong-ty-kem-dieu-le.chn?utm_source=du-lieu.chn",
     "source": "CafeF_Sở",
+    "is_important": 0
+  },
+  {
+    "id": "vci_12187001",
+    "symbol": "BMI",
+    "exchange": "HOSE",
+    "company_name": "Tổng Công ty Cổ phần Bảo Minh",
+    "title": "BMI: Thông báo công văn của Bộ Tài Chính về việc chấp thuận nguyên tắc thay đổi vốn điều lệ của BMI",
+    "doc_type": "KHAC",
+    "doc_type_label": "Công bố thông tin",
+    "published_at": "2026-10-09 17:52:13",
+    "file_url": "https://cdn.fiingroup.vn/medialib/127889/I/2024/11/29/10260703372810700_BMI.png",
+    "source": "Vietcap_FiinGroup",
     "is_important": 0
   },
   {
@@ -2546,57 +2598,5 @@
     "file_url": "https://cafef.vn/du-lieu/DLT-2993856/dlt-nghi-quyet-hoi-dong-quan-tri.chn?utm_source=du-lieu.chn",
     "source": "CafeF_Sở",
     "is_important": 0
-  },
-  {
-    "id": "cf_BCP_2026-10-08_cb7d74f5c8",
-    "symbol": "BCP",
-    "exchange": "UPCOM",
-    "company_name": "Công ty Cổ phần Dược Enlie",
-    "title": "BCP: Nghị quyết Hội đồng quản trị",
-    "doc_type": "NGHI_QUYET_HDQT",
-    "doc_type_label": "Nghị quyết HĐQT",
-    "published_at": "2026-10-08 15:09:00",
-    "file_url": "https://cafef.vn/du-lieu/BCP-2993855/bcp-nghi-quyet-hoi-dong-quan-tri.chn?utm_source=du-lieu.chn",
-    "source": "CafeF_Sở",
-    "is_important": 0
-  },
-  {
-    "id": "cf_DNN_2026-10-08_acfff97c49",
-    "symbol": "DNN",
-    "exchange": "UPCOM",
-    "company_name": "Công ty Cổ phần Cấp nước Đà Nẵng",
-    "title": "DNN: Nghị quyết Hội đồng quản trị",
-    "doc_type": "NGHI_QUYET_HDQT",
-    "doc_type_label": "Nghị quyết HĐQT",
-    "published_at": "2026-10-08 15:07:00",
-    "file_url": "https://cafef.vn/du-lieu/DNN-2993848/dnn-nghi-quyet-hoi-dong-quan-tri.chn?utm_source=du-lieu.chn",
-    "source": "CafeF_Sở",
-    "is_important": 0
-  },
-  {
-    "id": "cf_ALV_2026-10-08_7f54f9062d",
-    "symbol": "ALV",
-    "exchange": "UPCOM",
-    "company_name": "Công ty Cổ phần Tập đoàn MCST",
-    "title": "ALV: Nghị quyết Hội đồng quản trị",
-    "doc_type": "NGHI_QUYET_HDQT",
-    "doc_type_label": "Nghị quyết HĐQT",
-    "published_at": "2026-10-08 15:05:00",
-    "file_url": "https://cafef.vn/du-lieu/ALV-2993846/alv-nghi-quyet-hoi-dong-quan-tri.chn?utm_source=du-lieu.chn",
-    "source": "CafeF_Sở",
-    "is_important": 0
-  },
-  {
-    "id": "cf_ADG_2026-10-08_1b4aeb6692",
-    "symbol": "ADG",
-    "exchange": "HOSE",
-    "company_name": "Công ty Cổ phần Clever Group",
-    "title": "ADG: Thông báo về ngày đăng ký cuối cùng để thực hiện quyền tham dự ĐHĐCĐ bất thường năm 2026",
-    "doc_type": "CO_TUC",
-    "doc_type_label": "Cổ tức & Quyền",
-    "published_at": "2026-10-08 14:36:00",
-    "file_url": "https://cafef.vn/du-lieu/ADG-2993811/adg-thong-bao-ve-ngay-dang-ky-cuoi-cung-de-thuc-hien-quyen-tham-du-dhdcd-bat-thuong-nam-2026.chn?utm_source=du-lieu.chn",
-    "source": "CafeF_Sở",
-    "is_important": 1
   }
 ]
