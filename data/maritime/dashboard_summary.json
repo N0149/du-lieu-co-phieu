@@ -1,6 +1,6 @@
 {
   "status": "success",
-  "generated_at": "2026-10-12T19:17:54.300984",
+  "generated_at": "2026-10-12T20:08:01.956036",
   "kpis": {
     "total_port_authorities": 16,
     "total_calls_30d": 15635,
@@ -4174,6 +4174,23 @@
       "gt": 5338,
       "origin_port": "NAM HAI",
       "dest_port": "CUA LO",
+      "source": "cvhh_haiphong"
+    },
+    {
+      "id": 8746,
+      "vessel_name": "NEW MINGZHOU 68",
+      "authority_id": "haiphong",
+      "berth_name": "Cảng Đình Vũ",
+      "stock_ticker": "DVP",
+      "call_direction": "in",
+      "call_date": "2026-10-12",
+      "scheduled_time": "2026-10-12 01:30:00",
+      "draft": 8.5,
+      "loa": 147.9,
+      "dwt": 13266,
+      "gt": 9998,
+      "origin_port": "CHINA",
+      "dest_port": "DINH VU",
       "source": "cvhh_haiphong"
     },
     {
@@ -13116,23 +13133,6 @@
       "gt": 17211,
       "origin_port": "TAN VU",
       "dest_port": "TAIWAN",
-      "source": "cvhh_haiphong"
-    },
-    {
-      "id": 7665,
-      "vessel_name": "VSC PROMOTE",
-      "authority_id": "haiphong",
-      "berth_name": "Cảng Đình Vũ",
-      "stock_ticker": "DVP",
-      "call_direction": "out",
-      "call_date": "2026-10-07",
-      "scheduled_time": "2026-10-07 16:30:00",
-      "draft": 9.5,
-      "loa": 184.0,
-      "dwt": 23321,
-      "gt": 16174,
-      "origin_port": "PTSC DINH VU",
-      "dest_port": "HO CHI MINH",
       "source": "cvhh_haiphong"
     },
     {
