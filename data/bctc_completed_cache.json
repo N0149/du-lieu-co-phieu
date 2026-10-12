@@ -2,9 +2,9 @@
   "CMD": {
     "ticker": "CMD",
     "bctc_type": "DAY_DU",
-    "title": "Báo cáo tài chính Báo cáo tài chính Quý 3 năm 2026",
+    "title": "Báo cáo tài chính Quý 3 năm 2026",
     "date": "12/10/2026",
-    "doc_url": "https://cmid.com.vn/tin-tuc-bao-cao-tai-chinh-7",
+    "doc_url": "https://cmid.com.vn/docs/VI_BaoCaoTaiChinh_Q3202615463012102026.pdf",
     "source": "Company_Web",
     "updated_at": "2026-10-12 22:46:55"
   },
@@ -16,14 +16,5 @@
     "doc_url": "https://file.fpts.com.vn/FileStore2/File/EzIR/UploadFile/News/2026/10/12/File_1_7445_VI_BaoCaoTaiChinh_Q3_2026_(Cty).pdf",
     "source": "EzIR_FPTS",
     "updated_at": "2026-10-12 22:47:34"
-  },
-  "NSC": {
-    "ticker": "NSC",
-    "bctc_type": "RIENG",
-    "title": "Báo cáo tài chính riêng Quý III-2022 NSC",
-    "date": "12/10/2026",
-    "doc_url": "https://storage.vinaseed.com.vn/Data/2022/10/24/20221024-nsc-cbtt-bctc-rieng-q3-2022-638022320261657694.pdf",
-    "source": "Company_Web",
-    "updated_at": "2026-10-12 22:47:35"
   }
 }
