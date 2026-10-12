@@ -17,6 +17,7 @@ import time
 import datetime
 import urllib.request
 import urllib.parse
+import unicodedata
 from concurrent.futures import ThreadPoolExecutor
 from bs4 import BeautifulSoup
 import openpyxl
@@ -173,43 +174,55 @@ def save_alerts_history(alerts_dict):
     except Exception as e:
         log(f"Lỗi lưu alerts: {e}")
 
+def strip_accents(text):
+    if not text:
+        return ""
+    nfkd = unicodedata.normalize('NFKD', text)
+    res = ''.join([c for c in nfkd if not unicodedata.combining(c)])
+    return res.replace('đ', 'd').replace('Đ', 'D')
+
 def is_q3_2026(text):
     """
-    Nhận diện chính xác 100% tài liệu BCTC Quý 3/2026.
-    Lọc bỏ: kế hoạch, danh sách cổ đông, niên độ cũ, các năm cũ 2018-2025.
+    Nhận diện tài liệu BCTC Quý 3/2026 theo tiêu chí 'Lọc nhầm còn hơn bỏ sót':
+    - Bỏ dấu tiếng Việt (xử lý toàn bộ biến thể gõ quý/qúy/quỳ)
+    - Cho phép cả niên độ 2025-2026 (như SFC)
+    - Loại bỏ văn bản hành chính không liên quan
     """
     if not text:
         return False, ""
-    lower = text.lower()
+    raw = text.lower()
+    clean = strip_accents(raw)
     
-    excluded = ['kế hoạch', 'ke hoach', 'cổ đông lớn', 'cổ đông nhà nước', 'danh sách cổ đông', 'niên độ 2025-2026', 'niên độ 2024-2025']
-    if any(k in lower for k in excluded):
+    # 1. Loại bỏ các văn bản hành chính rõ ràng
+    excluded = ['ke hoach', 'co dong lon', 'danh sach co dong', 'thu moi hop', 'bien ban kiem phieu', 'lay y kien']
+    if any(k in clean for k in excluded):
         return False, ""
         
-    # Loại bỏ ngay lập tức nếu là Quý 3 của các năm cũ (2018-2025)
-    if re.search(r'(?:quý\s*3|q3|quy\s*3|quý\s*iii|quy\s*iii|quarter\s*3)[_\s\-/]*(?:201[89]|202[0-5])(?!\d)', lower):
+    # 2. Kiểm tra năm 2026 (chấp nhận cả niên độ 2025-2026, thư mục /2026/, _2026)
+    has_2026 = bool(re.search(r'(?<!\d)(?:2026|\'26)(?!\d)', clean)) or ('2025-2026' in clean) or ('/2026/' in clean) or ('_2026' in clean)
+    
+    # Nếu có năm cũ (2018-2024, 2022) gắn liền với Quý 3 và HOÀN TOÀN KHÔNG có 2026 -> loại bỏ
+    has_old = bool(re.search(r'(?:quy\s*3|q3|quy\s*iii|quarter\s*3)[_\s\-/]*(?:201[89]|202[0-4])(?!\d)', clean))
+    if has_old and not has_2026:
         return False, ""
         
-    old_years = ['2018', '2019', '2020', '2021', '2022', '2023', '2024', '2025']
-    if any(y in lower for y in old_years) and not re.search(r'(?<!\d)(?:2026|\'26)(?!\d)', lower):
-        return False, ""
+    # 3. Điều kiện Quý 3:
+    has_q3 = bool(re.search(r'(?:(?<![a-zA-Z0-9])|^)(?:quy\s*3|q3|quy\s*iii|quarter\s*3|q\.3|q_3)(?![a-zA-Z0-9])', clean))
+    
+    # 4. Điều kiện BCTC / Tài chính / Giải trình / KQKD:
+    has_bctc = any(k in clean for k in ['tai chinh', 'bctc', 'financial', 'fs', 'giai trinh', 'kqkd', 'kinh doanh'])
+    
+    if has_q3 and has_bctc and has_2026:
+        return True, text
         
-    pattern1 = r'(?:báo\s*cáo\s*tài\s*chính|bctc|financial\s*statements|kqkd|giải\s*trình\s*(?:chênh\s*lệch\s*)?lợi\s*nhuận)[^,\n\r]{0,35}(?:quý\s*3|quy\s*3|q3|quý\s*iii|quy\s*iii|quarter\s*3)[^,\n\r]{0,25}(?:(?<!\d)2026(?!\d)|[\'/\-]26\b)'
-    pattern2 = r'(?:quý\s*3|quy\s*3|q3|quý\s*iii|quy\s*iii|quarter\s*3)[^,\n\r]{0,15}(?:(?<!\d)2026(?!\d)|[\'/\-]26\b)[^,\n\r]{0,35}(?:báo\s*cáo\s*tài\s*chính|bctc|financial\s*statements)'
-    pattern3 = r'(?:bctc|fs)[_\-\s]*(?:q3|quy3|quyi?ii)[_\-\s]*(?<!\d)2026(?!\d)'
-
-    m1 = re.search(pattern1, lower)
-    if m1:
-        return True, text[m1.start():m1.end()]
-        
-    m2 = re.search(pattern2, lower)
-    if m2:
-        return True, text[m2.start():m2.end()]
-        
-    m3 = re.search(pattern3, lower)
-    if m3:
-        return True, text[m3.start():m3.end()]
-        
+    # Fallback cho các định dạng regex truyền thống
+    pattern1 = r'(?:bctc|tai chinh|financial|kqkd|giai trinh)[^,\n\r]{0,35}(?:quy\s*3|q3|quy\s*iii|quarter 3)[^,\n\r]{0,25}(?:(?<!\d)2026(?!\d)|26\b)'
+    pattern2 = r'(?:quy\s*3|q3|quy\s*iii|quarter 3)[^,\n\r]{0,20}(?:(?<!\d)2026(?!\d)|26\b)[^,\n\r]{0,35}(?:bctc|tai chinh)'
+    for p in [pattern1, pattern2]:
+        m = re.search(p, clean)
+        if m:
+            return True, text
+            
     return False, ""
 
 def check_fpts_ezir(ticker):
@@ -238,7 +251,7 @@ def check_fpts_ezir(ticker):
                 i_raw_url = item.get('URL', '')
                 doc_url = i_raw_url.replace('\\', '/').strip() if i_raw_url else f"https://ezir.fpts.com.vn/TinTuc/TinTucDN?code={ticker}"
                 
-                is_recent = '10/2026' in date_pub or '10/26' in date_pub or '11/2026' in date_pub
+                is_recent = ('2026' in date_pub) or ('/26' in date_pub) or ('2026' in title) or ('10/' in date_pub)
                 matched, snippet = is_q3_2026(title)
                 if matched and is_recent:
                     b_type = classify_bctc_type(title)
@@ -300,61 +313,73 @@ def check_company_website(ticker, uri):
             html = resp.read().decode('utf-8', errors='ignore')
             
         soup = BeautifulSoup(html, 'html.parser')
-        full_text = soup.get_text(separator=' ', strip=True)
         
-        matched, snippet = is_q3_2026(full_text)
-        if matched:
-            doc_url = clean_uri
-            for a in soup.find_all('a', href=True):
-                h = a['href']
-                t = a.get_text(strip=True)
-                m_t, _ = is_q3_2026(t)
-                if m_t:
-                    doc_url = urllib.parse.urljoin(clean_uri, h)
-                    break
-                elif any(h.lower().endswith(ext) for ext in ['.pdf', '.zip', '.rar', '.xlsx']):
-                    m_h, _ = is_q3_2026(urllib.parse.unquote(h))
-                    if m_h:
-                        doc_url = urllib.parse.urljoin(clean_uri, h)
-                        break
-                    
-            final_title = snippet or "Báo cáo tài chính Quý 3/2026"
+        # 1. Quét tìm tất cả các thẻ liên kết thỏa mãn điều kiện Q3/2026
+        found_candidates = []
+        for a in soup.find_all('a', href=True):
+            h = a['href']
+            t = a.get_text(strip=True)
+            unquote_h = urllib.parse.unquote(h)
+            combo = (t + " " + unquote_h).strip()
+            
+            matched, snippet = is_q3_2026(combo)
+            if matched:
+                is_file = any(h.lower().endswith(ext) for ext in ['.pdf', '.zip', '.rar', '.xlsx', '.docx'])
+                is_hop_nhat = any(k in combo.lower() for k in ['hợp nhất', 'hop nhat'])
+                found_candidates.append({
+                    'text': t,
+                    'href': urllib.parse.urljoin(clean_uri, h),
+                    'is_file': is_file,
+                    'is_hop_nhat': is_hop_nhat,
+                    'snippet': snippet
+                })
+                
+        if found_candidates:
+            # Ưu tiên: 1. File đính kèm trực tiếp (PDF/RAR), 2. Báo cáo Hợp nhất
+            found_candidates.sort(key=lambda x: (x['is_file'], x['is_hop_nhat']), reverse=True)
+            best = found_candidates[0]
+            
+            best_text = best['text']
+            # Ưu tiên candidate có chứa "báo cáo tài chính" hoặc "bctc" (không phải giải trình)
+            bctc_cand = next((c for c in found_candidates if any(k in c['text'].lower() for k in ['báo cáo tài chính', 'bctc', 'financial']) and not any(k in c['text'].lower() for k in ['giải trình', 'giai trinh', 'xemfile', 'xem file', 'xem '])), None)
+            desc_cand = next((c for c in found_candidates if len(c['text']) > 10 and not any(c['text'].lower().startswith(p) for p in ['xem', 'tai', 'download', 'chi tiet', 'link', 'doc'])), None)
+            
+            if bctc_cand:
+                final_title = bctc_cand['text']
+            elif desc_cand:
+                final_title = desc_cand['text']
+            elif best_text and len(best_text) >= 6 and not any(best_text.lower().startswith(p) for p in ['xem', 'tai', 'download', 'chi tiet', 'link', 'doc']):
+                final_title = best_text
+            else:
+                final_title = "Báo cáo tài chính Quý 3/2026"
+                
             return {
                 'has_q3': True,
                 'bctc_type': classify_bctc_type(final_title),
                 'source': 'Company_Web',
                 'title': final_title,
                 'date': datetime.datetime.now().strftime("%d/%m/%Y"),
-                'doc_url': doc_url
+                'doc_url': best['href']
             }
             
-        for a in soup.find_all('a', href=True):
-            h = a['href']
-            t = a.get_text(strip=True)
-            matched_t, snippet_t = is_q3_2026(t)
-            if matched_t:
-                final_title = t or snippet_t
-                return {
-                    'has_q3': True,
-                    'bctc_type': classify_bctc_type(final_title),
-                    'source': 'Company_Web',
-                    'title': final_title,
-                    'date': datetime.datetime.now().strftime("%d/%m/%Y"),
-                    'doc_url': urllib.parse.urljoin(clean_uri, h)
-                }
-            elif any(h.lower().endswith(ext) for ext in ['.pdf', '.zip', '.rar', '.xlsx', '.docx']):
-                matched_h, snippet_h = is_q3_2026(urllib.parse.unquote(h))
-                if matched_h:
-                    final_title = snippet_h or "Báo cáo tài chính Quý 3/2026"
+        # 2. Fallback quét từng khối văn bản ngắn (tr, li, p) có độ dài < 250 ký tự
+        for tag in soup.find_all(['tr', 'li', 'p']):
+            block_text = tag.get_text(separator=' ', strip=True)
+            if len(block_text) < 250:
+                matched, snippet = is_q3_2026(block_text)
+                if matched:
+                    a_tag = tag.find('a', href=True)
+                    doc_url = urllib.parse.urljoin(clean_uri, a_tag['href']) if a_tag else clean_uri
+                    final_title = snippet or "Báo cáo tài chính Quý 3/2026"
                     return {
                         'has_q3': True,
                         'bctc_type': classify_bctc_type(final_title),
                         'source': 'Company_Web',
                         'title': final_title,
                         'date': datetime.datetime.now().strftime("%d/%m/%Y"),
-                        'doc_url': urllib.parse.urljoin(clean_uri, h)
+                        'doc_url': doc_url
                     }
-                
+            
         return {'has_q3': False, 'source': 'Company_Web'}
     except Exception as e:
         return {'has_q3': False, 'source': 'Company_Web', 'error': str(e)}
