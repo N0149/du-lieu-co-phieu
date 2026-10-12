@@ -2,9 +2,15 @@ name: Giám sát BCTC 115 Mã (Cloud 10 Phút/Lần)
 
 on:
   schedule:
-    # Chạy tự động mỗi 10 phút 24/7
-    - cron: '*/10 * * * *'
+    # Khung giờ Việt Nam (GMT+7): 08:20 sáng đến 15:00 chiều, mỗi 10 phút/lần
+    # 08:20 -> 08:50 VN (01:20 -> 01:50 UTC):
+    - cron: '20,30,40,50 1 * * *'
+    # 09:00 -> 14:50 VN (02:00 -> 07:50 UTC):
+    - cron: '*/10 2-7 * * *'
+    # 15:00 VN (08:00 UTC):
+    - cron: '0 8 * * *'
   workflow_dispatch: # Cho phép bấm nút "Run workflow" thủ công trên GitHub bất cứ khi nào
+
 
 jobs:
   monitor-bctc:

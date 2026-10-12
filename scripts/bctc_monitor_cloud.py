@@ -462,6 +462,18 @@ def scan_ticker(item, completed_cache):
 def main():
     log("=== BẮT ĐẦU CHẠY GIÁM SÁT 115 MÃ BCTC TRÊN CLOUD (GITHUB ACTIONS) ===")
     
+    # KIỂM TRA KHUNG GIỜ HOẠT ĐỘNG: CHỈ QUÉT TỪ 8:20 SÁNG ĐẾN 15:00 CHIỀU (GIỜ VIỆT NAM GMT+7)
+    now_vn = datetime.datetime.now(datetime.timezone(datetime.timedelta(hours=7)))
+    time_min = now_vn.hour * 60 + now_vn.minute
+    start_min = 8 * 60 + 20  # 8:20 -> 500 phút
+    end_min = 15 * 60        # 15:00 -> 900 phút
+    
+    force_run = ('--force' in sys.argv)
+    if not force_run and not (start_min <= time_min <= end_min):
+        log(f"⏰ Hiện tại là {now_vn.strftime('%H:%M:%S')} (giờ VN). Ngoài khung giờ 08:20 - 15:00, hệ thống tự động nghỉ ngơi.")
+        log("=== KẾT THÚC CHU KỲ (NGHỈ NGOÀI GIỜ) ===")
+        return
+        
     if not os.path.exists(TICKERS_FILE):
         log(f"LỖI: Không tìm thấy file {TICKERS_FILE}")
         sys.exit(1)
