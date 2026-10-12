@@ -1,0 +1,578 @@
+"""
+HỆ THỐNG GIÁM SÁT BCTC 115 MÃ TRÊN ĐÁM MÂY (GITHUB ACTIONS CLOUD)
+- Chạy tự động 10 phút/lần 24/7 trên máy chủ GitHub Actions.
+- Không cần bật máy tính ở nhà.
+- Tự động phát hiện BCTC mới và gửi thông báo tức thì về Discord (điện thoại & PC).
+- Tự động lưu bộ nhớ các mã đã hoàn thành để không thông báo trùng lặp.
+"""
+
+import os
+import sys
+import json
+import re
+import time
+import datetime
+import urllib.request
+import urllib.parse
+import unicodedata
+from concurrent.futures import ThreadPoolExecutor
+from bs4 import BeautifulSoup
+
+BASE_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
+TICKERS_FILE = os.path.join(BASE_DIR, "data", "tickers_group1_115.json")
+COMPLETED_CACHE_FILE = os.path.join(BASE_DIR, "data", "bctc_completed_cache.json")
+ALERTS_FILE = os.path.join(BASE_DIR, "data", "bctc_q3_live_alerts.json")
+DISCORD_CONFIG_FILE = os.path.join(BASE_DIR, "data", "discord_config.json")
+
+HEADERS = {
+    'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36'
+}
+
+if hasattr(sys.stdout, 'reconfigure'):
+    try:
+        sys.stdout.reconfigure(encoding='utf-8')
+    except:
+        pass
+
+def log(msg):
+    timestamp = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+    try:
+        print(f"[{timestamp}] {msg}", flush=True)
+    except:
+        safe_msg = str(msg).encode('ascii', 'replace').decode('ascii')
+        print(f"[{timestamp}] {safe_msg}", flush=True)
+
+
+def strip_accents(text):
+    if not text:
+        return ""
+    nfkd = unicodedata.normalize('NFKD', text)
+    res = ''.join([c for c in nfkd if not unicodedata.combining(c)])
+    return res.replace('đ', 'd').replace('Đ', 'D')
+
+def is_valid_recent_bctc_date(date_pub):
+    """
+    Kiểm tra ngày công bố có thuộc đợt BCTC hiện tại (tháng 10/2026) hay không:
+    - BCTC quý mới chỉ công bố từ cuối tháng 9 (>= 20/09/2026) và trong tháng 10, 11/2026.
+    - LOẠI BỎ TRIỆT ĐỂ các tài liệu công bố từ tháng 1 đến tháng 8/2026 (như tháng 7 của CAP).
+    - Nếu không có ngày công bố: trả về True để không bỏ sót.
+    """
+    if not date_pub:
+        return True
+    dp = str(date_pub).strip()
+    
+    m = re.search(r'(\d{1,2})/(\d{1,2})/(2026|26)', dp)
+    if m:
+        day = int(m.group(1))
+        month = int(m.group(2))
+        if month in [10, 11, 12]:
+            return True
+        if month == 9 and day >= 20:
+            return True
+        return False
+        
+    m2 = re.search(r'2026-(\d{1,2})-(\d{1,2})', dp)
+    if m2:
+        month = int(m2.group(1))
+        day = int(m2.group(2))
+        if month in [10, 11, 12]:
+            return True
+        if month == 9 and day >= 20:
+            return True
+        return False
+        
+    if '10/2026' in dp or '10/26' in dp or '11/2026' in dp or '12/2026' in dp:
+        return True
+        
+    for mo in range(1, 9):
+        if f'/{mo:02d}/2026' in dp or f'/{mo:02d}/26' in dp or f'/{mo}/2026' in dp:
+            return False
+            
+    return True
+
+def is_q3_2026(text, ticker=""):
+    """
+    Nhận diện tài liệu BCTC Quý 3/2026 (hoặc Quý mới cho các mã niên độ đặc thù như CAP)
+    theo tiêu chí 'Lọc nhầm còn hơn bỏ sót'.
+    """
+    if not text:
+        return False, ""
+    raw = text.lower()
+    clean = strip_accents(raw)
+    
+    excluded = ['ke hoach', 'co dong lon', 'danh sach co dong', 'thu moi hop', 'bien ban kiem phieu', 'lay y kien']
+    if any(k in clean for k in excluded):
+        return False, ""
+        
+    has_2026 = bool(re.search(r'(?<!\d)(?:2026|\'26)(?!\d)', clean)) or ('2025-2026' in clean) or ('/2026/' in clean) or ('_2026' in clean)
+    has_old = bool(re.search(r'(?:quy\s*[1-4]|q[1-4]|quarter\s*[1-4])[_\s\-/]*(?:201[89]|202[0-4])(?!\d)', clean))
+    if has_old and not has_2026:
+        return False, ""
+        
+    has_bctc = any(k in clean for k in ['tai chinh', 'bctc', 'financial', 'fs', 'giai trinh', 'kqkd', 'kinh doanh'])
+    if not has_bctc:
+        return False, ""
+        
+    is_cap = (str(ticker).upper() == 'CAP')
+    if is_cap:
+        # Với CAP: BCTC Quý 3 ra vào tháng 7 là kỳ CŨ, TUYỆT ĐỐI KHÔNG nhận Quý 3!
+        has_q3 = bool(re.search(r'(?:(?<![a-zA-Z0-9])|^)(?:quy\s*3|q3|quy\s*iii|quarter\s*3|q\.3|q_3)(?![a-zA-Z0-9])', clean))
+        if has_q3:
+            return False, ""
+        has_q4 = bool(re.search(r'(?:(?<![a-zA-Z0-9])|^)(?:quy\s*4|q4|quy\s*iv|quarter\s*4|q\.4|q_4)(?![a-zA-Z0-9])', clean))
+        has_annual = any(k in clean for k in ['bctc nam', 'tai chinh nam', 'kiem toan nam'])
+        if (has_q4 or has_annual) and has_2026:
+            return True, text
+        return False, ""
+        
+    has_q3 = bool(re.search(r'(?:(?<![a-zA-Z0-9])|^)(?:quy\s*3|q3|quy\s*iii|quarter\s*3|q\.3|q_3)(?![a-zA-Z0-9])', clean))
+    if has_q3 and has_bctc and has_2026:
+        return True, text
+        
+    pattern1 = r'(?:bctc|tai chinh|financial|kqkd|giai trinh)[^,\n\r]{0,35}(?:quy\s*3|q3|quy\s*iii|quarter 3)[^,\n\r]{0,25}(?:(?<!\d)2026(?!\d)|26\b)'
+    pattern2 = r'(?:quy\s*3|q3|quy\s*iii|quarter 3)[^,\n\r]{0,20}(?:(?<!\d)2026(?!\d)|26\b)[^,\n\r]{0,35}(?:bctc|tai chinh)'
+    for p in [pattern1, pattern2]:
+        m = re.search(p, clean)
+        if m:
+            return True, text
+            
+    return False, ""
+
+def classify_bctc_type(title):
+    if not title:
+        return 'DAY_DU'
+    lower = title.lower()
+    if 'giải trình' in lower or 'giai trinh' in lower:
+        return 'GIAI_TRINH'
+    is_hop_nhat = any(k in lower for k in ['hợp nhất', 'hop nhat', 'consolidated', 'toàn tập', 'toan tap', 'hopnhat', 'cty me va cty con'])
+    is_rieng = any(k in lower for k in ['riêng', 'rieng', 'công ty mẹ', 'cty mẹ', 'cty me', 'cong ty me', 'parent', 'đơn lẻ', 'don le'])
+    if is_hop_nhat:
+        return 'HOP_NHAT'
+    if is_rieng:
+        return 'RIENG'
+    return 'DAY_DU'
+
+def check_fpts_ezir(ticker):
+    url = f"https://gateway.fpts.com.vn/news/api/gateway/v1/mobile/list?folder=86&code={ticker}&pageSize=10&selectedPage=1&newsType=2"
+    try:
+        req = urllib.request.Request(url, headers=HEADERS)
+        with urllib.request.urlopen(req, timeout=6) as resp:
+            data = json.loads(resp.read().decode('utf-8'))
+            items = data.get('Data', {}).get('Table1', [])
+            
+            latest = items[0] if items else {}
+            latest_title = latest.get('Title', '').strip()
+            latest_date = latest.get('DatePub', '').strip()
+            raw_url = latest.get('URL', '')
+            latest_url = raw_url.replace('\\', '/').strip() if raw_url else f"https://ezir.fpts.com.vn/TinTuc/TinTucDN?code={ticker}"
+            
+            q3_found_items = []
+            for item in items:
+                title = item.get('Title', '').strip()
+                date_pub = item.get('DatePub', '').strip()
+                i_raw_url = item.get('URL', '')
+                doc_url = i_raw_url.replace('\\', '/').strip() if i_raw_url else f"https://ezir.fpts.com.vn/TinTuc/TinTucDN?code={ticker}"
+                
+                if not is_valid_recent_bctc_date(date_pub):
+                    continue
+                    
+                matched, snippet = is_q3_2026(title, ticker=ticker)
+                if matched:
+                    b_type = classify_bctc_type(title)
+                    q3_found_items.append({
+                        'title': title,
+                        'date': date_pub,
+                        'doc_url': doc_url,
+                        'bctc_type': b_type
+                    })
+                    
+            if q3_found_items:
+                hop_nhat_item = next((it for it in q3_found_items if it['bctc_type'] == 'HOP_NHAT'), None)
+                best_item = hop_nhat_item or q3_found_items[0]
+                return {
+                    'has_q3': True,
+                    'bctc_type': best_item['bctc_type'],
+                    'source': 'EzIR_FPTS',
+                    'title': best_item['title'],
+                    'date': best_item['date'],
+                    'doc_url': best_item['doc_url'],
+                    'latest_title': best_item['title'],
+                    'latest_date': best_item['date'],
+                    'latest_url': best_item['doc_url']
+                }
+                    
+            return {
+                'has_q3': False,
+                'source': 'EzIR_FPTS',
+                'latest_doc': f"[{latest_date}] {latest_title}" if latest_title else "Chưa có tài liệu mới",
+                'latest_title': latest_title,
+                'latest_date': latest_date,
+                'latest_url': latest_url
+            }
+    except Exception as e:
+        return {
+            'has_q3': False,
+            'source': 'EzIR_FPTS',
+            'error': str(e),
+            'latest_doc': f"Lỗi ({e})",
+            'latest_title': '',
+            'latest_date': '',
+            'latest_url': f"https://ezir.fpts.com.vn/TinTuc/TinTucDN?code={ticker}"
+        }
+
+def check_company_website(ticker, uri):
+    if not uri or 'ezir.fpts.com.vn' in uri.lower():
+        return None
+    try:
+        clean_uri = uri
+        if clean_uri.startswith('https://lixco.com'):
+            clean_uri = clean_uri.replace('https://', 'http://')
+            
+        req = urllib.request.Request(clean_uri, headers=HEADERS)
+        with urllib.request.urlopen(req, timeout=6) as resp:
+            html = resp.read().decode('utf-8', errors='ignore')
+            
+        soup = BeautifulSoup(html, 'html.parser')
+        found_candidates = []
+        for a in soup.find_all('a', href=True):
+            h = a['href']
+            t = a.get_text(strip=True)
+            unquote_h = urllib.parse.unquote(h)
+            combo = (t + " " + unquote_h).strip()
+            
+            m_date = re.search(r'(\d{1,2})/(\d{1,2})/(2026|26)', combo)
+            if m_date and not is_valid_recent_bctc_date(m_date.group(0)):
+                continue
+            
+            matched, snippet = is_q3_2026(combo, ticker=ticker)
+            if matched:
+                is_file = any(h.lower().endswith(ext) for ext in ['.pdf', '.zip', '.rar', '.xlsx', '.docx'])
+                is_hop_nhat = any(k in combo.lower() for k in ['hợp nhất', 'hop nhat'])
+                found_candidates.append({
+                    'text': t,
+                    'href': urllib.parse.urljoin(clean_uri, h),
+                    'is_file': is_file,
+                    'is_hop_nhat': is_hop_nhat,
+                    'snippet': snippet
+                })
+                
+        if found_candidates:
+            found_candidates.sort(key=lambda x: (x['is_file'], x['is_hop_nhat']), reverse=True)
+            best = found_candidates[0]
+            best_text = best['text']
+            bctc_cand = next((c for c in found_candidates if any(k in c['text'].lower() for k in ['báo cáo tài chính', 'bctc', 'financial']) and not any(k in c['text'].lower() for k in ['giải trình', 'giai trinh', 'xemfile', 'xem file', 'xem '])), None)
+            desc_cand = next((c for c in found_candidates if len(c['text']) > 10 and not any(c['text'].lower().startswith(p) for p in ['xem', 'tai', 'download', 'chi tiet', 'link', 'doc'])), None)
+            
+            if bctc_cand:
+                final_title = bctc_cand['text']
+            elif desc_cand:
+                final_title = desc_cand['text']
+            elif best_text and len(best_text) >= 6 and not any(best_text.lower().startswith(p) for p in ['xem', 'tai', 'download', 'chi tiet', 'link', 'doc']):
+                final_title = best_text
+            else:
+                final_title = "Báo cáo tài chính Quý 3/2026"
+                
+            return {
+                'has_q3': True,
+                'bctc_type': classify_bctc_type(final_title),
+                'source': 'Company_Web',
+                'title': final_title,
+                'date': datetime.datetime.now().strftime("%d/%m/%Y"),
+                'doc_url': best['href']
+            }
+            
+        for tag in soup.find_all(['tr', 'li', 'p']):
+            block_text = tag.get_text(separator=' ', strip=True)
+            if len(block_text) < 250:
+                m_date = re.search(r'(\d{1,2})/(\d{1,2})/(2026|26)', block_text)
+                if m_date and not is_valid_recent_bctc_date(m_date.group(0)):
+                    continue
+                matched, snippet = is_q3_2026(block_text, ticker=ticker)
+                if matched:
+                    a_tag = tag.find('a', href=True)
+                    doc_url = urllib.parse.urljoin(clean_uri, a_tag['href']) if a_tag else clean_uri
+                    final_title = snippet or "Báo cáo tài chính Quý 3/2026"
+                    return {
+                        'has_q3': True,
+                        'bctc_type': classify_bctc_type(final_title),
+                        'source': 'Company_Web',
+                        'title': final_title,
+                        'date': datetime.datetime.now().strftime("%d/%m/%Y"),
+                        'doc_url': doc_url
+                    }
+        return {'has_q3': False, 'source': 'Company_Web'}
+    except Exception as e:
+        return {'has_q3': False, 'source': 'Company_Web', 'error': str(e)}
+
+def send_discord_alert(alert_data, is_new_hop_nhat=False):
+    """Bắn thông báo tức thì lên Discord"""
+    webhook_url = os.environ.get("DISCORD_WEBHOOK_URL")
+    if not webhook_url and os.path.exists(DISCORD_CONFIG_FILE):
+        try:
+            with open(DISCORD_CONFIG_FILE, "r", encoding="utf-8") as f:
+                d = json.load(f)
+                webhook_url = d.get("webhook_url")
+        except:
+            pass
+            
+    if not webhook_url:
+        log("⚠️ Không có Discord Webhook URL. Bỏ qua gửi thông báo.")
+        return False
+        
+    ticker = alert_data.get("ticker", "")
+    company = alert_data.get("company_name", "")
+    exchange = alert_data.get("exchange", "UPCOM")
+    title = alert_data.get("title", "Báo cáo tài chính Quý 3/2026")
+    doc_url = alert_data.get("doc_url", "")
+    date_pub = alert_data.get("release_date", "")
+    bctc_type = alert_data.get("bctc_type", "DAY_DU")
+    source = alert_data.get("source", "EzIR FPTS")
+    
+    if is_new_hop_nhat:
+        header_title = f"🌟 ĐÃ CÓ BCTC HỢP NHẤT: {ticker} (BỔ SUNG SAU BCTC RIÊNG)"
+        color = 0x10B981 # Xanh ngọc
+    elif bctc_type == 'RIENG':
+        header_title = f"⚡ PHÁT HIỆN BCTC RIÊNG: {ticker} (ĐANG CHỜ HỢP NHẤT)"
+        color = 0xF59E0B # Vàng cam
+    elif bctc_type == 'HOP_NHAT':
+        header_title = f"🚨 PHÁT HIỆN BCTC HỢP NHẤT QUÝ 3: {ticker}"
+        color = 0x22C55E # Xanh lá
+    else:
+        header_title = f"🚨 PHÁT HIỆN BCTC QUÝ 3/2026: {ticker}"
+        color = 0x22C55E
+        
+    embed = {
+        "title": header_title,
+        "description": f"🏢 **{company}** (`{exchange}`)\n📄 **{title}**",
+        "color": color,
+        "fields": [
+            {
+                "name": "📅 Ngày công bố",
+                "value": f"{date_pub or 'Hôm nay'}",
+                "inline": True
+            },
+            {
+                "name": "📊 Phân loại BCTC",
+                "value": f"{'Bản Hợp nhất' if bctc_type == 'HOP_NHAT' else ('Bản Riêng (Cty mẹ)' if bctc_type == 'RIENG' else 'Bản Đầy đủ')}",
+                "inline": True
+            },
+            {
+                "name": "🌐 Nguồn phát hiện",
+                "value": f"{source}",
+                "inline": True
+            }
+        ],
+        "footer": {
+            "text": "Hệ thống giám sát BCTC Quý 3/2026 tự động • Cloud Monitor"
+        },
+        "timestamp": datetime.datetime.now(datetime.timezone.utc).isoformat()
+    }
+    
+    if doc_url:
+        embed["fields"].append({
+            "name": "📥 Tải / Xem BCTC gốc",
+            "value": f"[Bấm vào đây để mở tài liệu]({doc_url})",
+            "inline": False
+        })
+        
+    payload = {
+        "content": f"🔔 **THÔNG BÁO BCTC MỚI: {ticker}**" if bctc_type in ['HOP_NHAT', 'DAY_DU'] else f"⚡ **{ticker} VỪA CÓ BCTC RIÊNG (Chờ Hợp nhất)**",
+        "embeds": [embed]
+    }
+    
+    try:
+        req = urllib.request.Request(
+            webhook_url,
+            data=json.dumps(payload).encode('utf-8'),
+            headers={'Content-Type': 'application/json', 'User-Agent': 'Mozilla/5.0'}
+        )
+        with urllib.request.urlopen(req, timeout=10) as resp:
+            log(f"✅ Đã gửi cảnh báo Discord cho {ticker} (Mã phản hồi: {resp.status})")
+            return True
+    except Exception as e:
+        log(f"Lỗi gửi Discord {ticker}: {e}")
+        return False
+
+def load_completed_cache():
+    if os.path.exists(COMPLETED_CACHE_FILE):
+        try:
+            with open(COMPLETED_CACHE_FILE, "r", encoding="utf-8") as f:
+                return json.load(f)
+        except:
+            return {}
+    return {}
+
+def save_completed_cache(cache):
+    try:
+        os.makedirs(os.path.dirname(COMPLETED_CACHE_FILE), exist_ok=True)
+        with open(COMPLETED_CACHE_FILE, "w", encoding="utf-8") as f:
+            json.dump(cache, f, ensure_ascii=False, indent=2)
+    except Exception as e:
+        log(f"Lỗi lưu cache: {e}")
+
+def load_alerts():
+    if os.path.exists(ALERTS_FILE):
+        try:
+            with open(ALERTS_FILE, "r", encoding="utf-8") as f:
+                data = json.load(f)
+                if isinstance(data, list):
+                    return {it['ticker']: it for it in data if 'ticker' in it}
+                return data
+        except:
+            return {}
+    return {}
+
+def save_alerts(alerts_dict):
+    try:
+        os.makedirs(os.path.dirname(ALERTS_FILE), exist_ok=True)
+        alerts_list = list(alerts_dict.values())
+        alerts_list.sort(key=lambda x: x.get('detected_at') or '', reverse=True)
+        with open(ALERTS_FILE, "w", encoding="utf-8") as f:
+            json.dump(alerts_list, f, ensure_ascii=False, indent=2)
+    except Exception as e:
+        log(f"Lỗi lưu alerts: {e}")
+
+def scan_ticker(item, completed_cache):
+    ticker = item['ticker']
+    uri = item.get('uri', '')
+    start_t = time.time()
+    
+    # 1. Bỏ qua nếu đã hoàn tất đầy đủ
+    if ticker in completed_cache:
+        c_type = completed_cache[ticker].get('bctc_type', '')
+        if c_type in ['HOP_NHAT', 'DAY_DU']:
+            return ticker, item, {'has_q3': True, 'is_cached': True, 'bctc_type': c_type, 'elapsed': 0.0}
+            
+    # 2. Quét EzIR FPTS
+    res_ezir = check_fpts_ezir(ticker)
+    
+    # 3. Quét Web riêng
+    res_web = check_company_website(ticker, uri)
+    if res_web and res_web.get('has_q3'):
+        res_web['elapsed'] = round(time.time() - start_t, 2)
+        return ticker, item, res_web
+        
+    if res_ezir.get('has_q3'):
+        res_ezir['elapsed'] = round(time.time() - start_t, 2)
+        return ticker, item, res_ezir
+        
+    res_ezir['elapsed'] = round(time.time() - start_t, 2)
+    return ticker, item, res_ezir
+
+def main():
+    log("=== BẮT ĐẦU CHẠY GIÁM SÁT 115 MÃ BCTC TRÊN CLOUD (GITHUB ACTIONS) ===")
+    
+    if not os.path.exists(TICKERS_FILE):
+        log(f"LỖI: Không tìm thấy file {TICKERS_FILE}")
+        sys.exit(1)
+        
+    with open(TICKERS_FILE, "r", encoding="utf-8") as f:
+        tickers_list = json.load(f)
+        
+    completed_cache = load_completed_cache()
+    alerts_dict = load_alerts()
+    
+    # Lọc danh sách cần quét:
+    # - Bỏ qua mã đã HOP_NHAT hoặc DAY_DU trong cache
+    # - Giữ lại mã chưa có hoặc mới chỉ có RIENG (như RTB)
+    to_scan = []
+    already_done = []
+    for it in tickers_list:
+        t = it['ticker']
+        if t in completed_cache and completed_cache[t].get('bctc_type') in ['HOP_NHAT', 'DAY_DU']:
+            already_done.append(t)
+        else:
+            to_scan.append(it)
+            
+    log(f"📊 Tổng số mã nhóm 1: {len(tickers_list)} mã")
+    log(f"⚡ Đã có BCTC đầy đủ trước đó (bỏ qua): {len(already_done)} mã ({', '.join(already_done) if already_done else 'Chưa có'})")
+    log(f"🔍 Cần quét mạng kiểm tra đợt này: {len(to_scan)} mã")
+    
+    if not to_scan:
+        log("🎉 Toàn bộ 115 mã đều đã có BCTC đầy đủ!")
+        return
+        
+    start_all = time.time()
+    results = {}
+    new_found_count = 0
+    
+    with ThreadPoolExecutor(max_workers=10) as executor:
+        futures = [executor.submit(scan_ticker, it, completed_cache) for it in to_scan]
+        for fut in futures:
+            try:
+                ticker, item, res = fut.result()
+                results[ticker] = (item, res)
+            except Exception as e:
+                log(f"Lỗi khi xử lý 1 mã: {e}")
+                
+    total_elapsed = round(time.time() - start_all, 2)
+    log(f"⏱️ Quét xong {len(to_scan)} mã trong {total_elapsed}s")
+    
+    # Phân tích kết quả
+    has_cache_changes = False
+    
+    for ticker, (item, res) in results.items():
+        if res.get('has_q3') and not res.get('is_cached'):
+            b_type = res.get('bctc_type', 'DAY_DU')
+            title = res.get('title', '')
+            date_pub = res.get('date', '')
+            doc_url = res.get('doc_url', '')
+            source = res.get('source', '')
+            company_name = item.get('name', '')
+            exchange = item.get('san', 'UPCOM')
+            
+            # Kiểm tra trạng thái cũ trong cache
+            old_cache = completed_cache.get(ticker)
+            old_type = old_cache.get('bctc_type') if old_cache else None
+            
+            # Trường hợp 1: Mới có Hợp nhất sau khi đã có Riêng
+            is_new_hop_nhat = (old_type == 'RIENG' and b_type == 'HOP_NHAT')
+            
+            # Trường hợp 2: Phát hiện mới hoàn toàn
+            is_brand_new = (ticker not in completed_cache)
+            
+            if is_brand_new or is_new_hop_nhat:
+                new_found_count += 1
+                log(f"🔥 PHÁT HIỆN MỚI: {ticker} [{b_type}] - {title} ({date_pub})")
+                
+                alert_payload = {
+                    "ticker": ticker,
+                    "company_name": company_name,
+                    "exchange": exchange,
+                    "quarter": "Quý 3/2026",
+                    "release_date": date_pub,
+                    "title": title,
+                    "source": source,
+                    "bctc_type": b_type,
+                    "doc_url": doc_url,
+                    "is_hot": True,
+                    "detected_at": datetime.datetime.now().strftime("%Y-%m-%dT%H:%M:%S")
+                }
+                
+                # Bắn thông báo Discord ngay lập tức
+                send_discord_alert(alert_payload, is_new_hop_nhat=is_new_hop_nhat)
+                
+                # Cập nhật cache
+                completed_cache[ticker] = {
+                    'ticker': ticker,
+                    'bctc_type': b_type,
+                    'title': title,
+                    'date': date_pub,
+                    'doc_url': doc_url,
+                    'source': source,
+                    'updated_at': datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+                }
+                alerts_dict[ticker] = alert_payload
+                has_cache_changes = True
+                
+    if has_cache_changes:
+        save_completed_cache(completed_cache)
+        save_alerts(alerts_dict)
+        log(f"💾 Đã lưu dữ liệu {new_found_count} mã mới phát hiện vào cache.")
+    else:
+        log("ℹ️ Đợt này chưa phát hiện thêm BCTC mới nào.")
+        
+    log("=== HOÀN TẤT CHU KỲ QUÉT ===")
+
+if __name__ == '__main__':
+    main()
