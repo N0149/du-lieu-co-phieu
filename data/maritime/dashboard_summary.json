@@ -1,6 +1,6 @@
 {
   "status": "success",
-  "generated_at": "2026-10-13T17:04:12.791564",
+  "generated_at": "2026-10-13T17:57:52.762224",
   "kpis": {
     "total_port_authorities": 16,
     "total_calls_30d": 15635,
@@ -1168,6 +1168,23 @@
       "source": "pilot_south"
     },
     {
+      "id": 8979,
+      "vessel_name": "VINH 02",
+      "authority_id": "hcm",
+      "berth_name": "TRUONG AN 01",
+      "stock_ticker": null,
+      "call_direction": "out",
+      "call_date": "2026-10-13",
+      "scheduled_time": "2026-10-13 18:30:00",
+      "draft": 6.0,
+      "loa": 93.0,
+      "dwt": 4166,
+      "gt": 2976,
+      "origin_port": "TRUONG AN 01",
+      "dest_port": "Biển Đông",
+      "source": "pilot_south"
+    },
+    {
       "id": 8966,
       "vessel_name": "MISSION REVIVAL",
       "authority_id": "hcm",
@@ -1834,7 +1851,7 @@
       "id": 8947,
       "vessel_name": "LONG PHU 16",
       "authority_id": "hcm",
-      "berth_name": "N.BE",
+      "berth_name": "N.BE 3",
       "stock_ticker": null,
       "call_direction": "out",
       "call_date": "2026-10-13",
@@ -1843,7 +1860,7 @@
       "loa": 113.0,
       "dwt": 7278,
       "gt": 5199,
-      "origin_port": "N.BE",
+      "origin_port": "N.BE 3",
       "dest_port": "Biển Đông",
       "source": "pilot_south"
     },
@@ -2310,7 +2327,7 @@
       "id": 8955,
       "vessel_name": "LONG PHU 16",
       "authority_id": "hcm",
-      "berth_name": "ESSO 1 - N.BE",
+      "berth_name": "ESSO 1 - N.BE 3",
       "stock_ticker": null,
       "call_direction": "shift",
       "call_date": "2026-10-13",
@@ -2319,7 +2336,7 @@
       "loa": 113.0,
       "dwt": 7278,
       "gt": 5199,
-      "origin_port": "ESSO 1 - N.BE",
+      "origin_port": "ESSO 1 - N.BE 3",
       "dest_port": "Biển Đông",
       "source": "pilot_south"
     },
@@ -3017,6 +3034,23 @@
       "dwt": 4162,
       "gt": 2973,
       "origin_port": "LONGBINHTAN",
+      "dest_port": "Biển Đông",
+      "source": "pilot_south"
+    },
+    {
+      "id": 8980,
+      "vessel_name": "MACALLAN 15 + CERTAN",
+      "authority_id": "hcm",
+      "berth_name": "PM2 SR",
+      "stock_ticker": null,
+      "call_direction": "out",
+      "call_date": "2026-10-13",
+      "scheduled_time": "2026-10-13 06:30:00",
+      "draft": 1.0,
+      "loa": 175.0,
+      "dwt": 6465,
+      "gt": 4618,
+      "origin_port": "PM2 SR",
       "dest_port": "Biển Đông",
       "source": "pilot_south"
     },
@@ -8019,23 +8053,6 @@
       "source": "cvhh_haiphong"
     },
     {
-      "id": 8631,
-      "vessel_name": "VIET GAS",
-      "authority_id": "hcm",
-      "berth_name": "N.BE",
-      "stock_ticker": null,
-      "call_direction": "out",
-      "call_date": "2026-10-12",
-      "scheduled_time": "2026-10-12 03:00:00",
-      "draft": 4.5,
-      "loa": 79.0,
-      "dwt": 2356,
-      "gt": 1683,
-      "origin_port": "N.BE",
-      "dest_port": "Biển Đông",
-      "source": "pilot_south"
-    },
-    {
       "id": 8885,
       "vessel_name": "HONG JING",
       "authority_id": "haiphong",
@@ -8135,23 +8152,6 @@
       "gt": 9998,
       "origin_port": "CHINA",
       "dest_port": "DINH VU",
-      "source": "cvhh_haiphong"
-    },
-    {
-      "id": 8723,
-      "vessel_name": "BIENDONG STAR",
-      "authority_id": "haiphong",
-      "berth_name": "VIMC",
-      "stock_ticker": null,
-      "call_direction": "in",
-      "call_date": "2026-10-12",
-      "scheduled_time": "2026-10-12 01:30:00",
-      "draft": 7.9,
-      "loa": 120.8,
-      "dwt": 9108,
-      "gt": 6899,
-      "origin_port": "HO CHI MINH",
-      "dest_port": "VIMC",
       "source": "cvhh_haiphong"
     },
     {
