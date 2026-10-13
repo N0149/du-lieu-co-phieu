@@ -23,6 +23,7 @@ TICKERS_FILE = os.path.join(BASE_DIR, "data", "tickers_group1_115.json")
 COMPLETED_CACHE_FILE = os.path.join(BASE_DIR, "data", "bctc_completed_cache.json")
 ALERTS_FILE = os.path.join(BASE_DIR, "data", "bctc_q3_live_alerts.json")
 DISCORD_CONFIG_FILE = os.path.join(BASE_DIR, "data", "discord_config.json")
+STATUS_FILE = os.path.join(BASE_DIR, "data", "bctc_cloud_status.json")
 
 HEADERS = {
     'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36'
@@ -459,20 +460,106 @@ def scan_ticker(item, completed_cache):
     res_ezir['elapsed'] = round(time.time() - start_t, 2)
     return ticker, item, res_ezir
 
+def load_status():
+    if os.path.exists(STATUS_FILE):
+        try:
+            with open(STATUS_FILE, "r", encoding="utf-8") as f:
+                return json.load(f)
+        except:
+            return {}
+    return {}
+
+def save_status(data):
+    try:
+        os.makedirs(os.path.dirname(STATUS_FILE), exist_ok=True)
+        with open(STATUS_FILE, "w", encoding="utf-8") as f:
+            json.dump(data, f, ensure_ascii=False, indent=2)
+    except Exception as e:
+        log(f"Lỗi lưu status: {e}")
+
+def send_heartbeat(event_type, details=""):
+    webhook_url = os.environ.get("DISCORD_WEBHOOK_URL")
+    if not webhook_url and os.path.exists(DISCORD_CONFIG_FILE):
+        try:
+            with open(DISCORD_CONFIG_FILE, "r", encoding="utf-8") as f:
+                webhook_url = json.load(f).get("webhook_url")
+        except:
+            pass
+    if not webhook_url:
+        return
+        
+    now_vn = datetime.datetime.now(datetime.timezone(datetime.timedelta(hours=7)))
+    date_str = now_vn.strftime("%d/%m/%Y")
+    
+    if event_type == 'morning':
+        payload = {
+            "content": f"☀️ **[08:20] BẮT ĐẦU PHIÊN GIÁM SÁT BCTC NGÀY {date_str}**",
+            "embeds": [{
+                "title": "🟢 Hệ thống Cloud đang hoạt động tự động",
+                "description": f"Hệ thống tự động quét **115 mã cổ phiếu nhóm 1** định kỳ 10 phút/lần.\n{details}",
+                "color": 0x3B82F6,
+                "footer": {"text": "BCTC Live Cloud Monitor • dulieudautu.com"},
+                "timestamp": datetime.datetime.now(datetime.timezone.utc).isoformat()
+            }]
+        }
+    elif event_type == 'afternoon':
+        payload = {
+            "content": f"🏁 **[15:00] KẾT THÚC PHIÊN GIÁM SÁT NGÀY {date_str}**",
+            "embeds": [{
+                "title": "☕ Chốt phiên hôm nay",
+                "description": f"{details}\nHệ thống tự động nghỉ ngơi và sẽ bắt đầu quét lại vào **08:20 sáng mai**.",
+                "color": 0x64748B,
+                "footer": {"text": "BCTC Live Cloud Monitor • dulieudautu.com"},
+                "timestamp": datetime.datetime.now(datetime.timezone.utc).isoformat()
+            }]
+        }
+    else:
+        return
+
+    try:
+        req = urllib.request.Request(
+            webhook_url,
+            data=json.dumps(payload).encode('utf-8'),
+            headers={'Content-Type': 'application/json', 'User-Agent': 'Mozilla/5.0'}
+        )
+        with urllib.request.urlopen(req, timeout=10) as resp:
+            log(f"Đã gửi heartbeat ({event_type})")
+    except Exception as e:
+        log(f"Lỗi gửi heartbeat {event_type}: {e}")
+
 def main():
     log("=== BẮT ĐẦU CHẠY GIÁM SÁT 115 MÃ BCTC TRÊN CLOUD (GITHUB ACTIONS) ===")
     
     # KIỂM TRA KHUNG GIỜ HOẠT ĐỘNG: CHỈ QUÉT TỪ 8:20 SÁNG ĐẾN 15:00 CHIỀU (GIỜ VIỆT NAM GMT+7)
     now_vn = datetime.datetime.now(datetime.timezone(datetime.timedelta(hours=7)))
+    today_str = now_vn.strftime("%Y-%m-%d")
     time_min = now_vn.hour * 60 + now_vn.minute
     start_min = 8 * 60 + 20  # 8:20 -> 500 phút
     end_min = 15 * 60        # 15:00 -> 900 phút
     
+    status = load_status()
     force_run = ('--force' in sys.argv)
+    
+    # Gửi chào buổi sáng lúc 8:20 (nếu chưa gửi hôm nay)
+    if not force_run and (start_min <= time_min <= start_min + 15):
+        if status.get('last_morning_greeting') != today_str:
+            send_heartbeat('morning', "Tự động bắn cảnh báo Discord ngay khi có BCTC mới.")
+            status['last_morning_greeting'] = today_str
+            save_status(status)
+            
     if not force_run and not (start_min <= time_min <= end_min):
+        # Nếu vừa hết giờ (15:00 -> 15:15) và chưa gửi chốt phiên hôm nay
+        if (end_min <= time_min <= end_min + 15) and status.get('last_afternoon_closing') != today_str:
+            completed_cache = load_completed_cache()
+            done_cnt = len(completed_cache)
+            send_heartbeat('afternoon', f"Đã quét xong phiên. Tổng số mã đã có BCTC đầy đủ: **{done_cnt} mã**.")
+            status['last_afternoon_closing'] = today_str
+            save_status(status)
+            
         log(f"⏰ Hiện tại là {now_vn.strftime('%H:%M:%S')} (giờ VN). Ngoài khung giờ 08:20 - 15:00, hệ thống tự động nghỉ ngơi.")
         log("=== KẾT THÚC CHU KỲ (NGHỈ NGOÀI GIỜ) ===")
         return
+
         
     if not os.path.exists(TICKERS_FILE):
         log(f"LỖI: Không tìm thấy file {TICKERS_FILE}")

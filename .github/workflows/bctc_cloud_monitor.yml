@@ -2,15 +2,15 @@ name: Giám sát BCTC 115 Mã (Cloud 10 Phút/Lần)
 
 on:
   schedule:
-    # Khung giờ Việt Nam (GMT+7): 08:20 sáng đến 15:00 chiều, mỗi 10 phút/lần
-    # 08:20 -> 08:50 VN (01:20 -> 01:50 UTC):
-    - cron: '20,30,40,50 1 * * *'
-    # 09:00 -> 14:50 VN (02:00 -> 07:50 UTC):
-    - cron: '*/10 2-7 * * *'
-    # 15:00 VN (08:00 UTC):
-    - cron: '0 8 * * *'
-  workflow_dispatch: # Cho phép bấm nút "Run workflow" thủ công trên GitHub bất cứ khi nào
-
+    # Chạy đều đặn mỗi 10 phút một lần trong khung giờ hành chính (01:00 UTC -> 08:50 UTC, tức 08:00 sáng -> 15:50 chiều giờ VN)
+    - cron: '*/10 1-8 * * *'
+  workflow_dispatch:
+    inputs:
+      force:
+        description: 'Bỏ qua kiểm tra giờ (chạy ngay lập tức)'
+        required: false
+        default: 'true'
+        type: string
 
 jobs:
   monitor-bctc:
@@ -35,11 +35,16 @@ jobs:
         env:
           DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
         run: |
-          python scripts/bctc_monitor_cloud.py
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+            python scripts/bctc_monitor_cloud.py --force
+          else
+            python scripts/bctc_monitor_cloud.py
+          fi
 
       - name: Commit and push BCTC cache updates
         run: |
           git config --global user.name 'github-actions[bot]'
           git config --global user.email 'github-actions[bot]@users.noreply.github.com'
-          git add data/bctc_completed_cache.json data/bctc_q3_live_alerts.json
+          git add data/bctc_completed_cache.json data/bctc_q3_live_alerts.json data/bctc_cloud_status.json
           git diff --quiet && git diff --staged --quiet || (git commit -m "chore(bctc): auto sync cloud completed cache [skip ci]" && git push)
+
