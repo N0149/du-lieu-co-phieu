@@ -527,43 +527,78 @@ def send_heartbeat(event_type, details=""):
     except Exception as e:
         log(f"Lỗi gửi heartbeat {event_type}: {e}")
 
-def main():
-    log("=== BẮT ĐẦU CHẠY GIÁM SÁT 115 MÃ BCTC TRÊN CLOUD (GITHUB ACTIONS) ===")
-    
-    # KIỂM TRA KHUNG GIỜ HOẠT ĐỘNG: CHỈ QUÉT TỪ 8:20 SÁNG ĐẾN 15:00 CHIỀU (GIỜ VIỆT NAM GMT+7)
-    now_vn = datetime.datetime.now(datetime.timezone(datetime.timedelta(hours=7)))
-    today_str = now_vn.strftime("%Y-%m-%d")
-    time_min = now_vn.hour * 60 + now_vn.minute
-    start_min = 8 * 60 + 20  # 8:20 -> 500 phút
-    end_min = 15 * 60        # 15:00 -> 900 phút
-    
-    status = load_status()
-    force_run = ('--force' in sys.argv)
-    
-    # Gửi chào buổi sáng lúc 8:20 (nếu chưa gửi hôm nay)
-    if not force_run and (start_min <= time_min <= start_min + 15):
-        if status.get('last_morning_greeting') != today_str:
-            send_heartbeat('morning', "Tự động bắn cảnh báo Discord ngay khi có BCTC mới.")
-            status['last_morning_greeting'] = today_str
-            save_status(status)
-            
-    if not force_run and not (start_min <= time_min <= end_min):
-        # Nếu vừa hết giờ (15:00 -> 15:15) và chưa gửi chốt phiên hôm nay
-        if (end_min <= time_min <= end_min + 15) and status.get('last_afternoon_closing') != today_str:
-            completed_cache = load_completed_cache()
-            done_cnt = len(completed_cache)
-            send_heartbeat('afternoon', f"Đã quét xong phiên. Tổng số mã đã có BCTC đầy đủ: **{done_cnt} mã**.")
-            status['last_afternoon_closing'] = today_str
-            save_status(status)
-            
-        log(f"⏰ Hiện tại là {now_vn.strftime('%H:%M:%S')} (giờ VN). Ngoài khung giờ 08:20 - 15:00, hệ thống tự động nghỉ ngơi.")
-        log("=== KẾT THÚC CHU KỲ (NGHỈ NGOÀI GIỜ) ===")
+def send_silent_ping(scan_index, remaining_count, elapsed_sec, new_count=0):
+    """Gửi nhịp đập 10 phút/lần ở chế độ SILENT (không chuông, không rung điện thoại)"""
+    webhook_url = os.environ.get("DISCORD_WEBHOOK_URL")
+    if not webhook_url and os.path.exists(DISCORD_CONFIG_FILE):
+        try:
+            with open(DISCORD_CONFIG_FILE, "r", encoding="utf-8") as f:
+                webhook_url = json.load(f).get("webhook_url")
+        except:
+            pass
+    if not webhook_url:
         return
-
         
+    now_vn = datetime.datetime.now(datetime.timezone(datetime.timedelta(hours=7)))
+    time_str = now_vn.strftime("%H:%M")
+    
+    if new_count > 0:
+        content = f"🔥 **[{time_str}] Lượt #{scan_index}:** Phát hiện **{new_count} BCTC MỚI**! Đã gửi thông báo chi tiết."
+    else:
+        content = f"🟢 `[{time_str}]` **Lượt #{scan_index}:** Đã kiểm tra **{remaining_count} mã** ({elapsed_sec}s) • Bình thường, chưa có BCTC mới."
+        
+    payload = {
+        "content": content,
+        "flags": 4096 # SUPPRESS_NOTIFICATIONS: Không rung, không chuông điện thoại
+    }
+    
+    try:
+        req = urllib.request.Request(
+            webhook_url,
+            data=json.dumps(payload).encode('utf-8'),
+            headers={'Content-Type': 'application/json', 'User-Agent': 'Mozilla/5.0'}
+        )
+        urllib.request.urlopen(req, timeout=8)
+    except Exception as e:
+        log(f"Lỗi gửi silent ping: {e}")
+
+def send_system_error_alert(error_msg):
+    """Gửi cảnh báo khẩn cấp có âm thanh khi gặp lỗi"""
+    webhook_url = os.environ.get("DISCORD_WEBHOOK_URL")
+    if not webhook_url and os.path.exists(DISCORD_CONFIG_FILE):
+        try:
+            with open(DISCORD_CONFIG_FILE, "r", encoding="utf-8") as f:
+                webhook_url = json.load(f).get("webhook_url")
+        except:
+            pass
+    if not webhook_url:
+        return
+        
+    payload = {
+        "content": f"🚨 **CẢNH BÁO KHẨN CẤP: HỆ THỐNG GIÁM SÁT GẶP LỖI!**",
+        "embeds": [{
+            "title": "❌ Lỗi hệ thống trong chu kỳ quét",
+            "description": f"```{error_msg}```\nVui lòng kiểm tra lại trạng thái máy chủ.",
+            "color": 0xEF4444,
+            "footer": {"text": "BCTC Live Monitor Error Alert"},
+            "timestamp": datetime.datetime.now(datetime.timezone.utc).isoformat()
+        }]
+    }
+    try:
+        req = urllib.request.Request(
+            webhook_url,
+            data=json.dumps(payload).encode('utf-8'),
+            headers={'Content-Type': 'application/json', 'User-Agent': 'Mozilla/5.0'}
+        )
+        urllib.request.urlopen(req, timeout=10)
+    except Exception as e:
+        log(f"Lỗi gửi error alert: {e}")
+
+def execute_single_scan(scan_index=1):
+    """Thực hiện một lượt quét 115 mã"""
     if not os.path.exists(TICKERS_FILE):
         log(f"LỖI: Không tìm thấy file {TICKERS_FILE}")
-        sys.exit(1)
+        return 0, 0, 0
         
     with open(TICKERS_FILE, "r", encoding="utf-8") as f:
         tickers_list = json.load(f)
@@ -571,9 +606,6 @@ def main():
     completed_cache = load_completed_cache()
     alerts_dict = load_alerts()
     
-    # Lọc danh sách cần quét:
-    # - Bỏ qua mã đã HOP_NHAT hoặc DAY_DU trong cache
-    # - Giữ lại mã chưa có hoặc mới chỉ có RIENG (như RTB)
     to_scan = []
     already_done = []
     for it in tickers_list:
@@ -583,13 +615,11 @@ def main():
         else:
             to_scan.append(it)
             
-    log(f"📊 Tổng số mã nhóm 1: {len(tickers_list)} mã")
-    log(f"⚡ Đã có BCTC đầy đủ trước đó (bỏ qua): {len(already_done)} mã ({', '.join(already_done) if already_done else 'Chưa có'})")
-    log(f"🔍 Cần quét mạng kiểm tra đợt này: {len(to_scan)} mã")
+    log(f"--- [LƯỢT #{scan_index}] Quét {len(to_scan)}/{len(tickers_list)} mã (đã hoàn tất: {len(already_done)}) ---")
     
     if not to_scan:
         log("🎉 Toàn bộ 115 mã đều đã có BCTC đầy đủ!")
-        return
+        return 0, 0, 0
         
     start_all = time.time()
     results = {}
@@ -602,14 +632,12 @@ def main():
                 ticker, item, res = fut.result()
                 results[ticker] = (item, res)
             except Exception as e:
-                log(f"Lỗi khi xử lý 1 mã: {e}")
+                log(f"Lỗi khi quét 1 mã: {e}")
                 
     total_elapsed = round(time.time() - start_all, 2)
     log(f"⏱️ Quét xong {len(to_scan)} mã trong {total_elapsed}s")
     
-    # Phân tích kết quả
     has_cache_changes = False
-    
     for ticker, (item, res) in results.items():
         if res.get('has_q3') and not res.get('is_cached'):
             b_type = res.get('bctc_type', 'DAY_DU')
@@ -620,14 +648,9 @@ def main():
             company_name = item.get('name', '')
             exchange = item.get('san', 'UPCOM')
             
-            # Kiểm tra trạng thái cũ trong cache
             old_cache = completed_cache.get(ticker)
             old_type = old_cache.get('bctc_type') if old_cache else None
-            
-            # Trường hợp 1: Mới có Hợp nhất sau khi đã có Riêng
             is_new_hop_nhat = (old_type == 'RIENG' and b_type == 'HOP_NHAT')
-            
-            # Trường hợp 2: Phát hiện mới hoàn toàn
             is_brand_new = (ticker not in completed_cache)
             
             if is_brand_new or is_new_hop_nhat:
@@ -647,11 +670,8 @@ def main():
                     "is_hot": True,
                     "detected_at": datetime.datetime.now().strftime("%Y-%m-%dT%H:%M:%S")
                 }
-                
-                # Bắn thông báo Discord ngay lập tức
                 send_discord_alert(alert_payload, is_new_hop_nhat=is_new_hop_nhat)
                 
-                # Cập nhật cache
                 completed_cache[ticker] = {
                     'ticker': ticker,
                     'bctc_type': b_type,
@@ -668,10 +688,81 @@ def main():
         save_completed_cache(completed_cache)
         save_alerts(alerts_dict)
         log(f"💾 Đã lưu dữ liệu {new_found_count} mã mới phát hiện vào cache.")
-    else:
-        log("ℹ️ Đợt này chưa phát hiện thêm BCTC mới nào.")
         
-    log("=== HOÀN TẤT CHU KỲ QUÉT ===")
+    return new_found_count, len(to_scan), total_elapsed
+
+def main():
+    log("=== KHỞI ĐỘNG HỆ THỐNG GIÁM SÁT 115 MÃ BCTC TRÊN CLOUD ===")
+    
+    is_loop = ('--loop' in sys.argv)
+    force_run = ('--force' in sys.argv)
+    
+    now_vn = datetime.datetime.now(datetime.timezone(datetime.timedelta(hours=7)))
+    today_str = now_vn.strftime("%Y-%m-%d")
+    time_min = now_vn.hour * 60 + now_vn.minute
+    
+    # Xác định ca làm việc:
+    # Ca sáng: 08:20 -> 11:30 (500 -> 690 phút)
+    # Ca chiều: 13:00 -> 15:00 (780 -> 900 phút)
+    if time_min < 12 * 60:
+        session_name = "Ca Sáng (08:20 - 11:30)"
+        target_end_min = 11 * 60 + 30
+        is_morning = True
+    else:
+        session_name = "Ca Chiều (13:00 - 15:00)"
+        target_end_min = 15 * 60
+        is_morning = False
+        
+    status = load_status()
+    
+    if is_morning and status.get('last_morning_greeting') != today_str:
+        send_heartbeat('morning', "Bắt đầu phiên sáng, tự động quét mỗi 10 phút.")
+        status['last_morning_greeting'] = today_str
+        save_status(status)
+        
+    if not is_loop:
+        try:
+            new_cnt, rem_cnt, elapsed = execute_single_scan(scan_index=1)
+            send_silent_ping(1, rem_cnt, elapsed, new_count=new_cnt)
+        except Exception as e:
+            log(f"Lỗi: {e}")
+            send_system_error_alert(str(e))
+            sys.exit(1)
+        return
+        
+    # CHẾ ĐỘ VÒNG LẶP LIÊN TỤC TRONG CA (LOOP WORKER)
+    log(f"🚀 Kích hoạt chế độ Vòng lặp liên tục: {session_name}")
+    scan_index = 0
+    
+    while True:
+        scan_index += 1
+        now_vn = datetime.datetime.now(datetime.timezone(datetime.timedelta(hours=7)))
+        cur_min = now_vn.hour * 60 + now_vn.minute
+        
+        try:
+            new_cnt, rem_cnt, elapsed = execute_single_scan(scan_index=scan_index)
+            # Gửi nhịp đập Silent mỗi 10 phút để người dùng yên tâm 100%
+            send_silent_ping(scan_index, rem_cnt, elapsed, new_count=new_cnt)
+        except Exception as e:
+            log(f"Lỗi trong lượt quét #{scan_index}: {e}")
+            send_system_error_alert(f"Lỗi trong lượt quét #{scan_index}: {e}")
+            
+        now_vn = datetime.datetime.now(datetime.timezone(datetime.timedelta(hours=7)))
+        cur_min = now_vn.hour * 60 + now_vn.minute
+        if not force_run and cur_min >= target_end_min:
+            log(f"🏁 Đã đạt thời gian kết thúc {session_name}. Dừng ca.")
+            if not is_morning and status.get('last_afternoon_closing') != today_str:
+                completed_cache = load_completed_cache()
+                send_heartbeat('afternoon', f"Đã kết thúc phiên chiều. Tổng số mã đã có BCTC đầy đủ: **{len(completed_cache)} mã**.")
+                status['last_afternoon_closing'] = today_str
+                save_status(status)
+            break
+            
+        log("💤 Ngủ 600 giây (10 phút) trước lượt quét tiếp theo...")
+        time.sleep(600)
+        
+    log("=== HOÀN TẤT CA LÀM VIỆC ===")
 
 if __name__ == '__main__':
     main()
+

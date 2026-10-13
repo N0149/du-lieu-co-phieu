@@ -2,12 +2,14 @@ name: Giám sát BCTC 115 Mã (Cloud 10 Phút/Lần)
 
 on:
   schedule:
-    # Chạy đều đặn mỗi 10 phút một lần trong khung giờ hành chính (01:00 UTC -> 08:50 UTC, tức 08:00 sáng -> 15:50 chiều giờ VN)
-    - cron: '*/10 1-8 * * *'
+    # Ca 1: Phiên sáng khởi động lúc 08:20 sáng VN (01:20 UTC), chạy vòng lặp 10p/lần đến 11:30
+    - cron: '20 1 * * *'
+    # Ca 2: Phiên chiều khởi động lúc 13:00 chiều VN (06:00 UTC), chạy vòng lặp 10p/lần đến 15:00
+    - cron: '0 6 * * *'
   workflow_dispatch:
     inputs:
       force:
-        description: 'Bỏ qua kiểm tra giờ (chạy ngay lập tức)'
+        description: 'Bỏ qua kiểm tra giờ (chạy ngay lập tức 1 lần)'
         required: false
         default: 'true'
         type: string
@@ -31,15 +33,30 @@ jobs:
         run: |
           pip install beautifulsoup4
 
-      - name: Run BCTC Cloud Monitor (115 Mã Nhóm 1)
+      - name: Run BCTC Cloud Monitor (Worker Loop 10 Phút/Lần)
         env:
           DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
         run: |
           if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
             python scripts/bctc_monitor_cloud.py --force
           else
-            python scripts/bctc_monitor_cloud.py
+            python scripts/bctc_monitor_cloud.py --loop
           fi
+
+      - name: Báo động khẩn cấp nếu GitHub Actions bị lỗi
+        if: failure()
+        env:
+          DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
+        run: |
+          python -c "
+          import os, urllib.request, json
+          url = os.environ.get('DISCORD_WEBHOOK_URL')
+          if url:
+              payload = {
+                  'content': '🚨 **BÁO ĐỘNG KHẨN CẤP: MÁY CHỦ GITHUB ACTIONS GẶP LỖI!**\nQuy trình giám sát BCTC vừa bị gián đoạn hoặc dừng bất thường. Vui lòng kiểm tra ngay!'
+              }
+              urllib.request.urlopen(urllib.request.Request(url, data=json.dumps(payload).encode('utf-8'), headers={'Content-Type': 'application/json'}))
+          "
 
       - name: Commit and push BCTC cache updates
         run: |
@@ -47,4 +64,5 @@ jobs:
           git config --global user.email 'github-actions[bot]@users.noreply.github.com'
           git add data/bctc_completed_cache.json data/bctc_q3_live_alerts.json data/bctc_cloud_status.json
           git diff --quiet && git diff --staged --quiet || (git commit -m "chore(bctc): auto sync cloud completed cache [skip ci]" && git push)
+
 
