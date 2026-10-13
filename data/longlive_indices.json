@@ -1,76 +1,76 @@
 {
- "updated": "2026-10-12T20:26:39",
+ "updated": "2026-10-13T20:27:32",
  "items": [
   {
    "id": "VNINDEX",
    "label": "VN-Index (HOSE)",
-   "price": 1720.98,
-   "chg": -0.81,
-   "d": "2026-10-12",
+   "price": 1719.42,
+   "chg": -0.09,
+   "d": "2026-10-13",
    "unit": ""
   },
   {
    "id": "VN30",
    "label": "VN30",
-   "price": 1869.38,
-   "chg": -0.22,
-   "d": "2026-10-12",
+   "price": 1860.99,
+   "chg": -0.45,
+   "d": "2026-10-13",
    "unit": ""
   },
   {
    "id": "HNXINDEX",
    "label": "HNX-Index",
-   "price": 264.69,
-   "chg": 1.18,
-   "d": "2026-10-12",
+   "price": 264.25,
+   "chg": -0.17,
+   "d": "2026-10-13",
    "unit": ""
   },
   {
    "id": "UPCOMINDEX",
    "label": "UPCOM",
-   "price": 125.09,
-   "chg": 0.34,
-   "d": "2026-10-12",
+   "price": 123.94,
+   "chg": -0.92,
+   "d": "2026-10-13",
    "unit": ""
   },
   {
    "id": "GOLD",
    "label": "Vàng",
-   "price": 4195.2,
-   "chg": -0.5,
-   "d": "2026-10-12",
+   "price": 4202.5,
+   "chg": 0.28,
+   "d": "2026-10-13",
    "unit": "USD/oz"
   },
   {
    "id": "BRENT",
    "label": "Dầu Brent",
-   "price": 106.85,
-   "chg": 2.03,
-   "d": "2026-10-12",
+   "price": 105.42,
+   "chg": -1.15,
+   "d": "2026-10-13",
    "unit": "USD/thùng"
   },
   {
    "id": "WTI",
    "label": "Dầu WTI",
-   "price": 93.72,
-   "chg": 2.04,
-   "d": "2026-10-12",
+   "price": 93.02,
+   "chg": -0.77,
+   "d": "2026-10-13",
    "unit": "USD/thùng"
   },
   {
    "id": "USDVND",
    "label": "USD/VND",
-   "price": 25879.0,
-   "chg": -0.04,
-   "d": "2026-10-12",
+   "price": 25913.0,
+   "chg": 0.09,
+   "d": "2026-10-13",
    "unit": "đ"
   },
   {
    "id": "HRC",
    "label": "Thép HRC",
-   "price": 1300.0,
-   "chg": 1.88,
-   "d": "2026-10-12",
+   "price": 1302.0,
+   "chg": 2.2,
+   "d": "2026-10-13",
    "unit": "USD/tấn"
   }
  ]
