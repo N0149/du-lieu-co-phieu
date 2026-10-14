@@ -11,6 +11,12 @@ import datetime
 import openpyxl
 from openpyxl.styles import Font, PatternFill, Alignment, Border, Side
 
+if hasattr(sys.stdout, 'reconfigure'):
+    try:
+        sys.stdout.reconfigure(encoding='utf-8')
+    except:
+        pass
+
 BASE_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
 EXCEL_PATH = r"D:\hoc\lap trinh\check BCTC Distill\Danh_sach_tong_hop_278_ma_BCTC.xlsx"
 EXCEL_FALLBACK = r"D:\hoc\lap trinh\check BCTC Distill\Danh_sach_sua_link_BCTC_Batch_04_den_12.xlsx"

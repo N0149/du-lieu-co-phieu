@@ -91,22 +91,22 @@ def is_valid_recent_bctc_date(date_pub):
             
     return True
 
-def is_q3_2026(text, ticker=""):
+def is_q3_2026(text, ticker="", doc_url="", date_pub=""):
     """
     Nhận diện tài liệu BCTC Quý 3/2026 (hoặc Quý mới cho các mã niên độ đặc thù như CAP)
     theo tiêu chí 'Lọc nhầm còn hơn bỏ sót'.
     """
     if not text:
         return False, ""
-    raw = text.lower()
+    raw = (text + " " + (doc_url or "")).lower()
     clean = strip_accents(raw)
     
     excluded = ['ke hoach', 'co dong lon', 'danh sach co dong', 'thu moi hop', 'bien ban kiem phieu', 'lay y kien']
     if any(k in clean for k in excluded):
         return False, ""
         
-    has_2026 = bool(re.search(r'(?<!\d)(?:2026|\'26)(?!\d)', clean)) or ('2025-2026' in clean) or ('/2026/' in clean) or ('_2026' in clean)
-    has_old = bool(re.search(r'(?:quy\s*[1-4]|q[1-4]|quarter\s*[1-4])[_\s\-/]*(?:201[89]|202[0-4])(?!\d)', clean))
+    has_2026 = bool(re.search(r'(?<!\d)(?:2026|\'26)(?!\d)', clean)) or ('2025-2026' in clean) or ('/2026/' in clean) or ('_2026' in clean) or ('10/2026' in str(date_pub)) or ('11/2026' in str(date_pub)) or ('12/2026' in str(date_pub))
+    has_old = bool(re.search(r'(?:quy\s*[1-4]|q[1-4]|quarter\s*[1-4])[_\s\-/]*(?:201[89]|202[0-5])(?!\d)', clean))
     if has_old and not has_2026:
         return False, ""
         
@@ -130,11 +130,11 @@ def is_q3_2026(text, ticker=""):
     if has_q3 and has_bctc and has_2026:
         return True, text
         
-    pattern1 = r'(?:bctc|tai chinh|financial|kqkd|giai trinh)[^,\n\r]{0,35}(?:quy\s*3|q3|quy\s*iii|quarter 3)[^,\n\r]{0,25}(?:(?<!\d)2026(?!\d)|26\b)'
-    pattern2 = r'(?:quy\s*3|q3|quy\s*iii|quarter 3)[^,\n\r]{0,20}(?:(?<!\d)2026(?!\d)|26\b)[^,\n\r]{0,35}(?:bctc|tai chinh)'
+    pattern1 = r'(?:bctc|tai chinh|financial|kqkd|giai trinh)[^,\n\r]{0,35}(?:quy\s*3|q3|quy\s*iii|quarter 3)'
+    pattern2 = r'(?:quy\s*3|q3|quy\s*iii|quarter 3)[^,\n\r]{0,35}(?:bctc|tai chinh)'
     for p in [pattern1, pattern2]:
         m = re.search(p, clean)
-        if m:
+        if m and has_2026:
             return True, text
             
     return False, ""
@@ -177,7 +177,7 @@ def check_fpts_ezir(ticker):
                 if not is_valid_recent_bctc_date(date_pub):
                     continue
                     
-                matched, snippet = is_q3_2026(title, ticker=ticker)
+                matched, snippet = is_q3_2026(title, ticker=ticker, doc_url=doc_url, date_pub=date_pub)
                 if matched:
                     b_type = classify_bctc_type(title)
                     q3_found_items.append({
@@ -703,14 +703,14 @@ def main():
     
     # Xác định ca làm việc:
     # Ca sáng: 08:20 -> 11:30 (500 -> 690 phút)
-    # Ca chiều: 13:00 -> 15:00 (780 -> 900 phút)
+    # Ca chiều: 13:00 -> 15:30 (780 -> 930 phút - mở rộng thêm 30p sau giờ giao dịch để bắt BCTC nộp cuối ngày)
     if time_min < 12 * 60:
         session_name = "Ca Sáng (08:20 - 11:30)"
         target_end_min = 11 * 60 + 30
         is_morning = True
     else:
-        session_name = "Ca Chiều (13:00 - 15:00)"
-        target_end_min = 15 * 60
+        session_name = "Ca Chiều (13:00 - 15:30)"
+        target_end_min = 15 * 60 + 30
         is_morning = False
         
     status = load_status()

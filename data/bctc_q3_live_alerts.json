@@ -1,5 +1,18 @@
 [
   {
+    "ticker": "HDM",
+    "company_name": "Công ty Cổ phần Dệt May Huế",
+    "exchange": "UPCOM",
+    "quarter": "Quý 3/2026",
+    "release_date": "14/10/2026 15:04",
+    "title": "Báo cáo tài chính Quý 3",
+    "source": "EzIR_FPTS",
+    "bctc_type": "DAY_DU",
+    "doc_url": "https://file.fpts.com.vn/FileStore2/File/EzIR/UploadFile/News/2026/10/14/File_1_8180_VI_BaoCaoTaiChinh_Q3_2026.pdf",
+    "is_hot": true,
+    "detected_at": "2026-10-14T22:25:11"
+  },
+  {
     "ticker": "IFS",
     "company_name": "Công ty Cổ phần Thực phẩm Quốc tế",
     "exchange": "UPCOM",

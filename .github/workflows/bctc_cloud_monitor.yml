@@ -1,11 +1,19 @@
 name: Giám sát BCTC 115 Mã (Cloud 10 Phút/Lần)
 
+concurrency:
+  group: bctc-cloud-monitor
+  cancel-in-progress: false
+
 on:
   schedule:
     # Ca 1: Phiên sáng khởi động lúc 08:20 sáng VN (01:20 UTC), chạy vòng lặp 10p/lần đến 11:30
     - cron: '20 1 * * *'
-    # Ca 2: Phiên chiều khởi động lúc 13:00 chiều VN (06:00 UTC), chạy vòng lặp 10p/lần đến 15:00
+    # Dự phòng Ca 1 (nếu GitHub Actions quá tải bỏ lỡ mốc 08:20 thì mốc 08:35 sẽ tự động cứu)
+    - cron: '35 1 * * *'
+    # Ca 2: Phiên chiều khởi động lúc 13:00 chiều VN (06:00 UTC), chạy vòng lặp 10p/lần đến 15:30
     - cron: '0 6 * * *'
+    # Dự phòng Ca 2 (nếu GitHub Actions quá tải bỏ lỡ mốc 13:00 thì mốc 13:15 sẽ kích hoạt)
+    - cron: '15 6 * * *'
   workflow_dispatch:
     inputs:
       force:
