@@ -1,5 +1,18 @@
 [
   {
+    "ticker": "IFS",
+    "company_name": "Công ty Cổ phần Thực phẩm Quốc tế",
+    "exchange": "UPCOM",
+    "quarter": "Quý 3/2026",
+    "release_date": "14/10/2026",
+    "title": "14-10-2026 Báo cáo tài chính quý 3 năm 2026 Download",
+    "source": "Company_Web",
+    "bctc_type": "DAY_DU",
+    "doc_url": "https://wonderfarmonline.com/storage/finance-report-q3-2026-vas-viet-id.pdf",
+    "is_hot": true,
+    "detected_at": "2026-10-14T11:02:55"
+  },
+  {
     "ticker": "UDJ",
     "company_name": "Công ty Cổ phần Phát triển Đô thị",
     "exchange": "UPCOM",
