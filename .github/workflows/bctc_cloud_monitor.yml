@@ -45,7 +45,7 @@ jobs:
 
       - name: Install dependencies
         run: |
-          pip install beautifulsoup4
+          pip install beautifulsoup4 pymupdf
 
       - name: Run BCTC Cloud Monitor (Worker Loop 10 Phút/Lần)
         env:

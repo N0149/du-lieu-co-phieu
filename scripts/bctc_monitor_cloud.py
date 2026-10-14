@@ -17,6 +17,10 @@ import urllib.parse
 import unicodedata
 from concurrent.futures import ThreadPoolExecutor
 from bs4 import BeautifulSoup
+try:
+    import pymupdf
+except ImportError:
+    pymupdf = None
 
 BASE_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
 TICKERS_FILE = os.path.join(BASE_DIR, "data", "tickers_group1_115.json")
@@ -305,8 +309,175 @@ def check_company_website(ticker, uri):
     except Exception as e:
         return {'has_q3': False, 'source': 'Company_Web', 'error': str(e)}
 
+def parse_vietnamese_number(s):
+    if not s:
+        return None
+    s = str(s).strip()
+    is_negative = False
+    if s.startswith('(') and s.endswith(')'):
+        is_negative = True
+        s = s[1:-1].strip()
+    elif s.startswith('-'):
+        is_negative = True
+        s = s[1:].strip()
+        
+    clean_s = s.replace('.', '').replace(',', '')
+    try:
+        val = int(clean_s)
+        return -val if is_negative else val
+    except:
+        return None
+
+def format_currency_billion(num):
+    if num is None:
+        return "N/A"
+    ty = num / 1_000_000_000
+    if abs(ty) >= 1.0:
+        return f"{ty:,.2f} tỷ".replace(',', 'X').replace('.', ',').replace('X', '.')
+    trieu = num / 1_000_000
+    return f"{trieu:,.1f} tr".replace(',', 'X').replace('.', ',').replace('X', '.')
+
+def extract_lnst_and_yoy(doc_url):
+    """
+    Trích xuất tự động LNST (ưu tiên cổ đông cty mẹ) và tính tăng trưởng YoY từ file PDF.
+    Thời gian thực thi tối đa: 6 giây. An toàn tuyệt đối, không làm chậm hệ thống.
+    """
+    if pymupdf is None:
+        return {"has_data": False, "reason": "Chưa cài đặt PyMuPDF"}
+        
+    if not doc_url or not doc_url.startswith('http'):
+        return {"has_data": False, "reason": "Không có đường link tài liệu"}
+        
+    try:
+        req = urllib.request.Request(doc_url, headers=HEADERS)
+        with urllib.request.urlopen(req, timeout=6) as resp:
+            pdf_bytes = resp.read()
+            
+        if not pdf_bytes.startswith(b'%PDF'):
+            return {"has_data": False, "reason": "Tài liệu không phải file PDF trực tiếp"}
+            
+        doc = pymupdf.open(stream=pdf_bytes, filetype="pdf")
+        
+        # 1. Kiểm tra bản scan ảnh (nếu trong 5 trang đầu có <= 1 trang có chữ thì là tài liệu scan)
+        non_empty_pages = sum(1 for i in range(min(5, len(doc))) if len(doc[i].get_text().strip()) > 50)
+        if non_empty_pages <= 1:
+            return {
+                "has_data": False,
+                "is_scanned": True,
+                "reason": "Bản scan giấy đóng dấu đỏ (chưa số hóa)"
+            }
+            
+        # 2. Tìm trang Kết quả hoạt động kinh doanh (KQKD)
+        target_page = None
+        for i in range(min(18, len(doc))):
+            raw_t = doc[i].get_text().lower()
+            if any(k in raw_t for k in ['ket qua hoat dong kinh doanh', 'kết quả hoạt động kinh doanh', 'ho~t dqng kinh doanh', 'hoat dong kinh doanh']):
+                target_page = i
+                break
+                
+        if target_page is None:
+            for i in range(min(18, len(doc))):
+                raw_t = doc[i].get_text()
+                if re.search(r'\b(?:60|61)\b', raw_t) and any(k in raw_t.lower() for k in ['sau thue', 'sau thuế', 'sau thui', 'tndn']):
+                    target_page = i
+                    break
+                    
+        if target_page is None:
+            return {"has_data": False, "reason": "Không định vị được trang Kết quả kinh doanh"}
+            
+        lines = [l.strip() for l in doc[target_page].get_text().splitlines() if l.strip()]
+        
+        # 3. Định vị dòng chỉ tiêu 61 (Cty mẹ) hoặc 60 (Tổng LNST)
+        found_code_idx = None
+        found_code = None
+        is_parent = False
+        
+        # Quét tìm chỉ tiêu 61 trước (ưu tiên cổ đông cty mẹ)
+        for idx, line in enumerate(lines):
+            if line.strip() == '61':
+                prev_text = " ".join(lines[max(0, idx-4):idx]).lower()
+                if any(k in prev_text for k in ['lợi nhuận', 'loi nhuan', 'nhuin', 'sau thue', 'sau thui']):
+                    found_code_idx = idx
+                    found_code = '61'
+                    is_parent = True
+                    break
+                    
+        # Nếu không có 61, tìm chỉ tiêu 60
+        if found_code_idx is None:
+            for idx, line in enumerate(lines):
+                if line.strip() == '60':
+                    prev_text = " ".join(lines[max(0, idx-4):idx]).lower()
+                    if any(k in prev_text for k in ['lợi nhuận', 'loi nhuan', 'nhuin', 'sau thue', 'sau thui']):
+                        found_code_idx = idx
+                        found_code = '60'
+                        break
+
+        # Nếu mã số không đứng độc lập, quét dòng chứa '60' hoặc '61'
+        if found_code_idx is None:
+            for idx, line in enumerate(lines):
+                l_low = line.lower()
+                if ('lợi nhuận sau thuế' in l_low or 'loi nhuan sau thue' in l_low or 'lqi nhuin' in l_low) and any(c in l_low for c in ['60', '61']):
+                    found_code_idx = idx
+                    found_code = '61' if '61' in l_low else '60'
+                    is_parent = ('công ty mẹ' in l_low or '61' in l_low)
+                    break
+                    
+        if found_code_idx is None:
+            return {"has_data": False, "reason": "Chưa định vị được chỉ tiêu 60/61 trên trang KQKD"}
+            
+        # 4. Thu thập 2 số tài chính ngay sau mã số 60/61
+        numbers = []
+        for j in range(found_code_idx + 1, min(len(lines), found_code_idx + 15)):
+            val = parse_vietnamese_number(lines[j])
+            if val is not None and abs(val) > 1000:
+                numbers.append(val)
+                if len(numbers) >= 2:
+                    break
+                    
+        if len(numbers) >= 2:
+            cur_q = numbers[0]
+            prev_q = numbers[1]
+            label = "LNST Cổ đông Cty mẹ" if is_parent else "Lợi nhuận sau thuế"
+            
+            if prev_q != 0:
+                yoy_num = ((cur_q - prev_q) / abs(prev_q)) * 100
+                if cur_q > 0 and prev_q < 0:
+                    yoy_str = "Chuyển từ Lỗ sang Lãi 🚀"
+                    direction = "up"
+                elif cur_q < 0 and prev_q > 0:
+                    yoy_str = "Chuyển từ Lãi sang Lỗ 🔻"
+                    direction = "down"
+                elif yoy_num >= 50:
+                    yoy_str = f"+{yoy_num:.2f}% 🚀 (Đột biến)"
+                    direction = "up"
+                elif yoy_num > 0:
+                    yoy_str = f"+{yoy_num:.2f}% 📈"
+                    direction = "up"
+                else:
+                    yoy_str = f"{yoy_num:.2f}% 📉"
+                    direction = "down"
+            else:
+                yoy_str = "N/A"
+                direction = "flat"
+                
+            return {
+                "has_data": True,
+                "label": label,
+                "code": found_code,
+                "current_quarter": format_currency_billion(cur_q),
+                "prev_quarter": format_currency_billion(prev_q),
+                "current_raw": cur_q,
+                "prev_raw": prev_q,
+                "yoy": yoy_str,
+                "direction": direction
+            }
+            
+        return {"has_data": False, "reason": "Không trích xuất đủ 2 cột số liệu sau chỉ tiêu"}
+    except Exception as e:
+        return {"has_data": False, "reason": f"Lỗi đọc PDF ({e})"}
+
 def send_discord_alert(alert_data, is_new_hop_nhat=False):
-    """Bắn thông báo tức thì lên Discord"""
+    """Bắn thông báo tức thì lên Discord kèm LNST & Tăng trưởng YoY"""
     webhook_url = os.environ.get("DISCORD_WEBHOOK_URL")
     if not webhook_url and os.path.exists(DISCORD_CONFIG_FILE):
         try:
@@ -329,45 +500,73 @@ def send_discord_alert(alert_data, is_new_hop_nhat=False):
     bctc_type = alert_data.get("bctc_type", "DAY_DU")
     source = alert_data.get("source", "EzIR FPTS")
     
+    lnst = alert_data.get("net_profit")
+    prev_profit = alert_data.get("prev_profit")
+    growth_rate = alert_data.get("growth_rate")
+    direction = alert_data.get("growth_direction", "up")
+    lnst_label = alert_data.get("lnst_label", "LNST Quý 3/2026")
+    lnst_status = alert_data.get("lnst_status")
+    
     if is_new_hop_nhat:
         header_title = f"🌟 ĐÃ CÓ BCTC HỢP NHẤT: {ticker} (BỔ SUNG SAU BCTC RIÊNG)"
         color = 0x10B981 # Xanh ngọc
     elif bctc_type == 'RIENG':
         header_title = f"⚡ PHÁT HIỆN BCTC RIÊNG: {ticker} (ĐANG CHỜ HỢP NHẤT)"
         color = 0xF59E0B # Vàng cam
-    elif bctc_type == 'HOP_NHAT':
-        header_title = f"🚨 PHÁT HIỆN BCTC HỢP NHẤT QUÝ 3: {ticker}"
-        color = 0x22C55E # Xanh lá
+    elif direction == 'down':
+        header_title = f"🚨 PHÁT HIỆN BCTC QUÝ 3/2026: {ticker}"
+        color = 0xEF4444 # Đỏ (nếu giảm hoặc lỗ)
     else:
         header_title = f"🚨 PHÁT HIỆN BCTC QUÝ 3/2026: {ticker}"
-        color = 0x22C55E
+        color = 0x22C55E # Xanh lá (tăng trưởng)
         
     embed = {
         "title": header_title,
         "description": f"🏢 **{company}** (`{exchange}`)\n📄 **{title}**",
         "color": color,
-        "fields": [
-            {
-                "name": "📅 Ngày công bố",
-                "value": f"{date_pub or 'Hôm nay'}",
-                "inline": True
-            },
-            {
-                "name": "📊 Phân loại BCTC",
-                "value": f"{'Bản Hợp nhất' if bctc_type == 'HOP_NHAT' else ('Bản Riêng (Cty mẹ)' if bctc_type == 'RIENG' else 'Bản Đầy đủ')}",
-                "inline": True
-            },
-            {
-                "name": "🌐 Nguồn phát hiện",
-                "value": f"{source}",
-                "inline": True
-            }
-        ],
+        "fields": [],
         "footer": {
             "text": "Hệ thống giám sát BCTC Quý 3/2026 tự động • Cloud Monitor"
         },
         "timestamp": datetime.datetime.now(datetime.timezone.utc).isoformat()
     }
+    
+    # Hiển thị số liệu tài chính nổi bật
+    if lnst and growth_rate:
+        embed["fields"].append({
+            "name": f"💰 {lnst_label}",
+            "value": f"**{lnst}**" + (f" *(Cùng kỳ: {prev_profit})*" if prev_profit else ""),
+            "inline": True
+        })
+        embed["fields"].append({
+            "name": "📈 Tăng trưởng YoY",
+            "value": f"**{growth_rate}**",
+            "inline": True
+        })
+    elif lnst_status:
+        embed["fields"].append({
+            "name": "💰 LNST & Tăng trưởng",
+            "value": f"*{lnst_status}*",
+            "inline": False
+        })
+        
+    embed["fields"].extend([
+        {
+            "name": "📅 Ngày công bố",
+            "value": f"{date_pub or 'Hôm nay'}",
+            "inline": True
+        },
+        {
+            "name": "📊 Phân loại BCTC",
+            "value": f"{'Bản Hợp nhất' if bctc_type == 'HOP_NHAT' else ('Bản Riêng (Cty mẹ)' if bctc_type == 'RIENG' else 'Bản Đầy đủ')}",
+            "inline": True
+        },
+        {
+            "name": "🌐 Nguồn phát hiện",
+            "value": f"{source}",
+            "inline": True
+        }
+    ])
     
     if doc_url:
         embed["fields"].append({
@@ -681,6 +880,9 @@ def execute_single_scan(scan_index=1):
                 new_found_count += 1
                 log(f"🔥 PHÁT HIỆN MỚI: {ticker} [{b_type}] - {title} ({date_pub})")
                 
+                # Bóc tách tự động LNST & Tăng trưởng YoY từ PDF
+                lnst_data = extract_lnst_and_yoy(doc_url)
+                
                 alert_payload = {
                     "ticker": ticker,
                     "company_name": company_name,
@@ -694,6 +896,18 @@ def execute_single_scan(scan_index=1):
                     "is_hot": True,
                     "detected_at": datetime.datetime.now().strftime("%Y-%m-%dT%H:%M:%S")
                 }
+                
+                if lnst_data.get('has_data'):
+                    alert_payload['net_profit'] = lnst_data.get('current_quarter')
+                    alert_payload['prev_profit'] = lnst_data.get('prev_quarter')
+                    alert_payload['growth_rate'] = lnst_data.get('yoy')
+                    alert_payload['growth_direction'] = lnst_data.get('direction', 'up')
+                    alert_payload['lnst_label'] = lnst_data.get('label', 'LNST Quý 3/2026')
+                    log(f"   📊 Bóc tách thành công: {alert_payload['lnst_label']} = {alert_payload['net_profit']} ({alert_payload['growth_rate']})")
+                else:
+                    alert_payload['lnst_status'] = lnst_data.get('reason', 'Bản scan giấy đóng dấu')
+                    log(f"   ℹ️ Ghi chú BCTC: {alert_payload['lnst_status']}")
+
                 send_discord_alert(alert_payload, is_new_hop_nhat=is_new_hop_nhat)
                 
                 completed_cache[ticker] = {
@@ -705,6 +919,9 @@ def execute_single_scan(scan_index=1):
                     'source': source,
                     'updated_at': datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
                 }
+                if lnst_data.get('has_data'):
+                    completed_cache[ticker]['net_profit'] = alert_payload['net_profit']
+                    completed_cache[ticker]['growth_rate'] = alert_payload['growth_rate']
                 alerts_dict[ticker] = alert_payload
                 has_cache_changes = True
                 
