@@ -1,19 +1,25 @@
 name: Giám sát BCTC 115 Mã (Cloud 10 Phút/Lần)
 
-concurrency:
-  group: bctc-cloud-monitor
-  cancel-in-progress: false
-
 on:
   schedule:
-    # Ca 1: Phiên sáng khởi động lúc 08:20 sáng VN (01:20 UTC), chạy vòng lặp 10p/lần đến 11:30
-    - cron: '20 1 * * *'
-    # Dự phòng Ca 1 (nếu GitHub Actions quá tải bỏ lỡ mốc 08:20 thì mốc 08:35 sẽ tự động cứu)
-    - cron: '35 1 * * *'
-    # Ca 2: Phiên chiều khởi động lúc 13:00 chiều VN (06:00 UTC), chạy vòng lặp 10p/lần đến 15:30
-    - cron: '0 6 * * *'
-    # Dự phòng Ca 2 (nếu GitHub Actions quá tải bỏ lỡ mốc 13:00 thì mốc 13:15 sẽ kích hoạt)
-    - cron: '15 6 * * *'
+    # --- PHIÊN SÁNG (08:20 -> 11:30 VN, tức 01:20 -> 04:30 UTC, Thứ 2 - Thứ 6) ---
+    # Mốc chính: 08:20 sáng VN (01:20 UTC)
+    - cron: '20 1 * * 1-5'
+    # Các mốc cứu viện dự phòng (nếu GitHub Actions bị delay/kẹt hàng đợi lúc 08:20):
+    - cron: '35 1 * * 1-5' # 08:35 VN
+    - cron: '50 1 * * 1-5' # 08:50 VN
+    - cron: '15 2 * * 1-5' # 09:15 VN
+    - cron: '45 2 * * 1-5' # 09:45 VN
+    - cron: '15 3 * * 1-5' # 10:15 VN
+
+    # --- PHIÊN CHIỀU (13:00 -> 15:30 VN, tức 06:00 -> 08:30 UTC, Thứ 2 - Thứ 6) ---
+    # Mốc chính: 13:00 chiều VN (06:00 UTC)
+    - cron: '0 6 * * 1-5'
+    # Các mốc cứu viện dự phòng ca chiều:
+    - cron: '15 6 * * 1-5' # 13:15 VN
+    - cron: '30 6 * * 1-5' # 13:30 VN
+    - cron: '0 7 * * 1-5'  # 14:00 VN
+    - cron: '30 7 * * 1-5' # 14:30 VN
   workflow_dispatch:
     inputs:
       force:
@@ -44,6 +50,7 @@ jobs:
       - name: Run BCTC Cloud Monitor (Worker Loop 10 Phút/Lần)
         env:
           DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
             python scripts/bctc_monitor_cloud.py --force

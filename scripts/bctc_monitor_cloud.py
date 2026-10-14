@@ -594,6 +594,30 @@ def send_system_error_alert(error_msg):
     except Exception as e:
         log(f"Lỗi gửi error alert: {e}")
 
+def check_another_instance_running():
+    """Kiểm tra trên GitHub Actions xem đã có một tiến trình giám sát nào đang chạy trước đó không"""
+    token = os.environ.get("GITHUB_TOKEN")
+    repo = os.environ.get("GITHUB_REPOSITORY", "N0149/du-lieu-co-phieu")
+    run_id = os.environ.get("GITHUB_RUN_ID")
+    if not token or not run_id:
+        return False
+    try:
+        url = f"https://api.github.com/repos/{repo}/actions/workflows/bctc_cloud_monitor.yml/runs?status=in_progress"
+        req = urllib.request.Request(url, headers={
+            'Authorization': f'token {token}',
+            'User-Agent': 'Mozilla/5.0'
+        })
+        with urllib.request.urlopen(req, timeout=8) as resp:
+            data = json.loads(resp.read().decode('utf-8'))
+            runs = data.get('workflow_runs', [])
+            for r in runs:
+                if str(r.get('id')) != str(run_id) and int(r.get('id')) < int(run_id):
+                    log(f"🟢 Đã có ca giám sát đang chạy (Run #{r.get('id')}). Ca phụ này thoát để tránh trùng lặp.")
+                    return True
+    except Exception as e:
+        log(f"Kiểm tra instance khác lỗi: {e}")
+    return False
+
 def execute_single_scan(scan_index=1):
     """Thực hiện một lượt quét 115 mã"""
     if not os.path.exists(TICKERS_FILE):
@@ -700,10 +724,31 @@ def main():
     now_vn = datetime.datetime.now(datetime.timezone(datetime.timedelta(hours=7)))
     today_str = now_vn.strftime("%Y-%m-%d")
     time_min = now_vn.hour * 60 + now_vn.minute
-    
+    weekday = now_vn.weekday() # 0 = Thứ 2, 4 = Thứ 6, 5 = Thứ 7, 6 = Chủ Nhật
+
+    # Kiểm tra ngày & giờ giao dịch (bỏ qua nếu dùng cờ --force)
+    if not force_run:
+        if weekday >= 5:
+            log("📅 Hôm nay là cuối tuần (thị trường chứng khoán nghỉ). Không cần quét.")
+            return
+
+        if time_min < 8 * 60 + 15:
+            log("⏰ Chưa đến giờ bắt đầu phiên sáng (trước 08:20). Thoát an toàn.")
+            return
+        elif 11 * 60 + 30 <= time_min < 12 * 60 + 55:
+            log("🍱 Đang là giờ nghỉ trưa thị trường (11:30 - 13:00). Thoát an toàn.")
+            return
+        elif time_min >= 15 * 60 + 30:
+            log("🏁 Đã kết thúc toàn bộ phiên giao dịch hôm nay (sau 15:30). Nghỉ ngơi.")
+            return
+
+    # Nếu chạy loop worker, kiểm tra xem đã có worker nào đang hoạt động chưa
+    if is_loop and check_another_instance_running():
+        return
+
     # Xác định ca làm việc:
     # Ca sáng: 08:20 -> 11:30 (500 -> 690 phút)
-    # Ca chiều: 13:00 -> 15:30 (780 -> 930 phút - mở rộng thêm 30p sau giờ giao dịch để bắt BCTC nộp cuối ngày)
+    # Ca chiều: 13:00 -> 15:30 (780 -> 930 phút)
     if time_min < 12 * 60:
         session_name = "Ca Sáng (08:20 - 11:30)"
         target_end_min = 11 * 60 + 30
