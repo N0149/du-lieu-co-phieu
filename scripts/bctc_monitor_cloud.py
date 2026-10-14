@@ -692,7 +692,7 @@ def send_heartbeat(event_type, details=""):
     
     if event_type == 'morning':
         payload = {
-            "content": f"☀️ **[08:20] BẮT ĐẦU PHIÊN GIÁM SÁT BCTC NGÀY {date_str}**",
+            "content": f"☀️ **[08:00] BẮT ĐẦU PHIÊN GIÁM SÁT BCTC NGÀY {date_str}**",
             "embeds": [{
                 "title": "🟢 Hệ thống Cloud đang hoạt động tự động",
                 "description": f"Hệ thống tự động quét **115 mã cổ phiếu nhóm 1** định kỳ 10 phút/lần.\n{details}",
@@ -703,10 +703,10 @@ def send_heartbeat(event_type, details=""):
         }
     elif event_type == 'afternoon':
         payload = {
-            "content": f"🏁 **[15:00] KẾT THÚC PHIÊN GIÁM SÁT NGÀY {date_str}**",
+            "content": f"🏁 **[15:30] KẾT THÚC PHIÊN GIÁM SÁT NGÀY {date_str}**",
             "embeds": [{
                 "title": "☕ Chốt phiên hôm nay",
-                "description": f"{details}\nHệ thống tự động nghỉ ngơi và sẽ bắt đầu quét lại vào **08:20 sáng mai**.",
+                "description": f"{details}\nHệ thống tự động nghỉ ngơi và sẽ bắt đầu quét lại vào **08:00 sáng mai**.",
                 "color": 0x64748B,
                 "footer": {"text": "BCTC Live Cloud Monitor • dulieudautu.com"},
                 "timestamp": datetime.datetime.now(datetime.timezone.utc).isoformat()
@@ -949,8 +949,8 @@ def main():
             log("📅 Hôm nay là cuối tuần (thị trường chứng khoán nghỉ). Không cần quét.")
             return
 
-        if time_min < 8 * 60 + 15:
-            log("⏰ Chưa đến giờ bắt đầu phiên sáng (trước 08:20). Thoát an toàn.")
+        if time_min < 7 * 60 + 50:
+            log("⏰ Chưa đến giờ bắt đầu phiên sáng (trước 07:55). Thoát an toàn.")
             return
         elif 11 * 60 + 30 <= time_min < 12 * 60 + 55:
             log("🍱 Đang là giờ nghỉ trưa thị trường (11:30 - 13:00). Thoát an toàn.")
@@ -964,10 +964,10 @@ def main():
         return
 
     # Xác định ca làm việc:
-    # Ca sáng: 08:20 -> 11:30 (500 -> 690 phút)
+    # Ca sáng: 08:00 -> 11:30 (480 -> 690 phút)
     # Ca chiều: 13:00 -> 15:30 (780 -> 930 phút)
     if time_min < 12 * 60:
-        session_name = "Ca Sáng (08:20 - 11:30)"
+        session_name = "Ca Sáng (08:00 - 11:30)"
         target_end_min = 11 * 60 + 30
         is_morning = True
     else:
