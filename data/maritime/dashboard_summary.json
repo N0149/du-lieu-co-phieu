@@ -1,6 +1,6 @@
 {
   "status": "success",
-  "generated_at": "2026-10-14T14:36:58.178567",
+  "generated_at": "2026-10-14T15:43:33.711302",
   "kpis": {
     "total_port_authorities": 16,
     "total_calls_30d": 15635,
@@ -3174,6 +3174,23 @@
       "source": "pilot_south"
     },
     {
+      "id": 9218,
+      "vessel_name": "GREAT WALRUS",
+      "authority_id": "hcm",
+      "berth_name": "VK 102",
+      "stock_ticker": null,
+      "call_direction": "out",
+      "call_date": "2026-10-14",
+      "scheduled_time": "2026-10-14 07:00:00",
+      "draft": 5.5,
+      "loa": 138.0,
+      "dwt": 11979,
+      "gt": 8557,
+      "origin_port": "VK 102",
+      "dest_port": "Biển Đông",
+      "source": "pilot_south"
+    },
+    {
       "id": 9206,
       "vessel_name": "PVT RUBY",
       "authority_id": "hcm",
@@ -4022,6 +4039,23 @@
       "origin_port": "NAM DINH VU",
       "dest_port": "CHINA",
       "source": "cvhh_haiphong"
+    },
+    {
+      "id": 9217,
+      "vessel_name": "SEAGULL 88",
+      "authority_id": "hcm",
+      "berth_name": "SG PETRO A",
+      "stock_ticker": null,
+      "call_direction": "out",
+      "call_date": "2026-10-14",
+      "scheduled_time": "2026-10-14 02:00:00",
+      "draft": 4.5,
+      "loa": 106.0,
+      "dwt": 5969,
+      "gt": 4264,
+      "origin_port": "SG PETRO A",
+      "dest_port": "Biển Đông",
+      "source": "pilot_south"
     },
     {
       "id": 9023,
@@ -8189,23 +8223,6 @@
       "source": "pilot_south"
     },
     {
-      "id": 8606,
-      "vessel_name": "VU GIA 36",
-      "authority_id": "haiphong",
-      "berth_name": "VAT CACH",
-      "stock_ticker": null,
-      "call_direction": "out",
-      "call_date": "2026-10-13",
-      "scheduled_time": "2026-10-13 01:00:00",
-      "draft": 3.0,
-      "loa": 88.7,
-      "dwt": 4997,
-      "gt": 2598,
-      "origin_port": "VAT CACH",
-      "dest_port": "THANH HOA",
-      "source": "cvhh_haiphong"
-    },
-    {
       "id": 8605,
       "vessel_name": "XIN TAI CANG",
       "authority_id": "haiphong",
@@ -8255,23 +8272,6 @@
       "origin_port": "BEN NGHE",
       "dest_port": "CHUA VE",
       "source": "cvhh_haiphong"
-    },
-    {
-      "id": 8839,
-      "vessel_name": "KOTA NEKAD",
-      "authority_id": "hcm",
-      "berth_name": "SOWATCO-ĐT1",
-      "stock_ticker": null,
-      "call_direction": "out",
-      "call_date": "2026-10-13",
-      "scheduled_time": "2026-10-13 00:00:00",
-      "draft": 10.6,
-      "loa": 180.0,
-      "dwt": 29262,
-      "gt": 20902,
-      "origin_port": "SOWATCO-ĐT1",
-      "dest_port": "Biển Đông",
-      "source": "pilot_south"
     },
     {
       "id": 8931,
