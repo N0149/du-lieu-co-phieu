@@ -1,5 +1,19 @@
 [
   {
+    "ticker": "HSP",
+    "company_name": "Công ty Cổ phần Sơn Tổng hợp Hà Nội",
+    "exchange": "UPCOM",
+    "quarter": "Quý 3/2026",
+    "release_date": "15/10/2026",
+    "title": "Báo cáo tài chính quý 3 năm 2026",
+    "source": "Company_Web",
+    "bctc_type": "DAY_DU",
+    "doc_url": "https://drive.google.com/file/d/1KV0EKw3ibF4k_tTrYO75Sb1gQqXL6uPH/view?usp=drive_link",
+    "is_hot": true,
+    "detected_at": "2026-10-15T04:20:58",
+    "lnst_status": "Tài liệu không phải file PDF trực tiếp"
+  },
+  {
     "ticker": "HDM",
     "company_name": "Công ty Cổ phần Dệt May Huế",
     "exchange": "UPCOM",
