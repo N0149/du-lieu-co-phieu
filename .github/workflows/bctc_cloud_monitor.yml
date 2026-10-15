@@ -2,20 +2,24 @@ name: Giám sát BCTC 115 Mã (Cloud 10 Phút/Lần)
 
 on:
   schedule:
-    # --- PHIÊN SÁNG (08:00 -> 11:30 VN, tức 01:00 -> 04:30 UTC, Thứ 2 - Thứ 6) ---
+    # --- PHIÊN SÁNG & TRƯA (08:00 -> 13:00 VN, tức 01:00 -> 06:00 UTC, Thứ 2 - Thứ 6) ---
     # Mốc khởi động sớm 07:55 sáng VN (00:55 UTC) để đón đầu và chống kẹt hàng đợi
     - cron: '55 0 * * 1-5'
     # Mốc chuẩn: 08:00 sáng VN (01:00 UTC)
     - cron: '0 1 * * 1-5'
-    # Các mốc cứu viện dự phòng (nếu GitHub Actions bị delay/kẹt hàng đợi lúc 08:00):
+    # Các mốc cứu viện dự phòng ca sáng (nếu GitHub Actions bị delay/kẹt hàng đợi lúc 08:00):
     - cron: '15 1 * * 1-5' # 08:15 VN
     - cron: '30 1 * * 1-5' # 08:30 VN
-    - cron: '45 1 * * 1-5' # 08:45 VN
-    - cron: '15 2 * * 1-5' # 09:15 VN
-    - cron: '45 2 * * 1-5' # 09:45 VN
-    - cron: '15 3 * * 1-5' # 10:15 VN
+    - cron: '0 2 * * 1-5'  # 09:00 VN
+    - cron: '0 3 * * 1-5'  # 10:00 VN
+    # Các mốc cứu viện dự phòng ca trưa (nếu ca sáng bị gián đoạn trước 11:30):
+    - cron: '30 4 * * 1-5' # 11:30 VN (04:30 UTC - bắt đầu quét trưa 20p/lần)
+    - cron: '0 5 * * 1-5'  # 12:00 VN (05:00 UTC)
+    - cron: '30 5 * * 1-5' # 12:30 VN (05:30 UTC)
 
     # --- PHIÊN CHIỀU (13:00 -> 15:30 VN, tức 06:00 -> 08:30 UTC, Thứ 2 - Thứ 6) ---
+    # Mốc khởi động sớm đón đầu ca chiều: 12:55 trưa VN (05:55 UTC)
+    - cron: '55 5 * * 1-5' # 12:55 VN
     # Mốc chính: 13:00 chiều VN (06:00 UTC)
     - cron: '0 6 * * 1-5'
     # Các mốc cứu viện dự phòng ca chiều:

@@ -695,7 +695,7 @@ def send_heartbeat(event_type, details=""):
             "content": f"☀️ **[08:00] BẮT ĐẦU PHIÊN GIÁM SÁT BCTC NGÀY {date_str}**",
             "embeds": [{
                 "title": "🟢 Hệ thống Cloud đang hoạt động tự động",
-                "description": f"Hệ thống tự động quét **115 mã cổ phiếu nhóm 1** định kỳ 10 phút/lần.\n{details}",
+                "description": f"Hệ thống tự động quét **115 mã cổ phiếu nhóm 1**:\n• Phiên Sáng (08:00 - 11:30): **10 phút/lần**\n• Khung Giờ Trưa (11:30 - 13:00): **20 phút/lần**\n• Phiên Chiều (13:00 - 15:30): **10 phút/lần**\n{details}",
                 "color": 0x3B82F6,
                 "footer": {"text": "BCTC Live Cloud Monitor • dulieudautu.com"},
                 "timestamp": datetime.datetime.now(datetime.timezone.utc).isoformat()
@@ -726,8 +726,8 @@ def send_heartbeat(event_type, details=""):
     except Exception as e:
         log(f"Lỗi gửi heartbeat {event_type}: {e}")
 
-def send_silent_ping(scan_index, remaining_count, elapsed_sec, new_count=0):
-    """Gửi nhịp đập 10 phút/lần ở chế độ SILENT (không chuông, không rung điện thoại)"""
+def send_silent_ping(scan_index, remaining_count, elapsed_sec, new_count=0, session_tag=""):
+    """Gửi nhịp đập ở chế độ SILENT (không chuông, không rung điện thoại)"""
     webhook_url = os.environ.get("DISCORD_WEBHOOK_URL")
     if not webhook_url and os.path.exists(DISCORD_CONFIG_FILE):
         try:
@@ -740,11 +740,13 @@ def send_silent_ping(scan_index, remaining_count, elapsed_sec, new_count=0):
         
     now_vn = datetime.datetime.now(datetime.timezone(datetime.timedelta(hours=7)))
     time_str = now_vn.strftime("%H:%M")
+    tag_str = f" • [{session_tag}]" if session_tag else ""
     
     if new_count > 0:
-        content = f"🔥 **[{time_str}] Lượt #{scan_index}:** Phát hiện **{new_count} BCTC MỚI**! Đã gửi thông báo chi tiết."
+        content = f"🔥 **[{time_str}] Lượt #{scan_index}{tag_str}:** Phát hiện **{new_count} BCTC MỚI**! Đã gửi thông báo chi tiết."
     else:
-        content = f"🟢 `[{time_str}]` **Lượt #{scan_index}:** Đã kiểm tra **{remaining_count} mã** ({elapsed_sec}s) • Bình thường, chưa có BCTC mới."
+        freq_str = " (quét 20p/lần)" if session_tag == "Trưa" else ""
+        content = f"🟢 `[{time_str}]` **Lượt #{scan_index}{tag_str}:** Đã kiểm tra **{remaining_count} mã** ({elapsed_sec}s){freq_str} • Bình thường, chưa có BCTC mới."
         
     payload = {
         "content": content,
@@ -952,9 +954,6 @@ def main():
         if time_min < 7 * 60 + 50:
             log("⏰ Chưa đến giờ bắt đầu phiên sáng (trước 07:55). Thoát an toàn.")
             return
-        elif 11 * 60 + 30 <= time_min < 12 * 60 + 55:
-            log("🍱 Đang là giờ nghỉ trưa thị trường (11:30 - 13:00). Thoát an toàn.")
-            return
         elif time_min >= 15 * 60 + 30:
             log("🏁 Đã kết thúc toàn bộ phiên giao dịch hôm nay (sau 15:30). Nghỉ ngơi.")
             return
@@ -964,11 +963,11 @@ def main():
         return
 
     # Xác định ca làm việc:
-    # Ca sáng: 08:00 -> 11:30 (480 -> 690 phút)
-    # Ca chiều: 13:00 -> 15:30 (780 -> 930 phút)
-    if time_min < 12 * 60:
-        session_name = "Ca Sáng (08:00 - 11:30)"
-        target_end_min = 11 * 60 + 30
+    # Ca Sáng & Trưa: 08:00 -> 12:55 (quét 10p/lần lúc 08:00-11:30, và 20p/lần lúc 11:30-13:00)
+    # Ca Chiều: 13:00 -> 15:30 (quét 10p/lần lúc 13:00-15:30)
+    if time_min < 12 * 60 + 55:
+        session_name = "Ca Sáng & Trưa (08:00 - 13:00)"
+        target_end_min = 12 * 60 + 55
         is_morning = True
     else:
         session_name = "Ca Chiều (13:00 - 15:30)"
@@ -978,7 +977,7 @@ def main():
     status = load_status()
     
     if is_morning and status.get('last_morning_greeting') != today_str:
-        send_heartbeat('morning', "Bắt đầu phiên sáng, tự động quét mỗi 10 phút.")
+        send_heartbeat('morning', "Bắt đầu phiên sáng, quét 10 phút/lần (Trưa 20 phút/lần).")
         status['last_morning_greeting'] = today_str
         save_status(status)
         
@@ -1001,27 +1000,34 @@ def main():
         now_vn = datetime.datetime.now(datetime.timezone(datetime.timedelta(hours=7)))
         cur_min = now_vn.hour * 60 + now_vn.minute
         
+        # Xác định chế độ quét (Trưa: 20 phút/lần, Sáng & Chiều: 10 phút/lần)
+        is_lunch_time = (11 * 60 + 30 <= cur_min < 13 * 60)
+        session_tag = "Trưa" if is_lunch_time else ("Sáng" if is_morning else "Chiều")
+        sleep_sec = 1200 if is_lunch_time else 600
+
         try:
             new_cnt, rem_cnt, elapsed = execute_single_scan(scan_index=scan_index)
-            # Gửi nhịp đập Silent mỗi 10 phút để người dùng yên tâm 100%
-            send_silent_ping(scan_index, rem_cnt, elapsed, new_count=new_cnt)
+            # Gửi nhịp đập Silent mỗi lượt quét để người dùng yên tâm 100%
+            send_silent_ping(scan_index, rem_cnt, elapsed, new_count=new_cnt, session_tag=session_tag)
         except Exception as e:
             log(f"Lỗi trong lượt quét #{scan_index}: {e}")
             send_system_error_alert(f"Lỗi trong lượt quét #{scan_index}: {e}")
             
         now_vn = datetime.datetime.now(datetime.timezone(datetime.timedelta(hours=7)))
         cur_min = now_vn.hour * 60 + now_vn.minute
-        if not force_run and cur_min >= target_end_min:
-            log(f"🏁 Đã đạt thời gian kết thúc {session_name}. Dừng ca.")
-            if not is_morning and status.get('last_afternoon_closing') != today_str:
-                completed_cache = load_completed_cache()
-                send_heartbeat('afternoon', f"Đã kết thúc phiên chiều. Tổng số mã đã có BCTC đầy đủ: **{len(completed_cache)} mã**.")
-                status['last_afternoon_closing'] = today_str
-                save_status(status)
-            break
+        if not force_run:
+            if cur_min >= target_end_min or (cur_min + sleep_sec // 60 > target_end_min):
+                log(f"🏁 Đã hoàn tất lượt quét cuối của {session_name}. Dừng ca.")
+                if not is_morning and status.get('last_afternoon_closing') != today_str:
+                    completed_cache = load_completed_cache()
+                    send_heartbeat('afternoon', f"Đã kết thúc phiên chiều. Tổng số mã đã có BCTC đầy đủ: **{len(completed_cache)} mã**.")
+                    status['last_afternoon_closing'] = today_str
+                    save_status(status)
+                break
             
-        log("💤 Ngủ 600 giây (10 phút) trước lượt quét tiếp theo...")
-        time.sleep(600)
+        sleep_min = sleep_sec // 60
+        log(f"💤 [{session_tag}] Ngủ {sleep_sec} giây ({sleep_min} phút) trước lượt quét tiếp theo...")
+        time.sleep(sleep_sec)
         
     log("=== HOÀN TẤT CA LÀM VIỆC ===")
 
