@@ -1,5 +1,19 @@
 [
   {
+    "ticker": "BAX",
+    "company_name": "Công ty Cổ phần Thống Nhất",
+    "exchange": "HNX",
+    "quarter": "Quý 3/2026",
+    "release_date": "15/10/2026 14:02",
+    "title": "BCTC Quý 3",
+    "source": "EzIR_FPTS",
+    "bctc_type": "DAY_DU",
+    "doc_url": "https://file.fpts.com.vn/FileStore2/File/EzIR/UploadFile/News/2026/10/15/File_1_4198_BCTC_Quy_3.2026.pdf",
+    "is_hot": true,
+    "detected_at": "2026-10-15T07:10:45",
+    "lnst_status": "Bản scan giấy đóng dấu đỏ (chưa số hóa)"
+  },
+  {
     "ticker": "HSP",
     "company_name": "Công ty Cổ phần Sơn Tổng hợp Hà Nội",
     "exchange": "UPCOM",
