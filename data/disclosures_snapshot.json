@@ -1,5 +1,18 @@
 [
   {
+    "id": "cf_FPT_2026-10-15_5ac6f29764",
+    "symbol": "FPT",
+    "exchange": "HOSE",
+    "company_name": "Công ty Cổ phần FPT",
+    "title": "FPT: Tái sinh hay tính sai?",
+    "doc_type": "KHAC",
+    "doc_type_label": "Công bố thông tin",
+    "published_at": "2026-10-15 00:01:00",
+    "file_url": "https://cafef.vn/fpt-tai-sinh-hay-tinh-sai-188261014233213759.chn?utm_source=du-lieu.chn",
+    "source": "CafeF_Sở",
+    "is_important": 0
+  },
+  {
     "id": "cf_VCB_2026-10-14_c9fbba98fc",
     "symbol": "VCB",
     "exchange": "HOSE",
@@ -127,6 +140,19 @@
     "published_at": "2026-10-14 17:52:00",
     "file_url": "https://cafef.vn/du-lieu/HDB-2998149/hdb-thong-bao-thay-doi-ten-goi-phong-giao-dich-my4-dinh-1.chn?utm_source=du-lieu.chn",
     "source": "CafeF_Sở",
+    "is_important": 0
+  },
+  {
+    "id": "vci_12191533",
+    "symbol": "ASP",
+    "exchange": "HOSE",
+    "company_name": "Công ty Cổ phần Tập đoàn Dầu khí An Pha",
+    "title": "ASP: Nghị quyết HĐQT về việc thông qua giao dịch với người có liên quan",
+    "doc_type": "NGHI_QUYET_HDQT",
+    "doc_type_label": "Nghị quyết HĐQT",
+    "published_at": "2026-10-14 17:51:44",
+    "file_url": "https://cdn.fiingroup.vn/medialib/127889/I/2024/12/05/15102522223570700_Screenshot_104.png",
+    "source": "Vietcap_FiinGroup",
     "is_important": 0
   },
   {
@@ -715,6 +741,19 @@
     "is_important": 1
   },
   {
+    "id": "vci_12191377",
+    "symbol": "KDH",
+    "exchange": "HOSE",
+    "company_name": "Công ty Cổ phần Đầu tư và Kinh doanh nhà Khang Điền",
+    "title": "KDH: Báo cáo kết quả giao dịch cổ phiếu của người có liên quan đến người nội bộ Vương Thị Ngọc Anh",
+    "doc_type": "GIAO_DICH_NOI_BO",
+    "doc_type_label": "Giao dịch nội bộ",
+    "published_at": "2026-10-14 16:15:16",
+    "file_url": "https://cdn.fiingroup.vn/medialib/127889/I/2024/11/26/11005669610870700_KDH.png",
+    "source": "Vietcap_FiinGroup",
+    "is_important": 0
+  },
+  {
     "id": "cf_KDH_2026-10-14_dd1794ab93",
     "symbol": "KDH",
     "exchange": "HOSE",
@@ -1300,6 +1339,19 @@
     "is_important": 0
   },
   {
+    "id": "vci_12190287",
+    "symbol": "BMI",
+    "exchange": "HOSE",
+    "company_name": "Tổng Công ty Cổ phần Bảo Minh",
+    "title": "HOSE: Thông báo về việc đưa chứng khoán ra khỏi danh sách chứng khoán không đủ điều kiện giao dịch ký quỹ - BMI",
+    "doc_type": "GIAO_DICH_NOI_BO",
+    "doc_type_label": "Giao dịch nội bộ",
+    "published_at": "2026-10-14 08:54:00",
+    "file_url": "",
+    "source": "Vietcap_FiinGroup",
+    "is_important": 0
+  },
+  {
     "id": "cf_VIW_2026-10-13_66e856e867",
     "symbol": "VIW",
     "exchange": "UPCOM",
@@ -1469,6 +1521,19 @@
     "is_important": 0
   },
   {
+    "id": "vci_12190057",
+    "symbol": "KDH",
+    "exchange": "HOSE",
+    "company_name": "Công ty Cổ phần Đầu tư và Kinh doanh nhà Khang Điền",
+    "title": "KDH: Báo cáo kết quả giao dịch cổ phiếu ESOP của Người nội bộ Huỳnh Chí Tâm, Đặng Thị Thùy Trang, Nguyễn Thùy Dương, Trương Thị Sương",
+    "doc_type": "GIAO_DICH_NOI_BO",
+    "doc_type_label": "Giao dịch nội bộ",
+    "published_at": "2026-10-13 17:25:26",
+    "file_url": "https://cdn.fiingroup.vn/medialib/127889/I/2024/11/26/11005669610870700_KDH.png",
+    "source": "Vietcap_FiinGroup",
+    "is_important": 0
+  },
+  {
     "id": "cf_KDH_2026-10-13_7fed012888",
     "symbol": "KDH",
     "exchange": "HOSE",
@@ -1506,6 +1571,32 @@
     "file_url": "https://cafef.vn/du-lieu/VBB-2997322/vbb-thong-bao-ngay-dkcc-thuc-hien-quyen-mua-co-phieu-cho-cdhh.chn?utm_source=du-lieu.chn",
     "source": "CafeF_Sở",
     "is_important": 1
+  },
+  {
+    "id": "vci_12190093",
+    "symbol": "ANV",
+    "exchange": "HOSE",
+    "company_name": "Công ty Cổ phần Nam Việt",
+    "title": "ANV: Thông báo ngày ĐKCC chi trả cổ tức năm 2025 và tạm ứng cổ tức năm 2026",
+    "doc_type": "CO_TUC",
+    "doc_type_label": "Cổ tức & Quyền",
+    "published_at": "2026-10-13 17:23:37",
+    "file_url": "https://cdn.fiingroup.vn/medialib/74/I/2024/11/27/16252299516980700_ANV.jpg",
+    "source": "Vietcap_FiinGroup",
+    "is_important": 1
+  },
+  {
+    "id": "vci_12190076",
+    "symbol": "KDH",
+    "exchange": "HOSE",
+    "company_name": "Công ty Cổ phần Đầu tư và Kinh doanh nhà Khang Điền",
+    "title": "KDH: Báo cáo kết quả giao dịch cổ phiếu ESOP của người có liên quan đến Người nội bộ Lý Thiên Ân",
+    "doc_type": "GIAO_DICH_NOI_BO",
+    "doc_type_label": "Giao dịch nội bộ",
+    "published_at": "2026-10-13 17:23:37",
+    "file_url": "https://cdn.fiingroup.vn/medialib/127889/I/2024/11/26/11005669610870700_KDH.png",
+    "source": "Vietcap_FiinGroup",
+    "is_important": 0
   },
   {
     "id": "cf_KDH_2026-10-13_565ae07ac9",
@@ -2505,97 +2596,6 @@
     "doc_type_label": "Công bố thông tin",
     "published_at": "2026-10-13 00:00:00",
     "file_url": "https://cafef.vn/du-lieu/QTC-2997173/qtc-thay-doi-giay-dkkd-theo-vdl-moi.chn?utm_source=du-lieu.chn",
-    "source": "CafeF_Sở",
-    "is_important": 0
-  },
-  {
-    "id": "cf_PVC_2026-10-13_aca7cbbca9",
-    "symbol": "PVC",
-    "exchange": "HNX",
-    "company_name": "Tổng Công ty Hóa chất và Dịch vụ Dầu khí - Công ty Cổ phần",
-    "title": "PVC: Thay đổi giấy ĐKKD do đổi người đại diện pháp luật",
-    "doc_type": "KHAC",
-    "doc_type_label": "Công bố thông tin",
-    "published_at": "2026-10-13 00:00:00",
-    "file_url": "https://cafef.vn/du-lieu/PVC-2997159/pvc-thay-doi-giay-dkkd-do-doi-nguoi-dai-dien-phap-luat.chn?utm_source=du-lieu.chn",
-    "source": "CafeF_Sở",
-    "is_important": 0
-  },
-  {
-    "id": "cf_SDG_2026-10-13_12340e02e8",
-    "symbol": "SDG",
-    "exchange": "HNX",
-    "company_name": "Công ty Cổ phần Sadico Cần Thơ",
-    "title": "SDG: Bà Vũ Thị Nga làm GĐ Trung tâm Tài chính từ 5.10.2026",
-    "doc_type": "KHAC",
-    "doc_type_label": "Công bố thông tin",
-    "published_at": "2026-10-13 00:00:00",
-    "file_url": "https://cafef.vn/du-lieu/SDG-2997158/sdg-ba-vu-thi-nga-lam-gd-trung-tam-tai-chinh-tu-5102026.chn?utm_source=du-lieu.chn",
-    "source": "CafeF_Sở",
-    "is_important": 0
-  },
-  {
-    "id": "cf_PPE_2026-10-13_8ae896953d",
-    "symbol": "PPE",
-    "exchange": "HNX",
-    "company_name": "Công ty Cổ phần Tư vấn Đầu tư PP Enterprise",
-    "title": "PPE: Aro2O Fintech (Singapore) Pte.,Ltd đã mua 635.898 cổ phiếu",
-    "doc_type": "KHAC",
-    "doc_type_label": "Công bố thông tin",
-    "published_at": "2026-10-13 00:00:00",
-    "file_url": "https://cafef.vn/du-lieu/PPE-2997128/ppe-aro2o-fintech-singapore-pteltd-da-mua-635898-co-phieu.chn?utm_source=du-lieu.chn",
-    "source": "CafeF_Sở",
-    "is_important": 0
-  },
-  {
-    "id": "cf_THU_2026-10-12_425d78ceaf",
-    "symbol": "THU",
-    "exchange": "UPCOM",
-    "company_name": "Công ty Cổ phần Môi trường và Công trình đô thị Thanh Hóa",
-    "title": "THU: Thay đổi nhân sự",
-    "doc_type": "KHAC",
-    "doc_type_label": "Công bố thông tin",
-    "published_at": "2026-10-12 19:06:00",
-    "file_url": "https://cafef.vn/du-lieu/THU-2996519/thu-thay-doi-nhan-su.chn?utm_source=du-lieu.chn",
-    "source": "CafeF_Sở",
-    "is_important": 0
-  },
-  {
-    "id": "cf_QNC_2026-10-12_36c7fea815",
-    "symbol": "QNC",
-    "exchange": "UPCOM",
-    "company_name": "Công ty Cổ phần Xi măng và Xây dựng Quảng Ninh",
-    "title": "QNC: Tài liệu họp Đại hội đồng cổ đông",
-    "doc_type": "DHDCD",
-    "doc_type_label": "ĐHĐCĐ",
-    "published_at": "2026-10-12 19:04:00",
-    "file_url": "https://cafef.vn/du-lieu/QNC-2996518/qnc-tai-lieu-hop-dai-hoi-dong-co-dong.chn?utm_source=du-lieu.chn",
-    "source": "CafeF_Sở",
-    "is_important": 0
-  },
-  {
-    "id": "cf_VNA_2026-10-12_e601db0247",
-    "symbol": "VNA",
-    "exchange": "UPCOM",
-    "company_name": "Công ty Cổ phần Vận tải biển Vinaship",
-    "title": "VNA: Công bố thông tin về việc bán tàu Mỹ Hưng",
-    "doc_type": "KHAC",
-    "doc_type_label": "Công bố thông tin",
-    "published_at": "2026-10-12 19:03:00",
-    "file_url": "https://cafef.vn/du-lieu/VNA-2996515/vna-cong-bo-thong-tin-ve-viec-ban-tau-my-hung.chn?utm_source=du-lieu.chn",
-    "source": "CafeF_Sở",
-    "is_important": 0
-  },
-  {
-    "id": "cf_VCP_2026-10-12_b7349391be",
-    "symbol": "VCP",
-    "exchange": "UPCOM",
-    "company_name": "Công ty Cổ phần Xây dựng và Năng lượng VCP",
-    "title": "VCP: Quyết định xử phạt vi phạm hành chính thuế",
-    "doc_type": "KHAC",
-    "doc_type_label": "Công bố thông tin",
-    "published_at": "2026-10-12 19:01:00",
-    "file_url": "https://cafef.vn/du-lieu/VCP-2996514/vcp-quyet-dinh-xu-phat-vi-pham-hanh-chinh-thue.chn?utm_source=du-lieu.chn",
     "source": "CafeF_Sở",
     "is_important": 0
   }

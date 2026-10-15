@@ -762,7 +762,7 @@
     {
       "t": "AIG",
       "n": "Công ty Cổ phần Nguyên liệu Á Châu AIG",
-      "s": "Sản phẩm thực ph���m",
+      "s": "Sản phẩm thực phẩm",
       "e": "",
       "et": "nonbank",
       "px": 45.5,
@@ -1477,7 +1477,7 @@
     },
     {
       "t": "BBH",
-      "n": "Công ty Cổ phần Bao bì Hoàng Thạch",
+      "n": "C��ng ty Cổ phần Bao bì Hoàng Thạch",
       "s": "Thùng, hộp, bao bì",
       "e": "",
       "et": "nonbank",
@@ -1960,7 +1960,7 @@
     {
       "t": "BHG",
       "n": "Công ty Cổ phần Chè Biển Hồ",
-      "s": "Nông sản, thủy sản, đ��n điền",
+      "s": "Nông sản, thủy sản, đồn điền",
       "e": "",
       "et": "nonbank",
       "px": 11,
@@ -2494,7 +2494,7 @@
     },
     {
       "t": "BNA",
-      "n": "Công ty Cổ phần Tập đoàn Đầu tư Bảo Ngọc",
+      "n": "Công ty Cổ ph��n Tập đoàn Đầu tư Bảo Ngọc",
       "s": "Sản phẩm thực phẩm",
       "e": "",
       "et": "nonbank",
@@ -2584,7 +2584,7 @@
       "pb": 0.9,
       "roe": 0.2,
       "port": false,
-      "g": "Hàng Tiêu dùng",
+      "g": "Hàng Ti��u dùng",
       "s2": "Thực phẩm và đồ uống",
       "w1": null,
       "d": "2026-10-09",
@@ -2956,7 +2956,7 @@
     {
       "t": "BTH",
       "n": "Công ty Cổ phần Chế tạo Biến thế và Vật liệu Điện Hà Nội",
-      "s": "Các linh kiện và thiết bị đi���n",
+      "s": "Các linh kiện và thiết bị điện",
       "e": "",
       "et": "nonbank",
       "px": 16.5,
@@ -3050,7 +3050,7 @@
     {
       "t": "BTT",
       "n": "Công ty Cổ phần Thương mại - Dịch vụ Bến Thành",
-      "s": "Bán lẻ tổng h��p",
+      "s": "Bán lẻ tổng hợp",
       "e": "",
       "et": "nonbank",
       "px": 39.5,
@@ -5807,7 +5807,7 @@
     {
       "t": "DAN",
       "n": "Công ty Cổ phần Dược Danapha",
-      "s": "Bán lẻ thuốc",
+      "s": "B��n lẻ thuốc",
       "e": "",
       "et": "nonbank",
       "px": 25,
@@ -6086,7 +6086,7 @@
     },
     {
       "t": "DCM",
-      "n": "Công ty Cổ phần - Tổng Công ty Phân bón Dầu Khí Cà Mau",
+      "n": "Công ty Cổ phần - Tổng Công ty Phân bón D��u Khí Cà Mau",
       "s": "Hóa chất chuyên dụng",
       "e": "",
       "et": "nonbank",
@@ -6721,7 +6721,7 @@
     },
     {
       "t": "DLD",
-      "n": "Công ty Cổ phần Du lịch Đắk L���k",
+      "n": "Công ty Cổ phần Du lịch Đắk Lắk",
       "s": "Du lịch",
       "e": "",
       "et": "nonbank",
@@ -6936,7 +6936,7 @@
     {
       "t": "DND",
       "n": "Công ty Cổ phần Đầu tư Xây dựng và Vật liệu Đồng Nai",
-      "s": "Thiết bị, vật liệu xây dựng",
+      "s": "Thiết bị, v��t liệu xây dựng",
       "e": "",
       "et": "nonbank",
       "px": 8.1,
@@ -7516,7 +7516,7 @@
     {
       "t": "DSE",
       "n": "Công ty Cổ phần Chứng khoán DNSE",
-      "s": "C��ng ty Chứng khoán",
+      "s": "Công ty Chứng khoán",
       "e": "",
       "et": "stock",
       "px": 21.15,
@@ -8521,7 +8521,7 @@
     },
     {
       "t": "EVE",
-      "n": "Công ty Cổ phần Everpia",
+      "n": "Công ty C�� phần Everpia",
       "s": "Sản phẩm gia dụng lâu bền",
       "e": "",
       "et": "nonbank",
@@ -9450,7 +9450,7 @@
     },
     {
       "t": "GHC",
-      "n": "Công ty Cổ ph���n Thủy điện Gia Lai",
+      "n": "Công ty Cổ phần Thủy điện Gia Lai",
       "s": "Sản xuất và cung cấp điện truyền thống",
       "e": "",
       "et": "nonbank",
@@ -12509,7 +12509,7 @@
     {
       "t": "HVN",
       "n": "Tổng Công ty Hàng không Việt Nam - CTCP",
-      "s": "Hàng không chở khách",
+      "s": "Hàng không chở kh��ch",
       "e": "",
       "et": "nonbank",
       "px": 20.35,
@@ -18372,7 +18372,7 @@
     },
     {
       "t": "PCE",
-      "n": "Công ty Cổ phần Phân bón và hóa chất dầu khí Miền Trung",
+      "n": "Công ty Cổ phần Phân bón v�� hóa chất dầu khí Miền Trung",
       "s": "Hóa chất cơ bản - Sản phẩm nhựa, cao su, hóa chất",
       "e": "",
       "et": "nonbank",
