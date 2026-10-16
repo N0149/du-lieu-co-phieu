@@ -97,5 +97,32 @@
     "doc_url": "http://bimico.vn/VanBan/VanBan_Chitiet/2316",
     "source": "Company_Web",
     "updated_at": "2026-10-16 04:04:11"
+  },
+  "HTI": {
+    "ticker": "HTI",
+    "bctc_type": "GIAI_TRINH",
+    "title": "Giải trình biến động kết quả kinh doanh  BCTC quý 3 năm 2026",
+    "date": "16/10/2026 11:15",
+    "doc_url": "https://file.fpts.com.vn/FileStore2/File/EzIR/UploadFile/News/2026/10/16/File_1_8364_HIT-Giai_trinh_KQKD_Q3.2026_V.pdf",
+    "source": "EzIR_FPTS",
+    "updated_at": "2026-10-16 05:07:31"
+  },
+  "HWS": {
+    "ticker": "HWS",
+    "bctc_type": "DAY_DU",
+    "title": "Báo cáo tài chính Quý III năm 2026",
+    "date": "16/10/2026",
+    "doc_url": "https://huewaco.com.vn/co-dong/tai-lieu/14e1fb0a-1540-4da0-9db7-28252cb5d9c5?ReturnUrl=%2Fco-dong%2Fbao-cao-tai-chinh",
+    "source": "Company_Web",
+    "updated_at": "2026-10-16 05:07:33"
+  },
+  "GSM": {
+    "ticker": "GSM",
+    "bctc_type": "GIAI_TRINH",
+    "title": "Báo cáo tài chính Quý 3.2026 và giải trình chênh lệch LNST so với cùng kỳ năm trước",
+    "date": "16/10/2026 11:30",
+    "doc_url": "https://file.fpts.com.vn/FileStore2/File/EzIR/UploadFile/News/2026/10/16/File_1_6346_BCTC_quy_3.2026.rar",
+    "source": "EzIR_FPTS",
+    "updated_at": "2026-10-16 05:07:39"
   }
 }
