@@ -1,5 +1,33 @@
 [
   {
+    "ticker": "SBL",
+    "company_name": "Công ty Cổ phần Bia Sài Gòn - Bạc Liêu",
+    "exchange": "UPCOM",
+    "quarter": "Quý 3/2026",
+    "release_date": "16/10/2026 14:36",
+    "title": "Báo cáo tài chính quý 3 năm 2026 kèm giải trình",
+    "source": "EzIR_FPTS",
+    "bctc_type": "GIAI_TRINH",
+    "doc_url": "https://file.fpts.com.vn/FileStore2/File/EzIR/UploadFile/News/2026/10/16/File_1_2595_VI_BaoCaoTaiChinh_Q3_2026.pdf",
+    "is_hot": true,
+    "detected_at": "2026-10-16T07:46:57",
+    "lnst_status": "Bản scan giấy đóng dấu đỏ (chưa số hóa)"
+  },
+  {
+    "ticker": "LAW",
+    "company_name": "Công ty Cổ phần Cấp thoát nước Long An",
+    "exchange": "UPCOM",
+    "quarter": "Quý 3/2026",
+    "release_date": "16/10/2026 14:23",
+    "title": "Giải trình biến động tăng/giảm lợi nhuận quý 3/2026 so với quý 3/2026",
+    "source": "EzIR_FPTS",
+    "bctc_type": "GIAI_TRINH",
+    "doc_url": "https://file.fpts.com.vn/FileStore2/File/EzIR/UploadFile/News/2026/10/16/File_1_1224_giai_trinh_Q3_da_ky.pdf",
+    "is_hot": true,
+    "detected_at": "2026-10-16T07:25:27",
+    "lnst_status": "Bản scan giấy đóng dấu đỏ (chưa số hóa)"
+  },
+  {
     "ticker": "GSM",
     "company_name": "Công ty Cổ phần Thủy điện Hương Sơn",
     "exchange": "UPCOM",

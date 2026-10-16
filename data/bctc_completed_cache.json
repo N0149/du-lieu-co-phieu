@@ -124,5 +124,23 @@
     "doc_url": "https://file.fpts.com.vn/FileStore2/File/EzIR/UploadFile/News/2026/10/16/File_1_6346_BCTC_quy_3.2026.rar",
     "source": "EzIR_FPTS",
     "updated_at": "2026-10-16 05:07:39"
+  },
+  "LAW": {
+    "ticker": "LAW",
+    "bctc_type": "GIAI_TRINH",
+    "title": "Giải trình biến động tăng/giảm lợi nhuận quý 3/2026 so với quý 3/2026",
+    "date": "16/10/2026 14:23",
+    "doc_url": "https://file.fpts.com.vn/FileStore2/File/EzIR/UploadFile/News/2026/10/16/File_1_1224_giai_trinh_Q3_da_ky.pdf",
+    "source": "EzIR_FPTS",
+    "updated_at": "2026-10-16 07:25:27"
+  },
+  "SBL": {
+    "ticker": "SBL",
+    "bctc_type": "GIAI_TRINH",
+    "title": "Báo cáo tài chính quý 3 năm 2026 kèm giải trình",
+    "date": "16/10/2026 14:36",
+    "doc_url": "https://file.fpts.com.vn/FileStore2/File/EzIR/UploadFile/News/2026/10/16/File_1_2595_VI_BaoCaoTaiChinh_Q3_2026.pdf",
+    "source": "EzIR_FPTS",
+    "updated_at": "2026-10-16 07:46:57"
   }
 }
