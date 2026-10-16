@@ -1,5 +1,19 @@
 [
   {
+    "ticker": "SZB",
+    "company_name": "Công ty Cổ phần Sonadezi Long Bình",
+    "exchange": "HNX",
+    "quarter": "Quý 3/2026",
+    "release_date": "16/10/2026",
+    "title": "Báo cáo tài chính Quý 3/2026",
+    "source": "Company_Web",
+    "bctc_type": "DAY_DU",
+    "doc_url": "https://szb.com.vn/vn/bao-cao-tai-chinh-quy-iii-nam-2026.html",
+    "is_hot": true,
+    "detected_at": "2026-10-16T03:48:18",
+    "lnst_status": "Tài liệu không phải file PDF trực tiếp"
+  },
+  {
     "ticker": "CLC",
     "company_name": "Công ty Cổ phần Cát Lợi",
     "exchange": "HOSE",

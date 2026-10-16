@@ -79,5 +79,14 @@
     "doc_url": "http://catloi.com.vn/index.php?option=com_content&task=view&id=1547&Itemid=12",
     "source": "Company_Web",
     "updated_at": "2026-10-16 02:27:29"
+  },
+  "SZB": {
+    "ticker": "SZB",
+    "bctc_type": "DAY_DU",
+    "title": "Báo cáo tài chính Quý 3/2026",
+    "date": "16/10/2026",
+    "doc_url": "https://szb.com.vn/vn/bao-cao-tai-chinh-quy-iii-nam-2026.html",
+    "source": "Company_Web",
+    "updated_at": "2026-10-16 03:48:18"
   }
 }
