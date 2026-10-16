@@ -1,5 +1,19 @@
 [
   {
+    "ticker": "BMC",
+    "company_name": "Công ty Cổ phần Khoáng sản Bình Định",
+    "exchange": "HOSE",
+    "quarter": "Quý 3/2026",
+    "release_date": "16/10/2026",
+    "title": "Báo cáo tài chính quý 3 năm 2026",
+    "source": "Company_Web",
+    "bctc_type": "DAY_DU",
+    "doc_url": "http://bimico.vn/VanBan/VanBan_Chitiet/2316",
+    "is_hot": true,
+    "detected_at": "2026-10-16T04:04:11",
+    "lnst_status": "Tài liệu không phải file PDF trực tiếp"
+  },
+  {
     "ticker": "SZB",
     "company_name": "Công ty Cổ phần Sonadezi Long Bình",
     "exchange": "HNX",
