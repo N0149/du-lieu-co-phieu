@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-10-15T17:40:32.333Z",
-  "total": 394,
+  "updatedAt": "2026-10-16T17:16:04.474Z",
+  "total": 393,
   "availableSectors": [
     "Bán lẻ",
     "Bảo hiểm",
@@ -1365,23 +1365,6 @@
       "pageCount": 16,
       "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/sector/bao-cao-nganh-cao-su-don-dau-chu-ky-moi-22117.pdf",
       "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/sector/bao-cao-nganh-cao-su-don-dau-chu-ky-moi-22117.jpg",
-      "recommendation": null,
-      "targetPrice": null
-    },
-    {
-      "id": "vc_37202",
-      "slug": "cap-nhat-vi-mo-tham-hut-thuong-mai-thu-hep-ty-gia-usd-vnd-giam-trong-thang-8",
-      "title": "Cập nhật Vĩ mô - Thâm hụt thương mại thu hẹp, tỷ giá USD/VND giảm trong tháng 8",
-      "source": "Vietcap",
-      "date": "2026-09-10",
-      "displayDate": "10/09/2026",
-      "scope": "sector",
-      "sectorName": "Vĩ mô & Chiến lược",
-      "symbol": null,
-      "description": "- Hoạt động sản xuất tiếp tục tăng trưởng mạnh: Chỉ số sản xuất công nghiệp (IIP) toàn ngành tăng 14,4% so với cùng kỳ (YoY) trong tháng 8, đưa mức tăng trưởng 8 tháng đầu năm 2026 (8T 2026) lên 11,9% YoY. Sản lượng ngành sản xuất, chế biến & chế tạo tăng 14,6% YoY trong tháng 8 và 12,5% YoY trong 8T 2026. Chúng tôi kỳ vọng đà tăng trưởng của hoạt động sản xuất sẽ duy trì ở mức cao nhờ lượng đơn hàng mới tiếp tục tăng, mặc dù niềm tin kinh doanh còn tương đối yếu khi bất ổn địa chính trị vẫn là các yếu tố rủi ro chính. - Doanh thu bán lẻ tháng 8 ghi nhận tăng trưởng mạnh theo danh nghĩa, nhưng chỉ tăng nhẹ nếu loại trừ yếu tố giá: Tổng doanh thu bán lẻ tăng 13,3% YoY trong 8T 2026 (8T 2025: +9,6% YoY). Tuy nhiên, doanh số bán lẻ thực tăng 7,6% YoY, tăng nhẹ từ mức 7,5% YoY của cùng kỳ năm trước. Chúng tôi kỳ vọng tiêu dùng trong nước sẽ duy trì tương đối tích cực trong tháng 9, được hỗ trợ bởi lượng khách du lịch duy trì ổn định, kỳ nghỉ lễ Quốc khánh kéo dài, nhu cầu mùa tựu trường và dịp Tết Trung thu tăng. - Giải ngân đầu tư công tăng tốc trong tháng 8: Giải ngân trong tháng đạt 95,7 nghìn tỷ đồng, mức cao thứ hai từ đầu năm và cao hơn đáng kể so với mức trung bình 59,8 nghìn tỷ",
-      "pageCount": 0,
-      "downloadUrl": "https://www.vietcap.com.vn/api/cms-api/uploads/file/202609/CapnhatVM-20260909.pdf",
-      "thumbnailUrl": "",
       "recommendation": null,
       "targetPrice": null
     },
