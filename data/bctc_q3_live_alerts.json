@@ -1,5 +1,19 @@
 [
   {
+    "ticker": "CLC",
+    "company_name": "Công ty Cổ phần Cát Lợi",
+    "exchange": "HOSE",
+    "quarter": "Quý 3/2026",
+    "release_date": "16/10/2026",
+    "title": "Báo cáo tài chính Quý 3/2026",
+    "source": "Company_Web",
+    "bctc_type": "DAY_DU",
+    "doc_url": "http://catloi.com.vn/index.php?option=com_content&task=view&id=1547&Itemid=12",
+    "is_hot": true,
+    "detected_at": "2026-10-16T02:27:28",
+    "lnst_status": "Lỗi đọc PDF (timed out)"
+  },
+  {
     "ticker": "BAX",
     "company_name": "Công ty Cổ phần Thống Nhất",
     "exchange": "HNX",
