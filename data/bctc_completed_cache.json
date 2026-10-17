@@ -142,5 +142,59 @@
     "doc_url": "https://file.fpts.com.vn/FileStore2/File/EzIR/UploadFile/News/2026/10/16/File_1_2595_VI_BaoCaoTaiChinh_Q3_2026.pdf",
     "source": "EzIR_FPTS",
     "updated_at": "2026-10-16 07:46:57"
+  },
+  "BBS": {
+    "ticker": "BBS",
+    "bctc_type": "DAY_DU",
+    "title": "BÁO CÁO TÀI CHÍNH QUÝ III/2026",
+    "date": "17/10/2026",
+    "doc_url": "https://butsonpackaging.vn/blogs/bao-cao-tai-chinh/bao-cao-tai-chinh-quy-iii-2026",
+    "source": "Company_Web",
+    "updated_at": "2026-10-17 08:25:16"
+  },
+  "KHS": {
+    "ticker": "KHS",
+    "bctc_type": "DAY_DU",
+    "title": "Báo cáo tài chính Quý 3 năm 2026",
+    "date": "17/10/2026",
+    "doc_url": "http://kihuseavn.com/bao-cao-tai-chinh/bv-532/bao-cao-tai-chinh-quy-3-nam-2026/",
+    "source": "Company_Web",
+    "updated_at": "2026-10-17 08:25:17"
+  },
+  "ALC": {
+    "ticker": "ALC",
+    "bctc_type": "DAY_DU",
+    "title": "Báo cáo tài chính Quý 3 năm 2026 (16/10/2026)",
+    "date": "17/10/2026",
+    "doc_url": "https://aulac.com.vn/quan-he-co-dong/bao-cao-tai-chinh-quy-3-nam-2026-16102026--303.html",
+    "source": "Company_Web",
+    "updated_at": "2026-10-17 08:25:18"
+  },
+  "DTG": {
+    "ticker": "DTG",
+    "bctc_type": "DAY_DU",
+    "title": "Báo cáo tài chính Quý 3",
+    "date": "17/10/2026",
+    "doc_url": "https://tipharco.vn/quan-he-co-dong/bao-cao-tai-chinh/2026-BCTC/bao-cao-tai-chinh-quy-3-2026",
+    "source": "Company_Web",
+    "updated_at": "2026-10-17 08:25:19"
+  },
+  "GSP": {
+    "ticker": "GSP",
+    "bctc_type": "GIAI_TRINH",
+    "title": "Báo cáo tài chính Quý 3 năm 2026 và Công văn giải trình chênh lệch LNST từ 10% trở lên so với cùng kỳ",
+    "date": "16/10/2026 15:31",
+    "doc_url": "https://file.fpts.com.vn/FileStore2/File/EzIR/UploadFile/News/2026/10/16/File_1_9854_20261016_-_GSP_-_BCTC_quy_3_nam_2026_va_cong_van_giai_trinh.pdf",
+    "source": "EzIR_FPTS",
+    "updated_at": "2026-10-17 08:25:21"
+  },
+  "CMF": {
+    "ticker": "CMF",
+    "bctc_type": "DAY_DU",
+    "title": "BÁO CÁO TÀI CHÍNH QUÝ III NĂM 2026",
+    "date": "17/10/2026",
+    "doc_url": "https://cholimexfood.com.vn/bao-cao-tai-chinh-quy-iii-nam-2026/",
+    "source": "Company_Web",
+    "updated_at": "2026-10-17 08:25:24"
   }
 }
