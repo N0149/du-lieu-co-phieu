@@ -726,6 +726,30 @@ def send_heartbeat(event_type, details=""):
                 "timestamp": datetime.datetime.now(datetime.timezone.utc).isoformat()
             }]
         }
+    elif event_type == 'test_start':
+        desc = details if isinstance(details, str) else details.get('desc', '')
+        payload = {
+            "content": f"🧪 **BẮT ĐẦU CHẠY THỬ NGHIỆM GIÁM SÁT BCTC NGÀY {date_str}**",
+            "embeds": [{
+                "title": "🟢 Kích hoạt Thử Nghiệm Kiểm Tra Nhịp Đập & Chu Kỳ",
+                "description": f"Hệ thống đang chạy thử nghiệm theo yêu cầu:\n• Tần suất quét ngầm: **5 phút/lần** (Bắt BCTC tức thì)\n• Báo nhịp đập Discord: **10 phút/lần** (Báo bình thường, chống spam)\n• Cảnh báo BCTC mới: **Ngay lập tức** kèm LNST & % YoY\n{desc}",
+                "color": 0x3B82F6,
+                "footer": {"text": "BCTC Live Monitor • dulieudautu.com"},
+                "timestamp": datetime.datetime.now(datetime.timezone.utc).isoformat()
+            }]
+        }
+    elif event_type == 'test_end':
+        desc = details if isinstance(details, str) else details.get('desc', '')
+        payload = {
+            "content": f"🏁 **HOÀN TẤT PHIÊN CHẠY THỬ NGHIỆM NGÀY {date_str}**",
+            "embeds": [{
+                "title": "✅ Thử Nghiệm Thành Công",
+                "description": f"{desc}\nHệ thống đã hoàn tất và dừng an toàn. Sẵn sàng cho tuần mới!",
+                "color": 0x10B981,
+                "footer": {"text": "BCTC Live Monitor • dulieudautu.com"},
+                "timestamp": datetime.datetime.now(datetime.timezone.utc).isoformat()
+            }]
+        }
     else:
         return
 
@@ -959,6 +983,21 @@ def main():
     is_loop = ('--loop' in sys.argv)
     force_run = ('--force' in sys.argv)
     is_cloud = (os.environ.get("GITHUB_ACTIONS") == "true")
+
+    start_arg = None
+    until_arg = None
+    for i, arg in enumerate(sys.argv):
+        if arg.startswith('--start='):
+            start_arg = arg.split('=')[1]
+        elif arg == '--start' and i + 1 < len(sys.argv):
+            start_arg = sys.argv[i + 1]
+        elif arg.startswith('--until='):
+            until_arg = arg.split('=')[1]
+        elif arg == '--until' and i + 1 < len(sys.argv):
+            until_arg = sys.argv[i + 1]
+
+    if until_arg:
+        force_run = True
     
     if not is_cloud:
         enable_windows_keep_awake()
@@ -968,7 +1007,22 @@ def main():
     time_min = now_vn.hour * 60 + now_vn.minute
     weekday = now_vn.weekday() # 0 = Thứ 2, 4 = Thứ 6, 5 = Thứ 7, 6 = Chủ Nhật
 
-    # Kiểm tra ngày & giờ giao dịch (bỏ qua nếu dùng cờ --force)
+    # Xử lý tham số chờ bắt đầu phiên thử nghiệm (--start HH:MM)
+    if start_arg:
+        try:
+            sh, sm = map(int, start_arg.split(':'))
+            start_min = sh * 60 + sm
+            if time_min < start_min:
+                wait_sec = (start_min - time_min) * 60 - now_vn.second
+                log(f"⏰ Bạn vừa bật phiên thử nghiệm lúc {now_vn.strftime('%H:%M:%S')}. Đang chờ đến {start_arg} để bắt đầu...")
+                log(f"⏳ Tự động đếm ngược: còn {wait_sec // 60} phút {wait_sec % 60} giây...")
+                time.sleep(max(1, wait_sec))
+                now_vn = datetime.datetime.now(datetime.timezone(datetime.timedelta(hours=7)))
+                time_min = now_vn.hour * 60 + now_vn.minute
+        except Exception as e:
+            log(f"Lỗi phân tích cú pháp --start: {e}")
+
+    # Kiểm tra ngày & giờ giao dịch (bỏ qua nếu dùng cờ --force hoặc --until)
     if not force_run:
         if weekday >= 5:
             log("📅 Hôm nay là cuối tuần (thị trường chứng khoán nghỉ). Dừng quét (dùng --force nếu muốn chạy thử).")
@@ -997,8 +1051,19 @@ def main():
 
     # Xác định ca làm việc:
     # Trên Cloud: tách ca để tránh vượt quá 6 giờ giới hạn của GitHub runner
-    # Trên Local: chạy liên tục toàn ngày từ 08:00 đến 15:30
-    if is_cloud:
+    # Trên Local: chạy liên tục toàn ngày từ 08:00 đến 15:30 (hoặc theo khung giờ thử nghiệm --until)
+    if until_arg:
+        try:
+            eh, em = map(int, until_arg.split(':'))
+            target_end_min = eh * 60 + em
+            session_name = f"Phiên Thử Nghiệm ({start_arg or now_vn.strftime('%H:%M')} - {until_arg})"
+            is_morning = False
+        except Exception as e:
+            log(f"Lỗi phân tích cú pháp --until: {e}")
+            target_end_min = 15 * 60 + 30
+            session_name = "Phiên Giám sát (Local)"
+            is_morning = False
+    elif is_cloud:
         if time_min < 12 * 60 + 55:
             session_name = "Ca Sáng & Trưa (08:00 - 13:00)"
             target_end_min = 12 * 60 + 55
@@ -1014,7 +1079,9 @@ def main():
         
     status = load_status()
     
-    if is_morning and status.get('last_morning_greeting') != today_str:
+    if until_arg:
+        send_heartbeat('test_start', f"• Khung giờ thử nghiệm: **{start_arg or now_vn.strftime('%H:%M')} - {until_arg}**")
+    elif is_morning and status.get('last_morning_greeting') != today_str:
         send_heartbeat('morning', "Bắt đầu phiên sáng, quét 5 phút/lần (Trưa 10 phút/lần).")
         status['last_morning_greeting'] = today_str
         save_status(status)
@@ -1059,7 +1126,12 @@ def main():
             
         now_vn = datetime.datetime.now(datetime.timezone(datetime.timedelta(hours=7)))
         cur_min = now_vn.hour * 60 + now_vn.minute
-        if not force_run:
+        if until_arg:
+            if cur_min >= target_end_min or (cur_min + sleep_sec // 60 > target_end_min):
+                log(f"🏁 Đã hoàn tất phiên chạy thử nghiệm ({until_arg}). Hoàn thành {scan_index} lượt quét.")
+                send_heartbeat('test_end', f"• Đã thực hiện thành công **{scan_index} lượt quét** ngầm (5 phút/lần) trong khung giờ **{start_arg or ''} - {until_arg}**.")
+                break
+        elif not force_run:
             if cur_min >= target_end_min or (cur_min + sleep_sec // 60 > target_end_min):
                 log(f"🏁 Đã hoàn tất lượt quét cuối của {session_name}. Dừng ca.")
                 if status.get('last_afternoon_closing') != today_str:
