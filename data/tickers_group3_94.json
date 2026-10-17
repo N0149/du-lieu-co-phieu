@@ -1,0 +1,848 @@
+[
+  {
+    "stt": 185,
+    "ticker": "VPS",
+    "name": "Công ty Cổ phần Thuốc sát trùng Việt Nam",
+    "san": "HOSE",
+    "batch_file": "Distill_Batch_09_Ngay_29_30.json",
+    "dot_ra": "Batch 09 (29-30/10)",
+    "uri": "https://www.vipesco.com.vn/quan-he-co-dong.html"
+  },
+  {
+    "stt": 186,
+    "ticker": "AAA",
+    "name": "Công ty Cổ phần Nhựa An Phát Xanh",
+    "san": "HOSE",
+    "batch_file": "Distill_Batch_09_Ngay_29_30.json",
+    "dot_ra": "Batch 09 (29-30/10)",
+    "uri": "https://anphatbioplastics.com/quan-he-co-dong/bao-cao-dinh-ky/aaa-bao-cao-tai-chinh-rieng-ban-nien-soat-xet-nam-2026.html"
+  },
+  {
+    "stt": 187,
+    "ticker": "AIG",
+    "name": "Công ty Cổ phần Nguyên liệu Á Châu AIG",
+    "san": "UPCOM",
+    "batch_file": "Distill_Batch_09_Ngay_29_30.json",
+    "dot_ra": "Batch 09 (29-30/10)",
+    "uri": "https://asiagroup-vn.com/quan-he-nha-dau-tu/#tab5"
+  },
+  {
+    "stt": 188,
+    "ticker": "ALT",
+    "name": "Công ty Cổ phần Văn hóa Tân Bình",
+    "san": "HNX",
+    "batch_file": "Distill_Batch_09_Ngay_29_30.json",
+    "dot_ra": "Batch 09 (29-30/10)",
+    "uri": "https://alta.com.vn/quan-he-co-dong/"
+  },
+  {
+    "stt": 189,
+    "ticker": "AMS",
+    "name": "Công ty Cổ phần Cơ khí Xây dựng AMECC",
+    "san": "UPCOM",
+    "batch_file": "Distill_Batch_09_Ngay_29_30.json",
+    "dot_ra": "Batch 09 (29-30/10)",
+    "uri": "https://amecc.com.vn/bao-cao-tai-chinh-l70093.html"
+  },
+  {
+    "stt": 190,
+    "ticker": "ANT",
+    "name": "Công ty Cổ phần Rau quả Thực phẩm An Giang",
+    "san": "HOSE",
+    "batch_file": "Distill_Batch_09_Ngay_29_30.json",
+    "dot_ra": "Batch 09 (29-30/10)",
+    "uri": "https://antesco.com/cap-nhat-tai-chinh/"
+  },
+  {
+    "stt": 191,
+    "ticker": "C47",
+    "name": "Công ty Cổ phần Xây dựng 47",
+    "san": "HOSE",
+    "batch_file": "Distill_Batch_09_Ngay_29_30.json",
+    "dot_ra": "Batch 09 (29-30/10)",
+    "uri": "https://www.xaydung47.vn/chuyen-muc/quan-he-co-dong/bao-cao-tai-chinh/"
+  },
+  {
+    "stt": 192,
+    "ticker": "CKD",
+    "name": "Công ty Cổ phần Cơ khí Đông Anh Licogi",
+    "san": "UPCOM",
+    "batch_file": "Distill_Batch_09_Ngay_29_30.json",
+    "dot_ra": "Batch 09 (29-30/10)",
+    "uri": "https://ckda.vn/financial-report"
+  },
+  {
+    "stt": 193,
+    "ticker": "CLX",
+    "name": "Công ty Cổ phần Xuất nhập khẩu và Đầu tư Chợ Lớn (CHOLIMEX)",
+    "san": "UPCOM",
+    "batch_file": "Distill_Batch_09_Ngay_29_30.json",
+    "dot_ra": "Batch 09 (29-30/10)",
+    "uri": "https://www.cholimex.vn/vi/bao-cao-tai-chinh/"
+  },
+  {
+    "stt": 194,
+    "ticker": "CMX",
+    "name": "Công ty Cổ phần CAMIMEX Group",
+    "san": "HOSE",
+    "batch_file": "Distill_Batch_09_Ngay_29_30.json",
+    "dot_ra": "Batch 09 (29-30/10)",
+    "uri": "https://camimex.com.vn/vi/bao-cao-tai-chinh.html"
+  },
+  {
+    "stt": 195,
+    "ticker": "CTI",
+    "name": "Công ty Cổ phần Đầu tư Phát triển Cường Thuận IDICO",
+    "san": "HOSE",
+    "batch_file": "Distill_Batch_09_Ngay_29_30.json",
+    "dot_ra": "Batch 09 (29-30/10)",
+    "uri": "https://cuongthuan.vn/co-dong/thong-tin-cong-bo.html"
+  },
+  {
+    "stt": 196,
+    "ticker": "DHC",
+    "name": "Công ty Cổ phần Đông Hải Bến Tre",
+    "san": "HOSE",
+    "batch_file": "Distill_Batch_09_Ngay_29_30.json",
+    "dot_ra": "Batch 09 (29-30/10)",
+    "uri": "https://dohacobentre.com.vn/bao-cao-tai-chinh"
+  },
+  {
+    "stt": 197,
+    "ticker": "DPG",
+    "name": "Công ty Cổ phần Tập đoàn Đạt Phương",
+    "san": "HOSE",
+    "batch_file": "Distill_Batch_09_Ngay_29_30.json",
+    "dot_ra": "Batch 09 (29-30/10)",
+    "uri": "https://datphuong.com.vn/documents/tap-doan-dat-phuong/bao-cao-tai-chinh"
+  },
+  {
+    "stt": 198,
+    "ticker": "DTD",
+    "name": "Công ty Cổ phần Đầu tư Phát triển Thành Đạt",
+    "san": "HNX",
+    "batch_file": "Distill_Batch_09_Ngay_29_30.json",
+    "dot_ra": "Batch 09 (29-30/10)",
+    "uri": "https://thanhdathanam.vn/quan-he-co-dong/thong-tin-tai-chinh/"
+  },
+  {
+    "stt": 199,
+    "ticker": "DTK",
+    "name": "Tổng Công ty Điện lực TKV - Công ty Cổ phần",
+    "san": "HNX",
+    "batch_file": "Distill_Batch_09_Ngay_29_30.json",
+    "dot_ra": "Batch 09 (29-30/10)",
+    "uri": "https://www.dienluctkv.vn/category/quan-he-co-dong/bao-cao-tai-chinh/"
+  },
+  {
+    "stt": 200,
+    "ticker": "DVN",
+    "name": "Tổng Công ty Dược Việt Nam - CTCP",
+    "san": "UPCOM",
+    "batch_file": "Distill_Batch_09_Ngay_29_30.json",
+    "dot_ra": "Batch 09 (29-30/10)",
+    "uri": "https://vinapharm.com.vn/vn/bao-cao-tai-chinh"
+  },
+  {
+    "stt": 201,
+    "ticker": "EID",
+    "name": "Công ty Cổ phần Đầu tư và Phát triển Giáo dục Hà Nội",
+    "san": "HNX",
+    "batch_file": "Distill_Batch_09_Ngay_29_30.json",
+    "dot_ra": "Batch 09 (29-30/10)",
+    "uri": "https://heid.vn/danh-muc-cd/bao-cao-dinh-ky-vi/"
+  },
+  {
+    "stt": 202,
+    "ticker": "EVE",
+    "name": "Công ty Cổ phần Everpia",
+    "san": "HOSE",
+    "batch_file": "Distill_Batch_09_Ngay_29_30.json",
+    "dot_ra": "Batch 09 (29-30/10)",
+    "uri": "https://everpia.vn/bao-cao-tai-chinh/bao-cao-tai-chinh-ct60.html"
+  },
+  {
+    "stt": 203,
+    "ticker": "FCM",
+    "name": "Công ty Cổ phần Bê tông Phan Vũ Hà Nam",
+    "san": "HOSE",
+    "batch_file": "Distill_Batch_09_Ngay_29_30.json",
+    "dot_ra": "Batch 09 (29-30/10)",
+    "uri": "https://feconmining.com.vn/vi/quan-he-co-dong.html"
+  },
+  {
+    "stt": 204,
+    "ticker": "GDA",
+    "name": "Công ty Cổ phần Tôn Đông Á",
+    "san": "UPCOM",
+    "batch_file": "Distill_Batch_09_Ngay_29_30.json",
+    "dot_ra": "Batch 09 (29-30/10)",
+    "uri": "https://tondonga.com.vn/cong-bo-thong-tin"
+  },
+  {
+    "stt": 205,
+    "ticker": "GDT",
+    "name": "Công ty Cổ phần Chế biến Gỗ Đức Thành",
+    "san": "HOSE",
+    "batch_file": "Distill_Batch_09_Ngay_29_30.json",
+    "dot_ra": "Batch 09 (29-30/10)",
+    "uri": "https://goducthanh.com/vn/download/bao-cao-tai-chinh-3.html"
+  },
+  {
+    "stt": 206,
+    "ticker": "HAH",
+    "name": "Công ty Cổ phần Vận tải và Xếp dỡ Hải An",
+    "san": "HOSE",
+    "batch_file": "Distill_Batch_09_Ngay_29_30.json",
+    "dot_ra": "Batch 09 (29-30/10)",
+    "uri": "https://haiants.vn/bao-cao-tai-chinh-q8.html"
+  },
+  {
+    "stt": 207,
+    "ticker": "HDA",
+    "name": "Công ty Cổ phần Hãng sơn Đông Á",
+    "san": "HNX",
+    "batch_file": "Distill_Batch_09_Ngay_29_30.json",
+    "dot_ra": "Batch 09 (29-30/10)",
+    "uri": "https://hangsondonga.com.vn/bao-cao-tai-chinh-quy-1-nam-2026/"
+  },
+  {
+    "stt": 208,
+    "ticker": "HDG",
+    "name": "Công ty Cổ phần Tập đoàn Hà Đô",
+    "san": "HOSE",
+    "batch_file": "Distill_Batch_10_Ngay_30_30.json",
+    "dot_ra": "Batch 10 (30/10)",
+    "uri": "https://hado.com.vn/quan-he-co-dong?t=24"
+  },
+  {
+    "stt": 209,
+    "ticker": "HHV",
+    "name": "Công ty Cổ phần Đầu tư Hạ tầng Giao thông Đèo Cả",
+    "san": "HOSE",
+    "batch_file": "Distill_Batch_10_Ngay_30_30.json",
+    "dot_ra": "Batch 10 (30/10)",
+    "uri": "https://hhv.com.vn/bao-cao-tai-chinh/"
+  },
+  {
+    "stt": 210,
+    "ticker": "HPA",
+    "name": "Công ty Cổ phần Phát triển Nông nghiệp Hoà Phát",
+    "san": "HOSE",
+    "batch_file": "Distill_Batch_10_Ngay_30_30.json",
+    "dot_ra": "Batch 10 (30/10)",
+    "uri": "https://nongnghiep.hoaphat.com.vn/quan-he-co-dong/bao-cao-tai-chinh"
+  },
+  {
+    "stt": 211,
+    "ticker": "HPG",
+    "name": "Công ty Cổ phần Tập đoàn Hòa Phát",
+    "san": "HOSE",
+    "batch_file": "Distill_Batch_10_Ngay_30_30.json",
+    "dot_ra": "Batch 10 (30/10)",
+    "uri": "https://www.hoaphat.com.vn/quan-he-co-dong/bao-cao-tai-chinh"
+  },
+  {
+    "stt": 212,
+    "ticker": "HTL",
+    "name": "Công ty Cổ phần Kỹ thuật và Ô tô Trường Long",
+    "san": "HOSE",
+    "batch_file": "Distill_Batch_10_Ngay_30_30.json",
+    "dot_ra": "Batch 10 (30/10)",
+    "uri": "https://www.truonglong.com/pages/quan-he-co-dong"
+  },
+  {
+    "stt": 213,
+    "ticker": "ICT",
+    "name": "Công ty Cổ phần Viễn thông - Tin học Bưu điện",
+    "san": "HOSE",
+    "batch_file": "Distill_Batch_10_Ngay_30_30.json",
+    "dot_ra": "Batch 10 (30/10)",
+    "uri": "https://www.ctin.vn/bao-cao-tai-chinh/"
+  },
+  {
+    "stt": 214,
+    "ticker": "IDC",
+    "name": "Tổng Công ty IDICO - CTCP",
+    "san": "HNX",
+    "batch_file": "Distill_Batch_10_Ngay_30_30.json",
+    "dot_ra": "Batch 10 (30/10)",
+    "uri": "https://idico.com.vn/vi/quan-he-co-dong/cong-bo-thong-tin"
+  },
+  {
+    "stt": 215,
+    "ticker": "ILB",
+    "name": "Công ty Cổ phần ICD Tân Cảng - Long Bình",
+    "san": "HOSE",
+    "batch_file": "Distill_Batch_10_Ngay_30_30.json",
+    "dot_ra": "Batch 10 (30/10)",
+    "uri": "https://icdlongbinh.com/bao-cao-tai-chinh"
+  },
+  {
+    "stt": 216,
+    "ticker": "ILS",
+    "name": "Công ty Cổ phần Đầu tư Thương mại và Dịch vụ Quốc tế",
+    "san": "UPCOM",
+    "batch_file": "Distill_Batch_10_Ngay_30_30.json",
+    "dot_ra": "Batch 10 (30/10)",
+    "uri": "https://ils.com.vn/quan-he-co-dong/#bao-cao-tai-chinh-1"
+  },
+  {
+    "stt": 217,
+    "ticker": "ITC",
+    "name": "Công ty Cổ phần Đầu tư - Kinh doanh nhà",
+    "san": "HOSE",
+    "batch_file": "Distill_Batch_10_Ngay_30_30.json",
+    "dot_ra": "Batch 10 (30/10)",
+    "uri": "https://intresco.com.vn/quan-he-co-dong/bao-cao-tai-chinh/"
+  },
+  {
+    "stt": 218,
+    "ticker": "KSV",
+    "name": "Tổng Công ty Khoáng sản TKV - Công ty Cổ phần",
+    "san": "HNX",
+    "batch_file": "Distill_Batch_10_Ngay_30_30.json",
+    "dot_ra": "Batch 10 (30/10)",
+    "uri": "https://vimico.vn/cong-bo-thong-tin/"
+  },
+  {
+    "stt": 219,
+    "ticker": "L18",
+    "name": "Công ty Cổ phần Đầu tư và Xây dựng số 18",
+    "san": "HNX",
+    "batch_file": "Distill_Batch_10_Ngay_30_30.json",
+    "dot_ra": "Batch 10 (30/10)",
+    "uri": "https://licogi18.com.vn/giai-trinh-cl-lnst-bctc-giua-nien-do-nam-2026-10056042/"
+  },
+  {
+    "stt": 220,
+    "ticker": "LCG",
+    "name": "Công ty Cổ phần Lizen",
+    "san": "HOSE",
+    "batch_file": "Distill_Batch_10_Ngay_30_30.json",
+    "dot_ra": "Batch 10 (30/10)",
+    "uri": "https://lizen.vn/vi/document-category/bao-cao-tai-chinh"
+  },
+  {
+    "stt": 221,
+    "ticker": "LLM",
+    "name": "Tổng Công ty lắp máy Việt Nam - Công ty Cổ phần",
+    "san": "UPCOM",
+    "batch_file": "Distill_Batch_10_Ngay_30_30.json",
+    "dot_ra": "Batch 10 (30/10)",
+    "uri": "https://lilama.com.vn/bao-cao-tai-chinh-rieng-hop-nhat-va-giai-trinh-ve-viec-thay-doi-lnst-06-thang-dau-nam-2026"
+  },
+  {
+    "stt": 222,
+    "ticker": "LSS",
+    "name": "Công ty Cổ phần Mía đường Lam Sơn",
+    "san": "HOSE",
+    "batch_file": "Distill_Batch_10_Ngay_30_30.json",
+    "dot_ra": "Batch 10 (30/10)",
+    "uri": "https://lasuco.vn/category/thong-tin-co-dong/thong-tin-tai-chinh/"
+  },
+  {
+    "stt": 223,
+    "ticker": "M10",
+    "name": "Tổng công ty May 10 - Công ty Cổ phần",
+    "san": "UPCOM",
+    "batch_file": "Distill_Batch_10_Ngay_30_30.json",
+    "dot_ra": "Batch 10 (30/10)",
+    "uri": "https://garco10.com.vn/quan-he-co-dong/"
+  },
+  {
+    "stt": 224,
+    "ticker": "MNB",
+    "name": "Tổng Công ty May Nhà Bè - Công ty Cổ phần",
+    "san": "UPCOM",
+    "batch_file": "Distill_Batch_10_Ngay_30_30.json",
+    "dot_ra": "Batch 10 (30/10)",
+    "uri": "https://nhabe.com.vn/investor-relations/"
+  },
+  {
+    "stt": 225,
+    "ticker": "MPC",
+    "name": "Công ty Cổ phần Tập đoàn Thủy sản Minh Phú",
+    "san": "UPCOM",
+    "batch_file": "Distill_Batch_10_Ngay_30_30.json",
+    "dot_ra": "Batch 10 (30/10)",
+    "uri": "https://minhphu.com/quan-he-co-dong/"
+  },
+  {
+    "stt": 226,
+    "ticker": "MSH",
+    "name": "Công ty Cổ phần May Sông Hồng",
+    "san": "HOSE",
+    "batch_file": "Distill_Batch_10_Ngay_30_30.json",
+    "dot_ra": "Batch 10 (30/10)",
+    "uri": "https://www.songhong.vn/bao-cao-tai-chinh-dinh-ky"
+  },
+  {
+    "stt": 227,
+    "ticker": "MTA",
+    "name": "Tổng Công ty Khoáng sản và Thương mại Hà Tĩnh - Công ty Cổ phần",
+    "san": "UPCOM",
+    "batch_file": "Distill_Batch_10_Ngay_30_30.json",
+    "dot_ra": "Batch 10 (30/10)",
+    "uri": "https://mitraco.com.vn/reviewed-interim-consolidated-financial-statements-for-the-accounting-period-from-01-january-2026-to-30-june-2026/"
+  },
+  {
+    "stt": 228,
+    "ticker": "MVC",
+    "name": "Công ty Cổ phần Vật liệu và Xây dựng Bình Dương",
+    "san": "UPCOM",
+    "batch_file": "Distill_Batch_10_Ngay_30_30.json",
+    "dot_ra": "Batch 10 (30/10)",
+    "uri": "https://www.vlxdbd.com.vn/quan-he-co-dong"
+  },
+  {
+    "stt": 229,
+    "ticker": "MZG",
+    "name": "Công ty Cổ Phần Miza",
+    "san": "HOSE",
+    "batch_file": "Distill_Batch_10_Ngay_30_30.json",
+    "dot_ra": "Batch 10 (30/10)",
+    "uri": "https://miza.vn/vi/quan-he-co-dong/cong-bo-thong-tin"
+  },
+  {
+    "stt": 230,
+    "ticker": "NDT",
+    "name": "Tổng Công ty Cổ phần Dệt may Nam Định",
+    "san": "UPCOM",
+    "batch_file": "Distill_Batch_10_Ngay_30_30.json",
+    "dot_ra": "Batch 10 (30/10)",
+    "uri": "https://natexco.com.vn/cong-bo-thong-tin-dinh-ky-bao-cao-tai-chinh-giua-nien-2026-n14544.aspx"
+  },
+  {
+    "stt": 231,
+    "ticker": "NHH",
+    "name": "Công ty Cổ phần Nhựa Hà Nội",
+    "san": "HOSE",
+    "batch_file": "Distill_Batch_11_Ngay_30_30.json",
+    "dot_ra": "Batch 11 (30/10)",
+    "uri": "https://www.hanoiplastics.com.vn/report_cat/bao-cao-dinh-ky/"
+  },
+  {
+    "stt": 232,
+    "ticker": "NHT",
+    "name": "Công ty Cổ phần Sản xuất và Thương mại Nam Hoa",
+    "san": "HOSE",
+    "batch_file": "Distill_Batch_11_Ngay_30_30.json",
+    "dot_ra": "Batch 11 (30/10)",
+    "uri": "https://namhoatoys.vn/bao-cao-tai-chinh"
+  },
+  {
+    "stt": 233,
+    "ticker": "PDB",
+    "name": "Công ty Cổ phần Tập đoàn Đầu tư DIN Capital",
+    "san": "HNX",
+    "batch_file": "Distill_Batch_11_Ngay_30_30.json",
+    "dot_ra": "Batch 11 (30/10)",
+    "uri": "https://dincapital.com/quan-he-co-dong/"
+  },
+  {
+    "stt": 234,
+    "ticker": "PGC",
+    "name": "Tổng Công ty Gas Petrolimex - Công ty Cổ phần",
+    "san": "HOSE",
+    "batch_file": "Distill_Batch_11_Ngay_30_30.json",
+    "dot_ra": "Batch 11 (30/10)",
+    "uri": "https://pgas.petrolimex.com.vn/ndt.html"
+  },
+  {
+    "stt": 235,
+    "ticker": "PGV",
+    "name": "Tổng Công ty Phát điện 3 - Công ty Cổ phần",
+    "san": "HOSE",
+    "batch_file": "Distill_Batch_11_Ngay_30_30.json",
+    "dot_ra": "Batch 11 (30/10)",
+    "uri": "https://www.genco3.com/quan-he-nha-dau-tu.html"
+  },
+  {
+    "stt": 236,
+    "ticker": "PHP",
+    "name": "Công ty Cổ phần Cảng Hải Phòng",
+    "san": "UPCOM",
+    "batch_file": "Distill_Batch_11_Ngay_30_30.json",
+    "dot_ra": "Batch 11 (30/10)",
+    "uri": "https://haiphongport.com.vn/vi/bao-cao-tai-chinh"
+  },
+  {
+    "stt": 237,
+    "ticker": "PHR",
+    "name": "Công ty Cổ phần Cao su Phước Hòa",
+    "san": "HOSE",
+    "batch_file": "Distill_Batch_11_Ngay_30_30.json",
+    "dot_ra": "Batch 11 (30/10)",
+    "uri": "https://vrg.vn/quan-he-co-dong/bao-cao-tai-chinh/"
+  },
+  {
+    "stt": 238,
+    "ticker": "PJT",
+    "name": "Công ty Cổ phần Vận tải Xăng dầu đường thủy Petrolimex",
+    "san": "HOSE",
+    "batch_file": "Distill_Batch_11_Ngay_30_30.json",
+    "dot_ra": "Batch 11 (30/10)",
+    "uri": "https://pjtaco.petrolimex.com.vn/ndt.html"
+  },
+  {
+    "stt": 239,
+    "ticker": "PMS",
+    "name": "Công ty Cổ phần Cơ khí Xăng dầu",
+    "san": "HNX",
+    "batch_file": "Distill_Batch_11_Ngay_30_30.json",
+    "dot_ra": "Batch 11 (30/10)",
+    "uri": "https://pmsc.petrolimex.com.vn/nd/tin-hd/bao-cao-tai-chinh-hop-nhat-quy-2-nam-2023-bao-cao-tai-chinh-hop-nhat-quy-2-nam-2023.html"
+  },
+  {
+    "stt": 240,
+    "ticker": "POW",
+    "name": "Tổng Công ty Điện lực Dầu khí Việt Nam - CTCP",
+    "san": "HOSE",
+    "batch_file": "Distill_Batch_11_Ngay_30_30.json",
+    "dot_ra": "Batch 11 (30/10)",
+    "uri": "https://pvpower.vn/vi/tag/bao-cao-tai-chinh-10.htm"
+  },
+  {
+    "stt": 241,
+    "ticker": "PPH",
+    "name": "Tổng Công ty Cổ phần Phong Phú",
+    "san": "UPCOM",
+    "batch_file": "Distill_Batch_11_Ngay_30_30.json",
+    "dot_ra": "Batch 11 (30/10)",
+    "uri": "https://www.phongphucorp.com/shareholder/bao-cao-tai-chinh.html"
+  },
+  {
+    "stt": 242,
+    "ticker": "PTB",
+    "name": "Công ty Cổ phần Phú Tài",
+    "san": "HOSE",
+    "batch_file": "Distill_Batch_11_Ngay_30_30.json",
+    "dot_ra": "Batch 11 (30/10)",
+    "uri": "https://phutai.com.vn/vi/investor-relations"
+  },
+  {
+    "stt": 243,
+    "ticker": "PTS",
+    "name": "Công ty Cổ phần Vận tải và Dịch vụ Petrolimex Hải Phòng",
+    "san": "HNX",
+    "batch_file": "Distill_Batch_11_Ngay_30_30.json",
+    "dot_ra": "Batch 11 (30/10)",
+    "uri": "https://ptshaiphong.petrolimex.com.vn/ndt.html"
+  },
+  {
+    "stt": 244,
+    "ticker": "RAL",
+    "name": "Công ty Cổ phần Bóng đèn Phích nước Rạng Đông",
+    "san": "HOSE",
+    "batch_file": "Distill_Batch_11_Ngay_30_30.json",
+    "dot_ra": "Batch 11 (30/10)",
+    "uri": "https://rangdong.com.vn/category/bao-cao-tai-chinh"
+  },
+  {
+    "stt": 245,
+    "ticker": "S55",
+    "name": "Công ty Cổ phần Sông Đà 505",
+    "san": "HNX",
+    "batch_file": "Distill_Batch_11_Ngay_30_30.json",
+    "dot_ra": "Batch 11 (30/10)",
+    "uri": "https://songda505.com.vn/chuyen-muc/co-dong/bao-cao-tai-chanh/"
+  },
+  {
+    "stt": 246,
+    "ticker": "SBB",
+    "name": "Công ty Cổ phần Tập đoàn Bia Sài Gòn Bình Tây",
+    "san": "UPCOM",
+    "batch_file": "Distill_Batch_11_Ngay_30_30.json",
+    "dot_ra": "Batch 11 (30/10)",
+    "uri": "https://sabibeco.com/quan-he-co-dong"
+  },
+  {
+    "stt": 247,
+    "ticker": "SD9",
+    "name": "Công ty Cổ phần Sông Đà 9",
+    "san": "HNX",
+    "batch_file": "Distill_Batch_11_Ngay_30_30.json",
+    "dot_ra": "Batch 11 (30/10)",
+    "uri": "https://songda9.com/nha-dau-tu"
+  },
+  {
+    "stt": 248,
+    "ticker": "SFI",
+    "name": "Công ty Cổ phần Đại lý Vận tải SAFI",
+    "san": "HOSE",
+    "batch_file": "Distill_Batch_11_Ngay_30_30.json",
+    "dot_ra": "Batch 11 (30/10)",
+    "uri": "https://safi.com.vn/bao-cao-tai-chinh/"
+  },
+  {
+    "stt": 249,
+    "ticker": "SGN",
+    "name": "Công ty Cổ phần Phục vụ mặt đất Sài Gòn",
+    "san": "HOSE",
+    "batch_file": "Distill_Batch_11_Ngay_30_30.json",
+    "dot_ra": "Batch 11 (30/10)",
+    "uri": "https://sags.vn/announcements.html"
+  },
+  {
+    "stt": 250,
+    "ticker": "SIP",
+    "name": "Công ty Cổ phần Đầu tư Sài Gòn VRG",
+    "san": "HOSE",
+    "batch_file": "Distill_Batch_11_Ngay_30_30.json",
+    "dot_ra": "Batch 11 (30/10)",
+    "uri": "https://saigonvrg.com.vn/quan-he-co-dong"
+  },
+  {
+    "stt": 251,
+    "ticker": "SJE",
+    "name": "Công ty Cổ phần Sông Đà 11",
+    "san": "HNX",
+    "batch_file": "Distill_Batch_11_Ngay_30_30.json",
+    "dot_ra": "Batch 11 (30/10)",
+    "uri": "https://songda11.com.vn/quan-he-co-dong/bao-cao-tai-chinh"
+  },
+  {
+    "stt": 252,
+    "ticker": "SJG",
+    "name": "Tổng Công ty Sông Đà",
+    "san": "UPCOM",
+    "batch_file": "Distill_Batch_11_Ngay_30_30.json",
+    "dot_ra": "Batch 11 (30/10)",
+    "uri": "https://songda.vn/van-ban"
+  },
+  {
+    "stt": 253,
+    "ticker": "SKV",
+    "name": "Công ty Cổ phần Nước Giải khát Yến sào Khánh Hòa",
+    "san": "UPCOM",
+    "batch_file": "Distill_Batch_11_Ngay_30_30.json",
+    "dot_ra": "Batch 11 (30/10)",
+    "uri": "https://yensaokhanhhoasanest.com.vn/lienhecodong"
+  },
+  {
+    "stt": 254,
+    "ticker": "SNZ",
+    "name": "Tổng Công ty Cổ phần Phát triển Khu Công nghiệp",
+    "san": "UPCOM",
+    "batch_file": "Distill_Batch_11_Ngay_30_30.json",
+    "dot_ra": "Batch 11 (30/10)",
+    "uri": "https://sonadezi.com.vn/vi/quan-he-co-dong/"
+  },
+  {
+    "stt": 255,
+    "ticker": "SPC",
+    "name": "Công ty Cổ phần Bảo vệ Thực vật Sài Gòn",
+    "san": "HNX",
+    "batch_file": "Distill_Batch_12_Ngay_30_30.json",
+    "dot_ra": "Batch 12 (30/10)",
+    "uri": "https://spchcmc.vn/VN/Quan-He-Co-Dong.html"
+  },
+  {
+    "stt": 256,
+    "ticker": "TCW",
+    "name": "Công ty Cổ phần Kho Vận Tân Cảng",
+    "san": "UPCOM",
+    "batch_file": "Distill_Batch_12_Ngay_30_30.json",
+    "dot_ra": "Batch 12 (30/10)",
+    "uri": "https://tancangwarehousing.com.vn/quan-he-co-dong/thong-bao-co-dong"
+  },
+  {
+    "stt": 257,
+    "ticker": "TFC",
+    "name": "Công ty Cổ phần Trang",
+    "san": "HNX",
+    "batch_file": "Distill_Batch_12_Ngay_30_30.json",
+    "dot_ra": "Batch 12 (30/10)",
+    "uri": "https://trangcorporation.vn/quan-he-co-dong/"
+  },
+  {
+    "stt": 258,
+    "ticker": "TID",
+    "name": "Công ty Cổ phần Tổng Công ty Tín Nghĩa",
+    "san": "UPCOM",
+    "batch_file": "Distill_Batch_12_Ngay_30_30.json",
+    "dot_ra": "Batch 12 (30/10)",
+    "uri": "https://tinnghiacorp.com.vn/cong-bo-thong-tin/"
+  },
+  {
+    "stt": 259,
+    "ticker": "TOS",
+    "name": "Công ty Cổ phần Dịch vụ biển Tân Cảng",
+    "san": "UPCOM",
+    "batch_file": "Distill_Batch_12_Ngay_30_30.json",
+    "dot_ra": "Batch 12 (30/10)",
+    "uri": "https://tancangoffshore.com/quan-he-co-dong/"
+  },
+  {
+    "stt": 260,
+    "ticker": "TRA",
+    "name": "Công ty Cổ phần Traphaco",
+    "san": "HOSE",
+    "batch_file": "Distill_Batch_12_Ngay_30_30.json",
+    "dot_ra": "Batch 12 (30/10)",
+    "uri": "https://traphaco.com.vn/shareholder/financial-reports"
+  },
+  {
+    "stt": 261,
+    "ticker": "TRV",
+    "name": "Công ty Cổ Phần Vận tải Đường sắt",
+    "san": "UPCOM",
+    "batch_file": "Distill_Batch_12_Ngay_30_30.json",
+    "dot_ra": "Batch 12 (30/10)",
+    "uri": "https://cophanvantaiduongsat.vn/category/quan-he-co-dong/bao-cao-tai-chinh/"
+  },
+  {
+    "stt": 262,
+    "ticker": "TTA",
+    "name": "Công ty Cổ phần Đầu tư Xây dựng và Phát triển Trường Thành",
+    "san": "HOSE",
+    "batch_file": "Distill_Batch_12_Ngay_30_30.json",
+    "dot_ra": "Batch 12 (30/10)",
+    "uri": "https://truongthanhgroup.com.vn/co-dong/bao-cao-tai-chinh/"
+  },
+  {
+    "stt": 263,
+    "ticker": "TV1",
+    "name": "Công ty Cổ phần Tư vấn Xây dựng Điện 1",
+    "san": "UPCOM",
+    "batch_file": "Distill_Batch_12_Ngay_30_30.json",
+    "dot_ra": "Batch 12 (30/10)",
+    "uri": "https://pecc1.com.vn/c3/pages-t/Bao-cao-tai-chinh-5-453.aspx"
+  },
+  {
+    "stt": 264,
+    "ticker": "TVN",
+    "name": "Tổng Công ty Thép Việt Nam - Công ty Cổ phần",
+    "san": "UPCOM",
+    "batch_file": "Distill_Batch_12_Ngay_30_30.json",
+    "dot_ra": "Batch 12 (30/10)",
+    "uri": "https://vnsteel.vn/quan-he-co-dong/bao-cao-tai-chinh/"
+  },
+  {
+    "stt": 265,
+    "ticker": "TVT",
+    "name": "Tổng Công ty Việt Thắng - CTCP",
+    "san": "HOSE",
+    "batch_file": "Distill_Batch_12_Ngay_30_30.json",
+    "dot_ra": "Batch 12 (30/10)",
+    "uri": "https://www.vietthang.com.vn/vi/quan-he-co-dong/"
+  },
+  {
+    "stt": 266,
+    "ticker": "VC6",
+    "name": "Công ty cổ phần Xây dựng và Đầu tư Visicons",
+    "san": "HNX",
+    "batch_file": "Distill_Batch_12_Ngay_30_30.json",
+    "dot_ra": "Batch 12 (30/10)",
+    "uri": "http://visicons.vn/danh-muc-tin/bao-cao-tai-chinh.html"
+  },
+  {
+    "stt": 267,
+    "ticker": "VCP",
+    "name": "Công ty Cổ phần Xây dựng và Năng lượng VCP",
+    "san": "UPCOM",
+    "batch_file": "Distill_Batch_12_Ngay_30_30.json",
+    "dot_ra": "Batch 12 (30/10)",
+    "uri": "https://vcpholdings.com.vn/bao-cao-tai-chinh.htm"
+  },
+  {
+    "stt": 268,
+    "ticker": "VCS",
+    "name": "Công ty Cổ phần VICOSTONE",
+    "san": "HNX",
+    "batch_file": "Distill_Batch_12_Ngay_30_30.json",
+    "dot_ra": "Batch 12 (30/10)",
+    "uri": "https://vicostone.com/vi-vn/financial-reports"
+  },
+  {
+    "stt": 269,
+    "ticker": "VEA",
+    "name": "Tổng Công ty Máy động lực và Máy nông nghiệp Việt Nam - CTCP",
+    "san": "UPCOM",
+    "batch_file": "Distill_Batch_12_Ngay_30_30.json",
+    "dot_ra": "Batch 12 (30/10)",
+    "uri": "https://veamcorp.com/bao-cao-tai-chinh"
+  },
+  {
+    "stt": 270,
+    "ticker": "VFR",
+    "name": "Công ty Cổ phần Vận tải và Thuê tàu",
+    "san": "UPCOM",
+    "batch_file": "Distill_Batch_12_Ngay_30_30.json",
+    "dot_ra": "Batch 12 (30/10)",
+    "uri": "http://www.vitranschart.com.vn/quan-he-co-dong/bao-cao-tai-chinh/"
+  },
+  {
+    "stt": 271,
+    "ticker": "VGG",
+    "name": "Tổng Công Ty Cổ phần May Việt Tiến",
+    "san": "UPCOM",
+    "batch_file": "Distill_Batch_12_Ngay_30_30.json",
+    "dot_ra": "Batch 12 (30/10)",
+    "uri": "https://viettien.com.vn/quan-he-co-dong"
+  },
+  {
+    "stt": 272,
+    "ticker": "VGS",
+    "name": "Công ty Cổ phần Ống thép Việt - Đức VG PIPE",
+    "san": "HNX",
+    "batch_file": "Distill_Batch_12_Ngay_30_30.json",
+    "dot_ra": "Batch 12 (30/10)",
+    "uri": "https://thepvietduc.com.vn/qhcd-dm/bao-cao-tai-chinh/"
+  },
+  {
+    "stt": 273,
+    "ticker": "VGT",
+    "name": "Tập đoàn Dệt May Việt Nam",
+    "san": "UPCOM",
+    "batch_file": "Distill_Batch_12_Ngay_30_30.json",
+    "dot_ra": "Batch 12 (30/10)",
+    "uri": "https://vinatex.com.vn/quan-he-co-dong-2/"
+  },
+  {
+    "stt": 274,
+    "ticker": "VLC",
+    "name": "Tổng Công ty Chăn nuôi Việt Nam - Công ty Cổ phần",
+    "san": "UPCOM",
+    "batch_file": "Distill_Batch_12_Ngay_30_30.json",
+    "dot_ra": "Batch 12 (30/10)",
+    "uri": "https://www.vilico.vn/bao-cao-tai-chinh/"
+  },
+  {
+    "stt": 275,
+    "ticker": "VNF",
+    "name": "Công ty Cổ phần Vinafreight",
+    "san": "HNX",
+    "batch_file": "Distill_Batch_12_Ngay_30_30.json",
+    "dot_ra": "Batch 12 (30/10)",
+    "uri": "https://vinafreight.com/thong-tin-co-dong.html"
+  },
+  {
+    "stt": 276,
+    "ticker": "VNL",
+    "name": "Công ty Cổ phần Logistics Vinalink",
+    "san": "HOSE",
+    "batch_file": "Distill_Batch_12_Ngay_30_30.json",
+    "dot_ra": "Batch 12 (30/10)",
+    "uri": "https://vinalinklogistics.com/ban-tin/vinalink-logistics-dat-danh-hieu-doanh-nghiep-dat-chuan-cong-bo-thong-tin-nam-2025-tai-ir-awards-1816.html"
+  },
+  {
+    "stt": 277,
+    "ticker": "VNR",
+    "name": "Tổng Công ty Cổ phần Tái bảo hiểm Quốc gia Việt Nam",
+    "san": "HNX",
+    "batch_file": "Distill_Batch_12_Ngay_30_30.json",
+    "dot_ra": "Batch 12 (30/10)",
+    "uri": "https://vinare.com.vn/category/quan-he-co-dong/bao-cao-tai-chinh/"
+  },
+  {
+    "stt": 278,
+    "ticker": "VNT",
+    "name": "Công ty Cổ phần Giao nhận Vận tải Ngoại Thương",
+    "san": "HNX",
+    "batch_file": "Distill_Batch_12_Ngay_30_30.json",
+    "dot_ra": "Batch 12 (30/10)",
+    "uri": "https://vntlogistics.com/chuyen-muc/co-dong/"
+  }
+]
