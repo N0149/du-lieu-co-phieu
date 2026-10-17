@@ -145,12 +145,13 @@
   },
   "BBS": {
     "ticker": "BBS",
-    "bctc_type": "DAY_DU",
+    "company_name": "Công ty Cổ phần VICEM Bao bì Bút Sơn",
+    "release_date": "17/10/2026",
     "title": "BÁO CÁO TÀI CHÍNH QUÝ III/2026",
-    "date": "17/10/2026",
     "doc_url": "https://butsonpackaging.vn/blogs/bao-cao-tai-chinh/bao-cao-tai-chinh-quy-iii-2026",
     "source": "Company_Web",
-    "updated_at": "2026-10-17 08:25:16"
+    "bctc_type": "DAY_DU",
+    "updated_at": "2026-10-17 12:03:24"
   },
   "KHS": {
     "ticker": "KHS",
