@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-10-16T17:16:04.474Z",
-  "total": 393,
+  "updatedAt": "2026-10-17T16:12:23.047Z",
+  "total": 394,
   "availableSectors": [
     "Bán lẻ",
     "Bảo hiểm",
@@ -531,6 +531,23 @@
       "description": "Cạnh tranh gay gắt và chi phí vay tăng gây áp lực lên hồ sơ tín nhiệm dù doanh số tăng mạnh",
       "pageCount": 0,
       "downloadUrl": "https://cdn02.wigroup.vn/baocaophantich/ar_25684_VISRATING_2026-10-01.pdf",
+      "thumbnailUrl": "",
+      "recommendation": null,
+      "targetPrice": null
+    },
+    {
+      "id": "wd_ind_25792",
+      "slug": "bat-dong-san-dan-cu-nganh-bat-dong-san-mat-bang-lai-suat-cao-khien-thi-truong-am-dam-wd_ind_25792",
+      "title": "Ngành Bất động sản: Mặt bằng lãi suất cao khiến thị trường ảm đạm",
+      "source": "MBS",
+      "date": "2026-10-01",
+      "displayDate": "01/10/2026",
+      "scope": "sector",
+      "sectorName": "Bất động sản dân cư",
+      "symbol": null,
+      "description": "Ngành Bất động sản: Mặt bằng lãi suất cao khiến thị trường ảm đạm",
+      "pageCount": 0,
+      "downloadUrl": "https://cdn02.wigroup.vn/baocaophantich/ar_25689_MBS_2026-10-01.pdf",
       "thumbnailUrl": "",
       "recommendation": null,
       "targetPrice": null
