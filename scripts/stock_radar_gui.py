@@ -587,20 +587,27 @@ class StockRadarGUI(tk.Tk):
         self.notebook.add(self.tab_groups, text="📊 Quét Đa Nhóm (Tích chọn)")
         self.build_tab_groups()
 
-        # Tab 3: Giám sát ngầm tự động (Đi làm)
+        # Tab 3: Danh mục Đã có BCTC
+        self.tab_completed = ttk.Frame(self.notebook)
+        self.notebook.add(self.tab_completed, text="📋 Mã ĐÃ CÓ BCTC")
+        self.build_tab_completed()
+
+        # Tab 4: Giám sát ngầm tự động (Đi làm)
         self.tab_monitor = ttk.Frame(self.notebook)
         self.notebook.add(self.tab_monitor, text="⏰ Giám sát tự động (Đi làm)")
         self.build_tab_monitor()
 
-        # Tab 4: Luồng Công bố thông tin 3 sàn
+        # Tab 5: Luồng Công bố thông tin 3 sàn
         self.tab_live = ttk.Frame(self.notebook)
         self.notebook.add(self.tab_live, text="📡 Luồng CBTT 3 sàn (Live)")
         self.build_tab_live()
 
-        # Tab 5: Cài đặt
+        # Tab 6: Cài đặt
         self.tab_settings = ttk.Frame(self.notebook)
         self.notebook.add(self.tab_settings, text="⚙️ Cài đặt & Discord")
         self.build_tab_settings()
+
+        self.notebook.bind("<<NotebookTabChanged>>", self.on_tab_changed)
 
     # ==========================
     # TAB 1: TRA CỨU TỨC THÌ
@@ -736,9 +743,14 @@ class StockRadarGUI(tk.Tk):
                 "doc_url": doc_url,
                 "source": res.get('source'),
                 "bctc_type": b_type,
+                "profit": lnst.get('current_quarter') if lnst.get('has_data') else None,
+                "yoy": lnst.get('yoy') if lnst.get('has_data') else None,
+                "direction": lnst.get('direction', 'up') if lnst.get('has_data') else None,
                 "updated_at": datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
             }
             save_completed_cache(cache)
+            if hasattr(self, 'refresh_completed_list'):
+                self.refresh_completed_list()
         else:
             self.lbl_res_title.config(text=f"❄️ [{ticker}] CHƯA CÓ Báo cáo tài chính Quý 3/2026 (Quét xong trong {elapsed}s)", fg="#64748B")
             self.txt_res_details.insert(tk.END, f"• Doanh nghiệp: {info['name']} (Sàn {info['san']})\n")
@@ -1037,6 +1049,9 @@ class StockRadarGUI(tk.Tk):
                                     alert_payload['lnst_label'] = lnst.get('label')
                                 send_discord_alert(alert_payload)
 
+                            profit_val = lnst.get('current_quarter') if lnst.get('has_data') else None
+                            yoy_val = lnst.get('yoy') if lnst.get('has_data') else None
+                            dir_val = lnst.get('direction', 'up') if lnst.get('has_data') else None
                             completed_cache[t] = {
                                 "ticker": t,
                                 "company_name": item.get('name', ''),
@@ -1045,6 +1060,9 @@ class StockRadarGUI(tk.Tk):
                                 "doc_url": doc_url,
                                 "source": res.get('source'),
                                 "bctc_type": b_type,
+                                "profit": profit_val,
+                                "yoy": yoy_val,
+                                "direction": dir_val,
                                 "updated_at": datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
                             }
                             save_completed_cache(completed_cache)
@@ -1063,6 +1081,8 @@ class StockRadarGUI(tk.Tk):
         res_text = f"✅ Hoàn tất! Đã quét {scanned_cnt} mã (Bỏ qua {skipped_cnt} mã đã xong trước đó) trong {elapsed}s. Phát hiện mới: {new_cnt} BCTC."
         self.lbl_progress.config(text=res_text)
         self.update_selection_summary()
+        if hasattr(self, 'refresh_completed_list'):
+            self.refresh_completed_list()
 
     def stop_multi_group_scan(self):
         self.is_group_scanning = False
@@ -1084,7 +1104,291 @@ class StockRadarGUI(tk.Tk):
             webbrowser.open(tags[0])
 
     # ==========================
-    # TAB 3: GIÁM SÁT TỰ ĐỘNG
+    # TAB 3: DANH SÁCH MÃ ĐÃ CÓ BCTC
+    # ==========================
+    def on_tab_changed(self, event):
+        try:
+            selected_tab = self.notebook.select()
+            tab_text = self.notebook.tab(selected_tab, "text")
+            if "ĐÃ CÓ BCTC" in tab_text and hasattr(self, 'refresh_completed_list'):
+                self.refresh_completed_list()
+        except:
+            pass
+
+    def build_tab_completed(self):
+        p = ttk.Frame(self.tab_completed, padding=16)
+        p.pack(fill=tk.BOTH, expand=True)
+
+        top_bar = tk.Frame(p, bg="#F1F5F9")
+        top_bar.pack(fill=tk.X, pady=(0, 8))
+
+        lbl = ttk.Label(top_bar, text="📋 DANH MỤC CÁC CỔ PHIẾU ĐÃ CÔNG BỐ BÁO CÁO TÀI CHÍNH QUÝ 3/2026", font=("Segoe UI", 11, "bold"))
+        lbl.pack(side=tk.LEFT)
+
+        # Thống kê tổng quan
+        stats_frame = tk.Frame(p, bg="white", relief=tk.SOLID, bd=1, padx=14, pady=10)
+        stats_frame.pack(fill=tk.X, pady=(0, 10))
+
+        self.lbl_comp_total = tk.Label(stats_frame, text="📌 Tổng: 0 mã", font=("Segoe UI", 10, "bold"), fg="#0284C7", bg="white")
+        self.lbl_comp_total.pack(side=tk.LEFT, padx=(0, 25))
+
+        self.lbl_comp_hopnhat = tk.Label(stats_frame, text="🟢 Hợp nhất / Đầy đủ: 0 mã (Hoàn tất)", font=("Segoe UI", 10, "bold"), fg="#166534", bg="white")
+        self.lbl_comp_hopnhat.pack(side=tk.LEFT, padx=(0, 25))
+
+        self.lbl_comp_rieng = tk.Label(stats_frame, text="🟡 Bản Riêng: 0 mã (Chờ hợp nhất)", font=("Segoe UI", 10, "bold"), fg="#D97706", bg="white")
+        self.lbl_comp_rieng.pack(side=tk.LEFT)
+
+        # Thanh tìm kiếm & bộ lọc
+        filter_bar = tk.Frame(p, bg="#F1F5F9")
+        filter_bar.pack(fill=tk.X, pady=(0, 8))
+
+        tk.Label(filter_bar, text="🔍 Tìm mã CK / Doanh nghiệp:", font=("Segoe UI", 9, "bold"), bg="#F1F5F9").pack(side=tk.LEFT, padx=(0, 6))
+        self.txt_filter_comp = ttk.Entry(filter_bar, font=("Segoe UI", 9), width=18)
+        self.txt_filter_comp.pack(side=tk.LEFT, padx=(0, 15))
+        self.txt_filter_comp.bind("<KeyRelease>", lambda e: self.filter_completed_table())
+
+        tk.Label(filter_bar, text="Loại BCTC:", font=("Segoe UI", 9, "bold"), bg="#F1F5F9").pack(side=tk.LEFT, padx=(0, 6))
+        self.var_filter_type = tk.StringVar(value="ALL")
+        tk.Radiobutton(filter_bar, text="Tất cả", variable=self.var_filter_type, value="ALL", bg="#F1F5F9", font=("Segoe UI", 9), command=self.filter_completed_table).pack(side=tk.LEFT, padx=(0, 6))
+        tk.Radiobutton(filter_bar, text="🟢 Hợp nhất / Đầy đủ", variable=self.var_filter_type, value="DONE", bg="#F1F5F9", font=("Segoe UI", 9), command=self.filter_completed_table).pack(side=tk.LEFT, padx=(0, 6))
+        tk.Radiobutton(filter_bar, text="🟡 Bản Riêng", variable=self.var_filter_type, value="RIENG", bg="#F1F5F9", font=("Segoe UI", 9), command=self.filter_completed_table).pack(side=tk.LEFT, padx=(0, 10))
+
+        btn_refresh = tk.Button(filter_bar, text="🔄 Làm Mới", font=("Segoe UI", 9, "bold"), bg="#E0F2FE", fg="#0369A1", relief=tk.FLAT, padx=10, pady=2, command=self.refresh_completed_list)
+        btn_refresh.pack(side=tk.RIGHT, padx=(4, 0))
+
+        btn_export = tk.Button(filter_bar, text="💾 Xuất JSON", font=("Segoe UI", 9), bg="#F1F5F9", fg="#334155", relief=tk.FLAT, padx=8, pady=2, command=self.export_completed_list)
+        btn_export.pack(side=tk.RIGHT)
+
+        # Table hiển thị
+        cols = ("stt", "ticker", "name", "bctc_type", "date", "profit", "yoy", "title", "source", "updated_at")
+        self.tree_comp = ttk.Treeview(p, columns=cols, show="headings", height=14)
+
+        self.tree_comp.heading("stt", text="STT")
+        self.tree_comp.heading("ticker", text="Mã CK")
+        self.tree_comp.heading("name", text="Tên Doanh Nghiệp")
+        self.tree_comp.heading("bctc_type", text="Loại BCTC")
+        self.tree_comp.heading("date", text="Ngày Ra")
+        self.tree_comp.heading("profit", text="LNST Q3")
+        self.tree_comp.heading("yoy", text="% YoY")
+        self.tree_comp.heading("title", text="Tiêu Đề BCTC / Tài Liệu")
+        self.tree_comp.heading("source", text="Nguồn")
+        self.tree_comp.heading("updated_at", text="Ghi Nhận Lúc")
+
+        self.tree_comp.column("stt", width=40, anchor=tk.CENTER)
+        self.tree_comp.column("ticker", width=70, anchor=tk.CENTER)
+        self.tree_comp.column("name", width=200)
+        self.tree_comp.column("bctc_type", width=120, anchor=tk.CENTER)
+        self.tree_comp.column("date", width=85, anchor=tk.CENTER)
+        self.tree_comp.column("profit", width=85, anchor=tk.E)
+        self.tree_comp.column("yoy", width=85, anchor=tk.CENTER)
+        self.tree_comp.column("title", width=250)
+        self.tree_comp.column("source", width=95)
+        self.tree_comp.column("updated_at", width=125, anchor=tk.CENTER)
+
+        self.tree_comp.tag_configure("tag_hop_nhat", background="#DCFCE7", foreground="#166534")
+        self.tree_comp.tag_configure("tag_day_du", background="#E0F2FE", foreground="#0369A1")
+        self.tree_comp.tag_configure("tag_rieng", background="#FEF3C7", foreground="#92400E")
+
+        sc_y = ttk.Scrollbar(p, orient=tk.VERTICAL, command=self.tree_comp.yview)
+        self.tree_comp.configure(yscroll=sc_y.set)
+        sc_y.pack(side=tk.RIGHT, fill=tk.Y)
+        self.tree_comp.pack(fill=tk.BOTH, expand=True)
+
+        self.tree_comp.bind("<Double-1>", self.on_double_click_comp_row)
+
+        # Bottom toolbar
+        bot_bar = tk.Frame(p, bg="#F1F5F9")
+        bot_bar.pack(fill=tk.X, pady=(10, 0))
+
+        tk.Button(bot_bar, text="📄 Mở Xem / Tải BCTC Gốc", font=("Segoe UI", 9, "bold"), bg="#0284C7", fg="white", relief=tk.FLAT, padx=12, pady=5, command=self.open_selected_comp_doc).pack(side=tk.LEFT, padx=(0, 8))
+        tk.Button(bot_bar, text="📢 Gửi Lại Về Discord Điện Thoại", font=("Segoe UI", 9, "bold"), bg="#6366F1", fg="white", relief=tk.FLAT, padx=12, pady=5, command=self.send_discord_selected_comp).pack(side=tk.LEFT, padx=(0, 8))
+        tk.Button(bot_bar, text="❌ Xóa Mã Khỏi Cache (Để Quét Lại)", font=("Segoe UI", 9), bg="#FEE2E2", fg="#991B1B", relief=tk.FLAT, padx=10, pady=5, command=self.delete_selected_comp).pack(side=tk.LEFT)
+
+        tk.Label(bot_bar, text="💡 Gợi ý: Bấm đúp chuột vào bất kỳ dòng nào để mở xem tài liệu BCTC ngay lập tức.", font=("Segoe UI", 9, "italic"), fg="#64748B", bg="#F1F5F9").pack(side=tk.RIGHT)
+
+        self.raw_completed_items = []
+        self.refresh_completed_list()
+
+    def refresh_completed_list(self):
+        cache = load_completed_cache()
+        items = []
+        for k, v in cache.items():
+            t = v.get('ticker') or k
+            c_info = get_company_info(t)
+            name = v.get('company_name') or c_info['name']
+            b_type = v.get('bctc_type', 'DAY_DU')
+            date_str = v.get('release_date') or v.get('date', '-')
+            title = v.get('title', '')
+            doc_url = v.get('doc_url', '')
+            source = v.get('source', '')
+            profit = v.get('profit') or '-'
+            yoy = v.get('yoy') or '-'
+            updated_at = v.get('updated_at', '-')
+            items.append({
+                "ticker": t,
+                "name": name,
+                "bctc_type": b_type,
+                "date": date_str,
+                "title": title,
+                "doc_url": doc_url,
+                "source": source,
+                "profit": profit,
+                "yoy": yoy,
+                "updated_at": updated_at,
+                "raw_entry": v
+            })
+
+        items.sort(key=lambda x: str(x['updated_at']), reverse=True)
+        self.raw_completed_items = items
+
+        total = len(items)
+        hn_cnt = sum(1 for it in items if it['bctc_type'] in ['HOP_NHAT', 'DAY_DU'])
+        rieng_cnt = sum(1 for it in items if it['bctc_type'] == 'RIENG')
+
+        self.lbl_comp_total.config(text=f"📌 Tổng: {total} mã đã có BCTC")
+        self.lbl_comp_hopnhat.config(text=f"🟢 Hợp nhất / Đầy đủ: {hn_cnt} mã (Hoàn tất)")
+        self.lbl_comp_rieng.config(text=f"🟡 Bản Riêng: {rieng_cnt} mã (Chờ hợp nhất)")
+
+        self.filter_completed_table()
+
+    def filter_completed_table(self):
+        query = self.txt_filter_comp.get().strip().upper()
+        filter_type = self.var_filter_type.get()
+
+        for row in self.tree_comp.get_children():
+            self.tree_comp.delete(row)
+
+        idx = 0
+        for it in self.raw_completed_items:
+            t = it['ticker']
+            name = it['name']
+            b_type = it['bctc_type']
+
+            if query and (query not in t and query not in name.upper()):
+                continue
+
+            if filter_type == 'DONE' and b_type not in ['HOP_NHAT', 'DAY_DU']:
+                continue
+            if filter_type == 'RIENG' and b_type != 'RIENG':
+                continue
+
+            idx += 1
+            type_label = "🟢 HỢP NHẤT" if b_type == 'HOP_NHAT' else ("🟢 ĐẦY ĐỦ" if b_type == 'DAY_DU' else "🟡 RIÊNG (CTY MẸ)")
+            tag_name = "tag_hop_nhat" if b_type == 'HOP_NHAT' else ("tag_day_du" if b_type == 'DAY_DU' else "tag_rieng")
+
+            self.tree_comp.insert(
+                "",
+                tk.END,
+                values=(
+                    idx,
+                    t,
+                    name,
+                    type_label,
+                    it['date'],
+                    it['profit'],
+                    it['yoy'],
+                    it['title'],
+                    it['source'],
+                    it['updated_at']
+                ),
+                tags=(it['doc_url'], tag_name, t)
+            )
+
+    def on_double_click_comp_row(self, event):
+        item_id = self.tree_comp.focus()
+        if not item_id:
+            return
+        tags = self.tree_comp.item(item_id, "tags")
+        if tags and tags[0] and str(tags[0]).startswith("http"):
+            webbrowser.open(tags[0])
+
+    def open_selected_comp_doc(self):
+        item_id = self.tree_comp.focus()
+        if not item_id:
+            messagebox.showinfo("Thông báo", "Vui lòng chọn 1 mã trong bảng để mở xem tài liệu BCTC.")
+            return
+        tags = self.tree_comp.item(item_id, "tags")
+        if tags and tags[0] and str(tags[0]).startswith("http"):
+            webbrowser.open(tags[0])
+        else:
+            messagebox.showwarning("Không có link", "Mã này không có đường link trực tiếp.")
+
+    def send_discord_selected_comp(self):
+        item_id = self.tree_comp.focus()
+        if not item_id:
+            messagebox.showinfo("Thông báo", "Vui lòng chọn 1 mã trong bảng để gửi lại về Discord.")
+            return
+        vals = self.tree_comp.item(item_id, "values")
+        tags = self.tree_comp.item(item_id, "tags")
+        if not vals:
+            return
+        ticker = vals[1]
+        name = vals[2]
+        date_str = vals[4]
+        title = vals[7]
+        source = vals[8]
+        doc_url = tags[0] if tags else ""
+
+        matched_it = next((x for x in self.raw_completed_items if x['ticker'] == ticker), None)
+        b_type = matched_it['bctc_type'] if matched_it else 'DAY_DU'
+
+        alert_payload = {
+            "ticker": ticker,
+            "company_name": name,
+            "exchange": "HOSE",
+            "quarter": "Quý 3/2026",
+            "release_date": date_str,
+            "title": title,
+            "source": source,
+            "bctc_type": b_type,
+            "doc_url": doc_url
+        }
+        if matched_it and matched_it.get('profit') and matched_it['profit'] != '-':
+            alert_payload['net_profit'] = matched_it['profit']
+            alert_payload['growth_rate'] = matched_it.get('yoy', '')
+            alert_payload['growth_direction'] = 'up'
+
+        if send_discord_alert(alert_payload):
+            messagebox.showinfo("Thành công", f"Đã gửi cảnh báo BCTC [{ticker}] về Discord điện thoại!")
+        else:
+            messagebox.showwarning("Lỗi", "Không thể gửi Discord. Vui lòng kiểm tra lại Webhook URL trong tab Cài đặt.")
+
+    def delete_selected_comp(self):
+        item_id = self.tree_comp.focus()
+        if not item_id:
+            messagebox.showinfo("Thông báo", "Vui lòng chọn 1 mã trong bảng để xóa khỏi cache.")
+            return
+        vals = self.tree_comp.item(item_id, "values")
+        if not vals:
+            return
+        ticker = vals[1]
+        confirm = messagebox.askyesno(
+            "Xác nhận xóa",
+            f"Bạn có chắc muốn xóa mã [{ticker}] khỏi danh sách đã hoàn tất?\n\nSau khi xóa, mã này sẽ được quét lại bình thường trong các lượt quét tiếp theo."
+        )
+        if confirm:
+            cache = load_completed_cache()
+            if ticker in cache:
+                del cache[ticker]
+                save_completed_cache(cache)
+                self.refresh_completed_list()
+                self.update_selection_summary()
+                messagebox.showinfo("Đã xóa", f"Đã xóa [{ticker}] khỏi cache thành công.")
+
+    def export_completed_list(self):
+        if not self.raw_completed_items:
+            messagebox.showinfo("Thông báo", "Danh sách đang trống.")
+            return
+        export_path = os.path.join(DATA_DIR, "danh_sach_bctc_q3_2026.json")
+        try:
+            with open(export_path, "w", encoding="utf-8") as f:
+                json.dump(self.raw_completed_items, f, ensure_ascii=False, indent=2)
+            messagebox.showinfo("Thành công", f"Đã xuất {len(self.raw_completed_items)} mã ra file:\n{export_path}")
+        except Exception as e:
+            messagebox.showerror("Lỗi", f"Không thể xuất file: {e}")
+
+    # ==========================
+    # TAB 4: GIÁM SÁT TỰ ĐỘNG
     # ==========================
     def build_tab_monitor(self):
         p = ttk.Frame(self.tab_monitor, padding=20)
@@ -1258,6 +1562,9 @@ class StockRadarGUI(tk.Tk):
                                         alert_payload['lnst_label'] = lnst.get('label')
                                     send_discord_alert(alert_payload)
 
+                                profit_val = lnst.get('current_quarter') if lnst.get('has_data') else None
+                                yoy_val = lnst.get('yoy') if lnst.get('has_data') else None
+                                dir_val = lnst.get('direction', 'up') if lnst.get('has_data') else None
                                 completed_cache[t] = {
                                     "ticker": t,
                                     "company_name": item.get('name', ''),
@@ -1266,9 +1573,14 @@ class StockRadarGUI(tk.Tk):
                                     "doc_url": doc_url,
                                     "source": res.get('source'),
                                     "bctc_type": b_type,
+                                    "profit": profit_val,
+                                    "yoy": yoy_val,
+                                    "direction": dir_val,
                                     "updated_at": datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
                                 }
                                 save_completed_cache(completed_cache)
+                                if hasattr(self, 'refresh_completed_list'):
+                                    self.after(0, self.refresh_completed_list)
                         except:
                             pass
                             
