@@ -377,15 +377,150 @@ def extract_lnst_and_yoy(doc_url):
     except Exception as e:
         return {"has_data": False, "reason": str(e)}
 
-def get_discord_webhook():
-    webhook_url = os.environ.get("DISCORD_WEBHOOK_URL")
-    if not webhook_url and os.path.exists(DISCORD_CONFIG_FILE):
+def load_discord_config():
+    if os.path.exists(DISCORD_CONFIG_FILE):
         try:
             with open(DISCORD_CONFIG_FILE, "r", encoding="utf-8") as f:
-                webhook_url = json.load(f).get("webhook_url")
+                data = json.load(f)
+                if not data.get("channel_id"):
+                    data["channel_id"] = "1559224302669398108"
+                return data
         except:
             pass
+    return {
+        "webhook_url": "",
+        "bot_token": "",
+        "channel_id": "1559224302669398108",
+        "bot_enabled": False
+    }
+
+def save_discord_config(cfg):
+    try:
+        with open(DISCORD_CONFIG_FILE, "w", encoding="utf-8") as f:
+            json.dump(cfg, f, ensure_ascii=False, indent=2)
+    except:
+        pass
+
+def get_discord_webhook():
+    webhook_url = os.environ.get("DISCORD_WEBHOOK_URL")
+    if not webhook_url:
+        cfg = load_discord_config()
+        webhook_url = cfg.get("webhook_url")
     return webhook_url
+
+def send_discord_bot_msg(channel_id, bot_token, text, embeds=None):
+    if channel_id and bot_token:
+        url = f"https://discord.com/api/v10/channels/{channel_id}/messages"
+        payload = {"content": text}
+        if embeds:
+            payload["embeds"] = embeds
+        req = urllib.request.Request(
+            url,
+            data=json.dumps(payload).encode('utf-8'),
+            headers={
+                'Authorization': f'Bot {bot_token}',
+                'Content-Type': 'application/json',
+                'User-Agent': 'DiscordBot (https://dulieudautu.com, 1.0)'
+            }
+        )
+        try:
+            with urllib.request.urlopen(req, timeout=8) as resp:
+                return True
+        except:
+            pass
+
+    # Fallback sang webhook nếu có
+    webhook_url = get_discord_webhook()
+    if webhook_url:
+        payload = {"content": text}
+        if embeds:
+            payload["embeds"] = embeds
+        try:
+            req = urllib.request.Request(
+                webhook_url,
+                data=json.dumps(payload).encode('utf-8'),
+                headers={'Content-Type': 'application/json', 'User-Agent': 'Mozilla/5.0'}
+            )
+            urllib.request.urlopen(req, timeout=8)
+            return True
+        except:
+            pass
+    return False
+
+class DiscordBotListener:
+    def __init__(self, bot_token, channel_id, on_command_callback):
+        self.bot_token = bot_token.strip()
+        self.channel_id = str(channel_id).strip()
+        self.on_command = on_command_callback
+        self.is_running = False
+        self.last_msg_id = None
+        self.thread = None
+        self.bot_name = "StockRadarBot"
+
+    def start(self):
+        if self.is_running:
+            return True, f"Trợ lý @{self.bot_name} đang hoạt động."
+        headers = {
+            'Authorization': f'Bot {self.bot_token}',
+            'User-Agent': 'DiscordBot (https://dulieudautu.com, 1.0)'
+        }
+        try:
+            req = urllib.request.Request('https://discord.com/api/v10/users/@me', headers=headers)
+            with urllib.request.urlopen(req, timeout=8) as resp:
+                bot_user = json.loads(resp.read().decode('utf-8'))
+                self.bot_name = bot_user.get('username', 'StockRadarBot')
+        except Exception as e:
+            return False, f"Bot Token không hợp lệ hoặc lỗi mạng: {e}"
+
+        try:
+            url = f'https://discord.com/api/v10/channels/{self.channel_id}/messages?limit=1'
+            req = urllib.request.Request(url, headers=headers)
+            with urllib.request.urlopen(req, timeout=8) as resp:
+                msgs = json.loads(resp.read().decode('utf-8'))
+                if msgs and isinstance(msgs, list):
+                    self.last_msg_id = msgs[0]['id']
+        except Exception as e:
+            return False, f"Không thể kết nối vào Kênh {self.channel_id}: {e}"
+
+        self.is_running = True
+        self.thread = threading.Thread(target=self._loop, daemon=True)
+        self.thread.start()
+        return True, f"Trợ lý @{self.bot_name} đã sẵn sàng nhận lệnh từ điện thoại!"
+
+    def stop(self):
+        self.is_running = False
+
+    def _loop(self):
+        headers = {
+            'Authorization': f'Bot {self.bot_token}',
+            'User-Agent': 'DiscordBot (https://dulieudautu.com, 1.0)'
+        }
+        while self.is_running:
+            try:
+                time.sleep(2.5)
+                fetch_url = f'https://discord.com/api/v10/channels/{self.channel_id}/messages?limit=5'
+                if self.last_msg_id:
+                    fetch_url += f'&after={self.last_msg_id}'
+
+                req = urllib.request.Request(fetch_url, headers=headers)
+                with urllib.request.urlopen(req, timeout=8) as resp:
+                    new_msgs = json.loads(resp.read().decode('utf-8'))
+                    if new_msgs and isinstance(new_msgs, list):
+                        new_msgs.sort(key=lambda m: int(m['id']))
+                        for msg in new_msgs:
+                            self.last_msg_id = msg['id']
+                            author = msg.get('author', {})
+                            if author.get('bot'):
+                                continue
+                            content = msg.get('content', '').strip()
+                            if content:
+                                threading.Thread(
+                                    target=self.on_command,
+                                    args=(content, author.get('username', 'Bạn')),
+                                    daemon=True
+                                ).start()
+            except:
+                time.sleep(3)
 
 def send_discord_alert(alert_payload):
     webhook_url = get_discord_webhook()
@@ -538,10 +673,12 @@ class StockRadarGUI(tk.Tk):
         self.is_monitoring = False
         self.monitor_thread = None
         self.last_result = None
+        self.bot_listener = None
         
         self.setup_styles()
         self.create_widgets()
         enable_windows_keep_awake()
+        self.after(1000, self.auto_start_bot_listener)
 
     def setup_styles(self):
         self.style = ttk.Style(self)
@@ -1699,11 +1836,11 @@ class StockRadarGUI(tk.Tk):
 
         cur_hook = get_discord_webhook() or ""
         self.entry_webhook = ttk.Entry(p, font=("Segoe UI", 10), width=80)
-        self.entry_webhook.pack(fill=tk.X, pady=(0, 10), ipady=4)
+        self.entry_webhook.pack(fill=tk.X, pady=(0, 8), ipady=4)
         self.entry_webhook.insert(0, cur_hook)
 
         btn_box = tk.Frame(p)
-        btn_box.pack(anchor=tk.W, pady=(0, 20))
+        btn_box.pack(anchor=tk.W, pady=(0, 15))
 
         btn_save_hook = tk.Button(btn_box, text="💾 Lưu Cấu Hình Webhook", font=("Segoe UI", 9, "bold"), bg="#0284C7", fg="white", padx=12, pady=4, relief=tk.FLAT, command=self.on_save_webhook)
         btn_save_hook.pack(side=tk.LEFT, padx=(0, 10))
@@ -1711,8 +1848,64 @@ class StockRadarGUI(tk.Tk):
         btn_test_hook = tk.Button(btn_box, text="🔔 Bắn Thử Thông Báo Discord", font=("Segoe UI", 9, "bold"), bg="#10B981", fg="white", padx=12, pady=4, relief=tk.FLAT, command=self.on_test_webhook)
         btn_test_hook.pack(side=tk.LEFT)
 
-        sep = ttk.Separator(p, orient=tk.HORIZONTAL)
-        sep.pack(fill=tk.X, pady=20)
+        # Phần 2: Trợ lý ảo Discord 2 chiều (Điều khiển từ điện thoại)
+        sep1 = ttk.Separator(p, orient=tk.HORIZONTAL)
+        sep1.pack(fill=tk.X, pady=12)
+
+        lbl_bot = ttk.Label(p, text="🤖 Trợ lý ảo Discord 2 chiều (Kích hoạt quét & Kiểm tra máy tính từ xa qua điện thoại):", font=("Segoe UI", 11, "bold"))
+        lbl_bot.pack(anchor=tk.W, pady=(0, 8))
+
+        cfg_disc = load_discord_config()
+        cur_token = cfg_disc.get("bot_token", "")
+        cur_cid = cfg_disc.get("channel_id", "1559224302669398108")
+
+        bot_frame = tk.Frame(p, bg="white", relief=tk.SOLID, bd=1, padx=16, pady=12)
+        bot_frame.pack(fill=tk.X, pady=(0, 12))
+
+        # Hàng 1: Bot Token
+        r_token = tk.Frame(bot_frame, bg="white")
+        r_token.pack(fill=tk.X, pady=4)
+        tk.Label(r_token, text="Discord Bot Token:", font=("Segoe UI", 9, "bold"), bg="white", width=18, anchor=tk.W).pack(side=tk.LEFT)
+        self.entry_bot_token = ttk.Entry(r_token, font=("Segoe UI", 9), width=50, show="*")
+        self.entry_bot_token.pack(side=tk.LEFT, padx=(0, 8), fill=tk.X, expand=True)
+        self.entry_bot_token.insert(0, cur_token)
+
+        self.btn_show_token = tk.Button(r_token, text="👁️ Hiện", font=("Segoe UI", 8), relief=tk.FLAT, bg="#F1F5F9", padx=6, command=self.toggle_show_token)
+        self.btn_show_token.pack(side=tk.LEFT)
+
+        # Hàng 2: Channel ID
+        r_cid = tk.Frame(bot_frame, bg="white")
+        r_cid.pack(fill=tk.X, pady=4)
+        tk.Label(r_cid, text="Kênh Chat ID:", font=("Segoe UI", 9, "bold"), bg="white", width=18, anchor=tk.W).pack(side=tk.LEFT)
+        self.entry_channel_id = ttk.Entry(r_cid, font=("Segoe UI", 9), width=28)
+        self.entry_channel_id.pack(side=tk.LEFT)
+        self.entry_channel_id.insert(0, cur_cid)
+        tk.Label(r_cid, text="(Đã nhận diện từ kênh 'check BCTC' của bạn)", font=("Segoe UI", 8, "italic"), fg="#64748B", bg="white").pack(side=tk.LEFT, padx=10)
+
+        # Hàng 3: Buttons & Status
+        r_act = tk.Frame(bot_frame, bg="white")
+        r_act.pack(fill=tk.X, pady=(10, 4))
+
+        self.btn_toggle_bot = tk.Button(r_act, text="▶️ BẬT TRỢ LÝ ẢO 2 CHIỀU", font=("Segoe UI", 9, "bold"), bg="#10B981", fg="white", padx=14, pady=4, relief=tk.FLAT, command=self.on_toggle_bot)
+        self.btn_toggle_bot.pack(side=tk.LEFT, padx=(0, 10))
+
+        btn_guide = tk.Button(r_act, text="📖 Hướng Dẫn Lấy Token (2 phút)", font=("Segoe UI", 9), bg="#F1F5F9", fg="#334155", padx=10, pady=4, relief=tk.FLAT, command=self.show_bot_guide)
+        btn_guide.pack(side=tk.LEFT, padx=(0, 15))
+
+        self.lbl_bot_state = tk.Label(r_act, text="⚪ Chưa kích hoạt", font=("Segoe UI", 9, "bold"), fg="#64748B", bg="white")
+        self.lbl_bot_state.pack(side=tk.LEFT)
+
+        # Hàng 4: Hướng dẫn lệnh trên điện thoại
+        cmd_box = tk.Frame(bot_frame, bg="#F8FAFC", padx=10, pady=8)
+        cmd_box.pack(fill=tk.X, pady=(10, 0))
+        tk.Label(cmd_box, text="📱 CÁC CÂU LỆNH ĐIỀU KHIỂN TỪ ĐIỆN THOẠI (NHẮN VÀO KÊNH DISCORD):", font=("Segoe UI", 9, "bold"), fg="#0369A1", bg="#F8FAFC").pack(anchor=tk.W)
+        tk.Label(cmd_box, text="• '!scan' hoặc 'scan': Ra lệnh cho máy tính ở nhà kích hoạt lượt quét ngay tức khắc.", font=("Segoe UI", 8), bg="#F8FAFC").pack(anchor=tk.W)
+        tk.Label(cmd_box, text="• '!status' hoặc 'status': Kiểm tra máy tính ở nhà còn sống không, đã quét được bao nhiêu mã.", font=("Segoe UI", 8), bg="#F8FAFC").pack(anchor=tk.W)
+        tk.Label(cmd_box, text="• '!check <MÃ>' (VD: '!check BMP'): Tra cứu BCTC của 1 mã bất kỳ, lấy link PDF và LNST.", font=("Segoe UI", 8), bg="#F8FAFC").pack(anchor=tk.W)
+
+        # Phần 3: Thêm mã thủ công
+        sep2 = ttk.Separator(p, orient=tk.HORIZONTAL)
+        sep2.pack(fill=tk.X, pady=12)
 
         lbl2 = ttk.Label(p, text="➕ Thêm mã cổ phiếu vào danh sách giám sát tự động 5 phút/lần:", font=("Segoe UI", 11, "bold"))
         lbl2.pack(anchor=tk.W, pady=(0, 8))
@@ -1726,11 +1919,266 @@ class StockRadarGUI(tk.Tk):
         btn_add = tk.Button(bar_add, text="Thêm Mã Vào Giám Sát", font=("Segoe UI", 9, "bold"), bg="#334155", fg="white", padx=12, pady=4, relief=tk.FLAT, command=self.on_add_ticker)
         btn_add.pack(side=tk.LEFT)
 
+    def toggle_show_token(self):
+        if self.entry_bot_token.cget('show') == '*':
+            self.entry_bot_token.config(show='')
+            self.btn_show_token.config(text="🙈 Ẩn")
+        else:
+            self.entry_bot_token.config(show='*')
+            self.btn_show_token.config(text="👁️ Hiện")
+
+    def auto_start_bot_listener(self):
+        cfg = load_discord_config()
+        if cfg.get("bot_enabled") and cfg.get("bot_token"):
+            self.start_bot_service(quiet=True)
+
+    def on_toggle_bot(self):
+        if self.bot_listener and self.bot_listener.is_running:
+            self.stop_bot_service()
+        else:
+            self.start_bot_service(quiet=False)
+
+    def start_bot_service(self, quiet=False):
+        token = self.entry_bot_token.get().strip()
+        cid = self.entry_channel_id.get().strip() or "1559224302669398108"
+        if not token:
+            if not quiet:
+                messagebox.showwarning("Thiếu Token", "Vui lòng nhập Discord Bot Token!\nBấm nút [Hướng dẫn lấy Token] bên dưới nếu chưa có.")
+            return
+
+        cfg = load_discord_config()
+        cfg["bot_token"] = token
+        cfg["channel_id"] = cid
+        cfg["bot_enabled"] = True
+        save_discord_config(cfg)
+
+        self.bot_listener = DiscordBotListener(token, cid, self.handle_discord_command)
+        ok, msg = self.bot_listener.start()
+        if ok:
+            self.lbl_bot_state.config(text=f"🟢 ĐANG LẮNG NGHE LỆNH TỪ ĐIỆN THOẠI (@{self.bot_listener.bot_name})", fg="#166534")
+            self.btn_toggle_bot.config(text="⏹️ TẮT TRỢ LÝ ẢO", bg="#EF4444")
+            send_discord_bot_msg(cid, token, f"🤖 **Trợ lý Stock Radar Pro** đã kích hoạt thành công trên máy tính!\n👉 Hãy thử gửi `!scan` hoặc `!status` từ điện thoại.")
+            if not quiet:
+                messagebox.showinfo("Thành công", f"{msg}\n\nBây giờ bạn có thể mở Discord trên điện thoại và gõ '!scan' hoặc '!status'!")
+        else:
+            self.lbl_bot_state.config(text="🔴 KẾT NỐI THẤT BẠI", fg="#DC2626")
+            self.btn_toggle_bot.config(text="▶️ BẬT TRỢ LÝ ẢO 2 CHIỀU", bg="#10B981")
+            if not quiet:
+                messagebox.showerror("Lỗi kết nối", f"{msg}\n\nVui lòng kiểm tra lại Bot Token và đảm bảo Bot đã được thêm vào Server.")
+
+    def stop_bot_service(self):
+        if self.bot_listener:
+            self.bot_listener.stop()
+        cfg = load_discord_config()
+        cfg["bot_enabled"] = False
+        save_discord_config(cfg)
+        self.lbl_bot_state.config(text="⚪ Chưa kích hoạt", fg="#64748B")
+        self.btn_toggle_bot.config(text="▶️ BẬT TRỢ LÝ ẢO 2 CHIỀU", bg="#10B981")
+        messagebox.showinfo("Đã tắt", "Đã dừng Trợ lý ảo Discord 2 chiều.")
+
+    def show_bot_guide(self):
+        guide = (
+            "📌 CÁC BƯỚC TẠO DISCORD BOT (Chỉ mất 2-3 phút, miễn phí 100%):\n\n"
+            "1. Truy cập trang: https://discord.com/developers/applications\n"
+            "2. Bấm nút [New Application] góc phải -> Đặt tên (VD: Stock Radar) -> Bấm Create.\n"
+            "3. Menu bên trái chọn [Bot]:\n"
+            "   • Bấm [Reset Token] -> Sao chép chuỗi Token dán vào ô bên dưới.\n"
+            "   • Kéo xuống phần 'Privileged Gateway Intents': Bật công tắc [MESSAGE CONTENT INTENT] lên (Màu xanh).\n"
+            "4. Menu bên trái chọn [OAuth2] -> [URL Generator]:\n"
+            "   • Mục Scopes: Tích chọn 'bot'\n"
+            "   • Mục Bot Permissions: Tích 'Send Messages', 'Read Messages/View Channels', 'Read Message History'.\n"
+            "   • Copy đường link ở dưới cùng -> Dán vào trình duyệt để thêm Bot vào Server của bạn.\n\n"
+            "Sau khi hoàn tất, dán Token vào phần mềm và bấm [BẬT TRỢ LÝ ẢO] là xong!"
+        )
+        if messagebox.askyesno("Hướng dẫn tạo Bot", guide + "\n\nBạn có muốn mở trang Discord Developer Portal ngay bây giờ không?"):
+            webbrowser.open("https://discord.com/developers/applications")
+
+    def handle_discord_command(self, content, username):
+        cmd = content.strip().lower()
+        cfg = load_discord_config()
+        token = cfg.get("bot_token")
+        cid = cfg.get("channel_id")
+
+        def reply(text, embeds=None):
+            send_discord_bot_msg(cid, token, text, embeds)
+
+        if cmd in ['!scan', '/scan', 'scan', '!quet', '/quet', 'quet']:
+            reply(f"🚀 **[{username}]** đã ra lệnh quét từ xa qua điện thoại!\n👉 Máy tính ở nhà đang tiến hành quét các nhóm cổ phiếu...")
+            self.execute_remote_scan(reply)
+
+        elif cmd in ['!status', '/status', 'status', 'ping', '!ping']:
+            cache = load_completed_cache()
+            total_comp = len(cache)
+            hn_cnt = sum(1 for it in cache.values() if it.get('bctc_type') in ['HOP_NHAT', 'DAY_DU'])
+            rieng_cnt = sum(1 for it in cache.values() if it.get('bctc_type') == 'RIENG')
+            is_mon = "🟢 Đang chạy liên tục" if self.is_monitoring else "⚪ Đang chờ"
+            now_str = datetime.datetime.now().strftime("%H:%M:%S %d/%m/%Y")
+
+            msg = (
+                f"🟢 **STOCK RADAR PRO - BÁO CÁO TRẠNG THÁI MÁY TÍNH Ở NHÀ**\n"
+                f"• **Thời gian:** `{now_str}`\n"
+                f"• **Tình trạng:** Đang trực tuyến & Hoạt động bình thường\n"
+                f"• **Chế độ tự động:** {is_mon}\n"
+                f"• **Tổng số mã đã ra BCTC:** `{total_comp} mã` (🟢 {hn_cnt} Hợp nhất / 🟡 {rieng_cnt} Riêng)\n\n"
+                f"💡 Gõ `!scan` để kích hoạt quét ngay lập tức!\n"
+                f"💡 Gõ `!check <MÃ>` (VD: `!check BMP`) để tra cứu riêng 1 mã."
+            )
+            reply(msg)
+
+        elif any(cmd.startswith(prefix) for prefix in ['!check', '/check', 'check', '!bctc', 'bctc']):
+            parts = content.strip().split()
+            if len(parts) >= 2:
+                ticker = parts[1].upper().strip()
+                reply(f"🔍 **[{username}]** yêu cầu kiểm tra BCTC Quý 3/2026 cho mã `{ticker}`. Đang tra cứu...")
+                self.execute_remote_check_ticker(ticker, reply)
+            else:
+                reply("⚠️ Vui lòng nhập kèm mã cổ phiếu. Ví dụ: `!check BMP` hoặc `check VNM`")
+
+        elif cmd in ['!help', '/help', 'help', 'huongdan', '?']:
+            msg = (
+                f"📋 **DANH SÁCH LỆNH ĐIỀU KHIỂN TỪ ĐIỆN THOẠI:**\n"
+                f"• `!scan` hoặc `scan`: Kích hoạt lượt quét toàn bộ danh mục ngay lập tức.\n"
+                f"• `!status` hoặc `status`: Kiểm tra tình trạng máy tính & BCTC.\n"
+                f"• `!check <MÃ>` (Ví dụ: `!check BMP`): Tra cứu tức thì 1 mã bất kỳ.\n"
+                f"• `!help`: Xem lại danh sách hướng dẫn này."
+            )
+            reply(msg)
+
+    def execute_remote_scan(self, reply_func):
+        tickers_list = self.get_selected_tickers_list()
+        if not tickers_list:
+            tickers_list = self.get_monitor_tickers_list()
+        if not tickers_list:
+            reply_func("⚠️ Chưa có nhóm cổ phiếu nào được chọn trên phần mềm để quét.")
+            return
+
+        completed_cache = load_completed_cache()
+        to_scan = [it for it in tickers_list if not is_bctc_fully_completed(it['ticker'], completed_cache)]
+        skipped_cnt = len(tickers_list) - len(to_scan)
+
+        start_t = time.time()
+        new_found_cnt = 0
+
+        def sub_worker(item):
+            t = item['ticker']
+            r = check_fpts_ezir(t)
+            if r.get('has_q3'):
+                return t, item, r
+            uri = item.get('uri', '')
+            if uri:
+                r_w = check_company_website(t, uri)
+                if r_w and r_w.get('has_q3'):
+                    return t, item, r_w
+            return t, item, r
+
+        with ThreadPoolExecutor(max_workers=10) as executor:
+            futures = [executor.submit(sub_worker, it) for it in to_scan]
+            for fut in futures:
+                try:
+                    t, item, res = fut.result()
+                    if res.get('has_q3'):
+                        b_type = res.get('bctc_type', 'DAY_DU')
+                        doc_url = res.get('doc_url', '')
+                        date_str = res.get('date', datetime.datetime.now().strftime("%d/%m/%Y"))
+
+                        old_cache = completed_cache.get(t)
+                        old_type = old_cache.get('bctc_type') if old_cache else None
+                        is_brand_new = (t not in completed_cache)
+                        is_new_hop_nhat = (old_type == 'RIENG' and b_type == 'HOP_NHAT')
+
+                        if is_brand_new or is_new_hop_nhat:
+                            new_found_cnt += 1
+                            lnst = extract_lnst_and_yoy(doc_url)
+                            alert_payload = {
+                                "ticker": t,
+                                "company_name": item.get('name', ''),
+                                "exchange": item.get('san', 'UPCOM'),
+                                "quarter": "Quý 3/2026",
+                                "release_date": date_str,
+                                "title": res.get('title'),
+                                "source": res.get('source'),
+                                "bctc_type": b_type,
+                                "doc_url": doc_url
+                            }
+                            if lnst.get('has_data'):
+                                alert_payload['net_profit'] = lnst.get('current_quarter')
+                                alert_payload['growth_rate'] = lnst.get('yoy')
+                                alert_payload['growth_direction'] = lnst.get('direction', 'up')
+                                alert_payload['lnst_label'] = lnst.get('label')
+                            send_discord_alert(alert_payload)
+
+                        profit_val = lnst.get('current_quarter') if lnst.get('has_data') else None
+                        yoy_val = lnst.get('yoy') if lnst.get('has_data') else None
+                        dir_val = lnst.get('direction', 'up') if lnst.get('has_data') else None
+                        completed_cache[t] = {
+                            "ticker": t,
+                            "company_name": item.get('name', ''),
+                            "release_date": date_str,
+                            "title": res.get('title'),
+                            "doc_url": doc_url,
+                            "source": res.get('source'),
+                            "bctc_type": b_type,
+                            "profit": profit_val,
+                            "yoy": yoy_val,
+                            "direction": dir_val,
+                            "updated_at": datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+                        }
+                        save_completed_cache(completed_cache)
+                except:
+                    pass
+
+        elapsed = round(time.time() - start_t, 1)
+        if hasattr(self, 'refresh_completed_list'):
+            self.after(0, self.refresh_completed_list)
+        if hasattr(self, 'update_selection_summary'):
+            self.after(0, self.update_selection_summary)
+
+        reply_func(f"✅ **ĐÃ QUÉT XONG THEO LỆNH TỪ ĐIỆN THOẠI!**\n• Đã kiểm tra: `{len(to_scan)} mã` (Đã bỏ qua {skipped_cnt} mã hoàn tất)\n• Thời gian quét: `{elapsed}s`\n• Phát hiện mới: `{new_found_cnt} BCTC`.")
+
+    def execute_remote_check_ticker(self, ticker, reply_func):
+        info = get_company_info(ticker)
+        r_ezir = check_fpts_ezir(ticker)
+        res = r_ezir if r_ezir.get('has_q3') else None
+        if not res and info.get('uri'):
+            r_web = check_company_website(ticker, info['uri'])
+            if r_web and r_web.get('has_q3'):
+                res = r_web
+        if not res:
+            r_cf = check_cafef_cbtt(ticker)
+            if r_cf and r_cf.get('has_q3'):
+                res = r_cf
+
+        if res and res.get('has_q3'):
+            doc_url = res.get('doc_url', '')
+            b_type = res.get('bctc_type', 'DAY_DU')
+            lnst = extract_lnst_and_yoy(doc_url)
+            alert_payload = {
+                "ticker": ticker,
+                "company_name": info['name'],
+                "exchange": info['san'],
+                "quarter": "Quý 3/2026",
+                "release_date": res.get('date'),
+                "title": res.get('title'),
+                "source": res.get('source'),
+                "bctc_type": b_type,
+                "doc_url": doc_url
+            }
+            if lnst.get('has_data'):
+                alert_payload['net_profit'] = lnst.get('current_quarter')
+                alert_payload['growth_rate'] = lnst.get('yoy')
+                alert_payload['growth_direction'] = lnst.get('direction', 'up')
+                alert_payload['lnst_label'] = lnst.get('label')
+            send_discord_alert(alert_payload)
+            reply_func(f"🔥 **ĐÃ CÓ BCTC QUÝ 3/2026 CHO [{ticker}]!**\nChi tiết báo cáo và link tải đã được gửi lên kênh.")
+        else:
+            reply_func(f"❄️ **[{ticker}] ({info['name']})** hiện **CHƯA CÓ** Báo cáo tài chính Quý 3/2026.")
+
     def on_save_webhook(self):
         new_hook = self.entry_webhook.get().strip()
         if new_hook:
-            with open(DISCORD_CONFIG_FILE, "w", encoding="utf-8") as f:
-                json.dump({"webhook_url": new_hook}, f, indent=2)
+            cfg = load_discord_config()
+            cfg["webhook_url"] = new_hook
+            save_discord_config(cfg)
             messagebox.showinfo("Thành công", "Đã lưu Discord Webhook URL thành công!")
         else:
             messagebox.showwarning("Trống", "Vui lòng nhập Webhook URL.")
