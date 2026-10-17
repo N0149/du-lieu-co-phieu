@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { getAgmReport, getAvailableAgmTickers } from '@/lib/agm-service'
 
-export const revalidate = 60
+export const revalidate = 86400 // Cache 24 giờ
 
 export async function GET(
   request: NextRequest,
@@ -22,7 +22,7 @@ export async function GET(
       { agmData, availableTickers },
       {
         headers: {
-          'Cache-Control': 'public, s-maxage=60, stale-while-revalidate=300',
+          'Cache-Control': 'public, s-maxage=86400, stale-while-revalidate=604800',
         },
       }
     )

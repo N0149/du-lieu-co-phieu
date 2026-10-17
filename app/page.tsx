@@ -5,9 +5,9 @@ import { getCachedNews, fetchAllRssFeeds } from '@/lib/rss-news-service'
 import { getRecentMarketDisclosures } from '@/lib/disclosures'
 import manifestRaw from '@/data/longlive_manifest.json'
 
-// Kích hoạt bộ nhớ đệm CDN Edge Vercel (ISR) 60 giây:
-// Người dùng truy cập dulieudautu.com nhận ngay HTML siêu tốc < 50ms từ CDN Singapore/Việt Nam
-export const revalidate = 60
+// Kích hoạt bộ nhớ đệm CDN Edge Vercel (ISR) 30 phút (1800 giây):
+// Tin tức thời gian thực trong phiên vẫn được cập nhật tự động qua cơ chế polling client-side
+export const revalidate = 1800
 
 export const metadata: Metadata = {
   title: 'Công Bố Thông Tin 3 Sàn & Tin Tức Doanh Nghiệp Realtime | Dữ Liệu Đầu Tư',

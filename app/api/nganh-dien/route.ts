@@ -10,7 +10,7 @@ import {
   EAV_REGULATION_DOCS,
 } from '@/lib/nganh-dien-data';
 
-export const revalidate = 60; // Cache 1 minute
+export const revalidate = 86400; // Cache 24 giờ
 
 const OFFLINE_DIR = path.join(process.cwd(), 'data', 'nganh_dien');
 

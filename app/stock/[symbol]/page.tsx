@@ -31,9 +31,9 @@ import { getLocalPriceWeekly, getLocalStockCandles, getStockCandles } from '@/li
 import { getCompanyWebsiteMeta } from '@/lib/company-website-service'
 import { getCompanyBctcDocuments } from '@/lib/bctc-document-service'
 
-// Tối ưu hóa bộ nhớ đệm CDN Edge Vercel (ISR) 60 giây:
-// Người dùng tiếp theo truy cập sẽ nhận phản hồi < 50ms từ Edge CDN gần nhất (Singapore/Việt Nam)
-export const revalidate = 60
+// Tối ưu hóa bộ nhớ đệm CDN Edge Vercel (ISR) 24 giờ (86400 giây):
+// BCTC và hồ sơ cổ phiếu được lưu cache CDN, giúp tải siêu tốc < 50ms và tiết kiệm hạn mức ISR Vercel
+export const revalidate = 86400
 
 export async function generateMetadata({
   params,

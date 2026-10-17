@@ -12,7 +12,7 @@ export const metadata: Metadata = {
   },
 }
 
-export const revalidate = 900 // Revalidate mỗi 15 phút
+export const revalidate = 3600 // Revalidate mỗi 1 giờ
 
 export default function BoLocPage() {
   // Lấy dữ liệu 1.530 mã đã làm giàu trực tiếp trên máy chủ

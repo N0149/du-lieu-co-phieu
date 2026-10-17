@@ -3,7 +3,7 @@ import { getBctcReport, getAvailableBctcTickers } from '@/lib/bctc-service'
 import { getCompanyBctcDocuments } from '@/lib/bctc-document-service'
 import { getCompanyWebsiteMeta } from '@/lib/company-website-service'
 
-export const revalidate = 60
+export const revalidate = 86400 // Cache 24 giờ
 
 export async function GET(
   request: NextRequest,
@@ -27,7 +27,7 @@ export async function GET(
       { bctcDataHopNhat, bctcDataCongTyMe, availableTickers, bctcDocuments },
       {
         headers: {
-          'Cache-Control': 'public, s-maxage=60, stale-while-revalidate=300',
+          'Cache-Control': 'public, s-maxage=86400, stale-while-revalidate=604800',
         },
       }
     )
