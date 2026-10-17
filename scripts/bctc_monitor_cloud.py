@@ -709,7 +709,7 @@ def send_heartbeat(event_type, details=""):
             "content": f"☀️ **[08:00] BẮT ĐẦU PHIÊN GIÁM SÁT BCTC NGÀY {date_str}**",
             "embeds": [{
                 "title": "🟢 Hệ thống Giám sát đang hoạt động tự động",
-                "description": f"Hệ thống tự động quét **115 mã cổ phiếu nhóm 1**:\n• Phiên Sáng (08:00 - 11:30): **5 phút/lần**\n• Khung Giờ Trưa (11:30 - 13:00): **10 phút/lần**\n• Phiên Chiều (13:00 - 15:30): **5 phút/lần**\n{details}",
+                "description": f"Hệ thống tự động quét **115 mã cổ phiếu nhóm 1**:\n• Tần suất quét ngầm: **5 phút/lần** (Phát hiện BCTC tức thì)\n• Báo nhịp đập Discord: **10 phút/lần** (Báo bình thường, chống spam)\n• Cảnh báo BCTC mới: **Ngay lập tức** kèm bóc tách LNST & % YoY\n{details}",
                 "color": 0x3B82F6,
                 "footer": {"text": "BCTC Live Monitor • dulieudautu.com"},
                 "timestamp": datetime.datetime.now(datetime.timezone.utc).isoformat()
@@ -759,8 +759,7 @@ def send_silent_ping(scan_index, remaining_count, elapsed_sec, new_count=0, sess
     if new_count > 0:
         content = f"🔥 **[{time_str}] Lượt #{scan_index}{tag_str}:** Phát hiện **{new_count} BCTC MỚI**! Đã gửi thông báo chi tiết."
     else:
-        freq_str = " (quét 10p/lần)" if session_tag == "Trưa" else " (quét 5p/lần)"
-        content = f"🟢 `[{time_str}]` **Lượt #{scan_index}{tag_str}:** Đã kiểm tra **{remaining_count} mã** ({elapsed_sec}s){freq_str} • Bình thường, chưa có BCTC mới."
+        content = f"🟢 `[{time_str}]` **Hệ thống hoạt động bình thường**{tag_str} • Đã quét **{remaining_count} mã** ({elapsed_sec}s, chu kỳ 5p) • Chưa có BCTC mới."
         
     payload = {
         "content": content,
@@ -1033,6 +1032,7 @@ def main():
     # CHẾ ĐỘ VÒNG LẶP LIÊN TỤC TRONG CA (LOOP WORKER)
     log(f"🚀 Kích hoạt chế độ Vòng lặp liên tục: {session_name}")
     scan_index = 0
+    last_silent_ping_ts = 0
     
     while True:
         scan_index += 1
@@ -1046,8 +1046,13 @@ def main():
 
         try:
             new_cnt, rem_cnt, elapsed = execute_single_scan(scan_index=scan_index)
-            # Gửi nhịp đập Silent mỗi lượt quét để người dùng yên tâm 100%
-            send_silent_ping(scan_index, rem_cnt, elapsed, new_count=new_cnt, session_tag=session_tag)
+            # Gửi nhịp đập Silent định kỳ 10 phút/lần (hoặc gửi ngay nếu có BCTC mới) để chống spam
+            now_ts = time.time()
+            if new_cnt > 0 or (now_ts - last_silent_ping_ts >= 540):
+                send_silent_ping(scan_index, rem_cnt, elapsed, new_count=new_cnt, session_tag=session_tag)
+                last_silent_ping_ts = now_ts
+            else:
+                log(f"ℹ️ Lượt #{scan_index}: Bình thường ({elapsed}s). Bỏ qua ping Discord để duy trì tần suất 10 phút/lần chống spam.")
         except Exception as e:
             log(f"Lỗi trong lượt quét #{scan_index}: {e}")
             send_system_error_alert(f"Lỗi trong lượt quét #{scan_index}: {e}")
