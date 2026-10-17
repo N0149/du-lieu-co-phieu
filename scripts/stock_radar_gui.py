@@ -1,15 +1,12 @@
 """
-STOCK RADAR PRO - GIAO DIỆN ĐỒ HỌA (WINDOWS GUI APPLICATION)
+STOCK RADAR PRO - GIAO DIỆN ĐỒ HỌA CHUYÊN NGHIỆP (WINDOWS GUI v2.1)
 Phát triển bởi dulieudautu.com
-- Giao diện đồ họa chuyên nghiệp, hiện đại, không cần màn hình dòng lệnh đen.
-- Đầy đủ 3 nhóm:
-  + Nhóm 1: 116 mã trọng điểm (Ra BCTC từ 15 - 23/10, đã có BMP)
-  + Nhóm 2: 69 mã (Ra BCTC từ 23 - 28/10: TTT -> HSM)
-  + Nhóm 3: 94 mã (Ra BCTC từ 29 - 30/10: SJD -> VTB)
-  + Mở rộng 278 mã & 938 mã toàn thị trường
-- Bóc tách LNST & % YoY trực tiếp từ PDF
-- Giám sát ngầm tự động, chống Windows Sleep khi đi làm
-- Tự động gửi cảnh báo Discord điện thoại
+Cập nhật mới:
+- Tích chọn ĐA NHÓM (quét đồng thời Nhóm 1 + Nhóm 2, hoặc bất kỳ nhóm nào).
+- Ghi nhớ VĨNH VIỄN các mã đã có BCTC đầy đủ (Hợp nhất / Đầy đủ) và TỰ ĐỘNG BỎ QUA khi quét (không tốn tài nguyên mạng).
+- Mã mới có BCTC Riêng hoặc Giải trình vẫn tiếp tục quét kiểm tra cho đến khi ra BCTC Hợp nhất.
+- Bảng hiển thị thông minh: Phân biệt rõ "🔥 MỚI RA" vs "✅ ĐÃ XONG TRƯỚC ĐÓ".
+- Tự động chống Windows Sleep khi đi làm & điều tiết Discord 10 phút/lần chống spam.
 """
 
 import os
@@ -28,29 +25,21 @@ from bs4 import BeautifulSoup
 import tkinter as tk
 from tkinter import ttk, messagebox, scrolledtext
 
-# Xác định thư mục dữ liệu
+# Xác định thư mục thực thi
 if getattr(sys, 'frozen', False):
     EXE_DIR = os.path.dirname(sys.executable)
-    BUNDLE_DIR = getattr(sys, '_MEIPASS', EXE_DIR)
 else:
     EXE_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
-    BUNDLE_DIR = EXE_DIR
 
-DATA_DIRS_TO_TRY = [
-    os.path.join(EXE_DIR, "data"),
-    os.path.join(BUNDLE_DIR, "data"),
-    r"D:\hoc\lap trinh\du-lieu-co-phieu\data",
-    r"D:\hoc\lap trinh\check BCTC Distill"
-]
+# Thư mục lưu trữ dữ liệu vĩnh viễn trên máy tính
+MASTER_DATA_DIR = r"D:\hoc\lap trinh\du-lieu-co-phieu\data"
+if os.path.exists(MASTER_DATA_DIR):
+    DATA_DIR = MASTER_DATA_DIR
+else:
+    DATA_DIR = os.path.join(EXE_DIR, "data")
+    os.makedirs(DATA_DIR, exist_ok=True)
 
-DATA_DIR = os.path.join(EXE_DIR, "data")
-for d in DATA_DIRS_TO_TRY:
-    if os.path.exists(d):
-        DATA_DIR = d
-        break
-
-os.makedirs(DATA_DIR, exist_ok=True)
-
+# Các file dữ liệu
 TICKERS_G1_FILE = os.path.join(DATA_DIR, "tickers_group1_115.json")
 TICKERS_G2_FILE = os.path.join(DATA_DIR, "tickers_group2_69.json")
 TICKERS_G3_FILE = os.path.join(DATA_DIR, "tickers_group3_94.json")
@@ -270,6 +259,11 @@ def check_cafef_disclosures(ticker):
                 href = a_tag.get('href') if a_tag else ''
                 if not href.startswith('http'):
                     href = f"https://cafef.vn{href}"
+                    
+                # Chỉ nhận các văn bản trong mùa BCTC hiện tại
+                if t and not is_valid_recent_bctc_date(t):
+                    continue
+                    
                 matched, snippet = is_q3_2026(title, ticker=ticker)
                 if matched:
                     return {
@@ -497,6 +491,18 @@ def save_completed_cache(cache):
     except:
         pass
 
+def is_bctc_fully_completed(ticker, cache):
+    """
+    Kiểm tra xem mã đã hoàn tất đầy đủ BCTC chưa:
+    - Nếu đã có 'HOP_NHAT' hoặc 'DAY_DU' -> ĐÃ HOÀN TẤT ĐẦY ĐỦ -> KHÔNG CẦN QUÉT NỮA.
+    - Nếu mới có 'RIENG' (cty mẹ) hoặc 'GIAI_TRINH' -> CHƯA HOÀN TẤT -> VẪN CẦN QUÉT TIẾP ĐỂ BẮT BẢN HỢP NHẤT.
+    """
+    if ticker not in cache:
+        return False
+    entry = cache[ticker]
+    b_type = entry.get('bctc_type', '')
+    return b_type in ['HOP_NHAT', 'DAY_DU']
+
 def get_company_info(ticker):
     ticker = ticker.upper().strip()
     name = f"Công ty CP {ticker}"
@@ -523,11 +529,12 @@ def get_company_info(ticker):
 class StockRadarGUI(tk.Tk):
     def __init__(self):
         super().__init__()
-        self.title("Stock Radar Pro - Giám Sát Báo Cáo Tài Chính & Tài Liệu Doanh Nghiệp")
-        self.geometry("1080x720")
-        self.minsize(960, 640)
+        self.title("Stock Radar Pro - Giám Sát Báo Cáo Tài Chính & Tài Liệu Doanh Nghiệp (v2.1)")
+        self.geometry("1120x760")
+        self.minsize(980, 680)
         
         # Biến trạng thái
+        self.is_group_scanning = False
         self.is_monitoring = False
         self.monitor_thread = None
         self.last_result = None
@@ -548,21 +555,22 @@ class StockRadarGUI(tk.Tk):
         self.style.configure("TNotebook.Tab", font=("Segoe UI", 10, "bold"), padding=[16, 8])
         self.style.configure("Header.TLabel", font=("Segoe UI", 16, "bold"), foreground="#0F172A", background="#F1F5F9")
         self.style.configure("SubHeader.TLabel", font=("Segoe UI", 10), foreground="#64748B", background="#F1F5F9")
-        self.style.configure("Accent.TButton", font=("Segoe UI", 10, "bold"))
+        self.style.configure("Treeview.Heading", font=("Segoe UI", 9, "bold"))
+        self.style.configure("Treeview", font=("Segoe UI", 9), rowheight=24)
 
     def create_widgets(self):
         # Header banner
-        header_frame = tk.Frame(self, bg="#1E293B", height=68)
+        header_frame = tk.Frame(self, bg="#0F172A", height=68)
         header_frame.pack(fill=tk.X, side=tk.TOP)
         header_frame.pack_propagate(False)
         
-        title_lbl = tk.Label(header_frame, text="⚡ STOCK RADAR PRO", font=("Segoe UI", 15, "bold"), fg="#38BDF8", bg="#1E293B")
+        title_lbl = tk.Label(header_frame, text="⚡ STOCK RADAR PRO", font=("Segoe UI", 15, "bold"), fg="#38BDF8", bg="#0F172A")
         title_lbl.pack(side=tk.LEFT, padx=20, pady=12)
         
-        subtitle_lbl = tk.Label(header_frame, text="Hệ thống quét & bóc tách BCTC tự động siêu tốc • dulieudautu.com", font=("Segoe UI", 10), fg="#94A3B8", bg="#1E293B")
+        subtitle_lbl = tk.Label(header_frame, text="Giám sát & bóc tách BCTC siêu tốc • Tự động ghi nhớ mã hoàn tất • dulieudautu.com", font=("Segoe UI", 10), fg="#94A3B8", bg="#0F172A")
         subtitle_lbl.pack(side=tk.LEFT, pady=12)
 
-        self.status_badge = tk.Label(header_frame, text="🟢 SẴN SÀNG", font=("Segoe UI", 9, "bold"), fg="#10B981", bg="#0F172A", padx=12, pady=4)
+        self.status_badge = tk.Label(header_frame, text="🟢 SẴN SÀNG", font=("Segoe UI", 9, "bold"), fg="#10B981", bg="#1E293B", padx=12, pady=4)
         self.status_badge.pack(side=tk.RIGHT, padx=20, pady=16)
 
         # Tabs container
@@ -574,12 +582,12 @@ class StockRadarGUI(tk.Tk):
         self.notebook.add(self.tab_single, text="🔍 Tra cứu MÃ BẤT KỲ")
         self.build_tab_single()
 
-        # Tab 2: Quét theo 3 Nhóm & Toàn thị trường
+        # Tab 2: Quét đa nhóm (Tích chọn linh hoạt)
         self.tab_groups = ttk.Frame(self.notebook)
-        self.notebook.add(self.tab_groups, text="📊 Quét theo Nhóm (1, 2, 3)")
+        self.notebook.add(self.tab_groups, text="📊 Quét Đa Nhóm (Tích chọn)")
         self.build_tab_groups()
 
-        # Tab 3: Giám sát ngầm tự động
+        # Tab 3: Giám sát ngầm tự động (Đi làm)
         self.tab_monitor = ttk.Frame(self.notebook)
         self.notebook.add(self.tab_monitor, text="⏰ Giám sát tự động (Đi làm)")
         self.build_tab_monitor()
@@ -615,7 +623,6 @@ class StockRadarGUI(tk.Tk):
         btn_search = tk.Button(bar, text="🔍 Kiểm Tra Tức Thì", font=("Segoe UI", 11, "bold"), bg="#0284C7", fg="white", activebackground="#0369A1", padx=16, pady=4, relief=tk.FLAT, command=self.on_check_single)
         btn_search.pack(side=tk.LEFT)
 
-        # Card hiển thị kết quả
         self.card_single = tk.Frame(p, bg="white", relief=tk.SOLID, bd=1, padx=20, pady=20)
         self.card_single.pack(fill=tk.BOTH, expand=True, pady=10)
 
@@ -625,7 +632,6 @@ class StockRadarGUI(tk.Tk):
         self.txt_res_details = scrolledtext.ScrolledText(self.card_single, font=("Segoe UI", 10), height=14, relief=tk.FLAT, bg="#F8FAFC")
         self.txt_res_details.pack(fill=tk.BOTH, expand=True, pady=10)
 
-        # Action bar
         act_bar = ttk.Frame(p)
         act_bar.pack(fill=tk.X, pady=(10, 0))
 
@@ -670,7 +676,6 @@ class StockRadarGUI(tk.Tk):
                     res = r_cf
                     
             elapsed = round(time.time() - start_t, 2)
-            
             self.after(0, lambda: self.render_single_result(tk_code, info, res, r_ezir, elapsed))
 
         threading.Thread(target=run, daemon=True).start()
@@ -720,6 +725,20 @@ class StockRadarGUI(tk.Tk):
             self.txt_res_details.insert(tk.END, "\n".join(lines))
             self.btn_open_pdf.config(state=tk.NORMAL)
             self.btn_send_discord.config(state=tk.NORMAL)
+            
+            # Tự động lưu cache vĩnh viễn
+            cache = load_completed_cache()
+            cache[ticker] = {
+                "ticker": ticker,
+                "company_name": info['name'],
+                "release_date": res.get('date'),
+                "title": res.get('title'),
+                "doc_url": doc_url,
+                "source": res.get('source'),
+                "bctc_type": b_type,
+                "updated_at": datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+            }
+            save_completed_cache(cache)
         else:
             self.lbl_res_title.config(text=f"❄️ [{ticker}] CHƯA CÓ Báo cáo tài chính Quý 3/2026 (Quét xong trong {elapsed}s)", fg="#64748B")
             self.txt_res_details.insert(tk.END, f"• Doanh nghiệp: {info['name']} (Sàn {info['san']})\n")
@@ -742,62 +761,105 @@ class StockRadarGUI(tk.Tk):
                 messagebox.showwarning("Lỗi", "Không thể gửi cảnh báo Discord. Vui lòng kiểm tra lại Webhook URL trong tab Cài đặt.")
 
     # ==========================
-    # TAB 2: QUÉT THEO 3 NHÓM
+    # TAB 2: QUÉT ĐA NHÓM (TÍCH CHỌN)
     # ==========================
     def build_tab_groups(self):
         p = ttk.Frame(self.tab_groups, padding=16)
         p.pack(fill=tk.BOTH, expand=True)
 
-        lbl = ttk.Label(p, text="Chọn nhóm cổ phiếu để bắt đầu quét đối chiếu song song:", font=("Segoe UI", 11, "bold"))
-        lbl.pack(anchor=tk.W, pady=(0, 10))
+        lbl = ttk.Label(p, text="Tích chọn các nhóm bạn muốn quét đồng thời (Ví dụ: Nhóm 1 + Nhóm 2):", font=("Segoe UI", 11, "bold"))
+        lbl.pack(anchor=tk.W, pady=(0, 8))
 
-        # Khung nút bấm các nhóm
-        btn_box = tk.Frame(p, bg="#F1F5F9")
-        btn_box.pack(fill=tk.X, pady=(0, 12))
+        # Khung hộp tích chọn
+        chk_box = tk.Frame(p, bg="white", relief=tk.SOLID, bd=1, padx=16, pady=12)
+        chk_box.pack(fill=tk.X, pady=(0, 10))
 
-        b1 = tk.Button(btn_box, text="📌 Nhóm 1 (15 - 23/10)\n116 mã trọng điểm (Có BMP)", font=("Segoe UI", 9, "bold"), bg="#0284C7", fg="white", padx=12, pady=6, relief=tk.FLAT, command=lambda: self.start_group_scan(TICKERS_G1_FILE, "Nhóm 1: 15 - 23/10 (116 mã)"))
-        b1.pack(side=tk.LEFT, padx=(0, 8))
+        # Checkboxes các nhóm
+        cb_frame = tk.Frame(chk_box, bg="white")
+        cb_frame.pack(fill=tk.X, pady=(0, 10))
 
-        b2 = tk.Button(btn_box, text="📌 Nhóm 2 (23 - 28/10)\n69 mã (TTT -> HSM)", font=("Segoe UI", 9, "bold"), bg="#D97706", fg="white", padx=12, pady=6, relief=tk.FLAT, command=lambda: self.start_group_scan(TICKERS_G2_FILE, "Nhóm 2: 23 - 28/10 (69 mã)"))
-        b2.pack(side=tk.LEFT, padx=(0, 8))
+        self.chk_g1 = tk.BooleanVar(value=True)
+        self.chk_g2 = tk.BooleanVar(value=True)  # Mặc định tích Nhóm 1 + Nhóm 2 theo đúng nhu cầu người dùng
+        self.chk_g3 = tk.BooleanVar(value=False)
+        self.chk_g938 = tk.BooleanVar(value=False)
 
-        b3 = tk.Button(btn_box, text="📌 Nhóm 3 (29 - 30/10)\n94 mã (SJD -> VTB)", font=("Segoe UI", 9, "bold"), bg="#7C3AED", fg="white", padx=12, pady=6, relief=tk.FLAT, command=lambda: self.start_group_scan(TICKERS_G3_FILE, "Nhóm 3: 29 - 30/10 (94 mã)"))
-        b3.pack(side=tk.LEFT, padx=(0, 8))
+        c1 = tk.Checkbutton(cb_frame, text="Nhóm 1: 15 - 23/10 (116 mã có BMP)", variable=self.chk_g1, font=("Segoe UI", 9, "bold"), fg="#0284C7", bg="white", command=self.update_selection_summary)
+        c1.pack(side=tk.LEFT, padx=(0, 15))
 
-        b4 = tk.Button(btn_box, text="📋 Toàn Bộ 278 Mã\n(Nhóm 1 + 2 + 3)", font=("Segoe UI", 9, "bold"), bg="#334155", fg="white", padx=12, pady=6, relief=tk.FLAT, command=lambda: self.start_group_scan(TICKERS_278_FILE, "Toàn bộ 278 mã rút gọn"))
-        b4.pack(side=tk.LEFT, padx=(0, 8))
+        c2 = tk.Checkbutton(cb_frame, text="Nhóm 2: 23 - 28/10 (69 mã: TTT -> HSM)", variable=self.chk_g2, font=("Segoe UI", 9, "bold"), fg="#D97706", bg="white", command=self.update_selection_summary)
+        c2.pack(side=tk.LEFT, padx=(0, 15))
 
-        b5 = tk.Button(btn_box, text="🌐 Toàn Bộ 938 Mã\nThị trường (co phieu loc)", font=("Segoe UI", 9, "bold"), bg="#0F172A", fg="white", padx=12, pady=6, relief=tk.FLAT, command=lambda: self.start_group_scan(TICKERS_938_FILE, "Toàn bộ 938 mã thị trường"))
-        b5.pack(side=tk.LEFT)
+        c3 = tk.Checkbutton(cb_frame, text="Nhóm 3: 29 - 30/10 (94 mã: SJD -> VTB)", variable=self.chk_g3, font=("Segoe UI", 9, "bold"), fg="#7C3AED", bg="white", command=self.update_selection_summary)
+        c3.pack(side=tk.LEFT, padx=(0, 15))
+
+        c4 = tk.Checkbutton(cb_frame, text="Toàn bộ 938 mã thị trường", variable=self.chk_g938, font=("Segoe UI", 9, "bold"), fg="#0F172A", bg="white", command=self.update_selection_summary)
+        c4.pack(side=tk.LEFT)
+
+        # Quick select buttons bar
+        quick_bar = tk.Frame(chk_box, bg="white")
+        quick_bar.pack(fill=tk.X, pady=(0, 6))
+
+        tk.Button(quick_bar, text="📌 Chọn Nhóm 1 + 2", font=("Segoe UI", 8, "bold"), bg="#E0F2FE", fg="#0369A1", relief=tk.FLAT, padx=8, pady=2, command=self.select_g1_g2).pack(side=tk.LEFT, padx=(0, 6))
+        tk.Button(quick_bar, text="📋 Chọn Cả 3 Nhóm (278 mã)", font=("Segoe UI", 8, "bold"), bg="#FEF3C7", fg="#B45309", relief=tk.FLAT, padx=8, pady=2, command=self.select_all_278).pack(side=tk.LEFT, padx=(0, 6))
+        tk.Button(quick_bar, text="🌐 Chọn Toàn Thị Trường (938 mã)", font=("Segoe UI", 8, "bold"), bg="#F3E8FF", fg="#6B21A8", relief=tk.FLAT, padx=8, pady=2, command=self.select_all_938).pack(side=tk.LEFT, padx=(0, 6))
+        tk.Button(quick_bar, text="❌ Bỏ chọn tất cả", font=("Segoe UI", 8), bg="#F1F5F9", fg="#475569", relief=tk.FLAT, padx=8, pady=2, command=self.unselect_all).pack(side=tk.LEFT)
+
+        # Thông tin tóm tắt & lọc mã hoàn tất
+        info_bar = tk.Frame(chk_box, bg="white")
+        info_bar.pack(fill=tk.X, pady=(4, 0))
+
+        self.lbl_selection_summary = tk.Label(info_bar, text="", font=("Segoe UI", 9, "bold"), bg="white", fg="#059669")
+        self.lbl_selection_summary.pack(side=tk.LEFT)
+
+        self.chk_skip_completed = tk.BooleanVar(value=True)
+        tk.Checkbutton(info_bar, text="⚡ Tự động BỎ QUA các mã đã có BCTC Hợp nhất/Đầy đủ (tiết kiệm thời gian)", variable=self.chk_skip_completed, bg="white", font=("Segoe UI", 9), command=self.update_selection_summary).pack(side=tk.RIGHT)
+
+        # Action bar
+        act_frame = tk.Frame(p)
+        act_frame.pack(fill=tk.X, pady=(0, 8))
+
+        self.btn_run_selected = tk.Button(act_frame, text="🚀 BẮT ĐẦU QUÉT CÁC NHÓM ĐÃ CHỌN", font=("Segoe UI", 11, "bold"), bg="#0284C7", fg="white", activebackground="#0369A1", padx=20, pady=8, relief=tk.FLAT, command=self.start_multi_group_scan)
+        self.btn_run_selected.pack(side=tk.LEFT, padx=(0, 10))
+
+        self.btn_stop_group_scan = tk.Button(act_frame, text="⏹️ DỪNG QUÉT", font=("Segoe UI", 10, "bold"), bg="#EF4444", fg="white", padx=14, pady=8, relief=tk.FLAT, state=tk.DISABLED, command=self.stop_multi_group_scan)
+        self.btn_stop_group_scan.pack(side=tk.LEFT, padx=(0, 15))
+
+        self.chk_show_completed_table = tk.BooleanVar(value=False)
+        tk.Checkbutton(act_frame, text="Hiển thị cả các mã đã hoàn tất trước đó trong bảng", variable=self.chk_show_completed_table, font=("Segoe UI", 9)).pack(side=tk.LEFT)
 
         # Progress bar
         self.progress_bar = ttk.Progressbar(p, orient="horizontal", mode="determinate")
-        self.progress_bar.pack(fill=tk.X, pady=(0, 6))
+        self.progress_bar.pack(fill=tk.X, pady=(0, 4))
 
-        self.lbl_progress = ttk.Label(p, text="Sẵn sàng quét.", font=("Segoe UI", 9), foreground="#64748B")
-        self.lbl_progress.pack(anchor=tk.W, pady=(0, 10))
+        self.lbl_progress = ttk.Label(p, text="Sẵn sàng.", font=("Segoe UI", 9), foreground="#64748B")
+        self.lbl_progress.pack(anchor=tk.W, pady=(0, 8))
 
         # Table kết quả
-        cols = ("stt", "ticker", "name", "date", "bctc_type", "profit", "yoy", "source")
-        self.tree_groups = ttk.Treeview(p, columns=cols, show="headings", height=14)
+        cols = ("stt", "ticker", "name", "status", "date", "bctc_type", "profit", "yoy", "source")
+        self.tree_groups = ttk.Treeview(p, columns=cols, show="headings", height=13)
         
         self.tree_groups.heading("stt", text="STT")
         self.tree_groups.heading("ticker", text="Mã")
         self.tree_groups.heading("name", text="Tên Doanh Nghiệp")
+        self.tree_groups.heading("status", text="Trạng Thái")
         self.tree_groups.heading("date", text="Ngày Ra")
         self.tree_groups.heading("bctc_type", text="Loại BCTC")
         self.tree_groups.heading("profit", text="LNST Q3")
         self.tree_groups.heading("yoy", text="% YoY")
         self.tree_groups.heading("source", text="Nguồn")
 
-        self.tree_groups.column("stt", width=45, anchor=tk.CENTER)
-        self.tree_groups.column("ticker", width=70, anchor=tk.CENTER)
+        self.tree_groups.column("stt", width=40, anchor=tk.CENTER)
+        self.tree_groups.column("ticker", width=65, anchor=tk.CENTER)
         self.tree_groups.column("name", width=220)
+        self.tree_groups.column("status", width=110, anchor=tk.CENTER)
         self.tree_groups.column("date", width=85, anchor=tk.CENTER)
         self.tree_groups.column("bctc_type", width=95, anchor=tk.CENTER)
         self.tree_groups.column("profit", width=90, anchor=tk.E)
         self.tree_groups.column("yoy", width=90, anchor=tk.CENTER)
-        self.tree_groups.column("source", width=100)
+        self.tree_groups.column("source", width=95)
+
+        self.tree_groups.tag_configure("new_found", background="#DCFCE7", foreground="#166534")
+        self.tree_groups.tag_configure("cached", background="#F8FAFC", foreground="#64748B")
 
         scrollbar = ttk.Scrollbar(p, orient=tk.VERTICAL, command=self.tree_groups.yview)
         self.tree_groups.configure(yscroll=scrollbar.set)
@@ -805,37 +867,119 @@ class StockRadarGUI(tk.Tk):
         self.tree_groups.pack(fill=tk.BOTH, expand=True)
         self.tree_groups.bind("<Double-1>", self.on_double_click_row)
 
-    def start_group_scan(self, file_path, group_name):
-        if not os.path.exists(file_path):
-            messagebox.showerror("Thiếu file", f"Không tìm thấy file dữ liệu: {file_path}")
+        self.update_selection_summary()
+
+    def select_g1_g2(self):
+        self.chk_g1.set(True)
+        self.chk_g2.set(True)
+        self.chk_g3.set(False)
+        self.chk_g938.set(False)
+        self.update_selection_summary()
+
+    def select_all_278(self):
+        self.chk_g1.set(True)
+        self.chk_g2.set(True)
+        self.chk_g3.set(True)
+        self.chk_g938.set(False)
+        self.update_selection_summary()
+
+    def select_all_938(self):
+        self.chk_g1.set(False)
+        self.chk_g2.set(False)
+        self.chk_g3.set(False)
+        self.chk_g938.set(True)
+        self.update_selection_summary()
+
+    def unselect_all(self):
+        self.chk_g1.set(False)
+        self.chk_g2.set(False)
+        self.chk_g3.set(False)
+        self.chk_g938.set(False)
+        self.update_selection_summary()
+
+    def get_selected_tickers_list(self):
+        selected = []
+        seen = set()
+
+        def add_file(fpath):
+            if os.path.exists(fpath):
+                with open(fpath, "r", encoding="utf-8") as f:
+                    data = json.load(f)
+                    for it in data:
+                        t = it['ticker']
+                        if t not in seen:
+                            seen.add(t)
+                            selected.append(it)
+
+        if self.chk_g938.get():
+            add_file(TICKERS_938_FILE)
+            return selected
+
+        if self.chk_g1.get():
+            add_file(TICKERS_G1_FILE)
+        if self.chk_g2.get():
+            add_file(TICKERS_G2_FILE)
+        if self.chk_g3.get():
+            add_file(TICKERS_G3_FILE)
+
+        return selected
+
+    def update_selection_summary(self):
+        combined = self.get_selected_tickers_list()
+        total_selected = len(combined)
+        
+        completed_cache = load_completed_cache()
+        completed_cnt = sum(1 for it in combined if is_bctc_fully_completed(it['ticker'], completed_cache))
+        
+        if self.chk_skip_completed.get():
+            scan_cnt = total_selected - completed_cnt
+            txt = f"👉 Đang chọn {total_selected} mã | Đã có BCTC đầy đủ: {completed_cnt} mã (BỎ QUA) | Sẽ quét thực tế: {scan_cnt} mã"
+        else:
+            scan_cnt = total_selected
+            txt = f"👉 Đang chọn {total_selected} mã | Quét lại toàn bộ {total_selected} mã (không bỏ qua cache)"
+            
+        self.lbl_selection_summary.config(text=txt)
+
+    def start_multi_group_scan(self):
+        combined = self.get_selected_tickers_list()
+        if not combined:
+            messagebox.showwarning("Chưa chọn nhóm", "Vui lòng tích chọn ít nhất 1 nhóm cổ phiếu!")
             return
-            
-        with open(file_path, "r", encoding="utf-8") as f:
-            tickers_list = json.load(f)
-            
+
+        self.is_group_scanning = True
+        self.btn_run_selected.config(state=tk.DISABLED)
+        self.btn_stop_group_scan.config(state=tk.NORMAL)
+        
         for item in self.tree_groups.get_children():
             self.tree_groups.delete(item)
-            
-        self.lbl_progress.config(text=f"Đang chuẩn bị quét {len(tickers_list)} mã của {group_name}...")
-        self.progress_bar["maximum"] = len(tickers_list)
+
+        completed_cache = load_completed_cache()
+        to_scan = []
+        already_completed = []
+
+        for it in combined:
+            t = it['ticker']
+            if self.chk_skip_completed.get() and is_bctc_fully_completed(t, completed_cache):
+                already_completed.append(it)
+                if self.chk_show_completed_table.get():
+                    c_info = completed_cache[t]
+                    self.add_tree_row(t, it.get('name', ''), "✅ ĐÃ HOÀN TẤT", c_info.get('release_date', ''), c_info.get('bctc_type', ''), "Đã có sẵn", "-", c_info.get('source', ''), c_info.get('doc_url', ''), is_new=False)
+            else:
+                to_scan.append(it)
+
+        total_scan = len(to_scan)
+        self.progress_bar["maximum"] = max(1, total_scan)
         self.progress_bar["value"] = 0
+        
+        msg = f"Đang quét {total_scan} mã (Đã tự động bỏ qua {len(already_completed)} mã có BCTC đầy đủ trước đó)..."
+        self.lbl_progress.config(text=msg)
 
         def run():
-            completed_cache = load_completed_cache()
-            to_scan = []
-            for it in tickers_list:
-                t = it['ticker']
-                if t in completed_cache and completed_cache[t].get('bctc_type') in ['HOP_NHAT', 'DAY_DU']:
-                    c_info = completed_cache[t]
-                    self.after(0, lambda it=it, c_info=c_info: self.add_tree_row(it['ticker'], it.get('name', ''), c_info.get('release_date', ''), c_info.get('bctc_type', ''), "Đã có sẵn", "-", c_info.get('source', ''), c_info.get('doc_url', '')))
-                else:
-                    to_scan.append(it)
-                    
             start_t = time.time()
-            done_cnt = len(tickers_list) - len(to_scan)
-            self.after(0, lambda: self.progress_bar.configure(value=done_cnt))
-            
-            def scan_worker(item):
+            done_cnt = 0
+            new_found_cnt = 0
+
+            def worker(item):
                 t = item['ticker']
                 res = check_fpts_ezir(t)
                 if res.get('has_q3'):
@@ -847,44 +991,52 @@ class StockRadarGUI(tk.Tk):
                         return t, item, res_w
                 return t, item, res
 
-            new_cnt = 0
             with ThreadPoolExecutor(max_workers=10) as executor:
-                futures = [executor.submit(scan_worker, it) for it in to_scan]
+                futures = [executor.submit(worker, it) for it in to_scan]
                 for fut in futures:
+                    if not self.is_group_scanning:
+                        break
                     done_cnt += 1
                     self.after(0, lambda dc=done_cnt: self.progress_bar.configure(value=dc))
                     try:
                         t, item, res = fut.result()
                         if res.get('has_q3'):
-                            new_cnt += 1
                             b_type = res.get('bctc_type', 'DAY_DU')
                             doc_url = res.get('doc_url', '')
                             date_str = res.get('date', datetime.datetime.now().strftime("%d/%m/%Y"))
                             
-                            lnst = extract_lnst_and_yoy(doc_url)
-                            np_str = lnst.get('current_quarter', '-') if lnst.get('has_data') else '-'
-                            yoy_str = lnst.get('yoy', '-') if lnst.get('has_data') else '-'
-                            
-                            self.after(0, lambda t=t, item=item, date_str=date_str, b_type=b_type, np_str=np_str, yoy_str=yoy_str, src=res.get('source', ''), doc_url=doc_url: self.add_tree_row(t, item.get('name', ''), date_str, b_type, np_str, yoy_str, src, doc_url))
-                            
-                            alert_payload = {
-                                "ticker": t,
-                                "company_name": item.get('name', ''),
-                                "exchange": item.get('san', 'UPCOM'),
-                                "quarter": "Quý 3/2026",
-                                "release_date": date_str,
-                                "title": res.get('title'),
-                                "source": res.get('source'),
-                                "bctc_type": b_type,
-                                "doc_url": doc_url
-                            }
-                            if lnst.get('has_data'):
-                                alert_payload['net_profit'] = lnst.get('current_quarter')
-                                alert_payload['growth_rate'] = lnst.get('yoy')
-                                alert_payload['growth_direction'] = lnst.get('direction', 'up')
-                                alert_payload['lnst_label'] = lnst.get('label')
-                            send_discord_alert(alert_payload)
-                            
+                            old_cache = completed_cache.get(t)
+                            old_type = old_cache.get('bctc_type') if old_cache else None
+                            is_brand_new = (t not in completed_cache)
+                            is_new_hop_nhat = (old_type == 'RIENG' and b_type == 'HOP_NHAT')
+
+                            if is_brand_new or is_new_hop_nhat:
+                                new_found_cnt += 1
+                                lnst = extract_lnst_and_yoy(doc_url)
+                                np_str = lnst.get('current_quarter', '-') if lnst.get('has_data') else '-'
+                                yoy_str = lnst.get('yoy', '-') if lnst.get('has_data') else '-'
+                                
+                                status_tag = "🔥 MỚI RA" if is_brand_new else "🔥 MỚI CÓ HỢP NHẤT"
+                                self.after(0, lambda t=t, item=item, date_str=date_str, b_type=b_type, np_str=np_str, yoy_str=yoy_str, src=res.get('source', ''), doc_url=doc_url, status_tag=status_tag: self.add_tree_row(t, item.get('name', ''), status_tag, date_str, b_type, np_str, yoy_str, src, doc_url, is_new=True))
+
+                                alert_payload = {
+                                    "ticker": t,
+                                    "company_name": item.get('name', ''),
+                                    "exchange": item.get('san', 'UPCOM'),
+                                    "quarter": "Quý 3/2026",
+                                    "release_date": date_str,
+                                    "title": res.get('title'),
+                                    "source": res.get('source'),
+                                    "bctc_type": b_type,
+                                    "doc_url": doc_url
+                                }
+                                if lnst.get('has_data'):
+                                    alert_payload['net_profit'] = lnst.get('current_quarter')
+                                    alert_payload['growth_rate'] = lnst.get('yoy')
+                                    alert_payload['growth_direction'] = lnst.get('direction', 'up')
+                                    alert_payload['lnst_label'] = lnst.get('label')
+                                send_discord_alert(alert_payload)
+
                             completed_cache[t] = {
                                 "ticker": t,
                                 "company_name": item.get('name', ''),
@@ -898,16 +1050,30 @@ class StockRadarGUI(tk.Tk):
                             save_completed_cache(completed_cache)
                     except:
                         pass
-                        
+
             elapsed = round(time.time() - start_t, 2)
-            self.after(0, lambda: self.lbl_progress.config(text=f"✅ Hoàn tất quét {group_name} trong {elapsed}s! Phát hiện mới: {new_cnt} mã."))
+            self.after(0, lambda: self.finish_multi_group_scan(done_cnt, len(already_completed), new_found_cnt, elapsed))
 
         threading.Thread(target=run, daemon=True).start()
 
-    def add_tree_row(self, ticker, name, date_str, bctc_type, profit, yoy, source, doc_url):
+    def finish_multi_group_scan(self, scanned_cnt, skipped_cnt, new_cnt, elapsed):
+        self.is_group_scanning = False
+        self.btn_run_selected.config(state=tk.NORMAL)
+        self.btn_stop_group_scan.config(state=tk.DISABLED)
+        res_text = f"✅ Hoàn tất! Đã quét {scanned_cnt} mã (Bỏ qua {skipped_cnt} mã đã xong trước đó) trong {elapsed}s. Phát hiện mới: {new_cnt} BCTC."
+        self.lbl_progress.config(text=res_text)
+        self.update_selection_summary()
+
+    def stop_multi_group_scan(self):
+        self.is_group_scanning = False
+        self.btn_run_selected.config(state=tk.NORMAL)
+        self.btn_stop_group_scan.config(state=tk.DISABLED)
+        self.lbl_progress.config(text="⏹️ Đã dừng lượt quét theo yêu cầu của bạn.")
+
+    def add_tree_row(self, ticker, name, status, date_str, bctc_type, profit, yoy, source, doc_url, is_new=True):
         idx = len(self.tree_groups.get_children()) + 1
-        tag = "even" if idx % 2 == 0 else "odd"
-        self.tree_groups.insert("", tk.END, values=(idx, ticker, name, date_str, bctc_type, profit, yoy, source), tags=(doc_url,))
+        tag = "new_found" if is_new else "cached"
+        self.tree_groups.insert("", tk.END, values=(idx, ticker, name, status, date_str, bctc_type, profit, yoy, source), tags=(doc_url, tag))
 
     def on_double_click_row(self, event):
         item_id = self.tree_groups.focus()
@@ -939,15 +1105,20 @@ class StockRadarGUI(tk.Tk):
         tk.Radiobutton(r1, text="10 phút/lần", variable=self.var_interval, value="600", bg="white").pack(side=tk.LEFT, padx=10)
         tk.Radiobutton(r1, text="15 phút/lần", variable=self.var_interval, value="900", bg="white").pack(side=tk.LEFT, padx=10)
 
-        # Chọn nhóm
+        # Chọn nhóm để giám sát ngầm (Cũng hỗ trợ tích chọn ĐA NHÓM!)
         r2 = tk.Frame(cfg_box, bg="white")
         r2.pack(fill=tk.X, pady=6)
-        tk.Label(r2, text="Danh mục theo dõi:", font=("Segoe UI", 10, "bold"), bg="white", width=20, anchor=tk.W).pack(side=tk.LEFT)
-        self.var_group_choice = tk.StringVar(value="g1")
-        tk.Radiobutton(r2, text="Nhóm 1 (116 mã trọng điểm)", variable=self.var_group_choice, value="g1", bg="white").pack(side=tk.LEFT, padx=10)
-        tk.Radiobutton(r2, text="Nhóm 2 (69 mã)", variable=self.var_group_choice, value="g2", bg="white").pack(side=tk.LEFT, padx=10)
-        tk.Radiobutton(r2, text="Nhóm 3 (94 mã)", variable=self.var_group_choice, value="g3", bg="white").pack(side=tk.LEFT, padx=10)
-        tk.Radiobutton(r2, text="Toàn bộ 278 mã", variable=self.var_group_choice, value="all278", bg="white").pack(side=tk.LEFT, padx=10)
+        tk.Label(r2, text="Danh mục giám sát:", font=("Segoe UI", 10, "bold"), bg="white", width=20, anchor=tk.W).pack(side=tk.LEFT)
+        
+        self.mon_chk_g1 = tk.BooleanVar(value=True)
+        self.mon_chk_g2 = tk.BooleanVar(value=True)  # Mặc định giám sát cả Nhóm 1 và Nhóm 2
+        self.mon_chk_g3 = tk.BooleanVar(value=False)
+        self.mon_chk_g938 = tk.BooleanVar(value=False)
+
+        tk.Checkbutton(r2, text="Nhóm 1 (116 mã có BMP)", variable=self.mon_chk_g1, bg="white", font=("Segoe UI", 9, "bold"), fg="#0284C7").pack(side=tk.LEFT, padx=8)
+        tk.Checkbutton(r2, text="Nhóm 2 (69 mã: TTT->HSM)", variable=self.mon_chk_g2, bg="white", font=("Segoe UI", 9, "bold"), fg="#D97706").pack(side=tk.LEFT, padx=8)
+        tk.Checkbutton(r2, text="Nhóm 3 (94 mã)", variable=self.mon_chk_g3, bg="white", font=("Segoe UI", 9, "bold"), fg="#7C3AED").pack(side=tk.LEFT, padx=8)
+        tk.Checkbutton(r2, text="Toàn bộ 938 mã", variable=self.mon_chk_g938, bg="white", font=("Segoe UI", 9, "bold")).pack(side=tk.LEFT, padx=8)
 
         # Chống Sleep & Discord
         r3 = tk.Frame(cfg_box, bg="white")
@@ -958,7 +1129,7 @@ class StockRadarGUI(tk.Tk):
         r4 = tk.Frame(cfg_box, bg="white")
         r4.pack(fill=tk.X, pady=6)
         self.var_throttle = tk.BooleanVar(value=True)
-        tk.Checkbutton(r4, text="🔕 Điều tiết nhịp đập Discord 10 phút/lần (Chống spam, còi hú ngay khi có BCTC)", variable=self.var_throttle, bg="white", font=("Segoe UI", 9, "bold")).pack(side=tk.LEFT)
+        tk.Checkbutton(r4, text="🔕 Điều tiết nhịp đập Discord 10 phút/lần (Chống spam, còi hú ngay khi có BCTC mới)", variable=self.var_throttle, bg="white", font=("Segoe UI", 9, "bold")).pack(side=tk.LEFT)
 
         # Control buttons
         ctl_bar = tk.Frame(p)
@@ -977,34 +1148,49 @@ class StockRadarGUI(tk.Tk):
         self.txt_monitor_log = scrolledtext.ScrolledText(p, font=("Consolas", 10), height=11, bg="#0F172A", fg="#38BDF8")
         self.txt_monitor_log.pack(fill=tk.BOTH, expand=True)
 
+    def get_monitor_tickers_list(self):
+        selected = []
+        seen = set()
+
+        def add_file(fpath):
+            if os.path.exists(fpath):
+                with open(fpath, "r", encoding="utf-8") as f:
+                    data = json.load(f)
+                    for it in data:
+                        t = it['ticker']
+                        if t not in seen:
+                            seen.add(t)
+                            selected.append(it)
+
+        if self.mon_chk_g938.get():
+            add_file(TICKERS_938_FILE)
+            return selected
+
+        if self.mon_chk_g1.get():
+            add_file(TICKERS_G1_FILE)
+        if self.mon_chk_g2.get():
+            add_file(TICKERS_G2_FILE)
+        if self.mon_chk_g3.get():
+            add_file(TICKERS_G3_FILE)
+
+        return selected
+
     def on_start_monitoring(self):
+        tickers_list = self.get_monitor_tickers_list()
+        if not tickers_list:
+            messagebox.showwarning("Chưa chọn", "Vui lòng chọn ít nhất 1 nhóm để giám sát ngầm!")
+            return
+
         self.is_monitoring = True
         self.btn_start_monitor.config(state=tk.DISABLED)
         self.btn_stop_monitor.config(state=tk.NORMAL)
         self.status_badge.config(text="🔴 ĐANG GIÁM SÁT NGẦM", fg="#EF4444")
         
         interval = int(self.var_interval.get())
-        g_choice = self.var_group_choice.get()
-        if g_choice == 'g2':
-            f_path = TICKERS_G2_FILE
-            g_name = "Nhóm 2 (69 mã)"
-        elif g_choice == 'g3':
-            f_path = TICKERS_G3_FILE
-            g_name = "Nhóm 3 (94 mã)"
-        elif g_choice == 'all278':
-            f_path = TICKERS_278_FILE
-            g_name = "Toàn bộ 278 mã"
-        else:
-            f_path = TICKERS_G1_FILE
-            g_name = "Nhóm 1 (116 mã có BMP)"
-            
-        with open(f_path, "r", encoding="utf-8") as f:
-            tickers_list = json.load(f)
-            
-        self.log_monitor(f"🚀 Kích hoạt chế độ giám sát tự động: {g_name} (Chu kỳ {interval//60} phút/lần)")
+        self.log_monitor(f"🚀 Kích hoạt giám sát tự động {len(tickers_list)} mã (Chu kỳ {interval//60} phút/lần)")
         if self.var_keep_awake.get():
             enable_windows_keep_awake()
-            self.log_monitor("🔋 Đã kích hoạt Windows Keep-Awake: Màn hình tắt máy vẫn chạy liên tục.")
+            self.log_monitor("🔋 Đã kích hoạt Windows Keep-Awake: Màn hình tắt máy tính vẫn chạy liên tục.")
 
         def loop_worker():
             scan_idx = 0
@@ -1012,12 +1198,15 @@ class StockRadarGUI(tk.Tk):
             while self.is_monitoring:
                 scan_idx += 1
                 start_t = time.time()
-                self.log_monitor(f"\n--- [LƯỢT #{scan_idx}] Bắt đầu quét {len(tickers_list)} mã ---")
+                
+                # Nạp cache mới nhất và LOẠI BỎ TRIỆT ĐỂ các mã đã có BCTC ĐẦY ĐỦ/HỢP NHẤT
+                completed_cache = load_completed_cache()
+                to_scan = [it for it in tickers_list if not is_bctc_fully_completed(it['ticker'], completed_cache)]
+                skipped_cnt = len(tickers_list) - len(to_scan)
+
+                self.log_monitor(f"\n--- [LƯỢT #{scan_idx}] Quét {len(to_scan)} mã còn lại (Đã bỏ qua {skipped_cnt} mã hoàn tất) ---")
                 
                 new_cnt = 0
-                completed_cache = load_completed_cache()
-                to_scan = [it for it in tickers_list if it['ticker'] not in completed_cache or completed_cache[it['ticker']].get('bctc_type') not in ['HOP_NHAT', 'DAY_DU']]
-                
                 def sub_worker(item):
                     t = item['ticker']
                     r = check_fpts_ezir(t)
@@ -1038,32 +1227,41 @@ class StockRadarGUI(tk.Tk):
                         try:
                             t, item, res = fut.result()
                             if res.get('has_q3'):
-                                new_cnt += 1
                                 b_type = res.get('bctc_type', 'DAY_DU')
                                 doc_url = res.get('doc_url', '')
-                                self.log_monitor(f"🔥 [BCTC MỚI] {t} [{b_type}]: {res.get('title')}")
-                                lnst = extract_lnst_and_yoy(doc_url)
-                                alert_payload = {
-                                    "ticker": t,
-                                    "company_name": item.get('name', ''),
-                                    "exchange": item.get('san', 'UPCOM'),
-                                    "quarter": "Quý 3/2026",
-                                    "release_date": res.get('date'),
-                                    "title": res.get('title'),
-                                    "source": res.get('source'),
-                                    "bctc_type": b_type,
-                                    "doc_url": doc_url
-                                }
-                                if lnst.get('has_data'):
-                                    alert_payload['net_profit'] = lnst.get('current_quarter')
-                                    alert_payload['growth_rate'] = lnst.get('yoy')
-                                    alert_payload['growth_direction'] = lnst.get('direction', 'up')
-                                    alert_payload['lnst_label'] = lnst.get('label')
-                                send_discord_alert(alert_payload)
+                                date_str = res.get('date', datetime.datetime.now().strftime("%d/%m/%Y"))
+                                
+                                old_cache = completed_cache.get(t)
+                                old_type = old_cache.get('bctc_type') if old_cache else None
+                                is_brand_new = (t not in completed_cache)
+                                is_new_hop_nhat = (old_type == 'RIENG' and b_type == 'HOP_NHAT')
+
+                                if is_brand_new or is_new_hop_nhat:
+                                    new_cnt += 1
+                                    self.log_monitor(f"🔥 [BCTC MỚI] {t} [{b_type}]: {res.get('title')}")
+                                    lnst = extract_lnst_and_yoy(doc_url)
+                                    alert_payload = {
+                                        "ticker": t,
+                                        "company_name": item.get('name', ''),
+                                        "exchange": item.get('san', 'UPCOM'),
+                                        "quarter": "Quý 3/2026",
+                                        "release_date": date_str,
+                                        "title": res.get('title'),
+                                        "source": res.get('source'),
+                                        "bctc_type": b_type,
+                                        "doc_url": doc_url
+                                    }
+                                    if lnst.get('has_data'):
+                                        alert_payload['net_profit'] = lnst.get('current_quarter')
+                                        alert_payload['growth_rate'] = lnst.get('yoy')
+                                        alert_payload['growth_direction'] = lnst.get('direction', 'up')
+                                        alert_payload['lnst_label'] = lnst.get('label')
+                                    send_discord_alert(alert_payload)
+
                                 completed_cache[t] = {
                                     "ticker": t,
                                     "company_name": item.get('name', ''),
-                                    "release_date": res.get('date'),
+                                    "release_date": date_str,
                                     "title": res.get('title'),
                                     "doc_url": doc_url,
                                     "source": res.get('source'),

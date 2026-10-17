@@ -19,12 +19,13 @@
   },
   "RTB": {
     "ticker": "RTB",
-    "bctc_type": "RIENG",
-    "title": "VI_BCTC_Rieng_Quy 3_2026",
-    "date": "12/10/2026 14:38",
-    "doc_url": "https://file.fpts.com.vn/FileStore2/File/EzIR/UploadFile/News/2026/10/12/File_1_7445_VI_BaoCaoTaiChinh_Q3_2026_(Cty).pdf",
+    "company_name": "Công ty Cổ phần Cao su Tân Biên",
+    "release_date": "13/10/2026 13:12",
+    "title": "Báo cáo tài chính quý 3/2026 (công ty mẹ)",
+    "doc_url": "https://fpts.com.vn/san-pham-dich-vu/tu-van-dau-tu/tin-tuc/doanh-nghiep/luu-tru-bao-cao-tai-chinhRTB_Bao_cao_tai_chinh_quy_32026_cong_ty_me_B3F3DE499086CD05493A8B5E91E50AD8",
     "source": "EzIR_FPTS",
-    "updated_at": "2026-10-12 23:20:00"
+    "bctc_type": "RIENG",
+    "updated_at": "2026-10-17 12:36:33"
   },
   "UDJ": {
     "ticker": "UDJ",
@@ -197,5 +198,25 @@
     "doc_url": "https://cholimexfood.com.vn/bao-cao-tai-chinh-quy-iii-nam-2026/",
     "source": "Company_Web",
     "updated_at": "2026-10-17 08:25:24"
+  },
+  "NSC": {
+    "ticker": "NSC",
+    "company_name": "Công ty Cổ phần Tập đoàn Giống cây trồng Việt Nam",
+    "release_date": "17/10/2026",
+    "title": "Báo cáo tài chính hợp nhất Quý III-2022 NSC",
+    "doc_url": "https://storage.vinaseed.com.vn/Data/2022/10/24/20221024-nsc-cbtt-bctc-hop-nhat-q3-2022-638022320261657694.pdf",
+    "source": "Company_Web",
+    "bctc_type": "HOP_NHAT",
+    "updated_at": "2026-10-17 12:36:44"
+  },
+  "CAP": {
+    "ticker": "CAP",
+    "company_name": "CTCP Lâm Nông sản Thực phẩm Yên Bái",
+    "release_date": "22/07/2026",
+    "title": "CAP: Báo cáo tài chính quý 3/2026",
+    "doc_url": "https://cafef.vn/du-lieu/CAP-2935162/cap-bao-cao-tai-chinh-quy-32026.chn?utm_source=du-lieu.chn",
+    "source": "CafeF_CBTT",
+    "bctc_type": "DAY_DU",
+    "updated_at": "2026-10-17 12:43:06"
   }
 }
