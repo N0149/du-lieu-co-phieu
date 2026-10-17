@@ -17,10 +17,24 @@ import urllib.parse
 import unicodedata
 from concurrent.futures import ThreadPoolExecutor
 from bs4 import BeautifulSoup
+import subprocess
+import ssl
 try:
     import pymupdf
 except ImportError:
     pymupdf = None
+
+def enable_windows_keep_awake():
+    """Ngăn Windows rơi vào chế độ Sleep khi đang chạy giám sát trên máy tính cá nhân"""
+    if os.name == 'nt':
+        try:
+            import ctypes
+            # ES_CONTINUOUS (0x80000000) | ES_SYSTEM_REQUIRED (0x00000001)
+            # Giữ hệ thống luôn thức, cho phép màn hình tự tắt để tiết kiệm điện
+            ctypes.windll.kernel32.SetThreadExecutionState(0x80000001)
+            log("🔋 Đã kích hoạt Windows Keep-Awake: Ngăn máy tính tự ngủ (Sleep) khi bạn đi làm.")
+        except Exception as e:
+            log(f"Không thể kích hoạt Keep-Awake: {e}")
 
 BASE_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
 TICKERS_FILE = os.path.join(BASE_DIR, "data", "tickers_group1_115.json")
@@ -694,10 +708,10 @@ def send_heartbeat(event_type, details=""):
         payload = {
             "content": f"☀️ **[08:00] BẮT ĐẦU PHIÊN GIÁM SÁT BCTC NGÀY {date_str}**",
             "embeds": [{
-                "title": "🟢 Hệ thống Cloud đang hoạt động tự động",
-                "description": f"Hệ thống tự động quét **115 mã cổ phiếu nhóm 1**:\n• Phiên Sáng (08:00 - 11:30): **10 phút/lần**\n• Khung Giờ Trưa (11:30 - 13:00): **20 phút/lần**\n• Phiên Chiều (13:00 - 15:30): **10 phút/lần**\n{details}",
+                "title": "🟢 Hệ thống Giám sát đang hoạt động tự động",
+                "description": f"Hệ thống tự động quét **115 mã cổ phiếu nhóm 1**:\n• Phiên Sáng (08:00 - 11:30): **5 phút/lần**\n• Khung Giờ Trưa (11:30 - 13:00): **10 phút/lần**\n• Phiên Chiều (13:00 - 15:30): **5 phút/lần**\n{details}",
                 "color": 0x3B82F6,
-                "footer": {"text": "BCTC Live Cloud Monitor • dulieudautu.com"},
+                "footer": {"text": "BCTC Live Monitor • dulieudautu.com"},
                 "timestamp": datetime.datetime.now(datetime.timezone.utc).isoformat()
             }]
         }
@@ -708,7 +722,7 @@ def send_heartbeat(event_type, details=""):
                 "title": "☕ Chốt phiên hôm nay",
                 "description": f"{details}\nHệ thống tự động nghỉ ngơi và sẽ bắt đầu quét lại vào **08:00 sáng mai**.",
                 "color": 0x64748B,
-                "footer": {"text": "BCTC Live Cloud Monitor • dulieudautu.com"},
+                "footer": {"text": "BCTC Live Monitor • dulieudautu.com"},
                 "timestamp": datetime.datetime.now(datetime.timezone.utc).isoformat()
             }]
         }
@@ -745,7 +759,7 @@ def send_silent_ping(scan_index, remaining_count, elapsed_sec, new_count=0, sess
     if new_count > 0:
         content = f"🔥 **[{time_str}] Lượt #{scan_index}{tag_str}:** Phát hiện **{new_count} BCTC MỚI**! Đã gửi thông báo chi tiết."
     else:
-        freq_str = " (quét 20p/lần)" if session_tag == "Trưa" else ""
+        freq_str = " (quét 10p/lần)" if session_tag == "Trưa" else " (quét 5p/lần)"
         content = f"🟢 `[{time_str}]` **Lượt #{scan_index}{tag_str}:** Đã kiểm tra **{remaining_count} mã** ({elapsed_sec}s){freq_str} • Bình thường, chưa có BCTC mới."
         
     payload = {
@@ -931,14 +945,24 @@ def execute_single_scan(scan_index=1):
         save_completed_cache(completed_cache)
         save_alerts(alerts_dict)
         log(f"💾 Đã lưu dữ liệu {new_found_count} mã mới phát hiện vào cache.")
+        if os.environ.get("GITHUB_ACTIONS") != "true":
+            try:
+                subprocess.run('git add data/bctc_completed_cache.json data/bctc_q3_live_alerts.json data/bctc_cloud_status.json && git commit -m "chore(bctc): auto sync local completed cache [skip ci]" && git push origin main', shell=True, capture_output=True)
+                log("🚀 Đã tự động đồng bộ cache mới lên GitHub repository.")
+            except:
+                pass
         
     return new_found_count, len(to_scan), total_elapsed
 
 def main():
-    log("=== KHỞI ĐỘNG HỆ THỐNG GIÁM SÁT 115 MÃ BCTC TRÊN CLOUD ===")
+    log("=== KHỞI ĐỘNG HỆ THỐNG GIÁM SÁT 115 MÃ BCTC (5 PHÚT/LẦN) ===")
     
     is_loop = ('--loop' in sys.argv)
     force_run = ('--force' in sys.argv)
+    is_cloud = (os.environ.get("GITHUB_ACTIONS") == "true")
+    
+    if not is_cloud:
+        enable_windows_keep_awake()
     
     now_vn = datetime.datetime.now(datetime.timezone(datetime.timedelta(hours=7)))
     today_str = now_vn.strftime("%Y-%m-%d")
@@ -948,36 +972,51 @@ def main():
     # Kiểm tra ngày & giờ giao dịch (bỏ qua nếu dùng cờ --force)
     if not force_run:
         if weekday >= 5:
-            log("📅 Hôm nay là cuối tuần (thị trường chứng khoán nghỉ). Không cần quét.")
+            log("📅 Hôm nay là cuối tuần (thị trường chứng khoán nghỉ). Dừng quét (dùng --force nếu muốn chạy thử).")
             return
 
-        if time_min < 7 * 60 + 50:
-            log("⏰ Chưa đến giờ bắt đầu phiên sáng (trước 07:55). Thoát an toàn.")
-            return
+        if time_min < 8 * 60:
+            if is_cloud:
+                if time_min < 7 * 60 + 50:
+                    log("⏰ Chưa đến giờ bắt đầu phiên sáng (trước 07:55). Thoát an toàn.")
+                    return
+            else:
+                # Trên máy tính cá nhân ở nhà: Chờ đếm ngược đến 08:00 sáng
+                wait_sec = (8 * 60 - time_min) * 60 - now_vn.second
+                log(f"⏰ Bạn vừa bật máy lúc {now_vn.strftime('%H:%M:%S')}. Đang chờ đến 08:00 sáng để mở phiên...")
+                log(f"⏳ Tự động đếm ngược: còn {wait_sec // 60} phút {wait_sec % 60} giây...")
+                time.sleep(max(1, wait_sec))
+                now_vn = datetime.datetime.now(datetime.timezone(datetime.timedelta(hours=7)))
+                time_min = now_vn.hour * 60 + now_vn.minute
         elif time_min >= 15 * 60 + 30:
             log("🏁 Đã kết thúc toàn bộ phiên giao dịch hôm nay (sau 15:30). Nghỉ ngơi.")
             return
 
-    # Nếu chạy loop worker, kiểm tra xem đã có worker nào đang hoạt động chưa
-    if is_loop and check_another_instance_running():
+    # Nếu chạy loop worker trên Cloud, kiểm tra xem đã có worker nào đang hoạt động chưa
+    if is_cloud and is_loop and check_another_instance_running():
         return
 
     # Xác định ca làm việc:
-    # Ca Sáng & Trưa: 08:00 -> 12:55 (quét 10p/lần lúc 08:00-11:30, và 20p/lần lúc 11:30-13:00)
-    # Ca Chiều: 13:00 -> 15:30 (quét 10p/lần lúc 13:00-15:30)
-    if time_min < 12 * 60 + 55:
-        session_name = "Ca Sáng & Trưa (08:00 - 13:00)"
-        target_end_min = 12 * 60 + 55
-        is_morning = True
+    # Trên Cloud: tách ca để tránh vượt quá 6 giờ giới hạn của GitHub runner
+    # Trên Local: chạy liên tục toàn ngày từ 08:00 đến 15:30
+    if is_cloud:
+        if time_min < 12 * 60 + 55:
+            session_name = "Ca Sáng & Trưa (08:00 - 13:00)"
+            target_end_min = 12 * 60 + 55
+            is_morning = True
+        else:
+            session_name = "Ca Chiều (13:00 - 15:30)"
+            target_end_min = 15 * 60 + 30
+            is_morning = False
     else:
-        session_name = "Ca Chiều (13:00 - 15:30)"
+        session_name = "Giám sát Toàn ngày (08:00 - 15:30)"
         target_end_min = 15 * 60 + 30
-        is_morning = False
+        is_morning = True
         
     status = load_status()
     
     if is_morning and status.get('last_morning_greeting') != today_str:
-        send_heartbeat('morning', "Bắt đầu phiên sáng, quét 10 phút/lần (Trưa 20 phút/lần).")
+        send_heartbeat('morning', "Bắt đầu phiên sáng, quét 5 phút/lần (Trưa 10 phút/lần).")
         status['last_morning_greeting'] = today_str
         save_status(status)
         
@@ -1000,10 +1039,10 @@ def main():
         now_vn = datetime.datetime.now(datetime.timezone(datetime.timedelta(hours=7)))
         cur_min = now_vn.hour * 60 + now_vn.minute
         
-        # Xác định chế độ quét (Trưa: 20 phút/lần, Sáng & Chiều: 10 phút/lần)
+        # Xác định chế độ quét (Sáng & Chiều: 5 phút/lần, Trưa: 10 phút/lần)
         is_lunch_time = (11 * 60 + 30 <= cur_min < 13 * 60)
-        session_tag = "Trưa" if is_lunch_time else ("Sáng" if is_morning else "Chiều")
-        sleep_sec = 1200 if is_lunch_time else 600
+        session_tag = "Trưa" if is_lunch_time else ("Sáng" if cur_min < 12 * 60 else "Chiều")
+        sleep_sec = 600 if is_lunch_time else 300
 
         try:
             new_cnt, rem_cnt, elapsed = execute_single_scan(scan_index=scan_index)
@@ -1018,7 +1057,7 @@ def main():
         if not force_run:
             if cur_min >= target_end_min or (cur_min + sleep_sec // 60 > target_end_min):
                 log(f"🏁 Đã hoàn tất lượt quét cuối của {session_name}. Dừng ca.")
-                if not is_morning and status.get('last_afternoon_closing') != today_str:
+                if status.get('last_afternoon_closing') != today_str:
                     completed_cache = load_completed_cache()
                     send_heartbeat('afternoon', f"Đã kết thúc phiên chiều. Tổng số mã đã có BCTC đầy đủ: **{len(completed_cache)} mã**.")
                     status['last_afternoon_closing'] = today_str
