@@ -13,6 +13,7 @@ echo [!] Cảnh báo BCTC mới: Bắn chuông ngay lập tức kèm LNST và %%
 echo [!] Tự động kết thúc an toàn lúc: 10:30
 echo.
 
+cd /d "D:\hoc\lap trinh\du-lieu-co-phieu"
 python scripts/bctc_monitor_cloud.py --loop --start 10:05 --until 10:30
 
 echo.

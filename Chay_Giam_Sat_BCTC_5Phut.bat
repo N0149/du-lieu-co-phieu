@@ -16,6 +16,7 @@ echo Dang khoi dong trinh giam sat tren may tinh...
 echo (Neu bat may truoc 08:00 sang, he thong se tu dem nguoc den 08:00)
 echo.
 
+cd /d "D:\hoc\lap trinh\du-lieu-co-phieu"
 python scripts\bctc_monitor_cloud.py --loop
 
 echo.
