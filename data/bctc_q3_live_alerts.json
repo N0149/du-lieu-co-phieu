@@ -1,5 +1,19 @@
 [
   {
+    "ticker": "GMX",
+    "company_name": "Công ty Cổ phần Gạch ngói Gốm xây dựng Mỹ Xuân",
+    "exchange": "HNX",
+    "quarter": "Quý 3/2026",
+    "release_date": "19/10/2026 11:03",
+    "title": "Báo cáo tài chính quý 3 năm 2026 và giải trình biến động trên 10% kết quả kinh doanh quý 3 năm 2026 so với cùng kỳ",
+    "source": "EzIR_FPTS",
+    "bctc_type": "GIAI_TRINH",
+    "doc_url": "https://file.fpts.com.vn/FileStore2/File/EzIR/UploadFile/News/2026/10/19/File_1_9293_(GMX)-_VI_BaoCaoTaiChinh_Q3_2026.pdf.pdf",
+    "is_hot": true,
+    "detected_at": "2026-10-19T04:06:19",
+    "lnst_status": "Bản scan giấy đóng dấu đỏ (chưa số hóa)"
+  },
+  {
     "ticker": "BMP",
     "company_name": "CTCP Nhựa Bình Minh",
     "exchange": "HOSE",
