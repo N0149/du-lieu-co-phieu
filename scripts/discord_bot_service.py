@@ -564,6 +564,32 @@ def auto_monitor_worker():
     time.sleep(15)  # Chờ 15s sau khi bot khởi động
     while True:
         try:
+            # Kiểm tra lịch tự động tắt máy lúc 15:10 chiều
+            now_vn = datetime.datetime.now()
+            if now_vn.hour > 15 or (now_vn.hour == 15 and now_vn.minute >= 10):
+                print("[AUTO-SHUTDOWN] Đã đến 15:10! Gửi thông báo Discord và tự động tắt máy tính...")
+                try:
+                    webhook_url = get_discord_webhook()
+                    if webhook_url:
+                        payload = {
+                            "content": (
+                                "⏰ **[15:10] MÁY TÍNH TỰ ĐỘNG TẮT NGUỒN THEO LỊCH HẸN!**\n"
+                                "• Máy tính ở nhà tự động tắt nguồn (Shut down) để tiết kiệm điện.\n"
+                                "• Hệ thống **Đám Mây (GitHub Actions)** tiếp tục giám sát độc lập đến 20:00 tối nay!\n"
+                                "• Bạn cứ yên tâm làm việc, có BCTC mới Discord vẫn thông báo bình thường."
+                            )
+                        }
+                        req = urllib.request.Request(
+                            webhook_url,
+                            data=json.dumps(payload).encode('utf-8'),
+                            headers={'Content-Type': 'application/json', 'User-Agent': 'Mozilla/5.0'}
+                        )
+                        urllib.request.urlopen(req, timeout=8)
+                except Exception as ex:
+                    print("[AUTO-SHUTDOWN Webhook Error]:", ex)
+                os.system("shutdown /s /f /t 60 /c \"Tu dong tat may luc 15h10 theo lich hen\"")
+                break
+
             if AUTO_SCAN_ENABLED:
                 NEXT_AUTO_SCAN_TIME = time.time() + AUTO_SCAN_INTERVAL
                 print(f"[AUTO-MONITOR] Bắt đầu lượt quét ngầm tự động...")
@@ -696,17 +722,28 @@ def handle_command(content, username, reply_func):
         reply_func(f"🔍 **[{username}]** yêu cầu kiểm tra BCTC Quý 3/2026 cho mã `{ticker}`. Đang tra cứu...")
         execute_remote_check_ticker(ticker, reply_func)
 
-    # 5. Trợ giúp
-    elif cmd in ['help', '!help', '/help', 'huongdan', '?']:
+    # 4.1 Lệnh tắt máy từ xa
+    elif cmd in ['tat may', 'tatmay', 'shutdown', '!shutdown']:
+        reply_func(
+            "🛑 **NHẬN LỆNH TẮT MÁY TỪ XA!**\n"
+            "• Máy tính ở nhà sẽ tự động tắt nguồn sau 60 giây.\n"
+            "• Hệ thống **Đám Mây (GitHub Actions)** sẽ tiếp tục giám sát độc lập đến 20:00 tối nay!"
+        )
+        os.system("shutdown /s /f /t 60 /c \"Tat may tu xa qua Discord\"")
+
+    # 5. Trợ giúp & Danh sách lệnh
+    elif cmd in ['help', '!help', '/help', 'huongdan', 'huong dan', 'lenh', 'cac lenh', 'danh sach lenh', 'ds lenh', 'menu', 'tro giup', '?']:
         msg = (
             f"📋 **DANH SÁCH LỆNH ĐIỀU KHIỂN TỪ ĐIỆN THOẠI:**\n"
-            f"• `status`: Kiểm tra tình trạng máy tính & thời gian lượt quét tới.\n"
-            f"• `scan`: Ép máy tính quét toàn bộ danh mục ngay lập tức.\n"
+            f"• `status` hoặc `stt`: Kiểm tra tình trạng máy tính, chu kỳ quét & số mã đã ra BCTC.\n"
+            f"• `scan` hoặc `quet`: Ép máy tính quét toàn bộ danh mục ngay lập tức.\n"
+            f"• `check <MÃ>` hoặc nhắn mã 3 chữ cái (VD: `NT2`, `BMP`, `HPG`): Tra cứu ngay BCTC của mã đó.\n"
+            f"• `bo qua <MÃ>` (VD: `bo qua ICN, SPB`): Bỏ qua tài liệu nhận nhầm và tự động quét tiếp.\n"
             f"• `auto 5` hoặc `auto 10`: Đổi chu kỳ tự động quét ngầm (phút).\n"
             f"• `auto on` / `auto off`: Bật hoặc tắt tự động quét ngầm.\n"
-            f"• `bo qua ICN, SPB, ...`: Bỏ qua tài liệu nhận nhầm và tự động quét tiếp.\n"
-            f"• Nhắn mã 3 chữ cái (Ví dụ: `BMP`, `HPG`): Tra cứu tức thì BCTC mã đó.\n"
-            f"• `help`: Xem lại danh sách hướng dẫn này."
+            f"• `tat may` / `shutdown`: Tắt máy tính ở nhà từ xa.\n"
+            f"• `lenh` / `help`: Xem lại danh sách hướng dẫn này.\n\n"
+            f"⏰ **LỊCH TẮT MÁY HÔM NAY:** Máy tính đã được cài đặt tự động tắt nguồn lúc **15:10** chiều nay. Sau 15:10, hệ thống Cloud GitHub Actions sẽ tiếp quản giám sát độc lập đến 20:00 tối!"
         )
         reply_func(msg)
 
