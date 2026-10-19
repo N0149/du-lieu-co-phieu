@@ -17,16 +17,16 @@ on:
     - cron: '0 5 * * 1-5'  # 12:00 VN (05:00 UTC)
     - cron: '30 5 * * 1-5' # 12:30 VN (05:30 UTC)
 
-    # --- PHIÊN CHIỀU (13:00 -> 15:30 VN, tức 06:00 -> 08:30 UTC, Thứ 2 - Thứ 6) ---
+    # --- PHIÊN CHIỀU & TỐI (13:00 -> 20:00 VN, tức 06:00 -> 13:00 UTC, Thứ 2 - Thứ 6) ---
     # Mốc khởi động sớm đón đầu ca chiều: 12:55 trưa VN (05:55 UTC)
     - cron: '55 5 * * 1-5' # 12:55 VN
     # Mốc chính: 13:00 chiều VN (06:00 UTC)
     - cron: '0 6 * * 1-5'
-    # Các mốc cứu viện dự phòng ca chiều:
-    - cron: '15 6 * * 1-5' # 13:15 VN
-    - cron: '30 6 * * 1-5' # 13:30 VN
-    - cron: '0 7 * * 1-5'  # 14:00 VN
-    - cron: '30 7 * * 1-5' # 14:30 VN
+    # Các mốc cứu viện dự phòng ca chiều & tối (đón đầu BCTC nộp muộn sau phiên):
+    - cron: '30 7 * * 1-5'  # 14:30 VN
+    - cron: '0 9 * * 1-5'   # 16:00 VN (09:00 UTC)
+    - cron: '30 10 * * 1-5' # 17:30 VN (10:30 UTC)
+    - cron: '0 12 * * 1-5'  # 19:00 VN (12:00 UTC)
   workflow_dispatch:
     inputs:
       force:

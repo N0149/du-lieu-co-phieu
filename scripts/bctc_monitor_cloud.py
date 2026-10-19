@@ -737,7 +737,7 @@ def send_heartbeat(event_type, details=""):
         }
     elif event_type == 'afternoon':
         payload = {
-            "content": f"🏁 **[15:30] KẾT THÚC PHIÊN GIÁM SÁT NGÀY {date_str}**",
+            "content": f"🏁 **[20:00] KẾT THÚC PHIÊN GIÁM SÁT NGÀY {date_str}**",
             "embeds": [{
                 "title": "☕ Chốt phiên hôm nay",
                 "description": f"{details}\nHệ thống tự động nghỉ ngơi và sẽ bắt đầu quét lại vào **08:00 sáng mai**.",
@@ -1059,8 +1059,8 @@ def main():
                 time.sleep(max(1, wait_sec))
                 now_vn = datetime.datetime.now(datetime.timezone(datetime.timedelta(hours=7)))
                 time_min = now_vn.hour * 60 + now_vn.minute
-        elif time_min >= 15 * 60 + 30:
-            log("🏁 Đã kết thúc toàn bộ phiên giao dịch hôm nay (sau 15:30). Nghỉ ngơi.")
+        elif time_min >= 20 * 60:
+            log("🏁 Đã kết thúc toàn bộ phiên giám sát hôm nay (sau 20:00). Nghỉ ngơi.")
             return
 
     # Nếu chạy loop worker trên Cloud, kiểm tra xem đã có worker nào đang hoạt động chưa
@@ -1069,7 +1069,7 @@ def main():
 
     # Xác định ca làm việc:
     # Trên Cloud: tách ca để tránh vượt quá 6 giờ giới hạn của GitHub runner
-    # Trên Local: chạy liên tục toàn ngày từ 08:00 đến 15:30 (hoặc theo khung giờ thử nghiệm --until)
+    # Trên Local: chạy liên tục toàn ngày từ 08:00 đến 20:00 (hoặc theo khung giờ thử nghiệm --until)
     if until_arg:
         try:
             eh, em = map(int, until_arg.split(':'))
@@ -1078,7 +1078,7 @@ def main():
             is_morning = False
         except Exception as e:
             log(f"Lỗi phân tích cú pháp --until: {e}")
-            target_end_min = 15 * 60 + 30
+            target_end_min = 20 * 60
             session_name = "Phiên Giám sát (Local)"
             is_morning = False
     elif is_cloud:
@@ -1087,12 +1087,12 @@ def main():
             target_end_min = 12 * 60 + 55
             is_morning = True
         else:
-            session_name = "Ca Chiều (13:00 - 15:30)"
-            target_end_min = 15 * 60 + 30
+            session_name = "Ca Chiều & Tối (13:00 - 20:00)"
+            target_end_min = 20 * 60
             is_morning = False
     else:
-        session_name = "Giám sát Toàn ngày (08:00 - 15:30)"
-        target_end_min = 15 * 60 + 30
+        session_name = "Giám sát Toàn ngày (08:00 - 20:00)"
+        target_end_min = 20 * 60
         is_morning = True
         
     status = load_status()

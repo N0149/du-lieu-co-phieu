@@ -436,6 +436,30 @@ def send_discord_alert(alert_payload):
     except:
         return False
 
+def send_silent_ping(remaining_count, elapsed_sec, new_count=0):
+    """Gửi nhịp đập trạng thái của máy tính ở nhà (không chuông, không rung điện thoại)"""
+    webhook_url = get_discord_webhook()
+    if not webhook_url:
+        return
+    now_str = datetime.datetime.now().strftime("%H:%M")
+    if new_count > 0:
+        content = f"🔥 `[{now_str}]` **Máy tính ở nhà:** Phát hiện **{new_count} BCTC MỚI**! Đã gửi thông báo chi tiết."
+    else:
+        content = f"🟢 `[{now_str}]` **Máy tính ở nhà hoạt động bình thường** • Đã quét **{remaining_count} mã** ({elapsed_sec}s, chu kỳ 10p) • Chưa có BCTC mới."
+    payload = {
+        "content": content,
+        "flags": 4096 # SUPPRESS_NOTIFICATIONS
+    }
+    try:
+        req = urllib.request.Request(
+            webhook_url,
+            data=json.dumps(payload).encode('utf-8'),
+            headers={'Content-Type': 'application/json', 'User-Agent': 'Mozilla/5.0'}
+        )
+        urllib.request.urlopen(req, timeout=8)
+    except:
+        pass
+
 def get_default_tickers():
     selected = []
     seen = set()
@@ -529,8 +553,9 @@ def execute_remote_scan(reply_func=None):
         elapsed = round(time.time() - start_t, 1)
         if reply_func:
             reply_func(f"✅ **ĐÃ QUÉT XONG THEO LỆNH TỪ ĐIỆN THOẠI!**\n• Đã kiểm tra: `{len(to_scan)} mã` (Đã bỏ qua {skipped_cnt} mã hoàn tất)\n• Thời gian quét: `{elapsed}s`\n• Phát hiện mới: `{new_found_cnt} BCTC`.")
-        elif new_found_cnt > 0:
-            print(f"[AUTO-MONITOR] Phát hiện mới {new_found_cnt} BCTC đã phát thông báo lên Discord!")
+        else:
+            # Gửi nhịp đập Silent Ping (không chuông) để người dùng mở Discord lúc nào cũng thấy máy tính đang hoạt động
+            send_silent_ping(len(to_scan), elapsed, new_count=new_found_cnt)
     finally:
         SCAN_LOCK.release()
 

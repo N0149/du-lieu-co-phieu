@@ -20,12 +20,12 @@
   "RTB": {
     "ticker": "RTB",
     "company_name": "Công ty Cổ phần Cao su Tân Biên",
-    "release_date": "13/10/2026 13:12",
-    "title": "Báo cáo tài chính quý 3/2026 (công ty mẹ)",
-    "doc_url": "https://fpts.com.vn/san-pham-dich-vu/tu-van-dau-tu/tin-tuc/doanh-nghiep/luu-tru-bao-cao-tai-chinhRTB_Bao_cao_tai_chinh_quy_32026_cong_ty_me_B3F3DE499086CD05493A8B5E91E50AD8",
+    "release_date": "19/10/2026 11:13",
+    "title": "VI_BaoCaoTaiChinhHopNhat_Q3_2026 (Cty)",
+    "doc_url": "https://file.fpts.com.vn/FileStore2/File/EzIR/UploadFile/News/2026/10/19/File_1_1509_VI_BaoCaoTaiChinhHopNhat_Q3_2026_(Cty).pdf",
     "source": "EzIR_FPTS",
-    "bctc_type": "RIENG",
-    "updated_at": "2026-10-17 12:36:33"
+    "bctc_type": "DAY_DU",
+    "updated_at": "2026-10-19 21:54:32"
   },
   "UDJ": {
     "ticker": "UDJ",
@@ -101,12 +101,13 @@
   },
   "HTI": {
     "ticker": "HTI",
-    "bctc_type": "GIAI_TRINH",
-    "title": "Giải trình biến động kết quả kinh doanh  BCTC quý 3 năm 2026",
-    "date": "16/10/2026 11:15",
-    "doc_url": "https://file.fpts.com.vn/FileStore2/File/EzIR/UploadFile/News/2026/10/16/File_1_8364_HIT-Giai_trinh_KQKD_Q3.2026_V.pdf",
+    "company_name": "Công ty Cổ phần Đầu tư Phát triển Hạ tầng IDICO",
+    "release_date": "19/10/2026 08:12",
+    "title": "Báo cáo tài chính quý 3 năm 2026",
+    "doc_url": "https://file.fpts.com.vn/FileStore2/File/2026/10/16/20261016_-_HTI_-_Bao_cao_tai_chinh_quy_3_2026.pdf",
     "source": "EzIR_FPTS",
-    "updated_at": "2026-10-16 05:07:31"
+    "bctc_type": "DAY_DU",
+    "updated_at": "2026-10-19 21:54:14"
   },
   "HWS": {
     "ticker": "HWS",
@@ -119,30 +120,33 @@
   },
   "GSM": {
     "ticker": "GSM",
-    "bctc_type": "GIAI_TRINH",
+    "company_name": "Công ty Cổ phần Thủy điện Hương Sơn",
+    "release_date": "16/10/2026 11:30",
     "title": "Báo cáo tài chính Quý 3.2026 và giải trình chênh lệch LNST so với cùng kỳ năm trước",
-    "date": "16/10/2026 11:30",
     "doc_url": "https://file.fpts.com.vn/FileStore2/File/EzIR/UploadFile/News/2026/10/16/File_1_6346_BCTC_quy_3.2026.rar",
     "source": "EzIR_FPTS",
-    "updated_at": "2026-10-16 05:07:39"
+    "bctc_type": "DAY_DU",
+    "updated_at": "2026-10-19 21:54:20"
   },
   "LAW": {
     "ticker": "LAW",
-    "bctc_type": "GIAI_TRINH",
+    "company_name": "Công ty Cổ phần Cấp thoát nước Long An",
+    "release_date": "16/10/2026 14:23",
     "title": "Giải trình biến động tăng/giảm lợi nhuận quý 3/2026 so với quý 3/2026",
-    "date": "16/10/2026 14:23",
     "doc_url": "https://file.fpts.com.vn/FileStore2/File/EzIR/UploadFile/News/2026/10/16/File_1_1224_giai_trinh_Q3_da_ky.pdf",
     "source": "EzIR_FPTS",
-    "updated_at": "2026-10-16 07:25:27"
+    "bctc_type": "DAY_DU",
+    "updated_at": "2026-10-19 21:54:14"
   },
   "SBL": {
     "ticker": "SBL",
-    "bctc_type": "GIAI_TRINH",
+    "company_name": "Công ty Cổ phần Bia Sài Gòn - Bạc Liêu",
+    "release_date": "16/10/2026 14:36",
     "title": "Báo cáo tài chính quý 3 năm 2026 kèm giải trình",
-    "date": "16/10/2026 14:36",
     "doc_url": "https://file.fpts.com.vn/FileStore2/File/EzIR/UploadFile/News/2026/10/16/File_1_2595_VI_BaoCaoTaiChinh_Q3_2026.pdf",
     "source": "EzIR_FPTS",
-    "updated_at": "2026-10-16 07:46:57"
+    "bctc_type": "DAY_DU",
+    "updated_at": "2026-10-19 21:54:14"
   },
   "BBS": {
     "ticker": "BBS",
@@ -183,12 +187,13 @@
   },
   "GSP": {
     "ticker": "GSP",
-    "bctc_type": "GIAI_TRINH",
+    "company_name": "Công ty Cổ phần Vận tải Sản phẩm Khí Quốc tế",
+    "release_date": "16/10/2026 15:31",
     "title": "Báo cáo tài chính Quý 3 năm 2026 và Công văn giải trình chênh lệch LNST từ 10% trở lên so với cùng kỳ",
-    "date": "16/10/2026 15:31",
     "doc_url": "https://file.fpts.com.vn/FileStore2/File/EzIR/UploadFile/News/2026/10/16/File_1_9854_20261016_-_GSP_-_BCTC_quy_3_nam_2026_va_cong_van_giai_trinh.pdf",
     "source": "EzIR_FPTS",
-    "updated_at": "2026-10-17 08:25:21"
+    "bctc_type": "DAY_DU",
+    "updated_at": "2026-10-19 21:54:24"
   },
   "CMF": {
     "ticker": "CMF",
@@ -230,12 +235,13 @@
   },
   "VLB": {
     "ticker": "VLB",
-    "bctc_type": "GIAI_TRINH",
-    "title": "Báo cáo tài chính quý 3 năm 2026 kèm giải trình lợi nhuận sau thuế thay đổi trên 10%",
-    "date": "19/10/2026",
+    "company_name": "Công ty Cổ phần Xây dựng và Sản xuất Vật liệu Xây dựng Biên Hòa",
+    "release_date": "19/10/2026",
+    "title": "Báo cáo tài chính Quý 3/2026 (VLB)",
     "doc_url": "https://www.bbcc.com.vn/tin-tuc/bao-cao-tai-chinh-quy-3-nam-2026-kem-giai-trinh-loi-nhuan-sau-thue-thay-doi-tren-10.html",
     "source": "Company_Web",
-    "updated_at": "2026-10-19 03:48:12"
+    "bctc_type": "DAY_DU",
+    "updated_at": "2026-10-19 20:55:48"
   },
   "BMP": {
     "ticker": "BMP",
@@ -248,12 +254,13 @@
   },
   "GMX": {
     "ticker": "GMX",
-    "bctc_type": "GIAI_TRINH",
+    "company_name": "Công ty Cổ phần Gạch ngói Gốm xây dựng Mỹ Xuân",
+    "release_date": "19/10/2026 11:03",
     "title": "Báo cáo tài chính quý 3 năm 2026 và giải trình biến động trên 10% kết quả kinh doanh quý 3 năm 2026 so với cùng kỳ",
-    "date": "19/10/2026 11:03",
     "doc_url": "https://file.fpts.com.vn/FileStore2/File/EzIR/UploadFile/News/2026/10/19/File_1_9293_(GMX)-_VI_BaoCaoTaiChinh_Q3_2026.pdf.pdf",
     "source": "EzIR_FPTS",
-    "updated_at": "2026-10-19 04:06:19"
+    "bctc_type": "DAY_DU",
+    "updated_at": "2026-10-19 21:54:24"
   },
   "PDN": {
     "ticker": "PDN",
@@ -275,12 +282,13 @@
   },
   "HNF": {
     "ticker": "HNF",
-    "bctc_type": "GIAI_TRINH",
+    "company_name": "Công ty Cổ phần Thực phẩm Hữu Nghị",
+    "release_date": "19/10/2026",
     "title": "CBTT Báo cáo tài chính Quý III năm 2026 và công văn giải trìnhBáo cáo tài chính Quý III năm 2026 (bản tiếng Việt), xem chi tiết tại [...]19Th10",
-    "date": "19/10/2026",
     "doc_url": "https://huunghi.com.vn/cbtt-bao-cao-tai-chinh-quy-iii-nam-2026-va-cong-van-giai-trinh/",
     "source": "Company_Web",
-    "updated_at": "2026-10-19 06:26:32"
+    "bctc_type": "DAY_DU",
+    "updated_at": "2026-10-19 20:55:35"
   },
   "TOT": {
     "ticker": "TOT",
@@ -349,5 +357,25 @@
     "source": "Company_Web",
     "bctc_type": "DAY_DU",
     "updated_at": "2026-10-19 18:33:09"
+  },
+  "LIX": {
+    "ticker": "LIX",
+    "company_name": "Công ty Cổ phần Bột Giặt LIX",
+    "release_date": "19/10/2026 21:31",
+    "title": "Giải trình kết quả kinh doanh quý 3 năm 2026",
+    "doc_url": "https://file.fpts.com.vn/FileStore2/File/EzIR/UploadFile/News/2026/10/19/File_1_9826_20261019_-_LIX_-_Giai_trinh_bien_dong_ket_qua_kinh_doanh_Quy_III.2026.pdf",
+    "source": "EzIR_FPTS",
+    "bctc_type": "DAY_DU",
+    "updated_at": "2026-10-19 21:54:15"
+  },
+  "SZG": {
+    "ticker": "SZG",
+    "company_name": "Công ty Cổ phần Sonadezi Giang Điền",
+    "release_date": "19/10/2026 21:15",
+    "title": "Báo cáo tài chính Quý III năm 2026 và giải trình bổ sung tình hình biến động lợi nhuận sau thuế thu nhập doanh nghiệp",
+    "doc_url": "https://file.fpts.com.vn/FileStore2/File/EzIR/UploadFile/News/2026/10/19/File_1_1274_VN_BaoCaoTaiChinh_Q3_2026.pdf",
+    "source": "EzIR_FPTS",
+    "bctc_type": "DAY_DU",
+    "updated_at": "2026-10-19 21:54:17"
   }
 }

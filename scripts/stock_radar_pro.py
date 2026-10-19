@@ -114,6 +114,17 @@ def is_valid_recent_bctc_date(date_pub):
         return False
     return True
 
+IGNORED_DOCS_FILE = os.path.join(DATA_DIR, "ignored_docs.json")
+
+def load_ignored_docs():
+    if os.path.exists(IGNORED_DOCS_FILE):
+        try:
+            with open(IGNORED_DOCS_FILE, "r", encoding="utf-8") as f:
+                return set(json.load(f))
+        except:
+            pass
+    return set()
+
 def is_q3_2026(text, ticker=None, doc_url=None, date_pub=None):
     if not text:
         return False, ""
@@ -122,33 +133,20 @@ def is_q3_2026(text, ticker=None, doc_url=None, date_pub=None):
         return False, ""
     if 'nghi quyet hdqt' in clean and not any(k in clean for k in ['bctc', 'tai chinh', 'kqkd']):
         return False, ""
-        
+
     has_2026 = ('2026' in clean) or ('/26' in clean) or ('-26' in clean) or ('26_' in clean)
     has_q3_keyword = any(k in clean for k in ['quy 3', 'q3', 'quy iii', 'quarter 3', 'quy3'])
-    
-    # Kiểm tra URL PDF đính kèm nếu tiêu đề quá ngắn
     if doc_url:
         u_clean = strip_accents(doc_url).lower()
         if '2026' in u_clean and any(k in u_clean for k in ['q3', 'quy3', 'quy_3', 'quy-3']):
             has_2026 = True
             has_q3_keyword = True
-
     if not has_2026 and date_pub:
         dp = str(date_pub).strip()
         if any(dp.endswith(yr) for yr in ['/2026', '/26', '-2026', '-26']) or ('2026-' in dp):
             has_2026 = True
-
     if has_q3_keyword and has_2026:
-        if any(k in clean for k in ['bctc', 'tai chinh', 'financial', 'kqkd', 'giai trinh']):
-            return True, text
-            
-    pattern1 = r'(?:bctc|tai chinh|financial|kqkd|giai trinh)[^,\n\r]{0,35}(?:quy\s*3|q3|quy\s*iii|quarter 3)'
-    pattern2 = r'(?:quy\s*3|q3|quy\s*iii|quarter 3)[^,\n\r]{0,35}(?:bctc|tai chinh)'
-    for p in [pattern1, pattern2]:
-        m = re.search(p, clean)
-        if m and has_2026:
-            return True, text
-            
+        return True, text
     return False, ""
 
 def classify_bctc_type(title):
@@ -179,12 +177,15 @@ def check_fpts_ezir(ticker):
             raw_url = latest.get('URL', '')
             latest_url = raw_url.replace('\\', '/').strip() if raw_url else f"https://ezir.fpts.com.vn/TinTuc/TinTucDN?code={ticker}"
             
+            ignored = load_ignored_docs()
             q3_found_items = []
             for item in items:
                 title = item.get('Title', '').strip()
                 date_pub = item.get('DatePub', '').strip()
                 i_raw_url = item.get('URL', '')
                 doc_url = i_raw_url.replace('\\', '/').strip() if i_raw_url else f"https://ezir.fpts.com.vn/TinTuc/TinTucDN?code={ticker}"
+                if doc_url in ignored or title in ignored or f"{ticker}:{doc_url}" in ignored:
+                    continue
                 
                 if not is_valid_recent_bctc_date(date_pub):
                     continue
@@ -246,10 +247,14 @@ def check_company_website(ticker, uri):
             html = resp.read().decode('utf-8', errors='ignore')
             
         soup = BeautifulSoup(html, 'html.parser')
+        ignored = load_ignored_docs()
         found_candidates = []
         for a in soup.find_all('a', href=True):
             h = a['href']
             t = a.get_text(strip=True)
+            h_full = urllib.parse.urljoin(clean_uri, h)
+            if h_full in ignored or h in ignored or t in ignored or f"{ticker}:{h_full}" in ignored:
+                continue
             unquote_h = urllib.parse.unquote(h)
             combo = (t + " " + unquote_h).strip()
             
@@ -257,13 +262,13 @@ def check_company_website(ticker, uri):
             if m_date and not is_valid_recent_bctc_date(m_date.group(0)):
                 continue
             
-            matched, snippet = is_q3_2026(combo, ticker=ticker)
+            matched, snippet = is_q3_2026(combo, ticker=ticker, doc_url=h)
             if matched:
                 is_file = any(h.lower().endswith(ext) for ext in ['.pdf', '.zip', '.rar', '.xlsx', '.docx'])
                 is_hop_nhat = any(k in combo.lower() for k in ['hợp nhất', 'hop nhat'])
                 found_candidates.append({
                     'text': t,
-                    'href': urllib.parse.urljoin(clean_uri, h),
+                    'href': h_full,
                     'is_file': is_file,
                     'is_hop_nhat': is_hop_nhat,
                     'snippet': snippet
@@ -283,7 +288,7 @@ def check_company_website(ticker, uri):
             elif best_text and len(best_text) >= 6 and not any(best_text.lower().startswith(p) for p in ['xem', 'tai', 'download', 'chi tiet', 'link', 'doc']):
                 final_title = best_text
             else:
-                final_title = "Báo cáo tài chính Quý 3/2026"
+                final_title = f"Báo cáo tài chính Quý 3/2026 ({ticker})"
                 
             return {
                 'has_q3': True,
