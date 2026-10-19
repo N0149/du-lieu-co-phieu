@@ -1,5 +1,47 @@
 [
   {
+    "ticker": "BMP",
+    "company_name": "CTCP Nhựa Bình Minh",
+    "exchange": "HOSE",
+    "quarter": "Quý 3/2026",
+    "release_date": "19/10/2026",
+    "title": "BCTC hợp nhất Q3 2026",
+    "source": "Company_Web",
+    "bctc_type": "HOP_NHAT",
+    "doc_url": "https://binhminhplastic.com.vn/Data/Sites/1/media/co-dong/bctc/2026/2026q3-consolidated-financial-statement_vie.pdf",
+    "is_hot": true,
+    "detected_at": "2026-10-19T03:48:21",
+    "lnst_status": "Bản scan giấy đóng dấu đỏ (chưa số hóa)"
+  },
+  {
+    "ticker": "VLB",
+    "company_name": "Công ty Cổ phần Xây dựng và Sản xuất Vật liệu Xây dựng Biên Hòa",
+    "exchange": "UPCOM",
+    "quarter": "Quý 3/2026",
+    "release_date": "19/10/2026",
+    "title": "Báo cáo tài chính quý 3 năm 2026 kèm giải trình lợi nhuận sau thuế thay đổi trên 10%",
+    "source": "Company_Web",
+    "bctc_type": "GIAI_TRINH",
+    "doc_url": "https://www.bbcc.com.vn/tin-tuc/bao-cao-tai-chinh-quy-3-nam-2026-kem-giai-trinh-loi-nhuan-sau-thue-thay-doi-tren-10.html",
+    "is_hot": true,
+    "detected_at": "2026-10-19T03:48:11",
+    "lnst_status": "Tài liệu không phải file PDF trực tiếp"
+  },
+  {
+    "ticker": "LM8",
+    "company_name": "Công ty Cổ phần Lilama 18",
+    "exchange": "HOSE",
+    "quarter": "Quý 3/2026",
+    "release_date": "17/10/2026 11:22",
+    "title": "Báo cáo tài chính Quý 3 năm 2026",
+    "source": "EzIR_FPTS",
+    "bctc_type": "DAY_DU",
+    "doc_url": "https://file.fpts.com.vn/FileStore2/File/EzIR/UploadFile/News/2026/10/17/File_1_8745_20261017_-_LM8_-_BCTC_QUY_3_2026.pdf",
+    "is_hot": true,
+    "detected_at": "2026-10-19T03:48:09",
+    "lnst_status": "Bản scan giấy đóng dấu đỏ (chưa số hóa)"
+  },
+  {
     "ticker": "CMF",
     "company_name": "Công ty Cổ phần Thực phẩm Cholimex",
     "exchange": "UPCOM",

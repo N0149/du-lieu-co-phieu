@@ -218,5 +218,32 @@
     "source": "CafeF_CBTT",
     "bctc_type": "DAY_DU",
     "updated_at": "2026-10-17 12:43:06"
+  },
+  "LM8": {
+    "ticker": "LM8",
+    "bctc_type": "DAY_DU",
+    "title": "Báo cáo tài chính Quý 3 năm 2026",
+    "date": "17/10/2026 11:22",
+    "doc_url": "https://file.fpts.com.vn/FileStore2/File/EzIR/UploadFile/News/2026/10/17/File_1_8745_20261017_-_LM8_-_BCTC_QUY_3_2026.pdf",
+    "source": "EzIR_FPTS",
+    "updated_at": "2026-10-19 03:48:10"
+  },
+  "VLB": {
+    "ticker": "VLB",
+    "bctc_type": "GIAI_TRINH",
+    "title": "Báo cáo tài chính quý 3 năm 2026 kèm giải trình lợi nhuận sau thuế thay đổi trên 10%",
+    "date": "19/10/2026",
+    "doc_url": "https://www.bbcc.com.vn/tin-tuc/bao-cao-tai-chinh-quy-3-nam-2026-kem-giai-trinh-loi-nhuan-sau-thue-thay-doi-tren-10.html",
+    "source": "Company_Web",
+    "updated_at": "2026-10-19 03:48:12"
+  },
+  "BMP": {
+    "ticker": "BMP",
+    "bctc_type": "HOP_NHAT",
+    "title": "BCTC hợp nhất Q3 2026",
+    "date": "19/10/2026",
+    "doc_url": "https://binhminhplastic.com.vn/Data/Sites/1/media/co-dong/bctc/2026/2026q3-consolidated-financial-statement_vie.pdf",
+    "source": "Company_Web",
+    "updated_at": "2026-10-19 03:48:21"
   }
 }
