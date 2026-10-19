@@ -1,5 +1,19 @@
 [
   {
+    "ticker": "PDN",
+    "company_name": "Công ty Cổ phần Cảng Đồng Nai",
+    "exchange": "HOSE",
+    "quarter": "Quý 3/2026",
+    "release_date": "19/10/2026 11:33",
+    "title": "Báo cáo tài chính quý 3.2026",
+    "source": "EzIR_FPTS",
+    "bctc_type": "DAY_DU",
+    "doc_url": "https://file.fpts.com.vn/FileStore2/File/EzIR/UploadFile/News/2026/10/19/File_1_5040_20261019_-_PDN_-_Bao_cao_tai_chinh_quy_3.2026-VN.pdf",
+    "is_hot": true,
+    "detected_at": "2026-10-19T05:27:43",
+    "lnst_status": "Bản scan giấy đóng dấu đỏ (chưa số hóa)"
+  },
+  {
     "ticker": "GMX",
     "company_name": "Công ty Cổ phần Gạch ngói Gốm xây dựng Mỹ Xuân",
     "exchange": "HNX",
