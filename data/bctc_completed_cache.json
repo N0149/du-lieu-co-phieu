@@ -263,5 +263,41 @@
     "doc_url": "https://file.fpts.com.vn/FileStore2/File/EzIR/UploadFile/News/2026/10/19/File_1_5040_20261019_-_PDN_-_Bao_cao_tai_chinh_quy_3.2026-VN.pdf",
     "source": "EzIR_FPTS",
     "updated_at": "2026-10-19 05:27:43"
+  },
+  "HND": {
+    "ticker": "HND",
+    "bctc_type": "DAY_DU",
+    "title": "BCTC quý III năm 2026",
+    "date": "19/10/2026 13:12",
+    "doc_url": "https://file.fpts.com.vn/FileStore2/File/EzIR/UploadFile/News/2026/10/19/File_1_5713_VI_BaoCaoTaiChinh_QIII_2026_.pdf.pdf",
+    "source": "EzIR_FPTS",
+    "updated_at": "2026-10-19 06:15:16"
+  },
+  "HNF": {
+    "ticker": "HNF",
+    "bctc_type": "GIAI_TRINH",
+    "title": "CBTT Báo cáo tài chính Quý III năm 2026 và công văn giải trìnhBáo cáo tài chính Quý III năm 2026 (bản tiếng Việt), xem chi tiết tại [...]19Th10",
+    "date": "19/10/2026",
+    "doc_url": "https://huunghi.com.vn/cbtt-bao-cao-tai-chinh-quy-iii-nam-2026-va-cong-van-giai-trinh/",
+    "source": "Company_Web",
+    "updated_at": "2026-10-19 06:26:32"
+  },
+  "TOT": {
+    "ticker": "TOT",
+    "bctc_type": "DAY_DU",
+    "title": "Báo cáo tài chính Quý 3 năm 2026",
+    "date": "19/10/2026",
+    "doc_url": "https://transimextrans.com.vn/bao-cao-tai-chinh-quy-3-nam-2026/",
+    "source": "Company_Web",
+    "updated_at": "2026-10-19 07:51:04"
+  },
+  "PSD": {
+    "ticker": "PSD",
+    "bctc_type": "HOP_NHAT",
+    "title": "BÁO CÁO TÀI CHÍNH HỢP NHẤT QUÝ 3 NĂM 2026",
+    "date": "19/10/2026",
+    "doc_url": "https://www.psd.com.vn/wp-content/uploads/2026/10/VI_BaoCaoTaiChinh_HN_Q3_2026.pdf",
+    "source": "Company_Web",
+    "updated_at": "2026-10-19 08:02:23"
   }
 }
