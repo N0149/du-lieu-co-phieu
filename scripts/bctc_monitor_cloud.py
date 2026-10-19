@@ -37,11 +37,31 @@ def enable_windows_keep_awake():
             log(f"Không thể kích hoạt Keep-Awake: {e}")
 
 BASE_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
-TICKERS_FILE = os.path.join(BASE_DIR, "data", "tickers_group1_115.json")
+TICKERS_G1_FILE = os.path.join(BASE_DIR, "data", "tickers_group1_115.json")
+TICKERS_G2_FILE = os.path.join(BASE_DIR, "data", "tickers_group2_69.json")
+TICKERS_FILE = TICKERS_G1_FILE # Tương thích ngược
 COMPLETED_CACHE_FILE = os.path.join(BASE_DIR, "data", "bctc_completed_cache.json")
 ALERTS_FILE = os.path.join(BASE_DIR, "data", "bctc_q3_live_alerts.json")
 DISCORD_CONFIG_FILE = os.path.join(BASE_DIR, "data", "discord_config.json")
 STATUS_FILE = os.path.join(BASE_DIR, "data", "bctc_cloud_status.json")
+
+def load_all_target_tickers():
+    """Tải và kết hợp toàn bộ danh mục Nhóm 1 (115 mã) + Nhóm 2 (69 mã)"""
+    tickers = []
+    seen = set()
+    for fpath in [TICKERS_G1_FILE, TICKERS_G2_FILE]:
+        if os.path.exists(fpath):
+            try:
+                with open(fpath, "r", encoding="utf-8") as f:
+                    data = json.load(f)
+                    for it in data:
+                        t = it.get('ticker')
+                        if t and t not in seen:
+                            seen.add(t)
+                            tickers.append(it)
+            except Exception as e:
+                log(f"Lỗi đọc file {fpath}: {e}")
+    return tickers
 
 HEADERS = {
     'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36'
@@ -709,7 +729,7 @@ def send_heartbeat(event_type, details=""):
             "content": f"☀️ **[08:00] BẮT ĐẦU PHIÊN GIÁM SÁT BCTC NGÀY {date_str}**",
             "embeds": [{
                 "title": "🟢 Hệ thống Giám sát đang hoạt động tự động",
-                "description": f"Hệ thống tự động quét **115 mã cổ phiếu nhóm 1**:\n• Tần suất quét ngầm: **5 phút/lần** (Phát hiện BCTC tức thì)\n• Báo nhịp đập Discord: **10 phút/lần** (Báo bình thường, chống spam)\n• Cảnh báo BCTC mới: **Ngay lập tức** kèm bóc tách LNST & % YoY\n{details}",
+                "description": f"Hệ thống tự động quét **{len(load_all_target_tickers())} mã cổ phiếu (Nhóm 1 + Nhóm 2)**:\n• Tần suất quét ngầm: **5 phút/lần** (Phát hiện BCTC tức thì)\n• Báo nhịp đập Discord: **10 phút/lần** (Báo bình thường, chống spam)\n• Cảnh báo BCTC mới: **Ngay lập tức** kèm bóc tách LNST & % YoY\n{details}",
                 "color": 0x3B82F6,
                 "footer": {"text": "BCTC Live Monitor • dulieudautu.com"},
                 "timestamp": datetime.datetime.now(datetime.timezone.utc).isoformat()
@@ -857,13 +877,11 @@ def check_another_instance_running():
     return False
 
 def execute_single_scan(scan_index=1):
-    """Thực hiện một lượt quét 115 mã"""
-    if not os.path.exists(TICKERS_FILE):
-        log(f"LỖI: Không tìm thấy file {TICKERS_FILE}")
+    """Thực hiện một lượt quét Nhóm 1 + Nhóm 2"""
+    tickers_list = load_all_target_tickers()
+    if not tickers_list:
+        log("LỖI: Không tìm thấy danh sách cổ phiếu Nhóm 1 & Nhóm 2 trong thư mục data")
         return 0, 0, 0
-        
-    with open(TICKERS_FILE, "r", encoding="utf-8") as f:
-        tickers_list = json.load(f)
         
     completed_cache = load_completed_cache()
     alerts_dict = load_alerts()
@@ -880,7 +898,7 @@ def execute_single_scan(scan_index=1):
     log(f"--- [LƯỢT #{scan_index}] Quét {len(to_scan)}/{len(tickers_list)} mã (đã hoàn tất: {len(already_done)}) ---")
     
     if not to_scan:
-        log("🎉 Toàn bộ 115 mã đều đã có BCTC đầy đủ!")
+        log(f"🎉 Toàn bộ {len(tickers_list)} mã (Nhóm 1 + Nhóm 2) đều đã có BCTC đầy đủ!")
         return 0, 0, 0
         
     start_all = time.time()
@@ -978,7 +996,7 @@ def execute_single_scan(scan_index=1):
     return new_found_count, len(to_scan), total_elapsed
 
 def main():
-    log("=== KHỞI ĐỘNG HỆ THỐNG GIÁM SÁT 115 MÃ BCTC (5 PHÚT/LẦN) ===")
+    log("=== KHỞI ĐỘNG HỆ THỐNG GIÁM SÁT NHÓM 1 + NHÓM 2 (185 MÃ) BCTC (5 PHÚT/LẦN) ===")
     
     is_loop = ('--loop' in sys.argv)
     force_run = ('--force' in sys.argv)

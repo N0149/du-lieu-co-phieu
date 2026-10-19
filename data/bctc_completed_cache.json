@@ -299,5 +299,55 @@
     "doc_url": "https://www.psd.com.vn/wp-content/uploads/2026/10/VI_BaoCaoTaiChinh_HN_Q3_2026.pdf",
     "source": "Company_Web",
     "updated_at": "2026-10-19 08:02:23"
+  },
+  "L10": {
+    "ticker": "L10",
+    "company_name": "Công ty Cổ phần Lilama 10",
+    "release_date": "12/10/2026 10:11",
+    "title": "Nghị quyết họp HĐQT quý III năm 2026",
+    "doc_url": "https://file.fpts.com.vn/FileStore2/File/2026/10/12/20261009_-_L10_-_CBTT__nghi_quyet_HdQT_quy_III_nam_2026_.pdf",
+    "source": "EzIR_FPTS",
+    "bctc_type": "DAY_DU",
+    "updated_at": "2026-10-17 14:48:51"
+  },
+  "ICN": {
+    "ticker": "ICN",
+    "company_name": "Công ty Cổ phần Đầu tư Xây dựng Dầu khí IDICO",
+    "release_date": "01/10/2026 15:16",
+    "title": "Nghị quyết Hội đồng quản trị thông qua kết quả SXKD quý III.2026 và kế hoạch SXKD quý IV.2026 (VIE)",
+    "doc_url": "https://file.fpts.com.vn/FileStore2/File/EzIR/UploadFile/News/2026/10/01/File_1_8975_VI_Nghiquyethoidongquantri_signed.pdf",
+    "source": "EzIR_FPTS",
+    "bctc_type": "DAY_DU",
+    "updated_at": "2026-10-17 15:06:17"
+  },
+  "NAV": {
+    "ticker": "NAV",
+    "company_name": "Công ty Cổ phần Nam Việt",
+    "release_date": "19/10/2026",
+    "title": "Báo cáo tài chính Quý 3/2026 (NAV)",
+    "doc_url": "https://navifico.vn/vi/vi/co-dong/bao-cao-tai-chinh-quy-32026.html",
+    "source": "Company_Web",
+    "bctc_type": "DAY_DU",
+    "updated_at": "2026-10-19 15:59:35"
+  },
+  "HVT": {
+    "ticker": "HVT",
+    "company_name": "Công ty Cổ phần Hóa chất Việt Trì",
+    "release_date": "19/10/2026",
+    "title": "| Size: 6 MB19th Oct 2026Financial Statements Q3.2026",
+    "doc_url": "https://vitrichem.vn/wp-content/uploads/2026/10/EN_FinancialStatements_Q3_2026.pdf",
+    "source": "Company_Web",
+    "bctc_type": "DAY_DU",
+    "updated_at": "2026-10-19 16:24:26"
+  },
+  "LAF": {
+    "ticker": "LAF",
+    "company_name": "Công ty Cổ phần Chế biến Hàng Xuất khẩu Long An",
+    "release_date": "19/10/2026",
+    "title": "Tải ngay",
+    "doc_url": "https://lafooco.vn/wp-content/uploads/2026/10/20261019-LAF-BCTC-Q3-2026.pdf",
+    "source": "Company_Web",
+    "bctc_type": "DAY_DU",
+    "updated_at": "2026-10-19 18:33:09"
   }
 }

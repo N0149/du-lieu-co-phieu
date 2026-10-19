@@ -25,6 +25,15 @@ from bs4 import BeautifulSoup
 import tkinter as tk
 from tkinter import ttk, messagebox, scrolledtext
 
+# Ngăn máy tính tự Sleep khi ứng dụng chạy
+try:
+    import ctypes
+    ES_CONTINUOUS = 0x80000000
+    ES_SYSTEM_REQUIRED = 0x00000001
+    ctypes.windll.kernel32.SetThreadExecutionState(ES_CONTINUOUS | ES_SYSTEM_REQUIRED)
+except:
+    pass
+
 # Xác định thư mục thực thi
 if getattr(sys, 'frozen', False):
     EXE_DIR = os.path.dirname(sys.executable)
@@ -94,6 +103,78 @@ def is_valid_recent_bctc_date(date_pub):
         return False
     return True
 
+import socket
+
+BOT_LOCK_SOCKET = None
+
+def acquire_bot_listener_lock(port=45889):
+    global BOT_LOCK_SOCKET
+    if BOT_LOCK_SOCKET is not None:
+        return True
+    try:
+        s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+        s.bind(('127.0.0.1', port))
+        s.listen(1)
+        BOT_LOCK_SOCKET = s
+        return True
+    except socket.error:
+        return False
+
+def try_claim_message(message_id):
+    claim_file = os.path.join(DATA_DIR, "bot_claimed_msg_ids.json")
+    try:
+        claimed = []
+        if os.path.exists(claim_file):
+            with open(claim_file, "r", encoding="utf-8") as f:
+                claimed = json.load(f)
+        if message_id in claimed:
+            return False
+        claimed.append(message_id)
+        if len(claimed) > 200:
+            claimed = claimed[-100:]
+        with open(claim_file, "w", encoding="utf-8") as f:
+            json.dump(claimed, f)
+        return True
+    except:
+        return True
+
+IGNORED_DOCS_FILE = os.path.join(DATA_DIR, "ignored_docs.json")
+
+def load_ignored_docs():
+    if os.path.exists(IGNORED_DOCS_FILE):
+        try:
+            with open(IGNORED_DOCS_FILE, "r", encoding="utf-8") as f:
+                return set(json.load(f))
+        except:
+            pass
+    return set()
+
+def save_ignored_docs(ignored_set):
+    try:
+        with open(IGNORED_DOCS_FILE, "w", encoding="utf-8") as f:
+            json.dump(list(ignored_set), f, ensure_ascii=False, indent=2)
+    except:
+        pass
+
+def ignore_document_for_ticker(ticker):
+    cache = load_completed_cache()
+    doc_info = cache.get(ticker, {})
+    doc_url = doc_info.get('doc_url', '')
+    title = doc_info.get('title', '')
+    
+    ignored = load_ignored_docs()
+    if doc_url:
+        ignored.add(doc_url)
+    if title:
+        ignored.add(title)
+    ignored.add(f"{ticker}:{doc_url}")
+    save_ignored_docs(ignored)
+    
+    if ticker in cache:
+        del cache[ticker]
+        save_completed_cache(cache)
+    return doc_url or title
+
 def is_q3_2026(text, ticker=None, doc_url=None, date_pub=None):
     if not text:
         return False, ""
@@ -102,32 +183,20 @@ def is_q3_2026(text, ticker=None, doc_url=None, date_pub=None):
         return False, ""
     if 'nghi quyet hdqt' in clean and not any(k in clean for k in ['bctc', 'tai chinh', 'kqkd']):
         return False, ""
-        
+
     has_2026 = ('2026' in clean) or ('/26' in clean) or ('-26' in clean) or ('26_' in clean)
     has_q3_keyword = any(k in clean for k in ['quy 3', 'q3', 'quy iii', 'quarter 3', 'quy3'])
-    
     if doc_url:
         u_clean = strip_accents(doc_url).lower()
         if '2026' in u_clean and any(k in u_clean for k in ['q3', 'quy3', 'quy_3', 'quy-3']):
             has_2026 = True
             has_q3_keyword = True
-
     if not has_2026 and date_pub:
         dp = str(date_pub).strip()
         if any(dp.endswith(yr) for yr in ['/2026', '/26', '-2026', '-26']) or ('2026-' in dp):
             has_2026 = True
-
     if has_q3_keyword and has_2026:
-        if any(k in clean for k in ['bctc', 'tai chinh', 'financial', 'kqkd', 'giai trinh']):
-            return True, text
-            
-    pattern1 = r'(?:bctc|tai chinh|financial|kqkd|giai trinh)[^,\n\r]{0,35}(?:quy\s*3|q3|quy\s*iii|quarter 3)'
-    pattern2 = r'(?:quy\s*3|q3|quy\s*iii|quarter 3)[^,\n\r]{0,35}(?:bctc|tai chinh)'
-    for p in [pattern1, pattern2]:
-        m = re.search(p, clean)
-        if m and has_2026:
-            return True, text
-            
+        return True, text
     return False, ""
 
 def classify_bctc_type(title):
@@ -157,13 +226,15 @@ def check_fpts_ezir(ticker):
             raw_url = latest.get('URL', '')
             latest_url = raw_url.replace('\\', '/').strip() if raw_url else f"https://ezir.fpts.com.vn/TinTuc/TinTucDN?code={ticker}"
             
+            ignored = load_ignored_docs()
             q3_found_items = []
             for item in items:
                 title = item.get('Title', '').strip()
                 date_pub = item.get('DatePub', '').strip()
                 i_raw_url = item.get('URL', '')
                 doc_url = i_raw_url.replace('\\', '/').strip() if i_raw_url else f"https://ezir.fpts.com.vn/TinTuc/TinTucDN?code={ticker}"
-                
+                if doc_url in ignored or title in ignored or f"{ticker}:{doc_url}" in ignored:
+                    continue
                 if not is_valid_recent_bctc_date(date_pub):
                     continue
                 matched, snippet = is_q3_2026(title, ticker=ticker, doc_url=doc_url, date_pub=date_pub)
@@ -208,30 +279,34 @@ def check_company_website(ticker, uri):
             html = resp.read().decode('utf-8', errors='ignore')
             
         soup = BeautifulSoup(html, 'html.parser')
+        ignored = load_ignored_docs()
         found_candidates = []
         for a in soup.find_all('a', href=True):
             h = a['href']
             t = a.get_text(strip=True)
+            h_full = urllib.parse.urljoin(clean_uri, h)
+            if h_full in ignored or h in ignored or t in ignored or f"{ticker}:{h_full}" in ignored:
+                continue
             unquote_h = urllib.parse.unquote(h)
             combo = (t + " " + unquote_h).strip()
             
             m_date = re.search(r'(\d{1,2})/(\d{1,2})/(2026|26)', combo)
             if m_date and not is_valid_recent_bctc_date(m_date.group(0)):
                 continue
-            matched, snippet = is_q3_2026(combo, ticker=ticker)
+            matched, snippet = is_q3_2026(combo, ticker=ticker, doc_url=h)
             if matched:
                 is_file = any(h.lower().endswith(ext) for ext in ['.pdf', '.zip', '.rar', '.xlsx', '.docx'])
                 is_hop_nhat = any(k in combo.lower() for k in ['hợp nhất', 'hop nhat'])
                 found_candidates.append({
                     'text': t,
-                    'href': urllib.parse.urljoin(clean_uri, h),
+                    'href': h_full,
                     'is_file': is_file,
                     'is_hop_nhat': is_hop_nhat
                 })
         if found_candidates:
             found_candidates.sort(key=lambda x: (x['is_file'], x['is_hop_nhat']), reverse=True)
             best = found_candidates[0]
-            title = best['text'] if len(best['text']) >= 6 else "Báo cáo tài chính Quý 3/2026"
+            title = best['text'] if len(best['text']) >= 6 else f"Báo cáo tài chính Quý 3/2026 ({ticker})"
             return {
                 'has_q3': True,
                 'bctc_type': classify_bctc_type(title),
@@ -453,13 +528,19 @@ class DiscordBotListener:
         self.channel_id = str(channel_id).strip()
         self.on_command = on_command_callback
         self.is_running = False
-        self.last_msg_id = None
+        self.processed_ids = set()
         self.thread = None
         self.bot_name = "StockRadarBot"
 
     def start(self):
         if self.is_running:
             return True, f"Trợ lý @{self.bot_name} đang hoạt động."
+
+        if not acquire_bot_listener_lock():
+            # Đã có tiến trình khác (như discord_bot_service) đang chạy bot
+            self.is_running = True
+            return True, "Trợ lý ảo đã đang hoạt động nền trên máy tính."
+
         headers = {
             'Authorization': f'Bot {self.bot_token}',
             'User-Agent': 'DiscordBot (https://dulieudautu.com, 1.0)'
@@ -472,13 +553,23 @@ class DiscordBotListener:
         except Exception as e:
             return False, f"Bot Token không hợp lệ hoặc lỗi mạng: {e}"
 
+        # Đánh dấu các tin nhắn cũ hơn 5 phút là đã xử lý để không bị spam tin cũ
         try:
-            url = f'https://discord.com/api/v10/channels/{self.channel_id}/messages?limit=1'
+            url = f'https://discord.com/api/v10/channels/{self.channel_id}/messages?limit=10'
             req = urllib.request.Request(url, headers=headers)
             with urllib.request.urlopen(req, timeout=8) as resp:
                 msgs = json.loads(resp.read().decode('utf-8'))
+                now_utc = datetime.datetime.now(datetime.timezone.utc)
                 if msgs and isinstance(msgs, list):
-                    self.last_msg_id = msgs[0]['id']
+                    for m in msgs:
+                        try:
+                            ts_str = m.get('timestamp', '')[:19]
+                            m_time = datetime.datetime.fromisoformat(ts_str).replace(tzinfo=datetime.timezone.utc)
+                            diff_sec = (now_utc - m_time).total_seconds()
+                            if diff_sec > 300: # Cũ hơn 5 phút thì bỏ qua
+                                self.processed_ids.add(m['id'])
+                        except:
+                            self.processed_ids.add(m['id'])
         except Exception as e:
             return False, f"Không thể kết nối vào Kênh {self.channel_id}: {e}"
 
@@ -488,7 +579,14 @@ class DiscordBotListener:
         return True, f"Trợ lý @{self.bot_name} đã sẵn sàng nhận lệnh từ điện thoại!"
 
     def stop(self):
+        global BOT_LOCK_SOCKET
         self.is_running = False
+        if BOT_LOCK_SOCKET:
+            try:
+                BOT_LOCK_SOCKET.close()
+            except:
+                pass
+            BOT_LOCK_SOCKET = None
 
     def _loop(self):
         headers = {
@@ -497,20 +595,25 @@ class DiscordBotListener:
         }
         while self.is_running:
             try:
-                time.sleep(2.5)
+                time.sleep(2)
                 fetch_url = f'https://discord.com/api/v10/channels/{self.channel_id}/messages?limit=5'
-                if self.last_msg_id:
-                    fetch_url += f'&after={self.last_msg_id}'
-
                 req = urllib.request.Request(fetch_url, headers=headers)
                 with urllib.request.urlopen(req, timeout=8) as resp:
                     new_msgs = json.loads(resp.read().decode('utf-8'))
                     if new_msgs and isinstance(new_msgs, list):
                         new_msgs.sort(key=lambda m: int(m['id']))
                         for msg in new_msgs:
-                            self.last_msg_id = msg['id']
+                            mid = msg['id']
+                            if mid in self.processed_ids:
+                                continue
+                            self.processed_ids.add(mid)
+
                             author = msg.get('author', {})
                             if author.get('bot'):
+                                continue
+
+                            # Deduplication chống trùng lặp đa tiến trình
+                            if not try_claim_message(mid):
                                 continue
                             content = msg.get('content', '').strip()
                             if content:
@@ -1339,7 +1442,8 @@ class StockRadarGUI(tk.Tk):
 
         tk.Button(bot_bar, text="📄 Mở Xem / Tải BCTC Gốc", font=("Segoe UI", 9, "bold"), bg="#0284C7", fg="white", relief=tk.FLAT, padx=12, pady=5, command=self.open_selected_comp_doc).pack(side=tk.LEFT, padx=(0, 8))
         tk.Button(bot_bar, text="📢 Gửi Lại Về Discord Điện Thoại", font=("Segoe UI", 9, "bold"), bg="#6366F1", fg="white", relief=tk.FLAT, padx=12, pady=5, command=self.send_discord_selected_comp).pack(side=tk.LEFT, padx=(0, 8))
-        tk.Button(bot_bar, text="❌ Xóa Mã Khỏi Cache (Để Quét Lại)", font=("Segoe UI", 9), bg="#FEE2E2", fg="#991B1B", relief=tk.FLAT, padx=10, pady=5, command=self.delete_selected_comp).pack(side=tk.LEFT)
+        tk.Button(bot_bar, text="🚫 Bỏ Qua Tài Liệu Này & Quét Tiếp", font=("Segoe UI", 9, "bold"), bg="#EA580C", fg="white", relief=tk.FLAT, padx=12, pady=5, command=self.ignore_and_rescan_selected).pack(side=tk.LEFT, padx=(0, 8))
+        tk.Button(bot_bar, text="❌ Xóa Mã Khỏi Cache", font=("Segoe UI", 9), bg="#FEE2E2", fg="#991B1B", relief=tk.FLAT, padx=10, pady=5, command=self.delete_selected_comp).pack(side=tk.LEFT)
 
         tk.Label(bot_bar, text="💡 Gợi ý: Bấm đúp chuột vào bất kỳ dòng nào để mở xem tài liệu BCTC ngay lập tức.", font=("Segoe UI", 9, "italic"), fg="#64748B", bg="#F1F5F9").pack(side=tk.RIGHT)
 
@@ -1511,6 +1615,27 @@ class StockRadarGUI(tk.Tk):
                 self.refresh_completed_list()
                 self.update_selection_summary()
                 messagebox.showinfo("Đã xóa", f"Đã xóa [{ticker}] khỏi cache thành công.")
+
+    def ignore_and_rescan_selected(self):
+        item_id = self.tree_comp.focus()
+        if not item_id:
+            messagebox.showinfo("Thông báo", "Vui lòng chọn 1 mã trong bảng để bỏ qua tài liệu.")
+            return
+        vals = self.tree_comp.item(item_id, "values")
+        if not vals:
+            return
+        ticker = vals[1]
+        confirm = messagebox.askyesno(
+            "Bỏ qua tài liệu",
+            f"Bạn có chắc muốn BỎ QUA tài liệu hiện tại của mã [{ticker}] và tiếp tục quét?\n\n• Tài liệu này sẽ được lưu vào danh sách bỏ qua (không nhận lại).\n• Mã [{ticker}] sẽ được quét tiếp để tìm BCTC thực sự."
+        )
+        if confirm:
+            ignore_document_for_ticker(ticker)
+            self.refresh_completed_list()
+            self.update_selection_summary()
+            messagebox.showinfo("Đã bỏ qua", f"Đã đưa tài liệu của [{ticker}] vào danh sách bỏ qua thành công!\nTiến hành kích hoạt lượt quét tiếp...")
+            if not self.is_monitoring:
+                self.on_start_monitor()
 
     def export_completed_list(self):
         if not self.raw_completed_items:
@@ -1899,9 +2024,9 @@ class StockRadarGUI(tk.Tk):
         cmd_box = tk.Frame(bot_frame, bg="#F8FAFC", padx=10, pady=8)
         cmd_box.pack(fill=tk.X, pady=(10, 0))
         tk.Label(cmd_box, text="📱 CÁC CÂU LỆNH ĐIỀU KHIỂN TỪ ĐIỆN THOẠI (NHẮN VÀO KÊNH DISCORD):", font=("Segoe UI", 9, "bold"), fg="#0369A1", bg="#F8FAFC").pack(anchor=tk.W)
-        tk.Label(cmd_box, text="• '!scan' hoặc 'scan': Ra lệnh cho máy tính ở nhà kích hoạt lượt quét ngay tức khắc.", font=("Segoe UI", 8), bg="#F8FAFC").pack(anchor=tk.W)
-        tk.Label(cmd_box, text="• '!status' hoặc 'status': Kiểm tra máy tính ở nhà còn sống không, đã quét được bao nhiêu mã.", font=("Segoe UI", 8), bg="#F8FAFC").pack(anchor=tk.W)
-        tk.Label(cmd_box, text="• '!check <MÃ>' (VD: '!check BMP'): Tra cứu BCTC của 1 mã bất kỳ, lấy link PDF và LNST.", font=("Segoe UI", 8), bg="#F8FAFC").pack(anchor=tk.W)
+        tk.Label(cmd_box, text="• 'status': Kiểm tra máy tính ở nhà còn sống không, đã quét được bao nhiêu mã.", font=("Segoe UI", 8), bg="#F8FAFC").pack(anchor=tk.W)
+        tk.Label(cmd_box, text="• 'scan': Ra lệnh cho máy tính ở nhà kích hoạt lượt quét ngay tức khắc.", font=("Segoe UI", 8), bg="#F8FAFC").pack(anchor=tk.W)
+        tk.Label(cmd_box, text="• Mã 3 chữ cái (VD: 'BMP', 'HPG') hoặc 'check BMP': Tra cứu BCTC của 1 mã bất kỳ, lấy link PDF.", font=("Segoe UI", 8), bg="#F8FAFC").pack(anchor=tk.W)
 
         # Phần 3: Thêm mã thủ công
         sep2 = ttk.Separator(p, orient=tk.HORIZONTAL)
@@ -1957,9 +2082,9 @@ class StockRadarGUI(tk.Tk):
         if ok:
             self.lbl_bot_state.config(text=f"🟢 ĐANG LẮNG NGHE LỆNH TỪ ĐIỆN THOẠI (@{self.bot_listener.bot_name})", fg="#166534")
             self.btn_toggle_bot.config(text="⏹️ TẮT TRỢ LÝ ẢO", bg="#EF4444")
-            send_discord_bot_msg(cid, token, f"🤖 **Trợ lý Stock Radar Pro** đã kích hoạt thành công trên máy tính!\n👉 Hãy thử gửi `!scan` hoặc `!status` từ điện thoại.")
+            send_discord_bot_msg(cid, token, f"🤖 **Trợ lý Stock Radar Pro** đã kích hoạt thành công trên máy tính!\n👉 Bạn có thể nhắn `status` để kiểm tra máy, `scan` để quét BCTC hoặc gõ thẳng mã cổ phiếu (VD: `BMP`).")
             if not quiet:
-                messagebox.showinfo("Thành công", f"{msg}\n\nBây giờ bạn có thể mở Discord trên điện thoại và gõ '!scan' hoặc '!status'!")
+                messagebox.showinfo("Thành công", f"{msg}\n\nBây giờ bạn có thể mở Discord trên điện thoại và gõ 'status' hoặc 'scan'!")
         else:
             self.lbl_bot_state.config(text="🔴 KẾT NỐI THẤT BẠI", fg="#DC2626")
             self.btn_toggle_bot.config(text="▶️ BẬT TRỢ LÝ ẢO 2 CHIỀU", bg="#10B981")
@@ -1994,7 +2119,7 @@ class StockRadarGUI(tk.Tk):
             webbrowser.open("https://discord.com/developers/applications")
 
     def handle_discord_command(self, content, username):
-        cmd = content.strip().lower()
+        cmd = strip_accents(content.strip().lower()).replace('đ', 'd').replace('Đ', 'd')
         cfg = load_discord_config()
         token = cfg.get("bot_token")
         cid = cfg.get("channel_id")
@@ -2002,11 +2127,8 @@ class StockRadarGUI(tk.Tk):
         def reply(text, embeds=None):
             send_discord_bot_msg(cid, token, text, embeds)
 
-        if cmd in ['!scan', '/scan', 'scan', '!quet', '/quet', 'quet']:
-            reply(f"🚀 **[{username}]** đã ra lệnh quét từ xa qua điện thoại!\n👉 Máy tính ở nhà đang tiến hành quét các nhóm cổ phiếu...")
-            self.execute_remote_scan(reply)
-
-        elif cmd in ['!status', '/status', 'status', 'ping', '!ping']:
+        # 1. Lệnh kiểm tra trạng thái
+        if cmd in ['status', '!status', '/status', 'stt', 'tt', 'ping', '!ping']:
             cache = load_completed_cache()
             total_comp = len(cache)
             hn_cnt = sum(1 for it in cache.values() if it.get('bctc_type') in ['HOP_NHAT', 'DAY_DU'])
@@ -2015,32 +2137,69 @@ class StockRadarGUI(tk.Tk):
             now_str = datetime.datetime.now().strftime("%H:%M:%S %d/%m/%Y")
 
             msg = (
-                f"🟢 **STOCK RADAR PRO - BÁO CÁO TRẠNG THÁI MÁY TÍNH Ở NHÀ**\n"
+                f"🟢 **STOCK RADAR PRO - TRẠNG THÁI MÁY TÍNH Ở NHÀ**\n"
                 f"• **Thời gian:** `{now_str}`\n"
                 f"• **Tình trạng:** Đang trực tuyến & Hoạt động bình thường\n"
-                f"• **Chế độ tự động:** {is_mon}\n"
+                f"• **Tiến trình tự động:** {is_mon}\n"
                 f"• **Tổng số mã đã ra BCTC:** `{total_comp} mã` (🟢 {hn_cnt} Hợp nhất / 🟡 {rieng_cnt} Riêng)\n\n"
-                f"💡 Gõ `!scan` để kích hoạt quét ngay lập tức!\n"
-                f"💡 Gõ `!check <MÃ>` (VD: `!check BMP`) để tra cứu riêng 1 mã."
+                f"👉 Nhắn `scan` để kích hoạt lượt quét ngay tức thì.\n"
+                f"👉 Nhắn thẳng mã 3 chữ cái (ví dụ: `BMP`, `HPG` hoặc `check BMP`) để tra cứu riêng 1 mã."
             )
             reply(msg)
 
-        elif any(cmd.startswith(prefix) for prefix in ['!check', '/check', 'check', '!bctc', 'bctc']):
-            parts = content.strip().split()
-            if len(parts) >= 2:
-                ticker = parts[1].upper().strip()
-                reply(f"🔍 **[{username}]** yêu cầu kiểm tra BCTC Quý 3/2026 cho mã `{ticker}`. Đang tra cứu...")
-                self.execute_remote_check_ticker(ticker, reply)
-            else:
-                reply("⚠️ Vui lòng nhập kèm mã cổ phiếu. Ví dụ: `!check BMP` hoặc `check VNM`")
+        # 2. Lệnh quét danh mục
+        elif cmd in ['scan', '!scan', '/scan', 'quet', '!quet', '/quet']:
+            reply(f"🚀 **[{username}]** đã ra lệnh quét từ xa qua điện thoại!\n👉 Máy tính ở nhà đang tiến hành quét các nhóm cổ phiếu...")
+            self.execute_remote_scan(reply)
 
-        elif cmd in ['!help', '/help', 'help', 'huongdan', '?']:
+        # 3. Lệnh bỏ qua tài liệu & quét tiếp: bo qua <MÃ>, boqua <MÃ>, skip <MÃ>, ignore <MÃ>, xoa <MÃ>
+        elif any(cmd.startswith(prefix) for prefix in ['bo qua', 'boqua', 'skip', 'ignore', 'xoa']):
+            clean_content = content
+            for pfx in ['bo qua', 'boqua', 'skip', 'ignore', 'xoa']:
+                if cmd.startswith(pfx):
+                    clean_content = content[len(pfx):]
+                    break
+            tickers = [t.upper() for t in re.findall(r'\b[A-Za-z]{3}\b', clean_content) if t.lower() not in ['all', 'yes', 'non']]
+            if tickers:
+                for t in tickers:
+                    ignore_document_for_ticker(t)
+                t_str = ", ".join(tickers)
+                reply(f"🗑️ **ĐÃ BỎ QUA TÀI LIỆU CỦA [{t_str}]!**\n• Đã xóa khỏi danh sách hoàn tất và đưa vào danh sách bỏ qua.\n🚀 Đang tự động quét tiếp các mã còn lại...")
+                if hasattr(self, 'refresh_completed_list'):
+                    self.after(0, self.refresh_completed_list)
+                self.execute_remote_scan(reply)
+            else:
+                reply("⚠️ Vui lòng nhập mã cổ phiếu cần bỏ qua. Ví dụ: `bo qua ICN, SPB` hoặc `skip SGC`")
+
+        # 4. Lệnh tra cứu mã: check <MÃ>, bctc <MÃ> hoặc gõ thẳng 3 chữ cái mã (VD: BMP, HPG)
+        elif any(cmd.startswith(prefix) for prefix in ['check', '!check', '/check', 'bctc', '!bctc']):
+            clean_content = content
+            for pfx in ['check', '!check', '/check', 'bctc', '!bctc']:
+                if cmd.startswith(pfx):
+                    clean_content = content[len(pfx):]
+                    break
+            tickers = [t.upper() for t in re.findall(r'\b[A-Za-z]{3}\b', clean_content) if t.lower() not in ['all', 'yes', 'non']]
+            if tickers:
+                for t in tickers:
+                    reply(f"🔍 **[{username}]** yêu cầu kiểm tra BCTC Quý 3/2026 cho mã `{t}`. Đang tra cứu...")
+                    self.execute_remote_check_ticker(t, reply)
+            else:
+                reply("⚠️ Vui lòng nhập kèm mã cổ phiếu. Ví dụ: `check BMP, HPG` hoặc `BMP`")
+
+        elif len(cmd) == 3 and cmd.isalpha() and cmd not in ['all', 'yes', 'non']:
+            ticker = cmd.upper()
+            reply(f"🔍 **[{username}]** yêu cầu kiểm tra BCTC Quý 3/2026 cho mã `{ticker}`. Đang tra cứu...")
+            self.execute_remote_check_ticker(ticker, reply)
+
+        # 5. Lệnh trợ giúp
+        elif cmd in ['help', '!help', '/help', 'huongdan', '?']:
             msg = (
                 f"📋 **DANH SÁCH LỆNH ĐIỀU KHIỂN TỪ ĐIỆN THOẠI:**\n"
-                f"• `!scan` hoặc `scan`: Kích hoạt lượt quét toàn bộ danh mục ngay lập tức.\n"
-                f"• `!status` hoặc `status`: Kiểm tra tình trạng máy tính & BCTC.\n"
-                f"• `!check <MÃ>` (Ví dụ: `!check BMP`): Tra cứu tức thì 1 mã bất kỳ.\n"
-                f"• `!help`: Xem lại danh sách hướng dẫn này."
+                f"• `status`: Kiểm tra tình trạng máy tính & số BCTC đã ra.\n"
+                f"• `scan`: Kích hoạt lượt quét toàn bộ danh mục ngay lập tức.\n"
+                f"• `bo qua ICN, SPB, ...`: Bỏ qua tài liệu nhận nhầm của nhiều mã cùng lúc và tự động quét tiếp.\n"
+                f"• Nhắn mã 3 chữ cái (Ví dụ: `BMP`, `HPG`): Tra cứu tức thì BCTC mã đó.\n"
+                f"• `help`: Xem lại danh sách hướng dẫn này."
             )
             reply(msg)
 
