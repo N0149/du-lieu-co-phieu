@@ -564,31 +564,6 @@ def auto_monitor_worker():
     time.sleep(15)  # Chờ 15s sau khi bot khởi động
     while True:
         try:
-            # Kiểm tra lịch tự động tắt máy lúc 15:10 chiều
-            now_vn = datetime.datetime.now()
-            if now_vn.hour > 15 or (now_vn.hour == 15 and now_vn.minute >= 10):
-                print("[AUTO-SHUTDOWN] Đã đến 15:10! Gửi thông báo Discord và tự động tắt máy tính...")
-                try:
-                    webhook_url = get_discord_webhook()
-                    if webhook_url:
-                        payload = {
-                            "content": (
-                                "⏰ **[15:10] MÁY TÍNH TỰ ĐỘNG TẮT NGUỒN THEO LỊCH HẸN!**\n"
-                                "• Máy tính ở nhà tự động tắt nguồn (Shut down) để tiết kiệm điện.\n"
-                                "• Hệ thống **Đám Mây (GitHub Actions)** tiếp tục giám sát độc lập đến 20:00 tối nay!\n"
-                                "• Bạn cứ yên tâm làm việc, có BCTC mới Discord vẫn thông báo bình thường."
-                            )
-                        }
-                        req = urllib.request.Request(
-                            webhook_url,
-                            data=json.dumps(payload).encode('utf-8'),
-                            headers={'Content-Type': 'application/json', 'User-Agent': 'Mozilla/5.0'}
-                        )
-                        urllib.request.urlopen(req, timeout=8)
-                except Exception as ex:
-                    print("[AUTO-SHUTDOWN Webhook Error]:", ex)
-                os.system("shutdown /s /f /t 60 /c \"Tu dong tat may luc 15h10 theo lich hen\"")
-                break
 
             if AUTO_SCAN_ENABLED:
                 NEXT_AUTO_SCAN_TIME = time.time() + AUTO_SCAN_INTERVAL
