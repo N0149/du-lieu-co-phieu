@@ -377,5 +377,68 @@
     "source": "EzIR_FPTS",
     "bctc_type": "DAY_DU",
     "updated_at": "2026-10-19 21:54:17"
+  },
+  "VRG": {
+    "ticker": "VRG",
+    "bctc_type": "DAY_DU",
+    "title": "Báo cáo tài chính quý 3/2026",
+    "date": "20/10/2026 08:12",
+    "doc_url": "https://fpts.com.vn/san-pham-dich-vu/tu-van-dau-tu/tin-tuc/doanh-nghiep/luu-tru-bao-cao-tai-chinhVRG_Bao_cao_tai_chinh_quy_32026_13A393CAB70CAEA02712374D96DD09B8",
+    "source": "EzIR_FPTS",
+    "updated_at": "2026-10-20 02:13:23"
+  },
+  "D2D": {
+    "ticker": "D2D",
+    "bctc_type": "DAY_DU",
+    "title": "Báo cáo tài chính Quý III/2026",
+    "date": "20/10/2026 08:21",
+    "doc_url": "https://file.fpts.com.vn/FileStore2/File/EzIR/UploadFile/News/2026/10/20/File_1_7112_20261020_-_D2D_-_Bao_cao_tai_chinh_Quy_III-2026.pdf",
+    "source": "EzIR_FPTS",
+    "updated_at": "2026-10-20 02:13:34"
+  },
+  "CLH": {
+    "ticker": "CLH",
+    "bctc_type": "DAY_DU",
+    "title": "Báo cáo tài chính quý 3/2026",
+    "date": "20/10/2026 08:37",
+    "doc_url": "https://fpts.com.vn/san-pham-dich-vu/tu-van-dau-tu/tin-tuc/doanh-nghiep/luu-tru-bao-cao-tai-chinhCLH_Bao_cao_tai_chinh_quy_32026_42629506F3D1A4A2F377592753891679",
+    "source": "EzIR_FPTS",
+    "updated_at": "2026-10-20 02:13:38"
+  },
+  "MCM": {
+    "ticker": "MCM",
+    "bctc_type": "DAY_DU",
+    "title": "Báo cáo tài chính Quý 3 năm 2026 Bản Tiếng Việt",
+    "date": "20/10/2026",
+    "doc_url": "https://mcmilk.com.vn/wp-content/uploads/2026/10/20261019-MCM-Bao-cao-tai-chinh-Q3-2026-signed.pdf",
+    "source": "Company_Web",
+    "updated_at": "2026-10-20 02:13:42"
+  },
+  "PPY": {
+    "ticker": "PPY",
+    "bctc_type": "DAY_DU",
+    "title": "BÁO CÁO TÀI CHÍNH QUÝ III NĂM 2026",
+    "date": "20/10/2026 09:05",
+    "doc_url": "https://file.fpts.com.vn/FileStore2/File/EzIR/UploadFile/News/2026/10/20/File_1_4094_VI_BaoCaoTaiChinh_Q3_2026_P2.pdf",
+    "source": "EzIR_FPTS",
+    "updated_at": "2026-10-20 02:13:53"
+  },
+  "MH3": {
+    "ticker": "MH3",
+    "bctc_type": "DAY_DU",
+    "title": "Báo cáo tài chính quý 3/2026",
+    "date": "20/10/2026 08:18",
+    "doc_url": "https://fpts.com.vn/san-pham-dich-vu/tu-van-dau-tu/tin-tuc/doanh-nghiep/luu-tru-bao-cao-tai-chinhMH3_Bao_cao_tai_chinh_quy_32026_CA8F556F02CA9C6EDBFE6A0C8CB03565",
+    "source": "EzIR_FPTS",
+    "updated_at": "2026-10-20 02:13:57"
+  },
+  "TYA": {
+    "ticker": "TYA",
+    "bctc_type": "DAY_DU",
+    "title": "1 2026 Báo cáo tài chính quý Tiêu đề: Báo cáo tài chính Quý 3 2026 – Trụ sở chính 19/10/2026 40",
+    "date": "20/10/2026",
+    "doc_url": "https://taya.com.vn/UserUpload/Library/20261019---tya---bctc-q-3-2026---tru-so-chinh.pdf",
+    "source": "Company_Web",
+    "updated_at": "2026-10-20 02:14:06"
   }
 }
