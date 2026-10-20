@@ -784,7 +784,7 @@ def send_heartbeat(event_type, details=""):
     except Exception as e:
         log(f"Lỗi gửi heartbeat {event_type}: {e}")
 
-def send_silent_ping(scan_index, remaining_count, elapsed_sec, new_count=0, session_tag=""):
+def send_silent_ping(scan_index, remaining_count, elapsed_sec, new_count=0, session_tag="", interval_min=5):
     """Gửi nhịp đập ở chế độ SILENT (không chuông, không rung điện thoại)"""
     webhook_url = os.environ.get("DISCORD_WEBHOOK_URL")
     if not webhook_url and os.path.exists(DISCORD_CONFIG_FILE):
@@ -803,7 +803,7 @@ def send_silent_ping(scan_index, remaining_count, elapsed_sec, new_count=0, sess
     if new_count > 0:
         content = f"🔥 **[{time_str}] Lượt #{scan_index}{tag_str}:** Phát hiện **{new_count} BCTC MỚI**! Đã gửi thông báo chi tiết."
     else:
-        content = f"🟢 `[{time_str}]` **Hệ thống hoạt động bình thường**{tag_str} • Đã quét **{remaining_count} mã** ({elapsed_sec}s, chu kỳ 5p) • Chưa có BCTC mới."
+        content = f"🟢 `[{time_str}]` **Hệ thống hoạt động bình thường**{tag_str} • Đã quét **{remaining_count} mã** ({elapsed_sec}s, chu kỳ {interval_min}p) • Chưa có BCTC mới."
         
     payload = {
         "content": content,
@@ -1124,20 +1124,33 @@ def main():
         now_vn = datetime.datetime.now(datetime.timezone(datetime.timedelta(hours=7)))
         cur_min = now_vn.hour * 60 + now_vn.minute
         
-        # Xác định chế độ quét (Sáng & Chiều: 5 phút/lần, Trưa: 10 phút/lần)
-        is_lunch_time = (11 * 60 + 30 <= cur_min < 13 * 60)
-        session_tag = "Trưa" if is_lunch_time else ("Sáng" if cur_min < 12 * 60 else "Chiều")
-        sleep_sec = 600 if is_lunch_time else 300
+        # Xác định chế độ quét (Trong giờ: 5p, Trưa: 10p, Sau 15:30: 30p)
+        if cur_min >= 15 * 60 + 30:
+            session_tag = "Tối"
+            sleep_sec = 1800 # 30 phút/lần sau 15:30
+            interval_min = 30
+        elif 11 * 60 + 30 <= cur_min < 13 * 60:
+            session_tag = "Trưa"
+            sleep_sec = 600 # 10 phút/lần giờ trưa
+            interval_min = 10
+        elif cur_min < 12 * 60:
+            session_tag = "Sáng"
+            sleep_sec = 300 # 5 phút/lần ca sáng
+            interval_min = 5
+        else:
+            session_tag = "Chiều"
+            sleep_sec = 300 # 5 phút/lần ca chiều
+            interval_min = 5
 
         try:
             new_cnt, rem_cnt, elapsed = execute_single_scan(scan_index=scan_index)
-            # Gửi nhịp đập Silent định kỳ 10 phút/lần (hoặc gửi ngay nếu có BCTC mới) để chống spam
             now_ts = time.time()
-            if new_cnt > 0 or (now_ts - last_silent_ping_ts >= 540):
-                send_silent_ping(scan_index, rem_cnt, elapsed, new_count=new_cnt, session_tag=session_tag)
+            min_ping_interval = 540 if sleep_sec <= 600 else (sleep_sec - 60)
+            if new_cnt > 0 or (now_ts - last_silent_ping_ts >= min_ping_interval):
+                send_silent_ping(scan_index, rem_cnt, elapsed, new_count=new_cnt, session_tag=session_tag, interval_min=interval_min)
                 last_silent_ping_ts = now_ts
             else:
-                log(f"ℹ️ Lượt #{scan_index}: Bình thường ({elapsed}s). Bỏ qua ping Discord để duy trì tần suất 10 phút/lần chống spam.")
+                log(f"ℹ️ Lượt #{scan_index}: Bình thường ({elapsed}s). Bỏ qua ping Discord để duy trì tần suất {interval_min} phút/lần chống spam.")
         except Exception as e:
             log(f"Lỗi trong lượt quét #{scan_index}: {e}")
             send_system_error_alert(f"Lỗi trong lượt quét #{scan_index}: {e}")

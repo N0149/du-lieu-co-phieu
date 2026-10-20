@@ -436,16 +436,28 @@ def send_discord_alert(alert_payload):
     except:
         return False
 
+def get_current_scan_interval():
+    now_vn = datetime.datetime.now()
+    cur_min = now_vn.hour * 60 + now_vn.minute
+    # Sau 15:30: 30 phút/lần (1800s)
+    if cur_min >= 15 * 60 + 30:
+        return 30 * 60
+    # Trước 15:30: 10 phút/lần (600s)
+    return 10 * 60
+
 def send_silent_ping(remaining_count, elapsed_sec, new_count=0):
     """Gửi nhịp đập trạng thái của máy tính ở nhà (không chuông, không rung điện thoại)"""
     webhook_url = get_discord_webhook()
     if not webhook_url:
         return
-    now_str = datetime.datetime.now().strftime("%H:%M")
+    now_vn = datetime.datetime.now()
+    cur_min = now_vn.hour * 60 + now_vn.minute
+    interval_min = 30 if cur_min >= 15 * 60 + 30 else 10
+    now_str = now_vn.strftime("%H:%M")
     if new_count > 0:
         content = f"🔥 `[{now_str}]` **Máy tính ở nhà:** Phát hiện **{new_count} BCTC MỚI**! Đã gửi thông báo chi tiết."
     else:
-        content = f"🟢 `[{now_str}]` **Máy tính ở nhà hoạt động bình thường** • Đã quét **{remaining_count} mã** ({elapsed_sec}s, chu kỳ 10p) • Chưa có BCTC mới."
+        content = f"🟢 `[{now_str}]` **Máy tính ở nhà hoạt động bình thường** • Đã quét **{remaining_count} mã** ({elapsed_sec}s, chu kỳ {interval_min}p) • Chưa có BCTC mới."
     payload = {
         "content": content,
         "flags": 4096 # SUPPRESS_NOTIFICATIONS
@@ -564,17 +576,18 @@ def auto_monitor_worker():
     time.sleep(15)  # Chờ 15s sau khi bot khởi động
     while True:
         try:
-
             if AUTO_SCAN_ENABLED:
-                NEXT_AUTO_SCAN_TIME = time.time() + AUTO_SCAN_INTERVAL
-                print(f"[AUTO-MONITOR] Bắt đầu lượt quét ngầm tự động...")
+                interval_sec = get_current_scan_interval()
+                NEXT_AUTO_SCAN_TIME = time.time() + interval_sec
+                print(f"[AUTO-MONITOR] Bắt đầu lượt quét ngầm tự động (chu kỳ {interval_sec//60}p)...")
                 execute_remote_scan(reply_func=None)
                 LAST_AUTO_SCAN_TIME = time.time()
-                print(f"[AUTO-MONITOR] Hoàn tất lượt quét lúc {datetime.datetime.now().strftime('%H:%M:%S')}. Lượt kế tiếp sau {AUTO_SCAN_INTERVAL//60} phút.")
+                print(f"[AUTO-MONITOR] Hoàn tất lượt quét lúc {datetime.datetime.now().strftime('%H:%M:%S')}. Lượt kế tiếp sau {interval_sec//60} phút.")
         except Exception as e:
             print("[AUTO-MONITOR Error]:", e)
 
-        for _ in range(AUTO_SCAN_INTERVAL):
+        interval_sec = get_current_scan_interval()
+        for _ in range(interval_sec):
             if not AUTO_SCAN_ENABLED:
                 break
             time.sleep(1)
@@ -624,7 +637,8 @@ def handle_command(content, username, reply_func):
         next_sec = max(0, int(NEXT_AUTO_SCAN_TIME - time.time())) if AUTO_SCAN_ENABLED and NEXT_AUTO_SCAN_TIME > 0 else 0
         next_m = next_sec // 60
         next_s = next_sec % 60
-        auto_info = f"🟢 Đang bật (tự quét mỗi {AUTO_SCAN_INTERVAL//60}p - lượt tới sau {next_m}m{next_s}s)" if AUTO_SCAN_ENABLED else "⚪ Đang tắt"
+        cur_int = get_current_scan_interval()
+        auto_info = f"🟢 Đang bật (tự quét mỗi {cur_int//60}p - lượt tới sau {next_m}m{next_s}s)" if AUTO_SCAN_ENABLED else "⚪ Đang tắt"
 
         msg = (
             f"🟢 **STOCK RADAR PRO - TRẠNG THÁI MÁY TÍNH Ở NHÀ**\n"
