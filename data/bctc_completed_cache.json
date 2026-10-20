@@ -671,5 +671,25 @@
     "source": "Company_Web",
     "bctc_type": "DAY_DU",
     "updated_at": "2026-10-20 18:21:32"
+  },
+  "DRC": {
+    "ticker": "DRC",
+    "company_name": "Công ty Cổ phần Cao su Đà Nẵng",
+    "release_date": "20/10/2026",
+    "title": "Công ty cổ phần Cao su Đà Nẵng (DRC) Giải trình biến động kết quả kinh doanh",
+    "doc_url": "https://drc.com.vn/wp-content/uploads/2026/10/20261020-DRC-Giai-trinh-bien-dong-Bao-cao-tai-chinh-quy-3.2026-1.pdf",
+    "source": "Company_Web",
+    "bctc_type": "DAY_DU",
+    "updated_at": "2026-10-20 18:21:37"
+  },
+  "SPB": {
+    "ticker": "SPB",
+    "company_name": "Công ty Cổ phần Sợi Phú Bài",
+    "release_date": "20/10/2026",
+    "title": "Báo cáo tài chính quý III năm 2026 (20/10/2026 16:00 pm)",
+    "doc_url": "https://drive.google.com/file/d/1Id7YnUChZ1iNdKscGJU_3k3iTqJQVsvF/view?usp=sharing",
+    "source": "Company_Web",
+    "bctc_type": "DAY_DU",
+    "updated_at": "2026-10-20 18:21:51"
   }
 }
