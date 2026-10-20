@@ -691,5 +691,25 @@
     "source": "Company_Web",
     "bctc_type": "DAY_DU",
     "updated_at": "2026-10-20 18:21:51"
+  },
+  "PAT": {
+    "ticker": "PAT",
+    "company_name": "Công ty Cổ phần Phốt pho Apatit Việt Nam",
+    "release_date": "20/10/2026",
+    "title": "Báo cáo tài chính Quý 3 năm 2026",
+    "doc_url": "https://pacvietnam.vn/bao-cao-tai-chinh-quy-3-nam-2026/",
+    "source": "Company_Web",
+    "bctc_type": "DAY_DU",
+    "updated_at": "2026-10-20 18:21:56"
+  },
+  "CDP": {
+    "ticker": "CDP",
+    "company_name": "Công ty Cổ phần Dược phẩm Trung ương Codupha",
+    "release_date": "20/10/2026",
+    "title": "Báo cáo tài chính Cho kỳ tài chính kết thúc ngày 30 tháng 09 năm 2026",
+    "doc_url": "https://codupha.com.vn/wp-content/uploads/2023/03/Bao-cao-tai-chinh-2026.Q3-Vi-sign.pdf",
+    "source": "Company_Web",
+    "bctc_type": "DAY_DU",
+    "updated_at": "2026-10-20 18:22:04"
   }
 }
