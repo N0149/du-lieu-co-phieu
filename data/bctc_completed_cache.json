@@ -440,5 +440,140 @@
     "doc_url": "https://taya.com.vn/UserUpload/Library/20261019---tya---bctc-q-3-2026---tru-so-chinh.pdf",
     "source": "Company_Web",
     "updated_at": "2026-10-20 02:14:06"
+  },
+  "CDN": {
+    "ticker": "CDN",
+    "bctc_type": "DAY_DU",
+    "title": "Báo cáo tài chính Quý III năm 2026",
+    "date": "20/10/2026",
+    "doc_url": "https://danangport.com/wp-content/uploads/2026/10/DNP-FS-Q3-2026-Vie.pdf",
+    "source": "Company_Web",
+    "updated_at": "2026-10-20 05:37:40"
+  },
+  "CCI": {
+    "ticker": "CCI",
+    "bctc_type": "GIAI_TRINH",
+    "title": "BÁO CÁO TÀI CHÍNH QUÝ 3 NĂM 2026 VÀ CÔNG VĂN GIẢI TRÌNH BIẾN ĐỘNG VỀ LỢI NHUẬN SAU THUẾ QUÝ 3 NĂM 2026",
+    "date": "20/10/2026",
+    "doc_url": "http://www.cidico.com.vn/vi/holder/bao-cao-tai-chinh-quy-3-nam-2026-va-cong-van-giai-trinh-bien-dong-ve-loi-nhuan-sau-thue-quy-3-nam-2026-c49,5411.aspx",
+    "source": "Company_Web",
+    "updated_at": "2026-10-20 05:37:43"
+  },
+  "PTT": {
+    "ticker": "PTT",
+    "bctc_type": "GIAI_TRINH",
+    "title": "PTT - CBTT - Báo cáo tài chính Q3/2026 và Giải trình chênh lệch lợi nhuận sau thuế TNDN Q3/2026/Financial statements Quarter 3 of 2026 and the explanation of after-tax profit for the third quarter of 2026:",
+    "date": "20/10/2026",
+    "doc_url": "https://pvtrans-ptt.com/ptt-cbtt-bao-cao-tai-chinh-q32026-va-giai-trinh-chenh-lech-loi-nhuan-sau-thue-tndn-q32026financial-statements-quarter-3-of-2026-and-the-explanation-of.html",
+    "source": "Company_Web",
+    "updated_at": "2026-10-20 05:37:45"
+  },
+  "SZL": {
+    "ticker": "SZL",
+    "bctc_type": "DAY_DU",
+    "title": "20/10/2026BÁO CÁO TÀI CHÍNH QUÝ III.2026",
+    "date": "20/10/2026",
+    "doc_url": "https://szl.com.vn/wp-content/uploads/2026/10/20261020-SZL-BAO-CAO-TAI-CHINH-Q3-2026.pdf",
+    "source": "Company_Web",
+    "updated_at": "2026-10-20 05:37:49"
+  },
+  "HU4": {
+    "ticker": "HU4",
+    "bctc_type": "DAY_DU",
+    "title": "Công ty HUD4 công bố thông tin Báo cáo Tài chính Quý III/2026",
+    "date": "20/10/2026",
+    "doc_url": "https://hud4.com.vn/web/cong-bo-thong-tin/bao-cao-tai-chinh/cong-ty-hud4-cong-bo-thong-tin-bao-cao-tai-chinh-quy-iii-2026.html",
+    "source": "Company_Web",
+    "updated_at": "2026-10-20 05:37:51"
+  },
+  "MCF": {
+    "ticker": "MCF",
+    "bctc_type": "DAY_DU",
+    "title": "Báo cáo tài chính quý 3 năm 2026",
+    "date": "20/10/2026 09:15",
+    "doc_url": "https://file.fpts.com.vn/FileStore2/File/EzIR/UploadFile/News/2026/10/20/File_1_2180_VI_BAO_CAO_TAI_CHINH_Q3_2026.pdf",
+    "source": "EzIR_FPTS",
+    "updated_at": "2026-10-20 05:38:02"
+  },
+  "UIC": {
+    "ticker": "UIC",
+    "bctc_type": "DAY_DU",
+    "title": "Báo cáo tài chính Quý III năm 2026",
+    "date": "20/10/2026",
+    "doc_url": "https://udico.com.vn/wp-content/uploads/2026/10/20261020-UIC-Bao-cao-tai-chinh-Quy-III-nam-2026.pdf",
+    "source": "Company_Web",
+    "updated_at": "2026-10-20 05:38:05"
+  },
+  "ADP": {
+    "ticker": "ADP",
+    "bctc_type": "GIAI_TRINH",
+    "title": "Báo cáo tài chính quý 3 năm 2026 và giải trình kết quả sản xuất kinh doanh",
+    "date": "20/10/2026 11:28",
+    "doc_url": "https://file.fpts.com.vn/FileStore2/File/EzIR/UploadFile/News/2026/10/20/File_1_4689_20261020_-_ADP_-_Bao_cao_tai_chinh_Q3.2026_va_giai_trinh_ket_qua_kinh_doanh.pdf",
+    "source": "EzIR_FPTS",
+    "updated_at": "2026-10-20 05:38:14"
+  },
+  "DHB": {
+    "ticker": "DHB",
+    "bctc_type": "DAY_DU",
+    "title": "Báo cáo tài chính quý 3 năm 2026",
+    "date": "20/10/2026 11:40",
+    "doc_url": "https://file.fpts.com.vn/FileStore2/File/EzIR/UploadFile/News/2026/10/20/File_1_8302_VI_BaoCaoTaiChinh_Q3_2026.pdf",
+    "source": "EzIR_FPTS",
+    "updated_at": "2026-10-20 05:38:26"
+  },
+  "PHN": {
+    "ticker": "PHN",
+    "bctc_type": "DAY_DU",
+    "title": "Báo Cáo Tài Chính Tổng Hợp Quý III Năm 2026",
+    "date": "20/10/2026",
+    "doc_url": "http://habaco.com.vn/chi-tiet-tin/541/giai-trinh-lien-quan-den-bao-cao-tai-chinh-quy-iii-nam-2026.html",
+    "source": "Company_Web",
+    "updated_at": "2026-10-20 05:38:28"
+  },
+  "CPC": {
+    "ticker": "CPC",
+    "bctc_type": "DAY_DU",
+    "title": "3rd quarter financial report",
+    "date": "20/10/2026 12:32",
+    "doc_url": "https://file.fpts.com.vn/FileStore2/File/EzIR/UploadFile/News/2026/10/20/File_1_1705_EN-CPC-BCTC-Q3-2026_Signed.pdf",
+    "source": "EzIR_FPTS",
+    "updated_at": "2026-10-20 05:38:37"
+  },
+  "PMP": {
+    "ticker": "PMP",
+    "bctc_type": "DAY_DU",
+    "title": "Báo cáo tài chính Quý 3/2026",
+    "date": "20/10/2026 10:49",
+    "doc_url": "https://file.fpts.com.vn/FileStore2/File/EzIR/UploadFile/News/2026/10/20/File_1_6955_PMP_BCTC_Q3_VN.pdf",
+    "source": "EzIR_FPTS",
+    "updated_at": "2026-10-20 05:38:42"
+  },
+  "TNG": {
+    "ticker": "TNG",
+    "bctc_type": "DAY_DU",
+    "title": "Báo cáo tài chính Quý 3 năm 2026",
+    "date": "20/10/2026",
+    "doc_url": "https://tng.vn/page/tin-bai/Bao-cao-tai-chinh-Quy-3-nam-2026-184329",
+    "source": "Company_Web",
+    "updated_at": "2026-10-20 05:38:44"
+  },
+  "HTG": {
+    "ticker": "HTG",
+    "bctc_type": "HOP_NHAT",
+    "title": "Báo cáo tài chính hợp nhất Quý 3 năm 2026",
+    "date": "20/10/2026",
+    "doc_url": "https://hoatho.com.vn/Data/Sites/1/media/tinh-hinh-tai-chinh/2026/b%C3%A1o-c%C3%A1o-t%C3%A0i-ch%C3%ADnh-h%E1%BB%A3p-nh%E1%BA%A5t-qu%C3%BD-3-n%C4%83m-2026.pdf",
+    "source": "Company_Web",
+    "updated_at": "2026-10-20 05:39:35"
+  },
+  "DVP": {
+    "ticker": "DVP",
+    "bctc_type": "GIAI_TRINH",
+    "title": "Giai trinh chenh lech LNST Quy 3 so voi cung ky",
+    "date": "20/10/2026",
+    "doc_url": "https://dinhvuport.com.vn/pdfviewer/web/viewer.html?file=/userdata/IR/2026/68-20261019---DVP---Giai-trinh-chenh-lech-LNST-Quy-3-so-voi-cung-ky.pdf",
+    "source": "Company_Web",
+    "updated_at": "2026-10-20 05:39:37"
   }
 }
