@@ -711,5 +711,122 @@
     "source": "Company_Web",
     "bctc_type": "DAY_DU",
     "updated_at": "2026-10-20 18:22:04"
+  },
+  "SKG": {
+    "ticker": "SKG",
+    "bctc_type": "GIAI_TRINH",
+    "title": "Báo cáo tài chính quý 3 năm 2026 và giải trình",
+    "date": "20/10/2026 18:10",
+    "doc_url": "https://file.fpts.com.vn/FileStore2/File/EzIR/UploadFile/News/2026/10/20/File_1_3540_20261020_-_SKG_-_BCTC_Q3.2026_VA_GIAI_TRINH_signed.pdf",
+    "source": "EzIR_FPTS",
+    "updated_at": "2026-10-20 12:52:06"
+  },
+  "SZC": {
+    "ticker": "SZC",
+    "bctc_type": "GIAI_TRINH",
+    "title": "BCTC hợp nhất và Giải trình biến động LNST Quý 3/2026",
+    "date": "20/10/2026 17:11",
+    "doc_url": "https://file.fpts.com.vn/FileStore2/File/EzIR/UploadFile/News/2026/10/20/File_1_1064_20261020_-_SZC_-_BCTC_hop_nhat_va_giai_trinh_bien_dong_LNST_Quy_3.2026.pdf",
+    "source": "EzIR_FPTS",
+    "updated_at": "2026-10-20 12:52:13"
+  },
+  "FMC": {
+    "ticker": "FMC",
+    "bctc_type": "HOP_NHAT",
+    "title": "Báo cáo tài chính hợp nhất Quý 3 năm 2026",
+    "date": "20/10/2026 17:16",
+    "doc_url": "https://file.fpts.com.vn/FileStore2/File/EzIR/UploadFile/News/2026/10/20/File_1_4741_2026.10.20_Q3.26-BCTC_HOP_NHAT_(TV).pdf",
+    "source": "EzIR_FPTS",
+    "updated_at": "2026-10-20 12:52:26"
+  },
+  "TCT": {
+    "ticker": "TCT",
+    "bctc_type": "GIAI_TRINH",
+    "title": "Báo cáo tài chính Quý 3 năm 2026; Báo cáo giải trình lợi nhuận Quý 3 năm 2026 tăng so với Quý 3 năm 2025",
+    "date": "20/10/2026 16:00",
+    "doc_url": "https://file.fpts.com.vn/FileStore2/File/EzIR/UploadFile/News/2026/10/20/File_1_2884_20261020_-_TCT_-_Bao_cao_tai_chinh_Q3_2026_va_Giai_trinh.pdf",
+    "source": "EzIR_FPTS",
+    "updated_at": "2026-10-20 12:52:34"
+  },
+  "LHG": {
+    "ticker": "LHG",
+    "bctc_type": "GIAI_TRINH",
+    "title": "Báo cáo tài chính Quý 3 năm 2026 kèm giải trình",
+    "date": "20/10/2026 13:53",
+    "doc_url": "https://file.fpts.com.vn/FileStore2/File/EzIR/UploadFile/News/2026/10/20/File_1_3393_20261020_-_LHG_-_Bao_cao_tai_chinh_Quy_III.2026_kem_giai_trinh_-_ky_so.pdf",
+    "source": "EzIR_FPTS",
+    "updated_at": "2026-10-20 12:52:49"
+  },
+  "PMB": {
+    "ticker": "PMB",
+    "bctc_type": "DAY_DU",
+    "title": "Báo cáo tài chính quý 3/2026",
+    "date": "20/10/2026 13:57",
+    "doc_url": "https://fpts.com.vn/san-pham-dich-vu/tu-van-dau-tu/tin-tuc/doanh-nghiep/luu-tru-bao-cao-tai-chinhPMB_Bao_cao_tai_chinh_quy_32026_55235AA775714D64F684AD398DA561CF",
+    "source": "EzIR_FPTS",
+    "updated_at": "2026-10-20 12:52:53"
+  },
+  "HMC": {
+    "ticker": "HMC",
+    "bctc_type": "DAY_DU",
+    "title": "Báo cáo tài chính quý 3/2026",
+    "date": "20/10/2026 16:56",
+    "doc_url": "https://file.fpts.com.vn/FileStore2/File/EzIR/UploadFile/News/2026/10/20/File_1_2797_20261020_-_HMC_-_Bao_cao_tai_chinh_Q3_2026_kem_giai_trinh.pdf",
+    "source": "EzIR_FPTS",
+    "updated_at": "2026-10-20 12:52:58"
+  },
+  "NBT": {
+    "ticker": "NBT",
+    "bctc_type": "DAY_DU",
+    "title": "Báo cáo tài chính quý 03 năm 2026",
+    "date": "20/10/2026 17:25",
+    "doc_url": "https://file.fpts.com.vn/FileStore2/File/EzIR/UploadFile/News/2026/10/20/File_1_8346_VI_BaoCaoTaiChinh_Q3_2026.pdf",
+    "source": "EzIR_FPTS",
+    "updated_at": "2026-10-20 12:53:02"
+  },
+  "POS": {
+    "ticker": "POS",
+    "bctc_type": "DAY_DU",
+    "title": "Báo cáo tài chính Qúy 3 2026",
+    "date": "20/10/2026 19:05",
+    "doc_url": "https://file.fpts.com.vn/FileStore2/File/EzIR/UploadFile/News/2026/10/20/File_1_3042_BAO_CAO_TAI_CHINH_QUY_3.2026_CONG_TY_POS_-_HN.pdf",
+    "source": "EzIR_FPTS",
+    "updated_at": "2026-10-20 12:53:10"
+  },
+  "SED": {
+    "ticker": "SED",
+    "bctc_type": "DAY_DU",
+    "title": "Báo cáo tài chính Quý 3",
+    "date": "20/10/2026 14:31",
+    "doc_url": "https://file.fpts.com.vn/FileStore2/File/EzIR/UploadFile/News/2026/10/20/File_1_4198_VI_BaoCaoTaiChinh_Q3_2026_signed.pdf",
+    "source": "EzIR_FPTS",
+    "updated_at": "2026-10-20 12:53:16"
+  },
+  "HCC": {
+    "ticker": "HCC",
+    "bctc_type": "DAY_DU",
+    "title": "Báo cáo tài chính quý 3/2026",
+    "date": "20/10/2026 13:56",
+    "doc_url": "https://fpts.com.vn/san-pham-dich-vu/tu-van-dau-tu/tin-tuc/doanh-nghiep/luu-tru-bao-cao-tai-chinhHCC_Bao_cao_tai_chinh_quy_32026_C2EEA6DD1BBABCCEADEE1081884C72E3",
+    "source": "EzIR_FPTS",
+    "updated_at": "2026-10-20 12:53:20"
+  },
+  "TTT": {
+    "ticker": "TTT",
+    "bctc_type": "HOP_NHAT",
+    "title": "Báo cáo tài chính hợp nhất quý 3/2026",
+    "date": "20/10/2026 13:31",
+    "doc_url": "https://file.fpts.com.vn/FileStore2/File/EzIR/UploadFile/News/2026/10/20/File_1_9214_VI_BaoCaoTaiChinhHopNhat_Q3.2026.pdf",
+    "source": "EzIR_FPTS",
+    "updated_at": "2026-10-20 12:53:27"
+  },
+  "HGM": {
+    "ticker": "HGM",
+    "bctc_type": "DAY_DU",
+    "title": "Báo cáo tài chính quý 3 năm 2026",
+    "date": "20/10/2026 16:11",
+    "doc_url": "https://file.fpts.com.vn/FileStore2/File/EzIR/UploadFile/News/2026/10/20/File_1_8274_VI_BCTC_Q3_2026_(HGM)_Signed.pdf",
+    "source": "EzIR_FPTS",
+    "updated_at": "2026-10-20 12:53:34"
   }
 }
