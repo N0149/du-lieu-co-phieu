@@ -5,6 +5,7 @@ import time
 import datetime
 import urllib.request
 import urllib.parse
+import http.cookiejar
 import re
 import unicodedata
 from concurrent.futures import ThreadPoolExecutor
@@ -271,7 +272,13 @@ def get_company_info(ticker):
     name = f"Công ty CP {ticker}"
     san = "HOSE"
     uri = ""
-    if os.path.exists(COMPANY_WEBSITES_FILE):
+    for it in get_default_tickers():
+        if it.get('ticker') == ticker:
+            name = it.get('name', name)
+            san = it.get('san', san)
+            uri = it.get('uri', uri)
+            break
+    if not uri and os.path.exists(COMPANY_WEBSITES_FILE):
         try:
             with open(COMPANY_WEBSITES_FILE, "r", encoding="utf-8") as f:
                 m = json.load(f)
@@ -334,6 +341,24 @@ def check_fpts_ezir(ticker):
     except Exception as e:
         return {'has_q3': False, 'source': 'EzIR_FPTS', 'latest_doc': str(e)}
 
+def resolve_direct_pdf(url):
+    """Nếu URL là trang web bài viết/thông báo, thử tìm link file đính kèm PDF/ZIP bên trong bài viết"""
+    if not url:
+        return url
+    if any(url.lower().endswith(ext) for ext in ['.pdf', '.zip', '.rar', '.xlsx', '.docx']):
+        return url
+    try:
+        req = urllib.request.Request(url, headers=HEADERS)
+        with urllib.request.urlopen(req, timeout=4) as resp:
+            soup = BeautifulSoup(resp.read().decode('utf-8', errors='ignore'), 'html.parser')
+            for a in soup.find_all('a', href=True):
+                h = a['href']
+                if any(h.lower().endswith(ext) for ext in ['.pdf', '.zip', '.rar', '.xlsx', '.docx']):
+                    return urllib.parse.urljoin(url, h)
+    except:
+        pass
+    return url
+
 def check_company_website(ticker, uri):
     if not uri or 'ezir.fpts.com.vn' in uri.lower():
         return None
@@ -381,11 +406,122 @@ def check_company_website(ticker, uri):
                 'source': 'Company_Web',
                 'title': title,
                 'date': datetime.datetime.now().strftime("%d/%m/%Y"),
-                'doc_url': target['href']
+                'doc_url': resolve_direct_pdf(target['href'])
             }
         return None
     except:
         return None
+
+
+class VietstockScanner:
+    """Quét dữ liệu công bố thông tin & BCTC niêm yết từ sàn HOSE, HNX, UPCoM qua hệ thống Vietstock"""
+    def __init__(self):
+        self.cj = http.cookiejar.CookieJar()
+        self.opener = urllib.request.build_opener(urllib.request.HTTPCookieProcessor(self.cj))
+        self.headers = {
+            'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36'
+        }
+        self.token = None
+        self.token_time = 0
+        self.lock = threading.Lock()
+        
+    def _ensure_token(self):
+        with self.lock:
+            if self.token and (time.time() - self.token_time < 1800):
+                return self.token
+                
+            url_page = "https://finance.vietstock.vn/PDV/tai-lieu.htm"
+            try:
+                req = urllib.request.Request(url_page, headers=self.headers)
+                with self.opener.open(req, timeout=8) as resp:
+                    html = resp.read().decode('utf-8', errors='ignore')
+                soup = BeautifulSoup(html, 'html.parser')
+                tag = soup.find('input', {'name': '__RequestVerificationToken'})
+                if tag and tag.get('value'):
+                    self.token = tag.get('value')
+                    self.token_time = time.time()
+                    return self.token
+            except Exception as e:
+                pass
+            return None
+
+    def check_vietstock(self, ticker):
+        token = self._ensure_token()
+        if not token:
+            return {'has_q3': False, 'source': 'Vietstock', 'error': 'No token'}
+            
+        api_url = "https://finance.vietstock.vn/data/GetDocument"
+        post_data = urllib.parse.urlencode({
+            'code': str(ticker).upper(),
+            'page': 1,
+            'pageSize': 20,
+            '__RequestVerificationToken': token
+        }).encode('utf-8')
+        
+        api_headers = {
+            'User-Agent': self.headers['User-Agent'],
+            'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8',
+            'X-Requested-With': 'XMLHttpRequest',
+            'Referer': f"https://finance.vietstock.vn/{str(ticker).upper()}/tai-lieu.htm",
+            'Origin': 'https://finance.vietstock.vn'
+        }
+        
+        try:
+            req = urllib.request.Request(api_url, data=post_data, headers=api_headers)
+            with self.opener.open(req, timeout=6) as resp:
+                data = json.loads(resp.read().decode('utf-8'))
+                
+            if not isinstance(data, list):
+                return {'has_q3': False, 'source': 'Vietstock'}
+                
+            candidates = []
+            for item in data:
+                title = item.get('Title', '').strip()
+                raw_url = item.get('Url', '').strip()
+                doc_url = urllib.parse.quote(raw_url, safe=':/?&=%') if raw_url else ''
+                
+                # Check LastUpdate timestamp
+                last_up = item.get('LastUpdate', '')
+                date_str = ""
+                m_ts = re.search(r'\d+', last_up)
+                if m_ts:
+                    ts = int(m_ts.group(0)) / 1000.0
+                    dt = datetime.datetime.fromtimestamp(ts)
+                    date_str = dt.strftime("%d/%m/%Y")
+                    # Chỉ nhận BCTC công bố từ cuối tháng 9/2026 trở đi
+                    if dt.year < 2026 or (dt.month < 9) or (dt.month == 9 and dt.day < 20):
+                        continue
+                        
+                matched, snippet = is_q3_2026(title, ticker=ticker, doc_url=doc_url)
+                if matched:
+                    b_type = classify_bctc_type(title)
+                    candidates.append({
+                        'title': title,
+                        'date': date_str or datetime.datetime.now().strftime("%d/%m/%Y"),
+                        'doc_url': doc_url,
+                        'bctc_type': b_type
+                    })
+                    
+            if candidates:
+                hop_nhat = next((c for c in candidates if c['bctc_type'] == 'HOP_NHAT'), None)
+                best = hop_nhat or candidates[0]
+                return {
+                    'has_q3': True,
+                    'bctc_type': best['bctc_type'],
+                    'source': 'Vietstock',
+                    'title': best['title'],
+                    'date': best['date'],
+                    'doc_url': best['doc_url']
+                }
+                
+            return {'has_q3': False, 'source': 'Vietstock'}
+        except Exception as e:
+            return {'has_q3': False, 'source': 'Vietstock', 'error': str(e)}
+
+VIETSTOCK_SCANNER = VietstockScanner()
+
+def check_vietstock(ticker):
+    return VIETSTOCK_SCANNER.check_vietstock(ticker)
 
 def send_discord_alert(alert_payload):
     webhook_url = get_discord_webhook()
@@ -508,14 +644,17 @@ def execute_remote_scan(reply_func=None):
 
         def sub_worker(item):
             t = item['ticker']
-            r = check_fpts_ezir(t)
-            if r.get('has_q3'):
-                return t, item, r
             uri = item.get('uri', '')
             if uri:
                 r_w = check_company_website(t, uri)
                 if r_w and r_w.get('has_q3'):
                     return t, item, r_w
+            r_vts = check_vietstock(t)
+            if r_vts and r_vts.get('has_q3'):
+                return t, item, r_vts
+            r = check_fpts_ezir(t)
+            if r.get('has_q3'):
+                return t, item, r
             return t, item, r
 
         with ThreadPoolExecutor(max_workers=10) as executor:
@@ -596,12 +735,19 @@ def auto_monitor_worker():
 
 def execute_remote_check_ticker(ticker, reply_func):
     info = get_company_info(ticker)
-    r_ezir = check_fpts_ezir(ticker)
-    res = r_ezir if r_ezir.get('has_q3') else None
-    if not res and info.get('uri'):
+    res = None
+    if info.get('uri'):
         r_web = check_company_website(ticker, info['uri'])
         if r_web and r_web.get('has_q3'):
             res = r_web
+    if not res:
+        r_vts = check_vietstock(ticker)
+        if r_vts and r_vts.get('has_q3'):
+            res = r_vts
+    if not res:
+        r_ezir = check_fpts_ezir(ticker)
+        if r_ezir.get('has_q3'):
+            res = r_ezir
 
     if res and res.get('has_q3'):
         doc_url = res.get('doc_url', '')
@@ -618,6 +764,18 @@ def execute_remote_check_ticker(ticker, reply_func):
             "doc_url": doc_url
         }
         send_discord_alert(alert_payload)
+        cache = load_completed_cache()
+        cache[ticker] = {
+            "ticker": ticker,
+            "company_name": info['name'],
+            "release_date": res.get('date'),
+            "title": res.get('title'),
+            "doc_url": doc_url,
+            "source": res.get('source'),
+            "bctc_type": b_type,
+            "updated_at": datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+        }
+        save_completed_cache(cache)
         reply_func(f"🔥 **ĐÃ CÓ BCTC QUÝ 3/2026 CHO [{ticker}]!**\nChi tiết báo cáo và link tải đã được gửi lên kênh.")
     else:
         reply_func(f"❄️ **[{ticker}] ({info['name']})** hiện **CHƯA CÓ** Báo cáo tài chính Quý 3/2026.")
@@ -731,8 +889,8 @@ def handle_command(content, username, reply_func):
             f"• `auto 5` hoặc `auto 10`: Đổi chu kỳ tự động quét ngầm (phút).\n"
             f"• `auto on` / `auto off`: Bật hoặc tắt tự động quét ngầm.\n"
             f"• `tat may` / `shutdown`: Tắt máy tính ở nhà từ xa.\n"
-            f"• `lenh` / `help`: Xem lại danh sách hướng dẫn này.\n\n"
-            f"⏰ **LỊCH TẮT MÁY HÔM NAY:** Máy tính đã được cài đặt tự động tắt nguồn lúc **15:10** chiều nay. Sau 15:10, hệ thống Cloud GitHub Actions sẽ tiếp quản giám sát độc lập đến 20:00 tối!"
+            f"• `lenh` / `help`: Xem lại danh sách hướng dẫn này."
+
         )
         reply_func(msg)
 

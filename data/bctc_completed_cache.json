@@ -518,12 +518,13 @@
   },
   "ADP": {
     "ticker": "ADP",
-    "bctc_type": "GIAI_TRINH",
-    "title": "Báo cáo tài chính quý 3 năm 2026 và giải trình kết quả sản xuất kinh doanh",
-    "date": "20/10/2026 11:28",
-    "doc_url": "https://file.fpts.com.vn/FileStore2/File/EzIR/UploadFile/News/2026/10/20/File_1_4689_20261020_-_ADP_-_Bao_cao_tai_chinh_Q3.2026_va_giai_trinh_ket_qua_kinh_doanh.pdf",
-    "source": "EzIR_FPTS",
-    "updated_at": "2026-10-20 05:38:14"
+    "company_name": "Công ty Cổ phần Sơn Á Đông",
+    "release_date": "20/10/2026",
+    "title": "BCTC quý 3 năm 2026",
+    "doc_url": "https://static2.vietstock.vn/data/HOSE/2026/BCTC/VN/QUY%203/ADP_Baocaotaichinh_Q3_2026.pdf",
+    "source": "Vietstock",
+    "bctc_type": "DAY_DU",
+    "updated_at": "2026-10-21 11:23:45"
   },
   "DHB": {
     "ticker": "DHB",
@@ -732,48 +733,53 @@
   },
   "FMC": {
     "ticker": "FMC",
+    "company_name": "Công ty Cổ phần Thực phẩm Sao Ta",
+    "release_date": "21/10/2026",
+    "title": "BCTC Hợp nhất quý 3 năm 2026",
+    "doc_url": "https://static2.vietstock.vn/data/HOSE/2026/BCTC/VN/QUY%203/FMC_Baocaotaichinh_Q3_2026_Hopnhat.pdf",
+    "source": "Vietstock",
     "bctc_type": "HOP_NHAT",
-    "title": "Báo cáo tài chính hợp nhất Quý 3 năm 2026",
-    "date": "20/10/2026 17:16",
-    "doc_url": "https://file.fpts.com.vn/FileStore2/File/EzIR/UploadFile/News/2026/10/20/File_1_4741_2026.10.20_Q3.26-BCTC_HOP_NHAT_(TV).pdf",
-    "source": "EzIR_FPTS",
-    "updated_at": "2026-10-20 12:52:26"
+    "updated_at": "2026-10-21 11:23:42"
   },
   "TCT": {
     "ticker": "TCT",
-    "bctc_type": "GIAI_TRINH",
-    "title": "Báo cáo tài chính Quý 3 năm 2026; Báo cáo giải trình lợi nhuận Quý 3 năm 2026 tăng so với Quý 3 năm 2025",
-    "date": "20/10/2026 16:00",
-    "doc_url": "https://file.fpts.com.vn/FileStore2/File/EzIR/UploadFile/News/2026/10/20/File_1_2884_20261020_-_TCT_-_Bao_cao_tai_chinh_Q3_2026_va_Giai_trinh.pdf",
-    "source": "EzIR_FPTS",
-    "updated_at": "2026-10-20 12:52:34"
+    "company_name": "Công ty Cổ phần Cáp treo Núi Bà Tây Ninh",
+    "release_date": "21/10/2026",
+    "title": "BCTC quý 3 năm 2026",
+    "doc_url": "https://static2.vietstock.vn/data/HOSE/2026/BCTC/VN/QUY%203/TCT_Baocaotaichinh_Q3_2026.pdf",
+    "source": "Vietstock",
+    "bctc_type": "DAY_DU",
+    "updated_at": "2026-10-21 11:23:42"
   },
   "LHG": {
     "ticker": "LHG",
-    "bctc_type": "GIAI_TRINH",
-    "title": "Báo cáo tài chính Quý 3 năm 2026 kèm giải trình",
-    "date": "20/10/2026 13:53",
-    "doc_url": "https://file.fpts.com.vn/FileStore2/File/EzIR/UploadFile/News/2026/10/20/File_1_3393_20261020_-_LHG_-_Bao_cao_tai_chinh_Quy_III.2026_kem_giai_trinh_-_ky_so.pdf",
-    "source": "EzIR_FPTS",
-    "updated_at": "2026-10-20 12:52:49"
+    "company_name": "Công ty Cổ phần Long Hậu",
+    "release_date": "21/10/2026",
+    "title": "BCTC quý 3 năm 2026",
+    "doc_url": "https://static2.vietstock.vn/data/HOSE/2026/BCTC/VN/QUY%203/LHG_Baocaotaichinh_Q3_2026.pdf",
+    "source": "Vietstock",
+    "bctc_type": "DAY_DU",
+    "updated_at": "2026-10-21 11:23:43"
   },
   "PMB": {
     "ticker": "PMB",
+    "company_name": "Công ty Cổ phần Phân bón và Hóa chất Dầu khí Miền Bắc",
+    "release_date": "20/10/2026",
+    "title": "BCTC quý 3 năm 2026",
+    "doc_url": "https://static2.vietstock.vn/data/HNX/2026/BCTC/VN/QUY%203/PMB_Baocaotaichinh_Q3_2026.zip",
+    "source": "Vietstock",
     "bctc_type": "DAY_DU",
-    "title": "Báo cáo tài chính quý 3/2026",
-    "date": "20/10/2026 13:57",
-    "doc_url": "https://fpts.com.vn/san-pham-dich-vu/tu-van-dau-tu/tin-tuc/doanh-nghiep/luu-tru-bao-cao-tai-chinhPMB_Bao_cao_tai_chinh_quy_32026_55235AA775714D64F684AD398DA561CF",
-    "source": "EzIR_FPTS",
-    "updated_at": "2026-10-20 12:52:53"
+    "updated_at": "2026-10-21 11:23:45"
   },
   "HMC": {
     "ticker": "HMC",
+    "company_name": "Công ty Cổ phần Kim khí Thành phố Hồ Chí Minh - VNSTEEL",
+    "release_date": "20/10/2026",
+    "title": "Báo cáo tài chính quý 3 năm 2026",
+    "doc_url": "https://metalhcm.com.vn/quan-he-co-dong/bao-cao-tai-chinh-quy-3-nam-2026",
+    "source": "Company_Web",
     "bctc_type": "DAY_DU",
-    "title": "Báo cáo tài chính quý 3/2026",
-    "date": "20/10/2026 16:56",
-    "doc_url": "https://file.fpts.com.vn/FileStore2/File/EzIR/UploadFile/News/2026/10/20/File_1_2797_20261020_-_HMC_-_Bao_cao_tai_chinh_Q3_2026_kem_giai_trinh.pdf",
-    "source": "EzIR_FPTS",
-    "updated_at": "2026-10-20 12:52:58"
+    "updated_at": "2026-10-20 21:11:39"
   },
   "NBT": {
     "ticker": "NBT",
@@ -804,12 +810,13 @@
   },
   "HCC": {
     "ticker": "HCC",
+    "company_name": "Công ty Cổ phần Bê tông Hòa Cầm - Intimex",
+    "release_date": "20/10/2026",
+    "title": "BCTC quý 3 năm 2026",
+    "doc_url": "https://static2.vietstock.vn/data/HNX/2026/BCTC/VN/QUY%203/HCC_Baocaotaichinh_Q3_2026.zip",
+    "source": "Vietstock",
     "bctc_type": "DAY_DU",
-    "title": "Báo cáo tài chính quý 3/2026",
-    "date": "20/10/2026 13:56",
-    "doc_url": "https://fpts.com.vn/san-pham-dich-vu/tu-van-dau-tu/tin-tuc/doanh-nghiep/luu-tru-bao-cao-tai-chinhHCC_Bao_cao_tai_chinh_quy_32026_C2EEA6DD1BBABCCEADEE1081884C72E3",
-    "source": "EzIR_FPTS",
-    "updated_at": "2026-10-20 12:53:20"
+    "updated_at": "2026-10-21 11:23:57"
   },
   "TTT": {
     "ticker": "TTT",
@@ -828,5 +835,215 @@
     "doc_url": "https://file.fpts.com.vn/FileStore2/File/EzIR/UploadFile/News/2026/10/20/File_1_8274_VI_BCTC_Q3_2026_(HGM)_Signed.pdf",
     "source": "EzIR_FPTS",
     "updated_at": "2026-10-20 12:53:34"
+  },
+  "PCT": {
+    "ticker": "PCT",
+    "company_name": "Công ty Cổ phần Vận tải Biển Global Pacific",
+    "release_date": "20/10/2026",
+    "title": "Báo cáo tài chính Quý 3/2026 (PCT)",
+    "doc_url": "https://www.pct.com.vn/Data/Sites/1/media/BCTC_Q3_2026_VI-EN.pdf",
+    "source": "Company_Web",
+    "bctc_type": "DAY_DU",
+    "updated_at": "2026-10-20 20:08:47"
+  },
+  "TNW": {
+    "ticker": "TNW",
+    "company_name": "Công ty Cổ phần Nước sạch Thái Nguyên",
+    "release_date": "20/10/2026",
+    "title": "BÁO CÁO TÀI CHÍNH QUÝ 3.2026",
+    "doc_url": "https://nuocsachthainguyen.vn/Content.aspx?tab=news&lang=vi&pid=70&cid=93&id=6779",
+    "source": "Company_Web",
+    "bctc_type": "DAY_DU",
+    "updated_at": "2026-10-20 20:09:30"
+  },
+  "DP1": {
+    "ticker": "DP1",
+    "company_name": "Công ty Cổ phần Dược phẩm Trung ương CPC1",
+    "release_date": "20/10/2026",
+    "title": "Công bố thông tin định kỳ Báo cáo tài chính Quý 3 năm 2026",
+    "doc_url": "https://cpc1.com.vn/co-dong/cat11/11311/Cong-bo-thong-tin-dinh-ky-Bao-cao-tai-chinh-Quy--nam",
+    "source": "Company_Web",
+    "bctc_type": "DAY_DU",
+    "updated_at": "2026-10-20 20:40:43"
+  },
+  "CTB": {
+    "ticker": "CTB",
+    "company_name": "Công ty Cổ phần Chế tạo Bơm Hải Dương",
+    "release_date": "20/10/2026",
+    "title": "Báo cáo tài chính – Quý III – 2026",
+    "doc_url": "https://hapuma.com/cong-bo-thong-tin/bao-cao-tai-chinh-quy-iii-2026/",
+    "source": "Company_Web",
+    "bctc_type": "DAY_DU",
+    "updated_at": "2026-10-20 22:46:05"
+  },
+  "HMH": {
+    "ticker": "HMH",
+    "company_name": "Công ty Cổ phần Hải Minh",
+    "release_date": "20/10/2026",
+    "title": "BCTC Quý 3/2026",
+    "doc_url": "https://www.haiminh.com.vn/bctc-quy-3-2026-n1361.html",
+    "source": "Company_Web",
+    "bctc_type": "DAY_DU",
+    "updated_at": "2026-10-20 23:17:35"
+  },
+  "LPT": {
+    "ticker": "LPT",
+    "company_name": "Công ty Cổ phần Thương mại và Sản xuất Lập Phương Thành",
+    "release_date": "21/10/2026",
+    "title": "Báo cáo tài chính Quý 3/2026 (LPT)",
+    "doc_url": "https://lapphuongthanh.vn/bao-cao-tai-chinh-quy-3-2026-va-giai-trinh-lnst.htm",
+    "source": "Company_Web",
+    "bctc_type": "DAY_DU",
+    "updated_at": "2026-10-21 07:49:22"
+  },
+  "DDV": {
+    "ticker": "DDV",
+    "company_name": "Công ty Cổ phần DAP - Vinachem",
+    "release_date": "21/10/2026",
+    "title": "Báo cáo tài chính Quý 3/2026 (DDV)",
+    "doc_url": "https://dap-vinachem.com.vn/cong-bo-thong-tin/cbtt-bao-cao-tai-chinh-quy-3-nam-2026",
+    "source": "Company_Web",
+    "bctc_type": "DAY_DU",
+    "updated_at": "2026-10-21 07:49:22"
+  },
+  "NT2": {
+    "ticker": "NT2",
+    "company_name": "Công ty Cổ phần Điện lực Dầu khí Nhơn Trạch 2",
+    "release_date": "21/10/2026",
+    "title": "Báo cáo tài chính Quý III năm 2026 - Bản Tiếng Anh",
+    "doc_url": "https://www.pvpnt2.vn/SharedFiles/Download.aspx?fileid=345",
+    "source": "Company_Web",
+    "bctc_type": "DAY_DU",
+    "updated_at": "2026-10-21 09:42:11"
+  },
+  "ANV": {
+    "ticker": "ANV",
+    "company_name": "Công ty Cổ phần Nam Việt",
+    "release_date": "21/10/2026",
+    "title": "BÁO CÁO TÀI CHÍNH CÔNG TY MẸ QUÝ 3 NĂM 2026 (TIẾNG ANH)",
+    "doc_url": "https://navicorp.com.vn/files/folder_file_pdf/images/20261021 - ANV - PARENT COMPANY FINANCIAL STATEMENTS FOR Q3 2026-isu700.pdf",
+    "source": "Company_Web",
+    "bctc_type": "DAY_DU",
+    "updated_at": "2026-10-21 10:04:24"
+  },
+  "DBC": {
+    "ticker": "DBC",
+    "company_name": "Công ty Cổ phần Tập đoàn Dabaco Việt Nam",
+    "release_date": "21/10/2026",
+    "title": "DBC: CBTT – Báo cáo tài chính Quý III năm 2026",
+    "doc_url": "https://dabaco.vn/quan-he-co-dong/dbc-cbtt-bao-cao-tai-chinh-quy-iii-nam-2026/",
+    "source": "Company_Web",
+    "bctc_type": "DAY_DU",
+    "updated_at": "2026-10-21 11:01:10"
+  },
+  "PVP": {
+    "ticker": "PVP",
+    "company_name": "Công ty Cổ phần Vận tải Dầu khí Thái Bình Dương",
+    "release_date": "21/10/2026",
+    "title": "Công ty CP Vận tải Dầu khí Thái Bình Dương công bố thông tin Báo cáo tài chính quý 3/2026",
+    "doc_url": "https://pacificshipping.vn/assets/tenant/uploads/media-uploader/pacific/bctc-quy-3-20261792552907.pdf",
+    "source": "Company_Web",
+    "bctc_type": "DAY_DU",
+    "updated_at": "2026-10-21 11:23:29"
+  },
+  "NTC": {
+    "ticker": "NTC",
+    "company_name": "Công ty Cổ phần Khu Công nghiệp Nam Tân Uyên",
+    "release_date": "20/10/2026",
+    "title": "Giải trình kết quả kinh doanh quý 3 năm 2026",
+    "doc_url": "https://static2.vietstock.vn/data/HOSE/2026/BCTC/VN/QUY%203/NTC_Giaitrinh_KQKD_Q3_2026.pdf",
+    "source": "Vietstock",
+    "bctc_type": "DAY_DU",
+    "updated_at": "2026-10-21 11:23:41"
+  },
+  "NNC": {
+    "ticker": "NNC",
+    "company_name": "Công ty Cổ phần Đá Núi Nhỏ",
+    "release_date": "20/10/2026",
+    "title": "BCTC quý 3 năm 2026",
+    "doc_url": "https://static2.vietstock.vn/data/HOSE/2026/BCTC/VN/QUY%203/NNC_Baocaotaichinh_Q3_2026.pdf",
+    "source": "Vietstock",
+    "bctc_type": "DAY_DU",
+    "updated_at": "2026-10-21 11:23:43"
+  },
+  "SCS": {
+    "ticker": "SCS",
+    "company_name": "Công ty Cổ phần Dịch vụ Hàng hóa Sài Gòn",
+    "release_date": "20/10/2026",
+    "title": "BCTC quý 3 năm 2026",
+    "doc_url": "https://static2.vietstock.vn/data/HOSE/2026/BCTC/VN/QUY%203/SCS_Baocaotaichinh_Q3_2026.pdf",
+    "source": "Vietstock",
+    "bctc_type": "DAY_DU",
+    "updated_at": "2026-10-21 11:23:44"
+  },
+  "NCS": {
+    "ticker": "NCS",
+    "company_name": "Công ty Cổ phần Suất ăn Hàng không Nội Bài",
+    "release_date": "20/10/2026",
+    "title": "BCTC quý 3 năm 2026",
+    "doc_url": "https://static2.vietstock.vn/data/HNX/2026/BCTC/VN/QUY%203/NCS_Baocaotaichinh_Q3_2026.zip",
+    "source": "Vietstock",
+    "bctc_type": "DAY_DU",
+    "updated_at": "2026-10-21 11:23:45"
+  },
+  "GMH": {
+    "ticker": "GMH",
+    "company_name": "Công ty Cổ phần Minh Hưng Quảng Trị",
+    "release_date": "21/10/2026",
+    "title": "BCTC quý 3 năm 2026",
+    "doc_url": "https://static2.vietstock.vn/data/HOSE/2026/BCTC/VN/QUY%203/GMH_Baocaotaichinh_Q3_2026.pdf",
+    "source": "Vietstock",
+    "bctc_type": "DAY_DU",
+    "updated_at": "2026-10-21 11:23:46"
+  },
+  "NCT": {
+    "ticker": "NCT",
+    "company_name": "Công ty Cổ phần Dịch vụ Hàng hóa Nội Bài",
+    "release_date": "21/10/2026",
+    "title": "BCTC quý 3 năm 2026",
+    "doc_url": "https://static2.vietstock.vn/data/HOSE/2026/BCTC/VN/QUY%203/NCT_Baocaotaichinh_Q3_2026.pdf",
+    "source": "Vietstock",
+    "bctc_type": "DAY_DU",
+    "updated_at": "2026-10-21 11:23:50"
+  },
+  "PDV": {
+    "ticker": "PDV",
+    "company_name": "Công ty Cổ phần Vận tải và Tiếp vận Phương Đông Việt",
+    "release_date": "21/10/2026",
+    "title": "BCTC quý 3 năm 2026",
+    "doc_url": "https://static2.vietstock.vn/data/HOSE/2026/BCTC/VN/QUY%203/PDV_Baocaotaichinh_Q3_2026.pdf",
+    "source": "Vietstock",
+    "bctc_type": "DAY_DU",
+    "updated_at": "2026-10-21 11:23:57"
+  },
+  "LBE": {
+    "ticker": "LBE",
+    "company_name": "Công ty Cổ phần Thương mại và Dịch vụ LVA",
+    "release_date": "21/10/2026",
+    "title": "BCTC quý 3 năm 2026",
+    "doc_url": "https://static2.vietstock.vn/data/HNX/2026/BCTC/VN/QUY%203/LBE_Baocaotaichinh_Q3_2026.zip",
+    "source": "Vietstock",
+    "bctc_type": "DAY_DU",
+    "updated_at": "2026-10-21 11:24:20"
+  },
+  "PRE": {
+    "ticker": "PRE",
+    "company_name": "Tổng Công ty Cổ phần Tái bảo hiểm Hà Nội",
+    "release_date": "21/10/2026",
+    "title": "BCTC quý 3 năm 2026",
+    "doc_url": "https://static2.vietstock.vn/data/HNX/2026/BCTC/VN/QUY%203/PRE_Baocaotaichinh_Q3_2026.zip",
+    "source": "Vietstock",
+    "bctc_type": "DAY_DU",
+    "updated_at": "2026-10-21 11:24:22"
+  },
+  "NDN": {
+    "ticker": "NDN",
+    "company_name": "Công ty Cổ phần Đầu tư Phát triển Nhà Đà Nẵng",
+    "release_date": "21/10/2026",
+    "title": "Báo cáo tài chính Quý 3/2026 (NDN)",
+    "doc_url": "https://ndn.com.vn/uploads/document/uwuf5jbqxvbolpu-472-ndn-cbtt-bao-cao-tai-chinh-cong-ty-me-quy-3-2026-ban-tieng-anh.pdf",
+    "source": "Company_Web",
+    "bctc_type": "DAY_DU",
+    "updated_at": "2026-10-21 11:24:31"
   }
 }
