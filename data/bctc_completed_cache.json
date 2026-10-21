@@ -715,21 +715,23 @@
   },
   "SKG": {
     "ticker": "SKG",
-    "bctc_type": "GIAI_TRINH",
-    "title": "Báo cáo tài chính quý 3 năm 2026 và giải trình",
-    "date": "20/10/2026 18:10",
-    "doc_url": "https://file.fpts.com.vn/FileStore2/File/EzIR/UploadFile/News/2026/10/20/File_1_3540_20261020_-_SKG_-_BCTC_Q3.2026_VA_GIAI_TRINH_signed.pdf",
-    "source": "EzIR_FPTS",
-    "updated_at": "2026-10-20 12:52:06"
+    "company_name": "Công ty Cổ phần Tàu Cao tốc Superdong - Kiên Giang",
+    "release_date": "21/10/2026",
+    "title": "BCTC quý 3 năm 2026",
+    "doc_url": "https://static2.vietstock.vn/data/HOSE/2026/BCTC/VN/QUY%203/SKG_Baocaotaichinh_Q3_2026.pdf",
+    "source": "Vietstock",
+    "bctc_type": "DAY_DU",
+    "updated_at": "2026-10-21 14:33:58"
   },
   "SZC": {
     "ticker": "SZC",
-    "bctc_type": "GIAI_TRINH",
-    "title": "BCTC hợp nhất và Giải trình biến động LNST Quý 3/2026",
-    "date": "20/10/2026 17:11",
-    "doc_url": "https://file.fpts.com.vn/FileStore2/File/EzIR/UploadFile/News/2026/10/20/File_1_1064_20261020_-_SZC_-_BCTC_hop_nhat_va_giai_trinh_bien_dong_LNST_Quy_3.2026.pdf",
-    "source": "EzIR_FPTS",
-    "updated_at": "2026-10-20 12:52:13"
+    "company_name": "Công ty Cổ phần Sonadezi Châu Đức",
+    "release_date": "21/10/2026",
+    "title": "BCTC Hợp nhất quý 3 năm 2026",
+    "doc_url": "https://static2.vietstock.vn/data/HOSE/2026/BCTC/VN/QUY%203/SZC_Baocaotaichinh_Q3_2026_Hopnhat.pdf",
+    "source": "Vietstock",
+    "bctc_type": "HOP_NHAT",
+    "updated_at": "2026-10-21 14:33:58"
   },
   "FMC": {
     "ticker": "FMC",
@@ -1045,5 +1047,65 @@
     "source": "Company_Web",
     "bctc_type": "DAY_DU",
     "updated_at": "2026-10-21 11:24:31"
+  },
+  "BTS": {
+    "ticker": "BTS",
+    "company_name": "Công ty Cổ phần Xi măng VICEM Bút Sơn",
+    "release_date": "21/10/2026",
+    "title": "Download",
+    "doc_url": "https://www.vicembutson.com.vn/Data/files/BCTC/BCTC_Q3_2026.rar",
+    "source": "Company_Web",
+    "bctc_type": "DAY_DU",
+    "updated_at": "2026-10-21 14:01:25"
+  },
+  "TCL": {
+    "ticker": "TCL",
+    "company_name": "Công ty Cổ phần Đại lý Giao nhận Vận tải Xếp dỡ Tân Cảng",
+    "release_date": "21/10/2026",
+    "title": "Báo cáo tài chính riêng quý 3 năm 2026 và giải trình chênh lệch LNST so với cùng kỳ năm trước",
+    "doc_url": "https://tancanglogistics.com/quan-he-co-dong/Documents/20261021%20-%20TCL%20-%20BCTC%20RIENG%20Q3%20202620261021141917.pdf",
+    "source": "Company_Web",
+    "bctc_type": "DAY_DU",
+    "updated_at": "2026-10-21 14:23:44"
+  },
+  "SFN": {
+    "ticker": "SFN",
+    "company_name": "Công ty Cổ phần Dệt lưới Sài Gòn",
+    "release_date": "21/10/2026",
+    "title": "BCTC quý 3 năm 2026",
+    "doc_url": "https://static2.vietstock.vn/data/HNX/2026/BCTC/VN/QUY%203/SFN_Baocaotaichinh_Q3_2026.zip",
+    "source": "Vietstock",
+    "bctc_type": "DAY_DU",
+    "updated_at": "2026-10-21 14:56:09"
+  },
+  "VOS": {
+    "ticker": "VOS",
+    "company_name": "Công ty Cổ phần Vận tải Biển Việt Nam",
+    "release_date": "21/10/2026",
+    "title": "BCTC Hợp nhất quý 3 năm 2026",
+    "doc_url": "https://static2.vietstock.vn/data/HOSE/2026/BCTC/VN/QUY%203/VOS_Baocaotaichinh_Q3_2026_Hopnhat.pdf",
+    "source": "Vietstock",
+    "bctc_type": "HOP_NHAT",
+    "updated_at": "2026-10-21 15:07:01"
+  },
+  "VTO": {
+    "ticker": "VTO",
+    "company_name": "Công ty Cổ phần Vận tải Xăng dầu VITACO",
+    "release_date": "21/10/2026",
+    "title": "BCTC Hợp nhất quý 3 năm 2026",
+    "doc_url": "https://static2.vietstock.vn/data/HOSE/2026/BCTC/VN/QUY%203/VTO_Baocaotaichinh_Q3_2026_Hopnhat.pdf",
+    "source": "Vietstock",
+    "bctc_type": "HOP_NHAT",
+    "updated_at": "2026-10-21 15:07:08"
+  },
+  "FOC": {
+    "ticker": "FOC",
+    "company_name": "Công ty Cổ phần Dịch vụ Trực tuyến FPT",
+    "release_date": "21/10/2026",
+    "title": "BCTC quý 3 năm 2026",
+    "doc_url": "https://static2.vietstock.vn/data/HNX/2026/BCTC/VN/QUY%203/FOC_Baocaotaichinh_Q3_2026.zip",
+    "source": "Vietstock",
+    "bctc_type": "DAY_DU",
+    "updated_at": "2026-10-21 16:10:47"
   }
 }
