@@ -1,5 +1,41 @@
 [
   {
+    "id": 26021,
+    "title": "Báo cáo triển vọng vĩ mô tháng 10/2026",
+    "source": "TPS",
+    "date": "2026-10-09T00:00:00.000Z",
+    "url": "https://cdn02.wigroup.vn/baocaophantich/ar_26358_TPS_2026-10-09.pdf",
+    "category": "Báo cáo Vĩ mô",
+    "created_at": "2026-10-21T17:57:04.615Z"
+  },
+  {
+    "id": 26012,
+    "title": "Báo cáo vĩ mô Tháng 10/2026",
+    "source": "OCBS",
+    "date": "2026-10-12T00:00:00.000Z",
+    "url": "https://cdn02.wigroup.vn/baocaophantich/ar_26373_OCBS_2026-10-12.pdf",
+    "category": "Báo cáo Vĩ mô",
+    "created_at": "2026-10-21T17:57:04.615Z"
+  },
+  {
+    "id": 26003,
+    "title": "Triển vọng kinh tế Việt Nam 4Q2026",
+    "source": "KBSV",
+    "date": "2026-10-19T00:00:00.000Z",
+    "url": "https://cdn02.wigroup.vn/baocaophantich/ar_26429_KBSV_2026-10-19.pdf",
+    "category": "Báo cáo Vĩ mô",
+    "created_at": "2026-10-21T17:57:04.615Z"
+  },
+  {
+    "id": 26017,
+    "title": "Kinh tế Việt Nam tăng tốc do đâu?",
+    "source": "TCB",
+    "date": "2026-10-19T00:00:00.000Z",
+    "url": "https://cdn02.wigroup.vn/baocaophantich/ar_26453_TCB_2026-10-19.pdf",
+    "category": "Báo cáo Vĩ mô",
+    "created_at": "2026-10-21T17:57:04.615Z"
+  },
+  {
     "id": 25980,
     "title": "Không có sự lựa chọn hoàn hảo cho tăng trưởng",
     "source": "YUANTA",
