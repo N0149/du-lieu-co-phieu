@@ -611,7 +611,7 @@ def send_silent_ping(remaining_count, elapsed_sec, new_count=0):
 def get_default_tickers():
     selected = []
     seen = set()
-    for fpath in [TICKERS_G1_FILE, TICKERS_G2_FILE]:
+    for fpath in [TICKERS_G1_FILE, TICKERS_G2_FILE, TICKERS_G3_FILE]:
         if os.path.exists(fpath):
             with open(fpath, "r", encoding="utf-8") as f:
                 data = json.load(f)

@@ -1110,83 +1110,152 @@
   },
   "VTB": {
     "ticker": "VTB",
-    "bctc_type": "HOP_NHAT",
-    "title": "20261021 – VTB – BCTC Hop Nhat quy 3 nam 2026",
-    "date": "22/10/2026",
-    "doc_url": "https://vtb.com.vn/wp-content/uploads/2026/10/20261021-VTB-BCTC-Hop-Nhat-quy-3-nam-2026.pdf",
+    "company_name": "Công ty Cổ phần Viettronics Tân Bình",
+    "release_date": "22/10/2026",
+    "title": "20261021 – VTB – Separate Financial Report For The Third Quater Of 2026",
+    "doc_url": "https://vtb.com.vn/wp-content/uploads/2026/10/20261021-VTB-BCTC-Rieng-quy-3-nam-2026.pdf",
     "source": "Company_Web",
-    "updated_at": "2026-10-22 05:40:00"
-  },
-  "NST": {
-    "ticker": "NST",
     "bctc_type": "DAY_DU",
-    "title": "BCTC quý 3 năm 2026",
-    "date": "22/10/2026",
-    "doc_url": "https://static2.vietstock.vn/data/HNX/2026/BCTC/VN/QUY%203/NST_Baocaotaichinh_Q3_2026.zip",
-    "source": "Vietstock",
-    "updated_at": "2026-10-22 05:40:39"
-  },
-  "SAS": {
-    "ticker": "SAS",
-    "bctc_type": "DAY_DU",
-    "title": "BCTC quý 3 năm 2026",
-    "date": "22/10/2026",
-    "doc_url": "https://static2.vietstock.vn/data/HNX/2026/BCTC/VN/QUY%203/SAS_Baocaotaichinh_Q3_2026.zip",
-    "source": "Vietstock",
-    "updated_at": "2026-10-22 05:40:39"
-  },
-  "QTP": {
-    "ticker": "QTP",
-    "bctc_type": "DAY_DU",
-    "title": "BCTC quý 3 năm 2026",
-    "date": "22/10/2026",
-    "doc_url": "https://static2.vietstock.vn/data/HNX/2026/BCTC/VN/QUY%203/QTP_Baocaotaichinh_Q3_2026.zip",
-    "source": "Vietstock",
-    "updated_at": "2026-10-22 05:40:44"
+    "updated_at": "2026-10-22 08:28:04"
   },
   "KTL": {
     "ticker": "KTL",
-    "bctc_type": "DAY_DU",
+    "company_name": "Công ty Cổ phần Kim khí Thăng Long",
+    "release_date": "22/10/2026",
     "title": "BCTC quý 3 năm 2026",
-    "date": "22/10/2026",
     "doc_url": "https://static2.vietstock.vn/data/UPCOM/2026/BCTC/VN/QUY%203/KTL_Baocaotaichinh_Q3_2026.zip?ver=323a308f",
     "source": "Vietstock",
-    "updated_at": "2026-10-22 05:55:24"
-  },
-  "NBP": {
-    "ticker": "NBP",
     "bctc_type": "DAY_DU",
-    "title": "BCTC quý 3 năm 2026",
-    "date": "22/10/2026",
-    "doc_url": "https://static2.vietstock.vn/data/HNX/2026/BCTC/VN/QUY%203/NBP_Baocaotaichinh_Q3_2026.zip",
-    "source": "Vietstock",
-    "updated_at": "2026-10-22 05:55:31"
+    "updated_at": "2026-10-22 08:39:02"
   },
-  "WSB": {
-    "ticker": "WSB",
-    "bctc_type": "HOP_NHAT",
-    "title": "Consolidated Financial Statement_Q3_2026",
-    "date": "21/10/2026 14:42",
-    "doc_url": "https://file.fpts.com.vn/FileStore2/File/EzIR/UploadFile/News/2026/10/21/File_1_7289_EN_ConsolidatedFinancialStatement_Q3_2026.pdf",
-    "source": "EzIR_FPTS",
-    "updated_at": "2026-10-22 05:55:39"
+  "SAS": {
+    "ticker": "SAS",
+    "company_name": "Công ty Cổ phần Dịch vụ Hàng không Sân bay Tân Sơn Nhất",
+    "release_date": "22/10/2026",
+    "title": "BCTC quý 3 năm 2026",
+    "doc_url": "https://static2.vietstock.vn/data/HNX/2026/BCTC/VN/QUY%203/SAS_Baocaotaichinh_Q3_2026.zip",
+    "source": "Vietstock",
+    "bctc_type": "DAY_DU",
+    "updated_at": "2026-10-22 08:49:56"
+  },
+  "QTP": {
+    "ticker": "QTP",
+    "company_name": "Công ty Cổ phần Nhiệt điện Quảng Ninh",
+    "release_date": "22/10/2026",
+    "title": "BCTC quý 3 năm 2026",
+    "doc_url": "https://static2.vietstock.vn/data/HNX/2026/BCTC/VN/QUY%203/QTP_Baocaotaichinh_Q3_2026.zip",
+    "source": "Vietstock",
+    "bctc_type": "DAY_DU",
+    "updated_at": "2026-10-22 08:49:57"
   },
   "DP3": {
     "ticker": "DP3",
-    "bctc_type": "DAY_DU",
+    "company_name": "Công ty Cổ Phần Dược Phẩm Trung Ương 3",
+    "release_date": "22/10/2026",
     "title": "BCTC quý 3 năm 2026",
-    "date": "22/10/2026",
     "doc_url": "https://static2.vietstock.vn/data/HNX/2026/BCTC/VN/QUY%203/DP3_Baocaotaichinh_Q3_2026.zip",
     "source": "Vietstock",
-    "updated_at": "2026-10-22 05:55:40"
+    "bctc_type": "DAY_DU",
+    "updated_at": "2026-10-22 10:38:59"
+  },
+  "NBP": {
+    "ticker": "NBP",
+    "company_name": "Công ty Cổ phần Nhiệt Điện Ninh Bình",
+    "release_date": "22/10/2026",
+    "title": "BCTC quý 3 năm 2026",
+    "doc_url": "https://static2.vietstock.vn/data/HNX/2026/BCTC/VN/QUY%203/NBP_Baocaotaichinh_Q3_2026.zip",
+    "source": "Vietstock",
+    "bctc_type": "DAY_DU",
+    "updated_at": "2026-10-22 11:54:57"
+  },
+  "IDV": {
+    "ticker": "IDV",
+    "company_name": "Công ty Cổ phần Phát triển Hạ tầng Vĩnh Phúc",
+    "release_date": "22/10/2026",
+    "title": "Báo cáo tài chính Quý 3/2026 (IDV)",
+    "doc_url": "https://www.vpid.vn/datafiles/files/VI_BaoCaoTaiChinhHopNhat_Q3_2026.pdf",
+    "source": "Company_Web",
+    "bctc_type": "DAY_DU",
+    "updated_at": "2026-10-22 11:55:08"
+  },
+  "NST": {
+    "ticker": "NST",
+    "company_name": "Công ty Cổ phần Ngân Sơn",
+    "release_date": "22/10/2026",
+    "title": "BCTC quý 3 năm 2026",
+    "doc_url": "https://static2.vietstock.vn/data/HNX/2026/BCTC/VN/QUY%203/NST_Baocaotaichinh_Q3_2026.zip",
+    "source": "Vietstock",
+    "bctc_type": "DAY_DU",
+    "updated_at": "2026-10-22 12:05:48"
   },
   "MSN": {
     "ticker": "MSN",
-    "bctc_type": "HOP_NHAT",
+    "company_name": "Công ty Cổ phần Tập đoàn Masan",
+    "release_date": "22/10/2026",
     "title": "22/10/202622/10/2026Profit fluctuations of explanation letter of Separated and Consolidated Financial Statements at 3Q.2026",
-    "date": "22/10/2026",
     "doc_url": "https://www.masangroup.com/wp-content/uploads/2026/10/20261022-MSN-Profit-fluctuations-explanation-for-Financial-Statements-in-Q3.2026.pdf",
     "source": "Company_Web",
-    "updated_at": "2026-10-22 05:55:41"
+    "bctc_type": "DAY_DU",
+    "updated_at": "2026-10-22 12:28:01"
+  },
+  "WSB": {
+    "ticker": "WSB",
+    "company_name": "Công ty Cổ phần Bia Sài Gòn - Miền Tây",
+    "release_date": "22/10/2026",
+    "title": "BCTC Công ty mẹ quý 3 năm 2026",
+    "doc_url": "https://static2.vietstock.vn/data/HNX/2026/BCTC/VN/QUY%203/WSB_Baocaotaichinh_Q3_2026_Congtyme.zip",
+    "source": "Vietstock",
+    "bctc_type": "RIENG",
+    "updated_at": "2026-10-22 18:48:31"
+  },
+  "AIC": {
+    "ticker": "AIC",
+    "company_name": "Công ty Cổ phần Tập đoàn Bảo hiểm DBV",
+    "release_date": "22/10/2026",
+    "title": "BCTC quý 3 năm 2026",
+    "doc_url": "https://static2.vietstock.vn/data/HNX/2026/BCTC/VN/QUY%203/AIC_Baocaotaichinh_Q3_2026.zip",
+    "source": "Vietstock",
+    "bctc_type": "DAY_DU",
+    "updated_at": "2026-10-22 17:39:52"
+  },
+  "CAT": {
+    "ticker": "CAT",
+    "company_name": "Công ty Cổ phần Thủy sản Cà Mau",
+    "release_date": "22/10/2026",
+    "title": "BCTC quý 3 năm 2026",
+    "doc_url": "https://static2.vietstock.vn/data/HNX/2026/BCTC/VN/QUY%203/CAT_Baocaotaichinh_Q3_2026.zip",
+    "source": "Vietstock",
+    "bctc_type": "DAY_DU",
+    "updated_at": "2026-10-22 17:39:52"
+  },
+  "AIG": {
+    "ticker": "AIG",
+    "company_name": "Công ty Cổ phần Nguyên liệu Á Châu AIG",
+    "release_date": "22/10/2026",
+    "title": "Tải xuống",
+    "doc_url": "https://asiagroup-vn.com/wp-content/uploads/2026/08/Bao-cao-tai-chinh-hop-nhat-Q3-2024.pdf",
+    "source": "Company_Web",
+    "bctc_type": "DAY_DU",
+    "updated_at": "2026-10-22 18:49:08"
+  },
+  "MVC": {
+    "ticker": "MVC",
+    "company_name": "Công ty Cổ phần Vật liệu và Xây dựng Bình Dương",
+    "release_date": "22/10/2026",
+    "title": "BCTC RIÊNG Q3/2026 VÀ VBGT LNST Q3/2026 SO VỚI CÙNG KỲ 2025",
+    "doc_url": "http://vlxdbd.com.vn/upload/files/VI_BaoCaoTaiChinhRieng_Q3_2026.pdf",
+    "source": "Company_Web",
+    "bctc_type": "DAY_DU",
+    "updated_at": "2026-10-22 18:49:37"
+  },
+  "PTB": {
+    "ticker": "PTB",
+    "company_name": "Công ty Cổ phần Phú Tài",
+    "release_date": "22/10/2026",
+    "title": "DOWNLOAD",
+    "doc_url": "https://api.phutai.com.vn/api/media/file/20261017%20-%20PTB%20-%20NQ%20HDQT%20KET%20QUA%20SXKD%20QUY%203%20NAM%202026.pdf?prefix=media",
+    "source": "Company_Web",
+    "bctc_type": "DAY_DU",
+    "updated_at": "2026-10-22 18:49:46"
   }
 }

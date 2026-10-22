@@ -41,6 +41,7 @@ def enable_windows_keep_awake():
 BASE_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
 TICKERS_G1_FILE = os.path.join(BASE_DIR, "data", "tickers_group1_115.json")
 TICKERS_G2_FILE = os.path.join(BASE_DIR, "data", "tickers_group2_69.json")
+TICKERS_G3_FILE = os.path.join(BASE_DIR, "data", "tickers_group3_94.json")
 TICKERS_FILE = TICKERS_G1_FILE # Tương thích ngược
 COMPLETED_CACHE_FILE = os.path.join(BASE_DIR, "data", "bctc_completed_cache.json")
 ALERTS_FILE = os.path.join(BASE_DIR, "data", "bctc_q3_live_alerts.json")
@@ -51,7 +52,7 @@ def load_all_target_tickers():
     """Tải và kết hợp toàn bộ danh mục Nhóm 1 (115 mã) + Nhóm 2 (69 mã)"""
     tickers = []
     seen = set()
-    for fpath in [TICKERS_G1_FILE, TICKERS_G2_FILE]:
+    for fpath in [TICKERS_G1_FILE, TICKERS_G2_FILE, TICKERS_G3_FILE]:
         if os.path.exists(fpath):
             try:
                 with open(fpath, "r", encoding="utf-8") as f:
@@ -865,7 +866,7 @@ def send_heartbeat(event_type, details=""):
             "content": f"☀️ **[08:00] BẮT ĐẦU PHIÊN GIÁM SÁT BCTC NGÀY {date_str}**",
             "embeds": [{
                 "title": "🟢 Hệ thống Giám sát đang hoạt động tự động",
-                "description": f"Hệ thống tự động quét **{len(load_all_target_tickers())} mã cổ phiếu (Nhóm 1 + Nhóm 2)**:\n• Tần suất quét ngầm: **5 phút/lần** (Phát hiện BCTC tức thì)\n• Báo nhịp đập Discord: **10 phút/lần** (Báo bình thường, chống spam)\n• Cảnh báo BCTC mới: **Ngay lập tức** kèm bóc tách LNST & % YoY\n{details}",
+                "description": f"Hệ thống tự động quét **{len(load_all_target_tickers())} mã cổ phiếu (Nhóm 1 + Nhóm 2 + Nhóm 3)**:\n• Tần suất quét ngầm: **5 phút/lần** (Phát hiện BCTC tức thì)\n• Báo nhịp đập Discord: **10 phút/lần** (Báo bình thường, chống spam)\n• Cảnh báo BCTC mới: **Ngay lập tức** kèm bóc tách LNST & % YoY\n{details}",
                 "color": 0x3B82F6,
                 "footer": {"text": "BCTC Live Monitor • dulieudautu.com"},
                 "timestamp": datetime.datetime.now(datetime.timezone.utc).isoformat()
@@ -1013,10 +1014,10 @@ def check_another_instance_running():
     return False
 
 def execute_single_scan(scan_index=1):
-    """Thực hiện một lượt quét Nhóm 1 + Nhóm 2"""
+    """Thực hiện một lượt quét Toàn bộ 3 Nhóm (Nhóm 1 + 2 + 3)"""
     tickers_list = load_all_target_tickers()
     if not tickers_list:
-        log("LỖI: Không tìm thấy danh sách cổ phiếu Nhóm 1 & Nhóm 2 trong thư mục data")
+        log("LỖI: Không tìm thấy danh sách cổ phiếu trong thư mục data")
         return 0, 0, 0
         
     completed_cache = load_completed_cache()
@@ -1034,7 +1035,7 @@ def execute_single_scan(scan_index=1):
     log(f"--- [LƯỢT #{scan_index}] Quét {len(to_scan)}/{len(tickers_list)} mã (đã hoàn tất: {len(already_done)}) ---")
     
     if not to_scan:
-        log(f"🎉 Toàn bộ {len(tickers_list)} mã (Nhóm 1 + Nhóm 2) đều đã có BCTC đầy đủ!")
+        log(f"🎉 Toàn bộ {len(tickers_list)} mã (Nhóm 1 + 2 + 3) đều đã có BCTC đầy đủ!")
         return 0, 0, 0
         
     start_all = time.time()
@@ -1132,7 +1133,7 @@ def execute_single_scan(scan_index=1):
     return new_found_count, len(to_scan), total_elapsed
 
 def main():
-    log("=== KHỞI ĐỘNG HỆ THỐNG GIÁM SÁT NHÓM 1 + NHÓM 2 (185 MÃ) BCTC (5 PHÚT/LẦN) ===")
+    log("=== KHỞI ĐỘNG HỆ THỐNG GIÁM SÁT TOÀN DIỆN 3 NHÓM (280 MÃ) BCTC (5 PHÚT/LẦN) ===")
     
     is_loop = ('--loop' in sys.argv)
     force_run = ('--force' in sys.argv)
