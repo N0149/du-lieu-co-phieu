@@ -1107,5 +1107,86 @@
     "source": "Vietstock",
     "bctc_type": "DAY_DU",
     "updated_at": "2026-10-21 16:10:47"
+  },
+  "VTB": {
+    "ticker": "VTB",
+    "bctc_type": "HOP_NHAT",
+    "title": "20261021 – VTB – BCTC Hop Nhat quy 3 nam 2026",
+    "date": "22/10/2026",
+    "doc_url": "https://vtb.com.vn/wp-content/uploads/2026/10/20261021-VTB-BCTC-Hop-Nhat-quy-3-nam-2026.pdf",
+    "source": "Company_Web",
+    "updated_at": "2026-10-22 05:40:00"
+  },
+  "NST": {
+    "ticker": "NST",
+    "bctc_type": "DAY_DU",
+    "title": "BCTC quý 3 năm 2026",
+    "date": "22/10/2026",
+    "doc_url": "https://static2.vietstock.vn/data/HNX/2026/BCTC/VN/QUY%203/NST_Baocaotaichinh_Q3_2026.zip",
+    "source": "Vietstock",
+    "updated_at": "2026-10-22 05:40:39"
+  },
+  "SAS": {
+    "ticker": "SAS",
+    "bctc_type": "DAY_DU",
+    "title": "BCTC quý 3 năm 2026",
+    "date": "22/10/2026",
+    "doc_url": "https://static2.vietstock.vn/data/HNX/2026/BCTC/VN/QUY%203/SAS_Baocaotaichinh_Q3_2026.zip",
+    "source": "Vietstock",
+    "updated_at": "2026-10-22 05:40:39"
+  },
+  "QTP": {
+    "ticker": "QTP",
+    "bctc_type": "DAY_DU",
+    "title": "BCTC quý 3 năm 2026",
+    "date": "22/10/2026",
+    "doc_url": "https://static2.vietstock.vn/data/HNX/2026/BCTC/VN/QUY%203/QTP_Baocaotaichinh_Q3_2026.zip",
+    "source": "Vietstock",
+    "updated_at": "2026-10-22 05:40:44"
+  },
+  "KTL": {
+    "ticker": "KTL",
+    "bctc_type": "DAY_DU",
+    "title": "BCTC quý 3 năm 2026",
+    "date": "22/10/2026",
+    "doc_url": "https://static2.vietstock.vn/data/UPCOM/2026/BCTC/VN/QUY%203/KTL_Baocaotaichinh_Q3_2026.zip?ver=323a308f",
+    "source": "Vietstock",
+    "updated_at": "2026-10-22 05:55:24"
+  },
+  "NBP": {
+    "ticker": "NBP",
+    "bctc_type": "DAY_DU",
+    "title": "BCTC quý 3 năm 2026",
+    "date": "22/10/2026",
+    "doc_url": "https://static2.vietstock.vn/data/HNX/2026/BCTC/VN/QUY%203/NBP_Baocaotaichinh_Q3_2026.zip",
+    "source": "Vietstock",
+    "updated_at": "2026-10-22 05:55:31"
+  },
+  "WSB": {
+    "ticker": "WSB",
+    "bctc_type": "HOP_NHAT",
+    "title": "Consolidated Financial Statement_Q3_2026",
+    "date": "21/10/2026 14:42",
+    "doc_url": "https://file.fpts.com.vn/FileStore2/File/EzIR/UploadFile/News/2026/10/21/File_1_7289_EN_ConsolidatedFinancialStatement_Q3_2026.pdf",
+    "source": "EzIR_FPTS",
+    "updated_at": "2026-10-22 05:55:39"
+  },
+  "DP3": {
+    "ticker": "DP3",
+    "bctc_type": "DAY_DU",
+    "title": "BCTC quý 3 năm 2026",
+    "date": "22/10/2026",
+    "doc_url": "https://static2.vietstock.vn/data/HNX/2026/BCTC/VN/QUY%203/DP3_Baocaotaichinh_Q3_2026.zip",
+    "source": "Vietstock",
+    "updated_at": "2026-10-22 05:55:40"
+  },
+  "MSN": {
+    "ticker": "MSN",
+    "bctc_type": "HOP_NHAT",
+    "title": "22/10/202622/10/2026Profit fluctuations of explanation letter of Separated and Consolidated Financial Statements at 3Q.2026",
+    "date": "22/10/2026",
+    "doc_url": "https://www.masangroup.com/wp-content/uploads/2026/10/20261022-MSN-Profit-fluctuations-explanation-for-Financial-Statements-in-Q3.2026.pdf",
+    "source": "Company_Web",
+    "updated_at": "2026-10-22 05:55:41"
   }
 }
