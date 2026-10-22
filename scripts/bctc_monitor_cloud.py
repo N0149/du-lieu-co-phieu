@@ -47,6 +47,8 @@ COMPLETED_CACHE_FILE = os.path.join(BASE_DIR, "data", "bctc_completed_cache.json
 ALERTS_FILE = os.path.join(BASE_DIR, "data", "bctc_q3_live_alerts.json")
 DISCORD_CONFIG_FILE = os.path.join(BASE_DIR, "data", "discord_config.json")
 STATUS_FILE = os.path.join(BASE_DIR, "data", "bctc_cloud_status.json")
+DATA_DIR = os.path.join(BASE_DIR, "data")
+IGNORED_DOCS_FILE = os.path.join(DATA_DIR, "ignored_docs.json")
 
 def load_all_target_tickers():
     """Tải và kết hợp toàn bộ danh mục Nhóm 1 (115 mã) + Nhóm 2 (69 mã)"""
@@ -94,16 +96,40 @@ def strip_accents(text):
 
 def is_valid_recent_bctc_date(date_pub):
     """
-    Kiểm tra ngày công bố có thuộc đợt BCTC hiện tại (tháng 10/2026) hay không:
-    - BCTC quý mới chỉ công bố từ cuối tháng 9 (>= 20/09/2026) và trong tháng 10, 11/2026.
-    - LOẠI BỎ TRIỆT ĐỂ các tài liệu công bố từ tháng 1 đến tháng 8/2026 (như tháng 7 của CAP).
-    - Nếu không có ngày công bố: trả về True để không bỏ sót.
+    Kiểm tra ngày công bố:
+    - Bắt buộc từ cuối tháng 9/2026 trở đi (mùa BCTC Q3/2026)
+    - Loại bỏ triệt để các năm cũ (2015 - 2025)
+    - Nếu là năm 2026, chỉ nhận tháng 9 (từ ngày 20), tháng 10, 11, 12.
     """
     if not date_pub:
         return True
     dp = str(date_pub).strip()
     
-    m = re.search(r'(\d{1,2})/(\d{1,2})/(2026|26)', dp)
+    # 1. Reject explicit 4-digit past years (2015-2025)
+    if re.search(r'(?<!\d)(?:201[5-9]|202[0-5])(?!\d)', dp):
+        return False
+
+    # 2. Reject 2-digit past years in dates: e.g. 26/10/22 or 26-10-22
+    if re.search(r'(?<!\d)\d{1,2}[/-]\d{1,2}[/-](?:1[5-9]|2[0-5])(?!\d)', dp):
+        return False
+        
+    # 3. YYYYMMDD format (e.g. 20221026, 20260728, 20261020)
+    m_ymd = re.search(r'(?<!\d)(20\d\d)(0[1-9]|1[0-2])([0-3]\d)(?!\d)', dp)
+    if m_ymd:
+        yr = int(m_ymd.group(1))
+        mo = int(m_ymd.group(2))
+        da = int(m_ymd.group(3))
+        if yr < 2026:
+            return False
+        if yr == 2026:
+            if mo in [10, 11, 12]:
+                return True
+            if mo == 9 and da >= 20:
+                return True
+            return False
+
+    # 4. dd/mm/yyyy or dd/mm/yy
+    m = re.search(r'(?<!\d)(\d{1,2})/(\d{1,2})/(2026|26)(?!\d)', dp)
     if m:
         day = int(m.group(1))
         month = int(m.group(2))
@@ -112,8 +138,9 @@ def is_valid_recent_bctc_date(date_pub):
         if month == 9 and day >= 20:
             return True
         return False
-        
-    m2 = re.search(r'2026-(\d{1,2})-(\d{1,2})', dp)
+
+    # 5. yyyy-mm-dd
+    m2 = re.search(r'(?<!\d)2026-(\d{1,2})-(\d{1,2})(?!\d)', dp)
     if m2:
         month = int(m2.group(1))
         day = int(m2.group(2))
@@ -122,19 +149,30 @@ def is_valid_recent_bctc_date(date_pub):
         if month == 9 and day >= 20:
             return True
         return False
-        
+
+    # 6. dd-mm-yyyy
+    m3 = re.search(r'(?<!\d)(\d{1,2})-(\d{1,2})-(2026|26)(?!\d)', dp)
+    if m3:
+        day = int(m3.group(1))
+        month = int(m3.group(2))
+        if month in [10, 11, 12]:
+            return True
+        if month == 9 and day >= 20:
+            return True
+        return False
+
     if '10/2026' in dp or '10/26' in dp or '11/2026' in dp or '12/2026' in dp:
         return True
-        
+
     for mo in range(1, 9):
-        if f'/{mo:02d}/2026' in dp or f'/{mo:02d}/26' in dp or f'/{mo}/2026' in dp:
+        if f'/{mo:02d}/2026' in dp or f'/{mo:02d}/26' in dp or f'/{mo}/2026' in dp or f'-{mo:02d}-2026' in dp:
             return False
-            
+
     return True
 
 def is_q3_2026(text, ticker="", doc_url="", date_pub=""):
     """
-    Nhận diện tài liệu BCTC Quý 3/2026 (hoặc Quý mới cho các mã niên độ đặc thù như CAP)
+    Nhận diện tài liệu BCTC Quý 3/2026 (hoặc Quý mới cho các mã niên độ đặc thù như CAP, IDV)
     theo tiêu chí 'Lọc nhầm còn hơn bỏ sót'.
     """
     if not text:
@@ -146,8 +184,8 @@ def is_q3_2026(text, ticker="", doc_url="", date_pub=""):
     if any(k in clean for k in excluded):
         return False, ""
         
-    has_2026 = bool(re.search(r'(?<!\d)(?:2026|\'26)(?!\d)', clean)) or ('2025-2026' in clean) or ('/2026/' in clean) or ('_2026' in clean) or ('10/2026' in str(date_pub)) or ('11/2026' in str(date_pub)) or ('12/2026' in str(date_pub))
-    has_old = bool(re.search(r'(?:quy\s*[1-4]|q[1-4]|quarter\s*[1-4])[_\s\-/]*(?:201[89]|202[0-5])(?!\d)', clean))
+    has_2026 = bool(re.search(r'(?<!\d)(?:2026|\x2726)(?!\d)', clean)) or ('2025-2026' in clean) or ('/2026/' in clean) or ('_2026' in clean) or ('10/2026' in str(date_pub)) or ('11/2026' in str(date_pub)) or ('12/2026' in str(date_pub))
+    has_old = bool(re.search(r'(?:quy\s*[1-4]|q[1-4]|quarter\s*[1-4])[_\s\-/]*(?:201[5-9]|202[0-5])(?!\d)', clean))
     if has_old and not has_2026:
         return False, ""
         
@@ -155,14 +193,14 @@ def is_q3_2026(text, ticker="", doc_url="", date_pub=""):
     if not has_bctc:
         return False, ""
         
-    is_cap = (str(ticker).upper() == 'CAP')
-    if is_cap:
-        # Với CAP: BCTC Quý 3 ra vào tháng 7 là kỳ CŨ, TUYỆT ĐỐI KHÔNG nhận Quý 3!
+    is_special_fiscal = (str(ticker).upper() in ['CAP', 'IDV'])
+    if is_special_fiscal:
+        # Với CAP, IDV: BCTC Quý 3 ra vào tháng 7 là kỳ CŨ, TUYỆT ĐỐI KHÔNG nhận Quý 3!
         has_q3 = bool(re.search(r'(?:(?<![a-zA-Z0-9])|^)(?:quy\s*3|q3|quy\s*iii|quarter\s*3|q\.3|q_3)(?![a-zA-Z0-9])', clean))
         if has_q3:
             return False, ""
         has_q4 = bool(re.search(r'(?:(?<![a-zA-Z0-9])|^)(?:quy\s*4|q4|quy\s*iv|quarter\s*4|q\.4|q_4)(?![a-zA-Z0-9])', clean))
-        has_annual = any(k in clean for k in ['bctc nam', 'tai chinh nam', 'kiem toan nam'])
+        has_annual = any(k in clean for k in ['bctc nam', 'tai chinh nam', 'kiem toan nam', 'ca nam'])
         if (has_q4 or has_annual) and has_2026:
             return True, text
         return False, ""
@@ -293,71 +331,85 @@ def check_company_website(ticker, uri):
             html = resp.read().decode('utf-8', errors='ignore')
             
         soup = BeautifulSoup(html, 'html.parser')
+        ignored = set()
+        ignored_file = os.path.join(DATA_DIR, "ignored_docs.json")
+        if os.path.exists(ignored_file):
+            try:
+                with open(ignored_file, "r", encoding="utf-8") as f_ig:
+                    ignored = set(json.load(f_ig))
+            except:
+                pass
+
         found_candidates = []
         for a in soup.find_all('a', href=True):
             h = a['href']
             t = a.get_text(strip=True)
+            h_full = urllib.parse.urljoin(clean_uri, h)
+            p_text = a.parent.get_text(separator=' ', strip=True) if a.parent else ''
+            if len(p_text) > 300:
+                p_text = ''
+            if h_full in ignored or h in ignored or (t and t in ignored and len(t) > 5) or (p_text and p_text in ignored) or f"{ticker}:{h_full}" in ignored:
+                continue
             unquote_h = urllib.parse.unquote(h)
-            combo = (t + " " + unquote_h).strip()
+            combo = (p_text + " " + t + " " + unquote_h).strip()
             
-            m_date = re.search(r'(\d{1,2})/(\d{1,2})/(2026|26)', combo)
-            if m_date and not is_valid_recent_bctc_date(m_date.group(0)):
+            m_date = re.search(r'(?<!\d)(\d{1,2}/\d{1,2}/\d{2,4})(?!\d)', combo) or re.search(r'(?<!\d)(20\d\d-\d{1,2}-\d{1,2})(?!\d)', combo) or re.search(r'(?<!\d)(20\d{6})(?!\d)', combo)
+            date_str = m_date.group(1) if m_date else ''
+            if date_str and not is_valid_recent_bctc_date(date_str):
                 continue
             
-            matched, snippet = is_q3_2026(combo, ticker=ticker)
+            matched, snippet = is_q3_2026(combo, ticker=ticker, doc_url=h, date_pub=date_str)
             if matched:
                 is_file = any(h.lower().endswith(ext) for ext in ['.pdf', '.zip', '.rar', '.xlsx', '.docx'])
                 is_hop_nhat = any(k in combo.lower() for k in ['hợp nhất', 'hop nhat'])
+                cand_title = t
+                if len(t) < 6 or any(t.lower().startswith(p) for p in ['xem', 'tai', 'download', 'chi tiet', 'link', 'doc', 'pdf', '.pdf']):
+                    if p_text and len(p_text) >= 10:
+                        cand_title = re.sub(r'(\.pdf|pdf|\(\d{1,2}/\d{1,2}/\d{2,4}\))', '', p_text, flags=re.I).strip()
+                if len(cand_title) < 6:
+                    cand_title = f"Báo cáo tài chính Quý 3/2026 ({ticker})" if ticker not in ['CAP', 'IDV'] else f"Báo cáo tài chính Quý 4/2026 ({ticker})"
+
                 found_candidates.append({
-                    'text': t,
-                    'href': urllib.parse.urljoin(clean_uri, h),
+                    'text': cand_title,
+                    'href': h_full,
                     'is_file': is_file,
                     'is_hop_nhat': is_hop_nhat,
-                    'snippet': snippet
+                    'date': date_str or datetime.datetime.now().strftime("%d/%m/%Y")
                 })
                 
         if found_candidates:
             found_candidates.sort(key=lambda x: (x['is_file'], x['is_hop_nhat']), reverse=True)
             best = found_candidates[0]
-            best_text = best['text']
-            bctc_cand = next((c for c in found_candidates if any(k in c['text'].lower() for k in ['báo cáo tài chính', 'bctc', 'financial']) and not any(k in c['text'].lower() for k in ['giải trình', 'giai trinh', 'xemfile', 'xem file', 'xem '])), None)
-            desc_cand = next((c for c in found_candidates if len(c['text']) > 10 and not any(c['text'].lower().startswith(p) for p in ['xem', 'tai', 'download', 'chi tiet', 'link', 'doc'])), None)
-            
-            if bctc_cand:
-                final_title = bctc_cand['text']
-            elif desc_cand:
-                final_title = desc_cand['text']
-            elif best_text and len(best_text) >= 6 and not any(best_text.lower().startswith(p) for p in ['xem', 'tai', 'download', 'chi tiet', 'link', 'doc']):
-                final_title = best_text
-            else:
-                final_title = "Báo cáo tài chính Quý 3/2026"
-                
+            b_type = 'HOP_NHAT' if best['is_hop_nhat'] else 'DAY_DU'
             return {
                 'has_q3': True,
-                'bctc_type': classify_bctc_type(final_title),
+                'bctc_type': b_type,
                 'source': 'Company_Web',
-                'title': final_title,
-                'date': datetime.datetime.now().strftime("%d/%m/%Y"),
+                'title': best['text'],
+                'date': best['date'],
                 'doc_url': resolve_direct_pdf(best['href'])
             }
             
         for tag in soup.find_all(['tr', 'li', 'p']):
             block_text = tag.get_text(separator=' ', strip=True)
             if len(block_text) < 250:
-                m_date = re.search(r'(\d{1,2})/(\d{1,2})/(2026|26)', block_text)
-                if m_date and not is_valid_recent_bctc_date(m_date.group(0)):
+                m_date = re.search(r'(?<!\d)(\d{1,2}/\d{1,2}/\d{2,4})(?!\d)', block_text) or re.search(r'(?<!\d)(20\d\d-\d{1,2}-\d{1,2})(?!\d)', block_text)
+                date_str = m_date.group(1) if m_date else ''
+                if date_str and not is_valid_recent_bctc_date(date_str):
                     continue
-                matched, snippet = is_q3_2026(block_text, ticker=ticker)
+                matched, snippet = is_q3_2026(block_text, ticker=ticker, date_pub=date_str)
                 if matched:
                     a_tag = tag.find('a', href=True)
                     doc_url = urllib.parse.urljoin(clean_uri, a_tag['href']) if a_tag else clean_uri
-                    final_title = snippet or "Báo cáo tài chính Quý 3/2026"
+                    if doc_url in ignored or block_text in ignored or f"{ticker}:{doc_url}" in ignored:
+                        continue
+                    final_title = snippet or (f"Báo cáo tài chính Quý 3/2026 ({ticker})" if ticker not in ['CAP', 'IDV'] else f"Báo cáo tài chính Quý 4/2026 ({ticker})")
                     return {
                         'has_q3': True,
                         'bctc_type': classify_bctc_type(final_title),
                         'source': 'Company_Web',
                         'title': final_title,
-                        'date': datetime.datetime.now().strftime("%d/%m/%Y"),
+                        'date': date_str or datetime.datetime.now().strftime("%d/%m/%Y"),
                         'doc_url': resolve_direct_pdf(doc_url)
                     }
         return {'has_q3': False, 'source': 'Company_Web'}

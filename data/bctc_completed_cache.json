@@ -1168,16 +1168,6 @@
     "bctc_type": "DAY_DU",
     "updated_at": "2026-10-22 11:54:57"
   },
-  "IDV": {
-    "ticker": "IDV",
-    "company_name": "Công ty Cổ phần Phát triển Hạ tầng Vĩnh Phúc",
-    "release_date": "22/10/2026",
-    "title": "Báo cáo tài chính Quý 3/2026 (IDV)",
-    "doc_url": "https://www.vpid.vn/datafiles/files/VI_BaoCaoTaiChinhHopNhat_Q3_2026.pdf",
-    "source": "Company_Web",
-    "bctc_type": "DAY_DU",
-    "updated_at": "2026-10-22 11:55:08"
-  },
   "NST": {
     "ticker": "NST",
     "company_name": "Công ty Cổ phần Ngân Sơn",
@@ -1206,7 +1196,7 @@
     "doc_url": "https://static2.vietstock.vn/data/HNX/2026/BCTC/VN/QUY%203/WSB_Baocaotaichinh_Q3_2026_Congtyme.zip",
     "source": "Vietstock",
     "bctc_type": "RIENG",
-    "updated_at": "2026-10-22 18:48:31"
+    "updated_at": "2026-10-22 19:56:30"
   },
   "AIC": {
     "ticker": "AIC",
@@ -1257,5 +1247,15 @@
     "source": "Company_Web",
     "bctc_type": "DAY_DU",
     "updated_at": "2026-10-22 18:49:46"
+  },
+  "IDV": {
+    "ticker": "IDV",
+    "company_name": "Công ty Cổ phần Phát triển Hạ tầng Vĩnh Phúc",
+    "release_date": "20/10/2026",
+    "title": "BCTC hợp nhất Quý 4 năm tài chính 2026 của Công ty cổ phần phát triển hạ tầng Vĩnh Phúc",
+    "doc_url": "https://www.vpid.vn/datafiles/files/BCTC%20H%E1%BB%A3p%20Nh%E1%BA%A5t%20-%20TV.pdf",
+    "source": "Company_Web",
+    "bctc_type": "HOP_NHAT",
+    "updated_at": "2026-10-22 20:17:38"
   }
 }
