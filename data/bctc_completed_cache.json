@@ -1319,5 +1319,41 @@
     "doc_url": "https://file.fpts.com.vn/FileStore2/File/EzIR/UploadFile/News/2026/10/22/File_1_7356_VI_BaoCaoTaiChinhRieng_Q3_2026.signed.pdf",
     "source": "EzIR_FPTS",
     "updated_at": "2026-10-23 05:40:19"
+  },
+  "TIP": {
+    "ticker": "TIP",
+    "bctc_type": "HOP_NHAT",
+    "title": "Báo cáo tài chính Hợp nhất quý 3 năm 2026",
+    "date": "23/10/2026 14:07",
+    "doc_url": "https://file.fpts.com.vn/FileStore2/File/EzIR/UploadFile/News/2026/10/23/File_1_8391_TIP_-_BCTC_HOP_NHAT_QUY_3_NAM_2026.pdf",
+    "source": "EzIR_FPTS",
+    "updated_at": "2026-10-23 12:46:07"
+  },
+  "ABT": {
+    "ticker": "ABT",
+    "bctc_type": "HOP_NHAT",
+    "title": "23/10/2026 16:00 BCTC Q3.2026 (BC hợp nhất) EN",
+    "date": "23/10/2026",
+    "doc_url": "https://aquatexbentre.com/wp-content/uploads/2026/10/20261023-ABT-Consolidated-Financial-Statements-for-the-Third-Quarter-of-2026_compressed.pdf",
+    "source": "Company_Web",
+    "updated_at": "2026-10-23 12:46:12"
+  },
+  "HAH": {
+    "ticker": "HAH",
+    "bctc_type": "HOP_NHAT",
+    "title": "Báo cáo tài chính hợp nhất quý 3 năm 2026",
+    "date": "23/10/2026",
+    "doc_url": "https://haiants.vn/files/Quan_he_co_dong/Bao_cao_tai_chinh/20261023-HAH-Bao-cao-tai-chinh-hop-nhat-quy-III-2026.pdf",
+    "source": "Company_Web",
+    "updated_at": "2026-10-23 12:46:16"
+  },
+  "PMS": {
+    "ticker": "PMS",
+    "bctc_type": "HOP_NHAT",
+    "title": "Báo cáo tài chính hợp nhất Quý 3 năm 2026",
+    "date": "23/10/2026 16:04",
+    "doc_url": "https://file.fpts.com.vn/FileStore2/File/EzIR/UploadFile/News/2026/10/23/File_1_2402_VI_BaoCaoTaiChinh_Q3_2026.pdf",
+    "source": "EzIR_FPTS",
+    "updated_at": "2026-10-23 12:46:22"
   }
 }
