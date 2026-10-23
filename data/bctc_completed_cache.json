@@ -1190,13 +1190,12 @@
   },
   "WSB": {
     "ticker": "WSB",
-    "company_name": "Công ty Cổ phần Bia Sài Gòn - Miền Tây",
-    "release_date": "22/10/2026",
-    "title": "BCTC Công ty mẹ quý 3 năm 2026",
-    "doc_url": "https://static2.vietstock.vn/data/HNX/2026/BCTC/VN/QUY%203/WSB_Baocaotaichinh_Q3_2026_Congtyme.zip",
+    "bctc_type": "HOP_NHAT",
+    "title": "BCTC Hợp nhất quý 3 năm 2026",
+    "date": "23/10/2026",
+    "doc_url": "https://static2.vietstock.vn/data/UPCOM/2026/BCTC/VN/QUY%203/WSB_Baocaotaichinh_Q3_2026_Hopnhat.zip?ver=cb0dc887",
     "source": "Vietstock",
-    "bctc_type": "RIENG",
-    "updated_at": "2026-10-22 19:56:30"
+    "updated_at": "2026-10-23 05:39:58"
   },
   "AIC": {
     "ticker": "AIC",
@@ -1257,5 +1256,68 @@
     "source": "Company_Web",
     "bctc_type": "HOP_NHAT",
     "updated_at": "2026-10-22 20:17:38"
+  },
+  "DTP": {
+    "ticker": "DTP",
+    "bctc_type": "DAY_DU",
+    "title": "BCTC quý 3 năm 2026",
+    "date": "23/10/2026",
+    "doc_url": "https://static2.vietstock.vn/data/HNX/2026/BCTC/VN/QUY%203/DTP_Baocaotaichinh_Q3_2026.zip",
+    "source": "Vietstock",
+    "updated_at": "2026-10-23 05:39:38"
+  },
+  "IJC": {
+    "ticker": "IJC",
+    "bctc_type": "HOP_NHAT",
+    "title": "IJC_CBTT Báo cáo tài chính hợp nhất quý 3 năm 2026",
+    "date": "20261023",
+    "doc_url": "https://becamexijc.com/wp-content/uploads/2026/10/20261023-IJC-BCTC-hop-nhat-Q3.2026.pdf",
+    "source": "Company_Web",
+    "updated_at": "2026-10-23 05:39:45"
+  },
+  "PIA": {
+    "ticker": "PIA",
+    "bctc_type": "DAY_DU",
+    "title": "BCTC quý 3 năm 2026",
+    "date": "23/10/2026",
+    "doc_url": "https://static2.vietstock.vn/data/HNX/2026/BCTC/VN/QUY%203/PIA_Baocaotaichinh_Q3_2026.zip",
+    "source": "Vietstock",
+    "updated_at": "2026-10-23 05:39:49"
+  },
+  "PJC": {
+    "ticker": "PJC",
+    "bctc_type": "DAY_DU",
+    "title": "BCTC quý 3 năm 2026",
+    "date": "23/10/2026",
+    "doc_url": "https://static2.vietstock.vn/data/HNX/2026/BCTC/VN/QUY%203/PJC_Baocaotaichinh_Q3_2026.zip",
+    "source": "Vietstock",
+    "updated_at": "2026-10-23 05:39:54"
+  },
+  "IST": {
+    "ticker": "IST",
+    "bctc_type": "DAY_DU",
+    "title": "BCTC quý 3 năm 2026",
+    "date": "23/10/2026",
+    "doc_url": "https://static2.vietstock.vn/data/HNX/2026/BCTC/VN/QUY%203/IST_Baocaotaichinh_Q3_2026.zip",
+    "source": "Vietstock",
+    "updated_at": "2026-10-23 05:40:02"
+  },
+  "VBC": {
+    "ticker": "VBC",
+    "bctc_type": "DAY_DU",
+    "title": "BCTC quý 3 năm 2026",
+    "date": "23/10/2026",
+    "doc_url": "https://static2.vietstock.vn/data/HNX/2026/BCTC/VN/QUY%203/VBC_Baocaotaichinh_Q3_2026.zip",
+    "source": "Vietstock",
+    "updated_at": "2026-10-23 05:40:08"
+  },
+  "SNZ": {
+    "ticker": "SNZ",
+    "bctc_type": "RIENG",
+    "title": "CBTT Báo cáo tài chính riêng quý III/2026",
+    "date": "22/10/2026 16:08",
+    "doc_url": "https://file.fpts.com.vn/FileStore2/File/EzIR/UploadFile/News/2026/10/22/File_1_7356_VI_BaoCaoTaiChinhRieng_Q3_2026.signed.pdf",
+    "source": "EzIR_FPTS",
+    "updated_at": "2026-10-23 05:40:19"
   }
 }
