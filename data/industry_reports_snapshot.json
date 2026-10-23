@@ -1,5 +1,31 @@
 [
   {
+    "id": "wd_ind_26087",
+    "title": "Khơi thông mạch khí quốc gia - Đánh thức chu kỳ tăng trưởng",
+    "slug": "dau-khi-khoi-thong-mach-khi-quoc-gia-danh-thuc-chu-ky-tang-truong-wd_ind_26087",
+    "source": "GTJA",
+    "date": "2026-10-23",
+    "displayDate": "23/10/2026",
+    "pageCount": 0,
+    "description": "Khơi thông mạch khí quốc gia - Đánh thức chu kỳ tăng trưởng",
+    "downloadUrl": "https://cdn02.wigroup.vn/baocaophantich/ar_26506_GTJA_2026-10-23.pdf",
+    "thumbnailUrl": "",
+    "sectorName": "Dầu khí"
+  },
+  {
+    "id": "wd_ind_26091",
+    "title": "Báo cáo thị trường Sơ cấp HN & HCM - Báo cáo BĐS Quý 3/2026",
+    "slug": "bat-dong-san-dan-cu-bao-cao-thi-truong-so-cap-hn-hcm-bao-cao-bds-quy-3-2026-wd_ind_26091",
+    "source": "ONEHOUSING",
+    "date": "2026-10-22",
+    "displayDate": "22/10/2026",
+    "pageCount": 0,
+    "description": "Báo cáo thị trường Sơ cấp HN & HCM - Báo cáo BĐS Quý 3/2026",
+    "downloadUrl": "https://cdn02.wigroup.vn/baocaophantich/ar_26512_ONEHOUSING_2026-10-22.pdf",
+    "thumbnailUrl": "",
+    "sectorName": "Bất động sản dân cư"
+  },
+  {
     "id": "vc_37415",
     "title": "Cập nhật Vĩ mô - Thị trường lao động Việt Nam cải thiện trong bối cảnh tăng trưởng kinh tế tích cực",
     "slug": "cap-nhat-vi-mo-thi-truong-lao-dong-viet-nam-cai-thien-trong-boi-canh-tang-truong-kinh-te-tich-cuc",
@@ -11,6 +37,19 @@
     "downloadUrl": "https://www.vietcap.com.vn/api/cms-api/uploads/file/202610/CapnhatVM-20261020.pdf",
     "thumbnailUrl": "",
     "sectorName": "Vĩ mô & Chiến lược"
+  },
+  {
+    "id": "22598",
+    "title": "Báo cáo ngành Ngân hàng: Công văn 9608/NHNN - CSTT",
+    "slug": "bao-cao-nganh-ngan-hang-cong-van-9608nhnn-cstt-",
+    "source": "VPX",
+    "date": "2026-10-21",
+    "displayDate": "21/10/2026",
+    "pageCount": 6,
+    "description": "Ngày 18/10/2026, Ngân hàng Nhà nước ban hành Công văn 9608/NHNN-CSTT yêu cầu các tổ chức tín dụng giảm lãi suất tiền gửi niêm yết tối thiểu 0.5%/năm đối với kỳ hạn từ 6 tháng trở lên và giảm lãi suất cho vay từ 1.5 - 2.0%/năm đối với lĩnh vực sản xuất kinh doanh, lĩnh vực ưu tiên. Yêu cầu điều chỉnh áp dụng cho cả dư nợ hiện hữu và khoản vay mới. Các ngân hàng không tuân thủ có thể bị xem xét lại chỉ tiêu tăng trưởng tín dụng năm 2026 - 2027 và áp dụng tỷ lệ an toàn cao hơn. Tính đến 19/10/2026, huy động tiền gửi tăng 11.22% và tín dụng tăng 11.44% so với cuối năm 2025. Công văn cũng siết chặt hoạt động mua hẳn miễn truy đòi bộ chứng từ theo L/C tự phát hành bằng cách yêu cầu trừ số dư phát hành trong năm 2026 khỏi chỉ tiêu tăng trưởng tín dụng tối đa.",
+    "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/sector/bao-cao-nganh-ngan-hang-cong-van-9608nhnn-cstt-22598.pdf",
+    "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/sector/bao-cao-nganh-ngan-hang-cong-van-9608nhnn-cstt-22598.jpg",
+    "sectorName": "Ngân hàng"
   },
   {
     "id": "wd_ind_26048",
@@ -451,19 +490,6 @@
     "pageCount": 0,
     "description": "Báo cáo đánh giá ảnh hưởng của Thông tư 50/2026/TT-NHNN đến Ngành Ngân hàng",
     "downloadUrl": "https://cdn02.wigroup.vn/baocaophantich/ar_25788_SHS_2026-10-04.pdf",
-    "thumbnailUrl": "",
-    "sectorName": "Ngân hàng"
-  },
-  {
-    "id": "wd_ind_25838",
-    "title": "Thông tư 50/2026/TT-NHNN: Lộ trình chuyển đổi linh hoạt hơn, tiếp tục hướng tới chuẩn Basel III",
-    "slug": "ngan-hang-thong-tu-50-2026-tt-nhnn-lo-trinh-chuyen-doi-linh-hoat-hon-tiep-tuc-huong-toi-chuan-basel-iii-wd_ind_25838",
-    "source": "VPBS",
-    "date": "2026-10-02",
-    "displayDate": "02/10/2026",
-    "pageCount": 0,
-    "description": "Thông tư 50/2026/TT-NHNN: Lộ trình chuyển đổi linh hoạt hơn, tiếp tục hướng tới chuẩn Basel III",
-    "downloadUrl": "https://cdn02.wigroup.vn/baocaophantich/ar_25744_VPBS_2026-10-02.pdf",
     "thumbnailUrl": "",
     "sectorName": "Ngân hàng"
   },
@@ -934,32 +960,6 @@
     "downloadUrl": "https://cdn02.wigroup.vn/baocaophantich/ar_25635_SHS_2026-09-24.pdf",
     "thumbnailUrl": "",
     "sectorName": "Bán lẻ"
-  },
-  {
-    "id": "wd_ind_25710",
-    "title": "Báo cáo ngành Ngân hàng Quý 2/2026: Điểm nhìn từ bảng cân đối",
-    "slug": "ngan-hang-bao-cao-nganh-ngan-hang-quy-2-2026-diem-nhin-tu-bang-can-doi-wd_ind_25710",
-    "source": "PSI",
-    "date": "2026-09-24",
-    "displayDate": "24/09/2026",
-    "pageCount": 0,
-    "description": "Báo cáo ngành Ngân hàng Quý 2/2026: Điểm nhìn từ bảng cân đối",
-    "downloadUrl": "https://cdn02.wigroup.vn/baocaophantich/ar_25620_PSI_2026-09-24.pdf",
-    "thumbnailUrl": "",
-    "sectorName": "Ngân hàng"
-  },
-  {
-    "id": "wd_ind_25709",
-    "title": "Báo cáo Ngành KCN – Dự báo KQKD Q3/2026: Lợi nhuận có sự phân hóa",
-    "slug": "bat-dong-san-khu-cong-nghiep-bao-cao-nganh-kcn-du-bao-kqkd-q3-2026-loi-nhuan-co-su-phan-hoa-wd_ind_25709",
-    "source": "MBS",
-    "date": "2026-09-24",
-    "displayDate": "24/09/2026",
-    "pageCount": 0,
-    "description": "Báo cáo Ngành KCN – Dự báo KQKD Q3/2026: Lợi nhuận có sự phân hóa",
-    "downloadUrl": "https://cdn02.wigroup.vn/baocaophantich/ar_25622_MBS_2026-09-24.pdf",
-    "thumbnailUrl": "",
-    "sectorName": "Bất động sản khu công nghiệp"
   },
   {
     "id": "22268",
