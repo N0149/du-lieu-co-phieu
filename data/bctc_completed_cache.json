@@ -1355,5 +1355,35 @@
     "doc_url": "https://file.fpts.com.vn/FileStore2/File/EzIR/UploadFile/News/2026/10/23/File_1_2402_VI_BaoCaoTaiChinh_Q3_2026.pdf",
     "source": "EzIR_FPTS",
     "updated_at": "2026-10-23 12:46:22"
+  },
+  "BLI": {
+    "ticker": "BLI",
+    "company_name": "Tổng Công ty Cổ phần Bảo hiểm Bảo Long",
+    "release_date": "23/10/2026",
+    "title": "23/10/2026Báo cáo tài chính Quý III và 9 tháng năm 2026",
+    "doc_url": "https://baolonginsurance.com.vn/Data/Sites/1/media/Nha dau tu/bao-cao-tai-chinh/2026/QU%C3%9D 3.2026 - BCTC QUY 3 VA 9 THANG 2026 TIENG VIET.pdf",
+    "source": "Company_Web",
+    "bctc_type": "DAY_DU",
+    "updated_at": "2026-10-25 15:25:14"
+  },
+  "PPP": {
+    "ticker": "PPP",
+    "company_name": "Công ty Cổ phần Dược phẩm Phong Phú",
+    "release_date": "25/10/2026",
+    "title": "BÁO CÁO TÀI CHÍNH HỢP NHẤT QUÝ III NĂM 2026",
+    "doc_url": "https://duocphongphu.vn/wp-content/uploads/2026/10/VI_BaoCaoTaiChinh_QIII.2026_HopNhat.pdf",
+    "source": "Company_Web",
+    "bctc_type": "HOP_NHAT",
+    "updated_at": "2026-10-25 15:25:21"
+  },
+  "MAC": {
+    "ticker": "MAC",
+    "company_name": "Công ty Cổ phần Tập đoàn Macstar",
+    "release_date": "25/10/2026",
+    "title": "Báo cáo tài chính hợp nhất Quý 3 năm 2026",
+    "doc_url": "https://macstar.com.vn/bao-cao-tai-chinh-hop-nhat-quy-3-nam-2026",
+    "source": "Company_Web",
+    "bctc_type": "HOP_NHAT",
+    "updated_at": "2026-10-25 17:44:43"
   }
 }
