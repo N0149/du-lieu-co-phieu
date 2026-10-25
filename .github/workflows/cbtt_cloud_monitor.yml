@@ -1,0 +1,99 @@
+name: Giám sát Công bố Bất thường & Giao dịch Nội bộ (Cloud 18:00 Hàng Ngày)
+
+on:
+  schedule:
+    # --- MÙA BÁO CÁO TÀI CHÍNH: QUÉT 1 LẦN BUỔI TỐI LÚC 18:00 (GIỜ VIỆT NAM) ---
+    # Giờ Việt Nam (UTC+7) 18:00 = 11:00 UTC
+    # Chạy hàng ngày lúc 18:00 VN:
+    - cron: '0 11 * * *'
+
+    # --- HƯỚNG DẪN ĐỔI TẦN SUẤT SAU MÙA BÁO CÁO TÀI CHÍNH ---
+    # Khi hết mùa BCTC và muốn quét dày hơn, bạn chỉ cần mở các dòng dưới đây:
+    # 1. Quét 2 lần/ngày (12:00 trưa & 18:00 tối VN):
+    # - cron: '0 5,11 * * *'
+    # 2. Quét 3 lần/ngày (09:00, 13:00, 18:00 VN):
+    # - cron: '0 2,6,11 * * 1-5'
+    # 3. Quét định kỳ mỗi 2 tiếng trong phiên (09:00 -> 17:00 VN):
+    # - cron: '0 2-10/2 * * 1-5'
+
+  workflow_dispatch:
+    inputs:
+      days:
+        description: 'Số ngày nhìn lại (mặc định: 3 ngày)'
+        required: false
+        default: '3'
+        type: string
+      dry_run:
+        description: 'Chỉ kiểm tra, không gửi tin Discord (true/false)'
+        required: false
+        default: 'false'
+        type: string
+      symbol:
+        description: 'Quét riêng 1 mã cổ phiếu (để trống nếu quét toàn bộ)'
+        required: false
+        default: ''
+        type: string
+
+jobs:
+  monitor-cbtt:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: |
+          pip install beautifulsoup4
+
+      - name: Run CBTT Cloud Monitor
+        env:
+          DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          EXTRA_ARGS=""
+          if [ -n "${{ github.event.inputs.days }}" ]; then
+            EXTRA_ARGS="$EXTRA_ARGS --days=${{ github.event.inputs.days }}"
+          else
+            EXTRA_ARGS="$EXTRA_ARGS --days=3"
+          fi
+
+          if [ "${{ github.event.inputs.dry_run }}" = "true" ]; then
+            EXTRA_ARGS="$EXTRA_ARGS --dry-run"
+          fi
+
+          if [ -n "${{ github.event.inputs.symbol }}" ]; then
+            EXTRA_ARGS="$EXTRA_ARGS --symbol=${{ github.event.inputs.symbol }}"
+          fi
+
+          echo "Chạy lệnh: python scripts/cbtt_monitor_cloud.py $EXTRA_ARGS"
+          python scripts/cbtt_monitor_cloud.py $EXTRA_ARGS
+
+      - name: Báo động nếu GitHub Actions gặp lỗi
+        if: failure()
+        env:
+          DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
+        run: |
+          python -c "
+          import os, urllib.request, json
+          url = os.environ.get('DISCORD_WEBHOOK_URL')
+          if url:
+              payload = {
+                  'content': '🚨 **BÁO ĐỘNG: GITHUB ACTIONS QUÉT CÔNG BỐ BẤT THƯỜNG GẶP LỖI!**\nQuy trình quét lúc 18:00 bị gián đoạn. Vui lòng kiểm tra log GitHub Actions!'
+              }
+              urllib.request.urlopen(urllib.request.Request(url, data=json.dumps(payload).encode('utf-8'), headers={'Content-Type': 'application/json'}))
+          "
+
+      - name: Commit and push CBTT cache updates
+        run: |
+          git config --global user.name 'github-actions[bot]'
+          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+          git add data/cbtt_completed_cache.json data/cbtt_live_alerts.json
+          git diff --quiet && git diff --staged --quiet || (git commit -m "chore(cbtt): auto sync cloud disclosures cache [skip ci]" && git push)
