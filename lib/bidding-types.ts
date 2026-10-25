@@ -23,6 +23,9 @@ export interface QuarterlyFinancialMetrics {
   npat_yoy_growth_pct?: number;
   net_margin_pct?: number;
   eps_4q_trailing_vnd?: number;
+  accumulated_9m_revenue_billion?: number;
+  accumulated_9m_npat_billion?: number;
+  plan_completion_profit_pct?: number;
   status?: string;
 }
 
@@ -73,7 +76,9 @@ export interface HealthcareContractor {
   quarterly_financials_2026?: {
     Q1_2026?: QuarterlyFinancialMetrics;
     Q2_2026?: QuarterlyFinancialMetrics;
+    Q3_2026?: QuarterlyFinancialMetrics;
     Q3_2026_FORECAST?: QuarterlyFinancialMetrics;
+    Q4_2026?: QuarterlyFinancialMetrics;
   };
   quarterly_comparison_series?: QuarterlyBiddingRevenueComparison[];
 }

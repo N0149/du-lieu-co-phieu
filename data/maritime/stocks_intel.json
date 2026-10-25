@@ -1110,26 +1110,21 @@
           "out": 0
         },
         {
-          "in": 152,
+          "in": 141,
           "ym": "2026-09",
-          "out": 0,
-          "partial": false,
-          "dwt_in": 0,
-          "dwt_out": 0
+          "out": 0
         },
         {
+          "in": 118,
           "ym": "2026-10",
-          "in": 26,
           "out": 0,
-          "dwt_in": 0,
-          "dwt_out": 0,
           "partial": true
         }
       ],
       "carrier_teaser": {
         "base": 8,
         "kept": 8,
-        "n_moves": 0,
+        "n_moves": 2,
         "intl_regular": 20,
         "retention_pct": 100
       },
@@ -2439,19 +2434,14 @@
           "out": 0
         },
         {
-          "in": 355,
+          "in": 142,
           "ym": "2026-09",
-          "out": 0,
-          "partial": false,
-          "dwt_in": 0,
-          "dwt_out": 0
+          "out": 0
         },
         {
+          "in": 121,
           "ym": "2026-10",
-          "in": 62,
           "out": 0,
-          "dwt_in": 0,
-          "dwt_out": 0,
           "partial": true
         }
       ],
@@ -3596,19 +3586,14 @@
           "out": 0
         },
         {
-          "in": 39,
+          "in": 35,
           "ym": "2026-09",
-          "out": 0,
-          "partial": false,
-          "dwt_in": 0,
-          "dwt_out": 0
+          "out": 0
         },
         {
+          "in": 22,
           "ym": "2026-10",
-          "in": 7,
           "out": 0,
-          "dwt_in": 0,
-          "dwt_out": 0,
           "partial": true
         }
       ],
@@ -3616,7 +3601,7 @@
         "base": 3,
         "kept": 2,
         "n_moves": 0,
-        "intl_regular": 16,
+        "intl_regular": 13,
         "retention_pct": 67
       },
       "fleet": null,
@@ -4739,19 +4724,14 @@
           "out": 0
         },
         {
-          "in": 12,
+          "in": 11,
           "ym": "2026-09",
-          "out": 0,
-          "partial": false,
-          "dwt_in": 0,
-          "dwt_out": 0
+          "out": 0
         },
         {
+          "in": 9,
           "ym": "2026-10",
-          "in": 3,
           "out": 0,
-          "dwt_in": 0,
-          "dwt_out": 0,
           "partial": true
         }
       ],
@@ -5402,19 +5382,14 @@
           "out": 0
         },
         {
-          "in": 86,
+          "in": 85,
           "ym": "2026-09",
-          "out": 0,
-          "partial": false,
-          "dwt_in": 0,
-          "dwt_out": 0
+          "out": 0
         },
         {
+          "in": 76,
           "ym": "2026-10",
-          "in": 15,
           "out": 0,
-          "dwt_in": 0,
-          "dwt_out": 0,
           "partial": true
         }
       ],
@@ -5857,31 +5832,27 @@
           "out": 0
         },
         {
-          "in": 329,
+          "in": 378,
           "ym": "2026-07",
           "est": true,
           "out": 0
         },
         {
-          "in": 186,
+          "in": 284,
           "ym": "2026-08",
           "est": true,
           "out": 0
         },
         {
-          "in": 460,
+          "in": 190,
           "ym": "2026-09",
-          "out": 0,
-          "partial": false,
-          "dwt_in": 0,
-          "dwt_out": 0
+          "est": true,
+          "out": 0
         },
         {
+          "in": 95,
           "ym": "2026-10",
-          "in": 78,
           "out": 0,
-          "dwt_in": 0,
-          "dwt_out": 0,
           "partial": true
         }
       ],
@@ -6309,19 +6280,14 @@
           "out": 0
         },
         {
-          "in": 44,
+          "in": 165,
           "ym": "2026-09",
-          "out": 0,
-          "partial": false,
-          "dwt_in": 0,
-          "dwt_out": 0
+          "out": 0
         },
         {
+          "in": 138,
           "ym": "2026-10",
-          "in": 8,
           "out": 0,
-          "dwt_in": 0,
-          "dwt_out": 0,
           "partial": true
         }
       ],
@@ -7102,20 +7068,14 @@
           "out": 84
         },
         {
-          "in": 89,
+          "in": 93,
           "ym": "2026-09",
-          "out": 83,
-          "dwt_in": 0,
-          "dwt_out": 0,
-          "partial": false
+          "out": 76
         },
         {
+          "in": 74,
           "ym": "2026-10",
-          "in": 16,
-          "out": 15,
-          "dwt_in": 0,
-          "dwt_out": 0,
-          "partial": true
+          "out": 66
         }
       ],
       "carrier_teaser": null,
@@ -7792,19 +7752,14 @@
           "out": 0
         },
         {
-          "in": 45,
+          "in": 27,
           "ym": "2026-09",
-          "out": 0,
-          "partial": false,
-          "dwt_in": 0,
-          "dwt_out": 0
+          "out": 0
         },
         {
+          "in": 27,
           "ym": "2026-10",
-          "in": 8,
           "out": 0,
-          "dwt_in": 0,
-          "dwt_out": 0,
           "partial": true
         }
       ],
@@ -7927,19 +7882,14 @@
           "out": 0
         },
         {
-          "in": 7,
+          "in": 50,
           "ym": "2026-09",
-          "out": 0,
-          "partial": false,
-          "dwt_in": 0,
-          "dwt_out": 0
+          "out": 0
         },
         {
+          "in": 40,
           "ym": "2026-10",
-          "in": 2,
           "out": 0,
-          "dwt_in": 0,
-          "dwt_out": 0,
           "partial": true
         }
       ],
@@ -8221,31 +8171,27 @@
           "out": 0
         },
         {
-          "in": 349,
+          "in": 402,
           "ym": "2026-07",
           "est": true,
           "out": 0
         },
         {
-          "in": 200,
+          "in": 305,
           "ym": "2026-08",
           "est": true,
           "out": 0
         },
         {
-          "in": 11,
+          "in": 208,
           "ym": "2026-09",
-          "out": 0,
-          "partial": false,
-          "dwt_in": 0,
-          "dwt_out": 0
+          "est": true,
+          "out": 0
         },
         {
+          "in": 111,
           "ym": "2026-10",
-          "in": 2,
           "out": 0,
-          "dwt_in": 0,
-          "dwt_out": 0,
           "partial": true
         }
       ],
@@ -9319,19 +9265,14 @@
           "out": 0
         },
         {
-          "in": 33,
+          "in": 30,
           "ym": "2026-09",
-          "out": 0,
-          "partial": false,
-          "dwt_in": 0,
-          "dwt_out": 0
+          "out": 0
         },
         {
+          "in": 19,
           "ym": "2026-10",
-          "in": 6,
           "out": 0,
-          "dwt_in": 0,
-          "dwt_out": 0,
           "partial": true
         }
       ],

@@ -114,7 +114,7 @@ export const NAV_GROUPS: NavGroup[] = [
         href: '/thuy-san',
         icon: Fish,
         badge: 'Q3/2026',
-        description: 'Tình báo VASEP, giá nguyên liệu & so sánh 12 cổ phiếu',
+        description: 'Dữ liệu VASEP, giá nguyên liệu & so sánh 12 cổ phiếu',
       },
       {
         label: 'Xuất nhập khẩu',

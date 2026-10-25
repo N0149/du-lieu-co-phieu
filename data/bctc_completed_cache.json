@@ -1191,12 +1191,12 @@
   "WSB": {
     "ticker": "WSB",
     "company_name": "Công ty Cổ phần Bia Sài Gòn - Miền Tây",
-    "release_date": "22/10/2026",
-    "title": "BCTC Công ty mẹ quý 3 năm 2026",
-    "doc_url": "https://static2.vietstock.vn/data/HNX/2026/BCTC/VN/QUY%203/WSB_Baocaotaichinh_Q3_2026_Congtyme.zip",
+    "release_date": "23/10/2026",
+    "title": "BCTC Hợp nhất quý 3 năm 2026",
+    "doc_url": "https://static2.vietstock.vn/data/UPCOM/2026/BCTC/VN/QUY%203/WSB_Baocaotaichinh_Q3_2026_Hopnhat.zip?ver=cb0dc887",
     "source": "Vietstock",
-    "bctc_type": "RIENG",
-    "updated_at": "2026-10-22 19:56:30"
+    "bctc_type": "HOP_NHAT",
+    "updated_at": "2026-10-23 08:09:38"
   },
   "AIC": {
     "ticker": "AIC",
@@ -1257,5 +1257,125 @@
     "source": "Company_Web",
     "bctc_type": "HOP_NHAT",
     "updated_at": "2026-10-22 20:17:38"
+  },
+  "DTP": {
+    "ticker": "DTP",
+    "company_name": "Công ty Cổ phần Dược phẩm CPC1 Hà Nội",
+    "release_date": "23/10/2026",
+    "title": "BCTC quý 3 năm 2026",
+    "doc_url": "https://static2.vietstock.vn/data/HNX/2026/BCTC/VN/QUY%203/DTP_Baocaotaichinh_Q3_2026.zip",
+    "source": "Vietstock",
+    "bctc_type": "DAY_DU",
+    "updated_at": "2026-10-23 08:09:32"
+  },
+  "IST": {
+    "ticker": "IST",
+    "company_name": "Công ty Cổ phần ICD Tân Cảng Sóng Thần",
+    "release_date": "23/10/2026",
+    "title": "BCTC quý 3 năm 2026",
+    "doc_url": "https://static2.vietstock.vn/data/HNX/2026/BCTC/VN/QUY%203/IST_Baocaotaichinh_Q3_2026.zip",
+    "source": "Vietstock",
+    "bctc_type": "DAY_DU",
+    "updated_at": "2026-10-23 08:21:42"
+  },
+  "IJC": {
+    "ticker": "IJC",
+    "company_name": "Công ty Cổ phần Phát triển Hạ tầng Kỹ thuật",
+    "release_date": "20261023",
+    "title": "IJC_CBTT Báo cáo tài chính công ty mẹ quý 3 năm 2026",
+    "doc_url": "https://becamexijc.com/wp-content/uploads/2026/10/20261023-IJC-BCTC-cong-ty-me-Q3.2026.pdf",
+    "source": "Company_Web",
+    "bctc_type": "DAY_DU",
+    "updated_at": "2026-10-23 10:55:06"
+  },
+  "VBC": {
+    "ticker": "VBC",
+    "company_name": "Công ty Cổ phần Nhựa, Bao bì Vinh",
+    "release_date": "23/10/2026",
+    "title": "BCTC quý 3 năm 2026",
+    "doc_url": "https://static2.vietstock.vn/data/HNX/2026/BCTC/VN/QUY%203/VBC_Baocaotaichinh_Q3_2026.zip",
+    "source": "Vietstock",
+    "bctc_type": "DAY_DU",
+    "updated_at": "2026-10-23 11:07:19"
+  },
+  "PIA": {
+    "ticker": "PIA",
+    "company_name": "Công ty Cổ phần Tin học Viễn thông Petrolimex",
+    "release_date": "23/10/2026",
+    "title": "BCTC quý 3 năm 2026",
+    "doc_url": "https://static2.vietstock.vn/data/HNX/2026/BCTC/VN/QUY%203/PIA_Baocaotaichinh_Q3_2026.zip",
+    "source": "Vietstock",
+    "bctc_type": "DAY_DU",
+    "updated_at": "2026-10-23 12:06:11"
+  },
+  "PJC": {
+    "ticker": "PJC",
+    "company_name": "Công ty Cổ phần Thương mại và Vận tải Petrolimex Hà Nội",
+    "release_date": "23/10/2026",
+    "title": "BCTC quý 3 năm 2026",
+    "doc_url": "https://static2.vietstock.vn/data/HNX/2026/BCTC/VN/QUY%203/PJC_Baocaotaichinh_Q3_2026.zip",
+    "source": "Vietstock",
+    "bctc_type": "DAY_DU",
+    "updated_at": "2026-10-23 12:18:03"
+  },
+  "HAH": {
+    "ticker": "HAH",
+    "company_name": "Công ty Cổ phần Vận tải và Xếp dỡ Hải An",
+    "release_date": "23/10/2026",
+    "title": "Báo cáo tài chính hợp nhất quý 3 năm 2026",
+    "doc_url": "https://haiants.vn/files/Quan_he_co_dong/Bao_cao_tai_chinh/20261023-HAH-Bao-cao-tai-chinh-hop-nhat-quy-III-2026.pdf",
+    "source": "Company_Web",
+    "bctc_type": "HOP_NHAT",
+    "updated_at": "2026-10-23 14:53:21"
+  },
+  "ABT": {
+    "ticker": "ABT",
+    "company_name": "Công ty Cổ phần Xuất nhập khẩu Thủy sản Bến Tre",
+    "release_date": "23/10/2026",
+    "title": "23/10/2026 16:00 BCTC Q3.2026 (BC hợp nhất) EN",
+    "doc_url": "https://aquatexbentre.com/wp-content/uploads/2026/10/20261023-ABT-Consolidated-Financial-Statements-for-the-Third-Quarter-of-2026_compressed.pdf",
+    "source": "Company_Web",
+    "bctc_type": "HOP_NHAT",
+    "updated_at": "2026-10-23 18:33:41"
+  },
+  "BLI": {
+    "ticker": "BLI",
+    "company_name": "Tổng Công ty Cổ phần Bảo hiểm Bảo Long",
+    "release_date": "23/10/2026",
+    "title": "23/10/2026Báo cáo tài chính Quý III năm 2026",
+    "doc_url": "https://baolonginsurance.com.vn/Data/Sites/1/media/Nha dau tu/bao-cao-tai-chinh/2026/BCTC QUY 2 VA 6 THANG 2026 TIENG VIET.pdf",
+    "source": "Company_Web",
+    "bctc_type": "DAY_DU",
+    "updated_at": "2026-10-23 20:08:57"
+  },
+  "MAC": {
+    "ticker": "MAC",
+    "company_name": "Công ty Cổ phần Tập đoàn Macstar",
+    "release_date": "23/10/2026",
+    "title": "Báo cáo tài chính hợp nhất Quý 3 năm 2026",
+    "doc_url": "https://macstar.com.vn/bao-cao-tai-chinh-hop-nhat-quy-3-nam-2026",
+    "source": "Company_Web",
+    "bctc_type": "HOP_NHAT",
+    "updated_at": "2026-10-23 21:45:00"
+  },
+  "TIP": {
+    "ticker": "TIP",
+    "company_name": "Công ty Cổ phần Phát triển Khu công nghiệp Tín Nghĩa",
+    "release_date": "24/10/2026",
+    "title": "BCTC Hợp nhất quý 3 năm 2026",
+    "doc_url": "https://static2.vietstock.vn/data/HOSE/2026/BCTC/VN/QUY%203/TIP_Baocaotaichinh_Q3_2026_Hopnhat.pdf",
+    "source": "Vietstock",
+    "bctc_type": "HOP_NHAT",
+    "updated_at": "2026-10-24 13:29:29"
+  },
+  "PPP": {
+    "ticker": "PPP",
+    "company_name": "Công ty Cổ phần Dược phẩm Phong Phú",
+    "release_date": "24/10/2026",
+    "title": "BÁO CÁO TÀI CHÍNH HỢP NHẤT QUÝ III NĂM 2026",
+    "doc_url": "https://duocphongphu.vn/wp-content/uploads/2026/10/VI_BaoCaoTaiChinh_QIII.2026_HopNhat.pdf",
+    "source": "Company_Web",
+    "bctc_type": "HOP_NHAT",
+    "updated_at": "2026-10-24 14:40:05"
   }
 }

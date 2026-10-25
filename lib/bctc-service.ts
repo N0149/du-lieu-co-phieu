@@ -119,17 +119,29 @@ function formatMarkdownToHtml(markdown: string): string {
 const EXTERNAL_DIR = 'D:\\hoc\\lap trinh\\tai-lieu-BCTC\\ket_qua_trich_xuat'
 const LOCAL_DIR = path.join(process.cwd(), 'content', 'bctc')
 
+// Thứ tự ưu tiên kỳ BCTC (mới nhất trước): Quý 3/2026 -> Bán niên 2026 -> Thư mục gốc (legacy)
+const PERIOD_SUBDIRS = ['Quy_3_2026', 'Ban_Nien_2026', '']
+
 export function hasBctcReport(ticker: string): boolean {
   if (!ticker) return false
   const sym = ticker.toUpperCase().trim()
-  const localHopNhat = path.join(LOCAL_DIR, `${sym}_ThuyetMinh_HopNhat.md`)
-  const localCongTyMe = path.join(LOCAL_DIR, `${sym}_ThuyetMinh_CongTyMe.md`)
-  if (fs.existsSync(localHopNhat) || fs.existsSync(localCongTyMe)) return true
 
-  if (fs.existsSync(EXTERNAL_DIR)) {
-    const extHopNhat = path.join(EXTERNAL_DIR, `${sym}_ThuyetMinh_HopNhat.md`)
-    const extCongTyMe = path.join(EXTERNAL_DIR, `${sym}_ThuyetMinh_CongTyMe.md`)
-    if (fs.existsSync(extHopNhat) || fs.existsSync(extCongTyMe)) return true
+  for (const sub of PERIOD_SUBDIRS) {
+    const localDir = sub ? path.join(LOCAL_DIR, sub) : LOCAL_DIR
+    if (fs.existsSync(localDir)) {
+      if (fs.existsSync(path.join(localDir, sym + '_ThuyetMinh_HopNhat.md'))) return true
+      if (fs.existsSync(path.join(localDir, sym + '_ThuyetMinh_CongTyMe.md'))) return true
+      if (fs.existsSync(path.join(localDir, sym + '_ThuyetMinh_BCTC.md'))) return true
+    }
+
+    if (fs.existsSync(EXTERNAL_DIR)) {
+      const extDir = sub ? path.join(EXTERNAL_DIR, sub) : EXTERNAL_DIR
+      if (fs.existsSync(extDir)) {
+        if (fs.existsSync(path.join(extDir, sym + '_ThuyetMinh_HopNhat.md'))) return true
+        if (fs.existsSync(path.join(extDir, sym + '_ThuyetMinh_CongTyMe.md'))) return true
+        if (fs.existsSync(path.join(extDir, sym + '_ThuyetMinh_BCTC.md'))) return true
+      }
+    }
   }
   return false
 }
@@ -144,29 +156,36 @@ export function getAvailableBctcTickers(): string[] {
 
   const tickerSet = new Set<string>()
 
-  // 1. Quét từ LOCAL_DIR
-  if (fs.existsSync(LOCAL_DIR)) {
-    fs.readdirSync(LOCAL_DIR)
-      .filter((f) => f.endsWith('.md'))
-      .forEach((f) => {
-        const t = f.split('_')[0].toUpperCase()
-        if (t) tickerSet.add(t)
-      })
+  const scanDir = (dir: string) => {
+    if (!fs.existsSync(dir)) return
+    try {
+      const entries = fs.readdirSync(dir)
+      for (const entry of entries) {
+        const fullPath = path.join(dir, entry)
+        try {
+          const stat = fs.statSync(fullPath)
+          if (stat.isFile() && entry.endsWith('.md')) {
+            const t = entry.split('_')[0].toUpperCase()
+            if (t && t.length >= 3 && t.length <= 5) tickerSet.add(t)
+          } else if (stat.isDirectory()) {
+            const subEntries = fs.readdirSync(fullPath)
+            for (const subF of subEntries) {
+              if (subF.endsWith('.md')) {
+                const t = subF.split('_')[0].toUpperCase()
+                if (t && t.length >= 3 && t.length <= 5) tickerSet.add(t)
+              }
+            }
+          }
+        } catch {}
+      }
+    } catch {}
   }
 
-  // 2. Quét từ EXTERNAL_DIR
-  if (fs.existsSync(EXTERNAL_DIR)) {
-    try {
-      fs.readdirSync(EXTERNAL_DIR)
-        .filter((f) => f.endsWith('.md'))
-        .forEach((f) => {
-          const t = f.split('_')[0].toUpperCase()
-          if (t) tickerSet.add(t)
-        })
-    } catch {
-      // ignore
-    }
-  }
+  // 1. Quét từ LOCAL_DIR (bao gồm các thư mục con)
+  scanDir(LOCAL_DIR)
+
+  // 2. Quét từ EXTERNAL_DIR (bao gồm các thư mục con)
+  scanDir(EXTERNAL_DIR)
 
   const result = Array.from(tickerSet).sort((a, b) => a.localeCompare(b))
   _cachedBctcTickers = { list: result, time: now }
@@ -183,19 +202,33 @@ export function getBctcReport(
   const availableTypes: ('HopNhat' | 'CongTyMe')[] = []
 
   const checkFileExists = (type: 'HopNhat' | 'CongTyMe') => {
-    const filename = `${sym}_ThuyetMinh_${type}.md`
-    const localP = path.join(LOCAL_DIR, filename)
-    if (fs.existsSync(localP)) return localP
-    if (fs.existsSync(EXTERNAL_DIR)) {
-      const extP = path.join(EXTERNAL_DIR, filename)
-      if (fs.existsSync(extP)) return extP
-    }
-    if (type === 'HopNhat') {
-      const bctcLocal = path.join(LOCAL_DIR, `${sym}_ThuyetMinh_BCTC.md`)
-      if (fs.existsSync(bctcLocal)) return bctcLocal
+    const filename = sym + '_ThuyetMinh_' + type + '.md'
+    const legacyFilename = type === 'HopNhat' ? (sym + '_ThuyetMinh_BCTC.md') : null
+
+    // Quét theo thứ tự ưu tiên: Quy_3_2026 -> Ban_Nien_2026 -> Thư mục gốc
+    for (const sub of PERIOD_SUBDIRS) {
+      // 1. Local dir
+      const localDir = sub ? path.join(LOCAL_DIR, sub) : LOCAL_DIR
+      if (fs.existsSync(localDir)) {
+        const p = path.join(localDir, filename)
+        if (fs.existsSync(p)) return p
+        if (legacyFilename) {
+          const lp = path.join(localDir, legacyFilename)
+          if (fs.existsSync(lp)) return lp
+        }
+      }
+
+      // 2. External dir
       if (fs.existsSync(EXTERNAL_DIR)) {
-        const bctcExt = path.join(EXTERNAL_DIR, `${sym}_ThuyetMinh_BCTC.md`)
-        if (fs.existsSync(bctcExt)) return bctcExt
+        const extDir = sub ? path.join(EXTERNAL_DIR, sub) : EXTERNAL_DIR
+        if (fs.existsSync(extDir)) {
+          const ep = path.join(extDir, filename)
+          if (fs.existsSync(ep)) return ep
+          if (legacyFilename) {
+            const lep = path.join(extDir, legacyFilename)
+            if (fs.existsSync(lep)) return lep
+          }
+        }
       }
     }
     return null

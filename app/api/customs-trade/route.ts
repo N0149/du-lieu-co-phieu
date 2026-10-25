@@ -64,20 +64,18 @@ let cachedCommodity: PrecomputedCache | null = null
 let cachedFull: PrecomputedCache | null = null
 
 function getPrecomputedPayload(type: 'commodity' | 'full' = 'commodity'): PrecomputedCache {
-  let fileName = type === 'full' ? 'customs_trade_snapshot.json' : 'customs_commodity_snapshot.json'
-  let filePath = path.join(process.cwd(), 'data', fileName)
+  let filePath = type === 'full' ? FULL_PATH : COMMODITY_PATH
 
   // Fallback nếu file commodity chưa được build thì dùng file trade snapshot
-  if (!fs.existsSync(filePath)) {
-    fileName = 'customs_trade_snapshot.json'
-    filePath = path.join(process.cwd(), 'data', fileName)
+  if (!fs.existsSync(/*turbopackIgnore: true*/ filePath)) {
+    filePath = FULL_PATH
   }
 
-  const stats = fs.statSync(filePath)
+  const stats = fs.statSync(/*turbopackIgnore: true*/ filePath)
   const cacheRef = type === 'full' ? cachedFull : cachedCommodity
 
   if (!cacheRef || stats.mtimeMs > cacheRef.mtime) {
-    const raw = fs.readFileSync(filePath, 'utf-8')
+    const raw = fs.readFileSync(/*turbopackIgnore: true*/ filePath, 'utf-8')
     const gzip = zlib.gzipSync(Buffer.from(raw), { level: 6 })
     const etag = `W/"${stats.size}-${Math.round(stats.mtimeMs)}"`
     const item: PrecomputedCache = {

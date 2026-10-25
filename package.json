@@ -11,6 +11,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint .",
+    "sync-local": "node scripts/local-sync.mjs",
+    "sync-local:force": "node scripts/local-sync.mjs --force",
     "fetch-news": "node scripts/news/fetch_rss_news.js",
     "sync-industry-reports": "node scripts/crawl-industry-reports.mjs",
     "sync-company-reports": "node scripts/crawl-company-reports.mjs",

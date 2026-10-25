@@ -320,8 +320,7 @@ async function fetchCompanyPage(symbol, page = 1) {
       },
     });
     if (res.status === 429) {
-      await new Promise((r) => setTimeout(r, 1500));
-      return await fetchCompanyPage(symbol, page);
+      return { total: 0, reports: [] };
     }
     if (!res.ok) return { total: 0, reports: [] };
     return await decryptApiResponse(res);

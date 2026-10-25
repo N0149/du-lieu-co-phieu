@@ -1,7 +1,7 @@
 /**
  * scripts/sync-thuy-san-vasep.mjs
  * 
- * Script cập nhật & đồng bộ dữ liệu Tình báo Thủy sản VASEP:
+ * Script cập nhật & đồng bộ dữ liệu Thủy sản VASEP:
  * 1. Thu thập / tổng hợp kim ngạch xuất khẩu toàn ngành và các phân ngành (Tôm, Cá tra, Cá ngừ, Surimi, Nhuyễn thể, Bột cá).
  * 2. Cập nhật diễn biến giá nguyên liệu nội địa hàng tuần (Đồng Tháp, An Giang, Cà Mau, Sóc Trăng).
  * 3. Đồng bộ báo cáo doanh số hàng tháng của các doanh nghiệp niêm yết (FMC, VHC, ANV,...) và kiểm chứng mô hình dự phóng KQKD Quý.
@@ -19,7 +19,7 @@ const dataDir = path.join(rootDir, 'data');
 const snapshotPath = path.join(dataDir, 'thuy_san_vasep_snapshot.json');
 
 console.log('================================================================');
-console.log('🐠 BẮT ĐẦU ĐỒNG BỘ DỮ LIỆU TÌNH BÁO THỦY SẢN VASEP - THÁNG 9/2026');
+console.log('🐠 BẮT ĐẦU ĐỒNG BỘ DỮ LIỆU THỦY SẢN VASEP - THÁNG 10/2026');
 console.log('================================================================');
 
 // Dữ liệu thực tế Tháng 9 & 9 Tháng 2026 từ VASEP và các Doanh nghiệp
@@ -126,6 +126,48 @@ const thuySanSnapshot = {
   ],
   latestWeeklyPrices: [
     {
+      period: '17/10 – 23/10/2026',
+      dateFormatted: '23/10/2026',
+      region: 'Đồng Tháp / An Giang / Cà Mau',
+      pangasius_white_meat: 34500,
+      pangasius_change_wow: 500,
+      pangasius_fingerling: 55000,
+      white_shrimp_100: 92000,
+      white_shrimp_50: 114000,
+      white_shrimp_30: 134000,
+      black_tiger_shrimp_30: 162000,
+      clam_mussel: 29000,
+      tilapia: 47000,
+    },
+    {
+      period: '10/10 – 16/10/2026',
+      dateFormatted: '16/10/2026',
+      region: 'Đồng Tháp / An Giang / Cà Mau',
+      pangasius_white_meat: 34000,
+      pangasius_change_wow: 1000,
+      pangasius_fingerling: 56000,
+      white_shrimp_100: 91500,
+      white_shrimp_50: 113000,
+      white_shrimp_30: 133000,
+      black_tiger_shrimp_30: 161000,
+      clam_mussel: 28500,
+      tilapia: 46500,
+    },
+    {
+      period: '03/10 – 09/10/2026',
+      dateFormatted: '09/10/2026',
+      region: 'Đồng Tháp / An Giang / Cà Mau',
+      pangasius_white_meat: 33000,
+      pangasius_change_wow: 0,
+      pangasius_fingerling: 57000,
+      white_shrimp_100: 91000,
+      white_shrimp_50: 112500,
+      white_shrimp_30: 132500,
+      black_tiger_shrimp_30: 160000,
+      clam_mussel: 28500,
+      tilapia: 46500,
+    },
+    {
       period: '26/9 – 02/10/2026',
       dateFormatted: '02/10/2026',
       region: 'Đồng Tháp / An Giang / Cà Mau',
@@ -139,43 +181,38 @@ const thuySanSnapshot = {
       clam_mussel: 28500,
       tilapia: 46500,
     },
-    {
-      period: '19/9 – 25/9/2026',
-      dateFormatted: '25/09/2026',
-      region: 'Đồng Tháp / An Giang / Cà Mau',
-      pangasius_white_meat: 32500,
-      pangasius_change_wow: 1000,
-      pangasius_fingerling: 58500,
-      white_shrimp_100: 90000,
-      white_shrimp_50: 110000,
-      white_shrimp_30: 130000,
-      black_tiger_shrimp_30: 158000,
-      clam_mussel: 28000,
-      tilapia: 46000,
-    },
   ],
   companyUpdates: [
     {
       ticker: 'FMC',
       name: 'Sao Ta',
-      month: '09/2026',
-      revenueUSD: '23.28 triệu USD',
-      q3RevenueUSD: '91.15 triệu USD (~2.370 tỷ VNĐ)',
-      notes: 'Hoàn thành kế hoạch lợi nhuận 9 tháng; sản lượng tôm tự nuôi vụ chính thu hoạch tốt giúp hạ mạnh giá vốn.',
-    },
-    {
-      ticker: 'VHC',
-      name: 'Vĩnh Hoàn',
-      month: '09/2026',
-      revenueEstVND: '~1.080 tỷ VNĐ',
-      q3RevenueEstVND: '~3.380 tỷ VNĐ',
-      notes: 'Giành giải Nhất Seafood Excellence Asia 2026; mảng Collagen & Gelatin tiếp tục đóng góp biên lợi nhuận cao.',
+      period: 'Q3/2026 Official BCTC',
+      revenueVND: '2.534 tỷ VNĐ',
+      netProfitVND: '199,5 tỷ VNĐ (+78,3% YoY)',
+      accumulated9MProfit: '452 tỷ VNĐ (+79% YoY)',
+      notes: 'BCTC Q3 bùng nổ lợi nhuận +78,3% YoY, chính thức hoàn thành vượt kế hoạch lợi nhuận cả năm 2026 sớm 1 quý nhờ vụ tôm tự nuôi thắng lớn.',
     },
     {
       ticker: 'ANV',
       name: 'Nam Việt',
-      month: '09/2026',
-      notes: 'Thị trường Trung Quốc và Brazil tiếp tục tăng trưởng mạnh; giá cá tra nguyên liệu neo đỉnh 33.000 đ/kg trong khi ANV tự chủ 100% thức ăn và ao nuôi.',
+      period: 'Q3/2026 Official BCTC',
+      revenueVND: '2.071 tỷ VNĐ (+4% YoY)',
+      netProfitVND: '207 tỷ VNĐ (-27% YoY)',
+      accumulated9MProfit: '537 tỷ VNĐ',
+      notes: 'BCTC Q3 đạt 2.071 tỷ doanh thu. Giá cá tra nguyên liệu tháng 10 neo đỉnh 33.000 - 37.000 đ/kg hỗ trợ biên lợi nhuận.',
+    },
+    {
+      ticker: 'VHC',
+      name: 'Vĩnh Hoàn',
+      period: 'T9/2026 & Q3/2026',
+      revenueEstVND: '~3.300 tỷ VNĐ (T9 đạt 1.000 tỷ, +13% YoY)',
+      notes: 'Mỹ hồi phục +22% và Châu Âu tăng +41% trong tháng 9; sản phẩm Cured Panga Croquette đoạt giải Nhất Seafood Excellence Asia 2026.',
+    },
+    {
+      ticker: 'CMX',
+      name: 'Camimex',
+      period: 'T10/2026',
+      notes: 'HĐQT thông qua kế hoạch huy động 686 tỷ VNĐ (vay 15 triệu USD Quỹ Proparco Pháp và phát hành 200 tỷ trái phiếu) mở rộng tôm sinh thái và kho lạnh.',
     },
   ],
 };
@@ -189,5 +226,5 @@ fs.writeFileSync(snapshotPath, JSON.stringify(thuySanSnapshot, null, 2), 'utf-8'
 console.log(`✅ Đã lưu snapshot dữ liệu VASEP tại: ${snapshotPath}`);
 console.log(`📊 Tổng kim ngạch 9T 2026: ${thuySanSnapshot.macroOverview.totalExport9mUSD} triệu USD (+${thuySanSnapshot.macroOverview.growth9mYoY}% YoY)`);
 console.log(`🐟 Tháng 9 bứt phá: ${thuySanSnapshot.macroOverview.septemberExportUSD} triệu USD (+${thuySanSnapshot.macroOverview.septemberGrowthYoY}% YoY)`);
-console.log(`🍤 FMC (Sao Ta) thực tế Q3: ${thuySanSnapshot.companyUpdates[0].q3RevenueUSD}`);
+console.log(`🍤 FMC (Sao Ta) thực tế Q3: DT ${thuySanSnapshot.companyUpdates[0].revenueVND} | LNST ${thuySanSnapshot.companyUpdates[0].netProfitVND}`);
 console.log('🏁 Hoàn tất đồng bộ dữ liệu thủy sản VASEP!');

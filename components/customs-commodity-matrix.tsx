@@ -1147,7 +1147,7 @@ export function CustomsCommodityMatrix({
                 className="h-8 rounded-lg border border-border bg-background px-2 text-xs font-medium text-foreground outline-none focus:border-ring"
               >
                 <option value="THANG">Monthly (Tháng - Đến T9/2026)</option>
-                <option value="KY">Kỳ 15 ngày (Mới nhất: K2 09/2026)</option>
+                <option value="KY">Kỳ 15 ngày (Mới nhất: K1 10/2026)</option>
                 <option value="QUY">Quý (Quarterly)</option>
               </select>
             </div>
@@ -1161,10 +1161,10 @@ export function CustomsCommodityMatrix({
                   setPage(1)
                 }}
                 className="inline-flex items-center gap-1.5 rounded-lg border border-emerald-500/30 bg-emerald-500/10 px-2.5 py-1 text-xs font-semibold text-emerald-400 hover:bg-emerald-500/20 transition-colors"
-                title="Bấm để xem số liệu chi tiết từng kỳ 15 ngày (Mới nhất: Kỳ 2 09/2026)"
+                title="Bấm để xem số liệu chi tiết từng kỳ 15 ngày (Mới nhất: Kỳ 1 10/2026)"
               >
                 <span className="size-1.5 rounded-full bg-emerald-400 animate-pulse" />
-                <span>Xem kỳ 15 ngày (Kỳ 2 T9)</span>
+                <span>Xem kỳ 15 ngày (Kỳ 1 T10)</span>
               </button>
             ) : (
               <button

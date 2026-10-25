@@ -16,9 +16,9 @@
     "bids_lost": 383,
     "bids_pending": 149,
     "win_rate": 89.6,
-    "total_winning_value": 26850000000000.0,
-    "solo_winning_value": 24120000000000.0,
-    "joint_winning_value": 2730000000000.0,
+    "total_winning_value": 26850000000000,
+    "solo_winning_value": 24120000000000,
+    "joint_winning_value": 2730000000000,
     "avg_discount_rate": 3.2,
     "top_hospital_clients": [
       "Trung tâm Mua sắm tập trung thuốc Quốc gia (Bộ Y tế)",
@@ -38,27 +38,27 @@
       {
         "year": 2021,
         "bids_won": 710,
-        "value_billion": 3850.0
+        "value_billion": 3850
       },
       {
         "year": 2022,
         "bids_won": 840,
-        "value_billion": 4620.0
+        "value_billion": 4620
       },
       {
         "year": 2023,
         "bids_won": 985,
-        "value_billion": 5480.0
+        "value_billion": 5480
       },
       {
         "year": 2024,
         "bids_won": 1120,
-        "value_billion": 6250.0
+        "value_billion": 6250
       },
       {
         "year": 2025,
         "bids_won": 921,
-        "value_billion": 6650.0
+        "value_billion": 6650
       }
     ],
     "packages_2026": [
@@ -67,8 +67,8 @@
         "code": "IB2600008450",
         "name": "Gói thầu số 1: Mua sắm thuốc generic cho các cơ sở y tế công lập trên địa bàn tỉnh Lai Châu năm 2026-2027",
         "client": "Sở Y tế tỉnh Lai Châu",
-        "pkg_price": 285000000000.0,
-        "win_price": 275500000000.0,
+        "pkg_price": 285000000000,
+        "win_price": 275500000000,
         "award_date": "2026-02-18",
         "scope": "Thuốc Generic Nhóm 1, 2",
         "duration_months": 24,
@@ -79,8 +79,8 @@
         "code": "IB2600012490",
         "name": "Gói thầu số 3 - Thuốc Generic theo Quyết định số 409/QĐ-SYT cung ứng các viện công lập",
         "client": "Sở Y tế tỉnh Lạng Sơn",
-        "pkg_price": 195000000000.0,
-        "win_price": 188200000000.0,
+        "pkg_price": 195000000000,
+        "win_price": 188200000000,
         "award_date": "2026-03-22",
         "scope": "Kháng sinh & Thuốc thiết yếu",
         "duration_months": 12,
@@ -91,8 +91,8 @@
         "code": "IB2600004120",
         "name": "Mua sắm thuốc Budesonid + Formoterol và dung dịch khí dung điều trị hô hấp",
         "client": "Bệnh viện Phổi Thái Bình",
-        "pkg_price": 68000000000.0,
-        "win_price": 65800000000.0,
+        "pkg_price": 68000000000,
+        "win_price": 65800000000,
         "award_date": "2026-02-14",
         "scope": "Thuốc hô hấp & Khí dung",
         "duration_months": 12,
@@ -103,8 +103,8 @@
         "code": "IB2600001980",
         "name": "Gói thầu mua sắm thuốc Biệt dược gốc điều trị chuyên khoa tai mũi họng",
         "client": "Bệnh viện Tai Mũi Họng Trung ương",
-        "pkg_price": 120000000000.0,
-        "win_price": 116500000000.0,
+        "pkg_price": 120000000000,
+        "win_price": 116500000000,
         "award_date": "2026-01-20",
         "scope": "Biệt dược gốc phân phối",
         "duration_months": 12,
@@ -115,8 +115,8 @@
         "code": "IB2600014500",
         "name": "Cung ứng thuốc tim mạch, huyết áp và chuyển hóa đợt 1 năm 2026",
         "client": "Bệnh viện Tim Hà Nội",
-        "pkg_price": 165000000000.0,
-        "win_price": 159800000000.0,
+        "pkg_price": 165000000000,
+        "win_price": 159800000000,
         "award_date": "2026-02-26",
         "scope": "Thuốc tim mạch & Huyết áp",
         "duration_months": 12,
@@ -127,8 +127,8 @@
         "code": "IB2600016800",
         "name": "Gói thầu cung cấp thuốc phục vụ khám chữa bệnh nội ngoại trú Bệnh viện E năm 2026",
         "client": "Bệnh viện E",
-        "pkg_price": 310000000000.0,
-        "win_price": 301200000000.0,
+        "pkg_price": 310000000000,
+        "win_price": 301200000000,
         "award_date": "2026-03-15",
         "scope": "Thuốc Generic đa khoa",
         "duration_months": 12,
@@ -139,8 +139,8 @@
         "code": "IB2600018900",
         "name": "Cung ứng dịch truyền và kháng sinh tiêm chất lượng cao cho các khoa cấp cứu",
         "client": "Bệnh viện Trung ương Thái Nguyên",
-        "pkg_price": 240000000000.0,
-        "win_price": 232500000000.0,
+        "pkg_price": 240000000000,
+        "win_price": 232500000000,
         "award_date": "2026-03-28",
         "scope": "Dịch truyền & Kháng sinh tiêm",
         "duration_months": 12,
@@ -151,8 +151,8 @@
         "code": "IB2600009900",
         "name": "Các gói thầu thuốc lẻ bổ sung tại các TTYT huyện và phòng khám khu vực",
         "client": "Các TTYT Tuyến Huyện Phía Bắc",
-        "pkg_price": 85000000000.0,
-        "win_price": 80500000000.0,
+        "pkg_price": 85000000000,
+        "win_price": 80500000000,
         "award_date": "2026-03-30",
         "scope": "Dược phẩm tổng hợp",
         "duration_months": 12,
@@ -163,8 +163,8 @@
         "code": "IB2600025600",
         "name": "Gói thầu số 01: Mua sắm tập trung thuốc Biệt dược gốc cấp quốc gia đợt 1 năm 2026",
         "client": "Trung tâm Mua sắm tập trung thuốc Quốc gia (Bộ Y tế)",
-        "pkg_price": 720000000000.0,
-        "win_price": 698500000000.0,
+        "pkg_price": 720000000000,
+        "win_price": 698500000000,
         "award_date": "2026-05-18",
         "scope": "Biệt dược gốc & Sinh phẩm",
         "duration_months": 24,
@@ -175,8 +175,8 @@
         "code": "IB2600028900",
         "name": "Gói thầu thuốc Generic cung ứng cho Bệnh viện Bạch Mai năm 2026-2027",
         "client": "Bệnh viện Bạch Mai",
-        "pkg_price": 520000000000.0,
-        "win_price": 504800000000.0,
+        "pkg_price": 520000000000,
+        "win_price": 504800000000,
         "award_date": "2026-06-08",
         "scope": "Kháng sinh tiêm & Tim mạch",
         "duration_months": 12,
@@ -187,8 +187,8 @@
         "code": "IB2600021300",
         "name": "Gói thầu cung cấp thuốc chuyên khoa hồi sức cấp cứu và phẫu thuật ngoại khoa",
         "client": "Bệnh viện Hữu nghị Việt Đức",
-        "pkg_price": 280000000000.0,
-        "win_price": 271600000000.0,
+        "pkg_price": 280000000000,
+        "win_price": 271600000000,
         "award_date": "2026-04-12",
         "scope": "Thuốc gây mê & Hồi sức",
         "duration_months": 12,
@@ -199,8 +199,8 @@
         "code": "IB2600027100",
         "name": "Gói thầu mua sắm thuốc Generic phân bổ cho các bệnh viện trực thuộc Sở Y tế Hà Nội",
         "client": "Sở Y tế TP. Hà Nội",
-        "pkg_price": 420000000000.0,
-        "win_price": 407500000000.0,
+        "pkg_price": 420000000000,
+        "win_price": 407500000000,
         "award_date": "2026-05-25",
         "scope": "Thuốc Generic nhóm 1, 2",
         "duration_months": 12,
@@ -211,8 +211,8 @@
         "code": "IB2600030500",
         "name": "Cung cấp thuốc điều trị chuyên khoa nhi đợt hè năm 2026",
         "client": "Bệnh viện Nhi Trung ương",
-        "pkg_price": 195000000000.0,
-        "win_price": 189200000000.0,
+        "pkg_price": 195000000000,
+        "win_price": 189200000000,
         "award_date": "2026-06-20",
         "scope": "Dạng uống & Kháng sinh nhi",
         "duration_months": 12,
@@ -223,8 +223,8 @@
         "code": "IB2600023400",
         "name": "Mua sắm dịch truyền thẩm phân và kháng sinh tiêm phòng mổ",
         "client": "Bệnh viện Đa khoa Tỉnh Thanh Hóa",
-        "pkg_price": 160000000000.0,
-        "win_price": 154800000000.0,
+        "pkg_price": 160000000000,
+        "win_price": 154800000000,
         "award_date": "2026-04-29",
         "scope": "Dịch truyền & Kháng sinh",
         "duration_months": 12,
@@ -235,8 +235,8 @@
         "code": "IB2600029800",
         "name": "Cung ứng thuốc điều trị giảm nhẹ và hóa trị hỗ trợ",
         "client": "Bệnh viện K Trung ương",
-        "pkg_price": 185000000000.0,
-        "win_price": 178900000000.0,
+        "pkg_price": 185000000000,
+        "win_price": 178900000000,
         "award_date": "2026-05-16",
         "scope": "Thuốc hỗ trợ ung bướu",
         "duration_months": 12,
@@ -247,8 +247,8 @@
         "code": "IB2600024500",
         "name": "Các gói thầu thuốc chuyên khoa bổ sung quý 2/2026",
         "client": "Các Bệnh viện Chuyên khoa Phía Bắc",
-        "pkg_price": 150000000000.0,
-        "win_price": 144700000000.0,
+        "pkg_price": 150000000000,
+        "win_price": 144700000000,
         "award_date": "2026-06-28",
         "scope": "Dược phẩm chuyên khoa",
         "duration_months": 12,
@@ -259,8 +259,8 @@
         "code": "IB2600035120",
         "name": "Gói thầu GE-04/2026: Gói thầu cung ứng thuốc generic phục vụ khám chữa bệnh cho BV Sản – Nhi Đắk Lắk",
         "client": "Bệnh viện Sản – Nhi tỉnh Đắk Lắk",
-        "pkg_price": 215000000000.0,
-        "win_price": 208500000000.0,
+        "pkg_price": 215000000000,
+        "win_price": 208500000000,
         "award_date": "2026-07-15",
         "scope": "Thuốc sản phụ khoa & Nhi khoa",
         "duration_months": 12,
@@ -271,8 +271,8 @@
         "code": "IB2600038400",
         "name": "Mua sắm thuốc dịch vụ y tế và thuốc bảo hiểm đợt 2 năm 2026",
         "client": "Bệnh viện Quân y 103 - Học viện Quân y",
-        "pkg_price": 260000000000.0,
-        "win_price": 252400000000.0,
+        "pkg_price": 260000000000,
+        "win_price": 252400000000,
         "award_date": "2026-08-12",
         "scope": "Dược phẩm điều trị nội trú",
         "duration_months": 12,
@@ -283,8 +283,8 @@
         "code": "IB2600041200",
         "name": "Mua 15 mặt hàng thuốc Generic phục vụ công tác khám chữa bệnh năm 2026-2027",
         "client": "Bệnh viện Ung bướu Bắc Ninh",
-        "pkg_price": 145000000000.0,
-        "win_price": 140800000000.0,
+        "pkg_price": 145000000000,
+        "win_price": 140800000000,
         "award_date": "2026-09-05",
         "scope": "Kháng sinh & Hỗ trợ ung bướu",
         "duration_months": 12,
@@ -295,8 +295,8 @@
         "code": "IB2600036800",
         "name": "Gói thầu mua sắm thuốc bổ sung cấp bách phục vụ cấp cứu hồi sức Quý 3/2026",
         "client": "Bệnh viện Chợ Rẫy",
-        "pkg_price": 320000000000.0,
-        "win_price": 310500000000.0,
+        "pkg_price": 320000000000,
+        "win_price": 310500000000,
         "award_date": "2026-07-24",
         "scope": "Thuốc cấp cứu & Tim mạch",
         "duration_months": 12,
@@ -307,8 +307,8 @@
         "code": "IB2600039900",
         "name": "Cung cấp thuốc kháng sinh thế hệ mới và dung dịch dinh dưỡng tĩnh mạch",
         "client": "Bệnh viện Đại học Y Hà Nội",
-        "pkg_price": 180000000000.0,
-        "win_price": 174200000000.0,
+        "pkg_price": 180000000000,
+        "win_price": 174200000000,
         "award_date": "2026-08-19",
         "scope": "Kháng sinh Nhóm 1 & Dinh dưỡng",
         "duration_months": 12,
@@ -319,8 +319,8 @@
         "code": "IB2600037500",
         "name": "Gói thầu thuốc Generic đợt 3 cung ứng cho các trung tâm y tế và bệnh viện tuyến huyện",
         "client": "Sở Y tế Tỉnh Nghệ An",
-        "pkg_price": 350000000000.0,
-        "win_price": 339500000000.0,
+        "pkg_price": 350000000000,
+        "win_price": 339500000000,
         "award_date": "2026-08-08",
         "scope": "Thuốc Generic tổng hợp",
         "duration_months": 18,
@@ -331,8 +331,8 @@
         "code": "IB2600042100",
         "name": "Cung ứng thuốc chuyên khoa thần kinh, chống co giật và thuốc huyết áp",
         "client": "Bệnh viện Bạch Mai",
-        "pkg_price": 190000000000.0,
-        "win_price": 184300000000.0,
+        "pkg_price": 190000000000,
+        "win_price": 184300000000,
         "award_date": "2026-09-14",
         "scope": "Thuốc thần kinh & Hồi sức",
         "duration_months": 12,
@@ -343,8 +343,8 @@
         "code": "IB2600034200",
         "name": "Gói thầu cung cấp vắc xin dịch vụ và sinh phẩm miễn dịch điều trị",
         "client": "Bệnh viện Bệnh Nhiệt đới Trung ương",
-        "pkg_price": 155000000000.0,
-        "win_price": 150200000000.0,
+        "pkg_price": 155000000000,
+        "win_price": 150200000000,
         "award_date": "2026-07-08",
         "scope": "Vắc xin & Sinh phẩm",
         "duration_months": 12,
@@ -355,8 +355,8 @@
         "code": "IB2600038900",
         "name": "Cung ứng thuốc giảm đau gây tê và thuốc sản phụ khoa chuyên sâu",
         "client": "Bệnh viện Phụ sản Trung ương",
-        "pkg_price": 175000000000.0,
-        "win_price": 169800000000.0,
+        "pkg_price": 175000000000,
+        "win_price": 169800000000,
         "award_date": "2026-08-22",
         "scope": "Thuốc sản phụ khoa",
         "duration_months": 12,
@@ -367,8 +367,8 @@
         "code": "IB2600042800",
         "name": "Cung ứng thuốc cấp cứu hồi sức ngoại khoa và chống đông máu",
         "client": "Bệnh viện Hữu nghị Việt Đức",
-        "pkg_price": 220000000000.0,
-        "win_price": 213600000000.0,
+        "pkg_price": 220000000000,
+        "win_price": 213600000000,
         "award_date": "2026-09-21",
         "scope": "Thuốc ngoại khoa & Hồi sức",
         "duration_months": 12,
@@ -379,17 +379,113 @@
         "code": "IB2600043100",
         "name": "Các gói thầu thuốc bổ sung tháng 7-9/2026 tại các viện vệ tinh",
         "client": "Các Bệnh viện Vệ Tinh Tuyến Tỉnh",
-        "pkg_price": 110000000000.0,
-        "win_price": 106200000000.0,
+        "pkg_price": 110000000000,
+        "win_price": 106200000000,
         "award_date": "2026-09-24",
         "scope": "Dược phẩm tổng hợp",
         "duration_months": 12,
         "status": "Đang hoàn thiện"
+      },
+      {
+        "quarter": "Q4/2026",
+        "code": "IB2600047250",
+        "name": "Gói thầu số 01: Mua sắm biệt dược gốc và thuốc Generic điều trị chuyên khoa ung bướu đợt 4/2026",
+        "client": "Bệnh viện K Trung ương",
+        "pkg_price": 245000000000,
+        "win_price": 238600000000,
+        "award_date": "2026-10-24",
+        "scope": "Hóa trị liệu ung bướu & Biệt dược gốc",
+        "duration_months": 12,
+        "status": "Mới ký hợp đồng"
+      },
+      {
+        "quarter": "Q4/2026",
+        "code": "IB2600046980",
+        "name": "Cung cấp thuốc kháng sinh phổ rộng thế hệ mới và dịch truyền thẩm tách hồi sức tích cực Quý 4/2026",
+        "client": "Bệnh viện Bạch Mai",
+        "pkg_price": 210000000000,
+        "win_price": 204200000000,
+        "award_date": "2026-10-21",
+        "scope": "Kháng sinh thế hệ mới & Hồi sức",
+        "duration_months": 12,
+        "status": "Mới ký hợp đồng"
+      },
+      {
+        "quarter": "Q4/2026",
+        "code": "IB2600046550",
+        "name": "Cung ứng thuốc gây mê, giảm đau hồi sức ngoại khoa và thuốc chống đông can thiệp mạch",
+        "client": "Bệnh viện Hữu nghị Việt Đức",
+        "pkg_price": 195000000000,
+        "win_price": 189500000000,
+        "award_date": "2026-10-18",
+        "scope": "Gây mê hồi sức & Ngoại khoa",
+        "duration_months": 12,
+        "status": "Đang hoàn thiện hợp đồng"
+      },
+      {
+        "quarter": "Q4/2026",
+        "code": "IB2600046120",
+        "name": "Mua sắm thuốc điều trị bệnh lý huyết học, các yếu tố đông máu cô đặc và chế phẩm sinh học năm 2026-2027",
+        "client": "Viện Huyết học - Truyền máu Trung ương",
+        "pkg_price": 165000000000,
+        "win_price": 160800000000,
+        "award_date": "2026-10-15",
+        "scope": "Chế phẩm sinh học & Yếu tố đông máu",
+        "duration_months": 12,
+        "status": "Đang hoàn thiện hợp đồng"
+      },
+      {
+        "quarter": "Q4/2026",
+        "code": "IB2600045780",
+        "name": "Cung ứng thuốc Generic Nhóm 1 và Nhóm 2 phục vụ khám chữa bệnh BHYT đợt 2 năm 2026-2027",
+        "client": "Bệnh viện Trung ương Quân đội 108",
+        "pkg_price": 180000000000,
+        "win_price": 175200000000,
+        "award_date": "2026-10-11",
+        "scope": "Generic Nhóm 1 & 2",
+        "duration_months": 12,
+        "status": "Đang hoàn thiện hợp đồng"
+      },
+      {
+        "quarter": "Q4/2026",
+        "code": "IB2600045310",
+        "name": "Gói thầu số 02: Cung ứng thuốc kháng sinh, thuốc điều trị hô hấp và dung dịch khí dung vụ đông - xuân 2026",
+        "client": "Bệnh viện Phổi Trung ương",
+        "pkg_price": 135000000000,
+        "win_price": 131400000000,
+        "award_date": "2026-10-08",
+        "scope": "Thuốc hô hấp & Kháng sinh",
+        "duration_months": 12,
+        "status": "Đang hoàn thiện hợp đồng"
+      },
+      {
+        "quarter": "Q4/2026",
+        "code": "IB2600044920",
+        "name": "Mua sắm thuốc điều trị chuyên khoa tim mạch, huyết áp và chuyển hóa người cao tuổi Quý 4/2026",
+        "client": "Bệnh viện Lão khoa Trung ương",
+        "pkg_price": 88000000000,
+        "win_price": 85600000000,
+        "award_date": "2026-10-04",
+        "scope": "Tim mạch & Chuyển hóa",
+        "duration_months": 12,
+        "status": "Đang giao đợt 1"
+      },
+      {
+        "quarter": "Q4/2026",
+        "code": "IB2600044560",
+        "name": "Gói thầu mua sắm thuốc generic và sinh phẩm y tế cho các cơ sở y tế công lập tỉnh Quảng Ninh năm 2026-2027",
+        "client": "Sở Y tế tỉnh Quảng Ninh",
+        "pkg_price": 275000000000,
+        "win_price": 266500000000,
+        "award_date": "2026-10-02",
+        "scope": "Generic tổng hợp & Sinh phẩm",
+        "duration_months": 24,
+        "status": "Đang giao đợt 1"
       }
     ],
     "quarterly_financials_2026": {
       "Q1_2026": {
-        "bidding_value_billion": 1420.0,
+        "bidding_value_billion": 1420,
         "bids_won_count": 245,
         "net_revenue_billion": 569.25,
         "gross_profit_billion": 52.37,
@@ -399,9 +495,9 @@
         "status": "Đã công bố BCTC"
       },
       "Q2_2026": {
-        "bidding_value_billion": 1850.0,
+        "bidding_value_billion": 1850,
         "bids_won_count": 280,
-        "net_revenue_billion": 677.0,
+        "net_revenue_billion": 677,
         "gross_profit_billion": 68.4,
         "gross_margin_pct": 10.1,
         "npat_billion": 44.41,
@@ -409,18 +505,37 @@
         "status": "Đã công bố BCTC (+97.7% YoY)"
       },
       "Q3_2026_FORECAST": {
-        "bidding_value_billion": 2050.0,
+        "bidding_value_billion": 2050,
         "bids_won_count": 312,
-        "net_revenue_billion": 725.0,
+        "net_revenue_billion": 725,
         "revenue_yoy_growth_pct": 21.2,
         "revenue_qoq_growth_pct": 7.1,
         "gross_profit_billion": 74.68,
         "gross_margin_pct": 10.3,
         "npat_billion": 43.5,
         "npat_yoy_growth_pct": 56.5,
-        "net_margin_pct": 6.0,
+        "net_margin_pct": 6,
         "eps_4q_trailing_vnd": 4850,
         "status": "Dự báo mô hình (Kết thúc Quý 3/2026)"
+      },
+      "Q3_2026": {
+        "bidding_value_billion": 2050,
+        "bids_won_count": 312,
+        "net_revenue_billion": 679.5,
+        "revenue_yoy_growth_pct": 32.5,
+        "gross_profit_billion": 91,
+        "gross_margin_pct": 13.39,
+        "npat_billion": 40.1,
+        "net_margin_pct": 5.9,
+        "accumulated_9m_revenue_billion": 1925,
+        "accumulated_9m_npat_billion": 106,
+        "plan_completion_profit_pct": 87,
+        "status": "Đã công bố BCTC (+32.5% YoY)"
+      },
+      "Q4_2026": {
+        "bidding_value_billion": 1451.8,
+        "bids_won_count": 8,
+        "status": "Đang đấu thầu (T10/2026)"
       }
     }
   },
@@ -440,10 +555,10 @@
     "bids_won": 4020,
     "bids_lost": 470,
     "bids_pending": 130,
-    "win_rate": 87.0,
-    "total_winning_value": 21430000000000.0,
-    "solo_winning_value": 19200000000000.0,
-    "joint_winning_value": 2230000000000.0,
+    "win_rate": 87,
+    "total_winning_value": 21430000000000,
+    "solo_winning_value": 19200000000000,
+    "joint_winning_value": 2230000000000,
     "avg_discount_rate": 2.9,
     "top_hospital_clients": [
       "Bệnh viện Chợ Rẫy",
@@ -463,27 +578,27 @@
       {
         "year": 2021,
         "bids_won": 650,
-        "value_billion": 3200.0
+        "value_billion": 3200
       },
       {
         "year": 2022,
         "bids_won": 780,
-        "value_billion": 3900.0
+        "value_billion": 3900
       },
       {
         "year": 2023,
         "bids_won": 890,
-        "value_billion": 4500.0
+        "value_billion": 4500
       },
       {
         "year": 2024,
         "bids_won": 960,
-        "value_billion": 4950.0
+        "value_billion": 4950
       },
       {
         "year": 2025,
         "bids_won": 740,
-        "value_billion": 4880.0
+        "value_billion": 4880
       }
     ],
     "notable_packages": [
@@ -491,7 +606,7 @@
         "code": "IB2400041200",
         "name": "Cung cấp thuốc Generic phục vụ điều trị nội ngoại trú Bệnh viện Chợ Rẫy",
         "client": "Bệnh viện Chợ Rẫy",
-        "win_price": 520000000000.0,
+        "win_price": 520000000000,
         "award_date": "2024-06-10"
       }
     ],
@@ -501,8 +616,8 @@
         "code": "IB2600008910",
         "name": "Gói thầu thuốc Generic cung ứng cho BV Chợ Rẫy đợt 1/2026",
         "client": "Bệnh viện Chợ Rẫy",
-        "pkg_price": 420000000000.0,
-        "win_price": 408500000000.0,
+        "pkg_price": 420000000000,
+        "win_price": 408500000000,
         "award_date": "2026-02-12",
         "scope": "Generic Nhóm 1, 2 & Tim mạch",
         "duration_months": 12,
@@ -513,8 +628,8 @@
         "code": "IB2600013400",
         "name": "Gói thầu thuốc tim mạch và huyết áp phân bổ các viện TP.HCM",
         "client": "Sở Y tế TP. Hồ Chí Minh",
-        "pkg_price": 350000000000.0,
-        "win_price": 339800000000.0,
+        "pkg_price": 350000000000,
+        "win_price": 339800000000,
         "award_date": "2026-03-05",
         "scope": "Thuốc tim mạch, Huyết áp",
         "duration_months": 12,
@@ -525,8 +640,8 @@
         "code": "IB2600017800",
         "name": "Cung ứng dịch truyền & kháng sinh cho BVĐK Trung ương Cần Thơ",
         "client": "BV Đa khoa TW Cần Thơ",
-        "pkg_price": 240000000000.0,
-        "win_price": 232000000000.0,
+        "pkg_price": 240000000000,
+        "win_price": 232000000000,
         "award_date": "2026-03-19",
         "scope": "Dịch truyền & Kháng sinh",
         "duration_months": 12,
@@ -537,8 +652,8 @@
         "code": "IB2600019200",
         "name": "Gói thầu thuốc sản phụ khoa và hồi sức cho BV Từ Dũ",
         "client": "Bệnh viện Từ Dũ",
-        "pkg_price": 180000000000.0,
-        "win_price": 174500000000.0,
+        "pkg_price": 180000000000,
+        "win_price": 174500000000,
         "award_date": "2026-03-27",
         "scope": "Thuốc sản khoa & Gây mê",
         "duration_months": 12,
@@ -549,8 +664,8 @@
         "code": "IB2600026100",
         "name": "Gói thầu thuốc Biệt dược gốc cấp quốc gia khu vực phía Nam",
         "client": "Trung tâm Mua sắm tập trung thuốc Quốc gia",
-        "pkg_price": 580000000000.0,
-        "win_price": 562500000000.0,
+        "pkg_price": 580000000000,
+        "win_price": 562500000000,
         "award_date": "2026-05-15",
         "scope": "Biệt dược gốc & Sinh phẩm",
         "duration_months": 24,
@@ -561,8 +676,8 @@
         "code": "IB2600028400",
         "name": "Mua sắm thuốc bảo hiểm y tế đợt 2 cho BV Thống Nhất",
         "client": "Bệnh viện Thống Nhất",
-        "pkg_price": 310000000000.0,
-        "win_price": 300500000000.0,
+        "pkg_price": 310000000000,
+        "win_price": 300500000000,
         "award_date": "2026-06-04",
         "scope": "Thuốc tim mạch, Hô hấp",
         "duration_months": 12,
@@ -573,8 +688,8 @@
         "code": "IB2600030100",
         "name": "Cung ứng thuốc Generic phục vụ KCB tỉnh Đồng Nai 2026-2027",
         "client": "Sở Y tế Tỉnh Đồng Nai",
-        "pkg_price": 360000000000.0,
-        "win_price": 349000000000.0,
+        "pkg_price": 360000000000,
+        "win_price": 349000000000,
         "award_date": "2026-06-18",
         "scope": "Generic Nhóm 1, 2 đa khoa",
         "duration_months": 18,
@@ -585,8 +700,8 @@
         "code": "IB2600031900",
         "name": "Gói thuốc cấp cứu ngoại khoa BV Chấn thương Chỉnh hình TP.HCM",
         "client": "BV Chấn thương Chỉnh hình",
-        "pkg_price": 280000000000.0,
-        "win_price": 271800000000.0,
+        "pkg_price": 280000000000,
+        "win_price": 271800000000,
         "award_date": "2026-06-25",
         "scope": "Gây tê, Giảm đau ngoại khoa",
         "duration_months": 12,
@@ -597,8 +712,8 @@
         "code": "IB2600036500",
         "name": "Gói thầu thuốc bổ sung Quý 3/2026 cho BV Chợ Rẫy",
         "client": "Bệnh viện Chợ Rẫy",
-        "pkg_price": 380000000000.0,
-        "win_price": 368500000000.0,
+        "pkg_price": 380000000000,
+        "win_price": 368500000000,
         "award_date": "2026-07-20",
         "scope": "Kháng sinh & Hồi sức",
         "duration_months": 12,
@@ -609,8 +724,8 @@
         "code": "IB2600039200",
         "name": "Cung ứng thuốc Generic cho các viện tuyến huyện tỉnh Bình Dương",
         "client": "Sở Y tế Tỉnh Bình Dương",
-        "pkg_price": 320000000000.0,
-        "win_price": 310200000000.0,
+        "pkg_price": 320000000000,
+        "win_price": 310200000000,
         "award_date": "2026-08-15",
         "scope": "Thuốc Generic tổng hợp",
         "duration_months": 12,
@@ -621,8 +736,8 @@
         "code": "IB2600041800",
         "name": "Mua sắm thuốc kháng sinh và thuốc hồi sức cấp cứu BV Hùng Vương",
         "client": "Bệnh viện Hùng Vương",
-        "pkg_price": 260000000000.0,
-        "win_price": 252000000000.0,
+        "pkg_price": 260000000000,
+        "win_price": 252000000000,
         "award_date": "2026-09-08",
         "scope": "Kháng sinh & Sản khoa",
         "duration_months": 12,
@@ -633,8 +748,8 @@
         "code": "IB2600043500",
         "name": "Cung ứng thuốc tim mạch và chuyển hóa BV Nhân dân Gia Định",
         "client": "BV Nhân dân Gia Định",
-        "pkg_price": 290000000000.0,
-        "win_price": 281500000000.0,
+        "pkg_price": 290000000000,
+        "win_price": 281500000000,
         "award_date": "2026-09-18",
         "scope": "Tim mạch, Tiểu đường",
         "duration_months": 12,
@@ -645,19 +760,67 @@
         "code": "IB2600044200",
         "name": "Gói thầu thuốc lẻ bổ sung tháng 8-9/2026 các bệnh viện ĐBSCL",
         "client": "Các BV Tuyến Tỉnh Miền Tây",
-        "pkg_price": 420000000000.0,
-        "win_price": 407800000000.0,
+        "pkg_price": 420000000000,
+        "win_price": 407800000000,
         "award_date": "2026-09-24",
         "scope": "Dược phẩm tổng hợp",
         "duration_months": 12,
         "status": "Đang hoàn thiện"
+      },
+      {
+        "quarter": "Q4/2026",
+        "code": "IB2600047100",
+        "name": "Gói thầu mua sắm thuốc chuyên khoa tim mạch can thiệp và hồi sức cấp cứu Quý 4/2026",
+        "client": "Viện Tim TP. Hồ Chí Minh",
+        "pkg_price": 160000000000,
+        "win_price": 155200000000,
+        "award_date": "2026-10-23",
+        "scope": "Thuốc tim mạch & Hồi sức",
+        "duration_months": 12,
+        "status": "Mới ký hợp đồng"
+      },
+      {
+        "quarter": "Q4/2026",
+        "code": "IB2600046750",
+        "name": "Cung cấp thuốc kháng sinh nhóm 1, nhóm 2 và dịch truyền thay thế huyết tương",
+        "client": "Bệnh viện Chợ Rẫy",
+        "pkg_price": 230000000000,
+        "win_price": 223500000000,
+        "award_date": "2026-10-19",
+        "scope": "Kháng sinh & Hồi sức",
+        "duration_months": 12,
+        "status": "Mới ký hợp đồng"
+      },
+      {
+        "quarter": "Q4/2026",
+        "code": "IB2600046200",
+        "name": "Mua sắm thuốc Generic phục vụ điều trị nội trú và ngoại trú 6 tháng cuối năm 2026",
+        "client": "Bệnh viện Thống Nhất",
+        "pkg_price": 140000000000,
+        "win_price": 136200000000,
+        "award_date": "2026-10-12",
+        "scope": "Thuốc Generic đa khoa",
+        "duration_months": 12,
+        "status": "Đang hoàn thiện hợp đồng"
+      },
+      {
+        "quarter": "Q4/2026",
+        "code": "IB2600045600",
+        "name": "Cung ứng thuốc tân dược và dịch truyền thiết yếu cho các bệnh viện tuyến quận/huyện TP.HCM",
+        "client": "Sở Y tế TP. Hồ Chí Minh",
+        "pkg_price": 290000000000,
+        "win_price": 281300000000,
+        "award_date": "2026-10-05",
+        "scope": "Tân dược tổng hợp & Dịch truyền",
+        "duration_months": 18,
+        "status": "Đang giao đợt 1"
       }
     ],
     "quarterly_financials_2026": {
       "Q1_2026": {
-        "bidding_value_billion": 1150.0,
+        "bidding_value_billion": 1150,
         "bids_won_count": 195,
-        "net_revenue_billion": 485.0,
+        "net_revenue_billion": 485,
         "gross_profit_billion": 43.17,
         "gross_margin_pct": 8.9,
         "npat_billion": 16.8,
@@ -665,9 +828,9 @@
         "status": "Đã công bố BCTC"
       },
       "Q2_2026": {
-        "bidding_value_billion": 1480.0,
+        "bidding_value_billion": 1480,
         "bids_won_count": 230,
-        "net_revenue_billion": 565.0,
+        "net_revenue_billion": 565,
         "gross_profit_billion": 54.24,
         "gross_margin_pct": 9.6,
         "npat_billion": 28.5,
@@ -675,18 +838,38 @@
         "status": "Đã công bố BCTC (+54.1% YoY)"
       },
       "Q3_2026_FORECAST": {
-        "bidding_value_billion": 1620.0,
+        "bidding_value_billion": 1620,
         "bids_won_count": 255,
-        "net_revenue_billion": 610.0,
+        "net_revenue_billion": 610,
         "revenue_yoy_growth_pct": 18.4,
-        "revenue_qoq_growth_pct": 8.0,
+        "revenue_qoq_growth_pct": 8,
         "gross_profit_billion": 59.78,
         "gross_margin_pct": 9.8,
-        "npat_billion": 33.0,
+        "npat_billion": 33,
         "npat_yoy_growth_pct": 46.7,
         "net_margin_pct": 5.41,
         "eps_4q_trailing_vnd": 4200,
         "status": "Dự báo mô hình (Kết thúc Quý 3/2026)"
+      },
+      "Q3_2026": {
+        "bidding_value_billion": 1620,
+        "bids_won_count": 255,
+        "net_revenue_billion": 687.52,
+        "revenue_yoy_growth_pct": 22.1,
+        "gross_profit_billion": 62.04,
+        "gross_margin_pct": 9.02,
+        "npat_billion": 29.85,
+        "npat_yoy_growth_pct": 32.4,
+        "net_margin_pct": 4.34,
+        "accumulated_9m_revenue_billion": 1737.5,
+        "accumulated_9m_npat_billion": 75.15,
+        "plan_completion_profit_pct": 83,
+        "status": "Đã công bố BCTC (+22.1% YoY)"
+      },
+      "Q4_2026": {
+        "bidding_value_billion": 796.2,
+        "bids_won_count": 4,
+        "status": "Đang đấu thầu (T10/2026)"
       }
     }
   },
@@ -707,9 +890,9 @@
     "bids_lost": 410,
     "bids_pending": 110,
     "win_rate": 86.5,
-    "total_winning_value": 14780000000000.0,
-    "solo_winning_value": 13600000000000.0,
-    "joint_winning_value": 1180000000000.0,
+    "total_winning_value": 14780000000000,
+    "solo_winning_value": 13600000000000,
+    "joint_winning_value": 1180000000000,
     "avg_discount_rate": 4.1,
     "top_hospital_clients": [
       "Bệnh viện K Trung ương",
@@ -729,27 +912,27 @@
       {
         "year": 2021,
         "bids_won": 540,
-        "value_billion": 2100.0
+        "value_billion": 2100
       },
       {
         "year": 2022,
         "bids_won": 650,
-        "value_billion": 2750.0
+        "value_billion": 2750
       },
       {
         "year": 2023,
         "bids_won": 730,
-        "value_billion": 3250.0
+        "value_billion": 3250
       },
       {
         "year": 2024,
         "bids_won": 810,
-        "value_billion": 3480.0
+        "value_billion": 3480
       },
       {
         "year": 2025,
         "bids_won": 590,
-        "value_billion": 3200.0
+        "value_billion": 3200
       }
     ],
     "notable_packages": [
@@ -757,7 +940,7 @@
         "code": "IB2400078120",
         "name": "Gói thầu mua sắm thuốc ung thư và điều hòa miễn dịch năm 2024-2025",
         "client": "Bệnh viện Ung bướu TP.HCM",
-        "win_price": 385000000000.0,
+        "win_price": 385000000000,
         "award_date": "2024-09-15"
       }
     ]
@@ -779,9 +962,9 @@
     "bids_lost": 285,
     "bids_pending": 85,
     "win_rate": 87.5,
-    "total_winning_value": 11650000000000.0,
-    "solo_winning_value": 10850000000000.0,
-    "joint_winning_value": 800000000000.0,
+    "total_winning_value": 11650000000000,
+    "solo_winning_value": 10850000000000,
+    "joint_winning_value": 800000000000,
     "avg_discount_rate": 3.8,
     "top_hospital_clients": [
       "Bệnh viện Bạch Mai",
@@ -801,27 +984,27 @@
       {
         "year": 2021,
         "bids_won": 410,
-        "value_billion": 1650.0
+        "value_billion": 1650
       },
       {
         "year": 2022,
         "bids_won": 520,
-        "value_billion": 2200.0
+        "value_billion": 2200
       },
       {
         "year": 2023,
         "bids_won": 610,
-        "value_billion": 2650.0
+        "value_billion": 2650
       },
       {
         "year": 2024,
         "bids_won": 680,
-        "value_billion": 2850.0
+        "value_billion": 2850
       },
       {
         "year": 2025,
         "bids_won": 360,
-        "value_billion": 2300.0
+        "value_billion": 2300
       }
     ],
     "notable_packages": [
@@ -829,7 +1012,7 @@
         "code": "IB2400062400",
         "name": "Cung cấp kháng sinh tiêm Nhóm 1 đạt tiêu chuẩn EU-GMP cho các viện trung ương",
         "client": "Bệnh viện Đại học Y Dược TP.HCM",
-        "win_price": 280000000000.0,
+        "win_price": 280000000000,
         "award_date": "2024-07-28"
       }
     ]
@@ -851,9 +1034,9 @@
     "bids_lost": 430,
     "bids_pending": 100,
     "win_rate": 84.5,
-    "total_winning_value": 12350000000000.0,
-    "solo_winning_value": 11900000000000.0,
-    "joint_winning_value": 450000000000.0,
+    "total_winning_value": 12350000000000,
+    "solo_winning_value": 11900000000000,
+    "joint_winning_value": 450000000000,
     "avg_discount_rate": 4.5,
     "top_hospital_clients": [
       "Sở Y tế Cần Thơ",
@@ -873,27 +1056,27 @@
       {
         "year": 2021,
         "bids_won": 500,
-        "value_billion": 1900.0
+        "value_billion": 1900
       },
       {
         "year": 2022,
         "bids_won": 590,
-        "value_billion": 2350.0
+        "value_billion": 2350
       },
       {
         "year": 2023,
         "bids_won": 650,
-        "value_billion": 2700.0
+        "value_billion": 2700
       },
       {
         "year": 2024,
         "bids_won": 690,
-        "value_billion": 2900.0
+        "value_billion": 2900
       },
       {
         "year": 2025,
         "bids_won": 460,
-        "value_billion": 2500.0
+        "value_billion": 2500
       }
     ],
     "notable_packages": [
@@ -901,7 +1084,7 @@
         "code": "IB2400039800",
         "name": "Cung cấp thuốc giảm đau, hạ sốt, kháng sinh điều trị cho Bệnh viện Nhi Đồng 1",
         "client": "Bệnh viện Nhi Đồng 1",
-        "win_price": 195000000000.0,
+        "win_price": 195000000000,
         "award_date": "2024-05-30"
       }
     ]
@@ -923,10 +1106,10 @@
     "bids_lost": 220,
     "bids_pending": 70,
     "win_rate": 84.3,
-    "total_winning_value": 9870000000000.0,
-    "solo_winning_value": 7900000000000.0,
-    "joint_winning_value": 1970000000000.0,
-    "avg_discount_rate": 3.0,
+    "total_winning_value": 9870000000000,
+    "solo_winning_value": 7900000000000,
+    "joint_winning_value": 1970000000000,
+    "avg_discount_rate": 3,
     "top_hospital_clients": [
       "Bộ Y tế",
       "Viện Vệ sinh Dịch tễ Trung ương",
@@ -944,27 +1127,27 @@
       {
         "year": 2021,
         "bids_won": 280,
-        "value_billion": 1600.0
+        "value_billion": 1600
       },
       {
         "year": 2022,
         "bids_won": 320,
-        "value_billion": 1950.0
+        "value_billion": 1950
       },
       {
         "year": 2023,
         "bids_won": 360,
-        "value_billion": 2200.0
+        "value_billion": 2200
       },
       {
         "year": 2024,
         "bids_won": 390,
-        "value_billion": 2320.0
+        "value_billion": 2320
       },
       {
         "year": 2025,
         "bids_won": 210,
-        "value_billion": 1800.0
+        "value_billion": 1800
       }
     ],
     "notable_packages": [
@@ -972,7 +1155,7 @@
         "code": "IB2400018700",
         "name": "Cung cấp vắc xin phối hợp và sinh phẩm miễn dịch điều trị đặc biệt",
         "client": "Viện Vệ sinh Dịch tễ Trung ương",
-        "win_price": 420000000000.0,
+        "win_price": 420000000000,
         "award_date": "2024-03-25"
       }
     ]
@@ -994,9 +1177,9 @@
     "bids_lost": 340,
     "bids_pending": 80,
     "win_rate": 84.2,
-    "total_winning_value": 8920000000000.0,
-    "solo_winning_value": 8100000000000.0,
-    "joint_winning_value": 82000000000.0,
+    "total_winning_value": 8920000000000,
+    "solo_winning_value": 8100000000000,
+    "joint_winning_value": 82000000000,
     "avg_discount_rate": 3.4,
     "top_hospital_clients": [
       "Bệnh viện Đa khoa Đà Nẵng",
@@ -1015,27 +1198,27 @@
       {
         "year": 2021,
         "bids_won": 390,
-        "value_billion": 1400.0
+        "value_billion": 1400
       },
       {
         "year": 2022,
         "bids_won": 450,
-        "value_billion": 1750.0
+        "value_billion": 1750
       },
       {
         "year": 2023,
         "bids_won": 510,
-        "value_billion": 2050.0
+        "value_billion": 2050
       },
       {
         "year": 2024,
         "bids_won": 540,
-        "value_billion": 2180.0
+        "value_billion": 2180
       },
       {
         "year": 2025,
         "bids_won": 340,
-        "value_billion": 1540.0
+        "value_billion": 1540
       }
     ],
     "notable_packages": [
@@ -1043,7 +1226,7 @@
         "code": "IB2400049100",
         "name": "Cung cấp thuốc Generic và dịch truyền cho Bệnh viện Đa khoa Đà Nẵng",
         "client": "Bệnh viện Đa khoa Đà Nẵng",
-        "win_price": 265000000000.0,
+        "win_price": 265000000000,
         "award_date": "2024-06-20"
       }
     ]
@@ -1065,9 +1248,9 @@
     "bids_lost": 360,
     "bids_pending": 70,
     "win_rate": 80.5,
-    "total_winning_value": 4860000000000.0,
-    "solo_winning_value": 4600000000000.0,
-    "joint_winning_value": 260000000000.0,
+    "total_winning_value": 4860000000000,
+    "solo_winning_value": 4600000000000,
+    "joint_winning_value": 260000000000,
     "avg_discount_rate": 4.8,
     "top_hospital_clients": [
       "Bệnh viện Y học Cổ truyền Trung ương",
@@ -1086,27 +1269,27 @@
       {
         "year": 2021,
         "bids_won": 310,
-        "value_billion": 780.0
+        "value_billion": 780
       },
       {
         "year": 2022,
         "bids_won": 370,
-        "value_billion": 950.0
+        "value_billion": 950
       },
       {
         "year": 2023,
         "bids_won": 410,
-        "value_billion": 1120.0
+        "value_billion": 1120
       },
       {
         "year": 2024,
         "bids_won": 440,
-        "value_billion": 1210.0
+        "value_billion": 1210
       },
       {
         "year": 2025,
         "bids_won": 250,
-        "value_billion": 800.0
+        "value_billion": 800
       }
     ],
     "notable_packages": [
@@ -1114,7 +1297,7 @@
         "code": "IB2400037800",
         "name": "Cung cấp thuốc cổ truyền và thuốc có thành phần dược liệu cho các viện TW",
         "client": "Bệnh viện Y học Cổ truyền Trung ương",
-        "win_price": 95000000000.0,
+        "win_price": 95000000000,
         "award_date": "2024-05-12"
       }
     ],
@@ -1124,8 +1307,8 @@
         "code": "IB2600007200",
         "name": "Gói thầu số 02: Thuốc cổ truyền và dược liệu cho BV Y học Cổ truyền TW",
         "client": "Bệnh viện Y học Cổ truyền TW",
-        "pkg_price": 95000000000.0,
-        "win_price": 90200000000.0,
+        "pkg_price": 95000000000,
+        "win_price": 90200000000,
         "award_date": "2026-01-25",
         "scope": "Đông dược, Dược liệu đạt chuẩn",
         "duration_months": 12,
@@ -1136,8 +1319,8 @@
         "code": "IB2600011500",
         "name": "Cung cấp thuốc Boganic và thuốc bổ gan mật cho BV Bệnh Nhiệt đới TW",
         "client": "Bệnh viện Bệnh Nhiệt đới TW",
-        "pkg_price": 75000000000.0,
-        "win_price": 71500000000.0,
+        "pkg_price": 75000000000,
+        "win_price": 71500000000,
         "award_date": "2026-02-20",
         "scope": "Thuốc bổ gan & Thảo dược",
         "duration_months": 12,
@@ -1148,8 +1331,8 @@
         "code": "IB2600015800",
         "name": "Thuốc tim mạch, thần kinh (Cebraton) cho các viện công lập Hà Nội",
         "client": "Sở Y tế TP. Hà Nội",
-        "pkg_price": 120000000000.0,
-        "win_price": 114000000000.0,
+        "pkg_price": 120000000000,
+        "win_price": 114000000000,
         "award_date": "2026-03-12",
         "scope": "Cebraton, Hoạt huyết dưỡng não",
         "duration_months": 12,
@@ -1160,8 +1343,8 @@
         "code": "IB2600019600",
         "name": "Cung ứng thuốc đông y và viên nang cho BV Châm cứu TW",
         "client": "Bệnh viện Châm cứu TW",
-        "pkg_price": 90000000000.0,
-        "win_price": 85500000000.0,
+        "pkg_price": 90000000000,
+        "win_price": 85500000000,
         "award_date": "2026-03-29",
         "scope": "Viên nang đông y & Cao xoa",
         "duration_months": 12,
@@ -1172,8 +1355,8 @@
         "code": "IB2600024800",
         "name": "Gói thầu thuốc chuyển giao công nghệ Daewoong EU-GMP đợt 1",
         "client": "Trung tâm Mua sắm tập trung thuốc Quốc gia",
-        "pkg_price": 180000000000.0,
-        "win_price": 172000000000.0,
+        "pkg_price": 180000000000,
+        "win_price": 172000000000,
         "award_date": "2026-05-10",
         "scope": "Tân dược Daewoong EU-GMP",
         "duration_months": 24,
@@ -1184,8 +1367,8 @@
         "code": "IB2600027900",
         "name": "Mua sắm thuốc đông y và thành phẩm dược liệu BV Y học Cổ truyền TP.HCM",
         "client": "BV Y học Cổ truyền TP.HCM",
-        "pkg_price": 110000000000.0,
-        "win_price": 104500000000.0,
+        "pkg_price": 110000000000,
+        "win_price": 104500000000,
         "award_date": "2026-05-28",
         "scope": "Thảo dược & Cao dược liệu",
         "duration_months": 12,
@@ -1196,8 +1379,8 @@
         "code": "IB2600029500",
         "name": "Cung ứng thuốc thần kinh, tuần hoàn não cho BV Quân y 108",
         "client": "BV Trung ương Quân đội 108",
-        "pkg_price": 95000000000.0,
-        "win_price": 90800000000.0,
+        "pkg_price": 95000000000,
+        "win_price": 90800000000,
         "award_date": "2026-06-15",
         "scope": "Thuốc thần kinh & Huyết áp",
         "duration_months": 12,
@@ -1208,8 +1391,8 @@
         "code": "IB2600032200",
         "name": "Gói thầu thuốc bổ và tiêu hóa cho BV Bạch Mai",
         "client": "Bệnh viện Bạch Mai",
-        "pkg_price": 85000000000.0,
-        "win_price": 81200000000.0,
+        "pkg_price": 85000000000,
+        "win_price": 81200000000,
         "award_date": "2026-06-26",
         "scope": "Thuốc tiêu hóa & Gan mật",
         "duration_months": 12,
@@ -1220,8 +1403,8 @@
         "code": "IB2600037100",
         "name": "Cung ứng thuốc đông dược và tân dược chuẩn EU-GMP Q3/2026",
         "client": "Sở Y tế Tỉnh Hưng Yên & Hải Dương",
-        "pkg_price": 145000000000.0,
-        "win_price": 138200000000.0,
+        "pkg_price": 145000000000,
+        "win_price": 138200000000,
         "award_date": "2026-07-28",
         "scope": "Đông dược & Kháng sinh Daewoong",
         "duration_months": 12,
@@ -1232,8 +1415,8 @@
         "code": "IB2600039800",
         "name": "Gói thuốc đông dược đợt 2 cho các bệnh viện y học cổ truyền phía Bắc",
         "client": "Các BV YHCT Phía Bắc",
-        "pkg_price": 125000000000.0,
-        "win_price": 119500000000.0,
+        "pkg_price": 125000000000,
+        "win_price": 119500000000,
         "award_date": "2026-08-18",
         "scope": "Thuốc y học cổ truyền",
         "duration_months": 12,
@@ -1244,8 +1427,8 @@
         "code": "IB2600042500",
         "name": "Cung ứng thuốc bổ gan mật Boganic và thuốc nhỏ mắt cho BV E",
         "client": "Bệnh viện E",
-        "pkg_price": 78000000000.0,
-        "win_price": 74500000000.0,
+        "pkg_price": 78000000000,
+        "win_price": 74500000000,
         "award_date": "2026-09-15",
         "scope": "Boganic & Dược phẩm cơ bản",
         "duration_months": 12,
@@ -1256,8 +1439,8 @@
         "code": "IB2600044100",
         "name": "Thuốc thần kinh Cebraton & Hoạt huyết dưỡng não đợt 3 BVĐK Hà Đông",
         "client": "Bệnh viện Đa khoa Hà Đông",
-        "pkg_price": 65000000000.0,
-        "win_price": 62000000000.0,
+        "pkg_price": 65000000000,
+        "win_price": 62000000000,
         "award_date": "2026-09-22",
         "scope": "Cebraton, Hoạt huyết dưỡng não",
         "duration_months": 12,
@@ -1268,19 +1451,55 @@
         "code": "IB2600044900",
         "name": "Các gói thầu thuốc dược liệu lẻ tháng 8-9/2026 các tỉnh miền Trung",
         "client": "Các Sở Y tế Miền Trung",
-        "pkg_price": 110000000000.0,
-        "win_price": 104800000000.0,
+        "pkg_price": 110000000000,
+        "win_price": 104800000000,
         "award_date": "2026-09-25",
         "scope": "Dược liệu & Đông y",
         "duration_months": 12,
         "status": "Đang hoàn thiện"
+      },
+      {
+        "quarter": "Q4/2026",
+        "code": "IB2600047050",
+        "name": "Cung cấp đông dược viên nén bao phim và thuốc y học cổ truyền Quý 4/2026",
+        "client": "Bệnh viện Y học Cổ truyền Trung ương",
+        "pkg_price": 65000000000,
+        "win_price": 63200000000,
+        "award_date": "2026-10-22",
+        "scope": "Đông dược thành phẩm",
+        "duration_months": 12,
+        "status": "Mới ký hợp đồng"
+      },
+      {
+        "quarter": "Q4/2026",
+        "code": "IB2600046300",
+        "name": "Mua sắm thuốc thảo dược và sản phẩm bổ trợ thần kinh, tuần hoàn não",
+        "client": "Bệnh viện Châm cứu Trung ương",
+        "pkg_price": 48000000000,
+        "win_price": 46800000000,
+        "award_date": "2026-10-15",
+        "scope": "Hoạt huyết & Bổ não",
+        "duration_months": 12,
+        "status": "Đang hoàn thiện hợp đồng"
+      },
+      {
+        "quarter": "Q4/2026",
+        "code": "IB2600045150",
+        "name": "Gói thầu thuốc đông y và dịch chiết thảo dược phục vụ điều trị tuyến tỉnh năm 2026-2027",
+        "client": "Sở Y tế tỉnh Hưng Yên",
+        "pkg_price": 52000000000,
+        "win_price": 50600000000,
+        "award_date": "2026-10-04",
+        "scope": "Đông y & Thảo dược",
+        "duration_months": 12,
+        "status": "Đang giao đợt 1"
       }
     ],
     "quarterly_financials_2026": {
       "Q1_2026": {
-        "bidding_value_billion": 380.0,
+        "bidding_value_billion": 380,
         "bids_won_count": 92,
-        "net_revenue_billion": 595.0,
+        "net_revenue_billion": 595,
         "gross_profit_billion": 334.39,
         "gross_margin_pct": 56.2,
         "npat_billion": 78.5,
@@ -1288,28 +1507,33 @@
         "status": "Đã công bố BCTC"
       },
       "Q2_2026": {
-        "bidding_value_billion": 460.0,
+        "bidding_value_billion": 460,
         "bids_won_count": 105,
-        "net_revenue_billion": 645.0,
+        "net_revenue_billion": 645,
         "gross_profit_billion": 367.65,
-        "gross_margin_pct": 57.0,
+        "gross_margin_pct": 57,
         "npat_billion": 89.2,
         "net_margin_pct": 13.83,
         "status": "Đã công bố BCTC (+18.5% YoY)"
       },
       "Q3_2026_FORECAST": {
-        "bidding_value_billion": 495.0,
+        "bidding_value_billion": 495,
         "bids_won_count": 112,
-        "net_revenue_billion": 685.0,
+        "net_revenue_billion": 685,
         "revenue_yoy_growth_pct": 16.1,
         "revenue_qoq_growth_pct": 6.2,
         "gross_profit_billion": 393.88,
         "gross_margin_pct": 57.5,
-        "npat_billion": 98.0,
-        "npat_yoy_growth_pct": 21.0,
+        "npat_billion": 98,
+        "npat_yoy_growth_pct": 21,
         "net_margin_pct": 14.31,
         "eps_4q_trailing_vnd": 7200,
         "status": "Dự báo mô hình (Kết thúc Quý 3/2026)"
+      },
+      "Q4_2026": {
+        "bidding_value_billion": 160.6,
+        "bids_won_count": 3,
+        "status": "Đang đấu thầu (T10/2026)"
       }
     }
   },
@@ -1330,9 +1554,9 @@
     "bids_lost": 330,
     "bids_pending": 60,
     "win_rate": 80.3,
-    "total_winning_value": 4520000000000.0,
-    "solo_winning_value": 4250000000000.0,
-    "joint_winning_value": 270000000000.0,
+    "total_winning_value": 4520000000000,
+    "solo_winning_value": 4250000000000,
+    "joint_winning_value": 270000000000,
     "avg_discount_rate": 4.6,
     "top_hospital_clients": [
       "Bệnh viện Quân y 103",
@@ -1351,27 +1575,27 @@
       {
         "year": 2021,
         "bids_won": 270,
-        "value_billion": 690.0
+        "value_billion": 690
       },
       {
         "year": 2022,
         "bids_won": 320,
-        "value_billion": 880.0
+        "value_billion": 880
       },
       {
         "year": 2023,
         "bids_won": 380,
-        "value_billion": 1050.0
+        "value_billion": 1050
       },
       {
         "year": 2024,
         "bids_won": 410,
-        "value_billion": 1150.0
+        "value_billion": 1150
       },
       {
         "year": 2025,
         "bids_won": 210,
-        "value_billion": 750.0
+        "value_billion": 750
       }
     ],
     "notable_packages": [
@@ -1379,7 +1603,7 @@
         "code": "IB2400052300",
         "name": "Cung cấp thuốc điều trị nội khoa phục vụ cán bộ chiến sĩ và nhân dân",
         "client": "Bệnh viện Quân y 103",
-        "win_price": 110000000000.0,
+        "win_price": 110000000000,
         "award_date": "2024-07-15"
       }
     ]
@@ -1401,9 +1625,9 @@
     "bids_lost": 280,
     "bids_pending": 50,
     "win_rate": 77.7,
-    "total_winning_value": 4230000000000.0,
-    "solo_winning_value": 3650000000000.0,
-    "joint_winning_value": 580000000000.0,
+    "total_winning_value": 4230000000000,
+    "solo_winning_value": 3650000000000,
+    "joint_winning_value": 580000000000,
     "avg_discount_rate": 3.1,
     "top_hospital_clients": [
       "Bệnh viện Hữu nghị Việt Đức",
@@ -1422,27 +1646,27 @@
       {
         "year": 2021,
         "bids_won": 190,
-        "value_billion": 620.0
+        "value_billion": 620
       },
       {
         "year": 2022,
         "bids_won": 240,
-        "value_billion": 820.0
+        "value_billion": 820
       },
       {
         "year": 2023,
         "bids_won": 280,
-        "value_billion": 1050.0
+        "value_billion": 1050
       },
       {
         "year": 2024,
         "bids_won": 310,
-        "value_billion": 1140.0
+        "value_billion": 1140
       },
       {
         "year": 2025,
         "bids_won": 130,
-        "value_billion": 600.0
+        "value_billion": 600
       }
     ],
     "notable_packages": [
@@ -1450,7 +1674,7 @@
         "code": "IB2400067800",
         "name": "Cung cấp bơm kim tiêm vô trùng và vật tư tiêu hao phòng mổ",
         "client": "Bệnh viện Hữu nghị Việt Đức",
-        "win_price": 135000000000.0,
+        "win_price": 135000000000,
         "award_date": "2024-08-10"
       }
     ]
@@ -1472,10 +1696,10 @@
     "bids_lost": 270,
     "bids_pending": 60,
     "win_rate": 82.1,
-    "total_winning_value": 4180000000000.0,
-    "solo_winning_value": 3920000000000.0,
-    "joint_winning_value": 260000000000.0,
-    "avg_discount_rate": 4.0,
+    "total_winning_value": 4180000000000,
+    "solo_winning_value": 3920000000000,
+    "joint_winning_value": 260000000000,
+    "avg_discount_rate": 4,
     "top_hospital_clients": [
       "Bệnh viện Nhi Trung ương",
       "Bệnh viện Mắt Trung ương",
@@ -1494,27 +1718,27 @@
       {
         "year": 2021,
         "bids_won": 250,
-        "value_billion": 620.0
+        "value_billion": 620
       },
       {
         "year": 2022,
         "bids_won": 310,
-        "value_billion": 810.0
+        "value_billion": 810
       },
       {
         "year": 2023,
         "bids_won": 370,
-        "value_billion": 990.0
+        "value_billion": 990
       },
       {
         "year": 2024,
         "bids_won": 390,
-        "value_billion": 1080.0
+        "value_billion": 1080
       },
       {
         "year": 2025,
         "bids_won": 190,
-        "value_billion": 680.0
+        "value_billion": 680
       }
     ],
     "notable_packages": [
@@ -1522,7 +1746,7 @@
         "code": "IB2400045600",
         "name": "Cung ứng thuốc dung dịch khí dung và thuốc dạng ống bẻ cho Bệnh viện Nhi TW",
         "client": "Bệnh viện Nhi Trung ương",
-        "win_price": 88000000000.0,
+        "win_price": 88000000000,
         "award_date": "2024-06-18"
       }
     ],
@@ -1532,8 +1756,8 @@
         "code": "IB2600006500",
         "name": "Cung ứng dung dịch khí dung Fipratrop & Budesonide cho BV Nhi TW",
         "client": "Bệnh viện Nhi Trung ương",
-        "pkg_price": 85000000000.0,
-        "win_price": 81500000000.0,
+        "pkg_price": 85000000000,
+        "win_price": 81500000000,
         "award_date": "2026-01-18",
         "scope": "Khí dung Fipratrop, Budesonide",
         "duration_months": 12,
@@ -1544,8 +1768,8 @@
         "code": "IB2600009800",
         "name": "Gói thầu thuốc nhỏ mắt tép nhựa Novotane cho BV Mắt TW",
         "client": "Bệnh viện Mắt Trung ương",
-        "pkg_price": 68000000000.0,
-        "win_price": 65200000000.0,
+        "pkg_price": 68000000000,
+        "win_price": 65200000000,
         "award_date": "2026-02-15",
         "scope": "Novotane Ultra BFS vô trùng",
         "duration_months": 12,
@@ -1556,8 +1780,8 @@
         "code": "IB2600014200",
         "name": "Cung cấp nước muối sinh lý vô trùng Nebusal cho BV Tai Mũi Họng TW",
         "client": "BV Tai Mũi Họng Trung ương",
-        "pkg_price": 55000000000.0,
-        "win_price": 52800000000.0,
+        "pkg_price": 55000000000,
+        "win_price": 52800000000,
         "award_date": "2026-03-08",
         "scope": "Nebusal & Dung dịch rửa mũi",
         "duration_months": 12,
@@ -1568,8 +1792,8 @@
         "code": "IB2600018500",
         "name": "Gói thầu thuốc dạng ống bẻ BFS cho BV Đa khoa Xanh Pôn",
         "client": "Bệnh viện Đa khoa Xanh Pôn",
-        "pkg_price": 78000000000.0,
-        "win_price": 74500000000.0,
+        "pkg_price": 78000000000,
+        "win_price": 74500000000,
         "award_date": "2026-03-26",
         "scope": "Dạng ống bẻ nhựa BFS",
         "duration_months": 12,
@@ -1580,8 +1804,8 @@
         "code": "IB2600023800",
         "name": "Mua sắm thuốc khí dung hô hấp đợt hè 2026 cho BV Phổi TW",
         "client": "Bệnh viện Phổi Trung ương",
-        "pkg_price": 95000000000.0,
-        "win_price": 91200000000.0,
+        "pkg_price": 95000000000,
+        "win_price": 91200000000,
         "award_date": "2026-05-06",
         "scope": "Thuốc khí dung điều trị hen",
         "duration_months": 12,
@@ -1592,8 +1816,8 @@
         "code": "IB2600027600",
         "name": "Cung ứng thuốc nhỏ mắt và nước rửa nhãn khoa vô trùng cho BV Mắt Hà Nội",
         "client": "Bệnh viện Mắt Hà Nội",
-        "pkg_price": 72000000000.0,
-        "win_price": 69000000000.0,
+        "pkg_price": 72000000000,
+        "win_price": 69000000000,
         "award_date": "2026-05-22",
         "scope": "Nhỏ mắt BFS không chất bảo quản",
         "duration_months": 12,
@@ -1604,8 +1828,8 @@
         "code": "IB2600029900",
         "name": "Gói thầu men vi sinh sống Smartco và ống uống bù nước cho BV Nhi TW",
         "client": "Bệnh viện Nhi Trung ương",
-        "pkg_price": 82000000000.0,
-        "win_price": 78500000000.0,
+        "pkg_price": 82000000000,
+        "win_price": 78500000000,
         "award_date": "2026-06-12",
         "scope": "Men vi sinh Smartco phân liều",
         "duration_months": 12,
@@ -1616,8 +1840,8 @@
         "code": "IB2600031800",
         "name": "Thuốc dạng tép nhựa BFS phân bổ các viện thuộc SYT Hà Nội",
         "client": "Sở Y tế TP. Hà Nội",
-        "pkg_price": 105000000000.0,
-        "win_price": 101300000000.0,
+        "pkg_price": 105000000000,
+        "win_price": 101300000000,
         "award_date": "2026-06-25",
         "scope": "Dung dịch BFS chuyên khoa",
         "duration_months": 12,
@@ -1628,8 +1852,8 @@
         "code": "IB2600036200",
         "name": "Gói thầu thuốc khí dung hô hấp mùa tựu trường cho BV Nhi TW",
         "client": "Bệnh viện Nhi Trung ương",
-        "pkg_price": 110000000000.0,
-        "win_price": 106500000000.0,
+        "pkg_price": 110000000000,
+        "win_price": 106500000000,
         "award_date": "2026-07-16",
         "scope": "Fipratrop & Dung dịch hô hấp",
         "duration_months": 12,
@@ -1640,8 +1864,8 @@
         "code": "IB2600038800",
         "name": "Cung ứng thuốc nhỏ mắt Novotane Ultra đợt 2 cho BV Mắt TW",
         "client": "Bệnh viện Mắt Trung ương",
-        "pkg_price": 85000000000.0,
-        "win_price": 81800000000.0,
+        "pkg_price": 85000000000,
+        "win_price": 81800000000,
         "award_date": "2026-08-14",
         "scope": "Novotane tép nhựa đơn liều",
         "duration_months": 12,
@@ -1652,8 +1876,8 @@
         "code": "IB2600041500",
         "name": "Mua sắm thuốc ống bẻ BFS và dung dịch khí dung cho BV Bạch Mai",
         "client": "Bệnh viện Bạch Mai",
-        "pkg_price": 92000000000.0,
-        "win_price": 88500000000.0,
+        "pkg_price": 92000000000,
+        "win_price": 88500000000,
         "award_date": "2026-09-06",
         "scope": "Khí dung & Kháng sinh tiêm BFS",
         "duration_months": 12,
@@ -1664,8 +1888,8 @@
         "code": "IB2600043800",
         "name": "Cung cấp thuốc khí dung và Nebusal cho BV Sản Nhi Nghệ An",
         "client": "BV Sản Nhi Nghệ An",
-        "pkg_price": 65000000000.0,
-        "win_price": 62500000000.0,
+        "pkg_price": 65000000000,
+        "win_price": 62500000000,
         "award_date": "2026-09-19",
         "scope": "Khí dung & Nước muối Nebusal",
         "duration_months": 12,
@@ -1676,17 +1900,41 @@
         "code": "IB2600044600",
         "name": "Gói thầu thuốc lẻ BFS bổ sung tháng 8-9/2026 các tỉnh phía Bắc",
         "client": "Các BV Tuyến Tỉnh Phía Bắc",
-        "pkg_price": 60000000000.0,
-        "win_price": 55700000000.0,
+        "pkg_price": 60000000000,
+        "win_price": 55700000000,
         "award_date": "2026-09-24",
         "scope": "Tép nhựa BFS tổng hợp",
         "duration_months": 12,
         "status": "Đang hoàn thiện"
+      },
+      {
+        "quarter": "Q4/2026",
+        "code": "IB2600047120",
+        "name": "Cung cấp dung dịch tiêm truyền định liều cao cấp và thuốc nhỏ mắt đơn liều BFS đợt 4/2026",
+        "client": "Bệnh viện Mắt Trung ương",
+        "pkg_price": 85000000000,
+        "win_price": 82600000000,
+        "award_date": "2026-10-23",
+        "scope": "Thuốc nhỏ mắt công nghệ BFS",
+        "duration_months": 12,
+        "status": "Mới ký hợp đồng"
+      },
+      {
+        "quarter": "Q4/2026",
+        "code": "IB2600046050",
+        "name": "Mua sắm dung dịch khí dung và ống uống nhựa định liều nhi khoa Quý 4/2026",
+        "client": "Bệnh viện Nhi Trung ương",
+        "pkg_price": 92000000000,
+        "win_price": 89400000000,
+        "award_date": "2026-10-14",
+        "scope": "Khí dung & Ống uống phân liều",
+        "duration_months": 12,
+        "status": "Đang hoàn thiện hợp đồng"
       }
     ],
     "quarterly_financials_2026": {
       "Q1_2026": {
-        "bidding_value_billion": 285.0,
+        "bidding_value_billion": 285,
         "bids_won_count": 68,
         "net_revenue_billion": 198.5,
         "gross_profit_billion": 76.42,
@@ -1696,9 +1944,9 @@
         "status": "Đã công bố BCTC"
       },
       "Q2_2026": {
-        "bidding_value_billion": 340.0,
+        "bidding_value_billion": 340,
         "bids_won_count": 75,
-        "net_revenue_billion": 232.0,
+        "net_revenue_billion": 232,
         "gross_profit_billion": 92.34,
         "gross_margin_pct": 39.8,
         "npat_billion": 35.2,
@@ -1706,18 +1954,23 @@
         "status": "Đã công bố BCTC (+38.6% YoY)"
       },
       "Q3_2026_FORECAST": {
-        "bidding_value_billion": 395.0,
+        "bidding_value_billion": 395,
         "bids_won_count": 84,
-        "net_revenue_billion": 262.0,
+        "net_revenue_billion": 262,
         "revenue_yoy_growth_pct": 23.6,
         "revenue_qoq_growth_pct": 12.9,
         "gross_profit_billion": 106.11,
         "gross_margin_pct": 40.5,
-        "npat_billion": 42.0,
+        "npat_billion": 42,
         "npat_yoy_growth_pct": 41.9,
         "net_margin_pct": 16.03,
         "eps_4q_trailing_vnd": 5400,
         "status": "Dự báo mô hình (Kết thúc Quý 3/2026)"
+      },
+      "Q4_2026": {
+        "bidding_value_billion": 172,
+        "bids_won_count": 2,
+        "status": "Đang đấu thầu (T10/2026)"
       }
     }
   },
@@ -1738,9 +1991,9 @@
     "bids_lost": 310,
     "bids_pending": 60,
     "win_rate": 84.9,
-    "total_winning_value": 3850000000000.0,
-    "solo_winning_value": 3620000000000.0,
-    "joint_winning_value": 230000000000.0,
+    "total_winning_value": 3850000000000,
+    "solo_winning_value": 3620000000000,
+    "joint_winning_value": 230000000000,
     "avg_discount_rate": 3.5,
     "top_hospital_clients": [
       "Bệnh viện Đa khoa Đà Nẵng",
@@ -1761,27 +2014,27 @@
       {
         "year": 2021,
         "bids_won": 340,
-        "value_billion": 580.0
+        "value_billion": 580
       },
       {
         "year": 2022,
         "bids_won": 390,
-        "value_billion": 710.0
+        "value_billion": 710
       },
       {
         "year": 2023,
         "bids_won": 450,
-        "value_billion": 850.0
+        "value_billion": 850
       },
       {
         "year": 2024,
         "bids_won": 480,
-        "value_billion": 930.0
+        "value_billion": 930
       },
       {
         "year": 2025,
         "bids_won": 210,
-        "value_billion": 450.0
+        "value_billion": 450
       }
     ],
     "notable_packages": [
@@ -1789,7 +2042,7 @@
         "code": "IB2400031800",
         "name": "Gói thầu số 2: Cung ứng thuốc đông y và thuốc từ dược liệu cho các viện công lập Quảng Nam",
         "client": "Sở Y tế Tỉnh Quảng Nam",
-        "win_price": 78500000000.0,
+        "win_price": 78500000000,
         "award_date": "2024-05-10"
       }
     ],
@@ -1799,8 +2052,8 @@
         "code": "IB2600007800",
         "name": "Gói số 2: Thuốc đông y & thuốc dược liệu cho viện công lập Quảng Nam",
         "client": "Sở Y tế Tỉnh Quảng Nam",
-        "pkg_price": 80000000000.0,
-        "win_price": 76800000000.0,
+        "pkg_price": 80000000000,
+        "win_price": 76800000000,
         "award_date": "2026-01-22",
         "scope": "Đông y, Thuốc từ dược liệu GMP",
         "duration_months": 12,
@@ -1811,8 +2064,8 @@
         "code": "IB2600012200",
         "name": "Cung ứng thuốc tim mạch & viên nang mềm cho BV Đa khoa Đà Nẵng",
         "client": "Bệnh viện Đa khoa Đà Nẵng",
-        "pkg_price": 68000000000.0,
-        "win_price": 65000000000.0,
+        "pkg_price": 68000000000,
+        "win_price": 65000000000,
         "award_date": "2026-02-25",
         "scope": "Viên nang mềm & Tim mạch",
         "duration_months": 12,
@@ -1823,8 +2076,8 @@
         "code": "IB2600016500",
         "name": "Gói thầu thuốc thần kinh, bổ gan cho BV C Đà Nẵng",
         "client": "Bệnh viện C Đà Nẵng",
-        "pkg_price": 45000000000.0,
-        "win_price": 43200000000.0,
+        "pkg_price": 45000000000,
+        "win_price": 43200000000,
         "award_date": "2026-03-14",
         "scope": "Thần kinh & Bổ gan thảo dược",
         "duration_months": 12,
@@ -1835,8 +2088,8 @@
         "code": "IB2600019900",
         "name": "Mua sắm thuốc dược liệu cho BV YHCT Đà Nẵng",
         "client": "BV Y học Cổ truyền Đà Nẵng",
-        "pkg_price": 30000000000.0,
-        "win_price": 28500000000.0,
+        "pkg_price": 30000000000,
+        "win_price": 28500000000,
         "award_date": "2026-03-29",
         "scope": "Dược liệu & Chế phẩm y học cổ truyền",
         "duration_months": 12,
@@ -1847,8 +2100,8 @@
         "code": "IB2600025200",
         "name": "Gói thầu thuốc chuyên khoa cho BV Trung ương Huế",
         "client": "Bệnh viện Trung ương Huế",
-        "pkg_price": 92000000000.0,
-        "win_price": 88000000000.0,
+        "pkg_price": 92000000000,
+        "win_price": 88000000000,
         "award_date": "2026-05-12",
         "scope": "Viên nang mềm KCNC & Tiêm truyền",
         "duration_months": 18,
@@ -1859,8 +2112,8 @@
         "code": "IB2600028200",
         "name": "Cung cấp thuốc viên nang mềm và đông dược cho BVĐK Bình Định",
         "client": "Sở Y tế Tỉnh Bình Định",
-        "pkg_price": 75000000000.0,
-        "win_price": 71800000000.0,
+        "pkg_price": 75000000000,
+        "win_price": 71800000000,
         "award_date": "2026-06-02",
         "scope": "Thuốc viên nang & Đông dược",
         "duration_months": 12,
@@ -1871,8 +2124,8 @@
         "code": "IB2600030800",
         "name": "Gói thuốc đông y cho BV YHCT Quảng Ngãi & Quảng Nam",
         "client": "Sở Y tế Tỉnh Quảng Ngãi",
-        "pkg_price": 55000000000.0,
-        "win_price": 52500000000.0,
+        "pkg_price": 55000000000,
+        "win_price": 52500000000,
         "award_date": "2026-06-19",
         "scope": "Thuốc y học cổ truyền đạt chuẩn",
         "duration_months": 12,
@@ -1883,8 +2136,8 @@
         "code": "IB2600032900",
         "name": "Cung ứng thuốc hạ sốt, giảm đau và thuốc thảo dược BV Phụ sản - Nhi Đà Nẵng",
         "client": "BV Phụ sản - Nhi Đà Nẵng",
-        "pkg_price": 55000000000.0,
-        "win_price": 52700000000.0,
+        "pkg_price": 55000000000,
+        "win_price": 52700000000,
         "award_date": "2026-06-28",
         "scope": "Giảm đau & Siro thảo dược nhi",
         "duration_months": 12,
@@ -1895,8 +2148,8 @@
         "code": "IB2600036900",
         "name": "Gói thuốc tim mạch và chuyển hóa BV Đa khoa Đà Nẵng đợt 2",
         "client": "Bệnh viện Đa khoa Đà Nẵng",
-        "pkg_price": 85000000000.0,
-        "win_price": 81500000000.0,
+        "pkg_price": 85000000000,
+        "win_price": 81500000000,
         "award_date": "2026-07-22",
         "scope": "Tim mạch, Thần kinh & Huyết áp",
         "duration_months": 12,
@@ -1907,8 +2160,8 @@
         "code": "IB2600039400",
         "name": "Cung ứng thuốc đông y và thành phẩm thảo dược KCNC cho BV TW Huế",
         "client": "Bệnh viện Trung ương Huế",
-        "pkg_price": 78000000000.0,
-        "win_price": 74800000000.0,
+        "pkg_price": 78000000000,
+        "win_price": 74800000000,
         "award_date": "2026-08-16",
         "scope": "Đông dược KCNC & Dược liệu",
         "duration_months": 12,
@@ -1919,8 +2172,8 @@
         "code": "IB2600041900",
         "name": "Mua sắm thuốc dược liệu và viên nang mềm cho BV Vùng Tây Nguyên",
         "client": "BV Đa khoa Vùng Tây Nguyên",
-        "pkg_price": 68000000000.0,
-        "win_price": 65200000000.0,
+        "pkg_price": 68000000000,
+        "win_price": 65200000000,
         "award_date": "2026-09-07",
         "scope": "Viên nang mềm & Thảo dược",
         "duration_months": 12,
@@ -1931,8 +2184,8 @@
         "code": "IB2600043900",
         "name": "Cung cấp dung dịch tiêm truyền và thuốc mỡ cho BV Đa khoa Quảng Trị",
         "client": "Sở Y tế Tỉnh Quảng Trị",
-        "pkg_price": 42000000000.0,
-        "win_price": 40200000000.0,
+        "pkg_price": 42000000000,
+        "win_price": 40200000000,
         "award_date": "2026-09-20",
         "scope": "Tiêm truyền & Thuốc mỡ ngoài da",
         "duration_months": 12,
@@ -1943,17 +2196,41 @@
         "code": "IB2600044800",
         "name": "Các gói thầu thuốc lẻ bổ sung tháng 8-9/2026 khu vực Miền Trung",
         "client": "Các TTYT Miền Trung",
-        "pkg_price": 35000000000.0,
-        "win_price": 33300000000.0,
+        "pkg_price": 35000000000,
+        "win_price": 33300000000,
         "award_date": "2026-09-24",
         "scope": "Dược phẩm tổng hợp",
         "duration_months": 12,
         "status": "Đang hoàn thiện"
+      },
+      {
+        "quarter": "Q4/2026",
+        "code": "IB2600046890",
+        "name": "Cung ứng thuốc tân dược và dịch truyền điều trị hồi sức cấp cứu Quý 4/2026",
+        "client": "Bệnh viện Đa khoa Đà Nẵng",
+        "pkg_price": 115000000000,
+        "win_price": 111800000000,
+        "award_date": "2026-10-20",
+        "scope": "Tân dược & Cấp cứu",
+        "duration_months": 12,
+        "status": "Mới ký hợp đồng"
+      },
+      {
+        "quarter": "Q4/2026",
+        "code": "IB2600045500",
+        "name": "Gói thầu thuốc Generic phục vụ khám chữa bệnh BHYT khu vực miền Trung năm 2026-2027",
+        "client": "Sở Y tế tỉnh Quảng Nam",
+        "pkg_price": 145000000000,
+        "win_price": 140600000000,
+        "award_date": "2026-10-07",
+        "scope": "Generic tổng hợp",
+        "duration_months": 18,
+        "status": "Đang giao đợt 1"
       }
     ],
     "quarterly_financials_2026": {
       "Q1_2026": {
-        "bidding_value_billion": 210.0,
+        "bidding_value_billion": 210,
         "bids_won_count": 58,
         "net_revenue_billion": 135.2,
         "gross_profit_billion": 43.94,
@@ -1963,7 +2240,7 @@
         "status": "Đã công bố BCTC"
       },
       "Q2_2026": {
-        "bidding_value_billion": 265.0,
+        "bidding_value_billion": 265,
         "bids_won_count": 64,
         "net_revenue_billion": 158.5,
         "gross_profit_billion": 53.57,
@@ -1973,11 +2250,11 @@
         "status": "Đã công bố BCTC (+32.7% YoY)"
       },
       "Q3_2026_FORECAST": {
-        "bidding_value_billion": 290.0,
+        "bidding_value_billion": 290,
         "bids_won_count": 70,
-        "net_revenue_billion": 176.0,
+        "net_revenue_billion": 176,
         "revenue_yoy_growth_pct": 20.5,
-        "revenue_qoq_growth_pct": 11.0,
+        "revenue_qoq_growth_pct": 11,
         "gross_profit_billion": 60.19,
         "gross_margin_pct": 34.2,
         "npat_billion": 25.5,
@@ -1985,6 +2262,11 @@
         "net_margin_pct": 14.49,
         "eps_4q_trailing_vnd": 3800,
         "status": "Dự báo mô hình (Kết thúc Quý 3/2026)"
+      },
+      "Q4_2026": {
+        "bidding_value_billion": 252.4,
+        "bids_won_count": 2,
+        "status": "Đang đấu thầu (T10/2026)"
       }
     }
   },
@@ -2005,9 +2287,9 @@
     "bids_lost": 180,
     "bids_pending": 45,
     "win_rate": 79.9,
-    "total_winning_value": 1680000000000.0,
-    "solo_winning_value": 1580000000000.0,
-    "joint_winning_value": 100000000000.0,
+    "total_winning_value": 1680000000000,
+    "solo_winning_value": 1580000000000,
+    "joint_winning_value": 100000000000,
     "avg_discount_rate": 4.8,
     "top_hospital_clients": [
       "Bệnh viện Đa khoa Tiền Giang",
@@ -2027,27 +2309,27 @@
       {
         "year": 2021,
         "bids_won": 150,
-        "value_billion": 260.0
+        "value_billion": 260
       },
       {
         "year": 2022,
         "bids_won": 180,
-        "value_billion": 330.0
+        "value_billion": 330
       },
       {
         "year": 2023,
         "bids_won": 210,
-        "value_billion": 410.0
+        "value_billion": 410
       },
       {
         "year": 2024,
         "bids_won": 230,
-        "value_billion": 480.0
+        "value_billion": 480
       },
       {
         "year": 2025,
         "bids_won": 125,
-        "value_billion": 280.0
+        "value_billion": 280
       }
     ],
     "notable_packages": [
@@ -2055,7 +2337,7 @@
         "code": "IB2400035600",
         "name": "Cung ứng thuốc kháng sinh và thuốc tim mạch cho BVĐK Tiền Giang",
         "client": "Bệnh viện Đa khoa Tiền Giang",
-        "win_price": 55000000000.0,
+        "win_price": 55000000000,
         "award_date": "2024-05-20"
       }
     ],
@@ -2065,8 +2347,8 @@
         "code": "IB2600008100",
         "name": "Gói thầu thuốc Generic cung ứng cho BVĐK Tiền Giang đợt 1",
         "client": "Bệnh viện Đa khoa Tiền Giang",
-        "pkg_price": 45000000000.0,
-        "win_price": 42800000000.0,
+        "pkg_price": 45000000000,
+        "win_price": 42800000000,
         "award_date": "2026-01-26",
         "scope": "Kháng sinh & Tim mạch GMP-WHO",
         "duration_months": 12,
@@ -2077,8 +2359,8 @@
         "code": "IB2600012800",
         "name": "Mua sắm thuốc kháng sinh và giảm đau cho các TTYT Bến Tre",
         "client": "Sở Y tế Tỉnh Bến Tre",
-        "pkg_price": 38000000000.0,
-        "win_price": 36200000000.0,
+        "pkg_price": 38000000000,
+        "win_price": 36200000000,
         "award_date": "2026-02-28",
         "scope": "Kháng sinh & Paracetamol bao phim",
         "duration_months": 12,
@@ -2089,8 +2371,8 @@
         "code": "IB2600017100",
         "name": "Cung ứng thuốc tim mạch và tiêu hóa cho BVĐK Vĩnh Long",
         "client": "Bệnh viện Đa khoa Tỉnh Vĩnh Long",
-        "pkg_price": 28000000000.0,
-        "win_price": 26500000000.0,
+        "pkg_price": 28000000000,
+        "win_price": 26500000000,
         "award_date": "2026-03-18",
         "scope": "Amlodipin & Omeprazol",
         "duration_months": 12,
@@ -2101,8 +2383,8 @@
         "code": "IB2600019500",
         "name": "Gói thuốc bổ sung cho các phòng khám khu vực Tiền Giang",
         "client": "TTYT Tuyến Huyện Tiền Giang",
-        "pkg_price": 20000000000.0,
-        "win_price": 19500000000.0,
+        "pkg_price": 20000000000,
+        "win_price": 19500000000,
         "award_date": "2026-03-28",
         "scope": "Dược phẩm tổng hợp",
         "duration_months": 12,
@@ -2113,8 +2395,8 @@
         "code": "IB2600024900",
         "name": "Gói thầu thuốc Generic phục vụ KCB tỉnh Đồng Tháp 2026-2027",
         "client": "Sở Y tế Tỉnh Đồng Tháp",
-        "pkg_price": 58000000000.0,
-        "win_price": 55200000000.0,
+        "pkg_price": 58000000000,
+        "win_price": 55200000000,
         "award_date": "2026-05-11",
         "scope": "Generic Nhóm 2, 3 đa khoa",
         "duration_months": 18,
@@ -2125,8 +2407,8 @@
         "code": "IB2600028700",
         "name": "Cung ứng thuốc kháng sinh và thuốc huyết áp cho BVĐK TT An Giang",
         "client": "BVĐK Trung tâm An Giang",
-        "pkg_price": 48000000000.0,
-        "win_price": 45800000000.0,
+        "pkg_price": 48000000000,
+        "win_price": 45800000000,
         "award_date": "2026-06-05",
         "scope": "Kháng sinh tiêm & Viên huyết áp",
         "duration_months": 12,
@@ -2137,8 +2419,8 @@
         "code": "IB2600030900",
         "name": "Mua sắm thuốc điều trị đái tháo đường và tim mạch BVĐK TW Cần Thơ",
         "client": "BV Đa khoa TW Cần Thơ",
-        "pkg_price": 35000000000.0,
-        "win_price": 33500000000.0,
+        "pkg_price": 35000000000,
+        "win_price": 33500000000,
         "award_date": "2026-06-20",
         "scope": "Tiểu đường & Tim mạch",
         "duration_months": 12,
@@ -2149,8 +2431,8 @@
         "code": "IB2600032600",
         "name": "Gói thầu thuốc viên bao phim cho các viện thuộc SYT Tiền Giang",
         "client": "Sở Y tế Tỉnh Tiền Giang",
-        "pkg_price": 30000000000.0,
-        "win_price": 28500000000.0,
+        "pkg_price": 30000000000,
+        "win_price": 28500000000,
         "award_date": "2026-06-27",
         "scope": "Viên nén bao phim các loại",
         "duration_months": 12,
@@ -2161,8 +2443,8 @@
         "code": "IB2600037800",
         "name": "Gói thuốc Generic đợt 2 cung ứng cho các BV tỉnh Tiền Giang",
         "client": "Sở Y tế Tỉnh Tiền Giang",
-        "pkg_price": 65000000000.0,
-        "win_price": 62000000000.0,
+        "pkg_price": 65000000000,
+        "win_price": 62000000000,
         "award_date": "2026-07-29",
         "scope": "Thuốc Generic tổng hợp",
         "duration_months": 12,
@@ -2173,8 +2455,8 @@
         "code": "IB2600039600",
         "name": "Cung ứng thuốc kháng sinh phổ rộng cho BVĐK Bến Tre",
         "client": "Bệnh viện Đa khoa Bến Tre",
-        "pkg_price": 45000000000.0,
-        "win_price": 42800000000.0,
+        "pkg_price": 45000000000,
+        "win_price": 42800000000,
         "award_date": "2026-08-17",
         "scope": "Cefixim & Ciprofloxacin",
         "duration_months": 12,
@@ -2185,8 +2467,8 @@
         "code": "IB2600042200",
         "name": "Mua sắm thuốc tim mạch và dạ dày tá tràng BVĐK Sa Đéc",
         "client": "Bệnh viện Đa khoa Sa Đéc",
-        "pkg_price": 38000000000.0,
-        "win_price": 36200000000.0,
+        "pkg_price": 38000000000,
+        "win_price": 36200000000,
         "award_date": "2026-09-12",
         "scope": "Tim mạch & Dạ dày tá tràng",
         "duration_months": 12,
@@ -2197,8 +2479,8 @@
         "code": "IB2600044500",
         "name": "Cung ứng thuốc đông y bao đường và viên nang cho BV YHCT Tiền Giang",
         "client": "BV Y học Cổ truyền Tiền Giang",
-        "pkg_price": 25000000000.0,
-        "win_price": 23800000000.0,
+        "pkg_price": 25000000000,
+        "win_price": 23800000000,
         "award_date": "2026-09-22",
         "scope": "Đông dược bao đường",
         "duration_months": 12,
@@ -2209,17 +2491,41 @@
         "code": "IB2600045100",
         "name": "Các gói thầu thuốc lẻ bổ sung tháng 8-9/2026 các tỉnh miền Tây",
         "client": "Các TTYT Miền Tây",
-        "pkg_price": 22000000000.0,
-        "win_price": 20200000000.0,
+        "pkg_price": 22000000000,
+        "win_price": 20200000000,
         "award_date": "2026-09-25",
         "scope": "Dược phẩm cơ bản",
         "duration_months": 12,
         "status": "Đang hoàn thiện"
+      },
+      {
+        "quarter": "Q4/2026",
+        "code": "IB2600046920",
+        "name": "Cung ứng thuốc kháng sinh và thuốc tim mạch viên nén đợt 4 năm 2026",
+        "client": "Bệnh viện Đa khoa Trung tâm Tiền Giang",
+        "pkg_price": 55000000000,
+        "win_price": 53400000000,
+        "award_date": "2026-10-21",
+        "scope": "Kháng sinh & Tim mạch viên nén",
+        "duration_months": 12,
+        "status": "Mới ký hợp đồng"
+      },
+      {
+        "quarter": "Q4/2026",
+        "code": "IB2600045800",
+        "name": "Gói thầu cung ứng tân dược thiết yếu các bệnh viện tuyến huyện vùng ĐBSCL",
+        "client": "Sở Y tế tỉnh Bến Tre",
+        "pkg_price": 68000000000,
+        "win_price": 66000000000,
+        "award_date": "2026-10-10",
+        "scope": "Tân dược tổng hợp",
+        "duration_months": 12,
+        "status": "Đang hoàn thiện hợp đồng"
       }
     ],
     "quarterly_financials_2026": {
       "Q1_2026": {
-        "bidding_value_billion": 125.0,
+        "bidding_value_billion": 125,
         "bids_won_count": 38,
         "net_revenue_billion": 82.5,
         "gross_profit_billion": 21.86,
@@ -2229,9 +2535,9 @@
         "status": "Đã công bố BCTC"
       },
       "Q2_2026": {
-        "bidding_value_billion": 160.0,
+        "bidding_value_billion": 160,
         "bids_won_count": 45,
-        "net_revenue_billion": 98.0,
+        "net_revenue_billion": 98,
         "gross_profit_billion": 27.24,
         "gross_margin_pct": 27.8,
         "npat_billion": 11.2,
@@ -2239,9 +2545,9 @@
         "status": "Đã công bố BCTC (+45.5% YoY)"
       },
       "Q3_2026_FORECAST": {
-        "bidding_value_billion": 185.0,
+        "bidding_value_billion": 185,
         "bids_won_count": 52,
-        "net_revenue_billion": 112.0,
+        "net_revenue_billion": 112,
         "revenue_yoy_growth_pct": 23.1,
         "revenue_qoq_growth_pct": 14.3,
         "gross_profit_billion": 31.92,
@@ -2251,6 +2557,11 @@
         "net_margin_pct": 12.68,
         "eps_4q_trailing_vnd": 2850,
         "status": "Dự báo mô hình (Kết thúc Quý 3/2026)"
+      },
+      "Q4_2026": {
+        "bidding_value_billion": 119.4,
+        "bids_won_count": 2,
+        "status": "Đang đấu thầu (T10/2026)"
       }
     }
   },
@@ -2271,9 +2582,9 @@
     "bids_lost": 210,
     "bids_pending": 30,
     "win_rate": 73.9,
-    "total_winning_value": 3120000000000.0,
-    "solo_winning_value": 2700000000000.0,
-    "joint_winning_value": 420000000000.0,
+    "total_winning_value": 3120000000000,
+    "solo_winning_value": 2700000000000,
+    "joint_winning_value": 420000000000,
     "avg_discount_rate": 2.8,
     "top_hospital_clients": [
       "Bệnh viện K Trung ương",
@@ -2292,27 +2603,27 @@
       {
         "year": 2021,
         "bids_won": 110,
-        "value_billion": 450.0
+        "value_billion": 450
       },
       {
         "year": 2022,
         "bids_won": 135,
-        "value_billion": 590.0
+        "value_billion": 590
       },
       {
         "year": 2023,
         "bids_won": 160,
-        "value_billion": 740.0
+        "value_billion": 740
       },
       {
         "year": 2024,
         "bids_won": 175,
-        "value_billion": 820.0
+        "value_billion": 820
       },
       {
         "year": 2025,
         "bids_won": 100,
-        "value_billion": 520.0
+        "value_billion": 520
       }
     ],
     "notable_packages": [
@@ -2320,7 +2631,7 @@
         "code": "IB2400081200",
         "name": "Cung cấp và lắp đặt hệ thống chụp cắt lớp vi tính CT Scanner đa lát cắt",
         "client": "Bệnh viện Ung bướu Hà Nội",
-        "win_price": 95000000000.0,
+        "win_price": 95000000000,
         "award_date": "2024-10-05"
       }
     ]
@@ -2341,10 +2652,10 @@
     "bids_won": 1280,
     "bids_lost": 290,
     "bids_pending": 50,
-    "win_rate": 79.0,
-    "total_winning_value": 2450000000000.0,
-    "solo_winning_value": 2380000000000.0,
-    "joint_winning_value": 70000000000.0,
+    "win_rate": 79,
+    "total_winning_value": 2450000000000,
+    "solo_winning_value": 2380000000000,
+    "joint_winning_value": 70000000000,
     "avg_discount_rate": 4.2,
     "top_hospital_clients": [
       "Bệnh viện Đa khoa Đà Nẵng",
@@ -2363,27 +2674,27 @@
       {
         "year": 2021,
         "bids_won": 340,
-        "value_billion": 650.0
+        "value_billion": 650
       },
       {
         "year": 2022,
         "bids_won": 280,
-        "value_billion": 490.0
+        "value_billion": 490
       },
       {
         "year": 2023,
         "bids_won": 310,
-        "value_billion": 520.0
+        "value_billion": 520
       },
       {
         "year": 2024,
         "bids_won": 330,
-        "value_billion": 560.0
+        "value_billion": 560
       },
       {
         "year": 2025,
         "bids_won": 120,
-        "value_billion": 230.0
+        "value_billion": 230
       }
     ],
     "notable_packages": [
@@ -2391,7 +2702,7 @@
         "code": "IB2400029900",
         "name": "Cung cấp bông băng gạc và vật tư tiêu hao vô trùng phục vụ điều trị",
         "client": "Bệnh viện Trung ương Huế",
-        "win_price": 45000000000.0,
+        "win_price": 45000000000,
         "award_date": "2024-04-15"
       }
     ]

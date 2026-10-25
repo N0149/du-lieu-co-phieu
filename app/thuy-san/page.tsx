@@ -14,9 +14,9 @@ import {
 } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: 'Tình Báo Thủy Sản VASEP & So Sánh Dự Báo Lợi Nhuận Quý 3/2026 | Dữ Liệu Cổ Phiếu',
+  title: 'Ngành Thủy Sản VASEP & So Sánh Kết Quả Kinh Doanh Quý 3/2026 | Dữ Liệu Cổ Phiếu',
   description:
-    'Hệ thống tình báo ngành Thủy sản kết nối trực tiếp dữ liệu VASEP: Bóc tách kim ngạch xuất khẩu 9 tháng đầu năm (cập nhật mới nhất T9/2026), biến động giá nguyên liệu hàng tuần (cá tra, tôm, nghêu) và so sánh dự phóng lợi nhuận Quý 3/2026 của 12 cổ phiếu niêm yết (VHC, ANV, FMC, MPC, IDI, CAT, ABT, CMX, CCA, KHS, AAM, ACL).',
+    'Hệ thống dữ liệu ngành Thủy sản kết nối trực tiếp VASEP: Bóc tách kim ngạch xuất khẩu 9 tháng đầu năm, biến động giá nguyên liệu hàng tuần (cá tra, tôm, nghêu) và so sánh kết quả kinh doanh Quý 3/2026 của 12 cổ phiếu niêm yết (VHC, ANV, FMC, MPC, IDI, CAT, ABT, CMX, CCA, KHS, AAM, ACL).',
 };
 
 export default function ThuySanPage() {
@@ -41,7 +41,7 @@ export default function ThuySanPage() {
                   Trang chủ
                 </Link>
                 <ChevronRight className="size-3 text-slate-600" />
-                <span className="text-emerald-400 font-bold">Thủy Sản &amp; Tình Báo VASEP</span>
+                <span className="text-emerald-400 font-bold">Thủy Sản &amp; VASEP</span>
               </div>
 
               <div className="flex items-center gap-2 text-xs font-semibold text-slate-400">
@@ -59,7 +59,7 @@ export default function ThuySanPage() {
                 <span>CHỈ BÁO SỚM KẾT QUẢ KINH DOANH QUÝ 3/2026 TỪ VASEP</span>
               </div>
               <h1 className="text-2xl sm:text-4xl lg:text-5xl font-black tracking-tight text-white leading-tight">
-                Tình Báo Thủy Sản &amp; Dự Báo Lợi Nhuận 12 Cổ Phiếu Niêm Yết
+                Dữ Liệu Thủy Sản &amp; Kết Quả Kinh Doanh 12 Cổ Phiếu Niêm Yết
               </h1>
               <p className="text-sm sm:text-base text-slate-400 leading-relaxed max-w-3xl">
                 Bóc tách số liệu kim ngạch xuất khẩu 9 tháng đầu năm (cập nhật mới nhất Tháng 9/2026), diễn biến giá nguyên liệu hàng tuần từ VASEP

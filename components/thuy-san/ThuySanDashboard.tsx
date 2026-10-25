@@ -177,24 +177,24 @@ export function ThuySanDashboard() {
             </span>
           </div>
           <div className="mt-1.5 flex items-baseline gap-1.5">
-            <span className="text-xl sm:text-2xl font-black text-amber-400">32.5 - 34.5k</span>
+            <span className="text-xl sm:text-2xl font-black text-amber-400">33 - 37k</span>
             <span className="text-xs text-slate-400">đ/kg</span>
           </div>
           <div className="mt-1 text-[11px] text-slate-400 truncate">
-            Tuần 02/10 | Cá giống 58 - 62k đ/kg
+            Tuần 23/10 | Cá thịt trắng leo đỉnh
           </div>
         </div>
 
         <div className="col-span-2 sm:col-span-1 rounded-xl border border-emerald-500/30 bg-emerald-500/10 p-3.5 shadow-sm">
           <div className="flex items-center justify-between text-xs text-emerald-300">
-            <span>Dự Báo Lợi Nhuận Q3/2026</span>
-            <span className="rounded bg-emerald-500/20 px-1.5 py-0.5 text-[10px] font-bold text-emerald-300">VASEP</span>
+            <span>Kết Quả Kinh Doanh Q3/2026</span>
+            <span className="rounded bg-emerald-500/20 px-1.5 py-0.5 text-[10px] font-bold text-emerald-300">BCTC</span>
           </div>
           <div className="mt-1.5 flex items-baseline gap-1.5">
-            <span className="text-base font-black text-emerald-400">FMC • ANV • ACL</span>
+            <span className="text-base font-black text-emerald-400">FMC +78% • ANV 207 tỷ</span>
           </div>
           <div className="mt-1 text-[11px] text-slate-300 truncate">
-            Đã có số liệu kiểm chứng T9 &amp; Q3
+            FMC vượt kế hoạch cả năm sau 9T
           </div>
         </div>
       </div>
@@ -233,7 +233,7 @@ export function ThuySanDashboard() {
             <Calendar className="size-4" />
             <span>Bảng Giá Nguyên Liệu Hàng Tuần</span>
             <span className="ml-1 rounded bg-amber-400/20 text-amber-300 px-1.5 py-0.2 text-[10px] font-bold">
-              02/10
+              23/10
             </span>
           </button>
 
@@ -775,7 +775,7 @@ export function ThuySanDashboard() {
                 </p>
               </div>
               <span className="rounded bg-amber-400/10 border border-amber-400/20 px-2.5 py-1 text-xs font-bold text-amber-300">
-                Tuần 25/09/2026: Cá tra tăng +1.000 đ/kg | Cá giống tăng +7.000 đ/kg
+                Tuần 23/10/2026: Cá tra thịt trắng tăng lên 33.000 – 37.000 đ/kg | Tôm thẻ giữ giá cao
               </span>
             </div>
 

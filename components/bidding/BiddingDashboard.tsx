@@ -1916,7 +1916,7 @@ export function BiddingDashboard({
 
                 {/* 3-Quarter Cards */}
                 {selectedContractor.quarterly_financials_2026 && (
-                  <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
                     {/* Q1 */}
                     {selectedContractor.quarterly_financials_2026.Q1_2026 && (
                       <div className="p-3.5 rounded-lg border border-white/10 bg-white/[0.02]">
@@ -1957,8 +1957,33 @@ export function BiddingDashboard({
                       </div>
                     )}
 
-                    {/* Q3 Actual Bidding Status */}
-                    {selectedContractor.quarterly_financials_2026.Q3_2026_FORECAST && (
+                    {/* Q3 Official BCTC or Pending */}
+                    {selectedContractor.quarterly_financials_2026.Q3_2026 ? (
+                      <div className="p-3.5 rounded-lg border border-emerald-500/40 bg-emerald-500/[0.06] shadow-sm shadow-emerald-950/40">
+                        <div className="flex items-center justify-between text-xs font-bold text-emerald-400 mb-2">
+                          <span className="flex items-center gap-1.5">
+                            QUÝ 3/2026
+                            <span className="inline-block w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
+                          </span>
+                          <span className="text-[10px] bg-emerald-500/20 text-emerald-300 px-1.5 py-0.5 rounded font-bold border border-emerald-500/30">
+                            {selectedContractor.quarterly_financials_2026.Q3_2026.status || 'BCTC Đã Công Bố'}
+                          </span>
+                        </div>
+                        <div className="text-xs text-slate-400 space-y-1">
+                          <div>Trúng thầu ETC: <strong className="text-white">{selectedContractor.quarterly_financials_2026.Q3_2026.bidding_value_billion} tỷ</strong> ({selectedContractor.quarterly_financials_2026.Q3_2026.bids_won_count} gói)</div>
+                          <div>Doanh thu thuần: <strong className="text-teal-300 font-semibold">{selectedContractor.quarterly_financials_2026.Q3_2026.net_revenue_billion} tỷ</strong> {selectedContractor.quarterly_financials_2026.Q3_2026.revenue_yoy_growth_pct && <span className="text-emerald-400 text-[10px] font-normal">(+{selectedContractor.quarterly_financials_2026.Q3_2026.revenue_yoy_growth_pct}% YoY)</span>}</div>
+                          <div>Lợi nhuận ròng (LNST): <strong className="text-emerald-400 font-bold">{selectedContractor.quarterly_financials_2026.Q3_2026.npat_billion} tỷ</strong></div>
+                          <div className="pt-1.5 mt-1.5 border-t border-white/5 text-[11px] text-slate-400 flex items-center justify-between">
+                            <span>Biên gộp: {selectedContractor.quarterly_financials_2026.Q3_2026.gross_margin_pct}% • Biên ròng: {selectedContractor.quarterly_financials_2026.Q3_2026.net_margin_pct}%</span>
+                            {selectedContractor.quarterly_financials_2026.Q3_2026.plan_completion_profit_pct && (
+                              <span className="text-amber-300 text-[10px] font-semibold">
+                                Đạt {selectedContractor.quarterly_financials_2026.Q3_2026.plan_completion_profit_pct}% KH năm
+                              </span>
+                            )}
+                          </div>
+                        </div>
+                      </div>
+                    ) : selectedContractor.quarterly_financials_2026.Q3_2026_FORECAST ? (
                       <div className="p-3.5 rounded-lg border border-sky-500/30 bg-sky-500/[0.03]">
                         <div className="flex items-center justify-between text-xs font-bold text-sky-400 mb-2">
                           <span>QUÝ 3/2026</span>
@@ -1972,6 +1997,34 @@ export function BiddingDashboard({
                           <div>Lợi nhuận ròng (LNST): <strong className="text-slate-300 italic">Chưa công bố BCTC Q3</strong></div>
                           <div className="pt-1.5 mt-1.5 border-t border-white/5 text-[11px] text-slate-500">
                             Số liệu tài chính sẽ được cập nhật khi doanh nghiệp công bố BCTC Quý 3/2026.
+                          </div>
+                        </div>
+                      </div>
+                    ) : null}
+
+                    {/* Q4 Ongoing / In-Progress */}
+                    {selectedContractor.quarterly_financials_2026.Q4_2026 && (
+                      <div className="p-3.5 rounded-lg border border-purple-500/30 bg-purple-500/[0.04]">
+                        <div className="flex items-center justify-between text-xs font-bold text-purple-400 mb-2">
+                          <span className="flex items-center gap-1.5">
+                            QUÝ 4/2026
+                            <span className="inline-block w-1.5 h-1.5 rounded-full bg-purple-400 animate-pulse" />
+                          </span>
+                          <span className="text-[10px] bg-purple-500/20 text-purple-300 px-1.5 py-0.5 rounded font-bold border border-purple-500/30">
+                            {selectedContractor.quarterly_financials_2026.Q4_2026.status || 'Đang đấu thầu (T10/2026)'}
+                          </span>
+                        </div>
+                        <div className="text-xs text-slate-400 space-y-1">
+                          <div>
+                            Trúng thầu ETC (T10): <strong className="text-white">{selectedContractor.quarterly_financials_2026.Q4_2026.bidding_value_billion} tỷ</strong>
+                            {selectedContractor.quarterly_financials_2026.Q4_2026.bids_won_count && (
+                              <span className="text-slate-400"> ({selectedContractor.quarterly_financials_2026.Q4_2026.bids_won_count} gói)</span>
+                            )}
+                          </div>
+                          <div>Doanh thu thuần BCTC: <strong className="text-slate-400 italic">Đang ghi nhận Quý 4</strong></div>
+                          <div>Lợi nhuận ròng (LNST): <strong className="text-slate-400 italic">Đang ghi nhận Quý 4</strong></div>
+                          <div className="pt-1.5 mt-1.5 border-t border-white/5 text-[11px] text-slate-500">
+                            Cập nhật gói thầu tháng 10/2026 trên muasamcong.
                           </div>
                         </div>
                       </div>
@@ -1996,7 +2049,18 @@ export function BiddingDashboard({
                     {/* Quarter Filter Chips */}
                     <div className="flex items-center gap-1.5 flex-wrap">
                       <span className="text-xs text-slate-400 font-bold mr-1">LỌC GÓI THẦU 2026:</span>
-                      {['ALL', 'Q1/2026', 'Q2/2026', 'Q3/2026'].map((q) => {
+                      {(() => {
+                        const quartersInPackages = Array.from(
+                          new Set(selectedContractor.packages_2026?.map((p) => p.quarter) || [])
+                        );
+                        const order = ['Q1/2026', 'Q2/2026', 'Q3/2026', 'Q4/2026'];
+                        const sortedQuarters = quartersInPackages.sort((a, b) => {
+                          const idxA = order.indexOf(a);
+                          const idxB = order.indexOf(b);
+                          return (idxA !== -1 ? idxA : 99) - (idxB !== -1 ? idxB : 99);
+                        });
+                        return ['ALL', ...sortedQuarters];
+                      })().map((q) => {
                         const count =
                           q === 'ALL'
                             ? selectedContractor.packages_2026?.length
