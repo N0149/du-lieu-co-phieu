@@ -509,8 +509,27 @@ def scan_company_website(ticker, uri, lookback_days=3):
     return found_items
 
 
+def send_discord_raw_message(content, flags=0):
+    """Gửi tin nhắn văn bản thông báo hoặc nhịp đập trạng thái lên Discord"""
+    webhook_url = load_discord_webhook()
+    if not webhook_url:
+        return False
+    payload = {"content": content}
+    if flags:
+        payload["flags"] = flags
+    try:
+        req = urllib.request.Request(
+            webhook_url,
+            data=json.dumps(payload).encode('utf-8'),
+            headers={'Content-Type': 'application/json', 'User-Agent': 'Mozilla/5.0'}
+        )
+        with urllib.request.urlopen(req, timeout=10) as resp:
+            return True
+    except:
+        return False
+
 def send_discord_alert(item):
-    """Gửi cảnh báo tài liệu / tin tức công bố bất thường lên Discord qua Webhook"""
+    """Gửi cảnh báo tài liệu / tin tức công bố bất thường lên Discord qua Webhook kèm @everyone"""
     webhook_url = load_discord_webhook()
     if not webhook_url:
         return False
@@ -538,7 +557,7 @@ def send_discord_alert(item):
             "inline": False
         })
 
-    content_msg = f"{icon} **CÔNG BỐ BẤT THƯỜNG: `{ticker}` - {category_label}!**"
+    content_msg = f"{icon} **CÔNG BỐ THÔNG TIN BẤT THƯỜNG: `{ticker}` - {category_label}!** @everyone"
     payload = {
         "content": content_msg,
         "embeds": [{
@@ -676,10 +695,16 @@ def run_full_scan(lookback_days=3, single_symbol=None, limit=None, dry_run=False
             except:
                 pass
             log(f"✅ Đã gửi {sent_count} thông báo lên Discord và cập nhật cache thành công.")
+            summary_msg = f"🔔 **[Cloud Radar 18:00]** Đã hoàn tất quét {total_count} doanh nghiệp • Phát hiện **{sent_count} công bố bất thường & giao dịch mới** hôm nay!"
+            send_discord_raw_message(summary_msg)
         else:
             log(f"🔍 Chế độ Dry-Run: Đã tìm thấy {sent_count} tin mới, không gửi Discord.")
     else:
         log("🟢 Không có công bố thông tin bất thường nào mới trong khoảng thời gian này.")
+        if not dry_run and not single_symbol:
+            now_vn_str = datetime.datetime.now().strftime("%H:%M")
+            silent_msg = f"🟢 `[{now_vn_str}]` **Cloud Radar Công bố Bất thường:** Đã rà soát {total_count} doanh nghiệp • Chưa có công bố thông tin bất thường nào mới."
+            send_discord_raw_message(silent_msg, flags=4096)
 
     return len(new_discoveries)
 
