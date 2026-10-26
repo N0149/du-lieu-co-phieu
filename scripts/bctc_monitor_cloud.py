@@ -909,7 +909,7 @@ def scan_ticker(item, completed_cache):
         if c_type in ['HOP_NHAT', 'DAY_DU']:
             return ticker, item, {'has_q3': True, 'is_cached': True, 'bctc_type': c_type, 'elapsed': 0.0}
             
-    time.sleep(random.uniform(0.05, 0.2)) # Jitter chống burst đồng thời
+    time.sleep(random.uniform(0.1, 0.35)) # Jitter ngẫu nhiên giữa các luồng
             
     # 2. Quét Vietstock trước tiên (hạ tầng CDN chịu tải cao, đủ 3 sàn)
     # Nếu Vietstock đã có thì TUYỆT ĐỐI KHÔNG gọi FPTS -> Tiết kiệm 80% request tới FPTS!
@@ -1145,7 +1145,7 @@ def execute_single_scan(scan_index=1):
     results = {}
     new_found_count = 0
     
-    with ThreadPoolExecutor(max_workers=4) as executor:
+    with ThreadPoolExecutor(max_workers=3) as executor:
         futures = [executor.submit(scan_ticker, it, completed_cache) for it in to_scan]
         for fut in futures:
             try:

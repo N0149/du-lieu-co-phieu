@@ -119,13 +119,19 @@ class CircuitBreaker:
 
     def record_failure(self, err=""):
         with self.lock:
-            self.failures += 1
+            err_str = str(err).lower()
+            is_critical = any(k in err_str for k in ['429', 'too many', '403', 'forbidden', 'block', 'denied'])
+            if is_critical:
+                self.failures = self.max_failures # Ngắt cầu dao NGAY LẬP TỨC khi phát hiện tín hiệu chặn/giới hạn
+            else:
+                self.failures += 1
+
             if self.failures >= self.max_failures:
                 self.state = "OPEN"
                 self.tripped_time = time.time()
                 cooldown_min = self.cooldown // 60
                 print(
-                    f"\n[CIRCUIT-BREAKER] ⚠️ [{self.name}] đã gặp {self.failures} lỗi liên tiếp ({err}). "
+                    f"\n[CIRCUIT-BREAKER] ⚠️ [{self.name}] đã gặp sự cố ({err}). "
                     f"KÍCH HOẠT CHẾ ĐỘ BẢO VỆ IP: Tạm dừng gửi request tới {self.name} trong {cooldown_min} phút "
                     f"để phòng tránh bị Firewall/WAF chặn IP vĩnh viễn!\n",
                     flush=True
@@ -143,12 +149,12 @@ class CircuitBreaker:
                 rem_s = remaining_sec % 60
                 return f"🔴 Tạm ngắt bảo vệ IP (còn {rem_m}m{rem_s}s)"
 
-# Khởi tạo các bộ điều khiển chuyên biệt cho từng nguồn dữ liệu
-FPTS_BREAKER = CircuitBreaker("FPTS EzIR", max_consecutive_failures=3, cooldown_seconds=1200)
-VIETSTOCK_BREAKER = CircuitBreaker("Vietstock", max_consecutive_failures=4, cooldown_seconds=600)
+# Khởi tạo các bộ điều khiển chuyên biệt cho từng nguồn dữ liệu (Cấu hình siêu an toàn & nhẹ nhàng)
+FPTS_BREAKER = CircuitBreaker("FPTS EzIR", max_consecutive_failures=3, cooldown_seconds=1500) # Cách ly 25 phút nếu có sự cố
+VIETSTOCK_BREAKER = CircuitBreaker("Vietstock", max_consecutive_failures=3, cooldown_seconds=900) # Cách ly 15 phút nếu có sự cố
 
-FPTS_LIMITER = RateLimiter(min_interval=0.4, max_jitter=0.3)      # 0.4s - 0.7s giữa các request FPTS
-VIETSTOCK_LIMITER = RateLimiter(min_interval=0.2, max_jitter=0.25) # 0.2s - 0.45s giữa các request Vietstock
+FPTS_LIMITER = RateLimiter(min_interval=0.8, max_jitter=0.7)       # Giãn cách 0.8s - 1.5s giữa các request FPTS
+VIETSTOCK_LIMITER = RateLimiter(min_interval=0.3, max_jitter=0.35)  # Giãn cách 0.3s - 0.65s giữa các request Vietstock
 
 def safe_read_response(resp):
     """Đọc dữ liệu phản hồi và tự động giải nén gzip/deflate nếu có"""

@@ -649,7 +649,7 @@ def run_full_scan(lookback_days=3, single_symbol=None, limit=None, dry_run=False
         san = item.get('san', 'HOSE')
         uri = item.get('uri', '')
 
-        time.sleep(random.uniform(0.05, 0.2)) # Jitter chống burst
+        time.sleep(random.uniform(0.1, 0.35)) # Jitter ngẫu nhiên giữa các luồng
 
         ticker_items = []
 
@@ -682,7 +682,7 @@ def run_full_scan(lookback_days=3, single_symbol=None, limit=None, dry_run=False
                 new_discoveries.extend(unique_for_ticker)
 
     # Sử dụng ThreadPoolExecutor 4 workers kết hợp Jitter để chống nghẽn và chống bị khóa IP
-    workers = min(4, total_count) if total_count > 0 else 1
+    workers = min(3, total_count) if total_count > 0 else 1
     with ThreadPoolExecutor(max_workers=workers) as executor:
         list(executor.map(process_ticker, all_tickers))
 

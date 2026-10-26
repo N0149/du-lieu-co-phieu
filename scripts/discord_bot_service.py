@@ -794,7 +794,7 @@ def execute_remote_scan(reply_func=None):
         def sub_worker(item):
             t = item['ticker']
             uri = item.get('uri', '')
-            time.sleep(random.uniform(0.05, 0.2)) # Jitter chống burst đồng thời giữa các luồng
+            time.sleep(random.uniform(0.1, 0.35)) # Jitter ngẫu nhiên giữa các luồng
 
             # 1. Quét Vietstock trước tiên (hạ tầng chịu tải cao, đầy đủ 3 sàn)
             # Nếu Vietstock đã có BCTC thì TUYỆT ĐỐI KHÔNG gọi FPTS -> Cắt giảm tới 80% request tới FPTS!
@@ -812,7 +812,7 @@ def execute_remote_scan(reply_func=None):
             r = check_fpts_ezir(t)
             return t, item, r
 
-        with ThreadPoolExecutor(max_workers=4) as executor:
+        with ThreadPoolExecutor(max_workers=3) as executor:
             futures = [executor.submit(sub_worker, it) for it in to_scan]
             for fut in futures:
                 try:
