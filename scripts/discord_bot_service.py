@@ -8,8 +8,21 @@ import urllib.parse
 import http.cookiejar
 import re
 import unicodedata
+import random
 from concurrent.futures import ThreadPoolExecutor
 from bs4 import BeautifulSoup
+
+SCRIPTS_DIR = os.path.dirname(os.path.abspath(__file__))
+if SCRIPTS_DIR not in sys.path:
+    sys.path.append(SCRIPTS_DIR)
+from anti_block_protection import (
+    get_browser_headers,
+    FPTS_BREAKER,
+    VIETSTOCK_BREAKER,
+    FPTS_LIMITER,
+    VIETSTOCK_LIMITER,
+    safe_read_response
+)
 
 if sys.stdout and hasattr(sys.stdout, 'reconfigure'):
     sys.stdout.reconfigure(encoding='utf-8')
@@ -38,9 +51,7 @@ try:
 except Exception:
     pass
 
-HEADERS = {
-    'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36'
-}
+HEADERS = get_browser_headers()
 
 SCAN_LOCK = threading.Lock()
 AUTO_SCAN_ENABLED = True
@@ -367,11 +378,28 @@ def get_company_info(ticker):
     return {"ticker": ticker, "name": name, "san": san, "uri": uri}
 
 def check_fpts_ezir(ticker):
+    # 1. Cầu dao bảo vệ IP (Circuit Breaker): Nếu FPTS bị lỗi/timeout liên tiếp, tạm dừng kết nối
+    if not FPTS_BREAKER.can_request():
+        return {
+            'has_q3': False,
+            'source': 'EzIR_FPTS',
+            'circuit_breaker': True,
+            'latest_doc': f"Tạm ngắt FPTS bảo vệ IP ({FPTS_BREAKER.get_status_str()})"
+        }
+
+    # 2. Rate Limiting & Jitter: Giãn cách an toàn 0.4s - 0.7s giữa các request
+    FPTS_LIMITER.wait()
+
     url = f"https://gateway.fpts.com.vn/news/api/gateway/v1/mobile/list?folder=86&code={ticker}&pageSize=10&selectedPage=1&newsType=2"
+    headers = get_browser_headers(referer=f"https://ezir.fpts.com.vn/TinTuc/TinTucDN?code={ticker}", is_api=True)
     try:
-        req = urllib.request.Request(url, headers=HEADERS)
+        req = urllib.request.Request(url, headers=headers)
         with urllib.request.urlopen(req, timeout=6) as resp:
-            data = json.loads(resp.read().decode('utf-8'))
+            raw_bytes = safe_read_response(resp)
+            data = json.loads(raw_bytes.decode('utf-8', errors='ignore'))
+            # Thành công: Báo Circuit Breaker ghi nhận trạng thái bình thường
+            FPTS_BREAKER.record_success()
+
             items = data.get('Data', {}).get('Table1', [])
             latest = items[0] if items else {}
             latest_title = latest.get('Title', '').strip()
@@ -413,6 +441,7 @@ def check_fpts_ezir(ticker):
                 }
             return {'has_q3': False, 'source': 'EzIR_FPTS', 'latest_doc': f"[{latest_date}] {latest_title}"}
     except Exception as e:
+        FPTS_BREAKER.record_failure(str(e))
         return {'has_q3': False, 'source': 'EzIR_FPTS', 'latest_doc': str(e)}
 
 def resolve_direct_pdf(url):
@@ -422,9 +451,11 @@ def resolve_direct_pdf(url):
     if any(url.lower().endswith(ext) for ext in ['.pdf', '.zip', '.rar', '.xlsx', '.docx']):
         return url
     try:
-        req = urllib.request.Request(url, headers=HEADERS)
+        headers = get_browser_headers(referer=url, is_api=False)
+        req = urllib.request.Request(url, headers=headers)
         with urllib.request.urlopen(req, timeout=4) as resp:
-            soup = BeautifulSoup(resp.read().decode('utf-8', errors='ignore'), 'html.parser')
+            raw_bytes = safe_read_response(resp)
+            soup = BeautifulSoup(raw_bytes.decode('utf-8', errors='ignore'), 'html.parser')
             for a in soup.find_all('a', href=True):
                 h = a['href']
                 if any(h.lower().endswith(ext) for ext in ['.pdf', '.zip', '.rar', '.xlsx', '.docx']):
@@ -440,9 +471,11 @@ def check_company_website(ticker, uri):
         clean_uri = uri
         if clean_uri.startswith('https://lixco.com'):
             clean_uri = clean_uri.replace('https://', 'http://')
-        req = urllib.request.Request(clean_uri, headers=HEADERS)
+        headers = get_browser_headers(referer=clean_uri, is_api=False)
+        req = urllib.request.Request(clean_uri, headers=headers)
         with urllib.request.urlopen(req, timeout=6) as resp:
-            html = resp.read().decode('utf-8', errors='ignore')
+            raw_bytes = safe_read_response(resp)
+            html = raw_bytes.decode('utf-8', errors='ignore')
         soup = BeautifulSoup(html, 'html.parser')
         ignored = load_ignored_docs()
         found_candidates = []
@@ -521,9 +554,6 @@ class VietstockScanner:
     def __init__(self):
         self.cj = http.cookiejar.CookieJar()
         self.opener = urllib.request.build_opener(urllib.request.HTTPCookieProcessor(self.cj))
-        self.headers = {
-            'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36'
-        }
         self.token = None
         self.token_time = 0
         self.lock = threading.Lock()
@@ -535,9 +565,11 @@ class VietstockScanner:
                 
             url_page = "https://finance.vietstock.vn/PDV/tai-lieu.htm"
             try:
-                req = urllib.request.Request(url_page, headers=self.headers)
+                headers = get_browser_headers(referer="https://finance.vietstock.vn", is_api=False)
+                req = urllib.request.Request(url_page, headers=headers)
                 with self.opener.open(req, timeout=8) as resp:
-                    html = resp.read().decode('utf-8', errors='ignore')
+                    raw_bytes = safe_read_response(resp)
+                    html = raw_bytes.decode('utf-8', errors='ignore')
                 soup = BeautifulSoup(html, 'html.parser')
                 tag = soup.find('input', {'name': '__RequestVerificationToken'})
                 if tag and tag.get('value'):
@@ -549,10 +581,17 @@ class VietstockScanner:
             return None
 
     def check_vietstock(self, ticker):
+        # 1. Cầu dao bảo vệ IP
+        if not VIETSTOCK_BREAKER.can_request():
+            return {'has_q3': False, 'source': 'Vietstock', 'error': f"Vietstock tạm nghỉ ({VIETSTOCK_BREAKER.get_status_str()})"}
+
         token = self._ensure_token()
         if not token:
             return {'has_q3': False, 'source': 'Vietstock', 'error': 'No token'}
             
+        # 2. Rate Limiting & Jitter
+        VIETSTOCK_LIMITER.wait()
+
         api_url = "https://finance.vietstock.vn/data/GetDocument"
         post_data = urllib.parse.urlencode({
             'code': str(ticker).upper(),
@@ -561,18 +600,24 @@ class VietstockScanner:
             '__RequestVerificationToken': token
         }).encode('utf-8')
         
-        api_headers = {
-            'User-Agent': self.headers['User-Agent'],
-            'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8',
-            'X-Requested-With': 'XMLHttpRequest',
-            'Referer': f"https://finance.vietstock.vn/{str(ticker).upper()}/tai-lieu.htm",
-            'Origin': 'https://finance.vietstock.vn'
-        }
+        api_headers = get_browser_headers(
+            referer=f"https://finance.vietstock.vn/{str(ticker).upper()}/tai-lieu.htm",
+            is_api=True,
+            custom_headers={
+                'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8',
+                'X-Requested-With': 'XMLHttpRequest',
+                'Origin': 'https://finance.vietstock.vn'
+            }
+        )
         
         try:
             req = urllib.request.Request(api_url, data=post_data, headers=api_headers)
             with self.opener.open(req, timeout=6) as resp:
-                data = json.loads(resp.read().decode('utf-8'))
+                raw_bytes = safe_read_response(resp)
+                data = json.loads(raw_bytes.decode('utf-8', errors='ignore'))
+            
+            # Thành công: Báo Circuit Breaker
+            VIETSTOCK_BREAKER.record_success()
                 
             if not isinstance(data, list):
                 return {'has_q3': False, 'source': 'Vietstock'}
@@ -619,6 +664,7 @@ class VietstockScanner:
                 
             return {'has_q3': False, 'source': 'Vietstock'}
         except Exception as e:
+            VIETSTOCK_BREAKER.record_failure(str(e))
             return {'has_q3': False, 'source': 'Vietstock', 'error': str(e)}
 
 VIETSTOCK_SCANNER = VietstockScanner()
@@ -748,19 +794,25 @@ def execute_remote_scan(reply_func=None):
         def sub_worker(item):
             t = item['ticker']
             uri = item.get('uri', '')
+            time.sleep(random.uniform(0.05, 0.2)) # Jitter chống burst đồng thời giữa các luồng
+
+            # 1. Quét Vietstock trước tiên (hạ tầng chịu tải cao, đầy đủ 3 sàn)
+            # Nếu Vietstock đã có BCTC thì TUYỆT ĐỐI KHÔNG gọi FPTS -> Cắt giảm tới 80% request tới FPTS!
+            r_vts = check_vietstock(t)
+            if r_vts and r_vts.get('has_q3'):
+                return t, item, r_vts
+
+            # 2. Quét website chính thức của doanh nghiệp
             if uri:
                 r_w = check_company_website(t, uri)
                 if r_w and r_w.get('has_q3'):
                     return t, item, r_w
-            r_vts = check_vietstock(t)
-            if r_vts and r_vts.get('has_q3'):
-                return t, item, r_vts
+
+            # 3. Chỉ khi 2 nguồn trên chưa có thì mới gọi FPTS EzIR làm cứu cánh cuối cùng
             r = check_fpts_ezir(t)
-            if r.get('has_q3'):
-                return t, item, r
             return t, item, r
 
-        with ThreadPoolExecutor(max_workers=10) as executor:
+        with ThreadPoolExecutor(max_workers=4) as executor:
             futures = [executor.submit(sub_worker, it) for it in to_scan]
             for fut in futures:
                 try:
@@ -839,14 +891,16 @@ def auto_monitor_worker():
 def execute_remote_check_ticker(ticker, reply_func):
     info = get_company_info(ticker)
     res = None
-    if info.get('uri'):
+    # 1. Quét Vietstock trước tiên
+    r_vts = check_vietstock(ticker)
+    if r_vts and r_vts.get('has_q3'):
+        res = r_vts
+    # 2. Quét website công ty
+    if not res and info.get('uri'):
         r_web = check_company_website(ticker, info['uri'])
         if r_web and r_web.get('has_q3'):
             res = r_web
-    if not res:
-        r_vts = check_vietstock(ticker)
-        if r_vts and r_vts.get('has_q3'):
-            res = r_vts
+    # 3. Quét FPTS EzIR
     if not res:
         r_ezir = check_fpts_ezir(ticker)
         if r_ezir.get('has_q3'):
@@ -901,12 +955,18 @@ def handle_command(content, username, reply_func):
         cur_int = get_current_scan_interval()
         auto_info = f"🟢 Đang bật (tự quét mỗi {cur_int//60}p - lượt tới sau {next_m}m{next_s}s)" if AUTO_SCAN_ENABLED else "⚪ Đang tắt"
 
+        fpts_status = FPTS_BREAKER.get_status_str()
+        vts_status = VIETSTOCK_BREAKER.get_status_str()
+
         msg = (
             f"🟢 **STOCK RADAR PRO - TRẠNG THÁI MÁY TÍNH Ở NHÀ**\n"
             f"• **Thời gian:** `{now_str}`\n"
             f"• **Tình trạng máy:** Đang trực tuyến & Giám sát 24/7\n"
             f"• **Tự động quét ngầm:** {auto_info}\n"
-            f"• **Tổng số mã đã ra BCTC:** `{total_comp} mã` (🟢 {hn_cnt} Hợp nhất / 🟡 {rieng_cnt} Riêng)\n\n"
+            f"• **Tổng số mã đã ra BCTC:** `{total_comp} mã` (🟢 {hn_cnt} Hợp nhất / 🟡 {rieng_cnt} Riêng)\n"
+            f"• **Hệ thống chống chặn IP:** Hoạt động (WAF Protection)\n"
+            f"  + Vietstock Gateway: {vts_status}\n"
+            f"  + FPTS EzIR Gateway: {fpts_status}\n\n"
             f"👉 Nhắn `scan` để ép quét ngay lập tức.\n"
             f"👉 Nhắn `auto 5` hoặc `auto 10` để đổi chu kỳ tự quét.\n"
             f"👉 Nhắn mã cổ phiếu (ví dụ: `BMP`, `HPG`) để tra cứu riêng 1 mã."

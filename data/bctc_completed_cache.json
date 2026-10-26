@@ -1388,20 +1388,123 @@
   },
   "ABR": {
     "ticker": "ABR",
-    "bctc_type": "HOP_NHAT",
+    "company_name": "Công ty Cổ phần Đầu tư Nhãn Hiệu Việt",
+    "release_date": "26/10/2026",
     "title": "BCTC Hợp nhất quý 3 năm 2026",
-    "date": "26/10/2026",
     "doc_url": "https://static2.vietstock.vn/data/HOSE/2026/BCTC/VN/QUY%203/ABR_Baocaotaichinh_Q3_2026_Hopnhat.pdf",
     "source": "Vietstock",
-    "updated_at": "2026-10-26 05:41:55"
+    "bctc_type": "HOP_NHAT",
+    "updated_at": "2026-10-26 11:32:56"
   },
   "THG": {
     "ticker": "THG",
-    "bctc_type": "HOP_NHAT",
+    "company_name": "Công ty Cổ phần Đầu tư và Xây dựng Tiền Giang",
+    "release_date": "26/10/2026",
     "title": "BCTC Hợp nhất quý 3 năm 2026",
-    "date": "26/10/2026",
     "doc_url": "https://static2.vietstock.vn/data/HOSE/2026/BCTC/VN/QUY%203/THG_Baocaotaichinh_Q3_2026_Hopnhat.pdf",
     "source": "Vietstock",
-    "updated_at": "2026-10-26 05:42:01"
+    "bctc_type": "HOP_NHAT",
+    "updated_at": "2026-10-26 11:09:40"
+  },
+  "VNA": {
+    "ticker": "VNA",
+    "company_name": "Công ty Cổ phần Vận tải biển Vinaship",
+    "release_date": "26/10/2026",
+    "title": "Tải về báo cáo tài chính hợp nhất Quý III năm 2026 tại đây Xem thêm",
+    "doc_url": "https://vinaship.com.vn/bao-cao-tai-chinh-quy-iii-nam-2026/",
+    "source": "Company_Web",
+    "bctc_type": "HOP_NHAT",
+    "updated_at": "2026-10-26 08:37:07"
+  },
+  "MTA": {
+    "ticker": "MTA",
+    "company_name": "Tổng Công ty Khoáng sản và Thương mại Hà Tĩnh - Công ty Cổ phần",
+    "release_date": "26/10/2026",
+    "title": "Giải trình kết quả kinh doanh quý 3 năm 2026 thay đổi hơn 10% so với cùng kỳ năm trước",
+    "doc_url": "https://mitraco.com.vn/wp-content/uploads/2026/10/giai-trinh-tieng-viet.pdf",
+    "source": "Company_Web",
+    "bctc_type": "DAY_DU",
+    "updated_at": "2026-10-26 14:29:22"
+  },
+  "HUB": {
+    "ticker": "HUB",
+    "company_name": "Công ty Cổ phần Xây lắp Thừa Thiên Huế",
+    "release_date": "26/10/2026",
+    "title": "BCTC Hợp nhất quý 3 năm 2026",
+    "doc_url": "https://static2.vietstock.vn/data/HOSE/2026/BCTC/VN/QUY%203/HUB_Baocaotaichinh_Q3_2026_Hopnhat.pdf",
+    "source": "Vietstock",
+    "bctc_type": "HOP_NHAT",
+    "updated_at": "2026-10-26 17:44:11"
+  },
+  "POV": {
+    "ticker": "POV",
+    "company_name": "Công ty Cổ phần Xăng dầu Dầu khí Vũng Áng",
+    "release_date": "26/10/2026",
+    "title": "BCTC quý 3 năm 2026",
+    "doc_url": "https://static2.vietstock.vn/data/HNX/2026/BCTC/VN/QUY%203/POV_Baocaotaichinh_Q3_2026.zip",
+    "source": "Vietstock",
+    "bctc_type": "DAY_DU",
+    "updated_at": "2026-10-26 17:44:13"
+  },
+  "PVI": {
+    "ticker": "PVI",
+    "company_name": "Công ty Cổ phần PVI",
+    "release_date": "26/10/2026",
+    "title": "BCTC Hợp nhất quý 3 năm 2026",
+    "doc_url": "https://static2.vietstock.vn/data/HNX/2026/BCTC/VN/QUY%203/PVI_Baocaotaichinh_Q3_2026_Hopnhat.zip?ver=6d7016a6",
+    "source": "Vietstock",
+    "bctc_type": "HOP_NHAT",
+    "updated_at": "2026-10-26 17:44:20"
+  },
+  "VFG": {
+    "ticker": "VFG",
+    "company_name": "Công ty Cổ phần Khử trùng Việt Nam",
+    "release_date": "20261026",
+    "title": "Giải trình lợi nhuận Báo cáo tài chính quý 3 năm 2026 hợp nhất",
+    "doc_url": "https://vfc.com.vn/storage/quan-he-co-dong/cong-bo-thong-tin/20261026-vfg-giai-trinh-cl-loi-nhuan-bctc-q32026-bc-hopnhatsig.pdf",
+    "source": "Company_Web",
+    "bctc_type": "HOP_NHAT",
+    "updated_at": "2026-10-26 17:44:20"
+  },
+  "DSN": {
+    "ticker": "DSN",
+    "company_name": "Công ty Cổ phần Công viên nước Đầm Sen",
+    "release_date": "26/10/2026",
+    "title": "Báo cáo tài chính hợp nhất Quý 3/2026 kèm giải trình",
+    "doc_url": "https://damsenwaterpark.com.vn/wp-content/uploads/2026/10/20261026-DSN-BCTC-Hop-nhat-Q3.2026-kem-Giai-trinh.pdf",
+    "source": "Company_Web",
+    "bctc_type": "HOP_NHAT",
+    "updated_at": "2026-10-26 17:44:32"
+  },
+  "SD5": {
+    "ticker": "SD5",
+    "company_name": "Công ty Cổ phần Sông Đà 5",
+    "release_date": "26/10/2026",
+    "title": "Báo cáo tài chính quý III năm 2026 Báo cáo tài chính quý III năm 2026. Financial Statement of the 3rd Quarter of 2026. See more",
+    "doc_url": "https://songda5.com.vn/uploads/2026/261026-VN_BaoCaoTaiChinh_Q3_2026-sign.pdf",
+    "source": "Company_Web",
+    "bctc_type": "DAY_DU",
+    "updated_at": "2026-10-26 17:44:33"
+  },
+  "C47": {
+    "ticker": "C47",
+    "company_name": "Công ty Cổ phần Xây dựng 47",
+    "release_date": "26/10/2026",
+    "title": "C47: Công bố Báo cáo tài chính quý III năm 2026",
+    "doc_url": "https://www.xaydung47.vn/c47-cong-bo-bao-cao-tai-chinh-quy-iii-nam-2026/",
+    "source": "Company_Web",
+    "bctc_type": "DAY_DU",
+    "updated_at": "2026-10-26 20:54:37"
+  },
+  "DRI": {
+    "ticker": "DRI",
+    "company_name": "Công ty Cổ phần Đầu tư Cao su Đắk Lắk",
+    "exchange": "UPCOM",
+    "release_date": "25/10/2026",
+    "title": "Báo cáo tài chính Quý 3 năm 2026 (Hợp nhất & Riêng)",
+    "doc_url": "https://ezir.fpts.com.vn/TinTuc/TinTucDN?code=DRI",
+    "source": "EzIR_FPTS",
+    "bctc_type": "HOP_NHAT",
+    "updated_at": "2026-10-26 21:19:55"
   }
 }

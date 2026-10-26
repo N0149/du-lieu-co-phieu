@@ -26,6 +26,7 @@ import http.cookiejar
 import threading
 import unicodedata
 import hashlib
+import random
 from concurrent.futures import ThreadPoolExecutor
 from bs4 import BeautifulSoup
 
@@ -33,6 +34,18 @@ try:
     sys.stdout.reconfigure(encoding='utf-8', errors='replace')
 except:
     pass
+
+SCRIPTS_DIR = os.path.dirname(os.path.abspath(__file__))
+if SCRIPTS_DIR not in sys.path:
+    sys.path.append(SCRIPTS_DIR)
+from anti_block_protection import (
+    get_browser_headers,
+    FPTS_BREAKER,
+    VIETSTOCK_BREAKER,
+    FPTS_LIMITER,
+    VIETSTOCK_LIMITER,
+    safe_read_response
+)
 
 BASE_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
 DATA_DIR = os.path.join(BASE_DIR, "data")
@@ -45,10 +58,7 @@ CBTT_CACHE_FILE = os.path.join(DATA_DIR, "cbtt_completed_cache.json")
 CBTT_ALERTS_FILE = os.path.join(DATA_DIR, "cbtt_live_alerts.json")
 DISCORD_CONFIG_FILE = os.path.join(DATA_DIR, "discord_config.json")
 
-HEADERS = {
-    'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
-    'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
-}
+HEADERS = get_browser_headers()
 
 def log(msg):
     now_str = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
@@ -234,9 +244,11 @@ class VietstockDisclosureScanner:
                 return self.token
             url_page = "https://finance.vietstock.vn/HPG/tai-lieu.htm"
             try:
-                req = urllib.request.Request(url_page, headers=self.headers)
+                headers = get_browser_headers(referer="https://finance.vietstock.vn", is_api=False)
+                req = urllib.request.Request(url_page, headers=headers)
                 with self.opener.open(req, timeout=8) as resp:
-                    html = resp.read().decode('utf-8', errors='ignore')
+                    raw_bytes = safe_read_response(resp)
+                    html = raw_bytes.decode('utf-8', errors='ignore')
                 soup = BeautifulSoup(html, 'html.parser')
                 tag = soup.find('input', {'name': '__RequestVerificationToken'})
                 if tag and tag.get('value'):
@@ -248,19 +260,25 @@ class VietstockDisclosureScanner:
             return None
 
     def scan_ticker(self, ticker, lookback_days=3):
+        if not VIETSTOCK_BREAKER.can_request():
+            return []
+
         token = self._ensure_token()
         if not token:
             return []
 
+        VIETSTOCK_LIMITER.wait()
         ticker = str(ticker).upper().strip()
         found_items = []
-        api_headers = {
-            'User-Agent': self.headers['User-Agent'],
-            'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8',
-            'X-Requested-With': 'XMLHttpRequest',
-            'Referer': f"https://finance.vietstock.vn/{ticker}/tai-lieu.htm",
-            'Origin': 'https://finance.vietstock.vn'
-        }
+        api_headers = get_browser_headers(
+            referer=f"https://finance.vietstock.vn/{ticker}/tai-lieu.htm",
+            is_api=True,
+            custom_headers={
+                'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8',
+                'X-Requested-With': 'XMLHttpRequest',
+                'Origin': 'https://finance.vietstock.vn'
+            }
+        )
 
         # 1. Quét GetDocument (Nghị quyết, CBTT bất thường, Báo cáo giao dịch cổ phiếu)
         try:
@@ -417,12 +435,20 @@ class VietstockDisclosureScanner:
 
 def scan_fpts_ezir(ticker, lookback_days=3):
     """Quét tin tức doanh nghiệp & công bố thông tin từ FPTS EzIR"""
+    if not FPTS_BREAKER.can_request():
+        return []
+    FPTS_LIMITER.wait()
+
     url = f"https://gateway.fpts.com.vn/news/api/gateway/v1/mobile/list?code={ticker}&pageSize=10&selectedPage=1"
     found_items = []
     try:
-        req = urllib.request.Request(url, headers=HEADERS)
-        with urllib.request.urlopen(req, timeout=4) as resp:
-            data = json.loads(resp.read().decode('utf-8'))
+        headers = get_browser_headers(referer=f"https://ezir.fpts.com.vn/TinTuc/TinTucDN?code={ticker}", is_api=True)
+        req = urllib.request.Request(url, headers=headers)
+        with urllib.request.urlopen(req, timeout=5) as resp:
+            raw_bytes = safe_read_response(resp)
+            data = json.loads(raw_bytes.decode('utf-8', errors='ignore'))
+            FPTS_BREAKER.record_success()
+
             items = data.get('Data', {}).get('Table1', [])
             for it in items:
                 title = it.get('Title', '').strip()
@@ -447,8 +473,8 @@ def scan_fpts_ezir(ticker, lookback_days=3):
                         'icon': icon,
                         'unique_id': f"ezir_{hashlib.md5((title + date_pub).encode('utf-8')).hexdigest()[:12]}"
                     })
-    except:
-        pass
+    except Exception as e:
+        FPTS_BREAKER.record_failure(str(e))
     return found_items
 
 
@@ -463,9 +489,11 @@ def scan_company_website(ticker, uri, lookback_days=3):
         if clean_uri.startswith('https://lixco.com'):
             clean_uri = clean_uri.replace('https://', 'http://')
 
-        req = urllib.request.Request(clean_uri, headers=HEADERS)
-        with urllib.request.urlopen(req, timeout=4) as resp:
-            html = resp.read().decode('utf-8', errors='ignore')
+        headers = get_browser_headers(referer=clean_uri, is_api=False)
+        req = urllib.request.Request(clean_uri, headers=headers)
+        with urllib.request.urlopen(req, timeout=5) as resp:
+            raw_bytes = safe_read_response(resp)
+            html = raw_bytes.decode('utf-8', errors='ignore')
 
         soup = BeautifulSoup(html, 'html.parser')
         for a in soup.find_all('a', href=True):
@@ -621,6 +649,8 @@ def run_full_scan(lookback_days=3, single_symbol=None, limit=None, dry_run=False
         san = item.get('san', 'HOSE')
         uri = item.get('uri', '')
 
+        time.sleep(random.uniform(0.05, 0.2)) # Jitter chống burst
+
         ticker_items = []
 
         # 1. Quét Vietstock
@@ -651,8 +681,8 @@ def run_full_scan(lookback_days=3, single_symbol=None, limit=None, dry_run=False
             with lock:
                 new_discoveries.extend(unique_for_ticker)
 
-    # Sử dụng ThreadPoolExecutor 8 workers để quét song song siêu tốc
-    workers = min(8, total_count) if total_count > 0 else 1
+    # Sử dụng ThreadPoolExecutor 4 workers kết hợp Jitter để chống nghẽn và chống bị khóa IP
+    workers = min(4, total_count) if total_count > 0 else 1
     with ThreadPoolExecutor(max_workers=workers) as executor:
         list(executor.map(process_ticker, all_tickers))
 
