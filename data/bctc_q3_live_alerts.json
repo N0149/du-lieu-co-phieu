@@ -1,5 +1,33 @@
 [
   {
+    "ticker": "THG",
+    "company_name": "Công ty Cổ phần Đầu tư và Xây dựng Tiền Giang",
+    "exchange": "HOSE",
+    "quarter": "Quý 3/2026",
+    "release_date": "26/10/2026",
+    "title": "BCTC Hợp nhất quý 3 năm 2026",
+    "source": "Vietstock",
+    "bctc_type": "HOP_NHAT",
+    "doc_url": "https://static2.vietstock.vn/data/HOSE/2026/BCTC/VN/QUY%203/THG_Baocaotaichinh_Q3_2026_Hopnhat.pdf",
+    "is_hot": true,
+    "detected_at": "2026-10-26T05:42:01",
+    "lnst_status": "Bản scan giấy đóng dấu đỏ (chưa số hóa)"
+  },
+  {
+    "ticker": "ABR",
+    "company_name": "Công ty Cổ phần Đầu tư Nhãn Hiệu Việt",
+    "exchange": "HOSE",
+    "quarter": "Quý 3/2026",
+    "release_date": "26/10/2026",
+    "title": "BCTC Hợp nhất quý 3 năm 2026",
+    "source": "Vietstock",
+    "bctc_type": "HOP_NHAT",
+    "doc_url": "https://static2.vietstock.vn/data/HOSE/2026/BCTC/VN/QUY%203/ABR_Baocaotaichinh_Q3_2026_Hopnhat.pdf",
+    "is_hot": true,
+    "detected_at": "2026-10-26T05:41:55",
+    "lnst_status": "Bản scan giấy đóng dấu đỏ (chưa số hóa)"
+  },
+  {
     "ticker": "PMS",
     "company_name": "Công ty Cổ phần Cơ khí Xăng dầu",
     "exchange": "HNX",

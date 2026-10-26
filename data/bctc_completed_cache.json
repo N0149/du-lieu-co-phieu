@@ -1385,5 +1385,23 @@
     "source": "Company_Web",
     "bctc_type": "HOP_NHAT",
     "updated_at": "2026-10-25 17:44:43"
+  },
+  "ABR": {
+    "ticker": "ABR",
+    "bctc_type": "HOP_NHAT",
+    "title": "BCTC Hợp nhất quý 3 năm 2026",
+    "date": "26/10/2026",
+    "doc_url": "https://static2.vietstock.vn/data/HOSE/2026/BCTC/VN/QUY%203/ABR_Baocaotaichinh_Q3_2026_Hopnhat.pdf",
+    "source": "Vietstock",
+    "updated_at": "2026-10-26 05:41:55"
+  },
+  "THG": {
+    "ticker": "THG",
+    "bctc_type": "HOP_NHAT",
+    "title": "BCTC Hợp nhất quý 3 năm 2026",
+    "date": "26/10/2026",
+    "doc_url": "https://static2.vietstock.vn/data/HOSE/2026/BCTC/VN/QUY%203/THG_Baocaotaichinh_Q3_2026_Hopnhat.pdf",
+    "source": "Vietstock",
+    "updated_at": "2026-10-26 05:42:01"
   }
 }
