@@ -2,8 +2,9 @@
 
 import { useState, useEffect, useRef } from 'react'
 import Link from 'next/link'
-import { User, LogIn, LogOut, Star, ChevronDown, Sparkles } from 'lucide-react'
+import { User, LogIn, LogOut, Star, ChevronDown, Sparkles, ShieldCheck } from 'lucide-react'
 import { createClient } from '@/lib/supabase/client'
+import { isAdminEmail } from '@/lib/admin-auth'
 import { AuthModal } from '@/components/auth/AuthModal'
 import { getGuestWatchlist, clearGuestWatchlist } from '@/lib/guest-watchlist'
 import { syncGuestWatchlist } from '@/lib/watchlist-service'
@@ -98,6 +99,7 @@ export function UserNav() {
   if (user) {
     const email = user.email || 'Thành viên'
     const initial = email.charAt(0).toUpperCase()
+    const isAdmin = isAdminEmail(email)
 
     return (
       <div className="relative" ref={menuRef}>
@@ -112,18 +114,40 @@ export function UserNav() {
           <span className="hidden md:inline max-w-[120px] truncate text-[#F0F3F6] font-medium">
             {email.split('@')[0]}
           </span>
+          {isAdmin && (
+            <span className="hidden sm:inline-block rounded bg-emerald-500/20 px-1 py-0.2 text-[9px] font-bold text-emerald-400 border border-emerald-500/30">
+              ADMIN
+            </span>
+          )}
           <ChevronDown className="size-3.5 text-[#9EACB9]" />
         </button>
 
         {/* Dropdown Menu */}
         {menuOpen && (
-          <div className="absolute right-0 top-full mt-2 w-56 rounded-2xl border border-white/10 bg-[#14171f] p-1.5 shadow-2xl z-50 animate-in fade-in-50 zoom-in-95 duration-100">
+          <div className="absolute right-0 top-full mt-2 w-60 rounded-2xl border border-white/10 bg-[#14171f] p-1.5 shadow-2xl z-50 animate-in fade-in-50 zoom-in-95 duration-100">
             <div className="px-3 py-2 border-b border-white/8">
-              <p className="text-[11px] text-[#9EACB9]">Tài khoản</p>
+              <div className="flex items-center justify-between">
+                <p className="text-[11px] text-[#9EACB9]">Tài khoản</p>
+                {isAdmin && (
+                  <span className="rounded bg-emerald-500/20 px-1.5 py-0.2 text-[9px] font-bold text-emerald-400 border border-emerald-500/30">
+                    ADMIN
+                  </span>
+                )}
+              </div>
               <p className="text-xs font-bold text-white truncate">{email}</p>
             </div>
 
             <div className="py-1 space-y-0.5">
+              {isAdmin && (
+                <Link
+                  href="/admin"
+                  onClick={() => setMenuOpen(false)}
+                  className="flex items-center gap-2.5 rounded-xl px-3 py-2 text-xs font-semibold text-emerald-400 bg-emerald-500/10 hover:bg-emerald-500/20 transition-colors"
+                >
+                  <ShieldCheck className="size-4 text-emerald-400" />
+                  <span>Quản trị (Lượt truy cập)</span>
+                </Link>
+              )}
               <Link
                 href="/danh-muc"
                 onClick={() => setMenuOpen(false)}

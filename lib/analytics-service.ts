@@ -301,9 +301,90 @@ export async function getTrafficOverview(): Promise<{
   recentVisits: PageViewEntry[]
 }> {
   const todayStr = new Date().toISOString().split('T')[0]
-  const todayStat = dailyStatsMap.get(todayStr)
 
-  // Thống kê từ buffer
+  // 1. Thử truy vấn từ bảng cơ sở dữ liệu Supabase nếu có
+  try {
+    const adminSb = createAdminClient()
+    if (adminSb) {
+      const { data: dbViews, error } = await adminSb
+        .from('site_pageviews')
+        .select('path, referrer, device, visitor_hash, created_at')
+        .order('created_at', { ascending: false })
+        .limit(1000)
+
+      if (!error && dbViews && dbViews.length > 0) {
+        const dbPathCount = new Map<string, number>()
+        let dbDesktop = 0
+        let dbMobile = 0
+        let dbTablet = 0
+        const dbUniqueVisitors = new Set<string>()
+        const dbTodayVisitors = new Set<string>()
+        let dbTodayViews = 0
+
+        const past7DaysMap = new Map<string, { views: number; visitors: Set<string> }>()
+        for (let i = 6; i >= 0; i--) {
+          const d = new Date()
+          d.setDate(d.getDate() - i)
+          past7DaysMap.set(d.toISOString().split('T')[0], { views: 0, visitors: new Set() })
+        }
+
+        dbViews.forEach((row: any) => {
+          const p = row.path || '/'
+          dbPathCount.set(p, (dbPathCount.get(p) || 0) + 1)
+          if (row.device === 'desktop') dbDesktop++
+          else if (row.device === 'mobile') dbMobile++
+          else dbTablet++
+
+          if (row.visitor_hash) dbUniqueVisitors.add(row.visitor_hash)
+
+          const rowDate = (row.created_at || '').split('T')[0]
+          if (rowDate === todayStr) {
+            dbTodayViews++
+            if (row.visitor_hash) dbTodayVisitors.add(row.visitor_hash)
+          }
+
+          const daySlot = past7DaysMap.get(rowDate)
+          if (daySlot) {
+            daySlot.views++
+            if (row.visitor_hash) daySlot.visitors.add(row.visitor_hash)
+          }
+        })
+
+        const topPages = Array.from(dbPathCount.entries())
+          .map(([path, count]) => ({ path, count }))
+          .sort((a, b) => b.count - a.count)
+          .slice(0, 10)
+
+        const dailyTrends = Array.from(past7DaysMap.entries()).map(([dateStr, slot]) => ({
+          date: dateStr.slice(5),
+          views: slot.views,
+          visitors: slot.visitors.size,
+        }))
+
+        const recentVisits: PageViewEntry[] = dbViews.slice(0, 30).map((r: any) => ({
+          path: r.path,
+          referrer: r.referrer || '',
+          device: (r.device as any) || 'desktop',
+          visitorHash: r.visitor_hash || '',
+          timestamp: new Date(r.created_at).getTime(),
+        }))
+
+        return {
+          totalPageViews: dbViews.length,
+          totalUniqueVisitors: Math.max(dbUniqueVisitors.size, 1),
+          todayPageViews: dbTodayViews,
+          todayVisitors: dbTodayVisitors.size,
+          deviceBreakdown: { desktop: dbDesktop, mobile: dbMobile, tablet: dbTablet },
+          topPages,
+          dailyTrends,
+          recentVisits,
+        }
+      }
+    }
+  } catch {}
+
+  // 2. Fallback: Thống kê từ bộ nhớ tạm in-memory
+  const todayStat = dailyStatsMap.get(todayStr)
   const pathCountMap = new Map<string, number>()
   let desktopCount = 0
   let mobileCount = 0
@@ -316,13 +397,11 @@ export async function getTrafficOverview(): Promise<{
     else tabletCount++
   })
 
-  // Top 10 đường dẫn được xem nhiều nhất
   const topPages = Array.from(pathCountMap.entries())
     .map(([path, count]) => ({ path, count }))
     .sort((a, b) => b.count - a.count)
     .slice(0, 10)
 
-  // Xu hướng 7 ngày gần nhất
   const dailyTrends: { date: string; views: number; visitors: number }[] = []
   for (let i = 6; i >= 0; i--) {
     const d = new Date()
@@ -330,13 +409,12 @@ export async function getTrafficOverview(): Promise<{
     const dateStr = d.toISOString().split('T')[0]
     const stat = dailyStatsMap.get(dateStr)
     dailyTrends.push({
-      date: dateStr.slice(5), // MM-DD
+      date: dateStr.slice(5),
       views: stat?.views || 0,
       visitors: stat?.visitors ? stat.visitors.size : 0,
     })
   }
 
-  // Tổng số lượng
   let totalPageViews = 0
   const allUniqueVisitors = new Set<string>()
   dailyStatsMap.forEach((stat) => {
@@ -344,7 +422,6 @@ export async function getTrafficOverview(): Promise<{
     stat.visitors.forEach((v) => allUniqueVisitors.add(v))
   })
 
-  // Nếu buffer có nhưng map chưa có, cộng dồn
   if (totalPageViews < recentViewsBuffer.length) {
     totalPageViews = recentViewsBuffer.length
   }

@@ -6,6 +6,7 @@ import { SiteFooter } from '@/components/site-footer'
 import { AntiScrapingTrap } from '@/components/security/anti-scraping-trap'
 import { NavigationProgressBar } from '@/components/navigation-progress-bar'
 import { ThemeInitializer } from '@/components/theme-toggle'
+import { PageViewTracker } from '@/components/analytics/PageViewTracker'
 import './globals.css'
 
 const inter = Inter({
@@ -86,6 +87,9 @@ export default function RootLayout({
         <div className="flex-1 pb-16 lg:pb-0">{children}</div>
         <SiteFooter />
         <AntiScrapingTrap />
+        <Suspense fallback={null}>
+          <PageViewTracker />
+        </Suspense>
         {process.env.NODE_ENV === 'production' && <Analytics />}
       </body>
     </html>
