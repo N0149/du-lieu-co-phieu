@@ -1,5 +1,31 @@
 [
   {
+    "id": "wd_ind_26181",
+    "title": "Báo cáo thống kê T10/2026",
+    "slug": "hang-tieu-dung-bao-cao-thong-ke-t10-2026-wd_ind_26181",
+    "source": "VCOSA",
+    "date": "2026-10-27",
+    "displayDate": "27/10/2026",
+    "pageCount": 0,
+    "description": "Báo cáo thống kê T10/2026",
+    "downloadUrl": "https://cdn02.wigroup.vn/baocaophantich/ar_26577_VCOSA_2026-10-27.pdf",
+    "thumbnailUrl": "",
+    "sectorName": "Hàng tiêu dùng"
+  },
+  {
+    "id": "wd_ind_26170",
+    "title": "Báo cáo Ngành Chứng khoán: Lợi nhuận chịu áp lực ngắn hạn, triển vọng phục hồi trong năm 2027",
+    "slug": "chung-khoan-bao-cao-nganh-chung-khoan-loi-nhuan-chiu-ap-luc-ngan-han-trien-vong-phuc-hoi-trong-nam-2027-wd_ind_26170",
+    "source": "SHS",
+    "date": "2026-10-27",
+    "displayDate": "27/10/2026",
+    "pageCount": 0,
+    "description": "Báo cáo Ngành Chứng khoán: Lợi nhuận chịu áp lực ngắn hạn, triển vọng phục hồi trong năm 2027",
+    "downloadUrl": "https://cdn02.wigroup.vn/baocaophantich/ar_26594_SHS_2026-10-27.pdf",
+    "thumbnailUrl": "",
+    "sectorName": "Chứng khoán"
+  },
+  {
     "id": "wd_ind_26087",
     "title": "Khơi thông mạch khí quốc gia - Đánh thức chu kỳ tăng trưởng",
     "slug": "dau-khi-khoi-thong-mach-khi-quoc-gia-danh-thuc-chu-ky-tang-truong-wd_ind_26087",
@@ -10,6 +36,19 @@
     "description": "Khơi thông mạch khí quốc gia - Đánh thức chu kỳ tăng trưởng",
     "downloadUrl": "https://cdn02.wigroup.vn/baocaophantich/ar_26506_GTJA_2026-10-23.pdf",
     "thumbnailUrl": "",
+    "sectorName": "Dầu khí"
+  },
+  {
+    "id": "22649",
+    "title": "Báo cáo ngành Dầu khí: Khơi thông mạch khí quốc gia – đánh thức chu kỳ tăng trưởng",
+    "slug": "bao-cao-nganh-dau-khi-khoi-thong-mach-khi-quoc-gia-danh-thuc-chu-ky-tang-truong",
+    "source": "GTJA (Vietnam)",
+    "date": "2026-10-23",
+    "displayDate": "23/10/2026",
+    "pageCount": 45,
+    "description": "Năm 2026 được coi là bước ngoặt quan trọng của ngành dầu khí Việt Nam nhờ cải thiện khung chính sách Luật Dầu khí mới và tiến độ thúc đẩy các dự án nội địa trọng điểm như Lô B - Ô Môn (mục tiêu đón dòng khí đầu tiên vào tháng 8/2027), Lạc Đà Vàng (đã có dòng dầu đầu tiên ngày 27/09/2026) và Sư Tử Trắng 2B. Trong 9 tháng đầu năm 2026, sản lượng khai thác dầu thô nội địa đạt 6,66 triệu tấn, tăng 10.4% so với cùng kỳ, góp phần đảm bảo an ninh năng lượng trước biến động địa chính trị tại Trung Đông. Thượng nguồn và dịch vụ kỹ thuật như PVS, PVD hưởng lợi sớm nhờ khối lượng công việc dồi dào và giá thuê giàn khoan neo cao. Trung nguồn vận tải như PVT tận dụng giá cước tăng mạnh và kế hoạch mở rộng đội tàu lên 68 chiếc với tổng trọng tải 2.1 triệu DWT. Hạ nguồn như BSR bứt phá lợi nhuận năm 2026 nhờ công suất vận hành Dung Quất đạt 124% và crack spread cao, nhưng có thể đối mặt áp lực giảm vào năm 2027 do kế hoạch bảo dưỡng TA6.",
+    "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/sector/bao-cao-nganh-dau-khi-khoi-thong-mach-khi-quoc-gia-danh-thuc-chu-ky-tang-truong-22649.pdf",
+    "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/sector/bao-cao-nganh-dau-khi-khoi-thong-mach-khi-quoc-gia-danh-thuc-chu-ky-tang-truong-22649.jpg",
     "sectorName": "Dầu khí"
   },
   {
@@ -481,15 +520,15 @@
     "sectorName": "Ngân hàng"
   },
   {
-    "id": "wd_ind_25845",
-    "title": "Báo cáo đánh giá ảnh hưởng của Thông tư 50/2026/TT-NHNN đến Ngành Ngân hàng",
-    "slug": "ngan-hang-bao-cao-danh-gia-anh-huong-cua-thong-tu-50-2026-tt-nhnn-den-nganh-ngan-hang-wd_ind_25845",
-    "source": "SHS",
-    "date": "2026-10-04",
-    "displayDate": "04/10/2026",
+    "id": "wd_ind_25838",
+    "title": "Thông tư 50/2026/TT-NHNN: Lộ trình chuyển đổi linh hoạt hơn, tiếp tục hướng tới chuẩn Basel III",
+    "slug": "ngan-hang-thong-tu-50-2026-tt-nhnn-lo-trinh-chuyen-doi-linh-hoat-hon-tiep-tuc-huong-toi-chuan-basel-iii-wd_ind_25838",
+    "source": "VPBS",
+    "date": "2026-10-02",
+    "displayDate": "02/10/2026",
     "pageCount": 0,
-    "description": "Báo cáo đánh giá ảnh hưởng của Thông tư 50/2026/TT-NHNN đến Ngành Ngân hàng",
-    "downloadUrl": "https://cdn02.wigroup.vn/baocaophantich/ar_25788_SHS_2026-10-04.pdf",
+    "description": "Thông tư 50/2026/TT-NHNN: Lộ trình chuyển đổi linh hoạt hơn, tiếp tục hướng tới chuẩn Basel III",
+    "downloadUrl": "https://cdn02.wigroup.vn/baocaophantich/ar_25744_VPBS_2026-10-02.pdf",
     "thumbnailUrl": "",
     "sectorName": "Ngân hàng"
   },
@@ -871,19 +910,6 @@
     "sectorName": "Ngân hàng"
   },
   {
-    "id": "wd_ind_25721",
-    "title": "Dự báo KQKD Q3/26: Bán lẻ hiện đại tiếp đà mở rộng, tiêu dùng ổn định",
-    "slug": "ban-le-du-bao-kqkd-q3-26-ban-le-hien-dai-tiep-da-mo-rong-tieu-dung-on-dinh-wd_ind_25721",
-    "source": "MBS",
-    "date": "2026-09-25",
-    "displayDate": "25/09/2026",
-    "pageCount": 0,
-    "description": "Dự báo KQKD Q3/26: Bán lẻ hiện đại tiếp đà mở rộng, tiêu dùng ổn định",
-    "downloadUrl": "https://cdn02.wigroup.vn/baocaophantich/ar_25644_MBS_2026-09-25.pdf",
-    "thumbnailUrl": "",
-    "sectorName": "Bán lẻ"
-  },
-  {
     "id": "22331",
     "title": "Báo cáo ngành Hóa chất: Trước thềm KQKD Q3/2026",
     "slug": "bao-cao-nganh-hoa-chat-truoc-them-kqkd-q32026",
@@ -946,19 +972,6 @@
     "description": "Lũy kế 8 tháng đầu năm 2026, tổng mức bán lẻ hàng hóa và dịch vụ tiêu dùng tăng 14% svck, riêng bán lẻ hàng hóa tăng 13,3%. Trong Q3/2026, kết quả kinh doanh phân hóa rõ giữa các nhóm ngành. Phân khúc bán lẻ điện tử và ICT-CE tăng trưởng bứt phá: MWG dự báo lợi nhuận sau thuế Q3 đạt 3.456 tỷ đồng (tăng 95% svck), lũy kế năm đạt 12.965 tỷ đồng (tăng 84%); DGW dự báo lợi nhuận sau thuế Q3 đạt 481 tỷ đồng (tăng 190% svck) với doanh thu tháng 7 và 8 đạt lần lượt 3.186 và 3.842 tỷ đồng; FRT dự kiến đạt biên lợi nhuận ròng 3% nhờ chuỗi Long Châu tăng trưởng doanh thu 30% svck. Chuỗi Bách Hóa Xanh đạt doanh thu trung bình 3,6 nghìn tỷ đồng mỗi tháng và đóng góp 630 tỷ đồng lợi nhuận. MSN dự báo lợi nhuận sau thuế Q3 tăng 230% svck đạt 3.984 tỷ đồng nhờ giá Vonfram duy trì ở mức 3.000 USD/mtu và chuỗi WinMart mở rộng quy mô cửa hàng 20%. Trái lại, PNJ dự báo lợi nhuận sau thuế Q3 giảm 62% svck xuống 186 tỷ đồng do lượt mua giảm còn 60% cùng kỳ.",
     "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/sector/bao-cao-nganh-tieu-dung-ban-le-du-bao-kqkd-q326-ban-le-hien-dai-tiep-da-mo-rong-22266.pdf",
     "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/sector/bao-cao-nganh-tieu-dung-ban-le-du-bao-kqkd-q326-ban-le-hien-dai-tiep-da-mo-rong-22266.jpg",
-    "sectorName": "Bán lẻ"
-  },
-  {
-    "id": "wd_ind_25731",
-    "title": "Báo cáo ngành Thương mại điện tử - Tháng 9/2026",
-    "slug": "ban-le-bao-cao-nganh-thuong-mai-dien-tu-thang-9-2026-wd_ind_25731",
-    "source": "SHS",
-    "date": "2026-09-24",
-    "displayDate": "24/09/2026",
-    "pageCount": 0,
-    "description": "Báo cáo ngành Thương mại điện tử - Tháng 9/2026",
-    "downloadUrl": "https://cdn02.wigroup.vn/baocaophantich/ar_25635_SHS_2026-09-24.pdf",
-    "thumbnailUrl": "",
     "sectorName": "Bán lẻ"
   },
   {
