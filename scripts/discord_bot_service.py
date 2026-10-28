@@ -464,11 +464,82 @@ def resolve_direct_pdf(url):
         pass
     return url
 
+def check_ghc_api(clean_uri):
+    """
+    Adapter chuyên biệt cho CTCP Thủy điện Gia Lai (GHC) vì website ghc.vn là Single Page Application (AngularJS),
+    dữ liệu BCTC được render qua API ngầm thay vì nhúng trực tiếp trong HTML tĩnh.
+    """
+    try:
+        headers = {
+            'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36',
+            'Content-Type': 'application/json;charset=UTF-8',
+            'Referer': clean_uri
+        }
+        url_years = 'https://ghc.vn/api/QuanHeCoDong/LayDanhSachBenPhaiAsync'
+        req_years = urllib.request.Request(url_years, data=json.dumps({'DanhMuc': 'QHCD_00030'}).encode('utf-8'), headers=headers)
+        with urllib.request.urlopen(req_years, timeout=6) as r:
+            res_y = json.loads(r.read().decode('utf-8'))
+            data_y = res_y.get('Result', {}).get('Data')
+            if isinstance(data_y, str):
+                data_y = json.loads(data_y)
+
+        target_cat = 'QHCD_00160' # Mặc định 2026
+        if isinstance(data_y, list) and len(data_y) > 0:
+            for item in data_y:
+                if '2026' in str(item.get('TenDanhMuc', '')):
+                    target_cat = item.get('MaDanhMuc')
+                    break
+
+        api_url = 'https://ghc.vn/api/QuanHeCoDong/LayDanhSachTinAsync'
+        payload = {'DanhMuc': target_cat, 'DanhMucCha': 'QHCD_00030', 'PageIndex': 1}
+        req = urllib.request.Request(api_url, data=json.dumps(payload).encode('utf-8'), headers=headers)
+        with urllib.request.urlopen(req, timeout=6) as r:
+            res = json.loads(r.read().decode('utf-8'))
+            data = res.get('Result', {}).get('Data')
+            if isinstance(data, str):
+                data = json.loads(data)
+
+        items = data.get('Items', []) if isinstance(data, dict) else []
+        candidates = []
+        for it in items:
+            t = it.get('TieuDe', '').strip()
+            d = it.get('NgayDangText', '').strip() or it.get('NgayDang', '').strip()
+            raw_f = it.get('LinkFileDinhKem', '').strip()
+            doc_url = urllib.parse.urljoin('https://ghc.vn', urllib.parse.quote(raw_f, safe=':/?&=%')) if raw_f else ''
+
+            matched, snippet = is_q3_2026(t, ticker='GHC', doc_url=doc_url, date_pub=d)
+            if matched:
+                b_type = classify_bctc_type(t)
+                candidates.append({
+                    'title': t,
+                    'date': d or datetime.datetime.now().strftime("%d/%m/%Y"),
+                    'doc_url': doc_url,
+                    'bctc_type': b_type
+                })
+        if candidates:
+            hop_nhat = next((c for c in candidates if c['bctc_type'] == 'HOP_NHAT'), None)
+            best = hop_nhat or candidates[0]
+            return {
+                'has_q3': True,
+                'bctc_type': best['bctc_type'],
+                'source': 'Company_Web',
+                'title': best['title'],
+                'date': best['date'],
+                'doc_url': best['doc_url']
+            }
+    except:
+        pass
+    return None
+
 def check_company_website(ticker, uri):
     if not uri or 'ezir.fpts.com.vn' in uri.lower():
         return None
+    clean_uri = uri
+    if 'ghc.vn' in clean_uri.lower():
+        r_ghc = check_ghc_api(clean_uri)
+        if r_ghc and r_ghc.get('has_q3'):
+            return r_ghc
     try:
-        clean_uri = uri
         if clean_uri.startswith('https://lixco.com'):
             clean_uri = clean_uri.replace('https://', 'http://')
         headers = get_browser_headers(referer=clean_uri, is_api=False)
