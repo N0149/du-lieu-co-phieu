@@ -1,44 +1,16 @@
 [
   {
-    "ticker": "DDV",
-    "title": "Công bố thông tin 28/10/2026",
-    "url": "https://dap-vinachem.com.vn/cong-bo-thong-tin/quyet-dinh-ve-giao-ke-hoach-sxkd-dtxd-quy-iv-nam-2026-cua-hoi-dong-quan-tri-cong-ty",
-    "date": "28/10/2026",
+    "ticker": "NLG",
+    "title": "NLG –  CBTT NQHĐQT v.v Thay đổi các nội dung liên quan đến phát hành cổ phiếu cho CĐHH",
+    "url": "https://www.namlongvn.com/uploads/2026/10/20261029-NLG-CBTT-NQHDQT-v.v-Thay-doi-cac-noi-dung-lien-quan-den-phat-hanh-CP-cho-CDHH.pdf",
+    "date": "20261029",
     "source": "Company_Web",
-    "category": "BUSINESS_NEWS",
-    "category_label": "TÌNH HÌNH SẢN XUẤT KINH DOANH",
-    "color": 440020,
-    "icon": "📈",
-    "unique_id": "web_dadd51e28e98",
-    "company_name": "Công ty Cổ phần DAP - Vinachem",
-    "exchange": "UPCOM"
-  },
-  {
-    "ticker": "DDV",
-    "title": "28/10/2026 Chia sẻ",
-    "url": "https://www.facebook.com/sharer.php?u=https://cong-bo-thong-tin/quyet-dinh-ve-giao-ke-hoach-sxkd-dtxd-quy-iv-nam-2026-cua-hoi-dong-quan-tri-cong-ty",
-    "date": "28/10/2026",
-    "source": "Company_Web",
-    "category": "BUSINESS_NEWS",
-    "category_label": "TÌNH HÌNH SẢN XUẤT KINH DOANH",
-    "color": 440020,
-    "icon": "📈",
-    "unique_id": "web_6d456211af90",
-    "company_name": "Công ty Cổ phần DAP - Vinachem",
-    "exchange": "UPCOM"
-  },
-  {
-    "ticker": "DDV",
-    "title": "Xem chi tiết",
-    "url": "https://dap-vinachem.com.vn/cong-bo-thong-tin/quyet-dinh-ve-giao-ke-hoach-sxkd-dtxd-quy-iv-nam-2026-cua-hoi-dong-quan-tri-cong-ty",
-    "date": "28/10/2026",
-    "source": "Company_Web",
-    "category": "BUSINESS_NEWS",
-    "category_label": "TÌNH HÌNH SẢN XUẤT KINH DOANH",
-    "color": 440020,
-    "icon": "📈",
-    "unique_id": "web_c7c6876271fe",
-    "company_name": "Công ty Cổ phần DAP - Vinachem",
-    "exchange": "UPCOM"
+    "category": "DIVIDEND_RIGHTS",
+    "category_label": "CỔ TỨC & QUYỀN DOANH NGHIỆP",
+    "color": 15381256,
+    "icon": "💰",
+    "unique_id": "web_da9df0b8fdfa",
+    "company_name": "Công ty Cổ phần Đầu tư Nam Long",
+    "exchange": "HOSE"
   }
 ]
