@@ -108,5 +108,65 @@
     "url": "https://www.namlongvn.com/uploads/2026/10/20261029-NLG-CBTT-NQHDQT-v.v-Thay-doi-cac-noi-dung-lien-quan-den-phat-hanh-CP-cho-CDHH.pdf",
     "source": "Company_Web",
     "alerted_at": "2026-10-29 17:26:32"
+  },
+  "web_d88c03bf573e": {
+    "ticker": "DRC",
+    "category": "EXTRAORDINARY_EVENT",
+    "category_label": "CÔNG BỐ BẤT THƯỜNG",
+    "title": "Công ty cổ phần Cao su Đà Nẵng (DRC) CBTT bất thường về quyết định xử phạt vi phạm hành chính",
+    "date": "30/10/2026",
+    "url": "https://drc.com.vn/wp-content/uploads/2026/10/20261030-DRC-CBTT-ve-phat-vi-pham-hanh-chinh-1-1.pdf",
+    "source": "Company_Web",
+    "alerted_at": "2026-10-30 17:03:54"
+  },
+  "web_be6883b67b86": {
+    "ticker": "ALT",
+    "category": "BUSINESS_NEWS",
+    "category_label": "TÌNH HÌNH SẢN XUẤT KINH DOANH",
+    "title": "BÁO CÁO VÀ GIẢI TRÌNH KẾT QUẢ KINH DOANH RIÊNG QUÝ III/2026 BÁO CÁO VÀ GIẢI TRÌNH KẾT QUẢ KINH DOANH RIÊNG QUÝ III/2026",
+    "date": "30/10/2026",
+    "url": "https://alta.com.vn/bao-cao-va-giai-trinh-ket-qua-kinh-doanh-rieng-quy-iii-2026/",
+    "source": "Company_Web",
+    "alerted_at": "2026-10-30 17:03:54"
+  },
+  "web_71d874f13bec": {
+    "ticker": "ALT",
+    "category": "BUSINESS_NEWS",
+    "category_label": "TÌNH HÌNH SẢN XUẤT KINH DOANH",
+    "title": "BÁO CÁO VÀ GIẢI TRÌNH KẾT QUẢ KINH DOANH HỢP NHẤT QUÝ III/2026 BÁO CÁO VÀ GIẢI TRÌNH KẾT QUẢ KINH DOANH HỢP NHẤT QUÝ III",
+    "date": "30/10/2026",
+    "url": "https://alta.com.vn/bao-cao-va-giai-trinh-ket-qua-kinh-doanh-hop-nhat-quy-iii-2026/",
+    "source": "Company_Web",
+    "alerted_at": "2026-10-30 17:03:55"
+  },
+  "web_596eca1e2053": {
+    "ticker": "HAH",
+    "category": "EXTRAORDINARY_EVENT",
+    "category_label": "CÔNG BỐ BẤT THƯỜNG",
+    "title": "Công ty TNHH Vận tải Container Hải An nhận Bằng khen của Chủ tịch UBND thành phố Hải Phòng",
+    "date": "30/10/2026",
+    "url": "https://haiants.vn/tin-noi-bo/cong-ty-tnhh-van-tai-container-hai-an-nhan-bang-khen-cua-chu-tich-ubnd-thanh-pho-hai-phong-n6823.html",
+    "source": "Company_Web",
+    "alerted_at": "2026-10-30 17:03:56"
+  },
+  "web_bc9e53533bfb": {
+    "ticker": "PTB",
+    "category": "BUSINESS_NEWS",
+    "category_label": "TÌNH HÌNH SẢN XUẤT KINH DOANH",
+    "title": "Công văn giải trình kết quả kinh doanh Quý 3 năm 2026 (Tiếng Việt) DOWNLOAD",
+    "date": "20261030",
+    "url": "https://pub-57cc034add4942f79a894f01192cadcb.r2.dev/media/20261030%20-%20PTB%20-%20GIAI%20TRINH%20KET%20QUA%20KINH%20DOANH%20Q3%202026.pdf",
+    "source": "Company_Web",
+    "alerted_at": "2026-10-30 17:03:57"
+  },
+  "web_da3bcb3b3fd0": {
+    "ticker": "PTB",
+    "category": "INSIDER_TRADE",
+    "category_label": "GIAO DỊCH CỔ ĐÔNG / NỘI BỘ",
+    "title": "DOWNLOAD",
+    "date": "20261030",
+    "url": "https://pub-57cc034add4942f79a894f01192cadcb.r2.dev/media/20261030%20-%20PTB%20-%20BCKQ%20GIAO%20DICH%20CP%20NLQ%20LE%20VY%20(che).pdf",
+    "source": "Company_Web",
+    "alerted_at": "2026-10-30 17:03:58"
   }
 }
