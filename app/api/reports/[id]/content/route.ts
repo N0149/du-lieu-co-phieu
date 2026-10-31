@@ -18,7 +18,7 @@ const DRIVE_API_KEY = process.env.GOOGLE_DRIVE_API_KEY ?? "";
  */
 export async function GET(
   request: NextRequest,
-  { params }: { params: Promise<{ id: string }> | { id: string } },
+  { params }: { params: Promise<{ id: string }> },
 ) {
   const { id } = await params;
   const ip = getClientIp(request.headers);

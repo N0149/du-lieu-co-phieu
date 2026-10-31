@@ -199,8 +199,9 @@ function getRuatichsanStocksMap(): Record<string, { symbol: string; name: string
   if (typeof window !== 'undefined') return null
   if (!ruatichsanStocksMapCache) {
     try {
-      const fs = require('node:fs')
-      const path = require('node:path')
+      const req = typeof eval !== 'undefined' ? eval('require') : null
+      const fs = req ? req('fs') : null
+      const path = req ? req('path') : null
       const p = path.join(process.cwd(), 'data', 'ruatichsan_stocks_map.json')
       if (fs.existsSync(p)) {
         ruatichsanStocksMapCache = JSON.parse(fs.readFileSync(p, 'utf-8'))

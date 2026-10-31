@@ -8,7 +8,7 @@ import { checkUserAccess, canAccessReport } from "@/lib/auth-check";
 export default async function ReportDetailPage({
   params,
 }: {
-  params: Promise<{ slug: string }> | { slug: string };
+  params: Promise<{ slug: string }>;
 }) {
   const resolvedParams = await params;
   const docId = resolvedParams.slug; // slug chính là ID Google Doc

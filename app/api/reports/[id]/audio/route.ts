@@ -244,7 +244,7 @@ function parseMp3Duration(data: Uint8Array): number {
  */
 export async function GET(
   _request: Request,
-  { params }: { params: Promise<{ id: string }> | { id: string } },
+  { params }: { params: Promise<{ id: string }> },
 ) {
   const { id } = await params;
 
