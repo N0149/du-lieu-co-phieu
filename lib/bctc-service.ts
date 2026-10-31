@@ -126,20 +126,28 @@ export function hasBctcReport(ticker: string): boolean {
   if (!ticker) return false
   const sym = ticker.toUpperCase().trim()
 
+  const candidateNames = [
+    sym + '_HopNhat_Q3.md',
+    sym + '_CongTyMe_Q3.md',
+    sym + '_ThuyetMinh_HopNhat.md',
+    sym + '_ThuyetMinh_CongTyMe.md',
+    sym + '_ThuyetMinh_BCTC.md',
+  ]
+
   for (const sub of PERIOD_SUBDIRS) {
     const localDir = sub ? path.join(LOCAL_DIR, sub) : LOCAL_DIR
     if (fs.existsSync(localDir)) {
-      if (fs.existsSync(path.join(localDir, sym + '_ThuyetMinh_HopNhat.md'))) return true
-      if (fs.existsSync(path.join(localDir, sym + '_ThuyetMinh_CongTyMe.md'))) return true
-      if (fs.existsSync(path.join(localDir, sym + '_ThuyetMinh_BCTC.md'))) return true
+      for (const name of candidateNames) {
+        if (fs.existsSync(path.join(localDir, name))) return true
+      }
     }
 
     if (fs.existsSync(EXTERNAL_DIR)) {
       const extDir = sub ? path.join(EXTERNAL_DIR, sub) : EXTERNAL_DIR
       if (fs.existsSync(extDir)) {
-        if (fs.existsSync(path.join(extDir, sym + '_ThuyetMinh_HopNhat.md'))) return true
-        if (fs.existsSync(path.join(extDir, sym + '_ThuyetMinh_CongTyMe.md'))) return true
-        if (fs.existsSync(path.join(extDir, sym + '_ThuyetMinh_BCTC.md'))) return true
+        for (const name of candidateNames) {
+          if (fs.existsSync(path.join(extDir, name))) return true
+        }
       }
     }
   }
@@ -202,19 +210,20 @@ export function getBctcReport(
   const availableTypes: ('HopNhat' | 'CongTyMe')[] = []
 
   const checkFileExists = (type: 'HopNhat' | 'CongTyMe') => {
-    const filename = sym + '_ThuyetMinh_' + type + '.md'
-    const legacyFilename = type === 'HopNhat' ? (sym + '_ThuyetMinh_BCTC.md') : null
+    const candidateFiles = [
+      sym + '_' + type + '_Q3.md',
+      sym + '_ThuyetMinh_' + type + '.md',
+      ...(type === 'HopNhat' ? [sym + '_ThuyetMinh_BCTC.md'] : []),
+    ]
 
     // Quét theo thứ tự ưu tiên: Quy_3_2026 -> Ban_Nien_2026 -> Thư mục gốc
     for (const sub of PERIOD_SUBDIRS) {
       // 1. Local dir
       const localDir = sub ? path.join(LOCAL_DIR, sub) : LOCAL_DIR
       if (fs.existsSync(localDir)) {
-        const p = path.join(localDir, filename)
-        if (fs.existsSync(p)) return p
-        if (legacyFilename) {
-          const lp = path.join(localDir, legacyFilename)
-          if (fs.existsSync(lp)) return lp
+        for (const fname of candidateFiles) {
+          const p = path.join(localDir, fname)
+          if (fs.existsSync(p)) return p
         }
       }
 
@@ -222,11 +231,9 @@ export function getBctcReport(
       if (fs.existsSync(EXTERNAL_DIR)) {
         const extDir = sub ? path.join(EXTERNAL_DIR, sub) : EXTERNAL_DIR
         if (fs.existsSync(extDir)) {
-          const ep = path.join(extDir, filename)
-          if (fs.existsSync(ep)) return ep
-          if (legacyFilename) {
-            const lep = path.join(extDir, legacyFilename)
-            if (fs.existsSync(lep)) return lep
+          for (const fname of candidateFiles) {
+            const ep = path.join(extDir, fname)
+            if (fs.existsSync(ep)) return ep
           }
         }
       }

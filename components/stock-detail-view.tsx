@@ -987,7 +987,7 @@ export function StockDetailView({
         shortLabel: 'ĐHĐCĐ',
         icon: Vote,
         iconColor: 'text-purple-400',
-        badge: agmData?.hasReport ? '2026' : undefined,
+        badge: (agmData?.hasReport || availableAgmTickers?.includes(ticker)) ? '2026' : undefined,
       },
       {
         id: 'bctc' as StockDetailTab,
@@ -995,12 +995,12 @@ export function StockDetailView({
         shortLabel: 'Thuyết minh',
         icon: ScrollText,
         iconColor: 'text-teal-400',
-        badge: (bctcDataHopNhat?.hasReport || bctcDataCongTyMe?.hasReport) ? 'MỚI' : undefined,
+        badge: (bctcDataHopNhat?.hasReport || bctcDataCongTyMe?.hasReport || availableBctcTickers?.includes(ticker)) ? 'MỚI' : undefined,
       },
     )
 
     return list
-  }, [agmData, articlesData, bctcDataHopNhat, bctcDataCongTyMe, dividendHistory])
+  }, [agmData, articlesData, bctcDataHopNhat, bctcDataCongTyMe, dividendHistory, availableAgmTickers, availableBctcTickers, ticker])
 
   return (
     <div className="space-y-5 pb-12 w-full">

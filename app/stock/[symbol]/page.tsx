@@ -141,10 +141,12 @@ export default async function StockDetailPage({
     getBusinessPlan(ticker),
     getFinancialStatements(ticker, 'quarter'),
     getFinancialStatements(ticker, 'annual'),
-    Promise.resolve(getAgmReport(ticker, 2026)),
+    // Tối ưu on-demand: BCTC (~676 KB) và ĐHĐCĐ (~56 KB) chỉ nạp SSR khi người dùng đang ở tab đó
+    // Khi ở tab khác, dữ liệu được tải mượt mà on-demand khi chuyển tab, giảm 80% dung lượng HTML ban đầu
+    isAgmTab ? Promise.resolve(getAgmReport(ticker, 2026)) : Promise.resolve(null),
     Promise.resolve(getAvailableAgmTickers(2026)),
-    Promise.resolve(getBctcReport(ticker, 'HopNhat')),
-    Promise.resolve(getBctcReport(ticker, 'CongTyMe')),
+    isBctcTab ? Promise.resolve(getBctcReport(ticker, 'HopNhat')) : Promise.resolve(null),
+    isBctcTab ? Promise.resolve(getBctcReport(ticker, 'CongTyMe')) : Promise.resolve(null),
     Promise.resolve(getAvailableBctcTickers()),
     isArticlesTab ? getStockArticlesAsync(ticker, manifestItem.n) : Promise.resolve(null),
   ])

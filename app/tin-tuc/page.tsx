@@ -9,7 +9,8 @@ import { getCachedChinaNews } from '@/lib/china-news-service'
 import { fetchLiveBctcAlerts } from '@/lib/bctc-alerts-service'
 import manifestRaw from '@/data/longlive_manifest.json'
 
-export const dynamic = 'force-dynamic'
+// Bộ nhớ đệm ISR 120 giây (2 phút) - Tin tức mới tự động polling nền client:
+export const revalidate = 120
 
 export const metadata: Metadata = {
   title: 'Tổng Hợp Tin Tức Thị Trường & Công Bố Doanh Nghiệp Mới Nhất',
@@ -76,16 +77,16 @@ export default async function NewsPage(props: NewsPageProps) {
     defaultTab = rawTab
   }
 
-  const [initialNews, userWatchlistResult, initialInsiderActions] = await Promise.all([
+  const [initialNews, userWatchlistResult, initialInsiderActions, initialBctcAlerts] = await Promise.all([
     getInitialNews(),
     getUserWatchlist(),
     getInsiderActions({ limit: 80 }).catch(() => []),
+    fetchLiveBctcAlerts().catch(() => []),
   ])
   const initialDisclosures = getRecentMarketDisclosures({ limit: 200 })
   const initialWatchlist = userWatchlistResult.items.map((it) => it.ticker)
   const stockPriceMap = getStockPriceMap()
   const chinaSnapshot = getCachedChinaNews()
-  const initialBctcAlerts = await fetchLiveBctcAlerts()
 
   // Calculate trending tickers
   const tickerCounts: Record<string, number> = {}

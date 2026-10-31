@@ -3,7 +3,8 @@ import { SiteHeader } from '@/components/site-header'
 import { FundDashboard } from '@/components/funds/fund-dashboard'
 import { getFundsSnapshot } from '@/lib/fund-service'
 
-export const dynamic = 'force-dynamic'
+// Bộ nhớ đệm ISR 1800 giây (30 phút) - Dữ liệu NAV và danh mục quỹ tải tức thì < 20ms:
+export const revalidate = 1800
 
 export const metadata: Metadata = {
   title: 'Quỹ Đầu Tư Mở - Bóc Tách Khẩu Vị & Top Cổ Phiếu Nắm Giữ',

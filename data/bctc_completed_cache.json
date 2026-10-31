@@ -1659,12 +1659,12 @@
   "TID": {
     "ticker": "TID",
     "company_name": "Công ty Cổ phần Tổng Công ty Tín Nghĩa",
-    "release_date": "28/10/2026 13:10",
-    "title": "Báo cáo tài chính quý 3/2026 (công ty mẹ)",
-    "doc_url": "https://fpts.com.vn/san-pham-dich-vu/tu-van-dau-tu/tin-tuc/doanh-nghiep/luu-tru-bao-cao-tai-chinhTID_Bao_cao_tai_chinh_quy_32026_cong_ty_me_7007AFC2F69BD79ED8FAD8A1AF15EF4B",
-    "source": "EzIR_FPTS",
-    "bctc_type": "RIENG",
-    "updated_at": "2026-10-31 13:06:55"
+    "release_date": "28/10/2026",
+    "title": "BCTC Hợp nhất quý 3 năm 2026",
+    "doc_url": "https://static2.vietstock.vn/data/UPCOM/2026/BCTC/VN/QUY%203/TID_Baocaotaichinh_Q3_2026_Hopnhat.zip?ver=7b7c752f",
+    "source": "Vietstock",
+    "bctc_type": "HOP_NHAT",
+    "updated_at": "2026-10-31 13:09:16"
   },
   "SDT": {
     "ticker": "SDT",
@@ -1975,7 +1975,7 @@
     "doc_url": "https://vnsteel.vn/Uploads/PublicOther/2026/10/29/20/vi-bctc-rieng-q3-2026-signed.pdf",
     "source": "Company_Web",
     "bctc_type": "RIENG",
-    "updated_at": "2026-10-31 13:06:55"
+    "updated_at": "2026-10-31 13:09:17"
   },
   "DC4": {
     "ticker": "DC4",
@@ -2100,12 +2100,12 @@
   "VLC": {
     "ticker": "VLC",
     "company_name": "Tổng Công ty Chăn nuôi Việt Nam - Công ty Cổ phần",
-    "release_date": "30/10/2026 09:27",
-    "title": "Báo cáo tài chính quý 3/2026 (công ty mẹ)",
-    "doc_url": "https://fpts.com.vn/san-pham-dich-vu/tu-van-dau-tu/tin-tuc/doanh-nghiep/luu-tru-bao-cao-tai-chinhVLC_Bao_cao_tai_chinh_quy_32026_cong_ty_me_F39F3D0FC2C1A15543DB0F5568BE64F0",
-    "source": "EzIR_FPTS",
+    "release_date": "30/10/2026",
+    "title": "BCTC Công ty mẹ quý 3 năm 2026",
+    "doc_url": "https://static2.vietstock.vn/data/HNX/2026/BCTC/VN/QUY%203/VLC_Baocaotaichinh_Q3_2026_Congtyme.zip",
+    "source": "Vietstock",
     "bctc_type": "RIENG",
-    "updated_at": "2026-10-31 13:06:57"
+    "updated_at": "2026-10-31 13:09:18"
   },
   "HSM": {
     "ticker": "HSM",
@@ -2476,5 +2476,15 @@
     "source": "Vietstock",
     "bctc_type": "RIENG",
     "updated_at": "2026-10-31 13:09:04"
+  },
+  "TOS": {
+    "ticker": "TOS",
+    "company_name": "Công ty Cổ phần Dịch vụ biển Tân Cảng",
+    "release_date": "31/10/2026",
+    "title": "ImageTin dầu khíBáo cáo tài chính hợp nhất Quý 3/2026 Công ty CP Dịch vụ biển Tân Cảng và Công văn số 423/2026/TOS-GT về việc giải trình LNST trên BCTC hợp nhất Quý 3/2026 thay đổi hơn 10% so với cùng kỳ năm 2025",
+    "doc_url": "https://tancangoffshore.com/wp-content/uploads/2026/10/CBTTBCTC-HN_Q3.2026_Vie..pdf",
+    "source": "Company_Web",
+    "bctc_type": "HOP_NHAT",
+    "updated_at": "2026-10-31 13:09:17"
   }
 }

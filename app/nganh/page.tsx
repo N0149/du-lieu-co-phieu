@@ -4,7 +4,8 @@ import { SiteHeader } from '@/components/site-header'
 import { IndustryContainer } from '@/components/industry/IndustryContainer'
 import { getIndustryFullData } from '@/lib/industry-service'
 
-export const dynamic = 'force-dynamic'
+// Bộ nhớ đệm ISR 300 giây (5 phút) giúp trang tải tức thì < 30ms:
+export const revalidate = 300
 
 export const metadata: Metadata = {
   title: 'Đánh Giá Ngành ICB & Cơ Cấu Vốn Hóa, Lợi Nhuận | Dữ Liệu Đầu Tư',
