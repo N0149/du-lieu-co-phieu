@@ -400,7 +400,8 @@ def check_fpts_ezir(ticker):
             # Thành công: Báo Circuit Breaker ghi nhận trạng thái bình thường
             FPTS_BREAKER.record_success()
 
-            items = data.get('Data', {}).get('Table1', [])
+            data_obj = data.get('Data') or {}
+            items = data_obj.get('Table1', []) if isinstance(data_obj, dict) else []
             latest = items[0] if items else {}
             latest_title = latest.get('Title', '').strip()
             latest_date = latest.get('DatePub', '').strip()
@@ -531,6 +532,77 @@ def check_ghc_api(clean_uri):
         pass
     return None
 
+def check_vgg_api(clean_uri):
+    """
+    Adapter chuyên biệt cho Tổng Công ty May Việt Tiến (VGG) vì website viettien.com.vn là Single Page Application (Angular),
+    dữ liệu BCTC được render qua API ngầm tại https://www.viettien.com.vn/admin/vi/quan-he-co-dong/
+    thay vì nhúng trực tiếp trong HTML tĩnh.
+    """
+    try:
+        import ssl
+        ctx = ssl.create_default_context()
+        ctx.check_hostname = False
+        ctx.verify_mode = ssl.CERT_NONE
+        
+        api_url = "https://www.viettien.com.vn/admin/vi/quan-he-co-dong/"
+        headers = get_browser_headers(referer="https://viettien.com.vn/quan-he-co-dong", is_api=True)
+        req = urllib.request.Request(api_url, headers=headers)
+        with urllib.request.urlopen(req, timeout=10, context=ctx) as resp:
+            data = json.loads(safe_read_response(resp).decode('utf-8', errors='ignore'))
+            
+        if not isinstance(data, list):
+            return None
+            
+        for cat in data:
+            if 'tài chính' in cat.get('title', '').lower():
+                for item in cat.get('contents', []):
+                    item_title = item.get('title', '')
+                    if '2026' in item_title:
+                        html_content = item.get('content', '')
+                        soup = BeautifulSoup(html_content, 'html.parser')
+                        candidates = []
+                        for p in soup.find_all(['p', 'li']):
+                            p_text = p.get_text(separator=' ', strip=True)
+                            a_tag = p.find('a', href=True)
+                            if not a_tag:
+                                continue
+                            doc_url = a_tag['href']
+                            
+                            m_date = re.search(r'(?<!\d)(\d{1,2}/\d{1,2}/2026)(?!\d)', p_text)
+                            date_str = m_date.group(1) if m_date else "30/10/2026"
+                            
+                            matched, snippet = is_q3_2026(p_text, ticker="VGG", doc_url=doc_url, date_pub=date_str)
+                            if matched:
+                                clean_p = strip_accents(p_text.lower())
+                                is_hop_nhat = any(k in clean_p for k in ['hop nhat', 'consol'])
+                                is_giai_trinh = any(k in clean_p for k in ['giai trinh', 'explanation'])
+                                is_eng = any(k in clean_p for k in ['consol fs', 'download', 'english'])
+                                
+                                clean_title = re.sub(r'(ngày\s*\d{1,2}/\d{1,2}/2026|date\s*\d{1,2}/\d{1,2}/2026|tải về|download|:)', '', p_text, flags=re.I).strip()
+                                
+                                candidates.append({
+                                    'title': clean_title,
+                                    'date': date_str,
+                                    'doc_url': doc_url,
+                                    'is_hop_nhat': is_hop_nhat,
+                                    'is_giai_trinh': is_giai_trinh,
+                                    'is_eng': is_eng
+                                })
+                        if candidates:
+                            hop_nhat = [c for c in candidates if c['is_hop_nhat'] and not c['is_giai_trinh'] and not c['is_eng']]
+                            best = hop_nhat[0] if hop_nhat else candidates[0]
+                            return {
+                                'has_q3': True,
+                                'bctc_type': 'HOP_NHAT' if best['is_hop_nhat'] else 'DAY_DU',
+                                'source': 'Company_Web',
+                                'title': best['title'],
+                                'date': best['date'],
+                                'doc_url': best['doc_url']
+                            }
+    except Exception as e:
+        return {'has_q3': False, 'source': 'Company_Web', 'error': str(e)}
+    return None
+
 def check_company_website(ticker, uri, max_depth=1):
     if not uri or 'ezir.fpts.com.vn' in uri.lower():
         return None
@@ -539,12 +611,20 @@ def check_company_website(ticker, uri, max_depth=1):
         r_ghc = check_ghc_api(clean_uri)
         if r_ghc and r_ghc.get('has_q3'):
             return r_ghc
+    if 'viettien.com.vn' in clean_uri.lower():
+        r_vgg = check_vgg_api(clean_uri)
+        if r_vgg and r_vgg.get('has_q3'):
+            return r_vgg
     try:
         if clean_uri.startswith('https://lixco.com'):
             clean_uri = clean_uri.replace('https://', 'http://')
+        import ssl
+        ctx = ssl.create_default_context()
+        ctx.check_hostname = False
+        ctx.verify_mode = ssl.CERT_NONE
         headers = get_browser_headers(referer=clean_uri, is_api=False)
         req = urllib.request.Request(clean_uri, headers=headers)
-        with urllib.request.urlopen(req, timeout=6) as resp:
+        with urllib.request.urlopen(req, timeout=6, context=ctx) as resp:
             raw_bytes = safe_read_response(resp)
             html = raw_bytes.decode('utf-8', errors='ignore')
         soup = BeautifulSoup(html, 'html.parser')

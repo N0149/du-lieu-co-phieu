@@ -1975,7 +1975,7 @@
     "doc_url": "https://vnsteel.vn/Uploads/PublicOther/2026/10/29/20/vi-bctc-rieng-q3-2026-signed.pdf",
     "source": "Company_Web",
     "bctc_type": "RIENG",
-    "updated_at": "2026-10-31 13:09:17"
+    "updated_at": "2026-10-31 15:26:19"
   },
   "DC4": {
     "ticker": "DC4",
@@ -2105,7 +2105,7 @@
     "doc_url": "https://static2.vietstock.vn/data/HNX/2026/BCTC/VN/QUY%203/VLC_Baocaotaichinh_Q3_2026_Congtyme.zip",
     "source": "Vietstock",
     "bctc_type": "RIENG",
-    "updated_at": "2026-10-31 13:09:18"
+    "updated_at": "2026-10-31 15:26:21"
   },
   "HSM": {
     "ticker": "HSM",
@@ -2475,7 +2475,7 @@
     "doc_url": "https://static2.vietstock.vn/data/HNX/2026/BCTC/VN/QUY%203/IDC_Baocaotaichinh_Q3_2026_Congtyme.zip",
     "source": "Vietstock",
     "bctc_type": "RIENG",
-    "updated_at": "2026-10-31 13:09:04"
+    "updated_at": "2026-10-31 15:26:06"
   },
   "TOS": {
     "ticker": "TOS",
@@ -2486,5 +2486,15 @@
     "source": "Company_Web",
     "bctc_type": "HOP_NHAT",
     "updated_at": "2026-10-31 13:09:17"
+  },
+  "VGG": {
+    "ticker": "VGG",
+    "company_name": "Tổng Công Ty Cổ phần May Việt Tiến",
+    "release_date": "30/10/2026",
+    "title": "BÁO CÁO TÀI CHÍNH HỌP NHẤT QUÝ 3 NĂM 2026",
+    "doc_url": "https://www.viettien.com.vn/admin/wp-content/uploads/2017/06/BAO-CAO-TAI-CHINH-HOP-NHAT-QUY-3-NAM-2026.pdf",
+    "source": "Company_Web",
+    "bctc_type": "HOP_NHAT",
+    "updated_at": "2026-10-31 15:30:42"
   }
 }
