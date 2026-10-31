@@ -1,8 +1,8 @@
 import type { Metadata } from 'next'
 import { SiteHeader } from '@/components/site-header'
 import { NewsDashboard, NewsSnapshotItem } from '@/components/news/news-dashboard'
-import { getCachedNews, fetchAllRssFeeds } from '@/lib/rss-news-service'
-import { getRecentMarketDisclosures } from '@/lib/disclosures'
+import { getCachedNews, fetchAllRssFeeds, getLastFetchedTime } from '@/lib/rss-news-service'
+import { getLiveMarketDisclosures, getRecentMarketDisclosures } from '@/lib/disclosures'
 import { getUserWatchlist } from '@/lib/watchlist-service'
 import { getInsiderActions } from '@/lib/insider-actions-service'
 import { getCachedChinaNews } from '@/lib/china-news-service'
@@ -31,7 +31,9 @@ export const metadata: Metadata = {
 async function getInitialNews(): Promise<NewsSnapshotItem[]> {
   try {
     const cached = getCachedNews()
-    if (cached && cached.length > 0) {
+    const lastTime = getLastFetchedTime()
+    const isStale = !lastTime || Date.now() - lastTime > 15 * 60 * 1000
+    if (cached && cached.length > 0 && !isStale) {
       return cached
     }
     return await fetchAllRssFeeds(false)
@@ -77,13 +79,13 @@ export default async function NewsPage(props: NewsPageProps) {
     defaultTab = rawTab
   }
 
-  const [initialNews, userWatchlistResult, initialInsiderActions, initialBctcAlerts] = await Promise.all([
+  const [initialNews, userWatchlistResult, initialInsiderActions, initialBctcAlerts, initialDisclosures] = await Promise.all([
     getInitialNews(),
     getUserWatchlist(),
     getInsiderActions({ limit: 80 }).catch(() => []),
     fetchLiveBctcAlerts().catch(() => []),
+    getLiveMarketDisclosures({ limit: 200 }).catch(() => getRecentMarketDisclosures({ limit: 200 })),
   ])
-  const initialDisclosures = getRecentMarketDisclosures({ limit: 200 })
   const initialWatchlist = userWatchlistResult.items.map((it) => it.ticker)
   const stockPriceMap = getStockPriceMap()
   const chinaSnapshot = getCachedChinaNews()

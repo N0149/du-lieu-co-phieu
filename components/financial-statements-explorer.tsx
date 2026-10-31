@@ -1067,6 +1067,24 @@ export function FinancialStatementsExplorer({
     allValues: (number | null)[];
   } | null>(null);
   const [loading, setLoading] = useState<boolean>(false);
+  const [liveBctcHopNhat, setLiveBctcHopNhat] = useState<BctcReportData | null>(bctcDataHopNhat || null);
+  const [liveBctcCongTyMe, setLiveBctcCongTyMe] = useState<BctcReportData | null>(bctcDataCongTyMe || null);
+
+  useEffect(() => {
+    if (bctcDataHopNhat || bctcDataCongTyMe) {
+      setLiveBctcHopNhat(bctcDataHopNhat || null);
+      setLiveBctcCongTyMe(bctcDataCongTyMe || null);
+      return;
+    }
+    fetch(`/api/stock/${encodeURIComponent(ticker)}/bctc`)
+      .then((res) => (res.ok ? res.json() : null))
+      .then((data) => {
+        if (data?.bctcDataHopNhat) setLiveBctcHopNhat(data.bctcDataHopNhat);
+        if (data?.bctcDataCongTyMe) setLiveBctcCongTyMe(data.bctcDataCongTyMe);
+      })
+      .catch(() => {});
+  }, [ticker, bctcDataHopNhat, bctcDataCongTyMe]);
+
   const [chartModalItem, setChartModalItem] = useState<{
     title: string;
     allValues: (number | null)[];
@@ -1335,7 +1353,7 @@ export function FinancialStatementsExplorer({
           </button>
 
           {/* Gợi ý tính năng xem Thuyết minh khi bấm số liệu */}
-          {(bctcDataHopNhat?.hasReport || bctcDataCongTyMe?.hasReport) && (
+          {(liveBctcHopNhat?.hasReport || liveBctcCongTyMe?.hasReport) && (
             <div className="hidden xl:inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-emerald-500/10 border border-emerald-500/25 text-emerald-400 text-[11px] font-medium ml-2 shadow-2xs">
               <FileSpreadsheet className="size-3.5" />
               <span>Có Thuyết minh: Bấm vào số liệu để xem chi tiết</span>
@@ -1698,8 +1716,8 @@ export function FinancialStatementsExplorer({
                   const isLatestColumn = (cIdx: number) => cIdx === values.length - 1 && currentOffset === 0;
 
                   // Ánh xạ Thuyết minh tương ứng cho chỉ tiêu này (Hợp nhất hoặc Công ty mẹ)
-                  const noteHopNhat = findMatchingNote(node.displayName || node.name, activeTab, bctcDataHopNhat?.notes);
-                  const noteCongTyMe = findMatchingNote(node.displayName || node.name, activeTab, bctcDataCongTyMe?.notes);
+                  const noteHopNhat = findMatchingNote(node.displayName || node.name, activeTab, liveBctcHopNhat?.notes);
+                  const noteCongTyMe = findMatchingNote(node.displayName || node.name, activeTab, liveBctcCongTyMe?.notes);
                   const matchedNote = noteHopNhat || noteCongTyMe;
                   const isSelectedThisRow = selectedRowForSideChart?.title === node.displayName;
 
@@ -2012,11 +2030,14 @@ export function FinancialStatementsExplorer({
           noteHopNhat={activeNoteModal.noteHopNhat}
           noteCongTyMe={activeNoteModal.noteCongTyMe}
           initialReportType={activeNoteModal.initialType}
-          hasHopNhat={Boolean(bctcDataHopNhat?.hasReport)}
-          hasCongTyMe={Boolean(bctcDataCongTyMe?.hasReport)}
+          hasHopNhat={Boolean(liveBctcHopNhat?.hasReport)}
+          hasCongTyMe={Boolean(liveBctcCongTyMe?.hasReport)}
           onNavigateToFullReport={(type, secNum) => {
             if (onSelectTab) {
-              onSelectTab("bctc");
+              const targetTab = activeNoteModal?.periodLabel?.includes('Q3') || activeNoteModal?.periodLabel?.includes('3/2026')
+                ? "bctc-q3"
+                : "bctc-ban-nien";
+              onSelectTab(targetTab);
             }
           }}
         />

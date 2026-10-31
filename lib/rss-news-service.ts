@@ -785,7 +785,12 @@ export function getCachedNews(): RawNewsItem[] {
       const content = fs.readFileSync(filePath, 'utf-8')
       globalForRss.__inMemoryNewsCache = sanitizeList(JSON.parse(content))
       if (!globalForRss.__lastFetchedTimestamp) {
-        globalForRss.__lastFetchedTimestamp = Date.now()
+        try {
+          const stats = fs.statSync(filePath)
+          globalForRss.__lastFetchedTimestamp = stats.mtimeMs
+        } catch {
+          globalForRss.__lastFetchedTimestamp = Date.now()
+        }
       }
       return globalForRss.__inMemoryNewsCache || []
     }

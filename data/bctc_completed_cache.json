@@ -1975,7 +1975,7 @@
     "doc_url": "https://vnsteel.vn/Uploads/PublicOther/2026/10/29/20/vi-bctc-rieng-q3-2026-signed.pdf",
     "source": "Company_Web",
     "bctc_type": "RIENG",
-    "updated_at": "2026-10-31 15:26:19"
+    "updated_at": "2026-10-31 22:22:07"
   },
   "DC4": {
     "ticker": "DC4",
@@ -2105,7 +2105,7 @@
     "doc_url": "https://static2.vietstock.vn/data/HNX/2026/BCTC/VN/QUY%203/VLC_Baocaotaichinh_Q3_2026_Congtyme.zip",
     "source": "Vietstock",
     "bctc_type": "RIENG",
-    "updated_at": "2026-10-31 15:26:21"
+    "updated_at": "2026-10-31 22:22:08"
   },
   "HSM": {
     "ticker": "HSM",
@@ -2475,7 +2475,7 @@
     "doc_url": "https://static2.vietstock.vn/data/HNX/2026/BCTC/VN/QUY%203/IDC_Baocaotaichinh_Q3_2026_Congtyme.zip",
     "source": "Vietstock",
     "bctc_type": "RIENG",
-    "updated_at": "2026-10-31 15:26:06"
+    "updated_at": "2026-10-31 22:21:54"
   },
   "TOS": {
     "ticker": "TOS",
@@ -2496,5 +2496,35 @@
     "source": "Company_Web",
     "bctc_type": "HOP_NHAT",
     "updated_at": "2026-10-31 15:30:42"
+  },
+  "NDT": {
+    "ticker": "NDT",
+    "company_name": "Tổng Công ty Cổ phần Dệt may Nam Định",
+    "release_date": "31/10/2026",
+    "title": "Báo cáo tài chính hợp nhất Quý III - 2026 (Tiếng Anh)",
+    "doc_url": "https://natexco.com.vn/bao-cao-tai-chinh-hop-nhat-quy-iii-2026-tieng-anh-n14547.aspx",
+    "source": "Company_Web",
+    "bctc_type": "HOP_NHAT",
+    "updated_at": "2026-10-31 15:31:45"
+  },
+  "S55": {
+    "ticker": "S55",
+    "company_name": "Công ty Cổ phần Sông Đà 505",
+    "release_date": "31/10/2026",
+    "title": "Báo cáo tài chính Quý 3 năm 2026",
+    "doc_url": "https://songda505.com.vn/bao-cao-tai-chinh-quy-3-nam-2026/",
+    "source": "Company_Web",
+    "bctc_type": "DAY_DU",
+    "updated_at": "2026-10-31 15:31:46"
+  },
+  "HDG": {
+    "ticker": "HDG",
+    "company_name": "Công ty Cổ phần Tập đoàn Hà Đô",
+    "release_date": "31/10/2026",
+    "title": "Báo cáo tài chính Quý III năm 2026",
+    "doc_url": "javascript:void(59333)",
+    "source": "Company_Web",
+    "bctc_type": "DAY_DU",
+    "updated_at": "2026-10-31 18:23:40"
   }
 }

@@ -23,7 +23,7 @@ import { buildDetailedBalanceSheetCashFlowData } from '@/lib/balance-sheet-cashf
 import { buildCapexFinancialData } from '@/lib/capex-financial-service'
 import { buildDebtDupontData } from '@/lib/debt-dupont-service'
 import { getAgmReport, getAvailableAgmTickers, getAgmKtpl } from '@/lib/agm-service'
-import { getBctcReport, getAvailableBctcTickers } from '@/lib/bctc-service'
+import { getBctcReport, getAvailableBctcTickers, hasBctcReportForPeriod } from '@/lib/bctc-service'
 import { getStockIcbHierarchy } from '@/lib/icb-service'
 import { getFinancialStatements } from '@/lib/financial-statements-db'
 import { getStockArticles, getStockArticlesAsync } from '@/lib/stock-articles-service'
@@ -66,7 +66,12 @@ export default async function StockDetailPage({
   const { symbol } = await params
   const sParams = searchParams ? await searchParams : {}
   const rawTab = sParams.tab?.toLowerCase()
-  let initialTab: 'overview' | 'profile' | 'dividends' | 'charts' | 'articles' | 'community' | 'financials' | 'peers' | 'reports' | 'agm' | 'bctc' = 'overview'
+  const ticker = symbol.toUpperCase().trim()
+
+  const hasBctcQ3 = hasBctcReportForPeriod(ticker, 'Quy_3_2026')
+  const hasBctcBanNien = hasBctcReportForPeriod(ticker, 'Ban_Nien_2026')
+
+  let initialTab: 'overview' | 'profile' | 'dividends' | 'charts' | 'articles' | 'community' | 'financials' | 'peers' | 'reports' | 'agm' | 'bctc' | 'bctc-ban-nien' | 'bctc-q3' = 'overview'
 
   if (rawTab === 'overview' || rawTab === 'tong-quan' || rawTab === 'do-thi' || rawTab === 'chart') initialTab = 'overview'
   else if (rawTab === 'profile' || rawTab === 'ho-so') initialTab = 'profile'
@@ -78,9 +83,11 @@ export default async function StockDetailPage({
   else if (rawTab === 'peers') initialTab = 'peers'
   else if (rawTab === 'reports') initialTab = 'reports'
   else if (rawTab === 'agm' || rawTab === 'dhcd' || rawTab === 'dhcd-2026' || rawTab === 'dai-hoi-co-dong') initialTab = 'agm'
-  else if (rawTab === 'bctc' || rawTab === 'thuyet-minh' || rawTab === 'thuyetminh' || rawTab === 'notes') initialTab = 'bctc'
-
-  const ticker = symbol.toUpperCase().trim()
+  else if (rawTab === 'bctc-ban-nien' || rawTab === 'ban-nien' || rawTab === 'bannien' || rawTab === 'bctc-6t') initialTab = 'bctc-ban-nien'
+  else if (rawTab === 'bctc-q3' || rawTab === 'quy-3' || rawTab === 'q3' || rawTab === 'bctc-quy-3') initialTab = 'bctc-q3'
+  else if (rawTab === 'bctc' || rawTab === 'thuyet-minh' || rawTab === 'thuyetminh' || rawTab === 'notes') {
+    initialTab = hasBctcQ3 ? 'bctc-q3' : 'bctc-ban-nien'
+  }
 
   const allStocks = getAllStocks()
   const manifestItem = allStocks.find((s) => s.t.toUpperCase() === ticker)
@@ -92,7 +99,10 @@ export default async function StockDetailPage({
   const isChartsTab = initialTab === 'charts'
   const isFinancialsTab = initialTab === 'financials'
   const isAgmTab = initialTab === 'agm'
-  const isBctcTab = initialTab === 'bctc'
+  const isBctcQ3Tab = initialTab === 'bctc-q3'
+  const isBctcBanNienTab = initialTab === 'bctc-ban-nien'
+  const isBctcTab = isBctcQ3Tab || isBctcBanNienTab
+  const targetSsrPeriod = isBctcBanNienTab ? 'Ban_Nien_2026' : 'Quy_3_2026'
   const isProfileTab = initialTab === 'profile' || initialTab === 'overview' || initialTab === 'dividends'
   const isArticlesTab = initialTab === 'articles'
 
@@ -145,8 +155,8 @@ export default async function StockDetailPage({
     // Khi ở tab khác, dữ liệu được tải mượt mà on-demand khi chuyển tab, giảm 80% dung lượng HTML ban đầu
     isAgmTab ? Promise.resolve(getAgmReport(ticker, 2026)) : Promise.resolve(null),
     Promise.resolve(getAvailableAgmTickers(2026)),
-    isBctcTab ? Promise.resolve(getBctcReport(ticker, 'HopNhat')) : Promise.resolve(null),
-    isBctcTab ? Promise.resolve(getBctcReport(ticker, 'CongTyMe')) : Promise.resolve(null),
+    (isBctcTab || isFinancialsTab) ? Promise.resolve(getBctcReport(ticker, 'HopNhat', targetSsrPeriod)) : Promise.resolve(null),
+    (isBctcTab || isFinancialsTab) ? Promise.resolve(getBctcReport(ticker, 'CongTyMe', targetSsrPeriod)) : Promise.resolve(null),
     Promise.resolve(getAvailableBctcTickers()),
     isArticlesTab ? getStockArticlesAsync(ticker, manifestItem.n) : Promise.resolve(null),
   ])
@@ -273,6 +283,8 @@ export default async function StockDetailPage({
           bctcDataHopNhat={bctcDataHopNhat}
           bctcDataCongTyMe={bctcDataCongTyMe}
           availableBctcTickers={availableBctcTickers}
+          hasBctcQ3={hasBctcQ3}
+          hasBctcBanNien={hasBctcBanNien}
           ktplRate={ktplRate}
           articlesData={articlesData}
           initialTab={initialTab}

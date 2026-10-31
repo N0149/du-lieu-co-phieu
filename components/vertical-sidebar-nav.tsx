@@ -22,6 +22,7 @@ import {
   Gavel,
   Zap,
   Fish,
+  Bot,
 } from 'lucide-react'
 import { cn } from '@/lib/utils'
 
@@ -75,6 +76,13 @@ export const NAV_GROUPS: NavGroup[] = [
         icon: Filter,
         badge: 'Pro',
         description: 'Bộ lọc 1.530+ mã chuyên sâu, P/E, ROE & kỹ thuật',
+      },
+      {
+        label: 'Kết nối MCP (AI)',
+        href: '/ket-noi-mcp',
+        icon: Bot,
+        badge: 'MCP',
+        description: 'Kết nối BCTC 16 năm vào Claude, ChatGPT & Gemini',
       },
       {
         label: 'Nghiên cứu chuyên sâu AI',

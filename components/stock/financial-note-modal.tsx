@@ -117,7 +117,7 @@ export function FinancialNoteModal({
               <div className="min-w-0">
                 <div className="flex items-center gap-1.5 sm:gap-2 flex-wrap">
                   <span className="text-[10.5px] sm:text-[11px] font-black uppercase tracking-wider px-2 py-0.5 rounded-md bg-primary/15 text-primary border border-primary/20">
-                    {ticker} · Thuyết Minh BCTC
+                    {ticker} · BCTC Chi Tiết
                   </span>
                   {periodLabel && (
                     <span className="inline-flex items-center gap-1 text-[10.5px] sm:text-[11px] font-semibold text-muted-foreground bg-muted px-2 py-0.5 rounded-md border border-border/60">
@@ -248,7 +248,7 @@ export function FinancialNoteModal({
                 }}
                 className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-primary text-primary-foreground text-xs font-bold hover:opacity-90 transition-opacity cursor-pointer shadow-xs"
               >
-                <span>Xem trên Tab Thuyết minh BCTC</span>
+                <span>Xem trên Tab BCTC Chi Tiết</span>
                 <ArrowUpRight className="size-3.5" />
               </button>
             )}

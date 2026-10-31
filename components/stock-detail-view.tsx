@@ -72,6 +72,8 @@ export type StockDetailTab =
   | 'reports'
   | 'agm'
   | 'bctc'
+  | 'bctc-ban-nien'
+  | 'bctc-q3'
 
 interface StockDetailViewProps {
   stockData: StockDetailData
@@ -101,6 +103,8 @@ interface StockDetailViewProps {
   bctcDataHopNhat?: BctcReportData | null
   bctcDataCongTyMe?: BctcReportData | null
   availableBctcTickers?: string[]
+  hasBctcQ3?: boolean
+  hasBctcBanNien?: boolean
   ktplRate?: number | null
   articlesData?: StockArticlesPayload | null
   initialFinancialStatements?: RawFinancialStatementData | null
@@ -310,6 +314,9 @@ function resolveValidTab(tab: StockDetailTab | string | null | undefined): Stock
   if (tab === 'charts' && !ENABLE_FINANCIAL_CHARTS_TAB) return 'overview'
   if (tab === 'community' && !ENABLE_COMMUNITY_TAB) return 'overview'
   if (tab === 'peers' && !ENABLE_PEERS_TAB) return 'overview'
+  if (tab === 'bctc' || tab === 'thuyet-minh' || tab === 'thuyetminh' || tab === 'notes') return 'bctc-q3'
+  if (tab === 'bctc-q3' || tab === 'bctc-quy-3' || tab === 'q3' || tab === 'quy-3') return 'bctc-q3'
+  if (tab === 'bctc-ban-nien' || tab === 'ban-nien' || tab === 'bannien' || tab === 'bctc-6t') return 'bctc-ban-nien'
   return tab as StockDetailTab
 }
 
@@ -332,7 +339,7 @@ const StockAgmReportView = dynamic(
 const StockBctcReportView = dynamic(
   () => import('@/components/stock/StockBctcReportView').then((m) => m.StockBctcReportView),
   {
-    loading: () => <TabLoadingSkeleton tabLabel="Thuyết minh BCTC" />,
+    loading: () => <TabLoadingSkeleton tabLabel="Báo cáo tài chính chi tiết" />,
     ssr: false,
   }
 )
@@ -365,6 +372,8 @@ export function StockDetailView({
   bctcDataHopNhat = null,
   bctcDataCongTyMe = null,
   availableBctcTickers = [],
+  hasBctcQ3 = false,
+  hasBctcBanNien = false,
   ktplRate = null,
   articlesData = null,
   initialFinancialStatements = null,
@@ -990,17 +999,25 @@ export function StockDetailView({
         badge: (agmData?.hasReport || availableAgmTickers?.includes(ticker)) ? '2026' : undefined,
       },
       {
-        id: 'bctc' as StockDetailTab,
-        label: 'Thuyết Minh BCTC',
-        shortLabel: 'Thuyết minh',
+        id: 'bctc-ban-nien' as StockDetailTab,
+        label: 'BCTC Bán Niên',
+        shortLabel: 'Bán niên',
         icon: ScrollText,
         iconColor: 'text-teal-400',
-        badge: (bctcDataHopNhat?.hasReport || bctcDataCongTyMe?.hasReport || availableBctcTickers?.includes(ticker)) ? 'MỚI' : undefined,
+        badge: (hasBctcBanNien || bctcDataHopNhat?.periodKey === 'Ban_Nien_2026' || bctcDataCongTyMe?.periodKey === 'Ban_Nien_2026') ? '2026' : undefined,
+      },
+      {
+        id: 'bctc-q3' as StockDetailTab,
+        label: 'BCTC Quý 3',
+        shortLabel: 'Quý 3',
+        icon: ScrollText,
+        iconColor: 'text-emerald-400',
+        badge: (hasBctcQ3 || bctcDataHopNhat?.periodKey === 'Quy_3_2026' || bctcDataCongTyMe?.periodKey === 'Quy_3_2026') ? 'MỚI' : undefined,
       },
     )
 
     return list
-  }, [agmData, articlesData, bctcDataHopNhat, bctcDataCongTyMe, dividendHistory, availableAgmTickers, availableBctcTickers, ticker])
+  }, [agmData, articlesData, bctcDataHopNhat, bctcDataCongTyMe, dividendHistory, availableAgmTickers, availableBctcTickers, hasBctcQ3, hasBctcBanNien, ticker])
 
   return (
     <div className="space-y-5 pb-12 w-full">
@@ -2264,17 +2281,37 @@ export function StockDetailView({
       )}
 
       {/* ══════════════════════════════════════════════════════════ */}
-      {/* TAB 8: THUYẾT MINH BÁO CÁO TÀI CHÍNH                      */}
+      {/* TAB 8: BÁO CÁO TÀI CHÍNH BÁN NIÊN                         */}
       {/* ══════════════════════════════════════════════════════════ */}
-      {mountedTabs.has('bctc') && (
-        <div className={cn("animate-in fade-in-50 duration-200", (activeTab !== 'bctc' || loadingTab === 'bctc') && "hidden")}>
+      {mountedTabs.has('bctc-ban-nien') && (
+        <div className={cn("animate-in fade-in-50 duration-200", (activeTab !== 'bctc-ban-nien' || loadingTab === 'bctc-ban-nien') && "hidden")}>
           <StockBctcReportView
-            bctcDataHopNhat={bctcDataHopNhat}
-            bctcDataCongTyMe={bctcDataCongTyMe}
+            targetPeriod="Ban_Nien_2026"
+            bctcDataHopNhat={bctcDataHopNhat?.periodKey === 'Ban_Nien_2026' ? bctcDataHopNhat : null}
+            bctcDataCongTyMe={bctcDataCongTyMe?.periodKey === 'Ban_Nien_2026' ? bctcDataCongTyMe : null}
             ticker={ticker}
             companyName={company.name}
             availableTickers={availableBctcTickers}
             bctcDocuments={bctcDocuments}
+            onSwitchPeriod={(p) => handleTabChange(p === 'Quy_3_2026' ? 'bctc-q3' : 'bctc-ban-nien')}
+          />
+        </div>
+      )}
+
+      {/* ══════════════════════════════════════════════════════════ */}
+      {/* TAB 9: BÁO CÁO TÀI CHÍNH QUÝ 3                            */}
+      {/* ══════════════════════════════════════════════════════════ */}
+      {(mountedTabs.has('bctc-q3') || mountedTabs.has('bctc')) && (
+        <div className={cn("animate-in fade-in-50 duration-200", (activeTab !== 'bctc-q3' && activeTab !== 'bctc' || loadingTab === 'bctc-q3') && "hidden")}>
+          <StockBctcReportView
+            targetPeriod="Quy_3_2026"
+            bctcDataHopNhat={bctcDataHopNhat?.periodKey === 'Quy_3_2026' ? bctcDataHopNhat : null}
+            bctcDataCongTyMe={bctcDataCongTyMe?.periodKey === 'Quy_3_2026' ? bctcDataCongTyMe : null}
+            ticker={ticker}
+            companyName={company.name}
+            availableTickers={availableBctcTickers}
+            bctcDocuments={bctcDocuments}
+            onSwitchPeriod={(p) => handleTabChange(p === 'Quy_3_2026' ? 'bctc-q3' : 'bctc-ban-nien')}
           />
         </div>
       )}

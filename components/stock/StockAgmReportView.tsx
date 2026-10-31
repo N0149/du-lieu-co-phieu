@@ -141,6 +141,14 @@ export function StockAgmReportView({
     }
   }
 
+  const sections = data?.sections || []
+
+  // Lọc section theo tab chọn (Luôn gọi Hook trước mọi early return theo Rules of Hooks)
+  const visibleSections = useMemo(() => {
+    if (selectedSectionId === "all") return sections
+    return sections.filter((s) => s.id === selectedSectionId)
+  }, [sections, selectedSectionId])
+
   if (isLoading) {
     return (
       <div className="flex flex-col items-center justify-center p-12 space-y-3 rounded-2xl border border-border/70 bg-card/60">
@@ -210,13 +218,7 @@ export function StockAgmReportView({
     )
   }
 
-  const { title, subtitle, year, sections, stats } = data
-
-  // Lọc section theo tab chọn
-  const visibleSections = useMemo(() => {
-    if (selectedSectionId === "all") return sections
-    return sections.filter((s) => s.id === selectedSectionId)
-  }, [sections, selectedSectionId])
+  const { title, subtitle, year, stats } = data
 
   const handleCopy = () => {
     if (typeof window === "undefined" || !data) return

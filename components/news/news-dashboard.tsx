@@ -271,17 +271,28 @@ export function NewsDashboard({
     }
   }, [])
 
-  // Initial fetch for news if empty and not on cong-bo/insider
+  const lastFetchedNewsAtRef = useRef<number>(0)
+  const lastFetchedDiscAtRef = useRef<number>(0)
+
+  // Tự động kiểm tra và làm mới tin tức khi chuyển sang tab tin tức (nếu quá 30s)
   useEffect(() => {
-    if (!hasFetchedNewsRef.current && (activeTab === 'all' || activeTab === 'thi-truong' || activeTab === 'co-phieu')) {
-      fetchNews(false)
+    if (activeTab === 'all' || activeTab === 'thi-truong' || activeTab === 'co-phieu') {
+      const now = Date.now()
+      if (now - lastFetchedNewsAtRef.current > 30000) {
+        lastFetchedNewsAtRef.current = now
+        fetchNews(false)
+      }
     }
   }, [activeTab, fetchNews])
 
-  // Initial fetch for disclosures if empty and activeTab is cong-bo
+  // Tự động kiểm tra và làm mới công bố thông tin khi chuyển sang tab công bố (nếu quá 30s)
   useEffect(() => {
-    if (activeTab === 'cong-bo' && !hasFetchedDiscRef.current) {
-      fetchDisclosures(false)
+    if (activeTab === 'cong-bo') {
+      const now = Date.now()
+      if (now - lastFetchedDiscAtRef.current > 30000) {
+        lastFetchedDiscAtRef.current = now
+        fetchDisclosures(false)
+      }
     }
   }, [activeTab, fetchDisclosures])
 

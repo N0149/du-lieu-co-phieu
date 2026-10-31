@@ -23,19 +23,22 @@ import {
   Maximize2,
   TrendingUp,
   Loader2,
+  Calendar,
 } from "lucide-react"
 import { cn } from "@/lib/utils"
-import type { BctcReportData } from "@/lib/bctc-service"
+import type { BctcReportData, BctcPeriodOption } from "@/lib/bctc-service"
 import { BctcDocumentSection } from "./BctcDocumentSection"
 import type { BctcCompanyDocumentsPayload } from "@/lib/bctc-document-service"
 
 interface StockBctcReportViewProps {
-  bctcDataHopNhat: BctcReportData | null
-  bctcDataCongTyMe: BctcReportData | null
+  bctcDataHopNhat?: BctcReportData | null
+  bctcDataCongTyMe?: BctcReportData | null
   ticker: string
   companyName?: string
   availableTickers?: string[]
   bctcDocuments?: BctcCompanyDocumentsPayload | null
+  targetPeriod?: 'Ban_Nien_2026' | 'Quy_3_2026'
+  onSwitchPeriod?: (period: 'Ban_Nien_2026' | 'Quy_3_2026') => void
 }
 
 export function StockBctcReportView({
@@ -45,38 +48,65 @@ export function StockBctcReportView({
   companyName,
   availableTickers = [],
   bctcDocuments = null,
+  targetPeriod = 'Quy_3_2026',
+  onSwitchPeriod,
 }: StockBctcReportViewProps) {
-  const [dataHopNhat, setDataHopNhat] = useState<BctcReportData | null>(bctcDataHopNhat)
-  const [dataCongTyMe, setDataCongTyMe] = useState<BctcReportData | null>(bctcDataCongTyMe)
+  const [dataHopNhat, setDataHopNhat] = useState<BctcReportData | null>(() => {
+    if (bctcDataHopNhat && (!targetPeriod || bctcDataHopNhat.periodKey === targetPeriod)) return bctcDataHopNhat
+    return null
+  })
+  const [dataCongTyMe, setDataCongTyMe] = useState<BctcReportData | null>(() => {
+    if (bctcDataCongTyMe && (!targetPeriod || bctcDataCongTyMe.periodKey === targetPeriod)) return bctcDataCongTyMe
+    return null
+  })
   const [tickers, setTickers] = useState<string[]>(availableTickers)
   const [docs, setDocs] = useState<BctcCompanyDocumentsPayload | null>(bctcDocuments)
-  const [isLoading, setIsLoading] = useState<boolean>(!bctcDataHopNhat && !bctcDataCongTyMe && (!availableTickers || availableTickers.length === 0))
+  const [isLoading, setIsLoading] = useState<boolean>(() => {
+    const hasInitial = (bctcDataHopNhat && (!targetPeriod || bctcDataHopNhat.periodKey === targetPeriod)) ||
+                       (bctcDataCongTyMe && (!targetPeriod || bctcDataCongTyMe.periodKey === targetPeriod))
+    return !hasInitial
+  })
+
+  // Quản lý kỳ BCTC mục tiêu
+  const [selectedPeriod, setSelectedPeriod] = useState<string>(targetPeriod)
+  const [availablePeriods, setAvailablePeriods] = useState<BctcPeriodOption[]>(
+    bctcDataHopNhat?.availablePeriods || bctcDataCongTyMe?.availablePeriods || []
+  )
 
   useEffect(() => {
-    if (bctcDataHopNhat || bctcDataCongTyMe) {
-      setDataHopNhat(bctcDataHopNhat)
-      setDataCongTyMe(bctcDataCongTyMe)
+    const matchesTarget = (bctcDataHopNhat && bctcDataHopNhat.periodKey === targetPeriod) ||
+                          (bctcDataCongTyMe && bctcDataCongTyMe.periodKey === targetPeriod)
+
+    if (matchesTarget) {
+      setDataHopNhat(bctcDataHopNhat || null)
+      setDataCongTyMe(bctcDataCongTyMe || null)
       setTickers(availableTickers)
       setDocs(bctcDocuments)
+      setSelectedPeriod(targetPeriod)
       setIsLoading(false)
       return
     }
 
     let isMounted = true
     setIsLoading(true)
-    fetch(`/api/stock/${encodeURIComponent(ticker)}/bctc`)
+    const url = `/api/stock/${encodeURIComponent(ticker)}/bctc?period=${encodeURIComponent(targetPeriod)}`
+    fetch(url)
       .then((res) => {
         if (!res.ok) throw new Error("Lỗi tải Thuyết minh BCTC")
         return res.json()
       })
       .then((res) => {
         if (!isMounted) return
-        if (res.bctcDataHopNhat) setDataHopNhat(res.bctcDataHopNhat)
-        if (res.bctcDataCongTyMe) setDataCongTyMe(res.bctcDataCongTyMe)
+        setDataHopNhat(res.bctcDataHopNhat || null)
+        setDataCongTyMe(res.bctcDataCongTyMe || null)
         if (res.availableTickers && Array.isArray(res.availableTickers)) {
           setTickers(res.availableTickers)
         }
+        if (res.availablePeriods && Array.isArray(res.availablePeriods)) {
+          setAvailablePeriods(res.availablePeriods)
+        }
         if (res.bctcDocuments) setDocs(res.bctcDocuments)
+        setSelectedPeriod(targetPeriod)
       })
       .catch((err) => {
         console.error("Lỗi tải BCTC:", err)
@@ -88,7 +118,7 @@ export function StockBctcReportView({
     return () => {
       isMounted = false
     }
-  }, [bctcDataHopNhat, bctcDataCongTyMe, availableTickers, bctcDocuments, ticker])
+  }, [bctcDataHopNhat, bctcDataCongTyMe, availableTickers, bctcDocuments, ticker, targetPeriod])
 
   // Chọn giữa Hợp nhất và Công ty mẹ
   const [selectedType, setSelectedType] = useState<'HopNhat' | 'CongTyMe'>(() => {
@@ -97,12 +127,48 @@ export function StockBctcReportView({
     return 'HopNhat'
   })
 
-  // Đồng bộ selectedType khi data nạp xong
+  // Đồng bộ selectedType và availablePeriods khi data nạp xong
   useEffect(() => {
     if (selectedType === 'HopNhat' && !dataHopNhat?.hasReport && dataCongTyMe?.hasReport) {
       setSelectedType('CongTyMe')
+    } else if (selectedType === 'CongTyMe' && !dataCongTyMe?.hasReport && dataHopNhat?.hasReport) {
+      setSelectedType('HopNhat')
+    }
+    const pers = dataHopNhat?.availablePeriods || dataCongTyMe?.availablePeriods
+    if (pers && pers.length > 0) {
+      setAvailablePeriods(pers)
     }
   }, [dataHopNhat, dataCongTyMe, selectedType])
+
+  const handlePeriodChange = (periodId: string) => {
+    if (onSwitchPeriod && (periodId === 'Ban_Nien_2026' || periodId === 'Quy_3_2026')) {
+      onSwitchPeriod(periodId)
+      return
+    }
+    if (periodId === selectedPeriod && !isLoading) return
+    setSelectedPeriod(periodId)
+    setIsLoading(true)
+    fetch(`/api/stock/${encodeURIComponent(ticker)}/bctc?period=${encodeURIComponent(periodId)}`)
+      .then((res) => {
+        if (!res.ok) throw new Error("Lỗi tải BCTC kỳ " + periodId)
+        return res.json()
+      })
+      .then((res) => {
+        if (res.bctcDataHopNhat) setDataHopNhat(res.bctcDataHopNhat)
+        else setDataHopNhat(null)
+        if (res.bctcDataCongTyMe) setDataCongTyMe(res.bctcDataCongTyMe)
+        else setDataCongTyMe(null)
+        if (res.availablePeriods && Array.isArray(res.availablePeriods)) {
+          setAvailablePeriods(res.availablePeriods)
+        }
+      })
+      .catch((err) => {
+        console.error("Lỗi chuyển kỳ BCTC:", err)
+      })
+      .finally(() => {
+        setIsLoading(false)
+      })
+  }
 
   const currentData = selectedType === 'HopNhat' ? dataHopNhat : dataCongTyMe
 
@@ -163,6 +229,20 @@ export function StockBctcReportView({
     })
   }
 
+  const sections = currentData?.sections || []
+
+  // Lọc section theo tab chọn và từ khóa tìm kiếm (Luôn gọi Hook trước mọi early return theo Rules of Hooks)
+  const visibleSections = useMemo(() => {
+    let list = selectedSectionId === "all" ? sections : sections.filter((s) => s.id === selectedSectionId)
+
+    if (searchKeyword.trim()) {
+      const q = searchKeyword.toLowerCase().trim()
+      list = list.filter((s) => s.rawMarkdown.toLowerCase().includes(q) || s.title.toLowerCase().includes(q))
+    }
+
+    return list
+  }, [sections, selectedSectionId, searchKeyword])
+
   if (isLoading) {
     return (
       <div className="flex flex-col items-center justify-center p-12 space-y-3 rounded-2xl border border-border/70 bg-card/60">
@@ -191,18 +271,32 @@ export function StockBctcReportView({
           </div>
           <div className="max-w-md mx-auto space-y-2">
             <h3 className="text-lg font-bold text-foreground">
-              Thuyết minh BCTC số hóa đang được cập nhật
+              Chưa có dữ liệu {targetPeriod === 'Quy_3_2026' ? 'Báo cáo Quý 3/2026' : 'Báo cáo Bán niên 2026'} cho {companyName || ticker}
             </h3>
             <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed">
-              Các bảng biểu thuyết minh chi tiết của {companyName || ticker} đang trong tiến trình trích xuất tự động. Bạn có thể xem và tải trực tiếp bản scan Báo cáo tài chính gốc từ danh mục phía trên!
+              Dữ liệu số hóa chi tiết của {targetPeriod === 'Quy_3_2026' ? 'Báo cáo Quý 3/2026' : 'Báo cáo Bán niên 2026'} đang trong tiến trình trích xuất tự động hoặc doanh nghiệp chưa công bố. Bạn có thể xem và tải trực tiếp bản scan Báo cáo tài chính gốc từ danh mục phía trên!
             </p>
           </div>
+
+          {onSwitchPeriod && (
+            <div className="flex justify-center pt-1">
+              <button
+                type="button"
+                onClick={() => onSwitchPeriod(targetPeriod === 'Quy_3_2026' ? 'Ban_Nien_2026' : 'Quy_3_2026')}
+                className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-primary text-primary-foreground text-xs sm:text-sm font-bold shadow-xs hover:bg-primary/90 transition-all cursor-pointer"
+              >
+                <Calendar className="size-4" />
+                <span>Chuyển sang xem {targetPeriod === 'Quy_3_2026' ? 'Báo cáo Bán niên 2026' : 'Báo cáo Quý 3/2026'}</span>
+                <ArrowUpRight className="size-4" />
+              </button>
+            </div>
+          )}
 
         {tickers.length > 0 && (
           <div className="pt-4 border-t border-border/50 max-w-2xl mx-auto text-left">
             <div className="flex flex-wrap items-center justify-between gap-2 mb-3">
               <p className="text-xs font-semibold text-muted-foreground uppercase tracking-wider">
-                Các mã đã có Thuyết minh BCTC ({tickers.length} mã):
+                Các mã đã có BCTC số hóa ({tickers.length} mã):
               </p>
               <div className="relative">
                 <Search className="size-3 absolute left-2 top-1/2 -translate-y-1/2 text-muted-foreground pointer-events-none" />
@@ -219,7 +313,7 @@ export function StockBctcReportView({
               {filteredTickers.map((sym) => (
                 <Link
                   key={sym}
-                  href={`/stock/${sym}?tab=bctc`}
+                  href={`/stock/${sym}?tab=${targetPeriod === 'Quy_3_2026' ? 'bctc-q3' : 'bctc-ban-nien'}`}
                   className={cn(
                     "inline-flex items-center gap-1 px-2.5 py-1 rounded-lg text-xs font-bold font-mono transition-colors",
                     sym === ticker
@@ -239,19 +333,7 @@ export function StockBctcReportView({
     )
   }
 
-  const { title, sections, tableCount } = currentData
-
-  // Lọc section theo tab chọn và từ khóa tìm kiếm
-  const visibleSections = useMemo(() => {
-    let list = selectedSectionId === "all" ? sections : sections.filter((s) => s.id === selectedSectionId)
-
-    if (searchKeyword.trim()) {
-      const q = searchKeyword.toLowerCase().trim()
-      list = list.filter((s) => s.rawMarkdown.toLowerCase().includes(q) || s.title.toLowerCase().includes(q))
-    }
-
-    return list
-  }, [sections, selectedSectionId, searchKeyword])
+  const { title, tableCount } = currentData
 
   const handleCopy = () => {
     if (typeof window === "undefined" || !currentData) return
@@ -303,14 +385,14 @@ export function StockBctcReportView({
             <div className="flex flex-wrap items-center gap-2">
               <span className="inline-flex items-center gap-1.5 rounded-md bg-emerald-500/15 border border-emerald-500/30 px-2.5 py-0.5 text-xs font-bold text-emerald-400">
                 <ShieldCheck className="size-3.5" />
-                <span>Kiểm toán Soát xét 2026</span>
+                <span>{currentData?.periodLabel || "Báo cáo tài chính"}</span>
               </span>
               <span className="inline-flex items-center gap-1 rounded-md bg-sky-500/10 border border-sky-500/25 px-2 py-0.5 text-xs font-medium text-sky-400">
                 <TableIcon className="size-3" />
                 <span>{tableCount} Bảng số liệu chi tiết</span>
               </span>
               <span className="inline-flex items-center gap-1 rounded-md bg-purple-500/10 border border-purple-500/25 px-2 py-0.5 text-xs font-medium text-purple-400">
-                <span>Gemini Native Vision</span>
+                <span>BCTC Đầy Đủ</span>
               </span>
             </div>
 
@@ -318,23 +400,25 @@ export function StockBctcReportView({
               {title}
             </h2>
             <p className="text-xs sm:text-sm text-muted-foreground">
-              Trích xuất toàn văn phần Thuyết minh từ Báo cáo tài chính chính thức của {companyName || ticker}. Mọi bảng biểu và chú thích số liệu được bảo toàn nguyên vẹn.
+              Trích xuất toàn văn Báo cáo tài chính & Thuyết minh chi tiết từ tài liệu chính thức của {companyName || ticker}. Mọi bảng biểu và chú thích số liệu được bảo toàn nguyên vẹn.
             </p>
           </div>
 
-          {/* Nút chuyển đổi Hợp nhất vs Công ty mẹ & Actions */}
+          {/* Cụm điều khiển: Phạm vi số liệu (Hợp nhất vs Công ty mẹ) & Thao tác */}
           <div className="flex flex-wrap items-center gap-2.5">
-            <div className="inline-flex items-center p-1 rounded-xl bg-muted/70 border border-border">
+            {/* Bộ chọn Phạm vi số liệu */}
+            <div className="inline-flex items-center p-1 rounded-xl bg-muted/70 border border-border shadow-2xs">
+              <span className="text-[11px] font-bold text-muted-foreground px-2">Phạm vi:</span>
               <button
                 type="button"
                 onClick={() => setSelectedType('HopNhat')}
-                disabled={!bctcDataHopNhat?.hasReport}
+                disabled={!dataHopNhat?.hasReport}
                 className={cn(
-                  "px-3 py-1.5 rounded-lg text-xs font-bold transition-all",
+                  "px-3 py-1.5 rounded-lg text-xs font-bold transition-all cursor-pointer",
                   selectedType === 'HopNhat'
                     ? "bg-primary text-primary-foreground shadow-xs"
                     : "text-muted-foreground hover:text-foreground",
-                  !bctcDataHopNhat?.hasReport && "opacity-40 cursor-not-allowed"
+                  !dataHopNhat?.hasReport && "opacity-40 cursor-not-allowed"
                 )}
               >
                 BCTC Hợp nhất
@@ -342,18 +426,32 @@ export function StockBctcReportView({
               <button
                 type="button"
                 onClick={() => setSelectedType('CongTyMe')}
-                disabled={!bctcDataCongTyMe?.hasReport}
+                disabled={!dataCongTyMe?.hasReport}
                 className={cn(
-                  "px-3 py-1.5 rounded-lg text-xs font-bold transition-all",
+                  "px-3 py-1.5 rounded-lg text-xs font-bold transition-all cursor-pointer",
                   selectedType === 'CongTyMe'
                     ? "bg-primary text-primary-foreground shadow-xs"
                     : "text-muted-foreground hover:text-foreground",
-                  !bctcDataCongTyMe?.hasReport && "opacity-40 cursor-not-allowed"
+                  !dataCongTyMe?.hasReport && "opacity-40 cursor-not-allowed"
                 )}
               >
                 BCTC Công ty mẹ
               </button>
             </div>
+
+            {/* Nút chuyển đổi nhanh giữa Bán niên và Quý 3 */}
+            {onSwitchPeriod && (
+              <button
+                type="button"
+                onClick={() => onSwitchPeriod(currentData?.periodKey === 'Quy_3_2026' ? 'Ban_Nien_2026' : 'Quy_3_2026')}
+                className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl border border-border/80 bg-background/80 hover:bg-muted text-xs font-bold text-foreground transition-all cursor-pointer shadow-2xs"
+                title={currentData?.periodKey === 'Quy_3_2026' ? "Xem Báo cáo Bán niên 2026" : "Xem Báo cáo Quý 3/2026"}
+              >
+                <Calendar className="size-3.5 text-primary" />
+                <span>{currentData?.periodKey === 'Quy_3_2026' ? "Xem Bán niên 2026" : "Xem Quý 3/2026"}</span>
+                <ArrowUpRight className="size-3 opacity-60" />
+              </button>
+            )}
 
             <button
               type="button"
@@ -422,9 +520,9 @@ export function StockBctcReportView({
               <span>Tất cả các phần ({sections.length})</span>
             </button>
 
-            {sections.map((sec) => (
+            {sections.map((sec, idx) => (
               <button
-                key={sec.id}
+                key={sec.id || `sec-${idx}`}
                 ref={(el) => { tabButtonRefs.current[sec.id] = el }}
                 onClick={() => setSelectedSectionId(sec.id)}
                 title={sec.title}
@@ -480,9 +578,9 @@ export function StockBctcReportView({
         </div>
       ) : (
         <div className="space-y-8">
-          {visibleSections.map((sec) => (
+          {visibleSections.map((sec, idx) => (
             <div
-              key={sec.id}
+              key={sec.id || `sec-${idx}`}
               className="rounded-2xl border border-border/80 bg-card/50 p-5 sm:p-7 shadow-xs space-y-4"
             >
               <div className="flex items-center justify-between gap-3 border-b border-border/60 pb-3">

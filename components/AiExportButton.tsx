@@ -1,11 +1,10 @@
 'use client'
 
-import { useState } from 'react'
-import { Sparkles, Bot } from 'lucide-react'
-import { AiAssistantModal } from '@/components/AiAssistantModal'
+import Link from 'next/link'
+import { Bot } from 'lucide-react'
 
 interface AiExportButtonProps {
-  ticker: string
+  ticker?: string
   companyName?: string
   className?: string
   variant?: 'outline' | 'primary' | 'subtle'
@@ -13,44 +12,21 @@ interface AiExportButtonProps {
 
 export function AiExportButton({
   ticker,
-  companyName,
   className = '',
-  variant = 'primary',
 }: AiExportButtonProps) {
-  const [open, setOpen] = useState(false)
-
-  let baseStyle =
-    'inline-flex items-center gap-1.5 rounded-xl text-xs font-semibold shadow-2xs transition-all cursor-pointer select-none'
-
-  if (variant === 'primary') {
-    baseStyle +=
-      ' border border-primary/40 bg-gradient-to-r from-primary/15 via-primary/10 to-transparent px-3 py-1.5 text-primary hover:bg-primary/20 hover:border-primary/60'
-  } else if (variant === 'outline') {
-    baseStyle +=
-      ' border border-border bg-card px-3 py-1.5 text-foreground hover:bg-muted hover:border-border/80'
-  } else {
-    baseStyle += ' px-2.5 py-1 text-primary hover:bg-primary/10 rounded-lg'
-  }
-
   return (
-    <>
-      <button
-        type="button"
-        onClick={() => setOpen(true)}
-        className={`${baseStyle} ${className}`}
-        title={`Hỏi đáp chuyên sâu BCTC 16 năm, Thuyết minh & ĐHĐCĐ của ${ticker} bằng Trợ lý AI`}
-      >
-        <Sparkles className="size-3.5 text-primary animate-pulse" />
-        <span>Hỏi AI về {ticker}</span>
-      </button>
-
-      <AiAssistantModal
-        open={open}
-        onClose={() => setOpen(false)}
-        initialTicker={ticker}
-        initialCompanyName={companyName}
-      />
-    </>
+    <Link
+      href="/ket-noi-mcp"
+      className={`inline-flex items-center gap-1.5 rounded-xl border border-emerald-500/30 bg-emerald-500/10 px-3 py-1.5 text-xs font-semibold text-emerald-400 hover:bg-emerald-500/20 shadow-2xs transition-all cursor-pointer ${className}`}
+      title={
+        ticker
+          ? `Kết nối dữ liệu BCTC 16 năm của ${ticker} vào Claude, ChatGPT & Gemini qua giao thức MCP`
+          : 'Kết nối Dữ Liệu Đầu Tư vào Claude, ChatGPT & Gemini qua giao thức MCP'
+      }
+    >
+      <Bot className="size-3.5 text-emerald-400" />
+      <span>Kết nối MCP (AI)</span>
+    </Link>
   )
 }
 

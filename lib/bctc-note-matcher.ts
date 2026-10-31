@@ -230,6 +230,8 @@ const NOTE_RULES: NoteRule[] = [
       "doanh thu thuan gia von hang ban",
       "doanh thu ban hang",
       "doanh thu thuan",
+      "doanh thu cung cap dich vu",
+      "cung cap dich vu",
     ],
   },
   {
@@ -349,7 +351,9 @@ export function findMatchingNote(
 
     if (isMatchRow) {
       const candidate = notes.find((n) => {
-        if (rule.section && n.sectionNumber !== rule.section && n.sectionNumber !== 0) {
+        const noteSec = n.sectionNumber;
+        const isSecMatch = !rule.section || noteSec === rule.section || noteSec === 0 || noteSec === 5 || n.semanticSection === rule.section;
+        if (!isSecMatch) {
           return false;
         }
         const nTitle = normalizeBctcStr(n.title);
@@ -361,7 +365,7 @@ export function findMatchingNote(
 
   // 2. Dự phòng (Fallback): Khớp chuỗi trực tiếp trong đúng Section
   const targetSection = tab === "cdkt" ? 2 : tab === "kqkd" ? 3 : 4;
-  const sectionNotes = notes.filter((n) => n.sectionNumber === targetSection);
+  const sectionNotes = notes.filter((n) => n.sectionNumber === targetSection || n.sectionNumber === 5 || n.semanticSection === targetSection);
 
   for (const n of sectionNotes) {
     const nTitle = normalizeBctcStr(n.title);
