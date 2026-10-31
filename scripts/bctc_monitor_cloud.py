@@ -418,7 +418,7 @@ def check_ghc_api(clean_uri):
         pass
     return None
 
-def check_company_website(ticker, uri):
+def check_company_website(ticker, uri, max_depth=1):
     if not uri or 'ezir.fpts.com.vn' in uri.lower():
         return None
     clean_uri = uri
@@ -469,9 +469,10 @@ def check_company_website(ticker, uri):
                 is_file = any(h.lower().endswith(ext) for ext in ['.pdf', '.zip', '.rar', '.xlsx', '.docx'])
                 is_hop_nhat = any(k in combo.lower() for k in ['hợp nhất', 'hop nhat'])
                 cand_title = t
-                if len(t) < 6 or any(t.lower().startswith(p) for p in ['xem', 'tai', 'download', 'chi tiet', 'link', 'doc', 'pdf', '.pdf']):
+                clean_t = strip_accents(t.lower())
+                if len(t) < 6 or any(clean_t.startswith(p) for p in ['xem', 'tai', 'download', 'chi tiet', 'link', 'doc', 'pdf', '.pdf']):
                     if p_text and len(p_text) >= 10:
-                        cand_title = re.sub(r'(\.pdf|pdf|\(\d{1,2}/\d{1,2}/\d{2,4}\))', '', p_text, flags=re.I).strip()
+                        cand_title = re.sub(r'(\.pdf|pdf|\(\d{1,2}/\d{1,2}/\d{2,4}\)|\b\d{1,2}/\d{1,2}/\d{2,4}\b|tải xuống|tai xuong)', '', p_text, flags=re.I).strip()
                 if len(cand_title) < 6:
                     cand_title = f"Báo cáo tài chính Quý 3/2026 ({ticker})" if ticker not in ['CAP', 'IDV'] else f"Báo cáo tài chính Quý 4/2026 ({ticker})"
 
@@ -518,6 +519,23 @@ def check_company_website(ticker, uri):
                         'date': date_str or datetime.datetime.now().strftime("%d/%m/%Y"),
                         'doc_url': resolve_direct_pdf(doc_url)
                     }
+
+        # Nếu chưa tìm thấy trên trang chính và max_depth > 0: Quét các link chuyên mục BCTC nội bộ
+        if max_depth > 0:
+            clean_domain = urllib.parse.urlparse(clean_uri).netloc
+            for a in soup.find_all('a', href=True):
+                h = a['href'].strip()
+                t = a.get_text(strip=True).lower()
+                clean_t = strip_accents(t)
+                h_lower = h.lower()
+                if any(k in clean_t or k in h_lower for k in ['bao cao tai chinh', 'bctc', 'financial statement']):
+                    if not any(h_lower.endswith(ext) for ext in ['.pdf', '.zip', '.rar', '.xlsx', '.doc', '.docx']):
+                        sub_url = urllib.parse.urljoin(clean_uri, h)
+                        if urllib.parse.urlparse(sub_url).netloc == clean_domain and sub_url != clean_uri:
+                            sub_res = check_company_website(ticker, sub_url, max_depth=0)
+                            if sub_res and sub_res.get('has_q3'):
+                                return sub_res
+
         return {'has_q3': False, 'source': 'Company_Web'}
     except Exception as e:
         return {'has_q3': False, 'source': 'Company_Web', 'error': str(e)}

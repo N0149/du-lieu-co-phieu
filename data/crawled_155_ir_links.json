@@ -1417,16 +1417,7 @@
     "stt": 152,
     "domain": "vgpipe.com.vn"
   },
-  "VNF": {
-    "ticker": "VNF",
-    "ir_link": "https://vinafreight.com/thong-tin-co-dong.html",
-    "status": "found_link",
-    "score": 45,
-    "reason": "Matched shareholder_href (score 45): 'thông tin đầu tư'",
-    "batch": "Distill_Batch_12_Ngay_30_30.json",
-    "stt": 154,
-    "domain": "vinafreight.com"
-  },
+  "VNF": "https://vinafreight.com/thong-tin-dau-tu/bao-cao-tai-chinh.html",
   "PGV": {
     "ticker": "PGV",
     "ir_link": "https://www.genco3.com/quan-he-nha-dau-tu.html",

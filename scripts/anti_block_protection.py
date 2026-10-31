@@ -166,9 +166,13 @@ def safe_read_response(resp):
         except:
             return data
     elif 'deflate' in encoding:
+        import zlib
         try:
-            import zlib
             return zlib.decompress(data)
-        except:
-            return data
+        except Exception:
+            try:
+                # Raw deflate (RFC 1951) không có zlib header/checksum (Vietstock thường dùng kiểu này)
+                return zlib.decompress(data, -zlib.MAX_WBITS)
+            except Exception:
+                return data
     return data
