@@ -53,7 +53,7 @@ export function getBaseUrl(request?: Request): string {
       return `${proto}://${host}`
     }
   }
-  return process.env.NEXT_PUBLIC_SITE_URL || 'https://dulieudautu.com'
+  return process.env.NEXT_PUBLIC_SITE_URL || 'https://www.dulieudautu.com'
 }
 
 export function registerClient(clientName: string, redirectUris: string[]): RegisteredClient {

@@ -28,7 +28,19 @@ export function middleware(request: NextRequest) {
   const userAgent = request.headers.get('user-agent') || ''
   const ip = getClientIp(request.headers)
 
-  // 0. Nếu URL chứa mã xác thực auth code mà không ở /auth/callback -> Tự động chuyển hướng về /auth/callback
+  // 0. Miễn trừ hoàn toàn cho các giao thức MCP và OAuth (Google Gemini, Claude, ChatGPT kết nối)
+  if (
+    pathname === '/mcp' ||
+    pathname.startsWith('/mcp/') ||
+    pathname === '/api/mcp' ||
+    pathname.startsWith('/api/mcp/') ||
+    pathname.startsWith('/oauth/') ||
+    pathname.startsWith('/.well-known/')
+  ) {
+    return NextResponse.next()
+  }
+
+  // 1. Nếu URL chứa mã xác thực auth code mà không ở /auth/callback -> Tự động chuyển hướng về /auth/callback
   if (pathname !== '/auth/callback' && request.nextUrl.searchParams.has('code')) {
     const callbackUrl = new URL('/auth/callback', request.url)
     callbackUrl.search = request.nextUrl.search

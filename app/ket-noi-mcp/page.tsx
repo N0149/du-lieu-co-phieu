@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import { SiteHeader } from '@/components/site-header'
 import {
@@ -37,7 +37,7 @@ type Platform = 'claude' | 'chatgpt' | 'gemini' | 'grok'
 
 const CONNECT_INFO = {
   name: 'Dữ Liệu Đầu Tư MCP',
-  url: 'https://dulieudautu.com/mcp',
+  url: 'https://www.dulieudautu.com/mcp',
   auth: 'OAuth (RFC 7636 PKCE S256)',
   scope: '16 năm BCTC, Thuyết minh CAPEX & Lãi vay, Kế hoạch ĐHĐCĐ & Quỹ KTPL, Định giá RNAV',
 }
@@ -132,9 +132,19 @@ const FAQ_ITEMS = [
 ]
 
 export default function KetNoiMcpPage() {
-  const [platform, setPlatform] = useState<Platform>('claude')
+  const [platform, setPlatform] = useState<Platform>('gemini')
   const [copiedItem, setCopiedItem] = useState<string | null>(null)
   const [expandedFaq, setExpandedFaq] = useState<number | null>(null)
+  const [mounted, setMounted] = useState(false)
+
+  useEffect(() => {
+    setMounted(true)
+  }, [])
+
+  const serverUrl =
+    mounted && typeof window !== 'undefined'
+      ? `${window.location.origin}/mcp`
+      : 'https://www.dulieudautu.com/mcp'
 
   const copyText = (text: string, label: string) => {
     navigator.clipboard.writeText(text)
@@ -220,13 +230,13 @@ export default function KetNoiMcpPage() {
                     Địa chỉ MCP Server chính thức:
                   </div>
                   <div className="font-mono text-sm sm:text-base text-white truncate">
-                    {CONNECT_INFO.url}
+                    {serverUrl}
                   </div>
                 </div>
                 <div className="flex items-center gap-2 shrink-0">
                   <button
                     type="button"
-                    onClick={() => copyText(CONNECT_INFO.url, 'header-url')}
+                    onClick={() => copyText(serverUrl, 'header-url')}
                     className="inline-flex items-center gap-1.5 rounded-xl bg-emerald-600 px-4 py-2 text-xs font-bold text-white hover:bg-emerald-500 transition-colors cursor-pointer shadow-sm"
                   >
                     {copiedItem === 'header-url' ? (
@@ -301,10 +311,10 @@ export default function KetNoiMcpPage() {
                 <tr>
                   <td className="py-2.5 px-3.5 font-semibold text-[#9eacb9]">Địa chỉ máy chủ (Server URL)</td>
                   <td className="py-2.5 px-3.5 font-mono text-emerald-400 flex items-center justify-between gap-2">
-                    <span className="truncate">{CONNECT_INFO.url}</span>
+                    <span className="truncate">{serverUrl}</span>
                     <button
                       type="button"
-                      onClick={() => copyText(CONNECT_INFO.url, 'table-url')}
+                      onClick={() => copyText(serverUrl, 'table-url')}
                       className="text-emerald-400 hover:text-emerald-300 font-sans inline-flex items-center gap-1 cursor-pointer"
                     >
                       {copiedItem === 'table-url' ? <Check className="size-3" /> : <Copy className="size-3" />}
@@ -461,7 +471,7 @@ export default function KetNoiMcpPage() {
                         </div>
                         <div className="flex items-center justify-between">
                           <span className="text-[#9eacb9]">MCP server URL:</span>
-                          <span className="font-mono text-emerald-400">{CONNECT_INFO.url}</span>
+                          <span className="font-mono text-emerald-400">{serverUrl}</span>
                         </div>
                       </div>
                       <p className="text-xs text-[#9eacb9]">
@@ -573,7 +583,7 @@ export default function KetNoiMcpPage() {
                     type="button"
                     onClick={() =>
                       copyText(
-                        `{\n  "mcpServers": {\n    "dulieudautu": {\n      "url": "${CONNECT_INFO.url}"\n    }\n  }\n}`,
+                        `{\n  "mcpServers": {\n    "dulieudautu": {\n      "url": "${serverUrl}"\n    }\n  }\n}`,
                         'claude-json'
                       )
                     }
@@ -590,7 +600,7 @@ export default function KetNoiMcpPage() {
 {`{
   "mcpServers": {
     "dulieudautu": {
-      "url": "${CONNECT_INFO.url}"
+      "url": "${serverUrl}"
     }
   }
 }`}
@@ -662,7 +672,7 @@ export default function KetNoiMcpPage() {
                         </div>
                         <div className="flex items-center justify-between">
                           <span className="text-[#9eacb9]">Connection (chọn Server URL):</span>
-                          <span className="font-mono text-emerald-400">{CONNECT_INFO.url}</span>
+                          <span className="font-mono text-emerald-400">{serverUrl}</span>
                         </div>
                         <div className="flex items-center justify-between">
                           <span className="text-[#9eacb9]">Authentication:</span>
@@ -836,10 +846,10 @@ export default function KetNoiMcpPage() {
                         Trong hộp thoại <strong>Kết nối với máy chủ MCP</strong>, ô <em>URL của máy chủ MCP</em> nhập:
                       </p>
                       <div className="flex items-center gap-2 rounded-xl bg-black/40 border border-white/10 p-2.5 text-xs font-mono text-emerald-400">
-                        <span className="truncate">{CONNECT_INFO.url}</span>
+                        <span className="truncate">{serverUrl}</span>
                         <button
                           type="button"
-                          onClick={() => copyText(CONNECT_INFO.url, 'gemini-step-url')}
+                          onClick={() => copyText(serverUrl, 'gemini-step-url')}
                           className="ml-auto text-xs text-[#9eacb9] hover:text-white inline-flex items-center gap-1 cursor-pointer"
                         >
                           {copiedItem === 'gemini-step-url' ? <Check className="size-3" /> : <Copy className="size-3" />}
@@ -1000,7 +1010,7 @@ export default function KetNoiMcpPage() {
                         </div>
                         <div className="flex items-center justify-between">
                           <span className="text-[#9eacb9]">Server URL:</span>
-                          <span className="font-mono text-emerald-400">{CONNECT_INFO.url}</span>
+                          <span className="font-mono text-emerald-400">{serverUrl}</span>
                         </div>
                       </div>
                       <p className="text-xs text-[#9eacb9]">
