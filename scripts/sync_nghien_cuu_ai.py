@@ -381,16 +381,33 @@ def main():
         all_files.extend(glob.glob(pat))
 
     valid_files = [f for f in all_files if not os.path.basename(f).startswith("~$")]
-    print(f"[*] Tìm thấy {len(valid_files)} file Word (.docx) hợp lệ.")
+    
+    # Khử trùng lặp file nếu file xuất hiện ở cả thư mục cha và thư mục con
+    unique_files_map = {}
+    for f in valid_files:
+        fn = os.path.basename(f)
+        if fn not in unique_files_map or os.path.getmtime(f) > os.path.getmtime(unique_files_map[fn]):
+            unique_files_map[fn] = f
+    valid_files = sorted(unique_files_map.values())
+    print(f"[*] Tìm thấy {len(valid_files)} file Word (.docx) hợp lệ (sau khi loại bỏ trùng lặp).")
 
     reports = []
+    seen_slugs = set()
     
-    for fpath in sorted(valid_files):
+    for fpath in valid_files:
         fname = os.path.basename(fpath)
         try:
             mtime = os.path.getmtime(fpath)
             full_md, plain_paras = parse_docx_to_markdown(fpath)
             meta = extract_metadata(fname, plain_paras, full_md, mtime)
+
+            # Đảm bảo slug luôn là duy nhất tuyệt đối
+            orig_slug = meta['slug']
+            counter = 2
+            while meta['slug'] in seen_slugs:
+                meta['slug'] = f"{orig_slug}-{counter}"
+                counter += 1
+            seen_slugs.add(meta['slug'])
             
             # Lưu file markdown vào content/nghien_cuu_ai/{slug}.md
             md_out_path = os.path.join(OUTPUT_MD_DIR, f"{meta['slug']}.md")

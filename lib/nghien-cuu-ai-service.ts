@@ -100,20 +100,28 @@ export function getAllNghienCuuAiReports(): NghienCuuAiReport[] {
     }
   }
 
-  return (nghienCuuAiSnapshot as any[]).map((r) => {
+  const seenSlugs = new Set<string>()
+  const uniqueReports: NghienCuuAiReport[] = []
+
+  for (const r of (nghienCuuAiSnapshot as any[])) {
+    if (!r.slug || seenSlugs.has(r.slug)) continue
+    seenSlugs.add(r.slug)
+
     const tickerUpper = (r.ticker || '').toUpperCase()
     const livePx = tickerUpper ? (priceMap.get(tickerUpper) ?? null) : null
     const { currentScore, scoreDelta } = calculateCurrentScore(r.score, r.price, livePx)
     const currentClassification = getScoreClassification(currentScore)
 
-    return {
+    uniqueReports.push({
       ...r,
       currentPrice: livePx,
       currentScore: currentScore,
       scoreDelta: scoreDelta,
       currentClassification: currentClassification,
-    } as NghienCuuAiReport
-  })
+    } as NghienCuuAiReport)
+  }
+
+  return uniqueReports
 }
 
 /**

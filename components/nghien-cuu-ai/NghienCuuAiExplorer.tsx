@@ -530,9 +530,9 @@ export function NghienCuuAiExplorer({ initialReports, kpis: initialKpis }: Props
       ) : viewMode === 'grid' ? (
         /* ──── DẠNG LƯỚI THẺ (GRID) ──── */
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-          {filteredReports.map((report) => (
+          {filteredReports.map((report, idx) => (
             <div
-              key={report.slug}
+              key={`${report.slug}-${idx}`}
               className="group relative flex flex-col justify-between rounded-xl border border-white/8 bg-[#212631] p-5 transition-all duration-200 hover:border-emerald-500/40 hover:bg-[#252b38] hover:shadow-[0_8px_30px_rgba(0,0,0,0.3)]"
             >
               <div>
@@ -659,9 +659,9 @@ export function NghienCuuAiExplorer({ initialReports, kpis: initialKpis }: Props
                 </tr>
               </thead>
               <tbody className="divide-y divide-white/5">
-                {filteredReports.map((report) => (
+                {filteredReports.map((report, idx) => (
                   <tr
-                    key={report.slug}
+                    key={`${report.slug}-${idx}`}
                     className="transition-colors hover:bg-white/[0.03] cursor-pointer"
                     onClick={() => handleOpenReport(report.slug)}
                   >
