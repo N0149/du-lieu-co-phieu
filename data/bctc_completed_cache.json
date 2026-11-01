@@ -1975,7 +1975,7 @@
     "doc_url": "https://vnsteel.vn/Uploads/PublicOther/2026/10/29/20/vi-bctc-rieng-q3-2026-signed.pdf",
     "source": "Company_Web",
     "bctc_type": "RIENG",
-    "updated_at": "2026-11-01 19:36:23"
+    "updated_at": "2026-11-01 22:38:12"
   },
   "DC4": {
     "ticker": "DC4",
@@ -2105,7 +2105,7 @@
     "doc_url": "https://static2.vietstock.vn/data/HNX/2026/BCTC/VN/QUY%203/VLC_Baocaotaichinh_Q3_2026_Congtyme.zip",
     "source": "Vietstock",
     "bctc_type": "RIENG",
-    "updated_at": "2026-11-01 19:36:23"
+    "updated_at": "2026-11-01 22:38:13"
   },
   "HSM": {
     "ticker": "HSM",
@@ -2475,7 +2475,7 @@
     "doc_url": "https://static2.vietstock.vn/data/HNX/2026/BCTC/VN/QUY%203/IDC_Baocaotaichinh_Q3_2026_Congtyme.zip",
     "source": "Vietstock",
     "bctc_type": "RIENG",
-    "updated_at": "2026-11-01 19:36:09"
+    "updated_at": "2026-11-01 22:38:02"
   },
   "TOS": {
     "ticker": "TOS",
@@ -2536,5 +2536,85 @@
     "source": "Company_Web",
     "bctc_type": "DAY_DU",
     "updated_at": "2026-11-01 11:52:33"
+  },
+  "DXP": {
+    "ticker": "DXP",
+    "company_name": "Công ty Cổ phần Cảng Đoạn Xá",
+    "release_date": "31/10/2026",
+    "title": "Báo cáo tài chính Quý 3 năm 2026",
+    "doc_url": "https://doanxaport.com.vn/bao-cao-tai-chinh",
+    "source": "User_Confirmed",
+    "bctc_type": "DAY_DU",
+    "updated_at": "2026-11-01 22:51:20"
+  },
+  "VSM": {
+    "ticker": "VSM",
+    "company_name": "Công ty Cổ phần Container Miền Trung",
+    "release_date": "31/10/2026",
+    "title": "Báo cáo tài chính Quý 3 năm 2026",
+    "doc_url": "https://www.viconshipdanang.com/quan-he-co-dong",
+    "source": "User_Confirmed",
+    "bctc_type": "DAY_DU",
+    "updated_at": "2026-11-01 22:51:20"
+  },
+  "CKD": {
+    "ticker": "CKD",
+    "company_name": "Công ty Cổ phần Cơ khí Đông Anh Licogi",
+    "release_date": "31/10/2026",
+    "title": "Báo cáo tài chính Quý 3 năm 2026",
+    "doc_url": "https://ckda.vn/financial-report",
+    "source": "User_Confirmed",
+    "bctc_type": "DAY_DU",
+    "updated_at": "2026-11-01 22:51:20"
+  },
+  "KTS": {
+    "ticker": "KTS",
+    "company_name": "Công ty Cổ phần Đường Kon Tum",
+    "release_date": "31/10/2026",
+    "title": "Báo cáo tài chính niên độ đặc thù",
+    "doc_url": "https://www.ktsduongkontum.vn/#enter/f/enter",
+    "source": "User_Confirmed",
+    "bctc_type": "DAY_DU",
+    "updated_at": "2026-11-01 22:51:20"
+  },
+  "SLS": {
+    "ticker": "SLS",
+    "company_name": "Công ty Cổ phần Mía đường Sơn La",
+    "release_date": "23/10/2026 13:22",
+    "title": "Báo cáo tài chính quý 1/2027 (Niên độ 2026-2027)",
+    "doc_url": "https://fpts.com.vn/san-pham-dich-vu/tu-van-dau-tu/tin-tuc/doanh-nghiep/luu-tru-bao-cao-tai-chinhSLS_Bao_cao_tai_chinh_quy_12027_35F88174ECC4FAB79A716D324BB0B60F",
+    "source": "EzIR_FPTS",
+    "bctc_type": "DAY_DU",
+    "updated_at": "2026-11-01 22:51:20"
+  },
+  "MNB": {
+    "ticker": "MNB",
+    "company_name": "Tổng Công ty May Nhà Bè - Công ty Cổ phần",
+    "release_date": "31/10/2026",
+    "title": "Báo cáo tài chính Quý 3 năm 2026",
+    "doc_url": "https://nhabe.com.vn/investor-relations/",
+    "source": "User_Confirmed",
+    "bctc_type": "DAY_DU",
+    "updated_at": "2026-11-01 22:51:20"
+  },
+  "CCS": {
+    "ticker": "CCS",
+    "company_name": "Công ty Cổ phần Chíp Sáng",
+    "release_date": "2026",
+    "title": "Báo cáo tài chính năm (Miễn nộp BCTC theo quý)",
+    "doc_url": "https://chipsang.vn/quan-he-co-dong/bao-cao-tai-chinh",
+    "source": "User_Confirmed_Annual",
+    "bctc_type": "DAY_DU",
+    "updated_at": "2026-11-01 22:51:20"
+  },
+  "HMS": {
+    "ticker": "HMS",
+    "company_name": "Công ty Cổ phần Xây dựng Bảo tàng Hồ Chí Minh",
+    "release_date": "2026",
+    "title": "Báo cáo tài chính năm (Miễn nộp BCTC theo quý)",
+    "doc_url": "https://ezir.fpts.com.vn/thongtindoanhnghiepclient/HMS",
+    "source": "User_Confirmed_Annual",
+    "bctc_type": "DAY_DU",
+    "updated_at": "2026-11-01 22:51:20"
   }
 }
