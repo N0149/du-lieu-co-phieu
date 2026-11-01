@@ -4,7 +4,7 @@ ticker: "IDV"
 date: "22/10/2026"
 score: 173.6
 classification: "Khả Quan"
-price: null
+price: 20.8
 targetPrice: null
 upside: null
 filename: "IDV 221026 điểm..docx"

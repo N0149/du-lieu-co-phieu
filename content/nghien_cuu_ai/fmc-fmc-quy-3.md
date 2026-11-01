@@ -4,9 +4,9 @@ ticker: "FMC"
 date: "21/10/2026"
 score: 183.2
 classification: "Khả Quan"
-price: null
+price: 35.4
 targetPrice: 65.3
-upside: null
+upside: 84.5
 filename: "FMC quý 3.docx"
 ---
 

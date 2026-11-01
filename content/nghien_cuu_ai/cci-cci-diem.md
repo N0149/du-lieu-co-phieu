@@ -1,9 +1,9 @@
 ---
-title: "[CCI] CCI điểm"
+title: "[CCI] Nghiên Cứu Định Giá 170.2 Điểm - CCI điểm"
 ticker: "CCI"
 date: "30/09/2026"
-score: null
-classification: ""
+score: 170.2
+classification: "Khả Quan"
 price: 17.2
 targetPrice: null
 upside: null

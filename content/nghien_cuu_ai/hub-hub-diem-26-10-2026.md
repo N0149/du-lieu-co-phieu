@@ -1,10 +1,10 @@
 ---
-title: "[HUB] HUB điểm 26.10.2026"
+title: "[HUB] Nghiên Cứu Định Giá 197.0 Điểm - HUB điểm 26.10.2026"
 ticker: "HUB"
 date: "26/10/2026"
-score: null
-classification: ""
-price: null
+score: 197.0
+classification: "Khả Quan"
+price: 10.6
 targetPrice: null
 upside: null
 filename: "HUB điểm 26.10.2026.docx"

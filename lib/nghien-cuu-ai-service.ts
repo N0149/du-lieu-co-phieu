@@ -2,6 +2,7 @@ import fs from 'fs'
 import path from 'path'
 import { marked } from 'marked'
 import nghienCuuAiSnapshot from '@/data/nghien_cuu_ai_snapshot.json'
+import { getAllStocks } from '@/lib/longlivestock'
 
 export interface NghienCuuAiReport {
   slug: string
@@ -9,9 +10,9 @@ export interface NghienCuuAiReport {
   title: string
   displayTitle: string
   date: string
-  score: number | null
+  score: number | null // Điểm gốc lúc nghiên cứu (Score0)
   classification: string | null // 'Siêu Hấp Dẫn' | 'Khả Quan' | 'Theo Dõi' | 'Kém Hấp Dẫn'
-  price: number | null
+  price: number | null // Giá lúc nghiên cứu (P0) tính bằng k VND (VD: 50.0 = 50.000đ)
   targetPrice: number | null
   upside: number | null
   summary: string
@@ -19,6 +20,12 @@ export interface NghienCuuAiReport {
   charCount: number
   tableCount: number
   updatedAt: string
+
+  // Dữ liệu điều chỉnh theo giá thị trường hiện tại (Real-time dynamic)
+  currentPrice: number | null // Giá thị trường hiện tại (k VND)
+  currentScore: number | null // Điểm điều chỉnh = Điểm gốc * (Giá gốc / Giá hiện tại)
+  scoreDelta: number | null // Biến động điểm (currentScore - score)
+  currentClassification: string | null // Xếp hạng theo điểm hiện tại
 }
 
 export interface NghienCuuAiDetail extends NghienCuuAiReport {
@@ -27,6 +34,35 @@ export interface NghienCuuAiDetail extends NghienCuuAiReport {
 }
 
 const CONTENT_DIR = path.join(process.cwd(), 'content', 'nghien_cuu_ai')
+
+/**
+ * Xếp hạng định giá theo thang điểm chuẩn hóa (Benchmark 10% gửi tiết kiệm = 100 điểm)
+ */
+export function getScoreClassification(score: number | null): string | null {
+  if (score == null) return null
+  if (score >= 200) return 'Siêu Hấp Dẫn'
+  if (score >= 150) return 'Khả Quan'
+  if (score >= 100) return 'Theo Dõi'
+  return 'Kém Hấp Dẫn'
+}
+
+/**
+ * Tính điểm hiện tại điều chỉnh theo thị giá:
+ * Điểm hiện tại = Điểm gốc * (Giá gốc / Giá hiện tại)
+ */
+export function calculateCurrentScore(
+  baseScore: number | null,
+  basePrice: number | null,
+  currentPrice: number | null
+): { currentScore: number | null; scoreDelta: number | null } {
+  if (baseScore == null) return { currentScore: null, scoreDelta: null }
+  if (!basePrice || !currentPrice || currentPrice <= 0 || basePrice <= 0) {
+    return { currentScore: baseScore, scoreDelta: 0 }
+  }
+  const adjusted = Math.round(baseScore * (basePrice / currentPrice) * 10) / 10
+  const delta = Math.round((adjusted - baseScore) * 10) / 10
+  return { currentScore: adjusted, scoreDelta: delta }
+}
 
 /**
  * Format Markdown thành HTML chuẩn, hỗ trợ bảng biểu số liệu (tabular numerals)
@@ -53,10 +89,31 @@ export function formatReportMarkdownToHtml(markdown: string): string {
 }
 
 /**
- * Lấy toàn bộ danh sách báo cáo nghiên cứu chuyên sâu AI
+ * Lấy toàn bộ danh sách báo cáo nghiên cứu chuyên sâu AI kèm theo Điểm điều chỉnh theo giá thị trường hiện tại
  */
 export function getAllNghienCuuAiReports(): NghienCuuAiReport[] {
-  return nghienCuuAiSnapshot as NghienCuuAiReport[]
+  const stocks = getAllStocks()
+  const priceMap = new Map<string, number | null>()
+  for (const s of stocks) {
+    if (s.t && s.px != null) {
+      priceMap.set(s.t.toUpperCase(), s.px)
+    }
+  }
+
+  return (nghienCuuAiSnapshot as any[]).map((r) => {
+    const tickerUpper = (r.ticker || '').toUpperCase()
+    const livePx = tickerUpper ? (priceMap.get(tickerUpper) ?? null) : null
+    const { currentScore, scoreDelta } = calculateCurrentScore(r.score, r.price, livePx)
+    const currentClassification = getScoreClassification(currentScore)
+
+    return {
+      ...r,
+      currentPrice: livePx,
+      currentScore: currentScore,
+      scoreDelta: scoreDelta,
+      currentClassification: currentClassification,
+    } as NghienCuuAiReport
+  })
 }
 
 /**
@@ -64,7 +121,8 @@ export function getAllNghienCuuAiReports(): NghienCuuAiReport[] {
  */
 export function getNghienCuuAiReportBySlug(slug: string): NghienCuuAiDetail | null {
   const normSlug = slug.toLowerCase().trim()
-  const report = (nghienCuuAiSnapshot as NghienCuuAiReport[]).find(
+  const allReports = getAllNghienCuuAiReports()
+  const report = allReports.find(
     (r) => r.slug.toLowerCase() === normSlug || r.filename.toLowerCase() === normSlug
   )
 
@@ -97,7 +155,7 @@ export function getNghienCuuAiReportBySlug(slug: string): NghienCuuAiDetail | nu
  */
 export function getNghienCuuAiReportsForTicker(ticker: string): NghienCuuAiReport[] {
   const tNorm = ticker.toUpperCase().trim()
-  return (nghienCuuAiSnapshot as NghienCuuAiReport[]).filter(
+  return getAllNghienCuuAiReports().filter(
     (r) => (r.ticker || '').toUpperCase() === tNorm
   )
 }
@@ -108,15 +166,17 @@ export function getNghienCuuAiReportsForTicker(ticker: string): NghienCuuAiRepor
 export function getNghienCuuAiKpis() {
   const list = getAllNghienCuuAiReports()
   const total = list.length
-  const superAttractive = list.filter((r) => r.score != null && r.score >= 200).length
-  const favorable = list.filter((r) => r.score != null && r.score >= 150 && r.score < 200).length
-  const watchlist = list.filter((r) => r.score != null && r.score >= 100 && r.score < 150).length
   
-  const scoresOnly = list.map((r) => r.score).filter((s): s is number => s != null)
+  // KPI tính theo điểm thực tế hiện tại
+  const superAttractive = list.filter((r) => (r.currentScore ?? r.score) != null && (r.currentScore ?? r.score)! >= 200).length
+  const favorable = list.filter((r) => (r.currentScore ?? r.score) != null && (r.currentScore ?? r.score)! >= 150 && (r.currentScore ?? r.score)! < 200).length
+  const watchlist = list.filter((r) => (r.currentScore ?? r.score) != null && (r.currentScore ?? r.score)! >= 100 && (r.currentScore ?? r.score)! < 150).length
+  
+  const scoresOnly = list.map((r) => r.currentScore ?? r.score).filter((s): s is number => s != null)
   const avgScore = scoresOnly.length > 0 ? (scoresOnly.reduce((a, b) => a + b, 0) / scoresOnly.length).toFixed(1) : '—'
   const maxScore = scoresOnly.length > 0 ? Math.max(...scoresOnly).toFixed(1) : '—'
   
-  const topReport = list.find((r) => r.score != null && r.score.toFixed(1) === maxScore)
+  const topReport = list.find((r) => (r.currentScore ?? r.score)?.toFixed(1) === maxScore)
 
   return {
     total,

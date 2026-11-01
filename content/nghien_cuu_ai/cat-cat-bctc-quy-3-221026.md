@@ -1,10 +1,10 @@
 ---
-title: "[CAT] CAT bctc quy 3 221026"
+title: "[CAT] Nghiên Cứu Định Giá 246.8 Điểm - CAT bctc quy 3 221026"
 ticker: "CAT"
 date: "22/10/2026"
-score: null
-classification: ""
-price: null
+score: 246.8
+classification: "Siêu Hấp Dẫn"
+price: 15.3
 targetPrice: null
 upside: null
 filename: "CAT bctc quy 3 221026.docx"

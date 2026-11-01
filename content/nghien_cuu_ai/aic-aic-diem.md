@@ -1,10 +1,10 @@
 ---
-title: "[AIC] AIC điểm"
+title: "[AIC] Nghiên Cứu Định Giá 111.9 Điểm - AIC điểm"
 ticker: "AIC"
 date: "20/10/2026"
-score: null
-classification: ""
-price: null
+score: 111.9
+classification: "Theo Dõi"
+price: 7.4
 targetPrice: null
 upside: null
 filename: "AIC điểm.docx"

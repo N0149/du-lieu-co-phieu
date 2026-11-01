@@ -264,10 +264,13 @@ export function createDulieudautuMcpServer() {
         if (matchedAi.length > 0) {
           lines.push(`### 🌟 BÁO CÁO NGHIÊN CỨU CHUYÊN SÂU AI ĐỘC QUYỀN (HỆ ĐIỂM ĐỊNH GIÁ LÃI KÉP):`)
           matchedAi.forEach((r) => {
+            const scLive = r.currentScore != null ? `**${r.currentScore} ĐIỂM** [${r.currentClassification || ''}] (Điểm gốc: ${r.score}đ)` : (r.score != null ? `${r.score} ĐIỂM` : 'Chuyên đề')
+            const deltaStr = r.scoreDelta != null ? (r.scoreDelta > 0 ? ` (+${r.scoreDelta}đ)` : r.scoreDelta < 0 ? ` (${r.scoreDelta}đ)` : '') : ''
+            const pxLive = r.currentPrice ? `${r.currentPrice}k (Thị giá hiện tại)` : (r.price ? `${r.price}k` : '—')
             lines.push(
               `- **[${r.ticker || 'CHUYÊN ĐỀ'}] ${r.title}**\n` +
-              `  • Điểm định giá: **${r.score != null ? `${r.score} ĐIỂM` : 'Chuyên đề'}** (${r.classification || 'Phân tích'})\n` +
-              `  • Ngày nghiên cứu: ${r.date} | Thị giá: ${r.price ? `${r.price}k` : '—'}\n` +
+              `  • Điểm định giá hiện tại: ${scLive}${deltaStr}\n` +
+              `  • Thị giá: ${pxLive} | Ngày nghiên cứu: ${r.date} (Giá gốc: ${r.price ? `${r.price}k` : '—'})\n` +
               `  • Tóm tắt: ${r.summary}\n` +
               `  • *Gợi ý: Dùng tool "doc_toan_van_nghien_cuu_ai" với slug "${r.slug}" hoặc mã "${r.ticker}" để đọc toàn văn bài viết.*`
             )
@@ -468,7 +471,7 @@ export function createDulieudautuMcpServer() {
   // 9. Tool MỚI: Tra cứu danh mục bài Nghiên Cứu Chuyên Sâu AI & Hệ Điểm Định Giá
   server.tool(
     'tra_cuu_nghien_cuu_ai',
-    'Tra cứu danh mục các bài Nghiên Cứu Chuyên Sâu AI & Hệ Điểm Định Giá Lãi Kép độc quyền (quy chuẩn Benchmark gửi tiết kiệm 10%/năm = 100 điểm). Lọc theo mã cổ phiếu, từ khóa hoặc mức điểm xếp hạng.',
+    'Tra cứu danh mục các bài Nghiên Cứu Chuyên Sâu AI & Hệ Điểm Định Giá Lãi Kép độc quyền (tự động điều chỉnh theo thị giá thời gian thực; quy chuẩn Benchmark gửi tiết kiệm 10%/năm = 100 điểm). Lọc theo mã cổ phiếu, từ khóa hoặc mức điểm xếp hạng.',
     {
       queryOrSymbol: z
         .string()
@@ -477,7 +480,7 @@ export function createDulieudautuMcpServer() {
       minScore: z
         .number()
         .optional()
-        .describe('Lọc cổ phiếu có điểm định giá tối thiểu (ví dụ: 150 để lấy nhóm Khả quan & Siêu hấp dẫn, 200 để lấy nhóm Siêu hấp dẫn)'),
+        .describe('Lọc cổ phiếu có điểm định giá hiện tại tối thiểu (ví dụ: 150 để lấy nhóm Khả quan & Siêu hấp dẫn, 200 để lấy nhóm Siêu hấp dẫn)'),
     },
     async ({ queryOrSymbol, minScore }) => {
       try {
@@ -495,7 +498,7 @@ export function createDulieudautuMcpServer() {
         }
 
         if (minScore != null) {
-          list = list.filter((r) => r.score != null && r.score >= minScore)
+          list = list.filter((r) => (r.currentScore ?? r.score) != null && (r.currentScore ?? r.score)! >= minScore)
         }
 
         if (list.length === 0) {
@@ -510,12 +513,21 @@ export function createDulieudautuMcpServer() {
         }
 
         const itemsText = list.map((r) => {
-          const sc = r.score != null ? `${r.score} ĐIỂM (${r.classification || 'Phân tích'})` : 'Chuyên đề phân tích'
-          const px = r.price ? `${r.price}k` : '—'
+          let scInfo = 'Chuyên đề phân tích'
+          if (r.currentScore != null) {
+            const deltaStr = r.scoreDelta != null ? (r.scoreDelta > 0 ? ` (+${r.scoreDelta}đ do thị giá thấp hơn giá NC)` : r.scoreDelta < 0 ? ` (${r.scoreDelta}đ do thị giá cao hơn giá NC)` : ' (bằng giá gốc)') : ''
+            scInfo = `**${r.currentScore} ĐIỂM** [${r.currentClassification || 'Khả quan'}]${deltaStr} (Điểm gốc lúc NC: ${r.score}đ)`
+          } else if (r.score != null) {
+            scInfo = `**${r.score} ĐIỂM** (${r.classification || 'Phân tích'})`
+          }
+
+          const pxCurrent = r.currentPrice ? `${r.currentPrice}k` : '—'
+          const pxResearch = r.price ? `${r.price}k` : '—'
+
           return `### [${r.ticker || 'CHUYÊN ĐỀ'}] ${r.title}\n` +
             `- **Mã cổ phiếu**: ${r.ticker || '—'}\n` +
-            `- **Điểm định giá lãi kép**: **${sc}**\n` +
-            `- **Ngày phân tích**: ${r.date} | **Thị giá**: ${px}\n` +
+            `- **Điểm định giá hiện tại**: ${scInfo}\n` +
+            `- **Thị giá hiện tại**: ${pxCurrent} | **Giá lúc nghiên cứu**: ${pxResearch} (${r.date})\n` +
             `- **Tóm tắt cốt lõi**: ${r.summary}\n` +
             `- **Mã định danh (slug)**: \`${r.slug}\`\n` +
             `- *Gợi ý: Gọi tool "doc_toan_van_nghien_cuu_ai" với symbol="${r.ticker}" hoặc slug="${r.slug}" để đọc toàn văn bài viết.*`
@@ -525,7 +537,7 @@ export function createDulieudautuMcpServer() {
           content: [
             {
               type: 'text',
-              text: `## KHO NGHIÊN CỨU CHUYÊN SÂU AI & HỆ ĐIỂM ĐỊNH GIÁ (${list.length} bài phù hợp):\n\n${itemsText.join('\n\n---\n\n')}`,
+              text: `## KHO NGHIÊN CỨU CHUYÊN SÂU AI & HỆ ĐIỂM ĐỊNH GIÁ (${list.length} bài phù hợp):\n*(Ghi chú: Điểm số tự động điều chỉnh linh hoạt theo thị giá hiện tại: Điểm_hiện_tại = Điểm_gốc × (Giá_gốc / Giá_hiện_tại))*\n\n${itemsText.join('\n\n---\n\n')}`,
             },
           ],
         }
@@ -538,10 +550,10 @@ export function createDulieudautuMcpServer() {
     }
   )
 
-  // 10. Tool MỚI: Đọc toàn văn nội dung bài Nghiên Cứu Chuyên Sâu AI
+  // 10. Tool MỚI: Đọc toàn văn nội dung bài Nghiên CỨu Chuyên Sâu AI
   server.tool(
     'doc_toan_van_nghien_cuu_ai',
-    'Đọc TOÀN VĂN nội dung bài Nghiên Cứu Chuyên Sâu AI của một mã cổ phiếu (ví dụ: SJE, S55, ABT, LHG, MWG, CAT, IDV, VCP, DRI...). Bao gồm: Phân tích 5 trụ cột (Forensic), Bóc tách BCTC & Nợ vay, Định giá từng phần (SOTP/RNAV), Chấm điểm sinh lời lãi kép, Bảng số liệu đối chiếu tài chính, Rủi ro & Khuyến nghị.',
+    'Đọc TOÀN VĂN nội dung bài Nghiên Cứu Chuyên Sâu AI của một mã cổ phiếu (ví dụ: SJE, S55, ABT, LHG, MWG, CAT, IDV, VCP, DRI...). Bao gồm: Phân tích 5 trụ cột (Forensic), Bóc tách BCTC & Nợ vay, Định giá từng phần (SOTP/RNAV), Chấm điểm sinh lời lãi kép theo giá hiện tại, Bảng số liệu đối chiếu tài chính, Rủi ro & Khuyến nghị.',
     {
       symbolOrSlug: z
         .string()
@@ -575,15 +587,20 @@ export function createDulieudautuMcpServer() {
           }
         }
 
-        const scoreInfo = detail.score != null
-          ? `\n- **Điểm xếp hạng định giá**: **${detail.score} ĐIỂM** (${detail.classification})`
-          : ''
+        let scoreInfo = ''
+        if (detail.currentScore != null) {
+          const deltaSign = detail.scoreDelta != null && detail.scoreDelta > 0 ? '+' : ''
+          scoreInfo = `\n- **Điểm định giá theo thị giá hiện tại (${detail.currentPrice ?? '—'}k)**: **${detail.currentScore} ĐIỂM** (${detail.currentClassification || 'Khả quan'}) [Biến động: ${deltaSign}${detail.scoreDelta ?? 0} điểm]\n- **Điểm gốc lúc nghiên cứu**: ${detail.score} ĐIỂM (${detail.classification}) tại giá ${detail.price}k\n- *Quy tắc: Điểm hiện tại = Điểm gốc × (Giá gốc / Giá hiện tại)*`
+        } else if (detail.score != null) {
+          scoreInfo = `\n- **Điểm xếp hạng định giá**: **${detail.score} ĐIỂM** (${detail.classification})`
+        }
 
         const headerInfo = `# ${detail.displayTitle}\n` +
           `- **Mã cổ phiếu**: ${detail.ticker || '—'}\n` +
           `- **Ngày nghiên cứu**: ${detail.date}` +
           scoreInfo +
-          (detail.price ? `\n- **Thị giá tại thời điểm phân tích**: ${detail.price} nghìn đồng` : '') +
+          (detail.price ? `\n- **Thị giá lúc phân tích**: ${detail.price} nghìn đồng` : '') +
+          (detail.currentPrice ? ` | **Thị giá hiện tại**: ${detail.currentPrice} nghìn đồng` : '') +
           `\n\n---\n\n`
 
         return {

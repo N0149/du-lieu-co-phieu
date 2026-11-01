@@ -1,9 +1,9 @@
 ---
-title: "[VGG] VGG điểm"
+title: "[VGG] Nghiên Cứu Định Giá 151.8 Điểm - VGG điểm"
 ticker: "VGG"
 date: "26/10/2026"
-score: null
-classification: ""
+score: 151.8
+classification: "Khả Quan"
 price: 37.5
 targetPrice: null
 upside: null

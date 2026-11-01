@@ -1,9 +1,9 @@
 ---
-title: "[M10] M10 điểm"
+title: "[M10] Nghiên Cứu Định Giá 200.0 Điểm - M10 điểm"
 ticker: "M10"
 date: "30/06/2026"
-score: null
-classification: ""
+score: 200.0
+classification: "Siêu Hấp Dẫn"
 price: 19.2
 targetPrice: null
 upside: null

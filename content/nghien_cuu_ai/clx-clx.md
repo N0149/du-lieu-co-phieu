@@ -4,7 +4,7 @@ ticker: "CLX"
 date: "30/06/2026"
 score: null
 classification: ""
-price: null
+price: 13.0
 targetPrice: null
 upside: null
 filename: "CLX.docx"

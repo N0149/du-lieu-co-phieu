@@ -1,9 +1,9 @@
 ---
-title: "[DRI] DRI điểm"
+title: "[DRI] Nghiên Cứu Định Giá 179.7 Điểm - DRI điểm"
 ticker: "DRI"
 date: "30/06/2026"
-score: null
-classification: ""
+score: 179.7
+classification: "Khả Quan"
 price: 15.7
 targetPrice: null
 upside: null
