@@ -2,6 +2,7 @@ import fs from 'fs'
 import path from 'path'
 import { marked } from 'marked'
 import nghienCuuAiSnapshot from '@/data/nghien_cuu_ai_snapshot.json'
+import livePricesSnapshot from '@/data/nghien_cuu_ai_live_prices.json'
 import { getAllStocks } from '@/lib/longlivestock'
 
 export interface NghienCuuAiReport {
@@ -92,10 +93,22 @@ export function formatReportMarkdownToHtml(markdown: string): string {
  * Lấy toàn bộ danh sách báo cáo nghiên cứu chuyên sâu AI kèm theo Điểm điều chỉnh theo giá thị trường hiện tại
  */
 export function getAllNghienCuuAiReports(): NghienCuuAiReport[] {
-  const stocks = getAllStocks()
   const priceMap = new Map<string, number | null>()
+
+  // 1. Ưu tiên cao nhất: Thị giá thời gian thực từ 24hMoney Live Quote
+  try {
+    const liveObj = livePricesSnapshot as Record<string, { price: number }>
+    for (const [sym, item] of Object.entries(liveObj)) {
+      if (item && typeof item.price === 'number' && item.price > 0) {
+        priceMap.set(sym.toUpperCase(), item.price)
+      }
+    }
+  } catch {}
+
+  // 2. Dự phòng: Bổ sung từ manifest nếu mã nào chưa có
+  const stocks = getAllStocks()
   for (const s of stocks) {
-    if (s.t && s.px != null) {
+    if (s.t && s.px != null && !priceMap.has(s.t.toUpperCase())) {
       priceMap.set(s.t.toUpperCase(), s.px)
     }
   }

@@ -29,6 +29,7 @@ ROOT_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
 SOURCE_DRIVE_DIR = r"E:\My Drive\Nghiên cứu chuyên sâu AI"
 OUTPUT_MD_DIR = os.path.join(ROOT_DIR, "content", "nghien_cuu_ai")
 OUTPUT_JSON_PATH = os.path.join(ROOT_DIR, "data", "nghien_cuu_ai_snapshot.json")
+LIVE_PRICES_PATH = os.path.join(ROOT_DIR, "data", "nghien_cuu_ai_live_prices.json")
 REPORTS_SNAPSHOT_PATH = os.path.join(ROOT_DIR, "data", "reports-snapshot.json")
 
 os.makedirs(OUTPUT_MD_DIR, exist_ok=True)
@@ -442,6 +443,39 @@ filename: "{meta['filename']}"
     with open(OUTPUT_JSON_PATH, "w", encoding="utf-8") as f_json:
         json.dump(reports, f_json, ensure_ascii=False, indent=2)
     print(f"\n[+] Đã xuất snapshot: {OUTPUT_JSON_PATH} ({len(reports)} báo cáo)")
+
+    # Tự động đồng bộ giá thị trường thời gian thực (Real-time Live Quote từ 24hMoney)
+    tickers = sorted(list(set(r['ticker'] for r in reports if r['ticker'] and r['ticker'] != 'MACRO')))
+    print(f"[*] Đang tải thị giá thời gian thực cho {len(tickers)} mã cổ phiếu...")
+    live_price_map = {}
+    import urllib.request
+    req_headers = {
+        'Accept': 'application/json',
+        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36'
+    }
+    for sym in tickers:
+        try:
+            url = f"https://api-finance-t19.24hmoney.vn/v2/ios/stock/detail-even-deactivate?symbol={sym.lower()}"
+            req = urllib.request.Request(url, headers=req_headers)
+            with urllib.request.urlopen(req, timeout=4) as resp:
+                data = json.loads(resp.read().decode('utf-8')).get('data', {})
+                raw_px = float(data.get('match_price') or data.get('close_price') or data.get('price') or 0)
+                px = raw_px / 1000 if raw_px > 1000 else raw_px
+                if px > 0:
+                    live_price_map[sym] = {
+                        'price': px,
+                        'change': float(data.get('change') or 0),
+                        'changePercent': float(data.get('change_percent') or 0),
+                        'tradingDate': data.get('trading_date'),
+                        'updatedAt': datetime.now().isoformat()
+                    }
+        except Exception:
+            pass
+
+    if live_price_map:
+        with open(LIVE_PRICES_PATH, "w", encoding="utf-8") as f_lp:
+            json.dump(live_price_map, f_lp, ensure_ascii=False, indent=2)
+        print(f"[+] Đã cập nhật thị giá thời gian thực cho {len(live_price_map)} mã vào {LIVE_PRICES_PATH}")
 
     # Cập nhật reports-snapshot.json nếu có
     if os.path.exists(REPORTS_SNAPSHOT_PATH):

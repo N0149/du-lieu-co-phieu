@@ -1,0 +1,198 @@
+{
+  "HUB": {
+    "price": 10.55,
+    "change": 0,
+    "changePercent": 0,
+    "tradingDate": 1793346316000,
+    "updatedAt": "2026-11-01T11:19:50.484Z"
+  },
+  "S55": {
+    "price": 66,
+    "change": 0,
+    "changePercent": 0,
+    "tradingDate": 1793346304000,
+    "updatedAt": "2026-11-01T11:19:50.485Z"
+  },
+  "VCP": {
+    "price": 26.4,
+    "change": 0,
+    "changePercent": 0,
+    "tradingDate": 1793347206000,
+    "updatedAt": "2026-11-01T11:19:50.485Z"
+  },
+  "M10": {
+    "price": 19,
+    "change": -0.2,
+    "changePercent": -1.04,
+    "tradingDate": 1793347206000,
+    "updatedAt": "2026-11-01T11:19:50.485Z"
+  },
+  "TYA": {
+    "price": 16.6,
+    "change": -0.1,
+    "changePercent": -0.6,
+    "tradingDate": 1793346326000,
+    "updatedAt": "2026-11-01T11:19:50.485Z"
+  },
+  "SDT": {
+    "price": 3.6,
+    "change": 0,
+    "changePercent": 0,
+    "tradingDate": 1793347206000,
+    "updatedAt": "2026-11-01T11:19:50.489Z"
+  },
+  "BMI": {
+    "price": 14,
+    "change": -0.1,
+    "changePercent": -0.71,
+    "tradingDate": 1793346306000,
+    "updatedAt": "2026-11-01T11:19:50.489Z"
+  },
+  "VNL": {
+    "price": 18.85,
+    "change": 0,
+    "changePercent": 0,
+    "tradingDate": 1793346331000,
+    "updatedAt": "2026-11-01T11:19:50.489Z"
+  },
+  "SZB": {
+    "price": 45.6,
+    "change": -0.1,
+    "changePercent": -0.22,
+    "tradingDate": 1793346305000,
+    "updatedAt": "2026-11-01T11:19:50.489Z"
+  },
+  "GHC": {
+    "price": 23,
+    "change": -0.3,
+    "changePercent": -1.29,
+    "tradingDate": 1793347809000,
+    "updatedAt": "2026-11-01T11:19:50.489Z"
+  },
+  "ABT": {
+    "price": 55.8,
+    "change": -0.1,
+    "changePercent": -0.18,
+    "tradingDate": 1793346305000,
+    "updatedAt": "2026-11-01T11:19:50.489Z"
+  },
+  "LHG": {
+    "price": 26.5,
+    "change": -0.05,
+    "changePercent": -0.19,
+    "tradingDate": 1793346317000,
+    "updatedAt": "2026-11-01T11:19:50.489Z"
+  },
+  "RAL": {
+    "price": 72,
+    "change": 0,
+    "changePercent": 0,
+    "tradingDate": 1793346322000,
+    "updatedAt": "2026-11-01T11:19:50.507Z"
+  },
+  "FMC": {
+    "price": 36,
+    "change": -0.05,
+    "changePercent": -0.14,
+    "tradingDate": 1793346311000,
+    "updatedAt": "2026-11-01T11:19:50.507Z"
+  },
+  "AMS": {
+    "price": 7.2,
+    "change": 0.1,
+    "changePercent": 1.41,
+    "tradingDate": 1793347204000,
+    "updatedAt": "2026-11-01T11:19:50.507Z"
+  },
+  "DRI": {
+    "price": 14,
+    "change": -0.6,
+    "changePercent": -4.11,
+    "tradingDate": 1793347801000,
+    "updatedAt": "2026-11-01T11:19:50.507Z"
+  },
+  "MWG": {
+    "price": 74,
+    "change": -1.8,
+    "changePercent": -2.37,
+    "tradingDate": 1793347755000,
+    "updatedAt": "2026-11-01T11:19:50.507Z"
+  },
+  "VGG": {
+    "price": 37,
+    "change": -0.9,
+    "changePercent": -2.37,
+    "tradingDate": 1793347206000,
+    "updatedAt": "2026-11-01T11:19:50.507Z"
+  },
+  "TIP": {
+    "price": 15.7,
+    "change": -0.05,
+    "changePercent": -0.32,
+    "tradingDate": 1793346325000,
+    "updatedAt": "2026-11-01T11:19:50.507Z"
+  },
+  "DP1": {
+    "price": 29.2,
+    "change": 0,
+    "changePercent": 0,
+    "tradingDate": 1793347204000,
+    "updatedAt": "2026-11-01T11:19:50.507Z"
+  },
+  "AIC": {
+    "price": 8.2,
+    "change": 0,
+    "changePercent": 0,
+    "tradingDate": 1793347203000,
+    "updatedAt": "2026-11-01T11:19:50.507Z"
+  },
+  "CCI": {
+    "price": 17.1,
+    "change": 0.1,
+    "changePercent": 0.59,
+    "tradingDate": 1793346307000,
+    "updatedAt": "2026-11-01T11:19:50.507Z"
+  },
+  "CLX": {
+    "price": 13,
+    "change": -0.1,
+    "changePercent": -0.76,
+    "tradingDate": 1793347205000,
+    "updatedAt": "2026-11-01T11:19:50.507Z"
+  },
+  "VNF": {
+    "price": 12.5,
+    "change": -0.2,
+    "changePercent": -1.57,
+    "tradingDate": 1793346305000,
+    "updatedAt": "2026-11-01T11:19:50.507Z"
+  },
+  "BAX": {
+    "price": 27,
+    "change": 0,
+    "changePercent": 0,
+    "tradingDate": 1793346302000,
+    "updatedAt": "2026-11-01T11:19:50.507Z"
+  },
+  "CAT": {
+    "price": 15.5,
+    "change": -0.2,
+    "changePercent": -1.27,
+    "tradingDate": 1793347204000,
+    "updatedAt": "2026-11-01T11:19:50.507Z"
+  },
+  "SJE": {
+    "price": 10,
+    "change": -0.2,
+    "changePercent": -1.96,
+    "tradingDate": 1793346304000,
+    "updatedAt": "2026-11-01T11:19:50.507Z"
+  },
+  "IDV": {
+    "price": 21.6,
+    "change": 0,
+    "changePercent": 0,
+    "tradingDate": 1793346303000,
+    "updatedAt": "2026-11-01T11:19:50.507Z"
+  }
+}
