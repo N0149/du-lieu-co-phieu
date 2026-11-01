@@ -1,5 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { getClientIp, checkInMemoryRateLimit, isSameOriginOrDirect } from "@/lib/security";
+import reportsSnapshot from "@/data/reports-snapshot.json";
+import { getNghienCuuAiReportBySlug } from "@/lib/nghien-cuu-ai-service";
 
 // Chạy động (không static-cache) — nội dung lấy trực tiếp từ Drive mỗi request.
 export const dynamic = "force-dynamic";
@@ -8,13 +10,8 @@ const DRIVE_API_KEY = process.env.GOOGLE_DRIVE_API_KEY ?? "";
 
 /**
  * GET /api/reports/[id]/content
- * Export nội dung văn bản (text/plain) của Google Doc qua Drive API v3 →
- * phục vụ tính năng "Nghe đọc báo cáo" (Web Speech API) trên trang báo cáo chi tiết.
- *
- * Đã gia cố:
- * - Rate Limiting (tối đa 30 requests / phút / IP)
- * - Chống Hotlinking từ domain bên ngoài
- * - Header X-Robots-Tag: noindex
+ * Export nội dung văn bản (text/plain) của báo cáo (ưu tiên file Markdown nghiên cứu AI cục bộ,
+ * fallback Google Doc qua Drive API v3) phục vụ tính năng "Nghe đọc báo cáo".
  */
 export async function GET(
   request: NextRequest,
@@ -48,6 +45,27 @@ export async function GET(
   if (!id) {
     return NextResponse.json({ error: "Thiếu ID tài liệu." }, { status: 400 });
   }
+
+  // 3. Ưu tiên kiểm tra kho Nghiên cứu chuyên sâu AI cục bộ (bóc tách từ file Word)
+  const localMatch = (reportsSnapshot as any[]).find(
+    (r) => r.driveDocId === id || r.slug === id || r.localSlug === id
+  );
+  const targetSlug = localMatch?.localSlug || id;
+  const localReport = getNghienCuuAiReportBySlug(targetSlug);
+
+  if (localReport && localReport.markdown) {
+    return NextResponse.json(
+      { content: localReport.markdown },
+      {
+        headers: {
+          "X-Robots-Tag": "noindex, nofollow, noarchive",
+          "Cache-Control": "private, max-age=1800",
+        },
+      }
+    );
+  }
+
+  // 4. Fallback Google Drive API nếu là Google Doc
   if (!DRIVE_API_KEY) {
     console.warn("[reports] GOOGLE_DRIVE_API_KEY trống — không đọc được nội dung tài liệu.");
     return NextResponse.json(

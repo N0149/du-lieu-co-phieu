@@ -1,31 +1,35 @@
 import type { Metadata } from 'next'
 import { SiteHeader } from '@/components/site-header'
-import { Screener } from '@/components/screener'
-import { HomeKpis } from '@/components/home-kpis'
+import { NghienCuuAiExplorer } from '@/components/nghien-cuu-ai/NghienCuuAiExplorer'
+import {
+  getAllNghienCuuAiReports,
+  getNghienCuuAiKpis,
+} from '@/lib/nghien-cuu-ai-service'
 
 export const metadata: Metadata = {
-  title: 'Nghiên Cứu Chuyên Sâu AI - Định Giá RNAV & Báo Cáo',
+  title: 'Nghiên Cứu Chuyên Sâu AI & Hệ Điểm Định Giá Lãi Kép | Dữ Liệu Đầu Tư',
   description:
-    'Nghiên cứu chuyên sâu AI, định giá RNAV cổ phiếu, phân tích bóc tách giá trị tài sản doanh nghiệp niêm yết và kho báo cáo phân tích.',
+    'Kho nghiên cứu chuyên sâu AI, bóc tách 5 trụ cột forensic, rà soát nợ vay, dòng tiền và hệ điểm định giá độc quyền quy chiếu Benchmark gửi tiết kiệm 10%/năm = 100 điểm.',
   alternates: {
     canonical: '/nghien-cuu-ai',
   },
 }
 
 export default function NghienCuuAiPage() {
+  const reports = getAllNghienCuuAiReports()
+  const kpis = getNghienCuuAiKpis()
+
   return (
-    <div className="min-h-screen bg-background text-foreground">
+    <div className="min-h-screen bg-[#11141c] text-foreground">
       <SiteHeader />
 
       <main className="mx-auto max-w-[1600px] px-4 py-6">
-        {/* KPI strip — tự đếm/tính từ kho báo cáo */}
-        <HomeKpis />
+        <NghienCuuAiExplorer initialReports={reports} kpis={kpis} />
 
-        <Screener />
-
-        <p className="mt-6 text-[11px] leading-relaxed text-muted-foreground">
-          Ghi chú: Số liệu mang tính minh họa cho mục đích trình bày sản phẩm. Giá và định giá RNAV
-          tính theo đơn vị nghìn đồng/cổ phiếu. Đây không phải là khuyến nghị đầu tư.
+        <p className="mt-8 text-[11px] leading-relaxed text-[#64748B] text-center">
+          Ghi chú: Toàn bộ báo cáo nghiên cứu và hệ điểm định giá được đồng bộ tự động từ thư mục
+          nghiên cứu chuyên sâu AI của Dữ Liệu Đầu Tư. Benchmark quy chuẩn: Gửi tiết kiệm lãi kép 10,0%/năm = 100 điểm.
+          Số liệu mang tính chất tham khảo nghiên cứu, không phải là lời mời chào hay khuyến nghị mua bán cổ phiếu.
         </p>
       </main>
     </div>

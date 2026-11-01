@@ -39,6 +39,9 @@ export type ReportStock = {
   targetPrice: number | null // giá mục tiêu, nghìn đồng/cổ phiếu
   recommendation: string | null // MUA | KHẢ QUAN | NẮM GIỮ | THEO DÕI
   bonusWelfareRate?: number | null // % tỷ lệ trích quỹ khen thưởng phúc lợi (KTPL) — từ báo cáo
+  score?: number | null // Điểm định giá hệ 100 điểm benchmark tiết kiệm
+  classification?: string | null
+  localSlug?: string | null
 }
 
 const stockByTicker = new Map(stocks.map((s) => [s.ticker.toUpperCase(), s]))
@@ -73,6 +76,9 @@ export function buildReportStocks(reports: Report[]): ReportStock[] {
     const targetPrice = val?.targetPrice ?? null
     const recommendation = val?.recommendation ?? null
     const bonusWelfareRate = val?.bonusWelfareRate ?? null
+    const score = val?.score ?? null
+    const classification = val?.classification ?? null
+    const localSlug = val?.localSlug ?? null
 
     const s = stockByTicker.get(ticker)
     const m = getStockByTicker(ticker)
@@ -97,6 +103,9 @@ export function buildReportStocks(reports: Report[]): ReportStock[] {
         targetPrice,
         recommendation,
         bonusWelfareRate,
+        score,
+        classification,
+        localSlug,
       }
     }
     return {
@@ -118,6 +127,9 @@ export function buildReportStocks(reports: Report[]): ReportStock[] {
       targetPrice,
       recommendation,
       bonusWelfareRate,
+      score,
+      classification,
+      localSlug,
     }
   })
 }

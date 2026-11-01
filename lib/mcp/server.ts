@@ -9,6 +9,12 @@ import { getBctcReport } from '@/lib/bctc-service'
 import { getAgmReport } from '@/lib/agm-service'
 import { getStock, upside, marginOfSafety } from '@/lib/data'
 import reportsData from '@/data/reports-snapshot.json'
+import {
+  getAllNghienCuuAiReports,
+  getNghienCuuAiReportBySlug,
+  getNghienCuuAiReportsForTicker,
+  type NghienCuuAiReport,
+} from '@/lib/nghien-cuu-ai-service'
 import { fmtBillion, fmtNum, fmtPct, fmtPrice } from '@/lib/format'
 
 type ReportItem = {
@@ -32,7 +38,7 @@ const reports = reportsData as ReportItem[]
 export function createDulieudautuMcpServer() {
   const server = new McpServer({
     name: 'Dữ Liệu Đầu Tư (dulieudautu.com)',
-    version: '1.0.0',
+    version: '1.1.0',
   })
 
   // 1. Tool: Tra cứu hồ sơ tài chính toàn diện 16 năm
@@ -222,19 +228,28 @@ export function createDulieudautuMcpServer() {
     }
   )
 
-  // 6. Tool: Kho báo cáo phân tích & Định giá CTCK
+  // 6. Tool: Kho báo cáo phân tích & Định giá CTCK (Kèm Nghiên cứu AI độc quyền)
   server.tool(
     'kho_bao_cao_va_upside',
-    'Tìm kiếm trong kho 94 báo cáo phân tích định giá của các CTCK hàng đầu (SSI, HSC, VCSC, VNDirect, Mirae Asset). Xem giá mục tiêu, khuyến nghị mua/bán và tiềm năng tăng trưởng.',
+    'Tìm kiếm trong kho báo cáo phân tích định giá của các CTCK hàng đầu (SSI, HSC, VCSC, VNDirect, Mirae Asset) và các bài Nghiên cứu chuyên sâu AI độc quyền. Xem giá mục tiêu, khuyến nghị mua/bán và tiềm năng tăng trưởng.',
     {
       queryOrSymbol: z
         .string()
-        .describe('Mã cổ phiếu hoặc từ khóa ngành hàng (ví dụ: HPG, Cảng biển, Dệt may, Thép)'),
+        .describe('Mã cổ phiếu hoặc từ khóa ngành hàng (ví dụ: HPG, Cảng biển, Dệt may, Thép, SJE, LHG, S55)'),
     },
     async ({ queryOrSymbol }) => {
       try {
         const qUpper = queryOrSymbol.toUpperCase().trim()
         const qLower = queryOrSymbol.toLowerCase().trim()
+
+        // 1. Kiểm tra trong kho Nghiên cứu chuyên sâu AI độc quyền trước
+        const aiReports = getAllNghienCuuAiReports()
+        const matchedAi = aiReports.filter(
+          (r) =>
+            (r.ticker && r.ticker.toUpperCase() === qUpper) ||
+            r.title.toLowerCase().includes(qLower) ||
+            r.summary.toLowerCase().includes(qLower)
+        )
 
         const matched = reports.filter(
           (r) =>
@@ -244,20 +259,45 @@ export function createDulieudautuMcpServer() {
             (r.summary && r.summary.toLowerCase().includes(qLower))
         )
 
-        if (matched.length === 0) {
-          const topUpside = reports
-            .filter((r) => r.ticker && r.targetPrice && r.upside != null)
-            .sort((a, b) => (b.upside ?? 0) - (a.upside ?? 0))
+        const lines: string[] = []
+
+        if (matchedAi.length > 0) {
+          lines.push(`### 🌟 BÁO CÁO NGHIÊN CỨU CHUYÊN SÂU AI ĐỘC QUYỀN (HỆ ĐIỂM ĐỊNH GIÁ LÃI KÉP):`)
+          matchedAi.forEach((r) => {
+            lines.push(
+              `- **[${r.ticker || 'CHUYÊN ĐỀ'}] ${r.title}**\n` +
+              `  • Điểm định giá: **${r.score != null ? `${r.score} ĐIỂM` : 'Chuyên đề'}** (${r.classification || 'Phân tích'})\n` +
+              `  • Ngày nghiên cứu: ${r.date} | Thị giá: ${r.price ? `${r.price}k` : '—'}\n` +
+              `  • Tóm tắt: ${r.summary}\n` +
+              `  • *Gợi ý: Dùng tool "doc_toan_van_nghien_cuu_ai" với slug "${r.slug}" hoặc mã "${r.ticker}" để đọc toàn văn bài viết.*`
+            )
+          })
+          lines.push(`\n---\n`)
+        }
+
+        if (matched.length > 0) {
+          lines.push(`### 📑 BÁO CÁO PHÂN TÍCH DOANH NGHIỆP TỪ CÁC CTCK:`)
+          matched.slice(0, 5).forEach((r) => {
+            lines.push(
+              `- **${r.ticker ? `[${r.ticker}] ` : ''}${r.title}**\n  Ngày: ${r.reportDate || r.date} | Giá MT: ${r.targetPrice ?? '—'}k | Giá TT: ${r.currentPrice ?? '—'}k | Upside: ${r.upside != null ? `+${r.upside}%` : '—'} | Khuyến nghị: ${r.recommendation ?? '—'}\n  Tóm tắt: ${r.summary || 'Không có tóm tắt'}`
+            )
+          })
+        }
+
+        if (lines.length === 0) {
+          const topAi = aiReports
+            .filter((r) => r.score != null)
+            .sort((a, b) => (b.score ?? 0) - (a.score ?? 0))
             .slice(0, 5)
 
           return {
             content: [
               {
                 type: 'text',
-                text: `Không tìm thấy báo cáo khớp từ khóa "${queryOrSymbol}".\nTop 5 cổ phiếu có upside cao nhất trong kho báo cáo:\n${topUpside
+                text: `Không tìm thấy báo cáo khớp từ khóa "${queryOrSymbol}".\nTop 5 cổ phiếu có điểm định giá AI cao nhất (Benchmark 10% gửi tiết kiệm = 100 điểm):\n${topAi
                   .map(
                     (r) =>
-                      `- [${r.ticker}] ${r.title} | Giá MT: ${r.targetPrice}k | Upside: +${r.upside}% | Khuyến nghị: ${r.recommendation || '—'}`
+                      `- [${r.ticker}] ${r.title} | Điểm: ${r.score} ĐIỂM (${r.classification}) | Thị giá: ${r.price ? `${r.price}k` : '—'}`
                   )
                   .join('\n')}`,
               },
@@ -265,15 +305,11 @@ export function createDulieudautuMcpServer() {
           }
         }
 
-        const lines = matched.slice(0, 6).map((r) => {
-          return `- **${r.ticker ? `[${r.ticker}] ` : ''}${r.title}**\n  Ngày: ${r.reportDate || r.date} | Giá MT: ${r.targetPrice ?? '—'}k | Giá TT: ${r.currentPrice ?? '—'}k | Upside: ${r.upside != null ? `+${r.upside}%` : '—'} | Khuyến nghị: ${r.recommendation ?? '—'}\n  Tóm tắt: ${r.summary || 'Không có tóm tắt'}`
-        })
-
         return {
           content: [
             {
               type: 'text',
-              text: `### KHO BÁO CÁO PHÂN TÍCH PHÙ HỢP:\n\n${lines.join('\n\n')}`,
+              text: lines.join('\n\n'),
             },
           ],
         }
@@ -424,6 +460,144 @@ export function createDulieudautuMcpServer() {
         return {
           isError: true,
           content: [{ type: 'text', text: `Lỗi đọc tài liệu ĐHĐCĐ: ${String(err)}` }],
+        }
+      }
+    }
+  )
+
+  // 9. Tool MỚI: Tra cứu danh mục bài Nghiên Cứu Chuyên Sâu AI & Hệ Điểm Định Giá
+  server.tool(
+    'tra_cuu_nghien_cuu_ai',
+    'Tra cứu danh mục các bài Nghiên Cứu Chuyên Sâu AI & Hệ Điểm Định Giá Lãi Kép độc quyền (quy chuẩn Benchmark gửi tiết kiệm 10%/năm = 100 điểm). Lọc theo mã cổ phiếu, từ khóa hoặc mức điểm xếp hạng.',
+    {
+      queryOrSymbol: z
+        .string()
+        .optional()
+        .describe('Mã cổ phiếu (ví dụ: SJE, S55, LHG, ABT, MWG) hoặc từ khóa (ví dụ: Thủy điện, KCN, Cao su, BCTC Quý 3). Bỏ trống để lấy toàn bộ.'),
+      minScore: z
+        .number()
+        .optional()
+        .describe('Lọc cổ phiếu có điểm định giá tối thiểu (ví dụ: 150 để lấy nhóm Khả quan & Siêu hấp dẫn, 200 để lấy nhóm Siêu hấp dẫn)'),
+    },
+    async ({ queryOrSymbol, minScore }) => {
+      try {
+        let list = getAllNghienCuuAiReports()
+
+        if (queryOrSymbol) {
+          const qUpper = queryOrSymbol.toUpperCase().trim()
+          const qLower = queryOrSymbol.toLowerCase().trim()
+          list = list.filter(
+            (r) =>
+              (r.ticker && r.ticker.toUpperCase() === qUpper) ||
+              r.title.toLowerCase().includes(qLower) ||
+              r.summary.toLowerCase().includes(qLower)
+          )
+        }
+
+        if (minScore != null) {
+          list = list.filter((r) => r.score != null && r.score >= minScore)
+        }
+
+        if (list.length === 0) {
+          return {
+            content: [
+              {
+                type: 'text',
+                text: `Không tìm thấy bài nghiên cứu chuyên sâu AI nào khớp với điều kiện tìm kiếm.`,
+              },
+            ],
+          }
+        }
+
+        const itemsText = list.map((r) => {
+          const sc = r.score != null ? `${r.score} ĐIỂM (${r.classification || 'Phân tích'})` : 'Chuyên đề phân tích'
+          const px = r.price ? `${r.price}k` : '—'
+          return `### [${r.ticker || 'CHUYÊN ĐỀ'}] ${r.title}\n` +
+            `- **Mã cổ phiếu**: ${r.ticker || '—'}\n` +
+            `- **Điểm định giá lãi kép**: **${sc}**\n` +
+            `- **Ngày phân tích**: ${r.date} | **Thị giá**: ${px}\n` +
+            `- **Tóm tắt cốt lõi**: ${r.summary}\n` +
+            `- **Mã định danh (slug)**: \`${r.slug}\`\n` +
+            `- *Gợi ý: Gọi tool "doc_toan_van_nghien_cuu_ai" với symbol="${r.ticker}" hoặc slug="${r.slug}" để đọc toàn văn bài viết.*`
+        })
+
+        return {
+          content: [
+            {
+              type: 'text',
+              text: `## KHO NGHIÊN CỨU CHUYÊN SÂU AI & HỆ ĐIỂM ĐỊNH GIÁ (${list.length} bài phù hợp):\n\n${itemsText.join('\n\n---\n\n')}`,
+            },
+          ],
+        }
+      } catch (err: unknown) {
+        return {
+          isError: true,
+          content: [{ type: 'text', text: `Lỗi tra cứu nghiên cứu AI: ${String(err)}` }],
+        }
+      }
+    }
+  )
+
+  // 10. Tool MỚI: Đọc toàn văn nội dung bài Nghiên Cứu Chuyên Sâu AI
+  server.tool(
+    'doc_toan_van_nghien_cuu_ai',
+    'Đọc TOÀN VĂN nội dung bài Nghiên Cứu Chuyên Sâu AI của một mã cổ phiếu (ví dụ: SJE, S55, ABT, LHG, MWG, CAT, IDV, VCP, DRI...). Bao gồm: Phân tích 5 trụ cột (Forensic), Bóc tách BCTC & Nợ vay, Định giá từng phần (SOTP/RNAV), Chấm điểm sinh lời lãi kép, Bảng số liệu đối chiếu tài chính, Rủi ro & Khuyến nghị.',
+    {
+      symbolOrSlug: z
+        .string()
+        .describe('Mã cổ phiếu (ví dụ: SJE, S55, ABT, LHG, TYA, MWG) HOẶC slug của bài viết (ví dụ: "sje-sje-diem-24-10-2026")'),
+    },
+    async ({ symbolOrSlug }) => {
+      try {
+        const query = symbolOrSlug.trim()
+        const qUpper = query.toUpperCase()
+
+        // 1. Tìm theo slug trước
+        let detail = getNghienCuuAiReportBySlug(query)
+
+        // 2. Nếu không tìm thấy theo slug, tìm theo mã cổ phiếu
+        if (!detail) {
+          const tickerReports = getNghienCuuAiReportsForTicker(qUpper)
+          if (tickerReports.length > 0) {
+            // Lấy báo cáo mới nhất hoặc có điểm cao nhất
+            detail = getNghienCuuAiReportBySlug(tickerReports[0].slug)
+          }
+        }
+
+        if (!detail || !detail.markdown) {
+          return {
+            content: [
+              {
+                type: 'text',
+                text: `Không tìm thấy tài liệu toàn văn nghiên cứu chuyên sâu AI cho "${symbolOrSlug}". Vui lòng dùng tool "tra_cuu_nghien_cuu_ai" để xem danh sách các mã hiện có.`,
+              },
+            ],
+          }
+        }
+
+        const scoreInfo = detail.score != null
+          ? `\n- **Điểm xếp hạng định giá**: **${detail.score} ĐIỂM** (${detail.classification})`
+          : ''
+
+        const headerInfo = `# ${detail.displayTitle}\n` +
+          `- **Mã cổ phiếu**: ${detail.ticker || '—'}\n` +
+          `- **Ngày nghiên cứu**: ${detail.date}` +
+          scoreInfo +
+          (detail.price ? `\n- **Thị giá tại thời điểm phân tích**: ${detail.price} nghìn đồng` : '') +
+          `\n\n---\n\n`
+
+        return {
+          content: [
+            {
+              type: 'text',
+              text: headerInfo + detail.markdown,
+            },
+          ],
+        }
+      } catch (err: unknown) {
+        return {
+          isError: true,
+          content: [{ type: 'text', text: `Lỗi đọc toàn văn nghiên cứu AI: ${String(err)}` }],
         }
       }
     }

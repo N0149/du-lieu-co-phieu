@@ -2194,6 +2194,11 @@ export function StockDetailView({
                         <div className="flex flex-wrap items-center gap-2">
                           <span className="font-mono text-xs font-bold text-primary">{r.ticker || ticker}</span>
                           <span className="text-[11px] text-muted-foreground">· Ngày: {r.reportDate || r.date || '—'}</span>
+                          {r.score != null && (
+                            <span className="rounded-full bg-emerald-500/15 border border-emerald-500/30 px-2.5 py-0.5 text-[10px] font-bold text-emerald-400 font-mono">
+                              ⭐ {r.score} ĐIỂM · {r.classification || 'Hấp dẫn'}
+                            </span>
+                          )}
                           {r.recommendation && (
                             <span
                               className={cn(
@@ -2230,7 +2235,7 @@ export function StockDetailView({
                       </div>
 
                       <Link
-                        href={`/bao-cao/${r.driveDocId}`}
+                        href={r.localSlug ? `/nghien-cuu-ai/${r.localSlug}` : `/bao-cao/${r.driveDocId}`}
                         className="inline-flex shrink-0 items-center justify-center gap-2 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white px-4 py-2.5 text-xs font-bold shadow-xs transition-all hover:shadow-md"
                       >
                         <FileText className="size-4" />

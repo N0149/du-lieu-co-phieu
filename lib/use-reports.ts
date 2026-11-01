@@ -17,6 +17,9 @@ export type Report = {
   currentPrice?: number | null // nghìn đồng/cổ phiếu
   recommendation?: string | null // MUA | KHẢ QUAN | NẮM GIỮ | THEO DÕI
   upside?: number | null // %
+  localSlug?: string | null
+  score?: number | null
+  classification?: string | null
 }
 
 /**
