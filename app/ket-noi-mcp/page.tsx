@@ -36,7 +36,7 @@ import {
 type Platform = 'claude' | 'chatgpt' | 'gemini' | 'grok'
 
 const CONNECT_INFO = {
-  name: 'Dữ Liệu Đầu Tư MCP',
+  name: 'dulieudautu.com',
   url: 'https://www.dulieudautu.com/mcp',
   auth: 'OAuth (RFC 7636 PKCE S256)',
   scope: '16 năm BCTC, Thuyết minh CAPEX & Lãi vay, Kế hoạch ĐHĐCĐ & Quỹ KTPL, Định giá RNAV',
@@ -883,7 +883,7 @@ export default function KetNoiMcpPage() {
                     <div className="space-y-1.5 flex-1">
                       <h3 className="font-bold text-white text-sm">Liên kết Tài khoản Google & Cấp quyền</h3>
                       <p className="text-xs text-[#9eacb9] leading-relaxed">
-                        Hộp thoại <em>Liên kết Tài khoản Google của bạn với Dữ Liệu Đầu Tư MCP</em> hiện ra. Kéo xuống cuối và bấm <strong>Đồng ý và tiếp tục</strong> để xác thực tài khoản.
+                        Hộp thoại <em>Liên kết Tài khoản Google của bạn với dulieudautu.com</em> hiện ra. Kéo xuống cuối và bấm <strong>Đồng ý và tiếp tục</strong> để xác thực tài khoản.
                       </p>
                     </div>
                   </div>
@@ -896,7 +896,7 @@ export default function KetNoiMcpPage() {
                     <div className="space-y-1.5 flex-1">
                       <h3 className="font-bold text-white text-sm">Lưu ứng dụng tùy chỉnh</h3>
                       <p className="text-xs text-[#9eacb9] leading-relaxed">
-                        Sau khi hoàn tất đăng nhập, hộp thoại <em>Lưu ứng dụng tùy chỉnh</em> hiện ra với tên ứng dụng là <strong>Dữ Liệu Đầu Tư MCP</strong>. Bấm nút <strong>Kết nối</strong>.
+                        Sau khi hoàn tất đăng nhập, hộp thoại <em>Lưu ứng dụng tùy chỉnh</em> hiện ra với tên ứng dụng là <strong>dulieudautu.com</strong>. Bấm nút <strong>Kết nối</strong>.
                       </p>
                     </div>
                   </div>
@@ -909,7 +909,7 @@ export default function KetNoiMcpPage() {
                     <div className="space-y-1.5 flex-1">
                       <h3 className="font-bold text-white text-sm">Kết nối thành công</h3>
                       <p className="text-xs text-[#9eacb9] leading-relaxed">
-                        Gemini sẽ hiển thị thông báo <em>"Dữ Liệu Đầu Tư MCP đã được kết nối và sẵn sàng để sử dụng"</em>. Ứng dụng hiện trong mục <strong>Ứng dụng tùy chỉnh</strong>. Bấm <strong>Thử ngay</strong> để bắt đầu.
+                        Gemini sẽ hiển thị thông báo <em>"dulieudautu.com đã được kết nối và sẵn sàng để sử dụng"</em>. Ứng dụng hiện trong mục <strong>Ứng dụng tùy chỉnh</strong>. Bấm <strong>Thử ngay</strong> để bắt đầu.
                       </p>
                     </div>
                   </div>
@@ -920,9 +920,9 @@ export default function KetNoiMcpPage() {
                       10
                     </span>
                     <div className="space-y-2 flex-1">
-                      <h3 className="font-bold text-white text-sm">Gọi Dữ Liệu Đầu Tư MCP trong khung chat Gemini</h3>
+                      <h3 className="font-bold text-white text-sm">Gọi dulieudautu.com trong khung chat Gemini</h3>
                       <p className="text-xs text-[#9eacb9] leading-relaxed">
-                        Trong khung chat của Gemini, gõ ký tự <code className="bg-white/10 px-1.5 py-0.5 rounded text-emerald-400 font-bold font-mono">@Dulieudautu</code> (hoặc gõ <code className="bg-white/10 px-1.5 py-0.5 rounded text-emerald-400 font-bold font-mono">@</code> rồi chọn tên ứng dụng), sau đó đặt câu hỏi:
+                        Trong khung chat của Gemini, gõ ký tự <code className="bg-white/10 px-1.5 py-0.5 rounded text-emerald-400 font-bold font-mono">@dulieudautu.com</code> (hoặc gõ <code className="bg-white/10 px-1.5 py-0.5 rounded text-emerald-400 font-bold font-mono">@</code> rồi chọn tên ứng dụng), sau đó đặt câu hỏi:
                       </p>
                       <div className="rounded-xl border border-white/10 bg-black/40 p-3 font-mono text-xs text-emerald-300">
                         @Dulieudautu Bóc tách nợ vay ngắn hạn, nợ dài hạn và chi phí lãi vay của HPG

@@ -37,7 +37,7 @@ const reports = reportsData as ReportItem[]
 
 export function createDulieudautuMcpServer() {
   const server = new McpServer({
-    name: 'Dữ Liệu Đầu Tư (dulieudautu.com)',
+    name: 'dulieudautu.com',
     version: '1.1.0',
   })
 
