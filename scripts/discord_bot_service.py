@@ -54,8 +54,38 @@ except Exception:
 HEADERS = get_browser_headers()
 
 SCAN_LOCK = threading.Lock()
-AUTO_SCAN_ENABLED = True
-AUTO_SCAN_INTERVAL = 600 # 10 phút mặc định (600s)
+SCAN_CONFIG_FILE = os.path.join(DATA_DIR, "scan_config.json")
+
+def load_scan_config():
+    default_cfg = {
+        "auto_scan_enabled": True,
+        "custom_interval_min": None
+    }
+    if os.path.exists(SCAN_CONFIG_FILE):
+        try:
+            with open(SCAN_CONFIG_FILE, "r", encoding="utf-8") as f:
+                data = json.load(f)
+                return {**default_cfg, **data}
+        except:
+            pass
+    return default_cfg
+
+def save_scan_config(enabled, custom_interval_min):
+    try:
+        cfg = {
+            "auto_scan_enabled": bool(enabled),
+            "custom_interval_min": custom_interval_min,
+            "updated_at": datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+        }
+        with open(SCAN_CONFIG_FILE, "w", encoding="utf-8") as f:
+            json.dump(cfg, f, ensure_ascii=False, indent=2)
+    except:
+        pass
+
+_init_cfg = load_scan_config()
+AUTO_SCAN_ENABLED = _init_cfg.get("auto_scan_enabled", True)
+CUSTOM_SCAN_INTERVAL_MIN = _init_cfg.get("custom_interval_min", None)
+AUTO_SCAN_INTERVAL = (CUSTOM_SCAN_INTERVAL_MIN * 60) if (CUSTOM_SCAN_INTERVAL_MIN and CUSTOM_SCAN_INTERVAL_MIN > 0) else 600
 LAST_AUTO_SCAN_TIME = 0
 NEXT_AUTO_SCAN_TIME = 0
 
@@ -890,14 +920,34 @@ def send_discord_alert(alert_payload):
     except:
         return False
 
-def get_current_scan_interval():
+def get_current_scan_interval_sec():
+    global CUSTOM_SCAN_INTERVAL_MIN
+    if CUSTOM_SCAN_INTERVAL_MIN is not None and CUSTOM_SCAN_INTERVAL_MIN > 0:
+        return CUSTOM_SCAN_INTERVAL_MIN * 60
     now_vn = datetime.datetime.now()
+    # Thứ 7 (5), Chủ Nhật (6)
+    if now_vn.weekday() in [5, 6]:
+        return 60 * 60 # 60 phút/lần vào cuối tuần
     cur_min = now_vn.hour * 60 + now_vn.minute
-    # Sau 15:30: 30 phút/lần (1800s)
     if cur_min >= 15 * 60 + 30:
-        return 30 * 60
-    # Trước 15:30: 10 phút/lần (600s)
-    return 10 * 60
+        return 30 * 60 # 30 phút/lần sau giờ GD
+    return 10 * 60 # 10 phút/lần trong giờ GD
+
+def get_current_scan_interval():
+    return get_current_scan_interval_sec()
+
+def get_scan_schedule_desc():
+    global CUSTOM_SCAN_INTERVAL_MIN
+    if CUSTOM_SCAN_INTERVAL_MIN is not None and CUSTOM_SCAN_INTERVAL_MIN > 0:
+        return f"Tùy chỉnh thủ công (`{CUSTOM_SCAN_INTERVAL_MIN} phút/lần`)"
+    now_vn = datetime.datetime.now()
+    if now_vn.weekday() in [5, 6]:
+        day_name = "Thứ Bảy" if now_vn.weekday() == 5 else "Chủ Nhật"
+        return f"Chế độ cuối tuần `{day_name}` (60 phút/lần)"
+    cur_min = now_vn.hour * 60 + now_vn.minute
+    if cur_min >= 15 * 60 + 30:
+        return "Lịch sau giờ giao dịch (30 phút/lần)"
+    return "Lịch trong giờ giao dịch (10 phút/lần)"
 
 def send_silent_ping(remaining_count, elapsed_sec, new_count=0):
     """Gửi nhịp đập trạng thái của máy tính ở nhà (không chuông, không rung điện thoại)"""
@@ -905,13 +955,13 @@ def send_silent_ping(remaining_count, elapsed_sec, new_count=0):
     if not webhook_url:
         return
     now_vn = datetime.datetime.now()
-    cur_min = now_vn.hour * 60 + now_vn.minute
-    interval_min = 30 if cur_min >= 15 * 60 + 30 else 10
+    interval_min = get_current_scan_interval_sec() // 60
+    sched_desc = get_scan_schedule_desc()
     now_str = now_vn.strftime("%H:%M")
     if new_count > 0:
         content = f"🔥 `[{now_str}]` **Máy tính ở nhà:** Phát hiện **{new_count} BCTC MỚI**! Đã gửi thông báo chi tiết."
     else:
-        content = f"🟢 `[{now_str}]` **Máy tính ở nhà hoạt động bình thường** • Đã quét **{remaining_count} mã** ({elapsed_sec}s, chu kỳ {interval_min}p) • Chưa có BCTC mới."
+        content = f"🟢 `[{now_str}]` **Máy tính ở nhà hoạt động bình thường** • Đã quét **{remaining_count} mã** ({elapsed_sec}s, chu kỳ {interval_min}p - {sched_desc}) • Chưa có BCTC mới."
     payload = {
         "content": content,
         "flags": 4096 # SUPPRESS_NOTIFICATIONS
@@ -1036,26 +1086,27 @@ def execute_remote_scan(reply_func=None):
 
 def auto_monitor_worker():
     global LAST_AUTO_SCAN_TIME, NEXT_AUTO_SCAN_TIME
-    time.sleep(15)  # Chờ 15s sau khi bot khởi động
+    time.sleep(10)  # Chờ 10s sau khi bot khởi động
     while True:
         try:
             if AUTO_SCAN_ENABLED:
-                interval_sec = get_current_scan_interval()
+                interval_sec = get_current_scan_interval_sec()
                 NEXT_AUTO_SCAN_TIME = time.time() + interval_sec
-                print(f"[AUTO-MONITOR] Bắt đầu lượt quét ngầm tự động (chu kỳ {interval_sec//60}p)...")
+                sched_desc = get_scan_schedule_desc()
+                print(f"[AUTO-MONITOR] Bắt đầu lượt quét ngầm tự động (chu kỳ {interval_sec//60}p - {sched_desc})...")
                 execute_remote_scan(reply_func=None)
                 LAST_AUTO_SCAN_TIME = time.time()
                 print(f"[AUTO-MONITOR] Hoàn tất lượt quét lúc {datetime.datetime.now().strftime('%H:%M:%S')}. Lượt kế tiếp sau {interval_sec//60} phút.")
         except Exception as e:
             print("[AUTO-MONITOR Error]:", e)
 
-        interval_sec = get_current_scan_interval()
+        interval_sec = get_current_scan_interval_sec()
         for _ in range(interval_sec):
             if not AUTO_SCAN_ENABLED:
                 break
             time.sleep(1)
         if not AUTO_SCAN_ENABLED:
-            time.sleep(5)
+            time.sleep(3)
 
 def execute_remote_check_ticker(ticker, reply_func):
     info = get_company_info(ticker)
@@ -1107,8 +1158,24 @@ def execute_remote_check_ticker(ticker, reply_func):
         reply_func(f"❄️ **[{ticker}] ({info['name']})** hiện **CHƯA CÓ** Báo cáo tài chính Quý 3/2026.")
 
 def handle_command(content, username, reply_func):
-    global AUTO_SCAN_ENABLED, AUTO_SCAN_INTERVAL
+    global AUTO_SCAN_ENABLED, AUTO_SCAN_INTERVAL, CUSTOM_SCAN_INTERVAL_MIN, NEXT_AUTO_SCAN_TIME
     cmd = strip_accents(content.strip().lower()).replace('đ', 'd').replace('Đ', 'd')
+
+    stop_words = [
+        'dung', '!dung', '/dung', 'tat', '!tat', '/tat', 'pause', '!pause', '/pause',
+        'stop', '!stop', '/stop', 'off', '!off', 'dung quet', 'tat quet', 'dung scan',
+        'tat scan', 'tam dung', 'tamdung', 'auto off', 'tat auto', 'auto tat', 'stop scan'
+    ]
+    resume_words = [
+        'bat', '!bat', '/bat', 'tiep', '!tiep', '/tiep', 'tiep tuc', 'resume', '!resume',
+        '/resume', 'start', '!start', '/start', 'on', '!on', 'bat quet', 'bat scan',
+        'auto on', 'bat auto', 'auto bat', 'start scan'
+    ]
+    interval_prefixes = [
+        'tan suat', '!tan suat', '/tan suat', 'chu ky', '!chu ky', '/chu ky',
+        'interval', '!interval', '/interval', 'auto', '!auto', '/auto',
+        'delay', '!delay', '/delay', 'dat chu ky', 'dat tan suat'
+    ]
 
     # 1. Trạng thái: status, stt, tt, ping
     if cmd in ['status', '!status', '/status', 'stt', 'tt', 'ping', '!ping']:
@@ -1116,48 +1183,114 @@ def handle_command(content, username, reply_func):
         total_comp = len(cache)
         hn_cnt = sum(1 for it in cache.values() if it.get('bctc_type') in ['HOP_NHAT', 'DAY_DU'])
         rieng_cnt = sum(1 for it in cache.values() if it.get('bctc_type') == 'RIENG')
-        now_str = datetime.datetime.now().strftime("%H:%M:%S %d/%m/%Y")
+        now_dt = datetime.datetime.now()
+        now_str = now_dt.strftime("%H:%M:%S %d/%m/%Y")
+        day_vn = ["Thứ Hai", "Thứ Ba", "Thứ Tư", "Thứ Năm", "Thứ Sáu", "Thứ Bảy", "Chủ Nhật"][now_dt.weekday()]
 
         next_sec = max(0, int(NEXT_AUTO_SCAN_TIME - time.time())) if AUTO_SCAN_ENABLED and NEXT_AUTO_SCAN_TIME > 0 else 0
         next_m = next_sec // 60
         next_s = next_sec % 60
-        cur_int = get_current_scan_interval()
-        auto_info = f"🟢 Đang bật (tự quét mỗi {cur_int//60}p - lượt tới sau {next_m}m{next_s}s)" if AUTO_SCAN_ENABLED else "⚪ Đang tắt"
+        cur_int_sec = get_current_scan_interval_sec()
+        cur_int_min = cur_int_sec // 60
+        sched_desc = get_scan_schedule_desc()
+
+        if AUTO_SCAN_ENABLED:
+            auto_info = f"🟢 Đang BẬT ({cur_int_min}p/lần - {sched_desc})\n  • Lượt quét kế tiếp: sau **{next_m}m{next_s}s**"
+        else:
+            auto_info = "🛑 Đang TẠM DỪNG (Tắt bởi lệnh người dùng)"
 
         fpts_status = FPTS_BREAKER.get_status_str()
         vts_status = VIETSTOCK_BREAKER.get_status_str()
 
         msg = (
-            f"🟢 **STOCK RADAR PRO - TRẠNG THÁI MÁY TÍNH Ở NHÀ**\n"
-            f"• **Thời gian:** `{now_str}`\n"
-            f"• **Tình trạng máy:** Đang trực tuyến & Giám sát 24/7\n"
+            f"🟢 **STOCK RADAR PRO - TRẠNG THÁI HỆ THỐNG**\n"
+            f"• **Thời gian:** `{day_vn}, {now_str}`\n"
             f"• **Tự động quét ngầm:** {auto_info}\n"
             f"• **Tổng số mã đã ra BCTC:** `{total_comp} mã` (🟢 {hn_cnt} Hợp nhất / 🟡 {rieng_cnt} Riêng)\n"
-            f"• **Hệ thống chống chặn IP:** Hoạt động (WAF Protection)\n"
+            f"• **Hạ tầng chống chặn IP:**\n"
             f"  + Vietstock Gateway: {vts_status}\n"
             f"  + FPTS EzIR Gateway: {fpts_status}\n\n"
-            f"👉 Nhắn `scan` để ép quét ngay lập tức.\n"
-            f"👉 Nhắn `auto 5` hoặc `auto 10` để đổi chu kỳ tự quét.\n"
-            f"👉 Nhắn mã cổ phiếu (ví dụ: `BMP`, `HPG`) để tra cứu riêng 1 mã."
+            f"🕹️ **LỆNH ĐIỀU KHIỂN NHANH:**\n"
+            f"• `dung` hoặc `pause`: Tạm dừng quét ngầm\n"
+            f"• `bat` hoặc `resume`: Tiếp tục quét ngầm\n"
+            f"• `tan suat 60` (hoặc `chu ky 2h`): Đổi tần suất quét\n"
+            f"• `tan suat mac dinh`: Khôi phục lịch tự động theo ngày/giờ\n"
+            f"• `scan`: Ép quét ngay lập tức"
         )
         reply_func(msg)
 
-    # 1.1 Quản lý tự động quét ngầm: auto on, auto off, auto 5, auto 10
-    elif cmd in ['auto on', 'bat auto', 'auto bat']:
-        AUTO_SCAN_ENABLED = True
-        reply_func(f"🟢 **ĐÃ BẬT TỰ ĐỘNG GIÁM SÁT NGẦM!**\n• Máy tính sẽ tự động quét danh mục mỗi `{AUTO_SCAN_INTERVAL//60} phút`.\n• Có BCTC mới sẽ lập tức phát cảnh báo lên Discord.")
-
-    elif cmd in ['auto off', 'tat auto', 'auto tat']:
+    # 1.1 Tạm dừng quét ngầm
+    elif cmd in stop_words:
         AUTO_SCAN_ENABLED = False
-        reply_func("⚪ **ĐÃ TẮT TỰ ĐỘNG GIÁM SÁT NGẦM!**\n• Bot sẽ chỉ quét khi bạn nhắn lệnh `scan` từ điện thoại.")
+        save_scan_config(AUTO_SCAN_ENABLED, CUSTOM_SCAN_INTERVAL_MIN)
+        reply_func(
+            "🛑 **ĐÃ TẠM DỪNG TỰ ĐỘNG QUÉT NGẦM!**\n"
+            "• Máy tính ở nhà sẽ tạm ngừng các đợt quét tự động.\n"
+            "• Bạn vẫn có thể nhắn `scan` để quét thủ công 1 lần bất kỳ lúc nào.\n"
+            "• Để kích hoạt lại: chỉ cần nhắn `bat` hoặc `resume`."
+        )
 
-    elif cmd.startswith('auto ') and any(c.isdigit() for c in cmd):
-        nums = re.findall(r'\d+', cmd)
-        if nums:
-            mins = max(1, min(120, int(nums[0])))
-            AUTO_SCAN_INTERVAL = mins * 60
-            AUTO_SCAN_ENABLED = True
-            reply_func(f"⏱️ **ĐÃ ĐẶT CHU KỲ TỰ QUÉT LÀ `{mins} PHÚT/LẦN`!**\n• Chế độ tự động giám sát ngầm đang hoạt động.")
+    # 1.2 Bật lại tự động quét ngầm
+    elif cmd in resume_words:
+        AUTO_SCAN_ENABLED = True
+        save_scan_config(AUTO_SCAN_ENABLED, CUSTOM_SCAN_INTERVAL_MIN)
+        cur_min = get_current_scan_interval_sec() // 60
+        sched_desc = get_scan_schedule_desc()
+        NEXT_AUTO_SCAN_TIME = time.time() + (cur_min * 60)
+        reply_func(
+            f"🟢 **ĐÃ BẬT LẠI TỰ ĐỘNG GIÁM SÁT NGẦM!**\n"
+            f"• Tần suất hiện tại: **{cur_min} phút/lần** ({sched_desc}).\n"
+            f"• Có BCTC mới sẽ lập tức phát cảnh báo lên Discord.\n"
+            f"• Nhắn `tan suat <số phút>` (VD: `tan suat 60`) nếu muốn đổi chu kỳ."
+        )
+
+    # 1.3 Điều chỉnh tần suất / chu kỳ quét
+    elif any(cmd.startswith(pfx) for pfx in interval_prefixes):
+        if any(k in cmd for k in ['mac dinh', 'reset', 'auto auto']):
+            CUSTOM_SCAN_INTERVAL_MIN = None
+            save_scan_config(AUTO_SCAN_ENABLED, CUSTOM_SCAN_INTERVAL_MIN)
+            cur_sec = get_current_scan_interval_sec()
+            sched_desc = get_scan_schedule_desc()
+            reply_func(
+                f"🔄 **ĐÃ KHÔI PHỤC LỊCH QUÉT MẶC ĐỊNH THEO THỊ TRƯỜNG!**\n"
+                f"• Chế độ áp dụng: **{sched_desc}** (`{cur_sec//60} phút/lần`).\n"
+                f"• Thứ Bảy & Chủ Nhật: 60 phút/lần.\n"
+                f"• Ngày làm việc: 10 phút/lần (trong giờ GD), 30 phút/lần (sau 15:30)."
+            )
+        else:
+            # Tìm giờ hoặc phút
+            m_hour = re.search(r'(\d+)\s*(?:h|gio|tieng)', cmd)
+            if m_hour:
+                mins = int(m_hour.group(1)) * 60
+            else:
+                nums = re.findall(r'\d+', cmd)
+                mins = int(nums[0]) if nums else None
+
+            if mins and mins > 0:
+                mins = max(1, min(720, mins)) # Giới hạn từ 1p đến 12 tiếng
+                CUSTOM_SCAN_INTERVAL_MIN = mins
+                AUTO_SCAN_ENABLED = True
+                AUTO_SCAN_INTERVAL = mins * 60
+                NEXT_AUTO_SCAN_TIME = time.time() + (mins * 60)
+                save_scan_config(AUTO_SCAN_ENABLED, CUSTOM_SCAN_INTERVAL_MIN)
+                reply_func(
+                    f"⏱️ **ĐÃ ĐẶT TẦN SUẤT TỰ QUÉT: `{mins} PHÚT/LẦN`!**\n"
+                    f"• Chế độ tự động quét ngầm: 🟢 Đang BẬT.\n"
+                    f"• Lượt quét kế tiếp: sau **{mins} phút** nữa.\n"
+                    f"• Để quay lại lịch mặc định theo giờ: gõ `tan suat mac dinh` hoặc `auto reset`."
+                )
+            else:
+                cur_min = get_current_scan_interval_sec() // 60
+                sched_desc = get_scan_schedule_desc()
+                reply_func(
+                    f"ℹ️ **CẤU HÌNH TẦN SUẤT QUÉT HIỆN TẠI:**\n"
+                    f"• Chu kỳ đang chạy: **{cur_min} phút/lần** ({sched_desc}).\n\n"
+                    f"👉 **Cú pháp đổi tần suất:**\n"
+                    f"• `tan suat 30`: Đặt 30 phút/lần\n"
+                    f"• `tan suat 60` (hoặc `chu ky 60`, `auto 60`): Đặt 60 phút/lần\n"
+                    f"• `tan suat 2h`: Đặt 2 tiếng/lần\n"
+                    f"• `tan suat mac dinh`: Khôi phục lịch tự động"
+                )
 
     # 2. Quét: scan, quet
     elif cmd in ['scan', '!scan', '/scan', 'quet', '!quet', '/quet']:
@@ -1214,15 +1347,15 @@ def handle_command(content, username, reply_func):
     elif cmd in ['help', '!help', '/help', 'huongdan', 'huong dan', 'lenh', 'cac lenh', 'danh sach lenh', 'ds lenh', 'menu', 'tro giup', '?']:
         msg = (
             f"📋 **DANH SÁCH LỆNH ĐIỀU KHIỂN TỪ ĐIỆN THOẠI:**\n"
-            f"• `status` hoặc `stt`: Kiểm tra tình trạng máy tính, chu kỳ quét & số mã đã ra BCTC.\n"
-            f"• `scan` hoặc `quet`: Ép máy tính quét toàn bộ danh mục ngay lập tức.\n"
-            f"• `check <MÃ>` hoặc nhắn mã 3 chữ cái (VD: `NT2`, `BMP`, `HPG`): Tra cứu ngay BCTC của mã đó.\n"
-            f"• `bo qua <MÃ>` (VD: `bo qua ICN, SPB`): Bỏ qua tài liệu nhận nhầm và tự động quét tiếp.\n"
-            f"• `auto 5` hoặc `auto 10`: Đổi chu kỳ tự động quét ngầm (phút).\n"
-            f"• `auto on` / `auto off`: Bật hoặc tắt tự động quét ngầm.\n"
-            f"• `tat may` / `shutdown`: Tắt máy tính ở nhà từ xa.\n"
-            f"• `lenh` / `help`: Xem lại danh sách hướng dẫn này."
-
+            f"• `status` hoặc `stt`: Kiểm tra trạng thái máy, chu kỳ quét & số mã đã ra BCTC.\n"
+            f"• `dung` hoặc `pause`: Tạm dừng quét ngầm (dùng khi cuối tuần hoặc không muốn quét).\n"
+            f"• `bat` hoặc `resume`: Bật lại tự động quét ngầm.\n"
+            f"• `tan suat <X>` (VD: `tan suat 60`, `chu ky 2h`, `auto 30`): Sửa chu kỳ quét.\n"
+            f"• `tan suat mac dinh`: Khôi phục chu kỳ tự động (cuối tuần 60p, ngày thường 10p/30p).\n"
+            f"• `scan` hoặc `quet`: Ép quét toàn bộ danh mục ngay lập tức.\n"
+            f"• `check <MÃ>` hoặc gõ mã 3 chữ cái (VD: `VGG`, `BMP`): Tra cứu ngay BCTC 1 mã.\n"
+            f"• `bo qua <MÃ>`: Bỏ qua tài liệu nhận nhầm và tự động quét tiếp.\n"
+            f"• `tat may` / `shutdown`: Tắt máy tính ở nhà từ xa."
         )
         reply_func(msg)
 
