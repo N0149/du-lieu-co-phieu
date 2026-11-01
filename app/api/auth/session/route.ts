@@ -1,15 +1,11 @@
 // ─────────────────────────────────────────────────────────────────────────────
-// app/api/auth/session/route.ts — API session (bản demo/dev)
+// app/api/auth/session/route.ts — API session an toàn
 //
 //   GET  /api/auth/session  → { user, access }      (đọc session hiện tại)
-//   POST /api/auth/session  → body { action, email?, name? }
-//       action: 'start_trial'  → tạo tài khoản dùng thử 7 ngày (set cookie)
-//               'activate'     → nâng cấp tài khoản hiện tại thành VIP (cho chủ sở hữu)
+//   POST /api/auth/session  → body { action, email?, name?, secretKey? }
+//       action: 'start_trial'  → tạo tài khoản dùng thử 7 ngày (set signed cookie)
+//               'activate'     → nâng cấp tài khoản thành VIP (CHỈ Quản trị viên được phép)
 //               'logout'       → xóa session
-//
-// ⚠️ ĐÂY LÀ CƠ CHẾ DEMO — khi tích hợp auth backend thật (Supabase/Firebase/custom),
-//    hãy thay POST này bằng luồng đăng nhập thật và chỉ ghi cookie sau khi xác
-//    thực danh tính. `activate` chỉ dành cho admin (sau khi nhận chuyển khoản).
 // ─────────────────────────────────────────────────────────────────────────────
 
 import { NextResponse } from 'next/server'
@@ -24,6 +20,8 @@ import {
   setSessionCookie,
   clearSessionCookie,
 } from '@/lib/session'
+import { isAdminEmail } from '@/lib/admin-auth'
+import { createClient as createSupabaseServerClient } from '@/lib/supabase/server'
 
 export const dynamic = 'force-dynamic'
 
@@ -48,6 +46,7 @@ type SessionBody = {
   action?: string
   email?: string
   name?: string
+  secretKey?: string
 }
 
 /** Xử lý các hành động bắt đầu dùng thử / kích hoạt VIP / đăng xuất. */
@@ -85,8 +84,37 @@ export async function POST(request: Request) {
     return NextResponse.json({ user, access })
   }
 
-  // ── Nâng cấp tài khoản hiện tại thành VIP (admin kích hoạt sau chuyển khoản) ──
+  // ── Nâng cấp tài khoản hiện tại thành VIP (BẢO MẬT: Chỉ Admin được phép) ──
   if (action === 'activate') {
+    // 1. Kiểm tra quyền Quản trị viên
+    let isCallerAdmin = false
+
+    // A. Kiểm tra qua Supabase Session đăng nhập
+    try {
+      const supabase = await createSupabaseServerClient()
+      if (supabase) {
+        const { data: { user: sbUser } } = await supabase.auth.getUser()
+        if (sbUser?.email && isAdminEmail(sbUser.email)) {
+          isCallerAdmin = true
+        }
+      }
+    } catch {}
+
+    // B. Kiểm tra qua Secret Key bí mật (Admin API Key hoặc Cron Secret)
+    const adminKey = typeof body.secretKey === 'string' ? body.secretKey.trim() : ''
+    const validSecret = process.env.ADMIN_ACTIVATION_KEY || process.env.CRON_SECRET
+    if (validSecret && validSecret.length >= 16 && adminKey === validSecret) {
+      isCallerAdmin = true
+    }
+
+    if (!isCallerAdmin) {
+      console.warn('[Security /api/auth/session] Từ chối yêu cầu kích hoạt VIP không có quyền Admin!')
+      return NextResponse.json(
+        { error: 'FORBIDDEN', message: 'Hành động kích hoạt VIP yêu cầu quyền Quản trị viên.' },
+        { status: 403 },
+      )
+    }
+
     const current = await getCurrentUser()
     if (!current) {
       return NextResponse.json(

@@ -7,29 +7,81 @@
 // ─────────────────────────────────────────────────────────────────────────────
 
 import { cookies } from 'next/headers'
+import crypto from 'node:crypto'
 import { SESSION_COOKIE_NAME, type UserProfile } from '@/lib/auth-check'
 
 /** Cookie tồn tại tối đa 30 ngày (đủ cho 7 ngày dùng thử + thời gian gia hạn). */
 const SESSION_MAX_AGE = 60 * 60 * 24 * 30 // 30 ngày (giây)
 
+const SESSION_SECRET =
+  process.env.SESSION_SECRET ||
+  process.env.SUPABASE_JWT_SECRET ||
+  'dulieudautu-session-secret-salt-2026'
+
 /**
- * Parse chuỗi JSON trong cookie → `UserProfile`.
- * Trả `null` khi: cookie rỗng, JSON lỗi, hoặc thiếu các trường bắt buộc
- * (`id`, `email`, `status`). Giá trị thừa sẽ được lọc bớt để giữ payload an toàn.
+ * Ký dữ liệu session bằng HMAC SHA256 chống giả mạo
+ */
+export function signSessionPayload(payload: string): string {
+  const b64 = Buffer.from(payload, 'utf8').toString('base64url')
+  const sig = crypto.createHmac('sha256', SESSION_SECRET).update(b64).digest('base64url')
+  return `s_${b64}.${sig}`
+}
+
+/**
+ * Xác thực chữ ký HMAC và giải mã payload
+ */
+export function verifySessionSignature(raw: string): string | null {
+  if (!raw || !raw.startsWith('s_')) return null
+  const content = raw.slice(2)
+  const parts = content.split('.')
+  if (parts.length !== 2) return null
+  const [b64, sig] = parts
+  const expectedSig = crypto.createHmac('sha256', SESSION_SECRET).update(b64).digest('base64url')
+  if (sig !== expectedSig) return null
+  try {
+    return Buffer.from(b64, 'base64url').toString('utf8')
+  } catch {
+    return null
+  }
+}
+
+/**
+ * Parse chuỗi trong cookie → `UserProfile`.
+ * - Hỗ trợ chuỗi đã ký số HMAC `s_<base64>.<sig>`.
+ * - Tương thích ngược có chọn lọc với chuỗi JSON thô: KHÔNG chấp nhận quyền 'active' chưa ký số để chống giả mạo VIP.
  */
 export function parseUserProfile(raw: string | undefined): UserProfile | null {
   if (!raw) return null
 
-  try {
-    const parsed = JSON.parse(raw) as Partial<UserProfile>
+  let jsonStr: string | null = null
 
-    const status = parsed.status
+  if (raw.startsWith('s_')) {
+    jsonStr = verifySessionSignature(raw)
+    if (!jsonStr) {
+      console.warn('[Session] Chữ ký HMAC session cookie không hợp lệ hoặc đã bị can thiệp!')
+      return null
+    }
+  } else {
+    // Cookie JSON thô cũ (chưa ký)
+    jsonStr = raw
+  }
+
+  try {
+    const parsed = JSON.parse(jsonStr) as Partial<UserProfile>
+
+    let status = parsed.status
     if (
       typeof parsed.id !== 'string' ||
       typeof parsed.email !== 'string' ||
       (status !== 'active' && status !== 'trial' && status !== 'inactive')
     ) {
       return null
+    }
+
+    // Nếu là cookie cũ chưa ký số mà khai báo 'active' (VIP) -> ép về 'trial' để chống giả mạo
+    if (!raw.startsWith('s_') && status === 'active') {
+      console.warn(`[Session] Phát hiện cookie chưa ký số yêu cầu quyền active: ${parsed.email}. Hạ cấp về trial.`)
+      status = 'trial'
     }
 
     return {
@@ -66,7 +118,8 @@ export async function getCurrentUser(): Promise<UserProfile | null> {
  */
 export async function setSessionCookie(user: UserProfile): Promise<void> {
   const cookieStore = await cookies()
-  cookieStore.set(SESSION_COOKIE_NAME, JSON.stringify(user), {
+  const signed = signSessionPayload(JSON.stringify(user))
+  cookieStore.set(SESSION_COOKIE_NAME, signed, {
     path: '/',
     httpOnly: true, // client-side JS không đọc được → chống giả mạo qua XSS
     sameSite: 'lax',

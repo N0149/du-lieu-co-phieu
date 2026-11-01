@@ -27,6 +27,7 @@ __pycache__/
 dist/
 build/
 *.spec
+scripts/customs_etl/data_raw/
 
 # Large SQLite databases & local caches
 data/*.db

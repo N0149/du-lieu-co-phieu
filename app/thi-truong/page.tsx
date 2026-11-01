@@ -9,7 +9,7 @@ import { getCtckFullData } from '@/lib/ctck-service'
 
 // Tối ưu hóa bộ nhớ đệm CDN Edge Vercel (ISR) 60 giây:
 // Giúp trang tải tức thì < 50ms cho người dùng, tự động cập nhật nền định kỳ 1 phút
-export const revalidate = 60
+export const revalidate = 900 // 15 phút (giảm tải ISR writes)
 
 export const metadata: Metadata = {
   title: 'Thị Trường Tài Chính, Định Giá & Dư Nợ Margin CTCK | Dữ Liệu Đầu Tư',

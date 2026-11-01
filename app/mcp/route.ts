@@ -11,6 +11,7 @@ import {
   verifyAccessToken,
   MCP_CORS_HEADERS,
 } from '@/lib/mcp/oauth'
+import { checkMcpDailyLimit } from '@/lib/rate-limiter'
 
 export const dynamic = 'force-dynamic'
 export const maxDuration = 60
@@ -119,6 +120,30 @@ export async function POST(req: NextRequest) {
         ...MCP_CORS_HEADERS,
       },
     })
+  }
+
+  // Kiểm tra hạn mức 40 câu hỏi / ngày cho tài khoản MCP miễn phí
+  const isVip = authPayload.scope?.includes('vip') || false
+  const limitCheck = await checkMcpDailyLimit(authPayload.userId || authPayload.email, isVip)
+  if (!limitCheck.success) {
+    return new NextResponse(
+      JSON.stringify({
+        jsonrpc: '2.0',
+        error: {
+          code: -32000,
+          message:
+            'Tài khoản miễn phí đã đạt giới hạn tối đa 40 câu hỏi tra cứu MCP mỗi ngày. Vui lòng quay lại vào ngày mai!',
+        },
+      }),
+      {
+        status: 429,
+        headers: {
+          'Content-Type': 'application/json',
+          'Retry-After': String(limitCheck.reset),
+          ...MCP_CORS_HEADERS,
+        },
+      }
+    )
   }
 
   try {

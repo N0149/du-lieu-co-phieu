@@ -5,4 +5,9 @@ data/notes-cache/
 data/*.db
 data/**/*.db
 scripts/
-
+build/
+dist/
+*.py
+*.bat
+*.vbs
+*.spec

@@ -39,7 +39,7 @@ export async function GET() {
     if (!isAdminEmail(user.email)) {
       return NextResponse.json(
         {
-          error: `Tài khoản ${user.email} không có quyền truy cập trang quản trị. Chỉ trungnhat232@gmail.com mới có quyền này.`,
+          error: `Tài khoản ${user.email} không có quyền truy cập trang quản trị.`,
         },
         { status: 403 }
       )

@@ -5,6 +5,10 @@ const MCP_SECRET =
   process.env.SUPABASE_JWT_SECRET ||
   'dulieudautu-mcp-secret-key-production-2026'
 
+if (process.env.NODE_ENV === 'production' && !process.env.MCP_AUTH_SECRET && !process.env.SUPABASE_JWT_SECRET) {
+  console.warn('[Security Warning] Cần cấu hình biến môi trường MCP_AUTH_SECRET trên Production!')
+}
+
 export interface RegisteredClient {
   client_id: string
   client_name: string
@@ -166,6 +170,10 @@ export function createRefreshToken(userId: string, email: string): string {
   return `mcp_rt_${b64}.${sig}`
 }
 
+/**
+ * Xác thực Access Token cho giao thức MCP
+ * BẢO MẬT: Bắt buộc phải có định dạng mcp_at_<b64>.<hmac> và chữ ký hợp lệ
+ */
 export function verifyAccessToken(token: string): TokenPayload | null {
   try {
     let clean = token.trim()
@@ -173,15 +181,32 @@ export function verifyAccessToken(token: string): TokenPayload | null {
       clean = clean.slice(7).trim()
     }
     if (!clean.startsWith('mcp_at_')) {
-      // Cho phép token dạng test/guest hoặc session token
-      if (clean === 'test' || clean.length >= 20) {
-        return {
-          userId: 'guest_user',
-          email: 'guest@dulieudautu.com',
-          scope: 'mcp',
-          exp: Date.now() + 24 * 60 * 60 * 1000,
-        }
-      }
+      return null
+    }
+    const raw = clean.slice(7)
+    const [b64, sig] = raw.split('.')
+    if (!b64 || !sig) return null
+    const expectedSig = crypto.createHmac('sha256', MCP_SECRET).update(b64).digest('base64url')
+    if (sig !== expectedSig) return null
+    const json = Buffer.from(b64, 'base64url').toString('utf8')
+    const payload = JSON.parse(json) as TokenPayload
+    if (Date.now() > payload.exp) return null
+    return payload
+  } catch {
+    return null
+  }
+}
+
+/**
+ * Xác thực Refresh Token cho giao thức MCP
+ */
+export function verifyRefreshToken(token: string): TokenPayload | null {
+  try {
+    let clean = token.trim()
+    if (clean.toLowerCase().startsWith('bearer ')) {
+      clean = clean.slice(7).trim()
+    }
+    if (!clean.startsWith('mcp_rt_')) {
       return null
     }
     const raw = clean.slice(7)

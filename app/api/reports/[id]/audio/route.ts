@@ -1,4 +1,5 @@
-import { NextResponse } from "next/server";
+import { NextRequest, NextResponse } from "next/server";
+import { getClientIp, checkInMemoryRateLimit, isSameOriginOrDirect } from "@/lib/security";
 
 // Chạy động — tạo audio mới mỗi request (có cache HTTP để tái sử dụng).
 export const dynamic = "force-dynamic";
@@ -243,10 +244,33 @@ function parseMp3Duration(data: Uint8Array): number {
  * tách câu → fetch MP3 song song (batch 8) → ghép → trả audio/mpeg.
  */
 export async function GET(
-  _request: Request,
+  request: NextRequest,
   { params }: { params: Promise<{ id: string }> },
 ) {
   const { id } = await params;
+  const ip = getClientIp(request.headers);
+  const host = request.headers.get("host");
+
+  // 1. Chống Hotlinking từ website bên ngoài
+  if (!isSameOriginOrDirect(request.headers, host)) {
+    return NextResponse.json(
+      { error: "Truy cập tài nguyên trực tiếp từ nguồn ngoài bị từ chối." },
+      { status: 403 }
+    );
+  }
+
+  // 2. Giới hạn tần suất tạo Audio TTS (tối đa 20 lượt / phút / IP)
+  const limiter = checkInMemoryRateLimit(`rl:audio:${ip}`, {
+    windowMs: 60_000,
+    max: 20,
+  });
+
+  if (!limiter.success) {
+    return NextResponse.json(
+      { error: "Tần suất yêu cầu âm thanh quá nhanh. Vui lòng chờ 1 phút." },
+      { status: 429, headers: { "Retry-After": "60", "X-Robots-Tag": "noindex" } }
+    );
+  }
 
   if (!id) {
     return NextResponse.json({ error: "Thiếu ID tài liệu." }, { status: 400 });

@@ -172,15 +172,14 @@ export async function POST(req: NextRequest) {
     if (!isByok) {
       const user = await getCurrentUser()
       const access = checkUserAccess(user)
-      const isMember =
-        access.status === 'TRIAL_ACTIVE' || access.status === 'SUBSCRIPTION_ACTIVE'
+      const isVip = access.status === 'SUBSCRIPTION_ACTIVE' && user?.plan === 'vip'
 
       let identifier = `guest:${getClientIp(req.headers)}`
       if (user?.id) {
         identifier = `user:${user.id}`
       }
 
-      const rateLimit = await checkRateLimit(identifier, isMember)
+      const rateLimit = await checkRateLimit(identifier, isVip)
       rateLimitLimit = String(rateLimit.limit)
       rateLimitRemaining = String(rateLimit.remaining)
 
@@ -189,11 +188,11 @@ export async function POST(req: NextRequest) {
           {
             error: 'RATE_LIMIT_EXCEEDED',
             message:
-              'Bạn đã sử dụng hết hạn mức hỏi đáp AI miễn phí hôm nay từ hệ thống (Khách vãng lai: 5 lượt/ngày, Thành viên: 50 lượt/ngày). Hãy nhập Google Gemini API Key miễn phí của bạn để tiếp tục hỏi KHÔNG GIỚI HẠN!',
+              'Bạn đã sử dụng hết hạn mức 40 câu hỏi AI miễn phí hôm nay từ hệ thống. Hãy nhập Google Gemini API Key miễn phí của bạn để tiếp tục hỏi KHÔNG GIỚI HẠN!',
             limit: rateLimit.limit,
             remaining: 0,
             reset: rateLimit.reset,
-            isMember,
+            isVip,
             requiresByok: true,
           },
           {

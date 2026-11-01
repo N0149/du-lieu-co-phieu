@@ -7,7 +7,6 @@ import {
 } from '@/lib/news-service'
 
 export const dynamic = 'force-dynamic'
-export const revalidate = 180 // 3 minutes revalidation
 
 export async function GET(request: NextRequest) {
   try {

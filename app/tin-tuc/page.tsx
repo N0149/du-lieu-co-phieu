@@ -10,7 +10,7 @@ import { fetchLiveBctcAlerts } from '@/lib/bctc-alerts-service'
 import manifestRaw from '@/data/longlive_manifest.json'
 
 // Bộ nhớ đệm ISR 120 giây (2 phút) - Tin tức mới tự động polling nền client:
-export const revalidate = 120
+export const revalidate = 900 // 15 phút (tiết kiệm ISR writes, client vẫn tự động cập nhật)
 
 export const metadata: Metadata = {
   title: 'Tổng Hợp Tin Tức Thị Trường & Công Bố Doanh Nghiệp Mới Nhất',

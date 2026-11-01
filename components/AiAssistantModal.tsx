@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState, useCallback } from 'react'
 import { createPortal } from 'react-dom'
 import { marked } from 'marked'
+import DOMPurify from 'isomorphic-dompurify'
 import {
   Sparkles,
   X,
@@ -585,7 +586,7 @@ export function AiAssistantModal({
                       <div
                         className="space-y-2 text-xs sm:text-sm leading-relaxed [&>h1]:text-base [&>h1]:font-bold [&>h2]:text-sm [&>h2]:font-bold [&>h3]:text-xs sm:[&>h3]:text-sm [&>h3]:font-bold [&>h3]:text-primary [&>p]:leading-relaxed [&>ul]:list-disc [&>ul]:pl-4 [&>ul]:space-y-1 [&>ol]:list-decimal [&>ol]:pl-4 [&>ol]:space-y-1 [&>table]:w-full [&>table]:my-2 [&>table]:text-xs [&>th]:border [&>th]:border-border/60 [&>th]:bg-muted/40 [&>th]:px-2.5 [&>th]:py-1.5 [&>td]:border [&>td]:border-border/40 [&>td]:px-2.5 [&>td]:py-1.5 [&>hr]:my-3 [&>hr]:border-border/60 [&>strong]:font-semibold [&>strong]:text-foreground"
                         dangerouslySetInnerHTML={{
-                          __html: marked.parse(m.content || '', { gfm: true, breaks: true }) as string,
+                          __html: DOMPurify.sanitize(marked.parse(m.content || '', { gfm: true, breaks: true }) as string),
                         }}
                       />
                       {m.isStreaming && (

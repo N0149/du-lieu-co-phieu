@@ -4,6 +4,7 @@ import {
   verifyPkce,
   createAccessToken,
   createRefreshToken,
+  verifyRefreshToken,
   MCP_CORS_HEADERS,
 } from '@/lib/mcp/oauth'
 
@@ -89,15 +90,31 @@ export async function POST(req: NextRequest) {
     }
 
     if (grantType === 'refresh_token') {
-      // Cấp mới access_token từ refresh_token
-      const accessToken = createAccessToken('user_refreshed', 'user@dulieudautu.com')
+      if (!refreshToken) {
+        return NextResponse.json(
+          { error: 'invalid_request', error_description: 'Thiếu mã refresh_token' },
+          { status: 400, headers: MCP_CORS_HEADERS }
+        )
+      }
+
+      const tokenPayload = verifyRefreshToken(refreshToken)
+      if (!tokenPayload) {
+        return NextResponse.json(
+          { error: 'invalid_grant', error_description: 'Mã refresh_token không hợp lệ hoặc đã hết hạn' },
+          { status: 400, headers: MCP_CORS_HEADERS }
+        )
+      }
+
+      // Cấp mới access_token và refresh_token từ refresh_token hợp lệ
+      const accessToken = createAccessToken(tokenPayload.userId, tokenPayload.email)
+      const newRefreshToken = createRefreshToken(tokenPayload.userId, tokenPayload.email)
       return NextResponse.json(
         {
           access_token: accessToken,
           token_type: 'Bearer',
           expires_in: 30 * 24 * 60 * 60,
           scope: 'mcp',
-          refresh_token: refreshToken || createRefreshToken('user_refreshed', 'user@dulieudautu.com'),
+          refresh_token: newRefreshToken,
         },
         {
           status: 200,

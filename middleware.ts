@@ -28,15 +28,40 @@ export function middleware(request: NextRequest) {
   const userAgent = request.headers.get('user-agent') || ''
   const ip = getClientIp(request.headers)
 
-  // 0. Miễn trừ hoàn toàn cho các giao thức MCP và OAuth (Google Gemini, Claude, ChatGPT kết nối)
+  // 0. Xử lý các giao thức MCP và OAuth (Google Gemini, Claude, ChatGPT kết nối)
   if (
     pathname === '/mcp' ||
     pathname.startsWith('/mcp/') ||
     pathname === '/api/mcp' ||
-    pathname.startsWith('/api/mcp/') ||
-    pathname.startsWith('/oauth/') ||
-    pathname.startsWith('/.well-known/')
+    pathname.startsWith('/api/mcp/')
   ) {
+    const isLocalhost = ip === '127.0.0.1' || ip === '::1' || process.env.NODE_ENV !== 'production'
+    if (!isLocalhost) {
+      const mcpLimiter = checkInMemoryRateLimit(`rl:mcp:${ip}`, {
+        windowMs: 60_000,
+        max: 60,
+      })
+      if (!mcpLimiter.success) {
+        return new NextResponse(
+          JSON.stringify({
+            error: 'RATE_LIMIT_EXCEEDED',
+            message: 'Tần suất gửi yêu cầu tới MCP Server quá cao. Vui lòng thử lại sau 1 phút.',
+            retryAfter: mcpLimiter.reset,
+          }),
+          {
+            status: 429,
+            headers: {
+              'Content-Type': 'application/json; charset=utf-8',
+              'Retry-After': String(mcpLimiter.reset),
+            },
+          }
+        )
+      }
+    }
+    return NextResponse.next()
+  }
+
+  if (pathname.startsWith('/oauth/') || pathname.startsWith('/.well-known/')) {
     return NextResponse.next()
   }
 

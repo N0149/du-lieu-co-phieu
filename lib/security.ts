@@ -287,7 +287,7 @@ export function verifyApiOriginAccess(
         refUrl.host === host ||
         refUrl.hostname === host ||
         cleanRefHost === cleanHost ||
-        cleanRefHost.endsWith('dulieudautu.com') ||
+        (cleanRefHost === 'dulieudautu.com' || cleanRefHost.endsWith('.dulieudautu.com')) ||
         cleanHost.endsWith(cleanRefHost) ||
         cleanRefHost.endsWith(cleanHost) ||
         refUrl.hostname === 'localhost' ||
@@ -308,7 +308,7 @@ export function verifyApiOriginAccess(
         originUrl.host === host ||
         originUrl.hostname === host ||
         cleanOriginHost === cleanHost ||
-        cleanOriginHost.endsWith('dulieudautu.com') ||
+        (cleanOriginHost === 'dulieudautu.com' || cleanOriginHost.endsWith('.dulieudautu.com')) ||
         cleanHost.endsWith(cleanOriginHost) ||
         cleanOriginHost.endsWith(cleanHost) ||
         originUrl.hostname === 'localhost' ||
@@ -341,13 +341,13 @@ export function isSameOriginOrDirect(headers: Headers, host: string | null): boo
   const referer = headers.get('referer')
   if (referer) {
     if (cleanHost && referer.toLowerCase().includes(cleanHost)) return true
-    if (referer.includes('dulieudautu.com') || referer.includes('localhost') || referer.includes('127.0.0.1')) return true
+    if (referer.includes('://dulieudautu.com') || referer.includes('.dulieudautu.com') || referer.includes('localhost') || referer.includes('127.0.0.1')) return true
   }
 
   const origin = headers.get('origin')
   if (origin) {
     if (cleanHost && origin.toLowerCase().includes(cleanHost)) return true
-    if (origin.includes('dulieudautu.com') || origin.includes('localhost') || origin.includes('127.0.0.1')) return true
+    if (origin.includes('://dulieudautu.com') || origin.includes('.dulieudautu.com') || origin.includes('localhost') || origin.includes('127.0.0.1')) return true
   }
 
   return false
