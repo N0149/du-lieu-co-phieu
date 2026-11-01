@@ -273,42 +273,71 @@ export async function buildStockAiBundle(tickerSymbol: string): Promise<AiBundle
   const { annualKqkdTable, annualCdktTable, annualLcttTable, quarterKqkdTable } =
     formatFinancialStatementTables(sym)
 
-  // 3. Thuyết minh BCTC
-  const bctcReport = getBctcReport(sym)
-  let bctcMarkdown = ''
-  if (bctcReport && bctcReport.sections.length > 0) {
+  // 3. Thuyết minh BCTC: Tự động nạp CẢ Báo cáo Quý 3/2026 VÀ Bán niên 2026 nếu có
+  const q3Report = getBctcReport(sym, 'HopNhat', 'Quy_3_2026') || getBctcReport(sym, 'CongTyMe', 'Quy_3_2026')
+  const banNienReport = getBctcReport(sym, 'HopNhat', 'Ban_Nien_2026') || getBctcReport(sym, 'CongTyMe', 'Ban_Nien_2026')
+
+  const bctcBlocks: string[] = []
+
+  if (q3Report && q3Report.sections.length > 0) {
     const secTexts: string[] = []
-    for (const sec of bctcReport.sections) {
+    for (const sec of q3Report.sections) {
       if (sec.rawMarkdown && sec.rawMarkdown.trim().length > 0) {
-        const cleaned =
-          sec.rawMarkdown.length > 4000
-            ? sec.rawMarkdown.substring(0, 4000) + '\n\n...[Đã tóm lược bớt bảng biểu chi tiết]...'
-            : sec.rawMarkdown
-        secTexts.push(`### ${sec.title}\n${cleaned}`)
+        secTexts.push(`#### ${sec.title}\n${sec.rawMarkdown}`)
       }
     }
-    bctcMarkdown = secTexts.join('\n\n')
-  } else {
-    bctcMarkdown = getNotesCacheDetails(sym)
+    if (secTexts.length > 0) {
+      bctcBlocks.push(`### 3.1. Thuyết Minh BCTC Quý 3/2026 (${q3Report.reportTypeLabel}):\n\n${secTexts.join('\n\n')}`)
+    }
   }
 
-  // 4. Đại hội đồng cổ đông (ĐHĐCĐ)
+  if (banNienReport && banNienReport.sections.length > 0) {
+    const secTexts: string[] = []
+    for (const sec of banNienReport.sections) {
+      if (sec.rawMarkdown && sec.rawMarkdown.trim().length > 0) {
+        secTexts.push(`#### ${sec.title}\n${sec.rawMarkdown}`)
+      }
+    }
+    if (secTexts.length > 0) {
+      bctcBlocks.push(`### 3.2. Thuyết Minh BCTC Bán Niên 2026 (${banNienReport.reportTypeLabel}):\n\n${secTexts.join('\n\n')}`)
+    }
+  }
+
+  // Fallback nếu không khớp tên kỳ cụ thể
+  if (bctcBlocks.length === 0) {
+    const fallbackReport = getBctcReport(sym)
+    if (fallbackReport && fallbackReport.sections.length > 0) {
+      const secTexts: string[] = []
+      for (const sec of fallbackReport.sections) {
+        if (sec.rawMarkdown && sec.rawMarkdown.trim().length > 0) {
+          secTexts.push(`#### ${sec.title}\n${sec.rawMarkdown}`)
+        }
+      }
+      bctcBlocks.push(secTexts.join('\n\n'))
+    } else {
+      const notes = getNotesCacheDetails(sym)
+      if (notes) bctcBlocks.push(notes)
+    }
+  }
+
+  const bctcMarkdown = bctcBlocks.join('\n\n---\n\n')
+
+  // 4. Đại hội đồng cổ đông (ĐHĐCĐ toàn văn)
   const agmReport = getAgmReport(sym, 2026) || getAgmReport(sym, 2025)
   let agmMarkdown = ''
   if (agmReport && agmReport.hasReport) {
     const agmParts: string[] = []
-    agmParts.push(`- **Kỳ ĐHĐCĐ**: Năm ${agmReport.year}`)
+    agmParts.push(`- **Kỳ ĐHĐCĐ**: Năm ${agmReport.year} - ${agmReport.title}`)
     if (agmReport.ktplRate != null) {
       agmParts.push(`- **Tỷ lệ trích Quỹ khen thưởng & phúc lợi (KTPL)**: ${agmReport.ktplRate}% LNST`)
+    }
+    if (agmReport.ktplVnd != null) {
+      agmParts.push(`- **Số tiền trích Quỹ KTPL**: ${fmtBillion(agmReport.ktplVnd)} tỷ VNĐ`)
     }
 
     for (const sec of agmReport.sections) {
       if (sec.rawMarkdown && sec.rawMarkdown.trim().length > 0) {
-        const textSnippet =
-          sec.rawMarkdown.length > 3000
-            ? sec.rawMarkdown.substring(0, 3000) + '\n...[Đã rút gọn]...'
-            : sec.rawMarkdown
-        agmParts.push(`#### ${sec.title}\n${textSnippet}`)
+        agmParts.push(`### ${sec.title}\n${sec.rawMarkdown}`)
       }
     }
     agmMarkdown = agmParts.join('\n\n')

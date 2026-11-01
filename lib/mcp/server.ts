@@ -5,6 +5,8 @@
 import { McpServer } from '@modelcontextprotocol/sdk/server/mcp.js'
 import { z } from 'zod'
 import { buildStockAiBundle } from '@/lib/ai-bundle-service'
+import { getBctcReport } from '@/lib/bctc-service'
+import { getAgmReport } from '@/lib/agm-service'
 import { getStock, upside, marginOfSafety } from '@/lib/data'
 import reportsData from '@/data/reports-snapshot.json'
 import { fmtBillion, fmtNum, fmtPct, fmtPrice } from '@/lib/format'
@@ -279,6 +281,149 @@ export function createDulieudautuMcpServer() {
         return {
           isError: true,
           content: [{ type: 'text', text: `Lỗi tra cứu báo cáo: ${String(err)}` }],
+        }
+      }
+    }
+  )
+
+  // 7. Tool: Đọc toàn văn Thuyết minh BCTC bóc tách (Bán niên 2026 & Quý 3/2026)
+  server.tool(
+    'doc_thuyet_minh_bctc',
+    'Đọc toàn bộ văn bản bóc tách Thuyết minh Báo cáo tài chính (Bán niên 2026 hoặc Quý 3/2026) của một doanh nghiệp. Bao gồm chi tiết: Nợ vay & chi phí lãi vay ngân hàng, Chi phí xây dựng cơ bản dở dang (CAPEX), Các khoản phải thu, Hàng tồn kho, Đầu tư tài chính.',
+    {
+      symbol: z
+        .string()
+        .min(3)
+        .max(5)
+        .describe('Mã cổ phiếu (ví dụ: MWG, HPG, DXP, MSN)'),
+      period: z
+        .enum(['Quy_3_2026', 'Ban_Nien_2026', 'all'])
+        .optional()
+        .describe('Kỳ báo cáo cần đọc: "Quy_3_2026", "Ban_Nien_2026", hoặc "all" để lấy cả 2 kỳ (mặc định: "all")'),
+      reportType: z
+        .enum(['HopNhat', 'CongTyMe'])
+        .optional()
+        .describe('Loại báo cáo: "HopNhat" (mặc định) hoặc "CongTyMe"'),
+    },
+    async ({ symbol, period = 'all', reportType = 'HopNhat' }) => {
+      try {
+        const sym = symbol.toUpperCase().trim()
+        const prefType = reportType || 'HopNhat'
+        const blocks: string[] = []
+
+        const periodsToFetch =
+          period === 'all'
+            ? ['Quy_3_2026', 'Ban_Nien_2026']
+            : [period]
+
+        for (const p of periodsToFetch) {
+          const rep =
+            getBctcReport(sym, prefType, p) ||
+            getBctcReport(sym, prefType === 'HopNhat' ? 'CongTyMe' : 'HopNhat', p)
+
+          if (rep && rep.hasReport && rep.sections.length > 0) {
+            const secTexts = rep.sections
+              .filter((s) => s.rawMarkdown && s.rawMarkdown.trim().length > 0)
+              .map((s) => `### ${s.title}\n${s.rawMarkdown}`)
+
+            if (secTexts.length > 0) {
+              const label = p === 'Quy_3_2026' ? 'Quý 3/2026' : 'Bán Niên 2026'
+              blocks.push(`## THUYẾT MINH BCTC ${label} - ${sym} (${rep.reportTypeLabel}):\n\n${secTexts.join('\n\n')}`)
+            }
+          }
+        }
+
+        if (blocks.length === 0) {
+          return {
+            content: [
+              {
+                type: 'text',
+                text: `Chưa có dữ liệu Thuyết minh BCTC bóc tách cho mã ${sym} trong kỳ yêu cầu (${period}).`,
+              },
+            ],
+          }
+        }
+
+        return {
+          content: [
+            {
+              type: 'text',
+              text: blocks.join('\n\n---\n\n'),
+            },
+          ],
+        }
+      } catch (err: unknown) {
+        return {
+          isError: true,
+          content: [{ type: 'text', text: `Lỗi đọc thuyết minh BCTC: ${String(err)}` }],
+        }
+      }
+    }
+  )
+
+  // 8. Tool: Đọc toàn văn tài liệu Đại hội đồng cổ đông (.md)
+  server.tool(
+    'doc_toan_van_dhdcd',
+    'Đọc toàn văn tài liệu Đại hội đồng cổ đông (.md) đã được bóc tách chi tiết 4 phần: 1. KQKD & Kế hoạch doanh thu/lợi nhuận, 2. Phân phối lợi nhuận, Cổ tức tiền mặt, Tỷ lệ trích Quỹ khen thưởng phúc lợi (KTPL), 3. Phiên thảo luận hỏi đáp trực tiếp (Q&A) với Ban Lãnh đạo, 4. Phương án tăng vốn / phát hành ESOP.',
+    {
+      symbol: z
+        .string()
+        .min(3)
+        .max(5)
+        .describe('Mã cổ phiếu (ví dụ: MWG, HPG, DXP, MBB)'),
+      year: z
+        .number()
+        .optional()
+        .describe('Năm tổ chức ĐHĐCĐ (mặc định: 2026)'),
+    },
+    async ({ symbol, year = 2026 }) => {
+      try {
+        const sym = symbol.toUpperCase().trim()
+        const targetYear = year || 2026
+        const agm = getAgmReport(sym, targetYear) || getAgmReport(sym, 2025)
+
+        if (!agm || !agm.hasReport || agm.sections.length === 0) {
+          return {
+            content: [
+              {
+                type: 'text',
+                text: `Chưa có tài liệu bóc tách ĐHĐCĐ cho mã ${sym} năm ${targetYear}.`,
+              },
+            ],
+          }
+        }
+
+        const parts: string[] = [
+          `# ${agm.title}`,
+          `- **Mã cổ phiếu**: ${sym}`,
+          `- **Năm ĐHĐCĐ**: ${agm.year}`,
+        ]
+
+        if (agm.ktplRate != null) {
+          parts.push(`- **Tỷ lệ trích Quỹ khen thưởng & phúc lợi (KTPL)**: ${agm.ktplRate}% LNST`)
+        }
+        if (agm.ktplVnd != null) {
+          parts.push(`- **Số tiền trích Quỹ KTPL**: ${fmtBillion(agm.ktplVnd)} tỷ VNĐ`)
+        }
+
+        for (const sec of agm.sections) {
+          if (sec.rawMarkdown && sec.rawMarkdown.trim().length > 0) {
+            parts.push(`## ${sec.title}\n\n${sec.rawMarkdown}`)
+          }
+        }
+
+        return {
+          content: [
+            {
+              type: 'text',
+              text: parts.join('\n\n'),
+            },
+          ],
+        }
+      } catch (err: unknown) {
+        return {
+          isError: true,
+          content: [{ type: 'text', text: `Lỗi đọc tài liệu ĐHĐCĐ: ${String(err)}` }],
         }
       }
     }
