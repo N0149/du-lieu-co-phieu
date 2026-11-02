@@ -2651,5 +2651,50 @@
     "doc_url": "https://static2.vietstock.vn/data/UPCOM/2026/BCTC/VN/QUY%203/VEA_Baocaotaichinh_Q3_2026_Hopnhat.zip?ver=21a8cc54",
     "source": "Vietstock",
     "updated_at": "2026-11-02 04:14:17"
+  },
+  "HAG": {
+    "ticker": "HAG",
+    "bctc_type": "HOP_NHAT",
+    "title": "BCTC Hợp nhất quý 3 năm 2026",
+    "date": "02/11/2026",
+    "doc_url": "https://static2.vietstock.vn/data/HOSE/2026/BCTC/VN/QUY%203/HAG_Baocaotaichinh_Q3_2026_Hopnhat.pdf",
+    "source": "Vietstock",
+    "updated_at": "2026-11-02 05:02:16"
+  },
+  "BMI": {
+    "ticker": "BMI",
+    "bctc_type": "DAY_DU",
+    "title": "BCTC quý 3 năm 2026",
+    "date": "02/11/2026",
+    "doc_url": "https://static2.vietstock.vn/data/HOSE/2026/BCTC/VN/QUY%203/BMI_Baocaotaichinh_Q3_2026.pdf?ver=a0fa4dfc",
+    "source": "Vietstock",
+    "updated_at": "2026-11-02 05:02:22"
+  },
+  "MZG": {
+    "ticker": "MZG",
+    "bctc_type": "HOP_NHAT",
+    "title": "BCTC Hợp nhất quý 3 năm 2026",
+    "date": "02/11/2026",
+    "doc_url": "https://static2.vietstock.vn/data/HOSE/2026/BCTC/VN/QUY%203/MZG_Baocaotaichinh_Q3_2026_Hopnhat.pdf",
+    "source": "Vietstock",
+    "updated_at": "2026-11-02 05:02:28"
+  },
+  "SIP": {
+    "ticker": "SIP",
+    "bctc_type": "HOP_NHAT",
+    "title": "BCTC Hợp nhất quý 3 năm 2026",
+    "date": "02/11/2026",
+    "doc_url": "https://static2.vietstock.vn/data/HOSE/2026/BCTC/VN/QUY%203/SIP_Baocaotaichinh_Q3_2026_Hopnhat.pdf",
+    "source": "Vietstock",
+    "updated_at": "2026-11-02 05:02:35"
+  },
+  "TRA": {
+    "ticker": "TRA",
+    "bctc_type": "HOP_NHAT",
+    "title": "BCTC Hợp nhất quý 3 năm 2026",
+    "date": "02/11/2026",
+    "doc_url": "https://static2.vietstock.vn/data/HOSE/2026/BCTC/VN/QUY%203/TRA_Baocaotaichinh_Q3_2026_Hopnhat.pdf",
+    "source": "Vietstock",
+    "updated_at": "2026-11-02 05:02:41"
   }
 }
