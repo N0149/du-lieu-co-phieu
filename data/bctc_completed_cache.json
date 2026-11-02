@@ -2469,13 +2469,12 @@
   },
   "IDC": {
     "ticker": "IDC",
-    "company_name": "Tổng Công ty IDICO - CTCP",
-    "release_date": "31/10/2026",
-    "title": "BCTC Công ty mẹ quý 3 năm 2026",
-    "doc_url": "https://static2.vietstock.vn/data/HNX/2026/BCTC/VN/QUY%203/IDC_Baocaotaichinh_Q3_2026_Congtyme.zip",
+    "bctc_type": "HOP_NHAT",
+    "title": "BCTC Hợp nhất quý 3 năm 2026",
+    "date": "02/11/2026",
+    "doc_url": "https://static2.vietstock.vn/data/HNX/2026/BCTC/VN/QUY%203/IDC_Baocaotaichinh_Q3_2026_Hopnhat.zip?ver=e673a795",
     "source": "Vietstock",
-    "bctc_type": "RIENG",
-    "updated_at": "2026-11-01 22:38:02"
+    "updated_at": "2026-11-02 04:13:23"
   },
   "TOS": {
     "ticker": "TOS",
@@ -2616,5 +2615,41 @@
     "source": "User_Confirmed_Annual",
     "bctc_type": "DAY_DU",
     "updated_at": "2026-11-01 22:51:20"
+  },
+  "M10": {
+    "ticker": "M10",
+    "bctc_type": "HOP_NHAT",
+    "title": "BCTC Hợp nhất quý 3 năm 2026",
+    "date": "02/11/2026",
+    "doc_url": "https://static2.vietstock.vn/data/UPCOM/2026/BCTC/VN/QUY%203/M10_Baocaotaichinh_Q3_2026_Hopnhat.zip?ver=808ba465",
+    "source": "Vietstock",
+    "updated_at": "2026-11-02 04:13:28"
+  },
+  "POW": {
+    "ticker": "POW",
+    "bctc_type": "HOP_NHAT",
+    "title": "BÁO CÁO TÀI CHÍNH HỢP NHẤT QUÝ 3 NĂM 2026",
+    "date": "02/11/2026",
+    "doc_url": "https://pvpower.vn/pow-media/to-ir/2330---BCTC-Hop-nhat-V.pdf",
+    "source": "Company_Web",
+    "updated_at": "2026-11-02 04:13:44"
+  },
+  "SJG": {
+    "ticker": "SJG",
+    "bctc_type": "RIENG",
+    "title": "BCTC Công ty mẹ quý 3 năm 2026",
+    "date": "02/11/2026",
+    "doc_url": "https://static2.vietstock.vn/data/HNX/2026/BCTC/VN/QUY%203/SJG_Baocaotaichinh_Q3_2026_Congtyme.zip",
+    "source": "Vietstock",
+    "updated_at": "2026-11-02 04:14:13"
+  },
+  "VEA": {
+    "ticker": "VEA",
+    "bctc_type": "HOP_NHAT",
+    "title": "BCTC Hợp nhất quý 3 năm 2026",
+    "date": "02/11/2026",
+    "doc_url": "https://static2.vietstock.vn/data/UPCOM/2026/BCTC/VN/QUY%203/VEA_Baocaotaichinh_Q3_2026_Hopnhat.zip?ver=21a8cc54",
+    "source": "Vietstock",
+    "updated_at": "2026-11-02 04:14:17"
   }
 }
