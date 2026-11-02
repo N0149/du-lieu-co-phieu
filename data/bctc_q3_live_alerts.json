@@ -1,5 +1,33 @@
 [
   {
+    "ticker": "TVN",
+    "company_name": "Tổng Công ty Thép Việt Nam - Công ty Cổ phần",
+    "exchange": "UPCOM",
+    "quarter": "Quý 3/2026",
+    "release_date": "02/11/2026",
+    "title": "BCTC Hợp nhất quý 3 năm 2026",
+    "source": "Vietstock",
+    "bctc_type": "HOP_NHAT",
+    "doc_url": "https://static2.vietstock.vn/data/UPCOM/2026/BCTC/VN/QUY%203/TVN_Baocaotaichinh_Q3_2026_Hopnhat.zip?ver=4a6b9e52",
+    "is_hot": true,
+    "detected_at": "2026-11-02T10:06:03",
+    "lnst_status": "Tài liệu không phải file PDF trực tiếp"
+  },
+  {
+    "ticker": "NHT",
+    "company_name": "Công ty Cổ phần Sản xuất và Thương mại Nam Hoa",
+    "exchange": "HOSE",
+    "quarter": "Quý 3/2026",
+    "release_date": "02/11/2026",
+    "title": "BCTC Hợp nhất quý 3 năm 2026",
+    "source": "Vietstock",
+    "bctc_type": "HOP_NHAT",
+    "doc_url": "https://static2.vietstock.vn/data/HOSE/2026/BCTC/VN/QUY%203/NHT_Baocaotaichinh_Q3_2026_Hopnhat.pdf",
+    "is_hot": true,
+    "detected_at": "2026-11-02T08:07:59",
+    "lnst_status": "Chưa định vị được chỉ tiêu 60/61 trên trang KQKD"
+  },
+  {
     "ticker": "TRA",
     "company_name": "Công ty Cổ phần Traphaco",
     "exchange": "HOSE",

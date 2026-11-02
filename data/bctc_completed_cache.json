@@ -1969,13 +1969,12 @@
   },
   "TVN": {
     "ticker": "TVN",
-    "company_name": "Tổng Công ty Thép Việt Nam - Công ty Cổ phần",
-    "release_date": "29/10/2026",
-    "title": "Báo cáo tài chính riêng Quý 3.2026 29/10/2026 Tải xuống",
-    "doc_url": "https://vnsteel.vn/Uploads/PublicOther/2026/10/29/20/vi-bctc-rieng-q3-2026-signed.pdf",
-    "source": "Company_Web",
-    "bctc_type": "RIENG",
-    "updated_at": "2026-11-01 22:38:12"
+    "bctc_type": "HOP_NHAT",
+    "title": "BCTC Hợp nhất quý 3 năm 2026",
+    "date": "02/11/2026",
+    "doc_url": "https://static2.vietstock.vn/data/UPCOM/2026/BCTC/VN/QUY%203/TVN_Baocaotaichinh_Q3_2026_Hopnhat.zip?ver=4a6b9e52",
+    "source": "Vietstock",
+    "updated_at": "2026-11-02 10:06:03"
   },
   "DC4": {
     "ticker": "DC4",
@@ -2696,5 +2695,14 @@
     "doc_url": "https://static2.vietstock.vn/data/HOSE/2026/BCTC/VN/QUY%203/TRA_Baocaotaichinh_Q3_2026_Hopnhat.pdf",
     "source": "Vietstock",
     "updated_at": "2026-11-02 05:02:41"
+  },
+  "NHT": {
+    "ticker": "NHT",
+    "bctc_type": "HOP_NHAT",
+    "title": "BCTC Hợp nhất quý 3 năm 2026",
+    "date": "02/11/2026",
+    "doc_url": "https://static2.vietstock.vn/data/HOSE/2026/BCTC/VN/QUY%203/NHT_Baocaotaichinh_Q3_2026_Hopnhat.pdf",
+    "source": "Vietstock",
+    "updated_at": "2026-11-02 08:08:00"
   }
 }
