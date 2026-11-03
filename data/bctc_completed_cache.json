@@ -2098,13 +2098,12 @@
   },
   "VLC": {
     "ticker": "VLC",
-    "company_name": "Tổng Công ty Chăn nuôi Việt Nam - Công ty Cổ phần",
-    "release_date": "30/10/2026",
-    "title": "BCTC Công ty mẹ quý 3 năm 2026",
-    "doc_url": "https://static2.vietstock.vn/data/HNX/2026/BCTC/VN/QUY%203/VLC_Baocaotaichinh_Q3_2026_Congtyme.zip",
+    "bctc_type": "HOP_NHAT",
+    "title": "BCTC Hợp nhất quý 3 năm 2026",
+    "date": "03/11/2026",
+    "doc_url": "https://static2.vietstock.vn/data/UPCOM/2026/BCTC/VN/QUY%203/VLC_Baocaotaichinh_Q3_2026_Hopnhat.zip?ver=f8b01d48",
     "source": "Vietstock",
-    "bctc_type": "RIENG",
-    "updated_at": "2026-11-01 22:38:13"
+    "updated_at": "2026-11-03 07:27:04"
   },
   "HSM": {
     "ticker": "HSM",
@@ -2635,12 +2634,12 @@
   },
   "SJG": {
     "ticker": "SJG",
-    "bctc_type": "RIENG",
-    "title": "BCTC Công ty mẹ quý 3 năm 2026",
-    "date": "02/11/2026",
-    "doc_url": "https://static2.vietstock.vn/data/HNX/2026/BCTC/VN/QUY%203/SJG_Baocaotaichinh_Q3_2026_Congtyme.zip",
+    "bctc_type": "HOP_NHAT",
+    "title": "BCTC Hợp nhất quý 3 năm 2026",
+    "date": "03/11/2026",
+    "doc_url": "https://static2.vietstock.vn/data/UPCOM/2026/BCTC/VN/QUY%203/SJG_Baocaotaichinh_Q3_2026_Hopnhat.zip?ver=4d208436",
     "source": "Vietstock",
-    "updated_at": "2026-11-02 04:14:13"
+    "updated_at": "2026-11-03 07:26:59"
   },
   "VEA": {
     "ticker": "VEA",
@@ -2704,5 +2703,14 @@
     "doc_url": "https://static2.vietstock.vn/data/HOSE/2026/BCTC/VN/QUY%203/NHT_Baocaotaichinh_Q3_2026_Hopnhat.pdf",
     "source": "Vietstock",
     "updated_at": "2026-11-02 08:08:00"
+  },
+  "HDA": {
+    "ticker": "HDA",
+    "bctc_type": "RIENG",
+    "title": "BCTC Công ty mẹ quý 3 năm 2026",
+    "date": "03/11/2026",
+    "doc_url": "https://static2.vietstock.vn/data/HNX/2026/BCTC/VN/QUY%203/HDA_Baocaotaichinh_Q3_2026_Congtyme.zip",
+    "source": "Vietstock",
+    "updated_at": "2026-11-03 07:26:54"
   }
 }

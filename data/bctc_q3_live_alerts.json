@@ -1,5 +1,47 @@
 [
   {
+    "ticker": "VLC",
+    "company_name": "Tổng Công ty Chăn nuôi Việt Nam - Công ty Cổ phần",
+    "exchange": "UPCOM",
+    "quarter": "Quý 3/2026",
+    "release_date": "03/11/2026",
+    "title": "BCTC Hợp nhất quý 3 năm 2026",
+    "source": "Vietstock",
+    "bctc_type": "HOP_NHAT",
+    "doc_url": "https://static2.vietstock.vn/data/UPCOM/2026/BCTC/VN/QUY%203/VLC_Baocaotaichinh_Q3_2026_Hopnhat.zip?ver=f8b01d48",
+    "is_hot": true,
+    "detected_at": "2026-11-03T07:27:04",
+    "lnst_status": "Tài liệu không phải file PDF trực tiếp"
+  },
+  {
+    "ticker": "SJG",
+    "company_name": "Tổng Công ty Sông Đà",
+    "exchange": "UPCOM",
+    "quarter": "Quý 3/2026",
+    "release_date": "03/11/2026",
+    "title": "BCTC Hợp nhất quý 3 năm 2026",
+    "source": "Vietstock",
+    "bctc_type": "HOP_NHAT",
+    "doc_url": "https://static2.vietstock.vn/data/UPCOM/2026/BCTC/VN/QUY%203/SJG_Baocaotaichinh_Q3_2026_Hopnhat.zip?ver=4d208436",
+    "is_hot": true,
+    "detected_at": "2026-11-03T07:26:58",
+    "lnst_status": "Tài liệu không phải file PDF trực tiếp"
+  },
+  {
+    "ticker": "HDA",
+    "company_name": "Công ty Cổ phần Hãng sơn Đông Á",
+    "exchange": "HNX",
+    "quarter": "Quý 3/2026",
+    "release_date": "03/11/2026",
+    "title": "BCTC Công ty mẹ quý 3 năm 2026",
+    "source": "Vietstock",
+    "bctc_type": "RIENG",
+    "doc_url": "https://static2.vietstock.vn/data/HNX/2026/BCTC/VN/QUY%203/HDA_Baocaotaichinh_Q3_2026_Congtyme.zip",
+    "is_hot": true,
+    "detected_at": "2026-11-03T07:26:54",
+    "lnst_status": "Tài liệu không phải file PDF trực tiếp"
+  },
+  {
     "ticker": "TVN",
     "company_name": "Tổng Công ty Thép Việt Nam - Công ty Cổ phần",
     "exchange": "UPCOM",
@@ -109,20 +151,6 @@
     "doc_url": "https://static2.vietstock.vn/data/UPCOM/2026/BCTC/VN/QUY%203/VEA_Baocaotaichinh_Q3_2026_Hopnhat.zip?ver=21a8cc54",
     "is_hot": true,
     "detected_at": "2026-11-02T04:14:17",
-    "lnst_status": "Tài liệu không phải file PDF trực tiếp"
-  },
-  {
-    "ticker": "SJG",
-    "company_name": "Tổng Công ty Sông Đà",
-    "exchange": "UPCOM",
-    "quarter": "Quý 3/2026",
-    "release_date": "02/11/2026",
-    "title": "BCTC Công ty mẹ quý 3 năm 2026",
-    "source": "Vietstock",
-    "bctc_type": "RIENG",
-    "doc_url": "https://static2.vietstock.vn/data/HNX/2026/BCTC/VN/QUY%203/SJG_Baocaotaichinh_Q3_2026_Congtyme.zip",
-    "is_hot": true,
-    "detected_at": "2026-11-02T04:14:12",
     "lnst_status": "Tài liệu không phải file PDF trực tiếp"
   },
   {
