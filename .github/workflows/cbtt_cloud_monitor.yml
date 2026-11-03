@@ -2,20 +2,29 @@ name: Giám sát Công bố Thông tin & Tài liệu Doanh nghiệp (Cloud Đị
 
 on:
   schedule:
-    # --- CHẾ ĐỘ THƯỜNG NHẬT: QUÉT ĐA KHUNG GIỜ THEO PHIÊN GIAO DỊCH (THỨ 2 - THỨ 6) ---
-    # 1. Đầu giờ sáng (08:30 VN = 01:30 UTC): Đón các tài liệu, thông tin ra sáng sớm hoặc đêm trước
+    # --- PHIÊN BAN NGÀY (THỨ 2 - THỨ 6): 1 TIẾNG / LẦN TỪ 08:30 ĐẾN 15:30 ---
+    # 08:30 VN (01:30 UTC)
     - cron: '30 1 * * 1-5'
-    # 2. Nghỉ trưa (11:45 VN = 04:45 UTC): Đón các tài liệu công bố trong phiên sáng
-    - cron: '45 4 * * 1-5'
-    # 3. Giữa phiên chiều (14:15 VN = 07:15 UTC): Đón các tài liệu phát sinh trong phiên chiều
-    - cron: '15 7 * * 1-5'
-    # 4. Sau đóng cửa phiên (16:30 VN = 09:30 UTC): Khung giờ cao điểm công bố Nghị quyết HĐQT, giao dịch nội bộ
-    - cron: '30 9 * * 1-5'
-    # 5. Buổi tối (19:00 VN = 12:00 UTC): Quét tổng kết toàn bộ tài liệu công bố muộn trong ngày
-    - cron: '0 12 * * 1-5'
-    # --- CUỐI TUẦN (THỨ 7 & CHỦ NHẬT) ---
-    # Quét 1 lần lúc 18:00 VN (11:00 UTC) để cập nhật tài liệu phát sinh cuối tuần
-    - cron: '0 11 * * 0,6'
+    # 09:30 VN (02:30 UTC)
+    - cron: '30 2 * * 1-5'
+    # 10:30 VN (03:30 UTC)
+    - cron: '30 3 * * 1-5'
+    # 11:30 VN (04:30 UTC)
+    - cron: '30 4 * * 1-5'
+    # 12:30 VN (05:30 UTC)
+    - cron: '30 5 * * 1-5'
+    # 13:30 VN (06:30 UTC)
+    - cron: '30 6 * * 1-5'
+    # 14:30 VN (07:30 UTC)
+    - cron: '30 7 * * 1-5'
+    # 15:30 VN (08:30 UTC)
+    - cron: '30 8 * * 1-5'
+
+    # --- BUỔI TỐI: QUÉT 2 LẦN LÚC 19:00 VÀ 21:30 ---
+    # 19:00 VN (12:00 UTC)
+    - cron: '0 12 * * *'
+    # 21:30 VN (14:30 UTC)
+    - cron: '30 14 * * *'
 
   workflow_dispatch:
     inputs:
