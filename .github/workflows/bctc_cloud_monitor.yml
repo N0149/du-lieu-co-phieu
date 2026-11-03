@@ -1,32 +1,11 @@
-name: Giám sát BCTC Toàn diện 3 Nhóm (Cloud 5 Phút/Lần)
+name: Giám sát BCTC (Chế độ Thường nhật - Quét kiểm tra 1 lần/ngày)
 
 on:
   schedule:
-    # --- PHIÊN SÁNG & TRƯA (08:00 -> 13:00 VN, tức 01:00 -> 06:00 UTC, Thứ 2 - Thứ 6) ---
-    # Mốc khởi động sớm 07:55 sáng VN (00:55 UTC) để đón đầu và chống kẹt hàng đợi
-    - cron: '55 0 * * 1-5'
-    # Mốc chuẩn: 08:00 sáng VN (01:00 UTC)
-    - cron: '0 1 * * 1-5'
-    # Các mốc cứu viện dự phòng ca sáng (nếu GitHub Actions bị delay/kẹt hàng đợi lúc 08:00):
-    - cron: '15 1 * * 1-5' # 08:15 VN
-    - cron: '30 1 * * 1-5' # 08:30 VN
-    - cron: '0 2 * * 1-5'  # 09:00 VN
-    - cron: '0 3 * * 1-5'  # 10:00 VN
-    # Các mốc cứu viện dự phòng ca trưa (nếu ca sáng bị gián đoạn trước 11:30):
-    - cron: '30 4 * * 1-5' # 11:30 VN (04:30 UTC - bắt đầu quét trưa 20p/lần)
-    - cron: '0 5 * * 1-5'  # 12:00 VN (05:00 UTC)
-    - cron: '30 5 * * 1-5' # 12:30 VN (05:30 UTC)
+    # --- CHẾ ĐỘ THƯỜNG NHẬT (SAU MÙA BÁO CÁO TÀI CHÍNH) ---
+    # Chỉ quét kiểm tra vét 1 lần/ngày vào buổi tối lúc 19:30 VN (12:30 UTC, Thứ 2 - Thứ 6)
+    - cron: '30 12 * * 1-5'
 
-    # --- PHIÊN CHIỀU & TỐI (13:00 -> 20:00 VN, tức 06:00 -> 13:00 UTC, Thứ 2 - Thứ 6) ---
-    # Mốc khởi động sớm đón đầu ca chiều: 12:55 trưa VN (05:55 UTC)
-    - cron: '55 5 * * 1-5' # 12:55 VN
-    # Mốc chính: 13:00 chiều VN (06:00 UTC)
-    - cron: '0 6 * * 1-5'
-    # Các mốc cứu viện dự phòng ca chiều & tối (đón đầu BCTC nộp muộn sau phiên):
-    - cron: '30 7 * * 1-5'  # 14:30 VN
-    - cron: '0 9 * * 1-5'   # 16:00 VN (09:00 UTC)
-    - cron: '30 10 * * 1-5' # 17:30 VN (10:30 UTC)
-    - cron: '0 12 * * 1-5'  # 19:00 VN (12:00 UTC)
   workflow_dispatch:
     inputs:
       force:
@@ -54,16 +33,12 @@ jobs:
         run: |
           pip install beautifulsoup4 pymupdf
 
-      - name: Run BCTC Cloud Monitor (Worker Loop 10 Phút/Lần)
+      - name: Run BCTC Cloud Monitor (Rà soát thường nhật 1 lượt)
         env:
           DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
-            python scripts/bctc_monitor_cloud.py --force
-          else
-            python scripts/bctc_monitor_cloud.py --loop
-          fi
+          python scripts/bctc_monitor_cloud.py --force
 
       - name: Báo động khẩn cấp nếu GitHub Actions bị lỗi
         if: failure()
@@ -86,5 +61,3 @@ jobs:
           git config --global user.email 'github-actions[bot]@users.noreply.github.com'
           git add data/bctc_completed_cache.json data/bctc_q3_live_alerts.json data/bctc_cloud_status.json
           git diff --quiet && git diff --staged --quiet || (git commit -m "chore(bctc): auto sync cloud completed cache [skip ci]" && git push)
-
-

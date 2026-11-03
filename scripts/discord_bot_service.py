@@ -1157,6 +1157,25 @@ def execute_remote_check_ticker(ticker, reply_func):
     else:
         reply_func(f"❄️ **[{ticker}] ({info['name']})** hiện **CHƯA CÓ** Báo cáo tài chính Quý 3/2026.")
 
+def execute_remote_cbtt(reply_func, symbol=None, days=3):
+    def run_worker():
+        try:
+            import subprocess
+            cmd = [sys.executable, os.path.join(SCRIPTS_DIR, "cbtt_monitor_cloud.py"), f"--days={days}"]
+            if symbol:
+                cmd.append(f"--symbol={symbol}")
+            res = subprocess.run(cmd, capture_output=True, text=True, encoding='utf-8', errors='ignore')
+            if reply_func and symbol:
+                if "Không có công bố" in res.stdout:
+                    reply_func(f"🟢 `{symbol}`: Chưa có công bố thông tin mới nào trong {days} ngày qua.")
+                elif "Phát hiện" in res.stdout:
+                    reply_func(f"🔥 `{symbol}`: Đã phát hiện công bố thông tin mới! Chi tiết đã gửi lên kênh.")
+        except Exception as e:
+            if reply_func:
+                reply_func(f"⚠️ Lỗi khi quét công bố thông tin: {e}")
+
+    threading.Thread(target=run_worker, daemon=True).start()
+
 def handle_command(content, username, reply_func):
     global AUTO_SCAN_ENABLED, AUTO_SCAN_INTERVAL, CUSTOM_SCAN_INTERVAL_MIN, NEXT_AUTO_SCAN_TIME
     cmd = strip_accents(content.strip().lower()).replace('đ', 'd').replace('Đ', 'd')
@@ -1211,11 +1230,13 @@ def handle_command(content, username, reply_func):
             f"  + Vietstock Gateway: {vts_status}\n"
             f"  + FPTS EzIR Gateway: {fpts_status}\n\n"
             f"🕹️ **LỆNH ĐIỀU KHIỂN NHANH:**\n"
+            f"• `cbtt` hoặc `tin`: Quét tài liệu & công bố mới (toàn bộ 280 mã)\n"
+            f"• `cbtt <MÃ>` hoặc `tin <MÃ>`: Quét tin tức mã cụ thể (VD: `tin HPG`)\n"
             f"• `dung` hoặc `pause`: Tạm dừng quét ngầm\n"
             f"• `bat` hoặc `resume`: Tiếp tục quét ngầm\n"
             f"• `tan suat 60` (hoặc `chu ky 2h`): Đổi tần suất quét\n"
-            f"• `tan suat mac dinh`: Khôi phục lịch tự động theo ngày/giờ\n"
-            f"• `scan`: Ép quét ngay lập tức"
+            f"• `tan suat mac dinh`: Khôi phục lịch tự động\n"
+            f"• `scan`: Ép quét BCTC ngay lập tức"
         )
         reply_func(msg)
 
@@ -1291,6 +1312,22 @@ def handle_command(content, username, reply_func):
                     f"• `tan suat 2h`: Đặt 2 tiếng/lần\n"
                     f"• `tan suat mac dinh`: Khôi phục lịch tự động"
                 )
+
+    # 2.0 Quét công bố thông tin / tài liệu mới: cbtt, tin, thong tin
+    elif any(cmd.startswith(pfx) for pfx in ['cbtt', '!cbtt', '/cbtt', 'tin tuc', 'tintuc', 'thong tin', 'tin ']) or cmd == 'tin':
+        clean_content = content
+        for pfx in ['cbtt', '!cbtt', '/cbtt', 'tin tuc', 'tintuc', 'thong tin', 'tin']:
+            if cmd.startswith(pfx):
+                clean_content = content[len(pfx):]
+                break
+        syms = [t.upper() for t in re.findall(r'\b[A-Za-z]{3}\b', clean_content) if t.lower() not in ['all', 'yes', 'non', 'tuc']]
+        sym = syms[0] if syms else None
+        if sym:
+            reply_func(f"📰 **[{username}]** yêu cầu kiểm tra tài liệu & công bố mới cho mã `{sym}`. Đang quét...")
+            execute_remote_cbtt(reply_func, symbol=sym)
+        else:
+            reply_func(f"📰 **[{username}]** đã ra lệnh quét tài liệu & công bố thông tin toàn bộ danh mục. Đang quét ngầm...")
+            execute_remote_cbtt(reply_func)
 
     # 2. Quét: scan, quet
     elif cmd in ['scan', '!scan', '/scan', 'quet', '!quet', '/quet']:

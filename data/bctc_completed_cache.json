@@ -1969,12 +1969,13 @@
   },
   "TVN": {
     "ticker": "TVN",
-    "bctc_type": "HOP_NHAT",
+    "company_name": "Tổng Công ty Thép Việt Nam - Công ty Cổ phần",
+    "release_date": "02/11/2026",
     "title": "BCTC Hợp nhất quý 3 năm 2026",
-    "date": "02/11/2026",
     "doc_url": "https://static2.vietstock.vn/data/UPCOM/2026/BCTC/VN/QUY%203/TVN_Baocaotaichinh_Q3_2026_Hopnhat.zip?ver=4a6b9e52",
     "source": "Vietstock",
-    "updated_at": "2026-11-02 10:06:03"
+    "bctc_type": "HOP_NHAT",
+    "updated_at": "2026-11-02 17:43:58"
   },
   "DC4": {
     "ticker": "DC4",
@@ -2098,12 +2099,13 @@
   },
   "VLC": {
     "ticker": "VLC",
-    "bctc_type": "HOP_NHAT",
+    "company_name": "Tổng Công ty Chăn nuôi Việt Nam - Công ty Cổ phần",
+    "release_date": "03/11/2026",
     "title": "BCTC Hợp nhất quý 3 năm 2026",
-    "date": "03/11/2026",
     "doc_url": "https://static2.vietstock.vn/data/UPCOM/2026/BCTC/VN/QUY%203/VLC_Baocaotaichinh_Q3_2026_Hopnhat.zip?ver=f8b01d48",
     "source": "Vietstock",
-    "updated_at": "2026-11-03 07:27:04"
+    "bctc_type": "HOP_NHAT",
+    "updated_at": "2026-11-03 19:58:03"
   },
   "HSM": {
     "ticker": "HSM",
@@ -2467,12 +2469,13 @@
   },
   "IDC": {
     "ticker": "IDC",
-    "bctc_type": "HOP_NHAT",
+    "company_name": "Tổng Công ty IDICO - CTCP",
+    "release_date": "02/11/2026",
     "title": "BCTC Hợp nhất quý 3 năm 2026",
-    "date": "02/11/2026",
     "doc_url": "https://static2.vietstock.vn/data/HNX/2026/BCTC/VN/QUY%203/IDC_Baocaotaichinh_Q3_2026_Hopnhat.zip?ver=e673a795",
     "source": "Vietstock",
-    "updated_at": "2026-11-02 04:13:23"
+    "bctc_type": "HOP_NHAT",
+    "updated_at": "2026-11-02 17:43:54"
   },
   "TOS": {
     "ticker": "TOS",
@@ -2616,93 +2619,103 @@
   },
   "M10": {
     "ticker": "M10",
-    "bctc_type": "HOP_NHAT",
+    "company_name": "Tổng công ty May 10 - Công ty Cổ phần",
+    "release_date": "02/11/2026",
     "title": "BCTC Hợp nhất quý 3 năm 2026",
-    "date": "02/11/2026",
     "doc_url": "https://static2.vietstock.vn/data/UPCOM/2026/BCTC/VN/QUY%203/M10_Baocaotaichinh_Q3_2026_Hopnhat.zip?ver=808ba465",
     "source": "Vietstock",
-    "updated_at": "2026-11-02 04:13:28"
+    "bctc_type": "HOP_NHAT",
+    "updated_at": "2026-11-02 17:43:54"
   },
   "POW": {
     "ticker": "POW",
+    "company_name": "Tổng Công ty Điện lực Dầu khí Việt Nam - CTCP",
+    "release_date": "02/11/2026",
+    "title": "BCTC Hợp nhất quý 3 năm 2026",
+    "doc_url": "https://static2.vietstock.vn/data/HOSE/2026/BCTC/VN/QUY%203/POW_Baocaotaichinh_Q3_2026_Hopnhat.pdf",
+    "source": "Vietstock",
     "bctc_type": "HOP_NHAT",
-    "title": "BÁO CÁO TÀI CHÍNH HỢP NHẤT QUÝ 3 NĂM 2026",
-    "date": "02/11/2026",
-    "doc_url": "https://pvpower.vn/pow-media/to-ir/2330---BCTC-Hop-nhat-V.pdf",
-    "source": "Company_Web",
-    "updated_at": "2026-11-02 04:13:44"
+    "updated_at": "2026-11-02 17:43:56"
   },
   "SJG": {
     "ticker": "SJG",
-    "bctc_type": "HOP_NHAT",
+    "company_name": "Tổng Công ty Sông Đà",
+    "release_date": "03/11/2026",
     "title": "BCTC Hợp nhất quý 3 năm 2026",
-    "date": "03/11/2026",
     "doc_url": "https://static2.vietstock.vn/data/UPCOM/2026/BCTC/VN/QUY%203/SJG_Baocaotaichinh_Q3_2026_Hopnhat.zip?ver=4d208436",
     "source": "Vietstock",
-    "updated_at": "2026-11-03 07:26:59"
+    "bctc_type": "HOP_NHAT",
+    "updated_at": "2026-11-03 19:58:03"
   },
   "VEA": {
     "ticker": "VEA",
-    "bctc_type": "HOP_NHAT",
+    "company_name": "Tổng Công ty Máy động lực và Máy nông nghiệp Việt Nam - CTCP",
+    "release_date": "02/11/2026",
     "title": "BCTC Hợp nhất quý 3 năm 2026",
-    "date": "02/11/2026",
     "doc_url": "https://static2.vietstock.vn/data/UPCOM/2026/BCTC/VN/QUY%203/VEA_Baocaotaichinh_Q3_2026_Hopnhat.zip?ver=21a8cc54",
     "source": "Vietstock",
-    "updated_at": "2026-11-02 04:14:17"
+    "bctc_type": "HOP_NHAT",
+    "updated_at": "2026-11-02 17:43:59"
   },
   "HAG": {
     "ticker": "HAG",
-    "bctc_type": "HOP_NHAT",
+    "company_name": "Công ty Cổ phần Hoàng Anh Gia Lai",
+    "release_date": "02/11/2026",
     "title": "BCTC Hợp nhất quý 3 năm 2026",
-    "date": "02/11/2026",
     "doc_url": "https://static2.vietstock.vn/data/HOSE/2026/BCTC/VN/QUY%203/HAG_Baocaotaichinh_Q3_2026_Hopnhat.pdf",
     "source": "Vietstock",
-    "updated_at": "2026-11-02 05:02:16"
+    "bctc_type": "HOP_NHAT",
+    "updated_at": "2026-11-02 17:43:53"
   },
   "BMI": {
     "ticker": "BMI",
-    "bctc_type": "DAY_DU",
+    "company_name": "Tổng Công ty Cổ phần Bảo Minh",
+    "release_date": "02/11/2026",
     "title": "BCTC quý 3 năm 2026",
-    "date": "02/11/2026",
     "doc_url": "https://static2.vietstock.vn/data/HOSE/2026/BCTC/VN/QUY%203/BMI_Baocaotaichinh_Q3_2026.pdf?ver=a0fa4dfc",
     "source": "Vietstock",
-    "updated_at": "2026-11-02 05:02:22"
+    "bctc_type": "DAY_DU",
+    "updated_at": "2026-11-02 17:43:53"
   },
   "MZG": {
     "ticker": "MZG",
-    "bctc_type": "HOP_NHAT",
+    "company_name": "Công ty Cổ Phần Miza",
+    "release_date": "02/11/2026",
     "title": "BCTC Hợp nhất quý 3 năm 2026",
-    "date": "02/11/2026",
     "doc_url": "https://static2.vietstock.vn/data/HOSE/2026/BCTC/VN/QUY%203/MZG_Baocaotaichinh_Q3_2026_Hopnhat.pdf",
     "source": "Vietstock",
-    "updated_at": "2026-11-02 05:02:28"
+    "bctc_type": "HOP_NHAT",
+    "updated_at": "2026-11-02 17:43:55"
   },
   "SIP": {
     "ticker": "SIP",
-    "bctc_type": "HOP_NHAT",
+    "company_name": "Công ty Cổ phần Đầu tư Sài Gòn VRG",
+    "release_date": "02/11/2026",
     "title": "BCTC Hợp nhất quý 3 năm 2026",
-    "date": "02/11/2026",
     "doc_url": "https://static2.vietstock.vn/data/HOSE/2026/BCTC/VN/QUY%203/SIP_Baocaotaichinh_Q3_2026_Hopnhat.pdf",
     "source": "Vietstock",
-    "updated_at": "2026-11-02 05:02:35"
+    "bctc_type": "HOP_NHAT",
+    "updated_at": "2026-11-02 17:43:56"
   },
   "TRA": {
     "ticker": "TRA",
-    "bctc_type": "HOP_NHAT",
+    "company_name": "Công ty Cổ phần Traphaco",
+    "release_date": "02/11/2026",
     "title": "BCTC Hợp nhất quý 3 năm 2026",
-    "date": "02/11/2026",
     "doc_url": "https://static2.vietstock.vn/data/HOSE/2026/BCTC/VN/QUY%203/TRA_Baocaotaichinh_Q3_2026_Hopnhat.pdf",
     "source": "Vietstock",
-    "updated_at": "2026-11-02 05:02:41"
+    "bctc_type": "HOP_NHAT",
+    "updated_at": "2026-11-02 17:43:58"
   },
   "NHT": {
     "ticker": "NHT",
-    "bctc_type": "HOP_NHAT",
+    "company_name": "Công ty Cổ phần Sản xuất và Thương mại Nam Hoa",
+    "release_date": "02/11/2026",
     "title": "BCTC Hợp nhất quý 3 năm 2026",
-    "date": "02/11/2026",
     "doc_url": "https://static2.vietstock.vn/data/HOSE/2026/BCTC/VN/QUY%203/NHT_Baocaotaichinh_Q3_2026_Hopnhat.pdf",
     "source": "Vietstock",
-    "updated_at": "2026-11-02 08:08:00"
+    "bctc_type": "HOP_NHAT",
+    "updated_at": "2026-11-02 17:43:55"
   },
   "HDA": {
     "ticker": "HDA",

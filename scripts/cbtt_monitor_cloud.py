@@ -169,16 +169,16 @@ def classify_cbtt_item(title, doc_url=""):
     if any(k in clean for k in ['dhdcd bat thuong', 'dai hoi dong co dong bat thuong', 'lay y kien co dong', 'bien ban kiem phieu', 'y kien bang van ban']):
         return True, 'EGM_EXTRAORDINARY', 'ĐHĐCĐ BẤT THƯỜNG / LẤY Ý KIẾN', 0xF59E0B, '🏛️'
 
-    # 6. Cổ tức & Sự kiện quyền
-    if any(k in clean for k in ['tra co tuc', 'tam ung co tuc', 'chot danh sach co dong', 'ngay dkcc', 'ngay dang ky cuoi cung', 'thuong co phieu', 'phat hanh co phieu', 'quyen mua', 'tang von dieu le']):
+    # 6. Cổ tức & Sự kiện quyền / Huy động vốn
+    if any(k in clean for k in ['tra co tuc', 'tam ung co tuc', 'chot danh sach co dong', 'ngay dkcc', 'ngay dang ky cuoi cung', 'thuong co phieu', 'phat hanh co phieu', 'quyen mua', 'tang von dieu le', 'chao ban', 'trai phieu', 'phat hanh trai phieu', 'niem yet bo sung', 'giao dich bo sung']):
         return True, 'DIVIDEND_RIGHTS', 'CỔ TỨC & QUYỀN DOANH NGHIỆP', 0xEAB308, '💰'
 
-    # 7. Công bố thông tin bất thường / Biến động tổ chức
-    if any(k in clean for k in ['bat thuong', 'cbtt bat thuong', 'su kien', 'tam ngung', 'chay no', 'xu phat', 'thay doi dang ky kinh doanh', 'giay chung nhan dang ky doanh nghiep', 'bo nhiem', 'mien nhiem', 'tong giam doc', 'chu tich hdqt', 'chu tich']):
+    # 7. Công bố thông tin bất thường / Biến động tổ chức & Quản trị
+    if any(k in clean for k in ['bat thuong', 'cbtt bat thuong', 'su kien', 'tam ngung', 'chay no', 'xu phat', 'thay doi dang ky kinh doanh', 'giay chung nhan dang ky doanh nghiep', 'bo nhiem', 'mien nhiem', 'tong giam doc', 'chu tich hdqt', 'chu tich', 'thay doi nhan su', 'quan tri cong ty', 'bao cao tinh hinh quan tri', 'dieu le', 'quy che', 'thanh lap cong ty con', 'giai the']):
         return True, 'EXTRAORDINARY_EVENT', 'CÔNG BỐ BẤT THƯỜNG', 0xEC4899, '⚠️'
 
     # 8. Tin SXKD, doanh thu, lợi nhuận, trúng thầu, sự kiện lớn
-    if any(k in clean for k in ['san xuat kinh doanh', 'sxkd', 'ket qua kinh doanh', 'uoc dat', 'san luong', 'trung thau', 'hop dong lon', 'khoi cong', 'khanh thanh', 'dam va', 'bat giu', 'gop von thanh lap']):
+    if any(k in clean for k in ['san xuat kinh doanh', 'sxkd', 'ket qua kinh doanh', 'uoc dat', 'san luong', 'trung thau', 'hop dong lon', 'khoi cong', 'khanh thanh', 'dam va', 'bat giu', 'gop von thanh lap', 'giai trinh chenh lech', 'giai trinh lnst', 'giai trinh lntt', 'bao cao thuong nien']):
         return True, 'BUSINESS_NEWS', 'TÌNH HÌNH SẢN XUẤT KINH DOANH', 0x06B6D4, '📈'
 
     return False, '', '', 0, ''
@@ -291,7 +291,7 @@ class VietstockDisclosureScanner:
             }).encode('utf-8')
             req = urllib.request.Request(doc_url, data=post_data, headers=api_headers)
             with self.opener.open(req, timeout=8) as resp:
-                docs = json.loads(resp.read().decode('utf-8'))
+                docs = json.loads(safe_read_response(resp).decode('utf-8', errors='ignore'))
             if isinstance(docs, list):
                 for item in docs:
                     title = item.get('Title', '').strip()
@@ -337,7 +337,7 @@ class VietstockDisclosureScanner:
             }).encode('utf-8')
             req_news = urllib.request.Request(news_url, data=post_news, headers=api_headers)
             with self.opener.open(req_news, timeout=8) as resp:
-                news_list = json.loads(resp.read().decode('utf-8'))
+                news_list = json.loads(safe_read_response(resp).decode('utf-8', errors='ignore'))
             if isinstance(news_list, list):
                 for item in news_list:
                     title = item.get('Title', '').strip()
@@ -389,7 +389,7 @@ class VietstockDisclosureScanner:
             }).encode('utf-8')
             req_event = urllib.request.Request(event_url, data=post_event, headers=api_headers)
             with self.opener.open(req_event, timeout=8) as resp:
-                events = json.loads(resp.read().decode('utf-8'))
+                events = json.loads(safe_read_response(resp).decode('utf-8', errors='ignore'))
             if isinstance(events, list):
                 for ev in events:
                     title = ev.get('Title', '').strip() or ev.get('Note', '').strip()
@@ -449,7 +449,8 @@ def scan_fpts_ezir(ticker, lookback_days=3):
             data = json.loads(raw_bytes.decode('utf-8', errors='ignore'))
             FPTS_BREAKER.record_success()
 
-            items = data.get('Data', {}).get('Table1', [])
+            data_obj = data.get('Data') or {}
+            items = data_obj.get('Table1', []) if isinstance(data_obj, dict) else []
             for it in items:
                 title = it.get('Title', '').strip()
                 date_pub = it.get('DatePub', '').strip()
@@ -725,7 +726,8 @@ def run_full_scan(lookback_days=3, single_symbol=None, limit=None, dry_run=False
             except:
                 pass
             log(f"✅ Đã gửi {sent_count} thông báo lên Discord và cập nhật cache thành công.")
-            summary_msg = f"🔔 **[Cloud Radar 18:00]** Đã hoàn tất quét {total_count} doanh nghiệp • Phát hiện **{sent_count} công bố bất thường & giao dịch mới** hôm nay!"
+            now_vn_str = datetime.datetime.now().strftime("%H:%M")
+            summary_msg = f"🔔 **[Cloud Radar {now_vn_str}]** Đã hoàn tất quét {total_count} doanh nghiệp • Phát hiện **{sent_count} công bố bất thường & tài liệu mới**!"
             send_discord_raw_message(summary_msg)
         else:
             log(f"🔍 Chế độ Dry-Run: Đã tìm thấy {sent_count} tin mới, không gửi Discord.")

@@ -1,20 +1,21 @@
-name: Giám sát Công bố Bất thường & Giao dịch Nội bộ (Cloud 18:00 Hàng Ngày)
+name: Giám sát Công bố Thông tin & Tài liệu Doanh nghiệp (Cloud Định kỳ)
 
 on:
   schedule:
-    # --- MÙA BÁO CÁO TÀI CHÍNH: QUÉT 1 LẦN BUỔI TỐI LÚC 18:00 (GIỜ VIỆT NAM) ---
-    # Giờ Việt Nam (UTC+7) 18:00 = 11:00 UTC
-    # Chạy hàng ngày lúc 18:00 VN:
-    - cron: '0 11 * * *'
-
-    # --- HƯỚNG DẪN ĐỔI TẦN SUẤT SAU MÙA BÁO CÁO TÀI CHÍNH ---
-    # Khi hết mùa BCTC và muốn quét dày hơn, bạn chỉ cần mở các dòng dưới đây:
-    # 1. Quét 2 lần/ngày (12:00 trưa & 18:00 tối VN):
-    # - cron: '0 5,11 * * *'
-    # 2. Quét 3 lần/ngày (09:00, 13:00, 18:00 VN):
-    # - cron: '0 2,6,11 * * 1-5'
-    # 3. Quét định kỳ mỗi 2 tiếng trong phiên (09:00 -> 17:00 VN):
-    # - cron: '0 2-10/2 * * 1-5'
+    # --- CHẾ ĐỘ THƯỜNG NHẬT: QUÉT ĐA KHUNG GIỜ THEO PHIÊN GIAO DỊCH (THỨ 2 - THỨ 6) ---
+    # 1. Đầu giờ sáng (08:30 VN = 01:30 UTC): Đón các tài liệu, thông tin ra sáng sớm hoặc đêm trước
+    - cron: '30 1 * * 1-5'
+    # 2. Nghỉ trưa (11:45 VN = 04:45 UTC): Đón các tài liệu công bố trong phiên sáng
+    - cron: '45 4 * * 1-5'
+    # 3. Giữa phiên chiều (14:15 VN = 07:15 UTC): Đón các tài liệu phát sinh trong phiên chiều
+    - cron: '15 7 * * 1-5'
+    # 4. Sau đóng cửa phiên (16:30 VN = 09:30 UTC): Khung giờ cao điểm công bố Nghị quyết HĐQT, giao dịch nội bộ
+    - cron: '30 9 * * 1-5'
+    # 5. Buổi tối (19:00 VN = 12:00 UTC): Quét tổng kết toàn bộ tài liệu công bố muộn trong ngày
+    - cron: '0 12 * * 1-5'
+    # --- CUỐI TUẦN (THỨ 7 & CHỦ NHẬT) ---
+    # Quét 1 lần lúc 18:00 VN (11:00 UTC) để cập nhật tài liệu phát sinh cuối tuần
+    - cron: '0 11 * * 0,6'
 
   workflow_dispatch:
     inputs:
@@ -86,7 +87,7 @@ jobs:
           url = os.environ.get('DISCORD_WEBHOOK_URL')
           if url:
               payload = {
-                  'content': '🚨 **BÁO ĐỘNG: GITHUB ACTIONS QUÉT CÔNG BỐ BẤT THƯỜNG GẶP LỖI!**\nQuy trình quét lúc 18:00 bị gián đoạn. Vui lòng kiểm tra log GitHub Actions!'
+                  'content': '🚨 **BÁO ĐỘNG: GITHUB ACTIONS QUÉT CÔNG BỐ THÔNG TIN GẶP LỖI!**\nQuy trình quét tài liệu & công bố doanh nghiệp bị gián đoạn. Vui lòng kiểm tra log GitHub Actions!'
               }
               urllib.request.urlopen(urllib.request.Request(url, data=json.dumps(payload).encode('utf-8'), headers={'Content-Type': 'application/json'}))
           "
