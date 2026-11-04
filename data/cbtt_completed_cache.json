@@ -1038,5 +1038,55 @@
     "url": "https://vietstock.vn/2026/11/vnr-dinh-chinh-bao-cao-quan-tri-cong-ty-ban-nien-nam-2026-737-1510824.htm",
     "source": "Vietstock_News",
     "alerted_at": "2026-11-04 07:54:08"
+  },
+  "vts_news_1511559": {
+    "ticker": "GMX",
+    "category": "DIVIDEND_RIGHTS",
+    "category_label": "CỔ TỨC & QUYỀN DOANH NGHIỆP",
+    "title": "GMX: Ngày đăng ký cuối cùng trả cổ tức bằng tiền mặt",
+    "date": "04/11/2026 08:52",
+    "url": "https://vietstock.vn/2026/11/gmx-ngay-dang-ky-cuoi-cung-tra-co-tuc-bang-tien-mat-737-1511559.htm",
+    "source": "Vietstock_News",
+    "alerted_at": "2026-11-04 09:47:33"
+  },
+  "vts_news_1511575": {
+    "ticker": "DRI",
+    "category": "RESOLUTION_HDQT",
+    "category_label": "NGHỊ QUYẾT HĐQT",
+    "title": "DRI: Nghị quyết Hội đồng quản trị",
+    "date": "04/11/2026 09:15",
+    "url": "https://vietstock.vn/2026/11/dri-nghi-quyet-hoi-dong-quan-tri-737-1511575.htm",
+    "source": "Vietstock_News",
+    "alerted_at": "2026-11-04 09:47:34"
+  },
+  "vts_doc_548aa112527a": {
+    "ticker": "AMS",
+    "category": "BUSINESS_NEWS",
+    "category_label": "TÌNH HÌNH SẢN XUẤT KINH DOANH",
+    "title": "Giải trình kết quả kinh doanh Hợp nhất quý 3 năm 2026",
+    "date": "04/11/2026 08:11",
+    "url": "https://static2.vietstock.vn/data/UPCOM/2026/BCTC/VN/QUY%203/AMS_Giaitrinh_KQKD_Q3_2026_Hopnhat.zip?ver=8010cf0c",
+    "source": "Vietstock_Document",
+    "alerted_at": "2026-11-04 09:47:35"
+  },
+  "vts_news_1511552": {
+    "ticker": "GDT",
+    "category": "DIVIDEND_RIGHTS",
+    "category_label": "CỔ TỨC & QUYỀN DOANH NGHIỆP",
+    "title": "GDT: Thông báo về ngày đăng ký cuối cùng để chi trả cổ tức đợt 1 bằng tiền năm 2026",
+    "date": "04/11/2026 08:48",
+    "url": "https://vietstock.vn/2026/11/gdt-thong-bao-ve-ngay-dang-ky-cuoi-cung-de-chi-tra-co-tuc-dot-1-bang-tien-nam-2026-737-1511552.htm",
+    "source": "Vietstock_News",
+    "alerted_at": "2026-11-04 09:47:36"
+  },
+  "vts_news_1511451": {
+    "ticker": "PGV",
+    "category": "BUSINESS_NEWS",
+    "category_label": "TÌNH HÌNH SẢN XUẤT KINH DOANH",
+    "title": "PGV đạt sản lượng điện 22.1 tỷ kWh trong 9 tháng",
+    "date": "04/11/2026 08:00",
+    "url": "https://vietstock.vn/2026/11/pgv-dat-san-luong-dien-221-ty-kwh-trong-9-thang-737-1511451.htm",
+    "source": "Vietstock_News",
+    "alerted_at": "2026-11-04 09:47:36"
   }
 }
