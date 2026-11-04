@@ -2725,5 +2725,23 @@
     "doc_url": "https://static2.vietstock.vn/data/HNX/2026/BCTC/VN/QUY%203/HDA_Baocaotaichinh_Q3_2026_Congtyme.zip",
     "source": "Vietstock",
     "updated_at": "2026-11-03 07:26:54"
+  },
+  "AMS": {
+    "ticker": "AMS",
+    "bctc_type": "HOP_NHAT",
+    "title": "BCTC Hợp nhất quý 3 năm 2026",
+    "date": "04/11/2026",
+    "doc_url": "https://static2.vietstock.vn/data/UPCOM/2026/BCTC/VN/QUY%203/AMS_Baocaotaichinh_Q3_2026_Hopnhat.zip",
+    "source": "Vietstock",
+    "updated_at": "2026-11-04 19:58:36"
+  },
+  "LSS": {
+    "ticker": "LSS",
+    "bctc_type": "HOP_NHAT",
+    "title": "Báo cáo tài chính quý 3 năm 2026 hợp nhất",
+    "date": "04/11/2026 13:49",
+    "doc_url": "https://file.fpts.com.vn/FileStore2/File/2026/11/02/20261030_-_LSS_-_BCTC_hop_nhat_quy_I_nam_2026-2027.pdf",
+    "source": "EzIR_FPTS",
+    "updated_at": "2026-11-04 19:58:42"
   }
 }

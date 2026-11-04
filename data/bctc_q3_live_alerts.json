@@ -1,5 +1,33 @@
 [
   {
+    "ticker": "LSS",
+    "company_name": "Công ty Cổ phần Mía đường Lam Sơn",
+    "exchange": "HOSE",
+    "quarter": "Quý 3/2026",
+    "release_date": "04/11/2026 13:49",
+    "title": "Báo cáo tài chính quý 3 năm 2026 hợp nhất",
+    "source": "EzIR_FPTS",
+    "bctc_type": "HOP_NHAT",
+    "doc_url": "https://file.fpts.com.vn/FileStore2/File/2026/11/02/20261030_-_LSS_-_BCTC_hop_nhat_quy_I_nam_2026-2027.pdf",
+    "is_hot": true,
+    "detected_at": "2026-11-04T19:58:42",
+    "lnst_status": "Bản scan giấy đóng dấu đỏ (chưa số hóa)"
+  },
+  {
+    "ticker": "AMS",
+    "company_name": "Công ty Cổ phần Cơ khí Xây dựng AMECC",
+    "exchange": "UPCOM",
+    "quarter": "Quý 3/2026",
+    "release_date": "04/11/2026",
+    "title": "BCTC Hợp nhất quý 3 năm 2026",
+    "source": "Vietstock",
+    "bctc_type": "HOP_NHAT",
+    "doc_url": "https://static2.vietstock.vn/data/UPCOM/2026/BCTC/VN/QUY%203/AMS_Baocaotaichinh_Q3_2026_Hopnhat.zip",
+    "is_hot": true,
+    "detected_at": "2026-11-04T19:58:36",
+    "lnst_status": "Tài liệu không phải file PDF trực tiếp"
+  },
+  {
     "ticker": "VLC",
     "company_name": "Tổng Công ty Chăn nuôi Việt Nam - Công ty Cổ phần",
     "exchange": "UPCOM",
