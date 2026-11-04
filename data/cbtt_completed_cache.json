@@ -168,5 +168,875 @@
     "url": "https://pub-57cc034add4942f79a894f01192cadcb.r2.dev/media/20261030%20-%20PTB%20-%20BCKQ%20GIAO%20DICH%20CP%20NLQ%20LE%20VY%20(che).pdf",
     "source": "Company_Web",
     "alerted_at": "2026-10-30 17:03:58"
+  },
+  "vts_news_1511024": {
+    "ticker": "UDJ",
+    "category": "EGM_EXTRAORDINARY",
+    "category_label": "ĐHĐCĐ BẤT THƯỜNG / LẤY Ý KIẾN",
+    "title": "UDJ: Thông báo ngày đăng ký cuối cùng để lấy ý kiến cổ đông bằng văn bản.",
+    "date": "03/11/2026 08:07",
+    "url": "https://vietstock.vn/2026/11/udj-thong-bao-ngay-dang-ky-cuoi-cung-de-lay-y-kien-co-dong-bang-van-ban-737-1511024.htm",
+    "source": "Vietstock_News",
+    "alerted_at": "2026-11-04 07:53:13"
+  },
+  "vts_news_1511008": {
+    "ticker": "UDJ",
+    "category": "RESOLUTION_HDQT",
+    "category_label": "NGHỊ QUYẾT HĐQT",
+    "title": "UDJ: Nghị quyết Hội đồng quản trị",
+    "date": "03/11/2026 08:02",
+    "url": "https://vietstock.vn/2026/11/udj-nghi-quyet-hoi-dong-quan-tri-737-1511008.htm",
+    "source": "Vietstock_News",
+    "alerted_at": "2026-11-04 07:53:14"
+  },
+  "vts_doc_872f737d0592": {
+    "ticker": "HWS",
+    "category": "RESOLUTION_HDQT",
+    "category_label": "NGHỊ QUYẾT HĐQT",
+    "title": "Nghị quyết số 65/NQ-HĐQT ngày 30 tháng 10 năm 2026 tại Huế của Hội đồng quản trị Cấp nước Huế về việc tổ chức Đại hội đồng cổ đông bất thường năm 2026",
+    "date": "03/11/2026 02:43",
+    "url": "https://static2.vietstock.vn/data/UPCOM/2026/NGHI%20QUYET%20HDQT/VN/2_hws_2026_11_2_f1fa7aa_hws_cbtt_resolution_of_bod_egm_2026_en__1(NhieuFile).zip?ver=a675bdc8",
+    "source": "Vietstock_Document",
+    "alerted_at": "2026-11-04 07:53:14"
+  },
+  "vts_news_1510315": {
+    "ticker": "HWS",
+    "category": "RESOLUTION_HDQT",
+    "category_label": "NGHỊ QUYẾT HĐQT",
+    "title": "HWS: Nghị quyết Hội đồng quản trị",
+    "date": "02/11/2026 07:43",
+    "url": "https://vietstock.vn/2026/11/hws-nghi-quyet-hoi-dong-quan-tri-737-1510315.htm",
+    "source": "Vietstock_News",
+    "alerted_at": "2026-11-04 07:53:15"
+  },
+  "vts_doc_59f61e70ce0c": {
+    "ticker": "LIX",
+    "category": "RESOLUTION_HDQT",
+    "category_label": "NGHỊ QUYẾT HĐQT",
+    "title": "Thông báo và Nghị quyết HĐQT về ngày ĐKCC thực hiện quyền tham dự ĐHĐCĐ bất thường 2026",
+    "date": "03/11/2026 01:58",
+    "url": "https://static2.vietstock.vn/data/HOSE/2026/NGHI%20QUYET%20HDQT/VN/LIX_Nghiquyet_HDQT_2026.pdf?ver=aca0d12d",
+    "source": "Vietstock_Document",
+    "alerted_at": "2026-11-04 07:53:16"
+  },
+  "vts_news_1510933": {
+    "ticker": "LPT",
+    "category": "INSIDER_TRADE",
+    "category_label": "GIAO DỊCH CỔ ĐÔNG / NỘI BỘ",
+    "title": "LPT: Báo cáo thay đổi sở hữu cổ phiếu của cổ đông lớn - Phan Quang Tiệp",
+    "date": "03/11/2026 06:37",
+    "url": "https://vietstock.vn/2026/11/lpt-bao-cao-thay-doi-so-huu-co-phieu-cua-co-dong-lon-phan-quang-tiep-739-1510933.htm",
+    "source": "Vietstock_News",
+    "alerted_at": "2026-11-04 07:53:17"
+  },
+  "vts_news_1510934": {
+    "ticker": "LPT",
+    "category": "INSIDER_TRADE",
+    "category_label": "GIAO DỊCH CỔ ĐÔNG / NỘI BỘ",
+    "title": "LPT: Báo cáo sở hữu của cổ đông lớn - Nguyễn Thúy Loan",
+    "date": "03/11/2026 06:36",
+    "url": "https://vietstock.vn/2026/11/lpt-bao-cao-so-huu-cua-co-dong-lon-nguyen-thuy-loan-739-1510934.htm",
+    "source": "Vietstock_News",
+    "alerted_at": "2026-11-04 07:53:17"
+  },
+  "vts_news_1511064": {
+    "ticker": "HDM",
+    "category": "EXTRAORDINARY_EVENT",
+    "category_label": "CÔNG BỐ BẤT THƯỜNG",
+    "title": "HDM: Về việc xử phạt hành chính về thuế",
+    "date": "03/11/2026 08:26",
+    "url": "https://vietstock.vn/2026/11/hdm-ve-viec-xu-phat-hanh-chinh-ve-thue-830-1511064.htm",
+    "source": "Vietstock_News",
+    "alerted_at": "2026-11-04 07:53:18"
+  },
+  "vts_doc_a866c96ba748": {
+    "ticker": "LHG",
+    "category": "RESOLUTION_HDQT",
+    "category_label": "NGHỊ QUYẾT HĐQT",
+    "title": "Thông báo thay đổi nhân sự Phó TGĐ (kèm Nghị quyết HĐQT)",
+    "date": "04/11/2026 01:13",
+    "url": "https://static2.vietstock.vn/data/HOSE/2026/NGHI QUYET HDQT/VN/20261102___lhg___thong_bao_thay_doi_nhan_su_ptgd___ky_so.pdf",
+    "source": "Vietstock_Document",
+    "alerted_at": "2026-11-04 07:53:18"
+  },
+  "vts_news_1511249": {
+    "ticker": "LHG",
+    "category": "RESOLUTION_HDQT",
+    "category_label": "NGHỊ QUYẾT HĐQT",
+    "title": "LHG: Thông báo thay đổi nhân sự Phó TGĐ (kèm Nghị quyết HĐQT)",
+    "date": "03/11/2026 10:20",
+    "url": "https://vietstock.vn/2026/11/lhg-thong-bao-thay-doi-nhan-su-pho-tgd-kem-nghi-quyet-hdqt-737-1511249.htm",
+    "source": "Vietstock_News",
+    "alerted_at": "2026-11-04 07:53:19"
+  },
+  "vts_news_1510701": {
+    "ticker": "SAS",
+    "category": "EXTRAORDINARY_EVENT",
+    "category_label": "CÔNG BỐ BẤT THƯỜNG",
+    "title": "SAS: Thay đổi nhân sự",
+    "date": "02/11/2026 15:23",
+    "url": "https://vietstock.vn/2026/11/sas-thay-doi-nhan-su-214-1510701.htm",
+    "source": "Vietstock_News",
+    "alerted_at": "2026-11-04 07:53:20"
+  },
+  "vts_news_1510498": {
+    "ticker": "SAS",
+    "category": "INSIDER_SELL",
+    "category_label": "CỔ ĐÔNG NỘI BỘ BÁN RA",
+    "title": "SAS: Công ty TNHH Thời trang và Mỹ phẩm Âu Châu - người có liên quan đến Ủy viên HĐQT - đăng ký bán 2,669,626 CP",
+    "date": "02/11/2026 10:03",
+    "url": "https://vietstock.vn/2026/11/sas-cong-ty-tnhh-thoi-trang-va-my-pham-au-chau-nguoi-co-lien-quan-den-uy-vien-hdqt-dang-ky-ban-2669626-cp-739-1510498.htm",
+    "source": "Vietstock_News",
+    "alerted_at": "2026-11-04 07:53:21"
+  },
+  "vts_news_1510311": {
+    "ticker": "NCT",
+    "category": "EXTRAORDINARY_EVENT",
+    "category_label": "CÔNG BỐ BẤT THƯỜNG",
+    "title": "NCT: Thông báo thay đổi nhân sự - Người phụ trách Quản trị Công ty (kèm Quyết định, Bản cung cấp thông tin)",
+    "date": "02/11/2026 07:48",
+    "url": "https://vietstock.vn/2026/11/nct-thong-bao-thay-doi-nhan-su-nguoi-phu-trach-quan-tri-cong-ty-kem-quyet-dinh-ban-cung-cap-thong-tin-214-1510311.htm",
+    "source": "Vietstock_News",
+    "alerted_at": "2026-11-04 07:53:21"
+  },
+  "vts_news_1510837": {
+    "ticker": "PHN",
+    "category": "BUSINESS_NEWS",
+    "category_label": "TÌNH HÌNH SẢN XUẤT KINH DOANH",
+    "title": "PHN: Điều chỉnh kế hoạch SXKD năm 2026 và phê duyệt sơ bộ kế hoạch SXKD năm 2027",
+    "date": "03/11/2026 03:20",
+    "url": "https://vietstock.vn/2026/11/phn-dieu-chinh-ke-hoach-sxkd-nam-2026-va-phe-duyet-so-bo-ke-hoach-sxkd-nam-2027-830-1510837.htm",
+    "source": "Vietstock_News",
+    "alerted_at": "2026-11-04 07:53:22"
+  },
+  "vts_doc_86d9111a29a8": {
+    "ticker": "POS",
+    "category": "RESOLUTION_HDQT",
+    "category_label": "NGHỊ QUYẾT HĐQT",
+    "title": "Nghị quyết số 27/NQ-POS-HĐQT ngày 27 tháng 10 năm 2026 tại Thành phố Hồ Chí Minh của Hội đồng quản trị Công ty Cổ phần Vận hành và Xây lắp PTSC về việc Thông qua sửa đổi Điều lệ Công ty và điều chỉnh Giấy chứng nhận Đăng ký doanh nghiệp; đăng ký chứng khoán bổ sung và đăng ký giao dịch bổ sung",
+    "date": "03/11/2026 03:40",
+    "url": "https://static2.vietstock.vn/data/UPCOM/2026/NGHI%20QUYET%20HDQT/VN/1_pos_2026_10_28_c0512a6_en_boardresolution(NhieuFile).zip?ver=0244cc34",
+    "source": "Vietstock_Document",
+    "alerted_at": "2026-11-04 07:53:24"
+  },
+  "vts_news_1510526": {
+    "ticker": "PSD",
+    "category": "RESOLUTION_HDQT",
+    "category_label": "NGHỊ QUYẾT HĐQT",
+    "title": "PET: Nghị quyết HĐQT về việc bảo lãnh cho PSD với MSI",
+    "date": "02/11/2026 10:05",
+    "url": "https://vietstock.vn/2026/11/pet-nghi-quyet-hdqt-ve-viec-bao-lanh-cho-psd-voi-msi-737-1510526.htm",
+    "source": "Vietstock_News",
+    "alerted_at": "2026-11-04 07:53:25"
+  },
+  "vts_news_1510728": {
+    "ticker": "SFC",
+    "category": "DIVIDEND_RIGHTS",
+    "category_label": "CỔ TỨC & QUYỀN DOANH NGHIỆP",
+    "title": "SFC: Thông báo ngày ĐKCC thực hiện quyền tham dự ĐHĐCĐ TN 2026 và tạm ứng cổ tức năm 2026",
+    "date": "03/11/2026 01:28",
+    "url": "https://vietstock.vn/2026/11/sfc-thong-bao-ngay-dkcc-thuc-hien-quyen-tham-du-dhdcd-tn-2026-va-tam-ung-co-tuc-nam-2026-737-1510728.htm",
+    "source": "Vietstock_News",
+    "alerted_at": "2026-11-04 07:53:26"
+  },
+  "vts_news_1511482": {
+    "ticker": "MH3",
+    "category": "DIVIDEND_RIGHTS",
+    "category_label": "CỔ TỨC & QUYỀN DOANH NGHIỆP",
+    "title": "MH3: Ngày đăng ký cuối cùng trả cổ tức bằng tiền mặt",
+    "date": "04/11/2026 07:03",
+    "url": "https://vietstock.vn/2026/11/mh3-ngay-dang-ky-cuoi-cung-tra-co-tuc-bang-tien-mat-737-1511482.htm",
+    "source": "Vietstock_News",
+    "alerted_at": "2026-11-04 07:53:26"
+  },
+  "vts_news_1510317": {
+    "ticker": "MH3",
+    "category": "DIVIDEND_RIGHTS",
+    "category_label": "CỔ TỨC & QUYỀN DOANH NGHIỆP",
+    "title": "MH3: Thông báo về ngày đăng ký cuối cùng để thực hiện quyền trả cổ tức bằng tiền mặt năm 2025",
+    "date": "02/11/2026 07:46",
+    "url": "https://vietstock.vn/2026/11/mh3-thong-bao-ve-ngay-dang-ky-cuoi-cung-de-thuc-hien-quyen-tra-co-tuc-bang-tien-mat-nam-2025-737-1510317.htm",
+    "source": "Vietstock_News",
+    "alerted_at": "2026-11-04 07:53:27"
+  },
+  "vts_doc_dc258a34b370": {
+    "ticker": "NTP",
+    "category": "RESOLUTION_HDQT",
+    "category_label": "NGHỊ QUYẾT HĐQT",
+    "title": "Nghị quyết số 52/NQ-HĐQT ngày 30 tháng 10 năm 2026 tại Hải Phòng của Hội đồng quản trị Công ty CP Nhựa Thiếu niên Tiền Phong về việc thông qua các nội dung lấy ý kiến Cổ đông bằng văn bản năm 2026",
+    "date": "03/11/2026 02:43",
+    "url": "https://static2.vietstock.vn/data/HNX/2026/NGHI%20QUYET%20HDQT/VN/2_ntp_2026_11_2_a7e17c7_vi_nghiquyethoidongquantri_1(NhieuFile).zip?ver=bc6698dc",
+    "source": "Vietstock_Document",
+    "alerted_at": "2026-11-04 07:53:30"
+  },
+  "vts_news_1510492": {
+    "ticker": "NTP",
+    "category": "EGM_EXTRAORDINARY",
+    "category_label": "ĐHĐCĐ BẤT THƯỜNG / LẤY Ý KIẾN",
+    "title": "NTP: Thông báo về ngày đăng ký cuối cùng để thực hiện quyền lấy ý kiến cổ đông bằng văn bản",
+    "date": "02/11/2026 09:51",
+    "url": "https://vietstock.vn/2026/11/ntp-thong-bao-ve-ngay-dang-ky-cuoi-cung-de-thuc-hien-quyen-lay-y-kien-co-dong-bang-van-ban-737-1510492.htm",
+    "source": "Vietstock_News",
+    "alerted_at": "2026-11-04 07:53:31"
+  },
+  "vts_news_1510279": {
+    "ticker": "NTP",
+    "category": "RESOLUTION_HDQT",
+    "category_label": "NGHỊ QUYẾT HĐQT",
+    "title": "NTP: Nghị quyết Hội đồng quản trị",
+    "date": "02/11/2026 07:09",
+    "url": "https://vietstock.vn/2026/11/ntp-nghi-quyet-hoi-dong-quan-tri-737-1510279.htm",
+    "source": "Vietstock_News",
+    "alerted_at": "2026-11-04 07:53:31"
+  },
+  "vts_doc_11a000a84e7a": {
+    "ticker": "TTT",
+    "category": "RESOLUTION_HDQT",
+    "category_label": "NGHỊ QUYẾT HĐQT",
+    "title": "Nghị quyết số 34/2026/NQ-HĐQT/TTT ngày 29 tháng 10 năm 2026 tại Tây Ninh của Hội đồng quản trị Công ty Cổ phần Du lịch - Thương mại Tây Ninh về việc phê duyệt cho vay đối với Công ty TNHH dàn nhạc giao hưởng Mặt Trời",
+    "date": "03/11/2026 02:30",
+    "url": "https://static2.vietstock.vn/data/HNX/2026/NGHI%20QUYET%20HDQT/VN/1_ttt_2026_11_2_78da156_vi_nghiquyethoidongquantriso34_1(NhieuFile).zip?ver=3db54ad5",
+    "source": "Vietstock_Document",
+    "alerted_at": "2026-11-04 07:53:32"
+  },
+  "vts_news_1510468": {
+    "ticker": "TTT",
+    "category": "RESOLUTION_HDQT",
+    "category_label": "NGHỊ QUYẾT HĐQT",
+    "title": "TTT: Nghị quyết Hội đồng quản trị",
+    "date": "02/11/2026 09:39",
+    "url": "https://vietstock.vn/2026/11/ttt-nghi-quyet-hoi-dong-quan-tri-737-1510468.htm",
+    "source": "Vietstock_News",
+    "alerted_at": "2026-11-04 07:53:33"
+  },
+  "vts_doc_1d6c64020c4d": {
+    "ticker": "WSB",
+    "category": "RESOLUTION_HDQT",
+    "category_label": "NGHỊ QUYẾT HĐQT",
+    "title": "Nghị quyết số 15/2026/NQ-HĐQT ngày 23 tháng 10 năm 2026 tại Cần Thơ của Hội đồng quản trị Công ty CP Bia Sài Gòn - Miền Tây về việc chốt danh sách cổ đông để chi tạm ứng cổ tức đợt 1 năm 2026 bằng tiền",
+    "date": "03/11/2026 03:50",
+    "url": "https://static2.vietstock.vn/data/UPCOM/2026/NGHI%20QUYET%20HDQT/VN/1_wsb_2026_10_26_0f9062d_cbttchot_dscd_tam_ung_co_tuc_dot_1_2026(NhieuFile).zip?ver=42be6d2a",
+    "source": "Vietstock_Document",
+    "alerted_at": "2026-11-04 07:53:34"
+  },
+  "vts_news_1511397": {
+    "ticker": "DHA",
+    "category": "INSIDER_TRADE",
+    "category_label": "GIAO DỊCH CỔ ĐÔNG / NỘI BỘ",
+    "title": "DHA: Thông báo giao dịch cổ phiếu của tổ chức có liên quan của Người nội bộ Tổng Công ty VLXD Số 1 - Công ty Cổ phần",
+    "date": "04/11/2026 02:35",
+    "url": "https://vietstock.vn/2026/11/dha-thong-bao-giao-dich-co-phieu-cua-to-chuc-co-lien-quan-cua-nguoi-noi-bo-tong-cong-ty-vlxd-so-1-cong-ty-co-phan-739-1511397.htm",
+    "source": "Vietstock_News",
+    "alerted_at": "2026-11-04 07:53:35"
+  },
+  "vts_news_1511396": {
+    "ticker": "DHA",
+    "category": "INSIDER_TRADE",
+    "category_label": "GIAO DỊCH CỔ ĐÔNG / NỘI BỘ",
+    "title": "DHA: Báo cáo kết quả giao dịch cổ phiếu của tổ chức có liên quan đến Người nội bộ Tổng Công ty VLXD Số 1 - Công ty Cổ phần",
+    "date": "04/11/2026 02:35",
+    "url": "https://vietstock.vn/2026/11/dha-bao-cao-ket-qua-giao-dich-co-phieu-cua-to-chuc-co-lien-quan-den-nguoi-noi-bo-tong-cong-ty-vlxd-so-1-cong-ty-co-phan-739-1511396.htm",
+    "source": "Vietstock_News",
+    "alerted_at": "2026-11-04 07:53:36"
+  },
+  "vts_news_1511113": {
+    "ticker": "HTG",
+    "category": "EXTRAORDINARY_EVENT",
+    "category_label": "CÔNG BỐ BẤT THƯỜNG",
+    "title": "HTG: Thông báo Quyết định của Thuế TP.Đà Nẵng về việc xử phạt vi phạm hành chính",
+    "date": "03/11/2026 08:57",
+    "url": "https://vietstock.vn/2026/11/htg-thong-bao-quyet-dinh-cua-thue-tp-da-nang-ve-viec-xu-phat-vi-pham-hanh-chinh-830-1511113.htm",
+    "source": "Vietstock_News",
+    "alerted_at": "2026-11-04 07:53:36"
+  },
+  "vts_doc_08cc0baabc47": {
+    "ticker": "RTB",
+    "category": "RESOLUTION_HDQT",
+    "category_label": "NGHỊ QUYẾT HĐQT",
+    "title": "Nghị quyết số 352 /NQ-HĐQTCSTB ngày 27 tháng 10 năm 2026 tại Tây Ninh của Hội đồng quản trị Công ty Cổ phần Cao su Tân Biên về việc thông qua việc lấy ý kiến cổ đông bằng văn bản lần 2 năm 2026",
+    "date": "03/11/2026 03:50",
+    "url": "https://static2.vietstock.vn/data/UPCOM/2026/NGHI%20QUYET%20HDQT/VN/1_rtb_2026_10_27_1697cc2_en_boardresolution_27102026(NhieuFile).zip?ver=427fbaef",
+    "source": "Vietstock_Document",
+    "alerted_at": "2026-11-04 07:53:37"
+  },
+  "vts_news_1509905": {
+    "ticker": "RTB",
+    "category": "EGM_EXTRAORDINARY",
+    "category_label": "ĐHĐCĐ BẤT THƯỜNG / LẤY Ý KIẾN",
+    "title": "RTB: Ngày đăng ký cuối cùng lấy ý kiến cổ đông bằng văn bản",
+    "date": "02/11/2026 01:45",
+    "url": "https://vietstock.vn/2026/11/rtb-ngay-dang-ky-cuoi-cung-lay-y-kien-co-dong-bang-van-ban-737-1509905.htm",
+    "source": "Vietstock_News",
+    "alerted_at": "2026-11-04 07:53:38"
+  },
+  "vts_doc_58a3fb42eb46": {
+    "ticker": "DPR",
+    "category": "EGM_EXTRAORDINARY",
+    "category_label": "ĐHĐCĐ BẤT THƯỜNG / LẤY Ý KIẾN",
+    "title": "Tài liệu đại hội đồng cổ đông bất thường năm 2026",
+    "date": "03/11/2026 07:17",
+    "url": "https://static2.vietstock.vn/data/HOSE/2026/TAI%20LIEU%20DHCD/VN/DPR_TAILIEU_DHDCD%20bat%20thuong_2026.zip?ver=96360970",
+    "source": "Vietstock_Document",
+    "alerted_at": "2026-11-04 07:53:39"
+  },
+  "vts_news_1510285": {
+    "ticker": "DPR",
+    "category": "DIVIDEND_RIGHTS",
+    "category_label": "CỔ TỨC & QUYỀN DOANH NGHIỆP",
+    "title": "DPR muốn tăng vốn gấp đôi thông qua thưởng cổ phiếu, chốt chia hơn 120 tỷ đồng cổ tức",
+    "date": "02/11/2026 09:17",
+    "url": "https://vietstock.vn/2026/11/dpr-muon-tang-von-gap-doi-thong-qua-thuong-co-phieu-chot-chia-hon-120-ty-dong-co-tuc-764-1510285.htm",
+    "source": "Vietstock_News",
+    "alerted_at": "2026-11-04 07:53:39"
+  },
+  "vts_news_1510107": {
+    "ticker": "DPR",
+    "category": "EGM_EXTRAORDINARY",
+    "category_label": "ĐHĐCĐ BẤT THƯỜNG / LẤY Ý KIẾN",
+    "title": "DPR: Cập nhật tài liệu ĐHĐCĐ bất thường năm 2026",
+    "date": "02/11/2026 04:19",
+    "url": "https://vietstock.vn/2026/11/dpr-cap-nhat-tai-lieu-dhdcd-bat-thuong-nam-2026-737-1510107.htm",
+    "source": "Vietstock_News",
+    "alerted_at": "2026-11-04 07:53:40"
+  },
+  "vts_news_1509896": {
+    "ticker": "GCF",
+    "category": "DIVIDEND_RIGHTS",
+    "category_label": "CỔ TỨC & QUYỀN DOANH NGHIỆP",
+    "title": "GCF: Ngày đăng ký cuối cùng trả cổ tức bằng tiền mặt",
+    "date": "02/11/2026 01:15",
+    "url": "https://vietstock.vn/2026/11/gcf-ngay-dang-ky-cuoi-cung-tra-co-tuc-bang-tien-mat-737-1509896.htm",
+    "source": "Vietstock_News",
+    "alerted_at": "2026-11-04 07:53:41"
+  },
+  "vts_news_1509886": {
+    "ticker": "GCF",
+    "category": "EXTRAORDINARY_EVENT",
+    "category_label": "CÔNG BỐ BẤT THƯỜNG",
+    "title": "GCF: Thay đổi nhân sự",
+    "date": "02/11/2026 00:58",
+    "url": "https://vietstock.vn/2026/11/gcf-thay-doi-nhan-su-214-1509886.htm",
+    "source": "Vietstock_News",
+    "alerted_at": "2026-11-04 07:53:42"
+  },
+  "vts_news_1511162": {
+    "ticker": "HVT",
+    "category": "RESOLUTION_HDQT",
+    "category_label": "NGHỊ QUYẾT HĐQT",
+    "title": "HVT: Nghị quyết Hội đồng quản trị",
+    "date": "03/11/2026 09:27",
+    "url": "https://vietstock.vn/2026/11/hvt-nghi-quyet-hoi-dong-quan-tri-737-1511162.htm",
+    "source": "Vietstock_News",
+    "alerted_at": "2026-11-04 07:53:43"
+  },
+  "vts_doc_6b76183f762e": {
+    "ticker": "IST",
+    "category": "EGM_EXTRAORDINARY",
+    "category_label": "ĐHĐCĐ BẤT THƯỜNG / LẤY Ý KIẾN",
+    "title": "Nghị quyết đại hội đồng cổ đông theo hình thức lấy ý kiến bằng văn bản năm 2026",
+    "date": "03/11/2026 06:44",
+    "url": "https://static2.vietstock.vn/data/UPCOM/2026/NGHI%20QUYET%20DHCD/VN/IST_Nghiquyet_DHDCD%20bat%20thuong_2026.zip?ver=5d0c9e61",
+    "source": "Vietstock_Document",
+    "alerted_at": "2026-11-04 07:53:44"
+  },
+  "vts_news_1510363": {
+    "ticker": "IST",
+    "category": "EGM_EXTRAORDINARY",
+    "category_label": "ĐHĐCĐ BẤT THƯỜNG / LẤY Ý KIẾN",
+    "title": "IST: Nghị quyết Đại hội đồng cổ đông bất thường năm 2026",
+    "date": "02/11/2026 08:20",
+    "url": "https://vietstock.vn/2026/11/ist-nghi-quyet-dai-hoi-dong-co-dong-bat-thuong-nam-2026-737-1510363.htm",
+    "source": "Vietstock_News",
+    "alerted_at": "2026-11-04 07:53:45"
+  },
+  "vts_doc_c0157a194843": {
+    "ticker": "MSN",
+    "category": "RESOLUTION_HDQT",
+    "category_label": "NGHỊ QUYẾT HĐQT",
+    "title": "Nghị quyết HĐQT về việc lấy ý kiến cổ đông bằng văn bản",
+    "date": "02/11/2026 01:15",
+    "url": "https://static2.vietstock.vn/data/HOSE/2026/NGHI QUYET HDQT/VN/20261030___msn___nq_hdqt_vv_lay_y_kien_cd_bang_van_ban___signed.pdf",
+    "source": "Vietstock_Document",
+    "alerted_at": "2026-11-04 07:53:45"
+  },
+  "vts_doc_b181a1f8c87f": {
+    "ticker": "MSN",
+    "category": "RESOLUTION_HDQT",
+    "category_label": "NGHỊ QUYẾT HĐQT",
+    "title": "Nghị quyết HĐQT số 457 ngày 30/10/2026 (kèm mẫu HĐLĐ)",
+    "date": "02/11/2026 01:18",
+    "url": "https://static2.vietstock.vn/data/HOSE/2026/NGHI QUYET HDQT/VN/20261030___msn___nq_hdqt_vv_tu_nhiem_tv_hdqt_va_ky_hd_lao_dong_voi_tv_hdqt_david_tan___signed.pdf",
+    "source": "Vietstock_Document",
+    "alerted_at": "2026-11-04 07:53:45"
+  },
+  "vts_news_1511345": {
+    "ticker": "MSN",
+    "category": "EXTRAORDINARY_EVENT",
+    "category_label": "CÔNG BỐ BẤT THƯỜNG",
+    "title": "Masan bổ nhiệm Giám đốc Chiến lược & Đầu tư và Giám đốc Nhân sự Tập đoàn",
+    "date": "04/11/2026 02:48",
+    "url": "https://vietstock.vn/2026/11/masan-bo-nhiem-giam-doc-chien-luoc-dau-tu-va-giam-doc-nhan-su-tap-doan-214-1511345.htm",
+    "source": "Vietstock_News",
+    "alerted_at": "2026-11-04 07:53:46"
+  },
+  "vts_news_1510947": {
+    "ticker": "MAC",
+    "category": "EXTRAORDINARY_EVENT",
+    "category_label": "CÔNG BỐ BẤT THƯỜNG",
+    "title": "MAC: Thay đổi nhân sự",
+    "date": "03/11/2026 06:57",
+    "url": "https://vietstock.vn/2026/11/mac-thay-doi-nhan-su-214-1510947.htm",
+    "source": "Vietstock_News",
+    "alerted_at": "2026-11-04 07:53:47"
+  },
+  "vts_doc_cfc4c107660e": {
+    "ticker": "NSC",
+    "category": "RESOLUTION_HDQT",
+    "category_label": "NGHỊ QUYẾT HĐQT",
+    "title": "Nghị quyết HĐQT về việc phê duyệt khoản vay vốn tại VCB - Chi nhánh Thăng Long",
+    "date": "02/11/2026 01:15",
+    "url": "https://static2.vietstock.vn/data/HOSE/2026/NGHI QUYET HDQT/VN/20261029___nsc___cbtt_nq_hdqt_64_phe_duyet_vay_von_vcb.pdf",
+    "source": "Vietstock_Document",
+    "alerted_at": "2026-11-04 07:53:47"
+  },
+  "vts_doc_42ca8714b26b": {
+    "ticker": "VIP",
+    "category": "RESOLUTION_HDQT",
+    "category_label": "NGHỊ QUYẾT HĐQT",
+    "title": "Nghị quyết HĐQT số 159 ngày 29/10/2026",
+    "date": "02/11/2026 01:15",
+    "url": "https://static2.vietstock.vn/data/HOSE/2026/NGHI QUYET HDQT/VN/20261030___vip___nghi_quyet_hdqt_vv_phe_duyet_du_an_dau_tu_dong_moi_tau_0001.pdf",
+    "source": "Vietstock_Document",
+    "alerted_at": "2026-11-04 07:53:48"
+  },
+  "vts_doc_286f90c83466": {
+    "ticker": "DSH",
+    "category": "RESOLUTION_HDQT",
+    "category_label": "NGHỊ QUYẾT HĐQT",
+    "title": "Báo cáo kết quả đợt phát hành cổ phiếu để trả cổ tức năm 2025, Thông báo thay đổi số lượng cổ phiếu có quyền biểu quyết đang lưu hành và Nghị quyết HĐQT số 03.11/2026 ngày 03/11/2026",
+    "date": "04/11/2026 01:11",
+    "url": "https://static2.vietstock.vn/data/HOSE/2026/NGHI QUYET HDQT/VN/20261103___dsh___thong_bao_thay_doi_so_luong_co_phieu_co_quyen_bieu_quyet_dang_luu_hanh_va_bao_cao_ket_qua_dot_phat_hanh_co_phieu_de_tra_co_tuc_2025.pdf",
+    "source": "Vietstock_Document",
+    "alerted_at": "2026-11-04 07:53:48"
+  },
+  "vts_news_1511261": {
+    "ticker": "DSH",
+    "category": "RESOLUTION_HDQT",
+    "category_label": "NGHỊ QUYẾT HĐQT",
+    "title": "DSH: Báo cáo kết quả đợt phát hành cổ phiếu để trả cổ tức năm 2025. Thông báo thay đổi số lượng cổ phiếu có quyền biểu quyết đang lưu hành và Nghị quyết HĐQT số 03.11/2026 ngày 03/11/2026",
+    "date": "03/11/2026 10:33",
+    "url": "https://vietstock.vn/2026/11/dsh-bao-cao-ket-qua-dot-phat-hanh-co-phieu-de-tra-co-tuc-nam-2025-thong-bao-thay-doi-so-luong-co-phieu-co-quyen-bieu-quyet-dang-luu-hanh-va-nghi-quyet-hdqt-so-03-11-2026-ngay-03-11-2026-737-1511261.htm",
+    "source": "Vietstock_News",
+    "alerted_at": "2026-11-04 07:53:48"
+  },
+  "vts_doc_05b2e894d3fe": {
+    "ticker": "GEG",
+    "category": "RESOLUTION_HDQT",
+    "category_label": "NGHỊ QUYẾT HĐQT",
+    "title": "Nghị quyết HĐQT số 19 ngày 29/10/2026",
+    "date": "02/11/2026 01:15",
+    "url": "https://static2.vietstock.vn/data/HOSE/2026/NGHI QUYET HDQT/VN/20261030___geg___cbtt_nq_hdqt_so_19_ngay_29_10_2026.pdf",
+    "source": "Vietstock_Document",
+    "alerted_at": "2026-11-04 07:53:49"
+  },
+  "vts_news_1510225": {
+    "ticker": "BMI",
+    "category": "DIVIDEND_RIGHTS",
+    "category_label": "CỔ TỨC & QUYỀN DOANH NGHIỆP",
+    "title": "BMI: Thông báo phát hành cổ phiếu để trả cổ tức và ngày ĐKCC thực hiện quyền nhận cổ tức",
+    "date": "02/11/2026 06:18",
+    "url": "https://vietstock.vn/2026/11/bmi-thong-bao-phat-hanh-co-phieu-de-tra-co-tuc-va-ngay-dkcc-thuc-hien-quyen-nhan-co-tuc-738-1510225.htm",
+    "source": "Vietstock_News",
+    "alerted_at": "2026-11-04 07:53:49"
+  },
+  "vts_doc_7ba4573c8842": {
+    "ticker": "DTD",
+    "category": "RESOLUTION_HDQT",
+    "category_label": "NGHỊ QUYẾT HĐQT",
+    "title": "Nghị quyết số 133/2026/NQ-HĐQT ngày 30 tháng 10 năm 2026 tại Ninh Bình của Hội đồng quản trị về việc tiếp tục triển khai phương án phát hành cổ phiếu thưởng cho CBCNV theo chương trình lựa chọn cho người lao động",
+    "date": "03/11/2026 02:29",
+    "url": "https://static2.vietstock.vn/data/HNX/2026/NGHI%20QUYET%20HDQT/VN/1_dtd_2026_11_2_93900a3_vi_nghiquyethoidongquantri(NhieuFile).zip?ver=3b47a77e",
+    "source": "Vietstock_Document",
+    "alerted_at": "2026-11-04 07:53:50"
+  },
+  "vts_news_1510542": {
+    "ticker": "DTD",
+    "category": "RESOLUTION_HDQT",
+    "category_label": "NGHỊ QUYẾT HĐQT",
+    "title": "DTD: Nghị quyết Hội đồng quản trị",
+    "date": "02/11/2026 10:34",
+    "url": "https://vietstock.vn/2026/11/dtd-nghi-quyet-hoi-dong-quan-tri-737-1510542.htm",
+    "source": "Vietstock_News",
+    "alerted_at": "2026-11-04 07:53:51"
+  },
+  "vts_doc_808fc13dba60": {
+    "ticker": "DTK",
+    "category": "EGM_EXTRAORDINARY",
+    "category_label": "ĐHĐCĐ BẤT THƯỜNG / LẤY Ý KIẾN",
+    "title": "Tài liệu đại hội đồng cổ đông bất thường năm 2026",
+    "date": "03/11/2026 07:25",
+    "url": "https://static2.vietstock.vn/data/HNX/2026/TAI%20LIEU%20DHCD/VN/DTK_TAILIEU_DHDCD%20bat%20thuong_2026_1.zip?ver=523d7cac",
+    "source": "Vietstock_Document",
+    "alerted_at": "2026-11-04 07:53:52"
+  },
+  "vts_doc_a8de70d94573": {
+    "ticker": "GDA",
+    "category": "RESOLUTION_HDQT",
+    "category_label": "NGHỊ QUYẾT HĐQT",
+    "title": "Nghị quyết số 30./2026/NQ-HĐQT-TDA ngày 23 tháng 10 năm 2026 tại Thành phố Hồ Chí Minh của Hội đồng quản trị Công ty Cổ phần Tôn Đông Á về việc thông qua việc triển khai Phương án phát hành cổ phiếu để chi trả cổ tức năm 2025 theo Nghị quyết Đại hội đồng Cổ đông năm 2026",
+    "date": "03/11/2026 03:51",
+    "url": "https://static2.vietstock.vn/data/OTC/2026/NGHI%20QUYET%20HDQT/VN/2_gda_2026_10_26_97ffd7c_vi_nghiquyethoidongquantri(NhieuFile).zip?ver=16dc0306",
+    "source": "Vietstock_Document",
+    "alerted_at": "2026-11-04 07:53:53"
+  },
+  "vts_news_1511100": {
+    "ticker": "GDT",
+    "category": "INSIDER_TRADE",
+    "category_label": "GIAO DỊCH CỔ ĐÔNG / NỘI BỘ",
+    "title": "GDT: Thông báo giao dịch cổ phiếu của người có liên quan của Người nội bộ Huỳnh Thị Thanh",
+    "date": "03/11/2026 08:35",
+    "url": "https://vietstock.vn/2026/11/gdt-thong-bao-giao-dich-co-phieu-cua-nguoi-co-lien-quan-cua-nguoi-noi-bo-huynh-thi-thanh-739-1511100.htm",
+    "source": "Vietstock_News",
+    "alerted_at": "2026-11-04 07:53:53"
+  },
+  "vts_news_1511054": {
+    "ticker": "GDT",
+    "category": "INSIDER_TRADE",
+    "category_label": "GIAO DỊCH CỔ ĐÔNG / NỘI BỘ",
+    "title": "GDT: Đính chính giá trị thông báo giao dịch cổ phiếu của người có liên quan của Người nội bộ Lê Như Thanh An",
+    "date": "03/11/2026 08:29",
+    "url": "https://vietstock.vn/2026/11/gdt-dinh-chinh-gia-tri-thong-bao-giao-dich-co-phieu-cua-nguoi-co-lien-quan-cua-nguoi-noi-bo-le-nhu-thanh-an-739-1511054.htm",
+    "source": "Vietstock_News",
+    "alerted_at": "2026-11-04 07:53:54"
+  },
+  "vts_doc_3318bc771752": {
+    "ticker": "HDG",
+    "category": "BUSINESS_NEWS",
+    "category_label": "TÌNH HÌNH SẢN XUẤT KINH DOANH",
+    "title": "Giải trình kết quả kinh doanh quý 3 năm 2026",
+    "date": "03/11/2026 01:47",
+    "url": "https://static2.vietstock.vn/data/HOSE/2026/BCTC/VN/QUY 3/HDG_Giaitrinh_KQKD_Q3_2026.pdf",
+    "source": "Vietstock_Document",
+    "alerted_at": "2026-11-04 07:53:54"
+  },
+  "vts_doc_761ad20d1fa1": {
+    "ticker": "KSV",
+    "category": "INSIDER_SELL",
+    "category_label": "CỔ ĐÔNG NỘI BỘ BÁN RA",
+    "title": "Nghị quyết số 2991/NQ - VIMICO ngày 30 tháng 10 năm 2026 tại Hà Nội của Hội đồng quản trị Tổng công ty Khoáng sản TKV - CTCP về việc thống nhất thông qua Phương án chào bán cổ phiếu Công ty Cổ phần Khoáng sản 3 - Vimico do Tổng công ty Khoáng sản TKV - CTCP sở hữu",
+    "date": "03/11/2026 02:17",
+    "url": "https://static2.vietstock.vn/data/HNX/2026/NGHI%20QUYET%20HDQT/VN/2_ksv_2026_11_2_f707c18_en_resolution_hdqt_2991(NhieuFile).zip?ver=15b058d3",
+    "source": "Vietstock_Document",
+    "alerted_at": "2026-11-04 07:53:56"
+  },
+  "vts_doc_d038fb3b8116": {
+    "ticker": "KSV",
+    "category": "RESOLUTION_HDQT",
+    "category_label": "NGHỊ QUYẾT HĐQT",
+    "title": "Nghị quyết số 2990/NQ-VIMICO ngày 30 tháng 10 năm 2026 tại Hà Nội của Hội đồng quản trị Tổng công ty Khoáng sản TKV - CTCP về việc thống nhất thông qua quyết định triệu tập và tổ chức Đại hội đồng cổ đông bất thường năm 2026",
+    "date": "03/11/2026 02:17",
+    "url": "https://static2.vietstock.vn/data/HNX/2026/NGHI%20QUYET%20HDQT/VN/1_ksv_2026_11_2_8293624_vi_nghiquyethdqt_2990(NhieuFile).zip?ver=78163ca7",
+    "source": "Vietstock_Document",
+    "alerted_at": "2026-11-04 07:53:56"
+  },
+  "vts_news_1510632": {
+    "ticker": "KSV",
+    "category": "EXTRAORDINARY_EVENT",
+    "category_label": "CÔNG BỐ BẤT THƯỜNG",
+    "title": "KSV: Thay đổi nhân sự",
+    "date": "02/11/2026 09:12",
+    "url": "https://vietstock.vn/2026/11/ksv-thay-doi-nhan-su-214-1510632.htm",
+    "source": "Vietstock_News",
+    "alerted_at": "2026-11-04 07:53:57"
+  },
+  "vts_news_1510631": {
+    "ticker": "KSV",
+    "category": "RESOLUTION_HDQT",
+    "category_label": "NGHỊ QUYẾT HĐQT",
+    "title": "KSV: Nghị quyết Hội đồng quản trị",
+    "date": "02/11/2026 09:11",
+    "url": "https://vietstock.vn/2026/11/ksv-nghi-quyet-hoi-dong-quan-tri-737-1510631.htm",
+    "source": "Vietstock_News",
+    "alerted_at": "2026-11-04 07:53:58"
+  },
+  "vts_news_1510630": {
+    "ticker": "KSV",
+    "category": "RESOLUTION_HDQT",
+    "category_label": "NGHỊ QUYẾT HĐQT",
+    "title": "KSV: Nghị quyết Hội đồng quản trị",
+    "date": "02/11/2026 09:10",
+    "url": "https://vietstock.vn/2026/11/ksv-nghi-quyet-hoi-dong-quan-tri-737-1510630.htm",
+    "source": "Vietstock_News",
+    "alerted_at": "2026-11-04 07:53:59"
+  },
+  "vts_news_1510628": {
+    "ticker": "KSV",
+    "category": "EXTRAORDINARY_EVENT",
+    "category_label": "CÔNG BỐ BẤT THƯỜNG",
+    "title": "KSV: Công bố thông tin bất thường",
+    "date": "02/11/2026 09:09",
+    "url": "https://vietstock.vn/2026/11/ksv-cong-bo-thong-tin-bat-thuong-737-1510628.htm",
+    "source": "Vietstock_News",
+    "alerted_at": "2026-11-04 07:54:00"
+  },
+  "vts_news_1510051": {
+    "ticker": "KSV",
+    "category": "EGM_EXTRAORDINARY",
+    "category_label": "ĐHĐCĐ BẤT THƯỜNG / LẤY Ý KIẾN",
+    "title": "KSV: Thông báo ngày đăng ký cuối cùng thực hiện quyền tham dự ĐHĐCĐ bất thường ( lần 2) năm 2026",
+    "date": "02/11/2026 03:53",
+    "url": "https://vietstock.vn/2026/11/ksv-thong-bao-ngay-dang-ky-cuoi-cung-thuc-hien-quyen-tham-du-dhdcd-bat-thuong-lan-2-nam-2026-737-1510051.htm",
+    "source": "Vietstock_News",
+    "alerted_at": "2026-11-04 07:54:01"
+  },
+  "vts_news_1510479": {
+    "ticker": "KSV",
+    "category": "EGM_EXTRAORDINARY",
+    "category_label": "ĐHĐCĐ BẤT THƯỜNG / LẤY Ý KIẾN",
+    "title": "KSV: Thông báo ngày đăng ký cuối cùng thực hiện quyền tham dự đại hội đồng cổ đông bất thường ( lần 2) năm 2026",
+    "date": "02/11/2026 03:53",
+    "url": "https://vietstock.vn/2026/11/ksv-thong-bao-ngay-dang-ky-cuoi-cung-thuc-hien-quyen-tham-du-dai-hoi-dong-co-dong-bat-thuong-lan-2-nam-2026-737-1510479.htm",
+    "source": "Vietstock_News",
+    "alerted_at": "2026-11-04 07:54:01"
+  },
+  "vts_news_1511124": {
+    "ticker": "L18",
+    "category": "INSIDER_BUY",
+    "category_label": "CỔ ĐÔNG NỘI BỘ MUA VÀO",
+    "title": "L18: Công ty cổ phần Đầu tư và thương mại Tam Việt - người có liên quan đến Ủy viên HĐQT - đã mua 99,800 CP",
+    "date": "03/11/2026 08:54",
+    "url": "https://vietstock.vn/2026/11/l18-cong-ty-co-phan-dau-tu-va-thuong-mai-tam-viet-nguoi-co-lien-quan-den-uy-vien-hdqt-da-mua-99800-cp-737-1511124.htm",
+    "source": "Vietstock_News",
+    "alerted_at": "2026-11-04 07:54:01"
+  },
+  "vts_news_1511125": {
+    "ticker": "L18",
+    "category": "INSIDER_BUY",
+    "category_label": "CỔ ĐÔNG NỘI BỘ MUA VÀO",
+    "title": "L18: Bùi Phương Hà - người có liên quan đến Phó Tổng Giám đốc - đăng ký mua 100,000 CP",
+    "date": "03/11/2026 08:53",
+    "url": "https://vietstock.vn/2026/11/l18-bui-phuong-ha-nguoi-co-lien-quan-den-pho-tong-giam-doc-dang-ky-mua-100000-cp-739-1511125.htm",
+    "source": "Vietstock_News",
+    "alerted_at": "2026-11-04 07:54:01"
+  },
+  "vts_news_1511094": {
+    "ticker": "L18",
+    "category": "INSIDER_BUY",
+    "category_label": "CỔ ĐÔNG NỘI BỘ MUA VÀO",
+    "title": "L18: Bùi Thanh Thái - người có liên quan đến Phó Tổng Giám đốc - đã mua 100,000 CP",
+    "date": "03/11/2026 08:52",
+    "url": "https://vietstock.vn/2026/11/l18-bui-thanh-thai-nguoi-co-lien-quan-den-pho-tong-giam-doc-da-mua-100000-cp-739-1511094.htm",
+    "source": "Vietstock_News",
+    "alerted_at": "2026-11-04 07:54:01"
+  },
+  "vts_doc_e48a7b93c443": {
+    "ticker": "MSH",
+    "category": "BUSINESS_NEWS",
+    "category_label": "TÌNH HÌNH SẢN XUẤT KINH DOANH",
+    "title": "Giải trình kết quả kinh doanh Công ty mẹ quý 3 năm 2026",
+    "date": "02/11/2026 08:26",
+    "url": "https://static2.vietstock.vn/data/HOSE/2026/BCTC/VN/QUY 3/MSH_Giaitrinh_KQKD_Q3_2026_Congtyme.pdf",
+    "source": "Vietstock_Document",
+    "alerted_at": "2026-11-04 07:54:01"
+  },
+  "vts_doc_6ed58dcc092b": {
+    "ticker": "MZG",
+    "category": "BUSINESS_NEWS",
+    "category_label": "TÌNH HÌNH SẢN XUẤT KINH DOANH",
+    "title": "Giải trình kết quả kinh doanh quý 3 năm 2026",
+    "date": "02/11/2026 08:26",
+    "url": "https://static2.vietstock.vn/data/HOSE/2026/BCTC/VN/QUY 3/MZG_Giaitrinh_KQKD_Q3_2026.pdf",
+    "source": "Vietstock_Document",
+    "alerted_at": "2026-11-04 07:54:02"
+  },
+  "vts_news_1511232": {
+    "ticker": "MZG",
+    "category": "INSIDER_BUY",
+    "category_label": "CỔ ĐÔNG NỘI BỘ MUA VÀO",
+    "title": "MZG: Thông báo giao dịch quyền mua cổ phiếu của Người nội bộ Nguyễn Hữu Tú, Dương Ngọc Thế",
+    "date": "03/11/2026 09:02",
+    "url": "https://vietstock.vn/2026/11/mzg-thong-bao-giao-dich-quyen-mua-co-phieu-cua-nguoi-noi-bo-nguyen-huu-tu-duong-ngoc-the-739-1511232.htm",
+    "source": "Vietstock_News",
+    "alerted_at": "2026-11-04 07:54:02"
+  },
+  "vts_doc_7eeaf20b6ae6": {
+    "ticker": "PTB",
+    "category": "BUSINESS_NEWS",
+    "category_label": "TÌNH HÌNH SẢN XUẤT KINH DOANH",
+    "title": "Giải trình kết quả kinh doanh quý 3 năm 2026",
+    "date": "02/11/2026 08:26",
+    "url": "https://static2.vietstock.vn/data/HOSE/2026/BCTC/VN/QUY 3/PTB_Giaitrinh_KQKD_Q3_2026.pdf",
+    "source": "Vietstock_Document",
+    "alerted_at": "2026-11-04 07:54:03"
+  },
+  "vts_news_1510248": {
+    "ticker": "PTB",
+    "category": "INSIDER_TRADE",
+    "category_label": "GIAO DỊCH CỔ ĐÔNG / NỘI BỘ",
+    "title": "PTB: Báo cáo kết quả giao dịch cổ phiếu của Người nội bộ Lê Văn Thảo",
+    "date": "02/11/2026 06:37",
+    "url": "https://vietstock.vn/2026/11/ptb-bao-cao-ket-qua-giao-dich-co-phieu-cua-nguoi-noi-bo-le-van-thao-739-1510248.htm",
+    "source": "Vietstock_News",
+    "alerted_at": "2026-11-04 07:54:03"
+  },
+  "vts_news_1510912": {
+    "ticker": "PTS",
+    "category": "EXTRAORDINARY_EVENT",
+    "category_label": "CÔNG BỐ BẤT THƯỜNG",
+    "title": "PTS: Tiếp nhận đơn từ nhiệm của Chủ tịch HĐQT Công ty",
+    "date": "03/11/2026 05:30",
+    "url": "https://vietstock.vn/2026/11/pts-tiep-nhan-don-tu-nhiem-cua-chu-tich-hdqt-cong-ty-214-1510912.htm",
+    "source": "Vietstock_News",
+    "alerted_at": "2026-11-04 07:54:03"
+  },
+  "vts_news_1510889": {
+    "ticker": "PTS",
+    "category": "RESOLUTION_HDQT",
+    "category_label": "NGHỊ QUYẾT HĐQT",
+    "title": "PTS: Nghị quyết Hội đồng quản trị",
+    "date": "03/11/2026 05:07",
+    "url": "https://vietstock.vn/2026/11/pts-nghi-quyet-hoi-dong-quan-tri-737-1510889.htm",
+    "source": "Vietstock_News",
+    "alerted_at": "2026-11-04 07:54:03"
+  },
+  "vts_doc_f5f1b50c7bd2": {
+    "ticker": "RAL",
+    "category": "BUSINESS_NEWS",
+    "category_label": "TÌNH HÌNH SẢN XUẤT KINH DOANH",
+    "title": "Giải trình kết quả kinh doanh quý 3 năm 2026",
+    "date": "02/11/2026 08:26",
+    "url": "https://static2.vietstock.vn/data/HOSE/2026/BCTC/VN/QUY 3/RAL_Giaitrinh_KQKD_Q3_2026.pdf",
+    "source": "Vietstock_Document",
+    "alerted_at": "2026-11-04 07:54:03"
+  },
+  "vts_news_1510091": {
+    "ticker": "RAL",
+    "category": "BUSINESS_NEWS",
+    "category_label": "TÌNH HÌNH SẢN XUẤT KINH DOANH",
+    "title": "RAL: Giải trình chênh lệch KQKD quý 3/2026 so với cùng kỳ năm trước",
+    "date": "02/11/2026 04:12",
+    "url": "https://vietstock.vn/2026/11/ral-giai-trinh-chenh-lech-kqkd-quy-3-2026-so-voi-cung-ky-nam-truoc-737-1510091.htm",
+    "source": "Vietstock_News",
+    "alerted_at": "2026-11-04 07:54:03"
+  },
+  "vts_doc_cf708ac19d8f": {
+    "ticker": "S55",
+    "category": "RESOLUTION_HDQT",
+    "category_label": "NGHỊ QUYẾT HĐQT",
+    "title": "Nghị quyết số 67/NQ-S55-HĐQT ngày 30 tháng 10 năm 2026 tại Gia Lai của Hội đồng quản trị Công ty Cổ phần Sông Đà 505 về việc thông qua việc góp vốn thành lập Công ty TNHH Điện gió Kbang",
+    "date": "03/11/2026 03:40",
+    "url": "https://static2.vietstock.vn/data/HNX/2026/NGHI%20QUYET%20HDQT/VN/2_s55_2026_11_3_6bed593_vi_nq_hdqt_thanhlapkbang_1(NhieuFile).zip?ver=4d470e6b",
+    "source": "Vietstock_Document",
+    "alerted_at": "2026-11-04 07:54:04"
+  },
+  "vts_news_1510833": {
+    "ticker": "S55",
+    "category": "RESOLUTION_HDQT",
+    "category_label": "NGHỊ QUYẾT HĐQT",
+    "title": "S55: Nghị quyết Hội đồng quản trị",
+    "date": "03/11/2026 03:09",
+    "url": "https://vietstock.vn/2026/11/s55-nghi-quyet-hoi-dong-quan-tri-737-1510833.htm",
+    "source": "Vietstock_News",
+    "alerted_at": "2026-11-04 07:54:04"
+  },
+  "vts_doc_9aaa5a9a04f1": {
+    "ticker": "TVT",
+    "category": "BUSINESS_NEWS",
+    "category_label": "TÌNH HÌNH SẢN XUẤT KINH DOANH",
+    "title": "Giải trình kết quả kinh doanh Hợp nhất quý 3 năm 2026",
+    "date": "02/11/2026 08:26",
+    "url": "https://static2.vietstock.vn/data/HOSE/2026/BCTC/VN/QUY 3/TVT_Giaitrinh_KQKD_Q3_2026_Hopnhat.pdf",
+    "source": "Vietstock_Document",
+    "alerted_at": "2026-11-04 07:54:05"
+  },
+  "vts_doc_00a32b3665c7": {
+    "ticker": "TVT",
+    "category": "BUSINESS_NEWS",
+    "category_label": "TÌNH HÌNH SẢN XUẤT KINH DOANH",
+    "title": "Giải trình kết quả kinh doanh Hợp nhất quý 3 năm 2026",
+    "date": "02/11/2026 08:26",
+    "url": "https://static2.vietstock.vn/data/HOSE/2026/BCTC/VN/QUY 3/TVT_Giaitrinh_KQKD_Q3_2026_Hopnhat_1.pdf",
+    "source": "Vietstock_Document",
+    "alerted_at": "2026-11-04 07:54:05"
+  },
+  "vts_news_1511022": {
+    "ticker": "TV1",
+    "category": "EXTRAORDINARY_EVENT",
+    "category_label": "CÔNG BỐ BẤT THƯỜNG",
+    "title": "TV1: Thay đổi nhân sự",
+    "date": "03/11/2026 08:04",
+    "url": "https://vietstock.vn/2026/11/tv1-thay-doi-nhan-su-214-1511022.htm",
+    "source": "Vietstock_News",
+    "alerted_at": "2026-11-04 07:54:05"
+  },
+  "vts_doc_82bc78da2043": {
+    "ticker": "VEA",
+    "category": "RESOLUTION_HDQT",
+    "category_label": "NGHỊ QUYẾT HĐQT",
+    "title": "Nghị quyết số 148 /NQ-HĐQT ngày 28 tháng 10 năm 2026 tại Hà Nội của Hội đồng quản trị Tổng công ty Máy động lực và Máy nông nghiệp Việt Nam - CTCP về việc chi trả cổ tức năm 2025 của VEAM",
+    "date": "03/11/2026 03:40",
+    "url": "https://static2.vietstock.vn/data/UPCOM/2026/NGHI%20QUYET%20HDQT/VN/1_vea_2026_10_29_25ea5f7_vn_nghi_quyet_chia_co_tuc_nam_2025_cua_veam_1(NhieuFile).zip?ver=ac380416",
+    "source": "Vietstock_Document",
+    "alerted_at": "2026-11-04 07:54:05"
+  },
+  "vts_doc_ff741b4862ed": {
+    "ticker": "VGS",
+    "category": "EGM_EXTRAORDINARY",
+    "category_label": "ĐHĐCĐ BẤT THƯỜNG / LẤY Ý KIẾN",
+    "title": "Tài liệu lấy ý kiến cổ đông bằng văn bản 2026",
+    "date": "03/11/2026 07:18",
+    "url": "https://static2.vietstock.vn/data/HNX/2026/TAI%20LIEU%20DHCD/VN/VGS_TAILIEU_DHDCD_2026.pdf?ver=638da004",
+    "source": "Vietstock_Document",
+    "alerted_at": "2026-11-04 07:54:07"
+  },
+  "web_e60415e8ec84": {
+    "ticker": "VNF",
+    "category": "INSIDER_TRADE",
+    "category_label": "GIAO DỊCH CỔ ĐÔNG / NỘI BỘ",
+    "title": "Thông báo thực hiện giao dịch cổ phiếu của người có liên quan của người nội bộ ngày 02/11/2026",
+    "date": "02/11/2026",
+    "url": "https://vinafreight.com/thong-tin-co-dong/thong-bao-thuc-hien-giao-dich-co-phieu-cua-nguoi-co-lien-quan-cua-nguoi-noi-bo-ngay-02-11-2026.html",
+    "source": "Company_Web",
+    "alerted_at": "2026-11-04 07:54:07"
+  },
+  "web_796e0c3e47a9": {
+    "ticker": "VNF",
+    "category": "INSIDER_TRADE",
+    "category_label": "GIAO DỊCH CỔ ĐÔNG / NỘI BỘ",
+    "title": "Xem chi tiết | Tải xuống",
+    "date": "20261103",
+    "url": "https://vinafreight.com/assets/uploads/myfiles/files/gdcp/20261103%20-%20TMS%20-%20Thong%20bao%20giao%20dich%20co%20phieu%20cua%20NCLQ%20(VNF)%20-%20CBTT_Kyso.pdf",
+    "source": "Company_Web",
+    "alerted_at": "2026-11-04 07:54:07"
+  },
+  "vts_news_1510595": {
+    "ticker": "VNL",
+    "category": "DIVIDEND_RIGHTS",
+    "category_label": "CỔ TỨC & QUYỀN DOANH NGHIỆP",
+    "title": "VNL: Thông báo về ngày đăng ký cuối cùng chi tạm ứng cổ tức bằng tiền đợt 1 năm 2026",
+    "date": "02/11/2026 10:58",
+    "url": "https://vietstock.vn/2026/11/vnl-thong-bao-ve-ngay-dang-ky-cuoi-cung-chi-tam-ung-co-tuc-bang-tien-dot-1-nam-2026-737-1510595.htm",
+    "source": "Vietstock_News",
+    "alerted_at": "2026-11-04 07:54:07"
+  },
+  "vts_doc_147ea9de62ec": {
+    "ticker": "VNR",
+    "category": "EXTRAORDINARY_EVENT",
+    "category_label": "CÔNG BỐ BẤT THƯỜNG",
+    "title": "Báo cáo tình hình quản trị 6 tháng đầu năm 2026 (điều chỉnh)",
+    "date": "03/11/2026 03:46",
+    "url": "https://static2.vietstock.vn/data/HNX/2026/BCTHQT/VN/6T/VNR_Baocaoquantri_6T_2026_DieuChinh.zip?ver=39138ee0",
+    "source": "Vietstock_Document",
+    "alerted_at": "2026-11-04 07:54:07"
+  },
+  "vts_news_1510824": {
+    "ticker": "VNR",
+    "category": "EXTRAORDINARY_EVENT",
+    "category_label": "CÔNG BỐ BẤT THƯỜNG",
+    "title": "VNR: Đính chính Báo cáo quản trị công ty bán niên năm  2026",
+    "date": "03/11/2026 02:49",
+    "url": "https://vietstock.vn/2026/11/vnr-dinh-chinh-bao-cao-quan-tri-cong-ty-ban-nien-nam-2026-737-1510824.htm",
+    "source": "Vietstock_News",
+    "alerted_at": "2026-11-04 07:54:08"
   }
 }
