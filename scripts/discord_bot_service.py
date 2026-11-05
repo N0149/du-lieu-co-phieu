@@ -58,7 +58,7 @@ SCAN_CONFIG_FILE = os.path.join(DATA_DIR, "scan_config.json")
 
 def load_scan_config():
     default_cfg = {
-        "auto_scan_enabled": True,
+        "auto_scan_enabled": False,  # Mặc định tắt sau khi kết thúc mùa BCTC
         "custom_interval_min": None
     }
     if os.path.exists(SCAN_CONFIG_FILE):
@@ -83,7 +83,7 @@ def save_scan_config(enabled, custom_interval_min):
         pass
 
 _init_cfg = load_scan_config()
-AUTO_SCAN_ENABLED = _init_cfg.get("auto_scan_enabled", True)
+AUTO_SCAN_ENABLED = _init_cfg.get("auto_scan_enabled", False)
 CUSTOM_SCAN_INTERVAL_MIN = _init_cfg.get("custom_interval_min", None)
 AUTO_SCAN_INTERVAL = (CUSTOM_SCAN_INTERVAL_MIN * 60) if (CUSTOM_SCAN_INTERVAL_MIN and CUSTOM_SCAN_INTERVAL_MIN > 0) else 600
 LAST_AUTO_SCAN_TIME = 0
@@ -1216,7 +1216,7 @@ def handle_command(content, username, reply_func):
         if AUTO_SCAN_ENABLED:
             auto_info = f"🟢 Đang BẬT ({cur_int_min}p/lần - {sched_desc})\n  • Lượt quét kế tiếp: sau **{next_m}m{next_s}s**"
         else:
-            auto_info = "🛑 Đang TẠM DỪNG (Tắt bởi lệnh người dùng)"
+            auto_info = "🛑 ĐÃ NGỪNG (Hết mùa BCTC - Không tự quét ngầm ở máy tính)"
 
         fpts_status = FPTS_BREAKER.get_status_str()
         vts_status = VIETSTOCK_BREAKER.get_status_str()
