@@ -2719,12 +2719,12 @@
   },
   "HDA": {
     "ticker": "HDA",
-    "bctc_type": "RIENG",
-    "title": "BCTC Công ty mẹ quý 3 năm 2026",
-    "date": "03/11/2026",
-    "doc_url": "https://static2.vietstock.vn/data/HNX/2026/BCTC/VN/QUY%203/HDA_Baocaotaichinh_Q3_2026_Congtyme.zip",
+    "bctc_type": "HOP_NHAT",
+    "title": "BCTC Hợp nhất quý 3 năm 2026",
+    "date": "05/11/2026",
+    "doc_url": "https://static2.vietstock.vn/data/HNX/2026/BCTC/VN/QUY%203/HDA_Baocaotaichinh_Q3_2026_Hopnhat.zip?ver=2bc5a29d",
     "source": "Vietstock",
-    "updated_at": "2026-11-03 07:26:54"
+    "updated_at": "2026-11-05 20:12:17"
   },
   "AMS": {
     "ticker": "AMS",

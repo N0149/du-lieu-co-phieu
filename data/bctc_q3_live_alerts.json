@@ -1,5 +1,19 @@
 [
   {
+    "ticker": "HDA",
+    "company_name": "Công ty Cổ phần Hãng sơn Đông Á",
+    "exchange": "HNX",
+    "quarter": "Quý 3/2026",
+    "release_date": "05/11/2026",
+    "title": "BCTC Hợp nhất quý 3 năm 2026",
+    "source": "Vietstock",
+    "bctc_type": "HOP_NHAT",
+    "doc_url": "https://static2.vietstock.vn/data/HNX/2026/BCTC/VN/QUY%203/HDA_Baocaotaichinh_Q3_2026_Hopnhat.zip?ver=2bc5a29d",
+    "is_hot": true,
+    "detected_at": "2026-11-05T20:12:17",
+    "lnst_status": "Tài liệu không phải file PDF trực tiếp"
+  },
+  {
     "ticker": "LSS",
     "company_name": "Công ty Cổ phần Mía đường Lam Sơn",
     "exchange": "HOSE",
@@ -53,20 +67,6 @@
     "doc_url": "https://static2.vietstock.vn/data/UPCOM/2026/BCTC/VN/QUY%203/SJG_Baocaotaichinh_Q3_2026_Hopnhat.zip?ver=4d208436",
     "is_hot": true,
     "detected_at": "2026-11-03T07:26:58",
-    "lnst_status": "Tài liệu không phải file PDF trực tiếp"
-  },
-  {
-    "ticker": "HDA",
-    "company_name": "Công ty Cổ phần Hãng sơn Đông Á",
-    "exchange": "HNX",
-    "quarter": "Quý 3/2026",
-    "release_date": "03/11/2026",
-    "title": "BCTC Công ty mẹ quý 3 năm 2026",
-    "source": "Vietstock",
-    "bctc_type": "RIENG",
-    "doc_url": "https://static2.vietstock.vn/data/HNX/2026/BCTC/VN/QUY%203/HDA_Baocaotaichinh_Q3_2026_Congtyme.zip",
-    "is_hot": true,
-    "detected_at": "2026-11-03T07:26:54",
     "lnst_status": "Tài liệu không phải file PDF trực tiếp"
   },
   {
