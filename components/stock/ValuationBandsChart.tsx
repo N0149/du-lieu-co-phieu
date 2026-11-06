@@ -1,20 +1,11 @@
 'use client'
 
 import React, { useState, useMemo } from 'react'
-import {
-  ResponsiveContainer,
-  ComposedChart,
-  Line,
-  XAxis,
-  YAxis,
-  Tooltip,
-  CartesianGrid,
-  ReferenceLine,
-} from 'recharts'
 import type { ValuationHistoryPayload } from '@/lib/valuation-history-service'
 import { Target, TrendingUp, TrendingDown, Clock, ShieldCheck, Maximize2 } from 'lucide-react'
 import { cn } from '@/lib/utils'
 import { ChartModal } from './ChartModal'
+import { ValuationBandsCanvas } from './ValuationBandsCanvas'
 
 interface ValuationBandsChartProps {
   symbol: string
@@ -55,14 +46,6 @@ function calculateStats(values: number[]) {
   }
 }
 
-function formatDateFromSec(sec: number): string {
-  const d = new Date(sec * 1000)
-  const day = String(d.getDate()).padStart(2, '0')
-  const month = String(d.getMonth() + 1).padStart(2, '0')
-  const year = String(d.getFullYear()).slice(2)
-  return `${day}/${month}/${year}`
-}
-
 export function ValuationBandsChart({ symbol, data }: ValuationBandsChartProps) {
   const [timeframe, setTimeframe] = useState<TimeframeOption>('3Y')
   const [expandedBand, setExpandedBand] = useState<'pe' | 'pb' | 'ps' | null>(null)
@@ -95,7 +78,7 @@ export function ValuationBandsChart({ symbol, data }: ValuationBandsChartProps) 
 
     const points: Array<{
       dateSec: number
-      displayDate: string
+      timeStr: string
       pe: number | null
       pb: number | null
       ps: number | null
@@ -103,9 +86,15 @@ export function ValuationBandsChart({ symbol, data }: ValuationBandsChartProps) 
 
     for (let i = 0; i < dates.length; i++) {
       if (dates[i] >= cutoffSec) {
+        const d = new Date(dates[i] * 1000)
+        const yyyy = d.getFullYear()
+        const mm = String(d.getMonth() + 1).padStart(2, '0')
+        const dd = String(d.getDate()).padStart(2, '0')
+        const timeStr = `${yyyy}-${mm}-${dd}`
+
         points.push({
           dateSec: dates[i],
-          displayDate: formatDateFromSec(dates[i]),
+          timeStr,
           pe: peArr[i] != null && peArr[i]! > 0 ? peArr[i] : null,
           pb: pbArr[i] != null && pbArr[i]! > 0 ? pbArr[i] : null,
           ps: psArr[i] != null && psArr[i]! > 0 ? psArr[i] : null,
@@ -115,6 +104,25 @@ export function ValuationBandsChart({ symbol, data }: ValuationBandsChartProps) 
 
     return points
   }, [data, timeframe])
+
+  // Chuỗi dữ liệu nạp vào Canvas GPU (chỉ chứa các giá trị dương hợp lệ)
+  const peCanvasPoints = useMemo(() => {
+    return filteredPoints
+      .filter((p) => p.pe != null && p.pe > 0)
+      .map((p) => ({ time: p.timeStr, value: p.pe! }))
+  }, [filteredPoints])
+
+  const pbCanvasPoints = useMemo(() => {
+    return filteredPoints
+      .filter((p) => p.pb != null && p.pb > 0)
+      .map((p) => ({ time: p.timeStr, value: p.pb! }))
+  }, [filteredPoints])
+
+  const psCanvasPoints = useMemo(() => {
+    return filteredPoints
+      .filter((p) => p.ps != null && p.ps > 0)
+      .map((p) => ({ time: p.timeStr, value: p.ps! }))
+  }, [filteredPoints])
 
   // Thống kê độ lệch chuẩn cho P/E, P/B, P/S
   const peStats = useMemo(() => {
@@ -154,7 +162,7 @@ export function ValuationBandsChart({ symbol, data }: ValuationBandsChartProps) 
               Bộ 3 Dải Định Giá Lịch Sử P/E, P/B, P/S ({symbol})
             </h3>
             <p className="text-xs text-muted-foreground">
-              Định giá P/E, P/B theo các dải độ lệch chuẩn (+2SD, +1SD, Median, -1SD, -2SD)
+              Vẽ trực tiếp trên Canvas GPU 60fps kèm 5 dải độ lệch chuẩn (+2SD, +1SD, Median, -1SD, -2SD)
             </p>
           </div>
         </div>
@@ -180,7 +188,7 @@ export function ValuationBandsChart({ symbol, data }: ValuationBandsChartProps) 
       </div>
 
       {/* ══════════════════════════════════════════════════════════ */}
-      {/* BIỂU ĐỒ 1: DẢI ĐỊNH GIÁ P/E                                */}
+      {/* BIỂU ĐỒ 1: DẢI ĐỊNH GIÁ P/E (CANVAS)                        */}
       {/* ══════════════════════════════════════════════════════════ */}
       <div className="rounded-2xl border border-border bg-card p-5 shadow-xs space-y-3">
         <div className="flex flex-wrap items-center justify-between gap-2 border-b border-border/60 pb-3">
@@ -213,31 +221,21 @@ export function ValuationBandsChart({ symbol, data }: ValuationBandsChartProps) 
           </div>
         </div>
 
-        <div className="h-[260px] w-full cursor-pointer group" onClick={() => setExpandedBand('pe')} title="Bấm vào để phóng lớn biểu đồ">
-          <ResponsiveContainer width="100%" height={260}>
-            <ComposedChart data={filteredPoints} margin={{ top: 10, right: 10, left: -15, bottom: 0 }}>
-              <CartesianGrid strokeDasharray="3 3" stroke="#334155" opacity={0.25} />
-              <XAxis dataKey="displayDate" tick={{ fontSize: 10, fill: '#888' }} minTickGap={40} />
-              <YAxis tick={{ fontSize: 10, fill: '#888' }} domain={['auto', 'auto']} unit="x" />
-              <Tooltip
-                contentStyle={{ backgroundColor: '#0f172a', borderColor: '#334155', borderRadius: '10px', fontSize: '11px', color: '#fff' }}
-                formatter={(val: any) => [`${Number(val).toFixed(2)} lần`, 'P/E']}
-              />
-              {/* 5 Dải độ lệch chuẩn */}
-              <ReferenceLine y={peStats.plus2sd} stroke="#f43f5e" strokeDasharray="3 3" strokeWidth={1} label={{ value: `+2SD (${peStats.plus2sd})`, fill: '#f43f5e', fontSize: 10, position: 'insideTopRight' }} />
-              <ReferenceLine y={peStats.plus1sd} stroke="#f59e0b" strokeDasharray="3 3" strokeWidth={1} label={{ value: `+1SD (${peStats.plus1sd})`, fill: '#f59e0b', fontSize: 10, position: 'insideTopRight' }} />
-              <ReferenceLine y={peStats.median} stroke="#64748b" strokeWidth={1.5} strokeDasharray="4 4" label={{ value: `Trung vị (${peStats.median})`, fill: '#94a3b8', fontSize: 10, position: 'insideTopRight' }} />
-              <ReferenceLine y={peStats.minus1sd} stroke="#10b981" strokeDasharray="3 3" strokeWidth={1} label={{ value: `-1SD (${peStats.minus1sd})`, fill: '#10b981', fontSize: 10, position: 'insideTopRight' }} />
-              <ReferenceLine y={peStats.minus2sd} stroke="#059669" strokeDasharray="3 3" strokeWidth={1} label={{ value: `-2SD (${peStats.minus2sd})`, fill: '#059669', fontSize: 10, position: 'insideTopRight' }} />
-
-              <Line type="monotone" dataKey="pe" name="P/E lịch sử" stroke="#3b82f6" strokeWidth={2} dot={false} />
-            </ComposedChart>
-          </ResponsiveContainer>
+        <div className="h-[260px] w-full">
+          <ValuationBandsCanvas
+            data={peCanvasPoints}
+            stats={peStats}
+            lineColor="#3b82f6"
+            height={260}
+            metricName="P/E"
+            unit="x"
+            symbol={symbol}
+          />
         </div>
       </div>
 
       {/* ══════════════════════════════════════════════════════════ */}
-      {/* BIỂU ĐỒ 2: DẢI ĐỊNH GIÁ P/B                                */}
+      {/* BIỂU ĐỒ 2: DẢI ĐỊNH GIÁ P/B (CANVAS)                        */}
       {/* ══════════════════════════════════════════════════════════ */}
       <div className="rounded-2xl border border-border bg-card p-5 shadow-xs space-y-3">
         <div className="flex flex-wrap items-center justify-between gap-2 border-b border-border/60 pb-3">
@@ -270,31 +268,21 @@ export function ValuationBandsChart({ symbol, data }: ValuationBandsChartProps) 
           </div>
         </div>
 
-        <div className="h-[260px] w-full cursor-pointer group" onClick={() => setExpandedBand('pb')} title="Bấm vào để phóng lớn biểu đồ">
-          <ResponsiveContainer width="100%" height={260}>
-            <ComposedChart data={filteredPoints} margin={{ top: 10, right: 10, left: -15, bottom: 0 }}>
-              <CartesianGrid strokeDasharray="3 3" stroke="#334155" opacity={0.25} />
-              <XAxis dataKey="displayDate" tick={{ fontSize: 10, fill: '#888' }} minTickGap={40} />
-              <YAxis tick={{ fontSize: 10, fill: '#888' }} domain={['auto', 'auto']} unit="x" />
-              <Tooltip
-                contentStyle={{ backgroundColor: '#0f172a', borderColor: '#334155', borderRadius: '10px', fontSize: '11px', color: '#fff' }}
-                formatter={(val: any) => [`${Number(val).toFixed(2)} lần`, 'P/B']}
-              />
-              {/* 5 Dải độ lệch chuẩn */}
-              <ReferenceLine y={pbStats.plus2sd} stroke="#f43f5e" strokeDasharray="3 3" strokeWidth={1} label={{ value: `+2SD (${pbStats.plus2sd})`, fill: '#f43f5e', fontSize: 10, position: 'insideTopRight' }} />
-              <ReferenceLine y={pbStats.plus1sd} stroke="#f59e0b" strokeDasharray="3 3" strokeWidth={1} label={{ value: `+1SD (${pbStats.plus1sd})`, fill: '#f59e0b', fontSize: 10, position: 'insideTopRight' }} />
-              <ReferenceLine y={pbStats.median} stroke="#64748b" strokeWidth={1.5} strokeDasharray="4 4" label={{ value: `Trung vị (${pbStats.median})`, fill: '#94a3b8', fontSize: 10, position: 'insideTopRight' }} />
-              <ReferenceLine y={pbStats.minus1sd} stroke="#10b981" strokeDasharray="3 3" strokeWidth={1} label={{ value: `-1SD (${pbStats.minus1sd})`, fill: '#10b981', fontSize: 10, position: 'insideTopRight' }} />
-              <ReferenceLine y={pbStats.minus2sd} stroke="#059669" strokeDasharray="3 3" strokeWidth={1} label={{ value: `-2SD (${pbStats.minus2sd})`, fill: '#059669', fontSize: 10, position: 'insideTopRight' }} />
-
-              <Line type="monotone" dataKey="pb" name="P/B lịch sử" stroke="#10b981" strokeWidth={2} dot={false} />
-            </ComposedChart>
-          </ResponsiveContainer>
+        <div className="h-[260px] w-full">
+          <ValuationBandsCanvas
+            data={pbCanvasPoints}
+            stats={pbStats}
+            lineColor="#10b981"
+            height={260}
+            metricName="P/B"
+            unit="x"
+            symbol={symbol}
+          />
         </div>
       </div>
 
       {/* ══════════════════════════════════════════════════════════ */}
-      {/* BIỂU ĐỒ 3: DẢI ĐỊNH GIÁ P/S                                */}
+      {/* BIỂU ĐỒ 3: DẢI ĐỊNH GIÁ P/S (CANVAS)                        */}
       {/* ══════════════════════════════════════════════════════════ */}
       <div className="rounded-2xl border border-border bg-card p-5 shadow-xs space-y-3">
         <div className="flex flex-wrap items-center justify-between gap-2 border-b border-border/60 pb-3">
@@ -327,30 +315,20 @@ export function ValuationBandsChart({ symbol, data }: ValuationBandsChartProps) 
           </div>
         </div>
 
-        <div className="h-[260px] w-full cursor-pointer group" onClick={() => setExpandedBand('ps')} title="Bấm vào để phóng lớn biểu đồ">
-          <ResponsiveContainer width="100%" height={260}>
-            <ComposedChart data={filteredPoints} margin={{ top: 10, right: 10, left: -15, bottom: 0 }}>
-              <CartesianGrid strokeDasharray="3 3" stroke="#334155" opacity={0.25} />
-              <XAxis dataKey="displayDate" tick={{ fontSize: 10, fill: '#888' }} minTickGap={40} />
-              <YAxis tick={{ fontSize: 10, fill: '#888' }} domain={['auto', 'auto']} unit="x" />
-              <Tooltip
-                contentStyle={{ backgroundColor: '#0f172a', borderColor: '#334155', borderRadius: '10px', fontSize: '11px', color: '#fff' }}
-                formatter={(val: any) => [`${Number(val).toFixed(2)} lần`, 'P/S']}
-              />
-              {/* 5 Dải độ lệch chuẩn */}
-              <ReferenceLine y={psStats.plus2sd} stroke="#f43f5e" strokeDasharray="3 3" strokeWidth={1} label={{ value: `+2SD (${psStats.plus2sd})`, fill: '#f43f5e', fontSize: 10, position: 'insideTopRight' }} />
-              <ReferenceLine y={psStats.plus1sd} stroke="#f59e0b" strokeDasharray="3 3" strokeWidth={1} label={{ value: `+1SD (${psStats.plus1sd})`, fill: '#f59e0b', fontSize: 10, position: 'insideTopRight' }} />
-              <ReferenceLine y={psStats.median} stroke="#64748b" strokeWidth={1.5} strokeDasharray="4 4" label={{ value: `Trung vị (${psStats.median})`, fill: '#94a3b8', fontSize: 10, position: 'insideTopRight' }} />
-              <ReferenceLine y={psStats.minus1sd} stroke="#10b981" strokeDasharray="3 3" strokeWidth={1} label={{ value: `-1SD (${psStats.minus1sd})`, fill: '#10b981', fontSize: 10, position: 'insideTopRight' }} />
-              <ReferenceLine y={psStats.minus2sd} stroke="#059669" strokeDasharray="3 3" strokeWidth={1} label={{ value: `-2SD (${psStats.minus2sd})`, fill: '#059669', fontSize: 10, position: 'insideTopRight' }} />
-
-              <Line type="monotone" dataKey="ps" name="P/S lịch sử" stroke="#8b5cf6" strokeWidth={2} dot={false} />
-            </ComposedChart>
-          </ResponsiveContainer>
+        <div className="h-[260px] w-full">
+          <ValuationBandsCanvas
+            data={psCanvasPoints}
+            stats={psStats}
+            lineColor="#8b5cf6"
+            height={260}
+            metricName="P/S"
+            unit="x"
+            symbol={symbol}
+          />
         </div>
       </div>
-    
-      {/* MODAL PHÓNG TO DẢI ĐỊNH GIÁ */}
+
+      {/* MODAL PHÓNG TO DẢI ĐỊNH GIÁ (CANVAS) */}
       {expandedBand !== null && (
         <ChartModal
           isOpen={expandedBand !== null}
@@ -377,67 +355,43 @@ export function ValuationBandsChart({ symbol, data }: ValuationBandsChartProps) 
         >
           <div className="h-[500px] sm:h-[540px] w-full pt-2">
             {expandedBand === 'pe' && (
-              <ResponsiveContainer width="100%" height={520}>
-                <ComposedChart data={filteredPoints} margin={{ top: 15, right: 20, left: -10, bottom: 0 }}>
-                  <CartesianGrid strokeDasharray="3 3" stroke="#334155" opacity={0.25} />
-                  <XAxis dataKey="displayDate" tick={{ fontSize: 11, fill: '#888' }} minTickGap={35} />
-                  <YAxis tick={{ fontSize: 11, fill: '#888' }} domain={['auto', 'auto']} unit="x" />
-                  <Tooltip
-                    contentStyle={{ backgroundColor: '#0f172a', borderColor: '#334155', borderRadius: '10px', fontSize: '12px', color: '#fff' }}
-                    formatter={(val: any) => [`${Number(val).toFixed(2)} lần`, 'P/E']}
-                  />
-                  <ReferenceLine y={peStats.plus2sd} stroke="#f43f5e" strokeDasharray="3 3" strokeWidth={1.5} label={{ value: `+2SD (${peStats.plus2sd})`, fill: '#f43f5e', fontSize: 11, position: 'insideTopRight' }} />
-                  <ReferenceLine y={peStats.plus1sd} stroke="#f59e0b" strokeDasharray="3 3" strokeWidth={1.5} label={{ value: `+1SD (${peStats.plus1sd})`, fill: '#f59e0b', fontSize: 11, position: 'insideTopRight' }} />
-                  <ReferenceLine y={peStats.median} stroke="#64748b" strokeWidth={2} strokeDasharray="4 4" label={{ value: `Trung vị (${peStats.median})`, fill: '#94a3b8', fontSize: 11, position: 'insideTopRight' }} />
-                  <ReferenceLine y={peStats.minus1sd} stroke="#10b981" strokeDasharray="3 3" strokeWidth={1.5} label={{ value: `-1SD (${peStats.minus1sd})`, fill: '#10b981', fontSize: 11, position: 'insideTopRight' }} />
-                  <ReferenceLine y={peStats.minus2sd} stroke="#059669" strokeDasharray="3 3" strokeWidth={1.5} label={{ value: `-2SD (${peStats.minus2sd})`, fill: '#059669', fontSize: 11, position: 'insideTopRight' }} />
-                  <Line type="monotone" dataKey="pe" name="P/E lịch sử" stroke="#3b82f6" strokeWidth={2.5} dot={false} />
-                </ComposedChart>
-              </ResponsiveContainer>
+              <ValuationBandsCanvas
+                data={peCanvasPoints}
+                stats={peStats}
+                lineColor="#3b82f6"
+                height={520}
+                metricName="P/E"
+                unit="x"
+                symbol={symbol}
+              />
             )}
 
             {expandedBand === 'pb' && (
-              <ResponsiveContainer width="100%" height={520}>
-                <ComposedChart data={filteredPoints} margin={{ top: 15, right: 20, left: -10, bottom: 0 }}>
-                  <CartesianGrid strokeDasharray="3 3" stroke="#334155" opacity={0.25} />
-                  <XAxis dataKey="displayDate" tick={{ fontSize: 11, fill: '#888' }} minTickGap={35} />
-                  <YAxis tick={{ fontSize: 11, fill: '#888' }} domain={['auto', 'auto']} unit="x" />
-                  <Tooltip
-                    contentStyle={{ backgroundColor: '#0f172a', borderColor: '#334155', borderRadius: '10px', fontSize: '12px', color: '#fff' }}
-                    formatter={(val: any) => [`${Number(val).toFixed(2)} lần`, 'P/B']}
-                  />
-                  <ReferenceLine y={pbStats.plus2sd} stroke="#f43f5e" strokeDasharray="3 3" strokeWidth={1.5} label={{ value: `+2SD (${pbStats.plus2sd})`, fill: '#f43f5e', fontSize: 11, position: 'insideTopRight' }} />
-                  <ReferenceLine y={pbStats.plus1sd} stroke="#f59e0b" strokeDasharray="3 3" strokeWidth={1.5} label={{ value: `+1SD (${pbStats.plus1sd})`, fill: '#f59e0b', fontSize: 11, position: 'insideTopRight' }} />
-                  <ReferenceLine y={pbStats.median} stroke="#64748b" strokeWidth={2} strokeDasharray="4 4" label={{ value: `Trung vị (${pbStats.median})`, fill: '#94a3b8', fontSize: 11, position: 'insideTopRight' }} />
-                  <ReferenceLine y={pbStats.minus1sd} stroke="#10b981" strokeDasharray="3 3" strokeWidth={1.5} label={{ value: `-1SD (${pbStats.minus1sd})`, fill: '#10b981', fontSize: 11, position: 'insideTopRight' }} />
-                  <ReferenceLine y={pbStats.minus2sd} stroke="#059669" strokeDasharray="3 3" strokeWidth={1.5} label={{ value: `-2SD (${pbStats.minus2sd})`, fill: '#059669', fontSize: 11, position: 'insideTopRight' }} />
-                  <Line type="monotone" dataKey="pb" name="P/B lịch sử" stroke="#10b981" strokeWidth={2.5} dot={false} />
-                </ComposedChart>
-              </ResponsiveContainer>
+              <ValuationBandsCanvas
+                data={pbCanvasPoints}
+                stats={pbStats}
+                lineColor="#10b981"
+                height={520}
+                metricName="P/B"
+                unit="x"
+                symbol={symbol}
+              />
             )}
 
             {expandedBand === 'ps' && (
-              <ResponsiveContainer width="100%" height={520}>
-                <ComposedChart data={filteredPoints} margin={{ top: 15, right: 20, left: -10, bottom: 0 }}>
-                  <CartesianGrid strokeDasharray="3 3" stroke="#334155" opacity={0.25} />
-                  <XAxis dataKey="displayDate" tick={{ fontSize: 11, fill: '#888' }} minTickGap={35} />
-                  <YAxis tick={{ fontSize: 11, fill: '#888' }} domain={['auto', 'auto']} unit="x" />
-                  <Tooltip
-                    contentStyle={{ backgroundColor: '#0f172a', borderColor: '#334155', borderRadius: '10px', fontSize: '12px', color: '#fff' }}
-                    formatter={(val: any) => [`${Number(val).toFixed(2)} lần`, 'P/S']}
-                  />
-                  <ReferenceLine y={psStats.plus2sd} stroke="#f43f5e" strokeDasharray="3 3" strokeWidth={1.5} label={{ value: `+2SD (${psStats.plus2sd})`, fill: '#f43f5e', fontSize: 11, position: 'insideTopRight' }} />
-                  <ReferenceLine y={psStats.plus1sd} stroke="#f59e0b" strokeDasharray="3 3" strokeWidth={1.5} label={{ value: `+1SD (${psStats.plus1sd})`, fill: '#f59e0b', fontSize: 11, position: 'insideTopRight' }} />
-                  <ReferenceLine y={psStats.median} stroke="#64748b" strokeWidth={2} strokeDasharray="4 4" label={{ value: `Trung vị (${psStats.median})`, fill: '#94a3b8', fontSize: 11, position: 'insideTopRight' }} />
-                  <ReferenceLine y={psStats.minus1sd} stroke="#10b981" strokeDasharray="3 3" strokeWidth={1.5} label={{ value: `-1SD (${psStats.minus1sd})`, fill: '#10b981', fontSize: 11, position: 'insideTopRight' }} />
-                  <ReferenceLine y={psStats.minus2sd} stroke="#059669" strokeDasharray="3 3" strokeWidth={1.5} label={{ value: `-2SD (${psStats.minus2sd})`, fill: '#059669', fontSize: 11, position: 'insideTopRight' }} />
-                  <Line type="monotone" dataKey="ps" name="P/S lịch sử" stroke="#8b5cf6" strokeWidth={2.5} dot={false} />
-                </ComposedChart>
-              </ResponsiveContainer>
+              <ValuationBandsCanvas
+                data={psCanvasPoints}
+                stats={psStats}
+                lineColor="#8b5cf6"
+                height={520}
+                metricName="P/S"
+                unit="x"
+                symbol={symbol}
+              />
             )}
           </div>
         </ChartModal>
       )}
-</div>
+    </div>
   )
 }

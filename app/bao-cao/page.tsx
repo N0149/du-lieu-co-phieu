@@ -16,10 +16,19 @@ import {
   Globe2,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
+import dynamic from "next/dynamic";
 import { CompanyReportsTab } from "@/components/reports/CompanyReportsTab";
-import { IndustryReportsTab } from "@/components/reports/IndustryReportsTab";
-import { MacroReportsTab } from "@/components/reports/MacroReportsTab";
-import industryData from "@/data/industry-reports.json";
+
+// Nạp lười (Lazy load) Báo cáo ngành & Vĩ mô để loại bỏ 745 KB dữ liệu JSON khỏi bundle ban đầu
+const IndustryReportsTab = dynamic(
+  () => import("@/components/reports/IndustryReportsTab").then((m) => m.IndustryReportsTab),
+  { ssr: false, loading: () => <div className="p-12 text-center text-xs text-muted-foreground animate-pulse">Đang nạp dữ liệu Báo cáo ngành...</div> }
+);
+
+const MacroReportsTab = dynamic(
+  () => import("@/components/reports/MacroReportsTab").then((m) => m.MacroReportsTab),
+  { ssr: false, loading: () => <div className="p-12 text-center text-xs text-muted-foreground animate-pulse">Đang nạp dữ liệu Báo cáo vĩ mô...</div> }
+);
 
 interface Report {
   slug: string;
@@ -323,7 +332,7 @@ function ReportsPageInner() {
 
   const [stats, setStats] = useState({
     company: 3994,
-    industry: (industryData as any)?.total || (Array.isArray(industryData) ? industryData.length : 377),
+    industry: 485,
     macroStrategyTotal: 50,
     bondIrTotal: 50,
   });

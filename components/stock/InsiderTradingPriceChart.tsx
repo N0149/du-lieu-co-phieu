@@ -1,20 +1,11 @@
 'use client'
 
 import React, { useState, useMemo, useEffect } from 'react'
-import {
-  ResponsiveContainer,
-  ComposedChart,
-  Line,
-  XAxis,
-  YAxis,
-  Tooltip,
-  CartesianGrid,
-  ReferenceDot,
-} from 'recharts'
 import type { InsiderTradeItem } from '@/lib/company-profile-types'
-import type { StockPriceHistoryPayload, DailyPricePoint } from '@/lib/stock-price-history-service'
-import { History, TrendingUp, TrendingDown, ArrowUpRight, ArrowDownRight, UserCheck, ShieldCheck } from 'lucide-react'
+import type { StockPriceHistoryPayload } from '@/lib/stock-price-history-service'
+import { History, ShieldCheck } from 'lucide-react'
 import { cn } from '@/lib/utils'
+import { InsiderTradingCanvas } from './InsiderTradingCanvas'
 
 interface InsiderTradingPriceChartProps {
   symbol: string
@@ -24,11 +15,6 @@ interface InsiderTradingPriceChartProps {
 
 type Timeframe = '6M' | '1Y' | '2Y' | '3Y' | 'ALL'
 type TradeFilter = 'ALL' | 'BUY' | 'SELL'
-
-function fmtPrice(n: number | null | undefined): string {
-  if (n == null || isNaN(Number(n))) return '—'
-  return Number(n).toLocaleString('vi-VN') + ' đ'
-}
 
 function fmtNum(n: number | null | undefined): string {
   if (n == null || isNaN(Number(n))) return '—'
@@ -101,7 +87,7 @@ export function InsiderTradingPriceChart({
       })
   }, [symbol, initialPricePayload])
 
-  // Lọc chuỗi giá theo timeframe
+  // Lọc chuỗi giá theo timeframe - GIỮ NGUYÊN 100% ĐỘ PHÂN GIẢI DỮ LIỆU
   const filteredPrices = useMemo(() => {
     if (!pricePayload?.points || pricePayload.points.length === 0) return []
     const pts = pricePayload.points
@@ -114,10 +100,7 @@ export function InsiderTradingPriceChart({
     else if (timeframe === '3Y') cutoffSec = lastSec - 3 * 365 * 86400
     else cutoffSec = 0
 
-    const list = pts.filter((p) => p.time >= cutoffSec)
-    if (list.length <= 160) return list
-    const step = Math.ceil(list.length / 160)
-    return list.filter((_, i) => i % step === 0 || i === list.length - 1)
+    return pts.filter((p) => p.time >= cutoffSec)
   }, [pricePayload, timeframe])
 
   // Ghép các giao dịch nội bộ vào các điểm ngày trên biểu đồ giá
@@ -320,107 +303,14 @@ export function InsiderTradingPriceChart({
         </div>
       </div>
 
-      {/* ── BIỂU ĐỒ ĐƯỜNG GIÁ KÈM REFERENCE DOTS ── */}
-      <div className="h-[300px] sm:h-[350px] w-full pt-2">
-        <ResponsiveContainer width="100%" height="100%">
-          <ComposedChart data={filteredPrices} margin={{ top: 20, right: 20, left: -10, bottom: 5 }}>
-            <CartesianGrid strokeDasharray="3 3" stroke="#334155" opacity={0.25} />
-            <XAxis
-              dataKey="date"
-              tick={{ fontSize: 10, fill: '#888' }}
-              minTickGap={35}
-            />
-            <YAxis
-              tick={{ fontSize: 10, fill: '#888' }}
-              domain={['auto', 'auto']}
-              tickFormatter={(val) => `${Math.round(val / 1000)}k`}
-            />
-            <Tooltip
-              content={({ active, payload }) => {
-                if (!active || !payload || !payload.length) return null
-                const pt = payload[0]?.payload as DailyPricePoint
-                if (!pt) return null
-
-                // Tìm các giao dịch nội bộ gắn với ngày này
-                const dayTrades = tradesWithPoints.filter((t) => t.matchedDate === pt.date)
-
-                return (
-                  <div className="rounded-xl border border-border/80 bg-slate-950/95 p-3 shadow-xl text-xs space-y-2 max-w-[300px]">
-                    <div className="font-mono font-bold text-slate-300 border-b border-slate-800 pb-1.5 flex items-center justify-between">
-                      <span>{pt.date}</span>
-                      <span className="text-primary font-bold">Thị giá: {fmtPrice(pt.close)}</span>
-                    </div>
-
-                    {dayTrades.length > 0 ? (
-                      <div className="space-y-2 pt-1">
-                        <span className="text-[10.5px] font-extrabold uppercase text-amber-400">
-                          {dayTrades.length} Giao dịch nội bộ ghi nhận:
-                        </span>
-                        {dayTrades.map((item, idx) => {
-                          const t = item.trade
-                          return (
-                            <div key={idx} className="rounded-lg bg-slate-900 border border-slate-800 p-2 space-y-1">
-                              <div className="flex items-center justify-between font-bold">
-                                <span className="text-slate-200">{t.traderName}</span>
-                                <span
-                                  className={cn(
-                                    'px-1.5 py-0.2 rounded text-[10px] font-black',
-                                    item.isBuy
-                                      ? 'bg-emerald-500/20 text-emerald-400 border border-emerald-500/40'
-                                      : 'bg-rose-500/20 text-rose-400 border border-rose-500/40'
-                                  )}
-                                >
-                                  {item.isBuy ? 'MUA' : 'BÁN'}: {fmtNum(t.volumeTraded || t.volumeRegistered)} CP
-                                </span>
-                              </div>
-                              {t.traderPosition && (
-                                <div className="text-[10px] text-slate-400">{t.traderPosition}</div>
-                              )}
-                              <div className="text-[10px] font-mono text-slate-400">
-                                Ngày công bố/kết thúc: {t.tradeDate}
-                              </div>
-                            </div>
-                          )
-                        })}
-                      </div>
-                    ) : (
-                      <div className="text-[11px] text-muted-foreground italic">
-                        Không có giao dịch nội bộ trong phiên này
-                      </div>
-                    )}
-                  </div>
-                )
-              }}
-            />
-
-            {/* Đường giá thị trường */}
-            <Line
-              type="monotone"
-              dataKey="close"
-              name="Giá hiện tại"
-              stroke="#0ea5e9"
-              strokeWidth={2}
-              dot={false}
-              activeDot={{ r: 5, fill: '#0ea5e9', stroke: '#fff' }}
-            />
-
-            {/* Các điểm đính giao dịch nội bộ trên đường giá (Chấm tròn WiData) */}
-            {tradesWithPoints.map((item, idx) => {
-              const color = item.isBuy ? '#10b981' : '#f43f5e'
-              return (
-                <ReferenceDot
-                  key={idx}
-                  x={item.matchedDate}
-                  y={item.price}
-                  r={5.5}
-                  fill={color}
-                  stroke="#ffffff"
-                  strokeWidth={2}
-                />
-              )
-            })}
-          </ComposedChart>
-        </ResponsiveContainer>
+      {/* ── BIỂU ĐỒ LIGHTWEIGHT CHARTS (CANVAS GPU) ── */}
+      <div className="w-full pt-2">
+        <InsiderTradingCanvas
+          prices={filteredPrices}
+          trades={tradesWithPoints}
+          height={350}
+          symbol={symbol}
+        />
       </div>
 
       {/* ── CHÚ THÍCH (LEGEND) CHUẨN WIDATA ── */}

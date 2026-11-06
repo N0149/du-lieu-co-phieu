@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useEffect, useRef, useMemo } from 'react'
+import { useState, useEffect, useRef, useMemo, useCallback } from 'react'
 import { createPortal } from 'react-dom'
 import {
   X,
@@ -9,8 +9,6 @@ import {
   TrendingUp,
   TrendingDown,
   Layers,
-  Calendar,
-  Clock,
 } from 'lucide-react'
 import { cn } from '@/lib/utils'
 
@@ -43,7 +41,7 @@ interface CommodityChartModalProps {
   onClose: () => void
 }
 
-// Đầy đủ các mốc thời gian theo yêu cầu: 1 tháng, 3 tháng, 6 tháng, 1 năm, 3 năm, 5 năm, 10 năm
+// Đầy đủ các mốc thời gian: 1 tháng, 3 tháng, 6 tháng, 1 năm, 3 năm, 5 năm, 10 năm
 const RANGES = [
   { key: '1m', label: '1 Tháng' },
   { key: '3m', label: '3 Tháng' },
@@ -60,14 +58,15 @@ export function CommodityChartModal({
   unit,
   onClose,
 }: CommodityChartModalProps) {
-  // Mặc định mở 10 năm theo yêu cầu
   const [range, setRange] = useState<string>('10y')
   const [data, setData] = useState<CommodityData | null>(null)
   const [loading, setLoading] = useState<boolean>(true)
   const [error, setError] = useState<string | null>(null)
   const [hoverIndex, setHoverIndex] = useState<number | null>(null)
-  const svgRef = useRef<SVGSVGElement | null>(null)
 
+  const canvasContainerRef = useRef<HTMLDivElement | null>(null)
+  const canvasRef = useRef<HTMLCanvasElement | null>(null)
+  const [dimensions, setDimensions] = useState({ width: 820, height: 400 })
   const [mounted, setMounted] = useState(false)
 
   useEffect(() => {
@@ -88,6 +87,21 @@ export function CommodityChartModal({
     }
   }, [onClose])
 
+  // Lắng nghe resize container
+  useEffect(() => {
+    if (!canvasContainerRef.current) return
+    const updateSize = () => {
+      if (canvasContainerRef.current) {
+        const w = canvasContainerRef.current.clientWidth || 820
+        setDimensions({ width: w, height: 400 })
+      }
+    }
+    updateSize()
+    const ro = new ResizeObserver(updateSize)
+    ro.observe(canvasContainerRef.current)
+    return () => ro.disconnect()
+  }, [])
+
   // Fetch dữ liệu lịch sử
   useEffect(() => {
     if (!symbol) return
@@ -106,7 +120,7 @@ export function CommodityChartModal({
           setError(json.error || 'Không thể tải lịch sử giá hàng hóa này')
         }
       })
-      .catch((err) => {
+      .catch(() => {
         if (!isMounted) return
         setError('Lỗi kết nối máy chủ dữ liệu hàng hóa')
       })
@@ -119,24 +133,28 @@ export function CommodityChartModal({
     }
   }, [symbol, range])
 
-  // Kích thước SVG
-  const svgWidth = 820
-  const svgHeight = 400
   const padLeft = 50
   const padRight = 55
   const padTop = 30
   const padBottom = 40
-  const plotWidth = svgWidth - padLeft - padRight
-  const plotHeight = svgHeight - padTop - padBottom
+  const plotWidth = Math.max(10, dimensions.width - padLeft - padRight)
+  const plotHeight = Math.max(10, dimensions.height - padTop - padBottom)
 
   const points = data?.points || []
   const prices = useMemo(() => points.map((p) => p.price), [points])
-
   const isLongTerm = range === '3y' || range === '5y' || range === '10y'
 
-  const { yMin, yMax, yTicks, xTicks, pathString, areaPathString, pointsCoord, avgY } = useMemo(() => {
+  const chartCalc = useMemo(() => {
     if (!points.length || !prices.length) {
-      return { yMin: 0, yMax: 100, yTicks: [], xTicks: [], pathString: '', areaPathString: '', pointsCoord: [], avgY: 0 }
+      return {
+        yMin: 0,
+        yMax: 100,
+        yTicks: [] as number[],
+        xTicks: [] as { x: number; label: string }[],
+        pointsCoord: [] as Array<{ x: number; y: number; point: CommodityPoint; val: number }>,
+        avgY: 0,
+        getY: (_v: number) => 0,
+      }
     }
 
     const min = Math.min(...prices)
@@ -148,7 +166,6 @@ export function CommodityChartModal({
     const calcYMin = Number(rawYMin.toFixed(2))
     const calcYMax = Number(rawYMax.toFixed(2))
 
-    // 5 ticks trục Y
     const ticks: number[] = []
     for (let i = 0; i <= 5; i++) {
       const val = calcYMin + ((calcYMax - calcYMin) / 5) * i
@@ -172,22 +189,6 @@ export function CommodityChartModal({
       val: prices[i],
     }))
 
-    // Đường line
-    let dLine = ''
-    coords.forEach((pt, i) => {
-      dLine += i === 0 ? `M ${pt.x.toFixed(1)} ${pt.y.toFixed(1)}` : ` L ${pt.x.toFixed(1)} ${pt.y.toFixed(1)}`
-    })
-
-    // Vùng diện tích mờ (Area fill)
-    let dArea = ''
-    if (coords.length > 0) {
-      const firstX = coords[0].x.toFixed(1)
-      const lastX = coords[coords.length - 1].x.toFixed(1)
-      const bottomY = (padTop + plotHeight).toFixed(1)
-      dArea = `${dLine} L ${lastX} ${bottomY} L ${firstX} ${bottomY} Z`
-    }
-
-    // Trục X (6 mốc ngày trải đều)
     const xTicksList: { x: number; label: string }[] = []
     const targetCount = 6
     if (points.length > 1) {
@@ -195,9 +196,8 @@ export function CommodityChartModal({
         const idx = Math.round((i / (targetCount - 1)) * (points.length - 1))
         const pt = points[idx]
         if (pt) {
-          let label = pt.date.slice(0, 5) // DD/MM mặc định
+          let label = pt.date.slice(0, 5)
           if (isLongTerm) {
-            // Hiển thị MM/YY cho 3y, 5y, 10y (ví dụ 01/18, 08/26)
             const parts = (pt.ymd || '').split('-')
             label = parts.length >= 2 ? `${parts[1]}/${parts[0].slice(-2)}` : pt.date
           }
@@ -216,63 +216,194 @@ export function CommodityChartModal({
       yMax: calcYMax,
       yTicks: ticks,
       xTicks: xTicksList,
-      pathString: dLine,
-      areaPathString: dArea,
       pointsCoord: coords,
       avgY: average,
+      getY,
     }
   }, [points, prices, data?.avgPrice, isLongTerm, padLeft, padTop, plotHeight, plotWidth])
 
-  const handleMouseMove = (e: React.MouseEvent<SVGSVGElement>) => {
-    if (!svgRef.current || !pointsCoord.length) return
-    const rect = svgRef.current.getBoundingClientRect()
-    const mouseX = e.clientX - rect.left
-    const scaleX = svgWidth / rect.width
-    const svgMouseX = mouseX * scaleX
+  // Vẽ Canvas trực tiếp siêu sắc nét và siêu mượt
+  useEffect(() => {
+    const canvas = canvasRef.current
+    if (!canvas) return
+    const ctx = canvas.getContext('2d')
+    if (!ctx) return
 
-    if (svgMouseX < padLeft || svgMouseX > padLeft + plotWidth) {
-      setHoverIndex(null)
-      return
+    const dpr = typeof window !== 'undefined' ? Math.max(1, window.devicePixelRatio || 2) : 2
+    const w = dimensions.width
+    const h = dimensions.height
+
+    canvas.width = Math.round(w * dpr)
+    canvas.height = Math.round(h * dpr)
+
+    ctx.save()
+    ctx.scale(dpr, dpr)
+
+    // Nền tối
+    ctx.fillStyle = '#12151c'
+    ctx.fillRect(0, 0, w, h)
+
+    const { yMin, yMax, yTicks, xTicks, pointsCoord, avgY, getY } = chartCalc
+
+    if (pointsCoord.length > 0) {
+      // 1. Watermark in chìm thương hiệu
+      ctx.textAlign = 'center'
+      ctx.fillStyle = 'rgba(255, 255, 255, 0.18)'
+      ctx.font = 'bold 18px Inter, system-ui, sans-serif'
+      ctx.fillText('Dulieudautu.com', padLeft + plotWidth / 2, padTop + 30)
+
+      ctx.fillStyle = 'rgba(255, 255, 255, 0.12)'
+      ctx.font = 'italic 10px Inter, system-ui, sans-serif'
+      ctx.fillText('Nguồn: dulieudautu.com', padLeft + plotWidth / 2, padTop + 45)
+
+      // 2. Đường lưới ngang Y
+      ctx.textAlign = 'right'
+      ctx.font = '10px Inter, system-ui, sans-serif'
+      yTicks.forEach((tick) => {
+        const y = getY(tick)
+        ctx.beginPath()
+        ctx.setLineDash([2, 2])
+        ctx.strokeStyle = 'rgba(255, 255, 255, 0.06)'
+        ctx.lineWidth = 1
+        ctx.moveTo(padLeft, y)
+        ctx.lineTo(padLeft + plotWidth, y)
+        ctx.stroke()
+
+        ctx.fillStyle = '#64748b'
+        ctx.fillText(String(tick), padLeft - 8, y + 3.5)
+      })
+
+      // 3. Nhãn trục X (Ngày)
+      ctx.fillStyle = '#64748b'
+      ctx.font = '9.5px Inter, system-ui, sans-serif'
+      xTicks.forEach((tick, i) => {
+        ctx.textAlign = i === 0 ? 'left' : i === xTicks.length - 1 ? 'right' : 'center'
+        ctx.fillText(tick.label, tick.x, padTop + plotHeight + 20)
+      })
+
+      // 4. Đường trung bình nét đứt (Avg Line)
+      if (avgY) {
+        ctx.beginPath()
+        ctx.setLineDash([4, 4])
+        ctx.strokeStyle = '#818cf8'
+        ctx.lineWidth = 1.2
+        ctx.moveTo(padLeft, avgY)
+        ctx.lineTo(padLeft + plotWidth, avgY)
+        ctx.stroke()
+
+        ctx.textAlign = 'left'
+        ctx.fillStyle = '#818cf8'
+        ctx.font = 'bold 9.5px Inter, sans-serif'
+        ctx.fillText(`TB (${data?.avgPrice})`, padLeft + plotWidth + 4, avgY + 3.5)
+      }
+
+      // 5. Vùng diện tích mờ (Area Gradient)
+      const areaGrad = ctx.createLinearGradient(0, padTop, 0, padTop + plotHeight)
+      areaGrad.addColorStop(0, 'rgba(245, 158, 11, 0.25)')
+      areaGrad.addColorStop(1, 'rgba(245, 158, 11, 0.01)')
+
+      ctx.beginPath()
+      ctx.setLineDash([])
+      pointsCoord.forEach((pt, i) => {
+        if (i === 0) ctx.moveTo(pt.x, pt.y)
+        else ctx.lineTo(pt.x, pt.y)
+      })
+      const lastX = pointsCoord[pointsCoord.length - 1].x
+      const firstX = pointsCoord[0].x
+      const bottomY = padTop + plotHeight
+      ctx.lineTo(lastX, bottomY)
+      ctx.lineTo(firstX, bottomY)
+      ctx.closePath()
+      ctx.fillStyle = areaGrad
+      ctx.fill()
+
+      // 6. Đường cong giá chính (Line Gradient)
+      const lineGrad = ctx.createLinearGradient(padLeft, 0, padLeft + plotWidth, 0)
+      lineGrad.addColorStop(0, '#f59e0b')
+      lineGrad.addColorStop(0.5, '#fbbf24')
+      lineGrad.addColorStop(1, '#f97316')
+
+      ctx.beginPath()
+      ctx.setLineDash([])
+      ctx.strokeStyle = lineGrad
+      ctx.lineWidth = 2.2
+      ctx.lineCap = 'round'
+      ctx.lineJoin = 'round'
+      pointsCoord.forEach((pt, i) => {
+        if (i === 0) ctx.moveTo(pt.x, pt.y)
+        else ctx.lineTo(pt.x, pt.y)
+      })
+      ctx.stroke()
+
+      // 7. Điểm hover tương tác
+      if (hoverIndex !== null && pointsCoord[hoverIndex]) {
+        const activePt = pointsCoord[hoverIndex]
+
+        ctx.beginPath()
+        ctx.setLineDash([3, 3])
+        ctx.strokeStyle = 'rgba(255, 255, 255, 0.4)'
+        ctx.lineWidth = 1
+        ctx.moveTo(activePt.x, padTop)
+        ctx.lineTo(activePt.x, padTop + plotHeight)
+        ctx.stroke()
+
+        ctx.beginPath()
+        ctx.setLineDash([])
+        ctx.arc(activePt.x, activePt.y, 6, 0, Math.PI * 2)
+        ctx.fillStyle = 'rgba(245, 158, 11, 0.35)'
+        ctx.fill()
+
+        ctx.beginPath()
+        ctx.arc(activePt.x, activePt.y, 3.5, 0, Math.PI * 2)
+        ctx.fillStyle = '#ffffff'
+        ctx.fill()
+        ctx.strokeStyle = '#f59e0b'
+        ctx.lineWidth = 2
+        ctx.stroke()
+      }
     }
 
-    const ratio = (svgMouseX - padLeft) / plotWidth
-    const approxIndex = Math.round(ratio * (pointsCoord.length - 1))
-    const clampedIndex = Math.max(0, Math.min(pointsCoord.length - 1, approxIndex))
-    setHoverIndex(clampedIndex)
-  }
+    ctx.restore()
+  }, [chartCalc, data?.avgPrice, dimensions, hoverIndex, padLeft, padRight, padTop, padBottom, plotWidth, plotHeight])
 
-  const activePoint = hoverIndex !== null ? pointsCoord[hoverIndex] : null
+  const handleMouseMove = useCallback(
+    (e: React.MouseEvent<HTMLCanvasElement>) => {
+      const canvas = canvasRef.current
+      const coords = chartCalc.pointsCoord
+      if (!canvas || !coords.length) return
+
+      const rect = canvas.getBoundingClientRect()
+      const mouseX = e.clientX - rect.left
+
+      if (mouseX < padLeft || mouseX > padLeft + plotWidth) {
+        setHoverIndex(null)
+        return
+      }
+
+      const ratio = (mouseX - padLeft) / plotWidth
+      const approxIndex = Math.round(ratio * (coords.length - 1))
+      const clampedIndex = Math.max(0, Math.min(coords.length - 1, approxIndex))
+      setHoverIndex(clampedIndex)
+    },
+    [chartCalc.pointsCoord, padLeft, plotWidth]
+  )
+
+  const activePoint = hoverIndex !== null ? chartCalc.pointsCoord[hoverIndex] : null
 
   const handleDownloadPng = () => {
-    if (!svgRef.current) return
-    const clone = svgRef.current.cloneNode(true) as SVGSVGElement
-    clone.setAttribute('xmlns', 'http://www.w3.org/2000/svg')
-
-    const svgString = new XMLSerializer().serializeToString(clone)
-    const svgBlob = new Blob([svgString], { type: 'image/svg+xml;charset=utf-8' })
-    const URL = window.URL || window.webkitURL || window
-    const blobURL = URL.createObjectURL(svgBlob)
-
-    const img = new Image()
-    img.onload = () => {
-      const scale = 2
-      const canvas = document.createElement('canvas')
-      canvas.width = svgWidth * scale
-      canvas.height = svgHeight * scale
-      const ctx = canvas.getContext('2d')
-      if (!ctx) return
-
-      ctx.fillStyle = '#161a23'
-      ctx.fillRect(0, 0, canvas.width, canvas.height)
-      ctx.drawImage(img, 0, 0, canvas.width, canvas.height)
-
+    const canvas = canvasRef.current
+    if (!canvas) return
+    try {
+      const pngUrl = canvas.toDataURL('image/png')
       const link = document.createElement('a')
-      link.href = canvas.toDataURL('image/png')
+      link.href = pngUrl
       link.download = `${symbol || 'COMMODITY'}_CHART_${range.toUpperCase()}.png`
+      document.body.appendChild(link)
       link.click()
-      URL.revokeObjectURL(blobURL)
+      document.body.removeChild(link)
+    } catch (err) {
+      console.error('Lỗi xuất PNG hàng hóa:', err)
     }
-    img.src = blobURL
   }
 
   if (!symbol || !mounted) return null
@@ -418,8 +549,11 @@ export function CommodityChartModal({
           </div>
         </div>
 
-        {/* Vùng vẽ biểu đồ SVG */}
-        <div className="relative w-full overflow-hidden rounded-2xl border border-white/10 bg-[#12151c] p-2 sm:p-4 select-none">
+        {/* Vùng vẽ biểu đồ Canvas GPU Siêu Nhanh */}
+        <div
+          ref={canvasContainerRef}
+          className="relative w-full overflow-hidden rounded-2xl border border-white/10 bg-[#12151c] p-2 sm:p-4 select-none"
+        >
           {loading && (
             <div className="flex h-[320px] w-full items-center justify-center">
               <div className="flex flex-col items-center gap-2">
@@ -439,162 +573,13 @@ export function CommodityChartModal({
           )}
 
           {!loading && !error && points.length > 0 && (
-            <svg
-              ref={svgRef}
-              viewBox={`0 0 ${svgWidth} ${svgHeight}`}
-              className="w-full h-auto max-h-[420px] cursor-crosshair"
+            <canvas
+              ref={canvasRef}
+              style={{ width: `${dimensions.width}px`, height: `${dimensions.height}px` }}
+              className="w-full h-auto cursor-crosshair block"
               onMouseMove={handleMouseMove}
               onMouseLeave={() => setHoverIndex(null)}
-            >
-              <defs>
-                <linearGradient id="commLineGrad" x1="0" y1="0" x2="1" y2="0">
-                  <stop offset="0%" stopColor="#f59e0b" />
-                  <stop offset="50%" stopColor="#fbbf24" />
-                  <stop offset="100%" stopColor="#f97316" />
-                </linearGradient>
-                <linearGradient id="commAreaGrad" x1="0" y1="0" x2="0" y2="1">
-                  <stop offset="0%" stopColor="#f59e0b" stopOpacity="0.25" />
-                  <stop offset="100%" stopColor="#f59e0b" stopOpacity="0.01" />
-                </linearGradient>
-              </defs>
-
-              {/* Watermark in chìm thương hiệu */}
-              <g pointerEvents="none">
-                <text
-                  x={padLeft + plotWidth / 2}
-                  y={padTop + 30}
-                  textAnchor="middle"
-                  fontSize="18"
-                  fill="rgba(255,255,255,0.18)"
-                  fontWeight="bold"
-                  letterSpacing="0.8"
-                >
-                  Dulieudautu.com
-                </text>
-                <text
-                  x={padLeft + plotWidth / 2}
-                  y={padTop + 45}
-                  textAnchor="middle"
-                  fontSize="10"
-                  fill="rgba(255,255,255,0.12)"
-                  fontStyle="italic"
-                >
-                  Nguồn: dulieudautu.com
-                </text>
-              </g>
-
-              {/* Đường lưới ngang Y */}
-              {yTicks.map((tick, i) => {
-                const ratio = (tick - yMin) / Math.max(0.001, yMax - yMin)
-                const y = padTop + plotHeight - ratio * plotHeight
-                return (
-                  <g key={`comm-ytick-${i}`}>
-                    <line
-                      x1={padLeft}
-                      y1={y}
-                      x2={padLeft + plotWidth}
-                      y2={y}
-                      stroke="rgba(255,255,255,0.06)"
-                      strokeDasharray="2 2"
-                    />
-                    <text
-                      x={padLeft - 8}
-                      y={y + 3.5}
-                      textAnchor="end"
-                      fontSize="10"
-                      fill="#64748b"
-                    >
-                      {tick}
-                    </text>
-                  </g>
-                )
-              })}
-
-              {/* Nhãn trục X (Ngày) */}
-              {xTicks.map((tick, i) => (
-                <text
-                  key={`comm-xtick-${i}`}
-                  x={tick.x}
-                  y={padTop + plotHeight + 20}
-                  textAnchor={i === 0 ? 'start' : i === xTicks.length - 1 ? 'end' : 'middle'}
-                  fontSize="9.5"
-                  fill="#64748b"
-                >
-                  {tick.label}
-                </text>
-              ))}
-
-              {/* Đường trung bình nét đứt (Avg Line) */}
-              {avgY && (
-                <g>
-                  <line
-                    x1={padLeft}
-                    y1={avgY}
-                    x2={padLeft + plotWidth}
-                    y2={avgY}
-                    stroke="#818cf8"
-                    strokeDasharray="4 4"
-                    strokeWidth="1.2"
-                  />
-                  <text
-                    x={padLeft + plotWidth + 4}
-                    y={avgY + 3.5}
-                    fontSize="9.5"
-                    fill="#818cf8"
-                    fontWeight="bold"
-                  >
-                    TB ({data?.avgPrice})
-                  </text>
-                </g>
-              )}
-
-              {/* Vùng diện tích mờ dưới đường giá */}
-              {areaPathString && (
-                <path d={areaPathString} fill="url(#commAreaGrad)" />
-              )}
-
-              {/* Đường cong giá chính */}
-              {pathString && (
-                <path
-                  d={pathString}
-                  fill="none"
-                  stroke="url(#commLineGrad)"
-                  strokeWidth="2.2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-              )}
-
-              {/* Con trỏ di chuột hover */}
-              {activePoint && (
-                <g pointerEvents="none">
-                  <line
-                    x1={activePoint.x}
-                    y1={padTop}
-                    x2={activePoint.x}
-                    y2={padTop + plotHeight}
-                    stroke="#ffffff"
-                    strokeOpacity="0.4"
-                    strokeDasharray="3 3"
-                  />
-                  <circle
-                    cx={activePoint.x}
-                    cy={activePoint.y}
-                    r="6"
-                    fill="#f59e0b"
-                    fillOpacity="0.35"
-                  />
-                  <circle
-                    cx={activePoint.x}
-                    cy={activePoint.y}
-                    r="3.5"
-                    fill="#ffffff"
-                    stroke="#f59e0b"
-                    strokeWidth="2"
-                  />
-                </g>
-              )}
-            </svg>
+            />
           )}
 
           {/* Floating Tooltip khi hover */}
@@ -604,8 +589,8 @@ export function CommodityChartModal({
               style={{
                 left:
                   activePoint.x > padLeft + plotWidth * 0.55
-                    ? `${Math.max(5, ((activePoint.x - 180) / svgWidth) * 100)}%`
-                    : `${Math.min(70, ((activePoint.x + 20) / svgWidth) * 100)}%`,
+                    ? `${Math.max(5, ((activePoint.x - 180) / dimensions.width) * 100)}%`
+                    : `${Math.min(70, ((activePoint.x + 20) / dimensions.width) * 100)}%`,
               }}
             >
               <p className="font-semibold text-[#8B98A5] mb-1 font-mono text-[11px]">

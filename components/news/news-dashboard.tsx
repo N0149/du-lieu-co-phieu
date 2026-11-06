@@ -18,12 +18,24 @@ import type { CorporateDisclosure } from '@/lib/disclosures'
 import { getGuestWatchlist } from '@/lib/guest-watchlist'
 import { createClient } from '@/lib/supabase/client'
 import { getUserWatchlist } from '@/lib/watchlist-service'
-import { InsiderActionsView } from '@/components/news/insider-actions-view'
+import dynamic from 'next/dynamic'
 import type { InsiderActionRecord } from '@/lib/insider-actions-service'
-import { ChinaNewsView } from '@/components/news/china-news-view'
 import type { ChinaNewsItem } from '@/lib/china-news-service'
-import { BctcQ3View } from '@/components/news/bctc-q3-view'
 import type { BctcAlertItem } from '@/lib/bctc-alerts-service'
+
+// Lazy load các tab phụ (BCTC, Tin tức Trung Quốc, Giao dịch nội bộ) để giảm tải bundle trang chủ
+const BctcQ3View = dynamic(
+  () => import('@/components/news/bctc-q3-view').then((m) => m.BctcQ3View),
+  { ssr: false, loading: () => <div className="p-8 text-center text-xs text-muted-foreground animate-pulse">Đang tải dữ liệu BCTC...</div> }
+)
+const ChinaNewsView = dynamic(
+  () => import('@/components/news/china-news-view').then((m) => m.ChinaNewsView),
+  { ssr: false, loading: () => <div className="p-8 text-center text-xs text-muted-foreground animate-pulse">Đang tải tin tức Trung Quốc...</div> }
+)
+const InsiderActionsView = dynamic(
+  () => import('@/components/news/insider-actions-view').then((m) => m.InsiderActionsView),
+  { ssr: false, loading: () => <div className="p-8 text-center text-xs text-muted-foreground animate-pulse">Đang tải giao dịch nội bộ...</div> }
+)
 
 export type NewsSnapshotItem = {
   id: string

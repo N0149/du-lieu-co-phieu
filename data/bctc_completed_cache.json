@@ -2724,16 +2724,20 @@
     "date": "05/11/2026",
     "doc_url": "https://static2.vietstock.vn/data/HNX/2026/BCTC/VN/QUY%203/HDA_Baocaotaichinh_Q3_2026_Hopnhat.zip?ver=2bc5a29d",
     "source": "Vietstock",
-    "updated_at": "2026-11-05 20:12:17"
+    "updated_at": "2026-11-05 20:05:24",
+    "company_name": "Công ty Cổ phần Hãng sơn Đông Á",
+    "release_date": "05/11/2026"
   },
   "AMS": {
     "ticker": "AMS",
     "bctc_type": "HOP_NHAT",
-    "title": "BCTC Hợp nhất quý 3 năm 2026",
+    "title": "Giải trình kết quả kinh doanh Hợp nhất quý 3 năm 2026",
     "date": "04/11/2026",
-    "doc_url": "https://static2.vietstock.vn/data/UPCOM/2026/BCTC/VN/QUY%203/AMS_Baocaotaichinh_Q3_2026_Hopnhat.zip",
+    "doc_url": "https://static2.vietstock.vn/data/UPCOM/2026/BCTC/VN/QUY%203/AMS_Giaitrinh_KQKD_Q3_2026_Hopnhat.zip?ver=8010cf0c",
     "source": "Vietstock",
-    "updated_at": "2026-11-04 19:58:36"
+    "updated_at": "2026-11-04 17:47:27",
+    "company_name": "Công ty Cổ phần Cơ khí Xây dựng AMECC",
+    "release_date": "04/11/2026"
   },
   "LSS": {
     "ticker": "LSS",
@@ -2742,6 +2746,8 @@
     "date": "04/11/2026 13:49",
     "doc_url": "https://file.fpts.com.vn/FileStore2/File/2026/11/02/20261030_-_LSS_-_BCTC_hop_nhat_quy_I_nam_2026-2027.pdf",
     "source": "EzIR_FPTS",
-    "updated_at": "2026-11-04 19:58:42"
+    "updated_at": "2026-11-04 17:47:28",
+    "company_name": "Công ty Cổ phần Mía đường Lam Sơn",
+    "release_date": "04/11/2026 13:49"
   }
 }

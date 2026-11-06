@@ -1,30 +1,15 @@
 'use client'
 
 import React, { useState, useMemo, useEffect } from 'react'
-import {
-  ResponsiveContainer,
-  ComposedChart,
-  Line,
-  Area,
-  XAxis,
-  YAxis,
-  Tooltip,
-  CartesianGrid,
-  Legend,
-} from 'recharts'
-import type { ConsensusTargetPayload, TargetPriceTimelinePoint } from '@/lib/consensus-target-price-service'
+import type { ConsensusTargetPayload } from '@/lib/consensus-target-price-service'
 import {
   Target,
   TrendingUp,
   TrendingDown,
   Building2,
-  Calendar,
-  Sparkles,
-  Info,
-  CheckCircle2,
-  AlertCircle,
 } from 'lucide-react'
 import { cn } from '@/lib/utils'
+import { ConsensusTargetCanvas } from './ConsensusTargetCanvas'
 
 interface ConsensusTargetPriceChartProps {
   symbol: string
@@ -89,11 +74,7 @@ export function ConsensusTargetPriceChart({ symbol, initialData }: ConsensusTarg
       cutoffSec = 0
     }
 
-    const filtered = timeline.filter((p) => p.timestamp >= cutoffSec)
-    // Đảm bảo không quá 200 điểm vẽ để biểu đồ mượt mà nhất
-    if (filtered.length <= 160) return filtered
-    const step = Math.ceil(filtered.length / 160)
-    return filtered.filter((_, idx) => idx % step === 0 || idx === filtered.length - 1)
+    return timeline.filter((p) => p.timestamp >= cutoffSec)
   }, [data, timeframe])
 
   if (loading) {
@@ -246,106 +227,9 @@ export function ConsensusTargetPriceChart({ symbol, initialData }: ConsensusTarg
         </div>
       </div>
 
-      {/* ── BIỂU ĐỒ CHÍNH RECHARTS ── */}
-      <div className="h-[300px] sm:h-[340px] w-full pt-2">
-        <ResponsiveContainer width="100%" height="100%">
-          <ComposedChart data={filteredTimeline} margin={{ top: 15, right: 15, left: -10, bottom: 5 }}>
-            <defs>
-              <linearGradient id="colorCurrentPrice" x1="0" y1="0" x2="0" y2="1">
-                <stop offset="5%" stopColor="#10b981" stopOpacity={0.25} />
-                <stop offset="95%" stopColor="#10b981" stopOpacity={0.0} />
-              </linearGradient>
-            </defs>
-            <CartesianGrid strokeDasharray="3 3" stroke="#334155" opacity={0.25} />
-            <XAxis
-              dataKey="date"
-              tick={{ fontSize: 10, fill: '#888' }}
-              minTickGap={35}
-            />
-            <YAxis
-              tick={{ fontSize: 10, fill: '#888' }}
-              domain={['auto', 'auto']}
-              tickFormatter={(val) => `${Math.round(val / 1000)}k`}
-            />
-            <Tooltip
-              content={({ active, payload, label }) => {
-                if (!active || !payload || !payload.length) return null
-                const pt = payload[0]?.payload as TargetPriceTimelinePoint
-                if (!pt) return null
-                return (
-                  <div className="rounded-xl border border-border/80 bg-slate-950/95 p-3 shadow-xl text-xs space-y-2 max-w-[280px]">
-                    <div className="font-mono font-bold text-slate-300 border-b border-slate-800 pb-1.5 flex items-center justify-between">
-                      <span>{pt.date}</span>
-                      {pt.upsidePercent != null && (
-                        <span
-                          className={cn(
-                            'px-1.5 py-0.2 rounded text-[10px] font-mono font-black',
-                            pt.upsidePercent >= 0
-                              ? 'bg-emerald-500/20 text-emerald-400'
-                              : 'bg-rose-500/20 text-rose-400'
-                          )}
-                        >
-                          Dư địa: {pt.upsidePercent > 0 ? '+' : ''}{pt.upsidePercent}%
-                        </span>
-                      )}
-                    </div>
-                    <div className="space-y-1 font-mono">
-                      <div className="flex items-center justify-between text-amber-400 font-bold">
-                        <span>Giá mục tiêu TB:</span>
-                        <span>{fmtPrice(pt.targetPrice)}</span>
-                      </div>
-                      <div className="flex items-center justify-between text-emerald-400 font-bold">
-                        <span>Thị giá thực tế:</span>
-                        <span>{fmtPrice(pt.marketPrice)}</span>
-                      </div>
-                    </div>
-
-                    {/* Báo cáo CTCK ra trong ngày này nếu có */}
-                    {pt.reportsOnDate && pt.reportsOnDate.length > 0 && (
-                      <div className="pt-2 border-t border-slate-800/80 space-y-1">
-                        <span className="text-[10px] font-bold text-slate-400 uppercase">
-                          Báo cáo phát hành:
-                        </span>
-                        {pt.reportsOnDate.map((rep, idx) => (
-                          <div key={idx} className="flex items-center justify-between gap-1 text-[11px]">
-                            <span className="font-bold text-primary">{rep.source}:</span>
-                            <span className="font-mono text-amber-400 font-bold">{fmtPrice(rep.targetPrice)}</span>
-                            {rep.recommendation && (
-                              <span className="text-[9.5px] px-1 rounded bg-slate-800 text-slate-300 font-semibold">
-                                {rep.recommendation}
-                              </span>
-                            )}
-                          </div>
-                        ))}
-                      </div>
-                    )}
-                  </div>
-                )
-              }}
-            />
-
-            {/* Vùng diện tích thị giá */}
-            <Area
-              type="monotone"
-              dataKey="marketPrice"
-              name="Giá hiện tại"
-              stroke="#10b981"
-              strokeWidth={2}
-              fill="url(#colorCurrentPrice)"
-            />
-
-            {/* Đường bậc thang giá mục tiêu trung bình (WiData style) */}
-            <Line
-              type="stepAfter"
-              dataKey="targetPrice"
-              name="Giá mục tiêu trung bình"
-              stroke="#f97316"
-              strokeWidth={2.5}
-              dot={false}
-              activeDot={{ r: 5, fill: '#f97316', stroke: '#fff' }}
-            />
-          </ComposedChart>
-        </ResponsiveContainer>
+      {/* ── BIỂU ĐỒ CHÍNH LIGHTWEIGHT CHARTS (CANVAS GPU) ── */}
+      <div className="w-full pt-2">
+        <ConsensusTargetCanvas timeline={filteredTimeline} height={340} symbol={symbol} />
       </div>
 
       {/* ── CHÚ THÍCH (LEGEND) PHONG CÁCH WIDATA ── */}

@@ -1,11 +1,15 @@
 'use client'
 
 import { useState, useEffect } from 'react'
-import Link from 'next/link'
-import { Search, FileText } from 'lucide-react'
-import { GlobalSearchModal } from '@/components/global-search-modal'
-import { useReports } from '@/lib/use-reports'
-import { reportTickers } from '@/lib/report-stocks'
+import dynamic from 'next/dynamic'
+import { Search } from 'lucide-react'
+
+// Nạp lười (Lazy load) GlobalSearchModal chỉ khi người dùng mở hộp thoại tìm kiếm (click hoặc Ctrl+K)
+// Giúp loại bỏ hoàn toàn ~560 KB bundle dữ liệu cổ phiếu khỏi lượt tải ban đầu của TẤT CẢ các trang trên website
+const GlobalSearchModal = dynamic(
+  () => import('@/components/global-search-modal').then((m) => m.GlobalSearchModal),
+  { ssr: false }
+)
 
 export function StockSearch() {
   const [modalOpen, setModalOpen] = useState(false)
@@ -53,31 +57,12 @@ export function StockSearch() {
         </button>
       </div>
 
-      <GlobalSearchModal
-        open={modalOpen}
-        onClose={() => setModalOpen(false)}
-      />
+      {modalOpen && (
+        <GlobalSearchModal
+          open={modalOpen}
+          onClose={() => setModalOpen(false)}
+        />
+      )}
     </>
-  )
-}
-
-export function QuickJump() {
-  const { reports } = useReports()
-  const tickers = reportTickers(reports)
-  return (
-    <div className="flex flex-wrap items-center gap-1.5">
-      <span className="text-xs text-muted-foreground">Truy cập nhanh:</span>
-      {tickers.map((t) => (
-        <Link
-          key={t}
-          href={`/stock/${encodeURIComponent(t)}`}
-          title={`Xem chi tiết & báo cáo ${t}`}
-          className="inline-flex items-center gap-1 rounded border border-border bg-card px-1.5 py-0.5 font-mono text-xs font-medium text-foreground transition-colors hover:border-primary hover:text-primary"
-        >
-          <FileText className="size-3 text-primary" />
-          {t}
-        </Link>
-      ))}
-    </div>
   )
 }

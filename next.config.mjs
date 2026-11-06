@@ -33,6 +33,9 @@ const securityHeaders = [
 const nextConfig = {
   poweredByHeader: false,
   serverExternalPackages: ['node:sqlite'],
+  experimental: {
+    optimizePackageImports: ['lucide-react', 'recharts', 'marked'],
+  },
   outputFileTracingIncludes: {
     '/stock/[symbol]': [
       './data/financial_charts/**/*',

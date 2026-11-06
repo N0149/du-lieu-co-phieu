@@ -1,0 +1,4428 @@
+{
+  "scanned_at": "2026-11-04 22:19:39",
+  "total_pending": 147,
+  "has_q3_count": 140,
+  "no_q3_count": 7,
+  "has_q3_tickers": [
+    "VNA",
+    "HUB",
+    "GHC",
+    "POS",
+    "POV",
+    "SGC",
+    "VSI",
+    "BLI",
+    "VAF",
+    "TOT",
+    "MH3",
+    "DHA",
+    "GTS",
+    "HJS",
+    "PPP",
+    "PVI",
+    "TTN",
+    "VNC",
+    "DPR",
+    "VFG",
+    "ABR",
+    "ABT",
+    "DC4",
+    "DGC",
+    "DRI",
+    "DXP",
+    "GCF",
+    "HAG",
+    "MAC",
+    "NED",
+    "NLG",
+    "NSC",
+    "PAN",
+    "POT",
+    "TCL",
+    "THG",
+    "VIP",
+    "HD6",
+    "MWG",
+    "VHC",
+    "VSM",
+    "DSN",
+    "GEG",
+    "SD5",
+    "SDT",
+    "SWC",
+    "ADS",
+    "BMI",
+    "BWE",
+    "DCM",
+    "HSM",
+    "VPS",
+    "AAA",
+    "AIG",
+    "ALT",
+    "AMS",
+    "C47",
+    "CKD",
+    "CLX",
+    "CMX",
+    "CTI",
+    "DHC",
+    "DPG",
+    "DTD",
+    "DTK",
+    "DVN",
+    "EID",
+    "EVE",
+    "FCM",
+    "GDT",
+    "HDA",
+    "HDG",
+    "HHV",
+    "HPA",
+    "HPG",
+    "HTL",
+    "ICT",
+    "IDC",
+    "ILB",
+    "ILS",
+    "ITC",
+    "KSV",
+    "L18",
+    "LCG",
+    "LLM",
+    "M10",
+    "MNB",
+    "MPC",
+    "MSH",
+    "MTA",
+    "MVC",
+    "MZG",
+    "NDT",
+    "NHH",
+    "NHT",
+    "PDB",
+    "PGC",
+    "PGV",
+    "PHP",
+    "PHR",
+    "PJT",
+    "PMS",
+    "POW",
+    "PPH",
+    "PTB",
+    "PTS",
+    "RAL",
+    "S55",
+    "SBB",
+    "SD9",
+    "SFI",
+    "SGN",
+    "SIP",
+    "SJE",
+    "SJG",
+    "SKV",
+    "SNZ",
+    "SPC",
+    "TCW",
+    "TFC",
+    "TID",
+    "TOS",
+    "TRA",
+    "TRV",
+    "TTA",
+    "TV1",
+    "TVN",
+    "TVT",
+    "VC6",
+    "VCS",
+    "VEA",
+    "VFR",
+    "VGG",
+    "VGS",
+    "VGT",
+    "VLC",
+    "VNF",
+    "VNL",
+    "VNR",
+    "VNT"
+  ],
+  "no_q3_tickers": [
+    "DPC",
+    "HPD",
+    "CCS",
+    "CMF",
+    "HMS",
+    "ANT",
+    "LSS"
+  ],
+  "details": {
+    "VNA": {
+      "has_q3": true,
+      "bctc_type": "HOP_NHAT",
+      "title": "BCTC Hợp nhất quý 3 năm 2026",
+      "date": "27/10/2026",
+      "doc_url": "https://static2.vietstock.vn/data/UPCOM/2026/BCTC/VN/QUY%203/VNA_Baocaotaichinh_Q3_2026_Hopnhat.zip?ver=3c11ec97",
+      "all_docs": [
+        {
+          "title": "BCTC Hợp nhất quý 3 năm 2026",
+          "date": "27/10/2026",
+          "doc_url": "https://static2.vietstock.vn/data/UPCOM/2026/BCTC/VN/QUY%203/VNA_Baocaotaichinh_Q3_2026_Hopnhat.zip?ver=3c11ec97",
+          "bctc_type": "HOP_NHAT"
+        },
+        {
+          "title": "BCTC Công ty mẹ quý 3 năm 2026",
+          "date": "26/10/2026",
+          "doc_url": "https://static2.vietstock.vn/data/HNX/2026/BCTC/VN/QUY%203/VNA_Baocaotaichinh_Q3_2026_Congtyme.zip",
+          "bctc_type": "RIENG"
+        }
+      ],
+      "meta": {
+        "stt": 26,
+        "ticker": "VNA",
+        "name": "Công ty Cổ phần Vận tải biển Vinaship",
+        "exchange": "UPCOM",
+        "batch": "Distill_Batch_02_Ngay_20_21 da sua.json",
+        "dot": "Batch 02 (20-21/10)"
+      }
+    },
+    "DPC": {
+      "has_q3": false,
+      "meta": {
+        "stt": 57,
+        "ticker": "DPC",
+        "name": "Công ty Cổ phần Nhựa Đà Nẵng",
+        "exchange": "UPCOM",
+        "batch": "Distill_Batch_03_Ngay_21_22 da sua.json",
+        "dot": "Batch 03 (21-22/10)"
+      }
+    },
+    "HUB": {
+      "has_q3": true,
+      "bctc_type": "HOP_NHAT",
+      "title": "BCTC Hợp nhất quý 3 năm 2026",
+      "date": "26/10/2026",
+      "doc_url": "https://static2.vietstock.vn/data/HOSE/2026/BCTC/VN/QUY%203/HUB_Baocaotaichinh_Q3_2026_Hopnhat.pdf",
+      "all_docs": [
+        {
+          "title": "BCTC Công ty mẹ quý 3 năm 2026",
+          "date": "26/10/2026",
+          "doc_url": "https://static2.vietstock.vn/data/HOSE/2026/BCTC/VN/QUY%203/HUB_Baocaotaichinh_Q3_2026_Congtyme.pdf?ver=3a956741",
+          "bctc_type": "RIENG"
+        },
+        {
+          "title": "BCTC Hợp nhất quý 3 năm 2026",
+          "date": "26/10/2026",
+          "doc_url": "https://static2.vietstock.vn/data/HOSE/2026/BCTC/VN/QUY%203/HUB_Baocaotaichinh_Q3_2026_Hopnhat.pdf",
+          "bctc_type": "HOP_NHAT"
+        }
+      ],
+      "meta": {
+        "stt": 66,
+        "ticker": "HUB",
+        "name": "Công ty Cổ phần Xây lắp Thừa Thiên Huế",
+        "exchange": "HOSE",
+        "batch": "Distill_Batch_03_Ngay_21_22 da sua.json",
+        "dot": "Batch 03 (21-22/10)"
+      }
+    },
+    "GHC": {
+      "has_q3": true,
+      "bctc_type": "HOP_NHAT",
+      "title": "BCTC Hợp nhất quý 3 năm 2026",
+      "date": "29/10/2026",
+      "doc_url": "https://static2.vietstock.vn/data/HOSE/2026/BCTC/VN/QUY%203/GHC_Baocaotaichinh_Q3_2026_Hopnhat.pdf",
+      "all_docs": [
+        {
+          "title": "BCTC Hợp nhất quý 3 năm 2026",
+          "date": "29/10/2026",
+          "doc_url": "https://static2.vietstock.vn/data/HOSE/2026/BCTC/VN/QUY%203/GHC_Baocaotaichinh_Q3_2026_Hopnhat.pdf",
+          "bctc_type": "HOP_NHAT"
+        },
+        {
+          "title": "BCTC Công ty mẹ quý 3 năm 2026",
+          "date": "29/10/2026",
+          "doc_url": "https://static2.vietstock.vn/data/HOSE/2026/BCTC/VN/QUY%203/GHC_Baocaotaichinh_Q3_2026_Congtyme.pdf?ver=7dd0a620",
+          "bctc_type": "RIENG"
+        }
+      ],
+      "meta": {
+        "stt": 70,
+        "ticker": "GHC",
+        "name": "Công ty Cổ phần Thủy điện Gia Lai",
+        "exchange": "HOSE",
+        "batch": "Distill_Batch_04_Ngay_22_22.json",
+        "dot": "Batch 04 (22/10)"
+      }
+    },
+    "HPD": {
+      "has_q3": false,
+      "meta": {
+        "stt": 76,
+        "ticker": "HPD",
+        "name": "Công ty Cổ phần Thủy điện Đăk Đoa",
+        "exchange": "UPCOM",
+        "batch": "Distill_Batch_04_Ngay_22_22.json",
+        "dot": "Batch 04 (22/10)"
+      }
+    },
+    "POS": {
+      "has_q3": true,
+      "bctc_type": "DAY_DU",
+      "title": "BCTC quý 3 năm 2026",
+      "date": "26/10/2026",
+      "doc_url": "https://static2.vietstock.vn/data/HNX/2026/BCTC/VN/QUY%203/POS_Baocaotaichinh_Q3_2026.zip",
+      "all_docs": [
+        {
+          "title": "BCTC quý 3 năm 2026",
+          "date": "26/10/2026",
+          "doc_url": "https://static2.vietstock.vn/data/HNX/2026/BCTC/VN/QUY%203/POS_Baocaotaichinh_Q3_2026.zip",
+          "bctc_type": "DAY_DU"
+        }
+      ],
+      "meta": {
+        "stt": 85,
+        "ticker": "POS",
+        "name": "Công ty Cổ phần Vận hành và Xây lắp PTSC",
+        "exchange": "UPCOM",
+        "batch": "Distill_Batch_04_Ngay_22_22.json",
+        "dot": "Batch 04 (22/10)"
+      }
+    },
+    "POV": {
+      "has_q3": true,
+      "bctc_type": "DAY_DU",
+      "title": "BCTC quý 3 năm 2026",
+      "date": "26/10/2026",
+      "doc_url": "https://static2.vietstock.vn/data/HNX/2026/BCTC/VN/QUY%203/POV_Baocaotaichinh_Q3_2026.zip",
+      "all_docs": [
+        {
+          "title": "BCTC quý 3 năm 2026",
+          "date": "26/10/2026",
+          "doc_url": "https://static2.vietstock.vn/data/HNX/2026/BCTC/VN/QUY%203/POV_Baocaotaichinh_Q3_2026.zip",
+          "bctc_type": "DAY_DU"
+        }
+      ],
+      "meta": {
+        "stt": 86,
+        "ticker": "POV",
+        "name": "Công ty Cổ phần Xăng dầu Dầu khí Vũng Áng",
+        "exchange": "UPCOM",
+        "batch": "Distill_Batch_04_Ngay_22_22.json",
+        "dot": "Batch 04 (22/10)"
+      }
+    },
+    "SGC": {
+      "has_q3": true,
+      "bctc_type": "HOP_NHAT",
+      "title": "BCTC Hợp nhất quý 3 năm 2026",
+      "date": "02/11/2026",
+      "doc_url": "https://static2.vietstock.vn/data/HNX/2026/BCTC/VN/QUY%203/SGC_Baocaotaichinh_Q3_2026_Hopnhat.zip?ver=faa85d36",
+      "all_docs": [
+        {
+          "title": "BCTC Hợp nhất quý 3 năm 2026",
+          "date": "02/11/2026",
+          "doc_url": "https://static2.vietstock.vn/data/HNX/2026/BCTC/VN/QUY%203/SGC_Baocaotaichinh_Q3_2026_Hopnhat.zip?ver=faa85d36",
+          "bctc_type": "HOP_NHAT"
+        },
+        {
+          "title": "BCTC Công ty mẹ quý 3 năm 2026",
+          "date": "02/11/2026",
+          "doc_url": "https://static2.vietstock.vn/data/HNX/2026/BCTC/VN/QUY%203/SGC_Baocaotaichinh_Q3_2026_Congtyme.zip",
+          "bctc_type": "RIENG"
+        },
+        {
+          "title": "BCTC Công ty mẹ quý 3 năm 2026",
+          "date": "02/11/2026",
+          "doc_url": "https://static2.vietstock.vn/data/HNX/2026/BCTC/VN/QUY%203/SGC_Baocaotaichinh_Q3_2026_Congtyme_1.zip",
+          "bctc_type": "RIENG"
+        }
+      ],
+      "meta": {
+        "stt": 92,
+        "ticker": "SGC",
+        "name": "Công ty Cổ phần Xuất nhập khẩu Sa Giang",
+        "exchange": "HNX",
+        "batch": "Distill_Batch_04_Ngay_22_22.json",
+        "dot": "Batch 04 (22/10)"
+      }
+    },
+    "VSI": {
+      "has_q3": true,
+      "bctc_type": "HOP_NHAT",
+      "title": "BCTC Hợp nhất quý 3 năm 2026",
+      "date": "30/10/2026",
+      "doc_url": "https://static2.vietstock.vn/data/HOSE/2026/BCTC/VN/QUY%203/VSI_Baocaotaichinh_Q3_2026_Hopnhat.pdf",
+      "all_docs": [
+        {
+          "title": "BCTC Công ty mẹ quý 3 năm 2026",
+          "date": "30/10/2026",
+          "doc_url": "https://static2.vietstock.vn/data/HOSE/2026/BCTC/VN/QUY%203/VSI_Baocaotaichinh_Q3_2026_Congtyme.pdf?ver=6c20eaa0",
+          "bctc_type": "RIENG"
+        },
+        {
+          "title": "BCTC Hợp nhất quý 3 năm 2026",
+          "date": "30/10/2026",
+          "doc_url": "https://static2.vietstock.vn/data/HOSE/2026/BCTC/VN/QUY%203/VSI_Baocaotaichinh_Q3_2026_Hopnhat.pdf",
+          "bctc_type": "HOP_NHAT"
+        }
+      ],
+      "meta": {
+        "stt": 94,
+        "ticker": "VSI",
+        "name": "Công ty Cổ phần Đầu tư và Xây dựng Cấp thoát nước",
+        "exchange": "HOSE",
+        "batch": "Distill_Batch_05_Ngay_22_23 da sua.json",
+        "dot": "Batch 05 (22-23/10)"
+      }
+    },
+    "CCS": {
+      "has_q3": false,
+      "meta": {
+        "stt": 96,
+        "ticker": "CCS",
+        "name": "Công ty Cổ phần Chíp Sáng",
+        "exchange": "UPCOM",
+        "batch": "Distill_Batch_05_Ngay_22_23 da sua.json",
+        "dot": "Batch 05 (22-23/10)"
+      }
+    },
+    "BLI": {
+      "has_q3": true,
+      "bctc_type": "GIAI_TRINH",
+      "title": "Giải trình kết quả kinh doanh quý 3 năm 2026",
+      "date": "27/10/2026",
+      "doc_url": "https://static2.vietstock.vn/data/UPCOM/2026/BCTC/VN/QUY%203/BLI_Giaitrinh_KQKD_Q3_2026.zip?ver=e8c8e9ac",
+      "all_docs": [
+        {
+          "title": "Giải trình kết quả kinh doanh quý 3 năm 2026",
+          "date": "27/10/2026",
+          "doc_url": "https://static2.vietstock.vn/data/UPCOM/2026/BCTC/VN/QUY%203/BLI_Giaitrinh_KQKD_Q3_2026.zip?ver=e8c8e9ac",
+          "bctc_type": "GIAI_TRINH"
+        },
+        {
+          "title": "BCTC quý 3 năm 2026",
+          "date": "26/10/2026",
+          "doc_url": "https://static2.vietstock.vn/data/UPCOM/2026/BCTC/VN/QUY%203/BLI_Baocaotaichinh_Q3_2026.pdf",
+          "bctc_type": "DAY_DU"
+        }
+      ],
+      "meta": {
+        "stt": 99,
+        "ticker": "BLI",
+        "name": "Tổng Công ty Cổ phần Bảo hiểm Bảo Long",
+        "exchange": "UPCOM",
+        "batch": "Distill_Batch_05_Ngay_22_23 da sua.json",
+        "dot": "Batch 05 (22-23/10)"
+      }
+    },
+    "VAF": {
+      "has_q3": true,
+      "bctc_type": "GIAI_TRINH",
+      "title": "Giải trình kết quả kinh doanh quý 3 năm 2026",
+      "date": "29/10/2026",
+      "doc_url": "https://static2.vietstock.vn/data/UPCOM/2026/BCTC/VN/QUY%203/VAF_Giaitrinh_KQKD_Q3_2026.zip?ver=39019623",
+      "all_docs": [
+        {
+          "title": "Giải trình kết quả kinh doanh quý 3 năm 2026",
+          "date": "29/10/2026",
+          "doc_url": "https://static2.vietstock.vn/data/UPCOM/2026/BCTC/VN/QUY%203/VAF_Giaitrinh_KQKD_Q3_2026.zip?ver=39019623",
+          "bctc_type": "GIAI_TRINH"
+        },
+        {
+          "title": "BCTC quý 3 năm 2026",
+          "date": "27/10/2026",
+          "doc_url": "https://static2.vietstock.vn/data/UPCOM/2026/BCTC/VN/QUY%203/VAF_Baocaotaichinh_Q3_2026.pdf",
+          "bctc_type": "DAY_DU"
+        }
+      ],
+      "meta": {
+        "stt": 100,
+        "ticker": "VAF",
+        "name": "Công ty Cổ phần Phân lân nung chảy Văn Điển",
+        "exchange": "UPCOM",
+        "batch": "Distill_Batch_05_Ngay_22_23 da sua.json",
+        "dot": "Batch 05 (22-23/10)"
+      }
+    },
+    "CMF": {
+      "has_q3": false,
+      "meta": {
+        "stt": 101,
+        "ticker": "CMF",
+        "name": "Công ty Cổ phần Thực phẩm Cholimex",
+        "exchange": "UPCOM",
+        "batch": "Distill_Batch_05_Ngay_22_23 da sua.json",
+        "dot": "Batch 05 (22-23/10)"
+      }
+    },
+    "TOT": {
+      "has_q3": true,
+      "bctc_type": "DAY_DU",
+      "title": "BCTC quý 3 năm 2026",
+      "date": "26/10/2026",
+      "doc_url": "https://static2.vietstock.vn/data/HNX/2026/BCTC/VN/QUY%203/TOT_Baocaotaichinh_Q3_2026.zip",
+      "all_docs": [
+        {
+          "title": "BCTC quý 3 năm 2026",
+          "date": "26/10/2026",
+          "doc_url": "https://static2.vietstock.vn/data/HNX/2026/BCTC/VN/QUY%203/TOT_Baocaotaichinh_Q3_2026.zip",
+          "bctc_type": "DAY_DU"
+        }
+      ],
+      "meta": {
+        "stt": 102,
+        "ticker": "TOT",
+        "name": "Công ty Cổ phần Transimex Logistics",
+        "exchange": "HNX",
+        "batch": "Distill_Batch_05_Ngay_22_23 da sua.json",
+        "dot": "Batch 05 (22-23/10)"
+      }
+    },
+    "HMS": {
+      "has_q3": false,
+      "meta": {
+        "stt": 106,
+        "ticker": "HMS",
+        "name": "Công ty Cổ phần Xây dựng Bảo tàng Hồ Chí Minh",
+        "exchange": "UPCOM",
+        "batch": "Distill_Batch_05_Ngay_22_23 da sua.json",
+        "dot": "Batch 05 (22-23/10)"
+      }
+    },
+    "MH3": {
+      "has_q3": true,
+      "bctc_type": "DAY_DU",
+      "title": "BCTC quý 3 năm 2026",
+      "date": "19/10/2026",
+      "doc_url": "https://static2.vietstock.vn/data/HNX/2026/BCTC/VN/QUY%203/MH3_Baocaotaichinh_Q3_2026.zip",
+      "all_docs": [
+        {
+          "title": "BCTC quý 3 năm 2026",
+          "date": "19/10/2026",
+          "doc_url": "https://static2.vietstock.vn/data/HNX/2026/BCTC/VN/QUY%203/MH3_Baocaotaichinh_Q3_2026.zip",
+          "bctc_type": "DAY_DU"
+        }
+      ],
+      "meta": {
+        "stt": 109,
+        "ticker": "MH3",
+        "name": "Công ty Cổ phần Khu công nghiệp Cao su Bình Long",
+        "exchange": "UPCOM",
+        "batch": "Distill_Batch_05_Ngay_22_23 da sua.json",
+        "dot": "Batch 05 (22-23/10)"
+      }
+    },
+    "DHA": {
+      "has_q3": true,
+      "bctc_type": "HOP_NHAT",
+      "title": "BCTC Hợp nhất quý 3 năm 2026",
+      "date": "27/10/2026",
+      "doc_url": "https://static2.vietstock.vn/data/HOSE/2026/BCTC/VN/QUY%203/DHA_Baocaotaichinh_Q3_2026_Hopnhat.pdf",
+      "all_docs": [
+        {
+          "title": "BCTC Công ty mẹ quý 3 năm 2026",
+          "date": "27/10/2026",
+          "doc_url": "https://static2.vietstock.vn/data/HOSE/2026/BCTC/VN/QUY%203/DHA_Baocaotaichinh_Q3_2026_Congtyme.pdf?ver=9958386c",
+          "bctc_type": "RIENG"
+        },
+        {
+          "title": "BCTC Hợp nhất quý 3 năm 2026",
+          "date": "27/10/2026",
+          "doc_url": "https://static2.vietstock.vn/data/HOSE/2026/BCTC/VN/QUY%203/DHA_Baocaotaichinh_Q3_2026_Hopnhat.pdf",
+          "bctc_type": "HOP_NHAT"
+        },
+        {
+          "title": "Giải trình kết quả kinh doanh Hợp nhất quý 3 năm 2026",
+          "date": "28/10/2026",
+          "doc_url": "https://static2.vietstock.vn/data/HOSE/2026/BCTC/VN/QUY%203/DHA_Giaitrinh_KQKD_Q3_2026_Hopnhat.zip",
+          "bctc_type": "GIAI_TRINH"
+        }
+      ],
+      "meta": {
+        "stt": 124,
+        "ticker": "DHA",
+        "name": "Công ty Cổ phần Hóa An",
+        "exchange": "HOSE",
+        "batch": "Distill_Batch_06_Ngay_23_24.json",
+        "dot": "Batch 06 (23-24/10)"
+      }
+    },
+    "GTS": {
+      "has_q3": true,
+      "bctc_type": "HOP_NHAT",
+      "title": "BCTC Hợp nhất quý 3 năm 2026",
+      "date": "29/10/2026",
+      "doc_url": "https://static2.vietstock.vn/data/UPCOM/2026/BCTC/VN/QUY%203/GTS_Baocaotaichinh_Q3_2026_Hopnhat.zip?ver=5f1d796d",
+      "all_docs": [
+        {
+          "title": "BCTC Hợp nhất quý 3 năm 2026",
+          "date": "29/10/2026",
+          "doc_url": "https://static2.vietstock.vn/data/UPCOM/2026/BCTC/VN/QUY%203/GTS_Baocaotaichinh_Q3_2026_Hopnhat.zip?ver=5f1d796d",
+          "bctc_type": "HOP_NHAT"
+        }
+      ],
+      "meta": {
+        "stt": 127,
+        "ticker": "GTS",
+        "name": "Công ty Cổ phần Công trình Giao thông Sài Gòn",
+        "exchange": "UPCOM",
+        "batch": "Distill_Batch_06_Ngay_23_24.json",
+        "dot": "Batch 06 (23-24/10)"
+      }
+    },
+    "HJS": {
+      "has_q3": true,
+      "bctc_type": "HOP_NHAT",
+      "title": "BCTC Hợp nhất quý 3 năm 2026",
+      "date": "03/11/2026",
+      "doc_url": "https://static2.vietstock.vn/data/HNX/2026/BCTC/VN/QUY%203/HJS_Baocaotaichinh_Q3_2026_Hopnhat.pdf?ver=0b358665",
+      "all_docs": [
+        {
+          "title": "BCTC Công ty mẹ quý 3 năm 2026",
+          "date": "03/11/2026",
+          "doc_url": "https://static2.vietstock.vn/data/HNX/2026/BCTC/VN/QUY%203/HJS_Baocaotaichinh_Q3_2026_Congtyme.pdf",
+          "bctc_type": "RIENG"
+        },
+        {
+          "title": "BCTC Hợp nhất quý 3 năm 2026",
+          "date": "03/11/2026",
+          "doc_url": "https://static2.vietstock.vn/data/HNX/2026/BCTC/VN/QUY%203/HJS_Baocaotaichinh_Q3_2026_Hopnhat.pdf?ver=0b358665",
+          "bctc_type": "HOP_NHAT"
+        }
+      ],
+      "meta": {
+        "stt": 129,
+        "ticker": "HJS",
+        "name": "Công ty Cổ phần Thủy điện Nậm Mu",
+        "exchange": "HNX",
+        "batch": "Distill_Batch_06_Ngay_23_24.json",
+        "dot": "Batch 06 (23-24/10)"
+      }
+    },
+    "PPP": {
+      "has_q3": true,
+      "bctc_type": "HOP_NHAT",
+      "title": "BCTC Hợp nhất quý 3 năm 2026",
+      "date": "28/10/2026",
+      "doc_url": "https://static2.vietstock.vn/data/HNX/2026/BCTC/VN/QUY%203/PPP_Baocaotaichinh_Q3_2026_Hopnhat.zip?ver=e0eabfdc",
+      "all_docs": [
+        {
+          "title": "BCTC Công ty mẹ quý 3 năm 2026",
+          "date": "29/10/2026",
+          "doc_url": "https://static2.vietstock.vn/data/HNX/2026/BCTC/VN/QUY%203/PPP_Baocaotaichinh_Q3_2026_Congtyme.zip",
+          "bctc_type": "RIENG"
+        },
+        {
+          "title": "BCTC Hợp nhất quý 3 năm 2026",
+          "date": "28/10/2026",
+          "doc_url": "https://static2.vietstock.vn/data/HNX/2026/BCTC/VN/QUY%203/PPP_Baocaotaichinh_Q3_2026_Hopnhat.zip?ver=e0eabfdc",
+          "bctc_type": "HOP_NHAT"
+        }
+      ],
+      "meta": {
+        "stt": 133,
+        "ticker": "PPP",
+        "name": "Công ty Cổ phần Dược phẩm Phong Phú",
+        "exchange": "HNX",
+        "batch": "Distill_Batch_06_Ngay_23_24.json",
+        "dot": "Batch 06 (23-24/10)"
+      }
+    },
+    "PVI": {
+      "has_q3": true,
+      "bctc_type": "HOP_NHAT",
+      "title": "BCTC Hợp nhất quý 3 năm 2026",
+      "date": "26/10/2026",
+      "doc_url": "https://static2.vietstock.vn/data/HNX/2026/BCTC/VN/QUY%203/PVI_Baocaotaichinh_Q3_2026_Hopnhat.zip?ver=6d7016a6",
+      "all_docs": [
+        {
+          "title": "BCTC Hợp nhất quý 3 năm 2026",
+          "date": "26/10/2026",
+          "doc_url": "https://static2.vietstock.vn/data/HNX/2026/BCTC/VN/QUY%203/PVI_Baocaotaichinh_Q3_2026_Hopnhat.zip?ver=6d7016a6",
+          "bctc_type": "HOP_NHAT"
+        },
+        {
+          "title": "BCTC Công ty mẹ quý 3 năm 2026",
+          "date": "26/10/2026",
+          "doc_url": "https://static2.vietstock.vn/data/HNX/2026/BCTC/VN/QUY%203/PVI_Baocaotaichinh_Q3_2026_Congtyme.zip",
+          "bctc_type": "RIENG"
+        }
+      ],
+      "meta": {
+        "stt": 134,
+        "ticker": "PVI",
+        "name": "Công ty Cổ phần PVI",
+        "exchange": "HNX",
+        "batch": "Distill_Batch_06_Ngay_23_24.json",
+        "dot": "Batch 06 (23-24/10)"
+      }
+    },
+    "TTN": {
+      "has_q3": true,
+      "bctc_type": "HOP_NHAT",
+      "title": "BCTC Hợp nhất quý 3 năm 2026",
+      "date": "02/11/2026",
+      "doc_url": "https://static2.vietstock.vn/data/UPCOM/2026/BCTC/VN/QUY%203/TTN_Baocaotaichinh_Q3_2026_Hopnhat.zip?ver=552803d3",
+      "all_docs": [
+        {
+          "title": "BCTC Hợp nhất quý 3 năm 2026",
+          "date": "02/11/2026",
+          "doc_url": "https://static2.vietstock.vn/data/UPCOM/2026/BCTC/VN/QUY%203/TTN_Baocaotaichinh_Q3_2026_Hopnhat.zip?ver=552803d3",
+          "bctc_type": "HOP_NHAT"
+        },
+        {
+          "title": "BCTC Công ty mẹ quý 3 năm 2026",
+          "date": "02/11/2026",
+          "doc_url": "https://static2.vietstock.vn/data/UPCOM/2026/BCTC/VN/QUY%203/TTN_Baocaotaichinh_Q3_2026_Congtyme.zip?ver=3261d87c",
+          "bctc_type": "RIENG"
+        }
+      ],
+      "meta": {
+        "stt": 137,
+        "ticker": "TTN",
+        "name": "Công ty Cổ phần Công nghệ & Truyền thông Việt Nam",
+        "exchange": "UPCOM",
+        "batch": "Distill_Batch_06_Ngay_23_24.json",
+        "dot": "Batch 06 (23-24/10)"
+      }
+    },
+    "VNC": {
+      "has_q3": true,
+      "bctc_type": "HOP_NHAT",
+      "title": "BCTC Hợp nhất quý 3 năm 2026",
+      "date": "28/10/2026",
+      "doc_url": "https://static2.vietstock.vn/data/HNX/2026/BCTC/VN/QUY%203/VNC_Baocaotaichinh_Q3_2026_Hopnhat.zip?ver=e1c869c4",
+      "all_docs": [
+        {
+          "title": "BCTC Hợp nhất quý 3 năm 2026",
+          "date": "28/10/2026",
+          "doc_url": "https://static2.vietstock.vn/data/HNX/2026/BCTC/VN/QUY%203/VNC_Baocaotaichinh_Q3_2026_Hopnhat.zip?ver=e1c869c4",
+          "bctc_type": "HOP_NHAT"
+        },
+        {
+          "title": "BCTC Công ty mẹ quý 3 năm 2026",
+          "date": "28/10/2026",
+          "doc_url": "https://static2.vietstock.vn/data/HNX/2026/BCTC/VN/QUY%203/VNC_Baocaotaichinh_Q3_2026_Congtyme.zip",
+          "bctc_type": "RIENG"
+        }
+      ],
+      "meta": {
+        "stt": 138,
+        "ticker": "VNC",
+        "name": "Công ty Cổ phần Tập đoàn Vinacontrol",
+        "exchange": "HNX",
+        "batch": "Distill_Batch_06_Ngay_23_24.json",
+        "dot": "Batch 06 (23-24/10)"
+      }
+    },
+    "DPR": {
+      "has_q3": true,
+      "bctc_type": "HOP_NHAT",
+      "title": "BCTC Hợp nhất quý 3 năm 2026",
+      "date": "28/10/2026",
+      "doc_url": "https://static2.vietstock.vn/data/HOSE/2026/BCTC/VN/QUY%203/DPR_Baocaotaichinh_Q3_2026_Hopnhat.pdf",
+      "all_docs": [
+        {
+          "title": "Giải trình kết quả kinh doanh Hợp nhất quý 3 năm 2026",
+          "date": "28/10/2026",
+          "doc_url": "https://static2.vietstock.vn/data/HOSE/2026/BCTC/VN/QUY%203/DPR_Giaitrinh_KQKD_Q3_2026_Hopnhat.zip?ver=506193c0",
+          "bctc_type": "GIAI_TRINH"
+        },
+        {
+          "title": "BCTC Công ty mẹ quý 3 năm 2026",
+          "date": "28/10/2026",
+          "doc_url": "https://static2.vietstock.vn/data/HOSE/2026/BCTC/VN/QUY%203/DPR_Baocaotaichinh_Q3_2026_Congtyme.pdf?ver=2b851afa",
+          "bctc_type": "RIENG"
+        },
+        {
+          "title": "BCTC Hợp nhất quý 3 năm 2026",
+          "date": "28/10/2026",
+          "doc_url": "https://static2.vietstock.vn/data/HOSE/2026/BCTC/VN/QUY%203/DPR_Baocaotaichinh_Q3_2026_Hopnhat.pdf",
+          "bctc_type": "HOP_NHAT"
+        }
+      ],
+      "meta": {
+        "stt": 139,
+        "ticker": "DPR",
+        "name": "Công ty Cổ phần Cao su Đồng Phú",
+        "exchange": "HOSE",
+        "batch": "Distill_Batch_07_Ngay_25_26.json",
+        "dot": "Batch 07 (25-26/10)"
+      }
+    },
+    "VFG": {
+      "has_q3": true,
+      "bctc_type": "HOP_NHAT",
+      "title": "BCTC Hợp nhất quý 3 năm 2026",
+      "date": "27/10/2026",
+      "doc_url": "https://static2.vietstock.vn/data/HOSE/2026/BCTC/VN/QUY%203/VFG_Baocaotaichinh_Q3_2026_Hopnhat.pdf?ver=0ceaeb1e",
+      "all_docs": [
+        {
+          "title": "Giải trình kết quả kinh doanh Hợp nhất quý 3 năm 2026",
+          "date": "27/10/2026",
+          "doc_url": "https://static2.vietstock.vn/data/HOSE/2026/BCTC/VN/QUY%203/VFG_Giaitrinh_KQKD_Q3_2026_Hopnhat.zip?ver=5deed5c2",
+          "bctc_type": "GIAI_TRINH"
+        },
+        {
+          "title": "BCTC Công ty mẹ quý 3 năm 2026",
+          "date": "27/10/2026",
+          "doc_url": "https://static2.vietstock.vn/data/HOSE/2026/BCTC/VN/QUY%203/VFG_Baocaotaichinh_Q3_2026_Congtyme.pdf?ver=7748a5ba",
+          "bctc_type": "RIENG"
+        },
+        {
+          "title": "BCTC Hợp nhất quý 3 năm 2026",
+          "date": "27/10/2026",
+          "doc_url": "https://static2.vietstock.vn/data/HOSE/2026/BCTC/VN/QUY%203/VFG_Baocaotaichinh_Q3_2026_Hopnhat.pdf?ver=0ceaeb1e",
+          "bctc_type": "HOP_NHAT"
+        }
+      ],
+      "meta": {
+        "stt": 141,
+        "ticker": "VFG",
+        "name": "Công ty Cổ phần Khử trùng Việt Nam",
+        "exchange": "HOSE",
+        "batch": "Distill_Batch_07_Ngay_25_26.json",
+        "dot": "Batch 07 (25-26/10)"
+      }
+    },
+    "ABR": {
+      "has_q3": true,
+      "bctc_type": "HOP_NHAT",
+      "title": "BCTC Hợp nhất quý 3 năm 2026",
+      "date": "26/10/2026",
+      "doc_url": "https://static2.vietstock.vn/data/HOSE/2026/BCTC/VN/QUY%203/ABR_Baocaotaichinh_Q3_2026_Hopnhat.pdf",
+      "all_docs": [
+        {
+          "title": "BCTC Công ty mẹ quý 3 năm 2026",
+          "date": "26/10/2026",
+          "doc_url": "https://static2.vietstock.vn/data/HOSE/2026/BCTC/VN/QUY%203/ABR_Baocaotaichinh_Q3_2026_Congtyme.pdf?ver=ace8a6ee",
+          "bctc_type": "RIENG"
+        },
+        {
+          "title": "BCTC Hợp nhất quý 3 năm 2026",
+          "date": "26/10/2026",
+          "doc_url": "https://static2.vietstock.vn/data/HOSE/2026/BCTC/VN/QUY%203/ABR_Baocaotaichinh_Q3_2026_Hopnhat.pdf",
+          "bctc_type": "HOP_NHAT"
+        }
+      ],
+      "meta": {
+        "stt": 142,
+        "ticker": "ABR",
+        "name": "Công ty Cổ phần Đầu tư Nhãn Hiệu Việt",
+        "exchange": "HOSE",
+        "batch": "Distill_Batch_07_Ngay_25_26.json",
+        "dot": "Batch 07 (25-26/10)"
+      }
+    },
+    "ABT": {
+      "has_q3": true,
+      "bctc_type": "HOP_NHAT",
+      "title": "BCTC Hợp nhất quý 3 năm 2026",
+      "date": "26/10/2026",
+      "doc_url": "https://static2.vietstock.vn/data/HOSE/2026/BCTC/VN/QUY%203/ABT_Baocaotaichinh_Q3_2026_Hopnhat.pdf",
+      "all_docs": [
+        {
+          "title": "BCTC Công ty mẹ quý 3 năm 2026",
+          "date": "26/10/2026",
+          "doc_url": "https://static2.vietstock.vn/data/HOSE/2026/BCTC/VN/QUY%203/ABT_Baocaotaichinh_Q3_2026_Congtyme.pdf?ver=9b4d6602",
+          "bctc_type": "RIENG"
+        },
+        {
+          "title": "BCTC Hợp nhất quý 3 năm 2026",
+          "date": "26/10/2026",
+          "doc_url": "https://static2.vietstock.vn/data/HOSE/2026/BCTC/VN/QUY%203/ABT_Baocaotaichinh_Q3_2026_Hopnhat.pdf",
+          "bctc_type": "HOP_NHAT"
+        }
+      ],
+      "meta": {
+        "stt": 143,
+        "ticker": "ABT",
+        "name": "Công ty Cổ phần Xuất nhập khẩu Thủy sản Bến Tre",
+        "exchange": "HOSE",
+        "batch": "Distill_Batch_07_Ngay_25_26.json",
+        "dot": "Batch 07 (25-26/10)"
+      }
+    },
+    "DC4": {
+      "has_q3": true,
+      "bctc_type": "HOP_NHAT",
+      "title": "BCTC Hợp nhất quý 3 năm 2026",
+      "date": "29/10/2026",
+      "doc_url": "https://static2.vietstock.vn/data/HOSE/2026/BCTC/VN/QUY%203/DC4_Baocaotaichinh_Q3_2026_Hopnhat.pdf",
+      "all_docs": [
+        {
+          "title": "BCTC Công ty mẹ quý 3 năm 2026",
+          "date": "29/10/2026",
+          "doc_url": "https://static2.vietstock.vn/data/HOSE/2026/BCTC/VN/QUY%203/DC4_Baocaotaichinh_Q3_2026_Congtyme.pdf?ver=a70b9426",
+          "bctc_type": "RIENG"
+        },
+        {
+          "title": "BCTC Hợp nhất quý 3 năm 2026",
+          "date": "29/10/2026",
+          "doc_url": "https://static2.vietstock.vn/data/HOSE/2026/BCTC/VN/QUY%203/DC4_Baocaotaichinh_Q3_2026_Hopnhat.pdf",
+          "bctc_type": "HOP_NHAT"
+        },
+        {
+          "title": "Giải trình kết quả kinh doanh quý 3 năm 2026",
+          "date": "29/10/2026",
+          "doc_url": "https://static2.vietstock.vn/data/HOSE/2026/BCTC/VN/QUY%203/DC4_Giaitrinh_KQKD_Q3_2026.pdf",
+          "bctc_type": "GIAI_TRINH"
+        }
+      ],
+      "meta": {
+        "stt": 144,
+        "ticker": "DC4",
+        "name": "Công ty Cổ phần Dicera Holdings",
+        "exchange": "HOSE",
+        "batch": "Distill_Batch_07_Ngay_25_26.json",
+        "dot": "Batch 07 (25-26/10)"
+      }
+    },
+    "DGC": {
+      "has_q3": true,
+      "bctc_type": "HOP_NHAT",
+      "title": "BCTC Hợp nhất quý 3 năm 2026",
+      "date": "29/10/2026",
+      "doc_url": "https://static2.vietstock.vn/data/HOSE/2026/BCTC/VN/QUY%203/DGC_Baocaotaichinh_Q3_2026_Hopnhat.pdf",
+      "all_docs": [
+        {
+          "title": "BCTC Công ty mẹ quý 3 năm 2026",
+          "date": "29/10/2026",
+          "doc_url": "https://static2.vietstock.vn/data/HOSE/2026/BCTC/VN/QUY%203/DGC_Baocaotaichinh_Q3_2026_Congtyme.pdf?ver=31fc6a9e",
+          "bctc_type": "RIENG"
+        },
+        {
+          "title": "BCTC Hợp nhất quý 3 năm 2026",
+          "date": "29/10/2026",
+          "doc_url": "https://static2.vietstock.vn/data/HOSE/2026/BCTC/VN/QUY%203/DGC_Baocaotaichinh_Q3_2026_Hopnhat.pdf",
+          "bctc_type": "HOP_NHAT"
+        },
+        {
+          "title": "Giải trình kết quả kinh doanh Hợp nhất quý 3 năm 2026",
+          "date": "30/10/2026",
+          "doc_url": "https://static2.vietstock.vn/data/HOSE/2026/BCTC/VN/QUY%203/DGC_Giaitrinh_KQKD_Q3_2026_Hopnhat.pdf?ver=4d5999ce",
+          "bctc_type": "GIAI_TRINH"
+        }
+      ],
+      "meta": {
+        "stt": 145,
+        "ticker": "DGC",
+        "name": "Công ty Cổ phần Tập đoàn Hóa chất Đức Giang",
+        "exchange": "HOSE",
+        "batch": "Distill_Batch_07_Ngay_25_26.json",
+        "dot": "Batch 07 (25-26/10)"
+      }
+    },
+    "DRI": {
+      "has_q3": true,
+      "bctc_type": "HOP_NHAT",
+      "title": "BCTC Hợp nhất quý 3 năm 2026",
+      "date": "29/10/2026",
+      "doc_url": "https://static2.vietstock.vn/data/UPCOM/2026/BCTC/VN/QUY%203/DRI_Baocaotaichinh_Q3_2026_Hopnhat.zip?ver=1a77f93e",
+      "all_docs": [
+        {
+          "title": "BCTC Hợp nhất quý 3 năm 2026",
+          "date": "29/10/2026",
+          "doc_url": "https://static2.vietstock.vn/data/UPCOM/2026/BCTC/VN/QUY%203/DRI_Baocaotaichinh_Q3_2026_Hopnhat.zip?ver=1a77f93e",
+          "bctc_type": "HOP_NHAT"
+        },
+        {
+          "title": "BCTC Công ty mẹ quý 3 năm 2026",
+          "date": "29/10/2026",
+          "doc_url": "https://static2.vietstock.vn/data/HNX/2026/BCTC/VN/QUY%203/DRI_Baocaotaichinh_Q3_2026_Congtyme.zip",
+          "bctc_type": "RIENG"
+        }
+      ],
+      "meta": {
+        "stt": 146,
+        "ticker": "DRI",
+        "name": "Công ty Cổ phần Đầu tư Cao su Đắk Lắk",
+        "exchange": "UPCOM",
+        "batch": "Distill_Batch_07_Ngay_25_26.json",
+        "dot": "Batch 07 (25-26/10)"
+      }
+    },
+    "DXP": {
+      "has_q3": true,
+      "bctc_type": "HOP_NHAT",
+      "title": "BCTC Hợp nhất quý 3 năm 2026",
+      "date": "04/11/2026",
+      "doc_url": "https://static2.vietstock.vn/data/HNX/2026/BCTC/VN/QUY%203/DXP_Baocaotaichinh_Q3_2026_Hopnhat.zip?ver=f66694a5",
+      "all_docs": [
+        {
+          "title": "BCTC Công ty mẹ quý 3 năm 2026",
+          "date": "04/11/2026",
+          "doc_url": "https://static2.vietstock.vn/data/HNX/2026/BCTC/VN/QUY%203/DXP_Baocaotaichinh_Q3_2026_Congtyme.zip",
+          "bctc_type": "RIENG"
+        },
+        {
+          "title": "BCTC Hợp nhất quý 3 năm 2026",
+          "date": "04/11/2026",
+          "doc_url": "https://static2.vietstock.vn/data/HNX/2026/BCTC/VN/QUY%203/DXP_Baocaotaichinh_Q3_2026_Hopnhat.zip?ver=f66694a5",
+          "bctc_type": "HOP_NHAT"
+        }
+      ],
+      "meta": {
+        "stt": 147,
+        "ticker": "DXP",
+        "name": "Công ty Cổ phần Cảng Đoạn Xá",
+        "exchange": "HNX",
+        "batch": "Distill_Batch_07_Ngay_25_26.json",
+        "dot": "Batch 07 (25-26/10)"
+      }
+    },
+    "GCF": {
+      "has_q3": true,
+      "bctc_type": "HOP_NHAT",
+      "title": "BCTC Hợp nhất quý 3 năm 2026",
+      "date": "03/11/2026",
+      "doc_url": "https://static2.vietstock.vn/data/UPCOM/2026/BCTC/VN/QUY%203/GCF_Baocaotaichinh_Q3_2026_Hopnhat.zip?ver=f27677db",
+      "all_docs": [
+        {
+          "title": "BCTC Hợp nhất quý 3 năm 2026",
+          "date": "03/11/2026",
+          "doc_url": "https://static2.vietstock.vn/data/UPCOM/2026/BCTC/VN/QUY%203/GCF_Baocaotaichinh_Q3_2026_Hopnhat.zip?ver=f27677db",
+          "bctc_type": "HOP_NHAT"
+        },
+        {
+          "title": "BCTC Công ty mẹ quý 3 năm 2026",
+          "date": "03/11/2026",
+          "doc_url": "https://static2.vietstock.vn/data/HNX/2026/BCTC/VN/QUY%203/GCF_Baocaotaichinh_Q3_2026_Congtyme.zip",
+          "bctc_type": "RIENG"
+        }
+      ],
+      "meta": {
+        "stt": 148,
+        "ticker": "GCF",
+        "name": "Công ty Cổ phần Thực phẩm G.C",
+        "exchange": "UPCOM",
+        "batch": "Distill_Batch_07_Ngay_25_26.json",
+        "dot": "Batch 07 (25-26/10)"
+      }
+    },
+    "HAG": {
+      "has_q3": true,
+      "bctc_type": "HOP_NHAT",
+      "title": "BCTC Hợp nhất quý 3 năm 2026",
+      "date": "02/11/2026",
+      "doc_url": "https://static2.vietstock.vn/data/HOSE/2026/BCTC/VN/QUY%203/HAG_Baocaotaichinh_Q3_2026_Hopnhat.pdf",
+      "all_docs": [
+        {
+          "title": "BCTC Công ty mẹ quý 3 năm 2026",
+          "date": "02/11/2026",
+          "doc_url": "https://static2.vietstock.vn/data/HOSE/2026/BCTC/VN/QUY%203/HAG_Baocaotaichinh_Q3_2026_Congtyme.pdf?ver=9b8348ff",
+          "bctc_type": "RIENG"
+        },
+        {
+          "title": "BCTC Hợp nhất quý 3 năm 2026",
+          "date": "02/11/2026",
+          "doc_url": "https://static2.vietstock.vn/data/HOSE/2026/BCTC/VN/QUY%203/HAG_Baocaotaichinh_Q3_2026_Hopnhat.pdf",
+          "bctc_type": "HOP_NHAT"
+        }
+      ],
+      "meta": {
+        "stt": 149,
+        "ticker": "HAG",
+        "name": "Công ty Cổ phần Hoàng Anh Gia Lai",
+        "exchange": "HOSE",
+        "batch": "Distill_Batch_07_Ngay_25_26.json",
+        "dot": "Batch 07 (25-26/10)"
+      }
+    },
+    "MAC": {
+      "has_q3": true,
+      "bctc_type": "HOP_NHAT",
+      "title": "BCTC Hợp nhất quý 3 năm 2026",
+      "date": "28/10/2026",
+      "doc_url": "https://static2.vietstock.vn/data/HNX/2026/BCTC/VN/QUY%203/MAC_Baocaotaichinh_Q3_2026_Hopnhat.zip?ver=795923d5",
+      "all_docs": [
+        {
+          "title": "BCTC Công ty mẹ quý 3 năm 2026",
+          "date": "27/10/2026",
+          "doc_url": "https://static2.vietstock.vn/data/HNX/2026/BCTC/VN/QUY%203/MAC_Baocaotaichinh_Q3_2026_Congtyme.zip",
+          "bctc_type": "RIENG"
+        },
+        {
+          "title": "BCTC Hợp nhất quý 3 năm 2026",
+          "date": "28/10/2026",
+          "doc_url": "https://static2.vietstock.vn/data/HNX/2026/BCTC/VN/QUY%203/MAC_Baocaotaichinh_Q3_2026_Hopnhat.zip?ver=795923d5",
+          "bctc_type": "HOP_NHAT"
+        }
+      ],
+      "meta": {
+        "stt": 154,
+        "ticker": "MAC",
+        "name": "Công ty Cổ phần Tập đoàn Macstar",
+        "exchange": "HNX",
+        "batch": "Distill_Batch_07_Ngay_25_26.json",
+        "dot": "Batch 07 (25-26/10)"
+      }
+    },
+    "NED": {
+      "has_q3": true,
+      "bctc_type": "HOP_NHAT",
+      "title": "BCTC Hợp nhất quý 3 năm 2026",
+      "date": "02/11/2026",
+      "doc_url": "https://static2.vietstock.vn/data/UPCOM/2026/BCTC/VN/QUY%203/NED_Baocaotaichinh_Q3_2026_Hopnhat.zip?ver=c16e320a",
+      "all_docs": [
+        {
+          "title": "BCTC Hợp nhất quý 3 năm 2026",
+          "date": "02/11/2026",
+          "doc_url": "https://static2.vietstock.vn/data/UPCOM/2026/BCTC/VN/QUY%203/NED_Baocaotaichinh_Q3_2026_Hopnhat.zip?ver=c16e320a",
+          "bctc_type": "HOP_NHAT"
+        },
+        {
+          "title": "BCTC Công ty mẹ quý 3 năm 2026",
+          "date": "02/11/2026",
+          "doc_url": "https://static2.vietstock.vn/data/HNX/2026/BCTC/VN/QUY%203/NED_Baocaotaichinh_Q3_2026_Congtyme.zip",
+          "bctc_type": "RIENG"
+        }
+      ],
+      "meta": {
+        "stt": 156,
+        "ticker": "NED",
+        "name": "Công ty Cổ phần Đầu tư và Phát triển Điện Tây Bắc",
+        "exchange": "UPCOM",
+        "batch": "Distill_Batch_07_Ngay_25_26.json",
+        "dot": "Batch 07 (25-26/10)"
+      }
+    },
+    "NLG": {
+      "has_q3": true,
+      "bctc_type": "HOP_NHAT",
+      "title": "BCTC Hợp nhất quý 3 năm 2026",
+      "date": "31/10/2026",
+      "doc_url": "https://static2.vietstock.vn/data/HOSE/2026/BCTC/VN/QUY%203/NLG_Baocaotaichinh_Q3_2026_Hopnhat.pdf",
+      "all_docs": [
+        {
+          "title": "BCTC Hợp nhất quý 3 năm 2026",
+          "date": "31/10/2026",
+          "doc_url": "https://static2.vietstock.vn/data/HOSE/2026/BCTC/VN/QUY%203/NLG_Baocaotaichinh_Q3_2026_Hopnhat.pdf",
+          "bctc_type": "HOP_NHAT"
+        },
+        {
+          "title": "BCTC Công ty mẹ quý 3 năm 2026",
+          "date": "31/10/2026",
+          "doc_url": "https://static2.vietstock.vn/data/HOSE/2026/BCTC/VN/QUY%203/NLG_Baocaotaichinh_Q3_2026_Congtyme.pdf?ver=37ca4269",
+          "bctc_type": "RIENG"
+        }
+      ],
+      "meta": {
+        "stt": 157,
+        "ticker": "NLG",
+        "name": "Công ty Cổ phần Đầu tư Nam Long",
+        "exchange": "HOSE",
+        "batch": "Distill_Batch_07_Ngay_25_26.json",
+        "dot": "Batch 07 (25-26/10)"
+      }
+    },
+    "NSC": {
+      "has_q3": true,
+      "bctc_type": "HOP_NHAT",
+      "title": "BCTC Hợp nhất quý 3 năm 2026",
+      "date": "27/10/2026",
+      "doc_url": "https://static2.vietstock.vn/data/HOSE/2026/BCTC/VN/QUY%203/NSC_Baocaotaichinh_Q3_2026_Hopnhat.pdf",
+      "all_docs": [
+        {
+          "title": "BCTC Công ty mẹ quý 3 năm 2026",
+          "date": "27/10/2026",
+          "doc_url": "https://static2.vietstock.vn/data/HOSE/2026/BCTC/VN/QUY%203/NSC_Baocaotaichinh_Q3_2026_Congtyme.pdf?ver=d29cd18b",
+          "bctc_type": "RIENG"
+        },
+        {
+          "title": "BCTC Hợp nhất quý 3 năm 2026",
+          "date": "27/10/2026",
+          "doc_url": "https://static2.vietstock.vn/data/HOSE/2026/BCTC/VN/QUY%203/NSC_Baocaotaichinh_Q3_2026_Hopnhat.pdf",
+          "bctc_type": "HOP_NHAT"
+        }
+      ],
+      "meta": {
+        "stt": 158,
+        "ticker": "NSC",
+        "name": "Công ty Cổ phần Tập đoàn Giống cây trồng Việt Nam",
+        "exchange": "HOSE",
+        "batch": "Distill_Batch_07_Ngay_25_26.json",
+        "dot": "Batch 07 (25-26/10)"
+      }
+    },
+    "PAN": {
+      "has_q3": true,
+      "bctc_type": "HOP_NHAT",
+      "title": "BCTC Hợp nhất quý 3 năm 2026",
+      "date": "28/10/2026",
+      "doc_url": "https://static2.vietstock.vn/data/HOSE/2026/BCTC/VN/QUY%203/PAN_Baocaotaichinh_Q3_2026_Hopnhat.pdf",
+      "all_docs": [
+        {
+          "title": "BCTC Công ty mẹ quý 3 năm 2026",
+          "date": "28/10/2026",
+          "doc_url": "https://static2.vietstock.vn/data/HOSE/2026/BCTC/VN/QUY%203/PAN_Baocaotaichinh_Q3_2026_Congtyme.pdf?ver=aaf5639c",
+          "bctc_type": "RIENG"
+        },
+        {
+          "title": "BCTC Hợp nhất quý 3 năm 2026",
+          "date": "28/10/2026",
+          "doc_url": "https://static2.vietstock.vn/data/HOSE/2026/BCTC/VN/QUY%203/PAN_Baocaotaichinh_Q3_2026_Hopnhat.pdf",
+          "bctc_type": "HOP_NHAT"
+        }
+      ],
+      "meta": {
+        "stt": 159,
+        "ticker": "PAN",
+        "name": "Công ty Cổ phần Tập đoàn PAN",
+        "exchange": "HOSE",
+        "batch": "Distill_Batch_07_Ngay_25_26.json",
+        "dot": "Batch 07 (25-26/10)"
+      }
+    },
+    "POT": {
+      "has_q3": true,
+      "bctc_type": "HOP_NHAT",
+      "title": "BCTC Hợp nhất quý 3 năm 2026",
+      "date": "28/10/2026",
+      "doc_url": "https://static2.vietstock.vn/data/HNX/2026/BCTC/VN/QUY%203/POT_Baocaotaichinh_Q3_2026_Hopnhat.zip?ver=d4eee728",
+      "all_docs": [
+        {
+          "title": "BCTC Hợp nhất quý 3 năm 2026",
+          "date": "28/10/2026",
+          "doc_url": "https://static2.vietstock.vn/data/HNX/2026/BCTC/VN/QUY%203/POT_Baocaotaichinh_Q3_2026_Hopnhat.zip?ver=d4eee728",
+          "bctc_type": "HOP_NHAT"
+        },
+        {
+          "title": "BCTC Công ty mẹ quý 3 năm 2026",
+          "date": "27/10/2026",
+          "doc_url": "https://static2.vietstock.vn/data/HNX/2026/BCTC/VN/QUY%203/POT_Baocaotaichinh_Q3_2026_Congtyme.zip",
+          "bctc_type": "RIENG"
+        }
+      ],
+      "meta": {
+        "stt": 160,
+        "ticker": "POT",
+        "name": "Công ty Cổ phần Thiết bị Bưu điện",
+        "exchange": "HNX",
+        "batch": "Distill_Batch_07_Ngay_25_26.json",
+        "dot": "Batch 07 (25-26/10)"
+      }
+    },
+    "TCL": {
+      "has_q3": true,
+      "bctc_type": "HOP_NHAT",
+      "title": "BCTC Hợp nhất quý 3 năm 2026",
+      "date": "30/10/2026",
+      "doc_url": "https://static2.vietstock.vn/data/HOSE/2026/BCTC/VN/QUY%203/TCL_Baocaotaichinh_Q3_2026_Hopnhat.pdf",
+      "all_docs": [
+        {
+          "title": "BCTC Hợp nhất quý 3 năm 2026",
+          "date": "30/10/2026",
+          "doc_url": "https://static2.vietstock.vn/data/HOSE/2026/BCTC/VN/QUY%203/TCL_Baocaotaichinh_Q3_2026_Hopnhat.pdf",
+          "bctc_type": "HOP_NHAT"
+        },
+        {
+          "title": "BCTC Công ty mẹ quý 3 năm 2026",
+          "date": "21/10/2026",
+          "doc_url": "https://static2.vietstock.vn/data/HOSE/2026/BCTC/VN/QUY%203/TCL_Baocaotaichinh_Q3_2026_Congtyme.pdf?ver=745a86ad",
+          "bctc_type": "RIENG"
+        }
+      ],
+      "meta": {
+        "stt": 162,
+        "ticker": "TCL",
+        "name": "Công ty Cổ phần Đại lý Giao nhận Vận tải Xếp dỡ Tân Cảng",
+        "exchange": "HOSE",
+        "batch": "Distill_Batch_08_Ngay_26_29.json",
+        "dot": "Batch 08 (26-29/10)"
+      }
+    },
+    "THG": {
+      "has_q3": true,
+      "bctc_type": "HOP_NHAT",
+      "title": "BCTC Hợp nhất quý 3 năm 2026",
+      "date": "26/10/2026",
+      "doc_url": "https://static2.vietstock.vn/data/HOSE/2026/BCTC/VN/QUY%203/THG_Baocaotaichinh_Q3_2026_Hopnhat.pdf",
+      "all_docs": [
+        {
+          "title": "Giải trình kết quả kinh doanh quý 3 năm 2026",
+          "date": "26/10/2026",
+          "doc_url": "https://static2.vietstock.vn/data/HOSE/2026/BCTC/VN/QUY%203/THG_Giaitrinh_KQKD_Q3_2026.pdf",
+          "bctc_type": "GIAI_TRINH"
+        },
+        {
+          "title": "BCTC Công ty mẹ quý 3 năm 2026",
+          "date": "26/10/2026",
+          "doc_url": "https://static2.vietstock.vn/data/HOSE/2026/BCTC/VN/QUY%203/THG_Baocaotaichinh_Q3_2026_Congtyme.pdf?ver=dc9d6ec2",
+          "bctc_type": "RIENG"
+        },
+        {
+          "title": "BCTC Hợp nhất quý 3 năm 2026",
+          "date": "26/10/2026",
+          "doc_url": "https://static2.vietstock.vn/data/HOSE/2026/BCTC/VN/QUY%203/THG_Baocaotaichinh_Q3_2026_Hopnhat.pdf",
+          "bctc_type": "HOP_NHAT"
+        }
+      ],
+      "meta": {
+        "stt": 163,
+        "ticker": "THG",
+        "name": "Công ty Cổ phần Đầu tư và Xây dựng Tiền Giang",
+        "exchange": "HOSE",
+        "batch": "Distill_Batch_08_Ngay_26_29.json",
+        "dot": "Batch 08 (26-29/10)"
+      }
+    },
+    "VIP": {
+      "has_q3": true,
+      "bctc_type": "HOP_NHAT",
+      "title": "BCTC Hợp nhất quý 3 năm 2026",
+      "date": "28/10/2026",
+      "doc_url": "https://static2.vietstock.vn/data/HOSE/2026/BCTC/VN/QUY%203/VIP_Baocaotaichinh_Q3_2026_Hopnhat.pdf",
+      "all_docs": [
+        {
+          "title": "Giải trình kết quả kinh doanh Hợp nhất quý 3 năm 2026",
+          "date": "28/10/2026",
+          "doc_url": "https://static2.vietstock.vn/data/HOSE/2026/BCTC/VN/QUY%203/VIP_Giaitrinh_KQKD_Q3_2026_Hopnhat.zip?ver=35512f07",
+          "bctc_type": "GIAI_TRINH"
+        },
+        {
+          "title": "BCTC Công ty mẹ quý 3 năm 2026",
+          "date": "28/10/2026",
+          "doc_url": "https://static2.vietstock.vn/data/HOSE/2026/BCTC/VN/QUY%203/VIP_Baocaotaichinh_Q3_2026_Congtyme.pdf?ver=b8f8fefc",
+          "bctc_type": "RIENG"
+        },
+        {
+          "title": "BCTC Hợp nhất quý 3 năm 2026",
+          "date": "28/10/2026",
+          "doc_url": "https://static2.vietstock.vn/data/HOSE/2026/BCTC/VN/QUY%203/VIP_Baocaotaichinh_Q3_2026_Hopnhat.pdf",
+          "bctc_type": "HOP_NHAT"
+        }
+      ],
+      "meta": {
+        "stt": 166,
+        "ticker": "VIP",
+        "name": "Công ty Cổ phần Vận tải Xăng dầu VIPCO",
+        "exchange": "HOSE",
+        "batch": "Distill_Batch_08_Ngay_26_29.json",
+        "dot": "Batch 08 (26-29/10)"
+      }
+    },
+    "HD6": {
+      "has_q3": true,
+      "bctc_type": "HOP_NHAT",
+      "title": "BCTC Hợp nhất quý 3 năm 2026",
+      "date": "02/11/2026",
+      "doc_url": "https://static2.vietstock.vn/data/UPCOM/2026/BCTC/VN/QUY%203/HD6_Baocaotaichinh_Q3_2026_Hopnhat.zip?ver=6a3453fa",
+      "all_docs": [
+        {
+          "title": "BCTC Hợp nhất quý 3 năm 2026",
+          "date": "02/11/2026",
+          "doc_url": "https://static2.vietstock.vn/data/UPCOM/2026/BCTC/VN/QUY%203/HD6_Baocaotaichinh_Q3_2026_Hopnhat.zip?ver=6a3453fa",
+          "bctc_type": "HOP_NHAT"
+        },
+        {
+          "title": "BCTC Công ty mẹ quý 3 năm 2026",
+          "date": "02/11/2026",
+          "doc_url": "https://static2.vietstock.vn/data/HNX/2026/BCTC/VN/QUY%203/HD6_Baocaotaichinh_Q3_2026_Congtyme.zip",
+          "bctc_type": "RIENG"
+        }
+      ],
+      "meta": {
+        "stt": 167,
+        "ticker": "HD6",
+        "name": "Công ty Cổ phần Đầu tư và Phát triển nhà số 6 Hà Nội",
+        "exchange": "UPCOM",
+        "batch": "Distill_Batch_08_Ngay_26_29.json",
+        "dot": "Batch 08 (26-29/10)"
+      }
+    },
+    "MWG": {
+      "has_q3": true,
+      "bctc_type": "HOP_NHAT",
+      "title": "BCTC Hợp nhất quý 3 năm 2026 (điều chỉnh)",
+      "date": "29/10/2026",
+      "doc_url": "https://static2.vietstock.vn/data/HOSE/2026/BCTC/VN/QUY%203/MWG_Baocaotaichinh_Q3_2026_Hopnhat_DieuChinh.pdf?ver=bffafc4c",
+      "all_docs": [
+        {
+          "title": "BCTC Hợp nhất quý 3 năm 2026 (điều chỉnh)",
+          "date": "29/10/2026",
+          "doc_url": "https://static2.vietstock.vn/data/HOSE/2026/BCTC/VN/QUY%203/MWG_Baocaotaichinh_Q3_2026_Hopnhat_DieuChinh.pdf?ver=bffafc4c",
+          "bctc_type": "HOP_NHAT"
+        },
+        {
+          "title": "Giải trình kết quả kinh doanh Hợp nhất quý 3 năm 2026",
+          "date": "28/10/2026",
+          "doc_url": "https://static2.vietstock.vn/data/HOSE/2026/BCTC/VN/QUY%203/MWG_Giaitrinh_KQKD_Q3_2026_Hopnhat.pdf?ver=e8b4c54e",
+          "bctc_type": "GIAI_TRINH"
+        },
+        {
+          "title": "BCTC Công ty mẹ quý 3 năm 2026",
+          "date": "28/10/2026",
+          "doc_url": "https://static2.vietstock.vn/data/HOSE/2026/BCTC/VN/QUY%203/MWG_Baocaotaichinh_Q3_2026_Congtyme.pdf?ver=1c3273cb",
+          "bctc_type": "RIENG"
+        },
+        {
+          "title": "BCTC Hợp nhất quý 3 năm 2026",
+          "date": "28/10/2026",
+          "doc_url": "https://static2.vietstock.vn/data/HOSE/2026/BCTC/VN/QUY%203/MWG_Baocaotaichinh_Q3_2026_Hopnhat.pdf",
+          "bctc_type": "HOP_NHAT"
+        }
+      ],
+      "meta": {
+        "stt": 168,
+        "ticker": "MWG",
+        "name": "Công ty Cổ phần Đầu tư Thế Giới Di Động",
+        "exchange": "HOSE",
+        "batch": "Distill_Batch_08_Ngay_26_29.json",
+        "dot": "Batch 08 (26-29/10)"
+      }
+    },
+    "VHC": {
+      "has_q3": true,
+      "bctc_type": "HOP_NHAT",
+      "title": "BCTC Hợp nhất quý 3 năm 2026",
+      "date": "31/10/2026",
+      "doc_url": "https://static2.vietstock.vn/data/HOSE/2026/BCTC/VN/QUY%203/VHC_Baocaotaichinh_Q3_2026_Hopnhat.pdf",
+      "all_docs": [
+        {
+          "title": "BCTC Hợp nhất quý 3 năm 2026",
+          "date": "31/10/2026",
+          "doc_url": "https://static2.vietstock.vn/data/HOSE/2026/BCTC/VN/QUY%203/VHC_Baocaotaichinh_Q3_2026_Hopnhat.pdf",
+          "bctc_type": "HOP_NHAT"
+        },
+        {
+          "title": "Giải trình kết quả kinh doanh Hợp nhất quý 3 năm 2026",
+          "date": "31/10/2026",
+          "doc_url": "https://static2.vietstock.vn/data/HOSE/2026/BCTC/VN/QUY%203/VHC_Giaitrinh_KQKD_Q3_2026_Hopnhat.zip?ver=3ad48ca0",
+          "bctc_type": "GIAI_TRINH"
+        },
+        {
+          "title": "BCTC Công ty mẹ quý 3 năm 2026",
+          "date": "31/10/2026",
+          "doc_url": "https://static2.vietstock.vn/data/HOSE/2026/BCTC/VN/QUY%203/VHC_Baocaotaichinh_Q3_2026_Congtyme.pdf?ver=3d76aec3",
+          "bctc_type": "RIENG"
+        }
+      ],
+      "meta": {
+        "stt": 170,
+        "ticker": "VHC",
+        "name": "Công ty Cổ phần Vĩnh Hoàn",
+        "exchange": "HOSE",
+        "batch": "Distill_Batch_08_Ngay_26_29.json",
+        "dot": "Batch 08 (26-29/10)"
+      }
+    },
+    "VSM": {
+      "has_q3": true,
+      "bctc_type": "HOP_NHAT",
+      "title": "BCTC Hợp nhất quý 3 năm 2026",
+      "date": "02/11/2026",
+      "doc_url": "https://static2.vietstock.vn/data/HNX/2026/BCTC/VN/QUY%203/VSM_Baocaotaichinh_Q3_2026_Hopnhat.zip?ver=f5767dba",
+      "all_docs": [
+        {
+          "title": "BCTC Công ty mẹ quý 3 năm 2026",
+          "date": "03/11/2026",
+          "doc_url": "https://static2.vietstock.vn/data/HNX/2026/BCTC/VN/QUY%203/VSM_Baocaotaichinh_Q3_2026_Congtyme.zip",
+          "bctc_type": "RIENG"
+        },
+        {
+          "title": "BCTC Hợp nhất quý 3 năm 2026",
+          "date": "02/11/2026",
+          "doc_url": "https://static2.vietstock.vn/data/HNX/2026/BCTC/VN/QUY%203/VSM_Baocaotaichinh_Q3_2026_Hopnhat.zip?ver=f5767dba",
+          "bctc_type": "HOP_NHAT"
+        }
+      ],
+      "meta": {
+        "stt": 171,
+        "ticker": "VSM",
+        "name": "Công ty Cổ phần Container Miền Trung",
+        "exchange": "HNX",
+        "batch": "Distill_Batch_08_Ngay_26_29.json",
+        "dot": "Batch 08 (26-29/10)"
+      }
+    },
+    "DSN": {
+      "has_q3": true,
+      "bctc_type": "HOP_NHAT",
+      "title": "BCTC Hợp nhất quý 3 năm 2026",
+      "date": "27/10/2026",
+      "doc_url": "https://static2.vietstock.vn/data/HOSE/2026/BCTC/VN/QUY%203/DSN_Baocaotaichinh_Q3_2026_Hopnhat.pdf",
+      "all_docs": [
+        {
+          "title": "BCTC Hợp nhất quý 3 năm 2026",
+          "date": "27/10/2026",
+          "doc_url": "https://static2.vietstock.vn/data/HOSE/2026/BCTC/VN/QUY%203/DSN_Baocaotaichinh_Q3_2026_Hopnhat.pdf",
+          "bctc_type": "HOP_NHAT"
+        },
+        {
+          "title": "BCTC Công ty mẹ quý 3 năm 2026",
+          "date": "27/10/2026",
+          "doc_url": "https://static2.vietstock.vn/data/HOSE/2026/BCTC/VN/QUY%203/DSN_Baocaotaichinh_Q3_2026_Congtyme.pdf?ver=8076e175",
+          "bctc_type": "RIENG"
+        }
+      ],
+      "meta": {
+        "stt": 173,
+        "ticker": "DSN",
+        "name": "Công ty Cổ phần Công viên nước Đầm Sen",
+        "exchange": "HOSE",
+        "batch": "Distill_Batch_08_Ngay_26_29.json",
+        "dot": "Batch 08 (26-29/10)"
+      }
+    },
+    "GEG": {
+      "has_q3": true,
+      "bctc_type": "HOP_NHAT",
+      "title": "BCTC Hợp nhất quý 3 năm 2026",
+      "date": "30/10/2026",
+      "doc_url": "https://static2.vietstock.vn/data/HOSE/2026/BCTC/VN/QUY%203/GEG_Baocaotaichinh_Q3_2026_Hopnhat.pdf",
+      "all_docs": [
+        {
+          "title": "BCTC Công ty mẹ quý 3 năm 2026",
+          "date": "30/10/2026",
+          "doc_url": "https://static2.vietstock.vn/data/HOSE/2026/BCTC/VN/QUY%203/GEG_Baocaotaichinh_Q3_2026_Congtyme.pdf?ver=a758c16c",
+          "bctc_type": "RIENG"
+        },
+        {
+          "title": "BCTC Hợp nhất quý 3 năm 2026",
+          "date": "30/10/2026",
+          "doc_url": "https://static2.vietstock.vn/data/HOSE/2026/BCTC/VN/QUY%203/GEG_Baocaotaichinh_Q3_2026_Hopnhat.pdf",
+          "bctc_type": "HOP_NHAT"
+        }
+      ],
+      "meta": {
+        "stt": 174,
+        "ticker": "GEG",
+        "name": "Công ty Cổ phần Điện Gia Lai",
+        "exchange": "HOSE",
+        "batch": "Distill_Batch_08_Ngay_26_29.json",
+        "dot": "Batch 08 (26-29/10)"
+      }
+    },
+    "SD5": {
+      "has_q3": true,
+      "bctc_type": "GIAI_TRINH",
+      "title": "Giải trình kết quả kinh doanh quý 3 năm 2026",
+      "date": "28/10/2026",
+      "doc_url": "https://static2.vietstock.vn/data/HNX/2026/BCTC/VN/QUY%203/SD5_Giaitrinh_KQKD_Q3_2026.zip?ver=0f5e15e6",
+      "all_docs": [
+        {
+          "title": "Giải trình kết quả kinh doanh quý 3 năm 2026",
+          "date": "28/10/2026",
+          "doc_url": "https://static2.vietstock.vn/data/HNX/2026/BCTC/VN/QUY%203/SD5_Giaitrinh_KQKD_Q3_2026.zip?ver=0f5e15e6",
+          "bctc_type": "GIAI_TRINH"
+        },
+        {
+          "title": "BCTC quý 3 năm 2026",
+          "date": "27/10/2026",
+          "doc_url": "https://static2.vietstock.vn/data/HNX/2026/BCTC/VN/QUY%203/SD5_Baocaotaichinh_Q3_2026.pdf?ver=e2066049",
+          "bctc_type": "DAY_DU"
+        }
+      ],
+      "meta": {
+        "stt": 175,
+        "ticker": "SD5",
+        "name": "Công ty Cổ phần Sông Đà 5",
+        "exchange": "HNX",
+        "batch": "Distill_Batch_08_Ngay_26_29.json",
+        "dot": "Batch 08 (26-29/10)"
+      }
+    },
+    "SDT": {
+      "has_q3": true,
+      "bctc_type": "HOP_NHAT",
+      "title": "BCTC Hợp nhất quý 3 năm 2026",
+      "date": "29/10/2026",
+      "doc_url": "https://static2.vietstock.vn/data/UPCOM/2026/BCTC/VN/QUY%203/SDT_Baocaotaichinh_Q3_2026_Hopnhat.zip?ver=8afc51db",
+      "all_docs": [
+        {
+          "title": "BCTC Công ty mẹ quý 3 năm 2026",
+          "date": "30/10/2026",
+          "doc_url": "https://static2.vietstock.vn/data/HNX/2026/BCTC/VN/QUY%203/SDT_Baocaotaichinh_Q3_2026_Congtyme.zip",
+          "bctc_type": "RIENG"
+        },
+        {
+          "title": "BCTC Hợp nhất quý 3 năm 2026",
+          "date": "29/10/2026",
+          "doc_url": "https://static2.vietstock.vn/data/UPCOM/2026/BCTC/VN/QUY%203/SDT_Baocaotaichinh_Q3_2026_Hopnhat.zip?ver=8afc51db",
+          "bctc_type": "HOP_NHAT"
+        }
+      ],
+      "meta": {
+        "stt": 176,
+        "ticker": "SDT",
+        "name": "Công ty Cổ phần Sông Đà 10",
+        "exchange": "UPCOM",
+        "batch": "Distill_Batch_08_Ngay_26_29.json",
+        "dot": "Batch 08 (26-29/10)"
+      }
+    },
+    "SWC": {
+      "has_q3": true,
+      "bctc_type": "HOP_NHAT",
+      "title": "BCTC Hợp nhất quý 3 năm 2026",
+      "date": "27/10/2026",
+      "doc_url": "https://static2.vietstock.vn/data/UPCOM/2026/BCTC/VN/QUY%203/SWC_Baocaotaichinh_Q3_2026_Hopnhat.zip?ver=0d55d4a0",
+      "all_docs": [
+        {
+          "title": "BCTC Công ty mẹ quý 3 năm 2026",
+          "date": "27/10/2026",
+          "doc_url": "https://static2.vietstock.vn/data/HNX/2026/BCTC/VN/QUY%203/SWC_Baocaotaichinh_Q3_2026_Congtyme.zip",
+          "bctc_type": "RIENG"
+        },
+        {
+          "title": "BCTC Hợp nhất quý 3 năm 2026",
+          "date": "27/10/2026",
+          "doc_url": "https://static2.vietstock.vn/data/UPCOM/2026/BCTC/VN/QUY%203/SWC_Baocaotaichinh_Q3_2026_Hopnhat.zip?ver=0d55d4a0",
+          "bctc_type": "HOP_NHAT"
+        }
+      ],
+      "meta": {
+        "stt": 178,
+        "ticker": "SWC",
+        "name": "Tổng Công ty Cổ phần Đường Sông Miền Nam",
+        "exchange": "UPCOM",
+        "batch": "Distill_Batch_08_Ngay_26_29.json",
+        "dot": "Batch 08 (26-29/10)"
+      }
+    },
+    "ADS": {
+      "has_q3": true,
+      "bctc_type": "HOP_NHAT",
+      "title": "BCTC Hợp nhất quý 3 năm 2026",
+      "date": "30/10/2026",
+      "doc_url": "https://static2.vietstock.vn/data/HOSE/2026/BCTC/VN/QUY%203/ADS_Baocaotaichinh_Q3_2026_Hopnhat.pdf",
+      "all_docs": [
+        {
+          "title": "BCTC Công ty mẹ quý 3 năm 2026",
+          "date": "30/10/2026",
+          "doc_url": "https://static2.vietstock.vn/data/HOSE/2026/BCTC/VN/QUY%203/ADS_Baocaotaichinh_Q3_2026_Congtyme.pdf?ver=583520a0",
+          "bctc_type": "RIENG"
+        },
+        {
+          "title": "Giải trình kết quả kinh doanh Công ty mẹ quý 3 năm 2026",
+          "date": "30/10/2026",
+          "doc_url": "https://static2.vietstock.vn/data/HOSE/2026/BCTC/VN/QUY%203/ADS_Giaitrinh_KQKD_Q3_2026_Congtyme.pdf",
+          "bctc_type": "GIAI_TRINH"
+        },
+        {
+          "title": "BCTC Hợp nhất quý 3 năm 2026",
+          "date": "30/10/2026",
+          "doc_url": "https://static2.vietstock.vn/data/HOSE/2026/BCTC/VN/QUY%203/ADS_Baocaotaichinh_Q3_2026_Hopnhat.pdf",
+          "bctc_type": "HOP_NHAT"
+        }
+      ],
+      "meta": {
+        "stt": 179,
+        "ticker": "ADS",
+        "name": "Công ty Cổ phần DAMSAN",
+        "exchange": "HOSE",
+        "batch": "Distill_Batch_08_Ngay_26_29.json",
+        "dot": "Batch 08 (26-29/10)"
+      }
+    },
+    "BMI": {
+      "has_q3": true,
+      "bctc_type": "DAY_DU",
+      "title": "BCTC quý 3 năm 2026",
+      "date": "02/11/2026",
+      "doc_url": "https://static2.vietstock.vn/data/HOSE/2026/BCTC/VN/QUY%203/BMI_Baocaotaichinh_Q3_2026.pdf?ver=a0fa4dfc",
+      "all_docs": [
+        {
+          "title": "BCTC quý 3 năm 2026",
+          "date": "02/11/2026",
+          "doc_url": "https://static2.vietstock.vn/data/HOSE/2026/BCTC/VN/QUY%203/BMI_Baocaotaichinh_Q3_2026.pdf?ver=a0fa4dfc",
+          "bctc_type": "DAY_DU"
+        }
+      ],
+      "meta": {
+        "stt": 180,
+        "ticker": "BMI",
+        "name": "Tổng Công ty Cổ phần Bảo Minh",
+        "exchange": "HOSE",
+        "batch": "Distill_Batch_08_Ngay_26_29.json",
+        "dot": "Batch 08 (26-29/10)"
+      }
+    },
+    "BWE": {
+      "has_q3": true,
+      "bctc_type": "HOP_NHAT",
+      "title": "BCTC Hợp nhất quý 3 năm 2026",
+      "date": "27/10/2026",
+      "doc_url": "https://static2.vietstock.vn/data/HOSE/2026/BCTC/VN/QUY%203/BWE_Baocaotaichinh_Q3_2026_Hopnhat.pdf",
+      "all_docs": [
+        {
+          "title": "BCTC Công ty mẹ quý 3 năm 2026",
+          "date": "27/10/2026",
+          "doc_url": "https://static2.vietstock.vn/data/HOSE/2026/BCTC/VN/QUY%203/BWE_Baocaotaichinh_Q3_2026_Congtyme.pdf?ver=813a2570",
+          "bctc_type": "RIENG"
+        },
+        {
+          "title": "BCTC Hợp nhất quý 3 năm 2026",
+          "date": "27/10/2026",
+          "doc_url": "https://static2.vietstock.vn/data/HOSE/2026/BCTC/VN/QUY%203/BWE_Baocaotaichinh_Q3_2026_Hopnhat.pdf",
+          "bctc_type": "HOP_NHAT"
+        }
+      ],
+      "meta": {
+        "stt": 181,
+        "ticker": "BWE",
+        "name": "Công ty Cổ phần - Tổng công ty Nước - Môi trường Bình Dương",
+        "exchange": "HOSE",
+        "batch": "Distill_Batch_08_Ngay_26_29.json",
+        "dot": "Batch 08 (26-29/10)"
+      }
+    },
+    "DCM": {
+      "has_q3": true,
+      "bctc_type": "HOP_NHAT",
+      "title": "BCTC Hợp nhất quý 3 năm 2026",
+      "date": "29/10/2026",
+      "doc_url": "https://static2.vietstock.vn/data/HOSE/2026/BCTC/VN/QUY%203/DCM_Baocaotaichinh_Q3_2026_Hopnhat.pdf",
+      "all_docs": [
+        {
+          "title": "BCTC Công ty mẹ quý 3 năm 2026",
+          "date": "29/10/2026",
+          "doc_url": "https://static2.vietstock.vn/data/HOSE/2026/BCTC/VN/QUY%203/DCM_Baocaotaichinh_Q3_2026_Congtyme.pdf?ver=0712020e",
+          "bctc_type": "RIENG"
+        },
+        {
+          "title": "BCTC Hợp nhất quý 3 năm 2026",
+          "date": "29/10/2026",
+          "doc_url": "https://static2.vietstock.vn/data/HOSE/2026/BCTC/VN/QUY%203/DCM_Baocaotaichinh_Q3_2026_Hopnhat.pdf",
+          "bctc_type": "HOP_NHAT"
+        }
+      ],
+      "meta": {
+        "stt": 182,
+        "ticker": "DCM",
+        "name": "Công ty Cổ phần - Tổng Công ty Phân bón Dầu Khí Cà Mau",
+        "exchange": "HOSE",
+        "batch": "Distill_Batch_08_Ngay_26_29.json",
+        "dot": "Batch 08 (26-29/10)"
+      }
+    },
+    "HSM": {
+      "has_q3": true,
+      "bctc_type": "HOP_NHAT",
+      "title": "BCTC Hợp nhất quý 3 năm 2026",
+      "date": "03/11/2026",
+      "doc_url": "https://static2.vietstock.vn/data/UPCOM/2026/BCTC/VN/QUY%203/HSM_Baocaotaichinh_Q3_2026_Hopnhat.zip?ver=77c474b3",
+      "all_docs": [
+        {
+          "title": "BCTC Công ty mẹ quý 3 năm 2026",
+          "date": "03/11/2026",
+          "doc_url": "https://static2.vietstock.vn/data/UPCOM/2026/BCTC/VN/QUY%203/HSM_Baocaotaichinh_Q3_2026_Congtyme.zip?ver=c063bcf3",
+          "bctc_type": "RIENG"
+        },
+        {
+          "title": "BCTC Hợp nhất quý 3 năm 2026",
+          "date": "03/11/2026",
+          "doc_url": "https://static2.vietstock.vn/data/UPCOM/2026/BCTC/VN/QUY%203/HSM_Baocaotaichinh_Q3_2026_Hopnhat.zip?ver=77c474b3",
+          "bctc_type": "HOP_NHAT"
+        }
+      ],
+      "meta": {
+        "stt": 184,
+        "ticker": "HSM",
+        "name": "Tổng Công ty Cổ phần Dệt May Hà Nội",
+        "exchange": "UPCOM",
+        "batch": "Distill_Batch_08_Ngay_26_29.json",
+        "dot": "Batch 08 (26-29/10)"
+      }
+    },
+    "VPS": {
+      "has_q3": true,
+      "bctc_type": "HOP_NHAT",
+      "title": "BCTC Hợp nhất quý 3 năm 2026",
+      "date": "30/10/2026",
+      "doc_url": "https://static2.vietstock.vn/data/HOSE/2026/BCTC/VN/QUY%203/VPS_Baocaotaichinh_Q3_2026_Hopnhat.pdf",
+      "all_docs": [
+        {
+          "title": "Giải trình kết quả kinh doanh quý 3 năm 2026",
+          "date": "30/10/2026",
+          "doc_url": "https://static2.vietstock.vn/data/HOSE/2026/BCTC/VN/QUY%203/VPS_Giaitrinh_KQKD_Q3_2026.pdf",
+          "bctc_type": "GIAI_TRINH"
+        },
+        {
+          "title": "BCTC Công ty mẹ quý 3 năm 2026",
+          "date": "30/10/2026",
+          "doc_url": "https://static2.vietstock.vn/data/HOSE/2026/BCTC/VN/QUY%203/VPS_Baocaotaichinh_Q3_2026_Congtyme.pdf?ver=f7ebe931",
+          "bctc_type": "RIENG"
+        },
+        {
+          "title": "BCTC Hợp nhất quý 3 năm 2026",
+          "date": "30/10/2026",
+          "doc_url": "https://static2.vietstock.vn/data/HOSE/2026/BCTC/VN/QUY%203/VPS_Baocaotaichinh_Q3_2026_Hopnhat.pdf",
+          "bctc_type": "HOP_NHAT"
+        }
+      ],
+      "meta": {
+        "stt": 185,
+        "ticker": "VPS",
+        "name": "Công ty Cổ phần Thuốc sát trùng Việt Nam",
+        "exchange": "HOSE",
+        "batch": "Distill_Batch_09_Ngay_29_30.json",
+        "dot": "Batch 09 (29-30/10)"
+      }
+    },
+    "AAA": {
+      "has_q3": true,
+      "bctc_type": "HOP_NHAT",
+      "title": "BCTC Hợp nhất quý 3 năm 2026",
+      "date": "28/10/2026",
+      "doc_url": "https://static2.vietstock.vn/data/HOSE/2026/BCTC/VN/QUY%203/AAA_Baocaotaichinh_Q3_2026_Hopnhat.pdf",
+      "all_docs": [
+        {
+          "title": "Giải trình kết quả kinh doanh Hợp nhất quý 3 năm 2026",
+          "date": "28/10/2026",
+          "doc_url": "https://static2.vietstock.vn/data/HOSE/2026/BCTC/VN/QUY%203/AAA_Giaitrinh_KQKD_Q3_2026_Hopnhat.pdf?ver=72b5cef8",
+          "bctc_type": "GIAI_TRINH"
+        },
+        {
+          "title": "BCTC Công ty mẹ quý 3 năm 2026",
+          "date": "28/10/2026",
+          "doc_url": "https://static2.vietstock.vn/data/HOSE/2026/BCTC/VN/QUY%203/AAA_Baocaotaichinh_Q3_2026_Congtyme.pdf?ver=fedbf831",
+          "bctc_type": "RIENG"
+        },
+        {
+          "title": "BCTC Hợp nhất quý 3 năm 2026",
+          "date": "28/10/2026",
+          "doc_url": "https://static2.vietstock.vn/data/HOSE/2026/BCTC/VN/QUY%203/AAA_Baocaotaichinh_Q3_2026_Hopnhat.pdf",
+          "bctc_type": "HOP_NHAT"
+        }
+      ],
+      "meta": {
+        "stt": 186,
+        "ticker": "AAA",
+        "name": "Công ty Cổ phần Nhựa An Phát Xanh",
+        "exchange": "HOSE",
+        "batch": "Distill_Batch_09_Ngay_29_30.json",
+        "dot": "Batch 09 (29-30/10)"
+      }
+    },
+    "AIG": {
+      "has_q3": true,
+      "bctc_type": "RIENG",
+      "title": "BCTC Công ty mẹ quý 3 năm 2026",
+      "date": "02/11/2026",
+      "doc_url": "https://static2.vietstock.vn/data/HNX/2026/BCTC/VN/QUY%203/AIG_Baocaotaichinh_Q3_2026_Congtyme.zip",
+      "all_docs": [
+        {
+          "title": "BCTC Công ty mẹ quý 3 năm 2026",
+          "date": "02/11/2026",
+          "doc_url": "https://static2.vietstock.vn/data/HNX/2026/BCTC/VN/QUY%203/AIG_Baocaotaichinh_Q3_2026_Congtyme.zip",
+          "bctc_type": "RIENG"
+        }
+      ],
+      "meta": {
+        "stt": 187,
+        "ticker": "AIG",
+        "name": "Công ty Cổ phần Nguyên liệu Á Châu AIG",
+        "exchange": "UPCOM",
+        "batch": "Distill_Batch_09_Ngay_29_30.json",
+        "dot": "Batch 09 (29-30/10)"
+      }
+    },
+    "ALT": {
+      "has_q3": true,
+      "bctc_type": "HOP_NHAT",
+      "title": "BCTC Hợp nhất quý 3 năm 2026",
+      "date": "02/11/2026",
+      "doc_url": "https://static2.vietstock.vn/data/HNX/2026/BCTC/VN/QUY%203/ALT_Baocaotaichinh_Q3_2026_Hopnhat.zip?ver=b19a5ea9",
+      "all_docs": [
+        {
+          "title": "BCTC Hợp nhất quý 3 năm 2026",
+          "date": "02/11/2026",
+          "doc_url": "https://static2.vietstock.vn/data/HNX/2026/BCTC/VN/QUY%203/ALT_Baocaotaichinh_Q3_2026_Hopnhat.zip?ver=b19a5ea9",
+          "bctc_type": "HOP_NHAT"
+        },
+        {
+          "title": "BCTC Công ty mẹ quý 3 năm 2026",
+          "date": "02/11/2026",
+          "doc_url": "https://static2.vietstock.vn/data/HNX/2026/BCTC/VN/QUY%203/ALT_Baocaotaichinh_Q3_2026_Congtyme.zip",
+          "bctc_type": "RIENG"
+        }
+      ],
+      "meta": {
+        "stt": 188,
+        "ticker": "ALT",
+        "name": "Công ty Cổ phần Văn hóa Tân Bình",
+        "exchange": "HNX",
+        "batch": "Distill_Batch_09_Ngay_29_30.json",
+        "dot": "Batch 09 (29-30/10)"
+      }
+    },
+    "AMS": {
+      "has_q3": true,
+      "bctc_type": "HOP_NHAT",
+      "title": "BCTC Hợp nhất quý 3 năm 2026",
+      "date": "04/11/2026",
+      "doc_url": "https://static2.vietstock.vn/data/UPCOM/2026/BCTC/VN/QUY%203/AMS_Baocaotaichinh_Q3_2026_Hopnhat.zip",
+      "all_docs": [
+        {
+          "title": "Giải trình kết quả kinh doanh Hợp nhất quý 3 năm 2026",
+          "date": "04/11/2026",
+          "doc_url": "https://static2.vietstock.vn/data/UPCOM/2026/BCTC/VN/QUY%203/AMS_Giaitrinh_KQKD_Q3_2026_Hopnhat.zip?ver=8010cf0c",
+          "bctc_type": "GIAI_TRINH"
+        },
+        {
+          "title": "BCTC Công ty mẹ quý 3 năm 2026",
+          "date": "04/11/2026",
+          "doc_url": "https://static2.vietstock.vn/data/HNX/2026/BCTC/VN/QUY%203/AMS_Baocaotaichinh_Q3_2026_Congtyme.zip",
+          "bctc_type": "RIENG"
+        },
+        {
+          "title": "BCTC Hợp nhất quý 3 năm 2026",
+          "date": "04/11/2026",
+          "doc_url": "https://static2.vietstock.vn/data/UPCOM/2026/BCTC/VN/QUY%203/AMS_Baocaotaichinh_Q3_2026_Hopnhat.zip",
+          "bctc_type": "HOP_NHAT"
+        }
+      ],
+      "meta": {
+        "stt": 189,
+        "ticker": "AMS",
+        "name": "Công ty Cổ phần Cơ khí Xây dựng AMECC",
+        "exchange": "UPCOM",
+        "batch": "Distill_Batch_09_Ngay_29_30.json",
+        "dot": "Batch 09 (29-30/10)"
+      }
+    },
+    "ANT": {
+      "has_q3": false,
+      "meta": {
+        "stt": 190,
+        "ticker": "ANT",
+        "name": "Công ty Cổ phần Rau quả Thực phẩm An Giang",
+        "exchange": "HOSE",
+        "batch": "Distill_Batch_09_Ngay_29_30.json",
+        "dot": "Batch 09 (29-30/10)"
+      }
+    },
+    "C47": {
+      "has_q3": true,
+      "bctc_type": "HOP_NHAT",
+      "title": "BCTC Hợp nhất quý 3 năm 2026",
+      "date": "27/10/2026",
+      "doc_url": "https://static2.vietstock.vn/data/HOSE/2026/BCTC/VN/QUY%203/C47_Baocaotaichinh_Q3_2026_Hopnhat.pdf",
+      "all_docs": [
+        {
+          "title": "BCTC Công ty mẹ quý 3 năm 2026",
+          "date": "27/10/2026",
+          "doc_url": "https://static2.vietstock.vn/data/HOSE/2026/BCTC/VN/QUY%203/C47_Baocaotaichinh_Q3_2026_Congtyme.pdf?ver=766da560",
+          "bctc_type": "RIENG"
+        },
+        {
+          "title": "BCTC Hợp nhất quý 3 năm 2026",
+          "date": "27/10/2026",
+          "doc_url": "https://static2.vietstock.vn/data/HOSE/2026/BCTC/VN/QUY%203/C47_Baocaotaichinh_Q3_2026_Hopnhat.pdf",
+          "bctc_type": "HOP_NHAT"
+        }
+      ],
+      "meta": {
+        "stt": 191,
+        "ticker": "C47",
+        "name": "Công ty Cổ phần Xây dựng 47",
+        "exchange": "HOSE",
+        "batch": "Distill_Batch_09_Ngay_29_30.json",
+        "dot": "Batch 09 (29-30/10)"
+      }
+    },
+    "CKD": {
+      "has_q3": true,
+      "bctc_type": "DAY_DU",
+      "title": "BCTC quý 3 năm 2026",
+      "date": "02/11/2026",
+      "doc_url": "https://static2.vietstock.vn/data/HNX/2026/BCTC/VN/QUY%203/CKD_Baocaotaichinh_Q3_2026.zip",
+      "all_docs": [
+        {
+          "title": "BCTC quý 3 năm 2026",
+          "date": "02/11/2026",
+          "doc_url": "https://static2.vietstock.vn/data/HNX/2026/BCTC/VN/QUY%203/CKD_Baocaotaichinh_Q3_2026.zip",
+          "bctc_type": "DAY_DU"
+        }
+      ],
+      "meta": {
+        "stt": 192,
+        "ticker": "CKD",
+        "name": "Công ty Cổ phần Cơ khí Đông Anh Licogi",
+        "exchange": "UPCOM",
+        "batch": "Distill_Batch_09_Ngay_29_30.json",
+        "dot": "Batch 09 (29-30/10)"
+      }
+    },
+    "CLX": {
+      "has_q3": true,
+      "bctc_type": "HOP_NHAT",
+      "title": "BCTC Hợp nhất quý 3 năm 2026",
+      "date": "04/11/2026",
+      "doc_url": "https://static2.vietstock.vn/data/UPCOM/2026/BCTC/VN/QUY%203/CLX_Baocaotaichinh_Q3_2026_Hopnhat.pdf?ver=56594f5a",
+      "all_docs": [
+        {
+          "title": "BCTC Công ty mẹ quý 3 năm 2026",
+          "date": "04/11/2026",
+          "doc_url": "https://static2.vietstock.vn/data/HNX/2026/BCTC/VN/QUY%203/CLX_Baocaotaichinh_Q3_2026_Congtyme.zip",
+          "bctc_type": "RIENG"
+        },
+        {
+          "title": "BCTC Hợp nhất quý 3 năm 2026",
+          "date": "04/11/2026",
+          "doc_url": "https://static2.vietstock.vn/data/UPCOM/2026/BCTC/VN/QUY%203/CLX_Baocaotaichinh_Q3_2026_Hopnhat.pdf?ver=56594f5a",
+          "bctc_type": "HOP_NHAT"
+        }
+      ],
+      "meta": {
+        "stt": 193,
+        "ticker": "CLX",
+        "name": "Công ty Cổ phần Xuất nhập khẩu và Đầu tư Chợ Lớn (CHOLIMEX)",
+        "exchange": "UPCOM",
+        "batch": "Distill_Batch_09_Ngay_29_30.json",
+        "dot": "Batch 09 (29-30/10)"
+      }
+    },
+    "CMX": {
+      "has_q3": true,
+      "bctc_type": "HOP_NHAT",
+      "title": "BCTC Hợp nhất quý 3 năm 2026",
+      "date": "30/10/2026",
+      "doc_url": "https://static2.vietstock.vn/data/HOSE/2026/BCTC/VN/QUY%203/CMX_Baocaotaichinh_Q3_2026_Hopnhat.pdf",
+      "all_docs": [
+        {
+          "title": "BCTC Công ty mẹ quý 3 năm 2026",
+          "date": "30/10/2026",
+          "doc_url": "https://static2.vietstock.vn/data/HOSE/2026/BCTC/VN/QUY%203/CMX_Baocaotaichinh_Q3_2026_Congtyme.pdf?ver=d14435de",
+          "bctc_type": "RIENG"
+        },
+        {
+          "title": "Giải trình kết quả kinh doanh quý 3 năm 2026",
+          "date": "30/10/2026",
+          "doc_url": "https://static2.vietstock.vn/data/HOSE/2026/BCTC/VN/QUY%203/CMX_Giaitrinh_KQKD_Q3_2026.pdf",
+          "bctc_type": "GIAI_TRINH"
+        },
+        {
+          "title": "BCTC Hợp nhất quý 3 năm 2026",
+          "date": "30/10/2026",
+          "doc_url": "https://static2.vietstock.vn/data/HOSE/2026/BCTC/VN/QUY%203/CMX_Baocaotaichinh_Q3_2026_Hopnhat.pdf",
+          "bctc_type": "HOP_NHAT"
+        }
+      ],
+      "meta": {
+        "stt": 194,
+        "ticker": "CMX",
+        "name": "Công ty Cổ phần CAMIMEX Group",
+        "exchange": "HOSE",
+        "batch": "Distill_Batch_09_Ngay_29_30.json",
+        "dot": "Batch 09 (29-30/10)"
+      }
+    },
+    "CTI": {
+      "has_q3": true,
+      "bctc_type": "HOP_NHAT",
+      "title": "BCTC Hợp nhất quý 3 năm 2026",
+      "date": "30/10/2026",
+      "doc_url": "https://static2.vietstock.vn/data/HOSE/2026/BCTC/VN/QUY%203/CTI_Baocaotaichinh_Q3_2026_Hopnhat.pdf?ver=4ef2b170",
+      "all_docs": [
+        {
+          "title": "BCTC Công ty mẹ quý 3 năm 2026",
+          "date": "30/10/2026",
+          "doc_url": "https://static2.vietstock.vn/data/HOSE/2026/BCTC/VN/QUY%203/CTI_Baocaotaichinh_Q3_2026_Congtyme.pdf?ver=4689aac3",
+          "bctc_type": "RIENG"
+        },
+        {
+          "title": "BCTC Hợp nhất quý 3 năm 2026",
+          "date": "30/10/2026",
+          "doc_url": "https://static2.vietstock.vn/data/HOSE/2026/BCTC/VN/QUY%203/CTI_Baocaotaichinh_Q3_2026_Hopnhat.pdf?ver=4ef2b170",
+          "bctc_type": "HOP_NHAT"
+        }
+      ],
+      "meta": {
+        "stt": 195,
+        "ticker": "CTI",
+        "name": "Công ty Cổ phần Đầu tư Phát triển Cường Thuận IDICO",
+        "exchange": "HOSE",
+        "batch": "Distill_Batch_09_Ngay_29_30.json",
+        "dot": "Batch 09 (29-30/10)"
+      }
+    },
+    "DHC": {
+      "has_q3": true,
+      "bctc_type": "HOP_NHAT",
+      "title": "BCTC Hợp nhất quý 3 năm 2026",
+      "date": "30/10/2026",
+      "doc_url": "https://static2.vietstock.vn/data/HOSE/2026/BCTC/VN/QUY%203/DHC_Baocaotaichinh_Q3_2026_Hopnhat.pdf",
+      "all_docs": [
+        {
+          "title": "BCTC Công ty mẹ quý 3 năm 2026",
+          "date": "30/10/2026",
+          "doc_url": "https://static2.vietstock.vn/data/HOSE/2026/BCTC/VN/QUY%203/DHC_Baocaotaichinh_Q3_2026_Congtyme.pdf?ver=1bb39947",
+          "bctc_type": "RIENG"
+        },
+        {
+          "title": "BCTC Hợp nhất quý 3 năm 2026",
+          "date": "30/10/2026",
+          "doc_url": "https://static2.vietstock.vn/data/HOSE/2026/BCTC/VN/QUY%203/DHC_Baocaotaichinh_Q3_2026_Hopnhat.pdf",
+          "bctc_type": "HOP_NHAT"
+        }
+      ],
+      "meta": {
+        "stt": 196,
+        "ticker": "DHC",
+        "name": "Công ty Cổ phần Đông Hải Bến Tre",
+        "exchange": "HOSE",
+        "batch": "Distill_Batch_09_Ngay_29_30.json",
+        "dot": "Batch 09 (29-30/10)"
+      }
+    },
+    "DPG": {
+      "has_q3": true,
+      "bctc_type": "HOP_NHAT",
+      "title": "BCTC Hợp nhất quý 3 năm 2026",
+      "date": "30/10/2026",
+      "doc_url": "https://static2.vietstock.vn/data/HOSE/2026/BCTC/VN/QUY%203/DPG_Baocaotaichinh_Q3_2026_Hopnhat.pdf",
+      "all_docs": [
+        {
+          "title": "BCTC Công ty mẹ quý 3 năm 2026",
+          "date": "30/10/2026",
+          "doc_url": "https://static2.vietstock.vn/data/HOSE/2026/BCTC/VN/QUY%203/DPG_Baocaotaichinh_Q3_2026_Congtyme.pdf?ver=573ea029",
+          "bctc_type": "RIENG"
+        },
+        {
+          "title": "BCTC Hợp nhất quý 3 năm 2026",
+          "date": "30/10/2026",
+          "doc_url": "https://static2.vietstock.vn/data/HOSE/2026/BCTC/VN/QUY%203/DPG_Baocaotaichinh_Q3_2026_Hopnhat.pdf",
+          "bctc_type": "HOP_NHAT"
+        }
+      ],
+      "meta": {
+        "stt": 197,
+        "ticker": "DPG",
+        "name": "Công ty Cổ phần Tập đoàn Đạt Phương",
+        "exchange": "HOSE",
+        "batch": "Distill_Batch_09_Ngay_29_30.json",
+        "dot": "Batch 09 (29-30/10)"
+      }
+    },
+    "DTD": {
+      "has_q3": true,
+      "bctc_type": "HOP_NHAT",
+      "title": "BCTC Hợp nhất quý 3 năm 2026",
+      "date": "30/10/2026",
+      "doc_url": "https://static2.vietstock.vn/data/HNX/2026/BCTC/VN/QUY%203/DTD_Baocaotaichinh_Q3_2026_Hopnhat.zip?ver=953ff084",
+      "all_docs": [
+        {
+          "title": "BCTC Hợp nhất quý 3 năm 2026",
+          "date": "30/10/2026",
+          "doc_url": "https://static2.vietstock.vn/data/HNX/2026/BCTC/VN/QUY%203/DTD_Baocaotaichinh_Q3_2026_Hopnhat.zip?ver=953ff084",
+          "bctc_type": "HOP_NHAT"
+        }
+      ],
+      "meta": {
+        "stt": 198,
+        "ticker": "DTD",
+        "name": "Công ty Cổ phần Đầu tư Phát triển Thành Đạt",
+        "exchange": "HNX",
+        "batch": "Distill_Batch_09_Ngay_29_30.json",
+        "dot": "Batch 09 (29-30/10)"
+      }
+    },
+    "DTK": {
+      "has_q3": true,
+      "bctc_type": "HOP_NHAT",
+      "title": "BCTC Hợp nhất quý 3 năm 2026",
+      "date": "03/11/2026",
+      "doc_url": "https://static2.vietstock.vn/data/HNX/2026/BCTC/VN/QUY%203/DTK_Baocaotaichinh_Q3_2026_Hopnhat.zip?ver=37cb038e",
+      "all_docs": [
+        {
+          "title": "BCTC Công ty mẹ quý 3 năm 2026",
+          "date": "03/11/2026",
+          "doc_url": "https://static2.vietstock.vn/data/HNX/2026/BCTC/VN/QUY%203/DTK_Baocaotaichinh_Q3_2026_Congtyme.zip",
+          "bctc_type": "RIENG"
+        },
+        {
+          "title": "BCTC Hợp nhất quý 3 năm 2026",
+          "date": "03/11/2026",
+          "doc_url": "https://static2.vietstock.vn/data/HNX/2026/BCTC/VN/QUY%203/DTK_Baocaotaichinh_Q3_2026_Hopnhat.zip?ver=37cb038e",
+          "bctc_type": "HOP_NHAT"
+        }
+      ],
+      "meta": {
+        "stt": 199,
+        "ticker": "DTK",
+        "name": "Tổng Công ty Điện lực TKV - Công ty Cổ phần",
+        "exchange": "HNX",
+        "batch": "Distill_Batch_09_Ngay_29_30.json",
+        "dot": "Batch 09 (29-30/10)"
+      }
+    },
+    "DVN": {
+      "has_q3": true,
+      "bctc_type": "HOP_NHAT",
+      "title": "BCTC Hợp nhất quý 3 năm 2026",
+      "date": "30/10/2026",
+      "doc_url": "https://static2.vietstock.vn/data/UPCOM/2026/BCTC/VN/QUY%203/DVN_Baocaotaichinh_Q3_2026_Hopnhat.zip?ver=9b582257",
+      "all_docs": [
+        {
+          "title": "BCTC Hợp nhất quý 3 năm 2026",
+          "date": "30/10/2026",
+          "doc_url": "https://static2.vietstock.vn/data/UPCOM/2026/BCTC/VN/QUY%203/DVN_Baocaotaichinh_Q3_2026_Hopnhat.zip?ver=9b582257",
+          "bctc_type": "HOP_NHAT"
+        },
+        {
+          "title": "BCTC Công ty mẹ quý 3 năm 2026",
+          "date": "27/10/2026",
+          "doc_url": "https://static2.vietstock.vn/data/HNX/2026/BCTC/VN/QUY%203/DVN_Baocaotaichinh_Q3_2026_Congtyme.zip",
+          "bctc_type": "RIENG"
+        }
+      ],
+      "meta": {
+        "stt": 200,
+        "ticker": "DVN",
+        "name": "Tổng Công ty Dược Việt Nam - CTCP",
+        "exchange": "UPCOM",
+        "batch": "Distill_Batch_09_Ngay_29_30.json",
+        "dot": "Batch 09 (29-30/10)"
+      }
+    },
+    "EID": {
+      "has_q3": true,
+      "bctc_type": "HOP_NHAT",
+      "title": "BCTC Hợp nhất quý 3 năm 2026",
+      "date": "31/10/2026",
+      "doc_url": "https://static2.vietstock.vn/data/HNX/2026/BCTC/VN/QUY%203/EID_Baocaotaichinh_Q3_2026_Hopnhat.zip?ver=3ce372e1",
+      "all_docs": [
+        {
+          "title": "BCTC Công ty mẹ quý 3 năm 2026",
+          "date": "31/10/2026",
+          "doc_url": "https://static2.vietstock.vn/data/HNX/2026/BCTC/VN/QUY%203/EID_Baocaotaichinh_Q3_2026_Congtyme.zip",
+          "bctc_type": "RIENG"
+        },
+        {
+          "title": "BCTC Hợp nhất quý 3 năm 2026",
+          "date": "31/10/2026",
+          "doc_url": "https://static2.vietstock.vn/data/HNX/2026/BCTC/VN/QUY%203/EID_Baocaotaichinh_Q3_2026_Hopnhat.zip?ver=3ce372e1",
+          "bctc_type": "HOP_NHAT"
+        }
+      ],
+      "meta": {
+        "stt": 201,
+        "ticker": "EID",
+        "name": "Công ty Cổ phần Đầu tư và Phát triển Giáo dục Hà Nội",
+        "exchange": "HNX",
+        "batch": "Distill_Batch_09_Ngay_29_30.json",
+        "dot": "Batch 09 (29-30/10)"
+      }
+    },
+    "EVE": {
+      "has_q3": true,
+      "bctc_type": "HOP_NHAT",
+      "title": "BCTC Hợp nhất quý 3 năm 2026",
+      "date": "30/10/2026",
+      "doc_url": "https://static2.vietstock.vn/data/HOSE/2026/BCTC/VN/QUY%203/EVE_Baocaotaichinh_Q3_2026_Hopnhat.pdf",
+      "all_docs": [
+        {
+          "title": "BCTC Công ty mẹ quý 3 năm 2026",
+          "date": "30/10/2026",
+          "doc_url": "https://static2.vietstock.vn/data/HOSE/2026/BCTC/VN/QUY%203/EVE_Baocaotaichinh_Q3_2026_Congtyme.pdf?ver=bb7bf073",
+          "bctc_type": "RIENG"
+        },
+        {
+          "title": "BCTC Hợp nhất quý 3 năm 2026",
+          "date": "30/10/2026",
+          "doc_url": "https://static2.vietstock.vn/data/HOSE/2026/BCTC/VN/QUY%203/EVE_Baocaotaichinh_Q3_2026_Hopnhat.pdf",
+          "bctc_type": "HOP_NHAT"
+        }
+      ],
+      "meta": {
+        "stt": 202,
+        "ticker": "EVE",
+        "name": "Công ty Cổ phần Everpia",
+        "exchange": "HOSE",
+        "batch": "Distill_Batch_09_Ngay_29_30.json",
+        "dot": "Batch 09 (29-30/10)"
+      }
+    },
+    "FCM": {
+      "has_q3": true,
+      "bctc_type": "HOP_NHAT",
+      "title": "BCTC Hợp nhất quý 3 năm 2026",
+      "date": "02/11/2026",
+      "doc_url": "https://static2.vietstock.vn/data/HOSE/2026/BCTC/VN/QUY%203/FCM_Baocaotaichinh_Q3_2026_Hopnhat.pdf",
+      "all_docs": [
+        {
+          "title": "BCTC Công ty mẹ quý 3 năm 2026",
+          "date": "02/11/2026",
+          "doc_url": "https://static2.vietstock.vn/data/HOSE/2026/BCTC/VN/QUY%203/FCM_Baocaotaichinh_Q3_2026_Congtyme.pdf?ver=bb7409e2",
+          "bctc_type": "RIENG"
+        },
+        {
+          "title": "BCTC Hợp nhất quý 3 năm 2026",
+          "date": "02/11/2026",
+          "doc_url": "https://static2.vietstock.vn/data/HOSE/2026/BCTC/VN/QUY%203/FCM_Baocaotaichinh_Q3_2026_Hopnhat.pdf",
+          "bctc_type": "HOP_NHAT"
+        }
+      ],
+      "meta": {
+        "stt": 203,
+        "ticker": "FCM",
+        "name": "Công ty Cổ phần Bê tông Phan Vũ Hà Nam",
+        "exchange": "HOSE",
+        "batch": "Distill_Batch_09_Ngay_29_30.json",
+        "dot": "Batch 09 (29-30/10)"
+      }
+    },
+    "GDT": {
+      "has_q3": true,
+      "bctc_type": "HOP_NHAT",
+      "title": "BCTC Hợp nhất quý 3 năm 2026",
+      "date": "02/11/2026",
+      "doc_url": "https://static2.vietstock.vn/data/HOSE/2026/BCTC/VN/QUY%203/GDT_Baocaotaichinh_Q3_2026_Hopnhat.pdf",
+      "all_docs": [
+        {
+          "title": "BCTC Công ty mẹ quý 3 năm 2026",
+          "date": "02/11/2026",
+          "doc_url": "https://static2.vietstock.vn/data/HOSE/2026/BCTC/VN/QUY%203/GDT_Baocaotaichinh_Q3_2026_Congtyme.pdf?ver=e0117a57",
+          "bctc_type": "RIENG"
+        },
+        {
+          "title": "BCTC Hợp nhất quý 3 năm 2026",
+          "date": "02/11/2026",
+          "doc_url": "https://static2.vietstock.vn/data/HOSE/2026/BCTC/VN/QUY%203/GDT_Baocaotaichinh_Q3_2026_Hopnhat.pdf",
+          "bctc_type": "HOP_NHAT"
+        }
+      ],
+      "meta": {
+        "stt": 205,
+        "ticker": "GDT",
+        "name": "Công ty Cổ phần Chế biến Gỗ Đức Thành",
+        "exchange": "HOSE",
+        "batch": "Distill_Batch_09_Ngay_29_30.json",
+        "dot": "Batch 09 (29-30/10)"
+      }
+    },
+    "HDA": {
+      "has_q3": true,
+      "bctc_type": "RIENG",
+      "title": "BCTC Công ty mẹ quý 3 năm 2026",
+      "date": "03/11/2026",
+      "doc_url": "https://static2.vietstock.vn/data/HNX/2026/BCTC/VN/QUY%203/HDA_Baocaotaichinh_Q3_2026_Congtyme.zip",
+      "all_docs": [
+        {
+          "title": "BCTC Công ty mẹ quý 3 năm 2026",
+          "date": "03/11/2026",
+          "doc_url": "https://static2.vietstock.vn/data/HNX/2026/BCTC/VN/QUY%203/HDA_Baocaotaichinh_Q3_2026_Congtyme.zip",
+          "bctc_type": "RIENG"
+        }
+      ],
+      "meta": {
+        "stt": 207,
+        "ticker": "HDA",
+        "name": "Công ty Cổ phần Hãng sơn Đông Á",
+        "exchange": "HNX",
+        "batch": "Distill_Batch_09_Ngay_29_30.json",
+        "dot": "Batch 09 (29-30/10)"
+      }
+    },
+    "HDG": {
+      "has_q3": true,
+      "bctc_type": "HOP_NHAT",
+      "title": "BCTC Hợp nhất quý 3 năm 2026",
+      "date": "03/11/2026",
+      "doc_url": "https://static2.vietstock.vn/data/HOSE/2026/BCTC/VN/QUY%203/HDG_Baocaotaichinh_Q3_2026_Hopnhat.pdf",
+      "all_docs": [
+        {
+          "title": "Giải trình kết quả kinh doanh quý 3 năm 2026",
+          "date": "03/11/2026",
+          "doc_url": "https://static2.vietstock.vn/data/HOSE/2026/BCTC/VN/QUY%203/HDG_Giaitrinh_KQKD_Q3_2026.pdf",
+          "bctc_type": "GIAI_TRINH"
+        },
+        {
+          "title": "BCTC Hợp nhất quý 3 năm 2026",
+          "date": "03/11/2026",
+          "doc_url": "https://static2.vietstock.vn/data/HOSE/2026/BCTC/VN/QUY%203/HDG_Baocaotaichinh_Q3_2026_Hopnhat.pdf",
+          "bctc_type": "HOP_NHAT"
+        },
+        {
+          "title": "BCTC Công ty mẹ quý 3 năm 2026",
+          "date": "03/11/2026",
+          "doc_url": "https://static2.vietstock.vn/data/HOSE/2026/BCTC/VN/QUY%203/HDG_Baocaotaichinh_Q3_2026_Congtyme.pdf?ver=22a1ca4a",
+          "bctc_type": "RIENG"
+        }
+      ],
+      "meta": {
+        "stt": 208,
+        "ticker": "HDG",
+        "name": "Công ty Cổ phần Tập đoàn Hà Đô",
+        "exchange": "HOSE",
+        "batch": "Distill_Batch_10_Ngay_30_30.json",
+        "dot": "Batch 10 (30/10)"
+      }
+    },
+    "HHV": {
+      "has_q3": true,
+      "bctc_type": "HOP_NHAT",
+      "title": "BCTC Hợp nhất quý 3 năm 2026",
+      "date": "02/11/2026",
+      "doc_url": "https://static2.vietstock.vn/data/HOSE/2026/BCTC/VN/QUY%203/HHV_Baocaotaichinh_Q3_2026_Hopnhat.pdf",
+      "all_docs": [
+        {
+          "title": "BCTC Công ty mẹ quý 3 năm 2026",
+          "date": "02/11/2026",
+          "doc_url": "https://static2.vietstock.vn/data/HOSE/2026/BCTC/VN/QUY%203/HHV_Baocaotaichinh_Q3_2026_Congtyme.pdf?ver=9c9bd0e6",
+          "bctc_type": "RIENG"
+        },
+        {
+          "title": "BCTC Hợp nhất quý 3 năm 2026",
+          "date": "02/11/2026",
+          "doc_url": "https://static2.vietstock.vn/data/HOSE/2026/BCTC/VN/QUY%203/HHV_Baocaotaichinh_Q3_2026_Hopnhat.pdf",
+          "bctc_type": "HOP_NHAT"
+        },
+        {
+          "title": "Giải trình kết quả kinh doanh quý 3 năm 2026",
+          "date": "02/11/2026",
+          "doc_url": "https://static2.vietstock.vn/data/HOSE/2026/BCTC/VN/QUY%203/HHV_Giaitrinh_KQKD_Q3_2026.pdf",
+          "bctc_type": "GIAI_TRINH"
+        }
+      ],
+      "meta": {
+        "stt": 209,
+        "ticker": "HHV",
+        "name": "Công ty Cổ phần Đầu tư Hạ tầng Giao thông Đèo Cả",
+        "exchange": "HOSE",
+        "batch": "Distill_Batch_10_Ngay_30_30.json",
+        "dot": "Batch 10 (30/10)"
+      }
+    },
+    "HPA": {
+      "has_q3": true,
+      "bctc_type": "HOP_NHAT",
+      "title": "BCTC Hợp nhất quý 3 năm 2026",
+      "date": "27/10/2026",
+      "doc_url": "https://static2.vietstock.vn/data/HOSE/2026/BCTC/VN/QUY%203/HPA_Baocaotaichinh_Q3_2026_Hopnhat.pdf",
+      "all_docs": [
+        {
+          "title": "BCTC Công ty mẹ quý 3 năm 2026",
+          "date": "27/10/2026",
+          "doc_url": "https://static2.vietstock.vn/data/HOSE/2026/BCTC/VN/QUY%203/HPA_Baocaotaichinh_Q3_2026_Congtyme.pdf?ver=32e005b3",
+          "bctc_type": "RIENG"
+        },
+        {
+          "title": "BCTC Hợp nhất quý 3 năm 2026",
+          "date": "27/10/2026",
+          "doc_url": "https://static2.vietstock.vn/data/HOSE/2026/BCTC/VN/QUY%203/HPA_Baocaotaichinh_Q3_2026_Hopnhat.pdf",
+          "bctc_type": "HOP_NHAT"
+        }
+      ],
+      "meta": {
+        "stt": 210,
+        "ticker": "HPA",
+        "name": "Công ty Cổ phần Phát triển Nông nghiệp Hoà Phát",
+        "exchange": "HOSE",
+        "batch": "Distill_Batch_10_Ngay_30_30.json",
+        "dot": "Batch 10 (30/10)"
+      }
+    },
+    "HPG": {
+      "has_q3": true,
+      "bctc_type": "HOP_NHAT",
+      "title": "BCTC Hợp nhất quý 3 năm 2026",
+      "date": "30/10/2026",
+      "doc_url": "https://static2.vietstock.vn/data/HOSE/2026/BCTC/VN/QUY%203/HPG_Baocaotaichinh_Q3_2026_Hopnhat.pdf",
+      "all_docs": [
+        {
+          "title": "BCTC Hợp nhất quý 3 năm 2026",
+          "date": "30/10/2026",
+          "doc_url": "https://static2.vietstock.vn/data/HOSE/2026/BCTC/VN/QUY%203/HPG_Baocaotaichinh_Q3_2026_Hopnhat.pdf",
+          "bctc_type": "HOP_NHAT"
+        },
+        {
+          "title": "BCTC Công ty mẹ quý 3 năm 2026",
+          "date": "29/10/2026",
+          "doc_url": "https://static2.vietstock.vn/data/HOSE/2026/BCTC/VN/QUY%203/HPG_Baocaotaichinh_Q3_2026_Congtyme.pdf?ver=2c57ba51",
+          "bctc_type": "RIENG"
+        }
+      ],
+      "meta": {
+        "stt": 211,
+        "ticker": "HPG",
+        "name": "Công ty Cổ phần Tập đoàn Hòa Phát",
+        "exchange": "HOSE",
+        "batch": "Distill_Batch_10_Ngay_30_30.json",
+        "dot": "Batch 10 (30/10)"
+      }
+    },
+    "HTL": {
+      "has_q3": true,
+      "bctc_type": "HOP_NHAT",
+      "title": "BCTC Hợp nhất quý 3 năm 2026",
+      "date": "30/10/2026",
+      "doc_url": "https://static2.vietstock.vn/data/HOSE/2026/BCTC/VN/QUY%203/HTL_Baocaotaichinh_Q3_2026_Hopnhat.pdf",
+      "all_docs": [
+        {
+          "title": "BCTC Hợp nhất quý 3 năm 2026",
+          "date": "30/10/2026",
+          "doc_url": "https://static2.vietstock.vn/data/HOSE/2026/BCTC/VN/QUY%203/HTL_Baocaotaichinh_Q3_2026_Hopnhat.pdf",
+          "bctc_type": "HOP_NHAT"
+        },
+        {
+          "title": "BCTC Công ty mẹ quý 3 năm 2026",
+          "date": "30/10/2026",
+          "doc_url": "https://static2.vietstock.vn/data/HOSE/2026/BCTC/VN/QUY%203/HTL_Baocaotaichinh_Q3_2026_Congtyme.pdf?ver=ea53290b",
+          "bctc_type": "RIENG"
+        }
+      ],
+      "meta": {
+        "stt": 212,
+        "ticker": "HTL",
+        "name": "Công ty Cổ phần Kỹ thuật và Ô tô Trường Long",
+        "exchange": "HOSE",
+        "batch": "Distill_Batch_10_Ngay_30_30.json",
+        "dot": "Batch 10 (30/10)"
+      }
+    },
+    "ICT": {
+      "has_q3": true,
+      "bctc_type": "DAY_DU",
+      "title": "BCTC quý 3 năm 2026",
+      "date": "29/10/2026",
+      "doc_url": "https://static2.vietstock.vn/data/HOSE/2026/BCTC/VN/QUY%203/ICT_Baocaotaichinh_Q3_2026.PDF",
+      "all_docs": [
+        {
+          "title": "BCTC quý 3 năm 2026",
+          "date": "29/10/2026",
+          "doc_url": "https://static2.vietstock.vn/data/HOSE/2026/BCTC/VN/QUY%203/ICT_Baocaotaichinh_Q3_2026.PDF",
+          "bctc_type": "DAY_DU"
+        },
+        {
+          "title": "Giải trình kết quả kinh doanh quý 3 năm 2026",
+          "date": "29/10/2026",
+          "doc_url": "https://static2.vietstock.vn/data/HOSE/2026/BCTC/VN/QUY%203/ICT_Giaitrinh_KQKD_Q3_2026.PDF",
+          "bctc_type": "GIAI_TRINH"
+        }
+      ],
+      "meta": {
+        "stt": 213,
+        "ticker": "ICT",
+        "name": "Công ty Cổ phần Viễn thông - Tin học Bưu điện",
+        "exchange": "HOSE",
+        "batch": "Distill_Batch_10_Ngay_30_30.json",
+        "dot": "Batch 10 (30/10)"
+      }
+    },
+    "IDC": {
+      "has_q3": true,
+      "bctc_type": "HOP_NHAT",
+      "title": "BCTC Hợp nhất quý 3 năm 2026",
+      "date": "02/11/2026",
+      "doc_url": "https://static2.vietstock.vn/data/HNX/2026/BCTC/VN/QUY%203/IDC_Baocaotaichinh_Q3_2026_Hopnhat.zip?ver=e673a795",
+      "all_docs": [
+        {
+          "title": "BCTC Hợp nhất quý 3 năm 2026",
+          "date": "02/11/2026",
+          "doc_url": "https://static2.vietstock.vn/data/HNX/2026/BCTC/VN/QUY%203/IDC_Baocaotaichinh_Q3_2026_Hopnhat.zip?ver=e673a795",
+          "bctc_type": "HOP_NHAT"
+        },
+        {
+          "title": "BCTC Công ty mẹ quý 3 năm 2026",
+          "date": "31/10/2026",
+          "doc_url": "https://static2.vietstock.vn/data/HNX/2026/BCTC/VN/QUY%203/IDC_Baocaotaichinh_Q3_2026_Congtyme.zip",
+          "bctc_type": "RIENG"
+        }
+      ],
+      "meta": {
+        "stt": 214,
+        "ticker": "IDC",
+        "name": "Tổng Công ty IDICO - CTCP",
+        "exchange": "HNX",
+        "batch": "Distill_Batch_10_Ngay_30_30.json",
+        "dot": "Batch 10 (30/10)"
+      }
+    },
+    "ILB": {
+      "has_q3": true,
+      "bctc_type": "HOP_NHAT",
+      "title": "BCTC Hợp nhất quý 3 năm 2026",
+      "date": "02/11/2026",
+      "doc_url": "https://static2.vietstock.vn/data/HOSE/2026/BCTC/VN/QUY%203/ILB_Baocaotaichinh_Q3_2026_Hopnhat.pdf",
+      "all_docs": [
+        {
+          "title": "BCTC Công ty mẹ quý 3 năm 2026",
+          "date": "02/11/2026",
+          "doc_url": "https://static2.vietstock.vn/data/HOSE/2026/BCTC/VN/QUY%203/ILB_Baocaotaichinh_Q3_2026_Congtyme.pdf?ver=fddf67bc",
+          "bctc_type": "RIENG"
+        },
+        {
+          "title": "BCTC Hợp nhất quý 3 năm 2026",
+          "date": "02/11/2026",
+          "doc_url": "https://static2.vietstock.vn/data/HOSE/2026/BCTC/VN/QUY%203/ILB_Baocaotaichinh_Q3_2026_Hopnhat.pdf",
+          "bctc_type": "HOP_NHAT"
+        }
+      ],
+      "meta": {
+        "stt": 215,
+        "ticker": "ILB",
+        "name": "Công ty Cổ phần ICD Tân Cảng - Long Bình",
+        "exchange": "HOSE",
+        "batch": "Distill_Batch_10_Ngay_30_30.json",
+        "dot": "Batch 10 (30/10)"
+      }
+    },
+    "ILS": {
+      "has_q3": true,
+      "bctc_type": "HOP_NHAT",
+      "title": "BCTC Hợp nhất quý 3 năm 2026",
+      "date": "02/11/2026",
+      "doc_url": "https://static2.vietstock.vn/data/UPCOM/2026/BCTC/VN/QUY%203/ILS_Baocaotaichinh_Q3_2026_Hopnhat.zip?ver=33cf5e95",
+      "all_docs": [
+        {
+          "title": "BCTC Hợp nhất quý 3 năm 2026",
+          "date": "02/11/2026",
+          "doc_url": "https://static2.vietstock.vn/data/UPCOM/2026/BCTC/VN/QUY%203/ILS_Baocaotaichinh_Q3_2026_Hopnhat.zip?ver=33cf5e95",
+          "bctc_type": "HOP_NHAT"
+        },
+        {
+          "title": "BCTC Công ty mẹ quý 3 năm 2026",
+          "date": "02/11/2026",
+          "doc_url": "https://static2.vietstock.vn/data/HNX/2026/BCTC/VN/QUY%203/ILS_Baocaotaichinh_Q3_2026_Congtyme.zip",
+          "bctc_type": "RIENG"
+        }
+      ],
+      "meta": {
+        "stt": 216,
+        "ticker": "ILS",
+        "name": "Công ty Cổ phần Đầu tư Thương mại và Dịch vụ Quốc tế",
+        "exchange": "UPCOM",
+        "batch": "Distill_Batch_10_Ngay_30_30.json",
+        "dot": "Batch 10 (30/10)"
+      }
+    },
+    "ITC": {
+      "has_q3": true,
+      "bctc_type": "HOP_NHAT",
+      "title": "BCTC Hợp nhất quý 3 năm 2026",
+      "date": "29/10/2026",
+      "doc_url": "https://static2.vietstock.vn/data/HOSE/2026/BCTC/VN/QUY%203/ITC_Baocaotaichinh_Q3_2026_Hopnhat.pdf",
+      "all_docs": [
+        {
+          "title": "BCTC Công ty mẹ quý 3 năm 2026",
+          "date": "29/10/2026",
+          "doc_url": "https://static2.vietstock.vn/data/HOSE/2026/BCTC/VN/QUY%203/ITC_Baocaotaichinh_Q3_2026_Congtyme.pdf?ver=a33c6328",
+          "bctc_type": "RIENG"
+        },
+        {
+          "title": "BCTC Hợp nhất quý 3 năm 2026",
+          "date": "29/10/2026",
+          "doc_url": "https://static2.vietstock.vn/data/HOSE/2026/BCTC/VN/QUY%203/ITC_Baocaotaichinh_Q3_2026_Hopnhat.pdf",
+          "bctc_type": "HOP_NHAT"
+        }
+      ],
+      "meta": {
+        "stt": 217,
+        "ticker": "ITC",
+        "name": "Công ty Cổ phần Đầu tư - Kinh doanh nhà",
+        "exchange": "HOSE",
+        "batch": "Distill_Batch_10_Ngay_30_30.json",
+        "dot": "Batch 10 (30/10)"
+      }
+    },
+    "KSV": {
+      "has_q3": true,
+      "bctc_type": "RIENG",
+      "title": "BCTC Công ty mẹ quý 3 năm 2026",
+      "date": "04/11/2026",
+      "doc_url": "https://static2.vietstock.vn/data/HNX/2026/BCTC/VN/QUY%203/KSV_Baocaotaichinh_Q3_2026_Congtyme.zip",
+      "all_docs": [
+        {
+          "title": "BCTC Công ty mẹ quý 3 năm 2026",
+          "date": "04/11/2026",
+          "doc_url": "https://static2.vietstock.vn/data/HNX/2026/BCTC/VN/QUY%203/KSV_Baocaotaichinh_Q3_2026_Congtyme.zip",
+          "bctc_type": "RIENG"
+        }
+      ],
+      "meta": {
+        "stt": 218,
+        "ticker": "KSV",
+        "name": "Tổng Công ty Khoáng sản TKV - Công ty Cổ phần",
+        "exchange": "HNX",
+        "batch": "Distill_Batch_10_Ngay_30_30.json",
+        "dot": "Batch 10 (30/10)"
+      }
+    },
+    "L18": {
+      "has_q3": true,
+      "bctc_type": "HOP_NHAT",
+      "title": "BCTC Hợp nhất quý 3 năm 2026",
+      "date": "04/11/2026",
+      "doc_url": "https://static2.vietstock.vn/data/HNX/2026/BCTC/VN/QUY%203/L18_Baocaotaichinh_Q3_2026_Hopnhat.zip",
+      "all_docs": [
+        {
+          "title": "BCTC Công ty mẹ quý 3 năm 2026",
+          "date": "04/11/2026",
+          "doc_url": "https://static2.vietstock.vn/data/HNX/2026/BCTC/VN/QUY%203/L18_Baocaotaichinh_Q3_2026_Congtyme.zip",
+          "bctc_type": "RIENG"
+        },
+        {
+          "title": "BCTC Hợp nhất quý 3 năm 2026",
+          "date": "04/11/2026",
+          "doc_url": "https://static2.vietstock.vn/data/HNX/2026/BCTC/VN/QUY%203/L18_Baocaotaichinh_Q3_2026_Hopnhat.zip",
+          "bctc_type": "HOP_NHAT"
+        }
+      ],
+      "meta": {
+        "stt": 219,
+        "ticker": "L18",
+        "name": "Công ty Cổ phần Đầu tư và Xây dựng số 18",
+        "exchange": "HNX",
+        "batch": "Distill_Batch_10_Ngay_30_30.json",
+        "dot": "Batch 10 (30/10)"
+      }
+    },
+    "LCG": {
+      "has_q3": true,
+      "bctc_type": "HOP_NHAT",
+      "title": "BCTC Hợp nhất quý 3 năm 2026",
+      "date": "29/10/2026",
+      "doc_url": "https://static2.vietstock.vn/data/HOSE/2026/BCTC/VN/QUY%203/LCG_Baocaotaichinh_Q3_2026_Hopnhat.pdf",
+      "all_docs": [
+        {
+          "title": "BCTC Công ty mẹ quý 3 năm 2026",
+          "date": "29/10/2026",
+          "doc_url": "https://static2.vietstock.vn/data/HOSE/2026/BCTC/VN/QUY%203/LCG_Baocaotaichinh_Q3_2026_Congtyme.pdf?ver=2133293f",
+          "bctc_type": "RIENG"
+        },
+        {
+          "title": "BCTC Hợp nhất quý 3 năm 2026",
+          "date": "29/10/2026",
+          "doc_url": "https://static2.vietstock.vn/data/HOSE/2026/BCTC/VN/QUY%203/LCG_Baocaotaichinh_Q3_2026_Hopnhat.pdf",
+          "bctc_type": "HOP_NHAT"
+        },
+        {
+          "title": "Giải trình kết quả kinh doanh quý 3 năm 2026",
+          "date": "29/10/2026",
+          "doc_url": "https://static2.vietstock.vn/data/HOSE/2026/BCTC/VN/QUY%203/LCG_Giaitrinh_KQKD_Q3_2026.pdf",
+          "bctc_type": "GIAI_TRINH"
+        }
+      ],
+      "meta": {
+        "stt": 220,
+        "ticker": "LCG",
+        "name": "Công ty Cổ phần Lizen",
+        "exchange": "HOSE",
+        "batch": "Distill_Batch_10_Ngay_30_30.json",
+        "dot": "Batch 10 (30/10)"
+      }
+    },
+    "LLM": {
+      "has_q3": true,
+      "bctc_type": "HOP_NHAT",
+      "title": "BCTC Hợp nhất quý 3 năm 2026",
+      "date": "02/11/2026",
+      "doc_url": "https://static2.vietstock.vn/data/UPCOM/2026/BCTC/VN/QUY%203/LLM_Baocaotaichinh_Q3_2026_Hopnhat.zip?ver=e9bea2f8",
+      "all_docs": [
+        {
+          "title": "BCTC Hợp nhất quý 3 năm 2026",
+          "date": "02/11/2026",
+          "doc_url": "https://static2.vietstock.vn/data/UPCOM/2026/BCTC/VN/QUY%203/LLM_Baocaotaichinh_Q3_2026_Hopnhat.zip?ver=e9bea2f8",
+          "bctc_type": "HOP_NHAT"
+        },
+        {
+          "title": "BCTC Công ty mẹ quý 3 năm 2026",
+          "date": "02/11/2026",
+          "doc_url": "https://static2.vietstock.vn/data/HNX/2026/BCTC/VN/QUY%203/LLM_Baocaotaichinh_Q3_2026_Congtyme.zip",
+          "bctc_type": "RIENG"
+        }
+      ],
+      "meta": {
+        "stt": 221,
+        "ticker": "LLM",
+        "name": "Tổng Công ty lắp máy Việt Nam - Công ty Cổ phần",
+        "exchange": "UPCOM",
+        "batch": "Distill_Batch_10_Ngay_30_30.json",
+        "dot": "Batch 10 (30/10)"
+      }
+    },
+    "LSS": {
+      "has_q3": false,
+      "meta": {
+        "stt": 222,
+        "ticker": "LSS",
+        "name": "Công ty Cổ phần Mía đường Lam Sơn",
+        "exchange": "HOSE",
+        "batch": "Distill_Batch_10_Ngay_30_30.json",
+        "dot": "Batch 10 (30/10)"
+      }
+    },
+    "M10": {
+      "has_q3": true,
+      "bctc_type": "HOP_NHAT",
+      "title": "BCTC Hợp nhất quý 3 năm 2026",
+      "date": "02/11/2026",
+      "doc_url": "https://static2.vietstock.vn/data/UPCOM/2026/BCTC/VN/QUY%203/M10_Baocaotaichinh_Q3_2026_Hopnhat.zip?ver=808ba465",
+      "all_docs": [
+        {
+          "title": "BCTC Hợp nhất quý 3 năm 2026",
+          "date": "02/11/2026",
+          "doc_url": "https://static2.vietstock.vn/data/UPCOM/2026/BCTC/VN/QUY%203/M10_Baocaotaichinh_Q3_2026_Hopnhat.zip?ver=808ba465",
+          "bctc_type": "HOP_NHAT"
+        },
+        {
+          "title": "BCTC Công ty mẹ quý 3 năm 2026",
+          "date": "02/11/2026",
+          "doc_url": "https://static2.vietstock.vn/data/HNX/2026/BCTC/VN/QUY%203/M10_Baocaotaichinh_Q3_2026_Congtyme.zip",
+          "bctc_type": "RIENG"
+        }
+      ],
+      "meta": {
+        "stt": 223,
+        "ticker": "M10",
+        "name": "Tổng công ty May 10 - Công ty Cổ phần",
+        "exchange": "UPCOM",
+        "batch": "Distill_Batch_10_Ngay_30_30.json",
+        "dot": "Batch 10 (30/10)"
+      }
+    },
+    "MNB": {
+      "has_q3": true,
+      "bctc_type": "HOP_NHAT",
+      "title": "BCTC Hợp nhất quý 3 năm 2026",
+      "date": "03/11/2026",
+      "doc_url": "https://static2.vietstock.vn/data/UPCOM/2026/BCTC/VN/QUY%203/MNB_Baocaotaichinh_Q3_2026_Hopnhat.zip?ver=6e67012d",
+      "all_docs": [
+        {
+          "title": "BCTC Hợp nhất quý 3 năm 2026",
+          "date": "03/11/2026",
+          "doc_url": "https://static2.vietstock.vn/data/UPCOM/2026/BCTC/VN/QUY%203/MNB_Baocaotaichinh_Q3_2026_Hopnhat.zip?ver=6e67012d",
+          "bctc_type": "HOP_NHAT"
+        },
+        {
+          "title": "BCTC Công ty mẹ quý 3 năm 2026",
+          "date": "03/11/2026",
+          "doc_url": "https://static2.vietstock.vn/data/HNX/2026/BCTC/VN/QUY%203/MNB_Baocaotaichinh_Q3_2026_Congtyme.zip",
+          "bctc_type": "RIENG"
+        }
+      ],
+      "meta": {
+        "stt": 224,
+        "ticker": "MNB",
+        "name": "Tổng Công ty May Nhà Bè - Công ty Cổ phần",
+        "exchange": "UPCOM",
+        "batch": "Distill_Batch_10_Ngay_30_30.json",
+        "dot": "Batch 10 (30/10)"
+      }
+    },
+    "MPC": {
+      "has_q3": true,
+      "bctc_type": "RIENG",
+      "title": "BCTC Công ty mẹ quý 3 năm 2026",
+      "date": "03/11/2026",
+      "doc_url": "https://static2.vietstock.vn/data/HNX/2026/BCTC/VN/QUY%203/MPC_Baocaotaichinh_Q3_2026_Congtyme.zip",
+      "all_docs": [
+        {
+          "title": "BCTC Công ty mẹ quý 3 năm 2026",
+          "date": "03/11/2026",
+          "doc_url": "https://static2.vietstock.vn/data/HNX/2026/BCTC/VN/QUY%203/MPC_Baocaotaichinh_Q3_2026_Congtyme.zip",
+          "bctc_type": "RIENG"
+        }
+      ],
+      "meta": {
+        "stt": 225,
+        "ticker": "MPC",
+        "name": "Công ty Cổ phần Tập đoàn Thủy sản Minh Phú",
+        "exchange": "UPCOM",
+        "batch": "Distill_Batch_10_Ngay_30_30.json",
+        "dot": "Batch 10 (30/10)"
+      }
+    },
+    "MSH": {
+      "has_q3": true,
+      "bctc_type": "HOP_NHAT",
+      "title": "BCTC Hợp nhất quý 3 năm 2026",
+      "date": "02/11/2026",
+      "doc_url": "https://static2.vietstock.vn/data/HOSE/2026/BCTC/VN/QUY%203/MSH_Baocaotaichinh_Q3_2026_Hopnhat.pdf",
+      "all_docs": [
+        {
+          "title": "BCTC Công ty mẹ quý 3 năm 2026",
+          "date": "02/11/2026",
+          "doc_url": "https://static2.vietstock.vn/data/HOSE/2026/BCTC/VN/QUY%203/MSH_Baocaotaichinh_Q3_2026_Congtyme.pdf?ver=8539dd1a",
+          "bctc_type": "RIENG"
+        },
+        {
+          "title": "BCTC Hợp nhất quý 3 năm 2026",
+          "date": "02/11/2026",
+          "doc_url": "https://static2.vietstock.vn/data/HOSE/2026/BCTC/VN/QUY%203/MSH_Baocaotaichinh_Q3_2026_Hopnhat.pdf",
+          "bctc_type": "HOP_NHAT"
+        },
+        {
+          "title": "Giải trình kết quả kinh doanh Công ty mẹ quý 3 năm 2026",
+          "date": "02/11/2026",
+          "doc_url": "https://static2.vietstock.vn/data/HOSE/2026/BCTC/VN/QUY%203/MSH_Giaitrinh_KQKD_Q3_2026_Congtyme.pdf",
+          "bctc_type": "GIAI_TRINH"
+        }
+      ],
+      "meta": {
+        "stt": 226,
+        "ticker": "MSH",
+        "name": "Công ty Cổ phần May Sông Hồng",
+        "exchange": "HOSE",
+        "batch": "Distill_Batch_10_Ngay_30_30.json",
+        "dot": "Batch 10 (30/10)"
+      }
+    },
+    "MTA": {
+      "has_q3": true,
+      "bctc_type": "HOP_NHAT",
+      "title": "BCTC Hợp nhất quý 3 năm 2026",
+      "date": "31/10/2026",
+      "doc_url": "https://static2.vietstock.vn/data/UPCOM/2026/BCTC/VN/QUY%203/MTA_Baocaotaichinh_Q3_2026_Hopnhat.zip?ver=7ec353c7",
+      "all_docs": [
+        {
+          "title": "BCTC Hợp nhất quý 3 năm 2026",
+          "date": "31/10/2026",
+          "doc_url": "https://static2.vietstock.vn/data/UPCOM/2026/BCTC/VN/QUY%203/MTA_Baocaotaichinh_Q3_2026_Hopnhat.zip?ver=7ec353c7",
+          "bctc_type": "HOP_NHAT"
+        },
+        {
+          "title": "BCTC Công ty mẹ quý 3 năm 2026",
+          "date": "29/10/2026",
+          "doc_url": "https://static2.vietstock.vn/data/HNX/2026/BCTC/VN/QUY%203/MTA_Baocaotaichinh_Q3_2026_Congtyme.zip",
+          "bctc_type": "RIENG"
+        }
+      ],
+      "meta": {
+        "stt": 227,
+        "ticker": "MTA",
+        "name": "Tổng Công ty Khoáng sản và Thương mại Hà Tĩnh - Công ty Cổ phần",
+        "exchange": "UPCOM",
+        "batch": "Distill_Batch_10_Ngay_30_30.json",
+        "dot": "Batch 10 (30/10)"
+      }
+    },
+    "MVC": {
+      "has_q3": true,
+      "bctc_type": "HOP_NHAT",
+      "title": "BCTC Hợp nhất quý 3 năm 2026",
+      "date": "04/11/2026",
+      "doc_url": "https://static2.vietstock.vn/data/UPCOM/2026/BCTC/VN/QUY%203/MVC_Baocaotaichinh_Q3_2026_Hopnhat.zip?ver=62fe0928",
+      "all_docs": [
+        {
+          "title": "BCTC Hợp nhất quý 3 năm 2026",
+          "date": "04/11/2026",
+          "doc_url": "https://static2.vietstock.vn/data/UPCOM/2026/BCTC/VN/QUY%203/MVC_Baocaotaichinh_Q3_2026_Hopnhat.zip?ver=62fe0928",
+          "bctc_type": "HOP_NHAT"
+        },
+        {
+          "title": "BCTC Công ty mẹ quý 3 năm 2026",
+          "date": "22/10/2026",
+          "doc_url": "https://static2.vietstock.vn/data/HNX/2026/BCTC/VN/QUY%203/MVC_Baocaotaichinh_Q3_2026_Congtyme.zip",
+          "bctc_type": "RIENG"
+        }
+      ],
+      "meta": {
+        "stt": 228,
+        "ticker": "MVC",
+        "name": "Công ty Cổ phần Vật liệu và Xây dựng Bình Dương",
+        "exchange": "UPCOM",
+        "batch": "Distill_Batch_10_Ngay_30_30.json",
+        "dot": "Batch 10 (30/10)"
+      }
+    },
+    "MZG": {
+      "has_q3": true,
+      "bctc_type": "HOP_NHAT",
+      "title": "BCTC Hợp nhất quý 3 năm 2026",
+      "date": "02/11/2026",
+      "doc_url": "https://static2.vietstock.vn/data/HOSE/2026/BCTC/VN/QUY%203/MZG_Baocaotaichinh_Q3_2026_Hopnhat.pdf",
+      "all_docs": [
+        {
+          "title": "BCTC Công ty mẹ quý 3 năm 2026",
+          "date": "02/11/2026",
+          "doc_url": "https://static2.vietstock.vn/data/HOSE/2026/BCTC/VN/QUY%203/MZG_Baocaotaichinh_Q3_2026_Congtyme.pdf?ver=97e7f5f1",
+          "bctc_type": "RIENG"
+        },
+        {
+          "title": "BCTC Hợp nhất quý 3 năm 2026",
+          "date": "02/11/2026",
+          "doc_url": "https://static2.vietstock.vn/data/HOSE/2026/BCTC/VN/QUY%203/MZG_Baocaotaichinh_Q3_2026_Hopnhat.pdf",
+          "bctc_type": "HOP_NHAT"
+        },
+        {
+          "title": "Giải trình kết quả kinh doanh quý 3 năm 2026",
+          "date": "02/11/2026",
+          "doc_url": "https://static2.vietstock.vn/data/HOSE/2026/BCTC/VN/QUY%203/MZG_Giaitrinh_KQKD_Q3_2026.pdf",
+          "bctc_type": "GIAI_TRINH"
+        }
+      ],
+      "meta": {
+        "stt": 229,
+        "ticker": "MZG",
+        "name": "Công ty Cổ Phần Miza",
+        "exchange": "HOSE",
+        "batch": "Distill_Batch_10_Ngay_30_30.json",
+        "dot": "Batch 10 (30/10)"
+      }
+    },
+    "NDT": {
+      "has_q3": true,
+      "bctc_type": "HOP_NHAT",
+      "title": "BCTC Hợp nhất quý 3 năm 2026",
+      "date": "02/11/2026",
+      "doc_url": "https://static2.vietstock.vn/data/UPCOM/2026/BCTC/VN/QUY%203/NDT_Baocaotaichinh_Q3_2026_Hopnhat.zip?ver=4a535ace",
+      "all_docs": [
+        {
+          "title": "BCTC Hợp nhất quý 3 năm 2026",
+          "date": "02/11/2026",
+          "doc_url": "https://static2.vietstock.vn/data/UPCOM/2026/BCTC/VN/QUY%203/NDT_Baocaotaichinh_Q3_2026_Hopnhat.zip?ver=4a535ace",
+          "bctc_type": "HOP_NHAT"
+        },
+        {
+          "title": "BCTC Công ty mẹ quý 3 năm 2026",
+          "date": "02/11/2026",
+          "doc_url": "https://static2.vietstock.vn/data/HNX/2026/BCTC/VN/QUY%203/NDT_Baocaotaichinh_Q3_2026_Congtyme.zip",
+          "bctc_type": "RIENG"
+        }
+      ],
+      "meta": {
+        "stt": 230,
+        "ticker": "NDT",
+        "name": "Tổng Công ty Cổ phần Dệt may Nam Định",
+        "exchange": "UPCOM",
+        "batch": "Distill_Batch_10_Ngay_30_30.json",
+        "dot": "Batch 10 (30/10)"
+      }
+    },
+    "NHH": {
+      "has_q3": true,
+      "bctc_type": "HOP_NHAT",
+      "title": "BCTC Hợp nhất quý 3 năm 2026",
+      "date": "29/10/2026",
+      "doc_url": "https://static2.vietstock.vn/data/HOSE/2026/BCTC/VN/QUY%203/NHH_Baocaotaichinh_Q3_2026_Hopnhat.pdf",
+      "all_docs": [
+        {
+          "title": "BCTC Công ty mẹ quý 3 năm 2026",
+          "date": "29/10/2026",
+          "doc_url": "https://static2.vietstock.vn/data/HOSE/2026/BCTC/VN/QUY%203/NHH_Baocaotaichinh_Q3_2026_Congtyme.pdf?ver=c8475288",
+          "bctc_type": "RIENG"
+        },
+        {
+          "title": "BCTC Hợp nhất quý 3 năm 2026",
+          "date": "29/10/2026",
+          "doc_url": "https://static2.vietstock.vn/data/HOSE/2026/BCTC/VN/QUY%203/NHH_Baocaotaichinh_Q3_2026_Hopnhat.pdf",
+          "bctc_type": "HOP_NHAT"
+        },
+        {
+          "title": "Giải trình kết quả kinh doanh Hợp nhất quý 3 năm 2026",
+          "date": "30/10/2026",
+          "doc_url": "https://static2.vietstock.vn/data/HOSE/2026/BCTC/VN/QUY%203/NHH_Giaitrinh_KQKD_Q3_2026_Hopnhat.pdf?ver=4a9efb66",
+          "bctc_type": "GIAI_TRINH"
+        }
+      ],
+      "meta": {
+        "stt": 231,
+        "ticker": "NHH",
+        "name": "Công ty Cổ phần Nhựa Hà Nội",
+        "exchange": "HOSE",
+        "batch": "Distill_Batch_11_Ngay_30_30.json",
+        "dot": "Batch 11 (30/10)"
+      }
+    },
+    "NHT": {
+      "has_q3": true,
+      "bctc_type": "HOP_NHAT",
+      "title": "BCTC Hợp nhất quý 3 năm 2026",
+      "date": "02/11/2026",
+      "doc_url": "https://static2.vietstock.vn/data/HOSE/2026/BCTC/VN/QUY%203/NHT_Baocaotaichinh_Q3_2026_Hopnhat.pdf",
+      "all_docs": [
+        {
+          "title": "BCTC Hợp nhất quý 3 năm 2026",
+          "date": "02/11/2026",
+          "doc_url": "https://static2.vietstock.vn/data/HOSE/2026/BCTC/VN/QUY%203/NHT_Baocaotaichinh_Q3_2026_Hopnhat.pdf",
+          "bctc_type": "HOP_NHAT"
+        },
+        {
+          "title": "BCTC Công ty mẹ quý 3 năm 2026",
+          "date": "03/11/2026",
+          "doc_url": "https://static2.vietstock.vn/data/HOSE/2026/BCTC/VN/QUY%203/NHT_Baocaotaichinh_Q3_2026_Congtyme.pdf?ver=ed39502f",
+          "bctc_type": "RIENG"
+        }
+      ],
+      "meta": {
+        "stt": 232,
+        "ticker": "NHT",
+        "name": "Công ty Cổ phần Sản xuất và Thương mại Nam Hoa",
+        "exchange": "HOSE",
+        "batch": "Distill_Batch_11_Ngay_30_30.json",
+        "dot": "Batch 11 (30/10)"
+      }
+    },
+    "PDB": {
+      "has_q3": true,
+      "bctc_type": "HOP_NHAT",
+      "title": "BCTC Hợp nhất quý 3 năm 2026",
+      "date": "31/10/2026",
+      "doc_url": "https://static2.vietstock.vn/data/HNX/2026/BCTC/VN/QUY%203/PDB_Baocaotaichinh_Q3_2026_Hopnhat.zip?ver=907851bb",
+      "all_docs": [
+        {
+          "title": "BCTC Công ty mẹ quý 3 năm 2026",
+          "date": "31/10/2026",
+          "doc_url": "https://static2.vietstock.vn/data/HNX/2026/BCTC/VN/QUY%203/PDB_Baocaotaichinh_Q3_2026_Congtyme.zip",
+          "bctc_type": "RIENG"
+        },
+        {
+          "title": "BCTC Hợp nhất quý 3 năm 2026",
+          "date": "31/10/2026",
+          "doc_url": "https://static2.vietstock.vn/data/HNX/2026/BCTC/VN/QUY%203/PDB_Baocaotaichinh_Q3_2026_Hopnhat.zip?ver=907851bb",
+          "bctc_type": "HOP_NHAT"
+        }
+      ],
+      "meta": {
+        "stt": 233,
+        "ticker": "PDB",
+        "name": "Công ty Cổ phần Tập đoàn Đầu tư DIN Capital",
+        "exchange": "HNX",
+        "batch": "Distill_Batch_11_Ngay_30_30.json",
+        "dot": "Batch 11 (30/10)"
+      }
+    },
+    "PGC": {
+      "has_q3": true,
+      "bctc_type": "HOP_NHAT",
+      "title": "BCTC Hợp nhất quý 3 năm 2026",
+      "date": "29/10/2026",
+      "doc_url": "https://static2.vietstock.vn/data/HOSE/2026/BCTC/VN/QUY%203/PGC_Baocaotaichinh_Q3_2026_Hopnhat.pdf",
+      "all_docs": [
+        {
+          "title": "BCTC Hợp nhất quý 3 năm 2026",
+          "date": "29/10/2026",
+          "doc_url": "https://static2.vietstock.vn/data/HOSE/2026/BCTC/VN/QUY%203/PGC_Baocaotaichinh_Q3_2026_Hopnhat.pdf",
+          "bctc_type": "HOP_NHAT"
+        },
+        {
+          "title": "Giải trình kết quả kinh doanh Hợp nhất quý 3 năm 2026",
+          "date": "29/10/2026",
+          "doc_url": "https://static2.vietstock.vn/data/HOSE/2026/BCTC/VN/QUY%203/PGC_Giaitrinh_KQKD_Q3_2026_Hopnhat.pdf?ver=d779bc5f",
+          "bctc_type": "GIAI_TRINH"
+        },
+        {
+          "title": "BCTC Công ty mẹ quý 3 năm 2026",
+          "date": "29/10/2026",
+          "doc_url": "https://static2.vietstock.vn/data/HOSE/2026/BCTC/VN/QUY%203/PGC_Baocaotaichinh_Q3_2026_Congtyme.pdf?ver=95ed9c0e",
+          "bctc_type": "RIENG"
+        }
+      ],
+      "meta": {
+        "stt": 234,
+        "ticker": "PGC",
+        "name": "Tổng Công ty Gas Petrolimex - Công ty Cổ phần",
+        "exchange": "HOSE",
+        "batch": "Distill_Batch_11_Ngay_30_30.json",
+        "dot": "Batch 11 (30/10)"
+      }
+    },
+    "PGV": {
+      "has_q3": true,
+      "bctc_type": "HOP_NHAT",
+      "title": "BCTC Hợp nhất quý 3 năm 2026",
+      "date": "31/10/2026",
+      "doc_url": "https://static2.vietstock.vn/data/HOSE/2026/BCTC/VN/QUY%203/PGV_Baocaotaichinh_Q3_2026_Hopnhat.pdf",
+      "all_docs": [
+        {
+          "title": "BCTC Hợp nhất quý 3 năm 2026",
+          "date": "31/10/2026",
+          "doc_url": "https://static2.vietstock.vn/data/HOSE/2026/BCTC/VN/QUY%203/PGV_Baocaotaichinh_Q3_2026_Hopnhat.pdf",
+          "bctc_type": "HOP_NHAT"
+        },
+        {
+          "title": "Giải trình kết quả kinh doanh quý 3 năm 2026",
+          "date": "31/10/2026",
+          "doc_url": "https://static2.vietstock.vn/data/HOSE/2026/BCTC/VN/QUY%203/PGV_Giaitrinh_KQKD_Q3_2026.pdf",
+          "bctc_type": "GIAI_TRINH"
+        },
+        {
+          "title": "BCTC Công ty mẹ quý 3 năm 2026",
+          "date": "31/10/2026",
+          "doc_url": "https://static2.vietstock.vn/data/HOSE/2026/BCTC/VN/QUY%203/PGV_Baocaotaichinh_Q3_2026_Congtyme.pdf?ver=c8c89d17",
+          "bctc_type": "RIENG"
+        }
+      ],
+      "meta": {
+        "stt": 235,
+        "ticker": "PGV",
+        "name": "Tổng Công ty Phát điện 3 - Công ty Cổ phần",
+        "exchange": "HOSE",
+        "batch": "Distill_Batch_11_Ngay_30_30.json",
+        "dot": "Batch 11 (30/10)"
+      }
+    },
+    "PHP": {
+      "has_q3": true,
+      "bctc_type": "HOP_NHAT",
+      "title": "BCTC Hợp nhất quý 3 năm 2026",
+      "date": "02/11/2026",
+      "doc_url": "https://static2.vietstock.vn/data/UPCOM/2026/BCTC/VN/QUY%203/PHP_Baocaotaichinh_Q3_2026_Hopnhat.zip?ver=258020fe",
+      "all_docs": [
+        {
+          "title": "BCTC Hợp nhất quý 3 năm 2026",
+          "date": "02/11/2026",
+          "doc_url": "https://static2.vietstock.vn/data/UPCOM/2026/BCTC/VN/QUY%203/PHP_Baocaotaichinh_Q3_2026_Hopnhat.zip?ver=258020fe",
+          "bctc_type": "HOP_NHAT"
+        },
+        {
+          "title": "BCTC Công ty mẹ quý 3 năm 2026",
+          "date": "02/11/2026",
+          "doc_url": "https://static2.vietstock.vn/data/HNX/2026/BCTC/VN/QUY%203/PHP_Baocaotaichinh_Q3_2026_Congtyme.zip",
+          "bctc_type": "RIENG"
+        }
+      ],
+      "meta": {
+        "stt": 236,
+        "ticker": "PHP",
+        "name": "Công ty Cổ phần Cảng Hải Phòng",
+        "exchange": "UPCOM",
+        "batch": "Distill_Batch_11_Ngay_30_30.json",
+        "dot": "Batch 11 (30/10)"
+      }
+    },
+    "PHR": {
+      "has_q3": true,
+      "bctc_type": "HOP_NHAT",
+      "title": "BCTC Hợp nhất quý 3 năm 2026",
+      "date": "31/10/2026",
+      "doc_url": "https://static2.vietstock.vn/data/HOSE/2026/BCTC/VN/QUY%203/PHR_Baocaotaichinh_Q3_2026_Hopnhat.pdf",
+      "all_docs": [
+        {
+          "title": "BCTC Hợp nhất quý 3 năm 2026",
+          "date": "31/10/2026",
+          "doc_url": "https://static2.vietstock.vn/data/HOSE/2026/BCTC/VN/QUY%203/PHR_Baocaotaichinh_Q3_2026_Hopnhat.pdf",
+          "bctc_type": "HOP_NHAT"
+        },
+        {
+          "title": "BCTC Công ty mẹ quý 3 năm 2026",
+          "date": "31/10/2026",
+          "doc_url": "https://static2.vietstock.vn/data/HOSE/2026/BCTC/VN/QUY%203/PHR_Baocaotaichinh_Q3_2026_Congtyme.pdf?ver=f7942359",
+          "bctc_type": "RIENG"
+        }
+      ],
+      "meta": {
+        "stt": 237,
+        "ticker": "PHR",
+        "name": "Công ty Cổ phần Cao su Phước Hòa",
+        "exchange": "HOSE",
+        "batch": "Distill_Batch_11_Ngay_30_30.json",
+        "dot": "Batch 11 (30/10)"
+      }
+    },
+    "PJT": {
+      "has_q3": true,
+      "bctc_type": "HOP_NHAT",
+      "title": "BCTC Hợp nhất quý 3 năm 2026",
+      "date": "29/10/2026",
+      "doc_url": "https://static2.vietstock.vn/data/HOSE/2026/BCTC/VN/QUY%203/PJT_Baocaotaichinh_Q3_2026_Hopnhat.pdf",
+      "all_docs": [
+        {
+          "title": "BCTC Công ty mẹ quý 3 năm 2026",
+          "date": "29/10/2026",
+          "doc_url": "https://static2.vietstock.vn/data/HOSE/2026/BCTC/VN/QUY%203/PJT_Baocaotaichinh_Q3_2026_Congtyme.pdf?ver=7645bc60",
+          "bctc_type": "RIENG"
+        },
+        {
+          "title": "BCTC Hợp nhất quý 3 năm 2026",
+          "date": "29/10/2026",
+          "doc_url": "https://static2.vietstock.vn/data/HOSE/2026/BCTC/VN/QUY%203/PJT_Baocaotaichinh_Q3_2026_Hopnhat.pdf",
+          "bctc_type": "HOP_NHAT"
+        },
+        {
+          "title": "Giải trình kết quả kinh doanh Công ty mẹ quý 3 năm 2026",
+          "date": "29/10/2026",
+          "doc_url": "https://static2.vietstock.vn/data/HOSE/2026/BCTC/VN/QUY%203/PJT_Giaitrinh_KQKD_Q3_2026_Congtyme.pdf",
+          "bctc_type": "GIAI_TRINH"
+        }
+      ],
+      "meta": {
+        "stt": 238,
+        "ticker": "PJT",
+        "name": "Công ty Cổ phần Vận tải Xăng dầu đường thủy Petrolimex",
+        "exchange": "HOSE",
+        "batch": "Distill_Batch_11_Ngay_30_30.json",
+        "dot": "Batch 11 (30/10)"
+      }
+    },
+    "PMS": {
+      "has_q3": true,
+      "bctc_type": "HOP_NHAT",
+      "title": "BCTC Hợp nhất quý 3 năm 2026",
+      "date": "27/10/2026",
+      "doc_url": "https://static2.vietstock.vn/data/HNX/2026/BCTC/VN/QUY%203/PMS_Baocaotaichinh_Q3_2026_Hopnhat.zip?ver=944b151b",
+      "all_docs": [
+        {
+          "title": "Giải trình kết quả kinh doanh Hợp nhất quý 3 năm 2026",
+          "date": "28/10/2026",
+          "doc_url": "https://static2.vietstock.vn/data/HNX/2026/BCTC/VN/QUY%203/PMS_Giaitrinh_KQKD_Q3_2026_Hopnhat_1.zip",
+          "bctc_type": "GIAI_TRINH"
+        },
+        {
+          "title": "Giải trình kết quả kinh doanh Công ty mẹ quý 3 năm 2026",
+          "date": "28/10/2026",
+          "doc_url": "https://static2.vietstock.vn/data/HNX/2026/BCTC/VN/QUY%203/PMS_Giaitrinh_KQKD_Q3_2026_Congtyme_1.zip",
+          "bctc_type": "GIAI_TRINH"
+        },
+        {
+          "title": "Giải trình kết quả kinh doanh Công ty mẹ quý 3 năm 2026",
+          "date": "27/10/2026",
+          "doc_url": "https://static2.vietstock.vn/data/HNX/2026/BCTC/VN/QUY%203/PMS_Giaitrinh_KQKD_Q3_2026_Congtyme.zip",
+          "bctc_type": "GIAI_TRINH"
+        },
+        {
+          "title": "BCTC Công ty mẹ quý 3 năm 2026",
+          "date": "27/10/2026",
+          "doc_url": "https://static2.vietstock.vn/data/HNX/2026/BCTC/VN/QUY%203/PMS_Baocaotaichinh_Q3_2026_Congtyme.zip",
+          "bctc_type": "RIENG"
+        },
+        {
+          "title": "Giải trình kết quả kinh doanh Hợp nhất quý 3 năm 2026",
+          "date": "27/10/2026",
+          "doc_url": "https://static2.vietstock.vn/data/HNX/2026/BCTC/VN/QUY%203/PMS_Giaitrinh_KQKD_Q3_2026_Hopnhat.zip",
+          "bctc_type": "GIAI_TRINH"
+        },
+        {
+          "title": "BCTC Hợp nhất quý 3 năm 2026",
+          "date": "27/10/2026",
+          "doc_url": "https://static2.vietstock.vn/data/HNX/2026/BCTC/VN/QUY%203/PMS_Baocaotaichinh_Q3_2026_Hopnhat.zip?ver=944b151b",
+          "bctc_type": "HOP_NHAT"
+        }
+      ],
+      "meta": {
+        "stt": 239,
+        "ticker": "PMS",
+        "name": "Công ty Cổ phần Cơ khí Xăng dầu",
+        "exchange": "HNX",
+        "batch": "Distill_Batch_11_Ngay_30_30.json",
+        "dot": "Batch 11 (30/10)"
+      }
+    },
+    "POW": {
+      "has_q3": true,
+      "bctc_type": "HOP_NHAT",
+      "title": "BCTC Hợp nhất quý 3 năm 2026",
+      "date": "02/11/2026",
+      "doc_url": "https://static2.vietstock.vn/data/HOSE/2026/BCTC/VN/QUY%203/POW_Baocaotaichinh_Q3_2026_Hopnhat.pdf",
+      "all_docs": [
+        {
+          "title": "BCTC Công ty mẹ quý 3 năm 2026",
+          "date": "02/11/2026",
+          "doc_url": "https://static2.vietstock.vn/data/HOSE/2026/BCTC/VN/QUY%203/POW_Baocaotaichinh_Q3_2026_Congtyme.pdf?ver=f1897529",
+          "bctc_type": "RIENG"
+        },
+        {
+          "title": "BCTC Hợp nhất quý 3 năm 2026",
+          "date": "02/11/2026",
+          "doc_url": "https://static2.vietstock.vn/data/HOSE/2026/BCTC/VN/QUY%203/POW_Baocaotaichinh_Q3_2026_Hopnhat.pdf",
+          "bctc_type": "HOP_NHAT"
+        },
+        {
+          "title": "Giải trình kết quả kinh doanh quý 3 năm 2026",
+          "date": "02/11/2026",
+          "doc_url": "https://static2.vietstock.vn/data/HOSE/2026/BCTC/VN/QUY%203/POW_Giaitrinh_KQKD_Q3_2026.pdf",
+          "bctc_type": "GIAI_TRINH"
+        }
+      ],
+      "meta": {
+        "stt": 240,
+        "ticker": "POW",
+        "name": "Tổng Công ty Điện lực Dầu khí Việt Nam - CTCP",
+        "exchange": "HOSE",
+        "batch": "Distill_Batch_11_Ngay_30_30.json",
+        "dot": "Batch 11 (30/10)"
+      }
+    },
+    "PPH": {
+      "has_q3": true,
+      "bctc_type": "HOP_NHAT",
+      "title": "BCTC Hợp nhất quý 3 năm 2026",
+      "date": "02/11/2026",
+      "doc_url": "https://static2.vietstock.vn/data/UPCOM/2026/BCTC/VN/QUY%203/PPH_Baocaotaichinh_Q3_2026_Hopnhat.zip?ver=1dc35533",
+      "all_docs": [
+        {
+          "title": "BCTC Hợp nhất quý 3 năm 2026",
+          "date": "02/11/2026",
+          "doc_url": "https://static2.vietstock.vn/data/UPCOM/2026/BCTC/VN/QUY%203/PPH_Baocaotaichinh_Q3_2026_Hopnhat.zip?ver=1dc35533",
+          "bctc_type": "HOP_NHAT"
+        },
+        {
+          "title": "BCTC Công ty mẹ quý 3 năm 2026",
+          "date": "02/11/2026",
+          "doc_url": "https://static2.vietstock.vn/data/HNX/2026/BCTC/VN/QUY%203/PPH_Baocaotaichinh_Q3_2026_Congtyme.zip",
+          "bctc_type": "RIENG"
+        }
+      ],
+      "meta": {
+        "stt": 241,
+        "ticker": "PPH",
+        "name": "Tổng Công ty Cổ phần Phong Phú",
+        "exchange": "UPCOM",
+        "batch": "Distill_Batch_11_Ngay_30_30.json",
+        "dot": "Batch 11 (30/10)"
+      }
+    },
+    "PTB": {
+      "has_q3": true,
+      "bctc_type": "HOP_NHAT",
+      "title": "BCTC Hợp nhất quý 3 năm 2026",
+      "date": "02/11/2026",
+      "doc_url": "https://static2.vietstock.vn/data/HOSE/2026/BCTC/VN/QUY%203/PTB_Baocaotaichinh_Q3_2026_Hopnhat.pdf",
+      "all_docs": [
+        {
+          "title": "BCTC Công ty mẹ quý 3 năm 2026",
+          "date": "02/11/2026",
+          "doc_url": "https://static2.vietstock.vn/data/HOSE/2026/BCTC/VN/QUY%203/PTB_Baocaotaichinh_Q3_2026_Congtyme.pdf?ver=8bcc0112",
+          "bctc_type": "RIENG"
+        },
+        {
+          "title": "BCTC Hợp nhất quý 3 năm 2026",
+          "date": "02/11/2026",
+          "doc_url": "https://static2.vietstock.vn/data/HOSE/2026/BCTC/VN/QUY%203/PTB_Baocaotaichinh_Q3_2026_Hopnhat.pdf",
+          "bctc_type": "HOP_NHAT"
+        },
+        {
+          "title": "Giải trình kết quả kinh doanh quý 3 năm 2026",
+          "date": "02/11/2026",
+          "doc_url": "https://static2.vietstock.vn/data/HOSE/2026/BCTC/VN/QUY%203/PTB_Giaitrinh_KQKD_Q3_2026.pdf",
+          "bctc_type": "GIAI_TRINH"
+        }
+      ],
+      "meta": {
+        "stt": 242,
+        "ticker": "PTB",
+        "name": "Công ty Cổ phần Phú Tài",
+        "exchange": "HOSE",
+        "batch": "Distill_Batch_11_Ngay_30_30.json",
+        "dot": "Batch 11 (30/10)"
+      }
+    },
+    "PTS": {
+      "has_q3": true,
+      "bctc_type": "HOP_NHAT",
+      "title": "BCTC Hợp nhất quý 3 năm 2026",
+      "date": "29/10/2026",
+      "doc_url": "https://static2.vietstock.vn/data/HNX/2026/BCTC/VN/QUY%203/PTS_Baocaotaichinh_Q3_2026_Hopnhat.zip?ver=60e284b6",
+      "all_docs": [
+        {
+          "title": "BCTC Hợp nhất quý 3 năm 2026",
+          "date": "29/10/2026",
+          "doc_url": "https://static2.vietstock.vn/data/HNX/2026/BCTC/VN/QUY%203/PTS_Baocaotaichinh_Q3_2026_Hopnhat.zip?ver=60e284b6",
+          "bctc_type": "HOP_NHAT"
+        },
+        {
+          "title": "BCTC Công ty mẹ quý 3 năm 2026",
+          "date": "29/10/2026",
+          "doc_url": "https://static2.vietstock.vn/data/HNX/2026/BCTC/VN/QUY%203/PTS_Baocaotaichinh_Q3_2026_Congtyme.zip",
+          "bctc_type": "RIENG"
+        }
+      ],
+      "meta": {
+        "stt": 243,
+        "ticker": "PTS",
+        "name": "Công ty Cổ phần Vận tải và Dịch vụ Petrolimex Hải Phòng",
+        "exchange": "HNX",
+        "batch": "Distill_Batch_11_Ngay_30_30.json",
+        "dot": "Batch 11 (30/10)"
+      }
+    },
+    "RAL": {
+      "has_q3": true,
+      "bctc_type": "RIENG",
+      "title": "BCTC Công ty mẹ quý 3 năm 2026",
+      "date": "02/11/2026",
+      "doc_url": "https://static2.vietstock.vn/data/HOSE/2026/BCTC/VN/QUY%203/RAL_Baocaotaichinh_Q3_2026_Congtyme.pdf?ver=ad8cb00b",
+      "all_docs": [
+        {
+          "title": "BCTC Công ty mẹ quý 3 năm 2026",
+          "date": "02/11/2026",
+          "doc_url": "https://static2.vietstock.vn/data/HOSE/2026/BCTC/VN/QUY%203/RAL_Baocaotaichinh_Q3_2026_Congtyme.pdf?ver=ad8cb00b",
+          "bctc_type": "RIENG"
+        },
+        {
+          "title": "Giải trình kết quả kinh doanh quý 3 năm 2026",
+          "date": "02/11/2026",
+          "doc_url": "https://static2.vietstock.vn/data/HOSE/2026/BCTC/VN/QUY%203/RAL_Giaitrinh_KQKD_Q3_2026.pdf",
+          "bctc_type": "GIAI_TRINH"
+        }
+      ],
+      "meta": {
+        "stt": 244,
+        "ticker": "RAL",
+        "name": "Công ty Cổ phần Bóng đèn Phích nước Rạng Đông",
+        "exchange": "HOSE",
+        "batch": "Distill_Batch_11_Ngay_30_30.json",
+        "dot": "Batch 11 (30/10)"
+      }
+    },
+    "S55": {
+      "has_q3": true,
+      "bctc_type": "HOP_NHAT",
+      "title": "BCTC Hợp nhất quý 3 năm 2026",
+      "date": "03/11/2026",
+      "doc_url": "https://static2.vietstock.vn/data/HNX/2026/BCTC/VN/QUY%203/S55_Baocaotaichinh_Q3_2026_Hopnhat.zip?ver=d4e04f97",
+      "all_docs": [
+        {
+          "title": "BCTC Công ty mẹ quý 3 năm 2026",
+          "date": "03/11/2026",
+          "doc_url": "https://static2.vietstock.vn/data/HNX/2026/BCTC/VN/QUY%203/S55_Baocaotaichinh_Q3_2026_Congtyme.zip",
+          "bctc_type": "RIENG"
+        },
+        {
+          "title": "BCTC Hợp nhất quý 3 năm 2026",
+          "date": "03/11/2026",
+          "doc_url": "https://static2.vietstock.vn/data/HNX/2026/BCTC/VN/QUY%203/S55_Baocaotaichinh_Q3_2026_Hopnhat.zip?ver=d4e04f97",
+          "bctc_type": "HOP_NHAT"
+        }
+      ],
+      "meta": {
+        "stt": 245,
+        "ticker": "S55",
+        "name": "Công ty Cổ phần Sông Đà 505",
+        "exchange": "HNX",
+        "batch": "Distill_Batch_11_Ngay_30_30.json",
+        "dot": "Batch 11 (30/10)"
+      }
+    },
+    "SBB": {
+      "has_q3": true,
+      "bctc_type": "HOP_NHAT",
+      "title": "BCTC Hợp nhất quý 3 năm 2026",
+      "date": "02/11/2026",
+      "doc_url": "https://static2.vietstock.vn/data/UPCOM/2026/BCTC/VN/QUY%203/SBB_Baocaotaichinh_Q3_2026_Hopnhat.zip?ver=59f0d375",
+      "all_docs": [
+        {
+          "title": "BCTC Hợp nhất quý 3 năm 2026",
+          "date": "02/11/2026",
+          "doc_url": "https://static2.vietstock.vn/data/UPCOM/2026/BCTC/VN/QUY%203/SBB_Baocaotaichinh_Q3_2026_Hopnhat.zip?ver=59f0d375",
+          "bctc_type": "HOP_NHAT"
+        },
+        {
+          "title": "BCTC Công ty mẹ quý 3 năm 2026",
+          "date": "02/11/2026",
+          "doc_url": "https://static2.vietstock.vn/data/HNX/2026/BCTC/VN/QUY%203/SBB_Baocaotaichinh_Q3_2026_Congtyme.zip",
+          "bctc_type": "RIENG"
+        }
+      ],
+      "meta": {
+        "stt": 246,
+        "ticker": "SBB",
+        "name": "Công ty Cổ phần Tập đoàn Bia Sài Gòn Bình Tây",
+        "exchange": "UPCOM",
+        "batch": "Distill_Batch_11_Ngay_30_30.json",
+        "dot": "Batch 11 (30/10)"
+      }
+    },
+    "SD9": {
+      "has_q3": true,
+      "bctc_type": "HOP_NHAT",
+      "title": "BCTC Hợp nhất quý 3 năm 2026",
+      "date": "02/11/2026",
+      "doc_url": "https://static2.vietstock.vn/data/HNX/2026/BCTC/VN/QUY%203/SD9_Baocaotaichinh_Q3_2026_Hopnhat.zip?ver=8f0edd5d",
+      "all_docs": [
+        {
+          "title": "BCTC Hợp nhất quý 3 năm 2026",
+          "date": "02/11/2026",
+          "doc_url": "https://static2.vietstock.vn/data/HNX/2026/BCTC/VN/QUY%203/SD9_Baocaotaichinh_Q3_2026_Hopnhat.zip?ver=8f0edd5d",
+          "bctc_type": "HOP_NHAT"
+        },
+        {
+          "title": "BCTC Công ty mẹ quý 3 năm 2026",
+          "date": "02/11/2026",
+          "doc_url": "https://static2.vietstock.vn/data/HNX/2026/BCTC/VN/QUY%203/SD9_Baocaotaichinh_Q3_2026_Congtyme.zip",
+          "bctc_type": "RIENG"
+        }
+      ],
+      "meta": {
+        "stt": 247,
+        "ticker": "SD9",
+        "name": "Công ty Cổ phần Sông Đà 9",
+        "exchange": "HNX",
+        "batch": "Distill_Batch_11_Ngay_30_30.json",
+        "dot": "Batch 11 (30/10)"
+      }
+    },
+    "SFI": {
+      "has_q3": true,
+      "bctc_type": "HOP_NHAT",
+      "title": "BCTC Hợp nhất quý 3 năm 2026",
+      "date": "28/10/2026",
+      "doc_url": "https://static2.vietstock.vn/data/HOSE/2026/BCTC/VN/QUY%203/SFI_Baocaotaichinh_Q3_2026_Hopnhat.pdf",
+      "all_docs": [
+        {
+          "title": "Giải trình kết quả kinh doanh Hợp nhất quý 3 năm 2026",
+          "date": "28/10/2026",
+          "doc_url": "https://static2.vietstock.vn/data/HOSE/2026/BCTC/VN/QUY%203/SFI_Giaitrinh_KQKD_Q3_2026_Hopnhat.zip?ver=51bdb533",
+          "bctc_type": "GIAI_TRINH"
+        },
+        {
+          "title": "BCTC Công ty mẹ quý 3 năm 2026",
+          "date": "28/10/2026",
+          "doc_url": "https://static2.vietstock.vn/data/HOSE/2026/BCTC/VN/QUY%203/SFI_Baocaotaichinh_Q3_2026_Congtyme.pdf?ver=e9225a01",
+          "bctc_type": "RIENG"
+        },
+        {
+          "title": "BCTC Hợp nhất quý 3 năm 2026",
+          "date": "28/10/2026",
+          "doc_url": "https://static2.vietstock.vn/data/HOSE/2026/BCTC/VN/QUY%203/SFI_Baocaotaichinh_Q3_2026_Hopnhat.pdf",
+          "bctc_type": "HOP_NHAT"
+        }
+      ],
+      "meta": {
+        "stt": 248,
+        "ticker": "SFI",
+        "name": "Công ty Cổ phần Đại lý Vận tải SAFI",
+        "exchange": "HOSE",
+        "batch": "Distill_Batch_11_Ngay_30_30.json",
+        "dot": "Batch 11 (30/10)"
+      }
+    },
+    "SGN": {
+      "has_q3": true,
+      "bctc_type": "HOP_NHAT",
+      "title": "BCTC Hợp nhất quý 3 năm 2026",
+      "date": "29/10/2026",
+      "doc_url": "https://static2.vietstock.vn/data/HOSE/2026/BCTC/VN/QUY%203/SGN_Baocaotaichinh_Q3_2026_Hopnhat.pdf",
+      "all_docs": [
+        {
+          "title": "BCTC Công ty mẹ quý 3 năm 2026",
+          "date": "29/10/2026",
+          "doc_url": "https://static2.vietstock.vn/data/HOSE/2026/BCTC/VN/QUY%203/SGN_Baocaotaichinh_Q3_2026_Congtyme.pdf?ver=601de2f1",
+          "bctc_type": "RIENG"
+        },
+        {
+          "title": "BCTC Hợp nhất quý 3 năm 2026",
+          "date": "29/10/2026",
+          "doc_url": "https://static2.vietstock.vn/data/HOSE/2026/BCTC/VN/QUY%203/SGN_Baocaotaichinh_Q3_2026_Hopnhat.pdf",
+          "bctc_type": "HOP_NHAT"
+        },
+        {
+          "title": "Giải trình kết quả kinh doanh quý 3 năm 2026",
+          "date": "29/10/2026",
+          "doc_url": "https://static2.vietstock.vn/data/HOSE/2026/BCTC/VN/QUY%203/SGN_Giaitrinh_KQKD_Q3_2026.pdf",
+          "bctc_type": "GIAI_TRINH"
+        }
+      ],
+      "meta": {
+        "stt": 249,
+        "ticker": "SGN",
+        "name": "Công ty Cổ phần Phục vụ mặt đất Sài Gòn",
+        "exchange": "HOSE",
+        "batch": "Distill_Batch_11_Ngay_30_30.json",
+        "dot": "Batch 11 (30/10)"
+      }
+    },
+    "SIP": {
+      "has_q3": true,
+      "bctc_type": "HOP_NHAT",
+      "title": "BCTC Hợp nhất quý 3 năm 2026",
+      "date": "02/11/2026",
+      "doc_url": "https://static2.vietstock.vn/data/HOSE/2026/BCTC/VN/QUY%203/SIP_Baocaotaichinh_Q3_2026_Hopnhat.pdf",
+      "all_docs": [
+        {
+          "title": "BCTC Công ty mẹ quý 3 năm 2026",
+          "date": "02/11/2026",
+          "doc_url": "https://static2.vietstock.vn/data/HOSE/2026/BCTC/VN/QUY%203/SIP_Baocaotaichinh_Q3_2026_Congtyme.pdf?ver=037b2787",
+          "bctc_type": "RIENG"
+        },
+        {
+          "title": "BCTC Hợp nhất quý 3 năm 2026",
+          "date": "02/11/2026",
+          "doc_url": "https://static2.vietstock.vn/data/HOSE/2026/BCTC/VN/QUY%203/SIP_Baocaotaichinh_Q3_2026_Hopnhat.pdf",
+          "bctc_type": "HOP_NHAT"
+        }
+      ],
+      "meta": {
+        "stt": 250,
+        "ticker": "SIP",
+        "name": "Công ty Cổ phần Đầu tư Sài Gòn VRG",
+        "exchange": "HOSE",
+        "batch": "Distill_Batch_11_Ngay_30_30.json",
+        "dot": "Batch 11 (30/10)"
+      }
+    },
+    "SJE": {
+      "has_q3": true,
+      "bctc_type": "HOP_NHAT",
+      "title": "BCTC Hợp nhất quý 3 năm 2026",
+      "date": "03/11/2026",
+      "doc_url": "https://static2.vietstock.vn/data/HNX/2026/BCTC/VN/QUY%203/SJE_Baocaotaichinh_Q3_2026_Hopnhat.zip?ver=7121f2ed",
+      "all_docs": [
+        {
+          "title": "BCTC Công ty mẹ quý 3 năm 2026",
+          "date": "03/11/2026",
+          "doc_url": "https://static2.vietstock.vn/data/HNX/2026/BCTC/VN/QUY%203/SJE_Baocaotaichinh_Q3_2026_Congtyme.zip",
+          "bctc_type": "RIENG"
+        },
+        {
+          "title": "BCTC Hợp nhất quý 3 năm 2026",
+          "date": "03/11/2026",
+          "doc_url": "https://static2.vietstock.vn/data/HNX/2026/BCTC/VN/QUY%203/SJE_Baocaotaichinh_Q3_2026_Hopnhat.zip?ver=7121f2ed",
+          "bctc_type": "HOP_NHAT"
+        }
+      ],
+      "meta": {
+        "stt": 251,
+        "ticker": "SJE",
+        "name": "Công ty Cổ phần Sông Đà 11",
+        "exchange": "HNX",
+        "batch": "Distill_Batch_11_Ngay_30_30.json",
+        "dot": "Batch 11 (30/10)"
+      }
+    },
+    "SJG": {
+      "has_q3": true,
+      "bctc_type": "HOP_NHAT",
+      "title": "BCTC Hợp nhất quý 3 năm 2026",
+      "date": "03/11/2026",
+      "doc_url": "https://static2.vietstock.vn/data/UPCOM/2026/BCTC/VN/QUY%203/SJG_Baocaotaichinh_Q3_2026_Hopnhat.zip?ver=4d208436",
+      "all_docs": [
+        {
+          "title": "BCTC Hợp nhất quý 3 năm 2026",
+          "date": "03/11/2026",
+          "doc_url": "https://static2.vietstock.vn/data/UPCOM/2026/BCTC/VN/QUY%203/SJG_Baocaotaichinh_Q3_2026_Hopnhat.zip?ver=4d208436",
+          "bctc_type": "HOP_NHAT"
+        },
+        {
+          "title": "BCTC Công ty mẹ quý 3 năm 2026",
+          "date": "02/11/2026",
+          "doc_url": "https://static2.vietstock.vn/data/HNX/2026/BCTC/VN/QUY%203/SJG_Baocaotaichinh_Q3_2026_Congtyme.zip",
+          "bctc_type": "RIENG"
+        }
+      ],
+      "meta": {
+        "stt": 252,
+        "ticker": "SJG",
+        "name": "Tổng Công ty Sông Đà",
+        "exchange": "UPCOM",
+        "batch": "Distill_Batch_11_Ngay_30_30.json",
+        "dot": "Batch 11 (30/10)"
+      }
+    },
+    "SKV": {
+      "has_q3": true,
+      "bctc_type": "HOP_NHAT",
+      "title": "BCTC Hợp nhất quý 3 năm 2026",
+      "date": "29/10/2026",
+      "doc_url": "https://static2.vietstock.vn/data/UPCOM/2026/BCTC/VN/QUY%203/SKV_Baocaotaichinh_Q3_2026_Hopnhat.zip?ver=02913fcb",
+      "all_docs": [
+        {
+          "title": "BCTC Công ty mẹ quý 3 năm 2026",
+          "date": "30/10/2026",
+          "doc_url": "https://static2.vietstock.vn/data/HNX/2026/BCTC/VN/QUY%203/SKV_Baocaotaichinh_Q3_2026_Congtyme.zip",
+          "bctc_type": "RIENG"
+        },
+        {
+          "title": "BCTC Hợp nhất quý 3 năm 2026",
+          "date": "29/10/2026",
+          "doc_url": "https://static2.vietstock.vn/data/UPCOM/2026/BCTC/VN/QUY%203/SKV_Baocaotaichinh_Q3_2026_Hopnhat.zip?ver=02913fcb",
+          "bctc_type": "HOP_NHAT"
+        }
+      ],
+      "meta": {
+        "stt": 253,
+        "ticker": "SKV",
+        "name": "Công ty Cổ phần Nước Giải khát Yến sào Khánh Hòa",
+        "exchange": "UPCOM",
+        "batch": "Distill_Batch_11_Ngay_30_30.json",
+        "dot": "Batch 11 (30/10)"
+      }
+    },
+    "SNZ": {
+      "has_q3": true,
+      "bctc_type": "HOP_NHAT",
+      "title": "BCTC Hợp nhất quý 3 năm 2026",
+      "date": "30/10/2026",
+      "doc_url": "https://static2.vietstock.vn/data/UPCOM/2026/BCTC/VN/QUY%203/SNZ_Baocaotaichinh_Q3_2026_Hopnhat.zip?ver=67cde415",
+      "all_docs": [
+        {
+          "title": "BCTC Hợp nhất quý 3 năm 2026",
+          "date": "30/10/2026",
+          "doc_url": "https://static2.vietstock.vn/data/UPCOM/2026/BCTC/VN/QUY%203/SNZ_Baocaotaichinh_Q3_2026_Hopnhat.zip?ver=67cde415",
+          "bctc_type": "HOP_NHAT"
+        },
+        {
+          "title": "BCTC Công ty mẹ quý 3 năm 2026",
+          "date": "23/10/2026",
+          "doc_url": "https://static2.vietstock.vn/data/HNX/2026/BCTC/VN/QUY%203/SNZ_Baocaotaichinh_Q3_2026_Congtyme.zip",
+          "bctc_type": "RIENG"
+        }
+      ],
+      "meta": {
+        "stt": 254,
+        "ticker": "SNZ",
+        "name": "Tổng Công ty Cổ phần Phát triển Khu Công nghiệp",
+        "exchange": "UPCOM",
+        "batch": "Distill_Batch_11_Ngay_30_30.json",
+        "dot": "Batch 11 (30/10)"
+      }
+    },
+    "SPC": {
+      "has_q3": true,
+      "bctc_type": "HOP_NHAT",
+      "title": "BCTC Hợp nhất quý 3 năm 2026",
+      "date": "31/10/2026",
+      "doc_url": "https://static2.vietstock.vn/data/HNX/2026/BCTC/VN/QUY%203/SPC_Baocaotaichinh_Q3_2026_Hopnhat.zip?ver=285a71a4",
+      "all_docs": [
+        {
+          "title": "BCTC Công ty mẹ quý 3 năm 2026",
+          "date": "31/10/2026",
+          "doc_url": "https://static2.vietstock.vn/data/HNX/2026/BCTC/VN/QUY%203/SPC_Baocaotaichinh_Q3_2026_Congtyme.zip",
+          "bctc_type": "RIENG"
+        },
+        {
+          "title": "BCTC Hợp nhất quý 3 năm 2026",
+          "date": "31/10/2026",
+          "doc_url": "https://static2.vietstock.vn/data/HNX/2026/BCTC/VN/QUY%203/SPC_Baocaotaichinh_Q3_2026_Hopnhat.zip?ver=285a71a4",
+          "bctc_type": "HOP_NHAT"
+        }
+      ],
+      "meta": {
+        "stt": 255,
+        "ticker": "SPC",
+        "name": "Công ty Cổ phần Bảo vệ Thực vật Sài Gòn",
+        "exchange": "HNX",
+        "batch": "Distill_Batch_12_Ngay_30_30.json",
+        "dot": "Batch 12 (30/10)"
+      }
+    },
+    "TCW": {
+      "has_q3": true,
+      "bctc_type": "HOP_NHAT",
+      "title": "BCTC Hợp nhất quý 3 năm 2026",
+      "date": "30/10/2026",
+      "doc_url": "https://static2.vietstock.vn/data/UPCOM/2026/BCTC/VN/QUY%203/TCW_Baocaotaichinh_Q3_2026_Hopnhat.zip?ver=4ad16fcf",
+      "all_docs": [
+        {
+          "title": "BCTC Công ty mẹ quý 3 năm 2026",
+          "date": "31/10/2026",
+          "doc_url": "https://static2.vietstock.vn/data/HNX/2026/BCTC/VN/QUY%203/TCW_Baocaotaichinh_Q3_2026_Congtyme.zip",
+          "bctc_type": "RIENG"
+        },
+        {
+          "title": "BCTC Hợp nhất quý 3 năm 2026",
+          "date": "30/10/2026",
+          "doc_url": "https://static2.vietstock.vn/data/UPCOM/2026/BCTC/VN/QUY%203/TCW_Baocaotaichinh_Q3_2026_Hopnhat.zip?ver=4ad16fcf",
+          "bctc_type": "HOP_NHAT"
+        }
+      ],
+      "meta": {
+        "stt": 256,
+        "ticker": "TCW",
+        "name": "Công ty Cổ phần Kho Vận Tân Cảng",
+        "exchange": "UPCOM",
+        "batch": "Distill_Batch_12_Ngay_30_30.json",
+        "dot": "Batch 12 (30/10)"
+      }
+    },
+    "TFC": {
+      "has_q3": true,
+      "bctc_type": "HOP_NHAT",
+      "title": "BCTC Hợp nhất quý 3 năm 2026",
+      "date": "02/11/2026",
+      "doc_url": "https://static2.vietstock.vn/data/HNX/2026/BCTC/VN/QUY%203/TFC_Baocaotaichinh_Q3_2026_Hopnhat.zip?ver=1b1c3ffd",
+      "all_docs": [
+        {
+          "title": "BCTC Hợp nhất quý 3 năm 2026",
+          "date": "02/11/2026",
+          "doc_url": "https://static2.vietstock.vn/data/HNX/2026/BCTC/VN/QUY%203/TFC_Baocaotaichinh_Q3_2026_Hopnhat.zip?ver=1b1c3ffd",
+          "bctc_type": "HOP_NHAT"
+        },
+        {
+          "title": "BCTC Công ty mẹ quý 3 năm 2026",
+          "date": "02/11/2026",
+          "doc_url": "https://static2.vietstock.vn/data/HNX/2026/BCTC/VN/QUY%203/TFC_Baocaotaichinh_Q3_2026_Congtyme.zip",
+          "bctc_type": "RIENG"
+        }
+      ],
+      "meta": {
+        "stt": 257,
+        "ticker": "TFC",
+        "name": "Công ty Cổ phần Trang",
+        "exchange": "HNX",
+        "batch": "Distill_Batch_12_Ngay_30_30.json",
+        "dot": "Batch 12 (30/10)"
+      }
+    },
+    "TID": {
+      "has_q3": true,
+      "bctc_type": "HOP_NHAT",
+      "title": "BCTC Hợp nhất quý 3 năm 2026",
+      "date": "28/10/2026",
+      "doc_url": "https://static2.vietstock.vn/data/UPCOM/2026/BCTC/VN/QUY%203/TID_Baocaotaichinh_Q3_2026_Hopnhat.zip?ver=7b7c752f",
+      "all_docs": [
+        {
+          "title": "BCTC Công ty mẹ quý 3 năm 2026",
+          "date": "28/10/2026",
+          "doc_url": "https://static2.vietstock.vn/data/HNX/2026/BCTC/VN/QUY%203/TID_Baocaotaichinh_Q3_2026_Congtyme.zip",
+          "bctc_type": "RIENG"
+        },
+        {
+          "title": "BCTC Hợp nhất quý 3 năm 2026",
+          "date": "28/10/2026",
+          "doc_url": "https://static2.vietstock.vn/data/UPCOM/2026/BCTC/VN/QUY%203/TID_Baocaotaichinh_Q3_2026_Hopnhat.zip?ver=7b7c752f",
+          "bctc_type": "HOP_NHAT"
+        }
+      ],
+      "meta": {
+        "stt": 258,
+        "ticker": "TID",
+        "name": "Công ty Cổ phần Tổng Công ty Tín Nghĩa",
+        "exchange": "UPCOM",
+        "batch": "Distill_Batch_12_Ngay_30_30.json",
+        "dot": "Batch 12 (30/10)"
+      }
+    },
+    "TOS": {
+      "has_q3": true,
+      "bctc_type": "HOP_NHAT",
+      "title": "BCTC Hợp nhất quý 3 năm 2026",
+      "date": "02/11/2026",
+      "doc_url": "https://static2.vietstock.vn/data/UPCOM/2026/BCTC/VN/QUY%203/TOS_Baocaotaichinh_Q3_2026_Hopnhat.zip?ver=d17cd32c",
+      "all_docs": [
+        {
+          "title": "BCTC Công ty mẹ quý 3 năm 2026",
+          "date": "02/11/2026",
+          "doc_url": "https://static2.vietstock.vn/data/HNX/2026/BCTC/VN/QUY%203/TOS_Baocaotaichinh_Q3_2026_Congtyme.zip",
+          "bctc_type": "RIENG"
+        },
+        {
+          "title": "BCTC Hợp nhất quý 3 năm 2026",
+          "date": "02/11/2026",
+          "doc_url": "https://static2.vietstock.vn/data/UPCOM/2026/BCTC/VN/QUY%203/TOS_Baocaotaichinh_Q3_2026_Hopnhat.zip?ver=d17cd32c",
+          "bctc_type": "HOP_NHAT"
+        }
+      ],
+      "meta": {
+        "stt": 259,
+        "ticker": "TOS",
+        "name": "Công ty Cổ phần Dịch vụ biển Tân Cảng",
+        "exchange": "UPCOM",
+        "batch": "Distill_Batch_12_Ngay_30_30.json",
+        "dot": "Batch 12 (30/10)"
+      }
+    },
+    "TRA": {
+      "has_q3": true,
+      "bctc_type": "HOP_NHAT",
+      "title": "BCTC Hợp nhất quý 3 năm 2026",
+      "date": "02/11/2026",
+      "doc_url": "https://static2.vietstock.vn/data/HOSE/2026/BCTC/VN/QUY%203/TRA_Baocaotaichinh_Q3_2026_Hopnhat.pdf",
+      "all_docs": [
+        {
+          "title": "BCTC Công ty mẹ quý 3 năm 2026",
+          "date": "02/11/2026",
+          "doc_url": "https://static2.vietstock.vn/data/HOSE/2026/BCTC/VN/QUY%203/TRA_Baocaotaichinh_Q3_2026_Congtyme.pdf?ver=d37899a9",
+          "bctc_type": "RIENG"
+        },
+        {
+          "title": "BCTC Hợp nhất quý 3 năm 2026",
+          "date": "02/11/2026",
+          "doc_url": "https://static2.vietstock.vn/data/HOSE/2026/BCTC/VN/QUY%203/TRA_Baocaotaichinh_Q3_2026_Hopnhat.pdf",
+          "bctc_type": "HOP_NHAT"
+        }
+      ],
+      "meta": {
+        "stt": 260,
+        "ticker": "TRA",
+        "name": "Công ty Cổ phần Traphaco",
+        "exchange": "HOSE",
+        "batch": "Distill_Batch_12_Ngay_30_30.json",
+        "dot": "Batch 12 (30/10)"
+      }
+    },
+    "TRV": {
+      "has_q3": true,
+      "bctc_type": "DAY_DU",
+      "title": "BCTC quý 3 năm 2026",
+      "date": "03/11/2026",
+      "doc_url": "https://static2.vietstock.vn/data/HNX/2026/BCTC/VN/QUY%203/TRV_Baocaotaichinh_Q3_2026.zip",
+      "all_docs": [
+        {
+          "title": "BCTC quý 3 năm 2026",
+          "date": "03/11/2026",
+          "doc_url": "https://static2.vietstock.vn/data/HNX/2026/BCTC/VN/QUY%203/TRV_Baocaotaichinh_Q3_2026.zip",
+          "bctc_type": "DAY_DU"
+        }
+      ],
+      "meta": {
+        "stt": 261,
+        "ticker": "TRV",
+        "name": "Công ty Cổ Phần Vận tải Đường sắt",
+        "exchange": "UPCOM",
+        "batch": "Distill_Batch_12_Ngay_30_30.json",
+        "dot": "Batch 12 (30/10)"
+      }
+    },
+    "TTA": {
+      "has_q3": true,
+      "bctc_type": "DAY_DU",
+      "title": "BCTC quý 3 năm 2026",
+      "date": "29/10/2026",
+      "doc_url": "https://static2.vietstock.vn/data/HOSE/2026/BCTC/VN/QUY%203/TTA_Baocaotaichinh_Q3_2026.pdf?ver=32f66d8a",
+      "all_docs": [
+        {
+          "title": "BCTC quý 3 năm 2026",
+          "date": "29/10/2026",
+          "doc_url": "https://static2.vietstock.vn/data/HOSE/2026/BCTC/VN/QUY%203/TTA_Baocaotaichinh_Q3_2026.pdf?ver=32f66d8a",
+          "bctc_type": "DAY_DU"
+        }
+      ],
+      "meta": {
+        "stt": 262,
+        "ticker": "TTA",
+        "name": "Công ty Cổ phần Đầu tư Xây dựng và Phát triển Trường Thành",
+        "exchange": "HOSE",
+        "batch": "Distill_Batch_12_Ngay_30_30.json",
+        "dot": "Batch 12 (30/10)"
+      }
+    },
+    "TV1": {
+      "has_q3": true,
+      "bctc_type": "HOP_NHAT",
+      "title": "BCTC Hợp nhất quý 3 năm 2026",
+      "date": "02/11/2026",
+      "doc_url": "https://static2.vietstock.vn/data/UPCOM/2026/BCTC/VN/QUY%203/TV1_Baocaotaichinh_Q3_2026_Hopnhat.zip?ver=668faa5d",
+      "all_docs": [
+        {
+          "title": "BCTC Hợp nhất quý 3 năm 2026",
+          "date": "02/11/2026",
+          "doc_url": "https://static2.vietstock.vn/data/UPCOM/2026/BCTC/VN/QUY%203/TV1_Baocaotaichinh_Q3_2026_Hopnhat.zip?ver=668faa5d",
+          "bctc_type": "HOP_NHAT"
+        },
+        {
+          "title": "BCTC Công ty mẹ quý 3 năm 2026",
+          "date": "02/11/2026",
+          "doc_url": "https://static2.vietstock.vn/data/HNX/2026/BCTC/VN/QUY%203/TV1_Baocaotaichinh_Q3_2026_Congtyme.zip",
+          "bctc_type": "RIENG"
+        }
+      ],
+      "meta": {
+        "stt": 263,
+        "ticker": "TV1",
+        "name": "Công ty Cổ phần Tư vấn Xây dựng Điện 1",
+        "exchange": "UPCOM",
+        "batch": "Distill_Batch_12_Ngay_30_30.json",
+        "dot": "Batch 12 (30/10)"
+      }
+    },
+    "TVN": {
+      "has_q3": true,
+      "bctc_type": "HOP_NHAT",
+      "title": "BCTC Hợp nhất quý 3 năm 2026",
+      "date": "02/11/2026",
+      "doc_url": "https://static2.vietstock.vn/data/UPCOM/2026/BCTC/VN/QUY%203/TVN_Baocaotaichinh_Q3_2026_Hopnhat.zip?ver=4a6b9e52",
+      "all_docs": [
+        {
+          "title": "BCTC Hợp nhất quý 3 năm 2026",
+          "date": "02/11/2026",
+          "doc_url": "https://static2.vietstock.vn/data/UPCOM/2026/BCTC/VN/QUY%203/TVN_Baocaotaichinh_Q3_2026_Hopnhat.zip?ver=4a6b9e52",
+          "bctc_type": "HOP_NHAT"
+        },
+        {
+          "title": "BCTC Công ty mẹ quý 3 năm 2026",
+          "date": "02/11/2026",
+          "doc_url": "https://static2.vietstock.vn/data/HNX/2026/BCTC/VN/QUY%203/TVN_Baocaotaichinh_Q3_2026_Congtyme.zip",
+          "bctc_type": "RIENG"
+        }
+      ],
+      "meta": {
+        "stt": 264,
+        "ticker": "TVN",
+        "name": "Tổng Công ty Thép Việt Nam - Công ty Cổ phần",
+        "exchange": "UPCOM",
+        "batch": "Distill_Batch_12_Ngay_30_30.json",
+        "dot": "Batch 12 (30/10)"
+      }
+    },
+    "TVT": {
+      "has_q3": true,
+      "bctc_type": "HOP_NHAT",
+      "title": "BCTC Hợp nhất quý 3 năm 2026",
+      "date": "02/11/2026",
+      "doc_url": "https://static2.vietstock.vn/data/HOSE/2026/BCTC/VN/QUY%203/TVT_Baocaotaichinh_Q3_2026_Hopnhat.pdf",
+      "all_docs": [
+        {
+          "title": "BCTC Hợp nhất quý 3 năm 2026",
+          "date": "02/11/2026",
+          "doc_url": "https://static2.vietstock.vn/data/HOSE/2026/BCTC/VN/QUY%203/TVT_Baocaotaichinh_Q3_2026_Hopnhat.pdf",
+          "bctc_type": "HOP_NHAT"
+        },
+        {
+          "title": "Giải trình kết quả kinh doanh Hợp nhất quý 3 năm 2026",
+          "date": "02/11/2026",
+          "doc_url": "https://static2.vietstock.vn/data/HOSE/2026/BCTC/VN/QUY%203/TVT_Giaitrinh_KQKD_Q3_2026_Hopnhat.pdf",
+          "bctc_type": "GIAI_TRINH"
+        },
+        {
+          "title": "Giải trình kết quả kinh doanh Hợp nhất quý 3 năm 2026",
+          "date": "02/11/2026",
+          "doc_url": "https://static2.vietstock.vn/data/HOSE/2026/BCTC/VN/QUY%203/TVT_Giaitrinh_KQKD_Q3_2026_Hopnhat_1.pdf",
+          "bctc_type": "GIAI_TRINH"
+        },
+        {
+          "title": "BCTC Công ty mẹ quý 3 năm 2026",
+          "date": "30/10/2026",
+          "doc_url": "https://static2.vietstock.vn/data/HOSE/2026/BCTC/VN/QUY%203/TVT_Baocaotaichinh_Q3_2026_Congtyme.pdf?ver=1ae0fd23",
+          "bctc_type": "RIENG"
+        },
+        {
+          "title": "Giải trình kết quả kinh doanh quý 3 năm 2026",
+          "date": "30/10/2026",
+          "doc_url": "https://static2.vietstock.vn/data/HOSE/2026/BCTC/VN/QUY%203/TVT_Giaitrinh_KQKD_Q3_2026.pdf",
+          "bctc_type": "GIAI_TRINH"
+        }
+      ],
+      "meta": {
+        "stt": 265,
+        "ticker": "TVT",
+        "name": "Tổng Công ty Việt Thắng - CTCP",
+        "exchange": "HOSE",
+        "batch": "Distill_Batch_12_Ngay_30_30.json",
+        "dot": "Batch 12 (30/10)"
+      }
+    },
+    "VC6": {
+      "has_q3": true,
+      "bctc_type": "HOP_NHAT",
+      "title": "BCTC Hợp nhất quý 3 năm 2026",
+      "date": "29/10/2026",
+      "doc_url": "https://static2.vietstock.vn/data/HNX/2026/BCTC/VN/QUY%203/VC6_Baocaotaichinh_Q3_2026_Hopnhat.zip?ver=5dd52981",
+      "all_docs": [
+        {
+          "title": "BCTC Hợp nhất quý 3 năm 2026",
+          "date": "29/10/2026",
+          "doc_url": "https://static2.vietstock.vn/data/HNX/2026/BCTC/VN/QUY%203/VC6_Baocaotaichinh_Q3_2026_Hopnhat.zip?ver=5dd52981",
+          "bctc_type": "HOP_NHAT"
+        },
+        {
+          "title": "BCTC Công ty mẹ quý 3 năm 2026",
+          "date": "29/10/2026",
+          "doc_url": "https://static2.vietstock.vn/data/HNX/2026/BCTC/VN/QUY%203/VC6_Baocaotaichinh_Q3_2026_Congtyme.zip",
+          "bctc_type": "RIENG"
+        }
+      ],
+      "meta": {
+        "stt": 266,
+        "ticker": "VC6",
+        "name": "Công ty cổ phần Xây dựng và Đầu tư Visicons",
+        "exchange": "HNX",
+        "batch": "Distill_Batch_12_Ngay_30_30.json",
+        "dot": "Batch 12 (30/10)"
+      }
+    },
+    "VCS": {
+      "has_q3": true,
+      "bctc_type": "HOP_NHAT",
+      "title": "BCTC Hợp nhất quý 3 năm 2026",
+      "date": "02/11/2026",
+      "doc_url": "https://static2.vietstock.vn/data/HNX/2026/BCTC/VN/QUY%203/VCS_Baocaotaichinh_Q3_2026_Hopnhat.zip?ver=47ee0bab",
+      "all_docs": [
+        {
+          "title": "BCTC Hợp nhất quý 3 năm 2026",
+          "date": "02/11/2026",
+          "doc_url": "https://static2.vietstock.vn/data/HNX/2026/BCTC/VN/QUY%203/VCS_Baocaotaichinh_Q3_2026_Hopnhat.zip?ver=47ee0bab",
+          "bctc_type": "HOP_NHAT"
+        },
+        {
+          "title": "BCTC Công ty mẹ quý 3 năm 2026",
+          "date": "03/11/2026",
+          "doc_url": "https://static2.vietstock.vn/data/HNX/2026/BCTC/VN/QUY%203/VCS_Baocaotaichinh_Q3_2026_Congtyme.zip",
+          "bctc_type": "RIENG"
+        }
+      ],
+      "meta": {
+        "stt": 268,
+        "ticker": "VCS",
+        "name": "Công ty Cổ phần VICOSTONE",
+        "exchange": "HNX",
+        "batch": "Distill_Batch_12_Ngay_30_30.json",
+        "dot": "Batch 12 (30/10)"
+      }
+    },
+    "VEA": {
+      "has_q3": true,
+      "bctc_type": "HOP_NHAT",
+      "title": "BCTC Hợp nhất quý 3 năm 2026",
+      "date": "02/11/2026",
+      "doc_url": "https://static2.vietstock.vn/data/UPCOM/2026/BCTC/VN/QUY%203/VEA_Baocaotaichinh_Q3_2026_Hopnhat.zip?ver=21a8cc54",
+      "all_docs": [
+        {
+          "title": "BCTC Công ty mẹ quý 3 năm 2026",
+          "date": "02/11/2026",
+          "doc_url": "https://static2.vietstock.vn/data/HNX/2026/BCTC/VN/QUY%203/VEA_Baocaotaichinh_Q3_2026_Congtyme.zip",
+          "bctc_type": "RIENG"
+        },
+        {
+          "title": "BCTC Hợp nhất quý 3 năm 2026",
+          "date": "02/11/2026",
+          "doc_url": "https://static2.vietstock.vn/data/UPCOM/2026/BCTC/VN/QUY%203/VEA_Baocaotaichinh_Q3_2026_Hopnhat.zip?ver=21a8cc54",
+          "bctc_type": "HOP_NHAT"
+        }
+      ],
+      "meta": {
+        "stt": 269,
+        "ticker": "VEA",
+        "name": "Tổng Công ty Máy động lực và Máy nông nghiệp Việt Nam - CTCP",
+        "exchange": "UPCOM",
+        "batch": "Distill_Batch_12_Ngay_30_30.json",
+        "dot": "Batch 12 (30/10)"
+      }
+    },
+    "VFR": {
+      "has_q3": true,
+      "bctc_type": "HOP_NHAT",
+      "title": "BCTC Hợp nhất quý 3 năm 2026",
+      "date": "30/10/2026",
+      "doc_url": "https://static2.vietstock.vn/data/UPCOM/2026/BCTC/VN/QUY%203/VFR_Baocaotaichinh_Q3_2026_Hopnhat.zip?ver=a78d82e8",
+      "all_docs": [
+        {
+          "title": "BCTC Hợp nhất quý 3 năm 2026",
+          "date": "30/10/2026",
+          "doc_url": "https://static2.vietstock.vn/data/UPCOM/2026/BCTC/VN/QUY%203/VFR_Baocaotaichinh_Q3_2026_Hopnhat.zip?ver=a78d82e8",
+          "bctc_type": "HOP_NHAT"
+        },
+        {
+          "title": "BCTC Công ty mẹ quý 3 năm 2026",
+          "date": "30/10/2026",
+          "doc_url": "https://static2.vietstock.vn/data/HNX/2026/BCTC/VN/QUY%203/VFR_Baocaotaichinh_Q3_2026_Congtyme.zip",
+          "bctc_type": "RIENG"
+        }
+      ],
+      "meta": {
+        "stt": 270,
+        "ticker": "VFR",
+        "name": "Công ty Cổ phần Vận tải và Thuê tàu",
+        "exchange": "UPCOM",
+        "batch": "Distill_Batch_12_Ngay_30_30.json",
+        "dot": "Batch 12 (30/10)"
+      }
+    },
+    "VGG": {
+      "has_q3": true,
+      "bctc_type": "HOP_NHAT",
+      "title": "BCTC Hợp nhất quý 3 năm 2026",
+      "date": "02/11/2026",
+      "doc_url": "https://static2.vietstock.vn/data/UPCOM/2026/BCTC/VN/QUY%203/VGG_Baocaotaichinh_Q3_2026_Hopnhat.zip?ver=e00eb636",
+      "all_docs": [
+        {
+          "title": "BCTC Công ty mẹ quý 3 năm 2026",
+          "date": "02/11/2026",
+          "doc_url": "https://static2.vietstock.vn/data/HNX/2026/BCTC/VN/QUY%203/VGG_Baocaotaichinh_Q3_2026_Congtyme.zip",
+          "bctc_type": "RIENG"
+        },
+        {
+          "title": "BCTC Hợp nhất quý 3 năm 2026",
+          "date": "02/11/2026",
+          "doc_url": "https://static2.vietstock.vn/data/UPCOM/2026/BCTC/VN/QUY%203/VGG_Baocaotaichinh_Q3_2026_Hopnhat.zip?ver=e00eb636",
+          "bctc_type": "HOP_NHAT"
+        }
+      ],
+      "meta": {
+        "stt": 271,
+        "ticker": "VGG",
+        "name": "Tổng Công Ty Cổ phần May Việt Tiến",
+        "exchange": "UPCOM",
+        "batch": "Distill_Batch_12_Ngay_30_30.json",
+        "dot": "Batch 12 (30/10)"
+      }
+    },
+    "VGS": {
+      "has_q3": true,
+      "bctc_type": "HOP_NHAT",
+      "title": "BCTC Hợp nhất quý 3 năm 2026",
+      "date": "31/10/2026",
+      "doc_url": "https://static2.vietstock.vn/data/HNX/2026/BCTC/VN/QUY%203/VGS_Baocaotaichinh_Q3_2026_Hopnhat.zip?ver=aab02219",
+      "all_docs": [
+        {
+          "title": "BCTC Công ty mẹ quý 3 năm 2026",
+          "date": "31/10/2026",
+          "doc_url": "https://static2.vietstock.vn/data/HNX/2026/BCTC/VN/QUY%203/VGS_Baocaotaichinh_Q3_2026_Congtyme.zip",
+          "bctc_type": "RIENG"
+        },
+        {
+          "title": "BCTC Hợp nhất quý 3 năm 2026",
+          "date": "31/10/2026",
+          "doc_url": "https://static2.vietstock.vn/data/HNX/2026/BCTC/VN/QUY%203/VGS_Baocaotaichinh_Q3_2026_Hopnhat.zip?ver=aab02219",
+          "bctc_type": "HOP_NHAT"
+        }
+      ],
+      "meta": {
+        "stt": 272,
+        "ticker": "VGS",
+        "name": "Công ty Cổ phần Ống thép Việt - Đức VG PIPE",
+        "exchange": "HNX",
+        "batch": "Distill_Batch_12_Ngay_30_30.json",
+        "dot": "Batch 12 (30/10)"
+      }
+    },
+    "VGT": {
+      "has_q3": true,
+      "bctc_type": "HOP_NHAT",
+      "title": "BCTC Hợp nhất quý 3 năm 2026",
+      "date": "31/10/2026",
+      "doc_url": "https://static2.vietstock.vn/data/UPCOM/2026/BCTC/VN/QUY%203/VGT_Baocaotaichinh_Q3_2026_Hopnhat.zip?ver=6ae50a21",
+      "all_docs": [
+        {
+          "title": "BCTC Công ty mẹ quý 3 năm 2026",
+          "date": "31/10/2026",
+          "doc_url": "https://static2.vietstock.vn/data/HNX/2026/BCTC/VN/QUY%203/VGT_Baocaotaichinh_Q3_2026_Congtyme.zip",
+          "bctc_type": "RIENG"
+        },
+        {
+          "title": "BCTC Hợp nhất quý 3 năm 2026",
+          "date": "31/10/2026",
+          "doc_url": "https://static2.vietstock.vn/data/UPCOM/2026/BCTC/VN/QUY%203/VGT_Baocaotaichinh_Q3_2026_Hopnhat.zip?ver=6ae50a21",
+          "bctc_type": "HOP_NHAT"
+        }
+      ],
+      "meta": {
+        "stt": 273,
+        "ticker": "VGT",
+        "name": "Tập đoàn Dệt May Việt Nam",
+        "exchange": "UPCOM",
+        "batch": "Distill_Batch_12_Ngay_30_30.json",
+        "dot": "Batch 12 (30/10)"
+      }
+    },
+    "VLC": {
+      "has_q3": true,
+      "bctc_type": "HOP_NHAT",
+      "title": "BCTC Hợp nhất quý 3 năm 2026",
+      "date": "03/11/2026",
+      "doc_url": "https://static2.vietstock.vn/data/UPCOM/2026/BCTC/VN/QUY%203/VLC_Baocaotaichinh_Q3_2026_Hopnhat.zip?ver=f8b01d48",
+      "all_docs": [
+        {
+          "title": "BCTC Hợp nhất quý 3 năm 2026",
+          "date": "03/11/2026",
+          "doc_url": "https://static2.vietstock.vn/data/UPCOM/2026/BCTC/VN/QUY%203/VLC_Baocaotaichinh_Q3_2026_Hopnhat.zip?ver=f8b01d48",
+          "bctc_type": "HOP_NHAT"
+        },
+        {
+          "title": "BCTC Công ty mẹ quý 3 năm 2026",
+          "date": "30/10/2026",
+          "doc_url": "https://static2.vietstock.vn/data/HNX/2026/BCTC/VN/QUY%203/VLC_Baocaotaichinh_Q3_2026_Congtyme.zip",
+          "bctc_type": "RIENG"
+        }
+      ],
+      "meta": {
+        "stt": 274,
+        "ticker": "VLC",
+        "name": "Tổng Công ty Chăn nuôi Việt Nam - Công ty Cổ phần",
+        "exchange": "UPCOM",
+        "batch": "Distill_Batch_12_Ngay_30_30.json",
+        "dot": "Batch 12 (30/10)"
+      }
+    },
+    "VNF": {
+      "has_q3": true,
+      "bctc_type": "HOP_NHAT",
+      "title": "BCTC Hợp nhất quý 3 năm 2026",
+      "date": "31/10/2026",
+      "doc_url": "https://static2.vietstock.vn/data/HNX/2026/BCTC/VN/QUY%203/VNF_Baocaotaichinh_Q3_2026_Hopnhat.zip?ver=ca76e5a4",
+      "all_docs": [
+        {
+          "title": "BCTC Công ty mẹ quý 3 năm 2026",
+          "date": "31/10/2026",
+          "doc_url": "https://static2.vietstock.vn/data/HNX/2026/BCTC/VN/QUY%203/VNF_Baocaotaichinh_Q3_2026_Congtyme.zip",
+          "bctc_type": "RIENG"
+        },
+        {
+          "title": "BCTC Hợp nhất quý 3 năm 2026",
+          "date": "31/10/2026",
+          "doc_url": "https://static2.vietstock.vn/data/HNX/2026/BCTC/VN/QUY%203/VNF_Baocaotaichinh_Q3_2026_Hopnhat.zip?ver=ca76e5a4",
+          "bctc_type": "HOP_NHAT"
+        }
+      ],
+      "meta": {
+        "stt": 275,
+        "ticker": "VNF",
+        "name": "Công ty Cổ phần Vinafreight",
+        "exchange": "HNX",
+        "batch": "Distill_Batch_12_Ngay_30_30.json",
+        "dot": "Batch 12 (30/10)"
+      }
+    },
+    "VNL": {
+      "has_q3": true,
+      "bctc_type": "DAY_DU",
+      "title": "BCTC quý 3 năm 2026",
+      "date": "31/10/2026",
+      "doc_url": "https://static2.vietstock.vn/data/HOSE/2026/BCTC/VN/QUY%203/VNL_Baocaotaichinh_Q3_2026.pdf",
+      "all_docs": [
+        {
+          "title": "BCTC quý 3 năm 2026",
+          "date": "31/10/2026",
+          "doc_url": "https://static2.vietstock.vn/data/HOSE/2026/BCTC/VN/QUY%203/VNL_Baocaotaichinh_Q3_2026.pdf",
+          "bctc_type": "DAY_DU"
+        }
+      ],
+      "meta": {
+        "stt": 276,
+        "ticker": "VNL",
+        "name": "Công ty Cổ phần Logistics Vinalink",
+        "exchange": "HOSE",
+        "batch": "Distill_Batch_12_Ngay_30_30.json",
+        "dot": "Batch 12 (30/10)"
+      }
+    },
+    "VNR": {
+      "has_q3": true,
+      "bctc_type": "HOP_NHAT",
+      "title": "BCTC Hợp nhất quý 3 năm 2026",
+      "date": "28/10/2026",
+      "doc_url": "https://static2.vietstock.vn/data/HNX/2026/BCTC/VN/QUY%203/VNR_Baocaotaichinh_Q3_2026_Hopnhat.pdf?ver=243ce7d3",
+      "all_docs": [
+        {
+          "title": "BCTC Công ty mẹ quý 3 năm 2026",
+          "date": "28/10/2026",
+          "doc_url": "https://static2.vietstock.vn/data/HNX/2026/BCTC/VN/QUY%203/VNR_Baocaotaichinh_Q3_2026_Congtyme.pdf?ver=0150cd9f",
+          "bctc_type": "RIENG"
+        },
+        {
+          "title": "BCTC Hợp nhất quý 3 năm 2026",
+          "date": "28/10/2026",
+          "doc_url": "https://static2.vietstock.vn/data/HNX/2026/BCTC/VN/QUY%203/VNR_Baocaotaichinh_Q3_2026_Hopnhat.pdf?ver=243ce7d3",
+          "bctc_type": "HOP_NHAT"
+        }
+      ],
+      "meta": {
+        "stt": 277,
+        "ticker": "VNR",
+        "name": "Tổng Công ty Cổ phần Tái bảo hiểm Quốc gia Việt Nam",
+        "exchange": "HNX",
+        "batch": "Distill_Batch_12_Ngay_30_30.json",
+        "dot": "Batch 12 (30/10)"
+      }
+    },
+    "VNT": {
+      "has_q3": true,
+      "bctc_type": "HOP_NHAT",
+      "title": "BCTC Hợp nhất quý 3 năm 2026",
+      "date": "31/10/2026",
+      "doc_url": "https://static2.vietstock.vn/data/HNX/2026/BCTC/VN/QUY%203/VNT_Baocaotaichinh_Q3_2026_Hopnhat.zip?ver=7547cdec",
+      "all_docs": [
+        {
+          "title": "Nghị quyết số 10/2026/NQ-HĐQT ngày 27 tháng 10 năm 2026 tại Hà Nội của Hội đồng quản trị Công ty Cổ phần Giao nhận Vận tải Ngoại thương về việc thông qua báo cáo kết quả kinh doanh quý III, 9 tháng đầu năm 2026, phương án kinh doanh quý IV năm 2026 và phê duyệt phương án mua trái phiếu VietinBank, sử dụng làm tài sản bảo đảm cho các khoản vay vốn lưu động tại VietinBank",
+          "date": "29/10/2026",
+          "doc_url": "https://static2.vietstock.vn/data/HNX/2026/NGHI%20QUYET%20HDQT/VN/3_vnt_2026_10_28_c0c17bf_vnt_board_resolution_q3_2026_en_sign%28NhieuFile%29.zip?ver=6da4a06a",
+          "bctc_type": "DAY_DU"
+        },
+        {
+          "title": "BCTC Công ty mẹ quý 3 năm 2026",
+          "date": "31/10/2026",
+          "doc_url": "https://static2.vietstock.vn/data/HNX/2026/BCTC/VN/QUY%203/VNT_Baocaotaichinh_Q3_2026_Congtyme.zip",
+          "bctc_type": "RIENG"
+        },
+        {
+          "title": "BCTC Hợp nhất quý 3 năm 2026",
+          "date": "31/10/2026",
+          "doc_url": "https://static2.vietstock.vn/data/HNX/2026/BCTC/VN/QUY%203/VNT_Baocaotaichinh_Q3_2026_Hopnhat.zip?ver=7547cdec",
+          "bctc_type": "HOP_NHAT"
+        }
+      ],
+      "meta": {
+        "stt": 278,
+        "ticker": "VNT",
+        "name": "Công ty Cổ phần Giao nhận Vận tải Ngoại Thương",
+        "exchange": "HNX",
+        "batch": "Distill_Batch_12_Ngay_30_30.json",
+        "dot": "Batch 12 (30/10)"
+      }
+    }
+  }
+}
