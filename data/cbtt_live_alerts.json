@@ -1,58 +1,16 @@
 [
   {
-    "ticker": "MDG",
-    "title": "MDG: Nghị quyết và Biên bản kiểm phiếu bằng hình thức lấy ý kiến cổ đông bằng văn bản",
-    "url": "https://vietstock.vn/2026/11/mdg-nghi-quyet-va-bien-ban-kiem-phieu-bang-hinh-thuc-lay-y-kien-co-dong-bang-van-ban-830-1512634.htm",
-    "date": "06/11/2026 10:41",
+    "ticker": "DRI",
+    "title": "DRI: CBTT Quyết định xử phạt vi phạm hành chính của Thuế tỉnh Đắk Lắk",
+    "url": "https://vietstock.vn/2026/11/dri-cbtt-quyet-dinh-xu-phat-vi-pham-hanh-chinh-cua-thue-tinh-dak-lak-830-1512403.htm",
+    "date": "06/11/2026 07:21",
     "source": "Vietstock_News",
-    "category": "EGM_EXTRAORDINARY",
-    "category_label": "ĐHĐCĐ BẤT THƯỜNG / LẤY Ý KIẾN",
-    "color": 16096779,
-    "icon": "🏛️",
-    "unique_id": "vts_news_1512634",
-    "company_name": "Công ty Cổ phần Miền Đông",
-    "exchange": "HOSE"
-  },
-  {
-    "ticker": "HMC",
-    "title": "HMC: Nghị quyết HĐQT về việc chấp thuận giao dịch bán hàng hóa với tổ chức có liên quan của công ty mẹ",
-    "url": "https://vietstock.vn/2026/11/hmc-nghi-quyet-hdqt-ve-viec-chap-thuan-giao-dich-ban-hang-hoa-voi-to-chuc-co-lien-quan-cua-cong-ty-me-737-1512644.htm",
-    "date": "06/11/2026 10:49",
-    "source": "Vietstock_News",
-    "category": "INSIDER_TRADE",
-    "category_label": "GIAO DỊCH CỔ ĐÔNG / NỘI BỘ",
-    "color": 3900150,
-    "icon": "👥",
-    "unique_id": "vts_news_1512644",
-    "company_name": "Công ty Cổ phần Kim khí Thành phố Hồ Chí Minh - VNSTEEL",
-    "exchange": "HOSE"
-  },
-  {
-    "ticker": "ANT",
-    "title": "ANT: Nghị quyết HĐQT số 82. 83 ngày 06/11/2026",
-    "url": "https://vietstock.vn/2026/11/ant-nghi-quyet-hdqt-so-82-83-ngay-06-11-2026-737-1512648.htm",
-    "date": "06/11/2026 10:57",
-    "source": "Vietstock_News",
-    "category": "RESOLUTION_HDQT",
-    "category_label": "NGHỊ QUYẾT HĐQT",
-    "color": 9133302,
-    "icon": "📜",
-    "unique_id": "vts_news_1512648",
-    "company_name": "Công ty Cổ phần Rau quả Thực phẩm An Giang",
-    "exchange": "HOSE"
-  },
-  {
-    "ticker": "LSS",
-    "title": "Thông Tin Cổ Đông CBTT Thông báo thay đổi giấy chứng nhận đăng ký doanh nghiệp 06/11/2026",
-    "url": "https://lasuco.vn/cbtt-thong-bao-thay-doi-giay-chung-nhan-dang-ky-doanh-nghiep/",
-    "date": "06/11/2026",
-    "source": "Company_Web",
     "category": "EXTRAORDINARY_EVENT",
     "category_label": "CÔNG BỐ BẤT THƯỜNG",
     "color": 15485081,
     "icon": "⚠️",
-    "unique_id": "web_3dd8b5388f75",
-    "company_name": "Công ty Cổ phần Mía đường Lam Sơn",
-    "exchange": "HOSE"
+    "unique_id": "vts_news_1512403",
+    "company_name": "Công ty Cổ phần Đầu tư Cao su Đắk Lắk",
+    "exchange": "UPCOM"
   }
 ]
