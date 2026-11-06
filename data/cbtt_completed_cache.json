@@ -1788,5 +1788,45 @@
     "url": "https://vietstock.vn/2026/11/vnt-cong-ty-co-phan-transimex-nguoi-co-lien-quan-den-uy-vien-hdqt-dang-ky-mua-100000-cp-739-1512499.htm",
     "source": "Vietstock_News",
     "alerted_at": "2026-11-06 09:46:22"
+  },
+  "vts_news_1512634": {
+    "ticker": "MDG",
+    "category": "EGM_EXTRAORDINARY",
+    "category_label": "ĐHĐCĐ BẤT THƯỜNG / LẤY Ý KIẾN",
+    "title": "MDG: Nghị quyết và Biên bản kiểm phiếu bằng hình thức lấy ý kiến cổ đông bằng văn bản",
+    "date": "06/11/2026 10:41",
+    "url": "https://vietstock.vn/2026/11/mdg-nghi-quyet-va-bien-ban-kiem-phieu-bang-hinh-thuc-lay-y-kien-co-dong-bang-van-ban-830-1512634.htm",
+    "source": "Vietstock_News",
+    "alerted_at": "2026-11-06 11:26:41"
+  },
+  "vts_news_1512644": {
+    "ticker": "HMC",
+    "category": "INSIDER_TRADE",
+    "category_label": "GIAO DỊCH CỔ ĐÔNG / NỘI BỘ",
+    "title": "HMC: Nghị quyết HĐQT về việc chấp thuận giao dịch bán hàng hóa với tổ chức có liên quan của công ty mẹ",
+    "date": "06/11/2026 10:49",
+    "url": "https://vietstock.vn/2026/11/hmc-nghi-quyet-hdqt-ve-viec-chap-thuan-giao-dich-ban-hang-hoa-voi-to-chuc-co-lien-quan-cua-cong-ty-me-737-1512644.htm",
+    "source": "Vietstock_News",
+    "alerted_at": "2026-11-06 11:26:41"
+  },
+  "vts_news_1512648": {
+    "ticker": "ANT",
+    "category": "RESOLUTION_HDQT",
+    "category_label": "NGHỊ QUYẾT HĐQT",
+    "title": "ANT: Nghị quyết HĐQT số 82. 83 ngày 06/11/2026",
+    "date": "06/11/2026 10:57",
+    "url": "https://vietstock.vn/2026/11/ant-nghi-quyet-hdqt-so-82-83-ngay-06-11-2026-737-1512648.htm",
+    "source": "Vietstock_News",
+    "alerted_at": "2026-11-06 11:26:42"
+  },
+  "web_3dd8b5388f75": {
+    "ticker": "LSS",
+    "category": "EXTRAORDINARY_EVENT",
+    "category_label": "CÔNG BỐ BẤT THƯỜNG",
+    "title": "Thông Tin Cổ Đông CBTT Thông báo thay đổi giấy chứng nhận đăng ký doanh nghiệp 06/11/2026",
+    "date": "06/11/2026",
+    "url": "https://lasuco.vn/cbtt-thong-bao-thay-doi-giay-chung-nhan-dang-ky-doanh-nghiep/",
+    "source": "Company_Web",
+    "alerted_at": "2026-11-06 11:26:43"
   }
 }
