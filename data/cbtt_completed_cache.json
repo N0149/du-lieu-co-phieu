@@ -1708,5 +1708,85 @@
     "url": "https://vietstock.vn/2026/11/bmp-thong-bao-ngay-dkcc-chi-tra-tam-ung-co-tuc-dot-1-nam-2026-bang-tien-mat-738-1512377.htm",
     "source": "Vietstock_News",
     "alerted_at": "2026-11-06 08:19:42"
+  },
+  "vts_news_1512483": {
+    "ticker": "UDJ",
+    "category": "EGM_EXTRAORDINARY",
+    "category_label": "ĐHĐCĐ BẤT THƯỜNG / LẤY Ý KIẾN",
+    "title": "UDJ: Ngày đăng ký cuối cùng lấy ý kiến cổ đông bằng văn bản",
+    "date": "06/11/2026 09:09",
+    "url": "https://vietstock.vn/2026/11/udj-ngay-dang-ky-cuoi-cung-lay-y-kien-co-dong-bang-van-ban-737-1512483.htm",
+    "source": "Vietstock_News",
+    "alerted_at": "2026-11-06 09:46:17"
+  },
+  "vts_doc_1e08fd5ca275": {
+    "ticker": "DHC",
+    "category": "EGM_EXTRAORDINARY",
+    "category_label": "ĐHĐCĐ BẤT THƯỜNG / LẤY Ý KIẾN",
+    "title": "Tài liệu đại hội đồng cổ đông bất thường năm 2026",
+    "date": "06/11/2026 09:07",
+    "url": "https://static2.vietstock.vn/data/HOSE/2026/TAI%20LIEU%20DHCD/VN/DHC_TAILIEU_DHDCD%20bat%20thuong_2026_1.pdf?ver=b9267c8b",
+    "source": "Vietstock_Document",
+    "alerted_at": "2026-11-06 09:46:17"
+  },
+  "vts_news_1512494": {
+    "ticker": "HPA",
+    "category": "DIVIDEND_RIGHTS",
+    "category_label": "CỔ TỨC & QUYỀN DOANH NGHIỆP",
+    "title": "HPA: Báo cáo tiến độ sử dụng vốn thu được từ đợt chào bán",
+    "date": "06/11/2026 09:19",
+    "url": "https://vietstock.vn/2026/11/hpa-bao-cao-tien-do-su-dung-von-thu-duoc-tu-dot-chao-ban-739-1512494.htm",
+    "source": "Vietstock_News",
+    "alerted_at": "2026-11-06 09:46:18"
+  },
+  "vts_news_1512471": {
+    "ticker": "IDC",
+    "category": "INSIDER_BUY",
+    "category_label": "CỔ ĐÔNG NỘI BỘ MUA VÀO",
+    "title": "IDC: Đặng Việt Dũng - người có liên quan đến Tổng Giám đốc; Ủy viên HĐQT - đăng ký mua 4,400,000 CP",
+    "date": "06/11/2026 08:45",
+    "url": "https://vietstock.vn/2026/11/idc-dang-viet-dung-nguoi-co-lien-quan-den-tong-giam-doc;-uy-vien-hdqt-dang-ky-mua-4400000-cp-739-1512471.htm",
+    "source": "Vietstock_News",
+    "alerted_at": "2026-11-06 09:46:19"
+  },
+  "vts_news_1512511": {
+    "ticker": "LLM",
+    "category": "RESOLUTION_HDQT",
+    "category_label": "NGHỊ QUYẾT HĐQT",
+    "title": "LLM: Nghị quyết Hội đồng quản trị",
+    "date": "06/11/2026 09:32",
+    "url": "https://vietstock.vn/2026/11/llm-nghi-quyet-hoi-dong-quan-tri-737-1512511.htm",
+    "source": "Vietstock_News",
+    "alerted_at": "2026-11-06 09:46:20"
+  },
+  "vts_news_1512470": {
+    "ticker": "LSS",
+    "category": "EXTRAORDINARY_EVENT",
+    "category_label": "CÔNG BỐ BẤT THƯỜNG",
+    "title": "LSS: Giấy chứng nhận đăng ký doanh nghiệp thay đổi lần thứ 15",
+    "date": "06/11/2026 08:33",
+    "url": "https://vietstock.vn/2026/11/lss-giay-chung-nhan-dang-ky-doanh-nghiep-thay-doi-lan-thu-15-737-1512470.htm",
+    "source": "Vietstock_News",
+    "alerted_at": "2026-11-06 09:46:21"
+  },
+  "vts_news_1512500": {
+    "ticker": "VNF",
+    "category": "INSIDER_BUY",
+    "category_label": "CỔ ĐÔNG NỘI BỘ MUA VÀO",
+    "title": "VNF: Công ty cổ phần Transimex - người có liên quan đến Ủy viên HĐQT - đăng ký mua 1,000,000 CP",
+    "date": "06/11/2026 09:20",
+    "url": "https://vietstock.vn/2026/11/vnf-cong-ty-co-phan-transimex-nguoi-co-lien-quan-den-uy-vien-hdqt-dang-ky-mua-1000000-cp-739-1512500.htm",
+    "source": "Vietstock_News",
+    "alerted_at": "2026-11-06 09:46:21"
+  },
+  "vts_news_1512499": {
+    "ticker": "VNT",
+    "category": "INSIDER_BUY",
+    "category_label": "CỔ ĐÔNG NỘI BỘ MUA VÀO",
+    "title": "VNT: Công ty cổ phần Transimex - người có liên quan đến Ủy viên HĐQT - đăng ký mua 100,000 CP",
+    "date": "06/11/2026 09:22",
+    "url": "https://vietstock.vn/2026/11/vnt-cong-ty-co-phan-transimex-nguoi-co-lien-quan-den-uy-vien-hdqt-dang-ky-mua-100000-cp-739-1512499.htm",
+    "source": "Vietstock_News",
+    "alerted_at": "2026-11-06 09:46:22"
   }
 }
