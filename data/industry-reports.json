@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-11-06T19:49:05.248Z",
-  "total": 416,
+  "updatedAt": "2026-11-07T17:56:02.962Z",
+  "total": 417,
   "availableSectors": [
     "Bán lẻ",
     "Bảo hiểm",
@@ -672,6 +672,23 @@
       "targetPrice": null
     },
     {
+      "id": "wd_ind_25964",
+      "slug": "phan-bon-gia-ure-tang-nhe-nho-gia-dau-cao-hon-wd_ind_25964",
+      "title": "Giá urê tăng nhẹ nhờ giá dầu cao hơn",
+      "source": "Vietcap",
+      "date": "2026-10-16",
+      "displayDate": "16/10/2026",
+      "scope": "sector",
+      "sectorName": "Phân bón",
+      "symbol": null,
+      "description": "Giá urê tăng nhẹ nhờ giá dầu cao hơn",
+      "pageCount": 0,
+      "downloadUrl": "https://cdn02.wigroup.vn/baocaophantich/ar_26167_Vietcap_2026-10-16.pdf",
+      "thumbnailUrl": "",
+      "recommendation": null,
+      "targetPrice": null
+    },
+    {
       "id": "22534",
       "slug": "bao-cao-nganh-san-xuat-phan-bon-gia-ure-tang-nhe-nho-gia-dau-cao-hon",
       "title": "Báo cáo ngành Sản xuất phân bón: Giá urê tăng nhẹ nhờ giá dầu cao hơn",
@@ -1250,18 +1267,18 @@
       "targetPrice": null
     },
     {
-      "id": "wd_ind_25789",
-      "slug": "ngan-hang-tac-dong-thong-tu-50-sua-doi-thong-tu-22-wd_ind_25789",
-      "title": "Tác động Thông tư 50 sửa đổi Thông tư 22",
-      "source": "ACBS",
+      "id": "wd_ind_25791",
+      "slug": "bat-dong-san-khu-cong-nghiep-cap-nhat-trien-vong-nganh-bat-dong-san-khu-cong-nghiep-wd_ind_25791",
+      "title": "Cập nhật triển vọng ngành Bất động sản Khu công nghiệp",
+      "source": "GTJA",
       "date": "2026-10-01",
       "displayDate": "01/10/2026",
       "scope": "sector",
-      "sectorName": "Ngân hàng",
+      "sectorName": "Bất động sản khu công nghiệp",
       "symbol": null,
-      "description": "Tác động Thông tư 50 sửa đổi Thông tư 22",
+      "description": "Cập nhật triển vọng ngành Bất động sản Khu công nghiệp",
       "pageCount": 0,
-      "downloadUrl": "https://cdn02.wigroup.vn/baocaophantich/ar_25693_ACBS_2026-10-01.pdf",
+      "downloadUrl": "https://cdn02.wigroup.vn/baocaophantich/ar_25690_GTJA_2026-10-01.pdf",
       "thumbnailUrl": "",
       "recommendation": null,
       "targetPrice": null
