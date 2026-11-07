@@ -79,9 +79,39 @@ const MCP_TOOLS = [
     desc: 'Tra cứu giá mục tiêu, upside tiềm năng, luận điểm đầu tư và khuyến nghị mua/bán từ kho báo cáo phân tích độc quyền.',
     badge: 'Analyst Research',
   },
+  {
+    name: 'bo_loc_co_phieu',
+    title: 'Bộ lọc Cổ phiếu Thông minh (Screener)',
+    desc: 'Sàng lọc 1.530+ mã theo Ngành, ROE, P/E, P/B, Cổ tức, Quỹ KTPL, Vốn hóa và Điểm AI 360.',
+    badge: 'Smart Screener',
+  },
+  {
+    name: 'so_sanh_co_phieu',
+    title: 'So sánh Đối đầu Cổ phiếu (Peer Comparison)',
+    desc: 'So sánh trực tiếp 2 - 5 mã cùng ngành: Định giá, Biên lợi nhuận, Đòn bẩy nợ, Cổ tức và Quỹ KTPL.',
+    badge: 'Peer Benchmarking',
+  },
+  {
+    name: 'su_kien_va_cong_bo_thong_tin',
+    title: 'Lịch Cổ tức, Giao dịch Nội bộ & Công bố TT',
+    desc: 'Tra cứu thông báo chia cổ tức (tiền/cổ phiếu, GDKHQ), giao dịch lãnh đạo mua/bán và sự kiện nóng toàn thị trường.',
+    badge: 'Corporate Actions',
+  },
 ]
 
 const SAMPLE_PROMPTS = [
+  {
+    title: 'Sàng lọc top cổ phiếu Cảng biển',
+    prompt: 'Lọc cho tôi các cổ phiếu ngành Cảng biển có ROE > 15%, P/E < 10 và tỷ suất cổ tức tiền mặt > 4%.',
+  },
+  {
+    title: 'So sánh đối đầu HPG vs NKG vs HSG',
+    prompt: 'So sánh đối đầu toàn diện 3 mã thép HPG, HSG và NKG: Biên lãi gộp, áp lực nợ vay và định giá hiện tại.',
+  },
+  {
+    title: 'Tra cứu lịch cổ tức & giao dịch nội bộ',
+    prompt: 'Tra cứu lịch chia cổ tức và các giao dịch mua bán của lãnh đạo hoặc cổ đông lớn của VNM trong thời gian gần đây.',
+  },
   {
     title: 'Soi chất lượng LNST & dòng tiền CFO',
     prompt: 'Soi chất lượng lợi nhuận và dòng tiền kinh doanh CFO của MWG trong 4 năm gần nhất. Tiền có thực về tài khoản không?',
@@ -95,16 +125,8 @@ const SAMPLE_PROMPTS = [
     prompt: 'Bóc tách cơ cấu nợ vay ngắn hạn, dài hạn và chi phí lãi vay của HPG. Đánh giá sức khỏe tài chính hiện tại.',
   },
   {
-    title: 'Doanh nghiệp cảng biển nhiều tiền mặt',
-    prompt: 'Trong ngành Cảng biển, doanh nghiệp nào có lượng tiền mặt ròng dồi dào, nợ vay thấp và dòng tiền ổn định?',
-  },
-  {
     title: 'Định giá RNAV & tài sản dở dang',
     prompt: 'Bóc tách chi phí xây dựng cơ bản dở dang và tài sản ngầm của KBC, tính định giá RNAV trên mỗi cổ phiếu.',
-  },
-  {
-    title: 'Top cổ phiếu upside cao trong kho báo cáo',
-    prompt: 'Top 5 cổ phiếu có upside cao nhất và biên an toàn tốt nhất trong kho báo cáo phân tích của dulieudautu.com?',
   },
 ]
 
