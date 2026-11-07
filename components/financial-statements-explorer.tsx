@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useMemo, useEffect, Fragment } from "react";
+import { useState, useMemo, useEffect, useRef, Fragment } from "react";
 import { createPortal } from "react-dom";
 import { useSearchParams } from "next/navigation";
 import {
@@ -32,6 +32,7 @@ import {
   ReferenceLine,
 } from "recharts";
 import { cn } from "@/lib/utils";
+import { ChartWatermark } from "@/components/ChartWatermark";
 import { StockFinancialYear } from "@/lib/longlivestock";
 import type { RawFinancialStatementData } from "@/lib/financial-statements-db";
 import { WiDataFinancialRatiosDashboard } from "@/components/stock/WiDataFinancialRatiosDashboard";
@@ -54,6 +55,36 @@ interface FinancialStatementsExplorerProps {
   onSelectTab?: (tab: any) => void;
 }
 
+
+/**
+ * Nhận diện doanh nghiệp chỉ công bố BCTC theo năm (hoặc số liệu quý đã ngừng/lạc hậu từ nhiều năm trước).
+ * Ví dụ điển hình: NAS (quý dừng ở 2017, năm có đến 2025), VES, GVT, HLB...
+ * Giúp tự động mở BCTC và Biểu đồ theo Năm mà không cần người dùng chọn thủ công.
+ */
+export function isAnnualFinancialCompany(
+  quarterData?: { fiscalDates?: string[] } | null,
+  annualData?: { fiscalDates?: string[] } | null
+): boolean {
+  const qDates = quarterData?.fiscalDates || [];
+  const aDates = annualData?.fiscalDates || [];
+  const qLen = qDates.length;
+  const aLen = aDates.length;
+
+  if (aLen === 0) return false;
+  if (qLen === 0) return true;
+
+  const latestQ = qDates[qLen - 1];
+  const latestA = aDates[aLen - 1];
+  const qYear = parseInt(latestQ.slice(0, 4), 10);
+  const aYear = parseInt(latestA.slice(0, 4), 10);
+
+  // Năm của báo cáo năm mới hơn năm của báo cáo quý (ví dụ NAS: quý dừng ở 2017, năm có đến 2025)
+  if (aYear > qYear) return true;
+  // Dữ liệu quý quá ít (<= 4 kỳ) trong khi năm có nhiều kỳ (>= 4 kỳ) và năm báo cáo năm >= năm quý
+  if (qLen <= 4 && aLen >= 4 && aYear >= qYear) return true;
+
+  return false;
+}
 
 function formatPeriodLabel(isoDate: string, mode: "quarter" | "annual"): string {
   if (!isoDate) return "";
@@ -971,7 +1002,8 @@ function FinancialItemChartModal({
         </div>
 
         {/* Khung Biểu đồ Recharts */}
-        <div className="h-[320px] sm:h-[350px] w-full rounded-xl border border-slate-800/80 bg-[#0f141d] p-3 pt-4">
+        <div className="relative h-[320px] sm:h-[350px] w-full rounded-xl border border-slate-800/80 bg-[#0f141d] p-3 pt-4">
+          <ChartWatermark domain="dulieudautu.com" brandName="Dữ Liệu Đầu Tư" size="md" />
           <ResponsiveContainer width="100%" height="100%">
             <BarChart data={chartData} margin={{ top: 15, right: 15, left: -5, bottom: 5 }}>
               <CartesianGrid strokeDasharray="3 3" stroke="#334155" opacity={0.25} />
@@ -1049,12 +1081,26 @@ export function FinancialStatementsExplorer({
 }: FinancialStatementsExplorerProps) {
   const searchParams = useSearchParams();
   const urlSubtab = searchParams?.get("subtab");
+  const urlPeriod = searchParams?.get("period");
   const [activeTab, setActiveTab] = useState<FinancialTab>(
     urlSubtab === "lctt" || urlSubtab === "kqkd" || urlSubtab === "cdkt" || urlSubtab === "ratios" || urlSubtab === "lctt_direct"
       ? (urlSubtab as FinancialTab)
       : "cdkt"
   );
-  const [periodMode, setPeriodMode] = useState<"quarter" | "annual">("quarter");
+
+  // Tự động nhận diện doanh nghiệp báo cáo theo năm (ví dụ NAS chỉ có số liệu quý cũ từ 2017, trong khi số liệu năm cập nhật đến 2025)
+  const isAnnualDefault = useMemo(() => {
+    if (urlPeriod === "annual") return true;
+    if (urlPeriod === "quarter") return false;
+    return isAnnualFinancialCompany(initialData, initialAnnualData);
+  }, [urlPeriod, initialData, initialAnnualData]);
+
+  const [periodMode, setPeriodMode] = useState<"quarter" | "annual">(() => {
+    return isAnnualDefault ? "annual" : "quarter";
+  });
+
+  const userManuallyChangedPeriodRef = useRef(false);
+  const lastTickerRef = useRef(ticker);
   const [periodCount, setPeriodCount] = useState<number>(5);
   const [dateOffset, setDateOffset] = useState<number>(0);
   const [showYoY, setShowYoY] = useState<boolean>(false); // Mặc định tắt để bảng gọn gàng
@@ -1134,6 +1180,25 @@ export function FinancialStatementsExplorer({
       setAnnualData(initialAnnualData);
     }
   }, [initialAnnualData]);
+
+  // Khi đổi ticker: reset cờ can thiệp thủ công và tự động chọn chế độ phù hợp với mã mới
+  useEffect(() => {
+    if (lastTickerRef.current !== ticker) {
+      lastTickerRef.current = ticker;
+      userManuallyChangedPeriodRef.current = false;
+      const shouldBeAnnual = isAnnualFinancialCompany(initialData, initialAnnualData);
+      setPeriodMode(shouldBeAnnual ? "annual" : "quarter");
+    }
+  }, [ticker, initialData, initialAnnualData]);
+
+  // Nếu ban đầu client chưa có initialData nhưng sau khi nạp dữ liệu nhận diện là công ty báo cáo năm
+  useEffect(() => {
+    if (!userManuallyChangedPeriodRef.current && !urlPeriod) {
+      if (isAnnualFinancialCompany(quarterData, annualData) && periodMode !== "annual") {
+        setPeriodMode("annual");
+      }
+    }
+  }, [quarterData, annualData, urlPeriod, periodMode]);
 
   const statementData = periodMode === "quarter" ? quarterData : annualData;
 
@@ -1588,7 +1653,10 @@ export function FinancialStatementsExplorer({
                       <div className="relative">
                         <select
                           value={periodMode}
-                          onChange={(e) => setPeriodMode(e.target.value as "quarter" | "annual")}
+                          onChange={(e) => {
+                            userManuallyChangedPeriodRef.current = true;
+                            setPeriodMode(e.target.value as "quarter" | "annual");
+                          }}
                           className="h-6.5 appearance-none rounded border border-slate-700 bg-[#252f3f] pl-2.5 pr-6 text-xs font-semibold text-slate-200 outline-none hover:border-slate-500 cursor-pointer"
                         >
                           <option value="quarter">Theo quý</option>

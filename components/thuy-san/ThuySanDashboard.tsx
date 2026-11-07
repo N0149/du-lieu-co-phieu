@@ -9,6 +9,7 @@ import {
   SeafoodStockIntel,
 } from '@/lib/thuy-san-data';
 import { cn } from '@/lib/utils';
+import { ChartWatermark } from '@/components/ChartWatermark';
 import {
   ResponsiveContainer,
   BarChart,
@@ -780,7 +781,8 @@ export function ThuySanDashboard() {
             </div>
 
             {/* Recharts Price Trends Line Chart */}
-            <div className="h-72 w-full pt-2">
+            <div className="relative h-72 w-full pt-2">
+              <ChartWatermark domain="dulieudautu.com" brandName="Dữ Liệu Đầu Tư" size="md" />
               <ResponsiveContainer width="100%" height="100%">
                 <LineChart data={priceChartData} margin={{ top: 10, right: 20, left: 10, bottom: 5 }}>
                   <CartesianGrid strokeDasharray="3 3" stroke="#252a36" />

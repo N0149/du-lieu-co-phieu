@@ -1,0 +1,3776 @@
+{
+  "meta": {
+    "group": "Sản xuất và Dịch vụ",
+    "groupKey": "sanxuatvadichvu",
+    "name": "Chỉ số sản xuất công nghiệp (IIP)",
+    "slug": "iip",
+    "apiPath": "sanxuatvadichvu/iip",
+    "defaultTimeFrame": "monthly",
+    "defaultValueType": "yoy",
+    "supportedTimeFrames": [
+      "monthly"
+    ],
+    "supportedValueTypes": [
+      "yoy"
+    ],
+    "unit": "%",
+    "description": "Tốc độ tăng trưởng chỉ số sản xuất công nghiệp toàn ngành.",
+    "updatedAt": "2026-09-19T10:14:33.569Z",
+    "latestPeriod": "08-2026",
+    "latestValue": 14.409999999999998
+  },
+  "datasets": {
+    "monthly": {
+      "yoy": {
+        "title": "IIP",
+        "headers": [
+          "08-2026",
+          "07-2026",
+          "06-2026",
+          "05-2026",
+          "04-2026",
+          "03-2026",
+          "02-2026",
+          "01-2026",
+          "12-2025",
+          "11-2025",
+          "10-2025",
+          "09-2025",
+          "08-2025",
+          "07-2025",
+          "06-2025",
+          "05-2025",
+          "04-2025",
+          "03-2025",
+          "02-2025"
+        ],
+        "parent": [
+          {
+            "title": "IIP",
+            "child": [
+              {
+                "id": "248_toan_nganh_cong_nghiep_yoy",
+                "column_name": "toan_nganh_cong_nghiep_yoy",
+                "table_name": "248",
+                "name": "Toàn ngành công nghiệp",
+                "hasSub": false,
+                "level": 2,
+                "heading": 1,
+                "open": 1,
+                "dateType": "thang",
+                "yAxis": 1,
+                "data": [
+                  [
+                    1788134400000,
+                    14.409999999999998
+                  ],
+                  [
+                    1785456000000,
+                    15.36
+                  ],
+                  [
+                    1782777600000,
+                    12.870000000000005
+                  ],
+                  [
+                    1780185600000,
+                    10.14
+                  ],
+                  [
+                    1777507200000,
+                    9.299999999999997
+                  ],
+                  [
+                    1774915200000,
+                    7.200000000000002
+                  ],
+                  [
+                    1772236800000,
+                    0.5999999999999943
+                  ],
+                  [
+                    1769817600000,
+                    19.42
+                  ],
+                  [
+                    1767139200000,
+                    10.099999999999994
+                  ],
+                  [
+                    1764460800000,
+                    9.13
+                  ],
+                  [
+                    1761868800000,
+                    10.440000000000001
+                  ],
+                  [
+                    1759190400000,
+                    12.740000000000002
+                  ],
+                  [
+                    1756598400000,
+                    8.66
+                  ],
+                  [
+                    1753920000000,
+                    7.430000000000001
+                  ],
+                  [
+                    1751241600000,
+                    7.9799999999999995
+                  ],
+                  [
+                    1748649600000,
+                    9.56
+                  ],
+                  [
+                    1745971200000,
+                    9.64
+                  ],
+                  [
+                    1743379200000,
+                    9.92
+                  ],
+                  [
+                    1740700800000,
+                    17.560000000000002
+                  ]
+                ],
+                "time_frame": "monthly",
+                "lingo": {
+                  "name": "IIP Toàn ngành công nghiệp",
+                  "unit": "%",
+                  "description": "Chỉ số sản xuất toàn ngành công nghiệp, đo lường khối lượng sản xuất công nghiệp của tất cá các ngành tạo ra trong kỳ hiện tại so với cùng kỳ năm trước. Dữ liệu được thu thập từ các doanh nghiệp thông qua các cuộc khảo sát do Tổng cục thống kê (GSO) phối hợp với Bộ Kế hoạch đầu tư thực hiện.",
+                  "frequency": "Ngày 6 tháng sau",
+                  "last_updated": "2026-09-03T02:55:34.731Z",
+                  "source": "Tổng cục Thống kê - GSO",
+                  "note": null,
+                  "related_blog": null
+                }
+              },
+              {
+                "id": "248_khai_khoang_yoy",
+                "column_name": "khai_khoang_yoy",
+                "table_name": "248",
+                "name": "Khai khoáng",
+                "hasSub": false,
+                "level": 2,
+                "heading": 2,
+                "open": 0,
+                "dateType": "thang",
+                "yAxis": 1,
+                "data": [
+                  [
+                    1788134400000,
+                    18.489999999999995
+                  ],
+                  [
+                    1785456000000,
+                    10.599999999999994
+                  ],
+                  [
+                    1782777600000,
+                    6.170000000000002
+                  ],
+                  [
+                    1780185600000,
+                    9.060000000000002
+                  ],
+                  [
+                    1777507200000,
+                    8.700000000000003
+                  ],
+                  [
+                    1774915200000,
+                    2.09
+                  ],
+                  [
+                    1772236800000,
+                    -3.98999999999999
+                  ],
+                  [
+                    1769817600000,
+                    15.75
+                  ],
+                  [
+                    1767139200000,
+                    0.20000000000000281
+                  ],
+                  [
+                    1764460800000,
+                    4.1000000000000005
+                  ],
+                  [
+                    1761868800000,
+                    6.09999999999999
+                  ],
+                  [
+                    1759190400000,
+                    16.830000000000002
+                  ],
+                  [
+                    1756598400000,
+                    0.13999999999999999
+                  ],
+                  [
+                    1753920000000,
+                    4.3999999999999995
+                  ],
+                  [
+                    1751241600000,
+                    -0.26
+                  ],
+                  [
+                    1748649600000,
+                    -1.87
+                  ],
+                  [
+                    1745971200000,
+                    -4.67
+                  ],
+                  [
+                    1743379200000,
+                    -3.65
+                  ],
+                  [
+                    1740700800000,
+                    3.0700000000000003
+                  ]
+                ],
+                "time_frame": "monthly",
+                "lingo": null
+              },
+              {
+                "id": "248_khai_thac_than_cung_va_than_non_yoy",
+                "column_name": "khai_thac_than_cung_va_than_non_yoy",
+                "table_name": "248",
+                "name": "Khai thác than cứng và than non",
+                "hasSub": false,
+                "level": 3,
+                "heading": 3,
+                "open": 0,
+                "dateType": "thang",
+                "yAxis": 1,
+                "data": [
+                  [
+                    1788134400000,
+                    17.790000000000006
+                  ],
+                  [
+                    1785456000000,
+                    2.760000000000005
+                  ],
+                  [
+                    1782777600000,
+                    -1.5900000000000036
+                  ],
+                  [
+                    1780185600000,
+                    -8.540000000000006
+                  ],
+                  [
+                    1777507200000,
+                    -2.4599999999999937
+                  ],
+                  [
+                    1774915200000,
+                    -9.409999999999997
+                  ],
+                  [
+                    1772236800000,
+                    -22.060000000000002
+                  ],
+                  [
+                    1769817600000,
+                    17.340000000000003
+                  ],
+                  [
+                    1767139200000,
+                    0.45999999999999375
+                  ],
+                  [
+                    1764460800000,
+                    -6.45
+                  ],
+                  [
+                    1761868800000,
+                    -2.45
+                  ],
+                  [
+                    1759190400000,
+                    41.6
+                  ],
+                  [
+                    1756598400000,
+                    -12.6
+                  ],
+                  [
+                    1753920000000,
+                    3.58
+                  ],
+                  [
+                    1751241600000,
+                    5.46
+                  ],
+                  [
+                    1748649600000,
+                    -5.99
+                  ],
+                  [
+                    1745971200000,
+                    8.19
+                  ],
+                  [
+                    1743379200000,
+                    4.62
+                  ],
+                  [
+                    1740700800000,
+                    34.43
+                  ]
+                ],
+                "time_frame": "monthly",
+                "lingo": {
+                  "name": "IIP Khai thác than cứng và than non",
+                  "unit": "%",
+                  "description": "Chỉ số sản xuất công nghiệp - IIP ngành khai thác than cứng và than non, đo lường khối lượng sản xuất công nghiệp tạo ra trong kỳ hiện tại so với cùng kỳ năm trước. Dữ liệu được thu thập từ các doanh nghiệp thông qua các cuộc khảo sát do Tổng cục thống kê (GSO) phối hợp với Bộ Kế hoạch đầu tư thực hiện.",
+                  "frequency": "Ngày 6 tháng sau",
+                  "last_updated": "2026-09-03T02:55:34.731Z",
+                  "source": "Tổng cục Thống kê - GSO",
+                  "note": null,
+                  "related_blog": null
+                }
+              },
+              {
+                "id": "248_khai_thac_dau_tho_va_khi_dot_tu_nhien_yoy",
+                "column_name": "khai_thac_dau_tho_va_khi_dot_tu_nhien_yoy",
+                "table_name": "248",
+                "name": "Khai thác dầu thô và khí đốt tự nhiên",
+                "hasSub": false,
+                "level": 3,
+                "heading": 3,
+                "open": 0,
+                "dateType": "thang",
+                "yAxis": 1,
+                "data": [
+                  [
+                    1788134400000,
+                    19.549999999999997
+                  ],
+                  [
+                    1785456000000,
+                    17.260000000000005
+                  ],
+                  [
+                    1782777600000,
+                    19.159999999999997
+                  ],
+                  [
+                    1780185600000,
+                    7.989999999999994
+                  ],
+                  [
+                    1777507200000,
+                    14.019999999999996
+                  ],
+                  [
+                    1774915200000,
+                    6.709999999999994
+                  ],
+                  [
+                    1772236800000,
+                    2.0999999999999943
+                  ],
+                  [
+                    1769817600000,
+                    11.230000000000004
+                  ],
+                  [
+                    1767139200000,
+                    0.6899999999999977
+                  ],
+                  [
+                    1764460800000,
+                    5.2
+                  ],
+                  [
+                    1761868800000,
+                    9.43000000000001
+                  ],
+                  [
+                    1759190400000,
+                    12.72
+                  ],
+                  [
+                    1756598400000,
+                    -1.1400000000000001
+                  ],
+                  [
+                    1753920000000,
+                    1.25
+                  ],
+                  [
+                    1751241600000,
+                    -6.87
+                  ],
+                  [
+                    1748649600000,
+                    -2.67
+                  ],
+                  [
+                    1745971200000,
+                    -11.129999999999999
+                  ],
+                  [
+                    1743379200000,
+                    -8.61
+                  ],
+                  [
+                    1740700800000,
+                    -11.450000000000001
+                  ]
+                ],
+                "time_frame": "monthly",
+                "lingo": {
+                  "name": "IIP Khai thác dầu thô và khí đốt tự nhiên",
+                  "unit": "%",
+                  "description": "Chỉ số sản xuất công nghiệp - IIP ngành khai thác dầu thô và khí đốt tự nhiên, đo lường khối lượng sản xuất công nghiệp tạo ra trong kỳ hiện tại so với cùng kỳ năm trước. Dữ liệu được thu thập từ các doanh nghiệp thông qua các cuộc khảo sát do Tổng cục thống kê (GSO) phối hợp với Bộ Kế hoạch đầu tư thực hiện.",
+                  "frequency": "Ngày 6 tháng sau",
+                  "last_updated": "2026-09-03T02:55:34.731Z",
+                  "source": "Tổng cục Thống kê - GSO",
+                  "note": null,
+                  "related_blog": null
+                }
+              },
+              {
+                "id": "248_khai_thac_quang_kim_loai_yoy",
+                "column_name": "khai_thac_quang_kim_loai_yoy",
+                "table_name": "248",
+                "name": "Khai thác quặng kim loại",
+                "hasSub": false,
+                "level": 3,
+                "heading": 3,
+                "open": 0,
+                "dateType": "thang",
+                "yAxis": 1,
+                "data": [
+                  [
+                    1788134400000,
+                    27.980000000000004
+                  ],
+                  [
+                    1785456000000,
+                    12.760000000000005
+                  ],
+                  [
+                    1782777600000,
+                    5.420000000000002
+                  ],
+                  [
+                    1780185600000,
+                    -1.5400000000000063
+                  ],
+                  [
+                    1777507200000,
+                    -11.950000000000003
+                  ],
+                  [
+                    1774915200000,
+                    -2.069999999999993
+                  ],
+                  [
+                    1772236800000,
+                    -32.040000000000006
+                  ],
+                  [
+                    1769817600000,
+                    9.11
+                  ],
+                  [
+                    1767139200000,
+                    -21.200000000000003
+                  ],
+                  [
+                    1764460800000,
+                    -39.35
+                  ],
+                  [
+                    1761868800000,
+                    -6.67
+                  ],
+                  [
+                    1759190400000,
+                    6.510000000000001
+                  ],
+                  [
+                    1756598400000,
+                    7.46
+                  ],
+                  [
+                    1753920000000,
+                    -16.28
+                  ],
+                  [
+                    1751241600000,
+                    -12.920000000000002
+                  ],
+                  [
+                    1748649600000,
+                    -2.25
+                  ],
+                  [
+                    1745971200000,
+                    -6.39
+                  ],
+                  [
+                    1743379200000,
+                    1.4000000000000001
+                  ],
+                  [
+                    1740700800000,
+                    26.69
+                  ]
+                ],
+                "time_frame": "monthly",
+                "lingo": {
+                  "name": "IIP Khai thác quặng kim loại",
+                  "unit": "%",
+                  "description": "Chỉ số sản xuất công nghiệp - IIP ngành khai thác quặng kim loại, đo lường khối lượng sản xuất công nghiệp tạo ra trong kỳ hiện tại so với cùng kỳ năm trước. Dữ liệu được thu thập từ các doanh nghiệp thông qua các cuộc khảo sát do Tổng cục thống kê (GSO) phối hợp với Bộ Kế hoạch đầu tư thực hiện.",
+                  "frequency": "Ngày 6 tháng sau",
+                  "last_updated": "2026-09-03T02:55:34.731Z",
+                  "source": "Tổng cục Thống kê - GSO",
+                  "note": null,
+                  "related_blog": null
+                }
+              },
+              {
+                "id": "248_khai_khoang_khac_yoy",
+                "column_name": "khai_khoang_khac_yoy",
+                "table_name": "248",
+                "name": "Khai khoáng khác",
+                "hasSub": false,
+                "level": 3,
+                "heading": 3,
+                "open": 0,
+                "dateType": "thang",
+                "yAxis": 1,
+                "data": [
+                  [
+                    1788134400000,
+                    12.479999999999999
+                  ],
+                  [
+                    1785456000000,
+                    10.6
+                  ],
+                  [
+                    1782777600000,
+                    7.870000000000001
+                  ],
+                  [
+                    1780185600000,
+                    9.06
+                  ],
+                  [
+                    1777507200000,
+                    8.7
+                  ],
+                  [
+                    1774915200000,
+                    22.67
+                  ],
+                  [
+                    1772236800000,
+                    8.89
+                  ],
+                  [
+                    1769817600000,
+                    29.770000000000003
+                  ],
+                  [
+                    1767139200000,
+                    13.63
+                  ],
+                  [
+                    1764460800000,
+                    11.65
+                  ],
+                  [
+                    1761868800000,
+                    10.4
+                  ],
+                  [
+                    1759190400000,
+                    17.39
+                  ],
+                  [
+                    1756598400000,
+                    10.8
+                  ],
+                  [
+                    1753920000000,
+                    17.72
+                  ],
+                  [
+                    1751241600000,
+                    15.340000000000002
+                  ],
+                  [
+                    1748649600000,
+                    9.790000000000001
+                  ],
+                  [
+                    1745971200000,
+                    8.38
+                  ],
+                  [
+                    1743379200000,
+                    9.120000000000001
+                  ],
+                  [
+                    1740700800000,
+                    19.56
+                  ]
+                ],
+                "time_frame": "monthly",
+                "lingo": {
+                  "name": "IIP Khai khoáng khác",
+                  "unit": "%",
+                  "description": "Chỉ số sản xuất công nghiệp - IIP ngành khai khoáng khác, đo lường khối lượng sản xuất công nghiệp tạo ra trong kỳ hiện tại so với cùng kỳ năm trước. Dữ liệu được thu thập từ các doanh nghiệp thông qua các cuộc khảo sát do Tổng cục thống kê (GSO) phối hợp với Bộ Kế hoạch đầu tư thực hiện.",
+                  "frequency": "Ngày 6 tháng sau",
+                  "last_updated": "2026-09-03T02:55:34.731Z",
+                  "source": "Tổng cục Thống kê - GSO",
+                  "note": null,
+                  "related_blog": null
+                }
+              },
+              {
+                "id": "248_hoat_dong_dich_vu_ho_tro_khai_thac_mo_va_quang_yoy",
+                "column_name": "hoat_dong_dich_vu_ho_tro_khai_thac_mo_va_quang_yoy",
+                "table_name": "248",
+                "name": "Hoạt động dịch vụ hỗ trợ khai thác mỏ và quặng",
+                "hasSub": false,
+                "level": 3,
+                "heading": 3,
+                "open": 0,
+                "dateType": "thang",
+                "yAxis": 1,
+                "data": [
+                  [
+                    1788134400000,
+                    30.939999999999994
+                  ],
+                  [
+                    1785456000000,
+                    49.629999999999995
+                  ],
+                  [
+                    1782777600000,
+                    -5.390000000000001
+                  ],
+                  [
+                    1780185600000,
+                    86.44999999999999
+                  ],
+                  [
+                    1777507200000,
+                    68.4
+                  ],
+                  [
+                    1774915200000,
+                    61.56999999999999
+                  ],
+                  [
+                    1772236800000,
+                    16.950000000000003
+                  ],
+                  [
+                    1769817600000,
+                    22.260000000000005
+                  ],
+                  [
+                    1767139200000,
+                    -18.599999999999994
+                  ],
+                  [
+                    1764460800000,
+                    39.7
+                  ],
+                  [
+                    1761868800000,
+                    10.74
+                  ],
+                  [
+                    1759190400000,
+                    -8.89
+                  ],
+                  [
+                    1756598400000,
+                    37.08
+                  ],
+                  [
+                    1753920000000,
+                    17.8
+                  ],
+                  [
+                    1751241600000,
+                    6.859999999999999
+                  ],
+                  [
+                    1748649600000,
+                    2.27
+                  ],
+                  [
+                    1745971200000,
+                    -23.47
+                  ],
+                  [
+                    1743379200000,
+                    -16.99
+                  ],
+                  [
+                    1740700800000,
+                    -7.920000000000001
+                  ]
+                ],
+                "time_frame": "monthly",
+                "lingo": {
+                  "name": "IIP Hoạt động dịch vụ hỗ trợ khai thác mỏ và quặng",
+                  "unit": "%",
+                  "description": "Chỉ số sản xuất công nghiệp - IIP ngành hoạt động dịch vụ hỗ trợ khai thác mỏ và quặng, đo lường khối lượng sản xuất công nghiệp tạo ra trong kỳ hiện tại so với cùng kỳ năm trước. Dữ liệu được thu thập từ các doanh nghiệp thông qua các cuộc khảo sát do Tổng cục thống kê (GSO) phối hợp với Bộ Kế hoạch đầu tư thực hiện.",
+                  "frequency": "Ngày 6 tháng sau",
+                  "last_updated": "2026-09-03T02:55:34.731Z",
+                  "source": "Tổng cục Thống kê - GSO",
+                  "note": null,
+                  "related_blog": null
+                }
+              },
+              {
+                "id": "248_cong_nghiep_che_bien_che_tao_yoy",
+                "column_name": "cong_nghiep_che_bien_che_tao_yoy",
+                "table_name": "248",
+                "name": "Công nghiệp chế biến, chế tạo",
+                "hasSub": false,
+                "level": 2,
+                "heading": 2,
+                "open": 0,
+                "dateType": "thang",
+                "yAxis": 1,
+                "data": [
+                  [
+                    1788134400000,
+                    14.590000000000003
+                  ],
+                  [
+                    1785456000000,
+                    9.530000000000001
+                  ],
+                  [
+                    1782777600000,
+                    10.629999999999995
+                  ],
+                  [
+                    1780185600000,
+                    9.019999999999996
+                  ],
+                  [
+                    1777507200000,
+                    13.560000000000002
+                  ],
+                  [
+                    1774915200000,
+                    7.88
+                  ],
+                  [
+                    1772236800000,
+                    1.1900000000000002
+                  ],
+                  [
+                    1769817600000,
+                    20.25
+                  ],
+                  [
+                    1767139200000,
+                    10.879999999999995
+                  ],
+                  [
+                    1764460800000,
+                    10.489999999999998
+                  ],
+                  [
+                    1761868800000,
+                    11.01
+                  ],
+                  [
+                    1759190400000,
+                    12.479999999999999
+                  ],
+                  [
+                    1756598400000,
+                    9.94
+                  ],
+                  [
+                    1753920000000,
+                    7.6
+                  ],
+                  [
+                    1751241600000,
+                    9.17
+                  ],
+                  [
+                    1748649600000,
+                    11.459999999999999
+                  ],
+                  [
+                    1745971200000,
+                    12.280000000000001
+                  ],
+                  [
+                    1743379200000,
+                    11.68
+                  ],
+                  [
+                    1740700800000,
+                    19.68
+                  ]
+                ],
+                "time_frame": "monthly",
+                "lingo": null
+              },
+              {
+                "id": "248_san_xuat_che_bien_thuc_pham_yoy",
+                "column_name": "san_xuat_che_bien_thuc_pham_yoy",
+                "table_name": "248",
+                "name": "Sản xuất chế biến thực phẩm",
+                "hasSub": false,
+                "level": 3,
+                "heading": 3,
+                "open": 0,
+                "dateType": "thang",
+                "yAxis": 1,
+                "data": [
+                  [
+                    1788134400000,
+                    13.290000000000008
+                  ],
+                  [
+                    1785456000000,
+                    13.709999999999994
+                  ],
+                  [
+                    1782777600000,
+                    10.739999999999995
+                  ],
+                  [
+                    1780185600000,
+                    8.36
+                  ],
+                  [
+                    1777507200000,
+                    9.730000000000004
+                  ],
+                  [
+                    1774915200000,
+                    12.469999999999999
+                  ],
+                  [
+                    1772236800000,
+                    4.579999999999998
+                  ],
+                  [
+                    1769817600000,
+                    19.760000000000005
+                  ],
+                  [
+                    1767139200000,
+                    15.700000000000003
+                  ],
+                  [
+                    1764460800000,
+                    12.9
+                  ],
+                  [
+                    1761868800000,
+                    9.56
+                  ],
+                  [
+                    1759190400000,
+                    11.64
+                  ],
+                  [
+                    1756598400000,
+                    10.979999999999999
+                  ],
+                  [
+                    1753920000000,
+                    9.77
+                  ],
+                  [
+                    1751241600000,
+                    9.07
+                  ],
+                  [
+                    1748649600000,
+                    12.950000000000001
+                  ],
+                  [
+                    1745971200000,
+                    10.979999999999999
+                  ],
+                  [
+                    1743379200000,
+                    10.84
+                  ],
+                  [
+                    1740700800000,
+                    17.89
+                  ]
+                ],
+                "time_frame": "monthly",
+                "lingo": {
+                  "name": "IIP Sản xuất chế biến thực phẩm",
+                  "unit": "%",
+                  "description": "Chỉ số sản xuất công nghiệp - IIP ngành chế biến thực phẩm, đo lường khối lượng sản xuất công nghiệp tạo ra trong kỳ hiện tại so với cùng kỳ năm trước. Dữ liệu được thu thập từ các doanh nghiệp thông qua các cuộc khảo sát do Tổng cục thống kê (GSO) phối hợp với Bộ Kế hoạch đầu tư thực hiện.",
+                  "frequency": "Ngày 6 tháng sau",
+                  "last_updated": "2026-09-03T02:55:34.731Z",
+                  "source": "Tổng cục Thống kê - GSO",
+                  "note": null,
+                  "related_blog": null
+                }
+              },
+              {
+                "id": "248_san_xuat_do_uong_yoy",
+                "column_name": "san_xuat_do_uong_yoy",
+                "table_name": "248",
+                "name": "Sản xuất đồ uống",
+                "hasSub": false,
+                "level": 3,
+                "heading": 3,
+                "open": 0,
+                "dateType": "thang",
+                "yAxis": 1,
+                "data": [
+                  [
+                    1788134400000,
+                    19.739999999999995
+                  ],
+                  [
+                    1785456000000,
+                    21.400000000000006
+                  ],
+                  [
+                    1782777600000,
+                    14.079999999999998
+                  ],
+                  [
+                    1780185600000,
+                    12.780000000000003
+                  ],
+                  [
+                    1777507200000,
+                    14.780000000000001
+                  ],
+                  [
+                    1774915200000,
+                    12.599999999999994
+                  ],
+                  [
+                    1772236800000,
+                    8.219999999999999
+                  ],
+                  [
+                    1769817600000,
+                    26.280000000000005
+                  ],
+                  [
+                    1767139200000,
+                    8.060000000000002
+                  ],
+                  [
+                    1764460800000,
+                    4.8500000000000005
+                  ],
+                  [
+                    1761868800000,
+                    11.01
+                  ],
+                  [
+                    1759190400000,
+                    8.200000000000001
+                  ],
+                  [
+                    1756598400000,
+                    9.83
+                  ],
+                  [
+                    1753920000000,
+                    3.1399999999999997
+                  ],
+                  [
+                    1751241600000,
+                    5.24
+                  ],
+                  [
+                    1748649600000,
+                    4.88
+                  ],
+                  [
+                    1745971200000,
+                    4.62
+                  ],
+                  [
+                    1743379200000,
+                    -4.19
+                  ],
+                  [
+                    1740700800000,
+                    7.380000000000001
+                  ]
+                ],
+                "time_frame": "monthly",
+                "lingo": {
+                  "name": "IIP Sản xuất đồ uống",
+                  "unit": "%",
+                  "description": "Chỉ số sản xuất công nghiệp - IIP ngành đồ uống, đo lường khối lượng sản xuất công nghiệp tạo ra trong kỳ hiện tại so với cùng kỳ năm trước. Dữ liệu được thu thập từ các doanh nghiệp thông qua các cuộc khảo sát do Tổng cục thống kê (GSO) phối hợp với Bộ Kế hoạch đầu tư thực hiện.",
+                  "frequency": "Ngày 6 tháng sau",
+                  "last_updated": "2026-09-03T02:55:34.731Z",
+                  "source": "Tổng cục Thống kê - GSO",
+                  "note": null,
+                  "related_blog": null
+                }
+              },
+              {
+                "id": "248_san_xuat_san_pham_thuoc_la_yoy",
+                "column_name": "san_xuat_san_pham_thuoc_la_yoy",
+                "table_name": "248",
+                "name": "Sản xuất sản phẩm thuốc lá",
+                "hasSub": false,
+                "level": 3,
+                "heading": 3,
+                "open": 0,
+                "dateType": "thang",
+                "yAxis": 1,
+                "data": [
+                  [
+                    1788134400000,
+                    5.25
+                  ],
+                  [
+                    1785456000000,
+                    4.739999999999995
+                  ],
+                  [
+                    1782777600000,
+                    6
+                  ],
+                  [
+                    1780185600000,
+                    4.790000000000006
+                  ],
+                  [
+                    1777507200000,
+                    3.75
+                  ],
+                  [
+                    1774915200000,
+                    5.079999999999998
+                  ],
+                  [
+                    1772236800000,
+                    -7.329999999999997
+                  ],
+                  [
+                    1769817600000,
+                    24.629999999999995
+                  ],
+                  [
+                    1767139200000,
+                    2.3700000000000045
+                  ],
+                  [
+                    1764460800000,
+                    0.63
+                  ],
+                  [
+                    1761868800000,
+                    -3.63
+                  ],
+                  [
+                    1759190400000,
+                    4.73
+                  ],
+                  [
+                    1756598400000,
+                    4.53
+                  ],
+                  [
+                    1753920000000,
+                    9.62
+                  ],
+                  [
+                    1751241600000,
+                    8.959999999999999
+                  ],
+                  [
+                    1748649600000,
+                    11.37
+                  ],
+                  [
+                    1745971200000,
+                    8.76
+                  ],
+                  [
+                    1743379200000,
+                    5.21
+                  ],
+                  [
+                    1740700800000,
+                    17.349999999999998
+                  ]
+                ],
+                "time_frame": "monthly",
+                "lingo": {
+                  "name": "IIP Sản xuất sản phẩm thuốc lá",
+                  "unit": "%",
+                  "description": "Chỉ số sản xuất công nghiệp - IIP ngành thuốc lá, đo lường khối lượng sản xuất công nghiệp tạo ra trong kỳ hiện tại so với cùng kỳ năm trước. Dữ liệu được thu thập từ các doanh nghiệp thông qua các cuộc khảo sát do Tổng cục thống kê (GSO) phối hợp với Bộ Kế hoạch đầu tư thực hiện.",
+                  "frequency": "Ngày 6 tháng sau",
+                  "last_updated": "2026-09-03T02:55:34.731Z",
+                  "source": "Tổng cục Thống kê - GSO",
+                  "note": null,
+                  "related_blog": null
+                }
+              },
+              {
+                "id": "248_det_yoy",
+                "column_name": "det_yoy",
+                "table_name": "248",
+                "name": "Dệt",
+                "hasSub": false,
+                "level": 3,
+                "heading": 3,
+                "open": 0,
+                "dateType": "thang",
+                "yAxis": 1,
+                "data": [
+                  [
+                    1788134400000,
+                    9.969999999999999
+                  ],
+                  [
+                    1785456000000,
+                    7.849999999999994
+                  ],
+                  [
+                    1782777600000,
+                    12.620000000000003
+                  ],
+                  [
+                    1780185600000,
+                    9.620000000000005
+                  ],
+                  [
+                    1777507200000,
+                    11.209999999999994
+                  ],
+                  [
+                    1774915200000,
+                    6.430000000000007
+                  ],
+                  [
+                    1772236800000,
+                    1.9200000000000015
+                  ],
+                  [
+                    1769817600000,
+                    17.5
+                  ],
+                  [
+                    1767139200000,
+                    7.280000000000002
+                  ],
+                  [
+                    1764460800000,
+                    5.46
+                  ],
+                  [
+                    1761868800000,
+                    6.88
+                  ],
+                  [
+                    1759190400000,
+                    8.599999999999989
+                  ],
+                  [
+                    1756598400000,
+                    6.75
+                  ],
+                  [
+                    1753920000000,
+                    6.99
+                  ],
+                  [
+                    1751241600000,
+                    4.74
+                  ],
+                  [
+                    1748649600000,
+                    5.63
+                  ],
+                  [
+                    1745971200000,
+                    9.6
+                  ],
+                  [
+                    1743379200000,
+                    9.86
+                  ],
+                  [
+                    1740700800000,
+                    26.3
+                  ]
+                ],
+                "time_frame": "monthly",
+                "lingo": {
+                  "name": "IIP Dệt",
+                  "unit": "%",
+                  "description": "Chỉ số sản xuất công nghiệp - IIP ngành dệt, đo lường khối lượng sản xuất công nghiệp tạo ra trong kỳ hiện tại so với cùng kỳ năm trước. Dữ liệu được thu thập từ các doanh nghiệp thông qua các cuộc khảo sát do Tổng cục thống kê (GSO) phối hợp với Bộ Kế hoạch đầu tư thực hiện.",
+                  "frequency": "Ngày 6 tháng sau",
+                  "last_updated": "2026-09-03T02:55:34.731Z",
+                  "source": "Tổng cục Thống kê - GSO",
+                  "note": null,
+                  "related_blog": null
+                }
+              },
+              {
+                "id": "248_san_xuat_trang_phuc_yoy",
+                "column_name": "san_xuat_trang_phuc_yoy",
+                "table_name": "248",
+                "name": "Sản xuất trang phục",
+                "hasSub": false,
+                "level": 3,
+                "heading": 3,
+                "open": 0,
+                "dateType": "thang",
+                "yAxis": 1,
+                "data": [
+                  [
+                    1788134400000,
+                    8.260000000000005
+                  ],
+                  [
+                    1785456000000,
+                    5.6299999999999955
+                  ],
+                  [
+                    1782777600000,
+                    12.480000000000004
+                  ],
+                  [
+                    1780185600000,
+                    -2.6200000000000045
+                  ],
+                  [
+                    1777507200000,
+                    4.060000000000002
+                  ],
+                  [
+                    1774915200000,
+                    3.450000000000003
+                  ],
+                  [
+                    1772236800000,
+                    -1.1099999999999994
+                  ],
+                  [
+                    1769817600000,
+                    23.019999999999996
+                  ],
+                  [
+                    1767139200000,
+                    11.569999999999993
+                  ],
+                  [
+                    1764460800000,
+                    12.93
+                  ],
+                  [
+                    1761868800000,
+                    15.809999999999999
+                  ],
+                  [
+                    1759190400000,
+                    11.540000000000001
+                  ],
+                  [
+                    1756598400000,
+                    4.04
+                  ],
+                  [
+                    1753920000000,
+                    12.620000000000001
+                  ],
+                  [
+                    1751241600000,
+                    14.14
+                  ],
+                  [
+                    1748649600000,
+                    17.72
+                  ],
+                  [
+                    1745971200000,
+                    15.83
+                  ],
+                  [
+                    1743379200000,
+                    17.580000000000002
+                  ],
+                  [
+                    1740700800000,
+                    25.09
+                  ]
+                ],
+                "time_frame": "monthly",
+                "lingo": {
+                  "name": "IIP Sản xuất trang phục",
+                  "unit": "%",
+                  "description": "Chỉ số sản xuất công nghiệp - IIP ngành trang phục, đo lường khối lượng sản xuất công nghiệp tạo ra trong kỳ hiện tại so với cùng kỳ năm trước. Dữ liệu được thu thập từ các doanh nghiệp thông qua các cuộc khảo sát do Tổng cục thống kê (GSO) phối hợp với Bộ Kế hoạch đầu tư thực hiện.",
+                  "frequency": "Ngày 6 tháng sau",
+                  "last_updated": "2026-09-03T02:55:34.731Z",
+                  "source": "Tổng cục Thống kê - GSO",
+                  "note": null,
+                  "related_blog": null
+                }
+              },
+              {
+                "id": "248_san_xuat_da_va_cac_san_pham_lien_quan_yoy",
+                "column_name": "san_xuat_da_va_cac_san_pham_lien_quan_yoy",
+                "table_name": "248",
+                "name": "Sản xuất da và các sản phẩm có liên quan",
+                "hasSub": false,
+                "level": 3,
+                "heading": 3,
+                "open": 0,
+                "dateType": "thang",
+                "yAxis": 1,
+                "data": [
+                  [
+                    1788134400000,
+                    4.780000000000001
+                  ],
+                  [
+                    1785456000000,
+                    2.4099999999999966
+                  ],
+                  [
+                    1782777600000,
+                    3.200000000000003
+                  ],
+                  [
+                    1780185600000,
+                    0.9000000000000057
+                  ],
+                  [
+                    1777507200000,
+                    2.2099999999999937
+                  ],
+                  [
+                    1774915200000,
+                    3.959999999999994
+                  ],
+                  [
+                    1772236800000,
+                    -4.819999999999993
+                  ],
+                  [
+                    1769817600000,
+                    15.439999999999998
+                  ],
+                  [
+                    1767139200000,
+                    9.810000000000002
+                  ],
+                  [
+                    1764460800000,
+                    6.83
+                  ],
+                  [
+                    1761868800000,
+                    8.61
+                  ],
+                  [
+                    1759190400000,
+                    5.74
+                  ],
+                  [
+                    1756598400000,
+                    3.45
+                  ],
+                  [
+                    1753920000000,
+                    5.37
+                  ],
+                  [
+                    1751241600000,
+                    13.270000000000001
+                  ],
+                  [
+                    1748649600000,
+                    12.53
+                  ],
+                  [
+                    1745971200000,
+                    16.75
+                  ],
+                  [
+                    1743379200000,
+                    14.71
+                  ],
+                  [
+                    1740700800000,
+                    35.9
+                  ]
+                ],
+                "time_frame": "monthly",
+                "lingo": {
+                  "name": "IIP Sản xuất da và các sản phẩm có liên quan",
+                  "unit": "%",
+                  "description": "Chỉ số sản xuất công nghiệp - IIP ngành sản xuất da và các sản phẩm có liên quan, đo lường khối lượng sản xuất công nghiệp tạo ra trong kỳ hiện tại so với cùng kỳ năm trước. Dữ liệu được thu thập từ các doanh nghiệp thông qua các cuộc khảo sát do Tổng cục thống kê (GSO) phối hợp với Bộ Kế hoạch đầu tư thực hiện.",
+                  "frequency": "Ngày 6 tháng sau",
+                  "last_updated": "2026-09-03T02:55:34.731Z",
+                  "source": "Tổng cục Thống kê - GSO",
+                  "note": null,
+                  "related_blog": null
+                }
+              },
+              {
+                "id": "248_che_bien_go_sx_san_pham_go_tre_nua_rom_ra_yoy",
+                "column_name": "che_bien_go_sx_san_pham_go_tre_nua_rom_ra_yoy",
+                "table_name": "248",
+                "name": "Chế biến gỗ và sản xuất sản phẩm từ gỗ",
+                "hasSub": false,
+                "level": 3,
+                "heading": 3,
+                "open": 0,
+                "dateType": "thang",
+                "yAxis": 1,
+                "data": [
+                  [
+                    1788134400000,
+                    13.409999999999997
+                  ],
+                  [
+                    1785456000000,
+                    14.900000000000006
+                  ],
+                  [
+                    1782777600000,
+                    18.590000000000003
+                  ],
+                  [
+                    1780185600000,
+                    22.89
+                  ],
+                  [
+                    1777507200000,
+                    6.739999999999995
+                  ],
+                  [
+                    1774915200000,
+                    -1.5999999999999945
+                  ],
+                  [
+                    1772236800000,
+                    1.269999999999996
+                  ],
+                  [
+                    1769817600000,
+                    21.400000000000006
+                  ],
+                  [
+                    1767139200000,
+                    2.180000000000007
+                  ],
+                  [
+                    1764460800000,
+                    3.25
+                  ],
+                  [
+                    1761868800000,
+                    8.219999999999999
+                  ],
+                  [
+                    1759190400000,
+                    14.649999999999999
+                  ],
+                  [
+                    1756598400000,
+                    7.19
+                  ],
+                  [
+                    1753920000000,
+                    4.9799999999999995
+                  ],
+                  [
+                    1751241600000,
+                    5.8500000000000005
+                  ],
+                  [
+                    1748649600000,
+                    4.52
+                  ],
+                  [
+                    1745971200000,
+                    8.5
+                  ],
+                  [
+                    1743379200000,
+                    18.73
+                  ],
+                  [
+                    1740700800000,
+                    42.33
+                  ]
+                ],
+                "time_frame": "monthly",
+                "lingo": {
+                  "name": "IIP Chế biến gỗ và sản xuất sản phẩm từ gỗ",
+                  "unit": "%",
+                  "description": "Chỉ số sản xuất công nghiệp - IIP ngành chế biến gỗ và sản phẩm từ gỗ, đo lường khối lượng sản xuất công nghiệp tạo ra trong kỳ hiện tại so với cùng kỳ năm trước. Dữ liệu được thu thập từ các doanh nghiệp thông qua các cuộc khảo sát do Tổng cục thống kê (GSO) phối hợp với Bộ Kế hoạch đầu tư thực hiện.",
+                  "frequency": "Ngày 6 tháng sau",
+                  "last_updated": "2026-09-03T02:55:34.731Z",
+                  "source": "Tổng cục Thống kê - GSO",
+                  "note": null,
+                  "related_blog": null
+                }
+              },
+              {
+                "id": "248_san_xuat_giay_va_san_pham_tu_giay_yoy",
+                "column_name": "san_xuat_giay_va_san_pham_tu_giay_yoy",
+                "table_name": "248",
+                "name": "Sản xuất giấy và sản phẩm từ giấy",
+                "hasSub": false,
+                "level": 3,
+                "heading": 3,
+                "open": 0,
+                "dateType": "thang",
+                "yAxis": 1,
+                "data": [
+                  [
+                    1788134400000,
+                    5.75
+                  ],
+                  [
+                    1785456000000,
+                    5.430000000000007
+                  ],
+                  [
+                    1782777600000,
+                    12.290000000000006
+                  ],
+                  [
+                    1780185600000,
+                    8.780000000000001
+                  ],
+                  [
+                    1777507200000,
+                    13.61
+                  ],
+                  [
+                    1774915200000,
+                    1.8499999999999943
+                  ],
+                  [
+                    1772236800000,
+                    -3.9699999999999984
+                  ],
+                  [
+                    1769817600000,
+                    32.19999999999999
+                  ],
+                  [
+                    1767139200000,
+                    8.61
+                  ],
+                  [
+                    1764460800000,
+                    10.96
+                  ],
+                  [
+                    1761868800000,
+                    14.879999999999999
+                  ],
+                  [
+                    1759190400000,
+                    14.82
+                  ],
+                  [
+                    1756598400000,
+                    9.969999999999999
+                  ],
+                  [
+                    1753920000000,
+                    10.36
+                  ],
+                  [
+                    1751241600000,
+                    11.33
+                  ],
+                  [
+                    1748649600000,
+                    12.73
+                  ],
+                  [
+                    1745971200000,
+                    5.609999999999999
+                  ],
+                  [
+                    1743379200000,
+                    12.44
+                  ],
+                  [
+                    1740700800000,
+                    26.86
+                  ]
+                ],
+                "time_frame": "monthly",
+                "lingo": {
+                  "name": "IIP Sản xuất giấy và sản phẩm từ giấy",
+                  "unit": "%",
+                  "description": "Chỉ số sản xuất công nghiệp - IIP ngành giấy và sản phẩm từ giấy, đo lường khối lượng sản xuất công nghiệp tạo ra trong kỳ hiện tại so với cùng kỳ năm trước. Dữ liệu được thu thập từ các doanh nghiệp thông qua các cuộc khảo sát do Tổng cục thống kê (GSO) phối hợp với Bộ Kế hoạch đầu tư thực hiện.",
+                  "frequency": "Ngày 6 tháng sau",
+                  "last_updated": "2026-09-03T02:55:34.731Z",
+                  "source": "Tổng cục Thống kê - GSO",
+                  "note": null,
+                  "related_blog": null
+                }
+              },
+              {
+                "id": "248_in_sao_chep_ban_ghi_cac_loai_yoy",
+                "column_name": "in_sao_chep_ban_ghi_cac_loai_yoy",
+                "table_name": "248",
+                "name": "In, sao chép bản ghi các loại",
+                "hasSub": false,
+                "level": 3,
+                "heading": 3,
+                "open": 0,
+                "dateType": "thang",
+                "yAxis": 1,
+                "data": [
+                  [
+                    1788134400000,
+                    8.760000000000005
+                  ],
+                  [
+                    1785456000000,
+                    4.909999999999997
+                  ],
+                  [
+                    1782777600000,
+                    12.560000000000002
+                  ],
+                  [
+                    1780185600000,
+                    8.959999999999994
+                  ],
+                  [
+                    1777507200000,
+                    13.349999999999994
+                  ],
+                  [
+                    1774915200000,
+                    6.659999999999997
+                  ],
+                  [
+                    1772236800000,
+                    -12.519999999999994
+                  ],
+                  [
+                    1769817600000,
+                    27.620000000000005
+                  ],
+                  [
+                    1767139200000,
+                    9.150000000000006
+                  ],
+                  [
+                    1764460800000,
+                    5.65
+                  ],
+                  [
+                    1761868800000,
+                    11.04
+                  ],
+                  [
+                    1759190400000,
+                    16.830000000000002
+                  ],
+                  [
+                    1756598400000,
+                    11.06
+                  ],
+                  [
+                    1753920000000,
+                    13.79
+                  ],
+                  [
+                    1751241600000,
+                    13.750000000000002
+                  ],
+                  [
+                    1748649600000,
+                    11.28
+                  ],
+                  [
+                    1745971200000,
+                    8.780000000000001
+                  ],
+                  [
+                    1743379200000,
+                    4.34
+                  ],
+                  [
+                    1740700800000,
+                    23.18
+                  ]
+                ],
+                "time_frame": "monthly",
+                "lingo": {
+                  "name": "IIP In, sao chép bản ghi các loại",
+                  "unit": "%",
+                  "description": "Chỉ số sản xuất công nghiệp - IIP ngành in, sao chép bản ghi các loại, đo lường khối lượng sản xuất công nghiệp tạo ra trong kỳ hiện tại so với cùng kỳ năm trước. Dữ liệu được thu thập từ các doanh nghiệp thông qua các cuộc khảo sát do Tổng cục thống kê (GSO) phối hợp với Bộ Kế hoạch đầu tư thực hiện.",
+                  "frequency": "Ngày 6 tháng sau",
+                  "last_updated": "2026-09-03T02:55:34.731Z",
+                  "source": "Tổng cục Thống kê - GSO",
+                  "note": null,
+                  "related_blog": null
+                }
+              },
+              {
+                "id": "248_san_xuat_than_coc_san_pham_dau_mo_tinh_che_yoy",
+                "column_name": "san_xuat_than_coc_san_pham_dau_mo_tinh_che_yoy",
+                "table_name": "248",
+                "name": "Sản xuất than cốc, sản phẩm dầu mỏ tinh chế",
+                "hasSub": false,
+                "level": 3,
+                "heading": 3,
+                "open": 0,
+                "dateType": "thang",
+                "yAxis": 1,
+                "data": [
+                  [
+                    1788134400000,
+                    10.090000000000003
+                  ],
+                  [
+                    1785456000000,
+                    10.469999999999999
+                  ],
+                  [
+                    1782777600000,
+                    9.909999999999997
+                  ],
+                  [
+                    1780185600000,
+                    5.290000000000006
+                  ],
+                  [
+                    1777507200000,
+                    2.9000000000000057
+                  ],
+                  [
+                    1774915200000,
+                    4.939999999999998
+                  ],
+                  [
+                    1772236800000,
+                    2.780000000000001
+                  ],
+                  [
+                    1769817600000,
+                    5.939999999999998
+                  ],
+                  [
+                    1767139200000,
+                    16.090000000000003
+                  ],
+                  [
+                    1764460800000,
+                    14.6
+                  ],
+                  [
+                    1761868800000,
+                    19.63
+                  ],
+                  [
+                    1759190400000,
+                    23
+                  ],
+                  [
+                    1756598400000,
+                    -1.23
+                  ],
+                  [
+                    1753920000000,
+                    0.25
+                  ],
+                  [
+                    1751241600000,
+                    0.47000000000000003
+                  ],
+                  [
+                    1748649600000,
+                    5.56
+                  ],
+                  [
+                    1745971200000,
+                    49.559999999999995
+                  ],
+                  [
+                    1743379200000,
+                    30.61
+                  ],
+                  [
+                    1740700800000,
+                    -2.7199999999999998
+                  ]
+                ],
+                "time_frame": "monthly",
+                "lingo": {
+                  "name": "IIP Sản xuất than cốc, sản phẩm dầu mỏ tinh chế",
+                  "unit": "%",
+                  "description": "Chỉ số sản xuất công nghiệp - IIP ngành than cốc, sản phẩm dầu mỏ tinh chế, đo lường khối lượng sản xuất công nghiệp tạo ra trong kỳ hiện tại so với cùng kỳ năm trước. Dữ liệu được thu thập từ các doanh nghiệp thông qua các cuộc khảo sát do Tổng cục thống kê (GSO) phối hợp với Bộ Kế hoạch đầu tư thực hiện.",
+                  "frequency": "Ngày 6 tháng sau",
+                  "last_updated": "2026-09-03T02:55:34.731Z",
+                  "source": "Tổng cục Thống kê - GSO",
+                  "note": null,
+                  "related_blog": null
+                }
+              },
+              {
+                "id": "248_san_xuat_hoa_chat_va_san_pham_hoa_chat_yoy",
+                "column_name": "san_xuat_hoa_chat_va_san_pham_hoa_chat_yoy",
+                "table_name": "248",
+                "name": "Sản xuất hoá chất và sản phẩm hoá chất",
+                "hasSub": false,
+                "level": 3,
+                "heading": 3,
+                "open": 0,
+                "dateType": "thang",
+                "yAxis": 1,
+                "data": [
+                  [
+                    1788134400000,
+                    6.579999999999998
+                  ],
+                  [
+                    1785456000000,
+                    5.280000000000001
+                  ],
+                  [
+                    1782777600000,
+                    -0.20000000000000281
+                  ],
+                  [
+                    1780185600000,
+                    9.319999999999993
+                  ],
+                  [
+                    1777507200000,
+                    19.28
+                  ],
+                  [
+                    1774915200000,
+                    21.810000000000002
+                  ],
+                  [
+                    1772236800000,
+                    3.319999999999993
+                  ],
+                  [
+                    1769817600000,
+                    32.55000000000001
+                  ],
+                  [
+                    1767139200000,
+                    21.739999999999995
+                  ],
+                  [
+                    1764460800000,
+                    29.330000000000002
+                  ],
+                  [
+                    1761868800000,
+                    23.44
+                  ],
+                  [
+                    1759190400000,
+                    15.09
+                  ],
+                  [
+                    1756598400000,
+                    8.95
+                  ],
+                  [
+                    1753920000000,
+                    7.5200000000000005
+                  ],
+                  [
+                    1751241600000,
+                    9.29
+                  ],
+                  [
+                    1748649600000,
+                    9.94
+                  ],
+                  [
+                    1745971200000,
+                    8.98
+                  ],
+                  [
+                    1743379200000,
+                    8.23
+                  ],
+                  [
+                    1740700800000,
+                    16.009999999999998
+                  ]
+                ],
+                "time_frame": "monthly",
+                "lingo": {
+                  "name": "IIP Sản xuất hoá chất và sản phẩm hoá chất",
+                  "unit": "%",
+                  "description": "Chỉ số sản xuất công nghiệp - IIP ngành hoá chất và sản phẩm hoá chất, đo lường khối lượng sản xuất công nghiệp tạo ra trong kỳ hiện tại so với cùng kỳ năm trước. Dữ liệu được thu thập từ các doanh nghiệp thông qua các cuộc khảo sát do Tổng cục thống kê (GSO) phối hợp với Bộ Kế hoạch đầu tư thực hiện.",
+                  "frequency": "Ngày 6 tháng sau",
+                  "last_updated": "2026-09-03T02:55:34.731Z",
+                  "source": "Tổng cục Thống kê - GSO",
+                  "note": null,
+                  "related_blog": null
+                }
+              },
+              {
+                "id": "248_san_xuat_thuoc_hoa_duoc_va_duoc_lieu_yoy",
+                "column_name": "san_xuat_thuoc_hoa_duoc_va_duoc_lieu_yoy",
+                "table_name": "248",
+                "name": "Sản xuất thuốc, hoá dược và dược liệu",
+                "hasSub": false,
+                "level": 3,
+                "heading": 3,
+                "open": 0,
+                "dateType": "thang",
+                "yAxis": 1,
+                "data": [
+                  [
+                    1788134400000,
+                    16.239999999999995
+                  ],
+                  [
+                    1785456000000,
+                    14.170000000000002
+                  ],
+                  [
+                    1782777600000,
+                    12.409999999999997
+                  ],
+                  [
+                    1780185600000,
+                    41.84
+                  ],
+                  [
+                    1777507200000,
+                    4.480000000000004
+                  ],
+                  [
+                    1774915200000,
+                    -9.349999999999994
+                  ],
+                  [
+                    1772236800000,
+                    -17.950000000000003
+                  ],
+                  [
+                    1769817600000,
+                    21.810000000000002
+                  ],
+                  [
+                    1767139200000,
+                    31.46000000000001
+                  ],
+                  [
+                    1764460800000,
+                    41.52
+                  ],
+                  [
+                    1761868800000,
+                    -19.16
+                  ],
+                  [
+                    1759190400000,
+                    5.67
+                  ],
+                  [
+                    1756598400000,
+                    -4.07
+                  ],
+                  [
+                    1753920000000,
+                    7.969999999999999
+                  ],
+                  [
+                    1751241600000,
+                    -2.86
+                  ],
+                  [
+                    1748649600000,
+                    -14.32
+                  ],
+                  [
+                    1745971200000,
+                    -7.55
+                  ],
+                  [
+                    1743379200000,
+                    5.96
+                  ],
+                  [
+                    1740700800000,
+                    32.58
+                  ]
+                ],
+                "time_frame": "monthly",
+                "lingo": {
+                  "name": "IIP Sản xuất thuốc, hoá dược và dược liệu",
+                  "unit": "%",
+                  "description": "Chỉ số sản xuất công nghiệp - IIP ngành thuốc, hoá dược và dược liệu, đo lường khối lượng sản xuất công nghiệp tạo ra trong kỳ hiện tại so với cùng kỳ năm trước. Dữ liệu được thu thập từ các doanh nghiệp thông qua các cuộc khảo sát do Tổng cục thống kê (GSO) phối hợp với Bộ Kế hoạch đầu tư thực hiện.",
+                  "frequency": "Ngày 6 tháng sau",
+                  "last_updated": "2026-09-03T02:55:34.731Z",
+                  "source": "Tổng cục Thống kê - GSO",
+                  "note": null,
+                  "related_blog": null
+                }
+              },
+              {
+                "id": "248_san_xuat_san_pham_tu_cao_su_va_plastic_yoy",
+                "column_name": "san_xuat_san_pham_tu_cao_su_va_plastic_yoy",
+                "table_name": "248",
+                "name": "Sản xuất sản phẩm từ cao su và plastic",
+                "hasSub": false,
+                "level": 3,
+                "heading": 3,
+                "open": 0,
+                "dateType": "thang",
+                "yAxis": 1,
+                "data": [
+                  [
+                    1788134400000,
+                    14.709999999999992
+                  ],
+                  [
+                    1785456000000,
+                    12.650000000000006
+                  ],
+                  [
+                    1782777600000,
+                    15.459999999999994
+                  ],
+                  [
+                    1780185600000,
+                    15.64
+                  ],
+                  [
+                    1777507200000,
+                    14.549999999999997
+                  ],
+                  [
+                    1774915200000,
+                    5.609999999999999
+                  ],
+                  [
+                    1772236800000,
+                    -3.920000000000002
+                  ],
+                  [
+                    1769817600000,
+                    21.92
+                  ],
+                  [
+                    1767139200000,
+                    10.560000000000002
+                  ],
+                  [
+                    1764460800000,
+                    8.260000000000002
+                  ],
+                  [
+                    1761868800000,
+                    14.32
+                  ],
+                  [
+                    1759190400000,
+                    20.330000000000002
+                  ],
+                  [
+                    1756598400000,
+                    18
+                  ],
+                  [
+                    1753920000000,
+                    17.28
+                  ],
+                  [
+                    1751241600000,
+                    19.79
+                  ],
+                  [
+                    1748649600000,
+                    18.68
+                  ],
+                  [
+                    1745971200000,
+                    16.3
+                  ],
+                  [
+                    1743379200000,
+                    20.48
+                  ],
+                  [
+                    1740700800000,
+                    36.08
+                  ]
+                ],
+                "time_frame": "monthly",
+                "lingo": {
+                  "name": "IIP Sản xuất sản phẩm từ cao su và plastic",
+                  "unit": "%",
+                  "description": "Chỉ số sản xuất công nghiệp - IIP ngành cao su và plastic, đo lường khối lượng sản xuất công nghiệp tạo ra trong kỳ hiện tại so với cùng kỳ năm trước. Dữ liệu được thu thập từ các doanh nghiệp thông qua các cuộc khảo sát do Tổng cục thống kê (GSO) phối hợp với Bộ Kế hoạch đầu tư thực hiện.",
+                  "frequency": "Ngày 6 tháng sau",
+                  "last_updated": "2026-09-03T02:55:34.731Z",
+                  "source": "Tổng cục Thống kê - GSO",
+                  "note": null,
+                  "related_blog": null
+                }
+              },
+              {
+                "id": "248_san_xuat_san_pham_tu_khoang_phi_kim_loai_khac_yoy",
+                "column_name": "san_xuat_san_pham_tu_khoang_phi_kim_loai_khac_yoy",
+                "table_name": "248",
+                "name": "Sản xuất sản phẩm từ khoáng phi kim loại khác",
+                "hasSub": false,
+                "level": 3,
+                "heading": 3,
+                "open": 0,
+                "dateType": "thang",
+                "yAxis": 1,
+                "data": [
+                  [
+                    1788134400000,
+                    8.590000000000003
+                  ],
+                  [
+                    1785456000000,
+                    8.870000000000005
+                  ],
+                  [
+                    1782777600000,
+                    7.549999999999997
+                  ],
+                  [
+                    1780185600000,
+                    8.040000000000006
+                  ],
+                  [
+                    1777507200000,
+                    8.540000000000006
+                  ],
+                  [
+                    1774915200000,
+                    8.090000000000003
+                  ],
+                  [
+                    1772236800000,
+                    12.349999999999994
+                  ],
+                  [
+                    1769817600000,
+                    48.03
+                  ],
+                  [
+                    1767139200000,
+                    14.680000000000007
+                  ],
+                  [
+                    1764460800000,
+                    16.81
+                  ],
+                  [
+                    1761868800000,
+                    18.12
+                  ],
+                  [
+                    1759190400000,
+                    28.37
+                  ],
+                  [
+                    1756598400000,
+                    16.27
+                  ],
+                  [
+                    1753920000000,
+                    19.64
+                  ],
+                  [
+                    1751241600000,
+                    22.869999999999997
+                  ],
+                  [
+                    1748649600000,
+                    21.46
+                  ],
+                  [
+                    1745971200000,
+                    12.44
+                  ],
+                  [
+                    1743379200000,
+                    8.89
+                  ],
+                  [
+                    1740700800000,
+                    18.33
+                  ]
+                ],
+                "time_frame": "monthly",
+                "lingo": {
+                  "name": "IIP Sản xuất sản phẩm từ khoáng phi kim loại khác",
+                  "unit": "%",
+                  "description": "Chỉ số sản xuất công nghiệp - IIP ngành khoáng phi kim loại khác, đo lường khối lượng sản xuất công nghiệp tạo ra trong kỳ hiện tại so với cùng kỳ năm trước. Dữ liệu được thu thập từ các doanh nghiệp thông qua các cuộc khảo sát do Tổng cục thống kê (GSO) phối hợp với Bộ Kế hoạch đầu tư thực hiện.",
+                  "frequency": "Ngày 6 tháng sau",
+                  "last_updated": "2026-09-03T02:55:34.731Z",
+                  "source": "Tổng cục Thống kê - GSO",
+                  "note": null,
+                  "related_blog": null
+                }
+              },
+              {
+                "id": "248_san_xuat_kim_loai_yoy",
+                "column_name": "san_xuat_kim_loai_yoy",
+                "table_name": "248",
+                "name": "Sản xuất kim loại",
+                "hasSub": false,
+                "level": 3,
+                "heading": 3,
+                "open": 0,
+                "dateType": "thang",
+                "yAxis": 1,
+                "data": [
+                  [
+                    1788134400000,
+                    22.540000000000006
+                  ],
+                  [
+                    1785456000000,
+                    21.980000000000004
+                  ],
+                  [
+                    1782777600000,
+                    32.94999999999999
+                  ],
+                  [
+                    1780185600000,
+                    21.75
+                  ],
+                  [
+                    1777507200000,
+                    19.17
+                  ],
+                  [
+                    1774915200000,
+                    8.689999999999998
+                  ],
+                  [
+                    1772236800000,
+                    30.289999999999996
+                  ],
+                  [
+                    1769817600000,
+                    23.989999999999995
+                  ],
+                  [
+                    1767139200000,
+                    16.180000000000007
+                  ],
+                  [
+                    1764460800000,
+                    27.47
+                  ],
+                  [
+                    1761868800000,
+                    31.28
+                  ],
+                  [
+                    1759190400000,
+                    26.8
+                  ],
+                  [
+                    1756598400000,
+                    10.03
+                  ],
+                  [
+                    1753920000000,
+                    15.72
+                  ],
+                  [
+                    1751241600000,
+                    10.879999999999999
+                  ],
+                  [
+                    1748649600000,
+                    17.41
+                  ],
+                  [
+                    1745971200000,
+                    20.8
+                  ],
+                  [
+                    1743379200000,
+                    10.14
+                  ],
+                  [
+                    1740700800000,
+                    2.45
+                  ]
+                ],
+                "time_frame": "monthly",
+                "lingo": {
+                  "name": "IIP Sản xuất kim loại",
+                  "unit": "%",
+                  "description": "Chỉ số sản xuất công nghiệp - IIP ngành kim loại, đo lường khối lượng sản xuất công nghiệp tạo ra trong kỳ hiện tại so với cùng kỳ năm trước. Dữ liệu được thu thập từ các doanh nghiệp thông qua các cuộc khảo sát do Tổng cục thống kê (GSO) phối hợp với Bộ Kế hoạch đầu tư thực hiện.",
+                  "frequency": "Ngày 6 tháng sau",
+                  "last_updated": "2026-09-03T02:55:34.731Z",
+                  "source": "Tổng cục Thống kê - GSO",
+                  "note": null,
+                  "related_blog": null
+                }
+              },
+              {
+                "id": "248_san_xuat_san_pham_tu_kim_loai_duc_san_yoy",
+                "column_name": "san_xuat_san_pham_tu_kim_loai_duc_san_yoy",
+                "table_name": "248",
+                "name": "Sản xuất sản phẩm từ kim loại đúc sẵn",
+                "hasSub": false,
+                "level": 3,
+                "heading": 3,
+                "open": 0,
+                "dateType": "thang",
+                "yAxis": 1,
+                "data": [
+                  [
+                    1788134400000,
+                    -0.43999999999999767
+                  ],
+                  [
+                    1785456000000,
+                    6.010000000000005
+                  ],
+                  [
+                    1782777600000,
+                    11.709999999999994
+                  ],
+                  [
+                    1780185600000,
+                    13.639999999999999
+                  ],
+                  [
+                    1777507200000,
+                    13.730000000000004
+                  ],
+                  [
+                    1774915200000,
+                    14.200000000000001
+                  ],
+                  [
+                    1772236800000,
+                    4.349999999999994
+                  ],
+                  [
+                    1769817600000,
+                    -0.8100000000000022
+                  ],
+                  [
+                    1767139200000,
+                    13.579999999999998
+                  ],
+                  [
+                    1764460800000,
+                    9.48
+                  ],
+                  [
+                    1761868800000,
+                    15.920000000000002
+                  ],
+                  [
+                    1759190400000,
+                    15.509999999999998
+                  ],
+                  [
+                    1756598400000,
+                    16.28
+                  ],
+                  [
+                    1753920000000,
+                    13.3
+                  ],
+                  [
+                    1751241600000,
+                    9.35
+                  ],
+                  [
+                    1748649600000,
+                    11.88
+                  ],
+                  [
+                    1745971200000,
+                    16.24
+                  ],
+                  [
+                    1743379200000,
+                    9.84
+                  ],
+                  [
+                    1740700800000,
+                    15.07
+                  ]
+                ],
+                "time_frame": "monthly",
+                "lingo": {
+                  "name": "IIP Sản xuất sản phẩm từ kim loại đúc sẵn",
+                  "unit": "%",
+                  "description": "Chỉ số sản xuất công nghiệp - IIP ngành kim loại đúc sẵn, đo lường khối lượng sản xuất công nghiệp tạo ra trong kỳ hiện tại so với cùng kỳ năm trước. Dữ liệu được thu thập từ các doanh nghiệp thông qua các cuộc khảo sát do Tổng cục thống kê (GSO) phối hợp với Bộ Kế hoạch đầu tư thực hiện.",
+                  "frequency": "Ngày 6 tháng sau",
+                  "last_updated": "2026-09-03T02:55:34.731Z",
+                  "source": "Tổng cục Thống kê - GSO",
+                  "note": null,
+                  "related_blog": null
+                }
+              },
+              {
+                "id": "248_san_xuat_san_pham_dien_tu_may_vi_tinh_va_san_pham_quang_hoc_yoy",
+                "column_name": "san_xuat_san_pham_dien_tu_may_vi_tinh_va_san_pham_quang_hoc_yoy",
+                "table_name": "248",
+                "name": "Sản xuất sản phẩm điện tử và máy vi tính",
+                "hasSub": false,
+                "level": 3,
+                "heading": 3,
+                "open": 0,
+                "dateType": "thang",
+                "yAxis": 1,
+                "data": [
+                  [
+                    1788134400000,
+                    18.939999999999998
+                  ],
+                  [
+                    1785456000000,
+                    23.810000000000002
+                  ],
+                  [
+                    1782777600000,
+                    13.920000000000002
+                  ],
+                  [
+                    1780185600000,
+                    11.409999999999997
+                  ],
+                  [
+                    1777507200000,
+                    6.150000000000006
+                  ],
+                  [
+                    1774915200000,
+                    6.510000000000005
+                  ],
+                  [
+                    1772236800000,
+                    0.28000000000000114
+                  ],
+                  [
+                    1769817600000,
+                    17.870000000000005
+                  ],
+                  [
+                    1767139200000,
+                    7.920000000000002
+                  ],
+                  [
+                    1764460800000,
+                    9.879999999999999
+                  ],
+                  [
+                    1761868800000,
+                    9.44
+                  ],
+                  [
+                    1759190400000,
+                    8.15000000000001
+                  ],
+                  [
+                    1756598400000,
+                    13
+                  ],
+                  [
+                    1753920000000,
+                    1.49
+                  ],
+                  [
+                    1751241600000,
+                    2.71
+                  ],
+                  [
+                    1748649600000,
+                    9.42
+                  ],
+                  [
+                    1745971200000,
+                    8.48
+                  ],
+                  [
+                    1743379200000,
+                    11.49
+                  ],
+                  [
+                    1740700800000,
+                    16.869999999999997
+                  ]
+                ],
+                "time_frame": "monthly",
+                "lingo": {
+                  "name": "IIP Sản xuất sản phẩm điện tử và máy vi tính",
+                  "unit": "%",
+                  "description": "Chỉ số sản xuất công nghiệp - IIP ngành điện tử và máy vi tính, đo lường khối lượng sản xuất công nghiệp tạo ra trong kỳ hiện tại so với cùng kỳ năm trước. Dữ liệu được thu thập từ các doanh nghiệp thông qua các cuộc khảo sát do Tổng cục thống kê (GSO) phối hợp với Bộ Kế hoạch đầu tư thực hiện.",
+                  "frequency": "Ngày 6 tháng sau",
+                  "last_updated": "2026-09-03T02:55:34.731Z",
+                  "source": "Tổng cục Thống kê - GSO",
+                  "note": null,
+                  "related_blog": null
+                }
+              },
+              {
+                "id": "248_san_xuat_thiet_bi_dien_yoy",
+                "column_name": "san_xuat_thiet_bi_dien_yoy",
+                "table_name": "248",
+                "name": "Sản xuất thiết bị điện",
+                "hasSub": false,
+                "level": 3,
+                "heading": 3,
+                "open": 0,
+                "dateType": "thang",
+                "yAxis": 1,
+                "data": [
+                  [
+                    1788134400000,
+                    40.77000000000001
+                  ],
+                  [
+                    1785456000000,
+                    35.41999999999999
+                  ],
+                  [
+                    1782777600000,
+                    4.159999999999997
+                  ],
+                  [
+                    1780185600000,
+                    8.849999999999994
+                  ],
+                  [
+                    1777507200000,
+                    4.150000000000006
+                  ],
+                  [
+                    1774915200000,
+                    6.099999999999994
+                  ],
+                  [
+                    1772236800000,
+                    -9.329999999999998
+                  ],
+                  [
+                    1769817600000,
+                    18.799999999999997
+                  ],
+                  [
+                    1767139200000,
+                    6.269999999999996
+                  ],
+                  [
+                    1764460800000,
+                    -0.51
+                  ],
+                  [
+                    1761868800000,
+                    -0.420000000000002
+                  ],
+                  [
+                    1759190400000,
+                    9.75
+                  ],
+                  [
+                    1756598400000,
+                    15.72
+                  ],
+                  [
+                    1753920000000,
+                    19.15
+                  ],
+                  [
+                    1751241600000,
+                    11.95
+                  ],
+                  [
+                    1748649600000,
+                    -6.13
+                  ],
+                  [
+                    1745971200000,
+                    -3.11
+                  ],
+                  [
+                    1743379200000,
+                    -3.16
+                  ],
+                  [
+                    1740700800000,
+                    14.42
+                  ]
+                ],
+                "time_frame": "monthly",
+                "lingo": {
+                  "name": "IIP Sản xuất thiết bị điện",
+                  "unit": "%",
+                  "description": "Chỉ số sản xuất công nghiệp - IIP ngành thiết bị điện, đo lường khối lượng sản xuất công nghiệp tạo ra trong kỳ hiện tại so với cùng kỳ năm trước. Dữ liệu được thu thập từ các doanh nghiệp thông qua các cuộc khảo sát do Tổng cục thống kê (GSO) phối hợp với Bộ Kế hoạch đầu tư thực hiện.",
+                  "frequency": "Ngày 6 tháng sau",
+                  "last_updated": "2026-09-03T02:55:34.731Z",
+                  "source": "Tổng cục Thống kê - GSO",
+                  "note": null,
+                  "related_blog": null
+                }
+              },
+              {
+                "id": "248_san_xuat_may_moc_thiet_bi_chua_duoc_phan_vao_dau_yoy",
+                "column_name": "san_xuat_may_moc_thiet_bi_chua_duoc_phan_vao_dau_yoy",
+                "table_name": "248",
+                "name": "Sản xuất máy móc, thiết bị chưa được phân vào đâu",
+                "hasSub": false,
+                "level": 3,
+                "heading": 3,
+                "open": 0,
+                "dateType": "thang",
+                "yAxis": 1,
+                "data": [
+                  [
+                    1788134400000,
+                    3.1099999999999994
+                  ],
+                  [
+                    1785456000000,
+                    7.480000000000003
+                  ],
+                  [
+                    1782777600000,
+                    13.269999999999996
+                  ],
+                  [
+                    1780185600000,
+                    15.459999999999994
+                  ],
+                  [
+                    1777507200000,
+                    12.909999999999997
+                  ],
+                  [
+                    1774915200000,
+                    16.730000000000004
+                  ],
+                  [
+                    1772236800000,
+                    -9.340000000000003
+                  ],
+                  [
+                    1769817600000,
+                    3.1299999999999955
+                  ],
+                  [
+                    1767139200000,
+                    -5.3700000000000045
+                  ],
+                  [
+                    1764460800000,
+                    -14.649999999999999
+                  ],
+                  [
+                    1761868800000,
+                    -5.66
+                  ],
+                  [
+                    1759190400000,
+                    15.659999999999998
+                  ],
+                  [
+                    1756598400000,
+                    -1.29
+                  ],
+                  [
+                    1753920000000,
+                    -3.34
+                  ],
+                  [
+                    1751241600000,
+                    7.86
+                  ],
+                  [
+                    1748649600000,
+                    6.25
+                  ],
+                  [
+                    1745971200000,
+                    6.25
+                  ],
+                  [
+                    1743379200000,
+                    6.9
+                  ],
+                  [
+                    1740700800000,
+                    29.68
+                  ]
+                ],
+                "time_frame": "monthly",
+                "lingo": {
+                  "name": "IIP Sản xuất máy móc, thiết bị chưa được phân vào đâu",
+                  "unit": "%",
+                  "description": "Chỉ số sản xuất công nghiệp - IIP ngành máy móc, thiết bị chưa được phân vào đâu, đo lường khối lượng sản xuất công nghiệp tạo ra trong kỳ hiện tại so với cùng kỳ năm trước. Dữ liệu được thu thập từ các doanh nghiệp thông qua các cuộc khảo sát do Tổng cục thống kê (GSO) phối hợp với Bộ Kế hoạch đầu tư thực hiện.",
+                  "frequency": "Ngày 6 tháng sau",
+                  "last_updated": "2026-09-03T02:55:34.731Z",
+                  "source": "Tổng cục Thống kê - GSO",
+                  "note": null,
+                  "related_blog": null
+                }
+              },
+              {
+                "id": "248_san_xuat_xe_co_dong_co_yoy",
+                "column_name": "san_xuat_xe_co_dong_co_yoy",
+                "table_name": "248",
+                "name": "Sản xuất xe có động cơ",
+                "hasSub": false,
+                "level": 3,
+                "heading": 3,
+                "open": 0,
+                "dateType": "thang",
+                "yAxis": 1,
+                "data": [
+                  [
+                    1788134400000,
+                    15.590000000000003
+                  ],
+                  [
+                    1785456000000,
+                    14.120000000000005
+                  ],
+                  [
+                    1782777600000,
+                    12.569999999999993
+                  ],
+                  [
+                    1780185600000,
+                    17.680000000000007
+                  ],
+                  [
+                    1777507200000,
+                    23.069999999999993
+                  ],
+                  [
+                    1774915200000,
+                    12.530000000000003
+                  ],
+                  [
+                    1772236800000,
+                    -3.7900000000000067
+                  ],
+                  [
+                    1769817600000,
+                    34.19
+                  ],
+                  [
+                    1767139200000,
+                    25.480000000000004
+                  ],
+                  [
+                    1764460800000,
+                    4.33
+                  ],
+                  [
+                    1761868800000,
+                    4.22
+                  ],
+                  [
+                    1759190400000,
+                    10.54
+                  ],
+                  [
+                    1756598400000,
+                    14.760000000000002
+                  ],
+                  [
+                    1753920000000,
+                    15.73
+                  ],
+                  [
+                    1751241600000,
+                    37.330000000000005
+                  ],
+                  [
+                    1748649600000,
+                    29.15
+                  ],
+                  [
+                    1745971200000,
+                    30.25
+                  ],
+                  [
+                    1743379200000,
+                    19.91
+                  ],
+                  [
+                    1740700800000,
+                    59.3
+                  ]
+                ],
+                "time_frame": "monthly",
+                "lingo": {
+                  "name": "IIP Sản xuất xe có động cơ",
+                  "unit": "%",
+                  "description": "Chỉ số sản xuất công nghiệp - IIP ngành xe có động cơ, đo lường khối lượng sản xuất công nghiệp tạo ra trong kỳ hiện tại so với cùng kỳ năm trước. Dữ liệu được thu thập từ các doanh nghiệp thông qua các cuộc khảo sát do Tổng cục thống kê (GSO) phối hợp với Bộ Kế hoạch đầu tư thực hiện.",
+                  "frequency": "Ngày 6 tháng sau",
+                  "last_updated": "2026-09-03T02:55:34.731Z",
+                  "source": "Tổng cục Thống kê - GSO",
+                  "note": null,
+                  "related_blog": null
+                }
+              },
+              {
+                "id": "248_san_xuat_phuong_tien_van_tai_khac_yoy",
+                "column_name": "san_xuat_phuong_tien_van_tai_khac_yoy",
+                "table_name": "248",
+                "name": "Sản xuất phương tiện vận tải khác",
+                "hasSub": false,
+                "level": 3,
+                "heading": 3,
+                "open": 0,
+                "dateType": "thang",
+                "yAxis": 1,
+                "data": [
+                  [
+                    1788134400000,
+                    -5.560000000000002
+                  ],
+                  [
+                    1785456000000,
+                    6.25
+                  ],
+                  [
+                    1782777600000,
+                    7.069999999999993
+                  ],
+                  [
+                    1780185600000,
+                    11.719999999999999
+                  ],
+                  [
+                    1777507200000,
+                    -1.2800000000000011
+                  ],
+                  [
+                    1774915200000,
+                    5.069999999999993
+                  ],
+                  [
+                    1772236800000,
+                    -23.909999999999997
+                  ],
+                  [
+                    1769817600000,
+                    17.930000000000007
+                  ],
+                  [
+                    1767139200000,
+                    -3.629999999999996
+                  ],
+                  [
+                    1764460800000,
+                    -3.4099999999999997
+                  ],
+                  [
+                    1761868800000,
+                    -5.13
+                  ],
+                  [
+                    1759190400000,
+                    5.3
+                  ],
+                  [
+                    1756598400000,
+                    1.27
+                  ],
+                  [
+                    1753920000000,
+                    -6.22
+                  ],
+                  [
+                    1751241600000,
+                    12.049999999999999
+                  ],
+                  [
+                    1748649600000,
+                    45.18
+                  ],
+                  [
+                    1745971200000,
+                    6.58
+                  ],
+                  [
+                    1743379200000,
+                    2.58
+                  ],
+                  [
+                    1740700800000,
+                    35.199999999999996
+                  ]
+                ],
+                "time_frame": "monthly",
+                "lingo": {
+                  "name": "IIP Sản xuất phương tiện vận tải khác",
+                  "unit": "%",
+                  "description": "Chỉ số sản xuất công nghiệp - IIP ngành phương tiện vận tải khác, đo lường khối lượng sản xuất công nghiệp tạo ra trong kỳ hiện tại so với cùng kỳ năm trước. Dữ liệu được thu thập từ các doanh nghiệp thông qua các cuộc khảo sát do Tổng cục thống kê (GSO) phối hợp với Bộ Kế hoạch đầu tư thực hiện.",
+                  "frequency": "Ngày 6 tháng sau",
+                  "last_updated": "2026-09-03T02:55:34.731Z",
+                  "source": "Tổng cục Thống kê - GSO",
+                  "note": null,
+                  "related_blog": null
+                }
+              },
+              {
+                "id": "248_san_xuat_giuong_tu_ban_ghe_yoy",
+                "column_name": "san_xuat_giuong_tu_ban_ghe_yoy",
+                "table_name": "248",
+                "name": "Sản xuất giường, tủ, bàn, ghế",
+                "hasSub": false,
+                "level": 3,
+                "heading": 3,
+                "open": 0,
+                "dateType": "thang",
+                "yAxis": 1,
+                "data": [
+                  [
+                    1788134400000,
+                    11.5
+                  ],
+                  [
+                    1785456000000,
+                    12.469999999999999
+                  ],
+                  [
+                    1782777600000,
+                    19.230000000000004
+                  ],
+                  [
+                    1780185600000,
+                    15.540000000000006
+                  ],
+                  [
+                    1777507200000,
+                    11.519999999999996
+                  ],
+                  [
+                    1774915200000,
+                    15.510000000000005
+                  ],
+                  [
+                    1772236800000,
+                    4.829999999999998
+                  ],
+                  [
+                    1769817600000,
+                    11.340000000000003
+                  ],
+                  [
+                    1767139200000,
+                    7.269999999999996
+                  ],
+                  [
+                    1764460800000,
+                    3.61
+                  ],
+                  [
+                    1761868800000,
+                    8.08
+                  ],
+                  [
+                    1759190400000,
+                    8.58
+                  ],
+                  [
+                    1756598400000,
+                    2.13
+                  ],
+                  [
+                    1753920000000,
+                    20.74
+                  ],
+                  [
+                    1751241600000,
+                    14.24
+                  ],
+                  [
+                    1748649600000,
+                    21.11
+                  ],
+                  [
+                    1745971200000,
+                    -1.82
+                  ],
+                  [
+                    1743379200000,
+                    8.58
+                  ],
+                  [
+                    1740700800000,
+                    27.47
+                  ]
+                ],
+                "time_frame": "monthly",
+                "lingo": {
+                  "name": "IIP Sản xuất giường, tủ, bàn, ghế",
+                  "unit": "%",
+                  "description": "Chỉ số sản xuất công nghiệp - IIP ngành giường, tủ, bàn, ghế, đo lường khối lượng sản xuất công nghiệp tạo ra trong kỳ hiện tại so với cùng kỳ năm trước. Dữ liệu được thu thập từ các doanh nghiệp thông qua các cuộc khảo sát do Tổng cục thống kê (GSO) phối hợp với Bộ Kế hoạch đầu tư thực hiện.",
+                  "frequency": "Ngày 6 tháng sau",
+                  "last_updated": "2026-09-03T02:55:34.731Z",
+                  "source": "Tổng cục Thống kê - GSO",
+                  "note": null,
+                  "related_blog": null
+                }
+              },
+              {
+                "id": "248_cong_nghiep_che_bien_che_tao_khac_yoy",
+                "column_name": "cong_nghiep_che_bien_che_tao_khac_yoy",
+                "table_name": "248",
+                "name": "Công nghiệp chế biến, chế tạo khác",
+                "hasSub": false,
+                "level": 3,
+                "heading": 3,
+                "open": 0,
+                "dateType": "thang",
+                "yAxis": 1,
+                "data": [
+                  [
+                    1788134400000,
+                    11.53
+                  ],
+                  [
+                    1785456000000,
+                    9.53
+                  ],
+                  [
+                    1782777600000,
+                    8.95999999999999
+                  ],
+                  [
+                    1780185600000,
+                    10.63
+                  ],
+                  [
+                    1777507200000,
+                    13.56
+                  ],
+                  [
+                    1774915200000,
+                    15.21
+                  ],
+                  [
+                    1772236800000,
+                    4.08
+                  ],
+                  [
+                    1769817600000,
+                    17.86
+                  ],
+                  [
+                    1767139200000,
+                    5.83
+                  ],
+                  [
+                    1764460800000,
+                    7.920000000000001
+                  ],
+                  [
+                    1761868800000,
+                    9.879999999999999
+                  ],
+                  [
+                    1759190400000,
+                    6.63
+                  ],
+                  [
+                    1756598400000,
+                    6.77
+                  ],
+                  [
+                    1753920000000,
+                    3.75
+                  ],
+                  [
+                    1751241600000,
+                    4.74
+                  ],
+                  [
+                    1748649600000,
+                    5.6899999999999995
+                  ],
+                  [
+                    1745971200000,
+                    9.59
+                  ],
+                  [
+                    1743379200000,
+                    10.99
+                  ],
+                  [
+                    1740700800000,
+                    24.57
+                  ]
+                ],
+                "time_frame": "monthly",
+                "lingo": {
+                  "name": "IIP Công nghiệp chế biến, chế tạo khác",
+                  "unit": "%",
+                  "description": "Chỉ số sản xuất công nghiệp - IIP ngành công nghiệp chế biến, chế tạo khác, đo lường khối lượng sản xuất công nghiệp tạo ra trong kỳ hiện tại so với cùng kỳ năm trước. Dữ liệu được thu thập từ các doanh nghiệp thông qua các cuộc khảo sát do Tổng cục thống kê (GSO) phối hợp với Bộ Kế hoạch đầu tư thực hiện.",
+                  "frequency": "Ngày 6 tháng sau",
+                  "last_updated": "2026-09-03T02:55:34.731Z",
+                  "source": "Tổng cục Thống kê - GSO",
+                  "note": null,
+                  "related_blog": null
+                }
+              },
+              {
+                "id": "248_sua_chua_bao_duong_va_lap_dat_may_moc_va_thiet_bi_yoy",
+                "column_name": "sua_chua_bao_duong_va_lap_dat_may_moc_va_thiet_bi_yoy",
+                "table_name": "248",
+                "name": "Sửa chữa, bảo dưỡng và lắp đặt máy móc và thiết bị",
+                "hasSub": false,
+                "level": 3,
+                "heading": 3,
+                "open": 0,
+                "dateType": "thang",
+                "yAxis": 1,
+                "data": [
+                  [
+                    1788134400000,
+                    31.22
+                  ],
+                  [
+                    1785456000000,
+                    48.599999999999994
+                  ],
+                  [
+                    1782777600000,
+                    27.709999999999997
+                  ],
+                  [
+                    1780185600000,
+                    17.760000000000005
+                  ],
+                  [
+                    1777507200000,
+                    25.379999999999995
+                  ],
+                  [
+                    1774915200000,
+                    20.78
+                  ],
+                  [
+                    1772236800000,
+                    10.86
+                  ],
+                  [
+                    1769817600000,
+                    32.22
+                  ],
+                  [
+                    1767139200000,
+                    1.9500000000000028
+                  ],
+                  [
+                    1764460800000,
+                    24.18
+                  ],
+                  [
+                    1761868800000,
+                    16.59
+                  ],
+                  [
+                    1759190400000,
+                    27.700000000000003
+                  ],
+                  [
+                    1756598400000,
+                    16.85
+                  ],
+                  [
+                    1753920000000,
+                    13.8
+                  ],
+                  [
+                    1751241600000,
+                    13.469999999999999
+                  ],
+                  [
+                    1748649600000,
+                    22.45
+                  ],
+                  [
+                    1745971200000,
+                    9.98
+                  ],
+                  [
+                    1743379200000,
+                    12.26
+                  ],
+                  [
+                    1740700800000,
+                    36.980000000000004
+                  ]
+                ],
+                "time_frame": "monthly",
+                "lingo": {
+                  "name": "IIP Sửa chữa, bảo dưỡng và lắp đặt máy móc và thiết bị",
+                  "unit": "%",
+                  "description": "Chỉ số sản xuất công nghiệp - IIP ngành sửa chữa, bảo dưỡng và lắp đặt máy móc và thiết bị, đo lường khối lượng sản xuất công nghiệp tạo ra trong kỳ hiện tại so với cùng kỳ năm trước. Dữ liệu được thu thập từ các doanh nghiệp thông qua các cuộc khảo sát do Tổng cục thống kê (GSO) phối hợp với Bộ Kế hoạch đầu tư thực hiện.",
+                  "frequency": "Ngày 6 tháng sau",
+                  "last_updated": "2026-09-03T02:55:34.731Z",
+                  "source": "Tổng cục Thống kê - GSO",
+                  "note": null,
+                  "related_blog": null
+                }
+              },
+              {
+                "id": "248_san_xuat_truyen_tai_va_phan_phoi_dien_yoy",
+                "column_name": "san_xuat_truyen_tai_va_phan_phoi_dien_yoy",
+                "table_name": "248",
+                "name": "Sản xuất, truyền tải và phân phối điện",
+                "hasSub": false,
+                "level": 2,
+                "heading": 2,
+                "open": 0,
+                "dateType": "thang",
+                "yAxis": 1,
+                "data": [
+                  [
+                    1788134400000,
+                    11.790000000000006
+                  ],
+                  [
+                    1785456000000,
+                    12.480000000000004
+                  ],
+                  [
+                    1782777600000,
+                    15.22
+                  ],
+                  [
+                    1780185600000,
+                    10.280000000000001
+                  ],
+                  [
+                    1777507200000,
+                    10.319999999999993
+                  ],
+                  [
+                    1774915200000,
+                    4.609999999999999
+                  ],
+                  [
+                    1772236800000,
+                    -1.25
+                  ],
+                  [
+                    1769817600000,
+                    16.709999999999994
+                  ],
+                  [
+                    1767139200000,
+                    11.159999999999997
+                  ],
+                  [
+                    1764460800000,
+                    3.64
+                  ],
+                  [
+                    1761868800000,
+                    9.19
+                  ],
+                  [
+                    1759190400000,
+                    13.86
+                  ],
+                  [
+                    1756598400000,
+                    6.23
+                  ],
+                  [
+                    1753920000000,
+                    7.93
+                  ],
+                  [
+                    1751241600000,
+                    3.88
+                  ],
+                  [
+                    1748649600000,
+                    3.08
+                  ],
+                  [
+                    1745971200000,
+                    2.33
+                  ],
+                  [
+                    1743379200000,
+                    7.03
+                  ],
+                  [
+                    1740700800000,
+                    12
+                  ]
+                ],
+                "time_frame": "monthly",
+                "lingo": {
+                  "name": "IIP Sản xuất, truyền tải và phân phối điện",
+                  "unit": "%",
+                  "description": "Chỉ số sản xuất công nghiệp - IIP ngành sản xuất, truyền tải và phân phối điện, đo lường khối lượng sản xuất công nghiệp tạo ra trong kỳ hiện tại so với cùng kỳ năm trước. Dữ liệu được thu thập từ các doanh nghiệp thông qua các cuộc khảo sát do Tổng cục thống kê (GSO) phối hợp với Bộ Kế hoạch đầu tư thực hiện.",
+                  "frequency": "Ngày 6 tháng sau",
+                  "last_updated": "2026-09-03T02:55:34.731Z",
+                  "source": "Tổng cục Thống kê - GSO",
+                  "note": null,
+                  "related_blog": null
+                }
+              },
+              {
+                "id": "248_cung_cap_nuoc_hoat_dong_quan_ly_va_xu_ly_rac_thai_nuoc_thai_yoy",
+                "column_name": "cung_cap_nuoc_hoat_dong_quan_ly_va_xu_ly_rac_thai_nuoc_thai_yoy",
+                "table_name": "248",
+                "name": "Cung cấp nước và xử lý rác thải",
+                "hasSub": false,
+                "level": 2,
+                "heading": 2,
+                "open": 0,
+                "dateType": "thang",
+                "yAxis": 1,
+                "data": [
+                  [
+                    1788134400000,
+                    9.540000000000006
+                  ],
+                  [
+                    1785456000000,
+                    10.730000000000004
+                  ],
+                  [
+                    1782777600000,
+                    10.14
+                  ],
+                  [
+                    1780185600000,
+                    6.219999999999999
+                  ],
+                  [
+                    1777507200000,
+                    16.480000000000004
+                  ],
+                  [
+                    1774915200000,
+                    11.219999999999999
+                  ],
+                  [
+                    1772236800000,
+                    0.980000000000004
+                  ],
+                  [
+                    1769817600000,
+                    10.569999999999993
+                  ],
+                  [
+                    1767139200000,
+                    6.280000000000001
+                  ],
+                  [
+                    1764460800000,
+                    2.11
+                  ],
+                  [
+                    1761868800000,
+                    7.81999999999999
+                  ],
+                  [
+                    1759190400000,
+                    6.84
+                  ],
+                  [
+                    1756598400000,
+                    0.42
+                  ],
+                  [
+                    1753920000000,
+                    7.07
+                  ],
+                  [
+                    1751241600000,
+                    10.56
+                  ],
+                  [
+                    1748649600000,
+                    14.14
+                  ],
+                  [
+                    1745971200000,
+                    5.38
+                  ],
+                  [
+                    1743379200000,
+                    8.6
+                  ],
+                  [
+                    1740700800000,
+                    24.060000000000002
+                  ]
+                ],
+                "time_frame": "monthly",
+                "lingo": {
+                  "name": "IIP Cung cấp nước và xử lý rác thải",
+                  "unit": "%",
+                  "description": "Chỉ số sản xuất công nghiệp - IIP ngành cung cấp nước và xử lý rác thải, đo lường khối lượng sản xuất công nghiệp tạo ra trong kỳ hiện tại so với cùng kỳ năm trước. Dữ liệu được thu thập từ các doanh nghiệp thông qua các cuộc khảo sát do Tổng cục thống kê (GSO) phối hợp với Bộ Kế hoạch đầu tư thực hiện.",
+                  "frequency": "Ngày 6 tháng sau",
+                  "last_updated": "2026-09-03T02:55:34.731Z",
+                  "source": "Tổng cục Thống kê - GSO",
+                  "note": null,
+                  "related_blog": null
+                }
+              },
+              {
+                "id": "248_khai_thac_xu_ly_va_cung_cap_nuoc_yoy",
+                "column_name": "khai_thac_xu_ly_va_cung_cap_nuoc_yoy",
+                "table_name": "248",
+                "name": "Khai thác, xử lý và cung cấp nước",
+                "hasSub": false,
+                "level": 3,
+                "heading": 3,
+                "open": 0,
+                "dateType": "thang",
+                "yAxis": 1,
+                "data": [
+                  [
+                    1788134400000,
+                    6.709999999999994
+                  ],
+                  [
+                    1785456000000,
+                    7.310000000000002
+                  ],
+                  [
+                    1782777600000,
+                    7.659999999999996
+                  ],
+                  [
+                    1780185600000,
+                    6.400000000000006
+                  ],
+                  [
+                    1777507200000,
+                    6.290000000000006
+                  ],
+                  [
+                    1774915200000,
+                    6.180000000000007
+                  ],
+                  [
+                    1772236800000,
+                    2.319999999999993
+                  ],
+                  [
+                    1769817600000,
+                    8.879999999999995
+                  ],
+                  [
+                    1767139200000,
+                    7.129999999999996
+                  ],
+                  [
+                    1764460800000,
+                    5.09
+                  ],
+                  [
+                    1761868800000,
+                    4.41
+                  ],
+                  [
+                    1759190400000,
+                    5.63
+                  ],
+                  [
+                    1756598400000,
+                    4.93
+                  ],
+                  [
+                    1753920000000,
+                    3.37
+                  ],
+                  [
+                    1751241600000,
+                    4.99
+                  ],
+                  [
+                    1748649600000,
+                    2.48
+                  ],
+                  [
+                    1745971200000,
+                    2.27
+                  ],
+                  [
+                    1743379200000,
+                    0.13
+                  ],
+                  [
+                    1740700800000,
+                    6.47
+                  ]
+                ],
+                "time_frame": "monthly",
+                "lingo": {
+                  "name": "IIP Khai thác, xử lý và cung cấp nước",
+                  "unit": "%",
+                  "description": "Chỉ số sản xuất công nghiệp - IIP ngành khai thác, xử lý và cung cấp nước, đo lường khối lượng sản xuất công nghiệp tạo ra trong kỳ hiện tại so với cùng kỳ năm trước. Dữ liệu được thu thập từ các doanh nghiệp thông qua các cuộc khảo sát do Tổng cục thống kê (GSO) phối hợp với Bộ Kế hoạch đầu tư thực hiện.",
+                  "frequency": "Ngày 6 tháng sau",
+                  "last_updated": "2026-09-03T02:55:34.731Z",
+                  "source": "Tổng cục Thống kê - GSO",
+                  "note": null,
+                  "related_blog": null
+                }
+              },
+              {
+                "id": "248_thoat_nuoc_va_xu_ly_nuoc_thai_yoy",
+                "column_name": "thoat_nuoc_va_xu_ly_nuoc_thai_yoy",
+                "table_name": "248",
+                "name": "Thoát nước và xử lý nước thải",
+                "hasSub": false,
+                "level": 3,
+                "heading": 3,
+                "open": 0,
+                "dateType": "thang",
+                "yAxis": 1,
+                "data": [
+                  [
+                    1788134400000,
+                    6.659999999999997
+                  ],
+                  [
+                    1785456000000,
+                    5.290000000000006
+                  ],
+                  [
+                    1782777600000,
+                    4.340000000000003
+                  ],
+                  [
+                    1780185600000,
+                    -0.8299999999999983
+                  ],
+                  [
+                    1777507200000,
+                    3.239999999999995
+                  ],
+                  [
+                    1774915200000,
+                    4.920000000000002
+                  ],
+                  [
+                    1772236800000,
+                    2.969999999999999
+                  ],
+                  [
+                    1769817600000,
+                    19.590000000000003
+                  ],
+                  [
+                    1767139200000,
+                    10.989999999999995
+                  ],
+                  [
+                    1764460800000,
+                    14.11
+                  ],
+                  [
+                    1761868800000,
+                    11.63
+                  ],
+                  [
+                    1759190400000,
+                    10.639999999999999
+                  ],
+                  [
+                    1756598400000,
+                    10.100000000000001
+                  ],
+                  [
+                    1753920000000,
+                    12.85
+                  ],
+                  [
+                    1751241600000,
+                    6.7
+                  ],
+                  [
+                    1748649600000,
+                    15.229999999999999
+                  ],
+                  [
+                    1745971200000,
+                    8.97
+                  ],
+                  [
+                    1743379200000,
+                    14.04
+                  ],
+                  [
+                    1740700800000,
+                    14.41
+                  ]
+                ],
+                "time_frame": "monthly",
+                "lingo": {
+                  "name": "IIP Thoát nước và xử lý nước thải",
+                  "unit": "%",
+                  "description": "Chỉ số sản xuất công nghiệp - IIP ngành thoát nước và xử lý nước thải, đo lường khối lượng sản xuất công nghiệp tạo ra trong kỳ hiện tại so với cùng kỳ năm trước. Dữ liệu được thu thập từ các doanh nghiệp thông qua các cuộc khảo sát do Tổng cục thống kê (GSO) phối hợp với Bộ Kế hoạch đầu tư thực hiện.",
+                  "frequency": "Ngày 6 tháng sau",
+                  "last_updated": "2026-09-03T02:55:34.731Z",
+                  "source": "Tổng cục Thống kê - GSO",
+                  "note": null,
+                  "related_blog": null
+                }
+              },
+              {
+                "id": "248_hoat_dong_thu_gom_xu_ly_va_tieu_huy_rac_thai_yoy",
+                "column_name": "hoat_dong_thu_gom_xu_ly_va_tieu_huy_rac_thai_yoy",
+                "table_name": "248",
+                "name": "Thu gom và xử lý rác thải",
+                "hasSub": false,
+                "level": 3,
+                "heading": 3,
+                "open": 0,
+                "dateType": "thang",
+                "yAxis": 1,
+                "data": [
+                  [
+                    1788134400000,
+                    13.090000000000005
+                  ],
+                  [
+                    1785456000000,
+                    15.530000000000003
+                  ],
+                  [
+                    1782777600000,
+                    13.870000000000005
+                  ],
+                  [
+                    1780185600000,
+                    7.049999999999996
+                  ],
+                  [
+                    1777507200000,
+                    31.25
+                  ],
+                  [
+                    1774915200000,
+                    17.349999999999994
+                  ],
+                  [
+                    1772236800000,
+                    -0.6200000000000045
+                  ],
+                  [
+                    1769817600000,
+                    11.099999999999994
+                  ],
+                  [
+                    1767139200000,
+                    4.659999999999997
+                  ],
+                  [
+                    1764460800000,
+                    -2.4899999999999998
+                  ],
+                  [
+                    1761868800000,
+                    11.01
+                  ],
+                  [
+                    1759190400000,
+                    7.5699999999999905
+                  ],
+                  [
+                    1756598400000,
+                    -5.28
+                  ],
+                  [
+                    1753920000000,
+                    10.42
+                  ],
+                  [
+                    1751241600000,
+                    18.060000000000002
+                  ],
+                  [
+                    1748649600000,
+                    28.720000000000002
+                  ],
+                  [
+                    1745971200000,
+                    8.76
+                  ],
+                  [
+                    1743379200000,
+                    17.1
+                  ],
+                  [
+                    1740700800000,
+                    50.67
+                  ]
+                ],
+                "time_frame": "monthly",
+                "lingo": {
+                  "name": "IIP Thu gom và xử lý rác thải",
+                  "unit": "%",
+                  "description": "Chỉ số sản xuất công nghiệp - IIP ngành thu gom và xử lý rác thải, đo lường khối lượng sản xuất công nghiệp tạo ra trong kỳ hiện tại so với cùng kỳ năm trước. Dữ liệu được thu thập từ các doanh nghiệp thông qua các cuộc khảo sát do Tổng cục thống kê (GSO) phối hợp với Bộ Kế hoạch đầu tư thực hiện.",
+                  "frequency": "Ngày 6 tháng sau",
+                  "last_updated": "2026-09-03T02:55:34.731Z",
+                  "source": "Tổng cục Thống kê - GSO",
+                  "note": null,
+                  "related_blog": null
+                }
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

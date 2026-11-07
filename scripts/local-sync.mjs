@@ -44,6 +44,8 @@ const TRACKED_DATA_TARGETS = [
   'data/maritime.db',
   'data/evaluation_cache/',
   'data/company_profiles.db',
+  'data/funds_snapshot.json',
+  'lib/funds-data.ts',
 ];
 
 function logHeader(title) {
@@ -185,6 +187,9 @@ async function main() {
 
   // Bước 7: Báo cáo phân tích CTCK mới nhất
   runCommand('node', ['scripts/sync-daily-reports.mjs'], 'Cập nhật Báo cáo phân tích Doanh nghiệp & Ngành');
+
+  // Bước 8: Dữ liệu Quỹ Mở Fmarket (70 quỹ)
+  runCommand('node', ['scripts/sync-funds.mjs'], 'Đồng bộ Dữ liệu Quỹ Mở Fmarket (70 quỹ)');
 
   // Cập nhật mốc thời gian thành công
   try {

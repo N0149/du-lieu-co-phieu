@@ -22,6 +22,7 @@ import {
   Minimize2,
   Maximize2,
   TrendingUp,
+  ScrollText,
   Loader2,
   Calendar,
 } from "lucide-react"
@@ -37,8 +38,8 @@ interface StockBctcReportViewProps {
   companyName?: string
   availableTickers?: string[]
   bctcDocuments?: BctcCompanyDocumentsPayload | null
-  targetPeriod?: 'Ban_Nien_2026' | 'Quy_3_2026'
-  onSwitchPeriod?: (period: 'Ban_Nien_2026' | 'Quy_3_2026') => void
+  targetPeriod?: 'Ban_Nien_2026' | 'Quy_3_2026' | string
+  onSwitchPeriod?: (period: any) => void
 }
 
 export function StockBctcReportView({
@@ -72,6 +73,21 @@ export function StockBctcReportView({
   const [availablePeriods, setAvailablePeriods] = useState<BctcPeriodOption[]>(
     bctcDataHopNhat?.availablePeriods || bctcDataCongTyMe?.availablePeriods || []
   )
+  const periodCache = useRef<Record<string, { hopNhat: BctcReportData | null; congTyMe: BctcReportData | null; docs?: BctcCompanyDocumentsPayload | null }>>({})
+
+  // Lưu cache số liệu nạp ban đầu (0ms overhead)
+  useEffect(() => {
+    if (bctcDataHopNhat || bctcDataCongTyMe) {
+      const pKey = bctcDataHopNhat?.periodKey || bctcDataCongTyMe?.periodKey || targetPeriod
+      if (pKey) {
+        periodCache.current[pKey] = {
+          hopNhat: bctcDataHopNhat || null,
+          congTyMe: bctcDataCongTyMe || null,
+          docs: bctcDocuments || docs,
+        }
+      }
+    }
+  }, [bctcDataHopNhat, bctcDataCongTyMe, targetPeriod, bctcDocuments])
 
   useEffect(() => {
     const matchesTarget = (bctcDataHopNhat && bctcDataHopNhat.periodKey === targetPeriod) ||
@@ -140,13 +156,48 @@ export function StockBctcReportView({
     }
   }, [dataHopNhat, dataCongTyMe, selectedType])
 
-  const handlePeriodChange = (periodId: string) => {
-    if (onSwitchPeriod && (periodId === 'Ban_Nien_2026' || periodId === 'Quy_3_2026')) {
-      onSwitchPeriod(periodId)
-      return
+  // Danh sách các tab con: Báo cáo tài chính bán niên & Báo cáo tài chính quý 3 (mở rộng tự động cho Quý 4...)
+  const subTabs = useMemo(() => {
+    const list: Array<{ id: string; label: string; shortLabel: string; badge?: string }> = [
+      { id: 'Ban_Nien_2026', label: 'Báo cáo tài chính bán niên', shortLabel: 'Bán niên', badge: '2026' },
+      { id: 'Quy_3_2026', label: 'Báo cáo tài chính quý 3', shortLabel: 'Quý 3', badge: 'MỚI' },
+    ]
+
+    if (availablePeriods && availablePeriods.length > 0) {
+      availablePeriods.forEach((ap) => {
+        if (!list.some((item) => item.id === ap.id)) {
+          list.push({
+            id: ap.id,
+            label: ap.label?.startsWith('Báo cáo') ? ap.label : `Báo cáo tài chính ${ap.shortLabel || ap.label}`,
+            shortLabel: ap.shortLabel || ap.label,
+            badge: ap.isLatest ? 'MỚI' : undefined,
+          })
+        }
+      })
     }
+    return list
+  }, [availablePeriods])
+
+  const handlePeriodChange = (periodId: string) => {
     if (periodId === selectedPeriod && !isLoading) return
     setSelectedPeriod(periodId)
+    setSelectedSectionId("all")
+    setSearchKeyword("")
+
+    if (onSwitchPeriod) {
+      onSwitchPeriod(periodId)
+    }
+
+    // 0ms cache hit tức thì
+    if (periodCache.current[periodId]) {
+      const cached = periodCache.current[periodId]
+      setDataHopNhat(cached.hopNhat)
+      setDataCongTyMe(cached.congTyMe)
+      if (cached.docs) setDocs(cached.docs)
+      setIsLoading(false)
+      return
+    }
+
     setIsLoading(true)
     fetch(`/api/stock/${encodeURIComponent(ticker)}/bctc?period=${encodeURIComponent(periodId)}`)
       .then((res) => {
@@ -154,12 +205,18 @@ export function StockBctcReportView({
         return res.json()
       })
       .then((res) => {
-        if (res.bctcDataHopNhat) setDataHopNhat(res.bctcDataHopNhat)
-        else setDataHopNhat(null)
-        if (res.bctcDataCongTyMe) setDataCongTyMe(res.bctcDataCongTyMe)
-        else setDataCongTyMe(null)
+        const hopNhat = res.bctcDataHopNhat || null
+        const congTyMe = res.bctcDataCongTyMe || null
+        setDataHopNhat(hopNhat)
+        setDataCongTyMe(congTyMe)
         if (res.availablePeriods && Array.isArray(res.availablePeriods)) {
           setAvailablePeriods(res.availablePeriods)
+        }
+        if (res.bctcDocuments) setDocs(res.bctcDocuments)
+        periodCache.current[periodId] = {
+          hopNhat,
+          congTyMe,
+          docs: res.bctcDocuments || docs,
         }
       })
       .catch((err) => {
@@ -169,6 +226,51 @@ export function StockBctcReportView({
         setIsLoading(false)
       })
   }
+
+  // Thanh tab con: Báo cáo tài chính bán niên & Báo cáo tài chính quý 3 (hiển thị nổi bật ở phía trên)
+  const renderSubTabsBar = () => (
+    <div className="flex flex-wrap items-center justify-between gap-3 p-1.5 sm:p-2 rounded-2xl border border-border/80 bg-card/90 backdrop-blur-xs shadow-xs">
+      <div className="flex flex-wrap items-center gap-1.5 sm:gap-2">
+        {subTabs.map((tab) => {
+          const isActive = selectedPeriod === tab.id
+          return (
+            <button
+              key={tab.id}
+              type="button"
+              onClick={() => handlePeriodChange(tab.id)}
+              className={cn(
+                "inline-flex items-center gap-2 px-3.5 sm:px-4 py-2 rounded-xl text-xs sm:text-sm font-bold transition-all cursor-pointer select-none",
+                isActive
+                  ? "bg-emerald-500 text-slate-950 shadow-sm font-bold"
+                  : "bg-muted/40 hover:bg-muted text-muted-foreground hover:text-foreground border border-border/40"
+              )}
+            >
+              <ScrollText className={cn("size-4", isActive ? "text-slate-950" : "text-emerald-400")} />
+              <span>{tab.label}</span>
+              {tab.badge && (
+                <span
+                  className={cn(
+                    "text-[10px] font-mono px-1.5 py-0.2 rounded-full font-bold",
+                    isActive
+                      ? "bg-slate-950/20 text-slate-950"
+                      : "bg-emerald-500/20 text-emerald-400 border border-emerald-500/30"
+                  )}
+                >
+                  {tab.badge}
+                </span>
+              )}
+            </button>
+          )
+        })}
+      </div>
+
+      <div className="hidden sm:flex items-center gap-2 text-xs text-muted-foreground px-2">
+        <span className="font-mono text-emerald-400 font-bold">{ticker}</span>
+        <span>·</span>
+        <span>{tableCount} bảng chi tiết</span>
+      </div>
+    </div>
+  )
 
   const currentData = selectedType === 'HopNhat' ? dataHopNhat : dataCongTyMe
 
@@ -245,9 +347,12 @@ export function StockBctcReportView({
 
   if (isLoading) {
     return (
-      <div className="flex flex-col items-center justify-center p-12 space-y-3 rounded-2xl border border-border/70 bg-card/60">
-        <Loader2 className="size-8 animate-spin text-primary" />
-        <p className="text-xs text-muted-foreground font-mono">Đang tải Thuyết minh BCTC {ticker}...</p>
+      <div className="space-y-4">
+        {renderSubTabsBar()}
+        <div className="flex flex-col items-center justify-center p-12 space-y-3 rounded-2xl border border-border/70 bg-card/60">
+          <Loader2 className="size-8 animate-spin text-primary" />
+          <p className="text-xs text-muted-foreground font-mono">Đang tải {selectedPeriod === 'Ban_Nien_2026' ? 'Báo cáo Bán niên' : 'Báo cáo Quý 3'} {ticker}...</p>
+        </div>
       </div>
     )
   }
@@ -256,6 +361,9 @@ export function StockBctcReportView({
   if (!currentData || !currentData.hasReport) {
     return (
       <div className="space-y-6">
+        {/* ── Thanh điều hướng các tab con (Bán niên, Quý 3, Quý 4...) ── */}
+        {renderSubTabsBar()}
+
         {/* Danh mục Tải File Gốc BCTC */}
         {docs && (
           <BctcDocumentSection
@@ -369,6 +477,9 @@ export function StockBctcReportView({
 
   return (
     <div className="space-y-6">
+      {/* ── 0. THANH ĐIỀU HƯỚNG CÁC TAB CON: BCTC BÁN NIÊN, QUÝ 3 (VÀ QUÝ 4, CÁC KỲ SAU) ── */}
+      {renderSubTabsBar()}
+
       {/* ── Danh mục Tải File Gốc BCTC ── */}
       {docs && (
         <BctcDocumentSection
@@ -583,18 +694,39 @@ export function StockBctcReportView({
               key={sec.id || `sec-${idx}`}
               className="rounded-2xl border border-border/80 bg-card/50 p-5 sm:p-7 shadow-xs space-y-4"
             >
-              <div className="flex items-center justify-between gap-3 border-b border-border/60 pb-3">
+              <div className="flex flex-wrap items-center justify-between gap-3 border-b border-border/60 pb-3">
                 <div className="flex items-center gap-2.5">
                   {getSectionIcon(sec.number)}
                   <h3 className="text-base sm:text-lg font-bold text-foreground">
                     {sec.title}
                   </h3>
                 </div>
-                {sec.tableCount > 0 && (
-                  <span className="text-xs font-mono text-muted-foreground bg-muted/60 px-2 py-0.5 rounded-md">
-                    {sec.tableCount} bảng
-                  </span>
-                )}
+                <div className="flex items-center gap-2">
+                  {sec.hasAttachedNotes && (
+                    <div className="flex items-center gap-1.5">
+                      <a
+                        href={`#bang-chinh-${sec.id}`}
+                        className="inline-flex items-center gap-1 px-2.5 py-1 rounded-lg text-xs font-semibold bg-muted/80 hover:bg-muted text-foreground border border-border/60 transition-colors shadow-2xs"
+                        title="Cuộn tới Bảng số liệu chính"
+                      >
+                        <span>📊 Bảng chính</span>
+                      </a>
+                      <a
+                        href={`#thuyet-minh-${sec.id}`}
+                        className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg text-xs font-semibold bg-emerald-500/15 hover:bg-emerald-500/25 text-emerald-400 border border-emerald-500/30 transition-colors shadow-2xs"
+                        title="Cuộn tới Thuyết minh chi tiết"
+                      >
+                        <span>📑 Thuyết minh chi tiết</span>
+                        <span className="text-[10px] font-mono opacity-80 font-bold">({sec.tableCount > 1 ? `${sec.tableCount - 1} bảng` : 'Đầy đủ'})</span>
+                      </a>
+                    </div>
+                  )}
+                  {sec.tableCount > 0 && (
+                    <span className="text-xs font-mono text-muted-foreground bg-muted/60 px-2 py-0.5 rounded-md border border-border/40">
+                      {sec.tableCount} bảng
+                    </span>
+                  )}
+                </div>
               </div>
 
               <div

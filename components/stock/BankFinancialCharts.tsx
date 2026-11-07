@@ -19,6 +19,7 @@ import {
 import type { BankAnalysisData } from '@/lib/banking-types'
 import { Landmark, ExternalLink, Maximize2 } from 'lucide-react'
 import { ChartModal } from './ChartModal'
+import { ChartWatermark } from '@/components/ChartWatermark'
 
 interface BankFinancialChartsProps {
   symbol: string
@@ -133,6 +134,7 @@ export function BankFinancialCharts({ symbol, data }: BankFinancialChartsProps) 
               <Maximize2 className="size-2.5" />
               <span>Mở rộng</span>
             </div>
+            <ChartWatermark domain="dulieudautu.com" brandName="Dữ Liệu Đầu Tư" size="sm" />
             <ResponsiveContainer width="100%" height="100%">
               <RadarChart cx="50%" cy="50%" outerRadius="75%" data={spider.radarData}>
                 <PolarGrid stroke="#334155" strokeDasharray="3 3" />
@@ -219,7 +221,8 @@ export function BankFinancialCharts({ symbol, data }: BankFinancialChartsProps) 
                 <Maximize2 className="size-2.5" />
                 <span>Mở rộng</span>
               </div>
-              <ResponsiveContainer width="100%" height="100%">
+              <ChartWatermark domain="dulieudautu.com" brandName="Dữ Liệu Đầu Tư" size="sm" />
+            <ResponsiveContainer width="100%" height="100%">
                 <BarChart
                   data={loanTermChart.items}
                   margin={{ top: 10, right: 0, left: -25, bottom: 20 }}
@@ -373,7 +376,8 @@ export function BankFinancialCharts({ symbol, data }: BankFinancialChartsProps) 
                 <Maximize2 className="size-2.5" />
                 <span>Mở rộng</span>
               </div>
-              <ResponsiveContainer width="100%" height="100%">
+              <ChartWatermark domain="dulieudautu.com" brandName="Dữ Liệu Đầu Tư" size="sm" />
+            <ResponsiveContainer width="100%" height="100%">
                 <BarChart
                   data={customerGroupChart.items}
                   margin={{ top: 10, right: 0, left: -25, bottom: 20 }}
@@ -512,7 +516,8 @@ export function BankFinancialCharts({ symbol, data }: BankFinancialChartsProps) 
             </div>
           }
         >
-          <div className="h-[520px] w-full">
+          <div className="relative h-[520px] w-full">
+            <ChartWatermark domain="dulieudautu.com" brandName="Dữ Liệu Đầu Tư" size="md" />
             <ResponsiveContainer width="100%" height={520}>
               <RadarChart cx="50%" cy="50%" outerRadius="80%" data={spider.radarData}>
                 <PolarGrid stroke="#334155" strokeDasharray="3 3" />
@@ -586,7 +591,8 @@ export function BankFinancialCharts({ symbol, data }: BankFinancialChartsProps) 
             </div>
           }
         >
-          <div className="h-[520px] w-full">
+          <div className="relative h-[520px] w-full">
+            <ChartWatermark domain="dulieudautu.com" brandName="Dữ Liệu Đầu Tư" size="md" />
             <ResponsiveContainer width="100%" height={520}>
               <BarChart
                 data={loanTermChart.items}
@@ -720,7 +726,8 @@ export function BankFinancialCharts({ symbol, data }: BankFinancialChartsProps) 
             </div>
           }
         >
-          <div className="h-[520px] w-full">
+          <div className="relative h-[520px] w-full">
+            <ChartWatermark domain="dulieudautu.com" brandName="Dữ Liệu Đầu Tư" size="md" />
             <ResponsiveContainer width="100%" height={520}>
               <BarChart
                 data={customerGroupChart.items}

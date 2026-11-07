@@ -9,7 +9,15 @@ import {
   MacroForecastData,
   BiddingPackage2026,
 } from '@/lib/bidding-types';
-import { BiddingRevenueChart } from './BiddingRevenueChart';
+import dynamic from 'next/dynamic';
+
+const BiddingRevenueChart = dynamic(
+  () => import('./BiddingRevenueChart').then((m) => m.BiddingRevenueChart),
+  {
+    ssr: false,
+    loading: () => <div className="h-80 w-full rounded-2xl bg-white/5 animate-pulse" />,
+  }
+);
 import { cn } from '@/lib/utils';
 import {
   Activity,

@@ -1,6 +1,7 @@
 import { NextResponse } from 'next/server';
 import fs from 'fs';
 import path from 'path';
+import { execSync } from 'child_process';
 import {
   POWER_STOCKS,
   RESERVOIRS_HYDRO_DATA,
@@ -10,9 +11,11 @@ import {
   EAV_REGULATION_DOCS,
 } from '@/lib/nganh-dien-data';
 
-export const revalidate = 86400; // Cache 24 giờ
+export const dynamic = 'force-dynamic';
+export const revalidate = 0;
 
 const OFFLINE_DIR = path.join(process.cwd(), 'data', 'nganh_dien');
+const SYNC_SCRIPT = path.join(process.cwd(), 'scripts', 'sync_nganh_dien_offline.py');
 
 // Ensure offline directory exists
 function ensureOfflineDir() {
@@ -26,16 +29,14 @@ function ensureOfflineStocksFile() {
   try {
     ensureOfflineDir();
     const stocksFile = path.join(OFFLINE_DIR, 'power_stocks_36_intel.json');
-    if (!fs.existsSync(stocksFile)) {
-      const payload = {
-        updatedAt: new Date().toISOString(),
-        totalStocks: POWER_STOCKS.length,
-        totalPlants: POWER_STOCKS.reduce((acc, s) => acc + s.powerPlants.length, 0),
-        totalCapacityMW: POWER_STOCKS.reduce((acc, s) => acc + s.totalCapacityMW, 0),
-        stocks: POWER_STOCKS,
-      };
-      fs.writeFileSync(stocksFile, JSON.stringify(payload, null, 2), 'utf-8');
-    }
+    const payload = {
+      updatedAt: new Date().toISOString(),
+      totalStocks: POWER_STOCKS.length,
+      totalPlants: POWER_STOCKS.reduce((acc, s) => acc + s.powerPlants.length, 0),
+      totalCapacityMW: POWER_STOCKS.reduce((acc, s) => acc + s.totalCapacityMW, 0),
+      stocks: POWER_STOCKS,
+    };
+    fs.writeFileSync(stocksFile, JSON.stringify(payload, null, 2), 'utf-8');
   } catch (err) {
     console.error('Error ensuring offline stocks file:', err);
   }
@@ -55,6 +56,19 @@ function readOfflineJson<T>(filename: string, fallback: T): T {
   return fallback;
 }
 
+// Run python sync script
+function runOfflineSyncScript(): boolean {
+  try {
+    if (fs.existsSync(SYNC_SCRIPT)) {
+      execSync(`python "${SYNC_SCRIPT}"`, { timeout: 25000, stdio: 'pipe' });
+      return true;
+    }
+  } catch (err) {
+    console.warn('Warning: Offline sync script execution error, using saved offline files:', err);
+  }
+  return false;
+}
+
 export async function GET(request: Request) {
   const { searchParams } = new URL(request.url);
   const type = searchParams.get('type') || 'all';
@@ -64,18 +78,9 @@ export async function GET(request: Request) {
     ensureOfflineDir();
     ensureOfflineStocksFile();
 
-    // 1. If action=sync requested, save snapshots to disk immediately
+    // 1. If action=sync requested, execute live sync script to fetch fresh NSMO & EAV
     if (action === 'sync') {
-      const syncMeta = {
-        lastSyncTime: new Date().toISOString(),
-        status: 'SYNCED_LOCAL_OK',
-        directory: 'data/nganh_dien',
-      };
-      fs.writeFileSync(
-        path.join(OFFLINE_DIR, 'sync_metadata.json'),
-        JSON.stringify(syncMeta, null, 2),
-        'utf-8'
-      );
+      runOfflineSyncScript();
     }
 
     // 2. Read offline files or fallback to in-memory datasets
@@ -97,6 +102,13 @@ export async function GET(request: Request) {
     const offlineReservoirs = readOfflineJson('eav_quan_trac_ho_chua.json', {
       source: 'https://hochuathuydien.evn.com.vn/',
       reservoirs: RESERVOIRS_HYDRO_DATA,
+    });
+
+    const offlineSystem = readOfflineJson('nsmo_tong_quan_he_thong.json', {
+      source: 'https://www.nsmo.vn/',
+      pMaxMW: 51207.4,
+      pMaxTime: '17:50',
+      totalGenerationMillionKWh: 1051.9,
     });
 
     const offlineAct = readOfflineJson('eav_bieu_gia_act_tranh_duoc.json', null);
@@ -131,6 +143,7 @@ export async function GET(request: Request) {
         smp: (offlineSmp as any)?.cycles || HOURLY_SMP_PRICES,
         fuelDistribution: (offlineFuel as any)?.data || DAILY_GENERATION_BY_FUEL,
         ownerDistribution: (offlineOwner as any)?.data || DAILY_GENERATION_BY_OWNER,
+        systemSummary: offlineSystem,
       });
     }
 
@@ -154,6 +167,7 @@ export async function GET(request: Request) {
       smp: (offlineSmp as any)?.cycles || HOURLY_SMP_PRICES,
       fuelDistribution: (offlineFuel as any)?.data || DAILY_GENERATION_BY_FUEL,
       ownerDistribution: (offlineOwner as any)?.data || DAILY_GENERATION_BY_OWNER,
+      systemSummary: offlineSystem,
       avoidedCostAct: offlineAct,
       regulations: EAV_REGULATION_DOCS,
     });
@@ -173,21 +187,18 @@ export async function POST() {
     ensureOfflineDir();
     ensureOfflineStocksFile();
 
-    const syncMeta = {
+    const ok = runOfflineSyncScript();
+
+    const offlineMeta = readOfflineJson('sync_metadata.json', {
       lastSyncTime: new Date().toISOString(),
-      status: 'MANUAL_SYNC_OFFLINE_SAVED',
+      status: ok ? 'MANUAL_SYNC_OFFLINE_SAVED' : 'SAVED_LOCAL',
       directory: 'data/nganh_dien',
-    };
-    fs.writeFileSync(
-      path.join(OFFLINE_DIR, 'sync_metadata.json'),
-      JSON.stringify(syncMeta, null, 2),
-      'utf-8'
-    );
+    });
 
     return NextResponse.json({
       success: true,
-      message: 'Đã đồng bộ và lưu toàn bộ dữ liệu NSMO & EAV về offline tại data/nganh_dien',
-      timestamp: syncMeta.lastSyncTime,
+      message: 'Đã đồng bộ và cập nhật toàn bộ dữ liệu NSMO & EAV mới nhất về offline tại data/nganh_dien',
+      timestamp: (offlineMeta as any)?.lastSyncTime || new Date().toISOString(),
     });
   } catch (error) {
     return NextResponse.json(

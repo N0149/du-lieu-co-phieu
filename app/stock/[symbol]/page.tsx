@@ -61,7 +61,7 @@ export default async function StockDetailPage({
   searchParams,
 }: {
   params: Promise<{ symbol: string }>
-  searchParams?: Promise<{ tab?: string }>
+  searchParams?: Promise<{ tab?: string; period?: string }>
 }) {
   const { symbol } = await params
   const sParams = searchParams ? await searchParams : {}
@@ -71,7 +71,7 @@ export default async function StockDetailPage({
   const hasBctcQ3 = hasBctcReportForPeriod(ticker, 'Quy_3_2026')
   const hasBctcBanNien = hasBctcReportForPeriod(ticker, 'Ban_Nien_2026')
 
-  let initialTab: 'overview' | 'profile' | 'dividends' | 'charts' | 'articles' | 'community' | 'financials' | 'peers' | 'reports' | 'agm' | 'bctc' | 'bctc-ban-nien' | 'bctc-q3' = 'overview'
+  let initialTab: 'overview' | 'profile' | 'dividends' | 'charts' | 'articles' | 'community' | 'financials' | 'peers' | 'reports' | 'agm' | 'bctc' = 'financials'
 
   if (rawTab === 'overview' || rawTab === 'tong-quan' || rawTab === 'do-thi' || rawTab === 'chart') initialTab = 'overview'
   else if (rawTab === 'profile' || rawTab === 'ho-so') initialTab = 'profile'
@@ -83,10 +83,21 @@ export default async function StockDetailPage({
   else if (rawTab === 'peers') initialTab = 'peers'
   else if (rawTab === 'reports') initialTab = 'reports'
   else if (rawTab === 'agm' || rawTab === 'dhcd' || rawTab === 'dhcd-2026' || rawTab === 'dai-hoi-co-dong') initialTab = 'agm'
-  else if (rawTab === 'bctc-ban-nien' || rawTab === 'ban-nien' || rawTab === 'bannien' || rawTab === 'bctc-6t') initialTab = 'bctc-ban-nien'
-  else if (rawTab === 'bctc-q3' || rawTab === 'quy-3' || rawTab === 'q3' || rawTab === 'bctc-quy-3') initialTab = 'bctc-q3'
-  else if (rawTab === 'bctc' || rawTab === 'thuyet-minh' || rawTab === 'thuyetminh' || rawTab === 'notes') {
-    initialTab = hasBctcQ3 ? 'bctc-q3' : 'bctc-ban-nien'
+  else if (
+    rawTab === 'bctc' ||
+    rawTab === 'thuyet-minh' ||
+    rawTab === 'thuyetminh' ||
+    rawTab === 'notes' ||
+    rawTab === 'bctc-ban-nien' ||
+    rawTab === 'ban-nien' ||
+    rawTab === 'bannien' ||
+    rawTab === 'bctc-6t' ||
+    rawTab === 'bctc-q3' ||
+    rawTab === 'quy-3' ||
+    rawTab === 'q3' ||
+    rawTab === 'bctc-quy-3'
+  ) {
+    initialTab = 'bctc'
   }
 
   const allStocks = getAllStocks()
@@ -99,11 +110,10 @@ export default async function StockDetailPage({
   const isChartsTab = initialTab === 'charts'
   const isFinancialsTab = initialTab === 'financials'
   const isAgmTab = initialTab === 'agm'
-  const isBctcQ3Tab = initialTab === 'bctc-q3'
-  const isBctcBanNienTab = initialTab === 'bctc-ban-nien'
-  const isBctcTab = isBctcQ3Tab || isBctcBanNienTab
-  const targetSsrPeriod = isBctcBanNienTab ? 'Ban_Nien_2026' : 'Quy_3_2026'
-  const isProfileTab = initialTab === 'profile' || initialTab === 'overview' || initialTab === 'dividends'
+  const isBctcTab = initialTab === 'bctc'
+  const isTargetBanNien = rawTab === 'bctc-ban-nien' || rawTab === 'ban-nien' || sParams.period === 'Ban_Nien_2026'
+  const targetSsrPeriod = isTargetBanNien ? 'Ban_Nien_2026' : (hasBctcQ3 ? 'Quy_3_2026' : (hasBctcBanNien ? 'Ban_Nien_2026' : 'Quy_3_2026'))
+  const isProfileTab = initialTab === 'profile' || initialTab === 'overview' || initialTab === 'dividends' || initialTab === 'financials'
   const isArticlesTab = initialTab === 'articles'
 
   // Chạy song song dữ liệu theo tab (On-Demand Data Streaming - Chuẩn FireAnt < 0.2s)

@@ -2,7 +2,18 @@ import React from 'react';
 import { Metadata } from 'next';
 import Link from 'next/link';
 import { SiteHeader } from '@/components/site-header';
-import { NganhDienDashboard } from '@/components/nganh-dien/NganhDienDashboard';
+import dynamic from 'next/dynamic';
+
+const NganhDienDashboard = dynamic(
+  () => import('@/components/nganh-dien/NganhDienDashboard').then((m) => m.NganhDienDashboard),
+  {
+    loading: () => (
+      <div className="mx-auto max-w-[1600px] px-4 py-8">
+        <div className="h-96 w-full rounded-2xl border border-white/5 bg-[#141822] animate-pulse" />
+      </div>
+    ),
+  }
+);
 import {
   ChevronRight,
   Zap,
@@ -13,7 +24,7 @@ import {
 } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: 'Dữ Liệu Ngành Điện NSMO & EAV | Dự Báo Lợi Nhuận 36 Cổ Phiếu Điện | Dữ Liệu Cổ Phiếu',
+  title: 'Dữ Liệu Ngành Điện NSMO & EAV | Kết Quả Q3 & Dự Báo Q4 36 Cổ Phiếu | Dữ Liệu Cổ Phiếu',
   description:
     'Hệ thống giám sát dữ liệu ngành Điện kết nối trực tiếp dữ liệu điều độ NSMO và thủy văn hồ chứa EAV: Giám sát giá cận biên thị trường SMP 48 chu kỳ, quan trắc 16 hồ thủy điện trọng điểm và dự báo doanh thu, lợi nhuận 36 cổ phiếu điện (POW, PGV, NT2, QTP, HND, PPC, BTP, NBP, VSH, TMP, SHP, SJD, SBA, TBC, GHC, DRL, VPD, VCP, HJS, NED, SEB, EIC, BSA, REE, GEG, HDG, TTA, SBH, HPD, GSM, SJE, SD9, SD3, TV1, S55, SDT).',
 };
@@ -58,7 +69,7 @@ export default function NganhDienPage() {
                 <span>CHỈ BÁO SỚM KẾT QUẢ KINH DOANH TỪ HỆ THỐNG ĐIỀU ĐỘ &amp; THỦY VĂN HỒ CHỨA</span>
               </div>
               <h1 className="text-2xl sm:text-4xl lg:text-5xl font-black tracking-tight text-white leading-tight">
-                Dữ Liệu Ngành Điện &amp; Dự Báo Lợi Nhuận 36 Cổ Phiếu Niêm Yết
+                Dữ Liệu Ngành Điện &amp; Kết Quả Q3 - Triển Vọng Q4 36 Cổ Phiếu Niêm Yết
               </h1>
               <p className="text-sm sm:text-base text-slate-400 leading-relaxed max-w-3xl">
                 Bóc tách trực tiếp số liệu điều độ từ <strong className="text-white">NSMO</strong> (sản lượng phát theo loại hình, sản lượng theo chủ đầu tư, giá cận biên SMP 48 chu kỳ)

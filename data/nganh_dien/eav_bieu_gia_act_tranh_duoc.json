@@ -1,6 +1,6 @@
 {
   "source": "Cục Điều tiết Điện lực (EAV) - Bộ Công Thương",
-  "regulation": "Thông tư 32/2014/TT-BCT & Quyết định biểu giá chi phí tránh được hàng năm",
+  "regulation": "Thông tư 32/2014/TT-BCT, Thông tư 20/ERAV & Biểu giá chi phí tránh được 2026",
   "applicableTo": "Nhà máy thủy điện nhỏ có công suất đặt <= 30 MW",
   "affectedStocks": [
     "HJS",
@@ -14,7 +14,7 @@
     "SJE",
     "GHC"
   ],
-  "updatedAt": "2026-09-26T19:28:45.783363",
+  "updatedAt": "2026-11-07T10:47:10.238914",
   "tariffs": {
     "MienBac": {
       "MuaKho": {

@@ -10,6 +10,7 @@ import {
 export * from './bidding-types';
 
 const DATA_DIR = path.join(process.cwd(), 'data', 'bidding');
+const jsonCache = new Map<string, { data: any; mtimeMs: number }>();
 
 function readJsonFile<T>(filename: string, defaultValue: T): T {
   const filePath = path.join(DATA_DIR, filename);
@@ -17,8 +18,15 @@ function readJsonFile<T>(filename: string, defaultValue: T): T {
     return defaultValue;
   }
   try {
+    const stats = fs.statSync(filePath);
+    const cached = jsonCache.get(filename);
+    if (cached && cached.mtimeMs === stats.mtimeMs) {
+      return cached.data as T;
+    }
     const raw = fs.readFileSync(filePath, 'utf-8');
-    return JSON.parse(raw) as T;
+    const data = JSON.parse(raw) as T;
+    jsonCache.set(filename, { data, mtimeMs: stats.mtimeMs });
+    return data;
   } catch (error) {
     console.error(`Error reading ${filename}:`, error);
     return defaultValue;

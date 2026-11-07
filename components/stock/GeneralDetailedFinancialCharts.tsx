@@ -1,6 +1,6 @@
 'use client'
 
-import React, { useState, useMemo, useCallback, useRef } from 'react'
+import React, { useState, useMemo, useCallback, useRef, useEffect } from 'react'
 import {
   ResponsiveContainer,
   ComposedChart,
@@ -38,6 +38,7 @@ import {
 } from 'lucide-react'
 import { cn } from '@/lib/utils'
 import { ChartModal } from './ChartModal'
+import { ChartWatermark } from '@/components/ChartWatermark'
 import { WiDataStandardRow } from './WiDataStandardRow'
 import { MWGSegmentCharts } from './MWGSegmentCharts'
 
@@ -342,6 +343,7 @@ export const ExpandableChartCard = React.memo(function ExpandableChartCard({
         onClick={() => setIsExpanded(true)}
         title="Bấm vào để phóng lớn biểu đồ"
       >
+        <ChartWatermark domain="dulieudautu.com" brandName="Dữ Liệu Đầu Tư" size="sm" />
         {children(effectiveHeight)}
       </div>
 
@@ -353,7 +355,8 @@ export const ExpandableChartCard = React.memo(function ExpandableChartCard({
           subtitle={modalSubtitle}
           badge={latestBadge}
         >
-          <div className="h-[480px] sm:h-[540px] w-full pt-2">
+          <div className="relative h-[480px] sm:h-[540px] w-full pt-2">
+            <ChartWatermark domain="dulieudautu.com" brandName="Dữ Liệu Đầu Tư" size="md" />
             {children(520)}
           </div>
         </ChartModal>
@@ -1451,15 +1454,49 @@ export function GeneralDetailedFinancialCharts({
   debtDupontQuarter = null,
   debtDupontAnnual = null,
 }: GeneralDetailedFinancialChartsProps) {
-  const hasQuarter = Boolean(quarterData?.newFiscalDateQuarter && quarterData.newFiscalDateQuarter.length > 0)
-  const hasAnnual = Boolean(annualData?.newFiscalDateYear && annualData.newFiscalDateYear.length > 0)
+  const qDates = quarterData?.newFiscalDateQuarter || []
+  const aDates = annualData?.newFiscalDateYear || []
+  const hasQuarter = qDates.length > 0
+  const hasAnnual = aDates.length > 0
 
-  // Khởi tạo kỳ: ưu tiên 'quarter' nếu có dữ liệu quý; nếu chỉ có dữ liệu năm (như các mã UPCoM) thì tự động chọn 'annual'
+  // Tự động nhận diện doanh nghiệp báo cáo theo năm (ví dụ NAS chỉ có số liệu quý cũ từ 2017, năm cập nhật đến 2025)
+  const isAnnualDefault = useMemo(() => {
+    if (!hasQuarter && hasAnnual) return true
+    if (hasQuarter && hasAnnual) {
+      const qLatest = qDates[qDates.length - 1]
+      const aLatest = aDates[aDates.length - 1]
+      const qYear = parseInt(qLatest?.slice(0, 4) || '0', 10)
+      const aYear = parseInt(aLatest?.slice(0, 4) || '0', 10)
+      if (aYear > qYear) return true
+      if (qDates.length <= 4 && aDates.length >= 4 && aYear >= qYear) return true
+    }
+    return false
+  }, [hasQuarter, hasAnnual, qDates, aDates])
+
+  // Khởi tạo kỳ: nếu là doanh nghiệp chỉ báo cáo năm hoặc số liệu quý đã ngừng thì tự động hiển thị Theo Năm
   const [periodType, setPeriodType] = useState<'quarter' | 'annual'>(() => {
+    if (isAnnualDefault) return 'annual'
     if (hasQuarter) return 'quarter'
     if (hasAnnual) return 'annual'
     return 'quarter'
   })
+
+  const userChangedPeriodRef = useRef(false)
+  const lastSymbolRef = useRef(symbol)
+
+  useEffect(() => {
+    if (lastSymbolRef.current !== symbol) {
+      lastSymbolRef.current = symbol
+      userChangedPeriodRef.current = false
+      setPeriodType(isAnnualDefault ? 'annual' : 'quarter')
+    }
+  }, [symbol, isAnnualDefault])
+
+  useEffect(() => {
+    if (!userChangedPeriodRef.current && isAnnualDefault && periodType !== 'annual') {
+      setPeriodType('annual')
+    }
+  }, [isAnnualDefault, periodType])
 
   // Tự động chuyển kỳ hiệu lực nếu kỳ đang chọn không có dữ liệu mà kỳ còn lại có dữ liệu
   const effectivePeriodType = useMemo<'quarter' | 'annual'>(() => {
@@ -1681,6 +1718,7 @@ export function GeneralDetailedFinancialCharts({
               disabled={!hasQuarter}
               onClick={() => {
                 if (!hasQuarter) return
+                userChangedPeriodRef.current = true
                 setPeriodType('quarter')
               }}
               className={cn(
@@ -1700,6 +1738,7 @@ export function GeneralDetailedFinancialCharts({
               disabled={!hasAnnual}
               onClick={() => {
                 if (!hasAnnual) return
+                userChangedPeriodRef.current = true
                 setPeriodType('annual')
               }}
               className={cn(

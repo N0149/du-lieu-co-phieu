@@ -1,0 +1,1972 @@
+{
+  "meta": {
+    "group": "Giao dịch quốc tế",
+    "groupKey": "giaodichquocte",
+    "name": "Giá trị nhập khẩu",
+    "slug": "gia-tri-nhap-khau",
+    "apiPath": "giaodichquocte/giatrixuatnhapkhau/nhapkhau",
+    "defaultTimeFrame": "monthly",
+    "defaultValueType": "value",
+    "supportedTimeFrames": [
+      "monthly",
+      "quarterly",
+      "yearly"
+    ],
+    "supportedValueTypes": [
+      "value",
+      "yoy"
+    ],
+    "unit": "Triệu USD",
+    "description": "Kim ngạch nhập khẩu hàng hóa phục vụ sản xuất và tiêu dùng.",
+    "updatedAt": "2026-09-19T10:14:39.400Z",
+    "latestPeriod": "08-2026",
+    "latestValue": 54907.979099
+  },
+  "datasets": {
+    "monthly": {
+      "value": {
+        "title": "Giá Trị Nhập Khẩu",
+        "headers": [
+          "08-2026",
+          "07-2026",
+          "06-2026",
+          "05-2026",
+          "04-2026",
+          "03-2026",
+          "02-2026",
+          "01-2026",
+          "12-2025",
+          "11-2025",
+          "10-2025",
+          "09-2025",
+          "08-2025",
+          "07-2025",
+          "06-2025",
+          "05-2025",
+          "04-2025",
+          "03-2025",
+          "02-2025"
+        ],
+        "parent": [
+          {
+            "title": "GIÁ TRỊ NHẬP KHẨU (Triệu USD)",
+            "child": [
+              {
+                "id": "254_tong",
+                "column_name": "tong",
+                "table_name": "254",
+                "name": "Tổng",
+                "hasSub": false,
+                "level": 2,
+                "heading": 2,
+                "open": 1,
+                "dateType": "thang",
+                "yAxis": 16,
+                "data": [
+                  [
+                    1788134400000,
+                    54907.979099
+                  ],
+                  [
+                    1785456000000,
+                    56664.58111351908
+                  ],
+                  [
+                    1782777600000,
+                    53410.23366446749
+                  ],
+                  [
+                    1780185600000,
+                    52366.157430776395
+                  ],
+                  [
+                    1777507200000,
+                    50277.310658386035
+                  ],
+                  [
+                    1774915200000,
+                    47844.115711277525
+                  ],
+                  [
+                    1772236800000,
+                    34244.998314497054
+                  ],
+                  [
+                    1769817600000,
+                    45242.75511359549
+                  ],
+                  [
+                    1767139200000,
+                    44631.842237
+                  ],
+                  [
+                    1764460800000,
+                    38179.958079
+                  ],
+                  [
+                    1761868800000,
+                    40089.169569
+                  ],
+                  [
+                    1759190400000,
+                    39908.901039
+                  ],
+                  [
+                    1756598400000,
+                    39816.82118
+                  ],
+                  [
+                    1753920000000,
+                    40070.034079000005
+                  ],
+                  [
+                    1751241600000,
+                    36801.871124
+                  ],
+                  [
+                    1748649600000,
+                    38971.41132799999
+                  ],
+                  [
+                    1745971200000,
+                    36821.091101
+                  ],
+                  [
+                    1743379200000,
+                    36847.953743
+                  ],
+                  [
+                    1740700800000,
+                    32661.083835
+                  ]
+                ],
+                "time_frame": "monthly",
+                "lingo": {
+                  "name": "NK Tổng",
+                  "unit": "Triệu USD",
+                  "description": "Chỉ số Giá trị nhập khẩu của Việt Nam đo lường tổng giá trị hàng hóa và dịch vụ mà Việt Nam nhập khẩu từ thị trường quốc tế. Dữ liệu được Tổng cục hải quan thống kê dựa trên dữ liệu từ các tờ khai hải quan do doanh nghiệp nộp khi thực hiện hoạt động nhập khẩu.",
+                  "frequency": "Hai tuần đầu mỗi tháng",
+                  "last_updated": "2026-09-07T06:54:31.302Z",
+                  "source": "Tổng cục Hải quan - CUSTOM",
+                  "note": null,
+                  "related_blog": null
+                }
+              },
+              {
+                "id": "254_trong_nuoc",
+                "column_name": "trong_nuoc",
+                "table_name": "254",
+                "name": "Khu vực trong nước",
+                "hasSub": false,
+                "level": 3,
+                "heading": 3,
+                "open": 1,
+                "dateType": "thang",
+                "yAxis": 16,
+                "data": [
+                  [
+                    1788134400000,
+                    12814.794283999996
+                  ],
+                  [
+                    1785456000000,
+                    13799.83079274515
+                  ],
+                  [
+                    1782777600000,
+                    14186.42322713903
+                  ],
+                  [
+                    1780185600000,
+                    13060.402425147593
+                  ],
+                  [
+                    1777507200000,
+                    14808.493242361343
+                  ],
+                  [
+                    1774915200000,
+                    13999.952372990203
+                  ],
+                  [
+                    1772236800000,
+                    9839.559641069813
+                  ],
+                  [
+                    1769817600000,
+                    12454.86235129202
+                  ],
+                  [
+                    1767139200000,
+                    14214.645654
+                  ],
+                  [
+                    1764460800000,
+                    11140.753701
+                  ],
+                  [
+                    1761868800000,
+                    11434.753449
+                  ],
+                  [
+                    1759190400000,
+                    10759.921994
+                  ],
+                  [
+                    1756598400000,
+                    10702.85637
+                  ],
+                  [
+                    1753920000000,
+                    11150.616426
+                  ],
+                  [
+                    1751241600000,
+                    10719.085375000002
+                  ],
+                  [
+                    1748649600000,
+                    10778.227068
+                  ],
+                  [
+                    1745971200000,
+                    11450.259487
+                  ],
+                  [
+                    1743379200000,
+                    11224.476171
+                  ],
+                  [
+                    1740700800000,
+                    9848.504463
+                  ]
+                ],
+                "time_frame": "monthly",
+                "lingo": {
+                  "name": "NK Khu vực trong nước",
+                  "unit": "Triệu USD",
+                  "description": "Chỉ số Nhập khẩu khu vực trong nước là một bộ phận quan trọng trong tổng giá trị nhập khẩu của Việt Nam. Chỉ số này phản ánh giá trị hàng hóa và dịch vụ do các doanh nghiệp trong nước nhập khẩu từ thị trường quốc tế để phục vụ cho hoạt động sản xuất và thương mại. Dữ liệu được Tổng cục hải quan thống kê dựa trên dữ liệu từ các tờ khai hải quan do doanh nghiệp trong nước nộp khi thực hiện hoạt động nhập khẩu.",
+                  "frequency": "Hai tuần đầu mỗi tháng",
+                  "last_updated": "2026-09-07T06:54:31.302Z",
+                  "source": "Tổng cục Hải quan - CUSTOM",
+                  "note": null,
+                  "related_blog": null
+                }
+              },
+              {
+                "id": "254_fdi",
+                "column_name": "fdi",
+                "table_name": "254",
+                "name": "Khu vực FDI",
+                "hasSub": false,
+                "level": 3,
+                "heading": 3,
+                "open": 1,
+                "dateType": "thang",
+                "yAxis": 16,
+                "data": [
+                  [
+                    1788134400000,
+                    42093.184815
+                  ],
+                  [
+                    1785456000000,
+                    42864.75032077393
+                  ],
+                  [
+                    1782777600000,
+                    39223.81043732846
+                  ],
+                  [
+                    1780185600000,
+                    39305.75500562883
+                  ],
+                  [
+                    1777507200000,
+                    35468.817416024656
+                  ],
+                  [
+                    1774915200000,
+                    33844.16333828736
+                  ],
+                  [
+                    1772236800000,
+                    24405.43867342722
+                  ],
+                  [
+                    1769817600000,
+                    32787.89276230348
+                  ],
+                  [
+                    1767139200000,
+                    30417.196583
+                  ],
+                  [
+                    1764460800000,
+                    27039.204378
+                  ],
+                  [
+                    1761868800000,
+                    28654.41612
+                  ],
+                  [
+                    1759190400000,
+                    29148.979045
+                  ],
+                  [
+                    1756598400000,
+                    29113.96481
+                  ],
+                  [
+                    1753920000000,
+                    28919.417653000004
+                  ],
+                  [
+                    1751241600000,
+                    26082.785748999988
+                  ],
+                  [
+                    1748649600000,
+                    28193.184259999995
+                  ],
+                  [
+                    1745971200000,
+                    25370.831614
+                  ],
+                  [
+                    1743379200000,
+                    25623.477572
+                  ],
+                  [
+                    1740700800000,
+                    22812.579372
+                  ]
+                ],
+                "time_frame": "monthly",
+                "lingo": {
+                  "name": "NK Khu vực trong FDI",
+                  "unit": "Triệu USD",
+                  "description": "Chỉ số Nhập khẩu Khu vực trong FDI là một bộ phận quan trọng trong tổng nhập khẩu của Việt Nam, phản ánh giá trị nhập khẩu của các doanh nghiệp có vốn đầu tư nước ngoài (FDI). Hàng hóa được khu vực FDI nhập khẩu bao gồm nguyên vật liệu, máy móc thiết bị hoặc hàng hóa trung gian chờ gia công trước khi xuất khẩu. Dữ liệu được Tổng cục hải quan thống kê dựa trên dữ liệu từ các tờ khai hải quan do doanh nghiệp FDI nộp khi thực hiện hoạt động nhập khẩu.",
+                  "frequency": "Hai tuần đầu mỗi tháng",
+                  "last_updated": "2026-09-07T06:54:31.302Z",
+                  "source": "Tổng cục Hải quan - CUSTOM",
+                  "note": null,
+                  "related_blog": null
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "yoy": {
+        "title": "Giá Trị Nhập Khẩu",
+        "headers": [
+          "08-2026",
+          "07-2026",
+          "06-2026",
+          "05-2026",
+          "04-2026",
+          "03-2026",
+          "02-2026",
+          "01-2026",
+          "12-2025",
+          "11-2025",
+          "10-2025",
+          "09-2025",
+          "08-2025",
+          "07-2025",
+          "06-2025",
+          "05-2025",
+          "04-2025",
+          "03-2025",
+          "02-2025"
+        ],
+        "parent": [
+          {
+            "title": "GIÁ TRỊ NHẬP KHẨU",
+            "child": [
+              {
+                "id": "254_tong_yoy",
+                "column_name": "tong_yoy",
+                "table_name": "254",
+                "name": "Tổng",
+                "hasSub": false,
+                "level": 2,
+                "heading": 2,
+                "open": 1,
+                "dateType": "thang",
+                "yAxis": 1,
+                "data": [
+                  [
+                    1788134400000,
+                    37.90146343118996
+                  ],
+                  [
+                    1785456000000,
+                    41.413858051136486
+                  ],
+                  [
+                    1782777600000,
+                    45.12912532220814
+                  ],
+                  [
+                    1780185600000,
+                    34.370698022816065
+                  ],
+                  [
+                    1777507200000,
+                    36.544869136212505
+                  ],
+                  [
+                    1774915200000,
+                    29.841988092395678
+                  ],
+                  [
+                    1772236800000,
+                    4.849546596490197
+                  ],
+                  [
+                    1769817600000,
+                    50.17705867688552
+                  ],
+                  [
+                    1767139200000,
+                    27.064587984142197
+                  ],
+                  [
+                    1764460800000,
+                    16.535023170718617
+                  ],
+                  [
+                    1761868800000,
+                    18.04259203618003
+                  ],
+                  [
+                    1759190400000,
+                    25.569146556471274
+                  ],
+                  [
+                    1756598400000,
+                    18.71607650127621
+                  ],
+                  [
+                    1753920000000,
+                    17.983015096736057
+                  ],
+                  [
+                    1751241600000,
+                    20.618705539094844
+                  ],
+                  [
+                    1748649600000,
+                    13.913121451028127
+                  ],
+                  [
+                    1745971200000,
+                    22.685661904658684
+                  ],
+                  [
+                    1743379200000,
+                    18.824908821257484
+                  ],
+                  [
+                    1740700800000,
+                    40.25629947561358
+                  ]
+                ],
+                "time_frame": "monthly",
+                "lingo": {
+                  "name": "NK Tổng",
+                  "unit": "%",
+                  "description": "Chỉ số Giá trị nhập khẩu của Việt Nam đo lường tổng giá trị hàng hóa và dịch vụ mà Việt Nam nhập khẩu từ thị trường quốc tế. Dữ liệu được Tổng cục hải quan thống kê dựa trên dữ liệu từ các tờ khai hải quan do doanh nghiệp nộp khi thực hiện hoạt động nhập khẩu.",
+                  "frequency": "Hai tuần đầu mỗi tháng",
+                  "last_updated": "2026-09-07T06:54:31.302Z",
+                  "source": "Tổng cục Hải quan - CUSTOM",
+                  "note": null,
+                  "related_blog": null
+                }
+              },
+              {
+                "id": "254_trong_nuoc_yoy",
+                "column_name": "trong_nuoc_yoy",
+                "table_name": "254",
+                "name": "Khu vực trong nước",
+                "hasSub": false,
+                "level": 3,
+                "heading": 3,
+                "open": 1,
+                "dateType": "thang",
+                "yAxis": 1,
+                "data": [
+                  [
+                    1788134400000,
+                    19.732469921952216
+                  ],
+                  [
+                    1785456000000,
+                    23.764136002066753
+                  ],
+                  [
+                    1782777600000,
+                    32.3473293740701
+                  ],
+                  [
+                    1780185600000,
+                    21.17394022921686
+                  ],
+                  [
+                    1777507200000,
+                    29.328887779129364
+                  ],
+                  [
+                    1774915200000,
+                    24.72699981457516
+                  ],
+                  [
+                    1772236800000,
+                    -0.0908241648647427
+                  ],
+                  [
+                    1769817600000,
+                    37.165283657111445
+                  ],
+                  [
+                    1767139200000,
+                    1.4698772330837397
+                  ],
+                  [
+                    1764460800000,
+                    -10.660119019538731
+                  ],
+                  [
+                    1761868800000,
+                    -10.878327686152744
+                  ],
+                  [
+                    1759190400000,
+                    -2.010810995546355
+                  ],
+                  [
+                    1756598400000,
+                    -11.702445134014175
+                  ],
+                  [
+                    1753920000000,
+                    -6.155053842078294
+                  ],
+                  [
+                    1751241600000,
+                    -2.635353969813891
+                  ],
+                  [
+                    1748649600000,
+                    -14.446153040097206
+                  ],
+                  [
+                    1745971200000,
+                    -0.40682946458783575
+                  ],
+                  [
+                    1743379200000,
+                    -3.564723205152535
+                  ],
+                  [
+                    1740700800000,
+                    23.942423218173335
+                  ]
+                ],
+                "time_frame": "monthly",
+                "lingo": {
+                  "name": "NK Khu vực trong nước",
+                  "unit": "%",
+                  "description": "Chỉ số Nhập khẩu khu vực trong nước là một bộ phận quan trọng trong tổng giá trị nhập khẩu của Việt Nam. Chỉ số này phản ánh giá trị hàng hóa và dịch vụ do các doanh nghiệp trong nước nhập khẩu từ thị trường quốc tế để phục vụ cho hoạt động sản xuất và thương mại. Dữ liệu được Tổng cục hải quan thống kê dựa trên dữ liệu từ các tờ khai hải quan do doanh nghiệp trong nước nộp khi thực hiện hoạt động nhập khẩu.",
+                  "frequency": "Hai tuần đầu mỗi tháng",
+                  "last_updated": "2026-09-07T06:54:31.302Z",
+                  "source": "Tổng cục Hải quan - CUSTOM",
+                  "note": null,
+                  "related_blog": null
+                }
+              },
+              {
+                "id": "254_fdi_yoy",
+                "column_name": "fdi_yoy",
+                "table_name": "254",
+                "name": "Khu vực FDI",
+                "hasSub": false,
+                "level": 3,
+                "heading": 3,
+                "open": 1,
+                "dateType": "thang",
+                "yAxis": 1,
+                "data": [
+                  [
+                    1788134400000,
+                    44.580736734771094
+                  ],
+                  [
+                    1785456000000,
+                    48.221346761203826
+                  ],
+                  [
+                    1782777600000,
+                    50.38198302431057
+                  ],
+                  [
+                    1780185600000,
+                    39.415805760526176
+                  ],
+                  [
+                    1777507200000,
+                    39.801556195156174
+                  ],
+                  [
+                    1774915200000,
+                    32.08263102924991
+                  ],
+                  [
+                    1772236800000,
+                    6.982372643850539
+                  ],
+                  [
+                    1769817600000,
+                    55.79089623115
+                  ],
+                  [
+                    1767139200000,
+                    44.0441094905931
+                  ],
+                  [
+                    1764460800000,
+                    33.24683473394113
+                  ],
+                  [
+                    1761868800000,
+                    35.602939476568125
+                  ],
+                  [
+                    1759190400000,
+                    40.13247236829356
+                  ],
+                  [
+                    1756598400000,
+                    35.92680430038344
+                  ],
+                  [
+                    1753920000000,
+                    30.97213992542259
+                  ],
+                  [
+                    1751241600000,
+                    33.74622863021652
+                  ],
+                  [
+                    1748649600000,
+                    30.443430988722042
+                  ],
+                  [
+                    1745971200000,
+                    37.02472577348328
+                  ],
+                  [
+                    1743379200000,
+                    32.27815759732081
+                  ],
+                  [
+                    1740700800000,
+                    48.70641771490386
+                  ]
+                ],
+                "time_frame": "monthly",
+                "lingo": {
+                  "name": "NK Khu vực trong FDI",
+                  "unit": "%",
+                  "description": "Chỉ số Nhập khẩu Khu vực trong FDI là một bộ phận quan trọng trong tổng nhập khẩu của Việt Nam, phản ánh giá trị nhập khẩu của các doanh nghiệp có vốn đầu tư nước ngoài (FDI). Hàng hóa được khu vực FDI nhập khẩu bao gồm nguyên vật liệu, máy móc thiết bị hoặc hàng hóa trung gian chờ gia công trước khi xuất khẩu. Dữ liệu được Tổng cục hải quan thống kê dựa trên dữ liệu từ các tờ khai hải quan do doanh nghiệp FDI nộp khi thực hiện hoạt động nhập khẩu.",
+                  "frequency": "Hai tuần đầu mỗi tháng",
+                  "last_updated": "2026-09-07T06:54:31.302Z",
+                  "source": "Tổng cục Hải quan - CUSTOM",
+                  "note": null,
+                  "related_blog": null
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "quarterly": {
+      "value": {
+        "title": "Giá Trị Nhập Khẩu",
+        "headers": [
+          "06-2026",
+          "03-2026",
+          "12-2025",
+          "09-2025",
+          "06-2025",
+          "03-2025",
+          "12-2024",
+          "09-2024",
+          "06-2024",
+          "03-2024",
+          "12-2023",
+          "09-2023",
+          "06-2023",
+          "03-2023",
+          "12-2022",
+          "09-2022",
+          "06-2022",
+          "03-2022",
+          "12-2021"
+        ],
+        "parent": [
+          {
+            "title": "GIÁ TRỊ NHẬP KHẨU (Triệu USD)",
+            "child": [
+              {
+                "id": "254_tong_mtq",
+                "column_name": "tong_mtq",
+                "table_name": "254",
+                "name": "Tổng",
+                "hasSub": false,
+                "level": 2,
+                "heading": 2,
+                "open": 1,
+                "dateType": "quy",
+                "yAxis": 16,
+                "data": [
+                  [
+                    1782777600000,
+                    156053.70175362992
+                  ],
+                  [
+                    1774915200000,
+                    127331.86913937007
+                  ],
+                  [
+                    1767139200000,
+                    122900.969885
+                  ],
+                  [
+                    1759190400000,
+                    119795.756298
+                  ],
+                  [
+                    1751241600000,
+                    112594.37355299998
+                  ],
+                  [
+                    1743379200000,
+                    99635.31353
+                  ],
+                  [
+                    1735603200000,
+                    101849.58021596806
+                  ],
+                  [
+                    1727654400000,
+                    99284.49057009892
+                  ],
+                  [
+                    1719705600000,
+                    94734.982527
+                  ],
+                  [
+                    1711843200000,
+                    85208.237867
+                  ],
+                  [
+                    1703980800000,
+                    88613.21170078406
+                  ],
+                  [
+                    1696032000000,
+                    85157.90136105279
+                  ],
+                  [
+                    1688083200000,
+                    77872.8469807893
+                  ],
+                  [
+                    1680220800000,
+                    74631.6807131579
+                  ],
+                  [
+                    1672444800000,
+                    83480.753347864
+                  ],
+                  [
+                    1664496000000,
+                    89945.319075907
+                  ],
+                  [
+                    1656547200000,
+                    97819.64178100001
+                  ],
+                  [
+                    1648684800000,
+                    88196.84752099999
+                  ],
+                  [
+                    1640908800000,
+                    88520.61713700001
+                  ]
+                ],
+                "time_frame": "quarterly",
+                "lingo": {
+                  "name": "NK Tổng",
+                  "unit": "%",
+                  "description": "Chỉ số Giá trị nhập khẩu của Việt Nam đo lường tổng giá trị hàng hóa và dịch vụ mà Việt Nam nhập khẩu từ thị trường quốc tế. Dữ liệu được Tổng cục hải quan thống kê dựa trên dữ liệu từ các tờ khai hải quan do doanh nghiệp nộp khi thực hiện hoạt động nhập khẩu.",
+                  "frequency": "Hai tuần đầu mỗi tháng",
+                  "last_updated": "2026-09-07T06:54:31.302Z",
+                  "source": "Tổng cục Hải quan - CUSTOM",
+                  "note": null,
+                  "related_blog": null
+                }
+              },
+              {
+                "id": "254_trong_nuoc_mtq",
+                "column_name": "trong_nuoc_mtq",
+                "table_name": "254",
+                "name": "Khu vực trong nước",
+                "hasSub": false,
+                "level": 3,
+                "heading": 3,
+                "open": 1,
+                "dateType": "quy",
+                "yAxis": 16,
+                "data": [
+                  [
+                    1782777600000,
+                    42055.318894647964
+                  ],
+                  [
+                    1774915200000,
+                    36294.374365352036
+                  ],
+                  [
+                    1767139200000,
+                    36790.152804
+                  ],
+                  [
+                    1759190400000,
+                    32612.883102350617
+                  ],
+                  [
+                    1751241600000,
+                    32947.571930000006
+                  ],
+                  [
+                    1743379200000,
+                    30153.166246
+                  ],
+                  [
+                    1735603200000,
+                    39309.31036665932
+                  ],
+                  [
+                    1727654400000,
+                    34984.031682822475
+                  ],
+                  [
+                    1719705600000,
+                    35104.429357
+                  ],
+                  [
+                    1711843200000,
+                    30867.412161
+                  ],
+                  [
+                    1703980800000,
+                    32287.83847994826
+                  ],
+                  [
+                    1696032000000,
+                    31182.469076531488
+                  ],
+                  [
+                    1688083200000,
+                    27773.87492956871
+                  ],
+                  [
+                    1680220800000,
+                    25952.32393089978
+                  ],
+                  [
+                    1672444800000,
+                    29985.84218542708
+                  ],
+                  [
+                    1664496000000,
+                    30711.82621543639
+                  ],
+                  [
+                    1656547200000,
+                    35456.387656
+                  ],
+                  [
+                    1648684800000,
+                    30216.978329999998
+                  ],
+                  [
+                    1640908800000,
+                    29721.359037000002
+                  ]
+                ],
+                "time_frame": "quarterly",
+                "lingo": {
+                  "name": "NK Khu vực trong nước",
+                  "unit": "%",
+                  "description": "Chỉ số Nhập khẩu khu vực trong nước là một bộ phận quan trọng trong tổng giá trị nhập khẩu của Việt Nam. Chỉ số này phản ánh giá trị hàng hóa và dịch vụ do các doanh nghiệp trong nước nhập khẩu từ thị trường quốc tế để phục vụ cho hoạt động sản xuất và thương mại. Dữ liệu được Tổng cục hải quan thống kê dựa trên dữ liệu từ các tờ khai hải quan do doanh nghiệp trong nước nộp khi thực hiện hoạt động nhập khẩu.",
+                  "frequency": "Hai tuần đầu mỗi tháng",
+                  "last_updated": "2026-09-07T06:54:31.302Z",
+                  "source": "Tổng cục Hải quan - CUSTOM",
+                  "note": null,
+                  "related_blog": null
+                }
+              },
+              {
+                "id": "254_fdi_mtq",
+                "column_name": "fdi_mtq",
+                "table_name": "254",
+                "name": "Khu vực FDI",
+                "hasSub": false,
+                "level": 3,
+                "heading": 3,
+                "open": 1,
+                "dateType": "quy",
+                "yAxis": 16,
+                "data": [
+                  [
+                    1782777600000,
+                    113998.38285898195
+                  ],
+                  [
+                    1774915200000,
+                    91037.49477401807
+                  ],
+                  [
+                    1767139200000,
+                    86110.817081
+                  ],
+                  [
+                    1759190400000,
+                    87182.361508
+                  ],
+                  [
+                    1751241600000,
+                    79646.80162299998
+                  ],
+                  [
+                    1743379200000,
+                    69482.14728399999
+                  ],
+                  [
+                    1735603200000,
+                    62540.26994930887
+                  ],
+                  [
+                    1727654400000,
+                    64300.45878727644
+                  ],
+                  [
+                    1719705600000,
+                    59630.55317
+                  ],
+                  [
+                    1711843200000,
+                    54340.825706
+                  ],
+                  [
+                    1703980800000,
+                    56325.37322083581
+                  ],
+                  [
+                    1696032000000,
+                    53975.43228452142
+                  ],
+                  [
+                    1688083200000,
+                    50098.972051220495
+                  ],
+                  [
+                    1680220800000,
+                    48679.356782258095
+                  ],
+                  [
+                    1672444800000,
+                    53494.911162436896
+                  ],
+                  [
+                    1664496000000,
+                    59233.4928604706
+                  ],
+                  [
+                    1656547200000,
+                    62363.254125
+                  ],
+                  [
+                    1648684800000,
+                    57979.869191
+                  ],
+                  [
+                    1640908800000,
+                    58799.2581
+                  ]
+                ],
+                "time_frame": "quarterly",
+                "lingo": {
+                  "name": "NK Khu vực trong FDI",
+                  "unit": "%",
+                  "description": "Chỉ số Nhập khẩu Khu vực trong FDI là một bộ phận quan trọng trong tổng nhập khẩu của Việt Nam, phản ánh giá trị nhập khẩu của các doanh nghiệp có vốn đầu tư nước ngoài (FDI). Hàng hóa được khu vực FDI nhập khẩu bao gồm nguyên vật liệu, máy móc thiết bị hoặc hàng hóa trung gian chờ gia công trước khi xuất khẩu. Dữ liệu được Tổng cục hải quan thống kê dựa trên dữ liệu từ các tờ khai hải quan do doanh nghiệp FDI nộp khi thực hiện hoạt động nhập khẩu.",
+                  "frequency": "Hai tuần đầu mỗi tháng",
+                  "last_updated": "2026-09-07T06:54:31.302Z",
+                  "source": "Tổng cục Hải quan - CUSTOM",
+                  "note": null,
+                  "related_blog": null
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "yoy": {
+        "title": "Giá Trị Nhập Khẩu",
+        "headers": [
+          "06-2026",
+          "03-2026",
+          "12-2025",
+          "09-2025",
+          "06-2025",
+          "03-2025",
+          "12-2024",
+          "09-2024",
+          "06-2024",
+          "03-2024",
+          "12-2023",
+          "09-2023",
+          "06-2023",
+          "03-2023",
+          "12-2022",
+          "09-2022",
+          "06-2022",
+          "03-2022",
+          "12-2021"
+        ],
+        "parent": [
+          {
+            "title": "GIÁ TRỊ NHẬP KHẨU",
+            "child": [
+              {
+                "id": "254_tong_yym",
+                "column_name": "tong_yym",
+                "table_name": "254",
+                "name": "Tổng",
+                "hasSub": false,
+                "level": 2,
+                "heading": 2,
+                "open": 1,
+                "dateType": "quy",
+                "yAxis": 1,
+                "data": [
+                  [
+                    1782777600000,
+                    38.598134906068765
+                  ],
+                  [
+                    1774915200000,
+                    27.797930902310746
+                  ],
+                  [
+                    1767139200000,
+                    20.669098119396555
+                  ],
+                  [
+                    1759190400000,
+                    20.65908341788719
+                  ],
+                  [
+                    1751241600000,
+                    18.85194945901843
+                  ],
+                  [
+                    1743379200000,
+                    16.931550310333794
+                  ],
+                  [
+                    1735603200000,
+                    14.937240464637044
+                  ],
+                  [
+                    1727654400000,
+                    16.588700500206272
+                  ],
+                  [
+                    1719705600000,
+                    21.653421185911537
+                  ],
+                  [
+                    1711843200000,
+                    14.171672207801977
+                  ],
+                  [
+                    1703980800000,
+                    6.148073833896928
+                  ],
+                  [
+                    1696032000000,
+                    -5.261782602532595
+                  ],
+                  [
+                    1688083200000,
+                    -20.391400374239645
+                  ],
+                  [
+                    1680220800000,
+                    -15.380557456560084
+                  ],
+                  [
+                    1672444800000,
+                    -5.693434989654456
+                  ],
+                  [
+                    1664496000000,
+                    7.211390286355912
+                  ],
+                  [
+                    1656547200000,
+                    16.000521038965232
+                  ],
+                  [
+                    1648684800000,
+                    15.896376937328082
+                  ],
+                  [
+                    1640908800000,
+                    15.2464482768641
+                  ]
+                ],
+                "time_frame": "quarterly",
+                "lingo": {
+                  "name": "NK Tổng",
+                  "unit": "%",
+                  "description": "Chỉ số Giá trị nhập khẩu của Việt Nam đo lường tổng giá trị hàng hóa và dịch vụ mà Việt Nam nhập khẩu từ thị trường quốc tế. Dữ liệu được Tổng cục hải quan thống kê dựa trên dữ liệu từ các tờ khai hải quan do doanh nghiệp nộp khi thực hiện hoạt động nhập khẩu.",
+                  "frequency": "Hai tuần đầu mỗi tháng",
+                  "last_updated": "2026-09-07T06:54:31.302Z",
+                  "source": "Tổng cục Hải quan - CUSTOM",
+                  "note": null,
+                  "related_blog": null
+                }
+              },
+              {
+                "id": "254_trong_nuoc_yym",
+                "column_name": "trong_nuoc_yym",
+                "table_name": "254",
+                "name": "Khu vực trong nước",
+                "hasSub": false,
+                "level": 3,
+                "heading": 3,
+                "open": 1,
+                "dateType": "quy",
+                "yAxis": 1,
+                "data": [
+                  [
+                    1782777600000,
+                    27.64315071228363
+                  ],
+                  [
+                    1774915200000,
+                    20.3667106440827
+                  ],
+                  [
+                    1767139200000,
+                    -6.40855191597556
+                  ],
+                  [
+                    1759190400000,
+                    -6.777802518501938
+                  ],
+                  [
+                    1751241600000,
+                    -6.144117612810325
+                  ],
+                  [
+                    1743379200000,
+                    -2.313915760979881
+                  ],
+                  [
+                    1735603200000,
+                    21.74649099248813
+                  ],
+                  [
+                    1727654400000,
+                    12.191345710824786
+                  ],
+                  [
+                    1719705600000,
+                    26.393704321131708
+                  ],
+                  [
+                    1711843200000,
+                    18.938913691070795
+                  ],
+                  [
+                    1703980800000,
+                    7.6769439400302675
+                  ],
+                  [
+                    1696032000000,
+                    1.5324483076768036
+                  ],
+                  [
+                    1688083200000,
+                    -21.667499805585077
+                  ],
+                  [
+                    1680220800000,
+                    -14.113437659205609
+                  ],
+                  [
+                    1672444800000,
+                    0.8898756887187442
+                  ],
+                  [
+                    1664496000000,
+                    9.537513929643836
+                  ],
+                  [
+                    1656547200000,
+                    16.11883750839702
+                  ],
+                  [
+                    1648684800000,
+                    15.912772920611928
+                  ],
+                  [
+                    1640908800000,
+                    11.229471576761728
+                  ]
+                ],
+                "time_frame": "quarterly",
+                "lingo": {
+                  "name": "NK Khu vực trong nước",
+                  "unit": "%",
+                  "description": "Chỉ số Nhập khẩu khu vực trong nước là một bộ phận quan trọng trong tổng giá trị nhập khẩu của Việt Nam. Chỉ số này phản ánh giá trị hàng hóa và dịch vụ do các doanh nghiệp trong nước nhập khẩu từ thị trường quốc tế để phục vụ cho hoạt động sản xuất và thương mại. Dữ liệu được Tổng cục hải quan thống kê dựa trên dữ liệu từ các tờ khai hải quan do doanh nghiệp trong nước nộp khi thực hiện hoạt động nhập khẩu.",
+                  "frequency": "Hai tuần đầu mỗi tháng",
+                  "last_updated": "2026-09-07T06:54:31.302Z",
+                  "source": "Tổng cục Hải quan - CUSTOM",
+                  "note": null,
+                  "related_blog": null
+                }
+              },
+              {
+                "id": "254_fdi_yym",
+                "column_name": "fdi_yym",
+                "table_name": "254",
+                "name": "Khu vực FDI",
+                "hasSub": false,
+                "level": 3,
+                "heading": 3,
+                "open": 1,
+                "dateType": "quy",
+                "yAxis": 1,
+                "data": [
+                  [
+                    1782777600000,
+                    43.12989415266376
+                  ],
+                  [
+                    1774915200000,
+                    31.022857428273138
+                  ],
+                  [
+                    1767139200000,
+                    37.68859192772257
+                  ],
+                  [
+                    1759190400000,
+                    35.5859089535009
+                  ],
+                  [
+                    1751241600000,
+                    33.56710174385923
+                  ],
+                  [
+                    1743379200000,
+                    27.863620733183247
+                  ],
+                  [
+                    1735603200000,
+                    11.033920191005594
+                  ],
+                  [
+                    1727654400000,
+                    19.129122390958482
+                  ],
+                  [
+                    1719705600000,
+                    19.025502377642695
+                  ],
+                  [
+                    1711843200000,
+                    11.630122700810446
+                  ],
+                  [
+                    1703980800000,
+                    5.291086566728254
+                  ],
+                  [
+                    1696032000000,
+                    -8.876836941449628
+                  ],
+                  [
+                    1688083200000,
+                    -19.665878963270835
+                  ],
+                  [
+                    1680220800000,
+                    -16.04093375599679
+                  ],
+                  [
+                    1672444800000,
+                    -9.021112015634603
+                  ],
+                  [
+                    1664496000000,
+                    6.043791960514455
+                  ],
+                  [
+                    1656547200000,
+                    15.933360114725836
+                  ],
+                  [
+                    1648684800000,
+                    15.887833791524319
+                  ],
+                  [
+                    1640908800000,
+                    17.38936357092569
+                  ]
+                ],
+                "time_frame": "quarterly",
+                "lingo": {
+                  "name": "NK Khu vực trong FDI",
+                  "unit": "%",
+                  "description": "Chỉ số Nhập khẩu Khu vực trong FDI là một bộ phận quan trọng trong tổng nhập khẩu của Việt Nam, phản ánh giá trị nhập khẩu của các doanh nghiệp có vốn đầu tư nước ngoài (FDI). Hàng hóa được khu vực FDI nhập khẩu bao gồm nguyên vật liệu, máy móc thiết bị hoặc hàng hóa trung gian chờ gia công trước khi xuất khẩu. Dữ liệu được Tổng cục hải quan thống kê dựa trên dữ liệu từ các tờ khai hải quan do doanh nghiệp FDI nộp khi thực hiện hoạt động nhập khẩu.",
+                  "frequency": "Hai tuần đầu mỗi tháng",
+                  "last_updated": "2026-09-07T06:54:31.302Z",
+                  "source": "Tổng cục Hải quan - CUSTOM",
+                  "note": null,
+                  "related_blog": null
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "yearly": {
+      "value": {
+        "title": "Giá Trị Nhập Khẩu",
+        "headers": [
+          "12-2025",
+          "12-2024",
+          "12-2023",
+          "12-2022",
+          "12-2021",
+          "12-2020",
+          "12-2019",
+          "12-2018",
+          "12-2017",
+          "12-2016",
+          "12-2015",
+          "12-2014",
+          "12-2013",
+          "12-2012",
+          "12-2011",
+          "12-2010",
+          "12-2009"
+        ],
+        "parent": [
+          {
+            "title": "GIÁ TRỊ NHẬP KHẨU (Triệu USD)",
+            "child": [
+              {
+                "id": "254_tong_yrl",
+                "column_name": "tong_yrl",
+                "table_name": "254",
+                "name": "Tổng",
+                "hasSub": false,
+                "level": 2,
+                "heading": 2,
+                "open": 1,
+                "dateType": "nam",
+                "yAxis": 16,
+                "data": [
+                  [
+                    1767139200000,
+                    454926.41326599993
+                  ],
+                  [
+                    1735603200000,
+                    381077.29118006694
+                  ],
+                  [
+                    1703980800000,
+                    326275.6407557841
+                  ],
+                  [
+                    1672444800000,
+                    359442.56172577094
+                  ],
+                  [
+                    1640908800000,
+                    332842.562397
+                  ],
+                  [
+                    1609372800000,
+                    262690.69499999995
+                  ],
+                  [
+                    1577750400000,
+                    253393.46600000001
+                  ],
+                  [
+                    1546214400000,
+                    236868.856
+                  ],
+                  [
+                    1514678400000,
+                    213006.71899999998
+                  ],
+                  [
+                    1483142400000,
+                    174803.8
+                  ],
+                  [
+                    1451520000000,
+                    165570.42100000003
+                  ],
+                  [
+                    1419984000000,
+                    147849.081
+                  ],
+                  [
+                    1388448000000,
+                    132032.55699999997
+                  ],
+                  [
+                    1356912000000,
+                    113780.432
+                  ],
+                  [
+                    1325289600000,
+                    106749.855
+                  ],
+                  [
+                    1293753600000,
+                    84838.55200000001
+                  ],
+                  [
+                    1262217600000,
+                    69948.81099999999
+                  ]
+                ],
+                "time_frame": "yearly",
+                "lingo": {
+                  "name": "NK Tổng",
+                  "unit": "Triệu USD",
+                  "description": "Chỉ số Giá trị nhập khẩu của Việt Nam đo lường tổng giá trị hàng hóa và dịch vụ mà Việt Nam nhập khẩu từ thị trường quốc tế. Dữ liệu được Tổng cục hải quan thống kê dựa trên dữ liệu từ các tờ khai hải quan do doanh nghiệp nộp khi thực hiện hoạt động nhập khẩu.",
+                  "frequency": "Hai tuần đầu mỗi tháng",
+                  "last_updated": "2026-09-07T06:54:31.302Z",
+                  "source": "Tổng cục Hải quan - CUSTOM",
+                  "note": null,
+                  "related_blog": null
+                }
+              },
+              {
+                "id": "254_trong_nuoc_yrl",
+                "column_name": "trong_nuoc_yrl",
+                "table_name": "254",
+                "name": "Khu vực trong nước",
+                "hasSub": false,
+                "level": 3,
+                "heading": 3,
+                "open": 1,
+                "dateType": "nam",
+                "yAxis": 16,
+                "data": [
+                  [
+                    1767139200000,
+                    132503.77408235063
+                  ],
+                  [
+                    1735603200000,
+                    140265.1835674818
+                  ],
+                  [
+                    1703980800000,
+                    117196.50641694825
+                  ],
+                  [
+                    1672444800000,
+                    126371.03438686347
+                  ],
+                  [
+                    1640908800000,
+                    114362.375153
+                  ],
+                  [
+                    1609372800000,
+                    93676.761
+                  ],
+                  [
+                    1577750400000,
+                    105116.46900000001
+                  ],
+                  [
+                    1546214400000,
+                    94929.87799999998
+                  ],
+                  [
+                    1514678400000,
+                    85170.929
+                  ],
+                  [
+                    1483142400000,
+                    72364.772
+                  ],
+                  [
+                    1451520000000,
+                    68343.92599999999
+                  ],
+                  [
+                    1419984000000,
+                    63638.14
+                  ],
+                  [
+                    1388448000000,
+                    57597.557
+                  ],
+                  [
+                    1356912000000,
+                    53839.198000000004
+                  ],
+                  [
+                    1325289600000,
+                    57912.85299999999
+                  ],
+                  [
+                    1293753600000,
+                    47870.66700000001
+                  ],
+                  [
+                    1262217600000,
+                    43882.125
+                  ]
+                ],
+                "time_frame": "yearly",
+                "lingo": {
+                  "name": "NK Khu vực trong nước",
+                  "unit": "Triệu USD",
+                  "description": "Chỉ số Nhập khẩu khu vực trong nước là một bộ phận quan trọng trong tổng giá trị nhập khẩu của Việt Nam. Chỉ số này phản ánh giá trị hàng hóa và dịch vụ do các doanh nghiệp trong nước nhập khẩu từ thị trường quốc tế để phục vụ cho hoạt động sản xuất và thương mại. Dữ liệu được Tổng cục hải quan thống kê dựa trên dữ liệu từ các tờ khai hải quan do doanh nghiệp trong nước nộp khi thực hiện hoạt động nhập khẩu.",
+                  "frequency": "Hai tuần đầu mỗi tháng",
+                  "last_updated": "2026-09-07T06:54:31.302Z",
+                  "source": "Tổng cục Hải quan - CUSTOM",
+                  "note": null,
+                  "related_blog": null
+                }
+              },
+              {
+                "id": "254_fdi_yrl",
+                "column_name": "fdi_yrl",
+                "table_name": "254",
+                "name": "Khu vực FDI",
+                "hasSub": false,
+                "level": 3,
+                "heading": 3,
+                "open": 1,
+                "dateType": "nam",
+                "yAxis": 16,
+                "data": [
+                  [
+                    1767139200000,
+                    322422.127496
+                  ],
+                  [
+                    1735603200000,
+                    240812.1076125853
+                  ],
+                  [
+                    1703980800000,
+                    209079.13433883578
+                  ],
+                  [
+                    1672444800000,
+                    233071.5273389075
+                  ],
+                  [
+                    1640908800000,
+                    218480.18724399997
+                  ],
+                  [
+                    1609372800000,
+                    169013.934
+                  ],
+                  [
+                    1577750400000,
+                    148276.99699999997
+                  ],
+                  [
+                    1546214400000,
+                    141938.978
+                  ],
+                  [
+                    1514678400000,
+                    127835.79
+                  ],
+                  [
+                    1483142400000,
+                    102439.028
+                  ],
+                  [
+                    1451520000000,
+                    97226.495
+                  ],
+                  [
+                    1419984000000,
+                    84210.941
+                  ],
+                  [
+                    1388448000000,
+                    74434.99999999999
+                  ],
+                  [
+                    1356912000000,
+                    59941.234
+                  ],
+                  [
+                    1325289600000,
+                    48837.00199999999
+                  ],
+                  [
+                    1293753600000,
+                    36967.885
+                  ],
+                  [
+                    1262217600000,
+                    26066.686
+                  ]
+                ],
+                "time_frame": "yearly",
+                "lingo": {
+                  "name": "NK Khu vực trong FDI",
+                  "unit": "Triệu USD",
+                  "description": "Chỉ số Nhập khẩu Khu vực trong FDI là một bộ phận quan trọng trong tổng nhập khẩu của Việt Nam, phản ánh giá trị nhập khẩu của các doanh nghiệp có vốn đầu tư nước ngoài (FDI). Hàng hóa được khu vực FDI nhập khẩu bao gồm nguyên vật liệu, máy móc thiết bị hoặc hàng hóa trung gian chờ gia công trước khi xuất khẩu. Dữ liệu được Tổng cục hải quan thống kê dựa trên dữ liệu từ các tờ khai hải quan do doanh nghiệp FDI nộp khi thực hiện hoạt động nhập khẩu.",
+                  "frequency": "Hai tuần đầu mỗi tháng",
+                  "last_updated": "2026-09-07T06:54:31.302Z",
+                  "source": "Tổng cục Hải quan - CUSTOM",
+                  "note": null,
+                  "related_blog": null
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "yoy": {
+        "title": "Giá Trị Nhập Khẩu",
+        "headers": [
+          "12-2025",
+          "12-2024",
+          "12-2023",
+          "12-2022",
+          "12-2021",
+          "12-2020",
+          "12-2019",
+          "12-2018",
+          "12-2017",
+          "12-2016",
+          "12-2015",
+          "12-2014",
+          "12-2013",
+          "12-2012",
+          "12-2011",
+          "12-2010"
+        ],
+        "parent": [
+          {
+            "title": "GIÁ TRỊ NHẬP KHẨU",
+            "child": [
+              {
+                "id": "254_tong_yrl_yoy",
+                "column_name": "tong_yrl_yoy",
+                "table_name": "254",
+                "name": "Tổng",
+                "hasSub": false,
+                "level": 2,
+                "heading": 2,
+                "open": 1,
+                "dateType": "nam",
+                "yAxis": 1,
+                "data": [
+                  [
+                    1767139200000,
+                    19.379040366653008
+                  ],
+                  [
+                    1735603200000,
+                    16.79612069639658
+                  ],
+                  [
+                    1703980800000,
+                    -9.227321553336475
+                  ],
+                  [
+                    1672444800000,
+                    7.991766178342196
+                  ],
+                  [
+                    1640908800000,
+                    26.705120787396
+                  ],
+                  [
+                    1609372800000,
+                    3.6690878998434524
+                  ],
+                  [
+                    1577750400000,
+                    6.976269602957011
+                  ],
+                  [
+                    1546214400000,
+                    11.202527841387022
+                  ],
+                  [
+                    1514678400000,
+                    21.85474171614118
+                  ],
+                  [
+                    1483142400000,
+                    5.576708052219034
+                  ],
+                  [
+                    1451520000000,
+                    11.986100880802923
+                  ],
+                  [
+                    1419984000000,
+                    11.97926053950469
+                  ],
+                  [
+                    1388448000000,
+                    16.04153251940542
+                  ],
+                  [
+                    1356912000000,
+                    6.586029554794248
+                  ],
+                  [
+                    1325289600000,
+                    25.827059141697728
+                  ],
+                  [
+                    1293753600000,
+                    21.28662487200823
+                  ]
+                ],
+                "time_frame": "yearly",
+                "lingo": {
+                  "name": "NK Tổng",
+                  "unit": "%",
+                  "description": "Chỉ số Giá trị nhập khẩu của Việt Nam đo lường tổng giá trị hàng hóa và dịch vụ mà Việt Nam nhập khẩu từ thị trường quốc tế. Dữ liệu được Tổng cục hải quan thống kê dựa trên dữ liệu từ các tờ khai hải quan do doanh nghiệp nộp khi thực hiện hoạt động nhập khẩu.",
+                  "frequency": "Hai tuần đầu mỗi tháng",
+                  "last_updated": "2026-09-07T06:54:31.302Z",
+                  "source": "Tổng cục Hải quan - CUSTOM",
+                  "note": null,
+                  "related_blog": null
+                }
+              },
+              {
+                "id": "254_trong_nuoc_yrl_yoy",
+                "column_name": "trong_nuoc_yrl_yoy",
+                "table_name": "254",
+                "name": "Khu vực trong nước",
+                "hasSub": false,
+                "level": 3,
+                "heading": 3,
+                "open": 1,
+                "dateType": "nam",
+                "yAxis": 1,
+                "data": [
+                  [
+                    1767139200000,
+                    -5.533382759519332
+                  ],
+                  [
+                    1735603200000,
+                    19.683758377969458
+                  ],
+                  [
+                    1703980800000,
+                    -7.259992777956503
+                  ],
+                  [
+                    1672444800000,
+                    10.500533254750666
+                  ],
+                  [
+                    1640908800000,
+                    22.08190583468188
+                  ],
+                  [
+                    1609372800000,
+                    -10.882888389258982
+                  ],
+                  [
+                    1577750400000,
+                    10.730647942052585
+                  ],
+                  [
+                    1546214400000,
+                    11.458075090386743
+                  ],
+                  [
+                    1514678400000,
+                    17.696672905982492
+                  ],
+                  [
+                    1483142400000,
+                    5.883252887754797
+                  ],
+                  [
+                    1451520000000,
+                    7.39460015644704
+                  ],
+                  [
+                    1419984000000,
+                    10.487568075152897
+                  ],
+                  [
+                    1388448000000,
+                    6.980711339719425
+                  ],
+                  [
+                    1356912000000,
+                    -7.0341120994332424
+                  ],
+                  [
+                    1325289600000,
+                    20.977744053576643
+                  ],
+                  [
+                    1293753600000,
+                    9.089217990240916
+                  ]
+                ],
+                "time_frame": "yearly",
+                "lingo": {
+                  "name": "NK Khu vực trong nước",
+                  "unit": "%",
+                  "description": "Chỉ số Nhập khẩu khu vực trong nước là một bộ phận quan trọng trong tổng giá trị nhập khẩu của Việt Nam. Chỉ số này phản ánh giá trị hàng hóa và dịch vụ do các doanh nghiệp trong nước nhập khẩu từ thị trường quốc tế để phục vụ cho hoạt động sản xuất và thương mại. Dữ liệu được Tổng cục hải quan thống kê dựa trên dữ liệu từ các tờ khai hải quan do doanh nghiệp trong nước nộp khi thực hiện hoạt động nhập khẩu.",
+                  "frequency": "Hai tuần đầu mỗi tháng",
+                  "last_updated": "2026-09-07T06:54:31.302Z",
+                  "source": "Tổng cục Hải quan - CUSTOM",
+                  "note": null,
+                  "related_blog": null
+                }
+              },
+              {
+                "id": "254_fdi_yrl_yoy",
+                "column_name": "fdi_yrl_yoy",
+                "table_name": "254",
+                "name": "Khu vực FDI",
+                "hasSub": false,
+                "level": 3,
+                "heading": 3,
+                "open": 1,
+                "dateType": "nam",
+                "yAxis": 1,
+                "data": [
+                  [
+                    1767139200000,
+                    33.88950027990602
+                  ],
+                  [
+                    1735603200000,
+                    15.177494097676309
+                  ],
+                  [
+                    1703980800000,
+                    -10.294004280147258
+                  ],
+                  [
+                    1672444800000,
+                    6.678564440542077
+                  ],
+                  [
+                    1640908800000,
+                    29.267559232128136
+                  ],
+                  [
+                    1609372800000,
+                    13.98526907042772
+                  ],
+                  [
+                    1577750400000,
+                    4.465312551426128
+                  ],
+                  [
+                    1546214400000,
+                    11.032268819240691
+                  ],
+                  [
+                    1514678400000,
+                    24.792076316850633
+                  ],
+                  [
+                    1483142400000,
+                    5.36122689602254
+                  ],
+                  [
+                    1451520000000,
+                    15.455894264380667
+                  ],
+                  [
+                    1419984000000,
+                    13.13352723853029
+                  ],
+                  [
+                    1388448000000,
+                    24.17995932482803
+                  ],
+                  [
+                    1356912000000,
+                    22.737333466947877
+                  ],
+                  [
+                    1325289600000,
+                    32.10656222285909
+                  ],
+                  [
+                    1293753600000,
+                    41.82042550403223
+                  ]
+                ],
+                "time_frame": "yearly",
+                "lingo": {
+                  "name": "NK Khu vực trong FDI",
+                  "unit": "%",
+                  "description": "Chỉ số Nhập khẩu Khu vực trong FDI là một bộ phận quan trọng trong tổng nhập khẩu của Việt Nam, phản ánh giá trị nhập khẩu của các doanh nghiệp có vốn đầu tư nước ngoài (FDI). Hàng hóa được khu vực FDI nhập khẩu bao gồm nguyên vật liệu, máy móc thiết bị hoặc hàng hóa trung gian chờ gia công trước khi xuất khẩu. Dữ liệu được Tổng cục hải quan thống kê dựa trên dữ liệu từ các tờ khai hải quan do doanh nghiệp FDI nộp khi thực hiện hoạt động nhập khẩu.",
+                  "frequency": "Hai tuần đầu mỗi tháng",
+                  "last_updated": "2026-09-07T06:54:31.302Z",
+                  "source": "Tổng cục Hải quan - CUSTOM",
+                  "note": null,
+                  "related_blog": null
+                }
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

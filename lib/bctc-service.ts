@@ -11,6 +11,7 @@ export interface BctcSection {
   rawMarkdown: string
   hasContent: boolean
   tableCount: number
+  hasAttachedNotes?: boolean
 }
 
 export interface BctcNoteItem {
@@ -153,14 +154,22 @@ const IS_LOCAL_DEV = process.env.NODE_ENV !== 'production' && process.platform =
 const EXTERNAL_DIR = IS_LOCAL_DEV ? 'D:\\hoc\\lap trinh\\tai-lieu-BCTC\\ket_qua_trich_xuat' : ''
 const LOCAL_DIR = path.join(process.cwd(), 'content', 'bctc')
 
-// Thứ tự ưu tiên kỳ BCTC (mới nhất trước): Quý 3/2026 -> Bán niên 2026 -> Thư mục gốc (legacy)
-const PERIOD_SUBDIRS = ['Quy_3_2026', 'Ban_Nien_2026', '']
+// Thứ tự ưu tiên kỳ BCTC (mới nhất trước): Quý 4/2026 -> Quý 3/2026 -> Bán niên 2026 -> Thư mục gốc (legacy)
+const PERIOD_SUBDIRS = ['Quy_4_2026', 'Quy_3_2026', 'Ban_Nien_2026', '']
 
 export function hasBctcReport(ticker: string): boolean {
   if (!ticker) return false
   const sym = ticker.toUpperCase().trim()
 
   const candidateNames = [
+    // Định dạng chuẩn mới: {TICKER}_{KỲ}_{NĂM}_{LOẠI}.md
+    `${sym}_Q3_2026_HN.md`,
+    `${sym}_Q3_2026_me.md`,
+    `${sym}_BN_2026_HN.md`,
+    `${sym}_BN_2026_me.md`,
+    `${sym}_Q4_2026_HN.md`,
+    `${sym}_Q4_2026_me.md`,
+    // Định dạng cũ (fallback tương thích)
     sym + '_HopNhat_Q3.md',
     sym + '_CongTyMe_Q3.md',
     sym + '_ThuyetMinh_HopNhat.md',
@@ -188,20 +197,32 @@ export function hasBctcReport(ticker: string): boolean {
   return false
 }
 
-export function hasBctcReportForPeriod(ticker: string, period: 'Ban_Nien_2026' | 'Quy_3_2026'): boolean {
+export function hasBctcReportForPeriod(ticker: string, period: 'Ban_Nien_2026' | 'Quy_3_2026' | 'Quy_4_2026' | string): boolean {
   if (!ticker) return false
   const sym = ticker.toUpperCase().trim()
+  const q4Files = [
+    `${sym}_Q4_2026_HN.md`,
+    `${sym}_Q4_2026_me.md`,
+    `${sym}_HopNhat_Q4.md`,
+    `${sym}_CongTyMe_Q4.md`,
+  ]
   const q3Files = [
+    `${sym}_Q3_2026_HN.md`,
+    `${sym}_Q3_2026_me.md`,
     `${sym}_HopNhat_Q3.md`,
     `${sym}_CongTyMe_Q3.md`,
   ]
   const banNienFiles = [
+    `${sym}_BN_2026_HN.md`,
+    `${sym}_BN_2026_me.md`,
     `${sym}_ThuyetMinh_HopNhat.md`,
     `${sym}_ThuyetMinh_CongTyMe.md`,
     `${sym}_ThuyetMinh_BCTC.md`,
     `${sym}_HopNhat_BanNien.md`,
   ]
-  const files = period === 'Quy_3_2026' ? q3Files : banNienFiles
+  let files = banNienFiles
+  if (period === 'Quy_4_2026' || period === 'Q4_2026') files = q4Files
+  else if (period === 'Quy_3_2026' || period === 'Q3_2026') files = q3Files
   const localDir = path.join(LOCAL_DIR, period)
   if (fs.existsSync(localDir)) {
     for (const f of files) {
@@ -219,7 +240,7 @@ export function hasBctcReportForPeriod(ticker: string, period: 'Ban_Nien_2026' |
   return false
 }
 
-export function getAvailableBctcTickersForPeriod(period: 'Ban_Nien_2026' | 'Quy_3_2026'): string[] {
+export function getAvailableBctcTickersForPeriod(period: 'Ban_Nien_2026' | 'Quy_3_2026' | 'Quy_4_2026' | string): string[] {
   const tickerSet = new Set<string>()
   const scan = (dir: string) => {
     if (!fs.existsSync(/*turbopackIgnore: true*/ dir)) return
@@ -313,8 +334,28 @@ export function getAvailableBctcPeriods(ticker: string): BctcPeriodOption[] {
     return false
   }
 
+  // Quý 4/2026 (sẵn sàng khi người dùng bổ sung tài liệu Quý 4)
+  const q4Files = [
+    `${sym}_Q4_2026_HN.md`,
+    `${sym}_Q4_2026_me.md`,
+    `${sym}_HopNhat_Q4.md`,
+    `${sym}_CongTyMe_Q4.md`,
+  ]
+  if (checkPeriodExists('Quy_4_2026', q4Files)) {
+    list.push({
+      id: 'Quy_4_2026',
+      label: 'Báo cáo tài chính quý 4',
+      shortLabel: 'Quý 4/2026',
+      quarter: 4,
+      year: 2026,
+      isLatest: true,
+    })
+  }
+
   // Quý 3/2026
   const q3Files = [
+    `${sym}_Q3_2026_HN.md`,
+    `${sym}_Q3_2026_me.md`,
     `${sym}_HopNhat_Q3.md`,
     `${sym}_CongTyMe_Q3.md`,
     `${sym}_ThuyetMinh_HopNhat.md`,
@@ -323,16 +364,18 @@ export function getAvailableBctcPeriods(ticker: string): BctcPeriodOption[] {
   if (checkPeriodExists('Quy_3_2026', q3Files)) {
     list.push({
       id: 'Quy_3_2026',
-      label: 'Báo cáo Quý 3/2026',
+      label: 'Báo cáo tài chính quý 3',
       shortLabel: 'Quý 3/2026',
       quarter: 3,
       year: 2026,
-      isLatest: true,
+      isLatest: !list.some((p) => p.id === 'Quy_4_2026'),
     })
   }
 
   // Bán niên 2026
   const banNienFiles = [
+    `${sym}_BN_2026_HN.md`,
+    `${sym}_BN_2026_me.md`,
     `${sym}_ThuyetMinh_HopNhat.md`,
     `${sym}_ThuyetMinh_CongTyMe.md`,
     `${sym}_ThuyetMinh_BCTC.md`,
@@ -341,13 +384,119 @@ export function getAvailableBctcPeriods(ticker: string): BctcPeriodOption[] {
   if (checkPeriodExists('Ban_Nien_2026', banNienFiles)) {
     list.push({
       id: 'Ban_Nien_2026',
-      label: 'Báo cáo Bán niên 2026',
+      label: 'Báo cáo tài chính bán niên',
       shortLabel: 'Bán niên 2026',
       year: 2026,
     })
   }
 
   return list
+}
+
+export interface BctcSplitNotesResult {
+  cdktNotes: string
+  kqkdNotes: string
+  lcttNotes: string
+}
+
+export function extractSubNotesFromPhan5(p5Raw: string): BctcSplitNotesResult {
+  if (!p5Raw || p5Raw.trim().length === 0) {
+    return { cdktNotes: '', kqkdNotes: '', lcttNotes: '' }
+  }
+
+  const lines = p5Raw.split('\n')
+  let currentTarget: 'cdkt' | 'kqkd' | 'lctt' = 'cdkt'
+
+  const cdktLines: string[] = []
+  const kqkdLines: string[] = []
+  const lcttLines: string[] = []
+
+  let startIndex = 0
+  for (let i = 0; i < Math.min(lines.length, 10); i++) {
+    if (/^#{1,3}\s*(?:##)?\s*PHẦN\s+5/i.test(lines[i].trim())) {
+      startIndex = i + 1
+      break
+    }
+  }
+
+  for (let i = startIndex; i < lines.length; i++) {
+    const line = lines[i]
+    const trimmed = line.trim()
+
+    const headingMatch = trimmed.match(/^#{2,4}\s*(?:([IVXLCDM]+|\d+)\.|\bThuyết minh\s+(\d+)[:\s]+)?\s*([^\r\n]+)/i)
+    if (headingMatch && !trimmed.match(/^#+\s*PHẦN/i)) {
+      const numOrRoman = (headingMatch[1] || headingMatch[2] || '').toUpperCase()
+      const title = (headingMatch[3] || '').toUpperCase()
+
+      const isKqkdHeading =
+        (title.includes('KẾT QUẢ') && (title.includes('KINH DOANH') || title.includes('HOẠT ĐỘNG'))) ||
+        title.includes('DOANH THU VÀ CHI PHÍ') ||
+        (numOrRoman === 'VI' && (title.includes('THÔNG TIN BỔ SUNG') || title.includes('KHOẢN MỤC') || title.includes('BÁO CÁO'))) ||
+        (numOrRoman === 'II' && (title.includes('THUYẾT MINH') || title.includes('BÁO CÁO') || title.includes('KẾT QUẢ'))) ||
+        (numOrRoman === '6' && title.includes('KẾT QUẢ')) ||
+        title.startsWith('DOANH THU BÁN HÀNG') ||
+        title.startsWith('TỔNG DOANH THU') ||
+        title.startsWith('DOANH THU CUNG CẤP DỊCH VỤ') ||
+        title.startsWith('GIÁ VỐN HÀNG BÁN') ||
+        title.startsWith('DOANH THU HOẠT ĐỘNG TÀI CHÍNH') ||
+        title.startsWith('CHI PHÍ TÀI CHÍNH') ||
+        title.startsWith('CHI PHÍ BÁN HÀNG') ||
+        title.startsWith('CHI PHÍ QUẢN LÝ') ||
+        title.startsWith('CHI PHÍ SẢN XUẤT') ||
+        title.startsWith('THU NHẬP KHÁC') ||
+        title.startsWith('CHI PHÍ KHÁC') ||
+        title.startsWith('CHI PHÍ THUẾ') ||
+        /^(?:##|###|####)\s+(?:Thuyết minh\s+)?\d+[\.:\s]+(?:TỔNG\s+)?DOANH THU/i.test(trimmed)
+
+      const isLcttHeading =
+        title.includes('LƯU CHUYỂN TIỀN TỆ') ||
+        (numOrRoman === 'VII' && (title.includes('THÔNG TIN BỔ SUNG') || title.includes('LƯU CHUYỂN') || title.includes('TIỀN TỆ'))) ||
+        title.includes('BÊN LIÊN QUAN') ||
+        title.includes('GIAO DỊCH VỚI CÁC BÊN') ||
+        title.includes('NGHIỆP VỤ VỚI CÁC BÊN') ||
+        title.includes('THÙ LAO VÀ THƯỞNG') ||
+        title.includes('LƯƠNG, THÙ LAO') ||
+        (numOrRoman === 'VIII' && title.includes('THÔNG TIN KHÁC')) ||
+        (numOrRoman === 'III' && title.includes('BÊN LIÊN QUAN')) ||
+        (numOrRoman === '7' && (title.includes('LƯU CHUYỂN') || title.includes('THÔNG TIN KHÁC')))
+
+      const isCdktHeading =
+        title.includes('CÂN ĐỐI KẾ TOÁN') ||
+        title.includes('TÌNH HÌNH TÀI CHÍNH') ||
+        (numOrRoman === 'V' && (title.includes('THÔNG TIN BỔ SUNG') || title.includes('CÁC SỰ KIỆN') || title.includes('GIAO DỊCH TRỌNG YẾU'))) ||
+        (numOrRoman === 'I' && (title.includes('THUYẾT MINH') || title.includes('CÂN ĐỐI'))) ||
+        (numOrRoman === '5' && title.includes('CÂN ĐỐI KẾ TOÁN')) ||
+        title.includes('TIỀN VÀ CÁC KHOẢN TƯƠNG ĐƯƠNG') ||
+        title.includes('ĐẦU TƯ TÀI CHÍNH') ||
+        title.includes('PHẢI THU') ||
+        title.includes('HÀNG TỒN KHO') ||
+        title.includes('TÀI SẢN CỐ ĐỊNH') ||
+        title.includes('VAY VÀ NỢ') ||
+        title.includes('VỐN CHỦ SỞ HỮU')
+
+      if (isKqkdHeading) {
+        currentTarget = 'kqkd'
+      } else if (isLcttHeading) {
+        currentTarget = 'lctt'
+      } else if (isCdktHeading) {
+        currentTarget = 'cdkt'
+      }
+    }
+
+    if (currentTarget === 'kqkd') {
+      kqkdLines.push(line)
+    } else if (currentTarget === 'lctt') {
+      lcttLines.push(line)
+    } else {
+      cdktLines.push(line)
+    }
+  }
+
+  return {
+    cdktNotes: cdktLines.join('\n').trim(),
+    kqkdNotes: kqkdLines.join('\n').trim(),
+    lcttNotes: lcttLines.join('\n').trim(),
+  }
 }
 
 export function getBctcReport(
@@ -370,20 +519,27 @@ export function getBctcReport(
   }
 
   const checkFileExists = (type: 'HopNhat' | 'CongTyMe') => {
+    const isHN = type === 'HopNhat'
+    const suffix = isHN ? 'HN' : 'me'
     let candidateFiles: string[] = []
     if (isStrictPeriod && preferredPeriod === 'Ban_Nien_2026') {
       candidateFiles = [
+        `${sym}_BN_2026_${suffix}.md`,
         sym + '_ThuyetMinh_' + type + '.md',
         ...(type === 'HopNhat' ? [sym + '_ThuyetMinh_BCTC.md', sym + '_HopNhat_BanNien.md', sym + '_BanNien.md'] : [sym + '_CongTyMe_BanNien.md']),
       ]
     } else if (isStrictPeriod && preferredPeriod === 'Quy_3_2026') {
       candidateFiles = [
+        `${sym}_Q3_2026_${suffix}.md`,
         sym + '_' + type + '_Q3.md',
         sym + '_ThuyetMinh_' + type + '.md',
         ...(type === 'HopNhat' ? [sym + '_ThuyetMinh_BCTC.md'] : []),
       ]
     } else {
       candidateFiles = [
+        `${sym}_Q3_2026_${suffix}.md`,
+        `${sym}_BN_2026_${suffix}.md`,
+        `${sym}_Q4_2026_${suffix}.md`,
         sym + '_' + type + '_Q3.md',
         sym + '_ThuyetMinh_' + type + '.md',
         ...(type === 'HopNhat' ? [sym + '_ThuyetMinh_BCTC.md', sym + '_HopNhat_BanNien.md'] : []),
@@ -435,13 +591,16 @@ export function getBctcReport(
 
   // Xác định kỳ báo cáo thực tế
   let periodKey = 'Quy_3_2026'
-  let periodLabel = 'Báo cáo Quý 3/2026'
-  if (activeFilePath.includes('Ban_Nien_2026') || activeFilePath.includes('BanNien')) {
+  let periodLabel = 'Báo cáo tài chính quý 3'
+  if (activeFilePath.includes('Ban_Nien_2026') || activeFilePath.includes('BanNien') || activeFilePath.includes('_BN_')) {
     periodKey = 'Ban_Nien_2026'
-    periodLabel = 'Báo cáo Bán niên 2026'
+    periodLabel = 'Báo cáo tài chính bán niên'
+  } else if (activeFilePath.includes('Quy_4_2026') || activeFilePath.includes('_Q4')) {
+    periodKey = 'Quy_4_2026'
+    periodLabel = 'Báo cáo tài chính quý 4'
   } else if (activeFilePath.includes('Quy_3_2026') || activeFilePath.includes('_Q3')) {
     periodKey = 'Quy_3_2026'
-    periodLabel = 'Báo cáo Quý 3/2026'
+    periodLabel = 'Báo cáo tài chính quý 3'
   }
 
   const raw = fs.readFileSync(activeFilePath, 'utf-8')
@@ -461,6 +620,11 @@ export function getBctcReport(
       break
     }
   }
+
+  // 1. Kiểm tra xem tài liệu có PHẦN 5 riêng biệt không để tự động tích hợp Thuyết minh vào Phần 2, 3, 4
+  const p5Match = raw.match(/^(?:#{1,4}\s*(?:##)?\s*PHẦN\s+5[:\s]+[^\n]*)/im)
+  const subNotes = p5Match ? extractSubNotesFromPhan5(raw.slice(p5Match.index)) : null
+  const hasExternalPhan5 = !!p5Match
 
   // Tách các Phần: # PHẦN, ## PHẦN, ### PHẦN 0, 1, 2, 3, 4...
   const sectionRegex = /^#{1,4}\s*(?:##)?\s*PHẦN\s+(\d+)[:\s]+([^\n]+)/gim
@@ -496,30 +660,114 @@ export function getBctcReport(
     const sectionRaw = raw.slice(current.index, nextIndex)
 
     const firstLineBreak = sectionRaw.indexOf('\n')
-    const bodyMarkdown = firstLineBreak !== -1 ? sectionRaw.slice(firstLineBreak + 1).trim() : ''
+    let bodyMarkdown = firstLineBreak !== -1 ? sectionRaw.slice(firstLineBreak + 1).trim() : ''
+
+    let hasAttachedNotes = false
+    let customTitle = `PHẦN ${current.number}: ${current.title}`
+    let customShortTitle = getSectionShortTitle(current.number, current.title)
+
+    // Nếu tài liệu có PHẦN 5 tách rời, tự động gắn Thuyết minh chi tiết tương ứng vào Phần 2, 3, 4
+    if (hasExternalPhan5 && subNotes) {
+      if (
+        current.number === 2 &&
+        subNotes.cdktNotes &&
+        !bodyMarkdown.includes('THUYẾT MINH CHI TIẾT BẢNG CÂN ĐỐI KẾ TOÁN')
+      ) {
+        bodyMarkdown = `<div id="bang-chinh-${secId}" class="scroll-mt-24"></div>\n\n` +
+          bodyMarkdown +
+          `\n\n---\n\n<div id="thuyet-minh-${secId}" class="scroll-mt-24 pt-6 pb-2">\n` +
+          `<div class="flex flex-wrap items-center justify-between gap-3 p-3.5 rounded-xl bg-emerald-500/10 border border-emerald-500/25 mb-4">\n` +
+          `  <div class="flex items-center gap-2.5">\n` +
+          `    <span class="text-lg">📑</span>\n` +
+          `    <div>\n` +
+          `      <div class="text-sm font-bold text-foreground">THUYẾT MINH CHI TIẾT BẢNG CÂN ĐỐI KẾ TOÁN</div>\n` +
+          `      <div class="text-xs text-muted-foreground">Toàn bộ các bảng biểu và phụ lục giải trình tiền mặt, đầu tư tài chính, công nợ, tồn kho, TSCĐ, nợ vay, nguồn vốn...</div>\n` +
+          `    </div>\n` +
+          `  </div>\n` +
+          `  <a href="#bang-chinh-${secId}" class="inline-flex items-center gap-1 text-xs font-bold text-primary hover:underline px-3 py-1.5 rounded-lg bg-background/80 border border-border shadow-2xs">\n` +
+          `    ↑ Về Bảng chính\n` +
+          `  </a>\n` +
+          `</div>\n` +
+          `</div>\n\n${subNotes.cdktNotes}`
+        hasAttachedNotes = true
+        customTitle = `PHẦN 2: ${current.title.replace(/\s*\(GIỮA NIÊN ĐỘ\)/i, '')} & THUYẾT MINH CHI TIẾT`
+        customShortTitle = '2. Bảng CĐKT & Thuyết minh'
+      } else if (
+        current.number === 3 &&
+        subNotes.kqkdNotes &&
+        !bodyMarkdown.includes('THUYẾT MINH CHI TIẾT KẾT QUẢ KINH DOANH')
+      ) {
+        bodyMarkdown = `<div id="bang-chinh-${secId}" class="scroll-mt-24"></div>\n\n` +
+          bodyMarkdown +
+          `\n\n---\n\n<div id="thuyet-minh-${secId}" class="scroll-mt-24 pt-6 pb-2">\n` +
+          `<div class="flex flex-wrap items-center justify-between gap-3 p-3.5 rounded-xl bg-amber-500/10 border border-amber-500/25 mb-4">\n` +
+          `  <div class="flex items-center gap-2.5">\n` +
+          `    <span class="text-lg">📑</span>\n` +
+          `    <div>\n` +
+          `      <div class="text-sm font-bold text-foreground">THUYẾT MINH CHI TIẾT BÁO CÁO KẾT QUẢ KINH DOANH</div>\n` +
+          `      <div class="text-xs text-muted-foreground">Toàn bộ các bảng biểu và phụ lục giải trình doanh thu bán hàng, giảm trừ, giá vốn, chi phí tài chính, chi phí quản lý...</div>\n` +
+          `    </div>\n` +
+          `  </div>\n` +
+          `  <a href="#bang-chinh-${secId}" class="inline-flex items-center gap-1 text-xs font-bold text-primary hover:underline px-3 py-1.5 rounded-lg bg-background/80 border border-border shadow-2xs">\n` +
+          `    ↑ Về Bảng chính\n` +
+          `  </a>\n` +
+          `</div>\n` +
+          `</div>\n\n${subNotes.kqkdNotes}`
+        hasAttachedNotes = true
+        customTitle = `PHẦN 3: ${current.title} & THUYẾT MINH CHI TIẾT`
+        customShortTitle = '3. Báo cáo KQKD & Thuyết minh'
+      } else if (
+        current.number === 4 &&
+        subNotes.lcttNotes &&
+        !bodyMarkdown.includes('THUYẾT MINH LƯU CHUYỂN TIỀN TỆ')
+      ) {
+        bodyMarkdown = `<div id="bang-chinh-${secId}" class="scroll-mt-24"></div>\n\n` +
+          bodyMarkdown +
+          `\n\n---\n\n<div id="thuyet-minh-${secId}" class="scroll-mt-24 pt-6 pb-2">\n` +
+          `<div class="flex flex-wrap items-center justify-between gap-3 p-3.5 rounded-xl bg-purple-500/10 border border-purple-500/25 mb-4">\n` +
+          `  <div class="flex items-center gap-2.5">\n` +
+          `    <span class="text-lg">📑</span>\n` +
+          `    <div>\n` +
+          `      <div class="text-sm font-bold text-foreground">THUYẾT MINH LƯU CHUYỂN TIỀN TỆ & CÁC BÊN LIÊN QUAN</div>\n` +
+          `      <div class="text-xs text-muted-foreground">Toàn bộ các bảng biểu và phụ lục giải trình lưu chuyển tiền tệ, thù lao HĐQT/BKS, các giao dịch trọng yếu...</div>\n` +
+          `    </div>\n` +
+          `  </div>\n` +
+          `  <a href="#bang-chinh-${secId}" class="inline-flex items-center gap-1 text-xs font-bold text-primary hover:underline px-3 py-1.5 rounded-lg bg-background/80 border border-border shadow-2xs">\n` +
+          `    ↑ Về Bảng chính\n` +
+          `  </a>\n` +
+          `</div>\n` +
+          `</div>\n\n${subNotes.lcttNotes}`
+        hasAttachedNotes = true
+        customTitle = `PHẦN 4: ${current.title} & THUYẾT MINH CHI TIẾT`
+        customShortTitle = '4. Báo cáo LCTT & Thuyết minh'
+      }
+    }
+
     const contentHtml = formatMarkdownToHtml(bodyMarkdown)
     const secTableCount = (contentHtml.match(/<table/gi) || []).length
 
-    let shortTitle = getSectionShortTitle(current.number, current.title)
-    if (occurrence > 1) {
-      if (current.number === 5) {
-        shortTitle = '5. Toàn bộ TM'
-      } else {
-        shortTitle = `${shortTitle} (${occurrence})`
+    if (!hasAttachedNotes) {
+      if (occurrence > 1) {
+        if (current.number === 5) {
+          customShortTitle = '5. Toàn bộ TM'
+        } else {
+          customShortTitle = `${customShortTitle} (${occurrence})`
+        }
+      } else if (current.number === 5 && (current.title.toUpperCase().includes('CHỌN LỌC') || current.title.toUpperCase().includes('TRỌNG YẾU'))) {
+        customShortTitle = '5. TM chọn lọc'
       }
-    } else if (current.number === 5 && (current.title.toUpperCase().includes('CHỌN LỌC') || current.title.toUpperCase().includes('TRỌNG YẾU'))) {
-      shortTitle = '5. TM chọn lọc'
     }
 
     sections.push({
       id: secId,
       number: current.number,
-      title: `PHẦN ${current.number}: ${current.title}`,
-      shortTitle,
+      title: customTitle,
+      shortTitle: customShortTitle,
       contentHtml,
       rawMarkdown: bodyMarkdown,
       hasContent: bodyMarkdown.length > 0,
       tableCount: secTableCount,
+      hasAttachedNotes,
     })
   }
 
@@ -539,7 +787,9 @@ export function getBctcReport(
     })
   }
 
-  const totalTableCount = sections.reduce((acc, s) => acc + s.tableCount, 0)
+  // Tính tổng số bảng biểu gốc chính xác từ tài liệu BCTC
+  const originalHtml = formatMarkdownToHtml(raw)
+  const totalTableCount = (originalHtml.match(/<table/gi) || []).length
   const notes = extractNotesFromRaw(raw)
 
   return {

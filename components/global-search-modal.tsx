@@ -36,6 +36,7 @@ import {
   RECENT_SEARCHES_EVENT,
   type RecentSearchItem,
 } from '@/lib/recent-searches'
+import { saveStoredSearchPool } from '@/lib/stock-search-cache'
 
 interface GlobalSearchModalProps {
   open: boolean
@@ -163,6 +164,13 @@ export function GlobalSearchModal({ open, onClose }: GlobalSearchModalProps) {
 
     return pool
   }, [reports])
+
+  // Lưu trữ danh mục tìm kiếm vào IndexedDB để tái sử dụng tức thì 0ms cho các lần sau
+  useEffect(() => {
+    if (fullSearchPool.length > 0) {
+      saveStoredSearchPool(fullSearchPool).catch(() => {})
+    }
+  }, [fullSearchPool])
 
   // Filter items based on active tabs & search query
   const filteredResults = useMemo(() => {

@@ -5,7 +5,8 @@
  *   2. 16:16 hàng ngày: Cập nhật Chỉ số Định giá (P/E, P/B, Vốn hóa, Điểm 360°)
  *   3. 16:25 hàng ngày: Cập nhật Hiệu suất Biến động giá (1W, 1M, 3M, 6M, 1Y, 3Y, YTD)
  *   4. 18:36 hàng ngày: Cập nhật Giao dịch nội bộ Lần 2 (Chốt tin chiều & cả ngày)
- *   5. 23:00 ngày 1 hàng tháng: Cập nhật Cơ cấu cổ đông lớn & Công ty con
+ *   5. 21:00 hàng ngày: Cập nhật Dữ liệu Quỹ Mở Fmarket (70 quỹ mở & Top Holdings)
+ *   6. 23:00 ngày 1 hàng tháng: Cập nhật Cơ cấu cổ đông lớn & Công ty con
  *
  * Cách chạy:
  *   node scripts/scheduler-daemon.mjs
@@ -28,6 +29,7 @@ let lastRunDisclosures1200 = "";
 let lastRunDisclosures1800 = "";
 let lastRunDisclosures2030 = "";
 let lastRunReports2000 = "";
+let lastRunFunds2100 = "";
 let lastRunShareholdersMonth = "";
 let lastRunChinaNewsDate0645 = "";
 
@@ -111,6 +113,12 @@ function checkAndRunSchedule() {
     runCommand("node scripts/sync-disclosures.mjs", "CÔNG BỐ THÔNG TIN 3 SÀN (20:30 TỐI)");
   }
 
+  // 6c. Dữ liệu Quỹ Mở Fmarket (70 quỹ): 21:00 tối hàng ngày
+  if (hours === 21 && minutes === 0 && lastRunFunds2100 !== dateStr) {
+    lastRunFunds2100 = dateStr;
+    runCommand("node scripts/sync-funds.mjs", "DỮ LIỆU QUỸ MỞ FMARKET (21:00 TỐI)");
+  }
+
   // 7. Cơ cấu cổ đông lớn & Công ty con: Ngày 1 hàng tháng lúc 23:00
   if (dayOfMonth === 1 && hours === 23 && minutes === 0 && lastRunShareholdersMonth !== monthStr) {
     lastRunShareholdersMonth = monthStr;
@@ -129,6 +137,7 @@ console.log("   • 18:00 hàng ngày           : Cập nhật Công bố thông
 console.log("   • 18:36 hàng ngày           : Cập nhật Giao dịch nội bộ (Lần 2 - Chốt ngày)");
 console.log("   • 20:00 hàng ngày           : Cập nhật Báo cáo phân tích Cổ phiếu & Ngành (1 ngày 1 lần)");
 console.log("   • 20:30 hàng ngày           : Cập nhật Công bố thông tin 3 Sàn (Lần 3 - Chốt tối)");
+console.log("   • 21:00 hàng ngày           : Cập nhật Dữ liệu Quỹ Mở Fmarket (70 Quỹ)");
 console.log("   • 23:00 ngày 1 hàng tháng   : Cập nhật Cơ cấu Cổ đông & Công ty con");
 console.log("-------------------------------------------------------------------");
 console.log(`[${new Date().toLocaleTimeString("vi-VN")}] Daemon đang canh thời gian thực... (Kiểm tra mỗi 30s)`);

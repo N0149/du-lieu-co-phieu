@@ -11,7 +11,16 @@ import {
   formatQuarterLabel,
 } from './industry-types'
 
+let cachedIndustryFullData: IndustryFullData | null = null
+let lastIndustryLoadedTime = 0
+const INDUSTRY_CACHE_TTL = 15 * 60 * 1000 // 15 phút
+
 export async function getIndustryFullData(): Promise<IndustryFullData> {
+  const now = Date.now()
+  if (cachedIndustryFullData && now - lastIndustryLoadedTime < INDUSTRY_CACHE_TTL) {
+    return cachedIndustryFullData
+  }
+
   const dir = path.join(process.cwd(), 'data', 'industry')
 
   // Đọc file icb_hierarchy.json
@@ -215,7 +224,7 @@ export async function getIndustryFullData(): Promise<IndustryFullData> {
     } catch {}
   }
 
-  return {
+  const result: IndustryFullData = {
     summary: marketSummary,
     sectors,
     marketCapPie,
@@ -224,4 +233,8 @@ export async function getIndustryFullData(): Promise<IndustryFullData> {
     generatedAt: summary.generated_at || new Date().toISOString(),
     allStocks,
   }
+
+  cachedIndustryFullData = result
+  lastIndustryLoadedTime = now
+  return result
 }

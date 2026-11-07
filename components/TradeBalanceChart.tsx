@@ -24,6 +24,7 @@ import {
 } from 'lucide-react'
 import { cn } from '@/lib/utils'
 import { fmtInt } from '@/lib/format'
+import { ChartWatermark } from './ChartWatermark'
 
 /** Một điểm trong chuỗi Cán cân thương mại theo kỳ (khớp scripts/customs_etl/analysis.py). */
 export type TradeBalancePoint = {
@@ -945,7 +946,8 @@ export function TradeBalanceChart({ data }: { data: TradeBalancePoint[] }) {
           Chưa có dữ liệu cán cân thương mại trong giai đoạn này.
         </div>
       ) : (
-        <div className="h-80 w-full sm:h-96">
+        <div className="relative h-80 w-full sm:h-96">
+          <ChartWatermark domain="dulieudautu.com" brandName="Dữ Liệu Đầu Tư" size="md" />
           <ResponsiveContainer width="100%" height="100%">
             <ComposedChart data={points} margin={{ top: 12, right: 10, left: -8, bottom: 4 }}>
               <CartesianGrid strokeDasharray="3 3" stroke="#ffffff" opacity={0.06} vertical={false} />

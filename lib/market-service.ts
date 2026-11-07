@@ -1,3 +1,5 @@
+import fs from 'node:fs'
+import path from 'node:path'
 export interface MarketItem {
   id: string
   market: string
@@ -88,7 +90,18 @@ function formatPercent(val: any): string {
   return (num > 0 ? '+' : '') + num.toFixed(2) + '%'
 }
 
+let cachedWorldData: WorldMarketData | null = null
+let lastWorldDataTime = 0
+const WORLD_DATA_TTL = 5 * 60 * 1000 // 5 phút RAM cache
+
 export async function fetchWorldMarketData(): Promise<WorldMarketData | null> {
+  const now = Date.now()
+  if (cachedWorldData && now - lastWorldDataTime < WORLD_DATA_TTL) {
+    return cachedWorldData
+  }
+
+  const snapshotPath = path.join(process.cwd(), 'data', 'world_market_snapshot.json')
+
   try {
     const res = await fetch(
       'https://api-finance-t19.24hmoney.vn/v1/ios/world-stock/all',
@@ -98,13 +111,17 @@ export async function fetchWorldMarketData(): Promise<WorldMarketData | null> {
             'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
           Accept: 'application/json',
         },
+        signal: AbortSignal.timeout(3500), // Timeout 3.5s chống nghẽn server
         next: { revalidate: 1800 }, // 30 phút
       }
     )
 
     if (!res.ok) {
       console.warn(`[24hMoney API] HTTP error: ${res.status}`)
-      return null
+      if (fs.existsSync(snapshotPath)) {
+        return JSON.parse(fs.readFileSync(snapshotPath, 'utf-8'))
+      }
+      return cachedWorldData
     }
 
     const json = await res.json()
@@ -305,15 +322,30 @@ export async function fetchWorldMarketData(): Promise<WorldMarketData | null> {
       }
     })
 
-    return {
+    const result: WorldMarketData = {
       worldStock,
       commodity,
       changeRate,
       goldPrice,
       crypto,
     }
+
+    cachedWorldData = result
+    lastWorldDataTime = now
+
+    // Lưu snapshot làm fallback khi mạng chậm hoặc API bên ngoài lỗi
+    try {
+      fs.writeFileSync(snapshotPath, JSON.stringify(result))
+    } catch {}
+
+    return result
   } catch (err) {
     console.error('[Market Service] Error fetching data:', err)
-    return null
+    if (fs.existsSync(snapshotPath)) {
+      try {
+        return JSON.parse(fs.readFileSync(snapshotPath, 'utf-8'))
+      } catch {}
+    }
+    return cachedWorldData
   }
 }

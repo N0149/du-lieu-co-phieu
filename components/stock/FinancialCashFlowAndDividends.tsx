@@ -16,6 +16,7 @@ import type { DividendHistoryPayload } from '@/lib/dividend-history-service'
 import { History, BarChart3, Table as TableIcon, CheckCircle2, Maximize2 } from 'lucide-react'
 import { cn } from '@/lib/utils'
 import { ChartModal } from './ChartModal'
+import { ChartWatermark } from '@/components/ChartWatermark'
 
 interface FinancialCashFlowAndDividendsProps {
   symbol: string
@@ -180,10 +181,11 @@ export function FinancialCashFlowAndDividends({
         {/* Nội dung View: Biểu đồ hoặc Bảng */}
         {viewMode === 'chart' ? (
           <div
-            className="h-[300px] w-full pt-1 cursor-pointer group"
+            className="relative h-[300px] w-full pt-1 cursor-pointer group"
             onClick={() => setIsExpanded(true)}
             title="Bấm vào để phóng lớn biểu đồ"
           >
+            <ChartWatermark domain="dulieudautu.com" brandName="Dữ Liệu Đầu Tư" size="sm" />
             <ResponsiveContainer width="100%" height={300}>
               <ComposedChart data={chartPoints} margin={{ top: 10, right: 15, left: -5, bottom: 0 }}>
                 <CartesianGrid strokeDasharray="3 3" stroke="#334155" opacity={0.25} />
@@ -313,7 +315,8 @@ export function FinancialCashFlowAndDividends({
             </div>
           }
         >
-          <div className="h-[480px] sm:h-[520px] w-full pt-2">
+          <div className="relative h-[480px] sm:h-[520px] w-full pt-2">
+            <ChartWatermark domain="dulieudautu.com" brandName="Dữ Liệu Đầu Tư" size="md" />
             <ResponsiveContainer width="100%" height={520}>
               <ComposedChart data={chartPoints} margin={{ top: 10, right: 20, left: 0, bottom: 0 }}>
                 <CartesianGrid strokeDasharray="3 3" stroke="#334155" opacity={0.25} />

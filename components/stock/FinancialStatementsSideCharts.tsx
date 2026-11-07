@@ -34,6 +34,7 @@ import {
   ProfitChartCard,
   CustomChartTooltip,
 } from "@/components/stock/GeneralDetailedFinancialCharts";
+import { ChartWatermark } from "@/components/ChartWatermark";
 
 export interface FinancialStatementsSideChartsProps {
   ticker: string;
@@ -486,7 +487,8 @@ export function FinancialStatementsSideCharts({
           </div>
 
           {/* Biểu đồ diện tích + cột */}
-          <div className="h-[230px] w-full pt-2">
+          <div className="relative h-[230px] w-full pt-2">
+            <ChartWatermark domain="dulieudautu.com" brandName="Dữ Liệu Đầu Tư" size="sm" />
             <ResponsiveContainer width="100%" height={230} minWidth={100} minHeight={230}>
               <ComposedChart data={selectedRowData.points} margin={{ top: 10, right: 10, left: -10, bottom: 0 }}>
                 <defs>

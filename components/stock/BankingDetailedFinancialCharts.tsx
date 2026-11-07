@@ -1,6 +1,6 @@
 'use client'
 
-import React, { useState, useMemo } from 'react'
+import React, { useState, useMemo, useRef, useEffect } from 'react'
 import {
   ResponsiveContainer,
   ComposedChart,
@@ -33,6 +33,7 @@ import {
 } from 'lucide-react'
 import { cn } from '@/lib/utils'
 import { ChartModal } from './ChartModal'
+import { ChartWatermark } from '@/components/ChartWatermark'
 import { WiDataStandardRow } from './WiDataStandardRow'
 
 interface BankingDetailedFinancialChartsProps {
@@ -82,14 +83,47 @@ export function BankingDetailedFinancialCharts({
   quarterData,
   annualData,
 }: BankingDetailedFinancialChartsProps) {
-  const hasQuarter = Boolean(quarterData?.newFiscalDateQuarter && quarterData.newFiscalDateQuarter.length > 0)
-  const hasAnnual = Boolean(annualData?.newFiscalDateYear && annualData.newFiscalDateYear.length > 0)
+  const qDates = quarterData?.newFiscalDateQuarter || []
+  const aDates = annualData?.newFiscalDateYear || []
+  const hasQuarter = qDates.length > 0
+  const hasAnnual = aDates.length > 0
+
+  const isAnnualDefault = useMemo(() => {
+    if (!hasQuarter && hasAnnual) return true
+    if (hasQuarter && hasAnnual) {
+      const qLatest = qDates[qDates.length - 1]
+      const aLatest = aDates[aDates.length - 1]
+      const qYear = parseInt(qLatest?.slice(0, 4) || '0', 10)
+      const aYear = parseInt(aLatest?.slice(0, 4) || '0', 10)
+      if (aYear > qYear) return true
+      if (qDates.length <= 4 && aDates.length >= 4 && aYear >= qYear) return true
+    }
+    return false
+  }, [hasQuarter, hasAnnual, qDates, aDates])
 
   const [periodType, setPeriodType] = useState<'quarter' | 'annual'>(() => {
+    if (isAnnualDefault) return 'annual'
     if (hasQuarter) return 'quarter'
     if (hasAnnual) return 'annual'
     return 'quarter'
   })
+
+  const userChangedPeriodRef = useRef(false)
+  const lastSymbolRef = useRef(symbol)
+
+  useEffect(() => {
+    if (lastSymbolRef.current !== symbol) {
+      lastSymbolRef.current = symbol
+      userChangedPeriodRef.current = false
+      setPeriodType(isAnnualDefault ? 'annual' : 'quarter')
+    }
+  }, [symbol, isAnnualDefault])
+
+  useEffect(() => {
+    if (!userChangedPeriodRef.current && isAnnualDefault && periodType !== 'annual') {
+      setPeriodType('annual')
+    }
+  }, [isAnnualDefault, periodType])
   const [expandedChart, setExpandedChart] = useState<number | null>(null)
 
   const effectivePeriodType = useMemo<'quarter' | 'annual'>(() => {
@@ -199,6 +233,7 @@ export function BankingDetailedFinancialCharts({
             disabled={!hasQuarter}
             onClick={() => {
               if (!hasQuarter) return
+              userChangedPeriodRef.current = true
               setPeriodType('quarter')
             }}
             className={cn(
@@ -218,6 +253,7 @@ export function BankingDetailedFinancialCharts({
             disabled={!hasAnnual}
             onClick={() => {
               if (!hasAnnual) return
+              userChangedPeriodRef.current = true
               setPeriodType('annual')
             }}
             className={cn(
@@ -253,7 +289,8 @@ export function BankingDetailedFinancialCharts({
 
           {loanByIndustry ? (
             <div className="space-y-4">
-              <div className="h-[210px] w-full flex items-center justify-center cursor-pointer group" onClick={() => setExpandedChart(1)} title="Bấm vào để phóng lớn biểu đồ">
+              <div className="relative h-[210px] w-full flex items-center justify-center cursor-pointer group" onClick={() => setExpandedChart(1)} title="Bấm vào để phóng lớn biểu đồ">
+                <ChartWatermark domain="dulieudautu.com" brandName="Dữ Liệu Đầu Tư" size="sm" />
                 <ResponsiveContainer width="100%" height={210}>
                   <PieChart>
                     <Pie
@@ -322,7 +359,8 @@ export function BankingDetailedFinancialCharts({
             </span>
           </div>
 
-          <div className="h-[280px] w-full cursor-pointer group" onClick={() => setExpandedChart(2)} title="Bấm vào để phóng lớn biểu đồ">
+          <div className="relative h-[280px] w-full cursor-pointer group" onClick={() => setExpandedChart(2)} title="Bấm vào để phóng lớn biểu đồ">
+            <ChartWatermark domain="dulieudautu.com" brandName="Dữ Liệu Đầu Tư" size="sm" />
             <ResponsiveContainer width="100%" height={280}>
               <ComposedChart data={chartPoints} margin={{ top: 10, right: 10, left: -15, bottom: 0 }}>
                 <CartesianGrid strokeDasharray="3 3" stroke="#334155" opacity={0.25} />
@@ -353,7 +391,8 @@ export function BankingDetailedFinancialCharts({
             </span>
           </div>
 
-          <div className="h-[280px] w-full cursor-pointer group" onClick={() => setExpandedChart(3)} title="Bấm vào để phóng lớn biểu đồ">
+          <div className="relative h-[280px] w-full cursor-pointer group" onClick={() => setExpandedChart(3)} title="Bấm vào để phóng lớn biểu đồ">
+            <ChartWatermark domain="dulieudautu.com" brandName="Dữ Liệu Đầu Tư" size="sm" />
             <ResponsiveContainer width="100%" height={280}>
               <ComposedChart data={chartPoints} margin={{ top: 10, right: 10, left: -15, bottom: 0 }}>
                 <CartesianGrid strokeDasharray="3 3" stroke="#334155" opacity={0.25} />
@@ -393,7 +432,8 @@ export function BankingDetailedFinancialCharts({
             </div>
           </div>
 
-          <div className="h-[280px] w-full cursor-pointer group" onClick={() => setExpandedChart(4)} title="Bấm vào để phóng lớn biểu đồ">
+          <div className="relative h-[280px] w-full cursor-pointer group" onClick={() => setExpandedChart(4)} title="Bấm vào để phóng lớn biểu đồ">
+            <ChartWatermark domain="dulieudautu.com" brandName="Dữ Liệu Đầu Tư" size="sm" />
             <ResponsiveContainer width="100%" height={280}>
               <LineChart data={chartPoints} margin={{ top: 10, right: 10, left: -15, bottom: 0 }}>
                 <CartesianGrid strokeDasharray="3 3" stroke="#334155" opacity={0.25} />
@@ -425,7 +465,8 @@ export function BankingDetailedFinancialCharts({
             </span>
           </div>
 
-          <div className="h-[280px] w-full cursor-pointer group" onClick={() => setExpandedChart(5)} title="Bấm vào để phóng lớn biểu đồ">
+          <div className="relative h-[280px] w-full cursor-pointer group" onClick={() => setExpandedChart(5)} title="Bấm vào để phóng lớn biểu đồ">
+            <ChartWatermark domain="dulieudautu.com" brandName="Dữ Liệu Đầu Tư" size="sm" />
             <ResponsiveContainer width="100%" height={280}>
               <ComposedChart data={chartPoints} margin={{ top: 10, right: 10, left: -10, bottom: 0 }}>
                 <CartesianGrid strokeDasharray="3 3" stroke="#334155" opacity={0.25} />
@@ -462,7 +503,8 @@ export function BankingDetailedFinancialCharts({
             </span>
           </div>
 
-          <div className="h-[280px] w-full cursor-pointer group" onClick={() => setExpandedChart(6)} title="Bấm vào để phóng lớn biểu đồ">
+          <div className="relative h-[280px] w-full cursor-pointer group" onClick={() => setExpandedChart(6)} title="Bấm vào để phóng lớn biểu đồ">
+            <ChartWatermark domain="dulieudautu.com" brandName="Dữ Liệu Đầu Tư" size="sm" />
             <ResponsiveContainer width="100%" height={280}>
               <ComposedChart data={chartPoints} margin={{ top: 10, right: 10, left: -10, bottom: 0 }}>
                 <CartesianGrid strokeDasharray="3 3" stroke="#334155" opacity={0.25} />
@@ -499,7 +541,8 @@ export function BankingDetailedFinancialCharts({
             </span>
           </div>
 
-          <div className="h-[280px] w-full cursor-pointer group" onClick={() => setExpandedChart(7)} title="Bấm vào để phóng lớn biểu đồ">
+          <div className="relative h-[280px] w-full cursor-pointer group" onClick={() => setExpandedChart(7)} title="Bấm vào để phóng lớn biểu đồ">
+            <ChartWatermark domain="dulieudautu.com" brandName="Dữ Liệu Đầu Tư" size="sm" />
             <ResponsiveContainer width="100%" height={280}>
               <ComposedChart data={chartPoints} margin={{ top: 10, right: 10, left: -15, bottom: 0 }}>
                 <CartesianGrid strokeDasharray="3 3" stroke="#334155" opacity={0.25} />
@@ -535,7 +578,8 @@ export function BankingDetailedFinancialCharts({
             </span>
           </div>
 
-          <div className="h-[280px] w-full cursor-pointer group" onClick={() => setExpandedChart(8)} title="Bấm vào để phóng lớn biểu đồ">
+          <div className="relative h-[280px] w-full cursor-pointer group" onClick={() => setExpandedChart(8)} title="Bấm vào để phóng lớn biểu đồ">
+            <ChartWatermark domain="dulieudautu.com" brandName="Dữ Liệu Đầu Tư" size="sm" />
             <ResponsiveContainer width="100%" height={280}>
               <ComposedChart data={chartPoints} margin={{ top: 10, right: 10, left: -15, bottom: 0 }}>
                 <CartesianGrid strokeDasharray="3 3" stroke="#334155" opacity={0.25} />
@@ -569,7 +613,8 @@ export function BankingDetailedFinancialCharts({
             </span>
           </div>
 
-          <div className="h-[280px] w-full cursor-pointer group" onClick={() => setExpandedChart(9)} title="Bấm vào để phóng lớn biểu đồ">
+          <div className="relative h-[280px] w-full cursor-pointer group" onClick={() => setExpandedChart(9)} title="Bấm vào để phóng lớn biểu đồ">
+            <ChartWatermark domain="dulieudautu.com" brandName="Dữ Liệu Đầu Tư" size="sm" />
             <ResponsiveContainer width="100%" height={280}>
               <LineChart data={chartPoints} margin={{ top: 10, right: 10, left: -15, bottom: 0 }}>
                 <CartesianGrid strokeDasharray="3 3" stroke="#334155" opacity={0.25} />

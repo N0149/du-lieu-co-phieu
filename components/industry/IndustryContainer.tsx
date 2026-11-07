@@ -4,7 +4,15 @@ import React, { useState, useMemo } from 'react'
 import Link from 'next/link'
 import { Layers, BarChart3, LineChart, FileText } from 'lucide-react'
 import { IndustryOverviewCards } from './IndustryOverviewCards'
-import { IndustryPieCharts } from './IndustryPieCharts'
+import dynamic from 'next/dynamic'
+
+const IndustryPieCharts = dynamic(
+  () => import('./IndustryPieCharts').then((m) => m.IndustryPieCharts),
+  {
+    ssr: false,
+    loading: () => <div className="h-72 w-full rounded-2xl bg-white/5 animate-pulse" />,
+  }
+)
 import { IndustryTable } from './IndustryTable'
 import { IndustryValuationTable } from './IndustryValuationTable'
 import { IndustryExclusionBar } from './IndustryExclusionBar'

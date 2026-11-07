@@ -30,6 +30,7 @@ import {
 } from 'lucide-react';
 import { QuarterlyBiddingRevenueComparison, HealthcareContractor } from '@/lib/bidding-types';
 import { cn } from '@/lib/utils';
+import { ChartWatermark } from '@/components/ChartWatermark';
 
 export type YearFilter = 'ALL' | 'RECENT_3Y' | '2026' | '2025' | '2024' | '2023' | '2022' | '2021';
 
@@ -272,6 +273,7 @@ export function BiddingRevenueChart({
 
       {/* Main Chart Area */}
       <div className={cn("relative mt-2 w-full pt-2", isWideSeries ? "h-[380px] sm:h-[430px]" : "h-[330px] sm:h-[380px]")}>
+        <ChartWatermark domain="dulieudautu.com" brandName="Dữ Liệu Đầu Tư" size="md" />
         <ResponsiveContainer width="100%" height="100%">
           <ComposedChart
             data={filteredData}

@@ -28,6 +28,7 @@ import type { DividendHistoryPayload } from '@/lib/dividend-history-service'
 import type { CompanyFullProfileData } from '@/lib/company-profile-types'
 import { StockShareholdersAndInsidersCard } from './StockShareholdersAndInsidersCard'
 import { cn } from '@/lib/utils'
+import { ChartWatermark } from '@/components/ChartWatermark'
 
 function formatEventTitle(text: string, cashVnd: number | null, stockPct: number | null): string {
   if (!text) {
@@ -527,7 +528,8 @@ export function StockDividendsTab({
               </span>
             </div>
 
-            <div className="flex-1 w-full min-h-0">
+            <div className="relative flex-1 w-full min-h-0">
+              <ChartWatermark domain="dulieudautu.com" brandName="Dữ Liệu Đầu Tư" size="sm" />
               <ResponsiveContainer width="100%" height="100%">
                 <BarChart
                   data={chartAnnualData}
@@ -590,7 +592,8 @@ export function StockDividendsTab({
               </span>
             </div>
 
-            <div className="flex-1 w-full min-h-0">
+            <div className="relative flex-1 w-full min-h-0">
+              <ChartWatermark domain="dulieudautu.com" brandName="Dữ Liệu Đầu Tư" size="sm" />
               <ResponsiveContainer width="100%" height="100%">
                 <BarChart
                   data={chartAnnualData}

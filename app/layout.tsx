@@ -12,6 +12,8 @@ import './globals.css'
 const inter = Inter({
   subsets: ['latin', 'vietnamese'],
   variable: '--font-inter',
+  display: 'swap',
+  preload: true,
 })
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://dulieudautu.com'
@@ -90,6 +92,26 @@ export default function RootLayout({
         <Suspense fallback={null}>
           <PageViewTracker />
         </Suspense>
+        {/* Speculation Rules API: Tự động prefetch siêu tốc khi hover vào liên kết giúp chuyển tab tức thì 0ms */}
+        <script
+          type="speculationrules"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              prefetch: [
+                {
+                  where: {
+                    and: [
+                      { href_matches: '/*' },
+                      { not: { href_matches: '/api/*' } },
+                      { not: { href_matches: '/admin/*' } },
+                    ],
+                  },
+                  eagerness: 'moderate',
+                },
+              ],
+            }),
+          }}
+        />
         {process.env.NODE_ENV === 'production' && <Analytics />}
       </body>
     </html>

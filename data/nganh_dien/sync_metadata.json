@@ -1,5 +1,39 @@
 {
-  "lastSyncTime": "2026-10-09T14:03:04.432Z",
-  "status": "SYNCED_LOCAL_OK",
-  "directory": "data/nganh_dien"
+  "lastSyncTime": "2026-11-07T10:47:10.239268",
+  "status": "SUCCESS_OFFLINE_SAVED",
+  "directory": "D:\\hoc\\lap trinh\\du-lieu-co-phieu\\data\\nganh_dien",
+  "datasets": [
+    {
+      "file": "nsmo_chu_so_huu.json",
+      "desc": "Sản lượng phát điện theo chủ sở hữu (GENCO 1-2-3, EVN, PVN, BOT, JSC, TKV...)",
+      "sizeBytes": 3445
+    },
+    {
+      "file": "nsmo_loai_hinh_nguon.json",
+      "desc": "Sản lượng theo loại hình nguồn (than, thủy điện, khí, gió, mặt trời...)",
+      "sizeBytes": 2382
+    },
+    {
+      "file": "nsmo_smp_48_chu_ky.json",
+      "desc": "Giá cận biên thị trường SMP 48 chu kỳ 3 miền từ NSMO",
+      "sizeBytes": 15324
+    },
+    {
+      "file": "nsmo_tong_quan_he_thong.json",
+      "desc": "Thông số phụ tải Pmax và sản lượng toàn quốc ngày từ NSMO",
+      "sizeBytes": 2009
+    },
+    {
+      "file": "eav_quan_trac_ho_chua.json",
+      "desc": "Mực nước & lưu lượng xả 16 hồ chứa EAV gắn với 36 cổ phiếu",
+      "sizeBytes": 13908
+    },
+    {
+      "file": "eav_bieu_gia_act_tranh_duoc.json",
+      "desc": "Biểu giá Chi phí tránh được EAV cho thủy điện nhỏ <= 30MW",
+      "sizeBytes": 1799
+    }
+  ],
+  "stocksCount": 36,
+  "plantsCount": 77
 }

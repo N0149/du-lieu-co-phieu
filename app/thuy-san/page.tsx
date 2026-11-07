@@ -2,7 +2,18 @@ import React from 'react';
 import { Metadata } from 'next';
 import Link from 'next/link';
 import { SiteHeader } from '@/components/site-header';
-import { ThuySanDashboard } from '@/components/thuy-san/ThuySanDashboard';
+import dynamic from 'next/dynamic';
+
+const ThuySanDashboard = dynamic(
+  () => import('@/components/thuy-san/ThuySanDashboard').then((m) => m.ThuySanDashboard),
+  {
+    loading: () => (
+      <div className="mx-auto max-w-[1600px] px-4 py-8">
+        <div className="h-96 w-full rounded-2xl border border-white/5 bg-[#141822] animate-pulse" />
+      </div>
+    ),
+  }
+);
 import {
   ChevronRight,
   Fish,

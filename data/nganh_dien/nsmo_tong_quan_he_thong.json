@@ -1,0 +1,81 @@
+{
+  "source": "https://www.nsmo.vn/",
+  "api": "api/services/app/Pages/GetInfoHTDNgay",
+  "updatedAt": "2026-11-07T10:47:10.237296",
+  "operatingDate": "2026-11-06T00:00:00",
+  "pMaxMW": 51207.403,
+  "pMaxTime": "2026-11-06T17:50:00",
+  "totalGenerationMillionKWh": 1051.900737,
+  "generationByFuel": [
+    {
+      "idLoaiHinh": 1,
+      "tenLoaiHinh": "Thủy điện",
+      "sanLuong": 255.896552,
+      "isBold": false,
+      "isItalic": false
+    },
+    {
+      "idLoaiHinh": 2,
+      "tenLoaiHinh": "Nhiệt điện than",
+      "sanLuong": 470.861515,
+      "isBold": false,
+      "isItalic": false
+    },
+    {
+      "idLoaiHinh": 6,
+      "tenLoaiHinh": "Tuabin khí (Gas + Dầu DO)",
+      "sanLuong": 106.32108,
+      "isBold": false,
+      "isItalic": false
+    },
+    {
+      "idLoaiHinh": 3,
+      "tenLoaiHinh": "Nhiệt điện dầu",
+      "sanLuong": 6.6274,
+      "isBold": false,
+      "isItalic": false
+    },
+    {
+      "idLoaiHinh": 8,
+      "tenLoaiHinh": "Điện gió",
+      "sanLuong": 82.087343,
+      "isBold": false,
+      "isItalic": false
+    },
+    {
+      "idLoaiHinh": 9,
+      "tenLoaiHinh": "ĐMT trang trại",
+      "sanLuong": 47.830773,
+      "isBold": false,
+      "isItalic": false
+    },
+    {
+      "idLoaiHinh": 13,
+      "tenLoaiHinh": "ĐMT mái nhà (ước tính thương phẩm)",
+      "sanLuong": 39.4943,
+      "isBold": false,
+      "isItalic": false
+    },
+    {
+      "idLoaiHinh": 13,
+      "tenLoaiHinh": "ĐMT mái nhà (ước tính đầu cực)",
+      "sanLuong": 54.2219,
+      "isBold": false,
+      "isItalic": true
+    },
+    {
+      "idLoaiHinh": 99,
+      "tenLoaiHinh": "Nhập khẩu điện",
+      "sanLuong": 39.521734,
+      "isBold": false,
+      "isItalic": false
+    },
+    {
+      "idLoaiHinh": 99,
+      "tenLoaiHinh": "Khác (Sinh khối, Diesel Nam, …)",
+      "sanLuong": 3.30624,
+      "isBold": false,
+      "isItalic": false
+    }
+  ]
+}

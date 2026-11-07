@@ -305,18 +305,32 @@ const WiDataInsiderCard = dynamic(
 // - Khi nào cần triển khai lại tab nào: chỉ cần đổi cờ tương ứng thành `true`.
 // ════════════════════════════════════════════════════════════════════════════
 const ENABLE_FINANCIAL_CHARTS_TAB = false;
-const ENABLE_COMMUNITY_TAB = false; // Tạm cất tab Cộng đồng
+const ENABLE_COMMUNITY_TAB = true; // Mở lại tab Cộng đồng
 const ENABLE_PEERS_TAB = false;     // Tạm cất tab So sánh trong ngành
 
 function resolveValidTab(tab: StockDetailTab | string | null | undefined): StockDetailTab {
-  if (!tab || tab === 'profile') return 'overview'
+  if (!tab) return 'financials'
+  if (tab === 'profile') return 'overview'
   if (tab === 'co-tuc' || tab === 'dividend' || tab === 'dividends') return 'dividends'
   if (tab === 'charts' && !ENABLE_FINANCIAL_CHARTS_TAB) return 'overview'
   if (tab === 'community' && !ENABLE_COMMUNITY_TAB) return 'overview'
   if (tab === 'peers' && !ENABLE_PEERS_TAB) return 'overview'
-  if (tab === 'bctc' || tab === 'thuyet-minh' || tab === 'thuyetminh' || tab === 'notes') return 'bctc-q3'
-  if (tab === 'bctc-q3' || tab === 'bctc-quy-3' || tab === 'q3' || tab === 'quy-3') return 'bctc-q3'
-  if (tab === 'bctc-ban-nien' || tab === 'ban-nien' || tab === 'bannien' || tab === 'bctc-6t') return 'bctc-ban-nien'
+  if (
+    tab === 'bctc' ||
+    tab === 'thuyet-minh' ||
+    tab === 'thuyetminh' ||
+    tab === 'notes' ||
+    tab === 'bctc-q3' ||
+    tab === 'bctc-quy-3' ||
+    tab === 'q3' ||
+    tab === 'quy-3' ||
+    tab === 'bctc-ban-nien' ||
+    tab === 'ban-nien' ||
+    tab === 'bannien' ||
+    tab === 'bctc-6t'
+  ) {
+    return 'bctc'
+  }
   return tab as StockDetailTab
 }
 
@@ -378,7 +392,7 @@ export function StockDetailView({
   articlesData = null,
   initialFinancialStatements = null,
   initialFinancialStatementsAnnual = null,
-  initialTab = 'overview',
+  initialTab = 'financials',
   icbHierarchy = null,
   companyWebsiteMeta = null,
   bctcDocuments = null,
@@ -914,6 +928,13 @@ export function StockDetailView({
       badge?: string
     }> = [
       {
+        id: 'financials' as StockDetailTab,
+        label: 'Báo Cáo Tài Chính',
+        shortLabel: 'BCTC',
+        icon: FileSpreadsheet,
+        iconColor: 'text-amber-500',
+      },
+      {
         id: 'overview' as StockDetailTab,
         label: 'Tổng Quan & Hồ Sơ',
         shortLabel: 'Tổng quan & Hồ sơ',
@@ -963,13 +984,6 @@ export function StockDetailView({
       })
     }
 
-    list.push({
-      id: 'financials' as StockDetailTab,
-      label: 'Báo Cáo Tài Chính',
-      shortLabel: 'BCTC',
-      icon: FileSpreadsheet,
-      iconColor: 'text-amber-500',
-    })
 
     if (ENABLE_PEERS_TAB) {
       list.push({
@@ -999,20 +1013,12 @@ export function StockDetailView({
         badge: (agmData?.hasReport || availableAgmTickers?.includes(ticker)) ? '2026' : undefined,
       },
       {
-        id: 'bctc-ban-nien' as StockDetailTab,
-        label: 'BCTC Bán Niên',
-        shortLabel: 'Bán niên',
-        icon: ScrollText,
-        iconColor: 'text-teal-400',
-        badge: (hasBctcBanNien || bctcDataHopNhat?.periodKey === 'Ban_Nien_2026' || bctcDataCongTyMe?.periodKey === 'Ban_Nien_2026') ? '2026' : undefined,
-      },
-      {
-        id: 'bctc-q3' as StockDetailTab,
-        label: 'BCTC Quý 3',
-        shortLabel: 'Quý 3',
+        id: 'bctc' as StockDetailTab,
+        label: 'Thuyết Minh BCTC',
+        shortLabel: 'Thuyết minh',
         icon: ScrollText,
         iconColor: 'text-emerald-400',
-        badge: (hasBctcQ3 || bctcDataHopNhat?.periodKey === 'Quy_3_2026' || bctcDataCongTyMe?.periodKey === 'Quy_3_2026') ? 'MỚI' : undefined,
+        badge: (hasBctcQ3 || hasBctcBanNien || bctcDataHopNhat?.hasReport || bctcDataCongTyMe?.hasReport || availableBctcTickers?.includes(ticker)) ? 'MỚI' : undefined,
       },
     )
 
@@ -2286,37 +2292,18 @@ export function StockDetailView({
       )}
 
       {/* ══════════════════════════════════════════════════════════ */}
-      {/* TAB 8: BÁO CÁO TÀI CHÍNH BÁN NIÊN                         */}
+      {/* TAB: THUYẾT MINH BÁO CÁO TÀI CHÍNH (GỘP CÁC KỲ CON)      */}
       {/* ══════════════════════════════════════════════════════════ */}
-      {mountedTabs.has('bctc-ban-nien') && (
-        <div className={cn("animate-in fade-in-50 duration-200", (activeTab !== 'bctc-ban-nien' || loadingTab === 'bctc-ban-nien') && "hidden")}>
+      {(mountedTabs.has('bctc') || mountedTabs.has('bctc-q3') || mountedTabs.has('bctc-ban-nien')) && (
+        <div className={cn("animate-in fade-in-50 duration-200", (activeTab !== 'bctc' && activeTab !== 'bctc-q3' && activeTab !== 'bctc-ban-nien' || loadingTab === 'bctc') && "hidden")}>
           <StockBctcReportView
-            targetPeriod="Ban_Nien_2026"
-            bctcDataHopNhat={bctcDataHopNhat?.periodKey === 'Ban_Nien_2026' ? bctcDataHopNhat : null}
-            bctcDataCongTyMe={bctcDataCongTyMe?.periodKey === 'Ban_Nien_2026' ? bctcDataCongTyMe : null}
             ticker={ticker}
             companyName={company.name}
             availableTickers={availableBctcTickers}
             bctcDocuments={bctcDocuments}
-            onSwitchPeriod={(p) => handleTabChange(p === 'Quy_3_2026' ? 'bctc-q3' : 'bctc-ban-nien')}
-          />
-        </div>
-      )}
-
-      {/* ══════════════════════════════════════════════════════════ */}
-      {/* TAB 9: BÁO CÁO TÀI CHÍNH QUÝ 3                            */}
-      {/* ══════════════════════════════════════════════════════════ */}
-      {(mountedTabs.has('bctc-q3') || mountedTabs.has('bctc')) && (
-        <div className={cn("animate-in fade-in-50 duration-200", (activeTab !== 'bctc-q3' && activeTab !== 'bctc' || loadingTab === 'bctc-q3') && "hidden")}>
-          <StockBctcReportView
-            targetPeriod="Quy_3_2026"
-            bctcDataHopNhat={bctcDataHopNhat?.periodKey === 'Quy_3_2026' ? bctcDataHopNhat : null}
-            bctcDataCongTyMe={bctcDataCongTyMe?.periodKey === 'Quy_3_2026' ? bctcDataCongTyMe : null}
-            ticker={ticker}
-            companyName={company.name}
-            availableTickers={availableBctcTickers}
-            bctcDocuments={bctcDocuments}
-            onSwitchPeriod={(p) => handleTabChange(p === 'Quy_3_2026' ? 'bctc-q3' : 'bctc-ban-nien')}
+            targetPeriod={hasBctcQ3 ? 'Quy_3_2026' : (hasBctcBanNien ? 'Ban_Nien_2026' : 'Quy_3_2026')}
+            bctcDataHopNhat={bctcDataHopNhat}
+            bctcDataCongTyMe={bctcDataCongTyMe}
           />
         </div>
       )}

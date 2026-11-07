@@ -11,61 +11,43 @@ import {
 export * from './maritime-types'
 
 const DATA_DIR = path.join(process.cwd(), 'data', 'maritime')
+const maritimeCache = new Map<string, { data: any; mtimeMs: number }>()
 
-export function getDashboardSummary() {
-  const filePath = path.join(DATA_DIR, 'dashboard_summary.json')
+function readMaritimeJson<T>(filename: string, defaultValue: T): T {
+  const filePath = path.join(DATA_DIR, filename)
   if (!fs.existsSync(filePath)) {
-    return null
+    return defaultValue
   }
   try {
+    const stats = fs.statSync(filePath)
+    const cached = maritimeCache.get(filename)
+    if (cached && cached.mtimeMs === stats.mtimeMs) {
+      return cached.data as T
+    }
     const raw = fs.readFileSync(filePath, 'utf-8')
-    return JSON.parse(raw)
+    const data = JSON.parse(raw) as T
+    maritimeCache.set(filename, { data, mtimeMs: stats.mtimeMs })
+    return data
   } catch (error) {
-    console.error('Error reading dashboard_summary.json:', error)
-    return null
+    console.error(`Error reading ${filename}:`, error)
+    return defaultValue
   }
 }
 
-export function getNationalTraffic() {
-  const filePath = path.join(DATA_DIR, 'national_traffic.json')
-  if (!fs.existsSync(filePath)) {
-    return null
-  }
-  try {
-    const raw = fs.readFileSync(filePath, 'utf-8')
-    return JSON.parse(raw)
-  } catch (error) {
-    console.error('Error reading national_traffic.json:', error)
-    return null
-  }
+export function getDashboardSummary(): any {
+  return readMaritimeJson<any>('dashboard_summary.json', null)
+}
+
+export function getNationalTraffic(): any {
+  return readMaritimeJson<any>('national_traffic.json', null)
 }
 
 export function getNationalMap() {
-  const filePath = path.join(DATA_DIR, 'national_map.json')
-  if (!fs.existsSync(filePath)) {
-    return null
-  }
-  try {
-    const raw = fs.readFileSync(filePath, 'utf-8')
-    return JSON.parse(raw) as NationalMapData
-  } catch (error) {
-    console.error('Error reading national_map.json:', error)
-    return null
-  }
+  return readMaritimeJson<NationalMapData | null>('national_map.json', null)
 }
 
 export function getAllStocksIntel(): Record<string, StockIntelDetail> {
-  const filePath = path.join(DATA_DIR, 'stocks_intel.json')
-  if (!fs.existsSync(filePath)) {
-    return {}
-  }
-  try {
-    const raw = fs.readFileSync(filePath, 'utf-8')
-    return JSON.parse(raw)
-  } catch (error) {
-    console.error('Error reading stocks_intel.json:', error)
-    return {}
-  }
+  return readMaritimeJson<Record<string, StockIntelDetail>>('stocks_intel.json', {})
 }
 
 export function getStockIntel(ticker: string): StockIntelDetail | null {
@@ -75,15 +57,5 @@ export function getStockIntel(ticker: string): StockIntelDetail | null {
 }
 
 export function getFreightRates(): import('./maritime-types').FreightRatesData | null {
-  const filePath = path.join(DATA_DIR, 'freight_rates.json')
-  if (!fs.existsSync(filePath)) {
-    return null
-  }
-  try {
-    const raw = fs.readFileSync(filePath, 'utf-8')
-    return JSON.parse(raw)
-  } catch (error) {
-    console.error('Error reading freight_rates.json:', error)
-    return null
-  }
+  return readMaritimeJson<import('./maritime-types').FreightRatesData | null>('freight_rates.json', null)
 }

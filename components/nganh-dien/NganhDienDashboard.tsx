@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState, useMemo } from 'react';
+import React, { useState, useMemo, useEffect } from 'react';
 import Link from 'next/link';
 import {
   POWER_STOCKS,
@@ -13,6 +13,7 @@ import {
   ReservoirHydroData,
 } from '@/lib/nganh-dien-data';
 import { cn } from '@/lib/utils';
+import { ChartWatermark } from '@/components/ChartWatermark';
 import {
   ResponsiveContainer,
   BarChart,
@@ -97,9 +98,61 @@ export function NganhDienDashboard() {
   const [simSmpPrice, setSimSmpPrice] = useState<number>(1850); // đ/kWh
   const [simAlpha, setSimAlpha] = useState<number>(75); // %
 
+  // Dynamic Live / Offline Data States
+  const [fuelData, setFuelData] = useState<any[]>(DAILY_GENERATION_BY_FUEL);
+  const [ownerData, setOwnerData] = useState<any[]>(DAILY_GENERATION_BY_OWNER);
+  const [smpData, setSmpData] = useState<any[]>(HOURLY_SMP_PRICES);
+  const [reservoirsData, setReservoirsData] = useState<ReservoirHydroData[]>(RESERVOIRS_HYDRO_DATA);
+  const [systemInfo, setSystemInfo] = useState<{ pMaxMW: number; pMaxTime: string; totalGenerationMillionKWh: number }>({
+    pMaxMW: 51207.4,
+    pMaxTime: '17:50',
+    totalGenerationMillionKWh: 1051.9,
+  });
+  const [lastSyncTime, setLastSyncTime] = useState<string>('');
+
   // Offline Sync State
   const [isSyncing, setIsSyncing] = useState<boolean>(false);
-  const [syncStatus, setSyncStatus] = useState<string>('Offline Ready');
+  const [syncStatus, setSyncStatus] = useState<string>('Đồng bộ NSMO & EAV');
+
+  useEffect(() => {
+    let isMounted = true;
+    async function loadLatestData() {
+      try {
+        const res = await fetch('/api/nganh-dien');
+        if (res.ok) {
+          const json = await res.json();
+          if (isMounted && json.success) {
+            if (Array.isArray(json.fuelDistribution) && json.fuelDistribution.length > 0) {
+              setFuelData(json.fuelDistribution);
+            }
+            if (Array.isArray(json.ownerDistribution) && json.ownerDistribution.length > 0) {
+              setOwnerData(json.ownerDistribution);
+            }
+            if (Array.isArray(json.smp) && json.smp.length > 0) {
+              setSmpData(json.smp);
+            }
+            if (Array.isArray(json.reservoirs) && json.reservoirs.length > 0) {
+              setReservoirsData(json.reservoirs);
+            }
+            if (json.systemSummary) {
+              setSystemInfo({
+                pMaxMW: json.systemSummary.pMaxMW || 51207.4,
+                pMaxTime: json.systemSummary.pMaxTime || '17:50',
+                totalGenerationMillionKWh: json.systemSummary.totalGenerationMillionKWh || 1051.9,
+              });
+            }
+            if (json.updatedAt) {
+              setLastSyncTime(json.updatedAt);
+            }
+          }
+        }
+      } catch (e) {
+        console.warn('Lỗi đọc dữ liệu /api/nganh-dien:', e);
+      }
+    }
+    loadLatestData();
+    return () => { isMounted = false; };
+  }, []);
 
   const handleManualSync = async () => {
     try {
@@ -107,8 +160,33 @@ export function NganhDienDashboard() {
       setSyncStatus('Đang đồng bộ...');
       const res = await fetch('/api/nganh-dien?action=sync');
       if (res.ok) {
-        setSyncStatus('Đã cập nhật Offline');
-        setTimeout(() => setSyncStatus('Offline Ready'), 3000);
+        const json = await res.json();
+        if (json.success) {
+          if (Array.isArray(json.fuelDistribution) && json.fuelDistribution.length > 0) {
+            setFuelData(json.fuelDistribution);
+          }
+          if (Array.isArray(json.ownerDistribution) && json.ownerDistribution.length > 0) {
+            setOwnerData(json.ownerDistribution);
+          }
+          if (Array.isArray(json.smp) && json.smp.length > 0) {
+            setSmpData(json.smp);
+          }
+          if (Array.isArray(json.reservoirs) && json.reservoirs.length > 0) {
+            setReservoirsData(json.reservoirs);
+          }
+          if (json.systemSummary) {
+            setSystemInfo({
+              pMaxMW: json.systemSummary.pMaxMW || 51207.4,
+              pMaxTime: json.systemSummary.pMaxTime || '17:50',
+              totalGenerationMillionKWh: json.systemSummary.totalGenerationMillionKWh || 1051.9,
+            });
+          }
+          if (json.updatedAt) {
+            setLastSyncTime(json.updatedAt);
+          }
+        }
+        setSyncStatus('Đã cập nhật mới nhất');
+        setTimeout(() => setSyncStatus('Đồng bộ NSMO & EAV'), 3500);
       } else {
         setSyncStatus('Lỗi đồng bộ');
       }
@@ -118,7 +196,6 @@ export function NganhDienDashboard() {
       setIsSyncing(false);
     }
   };
-
   // Filtered Stocks Memo
   const filteredStocks = useMemo(() => {
     return POWER_STOCKS.filter((stock) => {
@@ -155,9 +232,52 @@ export function NganhDienDashboard() {
 
   // Filtered Reservoirs Memo
   const filteredReservoirs = useMemo(() => {
-    if (hydroRegion === 'ALL') return RESERVOIRS_HYDRO_DATA;
-    return RESERVOIRS_HYDRO_DATA.filter((r) => r.region === hydroRegion);
-  }, [hydroRegion]);
+    if (hydroRegion === 'ALL') return reservoirsData;
+    return reservoirsData.filter((r) => r.region === hydroRegion);
+  }, [hydroRegion, reservoirsData]);
+
+  // Normalized Display Arrays for Recharts
+  const displayFuelData = useMemo(() => {
+    return fuelData.map((item: any) => ({
+      name: item.fuel || item.category || 'Khác',
+      generationMWh: item.generationMWh || 0,
+      percentage: item.percentage ?? item.sharePercent ?? 0,
+      color: item.color || '#3b82f6',
+    }));
+  }, [fuelData]);
+
+  const displayOwnerData = useMemo(() => {
+    return ownerData.map((item: any) => ({
+      name: item.owner || 'Khác',
+      generationMWh: item.generationMWh || 0,
+      percentage: item.percentage ?? 0,
+      color: item.color || '#3b82f6',
+    }));
+  }, [ownerData]);
+
+  const displaySmpData = useMemo(() => {
+    return smpData.map((item: any) => ({
+      time: item.time,
+      smpMB: item.smpMB ?? item.smpNorth ?? 0,
+      smpMT: item.smpMT ?? item.smpCentral ?? 0,
+      smpMN: item.smpMN ?? item.smpSouth ?? 0,
+      smpHT: item.smpHT ?? item.smpAvg ?? 0,
+    }));
+  }, [smpData]);
+
+  // Derived metrics for Top Banner
+  const hydroFuelItem = useMemo(() => {
+    return displayFuelData.find((f) => f.name.includes('Thủy điện')) || { percentage: 26.6, generationMWh: 284769 };
+  }, [displayFuelData]);
+
+  const coalFuelItem = useMemo(() => {
+    return displayFuelData.find((f) => f.name.toLowerCase().includes('than')) || { percentage: 44.0, generationMWh: 470862 };
+  }, [displayFuelData]);
+
+  const peakSmpItem = useMemo(() => {
+    if (displaySmpData.length === 0) return { smpHT: 2180, time: '19:00' };
+    return [...displaySmpData].sort((a, b) => b.smpHT - a.smpHT)[0];
+  }, [displaySmpData]);
 
   // Compare Objects
   const comp1 = useMemo(() => POWER_STOCKS.find((s) => s.ticker === compareStock1) || POWER_STOCKS[0], [compareStock1]);
@@ -240,19 +360,19 @@ export function NganhDienDashboard() {
             <span className="text-2xl font-black text-cyan-400">16</span>
             <span className="text-xs text-cyan-300 font-bold">Hồ lớn &amp; bậc thang</span>
           </div>
-          <span className="text-[10px] text-slate-500 mt-1 block">Quan trắc lưu lượng &amp; mực nước</span>
+          <span className="text-[10px] text-slate-500 mt-1 block">Tích nước 95-99% trước mùa khô</span>
         </div>
 
         <div className="rounded-xl border border-white/10 bg-[#161a23] p-4 shadow-sm relative overflow-hidden">
           <div className="absolute top-0 right-0 p-3 opacity-15">
             <Activity className="size-10 text-emerald-400" />
           </div>
-          <span className="text-[11px] font-semibold text-slate-400 uppercase tracking-wider">Sản lượng Thủy điện NSMO</span>
+          <span className="text-[11px] font-semibold text-slate-400 uppercase tracking-wider">Thủy điện &amp; Than NSMO</span>
           <div className="mt-1 flex items-baseline gap-2">
-            <span className="text-2xl font-black text-emerald-400">49.8%</span>
-            <span className="text-xs text-emerald-300 font-bold">Tỷ trọng ngày</span>
+            <span className="text-2xl font-black text-emerald-400">{hydroFuelItem.percentage}%</span>
+            <span className="text-xs text-cyan-300 font-bold">Thủy điện</span>
           </div>
-          <span className="text-[10px] text-slate-500 mt-1 block">412.370 MWh / ngày</span>
+          <span className="text-[10px] text-slate-500 mt-1 block">{hydroFuelItem.generationMWh.toLocaleString('vi-VN')} MWh (Than: {coalFuelItem.percentage}%)</span>
         </div>
 
         <div className="rounded-xl border border-white/10 bg-[#161a23] p-4 shadow-sm relative overflow-hidden">
@@ -261,22 +381,22 @@ export function NganhDienDashboard() {
           </div>
           <span className="text-[11px] font-semibold text-slate-400 uppercase tracking-wider">Giá SMP Đỉnh Tối</span>
           <div className="mt-1 flex items-baseline gap-2">
-            <span className="text-2xl font-black text-purple-400">2.110</span>
+            <span className="text-2xl font-black text-purple-400">{peakSmpItem.smpHT.toLocaleString('vi-VN')}</span>
             <span className="text-xs text-purple-300 font-bold">đ/kWh</span>
           </div>
-          <span className="text-[10px] text-slate-500 mt-1 block">Khung 19h00 (Cao điểm phụ tải)</span>
+          <span className="text-[10px] text-slate-500 mt-1 block">Khung {peakSmpItem.time} (Cao điểm tối)</span>
         </div>
 
         <div className="rounded-xl border border-white/10 bg-[#161a23] p-4 shadow-sm relative overflow-hidden col-span-2 sm:col-span-1">
           <div className="absolute top-0 right-0 p-3 opacity-15">
             <Compass className="size-10 text-rose-400" />
           </div>
-          <span className="text-[11px] font-semibold text-slate-400 uppercase tracking-wider">Chu kỳ Khí hậu</span>
+          <span className="text-[11px] font-semibold text-slate-400 uppercase tracking-wider">Phụ tải Quốc gia Pmax</span>
           <div className="mt-1 flex items-baseline gap-2">
-            <span className="text-2xl font-black text-emerald-400">La Niña</span>
-            <span className="text-xs text-emerald-400 font-bold">Mưa lũ</span>
+            <span className="text-2xl font-black text-amber-400">{systemInfo.pMaxMW.toLocaleString('vi-VN')}</span>
+            <span className="text-xs text-amber-300 font-bold">MW</span>
           </div>
-          <span className="text-[10px] text-slate-500 mt-1 block">Ưu tiên Thủy điện miền Trung/Nam</span>
+          <span className="text-[10px] text-slate-500 mt-1 block">A ngày: {systemInfo.totalGenerationMillionKWh.toLocaleString('vi-VN')} triệu kWh ({systemInfo.pMaxTime})</span>
         </div>
       </div>
 
@@ -293,7 +413,7 @@ export function NganhDienDashboard() {
             )}
           >
             <Zap className="size-4" />
-            <span>36 Cổ Phiếu &amp; Dự Báo Q3-Q4</span>
+            <span>36 Cổ Phiếu &amp; Kết Quả Q3 - Dự Báo Q4</span>
             <span className="ml-1 rounded-full bg-black/20 px-2 py-0.5 text-[10px] font-black">36</span>
           </button>
 
@@ -592,7 +712,7 @@ export function NganhDienDashboard() {
                       <th className="py-3.5 px-3 text-right" title="P/E thực tế sau khi trừ trích lập Quỹ Khen thưởng Phúc lợi &amp; Thù lao HĐQT/BKS">
                         P/E Thực Tế <span className="text-[9px] text-amber-400 font-normal block font-sans lowercase">(trừ trích quỹ)</span>
                       </th>
-                      <th className="py-3.5 px-3 text-right">LNST Q3 (Dự phóng)</th>
+                      <th className="py-3.5 px-3 text-right">LNST Q3 (Thực tế)</th>
                       <th className="py-3.5 px-3 text-center">Tăng Trưởng</th>
                       <th className="py-3.5 px-3 text-center">Đánh Giá</th>
                       <th className="py-3.5 px-4 min-w-[220px]">Nhà Máy Chủ Lực</th>
@@ -1320,9 +1440,10 @@ export function NganhDienDashboard() {
               </div>
             </div>
 
-            <div className="h-72 w-full">
+            <div className="relative h-72 w-full">
+              <ChartWatermark domain="dulieudautu.com" brandName="Dữ Liệu Đầu Tư" size="sm" />
               <ResponsiveContainer width="100%" height="100%">
-                <LineChart data={HOURLY_SMP_PRICES} margin={{ top: 10, right: 10, left: 0, bottom: 0 }}>
+                <LineChart data={displaySmpData} margin={{ top: 10, right: 10, left: 0, bottom: 0 }}>
                   <CartesianGrid strokeDasharray="3 3" stroke="#2a324b" vertical={false} />
                   <XAxis dataKey="time" stroke="#64748b" tick={{ fontSize: 11 }} />
                   <YAxis domain={[1200, 2300]} stroke="#64748b" tick={{ fontSize: 11 }} tickFormatter={(v) => `${v}`} />
@@ -1353,18 +1474,19 @@ export function NganhDienDashboard() {
                 </div>
               </div>
 
-              <div className="h-64 w-full">
+              <div className="relative h-64 w-full">
+                <ChartWatermark domain="dulieudautu.com" brandName="Dữ Liệu Đầu Tư" size="sm" />
                 <ResponsiveContainer width="100%" height="100%">
-                  <BarChart data={DAILY_GENERATION_BY_FUEL} layout="vertical" margin={{ top: 5, right: 30, left: 40, bottom: 5 }}>
+                  <BarChart data={displayFuelData} layout="vertical" margin={{ top: 5, right: 30, left: 40, bottom: 5 }}>
                     <CartesianGrid strokeDasharray="3 3" stroke="#2a324b" horizontal={false} />
                     <XAxis type="number" stroke="#64748b" tickFormatter={(v) => `${(v / 1000).toFixed(0)}k`} />
-                    <YAxis dataKey="category" type="category" stroke="#64748b" tick={{ fontSize: 11 }} width={120} />
+                    <YAxis dataKey="name" type="category" stroke="#64748b" tick={{ fontSize: 11 }} width={135} />
                     <Tooltip
                       contentStyle={{ backgroundColor: '#0f1218', borderColor: '#334155', borderRadius: '8px' }}
                       formatter={(val: any) => [`${val.toLocaleString('vi-VN')} MWh`, 'Sản lượng']}
                     />
                     <Bar dataKey="generationMWh" radius={[0, 4, 4, 0]}>
-                      {DAILY_GENERATION_BY_FUEL.map((entry, index) => (
+                      {displayFuelData.map((entry, index) => (
                         <Cell key={`cell-${index}`} fill={entry.color} />
                       ))}
                     </Bar>
@@ -1374,10 +1496,10 @@ export function NganhDienDashboard() {
 
               <div className="grid grid-cols-2 gap-2 text-xs pt-2 border-t border-white/5">
                 <div className="text-slate-400">
-                  Thủy điện chiếm: <strong className="text-cyan-400">49.8%</strong> (Ưu tiên huy động)
+                  Nhiệt điện Than chiếm: <strong className="text-amber-400">{coalFuelItem.percentage}%</strong> ({coalFuelItem.generationMWh.toLocaleString('vi-VN')} MWh - Chạy nền ổn định)
                 </div>
                 <div className="text-slate-400">
-                  Nhiệt điện Than: <strong className="text-amber-400">38.8%</strong> (Chạy nền ổn định)
+                  Thủy điện chiếm: <strong className="text-cyan-400">{hydroFuelItem.percentage}%</strong> ({hydroFuelItem.generationMWh.toLocaleString('vi-VN')} MWh - Tích nước cuối mùa lũ)
                 </div>
               </div>
             </div>
@@ -1394,18 +1516,19 @@ export function NganhDienDashboard() {
                 </div>
               </div>
 
-              <div className="h-64 w-full">
+              <div className="relative h-64 w-full">
+                <ChartWatermark domain="dulieudautu.com" brandName="Dữ Liệu Đầu Tư" size="sm" />
                 <ResponsiveContainer width="100%" height="100%">
-                  <BarChart data={DAILY_GENERATION_BY_OWNER} layout="vertical" margin={{ top: 5, right: 30, left: 40, bottom: 5 }}>
+                  <BarChart data={displayOwnerData} layout="vertical" margin={{ top: 5, right: 30, left: 40, bottom: 5 }}>
                     <CartesianGrid strokeDasharray="3 3" stroke="#2a324b" horizontal={false} />
                     <XAxis type="number" stroke="#64748b" tickFormatter={(v) => `${(v / 1000).toFixed(0)}k`} />
-                    <YAxis dataKey="owner" type="category" stroke="#64748b" tick={{ fontSize: 11 }} width={140} />
+                    <YAxis dataKey="name" type="category" stroke="#64748b" tick={{ fontSize: 11 }} width={145} />
                     <Tooltip
                       contentStyle={{ backgroundColor: '#0f1218', borderColor: '#334155', borderRadius: '8px' }}
                       formatter={(val: any) => [`${val.toLocaleString('vi-VN')} MWh`, 'Sản lượng']}
                     />
                     <Bar dataKey="generationMWh" radius={[0, 4, 4, 0]}>
-                      {DAILY_GENERATION_BY_OWNER.map((entry, index) => (
+                      {displayOwnerData.map((entry, index) => (
                         <Cell key={`cell-${index}`} fill={entry.color} />
                       ))}
                     </Bar>
@@ -1415,10 +1538,10 @@ export function NganhDienDashboard() {
 
               <div className="space-y-1 text-xs pt-2 border-t border-white/5">
                 <div className="text-slate-400">
-                  • <strong className="text-emerald-400">Khối Cổ phần (JSC)</strong> (QTP, HND, VSH, TMP, REE, HDG...): đạt <strong>88.190 MWh/ngày</strong>.
+                  • <strong className="text-emerald-400">Khối Cổ phần (JSC)</strong> (QTP, HND, VSH, TMP, REE, HDG...): đạt <strong>{(displayOwnerData.find((o) => o.name.includes('Cổ phần') || o.name.includes('JSC'))?.generationMWh || 71368).toLocaleString('vi-VN')} MWh/ngày</strong>.
                 </div>
                 <div className="text-slate-400">
-                  • <strong className="text-cyan-400">EVNGENCO 3 (PGV)</strong>: đạt <strong>87.545 MWh/ngày</strong> | <strong className="text-amber-400">PVN (POW)</strong>: đạt <strong>46.605 MWh/ngày</strong>.
+                  • <strong className="text-cyan-400">EVNGENCO 3 (PGV)</strong>: đạt <strong>{(displayOwnerData.find((o) => o.name.includes('GENCO 3'))?.generationMWh || 129178).toLocaleString('vi-VN')} MWh/ngày</strong> | <strong className="text-amber-400">PVN (POW, NT2)</strong>: đạt <strong>{(displayOwnerData.find((o) => o.name.includes('PVN'))?.generationMWh || 94041).toLocaleString('vi-VN')} MWh/ngày</strong>.
                 </div>
               </div>
             </div>

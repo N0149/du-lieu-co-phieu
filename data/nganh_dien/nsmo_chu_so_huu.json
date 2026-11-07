@@ -1,89 +1,130 @@
 {
   "source": "https://www.nsmo.vn/",
   "api": "Dashboard/GetBcsxChartDataPhanBoTheoChuSoHuu",
-  "updatedAt": "2026-09-26T19:28:45.595228",
-  "totalGenerationMWh": 719788.62,
-  "totalGenerationMillionKWh": 719.79,
+  "updatedAt": "2026-11-07T10:47:07.028630",
+  "totalGenerationMWh": 756854.51,
+  "totalGenerationMillionKWh": 756.85,
   "data": [
     {
-      "owner": "EVN",
-      "generationMWh": 90199.06,
-      "generationMillionKWh": 90.2,
-      "percentage": 12.53,
-      "color": "#1e40af",
-      "associatedStock": ""
-    },
-    {
       "owner": "EVNGENCO 1",
-      "generationMWh": 109946.31,
-      "generationMillionKWh": 109.95,
-      "percentage": 15.27,
+      "rawCategory": "EVNGENCO 1",
+      "generationMWh": 130484.76,
+      "generationMillionKWh": 130.48,
+      "percentage": 17.24,
       "color": "#0284c7",
-      "associatedStock": ""
-    },
-    {
-      "owner": "EVNGENCO 2",
-      "generationMWh": 70122.18,
-      "generationMillionKWh": 70.12,
-      "percentage": 9.74,
-      "color": "#0d9488",
-      "associatedStock": ""
+      "associatedStock": "",
+      "relatedTickers": []
     },
     {
       "owner": "EVNGENCO 3",
-      "generationMWh": 110900.95,
-      "generationMillionKWh": 110.9,
-      "percentage": 15.41,
+      "rawCategory": "EVNGENCO 3",
+      "generationMWh": 129177.94,
+      "generationMillionKWh": 129.18,
+      "percentage": 17.07,
       "color": "#2563eb",
-      "associatedStock": "Gắn với PGV (EVNGENCO 3)"
+      "associatedStock": "Gắn với PGV (EVNGENCO 3 - Phú Mỹ, Buôn Kuốp)",
+      "relatedTickers": [
+        "PGV"
+      ]
     },
     {
-      "owner": "PVN",
-      "generationMWh": 55062.05,
-      "generationMillionKWh": 55.06,
-      "percentage": 7.65,
-      "color": "#e11d48",
-      "associatedStock": "Gắn với POW (Tổng Công ty Điện lực Dầu khí)"
-    },
-    {
-      "owner": "TKV",
-      "generationMWh": 19949.99,
-      "generationMillionKWh": 19.95,
-      "percentage": 2.77,
-      "color": "#d97706",
-      "associatedStock": "Gắn với DTK (Tổng Công ty Điện lực TKV)"
+      "owner": "EVN (Công ty mẹ)",
+      "rawCategory": "EVN",
+      "generationMWh": 115567.7,
+      "generationMillionKWh": 115.57,
+      "percentage": 15.27,
+      "color": "#1e40af",
+      "associatedStock": "",
+      "relatedTickers": []
     },
     {
       "owner": "BOT",
-      "generationMWh": 131716.76,
-      "generationMillionKWh": 131.72,
-      "percentage": 18.3,
+      "rawCategory": "BOT",
+      "generationMWh": 112716.79,
+      "generationMillionKWh": 112.72,
+      "percentage": 14.89,
       "color": "#7c3aed",
-      "associatedStock": ""
+      "associatedStock": "",
+      "relatedTickers": []
     },
     {
-      "owner": "JSC",
-      "generationMWh": 99325.42,
-      "generationMillionKWh": 99.33,
-      "percentage": 13.8,
-      "color": "#3b82f6",
-      "associatedStock": ""
+      "owner": "PVN",
+      "rawCategory": "PVN",
+      "generationMWh": 94040.85,
+      "generationMillionKWh": 94.04,
+      "percentage": 12.43,
+      "color": "#e11d48",
+      "associatedStock": "Gắn với POW (Tổng Công ty Điện lực Dầu khí), NT2",
+      "relatedTickers": [
+        "POW",
+        "NT2"
+      ]
     },
     {
-      "owner": "Nhập khẩu",
-      "generationMWh": 12580.61,
-      "generationMillionKWh": 12.58,
-      "percentage": 1.75,
-      "color": "#3b82f6",
-      "associatedStock": ""
+      "owner": "Khối Cổ phần (JSC)",
+      "rawCategory": "JSC",
+      "generationMWh": 71368.1,
+      "generationMillionKWh": 71.37,
+      "percentage": 9.43,
+      "color": "#10b981",
+      "associatedStock": "QTP, HND, VSH, TMP, REE, HDG, SBA, CHP, TBC, VPD...",
+      "relatedTickers": [
+        "QTP",
+        "HND",
+        "VSH",
+        "TMP",
+        "REE",
+        "HDG",
+        "SBA",
+        "TBC",
+        "VPD"
+      ]
+    },
+    {
+      "owner": "EVNGENCO 2",
+      "rawCategory": "EVNGENCO 2",
+      "generationMWh": 47073.6,
+      "generationMillionKWh": 47.07,
+      "percentage": 6.22,
+      "color": "#0d9488",
+      "associatedStock": "Phả Lại (PPC), Hải Phòng (HND), Thác Mơ (TMP)",
+      "relatedTickers": [
+        "PPC",
+        "HND",
+        "TMP"
+      ]
+    },
+    {
+      "owner": "TKV",
+      "rawCategory": "TKV",
+      "generationMWh": 26377.9,
+      "generationMillionKWh": 26.38,
+      "percentage": 3.49,
+      "color": "#d97706",
+      "associatedStock": "Gắn với DTK (Tổng Công ty Điện lực TKV - Nhiệt điện than)",
+      "relatedTickers": [
+        "DTK"
+      ]
     },
     {
       "owner": "Khác",
-      "generationMWh": 19985.3,
-      "generationMillionKWh": 19.99,
-      "percentage": 2.78,
+      "rawCategory": "Khác",
+      "generationMWh": 19397.59,
+      "generationMillionKWh": 19.4,
+      "percentage": 2.56,
+      "color": "#94a3b8",
+      "associatedStock": "",
+      "relatedTickers": []
+    },
+    {
+      "owner": "Nhập khẩu",
+      "rawCategory": "Nhập khẩu",
+      "generationMWh": 10649.3,
+      "generationMillionKWh": 10.65,
+      "percentage": 1.41,
       "color": "#64748b",
-      "associatedStock": ""
+      "associatedStock": "",
+      "relatedTickers": []
     }
   ]
 }

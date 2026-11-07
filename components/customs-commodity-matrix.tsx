@@ -35,6 +35,7 @@ import { cn } from '@/lib/utils'
 import { fmtInt, fmtNum } from '@/lib/format'
 import { getStocksForCustomsCommodity } from '@/lib/tier-a-stocks'
 import { TradeBalanceChart, type TradeBalancePoint } from './TradeBalanceChart'
+import { ChartWatermark } from './ChartWatermark'
 
 export type CustomsTradeRow = {
   period_type: 'KY_1' | 'KY_2' | 'THANG' | 'QUY'
@@ -915,6 +916,7 @@ export function CustomsCommodityMatrix({
               {/* Vùng vẽ đồ thị Recharts (luôn hiện khung lưới, hiển thị overlay khi chưa tích chọn) */}
               {chartData.length > 0 && (
                 <div className="relative h-68 w-full sm:h-80">
+                  <ChartWatermark domain="dulieudautu.com" brandName="Dữ Liệu Đầu Tư" size="md" />
                   <ResponsiveContainer width="100%" height="100%">
                     {chartType === 'bar' ? (
                       <BarChart data={chartData} margin={{ top: 10, right: 16, left: -4, bottom: 24 }}>

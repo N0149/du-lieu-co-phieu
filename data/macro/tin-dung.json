@@ -1,0 +1,5673 @@
+{
+  "meta": {
+    "group": "Hệ thống ngân hàng",
+    "groupKey": "hethongnganhang",
+    "name": "Tín dụng nền kinh tế",
+    "slug": "tin-dung",
+    "apiPath": "hethongnganhang/cungtienhuydongtindung/tindung",
+    "defaultTimeFrame": "monthly",
+    "defaultValueType": "value",
+    "supportedTimeFrames": [
+      "monthly",
+      "quarterly",
+      "yearly"
+    ],
+    "supportedValueTypes": [
+      "value",
+      "yoy"
+    ],
+    "unit": "Tỷ VND",
+    "description": "Dư nợ tín dụng đối với nền kinh tế, động lực tăng trưởng quan trọng.",
+    "updatedAt": "2026-09-19T10:14:29.415Z",
+    "latestPeriod": "07-2026",
+    "latestValue": 20262110
+  },
+  "datasets": {
+    "monthly": {
+      "value": {
+        "title": "Tín Dụng",
+        "headers": [
+          "07-2026",
+          "06-2026",
+          "05-2026",
+          "04-2026",
+          "03-2026",
+          "02-2026",
+          "01-2026",
+          "12-2025",
+          "11-2025",
+          "10-2025",
+          "09-2025",
+          "08-2025",
+          "07-2025",
+          "06-2025",
+          "05-2025",
+          "04-2025",
+          "03-2025",
+          "02-2025"
+        ],
+        "parent": [
+          {
+            "title": "TÍN DỤNG (Tỷ VND)",
+            "child": [
+              {
+                "id": "229_tong_tin_dung_trong_nen_kinh_te",
+                "column_name": "tong_tin_dung_trong_nen_kinh_te",
+                "table_name": "229",
+                "name": "Tổng tín dụng trong nền kinh tế",
+                "hasSub": false,
+                "level": 3,
+                "heading": 1,
+                "open": 1,
+                "dateType": "thang",
+                "yAxis": 17,
+                "data": [
+                  [
+                    1785456000000,
+                    20262110
+                  ],
+                  [
+                    1782777600000,
+                    20150411
+                  ],
+                  [
+                    1780185600000,
+                    19703851
+                  ],
+                  [
+                    1777507200000,
+                    19447521
+                  ],
+                  [
+                    1774915200000,
+                    19186824
+                  ],
+                  [
+                    1772236800000,
+                    18842357
+                  ],
+                  [
+                    1769817600000,
+                    18815882.09
+                  ],
+                  [
+                    1767139200000,
+                    18594930.02
+                  ],
+                  [
+                    1764460800000,
+                    18247612.9
+                  ],
+                  [
+                    1761868800000,
+                    18007536.76
+                  ],
+                  [
+                    1759190400000,
+                    17780780.45
+                  ],
+                  [
+                    1756598400000,
+                    17455203.75
+                  ],
+                  [
+                    1753920000000,
+                    17215053.37
+                  ],
+                  [
+                    1751241600000,
+                    17163138.4
+                  ],
+                  [
+                    1748649600000,
+                    16665442.24
+                  ],
+                  [
+                    1745971200000,
+                    16446560.51
+                  ],
+                  [
+                    1743379200000,
+                    16226458.02
+                  ],
+                  [
+                    1740700800000,
+                    15735537.26
+                  ]
+                ],
+                "time_frame": "monthly",
+                "lingo": {
+                  "name": "Tổng tín dụng trong nền kinh tế",
+                  "unit": "Tỷ VND",
+                  "description": "Tổng tín dụng trong nền kinh tế là tổng lượng dư nợ tín dụng mà các tổ chức tín dụng (ngân hàng, tổ chức tài chính) cung cấp cho các ngành kinh tế, doanh nghiệp, tổ chức và cá nhân trong nền kinh tế Việt Nam. Chỉ số này giúp đánh giá mức độ tăng trưởng tín dụng, phản ánh sự phát triển của các hoạt động kinh tế và khả năng tiếp cận vốn của các doanh nghiệp và ngành nghề. Dữ liệu được thống kê từ trang web của SBV, cập nhật định kỳ hàng tháng và có độ trễ từ 2-3 tháng.",
+                  "frequency": "Độ trễ từ 1-3 tháng (ngày công bố không cố định)",
+                  "last_updated": "2026-07-22T09:31:43.618Z",
+                  "source": "Ngân hàng Nhà nước - SBV",
+                  "note": null,
+                  "related_blog": null
+                }
+              },
+              {
+                "id": "229_tin_dung_nong_nghiep_lam_nghiep_va_thuy_san",
+                "column_name": "tin_dung_nong_nghiep_lam_nghiep_va_thuy_san",
+                "table_name": "229",
+                "name": "Nông nghiệp, lâm nghiệp và thuỷ sản",
+                "hasSub": false,
+                "level": 3,
+                "heading": 2,
+                "open": 1,
+                "dateType": "thang",
+                "yAxis": 17,
+                "data": [
+                  [
+                    1785456000000,
+                    1232973
+                  ],
+                  [
+                    1782777600000,
+                    1225073
+                  ],
+                  [
+                    1780185600000,
+                    1202756
+                  ],
+                  [
+                    1777507200000,
+                    1192086
+                  ],
+                  [
+                    1774915200000,
+                    1174701
+                  ],
+                  [
+                    1772236800000,
+                    1152648
+                  ],
+                  [
+                    1769817600000,
+                    1143775.66
+                  ],
+                  [
+                    1767139200000,
+                    1135005.66
+                  ],
+                  [
+                    1764460800000,
+                    1119459.47
+                  ],
+                  [
+                    1761868800000,
+                    1106909.62
+                  ],
+                  [
+                    1759190400000,
+                    1097542.78
+                  ],
+                  [
+                    1756598400000,
+                    1083062.21
+                  ],
+                  [
+                    1753920000000,
+                    1073107.66
+                  ],
+                  [
+                    1751241600000,
+                    1075788.61
+                  ],
+                  [
+                    1748649600000,
+                    1056930.01
+                  ],
+                  [
+                    1745971200000,
+                    1047958.6
+                  ],
+                  [
+                    1743379200000,
+                    1037306.08
+                  ],
+                  [
+                    1740700800000,
+                    1022172.02
+                  ]
+                ],
+                "time_frame": "monthly",
+                "lingo": {
+                  "name": "Tín dụng Nông nghiệp, lâm nghiệp và thuỷ sản",
+                  "unit": "Tỷ VND",
+                  "description": "Chỉ số Tín dụng Nông nghiệp, lâm nghiệp và thuỷ sản là một thành phần của Tổng tín dụng trong nền kinh tế, phản ánh tổng số dư nợ tín dụng mà các tổ chức tín dụng (ngân hàng, tổ chức tài chính) cung cấp cho các hoạt động sản xuất của ngành Nông nghiệp, lâm nghiệp và thuỷ sản. Đây là chỉ số quan trọng đánh giá mức độ hỗ trợ tài chính cho sản xuất, kinh doanh và tiêu dùng, cũng như khả năng hấp thụ vốn của nền kinh tế.",
+                  "frequency": "Độ trễ từ 1-3 tháng (ngày công bố không cố định)",
+                  "last_updated": "2026-07-22T09:31:43.618Z",
+                  "source": "Ngân hàng Nhà nước - SBV",
+                  "note": null,
+                  "related_blog": null
+                }
+              },
+              {
+                "id": "229_tin_dung_cong_nghiep_va_xay_dung",
+                "column_name": "tin_dung_cong_nghiep_va_xay_dung",
+                "table_name": "229",
+                "name": "Công nghiệp và xây dựng",
+                "hasSub": false,
+                "level": 3,
+                "heading": 2,
+                "open": 1,
+                "dateType": "thang",
+                "yAxis": 17,
+                "data": [
+                  [
+                    1785456000000,
+                    4782025
+                  ],
+                  [
+                    1782777600000,
+                    4735598
+                  ],
+                  [
+                    1780185600000,
+                    4684982
+                  ],
+                  [
+                    1777507200000,
+                    4628160
+                  ],
+                  [
+                    1774915200000,
+                    4557770
+                  ],
+                  [
+                    1772236800000,
+                    4461418
+                  ],
+                  [
+                    1769817600000,
+                    4403882.48
+                  ],
+                  [
+                    1767139200000,
+                    4353611.45
+                  ],
+                  [
+                    1764460800000,
+                    4335815.98
+                  ],
+                  [
+                    1761868800000,
+                    4314295.34
+                  ],
+                  [
+                    1759190400000,
+                    4266641.9
+                  ],
+                  [
+                    1756598400000,
+                    4178505.98
+                  ],
+                  [
+                    1753920000000,
+                    4125825.58
+                  ],
+                  [
+                    1751241600000,
+                    4122480.01
+                  ],
+                  [
+                    1748649600000,
+                    4069161.25
+                  ],
+                  [
+                    1745971200000,
+                    4047937.55
+                  ],
+                  [
+                    1743379200000,
+                    3985306.13
+                  ],
+                  [
+                    1740700800000,
+                    3926336.85
+                  ]
+                ],
+                "time_frame": "monthly",
+                "lingo": {
+                  "name": "Tín dụng Công nghiệp và xây dựng",
+                  "unit": "Tỷ VND",
+                  "description": "Chỉ số Tín dụng Công nghiệp và xây dựng là một thành phần của Tổng tín dụng trong nền kinh tế, phản ánh tổng số dư nợ tín dụng mà các tổ chức tín dụng (ngân hàng, tổ chức tài chính) cung cấp cho các hoạt động sản xuất của ngành Công nghiệp và xây dựng. Đây là chỉ số quan trọng đánh giá mức độ hỗ trợ tài chính cho sản xuất, kinh doanh và tiêu dùng, cũng như khả năng hấp thụ vốn của nền kinh tế.",
+                  "frequency": "Độ trễ từ 1-3 tháng (ngày công bố không cố định)",
+                  "last_updated": "2026-07-22T09:31:43.618Z",
+                  "source": "Ngân hàng Nhà nước - SBV",
+                  "note": null,
+                  "related_blog": null
+                }
+              },
+              {
+                "id": "229_tin_dung_cong_nghiep",
+                "column_name": "tin_dung_cong_nghiep",
+                "table_name": "229",
+                "name": "Công nghiệp",
+                "hasSub": false,
+                "level": 4,
+                "heading": 3,
+                "open": 1,
+                "dateType": "thang",
+                "yAxis": 17,
+                "data": [
+                  [
+                    1785456000000,
+                    3255581
+                  ],
+                  [
+                    1782777600000,
+                    3240445
+                  ],
+                  [
+                    1780185600000,
+                    3196871
+                  ],
+                  [
+                    1777507200000,
+                    3147160
+                  ],
+                  [
+                    1774915200000,
+                    3087333
+                  ],
+                  [
+                    1772236800000,
+                    3025386
+                  ],
+                  [
+                    1769817600000,
+                    2978644.46
+                  ],
+                  [
+                    1767139200000,
+                    2947887.19
+                  ],
+                  [
+                    1764460800000,
+                    2975448.36
+                  ],
+                  [
+                    1761868800000,
+                    2968266.73
+                  ],
+                  [
+                    1759190400000,
+                    2942714.42
+                  ],
+                  [
+                    1756598400000,
+                    2890806.74
+                  ],
+                  [
+                    1753920000000,
+                    2856111.86
+                  ],
+                  [
+                    1751241600000,
+                    2846083.83
+                  ],
+                  [
+                    1748649600000,
+                    2819622.57
+                  ],
+                  [
+                    1745971200000,
+                    2810325.18
+                  ],
+                  [
+                    1743379200000,
+                    2758503.55
+                  ],
+                  [
+                    1740700800000,
+                    2720110.87
+                  ]
+                ],
+                "time_frame": "monthly",
+                "lingo": {
+                  "name": "Tín dụng Công nghiệp",
+                  "unit": "Tỷ VND",
+                  "description": "Chỉ số Tín dụng Công nghiệp là một thành phần của Tổng tín dụng trong nền kinh tế, phản ánh tổng số dư nợ tín dụng mà các tổ chức tín dụng (ngân hàng, tổ chức tài chính) cung cấp cho các hoạt động sản xuất của ngành Công nghiệp. Đây là chỉ số quan trọng đánh giá mức độ hỗ trợ tài chính cho sản xuất, kinh doanh và tiêu dùng, cũng như khả năng hấp thụ vốn của nền kinh tế.",
+                  "frequency": "Độ trễ từ 1-3 tháng (ngày công bố không cố định)",
+                  "last_updated": "2026-07-22T09:31:43.618Z",
+                  "source": "Ngân hàng Nhà nước - SBV",
+                  "note": null,
+                  "related_blog": null
+                }
+              },
+              {
+                "id": "229_tin_dung_xay_dung",
+                "column_name": "tin_dung_xay_dung",
+                "table_name": "229",
+                "name": "Xây dựng",
+                "hasSub": false,
+                "level": 4,
+                "heading": 3,
+                "open": 1,
+                "dateType": "thang",
+                "yAxis": 17,
+                "data": [
+                  [
+                    1785456000000,
+                    1526444
+                  ],
+                  [
+                    1782777600000,
+                    1495153
+                  ],
+                  [
+                    1780185600000,
+                    1488112
+                  ],
+                  [
+                    1777507200000,
+                    1481000
+                  ],
+                  [
+                    1774915200000,
+                    1470437
+                  ],
+                  [
+                    1772236800000,
+                    1436032
+                  ],
+                  [
+                    1769817600000,
+                    1425238.03
+                  ],
+                  [
+                    1767139200000,
+                    1405724.25
+                  ],
+                  [
+                    1764460800000,
+                    1360367.62
+                  ],
+                  [
+                    1761868800000,
+                    1346028.61
+                  ],
+                  [
+                    1759190400000,
+                    1323927.48
+                  ],
+                  [
+                    1756598400000,
+                    1287699.24
+                  ],
+                  [
+                    1753920000000,
+                    1269713.72
+                  ],
+                  [
+                    1751241600000,
+                    1276396.19
+                  ],
+                  [
+                    1748649600000,
+                    1249538.68
+                  ],
+                  [
+                    1745971200000,
+                    1237612.37
+                  ],
+                  [
+                    1743379200000,
+                    1226802.58
+                  ],
+                  [
+                    1740700800000,
+                    1206225.98
+                  ]
+                ],
+                "time_frame": "monthly",
+                "lingo": {
+                  "name": "Tín dụng Xây dựng",
+                  "unit": "Tỷ VND",
+                  "description": "Chỉ số Tín dụng Xây dựng là một thành phần của Tổng tín dụng trong nền kinh tế, phản ánh tổng số dư nợ tín dụng mà các tổ chức tín dụng (ngân hàng, tổ chức tài chính) cung cấp cho các hoạt động sản xuất của ngành Xây dựng. Đây là chỉ số quan trọng đánh giá mức độ hỗ trợ tài chính cho sản xuất, kinh doanh và tiêu dùng, cũng như khả năng hấp thụ vốn của nền kinh tế.",
+                  "frequency": "Độ trễ từ 1-3 tháng (ngày công bố không cố định)",
+                  "last_updated": "2026-07-22T09:31:43.618Z",
+                  "source": "Ngân hàng Nhà nước - SBV",
+                  "note": null,
+                  "related_blog": null
+                }
+              },
+              {
+                "id": "229_tin_dung_hoat_dong_thuong_mai_van_tai_va_vien_thong",
+                "column_name": "tin_dung_hoat_dong_thuong_mai_van_tai_va_vien_thong",
+                "table_name": "229",
+                "name": "Hoạt động thương mại, vận tải và viễn thông",
+                "hasSub": false,
+                "level": 3,
+                "heading": 2,
+                "open": 1,
+                "dateType": "thang",
+                "yAxis": 17,
+                "data": [
+                  [
+                    1785456000000,
+                    5088322
+                  ],
+                  [
+                    1782777600000,
+                    5080910
+                  ],
+                  [
+                    1780185600000,
+                    4987198
+                  ],
+                  [
+                    1777507200000,
+                    4974211
+                  ],
+                  [
+                    1774915200000,
+                    4944365
+                  ],
+                  [
+                    1772236800000,
+                    4870177
+                  ],
+                  [
+                    1769817600000,
+                    4902628.25
+                  ],
+                  [
+                    1767139200000,
+                    4887503.37
+                  ],
+                  [
+                    1764460800000,
+                    4850230.09
+                  ],
+                  [
+                    1761868800000,
+                    4793564.4
+                  ],
+                  [
+                    1759190400000,
+                    4792723.84
+                  ],
+                  [
+                    1756598400000,
+                    4764750.54
+                  ],
+                  [
+                    1753920000000,
+                    4735069.83
+                  ],
+                  [
+                    1751241600000,
+                    4769010.25
+                  ],
+                  [
+                    1748649600000,
+                    4667760.82
+                  ],
+                  [
+                    1745971200000,
+                    4619852.64
+                  ],
+                  [
+                    1743379200000,
+                    4576678.48
+                  ],
+                  [
+                    1740700800000,
+                    4427158.54
+                  ]
+                ],
+                "time_frame": "monthly",
+                "lingo": {
+                  "name": "Tín dụng Hoạt động thương mại, vận tải và viễn thông",
+                  "unit": "Tỷ VND",
+                  "description": "Chỉ số Tín dụng Hoạt động thương mại, vận tải và viễn thông là một thành phần của Tổng tín dụng trong nền kinh tế, phản ánh tổng số dư nợ tín dụng mà các tổ chức tín dụng (ngân hàng, tổ chức tài chính) cung cấp cho các hoạt động của ngành Hoạt động thương mại, vận tải và viễn thông. Đây là chỉ số quan trọng đánh giá mức độ hỗ trợ tài chính cho sản xuất, kinh doanh và tiêu dùng, cũng như khả năng hấp thụ vốn của nền kinh tế.",
+                  "frequency": "Độ trễ từ 1-3 tháng (ngày công bố không cố định)",
+                  "last_updated": "2026-07-22T09:31:43.618Z",
+                  "source": "Ngân hàng Nhà nước - SBV",
+                  "note": null,
+                  "related_blog": null
+                }
+              },
+              {
+                "id": "229_tin_dung_thuong_mai",
+                "column_name": "tin_dung_thuong_mai",
+                "table_name": "229",
+                "name": "Thương mại",
+                "hasSub": false,
+                "level": 4,
+                "heading": 3,
+                "open": 1,
+                "dateType": "thang",
+                "yAxis": 17,
+                "data": [
+                  [
+                    1785456000000,
+                    4533303
+                  ],
+                  [
+                    1782777600000,
+                    4534518
+                  ],
+                  [
+                    1780185600000,
+                    4462902
+                  ],
+                  [
+                    1777507200000,
+                    4461695
+                  ],
+                  [
+                    1774915200000,
+                    4444600
+                  ],
+                  [
+                    1772236800000,
+                    4377195
+                  ],
+                  [
+                    1769817600000,
+                    4421050.47
+                  ],
+                  [
+                    1767139200000,
+                    4411458.38
+                  ],
+                  [
+                    1764460800000,
+                    4384276.65
+                  ],
+                  [
+                    1761868800000,
+                    4341914.71
+                  ],
+                  [
+                    1759190400000,
+                    4350580.31
+                  ],
+                  [
+                    1756598400000,
+                    4325116.17
+                  ],
+                  [
+                    1753920000000,
+                    4297621.43
+                  ],
+                  [
+                    1751241600000,
+                    4329891.84
+                  ],
+                  [
+                    1748649600000,
+                    4246595.68
+                  ],
+                  [
+                    1745971200000,
+                    4199058.34
+                  ],
+                  [
+                    1743379200000,
+                    4165463.23
+                  ],
+                  [
+                    1740700800000,
+                    4028599.86
+                  ]
+                ],
+                "time_frame": "monthly",
+                "lingo": {
+                  "name": "Tín dụng Thương mại",
+                  "unit": "Tỷ VND",
+                  "description": "Chỉ số Tín dụng Thương mại là một thành phần của Tổng tín dụng trong nền kinh tế, phản ánh tổng số dư nợ tín dụng mà các tổ chức tín dụng (ngân hàng, tổ chức tài chính) cung cấp cho các hoạt động của ngành Thương mại. Đây là chỉ số quan trọng đánh giá mức độ hỗ trợ tài chính cho sản xuất, kinh doanh và tiêu dùng, cũng như khả năng hấp thụ vốn của nền kinh tế.",
+                  "frequency": "Độ trễ từ 1-3 tháng (ngày công bố không cố định)",
+                  "last_updated": "2026-07-22T09:31:43.618Z",
+                  "source": "Ngân hàng Nhà nước - SBV",
+                  "note": null,
+                  "related_blog": null
+                }
+              },
+              {
+                "id": "229_tin_dung_van_tai_va_vien_thong",
+                "column_name": "tin_dung_van_tai_va_vien_thong",
+                "table_name": "229",
+                "name": "Vận tải và viễn thông",
+                "hasSub": false,
+                "level": 4,
+                "heading": 3,
+                "open": 1,
+                "dateType": "thang",
+                "yAxis": 17,
+                "data": [
+                  [
+                    1785456000000,
+                    555019
+                  ],
+                  [
+                    1782777600000,
+                    546391
+                  ],
+                  [
+                    1780185600000,
+                    524296
+                  ],
+                  [
+                    1777507200000,
+                    512517
+                  ],
+                  [
+                    1774915200000,
+                    499765
+                  ],
+                  [
+                    1772236800000,
+                    492981
+                  ],
+                  [
+                    1769817600000,
+                    481577.78
+                  ],
+                  [
+                    1767139200000,
+                    476044.99
+                  ],
+                  [
+                    1764460800000,
+                    465953.44
+                  ],
+                  [
+                    1761868800000,
+                    451649.69
+                  ],
+                  [
+                    1759190400000,
+                    442143.53
+                  ],
+                  [
+                    1756598400000,
+                    439634.37
+                  ],
+                  [
+                    1753920000000,
+                    437448.41
+                  ],
+                  [
+                    1751241600000,
+                    439118.41
+                  ],
+                  [
+                    1748649600000,
+                    421165.14
+                  ],
+                  [
+                    1745971200000,
+                    420794.3
+                  ],
+                  [
+                    1743379200000,
+                    411215.24
+                  ],
+                  [
+                    1740700800000,
+                    398558.68
+                  ]
+                ],
+                "time_frame": "monthly",
+                "lingo": {
+                  "name": "Tín dụng Vận tải và viễn thông",
+                  "unit": "Tỷ VND",
+                  "description": "Chỉ số Tín dụng Vận tải và viễn thông là một thành phần của Tổng tín dụng trong nền kinh tế, phản ánh tổng số dư nợ tín dụng mà các tổ chức tín dụng (ngân hàng, tổ chức tài chính) cung cấp cho các hoạt động của ngành Vận tải và viễn thông. Đây là chỉ số quan trọng đánh giá mức độ hỗ trợ tài chính cho sản xuất, kinh doanh và tiêu dùng, cũng như khả năng hấp thụ vốn của nền kinh tế.",
+                  "frequency": "Độ trễ từ 1-3 tháng (ngày công bố không cố định)",
+                  "last_updated": "2026-07-22T09:31:43.618Z",
+                  "source": "Ngân hàng Nhà nước - SBV",
+                  "note": null,
+                  "related_blog": null
+                }
+              },
+              {
+                "id": "229_tin_dung_cac_hoat_dong_dich_vu_khac",
+                "column_name": "tin_dung_cac_hoat_dong_dich_vu_khac",
+                "table_name": "229",
+                "name": "Các hoạt động dịch vụ khác",
+                "hasSub": false,
+                "level": 3,
+                "heading": 2,
+                "open": 1,
+                "dateType": "thang",
+                "yAxis": 17,
+                "data": [
+                  [
+                    1785456000000,
+                    9158790
+                  ],
+                  [
+                    1782777600000,
+                    9108831
+                  ],
+                  [
+                    1780185600000,
+                    8828916
+                  ],
+                  [
+                    1777507200000,
+                    8653063
+                  ],
+                  [
+                    1774915200000,
+                    8509988
+                  ],
+                  [
+                    1772236800000,
+                    8358114
+                  ],
+                  [
+                    1769817600000,
+                    8365595.7
+                  ],
+                  [
+                    1767139200000,
+                    8218809.55
+                  ],
+                  [
+                    1764460800000,
+                    7942107.36
+                  ],
+                  [
+                    1761868800000,
+                    7792767.4
+                  ],
+                  [
+                    1759190400000,
+                    7623871.93
+                  ],
+                  [
+                    1756598400000,
+                    7428885.01
+                  ],
+                  [
+                    1753920000000,
+                    7281050.29
+                  ],
+                  [
+                    1751241600000,
+                    7195859.53
+                  ],
+                  [
+                    1748649600000,
+                    6871590.17
+                  ],
+                  [
+                    1745971200000,
+                    6730811.72
+                  ],
+                  [
+                    1743379200000,
+                    6627167.34
+                  ],
+                  [
+                    1740700800000,
+                    6359869.85
+                  ]
+                ],
+                "time_frame": "monthly",
+                "lingo": {
+                  "name": "Tín dụng Các hoạt động dịch vụ khác",
+                  "unit": "Tỷ VND",
+                  "description": "Chỉ số Tín dụng của Các hoạt động dịch vụ khác là một thành phần của Tổng tín dụng trong nền kinh tế, phản ánh tổng số dư nợ tín dụng mà các tổ chức tín dụng (ngân hàng, tổ chức tài chính) cung cấp cho Các hoạt động dịch vụ khác. Đây là chỉ số quan trọng đánh giá mức độ hỗ trợ tài chính cho sản xuất, kinh doanh và tiêu dùng, cũng như khả năng hấp thụ vốn của nền kinh tế.",
+                  "frequency": "Độ trễ từ 1-3 tháng (ngày công bố không cố định)",
+                  "last_updated": "2026-07-22T09:31:43.618Z",
+                  "source": "Ngân hàng Nhà nước - SBV",
+                  "note": null,
+                  "related_blog": null
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "yoy": {
+        "title": "Tín Dụng",
+        "headers": [
+          "07-2026",
+          "06-2026",
+          "05-2026",
+          "04-2026",
+          "03-2026",
+          "02-2026",
+          "01-2026",
+          "12-2025",
+          "11-2025",
+          "10-2025",
+          "09-2025",
+          "08-2025",
+          "07-2025",
+          "06-2025",
+          "05-2025",
+          "04-2025",
+          "03-2025",
+          "02-2025"
+        ],
+        "parent": [
+          {
+            "title": "TÍN DỤNG",
+            "child": [
+              {
+                "id": "229_tong_tin_dung_trong_nen_kinh_te_yoy",
+                "column_name": "tong_tin_dung_trong_nen_kinh_te_yoy",
+                "table_name": "229",
+                "name": "Tổng tín dụng trong nền kinh tế",
+                "hasSub": false,
+                "level": 3,
+                "heading": 1,
+                "open": 1,
+                "dateType": "thang",
+                "yAxis": 1,
+                "data": [
+                  [
+                    1785456000000,
+                    17.699954595028935
+                  ],
+                  [
+                    1782777600000,
+                    17.405165246467988
+                  ],
+                  [
+                    1780185600000,
+                    18.231791969536115
+                  ],
+                  [
+                    1777507200000,
+                    18.246736076976866
+                  ],
+                  [
+                    1774915200000,
+                    18.244067660059805
+                  ],
+                  [
+                    1772236800000,
+                    19.743969898616605
+                  ],
+                  [
+                    1769817600000,
+                    19.831383436956127
+                  ],
+                  [
+                    1767139200000,
+                    19.074510259024223
+                  ],
+                  [
+                    1764460800000,
+                    20.23620283744521
+                  ],
+                  [
+                    1761868800000,
+                    20.48735253817544
+                  ],
+                  [
+                    1759190400000,
+                    20.0952642303945
+                  ],
+                  [
+                    1756598400000,
+                    19.872441402308073
+                  ],
+                  [
+                    1753920000000,
+                    19.770164876057937
+                  ],
+                  [
+                    1751241600000,
+                    19.219408648188534
+                  ],
+                  [
+                    1748649600000,
+                    18.750359136376478
+                  ],
+                  [
+                    1745971200000,
+                    18.814911554419268
+                  ],
+                  [
+                    1743379200000,
+                    17.912707335397172
+                  ],
+                  [
+                    1740700800000,
+                    16.840080842853105
+                  ]
+                ],
+                "time_frame": "monthly",
+                "lingo": {
+                  "name": "Tổng tín dụng trong nền kinh tế",
+                  "unit": "%",
+                  "description": "Tổng tín dụng trong nền kinh tế là tổng lượng dư nợ tín dụng mà các tổ chức tín dụng (ngân hàng, tổ chức tài chính) cung cấp cho các ngành kinh tế, doanh nghiệp, tổ chức và cá nhân trong nền kinh tế Việt Nam. Chỉ số này giúp đánh giá mức độ tăng trưởng tín dụng, phản ánh sự phát triển của các hoạt động kinh tế và khả năng tiếp cận vốn của các doanh nghiệp và ngành nghề. Dữ liệu được thống kê từ trang web của SBV, cập nhật định kỳ hàng tháng và có độ trễ từ 2-3 tháng.",
+                  "frequency": "Độ trễ từ 1-3 tháng (ngày công bố không cố định)",
+                  "last_updated": "2026-07-22T09:31:43.618Z",
+                  "source": "Ngân hàng Nhà nước - SBV",
+                  "note": null,
+                  "related_blog": null
+                }
+              },
+              {
+                "id": "229_tin_dung_nong_nghiep_lam_nghiep_va_thuy_san_yoy",
+                "column_name": "tin_dung_nong_nghiep_lam_nghiep_va_thuy_san_yoy",
+                "table_name": "229",
+                "name": "Nông nghiệp, lâm nghiệp và thuỷ sản",
+                "hasSub": false,
+                "level": 3,
+                "heading": 2,
+                "open": 1,
+                "dateType": "thang",
+                "yAxis": 1,
+                "data": [
+                  [
+                    1785456000000,
+                    14.897418587059578
+                  ],
+                  [
+                    1782777600000,
+                    13.876740152510061
+                  ],
+                  [
+                    1780185600000,
+                    13.79712834532913
+                  ],
+                  [
+                    1777507200000,
+                    13.753157806043104
+                  ],
+                  [
+                    1774915200000,
+                    13.245359556747227
+                  ],
+                  [
+                    1772236800000,
+                    12.764581444911785
+                  ],
+                  [
+                    1769817600000,
+                    11.84757059765394
+                  ],
+                  [
+                    1767139200000,
+                    11.0141075437495
+                  ],
+                  [
+                    1764460800000,
+                    10.410648291775953
+                  ],
+                  [
+                    1761868800000,
+                    10.367137094066429
+                  ],
+                  [
+                    1759190400000,
+                    9.829433182832688
+                  ],
+                  [
+                    1756598400000,
+                    9.210577409945138
+                  ],
+                  [
+                    1753920000000,
+                    9.091775416171576
+                  ],
+                  [
+                    1751241600000,
+                    9.112552493475938
+                  ],
+                  [
+                    1748649600000,
+                    9.05906430557521
+                  ],
+                  [
+                    1745971200000,
+                    8.772028010235857
+                  ],
+                  [
+                    1743379200000,
+                    7.982614578246247
+                  ],
+                  [
+                    1740700800000,
+                    7.494783068706511
+                  ]
+                ],
+                "time_frame": "monthly",
+                "lingo": {
+                  "name": "Tín dụng Nông nghiệp, lâm nghiệp và thuỷ sản",
+                  "unit": "%",
+                  "description": "Chỉ số Tín dụng Nông nghiệp, lâm nghiệp và thuỷ sản là một thành phần của Tổng tín dụng trong nền kinh tế, phản ánh tổng số dư nợ tín dụng mà các tổ chức tín dụng (ngân hàng, tổ chức tài chính) cung cấp cho các hoạt động sản xuất của ngành Nông nghiệp, lâm nghiệp và thuỷ sản. Đây là chỉ số quan trọng đánh giá mức độ hỗ trợ tài chính cho sản xuất, kinh doanh và tiêu dùng, cũng như khả năng hấp thụ vốn của nền kinh tế.",
+                  "frequency": "Độ trễ từ 1-3 tháng (ngày công bố không cố định)",
+                  "last_updated": "2026-07-22T09:31:43.618Z",
+                  "source": "Ngân hàng Nhà nước - SBV",
+                  "note": null,
+                  "related_blog": null
+                }
+              },
+              {
+                "id": "229_tin_dung_cong_nghiep_va_xay_dung_yoy",
+                "column_name": "tin_dung_cong_nghiep_va_xay_dung_yoy",
+                "table_name": "229",
+                "name": "Công nghiệp và xây dựng",
+                "hasSub": false,
+                "level": 3,
+                "heading": 2,
+                "open": 1,
+                "dateType": "thang",
+                "yAxis": 1,
+                "data": [
+                  [
+                    1785456000000,
+                    15.904681554667174
+                  ],
+                  [
+                    1782777600000,
+                    14.872552165510688
+                  ],
+                  [
+                    1780185600000,
+                    15.133849758350076
+                  ],
+                  [
+                    1777507200000,
+                    14.333779679975553
+                  ],
+                  [
+                    1774915200000,
+                    14.36436377348006
+                  ],
+                  [
+                    1772236800000,
+                    13.627999085203296
+                  ],
+                  [
+                    1769817600000,
+                    12.197650821672418
+                  ],
+                  [
+                    1767139200000,
+                    12.403254444671983
+                  ],
+                  [
+                    1764460800000,
+                    14.077981687523074
+                  ],
+                  [
+                    1761868800000,
+                    14.062750734483153
+                  ],
+                  [
+                    1759190400000,
+                    13.728203288011986
+                  ],
+                  [
+                    1756598400000,
+                    12.284156389084707
+                  ],
+                  [
+                    1753920000000,
+                    12.112795022340157
+                  ],
+                  [
+                    1751241600000,
+                    12.078413880454015
+                  ],
+                  [
+                    1748649600000,
+                    12.527274545979703
+                  ],
+                  [
+                    1745971200000,
+                    13.500420455728099
+                  ],
+                  [
+                    1743379200000,
+                    12.542937551120506
+                  ],
+                  [
+                    1740700800000,
+                    12.96566622016449
+                  ]
+                ],
+                "time_frame": "monthly",
+                "lingo": {
+                  "name": "Tín dụng Công nghiệp và xây dựng",
+                  "unit": "%",
+                  "description": "Chỉ số Tín dụng Công nghiệp và xây dựng là một thành phần của Tổng tín dụng trong nền kinh tế, phản ánh tổng số dư nợ tín dụng mà các tổ chức tín dụng (ngân hàng, tổ chức tài chính) cung cấp cho các hoạt động sản xuất của ngành Công nghiệp và xây dựng. Đây là chỉ số quan trọng đánh giá mức độ hỗ trợ tài chính cho sản xuất, kinh doanh và tiêu dùng, cũng như khả năng hấp thụ vốn của nền kinh tế.",
+                  "frequency": "Độ trễ từ 1-3 tháng (ngày công bố không cố định)",
+                  "last_updated": "2026-07-22T09:31:43.618Z",
+                  "source": "Ngân hàng Nhà nước - SBV",
+                  "note": null,
+                  "related_blog": null
+                }
+              },
+              {
+                "id": "229_tin_dung_cong_nghiep_yoy",
+                "column_name": "tin_dung_cong_nghiep_yoy",
+                "table_name": "229",
+                "name": "Công nghiệp",
+                "hasSub": false,
+                "level": 4,
+                "heading": 3,
+                "open": 1,
+                "dateType": "thang",
+                "yAxis": 1,
+                "data": [
+                  [
+                    1785456000000,
+                    13.98646690259534
+                  ],
+                  [
+                    1782777600000,
+                    13.856273868082091
+                  ],
+                  [
+                    1780185600000,
+                    13.379394604576463
+                  ],
+                  [
+                    1777507200000,
+                    11.985617265828283
+                  ],
+                  [
+                    1774915200000,
+                    11.92057374731311
+                  ],
+                  [
+                    1772236800000,
+                    11.222892910979025
+                  ],
+                  [
+                    1769817600000,
+                    9.527819036709824
+                  ],
+                  [
+                    1767139200000,
+                    10.07087050526808
+                  ],
+                  [
+                    1764460800000,
+                    12.744423390875165
+                  ],
+                  [
+                    1761868800000,
+                    13.396556853345547
+                  ],
+                  [
+                    1759190400000,
+                    13.691440724242174
+                  ],
+                  [
+                    1756598400000,
+                    12.638031286936513
+                  ],
+                  [
+                    1753920000000,
+                    12.363225015033587
+                  ],
+                  [
+                    1751241600000,
+                    12.080052871557797
+                  ],
+                  [
+                    1748649600000,
+                    12.784055115041749
+                  ],
+                  [
+                    1745971200000,
+                    14.420101459913814
+                  ],
+                  [
+                    1743379200000,
+                    13.147678051024336
+                  ],
+                  [
+                    1740700800000,
+                    13.801589601997721
+                  ]
+                ],
+                "time_frame": "monthly",
+                "lingo": {
+                  "name": "Tín dụng Công nghiệp",
+                  "unit": "%",
+                  "description": "Chỉ số Tín dụng Công nghiệp là một thành phần của Tổng tín dụng trong nền kinh tế, phản ánh tổng số dư nợ tín dụng mà các tổ chức tín dụng (ngân hàng, tổ chức tài chính) cung cấp cho các hoạt động sản xuất của ngành Công nghiệp. Đây là chỉ số quan trọng đánh giá mức độ hỗ trợ tài chính cho sản xuất, kinh doanh và tiêu dùng, cũng như khả năng hấp thụ vốn của nền kinh tế.",
+                  "frequency": "Độ trễ từ 1-3 tháng (ngày công bố không cố định)",
+                  "last_updated": "2026-07-22T09:31:43.618Z",
+                  "source": "Ngân hàng Nhà nước - SBV",
+                  "note": null,
+                  "related_blog": null
+                }
+              },
+              {
+                "id": "229_tin_dung_xay_dung_yoy",
+                "column_name": "tin_dung_xay_dung_yoy",
+                "table_name": "229",
+                "name": "Xây dựng",
+                "hasSub": false,
+                "level": 4,
+                "heading": 3,
+                "open": 1,
+                "dateType": "thang",
+                "yAxis": 1,
+                "data": [
+                  [
+                    1785456000000,
+                    20.219540511856486
+                  ],
+                  [
+                    1782777600000,
+                    17.138629190047965
+                  ],
+                  [
+                    1780185600000,
+                    19.092911953713994
+                  ],
+                  [
+                    1777507200000,
+                    19.665901529410203
+                  ],
+                  [
+                    1774915200000,
+                    19.85930124144342
+                  ],
+                  [
+                    1772236800000,
+                    19.051655644160476
+                  ],
+                  [
+                    1769817600000,
+                    18.220230964746815
+                  ],
+                  [
+                    1767139200000,
+                    17.630315292089733
+                  ],
+                  [
+                    1764460800000,
+                    17.107673263501905
+                  ],
+                  [
+                    1761868800000,
+                    15.559870175967339
+                  ],
+                  [
+                    1759190400000,
+                    13.810000250240984
+                  ],
+                  [
+                    1756598400000,
+                    11.497770865841265
+                  ],
+                  [
+                    1753920000000,
+                    11.553532601793606
+                  ],
+                  [
+                    1751241600000,
+                    12.074760340044824
+                  ],
+                  [
+                    1748649600000,
+                    11.952115400771728
+                  ],
+                  [
+                    1745971200000,
+                    11.465960787484745
+                  ],
+                  [
+                    1743379200000,
+                    11.206487505245875
+                  ],
+                  [
+                    1740700800000,
+                    11.12494661520353
+                  ]
+                ],
+                "time_frame": "monthly",
+                "lingo": {
+                  "name": "Tín dụng Xây dựng",
+                  "unit": "%",
+                  "description": "Chỉ số Tín dụng Xây dựng là một thành phần của Tổng tín dụng trong nền kinh tế, phản ánh tổng số dư nợ tín dụng mà các tổ chức tín dụng (ngân hàng, tổ chức tài chính) cung cấp cho các hoạt động sản xuất của ngành Xây dựng. Đây là chỉ số quan trọng đánh giá mức độ hỗ trợ tài chính cho sản xuất, kinh doanh và tiêu dùng, cũng như khả năng hấp thụ vốn của nền kinh tế.",
+                  "frequency": "Độ trễ từ 1-3 tháng (ngày công bố không cố định)",
+                  "last_updated": "2026-07-22T09:31:43.618Z",
+                  "source": "Ngân hàng Nhà nước - SBV",
+                  "note": null,
+                  "related_blog": null
+                }
+              },
+              {
+                "id": "229_tin_dung_hoat_dong_thuong_mai_van_tai_va_vien_thong_yoy",
+                "column_name": "tin_dung_hoat_dong_thuong_mai_van_tai_va_vien_thong_yoy",
+                "table_name": "229",
+                "name": "Hoạt động thương mại, vận tải và viễn thông",
+                "hasSub": false,
+                "level": 3,
+                "heading": 2,
+                "open": 1,
+                "dateType": "thang",
+                "yAxis": 1,
+                "data": [
+                  [
+                    1785456000000,
+                    7.4603370738462775
+                  ],
+                  [
+                    1782777600000,
+                    6.540135869911372
+                  ],
+                  [
+                    1780185600000,
+                    6.843477896967302
+                  ],
+                  [
+                    1777507200000,
+                    7.6703390262248785
+                  ],
+                  [
+                    1774915200000,
+                    8.033916334887468
+                  ],
+                  [
+                    1772236800000,
+                    10.006835219413668
+                  ],
+                  [
+                    1769817600000,
+                    10.906051067687082
+                  ],
+                  [
+                    1767139200000,
+                    10.927533589985845
+                  ],
+                  [
+                    1764460800000,
+                    13.968774840709939
+                  ],
+                  [
+                    1761868800000,
+                    15.025161209011067
+                  ],
+                  [
+                    1759190400000,
+                    16.25100229212984
+                  ],
+                  [
+                    1756598400000,
+                    17.88184812868145
+                  ],
+                  [
+                    1753920000000,
+                    18.529040157827588
+                  ],
+                  [
+                    1751241600000,
+                    19.853222113501758
+                  ],
+                  [
+                    1748649600000,
+                    19.661757429953767
+                  ],
+                  [
+                    1745971200000,
+                    19.61473258077421
+                  ],
+                  [
+                    1743379200000,
+                    19.412060123731855
+                  ],
+                  [
+                    1740700800000,
+                    18.206119680934798
+                  ]
+                ],
+                "time_frame": "monthly",
+                "lingo": {
+                  "name": "Tín dụng Hoạt động thương mại, vận tải và viễn thông",
+                  "unit": "%",
+                  "description": "Chỉ số Tín dụng Hoạt động thương mại, vận tải và viễn thông là một thành phần của Tổng tín dụng trong nền kinh tế, phản ánh tổng số dư nợ tín dụng mà các tổ chức tín dụng (ngân hàng, tổ chức tài chính) cung cấp cho các hoạt động của ngành Hoạt động thương mại, vận tải và viễn thông. Đây là chỉ số quan trọng đánh giá mức độ hỗ trợ tài chính cho sản xuất, kinh doanh và tiêu dùng, cũng như khả năng hấp thụ vốn của nền kinh tế.",
+                  "frequency": "Độ trễ từ 1-3 tháng (ngày công bố không cố định)",
+                  "last_updated": "2026-07-22T09:31:43.618Z",
+                  "source": "Ngân hàng Nhà nước - SBV",
+                  "note": null,
+                  "related_blog": null
+                }
+              },
+              {
+                "id": "229_tin_dung_thuong_mai_yoy",
+                "column_name": "tin_dung_thuong_mai_yoy",
+                "table_name": "229",
+                "name": "Thương mại",
+                "hasSub": false,
+                "level": 4,
+                "heading": 3,
+                "open": 1,
+                "dateType": "thang",
+                "yAxis": 1,
+                "data": [
+                  [
+                    1785456000000,
+                    5.484000250808511
+                  ],
+                  [
+                    1782777600000,
+                    4.7258954163621825
+                  ],
+                  [
+                    1780185600000,
+                    5.093640560572518
+                  ],
+                  [
+                    1777507200000,
+                    6.254656133212956
+                  ],
+                  [
+                    1774915200000,
+                    6.701217957936458
+                  ],
+                  [
+                    1772236800000,
+                    8.653009782907557
+                  ],
+                  [
+                    1769817600000,
+                    9.845688347179383
+                  ],
+                  [
+                    1767139200000,
+                    9.617233410006973
+                  ],
+                  [
+                    1764460800000,
+                    12.61471045638717
+                  ],
+                  [
+                    1761868800000,
+                    13.669466062196411
+                  ],
+                  [
+                    1759190400000,
+                    15.131396901414398
+                  ],
+                  [
+                    1756598400000,
+                    16.702681316038564
+                  ],
+                  [
+                    1753920000000,
+                    17.311475208465943
+                  ],
+                  [
+                    1751241600000,
+                    18.623437222855465
+                  ],
+                  [
+                    1748649600000,
+                    18.69887641166127
+                  ],
+                  [
+                    1745971200000,
+                    18.57054745923959
+                  ],
+                  [
+                    1743379200000,
+                    18.514667976228083
+                  ],
+                  [
+                    1740700800000,
+                    17.49127588749349
+                  ]
+                ],
+                "time_frame": "monthly",
+                "lingo": {
+                  "name": "Tín dụng Thương mại",
+                  "unit": "%",
+                  "description": "Chỉ số Tín dụng Thương mại là một thành phần của Tổng tín dụng trong nền kinh tế, phản ánh tổng số dư nợ tín dụng mà các tổ chức tín dụng (ngân hàng, tổ chức tài chính) cung cấp cho các hoạt động của ngành Thương mại. Đây là chỉ số quan trọng đánh giá mức độ hỗ trợ tài chính cho sản xuất, kinh doanh và tiêu dùng, cũng như khả năng hấp thụ vốn của nền kinh tế.",
+                  "frequency": "Độ trễ từ 1-3 tháng (ngày công bố không cố định)",
+                  "last_updated": "2026-07-22T09:31:43.618Z",
+                  "source": "Ngân hàng Nhà nước - SBV",
+                  "note": null,
+                  "related_blog": null
+                }
+              },
+              {
+                "id": "229_tin_dung_van_tai_va_vien_thong_yoy",
+                "column_name": "tin_dung_van_tai_va_vien_thong_yoy",
+                "table_name": "229",
+                "name": "Vận tải và viễn thông",
+                "hasSub": false,
+                "level": 4,
+                "heading": 3,
+                "open": 1,
+                "dateType": "thang",
+                "yAxis": 1,
+                "data": [
+                  [
+                    1785456000000,
+                    26.876446984914182
+                  ],
+                  [
+                    1782777600000,
+                    24.429080529782397
+                  ],
+                  [
+                    1780185600000,
+                    24.48703613029321
+                  ],
+                  [
+                    1777507200000,
+                    21.797514842762844
+                  ],
+                  [
+                    1774915200000,
+                    21.533676621518214
+                  ],
+                  [
+                    1772236800000,
+                    23.690945584223634
+                  ],
+                  [
+                    1769817600000,
+                    21.69020534880927
+                  ],
+                  [
+                    1767139200000,
+                    24.745743853426482
+                  ],
+                  [
+                    1764460800000,
+                    28.507566694162488
+                  ],
+                  [
+                    1761868800000,
+                    29.921475768599752
+                  ],
+                  [
+                    1759190400000,
+                    28.55180025743883
+                  ],
+                  [
+                    1756598400000,
+                    30.893040848566006
+                  ],
+                  [
+                    1753920000000,
+                    31.98717192869304
+                  ],
+                  [
+                    1751241600000,
+                    33.5001818031467
+                  ],
+                  [
+                    1748649600000,
+                    30.321064718397327
+                  ],
+                  [
+                    1745971200000,
+                    31.139037123508515
+                  ],
+                  [
+                    1743379200000,
+                    29.332030793343655
+                  ],
+                  [
+                    1740700800000,
+                    25.95203188705437
+                  ]
+                ],
+                "time_frame": "monthly",
+                "lingo": {
+                  "name": "Tín dụng Vận tải và viễn thông",
+                  "unit": "%",
+                  "description": "Chỉ số Tín dụng Vận tải và viễn thông là một thành phần của Tổng tín dụng trong nền kinh tế, phản ánh tổng số dư nợ tín dụng mà các tổ chức tín dụng (ngân hàng, tổ chức tài chính) cung cấp cho các hoạt động của ngành Vận tải và viễn thông. Đây là chỉ số quan trọng đánh giá mức độ hỗ trợ tài chính cho sản xuất, kinh doanh và tiêu dùng, cũng như khả năng hấp thụ vốn của nền kinh tế.",
+                  "frequency": "Độ trễ từ 1-3 tháng (ngày công bố không cố định)",
+                  "last_updated": "2026-07-22T09:31:43.618Z",
+                  "source": "Ngân hàng Nhà nước - SBV",
+                  "note": null,
+                  "related_blog": null
+                }
+              },
+              {
+                "id": "229_tin_dung_cac_hoat_dong_dich_vu_khac_yoy",
+                "column_name": "tin_dung_cac_hoat_dong_dich_vu_khac_yoy",
+                "table_name": "229",
+                "name": "Các hoạt động dịch vụ khác",
+                "hasSub": false,
+                "level": 3,
+                "heading": 2,
+                "open": 1,
+                "dateType": "thang",
+                "yAxis": 1,
+                "data": [
+                  [
+                    1785456000000,
+                    25.78940723124713
+                  ],
+                  [
+                    1782777600000,
+                    26.584335922966517
+                  ],
+                  [
+                    1780185600000,
+                    28.484321409988862
+                  ],
+                  [
+                    1777507200000,
+                    28.55898159041062
+                  ],
+                  [
+                    1774915200000,
+                    28.410640072957627
+                  ],
+                  [
+                    1772236800000,
+                    31.419576141169
+                  ],
+                  [
+                    1769817600000,
+                    32.08049096239613
+                  ],
+                  [
+                    1767139200000,
+                    30.156164110173705
+                  ],
+                  [
+                    1764460800000,
+                    30.069156321310768
+                  ],
+                  [
+                    1761868800000,
+                    30.034287626047764
+                  ],
+                  [
+                    1759190400000,
+                    28.523333045314164
+                  ],
+                  [
+                    1756598400000,
+                    27.94251870607477
+                  ],
+                  [
+                    1753920000000,
+                    27.406786153015165
+                  ],
+                  [
+                    1751241600000,
+                    25.078703347388025
+                  ],
+                  [
+                    1748649600000,
+                    23.858688570014884
+                  ],
+                  [
+                    1745971200000,
+                    23.501248273647466
+                  ],
+                  [
+                    1743379200000,
+                    22.115356713443855
+                  ],
+                  [
+                    1740700800000,
+                    20.094896434990865
+                  ]
+                ],
+                "time_frame": "monthly",
+                "lingo": {
+                  "name": "Tín dụng Các hoạt động dịch vụ khác",
+                  "unit": "%",
+                  "description": "Chỉ số Tín dụng của Các hoạt động dịch vụ khác là một thành phần của Tổng tín dụng trong nền kinh tế, phản ánh tổng số dư nợ tín dụng mà các tổ chức tín dụng (ngân hàng, tổ chức tài chính) cung cấp cho Các hoạt động dịch vụ khác. Đây là chỉ số quan trọng đánh giá mức độ hỗ trợ tài chính cho sản xuất, kinh doanh và tiêu dùng, cũng như khả năng hấp thụ vốn của nền kinh tế.",
+                  "frequency": "Độ trễ từ 1-3 tháng (ngày công bố không cố định)",
+                  "last_updated": "2026-07-22T09:31:43.618Z",
+                  "source": "Ngân hàng Nhà nước - SBV",
+                  "note": null,
+                  "related_blog": null
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "quarterly": {
+      "value": {
+        "title": "Tín Dụng",
+        "headers": [
+          "06-2026",
+          "03-2026",
+          "12-2025",
+          "09-2025",
+          "06-2025",
+          "03-2025",
+          "12-2024",
+          "09-2024",
+          "06-2024",
+          "03-2024",
+          "12-2023",
+          "09-2023",
+          "06-2023",
+          "03-2023",
+          "12-2022",
+          "09-2022",
+          "06-2022",
+          "03-2022",
+          "12-2021"
+        ],
+        "parent": [
+          {
+            "title": "TÍN DỤNG (Tỷ VND)",
+            "child": [
+              {
+                "id": "229_tong_tin_dung_trong_nen_kinh_te_qtr",
+                "column_name": "tong_tin_dung_trong_nen_kinh_te_qtr",
+                "table_name": "229",
+                "name": "Tổng tín dụng trong nền kinh tế",
+                "hasSub": false,
+                "level": 3,
+                "heading": 1,
+                "open": 1,
+                "dateType": "quy",
+                "yAxis": 17,
+                "data": [
+                  [
+                    1782777600000,
+                    20150411
+                  ],
+                  [
+                    1774915200000,
+                    19186824
+                  ],
+                  [
+                    1767139200000,
+                    18594930.02
+                  ],
+                  [
+                    1759190400000,
+                    17780780.45
+                  ],
+                  [
+                    1751241600000,
+                    17163138.4
+                  ],
+                  [
+                    1743379200000,
+                    16226458.02
+                  ],
+                  [
+                    1735603200000,
+                    15616213.73
+                  ],
+                  [
+                    1727654400000,
+                    14805563.37
+                  ],
+                  [
+                    1719705600000,
+                    14396261.98
+                  ],
+                  [
+                    1711843200000,
+                    13761415.87
+                  ],
+                  [
+                    1703980800000,
+                    13568977.92
+                  ],
+                  [
+                    1696032000000,
+                    12754669.12
+                  ],
+                  [
+                    1688083200000,
+                    12487912.51
+                  ],
+                  [
+                    1680220800000,
+                    12231723.64
+                  ],
+                  [
+                    1672444800000,
+                    11924433.61
+                  ],
+                  [
+                    1664496000000,
+                    11597310.32
+                  ],
+                  [
+                    1656547200000,
+                    11428653.23
+                  ],
+                  [
+                    1648684800000,
+                    11067407.98
+                  ],
+                  [
+                    1640908800000,
+                    10443368.0474958
+                  ]
+                ],
+                "time_frame": "quarterly",
+                "lingo": {
+                  "name": "Tổng tín dụng trong nền kinh tế",
+                  "unit": "Tỷ VND",
+                  "description": "Tổng tín dụng trong nền kinh tế là tổng lượng dư nợ tín dụng mà các tổ chức tín dụng (ngân hàng, tổ chức tài chính) cung cấp cho các ngành kinh tế, doanh nghiệp, tổ chức và cá nhân trong nền kinh tế Việt Nam. Chỉ số này giúp đánh giá mức độ tăng trưởng tín dụng, phản ánh sự phát triển của các hoạt động kinh tế và khả năng tiếp cận vốn của các doanh nghiệp và ngành nghề. Dữ liệu được thống kê từ trang web của SBV, cập nhật định kỳ hàng tháng và có độ trễ từ 2-3 tháng.",
+                  "frequency": "Độ trễ từ 1-3 tháng (ngày công bố không cố định)",
+                  "last_updated": "2026-07-22T09:31:43.618Z",
+                  "source": "Ngân hàng Nhà nước - SBV",
+                  "note": null,
+                  "related_blog": null
+                }
+              },
+              {
+                "id": "229_tin_dung_nong_nghiep_lam_nghiep_va_thuy_san_qtr",
+                "column_name": "tin_dung_nong_nghiep_lam_nghiep_va_thuy_san_qtr",
+                "table_name": "229",
+                "name": "Nông nghiệp, lâm nghiệp và thuỷ sản",
+                "hasSub": false,
+                "level": 3,
+                "heading": 2,
+                "open": 1,
+                "dateType": "quy",
+                "yAxis": 17,
+                "data": [
+                  [
+                    1782777600000,
+                    1225073
+                  ],
+                  [
+                    1774915200000,
+                    1174701
+                  ],
+                  [
+                    1767139200000,
+                    1135005.66
+                  ],
+                  [
+                    1759190400000,
+                    1097542.78
+                  ],
+                  [
+                    1751241600000,
+                    1075788.61
+                  ],
+                  [
+                    1743379200000,
+                    1037306.08
+                  ],
+                  [
+                    1735603200000,
+                    1022397.68
+                  ],
+                  [
+                    1727654400000,
+                    999315.71
+                  ],
+                  [
+                    1719705600000,
+                    985943.95
+                  ],
+                  [
+                    1711843200000,
+                    960623.23
+                  ],
+                  [
+                    1703980800000,
+                    952409.83
+                  ],
+                  [
+                    1696032000000,
+                    914564.09
+                  ],
+                  [
+                    1688083200000,
+                    912467.42
+                  ],
+                  [
+                    1680220800000,
+                    902228.36
+                  ],
+                  [
+                    1672444800000,
+                    890501.84
+                  ],
+                  [
+                    1664496000000,
+                    888367.84
+                  ],
+                  [
+                    1656547200000,
+                    887162.22
+                  ],
+                  [
+                    1648684800000,
+                    857786.02
+                  ],
+                  [
+                    1640908800000,
+                    825079.08
+                  ]
+                ],
+                "time_frame": "quarterly",
+                "lingo": {
+                  "name": "Tín dụng Nông nghiệp, lâm nghiệp và thuỷ sản",
+                  "unit": "Tỷ VND",
+                  "description": "Chỉ số Tín dụng Nông nghiệp, lâm nghiệp và thuỷ sản là một thành phần của Tổng tín dụng trong nền kinh tế, phản ánh tổng số dư nợ tín dụng mà các tổ chức tín dụng (ngân hàng, tổ chức tài chính) cung cấp cho các hoạt động sản xuất của ngành Nông nghiệp, lâm nghiệp và thuỷ sản. Đây là chỉ số quan trọng đánh giá mức độ hỗ trợ tài chính cho sản xuất, kinh doanh và tiêu dùng, cũng như khả năng hấp thụ vốn của nền kinh tế.",
+                  "frequency": "Độ trễ từ 1-3 tháng (ngày công bố không cố định)",
+                  "last_updated": "2026-07-22T09:31:43.618Z",
+                  "source": "Ngân hàng Nhà nước - SBV",
+                  "note": null,
+                  "related_blog": null
+                }
+              },
+              {
+                "id": "229_tin_dung_cong_nghiep_va_xay_dung_qtr",
+                "column_name": "tin_dung_cong_nghiep_va_xay_dung_qtr",
+                "table_name": "229",
+                "name": "Công nghiệp và xây dựng",
+                "hasSub": false,
+                "level": 3,
+                "heading": 2,
+                "open": 1,
+                "dateType": "quy",
+                "yAxis": 17,
+                "data": [
+                  [
+                    1782777600000,
+                    4735598
+                  ],
+                  [
+                    1774915200000,
+                    4557770
+                  ],
+                  [
+                    1767139200000,
+                    4353611.45
+                  ],
+                  [
+                    1759190400000,
+                    4266641.9
+                  ],
+                  [
+                    1751241600000,
+                    4122480.01
+                  ],
+                  [
+                    1743379200000,
+                    3985306.13
+                  ],
+                  [
+                    1735603200000,
+                    3873207.65
+                  ],
+                  [
+                    1727654400000,
+                    3751612.86
+                  ],
+                  [
+                    1719705600000,
+                    3678210.52
+                  ],
+                  [
+                    1711843200000,
+                    3541142.8
+                  ],
+                  [
+                    1703980800000,
+                    3470559.97
+                  ],
+                  [
+                    1696032000000,
+                    3290332.89
+                  ],
+                  [
+                    1688083200000,
+                    3243756.34
+                  ],
+                  [
+                    1680220800000,
+                    3188718.46
+                  ],
+                  [
+                    1672444800000,
+                    3096229.47
+                  ],
+                  [
+                    1664496000000,
+                    3097070.35
+                  ],
+                  [
+                    1656547200000,
+                    3074337.31
+                  ],
+                  [
+                    1648684800000,
+                    2992792.31
+                  ],
+                  [
+                    1640908800000,
+                    2869770.98
+                  ]
+                ],
+                "time_frame": "quarterly",
+                "lingo": {
+                  "name": "Tín dụng Công nghiệp và xây dựng",
+                  "unit": "Tỷ VND",
+                  "description": "Chỉ số Tín dụng Công nghiệp và xây dựng là một thành phần của Tổng tín dụng trong nền kinh tế, phản ánh tổng số dư nợ tín dụng mà các tổ chức tín dụng (ngân hàng, tổ chức tài chính) cung cấp cho các hoạt động sản xuất của ngành Công nghiệp và xây dựng. Đây là chỉ số quan trọng đánh giá mức độ hỗ trợ tài chính cho sản xuất, kinh doanh và tiêu dùng, cũng như khả năng hấp thụ vốn của nền kinh tế.",
+                  "frequency": "Độ trễ từ 1-3 tháng (ngày công bố không cố định)",
+                  "last_updated": "2026-07-22T09:31:43.618Z",
+                  "source": "Ngân hàng Nhà nước - SBV",
+                  "note": null,
+                  "related_blog": null
+                }
+              },
+              {
+                "id": "229_tin_dung_cong_nghiep_qtr",
+                "column_name": "tin_dung_cong_nghiep_qtr",
+                "table_name": "229",
+                "name": "Công nghiệp",
+                "hasSub": false,
+                "level": 4,
+                "heading": 3,
+                "open": 1,
+                "dateType": "quy",
+                "yAxis": 17,
+                "data": [
+                  [
+                    1782777600000,
+                    3240445
+                  ],
+                  [
+                    1774915200000,
+                    3087333
+                  ],
+                  [
+                    1767139200000,
+                    2947887.19
+                  ],
+                  [
+                    1759190400000,
+                    2942714.42
+                  ],
+                  [
+                    1751241600000,
+                    2846083.83
+                  ],
+                  [
+                    1743379200000,
+                    2758503.55
+                  ],
+                  [
+                    1735603200000,
+                    2678171.96
+                  ],
+                  [
+                    1727654400000,
+                    2588334.18
+                  ],
+                  [
+                    1719705600000,
+                    2539331.27
+                  ],
+                  [
+                    1711843200000,
+                    2437967.44
+                  ],
+                  [
+                    1703980800000,
+                    2367479.21
+                  ],
+                  [
+                    1696032000000,
+                    2233911.43
+                  ],
+                  [
+                    1688083200000,
+                    2188022.16
+                  ],
+                  [
+                    1680220800000,
+                    2159719.79
+                  ],
+                  [
+                    1672444800000,
+                    2101760.99
+                  ],
+                  [
+                    1664496000000,
+                    2129553.37
+                  ],
+                  [
+                    1656547200000,
+                    2130376.76
+                  ],
+                  [
+                    1648684800000,
+                    2077968.46
+                  ],
+                  [
+                    1640908800000,
+                    1980745.72
+                  ]
+                ],
+                "time_frame": "quarterly",
+                "lingo": {
+                  "name": "Tín dụng Công nghiệp",
+                  "unit": "Tỷ VND",
+                  "description": "Chỉ số Tín dụng Công nghiệp là một thành phần của Tổng tín dụng trong nền kinh tế, phản ánh tổng số dư nợ tín dụng mà các tổ chức tín dụng (ngân hàng, tổ chức tài chính) cung cấp cho các hoạt động sản xuất của ngành Công nghiệp. Đây là chỉ số quan trọng đánh giá mức độ hỗ trợ tài chính cho sản xuất, kinh doanh và tiêu dùng, cũng như khả năng hấp thụ vốn của nền kinh tế.",
+                  "frequency": "Độ trễ từ 1-3 tháng (ngày công bố không cố định)",
+                  "last_updated": "2026-07-22T09:31:43.618Z",
+                  "source": "Ngân hàng Nhà nước - SBV",
+                  "note": null,
+                  "related_blog": null
+                }
+              },
+              {
+                "id": "229_tin_dung_xay_dung_qtr",
+                "column_name": "tin_dung_xay_dung_qtr",
+                "table_name": "229",
+                "name": "Xây dựng",
+                "hasSub": false,
+                "level": 4,
+                "heading": 3,
+                "open": 1,
+                "dateType": "quy",
+                "yAxis": 17,
+                "data": [
+                  [
+                    1782777600000,
+                    1495153
+                  ],
+                  [
+                    1774915200000,
+                    1470437
+                  ],
+                  [
+                    1767139200000,
+                    1405724.25
+                  ],
+                  [
+                    1759190400000,
+                    1323927.48
+                  ],
+                  [
+                    1751241600000,
+                    1276396.19
+                  ],
+                  [
+                    1743379200000,
+                    1226802.58
+                  ],
+                  [
+                    1735603200000,
+                    1195035.69
+                  ],
+                  [
+                    1727654400000,
+                    1163278.69
+                  ],
+                  [
+                    1719705600000,
+                    1138879.25
+                  ],
+                  [
+                    1711843200000,
+                    1103175.37
+                  ],
+                  [
+                    1703980800000,
+                    1103080.76
+                  ],
+                  [
+                    1696032000000,
+                    1056421.46
+                  ],
+                  [
+                    1688083200000,
+                    1055734.18
+                  ],
+                  [
+                    1680220800000,
+                    1028998.67
+                  ],
+                  [
+                    1672444800000,
+                    994468.48
+                  ],
+                  [
+                    1664496000000,
+                    967516.98
+                  ],
+                  [
+                    1656547200000,
+                    943960.55
+                  ],
+                  [
+                    1648684800000,
+                    914823.85
+                  ],
+                  [
+                    1640908800000,
+                    889025.27
+                  ]
+                ],
+                "time_frame": "quarterly",
+                "lingo": {
+                  "name": "Tín dụng Xây dựng",
+                  "unit": "Tỷ VND",
+                  "description": "Chỉ số Tín dụng Xây dựng là một thành phần của Tổng tín dụng trong nền kinh tế, phản ánh tổng số dư nợ tín dụng mà các tổ chức tín dụng (ngân hàng, tổ chức tài chính) cung cấp cho các hoạt động sản xuất của ngành Xây dựng. Đây là chỉ số quan trọng đánh giá mức độ hỗ trợ tài chính cho sản xuất, kinh doanh và tiêu dùng, cũng như khả năng hấp thụ vốn của nền kinh tế.",
+                  "frequency": "Độ trễ từ 1-3 tháng (ngày công bố không cố định)",
+                  "last_updated": "2026-07-22T09:31:43.618Z",
+                  "source": "Ngân hàng Nhà nước - SBV",
+                  "note": null,
+                  "related_blog": null
+                }
+              },
+              {
+                "id": "229_tin_dung_hoat_dong_thuong_mai_van_tai_va_vien_thong_qtr",
+                "column_name": "tin_dung_hoat_dong_thuong_mai_van_tai_va_vien_thong_qtr",
+                "table_name": "229",
+                "name": "Hoạt động thương mại, vận tải và viễn thông",
+                "hasSub": false,
+                "level": 3,
+                "heading": 2,
+                "open": 1,
+                "dateType": "quy",
+                "yAxis": 17,
+                "data": [
+                  [
+                    1782777600000,
+                    5080910
+                  ],
+                  [
+                    1774915200000,
+                    4944365
+                  ],
+                  [
+                    1767139200000,
+                    4887503.37
+                  ],
+                  [
+                    1759190400000,
+                    4792723.84
+                  ],
+                  [
+                    1751241600000,
+                    4769010.25
+                  ],
+                  [
+                    1743379200000,
+                    4576678.48
+                  ],
+                  [
+                    1735603200000,
+                    4406032.67
+                  ],
+                  [
+                    1727654400000,
+                    4122737.65
+                  ],
+                  [
+                    1719705600000,
+                    3979042.17
+                  ],
+                  [
+                    1711843200000,
+                    3832676.93
+                  ],
+                  [
+                    1703980800000,
+                    3763479.39
+                  ],
+                  [
+                    1696032000000,
+                    3476791.73
+                  ],
+                  [
+                    1688083200000,
+                    3364177.58
+                  ],
+                  [
+                    1680220800000,
+                    3247968.39
+                  ],
+                  [
+                    1672444800000,
+                    3140655.22
+                  ],
+                  [
+                    1664496000000,
+                    3047214.5
+                  ],
+                  [
+                    1656547200000,
+                    3005107.95
+                  ],
+                  [
+                    1648684800000,
+                    2903868.17
+                  ],
+                  [
+                    1640908800000,
+                    2748462.9
+                  ]
+                ],
+                "time_frame": "quarterly",
+                "lingo": {
+                  "name": "Tín dụng Hoạt động thương mại, vận tải và viễn thông",
+                  "unit": "Tỷ VND",
+                  "description": "Chỉ số Tín dụng Hoạt động thương mại, vận tải và viễn thông là một thành phần của Tổng tín dụng trong nền kinh tế, phản ánh tổng số dư nợ tín dụng mà các tổ chức tín dụng (ngân hàng, tổ chức tài chính) cung cấp cho các hoạt động của ngành Hoạt động thương mại, vận tải và viễn thông. Đây là chỉ số quan trọng đánh giá mức độ hỗ trợ tài chính cho sản xuất, kinh doanh và tiêu dùng, cũng như khả năng hấp thụ vốn của nền kinh tế.",
+                  "frequency": "Độ trễ từ 1-3 tháng (ngày công bố không cố định)",
+                  "last_updated": "2026-07-22T09:31:43.618Z",
+                  "source": "Ngân hàng Nhà nước - SBV",
+                  "note": null,
+                  "related_blog": null
+                }
+              },
+              {
+                "id": "229_tin_dung_thuong_mai_qtr",
+                "column_name": "tin_dung_thuong_mai_qtr",
+                "table_name": "229",
+                "name": "Thương mại",
+                "hasSub": false,
+                "level": 4,
+                "heading": 3,
+                "open": 1,
+                "dateType": "quy",
+                "yAxis": 17,
+                "data": [
+                  [
+                    1782777600000,
+                    4534518
+                  ],
+                  [
+                    1774915200000,
+                    4444600
+                  ],
+                  [
+                    1767139200000,
+                    4411458.38
+                  ],
+                  [
+                    1759190400000,
+                    4350580.31
+                  ],
+                  [
+                    1751241600000,
+                    4329891.84
+                  ],
+                  [
+                    1743379200000,
+                    4165463.23
+                  ],
+                  [
+                    1735603200000,
+                    4024420.47
+                  ],
+                  [
+                    1727654400000,
+                    3778795.73
+                  ],
+                  [
+                    1719705600000,
+                    3650114.97
+                  ],
+                  [
+                    1711843200000,
+                    3514723.79
+                  ],
+                  [
+                    1703980800000,
+                    3445940.75
+                  ],
+                  [
+                    1696032000000,
+                    3174869.68
+                  ],
+                  [
+                    1688083200000,
+                    3068783.74
+                  ],
+                  [
+                    1680220800000,
+                    2973490.14
+                  ],
+                  [
+                    1672444800000,
+                    2872747.64
+                  ],
+                  [
+                    1664496000000,
+                    2774414.68
+                  ],
+                  [
+                    1656547200000,
+                    2726810.51
+                  ],
+                  [
+                    1648684800000,
+                    2625246.68
+                  ],
+                  [
+                    1640908800000,
+                    2480235.59
+                  ]
+                ],
+                "time_frame": "quarterly",
+                "lingo": {
+                  "name": "Tín dụng Thương mại",
+                  "unit": "Tỷ VND",
+                  "description": "Chỉ số Tín dụng Thương mại là một thành phần của Tổng tín dụng trong nền kinh tế, phản ánh tổng số dư nợ tín dụng mà các tổ chức tín dụng (ngân hàng, tổ chức tài chính) cung cấp cho các hoạt động của ngành Thương mại. Đây là chỉ số quan trọng đánh giá mức độ hỗ trợ tài chính cho sản xuất, kinh doanh và tiêu dùng, cũng như khả năng hấp thụ vốn của nền kinh tế.",
+                  "frequency": "Độ trễ từ 1-3 tháng (ngày công bố không cố định)",
+                  "last_updated": "2026-07-22T09:31:43.618Z",
+                  "source": "Ngân hàng Nhà nước - SBV",
+                  "note": null,
+                  "related_blog": null
+                }
+              },
+              {
+                "id": "229_tin_dung_van_tai_va_vien_thong_qtr",
+                "column_name": "tin_dung_van_tai_va_vien_thong_qtr",
+                "table_name": "229",
+                "name": "Vận tải và viễn thông",
+                "hasSub": false,
+                "level": 4,
+                "heading": 3,
+                "open": 1,
+                "dateType": "quy",
+                "yAxis": 17,
+                "data": [
+                  [
+                    1782777600000,
+                    546391
+                  ],
+                  [
+                    1774915200000,
+                    499765
+                  ],
+                  [
+                    1767139200000,
+                    476044.99
+                  ],
+                  [
+                    1759190400000,
+                    442143.53
+                  ],
+                  [
+                    1751241600000,
+                    439118.41
+                  ],
+                  [
+                    1743379200000,
+                    411215.24
+                  ],
+                  [
+                    1735603200000,
+                    381612.21
+                  ],
+                  [
+                    1727654400000,
+                    343941.92
+                  ],
+                  [
+                    1719705600000,
+                    328927.2
+                  ],
+                  [
+                    1711843200000,
+                    317953.13
+                  ],
+                  [
+                    1703980800000,
+                    317538.65
+                  ],
+                  [
+                    1696032000000,
+                    301922.06
+                  ],
+                  [
+                    1688083200000,
+                    295393.84
+                  ],
+                  [
+                    1680220800000,
+                    274478.24
+                  ],
+                  [
+                    1672444800000,
+                    267907.58
+                  ],
+                  [
+                    1664496000000,
+                    272799.83
+                  ],
+                  [
+                    1656547200000,
+                    278297.45
+                  ],
+                  [
+                    1648684800000,
+                    278621.5
+                  ],
+                  [
+                    1640908800000,
+                    268227.31
+                  ]
+                ],
+                "time_frame": "quarterly",
+                "lingo": {
+                  "name": "Tín dụng Vận tải và viễn thông",
+                  "unit": "Tỷ VND",
+                  "description": "Chỉ số Tín dụng Vận tải và viễn thông là một thành phần của Tổng tín dụng trong nền kinh tế, phản ánh tổng số dư nợ tín dụng mà các tổ chức tín dụng (ngân hàng, tổ chức tài chính) cung cấp cho các hoạt động của ngành Vận tải và viễn thông. Đây là chỉ số quan trọng đánh giá mức độ hỗ trợ tài chính cho sản xuất, kinh doanh và tiêu dùng, cũng như khả năng hấp thụ vốn của nền kinh tế.",
+                  "frequency": "Độ trễ từ 1-3 tháng (ngày công bố không cố định)",
+                  "last_updated": "2026-07-22T09:31:43.618Z",
+                  "source": "Ngân hàng Nhà nước - SBV",
+                  "note": null,
+                  "related_blog": null
+                }
+              },
+              {
+                "id": "229_tin_dung_cac_hoat_dong_dich_vu_khac_qtr",
+                "column_name": "tin_dung_cac_hoat_dong_dich_vu_khac_qtr",
+                "table_name": "229",
+                "name": "Các hoạt động dịch vụ khác",
+                "hasSub": false,
+                "level": 3,
+                "heading": 2,
+                "open": 1,
+                "dateType": "quy",
+                "yAxis": 17,
+                "data": [
+                  [
+                    1782777600000,
+                    9108831
+                  ],
+                  [
+                    1774915200000,
+                    8509988
+                  ],
+                  [
+                    1767139200000,
+                    8218809.55
+                  ],
+                  [
+                    1759190400000,
+                    7623871.93
+                  ],
+                  [
+                    1751241600000,
+                    7195859.53
+                  ],
+                  [
+                    1743379200000,
+                    6627167.34
+                  ],
+                  [
+                    1735603200000,
+                    6314575.73
+                  ],
+                  [
+                    1727654400000,
+                    5931897.15
+                  ],
+                  [
+                    1719705600000,
+                    5753065.34
+                  ],
+                  [
+                    1711843200000,
+                    5426972.92
+                  ],
+                  [
+                    1703980800000,
+                    5382528.73
+                  ],
+                  [
+                    1696032000000,
+                    5072980.4
+                  ],
+                  [
+                    1688083200000,
+                    4967511.18
+                  ],
+                  [
+                    1680220800000,
+                    4892808.43
+                  ],
+                  [
+                    1672444800000,
+                    4797047.09
+                  ],
+                  [
+                    1664496000000,
+                    4564657.63
+                  ],
+                  [
+                    1656547200000,
+                    4462045.74
+                  ],
+                  [
+                    1648684800000,
+                    4312961.49
+                  ],
+                  [
+                    1640908800000,
+                    3999872.45266781
+                  ]
+                ],
+                "time_frame": "quarterly",
+                "lingo": {
+                  "name": "Tín dụng Các hoạt động dịch vụ khác",
+                  "unit": "Tỷ VND",
+                  "description": "Chỉ số Tín dụng của Các hoạt động dịch vụ khác là một thành phần của Tổng tín dụng trong nền kinh tế, phản ánh tổng số dư nợ tín dụng mà các tổ chức tín dụng (ngân hàng, tổ chức tài chính) cung cấp cho Các hoạt động dịch vụ khác. Đây là chỉ số quan trọng đánh giá mức độ hỗ trợ tài chính cho sản xuất, kinh doanh và tiêu dùng, cũng như khả năng hấp thụ vốn của nền kinh tế.",
+                  "frequency": "Độ trễ từ 1-3 tháng (ngày công bố không cố định)",
+                  "last_updated": "2026-07-22T09:31:43.618Z",
+                  "source": "Ngân hàng Nhà nước - SBV",
+                  "note": null,
+                  "related_blog": null
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "yoy": {
+        "title": "Tín Dụng",
+        "headers": [
+          "06-2026",
+          "03-2026",
+          "12-2025",
+          "09-2025",
+          "06-2025",
+          "03-2025",
+          "12-2024",
+          "09-2024",
+          "06-2024",
+          "03-2024",
+          "12-2023",
+          "09-2023",
+          "06-2023",
+          "03-2023",
+          "12-2022",
+          "09-2022",
+          "06-2022",
+          "03-2022",
+          "12-2021"
+        ],
+        "parent": [
+          {
+            "title": "TÍN DỤNG",
+            "child": [
+              {
+                "id": "229_tong_tin_dung_trong_nen_kinh_te_qtr_yoy",
+                "column_name": "tong_tin_dung_trong_nen_kinh_te_qtr_yoy",
+                "table_name": "229",
+                "name": "Tổng tín dụng trong nền kinh tế",
+                "hasSub": false,
+                "level": 3,
+                "heading": 1,
+                "open": 1,
+                "dateType": "quy",
+                "yAxis": 1,
+                "data": [
+                  [
+                    1782777600000,
+                    17.405165246467988
+                  ],
+                  [
+                    1774915200000,
+                    18.244067660059805
+                  ],
+                  [
+                    1767139200000,
+                    19.074510259024223
+                  ],
+                  [
+                    1759190400000,
+                    20.0952642303945
+                  ],
+                  [
+                    1751241600000,
+                    19.219408648188534
+                  ],
+                  [
+                    1743379200000,
+                    17.912707335397172
+                  ],
+                  [
+                    1735603200000,
+                    15.087619878741766
+                  ],
+                  [
+                    1727654400000,
+                    16.079556676104502
+                  ],
+                  [
+                    1719705600000,
+                    15.28157302889368
+                  ],
+                  [
+                    1711843200000,
+                    12.505941721881463
+                  ],
+                  [
+                    1703980800000,
+                    13.791383002215408
+                  ],
+                  [
+                    1696032000000,
+                    9.979544981253884
+                  ],
+                  [
+                    1688083200000,
+                    9.268452359893665
+                  ],
+                  [
+                    1680220800000,
+                    10.52021992958101
+                  ],
+                  [
+                    1672444800000,
+                    14.181876534164118
+                  ],
+                  [
+                    1664496000000,
+                    16.94335885978788
+                  ],
+                  [
+                    1656547200000,
+                    16.798434471269474
+                  ],
+                  [
+                    1648684800000,
+                    16.943811769141327
+                  ],
+                  [
+                    1640908800000,
+                    13.606669209617838
+                  ]
+                ],
+                "time_frame": "quarterly",
+                "lingo": {
+                  "name": "Tổng tín dụng trong nền kinh tế",
+                  "unit": "%",
+                  "description": "Tổng tín dụng trong nền kinh tế là tổng lượng dư nợ tín dụng mà các tổ chức tín dụng (ngân hàng, tổ chức tài chính) cung cấp cho các ngành kinh tế, doanh nghiệp, tổ chức và cá nhân trong nền kinh tế Việt Nam. Chỉ số này giúp đánh giá mức độ tăng trưởng tín dụng, phản ánh sự phát triển của các hoạt động kinh tế và khả năng tiếp cận vốn của các doanh nghiệp và ngành nghề. Dữ liệu được thống kê từ trang web của SBV, cập nhật định kỳ hàng tháng và có độ trễ từ 2-3 tháng.",
+                  "frequency": "Độ trễ từ 1-3 tháng (ngày công bố không cố định)",
+                  "last_updated": "2026-07-22T09:31:43.618Z",
+                  "source": "Ngân hàng Nhà nước - SBV",
+                  "note": null,
+                  "related_blog": null
+                }
+              },
+              {
+                "id": "229_tin_dung_nong_nghiep_lam_nghiep_va_thuy_san_qtr_yoy",
+                "column_name": "tin_dung_nong_nghiep_lam_nghiep_va_thuy_san_qtr_yoy",
+                "table_name": "229",
+                "name": "Nông nghiệp, lâm nghiệp và thuỷ sản",
+                "hasSub": false,
+                "level": 3,
+                "heading": 2,
+                "open": 1,
+                "dateType": "quy",
+                "yAxis": 1,
+                "data": [
+                  [
+                    1782777600000,
+                    13.876740152510061
+                  ],
+                  [
+                    1774915200000,
+                    13.245359556747227
+                  ],
+                  [
+                    1767139200000,
+                    11.0141075437495
+                  ],
+                  [
+                    1759190400000,
+                    9.829433182832688
+                  ],
+                  [
+                    1751241600000,
+                    9.112552493475938
+                  ],
+                  [
+                    1743379200000,
+                    7.982614578246247
+                  ],
+                  [
+                    1735603200000,
+                    7.348501432413834
+                  ],
+                  [
+                    1727654400000,
+                    9.266886916585593
+                  ],
+                  [
+                    1719705600000,
+                    8.052509973451972
+                  ],
+                  [
+                    1711843200000,
+                    6.472293777154148
+                  ],
+                  [
+                    1703980800000,
+                    6.952033922804701
+                  ],
+                  [
+                    1696032000000,
+                    2.9488066564858917
+                  ],
+                  [
+                    1688083200000,
+                    2.852375747019531
+                  ],
+                  [
+                    1680220800000,
+                    5.1810520297358
+                  ],
+                  [
+                    1672444800000,
+                    7.92927145844009
+                  ],
+                  [
+                    1664496000000,
+                    11.64002354277256
+                  ],
+                  [
+                    1656547200000,
+                    12.334632378124134
+                  ],
+                  [
+                    1648684800000,
+                    9.588186103907216
+                  ],
+                  [
+                    1640908800000,
+                    6.364633810063336
+                  ]
+                ],
+                "time_frame": "quarterly",
+                "lingo": {
+                  "name": "Tín dụng Nông nghiệp, lâm nghiệp và thuỷ sản",
+                  "unit": "%",
+                  "description": "Chỉ số Tín dụng Nông nghiệp, lâm nghiệp và thuỷ sản là một thành phần của Tổng tín dụng trong nền kinh tế, phản ánh tổng số dư nợ tín dụng mà các tổ chức tín dụng (ngân hàng, tổ chức tài chính) cung cấp cho các hoạt động sản xuất của ngành Nông nghiệp, lâm nghiệp và thuỷ sản. Đây là chỉ số quan trọng đánh giá mức độ hỗ trợ tài chính cho sản xuất, kinh doanh và tiêu dùng, cũng như khả năng hấp thụ vốn của nền kinh tế.",
+                  "frequency": "Độ trễ từ 1-3 tháng (ngày công bố không cố định)",
+                  "last_updated": "2026-07-22T09:31:43.618Z",
+                  "source": "Ngân hàng Nhà nước - SBV",
+                  "note": null,
+                  "related_blog": null
+                }
+              },
+              {
+                "id": "229_tin_dung_cong_nghiep_va_xay_dung_qtr_yoy",
+                "column_name": "tin_dung_cong_nghiep_va_xay_dung_qtr_yoy",
+                "table_name": "229",
+                "name": "Công nghiệp và xây dựng",
+                "hasSub": false,
+                "level": 3,
+                "heading": 2,
+                "open": 1,
+                "dateType": "quy",
+                "yAxis": 1,
+                "data": [
+                  [
+                    1782777600000,
+                    14.872552165510688
+                  ],
+                  [
+                    1774915200000,
+                    14.36436377348006
+                  ],
+                  [
+                    1767139200000,
+                    12.403254444671983
+                  ],
+                  [
+                    1759190400000,
+                    13.728203288011986
+                  ],
+                  [
+                    1751241600000,
+                    12.078413880454015
+                  ],
+                  [
+                    1743379200000,
+                    12.542937551120506
+                  ],
+                  [
+                    1735603200000,
+                    11.601807301430945
+                  ],
+                  [
+                    1727654400000,
+                    14.019249280275691
+                  ],
+                  [
+                    1719705600000,
+                    13.393551625397372
+                  ],
+                  [
+                    1711843200000,
+                    11.052225037139207
+                  ],
+                  [
+                    1703980800000,
+                    12.089882343248926
+                  ],
+                  [
+                    1696032000000,
+                    6.240172749062678
+                  ],
+                  [
+                    1688083200000,
+                    5.510749567034323
+                  ],
+                  [
+                    1680220800000,
+                    6.546600288477755
+                  ],
+                  [
+                    1672444800000,
+                    7.89116942007686
+                  ],
+                  [
+                    1664496000000,
+                    10.5723837759802
+                  ],
+                  [
+                    1656547200000,
+                    11.916868607004405
+                  ],
+                  [
+                    1648684800000,
+                    12.387093312571862
+                  ],
+                  [
+                    1640908800000,
+                    10.932798799189204
+                  ]
+                ],
+                "time_frame": "quarterly",
+                "lingo": {
+                  "name": "Tín dụng Công nghiệp và xây dựng",
+                  "unit": "%",
+                  "description": "Chỉ số Tín dụng Công nghiệp và xây dựng là một thành phần của Tổng tín dụng trong nền kinh tế, phản ánh tổng số dư nợ tín dụng mà các tổ chức tín dụng (ngân hàng, tổ chức tài chính) cung cấp cho các hoạt động sản xuất của ngành Công nghiệp và xây dựng. Đây là chỉ số quan trọng đánh giá mức độ hỗ trợ tài chính cho sản xuất, kinh doanh và tiêu dùng, cũng như khả năng hấp thụ vốn của nền kinh tế.",
+                  "frequency": "Độ trễ từ 1-3 tháng (ngày công bố không cố định)",
+                  "last_updated": "2026-07-22T09:31:43.618Z",
+                  "source": "Ngân hàng Nhà nước - SBV",
+                  "note": null,
+                  "related_blog": null
+                }
+              },
+              {
+                "id": "229_tin_dung_cong_nghiep_qtr_yoy",
+                "column_name": "tin_dung_cong_nghiep_qtr_yoy",
+                "table_name": "229",
+                "name": "Công nghiệp",
+                "hasSub": false,
+                "level": 4,
+                "heading": 3,
+                "open": 1,
+                "dateType": "quy",
+                "yAxis": 1,
+                "data": [
+                  [
+                    1782777600000,
+                    13.856273868082091
+                  ],
+                  [
+                    1774915200000,
+                    11.92057374731311
+                  ],
+                  [
+                    1767139200000,
+                    10.07087050526808
+                  ],
+                  [
+                    1759190400000,
+                    13.691440724242174
+                  ],
+                  [
+                    1751241600000,
+                    12.080052871557797
+                  ],
+                  [
+                    1743379200000,
+                    13.147678051024336
+                  ],
+                  [
+                    1735603200000,
+                    13.123357057906325
+                  ],
+                  [
+                    1727654400000,
+                    15.865568582546707
+                  ],
+                  [
+                    1719705600000,
+                    16.056012430879573
+                  ],
+                  [
+                    1711843200000,
+                    12.88350698495011
+                  ],
+                  [
+                    1703980800000,
+                    12.642646869185615
+                  ],
+                  [
+                    1696032000000,
+                    4.90046699322686
+                  ],
+                  [
+                    1688083200000,
+                    2.705878184664412
+                  ],
+                  [
+                    1680220800000,
+                    3.9341949396094256
+                  ],
+                  [
+                    1672444800000,
+                    6.1095812944631955
+                  ],
+                  [
+                    1664496000000,
+                    9.589296011940407
+                  ],
+                  [
+                    1656547200000,
+                    12.915301247094813
+                  ],
+                  [
+                    1648684800000,
+                    15.132179454985684
+                  ],
+                  [
+                    1640908800000,
+                    14.293078055794695
+                  ]
+                ],
+                "time_frame": "quarterly",
+                "lingo": {
+                  "name": "Tín dụng Công nghiệp",
+                  "unit": "%",
+                  "description": "Chỉ số Tín dụng Công nghiệp là một thành phần của Tổng tín dụng trong nền kinh tế, phản ánh tổng số dư nợ tín dụng mà các tổ chức tín dụng (ngân hàng, tổ chức tài chính) cung cấp cho các hoạt động sản xuất của ngành Công nghiệp. Đây là chỉ số quan trọng đánh giá mức độ hỗ trợ tài chính cho sản xuất, kinh doanh và tiêu dùng, cũng như khả năng hấp thụ vốn của nền kinh tế.",
+                  "frequency": "Độ trễ từ 1-3 tháng (ngày công bố không cố định)",
+                  "last_updated": "2026-07-22T09:31:43.618Z",
+                  "source": "Ngân hàng Nhà nước - SBV",
+                  "note": null,
+                  "related_blog": null
+                }
+              },
+              {
+                "id": "229_tin_dung_xay_dung_qtr_yoy",
+                "column_name": "tin_dung_xay_dung_qtr_yoy",
+                "table_name": "229",
+                "name": "Xây dựng",
+                "hasSub": false,
+                "level": 4,
+                "heading": 3,
+                "open": 1,
+                "dateType": "quy",
+                "yAxis": 1,
+                "data": [
+                  [
+                    1782777600000,
+                    17.138629190047965
+                  ],
+                  [
+                    1774915200000,
+                    19.85930124144342
+                  ],
+                  [
+                    1767139200000,
+                    17.630315292089733
+                  ],
+                  [
+                    1759190400000,
+                    13.810000250240984
+                  ],
+                  [
+                    1751241600000,
+                    12.074760340044824
+                  ],
+                  [
+                    1743379200000,
+                    11.206487505245875
+                  ],
+                  [
+                    1735603200000,
+                    8.336191993775689
+                  ],
+                  [
+                    1727654400000,
+                    10.115018867564473
+                  ],
+                  [
+                    1719705600000,
+                    7.875568639825614
+                  ],
+                  [
+                    1711843200000,
+                    7.208629336712358
+                  ],
+                  [
+                    1703980800000,
+                    10.921641277157423
+                  ],
+                  [
+                    1696032000000,
+                    9.188932270728722
+                  ],
+                  [
+                    1688083200000,
+                    11.84092174190965
+                  ],
+                  [
+                    1680220800000,
+                    12.480525075947678
+                  ],
+                  [
+                    1672444800000,
+                    11.860541376962196
+                  ],
+                  [
+                    1664496000000,
+                    12.799597468147583
+                  ],
+                  [
+                    1656547200000,
+                    9.727178007541326
+                  ],
+                  [
+                    1648684800000,
+                    6.6131628139020515
+                  ],
+                  [
+                    1640908800000,
+                    4.11295008833541
+                  ]
+                ],
+                "time_frame": "quarterly",
+                "lingo": {
+                  "name": "Tín dụng Xây dựng",
+                  "unit": "%",
+                  "description": "Chỉ số Tín dụng Xây dựng là một thành phần của Tổng tín dụng trong nền kinh tế, phản ánh tổng số dư nợ tín dụng mà các tổ chức tín dụng (ngân hàng, tổ chức tài chính) cung cấp cho các hoạt động sản xuất của ngành Xây dựng. Đây là chỉ số quan trọng đánh giá mức độ hỗ trợ tài chính cho sản xuất, kinh doanh và tiêu dùng, cũng như khả năng hấp thụ vốn của nền kinh tế.",
+                  "frequency": "Độ trễ từ 1-3 tháng (ngày công bố không cố định)",
+                  "last_updated": "2026-07-22T09:31:43.618Z",
+                  "source": "Ngân hàng Nhà nước - SBV",
+                  "note": null,
+                  "related_blog": null
+                }
+              },
+              {
+                "id": "229_tin_dung_hoat_dong_thuong_mai_van_tai_va_vien_thong_qtr_yoy",
+                "column_name": "tin_dung_hoat_dong_thuong_mai_van_tai_va_vien_thong_qtr_yoy",
+                "table_name": "229",
+                "name": "Hoạt động thương mại, vận tải và viễn thông",
+                "hasSub": false,
+                "level": 3,
+                "heading": 2,
+                "open": 1,
+                "dateType": "quy",
+                "yAxis": 1,
+                "data": [
+                  [
+                    1782777600000,
+                    6.540135869911372
+                  ],
+                  [
+                    1774915200000,
+                    8.033916334887468
+                  ],
+                  [
+                    1767139200000,
+                    10.927533589985845
+                  ],
+                  [
+                    1759190400000,
+                    16.25100229212984
+                  ],
+                  [
+                    1751241600000,
+                    19.853222113501758
+                  ],
+                  [
+                    1743379200000,
+                    19.412060123731855
+                  ],
+                  [
+                    1735603200000,
+                    17.07338378701735
+                  ],
+                  [
+                    1727654400000,
+                    18.57879246623726
+                  ],
+                  [
+                    1719705600000,
+                    18.276817301659797
+                  ],
+                  [
+                    1711843200000,
+                    18.002285422488363
+                  ],
+                  [
+                    1703980800000,
+                    19.831026533374143
+                  ],
+                  [
+                    1696032000000,
+                    14.09737417566108
+                  ],
+                  [
+                    1688083200000,
+                    11.948643309136365
+                  ],
+                  [
+                    1680220800000,
+                    11.849719059388297
+                  ],
+                  [
+                    1672444800000,
+                    14.269514789521098
+                  ],
+                  [
+                    1664496000000,
+                    18.1224594193117
+                  ],
+                  [
+                    1656547200000,
+                    18.82029821581974
+                  ],
+                  [
+                    1648684800000,
+                    20.231485513570235
+                  ],
+                  [
+                    1640908800000,
+                    17.175982919710453
+                  ]
+                ],
+                "time_frame": "quarterly",
+                "lingo": {
+                  "name": "Tín dụng Hoạt động thương mại, vận tải và viễn thông",
+                  "unit": "%",
+                  "description": "Chỉ số Tín dụng Hoạt động thương mại, vận tải và viễn thông là một thành phần của Tổng tín dụng trong nền kinh tế, phản ánh tổng số dư nợ tín dụng mà các tổ chức tín dụng (ngân hàng, tổ chức tài chính) cung cấp cho các hoạt động của ngành Hoạt động thương mại, vận tải và viễn thông. Đây là chỉ số quan trọng đánh giá mức độ hỗ trợ tài chính cho sản xuất, kinh doanh và tiêu dùng, cũng như khả năng hấp thụ vốn của nền kinh tế.",
+                  "frequency": "Độ trễ từ 1-3 tháng (ngày công bố không cố định)",
+                  "last_updated": "2026-07-22T09:31:43.618Z",
+                  "source": "Ngân hàng Nhà nước - SBV",
+                  "note": null,
+                  "related_blog": null
+                }
+              },
+              {
+                "id": "229_tin_dung_thuong_mai_qtr_yoy",
+                "column_name": "tin_dung_thuong_mai_qtr_yoy",
+                "table_name": "229",
+                "name": "Thương mại",
+                "hasSub": false,
+                "level": 4,
+                "heading": 3,
+                "open": 1,
+                "dateType": "quy",
+                "yAxis": 1,
+                "data": [
+                  [
+                    1782777600000,
+                    4.7258954163621825
+                  ],
+                  [
+                    1774915200000,
+                    6.701217957936458
+                  ],
+                  [
+                    1767139200000,
+                    9.617233410006973
+                  ],
+                  [
+                    1759190400000,
+                    15.131396901414398
+                  ],
+                  [
+                    1751241600000,
+                    18.623437222855465
+                  ],
+                  [
+                    1743379200000,
+                    18.514667976228083
+                  ],
+                  [
+                    1735603200000,
+                    16.78727993219269
+                  ],
+                  [
+                    1727654400000,
+                    19.022073687131623
+                  ],
+                  [
+                    1719705600000,
+                    18.94337559283339
+                  ],
+                  [
+                    1711843200000,
+                    18.201965519213047
+                  ],
+                  [
+                    1703980800000,
+                    19.952783252482288
+                  ],
+                  [
+                    1696032000000,
+                    14.43385528799177
+                  ],
+                  [
+                    1688083200000,
+                    12.541143902221519
+                  ],
+                  [
+                    1680220800000,
+                    13.265170951477966
+                  ],
+                  [
+                    1672444800000,
+                    15.825595422570338
+                  ],
+                  [
+                    1664496000000,
+                    19.319487371548007
+                  ],
+                  [
+                    1656547200000,
+                    19.775260783182237
+                  ],
+                  [
+                    1648684800000,
+                    20.849627376890556
+                  ],
+                  [
+                    1640908800000,
+                    17.868328405344847
+                  ]
+                ],
+                "time_frame": "quarterly",
+                "lingo": {
+                  "name": "Tín dụng Thương mại",
+                  "unit": "%",
+                  "description": "Chỉ số Tín dụng Thương mại là một thành phần của Tổng tín dụng trong nền kinh tế, phản ánh tổng số dư nợ tín dụng mà các tổ chức tín dụng (ngân hàng, tổ chức tài chính) cung cấp cho các hoạt động của ngành Thương mại. Đây là chỉ số quan trọng đánh giá mức độ hỗ trợ tài chính cho sản xuất, kinh doanh và tiêu dùng, cũng như khả năng hấp thụ vốn của nền kinh tế.",
+                  "frequency": "Độ trễ từ 1-3 tháng (ngày công bố không cố định)",
+                  "last_updated": "2026-07-22T09:31:43.618Z",
+                  "source": "Ngân hàng Nhà nước - SBV",
+                  "note": null,
+                  "related_blog": null
+                }
+              },
+              {
+                "id": "229_tin_dung_van_tai_va_vien_thong_qtr_yoy",
+                "column_name": "tin_dung_van_tai_va_vien_thong_qtr_yoy",
+                "table_name": "229",
+                "name": "Vận tải và viễn thông",
+                "hasSub": false,
+                "level": 4,
+                "heading": 3,
+                "open": 1,
+                "dateType": "quy",
+                "yAxis": 1,
+                "data": [
+                  [
+                    1782777600000,
+                    24.429080529782397
+                  ],
+                  [
+                    1774915200000,
+                    21.533676621518214
+                  ],
+                  [
+                    1767139200000,
+                    24.745743853426482
+                  ],
+                  [
+                    1759190400000,
+                    28.55180025743883
+                  ],
+                  [
+                    1751241600000,
+                    33.5001818031467
+                  ],
+                  [
+                    1743379200000,
+                    29.332030793343655
+                  ],
+                  [
+                    1735603200000,
+                    20.178192481450672
+                  ],
+                  [
+                    1727654400000,
+                    13.917452735980929
+                  ],
+                  [
+                    1719705600000,
+                    11.352085067176754
+                  ],
+                  [
+                    1711843200000,
+                    15.839102582412368
+                  ],
+                  [
+                    1703980800000,
+                    18.52544448350435
+                  ],
+                  [
+                    1696032000000,
+                    10.675310904702528
+                  ],
+                  [
+                    1688083200000,
+                    6.1432075644243245
+                  ],
+                  [
+                    1680220800000,
+                    -1.4870568136342688
+                  ],
+                  [
+                    1672444800000,
+                    -0.11920113578292035
+                  ],
+                  [
+                    1664496000000,
+                    7.1864260722814155
+                  ],
+                  [
+                    1656547200000,
+                    10.21059644002651
+                  ],
+                  [
+                    1648684800000,
+                    14.703405481395194
+                  ],
+                  [
+                    1640908800000,
+                    11.139498105020017
+                  ]
+                ],
+                "time_frame": "quarterly",
+                "lingo": {
+                  "name": "Tín dụng Vận tải và viễn thông",
+                  "unit": "%",
+                  "description": "Chỉ số Tín dụng Vận tải và viễn thông là một thành phần của Tổng tín dụng trong nền kinh tế, phản ánh tổng số dư nợ tín dụng mà các tổ chức tín dụng (ngân hàng, tổ chức tài chính) cung cấp cho các hoạt động của ngành Vận tải và viễn thông. Đây là chỉ số quan trọng đánh giá mức độ hỗ trợ tài chính cho sản xuất, kinh doanh và tiêu dùng, cũng như khả năng hấp thụ vốn của nền kinh tế.",
+                  "frequency": "Độ trễ từ 1-3 tháng (ngày công bố không cố định)",
+                  "last_updated": "2026-07-22T09:31:43.618Z",
+                  "source": "Ngân hàng Nhà nước - SBV",
+                  "note": null,
+                  "related_blog": null
+                }
+              },
+              {
+                "id": "229_tin_dung_cac_hoat_dong_dich_vu_khac_qtr_yoy",
+                "column_name": "tin_dung_cac_hoat_dong_dich_vu_khac_qtr_yoy",
+                "table_name": "229",
+                "name": "Các hoạt động dịch vụ khác",
+                "hasSub": false,
+                "level": 3,
+                "heading": 2,
+                "open": 1,
+                "dateType": "quy",
+                "yAxis": 1,
+                "data": [
+                  [
+                    1782777600000,
+                    26.584335922966517
+                  ],
+                  [
+                    1774915200000,
+                    28.410640072957627
+                  ],
+                  [
+                    1767139200000,
+                    30.156164110173705
+                  ],
+                  [
+                    1759190400000,
+                    28.523333045314164
+                  ],
+                  [
+                    1751241600000,
+                    25.078703347388025
+                  ],
+                  [
+                    1743379200000,
+                    22.115356713443855
+                  ],
+                  [
+                    1735603200000,
+                    17.316154669182794
+                  ],
+                  [
+                    1727654400000,
+                    16.931205766140934
+                  ],
+                  [
+                    1719705600000,
+                    15.813837785866847
+                  ],
+                  [
+                    1711843200000,
+                    10.917339144627004
+                  ],
+                  [
+                    1703980800000,
+                    12.205042581727099
+                  ],
+                  [
+                    1696032000000,
+                    11.136054688070885
+                  ],
+                  [
+                    1688083200000,
+                    11.328109783114847
+                  ],
+                  [
+                    1680220800000,
+                    13.44428744250159
+                  ],
+                  [
+                    1672444800000,
+                    19.930001437933242
+                  ],
+                  [
+                    1664496000000,
+                    22.028883229852838
+                  ],
+                  [
+                    1656547200000,
+                    19.976992724956922
+                  ],
+                  [
+                    1648684800000,
+                    19.705771466441636
+                  ],
+                  [
+                    1640908800000,
+                    14.79612943977704
+                  ]
+                ],
+                "time_frame": "quarterly",
+                "lingo": {
+                  "name": "Tín dụng Các hoạt động dịch vụ khác",
+                  "unit": "%",
+                  "description": "Chỉ số Tín dụng của Các hoạt động dịch vụ khác là một thành phần của Tổng tín dụng trong nền kinh tế, phản ánh tổng số dư nợ tín dụng mà các tổ chức tín dụng (ngân hàng, tổ chức tài chính) cung cấp cho Các hoạt động dịch vụ khác. Đây là chỉ số quan trọng đánh giá mức độ hỗ trợ tài chính cho sản xuất, kinh doanh và tiêu dùng, cũng như khả năng hấp thụ vốn của nền kinh tế.",
+                  "frequency": "Độ trễ từ 1-3 tháng (ngày công bố không cố định)",
+                  "last_updated": "2026-07-22T09:31:43.618Z",
+                  "source": "Ngân hàng Nhà nước - SBV",
+                  "note": null,
+                  "related_blog": null
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "yearly": {
+      "value": {
+        "title": "Tín Dụng",
+        "headers": [
+          "12-2025",
+          "12-2024",
+          "12-2023",
+          "12-2022",
+          "12-2021",
+          "12-2020",
+          "12-2019",
+          "12-2018",
+          "12-2017",
+          "12-2016",
+          "12-2015",
+          "12-2014",
+          "12-2013",
+          "12-2012",
+          "12-2011",
+          "12-2010",
+          "12-2009",
+          "12-2008",
+          "12-2007",
+          "12-2006"
+        ],
+        "parent": [
+          {
+            "title": "TÍN DỤNG (Tỷ VND)",
+            "child": [
+              {
+                "id": "229_tong_tin_dung_trong_nen_kinh_te_yrl",
+                "column_name": "tong_tin_dung_trong_nen_kinh_te_yrl",
+                "table_name": "229",
+                "name": "Tổng tín dụng trong nền kinh tế",
+                "hasSub": false,
+                "level": 3,
+                "heading": 1,
+                "open": 1,
+                "dateType": "nam",
+                "yAxis": 17,
+                "data": [
+                  [
+                    1767139200000,
+                    18594930.02
+                  ],
+                  [
+                    1735603200000,
+                    15616213.73
+                  ],
+                  [
+                    1703980800000,
+                    13568977.92
+                  ],
+                  [
+                    1672444800000,
+                    11924433.61
+                  ],
+                  [
+                    1640908800000,
+                    10443368.0474958
+                  ],
+                  [
+                    1609372800000,
+                    9192566
+                  ],
+                  [
+                    1577750400000,
+                    8195393
+                  ],
+                  [
+                    1546214400000,
+                    7211175
+                  ],
+                  [
+                    1514678400000,
+                    6512018
+                  ],
+                  [
+                    1483142400000,
+                    5505405.96
+                  ],
+                  [
+                    1451520000000,
+                    4655890
+                  ],
+                  [
+                    1419984000000,
+                    3970548
+                  ],
+                  [
+                    1388448000000,
+                    3477985
+                  ],
+                  [
+                    1356912000000,
+                    3090904
+                  ],
+                  [
+                    1325289600000,
+                    2785213
+                  ],
+                  [
+                    1293753600000,
+                    2511463
+                  ],
+                  [
+                    1262217600000,
+                    1933531
+                  ],
+                  [
+                    1230681600000,
+                    1403754.17453173
+                  ],
+                  [
+                    1199059200000,
+                    1123003.33962538
+                  ],
+                  [
+                    1167523200000,
+                    741256.32978573
+                  ]
+                ],
+                "time_frame": "yearly",
+                "lingo": {
+                  "name": "Tổng tín dụng trong nền kinh tế",
+                  "unit": "Tỷ VND",
+                  "description": "Tổng tín dụng trong nền kinh tế là tổng lượng dư nợ tín dụng mà các tổ chức tín dụng (ngân hàng, tổ chức tài chính) cung cấp cho các ngành kinh tế, doanh nghiệp, tổ chức và cá nhân trong nền kinh tế Việt Nam. Chỉ số này giúp đánh giá mức độ tăng trưởng tín dụng, phản ánh sự phát triển của các hoạt động kinh tế và khả năng tiếp cận vốn của các doanh nghiệp và ngành nghề. Dữ liệu được thống kê từ trang web của SBV, cập nhật định kỳ hàng tháng và có độ trễ từ 2-3 tháng.",
+                  "frequency": "Độ trễ từ 1-3 tháng (ngày công bố không cố định)",
+                  "last_updated": "2026-07-22T09:31:43.618Z",
+                  "source": "Ngân hàng Nhà nước - SBV",
+                  "note": null,
+                  "related_blog": null
+                }
+              },
+              {
+                "id": "229_tin_dung_nong_nghiep_lam_nghiep_va_thuy_san_yrl",
+                "column_name": "tin_dung_nong_nghiep_lam_nghiep_va_thuy_san_yrl",
+                "table_name": "229",
+                "name": "Nông nghiệp, lâm nghiệp và thuỷ sản",
+                "hasSub": false,
+                "level": 3,
+                "heading": 2,
+                "open": 1,
+                "dateType": "nam",
+                "yAxis": 17,
+                "data": [
+                  [
+                    1767139200000,
+                    1135005.66
+                  ],
+                  [
+                    1735603200000,
+                    1022397.68
+                  ],
+                  [
+                    1703980800000,
+                    952409.83
+                  ],
+                  [
+                    1672444800000,
+                    890501.84
+                  ],
+                  [
+                    1640908800000,
+                    825079.08
+                  ],
+                  [
+                    1609372800000,
+                    775708.1
+                  ],
+                  [
+                    1577750400000,
+                    716259.43
+                  ],
+                  [
+                    1546214400000,
+                    666986.94
+                  ],
+                  [
+                    1514678400000,
+                    636831.88
+                  ],
+                  [
+                    1483142400000,
+                    555639.82
+                  ],
+                  [
+                    1451520000000,
+                    465479
+                  ],
+                  [
+                    1419984000000,
+                    391174
+                  ],
+                  [
+                    1388448000000,
+                    366121
+                  ],
+                  [
+                    1356912000000,
+                    297862
+                  ],
+                  [
+                    1325289600000,
+                    null
+                  ],
+                  [
+                    1293753600000,
+                    null
+                  ],
+                  [
+                    1262217600000,
+                    null
+                  ],
+                  [
+                    1230681600000,
+                    null
+                  ],
+                  [
+                    1199059200000,
+                    null
+                  ],
+                  [
+                    1167523200000,
+                    null
+                  ]
+                ],
+                "time_frame": "yearly",
+                "lingo": {
+                  "name": "Tín dụng Nông nghiệp, lâm nghiệp và thuỷ sản",
+                  "unit": "Tỷ VND",
+                  "description": "Chỉ số Tín dụng Nông nghiệp, lâm nghiệp và thuỷ sản là một thành phần của Tổng tín dụng trong nền kinh tế, phản ánh tổng số dư nợ tín dụng mà các tổ chức tín dụng (ngân hàng, tổ chức tài chính) cung cấp cho các hoạt động sản xuất của ngành Nông nghiệp, lâm nghiệp và thuỷ sản. Đây là chỉ số quan trọng đánh giá mức độ hỗ trợ tài chính cho sản xuất, kinh doanh và tiêu dùng, cũng như khả năng hấp thụ vốn của nền kinh tế.",
+                  "frequency": "Độ trễ từ 1-3 tháng (ngày công bố không cố định)",
+                  "last_updated": "2026-07-22T09:31:43.618Z",
+                  "source": "Ngân hàng Nhà nước - SBV",
+                  "note": null,
+                  "related_blog": null
+                }
+              },
+              {
+                "id": "229_tin_dung_cong_nghiep_va_xay_dung_yrl",
+                "column_name": "tin_dung_cong_nghiep_va_xay_dung_yrl",
+                "table_name": "229",
+                "name": "Công nghiệp và xây dựng",
+                "hasSub": false,
+                "level": 3,
+                "heading": 2,
+                "open": 1,
+                "dateType": "nam",
+                "yAxis": 17,
+                "data": [
+                  [
+                    1767139200000,
+                    4353611.45
+                  ],
+                  [
+                    1735603200000,
+                    3873207.65
+                  ],
+                  [
+                    1703980800000,
+                    3470559.97
+                  ],
+                  [
+                    1672444800000,
+                    3096229.47
+                  ],
+                  [
+                    1640908800000,
+                    2869770.98
+                  ],
+                  [
+                    1609372800000,
+                    2586945.44
+                  ],
+                  [
+                    1577750400000,
+                    2360289.48
+                  ],
+                  [
+                    1546214400000,
+                    2132915.68
+                  ],
+                  [
+                    1514678400000,
+                    2059751.74
+                  ],
+                  [
+                    1483142400000,
+                    1692442.67
+                  ],
+                  [
+                    1451520000000,
+                    1537038
+                  ],
+                  [
+                    1419984000000,
+                    1402205
+                  ],
+                  [
+                    1388448000000,
+                    1313251
+                  ],
+                  [
+                    1356912000000,
+                    1192709
+                  ],
+                  [
+                    1325289600000,
+                    null
+                  ],
+                  [
+                    1293753600000,
+                    null
+                  ],
+                  [
+                    1262217600000,
+                    null
+                  ],
+                  [
+                    1230681600000,
+                    null
+                  ],
+                  [
+                    1199059200000,
+                    null
+                  ],
+                  [
+                    1167523200000,
+                    null
+                  ]
+                ],
+                "time_frame": "yearly",
+                "lingo": {
+                  "name": "Tín dụng Công nghiệp và xây dựng",
+                  "unit": "Tỷ VND",
+                  "description": "Chỉ số Tín dụng Công nghiệp và xây dựng là một thành phần của Tổng tín dụng trong nền kinh tế, phản ánh tổng số dư nợ tín dụng mà các tổ chức tín dụng (ngân hàng, tổ chức tài chính) cung cấp cho các hoạt động sản xuất của ngành Công nghiệp và xây dựng. Đây là chỉ số quan trọng đánh giá mức độ hỗ trợ tài chính cho sản xuất, kinh doanh và tiêu dùng, cũng như khả năng hấp thụ vốn của nền kinh tế.",
+                  "frequency": "Độ trễ từ 1-3 tháng (ngày công bố không cố định)",
+                  "last_updated": "2026-07-22T09:31:43.618Z",
+                  "source": "Ngân hàng Nhà nước - SBV",
+                  "note": null,
+                  "related_blog": null
+                }
+              },
+              {
+                "id": "229_tin_dung_cong_nghiep_yrl",
+                "column_name": "tin_dung_cong_nghiep_yrl",
+                "table_name": "229",
+                "name": "Công nghiệp",
+                "hasSub": false,
+                "level": 4,
+                "heading": 3,
+                "open": 1,
+                "dateType": "nam",
+                "yAxis": 17,
+                "data": [
+                  [
+                    1767139200000,
+                    2947887.19
+                  ],
+                  [
+                    1735603200000,
+                    2678171.96
+                  ],
+                  [
+                    1703980800000,
+                    2367479.21
+                  ],
+                  [
+                    1672444800000,
+                    2101760.99
+                  ],
+                  [
+                    1640908800000,
+                    1980745.72
+                  ],
+                  [
+                    1609372800000,
+                    1733040.84
+                  ],
+                  [
+                    1577750400000,
+                    1558258.77
+                  ],
+                  [
+                    1546214400000,
+                    1432715.08
+                  ],
+                  [
+                    1514678400000,
+                    1415365.99
+                  ],
+                  [
+                    1483142400000,
+                    1187643.92
+                  ],
+                  [
+                    1451520000000,
+                    1084512
+                  ],
+                  [
+                    1419984000000,
+                    1021792
+                  ],
+                  [
+                    1388448000000,
+                    969039
+                  ],
+                  [
+                    1356912000000,
+                    904928
+                  ],
+                  [
+                    1325289600000,
+                    null
+                  ],
+                  [
+                    1293753600000,
+                    null
+                  ],
+                  [
+                    1262217600000,
+                    null
+                  ],
+                  [
+                    1230681600000,
+                    null
+                  ],
+                  [
+                    1199059200000,
+                    null
+                  ],
+                  [
+                    1167523200000,
+                    null
+                  ]
+                ],
+                "time_frame": "yearly",
+                "lingo": {
+                  "name": "Tín dụng Công nghiệp",
+                  "unit": "Tỷ VND",
+                  "description": "Chỉ số Tín dụng Công nghiệp là một thành phần của Tổng tín dụng trong nền kinh tế, phản ánh tổng số dư nợ tín dụng mà các tổ chức tín dụng (ngân hàng, tổ chức tài chính) cung cấp cho các hoạt động sản xuất của ngành Công nghiệp. Đây là chỉ số quan trọng đánh giá mức độ hỗ trợ tài chính cho sản xuất, kinh doanh và tiêu dùng, cũng như khả năng hấp thụ vốn của nền kinh tế.",
+                  "frequency": "Độ trễ từ 1-3 tháng (ngày công bố không cố định)",
+                  "last_updated": "2026-07-22T09:31:43.618Z",
+                  "source": "Ngân hàng Nhà nước - SBV",
+                  "note": null,
+                  "related_blog": null
+                }
+              },
+              {
+                "id": "229_tin_dung_xay_dung_yrl",
+                "column_name": "tin_dung_xay_dung_yrl",
+                "table_name": "229",
+                "name": "Xây dựng",
+                "hasSub": false,
+                "level": 4,
+                "heading": 3,
+                "open": 1,
+                "dateType": "nam",
+                "yAxis": 17,
+                "data": [
+                  [
+                    1767139200000,
+                    1405724.25
+                  ],
+                  [
+                    1735603200000,
+                    1195035.69
+                  ],
+                  [
+                    1703980800000,
+                    1103080.76
+                  ],
+                  [
+                    1672444800000,
+                    994468.48
+                  ],
+                  [
+                    1640908800000,
+                    889025.27
+                  ],
+                  [
+                    1609372800000,
+                    853904.6
+                  ],
+                  [
+                    1577750400000,
+                    802030.71
+                  ],
+                  [
+                    1546214400000,
+                    700200.6
+                  ],
+                  [
+                    1514678400000,
+                    644385.75
+                  ],
+                  [
+                    1483142400000,
+                    504798.75
+                  ],
+                  [
+                    1451520000000,
+                    452526
+                  ],
+                  [
+                    1419984000000,
+                    380413
+                  ],
+                  [
+                    1388448000000,
+                    344212
+                  ],
+                  [
+                    1356912000000,
+                    287781
+                  ],
+                  [
+                    1325289600000,
+                    null
+                  ],
+                  [
+                    1293753600000,
+                    null
+                  ],
+                  [
+                    1262217600000,
+                    null
+                  ],
+                  [
+                    1230681600000,
+                    null
+                  ],
+                  [
+                    1199059200000,
+                    null
+                  ],
+                  [
+                    1167523200000,
+                    null
+                  ]
+                ],
+                "time_frame": "yearly",
+                "lingo": {
+                  "name": "Tín dụng Xây dựng",
+                  "unit": "Tỷ VND",
+                  "description": "Chỉ số Tín dụng Xây dựng là một thành phần của Tổng tín dụng trong nền kinh tế, phản ánh tổng số dư nợ tín dụng mà các tổ chức tín dụng (ngân hàng, tổ chức tài chính) cung cấp cho các hoạt động sản xuất của ngành Xây dựng. Đây là chỉ số quan trọng đánh giá mức độ hỗ trợ tài chính cho sản xuất, kinh doanh và tiêu dùng, cũng như khả năng hấp thụ vốn của nền kinh tế.",
+                  "frequency": "Độ trễ từ 1-3 tháng (ngày công bố không cố định)",
+                  "last_updated": "2026-07-22T09:31:43.618Z",
+                  "source": "Ngân hàng Nhà nước - SBV",
+                  "note": null,
+                  "related_blog": null
+                }
+              },
+              {
+                "id": "229_tin_dung_hoat_dong_thuong_mai_van_tai_va_vien_thong_yrl",
+                "column_name": "tin_dung_hoat_dong_thuong_mai_van_tai_va_vien_thong_yrl",
+                "table_name": "229",
+                "name": "Hoạt động thương mại, vận tải và viễn thông",
+                "hasSub": false,
+                "level": 3,
+                "heading": 2,
+                "open": 1,
+                "dateType": "nam",
+                "yAxis": 17,
+                "data": [
+                  [
+                    1767139200000,
+                    4887503.37
+                  ],
+                  [
+                    1735603200000,
+                    4406032.67
+                  ],
+                  [
+                    1703980800000,
+                    3763479.39
+                  ],
+                  [
+                    1672444800000,
+                    3140655.22
+                  ],
+                  [
+                    1640908800000,
+                    2748462.9
+                  ],
+                  [
+                    1609372800000,
+                    2345585.53
+                  ],
+                  [
+                    1577750400000,
+                    2070461.89
+                  ],
+                  [
+                    1546214400000,
+                    1784173.71
+                  ],
+                  [
+                    1514678400000,
+                    1547600.9
+                  ],
+                  [
+                    1483142400000,
+                    1200235.93
+                  ],
+                  [
+                    1451520000000,
+                    979711
+                  ],
+                  [
+                    1419984000000,
+                    878863
+                  ],
+                  [
+                    1388448000000,
+                    798833
+                  ],
+                  [
+                    1356912000000,
+                    736197
+                  ],
+                  [
+                    1325289600000,
+                    null
+                  ],
+                  [
+                    1293753600000,
+                    null
+                  ],
+                  [
+                    1262217600000,
+                    null
+                  ],
+                  [
+                    1230681600000,
+                    null
+                  ],
+                  [
+                    1199059200000,
+                    null
+                  ],
+                  [
+                    1167523200000,
+                    null
+                  ]
+                ],
+                "time_frame": "yearly",
+                "lingo": {
+                  "name": "Tín dụng Hoạt động thương mại, vận tải và viễn thông",
+                  "unit": "Tỷ VND",
+                  "description": "Chỉ số Tín dụng Hoạt động thương mại, vận tải và viễn thông là một thành phần của Tổng tín dụng trong nền kinh tế, phản ánh tổng số dư nợ tín dụng mà các tổ chức tín dụng (ngân hàng, tổ chức tài chính) cung cấp cho các hoạt động của ngành Hoạt động thương mại, vận tải và viễn thông. Đây là chỉ số quan trọng đánh giá mức độ hỗ trợ tài chính cho sản xuất, kinh doanh và tiêu dùng, cũng như khả năng hấp thụ vốn của nền kinh tế.",
+                  "frequency": "Độ trễ từ 1-3 tháng (ngày công bố không cố định)",
+                  "last_updated": "2026-07-22T09:31:43.618Z",
+                  "source": "Ngân hàng Nhà nước - SBV",
+                  "note": null,
+                  "related_blog": null
+                }
+              },
+              {
+                "id": "229_tin_dung_thuong_mai_yrl",
+                "column_name": "tin_dung_thuong_mai_yrl",
+                "table_name": "229",
+                "name": "Thương mại",
+                "hasSub": false,
+                "level": 4,
+                "heading": 3,
+                "open": 1,
+                "dateType": "nam",
+                "yAxis": 17,
+                "data": [
+                  [
+                    1767139200000,
+                    4411458.38
+                  ],
+                  [
+                    1735603200000,
+                    4024420.47
+                  ],
+                  [
+                    1703980800000,
+                    3445940.75
+                  ],
+                  [
+                    1672444800000,
+                    2872747.64
+                  ],
+                  [
+                    1640908800000,
+                    2480235.59
+                  ],
+                  [
+                    1609372800000,
+                    2104242.61
+                  ],
+                  [
+                    1577750400000,
+                    1848649.97
+                  ],
+                  [
+                    1546214400000,
+                    1568443.13
+                  ],
+                  [
+                    1514678400000,
+                    1306039.57
+                  ],
+                  [
+                    1483142400000,
+                    1003208.31
+                  ],
+                  [
+                    1451520000000,
+                    826886
+                  ],
+                  [
+                    1419984000000,
+                    744105
+                  ],
+                  [
+                    1388448000000,
+                    672040
+                  ],
+                  [
+                    1356912000000,
+                    603882
+                  ],
+                  [
+                    1325289600000,
+                    null
+                  ],
+                  [
+                    1293753600000,
+                    null
+                  ],
+                  [
+                    1262217600000,
+                    null
+                  ],
+                  [
+                    1230681600000,
+                    null
+                  ],
+                  [
+                    1199059200000,
+                    null
+                  ],
+                  [
+                    1167523200000,
+                    null
+                  ]
+                ],
+                "time_frame": "yearly",
+                "lingo": {
+                  "name": "Tín dụng Thương mại",
+                  "unit": "Tỷ VND",
+                  "description": "Chỉ số Tín dụng Thương mại là một thành phần của Tổng tín dụng trong nền kinh tế, phản ánh tổng số dư nợ tín dụng mà các tổ chức tín dụng (ngân hàng, tổ chức tài chính) cung cấp cho các hoạt động của ngành Thương mại. Đây là chỉ số quan trọng đánh giá mức độ hỗ trợ tài chính cho sản xuất, kinh doanh và tiêu dùng, cũng như khả năng hấp thụ vốn của nền kinh tế.",
+                  "frequency": "Độ trễ từ 1-3 tháng (ngày công bố không cố định)",
+                  "last_updated": "2026-07-22T09:31:43.618Z",
+                  "source": "Ngân hàng Nhà nước - SBV",
+                  "note": null,
+                  "related_blog": null
+                }
+              },
+              {
+                "id": "229_tin_dung_van_tai_va_vien_thong_yrl",
+                "column_name": "tin_dung_van_tai_va_vien_thong_yrl",
+                "table_name": "229",
+                "name": "Vận tải và viễn thông",
+                "hasSub": false,
+                "level": 4,
+                "heading": 3,
+                "open": 1,
+                "dateType": "nam",
+                "yAxis": 17,
+                "data": [
+                  [
+                    1767139200000,
+                    476044.99
+                  ],
+                  [
+                    1735603200000,
+                    381612.21
+                  ],
+                  [
+                    1703980800000,
+                    317538.65
+                  ],
+                  [
+                    1672444800000,
+                    267907.58
+                  ],
+                  [
+                    1640908800000,
+                    268227.31
+                  ],
+                  [
+                    1609372800000,
+                    241342.92
+                  ],
+                  [
+                    1577750400000,
+                    221811.92
+                  ],
+                  [
+                    1546214400000,
+                    215730.58
+                  ],
+                  [
+                    1514678400000,
+                    241561.33
+                  ],
+                  [
+                    1483142400000,
+                    197027.62
+                  ],
+                  [
+                    1451520000000,
+                    152826
+                  ],
+                  [
+                    1419984000000,
+                    134758
+                  ],
+                  [
+                    1388448000000,
+                    126793
+                  ],
+                  [
+                    1356912000000,
+                    132315
+                  ],
+                  [
+                    1325289600000,
+                    null
+                  ],
+                  [
+                    1293753600000,
+                    null
+                  ],
+                  [
+                    1262217600000,
+                    null
+                  ],
+                  [
+                    1230681600000,
+                    null
+                  ],
+                  [
+                    1199059200000,
+                    null
+                  ],
+                  [
+                    1167523200000,
+                    null
+                  ]
+                ],
+                "time_frame": "yearly",
+                "lingo": {
+                  "name": "Tín dụng Vận tải và viễn thông",
+                  "unit": "Tỷ VND",
+                  "description": "Chỉ số Tín dụng Vận tải và viễn thông là một thành phần của Tổng tín dụng trong nền kinh tế, phản ánh tổng số dư nợ tín dụng mà các tổ chức tín dụng (ngân hàng, tổ chức tài chính) cung cấp cho các hoạt động của ngành Vận tải và viễn thông. Đây là chỉ số quan trọng đánh giá mức độ hỗ trợ tài chính cho sản xuất, kinh doanh và tiêu dùng, cũng như khả năng hấp thụ vốn của nền kinh tế.",
+                  "frequency": "Độ trễ từ 1-3 tháng (ngày công bố không cố định)",
+                  "last_updated": "2026-07-22T09:31:43.618Z",
+                  "source": "Ngân hàng Nhà nước - SBV",
+                  "note": null,
+                  "related_blog": null
+                }
+              },
+              {
+                "id": "229_tin_dung_cac_hoat_dong_dich_vu_khac_yrl",
+                "column_name": "tin_dung_cac_hoat_dong_dich_vu_khac_yrl",
+                "table_name": "229",
+                "name": "Các hoạt động dịch vụ khác",
+                "hasSub": false,
+                "level": 3,
+                "heading": 2,
+                "open": 1,
+                "dateType": "nam",
+                "yAxis": 17,
+                "data": [
+                  [
+                    1767139200000,
+                    8218809.55
+                  ],
+                  [
+                    1735603200000,
+                    6314575.73
+                  ],
+                  [
+                    1703980800000,
+                    5382528.73
+                  ],
+                  [
+                    1672444800000,
+                    4797047.09
+                  ],
+                  [
+                    1640908800000,
+                    3999872.45266781
+                  ],
+                  [
+                    1609372800000,
+                    3484326.93
+                  ],
+                  [
+                    1577750400000,
+                    3048382.2
+                  ],
+                  [
+                    1546214400000,
+                    2627098.67
+                  ],
+                  [
+                    1514678400000,
+                    2267833.48
+                  ],
+                  [
+                    1483142400000,
+                    2057087.54
+                  ],
+                  [
+                    1451520000000,
+                    1673661
+                  ],
+                  [
+                    1419984000000,
+                    1298306
+                  ],
+                  [
+                    1388448000000,
+                    999780
+                  ],
+                  [
+                    1356912000000,
+                    864136
+                  ],
+                  [
+                    1325289600000,
+                    null
+                  ],
+                  [
+                    1293753600000,
+                    null
+                  ],
+                  [
+                    1262217600000,
+                    null
+                  ],
+                  [
+                    1230681600000,
+                    null
+                  ],
+                  [
+                    1199059200000,
+                    null
+                  ],
+                  [
+                    1167523200000,
+                    null
+                  ]
+                ],
+                "time_frame": "yearly",
+                "lingo": {
+                  "name": "Tín dụng Các hoạt động dịch vụ khác",
+                  "unit": "Tỷ VND",
+                  "description": "Chỉ số Tín dụng của Các hoạt động dịch vụ khác là một thành phần của Tổng tín dụng trong nền kinh tế, phản ánh tổng số dư nợ tín dụng mà các tổ chức tín dụng (ngân hàng, tổ chức tài chính) cung cấp cho Các hoạt động dịch vụ khác. Đây là chỉ số quan trọng đánh giá mức độ hỗ trợ tài chính cho sản xuất, kinh doanh và tiêu dùng, cũng như khả năng hấp thụ vốn của nền kinh tế.",
+                  "frequency": "Độ trễ từ 1-3 tháng (ngày công bố không cố định)",
+                  "last_updated": "2026-07-22T09:31:43.618Z",
+                  "source": "Ngân hàng Nhà nước - SBV",
+                  "note": null,
+                  "related_blog": null
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "yoy": {
+        "title": "Tín Dụng",
+        "headers": [
+          "12-2025",
+          "12-2024",
+          "12-2023",
+          "12-2022",
+          "12-2021",
+          "12-2020",
+          "12-2019",
+          "12-2018",
+          "12-2017",
+          "12-2016",
+          "12-2015",
+          "12-2014",
+          "12-2013",
+          "12-2012",
+          "12-2011",
+          "12-2010",
+          "12-2009",
+          "12-2008",
+          "12-2007",
+          "12-2006"
+        ],
+        "parent": [
+          {
+            "title": "TÍN DỤNG",
+            "child": [
+              {
+                "id": "229_tong_tin_dung_trong_nen_kinh_te_yrl_yoy",
+                "column_name": "tong_tin_dung_trong_nen_kinh_te_yrl_yoy",
+                "table_name": "229",
+                "name": "Tổng tín dụng trong nền kinh tế",
+                "hasSub": false,
+                "level": 3,
+                "heading": 1,
+                "open": 1,
+                "dateType": "nam",
+                "yAxis": 1,
+                "data": [
+                  [
+                    1767139200000,
+                    19.074510259024223
+                  ],
+                  [
+                    1735603200000,
+                    15.087619878741766
+                  ],
+                  [
+                    1703980800000,
+                    13.791383002215408
+                  ],
+                  [
+                    1672444800000,
+                    14.181876534164118
+                  ],
+                  [
+                    1640908800000,
+                    13.606669209617838
+                  ],
+                  [
+                    1609372800000,
+                    12.167482389191097
+                  ],
+                  [
+                    1577750400000,
+                    13.64851081827858
+                  ],
+                  [
+                    1546214400000,
+                    10.73641074087941
+                  ],
+                  [
+                    1514678400000,
+                    18.284065649538395
+                  ],
+                  [
+                    1483142400000,
+                    18.24604876833431
+                  ],
+                  [
+                    1451520000000,
+                    17.26064009300479
+                  ],
+                  [
+                    1419984000000,
+                    14.162309498172077
+                  ],
+                  [
+                    1388448000000,
+                    12.523229450024974
+                  ],
+                  [
+                    1356912000000,
+                    10.975498103735703
+                  ],
+                  [
+                    1325289600000,
+                    10.900021222689716
+                  ],
+                  [
+                    1293753600000,
+                    29.889978490130243
+                  ],
+                  [
+                    1262217600000,
+                    37.73999999999966
+                  ],
+                  [
+                    1230681600000,
+                    25.000000000000444
+                  ],
+                  [
+                    1199059200000,
+                    51.49999999999988
+                  ],
+                  [
+                    1167523200000,
+                    25.500000000000057
+                  ]
+                ],
+                "time_frame": "yearly",
+                "lingo": {
+                  "name": "Tổng tín dụng trong nền kinh tế",
+                  "unit": "%",
+                  "description": "Tổng tín dụng trong nền kinh tế là tổng lượng dư nợ tín dụng mà các tổ chức tín dụng (ngân hàng, tổ chức tài chính) cung cấp cho các ngành kinh tế, doanh nghiệp, tổ chức và cá nhân trong nền kinh tế Việt Nam. Chỉ số này giúp đánh giá mức độ tăng trưởng tín dụng, phản ánh sự phát triển của các hoạt động kinh tế và khả năng tiếp cận vốn của các doanh nghiệp và ngành nghề. Dữ liệu được thống kê từ trang web của SBV, cập nhật định kỳ hàng tháng và có độ trễ từ 2-3 tháng.",
+                  "frequency": "Độ trễ từ 1-3 tháng (ngày công bố không cố định)",
+                  "last_updated": "2026-07-22T09:31:43.618Z",
+                  "source": "Ngân hàng Nhà nước - SBV",
+                  "note": null,
+                  "related_blog": null
+                }
+              },
+              {
+                "id": "229_tin_dung_nong_nghiep_lam_nghiep_va_thuy_san_yrl_yoy",
+                "column_name": "tin_dung_nong_nghiep_lam_nghiep_va_thuy_san_yrl_yoy",
+                "table_name": "229",
+                "name": "Nông nghiệp, lâm nghiệp và thuỷ sản",
+                "hasSub": false,
+                "level": 3,
+                "heading": 2,
+                "open": 1,
+                "dateType": "nam",
+                "yAxis": 1,
+                "data": [
+                  [
+                    1767139200000,
+                    11.0141075437495
+                  ],
+                  [
+                    1735603200000,
+                    7.348501432413834
+                  ],
+                  [
+                    1703980800000,
+                    6.952033922804701
+                  ],
+                  [
+                    1672444800000,
+                    7.92927145844009
+                  ],
+                  [
+                    1640908800000,
+                    6.364633810063336
+                  ],
+                  [
+                    1609372800000,
+                    8.299879556210499
+                  ],
+                  [
+                    1577750400000,
+                    7.387324555410357
+                  ],
+                  [
+                    1546214400000,
+                    4.735168094913833
+                  ],
+                  [
+                    1514678400000,
+                    14.612354456525466
+                  ],
+                  [
+                    1483142400000,
+                    19.369471018026573
+                  ],
+                  [
+                    1451520000000,
+                    18.995383128735543
+                  ],
+                  [
+                    1419984000000,
+                    6.842819723534022
+                  ],
+                  [
+                    1388448000000,
+                    22.91631695214562
+                  ],
+                  [
+                    1356912000000,
+                    null
+                  ],
+                  [
+                    1325289600000,
+                    null
+                  ],
+                  [
+                    1293753600000,
+                    null
+                  ],
+                  [
+                    1262217600000,
+                    null
+                  ],
+                  [
+                    1230681600000,
+                    null
+                  ],
+                  [
+                    1199059200000,
+                    null
+                  ],
+                  [
+                    1167523200000,
+                    null
+                  ]
+                ],
+                "time_frame": "yearly",
+                "lingo": {
+                  "name": "Tín dụng Nông nghiệp, lâm nghiệp và thuỷ sản",
+                  "unit": "%",
+                  "description": "Chỉ số Tín dụng Nông nghiệp, lâm nghiệp và thuỷ sản là một thành phần của Tổng tín dụng trong nền kinh tế, phản ánh tổng số dư nợ tín dụng mà các tổ chức tín dụng (ngân hàng, tổ chức tài chính) cung cấp cho các hoạt động sản xuất của ngành Nông nghiệp, lâm nghiệp và thuỷ sản. Đây là chỉ số quan trọng đánh giá mức độ hỗ trợ tài chính cho sản xuất, kinh doanh và tiêu dùng, cũng như khả năng hấp thụ vốn của nền kinh tế.",
+                  "frequency": "Độ trễ từ 1-3 tháng (ngày công bố không cố định)",
+                  "last_updated": "2026-07-22T09:31:43.618Z",
+                  "source": "Ngân hàng Nhà nước - SBV",
+                  "note": null,
+                  "related_blog": null
+                }
+              },
+              {
+                "id": "229_tin_dung_cong_nghiep_va_xay_dung_yrl_yoy",
+                "column_name": "tin_dung_cong_nghiep_va_xay_dung_yrl_yoy",
+                "table_name": "229",
+                "name": "Công nghiệp và xây dựng",
+                "hasSub": false,
+                "level": 3,
+                "heading": 2,
+                "open": 1,
+                "dateType": "nam",
+                "yAxis": 1,
+                "data": [
+                  [
+                    1767139200000,
+                    12.403254444671983
+                  ],
+                  [
+                    1735603200000,
+                    11.601807301430945
+                  ],
+                  [
+                    1703980800000,
+                    12.089882343248926
+                  ],
+                  [
+                    1672444800000,
+                    7.89116942007686
+                  ],
+                  [
+                    1640908800000,
+                    10.932798799189204
+                  ],
+                  [
+                    1609372800000,
+                    9.602888201662442
+                  ],
+                  [
+                    1577750400000,
+                    10.660233882288296
+                  ],
+                  [
+                    1546214400000,
+                    3.55207564966058
+                  ],
+                  [
+                    1514678400000,
+                    21.702895850528293
+                  ],
+                  [
+                    1483142400000,
+                    10.110658942719697
+                  ],
+                  [
+                    1451520000000,
+                    9.615783712082049
+                  ],
+                  [
+                    1419984000000,
+                    6.7735718457476946
+                  ],
+                  [
+                    1388448000000,
+                    10.1065725168503
+                  ],
+                  [
+                    1356912000000,
+                    null
+                  ],
+                  [
+                    1325289600000,
+                    null
+                  ],
+                  [
+                    1293753600000,
+                    null
+                  ],
+                  [
+                    1262217600000,
+                    null
+                  ],
+                  [
+                    1230681600000,
+                    null
+                  ],
+                  [
+                    1199059200000,
+                    null
+                  ],
+                  [
+                    1167523200000,
+                    null
+                  ]
+                ],
+                "time_frame": "yearly",
+                "lingo": {
+                  "name": "Tín dụng Công nghiệp và xây dựng",
+                  "unit": "%",
+                  "description": "Chỉ số Tín dụng Công nghiệp và xây dựng là một thành phần của Tổng tín dụng trong nền kinh tế, phản ánh tổng số dư nợ tín dụng mà các tổ chức tín dụng (ngân hàng, tổ chức tài chính) cung cấp cho các hoạt động sản xuất của ngành Công nghiệp và xây dựng. Đây là chỉ số quan trọng đánh giá mức độ hỗ trợ tài chính cho sản xuất, kinh doanh và tiêu dùng, cũng như khả năng hấp thụ vốn của nền kinh tế.",
+                  "frequency": "Độ trễ từ 1-3 tháng (ngày công bố không cố định)",
+                  "last_updated": "2026-07-22T09:31:43.618Z",
+                  "source": "Ngân hàng Nhà nước - SBV",
+                  "note": null,
+                  "related_blog": null
+                }
+              },
+              {
+                "id": "229_tin_dung_cong_nghiep_yrl_yoy",
+                "column_name": "tin_dung_cong_nghiep_yrl_yoy",
+                "table_name": "229",
+                "name": "Công nghiệp",
+                "hasSub": false,
+                "level": 4,
+                "heading": 3,
+                "open": 1,
+                "dateType": "nam",
+                "yAxis": 1,
+                "data": [
+                  [
+                    1767139200000,
+                    10.07087050526808
+                  ],
+                  [
+                    1735603200000,
+                    13.123357057906325
+                  ],
+                  [
+                    1703980800000,
+                    12.642646869185615
+                  ],
+                  [
+                    1672444800000,
+                    6.1095812944631955
+                  ],
+                  [
+                    1640908800000,
+                    14.293078055794695
+                  ],
+                  [
+                    1609372800000,
+                    11.216498399684927
+                  ],
+                  [
+                    1577750400000,
+                    8.762641766847313
+                  ],
+                  [
+                    1546214400000,
+                    1.2257670540748222
+                  ],
+                  [
+                    1514678400000,
+                    19.174271527445708
+                  ],
+                  [
+                    1483142400000,
+                    9.509523177244695
+                  ],
+                  [
+                    1451520000000,
+                    6.138235570448791
+                  ],
+                  [
+                    1419984000000,
+                    5.443846945272579
+                  ],
+                  [
+                    1388448000000,
+                    7.084652038615236
+                  ],
+                  [
+                    1356912000000,
+                    null
+                  ],
+                  [
+                    1325289600000,
+                    null
+                  ],
+                  [
+                    1293753600000,
+                    null
+                  ],
+                  [
+                    1262217600000,
+                    null
+                  ],
+                  [
+                    1230681600000,
+                    null
+                  ],
+                  [
+                    1199059200000,
+                    null
+                  ],
+                  [
+                    1167523200000,
+                    null
+                  ]
+                ],
+                "time_frame": "yearly",
+                "lingo": {
+                  "name": "Tín dụng Công nghiệp",
+                  "unit": "%",
+                  "description": "Chỉ số Tín dụng Công nghiệp là một thành phần của Tổng tín dụng trong nền kinh tế, phản ánh tổng số dư nợ tín dụng mà các tổ chức tín dụng (ngân hàng, tổ chức tài chính) cung cấp cho các hoạt động sản xuất của ngành Công nghiệp. Đây là chỉ số quan trọng đánh giá mức độ hỗ trợ tài chính cho sản xuất, kinh doanh và tiêu dùng, cũng như khả năng hấp thụ vốn của nền kinh tế.",
+                  "frequency": "Độ trễ từ 1-3 tháng (ngày công bố không cố định)",
+                  "last_updated": "2026-07-22T09:31:43.618Z",
+                  "source": "Ngân hàng Nhà nước - SBV",
+                  "note": null,
+                  "related_blog": null
+                }
+              },
+              {
+                "id": "229_tin_dung_xay_dung_yrl_yoy",
+                "column_name": "tin_dung_xay_dung_yrl_yoy",
+                "table_name": "229",
+                "name": "Xây dựng",
+                "hasSub": false,
+                "level": 4,
+                "heading": 3,
+                "open": 1,
+                "dateType": "nam",
+                "yAxis": 1,
+                "data": [
+                  [
+                    1767139200000,
+                    17.630315292089733
+                  ],
+                  [
+                    1735603200000,
+                    8.336191993775689
+                  ],
+                  [
+                    1703980800000,
+                    10.921641277157423
+                  ],
+                  [
+                    1672444800000,
+                    11.860541376962196
+                  ],
+                  [
+                    1640908800000,
+                    4.11295008833541
+                  ],
+                  [
+                    1609372800000,
+                    6.46781842056896
+                  ],
+                  [
+                    1577750400000,
+                    14.542990965731818
+                  ],
+                  [
+                    1546214400000,
+                    8.661713887993328
+                  ],
+                  [
+                    1514678400000,
+                    27.652009835602808
+                  ],
+                  [
+                    1483142400000,
+                    11.551325227721732
+                  ],
+                  [
+                    1451520000000,
+                    18.956502538031028
+                  ],
+                  [
+                    1419984000000,
+                    10.517065064553233
+                  ],
+                  [
+                    1388448000000,
+                    19.60900823890388
+                  ],
+                  [
+                    1356912000000,
+                    null
+                  ],
+                  [
+                    1325289600000,
+                    null
+                  ],
+                  [
+                    1293753600000,
+                    null
+                  ],
+                  [
+                    1262217600000,
+                    null
+                  ],
+                  [
+                    1230681600000,
+                    null
+                  ],
+                  [
+                    1199059200000,
+                    null
+                  ],
+                  [
+                    1167523200000,
+                    null
+                  ]
+                ],
+                "time_frame": "yearly",
+                "lingo": {
+                  "name": "Tín dụng Xây dựng",
+                  "unit": "%",
+                  "description": "Chỉ số Tín dụng Xây dựng là một thành phần của Tổng tín dụng trong nền kinh tế, phản ánh tổng số dư nợ tín dụng mà các tổ chức tín dụng (ngân hàng, tổ chức tài chính) cung cấp cho các hoạt động sản xuất của ngành Xây dựng. Đây là chỉ số quan trọng đánh giá mức độ hỗ trợ tài chính cho sản xuất, kinh doanh và tiêu dùng, cũng như khả năng hấp thụ vốn của nền kinh tế.",
+                  "frequency": "Độ trễ từ 1-3 tháng (ngày công bố không cố định)",
+                  "last_updated": "2026-07-22T09:31:43.618Z",
+                  "source": "Ngân hàng Nhà nước - SBV",
+                  "note": null,
+                  "related_blog": null
+                }
+              },
+              {
+                "id": "229_tin_dung_hoat_dong_thuong_mai_van_tai_va_vien_thong_yrl_yoy",
+                "column_name": "tin_dung_hoat_dong_thuong_mai_van_tai_va_vien_thong_yrl_yoy",
+                "table_name": "229",
+                "name": "Hoạt động thương mại, vận tải và viễn thông",
+                "hasSub": false,
+                "level": 3,
+                "heading": 2,
+                "open": 1,
+                "dateType": "nam",
+                "yAxis": 1,
+                "data": [
+                  [
+                    1767139200000,
+                    10.927533589985845
+                  ],
+                  [
+                    1735603200000,
+                    17.07338378701735
+                  ],
+                  [
+                    1703980800000,
+                    19.831026533374143
+                  ],
+                  [
+                    1672444800000,
+                    14.269514789521098
+                  ],
+                  [
+                    1640908800000,
+                    17.175982919710453
+                  ],
+                  [
+                    1609372800000,
+                    13.28803207288205
+                  ],
+                  [
+                    1577750400000,
+                    16.045981307503965
+                  ],
+                  [
+                    1546214400000,
+                    15.286422358632645
+                  ],
+                  [
+                    1514678400000,
+                    28.941390714740557
+                  ],
+                  [
+                    1483142400000,
+                    22.509181789323573
+                  ],
+                  [
+                    1451520000000,
+                    11.474825996770832
+                  ],
+                  [
+                    1419984000000,
+                    10.018364288906433
+                  ],
+                  [
+                    1388448000000,
+                    8.508048796721535
+                  ],
+                  [
+                    1356912000000,
+                    null
+                  ],
+                  [
+                    1325289600000,
+                    null
+                  ],
+                  [
+                    1293753600000,
+                    null
+                  ],
+                  [
+                    1262217600000,
+                    null
+                  ],
+                  [
+                    1230681600000,
+                    null
+                  ],
+                  [
+                    1199059200000,
+                    null
+                  ],
+                  [
+                    1167523200000,
+                    null
+                  ]
+                ],
+                "time_frame": "yearly",
+                "lingo": {
+                  "name": "Tín dụng Hoạt động thương mại, vận tải và viễn thông",
+                  "unit": "%",
+                  "description": "Chỉ số Tín dụng Hoạt động thương mại, vận tải và viễn thông là một thành phần của Tổng tín dụng trong nền kinh tế, phản ánh tổng số dư nợ tín dụng mà các tổ chức tín dụng (ngân hàng, tổ chức tài chính) cung cấp cho các hoạt động của ngành Hoạt động thương mại, vận tải và viễn thông. Đây là chỉ số quan trọng đánh giá mức độ hỗ trợ tài chính cho sản xuất, kinh doanh và tiêu dùng, cũng như khả năng hấp thụ vốn của nền kinh tế.",
+                  "frequency": "Độ trễ từ 1-3 tháng (ngày công bố không cố định)",
+                  "last_updated": "2026-07-22T09:31:43.618Z",
+                  "source": "Ngân hàng Nhà nước - SBV",
+                  "note": null,
+                  "related_blog": null
+                }
+              },
+              {
+                "id": "229_tin_dung_thuong_mai_yrl_yoy",
+                "column_name": "tin_dung_thuong_mai_yrl_yoy",
+                "table_name": "229",
+                "name": "Thương mại",
+                "hasSub": false,
+                "level": 4,
+                "heading": 3,
+                "open": 1,
+                "dateType": "nam",
+                "yAxis": 1,
+                "data": [
+                  [
+                    1767139200000,
+                    9.617233410006973
+                  ],
+                  [
+                    1735603200000,
+                    16.78727993219269
+                  ],
+                  [
+                    1703980800000,
+                    19.952783252482288
+                  ],
+                  [
+                    1672444800000,
+                    15.825595422570338
+                  ],
+                  [
+                    1640908800000,
+                    17.868328405344847
+                  ],
+                  [
+                    1609372800000,
+                    13.825907778528768
+                  ],
+                  [
+                    1577750400000,
+                    17.865285303650126
+                  ],
+                  [
+                    1546214400000,
+                    20.09154745594728
+                  ],
+                  [
+                    1514678400000,
+                    30.186279059032106
+                  ],
+                  [
+                    1483142400000,
+                    21.32365404662795
+                  ],
+                  [
+                    1451520000000,
+                    11.124908447060555
+                  ],
+                  [
+                    1419984000000,
+                    10.723320040473784
+                  ],
+                  [
+                    1388448000000,
+                    11.286642092329302
+                  ],
+                  [
+                    1356912000000,
+                    null
+                  ],
+                  [
+                    1325289600000,
+                    null
+                  ],
+                  [
+                    1293753600000,
+                    null
+                  ],
+                  [
+                    1262217600000,
+                    null
+                  ],
+                  [
+                    1230681600000,
+                    null
+                  ],
+                  [
+                    1199059200000,
+                    null
+                  ],
+                  [
+                    1167523200000,
+                    null
+                  ]
+                ],
+                "time_frame": "yearly",
+                "lingo": {
+                  "name": "Tín dụng Thương mại",
+                  "unit": "%",
+                  "description": "Chỉ số Tín dụng Thương mại là một thành phần của Tổng tín dụng trong nền kinh tế, phản ánh tổng số dư nợ tín dụng mà các tổ chức tín dụng (ngân hàng, tổ chức tài chính) cung cấp cho các hoạt động của ngành Thương mại. Đây là chỉ số quan trọng đánh giá mức độ hỗ trợ tài chính cho sản xuất, kinh doanh và tiêu dùng, cũng như khả năng hấp thụ vốn của nền kinh tế.",
+                  "frequency": "Độ trễ từ 1-3 tháng (ngày công bố không cố định)",
+                  "last_updated": "2026-07-22T09:31:43.618Z",
+                  "source": "Ngân hàng Nhà nước - SBV",
+                  "note": null,
+                  "related_blog": null
+                }
+              },
+              {
+                "id": "229_tin_dung_van_tai_va_vien_thong_yrl_yoy",
+                "column_name": "tin_dung_van_tai_va_vien_thong_yrl_yoy",
+                "table_name": "229",
+                "name": "Vận tải và viễn thông",
+                "hasSub": false,
+                "level": 4,
+                "heading": 3,
+                "open": 1,
+                "dateType": "nam",
+                "yAxis": 1,
+                "data": [
+                  [
+                    1767139200000,
+                    24.745743853426482
+                  ],
+                  [
+                    1735603200000,
+                    20.178192481450672
+                  ],
+                  [
+                    1703980800000,
+                    18.52544448350435
+                  ],
+                  [
+                    1672444800000,
+                    -0.11920113578292035
+                  ],
+                  [
+                    1640908800000,
+                    11.139498105020017
+                  ],
+                  [
+                    1609372800000,
+                    8.805207583073082
+                  ],
+                  [
+                    1577750400000,
+                    2.8189513049100556
+                  ],
+                  [
+                    1546214400000,
+                    -10.693247135209926
+                  ],
+                  [
+                    1514678400000,
+                    22.602775184514744
+                  ],
+                  [
+                    1483142400000,
+                    28.92284035438997
+                  ],
+                  [
+                    1451520000000,
+                    13.407738316092544
+                  ],
+                  [
+                    1419984000000,
+                    6.281892533499489
+                  ],
+                  [
+                    1388448000000,
+                    -4.173374145032682
+                  ],
+                  [
+                    1356912000000,
+                    null
+                  ],
+                  [
+                    1325289600000,
+                    null
+                  ],
+                  [
+                    1293753600000,
+                    null
+                  ],
+                  [
+                    1262217600000,
+                    null
+                  ],
+                  [
+                    1230681600000,
+                    null
+                  ],
+                  [
+                    1199059200000,
+                    null
+                  ],
+                  [
+                    1167523200000,
+                    null
+                  ]
+                ],
+                "time_frame": "yearly",
+                "lingo": {
+                  "name": "Tín dụng Vận tải và viễn thông",
+                  "unit": "%",
+                  "description": "Chỉ số Tín dụng Vận tải và viễn thông là một thành phần của Tổng tín dụng trong nền kinh tế, phản ánh tổng số dư nợ tín dụng mà các tổ chức tín dụng (ngân hàng, tổ chức tài chính) cung cấp cho các hoạt động của ngành Vận tải và viễn thông. Đây là chỉ số quan trọng đánh giá mức độ hỗ trợ tài chính cho sản xuất, kinh doanh và tiêu dùng, cũng như khả năng hấp thụ vốn của nền kinh tế.",
+                  "frequency": "Độ trễ từ 1-3 tháng (ngày công bố không cố định)",
+                  "last_updated": "2026-07-22T09:31:43.618Z",
+                  "source": "Ngân hàng Nhà nước - SBV",
+                  "note": null,
+                  "related_blog": null
+                }
+              },
+              {
+                "id": "229_tin_dung_cac_hoat_dong_dich_vu_khac_yrl_yoy",
+                "column_name": "tin_dung_cac_hoat_dong_dich_vu_khac_yrl_yoy",
+                "table_name": "229",
+                "name": "Các hoạt động dịch vụ khác",
+                "hasSub": false,
+                "level": 3,
+                "heading": 2,
+                "open": 1,
+                "dateType": "nam",
+                "yAxis": 1,
+                "data": [
+                  [
+                    1767139200000,
+                    30.156164110173705
+                  ],
+                  [
+                    1735603200000,
+                    17.316154669182794
+                  ],
+                  [
+                    1703980800000,
+                    12.205042581727099
+                  ],
+                  [
+                    1672444800000,
+                    19.930001437933242
+                  ],
+                  [
+                    1640908800000,
+                    14.79612943977704
+                  ],
+                  [
+                    1609372800000,
+                    14.300855384866118
+                  ],
+                  [
+                    1577750400000,
+                    16.036075645381075
+                  ],
+                  [
+                    1546214400000,
+                    15.841779970547032
+                  ],
+                  [
+                    1514678400000,
+                    10.244869792950073
+                  ],
+                  [
+                    1483142400000,
+                    22.909450599613667
+                  ],
+                  [
+                    1451520000000,
+                    28.91113497126254
+                  ],
+                  [
+                    1419984000000,
+                    29.859169017183774
+                  ],
+                  [
+                    1388448000000,
+                    15.697066202542187
+                  ],
+                  [
+                    1356912000000,
+                    null
+                  ],
+                  [
+                    1325289600000,
+                    null
+                  ],
+                  [
+                    1293753600000,
+                    null
+                  ],
+                  [
+                    1262217600000,
+                    null
+                  ],
+                  [
+                    1230681600000,
+                    null
+                  ],
+                  [
+                    1199059200000,
+                    null
+                  ],
+                  [
+                    1167523200000,
+                    null
+                  ]
+                ],
+                "time_frame": "yearly",
+                "lingo": {
+                  "name": "Tín dụng Các hoạt động dịch vụ khác",
+                  "unit": "%",
+                  "description": "Chỉ số Tín dụng của Các hoạt động dịch vụ khác là một thành phần của Tổng tín dụng trong nền kinh tế, phản ánh tổng số dư nợ tín dụng mà các tổ chức tín dụng (ngân hàng, tổ chức tài chính) cung cấp cho Các hoạt động dịch vụ khác. Đây là chỉ số quan trọng đánh giá mức độ hỗ trợ tài chính cho sản xuất, kinh doanh và tiêu dùng, cũng như khả năng hấp thụ vốn của nền kinh tế.",
+                  "frequency": "Độ trễ từ 1-3 tháng (ngày công bố không cố định)",
+                  "last_updated": "2026-07-22T09:31:43.618Z",
+                  "source": "Ngân hàng Nhà nước - SBV",
+                  "note": null,
+                  "related_blog": null
+                }
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

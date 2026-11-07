@@ -50,17 +50,30 @@ export function FundDashboard({ initialData }: FundDashboardProps) {
       // Gọi API đồng bộ để lấy dữ liệu mới nhất từ Fmarket
       const res = await fetch('/api/sync-funds', { method: 'POST' })
       if (res.ok) {
-        // Tải lại snapshot
+        const json = await res.json()
+        const d = (json.snapshot || json.data) as FundSnapshotData
+        if (d && Array.isArray(d.funds) && d.funds.length > 0) {
+          setFunds(d.funds)
+          setTopStocks(d.topStocks)
+          setTopIndustries(d.topIndustries)
+          setIssuers(d.issuers)
+          setFormattedDate(d.formattedDate)
+          setRefreshSuccess(true)
+          setTimeout(() => setRefreshSuccess(false), 4000)
+          return
+        }
+
+        // Tải lại snapshot qua /api/funds nếu chưa có inline snapshot
         const getRes = await fetch('/api/funds')
         if (getRes.ok) {
-          const json = await getRes.json()
-          if (json.data) {
-            const d = json.data as FundSnapshotData
-            setFunds(d.funds)
-            setTopStocks(d.topStocks)
-            setTopIndustries(d.topIndustries)
-            setIssuers(d.issuers)
-            setFormattedDate(d.formattedDate)
+          const getJson = await getRes.json()
+          if (getJson.data) {
+            const data = getJson.data as FundSnapshotData
+            setFunds(data.funds)
+            setTopStocks(data.topStocks)
+            setTopIndustries(data.topIndustries)
+            setIssuers(data.issuers)
+            setFormattedDate(data.formattedDate)
             setRefreshSuccess(true)
             setTimeout(() => setRefreshSuccess(false), 4000)
           }

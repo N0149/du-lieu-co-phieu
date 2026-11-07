@@ -1,0 +1,891 @@
+{
+  "meta": {
+    "group": "Thị trường tiền tệ",
+    "groupKey": "thitruongtiente",
+    "name": "Bơm hút ròng SBV (OMO)",
+    "slug": "bom-hut-rong",
+    "apiPath": "thitruongtiente/thitruongmo/bomhutrong",
+    "defaultTimeFrame": "monthly",
+    "defaultValueType": "value",
+    "supportedTimeFrames": [
+      "monthly",
+      "quarterly"
+    ],
+    "supportedValueTypes": [
+      "value"
+    ],
+    "unit": "Tỷ VND",
+    "description": "Quy mô bơm hút thanh khoản của Ngân hàng Nhà nước qua thị trường mở OMO.",
+    "updatedAt": "2026-09-19T10:14:29.832Z",
+    "latestPeriod": "01-08-2026",
+    "latestValue": null
+  },
+  "datasets": {
+    "monthly": {
+      "value": {
+        "title": "OMO - BƠM HÚT RÒNG",
+        "headers": [
+          "01-08-2026",
+          "01-07-2026",
+          "01-06-2026",
+          "01-05-2026",
+          "01-04-2026",
+          "01-03-2026",
+          "01-02-2026",
+          "01-01-2026",
+          "01-12-2025",
+          "01-11-2025",
+          "01-10-2025",
+          "01-09-2025",
+          "01-08-2025",
+          "01-07-2025",
+          "01-06-2025",
+          "01-05-2025",
+          "01-04-2025",
+          "01-03-2025",
+          "01-02-2025"
+        ],
+        "parent": [
+          {
+            "title": "OMO - BƠM HÚT RÒNG",
+            "child": [
+              {
+                "id": "269_bom_hut_rong_sbv_bills_dtm_s_v",
+                "column_name": "bom_hut_rong_sbv_bills_dtm_s_v",
+                "table_name": "269",
+                "name": "SBV-Bills",
+                "level": 3,
+                "heading": 3,
+                "open": null,
+                "dateType": "thang",
+                "yAxis": 17,
+                "data": [
+                  [
+                    1788134400000,
+                    null
+                  ],
+                  [
+                    1785456000000,
+                    null
+                  ],
+                  [
+                    1782777600000,
+                    null
+                  ],
+                  [
+                    1780185600000,
+                    null
+                  ],
+                  [
+                    1777507200000,
+                    null
+                  ],
+                  [
+                    1774915200000,
+                    null
+                  ],
+                  [
+                    1772236800000,
+                    null
+                  ],
+                  [
+                    1769817600000,
+                    null
+                  ],
+                  [
+                    1767139200000,
+                    null
+                  ],
+                  [
+                    1764460800000,
+                    null
+                  ],
+                  [
+                    1761868800000,
+                    null
+                  ],
+                  [
+                    1759190400000,
+                    null
+                  ],
+                  [
+                    1756598400000,
+                    null
+                  ],
+                  [
+                    1753920000000,
+                    22499.999999999996
+                  ],
+                  [
+                    1751241600000,
+                    -22500
+                  ],
+                  [
+                    1748649600000,
+                    null
+                  ],
+                  [
+                    1745971200000,
+                    null
+                  ],
+                  [
+                    1743379200000,
+                    5999.3
+                  ],
+                  [
+                    1740700800000,
+                    23850.3
+                  ]
+                ],
+                "time_frame": "monthly",
+                "lingo": {
+                  "name": "Bơm hút ròng Bills",
+                  "unit": "Tỷ VND",
+                  "description": "Bơm hút ròng SBV Bills thể hiện sự chênh lệch giữa khối lượng tín phiếu phát hành (hút tiền) và khối lượng tín phiếu đáo hạn (bơm tiền) do Ngân hàng Nhà nước (SBV) thực hiện trong một khoảng thời gian nhất định trên thị trường mở. Khi tổng khối lượng phát hành lớn hơn khối lượng đáo hạn, giá trị âm, SBV ở trạng thái hút ròng, làm giảm thanh khoản hệ thống ngân hàng. Ngược lại, nếu khối lượng đáo hạn vượt khối lượng phát hành,  giá trị dương, SBV ở trạng thái bơm ròng, tăng thanh khoản. Dữ liệu này, được công bố trên trang web SBV, cung cấp thông tin về quy mô điều tiết tiền tệ, lãi suất trúng thầu và kỳ hạn, hỗ trợ đánh giá chính sách tiền tệ và tình hình thanh khoản thị trường của NHNN.",
+                  "frequency": "Hàng ngày",
+                  "last_updated": "2026-09-18T02:30:03.233Z",
+                  "source": "Ngân hàng Nhà nước - SBV",
+                  "note": null,
+                  "related_blog": null
+                }
+              },
+              {
+                "id": "269_bom_hut_rong_omo_dtm_s_v",
+                "column_name": "bom_hut_rong_omo_dtm_s_v",
+                "table_name": "269",
+                "name": "OMO",
+                "level": 3,
+                "heading": 3,
+                "open": null,
+                "dateType": "thang",
+                "yAxis": 17,
+                "data": [
+                  [
+                    1788134400000,
+                    null
+                  ],
+                  [
+                    1785456000000,
+                    -72872.40999999999
+                  ],
+                  [
+                    1782777600000,
+                    -86908.89000000001
+                  ],
+                  [
+                    1780185600000,
+                    22691.160000000003
+                  ],
+                  [
+                    1777507200000,
+                    19530.379999999986
+                  ],
+                  [
+                    1774915200000,
+                    -114587.82
+                  ],
+                  [
+                    1772236800000,
+                    83815.26000000001
+                  ],
+                  [
+                    1769817600000,
+                    -88232.62999999999
+                  ],
+                  [
+                    1767139200000,
+                    78530.04999999999
+                  ],
+                  [
+                    1764460800000,
+                    106227.60000000003
+                  ],
+                  [
+                    1761868800000,
+                    39305.409999999974
+                  ],
+                  [
+                    1759190400000,
+                    3368.550000000003
+                  ],
+                  [
+                    1756598400000,
+                    -25211.280000000013
+                  ],
+                  [
+                    1753920000000,
+                    63652.299999999974
+                  ],
+                  [
+                    1751241600000,
+                    93260.63000000002
+                  ],
+                  [
+                    1748649600000,
+                    -21412.139999999996
+                  ],
+                  [
+                    1745971200000,
+                    -22174.83
+                  ],
+                  [
+                    1743379200000,
+                    24878.28
+                  ],
+                  [
+                    1740700800000,
+                    -64909.21999999999
+                  ]
+                ],
+                "time_frame": "monthly",
+                "lingo": {
+                  "name": "Bơm hút ròng OMO",
+                  "unit": "Tỷ VND",
+                  "description": "Bơm hút ròng Reverse Repo thể hiện sự chênh lệch giữa khối lượng tiền bơm vào hệ thống ngân hàng thông qua các giao dịch mua kỳ hạn (SBV mua giấy tờ có giá như tín phiếu NHNN hoặc trái phiếu Chính phủ, cam kết bán lại sau một kỳ hạn) và lượng tiền hút ra khi các giao dịch này đáo hạn (tổ chức tín dụng mua lại giấy tờ). Nếu khối lượng phát hành lớn hơn khối lượng đáo hạn, giá trị dương, SBV ở trạng thái bơm ròng, làm tăng thanh khoản. Ngược lại, nếu  giá trị âm, SBV ở trạng thái hút ròng, làm giảm thanh khoản. Dữ liệu này, được công bố trên trang web SBV, cung cấp thông tin về quy mô điều tiết thanh khoản, lãi suất trúng thầu và kỳ hạn, hỗ trợ đánh giá chính sách tiền tệ và tình hình thị trường của NHNN.",
+                  "frequency": "Hàng ngày",
+                  "last_updated": "2026-09-18T02:30:03.233Z",
+                  "source": "Ngân hàng Nhà nước - SBV",
+                  "note": null,
+                  "related_blog": null
+                }
+              },
+              {
+                "id": "269_bom_hut_rong_cua_nhnn_dtm_s_v",
+                "column_name": "bom_hut_rong_cua_nhnn_dtm_s_v",
+                "table_name": "269",
+                "name": "Bơm/hút ròng của NHNN",
+                "level": 3,
+                "heading": 3,
+                "open": null,
+                "dateType": "thang",
+                "yAxis": 17,
+                "data": [
+                  [
+                    1788134400000,
+                    null
+                  ],
+                  [
+                    1785456000000,
+                    -72872.40999999999
+                  ],
+                  [
+                    1782777600000,
+                    -86908.89000000001
+                  ],
+                  [
+                    1780185600000,
+                    22691.160000000003
+                  ],
+                  [
+                    1777507200000,
+                    19530.379999999986
+                  ],
+                  [
+                    1774915200000,
+                    -114587.82
+                  ],
+                  [
+                    1772236800000,
+                    83815.26000000001
+                  ],
+                  [
+                    1769817600000,
+                    -88232.62999999999
+                  ],
+                  [
+                    1767139200000,
+                    78530.04999999999
+                  ],
+                  [
+                    1764460800000,
+                    106227.60000000003
+                  ],
+                  [
+                    1761868800000,
+                    39305.409999999974
+                  ],
+                  [
+                    1759190400000,
+                    3368.550000000003
+                  ],
+                  [
+                    1756598400000,
+                    -25211.280000000013
+                  ],
+                  [
+                    1753920000000,
+                    86152.29999999999
+                  ],
+                  [
+                    1751241600000,
+                    70760.63000000002
+                  ],
+                  [
+                    1748649600000,
+                    -21412.139999999996
+                  ],
+                  [
+                    1745971200000,
+                    -22174.83
+                  ],
+                  [
+                    1743379200000,
+                    30877.579999999998
+                  ],
+                  [
+                    1740700800000,
+                    -41058.919999999984
+                  ]
+                ],
+                "time_frame": "monthly",
+                "lingo": {
+                  "name": "Hút ròng thị trường mở",
+                  "unit": "Tỷ VND",
+                  "description": "Bơm/ hút ròng của NHNN phản ánh trạng thái ròng tổng hợp của các hoạt động điều tiết thanh khoản do Ngân hàng Nhà nước (NHNN) thực hiện trên thị trường mở, bao gồm cả giao dịch tín phiếu (SBV Bills) và mua kỳ hạn (Reverse Repo) trong một khoảng thời gian nhất định. Cụ thể, nó là sự chênh lệch giữa tổng lượng tiền bơm vào hệ thống ngân hàng (thông qua đáo hạn tín phiếu và mua kỳ hạn mới) và tổng lượng tiền hút ra (thông qua phát hành tín phiếu mới và đáo hạn Reverse Repo). Dữ liệu này, được công bố trên trang web SBV, cung cấp cái nhìn toàn diện về quy mô điều tiết tiền tệ, lãi suất trúng thầu và kỳ hạn, hỗ trợ đánh giá chính sách tiền tệ và tình hình thanh khoản thị trường của NHNN.",
+                  "frequency": "Hàng ngày",
+                  "last_updated": "2026-09-18T02:30:03.233Z",
+                  "source": "Ngân hàng Nhà nước - SBV",
+                  "note": null,
+                  "related_blog": null
+                }
+              },
+              {
+                "id": "269_bom_hut_rong_tong_luu_hanh_mth",
+                "column_name": "bom_hut_rong_tong_luu_hanh_mth",
+                "table_name": "269",
+                "name": "Tổng lưu hành",
+                "level": 3,
+                "heading": 3,
+                "open": null,
+                "dateType": "thang",
+                "yAxis": 17,
+                "data": [
+                  [
+                    1788134400000,
+                    237244.98
+                  ],
+                  [
+                    1785456000000,
+                    172530.36
+                  ],
+                  [
+                    1782777600000,
+                    245402.77
+                  ],
+                  [
+                    1780185600000,
+                    332311.66
+                  ],
+                  [
+                    1777507200000,
+                    309620.5
+                  ],
+                  [
+                    1774915200000,
+                    290090.12
+                  ],
+                  [
+                    1772236800000,
+                    404677.94
+                  ],
+                  [
+                    1769817600000,
+                    320862.68
+                  ],
+                  [
+                    1767139200000,
+                    409095.31
+                  ],
+                  [
+                    1764460800000,
+                    330565.26
+                  ],
+                  [
+                    1761868800000,
+                    224337.65999999997
+                  ],
+                  [
+                    1759190400000,
+                    185032.24999999994
+                  ],
+                  [
+                    1756598400000,
+                    181663.69999999998
+                  ],
+                  [
+                    1753920000000,
+                    206874.9799999999
+                  ],
+                  [
+                    1751241600000,
+                    120722.68
+                  ],
+                  [
+                    1748649600000,
+                    49962.05
+                  ],
+                  [
+                    1745971200000,
+                    71374.19
+                  ],
+                  [
+                    1743379200000,
+                    93549.02
+                  ],
+                  [
+                    1740700800000,
+                    62671.44
+                  ]
+                ],
+                "time_frame": "monthly",
+                "lingo": {
+                  "name": "Tổng bơm hút ròng thị trường mở",
+                  "unit": "Tỷ VND",
+                  "description": "Tổng khối lượng lưu hành phản ánh toàn bộ giá trị các giao dịch tín phiếu (SBV Bills) và mua kỳ hạn (Reverse Repo) do Ngân hàng Nhà nước (NHNN) đang duy trì trên thị trường mở tại một thời điểm nhất định. Đây là tổng số tiền liên quan đến tín phiếu SBV đã phát hành nhưng chưa đáo hạn (đang được tổ chức tín dụng nắm giữ, tương ứng với lượng tiền đã hút) và các giao dịch mua kỳ hạn còn hiệu lực (lượng tiền SBV đã bơm và tổ chức tín dụng chưa mua lại giấy tờ có giá). Dữ liệu này, được công bố trên trang web SBV, thể hiện quy mô thanh khoản đang được điều tiết, bao gồm cả hút và bơm, cung cấp thông tin về tình hình chính sách tiền tệ, lãi suất và kỳ hạn, hỗ trợ đánh giá tác động của NHNN lên thị trường tài chính.",
+                  "frequency": "Hàng ngày",
+                  "last_updated": "2026-09-18T02:30:03.233Z",
+                  "source": "Ngân hàng Nhà nước - SBV",
+                  "note": null,
+                  "related_blog": null
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "quarterly": {
+      "value": {
+        "title": "OMO - BƠM HÚT RÒNG",
+        "headers": [
+          "01-06-2026",
+          "01-03-2026",
+          "01-12-2025",
+          "01-09-2025",
+          "01-06-2025",
+          "01-03-2025",
+          "01-12-2024",
+          "01-09-2024",
+          "01-06-2024",
+          "01-03-2024",
+          "01-12-2023",
+          "01-09-2023",
+          "01-06-2023",
+          "01-03-2023",
+          "01-12-2022",
+          "01-09-2022",
+          "01-06-2022",
+          "01-03-2022",
+          "01-12-2021"
+        ],
+        "parent": [
+          {
+            "title": "OMO - BƠM HÚT RÒNG",
+            "child": [
+              {
+                "id": "269_bom_hut_rong_sbv_bills_dtq_s_v",
+                "column_name": "bom_hut_rong_sbv_bills_dtq_s_v",
+                "table_name": "269",
+                "name": "SBV-Bills",
+                "level": 3,
+                "heading": 3,
+                "open": null,
+                "dateType": "quy",
+                "yAxis": 17,
+                "data": [
+                  [
+                    1782777600000,
+                    null
+                  ],
+                  [
+                    1774915200000,
+                    null
+                  ],
+                  [
+                    1767139200000,
+                    null
+                  ],
+                  [
+                    1759190400000,
+                    22499.999999999996
+                  ],
+                  [
+                    1751241600000,
+                    -22500
+                  ],
+                  [
+                    1743379200000,
+                    50780
+                  ],
+                  [
+                    1735603200000,
+                    -50780
+                  ],
+                  [
+                    1727654400000,
+                    114290.1
+                  ],
+                  [
+                    1719705600000,
+                    49608.8
+                  ],
+                  [
+                    1711843200000,
+                    -171198.8
+                  ],
+                  [
+                    1703980800000,
+                    93799.80000000002
+                  ],
+                  [
+                    1696032000000,
+                    -93799.8
+                  ],
+                  [
+                    1688083200000,
+                    110699.8
+                  ],
+                  [
+                    1680220800000,
+                    13700.000000000022
+                  ],
+                  [
+                    1672444800000,
+                    -79000.5
+                  ],
+                  [
+                    1664496000000,
+                    56640.299999999996
+                  ],
+                  [
+                    1656547200000,
+                    -102039.59999999999
+                  ],
+                  [
+                    1648684800000,
+                    null
+                  ],
+                  [
+                    1640908800000,
+                    null
+                  ]
+                ],
+                "time_frame": "quarterly",
+                "lingo": {
+                  "name": "Bơm hút ròng Bills",
+                  "unit": "Tỷ VND",
+                  "description": "Bơm hút ròng SBV Bills thể hiện sự chênh lệch giữa khối lượng tín phiếu phát hành (hút tiền) và khối lượng tín phiếu đáo hạn (bơm tiền) do Ngân hàng Nhà nước (SBV) thực hiện trong một khoảng thời gian nhất định trên thị trường mở. Khi tổng khối lượng phát hành lớn hơn khối lượng đáo hạn, giá trị âm, SBV ở trạng thái hút ròng, làm giảm thanh khoản hệ thống ngân hàng. Ngược lại, nếu khối lượng đáo hạn vượt khối lượng phát hành,  giá trị dương, SBV ở trạng thái bơm ròng, tăng thanh khoản. Dữ liệu này, được công bố trên trang web SBV, cung cấp thông tin về quy mô điều tiết tiền tệ, lãi suất trúng thầu và kỳ hạn, hỗ trợ đánh giá chính sách tiền tệ và tình hình thanh khoản thị trường của NHNN.",
+                  "frequency": "Hàng ngày",
+                  "last_updated": "2026-09-18T02:30:03.233Z",
+                  "source": "Ngân hàng Nhà nước - SBV",
+                  "note": null,
+                  "related_blog": null
+                }
+              },
+              {
+                "id": "269_bom_hut_rong_omo_dtq_s_v",
+                "column_name": "bom_hut_rong_omo_dtq_s_v",
+                "table_name": "269",
+                "name": "OMO",
+                "level": 3,
+                "heading": 3,
+                "open": null,
+                "dateType": "quy",
+                "yAxis": 17,
+                "data": [
+                  [
+                    1782777600000,
+                    -44687.350000000006
+                  ],
+                  [
+                    1774915200000,
+                    -119005.18999999997
+                  ],
+                  [
+                    1767139200000,
+                    224063.06
+                  ],
+                  [
+                    1759190400000,
+                    41809.57
+                  ],
+                  [
+                    1751241600000,
+                    49673.66000000003
+                  ],
+                  [
+                    1743379200000,
+                    6560.100000000016
+                  ],
+                  [
+                    1735603200000,
+                    16330.449999999986
+                  ],
+                  [
+                    1727654400000,
+                    35316.98000000001
+                  ],
+                  [
+                    1719705600000,
+                    27551.549999999977
+                  ],
+                  [
+                    1711843200000,
+                    -4551.36
+                  ],
+                  [
+                    1703980800000,
+                    4551.36
+                  ],
+                  [
+                    1696032000000,
+                    null
+                  ],
+                  [
+                    1688083200000,
+                    -1201.9799999999746
+                  ],
+                  [
+                    1680220800000,
+                    -61697.539999999986
+                  ],
+                  [
+                    1672444800000,
+                    58197.02000000002
+                  ],
+                  [
+                    1664496000000,
+                    3233.320000000004
+                  ],
+                  [
+                    1656547200000,
+                    -3233.47
+                  ],
+                  [
+                    1648684800000,
+                    -5837.059999999999
+                  ],
+                  [
+                    1640908800000,
+                    10539.710000000001
+                  ]
+                ],
+                "time_frame": "quarterly",
+                "lingo": {
+                  "name": "Bơm hút ròng OMO",
+                  "unit": "Tỷ VND",
+                  "description": "Bơm hút ròng Reverse Repo thể hiện sự chênh lệch giữa khối lượng tiền bơm vào hệ thống ngân hàng thông qua các giao dịch mua kỳ hạn (SBV mua giấy tờ có giá như tín phiếu NHNN hoặc trái phiếu Chính phủ, cam kết bán lại sau một kỳ hạn) và lượng tiền hút ra khi các giao dịch này đáo hạn (tổ chức tín dụng mua lại giấy tờ). Nếu khối lượng phát hành lớn hơn khối lượng đáo hạn, giá trị dương, SBV ở trạng thái bơm ròng, làm tăng thanh khoản. Ngược lại, nếu  giá trị âm, SBV ở trạng thái hút ròng, làm giảm thanh khoản. Dữ liệu này, được công bố trên trang web SBV, cung cấp thông tin về quy mô điều tiết thanh khoản, lãi suất trúng thầu và kỳ hạn, hỗ trợ đánh giá chính sách tiền tệ và tình hình thị trường của NHNN.",
+                  "frequency": "Hàng ngày",
+                  "last_updated": "2026-09-18T02:30:03.233Z",
+                  "source": "Ngân hàng Nhà nước - SBV",
+                  "note": null,
+                  "related_blog": null
+                }
+              },
+              {
+                "id": "269_bom_hut_rong_cua_nhnn_dtq_s_v",
+                "column_name": "bom_hut_rong_cua_nhnn_dtq_s_v",
+                "table_name": "269",
+                "name": "Bơm/hút ròng của NHNN",
+                "level": 3,
+                "heading": 3,
+                "open": null,
+                "dateType": "quy",
+                "yAxis": 17,
+                "data": [
+                  [
+                    1782777600000,
+                    -44687.350000000006
+                  ],
+                  [
+                    1774915200000,
+                    -119005.18999999997
+                  ],
+                  [
+                    1767139200000,
+                    224063.06
+                  ],
+                  [
+                    1759190400000,
+                    64309.56999999997
+                  ],
+                  [
+                    1751241600000,
+                    27173.66000000004
+                  ],
+                  [
+                    1743379200000,
+                    57340.10000000002
+                  ],
+                  [
+                    1735603200000,
+                    -34449.54999999998
+                  ],
+                  [
+                    1727654400000,
+                    149607.08000000002
+                  ],
+                  [
+                    1719705600000,
+                    77160.35
+                  ],
+                  [
+                    1711843200000,
+                    -175750.16
+                  ],
+                  [
+                    1703980800000,
+                    98351.16
+                  ],
+                  [
+                    1696032000000,
+                    -93799.8
+                  ],
+                  [
+                    1688083200000,
+                    109497.82
+                  ],
+                  [
+                    1680220800000,
+                    -47997.54000000001
+                  ],
+                  [
+                    1672444800000,
+                    -20803.47999999998
+                  ],
+                  [
+                    1664496000000,
+                    59873.619999999966
+                  ],
+                  [
+                    1656547200000,
+                    -105273.07
+                  ],
+                  [
+                    1648684800000,
+                    -5837.059999999999
+                  ],
+                  [
+                    1640908800000,
+                    10539.710000000001
+                  ]
+                ],
+                "time_frame": "quarterly",
+                "lingo": {
+                  "name": "Hút ròng thị trường mở",
+                  "unit": "Tỷ VND",
+                  "description": "Bơm/ hút ròng của NHNN phản ánh trạng thái ròng tổng hợp của các hoạt động điều tiết thanh khoản do Ngân hàng Nhà nước (NHNN) thực hiện trên thị trường mở, bao gồm cả giao dịch tín phiếu (SBV Bills) và mua kỳ hạn (Reverse Repo) trong một khoảng thời gian nhất định. Cụ thể, nó là sự chênh lệch giữa tổng lượng tiền bơm vào hệ thống ngân hàng (thông qua đáo hạn tín phiếu và mua kỳ hạn mới) và tổng lượng tiền hút ra (thông qua phát hành tín phiếu mới và đáo hạn Reverse Repo). Dữ liệu này, được công bố trên trang web SBV, cung cấp cái nhìn toàn diện về quy mô điều tiết tiền tệ, lãi suất trúng thầu và kỳ hạn, hỗ trợ đánh giá chính sách tiền tệ và tình hình thanh khoản thị trường của NHNN.",
+                  "frequency": "Hàng ngày",
+                  "last_updated": "2026-09-18T02:30:03.233Z",
+                  "source": "Ngân hàng Nhà nước - SBV",
+                  "note": null,
+                  "related_blog": null
+                }
+              },
+              {
+                "id": "269_bom_hut_rong_tong_luu_hanh_qtr",
+                "column_name": "bom_hut_rong_tong_luu_hanh_qtr",
+                "table_name": "269",
+                "name": "Tổng lưu hành",
+                "level": 3,
+                "heading": 3,
+                "open": null,
+                "dateType": "quy",
+                "yAxis": 17,
+                "data": [
+                  [
+                    1782777600000,
+                    245402.77
+                  ],
+                  [
+                    1774915200000,
+                    290090.12
+                  ],
+                  [
+                    1767139200000,
+                    409095.31
+                  ],
+                  [
+                    1759190400000,
+                    185032.24999999994
+                  ],
+                  [
+                    1751241600000,
+                    120722.68
+                  ],
+                  [
+                    1743379200000,
+                    93549.02
+                  ],
+                  [
+                    1735603200000,
+                    36208.92
+                  ],
+                  [
+                    1727654400000,
+                    70658.47
+                  ],
+                  [
+                    1719705600000,
+                    -94038.45
+                  ],
+                  [
+                    1711843200000,
+                    -171198.8
+                  ],
+                  [
+                    1703980800000,
+                    4551.36
+                  ],
+                  [
+                    1696032000000,
+                    -93799.8
+                  ],
+                  [
+                    1688083200000,
+                    0
+                  ],
+                  [
+                    1680220800000,
+                    -109497.82
+                  ],
+                  [
+                    1672444800000,
+                    -61500.28
+                  ],
+                  [
+                    1664496000000,
+                    -40696.8
+                  ],
+                  [
+                    1656547200000,
+                    -100570.42
+                  ],
+                  [
+                    1648684800000,
+                    4702.65
+                  ],
+                  [
+                    1640908800000,
+                    10539.71
+                  ]
+                ],
+                "time_frame": "quarterly",
+                "lingo": {
+                  "name": "Tổng bơm hút ròng thị trường mở",
+                  "unit": "Tỷ VND",
+                  "description": "Tổng khối lượng lưu hành phản ánh toàn bộ giá trị các giao dịch tín phiếu (SBV Bills) và mua kỳ hạn (Reverse Repo) do Ngân hàng Nhà nước (NHNN) đang duy trì trên thị trường mở tại một thời điểm nhất định. Đây là tổng số tiền liên quan đến tín phiếu SBV đã phát hành nhưng chưa đáo hạn (đang được tổ chức tín dụng nắm giữ, tương ứng với lượng tiền đã hút) và các giao dịch mua kỳ hạn còn hiệu lực (lượng tiền SBV đã bơm và tổ chức tín dụng chưa mua lại giấy tờ có giá). Dữ liệu này, được công bố trên trang web SBV, thể hiện quy mô thanh khoản đang được điều tiết, bao gồm cả hút và bơm, cung cấp thông tin về tình hình chính sách tiền tệ, lãi suất và kỳ hạn, hỗ trợ đánh giá tác động của NHNN lên thị trường tài chính.",
+                  "frequency": "Hàng ngày",
+                  "last_updated": "2026-09-18T02:30:03.233Z",
+                  "source": "Ngân hàng Nhà nước - SBV",
+                  "note": null,
+                  "related_blog": null
+                }
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

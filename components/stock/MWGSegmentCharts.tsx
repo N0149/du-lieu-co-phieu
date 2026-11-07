@@ -13,6 +13,7 @@ import {
 } from 'recharts'
 import { Maximize2, Settings } from 'lucide-react'
 import { ChartModal } from './ChartModal'
+import { ChartWatermark } from '@/components/ChartWatermark'
 import type { CompanySegmentData } from '@/lib/company-segment-service'
 
 interface MWGSegmentChartsProps {
@@ -31,7 +32,9 @@ function BrandRevenueCard({ data }: { data: CompanySegmentData }) {
   const [isExpanded, setIsExpanded] = useState(false)
 
   const renderBrandChart = (chartHeight: number | `${number}%` = 240) => (
-    <ResponsiveContainer width="100%" height={chartHeight}>
+    <div className="relative w-full" style={{ height: chartHeight }}>
+      <ChartWatermark domain="dulieudautu.com" brandName="Dữ Liệu Đầu Tư" size="sm" />
+      <ResponsiveContainer width="100%" height="100%">
       <ComposedChart data={data.byBrand} margin={{ top: 10, right: 10, left: -20, bottom: 0 }}>
         <CartesianGrid strokeDasharray="3 3" stroke="#1f293d" opacity={0.4} />
         <XAxis dataKey="year" tick={{ fontSize: 9.5, fill: '#64748b' }} />
@@ -79,6 +82,7 @@ function BrandRevenueCard({ data }: { data: CompanySegmentData }) {
         <Line type="monotone" dataKey="total" name="Doanh thu" stroke="#6366f1" strokeWidth={1.8} dot={{ r: 3, fill: '#6366f1' }} isAnimationActive={false} />
       </ComposedChart>
     </ResponsiveContainer>
+    </div>
   )
 
   const legendExtra = (
@@ -195,7 +199,9 @@ function SectorRevenueCard({ data }: { data: CompanySegmentData }) {
   const [isExpanded, setIsExpanded] = useState(false)
 
   const renderSectorRevChart = (chartHeight: number | `${number}%` = 240) => (
-    <ResponsiveContainer width="100%" height={chartHeight}>
+    <div className="relative w-full" style={{ height: chartHeight }}>
+      <ChartWatermark domain="dulieudautu.com" brandName="Dữ Liệu Đầu Tư" size="sm" />
+      <ResponsiveContainer width="100%" height="100%">
       <ComposedChart data={data.bySectorRevenue} margin={{ top: 10, right: 10, left: -20, bottom: 0 }}>
         <CartesianGrid strokeDasharray="3 3" stroke="#1f293d" opacity={0.4} />
         <XAxis dataKey="year" tick={{ fontSize: 9.5, fill: '#64748b' }} />
@@ -238,6 +244,7 @@ function SectorRevenueCard({ data }: { data: CompanySegmentData }) {
         <Line type="monotone" dataKey="total" name="Doanh thu thuần" stroke="#38bdf8" strokeWidth={1.8} dot={{ r: 3, fill: '#38bdf8' }} isAnimationActive={false} />
       </ComposedChart>
     </ResponsiveContainer>
+    </div>
   )
 
   const legendExtra = (
@@ -350,7 +357,9 @@ function SectorGrossProfitCard({ data }: { data: CompanySegmentData }) {
   const [isExpanded, setIsExpanded] = useState(false)
 
   const renderSectorGpChart = (chartHeight: number | `${number}%` = 240) => (
-    <ResponsiveContainer width="100%" height={chartHeight}>
+    <div className="relative w-full" style={{ height: chartHeight }}>
+      <ChartWatermark domain="dulieudautu.com" brandName="Dữ Liệu Đầu Tư" size="sm" />
+      <ResponsiveContainer width="100%" height="100%">
       <ComposedChart data={data.bySectorGrossProfit} margin={{ top: 10, right: 10, left: -20, bottom: 0 }}>
         <CartesianGrid strokeDasharray="3 3" stroke="#1f293d" opacity={0.4} />
         <XAxis dataKey="year" tick={{ fontSize: 9.5, fill: '#64748b' }} />
@@ -393,6 +402,7 @@ function SectorGrossProfitCard({ data }: { data: CompanySegmentData }) {
         <Line type="monotone" dataKey="total" name="Lợi nhuận gộp" stroke="#38bdf8" strokeWidth={1.8} dot={{ r: 3, fill: '#38bdf8' }} isAnimationActive={false} />
       </ComposedChart>
     </ResponsiveContainer>
+    </div>
   )
 
   const legendExtra = (

@@ -1,0 +1,3291 @@
+{
+  "meta": {
+    "group": "Tiêu dùng",
+    "groupKey": "tieudung",
+    "name": "Bán lẻ hàng hóa & dịch vụ",
+    "slug": "ban-le-hang-hoa-dich-vu",
+    "apiPath": "tieudung/banlehhdv",
+    "defaultTimeFrame": "monthly",
+    "defaultValueType": "value",
+    "supportedTimeFrames": [
+      "monthly",
+      "quarterly",
+      "yearly"
+    ],
+    "supportedValueTypes": [
+      "value",
+      "yoy"
+    ],
+    "unit": "Nghìn tỷ VND",
+    "description": "Tổng mức bán lẻ hàng hóa và doanh thu dịch vụ tiêu dùng.",
+    "updatedAt": "2026-09-19T10:14:34.869Z",
+    "latestPeriod": "08-2026",
+    "latestValue": 679814.0817597781
+  },
+  "datasets": {
+    "monthly": {
+      "value": {
+        "title": "Bán Lẻ Hàng Hóa Và Dịch Vụ",
+        "headers": [
+          "08-2026",
+          "07-2026",
+          "06-2026",
+          "05-2026",
+          "04-2026",
+          "03-2026",
+          "02-2026",
+          "01-2026",
+          "12-2025",
+          "11-2025",
+          "10-2025",
+          "09-2025",
+          "08-2025",
+          "07-2025",
+          "06-2025",
+          "05-2025",
+          "04-2025",
+          "03-2025",
+          "02-2025"
+        ],
+        "parent": [
+          {
+            "title": "BÁN LẺ HÀNG HÓA VÀ DỊCH VỤ (Tỷ VND)",
+            "child": [
+              {
+                "id": "218_tong",
+                "column_name": "tong",
+                "table_name": "218",
+                "name": "Tổng mức bán lẻ HH và DV",
+                "hasSub": false,
+                "level": 2,
+                "heading": 2,
+                "open": 1,
+                "dateType": "thang",
+                "yAxis": 17,
+                "data": [
+                  [
+                    1788134400000,
+                    679814.0817597781
+                  ],
+                  [
+                    1785456000000,
+                    668997.3046262874
+                  ],
+                  [
+                    1782777600000,
+                    662837.513773812
+                  ],
+                  [
+                    1780185600000,
+                    658641.537912029
+                  ],
+                  [
+                    1777507200000,
+                    643765.0724868375
+                  ],
+                  [
+                    1774915200000,
+                    635665.5523210986
+                  ],
+                  [
+                    1772236800000,
+                    633032.0263187427
+                  ],
+                  [
+                    1769817600000,
+                    622892.9290373574
+                  ],
+                  [
+                    1767139200000,
+                    616353.0924019591
+                  ],
+                  [
+                    1764460800000,
+                    604509.2735024792
+                  ],
+                  [
+                    1761868800000,
+                    601241.8558932922
+                  ],
+                  [
+                    1759190400000,
+                    597143.8835610498
+                  ],
+                  [
+                    1756598400000,
+                    591399.9561118978
+                  ],
+                  [
+                    1753920000000,
+                    584461.6496414767
+                  ],
+                  [
+                    1751241600000,
+                    579829.704694312
+                  ],
+                  [
+                    1748649600000,
+                    578623.5584372757
+                  ],
+                  [
+                    1745971200000,
+                    576717.8732074698
+                  ],
+                  [
+                    1743379200000,
+                    569912.9415397635
+                  ],
+                  [
+                    1740700800000,
+                    565714.9316914983
+                  ]
+                ],
+                "time_frame": "monthly",
+                "lingo": {
+                  "name": "Tổng bán lẻ HH và DV",
+                  "unit": "Tỷ VND",
+                  "description": "Tổng bán lẻ hàng hóa và dịch vụ là một thước đo quan trọng phản ánh tình hình tiêu dùng trong nền kinh tế. Chỉ số này bao gồm tổng giá trị hàng hóa và dịch vụ tiêu thụ trên thị trường, giúp đánh giá sức mua và xu hướng tiêu dùng của người dân. Số liệu được Tổng cục thống kê (GSO) thu thập và tổng hợp thông qua khảo sát các doanh nghiệp, cơ sở sản xuất, kinh doanh cá thể, hoạt động thương mại.",
+                  "frequency": "Ngày 6 tháng sau",
+                  "last_updated": "2026-09-03T02:55:34.731Z",
+                  "source": "Tổng cục Thống kê - GSO",
+                  "note": null,
+                  "related_blog": null
+                }
+              },
+              {
+                "id": "218_banle_hanghoa",
+                "column_name": "banle_hanghoa",
+                "table_name": "218",
+                "name": "Bán lẻ hàng hoá",
+                "hasSub": false,
+                "level": 3,
+                "heading": 3,
+                "open": 0,
+                "dateType": "thang",
+                "yAxis": 17,
+                "data": [
+                  [
+                    1788134400000,
+                    507417.98226053565
+                  ],
+                  [
+                    1785456000000,
+                    499311.12881208776
+                  ],
+                  [
+                    1782777600000,
+                    495901.1818534103
+                  ],
+                  [
+                    1780185600000,
+                    494739.5744638468
+                  ],
+                  [
+                    1777507200000,
+                    488280.1832524833
+                  ],
+                  [
+                    1774915200000,
+                    482918.3717591149
+                  ],
+                  [
+                    1772236800000,
+                    484454
+                  ],
+                  [
+                    1769817600000,
+                    476102.5812713528
+                  ],
+                  [
+                    1767139200000,
+                    472694.423813648
+                  ],
+                  [
+                    1764460800000,
+                    457137.66607496
+                  ],
+                  [
+                    1761868800000,
+                    456232.0976313485
+                  ],
+                  [
+                    1759190400000,
+                    454476.1837576926
+                  ],
+                  [
+                    1756598400000,
+                    445843.9533401701
+                  ],
+                  [
+                    1753920000000,
+                    440390.46892261505
+                  ],
+                  [
+                    1751241600000,
+                    438230.2700593328
+                  ],
+                  [
+                    1748649600000,
+                    437062.23739946284
+                  ],
+                  [
+                    1745971200000,
+                    436234.05552330636
+                  ],
+                  [
+                    1743379200000,
+                    432359.6910489552
+                  ],
+                  [
+                    1740700800000,
+                    431357.1190108226
+                  ]
+                ],
+                "time_frame": "monthly",
+                "lingo": {
+                  "name": "Bán lẻ Hàng hóa",
+                  "unit": "Tỷ VND",
+                  "description": "Doanh thu bán lẻ hàng hóa là tổng số tiền thu được hoặc sẽ thu được từ việc bán các sản phẩm, chủ yếu là hàng hóa tiêu dùng cho cá nhân và hộ gia đình, tại các địa điểm như cửa hàng, siêu thị, trung tâm thương mại, hợp tác xã, quầy hàng ở chợ hoặc bán hàng lưu động. Số liệu được Tổng cục thống kê (GSO) thu thập và tổng hợp thông qua khảo sát các doanh nghiệp, cơ sở sản xuất, kinh doanh cá thể, hoạt động thương mại.",
+                  "frequency": "Ngày 6 tháng sau",
+                  "last_updated": "2026-09-03T02:55:34.731Z",
+                  "source": "Tổng cục Thống kê - GSO",
+                  "note": null,
+                  "related_blog": null
+                }
+              },
+              {
+                "id": "218_dv_luutruanuong",
+                "column_name": "dv_luutruanuong",
+                "table_name": "218",
+                "name": "Dịch vụ lưu trú, ăn uống",
+                "hasSub": false,
+                "level": 3,
+                "heading": 3,
+                "open": 0,
+                "dateType": "thang",
+                "yAxis": 17,
+                "data": [
+                  [
+                    1788134400000,
+                    90454.89065229571
+                  ],
+                  [
+                    1785456000000,
+                    88123.04904902239
+                  ],
+                  [
+                    1782777600000,
+                    86427.60887443161
+                  ],
+                  [
+                    1780185600000,
+                    85549.0621585691
+                  ],
+                  [
+                    1777507200000,
+                    81268.8498560531
+                  ],
+                  [
+                    1774915200000,
+                    79530.06194678745
+                  ],
+                  [
+                    1772236800000,
+                    77735.86833689065
+                  ],
+                  [
+                    1769817600000,
+                    74414.71196486476
+                  ],
+                  [
+                    1767139200000,
+                    72275.94166163859
+                  ],
+                  [
+                    1764460800000,
+                    72444.6799833341
+                  ],
+                  [
+                    1761868800000,
+                    71362.25
+                  ],
+                  [
+                    1759190400000,
+                    70434.8843337681
+                  ],
+                  [
+                    1756598400000,
+                    74466.6465129252
+                  ],
+                  [
+                    1753920000000,
+                    74722.13796694175
+                  ],
+                  [
+                    1751241600000,
+                    73217.14064726183
+                  ],
+                  [
+                    1748649600000,
+                    73357.27013333548
+                  ],
+                  [
+                    1745971200000,
+                    72689.96927148227
+                  ],
+                  [
+                    1743379200000,
+                    70492.76186134548
+                  ],
+                  [
+                    1740700800000,
+                    68195.84430853106
+                  ]
+                ],
+                "time_frame": "monthly",
+                "lingo": {
+                  "name": "Dịch vụ lưu trú, ăn uống",
+                  "unit": "Tỷ VND",
+                  "description": "Doanh thu dịch vụ lưu trú, ăn uống phản ánh toàn bộ số tiền đã và sẽ thu được do cung cấp dịch vụ lưu trú ngắn ngày và ăn uống cho khách hàng trong một khoảng thời gian nhất định. Số liệu được Tổng cục thống kê (GSO) thu thập và tổng hợp thông qua khảo sát các doanh nghiệp, cơ sở lưu trú và các dịch vụ ăn uống.",
+                  "frequency": "Ngày 6 tháng sau",
+                  "last_updated": "2026-09-03T02:55:34.731Z",
+                  "source": "Tổng cục Thống kê - GSO",
+                  "note": null,
+                  "related_blog": null
+                }
+              },
+              {
+                "id": "218_dulichluhanh",
+                "column_name": "dulichluhanh",
+                "table_name": "218",
+                "name": "Du lịch lữ hành",
+                "hasSub": false,
+                "level": 3,
+                "heading": 3,
+                "open": 0,
+                "dateType": "thang",
+                "yAxis": 17,
+                "data": [
+                  [
+                    1788134400000,
+                    9116.946800989306
+                  ],
+                  [
+                    1785456000000,
+                    9788.983575131504
+                  ],
+                  [
+                    1782777600000,
+                    8833.907491959431
+                  ],
+                  [
+                    1780185600000,
+                    8740.351107000466
+                  ],
+                  [
+                    1777507200000,
+                    8453.733808959994
+                  ],
+                  [
+                    1774915200000,
+                    8186.170318280714
+                  ],
+                  [
+                    1772236800000,
+                    7645
+                  ],
+                  [
+                    1769817600000,
+                    7433.040684884781
+                  ],
+                  [
+                    1767139200000,
+                    7651.885926672663
+                  ],
+                  [
+                    1764460800000,
+                    8144.458798671529
+                  ],
+                  [
+                    1761868800000,
+                    8237.021395515008
+                  ],
+                  [
+                    1759190400000,
+                    7965.40121411373
+                  ],
+                  [
+                    1756598400000,
+                    7649.571528361438
+                  ],
+                  [
+                    1753920000000,
+                    7662.102475604878
+                  ],
+                  [
+                    1751241600000,
+                    7114.187390506367
+                  ],
+                  [
+                    1748649600000,
+                    7723.991794133184
+                  ],
+                  [
+                    1745971200000,
+                    8130.777585774125
+                  ],
+                  [
+                    1743379200000,
+                    7001.793916982396
+                  ],
+                  [
+                    1740700800000,
+                    6624.521147560375
+                  ]
+                ],
+                "time_frame": "monthly",
+                "lingo": {
+                  "name": "Du lịch lữ hành",
+                  "unit": "Tỷ VND",
+                  "description": "Doanh thu dịch vụ du lịch lữ hành là tổng số tiền mà các công ty lữ hành kiếm được từ việc tổ chức các chương trình du lịch trọn gói hoặc không trọn gói cho khách trong nước và quốc tế, cùng với các dịch vụ như cung cấp thông tin, tư vấn, lập kế hoạch du lịch và hướng dẫn du khách, bao gồm cả hoạt động của các đại lý du lịch. Số liệu này được Tổng cục Thống kê (GSO) thu thập và tổng hợp thông qua các cuộc khảo sát các doanh nghiệp, cơ sở lữ hành và cá nhân kinh doanh trong lĩnh vực du lịch.",
+                  "frequency": "Ngày 6 tháng sau",
+                  "last_updated": "2026-09-03T02:55:34.731Z",
+                  "source": "Tổng cục Thống kê - GSO",
+                  "note": null,
+                  "related_blog": null
+                }
+              },
+              {
+                "id": "218_dv_khac",
+                "column_name": "dv_khac",
+                "table_name": "218",
+                "name": "Dịch vụ khác",
+                "hasSub": false,
+                "level": 3,
+                "heading": 3,
+                "open": 0,
+                "dateType": "thang",
+                "yAxis": 17,
+                "data": [
+                  [
+                    1788134400000,
+                    72824.26204595737
+                  ],
+                  [
+                    1785456000000,
+                    71774.1431900457
+                  ],
+                  [
+                    1782777600000,
+                    71674.81555401064
+                  ],
+                  [
+                    1780185600000,
+                    69612.55018261258
+                  ],
+                  [
+                    1777507200000,
+                    65762.30556934114
+                  ],
+                  [
+                    1774915200000,
+                    65030.94829691559
+                  ],
+                  [
+                    1772236800000,
+                    63197.1
+                  ],
+                  [
+                    1769817600000,
+                    64942.59511625514
+                  ],
+                  [
+                    1767139200000,
+                    63730.84099999995
+                  ],
+                  [
+                    1764460800000,
+                    66782.46864551361
+                  ],
+                  [
+                    1761868800000,
+                    65410.48809153197
+                  ],
+                  [
+                    1759190400000,
+                    64267.41425547536
+                  ],
+                  [
+                    1756598400000,
+                    63439.78402813853
+                  ],
+                  [
+                    1753920000000,
+                    61686.94027631508
+                  ],
+                  [
+                    1751241600000,
+                    61268.10594406051
+                  ],
+                  [
+                    1748649600000,
+                    60480.05911034415
+                  ],
+                  [
+                    1745971200000,
+                    59663.08306625651
+                  ],
+                  [
+                    1743379200000,
+                    60058.69471248042
+                  ],
+                  [
+                    1740700800000,
+                    59537.44722458424
+                  ]
+                ],
+                "time_frame": "monthly",
+                "lingo": {
+                  "name": "Dịch vụ khác",
+                  "unit": "Tỷ VND",
+                  "description": "Doanh thu dịch vụ khác gồm số tiền đã thu và sẽ thu từ cung cấp các dịch vụ hành chính - hỗ trợ, dịch vụ hoạt động giáo dục và đào tạo, hoạt động y tế, hoạt động xổ số, thể thao, vui chơi và giải trí. Số liệu được Tổng cục thống kê (GSO) thu thập và tổng hợp thông qua khảo sát các doanh nghiệp, cơ sở sản xuất, kinh doanh cá thể, hoạt động thương mại.",
+                  "frequency": "Ngày 6 tháng sau",
+                  "last_updated": "2026-09-03T02:55:34.731Z",
+                  "source": "Tổng cục Thống kê - GSO",
+                  "note": null,
+                  "related_blog": null
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "yoy": {
+        "title": "Bán Lẻ Hàng Hóa Và Dịch Vụ",
+        "headers": [
+          "08-2026",
+          "07-2026",
+          "06-2026",
+          "05-2026",
+          "04-2026",
+          "03-2026",
+          "02-2026",
+          "01-2026",
+          "12-2025",
+          "11-2025",
+          "10-2025",
+          "09-2025",
+          "08-2025",
+          "07-2025",
+          "06-2025",
+          "05-2025",
+          "04-2025",
+          "03-2025",
+          "02-2025"
+        ],
+        "parent": [
+          {
+            "title": "BÁN LẺ HÀNG HÓA VÀ DỊCH VỤ",
+            "child": [
+              {
+                "id": "218_tong_yoy",
+                "column_name": "tong_yoy",
+                "table_name": "218",
+                "name": "Tổng mức bán lẻ HH và DV",
+                "hasSub": false,
+                "level": 2,
+                "heading": 2,
+                "open": 1,
+                "dateType": "thang",
+                "yAxis": 1,
+                "data": [
+                  [
+                    1788134400000,
+                    14.949971628193959
+                  ],
+                  [
+                    1785456000000,
+                    14.463849772977749
+                  ],
+                  [
+                    1782777600000,
+                    14.315894547565824
+                  ],
+                  [
+                    1780185600000,
+                    13.829022048611838
+                  ],
+                  [
+                    1777507200000,
+                    11.62564962769031
+                  ],
+                  [
+                    1774915200000,
+                    11.537307891919053
+                  ],
+                  [
+                    1772236800000,
+                    11.899472836250762
+                  ],
+                  [
+                    1769817600000,
+                    7.680649296187535
+                  ],
+                  [
+                    1767139200000,
+                    7.799931834504181
+                  ],
+                  [
+                    1764460800000,
+                    7.147883627200363
+                  ],
+                  [
+                    1761868800000,
+                    7.231973177137297
+                  ],
+                  [
+                    1759190400000,
+                    11.103355382202936
+                  ],
+                  [
+                    1756598400000,
+                    11.196912671891017
+                  ],
+                  [
+                    1753920000000,
+                    11.278377411273429
+                  ],
+                  [
+                    1751241600000,
+                    11.104673486820072
+                  ],
+                  [
+                    1748649600000,
+                    11.149500831934079
+                  ],
+                  [
+                    1745971200000,
+                    10.128484109764646
+                  ],
+                  [
+                    1743379200000,
+                    11.554794860229439
+                  ],
+                  [
+                    1740700800000,
+                    10.147392063757387
+                  ]
+                ],
+                "time_frame": "monthly",
+                "lingo": {
+                  "name": "Tổng bán lẻ HH và DV",
+                  "unit": "%",
+                  "description": "Tổng bán lẻ hàng hóa và dịch vụ là một thước đo quan trọng phản ánh tình hình tiêu dùng trong nền kinh tế. Chỉ số này bao gồm tổng giá trị hàng hóa và dịch vụ tiêu thụ trên thị trường, giúp đánh giá sức mua và xu hướng tiêu dùng của người dân. Số liệu được Tổng cục thống kê (GSO) thu thập và tổng hợp thông qua khảo sát các doanh nghiệp, cơ sở sản xuất, kinh doanh cá thể, hoạt động thương mại.",
+                  "frequency": "Ngày 6 tháng sau",
+                  "last_updated": "2026-09-03T02:55:34.731Z",
+                  "source": "Tổng cục Thống kê - GSO",
+                  "note": null,
+                  "related_blog": null
+                }
+              },
+              {
+                "id": "218_banle_hanghoa_yoy",
+                "column_name": "banle_hanghoa_yoy",
+                "table_name": "218",
+                "name": "Bán lẻ hàng hoá",
+                "hasSub": false,
+                "level": 3,
+                "heading": 3,
+                "open": 0,
+                "dateType": "thang",
+                "yAxis": 1,
+                "data": [
+                  [
+                    1788134400000,
+                    13.810668162944847
+                  ],
+                  [
+                    1785456000000,
+                    13.379185983206684
+                  ],
+                  [
+                    1782777600000,
+                    13.15995624543904
+                  ],
+                  [
+                    1780185600000,
+                    13.19659584583796
+                  ],
+                  [
+                    1777507200000,
+                    11.930780522566588
+                  ],
+                  [
+                    1774915200000,
+                    11.693661957130749
+                  ],
+                  [
+                    1772236800000,
+                    12.309262708110122
+                  ],
+                  [
+                    1769817600000,
+                    6.768019401465927
+                  ],
+                  [
+                    1767139200000,
+                    8.205453808518095
+                  ],
+                  [
+                    1764460800000,
+                    6.004394506890976
+                  ],
+                  [
+                    1761868800000,
+                    5.734676044560004
+                  ],
+                  [
+                    1759190400000,
+                    10.415985095725018
+                  ],
+                  [
+                    1756598400000,
+                    9.619484884476085
+                  ],
+                  [
+                    1753920000000,
+                    9.353793402436079
+                  ],
+                  [
+                    1751241600000,
+                    9.11151684553137
+                  ],
+                  [
+                    1748649600000,
+                    8.181223184053653
+                  ],
+                  [
+                    1745971200000,
+                    7.156381526269695
+                  ],
+                  [
+                    1743379200000,
+                    9.193207237546858
+                  ],
+                  [
+                    1740700800000,
+                    8.311891937730755
+                  ]
+                ],
+                "time_frame": "monthly",
+                "lingo": {
+                  "name": "Bán lẻ Hàng hóa",
+                  "unit": "%",
+                  "description": "Doanh thu bán lẻ hàng hóa là tổng số tiền thu được hoặc sẽ thu được từ việc bán các sản phẩm, chủ yếu là hàng hóa tiêu dùng cho cá nhân và hộ gia đình, tại các địa điểm như cửa hàng, siêu thị, trung tâm thương mại, hợp tác xã, quầy hàng ở chợ hoặc bán hàng lưu động. Số liệu được Tổng cục thống kê (GSO) thu thập và tổng hợp thông qua khảo sát các doanh nghiệp, cơ sở sản xuất, kinh doanh cá thể, hoạt động thương mại.",
+                  "frequency": "Ngày 6 tháng sau",
+                  "last_updated": "2026-09-03T02:55:34.731Z",
+                  "source": "Tổng cục Thống kê - GSO",
+                  "note": null,
+                  "related_blog": null
+                }
+              },
+              {
+                "id": "218_dv_luutruanuong_yoy",
+                "column_name": "dv_luutruanuong_yoy",
+                "table_name": "218",
+                "name": "Dịch vụ lưu trú, ăn uống",
+                "hasSub": false,
+                "level": 3,
+                "heading": 3,
+                "open": 0,
+                "dateType": "thang",
+                "yAxis": 1,
+                "data": [
+                  [
+                    1788134400000,
+                    21.470342613851187
+                  ],
+                  [
+                    1785456000000,
+                    17.934325016248078
+                  ],
+                  [
+                    1782777600000,
+                    18.042862791943552
+                  ],
+                  [
+                    1780185600000,
+                    16.619746077074026
+                  ],
+                  [
+                    1777507200000,
+                    11.802014322678346
+                  ],
+                  [
+                    1774915200000,
+                    12.820181599946
+                  ],
+                  [
+                    1772236800000,
+                    13.989157440735973
+                  ],
+                  [
+                    1769817600000,
+                    7.918916449046718
+                  ],
+                  [
+                    1767139200000,
+                    10.09252132080267
+                  ],
+                  [
+                    1764460800000,
+                    13.568185590373542
+                  ],
+                  [
+                    1761868800000,
+                    14.096326086740635
+                  ],
+                  [
+                    1759190400000,
+                    13.546389436142272
+                  ],
+                  [
+                    1756598400000,
+                    18.719081384798596
+                  ],
+                  [
+                    1753920000000,
+                    21.07905317360877
+                  ],
+                  [
+                    1751241600000,
+                    19.277053522920166
+                  ],
+                  [
+                    1748649600000,
+                    22.28879614604905
+                  ],
+                  [
+                    1745971200000,
+                    21.46825669956555
+                  ],
+                  [
+                    1743379200000,
+                    22.1006905759581
+                  ],
+                  [
+                    1740700800000,
+                    16.376430454937896
+                  ]
+                ],
+                "time_frame": "monthly",
+                "lingo": {
+                  "name": "Dịch vụ lưu trú, ăn uống",
+                  "unit": "%",
+                  "description": "Doanh thu dịch vụ lưu trú, ăn uống phản ánh toàn bộ số tiền đã và sẽ thu được do cung cấp dịch vụ lưu trú ngắn ngày và ăn uống cho khách hàng trong một khoảng thời gian nhất định. Số liệu được Tổng cục thống kê (GSO) thu thập và tổng hợp thông qua khảo sát các doanh nghiệp, cơ sở lưu trú và các dịch vụ ăn uống.",
+                  "frequency": "Ngày 6 tháng sau",
+                  "last_updated": "2026-09-03T02:55:34.731Z",
+                  "source": "Tổng cục Thống kê - GSO",
+                  "note": null,
+                  "related_blog": null
+                }
+              },
+              {
+                "id": "218_dulichluhanh_yoy",
+                "column_name": "dulichluhanh_yoy",
+                "table_name": "218",
+                "name": "Du lịch lữ hành",
+                "hasSub": false,
+                "level": 3,
+                "heading": 3,
+                "open": 0,
+                "dateType": "thang",
+                "yAxis": 1,
+                "data": [
+                  [
+                    1788134400000,
+                    19.18245050964553
+                  ],
+                  [
+                    1785456000000,
+                    27.758452804544632
+                  ],
+                  [
+                    1782777600000,
+                    24.1731065975008
+                  ],
+                  [
+                    1780185600000,
+                    13.158472198782828
+                  ],
+                  [
+                    1777507200000,
+                    3.9720213691606054
+                  ],
+                  [
+                    1774915200000,
+                    16.91532791940206
+                  ],
+                  [
+                    1772236800000,
+                    15.404567812655245
+                  ],
+                  [
+                    1769817600000,
+                    13.5617336812413
+                  ],
+                  [
+                    1767139200000,
+                    11.626670593384716
+                  ],
+                  [
+                    1764460800000,
+                    19.1028810751509
+                  ],
+                  [
+                    1761868800000,
+                    18.810387380580053
+                  ],
+                  [
+                    1759190400000,
+                    19.687232840500226
+                  ],
+                  [
+                    1756598400000,
+                    12.415370087951082
+                  ],
+                  [
+                    1753920000000,
+                    7.652067182057359
+                  ],
+                  [
+                    1751241600000,
+                    46.75488611381038
+                  ],
+                  [
+                    1748649600000,
+                    21.578366150915063
+                  ],
+                  [
+                    1745971200000,
+                    30.309141984671584
+                  ],
+                  [
+                    1743379200000,
+                    19.607248908437004
+                  ],
+                  [
+                    1740700800000,
+                    12.184777438123621
+                  ]
+                ],
+                "time_frame": "monthly",
+                "lingo": {
+                  "name": "Du lịch lữ hành",
+                  "unit": "%",
+                  "description": "Doanh thu dịch vụ du lịch lữ hành là tổng số tiền mà các công ty lữ hành kiếm được từ việc tổ chức các chương trình du lịch trọn gói hoặc không trọn gói cho khách trong nước và quốc tế, cùng với các dịch vụ như cung cấp thông tin, tư vấn, lập kế hoạch du lịch và hướng dẫn du khách, bao gồm cả hoạt động của các đại lý du lịch. Số liệu này được Tổng cục Thống kê (GSO) thu thập và tổng hợp thông qua các cuộc khảo sát các doanh nghiệp, cơ sở lữ hành và cá nhân kinh doanh trong lĩnh vực du lịch.",
+                  "frequency": "Ngày 6 tháng sau",
+                  "last_updated": "2026-09-03T02:55:34.731Z",
+                  "source": "Tổng cục Thống kê - GSO",
+                  "note": null,
+                  "related_blog": null
+                }
+              },
+              {
+                "id": "218_dv_khac_yoy",
+                "column_name": "dv_khac_yoy",
+                "table_name": "218",
+                "name": "Dịch vụ khác",
+                "hasSub": false,
+                "level": 3,
+                "heading": 3,
+                "open": 0,
+                "dateType": "thang",
+                "yAxis": 1,
+                "data": [
+                  [
+                    1788134400000,
+                    14.792733237642139
+                  ],
+                  [
+                    1785456000000,
+                    16.35225036052507
+                  ],
+                  [
+                    1782777600000,
+                    16.985525257548755
+                  ],
+                  [
+                    1780185600000,
+                    15.100003549279716
+                  ],
+                  [
+                    1777507200000,
+                    10.222774603034471
+                  ],
+                  [
+                    1774915200000,
+                    8.278990424681862
+                  ],
+                  [
+                    1772236800000,
+                    6.146808346704882
+                  ],
+                  [
+                    1769817600000,
+                    13.852319192273743
+                  ],
+                  [
+                    1767139200000,
+                    2.1287952240536425
+                  ],
+                  [
+                    1764460800000,
+                    7.212795816187987
+                  ],
+                  [
+                    1761868800000,
+                    9.397609033902496
+                  ],
+                  [
+                    1759190400000,
+                    12.362676199210583
+                  ],
+                  [
+                    1756598400000,
+                    14.100733076003003
+                  ],
+                  [
+                    1753920000000,
+                    14.955458932211933
+                  ],
+                  [
+                    1751241600000,
+                    13.05209097693095
+                  ],
+                  [
+                    1748649600000,
+                    20.52430627288475
+                  ],
+                  [
+                    1745971200000,
+                    18.15752467640308
+                  ],
+                  [
+                    1743379200000,
+                    16.784492198791334
+                  ],
+                  [
+                    1740700800000,
+                    17.214181629293183
+                  ]
+                ],
+                "time_frame": "monthly",
+                "lingo": {
+                  "name": "Dịch vụ khác",
+                  "unit": "%",
+                  "description": "Doanh thu dịch vụ khác gồm số tiền đã thu và sẽ thu từ cung cấp các dịch vụ hành chính - hỗ trợ, dịch vụ hoạt động giáo dục và đào tạo, hoạt động y tế, hoạt động xổ số, thể thao, vui chơi và giải trí. Số liệu được Tổng cục thống kê (GSO) thu thập và tổng hợp thông qua khảo sát các doanh nghiệp, cơ sở sản xuất, kinh doanh cá thể, hoạt động thương mại.",
+                  "frequency": "Ngày 6 tháng sau",
+                  "last_updated": "2026-09-03T02:55:34.731Z",
+                  "source": "Tổng cục Thống kê - GSO",
+                  "note": null,
+                  "related_blog": null
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "quarterly": {
+      "value": {
+        "title": "Bán Lẻ Hàng Hóa Và Dịch Vụ",
+        "headers": [
+          "06-2026",
+          "03-2026",
+          "12-2025",
+          "09-2025",
+          "06-2025",
+          "03-2025",
+          "12-2024",
+          "09-2024",
+          "06-2024",
+          "03-2024",
+          "12-2023",
+          "09-2023",
+          "06-2023",
+          "03-2023",
+          "12-2022",
+          "09-2022",
+          "06-2022",
+          "03-2022",
+          "12-2021"
+        ],
+        "parent": [
+          {
+            "title": "BÁN LẺ HÀNG HÓA VÀ DỊCH VỤ (Tỷ VND)",
+            "child": [
+              {
+                "id": "218_tong_mtq",
+                "column_name": "tong_mtq",
+                "table_name": "218",
+                "name": "Tổng mức bán lẻ HH và DV",
+                "hasSub": false,
+                "level": 2,
+                "heading": 2,
+                "open": 1,
+                "dateType": "quy",
+                "yAxis": 17,
+                "data": [
+                  [
+                    1782777600000,
+                    1977599.599757705
+                  ],
+                  [
+                    1774915200000,
+                    1911943.962909561
+                  ],
+                  [
+                    1767139200000,
+                    1833599.706084444
+                  ],
+                  [
+                    1759190400000,
+                    1758415.52269444
+                  ],
+                  [
+                    1751241600000,
+                    1736491.586281705
+                  ],
+                  [
+                    1743379200000,
+                    1707380.382615811
+                  ],
+                  [
+                    1735603200000,
+                    1690888.068217462
+                  ],
+                  [
+                    1727654400000,
+                    1597991.541373427
+                  ],
+                  [
+                    1719705600000,
+                    1571823.826766579
+                  ],
+                  [
+                    1711843200000,
+                    1550558.040287659
+                  ],
+                  [
+                    1703980800000,
+                    1542195.027898955
+                  ],
+                  [
+                    1696032000000,
+                    1467679.571683423
+                  ],
+                  [
+                    1688083200000,
+                    1433271.594075532
+                  ],
+                  [
+                    1680220800000,
+                    1428668.991811415
+                  ],
+                  [
+                    1672444800000,
+                    1521908.809238339
+                  ],
+                  [
+                    1664496000000,
+                    1445417.194308896
+                  ],
+                  [
+                    1656547200000,
+                    1397914.494634279
+                  ],
+                  [
+                    1648684800000,
+                    1375398.975838252
+                  ],
+                  [
+                    1640908800000,
+                    1293265.84317315
+                  ]
+                ],
+                "time_frame": "quarterly",
+                "lingo": {
+                  "name": "Tổng bán lẻ HH và DV",
+                  "unit": "%",
+                  "description": "Tổng bán lẻ hàng hóa và dịch vụ là một thước đo quan trọng phản ánh tình hình tiêu dùng trong nền kinh tế. Chỉ số này bao gồm tổng giá trị hàng hóa và dịch vụ tiêu thụ trên thị trường, giúp đánh giá sức mua và xu hướng tiêu dùng của người dân. Số liệu được Tổng cục thống kê (GSO) thu thập và tổng hợp thông qua khảo sát các doanh nghiệp, cơ sở sản xuất, kinh doanh cá thể, hoạt động thương mại.",
+                  "frequency": "Ngày 6 tháng sau",
+                  "last_updated": "2026-09-03T02:55:34.731Z",
+                  "source": "Tổng cục Thống kê - GSO",
+                  "note": null,
+                  "related_blog": null
+                }
+              },
+              {
+                "id": "218_banle_hanghoa_mtq",
+                "column_name": "banle_hanghoa_mtq",
+                "table_name": "218",
+                "name": "Bán lẻ hàng hoá",
+                "hasSub": false,
+                "level": 3,
+                "heading": 3,
+                "open": 0,
+                "dateType": "quy",
+                "yAxis": 17,
+                "data": [
+                  [
+                    1782777600000,
+                    1486244.507623869
+                  ],
+                  [
+                    1774915200000,
+                    1455614.013940094
+                  ],
+                  [
+                    1767139200000,
+                    1387691.5
+                  ],
+                  [
+                    1759190400000,
+                    1334283.893779985
+                  ],
+                  [
+                    1751241600000,
+                    1312847.014324383
+                  ],
+                  [
+                    1743379200000,
+                    1301367.603249832
+                  ],
+                  [
+                    1735603200000,
+                    1294485.825279138
+                  ],
+                  [
+                    1727654400000,
+                    1223937.268224244
+                  ],
+                  [
+                    1719705600000,
+                    1216935.639069333
+                  ],
+                  [
+                    1711843200000,
+                    1204949.8085767159
+                  ],
+                  [
+                    1703980800000,
+                    1181929.039295922
+                  ],
+                  [
+                    1696032000000,
+                    1129625.054434559
+                  ],
+                  [
+                    1688083200000,
+                    1121071.160831752
+                  ],
+                  [
+                    1680220800000,
+                    1122400.1436340748
+                  ],
+                  [
+                    1672444800000,
+                    1179205.569661259
+                  ],
+                  [
+                    1664496000000,
+                    1120493.282344195
+                  ],
+                  [
+                    1656547200000,
+                    1109252.510572218
+                  ],
+                  [
+                    1648684800000,
+                    1093124.793413889
+                  ],
+                  [
+                    1640908800000,
+                    1062948.706938125
+                  ]
+                ],
+                "time_frame": "quarterly",
+                "lingo": {
+                  "name": "Bán lẻ Hàng hóa",
+                  "unit": "%",
+                  "description": "Doanh thu bán lẻ hàng hóa là tổng số tiền thu được hoặc sẽ thu được từ việc bán các sản phẩm, chủ yếu là hàng hóa tiêu dùng cho cá nhân và hộ gia đình, tại các địa điểm như cửa hàng, siêu thị, trung tâm thương mại, hợp tác xã, quầy hàng ở chợ hoặc bán hàng lưu động. Số liệu được Tổng cục thống kê (GSO) thu thập và tổng hợp thông qua khảo sát các doanh nghiệp, cơ sở sản xuất, kinh doanh cá thể, hoạt động thương mại.",
+                  "frequency": "Ngày 6 tháng sau",
+                  "last_updated": "2026-09-03T02:55:34.731Z",
+                  "source": "Tổng cục Thống kê - GSO",
+                  "note": null,
+                  "related_blog": null
+                }
+              },
+              {
+                "id": "218_dv_luutruanuong_mtq",
+                "column_name": "dv_luutruanuong_mtq",
+                "table_name": "218",
+                "name": "Dịch vụ lưu trú, ăn uống",
+                "hasSub": false,
+                "level": 3,
+                "heading": 3,
+                "open": 0,
+                "dateType": "quy",
+                "yAxis": 17,
+                "data": [
+                  [
+                    1782777600000,
+                    256068.7988723114
+                  ],
+                  [
+                    1774915200000,
+                    236901.5704694254
+                  ],
+                  [
+                    1767139200000,
+                    218781.2660341875
+                  ],
+                  [
+                    1759190400000,
+                    214610.1132407536
+                  ],
+                  [
+                    1751241600000,
+                    219264.3678127301
+                  ],
+                  [
+                    1743379200000,
+                    207214.2462700579
+                  ],
+                  [
+                    1735603200000,
+                    191996.9681415332
+                  ],
+                  [
+                    1727654400000,
+                    186978.7079665884
+                  ],
+                  [
+                    1719705600000,
+                    181290.1949266962
+                  ],
+                  [
+                    1711843200000,
+                    173693.29648025468
+                  ],
+                  [
+                    1703980800000,
+                    171692.8524686029
+                  ],
+                  [
+                    1696032000000,
+                    168730.2105582501
+                  ],
+                  [
+                    1688083200000,
+                    155161.3833263143
+                  ],
+                  [
+                    1680220800000,
+                    152210.82885604954
+                  ],
+                  [
+                    1672444800000,
+                    157159.3716671933
+                  ],
+                  [
+                    1664496000000,
+                    160022.4069867546
+                  ],
+                  [
+                    1656547200000,
+                    145522.4079409578
+                  ],
+                  [
+                    1648684800000,
+                    144641.758925146
+                  ],
+                  [
+                    1640908800000,
+                    100916.9254047805
+                  ]
+                ],
+                "time_frame": "quarterly",
+                "lingo": {
+                  "name": "Dịch vụ lưu trú, ăn uống",
+                  "unit": "%",
+                  "description": "Doanh thu dịch vụ lưu trú, ăn uống phản ánh toàn bộ số tiền đã và sẽ thu được do cung cấp dịch vụ lưu trú ngắn ngày và ăn uống cho khách hàng trong một khoảng thời gian nhất định. Số liệu được Tổng cục thống kê (GSO) thu thập và tổng hợp thông qua khảo sát các doanh nghiệp, cơ sở lưu trú và các dịch vụ ăn uống.",
+                  "frequency": "Ngày 6 tháng sau",
+                  "last_updated": "2026-09-03T02:55:34.731Z",
+                  "source": "Tổng cục Thống kê - GSO",
+                  "note": null,
+                  "related_blog": null
+                }
+              },
+              {
+                "id": "218_dulichluhanh_mtq",
+                "column_name": "dulichluhanh_mtq",
+                "table_name": "218",
+                "name": "Du lịch lữ hành",
+                "hasSub": false,
+                "level": 3,
+                "heading": 3,
+                "open": 0,
+                "dateType": "quy",
+                "yAxis": 17,
+                "data": [
+                  [
+                    1782777600000,
+                    26481.94019678019
+                  ],
+                  [
+                    1774915200000,
+                    23312.79205052498
+                  ],
+                  [
+                    1767139200000,
+                    24603.1636268402
+                  ],
+                  [
+                    1759190400000,
+                    23979.63719085235
+                  ],
+                  [
+                    1751241600000,
+                    22968.95602393191
+                  ],
+                  [
+                    1743379200000,
+                    20349.40980589828
+                  ],
+                  [
+                    1735603200000,
+                    20328.79858429677
+                  ],
+                  [
+                    1727654400000,
+                    20429.90015175793
+                  ],
+                  [
+                    1719705600000,
+                    19171.39059513266
+                  ],
+                  [
+                    1711843200000,
+                    17751.465761448762
+                  ],
+                  [
+                    1703980800000,
+                    14729.39512191463
+                  ],
+                  [
+                    1696032000000,
+                    14422.32591010721
+                  ],
+                  [
+                    1688083200000,
+                    12799.51380927078
+                  ],
+                  [
+                    1680220800000,
+                    11911.587773472704
+                  ],
+                  [
+                    1672444800000,
+                    6845.222974541036
+                  ],
+                  [
+                    1664496000000,
+                    9265.808076165662
+                  ],
+                  [
+                    1656547200000,
+                    5622.619063139123
+                  ],
+                  [
+                    1648684800000,
+                    4609.248681605967
+                  ],
+                  [
+                    1640908800000,
+                    1972.727717675761
+                  ]
+                ],
+                "time_frame": "quarterly",
+                "lingo": {
+                  "name": "Du lịch lữ hành",
+                  "unit": "%",
+                  "description": "Doanh thu dịch vụ du lịch lữ hành là tổng số tiền mà các công ty lữ hành kiếm được từ việc tổ chức các chương trình du lịch trọn gói hoặc không trọn gói cho khách trong nước và quốc tế, cùng với các dịch vụ như cung cấp thông tin, tư vấn, lập kế hoạch du lịch và hướng dẫn du khách, bao gồm cả hoạt động của các đại lý du lịch. Số liệu này được Tổng cục Thống kê (GSO) thu thập và tổng hợp thông qua các cuộc khảo sát các doanh nghiệp, cơ sở lữ hành và cá nhân kinh doanh trong lĩnh vực du lịch.",
+                  "frequency": "Ngày 6 tháng sau",
+                  "last_updated": "2026-09-03T02:55:34.731Z",
+                  "source": "Tổng cục Thống kê - GSO",
+                  "note": null,
+                  "related_blog": null
+                }
+              },
+              {
+                "id": "218_dv_khac_mtq",
+                "column_name": "dv_khac_mtq",
+                "table_name": "218",
+                "name": "Dịch vụ khác",
+                "hasSub": false,
+                "level": 3,
+                "heading": 3,
+                "open": 0,
+                "dateType": "quy",
+                "yAxis": 17,
+                "data": [
+                  [
+                    1782777600000,
+                    208804.3530647451
+                  ],
+                  [
+                    1774915200000,
+                    196115.5864495166
+                  ],
+                  [
+                    1767139200000,
+                    202523.9225273633
+                  ],
+                  [
+                    1759190400000,
+                    185541.8784828488
+                  ],
+                  [
+                    1751241600000,
+                    185568.5648283579
+                  ],
+                  [
+                    1743379200000,
+                    178449.1232900241
+                  ],
+                  [
+                    1735603200000,
+                    184076.612503224
+                  ],
+                  [
+                    1727654400000,
+                    166645.6650308363
+                  ],
+                  [
+                    1719705600000,
+                    154426.5461590987
+                  ],
+                  [
+                    1711843200000,
+                    154191.2083010383
+                  ],
+                  [
+                    1703980800000,
+                    173843.222265276
+                  ],
+                  [
+                    1696032000000,
+                    154901.980780507
+                  ],
+                  [
+                    1688083200000,
+                    144239.5361081961
+                  ],
+                  [
+                    1680220800000,
+                    141812.45863709698
+                  ],
+                  [
+                    1672444800000,
+                    178698.6449353443
+                  ],
+                  [
+                    1664496000000,
+                    155635.8275579455
+                  ],
+                  [
+                    1656547200000,
+                    137516.9570579645
+                  ],
+                  [
+                    1648684800000,
+                    133388.5748108145
+                  ],
+                  [
+                    1640908800000,
+                    127426.9800262272
+                  ]
+                ],
+                "time_frame": "quarterly",
+                "lingo": {
+                  "name": "Dịch vụ khác",
+                  "unit": "%",
+                  "description": "Doanh thu dịch vụ khác gồm số tiền đã thu và sẽ thu từ cung cấp các dịch vụ hành chính - hỗ trợ, dịch vụ hoạt động giáo dục và đào tạo, hoạt động y tế, hoạt động xổ số, thể thao, vui chơi và giải trí. Số liệu được Tổng cục thống kê (GSO) thu thập và tổng hợp thông qua khảo sát các doanh nghiệp, cơ sở sản xuất, kinh doanh cá thể, hoạt động thương mại.",
+                  "frequency": "Ngày 6 tháng sau",
+                  "last_updated": "2026-09-03T02:55:34.731Z",
+                  "source": "Tổng cục Thống kê - GSO",
+                  "note": null,
+                  "related_blog": null
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "yoy": {
+        "title": "Bán Lẻ Hàng Hóa Và Dịch Vụ",
+        "headers": [
+          "06-2026",
+          "03-2026",
+          "12-2025",
+          "09-2025",
+          "06-2025",
+          "03-2025",
+          "12-2024",
+          "09-2024",
+          "06-2024",
+          "03-2024",
+          "12-2023",
+          "09-2023",
+          "06-2023",
+          "03-2023",
+          "12-2022",
+          "09-2022",
+          "06-2022",
+          "03-2022",
+          "12-2021"
+        ],
+        "parent": [
+          {
+            "title": "BÁN LẺ HÀNG HÓA VÀ DỊCH VỤ",
+            "child": [
+              {
+                "id": "218_tong_yym",
+                "column_name": "tong_yym",
+                "table_name": "218",
+                "name": "Tổng mức bán lẻ HH và DV",
+                "hasSub": false,
+                "level": 2,
+                "heading": 2,
+                "open": 1,
+                "dateType": "quy",
+                "yAxis": 1,
+                "data": [
+                  [
+                    1782777600000,
+                    13.884778675621284
+                  ],
+                  [
+                    1774915200000,
+                    11.981136856003129
+                  ],
+                  [
+                    1767139200000,
+                    8.440040505899894
+                  ],
+                  [
+                    1759190400000,
+                    10.039100781668303
+                  ],
+                  [
+                    1751241600000,
+                    10.476222380078458
+                  ],
+                  [
+                    1743379200000,
+                    10.113929195392021
+                  ],
+                  [
+                    1735603200000,
+                    9.641649572757501
+                  ],
+                  [
+                    1727654400000,
+                    8.87877519072755
+                  ],
+                  [
+                    1719705600000,
+                    9.666851227901015
+                  ],
+                  [
+                    1711843200000,
+                    8.531650730495697
+                  ],
+                  [
+                    1703980800000,
+                    1.3329457413922439
+                  ],
+                  [
+                    1696032000000,
+                    1.5402042719694657
+                  ],
+                  [
+                    1688083200000,
+                    2.5292748288229867
+                  ],
+                  [
+                    1680220800000,
+                    3.8730591565765007
+                  ],
+                  [
+                    1672444800000,
+                    17.6795024218835
+                  ],
+                  [
+                    1664496000000,
+                    41.237228635191144
+                  ],
+                  [
+                    1656547200000,
+                    20.108971968510065
+                  ],
+                  [
+                    1648684800000,
+                    24.966167256322137
+                  ],
+                  [
+                    1640908800000,
+                    -4.263338759456278
+                  ]
+                ],
+                "time_frame": "quarterly",
+                "lingo": {
+                  "name": "Tổng bán lẻ HH và DV",
+                  "unit": "%",
+                  "description": "Tổng bán lẻ hàng hóa và dịch vụ là một thước đo quan trọng phản ánh tình hình tiêu dùng trong nền kinh tế. Chỉ số này bao gồm tổng giá trị hàng hóa và dịch vụ tiêu thụ trên thị trường, giúp đánh giá sức mua và xu hướng tiêu dùng của người dân. Số liệu được Tổng cục thống kê (GSO) thu thập và tổng hợp thông qua khảo sát các doanh nghiệp, cơ sở sản xuất, kinh doanh cá thể, hoạt động thương mại.",
+                  "frequency": "Ngày 6 tháng sau",
+                  "last_updated": "2026-09-03T02:55:34.731Z",
+                  "source": "Tổng cục Thống kê - GSO",
+                  "note": null,
+                  "related_blog": null
+                }
+              },
+              {
+                "id": "218_banle_hanghoa_yym",
+                "column_name": "banle_hanghoa_yym",
+                "table_name": "218",
+                "name": "Bán lẻ hàng hoá",
+                "hasSub": false,
+                "level": 3,
+                "heading": 3,
+                "open": 0,
+                "dateType": "quy",
+                "yAxis": 1,
+                "data": [
+                  [
+                    1782777600000,
+                    13.207745564224757
+                  ],
+                  [
+                    1774915200000,
+                    11.852639508242799
+                  ],
+                  [
+                    1767139200000,
+                    7.200208214003689
+                  ],
+                  [
+                    1759190400000,
+                    9.015709254105637
+                  ],
+                  [
+                    1751241600000,
+                    7.8813843703681465
+                  ],
+                  [
+                    1743379200000,
+                    8.001810032818268
+                  ],
+                  [
+                    1735603200000,
+                    9.523142442651748
+                  ],
+                  [
+                    1727654400000,
+                    8.348983888011716
+                  ],
+                  [
+                    1719705600000,
+                    8.551150148796676
+                  ],
+                  [
+                    1711843200000,
+                    7.354744688054309
+                  ],
+                  [
+                    1703980800000,
+                    0.23095800297529384
+                  ],
+                  [
+                    1696032000000,
+                    0.8149778525453847
+                  ],
+                  [
+                    1688083200000,
+                    1.0654607627110204
+                  ],
+                  [
+                    1680220800000,
+                    2.678134317012187
+                  ],
+                  [
+                    1672444800000,
+                    10.937203457165632
+                  ],
+                  [
+                    1664496000000,
+                    24.96877581050593
+                  ],
+                  [
+                    1656547200000,
+                    16.839862363617964
+                  ],
+                  [
+                    1648684800000,
+                    19.848743331748974
+                  ],
+                  [
+                    1640908800000,
+                    -0.4732187523806132
+                  ]
+                ],
+                "time_frame": "quarterly",
+                "lingo": {
+                  "name": "Bán lẻ Hàng hóa",
+                  "unit": "%",
+                  "description": "Doanh thu bán lẻ hàng hóa là tổng số tiền thu được hoặc sẽ thu được từ việc bán các sản phẩm, chủ yếu là hàng hóa tiêu dùng cho cá nhân và hộ gia đình, tại các địa điểm như cửa hàng, siêu thị, trung tâm thương mại, hợp tác xã, quầy hàng ở chợ hoặc bán hàng lưu động. Số liệu được Tổng cục thống kê (GSO) thu thập và tổng hợp thông qua khảo sát các doanh nghiệp, cơ sở sản xuất, kinh doanh cá thể, hoạt động thương mại.",
+                  "frequency": "Ngày 6 tháng sau",
+                  "last_updated": "2026-09-03T02:55:34.731Z",
+                  "source": "Tổng cục Thống kê - GSO",
+                  "note": null,
+                  "related_blog": null
+                }
+              },
+              {
+                "id": "218_dv_luutruanuong_yym",
+                "column_name": "dv_luutruanuong_yym",
+                "table_name": "218",
+                "name": "Dịch vụ lưu trú, ăn uống",
+                "hasSub": false,
+                "level": 3,
+                "heading": 3,
+                "open": 0,
+                "dateType": "quy",
+                "yAxis": 1,
+                "data": [
+                  [
+                    1782777600000,
+                    16.785413620427057
+                  ],
+                  [
+                    1774915200000,
+                    14.326874109165574
+                  ],
+                  [
+                    1767139200000,
+                    13.95037544181941
+                  ],
+                  [
+                    1759190400000,
+                    14.77783517420748
+                  ],
+                  [
+                    1751241600000,
+                    20.94662256907418
+                  ],
+                  [
+                    1743379200000,
+                    19.298931201765665
+                  ],
+                  [
+                    1735603200000,
+                    11.82583630069473
+                  ],
+                  [
+                    1727654400000,
+                    10.815192696057494
+                  ],
+                  [
+                    1719705600000,
+                    16.839764534343786
+                  ],
+                  [
+                    1711843200000,
+                    14.11362633372279
+                  ],
+                  [
+                    1703980800000,
+                    9.247606838354038
+                  ],
+                  [
+                    1696032000000,
+                    5.441615168440932
+                  ],
+                  [
+                    1688083200000,
+                    6.623705257314922
+                  ],
+                  [
+                    1680220800000,
+                    5.232976968166329
+                  ],
+                  [
+                    1672444800000,
+                    55.731430616641205
+                  ],
+                  [
+                    1664496000000,
+                    145.75756714004342
+                  ],
+                  [
+                    1656547200000,
+                    52.3820571164304
+                  ],
+                  [
+                    1648684800000,
+                    75.67258095071338
+                  ],
+                  [
+                    1640908800000,
+                    -24.931223612359787
+                  ]
+                ],
+                "time_frame": "quarterly",
+                "lingo": {
+                  "name": "Dịch vụ lưu trú, ăn uống",
+                  "unit": "%",
+                  "description": "Doanh thu dịch vụ lưu trú, ăn uống phản ánh toàn bộ số tiền đã và sẽ thu được do cung cấp dịch vụ lưu trú ngắn ngày và ăn uống cho khách hàng trong một khoảng thời gian nhất định. Số liệu được Tổng cục thống kê (GSO) thu thập và tổng hợp thông qua khảo sát các doanh nghiệp, cơ sở lưu trú và các dịch vụ ăn uống.",
+                  "frequency": "Ngày 6 tháng sau",
+                  "last_updated": "2026-09-03T02:55:34.731Z",
+                  "source": "Tổng cục Thống kê - GSO",
+                  "note": null,
+                  "related_blog": null
+                }
+              },
+              {
+                "id": "218_dulichluhanh_yym",
+                "column_name": "dulichluhanh_yym",
+                "table_name": "218",
+                "name": "Du lịch lữ hành",
+                "hasSub": false,
+                "level": 3,
+                "heading": 3,
+                "open": 0,
+                "dateType": "quy",
+                "yAxis": 1,
+                "data": [
+                  [
+                    1782777600000,
+                    15.294487782500935
+                  ],
+                  [
+                    1774915200000,
+                    14.562497256150198
+                  ],
+                  [
+                    1767139200000,
+                    21.02615668515314
+                  ],
+                  [
+                    1759190400000,
+                    17.375205031479197
+                  ],
+                  [
+                    1751241600000,
+                    19.80850272678393
+                  ],
+                  [
+                    1743379200000,
+                    14.635095937212858
+                  ],
+                  [
+                    1735603200000,
+                    38.01516230663985
+                  ],
+                  [
+                    1727654400000,
+                    41.65468371117999
+                  ],
+                  [
+                    1719705600000,
+                    49.782178298418515
+                  ],
+                  [
+                    1711843200000,
+                    49.02686442005289
+                  ],
+                  [
+                    1703980800000,
+                    115.17772579062289
+                  ],
+                  [
+                    1696032000000,
+                    55.65103217716762
+                  ],
+                  [
+                    1688083200000,
+                    127.64326847575511
+                  ],
+                  [
+                    1680220800000,
+                    158.42796942174175
+                  ],
+                  [
+                    1672444800000,
+                    246.99279141299732
+                  ],
+                  [
+                    1664496000000,
+                    3830.6438421399926
+                  ],
+                  [
+                    1656547200000,
+                    324.3924966353441
+                  ],
+                  [
+                    1648684800000,
+                    534.6613575165316
+                  ],
+                  [
+                    1640908800000,
+                    -42.26522757773845
+                  ]
+                ],
+                "time_frame": "quarterly",
+                "lingo": {
+                  "name": "Du lịch lữ hành",
+                  "unit": "%",
+                  "description": "Doanh thu dịch vụ du lịch lữ hành là tổng số tiền mà các công ty lữ hành kiếm được từ việc tổ chức các chương trình du lịch trọn gói hoặc không trọn gói cho khách trong nước và quốc tế, cùng với các dịch vụ như cung cấp thông tin, tư vấn, lập kế hoạch du lịch và hướng dẫn du khách, bao gồm cả hoạt động của các đại lý du lịch. Số liệu này được Tổng cục Thống kê (GSO) thu thập và tổng hợp thông qua các cuộc khảo sát các doanh nghiệp, cơ sở lữ hành và cá nhân kinh doanh trong lĩnh vực du lịch.",
+                  "frequency": "Ngày 6 tháng sau",
+                  "last_updated": "2026-09-03T02:55:34.731Z",
+                  "source": "Tổng cục Thống kê - GSO",
+                  "note": null,
+                  "related_blog": null
+                }
+              },
+              {
+                "id": "218_dv_khac_yym",
+                "column_name": "dv_khac_yym",
+                "table_name": "218",
+                "name": "Dịch vụ khác",
+                "hasSub": false,
+                "level": 3,
+                "heading": 3,
+                "open": 0,
+                "dateType": "quy",
+                "yAxis": 1,
+                "data": [
+                  [
+                    1782777600000,
+                    12.521403211734283
+                  ],
+                  [
+                    1774915200000,
+                    9.899999974099126
+                  ],
+                  [
+                    1767139200000,
+                    10.021539278280777
+                  ],
+                  [
+                    1759190400000,
+                    11.33915691627258
+                  ],
+                  [
+                    1751241600000,
+                    20.166234008222244
+                  ],
+                  [
+                    1743379200000,
+                    15.732359358404763
+                  ],
+                  [
+                    1735603200000,
+                    5.8865626767619075
+                  ],
+                  [
+                    1727654400000,
+                    7.581364803184709
+                  ],
+                  [
+                    1719705600000,
+                    7.062564346616582
+                  ],
+                  [
+                    1711843200000,
+                    8.728957796027627
+                  ],
+                  [
+                    1703980800000,
+                    -2.7171010008637944
+                  ],
+                  [
+                    1696032000000,
+                    -0.47151532455808376
+                  ],
+                  [
+                    1688083200000,
+                    4.888545524896968
+                  ],
+                  [
+                    1680220800000,
+                    6.315296372444276
+                  ],
+                  [
+                    1672444800000,
+                    40.23611396783026
+                  ],
+                  [
+                    1664496000000,
+                    153.361010453431
+                  ],
+                  [
+                    1656547200000,
+                    16.866957278119997
+                  ],
+                  [
+                    1648684800000,
+                    22.061752510088535
+                  ],
+                  [
+                    1640908800000,
+                    -12.12191428266388
+                  ]
+                ],
+                "time_frame": "quarterly",
+                "lingo": {
+                  "name": "Dịch vụ khác",
+                  "unit": "%",
+                  "description": "Doanh thu dịch vụ khác gồm số tiền đã thu và sẽ thu từ cung cấp các dịch vụ hành chính - hỗ trợ, dịch vụ hoạt động giáo dục và đào tạo, hoạt động y tế, hoạt động xổ số, thể thao, vui chơi và giải trí. Số liệu được Tổng cục thống kê (GSO) thu thập và tổng hợp thông qua khảo sát các doanh nghiệp, cơ sở sản xuất, kinh doanh cá thể, hoạt động thương mại.",
+                  "frequency": "Ngày 6 tháng sau",
+                  "last_updated": "2026-09-03T02:55:34.731Z",
+                  "source": "Tổng cục Thống kê - GSO",
+                  "note": null,
+                  "related_blog": null
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "yearly": {
+      "value": {
+        "title": "Bán Lẻ Hàng Hóa Và Dịch Vụ",
+        "headers": [
+          "12-2025",
+          "12-2024",
+          "12-2023",
+          "12-2022",
+          "12-2021",
+          "12-2020",
+          "12-2019",
+          "12-2018",
+          "12-2017",
+          "12-2016",
+          "12-2015",
+          "12-2014",
+          "12-2013",
+          "12-2012",
+          "12-2011",
+          "12-2010",
+          "12-2009",
+          "12-2008",
+          "12-2007",
+          "12-2006"
+        ],
+        "parent": [
+          {
+            "title": "BÁN LẺ HÀNG HÓA VÀ DỊCH VỤ (Tỷ VND)",
+            "child": [
+              {
+                "id": "218_tong_yrl",
+                "column_name": "tong_yrl",
+                "table_name": "218",
+                "name": "Tổng mức bán lẻ HH và DV",
+                "hasSub": false,
+                "level": 2,
+                "heading": 2,
+                "open": 1,
+                "dateType": "nam",
+                "yAxis": 17,
+                "data": [
+                  [
+                    1767139200000,
+                    7008932.112022317
+                  ],
+                  [
+                    1735603200000,
+                    6415720.761511385
+                  ],
+                  [
+                    1703980800000,
+                    5865487.42107174
+                  ],
+                  [
+                    1672444800000,
+                    5686152.085607787
+                  ],
+                  [
+                    1640908800000,
+                    4739738.06124137
+                  ],
+                  [
+                    1609372800000,
+                    4976454.60812073
+                  ],
+                  [
+                    1577750400000,
+                    4930838.279354245
+                  ],
+                  [
+                    1546214400000,
+                    4417148.541334321
+                  ],
+                  [
+                    1514678400000,
+                    3935186.209000001
+                  ],
+                  [
+                    1483142400000,
+                    3548641.384
+                  ],
+                  [
+                    1451520000000,
+                    3201099.997677077
+                  ],
+                  [
+                    1419984000000,
+                    2961543.038856565
+                  ],
+                  [
+                    1388448000000,
+                    2662904.734862791
+                  ],
+                  [
+                    1356912000000,
+                    2242139.5499600247
+                  ],
+                  [
+                    1325289600000,
+                    1853803.9707433106
+                  ],
+                  [
+                    1293753600000,
+                    1506257.1561767193
+                  ],
+                  [
+                    1262217600000,
+                    1154904.418503534
+                  ],
+                  [
+                    1230681600000,
+                    933656.0767245907
+                  ],
+                  [
+                    1199059200000,
+                    712886.7057109808
+                  ],
+                  [
+                    1167523200000,
+                    568058.628140341
+                  ]
+                ],
+                "time_frame": "yearly",
+                "lingo": {
+                  "name": "Tổng bán lẻ HH và DV",
+                  "unit": "Tỷ VND",
+                  "description": "Tổng bán lẻ hàng hóa và dịch vụ là một thước đo quan trọng phản ánh tình hình tiêu dùng trong nền kinh tế. Chỉ số này bao gồm tổng giá trị hàng hóa và dịch vụ tiêu thụ trên thị trường, giúp đánh giá sức mua và xu hướng tiêu dùng của người dân. Số liệu được Tổng cục thống kê (GSO) thu thập và tổng hợp thông qua khảo sát các doanh nghiệp, cơ sở sản xuất, kinh doanh cá thể, hoạt động thương mại.",
+                  "frequency": "Ngày 6 tháng sau",
+                  "last_updated": "2026-09-03T02:55:34.731Z",
+                  "source": "Tổng cục Thống kê - GSO",
+                  "note": null,
+                  "related_blog": null
+                }
+              },
+              {
+                "id": "218_banle_hanghoa_yrl",
+                "column_name": "banle_hanghoa_yrl",
+                "table_name": "218",
+                "name": "Bán lẻ hàng hoá",
+                "hasSub": false,
+                "level": 3,
+                "heading": 3,
+                "open": 0,
+                "dateType": "nam",
+                "yAxis": 17,
+                "data": [
+                  [
+                    1767139200000,
+                    5335112.803587786
+                  ],
+                  [
+                    1735603200000,
+                    4941067.977080318
+                  ],
+                  [
+                    1703980800000,
+                    4544260.875901586
+                  ],
+                  [
+                    1672444800000,
+                    4474631.923018564
+                  ],
+                  [
+                    1640908800000,
+                    3913231.602040027
+                  ],
+                  [
+                    1609372800000,
+                    3944935.798384897
+                  ],
+                  [
+                    1577750400000,
+                    3743000.43984658
+                  ],
+                  [
+                    1546214400000,
+                    3329049.094503455
+                  ],
+                  [
+                    1514678400000,
+                    2941064.954000001
+                  ],
+                  [
+                    1483142400000,
+                    2648856.716223733
+                  ],
+                  [
+                    1451520000000,
+                    2427956.8460514
+                  ],
+                  [
+                    1419984000000,
+                    2234065.679901855
+                  ],
+                  [
+                    1388448000000,
+                    1991777.393772077
+                  ],
+                  [
+                    1356912000000,
+                    1715161.8264991113
+                  ],
+                  [
+                    1325289600000,
+                    1457513.2214608944
+                  ],
+                  [
+                    1293753600000,
+                    1183617.9324623866
+                  ],
+                  [
+                    1262217600000,
+                    895049.997037532
+                  ],
+                  [
+                    1230681600000,
+                    768371.3986814907
+                  ],
+                  [
+                    1199059200000,
+                    584454.3076390664
+                  ],
+                  [
+                    1167523200000,
+                    460414.27347095596
+                  ]
+                ],
+                "time_frame": "yearly",
+                "lingo": {
+                  "name": "Bán lẻ Hàng hóa",
+                  "unit": "Tỷ VND",
+                  "description": "Doanh thu bán lẻ hàng hóa là tổng số tiền thu được hoặc sẽ thu được từ việc bán các sản phẩm, chủ yếu là hàng hóa tiêu dùng cho cá nhân và hộ gia đình, tại các địa điểm như cửa hàng, siêu thị, trung tâm thương mại, hợp tác xã, quầy hàng ở chợ hoặc bán hàng lưu động. Số liệu được Tổng cục thống kê (GSO) thu thập và tổng hợp thông qua khảo sát các doanh nghiệp, cơ sở sản xuất, kinh doanh cá thể, hoạt động thương mại.",
+                  "frequency": "Ngày 6 tháng sau",
+                  "last_updated": "2026-09-03T02:55:34.731Z",
+                  "source": "Tổng cục Thống kê - GSO",
+                  "note": null,
+                  "related_blog": null
+                }
+              },
+              {
+                "id": "218_dv_luutruanuong_yrl",
+                "column_name": "dv_luutruanuong_yrl",
+                "table_name": "218",
+                "name": "Dịch vụ lưu trú, ăn uống",
+                "hasSub": false,
+                "level": 3,
+                "heading": 3,
+                "open": 0,
+                "dateType": "nam",
+                "yAxis": 17,
+                "data": [
+                  [
+                    1767139200000,
+                    843083.3204264645
+                  ],
+                  [
+                    1735603200000,
+                    735873.6389605936
+                  ],
+                  [
+                    1703980800000,
+                    649791.2341155108
+                  ],
+                  [
+                    1672444800000,
+                    587179.976678182
+                  ],
+                  [
+                    1640908800000,
+                    379391.102949598
+                  ],
+                  [
+                    1609372800000,
+                    493270.2995338914
+                  ],
+                  [
+                    1577750400000,
+                    586490.4838949239
+                  ],
+                  [
+                    1546214400000,
+                    534175.6886155412
+                  ],
+                  [
+                    1514678400000,
+                    494654.588
+                  ],
+                  [
+                    1483142400000,
+                    442265.3450000001
+                  ],
+                  [
+                    1451520000000,
+                    373475.8168438185
+                  ],
+                  [
+                    1419984000000,
+                    353743.8940994015
+                  ],
+                  [
+                    1388448000000,
+                    328482.1774483706
+                  ],
+                  [
+                    1356912000000,
+                    264140.31952336675
+                  ],
+                  [
+                    1325289600000,
+                    211963.23364498196
+                  ],
+                  [
+                    1293753600000,
+                    167882.1525615762
+                  ],
+                  [
+                    1262217600000,
+                    130488.70205274486
+                  ],
+                  [
+                    1230681600000,
+                    106478.74472618352
+                  ],
+                  [
+                    1199059200000,
+                    84358.1487204134
+                  ],
+                  [
+                    1167523200000,
+                    68277.32890324757
+                  ]
+                ],
+                "time_frame": "yearly",
+                "lingo": {
+                  "name": "Dịch vụ lưu trú, ăn uống",
+                  "unit": "Tỷ VND",
+                  "description": "Doanh thu dịch vụ lưu trú, ăn uống phản ánh toàn bộ số tiền đã và sẽ thu được do cung cấp dịch vụ lưu trú ngắn ngày và ăn uống cho khách hàng trong một khoảng thời gian nhất định. Số liệu được Tổng cục thống kê (GSO) thu thập và tổng hợp thông qua khảo sát các doanh nghiệp, cơ sở lưu trú và các dịch vụ ăn uống.",
+                  "frequency": "Ngày 6 tháng sau",
+                  "last_updated": "2026-09-03T02:55:34.731Z",
+                  "source": "Tổng cục Thống kê - GSO",
+                  "note": null,
+                  "related_blog": null
+                }
+              },
+              {
+                "id": "218_dulichluhanh_yrl",
+                "column_name": "dulichluhanh_yrl",
+                "table_name": "218",
+                "name": "Du lịch lữ hành",
+                "hasSub": false,
+                "level": 3,
+                "heading": 3,
+                "open": 0,
+                "dateType": "nam",
+                "yAxis": 17,
+                "data": [
+                  [
+                    1767139200000,
+                    93888.78972170748
+                  ],
+                  [
+                    1735603200000,
+                    78102.92272695864
+                  ],
+                  [
+                    1703980800000,
+                    53824.62004101607
+                  ],
+                  [
+                    1672444800000,
+                    24777.03214448377
+                  ],
+                  [
+                    1640908800000,
+                    6597.655763665372
+                  ],
+                  [
+                    1609372800000,
+                    16263.39639113799
+                  ],
+                  [
+                    1577750400000,
+                    44259.08003816161
+                  ],
+                  [
+                    1546214400000,
+                    41018.79278543741
+                  ],
+                  [
+                    1514678400000,
+                    35904.00000000001
+                  ],
+                  [
+                    1483142400000,
+                    32530.28299999999
+                  ],
+                  [
+                    1451520000000,
+                    30419.58059775331
+                  ],
+                  [
+                    1419984000000,
+                    27784.20560526603
+                  ],
+                  [
+                    1388448000000,
+                    25093.99754783571
+                  ],
+                  [
+                    1356912000000,
+                    32268.3856064122
+                  ],
+                  [
+                    1325289600000,
+                    23062.570438159273
+                  ],
+                  [
+                    1293753600000,
+                    20262.811249888033
+                  ],
+                  [
+                    1262217600000,
+                    14848.639814737924
+                  ],
+                  [
+                    1230681600000,
+                    16042.457775417988
+                  ],
+                  [
+                    1199059200000,
+                    11210.664127366812
+                  ],
+                  [
+                    1167523200000,
+                    7734.213702500161
+                  ]
+                ],
+                "time_frame": "yearly",
+                "lingo": {
+                  "name": "Du lịch lữ hành",
+                  "unit": "Tỷ VND",
+                  "description": "Doanh thu dịch vụ du lịch lữ hành là tổng số tiền mà các công ty lữ hành kiếm được từ việc tổ chức các chương trình du lịch trọn gói hoặc không trọn gói cho khách trong nước và quốc tế, cùng với các dịch vụ như cung cấp thông tin, tư vấn, lập kế hoạch du lịch và hướng dẫn du khách, bao gồm cả hoạt động của các đại lý du lịch. Số liệu này được Tổng cục Thống kê (GSO) thu thập và tổng hợp thông qua các cuộc khảo sát các doanh nghiệp, cơ sở lữ hành và cá nhân kinh doanh trong lĩnh vực du lịch.",
+                  "frequency": "Ngày 6 tháng sau",
+                  "last_updated": "2026-09-03T02:55:34.731Z",
+                  "source": "Tổng cục Thống kê - GSO",
+                  "note": null,
+                  "related_blog": null
+                }
+              },
+              {
+                "id": "218_dv_khac_yrl",
+                "column_name": "dv_khac_yrl",
+                "table_name": "218",
+                "name": "Dịch vụ khác",
+                "hasSub": false,
+                "level": 3,
+                "heading": 3,
+                "open": 0,
+                "dateType": "nam",
+                "yAxis": 17,
+                "data": [
+                  [
+                    1767139200000,
+                    736847.1982863584
+                  ],
+                  [
+                    1735603200000,
+                    660676.2227435155
+                  ],
+                  [
+                    1703980800000,
+                    617611.2008401086
+                  ],
+                  [
+                    1672444800000,
+                    599563.1537665551
+                  ],
+                  [
+                    1640908800000,
+                    440518.1628409128
+                  ],
+                  [
+                    1609372800000,
+                    521985.1138108041
+                  ],
+                  [
+                    1577750400000,
+                    557087.6812706675
+                  ],
+                  [
+                    1546214400000,
+                    512904.9654298871
+                  ],
+                  [
+                    1514678400000,
+                    463562.6670000001
+                  ],
+                  [
+                    1483142400000,
+                    424989.04
+                  ],
+                  [
+                    1451520000000,
+                    369247.7542350464
+                  ],
+                  [
+                    1419984000000,
+                    345949.2590765468
+                  ],
+                  [
+                    1388448000000,
+                    317551.1633663689
+                  ],
+                  [
+                    1356912000000,
+                    234612.94991888228
+                  ],
+                  [
+                    1325289600000,
+                    163658.22305413007
+                  ],
+                  [
+                    1293753600000,
+                    136694.456126925
+                  ],
+                  [
+                    1262217600000,
+                    104806.91308712697
+                  ],
+                  [
+                    1230681600000,
+                    45829.677102158304
+                  ],
+                  [
+                    1199059200000,
+                    34878.586911707665
+                  ],
+                  [
+                    1167523200000,
+                    32891.94111788762
+                  ]
+                ],
+                "time_frame": "yearly",
+                "lingo": {
+                  "name": "Dịch vụ khác",
+                  "unit": "Tỷ VND",
+                  "description": "Doanh thu dịch vụ khác gồm số tiền đã thu và sẽ thu từ cung cấp các dịch vụ hành chính - hỗ trợ, dịch vụ hoạt động giáo dục và đào tạo, hoạt động y tế, hoạt động xổ số, thể thao, vui chơi và giải trí. Số liệu được Tổng cục thống kê (GSO) thu thập và tổng hợp thông qua khảo sát các doanh nghiệp, cơ sở sản xuất, kinh doanh cá thể, hoạt động thương mại.",
+                  "frequency": "Ngày 6 tháng sau",
+                  "last_updated": "2026-09-03T02:55:34.731Z",
+                  "source": "Tổng cục Thống kê - GSO",
+                  "note": null,
+                  "related_blog": null
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "yoy": {
+        "title": "Bán Lẻ Hàng Hóa Và Dịch Vụ",
+        "headers": [
+          "12-2025",
+          "12-2024",
+          "12-2023",
+          "12-2022",
+          "12-2021",
+          "12-2020",
+          "12-2019",
+          "12-2018",
+          "12-2017",
+          "12-2016",
+          "12-2015",
+          "12-2014",
+          "12-2013",
+          "12-2012",
+          "12-2011",
+          "12-2010",
+          "12-2009",
+          "12-2008",
+          "12-2007",
+          "12-2006"
+        ],
+        "parent": [
+          {
+            "title": "BÁN LẺ HÀNG HÓA VÀ DỊCH VỤ",
+            "child": [
+              {
+                "id": "218_tong_yrl_yoy",
+                "column_name": "tong_yrl_yoy",
+                "table_name": "218",
+                "name": "Tổng mức bán lẻ HH và DV",
+                "hasSub": false,
+                "level": 2,
+                "heading": 2,
+                "open": 1,
+                "dateType": "nam",
+                "yAxis": 1,
+                "data": [
+                  [
+                    1767139200000,
+                    9.24621523538979
+                  ],
+                  [
+                    1735603200000,
+                    9.38086302023144
+                  ],
+                  [
+                    1703980800000,
+                    3.1538962159993695
+                  ],
+                  [
+                    1672444800000,
+                    19.967644037243375
+                  ],
+                  [
+                    1640908800000,
+                    -4.756730755527824
+                  ],
+                  [
+                    1609372800000,
+                    0.9251231977630135
+                  ],
+                  [
+                    1577750400000,
+                    11.629442234350366
+                  ],
+                  [
+                    1546214400000,
+                    12.247510199950476
+                  ],
+                  [
+                    1514678400000,
+                    10.892755372319163
+                  ],
+                  [
+                    1483142400000,
+                    10.856936258633635
+                  ],
+                  [
+                    1451520000000,
+                    8.088923769718493
+                  ],
+                  [
+                    1419984000000,
+                    11.214757331871347
+                  ],
+                  [
+                    1388448000000,
+                    18.76623535364996
+                  ],
+                  [
+                    1356912000000,
+                    20.94803902383514
+                  ],
+                  [
+                    1325289600000,
+                    23.073537817988356
+                  ],
+                  [
+                    1293753600000,
+                    30.42266806186872
+                  ],
+                  [
+                    1262217600000,
+                    23.745216005312344
+                  ],
+                  [
+                    1230681600000,
+                    30.965613050928265
+                  ],
+                  [
+                    1199059200000,
+                    25.4915495712702
+                  ],
+                  [
+                    1167523200000,
+                    22.514587238691707
+                  ]
+                ],
+                "time_frame": "yearly",
+                "lingo": {
+                  "name": "Tổng bán lẻ HH và DV",
+                  "unit": "%",
+                  "description": "Tổng bán lẻ hàng hóa và dịch vụ là một thước đo quan trọng phản ánh tình hình tiêu dùng trong nền kinh tế. Chỉ số này bao gồm tổng giá trị hàng hóa và dịch vụ tiêu thụ trên thị trường, giúp đánh giá sức mua và xu hướng tiêu dùng của người dân. Số liệu được Tổng cục thống kê (GSO) thu thập và tổng hợp thông qua khảo sát các doanh nghiệp, cơ sở sản xuất, kinh doanh cá thể, hoạt động thương mại.",
+                  "frequency": "Ngày 6 tháng sau",
+                  "last_updated": "2026-09-03T02:55:34.731Z",
+                  "source": "Tổng cục Thống kê - GSO",
+                  "note": null,
+                  "related_blog": null
+                }
+              },
+              {
+                "id": "218_banle_hanghoa_yrl_yoy",
+                "column_name": "banle_hanghoa_yrl_yoy",
+                "table_name": "218",
+                "name": "Bán lẻ hàng hoá",
+                "hasSub": false,
+                "level": 3,
+                "heading": 3,
+                "open": 0,
+                "dateType": "nam",
+                "yAxis": 1,
+                "data": [
+                  [
+                    1767139200000,
+                    7.974891831791986
+                  ],
+                  [
+                    1735603200000,
+                    8.732049325843443
+                  ],
+                  [
+                    1703980800000,
+                    1.5560822449961762
+                  ],
+                  [
+                    1672444800000,
+                    14.346207382304444
+                  ],
+                  [
+                    1640908800000,
+                    -0.8036682462069524
+                  ],
+                  [
+                    1609372800000,
+                    5.395012952405478
+                  ],
+                  [
+                    1577750400000,
+                    12.434522099016029
+                  ],
+                  [
+                    1546214400000,
+                    13.19196095876004
+                  ],
+                  [
+                    1514678400000,
+                    11.031485243673208
+                  ],
+                  [
+                    1483142400000,
+                    9.098179423229192
+                  ],
+                  [
+                    1451520000000,
+                    8.678848070306637
+                  ],
+                  [
+                    1419984000000,
+                    12.16442594877164
+                  ],
+                  [
+                    1388448000000,
+                    16.127665798018455
+                  ],
+                  [
+                    1356912000000,
+                    17.67727395158519
+                  ],
+                  [
+                    1325289600000,
+                    23.140515320572995
+                  ],
+                  [
+                    1293753600000,
+                    32.240426387348954
+                  ],
+                  [
+                    1262217600000,
+                    16.53448991244213
+                  ],
+                  [
+                    1230681600000,
+                    31.46971817793649
+                  ],
+                  [
+                    1199059200000,
+                    26.938165750801968
+                  ],
+                  [
+                    1167523200000,
+                    21.232740004904894
+                  ]
+                ],
+                "time_frame": "yearly",
+                "lingo": {
+                  "name": "Bán lẻ Hàng hóa",
+                  "unit": "%",
+                  "description": "Doanh thu bán lẻ hàng hóa là tổng số tiền thu được hoặc sẽ thu được từ việc bán các sản phẩm, chủ yếu là hàng hóa tiêu dùng cho cá nhân và hộ gia đình, tại các địa điểm như cửa hàng, siêu thị, trung tâm thương mại, hợp tác xã, quầy hàng ở chợ hoặc bán hàng lưu động. Số liệu được Tổng cục thống kê (GSO) thu thập và tổng hợp thông qua khảo sát các doanh nghiệp, cơ sở sản xuất, kinh doanh cá thể, hoạt động thương mại.",
+                  "frequency": "Ngày 6 tháng sau",
+                  "last_updated": "2026-09-03T02:55:34.731Z",
+                  "source": "Tổng cục Thống kê - GSO",
+                  "note": null,
+                  "related_blog": null
+                }
+              },
+              {
+                "id": "218_dv_luutruanuong_yrl_yoy",
+                "column_name": "dv_luutruanuong_yrl_yoy",
+                "table_name": "218",
+                "name": "Dịch vụ lưu trú, ăn uống",
+                "hasSub": false,
+                "level": 3,
+                "heading": 3,
+                "open": 0,
+                "dateType": "nam",
+                "yAxis": 1,
+                "data": [
+                  [
+                    1767139200000,
+                    14.5690341098918
+                  ],
+                  [
+                    1735603200000,
+                    13.24770177336376
+                  ],
+                  [
+                    1703980800000,
+                    10.663043687479895
+                  ],
+                  [
+                    1672444800000,
+                    54.769042318894
+                  ],
+                  [
+                    1640908800000,
+                    -23.08657072844278
+                  ],
+                  [
+                    1609372800000,
+                    -15.894577477532263
+                  ],
+                  [
+                    1577750400000,
+                    9.79355601430879
+                  ],
+                  [
+                    1546214400000,
+                    7.98963591449418
+                  ],
+                  [
+                    1514678400000,
+                    11.84565862830602
+                  ],
+                  [
+                    1483142400000,
+                    18.41873691783054
+                  ],
+                  [
+                    1451520000000,
+                    5.578024970481158
+                  ],
+                  [
+                    1419984000000,
+                    7.690437529141563
+                  ],
+                  [
+                    1388448000000,
+                    24.358968763688484
+                  ],
+                  [
+                    1356912000000,
+                    24.616102038609394
+                  ],
+                  [
+                    1325289600000,
+                    26.257157423114176
+                  ],
+                  [
+                    1293753600000,
+                    28.656465977963762
+                  ],
+                  [
+                    1262217600000,
+                    22.548190876650985
+                  ],
+                  [
+                    1230681600000,
+                    26.23812625033166
+                  ],
+                  [
+                    1199059200000,
+                    23.552209899647902
+                  ],
+                  [
+                    1167523200000,
+                    22.22611595208994
+                  ]
+                ],
+                "time_frame": "yearly",
+                "lingo": {
+                  "name": "Dịch vụ lưu trú, ăn uống",
+                  "unit": "%",
+                  "description": "Doanh thu dịch vụ lưu trú, ăn uống phản ánh toàn bộ số tiền đã và sẽ thu được do cung cấp dịch vụ lưu trú ngắn ngày và ăn uống cho khách hàng trong một khoảng thời gian nhất định. Số liệu được Tổng cục thống kê (GSO) thu thập và tổng hợp thông qua khảo sát các doanh nghiệp, cơ sở lưu trú và các dịch vụ ăn uống.",
+                  "frequency": "Ngày 6 tháng sau",
+                  "last_updated": "2026-09-03T02:55:34.731Z",
+                  "source": "Tổng cục Thống kê - GSO",
+                  "note": null,
+                  "related_blog": null
+                }
+              },
+              {
+                "id": "218_dulichluhanh_yrl_yoy",
+                "column_name": "dulichluhanh_yrl_yoy",
+                "table_name": "218",
+                "name": "Du lịch lữ hành",
+                "hasSub": false,
+                "level": 3,
+                "heading": 3,
+                "open": 0,
+                "dateType": "nam",
+                "yAxis": 1,
+                "data": [
+                  [
+                    1767139200000,
+                    20.211621337059206
+                  ],
+                  [
+                    1735603200000,
+                    45.106315042153085
+                  ],
+                  [
+                    1703980800000,
+                    117.23594548025522
+                  ],
+                  [
+                    1672444800000,
+                    275.5429660476666
+                  ],
+                  [
+                    1640908800000,
+                    -59.43248504192845
+                  ],
+                  [
+                    1609372800000,
+                    -63.25410203484763
+                  ],
+                  [
+                    1577750400000,
+                    7.8995188124468205
+                  ],
+                  [
+                    1546214400000,
+                    14.24574639437778
+                  ],
+                  [
+                    1514678400000,
+                    10.371004150194512
+                  ],
+                  [
+                    1483142400000,
+                    6.93863084490576
+                  ],
+                  [
+                    1451520000000,
+                    9.485155091091709
+                  ],
+                  [
+                    1419984000000,
+                    10.720524110604869
+                  ],
+                  [
+                    1388448000000,
+                    -22.233489292227983
+                  ],
+                  [
+                    1356912000000,
+                    39.9166918229592
+                  ],
+                  [
+                    1325289600000,
+                    13.81722977006318
+                  ],
+                  [
+                    1293753600000,
+                    36.462406676309215
+                  ],
+                  [
+                    1262217600000,
+                    -7.441615102826471
+                  ],
+                  [
+                    1230681600000,
+                    43.09997688946978
+                  ],
+                  [
+                    1199059200000,
+                    44.94898329151229
+                  ],
+                  [
+                    1167523200000,
+                    82.47111701772391
+                  ]
+                ],
+                "time_frame": "yearly",
+                "lingo": {
+                  "name": "Du lịch lữ hành",
+                  "unit": "%",
+                  "description": "Doanh thu dịch vụ du lịch lữ hành là tổng số tiền mà các công ty lữ hành kiếm được từ việc tổ chức các chương trình du lịch trọn gói hoặc không trọn gói cho khách trong nước và quốc tế, cùng với các dịch vụ như cung cấp thông tin, tư vấn, lập kế hoạch du lịch và hướng dẫn du khách, bao gồm cả hoạt động của các đại lý du lịch. Số liệu này được Tổng cục Thống kê (GSO) thu thập và tổng hợp thông qua các cuộc khảo sát các doanh nghiệp, cơ sở lữ hành và cá nhân kinh doanh trong lĩnh vực du lịch.",
+                  "frequency": "Ngày 6 tháng sau",
+                  "last_updated": "2026-09-03T02:55:34.731Z",
+                  "source": "Tổng cục Thống kê - GSO",
+                  "note": null,
+                  "related_blog": null
+                }
+              },
+              {
+                "id": "218_dv_khac_yrl_yoy",
+                "column_name": "dv_khac_yrl_yoy",
+                "table_name": "218",
+                "name": "Dịch vụ khác",
+                "hasSub": false,
+                "level": 3,
+                "heading": 3,
+                "open": 0,
+                "dateType": "nam",
+                "yAxis": 1,
+                "data": [
+                  [
+                    1767139200000,
+                    11.529244268325002
+                  ],
+                  [
+                    1735603200000,
+                    6.972836931200008
+                  ],
+                  [
+                    1703980800000,
+                    3.0101995027834194
+                  ],
+                  [
+                    1672444800000,
+                    36.104071146569105
+                  ],
+                  [
+                    1640908800000,
+                    -15.607140666356118
+                  ],
+                  [
+                    1609372800000,
+                    -6.301084845351013
+                  ],
+                  [
+                    1577750400000,
+                    8.614210978392258
+                  ],
+                  [
+                    1546214400000,
+                    10.644148449056843
+                  ],
+                  [
+                    1514678400000,
+                    9.076381593275935
+                  ],
+                  [
+                    1483142400000,
+                    15.09590380053367
+                  ],
+                  [
+                    1451520000000,
+                    6.734656758823815
+                  ],
+                  [
+                    1419984000000,
+                    8.942841024145176
+                  ],
+                  [
+                    1388448000000,
+                    35.351080780563315
+                  ],
+                  [
+                    1356912000000,
+                    43.35543032340263
+                  ],
+                  [
+                    1325289600000,
+                    19.72557460718697
+                  ],
+                  [
+                    1293753600000,
+                    30.425037910705015
+                  ],
+                  [
+                    1262217600000,
+                    128.66915952304913
+                  ],
+                  [
+                    1230681600000,
+                    31.368665444729782
+                  ],
+                  [
+                    1199059200000,
+                    6.039916545818125
+                  ],
+                  [
+                    1167523200000,
+                    36.30111684782263
+                  ]
+                ],
+                "time_frame": "yearly",
+                "lingo": {
+                  "name": "Dịch vụ khác",
+                  "unit": "%",
+                  "description": "Doanh thu dịch vụ khác gồm số tiền đã thu và sẽ thu từ cung cấp các dịch vụ hành chính - hỗ trợ, dịch vụ hoạt động giáo dục và đào tạo, hoạt động y tế, hoạt động xổ số, thể thao, vui chơi và giải trí. Số liệu được Tổng cục thống kê (GSO) thu thập và tổng hợp thông qua khảo sát các doanh nghiệp, cơ sở sản xuất, kinh doanh cá thể, hoạt động thương mại.",
+                  "frequency": "Ngày 6 tháng sau",
+                  "last_updated": "2026-09-03T02:55:34.731Z",
+                  "source": "Tổng cục Thống kê - GSO",
+                  "note": null,
+                  "related_blog": null
+                }
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

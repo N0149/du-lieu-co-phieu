@@ -1,0 +1,3480 @@
+{
+  "meta": {
+    "group": "Đầu tư",
+    "groupKey": "dautu",
+    "name": "Đăng ký kinh doanh",
+    "slug": "dang-ky-kd",
+    "apiPath": "dautu/dangkykinhdoanh",
+    "defaultTimeFrame": "monthly",
+    "defaultValueType": "value",
+    "supportedTimeFrames": [
+      "monthly",
+      "quarterly",
+      "yearly"
+    ],
+    "supportedValueTypes": [
+      "value",
+      "yoy"
+    ],
+    "unit": "Doanh nghiệp / Vốn",
+    "description": "Tình hình doanh nghiệp thành lập mới, quay trở lại và tạm ngừng hoạt động.",
+    "updatedAt": "2026-09-19T10:14:25.513Z",
+    "latestPeriod": "08-2026",
+    "latestValue": 12174
+  },
+  "datasets": {
+    "monthly": {
+      "value": {
+        "title": "Đăng ký kinh doanh",
+        "headers": [
+          "08-2026",
+          "07-2026",
+          "06-2026",
+          "05-2026",
+          "04-2026",
+          "03-2026",
+          "02-2026",
+          "01-2026",
+          "12-2025",
+          "11-2025",
+          "10-2025",
+          "09-2025",
+          "08-2025",
+          "07-2025",
+          "06-2025",
+          "05-2025",
+          "04-2025",
+          "03-2025",
+          "02-2025"
+        ],
+        "parent": [
+          {
+            "title": "ĐĂNG KÝ KINH DOANH",
+            "child": [
+              {
+                "id": "230_thanh_lap_moi",
+                "column_name": "thanh_lap_moi",
+                "table_name": "230",
+                "name": "DN thành lập mới (DN)",
+                "hasSub": false,
+                "level": 3,
+                "heading": 3,
+                "open": null,
+                "dateType": "thang",
+                "yAxis": 11,
+                "data": [
+                  [
+                    1788134400000,
+                    12174
+                  ],
+                  [
+                    1785456000000,
+                    14230
+                  ],
+                  [
+                    1782777600000,
+                    16847
+                  ],
+                  [
+                    1780185600000,
+                    17029
+                  ],
+                  [
+                    1777507200000,
+                    20395
+                  ],
+                  [
+                    1774915200000,
+                    21951
+                  ],
+                  [
+                    1772236800000,
+                    11307
+                  ],
+                  [
+                    1769817600000,
+                    24164
+                  ],
+                  [
+                    1767139200000,
+                    17154
+                  ],
+                  [
+                    1764460800000,
+                    15058
+                  ],
+                  [
+                    1761868800000,
+                    17951
+                  ],
+                  [
+                    1759190400000,
+                    16802
+                  ],
+                  [
+                    1756598400000,
+                    20472
+                  ],
+                  [
+                    1753920000000,
+                    16524
+                  ],
+                  [
+                    1751241600000,
+                    24422
+                  ],
+                  [
+                    1748649600000,
+                    15136.000000000002
+                  ],
+                  [
+                    1745971200000,
+                    15228
+                  ],
+                  [
+                    1743379200000,
+                    15619
+                  ],
+                  [
+                    1740700800000,
+                    10128
+                  ]
+                ],
+                "time_frame": "monthly",
+                "lingo": {
+                  "name": "DN thành lập mới",
+                  "unit": "DN",
+                  "description": "Chỉ số doanh nghiệp thành lập mới là chỉ số thống kê số lượng doanh nghiệp đã đăng ký thành lập mới trong một kỳ nhất định, là chỉ tiêu quan trọng trong đánh giá tình hình kinh doanh tại Việt Nam. Việc thống kê dựa trên dữ liệu từ cơ quan đăng ký kinh doanh, được tổng hợp và phân tích theo thời gian.",
+                  "frequency": "Ngày 6 tháng sau",
+                  "last_updated": "2026-09-03T02:55:34.731Z",
+                  "source": "Tổng cục Thống kê - GSO",
+                  "note": null,
+                  "related_blog": null
+                }
+              },
+              {
+                "id": "230_von_dang_ky",
+                "column_name": "von_dang_ky",
+                "table_name": "230",
+                "name": "Vốn đăng ký (Nghìn tỷ VND)",
+                "hasSub": false,
+                "level": 3,
+                "heading": 3,
+                "open": null,
+                "dateType": "thang",
+                "yAxis": 18,
+                "data": [
+                  [
+                    1788134400000,
+                    189.396
+                  ],
+                  [
+                    1785456000000,
+                    166.25261
+                  ],
+                  [
+                    1782777600000,
+                    286.34728900000005
+                  ],
+                  [
+                    1780185600000,
+                    280.927511821895
+                  ],
+                  [
+                    1777507200000,
+                    246.75841519623
+                  ],
+                  [
+                    1774915200000,
+                    224.9035605684461
+                  ],
+                  [
+                    1772236800000,
+                    132.781395413429
+                  ],
+                  [
+                    1769817600000,
+                    180.908696
+                  ],
+                  [
+                    1767139200000,
+                    165.965402
+                  ],
+                  [
+                    1764460800000,
+                    160.511
+                  ],
+                  [
+                    1761868800000,
+                    172.497
+                  ],
+                  [
+                    1759190400000,
+                    165.7346090000001
+                  ],
+                  [
+                    1756598400000,
+                    326.122
+                  ],
+                  [
+                    1753920000000,
+                    117.444
+                  ],
+                  [
+                    1751241600000,
+                    176.76083499999996
+                  ],
+                  [
+                    1748649600000,
+                    156.71499999999997
+                  ],
+                  [
+                    1745971200000,
+                    133.644
+                  ],
+                  [
+                    1743379200000,
+                    126.30395300000002
+                  ],
+                  [
+                    1740700800000,
+                    136.383
+                  ]
+                ],
+                "time_frame": "monthly",
+                "lingo": {
+                  "name": "Vốn đăng ký",
+                  "unit": "Nghìn tỷ VND",
+                  "description": "Chỉ số Vốn đăng ký là chỉ số thống kê đo lường số vốn mà các doanh nghiệp đã đăng ký khi thành lập hoặc thay đổi quy mô hoạt động. Đây là số vốn mà chủ sở hữu cam kết góp để đảm bảo hoạt động của doanh nghiệp, thể hiện quy mô và năng lực tài chính ban đầu. Vốn đăng ký được thống kê dựa trên hồ sơ đăng ký doanh nghiệp, bao gồm cả việc tăng giảm vốn trong quá trình hoạt động. Số liệu này được cơ quan thống kê tổng hợp từ các Phòng Đăng ký Kinh doanh cấp tỉnh, phản ánh thực trạng về quy mô vốn của các doanh nghiệp mới thành lập hoặc thay đổi trong kỳ.",
+                  "frequency": "Ngày 6 tháng sau",
+                  "last_updated": "2026-09-03T02:55:34.731Z",
+                  "source": "Tổng cục Thống kê - GSO",
+                  "note": null,
+                  "related_blog": null
+                }
+              },
+              {
+                "id": "230_lao_dong",
+                "column_name": "lao_dong",
+                "table_name": "230",
+                "name": "Lao động đăng ký (Người)",
+                "hasSub": false,
+                "level": 3,
+                "heading": 3,
+                "open": null,
+                "dateType": "thang",
+                "yAxis": 11,
+                "data": [
+                  [
+                    1788134400000,
+                    60387
+                  ],
+                  [
+                    1785456000000,
+                    82003
+                  ],
+                  [
+                    1782777600000,
+                    82502
+                  ],
+                  [
+                    1780185600000,
+                    75858
+                  ],
+                  [
+                    1777507200000,
+                    90977
+                  ],
+                  [
+                    1774915200000,
+                    98392
+                  ],
+                  [
+                    1772236800000,
+                    59364
+                  ],
+                  [
+                    1769817600000,
+                    108173
+                  ],
+                  [
+                    1767139200000,
+                    100589
+                  ],
+                  [
+                    1764460800000,
+                    83279
+                  ],
+                  [
+                    1761868800000,
+                    93593
+                  ],
+                  [
+                    1759190400000,
+                    96968
+                  ],
+                  [
+                    1756598400000,
+                    106947
+                  ],
+                  [
+                    1753920000000,
+                    78987
+                  ],
+                  [
+                    1751241600000,
+                    137159
+                  ],
+                  [
+                    1748649600000,
+                    98111
+                  ],
+                  [
+                    1745971200000,
+                    127593
+                  ],
+                  [
+                    1743379200000,
+                    87517
+                  ],
+                  [
+                    1740700800000,
+                    59143.00000000001
+                  ]
+                ],
+                "time_frame": "monthly",
+                "lingo": {
+                  "name": "Lao động đăng ký",
+                  "unit": "Người",
+                  "description": "Chỉ số Lao động đăng ký là chỉ số thống kê số lao động doanh nghiệp đăng ký hợp pháp khi thành lập hoặc điều chỉnh quy mô, phản ánh quy mô và xu hướng việc làm trong thị trường lao động. Đây là cơ sở quan trọng để đánh giá thực trạng lao động, sự phát triển kinh tế và tác động của doanh nghiệp. Dữ liệu được thu thập từ hồ sơ đăng ký doanh nghiệp, bao gồm số nhân viên dự kiến thuê. Chỉ số này giúp phân tích xu hướng việc làm, hỗ trợ xây dựng chính sách kinh tế - lao động phù hợp, dựa trên thông tin chính thức từ các cơ quan quản lý doanh nghiệp.",
+                  "frequency": "Ngày 6 tháng sau",
+                  "last_updated": "2026-09-03T02:55:34.731Z",
+                  "source": "Tổng cục Thống kê - GSO",
+                  "note": null,
+                  "related_blog": null
+                }
+              },
+              {
+                "id": "230_quay_lai_hoat_dong",
+                "column_name": "quay_lai_hoat_dong",
+                "table_name": "230",
+                "name": "DN quay lại hoạt động (DN)",
+                "hasSub": false,
+                "level": 3,
+                "heading": 3,
+                "open": null,
+                "dateType": "thang",
+                "yAxis": 11,
+                "data": [
+                  [
+                    1788134400000,
+                    9471
+                  ],
+                  [
+                    1785456000000,
+                    10133
+                  ],
+                  [
+                    1782777600000,
+                    13610
+                  ],
+                  [
+                    1780185600000,
+                    9104
+                  ],
+                  [
+                    1777507200000,
+                    9477
+                  ],
+                  [
+                    1774915200000,
+                    7911
+                  ],
+                  [
+                    1772236800000,
+                    6166
+                  ],
+                  [
+                    1769817600000,
+                    24532
+                  ],
+                  [
+                    1767139200000,
+                    9963
+                  ],
+                  [
+                    1764460800000,
+                    9677
+                  ],
+                  [
+                    1761868800000,
+                    11581
+                  ],
+                  [
+                    1759190400000,
+                    10734
+                  ],
+                  [
+                    1756598400000,
+                    12428
+                  ],
+                  [
+                    1753920000000,
+                    14619
+                  ],
+                  [
+                    1751241600000,
+                    14390
+                  ],
+                  [
+                    1748649600000,
+                    8016.999999999999
+                  ],
+                  [
+                    1745971200000,
+                    9014
+                  ],
+                  [
+                    1743379200000,
+                    9122
+                  ],
+                  [
+                    1740700800000,
+                    7053
+                  ]
+                ],
+                "time_frame": "monthly",
+                "lingo": {
+                  "name": "DN quay lại hoạt động",
+                  "unit": "DN",
+                  "description": "Chỉ số Doanh nghiệp quay lại hoạt động là chỉ số thống kê số doanh nghiệp đã tạm ngừng kinh doanh nhưng sau đó quyết định quay lại hoạt động, thể hiện sự phục hồi và khả năng thích ứng của doanh nghiệp trước biến động kinh tế. Dữ liệu được thu thập từ hồ sơ đăng ký kinh doanh tại cơ quan quản lý, ghi nhận khi doanh nghiệp nộp đơn xin quay lại hoạt động sau thời gian tạm ngừng. Chỉ số này giúp đánh giá xu hướng tái hoạt động, cung cấp thông tin quan trọng để phân tích sức khỏe kinh tế và hỗ trợ xây dựng chính sách phù hợp.",
+                  "frequency": "Ngày 6 tháng sau",
+                  "last_updated": "2026-09-03T02:55:34.731Z",
+                  "source": "Tổng cục Thống kê - GSO",
+                  "note": null,
+                  "related_blog": null
+                }
+              },
+              {
+                "id": "230_tam_dung_hoat_dong",
+                "column_name": "tam_dung_hoat_dong",
+                "table_name": "230",
+                "name": "DN tạm dừng hoạt động chờ giải thể (DN)",
+                "hasSub": false,
+                "level": 3,
+                "heading": 3,
+                "open": null,
+                "dateType": "thang",
+                "yAxis": 11,
+                "data": [
+                  [
+                    1788134400000,
+                    7566
+                  ],
+                  [
+                    1785456000000,
+                    10382
+                  ],
+                  [
+                    1782777600000,
+                    9989
+                  ],
+                  [
+                    1780185600000,
+                    8082
+                  ],
+                  [
+                    1777507200000,
+                    5388
+                  ],
+                  [
+                    1774915200000,
+                    6304
+                  ],
+                  [
+                    1772236800000,
+                    3492
+                  ],
+                  [
+                    1769817600000,
+                    7303
+                  ],
+                  [
+                    1767139200000,
+                    12608
+                  ],
+                  [
+                    1764460800000,
+                    6668
+                  ],
+                  [
+                    1761868800000,
+                    6771
+                  ],
+                  [
+                    1759190400000,
+                    6160
+                  ],
+                  [
+                    1756598400000,
+                    6874
+                  ],
+                  [
+                    1753920000000,
+                    4385
+                  ],
+                  [
+                    1751241600000,
+                    10063
+                  ],
+                  [
+                    1748649600000,
+                    6535
+                  ],
+                  [
+                    1745971200000,
+                    8989
+                  ],
+                  [
+                    1743379200000,
+                    4899
+                  ],
+                  [
+                    1740700800000,
+                    2971
+                  ]
+                ],
+                "time_frame": "monthly",
+                "lingo": {
+                  "name": "DN tạm dừng hoạt động chờ giải thể",
+                  "unit": "DN",
+                  "description": "Chỉ số Doanh nghiệp  tạm dừng hoạt động chờ giải thể là chỉ số thống kê số lượng doanh nghiệp tạm ngừng hoạt động trong quá trình chờ giải thể. Chỉ số này được thống kê dựa trên hồ sơ đăng ký tại cơ quan đăng ký kinh doanh, khi doanh nghiệp nộp đơn xin tạm ngừng hoạt động và chờ hoàn tất thủ tục giải thể. Chỉ số này giúp đánh giá mức độ khó khăn của doanh nghiệp trong nền kinh tế, cũng như xu hướng tạm ngừng hoạt động trước khi chính thức rút khỏi thị trường.",
+                  "frequency": "Ngày 6 tháng sau",
+                  "last_updated": "2026-09-03T02:55:34.731Z",
+                  "source": "Tổng cục Thống kê - GSO",
+                  "note": null,
+                  "related_blog": null
+                }
+              },
+              {
+                "id": "230_hoan_tat_giai_the",
+                "column_name": "hoan_tat_giai_the",
+                "table_name": "230",
+                "name": "DN hoàn tất giải thể (DN)",
+                "hasSub": false,
+                "level": 3,
+                "heading": 3,
+                "open": null,
+                "dateType": "thang",
+                "yAxis": 11,
+                "data": [
+                  [
+                    1788134400000,
+                    9631
+                  ],
+                  [
+                    1785456000000,
+                    7209
+                  ],
+                  [
+                    1782777600000,
+                    4959
+                  ],
+                  [
+                    1780185600000,
+                    3831
+                  ],
+                  [
+                    1777507200000,
+                    3473
+                  ],
+                  [
+                    1774915200000,
+                    3818
+                  ],
+                  [
+                    1772236800000,
+                    3290
+                  ],
+                  [
+                    1769817600000,
+                    4609
+                  ],
+                  [
+                    1767139200000,
+                    5045
+                  ],
+                  [
+                    1764460800000,
+                    4022
+                  ],
+                  [
+                    1761868800000,
+                    4536
+                  ],
+                  [
+                    1759190400000,
+                    4182
+                  ],
+                  [
+                    1756598400000,
+                    3834.0000000000005
+                  ],
+                  [
+                    1753920000000,
+                    1949
+                  ],
+                  [
+                    1751241600000,
+                    2760.9999999999995
+                  ],
+                  [
+                    1748649600000,
+                    1908.9999999999998
+                  ],
+                  [
+                    1745971200000,
+                    1750
+                  ],
+                  [
+                    1743379200000,
+                    2137
+                  ],
+                  [
+                    1740700800000,
+                    1737.0000000000002
+                  ]
+                ],
+                "time_frame": "monthly",
+                "lingo": {
+                  "name": "DN hoàn tất giải thể",
+                  "unit": "DN",
+                  "description": "Chỉ số Doanh nghiệp hoàn tất giải thể là chỉ số thống kê số doanh nghiệp hoàn thành thủ tục giải thể trong một kỳ nhất định. Dữ liệu được thu thập từ hồ sơ giải thể nộp tại cơ quan đăng ký kinh doanh và được chấp thuận. Chỉ số này hỗ trợ phân tích xu hướng thị trường, giúp nhà hoạch định chính sách đưa ra quyết sách phù hợp.",
+                  "frequency": "Ngày 6 tháng sau",
+                  "last_updated": "2026-09-03T02:55:34.731Z",
+                  "source": "Tổng cục Thống kê - GSO",
+                  "note": null,
+                  "related_blog": null
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "yoy": {
+        "title": "Đăng ký kinh doanh",
+        "headers": [
+          "08-2026",
+          "07-2026",
+          "06-2026",
+          "05-2026",
+          "04-2026",
+          "03-2026",
+          "02-2026",
+          "01-2026",
+          "12-2025",
+          "11-2025",
+          "10-2025",
+          "09-2025",
+          "08-2025",
+          "07-2025",
+          "06-2025",
+          "05-2025",
+          "04-2025",
+          "03-2025",
+          "02-2025"
+        ],
+        "parent": [
+          {
+            "title": "ĐĂNG KÝ KINH DOANH",
+            "child": [
+              {
+                "id": "230_thanh_lap_moi_yoy",
+                "column_name": "thanh_lap_moi_yoy",
+                "table_name": "230",
+                "name": "DN thành lập mới",
+                "hasSub": false,
+                "level": 3,
+                "heading": 3,
+                "open": null,
+                "dateType": "thang",
+                "yAxis": 1,
+                "data": [
+                  [
+                    1788134400000,
+                    -40.53341148886284
+                  ],
+                  [
+                    1785456000000,
+                    -13.882837085451463
+                  ],
+                  [
+                    1782777600000,
+                    -31.017115715338626
+                  ],
+                  [
+                    1780185600000,
+                    12.506606765327682
+                  ],
+                  [
+                    1777507200000,
+                    33.93091673233517
+                  ],
+                  [
+                    1774915200000,
+                    40.54036750112043
+                  ],
+                  [
+                    1772236800000,
+                    11.640995260663507
+                  ],
+                  [
+                    1769817600000,
+                    126.82812353327702
+                  ],
+                  [
+                    1767139200000,
+                    71.60864345738295
+                  ],
+                  [
+                    1764460800000,
+                    34.940406846491626
+                  ],
+                  [
+                    1761868800000,
+                    26.531331500669626
+                  ],
+                  [
+                    1759190400000,
+                    49.80385164051355
+                  ],
+                  [
+                    1756598400000,
+                    52.85596953632494
+                  ],
+                  [
+                    1753920000000,
+                    4.681659803611024
+                  ],
+                  [
+                    1751241600000,
+                    55.31671330450267
+                  ],
+                  [
+                    1748649600000,
+                    14.605890815476656
+                  ],
+                  [
+                    1745971200000,
+                    -0.5161037433853792
+                  ],
+                  [
+                    1743379200000,
+                    10.6474922074242
+                  ],
+                  [
+                    1740700800000,
+                    17.877094972067038
+                  ]
+                ],
+                "time_frame": "monthly",
+                "lingo": {
+                  "name": "DN thành lập mới",
+                  "unit": "%",
+                  "description": "Chỉ số doanh nghiệp thành lập mới là chỉ số thống kê số lượng doanh nghiệp đã đăng ký thành lập mới trong một kỳ nhất định, là chỉ tiêu quan trọng trong đánh giá tình hình kinh doanh tại Việt Nam. Việc thống kê dựa trên dữ liệu từ cơ quan đăng ký kinh doanh, được tổng hợp và phân tích theo thời gian.",
+                  "frequency": "Ngày 6 tháng sau",
+                  "last_updated": "2026-09-03T02:55:34.731Z",
+                  "source": "Tổng cục Thống kê - GSO",
+                  "note": null,
+                  "related_blog": null
+                }
+              },
+              {
+                "id": "230_von_dang_ky_yoy",
+                "column_name": "von_dang_ky_yoy",
+                "table_name": "230",
+                "name": "Vốn đăng ký",
+                "hasSub": false,
+                "level": 3,
+                "heading": 3,
+                "open": null,
+                "dateType": "thang",
+                "yAxis": 1,
+                "data": [
+                  [
+                    1788134400000,
+                    -41.924801148036636
+                  ],
+                  [
+                    1785456000000,
+                    41.55904941929771
+                  ],
+                  [
+                    1782777600000,
+                    61.99702213445649
+                  ],
+                  [
+                    1780185600000,
+                    79.26012942085636
+                  ],
+                  [
+                    1777507200000,
+                    84.63860345113136
+                  ],
+                  [
+                    1774915200000,
+                    78.06533780335921
+                  ],
+                  [
+                    1772236800000,
+                    -2.64080170297691
+                  ],
+                  [
+                    1769817600000,
+                    92.32383142966658
+                  ],
+                  [
+                    1767139200000,
+                    72.15256519303777
+                  ],
+                  [
+                    1764460800000,
+                    15.848923147987762
+                  ],
+                  [
+                    1761868800000,
+                    12.348814943629227
+                  ],
+                  [
+                    1759190400000,
+                    78.55869443426931
+                  ],
+                  [
+                    1756598400000,
+                    161.65325459928275
+                  ],
+                  [
+                    1753920000000,
+                    6.372726614013478
+                  ],
+                  [
+                    1751241600000,
+                    23.59428249788484
+                  ],
+                  [
+                    1748649600000,
+                    68.10585257015359
+                  ],
+                  [
+                    1745971200000,
+                    -23.989034364300256
+                  ],
+                  [
+                    1743379200000,
+                    11.318285417144082
+                  ],
+                  [
+                    1740700800000,
+                    102.7638190954774
+                  ]
+                ],
+                "time_frame": "monthly",
+                "lingo": {
+                  "name": "Vốn đăng ký",
+                  "unit": "%",
+                  "description": "Chỉ số Vốn đăng ký là chỉ số thống kê đo lường số vốn mà các doanh nghiệp đã đăng ký khi thành lập hoặc thay đổi quy mô hoạt động. Đây là số vốn mà chủ sở hữu cam kết góp để đảm bảo hoạt động của doanh nghiệp, thể hiện quy mô và năng lực tài chính ban đầu. Vốn đăng ký được thống kê dựa trên hồ sơ đăng ký doanh nghiệp, bao gồm cả việc tăng giảm vốn trong quá trình hoạt động. Số liệu này được cơ quan thống kê tổng hợp từ các Phòng Đăng ký Kinh doanh cấp tỉnh, phản ánh thực trạng về quy mô vốn của các doanh nghiệp mới thành lập hoặc thay đổi trong kỳ.",
+                  "frequency": "Ngày 6 tháng sau",
+                  "last_updated": "2026-09-03T02:55:34.731Z",
+                  "source": "Tổng cục Thống kê - GSO",
+                  "note": null,
+                  "related_blog": null
+                }
+              },
+              {
+                "id": "230_lao_dong_yoy",
+                "column_name": "lao_dong_yoy",
+                "table_name": "230",
+                "name": "Lao động đăng ký",
+                "hasSub": false,
+                "level": 3,
+                "heading": 3,
+                "open": null,
+                "dateType": "thang",
+                "yAxis": 1,
+                "data": [
+                  [
+                    1788134400000,
+                    -43.53558304580773
+                  ],
+                  [
+                    1785456000000,
+                    3.8183498550394366
+                  ],
+                  [
+                    1782777600000,
+                    -39.84937189684964
+                  ],
+                  [
+                    1780185600000,
+                    -22.68145264037672
+                  ],
+                  [
+                    1777507200000,
+                    -28.697499079103082
+                  ],
+                  [
+                    1774915200000,
+                    12.426157203743273
+                  ],
+                  [
+                    1772236800000,
+                    0.3736705949985505
+                  ],
+                  [
+                    1769817600000,
+                    32.664123916162815
+                  ],
+                  [
+                    1767139200000,
+                    5.054883079718849
+                  ],
+                  [
+                    1764460800000,
+                    -7.631987577639751
+                  ],
+                  [
+                    1761868800000,
+                    16.297824223069945
+                  ],
+                  [
+                    1759190400000,
+                    53.94678351432019
+                  ],
+                  [
+                    1756598400000,
+                    48.96577660774727
+                  ],
+                  [
+                    1753920000000,
+                    -10.661328085236335
+                  ],
+                  [
+                    1751241600000,
+                    60.23060478265441
+                  ],
+                  [
+                    1748649600000,
+                    35.178219595199714
+                  ],
+                  [
+                    1745971200000,
+                    34.23494508269158
+                  ],
+                  [
+                    1743379200000,
+                    -16.18991984524482
+                  ],
+                  [
+                    1740700800000,
+                    16.221899072472894
+                  ]
+                ],
+                "time_frame": "monthly",
+                "lingo": {
+                  "name": "Lao động đăng ký",
+                  "unit": "%",
+                  "description": "Chỉ số Lao động đăng ký là chỉ số thống kê số lao động doanh nghiệp đăng ký hợp pháp khi thành lập hoặc điều chỉnh quy mô, phản ánh quy mô và xu hướng việc làm trong thị trường lao động. Đây là cơ sở quan trọng để đánh giá thực trạng lao động, sự phát triển kinh tế và tác động của doanh nghiệp. Dữ liệu được thu thập từ hồ sơ đăng ký doanh nghiệp, bao gồm số nhân viên dự kiến thuê. Chỉ số này giúp phân tích xu hướng việc làm, hỗ trợ xây dựng chính sách kinh tế - lao động phù hợp, dựa trên thông tin chính thức từ các cơ quan quản lý doanh nghiệp.",
+                  "frequency": "Ngày 6 tháng sau",
+                  "last_updated": "2026-09-03T02:55:34.731Z",
+                  "source": "Tổng cục Thống kê - GSO",
+                  "note": null,
+                  "related_blog": null
+                }
+              },
+              {
+                "id": "230_quay_lai_hoat_dong_yoy",
+                "column_name": "quay_lai_hoat_dong_yoy",
+                "table_name": "230",
+                "name": "DN quay lại hoạt động",
+                "hasSub": false,
+                "level": 3,
+                "heading": 3,
+                "open": null,
+                "dateType": "thang",
+                "yAxis": 1,
+                "data": [
+                  [
+                    1788134400000,
+                    -23.793047956227873
+                  ],
+                  [
+                    1785456000000,
+                    -30.686093440043777
+                  ],
+                  [
+                    1782777600000,
+                    -5.420430854760251
+                  ],
+                  [
+                    1780185600000,
+                    13.558687788449559
+                  ],
+                  [
+                    1777507200000,
+                    5.13645440426004
+                  ],
+                  [
+                    1774915200000,
+                    -13.275597456698094
+                  ],
+                  [
+                    1772236800000,
+                    -12.576208705515384
+                  ],
+                  [
+                    1769817600000,
+                    7.624813547424761
+                  ],
+                  [
+                    1767139200000,
+                    12.66538505032229
+                  ],
+                  [
+                    1764460800000,
+                    25.61007268951194
+                  ],
+                  [
+                    1761868800000,
+                    33.868916888221015
+                  ],
+                  [
+                    1759190400000,
+                    65.67371507948756
+                  ],
+                  [
+                    1756598400000,
+                    46.43572522681749
+                  ],
+                  [
+                    1753920000000,
+                    78.25874893305695
+                  ],
+                  [
+                    1751241600000,
+                    91.05151354221987
+                  ],
+                  [
+                    1748649600000,
+                    18.78796858793894
+                  ],
+                  [
+                    1745971200000,
+                    8.510894426387384
+                  ],
+                  [
+                    1743379200000,
+                    202.05298013245033
+                  ],
+                  [
+                    1740700800000,
+                    32.078651685393254
+                  ]
+                ],
+                "time_frame": "monthly",
+                "lingo": {
+                  "name": "DN quay lại hoạt động",
+                  "unit": "%",
+                  "description": "Chỉ số Doanh nghiệp quay lại hoạt động là chỉ số thống kê số doanh nghiệp đã tạm ngừng kinh doanh nhưng sau đó quyết định quay lại hoạt động, thể hiện sự phục hồi và khả năng thích ứng của doanh nghiệp trước biến động kinh tế. Dữ liệu được thu thập từ hồ sơ đăng ký kinh doanh tại cơ quan quản lý, ghi nhận khi doanh nghiệp nộp đơn xin quay lại hoạt động sau thời gian tạm ngừng. Chỉ số này giúp đánh giá xu hướng tái hoạt động, cung cấp thông tin quan trọng để phân tích sức khỏe kinh tế và hỗ trợ xây dựng chính sách phù hợp.",
+                  "frequency": "Ngày 6 tháng sau",
+                  "last_updated": "2026-09-03T02:55:34.731Z",
+                  "source": "Tổng cục Thống kê - GSO",
+                  "note": null,
+                  "related_blog": null
+                }
+              },
+              {
+                "id": "230_tam_dung_hoat_dong_yoy",
+                "column_name": "tam_dung_hoat_dong_yoy",
+                "table_name": "230",
+                "name": "DN tạm dừng hoạt động chờ giải thể",
+                "hasSub": false,
+                "level": 3,
+                "heading": 3,
+                "open": null,
+                "dateType": "thang",
+                "yAxis": 1,
+                "data": [
+                  [
+                    1788134400000,
+                    10.0669188245563
+                  ],
+                  [
+                    1785456000000,
+                    136.76168757126567
+                  ],
+                  [
+                    1782777600000,
+                    -0.735367186723641
+                  ],
+                  [
+                    1780185600000,
+                    23.672532517214997
+                  ],
+                  [
+                    1777507200000,
+                    -40.060073423072645
+                  ],
+                  [
+                    1774915200000,
+                    28.679322310675648
+                  ],
+                  [
+                    1772236800000,
+                    17.536183103332213
+                  ],
+                  [
+                    1769817600000,
+                    109.07529344403093
+                  ],
+                  [
+                    1767139200000,
+                    -36.59861208890677
+                  ],
+                  [
+                    1764460800000,
+                    -11.682119205298013
+                  ],
+                  [
+                    1761868800000,
+                    24.83407079646018
+                  ],
+                  [
+                    1759190400000,
+                    -16.869095816464238
+                  ],
+                  [
+                    1756598400000,
+                    33.21705426356589
+                  ],
+                  [
+                    1753920000000,
+                    -18.85640266469282
+                  ],
+                  [
+                    1751241600000,
+                    86.2139156180607
+                  ],
+                  [
+                    1748649600000,
+                    43.62637362637363
+                  ],
+                  [
+                    1745971200000,
+                    93.0627147766323
+                  ],
+                  [
+                    1743379200000,
+                    -1.6265060240963853
+                  ],
+                  [
+                    1740700800000,
+                    37.99349744542499
+                  ]
+                ],
+                "time_frame": "monthly",
+                "lingo": {
+                  "name": "DN tạm dừng hoạt động chờ giải thể",
+                  "unit": "%",
+                  "description": "Chỉ số Doanh nghiệp  tạm dừng hoạt động chờ giải thể là chỉ số thống kê số lượng doanh nghiệp tạm ngừng hoạt động trong quá trình chờ giải thể. Chỉ số này được thống kê dựa trên hồ sơ đăng ký tại cơ quan đăng ký kinh doanh, khi doanh nghiệp nộp đơn xin tạm ngừng hoạt động và chờ hoàn tất thủ tục giải thể. Chỉ số này giúp đánh giá mức độ khó khăn của doanh nghiệp trong nền kinh tế, cũng như xu hướng tạm ngừng hoạt động trước khi chính thức rút khỏi thị trường.",
+                  "frequency": "Ngày 6 tháng sau",
+                  "last_updated": "2026-09-03T02:55:34.731Z",
+                  "source": "Tổng cục Thống kê - GSO",
+                  "note": null,
+                  "related_blog": null
+                }
+              },
+              {
+                "id": "230_hoan_tat_giai_the_yoy",
+                "column_name": "hoan_tat_giai_the_yoy",
+                "table_name": "230",
+                "name": "DN hoàn tất giải thể",
+                "hasSub": false,
+                "level": 3,
+                "heading": 3,
+                "open": null,
+                "dateType": "thang",
+                "yAxis": 1,
+                "data": [
+                  [
+                    1788134400000,
+                    151.19979134063638
+                  ],
+                  [
+                    1785456000000,
+                    269.8819907644946
+                  ],
+                  [
+                    1782777600000,
+                    79.60883737776172
+                  ],
+                  [
+                    1780185600000,
+                    100.68098480880043
+                  ],
+                  [
+                    1777507200000,
+                    98.45714285714286
+                  ],
+                  [
+                    1774915200000,
+                    78.6616752456715
+                  ],
+                  [
+                    1772236800000,
+                    89.40702360391477
+                  ],
+                  [
+                    1769817600000,
+                    128.0554181098466
+                  ],
+                  [
+                    1767139200000,
+                    115.13859275053304
+                  ],
+                  [
+                    1764460800000,
+                    110.57591623036649
+                  ],
+                  [
+                    1761868800000,
+                    128.28384499245092
+                  ],
+                  [
+                    1759190400000,
+                    160.56074766355138
+                  ],
+                  [
+                    1756598400000,
+                    98.9621172807473
+                  ],
+                  [
+                    1753920000000,
+                    12.658959537572253
+                  ],
+                  [
+                    1751241600000,
+                    23.922800718132834
+                  ],
+                  [
+                    1748649600000,
+                    24.122236671001286
+                  ],
+                  [
+                    1745971200000,
+                    30.208333333333332
+                  ],
+                  [
+                    1743379200000,
+                    51.345609065155806
+                  ],
+                  [
+                    1740700800000,
+                    15.338645418326708
+                  ]
+                ],
+                "time_frame": "monthly",
+                "lingo": {
+                  "name": "DN hoàn tất giải thể",
+                  "unit": "%",
+                  "description": "Chỉ số Doanh nghiệp hoàn tất giải thể là chỉ số thống kê số doanh nghiệp hoàn thành thủ tục giải thể trong một kỳ nhất định. Dữ liệu được thu thập từ hồ sơ giải thể nộp tại cơ quan đăng ký kinh doanh và được chấp thuận. Chỉ số này hỗ trợ phân tích xu hướng thị trường, giúp nhà hoạch định chính sách đưa ra quyết sách phù hợp.",
+                  "frequency": "Ngày 6 tháng sau",
+                  "last_updated": "2026-09-03T02:55:34.731Z",
+                  "source": "Tổng cục Thống kê - GSO",
+                  "note": null,
+                  "related_blog": null
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "quarterly": {
+      "value": {
+        "title": "Đăng ký kinh doanh",
+        "headers": [
+          "06-2026",
+          "03-2026",
+          "12-2025",
+          "09-2025",
+          "06-2025",
+          "03-2025",
+          "12-2024",
+          "09-2024",
+          "06-2024",
+          "03-2024",
+          "12-2023",
+          "09-2023",
+          "06-2023",
+          "03-2023",
+          "12-2022",
+          "09-2022",
+          "06-2022",
+          "03-2022",
+          "12-2021"
+        ],
+        "parent": [
+          {
+            "title": "ĐĂNG KÝ KINH DOANH",
+            "child": [
+              {
+                "id": "230_thanh_lap_moi_mtq",
+                "column_name": "thanh_lap_moi_mtq",
+                "table_name": "230",
+                "name": "DN thành lập mới (DN)",
+                "hasSub": false,
+                "level": 3,
+                "heading": 3,
+                "open": null,
+                "dateType": "quy",
+                "yAxis": 11,
+                "data": [
+                  [
+                    1782777600000,
+                    54271
+                  ],
+                  [
+                    1774915200000,
+                    57422
+                  ],
+                  [
+                    1767139200000,
+                    50163
+                  ],
+                  [
+                    1759190400000,
+                    53798
+                  ],
+                  [
+                    1751241600000,
+                    54786
+                  ],
+                  [
+                    1743379200000,
+                    36400
+                  ],
+                  [
+                    1735603200000,
+                    35342
+                  ],
+                  [
+                    1727654400000,
+                    39344
+                  ],
+                  [
+                    1719705600000,
+                    44238
+                  ],
+                  [
+                    1711843200000,
+                    37987
+                  ],
+                  [
+                    1703980800000,
+                    41588
+                  ],
+                  [
+                    1696032000000,
+                    40908
+                  ],
+                  [
+                    1688083200000,
+                    41969
+                  ],
+                  [
+                    1680220800000,
+                    35301.2285017731
+                  ],
+                  [
+                    1672444800000,
+                    34646.51510637149
+                  ],
+                  [
+                    1664496000000,
+                    36883.6378967432
+                  ],
+                  [
+                    1656547200000,
+                    41642.6138964372
+                  ],
+                  [
+                    1648684800000,
+                    36265.11545710195
+                  ],
+                  [
+                    1640908800000,
+                    30111.9878731891
+                  ]
+                ],
+                "time_frame": "quarterly",
+                "lingo": {
+                  "name": "DN thành lập mới",
+                  "unit": "%",
+                  "description": "Chỉ số doanh nghiệp thành lập mới là chỉ số thống kê số lượng doanh nghiệp đã đăng ký thành lập mới trong một kỳ nhất định, là chỉ tiêu quan trọng trong đánh giá tình hình kinh doanh tại Việt Nam. Việc thống kê dựa trên dữ liệu từ cơ quan đăng ký kinh doanh, được tổng hợp và phân tích theo thời gian.",
+                  "frequency": "Ngày 6 tháng sau",
+                  "last_updated": "2026-09-03T02:55:34.731Z",
+                  "source": "Tổng cục Thống kê - GSO",
+                  "note": null,
+                  "related_blog": null
+                }
+              },
+              {
+                "id": "230_von_dang_ky_mtq",
+                "column_name": "von_dang_ky_mtq",
+                "table_name": "230",
+                "name": "Vốn đăng ký (Nghìn tỷ VND)",
+                "hasSub": false,
+                "level": 3,
+                "heading": 3,
+                "open": null,
+                "dateType": "quy",
+                "yAxis": 18,
+                "data": [
+                  [
+                    1782777600000,
+                    814.0332160181251
+                  ],
+                  [
+                    1774915200000,
+                    538.5936519818752
+                  ],
+                  [
+                    1767139200000,
+                    498.973402
+                  ],
+                  [
+                    1759190400000,
+                    609.300609
+                  ],
+                  [
+                    1751241600000,
+                    467.11983499999997
+                  ],
+                  [
+                    1743379200000,
+                    356.751580693401
+                  ],
+                  [
+                    1735603200000,
+                    388.495116556712
+                  ],
+                  [
+                    1727654400000,
+                    327.8646410867
+                  ],
+                  [
+                    1719705600000,
+                    412.06349701765
+                  ],
+                  [
+                    1711843200000,
+                    335.736
+                  ],
+                  [
+                    1703980800000,
+                    455.35550686024794
+                  ],
+                  [
+                    1696032000000,
+                    374.135815585165
+                  ],
+                  [
+                    1688083200000,
+                    397.12581857103
+                  ],
+                  [
+                    1680220800000,
+                    312.66094583895097
+                  ],
+                  [
+                    1672444800000,
+                    334.8764232150567
+                  ],
+                  [
+                    1664496000000,
+                    381.473343203692
+                  ],
+                  [
+                    1656547200000,
+                    410.91065870049204
+                  ],
+                  [
+                    1648684800000,
+                    475.7354176844203
+                  ],
+                  [
+                    1640908800000,
+                    433.036882365514
+                  ]
+                ],
+                "time_frame": "quarterly",
+                "lingo": {
+                  "name": "Vốn đăng ký",
+                  "unit": "%",
+                  "description": "Chỉ số Vốn đăng ký là chỉ số thống kê đo lường số vốn mà các doanh nghiệp đã đăng ký khi thành lập hoặc thay đổi quy mô hoạt động. Đây là số vốn mà chủ sở hữu cam kết góp để đảm bảo hoạt động của doanh nghiệp, thể hiện quy mô và năng lực tài chính ban đầu. Vốn đăng ký được thống kê dựa trên hồ sơ đăng ký doanh nghiệp, bao gồm cả việc tăng giảm vốn trong quá trình hoạt động. Số liệu này được cơ quan thống kê tổng hợp từ các Phòng Đăng ký Kinh doanh cấp tỉnh, phản ánh thực trạng về quy mô vốn của các doanh nghiệp mới thành lập hoặc thay đổi trong kỳ.",
+                  "frequency": "Ngày 6 tháng sau",
+                  "last_updated": "2026-09-03T02:55:34.731Z",
+                  "source": "Tổng cục Thống kê - GSO",
+                  "note": null,
+                  "related_blog": null
+                }
+              },
+              {
+                "id": "230_lao_dong_mtq",
+                "column_name": "lao_dong_mtq",
+                "table_name": "230",
+                "name": "Lao động đăng ký (Người)",
+                "hasSub": false,
+                "level": 3,
+                "heading": 3,
+                "open": null,
+                "dateType": "quy",
+                "yAxis": 11,
+                "data": [
+                  [
+                    1782777600000,
+                    249337
+                  ],
+                  [
+                    1774915200000,
+                    265929
+                  ],
+                  [
+                    1767139200000,
+                    277461
+                  ],
+                  [
+                    1759190400000,
+                    282902
+                  ],
+                  [
+                    1751241600000,
+                    362863
+                  ],
+                  [
+                    1743379200000,
+                    228199
+                  ],
+                  [
+                    1735603200000,
+                    266386
+                  ],
+                  [
+                    1727654400000,
+                    223194
+                  ],
+                  [
+                    1719705600000,
+                    253232
+                  ],
+                  [
+                    1711843200000,
+                    260224
+                  ],
+                  [
+                    1703980800000,
+                    298228
+                  ],
+                  [
+                    1696032000000,
+                    247028
+                  ],
+                  [
+                    1688083200000,
+                    297583
+                  ],
+                  [
+                    1680220800000,
+                    213264.3039375864
+                  ],
+                  [
+                    1672444800000,
+                    218233.05722582116
+                  ],
+                  [
+                    1664496000000,
+                    251680.96444817563
+                  ],
+                  [
+                    1656547200000,
+                    271356.10264483606
+                  ],
+                  [
+                    1648684800000,
+                    244570.7568748452
+                  ],
+                  [
+                    1640908800000,
+                    200093.06079034208
+                  ]
+                ],
+                "time_frame": "quarterly",
+                "lingo": {
+                  "name": "Lao động đăng ký",
+                  "unit": "%",
+                  "description": "Chỉ số Lao động đăng ký là chỉ số thống kê số lao động doanh nghiệp đăng ký hợp pháp khi thành lập hoặc điều chỉnh quy mô, phản ánh quy mô và xu hướng việc làm trong thị trường lao động. Đây là cơ sở quan trọng để đánh giá thực trạng lao động, sự phát triển kinh tế và tác động của doanh nghiệp. Dữ liệu được thu thập từ hồ sơ đăng ký doanh nghiệp, bao gồm số nhân viên dự kiến thuê. Chỉ số này giúp phân tích xu hướng việc làm, hỗ trợ xây dựng chính sách kinh tế - lao động phù hợp, dựa trên thông tin chính thức từ các cơ quan quản lý doanh nghiệp.",
+                  "frequency": "Ngày 6 tháng sau",
+                  "last_updated": "2026-09-03T02:55:34.731Z",
+                  "source": "Tổng cục Thống kê - GSO",
+                  "note": null,
+                  "related_blog": null
+                }
+              },
+              {
+                "id": "230_quay_lai_hoat_dong_mtq",
+                "column_name": "quay_lai_hoat_dong_mtq",
+                "table_name": "230",
+                "name": "DN quay lại hoạt động (DN)",
+                "hasSub": false,
+                "level": 3,
+                "heading": 3,
+                "open": null,
+                "dateType": "quy",
+                "yAxis": 11,
+                "data": [
+                  [
+                    1782777600000,
+                    32191
+                  ],
+                  [
+                    1774915200000,
+                    35677
+                  ],
+                  [
+                    1767139200000,
+                    31221
+                  ],
+                  [
+                    1759190400000,
+                    37781
+                  ],
+                  [
+                    1751241600000,
+                    31421
+                  ],
+                  [
+                    1743379200000,
+                    38969
+                  ],
+                  [
+                    1735603200000,
+                    25198
+                  ],
+                  [
+                    1727654400000,
+                    23167
+                  ],
+                  [
+                    1719705600000,
+                    22588
+                  ],
+                  [
+                    1711843200000,
+                    22159
+                  ],
+                  [
+                    1703980800000,
+                    18585
+                  ],
+                  [
+                    1696032000000,
+                    19091
+                  ],
+                  [
+                    1688083200000,
+                    22660
+                  ],
+                  [
+                    1680220800000,
+                    25280
+                  ],
+                  [
+                    1672444800000,
+                    16274
+                  ],
+                  [
+                    1664496000000,
+                    18854.6599021895
+                  ],
+                  [
+                    1656547200000,
+                    14493.97846128602
+                  ],
+                  [
+                    1648684800000,
+                    27491.55965029436
+                  ],
+                  [
+                    1640908800000,
+                    13485.2685115353
+                  ]
+                ],
+                "time_frame": "quarterly",
+                "lingo": {
+                  "name": "DN quay lại hoạt động",
+                  "unit": "%",
+                  "description": "Chỉ số Doanh nghiệp quay lại hoạt động là chỉ số thống kê số doanh nghiệp đã tạm ngừng kinh doanh nhưng sau đó quyết định quay lại hoạt động, thể hiện sự phục hồi và khả năng thích ứng của doanh nghiệp trước biến động kinh tế. Dữ liệu được thu thập từ hồ sơ đăng ký kinh doanh tại cơ quan quản lý, ghi nhận khi doanh nghiệp nộp đơn xin quay lại hoạt động sau thời gian tạm ngừng. Chỉ số này giúp đánh giá xu hướng tái hoạt động, cung cấp thông tin quan trọng để phân tích sức khỏe kinh tế và hỗ trợ xây dựng chính sách phù hợp.",
+                  "frequency": "Ngày 6 tháng sau",
+                  "last_updated": "2026-09-03T02:55:34.731Z",
+                  "source": "Tổng cục Thống kê - GSO",
+                  "note": null,
+                  "related_blog": null
+                }
+              },
+              {
+                "id": "230_tam_dung_hoat_dong_mtq",
+                "column_name": "tam_dung_hoat_dong_mtq",
+                "table_name": "230",
+                "name": "DN tạm dừng hoạt động chờ giải thể (DN)",
+                "hasSub": false,
+                "level": 3,
+                "heading": 3,
+                "open": null,
+                "dateType": "quy",
+                "yAxis": 11,
+                "data": [
+                  [
+                    1782777600000,
+                    23459
+                  ],
+                  [
+                    1774915200000,
+                    17962
+                  ],
+                  [
+                    1767139200000,
+                    26047
+                  ],
+                  [
+                    1759190400000,
+                    17419
+                  ],
+                  [
+                    1751241600000,
+                    25587
+                  ],
+                  [
+                    1743379200000,
+                    11363
+                  ],
+                  [
+                    1735603200000,
+                    32860
+                  ],
+                  [
+                    1727654400000,
+                    19605
+                  ],
+                  [
+                    1719705600000,
+                    14610
+                  ],
+                  [
+                    1711843200000,
+                    14931
+                  ],
+                  [
+                    1703980800000,
+                    20183
+                  ],
+                  [
+                    1696032000000,
+                    15746
+                  ],
+                  [
+                    1688083200000,
+                    16303
+                  ],
+                  [
+                    1680220800000,
+                    12929
+                  ],
+                  [
+                    1672444800000,
+                    15142.000000000004
+                  ],
+                  [
+                    1664496000000,
+                    13056.33432398429
+                  ],
+                  [
+                    1656547200000,
+                    13095.94721212061
+                  ],
+                  [
+                    1648684800000,
+                    11474.951950723851
+                  ],
+                  [
+                    1640908800000,
+                    16744.84195964729
+                  ]
+                ],
+                "time_frame": "quarterly",
+                "lingo": {
+                  "name": "DN tạm dừng hoạt động chờ giải thể",
+                  "unit": "%",
+                  "description": "Chỉ số Doanh nghiệp  tạm dừng hoạt động chờ giải thể là chỉ số thống kê số lượng doanh nghiệp tạm ngừng hoạt động trong quá trình chờ giải thể. Chỉ số này được thống kê dựa trên hồ sơ đăng ký tại cơ quan đăng ký kinh doanh, khi doanh nghiệp nộp đơn xin tạm ngừng hoạt động và chờ hoàn tất thủ tục giải thể. Chỉ số này giúp đánh giá mức độ khó khăn của doanh nghiệp trong nền kinh tế, cũng như xu hướng tạm ngừng hoạt động trước khi chính thức rút khỏi thị trường.",
+                  "frequency": "Ngày 6 tháng sau",
+                  "last_updated": "2026-09-03T02:55:34.731Z",
+                  "source": "Tổng cục Thống kê - GSO",
+                  "note": null,
+                  "related_blog": null
+                }
+              },
+              {
+                "id": "230_hoan_tat_giai_the_mtq",
+                "column_name": "hoan_tat_giai_the_mtq",
+                "table_name": "230",
+                "name": "DN hoàn tất giải thể (DN)",
+                "hasSub": false,
+                "level": 3,
+                "heading": 3,
+                "open": null,
+                "dateType": "quy",
+                "yAxis": 11,
+                "data": [
+                  [
+                    1782777600000,
+                    12263
+                  ],
+                  [
+                    1774915200000,
+                    11717
+                  ],
+                  [
+                    1767139200000,
+                    13603
+                  ],
+                  [
+                    1759190400000,
+                    9965
+                  ],
+                  [
+                    1751241600000,
+                    6419.999999999999
+                  ],
+                  [
+                    1743379200000,
+                    5895
+                  ],
+                  [
+                    1735603200000,
+                    6242
+                  ],
+                  [
+                    1727654400000,
+                    5262
+                  ],
+                  [
+                    1719705600000,
+                    5110
+                  ],
+                  [
+                    1711843200000,
+                    5122
+                  ],
+                  [
+                    1703980800000,
+                    5088
+                  ],
+                  [
+                    1696032000000,
+                    4376
+                  ],
+                  [
+                    1688083200000,
+                    4214
+                  ],
+                  [
+                    1680220800000,
+                    4653.71224018476
+                  ],
+                  [
+                    1672444800000,
+                    5054.357112035499
+                  ],
+                  [
+                    1664496000000,
+                    5270.83950366554
+                  ],
+                  [
+                    1656547200000,
+                    4252.948566271009
+                  ],
+                  [
+                    1648684800000,
+                    4371.522498721821
+                  ],
+                  [
+                    1640908800000,
+                    4197.53301763363
+                  ]
+                ],
+                "time_frame": "quarterly",
+                "lingo": {
+                  "name": "DN hoàn tất giải thể",
+                  "unit": "%",
+                  "description": "Chỉ số Doanh nghiệp hoàn tất giải thể là chỉ số thống kê số doanh nghiệp hoàn thành thủ tục giải thể trong một kỳ nhất định. Dữ liệu được thu thập từ hồ sơ giải thể nộp tại cơ quan đăng ký kinh doanh và được chấp thuận. Chỉ số này hỗ trợ phân tích xu hướng thị trường, giúp nhà hoạch định chính sách đưa ra quyết sách phù hợp.",
+                  "frequency": "Ngày 6 tháng sau",
+                  "last_updated": "2026-09-03T02:55:34.731Z",
+                  "source": "Tổng cục Thống kê - GSO",
+                  "note": null,
+                  "related_blog": null
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "yoy": {
+        "title": "Đăng ký kinh doanh",
+        "headers": [
+          "06-2026",
+          "03-2026",
+          "12-2025",
+          "09-2025",
+          "06-2025",
+          "03-2025",
+          "12-2024",
+          "09-2024",
+          "06-2024",
+          "03-2024",
+          "12-2023",
+          "09-2023",
+          "06-2023",
+          "03-2023",
+          "12-2022",
+          "09-2022",
+          "06-2022",
+          "03-2022",
+          "12-2021"
+        ],
+        "parent": [
+          {
+            "title": "ĐĂNG KÝ KINH DOANH",
+            "child": [
+              {
+                "id": "230_thanh_lap_moi_yym",
+                "column_name": "thanh_lap_moi_yym",
+                "table_name": "230",
+                "name": "DN thành lập mới",
+                "hasSub": false,
+                "level": 3,
+                "heading": 3,
+                "open": null,
+                "dateType": "quy",
+                "yAxis": 1,
+                "data": [
+                  [
+                    1782777600000,
+                    -0.9400211732924469
+                  ],
+                  [
+                    1774915200000,
+                    57.75274725274725
+                  ],
+                  [
+                    1767139200000,
+                    41.93594024107294
+                  ],
+                  [
+                    1759190400000,
+                    36.73749491663278
+                  ],
+                  [
+                    1751241600000,
+                    23.84375423843754
+                  ],
+                  [
+                    1743379200000,
+                    -4.177745018032485
+                  ],
+                  [
+                    1735603200000,
+                    -15.01875541021449
+                  ],
+                  [
+                    1727654400000,
+                    -3.823213063459474
+                  ],
+                  [
+                    1719705600000,
+                    5.406371369344032
+                  ],
+                  [
+                    1711843200000,
+                    7.608153064962031
+                  ],
+                  [
+                    1703980800000,
+                    20.035160455003375
+                  ],
+                  [
+                    1696032000000,
+                    10.910968474755967
+                  ],
+                  [
+                    1688083200000,
+                    0.7837790979560166
+                  ],
+                  [
+                    1680220800000,
+                    -2.657890215375258
+                  ],
+                  [
+                    1672444800000,
+                    15.05867772740055
+                  ],
+                  [
+                    1664496000000,
+                    97.555487594073
+                  ],
+                  [
+                    1656547200000,
+                    18.992661593510142
+                  ],
+                  [
+                    1648684800000,
+                    18.51602558391996
+                  ],
+                  [
+                    1640908800000,
+                    -13.730075917730023
+                  ]
+                ],
+                "time_frame": "quarterly",
+                "lingo": {
+                  "name": "DN thành lập mới",
+                  "unit": "%",
+                  "description": "Chỉ số doanh nghiệp thành lập mới là chỉ số thống kê số lượng doanh nghiệp đã đăng ký thành lập mới trong một kỳ nhất định, là chỉ tiêu quan trọng trong đánh giá tình hình kinh doanh tại Việt Nam. Việc thống kê dựa trên dữ liệu từ cơ quan đăng ký kinh doanh, được tổng hợp và phân tích theo thời gian.",
+                  "frequency": "Ngày 6 tháng sau",
+                  "last_updated": "2026-09-03T02:55:34.731Z",
+                  "source": "Tổng cục Thống kê - GSO",
+                  "note": null,
+                  "related_blog": null
+                }
+              },
+              {
+                "id": "230_von_dang_ky_yym",
+                "column_name": "von_dang_ky_yym",
+                "table_name": "230",
+                "name": "Vốn đăng ký",
+                "hasSub": false,
+                "level": 3,
+                "heading": 3,
+                "open": null,
+                "dateType": "quy",
+                "yAxis": 1,
+                "data": [
+                  [
+                    1782777600000,
+                    74.2664633408524
+                  ],
+                  [
+                    1774915200000,
+                    50.97162314881307
+                  ],
+                  [
+                    1767139200000,
+                    28.43749656944801
+                  ],
+                  [
+                    1759190400000,
+                    85.83907278945568
+                  ],
+                  [
+                    1751241600000,
+                    13.361129627066129
+                  ],
+                  [
+                    1743379200000,
+                    6.259555333178758
+                  ],
+                  [
+                    1735603200000,
+                    -14.683118859053545
+                  ],
+                  [
+                    1727654400000,
+                    -12.367480623605854
+                  ],
+                  [
+                    1719705600000,
+                    3.773433354813882
+                  ],
+                  [
+                    1711843200000,
+                    7.3802163231908136
+                  ],
+                  [
+                    1703980800000,
+                    35.97717703996732
+                  ],
+                  [
+                    1696032000000,
+                    -1.9234706039758742
+                  ],
+                  [
+                    1688083200000,
+                    -3.3547049310078014
+                  ],
+                  [
+                    1680220800000,
+                    -34.278396306756584
+                  ],
+                  [
+                    1672444800000,
+                    -22.667235161040665
+                  ],
+                  [
+                    1664496000000,
+                    52.600391117963376
+                  ],
+                  [
+                    1656547200000,
+                    -11.470514541288445
+                  ],
+                  [
+                    1648684800000,
+                    5.367395410683651
+                  ],
+                  [
+                    1640908800000,
+                    -47.498124837540665
+                  ]
+                ],
+                "time_frame": "quarterly",
+                "lingo": {
+                  "name": "Vốn đăng ký",
+                  "unit": "%",
+                  "description": "Chỉ số Vốn đăng ký là chỉ số thống kê đo lường số vốn mà các doanh nghiệp đã đăng ký khi thành lập hoặc thay đổi quy mô hoạt động. Đây là số vốn mà chủ sở hữu cam kết góp để đảm bảo hoạt động của doanh nghiệp, thể hiện quy mô và năng lực tài chính ban đầu. Vốn đăng ký được thống kê dựa trên hồ sơ đăng ký doanh nghiệp, bao gồm cả việc tăng giảm vốn trong quá trình hoạt động. Số liệu này được cơ quan thống kê tổng hợp từ các Phòng Đăng ký Kinh doanh cấp tỉnh, phản ánh thực trạng về quy mô vốn của các doanh nghiệp mới thành lập hoặc thay đổi trong kỳ.",
+                  "frequency": "Ngày 6 tháng sau",
+                  "last_updated": "2026-09-03T02:55:34.731Z",
+                  "source": "Tổng cục Thống kê - GSO",
+                  "note": null,
+                  "related_blog": null
+                }
+              },
+              {
+                "id": "230_lao_dong_yym",
+                "column_name": "lao_dong_yym",
+                "table_name": "230",
+                "name": "Lao động đăng ký",
+                "hasSub": false,
+                "level": 3,
+                "heading": 3,
+                "open": null,
+                "dateType": "quy",
+                "yAxis": 1,
+                "data": [
+                  [
+                    1782777600000,
+                    -31.286187900116573
+                  ],
+                  [
+                    1774915200000,
+                    16.533814784464436
+                  ],
+                  [
+                    1767139200000,
+                    4.157500769559961
+                  ],
+                  [
+                    1759190400000,
+                    26.751615186788175
+                  ],
+                  [
+                    1751241600000,
+                    43.292711821570734
+                  ],
+                  [
+                    1743379200000,
+                    -12.306704992621741
+                  ],
+                  [
+                    1735603200000,
+                    -10.677065869066615
+                  ],
+                  [
+                    1727654400000,
+                    -9.648298978253479
+                  ],
+                  [
+                    1719705600000,
+                    -14.903741141127014
+                  ],
+                  [
+                    1711843200000,
+                    22.0194824897451
+                  ],
+                  [
+                    1703980800000,
+                    36.65574033149453
+                  ],
+                  [
+                    1696032000000,
+                    -1.8487550134661634
+                  ],
+                  [
+                    1688083200000,
+                    9.665121624145279
+                  ],
+                  [
+                    1680220800000,
+                    -12.806305603246448
+                  ],
+                  [
+                    1672444800000,
+                    9.064787825450527
+                  ],
+                  [
+                    1664496000000,
+                    49.34590969100172
+                  ],
+                  [
+                    1656547200000,
+                    24.32782157480602
+                  ],
+                  [
+                    1648684800000,
+                    -1.1048672662546721
+                  ],
+                  [
+                    1640908800000,
+                    -22.66745426104002
+                  ]
+                ],
+                "time_frame": "quarterly",
+                "lingo": {
+                  "name": "Lao động đăng ký",
+                  "unit": "%",
+                  "description": "Chỉ số Lao động đăng ký là chỉ số thống kê số lao động doanh nghiệp đăng ký hợp pháp khi thành lập hoặc điều chỉnh quy mô, phản ánh quy mô và xu hướng việc làm trong thị trường lao động. Đây là cơ sở quan trọng để đánh giá thực trạng lao động, sự phát triển kinh tế và tác động của doanh nghiệp. Dữ liệu được thu thập từ hồ sơ đăng ký doanh nghiệp, bao gồm số nhân viên dự kiến thuê. Chỉ số này giúp phân tích xu hướng việc làm, hỗ trợ xây dựng chính sách kinh tế - lao động phù hợp, dựa trên thông tin chính thức từ các cơ quan quản lý doanh nghiệp.",
+                  "frequency": "Ngày 6 tháng sau",
+                  "last_updated": "2026-09-03T02:55:34.731Z",
+                  "source": "Tổng cục Thống kê - GSO",
+                  "note": null,
+                  "related_blog": null
+                }
+              },
+              {
+                "id": "230_quay_lai_hoat_dong_yym",
+                "column_name": "quay_lai_hoat_dong_yym",
+                "table_name": "230",
+                "name": "DN quay lại hoạt động",
+                "hasSub": false,
+                "level": 3,
+                "heading": 3,
+                "open": null,
+                "dateType": "quy",
+                "yAxis": 1,
+                "data": [
+                  [
+                    1782777600000,
+                    2.4505903694981064
+                  ],
+                  [
+                    1774915200000,
+                    -8.447740511688778
+                  ],
+                  [
+                    1767139200000,
+                    23.90269068973728
+                  ],
+                  [
+                    1759190400000,
+                    63.08110674666552
+                  ],
+                  [
+                    1751241600000,
+                    39.1048344253586
+                  ],
+                  [
+                    1743379200000,
+                    75.86082404440634
+                  ],
+                  [
+                    1735603200000,
+                    35.58245897228949
+                  ],
+                  [
+                    1727654400000,
+                    21.350374522026083
+                  ],
+                  [
+                    1719705600000,
+                    -0.3177405119152654
+                  ],
+                  [
+                    1711843200000,
+                    -12.345727848101262
+                  ],
+                  [
+                    1703980800000,
+                    14.200565318913604
+                  ],
+                  [
+                    1696032000000,
+                    1.2527462699047254
+                  ],
+                  [
+                    1688083200000,
+                    56.34078704149961
+                  ],
+                  [
+                    1680220800000,
+                    -8.044504125726014
+                  ],
+                  [
+                    1672444800000,
+                    20.681616471287324
+                  ],
+                  [
+                    1664496000000,
+                    -16.823761707210238
+                  ],
+                  [
+                    1656547200000,
+                    -5.918150991779514
+                  ],
+                  [
+                    1648684800000,
+                    75.81909416394383
+                  ],
+                  [
+                    1640908800000,
+                    -14.20114789220117
+                  ]
+                ],
+                "time_frame": "quarterly",
+                "lingo": {
+                  "name": "DN quay lại hoạt động",
+                  "unit": "%",
+                  "description": "Chỉ số Doanh nghiệp quay lại hoạt động là chỉ số thống kê số doanh nghiệp đã tạm ngừng kinh doanh nhưng sau đó quyết định quay lại hoạt động, thể hiện sự phục hồi và khả năng thích ứng của doanh nghiệp trước biến động kinh tế. Dữ liệu được thu thập từ hồ sơ đăng ký kinh doanh tại cơ quan quản lý, ghi nhận khi doanh nghiệp nộp đơn xin quay lại hoạt động sau thời gian tạm ngừng. Chỉ số này giúp đánh giá xu hướng tái hoạt động, cung cấp thông tin quan trọng để phân tích sức khỏe kinh tế và hỗ trợ xây dựng chính sách phù hợp.",
+                  "frequency": "Ngày 6 tháng sau",
+                  "last_updated": "2026-09-03T02:55:34.731Z",
+                  "source": "Tổng cục Thống kê - GSO",
+                  "note": null,
+                  "related_blog": null
+                }
+              },
+              {
+                "id": "230_tam_dung_hoat_dong_yym",
+                "column_name": "tam_dung_hoat_dong_yym",
+                "table_name": "230",
+                "name": "DN tạm dừng hoạt động chờ giải thể",
+                "hasSub": false,
+                "level": 3,
+                "heading": 3,
+                "open": null,
+                "dateType": "quy",
+                "yAxis": 1,
+                "data": [
+                  [
+                    1782777600000,
+                    -8.316723336069098
+                  ],
+                  [
+                    1774915200000,
+                    58.074452169321475
+                  ],
+                  [
+                    1767139200000,
+                    -20.733414485696898
+                  ],
+                  [
+                    1759190400000,
+                    -11.150216781433308
+                  ],
+                  [
+                    1751241600000,
+                    75.13347022587268
+                  ],
+                  [
+                    1743379200000,
+                    -23.89659098519858
+                  ],
+                  [
+                    1735603200000,
+                    62.81028588415993
+                  ],
+                  [
+                    1727654400000,
+                    24.507811507684487
+                  ],
+                  [
+                    1719705600000,
+                    -10.38459179292155
+                  ],
+                  [
+                    1711843200000,
+                    15.484569572279373
+                  ],
+                  [
+                    1703980800000,
+                    33.29150706643769
+                  ],
+                  [
+                    1696032000000,
+                    20.600465714751447
+                  ],
+                  [
+                    1688083200000,
+                    24.488895197372095
+                  ],
+                  [
+                    1680220800000,
+                    12.671495754580707
+                  ],
+                  [
+                    1672444800000,
+                    -9.57438395674165
+                  ],
+                  [
+                    1664496000000,
+                    45.83575230924561
+                  ],
+                  [
+                    1656547200000,
+                    -15.127274907754895
+                  ],
+                  [
+                    1648684800000,
+                    -1.6410369538473968
+                  ],
+                  [
+                    1640908800000,
+                    24.335265809482244
+                  ]
+                ],
+                "time_frame": "quarterly",
+                "lingo": {
+                  "name": "DN tạm dừng hoạt động chờ giải thể",
+                  "unit": "%",
+                  "description": "Chỉ số Doanh nghiệp  tạm dừng hoạt động chờ giải thể là chỉ số thống kê số lượng doanh nghiệp tạm ngừng hoạt động trong quá trình chờ giải thể. Chỉ số này được thống kê dựa trên hồ sơ đăng ký tại cơ quan đăng ký kinh doanh, khi doanh nghiệp nộp đơn xin tạm ngừng hoạt động và chờ hoàn tất thủ tục giải thể. Chỉ số này giúp đánh giá mức độ khó khăn của doanh nghiệp trong nền kinh tế, cũng như xu hướng tạm ngừng hoạt động trước khi chính thức rút khỏi thị trường.",
+                  "frequency": "Ngày 6 tháng sau",
+                  "last_updated": "2026-09-03T02:55:34.731Z",
+                  "source": "Tổng cục Thống kê - GSO",
+                  "note": null,
+                  "related_blog": null
+                }
+              },
+              {
+                "id": "230_hoan_tat_giai_the_yym",
+                "column_name": "hoan_tat_giai_the_yym",
+                "table_name": "230",
+                "name": "DN hoàn tất giải thể",
+                "hasSub": false,
+                "level": 3,
+                "heading": 3,
+                "open": null,
+                "dateType": "quy",
+                "yAxis": 1,
+                "data": [
+                  [
+                    1782777600000,
+                    91.01246105919006
+                  ],
+                  [
+                    1774915200000,
+                    98.76166242578456
+                  ],
+                  [
+                    1767139200000,
+                    117.92694649150913
+                  ],
+                  [
+                    1759190400000,
+                    89.37666286583048
+                  ],
+                  [
+                    1751241600000,
+                    25.63600782778863
+                  ],
+                  [
+                    1743379200000,
+                    15.091761030847325
+                  ],
+                  [
+                    1735603200000,
+                    22.68081761006289
+                  ],
+                  [
+                    1727654400000,
+                    20.246800731261416
+                  ],
+                  [
+                    1719705600000,
+                    21.2624584717608
+                  ],
+                  [
+                    1711843200000,
+                    10.062671167580572
+                  ],
+                  [
+                    1703980800000,
+                    0.665621506727132
+                  ],
+                  [
+                    1696032000000,
+                    -16.973836621833083
+                  ],
+                  [
+                    1688083200000,
+                    -0.9158014884050103
+                  ],
+                  [
+                    1680220800000,
+                    6.50519031141894
+                  ],
+                  [
+                    1672444800000,
+                    20.412439459685807
+                  ],
+                  [
+                    1664496000000,
+                    83.17238085986021
+                  ],
+                  [
+                    1656547200000,
+                    -12.068062053448225
+                  ],
+                  [
+                    1648684800000,
+                    -16.58531858573873
+                  ],
+                  [
+                    1640908800000,
+                    -26.867944422521905
+                  ]
+                ],
+                "time_frame": "quarterly",
+                "lingo": {
+                  "name": "DN hoàn tất giải thể",
+                  "unit": "%",
+                  "description": "Chỉ số Doanh nghiệp hoàn tất giải thể là chỉ số thống kê số doanh nghiệp hoàn thành thủ tục giải thể trong một kỳ nhất định. Dữ liệu được thu thập từ hồ sơ giải thể nộp tại cơ quan đăng ký kinh doanh và được chấp thuận. Chỉ số này hỗ trợ phân tích xu hướng thị trường, giúp nhà hoạch định chính sách đưa ra quyết sách phù hợp.",
+                  "frequency": "Ngày 6 tháng sau",
+                  "last_updated": "2026-09-03T02:55:34.731Z",
+                  "source": "Tổng cục Thống kê - GSO",
+                  "note": null,
+                  "related_blog": null
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "yearly": {
+      "value": {
+        "title": "Đăng ký kinh doanh",
+        "headers": [
+          "12-2025",
+          "12-2024",
+          "12-2023",
+          "12-2022",
+          "12-2021",
+          "12-2020",
+          "12-2019",
+          "12-2018",
+          "12-2017",
+          "12-2016",
+          "12-2015",
+          "12-2014"
+        ],
+        "parent": [
+          {
+            "title": "ĐĂNG KÝ KINH DOANH",
+            "child": [
+              {
+                "id": "230_thanh_lap_moi_yrl",
+                "column_name": "thanh_lap_moi_yrl",
+                "table_name": "230",
+                "name": "DN thành lập mới (DN)",
+                "hasSub": false,
+                "level": 3,
+                "heading": 3,
+                "open": null,
+                "dateType": "nam",
+                "yAxis": 11,
+                "data": [
+                  [
+                    1767139200000,
+                    195147
+                  ],
+                  [
+                    1735603200000,
+                    157240
+                  ],
+                  [
+                    1703980800000,
+                    159452
+                  ],
+                  [
+                    1672444800000,
+                    148532.9999999999
+                  ],
+                  [
+                    1640908800000,
+                    116837
+                  ],
+                  [
+                    1609372800000,
+                    134940
+                  ],
+                  [
+                    1577750400000,
+                    138139
+                  ],
+                  [
+                    1546214400000,
+                    137066.65012271103
+                  ],
+                  [
+                    1514678400000,
+                    110646.05389895015
+                  ],
+                  [
+                    1483142400000,
+                    103395.90369324807
+                  ],
+                  [
+                    1451520000000,
+                    95424.23303546384
+                  ],
+                  [
+                    1419984000000,
+                    74929.83963451498
+                  ]
+                ],
+                "time_frame": "yearly",
+                "lingo": {
+                  "name": "DN thành lập mới",
+                  "unit": "DN",
+                  "description": "Chỉ số doanh nghiệp thành lập mới là chỉ số thống kê số lượng doanh nghiệp đã đăng ký thành lập mới trong một kỳ nhất định, là chỉ tiêu quan trọng trong đánh giá tình hình kinh doanh tại Việt Nam. Việc thống kê dựa trên dữ liệu từ cơ quan đăng ký kinh doanh, được tổng hợp và phân tích theo thời gian.",
+                  "frequency": "Ngày 6 tháng sau",
+                  "last_updated": "2026-09-03T02:55:34.731Z",
+                  "source": "Tổng cục Thống kê - GSO",
+                  "note": null,
+                  "related_blog": null
+                }
+              },
+              {
+                "id": "230_von_dang_ky_yrl",
+                "column_name": "von_dang_ky_yrl",
+                "table_name": "230",
+                "name": "Vốn đăng ký (Nghìn tỷ VND)",
+                "hasSub": false,
+                "level": 3,
+                "heading": 3,
+                "open": null,
+                "dateType": "nam",
+                "yAxis": 18,
+                "data": [
+                  [
+                    1767139200000,
+                    1919.184692
+                  ],
+                  [
+                    1735603200000,
+                    1547.031999999999
+                  ],
+                  [
+                    1703980800000,
+                    1575.793611777448
+                  ],
+                  [
+                    1672444800000,
+                    1590.86
+                  ],
+                  [
+                    1640908800000,
+                    1611.109
+                  ],
+                  [
+                    1609372800000,
+                    2235.626
+                  ],
+                  [
+                    1577750400000,
+                    1730.173
+                  ],
+                  [
+                    1546214400000,
+                    1895.1234089784157
+                  ],
+                  [
+                    1514678400000,
+                    1381.9434793191083
+                  ],
+                  [
+                    1483142400000,
+                    967.6706153824368
+                  ],
+                  [
+                    1451520000000,
+                    637.4878520402272
+                  ],
+                  [
+                    1419984000000,
+                    458.8584377992511
+                  ]
+                ],
+                "time_frame": "yearly",
+                "lingo": {
+                  "name": "Vốn đăng ký",
+                  "unit": "Nghìn tỷ VND",
+                  "description": "Chỉ số Vốn đăng ký là chỉ số thống kê đo lường số vốn mà các doanh nghiệp đã đăng ký khi thành lập hoặc thay đổi quy mô hoạt động. Đây là số vốn mà chủ sở hữu cam kết góp để đảm bảo hoạt động của doanh nghiệp, thể hiện quy mô và năng lực tài chính ban đầu. Vốn đăng ký được thống kê dựa trên hồ sơ đăng ký doanh nghiệp, bao gồm cả việc tăng giảm vốn trong quá trình hoạt động. Số liệu này được cơ quan thống kê tổng hợp từ các Phòng Đăng ký Kinh doanh cấp tỉnh, phản ánh thực trạng về quy mô vốn của các doanh nghiệp mới thành lập hoặc thay đổi trong kỳ.",
+                  "frequency": "Ngày 6 tháng sau",
+                  "last_updated": "2026-09-03T02:55:34.731Z",
+                  "source": "Tổng cục Thống kê - GSO",
+                  "note": null,
+                  "related_blog": null
+                }
+              },
+              {
+                "id": "230_lao_dong_yrl",
+                "column_name": "lao_dong_yrl",
+                "table_name": "230",
+                "name": "Lao động đăng ký (Người)",
+                "hasSub": false,
+                "level": 3,
+                "heading": 3,
+                "open": null,
+                "dateType": "nam",
+                "yAxis": 11,
+                "data": [
+                  [
+                    1767139200000,
+                    1151425
+                  ],
+                  [
+                    1735603200000,
+                    1001483
+                  ],
+                  [
+                    1703980800000,
+                    1058928
+                  ],
+                  [
+                    1672444800000,
+                    981331.9999999998
+                  ],
+                  [
+                    1640908800000,
+                    853958.0000000002
+                  ],
+                  [
+                    1609372800000,
+                    1042985
+                  ],
+                  [
+                    1577750400000,
+                    1254368
+                  ],
+                  [
+                    1546214400000,
+                    1210493.945896088
+                  ],
+                  [
+                    1514678400000,
+                    1056082.5309651142
+                  ],
+                  [
+                    1483142400000,
+                    1276098.9559597059
+                  ],
+                  [
+                    1451520000000,
+                    1338670.3453273082
+                  ],
+                  [
+                    1419984000000,
+                    445525.66430266196
+                  ]
+                ],
+                "time_frame": "yearly",
+                "lingo": {
+                  "name": "Lao động đăng ký",
+                  "unit": "Người",
+                  "description": "Chỉ số Lao động đăng ký là chỉ số thống kê số lao động doanh nghiệp đăng ký hợp pháp khi thành lập hoặc điều chỉnh quy mô, phản ánh quy mô và xu hướng việc làm trong thị trường lao động. Đây là cơ sở quan trọng để đánh giá thực trạng lao động, sự phát triển kinh tế và tác động của doanh nghiệp. Dữ liệu được thu thập từ hồ sơ đăng ký doanh nghiệp, bao gồm số nhân viên dự kiến thuê. Chỉ số này giúp phân tích xu hướng việc làm, hỗ trợ xây dựng chính sách kinh tế - lao động phù hợp, dựa trên thông tin chính thức từ các cơ quan quản lý doanh nghiệp.",
+                  "frequency": "Ngày 6 tháng sau",
+                  "last_updated": "2026-09-03T02:55:34.731Z",
+                  "source": "Tổng cục Thống kê - GSO",
+                  "note": null,
+                  "related_blog": null
+                }
+              },
+              {
+                "id": "230_quay_lai_hoat_dong_yrl",
+                "column_name": "quay_lai_hoat_dong_yrl",
+                "table_name": "230",
+                "name": "DN quay lại hoạt động (DN)",
+                "hasSub": false,
+                "level": 3,
+                "heading": 3,
+                "open": null,
+                "dateType": "nam",
+                "yAxis": 11,
+                "data": [
+                  [
+                    1767139200000,
+                    102327
+                  ],
+                  [
+                    1735603200000,
+                    76179.00000000003
+                  ],
+                  [
+                    1703980800000,
+                    58412.00000000001
+                  ],
+                  [
+                    1672444800000,
+                    59835
+                  ],
+                  [
+                    1640908800000,
+                    43115.99999999999
+                  ],
+                  [
+                    1609372800000,
+                    44096
+                  ],
+                  [
+                    1577750400000,
+                    39420.99999999999
+                  ],
+                  [
+                    1546214400000,
+                    38443.90805903578
+                  ],
+                  [
+                    1514678400000,
+                    21190.057826153283
+                  ],
+                  [
+                    1483142400000,
+                    23281.470096529898
+                  ],
+                  [
+                    1451520000000,
+                    18952.154545318273
+                  ],
+                  [
+                    1419984000000,
+                    9610.31133287456
+                  ]
+                ],
+                "time_frame": "yearly",
+                "lingo": {
+                  "name": "DN quay lại hoạt động",
+                  "unit": "DN",
+                  "description": "Chỉ số Doanh nghiệp quay lại hoạt động là chỉ số thống kê số doanh nghiệp đã tạm ngừng kinh doanh nhưng sau đó quyết định quay lại hoạt động, thể hiện sự phục hồi và khả năng thích ứng của doanh nghiệp trước biến động kinh tế. Dữ liệu được thu thập từ hồ sơ đăng ký kinh doanh tại cơ quan quản lý, ghi nhận khi doanh nghiệp nộp đơn xin quay lại hoạt động sau thời gian tạm ngừng. Chỉ số này giúp đánh giá xu hướng tái hoạt động, cung cấp thông tin quan trọng để phân tích sức khỏe kinh tế và hỗ trợ xây dựng chính sách phù hợp.",
+                  "frequency": "Ngày 6 tháng sau",
+                  "last_updated": "2026-09-03T02:55:34.731Z",
+                  "source": "Tổng cục Thống kê - GSO",
+                  "note": null,
+                  "related_blog": null
+                }
+              },
+              {
+                "id": "230_tam_dung_hoat_dong_yrl",
+                "column_name": "tam_dung_hoat_dong_yrl",
+                "table_name": "230",
+                "name": "DN tạm dừng hoạt động chờ giải thể (DN)",
+                "hasSub": false,
+                "level": 3,
+                "heading": 3,
+                "open": null,
+                "dateType": "nam",
+                "yAxis": 11,
+                "data": [
+                  [
+                    1767139200000,
+                    76862
+                  ],
+                  [
+                    1735603200000,
+                    76154.99999999997
+                  ],
+                  [
+                    1703980800000,
+                    65479.99999999999
+                  ],
+                  [
+                    1672444800000,
+                    50788
+                  ],
+                  [
+                    1640908800000,
+                    48127.00000000001
+                  ],
+                  [
+                    1609372800000,
+                    37663.00000000001
+                  ],
+                  [
+                    1577750400000,
+                    43711
+                  ],
+                  [
+                    1546214400000,
+                    6575.05006635385
+                  ],
+                  [
+                    1514678400000,
+                    0
+                  ],
+                  [
+                    1483142400000,
+                    0
+                  ],
+                  [
+                    1451520000000,
+                    76608
+                  ],
+                  [
+                    1419984000000,
+                    74246
+                  ]
+                ],
+                "time_frame": "yearly",
+                "lingo": {
+                  "name": "DN tạm dừng hoạt động chờ giải thể",
+                  "unit": "DN",
+                  "description": "Chỉ số Doanh nghiệp  tạm dừng hoạt động chờ giải thể là chỉ số thống kê số lượng doanh nghiệp tạm ngừng hoạt động trong quá trình chờ giải thể. Chỉ số này được thống kê dựa trên hồ sơ đăng ký tại cơ quan đăng ký kinh doanh, khi doanh nghiệp nộp đơn xin tạm ngừng hoạt động và chờ hoàn tất thủ tục giải thể. Chỉ số này giúp đánh giá mức độ khó khăn của doanh nghiệp trong nền kinh tế, cũng như xu hướng tạm ngừng hoạt động trước khi chính thức rút khỏi thị trường.",
+                  "frequency": "Ngày 6 tháng sau",
+                  "last_updated": "2026-09-03T02:55:34.731Z",
+                  "source": "Tổng cục Thống kê - GSO",
+                  "note": null,
+                  "related_blog": null
+                }
+              },
+              {
+                "id": "230_hoan_tat_giai_the_yrl",
+                "column_name": "hoan_tat_giai_the_yrl",
+                "table_name": "230",
+                "name": "DN hoàn tất giải thể (DN)",
+                "hasSub": false,
+                "level": 3,
+                "heading": 3,
+                "open": null,
+                "dateType": "nam",
+                "yAxis": 11,
+                "data": [
+                  [
+                    1767139200000,
+                    35883
+                  ],
+                  [
+                    1735603200000,
+                    21607.99999999999
+                  ],
+                  [
+                    1703980800000,
+                    18014
+                  ],
+                  [
+                    1672444800000,
+                    18609
+                  ],
+                  [
+                    1640908800000,
+                    16741
+                  ],
+                  [
+                    1609372800000,
+                    17464
+                  ],
+                  [
+                    1577750400000,
+                    16839.99999999999
+                  ],
+                  [
+                    1546214400000,
+                    16677.16022286026
+                  ],
+                  [
+                    1514678400000,
+                    12287.624958479406
+                  ],
+                  [
+                    1483142400000,
+                    12702.549735373306
+                  ],
+                  [
+                    1451520000000,
+                    9605.13889694641
+                  ],
+                  [
+                    1419984000000,
+                    9640.868057071522
+                  ]
+                ],
+                "time_frame": "yearly",
+                "lingo": {
+                  "name": "DN hoàn tất giải thể",
+                  "unit": "DN",
+                  "description": "Chỉ số Doanh nghiệp hoàn tất giải thể là chỉ số thống kê số doanh nghiệp hoàn thành thủ tục giải thể trong một kỳ nhất định. Dữ liệu được thu thập từ hồ sơ giải thể nộp tại cơ quan đăng ký kinh doanh và được chấp thuận. Chỉ số này hỗ trợ phân tích xu hướng thị trường, giúp nhà hoạch định chính sách đưa ra quyết sách phù hợp.",
+                  "frequency": "Ngày 6 tháng sau",
+                  "last_updated": "2026-09-03T02:55:34.731Z",
+                  "source": "Tổng cục Thống kê - GSO",
+                  "note": null,
+                  "related_blog": null
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "yoy": {
+        "title": "Đăng ký kinh doanh",
+        "headers": [
+          "12-2025",
+          "12-2024",
+          "12-2023",
+          "12-2022",
+          "12-2021",
+          "12-2020",
+          "12-2019",
+          "12-2018",
+          "12-2017",
+          "12-2016",
+          "12-2015"
+        ],
+        "parent": [
+          {
+            "title": "ĐĂNG KÝ KINH DOANH",
+            "child": [
+              {
+                "id": "230_thanh_lap_moi_yrl_yoy",
+                "column_name": "thanh_lap_moi_yrl_yoy",
+                "table_name": "230",
+                "name": "DN thành lập mới",
+                "hasSub": false,
+                "level": 3,
+                "heading": 3,
+                "open": null,
+                "dateType": "nam",
+                "yAxis": 1,
+                "data": [
+                  [
+                    1767139200000,
+                    24.107733401170186
+                  ],
+                  [
+                    1735603200000,
+                    -1.3872513358252012
+                  ],
+                  [
+                    1703980800000,
+                    7.35122834656278
+                  ],
+                  [
+                    1672444800000,
+                    27.12839254688148
+                  ],
+                  [
+                    1640908800000,
+                    -13.41559211501408
+                  ],
+                  [
+                    1609372800000,
+                    -2.315783377612405
+                  ],
+                  [
+                    1577750400000,
+                    0.7823565224136831
+                  ],
+                  [
+                    1546214400000,
+                    23.87848033684965
+                  ],
+                  [
+                    1514678400000,
+                    7.012028471854763
+                  ],
+                  [
+                    1483142400000,
+                    8.353926884402208
+                  ],
+                  [
+                    1451520000000,
+                    27.35144436570836
+                  ]
+                ],
+                "time_frame": "yearly",
+                "lingo": {
+                  "name": "DN thành lập mới",
+                  "unit": "%",
+                  "description": "Chỉ số doanh nghiệp thành lập mới là chỉ số thống kê số lượng doanh nghiệp đã đăng ký thành lập mới trong một kỳ nhất định, là chỉ tiêu quan trọng trong đánh giá tình hình kinh doanh tại Việt Nam. Việc thống kê dựa trên dữ liệu từ cơ quan đăng ký kinh doanh, được tổng hợp và phân tích theo thời gian.",
+                  "frequency": "Ngày 6 tháng sau",
+                  "last_updated": "2026-09-03T02:55:34.731Z",
+                  "source": "Tổng cục Thống kê - GSO",
+                  "note": null,
+                  "related_blog": null
+                }
+              },
+              {
+                "id": "230_von_dang_ky_yrl_yoy",
+                "column_name": "von_dang_ky_yrl_yoy",
+                "table_name": "230",
+                "name": "Vốn đăng ký",
+                "hasSub": false,
+                "level": 3,
+                "heading": 3,
+                "open": null,
+                "dateType": "nam",
+                "yAxis": 1,
+                "data": [
+                  [
+                    1767139200000,
+                    24.05591429265854
+                  ],
+                  [
+                    1735603200000,
+                    -1.8252143911794834
+                  ],
+                  [
+                    1703980800000,
+                    -0.9470593403914833
+                  ],
+                  [
+                    1672444800000,
+                    -1.2568361296473438
+                  ],
+                  [
+                    1640908800000,
+                    -27.934770842708044
+                  ],
+                  [
+                    1609372800000,
+                    29.214015014683515
+                  ],
+                  [
+                    1577750400000,
+                    -8.703940239297332
+                  ],
+                  [
+                    1546214400000,
+                    37.13465401002899
+                  ],
+                  [
+                    1514678400000,
+                    42.81135102701709
+                  ],
+                  [
+                    1483142400000,
+                    51.794361615752685
+                  ],
+                  [
+                    1451520000000,
+                    38.92909000381634
+                  ]
+                ],
+                "time_frame": "yearly",
+                "lingo": {
+                  "name": "Vốn đăng ký",
+                  "unit": "%",
+                  "description": "Chỉ số Vốn đăng ký là chỉ số thống kê đo lường số vốn mà các doanh nghiệp đã đăng ký khi thành lập hoặc thay đổi quy mô hoạt động. Đây là số vốn mà chủ sở hữu cam kết góp để đảm bảo hoạt động của doanh nghiệp, thể hiện quy mô và năng lực tài chính ban đầu. Vốn đăng ký được thống kê dựa trên hồ sơ đăng ký doanh nghiệp, bao gồm cả việc tăng giảm vốn trong quá trình hoạt động. Số liệu này được cơ quan thống kê tổng hợp từ các Phòng Đăng ký Kinh doanh cấp tỉnh, phản ánh thực trạng về quy mô vốn của các doanh nghiệp mới thành lập hoặc thay đổi trong kỳ.",
+                  "frequency": "Ngày 6 tháng sau",
+                  "last_updated": "2026-09-03T02:55:34.731Z",
+                  "source": "Tổng cục Thống kê - GSO",
+                  "note": null,
+                  "related_blog": null
+                }
+              },
+              {
+                "id": "230_lao_dong_yrl_yoy",
+                "column_name": "lao_dong_yrl_yoy",
+                "table_name": "230",
+                "name": "Lao động đăng ký",
+                "hasSub": false,
+                "level": 3,
+                "heading": 3,
+                "open": null,
+                "dateType": "nam",
+                "yAxis": 1,
+                "data": [
+                  [
+                    1767139200000,
+                    14.971996529147274
+                  ],
+                  [
+                    1735603200000,
+                    -5.424825861626097
+                  ],
+                  [
+                    1703980800000,
+                    7.907211830450882
+                  ],
+                  [
+                    1672444800000,
+                    14.915721850489074
+                  ],
+                  [
+                    1640908800000,
+                    -18.12365470260836
+                  ],
+                  [
+                    1609372800000,
+                    -16.851753233500855
+                  ],
+                  [
+                    1577750400000,
+                    3.624475302223309
+                  ],
+                  [
+                    1546214400000,
+                    14.621150374475267
+                  ],
+                  [
+                    1514678400000,
+                    -17.24132944134615
+                  ],
+                  [
+                    1483142400000,
+                    -4.67414472771513
+                  ],
+                  [
+                    1451520000000,
+                    200.46986124191045
+                  ]
+                ],
+                "time_frame": "yearly",
+                "lingo": {
+                  "name": "Lao động đăng ký",
+                  "unit": "%",
+                  "description": "Chỉ số Lao động đăng ký là chỉ số thống kê số lao động doanh nghiệp đăng ký hợp pháp khi thành lập hoặc điều chỉnh quy mô, phản ánh quy mô và xu hướng việc làm trong thị trường lao động. Đây là cơ sở quan trọng để đánh giá thực trạng lao động, sự phát triển kinh tế và tác động của doanh nghiệp. Dữ liệu được thu thập từ hồ sơ đăng ký doanh nghiệp, bao gồm số nhân viên dự kiến thuê. Chỉ số này giúp phân tích xu hướng việc làm, hỗ trợ xây dựng chính sách kinh tế - lao động phù hợp, dựa trên thông tin chính thức từ các cơ quan quản lý doanh nghiệp.",
+                  "frequency": "Ngày 6 tháng sau",
+                  "last_updated": "2026-09-03T02:55:34.731Z",
+                  "source": "Tổng cục Thống kê - GSO",
+                  "note": null,
+                  "related_blog": null
+                }
+              },
+              {
+                "id": "230_quay_lai_hoat_dong_yrl_yoy",
+                "column_name": "quay_lai_hoat_dong_yrl_yoy",
+                "table_name": "230",
+                "name": "DN quay lại hoạt động",
+                "hasSub": false,
+                "level": 3,
+                "heading": 3,
+                "open": null,
+                "dateType": "nam",
+                "yAxis": 1,
+                "data": [
+                  [
+                    1767139200000,
+                    34.32442011577989
+                  ],
+                  [
+                    1735603200000,
+                    30.41669519961655
+                  ],
+                  [
+                    1703980800000,
+                    -2.3782067351884226
+                  ],
+                  [
+                    1672444800000,
+                    38.776788199276396
+                  ],
+                  [
+                    1640908800000,
+                    -2.2224238026124983
+                  ],
+                  [
+                    1609372800000,
+                    11.859161360696097
+                  ],
+                  [
+                    1577750400000,
+                    2.541604093589444
+                  ],
+                  [
+                    1546214400000,
+                    81.42427158262576
+                  ],
+                  [
+                    1514678400000,
+                    -8.983162410729124
+                  ],
+                  [
+                    1483142400000,
+                    22.84339514464908
+                  ],
+                  [
+                    1451520000000,
+                    97.20645761482791
+                  ]
+                ],
+                "time_frame": "yearly",
+                "lingo": {
+                  "name": "DN quay lại hoạt động",
+                  "unit": "%",
+                  "description": "Chỉ số Doanh nghiệp quay lại hoạt động là chỉ số thống kê số doanh nghiệp đã tạm ngừng kinh doanh nhưng sau đó quyết định quay lại hoạt động, thể hiện sự phục hồi và khả năng thích ứng của doanh nghiệp trước biến động kinh tế. Dữ liệu được thu thập từ hồ sơ đăng ký kinh doanh tại cơ quan quản lý, ghi nhận khi doanh nghiệp nộp đơn xin quay lại hoạt động sau thời gian tạm ngừng. Chỉ số này giúp đánh giá xu hướng tái hoạt động, cung cấp thông tin quan trọng để phân tích sức khỏe kinh tế và hỗ trợ xây dựng chính sách phù hợp.",
+                  "frequency": "Ngày 6 tháng sau",
+                  "last_updated": "2026-09-03T02:55:34.731Z",
+                  "source": "Tổng cục Thống kê - GSO",
+                  "note": null,
+                  "related_blog": null
+                }
+              },
+              {
+                "id": "230_tam_dung_hoat_dong_yrl_yoy",
+                "column_name": "tam_dung_hoat_dong_yrl_yoy",
+                "table_name": "230",
+                "name": "DN tạm dừng hoạt động chờ giải thể",
+                "hasSub": false,
+                "level": 3,
+                "heading": 3,
+                "open": null,
+                "dateType": "nam",
+                "yAxis": 1,
+                "data": [
+                  [
+                    1767139200000,
+                    0.9283697721752077
+                  ],
+                  [
+                    1735603200000,
+                    16.30268784361634
+                  ],
+                  [
+                    1703980800000,
+                    28.928093250374086
+                  ],
+                  [
+                    1672444800000,
+                    5.529120867704183
+                  ],
+                  [
+                    1640908800000,
+                    27.783235536202632
+                  ],
+                  [
+                    1609372800000,
+                    -13.836334103543713
+                  ],
+                  [
+                    1577750400000,
+                    564.8010214200491
+                  ],
+                  [
+                    1546214400000,
+                    null
+                  ],
+                  [
+                    1514678400000,
+                    -100
+                  ],
+                  [
+                    1483142400000,
+                    -100
+                  ],
+                  [
+                    1451520000000,
+                    3.1813161651806157
+                  ]
+                ],
+                "time_frame": "yearly",
+                "lingo": {
+                  "name": "DN tạm dừng hoạt động chờ giải thể",
+                  "unit": "%",
+                  "description": "Chỉ số Doanh nghiệp  tạm dừng hoạt động chờ giải thể là chỉ số thống kê số lượng doanh nghiệp tạm ngừng hoạt động trong quá trình chờ giải thể. Chỉ số này được thống kê dựa trên hồ sơ đăng ký tại cơ quan đăng ký kinh doanh, khi doanh nghiệp nộp đơn xin tạm ngừng hoạt động và chờ hoàn tất thủ tục giải thể. Chỉ số này giúp đánh giá mức độ khó khăn của doanh nghiệp trong nền kinh tế, cũng như xu hướng tạm ngừng hoạt động trước khi chính thức rút khỏi thị trường.",
+                  "frequency": "Ngày 6 tháng sau",
+                  "last_updated": "2026-09-03T02:55:34.731Z",
+                  "source": "Tổng cục Thống kê - GSO",
+                  "note": null,
+                  "related_blog": null
+                }
+              },
+              {
+                "id": "230_hoan_tat_giai_the_yrl_yoy",
+                "column_name": "hoan_tat_giai_the_yrl_yoy",
+                "table_name": "230",
+                "name": "DN hoàn tất giải thể",
+                "hasSub": false,
+                "level": 3,
+                "heading": 3,
+                "open": null,
+                "dateType": "nam",
+                "yAxis": 1,
+                "data": [
+                  [
+                    1767139200000,
+                    66.06349500185125
+                  ],
+                  [
+                    1735603200000,
+                    19.951149106250636
+                  ],
+                  [
+                    1703980800000,
+                    -3.1973776129829647
+                  ],
+                  [
+                    1672444800000,
+                    11.158234275132907
+                  ],
+                  [
+                    1640908800000,
+                    -4.139945029775538
+                  ],
+                  [
+                    1609372800000,
+                    3.705463182897929
+                  ],
+                  [
+                    1577750400000,
+                    0.9764238932987853
+                  ],
+                  [
+                    1546214400000,
+                    35.723219737039074
+                  ],
+                  [
+                    1514678400000,
+                    -3.2664684298652458
+                  ],
+                  [
+                    1483142400000,
+                    32.247434125201465
+                  ],
+                  [
+                    1451520000000,
+                    -0.37060106946392185
+                  ]
+                ],
+                "time_frame": "yearly",
+                "lingo": {
+                  "name": "DN hoàn tất giải thể",
+                  "unit": "%",
+                  "description": "Chỉ số Doanh nghiệp hoàn tất giải thể là chỉ số thống kê số doanh nghiệp hoàn thành thủ tục giải thể trong một kỳ nhất định. Dữ liệu được thu thập từ hồ sơ giải thể nộp tại cơ quan đăng ký kinh doanh và được chấp thuận. Chỉ số này hỗ trợ phân tích xu hướng thị trường, giúp nhà hoạch định chính sách đưa ra quyết sách phù hợp.",
+                  "frequency": "Ngày 6 tháng sau",
+                  "last_updated": "2026-09-03T02:55:34.731Z",
+                  "source": "Tổng cục Thống kê - GSO",
+                  "note": null,
+                  "related_blog": null
+                }
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

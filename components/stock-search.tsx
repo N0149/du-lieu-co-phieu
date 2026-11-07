@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react'
 import dynamic from 'next/dynamic'
 import { Search } from 'lucide-react'
+import { getStoredSearchPool } from '@/lib/stock-search-cache'
 
 // Nạp lười (Lazy load) GlobalSearchModal chỉ khi người dùng mở hộp thoại tìm kiếm (click hoặc Ctrl+K)
 // Giúp loại bỏ hoàn toàn ~560 KB bundle dữ liệu cổ phiếu khỏi lượt tải ban đầu của TẤT CẢ các trang trên website
@@ -13,6 +14,14 @@ const GlobalSearchModal = dynamic(
 
 export function StockSearch() {
   const [modalOpen, setModalOpen] = useState(false)
+
+  // Tiền tải dữ liệu tìm kiếm ngầm vào IndexedDB khi trình duyệt rảnh rỗi (idle)
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      getStoredSearchPool().catch(() => {})
+    }, 2500)
+    return () => clearTimeout(timer)
+  }, [])
 
   // Global hotkey Ctrl+K / Cmd+K or "/"
   useEffect(() => {

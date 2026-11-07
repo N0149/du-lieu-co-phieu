@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useMemo, useEffect, useRef, useCallback } from 'react'
+import { useState, useMemo, useEffect, useRef, useCallback, useDeferredValue } from 'react'
 import type { ScreenerStockItem } from '@/lib/screener-data-service'
 import { ScreenerTopBar } from './screener-top-bar'
 import { ScreenerSavedFiltersPanel } from './screener-saved-filters-panel'
@@ -263,66 +263,95 @@ export function WiDataScreener({ initialStocks }: WiDataScreenerProps) {
     setSelectedTickers([])
   }, [])
 
-  // Thuật toán LỌC DỮ LIỆU trực tiếp trong bộ nhớ (Client-side fast in-memory filtering)
+  // Dùng Concurrent React useDeferredValue để Main Thread luôn đạt 120 FPS mượt mà khi kéo thanh trượt
+  const deferredConditions = useDeferredValue(conditions)
+  const deferredExchange = useDeferredValue(selectedExchange)
+  const deferredSector = useDeferredValue(selectedSector)
+  const deferredTickers = useDeferredValue(selectedTickers)
+
+  // Thuật toán LỌC DỮ LIỆU siêu tốc (Compiled filter matchers)
   const filteredStocks = useMemo(() => {
+    // Fast path: khi không có điều kiện nào kích hoạt, trả về toàn bộ stocks ngay lập tức
+    if (
+      !deferredExchange &&
+      !deferredSector &&
+      deferredTickers.length === 0 &&
+      deferredConditions.length === 0
+    ) {
+      return stocks
+    }
+
+    const lowerSector = deferredSector ? deferredSector.toLowerCase() : ''
+    const tickerSet = deferredTickers.length > 0 ? new Set(deferredTickers) : null
+
+    // Pre-compile matchers một lần duy nhất trước khi duyệt 1.567 cổ phiếu
+    const compiledConditions = deferredConditions.map((cond) => {
+      const getter = cond.customRatio
+        ? ((s: ScreenerStockItem) => calcCustomRatioValue(s, cond.customRatio!))
+        : CRITERIA_MAP.get(cond.criterionId)?.getter || null
+
+      const v1 = cond.value1
+      const v2 = cond.value2 ?? cond.value1
+      const minV = Math.min(v1, v2)
+      const maxV = Math.max(v1, v2)
+
+      return {
+        getter,
+        op: cond.operator,
+        v1,
+        minV,
+        maxV,
+      }
+    })
+
     return stocks.filter((stock) => {
-      // 1. Lọc theo sàn
-      if (selectedExchange && stock.exchange !== selectedExchange) {
+      // 1. Sàn
+      if (deferredExchange && stock.exchange !== deferredExchange) {
         return false
       }
 
-      // 2. Lọc theo ngành
-      if (selectedSector) {
-        const target = `${stock.sector} ${stock.icbL1} ${stock.icbL2}`.toLowerCase()
-        if (!target.includes(selectedSector.toLowerCase())) {
+      // 2. Ngành
+      if (lowerSector) {
+        const target = `${stock.sector || ''} ${stock.icbL1 || ''} ${stock.icbL2 || ''}`.toLowerCase()
+        if (!target.includes(lowerSector)) {
           return false
         }
       }
 
-      // 3. Lọc theo mã chỉ định
-      if (selectedTickers.length > 0 && !selectedTickers.includes(stock.ticker)) {
+      // 3. Ticker
+      if (tickerSet && !tickerSet.has(stock.ticker)) {
         return false
       }
 
-      // 4. Lọc theo từng điều kiện chỉ tiêu
-      for (const cond of conditions) {
-        let val: number | null = null
-        if (cond.customRatio) {
-          val = calcCustomRatioValue(stock, cond.customRatio)
-        } else {
-          const meta = CRITERIA_MAP.get(cond.criterionId)
-          if (!meta) continue
-          val = meta.getter(stock)
-        }
+      // 4. Các điều kiện chỉ tiêu đã biên dịch sẵn
+      for (let i = 0; i < compiledConditions.length; i++) {
+        const c = compiledConditions[i]
+        if (!c.getter) continue
 
-        // Nếu cổ phiếu thiếu dữ liệu chỉ tiêu này -> không thỏa mãn
+        const val = c.getter(stock)
         if (val == null || isNaN(val)) {
           return false
         }
 
-        switch (cond.operator) {
+        switch (c.op) {
           case 'gt':
-            if (val < cond.value1) return false
+            if (val < c.v1) return false
             break
           case 'lt':
-            if (val > cond.value1) return false
+            if (val > c.v1) return false
             break
-          case 'between': {
-            const v2 = cond.value2 ?? cond.value1
-            const minV = Math.min(cond.value1, v2)
-            const maxV = Math.max(cond.value1, v2)
-            if (val < minV || val > maxV) return false
+          case 'between':
+            if (val < c.minV || val > c.maxV) return false
             break
-          }
           case 'eq':
-            if (Math.abs(val - cond.value1) > 0.05) return false
+            if (Math.abs(val - c.v1) > 0.05) return false
             break
         }
       }
 
       return true
     })
-  }, [stocks, selectedExchange, selectedSector, selectedTickers, conditions])
+  }, [stocks, deferredExchange, deferredSector, deferredTickers, deferredConditions])
 
   const allTickerOptions = useMemo(() => {
     return stocks.map((s) => ({ ticker: s.ticker, name: s.name }))
