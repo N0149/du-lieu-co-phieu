@@ -78,6 +78,36 @@ const nextConfig = {
     '/api/funds': [
       './data/funds_snapshot.json',
     ],
+    '/bo-loc': [
+      './data/screener_stocks_snapshot.json',
+      './data/longlive_manifest.json',
+    ],
+    '/api/screener/stocks': [
+      './data/screener_stocks_snapshot.json',
+    ],
+    '/cang-bien': [
+      './data/maritime/**/*',
+    ],
+    '/dau-thau': [
+      './data/bidding/**/*',
+    ],
+    '/nganh': [
+      './data/industry/**/*',
+    ],
+    '/thi-truong': [
+      './data/pe_pb_vnindex.json',
+      './data/ctck_margin_lending.json',
+      './data/brokerage_share_hose.json',
+      './data/world_market_snapshot.json',
+    ],
+    '/mcp': [
+      './content/agm/**/*',
+      './content/bctc/**/*',
+      './data/longlive_manifest.json',
+      './data/reports-snapshot.json',
+      './data/disclosures_snapshot.json',
+      './data/screener_stocks_snapshot.json',
+    ],
   },
   outputFileTracingExcludes: {
     '*': [
@@ -106,6 +136,16 @@ const nextConfig = {
           {
             key: 'X-Robots-Tag',
             value: 'noindex, nofollow, noarchive, nosnippet',
+          },
+        ],
+      },
+      {
+        // Cache vĩnh viễn hình ảnh tĩnh, fonts và biểu tượng để tăng tốc LCP
+        source: '/:all*(svg|jpg|png|webp|avif|woff2|ico)',
+        headers: [
+          {
+            key: 'Cache-Control',
+            value: 'public, max-age=31536000, immutable',
           },
         ],
       },

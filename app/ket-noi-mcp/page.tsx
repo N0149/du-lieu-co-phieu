@@ -164,7 +164,9 @@ export default function KetNoiMcpPage() {
   }, [])
 
   const serverUrl =
-    mounted && typeof window !== 'undefined'
+    mounted &&
+    typeof window !== 'undefined' &&
+    (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1')
       ? `${window.location.origin}/mcp`
       : 'https://www.dulieudautu.com/mcp'
 
@@ -877,6 +879,9 @@ export default function KetNoiMcpPage() {
                           {copiedItem === 'gemini-step-url' ? <Check className="size-3" /> : <Copy className="size-3" />}
                           <span>{copiedItem === 'gemini-step-url' ? 'Đã chép' : 'Chép'}</span>
                         </button>
+                      </div>
+                      <div className="rounded-xl border border-amber-500/30 bg-amber-500/10 p-2.5 text-xs text-amber-300 leading-relaxed">
+                        <strong className="text-amber-200">⚠️ Lưu ý bắt buộc:</strong> Phải có chữ <code className="bg-black/40 px-1 py-0.5 rounded text-amber-200 font-mono">www.</code> là <code className="bg-black/40 px-1 py-0.5 rounded text-white font-mono">https://www.dulieudautu.com/mcp</code>. Tuyệt đối không xóa chữ <code className="font-mono">www.</code> vì Google Gemini sẽ tự động hủy token bảo mật nếu gặp chuyển hướng tên miền, làm treo ứng dụng.
                       </div>
                       <p className="text-xs text-[#9eacb9]">
                         Sau đó bấm <strong>Tiếp theo</strong> (Không cần cấu hình phần Cài đặt bổ sung).

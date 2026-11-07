@@ -216,11 +216,19 @@ export async function getBusinessPlan(symbol: string): Promise<RawBusinessPlanPa
   try {
     const supabase = getSupabase()
     if (supabase) {
-      const { data, error } = await supabase
+      const fetchPromise = supabase
         .from('business_plans')
         .select('symbol, plan_data, updated_source, updated_at')
         .eq('symbol', sym)
         .maybeSingle()
+
+      const timeoutPromise = new Promise((resolve) =>
+        setTimeout(() => resolve({ data: null, error: new Error('Supabase query timeout') }), 2500)
+      )
+
+      const res = (await Promise.race([fetchPromise, timeoutPromise])) as { data?: any; error?: any }
+      const data = res?.data
+      const error = res?.error
 
       if (!error && data && data.plan_data) {
         const parsed: RawBusinessPlanPayload = {

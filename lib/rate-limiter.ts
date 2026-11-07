@@ -159,7 +159,11 @@ export async function checkMcpDailyLimit(
   }
 
   try {
-    const res = await limiter.limit(`mcp:${identifier}`)
+    const limitPromise = limiter.limit(`mcp:${identifier}`)
+    const timeoutPromise = new Promise((_, reject) =>
+      setTimeout(() => reject(new Error('Rate limiter timeout')), 1500)
+    )
+    const res = (await Promise.race([limitPromise, timeoutPromise])) as { success: boolean; limit: number; remaining: number; reset: number }
     return {
       success: res.success,
       limit: res.limit,

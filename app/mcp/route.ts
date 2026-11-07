@@ -71,7 +71,7 @@ export async function GET(req: NextRequest) {
   // Kết nối MCP qua Streamable HTTP / Server-Sent Events
   try {
     const server = createDulieudautuMcpServer()
-    const transport = new WebStandardStreamableHTTPServerTransport()
+    const transport = new WebStandardStreamableHTTPServerTransport({ enableJsonResponse: true })
     await server.connect(transport)
 
     const response = await transport.handleRequest(req)
@@ -148,7 +148,7 @@ export async function POST(req: NextRequest) {
 
   try {
     const server = createDulieudautuMcpServer()
-    const transport = new WebStandardStreamableHTTPServerTransport()
+    const transport = new WebStandardStreamableHTTPServerTransport({ enableJsonResponse: true })
     await server.connect(transport)
 
     const response = await transport.handleRequest(req)
