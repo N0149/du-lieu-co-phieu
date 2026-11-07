@@ -3,6 +3,7 @@
 import React from 'react'
 import { ResponsiveContainer, PieChart, Pie, Cell, Tooltip } from 'recharts'
 import type { PieChartItem } from '@/lib/industry-types'
+import { ChartWatermark } from '@/components/ChartWatermark'
 
 interface IndustryPieChartsProps {
   marketCapPie: PieChartItem[]
@@ -59,6 +60,7 @@ export function IndustryPieCharts({ marketCapPie, lnstPie, quarterLabel = 'Gần
         </div>
 
         <div className="relative mt-2 h-64 w-full sm:h-72">
+          <ChartWatermark domain="dulieudautu.com" brandName="Dữ Liệu Đầu Tư" size="sm" />
           <ResponsiveContainer width="100%" height="100%">
             <PieChart>
               <Pie
@@ -119,6 +121,7 @@ export function IndustryPieCharts({ marketCapPie, lnstPie, quarterLabel = 'Gần
         </div>
 
         <div className="relative mt-2 h-64 w-full sm:h-72">
+          <ChartWatermark domain="dulieudautu.com" brandName="Dữ Liệu Đầu Tư" size="sm" />
           <ResponsiveContainer width="100%" height="100%">
             <PieChart>
               <Pie

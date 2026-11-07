@@ -3,13 +3,14 @@ import path from 'node:path'
 import { getStockByTicker, getLocalCoreCard } from '@/lib/longlivestock'
 import { getStock, upside, marginOfSafety } from '@/lib/data'
 import { getLocalFinancialStatements } from '@/lib/financial-statements-db'
-import { getBctcReport } from '@/lib/bctc-service'
-import { getAgmReport } from '@/lib/agm-service'
-import {
-  getNghienCuuAiReportsForTicker,
-  getNghienCuuAiReportBySlug,
-} from '@/lib/nghien-cuu-ai-service'
 import { fmtBillion, fmtNum, fmtPct, fmtPrice } from '@/lib/format'
+
+export interface AttachedStockDoc {
+  filename: string
+  category: string
+  sizeKb: string
+  rawMarkdown: string
+}
 
 export interface AiBundleResult {
   symbol: string
@@ -19,6 +20,11 @@ export interface AiBundleResult {
   updatedDate: string
   markdownContent: string
   compactPrompt: string
+  attachedFiles: Array<{
+    filename: string
+    category: string
+    sizeKb: string
+  }>
   pdfLinks: Array<{
     title: string
     docType: string
@@ -46,7 +52,7 @@ function toBillion(val: number | null | undefined): string {
 }
 
 /** Trích xuất bảng tóm tắt KQKD các quý gần nhất */
-function formatQuarterKqkdTable(symbol: string): string {
+export function formatQuarterKqkdTable(symbol: string): string {
   const quarter = getLocalFinancialStatements(symbol, 'quarter')
   if (!quarter || !quarter.fiscalDates || quarter.fiscalDates.length === 0) return ''
 
@@ -84,16 +90,65 @@ function formatQuarterKqkdTable(symbol: string): string {
 }
 
 /**
- * Hàm chính: Tạo gói dữ liệu AI tinh gọn, tập trung và cực nhanh (< 5ms)
- * 1. Báo cáo tài chính Quý 3/2026 & Bán niên 2026 đã bóc tách (Tab Báo cáo tài chính)
- * 2. Thông tin AGM 2026 (Nghị quyết, Kế hoạch & Q&A ĐHĐCĐ 2026)
- * 3. Dữ liệu Nghiên cứu chuyên sâu AI (Hệ điểm định giá Benchmark 10% = 100đ, Toàn văn bài phân tích)
+ * Quét toàn bộ tài liệu gốc (.md) trong hệ thống mang tên mã cổ phiếu đó:
+ * - Thuyết minh BCTC Quý 3/2026
+ * - Thuyết minh BCTC Bán Niên 2026
+ * - Tài liệu ĐHĐCĐ AGM 2026
+ * - Nghiên cứu chuyên sâu AI & Định giá
+ * Tuyệt đối chỉ đọc file có tên bắt đầu bằng mã cổ phiếu (${SYM}_ hoặc ${sym}-)
+ */
+export function getAttachedDocumentsForStock(tickerSymbol: string): AttachedStockDoc[] {
+  const sym = tickerSymbol.toUpperCase().trim()
+  const symLower = tickerSymbol.toLowerCase().trim()
+  const docs: AttachedStockDoc[] = []
+
+  const targetDirs = [
+    { dir: path.join(process.cwd(), 'content', 'bctc', 'Quy_3_2026'), cat: 'Thuyết minh BCTC Quý 3/2026' },
+    { dir: path.join(process.cwd(), 'content', 'bctc', 'Ban_Nien_2026'), cat: 'Thuyết minh BCTC Bán Niên 2026' },
+    { dir: path.join(process.cwd(), 'content', 'agm', '2026'), cat: 'Tài liệu ĐHĐCĐ AGM 2026' },
+    { dir: path.join(process.cwd(), 'content', 'agm', '2025'), cat: 'Tài liệu ĐHĐCĐ AGM 2025' },
+    { dir: path.join(process.cwd(), 'content', 'nghien_cuu_ai'), cat: 'Nghiên cứu chuyên sâu AI & Định giá' },
+  ]
+
+  for (const target of targetDirs) {
+    if (!fs.existsSync(/*turbopackIgnore: true*/ target.dir)) continue
+    try {
+      const files = fs.readdirSync(/*turbopackIgnore: true*/ target.dir)
+      for (const f of files) {
+        if (!f.endsWith('.md')) continue
+        const u = f.toUpperCase()
+        const l = f.toLowerCase()
+        const matchUpper = u.startsWith(sym + '_') || u.startsWith(sym + '-') || u.startsWith(sym + '.')
+        const matchLower = l.startsWith(symLower + '-') || l.startsWith(symLower + '_')
+        if (matchUpper || matchLower) {
+          const fullPath = path.join(/*turbopackIgnore: true*/ target.dir, f)
+          const stat = fs.statSync(/*turbopackIgnore: true*/ fullPath)
+          const content = fs.readFileSync(/*turbopackIgnore: true*/ fullPath, 'utf8')
+          docs.push({
+            filename: f,
+            category: target.cat,
+            sizeKb: (stat.size / 1024).toFixed(1),
+            rawMarkdown: content,
+          })
+        }
+      }
+    } catch {
+      // Bỏ qua lỗi đọc từng file
+    }
+  }
+
+  return docs
+}
+
+/**
+ * Hàm chính: Tạo gói dữ liệu AI đính kèm trực tiếp các tài liệu bóc tách của mã cổ phiếu
+ * Mô phỏng trải nghiệm kéo thả/đính kèm trực tiếp file vào khung chat Gemini
  */
 export async function buildStockAiBundle(tickerSymbol: string): Promise<AiBundleResult> {
   const sym = tickerSymbol.toUpperCase().trim()
   const todayStr = new Date().toLocaleDateString('vi-VN')
 
-  // 1. Dữ liệu thông tin cơ bản & định giá
+  // 1. Dữ liệu thông tin cơ bản & định giá từ cơ sở dữ liệu
   const manifestStock = getStockByTicker(sym)
   const legacyStock = getStock(sym)
   const coreCard = getLocalCoreCard(sym)
@@ -114,152 +169,71 @@ export async function buildStockAiBundle(tickerSymbol: string): Promise<AiBundle
 
   const quarterKqkdTable = formatQuarterKqkdTable(sym)
 
-  // 2. Dữ liệu Nghiên Cứu Chuyên Sâu AI (Tab "Nghiên cứu chuyên sâu AI")
-  const aiReports = getNghienCuuAiReportsForTicker(sym)
-  let aiResearchMarkdown = ''
-  if (aiReports.length > 0) {
-    const aiBlocks: string[] = []
-    for (const r of aiReports) {
-      const detail = getNghienCuuAiReportBySlug(r.slug)
-      const currentScoreStr = r.currentScore != null ? `${r.currentScore}` : `${r.score ?? '—'}`
-      const classStr = r.currentClassification || r.classification || 'Phân tích'
-      const deltaStr = r.scoreDelta != null ? (r.scoreDelta > 0 ? ` (+${r.scoreDelta}đ)` : r.scoreDelta < 0 ? ` (${r.scoreDelta}đ)` : '') : ''
-      const pxLive = r.currentPrice ? `${r.currentPrice}k (Thị giá hiện tại)` : (r.price ? `${r.price}k` : '—')
+  // 2. Quét chính xác các tài liệu mang tên mã cổ phiếu đó
+  const attachedDocs = getAttachedDocumentsForStock(sym)
 
-      let block = `### 🌟 BÀI ĐỊNH GIÁ AI: ${r.title}\n`
-      block += `- **Điểm định giá AI hiện tại**: **${currentScoreStr} ĐIỂM** [${classStr}]${deltaStr}\n`
-      block += `  *(Hệ quy chiếu: Benchmark gửi tiết kiệm 10%/năm = 100 điểm. Điểm ≥ 200: Siêu Hấp Dẫn | 150 - 200: Khả Quan | 100 - 150: Theo Dõi | < 100: Kém Hấp Dẫn)*\n`
-      block += `- **Điểm gốc lúc nghiên cứu**: ${r.score ?? '—'} điểm (tại giá ${r.price ? `${r.price}k` : '—'} ngày ${r.date})\n`
-      block += `- **Thị giá**: ${pxLive}\n`
-      if (r.summary) {
-        block += `- **Tóm tắt luận điểm**: ${r.summary}\n`
-      }
-      if (detail?.markdown && detail.markdown.trim().length > 0) {
-        block += `\n#### Toàn văn bài nghiên cứu AI chi tiết:\n${detail.markdown}\n`
-      }
-      aiBlocks.push(block)
-    }
-    aiResearchMarkdown = aiBlocks.join('\n\n---\n\n')
-  } else {
-    aiResearchMarkdown = `_Mã ${sym} hiện chưa có bài chấm điểm sẵn trong kho Nghiên cứu AI. AI hãy dựa trên dữ liệu Thuyết minh BCTC Quý 3/2026, Bán niên 2026 và Nghị quyết ĐHĐCĐ 2026 bên dưới để tự chấm điểm theo thang điểm chuẩn (Benchmark lãi suất tiết kiệm = 100 điểm, Điểm > 150 là Khả quan, > 200 là Siêu hấp dẫn)._`
-  }
+  // 3. Danh sách tài liệu đính kèm
+  const docListSummary =
+    attachedDocs.length > 0
+      ? attachedDocs.map((d, i) => `${i + 1}. 📄 **${d.filename}** (${d.category} · ${d.sizeKb} KB)`).join('\n')
+      : `_Hệ thống hiện chưa có tài liệu bóc tách văn bản (.md) mang tên mã ${sym} trong các kho BCTC Quý 3/2026, BCTC Bán Niên 2026, AGM 2026 hay Nghiên cứu AI._`
 
-  // 3. Thuyết minh Báo cáo tài chính Quý 3/2026 & Bán niên 2026 đã bóc tách (Tab "Báo cáo tài chính")
-  const q3Report = getBctcReport(sym, 'HopNhat', 'Quy_3_2026') || getBctcReport(sym, 'CongTyMe', 'Quy_3_2026')
-  const banNienReport = getBctcReport(sym, 'HopNhat', 'Ban_Nien_2026') || getBctcReport(sym, 'CongTyMe', 'Ban_Nien_2026')
+  // 4. Nội dung chi tiết từng file đính kèm
+  const docSections = attachedDocs
+    .map((doc, idx) => {
+      return [
+        `================================================================================`,
+        `📎 [TÀI LIỆU ĐÍNH KÈM ${idx + 1}/${attachedDocs.length}]: ${doc.filename}`,
+        `📁 Phân loại: ${doc.category} (${doc.sizeKb} KB)`,
+        `================================================================================`,
+        doc.rawMarkdown,
+      ].join('\n')
+    })
+    .join('\n\n')
 
-  const bctcBlocks: string[] = []
+  // 5. Ghép thành Markdown hoàn chỉnh như đính kèm file vào khung chat
+  const bundleMarkdown = `# 📎 TÀI LIỆU ĐÍNH KÈM TỰ ĐỘNG CHO MÃ CỔ PHIẾU: ${sym} - ${companyName}
+*Nguồn dữ liệu bóc tách: [dulieudautu.com](https://dulieudautu.com) · Cập nhật: ${todayStr}*
 
-  if (q3Report && q3Report.sections.length > 0) {
-    const secTexts: string[] = []
-    for (const sec of q3Report.sections) {
-      if (sec.rawMarkdown && sec.rawMarkdown.trim().length > 0) {
-        secTexts.push(`#### ${sec.title}\n${sec.rawMarkdown}`)
-      }
-    }
-    if (secTexts.length > 0) {
-      bctcBlocks.push(`### Thuyết Minh BCTC Quý 3/2026 (${q3Report.reportTypeLabel}):\n\n${secTexts.join('\n\n')}`)
-    }
-  }
+## 📂 DANH MỤC TÀI LIỆU ĐÃ ĐÍNH KÈM VÀO PHIÊN CHAT (${attachedDocs.length} tài liệu tìm thấy):
+${docListSummary}
 
-  if (banNienReport && banNienReport.sections.length > 0) {
-    const secTexts: string[] = []
-    for (const sec of banNienReport.sections) {
-      if (sec.rawMarkdown && sec.rawMarkdown.trim().length > 0) {
-        secTexts.push(`#### ${sec.title}\n${sec.rawMarkdown}`)
-      }
-    }
-    if (secTexts.length > 0) {
-      bctcBlocks.push(`### Thuyết Minh BCTC Bán Niên 2026 (${banNienReport.reportTypeLabel}):\n\n${secTexts.join('\n\n')}`)
-    }
-  }
+${docSections ? `\n${docSections}\n` : ''}
 
-  // Fallback nếu không có quý 3 / bán niên nhưng có thuyết minh kỳ khác
-  if (bctcBlocks.length === 0) {
-    const fallbackReport = getBctcReport(sym)
-    if (fallbackReport && fallbackReport.sections.length > 0) {
-      const secTexts: string[] = []
-      for (const sec of fallbackReport.sections) {
-        if (sec.rawMarkdown && sec.rawMarkdown.trim().length > 0) {
-          secTexts.push(`#### ${sec.title}\n${sec.rawMarkdown}`)
-        }
-      }
-      if (secTexts.length > 0) {
-        bctcBlocks.push(`### Thuyết Minh BCTC Gần Nhất:\n\n${secTexts.join('\n\n')}`)
-      }
-    }
-  }
-
-  const bctcMarkdown = bctcBlocks.join('\n\n---\n\n')
-
-  // 4. Thông tin Đại hội đồng cổ đông (AGM 2026)
-  const agmReport = getAgmReport(sym, 2026) || getAgmReport(sym, 2025)
-  let agmMarkdown = ''
-  if (agmReport && agmReport.hasReport) {
-    const agmParts: string[] = []
-    agmParts.push(`- **Kỳ họp ĐHĐCĐ**: Năm ${agmReport.year} - ${agmReport.title}`)
-    if (agmReport.ktplRate != null) {
-      agmParts.push(`- **Tỷ lệ trích Quỹ khen thưởng & phúc lợi (KTPL)**: ${agmReport.ktplRate}% LNST`)
-    }
-    if (agmReport.ktplVnd != null) {
-      agmParts.push(`- **Số tiền trích Quỹ KTPL**: ${fmtBillion(agmReport.ktplVnd)} tỷ VNĐ`)
-    }
-
-    for (const sec of agmReport.sections) {
-      if (sec.rawMarkdown && sec.rawMarkdown.trim().length > 0) {
-        agmParts.push(`### ${sec.title}\n${sec.rawMarkdown}`)
-      }
-    }
-    agmMarkdown = agmParts.join('\n\n')
-  }
-
-  // 5. Ghép thành Markdown hồ sơ chuẩn
-  const bundleMarkdown = `# HỒ SƠ TÀI CHÍNH & NGHIÊN CỨU AI: ${sym} - ${companyName}
-*Nguồn dữ liệu trích xuất: [dulieudautu.com](https://dulieudautu.com) · Cập nhật: ${todayStr}*
-
----
-
-## 1. TỔNG QUAN DOANH NGHIỆP & CHỈ SỐ CỐT LÕI
-- **Mã cổ phiếu**: ${sym} | **Sàn**: ${exchange} | **Ngành**: ${sector}
-${companyProfile ? `- **Mô tả hoạt động**: ${companyProfile}` : ''}
+================================================================================
+📊 TỔNG QUAN DOANH NGHIỆP & CHỈ SỐ CỐT LÕI: ${sym} (${companyName})
+================================================================================
+- **Mã cổ phiếu**: ${sym} | **Sàn niêm yết**: ${exchange} | **Ngành**: ${sector}
+${companyProfile ? `- **Mô tả doanh nghiệp**: ${companyProfile}` : ''}
 - **Thị giá hiện tại**: ${marketPrice != null ? fmtPrice(marketPrice) + ' nghìn VNĐ' : '—'}
 - **Vốn hóa thị trường**: ${marketCap != null ? fmtBillion(marketCap) + ' tỷ VNĐ' : '—'}
 - **Định giá P/E**: ${pe != null ? fmtNum(pe, 1) + 'x' : '—'} | **P/B**: ${pb != null ? fmtNum(pb, 1) + 'x' : '—'} | **Tỷ suất cổ tức tiền mặt**: ${divYield != null ? fmtNum(divYield, 1) + '%' : '—'}
-${rnav != null ? `- **Định giá RNAV**: ${fmtPrice(rnav)} nghìn VNĐ (Dư địa tăng: ${up != null ? fmtPct(up, 0) : '—'}, Biên an toàn MOS: ${mos != null ? fmtPct(mos, 0) : '—'})` : ''}
+${rnav != null ? `- **Định giá RNAV (Tài sản ngầm)**: ${fmtPrice(rnav)} nghìn VNĐ (Dư địa tăng: ${up != null ? fmtPct(up, 0) : '—'}, Biên an toàn MOS: ${mos != null ? fmtPct(mos, 0) : '—'})` : ''}
 
-${quarterKqkdTable ? `### Tóm Tắt KQKD Các Quý Gần Nhất:\n${quarterKqkdTable}\n` : ''}
+${quarterKqkdTable ? `\n### Bảng Tóm Tắt KQKD Các Quý Gần Nhất:\n${quarterKqkdTable}\n` : ''}
 
----
-
-## 2. NGHIÊN CỨU CHUYÊN SÂU AI (TAB "NGHIÊN CỨU CHUYÊN SÂU AI")
-${aiResearchMarkdown}
-
----
-
-## 3. THUYẾT MINH BÁO CÁO TÀI CHÍNH QUÝ 3 & BÁN NIÊN 2026 ĐÃ BÓC TÁCH (TAB "BÁO CÁO TÀI CHÍNH")
-${bctcMarkdown ? bctcMarkdown : '_Chưa có trích xuất chi tiết thuyết minh văn bản BCTC Quý 3/Bán niên 2026 cho mã này._'}
-
----
-
-## 4. TÀI LIỆU ĐẠI HỘI ĐỒNG CỔ ĐÔNG (AGM 2026)
-${agmMarkdown ? agmMarkdown : '_Chưa có tài liệu AGM 2026 cho mã này._'}
-
----
-
-## HƯỚNG DẪN CÂU LỆNH PHÂN TÍCH (SYSTEM PROMPT CHO AI):
-Bạn là Chuyên gia Phân tích Tài chính Cao cấp (CFA). Dựa trên 3 nguồn dữ liệu bóc tách độc quyền ở trên (Nghiên cứu chuyên sâu AI, Thuyết minh BCTC Quý 3 & Bán niên 2026, Thông tin AGM 2026):
-1. Đánh giá chất lượng tài chính, dòng tiền CFO và áp lực nợ vay/lãi vay từ thuyết minh.
-2. Đánh giá Ban Lãnh đạo & tính minh bạch với cổ đông nhỏ lẻ qua tỷ lệ trích Quỹ KTPL tại AGM 2026.
-3. Đưa ra kết luận và chấm điểm định giá tổng kết cho mã ${sym} theo thang điểm chuẩn (Benchmark 10% gửi tiết kiệm = 100 điểm, Điểm > 150 là Khả quan, > 200 là Siêu hấp dẫn).
+================================================================================
+🎯 HƯỚNG DẪN TRẢ LỜI CHO AI (SYSTEM PROMPT):
+1. **Trả lời đúng trọng tâm**: Trả lời trực tiếp câu hỏi của người dùng dựa trên các tài liệu đính kèm bên trên.
+2. **Nếu người dùng hỏi về tài liệu**: Liệt kê rõ các tài liệu tìm thấy ở mục "DANH MỤC TÀI LIỆU ĐÃ ĐÍNH KÈM" và tóm lược ngắn gọn nội dung của từng file. Nếu chưa có file BCTC thì nêu rõ chỉ có tài liệu AGM (hoặc ngược lại).
+3. **Nếu người dùng yêu cầu chấm điểm / phân tích**:
+   - Đánh giá chất lượng kinh doanh & dòng tiền từ BCTC.
+   - Đánh giá Ban Lãnh đạo & tính minh bạch với cổ đông nhỏ lẻ từ tài liệu AGM (đặc biệt là tỷ lệ trích Quỹ khen thưởng phúc lợi KTPL và thảo luận ĐHĐCĐ).
+   - Đưa ra kết luận và chấm điểm định giá tổng kết theo thang điểm chuẩn hóa:
+     * Quy chuẩn: Benchmark lãi suất gửi tiết kiệm 10%/năm = 100 điểm.
+     * Điểm ≥ 200: Siêu Hấp Dẫn (Cơ hội đầu tư xuất sắc, biên an toàn cao).
+     * 150 - 200: Khả Quan (Doanh nghiệp tốt, định giá hợp lý).
+     * 100 - 150: Theo Dõi (Bình thường hoặc cần chiết khấu thêm).
+     * < 100: Kém Hấp Dẫn (Rủi ro cao hoặc định giá quá đắt).
 `
 
-  // 6. Prompt tóm tắt
-  const compactPrompt = `Bạn là Chuyên gia Phân tích Tài chính Cấp cao (CFA). Dưới đây là hồ sơ dữ liệu tài chính thực tế của mã **${sym} (${companyName})** từ dulieudautu.com:
+  // 6. Compact prompt cho giao diện web
+  const compactPrompt = `Bạn là Chuyên gia Phân tích Tài chính Cấp cao (CFA). Dưới đây là hồ sơ dữ liệu tài chính của mã **${sym} (${companyName})** từ dulieudautu.com:
 
 - Mã: ${sym} (${exchange}) - Ngành: ${sector}
 - Thị giá: ${marketPrice != null ? fmtPrice(marketPrice) : '—'}k | Vốn hóa: ${marketCap != null ? fmtBillion(marketCap) : '—'} tỷ | P/E: ${pe != null ? fmtNum(pe, 1) + 'x' : '—'} | Cổ tức: ${divYield != null ? fmtNum(divYield, 1) + '%' : '—'}
+- Số tài liệu đính kèm tìm thấy: ${attachedDocs.length} tài liệu (${attachedDocs.map((d) => d.filename).join(', ') || 'Chưa có file .md'})
 ${quarterKqkdTable ? `\n${quarterKqkdTable}\n` : ''}
-${agmReport && agmReport.ktplRate != null ? `- Tỷ lệ trích Quỹ KTPL: ${agmReport.ktplRate}% LNST` : ''}
 
 YÊU CẦU PHÂN TÍCH & CHẤM ĐIỂM:
 Hãy giúp tôi phân tích chi tiết mã ${sym} và chấm điểm định giá theo thang điểm chuẩn (Benchmark 10% = 100đ).`
@@ -272,6 +246,11 @@ Hãy giúp tôi phân tích chi tiết mã ${sym} và chấm điểm định gi�
     updatedDate: todayStr,
     markdownContent: bundleMarkdown,
     compactPrompt,
+    attachedFiles: attachedDocs.map((d) => ({
+      filename: d.filename,
+      category: d.category,
+      sizeKb: d.sizeKb,
+    })),
     pdfLinks: [],
     metrics: {
       price: marketPrice ?? undefined,

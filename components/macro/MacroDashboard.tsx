@@ -39,6 +39,7 @@ import {
   formatPeriodLabel,
 } from '@/lib/macro-types';
 import { cn } from '@/lib/utils';
+import { ChartWatermark } from '@/components/ChartWatermark';
 
 interface MacroDashboardProps {
   initialCatalog: MacroMeta[];
@@ -444,7 +445,8 @@ export function MacroDashboard({
               </span>
             </div>
 
-            <div className="h-64 sm:h-72 w-full">
+            <div className="relative h-64 sm:h-72 w-full">
+              <ChartWatermark domain="dulieudautu.com" brandName="Dữ Liệu Đầu Tư" size="md" />
               <ResponsiveContainer width="100%" height="100%">
                 <AreaChart data={chartData.points} margin={{ top: 10, right: 10, left: 10, bottom: 0 }}>
                   <defs>

@@ -373,9 +373,14 @@ async function syncAllMacro() {
 
           // Lấy giá trị mới nhất cho bảng tổng quan (ở cấu hình mặc định)
           if (tf === item.defaultTimeFrame && vt === item.defaultValueType) {
-            const firstChild = data.parent?.[0]?.child?.[0];
-            if (firstChild && firstChild.data && firstChild.data.length > 0) {
-              const firstPoint = firstChild.data[0];
+            const children = data.parent?.[0]?.child || [];
+            const targetChild =
+              children.find((c) => c.name && (c.name.includes('Bơm/hút ròng') || c.name.toLowerCase() === item.name.toLowerCase())) ||
+              children.find((c) => c.data && c.data.length > 0 && c.data[0][1] !== null) ||
+              children[0];
+
+            if (targetChild && targetChild.data && targetChild.data.length > 0) {
+              const firstPoint = targetChild.data[0];
               latestPeriod = data.headers?.[0] || 'Gần nhất';
               latestValue = firstPoint[1];
             }
