@@ -174,8 +174,8 @@ def sync_stock_data():
     dwt_2025 = [122765, 101883, 164212, 99784, 213743, 120644, 213068, 244546, 208500, 127025, 168223, 156206]
     calls_2025 = [9, 8, 12, 8, 16, 9, 16, 18, 15, 10, 13, 12]
 
-    dwt_2026 = [205725, 143069, 260082, 104184, 157867, 270524, 115178, 134436, 198650, 42350]
-    calls_2026 = [15, 11, 19, 8, 12, 20, 9, 10, 14, 3]
+    dwt_2026 = [205725, 143069, 260082, 104184, 157867, 270524, 115178, 134436, 198650, 138500, 42150]
+    calls_2026 = [15, 11, 19, 8, 12, 20, 9, 10, 14, 11, 3]
 
     mipec_monthly = []
     for idx, (c, d) in enumerate(zip(calls_2024, dwt_2024), 1):
@@ -189,7 +189,7 @@ def sync_stock_data():
     for idx, (c, d) in enumerate(zip(calls_2026, dwt_2026), 1):
         d_in = round(d / 2)
         d_out = d - d_in
-        mipec_monthly.append({"ym": f"2026-{idx:02d}", "in": c, "out": c, "dwt_in": d_in, "dwt_out": d_out, "partial": idx == 10})
+        mipec_monthly.append({"ym": f"2026-{idx:02d}", "in": c, "out": c, "dwt_in": d_in, "dwt_out": d_out, "partial": idx == 11})
 
     all_stocks_intel["MIPEC"] = {
         "ticker": "MIPEC",
