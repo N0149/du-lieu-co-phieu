@@ -46,7 +46,7 @@ export function createDulieudautuMcpServer() {
   // 1. Tool: Tra cứu hồ sơ tài chính toàn diện 16 năm
   server.tool(
     'tra_cuu_ho_so_tai_chinh',
-    'Tra cứu hồ sơ tài chính toàn diện: 16 năm BCTC (KQKD, CĐKT, LCTT), Thuyết minh bóc tách CAPEX & nợ vay, Nghị quyết ĐHĐCĐ & tỷ lệ Quỹ KTPL của một mã cổ phiếu.',
+    '[CÔNG CỤ TỔNG HỢP ƯU TIÊN SỐ 1] Tra cứu hồ sơ tài chính toàn diện nhất: 16 năm BCTC (KQKD, CĐKT, LCTT), Dòng tiền CFO vs LNST, Cơ cấu nợ vay, Thuyết minh CAPEX, Nghị quyết ĐHĐCĐ & Kế hoạch KD của một mã cổ phiếu. Dùng công cụ này cho MỌI yêu cầu phân tích, chấm điểm, đánh giá toàn diện. KHÔNG CẦN gọi thêm các công cụ soi riêng lẻ nếu đã gọi công cụ này.',
     {
       symbol: z
         .string()
@@ -84,7 +84,7 @@ export function createDulieudautuMcpServer() {
   // 2. Tool: Soi chất lượng dòng tiền CFO vs LNST
   server.tool(
     'soi_chat_luong_dong_tien',
-    'Bóc tách sâu chất lượng lợi nhuận: So sánh Lợi nhuận sau thuế (LNST) với Dòng tiền thuần từ HĐKD (CFO). Đánh giá doanh nghiệp có thu tiền thật về không hay bị đọng ở Khoản phải thu và Tồn kho.',
+    'Chỉ sử dụng khi người dùng hỏi RIÊNG BIỆT hoặc CỤ THỂ về dòng tiền thuần kinh doanh (CFO vs LNST), chất lượng lợi nhuận và cảnh báo đọng vốn ở phải thu/tồn kho mà không cần toàn bộ hồ sơ BCTC.',
     {
       symbol: z
         .string()
@@ -116,7 +116,7 @@ export function createDulieudautuMcpServer() {
   // 3. Tool: Soi nợ vay ngân hàng & chi phí lãi vay
   server.tool(
     'soi_no_vay_va_lai_vay',
-    'Tra cứu chi tiết cơ cấu nợ vay ngắn hạn, nợ dài hạn, áp lực chi phí lãi vay và chi tiết các ngân hàng chủ nợ từ Thuyết minh BCTC.',
+    'Chỉ sử dụng khi người dùng hỏi RIÊNG BIỆT về cơ cấu nợ vay ngắn hạn/dài hạn, áp lực chi phí lãi vay và ngân hàng chủ nợ mà không cần toàn bộ hồ sơ BCTC.',
     {
       symbol: z
         .string()
@@ -148,7 +148,7 @@ export function createDulieudautuMcpServer() {
   // 4. Tool: Kế hoạch ĐHĐCĐ & Tỷ lệ trích Quỹ khen thưởng phúc lợi (KTPL)
   server.tool(
     'ke_hoach_dhdcd_va_ktpl',
-    'Tra cứu Nghị quyết ĐHĐCĐ mới nhất: Kế hoạch doanh thu & lợi nhuận, chính sách chia cổ tức tiền mặt, và đặc biệt là Tỷ lệ trích Quỹ Khen thưởng Phúc lợi (KTPL) - chỉ số quan trọng đo lường tính minh bạch và công bằng với cổ đông nhỏ lẻ.',
+    'Chỉ sử dụng khi người dùng hỏi RIÊNG BIỆT về Nghị quyết ĐHĐCĐ, Kế hoạch doanh thu/LNST đại hội thông qua hoặc Tỷ lệ trích Quỹ khen thưởng phúc lợi (KTPL).',
     {
       symbol: z
         .string()
