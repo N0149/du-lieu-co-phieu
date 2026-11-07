@@ -36,7 +36,9 @@
     "sync-company-websites": "node scripts/crawl-company-websites.mjs",
     "sync-thuy-san": "node scripts/sync-thuy-san-vasep.mjs",
     "sync-china-news": "node scripts/news/sync-china-news.mjs",
-    "sync-funds": "node scripts/sync-funds.mjs"
+    "sync-funds": "node scripts/sync-funds.mjs",
+    "sync-cangbien": "python scripts/cangbien/sync_daily.py",
+    "sync-cangbien:force": "python scripts/cangbien/sync_daily.py --force"
   },
   "dependencies": {
     "@base-ui/react": "^1.5.0",

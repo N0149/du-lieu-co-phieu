@@ -3,12 +3,14 @@
 # powershell -ExecutionPolicy Bypass -File scripts/register-windows-tasks.ps1
 
 $nodePath = (Get-Command node).Source
+$pythonPath = (Get-Command python).Source
 $workingDir = (Get-Item .).FullName
 $scriptDir = Join-Path $workingDir "scripts"
 
 Write-Host "=== ĐĂNG KÝ LỊCH TỰ ĐỘNG CẬP NHẬT DỮ LIỆU CHỨNG KHOÁN VÀO WINDOWS TASK SCHEDULER ===" -ForegroundColor Cyan
 Write-Host "Thư mục làm việc: $workingDir"
 Write-Host "Node.js path: $nodePath"
+Write-Host "Python path: $pythonPath"
 
 $settings = New-ScheduledTaskSettingsSet -StartWhenAvailable -AllowStartIfOnBatteries -DontStopIfGoingOnBatteries
 
@@ -42,6 +44,11 @@ $trigger5 = New-ScheduledTaskTrigger -Daily -At 23:00
 Register-ScheduledTask -TaskName "StockData-Shareholders-Monthly" -Action $action5 -Trigger $trigger5 -Settings $settings -Description "Cập nhật Cổ đông & Công ty con ngày 1 hàng tháng" -Force
 Write-Host "  -> [OK] Đã đăng ký tác vụ: StockData-Shareholders-Monthly (Ngày 1 hàng tháng)" -ForegroundColor Green
 
+# 6. Cảng biển & Hàng hải: 08:30 sáng hàng ngày & Khi bật máy tính (1 lần/ngày)
+$action6 = New-ScheduledTaskAction -Execute $pythonPath -Argument "`"$scriptDir\cangbien\sync_daily.py`"" -WorkingDirectory $workingDir
+$trigger6a = New-ScheduledTaskTrigger -Daily -At 08:30
+$trigger6b = New-ScheduledTaskTrigger -AtLogOn
+Register-ScheduledTask -TaskName "StockData-Maritime-Daily" -Action $action6 -Trigger @($trigger6a, $trigger6b) -Settings $settings -Description "Cập nhật Sản lượng cảng biển & Cước vận tải biển (1 lần/ngày khi bật máy tính hoặc 08:30)" -Force
+Write-Host "  -> [OK] Đã đăng ký tác vụ: StockData-Maritime-Daily (Khi bật máy tính & 08:30 hàng ngày)" -ForegroundColor Green
+
 Write-Host "`nHoàn tất cài đặt vào Windows Task Scheduler! Các tác vụ sẽ tự động chạy đúng giờ." -ForegroundColor Yellow
-
-
