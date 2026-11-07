@@ -17,15 +17,17 @@
     ],
     "unit": "% / Điểm",
     "description": "Chỉ số giá tiêu dùng CPI đo lường tốc độ lạm phát theo rổ hàng hóa.",
-    "updatedAt": "2026-09-19T10:14:35.789Z",
-    "latestPeriod": "08-2026",
-    "latestValue": 4.888316947108811
+    "updatedAt": "2026-11-07T06:37:08.704Z",
+    "latestPeriod": "10-2026",
+    "latestValue": 5.08509814772424
   },
   "datasets": {
     "monthly": {
       "value": {
         "title": "Chỉ số giá CPI",
         "headers": [
+          "10-2026",
+          "09-2026",
           "08-2026",
           "07-2026",
           "06-2026",
@@ -42,9 +44,7 @@
           "07-2025",
           "06-2025",
           "05-2025",
-          "04-2025",
-          "03-2025",
-          "02-2025"
+          "04-2025"
         ],
         "parent": [
           {
@@ -63,8 +63,16 @@
                 "yAxis": 6,
                 "data": [
                   [
+                    1793404800000,
+                    108.8783549231132
+                  ],
+                  [
+                    1790726400000,
+                    108.65593799262628
+                  ],
+                  [
                     1788134400000,
-                    108.00017466103229
+                    107.990822516746
                   ],
                   [
                     1785456000000,
@@ -129,14 +137,6 @@
                   [
                     1745971200000,
                     102.14776018807
-                  ],
-                  [
-                    1743379200000,
-                    102.07579675136
-                  ],
-                  [
-                    1740700800000,
-                    102.102445489633
                   ]
                 ],
                 "time_frame": "monthly",
@@ -145,7 +145,7 @@
                   "unit": "Chỉ số 2024 = 100",
                   "description": "<p>Chỉ số giá tiêu dùng (CPI) là một con số thống kê dùng để đo mức độ thay đổi của giá cả các mặt hàng và dịch vụ mà các hộ gia đình thường mua, như: thực phẩm, đồ uống, quần áo, nhà ở, đi lại, y tế, giáo dục, giải trí và nhiều dịch vụ khác. Nói cách khác, CPI cho biết giá cả trung bình của “giỏ hàng hóa” tiêu biểu cho sinh hoạt hàng ngày đang tăng hay giảm theo thời gian. <p>\n<p>CPI là chỉ số quan trọng giúp theo dõi lạm phát, đánh giá sức mua của đồng tiền và tình hình kinh tế - xã hội. Ở Việt Nam, Tổng cục Thống kê (GSO) là cơ quan chịu trách nhiệm thu thập dữ liệu giá cả hàng tháng, tính toán và công bố chỉ số CPI.<p>",
                   "frequency": "Ngày 6 tháng sau",
-                  "last_updated": "2026-09-03T02:55:34.731Z",
+                  "last_updated": "2026-11-03T04:03:54.086Z",
                   "source": "Tổng cục Thống kê - GSO",
                   "note": "Số chính thức",
                   "related_blog": null
@@ -163,6 +163,14 @@
                 "dateType": "thang",
                 "yAxis": 6,
                 "data": [
+                  [
+                    1793404800000,
+                    107.05384640643086
+                  ],
+                  [
+                    1790726400000,
+                    107.31031761093925
+                  ],
                   [
                     1788134400000,
                     107.11183983394702
@@ -230,14 +238,6 @@
                   [
                     1745971200000,
                     102.132480089453
-                  ],
-                  [
-                    1743379200000,
-                    102.007928408865
-                  ],
-                  [
-                    1740700800000,
-                    102.059162108244
                   ]
                 ],
                 "time_frame": "monthly",
@@ -246,7 +246,7 @@
                   "unit": "Chỉ số 2024 = 100",
                   "description": "CPI Hàng ăn và dịch vụ ăn uống phản ánh biến động giá của các mặt hàng thực phẩm thiết yếu như gạo, thịt, cá, rau củ, trái cây, cùng các dịch vụ ăn uống như ăn ngoài gia đình. Tại Việt Nam, Tổng cục Thống kê (GSO) chịu trách nhiệm thu thập dữ liệu, sau đó tính toán và công bố CPI hàng tháng.",
                   "frequency": "Ngày 6 tháng sau",
-                  "last_updated": "2026-09-03T02:55:34.731Z",
+                  "last_updated": "2026-11-03T04:03:54.086Z",
                   "source": "Tổng cục Thống kê - GSO",
                   "note": null,
                   "related_blog": null
@@ -264,6 +264,14 @@
                 "dateType": "thang",
                 "yAxis": 6,
                 "data": [
+                  [
+                    1793404800000,
+                    100.56787715376532
+                  ],
+                  [
+                    1790726400000,
+                    101.14256732083119
+                  ],
                   [
                     1788134400000,
                     101.02790065358936
@@ -331,14 +339,6 @@
                   [
                     1745971200000,
                     100.992665152565
-                  ],
-                  [
-                    1743379200000,
-                    101.648808209558
-                  ],
-                  [
-                    1740700800000,
-                    102.499761227267
                   ]
                 ],
                 "time_frame": "monthly",
@@ -347,7 +347,7 @@
                   "unit": "Chỉ số 2024 = 100",
                   "description": "CPI Lương thực là một thành phần trong tiểu mục CPI Hàng ăn và dịch vụ ăn uống. Chỉ số này đo lường biến động giá của các mặt hàng lương thực thiết yếu như gạo, ngô, kê, mì mạch, cao lương,… Tại Việt Nam, Tổng cục Thống kê (GSO) chịu trách nhiệm thu thập dữ liệu, sau đó tính toán và công bố CPI hàng tháng.",
                   "frequency": "Ngày 6 tháng sau",
-                  "last_updated": "2026-09-03T02:55:34.731Z",
+                  "last_updated": "2026-11-03T04:03:54.086Z",
                   "source": "Tổng cục Thống kê - GSO",
                   "note": null,
                   "related_blog": null
@@ -365,6 +365,14 @@
                 "dateType": "thang",
                 "yAxis": 6,
                 "data": [
+                  [
+                    1793404800000,
+                    106.79568935782925
+                  ],
+                  [
+                    1790726400000,
+                    107.14261715216797
+                  ],
                   [
                     1788134400000,
                     106.85943997066155
@@ -432,14 +440,6 @@
                   [
                     1745971200000,
                     102.681780227292
-                  ],
-                  [
-                    1743379200000,
-                    102.503731246118
-                  ],
-                  [
-                    1740700800000,
-                    102.423226590018
                   ]
                 ],
                 "time_frame": "monthly",
@@ -448,7 +448,7 @@
                   "unit": "Chỉ số 2024 = 100",
                   "description": "CPI Thực phẩm là một thành phần quan trọng trong tổng chỉ số CPI Hàng ăn và dịch vụ ăn uống. Chỉ số này đo lường biến động giá của các mặt hàng thực phẩm như thịt, cá, …Tại Việt Nam, Tổng cục Thống kê (GSO) chịu trách nhiệm thu thập dữ liệu, sau đó tính toán và công bố CPI hàng tháng.",
                   "frequency": "Ngày 6 tháng sau",
-                  "last_updated": "2026-09-03T02:55:34.731Z",
+                  "last_updated": "2026-11-03T04:03:54.086Z",
                   "source": "Tổng cục Thống kê - GSO",
                   "note": null,
                   "related_blog": null
@@ -466,6 +466,14 @@
                 "dateType": "thang",
                 "yAxis": 6,
                 "data": [
+                  [
+                    1793404800000,
+                    110.69683739034457
+                  ],
+                  [
+                    1790726400000,
+                    110.57487330508906
+                  ],
                   [
                     1788134400000,
                     110.54491568952785
@@ -533,14 +541,6 @@
                   [
                     1745971200000,
                     101.362393989222
-                  ],
-                  [
-                    1743379200000,
-                    101.03544329472
-                  ],
-                  [
-                    1740700800000,
-                    101.070009237879
                   ]
                 ],
                 "time_frame": "monthly",
@@ -549,7 +549,7 @@
                   "unit": "Chỉ số 2024 = 100",
                   "description": "CPI Ăn uống ngoài gia đình trong mục \"Hàng ăn và dịch vụ ăn uống\" phản ánh mức độ biến động của giá các dịch vụ ăn uống ngoài gia đình, như ăn tại nhà hàng, quán ăn, quán cà phê và các dịch vụ ăn uống khác. Tại Việt Nam, Tổng cục Thống kê (GSO) chịu trách nhiệm thu thập dữ liệu, sau đó tính toán và công bố CPI hàng tháng.",
                   "frequency": "Ngày 6 tháng sau",
-                  "last_updated": "2026-09-03T02:55:34.731Z",
+                  "last_updated": "2026-11-03T04:03:54.086Z",
                   "source": "Tổng cục Thống kê - GSO",
                   "note": null,
                   "related_blog": null
@@ -567,6 +567,14 @@
                 "dateType": "thang",
                 "yAxis": 6,
                 "data": [
+                  [
+                    1793404800000,
+                    106.59954347412958
+                  ],
+                  [
+                    1790726400000,
+                    106.39653887795045
+                  ],
                   [
                     1788134400000,
                     106.02692900344444
@@ -634,14 +642,6 @@
                   [
                     1745971200000,
                     101.095415066657
-                  ],
-                  [
-                    1743379200000,
-                    100.982516613084
-                  ],
-                  [
-                    1740700800000,
-                    101.020298204612
                   ]
                 ],
                 "time_frame": "monthly",
@@ -650,7 +650,7 @@
                   "unit": "Chỉ số 2024 = 100",
                   "description": "CPI Đồ uống và thuốc lá phản ánh biến động giá của các mặt hàng bao gồm các mặt hàng như đồ uống không cồn, đồ uống có cồn, nước ngọt, cà phê, trà, rượu, bia và các sản phẩm thuốc lá. Tại Việt Nam, Tổng cục Thống kê (GSO) chịu trách nhiệm thu thập dữ liệu, sau đó tính toán và công bố CPI hàng tháng.",
                   "frequency": "Ngày 6 tháng sau",
-                  "last_updated": "2026-09-03T02:55:34.731Z",
+                  "last_updated": "2026-11-03T04:03:54.086Z",
                   "source": "Tổng cục Thống kê - GSO",
                   "note": null,
                   "related_blog": null
@@ -668,6 +668,14 @@
                 "dateType": "thang",
                 "yAxis": 6,
                 "data": [
+                  [
+                    1793404800000,
+                    103.60106543860994
+                  ],
+                  [
+                    1790726400000,
+                    103.6663752550206
+                  ],
                   [
                     1788134400000,
                     103.62616830171953
@@ -735,14 +743,6 @@
                   [
                     1745971200000,
                     100.99663934281
-                  ],
-                  [
-                    1743379200000,
-                    100.939204935202
-                  ],
-                  [
-                    1740700800000,
-                    100.884122204479
                   ]
                 ],
                 "time_frame": "monthly",
@@ -751,7 +751,7 @@
                   "unit": "Chỉ số 2024 = 100",
                   "description": "CPI May mặc, mũ nón, giày dép phản ánh biến động giá của các mặt hàng thuộc nhóm hàng may mặc, mũ nón và giày dép. Tại Việt Nam, Tổng cục Thống kê (GSO) chịu trách nhiệm thu thập dữ liệu, sau đó tính toán và công bố CPI hàng tháng.",
                   "frequency": "Ngày 6 tháng sau",
-                  "last_updated": "2026-09-03T02:55:34.731Z",
+                  "last_updated": "2026-11-03T04:03:54.086Z",
                   "source": "Tổng cục Thống kê - GSO",
                   "note": null,
                   "related_blog": null
@@ -769,6 +769,14 @@
                 "dateType": "thang",
                 "yAxis": 6,
                 "data": [
+                  [
+                    1793404800000,
+                    113.5301623329776
+                  ],
+                  [
+                    1790726400000,
+                    113.48329360654998
+                  ],
                   [
                     1788134400000,
                     113.16981322391972
@@ -836,14 +844,6 @@
                   [
                     1745971200000,
                     103.33232478161
-                  ],
-                  [
-                    1743379200000,
-                    102.694897552502
-                  ],
-                  [
-                    1740700800000,
-                    102.179707467451
                   ]
                 ],
                 "time_frame": "monthly",
@@ -852,7 +852,7 @@
                   "unit": "Chỉ số 2024 = 100",
                   "description": "CPI Nhà ở và vật liệu xây dựng phản ánh biến động giá của các chi phí liên quan đến nhà ở, bao gồm tiền thuê nhà, chi phí các hoạt động bảo dưỡng, sửa chữa nhỏ, không bao gồm sửa chữa lớn và xây dựng nhà mới. Sửa chữa nhỏ nhà ở là các hoạt động duy tu, bảo dưỡng không thay đổi kết cấu hoặc hình thái của căn nhà. Tại Việt Nam, Tổng cục Thống kê (GSO) chịu trách nhiệm thu thập dữ liệu, sau đó tính toán và công bố CPI hàng tháng.",
                   "frequency": "Ngày 6 tháng sau",
-                  "last_updated": "2026-09-03T02:55:34.731Z",
+                  "last_updated": "2026-11-03T04:03:54.086Z",
                   "source": "Tổng cục Thống kê - GSO",
                   "note": null,
                   "related_blog": null
@@ -870,6 +870,14 @@
                 "dateType": "thang",
                 "yAxis": 6,
                 "data": [
+                  [
+                    1793404800000,
+                    105.58508801809687
+                  ],
+                  [
+                    1790726400000,
+                    105.40147883111409
+                  ],
                   [
                     1788134400000,
                     105.3123845537816
@@ -937,14 +945,6 @@
                   [
                     1745971200000,
                     101.414501178052
-                  ],
-                  [
-                    1743379200000,
-                    101.315718352658
-                  ],
-                  [
-                    1740700800000,
-                    101.182360002175
                   ]
                 ],
                 "time_frame": "monthly",
@@ -953,7 +953,7 @@
                   "unit": "Chỉ số 2024 = 100",
                   "description": "CPI Thiết bị và đồ dùng gia đình phản ánh biến động giá của các mặt hàng liên quan đến trang thiết bị, đồ dùng phục vụ sinh hoạt gia đình. Tiểu mục này bao gồm các sản phẩm như đồ gia dụng, thiết bị điện tử, đồ nội thất, công cụ dụng cụ và các vật dụng khác phục vụ nhu cầu hàng ngày của hộ gia đình. Chỉ số này giúp đo lường mức độ lạm phát và thay đổi chi phí sinh hoạt của người dân, từ đó hỗ trợ các quyết định chính sách kinh tế và tài chính. Tại Việt Nam, Tổng cục Thống kê (GSO) chịu trách nhiệm thu thập dữ liệu, sau đó tính toán và công bố CPI hàng tháng.",
                   "frequency": "Ngày 6 tháng sau",
-                  "last_updated": "2026-09-03T02:55:34.731Z",
+                  "last_updated": "2026-11-03T04:03:54.086Z",
                   "source": "Tổng cục Thống kê - GSO",
                   "note": null,
                   "related_blog": null
@@ -971,6 +971,14 @@
                 "dateType": "thang",
                 "yAxis": 6,
                 "data": [
+                  [
+                    1793404800000,
+                    108.0758552579996
+                  ],
+                  [
+                    1790726400000,
+                    107.74099624168046
+                  ],
                   [
                     1788134400000,
                     107.47885531357066
@@ -1038,14 +1046,6 @@
                   [
                     1745971200000,
                     106.026098051512
-                  ],
-                  [
-                    1743379200000,
-                    106.007546730834
-                  ],
-                  [
-                    1740700800000,
-                    105.873933826345
                   ]
                 ],
                 "time_frame": "monthly",
@@ -1054,7 +1054,7 @@
                   "unit": "Chỉ số 2024 = 100",
                   "description": "CPI Thuốc và dịch vụ y tế, phản ánh biến động giá của các mặt hàng thuốc, dịch vụ khám chữa bệnh, phí viện phí và các dịch vụ y tế khác. Tiểu mục này giúp đo lường mức độ tăng giá của các sản phẩm và dịch vụ liên quan đến chăm sóc sức khỏe, từ đó tác động đến chi tiêu hàng ngày của hộ gia đình. Việc theo dõi chỉ số này giúp người dân và chính phủ nắm bắt được xu hướng lạm phát trong lĩnh vực y tế, đồng thời là cơ sở để điều chỉnh chính sách kinh tế và xã hội nhằm đảm bảo đời sống người dân. Tại Việt Nam, Tổng cục Thống kê (GSO) chịu trách nhiệm thu thập dữ liệu, sau đó tính toán và công bố CPI hàng tháng.",
                   "frequency": "Ngày 6 tháng sau",
-                  "last_updated": "2026-09-03T02:55:34.731Z",
+                  "last_updated": "2026-11-03T04:03:54.086Z",
                   "source": "Tổng cục Thống kê - GSO",
                   "note": null,
                   "related_blog": null
@@ -1072,6 +1072,14 @@
                 "dateType": "thang",
                 "yAxis": 6,
                 "data": [
+                  [
+                    1793404800000,
+                    110.16229287066452
+                  ],
+                  [
+                    1790726400000,
+                    109.79294938892019
+                  ],
                   [
                     1788134400000,
                     109.44491456061743
@@ -1139,14 +1147,6 @@
                   [
                     1745971200000,
                     108.603360780318
-                  ],
-                  [
-                    1743379200000,
-                    108.603034971213
-                  ],
-                  [
-                    1740700800000,
-                    108.448387570537
                   ]
                 ],
                 "time_frame": "monthly",
@@ -1155,7 +1155,7 @@
                   "unit": "Chỉ số 2024 = 100",
                   "description": "Chỉ số CPI Dịch vụ y tế là một phần trong tổng chỉ số CPI Thuốc và dịch vụ y tế của Việt Nam. Chỉ số này đo lường sự thay đổi về giá của các dịch vụ y tế mà người tiêu dùng phải trả, bao gồm chi phí khám bệnh, điều trị, nằm viện, xét nghiệm, thủ thuật và các dịch vụ y tế khác. CPI Dịch vụ y tế phản ánh mức độ tăng hoặc giảm của chi phí y tế qua thời gian, giúp đánh giá tình hình lạm phát trong lĩnh vực này. Thông qua chỉ số này, người ta có thể hiểu rõ hơn về xu hướng biến động giá dịch vụ y tế, từ đó tác động đến quyết định chi tiêu của người dân và chính sách điều hành kinh tế của Nhà nước. Tại Việt Nam, Tổng cục Thống kê (GSO) chịu trách nhiệm thu thập dữ liệu, sau đó tính toán và công bố CPI hàng tháng.",
                   "frequency": "Ngày 6 tháng sau",
-                  "last_updated": "2026-09-03T02:55:34.731Z",
+                  "last_updated": "2026-11-03T04:03:54.086Z",
                   "source": "Tổng cục Thống kê - GSO",
                   "note": null,
                   "related_blog": null
@@ -1173,6 +1173,14 @@
                 "dateType": "thang",
                 "yAxis": 6,
                 "data": [
+                  [
+                    1793404800000,
+                    110.51276196768109
+                  ],
+                  [
+                    1790726400000,
+                    107.64939569167815
+                  ],
                   [
                     1788134400000,
                     103.53850146861767
@@ -1240,14 +1248,6 @@
                   [
                     1745971200000,
                     95.2598758007502
-                  ],
-                  [
-                    1743379200000,
-                    96.2673132337413
-                  ],
-                  [
-                    1740700800000,
-                    97.6394831742312
                   ]
                 ],
                 "time_frame": "monthly",
@@ -1256,7 +1256,7 @@
                   "unit": "Chỉ số 2024 = 100",
                   "description": "CPI Giao thông phản ánh biến động giá của các dịch vụ và hàng hóa liên quan đến lĩnh vực giao thông vận tải. Chỉ số này bao gồm các chi phí như xăng dầu, vé tàu, xe, phí cầu đường, bảo trì phương tiện và các dịch vụ vận chuyển khác. CPI Giao thông là một trong những thành phần quan trọng của CPI tổng thể, giúp đo lường mức độ lạm phát và thay đổi chi phí sinh hoạt của người dân. Việc theo dõi chỉ số này giúp Chính phủ và các nhà hoạch định chính sách có thể đưa ra quyết định điều chỉnh phù hợp, nhằm kiểm soát lạm phát và ổn định kinh tế vĩ mô. Tại Việt Nam, Tổng cục Thống kê (GSO) chịu trách nhiệm thu thập dữ liệu, sau đó tính toán và công bố CPI hàng tháng.",
                   "frequency": "Ngày 6 tháng sau",
-                  "last_updated": "2026-09-03T02:55:34.731Z",
+                  "last_updated": "2026-11-03T04:03:54.086Z",
                   "source": "Tổng cục Thống kê - GSO",
                   "note": null,
                   "related_blog": null
@@ -1274,6 +1274,14 @@
                 "dateType": "thang",
                 "yAxis": 6,
                 "data": [
+                  [
+                    1793404800000,
+                    100.37286787340787
+                  ],
+                  [
+                    1790726400000,
+                    100.55809588602995
+                  ],
                   [
                     1788134400000,
                     100.696654482598
@@ -1341,14 +1349,6 @@
                   [
                     1745971200000,
                     100.186302834531
-                  ],
-                  [
-                    1743379200000,
-                    100.335200271735
-                  ],
-                  [
-                    1740700800000,
-                    100.318547392868
                   ]
                 ],
                 "time_frame": "monthly",
@@ -1357,7 +1357,7 @@
                   "unit": "Chỉ số 2024 = 100",
                   "description": "CPI Bưu chính viễn thông phản ánh sự thay đổi về giá các dịch vụ như điện thoại, internet, dịch vụ bưu chính và các dịch vụ liên quan. Chỉ số này giúp đánh giá mức độ lạm phát trong ngành, từ đó ảnh hưởng đến tổng chỉ số CPI chung của cả nước. Khi giá các dịch vụ bưu chính viễn thông tăng hoặc giảm, nó sẽ tác động trực tiếp đến chi tiêu hàng ngày của người dân và doanh nghiệp, phản ánh sự ổn định hoặc biến động của nền kinh tế. Tại Việt Nam, Tổng cục Thống kê (GSO) chịu trách nhiệm thu thập dữ liệu, sau đó tính toán và công bố CPI hàng tháng.",
                   "frequency": "Ngày 6 tháng sau",
-                  "last_updated": "2026-09-03T02:55:34.731Z",
+                  "last_updated": "2026-11-03T04:03:54.086Z",
                   "source": "Tổng cục Thống kê - GSO",
                   "note": null,
                   "related_blog": null
@@ -1376,8 +1376,16 @@
                 "yAxis": 6,
                 "data": [
                   [
+                    1793404800000,
+                    113.95033240543495
+                  ],
+                  [
+                    1790726400000,
+                    113.5858390405226
+                  ],
+                  [
                     1788134400000,
-                    112.16429753820347
+                    112.005994488266
                   ],
                   [
                     1785456000000,
@@ -1442,14 +1450,6 @@
                   [
                     1745971200000,
                     107.693783771103
-                  ],
-                  [
-                    1743379200000,
-                    107.690553054511
-                  ],
-                  [
-                    1740700800000,
-                    107.667835141296
                   ]
                 ],
                 "time_frame": "monthly",
@@ -1458,7 +1458,7 @@
                   "unit": "Chỉ số 2024 = 100",
                   "description": "CPI Giáo dục phản ánh biến động giá của các dịch vụ và hàng hóa liên quan đến lĩnh vực giáo dục. Chỉ số này đo lường mức độ thay đổi của chi phí giáo dục như học phí, sách vở, vật dụng học tập và các dịch vụ giáo dục khác. CPI Giáo dục giúp đánh giá áp lực lạm phát trong lĩnh vực giáo dục, từ đó hỗ trợ các quyết định chính sách về giáo dục và tài chính. Đồng thời, nó cũng là công cụ quan trọng để người dân và doanh nghiệp nắm bắt xu hướng chi phí giáo dục, phục vụ việc lập kế hoạch tài chính và đầu tư cho giáo dục. Tại Việt Nam, Tổng cục Thống kê (GSO) chịu trách nhiệm thu thập dữ liệu, sau đó tính toán và công bố CPI hàng tháng.",
                   "frequency": "Ngày 6 tháng sau",
-                  "last_updated": "2026-09-03T02:55:34.731Z",
+                  "last_updated": "2026-11-03T04:03:54.086Z",
                   "source": "Tổng cục Thống kê - GSO",
                   "note": null,
                   "related_blog": null
@@ -1477,8 +1477,16 @@
                 "yAxis": 6,
                 "data": [
                   [
+                    1793404800000,
+                    115.60005449959498
+                  ],
+                  [
+                    1790726400000,
+                    115.20789996214054
+                  ],
+                  [
                     1788134400000,
-                    113.57216554081984
+                    113.392374651594
                   ],
                   [
                     1785456000000,
@@ -1543,14 +1551,6 @@
                   [
                     1745971200000,
                     108.661175555872
-                  ],
-                  [
-                    1743379200000,
-                    108.667912966476
-                  ],
-                  [
-                    1740700800000,
-                    108.662697157012
                   ]
                 ],
                 "time_frame": "monthly",
@@ -1559,7 +1559,7 @@
                   "unit": "Chỉ số 2024 = 100",
                   "description": "Chỉ số CPI Dịch vụ giáo dục là một phần trong CPI Giáo dục, phản ánh biến động giá của các dịch vụ giáo dục trên thị trường. Chỉ số này đo lường sự thay đổi về giá của các dịch vụ liên quan đến giáo dục, bao gồm học phí, lệ phí thi cử, sách giáo khoa, vật dụng học tập và các dịch vụ giáo dục khác. CPI Dịch vụ giáo dục giúp đánh giá mức độ lạm phát trong lĩnh vực giáo dục, từ đó hỗ trợ Chính phủ và các nhà hoạch định chính sách trong việc điều chỉnh các chương trình hỗ trợ giáo dục, học bổng hoặc các biện pháp kiểm soát chi phí giáo dục. Đồng thời, chỉ số này cũng giúp người dân hiểu rõ hơn về xu hướng tăng giá trong lĩnh vực giáo dục, hỗ trợ họ trong việc lập kế hoạch tài chính cho việc học tập của bản thân và gia đình. Tại Việt Nam, Tổng cục Thống kê (GSO) chịu trách nhiệm thu thập dữ liệu, sau đó tính toán và công bố CPI hàng tháng.",
                   "frequency": "Ngày 6 tháng sau",
-                  "last_updated": "2026-09-03T02:55:34.731Z",
+                  "last_updated": "2026-11-03T04:03:54.086Z",
                   "source": "Tổng cục Thống kê - GSO",
                   "note": null,
                   "related_blog": null
@@ -1577,6 +1577,14 @@
                 "dateType": "thang",
                 "yAxis": 6,
                 "data": [
+                  [
+                    1793404800000,
+                    103.83900835288841
+                  ],
+                  [
+                    1790726400000,
+                    104.75012493961317
+                  ],
                   [
                     1788134400000,
                     105.04635566258166
@@ -1644,14 +1652,6 @@
                   [
                     1745971200000,
                     100.568505618151
-                  ],
-                  [
-                    1743379200000,
-                    100.561365761182
-                  ],
-                  [
-                    1740700800000,
-                    100.380279736538
                   ]
                 ],
                 "time_frame": "monthly",
@@ -1660,7 +1660,7 @@
                   "unit": "Chỉ số 2024 = 100",
                   "description": "CPI Văn hoá, giải trí và du lịch phản ánh biến động giá của các dịch vụ và hàng hóa thuộc lĩnh vực văn hóa, giải trí và du lịch. Đây là nhóm chỉ số quan trọng, đo lường chi phí mà người tiêu dùng bỏ ra cho các hoạt động như xem phim, tham dự biểu diễn, du lịch, lưu trú tại khách sạn, tham quan di tích, dã ngoại, thể thao và các dịch vụ giải trí khác. Chỉ số này giúp đánh giá mức độ ảnh hưởng của lạm phát đến chi tiêu cho các hoạt động thư giãn và nghỉ dưỡng của người dân. Thông qua CPI Văn hoá, giải trí và du lịch, cơ quan thống kê có thể phân tích xu hướng tiêu dùng và tác động của các chính sách kinh tế đến lĩnh vực này. Tại Việt Nam, Tổng cục Thống kê (GSO) chịu trách nhiệm thu thập dữ liệu, sau đó tính toán và công bố CPI hàng tháng.",
                   "frequency": "Ngày 6 tháng sau",
-                  "last_updated": "2026-09-03T02:55:34.731Z",
+                  "last_updated": "2026-11-03T04:03:54.086Z",
                   "source": "Tổng cục Thống kê - GSO",
                   "note": null,
                   "related_blog": null
@@ -1678,6 +1678,14 @@
                 "dateType": "thang",
                 "yAxis": 6,
                 "data": [
+                  [
+                    1793404800000,
+                    111.74793662645301
+                  ],
+                  [
+                    1790726400000,
+                    111.45114261313508
+                  ],
                   [
                     1788134400000,
                     111.34414089373618
@@ -1745,14 +1753,6 @@
                   [
                     1745971200000,
                     104.239521151589
-                  ],
-                  [
-                    1743379200000,
-                    104.087137582169
-                  ],
-                  [
-                    1740700800000,
-                    103.8657995633
                   ]
                 ],
                 "time_frame": "monthly",
@@ -1761,7 +1761,7 @@
                   "unit": "Chỉ số 2024 = 100",
                   "description": "CPI Hàng hóa và dịch vụ khác là một tiểu mục phản ánh giá của các mặt hàng không thuộc các nhóm chính như thực phẩm, may mặc, nhà ở, giao thông vận tải, mà bao gồm các sản phẩm và dịch vụ phục vụ nhu cầu cá nhân như mỹ phẩm, chăm sóc sức khỏe, dịch vụ giải trí, du lịch, giáo dục ngoài chính thức, và các mặt hàng gia dụng khác. Tiểu mục này giúp đánh giá biến động giá của các mặt hàng thiết yếu ngoài thực phẩm và nhà ở, từ đó phản ánh chính xác hơn mức độ lạm phát và thay đổi trong chi tiêu của người tiêu dùng. Tại Việt Nam, Tổng cục Thống kê (GSO) chịu trách nhiệm thu thập dữ liệu, sau đó tính toán và công bố CPI hàng tháng.",
                   "frequency": "Ngày 6 tháng sau",
-                  "last_updated": "2026-09-03T02:55:34.731Z",
+                  "last_updated": "2026-11-03T04:03:54.086Z",
                   "source": "Tổng cục Thống kê - GSO",
                   "note": null,
                   "related_blog": null
@@ -1774,6 +1774,8 @@
       "yoy": {
         "title": "Chỉ số giá CPI",
         "headers": [
+          "10-2026",
+          "09-2026",
           "08-2026",
           "07-2026",
           "06-2026",
@@ -1790,9 +1792,7 @@
           "07-2025",
           "06-2025",
           "05-2025",
-          "04-2025",
-          "03-2025",
-          "02-2025"
+          "04-2025"
         ],
         "parent": [
           {
@@ -1810,8 +1810,16 @@
                 "yAxis": 1,
                 "data": [
                   [
+                    1793404800000,
+                    5.08509814772424
+                  ],
+                  [
+                    1790726400000,
+                    5.080170950268018
+                  ],
+                  [
                     1788134400000,
-                    4.888316947108811
+                    4.879234270371343
                   ],
                   [
                     1785456000000,
@@ -1876,14 +1884,6 @@
                   [
                     1745971200000,
                     3.123480023102029
-                  ],
-                  [
-                    1743379200000,
-                    3.1261593446594884
-                  ],
-                  [
-                    1740700800000,
-                    2.9131482297124203
                   ]
                 ],
                 "time_frame": "monthly",
@@ -1892,7 +1892,7 @@
                   "unit": "%",
                   "description": "<p>Chỉ số giá tiêu dùng (CPI) là một con số thống kê dùng để đo mức độ thay đổi của giá cả các mặt hàng và dịch vụ mà các hộ gia đình thường mua, như: thực phẩm, đồ uống, quần áo, nhà ở, đi lại, y tế, giáo dục, giải trí và nhiều dịch vụ khác. Nói cách khác, CPI cho biết giá cả trung bình của “giỏ hàng hóa” tiêu biểu cho sinh hoạt hàng ngày đang tăng hay giảm theo thời gian. <p>\n<p>CPI là chỉ số quan trọng giúp theo dõi lạm phát, đánh giá sức mua của đồng tiền và tình hình kinh tế - xã hội. Ở Việt Nam, Tổng cục Thống kê (GSO) là cơ quan chịu trách nhiệm thu thập dữ liệu giá cả hàng tháng, tính toán và công bố chỉ số CPI.<p>",
                   "frequency": "Ngày 6 tháng sau",
-                  "last_updated": "2026-09-03T02:55:34.731Z",
+                  "last_updated": "2026-11-03T04:03:54.086Z",
                   "source": "Tổng cục Thống kê - GSO",
                   "note": "Số chính thức",
                   "related_blog": null
@@ -1909,6 +1909,14 @@
                 "dateType": "thang",
                 "yAxis": 1,
                 "data": [
+                  [
+                    1793404800000,
+                    3.581283822669199
+                  ],
+                  [
+                    1790726400000,
+                    4.437772398205101
+                  ],
                   [
                     1788134400000,
                     4.669508610724743
@@ -1976,14 +1984,6 @@
                   [
                     1745971200000,
                     4.090142631860635
-                  ],
-                  [
-                    1743379200000,
-                    3.8321059606221293
-                  ],
-                  [
-                    1740700800000,
-                    3.0992025355512633
                   ]
                 ],
                 "time_frame": "monthly",
@@ -1992,7 +1992,7 @@
                   "unit": "%",
                   "description": "CPI Hàng ăn và dịch vụ ăn uống phản ánh biến động giá của các mặt hàng thực phẩm thiết yếu như gạo, thịt, cá, rau củ, trái cây, cùng các dịch vụ ăn uống như ăn ngoài gia đình. Tại Việt Nam, Tổng cục Thống kê (GSO) chịu trách nhiệm thu thập dữ liệu, sau đó tính toán và công bố CPI hàng tháng.",
                   "frequency": "Ngày 6 tháng sau",
-                  "last_updated": "2026-09-03T02:55:34.731Z",
+                  "last_updated": "2026-11-03T04:03:54.086Z",
                   "source": "Tổng cục Thống kê - GSO",
                   "note": null,
                   "related_blog": null
@@ -2009,6 +2009,14 @@
                 "dateType": "thang",
                 "yAxis": 1,
                 "data": [
+                  [
+                    1793404800000,
+                    0.21651802358876052
+                  ],
+                  [
+                    1790726400000,
+                    0.8123818823426132
+                  ],
                   [
                     1788134400000,
                     0.6837904219864687
@@ -2076,14 +2084,6 @@
                   [
                     1745971200000,
                     0.6621983882239646
-                  ],
-                  [
-                    1743379200000,
-                    0.6776997659703907
-                  ],
-                  [
-                    1740700800000,
-                    1.0953551982065526
                   ]
                 ],
                 "time_frame": "monthly",
@@ -2092,7 +2092,7 @@
                   "unit": "%",
                   "description": "CPI Lương thực là một thành phần trong tiểu mục CPI Hàng ăn và dịch vụ ăn uống. Chỉ số này đo lường biến động giá của các mặt hàng lương thực thiết yếu như gạo, ngô, kê, mì mạch, cao lương,… Tại Việt Nam, Tổng cục Thống kê (GSO) chịu trách nhiệm thu thập dữ liệu, sau đó tính toán và công bố CPI hàng tháng.",
                   "frequency": "Ngày 6 tháng sau",
-                  "last_updated": "2026-09-03T02:55:34.731Z",
+                  "last_updated": "2026-11-03T04:03:54.086Z",
                   "source": "Tổng cục Thống kê - GSO",
                   "note": null,
                   "related_blog": null
@@ -2109,6 +2109,14 @@
                 "dateType": "thang",
                 "yAxis": 1,
                 "data": [
+                  [
+                    1793404800000,
+                    2.846090948839981
+                  ],
+                  [
+                    1790726400000,
+                    3.8926475997701453
+                  ],
                   [
                     1788134400000,
                     4.125063232767143
@@ -2176,14 +2184,6 @@
                   [
                     1745971200000,
                     4.9067060577838095
-                  ],
-                  [
-                    1743379200000,
-                    4.540797609792521
-                  ],
-                  [
-                    1740700800000,
-                    3.212396409931532
                   ]
                 ],
                 "time_frame": "monthly",
@@ -2192,7 +2192,7 @@
                   "unit": "%",
                   "description": "CPI Thực phẩm là một thành phần quan trọng trong tổng chỉ số CPI Hàng ăn và dịch vụ ăn uống. Chỉ số này đo lường biến động giá của các mặt hàng thực phẩm như thịt, cá, …Tại Việt Nam, Tổng cục Thống kê (GSO) chịu trách nhiệm thu thập dữ liệu, sau đó tính toán và công bố CPI hàng tháng.",
                   "frequency": "Ngày 6 tháng sau",
-                  "last_updated": "2026-09-03T02:55:34.731Z",
+                  "last_updated": "2026-11-03T04:03:54.086Z",
                   "source": "Tổng cục Thống kê - GSO",
                   "note": null,
                   "related_blog": null
@@ -2209,6 +2209,14 @@
                 "dateType": "thang",
                 "yAxis": 1,
                 "data": [
+                  [
+                    1793404800000,
+                    6.910701833132431
+                  ],
+                  [
+                    1790726400000,
+                    7.399386185879203
+                  ],
                   [
                     1788134400000,
                     7.784416096813596
@@ -2276,14 +2284,6 @@
                   [
                     1745971200000,
                     3.56719830252509
-                  ],
-                  [
-                    1743379200000,
-                    3.4526095217025903
-                  ],
-                  [
-                    1740700800000,
-                    3.6835947431005547
                   ]
                 ],
                 "time_frame": "monthly",
@@ -2292,7 +2292,7 @@
                   "unit": "%",
                   "description": "CPI Ăn uống ngoài gia đình trong mục \"Hàng ăn và dịch vụ ăn uống\" phản ánh mức độ biến động của giá các dịch vụ ăn uống ngoài gia đình, như ăn tại nhà hàng, quán ăn, quán cà phê và các dịch vụ ăn uống khác. Tại Việt Nam, Tổng cục Thống kê (GSO) chịu trách nhiệm thu thập dữ liệu, sau đó tính toán và công bố CPI hàng tháng.",
                   "frequency": "Ngày 6 tháng sau",
-                  "last_updated": "2026-09-03T02:55:34.731Z",
+                  "last_updated": "2026-11-03T04:03:54.086Z",
                   "source": "Tổng cục Thống kê - GSO",
                   "note": null,
                   "related_blog": null
@@ -2309,6 +2309,14 @@
                 "dateType": "thang",
                 "yAxis": 1,
                 "data": [
+                  [
+                    1793404800000,
+                    4.397487303533805
+                  ],
+                  [
+                    1790726400000,
+                    4.327153197079105
+                  ],
                   [
                     1788134400000,
                     4.09073739619061
@@ -2376,14 +2384,6 @@
                   [
                     1745971200000,
                     2.0723610203268206
-                  ],
-                  [
-                    1743379200000,
-                    2.0463616355787964
-                  ],
-                  [
-                    1740700800000,
-                    2.0170633722384177
                   ]
                 ],
                 "time_frame": "monthly",
@@ -2392,7 +2392,7 @@
                   "unit": "%",
                   "description": "CPI Đồ uống và thuốc lá phản ánh biến động giá của các mặt hàng bao gồm các mặt hàng như đồ uống không cồn, đồ uống có cồn, nước ngọt, cà phê, trà, rượu, bia và các sản phẩm thuốc lá. Tại Việt Nam, Tổng cục Thống kê (GSO) chịu trách nhiệm thu thập dữ liệu, sau đó tính toán và công bố CPI hàng tháng.",
                   "frequency": "Ngày 6 tháng sau",
-                  "last_updated": "2026-09-03T02:55:34.731Z",
+                  "last_updated": "2026-11-03T04:03:54.086Z",
                   "source": "Tổng cục Thống kê - GSO",
                   "note": null,
                   "related_blog": null
@@ -2409,6 +2409,14 @@
                 "dateType": "thang",
                 "yAxis": 1,
                 "data": [
+                  [
+                    1793404800000,
+                    1.9420603559123562
+                  ],
+                  [
+                    1790726400000,
+                    2.1924858821675155
+                  ],
                   [
                     1788134400000,
                     2.227013545661734
@@ -2476,14 +2484,6 @@
                   [
                     1745971200000,
                     1.092585522258531
-                  ],
-                  [
-                    1743379200000,
-                    1.159773861465943
-                  ],
-                  [
-                    1740700800000,
-                    1.0454245919300096
                   ]
                 ],
                 "time_frame": "monthly",
@@ -2492,7 +2492,7 @@
                   "unit": "%",
                   "description": "CPI May mặc, mũ nón, giày dép phản ánh biến động giá của các mặt hàng thuộc nhóm hàng may mặc, mũ nón và giày dép. Tại Việt Nam, Tổng cục Thống kê (GSO) chịu trách nhiệm thu thập dữ liệu, sau đó tính toán và công bố CPI hàng tháng.",
                   "frequency": "Ngày 6 tháng sau",
-                  "last_updated": "2026-09-03T02:55:34.731Z",
+                  "last_updated": "2026-11-03T04:03:54.086Z",
                   "source": "Tổng cục Thống kê - GSO",
                   "note": null,
                   "related_blog": null
@@ -2509,6 +2509,14 @@
                 "dateType": "thang",
                 "yAxis": 1,
                 "data": [
+                  [
+                    1793404800000,
+                    6.496095237228527
+                  ],
+                  [
+                    1790726400000,
+                    6.467140139411187
+                  ],
                   [
                     1788134400000,
                     6.60367866990092
@@ -2576,14 +2584,6 @@
                   [
                     1745971200000,
                     5.729313190799024
-                  ],
-                  [
-                    1743379200000,
-                    5.302910320486593
-                  ],
-                  [
-                    1740700800000,
-                    5.073768190235727
                   ]
                 ],
                 "time_frame": "monthly",
@@ -2592,7 +2592,7 @@
                   "unit": "%",
                   "description": "CPI Nhà ở và vật liệu xây dựng phản ánh biến động giá của các chi phí liên quan đến nhà ở, bao gồm tiền thuê nhà, chi phí các hoạt động bảo dưỡng, sửa chữa nhỏ, không bao gồm sửa chữa lớn và xây dựng nhà mới. Sửa chữa nhỏ nhà ở là các hoạt động duy tu, bảo dưỡng không thay đổi kết cấu hoặc hình thái của căn nhà. Tại Việt Nam, Tổng cục Thống kê (GSO) chịu trách nhiệm thu thập dữ liệu, sau đó tính toán và công bố CPI hàng tháng.",
                   "frequency": "Ngày 6 tháng sau",
-                  "last_updated": "2026-09-03T02:55:34.731Z",
+                  "last_updated": "2026-11-03T04:03:54.086Z",
                   "source": "Tổng cục Thống kê - GSO",
                   "note": null,
                   "related_blog": null
@@ -2609,6 +2609,14 @@
                 "dateType": "thang",
                 "yAxis": 1,
                 "data": [
+                  [
+                    1793404800000,
+                    3.2429191733141836
+                  ],
+                  [
+                    1790726400000,
+                    3.2733230562283646
+                  ],
                   [
                     1788134400000,
                     3.292515657376983
@@ -2676,14 +2684,6 @@
                   [
                     1745971200000,
                     1.5663601798220805
-                  ],
-                  [
-                    1743379200000,
-                    1.5802612176542572
-                  ],
-                  [
-                    1740700800000,
-                    1.4525400053393507
                   ]
                 ],
                 "time_frame": "monthly",
@@ -2692,7 +2692,7 @@
                   "unit": "%",
                   "description": "CPI Thiết bị và đồ dùng gia đình phản ánh biến động giá của các mặt hàng liên quan đến trang thiết bị, đồ dùng phục vụ sinh hoạt gia đình. Tiểu mục này bao gồm các sản phẩm như đồ gia dụng, thiết bị điện tử, đồ nội thất, công cụ dụng cụ và các vật dụng khác phục vụ nhu cầu hàng ngày của hộ gia đình. Chỉ số này giúp đo lường mức độ lạm phát và thay đổi chi phí sinh hoạt của người dân, từ đó hỗ trợ các quyết định chính sách kinh tế và tài chính. Tại Việt Nam, Tổng cục Thống kê (GSO) chịu trách nhiệm thu thập dữ liệu, sau đó tính toán và công bố CPI hàng tháng.",
                   "frequency": "Ngày 6 tháng sau",
-                  "last_updated": "2026-09-03T02:55:34.731Z",
+                  "last_updated": "2026-11-03T04:03:54.086Z",
                   "source": "Tổng cục Thống kê - GSO",
                   "note": null,
                   "related_blog": null
@@ -2709,6 +2709,14 @@
                 "dateType": "thang",
                 "yAxis": 1,
                 "data": [
+                  [
+                    1793404800000,
+                    1.7497670324573702
+                  ],
+                  [
+                    1790726400000,
+                    1.4711264373884152
+                  ],
                   [
                     1788134400000,
                     1.2537979930031056
@@ -2776,14 +2784,6 @@
                   [
                     1745971200000,
                     13.56212837890591
-                  ],
-                  [
-                    1743379200000,
-                    14.587982684305468
-                  ],
-                  [
-                    1740700800000,
-                    14.466100298317652
                   ]
                 ],
                 "time_frame": "monthly",
@@ -2792,7 +2792,7 @@
                   "unit": "%",
                   "description": "CPI Thuốc và dịch vụ y tế, phản ánh biến động giá của các mặt hàng thuốc, dịch vụ khám chữa bệnh, phí viện phí và các dịch vụ y tế khác. Tiểu mục này giúp đo lường mức độ tăng giá của các sản phẩm và dịch vụ liên quan đến chăm sóc sức khỏe, từ đó tác động đến chi tiêu hàng ngày của hộ gia đình. Việc theo dõi chỉ số này giúp người dân và chính phủ nắm bắt được xu hướng lạm phát trong lĩnh vực y tế, đồng thời là cơ sở để điều chỉnh chính sách kinh tế và xã hội nhằm đảm bảo đời sống người dân. Tại Việt Nam, Tổng cục Thống kê (GSO) chịu trách nhiệm thu thập dữ liệu, sau đó tính toán và công bố CPI hàng tháng.",
                   "frequency": "Ngày 6 tháng sau",
-                  "last_updated": "2026-09-03T02:55:34.731Z",
+                  "last_updated": "2026-11-03T04:03:54.086Z",
                   "source": "Tổng cục Thống kê - GSO",
                   "note": null,
                   "related_blog": null
@@ -2809,6 +2809,14 @@
                 "dateType": "thang",
                 "yAxis": 1,
                 "data": [
+                  [
+                    1793404800000,
+                    1.414949289636305
+                  ],
+                  [
+                    1790726400000,
+                    1.086758981488905
+                  ],
                   [
                     1788134400000,
                     0.768639702691057
@@ -2876,14 +2884,6 @@
                   [
                     1745971200000,
                     17.64773727289211
-                  ],
-                  [
-                    1743379200000,
-                    19.047505851657892
-                  ],
-                  [
-                    1740700800000,
-                    18.879769013632163
                   ]
                 ],
                 "time_frame": "monthly",
@@ -2892,7 +2892,7 @@
                   "unit": "%",
                   "description": "Chỉ số CPI Dịch vụ y tế là một phần trong tổng chỉ số CPI Thuốc và dịch vụ y tế của Việt Nam. Chỉ số này đo lường sự thay đổi về giá của các dịch vụ y tế mà người tiêu dùng phải trả, bao gồm chi phí khám bệnh, điều trị, nằm viện, xét nghiệm, thủ thuật và các dịch vụ y tế khác. CPI Dịch vụ y tế phản ánh mức độ tăng hoặc giảm của chi phí y tế qua thời gian, giúp đánh giá tình hình lạm phát trong lĩnh vực này. Thông qua chỉ số này, người ta có thể hiểu rõ hơn về xu hướng biến động giá dịch vụ y tế, từ đó tác động đến quyết định chi tiêu của người dân và chính sách điều hành kinh tế của Nhà nước. Tại Việt Nam, Tổng cục Thống kê (GSO) chịu trách nhiệm thu thập dữ liệu, sau đó tính toán và công bố CPI hàng tháng.",
                   "frequency": "Ngày 6 tháng sau",
-                  "last_updated": "2026-09-03T02:55:34.731Z",
+                  "last_updated": "2026-11-03T04:03:54.086Z",
                   "source": "Tổng cục Thống kê - GSO",
                   "note": null,
                   "related_blog": null
@@ -2909,6 +2909,14 @@
                 "dateType": "thang",
                 "yAxis": 1,
                 "data": [
+                  [
+                    1793404800000,
+                    15.57385672417343
+                  ],
+                  [
+                    1790726400000,
+                    11.66904167908
+                  ],
                   [
                     1788134400000,
                     8.022330114567449
@@ -2976,14 +2984,6 @@
                   [
                     1745971200000,
                     -6.894695995214008
-                  ],
-                  [
-                    1743379200000,
-                    -4.074443672416227
-                  ],
-                  [
-                    1740700800000,
-                    -2.7411975476818684
                   ]
                 ],
                 "time_frame": "monthly",
@@ -2992,7 +2992,7 @@
                   "unit": "%",
                   "description": "CPI Giao thông phản ánh biến động giá của các dịch vụ và hàng hóa liên quan đến lĩnh vực giao thông vận tải. Chỉ số này bao gồm các chi phí như xăng dầu, vé tàu, xe, phí cầu đường, bảo trì phương tiện và các dịch vụ vận chuyển khác. CPI Giao thông là một trong những thành phần quan trọng của CPI tổng thể, giúp đo lường mức độ lạm phát và thay đổi chi phí sinh hoạt của người dân. Việc theo dõi chỉ số này giúp Chính phủ và các nhà hoạch định chính sách có thể đưa ra quyết định điều chỉnh phù hợp, nhằm kiểm soát lạm phát và ổn định kinh tế vĩ mô. Tại Việt Nam, Tổng cục Thống kê (GSO) chịu trách nhiệm thu thập dữ liệu, sau đó tính toán và công bố CPI hàng tháng.",
                   "frequency": "Ngày 6 tháng sau",
-                  "last_updated": "2026-09-03T02:55:34.731Z",
+                  "last_updated": "2026-11-03T04:03:54.086Z",
                   "source": "Tổng cục Thống kê - GSO",
                   "note": null,
                   "related_blog": null
@@ -3009,6 +3009,14 @@
                 "dateType": "thang",
                 "yAxis": 1,
                 "data": [
+                  [
+                    1793404800000,
+                    0.1163697339492629
+                  ],
+                  [
+                    1790726400000,
+                    0.32750360082172525
+                  ],
                   [
                     1788134400000,
                     0.5010079415129413
@@ -3076,14 +3084,6 @@
                   [
                     1745971200000,
                     -0.5001114062154864
-                  ],
-                  [
-                    1743379200000,
-                    -0.5235286311963178
-                  ],
-                  [
-                    1740700800000,
-                    -0.5453103626580784
                   ]
                 ],
                 "time_frame": "monthly",
@@ -3092,7 +3092,7 @@
                   "unit": "%",
                   "description": "CPI Bưu chính viễn thông phản ánh sự thay đổi về giá các dịch vụ như điện thoại, internet, dịch vụ bưu chính và các dịch vụ liên quan. Chỉ số này giúp đánh giá mức độ lạm phát trong ngành, từ đó ảnh hưởng đến tổng chỉ số CPI chung của cả nước. Khi giá các dịch vụ bưu chính viễn thông tăng hoặc giảm, nó sẽ tác động trực tiếp đến chi tiêu hàng ngày của người dân và doanh nghiệp, phản ánh sự ổn định hoặc biến động của nền kinh tế. Tại Việt Nam, Tổng cục Thống kê (GSO) chịu trách nhiệm thu thập dữ liệu, sau đó tính toán và công bố CPI hàng tháng.",
                   "frequency": "Ngày 6 tháng sau",
-                  "last_updated": "2026-09-03T02:55:34.731Z",
+                  "last_updated": "2026-11-03T04:03:54.086Z",
                   "source": "Tổng cục Thống kê - GSO",
                   "note": null,
                   "related_blog": null
@@ -3110,8 +3110,16 @@
                 "yAxis": 1,
                 "data": [
                   [
+                    1793404800000,
+                    2.7413535080210205
+                  ],
+                  [
+                    1790726400000,
+                    2.9339950628852933
+                  ],
+                  [
                     1788134400000,
-                    3.901485536357927
+                    3.7548442038266248
                   ],
                   [
                     1785456000000,
@@ -3176,14 +3184,6 @@
                   [
                     1745971200000,
                     2.7607780136662066
-                  ],
-                  [
-                    1743379200000,
-                    -0.2522831274179574
-                  ],
-                  [
-                    1740700800000,
-                    -0.5627322652737479
                   ]
                 ],
                 "time_frame": "monthly",
@@ -3192,7 +3192,7 @@
                   "unit": "%",
                   "description": "CPI Giáo dục phản ánh biến động giá của các dịch vụ và hàng hóa liên quan đến lĩnh vực giáo dục. Chỉ số này đo lường mức độ thay đổi của chi phí giáo dục như học phí, sách vở, vật dụng học tập và các dịch vụ giáo dục khác. CPI Giáo dục giúp đánh giá áp lực lạm phát trong lĩnh vực giáo dục, từ đó hỗ trợ các quyết định chính sách về giáo dục và tài chính. Đồng thời, nó cũng là công cụ quan trọng để người dân và doanh nghiệp nắm bắt xu hướng chi phí giáo dục, phục vụ việc lập kế hoạch tài chính và đầu tư cho giáo dục. Tại Việt Nam, Tổng cục Thống kê (GSO) chịu trách nhiệm thu thập dữ liệu, sau đó tính toán và công bố CPI hàng tháng.",
                   "frequency": "Ngày 6 tháng sau",
-                  "last_updated": "2026-09-03T02:55:34.731Z",
+                  "last_updated": "2026-11-03T04:03:54.086Z",
                   "source": "Tổng cục Thống kê - GSO",
                   "note": null,
                   "related_blog": null
@@ -3210,8 +3210,16 @@
                 "yAxis": 1,
                 "data": [
                   [
+                    1793404800000,
+                    3.062409373838948
+                  ],
+                  [
+                    1790726400000,
+                    3.2861295508054105
+                  ],
+                  [
                     1788134400000,
-                    4.295610450030285
+                    4.130504849940064
                   ],
                   [
                     1785456000000,
@@ -3276,14 +3284,6 @@
                   [
                     1745971200000,
                     2.929250941386399
-                  ],
-                  [
-                    1743379200000,
-                    -0.4849181323210778
-                  ],
-                  [
-                    1740700800000,
-                    -0.8235517015050378
                   ]
                 ],
                 "time_frame": "monthly",
@@ -3292,7 +3292,7 @@
                   "unit": "%",
                   "description": "Chỉ số CPI Dịch vụ giáo dục là một phần trong CPI Giáo dục, phản ánh biến động giá của các dịch vụ giáo dục trên thị trường. Chỉ số này đo lường sự thay đổi về giá của các dịch vụ liên quan đến giáo dục, bao gồm học phí, lệ phí thi cử, sách giáo khoa, vật dụng học tập và các dịch vụ giáo dục khác. CPI Dịch vụ giáo dục giúp đánh giá mức độ lạm phát trong lĩnh vực giáo dục, từ đó hỗ trợ Chính phủ và các nhà hoạch định chính sách trong việc điều chỉnh các chương trình hỗ trợ giáo dục, học bổng hoặc các biện pháp kiểm soát chi phí giáo dục. Đồng thời, chỉ số này cũng giúp người dân hiểu rõ hơn về xu hướng tăng giá trong lĩnh vực giáo dục, hỗ trợ họ trong việc lập kế hoạch tài chính cho việc học tập của bản thân và gia đình. Tại Việt Nam, Tổng cục Thống kê (GSO) chịu trách nhiệm thu thập dữ liệu, sau đó tính toán và công bố CPI hàng tháng.",
                   "frequency": "Ngày 6 tháng sau",
-                  "last_updated": "2026-09-03T02:55:34.731Z",
+                  "last_updated": "2026-11-03T04:03:54.086Z",
                   "source": "Tổng cục Thống kê - GSO",
                   "note": null,
                   "related_blog": null
@@ -3309,6 +3309,14 @@
                 "dateType": "thang",
                 "yAxis": 1,
                 "data": [
+                  [
+                    1793404800000,
+                    2.458887164298602
+                  ],
+                  [
+                    1790726400000,
+                    3.4245599691317685
+                  ],
                   [
                     1788134400000,
                     3.5867734228626267
@@ -3376,14 +3384,6 @@
                   [
                     1745971200000,
                     2.13935681856374
-                  ],
-                  [
-                    1743379200000,
-                    2.159170447018581
-                  ],
-                  [
-                    1740700800000,
-                    1.8551823544362305
                   ]
                 ],
                 "time_frame": "monthly",
@@ -3392,7 +3392,7 @@
                   "unit": "%",
                   "description": "CPI Văn hoá, giải trí và du lịch phản ánh biến động giá của các dịch vụ và hàng hóa thuộc lĩnh vực văn hóa, giải trí và du lịch. Đây là nhóm chỉ số quan trọng, đo lường chi phí mà người tiêu dùng bỏ ra cho các hoạt động như xem phim, tham dự biểu diễn, du lịch, lưu trú tại khách sạn, tham quan di tích, dã ngoại, thể thao và các dịch vụ giải trí khác. Chỉ số này giúp đánh giá mức độ ảnh hưởng của lạm phát đến chi tiêu cho các hoạt động thư giãn và nghỉ dưỡng của người dân. Thông qua CPI Văn hoá, giải trí và du lịch, cơ quan thống kê có thể phân tích xu hướng tiêu dùng và tác động của các chính sách kinh tế đến lĩnh vực này. Tại Việt Nam, Tổng cục Thống kê (GSO) chịu trách nhiệm thu thập dữ liệu, sau đó tính toán và công bố CPI hàng tháng.",
                   "frequency": "Ngày 6 tháng sau",
-                  "last_updated": "2026-09-03T02:55:34.731Z",
+                  "last_updated": "2026-11-03T04:03:54.086Z",
                   "source": "Tổng cục Thống kê - GSO",
                   "note": null,
                   "related_blog": null
@@ -3409,6 +3409,14 @@
                 "dateType": "thang",
                 "yAxis": 1,
                 "data": [
+                  [
+                    1793404800000,
+                    5.651826221852707
+                  ],
+                  [
+                    1790726400000,
+                    5.822527961895556
+                  ],
                   [
                     1788134400000,
                     5.953199031557618
@@ -3476,14 +3484,6 @@
                   [
                     1745971200000,
                     6.400048087115522
-                  ],
-                  [
-                    1743379200000,
-                    6.531366296692
-                  ],
-                  [
-                    1740700800000,
-                    6.363936188336132
                   ]
                 ],
                 "time_frame": "monthly",
@@ -3492,7 +3492,7 @@
                   "unit": "%",
                   "description": "CPI Hàng hóa và dịch vụ khác là một tiểu mục phản ánh giá của các mặt hàng không thuộc các nhóm chính như thực phẩm, may mặc, nhà ở, giao thông vận tải, mà bao gồm các sản phẩm và dịch vụ phục vụ nhu cầu cá nhân như mỹ phẩm, chăm sóc sức khỏe, dịch vụ giải trí, du lịch, giáo dục ngoài chính thức, và các mặt hàng gia dụng khác. Tiểu mục này giúp đánh giá biến động giá của các mặt hàng thiết yếu ngoài thực phẩm và nhà ở, từ đó phản ánh chính xác hơn mức độ lạm phát và thay đổi trong chi tiêu của người tiêu dùng. Tại Việt Nam, Tổng cục Thống kê (GSO) chịu trách nhiệm thu thập dữ liệu, sau đó tính toán và công bố CPI hàng tháng.",
                   "frequency": "Ngày 6 tháng sau",
-                  "last_updated": "2026-09-03T02:55:34.731Z",
+                  "last_updated": "2026-11-03T04:03:54.086Z",
                   "source": "Tổng cục Thống kê - GSO",
                   "note": null,
                   "related_blog": null
@@ -3509,6 +3509,14 @@
                 "dateType": "thang",
                 "yAxis": 1,
                 "data": [
+                  [
+                    1793404800000,
+                    4.036331631055146
+                  ],
+                  [
+                    1790726400000,
+                    4.454732696722896
+                  ],
                   [
                     1788134400000,
                     4.548068541564376
@@ -3576,14 +3584,6 @@
                   [
                     1745971200000,
                     3.1417238298725447
-                  ],
-                  [
-                    1743379200000,
-                    3.1014633656843316
-                  ],
-                  [
-                    1740700800000,
-                    2.8718918435020724
                   ]
                 ],
                 "time_frame": "monthly",
@@ -3592,7 +3592,7 @@
                   "unit": "%",
                   "description": "Lạm phát cơ bản là CPI sau khi loại trừ lương thực, thực phẩm tươi sống, năng lượng và mặt hàng do Nhà nước quản lý bao gồm dịch vụ y tế và giáo dục. Tại Việt Nam, Tổng cục Thống kê (GSO) chịu trách nhiệm thu thập dữ liệu, sau đó tính toán và công bố CPI hàng tháng.",
                   "frequency": "Ngày 6 tháng sau",
-                  "last_updated": "2026-09-03T02:55:34.731Z",
+                  "last_updated": "2026-11-03T04:03:54.086Z",
                   "source": "Tổng cục Thống kê - GSO",
                   "note": null,
                   "related_blog": null
@@ -3731,7 +3731,7 @@
                   "unit": "Chỉ số 2024 = 100",
                   "description": "<p>Chỉ số giá tiêu dùng (CPI) là một con số thống kê dùng để đo mức độ thay đổi của giá cả các mặt hàng và dịch vụ mà các hộ gia đình thường mua, như: thực phẩm, đồ uống, quần áo, nhà ở, đi lại, y tế, giáo dục, giải trí và nhiều dịch vụ khác. Nói cách khác, CPI cho biết giá cả trung bình của “giỏ hàng hóa” tiêu biểu cho sinh hoạt hàng ngày đang tăng hay giảm theo thời gian. <p>\n<p>CPI là chỉ số quan trọng giúp theo dõi lạm phát, đánh giá sức mua của đồng tiền và tình hình kinh tế - xã hội. Ở Việt Nam, Tổng cục Thống kê (GSO) là cơ quan chịu trách nhiệm thu thập dữ liệu giá cả hàng tháng, tính toán và công bố chỉ số CPI.<p>",
                   "frequency": "Ngày 6 tháng sau",
-                  "last_updated": "2026-09-03T02:55:34.731Z",
+                  "last_updated": "2026-11-03T04:03:54.086Z",
                   "source": "Tổng cục Thống kê - GSO",
                   "note": "Số chính thức",
                   "related_blog": null
@@ -3836,7 +3836,7 @@
                   "unit": "Chỉ số 2024 = 100",
                   "description": "CPI Hàng ăn và dịch vụ ăn uống phản ánh biến động giá của các mặt hàng thực phẩm thiết yếu như gạo, thịt, cá, rau củ, trái cây, cùng các dịch vụ ăn uống như ăn ngoài gia đình. Tại Việt Nam, Tổng cục Thống kê (GSO) chịu trách nhiệm thu thập dữ liệu, sau đó tính toán và công bố CPI hàng tháng.",
                   "frequency": "Ngày 6 tháng sau",
-                  "last_updated": "2026-09-03T02:55:34.731Z",
+                  "last_updated": "2026-11-03T04:03:54.086Z",
                   "source": "Tổng cục Thống kê - GSO",
                   "note": null,
                   "related_blog": null
@@ -3941,7 +3941,7 @@
                   "unit": "Chỉ số 2024 = 100",
                   "description": "CPI Lương thực là một thành phần trong tiểu mục CPI Hàng ăn và dịch vụ ăn uống. Chỉ số này đo lường biến động giá của các mặt hàng lương thực thiết yếu như gạo, ngô, kê, mì mạch, cao lương,… Tại Việt Nam, Tổng cục Thống kê (GSO) chịu trách nhiệm thu thập dữ liệu, sau đó tính toán và công bố CPI hàng tháng.",
                   "frequency": "Ngày 6 tháng sau",
-                  "last_updated": "2026-09-03T02:55:34.731Z",
+                  "last_updated": "2026-11-03T04:03:54.086Z",
                   "source": "Tổng cục Thống kê - GSO",
                   "note": null,
                   "related_blog": null
@@ -4046,7 +4046,7 @@
                   "unit": "Chỉ số 2024 = 100",
                   "description": "CPI Thực phẩm là một thành phần quan trọng trong tổng chỉ số CPI Hàng ăn và dịch vụ ăn uống. Chỉ số này đo lường biến động giá của các mặt hàng thực phẩm như thịt, cá, …Tại Việt Nam, Tổng cục Thống kê (GSO) chịu trách nhiệm thu thập dữ liệu, sau đó tính toán và công bố CPI hàng tháng.",
                   "frequency": "Ngày 6 tháng sau",
-                  "last_updated": "2026-09-03T02:55:34.731Z",
+                  "last_updated": "2026-11-03T04:03:54.086Z",
                   "source": "Tổng cục Thống kê - GSO",
                   "note": null,
                   "related_blog": null
@@ -4151,7 +4151,7 @@
                   "unit": "Chỉ số 2024 = 100",
                   "description": "CPI Ăn uống ngoài gia đình trong mục \"Hàng ăn và dịch vụ ăn uống\" phản ánh mức độ biến động của giá các dịch vụ ăn uống ngoài gia đình, như ăn tại nhà hàng, quán ăn, quán cà phê và các dịch vụ ăn uống khác. Tại Việt Nam, Tổng cục Thống kê (GSO) chịu trách nhiệm thu thập dữ liệu, sau đó tính toán và công bố CPI hàng tháng.",
                   "frequency": "Ngày 6 tháng sau",
-                  "last_updated": "2026-09-03T02:55:34.731Z",
+                  "last_updated": "2026-11-03T04:03:54.086Z",
                   "source": "Tổng cục Thống kê - GSO",
                   "note": null,
                   "related_blog": null
@@ -4256,7 +4256,7 @@
                   "unit": "Chỉ số 2024 = 100",
                   "description": "CPI Đồ uống và thuốc lá phản ánh biến động giá của các mặt hàng bao gồm các mặt hàng như đồ uống không cồn, đồ uống có cồn, nước ngọt, cà phê, trà, rượu, bia và các sản phẩm thuốc lá. Tại Việt Nam, Tổng cục Thống kê (GSO) chịu trách nhiệm thu thập dữ liệu, sau đó tính toán và công bố CPI hàng tháng.",
                   "frequency": "Ngày 6 tháng sau",
-                  "last_updated": "2026-09-03T02:55:34.731Z",
+                  "last_updated": "2026-11-03T04:03:54.086Z",
                   "source": "Tổng cục Thống kê - GSO",
                   "note": null,
                   "related_blog": null
@@ -4361,7 +4361,7 @@
                   "unit": "Chỉ số 2024 = 100",
                   "description": "CPI May mặc, mũ nón, giày dép phản ánh biến động giá của các mặt hàng thuộc nhóm hàng may mặc, mũ nón và giày dép. Tại Việt Nam, Tổng cục Thống kê (GSO) chịu trách nhiệm thu thập dữ liệu, sau đó tính toán và công bố CPI hàng tháng.",
                   "frequency": "Ngày 6 tháng sau",
-                  "last_updated": "2026-09-03T02:55:34.731Z",
+                  "last_updated": "2026-11-03T04:03:54.086Z",
                   "source": "Tổng cục Thống kê - GSO",
                   "note": null,
                   "related_blog": null
@@ -4466,7 +4466,7 @@
                   "unit": "Chỉ số 2024 = 100",
                   "description": "CPI Nhà ở và vật liệu xây dựng phản ánh biến động giá của các chi phí liên quan đến nhà ở, bao gồm tiền thuê nhà, chi phí các hoạt động bảo dưỡng, sửa chữa nhỏ, không bao gồm sửa chữa lớn và xây dựng nhà mới. Sửa chữa nhỏ nhà ở là các hoạt động duy tu, bảo dưỡng không thay đổi kết cấu hoặc hình thái của căn nhà. Tại Việt Nam, Tổng cục Thống kê (GSO) chịu trách nhiệm thu thập dữ liệu, sau đó tính toán và công bố CPI hàng tháng.",
                   "frequency": "Ngày 6 tháng sau",
-                  "last_updated": "2026-09-03T02:55:34.731Z",
+                  "last_updated": "2026-11-03T04:03:54.086Z",
                   "source": "Tổng cục Thống kê - GSO",
                   "note": null,
                   "related_blog": null
@@ -4571,7 +4571,7 @@
                   "unit": "Chỉ số 2024 = 100",
                   "description": "CPI Thiết bị và đồ dùng gia đình phản ánh biến động giá của các mặt hàng liên quan đến trang thiết bị, đồ dùng phục vụ sinh hoạt gia đình. Tiểu mục này bao gồm các sản phẩm như đồ gia dụng, thiết bị điện tử, đồ nội thất, công cụ dụng cụ và các vật dụng khác phục vụ nhu cầu hàng ngày của hộ gia đình. Chỉ số này giúp đo lường mức độ lạm phát và thay đổi chi phí sinh hoạt của người dân, từ đó hỗ trợ các quyết định chính sách kinh tế và tài chính. Tại Việt Nam, Tổng cục Thống kê (GSO) chịu trách nhiệm thu thập dữ liệu, sau đó tính toán và công bố CPI hàng tháng.",
                   "frequency": "Ngày 6 tháng sau",
-                  "last_updated": "2026-09-03T02:55:34.731Z",
+                  "last_updated": "2026-11-03T04:03:54.086Z",
                   "source": "Tổng cục Thống kê - GSO",
                   "note": null,
                   "related_blog": null
@@ -4676,7 +4676,7 @@
                   "unit": "Chỉ số 2024 = 100",
                   "description": "CPI Thuốc và dịch vụ y tế, phản ánh biến động giá của các mặt hàng thuốc, dịch vụ khám chữa bệnh, phí viện phí và các dịch vụ y tế khác. Tiểu mục này giúp đo lường mức độ tăng giá của các sản phẩm và dịch vụ liên quan đến chăm sóc sức khỏe, từ đó tác động đến chi tiêu hàng ngày của hộ gia đình. Việc theo dõi chỉ số này giúp người dân và chính phủ nắm bắt được xu hướng lạm phát trong lĩnh vực y tế, đồng thời là cơ sở để điều chỉnh chính sách kinh tế và xã hội nhằm đảm bảo đời sống người dân. Tại Việt Nam, Tổng cục Thống kê (GSO) chịu trách nhiệm thu thập dữ liệu, sau đó tính toán và công bố CPI hàng tháng.",
                   "frequency": "Ngày 6 tháng sau",
-                  "last_updated": "2026-09-03T02:55:34.731Z",
+                  "last_updated": "2026-11-03T04:03:54.086Z",
                   "source": "Tổng cục Thống kê - GSO",
                   "note": null,
                   "related_blog": null
@@ -4781,7 +4781,7 @@
                   "unit": "Chỉ số 2024 = 100",
                   "description": "Chỉ số CPI Dịch vụ y tế là một phần trong tổng chỉ số CPI Thuốc và dịch vụ y tế của Việt Nam. Chỉ số này đo lường sự thay đổi về giá của các dịch vụ y tế mà người tiêu dùng phải trả, bao gồm chi phí khám bệnh, điều trị, nằm viện, xét nghiệm, thủ thuật và các dịch vụ y tế khác. CPI Dịch vụ y tế phản ánh mức độ tăng hoặc giảm của chi phí y tế qua thời gian, giúp đánh giá tình hình lạm phát trong lĩnh vực này. Thông qua chỉ số này, người ta có thể hiểu rõ hơn về xu hướng biến động giá dịch vụ y tế, từ đó tác động đến quyết định chi tiêu của người dân và chính sách điều hành kinh tế của Nhà nước. Tại Việt Nam, Tổng cục Thống kê (GSO) chịu trách nhiệm thu thập dữ liệu, sau đó tính toán và công bố CPI hàng tháng.",
                   "frequency": "Ngày 6 tháng sau",
-                  "last_updated": "2026-09-03T02:55:34.731Z",
+                  "last_updated": "2026-11-03T04:03:54.086Z",
                   "source": "Tổng cục Thống kê - GSO",
                   "note": null,
                   "related_blog": null
@@ -4886,7 +4886,7 @@
                   "unit": "Chỉ số 2024 = 100",
                   "description": "CPI Giao thông phản ánh biến động giá của các dịch vụ và hàng hóa liên quan đến lĩnh vực giao thông vận tải. Chỉ số này bao gồm các chi phí như xăng dầu, vé tàu, xe, phí cầu đường, bảo trì phương tiện và các dịch vụ vận chuyển khác. CPI Giao thông là một trong những thành phần quan trọng của CPI tổng thể, giúp đo lường mức độ lạm phát và thay đổi chi phí sinh hoạt của người dân. Việc theo dõi chỉ số này giúp Chính phủ và các nhà hoạch định chính sách có thể đưa ra quyết định điều chỉnh phù hợp, nhằm kiểm soát lạm phát và ổn định kinh tế vĩ mô. Tại Việt Nam, Tổng cục Thống kê (GSO) chịu trách nhiệm thu thập dữ liệu, sau đó tính toán và công bố CPI hàng tháng.",
                   "frequency": "Ngày 6 tháng sau",
-                  "last_updated": "2026-09-03T02:55:34.731Z",
+                  "last_updated": "2026-11-03T04:03:54.086Z",
                   "source": "Tổng cục Thống kê - GSO",
                   "note": null,
                   "related_blog": null
@@ -4991,7 +4991,7 @@
                   "unit": "Chỉ số 2024 = 100",
                   "description": "CPI Bưu chính viễn thông phản ánh sự thay đổi về giá các dịch vụ như điện thoại, internet, dịch vụ bưu chính và các dịch vụ liên quan. Chỉ số này giúp đánh giá mức độ lạm phát trong ngành, từ đó ảnh hưởng đến tổng chỉ số CPI chung của cả nước. Khi giá các dịch vụ bưu chính viễn thông tăng hoặc giảm, nó sẽ tác động trực tiếp đến chi tiêu hàng ngày của người dân và doanh nghiệp, phản ánh sự ổn định hoặc biến động của nền kinh tế. Tại Việt Nam, Tổng cục Thống kê (GSO) chịu trách nhiệm thu thập dữ liệu, sau đó tính toán và công bố CPI hàng tháng.",
                   "frequency": "Ngày 6 tháng sau",
-                  "last_updated": "2026-09-03T02:55:34.731Z",
+                  "last_updated": "2026-11-03T04:03:54.086Z",
                   "source": "Tổng cục Thống kê - GSO",
                   "note": null,
                   "related_blog": null
@@ -5096,7 +5096,7 @@
                   "unit": "Chỉ số 2024 = 100",
                   "description": "CPI Giáo dục phản ánh biến động giá của các dịch vụ và hàng hóa liên quan đến lĩnh vực giáo dục. Chỉ số này đo lường mức độ thay đổi của chi phí giáo dục như học phí, sách vở, vật dụng học tập và các dịch vụ giáo dục khác. CPI Giáo dục giúp đánh giá áp lực lạm phát trong lĩnh vực giáo dục, từ đó hỗ trợ các quyết định chính sách về giáo dục và tài chính. Đồng thời, nó cũng là công cụ quan trọng để người dân và doanh nghiệp nắm bắt xu hướng chi phí giáo dục, phục vụ việc lập kế hoạch tài chính và đầu tư cho giáo dục. Tại Việt Nam, Tổng cục Thống kê (GSO) chịu trách nhiệm thu thập dữ liệu, sau đó tính toán và công bố CPI hàng tháng.",
                   "frequency": "Ngày 6 tháng sau",
-                  "last_updated": "2026-09-03T02:55:34.731Z",
+                  "last_updated": "2026-11-03T04:03:54.086Z",
                   "source": "Tổng cục Thống kê - GSO",
                   "note": null,
                   "related_blog": null
@@ -5201,7 +5201,7 @@
                   "unit": "Chỉ số 2024 = 100",
                   "description": "Chỉ số CPI Dịch vụ giáo dục là một phần trong CPI Giáo dục, phản ánh biến động giá của các dịch vụ giáo dục trên thị trường. Chỉ số này đo lường sự thay đổi về giá của các dịch vụ liên quan đến giáo dục, bao gồm học phí, lệ phí thi cử, sách giáo khoa, vật dụng học tập và các dịch vụ giáo dục khác. CPI Dịch vụ giáo dục giúp đánh giá mức độ lạm phát trong lĩnh vực giáo dục, từ đó hỗ trợ Chính phủ và các nhà hoạch định chính sách trong việc điều chỉnh các chương trình hỗ trợ giáo dục, học bổng hoặc các biện pháp kiểm soát chi phí giáo dục. Đồng thời, chỉ số này cũng giúp người dân hiểu rõ hơn về xu hướng tăng giá trong lĩnh vực giáo dục, hỗ trợ họ trong việc lập kế hoạch tài chính cho việc học tập của bản thân và gia đình. Tại Việt Nam, Tổng cục Thống kê (GSO) chịu trách nhiệm thu thập dữ liệu, sau đó tính toán và công bố CPI hàng tháng.",
                   "frequency": "Ngày 6 tháng sau",
-                  "last_updated": "2026-09-03T02:55:34.731Z",
+                  "last_updated": "2026-11-03T04:03:54.086Z",
                   "source": "Tổng cục Thống kê - GSO",
                   "note": null,
                   "related_blog": null
@@ -5306,7 +5306,7 @@
                   "unit": "Chỉ số 2024 = 100",
                   "description": "CPI Văn hoá, giải trí và du lịch phản ánh biến động giá của các dịch vụ và hàng hóa thuộc lĩnh vực văn hóa, giải trí và du lịch. Đây là nhóm chỉ số quan trọng, đo lường chi phí mà người tiêu dùng bỏ ra cho các hoạt động như xem phim, tham dự biểu diễn, du lịch, lưu trú tại khách sạn, tham quan di tích, dã ngoại, thể thao và các dịch vụ giải trí khác. Chỉ số này giúp đánh giá mức độ ảnh hưởng của lạm phát đến chi tiêu cho các hoạt động thư giãn và nghỉ dưỡng của người dân. Thông qua CPI Văn hoá, giải trí và du lịch, cơ quan thống kê có thể phân tích xu hướng tiêu dùng và tác động của các chính sách kinh tế đến lĩnh vực này. Tại Việt Nam, Tổng cục Thống kê (GSO) chịu trách nhiệm thu thập dữ liệu, sau đó tính toán và công bố CPI hàng tháng.",
                   "frequency": "Ngày 6 tháng sau",
-                  "last_updated": "2026-09-03T02:55:34.731Z",
+                  "last_updated": "2026-11-03T04:03:54.086Z",
                   "source": "Tổng cục Thống kê - GSO",
                   "note": null,
                   "related_blog": null
@@ -5411,7 +5411,7 @@
                   "unit": "Chỉ số 2024 = 100",
                   "description": "CPI Hàng hóa và dịch vụ khác là một tiểu mục phản ánh giá của các mặt hàng không thuộc các nhóm chính như thực phẩm, may mặc, nhà ở, giao thông vận tải, mà bao gồm các sản phẩm và dịch vụ phục vụ nhu cầu cá nhân như mỹ phẩm, chăm sóc sức khỏe, dịch vụ giải trí, du lịch, giáo dục ngoài chính thức, và các mặt hàng gia dụng khác. Tiểu mục này giúp đánh giá biến động giá của các mặt hàng thiết yếu ngoài thực phẩm và nhà ở, từ đó phản ánh chính xác hơn mức độ lạm phát và thay đổi trong chi tiêu của người tiêu dùng. Tại Việt Nam, Tổng cục Thống kê (GSO) chịu trách nhiệm thu thập dữ liệu, sau đó tính toán và công bố CPI hàng tháng.",
                   "frequency": "Ngày 6 tháng sau",
-                  "last_updated": "2026-09-03T02:55:34.731Z",
+                  "last_updated": "2026-11-03T04:03:54.086Z",
                   "source": "Tổng cục Thống kê - GSO",
                   "note": null,
                   "related_blog": null
@@ -5548,7 +5548,7 @@
                   "unit": "Chỉ số 2024 = 100",
                   "description": "<p>Chỉ số giá tiêu dùng (CPI) là một con số thống kê dùng để đo mức độ thay đổi của giá cả các mặt hàng và dịch vụ mà các hộ gia đình thường mua, như: thực phẩm, đồ uống, quần áo, nhà ở, đi lại, y tế, giáo dục, giải trí và nhiều dịch vụ khác. Nói cách khác, CPI cho biết giá cả trung bình của “giỏ hàng hóa” tiêu biểu cho sinh hoạt hàng ngày đang tăng hay giảm theo thời gian. <p>\n<p>CPI là chỉ số quan trọng giúp theo dõi lạm phát, đánh giá sức mua của đồng tiền và tình hình kinh tế - xã hội. Ở Việt Nam, Tổng cục Thống kê (GSO) là cơ quan chịu trách nhiệm thu thập dữ liệu giá cả hàng tháng, tính toán và công bố chỉ số CPI.<p>",
                   "frequency": "Ngày 6 tháng sau",
-                  "last_updated": "2026-09-03T02:55:34.731Z",
+                  "last_updated": "2026-11-03T04:03:54.086Z",
                   "source": "Tổng cục Thống kê - GSO",
                   "note": "Số chính thức",
                   "related_blog": null
@@ -5653,7 +5653,7 @@
                   "unit": "Chỉ số 2024 = 100",
                   "description": "CPI Hàng ăn và dịch vụ ăn uống phản ánh biến động giá của các mặt hàng thực phẩm thiết yếu như gạo, thịt, cá, rau củ, trái cây, cùng các dịch vụ ăn uống như ăn ngoài gia đình. Tại Việt Nam, Tổng cục Thống kê (GSO) chịu trách nhiệm thu thập dữ liệu, sau đó tính toán và công bố CPI hàng tháng.",
                   "frequency": "Ngày 6 tháng sau",
-                  "last_updated": "2026-09-03T02:55:34.731Z",
+                  "last_updated": "2026-11-03T04:03:54.086Z",
                   "source": "Tổng cục Thống kê - GSO",
                   "note": null,
                   "related_blog": null
@@ -5758,7 +5758,7 @@
                   "unit": "Chỉ số 2024 = 100",
                   "description": "CPI Lương thực là một thành phần trong tiểu mục CPI Hàng ăn và dịch vụ ăn uống. Chỉ số này đo lường biến động giá của các mặt hàng lương thực thiết yếu như gạo, ngô, kê, mì mạch, cao lương,… Tại Việt Nam, Tổng cục Thống kê (GSO) chịu trách nhiệm thu thập dữ liệu, sau đó tính toán và công bố CPI hàng tháng.",
                   "frequency": "Ngày 6 tháng sau",
-                  "last_updated": "2026-09-03T02:55:34.731Z",
+                  "last_updated": "2026-11-03T04:03:54.086Z",
                   "source": "Tổng cục Thống kê - GSO",
                   "note": null,
                   "related_blog": null
@@ -5863,7 +5863,7 @@
                   "unit": "Chỉ số 2024 = 100",
                   "description": "CPI Thực phẩm là một thành phần quan trọng trong tổng chỉ số CPI Hàng ăn và dịch vụ ăn uống. Chỉ số này đo lường biến động giá của các mặt hàng thực phẩm như thịt, cá, …Tại Việt Nam, Tổng cục Thống kê (GSO) chịu trách nhiệm thu thập dữ liệu, sau đó tính toán và công bố CPI hàng tháng.",
                   "frequency": "Ngày 6 tháng sau",
-                  "last_updated": "2026-09-03T02:55:34.731Z",
+                  "last_updated": "2026-11-03T04:03:54.086Z",
                   "source": "Tổng cục Thống kê - GSO",
                   "note": null,
                   "related_blog": null
@@ -5968,7 +5968,7 @@
                   "unit": "Chỉ số 2024 = 100",
                   "description": "CPI Ăn uống ngoài gia đình trong mục \"Hàng ăn và dịch vụ ăn uống\" phản ánh mức độ biến động của giá các dịch vụ ăn uống ngoài gia đình, như ăn tại nhà hàng, quán ăn, quán cà phê và các dịch vụ ăn uống khác. Tại Việt Nam, Tổng cục Thống kê (GSO) chịu trách nhiệm thu thập dữ liệu, sau đó tính toán và công bố CPI hàng tháng.",
                   "frequency": "Ngày 6 tháng sau",
-                  "last_updated": "2026-09-03T02:55:34.731Z",
+                  "last_updated": "2026-11-03T04:03:54.086Z",
                   "source": "Tổng cục Thống kê - GSO",
                   "note": null,
                   "related_blog": null
@@ -6073,7 +6073,7 @@
                   "unit": "Chỉ số 2024 = 100",
                   "description": "CPI Đồ uống và thuốc lá phản ánh biến động giá của các mặt hàng bao gồm các mặt hàng như đồ uống không cồn, đồ uống có cồn, nước ngọt, cà phê, trà, rượu, bia và các sản phẩm thuốc lá. Tại Việt Nam, Tổng cục Thống kê (GSO) chịu trách nhiệm thu thập dữ liệu, sau đó tính toán và công bố CPI hàng tháng.",
                   "frequency": "Ngày 6 tháng sau",
-                  "last_updated": "2026-09-03T02:55:34.731Z",
+                  "last_updated": "2026-11-03T04:03:54.086Z",
                   "source": "Tổng cục Thống kê - GSO",
                   "note": null,
                   "related_blog": null
@@ -6178,7 +6178,7 @@
                   "unit": "Chỉ số 2024 = 100",
                   "description": "CPI May mặc, mũ nón, giày dép phản ánh biến động giá của các mặt hàng thuộc nhóm hàng may mặc, mũ nón và giày dép. Tại Việt Nam, Tổng cục Thống kê (GSO) chịu trách nhiệm thu thập dữ liệu, sau đó tính toán và công bố CPI hàng tháng.",
                   "frequency": "Ngày 6 tháng sau",
-                  "last_updated": "2026-09-03T02:55:34.731Z",
+                  "last_updated": "2026-11-03T04:03:54.086Z",
                   "source": "Tổng cục Thống kê - GSO",
                   "note": null,
                   "related_blog": null
@@ -6283,7 +6283,7 @@
                   "unit": "Chỉ số 2024 = 100",
                   "description": "CPI Nhà ở và vật liệu xây dựng phản ánh biến động giá của các chi phí liên quan đến nhà ở, bao gồm tiền thuê nhà, chi phí các hoạt động bảo dưỡng, sửa chữa nhỏ, không bao gồm sửa chữa lớn và xây dựng nhà mới. Sửa chữa nhỏ nhà ở là các hoạt động duy tu, bảo dưỡng không thay đổi kết cấu hoặc hình thái của căn nhà. Tại Việt Nam, Tổng cục Thống kê (GSO) chịu trách nhiệm thu thập dữ liệu, sau đó tính toán và công bố CPI hàng tháng.",
                   "frequency": "Ngày 6 tháng sau",
-                  "last_updated": "2026-09-03T02:55:34.731Z",
+                  "last_updated": "2026-11-03T04:03:54.086Z",
                   "source": "Tổng cục Thống kê - GSO",
                   "note": null,
                   "related_blog": null
@@ -6388,7 +6388,7 @@
                   "unit": "Chỉ số 2024 = 100",
                   "description": "CPI Thiết bị và đồ dùng gia đình phản ánh biến động giá của các mặt hàng liên quan đến trang thiết bị, đồ dùng phục vụ sinh hoạt gia đình. Tiểu mục này bao gồm các sản phẩm như đồ gia dụng, thiết bị điện tử, đồ nội thất, công cụ dụng cụ và các vật dụng khác phục vụ nhu cầu hàng ngày của hộ gia đình. Chỉ số này giúp đo lường mức độ lạm phát và thay đổi chi phí sinh hoạt của người dân, từ đó hỗ trợ các quyết định chính sách kinh tế và tài chính. Tại Việt Nam, Tổng cục Thống kê (GSO) chịu trách nhiệm thu thập dữ liệu, sau đó tính toán và công bố CPI hàng tháng.",
                   "frequency": "Ngày 6 tháng sau",
-                  "last_updated": "2026-09-03T02:55:34.731Z",
+                  "last_updated": "2026-11-03T04:03:54.086Z",
                   "source": "Tổng cục Thống kê - GSO",
                   "note": null,
                   "related_blog": null
@@ -6493,7 +6493,7 @@
                   "unit": "Chỉ số 2024 = 100",
                   "description": "CPI Thuốc và dịch vụ y tế, phản ánh biến động giá của các mặt hàng thuốc, dịch vụ khám chữa bệnh, phí viện phí và các dịch vụ y tế khác. Tiểu mục này giúp đo lường mức độ tăng giá của các sản phẩm và dịch vụ liên quan đến chăm sóc sức khỏe, từ đó tác động đến chi tiêu hàng ngày của hộ gia đình. Việc theo dõi chỉ số này giúp người dân và chính phủ nắm bắt được xu hướng lạm phát trong lĩnh vực y tế, đồng thời là cơ sở để điều chỉnh chính sách kinh tế và xã hội nhằm đảm bảo đời sống người dân. Tại Việt Nam, Tổng cục Thống kê (GSO) chịu trách nhiệm thu thập dữ liệu, sau đó tính toán và công bố CPI hàng tháng.",
                   "frequency": "Ngày 6 tháng sau",
-                  "last_updated": "2026-09-03T02:55:34.731Z",
+                  "last_updated": "2026-11-03T04:03:54.086Z",
                   "source": "Tổng cục Thống kê - GSO",
                   "note": null,
                   "related_blog": null
@@ -6598,7 +6598,7 @@
                   "unit": "Chỉ số 2024 = 100",
                   "description": "Chỉ số CPI Dịch vụ y tế là một phần trong tổng chỉ số CPI Thuốc và dịch vụ y tế của Việt Nam. Chỉ số này đo lường sự thay đổi về giá của các dịch vụ y tế mà người tiêu dùng phải trả, bao gồm chi phí khám bệnh, điều trị, nằm viện, xét nghiệm, thủ thuật và các dịch vụ y tế khác. CPI Dịch vụ y tế phản ánh mức độ tăng hoặc giảm của chi phí y tế qua thời gian, giúp đánh giá tình hình lạm phát trong lĩnh vực này. Thông qua chỉ số này, người ta có thể hiểu rõ hơn về xu hướng biến động giá dịch vụ y tế, từ đó tác động đến quyết định chi tiêu của người dân và chính sách điều hành kinh tế của Nhà nước. Tại Việt Nam, Tổng cục Thống kê (GSO) chịu trách nhiệm thu thập dữ liệu, sau đó tính toán và công bố CPI hàng tháng.",
                   "frequency": "Ngày 6 tháng sau",
-                  "last_updated": "2026-09-03T02:55:34.731Z",
+                  "last_updated": "2026-11-03T04:03:54.086Z",
                   "source": "Tổng cục Thống kê - GSO",
                   "note": null,
                   "related_blog": null
@@ -6703,7 +6703,7 @@
                   "unit": "Chỉ số 2024 = 100",
                   "description": "CPI Giao thông phản ánh biến động giá của các dịch vụ và hàng hóa liên quan đến lĩnh vực giao thông vận tải. Chỉ số này bao gồm các chi phí như xăng dầu, vé tàu, xe, phí cầu đường, bảo trì phương tiện và các dịch vụ vận chuyển khác. CPI Giao thông là một trong những thành phần quan trọng của CPI tổng thể, giúp đo lường mức độ lạm phát và thay đổi chi phí sinh hoạt của người dân. Việc theo dõi chỉ số này giúp Chính phủ và các nhà hoạch định chính sách có thể đưa ra quyết định điều chỉnh phù hợp, nhằm kiểm soát lạm phát và ổn định kinh tế vĩ mô. Tại Việt Nam, Tổng cục Thống kê (GSO) chịu trách nhiệm thu thập dữ liệu, sau đó tính toán và công bố CPI hàng tháng.",
                   "frequency": "Ngày 6 tháng sau",
-                  "last_updated": "2026-09-03T02:55:34.731Z",
+                  "last_updated": "2026-11-03T04:03:54.086Z",
                   "source": "Tổng cục Thống kê - GSO",
                   "note": null,
                   "related_blog": null
@@ -6808,7 +6808,7 @@
                   "unit": "Chỉ số 2024 = 100",
                   "description": "CPI Bưu chính viễn thông phản ánh sự thay đổi về giá các dịch vụ như điện thoại, internet, dịch vụ bưu chính và các dịch vụ liên quan. Chỉ số này giúp đánh giá mức độ lạm phát trong ngành, từ đó ảnh hưởng đến tổng chỉ số CPI chung của cả nước. Khi giá các dịch vụ bưu chính viễn thông tăng hoặc giảm, nó sẽ tác động trực tiếp đến chi tiêu hàng ngày của người dân và doanh nghiệp, phản ánh sự ổn định hoặc biến động của nền kinh tế. Tại Việt Nam, Tổng cục Thống kê (GSO) chịu trách nhiệm thu thập dữ liệu, sau đó tính toán và công bố CPI hàng tháng.",
                   "frequency": "Ngày 6 tháng sau",
-                  "last_updated": "2026-09-03T02:55:34.731Z",
+                  "last_updated": "2026-11-03T04:03:54.086Z",
                   "source": "Tổng cục Thống kê - GSO",
                   "note": null,
                   "related_blog": null
@@ -6913,7 +6913,7 @@
                   "unit": "Chỉ số 2024 = 100",
                   "description": "CPI Giáo dục phản ánh biến động giá của các dịch vụ và hàng hóa liên quan đến lĩnh vực giáo dục. Chỉ số này đo lường mức độ thay đổi của chi phí giáo dục như học phí, sách vở, vật dụng học tập và các dịch vụ giáo dục khác. CPI Giáo dục giúp đánh giá áp lực lạm phát trong lĩnh vực giáo dục, từ đó hỗ trợ các quyết định chính sách về giáo dục và tài chính. Đồng thời, nó cũng là công cụ quan trọng để người dân và doanh nghiệp nắm bắt xu hướng chi phí giáo dục, phục vụ việc lập kế hoạch tài chính và đầu tư cho giáo dục. Tại Việt Nam, Tổng cục Thống kê (GSO) chịu trách nhiệm thu thập dữ liệu, sau đó tính toán và công bố CPI hàng tháng.",
                   "frequency": "Ngày 6 tháng sau",
-                  "last_updated": "2026-09-03T02:55:34.731Z",
+                  "last_updated": "2026-11-03T04:03:54.086Z",
                   "source": "Tổng cục Thống kê - GSO",
                   "note": null,
                   "related_blog": null
@@ -7018,7 +7018,7 @@
                   "unit": "Chỉ số 2024 = 100",
                   "description": "Chỉ số CPI Dịch vụ giáo dục là một phần trong CPI Giáo dục, phản ánh biến động giá của các dịch vụ giáo dục trên thị trường. Chỉ số này đo lường sự thay đổi về giá của các dịch vụ liên quan đến giáo dục, bao gồm học phí, lệ phí thi cử, sách giáo khoa, vật dụng học tập và các dịch vụ giáo dục khác. CPI Dịch vụ giáo dục giúp đánh giá mức độ lạm phát trong lĩnh vực giáo dục, từ đó hỗ trợ Chính phủ và các nhà hoạch định chính sách trong việc điều chỉnh các chương trình hỗ trợ giáo dục, học bổng hoặc các biện pháp kiểm soát chi phí giáo dục. Đồng thời, chỉ số này cũng giúp người dân hiểu rõ hơn về xu hướng tăng giá trong lĩnh vực giáo dục, hỗ trợ họ trong việc lập kế hoạch tài chính cho việc học tập của bản thân và gia đình. Tại Việt Nam, Tổng cục Thống kê (GSO) chịu trách nhiệm thu thập dữ liệu, sau đó tính toán và công bố CPI hàng tháng.",
                   "frequency": "Ngày 6 tháng sau",
-                  "last_updated": "2026-09-03T02:55:34.731Z",
+                  "last_updated": "2026-11-03T04:03:54.086Z",
                   "source": "Tổng cục Thống kê - GSO",
                   "note": null,
                   "related_blog": null
@@ -7123,7 +7123,7 @@
                   "unit": "Chỉ số 2024 = 100",
                   "description": "CPI Văn hoá, giải trí và du lịch phản ánh biến động giá của các dịch vụ và hàng hóa thuộc lĩnh vực văn hóa, giải trí và du lịch. Đây là nhóm chỉ số quan trọng, đo lường chi phí mà người tiêu dùng bỏ ra cho các hoạt động như xem phim, tham dự biểu diễn, du lịch, lưu trú tại khách sạn, tham quan di tích, dã ngoại, thể thao và các dịch vụ giải trí khác. Chỉ số này giúp đánh giá mức độ ảnh hưởng của lạm phát đến chi tiêu cho các hoạt động thư giãn và nghỉ dưỡng của người dân. Thông qua CPI Văn hoá, giải trí và du lịch, cơ quan thống kê có thể phân tích xu hướng tiêu dùng và tác động của các chính sách kinh tế đến lĩnh vực này. Tại Việt Nam, Tổng cục Thống kê (GSO) chịu trách nhiệm thu thập dữ liệu, sau đó tính toán và công bố CPI hàng tháng.",
                   "frequency": "Ngày 6 tháng sau",
-                  "last_updated": "2026-09-03T02:55:34.731Z",
+                  "last_updated": "2026-11-03T04:03:54.086Z",
                   "source": "Tổng cục Thống kê - GSO",
                   "note": null,
                   "related_blog": null
@@ -7228,7 +7228,7 @@
                   "unit": "Chỉ số 2024 = 100",
                   "description": "CPI Hàng hóa và dịch vụ khác là một tiểu mục phản ánh giá của các mặt hàng không thuộc các nhóm chính như thực phẩm, may mặc, nhà ở, giao thông vận tải, mà bao gồm các sản phẩm và dịch vụ phục vụ nhu cầu cá nhân như mỹ phẩm, chăm sóc sức khỏe, dịch vụ giải trí, du lịch, giáo dục ngoài chính thức, và các mặt hàng gia dụng khác. Tiểu mục này giúp đánh giá biến động giá của các mặt hàng thiết yếu ngoài thực phẩm và nhà ở, từ đó phản ánh chính xác hơn mức độ lạm phát và thay đổi trong chi tiêu của người tiêu dùng. Tại Việt Nam, Tổng cục Thống kê (GSO) chịu trách nhiệm thu thập dữ liệu, sau đó tính toán và công bố CPI hàng tháng.",
                   "frequency": "Ngày 6 tháng sau",
-                  "last_updated": "2026-09-03T02:55:34.731Z",
+                  "last_updated": "2026-11-03T04:03:54.086Z",
                   "source": "Tổng cục Thống kê - GSO",
                   "note": null,
                   "related_blog": null

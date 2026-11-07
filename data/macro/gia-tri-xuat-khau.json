@@ -18,15 +18,17 @@
     ],
     "unit": "Triệu USD",
     "description": "Kim ngạch xuất khẩu hàng hóa Việt Nam ra thị trường quốc tế.",
-    "updatedAt": "2026-09-19T10:14:37.654Z",
-    "latestPeriod": "08-2026",
-    "latestValue": 54794.764261
+    "updatedAt": "2026-11-07T06:37:10.410Z",
+    "latestPeriod": "10-2026",
+    "latestValue": 64670.426411
   },
   "datasets": {
     "monthly": {
       "value": {
         "title": "Giá Trị Xuất Khẩu",
         "headers": [
+          "10-2026",
+          "09-2026",
           "08-2026",
           "07-2026",
           "06-2026",
@@ -43,9 +45,7 @@
           "07-2025",
           "06-2025",
           "05-2025",
-          "04-2025",
-          "03-2025",
-          "02-2025"
+          "04-2025"
         ],
         "parent": [
           {
@@ -64,8 +64,16 @@
                 "yAxis": 16,
                 "data": [
                   [
+                    1793404800000,
+                    64670.426411
+                  ],
+                  [
+                    1790726400000,
+                    59494.41252161913
+                  ],
+                  [
                     1788134400000,
-                    54794.764261
+                    54793.845197974224
                   ],
                   [
                     1785456000000,
@@ -73,27 +81,27 @@
                   ],
                   [
                     1782777600000,
-                    50809.06702966507
+                    50845.403555
                   ],
                   [
                     1780185600000,
-                    47037.48485378045
+                    47050.057438
                   ],
                   [
                     1777507200000,
-                    46025.20108931062
+                    45740.054966
                   ],
                   [
                     1774915200000,
-                    46326.29258422565
+                    46610.596314
                   ],
                   [
                     1772236800000,
-                    33112.65071101823
+                    33180.903778
                   ],
                   [
                     1769817600000,
-                    43323.805471
+                    43322.282259
                   ],
                   [
                     1767139200000,
@@ -130,14 +138,6 @@
                   [
                     1745971200000,
                     37634.773762
-                  ],
-                  [
-                    1743379200000,
-                    38608.70769
-                  ],
-                  [
-                    1740700800000,
-                    31248.789997
                   ]
                 ],
                 "time_frame": "monthly",
@@ -146,7 +146,7 @@
                   "unit": "Triệu USD",
                   "description": "Chỉ số Giá trị xuất khẩu của Việt Nam đo lường tổng giá trị hàng hóa và dịch vụ mà Việt Nam xuất khẩu ra thị trường quốc tế. Dữ liệu được Tổng cục hải quan thống kê dựa trên dữ liệu từ các tờ khai hải quan do doanh nghiệp nộp khi thực hiện hoạt động xuất khẩu.",
                   "frequency": "Hai tuần đầu mỗi tháng",
-                  "last_updated": "2026-09-07T06:54:31.302Z",
+                  "last_updated": "2026-11-06T02:57:24.194Z",
                   "source": "Tổng cục Hải quan - CUSTOM",
                   "note": null,
                   "related_blog": null
@@ -165,8 +165,16 @@
                 "yAxis": 16,
                 "data": [
                   [
+                    1793404800000,
+                    9944.663986
+                  ],
+                  [
+                    1790726400000,
+                    9595.9631219841
+                  ],
+                  [
                     1788134400000,
-                    10498.850069999993
+                    10554.24548343522
                   ],
                   [
                     1785456000000,
@@ -174,27 +182,27 @@
                   ],
                   [
                     1782777600000,
-                    10094.61411537936
+                    10058.472691999996
                   ],
                   [
                     1780185600000,
-                    9114.995976798462
+                    9118.315385000002
                   ],
                   [
                     1777507200000,
-                    9806.877115353866
+                    9539.027868000005
                   ],
                   [
                     1774915200000,
-                    9062.30961769699
+                    9315.632735
                   ],
                   [
                     1772236800000,
-                    6875.75945695245
+                    6680.916993999999
                   ],
                   [
                     1769817600000,
-                    9335.15053181888
+                    9624.725620999998
                   ],
                   [
                     1767139200000,
@@ -231,14 +239,6 @@
                   [
                     1745971200000,
                     9471.931373
-                  ],
-                  [
-                    1743379200000,
-                    9352.349768
-                  ],
-                  [
-                    1740700800000,
-                    7219.613728
                   ]
                 ],
                 "time_frame": "monthly",
@@ -247,7 +247,7 @@
                   "unit": "Triệu USD",
                   "description": "Chỉ số Xuất khẩu khu vực trong nước là một bộ phận quan trọng trong tổng giá trị xuất khẩu của Việt Nam. Chỉ số này phản ánh giá trị hàng hóa và dịch vụ do các doanh nghiệp trong nước sản xuất và xuất khẩu ra thị trường quốc tế. Khu vực trong nước bao gồm các doanh nghiệp thuộc các thành phần kinh tế như doanh nghiệp nhà nước, doanh nghiệp tư nhân, hợp tác xã và các đơn vị sự nghiệp. Dữ liệu được Tổng cục hải quan thống kê dựa trên dữ liệu từ các tờ khai hải quan do doanh nghiệp trong nước nộp khi thực hiện hoạt động xuất khẩu.",
                   "frequency": "Hai tuần đầu mỗi tháng",
-                  "last_updated": "2026-09-07T06:54:31.302Z",
+                  "last_updated": "2026-11-06T02:57:24.194Z",
                   "source": "Tổng cục Hải quan - CUSTOM",
                   "note": null,
                   "related_blog": null
@@ -266,8 +266,16 @@
                 "yAxis": 16,
                 "data": [
                   [
+                    1793404800000,
+                    54725.762425
+                  ],
+                  [
+                    1790726400000,
+                    49898.449399635036
+                  ],
+                  [
                     1788134400000,
-                    44295.914191
+                    44239.59971453901
                   ],
                   [
                     1785456000000,
@@ -275,27 +283,27 @@
                   ],
                   [
                     1782777600000,
-                    40714.45291428571
+                    40786.930863
                   ],
                   [
                     1780185600000,
-                    37922.48887698195
+                    37931.742053
                   ],
                   [
                     1777507200000,
-                    36218.32397395678
+                    36201.027098
                   ],
                   [
                     1774915200000,
-                    37263.982966528645
+                    37294.963579
                   ],
                   [
                     1772236800000,
-                    26236.891254065806
+                    26499.986784
                   ],
                   [
                     1769817600000,
-                    33988.654939181106
+                    33697.556638
                   ],
                   [
                     1767139200000,
@@ -332,14 +340,6 @@
                   [
                     1745971200000,
                     28162.842389
-                  ],
-                  [
-                    1743379200000,
-                    29256.357922
-                  ],
-                  [
-                    1740700800000,
-                    24029.176269
                   ]
                 ],
                 "time_frame": "monthly",
@@ -348,7 +348,7 @@
                   "unit": "Triệu USD",
                   "description": "Chỉ số Xuất khẩu Khu vực trong FDI là một bộ phận quan trọng trong tổng xuất khẩu của Việt Nam, phản ánh giá trị xuất khẩu của các doanh nghiệp có vốn đầu tư nước ngoài (FDI). Dữ liệu được Tổng cục hải quan thống kê dựa trên dữ liệu từ các tờ khai hải quan do doanh nghiệp FDI nộp khi thực hiện hoạt động xuất khẩu.",
                   "frequency": "Hai tuần đầu mỗi tháng",
-                  "last_updated": "2026-09-07T06:54:31.302Z",
+                  "last_updated": "2026-11-06T02:57:24.194Z",
                   "source": "Tổng cục Hải quan - CUSTOM",
                   "note": null,
                   "related_blog": null
@@ -361,6 +361,8 @@
       "yoy": {
         "title": "Giá Trị Xuất Khẩu",
         "headers": [
+          "10-2026",
+          "09-2026",
           "08-2026",
           "07-2026",
           "06-2026",
@@ -377,9 +379,7 @@
           "07-2025",
           "06-2025",
           "05-2025",
-          "04-2025",
-          "03-2025",
-          "02-2025"
+          "04-2025"
         ],
         "parent": [
           {
@@ -398,8 +398,16 @@
                 "yAxis": 1,
                 "data": [
                   [
+                    1793404800000,
+                    51.42527994804221
+                  ],
+                  [
+                    1790726400000,
+                    39.12707595942622
+                  ],
+                  [
                     1788134400000,
-                    26.014465092291616
+                    26.01235147364318
                   ],
                   [
                     1785456000000,
@@ -407,27 +415,27 @@
                   ],
                   [
                     1782777600000,
-                    28.141055890047966
+                    28.23269702805734
                   ],
                   [
                     1780185600000,
-                    18.24761874642359
+                    18.279224988765684
                   ],
                   [
                     1777507200000,
-                    22.29434772312216
+                    21.53668108982748
                   ],
                   [
                     1774915200000,
-                    19.989233921508777
+                    20.725605964979138
                   ],
                   [
                     1772236800000,
-                    5.9645852341711985
+                    6.1830035056893085
                   ],
                   [
                     1769817600000,
-                    30.259910735667017
+                    30.25533095655956
                   ],
                   [
                     1767139200000,
@@ -464,14 +472,6 @@
                   [
                     1745971200000,
                     20.35345186848737
-                  ],
-                  [
-                    1743379200000,
-                    14.76983518594815
-                  ],
-                  [
-                    1740700800000,
-                    26.22696145868504
                   ]
                 ],
                 "time_frame": "monthly",
@@ -480,7 +480,7 @@
                   "unit": "%",
                   "description": "Chỉ số Giá trị xuất khẩu của Việt Nam đo lường tổng giá trị hàng hóa và dịch vụ mà Việt Nam xuất khẩu ra thị trường quốc tế. Dữ liệu được Tổng cục hải quan thống kê dựa trên dữ liệu từ các tờ khai hải quan do doanh nghiệp nộp khi thực hiện hoạt động xuất khẩu.",
                   "frequency": "Hai tuần đầu mỗi tháng",
-                  "last_updated": "2026-09-07T06:54:31.302Z",
+                  "last_updated": "2026-11-06T02:57:24.194Z",
                   "source": "Tổng cục Hải quan - CUSTOM",
                   "note": null,
                   "related_blog": null
@@ -499,36 +499,44 @@
                 "yAxis": 1,
                 "data": [
                   [
+                    1793404800000,
+                    11.39527044374194
+                  ],
+                  [
+                    1790726400000,
+                    9.47214344566847
+                  ],
+                  [
                     1788134400000,
-                    12.778800471215634
+                    13.373858809717259
                   ],
                   [
                     1785456000000,
-                    14.729450637308839
+                    13.069614843389
                   ],
                   [
                     1782777600000,
-                    16.020972209443553
+                    14.664045217599453
                   ],
                   [
                     1780185600000,
-                    3.2869049768859537
+                    3.324518970393426
                   ],
                   [
                     1777507200000,
-                    3.5361926640287757
+                    0.7083718447461057
                   ],
                   [
                     1774915200000,
-                    -3.1012543103917176
+                    -0.39259687576732655
                   ],
                   [
                     1772236800000,
-                    -4.762779339758471
+                    -7.461572797319621
                   ],
                   [
                     1769817600000,
-                    14.277352999125483
+                    17.8222208160193
                   ],
                   [
                     1767139200000,
@@ -565,14 +573,6 @@
                   [
                     1745971200000,
                     0.2780230025089237
-                  ],
-                  [
-                    1743379200000,
-                    -2.926938781421374
-                  ],
-                  [
-                    1740700800000,
-                    10.493722754286283
                   ]
                 ],
                 "time_frame": "monthly",
@@ -581,7 +581,7 @@
                   "unit": "%",
                   "description": "Chỉ số Xuất khẩu khu vực trong nước là một bộ phận quan trọng trong tổng giá trị xuất khẩu của Việt Nam. Chỉ số này phản ánh giá trị hàng hóa và dịch vụ do các doanh nghiệp trong nước sản xuất và xuất khẩu ra thị trường quốc tế. Khu vực trong nước bao gồm các doanh nghiệp thuộc các thành phần kinh tế như doanh nghiệp nhà nước, doanh nghiệp tư nhân, hợp tác xã và các đơn vị sự nghiệp. Dữ liệu được Tổng cục hải quan thống kê dựa trên dữ liệu từ các tờ khai hải quan do doanh nghiệp trong nước nộp khi thực hiện hoạt động xuất khẩu.",
                   "frequency": "Hai tuần đầu mỗi tháng",
-                  "last_updated": "2026-09-07T06:54:31.302Z",
+                  "last_updated": "2026-11-06T02:57:24.194Z",
                   "source": "Tổng cục Hải quan - CUSTOM",
                   "note": null,
                   "related_blog": null
@@ -600,36 +600,44 @@
                 "yAxis": 1,
                 "data": [
                   [
+                    1793404800000,
+                    62.00425662191517
+                  ],
+                  [
+                    1790726400000,
+                    46.77320487495072
+                  ],
+                  [
                     1788134400000,
-                    29.619988557158855
+                    29.45519950318421
                   ],
                   [
                     1785456000000,
-                    27.78049720288419
+                    28.287365203865665
                   ],
                   [
                     1782777600000,
-                    31.548237396358736
+                    32.08731704399525
                   ],
                   [
                     1780185600000,
-                    22.5129085992394
+                    22.542802035596633
                   ],
                   [
                     1777507200000,
-                    28.60322645594584
+                    28.541809090049792
                   ],
                   [
                     1774915200000,
-                    27.370546483870868
+                    27.476440090156224
                   ],
                   [
                     1772236800000,
-                    9.187643223184374
+                    10.28254355180535
                   ],
                   [
                     1769817600000,
-                    35.46340954227707
+                    34.30322334307271
                   ],
                   [
                     1767139200000,
@@ -666,14 +674,6 @@
                   [
                     1745971200000,
                     29.042107271595043
-                  ],
-                  [
-                    1743379200000,
-                    21.872157165379548
-                  ],
-                  [
-                    1740700800000,
-                    31.868487939004464
                   ]
                 ],
                 "time_frame": "monthly",
@@ -682,7 +682,7 @@
                   "unit": "%",
                   "description": "Chỉ số Xuất khẩu Khu vực trong FDI là một bộ phận quan trọng trong tổng xuất khẩu của Việt Nam, phản ánh giá trị xuất khẩu của các doanh nghiệp có vốn đầu tư nước ngoài (FDI). Dữ liệu được Tổng cục hải quan thống kê dựa trên dữ liệu từ các tờ khai hải quan do doanh nghiệp FDI nộp khi thực hiện hoạt động xuất khẩu.",
                   "frequency": "Hai tuần đầu mỗi tháng",
-                  "last_updated": "2026-09-07T06:54:31.302Z",
+                  "last_updated": "2026-11-06T02:57:24.194Z",
                   "source": "Tổng cục Hải quan - CUSTOM",
                   "note": null,
                   "related_blog": null
@@ -697,6 +697,7 @@
       "value": {
         "title": "Giá Trị Xuất Khẩu",
         "headers": [
+          "09-2026",
           "06-2026",
           "03-2026",
           "12-2025",
@@ -734,12 +735,16 @@
                 "yAxis": 16,
                 "data": [
                   [
+                    1790726400000,
+                    167383.95952288792
+                  ],
+                  [
                     1782777600000,
-                    143871.75297275616
+                    143635.515959
                   ],
                   [
                     1774915200000,
-                    122762.74876624388
+                    123113.782351
                   ],
                   [
                     1767139200000,
@@ -816,7 +821,7 @@
                   "unit": "%",
                   "description": "Chỉ số Giá trị xuất khẩu của Việt Nam đo lường tổng giá trị hàng hóa và dịch vụ mà Việt Nam xuất khẩu ra thị trường quốc tế. Dữ liệu được Tổng cục hải quan thống kê dựa trên dữ liệu từ các tờ khai hải quan do doanh nghiệp nộp khi thực hiện hoạt động xuất khẩu.",
                   "frequency": "Hai tuần đầu mỗi tháng",
-                  "last_updated": "2026-09-07T06:54:31.302Z",
+                  "last_updated": "2026-11-06T02:57:24.194Z",
                   "source": "Tổng cục Hải quan - CUSTOM",
                   "note": null,
                   "related_blog": null
@@ -835,12 +840,16 @@
                 "yAxis": 16,
                 "data": [
                   [
+                    1790726400000,
+                    30483.99090629843
+                  ],
+                  [
                     1782777600000,
-                    29016.487207531685
+                    28715.815945000002
                   ],
                   [
                     1774915200000,
-                    25273.21960646832
+                    25621.275349999996
                   ],
                   [
                     1767139200000,
@@ -848,7 +857,7 @@
                   ],
                   [
                     1759190400000,
-                    27081.99513
+                    27214.217095
                   ],
                   [
                     1751241600000,
@@ -917,7 +926,7 @@
                   "unit": "%",
                   "description": "Chỉ số Xuất khẩu khu vực trong nước là một bộ phận quan trọng trong tổng giá trị xuất khẩu của Việt Nam. Chỉ số này phản ánh giá trị hàng hóa và dịch vụ do các doanh nghiệp trong nước sản xuất và xuất khẩu ra thị trường quốc tế. Khu vực trong nước bao gồm các doanh nghiệp thuộc các thành phần kinh tế như doanh nghiệp nhà nước, doanh nghiệp tư nhân, hợp tác xã và các đơn vị sự nghiệp. Dữ liệu được Tổng cục hải quan thống kê dựa trên dữ liệu từ các tờ khai hải quan do doanh nghiệp trong nước nộp khi thực hiện hoạt động xuất khẩu.",
                   "frequency": "Hai tuần đầu mỗi tháng",
-                  "last_updated": "2026-09-07T06:54:31.302Z",
+                  "last_updated": "2026-11-06T02:57:24.194Z",
                   "source": "Tổng cục Hải quan - CUSTOM",
                   "note": null,
                   "related_blog": null
@@ -936,12 +945,16 @@
                 "yAxis": 16,
                 "data": [
                   [
+                    1790726400000,
+                    136899.9686165895
+                  ],
+                  [
                     1782777600000,
-                    114855.26576522444
+                    114919.700014
                   ],
                   [
                     1774915200000,
-                    97489.52915977556
+                    97492.507001
                   ],
                   [
                     1767139200000,
@@ -949,7 +962,7 @@
                   ],
                   [
                     1759190400000,
-                    101635.788011
+                    101503.56604599999
                   ],
                   [
                     1751241600000,
@@ -1018,7 +1031,7 @@
                   "unit": "%",
                   "description": "Chỉ số Xuất khẩu Khu vực trong FDI là một bộ phận quan trọng trong tổng xuất khẩu của Việt Nam, phản ánh giá trị xuất khẩu của các doanh nghiệp có vốn đầu tư nước ngoài (FDI). Dữ liệu được Tổng cục hải quan thống kê dựa trên dữ liệu từ các tờ khai hải quan do doanh nghiệp FDI nộp khi thực hiện hoạt động xuất khẩu.",
                   "frequency": "Hai tuần đầu mỗi tháng",
-                  "last_updated": "2026-09-07T06:54:31.302Z",
+                  "last_updated": "2026-11-06T02:57:24.194Z",
                   "source": "Tổng cục Hải quan - CUSTOM",
                   "note": null,
                   "related_blog": null
@@ -1031,6 +1044,7 @@
       "yoy": {
         "title": "Giá Trị Xuất Khẩu",
         "headers": [
+          "09-2026",
           "06-2026",
           "03-2026",
           "12-2025",
@@ -1068,12 +1082,16 @@
                 "yAxis": 1,
                 "data": [
                   [
+                    1790726400000,
+                    30.039498380369274
+                  ],
+                  [
                     1782777600000,
-                    22.89959670031575
+                    22.697795908176825
                   ],
                   [
                     1774915200000,
-                    19.051894411248472
+                    19.392317004316695
                   ],
                   [
                     1767139200000,
@@ -1109,15 +1127,15 @@
                   ],
                   [
                     1703980800000,
-                    7.12962523100098
+                    7.129625231000987
                   ],
                   [
                     1696032000000,
-                    -2.2249672940388265
+                    -2.2249672940388225
                   ],
                   [
                     1688083200000,
-                    -11.015421892957832
+                    -11.01542189295784
                   ],
                   [
                     1680220800000,
@@ -1150,7 +1168,7 @@
                   "unit": "%",
                   "description": "Chỉ số Giá trị xuất khẩu của Việt Nam đo lường tổng giá trị hàng hóa và dịch vụ mà Việt Nam xuất khẩu ra thị trường quốc tế. Dữ liệu được Tổng cục hải quan thống kê dựa trên dữ liệu từ các tờ khai hải quan do doanh nghiệp nộp khi thực hiện hoạt động xuất khẩu.",
                   "frequency": "Hai tuần đầu mỗi tháng",
-                  "last_updated": "2026-09-07T06:54:31.302Z",
+                  "last_updated": "2026-11-06T02:57:24.194Z",
                   "source": "Tổng cục Hải quan - CUSTOM",
                   "note": null,
                   "related_blog": null
@@ -1169,12 +1187,16 @@
                 "yAxis": 1,
                 "data": [
                   [
+                    1790726400000,
+                    12.014947186921564
+                  ],
+                  [
                     1782777600000,
-                    7.478260298761024
+                    6.083830767172738
                   ],
                   [
                     1774915200000,
-                    2.151916539657651
+                    3.5587242918166457
                   ],
                   [
                     1767139200000,
@@ -1182,7 +1204,7 @@
                   ],
                   [
                     1759190400000,
-                    -12.361534333620781
+                    -11.933658540704863
                   ],
                   [
                     1751241600000,
@@ -1210,15 +1232,15 @@
                   ],
                   [
                     1703980800000,
-                    21.646359812623437
+                    21.583968240917233
                   ],
                   [
                     1696032000000,
-                    -1.3108232263449815
+                    -1.310823226344985
                   ],
                   [
                     1688083200000,
-                    -6.472651333805368
+                    -6.472651333805366
                   ],
                   [
                     1680220800000,
@@ -1251,7 +1273,7 @@
                   "unit": "%",
                   "description": "Chỉ số Xuất khẩu khu vực trong nước là một bộ phận quan trọng trong tổng giá trị xuất khẩu của Việt Nam. Chỉ số này phản ánh giá trị hàng hóa và dịch vụ do các doanh nghiệp trong nước sản xuất và xuất khẩu ra thị trường quốc tế. Khu vực trong nước bao gồm các doanh nghiệp thuộc các thành phần kinh tế như doanh nghiệp nhà nước, doanh nghiệp tư nhân, hợp tác xã và các đơn vị sự nghiệp. Dữ liệu được Tổng cục hải quan thống kê dựa trên dữ liệu từ các tờ khai hải quan do doanh nghiệp trong nước nộp khi thực hiện hoạt động xuất khẩu.",
                   "frequency": "Hai tuần đầu mỗi tháng",
-                  "last_updated": "2026-09-07T06:54:31.302Z",
+                  "last_updated": "2026-11-06T02:57:24.194Z",
                   "source": "Tổng cục Hải quan - CUSTOM",
                   "note": null,
                   "related_blog": null
@@ -1270,12 +1292,16 @@
                 "yAxis": 1,
                 "data": [
                   [
+                    1790726400000,
+                    34.872077848524405
+                  ],
+                  [
                     1782777600000,
-                    27.52213901522565
+                    27.694971065775754
                   ],
                   [
                     1774915200000,
-                    24.386668730851223
+                    24.39046815170299
                   ],
                   [
                     1767139200000,
@@ -1283,7 +1309,7 @@
                   ],
                   [
                     1759190400000,
-                    30.89888276557587
+                    30.72859129803004
                   ],
                   [
                     1751241600000,
@@ -1311,15 +1337,15 @@
                   ],
                   [
                     1703980800000,
-                    1.919461161702296
+                    1.919461161702298
                   ],
                   [
                     1696032000000,
-                    -2.5353617175451038
+                    -2.535361717545105
                   ],
                   [
                     1688083200000,
-                    -12.711508073382971
+                    -12.711508073382968
                   ],
                   [
                     1680220800000,
@@ -1352,7 +1378,7 @@
                   "unit": "%",
                   "description": "Chỉ số Xuất khẩu Khu vực trong FDI là một bộ phận quan trọng trong tổng xuất khẩu của Việt Nam, phản ánh giá trị xuất khẩu của các doanh nghiệp có vốn đầu tư nước ngoài (FDI). Dữ liệu được Tổng cục hải quan thống kê dựa trên dữ liệu từ các tờ khai hải quan do doanh nghiệp FDI nộp khi thực hiện hoạt động xuất khẩu.",
                   "frequency": "Hai tuần đầu mỗi tháng",
-                  "last_updated": "2026-09-07T06:54:31.302Z",
+                  "last_updated": "2026-11-06T02:57:24.194Z",
                   "source": "Tổng cục Hải quan - CUSTOM",
                   "note": null,
                   "related_blog": null
@@ -1476,7 +1502,7 @@
                   "unit": "Triệu USD",
                   "description": "Chỉ số Giá trị xuất khẩu của Việt Nam đo lường tổng giá trị hàng hóa và dịch vụ mà Việt Nam xuất khẩu ra thị trường quốc tế. Dữ liệu được Tổng cục hải quan thống kê dựa trên dữ liệu từ các tờ khai hải quan do doanh nghiệp nộp khi thực hiện hoạt động xuất khẩu.",
                   "frequency": "Hai tuần đầu mỗi tháng",
-                  "last_updated": "2026-09-07T06:54:31.302Z",
+                  "last_updated": "2026-11-06T02:57:24.194Z",
                   "source": "Tổng cục Hải quan - CUSTOM",
                   "note": null,
                   "related_blog": null
@@ -1569,7 +1595,7 @@
                   "unit": "Triệu USD",
                   "description": "Chỉ số Xuất khẩu khu vực trong nước là một bộ phận quan trọng trong tổng giá trị xuất khẩu của Việt Nam. Chỉ số này phản ánh giá trị hàng hóa và dịch vụ do các doanh nghiệp trong nước sản xuất và xuất khẩu ra thị trường quốc tế. Khu vực trong nước bao gồm các doanh nghiệp thuộc các thành phần kinh tế như doanh nghiệp nhà nước, doanh nghiệp tư nhân, hợp tác xã và các đơn vị sự nghiệp. Dữ liệu được Tổng cục hải quan thống kê dựa trên dữ liệu từ các tờ khai hải quan do doanh nghiệp trong nước nộp khi thực hiện hoạt động xuất khẩu.",
                   "frequency": "Hai tuần đầu mỗi tháng",
-                  "last_updated": "2026-09-07T06:54:31.302Z",
+                  "last_updated": "2026-11-06T02:57:24.194Z",
                   "source": "Tổng cục Hải quan - CUSTOM",
                   "note": null,
                   "related_blog": null
@@ -1662,7 +1688,7 @@
                   "unit": "Triệu USD",
                   "description": "Chỉ số Xuất khẩu Khu vực trong FDI là một bộ phận quan trọng trong tổng xuất khẩu của Việt Nam, phản ánh giá trị xuất khẩu của các doanh nghiệp có vốn đầu tư nước ngoài (FDI). Dữ liệu được Tổng cục hải quan thống kê dựa trên dữ liệu từ các tờ khai hải quan do doanh nghiệp FDI nộp khi thực hiện hoạt động xuất khẩu.",
                   "frequency": "Hai tuần đầu mỗi tháng",
-                  "last_updated": "2026-09-07T06:54:31.302Z",
+                  "last_updated": "2026-11-06T02:57:24.194Z",
                   "source": "Tổng cục Hải quan - CUSTOM",
                   "note": null,
                   "related_blog": null
@@ -1718,7 +1744,7 @@
                   ],
                   [
                     1703980800000,
-                    -4.6061683586297475
+                    -4.566478431053023
                   ],
                   [
                     1672444800000,
@@ -1779,7 +1805,7 @@
                   "unit": "%",
                   "description": "Chỉ số Giá trị xuất khẩu của Việt Nam đo lường tổng giá trị hàng hóa và dịch vụ mà Việt Nam xuất khẩu ra thị trường quốc tế. Dữ liệu được Tổng cục hải quan thống kê dựa trên dữ liệu từ các tờ khai hải quan do doanh nghiệp nộp khi thực hiện hoạt động xuất khẩu.",
                   "frequency": "Hai tuần đầu mỗi tháng",
-                  "last_updated": "2026-09-07T06:54:31.302Z",
+                  "last_updated": "2026-11-06T02:57:24.194Z",
                   "source": "Tổng cục Hải quan - CUSTOM",
                   "note": null,
                   "related_blog": null
@@ -1807,7 +1833,7 @@
                   ],
                   [
                     1703980800000,
-                    -0.4181691142782995
+                    -0.4331160016887271
                   ],
                   [
                     1672444800000,
@@ -1868,7 +1894,7 @@
                   "unit": "%",
                   "description": "Chỉ số Xuất khẩu khu vực trong nước là một bộ phận quan trọng trong tổng giá trị xuất khẩu của Việt Nam. Chỉ số này phản ánh giá trị hàng hóa và dịch vụ do các doanh nghiệp trong nước sản xuất và xuất khẩu ra thị trường quốc tế. Khu vực trong nước bao gồm các doanh nghiệp thuộc các thành phần kinh tế như doanh nghiệp nhà nước, doanh nghiệp tư nhân, hợp tác xã và các đơn vị sự nghiệp. Dữ liệu được Tổng cục hải quan thống kê dựa trên dữ liệu từ các tờ khai hải quan do doanh nghiệp trong nước nộp khi thực hiện hoạt động xuất khẩu.",
                   "frequency": "Hai tuần đầu mỗi tháng",
-                  "last_updated": "2026-09-07T06:54:31.302Z",
+                  "last_updated": "2026-11-06T02:57:24.194Z",
                   "source": "Tổng cục Hải quan - CUSTOM",
                   "note": null,
                   "related_blog": null
@@ -1896,7 +1922,7 @@
                   ],
                   [
                     1703980800000,
-                    -6.035833866308494
+                    -6.049135557624807
                   ],
                   [
                     1672444800000,
@@ -1957,7 +1983,7 @@
                   "unit": "%",
                   "description": "Chỉ số Xuất khẩu Khu vực trong FDI là một bộ phận quan trọng trong tổng xuất khẩu của Việt Nam, phản ánh giá trị xuất khẩu của các doanh nghiệp có vốn đầu tư nước ngoài (FDI). Dữ liệu được Tổng cục hải quan thống kê dựa trên dữ liệu từ các tờ khai hải quan do doanh nghiệp FDI nộp khi thực hiện hoạt động xuất khẩu.",
                   "frequency": "Hai tuần đầu mỗi tháng",
-                  "last_updated": "2026-09-07T06:54:31.302Z",
+                  "last_updated": "2026-11-06T02:57:24.194Z",
                   "source": "Tổng cục Hải quan - CUSTOM",
                   "note": null,
                   "related_blog": null

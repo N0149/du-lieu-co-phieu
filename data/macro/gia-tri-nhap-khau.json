@@ -18,15 +18,17 @@
     ],
     "unit": "Triệu USD",
     "description": "Kim ngạch nhập khẩu hàng hóa phục vụ sản xuất và tiêu dùng.",
-    "updatedAt": "2026-09-19T10:14:39.400Z",
-    "latestPeriod": "08-2026",
-    "latestValue": 54907.979099
+    "updatedAt": "2026-11-07T06:37:12.010Z",
+    "latestPeriod": "10-2026",
+    "latestValue": 57363.689155
   },
   "datasets": {
     "monthly": {
       "value": {
         "title": "Giá Trị Nhập Khẩu",
         "headers": [
+          "10-2026",
+          "09-2026",
           "08-2026",
           "07-2026",
           "06-2026",
@@ -43,9 +45,7 @@
           "07-2025",
           "06-2025",
           "05-2025",
-          "04-2025",
-          "03-2025",
-          "02-2025"
+          "04-2025"
         ],
         "parent": [
           {
@@ -64,8 +64,16 @@
                 "yAxis": 16,
                 "data": [
                   [
+                    1793404800000,
+                    57363.689155
+                  ],
+                  [
+                    1790726400000,
+                    58178.183727180534
+                  ],
+                  [
                     1788134400000,
-                    54907.979099
+                    54911.84994245283
                   ],
                   [
                     1785456000000,
@@ -73,27 +81,27 @@
                   ],
                   [
                     1782777600000,
-                    53410.23366446749
+                    53647.717603
                   ],
                   [
                     1780185600000,
-                    52366.157430776395
+                    52382.850704
                   ],
                   [
                     1777507200000,
-                    50277.310658386035
+                    50635.352386
                   ],
                   [
                     1774915200000,
-                    47844.115711277525
+                    47194.700855
                   ],
                   [
                     1772236800000,
-                    34244.998314497054
+                    34341.931512
                   ],
                   [
                     1769817600000,
-                    45242.75511359549
+                    45298.682977
                   ],
                   [
                     1767139200000,
@@ -130,14 +138,6 @@
                   [
                     1745971200000,
                     36821.091101
-                  ],
-                  [
-                    1743379200000,
-                    36847.953743
-                  ],
-                  [
-                    1740700800000,
-                    32661.083835
                   ]
                 ],
                 "time_frame": "monthly",
@@ -146,7 +146,7 @@
                   "unit": "Triệu USD",
                   "description": "Chỉ số Giá trị nhập khẩu của Việt Nam đo lường tổng giá trị hàng hóa và dịch vụ mà Việt Nam nhập khẩu từ thị trường quốc tế. Dữ liệu được Tổng cục hải quan thống kê dựa trên dữ liệu từ các tờ khai hải quan do doanh nghiệp nộp khi thực hiện hoạt động nhập khẩu.",
                   "frequency": "Hai tuần đầu mỗi tháng",
-                  "last_updated": "2026-09-07T06:54:31.302Z",
+                  "last_updated": "2026-11-06T02:57:24.194Z",
                   "source": "Tổng cục Hải quan - CUSTOM",
                   "note": null,
                   "related_blog": null
@@ -165,8 +165,16 @@
                 "yAxis": 16,
                 "data": [
                   [
+                    1793404800000,
+                    13452.738076000001
+                  ],
+                  [
+                    1790726400000,
+                    13095.07173642078
+                  ],
+                  [
                     1788134400000,
-                    12814.794283999996
+                    12827.4296651419
                   ],
                   [
                     1785456000000,
@@ -174,27 +182,27 @@
                   ],
                   [
                     1782777600000,
-                    14186.42322713903
+                    14082.493744
                   ],
                   [
                     1780185600000,
-                    13060.402425147593
+                    13143.364009999998
                   ],
                   [
                     1777507200000,
-                    14808.493242361343
+                    14756.001347999998
                   ],
                   [
                     1774915200000,
-                    13999.952372990203
+                    13928.490841000006
                   ],
                   [
                     1772236800000,
-                    9839.559641069813
+                    9664.541884000002
                   ],
                   [
                     1769817600000,
-                    12454.86235129202
+                    12882.982615999998
                   ],
                   [
                     1767139200000,
@@ -231,14 +239,6 @@
                   [
                     1745971200000,
                     11450.259487
-                  ],
-                  [
-                    1743379200000,
-                    11224.476171
-                  ],
-                  [
-                    1740700800000,
-                    9848.504463
                   ]
                 ],
                 "time_frame": "monthly",
@@ -247,7 +247,7 @@
                   "unit": "Triệu USD",
                   "description": "Chỉ số Nhập khẩu khu vực trong nước là một bộ phận quan trọng trong tổng giá trị nhập khẩu của Việt Nam. Chỉ số này phản ánh giá trị hàng hóa và dịch vụ do các doanh nghiệp trong nước nhập khẩu từ thị trường quốc tế để phục vụ cho hoạt động sản xuất và thương mại. Dữ liệu được Tổng cục hải quan thống kê dựa trên dữ liệu từ các tờ khai hải quan do doanh nghiệp trong nước nộp khi thực hiện hoạt động nhập khẩu.",
                   "frequency": "Hai tuần đầu mỗi tháng",
-                  "last_updated": "2026-09-07T06:54:31.302Z",
+                  "last_updated": "2026-11-06T02:57:24.194Z",
                   "source": "Tổng cục Hải quan - CUSTOM",
                   "note": null,
                   "related_blog": null
@@ -266,8 +266,16 @@
                 "yAxis": 16,
                 "data": [
                   [
+                    1793404800000,
+                    43910.951079
+                  ],
+                  [
+                    1790726400000,
+                    45083.11199075975
+                  ],
+                  [
                     1788134400000,
-                    42093.184815
+                    42084.42027731093
                   ],
                   [
                     1785456000000,
@@ -275,27 +283,27 @@
                   ],
                   [
                     1782777600000,
-                    39223.81043732846
+                    39565.223859
                   ],
                   [
                     1780185600000,
-                    39305.75500562883
+                    39239.486694
                   ],
                   [
                     1777507200000,
-                    35468.817416024656
+                    35879.351038
                   ],
                   [
                     1774915200000,
-                    33844.16333828736
+                    33266.210014
                   ],
                   [
                     1772236800000,
-                    24405.43867342722
+                    24677.389628
                   ],
                   [
                     1769817600000,
-                    32787.89276230348
+                    32415.700361
                   ],
                   [
                     1767139200000,
@@ -332,14 +340,6 @@
                   [
                     1745971200000,
                     25370.831614
-                  ],
-                  [
-                    1743379200000,
-                    25623.477572
-                  ],
-                  [
-                    1740700800000,
-                    22812.579372
                   ]
                 ],
                 "time_frame": "monthly",
@@ -348,7 +348,7 @@
                   "unit": "Triệu USD",
                   "description": "Chỉ số Nhập khẩu Khu vực trong FDI là một bộ phận quan trọng trong tổng nhập khẩu của Việt Nam, phản ánh giá trị nhập khẩu của các doanh nghiệp có vốn đầu tư nước ngoài (FDI). Hàng hóa được khu vực FDI nhập khẩu bao gồm nguyên vật liệu, máy móc thiết bị hoặc hàng hóa trung gian chờ gia công trước khi xuất khẩu. Dữ liệu được Tổng cục hải quan thống kê dựa trên dữ liệu từ các tờ khai hải quan do doanh nghiệp FDI nộp khi thực hiện hoạt động nhập khẩu.",
                   "frequency": "Hai tuần đầu mỗi tháng",
-                  "last_updated": "2026-09-07T06:54:31.302Z",
+                  "last_updated": "2026-11-06T02:57:24.194Z",
                   "source": "Tổng cục Hải quan - CUSTOM",
                   "note": null,
                   "related_blog": null
@@ -361,6 +361,8 @@
       "yoy": {
         "title": "Giá Trị Nhập Khẩu",
         "headers": [
+          "10-2026",
+          "09-2026",
           "08-2026",
           "07-2026",
           "06-2026",
@@ -377,9 +379,7 @@
           "07-2025",
           "06-2025",
           "05-2025",
-          "04-2025",
-          "03-2025",
-          "02-2025"
+          "04-2025"
         ],
         "parent": [
           {
@@ -398,8 +398,16 @@
                 "yAxis": 1,
                 "data": [
                   [
+                    1793404800000,
+                    43.090240510639006
+                  ],
+                  [
+                    1790726400000,
+                    45.7774637049698
+                  ],
+                  [
                     1788134400000,
-                    37.90146343118996
+                    37.91118505973316
                   ],
                   [
                     1785456000000,
@@ -407,27 +415,27 @@
                   ],
                   [
                     1782777600000,
-                    45.12912532220814
+                    45.77442930072688
                   ],
                   [
                     1780185600000,
-                    34.370698022816065
+                    34.41353268713732
                   ],
                   [
                     1777507200000,
-                    36.544869136212505
+                    37.51725131421983
                   ],
                   [
                     1774915200000,
-                    29.841988092395678
+                    28.07957039938907
                   ],
                   [
                     1772236800000,
-                    4.849546596490197
+                    5.146331596010251
                   ],
                   [
                     1769817600000,
-                    50.17705867688552
+                    50.36270347245738
                   ],
                   [
                     1767139200000,
@@ -464,14 +472,6 @@
                   [
                     1745971200000,
                     22.685661904658684
-                  ],
-                  [
-                    1743379200000,
-                    18.824908821257484
-                  ],
-                  [
-                    1740700800000,
-                    40.25629947561358
                   ]
                 ],
                 "time_frame": "monthly",
@@ -480,7 +480,7 @@
                   "unit": "%",
                   "description": "Chỉ số Giá trị nhập khẩu của Việt Nam đo lường tổng giá trị hàng hóa và dịch vụ mà Việt Nam nhập khẩu từ thị trường quốc tế. Dữ liệu được Tổng cục hải quan thống kê dựa trên dữ liệu từ các tờ khai hải quan do doanh nghiệp nộp khi thực hiện hoạt động nhập khẩu.",
                   "frequency": "Hai tuần đầu mỗi tháng",
-                  "last_updated": "2026-09-07T06:54:31.302Z",
+                  "last_updated": "2026-11-06T02:57:24.194Z",
                   "source": "Tổng cục Hải quan - CUSTOM",
                   "note": null,
                   "related_blog": null
@@ -499,36 +499,44 @@
                 "yAxis": 1,
                 "data": [
                   [
+                    1793404800000,
+                    17.647819308045335
+                  ],
+                  [
+                    1790726400000,
+                    21.70229248616223
+                  ],
+                  [
                     1788134400000,
-                    19.732469921952216
+                    19.85052608102879
                   ],
                   [
                     1785456000000,
-                    23.764136002066753
+                    23.758456622792174
                   ],
                   [
                     1782777600000,
-                    32.3473293740701
+                    31.377755203297802
                   ],
                   [
                     1780185600000,
-                    21.17394022921686
+                    21.943654805918563
                   ],
                   [
                     1777507200000,
-                    29.328887779129364
+                    28.870453676208452
                   ],
                   [
                     1774915200000,
-                    24.72699981457516
+                    24.09034175676015
                   ],
                   [
                     1772236800000,
-                    -0.0908241648647427
+                    -1.8679240050215662
                   ],
                   [
                     1769817600000,
-                    37.165283657111445
+                    41.88016816500291
                   ],
                   [
                     1767139200000,
@@ -565,14 +573,6 @@
                   [
                     1745971200000,
                     -0.40682946458783575
-                  ],
-                  [
-                    1743379200000,
-                    -3.564723205152535
-                  ],
-                  [
-                    1740700800000,
-                    23.942423218173335
                   ]
                 ],
                 "time_frame": "monthly",
@@ -581,7 +581,7 @@
                   "unit": "%",
                   "description": "Chỉ số Nhập khẩu khu vực trong nước là một bộ phận quan trọng trong tổng giá trị nhập khẩu của Việt Nam. Chỉ số này phản ánh giá trị hàng hóa và dịch vụ do các doanh nghiệp trong nước nhập khẩu từ thị trường quốc tế để phục vụ cho hoạt động sản xuất và thương mại. Dữ liệu được Tổng cục hải quan thống kê dựa trên dữ liệu từ các tờ khai hải quan do doanh nghiệp trong nước nộp khi thực hiện hoạt động nhập khẩu.",
                   "frequency": "Hai tuần đầu mỗi tháng",
-                  "last_updated": "2026-09-07T06:54:31.302Z",
+                  "last_updated": "2026-11-06T02:57:24.194Z",
                   "source": "Tổng cục Hải quan - CUSTOM",
                   "note": null,
                   "related_blog": null
@@ -600,8 +600,16 @@
                 "yAxis": 1,
                 "data": [
                   [
+                    1793404800000,
+                    53.24322399419387
+                  ],
+                  [
+                    1790726400000,
+                    54.66446327729264
+                  ],
+                  [
                     1788134400000,
-                    44.580736734771094
+                    44.55063249528921
                   ],
                   [
                     1785456000000,
@@ -609,27 +617,27 @@
                   ],
                   [
                     1782777600000,
-                    50.38198302431057
+                    51.69094375019711
                   ],
                   [
                     1780185600000,
-                    39.415805760526176
+                    39.18075493754109
                   ],
                   [
                     1777507200000,
-                    39.801556195156174
+                    41.41968849850884
                   ],
                   [
                     1774915200000,
-                    32.08263102924991
+                    29.827069415244306
                   ],
                   [
                     1772236800000,
-                    6.982372643850539
+                    8.174482269588749
                   ],
                   [
                     1769817600000,
-                    55.79089623115
+                    54.02243284773432
                   ],
                   [
                     1767139200000,
@@ -666,14 +674,6 @@
                   [
                     1745971200000,
                     37.02472577348328
-                  ],
-                  [
-                    1743379200000,
-                    32.27815759732081
-                  ],
-                  [
-                    1740700800000,
-                    48.70641771490386
                   ]
                 ],
                 "time_frame": "monthly",
@@ -682,7 +682,7 @@
                   "unit": "%",
                   "description": "Chỉ số Nhập khẩu Khu vực trong FDI là một bộ phận quan trọng trong tổng nhập khẩu của Việt Nam, phản ánh giá trị nhập khẩu của các doanh nghiệp có vốn đầu tư nước ngoài (FDI). Hàng hóa được khu vực FDI nhập khẩu bao gồm nguyên vật liệu, máy móc thiết bị hoặc hàng hóa trung gian chờ gia công trước khi xuất khẩu. Dữ liệu được Tổng cục hải quan thống kê dựa trên dữ liệu từ các tờ khai hải quan do doanh nghiệp FDI nộp khi thực hiện hoạt động nhập khẩu.",
                   "frequency": "Hai tuần đầu mỗi tháng",
-                  "last_updated": "2026-09-07T06:54:31.302Z",
+                  "last_updated": "2026-11-06T02:57:24.194Z",
                   "source": "Tổng cục Hải quan - CUSTOM",
                   "note": null,
                   "related_blog": null
@@ -697,6 +697,7 @@
       "value": {
         "title": "Giá Trị Nhập Khẩu",
         "headers": [
+          "09-2026",
           "06-2026",
           "03-2026",
           "12-2025",
@@ -734,12 +735,16 @@
                 "yAxis": 16,
                 "data": [
                   [
+                    1790726400000,
+                    169754.61478315244
+                  ],
+                  [
                     1782777600000,
-                    156053.70175362992
+                    156665.920693
                   ],
                   [
                     1774915200000,
-                    127331.86913937007
+                    126835.315344
                   ],
                   [
                     1767139200000,
@@ -816,7 +821,7 @@
                   "unit": "%",
                   "description": "Chỉ số Giá trị nhập khẩu của Việt Nam đo lường tổng giá trị hàng hóa và dịch vụ mà Việt Nam nhập khẩu từ thị trường quốc tế. Dữ liệu được Tổng cục hải quan thống kê dựa trên dữ liệu từ các tờ khai hải quan do doanh nghiệp nộp khi thực hiện hoạt động nhập khẩu.",
                   "frequency": "Hai tuần đầu mỗi tháng",
-                  "last_updated": "2026-09-07T06:54:31.302Z",
+                  "last_updated": "2026-11-06T02:57:24.194Z",
                   "source": "Tổng cục Hải quan - CUSTOM",
                   "note": null,
                   "related_blog": null
@@ -835,12 +840,16 @@
                 "yAxis": 16,
                 "data": [
                   [
+                    1790726400000,
+                    39722.33219430783
+                  ],
+                  [
                     1782777600000,
-                    42055.318894647964
+                    41981.859101999995
                   ],
                   [
                     1774915200000,
-                    36294.374365352036
+                    36476.015341000006
                   ],
                   [
                     1767139200000,
@@ -848,7 +857,7 @@
                   ],
                   [
                     1759190400000,
-                    32612.883102350617
+                    32613.39479
                   ],
                   [
                     1751241600000,
@@ -917,7 +926,7 @@
                   "unit": "%",
                   "description": "Chỉ số Nhập khẩu khu vực trong nước là một bộ phận quan trọng trong tổng giá trị nhập khẩu của Việt Nam. Chỉ số này phản ánh giá trị hàng hóa và dịch vụ do các doanh nghiệp trong nước nhập khẩu từ thị trường quốc tế để phục vụ cho hoạt động sản xuất và thương mại. Dữ liệu được Tổng cục hải quan thống kê dựa trên dữ liệu từ các tờ khai hải quan do doanh nghiệp trong nước nộp khi thực hiện hoạt động nhập khẩu.",
                   "frequency": "Hai tuần đầu mỗi tháng",
-                  "last_updated": "2026-09-07T06:54:31.302Z",
+                  "last_updated": "2026-11-06T02:57:24.194Z",
                   "source": "Tổng cục Hải quan - CUSTOM",
                   "note": null,
                   "related_blog": null
@@ -936,12 +945,16 @@
                 "yAxis": 16,
                 "data": [
                   [
+                    1790726400000,
+                    130032.2825888446
+                  ],
+                  [
                     1782777600000,
-                    113998.38285898195
+                    114684.061591
                   ],
                   [
                     1774915200000,
-                    91037.49477401807
+                    90359.300003
                   ],
                   [
                     1767139200000,
@@ -1018,7 +1031,7 @@
                   "unit": "%",
                   "description": "Chỉ số Nhập khẩu Khu vực trong FDI là một bộ phận quan trọng trong tổng nhập khẩu của Việt Nam, phản ánh giá trị nhập khẩu của các doanh nghiệp có vốn đầu tư nước ngoài (FDI). Hàng hóa được khu vực FDI nhập khẩu bao gồm nguyên vật liệu, máy móc thiết bị hoặc hàng hóa trung gian chờ gia công trước khi xuất khẩu. Dữ liệu được Tổng cục hải quan thống kê dựa trên dữ liệu từ các tờ khai hải quan do doanh nghiệp FDI nộp khi thực hiện hoạt động nhập khẩu.",
                   "frequency": "Hai tuần đầu mỗi tháng",
-                  "last_updated": "2026-09-07T06:54:31.302Z",
+                  "last_updated": "2026-11-06T02:57:24.194Z",
                   "source": "Tổng cục Hải quan - CUSTOM",
                   "note": null,
                   "related_blog": null
@@ -1031,6 +1044,7 @@
       "yoy": {
         "title": "Giá Trị Nhập Khẩu",
         "headers": [
+          "09-2026",
           "06-2026",
           "03-2026",
           "12-2025",
@@ -1068,12 +1082,16 @@
                 "yAxis": 1,
                 "data": [
                   [
+                    1790726400000,
+                    41.70336248045084
+                  ],
+                  [
                     1782777600000,
-                    38.598134906068765
+                    39.141873389663495
                   ],
                   [
                     1774915200000,
-                    27.797930902310746
+                    27.299559614282877
                   ],
                   [
                     1767139200000,
@@ -1109,11 +1127,11 @@
                   ],
                   [
                     1703980800000,
-                    6.148073833896928
+                    6.148073833896929
                   ],
                   [
                     1696032000000,
-                    -5.261782602532595
+                    -5.322586838358972
                   ],
                   [
                     1688083200000,
@@ -1150,7 +1168,7 @@
                   "unit": "%",
                   "description": "Chỉ số Giá trị nhập khẩu của Việt Nam đo lường tổng giá trị hàng hóa và dịch vụ mà Việt Nam nhập khẩu từ thị trường quốc tế. Dữ liệu được Tổng cục hải quan thống kê dựa trên dữ liệu từ các tờ khai hải quan do doanh nghiệp nộp khi thực hiện hoạt động nhập khẩu.",
                   "frequency": "Hai tuần đầu mỗi tháng",
-                  "last_updated": "2026-09-07T06:54:31.302Z",
+                  "last_updated": "2026-11-06T02:57:24.194Z",
                   "source": "Tổng cục Hải quan - CUSTOM",
                   "note": null,
                   "related_blog": null
@@ -1169,12 +1187,16 @@
                 "yAxis": 1,
                 "data": [
                   [
+                    1790726400000,
+                    21.79760018876537
+                  ],
+                  [
                     1782777600000,
-                    27.64315071228363
+                    27.420191057459775
                   ],
                   [
                     1774915200000,
-                    20.3667106440827
+                    20.969105013437083
                   ],
                   [
                     1767139200000,
@@ -1182,7 +1204,7 @@
                   ],
                   [
                     1759190400000,
-                    -6.777802518501938
+                    -6.776339886481648
                   ],
                   [
                     1751241600000,
@@ -1210,15 +1232,15 @@
                   ],
                   [
                     1703980800000,
-                    7.6769439400302675
+                    7.6769439400302595
                   ],
                   [
                     1696032000000,
-                    1.5324483076768036
+                    1.5324483076768072
                   ],
                   [
                     1688083200000,
-                    -21.667499805585077
+                    -21.667499805585074
                   ],
                   [
                     1680220800000,
@@ -1251,7 +1273,7 @@
                   "unit": "%",
                   "description": "Chỉ số Nhập khẩu khu vực trong nước là một bộ phận quan trọng trong tổng giá trị nhập khẩu của Việt Nam. Chỉ số này phản ánh giá trị hàng hóa và dịch vụ do các doanh nghiệp trong nước nhập khẩu từ thị trường quốc tế để phục vụ cho hoạt động sản xuất và thương mại. Dữ liệu được Tổng cục hải quan thống kê dựa trên dữ liệu từ các tờ khai hải quan do doanh nghiệp trong nước nộp khi thực hiện hoạt động nhập khẩu.",
                   "frequency": "Hai tuần đầu mỗi tháng",
-                  "last_updated": "2026-09-07T06:54:31.302Z",
+                  "last_updated": "2026-11-06T02:57:24.194Z",
                   "source": "Tổng cục Hải quan - CUSTOM",
                   "note": null,
                   "related_blog": null
@@ -1270,12 +1292,16 @@
                 "yAxis": 1,
                 "data": [
                   [
+                    1790726400000,
+                    49.149759584010134
+                  ],
+                  [
                     1782777600000,
-                    43.12989415266376
+                    43.99079342048828
                   ],
                   [
                     1774915200000,
-                    31.022857428273138
+                    30.046786887093646
                   ],
                   [
                     1767139200000,
@@ -1311,11 +1337,11 @@
                   ],
                   [
                     1703980800000,
-                    5.291086566728254
+                    5.291086566728262
                   ],
                   [
                     1696032000000,
-                    -8.876836941449628
+                    -8.876836941449625
                   ],
                   [
                     1688083200000,
@@ -1352,7 +1378,7 @@
                   "unit": "%",
                   "description": "Chỉ số Nhập khẩu Khu vực trong FDI là một bộ phận quan trọng trong tổng nhập khẩu của Việt Nam, phản ánh giá trị nhập khẩu của các doanh nghiệp có vốn đầu tư nước ngoài (FDI). Hàng hóa được khu vực FDI nhập khẩu bao gồm nguyên vật liệu, máy móc thiết bị hoặc hàng hóa trung gian chờ gia công trước khi xuất khẩu. Dữ liệu được Tổng cục hải quan thống kê dựa trên dữ liệu từ các tờ khai hải quan do doanh nghiệp FDI nộp khi thực hiện hoạt động nhập khẩu.",
                   "frequency": "Hai tuần đầu mỗi tháng",
-                  "last_updated": "2026-09-07T06:54:31.302Z",
+                  "last_updated": "2026-11-06T02:57:24.194Z",
                   "source": "Tổng cục Hải quan - CUSTOM",
                   "note": null,
                   "related_blog": null
@@ -1476,7 +1502,7 @@
                   "unit": "Triệu USD",
                   "description": "Chỉ số Giá trị nhập khẩu của Việt Nam đo lường tổng giá trị hàng hóa và dịch vụ mà Việt Nam nhập khẩu từ thị trường quốc tế. Dữ liệu được Tổng cục hải quan thống kê dựa trên dữ liệu từ các tờ khai hải quan do doanh nghiệp nộp khi thực hiện hoạt động nhập khẩu.",
                   "frequency": "Hai tuần đầu mỗi tháng",
-                  "last_updated": "2026-09-07T06:54:31.302Z",
+                  "last_updated": "2026-11-06T02:57:24.194Z",
                   "source": "Tổng cục Hải quan - CUSTOM",
                   "note": null,
                   "related_blog": null
@@ -1569,7 +1595,7 @@
                   "unit": "Triệu USD",
                   "description": "Chỉ số Nhập khẩu khu vực trong nước là một bộ phận quan trọng trong tổng giá trị nhập khẩu của Việt Nam. Chỉ số này phản ánh giá trị hàng hóa và dịch vụ do các doanh nghiệp trong nước nhập khẩu từ thị trường quốc tế để phục vụ cho hoạt động sản xuất và thương mại. Dữ liệu được Tổng cục hải quan thống kê dựa trên dữ liệu từ các tờ khai hải quan do doanh nghiệp trong nước nộp khi thực hiện hoạt động nhập khẩu.",
                   "frequency": "Hai tuần đầu mỗi tháng",
-                  "last_updated": "2026-09-07T06:54:31.302Z",
+                  "last_updated": "2026-11-06T02:57:24.194Z",
                   "source": "Tổng cục Hải quan - CUSTOM",
                   "note": null,
                   "related_blog": null
@@ -1662,7 +1688,7 @@
                   "unit": "Triệu USD",
                   "description": "Chỉ số Nhập khẩu Khu vực trong FDI là một bộ phận quan trọng trong tổng nhập khẩu của Việt Nam, phản ánh giá trị nhập khẩu của các doanh nghiệp có vốn đầu tư nước ngoài (FDI). Hàng hóa được khu vực FDI nhập khẩu bao gồm nguyên vật liệu, máy móc thiết bị hoặc hàng hóa trung gian chờ gia công trước khi xuất khẩu. Dữ liệu được Tổng cục hải quan thống kê dựa trên dữ liệu từ các tờ khai hải quan do doanh nghiệp FDI nộp khi thực hiện hoạt động nhập khẩu.",
                   "frequency": "Hai tuần đầu mỗi tháng",
-                  "last_updated": "2026-09-07T06:54:31.302Z",
+                  "last_updated": "2026-11-06T02:57:24.194Z",
                   "source": "Tổng cục Hải quan - CUSTOM",
                   "note": null,
                   "related_blog": null
@@ -1779,7 +1805,7 @@
                   "unit": "%",
                   "description": "Chỉ số Giá trị nhập khẩu của Việt Nam đo lường tổng giá trị hàng hóa và dịch vụ mà Việt Nam nhập khẩu từ thị trường quốc tế. Dữ liệu được Tổng cục hải quan thống kê dựa trên dữ liệu từ các tờ khai hải quan do doanh nghiệp nộp khi thực hiện hoạt động nhập khẩu.",
                   "frequency": "Hai tuần đầu mỗi tháng",
-                  "last_updated": "2026-09-07T06:54:31.302Z",
+                  "last_updated": "2026-11-06T02:57:24.194Z",
                   "source": "Tổng cục Hải quan - CUSTOM",
                   "note": null,
                   "related_blog": null
@@ -1868,7 +1894,7 @@
                   "unit": "%",
                   "description": "Chỉ số Nhập khẩu khu vực trong nước là một bộ phận quan trọng trong tổng giá trị nhập khẩu của Việt Nam. Chỉ số này phản ánh giá trị hàng hóa và dịch vụ do các doanh nghiệp trong nước nhập khẩu từ thị trường quốc tế để phục vụ cho hoạt động sản xuất và thương mại. Dữ liệu được Tổng cục hải quan thống kê dựa trên dữ liệu từ các tờ khai hải quan do doanh nghiệp trong nước nộp khi thực hiện hoạt động nhập khẩu.",
                   "frequency": "Hai tuần đầu mỗi tháng",
-                  "last_updated": "2026-09-07T06:54:31.302Z",
+                  "last_updated": "2026-11-06T02:57:24.194Z",
                   "source": "Tổng cục Hải quan - CUSTOM",
                   "note": null,
                   "related_blog": null
@@ -1957,7 +1983,7 @@
                   "unit": "%",
                   "description": "Chỉ số Nhập khẩu Khu vực trong FDI là một bộ phận quan trọng trong tổng nhập khẩu của Việt Nam, phản ánh giá trị nhập khẩu của các doanh nghiệp có vốn đầu tư nước ngoài (FDI). Hàng hóa được khu vực FDI nhập khẩu bao gồm nguyên vật liệu, máy móc thiết bị hoặc hàng hóa trung gian chờ gia công trước khi xuất khẩu. Dữ liệu được Tổng cục hải quan thống kê dựa trên dữ liệu từ các tờ khai hải quan do doanh nghiệp FDI nộp khi thực hiện hoạt động nhập khẩu.",
                   "frequency": "Hai tuần đầu mỗi tháng",
-                  "last_updated": "2026-09-07T06:54:31.302Z",
+                  "last_updated": "2026-11-06T02:57:24.194Z",
                   "source": "Tổng cục Hải quan - CUSTOM",
                   "note": null,
                   "related_blog": null

@@ -18,15 +18,17 @@
     ],
     "unit": "Tỷ VND",
     "description": "Quy mô tiền gửi của các tổ chức kinh tế và dân cư vào hệ thống ngân hàng.",
-    "updatedAt": "2026-09-19T10:14:28.067Z",
-    "latestPeriod": "06-2026",
-    "latestValue": 17440361
+    "updatedAt": "2026-11-07T06:37:00.375Z",
+    "latestPeriod": "08-2026",
+    "latestValue": 17771452
   },
   "datasets": {
     "monthly": {
       "value": {
         "title": "Tiền gửi",
         "headers": [
+          "08-2026",
+          "07-2026",
           "06-2026",
           "05-2026",
           "04-2026",
@@ -41,9 +43,7 @@
           "07-2025",
           "06-2025",
           "05-2025",
-          "04-2025",
-          "03-2025",
-          "02-2025"
+          "04-2025"
         ],
         "parent": [
           {
@@ -61,6 +61,14 @@
                 "dateType": "thang",
                 "yAxis": 17,
                 "data": [
+                  [
+                    1788134400000,
+                    17771452
+                  ],
+                  [
+                    1785456000000,
+                    17461327
+                  ],
                   [
                     1782777600000,
                     17440361
@@ -120,14 +128,6 @@
                   [
                     1745971200000,
                     14856774
-                  ],
-                  [
-                    1743379200000,
-                    14687694
-                  ],
-                  [
-                    1740700800000,
-                    14431146
                   ]
                 ],
                 "time_frame": "monthly",
@@ -136,7 +136,7 @@
                   "unit": "Tỷ VND",
                   "description": "Tổng tiền gửi là tổng số tiền mà các cá nhân, tổ chức kinh tế (doanh nghiệp, tổ chức khác) và các thực thể khác gửi tại các tổ chức tín dụng (ngân hàng, tổ chức tài chính) trong hệ thống ngân hàng.",
                   "frequency": "Độ trễ từ 1-3 tháng (ngày công bố không cố định)",
-                  "last_updated": "2026-09-17T08:48:53.624Z",
+                  "last_updated": "2026-10-16T09:36:39.571Z",
                   "source": "Ngân hàng Nhà nước - SBV",
                   "note": "Dữ liệu được Wigroup điều chỉnh lịch sử khi SBV thay đổi phương pháp luận (tháng 10/2025).",
                   "related_blog": null
@@ -154,6 +154,14 @@
                 "dateType": "thang",
                 "yAxis": 17,
                 "data": [
+                  [
+                    1788134400000,
+                    6337186
+                  ],
+                  [
+                    1785456000000,
+                    6240841
+                  ],
                   [
                     1782777600000,
                     6371536
@@ -213,14 +221,6 @@
                   [
                     1745971200000,
                     5197943
-                  ],
-                  [
-                    1743379200000,
-                    5126425
-                  ],
-                  [
-                    1740700800000,
-                    5018701
                   ]
                 ],
                 "time_frame": "monthly",
@@ -229,7 +229,7 @@
                   "unit": "Tỷ VND",
                   "description": "Chỉ số tiền gửi của tổ chức kinh tế (TCKT) tại Việt Nam là tổng lượng tiền mà các tổ chức kinh tế, doanh nghiệp, cơ sở kinh doanh,... đang gửi tiết kiệm tại các ngân hàng. Nó thể hiện khả năng thu hút vốn tiết kiệm từ các doanh nghiệp vào hệ thống ngân hàng, ngoài ra còn phản ánh mức độ tin tưởng của doanh nghiệp vào nền kinh tế và hệ thống tài chính của các ngân hàng. Dữ liệu được thống kê hàng tháng từ báo cáo của SBV, công bố trễ từ 2-3 tháng.",
                   "frequency": "Độ trễ từ 1-3 tháng (ngày công bố không cố định)",
-                  "last_updated": "2026-09-17T08:48:53.651Z",
+                  "last_updated": "2026-10-16T09:36:39.571Z",
                   "source": "Ngân hàng Nhà nước - SBV",
                   "note": "Dữ liệu được Wigroup điều chỉnh lịch sử khi SBV thay đổi phương pháp luận (tháng 10/2025).",
                   "related_blog": null
@@ -247,6 +247,14 @@
                 "dateType": "thang",
                 "yAxis": 17,
                 "data": [
+                  [
+                    1788134400000,
+                    11434266
+                  ],
+                  [
+                    1785456000000,
+                    11220486
+                  ],
                   [
                     1782777600000,
                     11068825
@@ -306,14 +314,6 @@
                   [
                     1745971200000,
                     9777980
-                  ],
-                  [
-                    1743379200000,
-                    9690224
-                  ],
-                  [
-                    1740700800000,
-                    9555564
                   ]
                 ],
                 "time_frame": "monthly",
@@ -322,7 +322,7 @@
                   "unit": "Tỷ VND",
                   "description": "Chỉ số tiền gửi của dân cư tại Việt Nam là tổng lượng tiền mà các cá nhân, hộ gia đình,... đang gửi tiết kiệm tại các ngân hàng. Thể hiện khả năng thu hút vốn tiết kiệm từ các hộ gia đình và cá nhân vào hệ thống ngân hàng và phản ánh mức độ tin tưởng của dân cư vào nền kinh tế và hệ thống tài chính của các ngân hàng. Dữ liệu được thống kê hàng tháng từ báo cáo của SBV, công bố trễ từ 2-3 tháng.",
                   "frequency": "Độ trễ từ 1-3 tháng (ngày công bố không cố định)",
-                  "last_updated": "2026-09-17T08:48:53.639Z",
+                  "last_updated": "2026-10-16T09:36:39.571Z",
                   "source": "Ngân hàng Nhà nước - SBV",
                   "note": "Dữ liệu được Wigroup điều chỉnh lịch sử khi SBV thay đổi phương pháp luận (tháng 10/2025).",
                   "related_blog": null
@@ -335,6 +335,8 @@
       "yoy": {
         "title": "Tiền gửi",
         "headers": [
+          "08-2026",
+          "07-2026",
           "06-2026",
           "05-2026",
           "04-2026",
@@ -349,9 +351,7 @@
           "07-2025",
           "06-2025",
           "05-2025",
-          "04-2025",
-          "03-2025",
-          "02-2025"
+          "04-2025"
         ],
         "parent": [
           {
@@ -369,6 +369,14 @@
                 "dateType": "thang",
                 "yAxis": 1,
                 "data": [
+                  [
+                    1788134400000,
+                    13.648367044129184
+                  ],
+                  [
+                    1785456000000,
+                    13.325619209945522
+                  ],
                   [
                     1782777600000,
                     12.66340862547156
@@ -428,14 +436,6 @@
                   [
                     1745971200000,
                     14.073814720329858
-                  ],
-                  [
-                    1743379200000,
-                    12.681125564280443
-                  ],
-                  [
-                    1740700800000,
-                    11.91576351432571
                   ]
                 ],
                 "time_frame": "monthly",
@@ -444,7 +444,7 @@
                   "unit": "%",
                   "description": "Tổng tiền gửi là tổng số tiền mà các cá nhân, tổ chức kinh tế (doanh nghiệp, tổ chức khác) và các thực thể khác gửi tại các tổ chức tín dụng (ngân hàng, tổ chức tài chính) trong hệ thống ngân hàng.",
                   "frequency": "Độ trễ từ 1-3 tháng (ngày công bố không cố định)",
-                  "last_updated": "2026-09-17T08:48:53.624Z",
+                  "last_updated": "2026-10-16T09:36:39.571Z",
                   "source": "Ngân hàng Nhà nước - SBV",
                   "note": "Dữ liệu được Wigroup điều chỉnh lịch sử khi SBV thay đổi phương pháp luận (tháng 10/2025).",
                   "related_blog": null
@@ -462,6 +462,14 @@
                 "dateType": "thang",
                 "yAxis": 1,
                 "data": [
+                  [
+                    1788134400000,
+                    13.970786064211671
+                  ],
+                  [
+                    1785456000000,
+                    14.77047802266816
+                  ],
                   [
                     1782777600000,
                     15.330205627445084
@@ -521,14 +529,6 @@
                   [
                     1745971200000,
                     15.336915961779082
-                  ],
-                  [
-                    1743379200000,
-                    13.477765315295272
-                  ],
-                  [
-                    1740700800000,
-                    12.86415419704705
                   ]
                 ],
                 "time_frame": "monthly",
@@ -537,7 +537,7 @@
                   "unit": "%",
                   "description": "Chỉ số tiền gửi của tổ chức kinh tế (TCKT) tại Việt Nam là tổng lượng tiền mà các tổ chức kinh tế, doanh nghiệp, cơ sở kinh doanh,... đang gửi tiết kiệm tại các ngân hàng. Nó thể hiện khả năng thu hút vốn tiết kiệm từ các doanh nghiệp vào hệ thống ngân hàng, ngoài ra còn phản ánh mức độ tin tưởng của doanh nghiệp vào nền kinh tế và hệ thống tài chính của các ngân hàng. Dữ liệu được thống kê hàng tháng từ báo cáo của SBV, công bố trễ từ 2-3 tháng.",
                   "frequency": "Độ trễ từ 1-3 tháng (ngày công bố không cố định)",
-                  "last_updated": "2026-09-17T08:48:53.651Z",
+                  "last_updated": "2026-10-16T09:36:39.571Z",
                   "source": "Ngân hàng Nhà nước - SBV",
                   "note": "Dữ liệu được Wigroup điều chỉnh lịch sử khi SBV thay đổi phương pháp luận (tháng 10/2025).",
                   "related_blog": null
@@ -555,6 +555,14 @@
                 "dateType": "thang",
                 "yAxis": 1,
                 "data": [
+                  [
+                    1788134400000,
+                    12.969147217386844
+                  ],
+                  [
+                    1785456000000,
+                    11.627633507134608
+                  ],
                   [
                     1782777600000,
                     10.89286952284355
@@ -614,14 +622,6 @@
                   [
                     1745971200000,
                     12.823896283957719
-                  ],
-                  [
-                    1743379200000,
-                    11.890343070493328
-                  ],
-                  [
-                    1740700800000,
-                    10.983655528924665
                   ]
                 ],
                 "time_frame": "monthly",
@@ -630,7 +630,7 @@
                   "unit": "%",
                   "description": "Chỉ số tiền gửi của dân cư tại Việt Nam là tổng lượng tiền mà các cá nhân, hộ gia đình,... đang gửi tiết kiệm tại các ngân hàng. Thể hiện khả năng thu hút vốn tiết kiệm từ các hộ gia đình và cá nhân vào hệ thống ngân hàng và phản ánh mức độ tin tưởng của dân cư vào nền kinh tế và hệ thống tài chính của các ngân hàng. Dữ liệu được thống kê hàng tháng từ báo cáo của SBV, công bố trễ từ 2-3 tháng.",
                   "frequency": "Độ trễ từ 1-3 tháng (ngày công bố không cố định)",
-                  "last_updated": "2026-09-17T08:48:53.639Z",
+                  "last_updated": "2026-10-16T09:36:39.571Z",
                   "source": "Ngân hàng Nhà nước - SBV",
                   "note": "Dữ liệu được Wigroup điều chỉnh lịch sử khi SBV thay đổi phương pháp luận (tháng 10/2025).",
                   "related_blog": null
@@ -764,7 +764,7 @@
                   "unit": "Tỷ VND",
                   "description": "Tổng tiền gửi là tổng số tiền mà các cá nhân, tổ chức kinh tế (doanh nghiệp, tổ chức khác) và các thực thể khác gửi tại các tổ chức tín dụng (ngân hàng, tổ chức tài chính) trong hệ thống ngân hàng.",
                   "frequency": "Độ trễ từ 1-3 tháng (ngày công bố không cố định)",
-                  "last_updated": "2026-09-17T08:48:53.624Z",
+                  "last_updated": "2026-10-16T09:36:39.571Z",
                   "source": "Ngân hàng Nhà nước - SBV",
                   "note": "Dữ liệu được Wigroup điều chỉnh lịch sử khi SBV thay đổi phương pháp luận (tháng 10/2025).",
                   "related_blog": null
@@ -865,7 +865,7 @@
                   "unit": "Tỷ VND",
                   "description": "Chỉ số tiền gửi của tổ chức kinh tế (TCKT) tại Việt Nam là tổng lượng tiền mà các tổ chức kinh tế, doanh nghiệp, cơ sở kinh doanh,... đang gửi tiết kiệm tại các ngân hàng. Nó thể hiện khả năng thu hút vốn tiết kiệm từ các doanh nghiệp vào hệ thống ngân hàng, ngoài ra còn phản ánh mức độ tin tưởng của doanh nghiệp vào nền kinh tế và hệ thống tài chính của các ngân hàng. Dữ liệu được thống kê hàng tháng từ báo cáo của SBV, công bố trễ từ 2-3 tháng.",
                   "frequency": "Độ trễ từ 1-3 tháng (ngày công bố không cố định)",
-                  "last_updated": "2026-09-17T08:48:53.651Z",
+                  "last_updated": "2026-10-16T09:36:39.571Z",
                   "source": "Ngân hàng Nhà nước - SBV",
                   "note": "Dữ liệu được Wigroup điều chỉnh lịch sử khi SBV thay đổi phương pháp luận (tháng 10/2025).",
                   "related_blog": null
@@ -966,7 +966,7 @@
                   "unit": "Tỷ VND",
                   "description": "Chỉ số tiền gửi của dân cư tại Việt Nam là tổng lượng tiền mà các cá nhân, hộ gia đình,... đang gửi tiết kiệm tại các ngân hàng. Thể hiện khả năng thu hút vốn tiết kiệm từ các hộ gia đình và cá nhân vào hệ thống ngân hàng và phản ánh mức độ tin tưởng của dân cư vào nền kinh tế và hệ thống tài chính của các ngân hàng. Dữ liệu được thống kê hàng tháng từ báo cáo của SBV, công bố trễ từ 2-3 tháng.",
                   "frequency": "Độ trễ từ 1-3 tháng (ngày công bố không cố định)",
-                  "last_updated": "2026-09-17T08:48:53.639Z",
+                  "last_updated": "2026-10-16T09:36:39.571Z",
                   "source": "Ngân hàng Nhà nước - SBV",
                   "note": "Dữ liệu được Wigroup điều chỉnh lịch sử khi SBV thay đổi phương pháp luận (tháng 10/2025).",
                   "related_blog": null
@@ -1098,7 +1098,7 @@
                   "unit": "%",
                   "description": "Tổng tiền gửi là tổng số tiền mà các cá nhân, tổ chức kinh tế (doanh nghiệp, tổ chức khác) và các thực thể khác gửi tại các tổ chức tín dụng (ngân hàng, tổ chức tài chính) trong hệ thống ngân hàng.",
                   "frequency": "Độ trễ từ 1-3 tháng (ngày công bố không cố định)",
-                  "last_updated": "2026-09-17T08:48:53.624Z",
+                  "last_updated": "2026-10-16T09:36:39.571Z",
                   "source": "Ngân hàng Nhà nước - SBV",
                   "note": "Dữ liệu được Wigroup điều chỉnh lịch sử khi SBV thay đổi phương pháp luận (tháng 10/2025).",
                   "related_blog": null
@@ -1199,7 +1199,7 @@
                   "unit": "%",
                   "description": "Chỉ số tiền gửi của tổ chức kinh tế (TCKT) tại Việt Nam là tổng lượng tiền mà các tổ chức kinh tế, doanh nghiệp, cơ sở kinh doanh,... đang gửi tiết kiệm tại các ngân hàng. Nó thể hiện khả năng thu hút vốn tiết kiệm từ các doanh nghiệp vào hệ thống ngân hàng, ngoài ra còn phản ánh mức độ tin tưởng của doanh nghiệp vào nền kinh tế và hệ thống tài chính của các ngân hàng. Dữ liệu được thống kê hàng tháng từ báo cáo của SBV, công bố trễ từ 2-3 tháng.",
                   "frequency": "Độ trễ từ 1-3 tháng (ngày công bố không cố định)",
-                  "last_updated": "2026-09-17T08:48:53.651Z",
+                  "last_updated": "2026-10-16T09:36:39.571Z",
                   "source": "Ngân hàng Nhà nước - SBV",
                   "note": "Dữ liệu được Wigroup điều chỉnh lịch sử khi SBV thay đổi phương pháp luận (tháng 10/2025).",
                   "related_blog": null
@@ -1300,7 +1300,7 @@
                   "unit": "%",
                   "description": "Chỉ số tiền gửi của dân cư tại Việt Nam là tổng lượng tiền mà các cá nhân, hộ gia đình,... đang gửi tiết kiệm tại các ngân hàng. Thể hiện khả năng thu hút vốn tiết kiệm từ các hộ gia đình và cá nhân vào hệ thống ngân hàng và phản ánh mức độ tin tưởng của dân cư vào nền kinh tế và hệ thống tài chính của các ngân hàng. Dữ liệu được thống kê hàng tháng từ báo cáo của SBV, công bố trễ từ 2-3 tháng.",
                   "frequency": "Độ trễ từ 1-3 tháng (ngày công bố không cố định)",
-                  "last_updated": "2026-09-17T08:48:53.639Z",
+                  "last_updated": "2026-10-16T09:36:39.571Z",
                   "source": "Ngân hàng Nhà nước - SBV",
                   "note": "Dữ liệu được Wigroup điều chỉnh lịch sử khi SBV thay đổi phương pháp luận (tháng 10/2025).",
                   "related_blog": null
@@ -1409,7 +1409,7 @@
                   "unit": "Tỷ VND",
                   "description": "Tổng tiền gửi là tổng số tiền mà các cá nhân, tổ chức kinh tế (doanh nghiệp, tổ chức khác) và các thực thể khác gửi tại các tổ chức tín dụng (ngân hàng, tổ chức tài chính) trong hệ thống ngân hàng.",
                   "frequency": "Độ trễ từ 1-3 tháng (ngày công bố không cố định)",
-                  "last_updated": "2026-09-17T08:48:53.624Z",
+                  "last_updated": "2026-10-16T09:36:39.571Z",
                   "source": "Ngân hàng Nhà nước - SBV",
                   "note": "Dữ liệu được Wigroup điều chỉnh lịch sử khi SBV thay đổi phương pháp luận (tháng 10/2025).",
                   "related_blog": null
@@ -1490,7 +1490,7 @@
                   "unit": "Tỷ VND",
                   "description": "Chỉ số tiền gửi của tổ chức kinh tế (TCKT) tại Việt Nam là tổng lượng tiền mà các tổ chức kinh tế, doanh nghiệp, cơ sở kinh doanh,... đang gửi tiết kiệm tại các ngân hàng. Nó thể hiện khả năng thu hút vốn tiết kiệm từ các doanh nghiệp vào hệ thống ngân hàng, ngoài ra còn phản ánh mức độ tin tưởng của doanh nghiệp vào nền kinh tế và hệ thống tài chính của các ngân hàng. Dữ liệu được thống kê hàng tháng từ báo cáo của SBV, công bố trễ từ 2-3 tháng.",
                   "frequency": "Độ trễ từ 1-3 tháng (ngày công bố không cố định)",
-                  "last_updated": "2026-09-17T08:48:53.651Z",
+                  "last_updated": "2026-10-16T09:36:39.571Z",
                   "source": "Ngân hàng Nhà nước - SBV",
                   "note": "Dữ liệu được Wigroup điều chỉnh lịch sử khi SBV thay đổi phương pháp luận (tháng 10/2025).",
                   "related_blog": null
@@ -1571,7 +1571,7 @@
                   "unit": "Tỷ VND",
                   "description": "Chỉ số tiền gửi của dân cư tại Việt Nam là tổng lượng tiền mà các cá nhân, hộ gia đình,... đang gửi tiết kiệm tại các ngân hàng. Thể hiện khả năng thu hút vốn tiết kiệm từ các hộ gia đình và cá nhân vào hệ thống ngân hàng và phản ánh mức độ tin tưởng của dân cư vào nền kinh tế và hệ thống tài chính của các ngân hàng. Dữ liệu được thống kê hàng tháng từ báo cáo của SBV, công bố trễ từ 2-3 tháng.",
                   "frequency": "Độ trễ từ 1-3 tháng (ngày công bố không cố định)",
-                  "last_updated": "2026-09-17T08:48:53.639Z",
+                  "last_updated": "2026-10-16T09:36:39.571Z",
                   "source": "Ngân hàng Nhà nước - SBV",
                   "note": "Dữ liệu được Wigroup điều chỉnh lịch sử khi SBV thay đổi phương pháp luận (tháng 10/2025).",
                   "related_blog": null
@@ -1673,7 +1673,7 @@
                   "unit": "%",
                   "description": "Tổng tiền gửi là tổng số tiền mà các cá nhân, tổ chức kinh tế (doanh nghiệp, tổ chức khác) và các thực thể khác gửi tại các tổ chức tín dụng (ngân hàng, tổ chức tài chính) trong hệ thống ngân hàng.",
                   "frequency": "Độ trễ từ 1-3 tháng (ngày công bố không cố định)",
-                  "last_updated": "2026-09-17T08:48:53.624Z",
+                  "last_updated": "2026-10-16T09:36:39.571Z",
                   "source": "Ngân hàng Nhà nước - SBV",
                   "note": "Dữ liệu được Wigroup điều chỉnh lịch sử khi SBV thay đổi phương pháp luận (tháng 10/2025).",
                   "related_blog": null
@@ -1750,7 +1750,7 @@
                   "unit": "%",
                   "description": "Chỉ số tiền gửi của tổ chức kinh tế (TCKT) tại Việt Nam là tổng lượng tiền mà các tổ chức kinh tế, doanh nghiệp, cơ sở kinh doanh,... đang gửi tiết kiệm tại các ngân hàng. Nó thể hiện khả năng thu hút vốn tiết kiệm từ các doanh nghiệp vào hệ thống ngân hàng, ngoài ra còn phản ánh mức độ tin tưởng của doanh nghiệp vào nền kinh tế và hệ thống tài chính của các ngân hàng. Dữ liệu được thống kê hàng tháng từ báo cáo của SBV, công bố trễ từ 2-3 tháng.",
                   "frequency": "Độ trễ từ 1-3 tháng (ngày công bố không cố định)",
-                  "last_updated": "2026-09-17T08:48:53.651Z",
+                  "last_updated": "2026-10-16T09:36:39.571Z",
                   "source": "Ngân hàng Nhà nước - SBV",
                   "note": "Dữ liệu được Wigroup điều chỉnh lịch sử khi SBV thay đổi phương pháp luận (tháng 10/2025).",
                   "related_blog": null
@@ -1827,7 +1827,7 @@
                   "unit": "%",
                   "description": "Chỉ số tiền gửi của dân cư tại Việt Nam là tổng lượng tiền mà các cá nhân, hộ gia đình,... đang gửi tiết kiệm tại các ngân hàng. Thể hiện khả năng thu hút vốn tiết kiệm từ các hộ gia đình và cá nhân vào hệ thống ngân hàng và phản ánh mức độ tin tưởng của dân cư vào nền kinh tế và hệ thống tài chính của các ngân hàng. Dữ liệu được thống kê hàng tháng từ báo cáo của SBV, công bố trễ từ 2-3 tháng.",
                   "frequency": "Độ trễ từ 1-3 tháng (ngày công bố không cố định)",
-                  "last_updated": "2026-09-17T08:48:53.639Z",
+                  "last_updated": "2026-10-16T09:36:39.571Z",
                   "source": "Ngân hàng Nhà nước - SBV",
                   "note": "Dữ liệu được Wigroup điều chỉnh lịch sử khi SBV thay đổi phương pháp luận (tháng 10/2025).",
                   "related_blog": null

@@ -17,15 +17,17 @@
     ],
     "unit": "Triệu USD",
     "description": "Chênh lệch giữa kim ngạch xuất khẩu và nhập khẩu hàng hóa (Xuất siêu/Nhập siêu).",
-    "updatedAt": "2026-09-19T10:14:39.975Z",
-    "latestPeriod": "08-2026",
-    "latestValue": -113.21483799999987
+    "updatedAt": "2026-11-07T06:37:12.615Z",
+    "latestPeriod": "10-2026",
+    "latestValue": 7306.737256
   },
   "datasets": {
     "monthly": {
       "value": {
         "title": "Cán cân xuất nhập khẩu",
         "headers": [
+          "10-2026",
+          "09-2026",
           "08-2026",
           "07-2026",
           "06-2026",
@@ -42,9 +44,7 @@
           "07-2025",
           "06-2025",
           "05-2025",
-          "04-2025",
-          "03-2025",
-          "02-2025"
+          "04-2025"
         ],
         "parent": [
           {
@@ -63,8 +63,16 @@
                 "yAxis": 16,
                 "data": [
                   [
+                    1793404800000,
+                    7306.737256
+                  ],
+                  [
+                    1790726400000,
+                    1316.228794438597
+                  ],
+                  [
                     1788134400000,
-                    -113.21483799999987
+                    -118.00474447860324
                   ],
                   [
                     1785456000000,
@@ -72,27 +80,27 @@
                   ],
                   [
                     1782777600000,
-                    -2601.1666348024155
+                    -2802.314048
                   ],
                   [
                     1780185600000,
-                    -5328.672576995945
+                    -5332.793265999993
                   ],
                   [
                     1777507200000,
-                    -4252.1095690754155
+                    -4895.297419999995
                   ],
                   [
                     1774915200000,
-                    -1517.8231270518736
+                    -584.1045410000006
                   ],
                   [
                     1772236800000,
-                    -1132.3476034788255
+                    -1161.027734000003
                   ],
                   [
                     1769817600000,
-                    -1918.949642595493
+                    -1976.4007179999971
                   ],
                   [
                     1767139200000,
@@ -129,18 +137,19 @@
                   [
                     1745971200000,
                     813.6826609999989
-                  ],
-                  [
-                    1743379200000,
-                    1760.7539470000047
-                  ],
-                  [
-                    1740700800000,
-                    -1412.2938380000014
                   ]
                 ],
                 "time_frame": "monthly",
-                "lingo": null
+                "lingo": {
+                  "name": "Cán cân XNK",
+                  "unit": "Triệu USD",
+                  "description": "Cán cân xuất nhập khẩu phản ánh chênh lệch giữa giá trị xuất khẩu và giá trị nhập khẩu hàng hóa của Việt Nam trong kỳ (tính bằng triệu USD). Giá trị dương thể hiện xuất siêu, giá trị âm thể hiện nhập siêu. Dữ liệu được tính toán từ số liệu xuất khẩu và nhập khẩu do Tổng cục Hải quan Việt Nam công bố.",
+                  "frequency": "Hai tuần đầu mỗi tháng",
+                  "last_updated": "2026-11-06T02:57:24.194Z",
+                  "source": "Tổng cục Hải quan - CUSTOM",
+                  "note": null,
+                  "related_blog": null
+                }
               },
               {
                 "id": "404_trong_nuoc",
@@ -155,8 +164,16 @@
                 "yAxis": 16,
                 "data": [
                   [
+                    1793404800000,
+                    -3508.074090000002
+                  ],
+                  [
+                    1790726400000,
+                    -3499.10861443668
+                  ],
+                  [
                     1788134400000,
-                    -2315.944214000003
+                    -2273.1841817066816
                   ],
                   [
                     1785456000000,
@@ -164,27 +181,27 @@
                   ],
                   [
                     1782777600000,
-                    -4091.8091117596705
+                    -4024.0210520000037
                   ],
                   [
                     1780185600000,
-                    -3945.406448349131
+                    -4025.048624999996
                   ],
                   [
                     1777507200000,
-                    -5001.616127007477
+                    -5216.973479999993
                   ],
                   [
                     1774915200000,
-                    -4937.642755293213
+                    -4612.858106000007
                   ],
                   [
                     1772236800000,
-                    -2963.8001841173627
+                    -2983.624890000003
                   ],
                   [
                     1769817600000,
-                    -3119.711819473141
+                    -3258.2569949999997
                   ],
                   [
                     1767139200000,
@@ -221,18 +238,19 @@
                   [
                     1745971200000,
                     -1978.328114
-                  ],
-                  [
-                    1743379200000,
-                    -1872.1264030000002
-                  ],
-                  [
-                    1740700800000,
-                    -2628.890734999999
                   ]
                 ],
                 "time_frame": "monthly",
-                "lingo": null
+                "lingo": {
+                  "name": "Cán cân XNK Khu vực trong nước",
+                  "unit": "Triệu USD",
+                  "description": "Cán cân xuất nhập khẩu của khu vực kinh tế trong nước phản ánh chênh lệch giữa giá trị xuất khẩu và giá trị nhập khẩu hàng hóa của khu vực kinh tế trong nước của Việt Nam trong kỳ (tính bằng triệu USD). Giá trị dương thể hiện xuất siêu, giá trị âm thể hiện nhập siêu. Dữ liệu được tính toán từ số liệu xuất khẩu và nhập khẩu do Tổng cục Hải quan Việt Nam công bố.",
+                  "frequency": "Hai tuần đầu mỗi tháng",
+                  "last_updated": "2026-11-06T02:57:24.194Z",
+                  "source": "Tổng cục Hải quan - CUSTOM",
+                  "note": null,
+                  "related_blog": null
+                }
               },
               {
                 "id": "404_fdi",
@@ -247,8 +265,16 @@
                 "yAxis": 16,
                 "data": [
                   [
+                    1793404800000,
+                    10814.811346000002
+                  ],
+                  [
+                    1790726400000,
+                    4815.337408875283
+                  ],
+                  [
                     1788134400000,
-                    2202.729376000003
+                    2155.1794372280783
                   ],
                   [
                     1785456000000,
@@ -256,27 +282,27 @@
                   ],
                   [
                     1782777600000,
-                    1490.642476957255
+                    1221.7070040000035
                   ],
                   [
                     1780185600000,
-                    -1383.2661286468792
+                    -1307.7446409999975
                   ],
                   [
                     1777507200000,
-                    749.5065579321235
+                    321.67605999999796
                   ],
                   [
                     1774915200000,
-                    3419.8196282412828
+                    4028.7535650000063
                   ],
                   [
                     1772236800000,
-                    1831.4525806385864
+                    1822.5971559999998
                   ],
                   [
                     1769817600000,
-                    1200.7621768776226
+                    1281.8562770000026
                   ],
                   [
                     1767139200000,
@@ -313,18 +339,19 @@
                   [
                     1745971200000,
                     2792.0107750000025
-                  ],
-                  [
-                    1743379200000,
-                    3632.8803499999995
-                  ],
-                  [
-                    1740700800000,
-                    1216.5968969999994
                   ]
                 ],
                 "time_frame": "monthly",
-                "lingo": null
+                "lingo": {
+                  "name": "Cán cân XNK Khu vực FDI",
+                  "unit": "Triệu USD",
+                  "description": "Cán cân xuất nhập khẩu của khu vực có vốn đầu tư nước ngoài (FDI) phản ánh chênh lệch giữa giá trị xuất khẩu và giá trị nhập khẩu hàng hóa của khu vực có vốn đầu tư nước ngoài (FDI) của Việt Nam trong kỳ (tính bằng triệu USD). Giá trị dương thể hiện xuất siêu, giá trị âm thể hiện nhập siêu. Dữ liệu được tính toán từ số liệu xuất khẩu và nhập khẩu do Tổng cục Hải quan Việt Nam công bố.",
+                  "frequency": "Hai tuần đầu mỗi tháng",
+                  "last_updated": "2026-11-06T02:57:24.194Z",
+                  "source": "Tổng cục Hải quan - CUSTOM",
+                  "note": null,
+                  "related_blog": null
+                }
               }
             ]
           }
@@ -335,6 +362,7 @@
       "value": {
         "title": "Cán cân xuất nhập khẩu",
         "headers": [
+          "09-2026",
           "06-2026",
           "03-2026",
           "12-2025",
@@ -372,12 +400,16 @@
                 "yAxis": 16,
                 "data": [
                   [
+                    1790726400000,
+                    -2370.655260264517
+                  ],
+                  [
                     1782777600000,
-                    -12181.948780873776
+                    -13030.404733999989
                   ],
                   [
                     1774915200000,
-                    -4569.120373126192
+                    -3721.5329930000007
                   ],
                   [
                     1767139200000,
@@ -449,7 +481,16 @@
                   ]
                 ],
                 "time_frame": "quarterly",
-                "lingo": null
+                "lingo": {
+                  "name": "Cán cân XNK",
+                  "unit": "%",
+                  "description": "Cán cân xuất nhập khẩu phản ánh chênh lệch giữa giá trị xuất khẩu và giá trị nhập khẩu hàng hóa của Việt Nam trong kỳ (tính bằng triệu USD). Giá trị dương thể hiện xuất siêu, giá trị âm thể hiện nhập siêu. Dữ liệu được tính toán từ số liệu xuất khẩu và nhập khẩu do Tổng cục Hải quan Việt Nam công bố.",
+                  "frequency": "Hai tuần đầu mỗi tháng",
+                  "last_updated": "2026-11-06T02:57:24.194Z",
+                  "source": "Tổng cục Hải quan - CUSTOM",
+                  "note": null,
+                  "related_blog": null
+                }
               },
               {
                 "id": "404_trong_nuoc_mtq",
@@ -464,12 +505,16 @@
                 "yAxis": 16,
                 "data": [
                   [
+                    1790726400000,
+                    -9238.341288009402
+                  ],
+                  [
                     1782777600000,
-                    -13038.831687116279
+                    -13266.043156999993
                   ],
                   [
                     1774915200000,
-                    -11021.154758883717
+                    -10854.73999100001
                   ],
                   [
                     1767139200000,
@@ -541,7 +586,16 @@
                   ]
                 ],
                 "time_frame": "quarterly",
-                "lingo": null
+                "lingo": {
+                  "name": "Cán cân XNK Khu vực trong nước",
+                  "unit": "%",
+                  "description": "Cán cân xuất nhập khẩu của khu vực kinh tế trong nước phản ánh chênh lệch giữa giá trị xuất khẩu và giá trị nhập khẩu hàng hóa của khu vực kinh tế trong nước của Việt Nam trong kỳ (tính bằng triệu USD). Giá trị dương thể hiện xuất siêu, giá trị âm thể hiện nhập siêu. Dữ liệu được tính toán từ số liệu xuất khẩu và nhập khẩu do Tổng cục Hải quan Việt Nam công bố.",
+                  "frequency": "Hai tuần đầu mỗi tháng",
+                  "last_updated": "2026-11-06T02:57:24.194Z",
+                  "source": "Tổng cục Hải quan - CUSTOM",
+                  "note": null,
+                  "related_blog": null
+                }
               },
               {
                 "id": "404_fdi_mtq",
@@ -556,12 +610,16 @@
                 "yAxis": 16,
                 "data": [
                   [
+                    1790726400000,
+                    6867.686027744894
+                  ],
+                  [
                     1782777600000,
-                    856.8829062424993
+                    235.63842300000397
                   ],
                   [
                     1774915200000,
-                    6452.034385757492
+                    7133.206998000009
                   ],
                   [
                     1767139200000,
@@ -633,7 +691,16 @@
                   ]
                 ],
                 "time_frame": "quarterly",
-                "lingo": null
+                "lingo": {
+                  "name": "Cán cân XNK Khu vực FDI",
+                  "unit": "%",
+                  "description": "Cán cân xuất nhập khẩu của khu vực có vốn đầu tư nước ngoài (FDI) phản ánh chênh lệch giữa giá trị xuất khẩu và giá trị nhập khẩu hàng hóa của khu vực có vốn đầu tư nước ngoài (FDI) của Việt Nam trong kỳ (tính bằng triệu USD). Giá trị dương thể hiện xuất siêu, giá trị âm thể hiện nhập siêu. Dữ liệu được tính toán từ số liệu xuất khẩu và nhập khẩu do Tổng cục Hải quan Việt Nam công bố.",
+                  "frequency": "Hai tuần đầu mỗi tháng",
+                  "last_updated": "2026-11-06T02:57:24.194Z",
+                  "source": "Tổng cục Hải quan - CUSTOM",
+                  "note": null,
+                  "related_blog": null
+                }
               }
             ]
           }
@@ -743,7 +810,16 @@
                   ]
                 ],
                 "time_frame": "yearly",
-                "lingo": null
+                "lingo": {
+                  "name": "Cán cân XNK",
+                  "unit": "Triệu USD",
+                  "description": "Cán cân xuất nhập khẩu phản ánh chênh lệch giữa giá trị xuất khẩu và giá trị nhập khẩu hàng hóa của Việt Nam trong kỳ (tính bằng triệu USD). Giá trị dương thể hiện xuất siêu, giá trị âm thể hiện nhập siêu. Dữ liệu được tính toán từ số liệu xuất khẩu và nhập khẩu do Tổng cục Hải quan Việt Nam công bố.",
+                  "frequency": "Hai tuần đầu mỗi tháng",
+                  "last_updated": "2026-11-06T02:57:24.194Z",
+                  "source": "Tổng cục Hải quan - CUSTOM",
+                  "note": null,
+                  "related_blog": null
+                }
               },
               {
                 "id": "404_trong_nuoc_yrl",
@@ -823,7 +899,16 @@
                   ]
                 ],
                 "time_frame": "yearly",
-                "lingo": null
+                "lingo": {
+                  "name": "Cán cân XNK Khu vực trong nước",
+                  "unit": "Triệu USD",
+                  "description": "Cán cân xuất nhập khẩu của khu vực kinh tế trong nước phản ánh chênh lệch giữa giá trị xuất khẩu và giá trị nhập khẩu hàng hóa của khu vực kinh tế trong nước của Việt Nam trong kỳ (tính bằng triệu USD). Giá trị dương thể hiện xuất siêu, giá trị âm thể hiện nhập siêu. Dữ liệu được tính toán từ số liệu xuất khẩu và nhập khẩu do Tổng cục Hải quan Việt Nam công bố.",
+                  "frequency": "Hai tuần đầu mỗi tháng",
+                  "last_updated": "2026-11-06T02:57:24.194Z",
+                  "source": "Tổng cục Hải quan - CUSTOM",
+                  "note": null,
+                  "related_blog": null
+                }
               },
               {
                 "id": "404_fdi_yrl",
@@ -903,7 +988,16 @@
                   ]
                 ],
                 "time_frame": "yearly",
-                "lingo": null
+                "lingo": {
+                  "name": "Cán cân XNK Khu vực FDI",
+                  "unit": "Triệu USD",
+                  "description": "Cán cân xuất nhập khẩu của khu vực có vốn đầu tư nước ngoài (FDI) phản ánh chênh lệch giữa giá trị xuất khẩu và giá trị nhập khẩu hàng hóa của khu vực có vốn đầu tư nước ngoài (FDI) của Việt Nam trong kỳ (tính bằng triệu USD). Giá trị dương thể hiện xuất siêu, giá trị âm thể hiện nhập siêu. Dữ liệu được tính toán từ số liệu xuất khẩu và nhập khẩu do Tổng cục Hải quan Việt Nam công bố.",
+                  "frequency": "Hai tuần đầu mỗi tháng",
+                  "last_updated": "2026-11-06T02:57:24.194Z",
+                  "source": "Tổng cục Hải quan - CUSTOM",
+                  "note": null,
+                  "related_blog": null
+                }
               }
             ]
           }

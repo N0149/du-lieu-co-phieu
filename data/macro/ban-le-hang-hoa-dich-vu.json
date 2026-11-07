@@ -18,15 +18,17 @@
     ],
     "unit": "Nghìn tỷ VND",
     "description": "Tổng mức bán lẻ hàng hóa và doanh thu dịch vụ tiêu dùng.",
-    "updatedAt": "2026-09-19T10:14:34.869Z",
-    "latestPeriod": "08-2026",
-    "latestValue": 679814.0817597781
+    "updatedAt": "2026-11-07T06:37:07.661Z",
+    "latestPeriod": "10-2026",
+    "latestValue": 695471.8800273181
   },
   "datasets": {
     "monthly": {
       "value": {
         "title": "Bán Lẻ Hàng Hóa Và Dịch Vụ",
         "headers": [
+          "10-2026",
+          "09-2026",
           "08-2026",
           "07-2026",
           "06-2026",
@@ -43,9 +45,7 @@
           "07-2025",
           "06-2025",
           "05-2025",
-          "04-2025",
-          "03-2025",
-          "02-2025"
+          "04-2025"
         ],
         "parent": [
           {
@@ -64,8 +64,16 @@
                 "yAxis": 17,
                 "data": [
                   [
+                    1793404800000,
+                    695471.8800273181
+                  ],
+                  [
+                    1790726400000,
+                    688362.9412848463
+                  ],
+                  [
                     1788134400000,
-                    679814.0817597781
+                    679369.4965315869
                   ],
                   [
                     1785456000000,
@@ -105,11 +113,11 @@
                   ],
                   [
                     1761868800000,
-                    601241.8558932922
+                    606135.7868209286
                   ],
                   [
                     1759190400000,
-                    597143.8835610498
+                    605184.7565243654
                   ],
                   [
                     1756598400000,
@@ -130,14 +138,6 @@
                   [
                     1745971200000,
                     576717.8732074698
-                  ],
-                  [
-                    1743379200000,
-                    569912.9415397635
-                  ],
-                  [
-                    1740700800000,
-                    565714.9316914983
                   ]
                 ],
                 "time_frame": "monthly",
@@ -146,7 +146,7 @@
                   "unit": "Tỷ VND",
                   "description": "Tổng bán lẻ hàng hóa và dịch vụ là một thước đo quan trọng phản ánh tình hình tiêu dùng trong nền kinh tế. Chỉ số này bao gồm tổng giá trị hàng hóa và dịch vụ tiêu thụ trên thị trường, giúp đánh giá sức mua và xu hướng tiêu dùng của người dân. Số liệu được Tổng cục thống kê (GSO) thu thập và tổng hợp thông qua khảo sát các doanh nghiệp, cơ sở sản xuất, kinh doanh cá thể, hoạt động thương mại.",
                   "frequency": "Ngày 6 tháng sau",
-                  "last_updated": "2026-09-03T02:55:34.731Z",
+                  "last_updated": "2026-11-03T04:03:54.086Z",
                   "source": "Tổng cục Thống kê - GSO",
                   "note": null,
                   "related_blog": null
@@ -165,8 +165,16 @@
                 "yAxis": 17,
                 "data": [
                   [
+                    1793404800000,
+                    519024.0806230779
+                  ],
+                  [
+                    1790726400000,
+                    515332.651693281
+                  ],
+                  [
                     1788134400000,
-                    507417.98226053565
+                    506668.1608273095
                   ],
                   [
                     1785456000000,
@@ -206,11 +214,11 @@
                   ],
                   [
                     1761868800000,
-                    456232.0976313485
+                    456486.53146814095
                   ],
                   [
                     1759190400000,
-                    454476.1837576926
+                    457014.9663728476
                   ],
                   [
                     1756598400000,
@@ -231,14 +239,6 @@
                   [
                     1745971200000,
                     436234.05552330636
-                  ],
-                  [
-                    1743379200000,
-                    432359.6910489552
-                  ],
-                  [
-                    1740700800000,
-                    431357.1190108226
                   ]
                 ],
                 "time_frame": "monthly",
@@ -247,7 +247,7 @@
                   "unit": "Tỷ VND",
                   "description": "Doanh thu bán lẻ hàng hóa là tổng số tiền thu được hoặc sẽ thu được từ việc bán các sản phẩm, chủ yếu là hàng hóa tiêu dùng cho cá nhân và hộ gia đình, tại các địa điểm như cửa hàng, siêu thị, trung tâm thương mại, hợp tác xã, quầy hàng ở chợ hoặc bán hàng lưu động. Số liệu được Tổng cục thống kê (GSO) thu thập và tổng hợp thông qua khảo sát các doanh nghiệp, cơ sở sản xuất, kinh doanh cá thể, hoạt động thương mại.",
                   "frequency": "Ngày 6 tháng sau",
-                  "last_updated": "2026-09-03T02:55:34.731Z",
+                  "last_updated": "2026-11-03T04:03:54.086Z",
                   "source": "Tổng cục Thống kê - GSO",
                   "note": null,
                   "related_blog": null
@@ -266,8 +266,16 @@
                 "yAxis": 17,
                 "data": [
                   [
+                    1793404800000,
+                    88768.71460295362
+                  ],
+                  [
+                    1790726400000,
+                    88526.82850759497
+                  ],
+                  [
                     1788134400000,
-                    90454.89065229571
+                    89810.96604944314
                   ],
                   [
                     1785456000000,
@@ -307,11 +315,11 @@
                   ],
                   [
                     1761868800000,
-                    71362.25
+                    74284.02388561761
                   ],
                   [
                     1759190400000,
-                    70434.8843337681
+                    74244.98343054962
                   ],
                   [
                     1756598400000,
@@ -332,14 +340,6 @@
                   [
                     1745971200000,
                     72689.96927148227
-                  ],
-                  [
-                    1743379200000,
-                    70492.76186134548
-                  ],
-                  [
-                    1740700800000,
-                    68195.84430853106
                   ]
                 ],
                 "time_frame": "monthly",
@@ -348,7 +348,7 @@
                   "unit": "Tỷ VND",
                   "description": "Doanh thu dịch vụ lưu trú, ăn uống phản ánh toàn bộ số tiền đã và sẽ thu được do cung cấp dịch vụ lưu trú ngắn ngày và ăn uống cho khách hàng trong một khoảng thời gian nhất định. Số liệu được Tổng cục thống kê (GSO) thu thập và tổng hợp thông qua khảo sát các doanh nghiệp, cơ sở lưu trú và các dịch vụ ăn uống.",
                   "frequency": "Ngày 6 tháng sau",
-                  "last_updated": "2026-09-03T02:55:34.731Z",
+                  "last_updated": "2026-11-03T04:03:54.086Z",
                   "source": "Tổng cục Thống kê - GSO",
                   "note": null,
                   "related_blog": null
@@ -367,8 +367,16 @@
                 "yAxis": 17,
                 "data": [
                   [
+                    1793404800000,
+                    9592.679746624459
+                  ],
+                  [
+                    1790726400000,
+                    8930.8072598162
+                  ],
+                  [
                     1788134400000,
-                    9116.946800989306
+                    9495.057761947603
                   ],
                   [
                     1785456000000,
@@ -408,11 +416,11 @@
                   ],
                   [
                     1761868800000,
-                    8237.021395515008
+                    7876.991777206585
                   ],
                   [
                     1759190400000,
-                    7965.40121411373
+                    7615.950388046265
                   ],
                   [
                     1756598400000,
@@ -433,14 +441,6 @@
                   [
                     1745971200000,
                     8130.777585774125
-                  ],
-                  [
-                    1743379200000,
-                    7001.793916982396
-                  ],
-                  [
-                    1740700800000,
-                    6624.521147560375
                   ]
                 ],
                 "time_frame": "monthly",
@@ -449,7 +449,7 @@
                   "unit": "Tỷ VND",
                   "description": "Doanh thu dịch vụ du lịch lữ hành là tổng số tiền mà các công ty lữ hành kiếm được từ việc tổ chức các chương trình du lịch trọn gói hoặc không trọn gói cho khách trong nước và quốc tế, cùng với các dịch vụ như cung cấp thông tin, tư vấn, lập kế hoạch du lịch và hướng dẫn du khách, bao gồm cả hoạt động của các đại lý du lịch. Số liệu này được Tổng cục Thống kê (GSO) thu thập và tổng hợp thông qua các cuộc khảo sát các doanh nghiệp, cơ sở lữ hành và cá nhân kinh doanh trong lĩnh vực du lịch.",
                   "frequency": "Ngày 6 tháng sau",
-                  "last_updated": "2026-09-03T02:55:34.731Z",
+                  "last_updated": "2026-11-03T04:03:54.086Z",
                   "source": "Tổng cục Thống kê - GSO",
                   "note": null,
                   "related_blog": null
@@ -468,8 +468,16 @@
                 "yAxis": 17,
                 "data": [
                   [
+                    1793404800000,
+                    78086.40505466216
+                  ],
+                  [
+                    1790726400000,
+                    75572.65382415403
+                  ],
+                  [
                     1788134400000,
-                    72824.26204595737
+                    73395.31189288669
                   ],
                   [
                     1785456000000,
@@ -509,11 +517,11 @@
                   ],
                   [
                     1761868800000,
-                    65410.48809153197
+                    67488.23968996337
                   ],
                   [
                     1759190400000,
-                    64267.41425547536
+                    66308.85633292185
                   ],
                   [
                     1756598400000,
@@ -534,14 +542,6 @@
                   [
                     1745971200000,
                     59663.08306625651
-                  ],
-                  [
-                    1743379200000,
-                    60058.69471248042
-                  ],
-                  [
-                    1740700800000,
-                    59537.44722458424
                   ]
                 ],
                 "time_frame": "monthly",
@@ -550,7 +550,7 @@
                   "unit": "Tỷ VND",
                   "description": "Doanh thu dịch vụ khác gồm số tiền đã thu và sẽ thu từ cung cấp các dịch vụ hành chính - hỗ trợ, dịch vụ hoạt động giáo dục và đào tạo, hoạt động y tế, hoạt động xổ số, thể thao, vui chơi và giải trí. Số liệu được Tổng cục thống kê (GSO) thu thập và tổng hợp thông qua khảo sát các doanh nghiệp, cơ sở sản xuất, kinh doanh cá thể, hoạt động thương mại.",
                   "frequency": "Ngày 6 tháng sau",
-                  "last_updated": "2026-09-03T02:55:34.731Z",
+                  "last_updated": "2026-11-03T04:03:54.086Z",
                   "source": "Tổng cục Thống kê - GSO",
                   "note": null,
                   "related_blog": null
@@ -563,6 +563,8 @@
       "yoy": {
         "title": "Bán Lẻ Hàng Hóa Và Dịch Vụ",
         "headers": [
+          "10-2026",
+          "09-2026",
           "08-2026",
           "07-2026",
           "06-2026",
@@ -579,9 +581,7 @@
           "07-2025",
           "06-2025",
           "05-2025",
-          "04-2025",
-          "03-2025",
-          "02-2025"
+          "04-2025"
         ],
         "parent": [
           {
@@ -600,8 +600,16 @@
                 "yAxis": 1,
                 "data": [
                   [
+                    1793404800000,
+                    14.738627078091044
+                  ],
+                  [
+                    1790726400000,
+                    13.744263031042165
+                  ],
+                  [
                     1788134400000,
-                    14.949971628193959
+                    14.874796575575743
                   ],
                   [
                     1785456000000,
@@ -641,11 +649,11 @@
                   ],
                   [
                     1761868800000,
-                    7.231973177137297
+                    8.104809731710438
                   ],
                   [
                     1759190400000,
-                    11.103355382202936
+                    12.599423567811444
                   ],
                   [
                     1756598400000,
@@ -666,14 +674,6 @@
                   [
                     1745971200000,
                     10.128484109764646
-                  ],
-                  [
-                    1743379200000,
-                    11.554794860229439
-                  ],
-                  [
-                    1740700800000,
-                    10.147392063757387
                   ]
                 ],
                 "time_frame": "monthly",
@@ -682,7 +682,7 @@
                   "unit": "%",
                   "description": "Tổng bán lẻ hàng hóa và dịch vụ là một thước đo quan trọng phản ánh tình hình tiêu dùng trong nền kinh tế. Chỉ số này bao gồm tổng giá trị hàng hóa và dịch vụ tiêu thụ trên thị trường, giúp đánh giá sức mua và xu hướng tiêu dùng của người dân. Số liệu được Tổng cục thống kê (GSO) thu thập và tổng hợp thông qua khảo sát các doanh nghiệp, cơ sở sản xuất, kinh doanh cá thể, hoạt động thương mại.",
                   "frequency": "Ngày 6 tháng sau",
-                  "last_updated": "2026-09-03T02:55:34.731Z",
+                  "last_updated": "2026-11-03T04:03:54.086Z",
                   "source": "Tổng cục Thống kê - GSO",
                   "note": null,
                   "related_blog": null
@@ -701,8 +701,16 @@
                 "yAxis": 1,
                 "data": [
                   [
+                    1793404800000,
+                    13.699757789962657
+                  ],
+                  [
+                    1790726400000,
+                    12.760563572628373
+                  ],
+                  [
                     1788134400000,
-                    13.810668162944847
+                    13.642487922390128
                   ],
                   [
                     1785456000000,
@@ -742,11 +750,11 @@
                   ],
                   [
                     1761868800000,
-                    5.734676044560004
+                    5.793642696506894
                   ],
                   [
                     1759190400000,
-                    10.415985095725018
+                    11.032787897311866
                   ],
                   [
                     1756598400000,
@@ -767,14 +775,6 @@
                   [
                     1745971200000,
                     7.156381526269695
-                  ],
-                  [
-                    1743379200000,
-                    9.193207237546858
-                  ],
-                  [
-                    1740700800000,
-                    8.311891937730755
                   ]
                 ],
                 "time_frame": "monthly",
@@ -783,7 +783,7 @@
                   "unit": "%",
                   "description": "Doanh thu bán lẻ hàng hóa là tổng số tiền thu được hoặc sẽ thu được từ việc bán các sản phẩm, chủ yếu là hàng hóa tiêu dùng cho cá nhân và hộ gia đình, tại các địa điểm như cửa hàng, siêu thị, trung tâm thương mại, hợp tác xã, quầy hàng ở chợ hoặc bán hàng lưu động. Số liệu được Tổng cục thống kê (GSO) thu thập và tổng hợp thông qua khảo sát các doanh nghiệp, cơ sở sản xuất, kinh doanh cá thể, hoạt động thương mại.",
                   "frequency": "Ngày 6 tháng sau",
-                  "last_updated": "2026-09-03T02:55:34.731Z",
+                  "last_updated": "2026-11-03T04:03:54.086Z",
                   "source": "Tổng cục Thống kê - GSO",
                   "note": null,
                   "related_blog": null
@@ -802,8 +802,16 @@
                 "yAxis": 1,
                 "data": [
                   [
+                    1793404800000,
+                    19.49906582825872
+                  ],
+                  [
+                    1790726400000,
+                    19.236107838053325
+                  ],
+                  [
                     1788134400000,
-                    21.470342613851187
+                    20.60562715665546
                   ],
                   [
                     1785456000000,
@@ -843,11 +851,11 @@
                   ],
                   [
                     1761868800000,
-                    14.096326086740635
+                    18.767754832403092
                   ],
                   [
                     1759190400000,
-                    13.546389436142272
+                    19.688558901252595
                   ],
                   [
                     1756598400000,
@@ -868,14 +876,6 @@
                   [
                     1745971200000,
                     21.46825669956555
-                  ],
-                  [
-                    1743379200000,
-                    22.1006905759581
-                  ],
-                  [
-                    1740700800000,
-                    16.376430454937896
                   ]
                 ],
                 "time_frame": "monthly",
@@ -884,7 +884,7 @@
                   "unit": "%",
                   "description": "Doanh thu dịch vụ lưu trú, ăn uống phản ánh toàn bộ số tiền đã và sẽ thu được do cung cấp dịch vụ lưu trú ngắn ngày và ăn uống cho khách hàng trong một khoảng thời gian nhất định. Số liệu được Tổng cục thống kê (GSO) thu thập và tổng hợp thông qua khảo sát các doanh nghiệp, cơ sở lưu trú và các dịch vụ ăn uống.",
                   "frequency": "Ngày 6 tháng sau",
-                  "last_updated": "2026-09-03T02:55:34.731Z",
+                  "last_updated": "2026-11-03T04:03:54.086Z",
                   "source": "Tổng cục Thống kê - GSO",
                   "note": null,
                   "related_blog": null
@@ -903,8 +903,16 @@
                 "yAxis": 1,
                 "data": [
                   [
+                    1793404800000,
+                    21.781004956517908
+                  ],
+                  [
+                    1790726400000,
+                    17.264514666924416
+                  ],
+                  [
                     1788134400000,
-                    19.18245050964553
+                    24.12535429917698
                   ],
                   [
                     1785456000000,
@@ -944,11 +952,11 @@
                   ],
                   [
                     1761868800000,
-                    18.810387380580053
+                    13.617338052943609
                   ],
                   [
                     1759190400000,
-                    19.687232840500226
+                    14.436423589142834
                   ],
                   [
                     1756598400000,
@@ -969,14 +977,6 @@
                   [
                     1745971200000,
                     30.309141984671584
-                  ],
-                  [
-                    1743379200000,
-                    19.607248908437004
-                  ],
-                  [
-                    1740700800000,
-                    12.184777438123621
                   ]
                 ],
                 "time_frame": "monthly",
@@ -985,7 +985,7 @@
                   "unit": "%",
                   "description": "Doanh thu dịch vụ du lịch lữ hành là tổng số tiền mà các công ty lữ hành kiếm được từ việc tổ chức các chương trình du lịch trọn gói hoặc không trọn gói cho khách trong nước và quốc tế, cùng với các dịch vụ như cung cấp thông tin, tư vấn, lập kế hoạch du lịch và hướng dẫn du khách, bao gồm cả hoạt động của các đại lý du lịch. Số liệu này được Tổng cục Thống kê (GSO) thu thập và tổng hợp thông qua các cuộc khảo sát các doanh nghiệp, cơ sở lữ hành và cá nhân kinh doanh trong lĩnh vực du lịch.",
                   "frequency": "Ngày 6 tháng sau",
-                  "last_updated": "2026-09-03T02:55:34.731Z",
+                  "last_updated": "2026-11-03T04:03:54.086Z",
                   "source": "Tổng cục Thống kê - GSO",
                   "note": null,
                   "related_blog": null
@@ -1004,8 +1004,16 @@
                 "yAxis": 1,
                 "data": [
                   [
+                    1793404800000,
+                    15.70372173490681
+                  ],
+                  [
+                    1790726400000,
+                    13.970679036780155
+                  ],
+                  [
                     1788134400000,
-                    14.792733237642139
+                    15.69287792709448
                   ],
                   [
                     1785456000000,
@@ -1045,11 +1053,11 @@
                   ],
                   [
                     1761868800000,
-                    9.397609033902496
+                    12.872603085570347
                   ],
                   [
                     1759190400000,
-                    12.362676199210583
+                    15.931855040228296
                   ],
                   [
                     1756598400000,
@@ -1070,14 +1078,6 @@
                   [
                     1745971200000,
                     18.15752467640308
-                  ],
-                  [
-                    1743379200000,
-                    16.784492198791334
-                  ],
-                  [
-                    1740700800000,
-                    17.214181629293183
                   ]
                 ],
                 "time_frame": "monthly",
@@ -1086,7 +1086,7 @@
                   "unit": "%",
                   "description": "Doanh thu dịch vụ khác gồm số tiền đã thu và sẽ thu từ cung cấp các dịch vụ hành chính - hỗ trợ, dịch vụ hoạt động giáo dục và đào tạo, hoạt động y tế, hoạt động xổ số, thể thao, vui chơi và giải trí. Số liệu được Tổng cục thống kê (GSO) thu thập và tổng hợp thông qua khảo sát các doanh nghiệp, cơ sở sản xuất, kinh doanh cá thể, hoạt động thương mại.",
                   "frequency": "Ngày 6 tháng sau",
-                  "last_updated": "2026-09-03T02:55:34.731Z",
+                  "last_updated": "2026-11-03T04:03:54.086Z",
                   "source": "Tổng cục Thống kê - GSO",
                   "note": null,
                   "related_blog": null
@@ -1101,6 +1101,7 @@
       "value": {
         "title": "Bán Lẻ Hàng Hóa Và Dịch Vụ",
         "headers": [
+          "09-2026",
           "06-2026",
           "03-2026",
           "12-2025",
@@ -1138,8 +1139,12 @@
                 "yAxis": 17,
                 "data": [
                   [
+                    1790726400000,
+                    2038988.9210338034
+                  ],
+                  [
                     1782777600000,
-                    1977599.599757705
+                    1974780.9647395178
                   ],
                   [
                     1774915200000,
@@ -1151,11 +1156,11 @@
                   ],
                   [
                     1759190400000,
-                    1758415.52269444
+                    1781046.3615754377
                   ],
                   [
                     1751241600000,
-                    1736491.586281705
+                    1736491.586281706
                   ],
                   [
                     1743379200000,
@@ -1175,7 +1180,7 @@
                   ],
                   [
                     1711843200000,
-                    1550558.040287659
+                    1555017.32515392
                   ],
                   [
                     1703980800000,
@@ -1191,7 +1196,7 @@
                   ],
                   [
                     1680220800000,
-                    1428668.991811415
+                    1421141.22741383
                   ],
                   [
                     1672444800000,
@@ -1207,7 +1212,7 @@
                   ],
                   [
                     1648684800000,
-                    1375398.975838252
+                    1321939.85509399
                   ],
                   [
                     1640908800000,
@@ -1220,7 +1225,7 @@
                   "unit": "%",
                   "description": "Tổng bán lẻ hàng hóa và dịch vụ là một thước đo quan trọng phản ánh tình hình tiêu dùng trong nền kinh tế. Chỉ số này bao gồm tổng giá trị hàng hóa và dịch vụ tiêu thụ trên thị trường, giúp đánh giá sức mua và xu hướng tiêu dùng của người dân. Số liệu được Tổng cục thống kê (GSO) thu thập và tổng hợp thông qua khảo sát các doanh nghiệp, cơ sở sản xuất, kinh doanh cá thể, hoạt động thương mại.",
                   "frequency": "Ngày 6 tháng sau",
-                  "last_updated": "2026-09-03T02:55:34.731Z",
+                  "last_updated": "2026-11-03T04:03:54.086Z",
                   "source": "Tổng cục Thống kê - GSO",
                   "note": null,
                   "related_blog": null
@@ -1239,8 +1244,12 @@
                 "yAxis": 17,
                 "data": [
                   [
+                    1790726400000,
+                    1522738.9256188462
+                  ],
+                  [
                     1782777600000,
-                    1486244.507623869
+                    1485268.5819520224
                   ],
                   [
                     1774915200000,
@@ -1252,11 +1261,11 @@
                   ],
                   [
                     1759190400000,
-                    1334283.893779985
+                    1343249.3886356333
                   ],
                   [
                     1751241600000,
-                    1312847.014324383
+                    1312847.0143243824
                   ],
                   [
                     1743379200000,
@@ -1276,7 +1285,7 @@
                   ],
                   [
                     1711843200000,
-                    1204949.8085767159
+                    1205709.38079833
                   ],
                   [
                     1703980800000,
@@ -1292,7 +1301,7 @@
                   ],
                   [
                     1680220800000,
-                    1122400.1436340748
+                    1112635.62133935
                   ],
                   [
                     1672444800000,
@@ -1308,7 +1317,7 @@
                   ],
                   [
                     1648684800000,
-                    1093124.793413889
+                    1065680.68206819
                   ],
                   [
                     1640908800000,
@@ -1321,7 +1330,7 @@
                   "unit": "%",
                   "description": "Doanh thu bán lẻ hàng hóa là tổng số tiền thu được hoặc sẽ thu được từ việc bán các sản phẩm, chủ yếu là hàng hóa tiêu dùng cho cá nhân và hộ gia đình, tại các địa điểm như cửa hàng, siêu thị, trung tâm thương mại, hợp tác xã, quầy hàng ở chợ hoặc bán hàng lưu động. Số liệu được Tổng cục thống kê (GSO) thu thập và tổng hợp thông qua khảo sát các doanh nghiệp, cơ sở sản xuất, kinh doanh cá thể, hoạt động thương mại.",
                   "frequency": "Ngày 6 tháng sau",
-                  "last_updated": "2026-09-03T02:55:34.731Z",
+                  "last_updated": "2026-11-03T04:03:54.086Z",
                   "source": "Tổng cục Thống kê - GSO",
                   "note": null,
                   "related_blog": null
@@ -1340,8 +1349,12 @@
                 "yAxis": 17,
                 "data": [
                   [
+                    1790726400000,
+                    266808.7451956382
+                  ],
+                  [
                     1782777600000,
-                    256068.7988723114
+                    254852.42971758178
                   ],
                   [
                     1774915200000,
@@ -1353,7 +1366,7 @@
                   ],
                   [
                     1759190400000,
-                    214610.1132407536
+                    223433.76791041656
                   ],
                   [
                     1751241600000,
@@ -1377,7 +1390,7 @@
                   ],
                   [
                     1711843200000,
-                    173693.29648025468
+                    175607.767925776
                   ],
                   [
                     1703980800000,
@@ -1393,7 +1406,7 @@
                   ],
                   [
                     1680220800000,
-                    152210.82885604954
+                    154206.787762343
                   ],
                   [
                     1672444800000,
@@ -1409,7 +1422,7 @@
                   ],
                   [
                     1648684800000,
-                    144641.758925146
+                    125465.275518075
                   ],
                   [
                     1640908800000,
@@ -1422,7 +1435,7 @@
                   "unit": "%",
                   "description": "Doanh thu dịch vụ lưu trú, ăn uống phản ánh toàn bộ số tiền đã và sẽ thu được do cung cấp dịch vụ lưu trú ngắn ngày và ăn uống cho khách hàng trong một khoảng thời gian nhất định. Số liệu được Tổng cục thống kê (GSO) thu thập và tổng hợp thông qua khảo sát các doanh nghiệp, cơ sở lưu trú và các dịch vụ ăn uống.",
                   "frequency": "Ngày 6 tháng sau",
-                  "last_updated": "2026-09-03T02:55:34.731Z",
+                  "last_updated": "2026-11-03T04:03:54.086Z",
                   "source": "Tổng cục Thống kê - GSO",
                   "note": null,
                   "related_blog": null
@@ -1441,8 +1454,12 @@
                 "yAxis": 17,
                 "data": [
                   [
+                    1790726400000,
+                    28364.133043165268
+                  ],
+                  [
                     1782777600000,
-                    26481.94019678019
+                    26430.60741099284
                   ],
                   [
                     1774915200000,
@@ -1454,11 +1471,11 @@
                   ],
                   [
                     1759190400000,
-                    23979.63719085235
+                    22927.62439201258
                   ],
                   [
                     1751241600000,
-                    22968.95602393191
+                    22968.95602393192
                   ],
                   [
                     1743379200000,
@@ -1478,7 +1495,7 @@
                   ],
                   [
                     1711843200000,
-                    17751.465761448762
+                    18172.8333957713
                   ],
                   [
                     1703980800000,
@@ -1494,7 +1511,7 @@
                   ],
                   [
                     1680220800000,
-                    11911.587773472704
+                    9672.87537324437
                   ],
                   [
                     1672444800000,
@@ -1510,7 +1527,7 @@
                   ],
                   [
                     1648684800000,
-                    4609.248681605967
+                    3082.16426355999
                   ],
                   [
                     1640908800000,
@@ -1523,7 +1540,7 @@
                   "unit": "%",
                   "description": "Doanh thu dịch vụ du lịch lữ hành là tổng số tiền mà các công ty lữ hành kiếm được từ việc tổ chức các chương trình du lịch trọn gói hoặc không trọn gói cho khách trong nước và quốc tế, cùng với các dịch vụ như cung cấp thông tin, tư vấn, lập kế hoạch du lịch và hướng dẫn du khách, bao gồm cả hoạt động của các đại lý du lịch. Số liệu này được Tổng cục Thống kê (GSO) thu thập và tổng hợp thông qua các cuộc khảo sát các doanh nghiệp, cơ sở lữ hành và cá nhân kinh doanh trong lĩnh vực du lịch.",
                   "frequency": "Ngày 6 tháng sau",
-                  "last_updated": "2026-09-03T02:55:34.731Z",
+                  "last_updated": "2026-11-03T04:03:54.086Z",
                   "source": "Tổng cục Thống kê - GSO",
                   "note": null,
                   "related_blog": null
@@ -1542,8 +1559,12 @@
                 "yAxis": 17,
                 "data": [
                   [
+                    1790726400000,
+                    221077.11717615358
+                  ],
+                  [
                     1782777600000,
-                    208804.3530647451
+                    208229.34565892088
                   ],
                   [
                     1774915200000,
@@ -1555,11 +1576,11 @@
                   ],
                   [
                     1759190400000,
-                    185541.8784828488
+                    191435.58063737542
                   ],
                   [
                     1751241600000,
-                    185568.5648283579
+                    185568.564828358
                   ],
                   [
                     1743379200000,
@@ -1579,7 +1600,7 @@
                   ],
                   [
                     1711843200000,
-                    154191.2083010383
+                    155527.343034038
                   ],
                   [
                     1703980800000,
@@ -1595,7 +1616,7 @@
                   ],
                   [
                     1680220800000,
-                    141812.45863709698
+                    144625.94293889
                   ],
                   [
                     1672444800000,
@@ -1611,7 +1632,7 @@
                   ],
                   [
                     1648684800000,
-                    133388.5748108145
+                    127711.724215301
                   ],
                   [
                     1640908800000,
@@ -1624,7 +1645,7 @@
                   "unit": "%",
                   "description": "Doanh thu dịch vụ khác gồm số tiền đã thu và sẽ thu từ cung cấp các dịch vụ hành chính - hỗ trợ, dịch vụ hoạt động giáo dục và đào tạo, hoạt động y tế, hoạt động xổ số, thể thao, vui chơi và giải trí. Số liệu được Tổng cục thống kê (GSO) thu thập và tổng hợp thông qua khảo sát các doanh nghiệp, cơ sở sản xuất, kinh doanh cá thể, hoạt động thương mại.",
                   "frequency": "Ngày 6 tháng sau",
-                  "last_updated": "2026-09-03T02:55:34.731Z",
+                  "last_updated": "2026-11-03T04:03:54.086Z",
                   "source": "Tổng cục Thống kê - GSO",
                   "note": null,
                   "related_blog": null
@@ -1637,6 +1658,7 @@
       "yoy": {
         "title": "Bán Lẻ Hàng Hóa Và Dịch Vụ",
         "headers": [
+          "09-2026",
           "06-2026",
           "03-2026",
           "12-2025",
@@ -1674,8 +1696,12 @@
                 "yAxis": 1,
                 "data": [
                   [
+                    1790726400000,
+                    14.48264149790018
+                  ],
+                  [
                     1782777600000,
-                    13.884778675621284
+                    13.72246087112078
                   ],
                   [
                     1774915200000,
@@ -1687,15 +1713,15 @@
                   ],
                   [
                     1759190400000,
-                    10.039100781668303
+                    11.455305955166722
                   ],
                   [
                     1751241600000,
-                    10.476222380078458
+                    10.476222380078532
                   ],
                   [
                     1743379200000,
-                    10.113929195392021
+                    9.798158193948709
                   ],
                   [
                     1735603200000,
@@ -1711,7 +1737,7 @@
                   ],
                   [
                     1711843200000,
-                    8.531650730495697
+                    9.420323269610266
                   ],
                   [
                     1703980800000,
@@ -1727,7 +1753,7 @@
                   ],
                   [
                     1680220800000,
-                    3.8730591565765007
+                    7.504227362355068
                   ],
                   [
                     1672444800000,
@@ -1743,7 +1769,7 @@
                   ],
                   [
                     1648684800000,
-                    24.966167256322137
+                    4.982213299757202
                   ],
                   [
                     1640908800000,
@@ -1756,7 +1782,7 @@
                   "unit": "%",
                   "description": "Tổng bán lẻ hàng hóa và dịch vụ là một thước đo quan trọng phản ánh tình hình tiêu dùng trong nền kinh tế. Chỉ số này bao gồm tổng giá trị hàng hóa và dịch vụ tiêu thụ trên thị trường, giúp đánh giá sức mua và xu hướng tiêu dùng của người dân. Số liệu được Tổng cục thống kê (GSO) thu thập và tổng hợp thông qua khảo sát các doanh nghiệp, cơ sở sản xuất, kinh doanh cá thể, hoạt động thương mại.",
                   "frequency": "Ngày 6 tháng sau",
-                  "last_updated": "2026-09-03T02:55:34.731Z",
+                  "last_updated": "2026-11-03T04:03:54.086Z",
                   "source": "Tổng cục Thống kê - GSO",
                   "note": null,
                   "related_blog": null
@@ -1775,8 +1801,12 @@
                 "yAxis": 1,
                 "data": [
                   [
+                    1790726400000,
+                    13.362339004339635
+                  ],
+                  [
                     1782777600000,
-                    13.207745564224757
+                    13.133408976549457
                   ],
                   [
                     1774915200000,
@@ -1788,15 +1818,15 @@
                   ],
                   [
                     1759190400000,
-                    9.015709254105637
+                    9.748221866345643
                   ],
                   [
                     1751241600000,
-                    7.8813843703681465
+                    7.88138437036809
                   ],
                   [
                     1743379200000,
-                    8.001810032818268
+                    7.93377110395909
                   ],
                   [
                     1735603200000,
@@ -1812,7 +1842,7 @@
                   ],
                   [
                     1711843200000,
-                    7.354744688054309
+                    8.365160855351842
                   ],
                   [
                     1703980800000,
@@ -1828,7 +1858,7 @@
                   ],
                   [
                     1680220800000,
-                    2.678134317012187
+                    4.406098380242142
                   ],
                   [
                     1672444800000,
@@ -1844,7 +1874,7 @@
                   ],
                   [
                     1648684800000,
-                    19.848743331748974
+                    6.113385234219913
                   ],
                   [
                     1640908800000,
@@ -1857,7 +1887,7 @@
                   "unit": "%",
                   "description": "Doanh thu bán lẻ hàng hóa là tổng số tiền thu được hoặc sẽ thu được từ việc bán các sản phẩm, chủ yếu là hàng hóa tiêu dùng cho cá nhân và hộ gia đình, tại các địa điểm như cửa hàng, siêu thị, trung tâm thương mại, hợp tác xã, quầy hàng ở chợ hoặc bán hàng lưu động. Số liệu được Tổng cục thống kê (GSO) thu thập và tổng hợp thông qua khảo sát các doanh nghiệp, cơ sở sản xuất, kinh doanh cá thể, hoạt động thương mại.",
                   "frequency": "Ngày 6 tháng sau",
-                  "last_updated": "2026-09-03T02:55:34.731Z",
+                  "last_updated": "2026-11-03T04:03:54.086Z",
                   "source": "Tổng cục Thống kê - GSO",
                   "note": null,
                   "related_blog": null
@@ -1876,8 +1906,12 @@
                 "yAxis": 1,
                 "data": [
                   [
+                    1790726400000,
+                    19.412901501357844
+                  ],
+                  [
                     1782777600000,
-                    16.785413620427057
+                    16.23066358654627
                   ],
                   [
                     1774915200000,
@@ -1889,7 +1923,7 @@
                   ],
                   [
                     1759190400000,
-                    14.77783517420748
+                    19.496904401725985
                   ],
                   [
                     1751241600000,
@@ -1897,7 +1931,7 @@
                   ],
                   [
                     1743379200000,
-                    19.298931201765665
+                    17.998337270388284
                   ],
                   [
                     1735603200000,
@@ -1913,7 +1947,7 @@
                   ],
                   [
                     1711843200000,
-                    14.11362633372279
+                    13.878105156055298
                   ],
                   [
                     1703980800000,
@@ -1929,7 +1963,7 @@
                   ],
                   [
                     1680220800000,
-                    5.232976968166329
+                    22.907941759652378
                   ],
                   [
                     1672444800000,
@@ -1945,7 +1979,7 @@
                   ],
                   [
                     1648684800000,
-                    75.67258095071338
+                    6.451541348594554
                   ],
                   [
                     1640908800000,
@@ -1958,7 +1992,7 @@
                   "unit": "%",
                   "description": "Doanh thu dịch vụ lưu trú, ăn uống phản ánh toàn bộ số tiền đã và sẽ thu được do cung cấp dịch vụ lưu trú ngắn ngày và ăn uống cho khách hàng trong một khoảng thời gian nhất định. Số liệu được Tổng cục thống kê (GSO) thu thập và tổng hợp thông qua khảo sát các doanh nghiệp, cơ sở lưu trú và các dịch vụ ăn uống.",
                   "frequency": "Ngày 6 tháng sau",
-                  "last_updated": "2026-09-03T02:55:34.731Z",
+                  "last_updated": "2026-11-03T04:03:54.086Z",
                   "source": "Tổng cục Thống kê - GSO",
                   "note": null,
                   "related_blog": null
@@ -1977,8 +2011,12 @@
                 "yAxis": 1,
                 "data": [
                   [
+                    1790726400000,
+                    23.71160901016257
+                  ],
+                  [
                     1782777600000,
-                    15.294487782500935
+                    15.071000107510937
                   ],
                   [
                     1774915200000,
@@ -1990,15 +2028,15 @@
                   ],
                   [
                     1759190400000,
-                    17.375205031479197
+                    12.225826958041834
                   ],
                   [
                     1751241600000,
-                    19.80850272678393
+                    19.80850272678399
                   ],
                   [
                     1743379200000,
-                    14.635095937212858
+                    11.977088892662477
                   ],
                   [
                     1735603200000,
@@ -2014,7 +2052,7 @@
                   ],
                   [
                     1711843200000,
-                    49.02686442005289
+                    87.8741604180926
                   ],
                   [
                     1703980800000,
@@ -2030,7 +2068,7 @@
                   ],
                   [
                     1680220800000,
-                    158.42796942174175
+                    213.83386951842454
                   ],
                   [
                     1672444800000,
@@ -2046,7 +2084,7 @@
                   ],
                   [
                     1648684800000,
-                    534.6613575165316
+                    0.5819137625295343
                   ],
                   [
                     1640908800000,
@@ -2059,7 +2097,7 @@
                   "unit": "%",
                   "description": "Doanh thu dịch vụ du lịch lữ hành là tổng số tiền mà các công ty lữ hành kiếm được từ việc tổ chức các chương trình du lịch trọn gói hoặc không trọn gói cho khách trong nước và quốc tế, cùng với các dịch vụ như cung cấp thông tin, tư vấn, lập kế hoạch du lịch và hướng dẫn du khách, bao gồm cả hoạt động của các đại lý du lịch. Số liệu này được Tổng cục Thống kê (GSO) thu thập và tổng hợp thông qua các cuộc khảo sát các doanh nghiệp, cơ sở lữ hành và cá nhân kinh doanh trong lĩnh vực du lịch.",
                   "frequency": "Ngày 6 tháng sau",
-                  "last_updated": "2026-09-03T02:55:34.731Z",
+                  "last_updated": "2026-11-03T04:03:54.086Z",
                   "source": "Tổng cục Thống kê - GSO",
                   "note": null,
                   "related_blog": null
@@ -2078,8 +2116,12 @@
                 "yAxis": 1,
                 "data": [
                   [
+                    1790726400000,
+                    15.483817814895284
+                  ],
+                  [
                     1782777600000,
-                    12.521403211734283
+                    12.211540705465392
                   ],
                   [
                     1774915200000,
@@ -2091,15 +2133,15 @@
                   ],
                   [
                     1759190400000,
-                    11.33915691627258
+                    14.875823863736246
                   ],
                   [
                     1751241600000,
-                    20.166234008222244
+                    20.166234008222318
                   ],
                   [
                     1743379200000,
-                    15.732359358404763
+                    14.738103158471324
                   ],
                   [
                     1735603200000,
@@ -2115,7 +2157,7 @@
                   ],
                   [
                     1711843200000,
-                    8.728957796027627
+                    7.537651871873549
                   ],
                   [
                     1703980800000,
@@ -2131,7 +2173,7 @@
                   ],
                   [
                     1680220800000,
-                    6.315296372444276
+                    13.244061050396901
                   ],
                   [
                     1672444800000,
@@ -2147,7 +2189,7 @@
                   ],
                   [
                     1648684800000,
-                    22.061752510088535
+                    -4.687788278517445
                   ],
                   [
                     1640908800000,
@@ -2160,7 +2202,7 @@
                   "unit": "%",
                   "description": "Doanh thu dịch vụ khác gồm số tiền đã thu và sẽ thu từ cung cấp các dịch vụ hành chính - hỗ trợ, dịch vụ hoạt động giáo dục và đào tạo, hoạt động y tế, hoạt động xổ số, thể thao, vui chơi và giải trí. Số liệu được Tổng cục thống kê (GSO) thu thập và tổng hợp thông qua khảo sát các doanh nghiệp, cơ sở sản xuất, kinh doanh cá thể, hoạt động thương mại.",
                   "frequency": "Ngày 6 tháng sau",
-                  "last_updated": "2026-09-03T02:55:34.731Z",
+                  "last_updated": "2026-11-03T04:03:54.086Z",
                   "source": "Tổng cục Thống kê - GSO",
                   "note": null,
                   "related_blog": null
@@ -2299,7 +2341,7 @@
                   "unit": "Tỷ VND",
                   "description": "Tổng bán lẻ hàng hóa và dịch vụ là một thước đo quan trọng phản ánh tình hình tiêu dùng trong nền kinh tế. Chỉ số này bao gồm tổng giá trị hàng hóa và dịch vụ tiêu thụ trên thị trường, giúp đánh giá sức mua và xu hướng tiêu dùng của người dân. Số liệu được Tổng cục thống kê (GSO) thu thập và tổng hợp thông qua khảo sát các doanh nghiệp, cơ sở sản xuất, kinh doanh cá thể, hoạt động thương mại.",
                   "frequency": "Ngày 6 tháng sau",
-                  "last_updated": "2026-09-03T02:55:34.731Z",
+                  "last_updated": "2026-11-03T04:03:54.086Z",
                   "source": "Tổng cục Thống kê - GSO",
                   "note": null,
                   "related_blog": null
@@ -2404,7 +2446,7 @@
                   "unit": "Tỷ VND",
                   "description": "Doanh thu bán lẻ hàng hóa là tổng số tiền thu được hoặc sẽ thu được từ việc bán các sản phẩm, chủ yếu là hàng hóa tiêu dùng cho cá nhân và hộ gia đình, tại các địa điểm như cửa hàng, siêu thị, trung tâm thương mại, hợp tác xã, quầy hàng ở chợ hoặc bán hàng lưu động. Số liệu được Tổng cục thống kê (GSO) thu thập và tổng hợp thông qua khảo sát các doanh nghiệp, cơ sở sản xuất, kinh doanh cá thể, hoạt động thương mại.",
                   "frequency": "Ngày 6 tháng sau",
-                  "last_updated": "2026-09-03T02:55:34.731Z",
+                  "last_updated": "2026-11-03T04:03:54.086Z",
                   "source": "Tổng cục Thống kê - GSO",
                   "note": null,
                   "related_blog": null
@@ -2509,7 +2551,7 @@
                   "unit": "Tỷ VND",
                   "description": "Doanh thu dịch vụ lưu trú, ăn uống phản ánh toàn bộ số tiền đã và sẽ thu được do cung cấp dịch vụ lưu trú ngắn ngày và ăn uống cho khách hàng trong một khoảng thời gian nhất định. Số liệu được Tổng cục thống kê (GSO) thu thập và tổng hợp thông qua khảo sát các doanh nghiệp, cơ sở lưu trú và các dịch vụ ăn uống.",
                   "frequency": "Ngày 6 tháng sau",
-                  "last_updated": "2026-09-03T02:55:34.731Z",
+                  "last_updated": "2026-11-03T04:03:54.086Z",
                   "source": "Tổng cục Thống kê - GSO",
                   "note": null,
                   "related_blog": null
@@ -2614,7 +2656,7 @@
                   "unit": "Tỷ VND",
                   "description": "Doanh thu dịch vụ du lịch lữ hành là tổng số tiền mà các công ty lữ hành kiếm được từ việc tổ chức các chương trình du lịch trọn gói hoặc không trọn gói cho khách trong nước và quốc tế, cùng với các dịch vụ như cung cấp thông tin, tư vấn, lập kế hoạch du lịch và hướng dẫn du khách, bao gồm cả hoạt động của các đại lý du lịch. Số liệu này được Tổng cục Thống kê (GSO) thu thập và tổng hợp thông qua các cuộc khảo sát các doanh nghiệp, cơ sở lữ hành và cá nhân kinh doanh trong lĩnh vực du lịch.",
                   "frequency": "Ngày 6 tháng sau",
-                  "last_updated": "2026-09-03T02:55:34.731Z",
+                  "last_updated": "2026-11-03T04:03:54.086Z",
                   "source": "Tổng cục Thống kê - GSO",
                   "note": null,
                   "related_blog": null
@@ -2719,7 +2761,7 @@
                   "unit": "Tỷ VND",
                   "description": "Doanh thu dịch vụ khác gồm số tiền đã thu và sẽ thu từ cung cấp các dịch vụ hành chính - hỗ trợ, dịch vụ hoạt động giáo dục và đào tạo, hoạt động y tế, hoạt động xổ số, thể thao, vui chơi và giải trí. Số liệu được Tổng cục thống kê (GSO) thu thập và tổng hợp thông qua khảo sát các doanh nghiệp, cơ sở sản xuất, kinh doanh cá thể, hoạt động thương mại.",
                   "frequency": "Ngày 6 tháng sau",
-                  "last_updated": "2026-09-03T02:55:34.731Z",
+                  "last_updated": "2026-11-03T04:03:54.086Z",
                   "source": "Tổng cục Thống kê - GSO",
                   "note": null,
                   "related_blog": null
@@ -2835,19 +2877,19 @@
                   ],
                   [
                     1262217600000,
-                    23.745216005312344
+                    23.696985142014665
                   ],
                   [
                     1230681600000,
-                    30.965613050928265
+                    30.968366957191435
                   ],
                   [
                     1199059200000,
-                    25.4915495712702
+                    25.495269395830643
                   ],
                   [
                     1167523200000,
-                    22.514587238691707
+                    22.506956955115328
                   ]
                 ],
                 "time_frame": "yearly",
@@ -2856,7 +2898,7 @@
                   "unit": "%",
                   "description": "Tổng bán lẻ hàng hóa và dịch vụ là một thước đo quan trọng phản ánh tình hình tiêu dùng trong nền kinh tế. Chỉ số này bao gồm tổng giá trị hàng hóa và dịch vụ tiêu thụ trên thị trường, giúp đánh giá sức mua và xu hướng tiêu dùng của người dân. Số liệu được Tổng cục thống kê (GSO) thu thập và tổng hợp thông qua khảo sát các doanh nghiệp, cơ sở sản xuất, kinh doanh cá thể, hoạt động thương mại.",
                   "frequency": "Ngày 6 tháng sau",
-                  "last_updated": "2026-09-03T02:55:34.731Z",
+                  "last_updated": "2026-11-03T04:03:54.086Z",
                   "source": "Tổng cục Thống kê - GSO",
                   "note": null,
                   "related_blog": null
@@ -2940,19 +2982,19 @@
                   ],
                   [
                     1262217600000,
-                    16.53448991244213
+                    16.486636354947514
                   ],
                   [
                     1230681600000,
-                    31.46971817793649
+                    31.46817272771365
                   ],
                   [
                     1199059200000,
-                    26.938165750801968
+                    26.940961936953318
                   ],
                   [
                     1167523200000,
-                    21.232740004904894
+                    21.157696236401613
                   ]
                 ],
                 "time_frame": "yearly",
@@ -2961,7 +3003,7 @@
                   "unit": "%",
                   "description": "Doanh thu bán lẻ hàng hóa là tổng số tiền thu được hoặc sẽ thu được từ việc bán các sản phẩm, chủ yếu là hàng hóa tiêu dùng cho cá nhân và hộ gia đình, tại các địa điểm như cửa hàng, siêu thị, trung tâm thương mại, hợp tác xã, quầy hàng ở chợ hoặc bán hàng lưu động. Số liệu được Tổng cục thống kê (GSO) thu thập và tổng hợp thông qua khảo sát các doanh nghiệp, cơ sở sản xuất, kinh doanh cá thể, hoạt động thương mại.",
                   "frequency": "Ngày 6 tháng sau",
-                  "last_updated": "2026-09-03T02:55:34.731Z",
+                  "last_updated": "2026-11-03T04:03:54.086Z",
                   "source": "Tổng cục Thống kê - GSO",
                   "note": null,
                   "related_blog": null
@@ -3045,19 +3087,19 @@
                   ],
                   [
                     1262217600000,
-                    22.548190876650985
+                    22.54906121245549
                   ],
                   [
                     1230681600000,
-                    26.23812625033166
+                    26.222239749575333
                   ],
                   [
                     1199059200000,
-                    23.552209899647902
+                    23.552209899647895
                   ],
                   [
                     1167523200000,
-                    22.22611595208994
+                    22.22241653561392
                   ]
                 ],
                 "time_frame": "yearly",
@@ -3066,7 +3108,7 @@
                   "unit": "%",
                   "description": "Doanh thu dịch vụ lưu trú, ăn uống phản ánh toàn bộ số tiền đã và sẽ thu được do cung cấp dịch vụ lưu trú ngắn ngày và ăn uống cho khách hàng trong một khoảng thời gian nhất định. Số liệu được Tổng cục thống kê (GSO) thu thập và tổng hợp thông qua khảo sát các doanh nghiệp, cơ sở lưu trú và các dịch vụ ăn uống.",
                   "frequency": "Ngày 6 tháng sau",
-                  "last_updated": "2026-09-03T02:55:34.731Z",
+                  "last_updated": "2026-11-03T04:03:54.086Z",
                   "source": "Tổng cục Thống kê - GSO",
                   "note": null,
                   "related_blog": null
@@ -3150,15 +3192,15 @@
                   ],
                   [
                     1262217600000,
-                    -7.441615102826471
+                    -7.441615102826468
                   ],
                   [
                     1230681600000,
-                    43.09997688946978
+                    43.099976889469794
                   ],
                   [
                     1199059200000,
-                    44.94898329151229
+                    44.94898329151228
                   ],
                   [
                     1167523200000,
@@ -3171,7 +3213,7 @@
                   "unit": "%",
                   "description": "Doanh thu dịch vụ du lịch lữ hành là tổng số tiền mà các công ty lữ hành kiếm được từ việc tổ chức các chương trình du lịch trọn gói hoặc không trọn gói cho khách trong nước và quốc tế, cùng với các dịch vụ như cung cấp thông tin, tư vấn, lập kế hoạch du lịch và hướng dẫn du khách, bao gồm cả hoạt động của các đại lý du lịch. Số liệu này được Tổng cục Thống kê (GSO) thu thập và tổng hợp thông qua các cuộc khảo sát các doanh nghiệp, cơ sở lữ hành và cá nhân kinh doanh trong lĩnh vực du lịch.",
                   "frequency": "Ngày 6 tháng sau",
-                  "last_updated": "2026-09-03T02:55:34.731Z",
+                  "last_updated": "2026-11-03T04:03:54.086Z",
                   "source": "Tổng cục Thống kê - GSO",
                   "note": null,
                   "related_blog": null
@@ -3255,19 +3297,19 @@
                   ],
                   [
                     1262217600000,
-                    128.66915952304913
+                    128.68787151500834
                   ],
                   [
                     1230681600000,
-                    31.368665444729782
+                    31.39774618212728
                   ],
                   [
                     1199059200000,
-                    6.039916545818125
+                    6.039916545818119
                   ],
                   [
                     1167523200000,
-                    36.30111684782263
+                    36.30111684782262
                   ]
                 ],
                 "time_frame": "yearly",
@@ -3276,7 +3318,7 @@
                   "unit": "%",
                   "description": "Doanh thu dịch vụ khác gồm số tiền đã thu và sẽ thu từ cung cấp các dịch vụ hành chính - hỗ trợ, dịch vụ hoạt động giáo dục và đào tạo, hoạt động y tế, hoạt động xổ số, thể thao, vui chơi và giải trí. Số liệu được Tổng cục thống kê (GSO) thu thập và tổng hợp thông qua khảo sát các doanh nghiệp, cơ sở sản xuất, kinh doanh cá thể, hoạt động thương mại.",
                   "frequency": "Ngày 6 tháng sau",
-                  "last_updated": "2026-09-03T02:55:34.731Z",
+                  "last_updated": "2026-11-03T04:03:54.086Z",
                   "source": "Tổng cục Thống kê - GSO",
                   "note": null,
                   "related_blog": null

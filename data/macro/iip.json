@@ -15,15 +15,17 @@
     ],
     "unit": "%",
     "description": "Tốc độ tăng trưởng chỉ số sản xuất công nghiệp toàn ngành.",
-    "updatedAt": "2026-09-19T10:14:33.569Z",
-    "latestPeriod": "08-2026",
-    "latestValue": 14.409999999999998
+    "updatedAt": "2026-11-07T06:37:06.362Z",
+    "latestPeriod": "10-2026",
+    "latestValue": 14.980000000000004
   },
   "datasets": {
     "monthly": {
       "yoy": {
         "title": "IIP",
         "headers": [
+          "10-2026",
+          "09-2026",
           "08-2026",
           "07-2026",
           "06-2026",
@@ -40,9 +42,7 @@
           "07-2025",
           "06-2025",
           "05-2025",
-          "04-2025",
-          "03-2025",
-          "02-2025"
+          "04-2025"
         ],
         "parent": [
           {
@@ -61,8 +61,16 @@
                 "yAxis": 1,
                 "data": [
                   [
+                    1793404800000,
+                    14.980000000000004
+                  ],
+                  [
+                    1790726400000,
+                    14.170000000000002
+                  ],
+                  [
                     1788134400000,
-                    14.409999999999998
+                    13.5
                   ],
                   [
                     1785456000000,
@@ -127,14 +135,6 @@
                   [
                     1745971200000,
                     9.64
-                  ],
-                  [
-                    1743379200000,
-                    9.92
-                  ],
-                  [
-                    1740700800000,
-                    17.560000000000002
                   ]
                 ],
                 "time_frame": "monthly",
@@ -143,7 +143,7 @@
                   "unit": "%",
                   "description": "Chỉ số sản xuất toàn ngành công nghiệp, đo lường khối lượng sản xuất công nghiệp của tất cá các ngành tạo ra trong kỳ hiện tại so với cùng kỳ năm trước. Dữ liệu được thu thập từ các doanh nghiệp thông qua các cuộc khảo sát do Tổng cục thống kê (GSO) phối hợp với Bộ Kế hoạch đầu tư thực hiện.",
                   "frequency": "Ngày 6 tháng sau",
-                  "last_updated": "2026-09-03T02:55:34.731Z",
+                  "last_updated": "2026-11-03T04:03:54.086Z",
                   "source": "Tổng cục Thống kê - GSO",
                   "note": null,
                   "related_blog": null
@@ -162,8 +162,16 @@
                 "yAxis": 1,
                 "data": [
                   [
+                    1793404800000,
+                    4.8799999999999955
+                  ],
+                  [
+                    1790726400000,
+                    13.310000000000002
+                  ],
+                  [
                     1788134400000,
-                    18.489999999999995
+                    6.730000000000004
                   ],
                   [
                     1785456000000,
@@ -228,14 +236,6 @@
                   [
                     1745971200000,
                     -4.67
-                  ],
-                  [
-                    1743379200000,
-                    -3.65
-                  ],
-                  [
-                    1740700800000,
-                    3.0700000000000003
                   ]
                 ],
                 "time_frame": "monthly",
@@ -254,8 +254,16 @@
                 "yAxis": 1,
                 "data": [
                   [
+                    1793404800000,
+                    3.829999999999998
+                  ],
+                  [
+                    1790726400000,
+                    7.769999999999996
+                  ],
+                  [
                     1788134400000,
-                    17.790000000000006
+                    16.39
                   ],
                   [
                     1785456000000,
@@ -320,14 +328,6 @@
                   [
                     1745971200000,
                     8.19
-                  ],
-                  [
-                    1743379200000,
-                    4.62
-                  ],
-                  [
-                    1740700800000,
-                    34.43
                   ]
                 ],
                 "time_frame": "monthly",
@@ -336,7 +336,7 @@
                   "unit": "%",
                   "description": "Chỉ số sản xuất công nghiệp - IIP ngành khai thác than cứng và than non, đo lường khối lượng sản xuất công nghiệp tạo ra trong kỳ hiện tại so với cùng kỳ năm trước. Dữ liệu được thu thập từ các doanh nghiệp thông qua các cuộc khảo sát do Tổng cục thống kê (GSO) phối hợp với Bộ Kế hoạch đầu tư thực hiện.",
                   "frequency": "Ngày 6 tháng sau",
-                  "last_updated": "2026-09-03T02:55:34.731Z",
+                  "last_updated": "2026-11-03T04:03:54.086Z",
                   "source": "Tổng cục Thống kê - GSO",
                   "note": null,
                   "related_blog": null
@@ -355,8 +355,16 @@
                 "yAxis": 1,
                 "data": [
                   [
+                    1793404800000,
+                    1.2199999999999989
+                  ],
+                  [
+                    1790726400000,
+                    2.0600000000000023
+                  ],
+                  [
                     1788134400000,
-                    19.549999999999997
+                    12.079999999999998
                   ],
                   [
                     1785456000000,
@@ -421,14 +429,6 @@
                   [
                     1745971200000,
                     -11.129999999999999
-                  ],
-                  [
-                    1743379200000,
-                    -8.61
-                  ],
-                  [
-                    1740700800000,
-                    -11.450000000000001
                   ]
                 ],
                 "time_frame": "monthly",
@@ -437,7 +437,7 @@
                   "unit": "%",
                   "description": "Chỉ số sản xuất công nghiệp - IIP ngành khai thác dầu thô và khí đốt tự nhiên, đo lường khối lượng sản xuất công nghiệp tạo ra trong kỳ hiện tại so với cùng kỳ năm trước. Dữ liệu được thu thập từ các doanh nghiệp thông qua các cuộc khảo sát do Tổng cục thống kê (GSO) phối hợp với Bộ Kế hoạch đầu tư thực hiện.",
                   "frequency": "Ngày 6 tháng sau",
-                  "last_updated": "2026-09-03T02:55:34.731Z",
+                  "last_updated": "2026-11-03T04:03:54.086Z",
                   "source": "Tổng cục Thống kê - GSO",
                   "note": null,
                   "related_blog": null
@@ -456,8 +456,16 @@
                 "yAxis": 1,
                 "data": [
                   [
+                    1793404800000,
+                    98.30000000000001
+                  ],
+                  [
+                    1790726400000,
+                    44.25
+                  ],
+                  [
                     1788134400000,
-                    27.980000000000004
+                    -8.299999999999997
                   ],
                   [
                     1785456000000,
@@ -522,14 +530,6 @@
                   [
                     1745971200000,
                     -6.39
-                  ],
-                  [
-                    1743379200000,
-                    1.4000000000000001
-                  ],
-                  [
-                    1740700800000,
-                    26.69
                   ]
                 ],
                 "time_frame": "monthly",
@@ -538,7 +538,7 @@
                   "unit": "%",
                   "description": "Chỉ số sản xuất công nghiệp - IIP ngành khai thác quặng kim loại, đo lường khối lượng sản xuất công nghiệp tạo ra trong kỳ hiện tại so với cùng kỳ năm trước. Dữ liệu được thu thập từ các doanh nghiệp thông qua các cuộc khảo sát do Tổng cục thống kê (GSO) phối hợp với Bộ Kế hoạch đầu tư thực hiện.",
                   "frequency": "Ngày 6 tháng sau",
-                  "last_updated": "2026-09-03T02:55:34.731Z",
+                  "last_updated": "2026-11-03T04:03:54.086Z",
                   "source": "Tổng cục Thống kê - GSO",
                   "note": null,
                   "related_blog": null
@@ -557,8 +557,16 @@
                 "yAxis": 1,
                 "data": [
                   [
+                    1793404800000,
+                    10.310000000000002
+                  ],
+                  [
+                    1790726400000,
+                    13.310000000000002
+                  ],
+                  [
                     1788134400000,
-                    12.479999999999999
+                    6.730000000000004
                   ],
                   [
                     1785456000000,
@@ -623,14 +631,6 @@
                   [
                     1745971200000,
                     8.38
-                  ],
-                  [
-                    1743379200000,
-                    9.120000000000001
-                  ],
-                  [
-                    1740700800000,
-                    19.56
                   ]
                 ],
                 "time_frame": "monthly",
@@ -639,7 +639,7 @@
                   "unit": "%",
                   "description": "Chỉ số sản xuất công nghiệp - IIP ngành khai khoáng khác, đo lường khối lượng sản xuất công nghiệp tạo ra trong kỳ hiện tại so với cùng kỳ năm trước. Dữ liệu được thu thập từ các doanh nghiệp thông qua các cuộc khảo sát do Tổng cục thống kê (GSO) phối hợp với Bộ Kế hoạch đầu tư thực hiện.",
                   "frequency": "Ngày 6 tháng sau",
-                  "last_updated": "2026-09-03T02:55:34.731Z",
+                  "last_updated": "2026-11-03T04:03:54.086Z",
                   "source": "Tổng cục Thống kê - GSO",
                   "note": null,
                   "related_blog": null
@@ -658,8 +658,16 @@
                 "yAxis": 1,
                 "data": [
                   [
+                    1793404800000,
+                    11.090000000000003
+                  ],
+                  [
+                    1790726400000,
+                    51.44999999999998
+                  ],
+                  [
                     1788134400000,
-                    30.939999999999994
+                    30.50999999999999
                   ],
                   [
                     1785456000000,
@@ -724,14 +732,6 @@
                   [
                     1745971200000,
                     -23.47
-                  ],
-                  [
-                    1743379200000,
-                    -16.99
-                  ],
-                  [
-                    1740700800000,
-                    -7.920000000000001
                   ]
                 ],
                 "time_frame": "monthly",
@@ -740,7 +740,7 @@
                   "unit": "%",
                   "description": "Chỉ số sản xuất công nghiệp - IIP ngành hoạt động dịch vụ hỗ trợ khai thác mỏ và quặng, đo lường khối lượng sản xuất công nghiệp tạo ra trong kỳ hiện tại so với cùng kỳ năm trước. Dữ liệu được thu thập từ các doanh nghiệp thông qua các cuộc khảo sát do Tổng cục thống kê (GSO) phối hợp với Bộ Kế hoạch đầu tư thực hiện.",
                   "frequency": "Ngày 6 tháng sau",
-                  "last_updated": "2026-09-03T02:55:34.731Z",
+                  "last_updated": "2026-11-03T04:03:54.086Z",
                   "source": "Tổng cục Thống kê - GSO",
                   "note": null,
                   "related_blog": null
@@ -759,8 +759,16 @@
                 "yAxis": 1,
                 "data": [
                   [
+                    1793404800000,
+                    15.730000000000006
+                  ],
+                  [
+                    1790726400000,
+                    9.89
+                  ],
+                  [
                     1788134400000,
-                    14.590000000000003
+                    10.14
                   ],
                   [
                     1785456000000,
@@ -825,14 +833,6 @@
                   [
                     1745971200000,
                     12.280000000000001
-                  ],
-                  [
-                    1743379200000,
-                    11.68
-                  ],
-                  [
-                    1740700800000,
-                    19.68
                   ]
                 ],
                 "time_frame": "monthly",
@@ -851,8 +851,16 @@
                 "yAxis": 1,
                 "data": [
                   [
+                    1793404800000,
+                    17.86
+                  ],
+                  [
+                    1790726400000,
+                    17.03
+                  ],
+                  [
                     1788134400000,
-                    13.290000000000008
+                    13.849999999999996
                   ],
                   [
                     1785456000000,
@@ -917,14 +925,6 @@
                   [
                     1745971200000,
                     10.979999999999999
-                  ],
-                  [
-                    1743379200000,
-                    10.84
-                  ],
-                  [
-                    1740700800000,
-                    17.89
                   ]
                 ],
                 "time_frame": "monthly",
@@ -933,7 +933,7 @@
                   "unit": "%",
                   "description": "Chỉ số sản xuất công nghiệp - IIP ngành chế biến thực phẩm, đo lường khối lượng sản xuất công nghiệp tạo ra trong kỳ hiện tại so với cùng kỳ năm trước. Dữ liệu được thu thập từ các doanh nghiệp thông qua các cuộc khảo sát do Tổng cục thống kê (GSO) phối hợp với Bộ Kế hoạch đầu tư thực hiện.",
                   "frequency": "Ngày 6 tháng sau",
-                  "last_updated": "2026-09-03T02:55:34.731Z",
+                  "last_updated": "2026-11-03T04:03:54.086Z",
                   "source": "Tổng cục Thống kê - GSO",
                   "note": null,
                   "related_blog": null
@@ -952,8 +952,16 @@
                 "yAxis": 1,
                 "data": [
                   [
+                    1793404800000,
+                    21.42
+                  ],
+                  [
+                    1790726400000,
+                    20.840000000000003
+                  ],
+                  [
                     1788134400000,
-                    19.739999999999995
+                    20.590000000000003
                   ],
                   [
                     1785456000000,
@@ -1018,14 +1026,6 @@
                   [
                     1745971200000,
                     4.62
-                  ],
-                  [
-                    1743379200000,
-                    -4.19
-                  ],
-                  [
-                    1740700800000,
-                    7.380000000000001
                   ]
                 ],
                 "time_frame": "monthly",
@@ -1034,7 +1034,7 @@
                   "unit": "%",
                   "description": "Chỉ số sản xuất công nghiệp - IIP ngành đồ uống, đo lường khối lượng sản xuất công nghiệp tạo ra trong kỳ hiện tại so với cùng kỳ năm trước. Dữ liệu được thu thập từ các doanh nghiệp thông qua các cuộc khảo sát do Tổng cục thống kê (GSO) phối hợp với Bộ Kế hoạch đầu tư thực hiện.",
                   "frequency": "Ngày 6 tháng sau",
-                  "last_updated": "2026-09-03T02:55:34.731Z",
+                  "last_updated": "2026-11-03T04:03:54.086Z",
                   "source": "Tổng cục Thống kê - GSO",
                   "note": null,
                   "related_blog": null
@@ -1053,8 +1053,16 @@
                 "yAxis": 1,
                 "data": [
                   [
+                    1793404800000,
+                    15.040000000000006
+                  ],
+                  [
+                    1790726400000,
+                    11.489999999999995
+                  ],
+                  [
                     1788134400000,
-                    5.25
+                    8.310000000000002
                   ],
                   [
                     1785456000000,
@@ -1119,14 +1127,6 @@
                   [
                     1745971200000,
                     8.76
-                  ],
-                  [
-                    1743379200000,
-                    5.21
-                  ],
-                  [
-                    1740700800000,
-                    17.349999999999998
                   ]
                 ],
                 "time_frame": "monthly",
@@ -1135,7 +1135,7 @@
                   "unit": "%",
                   "description": "Chỉ số sản xuất công nghiệp - IIP ngành thuốc lá, đo lường khối lượng sản xuất công nghiệp tạo ra trong kỳ hiện tại so với cùng kỳ năm trước. Dữ liệu được thu thập từ các doanh nghiệp thông qua các cuộc khảo sát do Tổng cục thống kê (GSO) phối hợp với Bộ Kế hoạch đầu tư thực hiện.",
                   "frequency": "Ngày 6 tháng sau",
-                  "last_updated": "2026-09-03T02:55:34.731Z",
+                  "last_updated": "2026-11-03T04:03:54.086Z",
                   "source": "Tổng cục Thống kê - GSO",
                   "note": null,
                   "related_blog": null
@@ -1154,8 +1154,16 @@
                 "yAxis": 1,
                 "data": [
                   [
+                    1793404800000,
+                    17.060000000000002
+                  ],
+                  [
+                    1790726400000,
+                    13.200000000000003
+                  ],
+                  [
                     1788134400000,
-                    9.969999999999999
+                    9.590000000000003
                   ],
                   [
                     1785456000000,
@@ -1220,14 +1228,6 @@
                   [
                     1745971200000,
                     9.6
-                  ],
-                  [
-                    1743379200000,
-                    9.86
-                  ],
-                  [
-                    1740700800000,
-                    26.3
                   ]
                 ],
                 "time_frame": "monthly",
@@ -1236,7 +1236,7 @@
                   "unit": "%",
                   "description": "Chỉ số sản xuất công nghiệp - IIP ngành dệt, đo lường khối lượng sản xuất công nghiệp tạo ra trong kỳ hiện tại so với cùng kỳ năm trước. Dữ liệu được thu thập từ các doanh nghiệp thông qua các cuộc khảo sát do Tổng cục thống kê (GSO) phối hợp với Bộ Kế hoạch đầu tư thực hiện.",
                   "frequency": "Ngày 6 tháng sau",
-                  "last_updated": "2026-09-03T02:55:34.731Z",
+                  "last_updated": "2026-11-03T04:03:54.086Z",
                   "source": "Tổng cục Thống kê - GSO",
                   "note": null,
                   "related_blog": null
@@ -1255,8 +1255,16 @@
                 "yAxis": 1,
                 "data": [
                   [
+                    1793404800000,
+                    12.129999999999995
+                  ],
+                  [
+                    1790726400000,
+                    11.040000000000006
+                  ],
+                  [
                     1788134400000,
-                    8.260000000000005
+                    11.760000000000005
                   ],
                   [
                     1785456000000,
@@ -1321,14 +1329,6 @@
                   [
                     1745971200000,
                     15.83
-                  ],
-                  [
-                    1743379200000,
-                    17.580000000000002
-                  ],
-                  [
-                    1740700800000,
-                    25.09
                   ]
                 ],
                 "time_frame": "monthly",
@@ -1337,7 +1337,7 @@
                   "unit": "%",
                   "description": "Chỉ số sản xuất công nghiệp - IIP ngành trang phục, đo lường khối lượng sản xuất công nghiệp tạo ra trong kỳ hiện tại so với cùng kỳ năm trước. Dữ liệu được thu thập từ các doanh nghiệp thông qua các cuộc khảo sát do Tổng cục thống kê (GSO) phối hợp với Bộ Kế hoạch đầu tư thực hiện.",
                   "frequency": "Ngày 6 tháng sau",
-                  "last_updated": "2026-09-03T02:55:34.731Z",
+                  "last_updated": "2026-11-03T04:03:54.086Z",
                   "source": "Tổng cục Thống kê - GSO",
                   "note": null,
                   "related_blog": null
@@ -1356,8 +1356,16 @@
                 "yAxis": 1,
                 "data": [
                   [
+                    1793404800000,
+                    6.549999999999997
+                  ],
+                  [
+                    1790726400000,
+                    9.829999999999998
+                  ],
+                  [
                     1788134400000,
-                    4.780000000000001
+                    2.25
                   ],
                   [
                     1785456000000,
@@ -1422,14 +1430,6 @@
                   [
                     1745971200000,
                     16.75
-                  ],
-                  [
-                    1743379200000,
-                    14.71
-                  ],
-                  [
-                    1740700800000,
-                    35.9
                   ]
                 ],
                 "time_frame": "monthly",
@@ -1438,7 +1438,7 @@
                   "unit": "%",
                   "description": "Chỉ số sản xuất công nghiệp - IIP ngành sản xuất da và các sản phẩm có liên quan, đo lường khối lượng sản xuất công nghiệp tạo ra trong kỳ hiện tại so với cùng kỳ năm trước. Dữ liệu được thu thập từ các doanh nghiệp thông qua các cuộc khảo sát do Tổng cục thống kê (GSO) phối hợp với Bộ Kế hoạch đầu tư thực hiện.",
                   "frequency": "Ngày 6 tháng sau",
-                  "last_updated": "2026-09-03T02:55:34.731Z",
+                  "last_updated": "2026-11-03T04:03:54.086Z",
                   "source": "Tổng cục Thống kê - GSO",
                   "note": null,
                   "related_blog": null
@@ -1457,8 +1457,16 @@
                 "yAxis": 1,
                 "data": [
                   [
+                    1793404800000,
+                    11.670000000000002
+                  ],
+                  [
+                    1790726400000,
+                    8.950000000000003
+                  ],
+                  [
                     1788134400000,
-                    13.409999999999997
+                    13.180000000000005
                   ],
                   [
                     1785456000000,
@@ -1523,14 +1531,6 @@
                   [
                     1745971200000,
                     8.5
-                  ],
-                  [
-                    1743379200000,
-                    18.73
-                  ],
-                  [
-                    1740700800000,
-                    42.33
                   ]
                 ],
                 "time_frame": "monthly",
@@ -1539,7 +1539,7 @@
                   "unit": "%",
                   "description": "Chỉ số sản xuất công nghiệp - IIP ngành chế biến gỗ và sản phẩm từ gỗ, đo lường khối lượng sản xuất công nghiệp tạo ra trong kỳ hiện tại so với cùng kỳ năm trước. Dữ liệu được thu thập từ các doanh nghiệp thông qua các cuộc khảo sát do Tổng cục thống kê (GSO) phối hợp với Bộ Kế hoạch đầu tư thực hiện.",
                   "frequency": "Ngày 6 tháng sau",
-                  "last_updated": "2026-09-03T02:55:34.731Z",
+                  "last_updated": "2026-11-03T04:03:54.086Z",
                   "source": "Tổng cục Thống kê - GSO",
                   "note": null,
                   "related_blog": null
@@ -1558,8 +1558,16 @@
                 "yAxis": 1,
                 "data": [
                   [
+                    1793404800000,
+                    2.8700000000000045
+                  ],
+                  [
+                    1790726400000,
+                    8.459999999999994
+                  ],
+                  [
                     1788134400000,
-                    5.75
+                    8.519999999999996
                   ],
                   [
                     1785456000000,
@@ -1624,14 +1632,6 @@
                   [
                     1745971200000,
                     5.609999999999999
-                  ],
-                  [
-                    1743379200000,
-                    12.44
-                  ],
-                  [
-                    1740700800000,
-                    26.86
                   ]
                 ],
                 "time_frame": "monthly",
@@ -1640,7 +1640,7 @@
                   "unit": "%",
                   "description": "Chỉ số sản xuất công nghiệp - IIP ngành giấy và sản phẩm từ giấy, đo lường khối lượng sản xuất công nghiệp tạo ra trong kỳ hiện tại so với cùng kỳ năm trước. Dữ liệu được thu thập từ các doanh nghiệp thông qua các cuộc khảo sát do Tổng cục thống kê (GSO) phối hợp với Bộ Kế hoạch đầu tư thực hiện.",
                   "frequency": "Ngày 6 tháng sau",
-                  "last_updated": "2026-09-03T02:55:34.731Z",
+                  "last_updated": "2026-11-03T04:03:54.086Z",
                   "source": "Tổng cục Thống kê - GSO",
                   "note": null,
                   "related_blog": null
@@ -1659,8 +1659,16 @@
                 "yAxis": 1,
                 "data": [
                   [
+                    1793404800000,
+                    8.079999999999998
+                  ],
+                  [
+                    1790726400000,
+                    7.760000000000006
+                  ],
+                  [
                     1788134400000,
-                    8.760000000000005
+                    10.150000000000006
                   ],
                   [
                     1785456000000,
@@ -1725,14 +1733,6 @@
                   [
                     1745971200000,
                     8.780000000000001
-                  ],
-                  [
-                    1743379200000,
-                    4.34
-                  ],
-                  [
-                    1740700800000,
-                    23.18
                   ]
                 ],
                 "time_frame": "monthly",
@@ -1741,7 +1741,7 @@
                   "unit": "%",
                   "description": "Chỉ số sản xuất công nghiệp - IIP ngành in, sao chép bản ghi các loại, đo lường khối lượng sản xuất công nghiệp tạo ra trong kỳ hiện tại so với cùng kỳ năm trước. Dữ liệu được thu thập từ các doanh nghiệp thông qua các cuộc khảo sát do Tổng cục thống kê (GSO) phối hợp với Bộ Kế hoạch đầu tư thực hiện.",
                   "frequency": "Ngày 6 tháng sau",
-                  "last_updated": "2026-09-03T02:55:34.731Z",
+                  "last_updated": "2026-11-03T04:03:54.086Z",
                   "source": "Tổng cục Thống kê - GSO",
                   "note": null,
                   "related_blog": null
@@ -1760,8 +1760,16 @@
                 "yAxis": 1,
                 "data": [
                   [
+                    1793404800000,
+                    12.840000000000003
+                  ],
+                  [
+                    1790726400000,
+                    12.540000000000006
+                  ],
+                  [
                     1788134400000,
-                    10.090000000000003
+                    14.099999999999993
                   ],
                   [
                     1785456000000,
@@ -1826,14 +1834,6 @@
                   [
                     1745971200000,
                     49.559999999999995
-                  ],
-                  [
-                    1743379200000,
-                    30.61
-                  ],
-                  [
-                    1740700800000,
-                    -2.7199999999999998
                   ]
                 ],
                 "time_frame": "monthly",
@@ -1842,7 +1842,7 @@
                   "unit": "%",
                   "description": "Chỉ số sản xuất công nghiệp - IIP ngành than cốc, sản phẩm dầu mỏ tinh chế, đo lường khối lượng sản xuất công nghiệp tạo ra trong kỳ hiện tại so với cùng kỳ năm trước. Dữ liệu được thu thập từ các doanh nghiệp thông qua các cuộc khảo sát do Tổng cục thống kê (GSO) phối hợp với Bộ Kế hoạch đầu tư thực hiện.",
                   "frequency": "Ngày 6 tháng sau",
-                  "last_updated": "2026-09-03T02:55:34.731Z",
+                  "last_updated": "2026-11-03T04:03:54.086Z",
                   "source": "Tổng cục Thống kê - GSO",
                   "note": null,
                   "related_blog": null
@@ -1861,8 +1861,16 @@
                 "yAxis": 1,
                 "data": [
                   [
+                    1793404800000,
+                    -1.5699999999999932
+                  ],
+                  [
+                    1790726400000,
+                    -2.819999999999993
+                  ],
+                  [
                     1788134400000,
-                    6.579999999999998
+                    4.409999999999997
                   ],
                   [
                     1785456000000,
@@ -1927,14 +1935,6 @@
                   [
                     1745971200000,
                     8.98
-                  ],
-                  [
-                    1743379200000,
-                    8.23
-                  ],
-                  [
-                    1740700800000,
-                    16.009999999999998
                   ]
                 ],
                 "time_frame": "monthly",
@@ -1943,7 +1943,7 @@
                   "unit": "%",
                   "description": "Chỉ số sản xuất công nghiệp - IIP ngành hoá chất và sản phẩm hoá chất, đo lường khối lượng sản xuất công nghiệp tạo ra trong kỳ hiện tại so với cùng kỳ năm trước. Dữ liệu được thu thập từ các doanh nghiệp thông qua các cuộc khảo sát do Tổng cục thống kê (GSO) phối hợp với Bộ Kế hoạch đầu tư thực hiện.",
                   "frequency": "Ngày 6 tháng sau",
-                  "last_updated": "2026-09-03T02:55:34.731Z",
+                  "last_updated": "2026-11-03T04:03:54.086Z",
                   "source": "Tổng cục Thống kê - GSO",
                   "note": null,
                   "related_blog": null
@@ -1962,8 +1962,16 @@
                 "yAxis": 1,
                 "data": [
                   [
+                    1793404800000,
+                    43.30000000000001
+                  ],
+                  [
+                    1790726400000,
+                    2.0799999999999983
+                  ],
+                  [
                     1788134400000,
-                    16.239999999999995
+                    13.889999999999999
                   ],
                   [
                     1785456000000,
@@ -2028,14 +2036,6 @@
                   [
                     1745971200000,
                     -7.55
-                  ],
-                  [
-                    1743379200000,
-                    5.96
-                  ],
-                  [
-                    1740700800000,
-                    32.58
                   ]
                 ],
                 "time_frame": "monthly",
@@ -2044,7 +2044,7 @@
                   "unit": "%",
                   "description": "Chỉ số sản xuất công nghiệp - IIP ngành thuốc, hoá dược và dược liệu, đo lường khối lượng sản xuất công nghiệp tạo ra trong kỳ hiện tại so với cùng kỳ năm trước. Dữ liệu được thu thập từ các doanh nghiệp thông qua các cuộc khảo sát do Tổng cục thống kê (GSO) phối hợp với Bộ Kế hoạch đầu tư thực hiện.",
                   "frequency": "Ngày 6 tháng sau",
-                  "last_updated": "2026-09-03T02:55:34.731Z",
+                  "last_updated": "2026-11-03T04:03:54.086Z",
                   "source": "Tổng cục Thống kê - GSO",
                   "note": null,
                   "related_blog": null
@@ -2063,8 +2063,16 @@
                 "yAxis": 1,
                 "data": [
                   [
+                    1793404800000,
+                    21.019999999999996
+                  ],
+                  [
+                    1790726400000,
+                    18.209999999999994
+                  ],
+                  [
                     1788134400000,
-                    14.709999999999992
+                    12.060000000000002
                   ],
                   [
                     1785456000000,
@@ -2129,14 +2137,6 @@
                   [
                     1745971200000,
                     16.3
-                  ],
-                  [
-                    1743379200000,
-                    20.48
-                  ],
-                  [
-                    1740700800000,
-                    36.08
                   ]
                 ],
                 "time_frame": "monthly",
@@ -2145,7 +2145,7 @@
                   "unit": "%",
                   "description": "Chỉ số sản xuất công nghiệp - IIP ngành cao su và plastic, đo lường khối lượng sản xuất công nghiệp tạo ra trong kỳ hiện tại so với cùng kỳ năm trước. Dữ liệu được thu thập từ các doanh nghiệp thông qua các cuộc khảo sát do Tổng cục thống kê (GSO) phối hợp với Bộ Kế hoạch đầu tư thực hiện.",
                   "frequency": "Ngày 6 tháng sau",
-                  "last_updated": "2026-09-03T02:55:34.731Z",
+                  "last_updated": "2026-11-03T04:03:54.086Z",
                   "source": "Tổng cục Thống kê - GSO",
                   "note": null,
                   "related_blog": null
@@ -2164,8 +2164,16 @@
                 "yAxis": 1,
                 "data": [
                   [
+                    1793404800000,
+                    10.239999999999995
+                  ],
+                  [
+                    1790726400000,
+                    8.260000000000005
+                  ],
+                  [
                     1788134400000,
-                    8.590000000000003
+                    7.359999999999999
                   ],
                   [
                     1785456000000,
@@ -2230,14 +2238,6 @@
                   [
                     1745971200000,
                     12.44
-                  ],
-                  [
-                    1743379200000,
-                    8.89
-                  ],
-                  [
-                    1740700800000,
-                    18.33
                   ]
                 ],
                 "time_frame": "monthly",
@@ -2246,7 +2246,7 @@
                   "unit": "%",
                   "description": "Chỉ số sản xuất công nghiệp - IIP ngành khoáng phi kim loại khác, đo lường khối lượng sản xuất công nghiệp tạo ra trong kỳ hiện tại so với cùng kỳ năm trước. Dữ liệu được thu thập từ các doanh nghiệp thông qua các cuộc khảo sát do Tổng cục thống kê (GSO) phối hợp với Bộ Kế hoạch đầu tư thực hiện.",
                   "frequency": "Ngày 6 tháng sau",
-                  "last_updated": "2026-09-03T02:55:34.731Z",
+                  "last_updated": "2026-11-03T04:03:54.086Z",
                   "source": "Tổng cục Thống kê - GSO",
                   "note": null,
                   "related_blog": null
@@ -2265,8 +2265,16 @@
                 "yAxis": 1,
                 "data": [
                   [
+                    1793404800000,
+                    27.29000000000001
+                  ],
+                  [
+                    1790726400000,
+                    20.89
+                  ],
+                  [
                     1788134400000,
-                    22.540000000000006
+                    30.84
                   ],
                   [
                     1785456000000,
@@ -2331,14 +2339,6 @@
                   [
                     1745971200000,
                     20.8
-                  ],
-                  [
-                    1743379200000,
-                    10.14
-                  ],
-                  [
-                    1740700800000,
-                    2.45
                   ]
                 ],
                 "time_frame": "monthly",
@@ -2347,7 +2347,7 @@
                   "unit": "%",
                   "description": "Chỉ số sản xuất công nghiệp - IIP ngành kim loại, đo lường khối lượng sản xuất công nghiệp tạo ra trong kỳ hiện tại so với cùng kỳ năm trước. Dữ liệu được thu thập từ các doanh nghiệp thông qua các cuộc khảo sát do Tổng cục thống kê (GSO) phối hợp với Bộ Kế hoạch đầu tư thực hiện.",
                   "frequency": "Ngày 6 tháng sau",
-                  "last_updated": "2026-09-03T02:55:34.731Z",
+                  "last_updated": "2026-11-03T04:03:54.086Z",
                   "source": "Tổng cục Thống kê - GSO",
                   "note": null,
                   "related_blog": null
@@ -2366,8 +2366,16 @@
                 "yAxis": 1,
                 "data": [
                   [
+                    1793404800000,
+                    9.540000000000006
+                  ],
+                  [
+                    1790726400000,
+                    5.980000000000004
+                  ],
+                  [
                     1788134400000,
-                    -0.43999999999999767
+                    1.900000000000006
                   ],
                   [
                     1785456000000,
@@ -2432,14 +2440,6 @@
                   [
                     1745971200000,
                     16.24
-                  ],
-                  [
-                    1743379200000,
-                    9.84
-                  ],
-                  [
-                    1740700800000,
-                    15.07
                   ]
                 ],
                 "time_frame": "monthly",
@@ -2448,7 +2448,7 @@
                   "unit": "%",
                   "description": "Chỉ số sản xuất công nghiệp - IIP ngành kim loại đúc sẵn, đo lường khối lượng sản xuất công nghiệp tạo ra trong kỳ hiện tại so với cùng kỳ năm trước. Dữ liệu được thu thập từ các doanh nghiệp thông qua các cuộc khảo sát do Tổng cục thống kê (GSO) phối hợp với Bộ Kế hoạch đầu tư thực hiện.",
                   "frequency": "Ngày 6 tháng sau",
-                  "last_updated": "2026-09-03T02:55:34.731Z",
+                  "last_updated": "2026-11-03T04:03:54.086Z",
                   "source": "Tổng cục Thống kê - GSO",
                   "note": null,
                   "related_blog": null
@@ -2467,8 +2467,16 @@
                 "yAxis": 1,
                 "data": [
                   [
+                    1793404800000,
+                    18.61
+                  ],
+                  [
+                    1790726400000,
+                    19.769999999999996
+                  ],
+                  [
                     1788134400000,
-                    18.939999999999998
+                    20.64
                   ],
                   [
                     1785456000000,
@@ -2533,14 +2541,6 @@
                   [
                     1745971200000,
                     8.48
-                  ],
-                  [
-                    1743379200000,
-                    11.49
-                  ],
-                  [
-                    1740700800000,
-                    16.869999999999997
                   ]
                 ],
                 "time_frame": "monthly",
@@ -2549,7 +2549,7 @@
                   "unit": "%",
                   "description": "Chỉ số sản xuất công nghiệp - IIP ngành điện tử và máy vi tính, đo lường khối lượng sản xuất công nghiệp tạo ra trong kỳ hiện tại so với cùng kỳ năm trước. Dữ liệu được thu thập từ các doanh nghiệp thông qua các cuộc khảo sát do Tổng cục thống kê (GSO) phối hợp với Bộ Kế hoạch đầu tư thực hiện.",
                   "frequency": "Ngày 6 tháng sau",
-                  "last_updated": "2026-09-03T02:55:34.731Z",
+                  "last_updated": "2026-11-03T04:03:54.086Z",
                   "source": "Tổng cục Thống kê - GSO",
                   "note": null,
                   "related_blog": null
@@ -2568,8 +2568,16 @@
                 "yAxis": 1,
                 "data": [
                   [
+                    1793404800000,
+                    10.120000000000005
+                  ],
+                  [
+                    1790726400000,
+                    4.659999999999997
+                  ],
+                  [
                     1788134400000,
-                    40.77000000000001
+                    4.340000000000003
                   ],
                   [
                     1785456000000,
@@ -2634,14 +2642,6 @@
                   [
                     1745971200000,
                     -3.11
-                  ],
-                  [
-                    1743379200000,
-                    -3.16
-                  ],
-                  [
-                    1740700800000,
-                    14.42
                   ]
                 ],
                 "time_frame": "monthly",
@@ -2650,7 +2650,7 @@
                   "unit": "%",
                   "description": "Chỉ số sản xuất công nghiệp - IIP ngành thiết bị điện, đo lường khối lượng sản xuất công nghiệp tạo ra trong kỳ hiện tại so với cùng kỳ năm trước. Dữ liệu được thu thập từ các doanh nghiệp thông qua các cuộc khảo sát do Tổng cục thống kê (GSO) phối hợp với Bộ Kế hoạch đầu tư thực hiện.",
                   "frequency": "Ngày 6 tháng sau",
-                  "last_updated": "2026-09-03T02:55:34.731Z",
+                  "last_updated": "2026-11-03T04:03:54.086Z",
                   "source": "Tổng cục Thống kê - GSO",
                   "note": null,
                   "related_blog": null
@@ -2669,8 +2669,16 @@
                 "yAxis": 1,
                 "data": [
                   [
+                    1793404800000,
+                    18.209999999999994
+                  ],
+                  [
+                    1790726400000,
+                    11.209999999999994
+                  ],
+                  [
                     1788134400000,
-                    3.1099999999999994
+                    -4.340000000000003
                   ],
                   [
                     1785456000000,
@@ -2735,14 +2743,6 @@
                   [
                     1745971200000,
                     6.25
-                  ],
-                  [
-                    1743379200000,
-                    6.9
-                  ],
-                  [
-                    1740700800000,
-                    29.68
                   ]
                 ],
                 "time_frame": "monthly",
@@ -2751,7 +2751,7 @@
                   "unit": "%",
                   "description": "Chỉ số sản xuất công nghiệp - IIP ngành máy móc, thiết bị chưa được phân vào đâu, đo lường khối lượng sản xuất công nghiệp tạo ra trong kỳ hiện tại so với cùng kỳ năm trước. Dữ liệu được thu thập từ các doanh nghiệp thông qua các cuộc khảo sát do Tổng cục thống kê (GSO) phối hợp với Bộ Kế hoạch đầu tư thực hiện.",
                   "frequency": "Ngày 6 tháng sau",
-                  "last_updated": "2026-09-03T02:55:34.731Z",
+                  "last_updated": "2026-11-03T04:03:54.086Z",
                   "source": "Tổng cục Thống kê - GSO",
                   "note": null,
                   "related_blog": null
@@ -2770,8 +2770,16 @@
                 "yAxis": 1,
                 "data": [
                   [
+                    1793404800000,
+                    12.010000000000005
+                  ],
+                  [
+                    1790726400000,
+                    12.420000000000002
+                  ],
+                  [
                     1788134400000,
-                    15.590000000000003
+                    10.560000000000002
                   ],
                   [
                     1785456000000,
@@ -2836,14 +2844,6 @@
                   [
                     1745971200000,
                     30.25
-                  ],
-                  [
-                    1743379200000,
-                    19.91
-                  ],
-                  [
-                    1740700800000,
-                    59.3
                   ]
                 ],
                 "time_frame": "monthly",
@@ -2852,7 +2852,7 @@
                   "unit": "%",
                   "description": "Chỉ số sản xuất công nghiệp - IIP ngành xe có động cơ, đo lường khối lượng sản xuất công nghiệp tạo ra trong kỳ hiện tại so với cùng kỳ năm trước. Dữ liệu được thu thập từ các doanh nghiệp thông qua các cuộc khảo sát do Tổng cục thống kê (GSO) phối hợp với Bộ Kế hoạch đầu tư thực hiện.",
                   "frequency": "Ngày 6 tháng sau",
-                  "last_updated": "2026-09-03T02:55:34.731Z",
+                  "last_updated": "2026-11-03T04:03:54.086Z",
                   "source": "Tổng cục Thống kê - GSO",
                   "note": null,
                   "related_blog": null
@@ -2871,8 +2871,16 @@
                 "yAxis": 1,
                 "data": [
                   [
+                    1793404800000,
+                    14.200000000000001
+                  ],
+                  [
+                    1790726400000,
+                    28.840000000000003
+                  ],
+                  [
                     1788134400000,
-                    -5.560000000000002
+                    -7.189999999999998
                   ],
                   [
                     1785456000000,
@@ -2937,14 +2945,6 @@
                   [
                     1745971200000,
                     6.58
-                  ],
-                  [
-                    1743379200000,
-                    2.58
-                  ],
-                  [
-                    1740700800000,
-                    35.199999999999996
                   ]
                 ],
                 "time_frame": "monthly",
@@ -2953,7 +2953,7 @@
                   "unit": "%",
                   "description": "Chỉ số sản xuất công nghiệp - IIP ngành phương tiện vận tải khác, đo lường khối lượng sản xuất công nghiệp tạo ra trong kỳ hiện tại so với cùng kỳ năm trước. Dữ liệu được thu thập từ các doanh nghiệp thông qua các cuộc khảo sát do Tổng cục thống kê (GSO) phối hợp với Bộ Kế hoạch đầu tư thực hiện.",
                   "frequency": "Ngày 6 tháng sau",
-                  "last_updated": "2026-09-03T02:55:34.731Z",
+                  "last_updated": "2026-11-03T04:03:54.086Z",
                   "source": "Tổng cục Thống kê - GSO",
                   "note": null,
                   "related_blog": null
@@ -2972,8 +2972,16 @@
                 "yAxis": 1,
                 "data": [
                   [
+                    1793404800000,
+                    12.829999999999997
+                  ],
+                  [
+                    1790726400000,
+                    12.950000000000003
+                  ],
+                  [
                     1788134400000,
-                    11.5
+                    8.900000000000006
                   ],
                   [
                     1785456000000,
@@ -3038,14 +3046,6 @@
                   [
                     1745971200000,
                     -1.82
-                  ],
-                  [
-                    1743379200000,
-                    8.58
-                  ],
-                  [
-                    1740700800000,
-                    27.47
                   ]
                 ],
                 "time_frame": "monthly",
@@ -3054,7 +3054,7 @@
                   "unit": "%",
                   "description": "Chỉ số sản xuất công nghiệp - IIP ngành giường, tủ, bàn, ghế, đo lường khối lượng sản xuất công nghiệp tạo ra trong kỳ hiện tại so với cùng kỳ năm trước. Dữ liệu được thu thập từ các doanh nghiệp thông qua các cuộc khảo sát do Tổng cục thống kê (GSO) phối hợp với Bộ Kế hoạch đầu tư thực hiện.",
                   "frequency": "Ngày 6 tháng sau",
-                  "last_updated": "2026-09-03T02:55:34.731Z",
+                  "last_updated": "2026-11-03T04:03:54.086Z",
                   "source": "Tổng cục Thống kê - GSO",
                   "note": null,
                   "related_blog": null
@@ -3073,8 +3073,16 @@
                 "yAxis": 1,
                 "data": [
                   [
+                    1793404800000,
+                    4.400000000000006
+                  ],
+                  [
+                    1790726400000,
+                    9.89
+                  ],
+                  [
                     1788134400000,
-                    11.53
+                    10.14
                   ],
                   [
                     1785456000000,
@@ -3139,14 +3147,6 @@
                   [
                     1745971200000,
                     9.59
-                  ],
-                  [
-                    1743379200000,
-                    10.99
-                  ],
-                  [
-                    1740700800000,
-                    24.57
                   ]
                 ],
                 "time_frame": "monthly",
@@ -3155,7 +3155,7 @@
                   "unit": "%",
                   "description": "Chỉ số sản xuất công nghiệp - IIP ngành công nghiệp chế biến, chế tạo khác, đo lường khối lượng sản xuất công nghiệp tạo ra trong kỳ hiện tại so với cùng kỳ năm trước. Dữ liệu được thu thập từ các doanh nghiệp thông qua các cuộc khảo sát do Tổng cục thống kê (GSO) phối hợp với Bộ Kế hoạch đầu tư thực hiện.",
                   "frequency": "Ngày 6 tháng sau",
-                  "last_updated": "2026-09-03T02:55:34.731Z",
+                  "last_updated": "2026-11-03T04:03:54.086Z",
                   "source": "Tổng cục Thống kê - GSO",
                   "note": null,
                   "related_blog": null
@@ -3174,8 +3174,16 @@
                 "yAxis": 1,
                 "data": [
                   [
+                    1793404800000,
+                    47.68000000000001
+                  ],
+                  [
+                    1790726400000,
+                    40.91
+                  ],
+                  [
                     1788134400000,
-                    31.22
+                    29.710000000000008
                   ],
                   [
                     1785456000000,
@@ -3240,14 +3248,6 @@
                   [
                     1745971200000,
                     9.98
-                  ],
-                  [
-                    1743379200000,
-                    12.26
-                  ],
-                  [
-                    1740700800000,
-                    36.980000000000004
                   ]
                 ],
                 "time_frame": "monthly",
@@ -3256,7 +3256,7 @@
                   "unit": "%",
                   "description": "Chỉ số sản xuất công nghiệp - IIP ngành sửa chữa, bảo dưỡng và lắp đặt máy móc và thiết bị, đo lường khối lượng sản xuất công nghiệp tạo ra trong kỳ hiện tại so với cùng kỳ năm trước. Dữ liệu được thu thập từ các doanh nghiệp thông qua các cuộc khảo sát do Tổng cục thống kê (GSO) phối hợp với Bộ Kế hoạch đầu tư thực hiện.",
                   "frequency": "Ngày 6 tháng sau",
-                  "last_updated": "2026-09-03T02:55:34.731Z",
+                  "last_updated": "2026-11-03T04:03:54.086Z",
                   "source": "Tổng cục Thống kê - GSO",
                   "note": null,
                   "related_blog": null
@@ -3275,8 +3275,16 @@
                 "yAxis": 1,
                 "data": [
                   [
+                    1793404800000,
+                    15.650000000000006
+                  ],
+                  [
+                    1790726400000,
+                    10.400000000000006
+                  ],
+                  [
                     1788134400000,
-                    11.790000000000006
+                    10.980000000000004
                   ],
                   [
                     1785456000000,
@@ -3341,14 +3349,6 @@
                   [
                     1745971200000,
                     2.33
-                  ],
-                  [
-                    1743379200000,
-                    7.03
-                  ],
-                  [
-                    1740700800000,
-                    12
                   ]
                 ],
                 "time_frame": "monthly",
@@ -3357,7 +3357,7 @@
                   "unit": "%",
                   "description": "Chỉ số sản xuất công nghiệp - IIP ngành sản xuất, truyền tải và phân phối điện, đo lường khối lượng sản xuất công nghiệp tạo ra trong kỳ hiện tại so với cùng kỳ năm trước. Dữ liệu được thu thập từ các doanh nghiệp thông qua các cuộc khảo sát do Tổng cục thống kê (GSO) phối hợp với Bộ Kế hoạch đầu tư thực hiện.",
                   "frequency": "Ngày 6 tháng sau",
-                  "last_updated": "2026-09-03T02:55:34.731Z",
+                  "last_updated": "2026-11-03T04:03:54.086Z",
                   "source": "Tổng cục Thống kê - GSO",
                   "note": null,
                   "related_blog": null
@@ -3376,8 +3376,16 @@
                 "yAxis": 1,
                 "data": [
                   [
+                    1793404800000,
+                    7.75
+                  ],
+                  [
+                    1790726400000,
+                    10.939999999999998
+                  ],
+                  [
                     1788134400000,
-                    9.540000000000006
+                    7.340000000000003
                   ],
                   [
                     1785456000000,
@@ -3442,14 +3450,6 @@
                   [
                     1745971200000,
                     5.38
-                  ],
-                  [
-                    1743379200000,
-                    8.6
-                  ],
-                  [
-                    1740700800000,
-                    24.060000000000002
                   ]
                 ],
                 "time_frame": "monthly",
@@ -3458,7 +3458,7 @@
                   "unit": "%",
                   "description": "Chỉ số sản xuất công nghiệp - IIP ngành cung cấp nước và xử lý rác thải, đo lường khối lượng sản xuất công nghiệp tạo ra trong kỳ hiện tại so với cùng kỳ năm trước. Dữ liệu được thu thập từ các doanh nghiệp thông qua các cuộc khảo sát do Tổng cục thống kê (GSO) phối hợp với Bộ Kế hoạch đầu tư thực hiện.",
                   "frequency": "Ngày 6 tháng sau",
-                  "last_updated": "2026-09-03T02:55:34.731Z",
+                  "last_updated": "2026-11-03T04:03:54.086Z",
                   "source": "Tổng cục Thống kê - GSO",
                   "note": null,
                   "related_blog": null
@@ -3477,8 +3477,16 @@
                 "yAxis": 1,
                 "data": [
                   [
+                    1793404800000,
+                    8.379999999999995
+                  ],
+                  [
+                    1790726400000,
+                    7.549999999999997
+                  ],
+                  [
                     1788134400000,
-                    6.709999999999994
+                    7.189999999999998
                   ],
                   [
                     1785456000000,
@@ -3543,14 +3551,6 @@
                   [
                     1745971200000,
                     2.27
-                  ],
-                  [
-                    1743379200000,
-                    0.13
-                  ],
-                  [
-                    1740700800000,
-                    6.47
                   ]
                 ],
                 "time_frame": "monthly",
@@ -3559,7 +3559,7 @@
                   "unit": "%",
                   "description": "Chỉ số sản xuất công nghiệp - IIP ngành khai thác, xử lý và cung cấp nước, đo lường khối lượng sản xuất công nghiệp tạo ra trong kỳ hiện tại so với cùng kỳ năm trước. Dữ liệu được thu thập từ các doanh nghiệp thông qua các cuộc khảo sát do Tổng cục thống kê (GSO) phối hợp với Bộ Kế hoạch đầu tư thực hiện.",
                   "frequency": "Ngày 6 tháng sau",
-                  "last_updated": "2026-09-03T02:55:34.731Z",
+                  "last_updated": "2026-11-03T04:03:54.086Z",
                   "source": "Tổng cục Thống kê - GSO",
                   "note": null,
                   "related_blog": null
@@ -3578,8 +3578,16 @@
                 "yAxis": 1,
                 "data": [
                   [
+                    1793404800000,
+                    14.760000000000007
+                  ],
+                  [
+                    1790726400000,
+                    7.230000000000005
+                  ],
+                  [
                     1788134400000,
-                    6.659999999999997
+                    2.680000000000007
                   ],
                   [
                     1785456000000,
@@ -3644,14 +3652,6 @@
                   [
                     1745971200000,
                     8.97
-                  ],
-                  [
-                    1743379200000,
-                    14.04
-                  ],
-                  [
-                    1740700800000,
-                    14.41
                   ]
                 ],
                 "time_frame": "monthly",
@@ -3660,7 +3660,7 @@
                   "unit": "%",
                   "description": "Chỉ số sản xuất công nghiệp - IIP ngành thoát nước và xử lý nước thải, đo lường khối lượng sản xuất công nghiệp tạo ra trong kỳ hiện tại so với cùng kỳ năm trước. Dữ liệu được thu thập từ các doanh nghiệp thông qua các cuộc khảo sát do Tổng cục thống kê (GSO) phối hợp với Bộ Kế hoạch đầu tư thực hiện.",
                   "frequency": "Ngày 6 tháng sau",
-                  "last_updated": "2026-09-03T02:55:34.731Z",
+                  "last_updated": "2026-11-03T04:03:54.086Z",
                   "source": "Tổng cục Thống kê - GSO",
                   "note": null,
                   "related_blog": null
@@ -3679,8 +3679,16 @@
                 "yAxis": 1,
                 "data": [
                   [
+                    1793404800000,
+                    6.019999999999996
+                  ],
+                  [
+                    1790726400000,
+                    15.180000000000007
+                  ],
+                  [
                     1788134400000,
-                    13.090000000000005
+                    8.209999999999994
                   ],
                   [
                     1785456000000,
@@ -3745,14 +3753,6 @@
                   [
                     1745971200000,
                     8.76
-                  ],
-                  [
-                    1743379200000,
-                    17.1
-                  ],
-                  [
-                    1740700800000,
-                    50.67
                   ]
                 ],
                 "time_frame": "monthly",
@@ -3761,7 +3761,7 @@
                   "unit": "%",
                   "description": "Chỉ số sản xuất công nghiệp - IIP ngành thu gom và xử lý rác thải, đo lường khối lượng sản xuất công nghiệp tạo ra trong kỳ hiện tại so với cùng kỳ năm trước. Dữ liệu được thu thập từ các doanh nghiệp thông qua các cuộc khảo sát do Tổng cục thống kê (GSO) phối hợp với Bộ Kế hoạch đầu tư thực hiện.",
                   "frequency": "Ngày 6 tháng sau",
-                  "last_updated": "2026-09-03T02:55:34.731Z",
+                  "last_updated": "2026-11-03T04:03:54.086Z",
                   "source": "Tổng cục Thống kê - GSO",
                   "note": null,
                   "related_blog": null

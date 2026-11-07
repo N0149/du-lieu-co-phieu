@@ -18,15 +18,16 @@
     ],
     "unit": "Tỷ VND",
     "description": "Tổng sản phẩm quốc nội theo giá hiện hành.",
-    "updatedAt": "2026-09-19T10:14:33.170Z",
-    "latestPeriod": "06-2026",
-    "latestValue": 3479487.230950915
+    "updatedAt": "2026-11-07T06:37:05.850Z",
+    "latestPeriod": "09-2026",
+    "latestValue": 3698333.9895068174
   },
   "datasets": {
     "quarterly": {
       "value": {
         "title": "GDP Danh Nghĩa",
         "headers": [
+          "09-2026",
           "06-2026",
           "03-2026",
           "12-2025",
@@ -64,12 +65,16 @@
                 "yAxis": 17,
                 "data": [
                   [
+                    1790726400000,
+                    3698333.9895068174
+                  ],
+                  [
                     1782777600000,
-                    3479487.230950915
+                    3497355.7144848728
                   ],
                   [
                     1774915200000,
-                    3143977.9418364973
+                    3150029.62284725
                   ],
                   [
                     1767139200000,
@@ -146,7 +151,7 @@
                   "unit": "Tỷ VND",
                   "description": "GDP danh nghĩa phản ánh tổng giá trị sản xuất hàng hóa và dịch vụ cuối cùng trong nước, được tính theo giá thị trường tại thời điểm thống kê. Nó cho thấy quy mô nền kinh tế ở thời điểm hiện tại, nhưng chịu ảnh hưởng bởi cả sự tăng trưởng thực tế và lạm phát.\nTổng cục Thống kê (GSO) tính toán GDP dựa trên dữ liệu từ nhiều nguồn như Điều tra doanh nghiệp, và thông tin từ các bộ, ngành.",
                   "frequency": "Ngày 6 tháng đầu tiên của quý sau",
-                  "last_updated": "2026-07-03T06:03:02.452Z",
+                  "last_updated": "2026-10-03T04:50:52.649Z",
                   "source": "Tổng cục Thống kê - GSO",
                   "note": null,
                   "related_blog": null
@@ -165,8 +170,12 @@
                 "yAxis": 17,
                 "data": [
                   [
+                    1790726400000,
+                    395842.01529230026
+                  ],
+                  [
                     1782777600000,
-                    359605.3696595485
+                    362665.3775791045
                   ],
                   [
                     1774915200000,
@@ -247,7 +256,7 @@
                   "unit": "Tỷ VND",
                   "description": "GDP danh nghĩa của Nông nghiệp, lâm nghiệp và thủy sản  thể hiện giá trị sản phẩm vật chất và dịch vụ cuối cùng của khu vực này tạo ra trong nước và trong kỳ báo cáo. Điều này nghĩa là số liệu không tính các giá trị sản phẩm vật chất và dịch vụ đã sử dụng ở các khâu trung gian trong quá trình sản xuất tạo ra sản phẩm.",
                   "frequency": "Ngày 6 tháng đầu tiên của quý sau",
-                  "last_updated": "2026-07-03T06:03:02.452Z",
+                  "last_updated": "2026-10-03T04:50:52.649Z",
                   "source": "Tổng cục Thống kê - GSO",
                   "note": null,
                   "related_blog": null
@@ -266,8 +275,12 @@
                 "yAxis": 17,
                 "data": [
                   [
+                    1790726400000,
+                    283422.43328668753
+                  ],
+                  [
                     1782777600000,
-                    252667.11721023294
+                    256009.95605194595
                   ],
                   [
                     1774915200000,
@@ -348,7 +361,7 @@
                   "unit": "Tỷ VND",
                   "description": "GDP danh nghĩa của Nông nghiệp thể hiện giá trị sản phẩm vật chất và dịch vụ cuối cùng của khu vực này tạo ra trong nước và trong kỳ báo cáo. Điều này nghĩa là số liệu không tính các giá trị sản phẩm vật chất và dịch vụ đã sử dụng ở các khâu trung gian trong quá trình sản xuất tạo ra sản phẩm.",
                   "frequency": "Ngày 6 tháng đầu tiên của quý sau",
-                  "last_updated": "2026-07-03T06:03:02.452Z",
+                  "last_updated": "2026-10-03T04:50:52.649Z",
                   "source": "Tổng cục Thống kê - GSO",
                   "note": null,
                   "related_blog": null
@@ -367,8 +380,12 @@
                 "yAxis": 17,
                 "data": [
                   [
+                    1790726400000,
+                    17312.80711657294
+                  ],
+                  [
                     1782777600000,
-                    20005.104520353212
+                    19913.98085523305
                   ],
                   [
                     1774915200000,
@@ -449,7 +466,7 @@
                   "unit": "Tỷ VND",
                   "description": "GDP danh nghĩa của Lâm nghiệp thể hiện giá trị sản phẩm vật chất và dịch vụ cuối cùng của khu vực này tạo ra trong nước và trong kỳ báo cáo. Điều này nghĩa là số liệu không tính các giá trị sản phẩm vật chất và dịch vụ đã sử dụng ở các khâu trung gian trong quá trình sản xuất tạo ra sản phẩm.",
                   "frequency": "Ngày 6 tháng đầu tiên của quý sau",
-                  "last_updated": "2026-07-03T06:03:02.452Z",
+                  "last_updated": "2026-10-03T04:50:52.649Z",
                   "source": "Tổng cục Thống kê - GSO",
                   "note": null,
                   "related_blog": null
@@ -468,8 +485,12 @@
                 "yAxis": 17,
                 "data": [
                   [
+                    1790726400000,
+                    95106.7748890398
+                  ],
+                  [
                     1782777600000,
-                    86933.14792896234
+                    86741.4406719255
                   ],
                   [
                     1774915200000,
@@ -550,7 +571,7 @@
                   "unit": "Tỷ VND",
                   "description": "GDP danh nghĩa của Thủy sản thể hiện giá trị sản phẩm vật chất và dịch vụ cuối cùng của khu vực này tạo ra trong nước và trong kỳ báo cáo. Điều này nghĩa là số liệu không tính các giá trị sản phẩm vật chất và dịch vụ đã sử dụng ở các khâu trung gian trong quá trình sản xuất tạo ra sản phẩm.",
                   "frequency": "Ngày 6 tháng đầu tiên của quý sau",
-                  "last_updated": "2026-07-03T06:03:02.452Z",
+                  "last_updated": "2026-10-03T04:50:52.649Z",
                   "source": "Tổng cục Thống kê - GSO",
                   "note": null,
                   "related_blog": null
@@ -569,12 +590,16 @@
                 "yAxis": 17,
                 "data": [
                   [
+                    1790726400000,
+                    1459885.6411747753
+                  ],
+                  [
                     1782777600000,
-                    1328412.3798630654
+                    1336770.5180587722
                   ],
                   [
                     1774915200000,
-                    1166069.419626003
+                    1170969.62972505
                   ],
                   [
                     1767139200000,
@@ -651,7 +676,7 @@
                   "unit": "Tỷ VND",
                   "description": "GDP danh nghĩa của Công nghiệp và xây dựng thể hiện giá trị sản phẩm vật chất và dịch vụ cuối cùng của khu vực này tạo ra trong nước và trong kỳ báo cáo. Điều này nghĩa là số liệu không tính các giá trị sản phẩm vật chất và dịch vụ đã sử dụng ở các khâu trung gian trong quá trình sản xuất tạo ra sản phẩm.",
                   "frequency": "Ngày 6 tháng đầu tiên của quý sau",
-                  "last_updated": "2026-07-03T06:03:02.452Z",
+                  "last_updated": "2026-10-03T04:50:52.649Z",
                   "source": "Tổng cục Thống kê - GSO",
                   "note": null,
                   "related_blog": null
@@ -670,12 +695,16 @@
                 "yAxis": 17,
                 "data": [
                   [
+                    1790726400000,
+                    1209170.735485484
+                  ],
+                  [
                     1782777600000,
-                    1113691.7946914625
+                    1117081.6259417562
                   ],
                   [
                     1774915200000,
-                    1006910.50433464
+                    1011184.80568556
                   ],
                   [
                     1767139200000,
@@ -752,7 +781,7 @@
                   "unit": "Tỷ VND",
                   "description": "GDP danh nghĩa của Công nghiệp thể hiện giá trị sản phẩm vật chất và dịch vụ cuối cùng của khu vực này tạo ra trong nước và trong kỳ báo cáo. Điều này nghĩa là số liệu không tính các giá trị sản phẩm vật chất và dịch vụ đã sử dụng ở các khâu trung gian trong quá trình sản xuất tạo ra sản phẩm.",
                   "frequency": "Ngày 6 tháng đầu tiên của quý sau",
-                  "last_updated": "2026-07-03T06:03:02.452Z",
+                  "last_updated": "2026-10-03T04:50:52.649Z",
                   "source": "Tổng cục Thống kê - GSO",
                   "note": null,
                   "related_blog": null
@@ -771,8 +800,12 @@
                 "yAxis": 17,
                 "data": [
                   [
+                    1790726400000,
+                    63630.68527361887
+                  ],
+                  [
                     1782777600000,
-                    79622.08108853448
+                    79867.00018242521
                   ],
                   [
                     1774915200000,
@@ -853,7 +886,7 @@
                   "unit": "Tỷ VND",
                   "description": "GDP danh nghĩa của Khai khoáng thể hiện giá trị sản phẩm vật chất và dịch vụ cuối cùng của khu vực này tạo ra trong nước và trong kỳ báo cáo. Điều này nghĩa là số liệu không tính các giá trị sản phẩm vật chất và dịch vụ đã sử dụng ở các khâu trung gian trong quá trình sản xuất tạo ra sản phẩm.",
                   "frequency": "Ngày 6 tháng đầu tiên của quý sau",
-                  "last_updated": "2026-07-03T06:03:02.452Z",
+                  "last_updated": "2026-10-03T04:50:52.649Z",
                   "source": "Tổng cục Thống kê - GSO",
                   "note": null,
                   "related_blog": null
@@ -872,12 +905,16 @@
                 "yAxis": 17,
                 "data": [
                   [
+                    1790726400000,
+                    946265.6722063529
+                  ],
+                  [
                     1782777600000,
-                    847823.017595849
+                    853071.0319040437
                   ],
                   [
                     1774915200000,
-                    764711.2328627412
+                    768985.534213665
                   ],
                   [
                     1767139200000,
@@ -954,7 +991,7 @@
                   "unit": "Tỷ VND",
                   "description": "GDP danh nghĩa của Công nghiệp chế biến, chế tạo thể hiện giá trị sản phẩm vật chất và dịch vụ cuối cùng của khu vực này tạo ra trong nước và trong kỳ báo cáo. Điều này nghĩa là số liệu không tính các giá trị sản phẩm vật chất và dịch vụ đã sử dụng ở các khâu trung gian trong quá trình sản xuất tạo ra sản phẩm.",
                   "frequency": "Ngày 6 tháng đầu tiên của quý sau",
-                  "last_updated": "2026-07-03T06:03:02.452Z",
+                  "last_updated": "2026-10-03T04:50:52.649Z",
                   "source": "Tổng cục Thống kê - GSO",
                   "note": null,
                   "related_blog": null
@@ -973,8 +1010,12 @@
                 "yAxis": 17,
                 "data": [
                   [
+                    1790726400000,
+                    180879.38905503042
+                  ],
+                  [
                     1782777600000,
-                    169510.15340599354
+                    167519.4080685372
                   ],
                   [
                     1774915200000,
@@ -1055,7 +1096,7 @@
                   "unit": "Tỷ VND",
                   "description": "GDP danh nghĩa của Sản xuất và phân phối điện thể hiện giá trị sản phẩm vật chất và dịch vụ cuối cùng của khu vực này tạo ra trong nước và trong kỳ báo cáo. Điều này nghĩa là số liệu không tính các giá trị sản phẩm vật chất và dịch vụ đã sử dụng ở các khâu trung gian trong quá trình sản xuất tạo ra sản phẩm.",
                   "frequency": "Ngày 6 tháng đầu tiên của quý sau",
-                  "last_updated": "2026-07-03T06:03:02.452Z",
+                  "last_updated": "2026-10-03T04:50:52.649Z",
                   "source": "Tổng cục Thống kê - GSO",
                   "note": null,
                   "related_blog": null
@@ -1074,8 +1115,12 @@
                 "yAxis": 17,
                 "data": [
                   [
+                    1790726400000,
+                    18394.988950481653
+                  ],
+                  [
                     1782777600000,
-                    16736.542601085526
+                    16624.185786749837
                   ],
                   [
                     1774915200000,
@@ -1156,7 +1201,7 @@
                   "unit": "Tỷ VND",
                   "description": "GDP danh nghĩa của Cung cấp nước và xử lý nước thải thể hiện giá trị sản phẩm vật chất và dịch vụ cuối cùng của khu vực này tạo ra trong nước và trong kỳ báo cáo. Điều này nghĩa là số liệu không tính các giá trị sản phẩm vật chất và dịch vụ đã sử dụng ở các khâu trung gian trong quá trình sản xuất tạo ra sản phẩm.",
                   "frequency": "Ngày 6 tháng đầu tiên của quý sau",
-                  "last_updated": "2026-07-03T06:03:02.452Z",
+                  "last_updated": "2026-10-03T04:50:52.649Z",
                   "source": "Tổng cục Thống kê - GSO",
                   "note": null,
                   "related_blog": null
@@ -1175,12 +1220,16 @@
                 "yAxis": 17,
                 "data": [
                   [
+                    1790726400000,
+                    250714.90568929134
+                  ],
+                  [
                     1782777600000,
-                    214720.585171603
+                    219688.8921170161
                   ],
                   [
                     1774915200000,
-                    159158.91529136195
+                    159784.824039484
                   ],
                   [
                     1767139200000,
@@ -1257,7 +1306,7 @@
                   "unit": "Tỷ VND",
                   "description": "GDP danh nghĩa của Xây dựng thể hiện giá trị sản phẩm vật chất và dịch vụ cuối cùng của khu vực này tạo ra trong nước và trong kỳ báo cáo. Điều này nghĩa là số liệu không tính các giá trị sản phẩm vật chất và dịch vụ đã sử dụng ở các khâu trung gian trong quá trình sản xuất tạo ra sản phẩm.",
                   "frequency": "Ngày 6 tháng đầu tiên của quý sau",
-                  "last_updated": "2026-07-03T06:03:02.452Z",
+                  "last_updated": "2026-10-03T04:50:52.649Z",
                   "source": "Tổng cục Thống kê - GSO",
                   "note": null,
                   "related_blog": null
@@ -1276,12 +1325,16 @@
                 "yAxis": 17,
                 "data": [
                   [
+                    1790726400000,
+                    1557307.62060496
+                  ],
+                  [
                     1782777600000,
-                    1515880.7190211297
+                    1520372.1244326346
                   ],
                   [
                     1774915200000,
-                    1366826.7739911582
+                    1367978.24490287
                   ],
                   [
                     1767139200000,
@@ -1358,7 +1411,7 @@
                   "unit": "Tỷ VND",
                   "description": "GDP danh nghĩa của Dịch vụ thể hiện giá trị sản phẩm vật chất và dịch vụ cuối cùng của khu vực này tạo ra trong nước và trong kỳ báo cáo. Điều này nghĩa là số liệu không tính các giá trị sản phẩm vật chất và dịch vụ đã sử dụng ở các khâu trung gian trong quá trình sản xuất tạo ra sản phẩm.",
                   "frequency": "Ngày 6 tháng đầu tiên của quý sau",
-                  "last_updated": "2026-07-03T06:03:02.452Z",
+                  "last_updated": "2026-10-03T04:50:52.649Z",
                   "source": "Tổng cục Thống kê - GSO",
                   "note": null,
                   "related_blog": null
@@ -1377,8 +1430,12 @@
                 "yAxis": 17,
                 "data": [
                   [
+                    1790726400000,
+                    348413.1635550399
+                  ],
+                  [
                     1782777600000,
-                    357190.2500136509
+                    356580.6048364931
                   ],
                   [
                     1774915200000,
@@ -1459,7 +1516,7 @@
                   "unit": "Tỷ VND",
                   "description": "GDP danh nghĩa của Bán buôn bán lẻ, sửa chữa ô tô, mô tô, xe máy thể hiện giá trị sản phẩm vật chất và dịch vụ cuối cùng của khu vực này tạo ra trong nước và trong kỳ báo cáo. Điều này nghĩa là số liệu không tính các giá trị sản phẩm vật chất và dịch vụ đã sử dụng ở các khâu trung gian trong quá trình sản xuất tạo ra sản phẩm.",
                   "frequency": "Ngày 6 tháng đầu tiên của quý sau",
-                  "last_updated": "2026-07-03T06:03:02.452Z",
+                  "last_updated": "2026-10-03T04:50:52.649Z",
                   "source": "Tổng cục Thống kê - GSO",
                   "note": null,
                   "related_blog": null
@@ -1478,12 +1535,16 @@
                 "yAxis": 17,
                 "data": [
                   [
+                    1790726400000,
+                    195925.10085100489
+                  ],
+                  [
                     1782777600000,
-                    221506.734563546
+                    222671.36360886254
                   ],
                   [
                     1774915200000,
-                    176697.47539662835
+                    177848.946308339
                   ],
                   [
                     1767139200000,
@@ -1560,7 +1621,7 @@
                   "unit": "Tỷ VND",
                   "description": "GDP danh nghĩa của Vận tải kho bãi thể hiện giá trị sản phẩm vật chất và dịch vụ cuối cùng của khu vực này tạo ra trong nước và trong kỳ báo cáo. Điều này nghĩa là số liệu không tính các giá trị sản phẩm vật chất và dịch vụ đã sử dụng ở các khâu trung gian trong quá trình sản xuất tạo ra sản phẩm.",
                   "frequency": "Ngày 6 tháng đầu tiên của quý sau",
-                  "last_updated": "2026-07-03T06:03:02.452Z",
+                  "last_updated": "2026-10-03T04:50:52.649Z",
                   "source": "Tổng cục Thống kê - GSO",
                   "note": null,
                   "related_blog": null
@@ -1579,8 +1640,12 @@
                 "yAxis": 17,
                 "data": [
                   [
+                    1790726400000,
+                    104442.06640627718
+                  ],
+                  [
                     1782777600000,
-                    90272.05291350462
+                    90562.04902773772
                   ],
                   [
                     1774915200000,
@@ -1661,7 +1726,7 @@
                   "unit": "Tỷ VND",
                   "description": "GDP danh nghĩa của Dịch vụ lưu trú và ăn uống thể hiện giá trị sản phẩm vật chất và dịch vụ cuối cùng của khu vực này tạo ra trong nước và trong kỳ báo cáo. Điều này nghĩa là số liệu không tính các giá trị sản phẩm vật chất và dịch vụ đã sử dụng ở các khâu trung gian trong quá trình sản xuất tạo ra sản phẩm.",
                   "frequency": "Ngày 6 tháng đầu tiên của quý sau",
-                  "last_updated": "2026-07-03T06:03:02.452Z",
+                  "last_updated": "2026-10-03T04:50:52.649Z",
                   "source": "Tổng cục Thống kê - GSO",
                   "note": null,
                   "related_blog": null
@@ -1680,8 +1745,12 @@
                 "yAxis": 17,
                 "data": [
                   [
+                    1790726400000,
+                    118725.1678493302
+                  ],
+                  [
                     1782777600000,
-                    107872.5552172298
+                    108118.80222835396
                   ],
                   [
                     1774915200000,
@@ -1762,7 +1831,7 @@
                   "unit": "Tỷ VND",
                   "description": "GDP danh nghĩa của Thông tin và truyền thông thể hiện giá trị sản phẩm vật chất và dịch vụ cuối cùng của khu vực này tạo ra trong nước và trong kỳ báo cáo. Điều này nghĩa là số liệu không tính các giá trị sản phẩm vật chất và dịch vụ đã sử dụng ở các khâu trung gian trong quá trình sản xuất tạo ra sản phẩm.",
                   "frequency": "Ngày 6 tháng đầu tiên của quý sau",
-                  "last_updated": "2026-07-03T06:03:02.452Z",
+                  "last_updated": "2026-10-03T04:50:52.649Z",
                   "source": "Tổng cục Thống kê - GSO",
                   "note": null,
                   "related_blog": null
@@ -1781,8 +1850,12 @@
                 "yAxis": 17,
                 "data": [
                   [
+                    1790726400000,
+                    185133.84093103843
+                  ],
+                  [
                     1782777600000,
-                    148002.23326297535
+                    150680.83380391556
                   ],
                   [
                     1774915200000,
@@ -1863,7 +1936,7 @@
                   "unit": "Tỷ VND",
                   "description": "GDP danh nghĩa của Hoạt động tài chính, ngân hàng và bảo hiểm thể hiện giá trị sản phẩm vật chất và dịch vụ cuối cùng của khu vực này tạo ra trong nước và trong kỳ báo cáo. Điều này nghĩa là số liệu không tính các giá trị sản phẩm vật chất và dịch vụ đã sử dụng ở các khâu trung gian trong quá trình sản xuất tạo ra sản phẩm.",
                   "frequency": "Ngày 6 tháng đầu tiên của quý sau",
-                  "last_updated": "2026-07-03T06:03:02.452Z",
+                  "last_updated": "2026-10-03T04:50:52.649Z",
                   "source": "Tổng cục Thống kê - GSO",
                   "note": null,
                   "related_blog": null
@@ -1882,8 +1955,12 @@
                 "yAxis": 17,
                 "data": [
                   [
+                    1790726400000,
+                    122483.90665573633
+                  ],
+                  [
                     1782777600000,
-                    112646.28643422532
+                    113078.69705951502
                   ],
                   [
                     1774915200000,
@@ -1964,7 +2041,7 @@
                   "unit": "Tỷ VND",
                   "description": "GDP danh nghĩa của Hoạt động kinh doanh bất động sản thể hiện giá trị sản phẩm vật chất và dịch vụ cuối cùng của khu vực này tạo ra trong nước và trong kỳ báo cáo. Điều này nghĩa là số liệu không tính các giá trị sản phẩm vật chất và dịch vụ đã sử dụng ở các khâu trung gian trong quá trình sản xuất tạo ra sản phẩm.",
                   "frequency": "Ngày 6 tháng đầu tiên của quý sau",
-                  "last_updated": "2026-07-03T06:03:02.452Z",
+                  "last_updated": "2026-10-03T04:50:52.649Z",
                   "source": "Tổng cục Thống kê - GSO",
                   "note": null,
                   "related_blog": null
@@ -1983,8 +2060,12 @@
                 "yAxis": 17,
                 "data": [
                   [
+                    1790726400000,
+                    74541.10995621834
+                  ],
+                  [
                     1782777600000,
-                    69932.4322233423
+                    69932.51164523033
                   ],
                   [
                     1774915200000,
@@ -2065,7 +2146,7 @@
                   "unit": "Tỷ VND",
                   "description": "GDP danh nghĩa của Hoạt động chuyên môn, khoa học và công nghệ thể hiện giá trị sản phẩm vật chất và dịch vụ cuối cùng của khu vực này tạo ra trong nước và trong kỳ báo cáo. Điều này nghĩa là số liệu không tính các giá trị sản phẩm vật chất và dịch vụ đã sử dụng ở các khâu trung gian trong quá trình sản xuất tạo ra sản phẩm.",
                   "frequency": "Ngày 6 tháng đầu tiên của quý sau",
-                  "last_updated": "2026-07-03T06:03:02.452Z",
+                  "last_updated": "2026-10-03T04:50:52.649Z",
                   "source": "Tổng cục Thống kê - GSO",
                   "note": null,
                   "related_blog": null
@@ -2083,6 +2164,10 @@
                 "dateType": "quy",
                 "yAxis": 17,
                 "data": [
+                  [
+                    1790726400000,
+                    44161.56731267287
+                  ],
                   [
                     1782777600000,
                     47936.696744771936
@@ -2166,7 +2251,7 @@
                   "unit": "Tỷ VND",
                   "description": "GDP danh nghĩa của Hoạt động hành chính và dịch vụ hỗ trợ thể hiện giá trị sản phẩm vật chất và dịch vụ cuối cùng của khu vực này tạo ra trong nước và trong kỳ báo cáo. Điều này nghĩa là số liệu không tính các giá trị sản phẩm vật chất và dịch vụ đã sử dụng ở các khâu trung gian trong quá trình sản xuất tạo ra sản phẩm.",
                   "frequency": "Ngày 6 tháng đầu tiên của quý sau",
-                  "last_updated": "2026-07-03T06:03:02.452Z",
+                  "last_updated": "2026-10-03T04:50:52.649Z",
                   "source": "Tổng cục Thống kê - GSO",
                   "note": null,
                   "related_blog": null
@@ -2185,8 +2270,12 @@
                 "yAxis": 17,
                 "data": [
                   [
+                    1790726400000,
+                    66589.8060686366
+                  ],
+                  [
                     1782777600000,
-                    64020.117255730474
+                    64157.27725573047
                   ],
                   [
                     1774915200000,
@@ -2267,7 +2356,7 @@
                   "unit": "Tỷ VND",
                   "description": "GDP danh nghĩa của Hoạt động của các tổ chức chính trị thể hiện giá trị sản phẩm vật chất và dịch vụ cuối cùng của khu vực này tạo ra trong nước và trong kỳ báo cáo. Điều này nghĩa là số liệu không tính các giá trị sản phẩm vật chất và dịch vụ đã sử dụng ở các khâu trung gian trong quá trình sản xuất tạo ra sản phẩm.",
                   "frequency": "Ngày 6 tháng đầu tiên của quý sau",
-                  "last_updated": "2026-07-03T06:03:02.452Z",
+                  "last_updated": "2026-10-03T04:50:52.649Z",
                   "source": "Tổng cục Thống kê - GSO",
                   "note": null,
                   "related_blog": null
@@ -2285,6 +2374,10 @@
                 "dateType": "quy",
                 "yAxis": 17,
                 "data": [
+                  [
+                    1790726400000,
+                    135477.2792379719
+                  ],
                   [
                     1782777600000,
                     141063.31283835563
@@ -2368,7 +2461,7 @@
                   "unit": "Tỷ VND",
                   "description": "GDP danh nghĩa của Giáo dục đào tạo thể hiện giá trị sản phẩm vật chất và dịch vụ cuối cùng của khu vực này tạo ra trong nước và trong kỳ báo cáo. Điều này nghĩa là số liệu không tính các giá trị sản phẩm vật chất và dịch vụ đã sử dụng ở các khâu trung gian trong quá trình sản xuất tạo ra sản phẩm.",
                   "frequency": "Ngày 6 tháng đầu tiên của quý sau",
-                  "last_updated": "2026-07-03T06:03:02.452Z",
+                  "last_updated": "2026-10-03T04:50:52.649Z",
                   "source": "Tổng cục Thống kê - GSO",
                   "note": null,
                   "related_blog": null
@@ -2387,8 +2480,12 @@
                 "yAxis": 17,
                 "data": [
                   [
+                    1790726400000,
+                    111992.47587701025
+                  ],
+                  [
                     1782777600000,
-                    103282.19297349149
+                    103294.87969622514
                   ],
                   [
                     1774915200000,
@@ -2469,7 +2566,7 @@
                   "unit": "Tỷ VND",
                   "description": "GDP danh nghĩa của Y tế và hoạt động cứu trợ xã hội thể hiện giá trị sản phẩm vật chất và dịch vụ cuối cùng của khu vực này tạo ra trong nước và trong kỳ báo cáo. Điều này nghĩa là số liệu không tính các giá trị sản phẩm vật chất và dịch vụ đã sử dụng ở các khâu trung gian trong quá trình sản xuất tạo ra sản phẩm.",
                   "frequency": "Ngày 6 tháng đầu tiên của quý sau",
-                  "last_updated": "2026-07-03T06:03:02.452Z",
+                  "last_updated": "2026-10-03T04:50:52.649Z",
                   "source": "Tổng cục Thống kê - GSO",
                   "note": null,
                   "related_blog": null
@@ -2488,8 +2585,12 @@
                 "yAxis": 17,
                 "data": [
                   [
+                    1790726400000,
+                    21481.306646398632
+                  ],
+                  [
                     1782777600000,
-                    21806.507931285163
+                    21819.665966601613
                   ],
                   [
                     1774915200000,
@@ -2570,7 +2671,7 @@
                   "unit": "Tỷ VND",
                   "description": "GDP danh nghĩa của Nghệ thuật, vui chơi và giải trí thể hiện giá trị sản phẩm vật chất và dịch vụ cuối cùng của khu vực này tạo ra trong nước và trong kỳ báo cáo. Điều này nghĩa là số liệu không tính các giá trị sản phẩm vật chất và dịch vụ đã sử dụng ở các khâu trung gian trong quá trình sản xuất tạo ra sản phẩm.",
                   "frequency": "Ngày 6 tháng đầu tiên của quý sau",
-                  "last_updated": "2026-07-03T06:03:02.452Z",
+                  "last_updated": "2026-10-03T04:50:52.649Z",
                   "source": "Tổng cục Thống kê - GSO",
                   "note": null,
                   "related_blog": null
@@ -2589,8 +2690,12 @@
                 "yAxis": 17,
                 "data": [
                   [
+                    1790726400000,
+                    23286.008846875313
+                  ],
+                  [
                     1782777600000,
-                    25886.882895678602
+                    26020.725825173395
                   ],
                   [
                     1774915200000,
@@ -2671,7 +2776,7 @@
                   "unit": "Tỷ VND",
                   "description": "GDP danh nghĩa của Hoạt động dịch vụ khác thể hiện giá trị sản phẩm vật chất và dịch vụ cuối cùng của khu vực này tạo ra trong nước và trong kỳ báo cáo. Điều này nghĩa là số liệu không tính các giá trị sản phẩm vật chất và dịch vụ đã sử dụng ở các khâu trung gian trong quá trình sản xuất tạo ra sản phẩm.",
                   "frequency": "Ngày 6 tháng đầu tiên của quý sau",
-                  "last_updated": "2026-07-03T06:03:02.452Z",
+                  "last_updated": "2026-10-03T04:50:52.649Z",
                   "source": "Tổng cục Thống kê - GSO",
                   "note": null,
                   "related_blog": null
@@ -2690,8 +2795,12 @@
                 "yAxis": 17,
                 "data": [
                   [
+                    1790726400000,
+                    4654.82041074886
+                  ],
+                  [
                     1782777600000,
-                    4462.463753342478
+                    4454.7038956684455
                   ],
                   [
                     1774915200000,
@@ -2772,7 +2881,7 @@
                   "unit": "Tỷ VND",
                   "description": "GDP danh nghĩa của Hoạt động làm thuê các công việc trong các hộ gia đình thể hiện giá trị sản phẩm vật chất và dịch vụ cuối cùng của khu vực này tạo ra trong nước và trong kỳ báo cáo. Điều này nghĩa là số liệu không tính các giá trị sản phẩm vật chất và dịch vụ đã sử dụng ở các khâu trung gian trong quá trình sản xuất tạo ra sản phẩm.",
                   "frequency": "Ngày 6 tháng đầu tiên của quý sau",
-                  "last_updated": "2026-07-03T06:03:02.452Z",
+                  "last_updated": "2026-10-03T04:50:52.649Z",
                   "source": "Tổng cục Thống kê - GSO",
                   "note": null,
                   "related_blog": null
@@ -2791,8 +2900,12 @@
                 "yAxis": 17,
                 "data": [
                   [
+                    1790726400000,
+                    285298.7124347815
+                  ],
+                  [
                     1782777600000,
-                    275588.762407171
+                    277547.6944143614
                   ],
                   [
                     1774915200000,
@@ -2873,7 +2986,7 @@
                   "unit": "Tỷ VND",
                   "description": "Thuế sản phẩm trừ trợ cấp sản phẩm là một thành phần trong GDP. Đây là phần chênh lệch giữa tổng số thuế mà Nhà nước thu được từ các sản phẩm, dịch vụ và tổng số tiền Nhà nước trợ cấp cho các hoạt động sản xuất.",
                   "frequency": "Ngày 6 tháng đầu tiên của quý sau",
-                  "last_updated": "2026-07-03T06:03:02.452Z",
+                  "last_updated": "2026-10-03T04:50:52.649Z",
                   "source": "Tổng cục Thống kê - GSO",
                   "note": null,
                   "related_blog": null
@@ -2886,6 +2999,7 @@
       "qoq": {
         "title": "GDP Danh Nghĩa",
         "headers": [
+          "09-2026",
           "06-2026",
           "03-2026",
           "12-2025",
@@ -2923,12 +3037,16 @@
                 "yAxis": 1,
                 "data": [
                   [
+                    1790726400000,
+                    5.746578027209533
+                  ],
+                  [
                     1782777600000,
-                    10.671489918864886
+                    11.026121440841603
                   ],
                   [
                     1774915200000,
-                    -15.277096136656052
+                    -15.11401738802267
                   ],
                   [
                     1767139200000,
@@ -3005,7 +3123,7 @@
                   "unit": "%",
                   "description": "GDP danh nghĩa phản ánh tổng giá trị sản xuất hàng hóa và dịch vụ cuối cùng trong nước, được tính theo giá thị trường tại thời điểm thống kê. Nó cho thấy quy mô nền kinh tế ở thời điểm hiện tại, nhưng chịu ảnh hưởng bởi cả sự tăng trưởng thực tế và lạm phát.\nTổng cục Thống kê (GSO) tính toán GDP dựa trên dữ liệu từ nhiều nguồn như Điều tra doanh nghiệp, và thông tin từ các bộ, ngành.",
                   "frequency": "Ngày 6 tháng đầu tiên của quý sau",
-                  "last_updated": "2026-07-03T06:03:02.452Z",
+                  "last_updated": "2026-10-03T04:50:52.649Z",
                   "source": "Tổng cục Thống kê - GSO",
                   "note": null,
                   "related_blog": null
@@ -3024,8 +3142,12 @@
                 "yAxis": 1,
                 "data": [
                   [
+                    1790726400000,
+                    9.148002473977344
+                  ],
+                  [
                     1782777600000,
-                    4.784424204065628
+                    5.676071534621672
                   ],
                   [
                     1774915200000,
@@ -3106,7 +3228,7 @@
                   "unit": "%",
                   "description": "GDP danh nghĩa của Nông nghiệp, lâm nghiệp và thủy sản  thể hiện giá trị sản phẩm vật chất và dịch vụ cuối cùng của khu vực này tạo ra trong nước và trong kỳ báo cáo. Điều này nghĩa là số liệu không tính các giá trị sản phẩm vật chất và dịch vụ đã sử dụng ở các khâu trung gian trong quá trình sản xuất tạo ra sản phẩm.",
                   "frequency": "Ngày 6 tháng đầu tiên của quý sau",
-                  "last_updated": "2026-07-03T06:03:02.452Z",
+                  "last_updated": "2026-10-03T04:50:52.649Z",
                   "source": "Tổng cục Thống kê - GSO",
                   "note": null,
                   "related_blog": null
@@ -3125,8 +3247,12 @@
                 "yAxis": 1,
                 "data": [
                   [
+                    1790726400000,
+                    10.70758249307282
+                  ],
+                  [
                     1782777600000,
-                    -4.2665681659736086
+                    -2.999994826637995
                   ],
                   [
                     1774915200000,
@@ -3207,7 +3333,7 @@
                   "unit": "%",
                   "description": "GDP danh nghĩa của Nông nghiệp thể hiện giá trị sản phẩm vật chất và dịch vụ cuối cùng của khu vực này tạo ra trong nước và trong kỳ báo cáo. Điều này nghĩa là số liệu không tính các giá trị sản phẩm vật chất và dịch vụ đã sử dụng ở các khâu trung gian trong quá trình sản xuất tạo ra sản phẩm.",
                   "frequency": "Ngày 6 tháng đầu tiên của quý sau",
-                  "last_updated": "2026-07-03T06:03:02.452Z",
+                  "last_updated": "2026-10-03T04:50:52.649Z",
                   "source": "Tổng cục Thống kê - GSO",
                   "note": null,
                   "related_blog": null
@@ -3226,12 +3352,16 @@
                 "yAxis": 1,
                 "data": [
                   [
+                    1790726400000,
+                    -13.062048003207583
+                  ],
+                  [
                     1782777600000,
-                    54.63480343474695
+                    53.92409631890397
                   ],
                   [
                     1774915200000,
-                    -31.81153824523577
+                    -31.808728564719218
                   ],
                   [
                     1767139200000,
@@ -3308,7 +3438,7 @@
                   "unit": "%",
                   "description": "GDP danh nghĩa của Lâm nghiệp thể hiện giá trị sản phẩm vật chất và dịch vụ cuối cùng của khu vực này tạo ra trong nước và trong kỳ báo cáo. Điều này nghĩa là số liệu không tính các giá trị sản phẩm vật chất và dịch vụ đã sử dụng ở các khâu trung gian trong quá trình sản xuất tạo ra sản phẩm.",
                   "frequency": "Ngày 6 tháng đầu tiên của quý sau",
-                  "last_updated": "2026-07-03T06:03:02.452Z",
+                  "last_updated": "2026-10-03T04:50:52.649Z",
                   "source": "Tổng cục Thống kê - GSO",
                   "note": null,
                   "related_blog": null
@@ -3327,8 +3457,12 @@
                 "yAxis": 1,
                 "data": [
                   [
+                    1790726400000,
+                    9.643988101089727
+                  ],
+                  [
                     1782777600000,
-                    31.080175512957275
+                    30.791114073240056
                   ],
                   [
                     1774915200000,
@@ -3409,7 +3543,7 @@
                   "unit": "%",
                   "description": "GDP danh nghĩa của Thủy sản thể hiện giá trị sản phẩm vật chất và dịch vụ cuối cùng của khu vực này tạo ra trong nước và trong kỳ báo cáo. Điều này nghĩa là số liệu không tính các giá trị sản phẩm vật chất và dịch vụ đã sử dụng ở các khâu trung gian trong quá trình sản xuất tạo ra sản phẩm.",
                   "frequency": "Ngày 6 tháng đầu tiên của quý sau",
-                  "last_updated": "2026-07-03T06:03:02.452Z",
+                  "last_updated": "2026-10-03T04:50:52.649Z",
                   "source": "Tổng cục Thống kê - GSO",
                   "note": null,
                   "related_blog": null
@@ -3428,12 +3562,16 @@
                 "yAxis": 1,
                 "data": [
                   [
+                    1790726400000,
+                    9.209892158213371
+                  ],
+                  [
                     1782777600000,
-                    13.922238033575335
+                    14.159281686293879
                   ],
                   [
                     1774915200000,
-                    -17.47843359933183
+                    -17.131650632331947
                   ],
                   [
                     1767139200000,
@@ -3510,7 +3648,7 @@
                   "unit": "%",
                   "description": "GDP danh nghĩa của Công nghiệp và xây dựng thể hiện giá trị sản phẩm vật chất và dịch vụ cuối cùng của khu vực này tạo ra trong nước và trong kỳ báo cáo. Điều này nghĩa là số liệu không tính các giá trị sản phẩm vật chất và dịch vụ đã sử dụng ở các khâu trung gian trong quá trình sản xuất tạo ra sản phẩm.",
                   "frequency": "Ngày 6 tháng đầu tiên của quý sau",
-                  "last_updated": "2026-07-03T06:03:02.452Z",
+                  "last_updated": "2026-10-03T04:50:52.649Z",
                   "source": "Tổng cục Thống kê - GSO",
                   "note": null,
                   "related_blog": null
@@ -3529,12 +3667,16 @@
                 "yAxis": 1,
                 "data": [
                   [
+                    1790726400000,
+                    8.243722518136662
+                  ],
+                  [
                     1782777600000,
-                    10.604899612821656
+                    10.472548604446304
                   ],
                   [
                     1774915200000,
-                    -12.596308886748348
+                    -12.22523918269351
                   ],
                   [
                     1767139200000,
@@ -3611,7 +3753,7 @@
                   "unit": "%",
                   "description": "GDP danh nghĩa của Công nghiệp thể hiện giá trị sản phẩm vật chất và dịch vụ cuối cùng của khu vực này tạo ra trong nước và trong kỳ báo cáo. Điều này nghĩa là số liệu không tính các giá trị sản phẩm vật chất và dịch vụ đã sử dụng ở các khâu trung gian trong quá trình sản xuất tạo ra sản phẩm.",
                   "frequency": "Ngày 6 tháng đầu tiên của quý sau",
-                  "last_updated": "2026-07-03T06:03:02.452Z",
+                  "last_updated": "2026-10-03T04:50:52.649Z",
                   "source": "Tổng cục Thống kê - GSO",
                   "note": null,
                   "related_blog": null
@@ -3630,8 +3772,12 @@
                 "yAxis": 1,
                 "data": [
                   [
+                    1790726400000,
+                    -20.329190869471464
+                  ],
+                  [
                     1782777600000,
-                    -0.20416195184007613
+                    0.1028120168714835
                   ],
                   [
                     1774915200000,
@@ -3712,7 +3858,7 @@
                   "unit": "%",
                   "description": "GDP danh nghĩa của Khai khoáng thể hiện giá trị sản phẩm vật chất và dịch vụ cuối cùng của khu vực này tạo ra trong nước và trong kỳ báo cáo. Điều này nghĩa là số liệu không tính các giá trị sản phẩm vật chất và dịch vụ đã sử dụng ở các khâu trung gian trong quá trình sản xuất tạo ra sản phẩm.",
                   "frequency": "Ngày 6 tháng đầu tiên của quý sau",
-                  "last_updated": "2026-07-03T06:03:02.452Z",
+                  "last_updated": "2026-10-03T04:50:52.649Z",
                   "source": "Tổng cục Thống kê - GSO",
                   "note": null,
                   "related_blog": null
@@ -3731,12 +3877,16 @@
                 "yAxis": 1,
                 "data": [
                   [
+                    1790726400000,
+                    10.924604964524457
+                  ],
+                  [
                     1782777600000,
-                    10.868388113245565
+                    10.934600710839284
                   ],
                   [
                     1774915200000,
-                    -17.389681372193277
+                    -16.927936622885458
                   ],
                   [
                     1767139200000,
@@ -3813,7 +3963,7 @@
                   "unit": "%",
                   "description": "GDP danh nghĩa của Công nghiệp chế biến, chế tạo thể hiện giá trị sản phẩm vật chất và dịch vụ cuối cùng của khu vực này tạo ra trong nước và trong kỳ báo cáo. Điều này nghĩa là số liệu không tính các giá trị sản phẩm vật chất và dịch vụ đã sử dụng ở các khâu trung gian trong quá trình sản xuất tạo ra sản phẩm.",
                   "frequency": "Ngày 6 tháng đầu tiên của quý sau",
-                  "last_updated": "2026-07-03T06:03:02.452Z",
+                  "last_updated": "2026-10-03T04:50:52.649Z",
                   "source": "Tổng cục Thống kê - GSO",
                   "note": null,
                   "related_blog": null
@@ -3832,8 +3982,12 @@
                 "yAxis": 1,
                 "data": [
                   [
+                    1790726400000,
+                    7.975183974520293
+                  ],
+                  [
                     1782777600000,
-                    15.268201852038011
+                    13.914479784166833
                   ],
                   [
                     1774915200000,
@@ -3914,7 +4068,7 @@
                   "unit": "%",
                   "description": "GDP danh nghĩa của Sản xuất và phân phối điện thể hiện giá trị sản phẩm vật chất và dịch vụ cuối cùng của khu vực này tạo ra trong nước và trong kỳ báo cáo. Điều này nghĩa là số liệu không tính các giá trị sản phẩm vật chất và dịch vụ đã sử dụng ở các khâu trung gian trong quá trình sản xuất tạo ra sản phẩm.",
                   "frequency": "Ngày 6 tháng đầu tiên của quý sau",
-                  "last_updated": "2026-07-03T06:03:02.452Z",
+                  "last_updated": "2026-10-03T04:50:52.649Z",
                   "source": "Tổng cục Thống kê - GSO",
                   "note": null,
                   "related_blog": null
@@ -3933,8 +4087,12 @@
                 "yAxis": 1,
                 "data": [
                   [
+                    1790726400000,
+                    10.651969284072965
+                  ],
+                  [
                     1782777600000,
-                    8.98221710804124
+                    8.25059080831158
                   ],
                   [
                     1774915200000,
@@ -4015,7 +4173,7 @@
                   "unit": "%",
                   "description": "GDP danh nghĩa của Cung cấp nước và xử lý nước thải thể hiện giá trị sản phẩm vật chất và dịch vụ cuối cùng của khu vực này tạo ra trong nước và trong kỳ báo cáo. Điều này nghĩa là số liệu không tính các giá trị sản phẩm vật chất và dịch vụ đã sử dụng ở các khâu trung gian trong quá trình sản xuất tạo ra sản phẩm.",
                   "frequency": "Ngày 6 tháng đầu tiên của quý sau",
-                  "last_updated": "2026-07-03T06:03:02.452Z",
+                  "last_updated": "2026-10-03T04:50:52.649Z",
                   "source": "Tổng cục Thống kê - GSO",
                   "note": null,
                   "related_blog": null
@@ -4034,12 +4192,16 @@
                 "yAxis": 1,
                 "data": [
                   [
+                    1790726400000,
+                    14.122704736363909
+                  ],
+                  [
                     1782777600000,
-                    34.90918784343683
+                    37.490461586470424
                   ],
                   [
                     1774915200000,
-                    -39.02560158321028
+                    -38.78581351157958
                   ],
                   [
                     1767139200000,
@@ -4116,7 +4278,7 @@
                   "unit": "%",
                   "description": "GDP danh nghĩa của Xây dựng thể hiện giá trị sản phẩm vật chất và dịch vụ cuối cùng của khu vực này tạo ra trong nước và trong kỳ báo cáo. Điều này nghĩa là số liệu không tính các giá trị sản phẩm vật chất và dịch vụ đã sử dụng ở các khâu trung gian trong quá trình sản xuất tạo ra sản phẩm.",
                   "frequency": "Ngày 6 tháng đầu tiên của quý sau",
-                  "last_updated": "2026-07-03T06:03:02.452Z",
+                  "last_updated": "2026-10-03T04:50:52.649Z",
                   "source": "Tổng cục Thống kê - GSO",
                   "note": null,
                   "related_blog": null
@@ -4135,12 +4297,16 @@
                 "yAxis": 1,
                 "data": [
                   [
+                    1790726400000,
+                    2.4293720977098863
+                  ],
+                  [
                     1782777600000,
-                    10.905108669676647
+                    11.140080633415703
                   ],
                   [
                     1774915200000,
-                    -12.294023251710444
+                    -12.22013614111923
                   ],
                   [
                     1767139200000,
@@ -4217,7 +4383,7 @@
                   "unit": "%",
                   "description": "GDP danh nghĩa của Dịch vụ thể hiện giá trị sản phẩm vật chất và dịch vụ cuối cùng của khu vực này tạo ra trong nước và trong kỳ báo cáo. Điều này nghĩa là số liệu không tính các giá trị sản phẩm vật chất và dịch vụ đã sử dụng ở các khâu trung gian trong quá trình sản xuất tạo ra sản phẩm.",
                   "frequency": "Ngày 6 tháng đầu tiên của quý sau",
-                  "last_updated": "2026-07-03T06:03:02.452Z",
+                  "last_updated": "2026-10-03T04:50:52.649Z",
                   "source": "Tổng cục Thống kê - GSO",
                   "note": null,
                   "related_blog": null
@@ -4236,8 +4402,12 @@
                 "yAxis": 1,
                 "data": [
                   [
+                    1790726400000,
+                    -2.2904894912044615
+                  ],
+                  [
                     1782777600000,
-                    6.5112910886361135
+                    6.329499746564041
                   ],
                   [
                     1774915200000,
@@ -4318,7 +4488,7 @@
                   "unit": "%",
                   "description": "GDP danh nghĩa của Bán buôn bán lẻ, sửa chữa ô tô, mô tô, xe máy thể hiện giá trị sản phẩm vật chất và dịch vụ cuối cùng của khu vực này tạo ra trong nước và trong kỳ báo cáo. Điều này nghĩa là số liệu không tính các giá trị sản phẩm vật chất và dịch vụ đã sử dụng ở các khâu trung gian trong quá trình sản xuất tạo ra sản phẩm.",
                   "frequency": "Ngày 6 tháng đầu tiên của quý sau",
-                  "last_updated": "2026-07-03T06:03:02.452Z",
+                  "last_updated": "2026-10-03T04:50:52.649Z",
                   "source": "Tổng cục Thống kê - GSO",
                   "note": null,
                   "related_blog": null
@@ -4337,12 +4507,16 @@
                 "yAxis": 1,
                 "data": [
                   [
+                    1790726400000,
+                    -12.011541279658793
+                  ],
+                  [
                     1782777600000,
-                    25.35930921838891
+                    25.202520583290024
                   ],
                   [
                     1774915200000,
-                    1.0153327979483726
+                    1.6736116844605606
                   ],
                   [
                     1767139200000,
@@ -4419,7 +4593,7 @@
                   "unit": "%",
                   "description": "GDP danh nghĩa của Vận tải kho bãi thể hiện giá trị sản phẩm vật chất và dịch vụ cuối cùng của khu vực này tạo ra trong nước và trong kỳ báo cáo. Điều này nghĩa là số liệu không tính các giá trị sản phẩm vật chất và dịch vụ đã sử dụng ở các khâu trung gian trong quá trình sản xuất tạo ra sản phẩm.",
                   "frequency": "Ngày 6 tháng đầu tiên của quý sau",
-                  "last_updated": "2026-07-03T06:03:02.452Z",
+                  "last_updated": "2026-10-03T04:50:52.649Z",
                   "source": "Tổng cục Thống kê - GSO",
                   "note": null,
                   "related_blog": null
@@ -4438,8 +4612,12 @@
                 "yAxis": 1,
                 "data": [
                   [
+                    1790726400000,
+                    15.32652753283909
+                  ],
+                  [
                     1782777600000,
-                    -2.3076714069111572
+                    -1.993837891797413
                   ],
                   [
                     1774915200000,
@@ -4520,7 +4698,7 @@
                   "unit": "%",
                   "description": "GDP danh nghĩa của Dịch vụ lưu trú và ăn uống thể hiện giá trị sản phẩm vật chất và dịch vụ cuối cùng của khu vực này tạo ra trong nước và trong kỳ báo cáo. Điều này nghĩa là số liệu không tính các giá trị sản phẩm vật chất và dịch vụ đã sử dụng ở các khâu trung gian trong quá trình sản xuất tạo ra sản phẩm.",
                   "frequency": "Ngày 6 tháng đầu tiên của quý sau",
-                  "last_updated": "2026-07-03T06:03:02.452Z",
+                  "last_updated": "2026-10-03T04:50:52.649Z",
                   "source": "Tổng cục Thống kê - GSO",
                   "note": null,
                   "related_blog": null
@@ -4539,8 +4717,12 @@
                 "yAxis": 1,
                 "data": [
                   [
+                    1790726400000,
+                    9.809917796328252
+                  ],
+                  [
                     1782777600000,
-                    2.7499740483272395
+                    2.9845274428540796
                   ],
                   [
                     1774915200000,
@@ -4621,7 +4803,7 @@
                   "unit": "%",
                   "description": "GDP danh nghĩa của Thông tin và truyền thông thể hiện giá trị sản phẩm vật chất và dịch vụ cuối cùng của khu vực này tạo ra trong nước và trong kỳ báo cáo. Điều này nghĩa là số liệu không tính các giá trị sản phẩm vật chất và dịch vụ đã sử dụng ở các khâu trung gian trong quá trình sản xuất tạo ra sản phẩm.",
                   "frequency": "Ngày 6 tháng đầu tiên của quý sau",
-                  "last_updated": "2026-07-03T06:03:02.452Z",
+                  "last_updated": "2026-10-03T04:50:52.649Z",
                   "source": "Tổng cục Thống kê - GSO",
                   "note": null,
                   "related_blog": null
@@ -4640,8 +4822,12 @@
                 "yAxis": 1,
                 "data": [
                   [
+                    1790726400000,
+                    22.864890150500067
+                  ],
+                  [
                     1782777600000,
-                    -0.03110367942845363
+                    1.7781713149946663
                   ],
                   [
                     1774915200000,
@@ -4722,7 +4908,7 @@
                   "unit": "%",
                   "description": "GDP danh nghĩa của Hoạt động tài chính, ngân hàng và bảo hiểm thể hiện giá trị sản phẩm vật chất và dịch vụ cuối cùng của khu vực này tạo ra trong nước và trong kỳ báo cáo. Điều này nghĩa là số liệu không tính các giá trị sản phẩm vật chất và dịch vụ đã sử dụng ở các khâu trung gian trong quá trình sản xuất tạo ra sản phẩm.",
                   "frequency": "Ngày 6 tháng đầu tiên của quý sau",
-                  "last_updated": "2026-07-03T06:03:02.452Z",
+                  "last_updated": "2026-10-03T04:50:52.649Z",
                   "source": "Tổng cục Thống kê - GSO",
                   "note": null,
                   "related_blog": null
@@ -4741,8 +4927,12 @@
                 "yAxis": 1,
                 "data": [
                   [
+                    1790726400000,
+                    8.3174018102377
+                  ],
+                  [
                     1782777600000,
-                    5.026060585978934
+                    5.429219766518944
                   ],
                   [
                     1774915200000,
@@ -4823,7 +5013,7 @@
                   "unit": "%",
                   "description": "GDP danh nghĩa của Hoạt động kinh doanh bất động sản thể hiện giá trị sản phẩm vật chất và dịch vụ cuối cùng của khu vực này tạo ra trong nước và trong kỳ báo cáo. Điều này nghĩa là số liệu không tính các giá trị sản phẩm vật chất và dịch vụ đã sử dụng ở các khâu trung gian trong quá trình sản xuất tạo ra sản phẩm.",
                   "frequency": "Ngày 6 tháng đầu tiên của quý sau",
-                  "last_updated": "2026-07-03T06:03:02.452Z",
+                  "last_updated": "2026-10-03T04:50:52.649Z",
                   "source": "Tổng cục Thống kê - GSO",
                   "note": null,
                   "related_blog": null
@@ -4842,8 +5032,12 @@
                 "yAxis": 1,
                 "data": [
                   [
+                    1790726400000,
+                    6.590065482514852
+                  ],
+                  [
                     1782777600000,
-                    18.255678828191574
+                    18.255813130531486
                   ],
                   [
                     1774915200000,
@@ -4924,7 +5118,7 @@
                   "unit": "%",
                   "description": "GDP danh nghĩa của Hoạt động chuyên môn, khoa học và công nghệ thể hiện giá trị sản phẩm vật chất và dịch vụ cuối cùng của khu vực này tạo ra trong nước và trong kỳ báo cáo. Điều này nghĩa là số liệu không tính các giá trị sản phẩm vật chất và dịch vụ đã sử dụng ở các khâu trung gian trong quá trình sản xuất tạo ra sản phẩm.",
                   "frequency": "Ngày 6 tháng đầu tiên của quý sau",
-                  "last_updated": "2026-07-03T06:03:02.452Z",
+                  "last_updated": "2026-10-03T04:50:52.649Z",
                   "source": "Tổng cục Thống kê - GSO",
                   "note": null,
                   "related_blog": null
@@ -4942,6 +5136,10 @@
                 "dateType": "quy",
                 "yAxis": 1,
                 "data": [
+                  [
+                    1790726400000,
+                    -7.875238989033566
+                  ],
                   [
                     1782777600000,
                     10.598034260284047
@@ -5025,7 +5223,7 @@
                   "unit": "%",
                   "description": "GDP danh nghĩa của Hoạt động hành chính và dịch vụ hỗ trợ thể hiện giá trị sản phẩm vật chất và dịch vụ cuối cùng của khu vực này tạo ra trong nước và trong kỳ báo cáo. Điều này nghĩa là số liệu không tính các giá trị sản phẩm vật chất và dịch vụ đã sử dụng ở các khâu trung gian trong quá trình sản xuất tạo ra sản phẩm.",
                   "frequency": "Ngày 6 tháng đầu tiên của quý sau",
-                  "last_updated": "2026-07-03T06:03:02.452Z",
+                  "last_updated": "2026-10-03T04:50:52.649Z",
                   "source": "Tổng cục Thống kê - GSO",
                   "note": null,
                   "related_blog": null
@@ -5044,8 +5242,12 @@
                 "yAxis": 1,
                 "data": [
                   [
+                    1790726400000,
+                    3.7915087998670507
+                  ],
+                  [
                     1782777600000,
-                    12.645405433177789
+                    12.886742757623745
                   ],
                   [
                     1774915200000,
@@ -5126,7 +5328,7 @@
                   "unit": "%",
                   "description": "GDP danh nghĩa của Hoạt động của các tổ chức chính trị thể hiện giá trị sản phẩm vật chất và dịch vụ cuối cùng của khu vực này tạo ra trong nước và trong kỳ báo cáo. Điều này nghĩa là số liệu không tính các giá trị sản phẩm vật chất và dịch vụ đã sử dụng ở các khâu trung gian trong quá trình sản xuất tạo ra sản phẩm.",
                   "frequency": "Ngày 6 tháng đầu tiên của quý sau",
-                  "last_updated": "2026-07-03T06:03:02.452Z",
+                  "last_updated": "2026-10-03T04:50:52.649Z",
                   "source": "Tổng cục Thống kê - GSO",
                   "note": null,
                   "related_blog": null
@@ -5144,6 +5346,10 @@
                 "dateType": "quy",
                 "yAxis": 1,
                 "data": [
+                  [
+                    1790726400000,
+                    -3.95994783334258
+                  ],
                   [
                     1782777600000,
                     21.823645987882443
@@ -5227,7 +5433,7 @@
                   "unit": "%",
                   "description": "GDP danh nghĩa của Giáo dục đào tạo thể hiện giá trị sản phẩm vật chất và dịch vụ cuối cùng của khu vực này tạo ra trong nước và trong kỳ báo cáo. Điều này nghĩa là số liệu không tính các giá trị sản phẩm vật chất và dịch vụ đã sử dụng ở các khâu trung gian trong quá trình sản xuất tạo ra sản phẩm.",
                   "frequency": "Ngày 6 tháng đầu tiên của quý sau",
-                  "last_updated": "2026-07-03T06:03:02.452Z",
+                  "last_updated": "2026-10-03T04:50:52.649Z",
                   "source": "Tổng cục Thống kê - GSO",
                   "note": null,
                   "related_blog": null
@@ -5246,8 +5452,12 @@
                 "yAxis": 1,
                 "data": [
                   [
+                    1790726400000,
+                    8.420161973530004
+                  ],
+                  [
                     1782777600000,
-                    33.4450848736754
+                    33.46147667116942
                   ],
                   [
                     1774915200000,
@@ -5328,7 +5538,7 @@
                   "unit": "%",
                   "description": "GDP danh nghĩa của Y tế và hoạt động cứu trợ xã hội thể hiện giá trị sản phẩm vật chất và dịch vụ cuối cùng của khu vực này tạo ra trong nước và trong kỳ báo cáo. Điều này nghĩa là số liệu không tính các giá trị sản phẩm vật chất và dịch vụ đã sử dụng ở các khâu trung gian trong quá trình sản xuất tạo ra sản phẩm.",
                   "frequency": "Ngày 6 tháng đầu tiên của quý sau",
-                  "last_updated": "2026-07-03T06:03:02.452Z",
+                  "last_updated": "2026-10-03T04:50:52.649Z",
                   "source": "Tổng cục Thống kê - GSO",
                   "note": null,
                   "related_blog": null
@@ -5347,8 +5557,12 @@
                 "yAxis": 1,
                 "data": [
                   [
+                    1790726400000,
+                    -1.5507080663878725
+                  ],
+                  [
                     1782777600000,
-                    3.5275118243272723
+                    3.5899802700362873
                   ],
                   [
                     1774915200000,
@@ -5429,7 +5643,7 @@
                   "unit": "%",
                   "description": "GDP danh nghĩa của Nghệ thuật, vui chơi và giải trí thể hiện giá trị sản phẩm vật chất và dịch vụ cuối cùng của khu vực này tạo ra trong nước và trong kỳ báo cáo. Điều này nghĩa là số liệu không tính các giá trị sản phẩm vật chất và dịch vụ đã sử dụng ở các khâu trung gian trong quá trình sản xuất tạo ra sản phẩm.",
                   "frequency": "Ngày 6 tháng đầu tiên của quý sau",
-                  "last_updated": "2026-07-03T06:03:02.452Z",
+                  "last_updated": "2026-10-03T04:50:52.649Z",
                   "source": "Tổng cục Thống kê - GSO",
                   "note": null,
                   "related_blog": null
@@ -5448,8 +5662,12 @@
                 "yAxis": 1,
                 "data": [
                   [
+                    1790726400000,
+                    -10.509764395781833
+                  ],
+                  [
                     1782777600000,
-                    7.523658166230921
+                    8.07958764823771
                   ],
                   [
                     1774915200000,
@@ -5530,7 +5748,7 @@
                   "unit": "%",
                   "description": "GDP danh nghĩa của Hoạt động dịch vụ khác thể hiện giá trị sản phẩm vật chất và dịch vụ cuối cùng của khu vực này tạo ra trong nước và trong kỳ báo cáo. Điều này nghĩa là số liệu không tính các giá trị sản phẩm vật chất và dịch vụ đã sử dụng ở các khâu trung gian trong quá trình sản xuất tạo ra sản phẩm.",
                   "frequency": "Ngày 6 tháng đầu tiên của quý sau",
-                  "last_updated": "2026-07-03T06:03:02.452Z",
+                  "last_updated": "2026-10-03T04:50:52.649Z",
                   "source": "Tổng cục Thống kê - GSO",
                   "note": null,
                   "related_blog": null
@@ -5549,8 +5767,12 @@
                 "yAxis": 1,
                 "data": [
                   [
+                    1790726400000,
+                    4.49225178075245
+                  ],
+                  [
                     1782777600000,
-                    0.5235869729765554
+                    0.3487847177852851
                   ],
                   [
                     1774915200000,
@@ -5631,7 +5853,7 @@
                   "unit": "%",
                   "description": "GDP danh nghĩa của Hoạt động làm thuê các công việc trong các hộ gia đình thể hiện giá trị sản phẩm vật chất và dịch vụ cuối cùng của khu vực này tạo ra trong nước và trong kỳ báo cáo. Điều này nghĩa là số liệu không tính các giá trị sản phẩm vật chất và dịch vụ đã sử dụng ở các khâu trung gian trong quá trình sản xuất tạo ra sản phẩm.",
                   "frequency": "Ngày 6 tháng đầu tiên của quý sau",
-                  "last_updated": "2026-07-03T06:03:02.452Z",
+                  "last_updated": "2026-10-03T04:50:52.649Z",
                   "source": "Tổng cục Thống kê - GSO",
                   "note": null,
                   "related_blog": null
@@ -5650,8 +5872,12 @@
                 "yAxis": 1,
                 "data": [
                   [
+                    1790726400000,
+                    2.792679664219554
+                  ],
+                  [
                     1782777600000,
-                    2.871606494376767
+                    3.602835448825902
                   ],
                   [
                     1774915200000,
@@ -5732,7 +5958,7 @@
                   "unit": "%",
                   "description": "Thuế sản phẩm trừ trợ cấp sản phẩm là một thành phần trong GDP. Đây là phần chênh lệch giữa tổng số thuế mà Nhà nước thu được từ các sản phẩm, dịch vụ và tổng số tiền Nhà nước trợ cấp cho các hoạt động sản xuất.",
                   "frequency": "Ngày 6 tháng đầu tiên của quý sau",
-                  "last_updated": "2026-07-03T06:03:02.452Z",
+                  "last_updated": "2026-10-03T04:50:52.649Z",
                   "source": "Tổng cục Thống kê - GSO",
                   "note": null,
                   "related_blog": null
@@ -5745,6 +5971,7 @@
       "yoy": {
         "title": "GDP Danh Nghĩa",
         "headers": [
+          "09-2026",
           "06-2026",
           "03-2026",
           "12-2025",
@@ -5782,12 +6009,16 @@
                 "yAxis": 1,
                 "data": [
                   [
+                    1790726400000,
+                    14.248133613631051
+                  ],
+                  [
                     1782777600000,
-                    12.895908590242868
+                    13.475671799531808
                   ],
                   [
                     1774915200000,
-                    11.585987956566541
+                    11.800774070488321
                   ],
                   [
                     1767139200000,
@@ -5864,7 +6095,7 @@
                   "unit": "%",
                   "description": "GDP danh nghĩa phản ánh tổng giá trị sản xuất hàng hóa và dịch vụ cuối cùng trong nước, được tính theo giá thị trường tại thời điểm thống kê. Nó cho thấy quy mô nền kinh tế ở thời điểm hiện tại, nhưng chịu ảnh hưởng bởi cả sự tăng trưởng thực tế và lạm phát.\nTổng cục Thống kê (GSO) tính toán GDP dựa trên dữ liệu từ nhiều nguồn như Điều tra doanh nghiệp, và thông tin từ các bộ, ngành.",
                   "frequency": "Ngày 6 tháng đầu tiên của quý sau",
-                  "last_updated": "2026-07-03T06:03:02.452Z",
+                  "last_updated": "2026-10-03T04:50:52.649Z",
                   "source": "Tổng cục Thống kê - GSO",
                   "note": null,
                   "related_blog": null
@@ -5883,8 +6114,12 @@
                 "yAxis": 1,
                 "data": [
                   [
+                    1790726400000,
+                    7.123105318778228
+                  ],
+                  [
                     1782777600000,
-                    5.433236284552669
+                    6.330404584126706
                   ],
                   [
                     1774915200000,
@@ -5965,7 +6200,7 @@
                   "unit": "%",
                   "description": "GDP danh nghĩa của Nông nghiệp, lâm nghiệp và thủy sản  thể hiện giá trị sản phẩm vật chất và dịch vụ cuối cùng của khu vực này tạo ra trong nước và trong kỳ báo cáo. Điều này nghĩa là số liệu không tính các giá trị sản phẩm vật chất và dịch vụ đã sử dụng ở các khâu trung gian trong quá trình sản xuất tạo ra sản phẩm.",
                   "frequency": "Ngày 6 tháng đầu tiên của quý sau",
-                  "last_updated": "2026-07-03T06:03:02.452Z",
+                  "last_updated": "2026-10-03T04:50:52.649Z",
                   "source": "Tổng cục Thống kê - GSO",
                   "note": null,
                   "related_blog": null
@@ -5984,8 +6219,12 @@
                 "yAxis": 1,
                 "data": [
                   [
+                    1790726400000,
+                    6.745145874383539
+                  ],
+                  [
                     1782777600000,
-                    3.390300452131987
+                    4.758175765800889
                   ],
                   [
                     1774915200000,
@@ -6066,7 +6305,7 @@
                   "unit": "%",
                   "description": "GDP danh nghĩa của Nông nghiệp thể hiện giá trị sản phẩm vật chất và dịch vụ cuối cùng của khu vực này tạo ra trong nước và trong kỳ báo cáo. Điều này nghĩa là số liệu không tính các giá trị sản phẩm vật chất và dịch vụ đã sử dụng ở các khâu trung gian trong quá trình sản xuất tạo ra sản phẩm.",
                   "frequency": "Ngày 6 tháng đầu tiên của quý sau",
-                  "last_updated": "2026-07-03T06:03:02.452Z",
+                  "last_updated": "2026-10-03T04:50:52.649Z",
                   "source": "Tổng cục Thống kê - GSO",
                   "note": null,
                   "related_blog": null
@@ -6085,12 +6324,16 @@
                 "yAxis": 1,
                 "data": [
                   [
+                    1790726400000,
+                    9.92775813457845
+                  ],
+                  [
                     1782777600000,
-                    13.547901619995764
+                    13.030688578104849
                   ],
                   [
                     1774915200000,
-                    6.1523325476223505
+                    6.156706515488328
                   ],
                   [
                     1767139200000,
@@ -6167,7 +6410,7 @@
                   "unit": "%",
                   "description": "GDP danh nghĩa của Lâm nghiệp thể hiện giá trị sản phẩm vật chất và dịch vụ cuối cùng của khu vực này tạo ra trong nước và trong kỳ báo cáo. Điều này nghĩa là số liệu không tính các giá trị sản phẩm vật chất và dịch vụ đã sử dụng ở các khâu trung gian trong quá trình sản xuất tạo ra sản phẩm.",
                   "frequency": "Ngày 6 tháng đầu tiên của quý sau",
-                  "last_updated": "2026-07-03T06:03:02.452Z",
+                  "last_updated": "2026-10-03T04:50:52.649Z",
                   "source": "Tổng cục Thống kê - GSO",
                   "note": null,
                   "related_blog": null
@@ -6186,8 +6429,12 @@
                 "yAxis": 1,
                 "data": [
                   [
+                    1790726400000,
+                    7.759669328694632
+                  ],
+                  [
                     1782777600000,
-                    9.939024652322788
+                    9.696584232764716
                   ],
                   [
                     1774915200000,
@@ -6268,7 +6515,7 @@
                   "unit": "%",
                   "description": "GDP danh nghĩa của Thủy sản thể hiện giá trị sản phẩm vật chất và dịch vụ cuối cùng của khu vực này tạo ra trong nước và trong kỳ báo cáo. Điều này nghĩa là số liệu không tính các giá trị sản phẩm vật chất và dịch vụ đã sử dụng ở các khâu trung gian trong quá trình sản xuất tạo ra sản phẩm.",
                   "frequency": "Ngày 6 tháng đầu tiên của quý sau",
-                  "last_updated": "2026-07-03T06:03:02.452Z",
+                  "last_updated": "2026-10-03T04:50:52.649Z",
                   "source": "Tổng cục Thống kê - GSO",
                   "note": null,
                   "related_blog": null
@@ -6287,12 +6534,16 @@
                 "yAxis": 1,
                 "data": [
                   [
+                    1790726400000,
+                    16.628294020937332
+                  ],
+                  [
                     1782777600000,
-                    16.14121302543159
+                    16.871953210782493
                   ],
                   [
                     1774915200000,
-                    13.384891833948853
+                    13.861372721529522
                   ],
                   [
                     1767139200000,
@@ -6369,7 +6620,7 @@
                   "unit": "%",
                   "description": "GDP danh nghĩa của Công nghiệp và xây dựng thể hiện giá trị sản phẩm vật chất và dịch vụ cuối cùng của khu vực này tạo ra trong nước và trong kỳ báo cáo. Điều này nghĩa là số liệu không tính các giá trị sản phẩm vật chất và dịch vụ đã sử dụng ở các khâu trung gian trong quá trình sản xuất tạo ra sản phẩm.",
                   "frequency": "Ngày 6 tháng đầu tiên của quý sau",
-                  "last_updated": "2026-07-03T06:03:02.452Z",
+                  "last_updated": "2026-10-03T04:50:52.649Z",
                   "source": "Tổng cục Thống kê - GSO",
                   "note": null,
                   "related_blog": null
@@ -6388,12 +6639,16 @@
                 "yAxis": 1,
                 "data": [
                   [
+                    1790726400000,
+                    15.680744657596657
+                  ],
+                  [
                     1782777600000,
-                    15.739628418642607
+                    16.09191422265141
                   ],
                   [
                     1774915200000,
-                    13.098529113236046
+                    13.57868546810563
                   ],
                   [
                     1767139200000,
@@ -6470,7 +6725,7 @@
                   "unit": "%",
                   "description": "GDP danh nghĩa của Công nghiệp thể hiện giá trị sản phẩm vật chất và dịch vụ cuối cùng của khu vực này tạo ra trong nước và trong kỳ báo cáo. Điều này nghĩa là số liệu không tính các giá trị sản phẩm vật chất và dịch vụ đã sử dụng ở các khâu trung gian trong quá trình sản xuất tạo ra sản phẩm.",
                   "frequency": "Ngày 6 tháng đầu tiên của quý sau",
-                  "last_updated": "2026-07-03T06:03:02.452Z",
+                  "last_updated": "2026-10-03T04:50:52.649Z",
                   "source": "Tổng cục Thống kê - GSO",
                   "note": null,
                   "related_blog": null
@@ -6489,8 +6744,12 @@
                 "yAxis": 1,
                 "data": [
                   [
+                    1790726400000,
+                    7.481191186415992
+                  ],
+                  [
                     1782777600000,
-                    17.496065376426458
+                    17.857485593962867
                   ],
                   [
                     1774915200000,
@@ -6571,7 +6830,7 @@
                   "unit": "%",
                   "description": "GDP danh nghĩa của Khai khoáng thể hiện giá trị sản phẩm vật chất và dịch vụ cuối cùng của khu vực này tạo ra trong nước và trong kỳ báo cáo. Điều này nghĩa là số liệu không tính các giá trị sản phẩm vật chất và dịch vụ đã sử dụng ở các khâu trung gian trong quá trình sản xuất tạo ra sản phẩm.",
                   "frequency": "Ngày 6 tháng đầu tiên của quý sau",
-                  "last_updated": "2026-07-03T06:03:02.452Z",
+                  "last_updated": "2026-10-03T04:50:52.649Z",
                   "source": "Tổng cục Thống kê - GSO",
                   "note": null,
                   "related_blog": null
@@ -6590,12 +6849,16 @@
                 "yAxis": 1,
                 "data": [
                   [
+                    1790726400000,
+                    16.136754680057148
+                  ],
+                  [
                     1782777600000,
-                    14.608717742748913
+                    15.318144330698095
                   ],
                   [
                     1774915200000,
-                    13.96092271339437
+                    14.597899528921046
                   ],
                   [
                     1767139200000,
@@ -6672,7 +6935,7 @@
                   "unit": "%",
                   "description": "GDP danh nghĩa của Công nghiệp chế biến, chế tạo thể hiện giá trị sản phẩm vật chất và dịch vụ cuối cùng của khu vực này tạo ra trong nước và trong kỳ báo cáo. Điều này nghĩa là số liệu không tính các giá trị sản phẩm vật chất và dịch vụ đã sử dụng ở các khâu trung gian trong quá trình sản xuất tạo ra sản phẩm.",
                   "frequency": "Ngày 6 tháng đầu tiên của quý sau",
-                  "last_updated": "2026-07-03T06:03:02.452Z",
+                  "last_updated": "2026-10-03T04:50:52.649Z",
                   "source": "Tổng cục Thống kê - GSO",
                   "note": null,
                   "related_blog": null
@@ -6691,8 +6954,12 @@
                 "yAxis": 1,
                 "data": [
                   [
+                    1790726400000,
+                    16.889914092731757
+                  ],
+                  [
                     1782777600000,
-                    21.435785766967427
+                    20.00963093518618
                   ],
                   [
                     1774915200000,
@@ -6773,7 +7040,7 @@
                   "unit": "%",
                   "description": "GDP danh nghĩa của Sản xuất và phân phối điện thể hiện giá trị sản phẩm vật chất và dịch vụ cuối cùng của khu vực này tạo ra trong nước và trong kỳ báo cáo. Điều này nghĩa là số liệu không tính các giá trị sản phẩm vật chất và dịch vụ đã sử dụng ở các khâu trung gian trong quá trình sản xuất tạo ra sản phẩm.",
                   "frequency": "Ngày 6 tháng đầu tiên của quý sau",
-                  "last_updated": "2026-07-03T06:03:02.452Z",
+                  "last_updated": "2026-10-03T04:50:52.649Z",
                   "source": "Tổng cục Thống kê - GSO",
                   "note": null,
                   "related_blog": null
@@ -6792,8 +7059,12 @@
                 "yAxis": 1,
                 "data": [
                   [
+                    1790726400000,
+                    11.251606832303725
+                  ],
+                  [
                     1782777600000,
-                    10.614422048462927
+                    9.871838327489236
                   ],
                   [
                     1774915200000,
@@ -6874,7 +7145,7 @@
                   "unit": "%",
                   "description": "GDP danh nghĩa của Cung cấp nước và xử lý nước thải thể hiện giá trị sản phẩm vật chất và dịch vụ cuối cùng của khu vực này tạo ra trong nước và trong kỳ báo cáo. Điều này nghĩa là số liệu không tính các giá trị sản phẩm vật chất và dịch vụ đã sử dụng ở các khâu trung gian trong quá trình sản xuất tạo ra sản phẩm.",
                   "frequency": "Ngày 6 tháng đầu tiên của quý sau",
-                  "last_updated": "2026-07-03T06:03:02.452Z",
+                  "last_updated": "2026-10-03T04:50:52.649Z",
                   "source": "Tổng cục Thống kê - GSO",
                   "note": null,
                   "related_blog": null
@@ -6893,12 +7164,16 @@
                 "yAxis": 1,
                 "data": [
                   [
+                    1790726400000,
+                    21.425152424780517
+                  ],
+                  [
                     1782777600000,
-                    18.269321836243364
+                    21.0062233868998
                   ],
                   [
                     1774915200000,
-                    15.230332563833024
+                    15.68348765771315
                   ],
                   [
                     1767139200000,
@@ -6975,7 +7250,7 @@
                   "unit": "%",
                   "description": "GDP danh nghĩa của Xây dựng thể hiện giá trị sản phẩm vật chất và dịch vụ cuối cùng của khu vực này tạo ra trong nước và trong kỳ báo cáo. Điều này nghĩa là số liệu không tính các giá trị sản phẩm vật chất và dịch vụ đã sử dụng ở các khâu trung gian trong quá trình sản xuất tạo ra sản phẩm.",
                   "frequency": "Ngày 6 tháng đầu tiên của quý sau",
-                  "last_updated": "2026-07-03T06:03:02.452Z",
+                  "last_updated": "2026-10-03T04:50:52.649Z",
                   "source": "Tổng cục Thống kê - GSO",
                   "note": null,
                   "related_blog": null
@@ -6994,12 +7269,16 @@
                 "yAxis": 1,
                 "data": [
                   [
+                    1790726400000,
+                    14.389062767838467
+                  ],
+                  [
                     1782777600000,
-                    12.36933117204047
+                    12.702270443435909
                   ],
                   [
                     1774915200000,
-                    11.787872464349327
+                    11.882047151203734
                   ],
                   [
                     1767139200000,
@@ -7076,7 +7355,7 @@
                   "unit": "%",
                   "description": "GDP danh nghĩa của Dịch vụ thể hiện giá trị sản phẩm vật chất và dịch vụ cuối cùng của khu vực này tạo ra trong nước và trong kỳ báo cáo. Điều này nghĩa là số liệu không tính các giá trị sản phẩm vật chất và dịch vụ đã sử dụng ở các khâu trung gian trong quá trình sản xuất tạo ra sản phẩm.",
                   "frequency": "Ngày 6 tháng đầu tiên của quý sau",
-                  "last_updated": "2026-07-03T06:03:02.452Z",
+                  "last_updated": "2026-10-03T04:50:52.649Z",
                   "source": "Tổng cục Thống kê - GSO",
                   "note": null,
                   "related_blog": null
@@ -7095,8 +7374,12 @@
                 "yAxis": 1,
                 "data": [
                   [
+                    1790726400000,
+                    16.263669560201286
+                  ],
+                  [
                     1782777600000,
-                    13.767620530221789
+                    13.573444230139911
                   ],
                   [
                     1774915200000,
@@ -7177,7 +7460,7 @@
                   "unit": "%",
                   "description": "GDP danh nghĩa của Bán buôn bán lẻ, sửa chữa ô tô, mô tô, xe máy thể hiện giá trị sản phẩm vật chất và dịch vụ cuối cùng của khu vực này tạo ra trong nước và trong kỳ báo cáo. Điều này nghĩa là số liệu không tính các giá trị sản phẩm vật chất và dịch vụ đã sử dụng ở các khâu trung gian trong quá trình sản xuất tạo ra sản phẩm.",
                   "frequency": "Ngày 6 tháng đầu tiên của quý sau",
-                  "last_updated": "2026-07-03T06:03:02.452Z",
+                  "last_updated": "2026-10-03T04:50:52.649Z",
                   "source": "Tổng cục Thống kê - GSO",
                   "note": null,
                   "related_blog": null
@@ -7196,12 +7479,16 @@
                 "yAxis": 1,
                 "data": [
                   [
+                    1790726400000,
+                    20.194504833777344
+                  ],
+                  [
                     1782777600000,
-                    19.161882123556854
+                    19.7884065914884
                   ],
                   [
                     1774915200000,
-                    12.515771204026144
+                    13.248994117139693
                   ],
                   [
                     1767139200000,
@@ -7278,7 +7565,7 @@
                   "unit": "%",
                   "description": "GDP danh nghĩa của Vận tải kho bãi thể hiện giá trị sản phẩm vật chất và dịch vụ cuối cùng của khu vực này tạo ra trong nước và trong kỳ báo cáo. Điều này nghĩa là số liệu không tính các giá trị sản phẩm vật chất và dịch vụ đã sử dụng ở các khâu trung gian trong quá trình sản xuất tạo ra sản phẩm.",
                   "frequency": "Ngày 6 tháng đầu tiên của quý sau",
-                  "last_updated": "2026-07-03T06:03:02.452Z",
+                  "last_updated": "2026-10-03T04:50:52.649Z",
                   "source": "Tổng cục Thống kê - GSO",
                   "note": null,
                   "related_blog": null
@@ -7297,8 +7584,12 @@
                 "yAxis": 1,
                 "data": [
                   [
+                    1790726400000,
+                    17.92419671803918
+                  ],
+                  [
                     1782777600000,
-                    16.795330154636726
+                    17.170531457944517
                   ],
                   [
                     1774915200000,
@@ -7379,7 +7670,7 @@
                   "unit": "%",
                   "description": "GDP danh nghĩa của Dịch vụ lưu trú và ăn uống thể hiện giá trị sản phẩm vật chất và dịch vụ cuối cùng của khu vực này tạo ra trong nước và trong kỳ báo cáo. Điều này nghĩa là số liệu không tính các giá trị sản phẩm vật chất và dịch vụ đã sử dụng ở các khâu trung gian trong quá trình sản xuất tạo ra sản phẩm.",
                   "frequency": "Ngày 6 tháng đầu tiên của quý sau",
-                  "last_updated": "2026-07-03T06:03:02.452Z",
+                  "last_updated": "2026-10-03T04:50:52.649Z",
                   "source": "Tổng cục Thống kê - GSO",
                   "note": null,
                   "related_blog": null
@@ -7398,8 +7689,12 @@
                 "yAxis": 1,
                 "data": [
                   [
+                    1790726400000,
+                    9.215645769904238
+                  ],
+                  [
                     1782777600000,
-                    7.73457975981252
+                    7.980511806264438
                   ],
                   [
                     1774915200000,
@@ -7480,7 +7775,7 @@
                   "unit": "%",
                   "description": "GDP danh nghĩa của Thông tin và truyền thông thể hiện giá trị sản phẩm vật chất và dịch vụ cuối cùng của khu vực này tạo ra trong nước và trong kỳ báo cáo. Điều này nghĩa là số liệu không tính các giá trị sản phẩm vật chất và dịch vụ đã sử dụng ở các khâu trung gian trong quá trình sản xuất tạo ra sản phẩm.",
                   "frequency": "Ngày 6 tháng đầu tiên của quý sau",
-                  "last_updated": "2026-07-03T06:03:02.452Z",
+                  "last_updated": "2026-10-03T04:50:52.649Z",
                   "source": "Tổng cục Thống kê - GSO",
                   "note": null,
                   "related_blog": null
@@ -7499,8 +7794,12 @@
                 "yAxis": 1,
                 "data": [
                   [
+                    1790726400000,
+                    15.553017885045294
+                  ],
+                  [
                     1782777600000,
-                    13.699918790967233
+                    15.757703036946797
                   ],
                   [
                     1774915200000,
@@ -7581,7 +7880,7 @@
                   "unit": "%",
                   "description": "GDP danh nghĩa của Hoạt động tài chính, ngân hàng và bảo hiểm thể hiện giá trị sản phẩm vật chất và dịch vụ cuối cùng của khu vực này tạo ra trong nước và trong kỳ báo cáo. Điều này nghĩa là số liệu không tính các giá trị sản phẩm vật chất và dịch vụ đã sử dụng ở các khâu trung gian trong quá trình sản xuất tạo ra sản phẩm.",
                   "frequency": "Ngày 6 tháng đầu tiên của quý sau",
-                  "last_updated": "2026-07-03T06:03:02.452Z",
+                  "last_updated": "2026-10-03T04:50:52.649Z",
                   "source": "Tổng cục Thống kê - GSO",
                   "note": null,
                   "related_blog": null
@@ -7600,8 +7899,12 @@
                 "yAxis": 1,
                 "data": [
                   [
+                    1790726400000,
+                    11.221172890461585
+                  ],
+                  [
                     1782777600000,
-                    10.733233376547753
+                    11.158300444450274
                   ],
                   [
                     1774915200000,
@@ -7682,7 +7985,7 @@
                   "unit": "%",
                   "description": "GDP danh nghĩa của Hoạt động kinh doanh bất động sản thể hiện giá trị sản phẩm vật chất và dịch vụ cuối cùng của khu vực này tạo ra trong nước và trong kỳ báo cáo. Điều này nghĩa là số liệu không tính các giá trị sản phẩm vật chất và dịch vụ đã sử dụng ở các khâu trung gian trong quá trình sản xuất tạo ra sản phẩm.",
                   "frequency": "Ngày 6 tháng đầu tiên của quý sau",
-                  "last_updated": "2026-07-03T06:03:02.452Z",
+                  "last_updated": "2026-10-03T04:50:52.649Z",
                   "source": "Tổng cục Thống kê - GSO",
                   "note": null,
                   "related_blog": null
@@ -7701,8 +8004,12 @@
                 "yAxis": 1,
                 "data": [
                   [
+                    1790726400000,
+                    12.607495029548001
+                  ],
+                  [
                     1782777600000,
-                    10.23823566881835
+                    10.238360865791082
                   ],
                   [
                     1774915200000,
@@ -7783,7 +8090,7 @@
                   "unit": "%",
                   "description": "GDP danh nghĩa của Hoạt động chuyên môn, khoa học và công nghệ thể hiện giá trị sản phẩm vật chất và dịch vụ cuối cùng của khu vực này tạo ra trong nước và trong kỳ báo cáo. Điều này nghĩa là số liệu không tính các giá trị sản phẩm vật chất và dịch vụ đã sử dụng ở các khâu trung gian trong quá trình sản xuất tạo ra sản phẩm.",
                   "frequency": "Ngày 6 tháng đầu tiên của quý sau",
-                  "last_updated": "2026-07-03T06:03:02.452Z",
+                  "last_updated": "2026-10-03T04:50:52.649Z",
                   "source": "Tổng cục Thống kê - GSO",
                   "note": null,
                   "related_blog": null
@@ -7801,6 +8108,10 @@
                 "dateType": "quy",
                 "yAxis": 1,
                 "data": [
+                  [
+                    1790726400000,
+                    14.638378478693397
+                  ],
                   [
                     1782777600000,
                     13.316063531162042
@@ -7884,7 +8195,7 @@
                   "unit": "%",
                   "description": "GDP danh nghĩa của Hoạt động hành chính và dịch vụ hỗ trợ thể hiện giá trị sản phẩm vật chất và dịch vụ cuối cùng của khu vực này tạo ra trong nước và trong kỳ báo cáo. Điều này nghĩa là số liệu không tính các giá trị sản phẩm vật chất và dịch vụ đã sử dụng ở các khâu trung gian trong quá trình sản xuất tạo ra sản phẩm.",
                   "frequency": "Ngày 6 tháng đầu tiên của quý sau",
-                  "last_updated": "2026-07-03T06:03:02.452Z",
+                  "last_updated": "2026-10-03T04:50:52.649Z",
                   "source": "Tổng cục Thống kê - GSO",
                   "note": null,
                   "related_blog": null
@@ -7903,8 +8214,12 @@
                 "yAxis": 1,
                 "data": [
                   [
+                    1790726400000,
+                    9.559013682342885
+                  ],
+                  [
                     1782777600000,
-                    -4.821268664345464
+                    -4.6173528430443165
                   ],
                   [
                     1774915200000,
@@ -7985,7 +8300,7 @@
                   "unit": "%",
                   "description": "GDP danh nghĩa của Hoạt động của các tổ chức chính trị thể hiện giá trị sản phẩm vật chất và dịch vụ cuối cùng của khu vực này tạo ra trong nước và trong kỳ báo cáo. Điều này nghĩa là số liệu không tính các giá trị sản phẩm vật chất và dịch vụ đã sử dụng ở các khâu trung gian trong quá trình sản xuất tạo ra sản phẩm.",
                   "frequency": "Ngày 6 tháng đầu tiên của quý sau",
-                  "last_updated": "2026-07-03T06:03:02.452Z",
+                  "last_updated": "2026-10-03T04:50:52.649Z",
                   "source": "Tổng cục Thống kê - GSO",
                   "note": null,
                   "related_blog": null
@@ -8003,6 +8318,10 @@
                 "dateType": "quy",
                 "yAxis": 1,
                 "data": [
+                  [
+                    1790726400000,
+                    12.346778005334949
+                  ],
                   [
                     1782777600000,
                     11.511880939311178
@@ -8086,7 +8405,7 @@
                   "unit": "%",
                   "description": "GDP danh nghĩa của Giáo dục đào tạo thể hiện giá trị sản phẩm vật chất và dịch vụ cuối cùng của khu vực này tạo ra trong nước và trong kỳ báo cáo. Điều này nghĩa là số liệu không tính các giá trị sản phẩm vật chất và dịch vụ đã sử dụng ở các khâu trung gian trong quá trình sản xuất tạo ra sản phẩm.",
                   "frequency": "Ngày 6 tháng đầu tiên của quý sau",
-                  "last_updated": "2026-07-03T06:03:02.452Z",
+                  "last_updated": "2026-10-03T04:50:52.649Z",
                   "source": "Tổng cục Thống kê - GSO",
                   "note": null,
                   "related_blog": null
@@ -8105,8 +8424,12 @@
                 "yAxis": 1,
                 "data": [
                   [
+                    1790726400000,
+                    9.910651577318665
+                  ],
+                  [
                     1782777600000,
-                    9.268886525660774
+                    9.282308627059429
                   ],
                   [
                     1774915200000,
@@ -8187,7 +8510,7 @@
                   "unit": "%",
                   "description": "GDP danh nghĩa của Y tế và hoạt động cứu trợ xã hội thể hiện giá trị sản phẩm vật chất và dịch vụ cuối cùng của khu vực này tạo ra trong nước và trong kỳ báo cáo. Điều này nghĩa là số liệu không tính các giá trị sản phẩm vật chất và dịch vụ đã sử dụng ở các khâu trung gian trong quá trình sản xuất tạo ra sản phẩm.",
                   "frequency": "Ngày 6 tháng đầu tiên của quý sau",
-                  "last_updated": "2026-07-03T06:03:02.452Z",
+                  "last_updated": "2026-10-03T04:50:52.649Z",
                   "source": "Tổng cục Thống kê - GSO",
                   "note": null,
                   "related_blog": null
@@ -8206,8 +8529,12 @@
                 "yAxis": 1,
                 "data": [
                   [
+                    1790726400000,
+                    11.846497218496236
+                  ],
+                  [
                     1782777600000,
-                    12.580013152058612
+                    12.647943872266037
                   ],
                   [
                     1774915200000,
@@ -8288,7 +8615,7 @@
                   "unit": "%",
                   "description": "GDP danh nghĩa của Nghệ thuật, vui chơi và giải trí thể hiện giá trị sản phẩm vật chất và dịch vụ cuối cùng của khu vực này tạo ra trong nước và trong kỳ báo cáo. Điều này nghĩa là số liệu không tính các giá trị sản phẩm vật chất và dịch vụ đã sử dụng ở các khâu trung gian trong quá trình sản xuất tạo ra sản phẩm.",
                   "frequency": "Ngày 6 tháng đầu tiên của quý sau",
-                  "last_updated": "2026-07-03T06:03:02.452Z",
+                  "last_updated": "2026-10-03T04:50:52.649Z",
                   "source": "Tổng cục Thống kê - GSO",
                   "note": null,
                   "related_blog": null
@@ -8307,8 +8634,12 @@
                 "yAxis": 1,
                 "data": [
                   [
+                    1790726400000,
+                    16.555478191361793
+                  ],
+                  [
                     1782777600000,
-                    14.601900366654045
+                    15.194426478529177
                   ],
                   [
                     1774915200000,
@@ -8389,7 +8720,7 @@
                   "unit": "%",
                   "description": "GDP danh nghĩa của Hoạt động dịch vụ khác thể hiện giá trị sản phẩm vật chất và dịch vụ cuối cùng của khu vực này tạo ra trong nước và trong kỳ báo cáo. Điều này nghĩa là số liệu không tính các giá trị sản phẩm vật chất và dịch vụ đã sử dụng ở các khâu trung gian trong quá trình sản xuất tạo ra sản phẩm.",
                   "frequency": "Ngày 6 tháng đầu tiên của quý sau",
-                  "last_updated": "2026-07-03T06:03:02.452Z",
+                  "last_updated": "2026-10-03T04:50:52.649Z",
                   "source": "Tổng cục Thống kê - GSO",
                   "note": null,
                   "related_blog": null
@@ -8408,8 +8739,12 @@
                 "yAxis": 1,
                 "data": [
                   [
+                    1790726400000,
+                    17.838129036641668
+                  ],
+                  [
                     1782777600000,
-                    15.474607244821565
+                    15.273806394279422
                   ],
                   [
                     1774915200000,
@@ -8490,7 +8825,7 @@
                   "unit": "%",
                   "description": "GDP danh nghĩa của Hoạt động làm thuê các công việc trong các hộ gia đình thể hiện giá trị sản phẩm vật chất và dịch vụ cuối cùng của khu vực này tạo ra trong nước và trong kỳ báo cáo. Điều này nghĩa là số liệu không tính các giá trị sản phẩm vật chất và dịch vụ đã sử dụng ở các khâu trung gian trong quá trình sản xuất tạo ra sản phẩm.",
                   "frequency": "Ngày 6 tháng đầu tiên của quý sau",
-                  "last_updated": "2026-07-03T06:03:02.452Z",
+                  "last_updated": "2026-10-03T04:50:52.649Z",
                   "source": "Tổng cục Thống kê - GSO",
                   "note": null,
                   "related_blog": null
@@ -8509,8 +8844,12 @@
                 "yAxis": 1,
                 "data": [
                   [
+                    1790726400000,
+                    12.132174869882741
+                  ],
+                  [
                     1782777600000,
-                    11.057248526677316
+                    11.846662423198891
                   ],
                   [
                     1774915200000,
@@ -8591,7 +8930,7 @@
                   "unit": "%",
                   "description": "Thuế sản phẩm trừ trợ cấp sản phẩm là một thành phần trong GDP. Đây là phần chênh lệch giữa tổng số thuế mà Nhà nước thu được từ các sản phẩm, dịch vụ và tổng số tiền Nhà nước trợ cấp cho các hoạt động sản xuất.",
                   "frequency": "Ngày 6 tháng đầu tiên của quý sau",
-                  "last_updated": "2026-07-03T06:03:02.452Z",
+                  "last_updated": "2026-10-03T04:50:52.649Z",
                   "source": "Tổng cục Thống kê - GSO",
                   "note": null,
                   "related_blog": null
@@ -8710,7 +9049,7 @@
                   "unit": "Tỷ VND",
                   "description": "GDP danh nghĩa phản ánh tổng giá trị sản xuất hàng hóa và dịch vụ cuối cùng trong nước, được tính theo giá thị trường tại thời điểm thống kê. Nó cho thấy quy mô nền kinh tế ở thời điểm hiện tại, nhưng chịu ảnh hưởng bởi cả sự tăng trưởng thực tế và lạm phát.\nTổng cục Thống kê (GSO) tính toán GDP dựa trên dữ liệu từ nhiều nguồn như Điều tra doanh nghiệp, và thông tin từ các bộ, ngành.",
                   "frequency": "Ngày 6 tháng đầu tiên của quý sau",
-                  "last_updated": "2026-07-03T06:03:02.452Z",
+                  "last_updated": "2026-10-03T04:50:52.649Z",
                   "source": "Tổng cục Thống kê - GSO",
                   "note": null,
                   "related_blog": null
@@ -8799,7 +9138,7 @@
                   "unit": "Tỷ VND",
                   "description": "GDP danh nghĩa của Nông nghiệp, lâm nghiệp và thủy sản  thể hiện giá trị sản phẩm vật chất và dịch vụ cuối cùng của khu vực này tạo ra trong nước và trong kỳ báo cáo. Điều này nghĩa là số liệu không tính các giá trị sản phẩm vật chất và dịch vụ đã sử dụng ở các khâu trung gian trong quá trình sản xuất tạo ra sản phẩm.",
                   "frequency": "Ngày 6 tháng đầu tiên của quý sau",
-                  "last_updated": "2026-07-03T06:03:02.452Z",
+                  "last_updated": "2026-10-03T04:50:52.649Z",
                   "source": "Tổng cục Thống kê - GSO",
                   "note": null,
                   "related_blog": null
@@ -8888,7 +9227,7 @@
                   "unit": "Tỷ VND",
                   "description": "GDP danh nghĩa của Nông nghiệp thể hiện giá trị sản phẩm vật chất và dịch vụ cuối cùng của khu vực này tạo ra trong nước và trong kỳ báo cáo. Điều này nghĩa là số liệu không tính các giá trị sản phẩm vật chất và dịch vụ đã sử dụng ở các khâu trung gian trong quá trình sản xuất tạo ra sản phẩm.",
                   "frequency": "Ngày 6 tháng đầu tiên của quý sau",
-                  "last_updated": "2026-07-03T06:03:02.452Z",
+                  "last_updated": "2026-10-03T04:50:52.649Z",
                   "source": "Tổng cục Thống kê - GSO",
                   "note": null,
                   "related_blog": null
@@ -8977,7 +9316,7 @@
                   "unit": "Tỷ VND",
                   "description": "GDP danh nghĩa của Lâm nghiệp thể hiện giá trị sản phẩm vật chất và dịch vụ cuối cùng của khu vực này tạo ra trong nước và trong kỳ báo cáo. Điều này nghĩa là số liệu không tính các giá trị sản phẩm vật chất và dịch vụ đã sử dụng ở các khâu trung gian trong quá trình sản xuất tạo ra sản phẩm.",
                   "frequency": "Ngày 6 tháng đầu tiên của quý sau",
-                  "last_updated": "2026-07-03T06:03:02.452Z",
+                  "last_updated": "2026-10-03T04:50:52.649Z",
                   "source": "Tổng cục Thống kê - GSO",
                   "note": null,
                   "related_blog": null
@@ -9066,7 +9405,7 @@
                   "unit": "Tỷ VND",
                   "description": "GDP danh nghĩa của Thủy sản thể hiện giá trị sản phẩm vật chất và dịch vụ cuối cùng của khu vực này tạo ra trong nước và trong kỳ báo cáo. Điều này nghĩa là số liệu không tính các giá trị sản phẩm vật chất và dịch vụ đã sử dụng ở các khâu trung gian trong quá trình sản xuất tạo ra sản phẩm.",
                   "frequency": "Ngày 6 tháng đầu tiên của quý sau",
-                  "last_updated": "2026-07-03T06:03:02.452Z",
+                  "last_updated": "2026-10-03T04:50:52.649Z",
                   "source": "Tổng cục Thống kê - GSO",
                   "note": null,
                   "related_blog": null
@@ -9155,7 +9494,7 @@
                   "unit": "Tỷ VND",
                   "description": "GDP danh nghĩa của Công nghiệp và xây dựng thể hiện giá trị sản phẩm vật chất và dịch vụ cuối cùng của khu vực này tạo ra trong nước và trong kỳ báo cáo. Điều này nghĩa là số liệu không tính các giá trị sản phẩm vật chất và dịch vụ đã sử dụng ở các khâu trung gian trong quá trình sản xuất tạo ra sản phẩm.",
                   "frequency": "Ngày 6 tháng đầu tiên của quý sau",
-                  "last_updated": "2026-07-03T06:03:02.452Z",
+                  "last_updated": "2026-10-03T04:50:52.649Z",
                   "source": "Tổng cục Thống kê - GSO",
                   "note": null,
                   "related_blog": null
@@ -9244,7 +9583,7 @@
                   "unit": "Tỷ VND",
                   "description": "GDP danh nghĩa của Công nghiệp thể hiện giá trị sản phẩm vật chất và dịch vụ cuối cùng của khu vực này tạo ra trong nước và trong kỳ báo cáo. Điều này nghĩa là số liệu không tính các giá trị sản phẩm vật chất và dịch vụ đã sử dụng ở các khâu trung gian trong quá trình sản xuất tạo ra sản phẩm.",
                   "frequency": "Ngày 6 tháng đầu tiên của quý sau",
-                  "last_updated": "2026-07-03T06:03:02.452Z",
+                  "last_updated": "2026-10-03T04:50:52.649Z",
                   "source": "Tổng cục Thống kê - GSO",
                   "note": null,
                   "related_blog": null
@@ -9333,7 +9672,7 @@
                   "unit": "Tỷ VND",
                   "description": "GDP danh nghĩa của Khai khoáng thể hiện giá trị sản phẩm vật chất và dịch vụ cuối cùng của khu vực này tạo ra trong nước và trong kỳ báo cáo. Điều này nghĩa là số liệu không tính các giá trị sản phẩm vật chất và dịch vụ đã sử dụng ở các khâu trung gian trong quá trình sản xuất tạo ra sản phẩm.",
                   "frequency": "Ngày 6 tháng đầu tiên của quý sau",
-                  "last_updated": "2026-07-03T06:03:02.452Z",
+                  "last_updated": "2026-10-03T04:50:52.649Z",
                   "source": "Tổng cục Thống kê - GSO",
                   "note": null,
                   "related_blog": null
@@ -9422,7 +9761,7 @@
                   "unit": "Tỷ VND",
                   "description": "GDP danh nghĩa của Công nghiệp chế biến, chế tạo thể hiện giá trị sản phẩm vật chất và dịch vụ cuối cùng của khu vực này tạo ra trong nước và trong kỳ báo cáo. Điều này nghĩa là số liệu không tính các giá trị sản phẩm vật chất và dịch vụ đã sử dụng ở các khâu trung gian trong quá trình sản xuất tạo ra sản phẩm.",
                   "frequency": "Ngày 6 tháng đầu tiên của quý sau",
-                  "last_updated": "2026-07-03T06:03:02.452Z",
+                  "last_updated": "2026-10-03T04:50:52.649Z",
                   "source": "Tổng cục Thống kê - GSO",
                   "note": null,
                   "related_blog": null
@@ -9511,7 +9850,7 @@
                   "unit": "Tỷ VND",
                   "description": "GDP danh nghĩa của Sản xuất và phân phối điện thể hiện giá trị sản phẩm vật chất và dịch vụ cuối cùng của khu vực này tạo ra trong nước và trong kỳ báo cáo. Điều này nghĩa là số liệu không tính các giá trị sản phẩm vật chất và dịch vụ đã sử dụng ở các khâu trung gian trong quá trình sản xuất tạo ra sản phẩm.",
                   "frequency": "Ngày 6 tháng đầu tiên của quý sau",
-                  "last_updated": "2026-07-03T06:03:02.452Z",
+                  "last_updated": "2026-10-03T04:50:52.649Z",
                   "source": "Tổng cục Thống kê - GSO",
                   "note": null,
                   "related_blog": null
@@ -9600,7 +9939,7 @@
                   "unit": "Tỷ VND",
                   "description": "GDP danh nghĩa của Cung cấp nước và xử lý nước thải thể hiện giá trị sản phẩm vật chất và dịch vụ cuối cùng của khu vực này tạo ra trong nước và trong kỳ báo cáo. Điều này nghĩa là số liệu không tính các giá trị sản phẩm vật chất và dịch vụ đã sử dụng ở các khâu trung gian trong quá trình sản xuất tạo ra sản phẩm.",
                   "frequency": "Ngày 6 tháng đầu tiên của quý sau",
-                  "last_updated": "2026-07-03T06:03:02.452Z",
+                  "last_updated": "2026-10-03T04:50:52.649Z",
                   "source": "Tổng cục Thống kê - GSO",
                   "note": null,
                   "related_blog": null
@@ -9689,7 +10028,7 @@
                   "unit": "Tỷ VND",
                   "description": "GDP danh nghĩa của Xây dựng thể hiện giá trị sản phẩm vật chất và dịch vụ cuối cùng của khu vực này tạo ra trong nước và trong kỳ báo cáo. Điều này nghĩa là số liệu không tính các giá trị sản phẩm vật chất và dịch vụ đã sử dụng ở các khâu trung gian trong quá trình sản xuất tạo ra sản phẩm.",
                   "frequency": "Ngày 6 tháng đầu tiên của quý sau",
-                  "last_updated": "2026-07-03T06:03:02.452Z",
+                  "last_updated": "2026-10-03T04:50:52.649Z",
                   "source": "Tổng cục Thống kê - GSO",
                   "note": null,
                   "related_blog": null
@@ -9778,7 +10117,7 @@
                   "unit": "Tỷ VND",
                   "description": "GDP danh nghĩa của Dịch vụ thể hiện giá trị sản phẩm vật chất và dịch vụ cuối cùng của khu vực này tạo ra trong nước và trong kỳ báo cáo. Điều này nghĩa là số liệu không tính các giá trị sản phẩm vật chất và dịch vụ đã sử dụng ở các khâu trung gian trong quá trình sản xuất tạo ra sản phẩm.",
                   "frequency": "Ngày 6 tháng đầu tiên của quý sau",
-                  "last_updated": "2026-07-03T06:03:02.452Z",
+                  "last_updated": "2026-10-03T04:50:52.649Z",
                   "source": "Tổng cục Thống kê - GSO",
                   "note": null,
                   "related_blog": null
@@ -9867,7 +10206,7 @@
                   "unit": "Tỷ VND",
                   "description": "GDP danh nghĩa của Bán buôn bán lẻ, sửa chữa ô tô, mô tô, xe máy thể hiện giá trị sản phẩm vật chất và dịch vụ cuối cùng của khu vực này tạo ra trong nước và trong kỳ báo cáo. Điều này nghĩa là số liệu không tính các giá trị sản phẩm vật chất và dịch vụ đã sử dụng ở các khâu trung gian trong quá trình sản xuất tạo ra sản phẩm.",
                   "frequency": "Ngày 6 tháng đầu tiên của quý sau",
-                  "last_updated": "2026-07-03T06:03:02.452Z",
+                  "last_updated": "2026-10-03T04:50:52.649Z",
                   "source": "Tổng cục Thống kê - GSO",
                   "note": null,
                   "related_blog": null
@@ -9956,7 +10295,7 @@
                   "unit": "Tỷ VND",
                   "description": "GDP danh nghĩa của Vận tải kho bãi thể hiện giá trị sản phẩm vật chất và dịch vụ cuối cùng của khu vực này tạo ra trong nước và trong kỳ báo cáo. Điều này nghĩa là số liệu không tính các giá trị sản phẩm vật chất và dịch vụ đã sử dụng ở các khâu trung gian trong quá trình sản xuất tạo ra sản phẩm.",
                   "frequency": "Ngày 6 tháng đầu tiên của quý sau",
-                  "last_updated": "2026-07-03T06:03:02.452Z",
+                  "last_updated": "2026-10-03T04:50:52.649Z",
                   "source": "Tổng cục Thống kê - GSO",
                   "note": null,
                   "related_blog": null
@@ -10045,7 +10384,7 @@
                   "unit": "Tỷ VND",
                   "description": "GDP danh nghĩa của Dịch vụ lưu trú và ăn uống thể hiện giá trị sản phẩm vật chất và dịch vụ cuối cùng của khu vực này tạo ra trong nước và trong kỳ báo cáo. Điều này nghĩa là số liệu không tính các giá trị sản phẩm vật chất và dịch vụ đã sử dụng ở các khâu trung gian trong quá trình sản xuất tạo ra sản phẩm.",
                   "frequency": "Ngày 6 tháng đầu tiên của quý sau",
-                  "last_updated": "2026-07-03T06:03:02.452Z",
+                  "last_updated": "2026-10-03T04:50:52.649Z",
                   "source": "Tổng cục Thống kê - GSO",
                   "note": null,
                   "related_blog": null
@@ -10134,7 +10473,7 @@
                   "unit": "Tỷ VND",
                   "description": "GDP danh nghĩa của Thông tin và truyền thông thể hiện giá trị sản phẩm vật chất và dịch vụ cuối cùng của khu vực này tạo ra trong nước và trong kỳ báo cáo. Điều này nghĩa là số liệu không tính các giá trị sản phẩm vật chất và dịch vụ đã sử dụng ở các khâu trung gian trong quá trình sản xuất tạo ra sản phẩm.",
                   "frequency": "Ngày 6 tháng đầu tiên của quý sau",
-                  "last_updated": "2026-07-03T06:03:02.452Z",
+                  "last_updated": "2026-10-03T04:50:52.649Z",
                   "source": "Tổng cục Thống kê - GSO",
                   "note": null,
                   "related_blog": null
@@ -10223,7 +10562,7 @@
                   "unit": "Tỷ VND",
                   "description": "GDP danh nghĩa của Hoạt động tài chính, ngân hàng và bảo hiểm thể hiện giá trị sản phẩm vật chất và dịch vụ cuối cùng của khu vực này tạo ra trong nước và trong kỳ báo cáo. Điều này nghĩa là số liệu không tính các giá trị sản phẩm vật chất và dịch vụ đã sử dụng ở các khâu trung gian trong quá trình sản xuất tạo ra sản phẩm.",
                   "frequency": "Ngày 6 tháng đầu tiên của quý sau",
-                  "last_updated": "2026-07-03T06:03:02.452Z",
+                  "last_updated": "2026-10-03T04:50:52.649Z",
                   "source": "Tổng cục Thống kê - GSO",
                   "note": null,
                   "related_blog": null
@@ -10312,7 +10651,7 @@
                   "unit": "Tỷ VND",
                   "description": "GDP danh nghĩa của Hoạt động kinh doanh bất động sản thể hiện giá trị sản phẩm vật chất và dịch vụ cuối cùng của khu vực này tạo ra trong nước và trong kỳ báo cáo. Điều này nghĩa là số liệu không tính các giá trị sản phẩm vật chất và dịch vụ đã sử dụng ở các khâu trung gian trong quá trình sản xuất tạo ra sản phẩm.",
                   "frequency": "Ngày 6 tháng đầu tiên của quý sau",
-                  "last_updated": "2026-07-03T06:03:02.452Z",
+                  "last_updated": "2026-10-03T04:50:52.649Z",
                   "source": "Tổng cục Thống kê - GSO",
                   "note": null,
                   "related_blog": null
@@ -10401,7 +10740,7 @@
                   "unit": "Tỷ VND",
                   "description": "GDP danh nghĩa của Hoạt động chuyên môn, khoa học và công nghệ thể hiện giá trị sản phẩm vật chất và dịch vụ cuối cùng của khu vực này tạo ra trong nước và trong kỳ báo cáo. Điều này nghĩa là số liệu không tính các giá trị sản phẩm vật chất và dịch vụ đã sử dụng ở các khâu trung gian trong quá trình sản xuất tạo ra sản phẩm.",
                   "frequency": "Ngày 6 tháng đầu tiên của quý sau",
-                  "last_updated": "2026-07-03T06:03:02.452Z",
+                  "last_updated": "2026-10-03T04:50:52.649Z",
                   "source": "Tổng cục Thống kê - GSO",
                   "note": null,
                   "related_blog": null
@@ -10490,7 +10829,7 @@
                   "unit": "Tỷ VND",
                   "description": "GDP danh nghĩa của Hoạt động hành chính và dịch vụ hỗ trợ thể hiện giá trị sản phẩm vật chất và dịch vụ cuối cùng của khu vực này tạo ra trong nước và trong kỳ báo cáo. Điều này nghĩa là số liệu không tính các giá trị sản phẩm vật chất và dịch vụ đã sử dụng ở các khâu trung gian trong quá trình sản xuất tạo ra sản phẩm.",
                   "frequency": "Ngày 6 tháng đầu tiên của quý sau",
-                  "last_updated": "2026-07-03T06:03:02.452Z",
+                  "last_updated": "2026-10-03T04:50:52.649Z",
                   "source": "Tổng cục Thống kê - GSO",
                   "note": null,
                   "related_blog": null
@@ -10579,7 +10918,7 @@
                   "unit": "Tỷ VND",
                   "description": "GDP danh nghĩa của Hoạt động của các tổ chức chính trị thể hiện giá trị sản phẩm vật chất và dịch vụ cuối cùng của khu vực này tạo ra trong nước và trong kỳ báo cáo. Điều này nghĩa là số liệu không tính các giá trị sản phẩm vật chất và dịch vụ đã sử dụng ở các khâu trung gian trong quá trình sản xuất tạo ra sản phẩm.",
                   "frequency": "Ngày 6 tháng đầu tiên của quý sau",
-                  "last_updated": "2026-07-03T06:03:02.452Z",
+                  "last_updated": "2026-10-03T04:50:52.649Z",
                   "source": "Tổng cục Thống kê - GSO",
                   "note": null,
                   "related_blog": null
@@ -10668,7 +11007,7 @@
                   "unit": "Tỷ VND",
                   "description": "GDP danh nghĩa của Giáo dục đào tạo thể hiện giá trị sản phẩm vật chất và dịch vụ cuối cùng của khu vực này tạo ra trong nước và trong kỳ báo cáo. Điều này nghĩa là số liệu không tính các giá trị sản phẩm vật chất và dịch vụ đã sử dụng ở các khâu trung gian trong quá trình sản xuất tạo ra sản phẩm.",
                   "frequency": "Ngày 6 tháng đầu tiên của quý sau",
-                  "last_updated": "2026-07-03T06:03:02.452Z",
+                  "last_updated": "2026-10-03T04:50:52.649Z",
                   "source": "Tổng cục Thống kê - GSO",
                   "note": null,
                   "related_blog": null
@@ -10757,7 +11096,7 @@
                   "unit": "Tỷ VND",
                   "description": "GDP danh nghĩa của Y tế và hoạt động cứu trợ xã hội thể hiện giá trị sản phẩm vật chất và dịch vụ cuối cùng của khu vực này tạo ra trong nước và trong kỳ báo cáo. Điều này nghĩa là số liệu không tính các giá trị sản phẩm vật chất và dịch vụ đã sử dụng ở các khâu trung gian trong quá trình sản xuất tạo ra sản phẩm.",
                   "frequency": "Ngày 6 tháng đầu tiên của quý sau",
-                  "last_updated": "2026-07-03T06:03:02.452Z",
+                  "last_updated": "2026-10-03T04:50:52.649Z",
                   "source": "Tổng cục Thống kê - GSO",
                   "note": null,
                   "related_blog": null
@@ -10846,7 +11185,7 @@
                   "unit": "Tỷ VND",
                   "description": "GDP danh nghĩa của Nghệ thuật, vui chơi và giải trí thể hiện giá trị sản phẩm vật chất và dịch vụ cuối cùng của khu vực này tạo ra trong nước và trong kỳ báo cáo. Điều này nghĩa là số liệu không tính các giá trị sản phẩm vật chất và dịch vụ đã sử dụng ở các khâu trung gian trong quá trình sản xuất tạo ra sản phẩm.",
                   "frequency": "Ngày 6 tháng đầu tiên của quý sau",
-                  "last_updated": "2026-07-03T06:03:02.452Z",
+                  "last_updated": "2026-10-03T04:50:52.649Z",
                   "source": "Tổng cục Thống kê - GSO",
                   "note": null,
                   "related_blog": null
@@ -10935,7 +11274,7 @@
                   "unit": "Tỷ VND",
                   "description": "GDP danh nghĩa của Hoạt động dịch vụ khác thể hiện giá trị sản phẩm vật chất và dịch vụ cuối cùng của khu vực này tạo ra trong nước và trong kỳ báo cáo. Điều này nghĩa là số liệu không tính các giá trị sản phẩm vật chất và dịch vụ đã sử dụng ở các khâu trung gian trong quá trình sản xuất tạo ra sản phẩm.",
                   "frequency": "Ngày 6 tháng đầu tiên của quý sau",
-                  "last_updated": "2026-07-03T06:03:02.452Z",
+                  "last_updated": "2026-10-03T04:50:52.649Z",
                   "source": "Tổng cục Thống kê - GSO",
                   "note": null,
                   "related_blog": null
@@ -11024,7 +11363,7 @@
                   "unit": "Tỷ VND",
                   "description": "GDP danh nghĩa của Hoạt động làm thuê các công việc trong các hộ gia đình thể hiện giá trị sản phẩm vật chất và dịch vụ cuối cùng của khu vực này tạo ra trong nước và trong kỳ báo cáo. Điều này nghĩa là số liệu không tính các giá trị sản phẩm vật chất và dịch vụ đã sử dụng ở các khâu trung gian trong quá trình sản xuất tạo ra sản phẩm.",
                   "frequency": "Ngày 6 tháng đầu tiên của quý sau",
-                  "last_updated": "2026-07-03T06:03:02.452Z",
+                  "last_updated": "2026-10-03T04:50:52.649Z",
                   "source": "Tổng cục Thống kê - GSO",
                   "note": null,
                   "related_blog": null
@@ -11113,7 +11452,7 @@
                   "unit": "Tỷ VND",
                   "description": "Thuế sản phẩm trừ trợ cấp sản phẩm là một thành phần trong GDP. Đây là phần chênh lệch giữa tổng số thuế mà Nhà nước thu được từ các sản phẩm, dịch vụ và tổng số tiền Nhà nước trợ cấp cho các hoạt động sản xuất.",
                   "frequency": "Ngày 6 tháng đầu tiên của quý sau",
-                  "last_updated": "2026-07-03T06:03:02.452Z",
+                  "last_updated": "2026-10-03T04:50:52.649Z",
                   "source": "Tổng cục Thống kê - GSO",
                   "note": null,
                   "related_blog": null
@@ -11235,7 +11574,7 @@
                   "unit": "%",
                   "description": "GDP danh nghĩa phản ánh tổng giá trị sản xuất hàng hóa và dịch vụ cuối cùng trong nước, được tính theo giá thị trường tại thời điểm thống kê. Nó cho thấy quy mô nền kinh tế ở thời điểm hiện tại, nhưng chịu ảnh hưởng bởi cả sự tăng trưởng thực tế và lạm phát.\nTổng cục Thống kê (GSO) tính toán GDP dựa trên dữ liệu từ nhiều nguồn như Điều tra doanh nghiệp, và thông tin từ các bộ, ngành.",
                   "frequency": "Ngày 6 tháng đầu tiên của quý sau",
-                  "last_updated": "2026-07-03T06:03:02.452Z",
+                  "last_updated": "2026-10-03T04:50:52.649Z",
                   "source": "Tổng cục Thống kê - GSO",
                   "note": null,
                   "related_blog": null
@@ -11320,7 +11659,7 @@
                   "unit": "%",
                   "description": "GDP danh nghĩa của Nông nghiệp, lâm nghiệp và thủy sản  thể hiện giá trị sản phẩm vật chất và dịch vụ cuối cùng của khu vực này tạo ra trong nước và trong kỳ báo cáo. Điều này nghĩa là số liệu không tính các giá trị sản phẩm vật chất và dịch vụ đã sử dụng ở các khâu trung gian trong quá trình sản xuất tạo ra sản phẩm.",
                   "frequency": "Ngày 6 tháng đầu tiên của quý sau",
-                  "last_updated": "2026-07-03T06:03:02.452Z",
+                  "last_updated": "2026-10-03T04:50:52.649Z",
                   "source": "Tổng cục Thống kê - GSO",
                   "note": null,
                   "related_blog": null
@@ -11405,7 +11744,7 @@
                   "unit": "%",
                   "description": "GDP danh nghĩa của Nông nghiệp thể hiện giá trị sản phẩm vật chất và dịch vụ cuối cùng của khu vực này tạo ra trong nước và trong kỳ báo cáo. Điều này nghĩa là số liệu không tính các giá trị sản phẩm vật chất và dịch vụ đã sử dụng ở các khâu trung gian trong quá trình sản xuất tạo ra sản phẩm.",
                   "frequency": "Ngày 6 tháng đầu tiên của quý sau",
-                  "last_updated": "2026-07-03T06:03:02.452Z",
+                  "last_updated": "2026-10-03T04:50:52.649Z",
                   "source": "Tổng cục Thống kê - GSO",
                   "note": null,
                   "related_blog": null
@@ -11490,7 +11829,7 @@
                   "unit": "%",
                   "description": "GDP danh nghĩa của Lâm nghiệp thể hiện giá trị sản phẩm vật chất và dịch vụ cuối cùng của khu vực này tạo ra trong nước và trong kỳ báo cáo. Điều này nghĩa là số liệu không tính các giá trị sản phẩm vật chất và dịch vụ đã sử dụng ở các khâu trung gian trong quá trình sản xuất tạo ra sản phẩm.",
                   "frequency": "Ngày 6 tháng đầu tiên của quý sau",
-                  "last_updated": "2026-07-03T06:03:02.452Z",
+                  "last_updated": "2026-10-03T04:50:52.649Z",
                   "source": "Tổng cục Thống kê - GSO",
                   "note": null,
                   "related_blog": null
@@ -11575,7 +11914,7 @@
                   "unit": "%",
                   "description": "GDP danh nghĩa của Thủy sản thể hiện giá trị sản phẩm vật chất và dịch vụ cuối cùng của khu vực này tạo ra trong nước và trong kỳ báo cáo. Điều này nghĩa là số liệu không tính các giá trị sản phẩm vật chất và dịch vụ đã sử dụng ở các khâu trung gian trong quá trình sản xuất tạo ra sản phẩm.",
                   "frequency": "Ngày 6 tháng đầu tiên của quý sau",
-                  "last_updated": "2026-07-03T06:03:02.452Z",
+                  "last_updated": "2026-10-03T04:50:52.649Z",
                   "source": "Tổng cục Thống kê - GSO",
                   "note": null,
                   "related_blog": null
@@ -11660,7 +11999,7 @@
                   "unit": "%",
                   "description": "GDP danh nghĩa của Công nghiệp và xây dựng thể hiện giá trị sản phẩm vật chất và dịch vụ cuối cùng của khu vực này tạo ra trong nước và trong kỳ báo cáo. Điều này nghĩa là số liệu không tính các giá trị sản phẩm vật chất và dịch vụ đã sử dụng ở các khâu trung gian trong quá trình sản xuất tạo ra sản phẩm.",
                   "frequency": "Ngày 6 tháng đầu tiên của quý sau",
-                  "last_updated": "2026-07-03T06:03:02.452Z",
+                  "last_updated": "2026-10-03T04:50:52.649Z",
                   "source": "Tổng cục Thống kê - GSO",
                   "note": null,
                   "related_blog": null
@@ -11745,7 +12084,7 @@
                   "unit": "%",
                   "description": "GDP danh nghĩa của Công nghiệp thể hiện giá trị sản phẩm vật chất và dịch vụ cuối cùng của khu vực này tạo ra trong nước và trong kỳ báo cáo. Điều này nghĩa là số liệu không tính các giá trị sản phẩm vật chất và dịch vụ đã sử dụng ở các khâu trung gian trong quá trình sản xuất tạo ra sản phẩm.",
                   "frequency": "Ngày 6 tháng đầu tiên của quý sau",
-                  "last_updated": "2026-07-03T06:03:02.452Z",
+                  "last_updated": "2026-10-03T04:50:52.649Z",
                   "source": "Tổng cục Thống kê - GSO",
                   "note": null,
                   "related_blog": null
@@ -11830,7 +12169,7 @@
                   "unit": "%",
                   "description": "GDP danh nghĩa của Khai khoáng thể hiện giá trị sản phẩm vật chất và dịch vụ cuối cùng của khu vực này tạo ra trong nước và trong kỳ báo cáo. Điều này nghĩa là số liệu không tính các giá trị sản phẩm vật chất và dịch vụ đã sử dụng ở các khâu trung gian trong quá trình sản xuất tạo ra sản phẩm.",
                   "frequency": "Ngày 6 tháng đầu tiên của quý sau",
-                  "last_updated": "2026-07-03T06:03:02.452Z",
+                  "last_updated": "2026-10-03T04:50:52.649Z",
                   "source": "Tổng cục Thống kê - GSO",
                   "note": null,
                   "related_blog": null
@@ -11915,7 +12254,7 @@
                   "unit": "%",
                   "description": "GDP danh nghĩa của Công nghiệp chế biến, chế tạo thể hiện giá trị sản phẩm vật chất và dịch vụ cuối cùng của khu vực này tạo ra trong nước và trong kỳ báo cáo. Điều này nghĩa là số liệu không tính các giá trị sản phẩm vật chất và dịch vụ đã sử dụng ở các khâu trung gian trong quá trình sản xuất tạo ra sản phẩm.",
                   "frequency": "Ngày 6 tháng đầu tiên của quý sau",
-                  "last_updated": "2026-07-03T06:03:02.452Z",
+                  "last_updated": "2026-10-03T04:50:52.649Z",
                   "source": "Tổng cục Thống kê - GSO",
                   "note": null,
                   "related_blog": null
@@ -12000,7 +12339,7 @@
                   "unit": "%",
                   "description": "GDP danh nghĩa của Sản xuất và phân phối điện thể hiện giá trị sản phẩm vật chất và dịch vụ cuối cùng của khu vực này tạo ra trong nước và trong kỳ báo cáo. Điều này nghĩa là số liệu không tính các giá trị sản phẩm vật chất và dịch vụ đã sử dụng ở các khâu trung gian trong quá trình sản xuất tạo ra sản phẩm.",
                   "frequency": "Ngày 6 tháng đầu tiên của quý sau",
-                  "last_updated": "2026-07-03T06:03:02.452Z",
+                  "last_updated": "2026-10-03T04:50:52.649Z",
                   "source": "Tổng cục Thống kê - GSO",
                   "note": null,
                   "related_blog": null
@@ -12085,7 +12424,7 @@
                   "unit": "%",
                   "description": "GDP danh nghĩa của Cung cấp nước và xử lý nước thải thể hiện giá trị sản phẩm vật chất và dịch vụ cuối cùng của khu vực này tạo ra trong nước và trong kỳ báo cáo. Điều này nghĩa là số liệu không tính các giá trị sản phẩm vật chất và dịch vụ đã sử dụng ở các khâu trung gian trong quá trình sản xuất tạo ra sản phẩm.",
                   "frequency": "Ngày 6 tháng đầu tiên của quý sau",
-                  "last_updated": "2026-07-03T06:03:02.452Z",
+                  "last_updated": "2026-10-03T04:50:52.649Z",
                   "source": "Tổng cục Thống kê - GSO",
                   "note": null,
                   "related_blog": null
@@ -12170,7 +12509,7 @@
                   "unit": "%",
                   "description": "GDP danh nghĩa của Xây dựng thể hiện giá trị sản phẩm vật chất và dịch vụ cuối cùng của khu vực này tạo ra trong nước và trong kỳ báo cáo. Điều này nghĩa là số liệu không tính các giá trị sản phẩm vật chất và dịch vụ đã sử dụng ở các khâu trung gian trong quá trình sản xuất tạo ra sản phẩm.",
                   "frequency": "Ngày 6 tháng đầu tiên của quý sau",
-                  "last_updated": "2026-07-03T06:03:02.452Z",
+                  "last_updated": "2026-10-03T04:50:52.649Z",
                   "source": "Tổng cục Thống kê - GSO",
                   "note": null,
                   "related_blog": null
@@ -12255,7 +12594,7 @@
                   "unit": "%",
                   "description": "GDP danh nghĩa của Dịch vụ thể hiện giá trị sản phẩm vật chất và dịch vụ cuối cùng của khu vực này tạo ra trong nước và trong kỳ báo cáo. Điều này nghĩa là số liệu không tính các giá trị sản phẩm vật chất và dịch vụ đã sử dụng ở các khâu trung gian trong quá trình sản xuất tạo ra sản phẩm.",
                   "frequency": "Ngày 6 tháng đầu tiên của quý sau",
-                  "last_updated": "2026-07-03T06:03:02.452Z",
+                  "last_updated": "2026-10-03T04:50:52.649Z",
                   "source": "Tổng cục Thống kê - GSO",
                   "note": null,
                   "related_blog": null
@@ -12340,7 +12679,7 @@
                   "unit": "%",
                   "description": "GDP danh nghĩa của Bán buôn bán lẻ, sửa chữa ô tô, mô tô, xe máy thể hiện giá trị sản phẩm vật chất và dịch vụ cuối cùng của khu vực này tạo ra trong nước và trong kỳ báo cáo. Điều này nghĩa là số liệu không tính các giá trị sản phẩm vật chất và dịch vụ đã sử dụng ở các khâu trung gian trong quá trình sản xuất tạo ra sản phẩm.",
                   "frequency": "Ngày 6 tháng đầu tiên của quý sau",
-                  "last_updated": "2026-07-03T06:03:02.452Z",
+                  "last_updated": "2026-10-03T04:50:52.649Z",
                   "source": "Tổng cục Thống kê - GSO",
                   "note": null,
                   "related_blog": null
@@ -12425,7 +12764,7 @@
                   "unit": "%",
                   "description": "GDP danh nghĩa của Vận tải kho bãi thể hiện giá trị sản phẩm vật chất và dịch vụ cuối cùng của khu vực này tạo ra trong nước và trong kỳ báo cáo. Điều này nghĩa là số liệu không tính các giá trị sản phẩm vật chất và dịch vụ đã sử dụng ở các khâu trung gian trong quá trình sản xuất tạo ra sản phẩm.",
                   "frequency": "Ngày 6 tháng đầu tiên của quý sau",
-                  "last_updated": "2026-07-03T06:03:02.452Z",
+                  "last_updated": "2026-10-03T04:50:52.649Z",
                   "source": "Tổng cục Thống kê - GSO",
                   "note": null,
                   "related_blog": null
@@ -12510,7 +12849,7 @@
                   "unit": "%",
                   "description": "GDP danh nghĩa của Dịch vụ lưu trú và ăn uống thể hiện giá trị sản phẩm vật chất và dịch vụ cuối cùng của khu vực này tạo ra trong nước và trong kỳ báo cáo. Điều này nghĩa là số liệu không tính các giá trị sản phẩm vật chất và dịch vụ đã sử dụng ở các khâu trung gian trong quá trình sản xuất tạo ra sản phẩm.",
                   "frequency": "Ngày 6 tháng đầu tiên của quý sau",
-                  "last_updated": "2026-07-03T06:03:02.452Z",
+                  "last_updated": "2026-10-03T04:50:52.649Z",
                   "source": "Tổng cục Thống kê - GSO",
                   "note": null,
                   "related_blog": null
@@ -12595,7 +12934,7 @@
                   "unit": "%",
                   "description": "GDP danh nghĩa của Thông tin và truyền thông thể hiện giá trị sản phẩm vật chất và dịch vụ cuối cùng của khu vực này tạo ra trong nước và trong kỳ báo cáo. Điều này nghĩa là số liệu không tính các giá trị sản phẩm vật chất và dịch vụ đã sử dụng ở các khâu trung gian trong quá trình sản xuất tạo ra sản phẩm.",
                   "frequency": "Ngày 6 tháng đầu tiên của quý sau",
-                  "last_updated": "2026-07-03T06:03:02.452Z",
+                  "last_updated": "2026-10-03T04:50:52.649Z",
                   "source": "Tổng cục Thống kê - GSO",
                   "note": null,
                   "related_blog": null
@@ -12680,7 +13019,7 @@
                   "unit": "%",
                   "description": "GDP danh nghĩa của Hoạt động tài chính, ngân hàng và bảo hiểm thể hiện giá trị sản phẩm vật chất và dịch vụ cuối cùng của khu vực này tạo ra trong nước và trong kỳ báo cáo. Điều này nghĩa là số liệu không tính các giá trị sản phẩm vật chất và dịch vụ đã sử dụng ở các khâu trung gian trong quá trình sản xuất tạo ra sản phẩm.",
                   "frequency": "Ngày 6 tháng đầu tiên của quý sau",
-                  "last_updated": "2026-07-03T06:03:02.452Z",
+                  "last_updated": "2026-10-03T04:50:52.649Z",
                   "source": "Tổng cục Thống kê - GSO",
                   "note": null,
                   "related_blog": null
@@ -12765,7 +13104,7 @@
                   "unit": "%",
                   "description": "GDP danh nghĩa của Hoạt động kinh doanh bất động sản thể hiện giá trị sản phẩm vật chất và dịch vụ cuối cùng của khu vực này tạo ra trong nước và trong kỳ báo cáo. Điều này nghĩa là số liệu không tính các giá trị sản phẩm vật chất và dịch vụ đã sử dụng ở các khâu trung gian trong quá trình sản xuất tạo ra sản phẩm.",
                   "frequency": "Ngày 6 tháng đầu tiên của quý sau",
-                  "last_updated": "2026-07-03T06:03:02.452Z",
+                  "last_updated": "2026-10-03T04:50:52.649Z",
                   "source": "Tổng cục Thống kê - GSO",
                   "note": null,
                   "related_blog": null
@@ -12850,7 +13189,7 @@
                   "unit": "%",
                   "description": "GDP danh nghĩa của Hoạt động chuyên môn, khoa học và công nghệ thể hiện giá trị sản phẩm vật chất và dịch vụ cuối cùng của khu vực này tạo ra trong nước và trong kỳ báo cáo. Điều này nghĩa là số liệu không tính các giá trị sản phẩm vật chất và dịch vụ đã sử dụng ở các khâu trung gian trong quá trình sản xuất tạo ra sản phẩm.",
                   "frequency": "Ngày 6 tháng đầu tiên của quý sau",
-                  "last_updated": "2026-07-03T06:03:02.452Z",
+                  "last_updated": "2026-10-03T04:50:52.649Z",
                   "source": "Tổng cục Thống kê - GSO",
                   "note": null,
                   "related_blog": null
@@ -12935,7 +13274,7 @@
                   "unit": "%",
                   "description": "GDP danh nghĩa của Hoạt động hành chính và dịch vụ hỗ trợ thể hiện giá trị sản phẩm vật chất và dịch vụ cuối cùng của khu vực này tạo ra trong nước và trong kỳ báo cáo. Điều này nghĩa là số liệu không tính các giá trị sản phẩm vật chất và dịch vụ đã sử dụng ở các khâu trung gian trong quá trình sản xuất tạo ra sản phẩm.",
                   "frequency": "Ngày 6 tháng đầu tiên của quý sau",
-                  "last_updated": "2026-07-03T06:03:02.452Z",
+                  "last_updated": "2026-10-03T04:50:52.649Z",
                   "source": "Tổng cục Thống kê - GSO",
                   "note": null,
                   "related_blog": null
@@ -13020,7 +13359,7 @@
                   "unit": "%",
                   "description": "GDP danh nghĩa của Hoạt động của các tổ chức chính trị thể hiện giá trị sản phẩm vật chất và dịch vụ cuối cùng của khu vực này tạo ra trong nước và trong kỳ báo cáo. Điều này nghĩa là số liệu không tính các giá trị sản phẩm vật chất và dịch vụ đã sử dụng ở các khâu trung gian trong quá trình sản xuất tạo ra sản phẩm.",
                   "frequency": "Ngày 6 tháng đầu tiên của quý sau",
-                  "last_updated": "2026-07-03T06:03:02.452Z",
+                  "last_updated": "2026-10-03T04:50:52.649Z",
                   "source": "Tổng cục Thống kê - GSO",
                   "note": null,
                   "related_blog": null
@@ -13105,7 +13444,7 @@
                   "unit": "%",
                   "description": "GDP danh nghĩa của Giáo dục đào tạo thể hiện giá trị sản phẩm vật chất và dịch vụ cuối cùng của khu vực này tạo ra trong nước và trong kỳ báo cáo. Điều này nghĩa là số liệu không tính các giá trị sản phẩm vật chất và dịch vụ đã sử dụng ở các khâu trung gian trong quá trình sản xuất tạo ra sản phẩm.",
                   "frequency": "Ngày 6 tháng đầu tiên của quý sau",
-                  "last_updated": "2026-07-03T06:03:02.452Z",
+                  "last_updated": "2026-10-03T04:50:52.649Z",
                   "source": "Tổng cục Thống kê - GSO",
                   "note": null,
                   "related_blog": null
@@ -13190,7 +13529,7 @@
                   "unit": "%",
                   "description": "GDP danh nghĩa của Y tế và hoạt động cứu trợ xã hội thể hiện giá trị sản phẩm vật chất và dịch vụ cuối cùng của khu vực này tạo ra trong nước và trong kỳ báo cáo. Điều này nghĩa là số liệu không tính các giá trị sản phẩm vật chất và dịch vụ đã sử dụng ở các khâu trung gian trong quá trình sản xuất tạo ra sản phẩm.",
                   "frequency": "Ngày 6 tháng đầu tiên của quý sau",
-                  "last_updated": "2026-07-03T06:03:02.452Z",
+                  "last_updated": "2026-10-03T04:50:52.649Z",
                   "source": "Tổng cục Thống kê - GSO",
                   "note": null,
                   "related_blog": null
@@ -13275,7 +13614,7 @@
                   "unit": "%",
                   "description": "GDP danh nghĩa của Nghệ thuật, vui chơi và giải trí thể hiện giá trị sản phẩm vật chất và dịch vụ cuối cùng của khu vực này tạo ra trong nước và trong kỳ báo cáo. Điều này nghĩa là số liệu không tính các giá trị sản phẩm vật chất và dịch vụ đã sử dụng ở các khâu trung gian trong quá trình sản xuất tạo ra sản phẩm.",
                   "frequency": "Ngày 6 tháng đầu tiên của quý sau",
-                  "last_updated": "2026-07-03T06:03:02.452Z",
+                  "last_updated": "2026-10-03T04:50:52.649Z",
                   "source": "Tổng cục Thống kê - GSO",
                   "note": null,
                   "related_blog": null
@@ -13360,7 +13699,7 @@
                   "unit": "%",
                   "description": "GDP danh nghĩa của Hoạt động dịch vụ khác thể hiện giá trị sản phẩm vật chất và dịch vụ cuối cùng của khu vực này tạo ra trong nước và trong kỳ báo cáo. Điều này nghĩa là số liệu không tính các giá trị sản phẩm vật chất và dịch vụ đã sử dụng ở các khâu trung gian trong quá trình sản xuất tạo ra sản phẩm.",
                   "frequency": "Ngày 6 tháng đầu tiên của quý sau",
-                  "last_updated": "2026-07-03T06:03:02.452Z",
+                  "last_updated": "2026-10-03T04:50:52.649Z",
                   "source": "Tổng cục Thống kê - GSO",
                   "note": null,
                   "related_blog": null
@@ -13445,7 +13784,7 @@
                   "unit": "%",
                   "description": "GDP danh nghĩa của Hoạt động làm thuê các công việc trong các hộ gia đình thể hiện giá trị sản phẩm vật chất và dịch vụ cuối cùng của khu vực này tạo ra trong nước và trong kỳ báo cáo. Điều này nghĩa là số liệu không tính các giá trị sản phẩm vật chất và dịch vụ đã sử dụng ở các khâu trung gian trong quá trình sản xuất tạo ra sản phẩm.",
                   "frequency": "Ngày 6 tháng đầu tiên của quý sau",
-                  "last_updated": "2026-07-03T06:03:02.452Z",
+                  "last_updated": "2026-10-03T04:50:52.649Z",
                   "source": "Tổng cục Thống kê - GSO",
                   "note": null,
                   "related_blog": null
@@ -13530,7 +13869,7 @@
                   "unit": "%",
                   "description": "Thuế sản phẩm trừ trợ cấp sản phẩm là một thành phần trong GDP. Đây là phần chênh lệch giữa tổng số thuế mà Nhà nước thu được từ các sản phẩm, dịch vụ và tổng số tiền Nhà nước trợ cấp cho các hoạt động sản xuất.",
                   "frequency": "Ngày 6 tháng đầu tiên của quý sau",
-                  "last_updated": "2026-07-03T06:03:02.452Z",
+                  "last_updated": "2026-10-03T04:50:52.649Z",
                   "source": "Tổng cục Thống kê - GSO",
                   "note": null,
                   "related_blog": null

@@ -18,15 +18,16 @@
     ],
     "unit": "Tỷ VND",
     "description": "Dư nợ tín dụng đối với nền kinh tế, động lực tăng trưởng quan trọng.",
-    "updatedAt": "2026-09-19T10:14:29.415Z",
-    "latestPeriod": "07-2026",
-    "latestValue": 20262110
+    "updatedAt": "2026-11-07T06:37:01.657Z",
+    "latestPeriod": "08-2026",
+    "latestValue": 20489434
   },
   "datasets": {
     "monthly": {
       "value": {
         "title": "Tín Dụng",
         "headers": [
+          "08-2026",
           "07-2026",
           "06-2026",
           "05-2026",
@@ -42,9 +43,7 @@
           "07-2025",
           "06-2025",
           "05-2025",
-          "04-2025",
-          "03-2025",
-          "02-2025"
+          "04-2025"
         ],
         "parent": [
           {
@@ -62,6 +61,10 @@
                 "dateType": "thang",
                 "yAxis": 17,
                 "data": [
+                  [
+                    1788134400000,
+                    20489434
+                  ],
                   [
                     1785456000000,
                     20262110
@@ -125,14 +128,6 @@
                   [
                     1745971200000,
                     16446560.51
-                  ],
-                  [
-                    1743379200000,
-                    16226458.02
-                  ],
-                  [
-                    1740700800000,
-                    15735537.26
                   ]
                 ],
                 "time_frame": "monthly",
@@ -141,7 +136,7 @@
                   "unit": "Tỷ VND",
                   "description": "Tổng tín dụng trong nền kinh tế là tổng lượng dư nợ tín dụng mà các tổ chức tín dụng (ngân hàng, tổ chức tài chính) cung cấp cho các ngành kinh tế, doanh nghiệp, tổ chức và cá nhân trong nền kinh tế Việt Nam. Chỉ số này giúp đánh giá mức độ tăng trưởng tín dụng, phản ánh sự phát triển của các hoạt động kinh tế và khả năng tiếp cận vốn của các doanh nghiệp và ngành nghề. Dữ liệu được thống kê từ trang web của SBV, cập nhật định kỳ hàng tháng và có độ trễ từ 2-3 tháng.",
                   "frequency": "Độ trễ từ 1-3 tháng (ngày công bố không cố định)",
-                  "last_updated": "2026-07-22T09:31:43.618Z",
+                  "last_updated": "2026-10-16T09:36:39.571Z",
                   "source": "Ngân hàng Nhà nước - SBV",
                   "note": null,
                   "related_blog": null
@@ -159,6 +154,10 @@
                 "dateType": "thang",
                 "yAxis": 17,
                 "data": [
+                  [
+                    1788134400000,
+                    1245854
+                  ],
                   [
                     1785456000000,
                     1232973
@@ -222,14 +221,6 @@
                   [
                     1745971200000,
                     1047958.6
-                  ],
-                  [
-                    1743379200000,
-                    1037306.08
-                  ],
-                  [
-                    1740700800000,
-                    1022172.02
                   ]
                 ],
                 "time_frame": "monthly",
@@ -238,7 +229,7 @@
                   "unit": "Tỷ VND",
                   "description": "Chỉ số Tín dụng Nông nghiệp, lâm nghiệp và thuỷ sản là một thành phần của Tổng tín dụng trong nền kinh tế, phản ánh tổng số dư nợ tín dụng mà các tổ chức tín dụng (ngân hàng, tổ chức tài chính) cung cấp cho các hoạt động sản xuất của ngành Nông nghiệp, lâm nghiệp và thuỷ sản. Đây là chỉ số quan trọng đánh giá mức độ hỗ trợ tài chính cho sản xuất, kinh doanh và tiêu dùng, cũng như khả năng hấp thụ vốn của nền kinh tế.",
                   "frequency": "Độ trễ từ 1-3 tháng (ngày công bố không cố định)",
-                  "last_updated": "2026-07-22T09:31:43.618Z",
+                  "last_updated": "2026-10-16T09:36:39.571Z",
                   "source": "Ngân hàng Nhà nước - SBV",
                   "note": null,
                   "related_blog": null
@@ -256,6 +247,10 @@
                 "dateType": "thang",
                 "yAxis": 17,
                 "data": [
+                  [
+                    1788134400000,
+                    4878387
+                  ],
                   [
                     1785456000000,
                     4782025
@@ -319,14 +314,6 @@
                   [
                     1745971200000,
                     4047937.55
-                  ],
-                  [
-                    1743379200000,
-                    3985306.13
-                  ],
-                  [
-                    1740700800000,
-                    3926336.85
                   ]
                 ],
                 "time_frame": "monthly",
@@ -335,7 +322,7 @@
                   "unit": "Tỷ VND",
                   "description": "Chỉ số Tín dụng Công nghiệp và xây dựng là một thành phần của Tổng tín dụng trong nền kinh tế, phản ánh tổng số dư nợ tín dụng mà các tổ chức tín dụng (ngân hàng, tổ chức tài chính) cung cấp cho các hoạt động sản xuất của ngành Công nghiệp và xây dựng. Đây là chỉ số quan trọng đánh giá mức độ hỗ trợ tài chính cho sản xuất, kinh doanh và tiêu dùng, cũng như khả năng hấp thụ vốn của nền kinh tế.",
                   "frequency": "Độ trễ từ 1-3 tháng (ngày công bố không cố định)",
-                  "last_updated": "2026-07-22T09:31:43.618Z",
+                  "last_updated": "2026-10-16T09:36:39.571Z",
                   "source": "Ngân hàng Nhà nước - SBV",
                   "note": null,
                   "related_blog": null
@@ -353,6 +340,10 @@
                 "dateType": "thang",
                 "yAxis": 17,
                 "data": [
+                  [
+                    1788134400000,
+                    3276604
+                  ],
                   [
                     1785456000000,
                     3255581
@@ -416,14 +407,6 @@
                   [
                     1745971200000,
                     2810325.18
-                  ],
-                  [
-                    1743379200000,
-                    2758503.55
-                  ],
-                  [
-                    1740700800000,
-                    2720110.87
                   ]
                 ],
                 "time_frame": "monthly",
@@ -432,7 +415,7 @@
                   "unit": "Tỷ VND",
                   "description": "Chỉ số Tín dụng Công nghiệp là một thành phần của Tổng tín dụng trong nền kinh tế, phản ánh tổng số dư nợ tín dụng mà các tổ chức tín dụng (ngân hàng, tổ chức tài chính) cung cấp cho các hoạt động sản xuất của ngành Công nghiệp. Đây là chỉ số quan trọng đánh giá mức độ hỗ trợ tài chính cho sản xuất, kinh doanh và tiêu dùng, cũng như khả năng hấp thụ vốn của nền kinh tế.",
                   "frequency": "Độ trễ từ 1-3 tháng (ngày công bố không cố định)",
-                  "last_updated": "2026-07-22T09:31:43.618Z",
+                  "last_updated": "2026-10-16T09:36:39.571Z",
                   "source": "Ngân hàng Nhà nước - SBV",
                   "note": null,
                   "related_blog": null
@@ -450,6 +433,10 @@
                 "dateType": "thang",
                 "yAxis": 17,
                 "data": [
+                  [
+                    1788134400000,
+                    1601783
+                  ],
                   [
                     1785456000000,
                     1526444
@@ -513,14 +500,6 @@
                   [
                     1745971200000,
                     1237612.37
-                  ],
-                  [
-                    1743379200000,
-                    1226802.58
-                  ],
-                  [
-                    1740700800000,
-                    1206225.98
                   ]
                 ],
                 "time_frame": "monthly",
@@ -529,7 +508,7 @@
                   "unit": "Tỷ VND",
                   "description": "Chỉ số Tín dụng Xây dựng là một thành phần của Tổng tín dụng trong nền kinh tế, phản ánh tổng số dư nợ tín dụng mà các tổ chức tín dụng (ngân hàng, tổ chức tài chính) cung cấp cho các hoạt động sản xuất của ngành Xây dựng. Đây là chỉ số quan trọng đánh giá mức độ hỗ trợ tài chính cho sản xuất, kinh doanh và tiêu dùng, cũng như khả năng hấp thụ vốn của nền kinh tế.",
                   "frequency": "Độ trễ từ 1-3 tháng (ngày công bố không cố định)",
-                  "last_updated": "2026-07-22T09:31:43.618Z",
+                  "last_updated": "2026-10-16T09:36:39.571Z",
                   "source": "Ngân hàng Nhà nước - SBV",
                   "note": null,
                   "related_blog": null
@@ -547,6 +526,10 @@
                 "dateType": "thang",
                 "yAxis": 17,
                 "data": [
+                  [
+                    1788134400000,
+                    5126749
+                  ],
                   [
                     1785456000000,
                     5088322
@@ -610,14 +593,6 @@
                   [
                     1745971200000,
                     4619852.64
-                  ],
-                  [
-                    1743379200000,
-                    4576678.48
-                  ],
-                  [
-                    1740700800000,
-                    4427158.54
                   ]
                 ],
                 "time_frame": "monthly",
@@ -626,7 +601,7 @@
                   "unit": "Tỷ VND",
                   "description": "Chỉ số Tín dụng Hoạt động thương mại, vận tải và viễn thông là một thành phần của Tổng tín dụng trong nền kinh tế, phản ánh tổng số dư nợ tín dụng mà các tổ chức tín dụng (ngân hàng, tổ chức tài chính) cung cấp cho các hoạt động của ngành Hoạt động thương mại, vận tải và viễn thông. Đây là chỉ số quan trọng đánh giá mức độ hỗ trợ tài chính cho sản xuất, kinh doanh và tiêu dùng, cũng như khả năng hấp thụ vốn của nền kinh tế.",
                   "frequency": "Độ trễ từ 1-3 tháng (ngày công bố không cố định)",
-                  "last_updated": "2026-07-22T09:31:43.618Z",
+                  "last_updated": "2026-10-16T09:36:39.571Z",
                   "source": "Ngân hàng Nhà nước - SBV",
                   "note": null,
                   "related_blog": null
@@ -644,6 +619,10 @@
                 "dateType": "thang",
                 "yAxis": 17,
                 "data": [
+                  [
+                    1788134400000,
+                    4567396
+                  ],
                   [
                     1785456000000,
                     4533303
@@ -707,14 +686,6 @@
                   [
                     1745971200000,
                     4199058.34
-                  ],
-                  [
-                    1743379200000,
-                    4165463.23
-                  ],
-                  [
-                    1740700800000,
-                    4028599.86
                   ]
                 ],
                 "time_frame": "monthly",
@@ -723,7 +694,7 @@
                   "unit": "Tỷ VND",
                   "description": "Chỉ số Tín dụng Thương mại là một thành phần của Tổng tín dụng trong nền kinh tế, phản ánh tổng số dư nợ tín dụng mà các tổ chức tín dụng (ngân hàng, tổ chức tài chính) cung cấp cho các hoạt động của ngành Thương mại. Đây là chỉ số quan trọng đánh giá mức độ hỗ trợ tài chính cho sản xuất, kinh doanh và tiêu dùng, cũng như khả năng hấp thụ vốn của nền kinh tế.",
                   "frequency": "Độ trễ từ 1-3 tháng (ngày công bố không cố định)",
-                  "last_updated": "2026-07-22T09:31:43.618Z",
+                  "last_updated": "2026-10-16T09:36:39.571Z",
                   "source": "Ngân hàng Nhà nước - SBV",
                   "note": null,
                   "related_blog": null
@@ -741,6 +712,10 @@
                 "dateType": "thang",
                 "yAxis": 17,
                 "data": [
+                  [
+                    1788134400000,
+                    559352
+                  ],
                   [
                     1785456000000,
                     555019
@@ -804,14 +779,6 @@
                   [
                     1745971200000,
                     420794.3
-                  ],
-                  [
-                    1743379200000,
-                    411215.24
-                  ],
-                  [
-                    1740700800000,
-                    398558.68
                   ]
                 ],
                 "time_frame": "monthly",
@@ -820,7 +787,7 @@
                   "unit": "Tỷ VND",
                   "description": "Chỉ số Tín dụng Vận tải và viễn thông là một thành phần của Tổng tín dụng trong nền kinh tế, phản ánh tổng số dư nợ tín dụng mà các tổ chức tín dụng (ngân hàng, tổ chức tài chính) cung cấp cho các hoạt động của ngành Vận tải và viễn thông. Đây là chỉ số quan trọng đánh giá mức độ hỗ trợ tài chính cho sản xuất, kinh doanh và tiêu dùng, cũng như khả năng hấp thụ vốn của nền kinh tế.",
                   "frequency": "Độ trễ từ 1-3 tháng (ngày công bố không cố định)",
-                  "last_updated": "2026-07-22T09:31:43.618Z",
+                  "last_updated": "2026-10-16T09:36:39.571Z",
                   "source": "Ngân hàng Nhà nước - SBV",
                   "note": null,
                   "related_blog": null
@@ -838,6 +805,10 @@
                 "dateType": "thang",
                 "yAxis": 17,
                 "data": [
+                  [
+                    1788134400000,
+                    9238445
+                  ],
                   [
                     1785456000000,
                     9158790
@@ -901,14 +872,6 @@
                   [
                     1745971200000,
                     6730811.72
-                  ],
-                  [
-                    1743379200000,
-                    6627167.34
-                  ],
-                  [
-                    1740700800000,
-                    6359869.85
                   ]
                 ],
                 "time_frame": "monthly",
@@ -917,7 +880,7 @@
                   "unit": "Tỷ VND",
                   "description": "Chỉ số Tín dụng của Các hoạt động dịch vụ khác là một thành phần của Tổng tín dụng trong nền kinh tế, phản ánh tổng số dư nợ tín dụng mà các tổ chức tín dụng (ngân hàng, tổ chức tài chính) cung cấp cho Các hoạt động dịch vụ khác. Đây là chỉ số quan trọng đánh giá mức độ hỗ trợ tài chính cho sản xuất, kinh doanh và tiêu dùng, cũng như khả năng hấp thụ vốn của nền kinh tế.",
                   "frequency": "Độ trễ từ 1-3 tháng (ngày công bố không cố định)",
-                  "last_updated": "2026-07-22T09:31:43.618Z",
+                  "last_updated": "2026-10-16T09:36:39.571Z",
                   "source": "Ngân hàng Nhà nước - SBV",
                   "note": null,
                   "related_blog": null
@@ -930,6 +893,7 @@
       "yoy": {
         "title": "Tín Dụng",
         "headers": [
+          "08-2026",
           "07-2026",
           "06-2026",
           "05-2026",
@@ -945,9 +909,7 @@
           "07-2025",
           "06-2025",
           "05-2025",
-          "04-2025",
-          "03-2025",
-          "02-2025"
+          "04-2025"
         ],
         "parent": [
           {
@@ -965,6 +927,10 @@
                 "dateType": "thang",
                 "yAxis": 1,
                 "data": [
+                  [
+                    1788134400000,
+                    17.38295521185194
+                  ],
                   [
                     1785456000000,
                     17.699954595028935
@@ -1028,14 +994,6 @@
                   [
                     1745971200000,
                     18.814911554419268
-                  ],
-                  [
-                    1743379200000,
-                    17.912707335397172
-                  ],
-                  [
-                    1740700800000,
-                    16.840080842853105
                   ]
                 ],
                 "time_frame": "monthly",
@@ -1044,7 +1002,7 @@
                   "unit": "%",
                   "description": "Tổng tín dụng trong nền kinh tế là tổng lượng dư nợ tín dụng mà các tổ chức tín dụng (ngân hàng, tổ chức tài chính) cung cấp cho các ngành kinh tế, doanh nghiệp, tổ chức và cá nhân trong nền kinh tế Việt Nam. Chỉ số này giúp đánh giá mức độ tăng trưởng tín dụng, phản ánh sự phát triển của các hoạt động kinh tế và khả năng tiếp cận vốn của các doanh nghiệp và ngành nghề. Dữ liệu được thống kê từ trang web của SBV, cập nhật định kỳ hàng tháng và có độ trễ từ 2-3 tháng.",
                   "frequency": "Độ trễ từ 1-3 tháng (ngày công bố không cố định)",
-                  "last_updated": "2026-07-22T09:31:43.618Z",
+                  "last_updated": "2026-10-16T09:36:39.571Z",
                   "source": "Ngân hàng Nhà nước - SBV",
                   "note": null,
                   "related_blog": null
@@ -1062,6 +1020,10 @@
                 "dateType": "thang",
                 "yAxis": 1,
                 "data": [
+                  [
+                    1788134400000,
+                    15.030696159180001
+                  ],
                   [
                     1785456000000,
                     14.897418587059578
@@ -1125,14 +1087,6 @@
                   [
                     1745971200000,
                     8.772028010235857
-                  ],
-                  [
-                    1743379200000,
-                    7.982614578246247
-                  ],
-                  [
-                    1740700800000,
-                    7.494783068706511
                   ]
                 ],
                 "time_frame": "monthly",
@@ -1141,7 +1095,7 @@
                   "unit": "%",
                   "description": "Chỉ số Tín dụng Nông nghiệp, lâm nghiệp và thuỷ sản là một thành phần của Tổng tín dụng trong nền kinh tế, phản ánh tổng số dư nợ tín dụng mà các tổ chức tín dụng (ngân hàng, tổ chức tài chính) cung cấp cho các hoạt động sản xuất của ngành Nông nghiệp, lâm nghiệp và thuỷ sản. Đây là chỉ số quan trọng đánh giá mức độ hỗ trợ tài chính cho sản xuất, kinh doanh và tiêu dùng, cũng như khả năng hấp thụ vốn của nền kinh tế.",
                   "frequency": "Độ trễ từ 1-3 tháng (ngày công bố không cố định)",
-                  "last_updated": "2026-07-22T09:31:43.618Z",
+                  "last_updated": "2026-10-16T09:36:39.571Z",
                   "source": "Ngân hàng Nhà nước - SBV",
                   "note": null,
                   "related_blog": null
@@ -1159,6 +1113,10 @@
                 "dateType": "thang",
                 "yAxis": 1,
                 "data": [
+                  [
+                    1788134400000,
+                    16.749551714175123
+                  ],
                   [
                     1785456000000,
                     15.904681554667174
@@ -1222,14 +1180,6 @@
                   [
                     1745971200000,
                     13.500420455728099
-                  ],
-                  [
-                    1743379200000,
-                    12.542937551120506
-                  ],
-                  [
-                    1740700800000,
-                    12.96566622016449
                   ]
                 ],
                 "time_frame": "monthly",
@@ -1238,7 +1188,7 @@
                   "unit": "%",
                   "description": "Chỉ số Tín dụng Công nghiệp và xây dựng là một thành phần của Tổng tín dụng trong nền kinh tế, phản ánh tổng số dư nợ tín dụng mà các tổ chức tín dụng (ngân hàng, tổ chức tài chính) cung cấp cho các hoạt động sản xuất của ngành Công nghiệp và xây dựng. Đây là chỉ số quan trọng đánh giá mức độ hỗ trợ tài chính cho sản xuất, kinh doanh và tiêu dùng, cũng như khả năng hấp thụ vốn của nền kinh tế.",
                   "frequency": "Độ trễ từ 1-3 tháng (ngày công bố không cố định)",
-                  "last_updated": "2026-07-22T09:31:43.618Z",
+                  "last_updated": "2026-10-16T09:36:39.571Z",
                   "source": "Ngân hàng Nhà nước - SBV",
                   "note": null,
                   "related_blog": null
@@ -1256,6 +1206,10 @@
                 "dateType": "thang",
                 "yAxis": 1,
                 "data": [
+                  [
+                    1788134400000,
+                    13.345660734138171
+                  ],
                   [
                     1785456000000,
                     13.98646690259534
@@ -1319,14 +1273,6 @@
                   [
                     1745971200000,
                     14.420101459913814
-                  ],
-                  [
-                    1743379200000,
-                    13.147678051024336
-                  ],
-                  [
-                    1740700800000,
-                    13.801589601997721
                   ]
                 ],
                 "time_frame": "monthly",
@@ -1335,7 +1281,7 @@
                   "unit": "%",
                   "description": "Chỉ số Tín dụng Công nghiệp là một thành phần của Tổng tín dụng trong nền kinh tế, phản ánh tổng số dư nợ tín dụng mà các tổ chức tín dụng (ngân hàng, tổ chức tài chính) cung cấp cho các hoạt động sản xuất của ngành Công nghiệp. Đây là chỉ số quan trọng đánh giá mức độ hỗ trợ tài chính cho sản xuất, kinh doanh và tiêu dùng, cũng như khả năng hấp thụ vốn của nền kinh tế.",
                   "frequency": "Độ trễ từ 1-3 tháng (ngày công bố không cố định)",
-                  "last_updated": "2026-07-22T09:31:43.618Z",
+                  "last_updated": "2026-10-16T09:36:39.571Z",
                   "source": "Ngân hàng Nhà nước - SBV",
                   "note": null,
                   "related_blog": null
@@ -1353,6 +1299,10 @@
                 "dateType": "thang",
                 "yAxis": 1,
                 "data": [
+                  [
+                    1788134400000,
+                    24.39108063774271
+                  ],
                   [
                     1785456000000,
                     20.219540511856486
@@ -1416,14 +1366,6 @@
                   [
                     1745971200000,
                     11.465960787484745
-                  ],
-                  [
-                    1743379200000,
-                    11.206487505245875
-                  ],
-                  [
-                    1740700800000,
-                    11.12494661520353
                   ]
                 ],
                 "time_frame": "monthly",
@@ -1432,7 +1374,7 @@
                   "unit": "%",
                   "description": "Chỉ số Tín dụng Xây dựng là một thành phần của Tổng tín dụng trong nền kinh tế, phản ánh tổng số dư nợ tín dụng mà các tổ chức tín dụng (ngân hàng, tổ chức tài chính) cung cấp cho các hoạt động sản xuất của ngành Xây dựng. Đây là chỉ số quan trọng đánh giá mức độ hỗ trợ tài chính cho sản xuất, kinh doanh và tiêu dùng, cũng như khả năng hấp thụ vốn của nền kinh tế.",
                   "frequency": "Độ trễ từ 1-3 tháng (ngày công bố không cố định)",
-                  "last_updated": "2026-07-22T09:31:43.618Z",
+                  "last_updated": "2026-10-16T09:36:39.571Z",
                   "source": "Ngân hàng Nhà nước - SBV",
                   "note": null,
                   "related_blog": null
@@ -1450,6 +1392,10 @@
                 "dateType": "thang",
                 "yAxis": 1,
                 "data": [
+                  [
+                    1788134400000,
+                    7.597427335618708
+                  ],
                   [
                     1785456000000,
                     7.4603370738462775
@@ -1513,14 +1459,6 @@
                   [
                     1745971200000,
                     19.61473258077421
-                  ],
-                  [
-                    1743379200000,
-                    19.412060123731855
-                  ],
-                  [
-                    1740700800000,
-                    18.206119680934798
                   ]
                 ],
                 "time_frame": "monthly",
@@ -1529,7 +1467,7 @@
                   "unit": "%",
                   "description": "Chỉ số Tín dụng Hoạt động thương mại, vận tải và viễn thông là một thành phần của Tổng tín dụng trong nền kinh tế, phản ánh tổng số dư nợ tín dụng mà các tổ chức tín dụng (ngân hàng, tổ chức tài chính) cung cấp cho các hoạt động của ngành Hoạt động thương mại, vận tải và viễn thông. Đây là chỉ số quan trọng đánh giá mức độ hỗ trợ tài chính cho sản xuất, kinh doanh và tiêu dùng, cũng như khả năng hấp thụ vốn của nền kinh tế.",
                   "frequency": "Độ trễ từ 1-3 tháng (ngày công bố không cố định)",
-                  "last_updated": "2026-07-22T09:31:43.618Z",
+                  "last_updated": "2026-10-16T09:36:39.571Z",
                   "source": "Ngân hàng Nhà nước - SBV",
                   "note": null,
                   "related_blog": null
@@ -1547,6 +1485,10 @@
                 "dateType": "thang",
                 "yAxis": 1,
                 "data": [
+                  [
+                    1788134400000,
+                    5.601695318162982
+                  ],
                   [
                     1785456000000,
                     5.484000250808511
@@ -1610,14 +1552,6 @@
                   [
                     1745971200000,
                     18.57054745923959
-                  ],
-                  [
-                    1743379200000,
-                    18.514667976228083
-                  ],
-                  [
-                    1740700800000,
-                    17.49127588749349
                   ]
                 ],
                 "time_frame": "monthly",
@@ -1626,7 +1560,7 @@
                   "unit": "%",
                   "description": "Chỉ số Tín dụng Thương mại là một thành phần của Tổng tín dụng trong nền kinh tế, phản ánh tổng số dư nợ tín dụng mà các tổ chức tín dụng (ngân hàng, tổ chức tài chính) cung cấp cho các hoạt động của ngành Thương mại. Đây là chỉ số quan trọng đánh giá mức độ hỗ trợ tài chính cho sản xuất, kinh doanh và tiêu dùng, cũng như khả năng hấp thụ vốn của nền kinh tế.",
                   "frequency": "Độ trễ từ 1-3 tháng (ngày công bố không cố định)",
-                  "last_updated": "2026-07-22T09:31:43.618Z",
+                  "last_updated": "2026-10-16T09:36:39.571Z",
                   "source": "Ngân hàng Nhà nước - SBV",
                   "note": null,
                   "related_blog": null
@@ -1644,6 +1578,10 @@
                 "dateType": "thang",
                 "yAxis": 1,
                 "data": [
+                  [
+                    1788134400000,
+                    27.23118076505256
+                  ],
                   [
                     1785456000000,
                     26.876446984914182
@@ -1707,14 +1645,6 @@
                   [
                     1745971200000,
                     31.139037123508515
-                  ],
-                  [
-                    1743379200000,
-                    29.332030793343655
-                  ],
-                  [
-                    1740700800000,
-                    25.95203188705437
                   ]
                 ],
                 "time_frame": "monthly",
@@ -1723,7 +1653,7 @@
                   "unit": "%",
                   "description": "Chỉ số Tín dụng Vận tải và viễn thông là một thành phần của Tổng tín dụng trong nền kinh tế, phản ánh tổng số dư nợ tín dụng mà các tổ chức tín dụng (ngân hàng, tổ chức tài chính) cung cấp cho các hoạt động của ngành Vận tải và viễn thông. Đây là chỉ số quan trọng đánh giá mức độ hỗ trợ tài chính cho sản xuất, kinh doanh và tiêu dùng, cũng như khả năng hấp thụ vốn của nền kinh tế.",
                   "frequency": "Độ trễ từ 1-3 tháng (ngày công bố không cố định)",
-                  "last_updated": "2026-07-22T09:31:43.618Z",
+                  "last_updated": "2026-10-16T09:36:39.571Z",
                   "source": "Ngân hàng Nhà nước - SBV",
                   "note": null,
                   "related_blog": null
@@ -1741,6 +1671,10 @@
                 "dateType": "thang",
                 "yAxis": 1,
                 "data": [
+                  [
+                    1788134400000,
+                    24.358433164117592
+                  ],
                   [
                     1785456000000,
                     25.78940723124713
@@ -1804,14 +1738,6 @@
                   [
                     1745971200000,
                     23.501248273647466
-                  ],
-                  [
-                    1743379200000,
-                    22.115356713443855
-                  ],
-                  [
-                    1740700800000,
-                    20.094896434990865
                   ]
                 ],
                 "time_frame": "monthly",
@@ -1820,7 +1746,7 @@
                   "unit": "%",
                   "description": "Chỉ số Tín dụng của Các hoạt động dịch vụ khác là một thành phần của Tổng tín dụng trong nền kinh tế, phản ánh tổng số dư nợ tín dụng mà các tổ chức tín dụng (ngân hàng, tổ chức tài chính) cung cấp cho Các hoạt động dịch vụ khác. Đây là chỉ số quan trọng đánh giá mức độ hỗ trợ tài chính cho sản xuất, kinh doanh và tiêu dùng, cũng như khả năng hấp thụ vốn của nền kinh tế.",
                   "frequency": "Độ trễ từ 1-3 tháng (ngày công bố không cố định)",
-                  "last_updated": "2026-07-22T09:31:43.618Z",
+                  "last_updated": "2026-10-16T09:36:39.571Z",
                   "source": "Ngân hàng Nhà nước - SBV",
                   "note": null,
                   "related_blog": null
@@ -1954,7 +1880,7 @@
                   "unit": "Tỷ VND",
                   "description": "Tổng tín dụng trong nền kinh tế là tổng lượng dư nợ tín dụng mà các tổ chức tín dụng (ngân hàng, tổ chức tài chính) cung cấp cho các ngành kinh tế, doanh nghiệp, tổ chức và cá nhân trong nền kinh tế Việt Nam. Chỉ số này giúp đánh giá mức độ tăng trưởng tín dụng, phản ánh sự phát triển của các hoạt động kinh tế và khả năng tiếp cận vốn của các doanh nghiệp và ngành nghề. Dữ liệu được thống kê từ trang web của SBV, cập nhật định kỳ hàng tháng và có độ trễ từ 2-3 tháng.",
                   "frequency": "Độ trễ từ 1-3 tháng (ngày công bố không cố định)",
-                  "last_updated": "2026-07-22T09:31:43.618Z",
+                  "last_updated": "2026-10-16T09:36:39.571Z",
                   "source": "Ngân hàng Nhà nước - SBV",
                   "note": null,
                   "related_blog": null
@@ -2055,7 +1981,7 @@
                   "unit": "Tỷ VND",
                   "description": "Chỉ số Tín dụng Nông nghiệp, lâm nghiệp và thuỷ sản là một thành phần của Tổng tín dụng trong nền kinh tế, phản ánh tổng số dư nợ tín dụng mà các tổ chức tín dụng (ngân hàng, tổ chức tài chính) cung cấp cho các hoạt động sản xuất của ngành Nông nghiệp, lâm nghiệp và thuỷ sản. Đây là chỉ số quan trọng đánh giá mức độ hỗ trợ tài chính cho sản xuất, kinh doanh và tiêu dùng, cũng như khả năng hấp thụ vốn của nền kinh tế.",
                   "frequency": "Độ trễ từ 1-3 tháng (ngày công bố không cố định)",
-                  "last_updated": "2026-07-22T09:31:43.618Z",
+                  "last_updated": "2026-10-16T09:36:39.571Z",
                   "source": "Ngân hàng Nhà nước - SBV",
                   "note": null,
                   "related_blog": null
@@ -2156,7 +2082,7 @@
                   "unit": "Tỷ VND",
                   "description": "Chỉ số Tín dụng Công nghiệp và xây dựng là một thành phần của Tổng tín dụng trong nền kinh tế, phản ánh tổng số dư nợ tín dụng mà các tổ chức tín dụng (ngân hàng, tổ chức tài chính) cung cấp cho các hoạt động sản xuất của ngành Công nghiệp và xây dựng. Đây là chỉ số quan trọng đánh giá mức độ hỗ trợ tài chính cho sản xuất, kinh doanh và tiêu dùng, cũng như khả năng hấp thụ vốn của nền kinh tế.",
                   "frequency": "Độ trễ từ 1-3 tháng (ngày công bố không cố định)",
-                  "last_updated": "2026-07-22T09:31:43.618Z",
+                  "last_updated": "2026-10-16T09:36:39.571Z",
                   "source": "Ngân hàng Nhà nước - SBV",
                   "note": null,
                   "related_blog": null
@@ -2257,7 +2183,7 @@
                   "unit": "Tỷ VND",
                   "description": "Chỉ số Tín dụng Công nghiệp là một thành phần của Tổng tín dụng trong nền kinh tế, phản ánh tổng số dư nợ tín dụng mà các tổ chức tín dụng (ngân hàng, tổ chức tài chính) cung cấp cho các hoạt động sản xuất của ngành Công nghiệp. Đây là chỉ số quan trọng đánh giá mức độ hỗ trợ tài chính cho sản xuất, kinh doanh và tiêu dùng, cũng như khả năng hấp thụ vốn của nền kinh tế.",
                   "frequency": "Độ trễ từ 1-3 tháng (ngày công bố không cố định)",
-                  "last_updated": "2026-07-22T09:31:43.618Z",
+                  "last_updated": "2026-10-16T09:36:39.571Z",
                   "source": "Ngân hàng Nhà nước - SBV",
                   "note": null,
                   "related_blog": null
@@ -2358,7 +2284,7 @@
                   "unit": "Tỷ VND",
                   "description": "Chỉ số Tín dụng Xây dựng là một thành phần của Tổng tín dụng trong nền kinh tế, phản ánh tổng số dư nợ tín dụng mà các tổ chức tín dụng (ngân hàng, tổ chức tài chính) cung cấp cho các hoạt động sản xuất của ngành Xây dựng. Đây là chỉ số quan trọng đánh giá mức độ hỗ trợ tài chính cho sản xuất, kinh doanh và tiêu dùng, cũng như khả năng hấp thụ vốn của nền kinh tế.",
                   "frequency": "Độ trễ từ 1-3 tháng (ngày công bố không cố định)",
-                  "last_updated": "2026-07-22T09:31:43.618Z",
+                  "last_updated": "2026-10-16T09:36:39.571Z",
                   "source": "Ngân hàng Nhà nước - SBV",
                   "note": null,
                   "related_blog": null
@@ -2459,7 +2385,7 @@
                   "unit": "Tỷ VND",
                   "description": "Chỉ số Tín dụng Hoạt động thương mại, vận tải và viễn thông là một thành phần của Tổng tín dụng trong nền kinh tế, phản ánh tổng số dư nợ tín dụng mà các tổ chức tín dụng (ngân hàng, tổ chức tài chính) cung cấp cho các hoạt động của ngành Hoạt động thương mại, vận tải và viễn thông. Đây là chỉ số quan trọng đánh giá mức độ hỗ trợ tài chính cho sản xuất, kinh doanh và tiêu dùng, cũng như khả năng hấp thụ vốn của nền kinh tế.",
                   "frequency": "Độ trễ từ 1-3 tháng (ngày công bố không cố định)",
-                  "last_updated": "2026-07-22T09:31:43.618Z",
+                  "last_updated": "2026-10-16T09:36:39.571Z",
                   "source": "Ngân hàng Nhà nước - SBV",
                   "note": null,
                   "related_blog": null
@@ -2560,7 +2486,7 @@
                   "unit": "Tỷ VND",
                   "description": "Chỉ số Tín dụng Thương mại là một thành phần của Tổng tín dụng trong nền kinh tế, phản ánh tổng số dư nợ tín dụng mà các tổ chức tín dụng (ngân hàng, tổ chức tài chính) cung cấp cho các hoạt động của ngành Thương mại. Đây là chỉ số quan trọng đánh giá mức độ hỗ trợ tài chính cho sản xuất, kinh doanh và tiêu dùng, cũng như khả năng hấp thụ vốn của nền kinh tế.",
                   "frequency": "Độ trễ từ 1-3 tháng (ngày công bố không cố định)",
-                  "last_updated": "2026-07-22T09:31:43.618Z",
+                  "last_updated": "2026-10-16T09:36:39.571Z",
                   "source": "Ngân hàng Nhà nước - SBV",
                   "note": null,
                   "related_blog": null
@@ -2661,7 +2587,7 @@
                   "unit": "Tỷ VND",
                   "description": "Chỉ số Tín dụng Vận tải và viễn thông là một thành phần của Tổng tín dụng trong nền kinh tế, phản ánh tổng số dư nợ tín dụng mà các tổ chức tín dụng (ngân hàng, tổ chức tài chính) cung cấp cho các hoạt động của ngành Vận tải và viễn thông. Đây là chỉ số quan trọng đánh giá mức độ hỗ trợ tài chính cho sản xuất, kinh doanh và tiêu dùng, cũng như khả năng hấp thụ vốn của nền kinh tế.",
                   "frequency": "Độ trễ từ 1-3 tháng (ngày công bố không cố định)",
-                  "last_updated": "2026-07-22T09:31:43.618Z",
+                  "last_updated": "2026-10-16T09:36:39.571Z",
                   "source": "Ngân hàng Nhà nước - SBV",
                   "note": null,
                   "related_blog": null
@@ -2762,7 +2688,7 @@
                   "unit": "Tỷ VND",
                   "description": "Chỉ số Tín dụng của Các hoạt động dịch vụ khác là một thành phần của Tổng tín dụng trong nền kinh tế, phản ánh tổng số dư nợ tín dụng mà các tổ chức tín dụng (ngân hàng, tổ chức tài chính) cung cấp cho Các hoạt động dịch vụ khác. Đây là chỉ số quan trọng đánh giá mức độ hỗ trợ tài chính cho sản xuất, kinh doanh và tiêu dùng, cũng như khả năng hấp thụ vốn của nền kinh tế.",
                   "frequency": "Độ trễ từ 1-3 tháng (ngày công bố không cố định)",
-                  "last_updated": "2026-07-22T09:31:43.618Z",
+                  "last_updated": "2026-10-16T09:36:39.571Z",
                   "source": "Ngân hàng Nhà nước - SBV",
                   "note": null,
                   "related_blog": null
@@ -2894,7 +2820,7 @@
                   "unit": "%",
                   "description": "Tổng tín dụng trong nền kinh tế là tổng lượng dư nợ tín dụng mà các tổ chức tín dụng (ngân hàng, tổ chức tài chính) cung cấp cho các ngành kinh tế, doanh nghiệp, tổ chức và cá nhân trong nền kinh tế Việt Nam. Chỉ số này giúp đánh giá mức độ tăng trưởng tín dụng, phản ánh sự phát triển của các hoạt động kinh tế và khả năng tiếp cận vốn của các doanh nghiệp và ngành nghề. Dữ liệu được thống kê từ trang web của SBV, cập nhật định kỳ hàng tháng và có độ trễ từ 2-3 tháng.",
                   "frequency": "Độ trễ từ 1-3 tháng (ngày công bố không cố định)",
-                  "last_updated": "2026-07-22T09:31:43.618Z",
+                  "last_updated": "2026-10-16T09:36:39.571Z",
                   "source": "Ngân hàng Nhà nước - SBV",
                   "note": null,
                   "related_blog": null
@@ -2995,7 +2921,7 @@
                   "unit": "%",
                   "description": "Chỉ số Tín dụng Nông nghiệp, lâm nghiệp và thuỷ sản là một thành phần của Tổng tín dụng trong nền kinh tế, phản ánh tổng số dư nợ tín dụng mà các tổ chức tín dụng (ngân hàng, tổ chức tài chính) cung cấp cho các hoạt động sản xuất của ngành Nông nghiệp, lâm nghiệp và thuỷ sản. Đây là chỉ số quan trọng đánh giá mức độ hỗ trợ tài chính cho sản xuất, kinh doanh và tiêu dùng, cũng như khả năng hấp thụ vốn của nền kinh tế.",
                   "frequency": "Độ trễ từ 1-3 tháng (ngày công bố không cố định)",
-                  "last_updated": "2026-07-22T09:31:43.618Z",
+                  "last_updated": "2026-10-16T09:36:39.571Z",
                   "source": "Ngân hàng Nhà nước - SBV",
                   "note": null,
                   "related_blog": null
@@ -3096,7 +3022,7 @@
                   "unit": "%",
                   "description": "Chỉ số Tín dụng Công nghiệp và xây dựng là một thành phần của Tổng tín dụng trong nền kinh tế, phản ánh tổng số dư nợ tín dụng mà các tổ chức tín dụng (ngân hàng, tổ chức tài chính) cung cấp cho các hoạt động sản xuất của ngành Công nghiệp và xây dựng. Đây là chỉ số quan trọng đánh giá mức độ hỗ trợ tài chính cho sản xuất, kinh doanh và tiêu dùng, cũng như khả năng hấp thụ vốn của nền kinh tế.",
                   "frequency": "Độ trễ từ 1-3 tháng (ngày công bố không cố định)",
-                  "last_updated": "2026-07-22T09:31:43.618Z",
+                  "last_updated": "2026-10-16T09:36:39.571Z",
                   "source": "Ngân hàng Nhà nước - SBV",
                   "note": null,
                   "related_blog": null
@@ -3197,7 +3123,7 @@
                   "unit": "%",
                   "description": "Chỉ số Tín dụng Công nghiệp là một thành phần của Tổng tín dụng trong nền kinh tế, phản ánh tổng số dư nợ tín dụng mà các tổ chức tín dụng (ngân hàng, tổ chức tài chính) cung cấp cho các hoạt động sản xuất của ngành Công nghiệp. Đây là chỉ số quan trọng đánh giá mức độ hỗ trợ tài chính cho sản xuất, kinh doanh và tiêu dùng, cũng như khả năng hấp thụ vốn của nền kinh tế.",
                   "frequency": "Độ trễ từ 1-3 tháng (ngày công bố không cố định)",
-                  "last_updated": "2026-07-22T09:31:43.618Z",
+                  "last_updated": "2026-10-16T09:36:39.571Z",
                   "source": "Ngân hàng Nhà nước - SBV",
                   "note": null,
                   "related_blog": null
@@ -3298,7 +3224,7 @@
                   "unit": "%",
                   "description": "Chỉ số Tín dụng Xây dựng là một thành phần của Tổng tín dụng trong nền kinh tế, phản ánh tổng số dư nợ tín dụng mà các tổ chức tín dụng (ngân hàng, tổ chức tài chính) cung cấp cho các hoạt động sản xuất của ngành Xây dựng. Đây là chỉ số quan trọng đánh giá mức độ hỗ trợ tài chính cho sản xuất, kinh doanh và tiêu dùng, cũng như khả năng hấp thụ vốn của nền kinh tế.",
                   "frequency": "Độ trễ từ 1-3 tháng (ngày công bố không cố định)",
-                  "last_updated": "2026-07-22T09:31:43.618Z",
+                  "last_updated": "2026-10-16T09:36:39.571Z",
                   "source": "Ngân hàng Nhà nước - SBV",
                   "note": null,
                   "related_blog": null
@@ -3399,7 +3325,7 @@
                   "unit": "%",
                   "description": "Chỉ số Tín dụng Hoạt động thương mại, vận tải và viễn thông là một thành phần của Tổng tín dụng trong nền kinh tế, phản ánh tổng số dư nợ tín dụng mà các tổ chức tín dụng (ngân hàng, tổ chức tài chính) cung cấp cho các hoạt động của ngành Hoạt động thương mại, vận tải và viễn thông. Đây là chỉ số quan trọng đánh giá mức độ hỗ trợ tài chính cho sản xuất, kinh doanh và tiêu dùng, cũng như khả năng hấp thụ vốn của nền kinh tế.",
                   "frequency": "Độ trễ từ 1-3 tháng (ngày công bố không cố định)",
-                  "last_updated": "2026-07-22T09:31:43.618Z",
+                  "last_updated": "2026-10-16T09:36:39.571Z",
                   "source": "Ngân hàng Nhà nước - SBV",
                   "note": null,
                   "related_blog": null
@@ -3500,7 +3426,7 @@
                   "unit": "%",
                   "description": "Chỉ số Tín dụng Thương mại là một thành phần của Tổng tín dụng trong nền kinh tế, phản ánh tổng số dư nợ tín dụng mà các tổ chức tín dụng (ngân hàng, tổ chức tài chính) cung cấp cho các hoạt động của ngành Thương mại. Đây là chỉ số quan trọng đánh giá mức độ hỗ trợ tài chính cho sản xuất, kinh doanh và tiêu dùng, cũng như khả năng hấp thụ vốn của nền kinh tế.",
                   "frequency": "Độ trễ từ 1-3 tháng (ngày công bố không cố định)",
-                  "last_updated": "2026-07-22T09:31:43.618Z",
+                  "last_updated": "2026-10-16T09:36:39.571Z",
                   "source": "Ngân hàng Nhà nước - SBV",
                   "note": null,
                   "related_blog": null
@@ -3601,7 +3527,7 @@
                   "unit": "%",
                   "description": "Chỉ số Tín dụng Vận tải và viễn thông là một thành phần của Tổng tín dụng trong nền kinh tế, phản ánh tổng số dư nợ tín dụng mà các tổ chức tín dụng (ngân hàng, tổ chức tài chính) cung cấp cho các hoạt động của ngành Vận tải và viễn thông. Đây là chỉ số quan trọng đánh giá mức độ hỗ trợ tài chính cho sản xuất, kinh doanh và tiêu dùng, cũng như khả năng hấp thụ vốn của nền kinh tế.",
                   "frequency": "Độ trễ từ 1-3 tháng (ngày công bố không cố định)",
-                  "last_updated": "2026-07-22T09:31:43.618Z",
+                  "last_updated": "2026-10-16T09:36:39.571Z",
                   "source": "Ngân hàng Nhà nước - SBV",
                   "note": null,
                   "related_blog": null
@@ -3702,7 +3628,7 @@
                   "unit": "%",
                   "description": "Chỉ số Tín dụng của Các hoạt động dịch vụ khác là một thành phần của Tổng tín dụng trong nền kinh tế, phản ánh tổng số dư nợ tín dụng mà các tổ chức tín dụng (ngân hàng, tổ chức tài chính) cung cấp cho Các hoạt động dịch vụ khác. Đây là chỉ số quan trọng đánh giá mức độ hỗ trợ tài chính cho sản xuất, kinh doanh và tiêu dùng, cũng như khả năng hấp thụ vốn của nền kinh tế.",
                   "frequency": "Độ trễ từ 1-3 tháng (ngày công bố không cố định)",
-                  "last_updated": "2026-07-22T09:31:43.618Z",
+                  "last_updated": "2026-10-16T09:36:39.571Z",
                   "source": "Ngân hàng Nhà nước - SBV",
                   "note": null,
                   "related_blog": null
@@ -3841,7 +3767,7 @@
                   "unit": "Tỷ VND",
                   "description": "Tổng tín dụng trong nền kinh tế là tổng lượng dư nợ tín dụng mà các tổ chức tín dụng (ngân hàng, tổ chức tài chính) cung cấp cho các ngành kinh tế, doanh nghiệp, tổ chức và cá nhân trong nền kinh tế Việt Nam. Chỉ số này giúp đánh giá mức độ tăng trưởng tín dụng, phản ánh sự phát triển của các hoạt động kinh tế và khả năng tiếp cận vốn của các doanh nghiệp và ngành nghề. Dữ liệu được thống kê từ trang web của SBV, cập nhật định kỳ hàng tháng và có độ trễ từ 2-3 tháng.",
                   "frequency": "Độ trễ từ 1-3 tháng (ngày công bố không cố định)",
-                  "last_updated": "2026-07-22T09:31:43.618Z",
+                  "last_updated": "2026-10-16T09:36:39.571Z",
                   "source": "Ngân hàng Nhà nước - SBV",
                   "note": null,
                   "related_blog": null
@@ -3946,7 +3872,7 @@
                   "unit": "Tỷ VND",
                   "description": "Chỉ số Tín dụng Nông nghiệp, lâm nghiệp và thuỷ sản là một thành phần của Tổng tín dụng trong nền kinh tế, phản ánh tổng số dư nợ tín dụng mà các tổ chức tín dụng (ngân hàng, tổ chức tài chính) cung cấp cho các hoạt động sản xuất của ngành Nông nghiệp, lâm nghiệp và thuỷ sản. Đây là chỉ số quan trọng đánh giá mức độ hỗ trợ tài chính cho sản xuất, kinh doanh và tiêu dùng, cũng như khả năng hấp thụ vốn của nền kinh tế.",
                   "frequency": "Độ trễ từ 1-3 tháng (ngày công bố không cố định)",
-                  "last_updated": "2026-07-22T09:31:43.618Z",
+                  "last_updated": "2026-10-16T09:36:39.571Z",
                   "source": "Ngân hàng Nhà nước - SBV",
                   "note": null,
                   "related_blog": null
@@ -4051,7 +3977,7 @@
                   "unit": "Tỷ VND",
                   "description": "Chỉ số Tín dụng Công nghiệp và xây dựng là một thành phần của Tổng tín dụng trong nền kinh tế, phản ánh tổng số dư nợ tín dụng mà các tổ chức tín dụng (ngân hàng, tổ chức tài chính) cung cấp cho các hoạt động sản xuất của ngành Công nghiệp và xây dựng. Đây là chỉ số quan trọng đánh giá mức độ hỗ trợ tài chính cho sản xuất, kinh doanh và tiêu dùng, cũng như khả năng hấp thụ vốn của nền kinh tế.",
                   "frequency": "Độ trễ từ 1-3 tháng (ngày công bố không cố định)",
-                  "last_updated": "2026-07-22T09:31:43.618Z",
+                  "last_updated": "2026-10-16T09:36:39.571Z",
                   "source": "Ngân hàng Nhà nước - SBV",
                   "note": null,
                   "related_blog": null
@@ -4156,7 +4082,7 @@
                   "unit": "Tỷ VND",
                   "description": "Chỉ số Tín dụng Công nghiệp là một thành phần của Tổng tín dụng trong nền kinh tế, phản ánh tổng số dư nợ tín dụng mà các tổ chức tín dụng (ngân hàng, tổ chức tài chính) cung cấp cho các hoạt động sản xuất của ngành Công nghiệp. Đây là chỉ số quan trọng đánh giá mức độ hỗ trợ tài chính cho sản xuất, kinh doanh và tiêu dùng, cũng như khả năng hấp thụ vốn của nền kinh tế.",
                   "frequency": "Độ trễ từ 1-3 tháng (ngày công bố không cố định)",
-                  "last_updated": "2026-07-22T09:31:43.618Z",
+                  "last_updated": "2026-10-16T09:36:39.571Z",
                   "source": "Ngân hàng Nhà nước - SBV",
                   "note": null,
                   "related_blog": null
@@ -4261,7 +4187,7 @@
                   "unit": "Tỷ VND",
                   "description": "Chỉ số Tín dụng Xây dựng là một thành phần của Tổng tín dụng trong nền kinh tế, phản ánh tổng số dư nợ tín dụng mà các tổ chức tín dụng (ngân hàng, tổ chức tài chính) cung cấp cho các hoạt động sản xuất của ngành Xây dựng. Đây là chỉ số quan trọng đánh giá mức độ hỗ trợ tài chính cho sản xuất, kinh doanh và tiêu dùng, cũng như khả năng hấp thụ vốn của nền kinh tế.",
                   "frequency": "Độ trễ từ 1-3 tháng (ngày công bố không cố định)",
-                  "last_updated": "2026-07-22T09:31:43.618Z",
+                  "last_updated": "2026-10-16T09:36:39.571Z",
                   "source": "Ngân hàng Nhà nước - SBV",
                   "note": null,
                   "related_blog": null
@@ -4366,7 +4292,7 @@
                   "unit": "Tỷ VND",
                   "description": "Chỉ số Tín dụng Hoạt động thương mại, vận tải và viễn thông là một thành phần của Tổng tín dụng trong nền kinh tế, phản ánh tổng số dư nợ tín dụng mà các tổ chức tín dụng (ngân hàng, tổ chức tài chính) cung cấp cho các hoạt động của ngành Hoạt động thương mại, vận tải và viễn thông. Đây là chỉ số quan trọng đánh giá mức độ hỗ trợ tài chính cho sản xuất, kinh doanh và tiêu dùng, cũng như khả năng hấp thụ vốn của nền kinh tế.",
                   "frequency": "Độ trễ từ 1-3 tháng (ngày công bố không cố định)",
-                  "last_updated": "2026-07-22T09:31:43.618Z",
+                  "last_updated": "2026-10-16T09:36:39.571Z",
                   "source": "Ngân hàng Nhà nước - SBV",
                   "note": null,
                   "related_blog": null
@@ -4471,7 +4397,7 @@
                   "unit": "Tỷ VND",
                   "description": "Chỉ số Tín dụng Thương mại là một thành phần của Tổng tín dụng trong nền kinh tế, phản ánh tổng số dư nợ tín dụng mà các tổ chức tín dụng (ngân hàng, tổ chức tài chính) cung cấp cho các hoạt động của ngành Thương mại. Đây là chỉ số quan trọng đánh giá mức độ hỗ trợ tài chính cho sản xuất, kinh doanh và tiêu dùng, cũng như khả năng hấp thụ vốn của nền kinh tế.",
                   "frequency": "Độ trễ từ 1-3 tháng (ngày công bố không cố định)",
-                  "last_updated": "2026-07-22T09:31:43.618Z",
+                  "last_updated": "2026-10-16T09:36:39.571Z",
                   "source": "Ngân hàng Nhà nước - SBV",
                   "note": null,
                   "related_blog": null
@@ -4576,7 +4502,7 @@
                   "unit": "Tỷ VND",
                   "description": "Chỉ số Tín dụng Vận tải và viễn thông là một thành phần của Tổng tín dụng trong nền kinh tế, phản ánh tổng số dư nợ tín dụng mà các tổ chức tín dụng (ngân hàng, tổ chức tài chính) cung cấp cho các hoạt động của ngành Vận tải và viễn thông. Đây là chỉ số quan trọng đánh giá mức độ hỗ trợ tài chính cho sản xuất, kinh doanh và tiêu dùng, cũng như khả năng hấp thụ vốn của nền kinh tế.",
                   "frequency": "Độ trễ từ 1-3 tháng (ngày công bố không cố định)",
-                  "last_updated": "2026-07-22T09:31:43.618Z",
+                  "last_updated": "2026-10-16T09:36:39.571Z",
                   "source": "Ngân hàng Nhà nước - SBV",
                   "note": null,
                   "related_blog": null
@@ -4681,7 +4607,7 @@
                   "unit": "Tỷ VND",
                   "description": "Chỉ số Tín dụng của Các hoạt động dịch vụ khác là một thành phần của Tổng tín dụng trong nền kinh tế, phản ánh tổng số dư nợ tín dụng mà các tổ chức tín dụng (ngân hàng, tổ chức tài chính) cung cấp cho Các hoạt động dịch vụ khác. Đây là chỉ số quan trọng đánh giá mức độ hỗ trợ tài chính cho sản xuất, kinh doanh và tiêu dùng, cũng như khả năng hấp thụ vốn của nền kinh tế.",
                   "frequency": "Độ trễ từ 1-3 tháng (ngày công bố không cố định)",
-                  "last_updated": "2026-07-22T09:31:43.618Z",
+                  "last_updated": "2026-10-16T09:36:39.571Z",
                   "source": "Ngân hàng Nhà nước - SBV",
                   "note": null,
                   "related_blog": null
@@ -4818,7 +4744,7 @@
                   "unit": "%",
                   "description": "Tổng tín dụng trong nền kinh tế là tổng lượng dư nợ tín dụng mà các tổ chức tín dụng (ngân hàng, tổ chức tài chính) cung cấp cho các ngành kinh tế, doanh nghiệp, tổ chức và cá nhân trong nền kinh tế Việt Nam. Chỉ số này giúp đánh giá mức độ tăng trưởng tín dụng, phản ánh sự phát triển của các hoạt động kinh tế và khả năng tiếp cận vốn của các doanh nghiệp và ngành nghề. Dữ liệu được thống kê từ trang web của SBV, cập nhật định kỳ hàng tháng và có độ trễ từ 2-3 tháng.",
                   "frequency": "Độ trễ từ 1-3 tháng (ngày công bố không cố định)",
-                  "last_updated": "2026-07-22T09:31:43.618Z",
+                  "last_updated": "2026-10-16T09:36:39.571Z",
                   "source": "Ngân hàng Nhà nước - SBV",
                   "note": null,
                   "related_blog": null
@@ -4923,7 +4849,7 @@
                   "unit": "%",
                   "description": "Chỉ số Tín dụng Nông nghiệp, lâm nghiệp và thuỷ sản là một thành phần của Tổng tín dụng trong nền kinh tế, phản ánh tổng số dư nợ tín dụng mà các tổ chức tín dụng (ngân hàng, tổ chức tài chính) cung cấp cho các hoạt động sản xuất của ngành Nông nghiệp, lâm nghiệp và thuỷ sản. Đây là chỉ số quan trọng đánh giá mức độ hỗ trợ tài chính cho sản xuất, kinh doanh và tiêu dùng, cũng như khả năng hấp thụ vốn của nền kinh tế.",
                   "frequency": "Độ trễ từ 1-3 tháng (ngày công bố không cố định)",
-                  "last_updated": "2026-07-22T09:31:43.618Z",
+                  "last_updated": "2026-10-16T09:36:39.571Z",
                   "source": "Ngân hàng Nhà nước - SBV",
                   "note": null,
                   "related_blog": null
@@ -5028,7 +4954,7 @@
                   "unit": "%",
                   "description": "Chỉ số Tín dụng Công nghiệp và xây dựng là một thành phần của Tổng tín dụng trong nền kinh tế, phản ánh tổng số dư nợ tín dụng mà các tổ chức tín dụng (ngân hàng, tổ chức tài chính) cung cấp cho các hoạt động sản xuất của ngành Công nghiệp và xây dựng. Đây là chỉ số quan trọng đánh giá mức độ hỗ trợ tài chính cho sản xuất, kinh doanh và tiêu dùng, cũng như khả năng hấp thụ vốn của nền kinh tế.",
                   "frequency": "Độ trễ từ 1-3 tháng (ngày công bố không cố định)",
-                  "last_updated": "2026-07-22T09:31:43.618Z",
+                  "last_updated": "2026-10-16T09:36:39.571Z",
                   "source": "Ngân hàng Nhà nước - SBV",
                   "note": null,
                   "related_blog": null
@@ -5133,7 +5059,7 @@
                   "unit": "%",
                   "description": "Chỉ số Tín dụng Công nghiệp là một thành phần của Tổng tín dụng trong nền kinh tế, phản ánh tổng số dư nợ tín dụng mà các tổ chức tín dụng (ngân hàng, tổ chức tài chính) cung cấp cho các hoạt động sản xuất của ngành Công nghiệp. Đây là chỉ số quan trọng đánh giá mức độ hỗ trợ tài chính cho sản xuất, kinh doanh và tiêu dùng, cũng như khả năng hấp thụ vốn của nền kinh tế.",
                   "frequency": "Độ trễ từ 1-3 tháng (ngày công bố không cố định)",
-                  "last_updated": "2026-07-22T09:31:43.618Z",
+                  "last_updated": "2026-10-16T09:36:39.571Z",
                   "source": "Ngân hàng Nhà nước - SBV",
                   "note": null,
                   "related_blog": null
@@ -5238,7 +5164,7 @@
                   "unit": "%",
                   "description": "Chỉ số Tín dụng Xây dựng là một thành phần của Tổng tín dụng trong nền kinh tế, phản ánh tổng số dư nợ tín dụng mà các tổ chức tín dụng (ngân hàng, tổ chức tài chính) cung cấp cho các hoạt động sản xuất của ngành Xây dựng. Đây là chỉ số quan trọng đánh giá mức độ hỗ trợ tài chính cho sản xuất, kinh doanh và tiêu dùng, cũng như khả năng hấp thụ vốn của nền kinh tế.",
                   "frequency": "Độ trễ từ 1-3 tháng (ngày công bố không cố định)",
-                  "last_updated": "2026-07-22T09:31:43.618Z",
+                  "last_updated": "2026-10-16T09:36:39.571Z",
                   "source": "Ngân hàng Nhà nước - SBV",
                   "note": null,
                   "related_blog": null
@@ -5343,7 +5269,7 @@
                   "unit": "%",
                   "description": "Chỉ số Tín dụng Hoạt động thương mại, vận tải và viễn thông là một thành phần của Tổng tín dụng trong nền kinh tế, phản ánh tổng số dư nợ tín dụng mà các tổ chức tín dụng (ngân hàng, tổ chức tài chính) cung cấp cho các hoạt động của ngành Hoạt động thương mại, vận tải và viễn thông. Đây là chỉ số quan trọng đánh giá mức độ hỗ trợ tài chính cho sản xuất, kinh doanh và tiêu dùng, cũng như khả năng hấp thụ vốn của nền kinh tế.",
                   "frequency": "Độ trễ từ 1-3 tháng (ngày công bố không cố định)",
-                  "last_updated": "2026-07-22T09:31:43.618Z",
+                  "last_updated": "2026-10-16T09:36:39.571Z",
                   "source": "Ngân hàng Nhà nước - SBV",
                   "note": null,
                   "related_blog": null
@@ -5448,7 +5374,7 @@
                   "unit": "%",
                   "description": "Chỉ số Tín dụng Thương mại là một thành phần của Tổng tín dụng trong nền kinh tế, phản ánh tổng số dư nợ tín dụng mà các tổ chức tín dụng (ngân hàng, tổ chức tài chính) cung cấp cho các hoạt động của ngành Thương mại. Đây là chỉ số quan trọng đánh giá mức độ hỗ trợ tài chính cho sản xuất, kinh doanh và tiêu dùng, cũng như khả năng hấp thụ vốn của nền kinh tế.",
                   "frequency": "Độ trễ từ 1-3 tháng (ngày công bố không cố định)",
-                  "last_updated": "2026-07-22T09:31:43.618Z",
+                  "last_updated": "2026-10-16T09:36:39.571Z",
                   "source": "Ngân hàng Nhà nước - SBV",
                   "note": null,
                   "related_blog": null
@@ -5553,7 +5479,7 @@
                   "unit": "%",
                   "description": "Chỉ số Tín dụng Vận tải và viễn thông là một thành phần của Tổng tín dụng trong nền kinh tế, phản ánh tổng số dư nợ tín dụng mà các tổ chức tín dụng (ngân hàng, tổ chức tài chính) cung cấp cho các hoạt động của ngành Vận tải và viễn thông. Đây là chỉ số quan trọng đánh giá mức độ hỗ trợ tài chính cho sản xuất, kinh doanh và tiêu dùng, cũng như khả năng hấp thụ vốn của nền kinh tế.",
                   "frequency": "Độ trễ từ 1-3 tháng (ngày công bố không cố định)",
-                  "last_updated": "2026-07-22T09:31:43.618Z",
+                  "last_updated": "2026-10-16T09:36:39.571Z",
                   "source": "Ngân hàng Nhà nước - SBV",
                   "note": null,
                   "related_blog": null
@@ -5658,7 +5584,7 @@
                   "unit": "%",
                   "description": "Chỉ số Tín dụng của Các hoạt động dịch vụ khác là một thành phần của Tổng tín dụng trong nền kinh tế, phản ánh tổng số dư nợ tín dụng mà các tổ chức tín dụng (ngân hàng, tổ chức tài chính) cung cấp cho Các hoạt động dịch vụ khác. Đây là chỉ số quan trọng đánh giá mức độ hỗ trợ tài chính cho sản xuất, kinh doanh và tiêu dùng, cũng như khả năng hấp thụ vốn của nền kinh tế.",
                   "frequency": "Độ trễ từ 1-3 tháng (ngày công bố không cố định)",
-                  "last_updated": "2026-07-22T09:31:43.618Z",
+                  "last_updated": "2026-10-16T09:36:39.571Z",
                   "source": "Ngân hàng Nhà nước - SBV",
                   "note": null,
                   "related_blog": null

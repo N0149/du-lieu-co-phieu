@@ -18,15 +18,16 @@
     ],
     "unit": "Nghìn tỷ VND",
     "description": "Số liệu vốn đầu tư toàn xã hội từ khu vực nhà nước, tư nhân và FDI.",
-    "updatedAt": "2026-09-19T10:14:22.462Z",
-    "latestPeriod": "06-2026",
-    "latestValue": 1059.51635148
+    "updatedAt": "2026-11-07T06:36:55.008Z",
+    "latestPeriod": "09-2026",
+    "latestValue": 1291.2405558500002
   },
   "datasets": {
     "quarterly": {
       "value": {
         "title": "Vốn đầu tư toàn xã hội",
         "headers": [
+          "09-2026",
           "06-2026",
           "03-2026",
           "12-2025",
@@ -64,8 +65,12 @@
                 "yAxis": 18,
                 "data": [
                   [
+                    1790726400000,
+                    1291.2405558500002
+                  ],
+                  [
                     1782777600000,
-                    1059.51635148
+                    1069.537819
                   ],
                   [
                     1774915200000,
@@ -77,11 +82,11 @@
                   ],
                   [
                     1759190400000,
-                    1102.87467
+                    1106.562742
                   ],
                   [
                     1751241600000,
-                    929.365251046738
+                    924.918089
                   ],
                   [
                     1743379200000,
@@ -146,7 +151,7 @@
                   "unit": "Nghìn tỷ VND",
                   "description": "Chỉ số Tổng Vốn Đầu Tư Phát Triển Toàn Xã Hội (Tổng VĐT PTTXH) là chỉ số kinh tế vĩ mô phản ánh mức độ đầu tư vào phát triển kinh tế, xã hội và hạ tầng quốc gia. Chỉ số này đo lường tổng vốn đầu tư của tất cả các nguồn lực, bao gồm: vốn nhà nước, vốn tư nhân và vốn đầu tư nước ngoài, được sử dụng để phát triển cơ sở hạ tầng, sản xuất, dịch vụ, giáo dục, y tế và các lĩnh vực khác. Dữ liệu được GSO tổng hợp, tính toán dựa trên các báo cáo về vốn đầu tư được các ban ngành và địa phương gửi về.",
                   "frequency": "Ngày 6 tháng đầu tiên của quý sau",
-                  "last_updated": "2026-07-03T06:03:02.452Z",
+                  "last_updated": "2026-10-03T04:50:52.649Z",
                   "source": "Tổng cục Thống kê - GSO",
                   "note": null,
                   "related_blog": null
@@ -165,8 +170,12 @@
                 "yAxis": 18,
                 "data": [
                   [
+                    1790726400000,
+                    317.08655585
+                  ],
+                  [
                     1782777600000,
-                    203.23725148
+                    212.522319
                   ],
                   [
                     1774915200000,
@@ -178,11 +187,11 @@
                   ],
                   [
                     1759190400000,
-                    246.84896
+                    258.13714200000004
                   ],
                   [
                     1751241600000,
-                    182.94246701
+                    178.99558900000002
                   ],
                   [
                     1743379200000,
@@ -247,7 +256,7 @@
                   "unit": "Nghìn tỷ VND",
                   "description": "Chỉ số Vốn Đầu Tư (VĐT) thuộc Ngân Sách Nhà Nước (NSNN) là một phần của Tổng VĐT phát triển toàn xã hội, phản ánh vốn đầu tư được phân bổ từ ngân sách nhà nước để phục vụ các hoạt động phát triển kinh tế - xã hội. Chỉ số này đo lường tổng vốn đầu tư công được triển khai trong một kỳ nhất định, bao gồm các dự án về hạ tầng, giáo dục, y tế, và các lĩnh vực khác. Dữ liệu được GSO tổng hợp, tính toán dựa trên các báo cáo về vốn đầu tư được các ban ngành và địa phương gửi về.",
                   "frequency": "Ngày 6 tháng đầu tiên của quý sau",
-                  "last_updated": "2026-07-03T06:03:02.452Z",
+                  "last_updated": "2026-10-03T04:50:52.649Z",
                   "source": "Tổng cục Thống kê - GSO",
                   "note": null,
                   "related_blog": null
@@ -266,8 +275,12 @@
                 "yAxis": 18,
                 "data": [
                   [
+                    1790726400000,
+                    7.74
+                  ],
+                  [
                     1782777600000,
-                    12.315
+                    6.015
                   ],
                   [
                     1774915200000,
@@ -279,11 +292,11 @@
                   ],
                   [
                     1759190400000,
-                    12.17867
+                    8.17867
                   ],
                   [
                     1751241600000,
-                    11.2855573486402
+                    7.285500000000002
                   ],
                   [
                     1743379200000,
@@ -348,7 +361,7 @@
                   "unit": "Nghìn tỷ VND",
                   "description": "Chỉ số Vốn tín dụng đầu tư theo kế hoạch nhà nước là một phần của Tổng vốn đầu tư phát triển toàn xã hội, phản ánh tổng số vốn mà Nhà nước phân bổ cho các dự án đầu tư. Đây là vốn vay ưu đãi từ ngân sách nhà nước, dành cho các ngành, lĩnh vực quan trọng, chương trình kinh tế lớn, hoặc vùng khó khăn được khuyến khích đầu tư. Dữ liệu được GSO tổng hợp, tính toán dựa trên các báo cáo về vốn đầu tư được các ban ngành và địa phương gửi về.",
                   "frequency": "Ngày 6 tháng đầu tiên của quý sau",
-                  "last_updated": "2026-07-03T06:03:02.452Z",
+                  "last_updated": "2026-10-03T04:50:52.649Z",
                   "source": "Tổng cục Thống kê - GSO",
                   "note": null,
                   "related_blog": null
@@ -367,8 +380,12 @@
                 "yAxis": 18,
                 "data": [
                   [
+                    1790726400000,
+                    39.667
+                  ],
+                  [
                     1782777600000,
-                    35.656
+                    37.27
                   ],
                   [
                     1774915200000,
@@ -380,11 +397,11 @@
                   ],
                   [
                     1759190400000,
-                    34.32909
+                    34.32908
                   ],
                   [
                     1751241600000,
-                    32.6345895167145
+                    32.6345
                   ],
                   [
                     1743379200000,
@@ -449,7 +466,7 @@
                   "unit": "Nghìn tỷ VND",
                   "description": "Chỉ số Vốn vay từ các nguồn khác của chính phủ là một phần của Tổng vốn đầu tư phát triển toàn xã hội, phản ánh nguồn vốn mà Chính phủ Việt Nam huy động từ các tổ chức tín dụng trong và ngoài nước, không bao gồm tín dụng đầu tư của Nhà nước. Nguồn vốn này gồm vay từ ngân hàng thương mại, ngân hàng nước ngoài, tổ chức quốc tế và các tổ chức, cá nhân khác. Vốn vay được sử dụng để đầu tư sản xuất kinh doanh, phát triển kinh tế - xã hội, cơ sở hạ tầng, giáo dục, y tế, đảm bảo hiệu quả và phù hợp với khả năng trả nợ quốc gia.",
                   "frequency": "Ngày 6 tháng đầu tiên của quý sau",
-                  "last_updated": "2026-07-03T06:03:02.452Z",
+                  "last_updated": "2026-10-03T04:50:52.649Z",
                   "source": "Tổng cục Thống kê - GSO",
                   "note": null,
                   "related_blog": null
@@ -468,8 +485,12 @@
                 "yAxis": 18,
                 "data": [
                   [
+                    1790726400000,
+                    21.342
+                  ],
+                  [
                     1782777600000,
-                    20.772
+                    20.53
                   ],
                   [
                     1774915200000,
@@ -481,11 +502,11 @@
                   ],
                   [
                     1759190400000,
-                    18.56438
+                    18.56437
                   ],
                   [
                     1751241600000,
-                    18.478713771079
+                    18.4787
                   ],
                   [
                     1743379200000,
@@ -550,7 +571,7 @@
                   "unit": "Nghìn tỷ VND",
                   "description": "Chỉ số Vốn đầu tư của doanh nghiệp nhà nước (DNNN) là một phần của Tổng vốn đầu tư phát triển toàn xã hội, phản ánh nguồn vốn mà doanh nghiệp nhà nước đã chi đầu tư giúp phát triển kinh tế - xã hội, cơ sở hạ tầng, giáo dục, y tế,… Dữ liệu được GSO tổng hợp, tính toán dựa trên các báo cáo về vốn đầu tư được các ban ngành và địa phương gửi về.",
                   "frequency": "Ngày 6 tháng đầu tiên của quý sau",
-                  "last_updated": "2026-07-03T06:03:02.452Z",
+                  "last_updated": "2026-10-03T04:50:52.649Z",
                   "source": "Tổng cục Thống kê - GSO",
                   "note": null,
                   "related_blog": null
@@ -569,8 +590,12 @@
                 "yAxis": 18,
                 "data": [
                   [
+                    1790726400000,
+                    671.335
+                  ],
+                  [
                     1782777600000,
-                    566.9111
+                    571.399
                   ],
                   [
                     1774915200000,
@@ -582,11 +607,11 @@
                   ],
                   [
                     1759190400000,
-                    584.67943
+                    584.07942
                   ],
                   [
                     1751241600000,
-                    493.295238211684
+                    496.1952
                   ],
                   [
                     1743379200000,
@@ -651,7 +676,7 @@
                   "unit": "Nghìn tỷ VND",
                   "description": "Chỉ số Vốn đầu tư của dân cư và tư nhân là một phần của Tổng vốn đầu tư phát triển toàn xã hội, phản ánh nguồn vốn mà dân cư và khu vực tư nhân đã chi đầu tư giúp phát triển kinh tế - xã hội, cơ sở hạ tầng, giáo dục, y tế,… Dữ liệu được GSO tổng hợp, tính toán dựa trên các báo cáo về vốn đầu tư được các ban ngành và địa phương gửi về.",
                   "frequency": "Ngày 6 tháng đầu tiên của quý sau",
-                  "last_updated": "2026-07-03T06:03:02.452Z",
+                  "last_updated": "2026-10-03T04:50:52.649Z",
                   "source": "Tổng cục Thống kê - GSO",
                   "note": null,
                   "related_blog": null
@@ -670,6 +695,10 @@
                 "yAxis": 18,
                 "data": [
                   [
+                    1790726400000,
+                    203.285
+                  ],
+                  [
                     1782777600000,
                     191.0205
                   ],
@@ -683,11 +712,11 @@
                   ],
                   [
                     1759190400000,
-                    174.94939
+                    174.94929999999997
                   ],
                   [
                     1751241600000,
-                    166.349675333333
+                    166.3496
                   ],
                   [
                     1743379200000,
@@ -752,7 +781,7 @@
                   "unit": "Nghìn tỷ VND",
                   "description": "Chỉ số Vốn FDI là một phần của Tổng vốn đầu tư phát triển toàn xã hội, phản ánh nguồn vốn mà khu vực FDI đã chi đầu tư giúp phát triển kinh tế - xã hội, cơ sở hạ tầng, giáo dục, y tế,… Dữ liệu được GSO tổng hợp, tính toán dựa trên các báo cáo về vốn đầu tư được các ban ngành và địa phương gửi về.",
                   "frequency": "Ngày 6 tháng đầu tiên của quý sau",
-                  "last_updated": "2026-07-03T06:03:02.452Z",
+                  "last_updated": "2026-10-03T04:50:52.649Z",
                   "source": "Tổng cục Thống kê - GSO",
                   "note": null,
                   "related_blog": null
@@ -771,8 +800,12 @@
                 "yAxis": 18,
                 "data": [
                   [
+                    1790726400000,
+                    30.785
+                  ],
+                  [
                     1782777600000,
-                    29.604499999999998
+                    30.781
                   ],
                   [
                     1774915200000,
@@ -784,11 +817,11 @@
                   ],
                   [
                     1759190400000,
-                    31.32476
+                    28.324760000000005
                   ],
                   [
                     1751241600000,
-                    24.3790098552873
+                    24.979000000000003
                   ],
                   [
                     1743379200000,
@@ -853,7 +886,7 @@
                   "unit": "Nghìn tỷ VND",
                   "description": "Chỉ số Vốn huy động khác là một phần của Tổng vốn đầu tư phát triển toàn xã hội, phản ánh nguồn vốn đóng góp tự nguyện, cho, biếu, tặng từ các tổ chức, cá nhân trong và ngoài nước, bổ sung ngoài các nguồn vốn chính. Dữ liệu được GSO tổng hợp, tính toán dựa trên các báo cáo về vốn đầu tư được các ban ngành và địa phương gửi về.",
                   "frequency": "Ngày 6 tháng đầu tiên của quý sau",
-                  "last_updated": "2026-07-03T06:03:02.452Z",
+                  "last_updated": "2026-10-03T04:50:52.649Z",
                   "source": "Tổng cục Thống kê - GSO",
                   "note": null,
                   "related_blog": null
@@ -866,6 +899,7 @@
       "qoq": {
         "title": "Vốn đầu tư toàn xã hội",
         "headers": [
+          "09-2026",
           "06-2026",
           "03-2026",
           "12-2025",
@@ -903,8 +937,12 @@
                 "yAxis": 1,
                 "data": [
                   [
+                    1790726400000,
+                    20.728835662612536
+                  ],
+                  [
                     1782777600000,
-                    41.58952599634582
+                    42.928754818970894
                   ],
                   [
                     1774915200000,
@@ -912,15 +950,15 @@
                   ],
                   [
                     1767139200000,
-                    31.105558893650187
+                    30.668596105687424
                   ],
                   [
                     1759190400000,
-                    18.669669299324397
+                    19.638998864903815
                   ],
                   [
                     1751241600000,
-                    38.103764570423294
+                    37.44291586791641
                   ],
                   [
                     1743379200000,
@@ -985,7 +1023,7 @@
                   "unit": "%",
                   "description": "Chỉ số Tổng Vốn Đầu Tư Phát Triển Toàn Xã Hội (Tổng VĐT PTTXH) là chỉ số kinh tế vĩ mô phản ánh mức độ đầu tư vào phát triển kinh tế, xã hội và hạ tầng quốc gia. Chỉ số này đo lường tổng vốn đầu tư của tất cả các nguồn lực, bao gồm: vốn nhà nước, vốn tư nhân và vốn đầu tư nước ngoài, được sử dụng để phát triển cơ sở hạ tầng, sản xuất, dịch vụ, giáo dục, y tế và các lĩnh vực khác. Dữ liệu được GSO tổng hợp, tính toán dựa trên các báo cáo về vốn đầu tư được các ban ngành và địa phương gửi về.",
                   "frequency": "Ngày 6 tháng đầu tiên của quý sau",
-                  "last_updated": "2026-07-03T06:03:02.452Z",
+                  "last_updated": "2026-10-03T04:50:52.649Z",
                   "source": "Tổng cục Thống kê - GSO",
                   "note": null,
                   "related_blog": null
@@ -1004,8 +1042,12 @@
                 "yAxis": 1,
                 "data": [
                   [
+                    1790726400000,
+                    49.20153202826664
+                  ],
+                  [
                     1782777600000,
-                    53.593681630937276
+                    60.610740237090376
                   ],
                   [
                     1774915200000,
@@ -1013,15 +1055,15 @@
                   ],
                   [
                     1767139200000,
-                    22.354669835351945
+                    17.00417369616649
                   ],
                   [
                     1759190400000,
-                    34.93256324487346
+                    44.21424764830378
                   ],
                   [
                     1751241600000,
-                    53.92111746705157
+                    50.600358303067395
                   ],
                   [
                     1743379200000,
@@ -1086,7 +1128,7 @@
                   "unit": "%",
                   "description": "Chỉ số Vốn Đầu Tư (VĐT) thuộc Ngân Sách Nhà Nước (NSNN) là một phần của Tổng VĐT phát triển toàn xã hội, phản ánh vốn đầu tư được phân bổ từ ngân sách nhà nước để phục vụ các hoạt động phát triển kinh tế - xã hội. Chỉ số này đo lường tổng vốn đầu tư công được triển khai trong một kỳ nhất định, bao gồm các dự án về hạ tầng, giáo dục, y tế, và các lĩnh vực khác. Dữ liệu được GSO tổng hợp, tính toán dựa trên các báo cáo về vốn đầu tư được các ban ngành và địa phương gửi về.",
                   "frequency": "Ngày 6 tháng đầu tiên của quý sau",
-                  "last_updated": "2026-07-03T06:03:02.452Z",
+                  "last_updated": "2026-10-03T04:50:52.649Z",
                   "source": "Tổng cục Thống kê - GSO",
                   "note": null,
                   "related_blog": null
@@ -1105,8 +1147,12 @@
                 "yAxis": 1,
                 "data": [
                   [
+                    1790726400000,
+                    28.67830423940151
+                  ],
+                  [
                     1782777600000,
-                    23.644578313253017
+                    -39.60843373493976
                   ],
                   [
                     1774915200000,
@@ -1114,15 +1160,15 @@
                   ],
                   [
                     1767139200000,
-                    14.752924580434474
+                    70.87594926803501
                   ],
                   [
                     1759190400000,
-                    7.913766451839542
+                    12.259556653627046
                   ],
                   [
                     1751241600000,
-                    24.827670540246498
+                    -19.416297695696546
                   ],
                   [
                     1743379200000,
@@ -1187,7 +1233,7 @@
                   "unit": "%",
                   "description": "Chỉ số Vốn tín dụng đầu tư theo kế hoạch nhà nước là một phần của Tổng vốn đầu tư phát triển toàn xã hội, phản ánh tổng số vốn mà Nhà nước phân bổ cho các dự án đầu tư. Đây là vốn vay ưu đãi từ ngân sách nhà nước, dành cho các ngành, lĩnh vực quan trọng, chương trình kinh tế lớn, hoặc vùng khó khăn được khuyến khích đầu tư. Dữ liệu được GSO tổng hợp, tính toán dựa trên các báo cáo về vốn đầu tư được các ban ngành và địa phương gửi về.",
                   "frequency": "Ngày 6 tháng đầu tiên của quý sau",
-                  "last_updated": "2026-07-03T06:03:02.452Z",
+                  "last_updated": "2026-10-03T04:50:52.649Z",
                   "source": "Tổng cục Thống kê - GSO",
                   "note": null,
                   "related_blog": null
@@ -1206,8 +1252,12 @@
                 "yAxis": 1,
                 "data": [
                   [
+                    1790726400000,
+                    6.43144620338073
+                  ],
+                  [
                     1782777600000,
-                    44.00646203554118
+                    50.52504038772213
                   ],
                   [
                     1774915200000,
@@ -1215,15 +1265,15 @@
                   ],
                   [
                     1767139200000,
-                    52.43159664296374
+                    52.431641046016985
                   ],
                   [
                     1759190400000,
-                    5.192345019132621
+                    5.1926029202224475
                   ],
                   [
                     1751241600000,
-                    44.26302269961792
+                    44.26262698598994
                   ],
                   [
                     1743379200000,
@@ -1288,7 +1338,7 @@
                   "unit": "%",
                   "description": "Chỉ số Vốn vay từ các nguồn khác của chính phủ là một phần của Tổng vốn đầu tư phát triển toàn xã hội, phản ánh nguồn vốn mà Chính phủ Việt Nam huy động từ các tổ chức tín dụng trong và ngoài nước, không bao gồm tín dụng đầu tư của Nhà nước. Nguồn vốn này gồm vay từ ngân hàng thương mại, ngân hàng nước ngoài, tổ chức quốc tế và các tổ chức, cá nhân khác. Vốn vay được sử dụng để đầu tư sản xuất kinh doanh, phát triển kinh tế - xã hội, cơ sở hạ tầng, giáo dục, y tế, đảm bảo hiệu quả và phù hợp với khả năng trả nợ quốc gia.",
                   "frequency": "Ngày 6 tháng đầu tiên của quý sau",
-                  "last_updated": "2026-07-03T06:03:02.452Z",
+                  "last_updated": "2026-10-03T04:50:52.649Z",
                   "source": "Tổng cục Thống kê - GSO",
                   "note": null,
                   "related_blog": null
@@ -1307,8 +1357,12 @@
                 "yAxis": 1,
                 "data": [
                   [
+                    1790726400000,
+                    3.955187530443242
+                  ],
+                  [
                     1782777600000,
-                    23.42245989304813
+                    21.98455139631612
                   ],
                   [
                     1774915200000,
@@ -1316,15 +1370,15 @@
                   ],
                   [
                     1767139200000,
-                    10.01703261837993
+                    10.017091880844866
                   ],
                   [
                     1759190400000,
-                    0.4635941114855912
+                    0.46361486468204127
                   ],
                   [
                     1751241600000,
-                    21.001697750239902
+                    21.001607574919284
                   ],
                   [
                     1743379200000,
@@ -1389,7 +1443,7 @@
                   "unit": "%",
                   "description": "Chỉ số Vốn đầu tư của doanh nghiệp nhà nước (DNNN) là một phần của Tổng vốn đầu tư phát triển toàn xã hội, phản ánh nguồn vốn mà doanh nghiệp nhà nước đã chi đầu tư giúp phát triển kinh tế - xã hội, cơ sở hạ tầng, giáo dục, y tế,… Dữ liệu được GSO tổng hợp, tính toán dựa trên các báo cáo về vốn đầu tư được các ban ngành và địa phương gửi về.",
                   "frequency": "Ngày 6 tháng đầu tiên của quý sau",
-                  "last_updated": "2026-07-03T06:03:02.452Z",
+                  "last_updated": "2026-10-03T04:50:52.649Z",
                   "source": "Tổng cục Thống kê - GSO",
                   "note": null,
                   "related_blog": null
@@ -1408,8 +1462,12 @@
                 "yAxis": 1,
                 "data": [
                   [
+                    1790726400000,
+                    17.48970509223853
+                  ],
+                  [
                     1782777600000,
-                    39.461525215252166
+                    40.56555965559656
                   ],
                   [
                     1774915200000,
@@ -1417,15 +1475,15 @@
                   ],
                   [
                     1767139200000,
-                    35.68704648973198
+                    35.82643435716327
                   ],
                   [
                     1759190400000,
-                    18.52525317690194
+                    17.711622361522245
                   ],
                   [
                     1751241600000,
-                    34.62275088368945
+                    35.41416503724175
                   ],
                   [
                     1743379200000,
@@ -1490,7 +1548,7 @@
                   "unit": "%",
                   "description": "Chỉ số Vốn đầu tư của dân cư và tư nhân là một phần của Tổng vốn đầu tư phát triển toàn xã hội, phản ánh nguồn vốn mà dân cư và khu vực tư nhân đã chi đầu tư giúp phát triển kinh tế - xã hội, cơ sở hạ tầng, giáo dục, y tế,… Dữ liệu được GSO tổng hợp, tính toán dựa trên các báo cáo về vốn đầu tư được các ban ngành và địa phương gửi về.",
                   "frequency": "Ngày 6 tháng đầu tiên của quý sau",
-                  "last_updated": "2026-07-03T06:03:02.452Z",
+                  "last_updated": "2026-10-03T04:50:52.649Z",
                   "source": "Tổng cục Thống kê - GSO",
                   "note": null,
                   "related_blog": null
@@ -1509,6 +1567,10 @@
                 "yAxis": 1,
                 "data": [
                   [
+                    1790726400000,
+                    6.420515075607068
+                  ],
+                  [
                     1782777600000,
                     41.44427989633468
                   ],
@@ -1518,15 +1580,15 @@
                   ],
                   [
                     1767139200000,
-                    24.435941159897727
+                    24.43600517407045
                   ],
                   [
                     1759190400000,
-                    5.169661226831249
+                    5.169654751198654
                   ],
                   [
                     1751241600000,
-                    37.66041821484916
+                    37.66035587377092
                   ],
                   [
                     1743379200000,
@@ -1591,7 +1653,7 @@
                   "unit": "%",
                   "description": "Chỉ số Vốn FDI là một phần của Tổng vốn đầu tư phát triển toàn xã hội, phản ánh nguồn vốn mà khu vực FDI đã chi đầu tư giúp phát triển kinh tế - xã hội, cơ sở hạ tầng, giáo dục, y tế,… Dữ liệu được GSO tổng hợp, tính toán dựa trên các báo cáo về vốn đầu tư được các ban ngành và địa phương gửi về.",
                   "frequency": "Ngày 6 tháng đầu tiên của quý sau",
-                  "last_updated": "2026-07-03T06:03:02.452Z",
+                  "last_updated": "2026-10-03T04:50:52.649Z",
                   "source": "Tổng cục Thống kê - GSO",
                   "note": null,
                   "related_blog": null
@@ -1610,8 +1672,12 @@
                 "yAxis": 1,
                 "data": [
                   [
+                    1790726400000,
+                    0.012995029401258362
+                  ],
+                  [
                     1782777600000,
-                    29.39029720279718
+                    34.53234265734263
                   ],
                   [
                     1774915200000,
@@ -1619,15 +1685,15 @@
                   ],
                   [
                     1767139200000,
-                    47.280521861939235
+                    62.87965017179312
                   ],
                   [
                     1759190400000,
-                    28.49069829309049
+                    13.39429120461188
                   ],
                   [
                     1751241600000,
-                    22.569179765144796
+                    25.585721468074418
                   ],
                   [
                     1743379200000,
@@ -1692,7 +1758,7 @@
                   "unit": "%",
                   "description": "Chỉ số Vốn huy động khác là một phần của Tổng vốn đầu tư phát triển toàn xã hội, phản ánh nguồn vốn đóng góp tự nguyện, cho, biếu, tặng từ các tổ chức, cá nhân trong và ngoài nước, bổ sung ngoài các nguồn vốn chính. Dữ liệu được GSO tổng hợp, tính toán dựa trên các báo cáo về vốn đầu tư được các ban ngành và địa phương gửi về.",
                   "frequency": "Ngày 6 tháng đầu tiên của quý sau",
-                  "last_updated": "2026-07-03T06:03:02.452Z",
+                  "last_updated": "2026-10-03T04:50:52.649Z",
                   "source": "Tổng cục Thống kê - GSO",
                   "note": null,
                   "related_blog": null
@@ -1705,6 +1771,7 @@
       "yoy": {
         "title": "Vốn đầu tư toàn xã hội",
         "headers": [
+          "09-2026",
           "06-2026",
           "03-2026",
           "12-2025",
@@ -1742,8 +1809,12 @@
                 "yAxis": 1,
                 "data": [
                   [
+                    1790726400000,
+                    16.689321521544606
+                  ],
+                  [
                     1782777600000,
-                    14.004300277708213
+                    15.635950006811889
                   ],
                   [
                     1774915200000,
@@ -1755,11 +1826,11 @@
                   ],
                   [
                     1759190400000,
-                    13.601914238576299
+                    13.98180512776474
                   ],
                   [
                     1751241600000,
-                    11.406404517897679
+                    10.873306972688713
                   ],
                   [
                     1743379200000,
@@ -1824,7 +1895,7 @@
                   "unit": "%",
                   "description": "Chỉ số Tổng Vốn Đầu Tư Phát Triển Toàn Xã Hội (Tổng VĐT PTTXH) là chỉ số kinh tế vĩ mô phản ánh mức độ đầu tư vào phát triển kinh tế, xã hội và hạ tầng quốc gia. Chỉ số này đo lường tổng vốn đầu tư của tất cả các nguồn lực, bao gồm: vốn nhà nước, vốn tư nhân và vốn đầu tư nước ngoài, được sử dụng để phát triển cơ sở hạ tầng, sản xuất, dịch vụ, giáo dục, y tế và các lĩnh vực khác. Dữ liệu được GSO tổng hợp, tính toán dựa trên các báo cáo về vốn đầu tư được các ban ngành và địa phương gửi về.",
                   "frequency": "Ngày 6 tháng đầu tiên của quý sau",
-                  "last_updated": "2026-07-03T06:03:02.452Z",
+                  "last_updated": "2026-10-03T04:50:52.649Z",
                   "source": "Tổng cục Thống kê - GSO",
                   "note": null,
                   "related_blog": null
@@ -1843,8 +1914,12 @@
                 "yAxis": 1,
                 "data": [
                   [
+                    1790726400000,
+                    22.836471107284506
+                  ],
+                  [
                     1782777600000,
-                    11.093533831535487
+                    18.730478324803848
                   ],
                   [
                     1774915200000,
@@ -1856,11 +1931,11 @@
                   ],
                   [
                     1759190400000,
-                    31.777074317217917
+                    37.80312197940084
                   ],
                   [
                     1751241600000,
-                    25.865924250279328
+                    23.15043966788001
                   ],
                   [
                     1743379200000,
@@ -1925,7 +2000,7 @@
                   "unit": "%",
                   "description": "Chỉ số Vốn Đầu Tư (VĐT) thuộc Ngân Sách Nhà Nước (NSNN) là một phần của Tổng VĐT phát triển toàn xã hội, phản ánh vốn đầu tư được phân bổ từ ngân sách nhà nước để phục vụ các hoạt động phát triển kinh tế - xã hội. Chỉ số này đo lường tổng vốn đầu tư công được triển khai trong một kỳ nhất định, bao gồm các dự án về hạ tầng, giáo dục, y tế, và các lĩnh vực khác. Dữ liệu được GSO tổng hợp, tính toán dựa trên các báo cáo về vốn đầu tư được các ban ngành và địa phương gửi về.",
                   "frequency": "Ngày 6 tháng đầu tiên của quý sau",
-                  "last_updated": "2026-07-03T06:03:02.452Z",
+                  "last_updated": "2026-10-03T04:50:52.649Z",
                   "source": "Tổng cục Thống kê - GSO",
                   "note": null,
                   "related_blog": null
@@ -1944,8 +2019,12 @@
                 "yAxis": 1,
                 "data": [
                   [
+                    1790726400000,
+                    -5.363586010928429
+                  ],
+                  [
                     1782777600000,
-                    9.12177059189582
+                    -17.438748198476446
                   ],
                   [
                     1774915200000,
@@ -1957,11 +2036,11 @@
                   ],
                   [
                     1759190400000,
-                    7.851573044446848
+                    -27.571530806613026
                   ],
                   [
                     1751241600000,
-                    5.289414001912005
+                    -32.02940696558895
                   ],
                   [
                     1743379200000,
@@ -2026,7 +2105,7 @@
                   "unit": "%",
                   "description": "Chỉ số Vốn tín dụng đầu tư theo kế hoạch nhà nước là một phần của Tổng vốn đầu tư phát triển toàn xã hội, phản ánh tổng số vốn mà Nhà nước phân bổ cho các dự án đầu tư. Đây là vốn vay ưu đãi từ ngân sách nhà nước, dành cho các ngành, lĩnh vực quan trọng, chương trình kinh tế lớn, hoặc vùng khó khăn được khuyến khích đầu tư. Dữ liệu được GSO tổng hợp, tính toán dựa trên các báo cáo về vốn đầu tư được các ban ngành và địa phương gửi về.",
                   "frequency": "Ngày 6 tháng đầu tiên của quý sau",
-                  "last_updated": "2026-07-03T06:03:02.452Z",
+                  "last_updated": "2026-10-03T04:50:52.649Z",
                   "source": "Tổng cục Thống kê - GSO",
                   "note": null,
                   "related_blog": null
@@ -2045,8 +2124,12 @@
                 "yAxis": 1,
                 "data": [
                   [
+                    1790726400000,
+                    15.549266103257075
+                  ],
+                  [
                     1782777600000,
-                    9.258306992763062
+                    14.20429300280378
                   ],
                   [
                     1774915200000,
@@ -2058,11 +2141,11 @@
                   ],
                   [
                     1759190400000,
-                    7.3310265716614555
+                    7.330995306333245
                   ],
                   [
                     1751241600000,
-                    4.8629289049663305
+                    4.86264126583843
                   ],
                   [
                     1743379200000,
@@ -2127,7 +2210,7 @@
                   "unit": "%",
                   "description": "Chỉ số Vốn vay từ các nguồn khác của chính phủ là một phần của Tổng vốn đầu tư phát triển toàn xã hội, phản ánh nguồn vốn mà Chính phủ Việt Nam huy động từ các tổ chức tín dụng trong và ngoài nước, không bao gồm tín dụng đầu tư của Nhà nước. Nguồn vốn này gồm vay từ ngân hàng thương mại, ngân hàng nước ngoài, tổ chức quốc tế và các tổ chức, cá nhân khác. Vốn vay được sử dụng để đầu tư sản xuất kinh doanh, phát triển kinh tế - xã hội, cơ sở hạ tầng, giáo dục, y tế, đảm bảo hiệu quả và phù hợp với khả năng trả nợ quốc gia.",
                   "frequency": "Ngày 6 tháng đầu tiên của quý sau",
-                  "last_updated": "2026-07-03T06:03:02.452Z",
+                  "last_updated": "2026-10-03T04:50:52.649Z",
                   "source": "Tổng cục Thống kê - GSO",
                   "note": null,
                   "related_blog": null
@@ -2146,8 +2229,12 @@
                 "yAxis": 1,
                 "data": [
                   [
+                    1790726400000,
+                    14.962156000984676
+                  ],
+                  [
                     1782777600000,
-                    12.410421295178107
+                    11.100889131811227
                   ],
                   [
                     1774915200000,
@@ -2159,11 +2246,11 @@
                   ],
                   [
                     1759190400000,
-                    8.364104176117564
+                    8.364045804060877
                   ],
                   [
                     1751241600000,
-                    5.071423322746584
+                    5.0713450193057055
                   ],
                   [
                     1743379200000,
@@ -2228,7 +2315,7 @@
                   "unit": "%",
                   "description": "Chỉ số Vốn đầu tư của doanh nghiệp nhà nước (DNNN) là một phần của Tổng vốn đầu tư phát triển toàn xã hội, phản ánh nguồn vốn mà doanh nghiệp nhà nước đã chi đầu tư giúp phát triển kinh tế - xã hội, cơ sở hạ tầng, giáo dục, y tế,… Dữ liệu được GSO tổng hợp, tính toán dựa trên các báo cáo về vốn đầu tư được các ban ngành và địa phương gửi về.",
                   "frequency": "Ngày 6 tháng đầu tiên của quý sau",
-                  "last_updated": "2026-07-03T06:03:02.452Z",
+                  "last_updated": "2026-10-03T04:50:52.649Z",
                   "source": "Tổng cục Thống kê - GSO",
                   "note": null,
                   "related_blog": null
@@ -2247,8 +2334,12 @@
                 "yAxis": 1,
                 "data": [
                   [
+                    1790726400000,
+                    14.938992371962021
+                  ],
+                  [
                     1782777600000,
-                    14.923286520095253
+                    15.156091796131847
                   ],
                   [
                     1774915200000,
@@ -2260,11 +2351,11 @@
                   ],
                   [
                     1759190400000,
-                    8.642084178555427
+                    8.530593447766464
                   ],
                   [
                     1751241600000,
-                    8.04601636933039
+                    8.681192415194356
                   ],
                   [
                     1743379200000,
@@ -2329,7 +2420,7 @@
                   "unit": "%",
                   "description": "Chỉ số Vốn đầu tư của dân cư và tư nhân là một phần của Tổng vốn đầu tư phát triển toàn xã hội, phản ánh nguồn vốn mà dân cư và khu vực tư nhân đã chi đầu tư giúp phát triển kinh tế - xã hội, cơ sở hạ tầng, giáo dục, y tế,… Dữ liệu được GSO tổng hợp, tính toán dựa trên các báo cáo về vốn đầu tư được các ban ngành và địa phương gửi về.",
                   "frequency": "Ngày 6 tháng đầu tiên của quý sau",
-                  "last_updated": "2026-07-03T06:03:02.452Z",
+                  "last_updated": "2026-10-03T04:50:52.649Z",
                   "source": "Tổng cục Thống kê - GSO",
                   "note": null,
                   "related_blog": null
@@ -2348,8 +2439,12 @@
                 "yAxis": 1,
                 "data": [
                   [
+                    1790726400000,
+                    16.196520934922308
+                  ],
+                  [
                     1782777600000,
-                    14.830702024053465
+                    14.83075402645993
                   ],
                   [
                     1774915200000,
@@ -2361,11 +2456,11 @@
                   ],
                   [
                     1759190400000,
-                    12.188638636157952
+                    12.188580922452974
                   ],
                   [
                     1751241600000,
-                    11.551097864769803
+                    11.551047347592744
                   ],
                   [
                     1743379200000,
@@ -2430,7 +2525,7 @@
                   "unit": "%",
                   "description": "Chỉ số Vốn FDI là một phần của Tổng vốn đầu tư phát triển toàn xã hội, phản ánh nguồn vốn mà khu vực FDI đã chi đầu tư giúp phát triển kinh tế - xã hội, cơ sở hạ tầng, giáo dục, y tế,… Dữ liệu được GSO tổng hợp, tính toán dựa trên các báo cáo về vốn đầu tư được các ban ngành và địa phương gửi về.",
                   "frequency": "Ngày 6 tháng đầu tiên của quý sau",
-                  "last_updated": "2026-07-03T06:03:02.452Z",
+                  "last_updated": "2026-10-03T04:50:52.649Z",
                   "source": "Tổng cục Thống kê - GSO",
                   "note": null,
                   "related_blog": null
@@ -2449,8 +2544,12 @@
                 "yAxis": 1,
                 "data": [
                   [
+                    1790726400000,
+                    8.685828229435995
+                  ],
+                  [
                     1782777600000,
-                    21.434382182586457
+                    23.227511109331818
                   ],
                   [
                     1774915200000,
@@ -2462,11 +2561,11 @@
                   ],
                   [
                     1759190400000,
-                    8.088908228645252
+                    -2.262862213839713
                   ],
                   [
                     1751241600000,
-                    2.6334504235433833
+                    5.159355254687727
                   ],
                   [
                     1743379200000,
@@ -2531,7 +2630,7 @@
                   "unit": "%",
                   "description": "Chỉ số Vốn huy động khác là một phần của Tổng vốn đầu tư phát triển toàn xã hội, phản ánh nguồn vốn đóng góp tự nguyện, cho, biếu, tặng từ các tổ chức, cá nhân trong và ngoài nước, bổ sung ngoài các nguồn vốn chính. Dữ liệu được GSO tổng hợp, tính toán dựa trên các báo cáo về vốn đầu tư được các ban ngành và địa phương gửi về.",
                   "frequency": "Ngày 6 tháng đầu tiên của quý sau",
-                  "last_updated": "2026-07-03T06:03:02.452Z",
+                  "last_updated": "2026-10-03T04:50:52.649Z",
                   "source": "Tổng cục Thống kê - GSO",
                   "note": null,
                   "related_blog": null
@@ -2635,7 +2734,7 @@
                   "unit": "Nghìn tỷ VND",
                   "description": "Chỉ số Tổng Vốn Đầu Tư Phát Triển Toàn Xã Hội (Tổng VĐT PTTXH) là chỉ số kinh tế vĩ mô phản ánh mức độ đầu tư vào phát triển kinh tế, xã hội và hạ tầng quốc gia. Chỉ số này đo lường tổng vốn đầu tư của tất cả các nguồn lực, bao gồm: vốn nhà nước, vốn tư nhân và vốn đầu tư nước ngoài, được sử dụng để phát triển cơ sở hạ tầng, sản xuất, dịch vụ, giáo dục, y tế và các lĩnh vực khác. Dữ liệu được GSO tổng hợp, tính toán dựa trên các báo cáo về vốn đầu tư được các ban ngành và địa phương gửi về.",
                   "frequency": "Ngày 6 tháng đầu tiên của quý sau",
-                  "last_updated": "2026-07-03T06:03:02.452Z",
+                  "last_updated": "2026-10-03T04:50:52.649Z",
                   "source": "Tổng cục Thống kê - GSO",
                   "note": null,
                   "related_blog": null
@@ -2712,7 +2811,7 @@
                   "unit": "Nghìn tỷ VND",
                   "description": "Chỉ số Vốn Đầu Tư (VĐT) thuộc Ngân Sách Nhà Nước (NSNN) là một phần của Tổng VĐT phát triển toàn xã hội, phản ánh vốn đầu tư được phân bổ từ ngân sách nhà nước để phục vụ các hoạt động phát triển kinh tế - xã hội. Chỉ số này đo lường tổng vốn đầu tư công được triển khai trong một kỳ nhất định, bao gồm các dự án về hạ tầng, giáo dục, y tế, và các lĩnh vực khác. Dữ liệu được GSO tổng hợp, tính toán dựa trên các báo cáo về vốn đầu tư được các ban ngành và địa phương gửi về.",
                   "frequency": "Ngày 6 tháng đầu tiên của quý sau",
-                  "last_updated": "2026-07-03T06:03:02.452Z",
+                  "last_updated": "2026-10-03T04:50:52.649Z",
                   "source": "Tổng cục Thống kê - GSO",
                   "note": null,
                   "related_blog": null
@@ -2789,7 +2888,7 @@
                   "unit": "Nghìn tỷ VND",
                   "description": "Chỉ số Vốn tín dụng đầu tư theo kế hoạch nhà nước là một phần của Tổng vốn đầu tư phát triển toàn xã hội, phản ánh tổng số vốn mà Nhà nước phân bổ cho các dự án đầu tư. Đây là vốn vay ưu đãi từ ngân sách nhà nước, dành cho các ngành, lĩnh vực quan trọng, chương trình kinh tế lớn, hoặc vùng khó khăn được khuyến khích đầu tư. Dữ liệu được GSO tổng hợp, tính toán dựa trên các báo cáo về vốn đầu tư được các ban ngành và địa phương gửi về.",
                   "frequency": "Ngày 6 tháng đầu tiên của quý sau",
-                  "last_updated": "2026-07-03T06:03:02.452Z",
+                  "last_updated": "2026-10-03T04:50:52.649Z",
                   "source": "Tổng cục Thống kê - GSO",
                   "note": null,
                   "related_blog": null
@@ -2866,7 +2965,7 @@
                   "unit": "Nghìn tỷ VND",
                   "description": "Chỉ số Vốn vay từ các nguồn khác của chính phủ là một phần của Tổng vốn đầu tư phát triển toàn xã hội, phản ánh nguồn vốn mà Chính phủ Việt Nam huy động từ các tổ chức tín dụng trong và ngoài nước, không bao gồm tín dụng đầu tư của Nhà nước. Nguồn vốn này gồm vay từ ngân hàng thương mại, ngân hàng nước ngoài, tổ chức quốc tế và các tổ chức, cá nhân khác. Vốn vay được sử dụng để đầu tư sản xuất kinh doanh, phát triển kinh tế - xã hội, cơ sở hạ tầng, giáo dục, y tế, đảm bảo hiệu quả và phù hợp với khả năng trả nợ quốc gia.",
                   "frequency": "Ngày 6 tháng đầu tiên của quý sau",
-                  "last_updated": "2026-07-03T06:03:02.452Z",
+                  "last_updated": "2026-10-03T04:50:52.649Z",
                   "source": "Tổng cục Thống kê - GSO",
                   "note": null,
                   "related_blog": null
@@ -2943,7 +3042,7 @@
                   "unit": "Nghìn tỷ VND",
                   "description": "Chỉ số Vốn đầu tư của doanh nghiệp nhà nước (DNNN) là một phần của Tổng vốn đầu tư phát triển toàn xã hội, phản ánh nguồn vốn mà doanh nghiệp nhà nước đã chi đầu tư giúp phát triển kinh tế - xã hội, cơ sở hạ tầng, giáo dục, y tế,… Dữ liệu được GSO tổng hợp, tính toán dựa trên các báo cáo về vốn đầu tư được các ban ngành và địa phương gửi về.",
                   "frequency": "Ngày 6 tháng đầu tiên của quý sau",
-                  "last_updated": "2026-07-03T06:03:02.452Z",
+                  "last_updated": "2026-10-03T04:50:52.649Z",
                   "source": "Tổng cục Thống kê - GSO",
                   "note": null,
                   "related_blog": null
@@ -3020,7 +3119,7 @@
                   "unit": "Nghìn tỷ VND",
                   "description": "Chỉ số Vốn đầu tư của dân cư và tư nhân là một phần của Tổng vốn đầu tư phát triển toàn xã hội, phản ánh nguồn vốn mà dân cư và khu vực tư nhân đã chi đầu tư giúp phát triển kinh tế - xã hội, cơ sở hạ tầng, giáo dục, y tế,… Dữ liệu được GSO tổng hợp, tính toán dựa trên các báo cáo về vốn đầu tư được các ban ngành và địa phương gửi về.",
                   "frequency": "Ngày 6 tháng đầu tiên của quý sau",
-                  "last_updated": "2026-07-03T06:03:02.452Z",
+                  "last_updated": "2026-10-03T04:50:52.649Z",
                   "source": "Tổng cục Thống kê - GSO",
                   "note": null,
                   "related_blog": null
@@ -3097,7 +3196,7 @@
                   "unit": "Nghìn tỷ VND",
                   "description": "Chỉ số Vốn FDI là một phần của Tổng vốn đầu tư phát triển toàn xã hội, phản ánh nguồn vốn mà khu vực FDI đã chi đầu tư giúp phát triển kinh tế - xã hội, cơ sở hạ tầng, giáo dục, y tế,… Dữ liệu được GSO tổng hợp, tính toán dựa trên các báo cáo về vốn đầu tư được các ban ngành và địa phương gửi về.",
                   "frequency": "Ngày 6 tháng đầu tiên của quý sau",
-                  "last_updated": "2026-07-03T06:03:02.452Z",
+                  "last_updated": "2026-10-03T04:50:52.649Z",
                   "source": "Tổng cục Thống kê - GSO",
                   "note": null,
                   "related_blog": null
@@ -3174,7 +3273,7 @@
                   "unit": "Nghìn tỷ VND",
                   "description": "Chỉ số Vốn huy động khác là một phần của Tổng vốn đầu tư phát triển toàn xã hội, phản ánh nguồn vốn đóng góp tự nguyện, cho, biếu, tặng từ các tổ chức, cá nhân trong và ngoài nước, bổ sung ngoài các nguồn vốn chính. Dữ liệu được GSO tổng hợp, tính toán dựa trên các báo cáo về vốn đầu tư được các ban ngành và địa phương gửi về.",
                   "frequency": "Ngày 6 tháng đầu tiên của quý sau",
-                  "last_updated": "2026-07-03T06:03:02.452Z",
+                  "last_updated": "2026-10-03T04:50:52.649Z",
                   "source": "Tổng cục Thống kê - GSO",
                   "note": null,
                   "related_blog": null
@@ -3260,19 +3359,19 @@
                   ],
                   [
                     1514678400000,
-                    10.965175456141552
+                    10.961829712160613
                   ],
                   [
                     1483142400000,
-                    9.62578570384447
+                    9.628799459572962
                   ],
                   [
                     1451520000000,
-                    12.108291037232144
+                    12.1052962646337
                   ],
                   [
                     1419984000000,
-                    263.2234505278771
+                    263.22345052787705
                   ]
                 ],
                 "time_frame": "yearly",
@@ -3281,7 +3380,7 @@
                   "unit": "%",
                   "description": "Chỉ số Tổng Vốn Đầu Tư Phát Triển Toàn Xã Hội (Tổng VĐT PTTXH) là chỉ số kinh tế vĩ mô phản ánh mức độ đầu tư vào phát triển kinh tế, xã hội và hạ tầng quốc gia. Chỉ số này đo lường tổng vốn đầu tư của tất cả các nguồn lực, bao gồm: vốn nhà nước, vốn tư nhân và vốn đầu tư nước ngoài, được sử dụng để phát triển cơ sở hạ tầng, sản xuất, dịch vụ, giáo dục, y tế và các lĩnh vực khác. Dữ liệu được GSO tổng hợp, tính toán dựa trên các báo cáo về vốn đầu tư được các ban ngành và địa phương gửi về.",
                   "frequency": "Ngày 6 tháng đầu tiên của quý sau",
-                  "last_updated": "2026-07-03T06:03:02.452Z",
+                  "last_updated": "2026-10-03T04:50:52.649Z",
                   "source": "Tổng cục Thống kê - GSO",
                   "note": null,
                   "related_blog": null
@@ -3333,19 +3432,19 @@
                   ],
                   [
                     1514678400000,
-                    8.407056250172285
+                    8.403808497581625
                   ],
                   [
                     1483142400000,
-                    20.626745519566715
+                    20.626745519566704
                   ],
                   [
                     1451520000000,
-                    7.630380336215881
+                    7.625898051108108
                   ],
                   [
                     1419984000000,
-                    231.17558445249716
+                    231.1755844524972
                   ]
                 ],
                 "time_frame": "yearly",
@@ -3354,7 +3453,7 @@
                   "unit": "%",
                   "description": "Chỉ số Vốn Đầu Tư (VĐT) thuộc Ngân Sách Nhà Nước (NSNN) là một phần của Tổng VĐT phát triển toàn xã hội, phản ánh vốn đầu tư được phân bổ từ ngân sách nhà nước để phục vụ các hoạt động phát triển kinh tế - xã hội. Chỉ số này đo lường tổng vốn đầu tư công được triển khai trong một kỳ nhất định, bao gồm các dự án về hạ tầng, giáo dục, y tế, và các lĩnh vực khác. Dữ liệu được GSO tổng hợp, tính toán dựa trên các báo cáo về vốn đầu tư được các ban ngành và địa phương gửi về.",
                   "frequency": "Ngày 6 tháng đầu tiên của quý sau",
-                  "last_updated": "2026-07-03T06:03:02.452Z",
+                  "last_updated": "2026-10-03T04:50:52.649Z",
                   "source": "Tổng cục Thống kê - GSO",
                   "note": null,
                   "related_blog": null
@@ -3406,19 +3505,19 @@
                   ],
                   [
                     1514678400000,
-                    -11.68972625267587
+                    -11.687868760355736
                   ],
                   [
                     1483142400000,
-                    5.44
+                    5.439719382242148
                   ],
                   [
                     1451520000000,
-                    10.621409463667053
+                    10.618763735124324
                   ],
                   [
                     1419984000000,
-                    309.1033106610272
+                    309.10331066102725
                   ]
                 ],
                 "time_frame": "yearly",
@@ -3427,7 +3526,7 @@
                   "unit": "%",
                   "description": "Chỉ số Vốn tín dụng đầu tư theo kế hoạch nhà nước là một phần của Tổng vốn đầu tư phát triển toàn xã hội, phản ánh tổng số vốn mà Nhà nước phân bổ cho các dự án đầu tư. Đây là vốn vay ưu đãi từ ngân sách nhà nước, dành cho các ngành, lĩnh vực quan trọng, chương trình kinh tế lớn, hoặc vùng khó khăn được khuyến khích đầu tư. Dữ liệu được GSO tổng hợp, tính toán dựa trên các báo cáo về vốn đầu tư được các ban ngành và địa phương gửi về.",
                   "frequency": "Ngày 6 tháng đầu tiên của quý sau",
-                  "last_updated": "2026-07-03T06:03:02.452Z",
+                  "last_updated": "2026-10-03T04:50:52.649Z",
                   "source": "Tổng cục Thống kê - GSO",
                   "note": null,
                   "related_blog": null
@@ -3479,15 +3578,15 @@
                   ],
                   [
                     1514678400000,
-                    34.08852511908928
+                    34.12430312964393
                   ],
                   [
                     1483142400000,
-                    5.184331797235031
+                    5.17046207763145
                   ],
                   [
                     1451520000000,
-                    8.641750312835983
+                    8.641750312835974
                   ],
                   [
                     1419984000000,
@@ -3500,7 +3599,7 @@
                   "unit": "%",
                   "description": "Chỉ số Vốn vay từ các nguồn khác của chính phủ là một phần của Tổng vốn đầu tư phát triển toàn xã hội, phản ánh nguồn vốn mà Chính phủ Việt Nam huy động từ các tổ chức tín dụng trong và ngoài nước, không bao gồm tín dụng đầu tư của Nhà nước. Nguồn vốn này gồm vay từ ngân hàng thương mại, ngân hàng nước ngoài, tổ chức quốc tế và các tổ chức, cá nhân khác. Vốn vay được sử dụng để đầu tư sản xuất kinh doanh, phát triển kinh tế - xã hội, cơ sở hạ tầng, giáo dục, y tế, đảm bảo hiệu quả và phù hợp với khả năng trả nợ quốc gia.",
                   "frequency": "Ngày 6 tháng đầu tiên của quý sau",
-                  "last_updated": "2026-07-03T06:03:02.452Z",
+                  "last_updated": "2026-10-03T04:50:52.649Z",
                   "source": "Tổng cục Thống kê - GSO",
                   "note": null,
                   "related_blog": null
@@ -3552,19 +3651,19 @@
                   ],
                   [
                     1514678400000,
-                    15.20897159401624
+                    15.210865586628916
                   ],
                   [
                     1483142400000,
-                    4.185351270553039
+                    4.183292883975569
                   ],
                   [
                     1451520000000,
-                    11.394287745911292
+                    11.393731526204652
                   ],
                   [
                     1419984000000,
-                    196.33830957194394
+                    196.33260654944468
                   ]
                 ],
                 "time_frame": "yearly",
@@ -3573,7 +3672,7 @@
                   "unit": "%",
                   "description": "Chỉ số Vốn đầu tư của doanh nghiệp nhà nước (DNNN) là một phần của Tổng vốn đầu tư phát triển toàn xã hội, phản ánh nguồn vốn mà doanh nghiệp nhà nước đã chi đầu tư giúp phát triển kinh tế - xã hội, cơ sở hạ tầng, giáo dục, y tế,… Dữ liệu được GSO tổng hợp, tính toán dựa trên các báo cáo về vốn đầu tư được các ban ngành và địa phương gửi về.",
                   "frequency": "Ngày 6 tháng đầu tiên của quý sau",
-                  "last_updated": "2026-07-03T06:03:02.452Z",
+                  "last_updated": "2026-10-03T04:50:52.649Z",
                   "source": "Tổng cục Thống kê - GSO",
                   "note": null,
                   "related_blog": null
@@ -3625,15 +3724,15 @@
                   ],
                   [
                     1514678400000,
-                    15.761864771357924
+                    15.76117927225841
                   ],
                   [
                     1483142400000,
-                    10.226415094339636
+                    10.229156659938884
                   ],
                   [
                     1451520000000,
-                    13.140688724001803
+                    13.13871662136836
                   ],
                   [
                     1419984000000,
@@ -3646,7 +3745,7 @@
                   "unit": "%",
                   "description": "Chỉ số Vốn đầu tư của dân cư và tư nhân là một phần của Tổng vốn đầu tư phát triển toàn xã hội, phản ánh nguồn vốn mà dân cư và khu vực tư nhân đã chi đầu tư giúp phát triển kinh tế - xã hội, cơ sở hạ tầng, giáo dục, y tế,… Dữ liệu được GSO tổng hợp, tính toán dựa trên các báo cáo về vốn đầu tư được các ban ngành và địa phương gửi về.",
                   "frequency": "Ngày 6 tháng đầu tiên của quý sau",
-                  "last_updated": "2026-07-03T06:03:02.452Z",
+                  "last_updated": "2026-10-03T04:50:52.649Z",
                   "source": "Tổng cục Thống kê - GSO",
                   "note": null,
                   "related_blog": null
@@ -3698,19 +3797,19 @@
                   ],
                   [
                     1514678400000,
-                    10.936432432261745
+                    10.936397441004928
                   ],
                   [
                     1483142400000,
-                    11.222885884941824
+                    11.223371126564045
                   ],
                   [
                     1451520000000,
-                    19.723566322867047
+                    19.72262637720821
                   ],
                   [
                     1419984000000,
-                    331.0677641263437
+                    331.1060498668201
                   ]
                 ],
                 "time_frame": "yearly",
@@ -3719,7 +3818,7 @@
                   "unit": "%",
                   "description": "Chỉ số Vốn FDI là một phần của Tổng vốn đầu tư phát triển toàn xã hội, phản ánh nguồn vốn mà khu vực FDI đã chi đầu tư giúp phát triển kinh tế - xã hội, cơ sở hạ tầng, giáo dục, y tế,… Dữ liệu được GSO tổng hợp, tính toán dựa trên các báo cáo về vốn đầu tư được các ban ngành và địa phương gửi về.",
                   "frequency": "Ngày 6 tháng đầu tiên của quý sau",
-                  "last_updated": "2026-07-03T06:03:02.452Z",
+                  "last_updated": "2026-10-03T04:50:52.649Z",
                   "source": "Tổng cục Thống kê - GSO",
                   "note": null,
                   "related_blog": null
@@ -3771,15 +3870,15 @@
                   ],
                   [
                     1514678400000,
-                    -27.40532546836648
+                    -27.405325468366488
                   ],
                   [
                     1483142400000,
-                    1.8867924528301883
+                    1.8983182521242001
                   ],
                   [
                     1451520000000,
-                    3.959648985230557
+                    3.9596489852305607
                   ],
                   [
                     1419984000000,
@@ -3792,7 +3891,7 @@
                   "unit": "%",
                   "description": "Chỉ số Vốn huy động khác là một phần của Tổng vốn đầu tư phát triển toàn xã hội, phản ánh nguồn vốn đóng góp tự nguyện, cho, biếu, tặng từ các tổ chức, cá nhân trong và ngoài nước, bổ sung ngoài các nguồn vốn chính. Dữ liệu được GSO tổng hợp, tính toán dựa trên các báo cáo về vốn đầu tư được các ban ngành và địa phương gửi về.",
                   "frequency": "Ngày 6 tháng đầu tiên của quý sau",
-                  "last_updated": "2026-07-03T06:03:02.452Z",
+                  "last_updated": "2026-10-03T04:50:52.649Z",
                   "source": "Tổng cục Thống kê - GSO",
                   "note": null,
                   "related_blog": null

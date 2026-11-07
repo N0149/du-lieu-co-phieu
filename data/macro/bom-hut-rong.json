@@ -16,8 +16,8 @@
     ],
     "unit": "Tỷ VND",
     "description": "Quy mô bơm hút thanh khoản của Ngân hàng Nhà nước qua thị trường mở OMO.",
-    "updatedAt": "2026-09-19T10:14:29.832Z",
-    "latestPeriod": "01-08-2026",
+    "updatedAt": "2026-11-07T06:37:02.126Z",
+    "latestPeriod": "01-10-2026",
     "latestValue": null
   },
   "datasets": {
@@ -25,6 +25,8 @@
       "value": {
         "title": "OMO - BƠM HÚT RÒNG",
         "headers": [
+          "01-10-2026",
+          "01-09-2026",
           "01-08-2026",
           "01-07-2026",
           "01-06-2026",
@@ -41,9 +43,7 @@
           "01-07-2025",
           "01-06-2025",
           "01-05-2025",
-          "01-04-2025",
-          "01-03-2025",
-          "01-02-2025"
+          "01-04-2025"
         ],
         "parent": [
           {
@@ -60,6 +60,14 @@
                 "dateType": "thang",
                 "yAxis": 17,
                 "data": [
+                  [
+                    1793404800000,
+                    null
+                  ],
+                  [
+                    1790726400000,
+                    null
+                  ],
                   [
                     1788134400000,
                     null
@@ -127,14 +135,6 @@
                   [
                     1745971200000,
                     null
-                  ],
-                  [
-                    1743379200000,
-                    5999.3
-                  ],
-                  [
-                    1740700800000,
-                    23850.3
                   ]
                 ],
                 "time_frame": "monthly",
@@ -143,7 +143,7 @@
                   "unit": "Tỷ VND",
                   "description": "Bơm hút ròng SBV Bills thể hiện sự chênh lệch giữa khối lượng tín phiếu phát hành (hút tiền) và khối lượng tín phiếu đáo hạn (bơm tiền) do Ngân hàng Nhà nước (SBV) thực hiện trong một khoảng thời gian nhất định trên thị trường mở. Khi tổng khối lượng phát hành lớn hơn khối lượng đáo hạn, giá trị âm, SBV ở trạng thái hút ròng, làm giảm thanh khoản hệ thống ngân hàng. Ngược lại, nếu khối lượng đáo hạn vượt khối lượng phát hành,  giá trị dương, SBV ở trạng thái bơm ròng, tăng thanh khoản. Dữ liệu này, được công bố trên trang web SBV, cung cấp thông tin về quy mô điều tiết tiền tệ, lãi suất trúng thầu và kỳ hạn, hỗ trợ đánh giá chính sách tiền tệ và tình hình thanh khoản thị trường của NHNN.",
                   "frequency": "Hàng ngày",
-                  "last_updated": "2026-09-18T02:30:03.233Z",
+                  "last_updated": "2026-11-06T10:13:27.509Z",
                   "source": "Ngân hàng Nhà nước - SBV",
                   "note": null,
                   "related_blog": null
@@ -161,8 +161,16 @@
                 "yAxis": 17,
                 "data": [
                   [
+                    1793404800000,
+                    -27270.32
+                  ],
+                  [
+                    1790726400000,
+                    -86748.04000000002
+                  ],
+                  [
                     1788134400000,
-                    null
+                    64714.62
                   ],
                   [
                     1785456000000,
@@ -227,14 +235,6 @@
                   [
                     1745971200000,
                     -22174.83
-                  ],
-                  [
-                    1743379200000,
-                    24878.28
-                  ],
-                  [
-                    1740700800000,
-                    -64909.21999999999
                   ]
                 ],
                 "time_frame": "monthly",
@@ -243,7 +243,7 @@
                   "unit": "Tỷ VND",
                   "description": "Bơm hút ròng Reverse Repo thể hiện sự chênh lệch giữa khối lượng tiền bơm vào hệ thống ngân hàng thông qua các giao dịch mua kỳ hạn (SBV mua giấy tờ có giá như tín phiếu NHNN hoặc trái phiếu Chính phủ, cam kết bán lại sau một kỳ hạn) và lượng tiền hút ra khi các giao dịch này đáo hạn (tổ chức tín dụng mua lại giấy tờ). Nếu khối lượng phát hành lớn hơn khối lượng đáo hạn, giá trị dương, SBV ở trạng thái bơm ròng, làm tăng thanh khoản. Ngược lại, nếu  giá trị âm, SBV ở trạng thái hút ròng, làm giảm thanh khoản. Dữ liệu này, được công bố trên trang web SBV, cung cấp thông tin về quy mô điều tiết thanh khoản, lãi suất trúng thầu và kỳ hạn, hỗ trợ đánh giá chính sách tiền tệ và tình hình thị trường của NHNN.",
                   "frequency": "Hàng ngày",
-                  "last_updated": "2026-09-18T02:30:03.233Z",
+                  "last_updated": "2026-11-06T10:13:27.509Z",
                   "source": "Ngân hàng Nhà nước - SBV",
                   "note": null,
                   "related_blog": null
@@ -261,8 +261,16 @@
                 "yAxis": 17,
                 "data": [
                   [
+                    1793404800000,
+                    -27270.32
+                  ],
+                  [
+                    1790726400000,
+                    -86748.04000000002
+                  ],
+                  [
                     1788134400000,
-                    null
+                    64714.62
                   ],
                   [
                     1785456000000,
@@ -327,14 +335,6 @@
                   [
                     1745971200000,
                     -22174.83
-                  ],
-                  [
-                    1743379200000,
-                    30877.579999999998
-                  ],
-                  [
-                    1740700800000,
-                    -41058.919999999984
                   ]
                 ],
                 "time_frame": "monthly",
@@ -343,7 +343,7 @@
                   "unit": "Tỷ VND",
                   "description": "Bơm/ hút ròng của NHNN phản ánh trạng thái ròng tổng hợp của các hoạt động điều tiết thanh khoản do Ngân hàng Nhà nước (NHNN) thực hiện trên thị trường mở, bao gồm cả giao dịch tín phiếu (SBV Bills) và mua kỳ hạn (Reverse Repo) trong một khoảng thời gian nhất định. Cụ thể, nó là sự chênh lệch giữa tổng lượng tiền bơm vào hệ thống ngân hàng (thông qua đáo hạn tín phiếu và mua kỳ hạn mới) và tổng lượng tiền hút ra (thông qua phát hành tín phiếu mới và đáo hạn Reverse Repo). Dữ liệu này, được công bố trên trang web SBV, cung cấp cái nhìn toàn diện về quy mô điều tiết tiền tệ, lãi suất trúng thầu và kỳ hạn, hỗ trợ đánh giá chính sách tiền tệ và tình hình thanh khoản thị trường của NHNN.",
                   "frequency": "Hàng ngày",
-                  "last_updated": "2026-09-18T02:30:03.233Z",
+                  "last_updated": "2026-11-06T10:13:27.509Z",
                   "source": "Ngân hàng Nhà nước - SBV",
                   "note": null,
                   "related_blog": null
@@ -360,6 +360,14 @@
                 "dateType": "thang",
                 "yAxis": 17,
                 "data": [
+                  [
+                    1793404800000,
+                    123226.62
+                  ],
+                  [
+                    1790726400000,
+                    150496.94
+                  ],
                   [
                     1788134400000,
                     237244.98
@@ -427,14 +435,6 @@
                   [
                     1745971200000,
                     71374.19
-                  ],
-                  [
-                    1743379200000,
-                    93549.02
-                  ],
-                  [
-                    1740700800000,
-                    62671.44
                   ]
                 ],
                 "time_frame": "monthly",
@@ -443,7 +443,7 @@
                   "unit": "Tỷ VND",
                   "description": "Tổng khối lượng lưu hành phản ánh toàn bộ giá trị các giao dịch tín phiếu (SBV Bills) và mua kỳ hạn (Reverse Repo) do Ngân hàng Nhà nước (NHNN) đang duy trì trên thị trường mở tại một thời điểm nhất định. Đây là tổng số tiền liên quan đến tín phiếu SBV đã phát hành nhưng chưa đáo hạn (đang được tổ chức tín dụng nắm giữ, tương ứng với lượng tiền đã hút) và các giao dịch mua kỳ hạn còn hiệu lực (lượng tiền SBV đã bơm và tổ chức tín dụng chưa mua lại giấy tờ có giá). Dữ liệu này, được công bố trên trang web SBV, thể hiện quy mô thanh khoản đang được điều tiết, bao gồm cả hút và bơm, cung cấp thông tin về tình hình chính sách tiền tệ, lãi suất và kỳ hạn, hỗ trợ đánh giá tác động của NHNN lên thị trường tài chính.",
                   "frequency": "Hàng ngày",
-                  "last_updated": "2026-09-18T02:30:03.233Z",
+                  "last_updated": "2026-11-06T10:13:27.509Z",
                   "source": "Ngân hàng Nhà nước - SBV",
                   "note": null,
                   "related_blog": null
@@ -458,6 +458,7 @@
       "value": {
         "title": "OMO - BƠM HÚT RÒNG",
         "headers": [
+          "01-09-2026",
           "01-06-2026",
           "01-03-2026",
           "01-12-2025",
@@ -493,6 +494,10 @@
                 "dateType": "quy",
                 "yAxis": 17,
                 "data": [
+                  [
+                    1790726400000,
+                    null
+                  ],
                   [
                     1782777600000,
                     null
@@ -576,7 +581,7 @@
                   "unit": "Tỷ VND",
                   "description": "Bơm hút ròng SBV Bills thể hiện sự chênh lệch giữa khối lượng tín phiếu phát hành (hút tiền) và khối lượng tín phiếu đáo hạn (bơm tiền) do Ngân hàng Nhà nước (SBV) thực hiện trong một khoảng thời gian nhất định trên thị trường mở. Khi tổng khối lượng phát hành lớn hơn khối lượng đáo hạn, giá trị âm, SBV ở trạng thái hút ròng, làm giảm thanh khoản hệ thống ngân hàng. Ngược lại, nếu khối lượng đáo hạn vượt khối lượng phát hành,  giá trị dương, SBV ở trạng thái bơm ròng, tăng thanh khoản. Dữ liệu này, được công bố trên trang web SBV, cung cấp thông tin về quy mô điều tiết tiền tệ, lãi suất trúng thầu và kỳ hạn, hỗ trợ đánh giá chính sách tiền tệ và tình hình thanh khoản thị trường của NHNN.",
                   "frequency": "Hàng ngày",
-                  "last_updated": "2026-09-18T02:30:03.233Z",
+                  "last_updated": "2026-11-06T10:13:27.509Z",
                   "source": "Ngân hàng Nhà nước - SBV",
                   "note": null,
                   "related_blog": null
@@ -593,6 +598,10 @@
                 "dateType": "quy",
                 "yAxis": 17,
                 "data": [
+                  [
+                    1790726400000,
+                    -94905.83000000003
+                  ],
                   [
                     1782777600000,
                     -44687.350000000006
@@ -676,7 +685,7 @@
                   "unit": "Tỷ VND",
                   "description": "Bơm hút ròng Reverse Repo thể hiện sự chênh lệch giữa khối lượng tiền bơm vào hệ thống ngân hàng thông qua các giao dịch mua kỳ hạn (SBV mua giấy tờ có giá như tín phiếu NHNN hoặc trái phiếu Chính phủ, cam kết bán lại sau một kỳ hạn) và lượng tiền hút ra khi các giao dịch này đáo hạn (tổ chức tín dụng mua lại giấy tờ). Nếu khối lượng phát hành lớn hơn khối lượng đáo hạn, giá trị dương, SBV ở trạng thái bơm ròng, làm tăng thanh khoản. Ngược lại, nếu  giá trị âm, SBV ở trạng thái hút ròng, làm giảm thanh khoản. Dữ liệu này, được công bố trên trang web SBV, cung cấp thông tin về quy mô điều tiết thanh khoản, lãi suất trúng thầu và kỳ hạn, hỗ trợ đánh giá chính sách tiền tệ và tình hình thị trường của NHNN.",
                   "frequency": "Hàng ngày",
-                  "last_updated": "2026-09-18T02:30:03.233Z",
+                  "last_updated": "2026-11-06T10:13:27.509Z",
                   "source": "Ngân hàng Nhà nước - SBV",
                   "note": null,
                   "related_blog": null
@@ -693,6 +702,10 @@
                 "dateType": "quy",
                 "yAxis": 17,
                 "data": [
+                  [
+                    1790726400000,
+                    -94905.83000000003
+                  ],
                   [
                     1782777600000,
                     -44687.350000000006
@@ -776,7 +789,7 @@
                   "unit": "Tỷ VND",
                   "description": "Bơm/ hút ròng của NHNN phản ánh trạng thái ròng tổng hợp của các hoạt động điều tiết thanh khoản do Ngân hàng Nhà nước (NHNN) thực hiện trên thị trường mở, bao gồm cả giao dịch tín phiếu (SBV Bills) và mua kỳ hạn (Reverse Repo) trong một khoảng thời gian nhất định. Cụ thể, nó là sự chênh lệch giữa tổng lượng tiền bơm vào hệ thống ngân hàng (thông qua đáo hạn tín phiếu và mua kỳ hạn mới) và tổng lượng tiền hút ra (thông qua phát hành tín phiếu mới và đáo hạn Reverse Repo). Dữ liệu này, được công bố trên trang web SBV, cung cấp cái nhìn toàn diện về quy mô điều tiết tiền tệ, lãi suất trúng thầu và kỳ hạn, hỗ trợ đánh giá chính sách tiền tệ và tình hình thanh khoản thị trường của NHNN.",
                   "frequency": "Hàng ngày",
-                  "last_updated": "2026-09-18T02:30:03.233Z",
+                  "last_updated": "2026-11-06T10:13:27.509Z",
                   "source": "Ngân hàng Nhà nước - SBV",
                   "note": null,
                   "related_blog": null
@@ -793,6 +806,10 @@
                 "dateType": "quy",
                 "yAxis": 17,
                 "data": [
+                  [
+                    1790726400000,
+                    150496.94
+                  ],
                   [
                     1782777600000,
                     245402.77
@@ -876,7 +893,7 @@
                   "unit": "Tỷ VND",
                   "description": "Tổng khối lượng lưu hành phản ánh toàn bộ giá trị các giao dịch tín phiếu (SBV Bills) và mua kỳ hạn (Reverse Repo) do Ngân hàng Nhà nước (NHNN) đang duy trì trên thị trường mở tại một thời điểm nhất định. Đây là tổng số tiền liên quan đến tín phiếu SBV đã phát hành nhưng chưa đáo hạn (đang được tổ chức tín dụng nắm giữ, tương ứng với lượng tiền đã hút) và các giao dịch mua kỳ hạn còn hiệu lực (lượng tiền SBV đã bơm và tổ chức tín dụng chưa mua lại giấy tờ có giá). Dữ liệu này, được công bố trên trang web SBV, thể hiện quy mô thanh khoản đang được điều tiết, bao gồm cả hút và bơm, cung cấp thông tin về tình hình chính sách tiền tệ, lãi suất và kỳ hạn, hỗ trợ đánh giá tác động của NHNN lên thị trường tài chính.",
                   "frequency": "Hàng ngày",
-                  "last_updated": "2026-09-18T02:30:03.233Z",
+                  "last_updated": "2026-11-06T10:13:27.509Z",
                   "source": "Ngân hàng Nhà nước - SBV",
                   "note": null,
                   "related_blog": null
