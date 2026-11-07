@@ -49,6 +49,9 @@ const nextConfig = {
       './data/industry_reports_snapshot.json',
       './data/stock_evaluations_summary.json',
       './content/bctc/**/*',
+      './content/nghien_cuu_ai/**/*',
+      './data/nghien_cuu_ai_snapshot.json',
+      './data/nghien_cuu_ai_live_prices.json',
     ],
     '/api/stock/[symbol]/bctc': [
       './content/bctc/**/*',
