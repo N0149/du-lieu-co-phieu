@@ -30,6 +30,7 @@ import { getStockArticles, getStockArticlesAsync } from '@/lib/stock-articles-se
 import { getLocalPriceWeekly, getLocalStockCandles, getStockCandles } from '@/lib/stock-price-history-service'
 import { getCompanyWebsiteMeta } from '@/lib/company-website-service'
 import { getCompanyBctcDocuments } from '@/lib/bctc-document-service'
+import { getAuthenticatedUser } from '@/lib/auth-user-helper'
 
 // Tối ưu hóa bộ nhớ đệm CDN Edge Vercel (ISR) 24 giờ (86400 giây):
 // BCTC và hồ sơ cổ phiếu được lưu cache CDN, giúp tải siêu tốc < 50ms và tiết kiệm hạn mức ISR Vercel
@@ -137,6 +138,7 @@ export default async function StockDetailPage({
     bctcDataCongTyMe,
     availableBctcTickers,
     articlesData,
+    authUser,
   ] = await Promise.all([
     // Nhóm 1: Dữ liệu cốt lõi Tab Tổng quan (luôn tải, 0ms local disk + live quote)
     fetchStockDetailData(ticker, getLocalPriceWeekly(ticker)),
@@ -169,11 +171,14 @@ export default async function StockDetailPage({
     (isBctcTab || isFinancialsTab) ? Promise.resolve(getBctcReport(ticker, 'CongTyMe', targetSsrPeriod)) : Promise.resolve(null),
     Promise.resolve(getAvailableBctcTickers()),
     isArticlesTab ? getStockArticlesAsync(ticker, manifestItem.n) : Promise.resolve(null),
+    getAuthenticatedUser(),
   ])
 
   if (!stockData) {
     notFound()
   }
+
+  const isLoggedIn = Boolean(authUser)
 
   // Tự động chuyển đổi dữ liệu chuỗi năm tài chính sang financials nếu financials đang trống
   if (stockData && (!stockData.financials || stockData.financials.length === 0) && financialChartAnnual?.newFiscalDateYear) {
@@ -301,6 +306,7 @@ export default async function StockDetailPage({
           companyWebsiteMeta={companyWebsiteMeta}
           bctcDocuments={bctcDocuments}
           initialCandles={initialCandles}
+          isLoggedIn={isLoggedIn}
         />
       </main>
     </div>

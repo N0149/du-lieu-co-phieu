@@ -9,6 +9,7 @@ import {
   getBiddingSummaryKPIs,
 } from '@/lib/bidding-service';
 import { BiddingDashboard } from '@/components/bidding/BiddingDashboard';
+import { AuthGate } from '@/components/auth/AuthGate';
 import {
   ChevronRight,
   Gavel,
@@ -25,8 +26,8 @@ export const metadata: Metadata = {
     'Hệ thống đấu thầu Quốc gia: Theo dõi chi tiết các gói thầu trúng kênh ETC của các doanh nghiệp Dược niêm yết (DP1, DTP, DAN, TRA, CDP, DTG) dự phóng kết quả kinh doanh quý 3/2026, cùng tiến độ các đại dự án đầu tư công trọng điểm quy mô ≥ 500 tỷ từ Hệ thống Mua sắm công (Bộ KH&ĐT) và điểm đảo chiều lãi suất vĩ mô.',
 };
 
-export default function DauThauPage() {
-  const contractors = getHealthcareContractors();
+export default async function DauThauPage() {
+      const contractors = getHealthcareContractors();
   const infrastructure = getInfrastructureData();
   const macroForecast = getMacroForecastData();
   const summaryKPIs = getBiddingSummaryKPIs();
@@ -85,12 +86,25 @@ export default function DauThauPage() {
 
         {/* Main Interactive Dashboard */}
         <div className="mx-auto max-w-[1600px] px-4 py-8">
-          <BiddingDashboard
-            contractors={contractors}
-            infrastructure={infrastructure}
-            macroForecast={macroForecast}
-            summaryKPIs={summaryKPIs}
-          />
+          <AuthGate
+            variant="blur"
+            blurHeight={360}
+            title="Mở khóa Dữ Liệu Đấu Thầu Y Tế & 71 Đại Dự Án ĐTC"
+            subtitle="Đăng nhập tài khoản miễn phí để tra cứu chi tiết danh mục gói thầu trúng của DP1, DTP, TRA... và tiến độ 71 dự án đầu tư công."
+            features={[
+              'Bóc tách chi tiết từng gói thầu trúng kênh ETC theo quý',
+              'Tiến độ hấp thụ vốn 71 đại dự án đầu tư công quy mô ≥ 500 tỷ',
+              'Đăng nhập tức thì bằng tài khoản Google',
+            ]}
+            ctaText="Đăng nhập để xem dữ liệu đấu thầu"
+          >
+            <BiddingDashboard
+              contractors={contractors}
+              infrastructure={infrastructure}
+              macroForecast={macroForecast}
+              summaryKPIs={summaryKPIs}
+            />
+          </AuthGate>
         </div>
       </main>
     </div>

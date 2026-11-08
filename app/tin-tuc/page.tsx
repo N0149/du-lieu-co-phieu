@@ -5,7 +5,6 @@ import { getCachedNews, fetchAllRssFeeds, getLastFetchedTime } from '@/lib/rss-n
 import { getLiveMarketDisclosures, getRecentMarketDisclosures } from '@/lib/disclosures'
 import { getUserWatchlist } from '@/lib/watchlist-service'
 import { getInsiderActions } from '@/lib/insider-actions-service'
-import { getCachedChinaNews } from '@/lib/china-news-service'
 import { fetchLiveBctcAlerts } from '@/lib/bctc-alerts-service'
 import manifestRaw from '@/data/longlive_manifest.json'
 
@@ -68,13 +67,11 @@ interface NewsPageProps {
 export default async function NewsPage(props: NewsPageProps) {
   const searchParams = props.searchParams ? await props.searchParams : {}
   const rawTab = searchParams?.tab
-  let defaultTab: any = 'bctc-q3'
+  let defaultTab: any = 'cong-bo'
   if (rawTab === 'cong-bo' || rawTab === 'tai-lieu') {
     defaultTab = 'cong-bo'
   } else if (rawTab === 'giao-dich-noi-bo' || rawTab === 'insider' || rawTab === 'noi-bo') {
     defaultTab = 'giao-dich-noi-bo'
-  } else if (rawTab === 'china' || rawTab === 'trung-quoc') {
-    defaultTab = 'china'
   } else if (rawTab === 'all' || rawTab === 'thi-truong' || rawTab === 'co-phieu') {
     defaultTab = rawTab
   }
@@ -88,7 +85,6 @@ export default async function NewsPage(props: NewsPageProps) {
   ])
   const initialWatchlist = userWatchlistResult.items.map((it) => it.ticker)
   const stockPriceMap = getStockPriceMap()
-  const chinaSnapshot = getCachedChinaNews()
 
   // Calculate trending tickers
   const tickerCounts: Record<string, number> = {}
@@ -115,9 +111,7 @@ export default async function NewsPage(props: NewsPageProps) {
           initialNews={initialNews}
           initialDisclosures={initialDisclosures}
           initialInsiderActions={initialInsiderActions}
-          initialChinaNews={chinaSnapshot.items}
           initialBctcAlerts={initialBctcAlerts}
-          chinaNewsDateStr={chinaSnapshot.dateStr}
           initialTrending={initialTrending}
           stockPriceMap={stockPriceMap}
           defaultTab={defaultTab}

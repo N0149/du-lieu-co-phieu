@@ -20,17 +20,13 @@ import { createClient } from '@/lib/supabase/client'
 import { getUserWatchlist } from '@/lib/watchlist-service'
 import dynamic from 'next/dynamic'
 import type { InsiderActionRecord } from '@/lib/insider-actions-service'
-import type { ChinaNewsItem } from '@/lib/china-news-service'
 import type { BctcAlertItem } from '@/lib/bctc-alerts-service'
+import { AuthGate } from '@/components/auth/AuthGate'
 
-// Lazy load các tab phụ (BCTC, Tin tức Trung Quốc, Giao dịch nội bộ) để giảm tải bundle trang chủ
+// Lazy load các tab phụ (BCTC, Giao dịch nội bộ) để giảm tải bundle trang chủ
 const BctcQ3View = dynamic(
   () => import('@/components/news/bctc-q3-view').then((m) => m.BctcQ3View),
   { ssr: false, loading: () => <div className="p-8 text-center text-xs text-muted-foreground animate-pulse">Đang tải dữ liệu BCTC...</div> }
-)
-const ChinaNewsView = dynamic(
-  () => import('@/components/news/china-news-view').then((m) => m.ChinaNewsView),
-  { ssr: false, loading: () => <div className="p-8 text-center text-xs text-muted-foreground animate-pulse">Đang tải tin tức Trung Quốc...</div> }
 )
 const InsiderActionsView = dynamic(
   () => import('@/components/news/insider-actions-view').then((m) => m.InsiderActionsView),
@@ -49,16 +45,14 @@ export type NewsSnapshotItem = {
   summary?: string
 }
 
-type TabType = 'bctc-q3' | 'cong-bo' | 'giao-dich-noi-bo' | 'all' | 'thi-truong' | 'co-phieu' | 'china' | 'saved'
+type TabType = 'bctc-q3' | 'cong-bo' | 'giao-dich-noi-bo' | 'all' | 'thi-truong' | 'co-phieu' | 'saved'
 
 interface NewsDashboardProps {
   initialNews?: NewsSnapshotItem[]
   initialTrending?: { ticker: string; count: number }[]
   initialDisclosures?: CorporateDisclosure[]
   initialInsiderActions?: InsiderActionRecord[]
-  initialChinaNews?: ChinaNewsItem[]
   initialBctcAlerts?: BctcAlertItem[]
-  chinaNewsDateStr?: string
   stockPriceMap?: Record<string, { px: number | null; w1: number | null }>
   defaultTab?: TabType
   initialWatchlist?: string[]
@@ -119,14 +113,12 @@ export function NewsDashboard({
   initialNews = [],
   initialDisclosures = [],
   initialInsiderActions = [],
-  initialChinaNews = [],
   initialBctcAlerts = [],
-  chinaNewsDateStr = '',
   stockPriceMap = {},
-  defaultTab = 'bctc-q3',
+  defaultTab = 'cong-bo',
   initialWatchlist = [],
 }: NewsDashboardProps) {
-  const [activeTab, setActiveTab] = useState<TabType>(defaultTab || 'bctc-q3')
+  const [activeTab, setActiveTab] = useState<TabType>(defaultTab === 'bctc-q3' ? 'cong-bo' : (defaultTab || 'cong-bo'))
   const [searchQuery, setSearchQuery] = useState('')
   const [selectedSource, setSelectedSource] = useState<string>('all')
   const [savedIds, setSavedIds] = useState<string[]>([])
@@ -134,8 +126,6 @@ export function NewsDashboard({
   const [userWatchlist, setUserWatchlist] = useState<string[]>(initialWatchlist)
   const [news, setNews] = useState<NewsSnapshotItem[]>(initialNews)
   const [disclosures, setDisclosures] = useState<CorporateDisclosure[]>(initialDisclosures)
-  const [chinaNews, setChinaNews] = useState<ChinaNewsItem[]>(initialChinaNews)
-  const [chinaDateStr, setChinaDateStr] = useState<string>(chinaNewsDateStr)
   const [discExchange, setDiscExchange] = useState<string>('ALL')
   const [discImportantOnly, setDiscImportantOnly] = useState<boolean>(false)
   const [isLoading, setIsLoading] = useState(false)
@@ -146,20 +136,6 @@ export function NewsDashboard({
   const [mounted, setMounted] = useState(false)
   const [insiderRefreshTrigger, setInsiderRefreshTrigger] = useState(0)
 
-  // Lazy load China news nếu ban đầu chưa có và người dùng chuyển sang tab china
-  useEffect(() => {
-    if (activeTab === 'china' && chinaNews.length === 0) {
-      fetch('/api/news/china')
-        .then((res) => res.json())
-        .then((data) => {
-          if (data.items) {
-            setChinaNews(data.items)
-            if (data.dateStr) setChinaDateStr(data.dateStr)
-          }
-        })
-        .catch(() => {})
-    }
-  }, [activeTab, chinaNews.length])
 
   useEffect(() => {
     setMounted(true)
@@ -420,7 +396,7 @@ export function NewsDashboard({
       {/* Top Header Navigation */}
       <div className="sticky top-0 z-30 border-b border-[#1f242d] bg-[#0b0d11]/95 backdrop-blur">
         <div className="flex h-12 w-full items-center justify-between px-3 sm:px-4 lg:px-6">
-          {/* Left: Navigation Tabs (BCTC Quý 3 đưa lên ĐẦU TIÊN) */}
+          {/* Left: Navigation Tabs */}
           <div className="flex items-center gap-1.5 overflow-x-auto no-scrollbar py-1">
             <button
               type="button"
@@ -441,7 +417,6 @@ export function NewsDashboard({
                 HOT
               </span>
             </button>
-
             <button
               type="button"
               onClick={() => setActiveTab('cong-bo')}
@@ -508,18 +483,6 @@ export function NewsDashboard({
               Cổ phiếu
             </button>
 
-            <button
-              type="button"
-              onClick={() => setActiveTab('china')}
-              className={cn(
-                'flex items-center gap-1.5 rounded px-3.5 py-1 text-[13px] font-medium transition-all shrink-0 cursor-pointer',
-                activeTab === 'china'
-                  ? 'bg-[#192434] text-cyan-300 font-bold border border-cyan-500/40 shadow-xs'
-                  : 'text-[#8b949e] hover:bg-[#161a22] hover:text-cyan-300'
-              )}
-            >
-              <span>🇨🇳 Trung Quốc (AI & Kinh tế)</span>
-            </button>
 
             {savedIds.length > 0 && (
               <button
@@ -538,7 +501,7 @@ export function NewsDashboard({
           </div>
 
           {/* Right: Search Input & Filter Dropdown (WiData Style) */}
-          {activeTab !== 'china' && activeTab !== 'bctc-q3' ? (
+          {activeTab !== 'bctc-q3' ? (
           <div className="flex items-center gap-3">
             {/* Filter by Source dropdown */}
             <div className="hidden sm:block">
@@ -623,8 +586,8 @@ export function NewsDashboard({
         </div>
       </div>
 
-      {/* Sub-bar bộ lọc nhanh: Watchlist đưa lên ĐẦU TIÊN cho toàn bộ tab (trừ tab Trung Quốc và BCTC Q3) */}
-      {activeTab !== 'china' && activeTab !== 'bctc-q3' && (
+      {/* Sub-bar bộ lọc nhanh: Watchlist đưa lên ĐẦU TIÊN cho toàn bộ tab (trừ tab BCTC Q3) */}
+      {activeTab !== 'bctc-q3' && (
         <div className="border-b border-[#181d26] bg-[#0d1118] px-3 sm:px-4 lg:px-6 py-2">
           <div className="flex items-center justify-between gap-3 overflow-x-auto no-scrollbar">
             <div className="flex items-center gap-2 shrink-0">
@@ -696,23 +659,29 @@ export function NewsDashboard({
             userWatchlist={userWatchlist}
           />
         </div>
-      ) : activeTab === 'china' ? (
-        <ChinaNewsView
-          initialItems={chinaNews}
-          dateStr={chinaDateStr}
-          savedIds={savedIds}
-          onToggleBookmark={toggleBookmark}
-        />
       ) : activeTab === 'giao-dich-noi-bo' ? (
-        <InsiderActionsView
-          initialActions={initialInsiderActions}
-          disclosures={disclosures}
-          userWatchlist={userWatchlist}
-          watchlistOnly={watchlistOnly}
-          searchQuery={searchQuery}
-          onSearchChange={setSearchQuery}
-          refreshTrigger={insiderRefreshTrigger}
-        />
+        <AuthGate
+          variant="blur"
+          blurHeight={420}
+          title="Mở khóa Toàn Bộ Giao Dịch Nội Bộ & Ban Lãnh Đạo"
+          subtitle="Đăng nhập tài khoản miễn phí để theo dõi đầy đủ mọi lệnh đăng ký mua/bán, kết quả khớp lệnh của Chủ tịch, HĐQT và người nội bộ trên cả 3 sàn HOSE, HNX, UPCoM."
+          features={[
+            'Toàn bộ lịch sử giao dịch mua/bán của cổ đông nội bộ & người có liên quan',
+            'Cập nhật tức thì ngay khi Sở GDCK phát hành văn bản công bố thông tin',
+            'Bộ lọc theo khối lượng lớn (> 1.000.000 CP) và phân loại trạng thái',
+          ]}
+          ctaText="Đăng nhập để xem toàn bộ giao dịch nội bộ"
+        >
+          <InsiderActionsView
+            initialActions={initialInsiderActions}
+            disclosures={disclosures}
+            userWatchlist={userWatchlist}
+            watchlistOnly={watchlistOnly}
+            searchQuery={searchQuery}
+            onSearchChange={setSearchQuery}
+            refreshTrigger={insiderRefreshTrigger}
+          />
+        </AuthGate>
       ) : activeTab === 'cong-bo' ? (
         <div className="w-full">
 

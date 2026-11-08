@@ -57,6 +57,9 @@ import type { DetailedBalanceSheetPayload } from '@/lib/balance-sheet-cashflow-s
 import type { CapexFinancialPayload } from '@/lib/capex-financial-service'
 import type { DebtDupontPayload } from '@/lib/debt-dupont-service'
 import type { StockIcbHierarchy } from '@/lib/icb-service'
+import { AuthGate } from '@/components/auth/AuthGate'
+import { useAuth } from '@/lib/use-auth'
+import { AuthModal } from '@/components/auth/AuthModal'
 import type { CompanyWebsiteMeta } from '@/lib/company-website-service'
 import type { BctcCompanyDocumentsPayload } from '@/lib/bctc-document-service'
 
@@ -114,6 +117,7 @@ interface StockDetailViewProps {
   companyWebsiteMeta?: CompanyWebsiteMeta | null
   bctcDocuments?: BctcCompanyDocumentsPayload | null
   initialCandles?: CandleDataPoint[]
+  isLoggedIn?: boolean
 }
 
 function fmt(n: number | null | undefined, dec = 0): string {
@@ -397,7 +401,15 @@ export function StockDetailView({
   companyWebsiteMeta = null,
   bctcDocuments = null,
   initialCandles = [],
+  isLoggedIn = false,
 }: StockDetailViewProps) {
+  const { isLoggedIn: clientIsLoggedIn } = useAuth()
+  const effectiveIsLoggedIn = Boolean(isLoggedIn) || clientIsLoggedIn
+  const [authModalConfig, setAuthModalConfig] = useState<{ open: boolean; title: string; subtitle: string }>({
+    open: false,
+    title: 'Đăng nhập tài khoản',
+    subtitle: '',
+  })
   // Tab đang hiển thị trên thanh nút bấm (cập nhật NGAY LẬP TỨC để phản hồi giao diện không delay)
   const [activeTab, setActiveTab] = useState<StockDetailTab>(() => resolveValidTab(initialTab))
   const [expandedSvgChart, setExpandedSvgChart] = useState<'price' | 'revenue' | 'throughput' | null>(null)
@@ -1127,6 +1139,7 @@ export function StockDetailView({
           evaluationData={evaluationData}
           priceChanges={priceChanges}
           ktplRate={bonusWelfareRate}
+          isLoggedIn={effectiveIsLoggedIn}
         />
       </div>
 
@@ -1302,12 +1315,29 @@ export function StockDetailView({
                     {bonusWelfareRate != null && (
                       <div className="rounded-lg border border-amber-500/30 bg-amber-500/10 p-2.5 col-span-2 sm:col-span-3">
                         <div className="text-[10.5px] uppercase tracking-wider font-bold text-amber-700 dark:text-amber-300 flex items-center justify-between">
-                          <span>Trích Quỹ KTPL</span>
+                          <span>Trích Quỹ KTPL (ĐHĐCĐ)</span>
                           <span className="text-[9px] font-semibold opacity-80">LNST</span>
                         </div>
-                        <div className="mt-0.5 text-xs font-black text-amber-800 dark:text-amber-200">
-                          {bonusWelfareRate}% {adjustedPE != null ? `(P/E sau trích: ${adjustedPE.toFixed(1)}x)` : ''}
-                        </div>
+                        {effectiveIsLoggedIn ? (
+                          <div className="mt-0.5 text-xs font-black text-amber-800 dark:text-amber-200">
+                            {bonusWelfareRate}% {adjustedPE != null ? `(P/E sau trích: ${adjustedPE.toFixed(1)}x)` : ''}
+                          </div>
+                        ) : (
+                          <button
+                            type="button"
+                            onClick={() =>
+                              setAuthModalConfig({
+                                open: true,
+                                title: 'Mở khóa P/E thực tế & Tỷ lệ trích ĐHĐCĐ',
+                                subtitle: 'Đăng nhập tài khoản miễn phí để xem P/E thực sau khi trừ quỹ khen thưởng phúc lợi và tỷ lệ trích ĐHĐCĐ.',
+                              })
+                            }
+                            className="mt-1 flex items-center gap-1.5 text-xs font-bold text-amber-600 dark:text-amber-300 hover:underline cursor-pointer"
+                          >
+                            <span className="rounded bg-amber-500/20 px-1.5 py-0.5 text-[10px]">🔒 Khóa</span>
+                            <span>Đăng nhập để xem</span>
+                          </button>
+                        )}
                       </div>
                     )}
                   </div>
@@ -1442,60 +1472,74 @@ export function StockDetailView({
             </div>
           )}
 
-          {/* Nâng Cấp Hồ Sơ Doanh Nghiệp (Cơ Cấu Cổ Đông, Công Ty Con & Liên Kết, Ban Lãnh Đạo, Giao Dịch Nội Bộ) */}
-          {companyProfileData ? (
-            <CompanyProfileEnhancement symbol={ticker} data={companyProfileData} />
-          ) : shareholderData.items.length > 0 ? (
-            <div className="rounded-2xl border border-border bg-card p-6 shadow-xs space-y-4">
-              <h3 className="text-sm font-bold uppercase tracking-wider text-foreground">
-                Cơ Cấu Cổ Đông Lớn & Sở Hữu
-              </h3>
-              <div className="space-y-3 pt-1">
-                {shareholderData.items.map((sh, idx) => {
-                  const pct = sh.pct || 0
-                  const w = Math.round((pct / shareholderData.maxPct) * 100)
-                  return (
-                    <div
-                      key={idx}
-                      className="flex flex-col gap-1.5 sm:flex-row sm:items-center sm:gap-4"
-                    >
-                      <div className="w-72 truncate text-xs font-semibold text-foreground" title={sh.name}>
-                        {sh.name}
+          {/* Nâng Cấp Hồ Sơ Doanh Nghiệp (Cơ Cấu Cổ Đông, Công Ty Con & Liên Kết, Ban Lãnh Đạo) (GATED 50% VIEW) */}
+          <AuthGate
+            isLoggedIn={effectiveIsLoggedIn}
+            variant="blur"
+            blurHeight={260}
+            title="Mở khóa Toàn Bộ Hồ Sơ Doanh Nghiệp & Ban Lãnh Đạo"
+            subtitle="Đăng nhập tài khoản miễn phí để tra cứu đầy đủ cơ cấu cổ đông lớn, mạng lưới công ty con và lý lịch ban lãnh đạo."
+            features={[
+              'Toàn bộ danh sách cổ đông lớn & tỷ lệ sở hữu chi tiết',
+              'Danh sách mạng lưới công ty con & liên kết trực thuộc',
+              'Lý lịch ban lãnh đạo HĐQT & Ban Giám đốc điều hành',
+            ]}
+            ctaText="Đăng nhập để xem toàn bộ hồ sơ"
+          >
+            {companyProfileData ? (
+              <CompanyProfileEnhancement symbol={ticker} data={companyProfileData} />
+            ) : shareholderData.items.length > 0 ? (
+              <div className="rounded-2xl border border-border bg-card p-6 shadow-xs space-y-4">
+                <h3 className="text-sm font-bold uppercase tracking-wider text-foreground">
+                  Cơ Cấu Cổ Đông Lớn & Sở Hữu
+                </h3>
+                <div className="space-y-3 pt-1">
+                  {shareholderData.items.map((sh, idx) => {
+                    const pct = sh.pct || 0
+                    const w = Math.round((pct / shareholderData.maxPct) * 100)
+                    return (
+                      <div
+                        key={idx}
+                        className="flex flex-col gap-1.5 sm:flex-row sm:items-center sm:gap-4"
+                      >
+                        <div className="w-72 truncate text-xs font-semibold text-foreground" title={sh.name}>
+                          {sh.name}
+                        </div>
+                        <div className="flex-1 rounded-full bg-secondary h-3 overflow-hidden">
+                          <div
+                            style={{ width: `${Math.min(100, Math.max(2, w))}%` }}
+                            className="h-full rounded-full bg-primary transition-all"
+                          />
+                        </div>
+                        <div className="font-mono text-xs font-bold text-primary sm:text-right sm:w-16">
+                          {fmt(pct, 2)}%
+                        </div>
+                      </div>
+                    )
+                  })}
+
+                  {shareholderData.otherPct > 0 && (
+                    <div className="flex flex-col gap-1.5 sm:flex-row sm:items-center sm:gap-4 pt-1">
+                      <div className="w-72 truncate text-xs font-medium text-muted-foreground">
+                        Cổ đông khác (Trôi nổi tự do)
                       </div>
                       <div className="flex-1 rounded-full bg-secondary h-3 overflow-hidden">
                         <div
-                          style={{ width: `${Math.min(100, Math.max(2, w))}%` }}
-                          className="h-full rounded-full bg-primary transition-all"
+                          style={{
+                            width: `${Math.min(100, Math.max(2, Math.round((shareholderData.otherPct / shareholderData.maxPct) * 100)))}%`,
+                          }}
+                          className="h-full rounded-full bg-muted-foreground/50 transition-all"
                         />
                       </div>
-                      <div className="font-mono text-xs font-bold text-primary sm:text-right sm:w-16">
-                        {fmt(pct, 2)}%
+                      <div className="font-mono text-xs font-semibold text-muted-foreground sm:text-right sm:w-16">
+                        {fmt(shareholderData.otherPct, 2)}%
                       </div>
                     </div>
-                  )
-                })}
-
-                {shareholderData.otherPct > 0 && (
-                  <div className="flex flex-col gap-1.5 sm:flex-row sm:items-center sm:gap-4 pt-1">
-                    <div className="w-72 truncate text-xs font-medium text-muted-foreground">
-                      Cổ đông khác (Trôi nổi tự do)
-                    </div>
-                    <div className="flex-1 rounded-full bg-secondary h-3 overflow-hidden">
-                      <div
-                        style={{
-                          width: `${Math.min(100, Math.max(2, Math.round((shareholderData.otherPct / shareholderData.maxPct) * 100)))}%`,
-                        }}
-                        className="h-full rounded-full bg-muted-foreground/50 transition-all"
-                      />
-                    </div>
-                    <div className="font-mono text-xs font-semibold text-muted-foreground sm:text-right sm:w-16">
-                      {fmt(shareholderData.otherPct, 2)}%
-                    </div>
-                  </div>
-                )}
+                  )}
+                </div>
               </div>
-            </div>
-          ) : null}
+            ) : null}
+          </AuthGate>
         </div>
       )}
 
@@ -1504,6 +1548,19 @@ export function StockDetailView({
       {/* ══════════════════════════════════════════════════════════ */}
       {ENABLE_FINANCIAL_CHARTS_TAB && mountedTabs.has('charts') && (
         <div className={cn("space-y-6 animate-in fade-in-50 duration-200", (activeTab !== 'charts' || loadingTab === 'charts') && "hidden")}>
+          <AuthGate
+            isLoggedIn={effectiveIsLoggedIn}
+            variant="blur"
+            blurHeight={360}
+            title="Mở khóa Bộ Biểu Đồ Tài Chính Chuyên Sâu (PRO)"
+            subtitle="Đăng nhập tài khoản miễn phí để xem toàn bộ 9 cụm biểu đồ: Phân tích DuPont 5 yếu tố, bóc tách nợ vay & sức khỏe dòng tiền qua 16 năm."
+            features={[
+              'Bóc tách cấu trúc nợ vay, chi phí lãi vay & sức khỏe dòng tiền',
+              'Mô hình phân tích DuPont đánh giá toàn diện chất lượng ROE',
+              'Đăng nhập miễn phí trong 3 giây bằng Google',
+            ]}
+            ctaText="Đăng nhập để xem trọn bộ biểu đồ PRO"
+          >
           {/* 9 Biểu đồ tài chính chuyên biệt ngành Ngân hàng (Chuỗi thời gian Quý / Năm) */}
           {(financialChartQuarter?.isNganHang || financialChartAnnual?.isNganHang || bankAnalysisData?.isBank) && (financialChartQuarter || financialChartAnnual) && (
             <BankingDetailedFinancialCharts
@@ -1924,6 +1981,7 @@ export function StockDetailView({
               </div>
             </div>
           )}
+          </AuthGate>
         </div>
       )}
 
@@ -1932,18 +1990,32 @@ export function StockDetailView({
       {/* ══════════════════════════════════════════════════════════ */}
       {mountedTabs.has('dividends') && (
         <div className={cn("space-y-5 animate-in fade-in-50 duration-200", (activeTab !== 'dividends' || loadingTab === 'dividends') && "hidden")}>
-          <StockDividendsTab
-            symbol={ticker}
-            companyName={company.name}
-            dividendData={dividendHistory}
-            dividendYield={
-              stockData.valuation.dividend && market.price
-                ? (stockData.valuation.dividend / (market.price * 1000)) * 100
-                : null
-            }
-            currentPrice={market.price ? market.price * 1000 : undefined}
-            companyProfileData={companyProfileData}
-          />
+          <AuthGate
+            isLoggedIn={effectiveIsLoggedIn}
+            variant="blur"
+            blurHeight={350}
+            title="Mở khóa Lịch Sử Cổ Tức & Tăng Vốn Toàn Diện"
+            subtitle="Đăng nhập tài khoản miễn phí để tra cứu toàn bộ lịch sử chi trả cổ tức tiền mặt, cổ phiếu thưởng và tăng vốn qua 16 năm."
+            features={[
+              'Lịch sử chi trả cổ tức tiền mặt & tỷ suất cổ tức thực tế qua các năm',
+              'Lịch sử chia tách, phát hành thưởng và tăng vốn điều lệ',
+              'Đăng nhập miễn phí trong 3 giây bằng tài khoản Google',
+            ]}
+            ctaText="Đăng nhập để xem toàn bộ lịch sử cổ tức"
+          >
+            <StockDividendsTab
+              symbol={ticker}
+              companyName={company.name}
+              dividendData={dividendHistory}
+              dividendYield={
+                stockData.valuation.dividend && market.price
+                  ? (stockData.valuation.dividend / (market.price * 1000)) * 100
+                  : null
+              }
+              currentPrice={market.price ? market.price * 1000 : undefined}
+              companyProfileData={companyProfileData}
+            />
+          </AuthGate>
         </div>
       )}
 
@@ -1979,7 +2051,21 @@ export function StockDetailView({
       {mountedTabs.has('financials') && (
         <div className={cn("space-y-5 animate-in fade-in-50 duration-200", (activeTab !== 'financials' || loadingTab === 'financials') && "hidden")}>
           {/* A. Kế Hoạch Kinh Doanh & Tỷ Lệ Hoàn Thành (1 năm / 3 năm / 5 năm / 10 năm) */}
-          <BusinessPlanComparison ticker={ticker} />
+          <AuthGate
+            isLoggedIn={effectiveIsLoggedIn}
+            variant="blur"
+            blurHeight={130}
+            title="Mở khóa Kế Hoạch Kinh Doanh ĐHĐCĐ 10 Năm"
+            subtitle="Đăng nhập tài khoản miễn phí để so sánh chi tiết kế hoạch ĐHĐCĐ và kết quả thực hiện qua các năm."
+            features={[
+              'So sánh doanh thu, LNST kế hoạch vs thực hiện 10 năm liên tục',
+              'Đánh giá mức độ hoàn thành cam kết của Ban lãnh đạo',
+              'Đăng nhập miễn phí trong 3 giây bằng Google',
+            ]}
+            ctaText="Đăng nhập để xem kế hoạch kinh doanh"
+          >
+            <BusinessPlanComparison ticker={ticker} />
+          </AuthGate>
 
           {/* B. Báo Cáo Tài Chính Chi Tiết 3 Bảng VAS (34 Quý / 16 Năm) */}
           <FinancialStatementsExplorer
@@ -1991,6 +2077,7 @@ export function StockDetailView({
             bctcDataHopNhat={bctcDataHopNhat}
             bctcDataCongTyMe={bctcDataCongTyMe}
             onSelectTab={handleTabChange}
+            isLoggedIn={effectiveIsLoggedIn}
           />
         </div>
       )}
@@ -2000,6 +2087,19 @@ export function StockDetailView({
       {/* ══════════════════════════════════════════════════════════ */}
       {ENABLE_PEERS_TAB && mountedTabs.has('peers') && (
         <div className={cn("space-y-6 animate-in fade-in-50 duration-200", (activeTab !== 'peers' || loadingTab === 'peers') && "hidden")}>
+          <AuthGate
+            isLoggedIn={effectiveIsLoggedIn}
+            variant="blur"
+            blurHeight={380}
+            title="Mở khóa Bảng & Biểu Đồ So Sánh Doanh Nghiệp Cùng Ngành"
+            subtitle="Đăng nhập tài khoản miễn phí để so sánh toàn diện P/E, P/B, ROE, biên lợi nhuận và thị phần với toàn bộ đối thủ trong ngành."
+            features={[
+              'So sánh định giá P/E, P/B, EV/EBITDA với top đối thủ cạnh tranh trực tiếp',
+              'Biểu đồ bong bóng trực quan hóa quy mô vốn hóa vs hiệu quả sinh lời',
+              'Toàn bộ danh sách doanh nghiệp cùng phân ngành ICB',
+            ]}
+            ctaText="Đăng nhập để xem đầy đủ so sánh ngành"
+          >
           {/* A. Bảng & Biểu đồ So Sánh Doanh Nghiệp Cùng Ngành Chuyên Sâu (Chuẩn Ruatichsan) */}
           <PeerComparisonView
             currentTicker={ticker}
@@ -2145,6 +2245,7 @@ export function StockDetailView({
               </div>
             )
           })()}
+          </AuthGate>
         </div>
       )}
 
@@ -2282,12 +2383,26 @@ export function StockDetailView({
       {/* ══════════════════════════════════════════════════════════ */}
       {mountedTabs.has('agm') && (
         <div className={cn("animate-in fade-in-50 duration-200", (activeTab !== 'agm' || loadingTab === 'agm') && "hidden")}>
-          <StockAgmReportView
-            agmData={agmData}
-            ticker={ticker}
-            companyName={company.name}
-            availableTickers={availableAgmTickers}
-          />
+          <AuthGate
+            isLoggedIn={effectiveIsLoggedIn}
+            variant="blur"
+            blurHeight={360}
+            title="Mở khóa Toàn Bộ Nghị Quyết ĐHĐCĐ & Kế Hoạch 2026"
+            subtitle="Đăng nhập tài khoản miễn phí để xem toàn bộ nội dung nghị quyết ĐHĐCĐ, kế hoạch cổ tức, thù lao HĐQT và bóc tách quỹ khen thưởng phúc lợi."
+            features={[
+              'Toàn bộ các tờ trình, nghị quyết và tỷ lệ biểu quyết ĐHĐCĐ',
+              'Kế hoạch chia cổ tức tiền mặt & cổ phiếu năm 2026',
+              'Bóc tách chi tiết tỷ lệ trích quỹ khen thưởng phúc lợi & thưởng ban điều hành',
+            ]}
+            ctaText="Đăng nhập để xem toàn bộ ĐHĐCĐ"
+          >
+            <StockAgmReportView
+              agmData={agmData}
+              ticker={ticker}
+              companyName={company.name}
+              availableTickers={availableAgmTickers}
+            />
+          </AuthGate>
         </div>
       )}
 
@@ -2296,7 +2411,20 @@ export function StockDetailView({
       {/* ══════════════════════════════════════════════════════════ */}
       {(mountedTabs.has('bctc') || mountedTabs.has('bctc-q3') || mountedTabs.has('bctc-ban-nien')) && (
         <div className={cn("animate-in fade-in-50 duration-200", (activeTab !== 'bctc' && activeTab !== 'bctc-q3' && activeTab !== 'bctc-ban-nien' || loadingTab === 'bctc') && "hidden")}>
-          <StockBctcReportView
+          <AuthGate
+            isLoggedIn={effectiveIsLoggedIn}
+            variant="blur"
+            blurHeight={340}
+            title="Mở khóa Thuyết Minh Báo Cáo Tài Chính"
+            subtitle="Đăng nhập tài khoản miễn phí để tra cứu chi tiết các khoản mục tài sản, nợ và thuyết minh BCTC."
+            features={[
+              'Chi tiết danh mục hàng tồn kho, dự án xây dựng dở dang và trích lập dự phòng',
+              'Bóc tách người mua trả tiền trước và nợ phải trả theo từng đối tác',
+              'Đăng nhập tức thì bằng tài khoản Google',
+            ]}
+            ctaText="Đăng nhập để xem toàn bộ thuyết minh BCTC"
+          >
+            <StockBctcReportView
             ticker={ticker}
             companyName={company.name}
             availableTickers={availableBctcTickers}
@@ -2305,6 +2433,7 @@ export function StockDetailView({
             bctcDataHopNhat={bctcDataHopNhat}
             bctcDataCongTyMe={bctcDataCongTyMe}
           />
+          </AuthGate>
         </div>
       )}
 

@@ -1,6 +1,7 @@
 'use client'
 
 import { useState, useEffect, useMemo, useRef, useCallback, Fragment } from 'react'
+import { createPortal } from 'react-dom'
 import { useRouter } from 'next/navigation'
 import {
   Search,
@@ -64,9 +65,53 @@ export function GlobalSearchModal({ open, onClose }: GlobalSearchModalProps) {
   const [activeIndex, setActiveIndex] = useState(0)
   const [recentSearches, setRecentSearches] = useState<RecentSearchItem[]>([])
 
+  const [mounted, setMounted] = useState(false)
+  const modalRef = useRef<HTMLDivElement>(null)
   const inputRef = useRef<HTMLInputElement>(null)
   const listRef = useRef<HTMLUListElement>(null)
   const dataMenuRef = useRef<HTMLDivElement>(null)
+
+  useEffect(() => {
+    setMounted(true)
+  }, [])
+
+  // Đóng modal khi bấm vào bất kỳ khoảng không bên ngoài hoặc phím Esc
+  useEffect(() => {
+    if (!open) return
+
+    function handlePointerDown(e: MouseEvent | TouchEvent) {
+      if (modalRef.current && !modalRef.current.contains(e.target as Node)) {
+        onClose()
+      }
+    }
+
+    function handleGlobalKeyDown(e: KeyboardEvent) {
+      if (e.key === 'Escape') {
+        e.preventDefault()
+        onClose()
+      }
+    }
+
+    document.addEventListener('mousedown', handlePointerDown)
+    document.addEventListener('touchstart', handlePointerDown)
+    window.addEventListener('keydown', handleGlobalKeyDown)
+
+    return () => {
+      document.removeEventListener('mousedown', handlePointerDown)
+      document.removeEventListener('touchstart', handlePointerDown)
+      window.removeEventListener('keydown', handleGlobalKeyDown)
+    }
+  }, [open, onClose])
+
+  // Khóa cuộn trang nền khi mở modal
+  useEffect(() => {
+    if (!open) return
+    const prevOverflow = document.body.style.overflow
+    document.body.style.overflow = 'hidden'
+    return () => {
+      document.body.style.overflow = prevOverflow
+    }
+  }, [open])
 
   // Lắng nghe cập nhật danh sách tìm kiếm gần đây
   useEffect(() => {
@@ -393,19 +438,20 @@ export function GlobalSearchModal({ open, onClose }: GlobalSearchModalProps) {
     ? filteredResults.filter((i) => i.isRecent).length
     : 0
 
-  if (!open) return null
+  if (!open || !mounted) return null
 
-  return (
-    <div className="fixed inset-0 z-50 flex items-start justify-center p-3 pt-12 sm:pt-20">
-      {/* Dark Blurred Backdrop */}
-      <div
-        className="fixed inset-0 bg-black/75 backdrop-blur-sm transition-opacity"
-        onClick={onClose}
-      />
-
+  return createPortal(
+    <div
+      className="fixed inset-0 z-[100] flex items-start justify-center overflow-y-auto bg-black/75 backdrop-blur-sm p-3 pt-12 sm:pt-20 cursor-pointer animate-in fade-in-50 duration-150"
+      onClick={onClose}
+      role="dialog"
+      aria-modal="true"
+    >
       {/* Centered Modal Container */}
       <div
-        className="relative z-50 flex w-full max-w-2xl flex-col overflow-hidden rounded-2xl border border-[#232a36] bg-[#0e1117] text-[#9aa0a6] shadow-2xl transition-all font-sans"
+        ref={modalRef}
+        className="relative z-10 flex w-full max-w-2xl cursor-default flex-col overflow-hidden rounded-2xl border border-[#232a36] bg-[#0e1117] text-[#9aa0a6] shadow-2xl transition-all font-sans my-auto sm:my-0"
+        onClick={(e) => e.stopPropagation()}
         onKeyDown={handleKeyDown}
       >
         {/* Top Search Input Bar */}
@@ -465,6 +511,14 @@ export function GlobalSearchModal({ open, onClose }: GlobalSearchModalProps) {
             title="Thực hiện tìm kiếm"
           >
             <ArrowUp className="size-3" />
+          </button>
+          <button
+            type="button"
+            onClick={onClose}
+            className="ml-1.5 flex size-6 items-center justify-center rounded bg-[#1f242d] text-[#8b949e] hover:bg-[#283142] hover:text-white transition-colors"
+            title="Đóng ô tìm kiếm (Esc)"
+          >
+            <X className="size-3.5" />
           </button>
         </div>
 
@@ -785,10 +839,11 @@ export function GlobalSearchModal({ open, onClose }: GlobalSearchModalProps) {
           <div className="hidden sm:flex items-center gap-2 shrink-0 font-mono text-[10px]">
             <span className="rounded bg-[#161b24] px-1.5 py-0.5">↑↓ di chuyển</span>
             <span className="rounded bg-[#161b24] px-1.5 py-0.5">Enter chọn</span>
-            <span className="rounded bg-[#161b24] px-1.5 py-0.5">Esc đóng</span>
+            <button type="button" onClick={onClose} className="rounded bg-[#161b24] px-1.5 py-0.5 hover:bg-[#1f242d] hover:text-white transition-colors cursor-pointer">Esc đóng</button>
           </div>
         </div>
       </div>
-    </div>
+    </div>,
+    document.body
   )
 }

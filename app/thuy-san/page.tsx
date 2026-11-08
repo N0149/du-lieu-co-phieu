@@ -2,6 +2,7 @@ import React from 'react';
 import { Metadata } from 'next';
 import Link from 'next/link';
 import { SiteHeader } from '@/components/site-header';
+import { AuthGate } from '@/components/auth/AuthGate';
 import dynamic from 'next/dynamic';
 
 const ThuySanDashboard = dynamic(
@@ -30,8 +31,8 @@ export const metadata: Metadata = {
     'Hệ thống dữ liệu ngành Thủy sản kết nối trực tiếp VASEP: Bóc tách kim ngạch xuất khẩu 9 tháng đầu năm, biến động giá nguyên liệu hàng tuần (cá tra, tôm, nghêu) và so sánh kết quả kinh doanh Quý 3/2026 của 12 cổ phiếu niêm yết (VHC, ANV, FMC, MPC, IDI, CAT, ABT, CMX, CCA, KHS, AAM, ACL).',
 };
 
-export default function ThuySanPage() {
-  return (
+export default async function ThuySanPage() {
+      return (
     <div className="flex min-h-screen flex-col bg-[#0f1218] text-[#F0F3F6] selection:bg-emerald-500 selection:text-slate-950">
       {/* Site Header */}
       <SiteHeader />
@@ -88,7 +89,20 @@ export default function ThuySanPage() {
 
         {/* Main Interactive Dashboard */}
         <div className="mx-auto max-w-[1600px] px-4 py-8">
-          <ThuySanDashboard />
+          <AuthGate
+            variant="blur"
+            blurHeight={380}
+            title="Mở khóa Dữ Liệu Thủy Sản VASEP & Giá Nguyên Liệu Tuần"
+            subtitle="Đăng nhập tài khoản miễn phí để xem biến động giá cá tra, tôm và so sánh kết quả kinh doanh 12 cổ phiếu thủy sản."
+            features={[
+              'Diễn biến giá nguyên liệu hàng tuần (cá tra, tôm, nghêu)',
+              'So sánh chi tiết biên lợi nhuận & xuất khẩu 12 cổ phiếu',
+              'Đăng nhập tức thì bằng tài khoản Google',
+            ]}
+            ctaText="Đăng nhập để xem dữ liệu thủy sản"
+          >
+            <ThuySanDashboard />
+          </AuthGate>
         </div>
       </main>
     </div>

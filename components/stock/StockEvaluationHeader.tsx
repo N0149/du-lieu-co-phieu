@@ -3,7 +3,9 @@
 import React from 'react'
 import type { StockEvaluationData } from '@/lib/stock-evaluation-service'
 import type { StockDetailData } from '@/lib/longlivestock'
-import { ArrowDown, ArrowUp, Minus, Sparkles, ChevronDown, ChevronUp, X } from 'lucide-react'
+import { ArrowDown, ArrowUp, Minus, Sparkles, ChevronDown, ChevronUp, X, Lock } from 'lucide-react'
+import { useAuth } from '@/lib/use-auth'
+import { AuthModal } from '@/components/auth/AuthModal'
 import { cn } from '@/lib/utils'
 
 interface StockEvaluationHeaderProps {
@@ -18,6 +20,7 @@ interface StockEvaluationHeaderProps {
   isVip?: boolean
   onToggleVip?: () => void
   onOpenPaywall?: () => void
+  isLoggedIn?: boolean
 }
 
 function fmtNum(n: number | null | undefined, dec = 0): string {
@@ -53,7 +56,19 @@ export function StockEvaluationHeader({
   isVip: isVipProp,
   onToggleVip,
   onOpenPaywall,
+  isLoggedIn: serverIsLoggedIn,
 }: StockEvaluationHeaderProps) {
+  const { isLoggedIn: clientIsLoggedIn } = useAuth()
+  const isAuthenticated = serverIsLoggedIn !== undefined ? serverIsLoggedIn : clientIsLoggedIn
+  const [authModalConfig, setAuthModalConfig] = React.useState<{
+    open: boolean
+    title: string
+    subtitle: string
+  }>({
+    open: false,
+    title: 'Đăng nhập tài khoản',
+    subtitle: '',
+  })
 
   const { market, valuation, ticker, financials = [] } = stockData
 
@@ -415,25 +430,44 @@ export function StockEvaluationHeader({
 
               {/* Điểm nhấn ĐHĐCĐ & P/E thực tế: Đặt liền mạch ngay cạnh giá */}
               {ktplRate != null && (
-                <div
-                  className="inline-flex items-center gap-1.5 rounded-lg border border-amber-500/30 bg-amber-500/10 px-2 py-0.5 text-[11px]"
-                  title="Tỷ lệ trích ngoài cổ đông theo ĐHĐCĐ & P/E thực tế"
-                >
-                  <Sparkles className="size-3 text-amber-500" />
-                  <span className="text-muted-foreground">ĐHĐCĐ:</span>
-                  <span className="font-bold text-amber-600 dark:text-amber-400">
-                    Trích {ktplRate}%
-                  </span>
-                  {adjustedPeVal != null && (
-                    <>
-                      <span className="text-border">|</span>
-                      <span className="text-muted-foreground">P/E thực:</span>
-                      <span className="font-bold text-foreground">
-                        {fmtNum(adjustedPeVal, 1)}x
-                      </span>
-                    </>
-                  )}
-                </div>
+                isAuthenticated ? (
+                  <div
+                    className="inline-flex items-center gap-1.5 rounded-lg border border-amber-500/30 bg-amber-500/10 px-2 py-0.5 text-[11px]"
+                    title="Tỷ lệ trích ngoài cổ đông theo ĐHĐCĐ & P/E thực tế"
+                  >
+                    <Sparkles className="size-3 text-amber-500" />
+                    <span className="text-muted-foreground">ĐHĐCĐ:</span>
+                    <span className="font-bold text-amber-600 dark:text-amber-400">
+                      Trích {ktplRate}%
+                    </span>
+                    {adjustedPeVal != null && (
+                      <>
+                        <span className="text-border">|</span>
+                        <span className="text-muted-foreground">P/E thực:</span>
+                        <span className="font-bold text-foreground">
+                          {fmtNum(adjustedPeVal, 1)}x
+                        </span>
+                      </>
+                    )}
+                  </div>
+                ) : (
+                  <button
+                    type="button"
+                    onClick={() =>
+                      setAuthModalConfig({
+                        open: true,
+                        title: 'Mở khóa P/E thực tế & Tỷ lệ trích ĐHĐCĐ',
+                        subtitle: 'Đăng nhập tài khoản miễn phí để xem P/E thực sau khi trừ quỹ khen thưởng phúc lợi và tỷ lệ trích ĐHĐCĐ.',
+                      })
+                    }
+                    className="inline-flex items-center gap-1.5 rounded-lg border border-amber-500/30 bg-amber-500/10 px-2 py-0.5 text-[11px] text-amber-500 dark:text-amber-400 hover:bg-amber-500/20 transition cursor-pointer"
+                    title="Đăng nhập để xem P/E thực tế & Tỷ lệ trích ngoài cổ đông"
+                  >
+                    <Lock className="size-3 text-amber-500 shrink-0" />
+                    <span className="text-muted-foreground">ĐHĐCĐ:</span>
+                    <span className="font-bold underline underline-offset-2">P/E thực: 🔒 Đăng nhập</span>
+                  </button>
+                )
               )}
             </div>
 
@@ -454,6 +488,46 @@ export function StockEvaluationHeader({
             {compactMetrics.map((item) => {
               // 1. Ô P/E THỰC TẾ & TRÍCH NGOÀI CỔ ĐÔNG (IN ĐẬM NỔI BẬT - ĐẶT KỀ NHAU)
               if (item.isRealPe || item.isKtpl) {
+                if (!isAuthenticated) {
+                  return (
+                    <button
+                      key={item.id}
+                      type="button"
+                      onClick={() =>
+                        setAuthModalConfig({
+                          open: true,
+                          title: item.isRealPe
+                            ? 'Mở khóa P/E thực tế chuẩn xác'
+                            : 'Mở khóa Tỷ lệ trích ngoài cổ đông',
+                          subtitle: item.isRealPe
+                            ? 'P/E chuẩn xác sau khi đã loại trừ Quỹ khen thưởng phúc lợi & Thưởng ban điều hành theo Nghị quyết ĐHĐCĐ.'
+                            : 'Xem tỷ lệ LNST trích cho Quỹ KTPL, Thưởng ban điều hành và Thù lao HĐQT.',
+                        })
+                      }
+                      className="min-w-0 flex flex-col justify-between rounded-xl p-2 sm:p-2.5 border border-amber-500/40 bg-amber-500/[0.08] dark:bg-amber-950/30 hover:bg-amber-500/15 shadow-xs ring-1 ring-amber-500/20 transition-all text-left cursor-pointer group"
+                      title="Đăng nhập tài khoản miễn phí để mở khóa chỉ số này"
+                    >
+                      <div className="flex items-center justify-between gap-1 w-full">
+                        <span className="text-[11px] font-bold text-amber-600 dark:text-amber-400 tracking-tight truncate">
+                          {item.label}
+                        </span>
+                        <span className="inline-flex items-center gap-0.5 rounded px-1 py-0.2 text-[9px] font-bold bg-amber-500/20 text-amber-600 dark:text-amber-300 border border-amber-500/30 shrink-0">
+                          <Lock className="size-2.5" />
+                          <span>Khóa</span>
+                        </span>
+                      </div>
+                      <div className="flex flex-col gap-0.5 mt-1">
+                        <span className="font-sans text-xs sm:text-[13px] font-bold text-amber-500 dark:text-amber-400 flex items-center gap-1 group-hover:underline">
+                          <span>🔒 Đăng nhập</span>
+                        </span>
+                        <span className="text-[9px] text-muted-foreground truncate">
+                          Mở khóa miễn phí
+                        </span>
+                      </div>
+                    </button>
+                  )
+                }
+
                 return (
                   <div
                     key={item.id}
@@ -620,7 +694,33 @@ export function StockEvaluationHeader({
                 </span>
               </div>
 
-              {/* Nội dung 2 mục */}
+              {!isAuthenticated ? (
+                <div className="py-5 text-center space-y-2.5">
+                  <div className="mx-auto flex size-9 items-center justify-center rounded-xl bg-amber-500/15 text-amber-500 border border-amber-500/30">
+                    <Lock className="size-4.5" />
+                  </div>
+                  <div>
+                    <p className="text-xs font-bold text-white">Chỉ số độc quyền theo ĐHĐCĐ</p>
+                    <p className="text-[11px] text-muted-foreground mt-0.5">
+                      P/E thực tế sau trích lập & Tỷ lệ trích ngoài cổ đông.
+                    </p>
+                  </div>
+                  <button
+                    type="button"
+                    onClick={() =>
+                      setAuthModalConfig({
+                        open: true,
+                        title: 'Mở khóa P/E thực tế & Tỷ lệ trích ĐHĐCĐ',
+                        subtitle: 'Đăng nhập tài khoản miễn phí để xem P/E thực sau khi trừ quỹ khen thưởng phúc lợi và tỷ lệ trích ĐHĐCĐ.',
+                      })
+                    }
+                    className="inline-flex items-center gap-1.5 rounded-lg bg-amber-500 px-3.5 py-1.5 text-xs font-bold text-black hover:bg-amber-400 transition cursor-pointer shadow-sm"
+                  >
+                    <span>Đăng nhập để xem</span>
+                  </button>
+                </div>
+              ) : (
+
               <div className="grid grid-cols-2 md:grid-cols-1 gap-2 py-1.5">
                 {/* Mục 1: Tỷ lệ trích ngoài cổ đông */}
                 <div className="min-w-0 flex flex-col">
@@ -659,6 +759,7 @@ export function StockEvaluationHeader({
                   </div>
                 </div>
               </div>
+              )}
 
               {/* Footer nhỏ */}
               <div className="pt-1.5 border-t border-amber-500/20 flex items-center justify-between text-[10px] text-muted-foreground">
@@ -668,6 +769,14 @@ export function StockEvaluationHeader({
             </div>
           </div>
         </div>
+      )}
+      {authModalConfig.open && (
+        <AuthModal
+          open={authModalConfig.open}
+          onClose={() => setAuthModalConfig((prev) => ({ ...prev, open: false }))}
+          title={authModalConfig.title}
+          subtitle={authModalConfig.subtitle}
+        />
       )}
     </div>
   )

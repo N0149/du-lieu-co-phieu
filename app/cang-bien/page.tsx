@@ -13,6 +13,7 @@ import {
 import { PortAuthoritiesStrip } from '@/components/cang-bien/PortAuthoritiesStrip'
 import { MaritimeStockGrid } from '@/components/cang-bien/MaritimeStockGrid'
 import { LivePortCallsTable } from '@/components/cang-bien/LivePortCallsTable'
+import { AuthGate } from '@/components/auth/AuthGate'
 import { MaritimeSubNav } from '@/components/cang-bien/MaritimeSubNav'
 import {
   Anchor,
@@ -38,7 +39,7 @@ export const metadata: Metadata = {
     'Nền tảng tình báo hàng hải và dữ liệu vận hành cảng biển Việt Nam: trọng tải tàu (DWT), số lượt tàu ra/vào theo từng bến và mã cổ phiếu niêm yết (PHP, GMD, DVP, DXP, SGP, PDN, CDN...).',
 }
 
-export default function CangBienPage() {
+export default async function CangBienPage() {
   const summary = getDashboardSummary()
   const mapData = getNationalMap()
   const trafficData = getNationalTraffic()
@@ -204,7 +205,20 @@ export default function CangBienPage() {
 
         {/* Section 2: Live Port Calls Table (Full Width) */}
         <section className="space-y-4">
-          <LivePortCallsTable calls={liveCalls} />
+          <AuthGate
+            variant="blur"
+            blurHeight={280}
+            title="Mở khóa Danh Sách Tàu Cập Cảng Thời Gian Thực"
+            subtitle="Đăng nhập tài khoản miễn phí để theo dõi hơn 100+ chuyến tàu cập cảng, mớn nước & trọng tải DWT mỗi ngày."
+            features={[
+              'Chi tiết tên tàu, quốc tịch, mớn nước & trọng tải DWT',
+              'Lịch sử điều động theo từng bến cầu của PHP, GMD, DVP...',
+              'Đăng nhập tức thì bằng tài khoản Google',
+            ]}
+            ctaText="Đăng nhập để xem danh sách tàu"
+          >
+            <LivePortCallsTable calls={liveCalls} />
+          </AuthGate>
         </section>
 
         {/* Section 3: 15 Port Authorities Summary (Collapsible) */}

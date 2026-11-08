@@ -12,7 +12,11 @@ import {
   ChevronLeft,
   ChevronRight,
   SlidersHorizontal,
+  Lock,
+  Sparkles,
 } from 'lucide-react'
+import { useAuth } from '@/lib/use-auth'
+import { AuthModal } from '@/components/auth/AuthModal'
 import type { ScreenerStockItem } from '@/lib/screener-data-service'
 import { cn } from '@/lib/utils'
 import {
@@ -143,6 +147,16 @@ export function ScreenerResultsTable({
   const [sortCriterionId, setSortCriterionId] = useState<string>('ticker')
   const [sortOrder, setSortOrder] = useState<'asc' | 'desc'>('asc')
   const [currentPage, setCurrentPage] = useState(1)
+  const { isLoggedIn } = useAuth()
+  const [authModalConfig, setAuthModalConfig] = useState<{
+    open: boolean
+    title: string
+    subtitle: string
+  }>({
+    open: false,
+    title: 'Đăng nhập tài khoản',
+    subtitle: '',
+  })
   const [copied, setCopied] = useState(false)
 
   // Lấy danh sách các tiêu chí lọc đang được chọn ở khung trên
@@ -210,10 +224,11 @@ export function ScreenerResultsTable({
 
   const totalPages = Math.max(1, Math.ceil(sortedStocks.length / PAGE_SIZE))
   const safePage = Math.min(currentPage, totalPages)
-  const pageRows = sortedStocks.slice(
+  const rawPageRows = sortedStocks.slice(
     (safePage - 1) * PAGE_SIZE,
     safePage * PAGE_SIZE,
   )
+  const pageRows = !isLoggedIn ? rawPageRows.slice(0, 10) : rawPageRows
 
   const handleSort = (criterionId: string) => {
     if (sortCriterionId === criterionId) {
@@ -231,6 +246,14 @@ export function ScreenerResultsTable({
 
   // Sao chép danh sách mã cổ phiếu
   const handleCopyTickers = () => {
+    if (!isLoggedIn) {
+      setAuthModalConfig({
+        open: true,
+        title: 'Đăng nhập để sao chép danh sách mã',
+        subtitle: 'Đăng nhập miễn phí bằng Google để sao chép toàn bộ danh sách mã thỏa mãn bộ lọc.',
+      })
+      return;
+    }
     const text = sortedStocks.map((s) => s.ticker).join(', ')
     if (!text) return
     navigator.clipboard.writeText(text).then(() => {
@@ -241,6 +264,14 @@ export function ScreenerResultsTable({
 
   // Xuất file CSV đồng bộ đúng các cột tiêu chí đang lọc
   const handleExportCsv = () => {
+    if (!isLoggedIn) {
+      setAuthModalConfig({
+        open: true,
+        title: 'Đăng nhập để xuất file CSV',
+        subtitle: 'Đăng nhập miễn phí để tải toàn bộ bảng số liệu 1.530+ mã về máy tính.',
+      })
+      return;
+    }
     if (sortedStocks.length === 0) return
     const headers = [
       'Mã CK',
@@ -433,6 +464,44 @@ export function ScreenerResultsTable({
           </tbody>
         </table>
       </div>
+
+      {/* Banner mở khóa kết quả cho khách vãng lai */}
+      {!isLoggedIn && (
+        <div className="border-t border-emerald-500/20 bg-emerald-500/10 px-4 py-3 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs">
+          <div className="flex items-center gap-2.5">
+            <div className="flex size-7 shrink-0 items-center justify-center rounded-lg bg-emerald-500/20 text-emerald-400 border border-emerald-500/30">
+              <Lock className="size-3.5" />
+            </div>
+            <div>
+              <p className="font-bold text-white">Bạn đang xem 10 mã đầu tiên của bộ lọc</p>
+              <p className="text-[#9EACB9] text-[11px]">Đăng nhập tài khoản miễn phí để xem toàn bộ danh sách hơn 1.530 mã và xuất file CSV.</p>
+            </div>
+          </div>
+          <button
+            type="button"
+            onClick={() =>
+              setAuthModalConfig({
+                open: true,
+                title: 'Mở khóa toàn bộ kết quả bộ lọc',
+                subtitle: 'Đăng nhập tài khoản miễn phí bằng Google để xem toàn bộ danh sách và xuất file CSV.',
+              })
+            }
+            className="shrink-0 inline-flex items-center gap-1.5 rounded-lg bg-emerald-500 px-3.5 py-1.5 font-bold text-black hover:bg-emerald-400 transition cursor-pointer shadow-sm text-xs"
+          >
+            <Sparkles className="size-3 text-black" />
+            <span>Đăng nhập miễn phí</span>
+          </button>
+        </div>
+      )}
+
+      {authModalConfig.open && (
+        <AuthModal
+          open={authModalConfig.open}
+          onClose={() => setAuthModalConfig((prev) => ({ ...prev, open: false }))}
+          title={authModalConfig.title}
+          subtitle={authModalConfig.subtitle}
+        />
+      )}
 
       {/* Phân trang (Pagination) */}
       <div className="flex flex-wrap items-center justify-between gap-3 border-t border-white/10 bg-[#121620] px-4 py-2.5 text-xs text-muted-foreground">

@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import { SiteHeader } from '@/components/site-header'
 import { FundDashboard } from '@/components/funds/fund-dashboard'
+import { AuthGate } from '@/components/auth/AuthGate'
 import { getFundsSnapshot } from '@/lib/fund-service'
 
 // Bộ nhớ đệm ISR 1800 giây (30 phút) - Dữ liệu NAV và danh mục quỹ tải tức thì < 20ms:
@@ -19,13 +20,25 @@ export const metadata: Metadata = {
 
 export default async function QuyMoPage() {
   const snapshotData = await getFundsSnapshot()
-
-  return (
+return (
     <div className="min-h-screen bg-[#111319] text-[#F0F3F6]">
       <SiteHeader />
 
       <main className="mx-auto max-w-[1600px] px-4 py-8">
-        <FundDashboard initialData={snapshotData} />
+        <AuthGate
+          variant="blur"
+          blurHeight={380}
+          title="Mở khóa Bóc Tách Khẩu Vị 69 Quỹ Mở & Smart Money"
+          subtitle="Đăng nhập tài khoản miễn phí để theo dõi top 10 cổ phiếu được gom mua nhiều nhất của Dragon Capital, VinaCapital, SSIAM..."
+          features={[
+            'Theo dõi dòng tiền gom mua/bán ròng của 69 quỹ mở lớn nhất',
+            'Top holdings & tỷ trọng danh mục cập nhật định kỳ',
+            'Đăng nhập tức thì bằng tài khoản Google',
+          ]}
+          ctaText="Đăng nhập để xem dữ liệu quỹ mở"
+        >
+          <FundDashboard initialData={snapshotData} />
+        </AuthGate>
 
         <p className="mt-8 text-[11px] leading-relaxed text-[#8B949E]">
           * Ghi chú: Dữ liệu NAV và danh mục tài sản được đồng bộ trực tiếp từ hệ thống công bố dữ liệu quỹ mở Fmarket và

@@ -19,7 +19,11 @@ import {
   TrendingDown,
   Minimize2,
   Maximize2,
+  Lock,
+  Sparkles,
 } from "lucide-react";
+import { useAuth } from "@/lib/use-auth";
+import { AuthModal } from "@/components/auth/AuthModal";
 import {
   ResponsiveContainer,
   BarChart,
@@ -40,6 +44,7 @@ import type { BctcReportData, BctcNoteItem } from "@/lib/bctc-service";
 import { findMatchingNote, getNoteShortBadge } from "@/lib/bctc-note-matcher";
 import { FinancialNoteModal } from "@/components/stock/financial-note-modal";
 import { FinancialStatementsSideCharts } from "@/components/stock/FinancialStatementsSideCharts";
+import { AuthGate } from "@/components/auth/AuthGate";
 
 export type FinancialTab = "cdkt" | "kqkd" | "lctt" | "lctt_direct" | "ratios";
 export type FinancialUnit = "bil" | "mil" | "thou" | "one";
@@ -53,6 +58,7 @@ interface FinancialStatementsExplorerProps {
   bctcDataHopNhat?: BctcReportData | null;
   bctcDataCongTyMe?: BctcReportData | null;
   onSelectTab?: (tab: any) => void;
+  isLoggedIn?: boolean;
 }
 
 
@@ -1078,7 +1084,19 @@ export function FinancialStatementsExplorer({
   bctcDataHopNhat,
   bctcDataCongTyMe,
   onSelectTab,
+  isLoggedIn: serverIsLoggedIn,
 }: FinancialStatementsExplorerProps) {
+  const { isLoggedIn: clientIsLoggedIn } = useAuth();
+  const isAuthenticated = Boolean(serverIsLoggedIn) || clientIsLoggedIn;
+  const [authModalConfig, setAuthModalConfig] = useState<{
+    open: boolean;
+    title: string;
+    subtitle: string;
+  }>({
+    open: false,
+    title: "Đăng nhập tài khoản",
+    subtitle: "",
+  });
   const searchParams = useSearchParams();
   const urlSubtab = searchParams?.get("subtab");
   const urlPeriod = searchParams?.get("period");
@@ -1245,10 +1263,14 @@ export function FinancialStatementsExplorer({
   // Danh sách toàn bộ các mốc thời gian từ API
   const allFiscalDates = statementData?.fiscalDates || [];
 
+  // Với khách vãng lai: chỉ hiển thị tối đa 4 kỳ gần nhất
+  const effectivePeriodCount = !isAuthenticated ? Math.min(periodCount, 4) : periodCount;
+  const effectiveOffset = !isAuthenticated ? 0 : dateOffset;
+
   // Tính toán khung cửa sổ thời gian (Pagination window)
-  const count = periodCount === 0 ? allFiscalDates.length : periodCount;
+  const count = effectivePeriodCount === 0 ? allFiscalDates.length : effectivePeriodCount;
   const maxOffset = Math.max(0, allFiscalDates.length - count);
-  const currentOffset = Math.min(dateOffset, maxOffset);
+  const currentOffset = Math.min(effectiveOffset, maxOffset);
 
   const endIndex = allFiscalDates.length - currentOffset;
   const startIndex = Math.max(0, endIndex - count);
@@ -1262,6 +1284,14 @@ export function FinancialStatementsExplorer({
   const canGoForward = currentOffset > 0;
 
   const handlePrevPeriods = () => {
+    if (!isAuthenticated) {
+      setAuthModalConfig({
+        open: true,
+        title: "Mở khóa toàn bộ 16 năm lịch sử BCTC",
+        subtitle: "Đăng nhập tài khoản miễn phí để tra cứu các kỳ báo cáo tài chính trong quá khứ.",
+      });
+      return;
+    }
     setDateOffset((prev) => Math.min(prev + 1, maxOffset));
   };
 
@@ -1324,6 +1354,14 @@ export function FinancialStatementsExplorer({
 
   // Xuất file CSV
   const handleExportCsv = () => {
+    if (!isAuthenticated) {
+      setAuthModalConfig({
+        open: true,
+        title: "Đăng nhập để xuất file Excel",
+        subtitle: "Tải toàn bộ bảng số liệu báo cáo tài chính về máy tính dạng file Excel/CSV.",
+      });
+      return;
+    }
     if (!selectedDates.length || !treeNodes.length) return;
 
     const headers = ["Chỉ tiêu", ...selectedDates.map((d) => formatPeriodLabel(d, periodMode))];
@@ -1452,7 +1490,18 @@ export function FinancialStatementsExplorer({
               <span className="text-[11.5px]">Số kỳ:</span>
               <select
                 value={periodCount}
-                onChange={(e) => setPeriodCount(Number(e.target.value))}
+                onChange={(e) => {
+                  const val = Number(e.target.value);
+                  if (!isAuthenticated && (val > 4 || val === 0)) {
+                    setAuthModalConfig({
+                      open: true,
+                      title: "Mở khóa toàn bộ 16 năm BCTC",
+                      subtitle: "Đăng nhập tài khoản miễn phí bằng Google để xem đầy đủ các kỳ BCTC và lịch sử đa năm.",
+                    });
+                    return;
+                  }
+                  setPeriodCount(val);
+                }}
                 className="h-6.5 rounded border border-slate-700 bg-[#1b222d] px-1.5 text-xs font-semibold text-slate-200 outline-none hover:border-slate-500 cursor-pointer"
               >
                 <option value={4}>4</option>
@@ -1539,7 +1588,21 @@ export function FinancialStatementsExplorer({
         )}
       </div>
 
-      {/* ── BẢNG BCTC CHÍNH HOẶC DASHBOARD CHỈ SỐ TÀI CHÍNH ── */}
+      {/* ── BẢNG BCTC CHÍNH HOẶC DASHBOARD CHỈ SỐ TÀI CHÍNH (GATED 50% VIEW CHO KHÁCH) ── */}
+      <AuthGate
+        isLoggedIn={isAuthenticated}
+        variant="blur"
+        blurHeight={380}
+        title="Mở khóa Toàn Bộ 3 Bảng Báo Cáo Tài Chính & Biểu Đồ (34 Quý / 16 Năm)"
+        subtitle="Đăng nhập tài khoản miễn phí để xem đầy đủ 100% các dòng BCTC, 16 năm lịch sử, biểu đồ phân tích cơ cấu và xuất file Excel."
+        features={[
+          'Toàn bộ các khoản mục tài sản, nợ vay, doanh thu và dòng tiền kinh doanh',
+          'Lịch sử 16 năm và 34 quý dữ liệu BCTC hoàn chỉnh',
+          'Biểu đồ phân tích cơ cấu tài sản & nguồn vốn đồng bộ theo thời gian thực',
+          'Tải báo cáo tài chính định dạng Excel / CSV',
+        ]}
+        ctaText="Đăng nhập để xem toàn bộ BCTC"
+      >
       {activeTab === "ratios" ? (
         <WiDataFinancialRatiosDashboard ticker={ticker} />
       ) : activeTab === "lctt_direct" ? (
@@ -2074,6 +2137,7 @@ export function FinancialStatementsExplorer({
       )}
     </div>
   )}
+      </AuthGate>
 
       {chartModalItem && (
         <FinancialItemChartModal
@@ -2087,7 +2151,16 @@ export function FinancialStatementsExplorer({
         />
       )}
 
-      {activeNoteModal && (
+            {authModalConfig.open && (
+        <AuthModal
+          open={authModalConfig.open}
+          onClose={() => setAuthModalConfig((prev) => ({ ...prev, open: false }))}
+          title={authModalConfig.title}
+          subtitle={authModalConfig.subtitle}
+        />
+      )}
+
+{activeNoteModal && (
         <FinancialNoteModal
           isOpen={activeNoteModal.isOpen}
           onClose={() => setActiveNoteModal(null)}

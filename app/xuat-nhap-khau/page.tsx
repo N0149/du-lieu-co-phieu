@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import { SiteHeader } from '@/components/site-header'
 import { CustomsTradeViewer } from '@/components/customs-trade-viewer'
+import { AuthGate } from '@/components/auth/AuthGate'
 import type { TradeBalancePoint } from '@/components/TradeBalanceChart'
 import tradeBalance from '@/data/customs_trade_balance.json'
 
@@ -40,11 +41,24 @@ export default async function XuatNhapKhauPage({
           </p>
         </div>
 
-        <CustomsTradeViewer
-          tradeBalanceData={tradeBalanceData}
-          defaultViewMode={defaultViewMode}
-          initialTicker={initialTicker}
-        />
+        <AuthGate
+          variant="blur"
+          blurHeight={380}
+          title="Mở khóa Thống Kê Hải Quan & Chuỗi Giá Trị Cổ Phiếu Tier A"
+          subtitle="Đăng nhập tài khoản miễn phí để xem dữ liệu 2.500+ dòng hàng hóa hải quan và hồ sơ chuỗi giá trị 57+ mã Tier A."
+          features={[
+            'Số liệu xuất nhập khẩu chi tiết từng kỳ của Tổng cục Hải quan',
+            'Bóc tách chuỗi giá trị liên kết trực tiếp với cổ phiếu Tier A',
+            'Đăng nhập nhanh 1-click bằng Google',
+          ]}
+          ctaText="Đăng nhập để xem dữ liệu xuất nhập khẩu"
+        >
+          <CustomsTradeViewer
+            tradeBalanceData={tradeBalanceData}
+            defaultViewMode={defaultViewMode}
+            initialTicker={initialTicker}
+          />
+        </AuthGate>
 
 
 

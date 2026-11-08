@@ -2,6 +2,7 @@ import React from 'react';
 import { Metadata } from 'next';
 import Link from 'next/link';
 import { SiteHeader } from '@/components/site-header';
+import { AuthGate } from '@/components/auth/AuthGate';
 import dynamic from 'next/dynamic';
 
 const NganhDienDashboard = dynamic(
@@ -29,8 +30,8 @@ export const metadata: Metadata = {
     'Hệ thống giám sát dữ liệu ngành Điện kết nối trực tiếp dữ liệu điều độ NSMO và thủy văn hồ chứa EAV: Giám sát giá cận biên thị trường SMP 48 chu kỳ, quan trắc 16 hồ thủy điện trọng điểm và dự báo doanh thu, lợi nhuận 36 cổ phiếu điện (POW, PGV, NT2, QTP, HND, PPC, BTP, NBP, VSH, TMP, SHP, SJD, SBA, TBC, GHC, DRL, VPD, VCP, HJS, NED, SEB, EIC, BSA, REE, GEG, HDG, TTA, SBH, HPD, GSM, SJE, SD9, SD3, TV1, S55, SDT).',
 };
 
-export default function NganhDienPage() {
-  return (
+export default async function NganhDienPage() {
+      return (
     <div className="flex min-h-screen flex-col bg-[#0f1218] text-[#F0F3F6] selection:bg-amber-500 selection:text-slate-950">
       {/* Site Header */}
       <SiteHeader />
@@ -89,7 +90,20 @@ export default function NganhDienPage() {
 
         {/* Main Interactive Dashboard */}
         <div className="mx-auto max-w-[1600px] px-4 py-8">
-          <NganhDienDashboard />
+          <AuthGate
+            variant="blur"
+            blurHeight={380}
+            title="Mở khóa Giám Sát Điều Độ NSMO & Thủy Văn 16 Hồ Chứa"
+            subtitle="Đăng nhập tài khoản miễn phí để xem giá cận biên SMP 48 chu kỳ, sản lượng phát điện và số liệu thủy văn 16 hồ thủy điện."
+            features={[
+              'Giám sát giá điện cận biên SMP 48 chu kỳ thời gian thực',
+              'Số liệu mực nước & lưu lượng về của 16 hồ thủy điện trọng điểm',
+              'Đăng nhập nhanh 1-click bằng Google',
+            ]}
+            ctaText="Đăng nhập để xem dữ liệu ngành điện"
+          >
+            <NganhDienDashboard />
+          </AuthGate>
         </div>
       </main>
     </div>

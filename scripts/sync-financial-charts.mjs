@@ -75,8 +75,8 @@ async function syncSymbol(symbol, force = false) {
     return true;
   }
 
-  let qSuccess = fs.existsSync(qPath);
-  let aSuccess = fs.existsSync(aPath);
+  let qSuccess = !force && fs.existsSync(qPath);
+  let aSuccess = !force && fs.existsSync(aPath);
 
   // 1. Quý
   if (!qSuccess) {

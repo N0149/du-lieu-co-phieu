@@ -9,6 +9,7 @@ import {
   FileText,
   ExternalLink,
   ShieldAlert,
+  Sparkles,
 } from 'lucide-react'
 import { SiteHeader } from '@/components/site-header'
 import {
@@ -16,6 +17,8 @@ import {
   getNghienCuuAiReportsForTicker,
   getAllNghienCuuAiReports,
 } from '@/lib/nghien-cuu-ai-service'
+import { getAuthenticatedUser } from '@/lib/auth-user-helper'
+import { AuthGate } from '@/components/auth/AuthGate'
 
 export async function generateMetadata({
   params,
@@ -55,6 +58,10 @@ export default async function NghienCuuAiDetailPage({
     notFound()
   }
 
+  // Kiểm tra quyền truy cập phía Server
+  const authUser = await getAuthenticatedUser()
+  const isLoggedIn = Boolean(authUser)
+
   return (
     <div className="min-h-screen bg-[#11141c] text-foreground">
       <SiteHeader />
@@ -81,7 +88,7 @@ export default async function NghienCuuAiDetailPage({
           )}
         </div>
 
-        {/* Header báo cáo */}
+        {/* Header báo cáo - Luôn công khai cho người đọc & Googlebot SEO */}
         <header className="rounded-2xl border border-white/10 bg-[#1c212d] p-6 sm:p-8 space-y-4 shadow-xl">
           <div className="flex flex-wrap items-center gap-2">
             {report.ticker && (
@@ -115,20 +122,38 @@ export default async function NghienCuuAiDetailPage({
             {report.displayTitle}
           </h1>
 
+          {/* Tóm tắt cốt lõi công khai */}
           {report.summary && (
             <div className="rounded-xl border border-emerald-500/30 bg-emerald-500/5 p-4 text-xs sm:text-sm leading-relaxed text-emerald-200">
-              <b className="text-emerald-400 block mb-1">TÓM TẮT ĐỊNH GIÁ & LUẬN ĐIỂM CỐT LÕI:</b>
-              {report.summary}
+              <div className="flex items-center gap-2 text-emerald-400 font-bold mb-1.5 text-sm">
+                <Sparkles className="size-4" />
+                <span>TÓM TẮT ĐỊNH GIÁ & LUẬN ĐIỂM CỐT LÕI:</span>
+              </div>
+              <p className="text-slate-200 leading-relaxed">{report.summary}</p>
             </div>
           )}
         </header>
 
-        {/* Nội dung bài viết */}
+        {/* Nội dung bài viết chi tiết - Khóa bằng AuthGate cho khách vãng lai */}
         <article className="rounded-2xl border border-white/10 bg-[#1a1e29] p-6 sm:p-10 shadow-2xl">
-          <div
-            className="prose prose-invert max-w-none text-xs sm:text-sm leading-relaxed space-y-4 font-sans text-slate-200 [&_h1]:text-2xl [&_h1]:font-black [&_h1]:text-white [&_h1]:border-b [&_h1]:border-white/10 [&_h1]:pb-3 [&_h1]:mt-8 [&_h2]:text-xl [&_h2]:font-bold [&_h2]:text-white [&_h2]:mt-6 [&_h3]:text-base [&_h3]:font-bold [&_h3]:text-emerald-400 [&_h3]:mt-5 [&_strong]:text-white [&_strong]:font-bold [&_ul]:list-disc [&_ul]:pl-5 [&_li]:my-1"
-            dangerouslySetInnerHTML={{ __html: report.contentHtml }}
-          />
+          <AuthGate
+            isLoggedIn={isLoggedIn}
+            variant="blur"
+            blurHeight={320}
+            title="Đăng nhập để xem toàn bộ bài nghiên cứu & định giá chi tiết"
+            subtitle="Đăng nhập tài khoản miễn phí chỉ trong 3 giây bằng Google để mở khóa toàn bộ bài phân tích chuyên sâu."
+            features={[
+              'Bóc tách chi tiết định giá tài sản ngầm & RNAV',
+              'Đầy đủ bảng biểu dự phóng tài chính & rủi ro',
+              'Đăng nhập nhanh 1-click qua tài khoản Google',
+            ]}
+            ctaText="Đăng nhập miễn phí để đọc tiếp"
+          >
+            <div
+              className="prose prose-invert max-w-none text-xs sm:text-sm leading-relaxed space-y-4 font-sans text-slate-200 [&_h1]:text-2xl [&_h1]:font-black [&_h1]:text-white [&_h1]:border-b [&_h1]:border-white/10 [&_h1]:pb-3 [&_h1]:mt-8 [&_h2]:text-xl [&_h2]:font-bold [&_h2]:text-white [&_h2]:mt-6 [&_h3]:text-base [&_h3]:font-bold [&_h3]:text-emerald-400 [&_h3]:mt-5 [&_strong]:text-white [&_strong]:font-bold [&_ul]:list-disc [&_ul]:pl-5 [&_li]:my-1"
+              dangerouslySetInnerHTML={{ __html: report.contentHtml }}
+            />
+          </AuthGate>
         </article>
       </main>
     </div>

@@ -7,6 +7,7 @@ import { WorldMarketSection } from './WorldMarketSection'
 import { ValuationChartsSection } from './ValuationChartsSection'
 import { MarketReportsSection } from './MarketReportsSection'
 import { CtckStatisticsSection } from './CtckStatisticsSection'
+import { AuthGate } from '@/components/auth/AuthGate'
 import { Activity, LineChart, FileText, BarChart3, Sparkles, Layers, Loader2 } from 'lucide-react'
 import { cn } from '@/lib/utils'
 import type { WorldMarketData } from '@/lib/market-service'
@@ -242,7 +243,20 @@ export function MarketTabsContainer({
         {/* TAB 3: THỐNG KÊ CTCK (DƯ NỢ MARGIN & THỊ PHẦN HOSE) */}
         {mountedTabs.has('ctck') && (
           <div className={cn("animate-in fade-in duration-200", (activeTab !== 'ctck' || loadingTab === 'ctck') && "hidden")}>
-            <CtckStatisticsSection initialData={initialCtckData} />
+            <AuthGate
+              variant="blur"
+              blurHeight={380}
+              title="Mở khóa Thống Kê Dư Nợ Margin & Thị Phần 41 CTCK"
+              subtitle="Đăng nhập tài khoản miễn phí để tra cứu đầy đủ số liệu dư nợ Margin, cho vay ký quỹ và thị phần môi giới của 41 công ty chứng khoán."
+              features={[
+                'Toàn bộ bảng xếp hạng dư nợ cho vay Margin 41 công ty chứng khoán',
+                'Số liệu thị phần môi giới cổ phiếu HOSE, HNX và UPCoM qua các quý',
+                'Biểu đồ tăng trưởng tín dụng và dòng tiền vay đòn bẩy thị trường',
+              ]}
+              ctaText="Đăng nhập để xem toàn bộ số liệu CTCK"
+            >
+              <CtckStatisticsSection initialData={initialCtckData} />
+            </AuthGate>
           </div>
         )}
       </div>

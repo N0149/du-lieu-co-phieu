@@ -6,14 +6,14 @@ import { getDashboardSummary, formatDWT } from '@/lib/maritime'
 import { MaritimeSubNav } from '@/components/cang-bien/MaritimeSubNav'
 import { Ship, Search, ChevronRight, Anchor, Navigation, ArrowLeft, LayoutGrid, Database, Activity } from 'lucide-react'
 import { VesselSearchClient } from './vessel-search-client'
-
+import { AuthGate } from '@/components/auth/AuthGate'
 export const metadata: Metadata = {
   title: 'Tra Cứu Tàu Biển & Lịch Sử Cập Cảng Việt Nam | Dữ Liệu Cảng Biển',
   description:
     'Tìm kiếm thông tin tàu biển qua các cảng Việt Nam: Chiều dài (LOA), Mớn nước, Trọng tải (DWT, GRT), Cảng thường ghé và lịch sử điều động.',
 }
 
-export default function VesselSearchPage() {
+export default async function VesselSearchPage() {
   const summary = getDashboardSummary()
   const calls = summary?.recent_port_calls || []
 
@@ -91,7 +91,20 @@ export default function VesselSearchPage() {
 
       {/* Main Container with Search Client */}
       <div className="mx-auto max-w-[1600px] px-4 pt-8">
-        <VesselSearchClient initialVessels={vessels} />
+        <AuthGate
+          variant="blur"
+          blurHeight={300}
+          title="Mở khóa Tra Cứu Tàu Biển & Lịch Sử Cập Cảng"
+          subtitle="Đăng nhập tài khoản miễn phí để tra cứu thông số kỹ thuật chi tiết (LOA, DWT, GT, Draft) và lịch sử cập cảng của toàn bộ tàu biển."
+          features={[
+            'Tra cứu thông số kỹ thuật chi tiết hơn 2.500+ tàu biển',
+            'Lịch sử các chuyến tàu thường ghé qua các cảng Việt Nam',
+            'Đăng nhập nhanh 1-click bằng Google',
+          ]}
+          ctaText="Đăng nhập để tra cứu tàu"
+        >
+          <VesselSearchClient initialVessels={vessels} />
+        </AuthGate>
       </div>
     </main>
   </div>
