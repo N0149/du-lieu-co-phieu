@@ -1858,5 +1858,155 @@
     "url": "https://vietstock.vn/2026/11/vlb-thong-bao-ngay-dang-ky-cuoi-cung-de-tam-ung-co-tuc-nam-2026-bang-tien-737-1512798.htm",
     "source": "Vietstock_News",
     "alerted_at": "2026-11-08 17:30:03"
+  },
+  "vts_doc_c061db09aacf": {
+    "ticker": "NST",
+    "category": "RESOLUTION_HDQT",
+    "category_label": "NGHỊ QUYẾT HĐQT",
+    "title": "Nghị quyết họp Hội đồng quản trị phiên thường kỳ Quý IV năm 2026",
+    "date": "09/11/2026 02:05",
+    "url": "https://static2.vietstock.vn/data/HNX/2026/NGHI QUYET HDQT/VN/1_nst_2026_11_6_ce6b84b_nq_77_tv(NhieuFile).zip",
+    "source": "Vietstock_Document",
+    "alerted_at": "2026-11-09 08:27:49"
+  },
+  "vts_doc_d6c91d9d57ec": {
+    "ticker": "HMC",
+    "category": "INSIDER_TRADE",
+    "category_label": "GIAO DỊCH CỔ ĐÔNG / NỘI BỘ",
+    "title": "Nghị quyết HĐQT về việc chấp thuận giao dịch bán hàng hóa với tổ chức có liên quan của công ty mẹ",
+    "date": "09/11/2026 01:40",
+    "url": "https://static2.vietstock.vn/data/HOSE/2026/NGHI QUYET HDQT/VN/20261106___hmc___nq_hdqt_ve_giao_dich_voi_to_chuc_co_lien_quan.pdf",
+    "source": "Vietstock_Document",
+    "alerted_at": "2026-11-09 08:27:49"
+  },
+  "vts_news_1512892": {
+    "ticker": "IJC",
+    "category": "RESOLUTION_HDQT",
+    "category_label": "NGHỊ QUYẾT HĐQT",
+    "title": "IJC: Nghị quyết HĐQT về việc thông qua thực hiện giao dịch ký kết hợp đồng với Công ty Cổ phần Đường Vành đai 4 TP.HCM",
+    "date": "09/11/2026 02:39",
+    "url": "https://vietstock.vn/2026/11/ijc-nghi-quyet-hdqt-ve-viec-thong-qua-thuc-hien-giao-dich-ky-ket-hop-dong-voi-cong-ty-co-phan-duong-vanh-dai-4-tp-hcm-737-1512892.htm",
+    "source": "Vietstock_News",
+    "alerted_at": "2026-11-09 08:27:50"
+  },
+  "vts_news_1512871": {
+    "ticker": "VLB",
+    "category": "DIVIDEND_RIGHTS",
+    "category_label": "CỔ TỨC & QUYỀN DOANH NGHIỆP",
+    "title": "VLB chốt tạm ứng cổ tức 25% sau quý lãi đậm",
+    "date": "09/11/2026 03:20",
+    "url": "https://vietstock.vn/2026/11/vlb-chot-tam-ung-co-tuc-25-sau-quy-lai-dam-738-1512871.htm",
+    "source": "Vietstock_News",
+    "alerted_at": "2026-11-09 08:27:51"
+  },
+  "vts_news_1513049": {
+    "ticker": "SPB",
+    "category": "EXTRAORDINARY_EVENT",
+    "category_label": "CÔNG BỐ BẤT THƯỜNG",
+    "title": "SPB: Báo cáo quản trị công ty bán niên 2026",
+    "date": "09/11/2026 07:49",
+    "url": "https://vietstock.vn/2026/11/spb-bao-cao-quan-tri-cong-ty-ban-nien-2026-737-1513049.htm",
+    "source": "Vietstock_News",
+    "alerted_at": "2026-11-09 08:27:51"
+  },
+  "vts_doc_808410377c19": {
+    "ticker": "TOT",
+    "category": "RESOLUTION_HDQT",
+    "category_label": "NGHỊ QUYẾT HĐQT",
+    "title": "Nghị quyết HĐQT số 33/2026/NQ.HĐQT-TOT ngày 02 tháng 11 năm 2026",
+    "date": "09/11/2026 02:39",
+    "url": "https://static2.vietstock.vn/data/HNX/2026/NGHI%20QUYET%20HDQT/VN/1_tot_2026_11_5_2052342_03112026__tot__cbtt_nghi_quyet_hdqt_so_33_vnenky_so_1.pdf?ver=2ad26506",
+    "source": "Vietstock_Document",
+    "alerted_at": "2026-11-09 08:27:52"
+  },
+  "vts_news_1512919": {
+    "ticker": "SZB",
+    "category": "RESOLUTION_HDQT",
+    "category_label": "NGHỊ QUYẾT HĐQT",
+    "title": "SZB: Nghị quyết Hội đồng quản trị",
+    "date": "09/11/2026 03:49",
+    "url": "https://vietstock.vn/2026/11/szb-nghi-quyet-hoi-dong-quan-tri-737-1512919.htm",
+    "source": "Vietstock_News",
+    "alerted_at": "2026-11-09 08:27:53"
+  },
+  "vts_news_1512993": {
+    "ticker": "PPP",
+    "category": "RESOLUTION_HDQT",
+    "category_label": "NGHỊ QUYẾT HĐQT",
+    "title": "PPP: Nghị quyết Hội đồng quản trị",
+    "date": "09/11/2026 07:21",
+    "url": "https://vietstock.vn/2026/11/ppp-nghi-quyet-hoi-dong-quan-tri-737-1512993.htm",
+    "source": "Vietstock_News",
+    "alerted_at": "2026-11-09 08:27:54"
+  },
+  "vts_news_1512911": {
+    "ticker": "DPR",
+    "category": "EGM_EXTRAORDINARY",
+    "category_label": "ĐHĐCĐ BẤT THƯỜNG / LẤY Ý KIẾN",
+    "title": "DPR: Link công bố cập nhật tài liệu ĐHĐCĐ bất thường năm 2026",
+    "date": "09/11/2026 03:26",
+    "url": "https://vietstock.vn/2026/11/dpr-link-cong-bo-cap-nhat-tai-lieu-dhdcd-bat-thuong-nam-2026-737-1512911.htm",
+    "source": "Vietstock_News",
+    "alerted_at": "2026-11-09 08:27:54"
+  },
+  "vts_doc_c766dd0a4b77": {
+    "ticker": "AAA",
+    "category": "RESOLUTION_HDQT",
+    "category_label": "NGHỊ QUYẾT HĐQT",
+    "title": "Nghị quyết HĐQT về việc thông qua chủ trương để Công ty con thực hiện đầu tư mua cổ phần tại tại Aventador Corp (Hoa Kỳ)",
+    "date": "09/11/2026 02:05",
+    "url": "https://static2.vietstock.vn/data/HOSE/2026/NGHI QUYET HDQT/VN/20261105___aaa___nq_hdqt_thong_qua_chu_truong_dau_tu_aventador_corp.pdf",
+    "source": "Vietstock_Document",
+    "alerted_at": "2026-11-09 08:27:55"
+  },
+  "vts_doc_45c212036c09": {
+    "ticker": "ANT",
+    "category": "RESOLUTION_HDQT",
+    "category_label": "NGHỊ QUYẾT HĐQT",
+    "title": "Nghị quyết HĐQT số 82, 83 ngày 06/11/2026",
+    "date": "09/11/2026 01:40",
+    "url": "https://static2.vietstock.vn/data/HOSE/2026/NGHI QUYET HDQT/VN/20261106___ant___nq_vv_dieu_chinh_pa_su_dung_von_va_ho_so_chao_ban_cp_ra_cong_chung_cho_co_dong_hien_huu.pdf",
+    "source": "Vietstock_Document",
+    "alerted_at": "2026-11-09 08:27:55"
+  },
+  "vts_doc_271719178b9a": {
+    "ticker": "KSV",
+    "category": "EGM_EXTRAORDINARY",
+    "category_label": "ĐHĐCĐ BẤT THƯỜNG / LẤY Ý KIẾN",
+    "title": "Tài liệu đại hội đồng cổ đông bất thường năm 2026",
+    "date": "09/11/2026 08:09",
+    "url": "https://static2.vietstock.vn/data/HNX/2026/TAI%20LIEU%20DHCD/VN/KSV_TAILIEU_DHDCD%20bat%20thuong_2026_1.zip?ver=3f316f0d",
+    "source": "Vietstock_Document",
+    "alerted_at": "2026-11-09 08:27:55"
+  },
+  "vts_news_1512973": {
+    "ticker": "KSV",
+    "category": "RESOLUTION_HDQT",
+    "category_label": "NGHỊ QUYẾT HĐQT",
+    "title": "KSV: Nghị quyết Hội đồng quản trị",
+    "date": "09/11/2026 06:42",
+    "url": "https://vietstock.vn/2026/11/ksv-nghi-quyet-hoi-dong-quan-tri-737-1512973.htm",
+    "source": "Vietstock_News",
+    "alerted_at": "2026-11-09 08:27:56"
+  },
+  "vts_doc_6a0419f95f00": {
+    "ticker": "LLM",
+    "category": "RESOLUTION_HDQT",
+    "category_label": "NGHỊ QUYẾT HĐQT",
+    "title": "Nghị quyết HĐQT số 342/NQ-HĐQT ngày 04 tháng 11 năm 2026 về việc Hình thức chi trả cổ tức năm 2025 và việc triển khai phương án phát hành cổ phiếu để trả cổ tức năm 2025 của Tổng công ty Lắp máy Việt Nam - CTCP",
+    "date": "09/11/2026 02:41",
+    "url": "https://static2.vietstock.vn/data/UPCOM/2026/NGHI%20QUYET%20HDQT/VN/2_llm_2026_11_6_99c247f_342nqhdqt_ban_ta_0001_1(NhieuFile).zip?ver=c06835ef",
+    "source": "Vietstock_Document",
+    "alerted_at": "2026-11-09 08:27:57"
+  },
+  "web_378daf6de0ba": {
+    "ticker": "VNF",
+    "category": "INSIDER_TRADE",
+    "category_label": "GIAO DỊCH CỔ ĐÔNG / NỘI BỘ",
+    "title": "Thông báo thực hiện giao dịch cổ phiếu của người có liên quan của người nội bộ ngày 09/11/2026",
+    "date": "09/11/2026",
+    "url": "https://vinafreight.com/thong-tin-co-dong/thong-bao-thuc-hien-giao-dich-co-phieu-cua-nguoi-co-lien-quan-cua-nguoi-noi-bo-ngay-09-11-2026.html",
+    "source": "Company_Web",
+    "alerted_at": "2026-11-09 08:27:58"
   }
 }
