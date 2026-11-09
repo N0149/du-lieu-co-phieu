@@ -2048,5 +2048,145 @@
     "url": "https://static2.vietstock.vn/data/UPCOM/2026/TAI%20LIEU%20DHCD/VN/TOS_TAILIEU_DHDCD%20bat%20thuong_2026.zip?ver=eb9fd7ba",
     "source": "Vietstock_Document",
     "alerted_at": "2026-11-09 10:10:33"
+  },
+  "web_c080eebf40d4": {
+    "ticker": "CAP",
+    "category": "EXTRAORDINARY_EVENT",
+    "category_label": "CÔNG BỐ BẤT THƯỜNG",
+    "title": "Báo cáo kết quả kinh doanh",
+    "date": "09/11/2026",
+    "url": "http://www.yfatuf.com.vn/category/quan-he-nha-dau-tu/bao-cao-ket-qua-kinh-doanh/",
+    "source": "Company_Web",
+    "alerted_at": "2026-11-09 12:04:52"
+  },
+  "web_d4d456b7416a": {
+    "ticker": "CAP",
+    "category": "EXTRAORDINARY_EVENT",
+    "category_label": "CÔNG BỐ BẤT THƯỜNG",
+    "title": "Công bố thông tin",
+    "date": "09/11/2026",
+    "url": "http://www.yfatuf.com.vn/category/quan-he-nha-dau-tu/cong-bo-thong-tin/",
+    "source": "Company_Web",
+    "alerted_at": "2026-11-09 12:04:53"
+  },
+  "web_b38bd81e42aa": {
+    "ticker": "CAP",
+    "category": "EXTRAORDINARY_EVENT",
+    "category_label": "CÔNG BỐ BẤT THƯỜNG",
+    "title": "Quan hệ nhà đầu tư",
+    "date": "09/11/2026",
+    "url": "http://www.yfatuf.com.vn/category/quan-he-nha-dau-tu/",
+    "source": "Company_Web",
+    "alerted_at": "2026-11-09 12:04:54"
+  },
+  "web_1fe19239c756": {
+    "ticker": "CAP",
+    "category": "EXTRAORDINARY_EVENT",
+    "category_label": "CÔNG BỐ BẤT THƯỜNG",
+    "title": "Tin tức - Sự kiện",
+    "date": "09/11/2026",
+    "url": "http://www.yfatuf.com.vn/category/tin-tuc-su-kien/",
+    "source": "Company_Web",
+    "alerted_at": "2026-11-09 12:04:55"
+  },
+  "web_9372ea37ace5": {
+    "ticker": "CAP",
+    "category": "EXTRAORDINARY_EVENT",
+    "category_label": "CÔNG BỐ BẤT THƯỜNG",
+    "title": "Đại hội cổ đông",
+    "date": "09/11/2026",
+    "url": "http://www.yfatuf.com.vn/category/quan-he-nha-dau-tu/dai-hoi-co-dong/",
+    "source": "Company_Web",
+    "alerted_at": "2026-11-09 12:04:56"
+  },
+  "web_59242ab63908": {
+    "ticker": "CAP",
+    "category": "EXTRAORDINARY_EVENT",
+    "category_label": "CÔNG BỐ BẤT THƯỜNG",
+    "title": "09/11/2026",
+    "date": "09/11/2026",
+    "url": "http://www.yfatuf.com.vn/giay-moi-va-tai-lieu-hop-dh-dcd-thuong-nien-nam-2026-tv/",
+    "source": "Company_Web",
+    "alerted_at": "2026-11-09 12:04:57"
+  },
+  "vts_news_1512997": {
+    "ticker": "SPB",
+    "category": "EXTRAORDINARY_EVENT",
+    "category_label": "CÔNG BỐ BẤT THƯỜNG",
+    "title": "SPB: Quyết định số  về việc xử phạt vi phạm hành chính về Thuế\nDecision issued by the Hue City Tax Department",
+    "date": "09/11/2026 07:21",
+    "url": "https://vietstock.vn/2026/11/spb-quyet-dinh-so-ve-viec-xu-phat-vi-pham-hanh-chinh-ve-thue\ndecision-issued-by-the-hue-city-tax-department-830-1512997.htm",
+    "source": "Vietstock_News",
+    "alerted_at": "2026-11-09 12:04:57"
+  },
+  "vts_news_1513043": {
+    "ticker": "SPB",
+    "category": "EXTRAORDINARY_EVENT",
+    "category_label": "CÔNG BỐ BẤT THƯỜNG",
+    "title": "SPB: Quyết định số  về việc xử phạt vi phạm hành chính về Thuế",
+    "date": "09/11/2026 07:21",
+    "url": "https://vietstock.vn/2026/11/spb-quyet-dinh-so-ve-viec-xu-phat-vi-pham-hanh-chinh-ve-thue-830-1513043.htm",
+    "source": "Vietstock_News",
+    "alerted_at": "2026-11-09 12:04:58"
+  },
+  "vts_news_1513226": {
+    "ticker": "CTI",
+    "category": "RESOLUTION_HDQT",
+    "category_label": "NGHỊ QUYẾT HĐQT",
+    "title": "CTI: Nghị quyết HĐQT về việc thông qua chủ trương giải thể công ty con - Công ty Cổ phần Du lịch Cường Thuận CTI",
+    "date": "09/11/2026 10:49",
+    "url": "https://vietstock.vn/2026/11/cti-nghi-quyet-hdqt-ve-viec-thong-qua-chu-truong-giai-the-cong-ty-con-cong-ty-co-phan-du-lich-cuong-thuan-cti-737-1513226.htm",
+    "source": "Vietstock_News",
+    "alerted_at": "2026-11-09 12:04:59"
+  },
+  "vts_news_1513250": {
+    "ticker": "DHC",
+    "category": "EGM_EXTRAORDINARY",
+    "category_label": "ĐHĐCĐ BẤT THƯỜNG / LẤY Ý KIẾN",
+    "title": "DHC: Nghị quyết, Biên bản họp ĐHĐCĐ bất thường 2026 và tài liệu kèm theo",
+    "date": "09/11/2026 11:19",
+    "url": "https://vietstock.vn/2026/11/dhc-nghi-quyet-bien-ban-hop-dhdcd-bat-thuong-2026-va-tai-lieu-kem-theo-737-1513250.htm",
+    "source": "Vietstock_News",
+    "alerted_at": "2026-11-09 12:05:00"
+  },
+  "vts_news_1513248": {
+    "ticker": "DHC",
+    "category": "EXTRAORDINARY_EVENT",
+    "category_label": "CÔNG BỐ BẤT THƯỜNG",
+    "title": "DHC: Điều lệ công ty sửa đổi",
+    "date": "09/11/2026 11:19",
+    "url": "https://vietstock.vn/2026/11/dhc-dieu-le-cong-ty-sua-doi-737-1513248.htm",
+    "source": "Vietstock_News",
+    "alerted_at": "2026-11-09 12:05:01"
+  },
+  "vts_news_1513225": {
+    "ticker": "GDT",
+    "category": "DIVIDEND_RIGHTS",
+    "category_label": "CỔ TỨC & QUYỀN DOANH NGHIỆP",
+    "title": "GDT: Thông báo về ngày đăng ký cuối cùng tạm ứng cổ tức đợt 1 năm 2026 bằng tiền",
+    "date": "09/11/2026 10:55",
+    "url": "https://vietstock.vn/2026/11/gdt-thong-bao-ve-ngay-dang-ky-cuoi-cung-tam-ung-co-tuc-dot-1-nam-2026-bang-tien-737-1513225.htm",
+    "source": "Vietstock_News",
+    "alerted_at": "2026-11-09 12:05:01"
+  },
+  "vts_news_1513047": {
+    "ticker": "PPH",
+    "category": "EXTRAORDINARY_EVENT",
+    "category_label": "CÔNG BỐ BẤT THƯỜNG",
+    "title": "PPH: Quyết định xử phạt vi phạm hành chính về thuế",
+    "date": "09/11/2026 07:47",
+    "url": "https://vietstock.vn/2026/11/pph-quyet-dinh-xu-phat-vi-pham-hanh-chinh-ve-thue-830-1513047.htm",
+    "source": "Vietstock_News",
+    "alerted_at": "2026-11-09 12:05:02"
+  },
+  "vts_news_1513227": {
+    "ticker": "SIP",
+    "category": "EGM_EXTRAORDINARY",
+    "category_label": "ĐHĐCĐ BẤT THƯỜNG / LẤY Ý KIẾN",
+    "title": "SIP: Thông báo về ngày đăng ký cuối cùng tạm ứng cổ tức bằng tiền đợt 1 năm 2026. lấy ý kiến cổ đông bằng văn bản năm 2026",
+    "date": "09/11/2026 10:51",
+    "url": "https://vietstock.vn/2026/11/sip-thong-bao-ve-ngay-dang-ky-cuoi-cung-tam-ung-co-tuc-bang-tien-dot-1-nam-2026-lay-y-kien-co-dong-bang-van-ban-nam-2026-737-1513227.htm",
+    "source": "Vietstock_News",
+    "alerted_at": "2026-11-09 12:05:03"
   }
 }
