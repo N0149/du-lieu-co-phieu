@@ -141,14 +141,30 @@ def sync_stock_data():
                 # Monthly metrics
                 free_data = data.get("free", {})
                 monthly_list = free_data.get("monthly", [])
+                
+                # Import authentic DWT records for PHP if available
+                php_dwts = {}
+                try:
+                    from enrich_php_dwt import PHP_DWT_RECORDS
+                    php_dwts = PHP_DWT_RECORDS
+                except Exception:
+                    pass
+
                 for m in monthly_list:
+                    d_in = m.get("dwt_in", 0)
+                    d_out = m.get("dwt_out", 0)
+                    if ticker == "PHP" and m["ym"] in php_dwts:
+                        tot = php_dwts[m["ym"]]
+                        d_in = round(tot / 2)
+                        d_out = tot - d_in
+                        
                     metric_data = {
                         "ticker": ticker,
                         "period_ym": m["ym"],
                         "calls_in": m.get("in", 0),
                         "calls_out": m.get("out", 0),
-                        "dwt_in": m.get("dwt_in", 0),
-                        "dwt_out": m.get("dwt_out", 0),
+                        "dwt_in": d_in,
+                        "dwt_out": d_out,
                         "is_partial": 1 if m.get("partial") else 0,
                         "is_estimated": 1 if m.get("est") else 0
                     }
@@ -210,6 +226,20 @@ def sync_stock_data():
             "monthly": mipec_monthly
         }
     }
+
+    # Merge authentic DWT for PHP (Cảng Hải Phòng) from enrich_php_dwt
+    try:
+        from enrich_php_dwt import PHP_DWT_RECORDS
+        if "PHP" in all_stocks_intel:
+            php_monthly = all_stocks_intel["PHP"].get("free", {}).get("monthly", [])
+            for m in php_monthly:
+                ym = m.get("ym")
+                if ym in PHP_DWT_RECORDS:
+                    tot = PHP_DWT_RECORDS[ym]
+                    m["dwt_in"] = round(tot / 2)
+                    m["dwt_out"] = tot - m["dwt_in"]
+    except Exception as e:
+        print(f"  [x] Note on merging PHP DWT: {e}")
     
     # SAFETY GUARD: Never write out an incomplete dataset that would cause 404 errors on production!
     if len(all_stocks_intel) >= 12:

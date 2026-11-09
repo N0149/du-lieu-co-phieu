@@ -1,6 +1,6 @@
 {
   "status": "success",
-  "generated_at": "2026-11-09T20:23:05.676082",
+  "generated_at": "2026-11-09T22:07:57.456755",
   "kpis": {
     "total_port_authorities": 16,
     "total_calls_30d": 15635,
@@ -237,7 +237,7 @@
       "pure_play": 1,
       "scope_note": null,
       "total_calls": 32756,
-      "total_dwt": 0
+      "total_dwt": 24232783
     },
     {
       "ticker": "GMD",
