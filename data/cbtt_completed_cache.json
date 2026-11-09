@@ -2008,5 +2008,45 @@
     "url": "https://vinafreight.com/thong-tin-co-dong/thong-bao-thuc-hien-giao-dich-co-phieu-cua-nguoi-co-lien-quan-cua-nguoi-noi-bo-ngay-09-11-2026.html",
     "source": "Company_Web",
     "alerted_at": "2026-11-09 08:27:58"
+  },
+  "vts_news_1513080": {
+    "ticker": "CLH",
+    "category": "DIVIDEND_RIGHTS",
+    "category_label": "CỔ TỨC & QUYỀN DOANH NGHIỆP",
+    "title": "CLH: Chốt ngày đăng ký cuối cùng để thực hiện quyền tạm ứng cổ tức lần 1 năm 2026",
+    "date": "09/11/2026 08:56",
+    "url": "https://vietstock.vn/2026/11/clh-chot-ngay-dang-ky-cuoi-cung-de-thuc-hien-quyen-tam-ung-co-tuc-lan-1-nam-2026-737-1513080.htm",
+    "source": "Vietstock_News",
+    "alerted_at": "2026-11-09 10:10:31"
+  },
+  "vts_doc_dbfa5a97a75a": {
+    "ticker": "VAF",
+    "category": "EGM_EXTRAORDINARY",
+    "category_label": "ĐHĐCĐ BẤT THƯỜNG / LẤY Ý KIẾN",
+    "title": "Tài liệu đại hội đồng cổ đông bất thường năm 2026",
+    "date": "09/11/2026 09:03",
+    "url": "https://static2.vietstock.vn/data/UPCOM/2026/TAI%20LIEU%20DHCD/VN/VAF_TAILIEU_DHDCD%20bat%20thuong_2026.zip?ver=caf16b59",
+    "source": "Vietstock_Document",
+    "alerted_at": "2026-11-09 10:10:32"
+  },
+  "vts_doc_4006f897cbd0": {
+    "ticker": "DPR",
+    "category": "EGM_EXTRAORDINARY",
+    "category_label": "ĐHĐCĐ BẤT THƯỜNG / LẤY Ý KIẾN",
+    "title": "Tài liệu đại hội đồng cổ đông bất thường năm 2026",
+    "date": "09/11/2026 09:55",
+    "url": "https://static2.vietstock.vn/data/HOSE/2026/TAI%20LIEU%20DHCD/VN/DPR_TAILIEU_DHDCD%20bat%20thuong_2026_1.zip?ver=ca7e674f",
+    "source": "Vietstock_Document",
+    "alerted_at": "2026-11-09 10:10:33"
+  },
+  "vts_doc_cf4b251cef0e": {
+    "ticker": "TOS",
+    "category": "EGM_EXTRAORDINARY",
+    "category_label": "ĐHĐCĐ BẤT THƯỜNG / LẤY Ý KIẾN",
+    "title": "Tài liệu đại hội đồng cổ đông bất thường năm 2026",
+    "date": "09/11/2026 09:43",
+    "url": "https://static2.vietstock.vn/data/UPCOM/2026/TAI%20LIEU%20DHCD/VN/TOS_TAILIEU_DHDCD%20bat%20thuong_2026.zip?ver=eb9fd7ba",
+    "source": "Vietstock_Document",
+    "alerted_at": "2026-11-09 10:10:33"
   }
 }
