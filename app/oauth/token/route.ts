@@ -68,7 +68,8 @@ export async function POST(req: NextRequest) {
         }
       }
 
-      const accessToken = createAccessToken(authData.userId, authData.email)
+      const scope = authData.scope || 'mcp'
+      const accessToken = createAccessToken(authData.userId, authData.email, scope)
       const newRefreshToken = createRefreshToken(authData.userId, authData.email)
 
       return NextResponse.json(
@@ -76,7 +77,7 @@ export async function POST(req: NextRequest) {
           access_token: accessToken,
           token_type: 'Bearer',
           expires_in: 30 * 24 * 60 * 60, // 30 ngày
-          scope: 'mcp',
+          scope,
           refresh_token: newRefreshToken,
         },
         {

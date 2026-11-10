@@ -12,6 +12,7 @@ import {
   MCP_CORS_HEADERS,
 } from '@/lib/mcp/oauth'
 import { checkMcpDailyLimit } from '@/lib/rate-limiter'
+import { isAdminEmail } from '@/lib/admin-auth'
 
 export const dynamic = 'force-dynamic'
 export const maxDuration = 60
@@ -122,28 +123,61 @@ export async function POST(req: NextRequest) {
     })
   }
 
-  // Kiểm tra hạn mức 40 câu hỏi / ngày cho tài khoản MCP miễn phí
-  const isVip = authPayload.scope?.includes('vip') || false
-  const limitCheck = await checkMcpDailyLimit(authPayload.userId || authPayload.email, isVip)
-  if (!limitCheck.success) {
-    return new NextResponse(
-      JSON.stringify({
-        jsonrpc: '2.0',
-        error: {
-          code: -32000,
-          message:
-            'Tài khoản miễn phí đã đạt giới hạn tối đa 40 câu hỏi tra cứu MCP mỗi ngày. Vui lòng quay lại vào ngày mai!',
-        },
-      }),
-      {
-        status: 429,
-        headers: {
-          'Content-Type': 'application/json',
-          'Retry-After': String(limitCheck.reset),
-          ...MCP_CORS_HEADERS,
-        },
+  // 1. Phân tích request để chỉ trừ quota khi người dùng thực sự gọi tool tra cứu (tools/call)
+  // Các cuộc gọi handshake (initialize, tools/list, notifications) KHÔNG bị tính vào quota 5 câu hỏi!
+  let isToolCall = false
+  let jsonRpcId: string | number | null = null
+  try {
+    const clonedReq = req.clone()
+    const body = await clonedReq.json().catch(() => null)
+    if (body) {
+      if (Array.isArray(body)) {
+        const found = body.find((b: any) => b?.method === 'tools/call')
+        if (found) {
+          isToolCall = true
+          jsonRpcId = found.id ?? null
+        }
+      } else if (body.method === 'tools/call') {
+        isToolCall = true
+        jsonRpcId = body.id ?? null
       }
-    )
+    }
+  } catch {
+    // Bỏ qua lỗi clone/parse
+  }
+
+  // 2. Xác định quyền VIP: scope token 'mcp:vip' hoặc email Quản trị viên
+  const isVip = Boolean(
+    authPayload.scope?.includes('vip') ||
+    isAdminEmail(authPayload.email)
+  )
+
+  // 3. Kiểm tra hạn mức: Miễn phí = 5 câu hỏi/ngày; VIP = 150 câu hỏi/ngày
+  if (isToolCall) {
+    const limitCheck = await checkMcpDailyLimit(authPayload.userId || authPayload.email, isVip)
+    if (!limitCheck.success) {
+      return new NextResponse(
+        JSON.stringify({
+          jsonrpc: '2.0',
+          id: jsonRpcId,
+          error: {
+            code: -32000,
+            message:
+              '🔒 BẠN ĐÃ SỬ DỤNG HẾT 5 CÂU HỎI TRẢI NGHIỆM MCP MIỄN PHÍ TRONG HÔM NAY.\n\n' +
+              'Dữ liệu Thuyết minh BCTC, ĐHĐCĐ và Nghiên cứu chuyên sâu AI là đặc quyền của Hội viên VIP.\n' +
+              'Để tiếp tục tra cứu không giới hạn trên Google Gemini & Claude, vui lòng nâng cấp gói VIP (chỉ từ 95.000 đ/tháng) tại: https://www.dulieudautu.com/ket-noi-mcp (hoặc quay lại vào ngày mai).',
+          },
+        }),
+        {
+          status: 200,
+          headers: {
+            'Content-Type': 'application/json',
+            'Retry-After': String(limitCheck.reset),
+            ...MCP_CORS_HEADERS,
+          },
+        }
+      )
+    }
   }
 
   try {

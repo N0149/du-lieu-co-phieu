@@ -3,6 +3,7 @@
 import { redirect } from 'next/navigation'
 import { getCurrentUser } from '@/lib/session'
 import { createAuthCode, getClient } from '@/lib/mcp/oauth'
+import { isAdminEmail, isVipUser } from '@/lib/admin-auth'
 
 function isValidRedirectUri(redirectUri: string, clientId: string): boolean {
   if (!redirectUri) return false
@@ -51,6 +52,9 @@ export async function approveOAuthAction(formData: FormData) {
   const userId = user?.id || `mcp_user_${Date.now()}`
   const email = user?.email || 'guest@dulieudautu.com'
 
+  const isVip = isAdminEmail(email) || isVipUser(user) || user?.status === 'active'
+  const scope = isVip ? 'mcp mcp:vip' : 'mcp'
+
   const code = createAuthCode({
     userId,
     email,
@@ -58,6 +62,7 @@ export async function approveOAuthAction(formData: FormData) {
     redirectUri,
     codeChallenge,
     codeChallengeMethod,
+    scope,
   })
 
   const targetUrl = new URL(redirectUri)

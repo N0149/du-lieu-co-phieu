@@ -19,6 +19,9 @@ const redis = hasRedis
 /** Giới hạn 40 lượt hỏi / ngày (24 giờ) cho người dùng miễn phí */
 export const FREE_DAILY_LIMIT = 40
 
+/** Giới hạn 5 lượt hỏi MCP / 24h cho người dùng miễn phí (Dùng thử trước khi lên VIP) */
+export const MCP_FREE_DAILY_LIMIT = 5
+
 /** Giới hạn 150 lượt hỏi / ngày cho thành viên VIP */
 export const VIP_DAILY_LIMIT = 150
 
@@ -43,8 +46,8 @@ export const vipRateLimiter = redis
 export const mcpRateLimiter = redis
   ? new Ratelimit({
       redis,
-      limiter: Ratelimit.slidingWindow(FREE_DAILY_LIMIT, '1 d'),
-      prefix: '@ratelimit:mcp',
+      limiter: Ratelimit.slidingWindow(MCP_FREE_DAILY_LIMIT, '1 d'),
+      prefix: '@ratelimit:mcp_v3',
       analytics: true,
     })
   : null
@@ -151,7 +154,7 @@ export async function checkMcpDailyLimit(
   identifier: string,
   isVip: boolean = false
 ): Promise<RateLimitResult> {
-  const limit = isVip ? VIP_DAILY_LIMIT : FREE_DAILY_LIMIT
+  const limit = isVip ? VIP_DAILY_LIMIT : MCP_FREE_DAILY_LIMIT
   const limiter = isVip ? vipRateLimiter : mcpRateLimiter
 
   if (!limiter) {

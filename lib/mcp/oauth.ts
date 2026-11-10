@@ -99,6 +99,7 @@ export interface AuthCodePayload {
   redirectUri: string
   codeChallenge?: string
   codeChallengeMethod?: string
+  scope?: string
   exp: number
 }
 
@@ -144,11 +145,11 @@ export interface TokenPayload {
   exp: number
 }
 
-export function createAccessToken(userId: string, email: string): string {
+export function createAccessToken(userId: string, email: string, scope = 'mcp'): string {
   const data: TokenPayload = {
     userId,
     email,
-    scope: 'mcp',
+    scope: scope || 'mcp',
     exp: Date.now() + 30 * 24 * 60 * 60 * 1000, // 30 days
   }
   const json = JSON.stringify(data)
