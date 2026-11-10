@@ -1,9 +1,11 @@
 'use client'
 
-import React from 'react'
+import React, { useState } from 'react'
 import Link from 'next/link'
 import { MaritimeStock, StockIntelDetail, formatDWT, formatCalls } from '@/lib/maritime-types'
-import { Ship, ArrowRight, CheckCircle, Layers, MapPin, TrendingUp, Sparkles, Navigation } from 'lucide-react'
+import { Ship, ArrowRight, CheckCircle, Layers, MapPin, TrendingUp, Sparkles, Navigation, Crown } from 'lucide-react'
+import { useAuth } from '@/lib/use-auth'
+import { VipUpgradeModal } from '@/components/auth/VipUpgradeModal'
 
 interface Props {
   stocks: MaritimeStock[]
@@ -11,6 +13,10 @@ interface Props {
 }
 
 export function MaritimeStockGrid({ stocks, stocksIntel }: Props) {
+  const { isVip } = useAuth()
+  const [vipModalOpen, setVipModalOpen] = useState(false)
+  const [vipModalConfig, setVipModalConfig] = useState<{ title?: string; subtitle?: string }>({})
+
   return (
     <div className="space-y-5">
       {/* Header with Title & Stats */}
@@ -119,17 +125,47 @@ export function MaritimeStockGrid({ stocks, stocksIntel }: Props) {
               </div>
 
               {/* Action Button Link */}
-              <Link
-                href={`/cang/${s.ticker.toLowerCase()}`}
-                className="mt-2 inline-flex w-full items-center justify-between rounded-lg bg-emerald-500/10 border border-emerald-500/25 px-3 py-2 text-xs font-bold text-emerald-400 hover:bg-emerald-500 hover:text-white transition-all shadow-xs"
-              >
-                <span>Xem Dữ Liệu Tàu &amp; DWT</span>
-                <ArrowRight className="size-3.5" />
-              </Link>
+              {isVip ? (
+                <Link
+                  href={`/cang/${s.ticker.toLowerCase()}`}
+                  className="mt-2 inline-flex w-full items-center justify-between rounded-lg bg-emerald-500/10 border border-emerald-500/25 px-3 py-2 text-xs font-bold text-emerald-400 hover:bg-emerald-500 hover:text-white transition-all shadow-xs"
+                >
+                  <span>Xem Dữ Liệu Tàu &amp; DWT</span>
+                  <ArrowRight className="size-3.5" />
+                </Link>
+              ) : (
+                <button
+                  type="button"
+                  onClick={() => {
+                    setVipModalConfig({
+                      title: `Mở Khóa Dữ Liệu Tàu & DWT Chi Tiết Của ${s.ticker} (VIP)`,
+                      subtitle: `Bóc tách sản lượng DWT theo tháng, danh sách 100+ chuyến tàu cập bến và phân tích biên lợi nhuận bến nước sâu của ${s.ticker} dành riêng cho Hội viên VIP.`,
+                    })
+                    setVipModalOpen(true)
+                  }}
+                  className="mt-2 inline-flex w-full items-center justify-between rounded-lg bg-gradient-to-r from-amber-500/15 to-amber-600/10 border border-amber-500/30 px-3 py-2 text-xs font-bold text-amber-300 hover:brightness-110 transition-all shadow-xs cursor-pointer group/btn"
+                >
+                  <span className="flex items-center gap-1.5">
+                    <Crown className="size-3.5 text-amber-300 group-hover/btn:scale-110 transition-transform" />
+                    <span>Xem Dữ Liệu Tàu &amp; DWT</span>
+                  </span>
+                  <span className="rounded bg-amber-500/25 px-1.5 py-0.2 text-[9px] font-black text-amber-300 border border-amber-500/40">
+                    VIP
+                  </span>
+                </button>
+              )}
             </div>
           )
         })}
       </div>
+
+      {/* Modal Nâng Cấp VIP */}
+      <VipUpgradeModal
+        open={vipModalOpen}
+        onClose={() => setVipModalOpen(false)}
+        title={vipModalConfig.title}
+        subtitle={vipModalConfig.subtitle}
+      />
     </div>
   )
 }

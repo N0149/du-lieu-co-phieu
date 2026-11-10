@@ -2,6 +2,7 @@
 
 import { useMemo, useState } from 'react'
 import Link from 'next/link'
+import { StockLink } from '@/components/stock-link'
 import {
   ArrowUpDown,
   ArrowUp,
@@ -150,11 +151,11 @@ export function Screener() {
                 return (
                   <tr
                     key={s.ticker}
-                    className="relative transition-colors hover:bg-white/[0.03]"
+                    className="relative transition-colors hover:bg-white/[0.03] fast-table-row"
                   >
                     <td className="px-4 py-3">
                       {/* Link chính ở cột Mã CK; stretched-link (::after) phủ toàn dòng để cả dòng click được */}
-                      <Link
+                      <StockLink
                         href={href}
                         className="inline-flex items-center gap-2 after:absolute after:inset-0"
                         aria-label={`${s.ticker} — xem chi tiết tài chính & báo cáo phân tích`}
@@ -171,7 +172,7 @@ export function Screener() {
                             <FileText className="size-3" /> Báo cáo
                           </span>
                         )}
-                      </Link>
+                      </StockLink>
                     </td>
                     <td className="w-[140px] max-w-[150px] truncate px-4 py-3 text-[#F0F3F6]">{s.name}</td>
                     <td className="px-4 py-3 font-mono tabular-nums text-[#9EACB9]">
@@ -345,9 +346,9 @@ function CardStock({ stock }: { stock: ReportStock }) {
   const price = marketPriceOf(stock)
 
   return (
-    <Link
+    <StockLink
       href={`/stock/${encodeURIComponent(stock.ticker)}`}
-      className="block space-y-3 rounded-xl border border-white/8 bg-[#212631] p-4 shadow-[0_4px_20px_rgba(0,0,0,0.25)] transition-colors hover:bg-white/[0.04]"
+      className="block space-y-3 rounded-xl border border-white/8 bg-[#212631] p-4 shadow-[0_4px_20px_rgba(0,0,0,0.25)] transition-colors hover:bg-white/[0.04] fast-list-card"
       aria-label={`${stock.ticker} — xem chi tiết tài chính & báo cáo phân tích`}
     >
       {/* Hàng 1 — Header: badge mã emerald + tên + badge upside */}
@@ -411,7 +412,7 @@ function CardStock({ stock }: { stock: ReportStock }) {
           Xem chi tiết →
         </span>
       </div>
-    </Link>
+    </StockLink>
   )
 }
 

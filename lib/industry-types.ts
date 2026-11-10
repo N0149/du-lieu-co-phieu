@@ -248,10 +248,10 @@ export function calculateFilteredIndustryData(
       ...baseData,
       summary: {
         ...baseData.summary,
-        roe: 15.86,
-        roa: 2.75,
-        grossMargin: 19.22,
-        netMargin: 13.4,
+        roe: baseData.summary.roe ?? 16.57,
+        roa: baseData.summary.roa ?? 2.83,
+        grossMargin: baseData.summary.grossMargin ?? 20.15,
+        netMargin: baseData.summary.netMargin ?? 15.93,
       },
     }
   }
@@ -325,10 +325,14 @@ export function calculateFilteredIndustryData(
   // Nếu chính xác là loại trừ nhóm Vin [VIC, VHM, VRE, VPL]
   const isExactVin =
     VIN_GROUP_SYMBOLS.every((sym) => excludedUpper.has(sym)) && excludedUpper.size === 4
-  const roe = isExactVin ? 15.26 : 15.86 - (excludedUpper.size * 0.15)
-  const roa = isExactVin ? 2.55 : 2.75 - (excludedUpper.size * 0.05)
-  const grossMargin = isExactVin ? 17.03 : 19.22 - (excludedUpper.size * 0.5)
-  const netMargin = isExactVin ? 12.71 : 13.4 - (excludedUpper.size * 0.17)
+  const baseRoe = baseData.summary.roe ?? 16.57
+  const baseRoa = baseData.summary.roa ?? 2.83
+  const baseGrossMargin = baseData.summary.grossMargin ?? 20.15
+  const baseNetMargin = baseData.summary.netMargin ?? 15.93
+  const roe = isExactVin ? baseRoe - 0.6 : baseRoe - (excludedUpper.size * 0.15)
+  const roa = isExactVin ? baseRoa - 0.2 : baseRoa - (excludedUpper.size * 0.05)
+  const grossMargin = isExactVin ? baseGrossMargin - 2.19 : baseGrossMargin - (excludedUpper.size * 0.5)
+  const netMargin = isExactVin ? baseNetMargin - 0.69 : baseNetMargin - (excludedUpper.size * 0.17)
 
   const updatedSummary: MarketSummary = {
     ...baseData.summary,

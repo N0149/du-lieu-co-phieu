@@ -3,9 +3,9 @@ import { SiteHeader } from '@/components/site-header'
 import { FundDashboard } from '@/components/funds/fund-dashboard'
 import { AuthGate } from '@/components/auth/AuthGate'
 import { getFundsSnapshot } from '@/lib/fund-service'
+import { getAuthenticatedUser } from '@/lib/auth-user-helper'
 
-// Bộ nhớ đệm ISR 1800 giây (30 phút) - Dữ liệu NAV và danh mục quỹ tải tức thì < 20ms:
-export const revalidate = 1800
+export const dynamic = 'force-dynamic'
 
 export const metadata: Metadata = {
   title: 'Quỹ Đầu Tư Mở - Bóc Tách Khẩu Vị & Top Cổ Phiếu Nắm Giữ',
@@ -19,23 +19,29 @@ export const metadata: Metadata = {
 }
 
 export default async function QuyMoPage() {
-  const snapshotData = await getFundsSnapshot()
-return (
+  const [snapshotData, authUser] = await Promise.all([
+    getFundsSnapshot(),
+    getAuthenticatedUser(),
+  ])
+  const isLoggedIn = Boolean(authUser)
+
+  return (
     <div className="min-h-screen bg-[#111319] text-[#F0F3F6]">
       <SiteHeader />
 
       <main className="mx-auto max-w-[1600px] px-4 py-8">
         <AuthGate
+          isLoggedIn={isLoggedIn}
           variant="blur"
-          blurHeight={380}
-          title="Mở khóa Bóc Tách Khẩu Vị 69 Quỹ Mở & Smart Money"
-          subtitle="Đăng nhập tài khoản miễn phí để theo dõi top 10 cổ phiếu được gom mua nhiều nhất của Dragon Capital, VinaCapital, SSIAM..."
+          blurHeight={260}
+          title="Đăng nhập để xem Dữ Liệu Bóc Tách 69 Quỹ Mở & Smart Money"
+          subtitle="Đăng nhập tài khoản miễn phí trong 3 giây bằng Google để theo dõi top holdings, khẩu vị gom mua/bán ròng của Dragon Capital, VinaCapital, SSIAM..."
           features={[
             'Theo dõi dòng tiền gom mua/bán ròng của 69 quỹ mở lớn nhất',
-            'Top holdings & tỷ trọng danh mục cập nhật định kỳ',
-            'Đăng nhập tức thì bằng tài khoản Google',
+            'Top 10 cổ phiếu & ngành dẫn đầu tỷ trọng danh mục cập nhật định kỳ',
+            'Tra cứu chi tiết danh mục tài sản và biến động NAV thời gian thực',
           ]}
-          ctaText="Đăng nhập để xem dữ liệu quỹ mở"
+          ctaText="Đăng nhập tài khoản miễn phí"
         >
           <FundDashboard initialData={snapshotData} />
         </AuthGate>

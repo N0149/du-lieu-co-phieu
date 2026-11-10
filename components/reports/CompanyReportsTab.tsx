@@ -14,8 +14,11 @@ import {
   ExternalLink,
   Building2,
   TrendingUp,
+  Crown,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { useAuth } from "@/lib/use-auth";
+import { VipUpgradeModal } from "@/components/auth/VipUpgradeModal";
 
 export interface CompanyReportItem {
   id: string;
@@ -56,8 +59,24 @@ export function CompanyReportsTab({
   symbol?: string;
 }) {
   const defaultTicker = symbol || initialTicker;
+  const { isVip } = useAuth();
+  const [vipModalOpen, setVipModalOpen] = useState(false);
+  const [vipModalConfig, setVipModalConfig] = useState<{ title?: string; subtitle?: string }>({});
   const [reports, setReports] = useState<CompanyReportItem[]>([]);
   const [loading, setLoading] = useState(true);
+
+  // Nhận diện báo cáo độc quyền của Admin / Dữ Liệu Đầu Tư
+  const isReportExclusive = (item: CompanyReportItem) => {
+    const s = (item.source || "").toLowerCase();
+    const t = (item.title || "").toLowerCase();
+    return (
+      s.includes("dữ liệu") ||
+      s.includes("admin") ||
+      s.includes("dldtt") ||
+      t.includes("độc quyền") ||
+      t.includes("chuyên sâu ai")
+    );
+  };
   const [search, setSearch] = useState(defaultTicker);
   const [selectedSource, setSelectedSource] = useState<string>("all");
   const [selectedRec, setSelectedRec] = useState<string>("all");
@@ -324,7 +343,24 @@ export function CompanyReportsTab({
 
                       {/* Tiêu đề */}
                       <td className="py-3 px-3">
-                        {item.downloadUrl ? (
+                        {isReportExclusive(item) && !isVip ? (
+                          <button
+                            type="button"
+                            onClick={() => {
+                              setVipModalConfig({
+                                title: `Mở Khóa Báo Cáo Phân Tích Độc Quyền (VIP)`,
+                                subtitle: `Báo cáo phân tích định giá độc quyền của Admin dành riêng cho Hội viên VIP. Nâng cấp ngay để mở khóa toàn bộ tài liệu.`,
+                              });
+                              setVipModalOpen(true);
+                            }}
+                            className="text-left font-medium text-foreground hover:text-amber-400 transition-colors line-clamp-2 leading-relaxed cursor-pointer"
+                          >
+                            <span className="flex items-center gap-1.5">
+                              <Crown className="size-3 text-amber-400 shrink-0 inline" />
+                              <span>{item.title.replace(/(?:điểm\s*)?[-–:]\s*(\d{2,3}(?:\.\d+)?)/gi, '· 🔒 ??? Điểm')}</span>
+                            </span>
+                          </button>
+                        ) : item.downloadUrl ? (
                           <a
                             href={item.downloadUrl}
                             target="_blank"
@@ -347,8 +383,14 @@ export function CompanyReportsTab({
 
                       {/* CTCK */}
                       <td className="py-3 px-3 whitespace-nowrap">
-                        <span className="inline-flex items-center rounded-md bg-muted px-2 py-0.5 text-[11px] font-medium text-foreground">
-                          {item.source}
+                        <span className="inline-flex items-center gap-1 rounded-md bg-muted px-2 py-0.5 text-[11px] font-medium text-foreground">
+                          {isReportExclusive(item) && <Crown className="size-2.5 text-amber-400" />}
+                          <span>{item.source}</span>
+                          {isReportExclusive(item) && !isVip && (
+                            <span className="rounded bg-amber-500/20 px-1 text-[9px] font-black text-amber-400 border border-amber-500/30">
+                              VIP
+                            </span>
+                          )}
                         </span>
                       </td>
 
@@ -359,7 +401,11 @@ export function CompanyReportsTab({
 
                       {/* Khuyến nghị */}
                       <td className="py-3 px-3 text-center whitespace-nowrap">
-                        {item.recommendation ? (
+                        {isReportExclusive(item) && !isVip ? (
+                          <span className="inline-block rounded-md border border-amber-500/30 bg-amber-500/10 px-2 py-0.5 text-[11px] font-bold text-amber-400">
+                            🔒 Khóa VIP
+                          </span>
+                        ) : item.recommendation ? (
                           <span
                             className={cn(
                               "inline-block rounded-md border px-2 py-0.5 text-[11px] font-semibold",
@@ -375,7 +421,11 @@ export function CompanyReportsTab({
 
                       {/* Giá mục tiêu */}
                       <td className="py-3 px-3 text-right whitespace-nowrap font-mono font-medium">
-                        {item.targetPrice ? (
+                        {isReportExclusive(item) && !isVip ? (
+                          <span className="text-amber-400 font-bold text-xs">
+                            🔒 Khóa VIP
+                          </span>
+                        ) : item.targetPrice ? (
                           <span className="text-emerald-400 font-bold">
                             {item.targetPrice.toLocaleString("vi-VN")} đ
                           </span>
@@ -386,7 +436,22 @@ export function CompanyReportsTab({
 
                       {/* Tải về */}
                       <td className="py-3 pr-4 pl-3 text-right whitespace-nowrap">
-                        {item.downloadUrl ? (
+                        {isReportExclusive(item) && !isVip ? (
+                          <button
+                            type="button"
+                            onClick={() => {
+                              setVipModalConfig({
+                                title: `Mở Khóa Báo Cáo Phân Tích Độc Quyền (VIP)`,
+                                subtitle: `Báo cáo phân tích định giá độc quyền của Admin dành riêng cho Hội viên VIP. Nâng cấp ngay để mở khóa toàn bộ tài liệu.`,
+                              });
+                              setVipModalOpen(true);
+                            }}
+                            className="inline-flex items-center gap-1 rounded-lg border border-amber-500/40 bg-gradient-to-r from-amber-500/15 to-amber-600/10 px-2.5 py-1 text-[11px] font-bold text-amber-300 hover:brightness-110 cursor-pointer shadow-xs"
+                          >
+                            <Crown className="size-3 text-amber-300" />
+                            <span>Mở khóa VIP</span>
+                          </button>
+                        ) : item.downloadUrl ? (
                           <a
                             href={item.downloadUrl}
                             target="_blank"
@@ -434,7 +499,14 @@ export function CompanyReportsTab({
                   </div>
 
                   <h4 className="mt-2 text-sm font-semibold text-foreground line-clamp-2 leading-snug group-hover:text-emerald-400 transition-colors">
-                    {item.title}
+                    {isReportExclusive(item) && !isVip ? (
+                      <span className="flex items-center gap-1.5 text-amber-300">
+                        <Crown className="size-3.5 text-amber-400 shrink-0 inline" />
+                        <span>{item.title.replace(/(?:điểm\s*)?[-–:]\s*(\d{2,3}(?:\.\d+)?)/gi, '· 🔒 ??? Điểm')}</span>
+                      </span>
+                    ) : (
+                      item.title
+                    )}
                   </h4>
 
                   {item.description && (
@@ -446,24 +518,52 @@ export function CompanyReportsTab({
 
                 <div className="mt-4 border-t border-border/60 pt-3">
                   <div className="flex items-center justify-between text-xs">
-                    <span className="rounded-md bg-muted px-2 py-0.5 text-[11px] font-medium text-foreground">
-                      {item.source}
+                    <span className="rounded-md bg-muted px-2 py-0.5 text-[11px] font-medium text-foreground flex items-center gap-1">
+                      {isReportExclusive(item) && <Crown className="size-2.5 text-amber-400" />}
+                      <span>{item.source}</span>
+                      {isReportExclusive(item) && !isVip && (
+                        <span className="rounded bg-amber-500/20 px-1 text-[9px] font-black text-amber-400">
+                          VIP
+                        </span>
+                      )}
                     </span>
 
-                    {item.recommendation && (
+                    {isReportExclusive(item) && !isVip ? (
+                      <span className="rounded-md border border-amber-500/30 bg-amber-500/10 px-2 py-0.5 text-[11px] font-bold text-amber-400">
+                        🔒 Khóa VIP
+                      </span>
+                    ) : item.recommendation ? (
                       <span className={cn("rounded-md border px-2 py-0.5 text-[11px] font-semibold", recClass)}>
                         {item.recommendation}
                       </span>
-                    )}
+                    ) : null}
 
-                    {item.targetPrice && (
+                    {isReportExclusive(item) && !isVip ? (
+                      <span className="font-mono font-bold text-amber-400 text-xs">
+                        🔒 Khóa VIP
+                      </span>
+                    ) : item.targetPrice ? (
                       <span className="font-mono font-bold text-emerald-400 text-xs">
                         {item.targetPrice.toLocaleString("vi-VN")} đ
                       </span>
-                    )}
+                    ) : null}
                   </div>
 
-                  {item.downloadUrl && (
+                  {isReportExclusive(item) && !isVip ? (
+                    <button
+                      type="button"
+                      onClick={() => {
+                        setVipModalConfig({
+                          title: `Mở Khóa Báo Cáo Phân Tích Độc Quyền (VIP)`,
+                          subtitle: `Báo cáo phân tích định giá độc quyền của Admin dành riêng cho Hội viên VIP. Nâng cấp ngay để mở khóa toàn bộ tài liệu.`,
+                        });
+                        setVipModalOpen(true);
+                      }}
+                      className="mt-3 flex w-full items-center justify-center gap-1.5 rounded-xl border border-amber-500/40 bg-gradient-to-r from-amber-400 via-amber-500 to-amber-600 py-2 text-xs font-black text-black transition-all hover:brightness-110 shadow-xs cursor-pointer"
+                    >
+                      <Crown className="size-3.5" /> Mở Khóa Đọc Báo Cáo (VIP)
+                    </button>
+                  ) : item.downloadUrl ? (
                     <a
                       href={item.downloadUrl}
                       target="_blank"
@@ -472,7 +572,7 @@ export function CompanyReportsTab({
                     >
                       <Download className="size-3.5" /> Tải Báo Cáo PDF
                     </a>
-                  )}
+                  ) : null}
                 </div>
               </div>
             );
@@ -506,6 +606,13 @@ export function CompanyReportsTab({
           </button>
         </div>
       )}
+
+      <VipUpgradeModal
+        open={vipModalOpen}
+        onClose={() => setVipModalOpen(false)}
+        title={vipModalConfig.title || "Mở Khóa Báo Cáo Phân Tích Độc Quyền (VIP)"}
+        subtitle={vipModalConfig.subtitle || "Báo cáo phân tích định giá độc quyền của Admin dành riêng cho Hội viên VIP. Nâng cấp ngay để mở khóa toàn bộ tài liệu."}
+      />
     </div>
   );
 }

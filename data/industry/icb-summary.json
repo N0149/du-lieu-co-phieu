@@ -1,164 +1,1313 @@
 {
-  "generated_at": "2026-09-01T14:04:14.005Z",
+  "generated_at": "2026-11-10T14:04:04.274Z",
   "source": "icb_pe_history latest point (own valuation pipeline) + screener market_cap",
   "methodology": "history_latest_point",
   "market": {
-    "pe": 12.54,
-    "pb": 2.02,
-    "market_cap_bn": 10570933
+    "pe": 10.89,
+    "pb": 1.85,
+    "market_cap_bn": 10118496,
+    "roe": 16.57,
+    "roa": 2.83,
+    "gross_margin": 20.15,
+    "net_margin": 15.93,
+    "revenue_last_q": 1899753.3,
+    "lnst_last_q": 235973.8
+  },
+  "l1_groups": {
+    "1000": {
+      "name_vi": "Nguyên vật liệu",
+      "roe": 16.4,
+      "roa": 7.65,
+      "gross_margin": 14.42,
+      "net_margin": 9
+    },
+    "2000": {
+      "name_vi": "Công nghiệp",
+      "roe": 13.14,
+      "roa": 5.74,
+      "gross_margin": 16.95,
+      "net_margin": 13.81
+    },
+    "3000": {
+      "name_vi": "Hàng Tiêu dùng",
+      "roe": 16.66,
+      "roa": 7.81,
+      "gross_margin": 21.19,
+      "net_margin": 6.7
+    },
+    "4000": {
+      "name_vi": "Dược phẩm và Y tế",
+      "roe": 11.01,
+      "roa": 7.98,
+      "gross_margin": 29.66,
+      "net_margin": 398.33
+    },
+    "5000": {
+      "name_vi": "Dịch vụ Tiêu dùng",
+      "roe": 16.12,
+      "roa": 5.34,
+      "gross_margin": 15.17,
+      "net_margin": 3.47
+    },
+    "6000": {
+      "name_vi": "Viễn thông",
+      "roe": 27.55,
+      "roa": 12.95,
+      "gross_margin": 49.27,
+      "net_margin": 19.09
+    },
+    "7000": {
+      "name_vi": "Tiện ích Cộng đồng",
+      "roe": 16.73,
+      "roa": 7.65,
+      "gross_margin": 15.66,
+      "net_margin": 10.05
+    },
+    "8000": {
+      "name_vi": "Tài chính",
+      "roe": 17.02,
+      "roa": 4.41,
+      "gross_margin": 40.51,
+      "net_margin": 18.6
+    },
+    "8301": {
+      "name_vi": "Ngân hàng",
+      "roe": 16.4,
+      "roa": 1.47,
+      "gross_margin": null,
+      "net_margin": 39.97
+    },
+    "9000": {
+      "name_vi": "Công nghệ Thông tin",
+      "roe": 19.48,
+      "roa": 9.2,
+      "gross_margin": 23.99,
+      "net_margin": 13.08
+    },
+    "0001": {
+      "name_vi": "Dầu khí",
+      "roe": 23.17,
+      "roa": 7.68,
+      "gross_margin": 6.95,
+      "net_margin": 3.76
+    }
   },
   "l2_sectors": {
     "1300": {
       "name_vi": "Hóa chất",
-      "pe": 10.85,
-      "pb": 1.55,
-      "market_cap_bn": 233504,
+      "pe": 9.36,
+      "pb": 1.4,
+      "market_cap_bn": 214434,
       "symbol_count": 75,
-      "data_count": 68
+      "data_count": 68,
+      "roe": 14.66,
+      "roa": 7.35,
+      "gross_margin": 17.73,
+      "net_margin": 11.97,
+      "revenue_last_q": 50382.4,
+      "lnst_last_q": 6254.7,
+      "valuation_history": {
+        "1y": {
+          "pe": {
+            "median": 13.32,
+            "min": 9.29,
+            "max": 20.18
+          },
+          "pb": {
+            "median": 1.68,
+            "min": 1.39,
+            "max": 2.36
+          }
+        },
+        "3y": {
+          "pe": {
+            "median": 15.92,
+            "min": 9.29,
+            "max": 23.26
+          },
+          "pb": {
+            "median": 1.86,
+            "min": 1.39,
+            "max": 2.36
+          }
+        },
+        "5y": {
+          "pe": {
+            "median": 15.04,
+            "min": 4.85,
+            "max": 24.49
+          },
+          "pb": {
+            "median": 1.81,
+            "min": 0.98,
+            "max": 3.02
+          }
+        },
+        "10y": {
+          "pe": {
+            "median": 11.58,
+            "min": 4.85,
+            "max": 24.49
+          },
+          "pb": {
+            "median": 1.61,
+            "min": 0.86,
+            "max": 3.02
+          }
+        }
+      }
     },
     "1700": {
       "name_vi": "Tài nguyên Cơ bản",
-      "pe": 9.43,
-      "pb": 1.39,
-      "market_cap_bn": 348619,
+      "pe": 7.55,
+      "pb": 1.36,
+      "market_cap_bn": 353737,
       "symbol_count": 128,
-      "data_count": 104
+      "data_count": 105,
+      "roe": 17.42,
+      "roa": 7.82,
+      "gross_margin": 13.48,
+      "net_margin": 8.17,
+      "revenue_last_q": 181721.1,
+      "lnst_last_q": 15359.1,
+      "valuation_history": {
+        "1y": {
+          "pe": {
+            "median": 11.63,
+            "min": 7.52,
+            "max": 17.03
+          },
+          "pb": {
+            "median": 1.5,
+            "min": 1.3,
+            "max": 1.79
+          }
+        },
+        "3y": {
+          "pe": {
+            "median": 15.36,
+            "min": 7.52,
+            "max": 41.99
+          },
+          "pb": {
+            "median": 1.5,
+            "min": 1.3,
+            "max": 1.81
+          }
+        },
+        "5y": {
+          "pe": {
+            "median": 14.28,
+            "min": 3.34,
+            "max": 51.74
+          },
+          "pb": {
+            "median": 1.46,
+            "min": 0.74,
+            "max": 2.87
+          }
+        },
+        "10y": {
+          "pe": {
+            "median": 9.79,
+            "min": 3.34,
+            "max": 51.74
+          },
+          "pb": {
+            "median": 1.5,
+            "min": 0.74,
+            "max": 2.99
+          }
+        }
+      }
     },
     "2300": {
       "name_vi": "Xây dựng và Vật liệu",
-      "pe": 10.52,
-      "pb": 1.23,
-      "market_cap_bn": 279351,
+      "pe": 11,
+      "pb": 1.15,
+      "market_cap_bn": 266130,
       "symbol_count": 399,
-      "data_count": 292
+      "data_count": 294,
+      "roe": 9.87,
+      "roa": 3.69,
+      "gross_margin": 16.24,
+      "net_margin": 18.4,
+      "revenue_last_q": 97547.1,
+      "lnst_last_q": 5842.3,
+      "valuation_history": {
+        "1y": {
+          "pe": {
+            "median": 11.71,
+            "min": 9.99,
+            "max": 15.84
+          },
+          "pb": {
+            "median": 1.33,
+            "min": 1.14,
+            "max": 1.48
+          }
+        },
+        "3y": {
+          "pe": {
+            "median": 15.41,
+            "min": 9.99,
+            "max": 19.55
+          },
+          "pb": {
+            "median": 1.38,
+            "min": 1.14,
+            "max": 1.65
+          }
+        },
+        "5y": {
+          "pe": {
+            "median": 15.49,
+            "min": 8.55,
+            "max": 26.35
+          },
+          "pb": {
+            "median": 1.39,
+            "min": 0.94,
+            "max": 2.53
+          }
+        },
+        "10y": {
+          "pe": {
+            "median": 13.33,
+            "min": 8.35,
+            "max": 26.35
+          },
+          "pb": {
+            "median": 1.44,
+            "min": 0.9,
+            "max": 2.83
+          }
+        }
+      }
     },
     "2700": {
       "name_vi": "Hàng & Dịch vụ Công nghiệp",
-      "pe": 11.77,
-      "pb": 2.04,
-      "market_cap_bn": 570742,
+      "pe": 11.43,
+      "pb": 1.88,
+      "market_cap_bn": 544654,
       "symbol_count": 308,
-      "data_count": 221
+      "data_count": 223,
+      "roe": 15.85,
+      "roa": 8.01,
+      "gross_margin": 17.61,
+      "net_margin": 9.6,
+      "revenue_last_q": 103073.2,
+      "lnst_last_q": 10410.6,
+      "valuation_history": {
+        "1y": {
+          "pe": {
+            "median": 13.76,
+            "min": 10.86,
+            "max": 17.45
+          },
+          "pb": {
+            "median": 2.16,
+            "min": 1.81,
+            "max": 2.8
+          }
+        },
+        "3y": {
+          "pe": {
+            "median": 16.24,
+            "min": 10.86,
+            "max": 22.52
+          },
+          "pb": {
+            "median": 2.49,
+            "min": 1.81,
+            "max": 3.28
+          }
+        },
+        "5y": {
+          "pe": {
+            "median": 16.23,
+            "min": 10.86,
+            "max": 29.13
+          },
+          "pb": {
+            "median": 2.46,
+            "min": 1.81,
+            "max": 3.62
+          }
+        },
+        "10y": {
+          "pe": {
+            "median": 16.73,
+            "min": 9.8,
+            "max": 34.14
+          },
+          "pb": {
+            "median": 2.61,
+            "min": 1.58,
+            "max": 4.5
+          }
+        }
+      }
     },
     "3300": {
       "name_vi": "Ô tô và phụ tùng",
-      "pe": 17.18,
-      "pb": 1.12,
-      "market_cap_bn": 34015,
+      "pe": 17.97,
+      "pb": 1.01,
+      "market_cap_bn": 31815,
       "symbol_count": 19,
-      "data_count": 18
+      "data_count": 18,
+      "roe": 5.33,
+      "roa": 2.26,
+      "gross_margin": 12.13,
+      "net_margin": 1.61,
+      "revenue_last_q": 28804.5,
+      "lnst_last_q": 467.6,
+      "valuation_history": {
+        "1y": {
+          "pe": {
+            "median": 7.27,
+            "min": 5.86,
+            "max": 18.05
+          },
+          "pb": {
+            "median": 1.26,
+            "min": 0.97,
+            "max": 1.47
+          }
+        },
+        "3y": {
+          "pe": {
+            "median": 17.59,
+            "min": 5.86,
+            "max": 34.02
+          },
+          "pb": {
+            "median": 1.34,
+            "min": 0.97,
+            "max": 1.68
+          }
+        },
+        "5y": {
+          "pe": {
+            "median": 19.49,
+            "min": 5.86,
+            "max": 47.21
+          },
+          "pb": {
+            "median": 1.36,
+            "min": 0.94,
+            "max": 2.73
+          }
+        },
+        "10y": {
+          "pe": {
+            "median": 11.53,
+            "min": 5.4,
+            "max": 47.21
+          },
+          "pb": {
+            "median": 1.09,
+            "min": 0.45,
+            "max": 2.73
+          }
+        }
+      }
     },
     "3500": {
       "name_vi": "Thực phẩm và đồ uống",
-      "pe": 13.98,
-      "pb": 2.62,
-      "market_cap_bn": 748504,
+      "pe": 12.52,
+      "pb": 2.41,
+      "market_cap_bn": 707678,
       "symbol_count": 178,
-      "data_count": 142
+      "data_count": 143,
+      "roe": 18.44,
+      "roa": 8.52,
+      "gross_margin": 24.2,
+      "net_margin": 8.33,
+      "revenue_last_q": 161677.1,
+      "lnst_last_q": 14668.5,
+      "valuation_history": {
+        "1y": {
+          "pe": {
+            "median": 15.03,
+            "min": 12.38,
+            "max": 20.42
+          },
+          "pb": {
+            "median": 2.63,
+            "min": 2.36,
+            "max": 3.05
+          }
+        },
+        "3y": {
+          "pe": {
+            "median": 17.62,
+            "min": 12.38,
+            "max": 20.47
+          },
+          "pb": {
+            "median": 2.6,
+            "min": 2.24,
+            "max": 3.05
+          }
+        },
+        "5y": {
+          "pe": {
+            "median": 16.99,
+            "min": 12.03,
+            "max": 23.96
+          },
+          "pb": {
+            "median": 2.67,
+            "min": 2.23,
+            "max": 4.11
+          }
+        },
+        "10y": {
+          "pe": {
+            "median": 17.78,
+            "min": 10.75,
+            "max": 26.98
+          },
+          "pb": {
+            "median": 3.04,
+            "min": 1.98,
+            "max": 5.56
+          }
+        }
+      }
     },
     "3700": {
       "name_vi": "Hàng cá nhân & Gia dụng",
-      "pe": 6.74,
-      "pb": 1.08,
-      "market_cap_bn": 68916,
+      "pe": 5.73,
+      "pb": 0.83,
+      "market_cap_bn": 54999,
       "symbol_count": 91,
-      "data_count": 66
+      "data_count": 66,
+      "roe": 13.8,
+      "roa": 7.36,
+      "gross_margin": 15.4,
+      "net_margin": 3.69,
+      "revenue_last_q": 41737.8,
+      "lnst_last_q": 1580.5,
+      "valuation_history": {
+        "1y": {
+          "pe": {
+            "median": 8,
+            "min": 5.47,
+            "max": 10.97
+          },
+          "pb": {
+            "median": 1.27,
+            "min": 0.82,
+            "max": 1.6
+          }
+        },
+        "3y": {
+          "pe": {
+            "median": 10.25,
+            "min": 5.47,
+            "max": 14.73
+          },
+          "pb": {
+            "median": 1.45,
+            "min": 0.82,
+            "max": 1.73
+          }
+        },
+        "5y": {
+          "pe": {
+            "median": 10.65,
+            "min": 5.47,
+            "max": 15.62
+          },
+          "pb": {
+            "median": 1.53,
+            "min": 0.82,
+            "max": 2.45
+          }
+        },
+        "10y": {
+          "pe": {
+            "median": 10.67,
+            "min": 5.47,
+            "max": 16.67
+          },
+          "pb": {
+            "median": 1.76,
+            "min": 0.82,
+            "max": 3.51
+          }
+        }
+      }
     },
     "4500": {
       "name_vi": "Y tế",
-      "pe": 12.56,
-      "pb": 1.51,
-      "market_cap_bn": 63102,
+      "pe": 11.72,
+      "pb": 1.42,
+      "market_cap_bn": 58559,
       "symbol_count": 69,
-      "data_count": 54
+      "data_count": 54,
+      "roe": 11.01,
+      "roa": 7.98,
+      "gross_margin": 29.66,
+      "net_margin": 398.33,
+      "revenue_last_q": 12184.2,
+      "lnst_last_q": 752.3,
+      "valuation_history": {
+        "1y": {
+          "pe": {
+            "median": 14.42,
+            "min": 11.62,
+            "max": 16.88
+          },
+          "pb": {
+            "median": 1.57,
+            "min": 1.4,
+            "max": 1.8
+          }
+        },
+        "3y": {
+          "pe": {
+            "median": 15.27,
+            "min": 11.62,
+            "max": 16.88
+          },
+          "pb": {
+            "median": 1.67,
+            "min": 1.4,
+            "max": 1.83
+          }
+        },
+        "5y": {
+          "pe": {
+            "median": 14.42,
+            "min": 11.47,
+            "max": 18.63
+          },
+          "pb": {
+            "median": 1.64,
+            "min": 1.32,
+            "max": 2.24
+          }
+        },
+        "10y": {
+          "pe": {
+            "median": 13.85,
+            "min": 10.55,
+            "max": 18.77
+          },
+          "pb": {
+            "median": 1.71,
+            "min": 1.32,
+            "max": 2.72
+          }
+        }
+      }
     },
     "5300": {
       "name_vi": "Bán lẻ",
-      "pe": 11.78,
-      "pb": 2.99,
-      "market_cap_bn": 165722,
+      "pe": 10,
+      "pb": 2.57,
+      "market_cap_bn": 260354,
       "symbol_count": 36,
-      "data_count": 23
+      "data_count": 24,
+      "roe": 23.03,
+      "roa": 9.13,
+      "gross_margin": 17.91,
+      "net_margin": 4.27,
+      "revenue_last_q": 133021.7,
+      "lnst_last_q": 7047.1,
+      "valuation_history": {
+        "1y": {
+          "pe": {
+            "median": 14.58,
+            "min": 9.54,
+            "max": 24.72
+          },
+          "pb": {
+            "median": 3.41,
+            "min": 2.52,
+            "max": 4.3
+          }
+        },
+        "3y": {
+          "pe": {
+            "median": 25.77,
+            "min": 9.54,
+            "max": 103.01
+          },
+          "pb": {
+            "median": 3.66,
+            "min": 2.52,
+            "max": 4.4
+          }
+        },
+        "5y": {
+          "pe": {
+            "median": 23.4,
+            "min": 9.54,
+            "max": 103.01
+          },
+          "pb": {
+            "median": 3.62,
+            "min": 2.3,
+            "max": 5.36
+          }
+        },
+        "10y": {
+          "pe": {
+            "median": 17.68,
+            "min": 6.76,
+            "max": 103.01
+          },
+          "pb": {
+            "median": 3.7,
+            "min": 1.79,
+            "max": 13.11
+          }
+        }
+      }
     },
     "5500": {
       "name_vi": "Truyền thông",
-      "pe": 22.57,
-      "pb": 2.88,
-      "market_cap_bn": 25320,
+      "pe": 15.41,
+      "pb": 2.51,
+      "market_cap_bn": 25111,
       "symbol_count": 47,
-      "data_count": 35
+      "data_count": 35,
+      "roe": 14.42,
+      "roa": 4.08,
+      "gross_margin": 29.47,
+      "net_margin": 6.59,
+      "revenue_last_q": 8744.4,
+      "lnst_last_q": 619.3,
+      "valuation_history": {
+        "1y": {
+          "pe": {
+            "median": 25.72,
+            "min": 15.21,
+            "max": 67.02
+          },
+          "pb": {
+            "median": 2.86,
+            "min": 2.49,
+            "max": 4.49
+          }
+        },
+        "3y": {
+          "pe": {
+            "median": 25.72,
+            "min": 15.21,
+            "max": 67.02
+          },
+          "pb": {
+            "median": 2.84,
+            "min": 2.49,
+            "max": 4.49
+          }
+        },
+        "5y": {
+          "pe": {
+            "median": 25.72,
+            "min": 15.21,
+            "max": 67.02
+          },
+          "pb": {
+            "median": 2.84,
+            "min": 2.49,
+            "max": 4.49
+          }
+        },
+        "10y": {
+          "pe": {
+            "median": 18.51,
+            "min": 11.73,
+            "max": 67.02
+          },
+          "pb": {
+            "median": 2.65,
+            "min": 1.12,
+            "max": 8.27
+          }
+        }
+      }
     },
     "5700": {
       "name_vi": "Du lịch và Giải trí",
-      "pe": 29.02,
-      "pb": 3.51,
-      "market_cap_bn": 322063,
+      "pe": 32.37,
+      "pb": 3.88,
+      "market_cap_bn": 358928,
       "symbol_count": 58,
-      "data_count": 42
+      "data_count": 42,
+      "roe": 11.49,
+      "roa": 3.47,
+      "gross_margin": 9.38,
+      "net_margin": 1.93,
+      "revenue_last_q": 69765.1,
+      "lnst_last_q": 1398.6,
+      "valuation_history": {
+        "1y": {
+          "pe": {
+            "median": 25.82,
+            "min": 15,
+            "max": 81.84
+          },
+          "pb": {
+            "median": 4.08,
+            "min": 3.4,
+            "max": 5.75
+          }
+        },
+        "3y": {
+          "pe": {
+            "median": 28.21,
+            "min": 15,
+            "max": 88.71
+          },
+          "pb": {
+            "median": 3.75,
+            "min": 3.39,
+            "max": 5.75
+          }
+        },
+        "5y": {
+          "pe": {
+            "median": 42.79,
+            "min": 15,
+            "max": 133.05
+          },
+          "pb": {
+            "median": 4.08,
+            "min": 3.39,
+            "max": 11.56
+          }
+        },
+        "10y": {
+          "pe": {
+            "median": 25.03,
+            "min": 11.99,
+            "max": 133.05
+          },
+          "pb": {
+            "median": 4.13,
+            "min": 1.82,
+            "max": 11.56
+          }
+        }
+      }
     },
     "6500": {
       "name_vi": "Viễn thông",
-      "pe": 19.75,
-      "pb": 6.12,
-      "market_cap_bn": 317894,
+      "pe": 17.18,
+      "pb": 4.73,
+      "market_cap_bn": 265526,
       "symbol_count": 9,
-      "data_count": 7
+      "data_count": 7,
+      "roe": 27.55,
+      "roa": 12.95,
+      "gross_margin": 49.27,
+      "net_margin": 19.09,
+      "revenue_last_q": 20027.2,
+      "lnst_last_q": 3834.2,
+      "valuation_history": {
+        "1y": {
+          "pe": {
+            "median": 21.39,
+            "min": 16.28,
+            "max": 38.43
+          },
+          "pb": {
+            "median": 5.79,
+            "min": 4.68,
+            "max": 9.92
+          }
+        },
+        "3y": {
+          "pe": {
+            "median": 33.53,
+            "min": 16.28,
+            "max": 89.99
+          },
+          "pb": {
+            "median": 5.78,
+            "min": 2.61,
+            "max": 9.92
+          }
+        },
+        "5y": {
+          "pe": {
+            "median": 30.32,
+            "min": 12.42,
+            "max": 89.99
+          },
+          "pb": {
+            "median": 4.94,
+            "min": 1.75,
+            "max": 9.92
+          }
+        },
+        "10y": {
+          "pe": {
+            "median": 24.15,
+            "min": 7.04,
+            "max": 89.99
+          },
+          "pb": {
+            "median": 3.39,
+            "min": 1.19,
+            "max": 9.92
+          }
+        }
+      }
     },
     "7500": {
       "name_vi": "Điện, nước & xăng dầu khí đốt",
-      "pe": 10.62,
-      "pb": 1.68,
-      "market_cap_bn": 521189,
+      "pe": 9.05,
+      "pb": 1.54,
+      "market_cap_bn": 486993,
       "symbol_count": 163,
-      "data_count": 143
+      "data_count": 143,
+      "roe": 16.73,
+      "roa": 7.65,
+      "gross_margin": 15.66,
+      "net_margin": 10.05,
+      "revenue_last_q": 135130,
+      "lnst_last_q": 13515.6,
+      "valuation_history": {
+        "1y": {
+          "pe": {
+            "median": 12.56,
+            "min": 9.05,
+            "max": 17.46
+          },
+          "pb": {
+            "median": 1.73,
+            "min": 1.52,
+            "max": 2.31
+          }
+        },
+        "3y": {
+          "pe": {
+            "median": 14.55,
+            "min": 9.05,
+            "max": 18.88
+          },
+          "pb": {
+            "median": 1.77,
+            "min": 1.52,
+            "max": 2.31
+          }
+        },
+        "5y": {
+          "pe": {
+            "median": 13.77,
+            "min": 9.05,
+            "max": 18.88
+          },
+          "pb": {
+            "median": 1.81,
+            "min": 1.52,
+            "max": 2.53
+          }
+        },
+        "10y": {
+          "pe": {
+            "median": 13.53,
+            "min": 8.3,
+            "max": 19
+          },
+          "pb": {
+            "median": 1.93,
+            "min": 1.32,
+            "max": 3
+          }
+        }
+      }
     },
     "8300": {
       "name_vi": "Ngân hàng",
-      "pe": 8.91,
-      "pb": 1.46,
-      "market_cap_bn": 2752569,
+      "pe": 8.02,
+      "pb": 1.31,
+      "market_cap_bn": 2580940,
       "symbol_count": 29,
-      "data_count": 27
+      "data_count": 28,
+      "roe": 16.4,
+      "roa": 1.47,
+      "gross_margin": null,
+      "net_margin": 39.97,
+      "revenue_last_q": 198711.7,
+      "lnst_last_q": 75362.7,
+      "valuation_history": {
+        "1y": {
+          "pe": {
+            "median": 9.36,
+            "min": 7.94,
+            "max": 10.89
+          },
+          "pb": {
+            "median": 1.5,
+            "min": 1.3,
+            "max": 1.81
+          }
+        },
+        "3y": {
+          "pe": {
+            "median": 9.47,
+            "min": 7.84,
+            "max": 11.47
+          },
+          "pb": {
+            "median": 1.53,
+            "min": 1.3,
+            "max": 1.9
+          }
+        },
+        "5y": {
+          "pe": {
+            "median": 9.43,
+            "min": 6.75,
+            "max": 13.8
+          },
+          "pb": {
+            "median": 1.55,
+            "min": 1.26,
+            "max": 2.42
+          }
+        },
+        "10y": {
+          "pe": {
+            "median": 10.36,
+            "min": 6.75,
+            "max": 20.99
+          },
+          "pb": {
+            "median": 1.65,
+            "min": 1.24,
+            "max": 2.91
+          }
+        }
+      }
     },
     "8500": {
       "name_vi": "Bảo hiểm",
-      "pe": 12.09,
-      "pb": 1.49,
-      "market_cap_bn": 90349,
+      "pe": 11.91,
+      "pb": 1.45,
+      "market_cap_bn": 87852,
       "symbol_count": 14,
-      "data_count": 13
+      "data_count": 13,
+      "roe": 12.2,
+      "roa": 1.69,
+      "gross_margin": 11.2,
+      "net_margin": 16.41,
+      "revenue_last_q": 22146.8,
+      "lnst_last_q": 1874.3,
+      "valuation_history": {
+        "1y": {
+          "pe": {
+            "median": 13.44,
+            "min": 11.64,
+            "max": 17.25
+          },
+          "pb": {
+            "median": 1.61,
+            "min": 1.42,
+            "max": 2.01
+          }
+        },
+        "3y": {
+          "pe": {
+            "median": 13.5,
+            "min": 11.64,
+            "max": 17.25
+          },
+          "pb": {
+            "median": 1.47,
+            "min": 1.23,
+            "max": 2.01
+          }
+        },
+        "5y": {
+          "pe": {
+            "median": 14.38,
+            "min": 11.64,
+            "max": 18.64
+          },
+          "pb": {
+            "median": 1.49,
+            "min": 1.23,
+            "max": 2.06
+          }
+        },
+        "10y": {
+          "pe": {
+            "median": 16.1,
+            "min": 11.64,
+            "max": 34.18
+          },
+          "pb": {
+            "median": 1.63,
+            "min": 1.05,
+            "max": 2.93
+          }
+        }
+      }
     },
     "8600": {
       "name_vi": "Bất động sản",
-      "pe": 20.15,
-      "pb": 3.48,
-      "market_cap_bn": 3066620,
+      "pe": 15.27,
+      "pb": 3.16,
+      "market_cap_bn": 2961279,
       "symbol_count": 145,
-      "data_count": 124
+      "data_count": 124,
+      "roe": 20.24,
+      "roa": 4.69,
+      "gross_margin": 41.13,
+      "net_margin": 18.07,
+      "revenue_last_q": 272286.9,
+      "lnst_last_q": 54701.8,
+      "valuation_history": {
+        "1y": {
+          "pe": {
+            "median": 25.99,
+            "min": 14.86,
+            "max": 35.32
+          },
+          "pb": {
+            "median": 3.4,
+            "min": 2.48,
+            "max": 4.09
+          }
+        },
+        "3y": {
+          "pe": {
+            "median": 17.27,
+            "min": 10.94,
+            "max": 35.32
+          },
+          "pb": {
+            "median": 1.63,
+            "min": 1.23,
+            "max": 4.09
+          }
+        },
+        "5y": {
+          "pe": {
+            "median": 15.84,
+            "min": 10.13,
+            "max": 35.32
+          },
+          "pb": {
+            "median": 1.8,
+            "min": 1.23,
+            "max": 4.09
+          }
+        },
+        "10y": {
+          "pe": {
+            "median": 20.04,
+            "min": 10.13,
+            "max": 52.01
+          },
+          "pb": {
+            "median": 3.03,
+            "min": 1.23,
+            "max": 6.36
+          }
+        }
+      }
     },
     "8700": {
       "name_vi": "Dịch vụ tài chính",
-      "pe": 14.39,
-      "pb": 1.65,
-      "market_cap_bn": 580310,
+      "pe": 15.08,
+      "pb": 1.48,
+      "market_cap_bn": 526196,
       "symbol_count": 119,
-      "data_count": 51
+      "data_count": 51,
+      "roe": 9.46,
+      "roa": 4.48,
+      "gross_margin": 56.7,
+      "net_margin": 24.62,
+      "revenue_last_q": 30615.5,
+      "lnst_last_q": 7698.3,
+      "valuation_history": {
+        "1y": {
+          "pe": {
+            "median": 14.61,
+            "min": 11.52,
+            "max": 21.41
+          },
+          "pb": {
+            "median": 1.77,
+            "min": 1.34,
+            "max": 2.06
+          }
+        },
+        "3y": {
+          "pe": {
+            "median": 17.05,
+            "min": 11.52,
+            "max": 27.48
+          },
+          "pb": {
+            "median": 1.65,
+            "min": 1.22,
+            "max": 2.38
+          }
+        },
+        "5y": {
+          "pe": {
+            "median": 16.17,
+            "min": 5.68,
+            "max": 33.09
+          },
+          "pb": {
+            "median": 1.57,
+            "min": 0.79,
+            "max": 3.07
+          }
+        },
+        "10y": {
+          "pe": {
+            "median": 12.23,
+            "min": 5.37,
+            "max": 33.09
+          },
+          "pb": {
+            "median": 1.43,
+            "min": 0.6,
+            "max": 3.07
+          }
+        }
+      }
     },
     "9500": {
       "name_vi": "Công nghệ Thông tin",
-      "pe": 12.66,
-      "pb": 2.57,
-      "market_cap_bn": 141058,
+      "pe": 9.61,
+      "pb": 1.89,
+      "market_cap_bn": 109657,
       "symbol_count": 33,
-      "data_count": 28
+      "data_count": 28,
+      "roe": 19.48,
+      "roa": 9.2,
+      "gross_margin": 23.99,
+      "net_margin": 13.08,
+      "revenue_last_q": 22042,
+      "lnst_last_q": 2936.6,
+      "valuation_history": {
+        "1y": {
+          "pe": {
+            "median": 13.33,
+            "min": 9.61,
+            "max": 19.71
+          },
+          "pb": {
+            "median": 2.76,
+            "min": 1.89,
+            "max": 4.17
+          }
+        },
+        "3y": {
+          "pe": {
+            "median": 20.17,
+            "min": 9.61,
+            "max": 30.37
+          },
+          "pb": {
+            "median": 4.26,
+            "min": 1.89,
+            "max": 6.05
+          }
+        },
+        "5y": {
+          "pe": {
+            "median": 19.74,
+            "min": 9.61,
+            "max": 30.37
+          },
+          "pb": {
+            "median": 4.02,
+            "min": 1.89,
+            "max": 6.05
+          }
+        },
+        "10y": {
+          "pe": {
+            "median": 15.71,
+            "min": 9.2,
+            "max": 30.37
+          },
+          "pb": {
+            "median": 3.1,
+            "min": 1.62,
+            "max": 6.05
+          }
+        }
+      }
     },
     "0500": {
       "name_vi": "Dầu khí",
-      "pe": 8.62,
-      "pb": 1.63,
-      "market_cap_bn": 241087,
+      "pe": 6.01,
+      "pb": 1.39,
+      "market_cap_bn": 223655,
       "symbol_count": 12,
-      "data_count": 12
+      "data_count": 12,
+      "roe": 23.17,
+      "roa": 7.68,
+      "gross_margin": 6.95,
+      "net_margin": 3.76,
+      "revenue_last_q": 310134.7,
+      "lnst_last_q": 11649.8,
+      "valuation_history": {
+        "1y": {
+          "pe": {
+            "median": 14.26,
+            "min": 6.01,
+            "max": 30.06
+          },
+          "pb": {
+            "median": 1.72,
+            "min": 1.12,
+            "max": 2.8
+          }
+        },
+        "3y": {
+          "pe": {
+            "median": 13.74,
+            "min": 6.01,
+            "max": 30.06
+          },
+          "pb": {
+            "median": 1.35,
+            "min": 0.94,
+            "max": 2.8
+          }
+        },
+        "5y": {
+          "pe": {
+            "median": 13.17,
+            "min": 4.19,
+            "max": 30.06
+          },
+          "pb": {
+            "median": 1.35,
+            "min": 0.81,
+            "max": 2.8
+          }
+        },
+        "10y": {
+          "pe": {
+            "median": 16.31,
+            "min": 3.33,
+            "max": 51.33
+          },
+          "pb": {
+            "median": 1.44,
+            "min": 0.62,
+            "max": 3.24
+          }
+        }
+      }
     }
   }
 }

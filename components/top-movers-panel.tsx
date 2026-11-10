@@ -1,7 +1,7 @@
 'use client'
 
 import { useMemo } from 'react'
-import Link from 'next/link'
+import { StockLink } from '@/components/stock-link'
 import { TrendingUp, TrendingDown, ArrowRight } from 'lucide-react'
 import type { StockManifestItem } from '@/lib/longlivestock'
 import { cn } from '@/lib/utils'
@@ -62,7 +62,7 @@ export function TopMoversPanel({ stocks }: TopMoversPanelProps) {
         </div>
         <div className="divide-y divide-white/5">
           {gainers.map((s) => (
-            <Link
+            <StockLink
               key={s.t}
               href={`/stock/${s.t}`}
               className="flex items-center justify-between px-4 py-2 text-xs transition-colors hover:bg-white/[0.03]"
@@ -77,7 +77,7 @@ export function TopMoversPanel({ stocks }: TopMoversPanelProps) {
                   +{s.w1}%
                 </span>
               </div>
-            </Link>
+            </StockLink>
           ))}
         </div>
       </div>
@@ -90,7 +90,7 @@ export function TopMoversPanel({ stocks }: TopMoversPanelProps) {
         </div>
         <div className="divide-y divide-white/5">
           {losers.map((s) => (
-            <Link
+            <StockLink
               key={s.t}
               href={`/stock/${s.t}`}
               className="flex items-center justify-between px-4 py-2 text-xs transition-colors hover:bg-white/[0.03]"
@@ -105,7 +105,7 @@ export function TopMoversPanel({ stocks }: TopMoversPanelProps) {
                   {s.w1}%
                 </span>
               </div>
-            </Link>
+            </StockLink>
           ))}
         </div>
       </div>

@@ -51,8 +51,12 @@ export async function getIndustryFullData(): Promise<IndustryFullData> {
     revenueYoy: marketKqkd.revenueYoy?.at(-1) ?? null,
     lnstYoy: marketKqkd.lnstYoy?.at(-1) ?? null,
     totalSymbols: hierarchy.total_symbols ?? 1932,
-    trackedSymbols: summary.market?.data_count ?? 1470,
+    trackedSymbols: summary.market?.data_count ?? marketKqkd.tracked_count ?? 1477,
     latestQuarter: formatQuarterLabel(latestQuarter),
+    roe: summary.market?.roe ?? 16.57,
+    roa: summary.market?.roa ?? 2.83,
+    grossMargin: summary.market?.gross_margin ?? 20.15,
+    netMargin: summary.market?.net_margin ?? 15.93,
   }
 
   // 2. Xử lý từng ngành L2

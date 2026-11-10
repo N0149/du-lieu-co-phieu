@@ -1,5 +1,6 @@
 import { createClient as createSupabaseServerClient } from '@/lib/supabase/server'
 import { getCurrentUser as getCookieSessionUser } from '@/lib/session'
+import { checkUserAccess } from '@/lib/auth-check'
 import type { UserAuthProfile } from '@/lib/article-interactions-service'
 
 /**
@@ -42,12 +43,16 @@ export async function getAuthenticatedUser(request?: Request): Promise<UserAuthP
     }
 
     // 3. Kiểm tra qua Cookie Session của dự án (lib/session.ts)
+    // CHÚ Ý BẢO MẬT: Chỉ chấp nhận nếu tài khoản VIP (active) hoặc dùng thử còn hạn hợp lệ. Tuyệt đối không chấp nhận guest hoặc expired trial.
     const cookieUser = await getCookieSessionUser()
-    if (cookieUser && cookieUser.id) {
-      return {
-        id: cookieUser.id,
-        email: cookieUser.email || '',
-        name: cookieUser.name || cookieUser.email.split('@')[0] || 'Nhà đầu tư',
+    if (cookieUser && cookieUser.id && cookieUser.email && !cookieUser.email.includes('guest@')) {
+      const access = checkUserAccess(cookieUser)
+      if (access.status === 'SUBSCRIPTION_ACTIVE' || access.status === 'TRIAL_ACTIVE') {
+        return {
+          id: cookieUser.id,
+          email: cookieUser.email,
+          name: cookieUser.name || cookieUser.email.split('@')[0] || 'Nhà đầu tư',
+        }
       }
     }
 

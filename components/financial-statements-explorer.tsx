@@ -21,9 +21,11 @@ import {
   Maximize2,
   Lock,
   Sparkles,
+  Crown,
 } from "lucide-react";
 import { useAuth } from "@/lib/use-auth";
 import { AuthModal } from "@/components/auth/AuthModal";
+import { VipUpgradeModal } from "@/components/auth/VipUpgradeModal";
 import {
   ResponsiveContainer,
   BarChart,
@@ -59,6 +61,7 @@ interface FinancialStatementsExplorerProps {
   bctcDataCongTyMe?: BctcReportData | null;
   onSelectTab?: (tab: any) => void;
   isLoggedIn?: boolean;
+  isVip?: boolean;
 }
 
 
@@ -1085,9 +1088,11 @@ export function FinancialStatementsExplorer({
   bctcDataCongTyMe,
   onSelectTab,
   isLoggedIn: serverIsLoggedIn,
+  isVip: serverIsVip,
 }: FinancialStatementsExplorerProps) {
-  const { isLoggedIn: clientIsLoggedIn } = useAuth();
+  const { isLoggedIn: clientIsLoggedIn, isVip: clientIsVip } = useAuth();
   const isAuthenticated = Boolean(serverIsLoggedIn) || clientIsLoggedIn;
+  const isVip = serverIsVip !== undefined ? serverIsVip : clientIsVip;
   const [authModalConfig, setAuthModalConfig] = useState<{
     open: boolean;
     title: string;
@@ -1097,6 +1102,7 @@ export function FinancialStatementsExplorer({
     title: "Đăng nhập tài khoản",
     subtitle: "",
   });
+  const [vipModalOpen, setVipModalOpen] = useState(false);
   const searchParams = useSearchParams();
   const urlSubtab = searchParams?.get("subtab");
   const urlPeriod = searchParams?.get("period");
@@ -1172,6 +1178,18 @@ export function FinancialStatementsExplorer({
     noteHopNhat: BctcNoteItem | null,
     noteCongTyMe: BctcNoteItem | null
   ) => {
+    if (!isAuthenticated) {
+      setAuthModalConfig({
+        open: true,
+        title: "Mở khóa Thuyết minh Báo cáo Tài chính",
+        subtitle: "Đăng nhập tài khoản để xem chi tiết thuyết minh các khoản mục tài sản, nợ và chi phí.",
+      });
+      return;
+    }
+    if (!isVip) {
+      setVipModalOpen(true);
+      return;
+    }
     setActiveNoteModal({
       isOpen: true,
       rowName,
@@ -1855,7 +1873,7 @@ export function FinancialStatementsExplorer({
                   return (
                     <Fragment key={rowCode}>
                       {/* 1. DÒNG CHÍNH */}
-                      <tr className={cn("group transition-colors", rowBgClass, isSelectedThisRow && "bg-teal-500/10")}>
+                      <tr className={cn("group transition-colors fast-table-row", rowBgClass, isSelectedThisRow && "bg-teal-500/10")}>
                         {/* Cột tiêu chí (Sticky Left) */}
                         <td
                           className={cn(
@@ -2027,7 +2045,7 @@ export function FinancialStatementsExplorer({
 
                       {/* 2. DÒNG CON TĂNG TRƯỞNG QoQ */}
                       {showQoQ && periodMode === "quarter" && (
-                        <tr className="group transition-colors border-b border-slate-800/80 bg-purple-950/20 hover:bg-purple-950/30">
+                        <tr className="group transition-colors border-b border-slate-800/80 bg-purple-950/20 hover:bg-purple-950/30 fast-table-subrow">
                           <td
                             className={cn(
                               "py-1.5 pr-2 sticky left-0 z-10 bg-[#1e1b2e] border-r border-slate-700/60 shadow-[2px_0_5px_rgba(0,0,0,0.12)] transition-colors",
@@ -2069,7 +2087,7 @@ export function FinancialStatementsExplorer({
 
                       {/* 3. DÒNG CON TĂNG TRƯỞNG YoY */}
                       {showYoY && (
-                        <tr className="group transition-colors border-b border-slate-800/80 bg-sky-950/20 hover:bg-sky-950/30">
+                        <tr className="group transition-colors border-b border-slate-800/80 bg-sky-950/20 hover:bg-sky-950/30 fast-table-subrow">
                           <td
                             className={cn(
                               "py-1.5 pr-2 sticky left-0 z-10 bg-[#172230] border-r border-slate-700/60 shadow-[2px_0_5px_rgba(0,0,0,0.12)] transition-colors",
@@ -2183,6 +2201,13 @@ export function FinancialStatementsExplorer({
           }}
         />
       )}
+
+      <VipUpgradeModal
+        open={vipModalOpen}
+        onClose={() => setVipModalOpen(false)}
+        title="Mở khóa Thuyết minh BCTC Chi tiết (VIP)"
+        subtitle="Dành riêng cho Hội viên VIP: Bóc tách chi tiết từng khoản mục nợ vay ngân hàng, chi phí dở dang, người mua trả tiền trước... không cần đọc PDF."
+      />
     </div>
   );
 }

@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useMemo, useCallback, useRef } from 'react'
 import Link from 'next/link'
+import { StockLink } from '@/components/stock-link'
 import {
   Search,
   Bookmark,
@@ -742,7 +743,7 @@ export function NewsDashboard({
                   <div
                     key={`${item.id || 'disc'}-${item.symbol || ''}-${idx}`}
                     className={cn(
-                      'transition-colors hover:bg-[#121620]',
+                      'transition-colors hover:bg-[#121620] fast-list-card',
                       isImportant && 'bg-amber-500/[0.03]'
                     )}
                   >
@@ -751,14 +752,14 @@ export function NewsDashboard({
                       {/* Dòng 1: Mã CK, Thị giá, Sàn, Nhạy cảm giá và Thời gian */}
                       <div className="flex items-center justify-between gap-2">
                         <div className="flex items-center gap-1.5 flex-wrap min-w-0">
-                          <Link
+                          <StockLink
                             href={`/stock/${encodeURIComponent(item.symbol)}`}
                             className="inline-flex items-center gap-1 font-mono text-sm font-bold text-white hover:text-[#38bdf8] transition-colors"
                           >
                             <span className="rounded bg-emerald-500/15 text-emerald-400 px-1.5 py-0.5 border border-emerald-500/30">
                               {item.symbol}
                             </span>
-                          </Link>
+                          </StockLink>
 
                           {priceInfo && priceInfo.px != null && (
                             <span className="text-xs font-mono text-[#cbd5e1] font-semibold">
@@ -823,12 +824,12 @@ export function NewsDashboard({
                         </span>
 
                         <div className="flex items-center gap-1.5">
-                          <Link
+                          <StockLink
                             href={`/stock/${encodeURIComponent(item.symbol)}`}
                             className="inline-flex items-center gap-1 rounded bg-[#161b24] hover:bg-[#1e2430] px-2 py-1 text-[11px] font-medium text-[#94a3b8] hover:text-white transition-colors border border-[#232a36]"
                           >
                             <span>BCTC & Chi tiết</span>
-                          </Link>
+                          </StockLink>
 
                           {item.file_url ? (
                             <a
@@ -851,13 +852,13 @@ export function NewsDashboard({
                     <div className="hidden md:flex min-h-[48px] w-full items-center px-4 py-2.5 lg:px-6">
                       {/* Symbol & Price */}
                       <div className="w-24 sm:w-28 shrink-0">
-                        <Link
-                          href={`/stock/${encodeURIComponent(item.symbol)}`}
+                        <StockLink
+                            href={`/stock/${encodeURIComponent(item.symbol)}`}
                           className="inline-flex items-center gap-1 font-mono text-sm font-bold text-[#f1f5f9] hover:text-[#38bdf8] transition-colors"
                         >
                           <span>{item.symbol}</span>
                           {inWatchlist && <span className="text-amber-400 text-xs" title="Trong Watchlist">★</span>}
-                        </Link>
+                        </StockLink>
                         {priceInfo && priceInfo.px != null && (
                           <div className="text-[11px] font-mono text-[#8b949e]">
                             <span>{priceInfo.px}</span>
@@ -1063,7 +1064,7 @@ export function NewsDashboard({
                 return (
                   <div
                     key={`${item.id}-${idx}`}
-                    className="group flex min-h-[46px] w-full items-start px-4 py-2.5 transition-colors hover:bg-[#121620] lg:px-6"
+                    className="group flex min-h-[46px] w-full items-start px-4 py-2.5 transition-colors hover:bg-[#121620] lg:px-6 fast-list-card"
                   >
                     {/* Col 1: Bookmark Icon (WiData Style) */}
                     <div className="flex w-10 shrink-0 items-center justify-center pt-0.5">
@@ -1118,9 +1119,7 @@ export function NewsDashboard({
                             const isNeg = chg < 0
 
                             return (
-                              <Link
-                                key={tickerCode}
-                                href={`/stock/${encodeURIComponent(tickerCode)}`}
+                              <StockLink key={tickerCode} href={`/stock/${encodeURIComponent(tickerCode)}`}
                                 onClick={(e) => e.stopPropagation()}
                                 className={cn(
                                   'inline-flex items-center gap-1 rounded-md px-1.5 py-0.5 font-mono text-[10.5px] font-medium transition-all hover:brightness-125',
@@ -1136,7 +1135,7 @@ export function NewsDashboard({
                                 <span className="text-[9.5px]">
                                   ({isPos ? `+${chg}%` : `${chg}%`})
                                 </span>
-                              </Link>
+                              </StockLink>
                             )
                           })}
                         </div>

@@ -3,6 +3,7 @@
 import { useState, useEffect, useMemo, useRef, useCallback, Fragment } from 'react'
 import { createPortal } from 'react-dom'
 import { useRouter } from 'next/navigation'
+import { prefetchStockUrl } from '@/components/stock-link'
 import {
   Search,
   ArrowUp,
@@ -422,7 +423,7 @@ export function GlobalSearchModal({ open, onClose }: GlobalSearchModalProps) {
     }
   }
 
-  // Scroll active item into view
+  // Scroll active item into view & Prefetch URL đón đầu tức thì
   useEffect(() => {
     if (listRef.current) {
       const activeEl = listRef.current.querySelector(
@@ -432,7 +433,11 @@ export function GlobalSearchModal({ open, onClose }: GlobalSearchModalProps) {
         activeEl.scrollIntoView({ block: 'nearest' })
       }
     }
-  }, [activeIndex])
+    const currentItem = filteredResults[activeIndex]
+    if (currentItem?.href) {
+      prefetchStockUrl(router, currentItem.href)
+    }
+  }, [activeIndex, filteredResults, router])
 
   const recentCount = !query.trim()
     ? filteredResults.filter((i) => i.isRecent).length
@@ -749,7 +754,7 @@ export function GlobalSearchModal({ open, onClose }: GlobalSearchModalProps) {
                       }
                     }}
                     className={cn(
-                      'group flex cursor-pointer items-center justify-between px-4 py-2.5 transition-colors',
+                      'group flex cursor-pointer items-center justify-between px-4 py-2.5 transition-colors fast-list-card',
                       isSelected ? 'bg-[#161c28]' : 'hover:bg-[#121620]'
                     )}
                   >

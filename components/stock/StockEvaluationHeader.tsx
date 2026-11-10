@@ -3,9 +3,10 @@
 import React from 'react'
 import type { StockEvaluationData } from '@/lib/stock-evaluation-service'
 import type { StockDetailData } from '@/lib/longlivestock'
-import { ArrowDown, ArrowUp, Minus, Sparkles, ChevronDown, ChevronUp, X, Lock } from 'lucide-react'
+import { ArrowDown, ArrowUp, Minus, Sparkles, ChevronDown, ChevronUp, X, Lock, Crown } from 'lucide-react'
 import { useAuth } from '@/lib/use-auth'
 import { AuthModal } from '@/components/auth/AuthModal'
+import { VipUpgradeModal } from '@/components/auth/VipUpgradeModal'
 import { cn } from '@/lib/utils'
 
 interface StockEvaluationHeaderProps {
@@ -58,8 +59,9 @@ export function StockEvaluationHeader({
   onOpenPaywall,
   isLoggedIn: serverIsLoggedIn,
 }: StockEvaluationHeaderProps) {
-  const { isLoggedIn: clientIsLoggedIn } = useAuth()
+  const { isLoggedIn: clientIsLoggedIn, isVip: clientIsVip } = useAuth()
   const isAuthenticated = serverIsLoggedIn !== undefined ? serverIsLoggedIn : clientIsLoggedIn
+  const isVip = isVipProp !== undefined ? isVipProp : clientIsVip
   const [authModalConfig, setAuthModalConfig] = React.useState<{
     open: boolean
     title: string
@@ -69,6 +71,11 @@ export function StockEvaluationHeader({
     title: 'Đăng nhập tài khoản',
     subtitle: '',
   })
+  const [vipModalOpen, setVipModalOpen] = React.useState(false)
+  const [vipModalConfig, setVipModalConfig] = React.useState<{
+    title?: string
+    subtitle?: string
+  }>({})
 
   const { market, valuation, ticker, financials = [] } = stockData
 
@@ -430,7 +437,7 @@ export function StockEvaluationHeader({
 
               {/* Điểm nhấn ĐHĐCĐ & P/E thực tế: Đặt liền mạch ngay cạnh giá */}
               {ktplRate != null && (
-                isAuthenticated ? (
+                isAuthenticated && isVip ? (
                   <div
                     className="inline-flex items-center gap-1.5 rounded-lg border border-amber-500/30 bg-amber-500/10 px-2 py-0.5 text-[11px]"
                     title="Tỷ lệ trích ngoài cổ đông theo ĐHĐCĐ & P/E thực tế"
@@ -450,14 +457,14 @@ export function StockEvaluationHeader({
                       </>
                     )}
                   </div>
-                ) : (
+                ) : !isAuthenticated ? (
                   <button
                     type="button"
                     onClick={() =>
                       setAuthModalConfig({
                         open: true,
                         title: 'Mở khóa P/E thực tế & Tỷ lệ trích ĐHĐCĐ',
-                        subtitle: 'Đăng nhập tài khoản miễn phí để xem P/E thực sau khi trừ quỹ khen thưởng phúc lợi và tỷ lệ trích ĐHĐCĐ.',
+                        subtitle: 'Đăng nhập tài khoản để xem P/E thực sau khi trừ quỹ khen thưởng phúc lợi và tỷ lệ trích ĐHĐCĐ.',
                       })
                     }
                     className="inline-flex items-center gap-1.5 rounded-lg border border-amber-500/30 bg-amber-500/10 px-2 py-0.5 text-[11px] text-amber-500 dark:text-amber-400 hover:bg-amber-500/20 transition cursor-pointer"
@@ -466,6 +473,23 @@ export function StockEvaluationHeader({
                     <Lock className="size-3 text-amber-500 shrink-0" />
                     <span className="text-muted-foreground">ĐHĐCĐ:</span>
                     <span className="font-bold underline underline-offset-2">P/E thực: 🔒 Đăng nhập</span>
+                  </button>
+                ) : (
+                  <button
+                    type="button"
+                    onClick={() => {
+                      setVipModalConfig({
+                        title: 'Mở khóa P/E thực tế & Tỷ lệ trích ĐHĐCĐ (VIP)',
+                        subtitle: 'Chỉ số P/E thực tế và Tỷ lệ trích ngoài cổ đông theo ĐHĐCĐ dành riêng cho Hội viên VIP.',
+                      })
+                      setVipModalOpen(true)
+                    }}
+                    className="inline-flex items-center gap-1.5 rounded-lg border border-amber-500/40 bg-gradient-to-r from-amber-500/20 to-amber-600/15 px-2 py-0.5 text-[11px] text-amber-300 hover:brightness-110 transition cursor-pointer"
+                    title="Nâng cấp VIP để xem P/E thực tế & Tỷ lệ trích ngoài cổ đông"
+                  >
+                    <Crown className="size-3 text-amber-400 shrink-0" />
+                    <span className="text-[#c4b5a5]">ĐHĐCĐ:</span>
+                    <span className="font-bold underline underline-offset-2 text-amber-300">P/E thực: 👑 Khóa VIP</span>
                   </button>
                 )
               )}
@@ -505,7 +529,7 @@ export function StockEvaluationHeader({
                         })
                       }
                       className="min-w-0 flex flex-col justify-between rounded-xl p-2 sm:p-2.5 border border-amber-500/40 bg-amber-500/[0.08] dark:bg-amber-950/30 hover:bg-amber-500/15 shadow-xs ring-1 ring-amber-500/20 transition-all text-left cursor-pointer group"
-                      title="Đăng nhập tài khoản miễn phí để mở khóa chỉ số này"
+                      title="Đăng nhập tài khoản để mở khóa chỉ số này"
                     >
                       <div className="flex items-center justify-between gap-1 w-full">
                         <span className="text-[11px] font-bold text-amber-600 dark:text-amber-400 tracking-tight truncate">
@@ -521,7 +545,47 @@ export function StockEvaluationHeader({
                           <span>🔒 Đăng nhập</span>
                         </span>
                         <span className="text-[9px] text-muted-foreground truncate">
-                          Mở khóa miễn phí
+                          Mở khóa tài khoản
+                        </span>
+                      </div>
+                    </button>
+                  )
+                }
+
+                if (!isVip) {
+                  return (
+                    <button
+                      key={item.id}
+                      type="button"
+                      onClick={() => {
+                        setVipModalConfig({
+                          title: item.isRealPe
+                            ? 'Mở khóa P/E thực tế chuẩn xác (VIP)'
+                            : 'Mở khóa Tỷ lệ trích ngoài cổ đông (VIP)',
+                          subtitle: item.isRealPe
+                            ? 'P/E chuẩn xác sau khi đã loại trừ Quỹ khen thưởng phúc lợi & Thưởng ban điều hành theo Nghị quyết ĐHĐCĐ.'
+                            : 'Xem tỷ lệ LNST trích cho Quỹ KTPL, Thưởng ban điều hành và Thù lao HĐQT theo Nghị quyết ĐHĐCĐ.',
+                        })
+                        setVipModalOpen(true)
+                      }}
+                      className="min-w-0 flex flex-col justify-between rounded-xl p-2 sm:p-2.5 border border-amber-500/40 bg-gradient-to-br from-amber-500/15 to-amber-600/5 hover:border-amber-500/70 shadow-xs ring-1 ring-amber-500/25 transition-all text-left cursor-pointer group"
+                      title="Chỉ số độc quyền dành riêng cho Hội viên VIP (từ 95k/tháng)"
+                    >
+                      <div className="flex items-center justify-between gap-1 w-full">
+                        <span className="text-[11px] font-bold text-amber-500 dark:text-amber-300 tracking-tight truncate">
+                          {item.label}
+                        </span>
+                        <span className="inline-flex items-center gap-0.5 rounded px-1 py-0.2 text-[9px] font-black bg-amber-500/25 text-amber-300 border border-amber-500/40 shrink-0">
+                          <Crown className="size-2.5 text-amber-300" />
+                          <span>VIP</span>
+                        </span>
+                      </div>
+                      <div className="flex flex-col gap-0.5 mt-1">
+                        <span className="font-sans text-xs sm:text-[13px] font-bold text-amber-400 flex items-center gap-1 group-hover:underline">
+                          <span>👑 Khóa VIP</span>
+                        </span>
+                        <span className="text-[9px] text-[#c4b5a5] truncate">
+                          Gói từ 95k/tháng
                         </span>
                       </div>
                     </button>
@@ -711,12 +775,38 @@ export function StockEvaluationHeader({
                       setAuthModalConfig({
                         open: true,
                         title: 'Mở khóa P/E thực tế & Tỷ lệ trích ĐHĐCĐ',
-                        subtitle: 'Đăng nhập tài khoản miễn phí để xem P/E thực sau khi trừ quỹ khen thưởng phúc lợi và tỷ lệ trích ĐHĐCĐ.',
+                        subtitle: 'Đăng nhập tài khoản để xem P/E thực sau khi trừ quỹ khen thưởng phúc lợi và tỷ lệ trích ĐHĐCĐ.',
                       })
                     }
                     className="inline-flex items-center gap-1.5 rounded-lg bg-amber-500 px-3.5 py-1.5 text-xs font-bold text-black hover:bg-amber-400 transition cursor-pointer shadow-sm"
                   >
                     <span>Đăng nhập để xem</span>
+                  </button>
+                </div>
+              ) : !isVip ? (
+                <div className="py-5 text-center space-y-2.5">
+                  <div className="mx-auto flex size-9 items-center justify-center rounded-xl bg-amber-500/20 text-amber-300 border border-amber-500/40">
+                    <Crown className="size-4.5 text-amber-300" />
+                  </div>
+                  <div>
+                    <p className="text-xs font-bold text-amber-200">Chỉ số độc quyền Hội viên VIP</p>
+                    <p className="text-[11px] text-[#c4b5a5] mt-0.5">
+                      P/E thực tế sau trích lập & Tỷ lệ trích ngoài cổ đông (chỉ từ 95.000 đ/tháng).
+                    </p>
+                  </div>
+                  <button
+                    type="button"
+                    onClick={() => {
+                      setVipModalConfig({
+                        title: 'Mở khóa P/E thực tế & Tỷ lệ trích ĐHĐCĐ (VIP)',
+                        subtitle: 'P/E thực tế sau khi trừ quỹ KTPL và tỷ lệ trích ngoài cổ đông dành riêng cho Hội viên VIP.',
+                      })
+                      setVipModalOpen(true)
+                    }}
+                    className="inline-flex items-center gap-1.5 rounded-lg bg-gradient-to-r from-amber-400 to-amber-500 px-4 py-1.5 text-xs font-black text-black hover:brightness-110 transition cursor-pointer shadow-sm"
+                  >
+                    <Crown className="size-3.5 text-black" />
+                    <span>Nâng cấp VIP ngay</span>
                   </button>
                 </div>
               ) : (
@@ -778,6 +868,12 @@ export function StockEvaluationHeader({
           subtitle={authModalConfig.subtitle}
         />
       )}
+      <VipUpgradeModal
+        open={vipModalOpen}
+        onClose={() => setVipModalOpen(false)}
+        title={vipModalConfig.title}
+        subtitle={vipModalConfig.subtitle}
+      />
     </div>
   )
 }

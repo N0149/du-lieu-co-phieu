@@ -464,4 +464,23 @@
   z-index: 1000000 !important;
 }
 
+/* ── Tối ưu tốc độ render & Chống nghẽn DOM (Speed & Virtual Render) ── */
+.fast-table-row {
+  content-visibility: auto;
+  contain-intrinsic-size: auto 38px;
+}
 
+.fast-table-subrow {
+  content-visibility: auto;
+  contain-intrinsic-size: auto 30px;
+}
+
+.fast-list-card {
+  content-visibility: auto;
+  contain-intrinsic-size: auto 76px;
+}
+
+.fast-grid-card {
+  content-visibility: auto;
+  contain-intrinsic-size: auto 160px;
+}

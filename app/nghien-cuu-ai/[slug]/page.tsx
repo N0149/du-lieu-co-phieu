@@ -18,6 +18,7 @@ import {
   getAllNghienCuuAiReports,
 } from '@/lib/nghien-cuu-ai-service'
 import { getAuthenticatedUser } from '@/lib/auth-user-helper'
+import { isVipUser } from '@/lib/admin-auth'
 import { AuthGate } from '@/components/auth/AuthGate'
 
 export async function generateMetadata({
@@ -61,6 +62,7 @@ export default async function NghienCuuAiDetailPage({
   // Kiểm tra quyền truy cập phía Server
   const authUser = await getAuthenticatedUser()
   const isLoggedIn = Boolean(authUser)
+  const isVip = isVipUser(authUser)
 
   return (
     <div className="min-h-screen bg-[#11141c] text-foreground">
@@ -134,20 +136,22 @@ export default async function NghienCuuAiDetailPage({
           )}
         </header>
 
-        {/* Nội dung bài viết chi tiết - Khóa bằng AuthGate cho khách vãng lai */}
+        {/* Nội dung bài viết chi tiết - Khóa bằng AuthGate cho Hội viên VIP */}
         <article className="rounded-2xl border border-white/10 bg-[#1a1e29] p-6 sm:p-10 shadow-2xl">
           <AuthGate
             isLoggedIn={isLoggedIn}
+            isVip={isVip}
+            requiredTier="vip"
             variant="blur"
             blurHeight={320}
-            title="Đăng nhập để xem toàn bộ bài nghiên cứu & định giá chi tiết"
-            subtitle="Đăng nhập tài khoản miễn phí chỉ trong 3 giây bằng Google để mở khóa toàn bộ bài phân tích chuyên sâu."
+            title="Mở khóa Toàn Bộ Nghiên Cứu Chuyên Sâu AI (VIP)"
+            subtitle="Báo cáo phân tích chuyên sâu được định giá độc quyền bởi AI dành riêng cho Hội viên VIP (từ 95.000 đ/tháng)."
             features={[
               'Bóc tách chi tiết định giá tài sản ngầm & RNAV',
-              'Đầy đủ bảng biểu dự phóng tài chính & rủi ro',
-              'Đăng nhập nhanh 1-click qua tài khoản Google',
+              'Đầy đủ bảng biểu dự phóng tài chính & kịch bản rủi ro',
+              'Luận điểm phân tích độc quyền từ mô hình AI chuyên sâu',
             ]}
-            ctaText="Đăng nhập miễn phí để đọc tiếp"
+            ctaText="👑 Nâng cấp VIP để đọc toàn bộ"
           >
             <div
               className="prose prose-invert max-w-none text-xs sm:text-sm leading-relaxed space-y-4 font-sans text-slate-200 [&_h1]:text-2xl [&_h1]:font-black [&_h1]:text-white [&_h1]:border-b [&_h1]:border-white/10 [&_h1]:pb-3 [&_h1]:mt-8 [&_h2]:text-xl [&_h2]:font-bold [&_h2]:text-white [&_h2]:mt-6 [&_h3]:text-base [&_h3]:font-bold [&_h3]:text-emerald-400 [&_h3]:mt-5 [&_strong]:text-white [&_strong]:font-bold [&_ul]:list-disc [&_ul]:pl-5 [&_li]:my-1"

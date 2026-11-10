@@ -29,6 +29,8 @@ import {
   ScrollText,
   MessageSquare,
   Coins,
+  Crown,
+  Lock,
 } from 'lucide-react'
 import type { StockDetailData, StockManifestItem } from '@/lib/longlivestock'
 import type { Report } from '@/lib/use-reports'
@@ -60,6 +62,7 @@ import type { StockIcbHierarchy } from '@/lib/icb-service'
 import { AuthGate } from '@/components/auth/AuthGate'
 import { useAuth } from '@/lib/use-auth'
 import { AuthModal } from '@/components/auth/AuthModal'
+import { VipUpgradeModal } from '@/components/auth/VipUpgradeModal'
 import type { CompanyWebsiteMeta } from '@/lib/company-website-service'
 import type { BctcCompanyDocumentsPayload } from '@/lib/bctc-document-service'
 
@@ -403,13 +406,16 @@ export function StockDetailView({
   initialCandles = [],
   isLoggedIn = false,
 }: StockDetailViewProps) {
-  const { isLoggedIn: clientIsLoggedIn } = useAuth()
-  const effectiveIsLoggedIn = Boolean(isLoggedIn) || clientIsLoggedIn
+  const { isLoggedIn: clientIsLoggedIn, isVip: clientIsVip } = useAuth()
+  const effectiveIsLoggedIn = clientIsLoggedIn
+  const effectiveIsVip = clientIsVip
   const [authModalConfig, setAuthModalConfig] = useState<{ open: boolean; title: string; subtitle: string }>({
     open: false,
     title: 'Đăng nhập tài khoản',
     subtitle: '',
   })
+  const [vipModalOpen, setVipModalOpen] = useState(false)
+  const [vipModalConfig, setVipModalConfig] = useState<{ title?: string; subtitle?: string }>({})
   // Tab đang hiển thị trên thanh nút bấm (cập nhật NGAY LẬP TỨC để phản hồi giao diện không delay)
   const [activeTab, setActiveTab] = useState<StockDetailTab>(() => resolveValidTab(initialTab))
   const [expandedSvgChart, setExpandedSvgChart] = useState<'price' | 'revenue' | 'throughput' | null>(null)
@@ -1140,6 +1146,7 @@ export function StockDetailView({
           priceChanges={priceChanges}
           ktplRate={bonusWelfareRate}
           isLoggedIn={effectiveIsLoggedIn}
+          isVip={effectiveIsVip}
         />
       </div>
 
@@ -1318,24 +1325,41 @@ export function StockDetailView({
                           <span>Trích Quỹ KTPL (ĐHĐCĐ)</span>
                           <span className="text-[9px] font-semibold opacity-80">LNST</span>
                         </div>
-                        {effectiveIsLoggedIn ? (
+                        {effectiveIsVip ? (
                           <div className="mt-0.5 text-xs font-black text-amber-800 dark:text-amber-200">
                             {bonusWelfareRate}% {adjustedPE != null ? `(P/E sau trích: ${adjustedPE.toFixed(1)}x)` : ''}
                           </div>
-                        ) : (
+                        ) : !effectiveIsLoggedIn ? (
                           <button
                             type="button"
                             onClick={() =>
                               setAuthModalConfig({
                                 open: true,
                                 title: 'Mở khóa P/E thực tế & Tỷ lệ trích ĐHĐCĐ',
-                                subtitle: 'Đăng nhập tài khoản miễn phí để xem P/E thực sau khi trừ quỹ khen thưởng phúc lợi và tỷ lệ trích ĐHĐCĐ.',
+                                subtitle: 'Đăng nhập tài khoản để xem P/E thực sau khi trừ quỹ khen thưởng phúc lợi và tỷ lệ trích ĐHĐCĐ.',
                               })
                             }
                             className="mt-1 flex items-center gap-1.5 text-xs font-bold text-amber-600 dark:text-amber-300 hover:underline cursor-pointer"
                           >
                             <span className="rounded bg-amber-500/20 px-1.5 py-0.5 text-[10px]">🔒 Khóa</span>
                             <span>Đăng nhập để xem</span>
+                          </button>
+                        ) : (
+                          <button
+                            type="button"
+                            onClick={() => {
+                              setVipModalConfig({
+                                title: 'Mở khóa Chỉ số độc quyền ĐHĐCĐ (VIP)',
+                                subtitle: 'Chỉ số P/E thực tế và Tỷ lệ trích ngoài cổ đông theo ĐHĐCĐ dành riêng cho Hội viên VIP.',
+                              })
+                              setVipModalOpen(true)
+                            }}
+                            className="mt-1 flex items-center gap-1.5 text-xs font-bold text-amber-400 hover:brightness-110 cursor-pointer"
+                          >
+                            <span className="rounded bg-amber-500/25 border border-amber-500/35 px-1.5 py-0.5 text-[10px] text-amber-300 font-black">
+                              👑 Khóa VIP
+                            </span>
+                            <span>Nâng cấp để xem</span>
                           </button>
                         )}
                       </div>
@@ -2053,16 +2077,18 @@ export function StockDetailView({
           {/* A. Kế Hoạch Kinh Doanh & Tỷ Lệ Hoàn Thành (1 năm / 3 năm / 5 năm / 10 năm) */}
           <AuthGate
             isLoggedIn={effectiveIsLoggedIn}
+            isVip={effectiveIsVip}
+            requiredTier="vip"
             variant="blur"
             blurHeight={130}
-            title="Mở khóa Kế Hoạch Kinh Doanh ĐHĐCĐ 10 Năm"
-            subtitle="Đăng nhập tài khoản miễn phí để so sánh chi tiết kế hoạch ĐHĐCĐ và kết quả thực hiện qua các năm."
+            title="Mở khóa Kế Hoạch Kinh Doanh ĐHĐCĐ 10 Năm (VIP)"
+            subtitle="Dành riêng cho Hội viên VIP: Đối chiếu chi tiết chỉ tiêu ĐHĐCĐ giao và kết quả thực hiện thực tế qua các năm."
             features={[
               'So sánh doanh thu, LNST kế hoạch vs thực hiện 10 năm liên tục',
-              'Đánh giá mức độ hoàn thành cam kết của Ban lãnh đạo',
-              'Đăng nhập miễn phí trong 3 giây bằng Google',
+              'Đánh giá mức độ trung thực và năng lực hoàn thành của Ban lãnh đạo',
+              'Cập nhật tiến độ hoàn thành theo từng quý trong năm',
             ]}
-            ctaText="Đăng nhập để xem kế hoạch kinh doanh"
+            ctaText="👑 Nâng cấp VIP để xem Kế hoạch kinh doanh"
           >
             <BusinessPlanComparison ticker={ticker} />
           </AuthGate>
@@ -2078,6 +2104,7 @@ export function StockDetailView({
             bctcDataCongTyMe={bctcDataCongTyMe}
             onSelectTab={handleTabChange}
             isLoggedIn={effectiveIsLoggedIn}
+            isVip={effectiveIsVip}
           />
         </div>
       )}
@@ -2259,20 +2286,21 @@ export function StockDetailView({
             <div className="rounded-2xl border-2 border-primary/50 bg-card p-5 sm:p-6 shadow-sm space-y-4">
               <div className="flex flex-wrap items-center justify-between gap-2 border-b border-border/60 pb-3">
                 <div className="flex items-center gap-2.5">
-                  <span className="flex size-8 items-center justify-center rounded-xl bg-emerald-500 text-white shadow-xs">
-                    <FileText className="size-4.5" />
+                  <span className="flex size-8 items-center justify-center rounded-xl bg-amber-500 text-black shadow-xs">
+                    <Crown className="size-4.5" />
                   </span>
                   <div>
                     <div className="flex items-center gap-2">
                       <h3 className="text-sm font-bold uppercase tracking-wider text-foreground">
                         Báo Cáo Phân Tích Chuyên Sâu ({ticker})
                       </h3>
-                      <span className="rounded-full bg-emerald-500/15 px-2 py-0.5 text-[10px] font-bold text-emerald-600 dark:text-emerald-400 uppercase">
-                        Độc quyền
+                      <span className="rounded-full bg-amber-500/15 border border-amber-500/30 px-2 py-0.5 text-[10px] font-bold text-amber-500 dark:text-amber-400 uppercase flex items-center gap-1">
+                        <Crown className="size-3" />
+                        Độc quyền VIP
                       </span>
                     </div>
                     <p className="text-xs text-muted-foreground">
-                      Tài liệu nghiên cứu kèm mô hình định giá mục tiêu và audio podcast
+                      Tài liệu nghiên cứu kèm mô hình định giá mục tiêu, luận điểm chuyên sâu và audio podcast
                     </p>
                   </div>
                 </div>
@@ -2291,63 +2319,158 @@ export function StockDetailView({
                   const isBuy =
                     r.recommendation?.toUpperCase() === 'MUA' ||
                     r.recommendation?.toUpperCase() === 'KHẢ QUAN'
+                  const targetUrl = r.localSlug ? `/nghien-cuu-ai/${r.localSlug}` : `/bao-cao/${r.driveDocId}`
 
                   return (
                     <div
                       key={r.driveDocId || idx}
-                      className="flex flex-col justify-between gap-4 rounded-xl border border-border bg-background p-4 sm:flex-row sm:items-center shadow-2xs hover:border-emerald-500/50 transition-colors"
+                      className="flex flex-col justify-between gap-4 rounded-xl border border-border bg-background p-4 sm:flex-row sm:items-center shadow-2xs hover:border-amber-500/50 transition-colors"
                     >
-                      <div className="space-y-1.5">
+                      <div className="space-y-2 flex-1 min-w-0">
                         <div className="flex flex-wrap items-center gap-2">
                           <span className="font-mono text-xs font-bold text-primary">{r.ticker || ticker}</span>
                           <span className="text-[11px] text-muted-foreground">· Ngày: {r.reportDate || r.date || '—'}</span>
                           {r.score != null && (
-                            <span className="rounded-full bg-emerald-500/15 border border-emerald-500/30 px-2.5 py-0.5 text-[10px] font-bold text-emerald-400 font-mono">
-                              ⭐ {r.score} ĐIỂM · {r.classification || 'Hấp dẫn'}
-                            </span>
+                            effectiveIsVip ? (
+                              <span className="rounded-full bg-emerald-500/15 border border-emerald-500/30 px-2.5 py-0.5 text-[10px] font-bold text-emerald-400 font-mono">
+                                ⭐ {r.score} ĐIỂM · {r.classification || 'Hấp dẫn'}
+                              </span>
+                            ) : (
+                              <button
+                                type="button"
+                                onClick={() => {
+                                  setVipModalConfig({
+                                    title: `Mở Khóa Điểm Định Giá & Tín Hiệu ${r.ticker || ticker} (VIP)`,
+                                    subtitle: `Khám phá chính xác điểm số định giá và khuyến nghị Mua/Bán của ${r.ticker || ticker} từ mô hình AI chuyên sâu.`,
+                                  })
+                                  setVipModalOpen(true)
+                                }}
+                                className="rounded-full bg-amber-500/15 border border-amber-500/35 px-2.5 py-0.5 text-[10px] font-black text-amber-300 font-mono flex items-center gap-1 cursor-pointer hover:brightness-110"
+                                title="Nâng cấp VIP để mở khóa Điểm định giá & Tín hiệu Mua/Bán"
+                              >
+                                <Crown className="size-2.5 text-amber-300" />
+                                <span>🔒 ??? ĐIỂM · Khóa Tín Hiệu</span>
+                              </button>
+                            )
                           )}
                           {r.recommendation && (
-                            <span
-                              className={cn(
-                                'rounded-full px-2.5 py-0.5 text-[10px] font-bold uppercase tracking-wider',
-                                isBuy
-                                  ? 'bg-emerald-500/15 text-emerald-600 dark:text-emerald-400'
-                                  : 'bg-amber-500/15 text-amber-600 dark:text-amber-400',
-                              )}
-                            >
-                              Khuyến nghị: {r.recommendation}
-                            </span>
+                            effectiveIsVip ? (
+                              <span
+                                className={cn(
+                                  'rounded-full px-2.5 py-0.5 text-[10px] font-bold uppercase tracking-wider',
+                                  isBuy
+                                    ? 'bg-emerald-500/15 text-emerald-600 dark:text-emerald-400'
+                                    : 'bg-amber-500/15 text-amber-600 dark:text-amber-400',
+                                )}
+                              >
+                                Khuyến nghị: {r.recommendation}
+                              </span>
+                            ) : (
+                              <span className="rounded-full bg-amber-500/10 border border-amber-500/25 px-2.5 py-0.5 text-[10px] font-bold text-amber-400/90 flex items-center gap-1">
+                                <Lock className="size-2.5" />
+                                <span>Khuyến nghị: 👑 Khóa VIP</span>
+                              </span>
+                            )
                           )}
+                          <span className="inline-flex items-center gap-1 rounded-full bg-amber-500/10 border border-amber-500/20 px-2 py-0.5 text-[10px] font-semibold text-amber-400">
+                            <Crown className="size-2.5" />
+                            Gói VIP
+                          </span>
                         </div>
 
                         <h4 className="text-sm font-bold text-foreground hover:text-primary">
-                          {r.title}
+                          {effectiveIsVip
+                            ? r.title
+                            : r.title.replace(/(?:điểm\s*)?[-–:]\s*(\d{2,3}(?:\.\d+)?)/gi, '· Định giá độc quyền: 🔒 ??? Điểm')}
                         </h4>
+
+                        {/* Mô tả tóm tắt phần đầu gây sự tò mò */}
+                        {r.summary && (
+                          <p className="text-xs text-muted-foreground line-clamp-3 leading-relaxed bg-muted/40 rounded-lg p-2.5 border border-border/50">
+                            <span className="font-semibold text-foreground/80">Tóm tắt luận điểm: </span>
+                            {effectiveIsVip ? (
+                              r.summary
+                            ) : (
+                              <>
+                                <span>{r.summary.slice(0, 120)}... </span>
+                                <span
+                                  onClick={() => {
+                                    setVipModalConfig({
+                                      title: `Mở Khóa Báo Cáo Phân Tích Chuyên Sâu ${ticker} (VIP)`,
+                                      subtitle: `Khám phá toàn bộ luận điểm phân tích, mô hình định giá mục tiêu và Audio Podcast của ${ticker}.`,
+                                    })
+                                    setVipModalOpen(true)
+                                  }}
+                                  className="text-amber-400 font-semibold cursor-pointer hover:underline"
+                                >
+                                  [👑 Mở khóa VIP để đọc tiếp]
+                                </span>
+                              </>
+                            )}
+                          </p>
+                        )}
 
                         <div className="flex flex-wrap items-center gap-4 text-xs">
                           {hasTarget && (
                             <span className="text-muted-foreground">
-                              Giá mục tiêu: <b className="font-mono text-foreground">{fmt(r.targetPrice, 1)} k₫</b>
+                              Giá mục tiêu:{' '}
+                              {effectiveIsVip ? (
+                                <b className="font-mono text-foreground">{fmt(r.targetPrice, 1)} k₫</b>
+                              ) : (
+                                <b className="font-mono text-amber-400">👑 Khóa VIP</b>
+                              )}
                             </span>
                           )}
                           {hasUpside && (
                             <span className="text-muted-foreground">
                               Tiềm năng tăng giá (Upside):{' '}
-                              <b className="font-mono text-emerald-600 dark:text-emerald-400">
-                                +{fmt(r.upside, 1)}%
-                              </b>
+                              {effectiveIsVip ? (
+                                <b className="font-mono text-emerald-600 dark:text-emerald-400">
+                                  +{fmt(r.upside, 1)}%
+                                </b>
+                              ) : (
+                                <b className="font-mono text-amber-400">🔒 ???%</b>
+                              )}
                             </span>
                           )}
                         </div>
                       </div>
 
-                      <Link
-                        href={r.localSlug ? `/nghien-cuu-ai/${r.localSlug}` : `/bao-cao/${r.driveDocId}`}
-                        className="inline-flex shrink-0 items-center justify-center gap-2 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white px-4 py-2.5 text-xs font-bold shadow-xs transition-all hover:shadow-md"
-                      >
-                        <FileText className="size-4" />
-                        <span>ĐỌC BÁO CÁO NGAY →</span>
-                      </Link>
+                      <div className="flex items-center gap-2 shrink-0">
+                        {effectiveIsVip ? (
+                          <Link
+                            href={targetUrl}
+                            className="inline-flex shrink-0 items-center justify-center gap-2 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white px-4 py-2.5 text-xs font-bold shadow-xs transition-all hover:shadow-md"
+                          >
+                            <FileText className="size-4" />
+                            <span>ĐỌC BÁO CÁO NGAY →</span>
+                          </Link>
+                        ) : (
+                          <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-2">
+                            <Link
+                              href={targetUrl}
+                              className="inline-flex shrink-0 items-center justify-center gap-1.5 rounded-xl border border-white/10 bg-white/5 hover:bg-white/10 text-muted-foreground hover:text-foreground px-3 py-2 text-xs font-medium transition-all"
+                              title="Đọc phần xem trước báo cáo"
+                            >
+                              <span>Xem trước</span>
+                            </Link>
+                            <button
+                              type="button"
+                              onClick={() => {
+                                setVipModalConfig({
+                                  title: `Mở Khóa Báo Cáo Phân Tích Chuyên Sâu ${ticker} (VIP)`,
+                                  subtitle: `Báo cáo phân tích định giá độc quyền của Admin dành riêng cho Hội viên VIP. Nâng cấp ngay để mở khóa toàn bộ luận điểm và mô hình định giá.`,
+                                })
+                                setVipModalOpen(true)
+                              }}
+                              className="inline-flex shrink-0 items-center justify-center gap-1.5 rounded-xl bg-gradient-to-r from-amber-400 via-amber-500 to-amber-600 hover:brightness-110 text-black px-4 py-2 text-xs font-black shadow-md shadow-amber-500/20 transition-all cursor-pointer"
+                            >
+                              <Crown className="size-3.5" />
+                              <span>Nâng cấp VIP</span>
+                            </button>
+                          </div>
+                        )}
+                      </div>
                     </div>
                   )
                 })}
@@ -2385,16 +2508,18 @@ export function StockDetailView({
         <div className={cn("animate-in fade-in-50 duration-200", (activeTab !== 'agm' || loadingTab === 'agm') && "hidden")}>
           <AuthGate
             isLoggedIn={effectiveIsLoggedIn}
+            isVip={effectiveIsVip}
+            requiredTier="vip"
             variant="blur"
             blurHeight={360}
-            title="Mở khóa Toàn Bộ Nghị Quyết ĐHĐCĐ & Kế Hoạch 2026"
-            subtitle="Đăng nhập tài khoản miễn phí để xem toàn bộ nội dung nghị quyết ĐHĐCĐ, kế hoạch cổ tức, thù lao HĐQT và bóc tách quỹ khen thưởng phúc lợi."
+            title="Mở khóa Toàn Bộ Nghị Quyết ĐHĐCĐ & Kế Hoạch 2026 (VIP)"
+            subtitle="Dành riêng cho Hội viên VIP: Toàn bộ nội dung nghị quyết ĐHĐCĐ chi tiết, kế hoạch cổ tức, thù lao HĐQT và bóc tách tỷ lệ trích ngoài cổ đông."
             features={[
-              'Toàn bộ các tờ trình, nghị quyết và tỷ lệ biểu quyết ĐHĐCĐ',
+              'Toàn bộ các tờ trình, nghị quyết và tỷ lệ biểu quyết ĐHĐCĐ chi tiết',
               'Kế hoạch chia cổ tức tiền mặt & cổ phiếu năm 2026',
               'Bóc tách chi tiết tỷ lệ trích quỹ khen thưởng phúc lợi & thưởng ban điều hành',
             ]}
-            ctaText="Đăng nhập để xem toàn bộ ĐHĐCĐ"
+            ctaText="👑 Nâng cấp VIP để xem ĐHĐCĐ chi tiết"
           >
             <StockAgmReportView
               agmData={agmData}
@@ -2413,16 +2538,18 @@ export function StockDetailView({
         <div className={cn("animate-in fade-in-50 duration-200", (activeTab !== 'bctc' && activeTab !== 'bctc-q3' && activeTab !== 'bctc-ban-nien' || loadingTab === 'bctc') && "hidden")}>
           <AuthGate
             isLoggedIn={effectiveIsLoggedIn}
+            isVip={effectiveIsVip}
+            requiredTier="vip"
             variant="blur"
             blurHeight={340}
-            title="Mở khóa Thuyết Minh Báo Cáo Tài Chính"
-            subtitle="Đăng nhập tài khoản miễn phí để tra cứu chi tiết các khoản mục tài sản, nợ và thuyết minh BCTC."
+            title="Mở khóa Thuyết Minh Báo Cáo Tài Chính (VIP)"
+            subtitle="Dành riêng cho Hội viên VIP: Tra cứu chi tiết từng khoản mục nợ vay, dự án dở dang, người mua trả tiền trước không cần đọc PDF."
             features={[
               'Chi tiết danh mục hàng tồn kho, dự án xây dựng dở dang và trích lập dự phòng',
-              'Bóc tách người mua trả tiền trước và nợ phải trả theo từng đối tác',
-              'Đăng nhập tức thì bằng tài khoản Google',
+              'Bóc tách người mua trả tiền trước và nợ phải trả theo từng ngân hàng/đối tác',
+              'Đầy đủ dữ liệu Hợp nhất & Công ty mẹ',
             ]}
-            ctaText="Đăng nhập để xem toàn bộ thuyết minh BCTC"
+            ctaText="👑 Nâng cấp VIP để xem Thuyết minh BCTC"
           >
             <StockBctcReportView
             ticker={ticker}
@@ -2437,6 +2564,21 @@ export function StockDetailView({
         </div>
       )}
 
+      {authModalConfig.open && (
+        <AuthModal
+          open={authModalConfig.open}
+          onClose={() => setAuthModalConfig((prev) => ({ ...prev, open: false }))}
+          title={authModalConfig.title}
+          subtitle={authModalConfig.subtitle}
+        />
+      )}
+
+      <VipUpgradeModal
+        open={vipModalOpen}
+        onClose={() => setVipModalOpen(false)}
+        title={vipModalConfig.title}
+        subtitle={vipModalConfig.subtitle}
+      />
     </div>
   )
 }

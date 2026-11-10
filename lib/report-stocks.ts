@@ -1,6 +1,7 @@
 import { stocks } from '@/lib/data'
 import type { Report } from '@/lib/use-reports'
 import reportsSnapshot from '@/data/reports-snapshot.json'
+import nghienCuuAiSnapshot from '@/data/nghien_cuu_ai_snapshot.json'
 import { getStockByTicker } from '@/lib/longlivestock'
 
 export function getSnapshotReports(): Report[] {
@@ -10,7 +11,26 @@ export function getSnapshotReports(): Report[] {
 export function getReportsForTicker(ticker: string): Report[] {
   const tNorm = ticker.toUpperCase().trim()
   const all = getSnapshotReports()
-  return all.filter((r) => (r.ticker || '').toUpperCase().trim() === tNorm)
+  return all
+    .filter((r) => (r.ticker || '').toUpperCase().trim() === tNorm)
+    .map((r) => {
+      if (r.summary) return r
+      const aiMatch = (nghienCuuAiSnapshot as any[]).find(
+        (ai) =>
+          (r.localSlug && ai.slug === r.localSlug) ||
+          (ai.ticker && ai.ticker.toUpperCase() === tNorm)
+      )
+      if (aiMatch?.summary) {
+        return {
+          ...r,
+          summary: aiMatch.summary,
+          score: r.score ?? aiMatch.score,
+          classification: r.classification ?? aiMatch.classification,
+          localSlug: r.localSlug ?? aiMatch.slug,
+        }
+      }
+      return r
+    })
 }
 
 /**

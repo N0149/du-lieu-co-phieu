@@ -4,6 +4,7 @@ import type { Metadata } from 'next'
 import { Star } from 'lucide-react'
 import { SiteHeader } from '@/components/site-header'
 import { WatchlistManager } from '@/components/watchlist/WatchlistManager'
+import { AuthGate } from '@/components/auth/AuthGate'
 import { getAllStocks } from '@/lib/longlivestock'
 import { stocks, upside, marginOfSafety } from '@/lib/data'
 import { getUserWatchlist } from '@/lib/watchlist-service'
@@ -96,12 +97,26 @@ export default async function WatchlistPage() {
           </p>
         </div>
 
-        <WatchlistManager
-          allManifestStocks={allManifestStocks}
-          curatedStocks={curatedStocks}
-          initialTickers={initialTickers}
-          initialUser={initialUser}
-        />
+        <AuthGate
+          isLoggedIn={serverWatchlist.isAuthenticated}
+          variant="blur"
+          blurHeight={260}
+          title="Đăng nhập để xem & quản lý Danh Mục Theo Dõi"
+          subtitle="Tạo tài khoản miễn phí chỉ mất 3 giây bằng Google để lưu trữ danh mục cổ phiếu yêu thích và đồng bộ dữ liệu thời gian thực trên mọi thiết bị."
+          features={[
+            'Tự tạo và quản lý không giới hạn danh mục cổ phiếu cá nhân',
+            'Đồng bộ dữ liệu thời gian thực giữa máy tính & điện thoại',
+            'Theo dõi chỉ số định giá P/E, P/B, ROE & biên an toàn tức thì',
+          ]}
+          ctaText="Đăng nhập tài khoản miễn phí"
+        >
+          <WatchlistManager
+            allManifestStocks={allManifestStocks}
+            curatedStocks={curatedStocks}
+            initialTickers={initialTickers}
+            initialUser={initialUser}
+          />
+        </AuthGate>
       </main>
     </div>
   )

@@ -2,6 +2,7 @@ import DriveDocViewer from "@/components/DriveDocViewer";
 import Link from "next/link";
 import { ReportAudioPlayer } from "@/components/report-audio-player";
 import { getAuthenticatedUser } from "@/lib/auth-user-helper";
+import { isVipUser } from "@/lib/admin-auth";
 import { AuthGate } from "@/components/auth/AuthGate";
 import reportsSnapshot from "@/data/reports-snapshot.json";
 import { getNghienCuuAiReportBySlug } from "@/lib/nghien-cuu-ai-service";
@@ -18,6 +19,7 @@ export default async function ReportDetailPage({
   // Kiểm tra quyền truy cập phía Server (nhận biết session đăng nhập tức thì)
   const authUser = await getAuthenticatedUser();
   const isLoggedIn = Boolean(authUser);
+  const isVip = isVipUser(authUser);
 
   // Tìm xem bài báo cáo này có file Markdown nghiên cứu chuyên sâu AI nội bộ không
   const matchedSnapshot = (reportsSnapshot as any[]).find(
@@ -62,16 +64,24 @@ export default async function ReportDetailPage({
                   </span>
                 )}
                 {localReport.score != null && (
-                  <span className="rounded-full bg-emerald-500/15 border border-emerald-500/30 px-3 py-0.5 text-xs font-bold text-emerald-400">
-                    {localReport.score} ĐIỂM · {localReport.classification}
-                  </span>
+                  isVip ? (
+                    <span className="rounded-full bg-emerald-500/15 border border-emerald-500/30 px-3 py-0.5 text-xs font-bold text-emerald-400">
+                      {localReport.score} ĐIỂM · {localReport.classification}
+                    </span>
+                  ) : (
+                    <span className="inline-flex items-center gap-1.5 rounded-full border border-amber-500/40 bg-gradient-to-r from-amber-500/20 to-amber-600/10 px-3 py-0.5 text-xs font-bold text-amber-300">
+                      🔒 ??? ĐIỂM · Tín hiệu VIP
+                    </span>
+                  )
                 )}
                 <span className="text-xs text-[#9EACB9]">
                   Ngày: {localReport.date}
                 </span>
               </div>
               <h1 className="text-lg sm:text-xl font-bold text-white">
-                {localReport.displayTitle || localReport.title}
+                {isVip
+                  ? (localReport.displayTitle || localReport.title)
+                  : (localReport.displayTitle || localReport.title).replace(/(?:điểm\s*)?[-–:]\s*(\d{2,3}(?:\.\d+)?)/gi, '· Định giá: 🔒 ??? Điểm')}
               </h1>
             </div>
 
@@ -101,16 +111,18 @@ export default async function ReportDetailPage({
             {/* CỔNG CHẶN ĐĂNG NHẬP (AUTH GATE) CHO PHẦN NỘI DUNG CHI TIẾT & AUDIO */}
             <AuthGate
               isLoggedIn={isLoggedIn}
+              isVip={isVip}
+              requiredTier="vip"
               variant="blur"
               blurHeight={300}
-              title="Đăng nhập để đọc toàn bộ bài phân tích chi tiết & nghe Audio"
-              subtitle="Tạo tài khoản hoặc đăng nhập miễn phí chỉ mất 3 giây bằng Google để mở khóa toàn bộ bài nghiên cứu chuyên sâu."
+              title="Mở khóa Báo Cáo Chuyên Sâu & Audio Podcast (VIP)"
+              subtitle="Gói Hội viên VIP mở khóa toàn bộ bài nghiên cứu định giá chuyên sâu cùng file nghe Audio Podcast tóm tắt."
               features={[
                 'Đọc trọn vẹn 100% luận điểm phân tích, rủi ro & dự phóng tài chính',
                 'Mở khóa bảng số liệu định giá RNAV & chiết khấu dòng tiền',
                 'Nghe file Audio đọc báo cáo tóm tắt bằng giọng AI tự nhiên',
               ]}
-              ctaText="Đăng nhập miễn phí để đọc tiếp"
+              ctaText="👑 Nâng cấp VIP để đọc tiếp"
             >
               <div className="space-y-6">
                 <ReportAudioPlayer docId={docId} />
@@ -127,15 +139,18 @@ export default async function ReportDetailPage({
         /* Fallback xem qua Google Drive Preview với các file Google Docs cũ */
         <AuthGate
           isLoggedIn={isLoggedIn}
+          isVip={isVip}
+          requiredTier="vip"
           variant="blur"
           blurHeight={260}
-          title="Đăng nhập để mở xem tài liệu báo cáo"
-          subtitle="Tài khoản thành viên miễn phí mở khóa xem toàn bộ tài liệu nghiên cứu."
+          title="Mở khóa Báo Cáo Nghiên Cứu Chi Tiết (VIP)"
+          subtitle="Gói Hội viên VIP mở khóa toàn bộ tài liệu nghiên cứu chuyên sâu và file Audio nghe đọc tóm tắt."
           features={[
             'Xem toàn bộ tài liệu Google Docs gốc trực tiếp trên web',
             'Không cần chuyển hướng ra bên ngoài',
-            'Đăng nhập miễn phí trong 3 giây bằng Google',
+            'Bóc tách chi tiết luận điểm định giá và dự phóng',
           ]}
+          ctaText="👑 Nâng cấp VIP để mở khóa"
         >
           <div className="space-y-4">
             <ReportAudioPlayer docId={docId} />

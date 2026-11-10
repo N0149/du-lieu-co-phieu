@@ -14,6 +14,9 @@ import { PortThroughputChart } from '@/components/cang-bien/PortThroughputChart'
 import { YoYThroughputComparison } from '@/components/cang-bien/YoYThroughputComparison'
 import { MaritimeSubNav } from '@/components/cang-bien/MaritimeSubNav'
 import { StockVesselCallsTable } from '@/components/cang-bien/StockVesselCallsTable'
+import { AuthGate } from '@/components/auth/AuthGate'
+import { getAuthenticatedUser } from '@/lib/auth-user-helper'
+import { isVipUser } from '@/lib/admin-auth'
 import {
   Ship,
   Anchor,
@@ -38,7 +41,7 @@ interface Props {
   params: Promise<{ ticker: string }>
 }
 
-export const revalidate = 86400 // Cache 24 giờ trên Edge CDN
+export const dynamic = 'force-dynamic'
 
 export async function generateStaticParams() {
   const all = getAllStocksIntel()
@@ -71,7 +74,13 @@ export default async function StockPortDetailPage({ params }: Props) {
     notFound()
   }
 
-  const summary = getDashboardSummary()
+  const [authUser, summary] = await Promise.all([
+    getAuthenticatedUser(),
+    Promise.resolve(getDashboardSummary()),
+  ])
+  const isLoggedIn = Boolean(authUser)
+  const isVip = isVipUser(authUser)
+
   const monthlyData = intel.free?.monthly || []
   const berths = intel.berths || []
   const berthNav = intel.berth_nav || []
@@ -231,100 +240,117 @@ export default async function StockPortDetailPage({ params }: Props) {
         </div>
       </div>
 
-      {/* Main Content Sections */}
+      {/* Main Content Sections - BẢO VỆ GÓI VIP */}
       <div className="mx-auto max-w-[1600px] px-4 pt-8 space-y-10">
-        {/* Section 1: Monthly Throughput Chart */}
-        <section>
-          <PortThroughputChart monthlyData={monthlyData} tickerName={intel.ticker} />
-        </section>
+        <AuthGate
+          isLoggedIn={isLoggedIn}
+          isVip={isVip}
+          requiredTier="vip"
+          variant="blur"
+          blurHeight={340}
+          title={`Mở khóa Dữ Liệu Vận Hành & Chi Tiết Cầu Bến ${intel.ticker} (VIP)`}
+          subtitle={`Gói Hội viên VIP (từ 95.000 đ/tháng) mở khóa toàn bộ biểu đồ sản lượng DWT theo tháng, so sánh YoY, danh sách 100+ tàu điều động và phân tích biên lợi nhuận bến nước sâu.`}
+          features={[
+            `Bóc tách sản lượng DWT & số lượt tàu theo từng tháng của ${intel.ticker}`,
+            'So sánh tăng trưởng sản lượng YoY và nhận diện đột biến trước BCTC 45-90 ngày',
+            'Danh mục toàn bộ cầu bến nước sâu & khung giá dịch vụ bốc dỡ',
+            'Chi tiết danh sách 100+ chuyến tàu cập cảng gần nhất (tên tàu, DWT, mớn nước, bến đỗ)',
+          ]}
+          ctaText="👑 Nâng cấp Hội viên VIP để xem chi tiết"
+        >
+          {/* Section 1: Monthly Throughput Chart */}
+          <section>
+            <PortThroughputChart monthlyData={monthlyData} tickerName={intel.ticker} />
+          </section>
 
-        {/* Section 2: YoY Comparison Table (Year-over-Year) */}
-        <section>
-          <YoYThroughputComparison monthlyData={monthlyData} tickerName={intel.ticker} />
-        </section>
+          {/* Section 2: YoY Comparison Table (Year-over-Year) */}
+          <section>
+            <YoYThroughputComparison monthlyData={monthlyData} tickerName={intel.ticker} />
+          </section>
 
-        {/* Section 3: Affiliated Berths & Tariff Insights */}
-        <section className="grid grid-cols-1 lg:grid-cols-12 gap-6">
-          {/* Left: Berths Card */}
-          <div className="lg:col-span-6 rounded-2xl border border-[#1e2430] bg-[#161a22] p-5 sm:p-6 shadow-xl space-y-4">
-            <div className="flex items-center gap-2.5 border-b border-[#1e2430] pb-3">
-              <span className="flex size-8 items-center justify-center rounded-xl bg-teal-500/15 text-teal-400 border border-teal-500/30">
-                <Anchor className="size-4.5" />
-              </span>
-              <h3 className="text-base font-extrabold text-slate-100">
-                Danh Sách Cầu Bến Thuộc {intel.ticker}
-              </h3>
-            </div>
-
-            <div className="space-y-2.5">
-              {berths.map((bName, idx) => {
-                const isDeepSea =
-                  bName.toLowerCase().includes('lạch huyện') ||
-                  bName.toLowerCase().includes('gemalink') ||
-                  bName.toLowerCase().includes('tiên sa')
-                return (
-                  <div
-                    key={idx}
-                    className="flex items-center justify-between p-3.5 rounded-xl border border-[#1e2430] bg-[#12151c] text-xs hover:border-slate-700 transition-colors"
-                  >
-                    <div className="flex items-center gap-2.5">
-                      <span className="flex size-6 shrink-0 items-center justify-center rounded-lg bg-[#161a22] text-[11px] font-bold text-teal-400 border border-[#1e2430]">
-                        {idx + 1}
-                      </span>
-                      <span className="font-bold text-slate-200">{bName}</span>
-                    </div>
-                    {isDeepSea ? (
-                      <span className="rounded-full bg-sky-500/15 border border-sky-500/30 px-3 py-0.5 text-[10px] font-bold text-sky-300 shadow-xs">
-                        Bến Nước Sâu (Giá cao)
-                      </span>
-                    ) : (
-                      <span className="rounded-full bg-[#161a22] px-2.5 py-0.5 text-[10px] text-slate-400 border border-[#1e2430]">
-                        Bến Sông / Tổng hợp
-                      </span>
-                    )}
-                  </div>
-                )
-              })}
-            </div>
-          </div>
-
-          {/* Right: Tariff & Price Insights */}
-          <div className="lg:col-span-6 rounded-2xl border border-[#1e2430] bg-[#161a22] p-5 sm:p-6 shadow-xl space-y-4">
-            <div className="flex items-center gap-2.5 border-b border-[#1e2430] pb-3">
-              <span className="flex size-8 items-center justify-center rounded-xl bg-amber-500/15 text-amber-400 border border-amber-500/30">
-                <DollarSign className="size-4.5" />
-              </span>
-              <h3 className="text-base font-extrabold text-slate-100">
-                Khung Giá Dịch Vụ &amp; Biên Lợi Nhuận Gộp
-              </h3>
-            </div>
-
-            <div className="space-y-3.5 text-xs text-slate-400 leading-relaxed">
-              <p>
-                Áp dụng theo <strong className="text-slate-200">Quyết định 810/QĐ-BGTVT</strong> (kế thừa Thông tư 39/2023/TT-BGTVT):
-              </p>
-              <div className="rounded-2xl border border-[#1e2430] bg-[#12151c] p-4 space-y-2.5">
-                <div className="flex justify-between items-center text-xs">
-                  <span className="text-slate-300">Khung giá bốc dỡ Container thường:</span>
-                  <span className="font-black text-teal-400">~260.000 – 450.000 VNĐ / TEU</span>
-                </div>
-                <div className="flex justify-between items-center text-xs">
-                  <span className="text-slate-300">Bến nước sâu (Lạch Huyện, Cái Mép):</span>
-                  <span className="font-black text-sky-400">~52 – 85 USD / cont (Cao hơn ~50-80%)</span>
-                </div>
+          {/* Section 3: Affiliated Berths & Tariff Insights */}
+          <section className="grid grid-cols-1 lg:grid-cols-12 gap-6">
+            {/* Left: Berths Card */}
+            <div className="lg:col-span-6 rounded-2xl border border-[#1e2430] bg-[#161a22] p-5 sm:p-6 shadow-xl space-y-4">
+              <div className="flex items-center gap-2.5 border-b border-[#1e2430] pb-3">
+                <span className="flex size-8 items-center justify-center rounded-xl bg-teal-500/15 text-teal-400 border border-teal-500/30">
+                  <Anchor className="size-4.5" />
+                </span>
+                <h3 className="text-base font-extrabold text-slate-100">
+                  Danh Sách Cầu Bến Thuộc {intel.ticker}
+                </h3>
               </div>
-              <p className="text-[11px] text-slate-400 leading-relaxed">
-                💡 Khi doanh nghiệp dịch chuyển cơ cấu sản lượng sang các bến nước sâu công suất lớn,
-                biên lợi nhuận gộp thường cải thiện mạnh mẽ trước khi BCTC quý phản ánh.
-              </p>
-            </div>
-          </div>
-        </section>
 
-        {/* Section 4: 100 Most Recent Vessel Calls (Paginated 10 calls/page) */}
-        <section>
-          <StockVesselCallsTable calls={tickerCalls} ticker={intel.ticker} />
-        </section>
+              <div className="space-y-2.5">
+                {berths.map((bName, idx) => {
+                  const isDeepSea =
+                    bName.toLowerCase().includes('lạch huyện') ||
+                    bName.toLowerCase().includes('gemalink') ||
+                    bName.toLowerCase().includes('tiên sa')
+                  return (
+                    <div
+                      key={idx}
+                      className="flex items-center justify-between p-3.5 rounded-xl border border-[#1e2430] bg-[#12151c] text-xs hover:border-slate-700 transition-colors"
+                    >
+                      <div className="flex items-center gap-2.5">
+                        <span className="flex size-6 shrink-0 items-center justify-center rounded-lg bg-[#161a22] text-[11px] font-bold text-teal-400 border border-[#1e2430]">
+                          {idx + 1}
+                        </span>
+                        <span className="font-bold text-slate-200">{bName}</span>
+                      </div>
+                      {isDeepSea ? (
+                        <span className="rounded-full bg-sky-500/15 border border-sky-500/30 px-3 py-0.5 text-[10px] font-bold text-sky-300 shadow-xs">
+                          Bến Nước Sâu (Giá cao)
+                        </span>
+                      ) : (
+                        <span className="rounded-full bg-[#161a22] px-2.5 py-0.5 text-[10px] text-slate-400 border border-[#1e2430]">
+                          Bến Sông / Tổng hợp
+                        </span>
+                      )}
+                    </div>
+                  )
+                })}
+              </div>
+            </div>
+
+            {/* Right: Tariff & Price Insights */}
+            <div className="lg:col-span-6 rounded-2xl border border-[#1e2430] bg-[#161a22] p-5 sm:p-6 shadow-xl space-y-4">
+              <div className="flex items-center gap-2.5 border-b border-[#1e2430] pb-3">
+                <span className="flex size-8 items-center justify-center rounded-xl bg-amber-500/15 text-amber-400 border border-amber-500/30">
+                  <DollarSign className="size-4.5" />
+                </span>
+                <h3 className="text-base font-extrabold text-slate-100">
+                  Khung Giá Dịch Vụ &amp; Biên Lợi Nhuận Gộp
+                </h3>
+              </div>
+
+              <div className="space-y-3.5 text-xs text-slate-400 leading-relaxed">
+                <p>
+                  Áp dụng theo <strong className="text-slate-200">Quyết định 810/QĐ-BGTVT</strong> (kế thừa Thông tư 39/2023/TT-BGTVT):
+                </p>
+                <div className="rounded-2xl border border-[#1e2430] bg-[#12151c] p-4 space-y-2.5">
+                  <div className="flex justify-between items-center text-xs">
+                    <span className="text-slate-300">Khung giá bốc dỡ Container thường:</span>
+                    <span className="font-black text-teal-400">~260.000 – 450.000 VNĐ / TEU</span>
+                  </div>
+                  <div className="flex justify-between items-center text-xs">
+                    <span className="text-slate-300">Bến nước sâu (Lạch Huyện, Cái Mép):</span>
+                    <span className="font-black text-sky-400">~52 – 85 USD / cont (Cao hơn ~50-80%)</span>
+                  </div>
+                </div>
+                <p className="text-[11px] text-slate-400 leading-relaxed">
+                  💡 Khi doanh nghiệp dịch chuyển cơ cấu sản lượng sang các bến nước sâu công suất lớn,
+                  biên lợi nhuận gộp thường cải thiện mạnh mẽ trước khi BCTC quý phản ánh.
+                </p>
+              </div>
+            </div>
+          </section>
+
+          {/* Section 4: 100 Most Recent Vessel Calls (Paginated 10 calls/page) */}
+          <section>
+            <StockVesselCallsTable calls={tickerCalls} ticker={intel.ticker} />
+          </section>
+        </AuthGate>
       </div>
     </main>
   </div>

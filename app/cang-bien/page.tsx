@@ -15,6 +15,9 @@ import { MaritimeStockGrid } from '@/components/cang-bien/MaritimeStockGrid'
 import { LivePortCallsTable } from '@/components/cang-bien/LivePortCallsTable'
 import { AuthGate } from '@/components/auth/AuthGate'
 import { MaritimeSubNav } from '@/components/cang-bien/MaritimeSubNav'
+import { getAuthenticatedUser } from '@/lib/auth-user-helper'
+
+export const dynamic = 'force-dynamic'
 import {
   Anchor,
   Ship,
@@ -40,10 +43,14 @@ export const metadata: Metadata = {
 }
 
 export default async function CangBienPage() {
-  const summary = getDashboardSummary()
-  const mapData = getNationalMap()
-  const trafficData = getNationalTraffic()
-  const stocksIntel = getAllStocksIntel()
+  const [authUser, summary, mapData, trafficData, stocksIntel] = await Promise.all([
+    getAuthenticatedUser(),
+    Promise.resolve(getDashboardSummary()),
+    Promise.resolve(getNationalMap()),
+    Promise.resolve(getNationalTraffic()),
+    Promise.resolve(getAllStocksIntel()),
+  ])
+  const isLoggedIn = Boolean(authUser)
 
   const ports = trafficData?.ports || summary?.port_authorities || []
   const stocks = summary?.stocks || []
@@ -172,108 +179,111 @@ export default async function CangBienPage() {
         </div>
       </div>
 
-      {/* Main Content Layout */}
-      <div className="mx-auto max-w-[1600px] px-4 pt-8 space-y-12">
-        {/* Section 1: Stock Grid for Investors */}
-        <section className="space-y-4">
-          <MaritimeStockGrid stocks={stocks} stocksIntel={stocksIntel} />
-        </section>
+      {/* Main Content Layout - YÊU CẦU ĐĂNG NHẬP ĐỂ XEM SỐ LIỆU */}
+      <div className="mx-auto max-w-[1600px] px-4 pt-8">
+        <AuthGate
+          isLoggedIn={isLoggedIn}
+          variant="blur"
+          blurHeight={360}
+          title="Đăng nhập để xem Dữ Liệu Tình Báo Cảng Biển & Hàng Hải"
+          subtitle="Tạo tài khoản miễn phí trong 3 giây bằng Google để theo dõi danh mục 13 mã cổ phiếu cảng biển, sản lượng DWT và số liệu vận hành thời gian thực."
+          features={[
+            'Dữ liệu điều động tàu thực tế từ 15 Cảng vụ Hàng hải toàn quốc',
+            'Theo dõi 13 mã cổ phiếu cảng biển & vận tải (GMD, HAH, PHP, DVP...)',
+            'Biến động chỉ số cước vận tải container, hàng rời và tàu dầu quốc tế',
+          ]}
+          ctaText="Đăng nhập tài khoản miễn phí"
+        >
+          <div className="space-y-12">
+            {/* Section 1: Stock Grid for Investors */}
+            <section className="space-y-4">
+              <MaritimeStockGrid stocks={stocks} stocksIntel={stocksIntel} />
+            </section>
 
-        {/* Teaser Banner: Global Freight Rates Tab */}
-        <div className="rounded-2xl border border-[#1e2430] bg-[#161a22] p-4 sm:p-5 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 shadow-xl">
-          <div className="flex items-center gap-3">
-            <span className="flex size-10 items-center justify-center rounded-xl bg-teal-500/15 text-teal-400 border border-teal-500/30 shrink-0">
-              <Globe2 className="size-5" />
-            </span>
-            <div>
-              <h4 className="text-sm sm:text-base font-extrabold text-white">
-                Chỉ Số Cước Vận Tải Biển Quốc Tế 10 Năm (2016 – 2026)
-              </h4>
-              <p className="text-xs text-slate-400 mt-0.5">
-                Biến động cước hàng rời (BDI), container viễn dương (Drewry WCI) và tàu dầu (BDTI, BCTI)
-              </p>
+            {/* Teaser Banner: Global Freight Rates Tab */}
+            <div className="rounded-2xl border border-[#1e2430] bg-[#161a22] p-4 sm:p-5 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 shadow-xl">
+              <div className="flex items-center gap-3">
+                <span className="flex size-10 items-center justify-center rounded-xl bg-teal-500/15 text-teal-400 border border-teal-500/30 shrink-0">
+                  <Globe2 className="size-5" />
+                </span>
+                <div>
+                  <h4 className="text-sm sm:text-base font-extrabold text-white">
+                    Chỉ Số Cước Vận Tải Biển Quốc Tế 10 Năm (2016 – 2026)
+                  </h4>
+                  <p className="text-xs text-slate-400 mt-0.5">
+                    Biến động cước hàng rời (BDI), container viễn dương (Drewry WCI) và tàu dầu (BDTI, BCTI)
+                  </p>
+                </div>
+              </div>
+              <Link
+                href="/cang-bien/cuoc-van-tai"
+                className="inline-flex items-center gap-2 rounded-xl bg-gradient-to-r from-teal-400 to-emerald-400 text-slate-950 px-4 py-2 text-xs font-black shadow-md shadow-teal-500/20 hover:brightness-110 transition-all shrink-0"
+              >
+                <span>Xem Biểu Đồ 10 Năm</span>
+                <ChevronRight className="size-4" />
+              </Link>
             </div>
+
+            {/* Section 2: Live Port Calls Table (Full Width) */}
+            <section className="space-y-4">
+              <LivePortCallsTable calls={liveCalls} />
+            </section>
+
+            {/* Section 3: 15 Port Authorities Summary (Collapsible) */}
+            <section className="space-y-4">
+              <PortAuthoritiesStrip ports={ports} />
+            </section>
+
+            {/* Section 4: Value Proposition & Framework */}
+            <section className="rounded-3xl border border-[#1e2430] bg-[#161a22] p-6 sm:p-8 shadow-2xl shadow-black/40">
+              <div className="max-w-4xl space-y-5">
+                <div className="flex items-center gap-2.5">
+                  <span className="flex size-8 items-center justify-center rounded-xl bg-teal-500/15 text-teal-400 border border-teal-500/30">
+                    <ShieldCheck className="size-4.5" />
+                  </span>
+                  <h3 className="text-lg sm:text-xl font-extrabold tracking-tight text-white">
+                    Tại sao Dữ liệu Điều động Tàu thật lại tạo ra Lợi thế Đầu tư?
+                  </h3>
+                </div>
+
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-4 pt-1">
+                  <div className="rounded-2xl border border-[#1e2430] bg-[#12151c] p-5 space-y-2 hover:border-teal-500/40 transition-colors">
+                    <div className="text-sm font-black text-teal-300 flex items-center gap-1.5">
+                      <Zap className="size-4 text-teal-400" />
+                      <span>1. Tín hiệu sớm hơn BCTC</span>
+                    </div>
+                    <p className="text-xs text-slate-400 leading-relaxed">
+                      BCTC chỉ xuất hiện sau khi kết thúc quý 45–90 ngày. Trong khi đó, mỗi chuyến tàu cập bến
+                      được ghi nhận từng ca điều động thực tế, giúp bạn ước lượng chính xác sản lượng ngay trong quý.
+                    </p>
+                  </div>
+
+                  <div className="rounded-2xl border border-[#1e2430] bg-[#12151c] p-5 space-y-2 hover:border-sky-500/40 transition-colors">
+                    <div className="text-sm font-black text-sky-300 flex items-center gap-1.5">
+                      <Anchor className="size-4 text-sky-400" />
+                      <span>2. Bến nước sâu &amp; Giá cước</span>
+                    </div>
+                    <p className="text-xs text-slate-400 leading-relaxed">
+                      Bến nước sâu (Lạch Huyện, Cái Mép) có khung giá dịch vụ bốc dỡ cao hơn 50–80% so với bến sông.
+                      Nhận diện tỷ trọng tàu ghé bến nước sâu giúp dự báo biên lợi nhuận gộp bùng nổ.
+                    </p>
+                  </div>
+
+                  <div className="rounded-2xl border border-[#1e2430] bg-[#12151c] p-5 space-y-2 hover:border-amber-500/40 transition-colors">
+                    <div className="text-sm font-black text-amber-300 flex items-center gap-1.5">
+                      <Sparkles className="size-4 text-amber-400" />
+                      <span>3. Phân biệt Cảng thuần vs Holding</span>
+                    </div>
+                    <p className="text-xs text-slate-400 leading-relaxed">
+                      Hệ thống phân tách rõ rệt giữa các mã cảng thuần (PHP, DVP, DXP, MIPEC) có doanh thu gắn trực tiếp
+                      với từng mét cầu bến và các tập đoàn đa ngành, loại bỏ hoàn toàn nhiễu số liệu.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </section>
           </div>
-          <Link
-            href="/cang-bien/cuoc-van-tai"
-            className="inline-flex items-center gap-2 rounded-xl bg-gradient-to-r from-teal-400 to-emerald-400 text-slate-950 px-4 py-2 text-xs font-black shadow-md shadow-teal-500/20 hover:brightness-110 transition-all shrink-0"
-          >
-            <span>Xem Biểu Đồ 10 Năm</span>
-            <ChevronRight className="size-4" />
-          </Link>
-        </div>
-
-        {/* Section 2: Live Port Calls Table (Full Width) */}
-        <section className="space-y-4">
-          <AuthGate
-            variant="blur"
-            blurHeight={280}
-            title="Mở khóa Danh Sách Tàu Cập Cảng Thời Gian Thực"
-            subtitle="Đăng nhập tài khoản miễn phí để theo dõi hơn 100+ chuyến tàu cập cảng, mớn nước & trọng tải DWT mỗi ngày."
-            features={[
-              'Chi tiết tên tàu, quốc tịch, mớn nước & trọng tải DWT',
-              'Lịch sử điều động theo từng bến cầu của PHP, GMD, DVP...',
-              'Đăng nhập tức thì bằng tài khoản Google',
-            ]}
-            ctaText="Đăng nhập để xem danh sách tàu"
-          >
-            <LivePortCallsTable calls={liveCalls} />
-          </AuthGate>
-        </section>
-
-        {/* Section 3: 15 Port Authorities Summary (Collapsible) */}
-        <section className="space-y-4">
-          <PortAuthoritiesStrip ports={ports} />
-        </section>
-
-        {/* Section 4: Value Proposition & Framework */}
-        <section className="rounded-3xl border border-[#1e2430] bg-[#161a22] p-6 sm:p-8 shadow-2xl shadow-black/40">
-          <div className="max-w-4xl space-y-5">
-            <div className="flex items-center gap-2.5">
-              <span className="flex size-8 items-center justify-center rounded-xl bg-teal-500/15 text-teal-400 border border-teal-500/30">
-                <ShieldCheck className="size-4.5" />
-              </span>
-              <h3 className="text-lg sm:text-xl font-extrabold tracking-tight text-white">
-                Tại sao Dữ liệu Điều động Tàu thật lại tạo ra Lợi thế Đầu tư?
-              </h3>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 pt-1">
-              <div className="rounded-2xl border border-[#1e2430] bg-[#12151c] p-5 space-y-2 hover:border-teal-500/40 transition-colors">
-                <div className="text-sm font-black text-teal-300 flex items-center gap-1.5">
-                  <Zap className="size-4 text-teal-400" />
-                  <span>1. Tín hiệu sớm hơn BCTC</span>
-                </div>
-                <p className="text-xs text-slate-400 leading-relaxed">
-                  BCTC chỉ xuất hiện sau khi kết thúc quý 45–90 ngày. Trong khi đó, mỗi chuyến tàu cập bến
-                  được ghi nhận từng ca điều động thực tế, giúp bạn ước lượng chính xác sản lượng ngay trong quý.
-                </p>
-              </div>
-
-              <div className="rounded-2xl border border-[#1e2430] bg-[#12151c] p-5 space-y-2 hover:border-sky-500/40 transition-colors">
-                <div className="text-sm font-black text-sky-300 flex items-center gap-1.5">
-                  <Anchor className="size-4 text-sky-400" />
-                  <span>2. Bến nước sâu &amp; Giá cước</span>
-                </div>
-                <p className="text-xs text-slate-400 leading-relaxed">
-                  Bến nước sâu (Lạch Huyện, Cái Mép) có khung giá dịch vụ bốc dỡ cao hơn 50–80% so với bến sông.
-                  Nhận diện tỷ trọng tàu ghé bến nước sâu giúp dự báo biên lợi nhuận gộp bùng nổ.
-                </p>
-              </div>
-
-              <div className="rounded-2xl border border-[#1e2430] bg-[#12151c] p-5 space-y-2 hover:border-amber-500/40 transition-colors">
-                <div className="text-sm font-black text-amber-300 flex items-center gap-1.5">
-                  <Sparkles className="size-4 text-amber-400" />
-                  <span>3. Phân biệt Cảng thuần vs Holding</span>
-                </div>
-                <p className="text-xs text-slate-400 leading-relaxed">
-                  Hệ thống phân tách rõ rệt giữa các mã cảng thuần (PHP, DVP, DXP, MIPEC) có doanh thu gắn trực tiếp
-                  với từng mét cầu bến và các tập đoàn đa ngành, loại bỏ hoàn toàn nhiễu số liệu.
-                </p>
-              </div>
-            </div>
-          </div>
-        </section>
+        </AuthGate>
       </div>
     </main>
   </div>

@@ -24,7 +24,25 @@ const INDUSTRY_DIR = path.join(ROOT_DIR, 'data', 'industry');
 const KQKD_DIR = path.join(INDUSTRY_DIR, 'kqkd');
 const SPIDER_DIR = path.join(INDUSTRY_DIR, 'spider');
 
-const CIPHER_KEY_HEX = '19dd3af428f4cf7d68864cd4c87d8d1c5b489932e84b93ac6528a0dd403a5725';
+const CIPHER_KEY_HEX = 'fa4abc75c049cac6b2d58d501f183a3f4eeace7d3f79f37724b1737d095371e5';
+const Hs = [82, 84, 90, 49]; // 'R', 'T', 'Z', '1'
+
+function isGzip(bytes) {
+  if (bytes.length < Hs.length) return false;
+  return Hs.every((b, idx) => bytes[idx] === b);
+}
+
+async function decompressGzip(bytes) {
+  const ds = new DecompressionStream('gzip');
+  const stream = new ReadableStream({
+    start(controller) {
+      controller.enqueue(bytes);
+      controller.close();
+    }
+  }).pipeThrough(ds);
+  const buf = await new Response(stream).arrayBuffer();
+  return new Uint8Array(buf);
+}
 
 let cryptoKeyCache = null;
 async function getCryptoKey() {
@@ -44,7 +62,11 @@ async function decryptApiResponse(res) {
   const iv = rawBytes.slice(0, 12);
   const ciphertext = rawBytes.slice(12);
   const decryptedBuf = await crypto.subtle.decrypt({ name: 'AES-GCM', iv }, key, ciphertext);
-  return JSON.parse(new TextDecoder().decode(decryptedBuf));
+  let decryptedBytes = new Uint8Array(decryptedBuf);
+  if (isGzip(decryptedBytes)) {
+    decryptedBytes = await decompressGzip(decryptedBytes.subarray(Hs.length));
+  }
+  return JSON.parse(new TextDecoder().decode(decryptedBytes));
 }
 
 function ensureDir(dir) {
@@ -53,19 +75,27 @@ function ensureDir(dir) {
   }
 }
 
-async function fetchJson(url, options = {}) {
-  const res = await fetch(url, {
-    headers: {
-      'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36',
-      Accept: 'application/json',
-      ...options.headers,
-    },
-    ...options,
-  });
-  if (!res.ok) {
-    throw new Error(`HTTP ${res.status} when fetching ${url}`);
+async function fetchJson(url, options = {}, retries = 3) {
+  for (let attempt = 1; attempt <= retries; attempt++) {
+    try {
+      const res = await fetch(url, {
+        headers: {
+          'User-Agent':
+            'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36',
+          Accept: 'application/json',
+          ...options.headers,
+        },
+        ...options,
+      });
+      if (!res.ok) {
+        throw new Error(`HTTP ${res.status} when fetching ${url}`);
+      }
+      return await res.json();
+    } catch (err) {
+      if (attempt === retries) throw err;
+      await new Promise((r) => setTimeout(r, attempt * 500));
+    }
   }
-  return await res.json();
 }
 
 async function syncIndustryData() {
@@ -78,11 +108,11 @@ async function syncIndustryData() {
 
   // 1. Tải icb_hierarchy.json, sector_icb_summary.json và sector_stocks.json
   console.log('📦 1/4 Đang tải cây ngành ICB & Tổng quan vốn hóa/định giá...');
-  const [hierarchy, summary, sectorStocks] = await Promise.all([
-    fetchJson('https://ruatichsan.com/config/icb_hierarchy.json'),
-    fetchJson('https://ruatichsan.com/config/sector_icb_summary.json'),
-    fetchJson('https://ruatichsan.com/config/sector_stocks.json').catch(() => null),
-  ]);
+  const hierarchy = await fetchJson('https://ruatichsan.com/config/icb_hierarchy.json');
+  await new Promise((r) => setTimeout(r, 100));
+  const summary = await fetchJson('https://ruatichsan.com/config/sector_icb_summary.json');
+  await new Promise((r) => setTimeout(r, 100));
+  const sectorStocks = await fetchJson('https://ruatichsan.com/config/sector_stocks.json').catch(() => null);
 
   fs.writeFileSync(
     path.join(INDUSTRY_DIR, 'icb_hierarchy.json'),
@@ -91,6 +121,11 @@ async function syncIndustryData() {
   );
   fs.writeFileSync(
     path.join(INDUSTRY_DIR, 'sector_icb_summary.json'),
+    JSON.stringify(summary, null, 2),
+    'utf-8'
+  );
+  fs.writeFileSync(
+    path.join(INDUSTRY_DIR, 'icb-summary.json'),
     JSON.stringify(summary, null, 2),
     'utf-8'
   );
@@ -109,8 +144,10 @@ async function syncIndustryData() {
   console.log(`📊 2/4 Đang tải KQKD cho ${kqkdCodes.length} nhóm ngành (Thị trường + 19 ngành L2)...`);
 
   let kqkdSuccessCount = 0;
-  await Promise.all(
-    kqkdCodes.map(async (code) => {
+  for (const code of kqkdCodes) {
+    let attempts = 0;
+    while (attempts < 3) {
+      attempts++;
       try {
         const kqkdData = await fetchJson(`https://ruatichsan.com/config/icb_kqkd/${code}.json`);
         fs.writeFileSync(
@@ -119,11 +156,16 @@ async function syncIndustryData() {
           'utf-8'
         );
         kqkdSuccessCount++;
+        break;
       } catch (err) {
-        console.warn(`   ⚠️ Không tải được KQKD cho mã ${code}:`, err.message);
+        if (attempts >= 3) {
+          console.warn(`   ⚠️ Không tải được KQKD cho mã ${code}:`, err.message);
+        } else {
+          await new Promise((r) => setTimeout(r, 200));
+        }
       }
-    })
-  );
+    }
+  }
   console.log(`   ✅ Đã lưu ${kqkdSuccessCount}/${kqkdCodes.length} file KQKD`);
 
   // 3. Tải bảng Định giá tổng quan ngành (sector-valuation/overview)
@@ -139,6 +181,11 @@ async function syncIndustryData() {
       const valData = await decryptApiResponse(valRes);
       fs.writeFileSync(
         path.join(INDUSTRY_DIR, 'sector_valuation_overview.json'),
+        JSON.stringify(valData, null, 2),
+        'utf-8'
+      );
+      fs.writeFileSync(
+        path.join(INDUSTRY_DIR, 'sector-valuation-overview.json'),
         JSON.stringify(valData, null, 2),
         'utf-8'
       );
@@ -191,10 +238,42 @@ async function syncIndustryData() {
         JSON.stringify(benchData, null, 2),
         'utf-8'
       );
+      fs.writeFileSync(
+        path.join(INDUSTRY_DIR, 'banking-industry-benchmark.json'),
+        JSON.stringify(benchData, null, 2),
+        'utf-8'
+      );
       console.log('   ✅ Đã lưu banking_benchmark.json (Cơ cấu cho vay 27 ngân hàng)');
     }
   } catch (err) {
     console.warn('   ⚠️ Lỗi tải banking_benchmark.json:', err.message);
+  }
+
+  // 5. Cập nhật danh mục & định giá realtime từng cổ phiếu từ LongLiveStock
+  console.log('⚡ 5/5 Đang cập nhật giá & định giá chi tiết từng cổ phiếu...');
+  try {
+    const manifestDest = path.join(ROOT_DIR, 'data', 'longlive_manifest.json');
+    const manifestRes = await fetchJson('https://longlivestock.com/data/manifest.json');
+    if (manifestRes && Array.isArray(manifestRes.items)) {
+      // Merge custom stocks nếu có
+      const customPath = path.join(ROOT_DIR, 'data', 'custom_stocks_manifest.json');
+      if (fs.existsSync(customPath)) {
+        try {
+          const custom = JSON.parse(fs.readFileSync(customPath, 'utf8'));
+          const existing = new Set(manifestRes.items.map((i) => i.t.toUpperCase()));
+          for (const c of custom) {
+            if (!existing.has(c.t.toUpperCase())) {
+              manifestRes.items.push(c);
+            }
+          }
+          manifestRes.count = manifestRes.items.length;
+        } catch {}
+      }
+      fs.writeFileSync(manifestDest, JSON.stringify(manifestRes, null, 2), 'utf-8');
+      console.log(`   ✅ Đã cập nhật longlive_manifest.json (${manifestRes.items.length} mã cổ phiếu)`);
+    }
+  } catch (err) {
+    console.warn('   ⚠️ Không tải được manifest:', err.message);
   }
 
   const duration = ((Date.now() - startTime) / 1000).toFixed(2);

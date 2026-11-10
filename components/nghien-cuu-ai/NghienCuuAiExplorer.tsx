@@ -25,8 +25,12 @@ import {
   ChevronDown,
   RefreshCw,
   Zap,
+  Crown,
 } from 'lucide-react'
 import type { NghienCuuAiReport, NghienCuuAiDetail } from '@/lib/nghien-cuu-ai-service'
+import { useAuth } from '@/lib/use-auth'
+import { AuthGate } from '@/components/auth/AuthGate'
+import { VipUpgradeModal } from '@/components/auth/VipUpgradeModal'
 import { cn } from '@/lib/utils'
 
 interface Props {
@@ -48,6 +52,7 @@ type ViewMode = 'grid' | 'table'
 type PriceMode = 'current' | 'research'
 
 export function NghienCuuAiExplorer({ initialReports, kpis: initialKpis }: Props) {
+  const { isVip, isLoggedIn } = useAuth()
   const [reports] = useState<NghienCuuAiReport[]>(initialReports)
   const [searchQuery, setSearchQuery] = useState('')
   const [tierFilter, setTierFilter] = useState<FilterTier>('all')
@@ -55,11 +60,16 @@ export function NghienCuuAiExplorer({ initialReports, kpis: initialKpis }: Props
   const [viewMode, setViewMode] = useState<ViewMode>('grid')
   const [priceMode, setPriceMode] = useState<PriceMode>('current')
 
-  // Modal đọc toàn văn
+  // Modal đọc toàn văn & Modal VIP
   const [selectedSlug, setSelectedSlug] = useState<string | null>(null)
   const [detailData, setDetailData] = useState<NghienCuuAiDetail | null>(null)
   const [loadingDetail, setLoadingDetail] = useState(false)
   const [copied, setCopied] = useState(false)
+  const [vipModalOpen, setVipModalOpen] = useState(false)
+  const [vipModalConfig, setVipModalConfig] = useState<{
+    title?: string
+    subtitle?: string
+  }>({})
 
   // Mở modal đọc bài
   const handleOpenReport = async (slug: string) => {
@@ -87,8 +97,12 @@ export function NghienCuuAiExplorer({ initialReports, kpis: initialKpis }: Props
     setDetailData(null)
   }
 
-  // Sao chép nội dung Markdown
+  // Sao chép nội dung Markdown (Chỉ dành cho Hội viên VIP)
   const handleCopyMarkdown = () => {
+    if (!isVip) {
+      setVipModalOpen(true)
+      return
+    }
     if (!detailData?.markdown) return
     navigator.clipboard.writeText(detailData.markdown).then(() => {
       setCopied(true)
@@ -96,8 +110,12 @@ export function NghienCuuAiExplorer({ initialReports, kpis: initialKpis }: Props
     })
   }
 
-  // In bài viết
+  // In bài viết (Chỉ dành cho Hội viên VIP)
   const handlePrint = () => {
+    if (!isVip) {
+      setVipModalOpen(true)
+      return
+    }
     window.print()
   }
 
@@ -202,8 +220,37 @@ export function NghienCuuAiExplorer({ initialReports, kpis: initialKpis }: Props
     return list
   }, [reports, searchQuery, tierFilter, sortMode, priceMode])
 
+  // Ẩn số điểm trong tiêu đề đối với khách chưa nâng cấp VIP để không bị lộ bí mật điểm số
+  const sanitizeReportTitle = (title: string) => {
+    if (isVip) return title
+    return title.replace(/(?:điểm\s*)?[-–:]\s*(\d{2,3}(?:\.\d+)?)/gi, '· Định giá: 🔒 ??? Điểm')
+  }
+
   // Badge màu sắc theo điểm định giá
   const renderScoreBadge = (report: NghienCuuAiReport) => {
+    // KHÁCH CHƯA VIP: KHÔNG ĐƯỢC BIẾT ĐIỂM BAO NHIÊU VÀ KHÔNG BIẾT NÊN MUA HAY BÁN
+    if (!isVip) {
+      return (
+        <button
+          type="button"
+          onClick={(e) => {
+            e.stopPropagation()
+            setVipModalConfig({
+              title: `Mở Khóa Điểm Định Giá & Tín Hiệu ${report.ticker || ''} (VIP)`,
+              subtitle: `Khám phá chính xác điểm số định giá lãi kép của ${report.ticker || 'cổ phiếu'} và khuyến nghị Mua/Bán độc quyền từ mô hình AI chuyên sâu.`,
+            })
+            setVipModalOpen(true)
+          }}
+          className="inline-flex items-center gap-1.5 rounded-full border border-amber-500/40 bg-gradient-to-r from-amber-500/20 to-amber-600/10 px-2.5 py-0.5 text-xs font-bold text-amber-300 hover:brightness-110 shadow-xs cursor-pointer group transition-all"
+          title="Nâng cấp Hội viên VIP để mở khóa Điểm định giá và Khuyến nghị Mua/Bán"
+        >
+          <Crown className="size-3 text-amber-300 group-hover:scale-110 transition-transform" />
+          <span className="font-mono tracking-wider font-black">🔒 ??? ĐIỂM</span>
+          <span className="text-[10px] text-amber-200/90 font-medium">· Tín hiệu VIP</span>
+        </button>
+      )
+    }
+
     const score = getActiveScore(report)
     const classification = getActiveClassification(report)
     const delta = report.scoreDelta
@@ -345,10 +392,27 @@ export function NghienCuuAiExplorer({ initialReports, kpis: initialKpis }: Props
             <div className="rounded-xl border border-amber-500/20 bg-amber-500/5 p-3.5 backdrop-blur-sm text-center">
               <div className="text-[11px] font-medium text-amber-300">Điểm Cao Nhất</div>
               <div className="mt-1 text-2xl font-extrabold text-amber-400 font-mono">
-                {currentKpis.maxScore}
+                {isVip ? currentKpis.maxScore : '🔒 24x.x'}
               </div>
-              <div className="mt-0.5 text-[10px] text-amber-300/80 font-mono">
-                {currentKpis.topReport?.ticker || 'ABT'}
+              <div className="mt-0.5 text-[10px] text-amber-300/80 font-mono flex items-center justify-center gap-1">
+                {isVip ? (
+                  currentKpis.topReport?.ticker || 'ABT'
+                ) : (
+                  <button
+                    type="button"
+                    onClick={() => {
+                      setVipModalConfig({
+                        title: 'Mở Khóa Siêu Cổ Phiếu Điểm Cao Nhất (VIP)',
+                        subtitle: 'Xem mã cổ phiếu đạt điểm số cao nhất danh mục và toàn bộ phân tích định giá độc quyền.',
+                      })
+                      setVipModalOpen(true)
+                    }}
+                    className="hover:underline cursor-pointer flex items-center gap-0.5"
+                  >
+                    <Crown className="size-2.5" />
+                    <span>Mở khóa VIP</span>
+                  </button>
+                )}
               </div>
             </div>
           </div>
@@ -529,178 +593,346 @@ export function NghienCuuAiExplorer({ initialReports, kpis: initialKpis }: Props
         </div>
       ) : viewMode === 'grid' ? (
         /* ──── DẠNG LƯỚI THẺ (GRID) ──── */
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-          {filteredReports.map((report, idx) => (
-            <div
-              key={`${report.slug}-${idx}`}
-              className="group relative flex flex-col justify-between rounded-xl border border-white/8 bg-[#212631] p-5 transition-all duration-200 hover:border-emerald-500/40 hover:bg-[#252b38] hover:shadow-[0_8px_30px_rgba(0,0,0,0.3)]"
-            >
-              <div>
-                {/* Header card: Ticker & Score Badge */}
-                <div className="flex items-start justify-between gap-3 mb-3">
-                  <div className="flex items-center gap-2">
-                    <span className="font-mono text-base font-black text-white group-hover:text-emerald-400 transition-colors">
-                      {report.ticker || 'CHUYÊN ĐỀ'}
-                    </span>
-                    <span className="rounded bg-white/5 px-2 py-0.5 text-[10px] font-medium text-[#9EACB9]">
-                      {report.date}
-                    </span>
+        <div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+            {(isVip ? filteredReports : filteredReports.slice(0, 6)).map((report, idx) => (
+              <div
+                key={`${report.slug}-${idx}`}
+                className="group relative flex flex-col justify-between rounded-xl border border-white/8 bg-[#212631] p-5 transition-all duration-200 hover:border-emerald-500/40 hover:bg-[#252b38] hover:shadow-[0_8px_30px_rgba(0,0,0,0.3)]"
+              >
+                <div>
+                  {/* Header card: Ticker & Score Badge */}
+                  <div className="flex items-start justify-between gap-3 mb-3">
+                    <div className="flex items-center gap-2">
+                      <span className="font-mono text-base font-black text-white group-hover:text-emerald-400 transition-colors">
+                        {report.ticker || 'CHUYÊN ĐỀ'}
+                      </span>
+                      <span className="rounded bg-white/5 px-2 py-0.5 text-[10px] font-medium text-[#9EACB9]">
+                        {report.date}
+                      </span>
+                      <span className="inline-flex items-center gap-1 rounded-full bg-amber-500/10 border border-amber-500/20 px-2 py-0.5 text-[10px] font-bold text-amber-400">
+                        <Crown className="size-2.5" />
+                        VIP
+                      </span>
+                    </div>
+
+                    <div>{renderScoreBadge(report)}</div>
                   </div>
 
-                  <div>{renderScoreBadge(report)}</div>
-                </div>
+                  {/* Title - Đã ẩn số điểm đối với khách chưa VIP */}
+                  <h3 className="text-sm font-bold text-[#F0F3F6] line-clamp-2 group-hover:text-white transition-colors mb-2">
+                    {sanitizeReportTitle(report.title)}
+                  </h3>
 
-                {/* Title */}
-                <h3 className="text-sm font-bold text-[#F0F3F6] line-clamp-2 group-hover:text-white transition-colors mb-2">
-                  {report.title}
-                </h3>
-
-                {/* Highlights / Summary */}
-                <p className="text-xs leading-relaxed text-[#9EACB9] line-clamp-3 mb-4">
-                  {report.summary || 'Báo cáo phân tích chuyên sâu 5 trụ cột và định giá.'}
-                </p>
-              </div>
-
-              {/* Bottom footer: Price, Delta & Action Buttons */}
-              <div className="pt-3 border-t border-white/5 flex flex-col gap-2 mt-auto">
-                <div className="flex items-center justify-between gap-2 text-xs">
-                  {/* Hiển thị giá thị trường và giá nghiên cứu */}
-                  <div className="space-y-0.5">
-                    {priceMode === 'current' ? (
-                      <>
-                        <div className="text-[#9EACB9]">
-                          Giá TT hiện tại:{' '}
-                          <b className="font-mono text-emerald-400">
-                            {report.currentPrice ? `${report.currentPrice.toFixed(1)} k₫` : '—'}
-                          </b>
-                        </div>
-                        {report.price && (
-                          <div className="text-[11px] text-[#64748B]">
-                            Giá lúc NC: <span className="font-mono">{report.price.toFixed(1)} k₫</span>
-                            {report.score != null && (
-                              <span> ({report.score.toFixed(1)}đ)</span>
-                            )}
-                          </div>
-                        )}
-                      </>
+                  {/* Highlights / Summary (Chỉ hiển thị phần đầu gây sự tò mò) */}
+                  <p className="text-xs leading-relaxed text-[#9EACB9] line-clamp-3 mb-4">
+                    {report.summary ? (
+                      isVip ? (
+                        report.summary
+                      ) : (
+                        <>
+                          <span>{report.summary.slice(0, 115)}... </span>
+                          <span className="text-amber-400 font-bold inline-flex items-center gap-0.5 ml-0.5">
+                            [👑 Mở khóa VIP]
+                          </span>
+                        </>
+                      )
                     ) : (
-                      <>
-                        <div className="text-[#9EACB9]">
-                          Giá lúc nghiên cứu:{' '}
-                          <b className="font-mono text-white">
-                            {report.price ? `${report.price.toFixed(1)} k₫` : '—'}
-                          </b>
-                        </div>
-                        {report.currentPrice && (
-                          <div className="text-[11px] text-[#64748B]">
+                      'Báo cáo phân tích chuyên sâu 5 trụ cột và định giá.'
+                    )}
+                  </p>
+                </div>
+
+                {/* Bottom footer: Price, Delta & Action Buttons */}
+                <div className="pt-3 border-t border-white/5 flex flex-col gap-2 mt-auto">
+                  <div className="flex items-center justify-between gap-2 text-xs">
+                    {/* Hiển thị giá thị trường và giá nghiên cứu */}
+                    <div className="space-y-0.5">
+                      {priceMode === 'current' ? (
+                        <>
+                          <div className="text-[#9EACB9]">
                             Giá TT hiện tại:{' '}
-                            <span className="font-mono text-emerald-400">
-                              {report.currentPrice.toFixed(1)} k₫
-                            </span>
+                            <b className="font-mono text-emerald-400">
+                              {report.currentPrice ? `${report.currentPrice.toFixed(1)} k₫` : '—'}
+                            </b>
                           </div>
+                          {report.price && (
+                            <div className="text-[11px] text-[#64748B]">
+                              Giá lúc NC: <span className="font-mono">{report.price.toFixed(1)} k₫</span>
+                              {report.score != null && (
+                                <span> ({isVip ? `${report.score.toFixed(1)}đ` : '🔒 ???đ'})</span>
+                              )}
+                            </div>
+                          )}
+                        </>
+                      ) : (
+                        <>
+                          <div className="text-[#9EACB9]">
+                            Giá lúc nghiên cứu:{' '}
+                            <b className="font-mono text-white">
+                              {report.price ? `${report.price.toFixed(1)} k₫` : '—'}
+                            </b>
+                          </div>
+                          {report.currentPrice && (
+                            <div className="text-[11px] text-[#64748B]">
+                              Giá TT hiện tại:{' '}
+                              <span className="font-mono text-emerald-400">
+                                {report.currentPrice.toFixed(1)} k₫
+                              </span>
+                            </div>
+                          )}
+                        </>
+                      )}
+                    </div>
+
+                    {/* Buttons */}
+                    <div className="flex items-center gap-2 shrink-0">
+                      {report.ticker && report.ticker !== 'MACRO' && (
+                        <Link
+                          href={`/stock/${report.ticker}`}
+                          className="rounded-lg bg-white/5 hover:bg-white/10 px-2.5 py-1.5 text-xs text-[#9EACB9] hover:text-white transition-colors"
+                          title="Xem hồ sơ tài chính 16 năm"
+                        >
+                          Hồ sơ
+                        </Link>
+                      )}
+
+                      <button
+                        onClick={() => {
+                          if (!isVip) {
+                            setVipModalConfig({
+                              title: `Mở Khóa Báo Cáo Nghiên Cứu Chuyên Sâu ${report.ticker || ''} (VIP)`,
+                              subtitle: `Khám phá 5 trụ cột forensic, rà soát nợ vay, điểm số định giá và khuyến nghị Mua/Bán của ${report.ticker || 'cổ phiếu'}.`,
+                            })
+                            setVipModalOpen(true)
+                            return
+                          }
+                          handleOpenReport(report.slug)
+                        }}
+                        className={cn(
+                          "inline-flex items-center gap-1.5 rounded-lg px-3 py-1.5 text-xs font-semibold shadow-xs transition-all hover:shadow-md cursor-pointer",
+                          isVip
+                            ? "bg-emerald-600 hover:bg-emerald-500 text-white"
+                            : "bg-gradient-to-r from-amber-400 via-amber-500 to-amber-600 hover:brightness-110 text-black font-black shadow-amber-500/20"
                         )}
-                      </>
-                    )}
-                  </div>
-
-                  {/* Buttons */}
-                  <div className="flex items-center gap-2 shrink-0">
-                    {report.ticker && report.ticker !== 'MACRO' && (
-                      <Link
-                        href={`/stock/${report.ticker}`}
-                        className="rounded-lg bg-white/5 hover:bg-white/10 px-2.5 py-1.5 text-xs text-[#9EACB9] hover:text-white transition-colors"
-                        title="Xem hồ sơ tài chính 16 năm"
                       >
-                        Hồ sơ
-                      </Link>
-                    )}
-
-                    <button
-                      onClick={() => handleOpenReport(report.slug)}
-                      className="inline-flex items-center gap-1.5 rounded-lg bg-emerald-600 hover:bg-emerald-500 text-white px-3 py-1.5 text-xs font-semibold shadow-xs transition-all hover:shadow-md cursor-pointer"
-                    >
-                      <BookOpen className="size-3.5" />
-                      <span>Đọc báo cáo</span>
-                    </button>
+                        {isVip ? <BookOpen className="size-3.5" /> : <Crown className="size-3.5" />}
+                        <span>{isVip ? "Đọc báo cáo" : "Đọc báo cáo (VIP)"}</span>
+                      </button>
+                    </div>
                   </div>
                 </div>
               </div>
+            ))}
+          </div>
+
+          {/* CỔNG CHẶN VIP CHO PHẦN BÁO CÁO PHÍA DƯỚI NẾU CHƯA PHẢI VIP */}
+          {!isVip && filteredReports.length > 6 && (
+            <div className="relative mt-6 overflow-hidden rounded-2xl border border-amber-500/35 bg-gradient-to-b from-[#1c1722] via-[#14121a] to-[#0f0e15] p-6 sm:p-10 text-center shadow-2xl">
+              <div className="absolute top-0 left-1/2 -translate-x-1/2 h-44 w-96 bg-amber-500/15 blur-3xl pointer-events-none rounded-full" />
+
+              <div className="relative mx-auto mb-4 flex size-14 items-center justify-center rounded-2xl border border-amber-500/40 bg-gradient-to-br from-amber-500/25 to-amber-600/10 text-amber-300 shadow-xl shadow-amber-500/15">
+                <Crown className="size-7 animate-pulse text-amber-300" />
+              </div>
+
+              <div className="inline-flex items-center gap-1.5 rounded-full border border-amber-500/30 bg-amber-500/10 px-3.5 py-1 text-xs font-bold text-amber-300 mb-3">
+                <Sparkles className="size-3.5" />
+                <span>BẢN XEM TRƯỚC HÉ LỘ · CÒN {filteredReports.length - 6} BÁO CÁO ĐANG KHÓA</span>
+              </div>
+
+              <h3 className="relative text-lg sm:text-2xl font-black tracking-tight text-white mb-2">
+                Mở Khóa Toàn Bộ {filteredReports.length}+ Siêu Cổ Phiếu Nghiên Cứu Chuyên Sâu AI
+              </h3>
+              <p className="relative max-w-xl mx-auto text-xs sm:text-sm text-[#c4b5a5] leading-relaxed mb-6">
+                Bạn đang xem 6 cổ phiếu mẫu. Nâng cấp Hội viên VIP (chỉ từ 95.000 đ/tháng) để mở khóa 100% điểm số định giá độc quyền, khuyến nghị Mua/Bán và nghe toàn bộ Audio Podcast.
+              </p>
+
+              {/* 3 Gói giá thu nhỏ */}
+              <div className="relative mb-6 max-w-md mx-auto grid grid-cols-3 gap-2.5">
+                <div className="rounded-xl border border-amber-500/20 bg-amber-500/5 p-2.5 text-center">
+                  <span className="block text-[10px] text-amber-300/80 font-medium">1 Tháng</span>
+                  <span className="block text-xs sm:text-sm font-black text-amber-300">95.000 đ</span>
+                </div>
+                <div className="relative rounded-xl border border-amber-500/40 bg-amber-500/15 p-2.5 text-center shadow-xs">
+                  <span className="absolute -top-2 left-1/2 -translate-x-1/2 rounded-full bg-amber-500 px-2 py-0.2 text-[8.5px] font-black text-black">
+                    Phổ biến nhất
+                  </span>
+                  <span className="block text-[10px] text-amber-300/80 font-medium">6 Tháng</span>
+                  <span className="block text-xs sm:text-sm font-black text-amber-300">495.000 đ</span>
+                </div>
+                <div className="relative rounded-xl border border-amber-500/20 bg-amber-500/5 p-2.5 text-center">
+                  <span className="absolute -top-2 left-1/2 -translate-x-1/2 rounded-full bg-rose-500 px-1.5 py-0.2 text-[8.5px] font-black text-white">
+                    Tiết kiệm 22%
+                  </span>
+                  <span className="block text-[10px] text-amber-300/80 font-medium">1 Năm</span>
+                  <span className="block text-xs sm:text-sm font-black text-amber-300">890.000 đ</span>
+                </div>
+              </div>
+
+              {/* Nút CTA Nâng cấp */}
+              <button
+                type="button"
+                onClick={() => {
+                  setVipModalConfig({
+                    title: 'Mở Khóa Toàn Bộ Kho Nghiên Cứu Chuyên Sâu AI (VIP)',
+                    subtitle: 'Nâng cấp Hội viên VIP để mở khóa 100% báo cáo, điểm định giá lãi kép và khuyến nghị Mua/Bán độc quyền.',
+                  })
+                  setVipModalOpen(true)
+                }}
+                className="inline-flex items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-amber-400 via-amber-500 to-amber-600 px-8 py-3 text-xs sm:text-sm font-black text-black shadow-xl shadow-amber-500/25 transition-all hover:brightness-110 active:scale-[0.99] cursor-pointer"
+              >
+                <Crown className="size-4 text-black" />
+                <span>👑 NÂNG CẤP VIP ĐỂ XEM TOÀN BỘ ({filteredReports.length} BÁO CÁO)</span>
+              </button>
             </div>
-          ))}
+          )}
         </div>
       ) : (
         /* ──── DẠNG BẢNG ĐỐI CHIẾU (TABLE) ──── */
-        <div className="overflow-hidden rounded-xl border border-white/8 bg-[#212631] shadow-xl">
-          <div className="overflow-x-auto">
-            <table className="w-full border-collapse text-sm">
-              <thead>
-                <tr className="border-b border-white/8 bg-[#1a1d26] text-left">
-                  <th className="px-4 py-3 text-xs font-semibold text-[#9EACB9] uppercase tracking-wider">
-                    Mã CK
-                  </th>
-                  <th className="px-4 py-3 text-xs font-semibold text-[#9EACB9] uppercase tracking-wider">
-                    {priceMode === 'current' ? 'Điểm Hiện Tại' : 'Điểm Định Giá'}
-                  </th>
-                  <th className="px-4 py-3 text-right text-xs font-semibold text-[#9EACB9] uppercase tracking-wider">
-                    Giá TT Hiện Tại
-                  </th>
-                  <th className="px-4 py-3 text-right text-xs font-semibold text-[#9EACB9] uppercase tracking-wider">
-                    Giá Nghiên Cứu
-                  </th>
-                  <th className="px-4 py-3 text-xs font-semibold text-[#9EACB9] uppercase tracking-wider">
-                    Tiêu Đề Báo Cáo
-                  </th>
-                  <th className="px-4 py-3 text-xs font-semibold text-[#9EACB9] uppercase tracking-wider">
-                    Ngày Nghiên Cứu
-                  </th>
-                  <th className="px-4 py-3 text-right text-xs font-semibold text-[#9EACB9] uppercase tracking-wider">
-                    Thao Tác
-                  </th>
-                </tr>
-              </thead>
-              <tbody className="divide-y divide-white/5">
-                {filteredReports.map((report, idx) => (
-                  <tr
-                    key={`${report.slug}-${idx}`}
-                    className="transition-colors hover:bg-white/[0.03] cursor-pointer"
-                    onClick={() => handleOpenReport(report.slug)}
-                  >
-                    <td className="px-4 py-3.5 font-mono font-bold text-white">
-                      {report.ticker || '—'}
-                    </td>
-                    <td className="px-4 py-3.5">{renderScoreBadge(report)}</td>
-                    <td className="px-4 py-3.5 text-right font-mono text-xs font-semibold text-emerald-400">
-                      {report.currentPrice ? `${report.currentPrice.toFixed(1)} k₫` : '—'}
-                    </td>
-                    <td className="px-4 py-3.5 text-right font-mono text-xs text-[#9EACB9]">
-                      {report.price ? `${report.price.toFixed(1)} k₫` : '—'}
-                    </td>
-                    <td className="px-4 py-3.5 max-w-md">
-                      <div className="font-semibold text-white truncate">{report.title}</div>
-                      <div className="text-xs text-[#9EACB9] line-clamp-1 mt-0.5">
-                        {report.summary}
-                      </div>
-                    </td>
-                    <td className="px-4 py-3.5 font-mono text-xs text-[#9EACB9]">
-                      {report.date}
-                    </td>
-                    <td className="px-4 py-3.5 text-right">
-                      <button
-                        onClick={(e) => {
-                          e.stopPropagation()
-                          handleOpenReport(report.slug)
-                        }}
-                        className="inline-flex items-center gap-1.5 rounded-lg bg-emerald-600/20 hover:bg-emerald-600 border border-emerald-500/30 hover:border-transparent text-emerald-400 hover:text-white px-3 py-1.5 text-xs font-semibold transition-all cursor-pointer"
-                      >
-                        <BookOpen className="size-3.5" />
-                        <span>Đọc ngay</span>
-                      </button>
-                    </td>
+        <div>
+          <div className="overflow-hidden rounded-xl border border-white/8 bg-[#212631] shadow-xl">
+            <div className="overflow-x-auto">
+              <table className="w-full border-collapse text-sm">
+                <thead>
+                  <tr className="border-b border-white/8 bg-[#1a1d26] text-left">
+                    <th className="px-4 py-3 text-xs font-semibold text-[#9EACB9] uppercase tracking-wider">
+                      Mã CK
+                    </th>
+                    <th className="px-4 py-3 text-xs font-semibold text-[#9EACB9] uppercase tracking-wider">
+                      {priceMode === 'current' ? 'Điểm Hiện Tại' : 'Điểm Định Giá'}
+                    </th>
+                    <th className="px-4 py-3 text-right text-xs font-semibold text-[#9EACB9] uppercase tracking-wider">
+                      Giá TT Hiện Tại
+                    </th>
+                    <th className="px-4 py-3 text-right text-xs font-semibold text-[#9EACB9] uppercase tracking-wider">
+                      Giá Nghiên Cứu
+                    </th>
+                    <th className="px-4 py-3 text-xs font-semibold text-[#9EACB9] uppercase tracking-wider">
+                      Tiêu Đề Báo Cáo
+                    </th>
+                    <th className="px-4 py-3 text-xs font-semibold text-[#9EACB9] uppercase tracking-wider">
+                      Ngày Nghiên Cứu
+                    </th>
+                    <th className="px-4 py-3 text-right text-xs font-semibold text-[#9EACB9] uppercase tracking-wider">
+                      Thao Tác
+                    </th>
                   </tr>
-                ))}
-              </tbody>
-            </table>
+                </thead>
+                <tbody className="divide-y divide-white/5">
+                  {(isVip ? filteredReports : filteredReports.slice(0, 6)).map((report, idx) => (
+                    <tr
+                      key={`${report.slug}-${idx}`}
+                      className="transition-colors hover:bg-white/[0.03] cursor-pointer"
+                      onClick={() => {
+                        if (!isVip) {
+                          setVipModalConfig({
+                            title: `Mở Khóa Báo Cáo Nghiên Cứu Chuyên Sâu ${report.ticker || ''} (VIP)`,
+                            subtitle: `Khám phá 5 trụ cột forensic, rà soát nợ vay, điểm số định giá và khuyến nghị Mua/Bán của ${report.ticker || 'cổ phiếu'}.`,
+                          })
+                          setVipModalOpen(true)
+                          return
+                        }
+                        handleOpenReport(report.slug)
+                      }}
+                    >
+                      <td className="px-4 py-3.5 font-mono font-bold text-white">
+                        <div className="flex items-center gap-1.5">
+                          <span>{report.ticker || '—'}</span>
+                          <span className="inline-flex items-center gap-0.5 rounded bg-amber-500/10 border border-amber-500/20 px-1.5 py-0.2 text-[9px] font-bold text-amber-400">
+                            <Crown className="size-2" />
+                            VIP
+                          </span>
+                        </div>
+                      </td>
+                      <td className="px-4 py-3.5">{renderScoreBadge(report)}</td>
+                      <td className="px-4 py-3.5 text-right font-mono text-xs font-semibold text-emerald-400">
+                        {report.currentPrice ? `${report.currentPrice.toFixed(1)} k₫` : '—'}
+                      </td>
+                      <td className="px-4 py-3.5 text-right font-mono text-xs text-[#9EACB9]">
+                        {report.price ? `${report.price.toFixed(1)} k₫` : '—'}
+                      </td>
+                      <td className="px-4 py-3.5 max-w-md">
+                        <div className="font-semibold text-white truncate">
+                          {sanitizeReportTitle(report.title)}
+                        </div>
+                        <div className="text-xs text-[#9EACB9] line-clamp-1 mt-0.5">
+                          {isVip
+                            ? report.summary
+                            : `${report.summary?.slice(0, 80) || ''}... [👑 Khóa VIP]`}
+                        </div>
+                      </td>
+                      <td className="px-4 py-3.5 font-mono text-xs text-[#9EACB9]">
+                        {report.date}
+                      </td>
+                      <td className="px-4 py-3.5 text-right">
+                        <button
+                          onClick={(e) => {
+                            e.stopPropagation()
+                            if (!isVip) {
+                              setVipModalConfig({
+                                title: `Mở Khóa Báo Cáo Nghiên Cứu Chuyên Sâu ${report.ticker || ''} (VIP)`,
+                                subtitle: `Khám phá 5 trụ cột forensic, rà soát nợ vay, điểm số định giá và khuyến nghị Mua/Bán của ${report.ticker || 'cổ phiếu'}.`,
+                              })
+                              setVipModalOpen(true)
+                              return
+                            }
+                            handleOpenReport(report.slug)
+                          }}
+                          className={cn(
+                            "inline-flex items-center gap-1.5 rounded-lg px-3 py-1.5 text-xs font-semibold transition-all cursor-pointer",
+                            isVip
+                              ? "bg-emerald-600/20 hover:bg-emerald-600 border border-emerald-500/30 hover:border-transparent text-emerald-400 hover:text-white"
+                              : "bg-amber-500/20 hover:bg-amber-500 border border-amber-500/30 hover:border-transparent text-amber-400 hover:text-black font-bold"
+                          )}
+                        >
+                          {isVip ? <BookOpen className="size-3.5" /> : <Crown className="size-3.5" />}
+                          <span>{isVip ? "Đọc ngay" : "Đọc ngay (VIP)"}</span>
+                        </button>
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
           </div>
+
+          {/* CỔNG CHẶN VIP CHO DẠNG BẢNG NẾU CHƯA PHẢI VIP */}
+          {!isVip && filteredReports.length > 6 && (
+            <div className="relative mt-6 overflow-hidden rounded-2xl border border-amber-500/35 bg-gradient-to-b from-[#1c1722] via-[#14121a] to-[#0f0e15] p-6 sm:p-10 text-center shadow-2xl">
+              <div className="absolute top-0 left-1/2 -translate-x-1/2 h-44 w-96 bg-amber-500/15 blur-3xl pointer-events-none rounded-full" />
+
+              <div className="relative mx-auto mb-4 flex size-14 items-center justify-center rounded-2xl border border-amber-500/40 bg-gradient-to-br from-amber-500/25 to-amber-600/10 text-amber-300 shadow-xl shadow-amber-500/15">
+                <Crown className="size-7 animate-pulse text-amber-300" />
+              </div>
+
+              <div className="inline-flex items-center gap-1.5 rounded-full border border-amber-500/30 bg-amber-500/10 px-3.5 py-1 text-xs font-bold text-amber-300 mb-3">
+                <Sparkles className="size-3.5" />
+                <span>BẢN XEM TRƯỚC HÉ LỘ · CÒN {filteredReports.length - 6} BÁO CÁO ĐANG KHÓA</span>
+              </div>
+
+              <h3 className="relative text-lg sm:text-2xl font-black tracking-tight text-white mb-2">
+                Mở Khóa Toàn Bộ {filteredReports.length}+ Siêu Cổ Phiếu Nghiên Cứu Chuyên Sâu AI
+              </h3>
+              <p className="relative max-w-xl mx-auto text-xs sm:text-sm text-[#c4b5a5] leading-relaxed mb-6">
+                Bạn đang xem 6 cổ phiếu mẫu. Nâng cấp Hội viên VIP (chỉ từ 95.000 đ/tháng) để mở khóa 100% bảng đối chiếu điểm số định giá và tín hiệu Mua/Bán độc quyền.
+              </p>
+
+              <button
+                type="button"
+                onClick={() => {
+                  setVipModalConfig({
+                    title: 'Mở Khóa Toàn Bộ Kho Nghiên Cứu Chuyên Sâu AI (VIP)',
+                    subtitle: 'Nâng cấp Hội viên VIP để mở khóa 100% bảng đối chiếu, điểm số định giá và khuyến nghị Mua/Bán.',
+                  })
+                  setVipModalOpen(true)
+                }}
+                className="inline-flex items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-amber-400 via-amber-500 to-amber-600 px-8 py-3 text-xs sm:text-sm font-black text-black shadow-xl shadow-amber-500/25 transition-all hover:brightness-110 active:scale-[0.99] cursor-pointer"
+              >
+                <Crown className="size-4 text-black" />
+                <span>👑 NÂNG CẤP VIP ĐỂ XEM TOÀN BỘ ({filteredReports.length} BÁO CÁO)</span>
+              </button>
+            </div>
+          )}
         </div>
       )}
 
@@ -731,6 +963,11 @@ export function NghienCuuAiExplorer({ initialReports, kpis: initialKpis }: Props
                       {detailData.score} ĐIỂM
                     </span>
                   ) : null}
+
+                  <span className="inline-flex items-center gap-1 rounded-full bg-amber-500/10 border border-amber-500/20 px-2 py-0.5 text-[10px] font-bold text-amber-400">
+                    <Crown className="size-2.5" />
+                    Độc quyền VIP
+                  </span>
 
                   {detailData?.price && (
                     <span className="text-xs text-[#9EACB9]">
@@ -769,17 +1006,33 @@ export function NghienCuuAiExplorer({ initialReports, kpis: initialKpis }: Props
 
                 <button
                   onClick={handleCopyMarkdown}
-                  className="inline-flex items-center gap-1.5 rounded-lg bg-white/5 hover:bg-white/10 px-3 py-1.5 text-xs text-[#9EACB9] hover:text-white transition-colors border border-white/10 cursor-pointer"
-                  title="Sao chép toàn bộ nội dung Markdown"
+                  className={cn(
+                    "inline-flex items-center gap-1.5 rounded-lg px-3 py-1.5 text-xs transition-colors border cursor-pointer",
+                    isVip
+                      ? "bg-white/5 hover:bg-white/10 text-[#9EACB9] hover:text-white border-white/10"
+                      : "bg-amber-500/10 hover:bg-amber-500/20 text-amber-400 border-amber-500/30"
+                  )}
+                  title={isVip ? "Sao chép toàn bộ nội dung Markdown" : "Chức năng dành riêng cho Hội viên VIP"}
                 >
-                  {copied ? <Check className="size-3.5 text-emerald-400" /> : <Copy className="size-3.5" />}
-                  <span>{copied ? 'Đã chép' : 'Chép MD'}</span>
+                  {copied ? (
+                    <Check className="size-3.5 text-emerald-400" />
+                  ) : isVip ? (
+                    <Copy className="size-3.5" />
+                  ) : (
+                    <Crown className="size-3.5" />
+                  )}
+                  <span>{copied ? 'Đã chép' : isVip ? 'Chép MD' : 'Chép MD (VIP)'}</span>
                 </button>
 
                 <button
                   onClick={handlePrint}
-                  className="rounded-lg bg-white/5 hover:bg-white/10 p-1.5 text-[#9EACB9] hover:text-white transition-colors border border-white/10 cursor-pointer"
-                  title="In báo cáo"
+                  className={cn(
+                    "rounded-lg p-1.5 transition-colors border cursor-pointer",
+                    isVip
+                      ? "bg-white/5 hover:bg-white/10 text-[#9EACB9] hover:text-white border-white/10"
+                      : "bg-amber-500/10 hover:bg-amber-500/20 text-amber-400 border-amber-500/30"
+                  )}
+                  title={isVip ? "In báo cáo" : "Chức năng dành riêng cho Hội viên VIP"}
                 >
                   <Printer className="size-4" />
                 </button>
@@ -803,21 +1056,38 @@ export function NghienCuuAiExplorer({ initialReports, kpis: initialKpis }: Props
                 </div>
               ) : detailData ? (
                 <article className="max-w-4xl mx-auto space-y-6">
-                  {/* Summary Callout */}
+                  {/* Summary Callout - Luôn hiển thị công khai phần đầu để gây sự tò mò */}
                   {detailData.summary && (
-                    <div className="rounded-xl border border-emerald-500/30 bg-emerald-500/5 p-4 text-xs sm:text-sm leading-relaxed text-emerald-200">
-                      <b className="text-emerald-400 font-semibold block mb-1">
-                        TÓM TẮT ĐỊNH GIÁ & LUẬN ĐIỂM CỐT LÕI:
-                      </b>
-                      {detailData.summary}
+                    <div className="rounded-xl border border-emerald-500/30 bg-emerald-500/5 p-4 sm:p-5 text-xs sm:text-sm leading-relaxed text-emerald-200 shadow-xs">
+                      <div className="flex items-center gap-2 text-emerald-400 font-bold mb-1.5 text-sm">
+                        <Sparkles className="size-4" />
+                        <span>TÓM TẮT ĐỊNH GIÁ & LUẬN ĐIỂM CỐT LÕI:</span>
+                      </div>
+                      <p className="text-slate-200 leading-relaxed">{detailData.summary}</p>
                     </div>
                   )}
 
-                  {/* HTML Markdown Content */}
-                  <div
-                    className="prose prose-invert max-w-none text-xs sm:text-sm leading-relaxed space-y-4 font-sans text-slate-200 [&_h1]:text-2xl [&_h1]:font-black [&_h1]:text-white [&_h1]:border-b [&_h1]:border-white/10 [&_h1]:pb-3 [&_h1]:mt-8 [&_h2]:text-xl [&_h2]:font-bold [&_h2]:text-white [&_h2]:mt-6 [&_h3]:text-base [&_h3]:font-bold [&_h3]:text-emerald-400 [&_h3]:mt-5 [&_strong]:text-white [&_strong]:font-bold [&_ul]:list-disc [&_ul]:pl-5 [&_li]:my-1"
-                    dangerouslySetInnerHTML={{ __html: detailData.contentHtml }}
-                  />
+                  {/* HTML Markdown Content - Khóa bằng AuthGate cho Hội viên VIP */}
+                  <AuthGate
+                    isLoggedIn={isLoggedIn}
+                    isVip={isVip}
+                    requiredTier="vip"
+                    variant="blur"
+                    blurHeight={280}
+                    title={`Mở khóa Toàn Bộ Nghiên Cứu Chuyên Sâu ${detailData.ticker || ''} (VIP)`}
+                    subtitle="Báo cáo phân tích chuyên sâu 5 trụ cột và mô hình định giá độc quyền bởi AI dành riêng cho Hội viên VIP (từ 95.000 đ/tháng)."
+                    features={[
+                      'Bóc tách chi tiết định giá tài sản ngầm, chiết khấu dòng tiền & mô hình RNAV',
+                      'Toàn bộ bảng số liệu dự phóng tài chính 3-5 năm & kịch bản rủi ro',
+                      'Luận điểm phân tích độc quyền từ mô hình AI chuyên sâu',
+                    ]}
+                    ctaText="👑 Nâng cấp VIP để đọc toàn bộ"
+                  >
+                    <div
+                      className="prose prose-invert max-w-none text-xs sm:text-sm leading-relaxed space-y-4 font-sans text-slate-200 [&_h1]:text-2xl [&_h1]:font-black [&_h1]:text-white [&_h1]:border-b [&_h1]:border-white/10 [&_h1]:pb-3 [&_h1]:mt-8 [&_h2]:text-xl [&_h2]:font-bold [&_h2]:text-white [&_h2]:mt-6 [&_h3]:text-base [&_h3]:font-bold [&_h3]:text-emerald-400 [&_h3]:mt-5 [&_strong]:text-white [&_strong]:font-bold [&_ul]:list-disc [&_ul]:pl-5 [&_li]:my-1"
+                      dangerouslySetInnerHTML={{ __html: detailData.contentHtml }}
+                    />
+                  </AuthGate>
                 </article>
               ) : (
                 <div className="py-20 text-center text-rose-400">
@@ -841,6 +1111,14 @@ export function NghienCuuAiExplorer({ initialReports, kpis: initialKpis }: Props
           </div>
         </div>
       )}
+
+      {/* Modal nâng cấp VIP */}
+      <VipUpgradeModal
+        open={vipModalOpen}
+        onClose={() => setVipModalOpen(false)}
+        title={vipModalConfig.title || "Mở Khóa Toàn Bộ Nghiên Cứu Chuyên Sâu AI (VIP)"}
+        subtitle={vipModalConfig.subtitle || "Nâng cấp gói Hội viên VIP để mở khóa toàn bộ luận điểm phân tích, mô hình định giá độc quyền và sao chép Markdown nội bộ."}
+      />
     </div>
   )
 }

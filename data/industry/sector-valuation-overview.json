@@ -1,104 +1,104 @@
 {
-  "generated_at": "2026-09-01T14:02:06.962Z",
+  "generated_at": "2026-11-10T14:02:37.234Z",
   "sectors": [
     {
       "key": "banking",
       "name_vi": "Ngân hàng",
       "name_en": "Banking",
       "stock_count": 27,
-      "equity_sum": 1886962,
+      "equity_sum": 1964260,
       "current": {
         "pe": {
-          "median": 8.39,
-          "mean": 24.93
+          "median": 7.52,
+          "mean": 18.26
         },
         "pb": {
-          "median": 1.22,
-          "mean": 1.34
+          "median": 1.15,
+          "mean": 1.2
         },
         "ps": {
-          "median": 1.7,
-          "mean": 1.77
+          "median": 1.48,
+          "mean": 1.58
         }
       },
       "history": {
         "1y": {
           "pe": {
-            "median": 8.41,
-            "mean": 8.63,
-            "min": 7.78,
-            "max": 10.22
+            "median": 8.78,
+            "mean": 9.48,
+            "min": 6.81,
+            "max": 14.47
           },
           "pb": {
-            "median": 1.22,
-            "mean": 1.25,
-            "min": 1.08,
-            "max": 1.56
+            "median": 1.19,
+            "mean": 1.2,
+            "min": 1.05,
+            "max": 1.4
           },
           "ps": {
-            "median": 1.84,
-            "mean": 1.85,
-            "min": 1.49,
-            "max": 2.13
+            "median": 1.8,
+            "mean": 1.78,
+            "min": 1.37,
+            "max": 2.14
           }
         },
         "3y": {
           "pe": {
-            "median": 8.52,
-            "mean": 8.57,
-            "min": 7.26,
-            "max": 10.66
+            "median": 9.53,
+            "mean": 9.65,
+            "min": 6.13,
+            "max": 15.37
           },
           "pb": {
-            "median": 1.2,
-            "mean": 1.21,
-            "min": 1.01,
-            "max": 1.66
+            "median": 1.19,
+            "mean": 1.2,
+            "min": 0.86,
+            "max": 1.67
           },
           "ps": {
-            "median": 1.64,
-            "mean": 1.68,
-            "min": 1.32,
-            "max": 2.13
+            "median": 1.63,
+            "mean": 1.66,
+            "min": 1,
+            "max": 2.3
           }
         },
         "5y": {
           "pe": {
-            "median": 8.56,
-            "mean": 9.62,
-            "min": 5.19,
-            "max": 26.4
+            "median": 10.03,
+            "mean": 10.45,
+            "min": 4.93,
+            "max": 40.38
           },
           "pb": {
             "median": 1.22,
-            "mean": 1.34,
-            "min": 0.99,
-            "max": 2.92
+            "mean": 1.3,
+            "min": 0.86,
+            "max": 2.28
           },
           "ps": {
-            "median": 1.74,
-            "mean": 1.84,
-            "min": 1.32,
-            "max": 3.39
+            "median": 1.63,
+            "mean": 1.73,
+            "min": 0.99,
+            "max": 3.51
           }
         },
         "10y": {
           "pe": {
-            "median": 9.96,
-            "mean": 11.44,
-            "min": 5.19,
-            "max": 32.22
+            "median": 10.93,
+            "mean": 11.73,
+            "min": 4.93,
+            "max": 40.38
           },
           "pb": {
-            "median": 1.21,
-            "mean": 1.3,
+            "median": 1.23,
+            "mean": 1.31,
             "min": 0.38,
-            "max": 3.29
+            "max": 3.38
           },
           "ps": {
-            "median": 1.74,
-            "mean": 1.87,
-            "min": 0.67,
+            "median": 1.61,
+            "mean": 1.72,
+            "min": 0.53,
             "max": 4.45
           }
         }
@@ -109,99 +109,99 @@
       "name_vi": "Chứng khoán",
       "name_en": "Securities",
       "stock_count": 41,
-      "equity_sum": 331943,
+      "equity_sum": 333408,
       "current": {
         "pe": {
-          "median": 16.83,
-          "mean": 24.45
+          "median": 17.95,
+          "mean": 40.27
         },
         "pb": {
-          "median": 1.17,
-          "mean": 1.29
+          "median": 1.05,
+          "mean": 1.13
         },
         "ps": {
-          "median": 4.15,
-          "mean": 6.08
+          "median": 4.26,
+          "mean": 5.74
         }
       },
       "history": {
         "1y": {
           "pe": {
-            "median": 17.8,
-            "mean": 18.3,
-            "min": 14.7,
-            "max": 27.22
+            "median": 15.7,
+            "mean": 16.64,
+            "min": 12.65,
+            "max": 25.05
           },
           "pb": {
-            "median": 1.29,
-            "mean": 1.3,
-            "min": 1.06,
-            "max": 1.69
+            "median": 1.23,
+            "mean": 1.52,
+            "min": 0.92,
+            "max": 2.46
           },
           "ps": {
-            "median": 4.88,
-            "mean": 5.21,
-            "min": 3.76,
-            "max": 8.7
+            "median": 4.2,
+            "mean": 4.34,
+            "min": 3.38,
+            "max": 6.87
           }
         },
         "3y": {
           "pe": {
-            "median": 19.12,
-            "mean": 19.41,
-            "min": 14.7,
-            "max": 28.48
+            "median": 18.98,
+            "mean": 19.1,
+            "min": 12.65,
+            "max": 29.95
           },
           "pb": {
-            "median": 1.29,
-            "mean": 1.29,
-            "min": 1,
-            "max": 1.78
+            "median": 1.44,
+            "mean": 1.61,
+            "min": 0.92,
+            "max": 2.94
           },
           "ps": {
-            "median": 5.53,
-            "mean": 5.69,
-            "min": 3.76,
-            "max": 8.7
+            "median": 5.07,
+            "mean": 5.38,
+            "min": 3.38,
+            "max": 8.88
           }
         },
         "5y": {
           "pe": {
-            "median": 17.71,
-            "mean": 17.59,
-            "min": 5.91,
-            "max": 40.36
+            "median": 17.66,
+            "mean": 19.19,
+            "min": 3.87,
+            "max": 97.96
           },
           "pb": {
-            "median": 1.29,
-            "mean": 1.41,
-            "min": 0.54,
-            "max": 3.08
+            "median": 1.37,
+            "mean": 1.57,
+            "min": 0.5,
+            "max": 3.27
           },
           "ps": {
-            "median": 5.11,
-            "mean": 5.15,
-            "min": 1.77,
+            "median": 4.83,
+            "mean": 4.82,
+            "min": 0.84,
             "max": 13.25
           }
         },
         "10y": {
           "pe": {
-            "median": 12.22,
-            "mean": 13.68,
-            "min": 4.96,
-            "max": 40.36
+            "median": 12.89,
+            "mean": 15.01,
+            "min": 3.87,
+            "max": 97.96
           },
           "pb": {
-            "median": 0.96,
-            "mean": 1.06,
+            "median": 1.04,
+            "mean": 1.21,
             "min": 0.42,
-            "max": 3.08
+            "max": 3.27
           },
           "ps": {
-            "median": 3.64,
-            "mean": 3.92,
-            "min": 1.62,
+            "median": 3.87,
+            "mean": 3.95,
+            "min": 0.84,
             "max": 13.25
           }
         }
@@ -212,100 +212,100 @@
       "name_vi": "Bảo hiểm",
       "name_en": "Insurance",
       "stock_count": 14,
-      "equity_sum": 60911,
+      "equity_sum": 61039,
       "current": {
         "pe": {
-          "median": 10.11,
-          "mean": 16.17
+          "median": 10.26,
+          "mean": 11.64
         },
         "pb": {
-          "median": 0.92,
-          "mean": 1.06
+          "median": 0.94,
+          "mean": 1.04
         },
         "ps": {
-          "median": 0.76,
-          "mean": 0.92
+          "median": 0.73,
+          "mean": 0.84
         }
       },
       "history": {
         "1y": {
           "pe": {
-            "median": 10.82,
-            "mean": 10.83,
-            "min": 8.98,
-            "max": 13.12
+            "median": 10.67,
+            "mean": 10.61,
+            "min": 8.56,
+            "max": 15.52
           },
           "pb": {
-            "median": 1.09,
-            "mean": 1.09,
-            "min": 0.91,
-            "max": 1.21
+            "median": 1.07,
+            "mean": 1.1,
+            "min": 0.68,
+            "max": 1.26
           },
           "ps": {
             "median": 0.91,
-            "mean": 0.88,
-            "min": 0.72,
-            "max": 1.08
+            "mean": 0.87,
+            "min": 0.38,
+            "max": 1.15
           }
         },
         "3y": {
           "pe": {
-            "median": 10.71,
-            "mean": 10.73,
-            "min": 8.91,
-            "max": 13.71
+            "median": 10.92,
+            "mean": 10.92,
+            "min": 8.56,
+            "max": 15.52
           },
           "pb": {
-            "median": 1.14,
-            "mean": 1.14,
-            "min": 0.91,
-            "max": 1.39
+            "median": 1.2,
+            "mean": 1.17,
+            "min": 0.68,
+            "max": 1.4
           },
           "ps": {
-            "median": 0.87,
-            "mean": 0.87,
-            "min": 0.65,
-            "max": 1.08
+            "median": 0.83,
+            "mean": 0.85,
+            "min": 0.38,
+            "max": 1.15
           }
         },
         "5y": {
           "pe": {
-            "median": 10.83,
-            "mean": 11.04,
-            "min": 8.57,
-            "max": 15.26
+            "median": 11.26,
+            "mean": 11.55,
+            "min": 8.56,
+            "max": 23.98
           },
           "pb": {
-            "median": 1.21,
-            "mean": 1.28,
-            "min": 0.91,
-            "max": 2.08
+            "median": 1.25,
+            "mean": 1.32,
+            "min": 0.68,
+            "max": 2.26
           },
           "ps": {
-            "median": 0.92,
-            "mean": 1.01,
-            "min": 0.65,
-            "max": 1.66
+            "median": 0.88,
+            "mean": 0.95,
+            "min": 0.38,
+            "max": 2.07
           }
         },
         "10y": {
           "pe": {
-            "median": 10.9,
-            "mean": 12.14,
-            "min": 7.37,
-            "max": 27.11
+            "median": 11.71,
+            "mean": 12.69,
+            "min": 7.76,
+            "max": 26.93
           },
           "pb": {
-            "median": 1.15,
-            "mean": 1.24,
-            "min": 0.78,
-            "max": 2.16
+            "median": 1.21,
+            "mean": 1.28,
+            "min": 0.68,
+            "max": 2.28
           },
           "ps": {
-            "median": 0.88,
-            "mean": 0.98,
-            "min": 0.46,
-            "max": 2.6
+            "median": 0.91,
+            "mean": 1.02,
+            "min": 0.38,
+            "max": 2.47
           }
         }
       }
@@ -315,100 +315,100 @@
       "name_vi": "Bất động sản",
       "name_en": "Real Estate",
       "stock_count": 50,
-      "equity_sum": 690282,
+      "equity_sum": 744883,
       "current": {
         "pe": {
-          "median": 15.32,
-          "mean": 17.71
+          "median": 22.12,
+          "mean": 41.14
         },
         "pb": {
-          "median": 0.54,
-          "mean": 0.51
+          "median": 0.58,
+          "mean": 0.98
         },
         "ps": {
-          "median": 1.31,
-          "mean": 1.35
+          "median": 3,
+          "mean": 8.95
         }
       },
       "history": {
         "1y": {
           "pe": {
-            "median": 21.49,
-            "mean": 24.98,
-            "min": 14.61,
-            "max": 50.26
+            "median": 20.6,
+            "mean": 22.48,
+            "min": 9.94,
+            "max": 48.46
           },
           "pb": {
-            "median": 0.65,
-            "mean": 0.73,
-            "min": 0.46,
-            "max": 1.19
+            "median": 0.8,
+            "mean": 0.82,
+            "min": 0.42,
+            "max": 1.21
           },
           "ps": {
-            "median": 2.33,
-            "mean": 2.89,
-            "min": 1.16,
-            "max": 6.07
+            "median": 3.2,
+            "mean": 3.33,
+            "min": 1.74,
+            "max": 5.1
           }
         },
         "3y": {
           "pe": {
-            "median": 21.58,
-            "mean": 24.46,
-            "min": 8.75,
-            "max": 51.9
+            "median": 28.8,
+            "mean": 28.98,
+            "min": 9.94,
+            "max": 51.73
           },
           "pb": {
-            "median": 0.84,
-            "mean": 0.83,
-            "min": 0.46,
-            "max": 1.44
+            "median": 0.95,
+            "mean": 0.95,
+            "min": 0.42,
+            "max": 1.5
           },
           "ps": {
-            "median": 2.85,
-            "mean": 3.19,
-            "min": 0.91,
-            "max": 6.43
+            "median": 3.57,
+            "mean": 3.9,
+            "min": 1.74,
+            "max": 6.44
           }
         },
         "5y": {
           "pe": {
-            "median": 20.53,
-            "mean": 22.34,
-            "min": 4.02,
-            "max": 63.37
+            "median": 25.29,
+            "mean": 25.59,
+            "min": 7.04,
+            "max": 51.73
           },
           "pb": {
-            "median": 0.93,
-            "mean": 1.14,
-            "min": 0.46,
-            "max": 4.22
+            "median": 1.02,
+            "mean": 1.23,
+            "min": 0.42,
+            "max": 3.43
           },
           "ps": {
-            "median": 3.22,
-            "mean": 3.36,
-            "min": 0.66,
-            "max": 15.7
+            "median": 3.36,
+            "mean": 3.6,
+            "min": 0.93,
+            "max": 8.26
           }
         },
         "10y": {
           "pe": {
-            "median": 13.6,
-            "mean": 16.27,
-            "min": 3.3,
-            "max": 63.37
+            "median": 16.54,
+            "mean": 18.5,
+            "min": 3.4,
+            "max": 51.73
           },
           "pb": {
-            "median": 0.95,
-            "mean": 1.08,
+            "median": 1.03,
+            "mean": 1.21,
             "min": 0.41,
-            "max": 4.22
+            "max": 3.43
           },
           "ps": {
-            "median": 1.92,
-            "mean": 2.45,
-            "min": 0.48,
-            "max": 15.7
+            "median": 2.52,
+            "mean": 2.72,
+            "min": 0.52,
+            "max": 8.92
           }
         }
       }
@@ -418,98 +418,98 @@
       "name_vi": "Bất động sản khu công nghiệp",
       "name_en": "Industrial Real Estate",
       "stock_count": 20,
-      "equity_sum": 167703,
+      "equity_sum": 173311,
       "current": {
         "pe": {
-          "median": 10.4,
-          "mean": 12.65
+          "median": 10.14,
+          "mean": 12.46
         },
         "pb": {
-          "median": 1.21,
-          "mean": 1.51
+          "median": 1.25,
+          "mean": 1.44
         },
         "ps": {
-          "median": 2.8,
-          "mean": 3.66
+          "median": 2.7,
+          "mean": 3.52
         }
       },
       "history": {
         "1y": {
           "pe": {
-            "median": 11.93,
-            "mean": 11.84,
-            "min": 9.42,
-            "max": 13.41
+            "median": 11.06,
+            "mean": 10.91,
+            "min": 8.14,
+            "max": 15.79
           },
           "pb": {
-            "median": 1.63,
-            "mean": 1.6,
-            "min": 1.19,
-            "max": 1.89
+            "median": 1.61,
+            "mean": 1.71,
+            "min": 1.1,
+            "max": 2.32
           },
           "ps": {
-            "median": 2.7,
-            "mean": 2.74,
-            "min": 2.46,
-            "max": 3.44
+            "median": 2.77,
+            "mean": 2.99,
+            "min": 2.26,
+            "max": 4.41
           }
         },
         "3y": {
           "pe": {
-            "median": 14.99,
-            "mean": 14.53,
-            "min": 9.42,
-            "max": 21.54
+            "median": 12.74,
+            "mean": 13.21,
+            "min": 8.14,
+            "max": 26.16
           },
           "pb": {
-            "median": 1.83,
-            "mean": 1.82,
-            "min": 1.19,
-            "max": 2.25
+            "median": 1.88,
+            "mean": 1.85,
+            "min": 1.1,
+            "max": 2.46
           },
           "ps": {
-            "median": 3.56,
-            "mean": 3.59,
-            "min": 2.46,
-            "max": 5.57
+            "median": 2.83,
+            "mean": 3.33,
+            "min": 1.74,
+            "max": 6.08
           }
         },
         "5y": {
           "pe": {
-            "median": 15.09,
-            "mean": 14.71,
-            "min": 8.4,
+            "median": 12.66,
+            "mean": 13.71,
+            "min": 6.32,
             "max": 42.66
           },
           "pb": {
-            "median": 1.93,
-            "mean": 2.13,
-            "min": 1.19,
-            "max": 5.09
+            "median": 1.89,
+            "mean": 1.97,
+            "min": 1.1,
+            "max": 5.33
           },
           "ps": {
-            "median": 3.6,
-            "mean": 3.61,
-            "min": 2.14,
-            "max": 5.62
+            "median": 3.05,
+            "mean": 3.42,
+            "min": 1.74,
+            "max": 7.51
           }
         },
         "10y": {
           "pe": {
-            "median": 11.98,
-            "mean": 12.41,
+            "median": 12.07,
+            "mean": 12.95,
             "min": 5.61,
             "max": 42.66
           },
           "pb": {
-            "median": 1.67,
-            "mean": 1.72,
-            "min": 0.77,
-            "max": 5.09
+            "median": 1.73,
+            "mean": 1.75,
+            "min": 0.69,
+            "max": 5.33
           },
           "ps": {
-            "median": 2.82,
-            "mean": 3.33,
+            "median": 2.87,
+            "mean": 3.38,
             "min": 1.41,
             "max": 10.21
           }
@@ -521,100 +521,100 @@
       "name_vi": "Bán lẻ",
       "name_en": "Retail",
       "stock_count": 21,
-      "equity_sum": 71179,
+      "equity_sum": 82526,
       "current": {
         "pe": {
-          "median": 11.18,
-          "mean": 13.97
+          "median": 9.35,
+          "mean": 10.54
         },
         "pb": {
-          "median": 1,
-          "mean": 1.62
+          "median": 1.06,
+          "mean": 1.7
         },
         "ps": {
-          "median": 0.27,
-          "mean": 0.39
+          "median": 0.28,
+          "mean": 0.62
         }
       },
       "history": {
         "1y": {
           "pe": {
-            "median": 15,
-            "mean": 14.98,
-            "min": 10.77,
-            "max": 18.33
+            "median": 12.59,
+            "mean": 12.45,
+            "min": 5.08,
+            "max": 17.81
           },
           "pb": {
-            "median": 1.21,
-            "mean": 1.2,
-            "min": 1,
-            "max": 1.39
+            "median": 1.11,
+            "mean": 1.09,
+            "min": 0.84,
+            "max": 1.35
           },
           "ps": {
-            "median": 0.29,
-            "mean": 0.28,
-            "min": 0.24,
-            "max": 0.34
+            "median": 0.35,
+            "mean": 0.34,
+            "min": 0.12,
+            "max": 0.49
           }
         },
         "3y": {
           "pe": {
-            "median": 16.12,
-            "mean": 15.66,
-            "min": 2.95,
-            "max": 24.21
+            "median": 15.75,
+            "mean": 15.56,
+            "min": 5.08,
+            "max": 21.96
           },
           "pb": {
-            "median": 1.2,
-            "mean": 1.04,
-            "min": 0.17,
-            "max": 1.92
+            "median": 1.12,
+            "mean": 1.12,
+            "min": 0.84,
+            "max": 1.46
           },
           "ps": {
             "median": 0.42,
-            "mean": 0.55,
-            "min": 0.24,
-            "max": 1.83
+            "mean": 0.49,
+            "min": 0.12,
+            "max": 0.8
           }
         },
         "5y": {
           "pe": {
-            "median": 16.06,
-            "mean": 16.14,
-            "min": 2.95,
-            "max": 37.56
+            "median": 15.34,
+            "mean": 15.74,
+            "min": 5.08,
+            "max": 82.8
           },
           "pb": {
-            "median": 1.21,
-            "mean": 1.16,
-            "min": 0.17,
-            "max": 3.9
+            "median": 1.17,
+            "mean": 1.32,
+            "min": 0.84,
+            "max": 3.26
           },
           "ps": {
-            "median": 0.43,
-            "mean": 0.59,
-            "min": 0.15,
-            "max": 8.15
+            "median": 0.45,
+            "mean": 0.55,
+            "min": 0.12,
+            "max": 5.63
           }
         },
         "10y": {
           "pe": {
-            "median": 12.25,
-            "mean": 14.62,
-            "min": 2.95,
-            "max": 252.54
+            "median": 12.13,
+            "mean": 13.2,
+            "min": 3.73,
+            "max": 82.8
           },
           "pb": {
-            "median": 1.21,
-            "mean": 1.18,
-            "min": 0.17,
-            "max": 3.9
+            "median": 1.19,
+            "mean": 1.25,
+            "min": 0.45,
+            "max": 3.48
           },
           "ps": {
-            "median": 0.29,
-            "mean": 0.42,
-            "min": 0.07,
-            "max": 8.15
+            "median": 0.33,
+            "mean": 0.4,
+            "min": 0.11,
+            "max": 5.63
           }
         }
       }
@@ -624,100 +624,100 @@
       "name_vi": "Dệt May",
       "name_en": "Textile & Garment",
       "stock_count": 19,
-      "equity_sum": 29450,
+      "equity_sum": 31090,
       "current": {
         "pe": {
-          "median": 5.23,
-          "mean": 5.23
+          "median": 6.22,
+          "mean": 8.23
         },
         "pb": {
           "median": 0.72,
-          "mean": 0.75
+          "mean": 0.9
         },
         "ps": {
-          "median": 0.17,
-          "mean": 0.39
+          "median": 0.36,
+          "mean": 4.19
         }
       },
       "history": {
         "1y": {
           "pe": {
-            "median": 8.41,
-            "mean": 10.24,
-            "min": 4.56,
-            "max": 27.2
+            "median": 7.61,
+            "mean": 7.55,
+            "min": 6.1,
+            "max": 9.58
           },
           "pb": {
-            "median": 0.82,
-            "mean": 0.94,
-            "min": 0.7,
-            "max": 1.38
+            "median": 0.86,
+            "mean": 0.85,
+            "min": 0.64,
+            "max": 1.23
           },
           "ps": {
-            "median": 0.31,
-            "mean": 0.35,
-            "min": 0.14,
-            "max": 0.61
+            "median": 0.44,
+            "mean": 0.45,
+            "min": 0.28,
+            "max": 0.56
           }
         },
         "3y": {
           "pe": {
-            "median": 14.08,
-            "mean": 16.5,
-            "min": 4.56,
-            "max": 54.54
+            "median": 11.98,
+            "mean": 11.81,
+            "min": 6.1,
+            "max": 21.68
           },
           "pb": {
-            "median": 0.93,
-            "mean": 1.03,
-            "min": 0.5,
-            "max": 1.49
+            "median": 0.95,
+            "mean": 0.95,
+            "min": 0.64,
+            "max": 1.32
           },
           "ps": {
-            "median": 0.42,
-            "mean": 0.34,
-            "min": 0.1,
-            "max": 0.63
+            "median": 0.44,
+            "mean": 0.44,
+            "min": 0.28,
+            "max": 0.56
           }
         },
         "5y": {
           "pe": {
-            "median": 13.15,
-            "mean": 17.05,
-            "min": 2.55,
-            "max": 150.82
+            "median": 11.57,
+            "mean": 11.81,
+            "min": 5.7,
+            "max": 21.68
           },
           "pb": {
-            "median": 1.1,
-            "mean": 1.14,
-            "min": 0.5,
-            "max": 3.31
+            "median": 0.96,
+            "mean": 1.12,
+            "min": 0.64,
+            "max": 2.67
           },
           "ps": {
-            "median": 0.39,
-            "mean": 0.41,
-            "min": 0.1,
-            "max": 2.1
+            "median": 0.44,
+            "mean": 0.48,
+            "min": 0.24,
+            "max": 0.98
           }
         },
         "10y": {
           "pe": {
-            "median": 9.44,
-            "mean": 12.9,
-            "min": 2.55,
-            "max": 150.82
+            "median": 8.63,
+            "mean": 9.48,
+            "min": 2.25,
+            "max": 30.97
           },
           "pb": {
-            "median": 1.07,
-            "mean": 1.1,
-            "min": 0.4,
-            "max": 3.31
+            "median": 1.02,
+            "mean": 1.09,
+            "min": 0.35,
+            "max": 2.67
           },
           "ps": {
-            "median": 0.32,
-            "mean": 0.38,
-            "min": 0.1,
-            "max": 2.1
+            "median": 0.36,
+            "mean": 0.39,
+            "min": 0.14,
+            "max": 0.98
           }
         }
       }
@@ -727,100 +727,100 @@
       "name_vi": "Hóa chất",
       "name_en": "Chemicals",
       "stock_count": 25,
-      "equity_sum": 138321,
+      "equity_sum": 139869,
       "current": {
         "pe": {
-          "median": 7.81,
-          "mean": 8.05
+          "median": 6.43,
+          "mean": 7.54
         },
         "pb": {
-          "median": 1.2,
-          "mean": 1.42
+          "median": 1.05,
+          "mean": 1.35
         },
         "ps": {
-          "median": 0.76,
-          "mean": 1.16
+          "median": 0.66,
+          "mean": 1.06
         }
       },
       "history": {
         "1y": {
           "pe": {
-            "median": 8.47,
-            "mean": 8.8,
-            "min": 6.52,
-            "max": 11.23
+            "median": 7.66,
+            "mean": 7.6,
+            "min": 6.01,
+            "max": 10.85
           },
           "pb": {
-            "median": 1.43,
-            "mean": 1.42,
-            "min": 1.15,
-            "max": 1.67
+            "median": 1.37,
+            "mean": 1.35,
+            "min": 1.01,
+            "max": 1.71
           },
           "ps": {
-            "median": 0.96,
-            "mean": 0.95,
-            "min": 0.74,
-            "max": 1.14
+            "median": 0.79,
+            "mean": 0.8,
+            "min": 0.57,
+            "max": 3.28
           }
         },
         "3y": {
           "pe": {
-            "median": 10.68,
-            "mean": 10.49,
-            "min": 6.52,
-            "max": 14.85
+            "median": 10.5,
+            "mean": 9.88,
+            "min": 6.01,
+            "max": 13.71
           },
           "pb": {
             "median": 1.51,
             "mean": 1.47,
-            "min": 1.05,
+            "min": 1.01,
             "max": 2.06
           },
           "ps": {
-            "median": 1,
-            "mean": 1.01,
-            "min": 0.74,
-            "max": 1.36
+            "median": 0.89,
+            "mean": 0.9,
+            "min": 0.57,
+            "max": 3.28
           }
         },
         "5y": {
           "pe": {
-            "median": 10.63,
-            "mean": 10.72,
-            "min": 5,
+            "median": 10.27,
+            "mean": 10.04,
+            "min": 3.87,
             "max": 20.63
           },
           "pb": {
-            "median": 1.51,
-            "mean": 1.47,
+            "median": 1.49,
+            "mean": 1.45,
             "min": 0.79,
             "max": 2.33
           },
           "ps": {
-            "median": 0.99,
-            "mean": 1.05,
+            "median": 0.89,
+            "mean": 0.92,
             "min": 0.52,
-            "max": 3.73
+            "max": 3.28
           }
         },
         "10y": {
           "pe": {
-            "median": 9.47,
-            "mean": 9.82,
-            "min": 5,
-            "max": 23.12
+            "median": 9.36,
+            "mean": 9.7,
+            "min": 3.87,
+            "max": 33.89
           },
           "pb": {
-            "median": 1.1,
+            "median": 1.11,
             "mean": 1.16,
-            "min": 0.44,
+            "min": 0.26,
             "max": 2.54
           },
           "ps": {
-            "median": 0.83,
-            "mean": 0.84,
+            "median": 0.74,
+            "mean": 0.77,
             "min": 0.21,
-            "max": 3.73
+            "max": 3.28
           }
         }
       }
@@ -830,100 +830,100 @@
       "name_vi": "Vật liệu xây dựng",
       "name_en": "Construction Materials",
       "stock_count": 27,
-      "equity_sum": 193969,
+      "equity_sum": 203326,
       "current": {
         "pe": {
-          "median": 8.93,
-          "mean": 12.47
+          "median": 8.81,
+          "mean": 11.18
         },
         "pb": {
-          "median": 0.84,
-          "mean": 1.07
+          "median": 0.87,
+          "mean": 1.04
         },
         "ps": {
-          "median": 0.52,
-          "mean": 0.76
+          "median": 0.46,
+          "mean": 0.74
         }
       },
       "history": {
         "1y": {
           "pe": {
-            "median": 12.55,
-            "mean": 11.96,
-            "min": 8.72,
-            "max": 14.6
+            "median": 10,
+            "mean": 10.25,
+            "min": 7.04,
+            "max": 14.59
           },
           "pb": {
-            "median": 1.02,
-            "mean": 1.07,
-            "min": 0.83,
-            "max": 1.32
+            "median": 0.96,
+            "mean": 0.99,
+            "min": 0.67,
+            "max": 2.41
           },
           "ps": {
-            "median": 0.52,
-            "mean": 0.54,
-            "min": 0.45,
-            "max": 0.68
+            "median": 0.65,
+            "mean": 0.63,
+            "min": 0.25,
+            "max": 0.88
           }
         },
         "3y": {
           "pe": {
-            "median": 13.08,
-            "mean": 13.06,
-            "min": 8.72,
+            "median": 12.59,
+            "mean": 12.37,
+            "min": 7.04,
             "max": 16.86
           },
           "pb": {
-            "median": 1.09,
-            "mean": 1.09,
-            "min": 0.83,
-            "max": 1.32
+            "median": 1.05,
+            "mean": 1.05,
+            "min": 0.67,
+            "max": 2.41
           },
           "ps": {
-            "median": 0.57,
-            "mean": 0.57,
-            "min": 0.45,
-            "max": 0.71
+            "median": 0.63,
+            "mean": 0.64,
+            "min": 0.25,
+            "max": 0.91
           }
         },
         "5y": {
           "pe": {
-            "median": 13.01,
-            "mean": 13.02,
-            "min": 4.71,
+            "median": 12.65,
+            "mean": 12.78,
+            "min": 7.04,
             "max": 24.54
           },
           "pb": {
-            "median": 1.1,
-            "mean": 1.18,
-            "min": 0.61,
-            "max": 2.53
+            "median": 1.05,
+            "mean": 1.13,
+            "min": 0.49,
+            "max": 2.56
           },
           "ps": {
-            "median": 0.61,
-            "mean": 0.7,
-            "min": 0.24,
-            "max": 1.42
+            "median": 0.66,
+            "mean": 0.75,
+            "min": 0.25,
+            "max": 1.8
           }
         },
         "10y": {
           "pe": {
-            "median": 10.05,
-            "mean": 10.6,
+            "median": 10.06,
+            "mean": 10.44,
             "min": 3.76,
             "max": 24.54
           },
           "pb": {
-            "median": 1.06,
-            "mean": 1.21,
-            "min": 0.38,
-            "max": 3
+            "median": 1.05,
+            "mean": 1.18,
+            "min": 0.28,
+            "max": 2.8
           },
           "ps": {
-            "median": 0.6,
-            "mean": 0.64,
+            "median": 0.65,
+            "mean": 0.7,
             "min": 0.08,
-            "max": 2.27
+            "max": 1.8
           }
         }
       }
@@ -933,100 +933,100 @@
       "name_vi": "Kim loại và khai khoáng",
       "name_en": "Metals & Mining",
       "stock_count": 24,
-      "equity_sum": 205670,
+      "equity_sum": 217318,
       "current": {
         "pe": {
-          "median": 7.63,
-          "mean": 12.9
+          "median": 6.18,
+          "mean": 10.68
         },
         "pb": {
-          "median": 0.84,
-          "mean": 1.42
+          "median": 0.8,
+          "mean": 1.37
         },
         "ps": {
-          "median": 0.98,
-          "mean": 1.16
+          "median": 1,
+          "mean": 1.03
         }
       },
       "history": {
         "1y": {
           "pe": {
-            "median": 10.68,
-            "mean": 10.67,
-            "min": 7.54,
-            "max": 13.12
+            "median": 9.68,
+            "mean": 9.82,
+            "min": 6.18,
+            "max": 16.53
           },
           "pb": {
-            "median": 1.17,
-            "mean": 1.14,
-            "min": 0.78,
-            "max": 1.48
+            "median": 0.94,
+            "mean": 1.01,
+            "min": 0.7,
+            "max": 1.65
           },
           "ps": {
-            "median": 1.34,
-            "mean": 1.3,
-            "min": 0.94,
-            "max": 1.61
+            "median": 1.19,
+            "mean": 1.15,
+            "min": 0.23,
+            "max": 1.96
           }
         },
         "3y": {
           "pe": {
-            "median": 11.81,
-            "mean": 12.06,
-            "min": 7.54,
+            "median": 11.99,
+            "mean": 12.04,
+            "min": 6.18,
             "max": 18.42
           },
           "pb": {
-            "median": 1.1,
-            "mean": 1.12,
-            "min": 0.78,
-            "max": 1.48
+            "median": 1.07,
+            "mean": 1.07,
+            "min": 0.7,
+            "max": 1.65
           },
           "ps": {
-            "median": 1.17,
-            "mean": 1.2,
-            "min": 0.88,
-            "max": 1.61
+            "median": 1.05,
+            "mean": 0.98,
+            "min": 0.23,
+            "max": 1.96
           }
         },
         "5y": {
           "pe": {
-            "median": 11.23,
+            "median": 11.18,
             "mean": 11.24,
-            "min": 4.57,
-            "max": 21.94
+            "min": 5.05,
+            "max": 20.15
           },
           "pb": {
-            "median": 1.11,
-            "mean": 1.23,
-            "min": 0.6,
-            "max": 3.39
+            "median": 1.06,
+            "mean": 1.14,
+            "min": 0.57,
+            "max": 2.92
           },
           "ps": {
-            "median": 1.12,
-            "mean": 1.17,
-            "min": 0.18,
-            "max": 2.62
+            "median": 0.82,
+            "mean": 0.9,
+            "min": 0.23,
+            "max": 2.55
           }
         },
         "10y": {
           "pe": {
-            "median": 10.92,
-            "mean": 12.59,
-            "min": 4.27,
-            "max": 78.93
+            "median": 10.9,
+            "mean": 11.56,
+            "min": 3.77,
+            "max": 60.63
           },
           "pb": {
-            "median": 1.09,
-            "mean": 1.14,
-            "min": 0.46,
-            "max": 3.39
+            "median": 1.06,
+            "mean": 1.11,
+            "min": 0.47,
+            "max": 2.92
           },
           "ps": {
-            "median": 1.02,
-            "mean": 0.98,
+            "median": 0.73,
+            "mean": 0.78,
             "min": 0.08,
-            "max": 2.62
+            "max": 2.55
           }
         }
       }
@@ -1036,100 +1036,100 @@
       "name_vi": "Dầu khí",
       "name_en": "Oil & Gas",
       "stock_count": 22,
-      "equity_sum": 234469,
+      "equity_sum": 252035,
       "current": {
         "pe": {
-          "median": 9.92,
-          "mean": 11.28
+          "median": 8.5,
+          "mean": 9.83
         },
         "pb": {
-          "median": 1.14,
-          "mean": 1.31
+          "median": 1.04,
+          "mean": 1.18
         },
         "ps": {
-          "median": 0.39,
-          "mean": 0.47
+          "median": 0.25,
+          "mean": 0.41
         }
       },
       "history": {
         "1y": {
           "pe": {
-            "median": 16.02,
-            "mean": 33.13,
-            "min": 8.96,
-            "max": 108.13
+            "median": 12.35,
+            "mean": 12.92,
+            "min": 6.92,
+            "max": 18.87
           },
           "pb": {
-            "median": 1.12,
-            "mean": 1.07,
-            "min": 0.5,
-            "max": 1.78
+            "median": 1.15,
+            "mean": 1.17,
+            "min": 0.93,
+            "max": 1.69
           },
           "ps": {
-            "median": 0.36,
-            "mean": 0.33,
-            "min": 0.19,
-            "max": 0.46
+            "median": 0.23,
+            "mean": 0.24,
+            "min": 0.11,
+            "max": 0.54
           }
         },
         "3y": {
           "pe": {
-            "median": 16.32,
-            "mean": 42.88,
-            "min": 8.42,
-            "max": 283.01
+            "median": 14.55,
+            "mean": 13.68,
+            "min": 6.92,
+            "max": 18.87
           },
           "pb": {
-            "median": 1.07,
-            "mean": 0.97,
-            "min": 0.32,
-            "max": 1.78
+            "median": 1.09,
+            "mean": 1.12,
+            "min": 0.86,
+            "max": 1.69
           },
           "ps": {
-            "median": 0.34,
-            "mean": 0.33,
-            "min": 0.19,
-            "max": 0.49
+            "median": 0.29,
+            "mean": 0.28,
+            "min": 0.11,
+            "max": 0.54
           }
         },
         "5y": {
           "pe": {
-            "median": 16.24,
-            "mean": 42.37,
-            "min": 8.42,
-            "max": 283.01
+            "median": 13.25,
+            "mean": 14.02,
+            "min": 6.92,
+            "max": 30.98
           },
           "pb": {
-            "median": 1.07,
-            "mean": 1.04,
-            "min": 0.32,
-            "max": 2.24
+            "median": 1.13,
+            "mean": 1.18,
+            "min": 0.73,
+            "max": 2.08
           },
           "ps": {
-            "median": 0.33,
-            "mean": 0.36,
-            "min": 0.15,
-            "max": 0.98
+            "median": 0.3,
+            "mean": 0.32,
+            "min": 0.11,
+            "max": 0.64
           }
         },
         "10y": {
           "pe": {
-            "median": 12.43,
-            "mean": 26.59,
-            "min": 5.05,
-            "max": 283.01
+            "median": 11.62,
+            "mean": 12.09,
+            "min": 5.59,
+            "max": 30.98
           },
           "pb": {
-            "median": 1.05,
-            "mean": 1.03,
-            "min": 0.32,
-            "max": 2.55
+            "median": 1.11,
+            "mean": 1.11,
+            "min": 0.46,
+            "max": 2.5
           },
           "ps": {
-            "median": 0.38,
-            "mean": 0.4,
-            "min": 0.14,
-            "max": 1.02
+            "median": 0.37,
+            "mean": 0.39,
+            "min": 0.11,
+            "max": 0.99
           }
         }
       }
@@ -1139,99 +1139,99 @@
       "name_vi": "Điện",
       "name_en": "Electricity & Power",
       "stock_count": 25,
-      "equity_sum": 162511,
+      "equity_sum": 166940,
       "current": {
         "pe": {
-          "median": 9.23,
-          "mean": 8.95
+          "median": 8.65,
+          "mean": 8.5
         },
         "pb": {
-          "median": 1.31,
-          "mean": 1.41
+          "median": 1.23,
+          "mean": 1.33
         },
         "ps": {
-          "median": 2.75,
-          "mean": 2.71
+          "median": 2.63,
+          "mean": 2.58
         }
       },
       "history": {
         "1y": {
           "pe": {
-            "median": 11.33,
-            "mean": 11.1,
-            "min": 9,
-            "max": 13.04
+            "median": 10.28,
+            "mean": 10.4,
+            "min": 7.17,
+            "max": 11.94
           },
           "pb": {
-            "median": 1.57,
-            "mean": 1.56,
-            "min": 1.29,
-            "max": 1.78
+            "median": 1.38,
+            "mean": 1.38,
+            "min": 0.83,
+            "max": 1.9
           },
           "ps": {
-            "median": 3.77,
-            "mean": 3.66,
-            "min": 2.74,
-            "max": 4.23
+            "median": 3.31,
+            "mean": 3.29,
+            "min": 1.83,
+            "max": 4.22
           }
         },
         "3y": {
           "pe": {
-            "median": 12.83,
-            "mean": 13.18,
-            "min": 8.96,
-            "max": 17.29
+            "median": 12.75,
+            "mean": 12.87,
+            "min": 7.17,
+            "max": 17.65
           },
           "pb": {
-            "median": 1.62,
-            "mean": 1.61,
-            "min": 1.29,
-            "max": 1.88
+            "median": 1.52,
+            "mean": 1.49,
+            "min": 0.83,
+            "max": 1.9
           },
           "ps": {
-            "median": 4.01,
-            "mean": 3.77,
-            "min": 2.43,
-            "max": 4.64
+            "median": 3.85,
+            "mean": 3.71,
+            "min": 1.83,
+            "max": 4.75
           }
         },
         "5y": {
           "pe": {
-            "median": 12.29,
-            "mean": 12.02,
+            "median": 12.07,
+            "mean": 11.79,
             "min": 6.58,
-            "max": 17.29
+            "max": 17.65
           },
           "pb": {
-            "median": 1.63,
-            "mean": 1.63,
-            "min": 1.22,
-            "max": 2
+            "median": 1.57,
+            "mean": 1.56,
+            "min": 0.83,
+            "max": 1.97
           },
           "ps": {
-            "median": 3.69,
-            "mean": 3.52,
+            "median": 3.66,
+            "mean": 3.53,
             "min": 1.07,
-            "max": 4.64
+            "max": 4.75
           }
         },
         "10y": {
           "pe": {
-            "median": 10.95,
-            "mean": 11.74,
-            "min": 6.24,
+            "median": 10.88,
+            "mean": 11.55,
+            "min": 6.58,
             "max": 32.98
           },
           "pb": {
             "median": 1.54,
             "mean": 1.53,
-            "min": 1.04,
-            "max": 2
+            "min": 0.83,
+            "max": 1.97
           },
           "ps": {
-            "median": 3.15,
-            "mean": 3.06,
-            "min": 0.64,
+            "median": 3.17,
+            "mean": 3.21,
+            "min": 0.67,
             "max": 6.3
           }
         }
@@ -1242,99 +1242,99 @@
       "name_vi": "Nước",
       "name_en": "Water Supply & Utilities",
       "stock_count": 8,
-      "equity_sum": 14127,
+      "equity_sum": 16256,
       "current": {
         "pe": {
-          "median": 10.84,
-          "mean": 16.04
+          "median": 10.57,
+          "mean": 13.26
         },
         "pb": {
-          "median": 1.75,
-          "mean": 1.99
+          "median": 1.54,
+          "mean": 1.73
         },
         "ps": {
-          "median": 1.26,
-          "mean": 3.34
+          "median": 1.17,
+          "mean": 3.05
         }
       },
       "history": {
         "1y": {
           "pe": {
-            "median": 11.8,
-            "mean": 11.94,
+            "median": 11.4,
+            "mean": 11.47,
             "min": 9.68,
-            "max": 13.84
+            "max": 13.75
           },
           "pb": {
-            "median": 1.83,
-            "mean": 1.81,
-            "min": 1.56,
-            "max": 2.05
+            "median": 1.75,
+            "mean": 1.75,
+            "min": 1.49,
+            "max": 2.03
           },
           "ps": {
-            "median": 1.22,
-            "mean": 1.23,
+            "median": 1.24,
+            "mean": 1.33,
             "min": 1.11,
-            "max": 2.36
+            "max": 2.03
           }
         },
         "3y": {
           "pe": {
-            "median": 12.59,
-            "mean": 12.67,
+            "median": 12.68,
+            "mean": 12.64,
             "min": 9.68,
             "max": 16.3
           },
           "pb": {
-            "median": 1.84,
-            "mean": 1.8,
-            "min": 1.37,
-            "max": 2.2
+            "median": 1.85,
+            "mean": 1.83,
+            "min": 1.49,
+            "max": 2.25
           },
           "ps": {
-            "median": 1.18,
-            "mean": 1.17,
-            "min": 0.97,
+            "median": 1.79,
+            "mean": 1.67,
+            "min": 1.11,
             "max": 2.43
           }
         },
         "5y": {
           "pe": {
-            "median": 12.78,
-            "mean": 12.81,
+            "median": 12.84,
+            "mean": 12.92,
             "min": 9.68,
-            "max": 16.3
+            "max": 16.31
           },
           "pb": {
-            "median": 1.71,
-            "mean": 1.72,
-            "min": 1.13,
-            "max": 2.24
+            "median": 1.75,
+            "mean": 1.76,
+            "min": 1.28,
+            "max": 2.25
           },
           "ps": {
-            "median": 1.19,
-            "mean": 1.32,
-            "min": 0.55,
+            "median": 1.82,
+            "mean": 1.81,
+            "min": 0.92,
             "max": 3.65
           }
         },
         "10y": {
           "pe": {
-            "median": 12.43,
-            "mean": 12.18,
-            "min": 7.37,
-            "max": 16.46
+            "median": 12.57,
+            "mean": 12.37,
+            "min": 7.38,
+            "max": 18.54
           },
           "pb": {
-            "median": 1.48,
-            "mean": 1.47,
-            "min": 0.86,
-            "max": 2.24
+            "median": 1.54,
+            "mean": 1.52,
+            "min": 0.92,
+            "max": 2.25
           },
           "ps": {
-            "median": 1.18,
-            "mean": 1.28,
-            "min": 0.55,
+            "median": 1.48,
+            "mean": 1.55,
+            "min": 0.73,
             "max": 3.65
           }
         }
@@ -1345,100 +1345,100 @@
       "name_vi": "Công nghệ",
       "name_en": "Technology",
       "stock_count": 19,
-      "equity_sum": 104933,
+      "equity_sum": 112121,
       "current": {
         "pe": {
-          "median": 115.12,
-          "mean": 115.12
+          "median": 9.82,
+          "mean": 31.28
         },
         "pb": {
-          "median": 1.31,
-          "mean": 1.22
+          "median": 0.96,
+          "mean": 1.52
         },
         "ps": {
-          "median": 1.5,
-          "mean": 1.74
+          "median": 0.64,
+          "mean": 1.11
         }
       },
       "history": {
         "1y": {
           "pe": {
-            "median": 14.07,
-            "mean": 15.7,
+            "median": 13.18,
+            "mean": 13.57,
             "min": 6.74,
-            "max": 138.09
+            "max": 20.11
           },
           "pb": {
-            "median": 1.36,
-            "mean": 1.33,
+            "median": 1.33,
+            "mean": 1.69,
             "min": 0.87,
-            "max": 1.65
+            "max": 2.63
           },
           "ps": {
-            "median": 1.19,
-            "mean": 1.27,
-            "min": 0.76,
-            "max": 2.22
+            "median": 1.2,
+            "mean": 1.26,
+            "min": 0.48,
+            "max": 2.49
           }
         },
         "3y": {
           "pe": {
-            "median": 13.85,
-            "mean": 15.16,
-            "min": 4.49,
-            "max": 138.09
+            "median": 17.58,
+            "mean": 17.41,
+            "min": 6.74,
+            "max": 34.33
           },
           "pb": {
-            "median": 1.27,
-            "mean": 1.16,
-            "min": 0.51,
-            "max": 2.13
+            "median": 1.32,
+            "mean": 1.73,
+            "min": 0.68,
+            "max": 3.25
           },
           "ps": {
-            "median": 0.99,
-            "mean": 0.96,
-            "min": 0.22,
-            "max": 2.22
+            "median": 1.21,
+            "mean": 1.42,
+            "min": 0.48,
+            "max": 3.14
           }
         },
         "5y": {
           "pe": {
-            "median": 13.39,
-            "mean": 19.05,
-            "min": 4.49,
-            "max": 179.64
+            "median": 16.13,
+            "mean": 16.35,
+            "min": 6.28,
+            "max": 34.33
           },
           "pb": {
-            "median": 1.06,
-            "mean": 1.16,
-            "min": 0.43,
-            "max": 2.96
+            "median": 1.51,
+            "mean": 1.66,
+            "min": 0.68,
+            "max": 3.25
           },
           "ps": {
-            "median": 0.9,
-            "mean": 0.91,
-            "min": 0.22,
-            "max": 2.61
+            "median": 1.02,
+            "mean": 1.23,
+            "min": 0.34,
+            "max": 3.14
           }
         },
         "10y": {
           "pe": {
-            "median": 11.85,
-            "mean": 18.06,
-            "min": 4.49,
-            "max": 179.64
+            "median": 12.43,
+            "mean": 14.23,
+            "min": 5.62,
+            "max": 34.33
           },
           "pb": {
-            "median": 1.07,
-            "mean": 1.12,
-            "min": 0.39,
-            "max": 2.96
+            "median": 1.12,
+            "mean": 1.37,
+            "min": 0.56,
+            "max": 3.25
           },
           "ps": {
-            "median": 0.7,
-            "mean": 0.76,
-            "min": 0.13,
-            "max": 2.61
+            "median": 0.73,
+            "mean": 0.94,
+            "min": 0.15,
+            "max": 3.14
           }
         }
       }
@@ -1448,99 +1448,99 @@
       "name_vi": "Dược phẩm",
       "name_en": "Pharmaceuticals",
       "stock_count": 22,
-      "equity_sum": 26344,
+      "equity_sum": 26949,
       "current": {
         "pe": {
-          "median": 7.6,
-          "mean": 7.6
+          "median": 11.04,
+          "mean": 10.83
         },
         "pb": {
-          "median": 1.41,
-          "mean": 2.25
+          "median": 1.11,
+          "mean": 1.72
         },
         "ps": {
-          "median": 0.18,
-          "mean": 0.64
+          "median": 0.95,
+          "mean": 1.18
         }
       },
       "history": {
         "1y": {
           "pe": {
-            "median": 12.36,
-            "mean": 11.75,
-            "min": 6.35,
-            "max": 16.54
+            "median": 12.97,
+            "mean": 13.71,
+            "min": 9.81,
+            "max": 16.05
           },
           "pb": {
-            "median": 1.37,
-            "mean": 1.31,
-            "min": 0.89,
-            "max": 1.75
+            "median": 1.3,
+            "mean": 1.33,
+            "min": 0.9,
+            "max": 2
           },
           "ps": {
-            "median": 0.72,
-            "mean": 0.75,
-            "min": 0.18,
-            "max": 1.5
+            "median": 1.15,
+            "mean": 1.16,
+            "min": 0.85,
+            "max": 1.63
           }
         },
         "3y": {
           "pe": {
-            "median": 14.31,
-            "mean": 14.35,
-            "min": 3.66,
-            "max": 28.17
+            "median": 15,
+            "mean": 14.53,
+            "min": 9.81,
+            "max": 17.26
           },
           "pb": {
-            "median": 1.37,
-            "mean": 1.27,
-            "min": 0.72,
-            "max": 2.02
+            "median": 1.43,
+            "mean": 1.42,
+            "min": 0.9,
+            "max": 2
           },
           "ps": {
-            "median": 1.13,
-            "mean": 0.8,
-            "min": 0.18,
-            "max": 1.73
+            "median": 1.17,
+            "mean": 1.19,
+            "min": 0.83,
+            "max": 1.64
           }
         },
         "5y": {
           "pe": {
-            "median": 14.22,
-            "mean": 14.36,
-            "min": 3.66,
-            "max": 31.83
+            "median": 14.54,
+            "mean": 14.49,
+            "min": 9.81,
+            "max": 19.94
           },
           "pb": {
-            "median": 1.4,
-            "mean": 1.33,
-            "min": 0.55,
-            "max": 2.93
+            "median": 1.44,
+            "mean": 1.48,
+            "min": 0.9,
+            "max": 2.53
           },
           "ps": {
-            "median": 1.18,
-            "mean": 0.9,
-            "min": 0.11,
-            "max": 2.88
+            "median": 1.19,
+            "mean": 1.27,
+            "min": 0.83,
+            "max": 2.67
           }
         },
         "10y": {
           "pe": {
-            "median": 14.31,
-            "mean": 14.38,
-            "min": 3.66,
-            "max": 31.83
+            "median": 14.39,
+            "mean": 14.2,
+            "min": 6.96,
+            "max": 27.49
           },
           "pb": {
-            "median": 1.56,
-            "mean": 1.64,
-            "min": 0.55,
+            "median": 1.58,
+            "mean": 1.74,
+            "min": 0.87,
             "max": 4.52
           },
           "ps": {
-            "median": 1.17,
-            "mean": 1.02,
-            "min": 0.11,
+            "median": 1.2,
+            "mean": 1.21,
+            "min": 0.43,
             "max": 2.88
           }
         }
@@ -1551,99 +1551,99 @@
       "name_vi": "Thực phẩm & Đồ uống",
       "name_en": "Food & Beverage",
       "stock_count": 15,
-      "equity_sum": 165334,
+      "equity_sum": 172910,
       "current": {
         "pe": {
-          "median": 11.54,
-          "mean": 13.49
+          "median": 10.61,
+          "mean": 16.22
         },
         "pb": {
-          "median": 1.82,
-          "mean": 2.53
+          "median": 1.62,
+          "mean": 2.2
         },
         "ps": {
-          "median": 1.05,
-          "mean": 1.51
+          "median": 0.97,
+          "mean": 1.33
         }
       },
       "history": {
         "1y": {
           "pe": {
-            "median": 13.36,
-            "mean": 13.09,
-            "min": 11.27,
-            "max": 14.63
+            "median": 10.98,
+            "mean": 11.28,
+            "min": 7.64,
+            "max": 25.48
           },
           "pb": {
-            "median": 1.82,
-            "mean": 1.82,
-            "min": 1.7,
-            "max": 1.96
+            "median": 1.69,
+            "mean": 1.58,
+            "min": 1.15,
+            "max": 2.15
           },
           "ps": {
-            "median": 1.23,
-            "mean": 1.21,
-            "min": 1,
-            "max": 1.38
+            "median": 1.02,
+            "mean": 0.87,
+            "min": 0.47,
+            "max": 1.69
           }
         },
         "3y": {
           "pe": {
-            "median": 13.54,
-            "mean": 13.53,
-            "min": 11.16,
-            "max": 17.08
+            "median": 13.11,
+            "mean": 12.75,
+            "min": 7.64,
+            "max": 25.48
           },
           "pb": {
-            "median": 1.94,
-            "mean": 1.92,
-            "min": 1.7,
-            "max": 2.22
+            "median": 1.82,
+            "mean": 1.7,
+            "min": 1.15,
+            "max": 2.34
           },
           "ps": {
-            "median": 1.3,
-            "mean": 1.3,
-            "min": 0.99,
-            "max": 1.74
+            "median": 1.14,
+            "mean": 1,
+            "min": 0.47,
+            "max": 1.69
           }
         },
         "5y": {
           "pe": {
-            "median": 13.71,
-            "mean": 14.58,
-            "min": 10.01,
-            "max": 33.37
+            "median": 14.17,
+            "mean": 14.1,
+            "min": 7.64,
+            "max": 26.31
           },
           "pb": {
-            "median": 2.02,
-            "mean": 2.17,
-            "min": 1.7,
-            "max": 3.26
+            "median": 1.91,
+            "mean": 1.9,
+            "min": 1.15,
+            "max": 3.94
           },
           "ps": {
-            "median": 1.43,
-            "mean": 1.53,
-            "min": 0.99,
-            "max": 2.83
+            "median": 1.28,
+            "mean": 1.23,
+            "min": 0.47,
+            "max": 2.43
           }
         },
         "10y": {
           "pe": {
-            "median": 14.72,
-            "mean": 16.89,
+            "median": 14.78,
+            "mean": 16.37,
             "min": 7.15,
-            "max": 35.63
+            "max": 40.78
           },
           "pb": {
-            "median": 2.42,
-            "mean": 2.61,
-            "min": 1.25,
+            "median": 2.04,
+            "mean": 2.4,
+            "min": 1.04,
             "max": 10.14
           },
           "ps": {
-            "median": 1.64,
-            "mean": 1.68,
-            "min": 0.64,
+            "median": 1.34,
+            "mean": 1.44,
+            "min": 0.47,
             "max": 4.79
           }
         }
@@ -1654,99 +1654,99 @@
       "name_vi": "Vận tải & Logistics",
       "name_en": "Transport & Logistics",
       "stock_count": 28,
-      "equity_sum": 190866,
+      "equity_sum": 195989,
       "current": {
         "pe": {
-          "median": 4.43,
-          "mean": 6.18
+          "median": 8.65,
+          "mean": 10.92
         },
         "pb": {
-          "median": 1.33,
-          "mean": 1.19
+          "median": 1.52,
+          "mean": 2
         },
         "ps": {
-          "median": 0.87,
-          "mean": 1.59
+          "median": 1.29,
+          "mean": 1.88
         }
       },
       "history": {
         "1y": {
           "pe": {
-            "median": 10.11,
-            "mean": 10.68,
-            "min": 4.39,
-            "max": 16.91
+            "median": 10.14,
+            "mean": 11.71,
+            "min": 6.54,
+            "max": 22.14
           },
           "pb": {
-            "median": 1.81,
-            "mean": 1.78,
-            "min": 1.25,
-            "max": 2.18
+            "median": 1.85,
+            "mean": 1.83,
+            "min": 1.17,
+            "max": 2.66
           },
           "ps": {
-            "median": 1.23,
-            "mean": 1.34,
-            "min": 0.69,
-            "max": 2.1
+            "median": 1.65,
+            "mean": 1.7,
+            "min": 1.03,
+            "max": 3.2
           }
         },
         "3y": {
           "pe": {
-            "median": 10.76,
-            "mean": 10.92,
-            "min": 4.39,
-            "max": 21.75
+            "median": 11.44,
+            "mean": 12.6,
+            "min": 6.54,
+            "max": 22.14
           },
           "pb": {
-            "median": 1.86,
-            "mean": 1.83,
-            "min": 1.25,
-            "max": 2.32
+            "median": 1.92,
+            "mean": 1.92,
+            "min": 1.17,
+            "max": 2.66
           },
           "ps": {
-            "median": 1.34,
-            "mean": 1.41,
-            "min": 0.58,
-            "max": 2.4
+            "median": 1.95,
+            "mean": 2.05,
+            "min": 1.03,
+            "max": 3.76
           }
         },
         "5y": {
           "pe": {
-            "median": 10.29,
-            "mean": 10.36,
-            "min": 2.28,
-            "max": 22.58
+            "median": 10.27,
+            "mean": 11.67,
+            "min": 6.54,
+            "max": 22.14
           },
           "pb": {
-            "median": 1.86,
+            "median": 1.9,
             "mean": 1.95,
-            "min": 0.91,
-            "max": 4.18
+            "min": 1.17,
+            "max": 3.47
           },
           "ps": {
-            "median": 1.53,
-            "mean": 1.51,
-            "min": 0.5,
+            "median": 1.94,
+            "mean": 2.04,
+            "min": 1.03,
             "max": 3.99
           }
         },
         "10y": {
           "pe": {
-            "median": 9.97,
-            "mean": 10.19,
-            "min": 2.28,
+            "median": 10.07,
+            "mean": 11.24,
+            "min": 4.57,
             "max": 29.18
           },
           "pb": {
-            "median": 1.69,
-            "mean": 1.71,
+            "median": 1.73,
+            "mean": 1.75,
             "min": 0.43,
-            "max": 4.18
+            "max": 4.13
           },
           "ps": {
-            "median": 1.63,
-            "mean": 1.64,
-            "min": 0.31,
+            "median": 1.83,
+            "mean": 2,
+            "min": 0.33,
             "max": 4.83
           }
         }
@@ -1757,100 +1757,100 @@
       "name_vi": "Xây dựng",
       "name_en": "Construction",
       "stock_count": 17,
-      "equity_sum": 73564,
+      "equity_sum": 74609,
       "current": {
         "pe": {
-          "median": 9.79,
-          "mean": 13.11
+          "median": 10.45,
+          "mean": 15.71
         },
         "pb": {
-          "median": 0.7,
-          "mean": 0.95
+          "median": 0.55,
+          "mean": 0.81
         },
         "ps": {
-          "median": 0.64,
-          "mean": 0.57
+          "median": 0.54,
+          "mean": 0.63
         }
       },
       "history": {
         "1y": {
           "pe": {
-            "median": 11.53,
-            "mean": 12.15,
-            "min": 5.45,
-            "max": 23.51
+            "median": 12.04,
+            "mean": 11.57,
+            "min": 7.52,
+            "max": 19.33
           },
           "pb": {
-            "median": 0.69,
-            "mean": 0.55,
-            "min": 0.22,
-            "max": 1.02
+            "median": 0.74,
+            "mean": 0.75,
+            "min": 0.46,
+            "max": 1.03
           },
           "ps": {
-            "median": 0.64,
-            "mean": 0.65,
-            "min": 0.5,
-            "max": 1.02
+            "median": 0.67,
+            "mean": 0.68,
+            "min": 0.34,
+            "max": 0.99
           }
         },
         "3y": {
           "pe": {
-            "median": 18.76,
-            "mean": 23.19,
-            "min": 5.45,
-            "max": 133.31
+            "median": 18.99,
+            "mean": 19.94,
+            "min": 7.52,
+            "max": 64.02
           },
           "pb": {
-            "median": 0.74,
-            "mean": 0.66,
-            "min": 0.22,
-            "max": 1.23
+            "median": 0.8,
+            "mean": 0.8,
+            "min": 0.46,
+            "max": 1.2
           },
           "ps": {
-            "median": 0.81,
-            "mean": 0.81,
-            "min": 0.5,
-            "max": 1.26
+            "median": 0.73,
+            "mean": 0.73,
+            "min": 0.34,
+            "max": 1.18
           }
         },
         "5y": {
           "pe": {
-            "median": 17.31,
-            "mean": 21.36,
-            "min": 3.62,
-            "max": 139.82
+            "median": 18.13,
+            "mean": 20.23,
+            "min": 6.42,
+            "max": 66.05
           },
           "pb": {
-            "median": 0.81,
-            "mean": 0.88,
-            "min": 0.22,
-            "max": 2.59
+            "median": 0.86,
+            "mean": 0.99,
+            "min": 0.36,
+            "max": 2.46
           },
           "ps": {
-            "median": 0.8,
-            "mean": 0.81,
-            "min": 0.23,
-            "max": 1.65
+            "median": 0.71,
+            "mean": 0.75,
+            "min": 0.19,
+            "max": 2.35
           }
         },
         "10y": {
           "pe": {
-            "median": 11.86,
-            "mean": 15.61,
-            "min": 3.34,
-            "max": 139.82
+            "median": 12.88,
+            "mean": 15.07,
+            "min": 4.09,
+            "max": 66.05
           },
           "pb": {
-            "median": 0.86,
-            "mean": 0.9,
-            "min": 0.22,
-            "max": 2.59
+            "median": 0.88,
+            "mean": 0.96,
+            "min": 0.35,
+            "max": 2.55
           },
           "ps": {
-            "median": 0.58,
-            "mean": 0.59,
-            "min": 0.11,
-            "max": 1.65
+            "median": 0.51,
+            "mean": 0.57,
+            "min": 0.14,
+            "max": 2.35
           }
         }
       }
@@ -1860,100 +1860,100 @@
       "name_vi": "Nông nghiệp & Thủy sản",
       "name_en": "Agriculture & Fishery",
       "stock_count": 21,
-      "equity_sum": 77275,
+      "equity_sum": 78578,
       "current": {
         "pe": {
-          "median": 10.81,
-          "mean": 10.81
+          "median": 6.64,
+          "mean": 14.52
         },
         "pb": {
-          "median": 1.07,
-          "mean": 2.83
+          "median": 0.9,
+          "mean": 1.38
         },
         "ps": {
           "median": 0.38,
-          "mean": 3.48
+          "mean": 1
         }
       },
       "history": {
         "1y": {
           "pe": {
-            "median": 9.39,
-            "mean": 10.6,
-            "min": 5.87,
-            "max": 23.09
+            "median": 8.09,
+            "mean": 8.6,
+            "min": 5.51,
+            "max": 13.44
           },
           "pb": {
-            "median": 1.18,
-            "mean": 1.17,
-            "min": 0.85,
-            "max": 1.49
+            "median": 1.09,
+            "mean": 1.07,
+            "min": 0.8,
+            "max": 1.29
           },
           "ps": {
-            "median": 0.47,
-            "mean": 0.47,
-            "min": 0.34,
+            "median": 0.48,
+            "mean": 0.49,
+            "min": 0.33,
             "max": 0.59
           }
         },
         "3y": {
           "pe": {
-            "median": 12.22,
-            "mean": 18.74,
-            "min": 5.87,
-            "max": 121.94
+            "median": 12.88,
+            "mean": 12.77,
+            "min": 5.51,
+            "max": 19.47
           },
           "pb": {
             "median": 1.15,
-            "mean": 1.16,
-            "min": 0.76,
-            "max": 1.49
+            "mean": 1.12,
+            "min": 0.8,
+            "max": 1.29
           },
           "ps": {
-            "median": 0.55,
-            "mean": 0.66,
-            "min": 0.34,
-            "max": 1.75
+            "median": 0.57,
+            "mean": 0.56,
+            "min": 0.33,
+            "max": 0.66
           }
         },
         "5y": {
           "pe": {
-            "median": 12.55,
-            "mean": 16.86,
-            "min": 5.81,
-            "max": 121.94
+            "median": 13.21,
+            "mean": 13.15,
+            "min": 5.51,
+            "max": 23.64
           },
           "pb": {
-            "median": 1.14,
-            "mean": 1.16,
-            "min": 0.48,
-            "max": 2.37
+            "median": 1.15,
+            "mean": 1.19,
+            "min": 0.8,
+            "max": 1.99
           },
           "ps": {
-            "median": 0.55,
-            "mean": 0.66,
-            "min": 0.2,
-            "max": 1.75
+            "median": 0.58,
+            "mean": 0.58,
+            "min": 0.28,
+            "max": 1.53
           }
         },
         "10y": {
           "pe": {
-            "median": 12.48,
-            "mean": 17.87,
+            "median": 12.57,
+            "mean": 12.28,
             "min": 3.5,
-            "max": 279.42
+            "max": 33.36
           },
           "pb": {
-            "median": 1.15,
-            "mean": 1.09,
-            "min": 0.18,
-            "max": 2.38
+            "median": 1.18,
+            "mean": 1.21,
+            "min": 0.43,
+            "max": 2.33
           },
           "ps": {
-            "median": 0.56,
-            "mean": 0.63,
-            "min": 0.17,
-            "max": 1.75
+            "median": 0.58,
+            "mean": 0.59,
+            "min": 0.22,
+            "max": 1.53
           }
         }
       }
@@ -1963,77 +1963,77 @@
       "name_vi": "Công nghiệp",
       "name_en": "Industrial Manufacturing",
       "stock_count": 5,
-      "equity_sum": 65759,
+      "equity_sum": 68898,
       "current": {
         "pe": {
-          "median": 11.65,
-          "mean": 19
+          "median": 15.78,
+          "mean": 15.82
         },
         "pb": {
-          "median": 1.97,
-          "mean": 2.38
+          "median": 1.94,
+          "mean": 2.27
         },
         "ps": {
-          "median": 1.37,
-          "mean": 4.16
+          "median": 1.22,
+          "mean": 3.41
         }
       },
       "history": {
         "1y": {
           "pe": {
-            "median": 18.67,
-            "mean": 18.26,
-            "min": 11.65,
-            "max": 26.15
+            "median": 10.96,
+            "mean": 11.17,
+            "min": 9.16,
+            "max": 21.16
           },
           "pb": {
-            "median": 1.92,
-            "mean": 1.92,
-            "min": 1.63,
+            "median": 1.96,
+            "mean": 1.97,
+            "min": 1.47,
             "max": 2.37
           },
           "ps": {
-            "median": 2.49,
-            "mean": 2.4,
-            "min": 1.37,
+            "median": 2.36,
+            "mean": 2.25,
+            "min": 1.16,
             "max": 3.64
           }
         },
         "3y": {
           "pe": {
-            "median": 12.7,
-            "mean": 14.49,
-            "min": 9.57,
-            "max": 26.15
+            "median": 10.47,
+            "mean": 10.37,
+            "min": 7.03,
+            "max": 21.16
           },
           "pb": {
-            "median": 1.81,
-            "mean": 1.79,
-            "min": 1.35,
-            "max": 2.68
+            "median": 1.91,
+            "mean": 1.91,
+            "min": 1.47,
+            "max": 2.43
           },
           "ps": {
-            "median": 1.4,
-            "mean": 1.67,
+            "median": 1.43,
+            "mean": 1.68,
             "min": 0.99,
             "max": 3.64
           }
         },
         "5y": {
           "pe": {
-            "median": 12.57,
-            "mean": 14.3,
-            "min": 8.4,
-            "max": 29.41
+            "median": 10.49,
+            "mean": 10.33,
+            "min": 6.54,
+            "max": 21.16
           },
           "pb": {
-            "median": 1.76,
-            "mean": 1.75,
-            "min": 1.33,
-            "max": 2.68
+            "median": 1.92,
+            "mean": 1.92,
+            "min": 1.39,
+            "max": 2.43
           },
           "ps": {
-            "median": 1.31,
+            "median": 1.3,
             "mean": 1.52,
             "min": 0.81,
             "max": 3.64
@@ -2041,22 +2041,22 @@
         },
         "10y": {
           "pe": {
-            "median": 12.7,
-            "mean": 13.99,
-            "min": 6.94,
-            "max": 29.41
+            "median": 10.59,
+            "mean": 10.78,
+            "min": 6.54,
+            "max": 21.16
           },
           "pb": {
-            "median": 1.77,
-            "mean": 1.79,
-            "min": 1.14,
-            "max": 2.68
+            "median": 1.92,
+            "mean": 1.93,
+            "min": 1.39,
+            "max": 2.52
           },
           "ps": {
-            "median": 1.33,
-            "mean": 1.75,
-            "min": 0.63,
-            "max": 5.88
+            "median": 1.32,
+            "mean": 1.55,
+            "min": 0.81,
+            "max": 3.64
           }
         }
       }
@@ -2066,100 +2066,100 @@
       "name_vi": "Tài chính khác",
       "name_en": "Other Financial",
       "stock_count": 4,
-      "equity_sum": 17455,
+      "equity_sum": 17654,
       "current": {
         "pe": {
-          "median": 9.03,
-          "mean": 8.23
+          "median": 9.19,
+          "mean": 9.55
         },
         "pb": {
-          "median": 0.84,
-          "mean": 0.81
+          "median": 0.74,
+          "mean": 0.7
         },
         "ps": {
-          "median": 1.42,
-          "mean": 2.35
+          "median": 3.04,
+          "mean": 3.78
         }
       },
       "history": {
         "1y": {
           "pe": {
-            "median": 10.94,
-            "mean": 10.21,
-            "min": 6.96,
-            "max": 13.82
+            "median": 11.01,
+            "mean": 11.74,
+            "min": 7.76,
+            "max": 16.29
           },
           "pb": {
-            "median": 1,
-            "mean": 0.98,
-            "min": 0.81,
-            "max": 1.18
+            "median": 0.94,
+            "mean": 0.93,
+            "min": 0.72,
+            "max": 1.16
           },
           "ps": {
-            "median": 1.8,
-            "mean": 1.84,
-            "min": 1.41,
-            "max": 2.41
+            "median": 1.74,
+            "mean": 1.7,
+            "min": 1.2,
+            "max": 3.04
           }
         },
         "3y": {
           "pe": {
-            "median": 13.55,
-            "mean": 13.64,
-            "min": 6.96,
+            "median": 13.53,
+            "mean": 13.5,
+            "min": 7.76,
             "max": 21.62
           },
           "pb": {
-            "median": 0.99,
-            "mean": 1.03,
+            "median": 0.98,
+            "mean": 1.02,
             "min": 0.67,
             "max": 1.6
           },
           "ps": {
-            "median": 1.91,
-            "mean": 2.02,
-            "min": 1.41,
+            "median": 1.89,
+            "mean": 1.99,
+            "min": 1.2,
             "max": 3.39
           }
         },
         "5y": {
           "pe": {
-            "median": 12.56,
-            "mean": 14.15,
-            "min": 6.65,
-            "max": 31.94
+            "median": 14.1,
+            "mean": 16.9,
+            "min": 7.76,
+            "max": 63.5
           },
           "pb": {
-            "median": 1,
-            "mean": 1.07,
-            "min": 0.54,
-            "max": 3.33
+            "median": 0.91,
+            "mean": 0.94,
+            "min": 0.53,
+            "max": 1.78
           },
           "ps": {
-            "median": 2.17,
-            "mean": 2.65,
-            "min": 1.41,
-            "max": 10.83
+            "median": 2.09,
+            "mean": 2.17,
+            "min": 1.2,
+            "max": 4.16
           }
         },
         "10y": {
           "pe": {
-            "median": 12.09,
-            "mean": 13.65,
-            "min": 6.33,
-            "max": 31.94
+            "median": 14.37,
+            "mean": 17.48,
+            "min": 5.81,
+            "max": 63.5
           },
           "pb": {
-            "median": 1.02,
-            "mean": 1.1,
-            "min": 0.54,
-            "max": 3.36
+            "median": 0.95,
+            "mean": 0.98,
+            "min": 0.53,
+            "max": 2.32
           },
           "ps": {
-            "median": 2.04,
-            "mean": 2.46,
-            "min": 0.9,
-            "max": 10.83
+            "median": 2,
+            "mean": 2.08,
+            "min": 1.06,
+            "max": 4.16
           }
         }
       }
