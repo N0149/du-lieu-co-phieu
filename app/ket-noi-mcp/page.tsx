@@ -45,56 +45,26 @@ const CONNECT_INFO = {
 const MCP_TOOLS = [
   {
     name: 'tra_cuu_ho_so_tai_chinh',
-    title: 'Tra cứu Hồ sơ Tài chính 16 năm',
-    desc: 'Bóc tách lịch sử BCTC từ 2008 đến nay: Doanh thu thuần, LNST, CĐKT, chỉ số P/E, P/B, EPS, ROE của 1.530+ mã.',
-    badge: 'Core Financials',
-  },
-  {
-    name: 'soi_chat_luong_dong_tien',
-    title: 'Soi Chất lượng Dòng tiền (CFO vs LNST)',
-    desc: 'So sánh lợi nhuận ròng với dòng tiền thuần kinh doanh CFO, cảnh báo dòng tiền âm kéo dài và bẫy lợi nhuận trên giấy.',
-    badge: 'CFA Standard',
-  },
-  {
-    name: 'soi_no_vay_va_lai_vay',
-    title: 'Soi Nợ vay & Áp lực Chi phí Lãi vay',
-    desc: 'Bóc tách nợ ngắn hạn, nợ dài hạn, tỷ lệ Đòn bẩy D/E và hệ số che phủ lãi vay (EBIT/Chi phí lãi vay).',
-    badge: 'Risk Analysis',
-  },
-  {
-    name: 'ke_hoach_dhdcd_va_ktpl',
-    title: 'Kế hoạch ĐHĐCĐ & Tỷ lệ Trích Quỹ KTPL',
-    desc: 'Theo dõi chỉ tiêu doanh thu, LNST được ĐHĐCĐ thông qua, tỷ lệ hoàn thành thực tế và mức trích Quỹ khen thưởng phúc lợi.',
-    badge: 'Governance',
-  },
-  {
-    name: 'dinh_gia_rnav_tai_san',
-    title: 'Định giá RNAV & Tài sản Ngầm',
-    desc: 'Bóc tách Chi phí xây dựng cơ bản dở dang (XDCB), tiền mặt ròng, định giá tài sản ròng RNAV cho BĐS, Hạ tầng, Cảng biển.',
-    badge: 'Valuation',
-  },
-  {
-    name: 'kho_bao_cao_va_upside',
-    title: 'Kho 94 Báo cáo Phân tích & Upside',
-    desc: 'Tra cứu giá mục tiêu, upside tiềm năng, luận điểm đầu tư và khuyến nghị mua/bán từ kho báo cáo phân tích độc quyền.',
-    badge: 'Analyst Research',
+    title: 'Tra cứu & Tự động Đính kèm Toàn bộ Tài liệu Cổ phiếu',
+    desc: 'Công cụ duy nhất tự động bóc tách và đính kèm trực tiếp vào chat: Thuyết minh BCTC Quý 3/2026, BCTC Bán Niên 2026, Toàn văn tài liệu ĐHĐCĐ AGM 2026, Bài Nghiên cứu chuyên sâu AI & Định giá, Dòng tiền CFO, Nợ vay và Định giá RNAV. Chỉ cần cấp quyền 1 lần duy nhất!',
+    badge: 'All-in-One Attachment · Ưu tiên số 1',
   },
   {
     name: 'bo_loc_co_phieu',
     title: 'Bộ lọc Cổ phiếu Thông minh (Screener)',
-    desc: 'Sàng lọc 1.530+ mã theo Ngành, ROE, P/E, P/B, Cổ tức, Quỹ KTPL, Vốn hóa và Điểm AI 360.',
+    desc: 'Sàng lọc trên toàn bộ 1.530+ mã (HOSE, HNX, UPCoM) theo các tiêu chí tài chính: Ngành, Sàn, P/E, P/B, ROE, Tỷ suất cổ tức tiền mặt, Vốn hóa, Tỷ lệ trích Quỹ KTPL, và Điểm đánh giá AI 360.',
     badge: 'Smart Screener',
   },
   {
     name: 'so_sanh_co_phieu',
     title: 'So sánh Đối đầu Cổ phiếu (Peer Comparison)',
-    desc: 'So sánh trực tiếp 2 - 5 mã cùng ngành: Định giá, Biên lợi nhuận, Đòn bẩy nợ, Cổ tức và Quỹ KTPL.',
+    desc: 'Đối chiếu trực tiếp từ 2 đến 5 mã cổ phiếu: Định giá P/E & P/B, Biên lợi nhuận gộp/ròng, Đòn bẩy nợ vay, Cổ tức tiền mặt, Trích Quỹ KTPL và Điểm AI 360.',
     badge: 'Peer Benchmarking',
   },
   {
     name: 'su_kien_va_cong_bo_thong_tin',
     title: 'Lịch Cổ tức, Giao dịch Nội bộ & Công bố TT',
-    desc: 'Tra cứu thông báo chia cổ tức (tiền/cổ phiếu, GDKHQ), giao dịch lãnh đạo mua/bán và sự kiện nóng toàn thị trường.',
+    desc: 'Tra cứu thông báo chia cổ tức (tiền mặt & cổ phiếu, ngày GDKHQ), giao dịch Lãnh đạo & Cổ đông lớn mua/bán, Nghị quyết ĐHĐCĐ/HĐQT và sự kiện toàn thị trường.',
     badge: 'Corporate Actions',
   },
 ]
