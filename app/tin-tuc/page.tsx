@@ -5,7 +5,6 @@ import { getCachedNews, fetchAllRssFeeds, getLastFetchedTime } from '@/lib/rss-n
 import { getLiveMarketDisclosures, getRecentMarketDisclosures } from '@/lib/disclosures'
 import { getUserWatchlist } from '@/lib/watchlist-service'
 import { getInsiderActions } from '@/lib/insider-actions-service'
-import { fetchLiveBctcAlerts } from '@/lib/bctc-alerts-service'
 import manifestRaw from '@/data/longlive_manifest.json'
 
 // Bộ nhớ đệm ISR 120 giây (2 phút) - Tin tức mới tự động polling nền client:
@@ -76,11 +75,10 @@ export default async function NewsPage(props: NewsPageProps) {
     defaultTab = rawTab
   }
 
-  const [initialNews, userWatchlistResult, initialInsiderActions, initialBctcAlerts, initialDisclosures] = await Promise.all([
+  const [initialNews, userWatchlistResult, initialInsiderActions, initialDisclosures] = await Promise.all([
     getInitialNews(),
     getUserWatchlist(),
     getInsiderActions({ limit: 80 }).catch(() => []),
-    fetchLiveBctcAlerts().catch(() => []),
     getLiveMarketDisclosures({ limit: 200 }).catch(() => getRecentMarketDisclosures({ limit: 200 })),
   ])
   const initialWatchlist = userWatchlistResult.items.map((it) => it.ticker)
@@ -111,7 +109,6 @@ export default async function NewsPage(props: NewsPageProps) {
           initialNews={initialNews}
           initialDisclosures={initialDisclosures}
           initialInsiderActions={initialInsiderActions}
-          initialBctcAlerts={initialBctcAlerts}
           initialTrending={initialTrending}
           stockPriceMap={stockPriceMap}
           defaultTab={defaultTab}

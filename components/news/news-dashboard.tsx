@@ -21,14 +21,9 @@ import { createClient } from '@/lib/supabase/client'
 import { getUserWatchlist } from '@/lib/watchlist-service'
 import dynamic from 'next/dynamic'
 import type { InsiderActionRecord } from '@/lib/insider-actions-service'
-import type { BctcAlertItem } from '@/lib/bctc-alerts-service'
 import { AuthGate } from '@/components/auth/AuthGate'
 
 // Lazy load các tab phụ (BCTC, Giao dịch nội bộ) để giảm tải bundle trang chủ
-const BctcQ3View = dynamic(
-  () => import('@/components/news/bctc-q3-view').then((m) => m.BctcQ3View),
-  { ssr: false, loading: () => <div className="p-8 text-center text-xs text-muted-foreground animate-pulse">Đang tải dữ liệu BCTC...</div> }
-)
 const InsiderActionsView = dynamic(
   () => import('@/components/news/insider-actions-view').then((m) => m.InsiderActionsView),
   { ssr: false, loading: () => <div className="p-8 text-center text-xs text-muted-foreground animate-pulse">Đang tải giao dịch nội bộ...</div> }
@@ -46,14 +41,13 @@ export type NewsSnapshotItem = {
   summary?: string
 }
 
-type TabType = 'bctc-q3' | 'cong-bo' | 'giao-dich-noi-bo' | 'all' | 'thi-truong' | 'co-phieu' | 'saved'
+type TabType = 'cong-bo' | 'giao-dich-noi-bo' | 'all' | 'thi-truong' | 'co-phieu' | 'saved'
 
 interface NewsDashboardProps {
   initialNews?: NewsSnapshotItem[]
   initialTrending?: { ticker: string; count: number }[]
   initialDisclosures?: CorporateDisclosure[]
   initialInsiderActions?: InsiderActionRecord[]
-  initialBctcAlerts?: BctcAlertItem[]
   stockPriceMap?: Record<string, { px: number | null; w1: number | null }>
   defaultTab?: TabType
   initialWatchlist?: string[]
@@ -114,12 +108,11 @@ export function NewsDashboard({
   initialNews = [],
   initialDisclosures = [],
   initialInsiderActions = [],
-  initialBctcAlerts = [],
   stockPriceMap = {},
   defaultTab = 'cong-bo',
   initialWatchlist = [],
 }: NewsDashboardProps) {
-  const [activeTab, setActiveTab] = useState<TabType>(defaultTab === 'bctc-q3' ? 'cong-bo' : (defaultTab || 'cong-bo'))
+  const [activeTab, setActiveTab] = useState<TabType>(defaultTab || 'cong-bo')
   const [searchQuery, setSearchQuery] = useState('')
   const [selectedSource, setSelectedSource] = useState<string>('all')
   const [savedIds, setSavedIds] = useState<string[]>([])
@@ -401,25 +394,6 @@ export function NewsDashboard({
           <div className="flex items-center gap-1.5 overflow-x-auto no-scrollbar py-1">
             <button
               type="button"
-              onClick={() => setActiveTab('bctc-q3')}
-              className={cn(
-                'flex items-center gap-1.5 rounded px-3.5 py-1 text-[13px] font-medium transition-all shrink-0 cursor-pointer',
-                activeTab === 'bctc-q3'
-                  ? 'bg-amber-500/20 text-amber-300 font-bold border border-amber-500/50 shadow-xs ring-1 ring-amber-500/30'
-                  : 'text-[#8b949e] hover:bg-[#161a22] hover:text-amber-300'
-              )}
-            >
-              <span className="relative flex size-2">
-                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-amber-400 opacity-75"></span>
-                <span className="relative inline-flex size-2 rounded-full bg-amber-500"></span>
-              </span>
-              <span>BCTC Quý 3</span>
-              <span className="ml-0.5 inline-flex items-center px-1.5 py-0.2 text-[9.5px] font-black rounded bg-amber-500/25 text-amber-300 border border-amber-500/40">
-                HOT
-              </span>
-            </button>
-            <button
-              type="button"
               onClick={() => setActiveTab('cong-bo')}
               className={cn(
                 'flex items-center gap-1.5 rounded px-3.5 py-1 text-[13px] font-medium transition-all shrink-0',
@@ -502,7 +476,6 @@ export function NewsDashboard({
           </div>
 
           {/* Right: Search Input & Filter Dropdown (WiData Style) */}
-          {activeTab !== 'bctc-q3' ? (
           <div className="flex items-center gap-3">
             {/* Filter by Source dropdown */}
             <div className="hidden sm:block">
@@ -583,12 +556,11 @@ export function NewsDashboard({
               </span>
             </button>
           </div>
-          ) : null}
+          
         </div>
       </div>
 
       {/* Sub-bar bộ lọc nhanh: Watchlist đưa lên ĐẦU TIÊN cho toàn bộ tab (trừ tab BCTC Q3) */}
-      {activeTab !== 'bctc-q3' && (
         <div className="border-b border-[#181d26] bg-[#0d1118] px-3 sm:px-4 lg:px-6 py-2">
           <div className="flex items-center justify-between gap-3 overflow-x-auto no-scrollbar">
             <div className="flex items-center gap-2 shrink-0">
@@ -650,17 +622,8 @@ export function NewsDashboard({
             )}
           </div>
         </div>
-      )}
 
-      {activeTab === 'bctc-q3' ? (
-        <div className="w-full px-3 sm:px-4 lg:px-6 py-4">
-          <BctcQ3View
-            initialAlerts={initialBctcAlerts}
-            stockPriceMap={stockPriceMap}
-            userWatchlist={userWatchlist}
-          />
-        </div>
-      ) : activeTab === 'giao-dich-noi-bo' ? (
+      {activeTab === 'giao-dich-noi-bo' ? (
         <AuthGate
           variant="blur"
           blurHeight={420}

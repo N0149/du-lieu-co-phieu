@@ -74,13 +74,13 @@ export default async function AuthorizePage({ searchParams }: AuthorizePageProps
           <div className="flex items-center justify-between">
             <span className="text-[#9eacb9]">Tài khoản kết nối:</span>
             <span className="font-semibold text-emerald-400">
-              {user ? user.email : 'Tài khoản Dùng thử (Miễn phí)'}
+              {user ? user.email : 'Tài khoản Thành viên'}
             </span>
           </div>
           <div className="flex items-center justify-between">
             <span className="text-[#9eacb9]">Gói dịch vụ:</span>
             <span className="rounded bg-emerald-500/15 px-1.5 py-0.5 text-[10px] font-bold text-emerald-400">
-              {user?.status === 'active' ? 'Thành viên VIP' : 'Dùng thử 7 ngày (Full Data)'}
+              {user?.status === 'active' ? 'Thành viên VIP' : 'Thành viên'}
             </span>
           </div>
         </div>

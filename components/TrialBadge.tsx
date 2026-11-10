@@ -1,140 +1,56 @@
 'use client'
 
-import { useCallback, useEffect, useState } from 'react'
-import { Crown, Clock, TimerOff, Sparkles } from 'lucide-react'
-import {
-  checkUserAccess,
-  type AccessResult,
-  type UserProfile,
-} from '@/lib/auth-check'
-import { PaywallModal } from '@/components/PaywallModal'
-
-type SessionPayload = {
-  user: UserProfile | null
-  access: AccessResult
-}
+import { useState } from 'react'
+import { Crown } from 'lucide-react'
+import { useAuth } from '@/lib/use-auth'
+import { VipUpgradeModal } from '@/components/auth/VipUpgradeModal'
 
 /**
- * Badge trạng thái dùng thử/VIP trên header (cạnh ThemeToggle).
+ * Nút Nâng cấp VIP / Huy hiệu Hội viên VIP trên Header cạnh ThemeToggle.
  *
- * Lấy session từ `GET /api/auth/session` sau khi mount (cookie httpOnly nên
- * client không đọc trực tiếp được — phải qua API).
- *
- *  - UNAUTHENTICATED     → nút "Dùng thử 7 ngày" (mở modal nâng cấp)
- *  - TRIAL_ACTIVE        → badge emerald "Dùng thử: còn X ngày"
- *  - SUBSCRIPTION_ACTIVE → badge VIP "Thành viên VIP"
- *  - EXPIRED             → badge cảnh báo "Hết hạn dùng thử" (click mở modal)
+ * Loại bỏ hoàn toàn cơ chế dùng thử theo yêu cầu:
+ * - Khách chưa nâng cấp VIP: Nút "Nâng cấp VIP" mở VipUpgradeModal (3 gói: 95k/495k/890k)
+ * - Thành viên VIP: Huy hiệu sang trọng "Hội viên VIP"
  */
 export function TrialBadge() {
-  const [session, setSession] = useState<SessionPayload | null>(null)
-  const [loading, setLoading] = useState(true)
-  const [modalOpen, setModalOpen] = useState(false)
-  const [reloadKey, setReloadKey] = useState(0)
+  const { isVip, loading } = useAuth()
+  const [vipModalOpen, setVipModalOpen] = useState(false)
 
-  const loadSession = useCallback(() => {
-    let cancelled = false
-    setLoading(true)
-    fetch('/api/auth/session')
-      .then((res) => (res.ok ? res.json() : null))
-      .then((data: SessionPayload | null) => {
-        if (!cancelled && data) setSession(data)
-      })
-      .catch(() => {
-        // Giữ trạng thái hiện tại khi API lỗi — không làm vỡ header
-      })
-      .finally(() => {
-        if (!cancelled) setLoading(false)
-      })
-    return () => {
-      cancelled = true
-    }
-  }, [])
-
-  useEffect(() => {
-    const cancel = loadSession()
-    return cancel
-  }, [loadSession, reloadKey])
-
-  function openModal() {
-    setModalOpen(true)
-  }
-
-  /** Đóng modal + nạp lại session (để badge cập nhật sau khi bắt đầu dùng thử). */
-  function handleModalClosed() {
-    setModalOpen(false)
-    setReloadKey((k) => k + 1)
-  }
-
-  // ── Skeleton khi đang tải session ─────────────────────────────────────
-  if (loading && !session) {
-    return <span className="h-7 w-24 animate-pulse rounded-md bg-muted" aria-hidden="true" />
-  }
-
-  const access = session?.access ?? checkUserAccess(session?.user ?? null)
-
-  // ── Đang trong 7 ngày dùng thử ────────────────────────────────────────
-  if (access.status === 'TRIAL_ACTIVE') {
+  if (loading) {
     return (
       <span
-        className="hidden items-center gap-1.5 rounded-full border border-positive/30 bg-positive-muted px-2.5 py-1 text-[11px] font-semibold text-positive sm:inline-flex"
-        title={`Hết hạn: ${access.expiresAt ?? '—'}`}
-      >
-        <Clock className="size-3" />
-        Dùng thử: còn {access.daysRemaining} ngày
-      </span>
+        className="hidden sm:inline-block h-7 w-24 animate-pulse rounded-full bg-white/5"
+        aria-hidden="true"
+      />
     )
   }
 
-  // ── Đã kích hoạt VIP ──────────────────────────────────────────────────
-  if (access.status === 'SUBSCRIPTION_ACTIVE') {
+  // Đã kích hoạt Hội viên VIP
+  if (isVip) {
     return (
-      <span className="hidden items-center gap-1.5 rounded-full bg-primary px-2.5 py-1 text-[11px] font-semibold text-primary-foreground sm:inline-flex">
-        <Crown className="size-3" />
-        Thành viên VIP
-      </span>
+      <div className="hidden sm:inline-flex items-center gap-1.5 rounded-full border border-amber-500/40 bg-gradient-to-r from-amber-500/20 to-amber-600/10 px-3 py-1 text-xs font-bold text-amber-300 shadow-sm shadow-amber-500/10">
+        <Crown className="size-3.5 text-amber-300" />
+        <span>Hội viên VIP</span>
+      </div>
     )
   }
 
-  // ── Hết hạn dùng thử → badge cảnh báo, click mở modal nâng cấp ────────
-  if (access.status === 'EXPIRED') {
-    return (
-      <>
-        <button
-          type="button"
-          onClick={openModal}
-          className="hidden items-center gap-1.5 rounded-full border border-warning/40 bg-warning-muted px-2.5 py-1 text-[11px] font-semibold text-warning transition-colors hover:bg-warning/20 sm:inline-flex"
-          title="Nâng cấp tài khoản VIP"
-        >
-          <TimerOff className="size-3" />
-          Hết hạn dùng thử
-        </button>
-        <PaywallModal
-          open={modalOpen}
-          onClose={handleModalClosed}
-          onStarted={handleModalClosed}
-          status="EXPIRED"
-        />
-      </>
-    )
-  }
-
-  // ── Chưa đăng nhập → CTA bắt đầu dùng thử 7 ngày ──────────────────────
+  // Chưa nâng cấp VIP → Nút kêu gọi nâng cấp mở modal
   return (
     <>
       <button
         type="button"
-        onClick={openModal}
-        className="hidden items-center gap-1.5 rounded-full border border-primary/40 bg-primary/5 px-2.5 py-1 text-[11px] font-semibold text-primary transition-colors hover:bg-primary/10 sm:inline-flex"
-        title="Bắt đầu 7 ngày dùng thử miễn phí"
+        onClick={() => setVipModalOpen(true)}
+        className="hidden sm:inline-flex items-center gap-1.5 rounded-full border border-amber-500/40 bg-gradient-to-r from-amber-500/25 to-amber-600/15 px-3 py-1 text-xs font-bold text-amber-300 transition-all hover:brightness-110 hover:border-amber-400 active:scale-95 cursor-pointer shadow-sm shadow-amber-500/10 group"
+        title="Nâng cấp gói Hội viên VIP"
       >
-        <Sparkles className="size-3" />
-        Dùng thử 7 ngày
+        <Crown className="size-3.5 text-amber-300 group-hover:scale-110 transition-transform animate-pulse" />
+        <span>Nâng cấp VIP</span>
       </button>
-      <PaywallModal
-        open={modalOpen}
-        onClose={handleModalClosed}
-        onStarted={handleModalClosed}
-        status="UNAUTHENTICATED"
+
+      <VipUpgradeModal
+        open={vipModalOpen}
+        onClose={() => setVipModalOpen(false)}
       />
     </>
   )

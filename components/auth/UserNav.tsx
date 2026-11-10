@@ -2,10 +2,11 @@
 
 import { useState, useEffect, useRef } from 'react'
 import Link from 'next/link'
-import { User, LogIn, LogOut, Star, ChevronDown, Sparkles, ShieldCheck } from 'lucide-react'
+import { User, LogIn, LogOut, Star, ChevronDown, Sparkles, ShieldCheck, Crown } from 'lucide-react'
 import { createClient } from '@/lib/supabase/client'
-import { isAdminEmail } from '@/lib/admin-auth'
+import { isAdminEmail, isVipUser } from '@/lib/admin-auth'
 import { AuthModal } from '@/components/auth/AuthModal'
+import { VipUpgradeModal } from '@/components/auth/VipUpgradeModal'
 import { getGuestWatchlist, clearGuestWatchlist } from '@/lib/guest-watchlist'
 import { syncGuestWatchlist } from '@/lib/watchlist-service'
 
@@ -14,6 +15,7 @@ export function UserNav() {
   const [loading, setLoading] = useState(true)
   const [menuOpen, setMenuOpen] = useState(false)
   const [authModalOpen, setAuthModalOpen] = useState(false)
+  const [vipModalOpen, setVipModalOpen] = useState(false)
   const menuRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
@@ -100,6 +102,7 @@ export function UserNav() {
     const email = user.email || 'Thành viên'
     const initial = email.charAt(0).toUpperCase()
     const isAdmin = isAdminEmail(email)
+    const isVip = isVipUser(user)
 
     return (
       <div className="relative" ref={menuRef}>
@@ -114,11 +117,15 @@ export function UserNav() {
           <span className="hidden md:inline max-w-[120px] truncate text-[#F0F3F6] font-medium">
             {email.split('@')[0]}
           </span>
-          {isAdmin && (
+          {isAdmin ? (
             <span className="hidden sm:inline-block rounded bg-emerald-500/20 px-1 py-0.2 text-[9px] font-bold text-emerald-400 border border-emerald-500/30">
               ADMIN
             </span>
-          )}
+          ) : isVip ? (
+            <span className="hidden sm:inline-flex items-center gap-0.5 rounded bg-amber-500/20 px-1.5 py-0.2 text-[9px] font-black text-amber-300 border border-amber-500/30">
+              <Crown className="size-2.5" /> VIP
+            </span>
+          ) : null}
           <ChevronDown className="size-3.5 text-[#9EACB9]" />
         </button>
 
@@ -128,9 +135,17 @@ export function UserNav() {
             <div className="px-3 py-2 border-b border-white/8">
               <div className="flex items-center justify-between">
                 <p className="text-[11px] text-[#9EACB9]">Tài khoản</p>
-                {isAdmin && (
+                {isAdmin ? (
                   <span className="rounded bg-emerald-500/20 px-1.5 py-0.2 text-[9px] font-bold text-emerald-400 border border-emerald-500/30">
                     ADMIN
+                  </span>
+                ) : isVip ? (
+                  <span className="rounded bg-amber-500/20 px-1.5 py-0.2 text-[9px] font-black text-amber-300 border border-amber-500/30 flex items-center gap-1">
+                    <Crown className="size-2.5" /> VIP
+                  </span>
+                ) : (
+                  <span className="rounded bg-white/10 px-1.5 py-0.2 text-[9px] font-medium text-slate-300">
+                    Thành viên
                   </span>
                 )}
               </div>
@@ -138,6 +153,20 @@ export function UserNav() {
             </div>
 
             <div className="py-1 space-y-0.5">
+              {!isVip && (
+                <button
+                  type="button"
+                  onClick={() => {
+                    setMenuOpen(false)
+                    setVipModalOpen(true)
+                  }}
+                  className="flex w-full items-center gap-2.5 rounded-xl px-3 py-2 text-xs font-bold text-amber-300 bg-gradient-to-r from-amber-500/15 to-amber-600/10 hover:from-amber-500/25 hover:to-amber-600/20 border border-amber-500/30 transition-colors cursor-pointer text-left"
+                >
+                  <Crown className="size-4 text-amber-300" />
+                  <span>Nâng cấp Hội viên VIP</span>
+                </button>
+              )}
+
               {isAdmin && (
                 <Link
                   href="/admin"
@@ -170,6 +199,11 @@ export function UserNav() {
             </div>
           </div>
         )}
+
+        <VipUpgradeModal
+          open={vipModalOpen}
+          onClose={() => setVipModalOpen(false)}
+        />
       </div>
     )
   }
