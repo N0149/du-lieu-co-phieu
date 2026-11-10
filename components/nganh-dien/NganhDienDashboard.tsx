@@ -563,7 +563,7 @@ export function NganhDienDashboard() {
             {/* Quick Filter Tags */}
             <div className="flex flex-wrap items-center gap-2 pt-1 border-t border-white/5 text-xs text-slate-400">
               <span className="font-semibold text-slate-500">Đánh giá triển vọng:</span>
-              {(['ALL', 'TĂNG TRƯỞNG MẠNH', 'TĂNG TRƯỞNG TÍCH CỰC', 'KHẢ QUAN', 'ĐI NGANG'] as const).map((r) => (
+              {(['ALL', 'TĂNG TRƯỞNG MẠNH', 'TĂNG TRƯỞNG TÍCH CỰC', 'KHẢ QUAN', 'ĐI NGANG', 'SUY GIẢM'] as const).map((r) => (
                 <button
                   key={r}
                   onClick={() => setRatingFilter(r)}
@@ -628,7 +628,21 @@ export function NganhDienDashboard() {
                   <div>Công suất: <strong className="text-white">{comp1.totalCapacityMW.toLocaleString('vi-VN')} MW</strong></div>
                   <div>Vốn hóa: <strong className="text-white">{comp1.marketCap.toLocaleString('vi-VN')} Tỷ</strong></div>
                   <div>P/E thực tế: <strong className="text-amber-300">{comp1.peAdjusted || Math.round(comp1.pe * 1.11 * 10) / 10}x</strong></div>
-                  <div>LN Q3 YoY: <strong className="text-emerald-400">+{comp1.q3Forecast.profitGrowthYoY}%</strong></div>
+                  <div>
+                    LN {comp1.q3Forecast.periodLabel || 'Q3'} YoY:{' '}
+                    <strong
+                      className={cn(
+                        comp1.q3Forecast.profitGrowthYoY > 0
+                          ? 'text-emerald-400'
+                          : comp1.q3Forecast.profitGrowthYoY === 0
+                          ? 'text-slate-400'
+                          : 'text-rose-400'
+                      )}
+                    >
+                      {comp1.q3Forecast.profitGrowthYoY > 0 ? '+' : ''}
+                      {comp1.q3Forecast.profitGrowthYoY}%
+                    </strong>
+                  </div>
                 </div>
                 <div className="text-[11px] text-slate-400">
                   <span className="text-cyan-400 font-semibold">Tín hiệu NSMO/EAV:</span> {comp1.q3Forecast.nsmoEavSignal}
@@ -647,7 +661,21 @@ export function NganhDienDashboard() {
                   <div>Công suất: <strong className="text-white">{comp2.totalCapacityMW.toLocaleString('vi-VN')} MW</strong></div>
                   <div>Vốn hóa: <strong className="text-white">{comp2.marketCap.toLocaleString('vi-VN')} Tỷ</strong></div>
                   <div>P/E thực tế: <strong className="text-amber-300">{comp2.peAdjusted || Math.round(comp2.pe * 1.11 * 10) / 10}x</strong></div>
-                  <div>LN Q3 YoY: <strong className="text-emerald-400">+{comp2.q3Forecast.profitGrowthYoY}%</strong></div>
+                  <div>
+                    LN {comp2.q3Forecast.periodLabel || 'Q3'} YoY:{' '}
+                    <strong
+                      className={cn(
+                        comp2.q3Forecast.profitGrowthYoY > 0
+                          ? 'text-emerald-400'
+                          : comp2.q3Forecast.profitGrowthYoY === 0
+                          ? 'text-slate-400'
+                          : 'text-rose-400'
+                      )}
+                    >
+                      {comp2.q3Forecast.profitGrowthYoY > 0 ? '+' : ''}
+                      {comp2.q3Forecast.profitGrowthYoY}%
+                    </strong>
+                  </div>
                 </div>
                 <div className="text-[11px] text-slate-400">
                   <span className="text-amber-400 font-semibold">Tín hiệu NSMO/EAV:</span> {comp2.q3Forecast.nsmoEavSignal}
@@ -712,7 +740,7 @@ export function NganhDienDashboard() {
                       <th className="py-3.5 px-3 text-right" title="P/E thực tế sau khi trừ trích lập Quỹ Khen thưởng Phúc lợi &amp; Thù lao HĐQT/BKS">
                         P/E Thực Tế <span className="text-[9px] text-amber-400 font-normal block font-sans lowercase">(trừ trích quỹ)</span>
                       </th>
-                      <th className="py-3.5 px-3 text-right">LNST Q3 (Thực tế)</th>
+                      <th className="py-3.5 px-3 text-right" title="Lợi nhuận sau thuế theo BCTC thực tế">LNST Thực Tế <span className="text-[9px] text-amber-400 font-normal block font-sans lowercase">(BCTC quý gần nhất)</span></th>
                       <th className="py-3.5 px-3 text-center">Tăng Trưởng</th>
                       <th className="py-3.5 px-3 text-center">Đánh Giá</th>
                       <th className="py-3.5 px-4 min-w-[220px]">Nhà Máy Chủ Lực</th>
@@ -797,10 +825,14 @@ export function NganhDienDashboard() {
                               </span>
                             </td>
 
-                            {/* LNST Q3 Dự phóng */}
+                            {/* LNST Thực Tế BCTC */}
                             <td className="py-3 px-3 text-right font-mono">
-                              <span className="font-bold text-amber-300">{stock.q3Forecast.profitEst.toLocaleString('vi-VN')}</span>
-                              <span className="text-[10px] text-slate-500 block">Tỷ VNĐ</span>
+                              <span className="font-bold text-amber-300">
+                                {stock.q3Forecast.profitEst.toLocaleString('vi-VN', { minimumFractionDigits: 1, maximumFractionDigits: 1 })}
+                              </span>
+                              <span className="text-[10px] text-slate-400 block font-sans">
+                                {stock.q3Forecast.periodLabel || 'Q3/2026'} • Tỷ VNĐ
+                              </span>
                             </td>
 
                             {/* Tăng trưởng YoY */}
@@ -812,12 +844,15 @@ export function NganhDienDashboard() {
                                     ? 'bg-emerald-500/20 text-emerald-300'
                                     : stock.q3Forecast.profitGrowthYoY > 0
                                     ? 'bg-teal-500/20 text-teal-300'
-                                    : 'bg-amber-500/20 text-amber-300'
+                                    : stock.q3Forecast.profitGrowthYoY === 0
+                                    ? 'bg-slate-500/20 text-slate-300'
+                                    : 'bg-rose-500/20 text-rose-300'
                                 )}
                               >
                                 {stock.q3Forecast.profitGrowthYoY > 0 ? '+' : ''}
                                 {stock.q3Forecast.profitGrowthYoY}%
                               </span>
+                              <span className="text-[9px] text-slate-500 block font-sans">YoY cùng kỳ</span>
                             </td>
 
                             {/* Đánh giá */}
@@ -828,7 +863,8 @@ export function NganhDienDashboard() {
                                   stock.q3Forecast.rating === 'TĂNG TRƯỞNG MẠNH' && 'bg-emerald-500/20 text-emerald-300 border border-emerald-500/30',
                                   stock.q3Forecast.rating === 'TĂNG TRƯỞNG TÍCH CỰC' && 'bg-teal-500/20 text-teal-300 border border-teal-500/30',
                                   stock.q3Forecast.rating === 'KHẢ QUAN' && 'bg-cyan-500/20 text-cyan-300 border border-cyan-500/30',
-                                  stock.q3Forecast.rating === 'ĐI NGANG' && 'bg-amber-500/20 text-amber-300 border border-amber-500/30'
+                                  stock.q3Forecast.rating === 'ĐI NGANG' && 'bg-amber-500/20 text-amber-300 border border-amber-500/30',
+                                  stock.q3Forecast.rating === 'SUY GIẢM' && 'bg-rose-500/20 text-rose-300 border border-rose-500/30'
                                 )}
                               >
                                 {stock.q3Forecast.rating}
@@ -1055,8 +1091,18 @@ export function NganhDienDashboard() {
                           <span className="text-slate-500 text-[10px]" title={`P/E báo cáo chưa trừ trích lập: ${stock.pe}x`}>({stock.pe}x)</span>
                         </div>
                         <div>
-                          <span className="text-[10px] text-slate-500 block font-sans">LN Q3 YoY</span>
-                          <strong className="text-emerald-400">+{stock.q3Forecast.profitGrowthYoY}%</strong>
+                          <span className="text-[10px] text-slate-500 block font-sans">LN {stock.q3Forecast.periodLabel || 'Q3'} YoY</span>
+                          <strong
+                            className={cn(
+                              stock.q3Forecast.profitGrowthYoY > 0
+                                ? 'text-emerald-400'
+                                : stock.q3Forecast.profitGrowthYoY === 0
+                                ? 'text-slate-400'
+                                : 'text-rose-400'
+                            )}
+                          >
+                            {stock.q3Forecast.profitGrowthYoY > 0 ? '+' : ''}{stock.q3Forecast.profitGrowthYoY}%
+                          </strong>
                         </div>
                       </div>
 
@@ -1068,7 +1114,8 @@ export function NganhDienDashboard() {
                             stock.q3Forecast.rating === 'TĂNG TRƯỞNG MẠNH' && 'bg-emerald-500/20 text-emerald-300 border border-emerald-500/30',
                             stock.q3Forecast.rating === 'TĂNG TRƯỞNG TÍCH CỰC' && 'bg-teal-500/20 text-teal-300 border border-teal-500/30',
                             stock.q3Forecast.rating === 'KHẢ QUAN' && 'bg-cyan-500/20 text-cyan-300 border border-cyan-500/30',
-                            stock.q3Forecast.rating === 'ĐI NGANG' && 'bg-amber-500/20 text-amber-300 border border-amber-500/30'
+                            stock.q3Forecast.rating === 'ĐI NGANG' && 'bg-amber-500/20 text-amber-300 border border-amber-500/30',
+                            stock.q3Forecast.rating === 'SUY GIẢM' && 'bg-rose-500/20 text-rose-300 border border-rose-500/30'
                           )}
                         >
                           {stock.q3Forecast.rating}
