@@ -2188,5 +2188,85 @@
     "url": "https://vietstock.vn/2026/11/sip-thong-bao-ve-ngay-dang-ky-cuoi-cung-tam-ung-co-tuc-bang-tien-dot-1-nam-2026-lay-y-kien-co-dong-bang-van-ban-nam-2026-737-1513227.htm",
     "source": "Vietstock_News",
     "alerted_at": "2026-11-09 12:05:03"
+  },
+  "vts_news_1513437": {
+    "ticker": "BMC",
+    "category": "DIVIDEND_RIGHTS",
+    "category_label": "CỔ TỨC & QUYỀN DOANH NGHIỆP",
+    "title": "BMC: Thông báo về ngày đăng ký cuối cùng trả cổ tức bằng tiền năm 2025",
+    "date": "10/11/2026 07:11",
+    "url": "https://vietstock.vn/2026/11/bmc-thong-bao-ve-ngay-dang-ky-cuoi-cung-tra-co-tuc-bang-tien-nam-2025-737-1513437.htm",
+    "source": "Vietstock_News",
+    "alerted_at": "2026-11-10 08:45:49"
+  },
+  "vts_doc_946f0105345b": {
+    "ticker": "IJC",
+    "category": "RESOLUTION_HDQT",
+    "category_label": "NGHỊ QUYẾT HĐQT",
+    "title": "Nghị quyết HĐQT về việc thông qua thực hiện giao dịch ký kết hợp đồng với Công ty Cổ phần Đường Vành đai 4 TP.HCM",
+    "date": "10/11/2026 01:25",
+    "url": "https://static2.vietstock.vn/data/HOSE/2026/NGHI QUYET HDQT/VN/20261107___ijc___ky_hop_dong_voi_to_chuc_co_lien_quan.pdf",
+    "source": "Vietstock_Document",
+    "alerted_at": "2026-11-10 08:45:50"
+  },
+  "vts_news_1513374": {
+    "ticker": "IDV",
+    "category": "RESOLUTION_HDQT",
+    "category_label": "NGHỊ QUYẾT HĐQT",
+    "title": "ACC: Nghị quyết HĐQT về việc thông qua giao dịch tín dụng tại BIDV - Chi nhánh Tây Hồ",
+    "date": "10/11/2026 04:03",
+    "url": "https://vietstock.vn/2026/11/acc-nghi-quyet-hdqt-ve-viec-thong-qua-giao-dich-tin-dung-tai-bidv-chi-nhanh-tay-ho-737-1513374.htm",
+    "source": "Vietstock_News",
+    "alerted_at": "2026-11-10 08:45:50"
+  },
+  "vts_news_1513447": {
+    "ticker": "DSH",
+    "category": "RESOLUTION_HDQT",
+    "category_label": "NGHỊ QUYẾT HĐQT",
+    "title": "DSH: Nghị quyết HĐQT về việc thông qua chuyển nhượng cổ phần tại Công ty Cổ phần Đầu tư và Phát triển Đô thị Nam Định",
+    "date": "10/11/2026 07:34",
+    "url": "https://vietstock.vn/2026/11/dsh-nghi-quyet-hdqt-ve-viec-thong-qua-chuyen-nhuong-co-phan-tai-cong-ty-co-phan-dau-tu-va-phat-trien-do-thi-nam-dinh-737-1513447.htm",
+    "source": "Vietstock_News",
+    "alerted_at": "2026-11-10 08:45:51"
+  },
+  "vts_doc_f70ca533ab66": {
+    "ticker": "CTI",
+    "category": "RESOLUTION_HDQT",
+    "category_label": "NGHỊ QUYẾT HĐQT",
+    "title": "Nghị quyết HĐQT về việc thông qua chủ trương giải thể công ty con - Công ty Cổ phần Du lịch Cường Thuận CTI",
+    "date": "10/11/2026 01:21",
+    "url": "https://static2.vietstock.vn/data/HOSE/2026/NGHI QUYET HDQT/VN/20261109___cti___cbtt_nghi_quyet_thong_qua_chu_truong_giai_the_cong_ty_con_dk.pdf",
+    "source": "Vietstock_Document",
+    "alerted_at": "2026-11-10 08:45:51"
+  },
+  "vts_doc_35f493c4ceb2": {
+    "ticker": "DHC",
+    "category": "EXTRAORDINARY_EVENT",
+    "category_label": "CÔNG BỐ BẤT THƯỜNG",
+    "title": "Điều lệ năm 2026",
+    "date": "10/11/2026 01:08",
+    "url": "https://static2.vietstock.vn/data/HOSE/2026/KHAC/VN/DHC_DIEULE_2026_1.pdf",
+    "source": "Vietstock_Document",
+    "alerted_at": "2026-11-10 08:45:52"
+  },
+  "vts_news_1513451": {
+    "ticker": "POW",
+    "category": "RESOLUTION_HDQT",
+    "category_label": "NGHỊ QUYẾT HĐQT",
+    "title": "POW: Nghị quyết HĐQT về việc thông qua điều chỉnh một số chỉ tiêu kế hoạch năm 2026",
+    "date": "10/11/2026 07:34",
+    "url": "https://vietstock.vn/2026/11/pow-nghi-quyet-hdqt-ve-viec-thong-qua-dieu-chinh-mot-so-chi-tieu-ke-hoach-nam-2026-737-1513451.htm",
+    "source": "Vietstock_News",
+    "alerted_at": "2026-11-10 08:45:54"
+  },
+  "vts_news_1513430": {
+    "ticker": "PVP",
+    "category": "EGM_EXTRAORDINARY",
+    "category_label": "ĐHĐCĐ BẤT THƯỜNG / LẤY Ý KIẾN",
+    "title": "PVP: Thông báo thư mời họp ĐHĐCĐ bất thường năm 2026",
+    "date": "10/11/2026 06:59",
+    "url": "https://vietstock.vn/2026/11/pvp-thong-bao-thu-moi-hop-dhdcd-bat-thuong-nam-2026-737-1513430.htm",
+    "source": "Vietstock_News",
+    "alerted_at": "2026-11-10 08:45:55"
   }
 }
