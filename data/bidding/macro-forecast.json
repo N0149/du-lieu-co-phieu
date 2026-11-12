@@ -6,19 +6,19 @@
       "total_capital_billion_vnd": 19423652.0,
       "status_breakdown": {
         "preparing": {
-          "count": 3696,
-          "capital_vnd": 1.873578094031759e+16,
-          "capital_billion_vnd": 18735780.9
+          "count": 3694,
+          "capital_vnd": 1.872199094689359e+16,
+          "capital_billion_vnd": 18721990.9
         },
         "construction": {
-          "count": 11,
-          "capital_vnd": 433890000000000.0,
-          "capital_billion_vnd": 433890.0
+          "count": 12,
+          "capital_vnd": 439278000000000.0,
+          "capital_billion_vnd": 439278.0
         },
         "completed": {
-          "count": 29,
-          "capital_vnd": 253981087645431.0,
-          "capital_billion_vnd": 253981.1
+          "count": 30,
+          "capital_vnd": 262383081069431.0,
+          "capital_billion_vnd": 262383.1
         }
       },
       "packages_kpi": {
@@ -27,16 +27,16 @@
         "total_price_billion_vnd": 1592036.9,
         "awarded_price_billion_vnd": 1078970.1
       },
-      "ncr_ratio": 75.48,
-      "current_quarter": "2026-Q3"
+      "ncr_ratio": 73.03,
+      "current_quarter": "2026-Q4"
     },
     "forecast_current": {
-      "quarter": "2026-Q3",
-      "status": "TĂNG MẠNH",
-      "score": 85,
-      "net_pressure_billion": 122168.4,
-      "completion_billion": 305844.7,
-      "absorption_billion": 428013.1
+      "quarter": "2026-Q4",
+      "status": "TĂNG NHẸ",
+      "score": 50,
+      "net_pressure_billion": 22945.5,
+      "completion_billion": 459066.3,
+      "absorption_billion": 482011.8
     },
     "turning_point_quarter": "2028-Q4",
     "top_completion_quarters": [
@@ -44,7 +44,7 @@
         "quarter": "2029-Q4",
         "absorption_billion": 187824.8,
         "completion_billion": 1403989.1,
-        "cumulative_completed_billion": 11725187.1,
+        "cumulative_completed_billion": 11725187.2,
         "net_pressure_billion": -1216164.3,
         "ratio": 0.13,
         "rate_pressure_score": -85,
@@ -822,11 +822,11 @@
       },
       {
         "quarter": "2029-Q2",
-        "absorption_billion": 373432.6,
-        "completion_billion": 1114715.3,
-        "cumulative_completed_billion": 9710978.2,
-        "net_pressure_billion": -741282.7,
-        "ratio": 0.33,
+        "absorption_billion": 373214.7,
+        "completion_billion": 1106313.4,
+        "cumulative_completed_billion": 9710978.3,
+        "net_pressure_billion": -733098.7,
+        "ratio": 0.34,
         "rate_pressure_score": -85,
         "rate_trend": "GIẢM MẠNH",
         "completing_projects": [
@@ -949,12 +949,6 @@
             "name": "Đường giao thông trục ngang biển Văn Trị đến thôn Đông Văn, xã Đồng Tiến.",
             "capital_billion": 8567.0,
             "sector": "Hạ tầng giao thông"
-          },
-          {
-            "code": "PR2600026009",
-            "name": "Dự án Đầu tư xây dựng đường Vành đai 2,5 các đoạn: Khu đô thị mới Dịch Vọng - Dương Đình Nghệ; Vũ Phạm Hàm - Trần Duy Hưng; Ngụy Như Kon Tum - Nguyễn Trãi, thành phố Hà Nội",
-            "capital_billion": 8402.0,
-            "sector": "Đô thị & Nhà ở"
           },
           {
             "code": "PR2600002961",
@@ -1770,10 +1764,10 @@
       },
       {
         "quarter": "2024-Q2",
-        "absorption_billion": 467352.5,
+        "absorption_billion": 467669.9,
         "completion_billion": 987051.5,
         "cumulative_completed_billion": 1856502.2,
-        "net_pressure_billion": -519699.0,
+        "net_pressure_billion": -519381.6,
         "ratio": 0.47,
         "rate_pressure_score": -85,
         "rate_trend": "GIẢM MẠNH",
@@ -2425,15 +2419,15 @@
     ],
     "thesis_analysis": {
       "capital_sink_phase": "Trong giai đoạn 2023 - 2024, nền kinh tế chứng kiến sự mở mới đồng loạt của hàng loạt đại dự án: 12 dự án thành phần Cao tốc Bắc - Nam giai đoạn 2 (hơn 147.000 tỷ), Vành đai 3 TP.HCM (75.378 tỷ), Vành đai 4 Hà Nội (85.813 tỷ), và Sân bay Long Thành Giai đoạn 1 (109.111 tỷ). Giai đoạn này là đỉnh điểm thâm dụng vốn (Capital Sinking): Kho bạc Nhà nước tăng cường phát hành Trái phiếu Chính phủ, doanh nghiệp xây lắp ồ ạt vay vốn ngân hàng để bảo lãnh dự thầu, mua máy móc vật tư. Cầu vốn tín dụng dồn dập khiến thanh khoản bị hút cạn, gây hiệu ứng chèn lấn (crowding-out) và đẩy mặt bằng lãi suất tăng/neo cao.",
-      "maturation_cliff_phase": "Từ quý 3/2025 đến hết năm 2026 (đặc biệt là mốc đảo chiều tại 2028-Q4), chu kỳ thâm dụng vốn chính thức chuyển sang giai đoạn Điểm rơi Hoàn thành (Capital Maturation). Khối lượng công trình hoàn thành đưa vào khai thác lên tới hàng trăm nghìn tỷ đồng (với các đỉnh hoàn thành lớn nhất tại 2029-Q4 (1,403,989 tỷ), 2029-Q2 (1,114,715 tỷ), 2024-Q2 (987,052 tỷ)). Khi các dự án trọng điểm hoàn thành: (1) Dòng tiền thanh quyết toán được giải phóng từ Kho bạc về nhà thầu, doanh nghiệp hoàn trả nợ vay ngân hàng, thanh khoản hệ thống ngân hàng được bù đắp trở lại dồi dào; (2) Hạ tầng giao thông thông suốt giúp giảm chi phí logistics (chiếm ~16% GDP), tăng tốc độ chu chuyển tiền tệ (V), hạ áp lực lạm phát chi phí đẩy. Đây chính là cơ sở kinh tế vững chắc để Ngân hàng Nhà nước hạ Lãi suất Điều hành và lãi suất thị trường bước vào xu hướng GIẢM.",
+      "maturation_cliff_phase": "Từ quý 3/2025 đến hết năm 2026 (đặc biệt là mốc đảo chiều tại 2028-Q4), chu kỳ thâm dụng vốn chính thức chuyển sang giai đoạn Điểm rơi Hoàn thành (Capital Maturation). Khối lượng công trình hoàn thành đưa vào khai thác lên tới hàng trăm nghìn tỷ đồng (với các đỉnh hoàn thành lớn nhất tại 2029-Q4 (1,403,989 tỷ), 2029-Q2 (1,106,313 tỷ), 2024-Q2 (987,052 tỷ)). Khi các dự án trọng điểm hoàn thành: (1) Dòng tiền thanh quyết toán được giải phóng từ Kho bạc về nhà thầu, doanh nghiệp hoàn trả nợ vay ngân hàng, thanh khoản hệ thống ngân hàng được bù đắp trở lại dồi dào; (2) Hạ tầng giao thông thông suốt giúp giảm chi phí logistics (chiếm ~16% GDP), tăng tốc độ chu chuyển tiền tệ (V), hạ áp lực lạm phát chi phí đẩy. Đây chính là cơ sở kinh tế vững chắc để Ngân hàng Nhà nước hạ Lãi suất Điều hành và lãi suất thị trường bước vào xu hướng GIẢM.",
       "strategic_implication": "KẾT LUẬN DỰ BÁO LÃI SUẤT: 1. Ngắn hạn (Quý hiện tại): Áp lực lãi suất duy trì TRUNG TÍNH ĐẾN GIẢM NHẸ do một số đoạn cao tốc đã về đích. 2. Trung hạn (2026 - 2027): XU HƯỚNG LÃI SUẤT GIẢM RÕ NÉT khi điểm rơi hoàn thành của các đại dự án nghìn tỷ đạt cực đại (2028-Q4). 3. Dài hạn (2028+): Cần theo dõi tiến độ khởi công Đường sắt tốc độ cao Bắc - Nam (67 tỷ USD) và Cảng Cần Giờ; nếu các siêu dự án này mở mới rầm rộ vào 2027-2028, chu kỳ thâm dụng vốn mới sẽ kích hoạt trở lại làm lãi suất đảo chiều tăng."
     },
     "sector_list": [
       {
         "sector": "Hạ tầng giao thông",
-        "count": 2541,
-        "capital_billion": 11523602.2,
-        "percent": 59.3
+        "count": 2542,
+        "capital_billion": 11532004.2,
+        "percent": 59.4
       },
       {
         "sector": "Năng lượng & Điện lực",
@@ -2449,9 +2443,9 @@
       },
       {
         "sector": "Đô thị & Nhà ở",
-        "count": 386,
-        "capital_billion": 1680755.3,
-        "percent": 8.7
+        "count": 385,
+        "capital_billion": 1672353.3,
+        "percent": 8.6
       },
       {
         "sector": "Thủy lợi & Ứng phó BĐKH",
@@ -3333,10 +3327,10 @@
       },
       {
         "quarter": "2023-Q3",
-        "absorption_billion": 546321.5,
+        "absorption_billion": 546310.1,
         "completion_billion": 50058.4,
         "cumulative_completed_billion": 643337.5,
-        "net_pressure_billion": 496263.1,
+        "net_pressure_billion": 496251.7,
         "ratio": 10.9,
         "rate_pressure_score": 85,
         "rate_trend": "TĂNG MẠNH",
@@ -3447,10 +3441,10 @@
       },
       {
         "quarter": "2023-Q4",
-        "absorption_billion": 584358.4,
+        "absorption_billion": 584333.5,
         "completion_billion": 81059.1,
         "cumulative_completed_billion": 724396.6,
-        "net_pressure_billion": 503299.3,
+        "net_pressure_billion": 503274.4,
         "ratio": 7.2,
         "rate_pressure_score": 85,
         "rate_trend": "TĂNG MẠNH",
@@ -3795,10 +3789,10 @@
       },
       {
         "quarter": "2024-Q1",
-        "absorption_billion": 531174.9,
+        "absorption_billion": 531349.5,
         "completion_billion": 145054.1,
         "cumulative_completed_billion": 869450.7,
-        "net_pressure_billion": 386120.8,
+        "net_pressure_billion": 386295.4,
         "ratio": 3.66,
         "rate_pressure_score": 85,
         "rate_trend": "TĂNG MẠNH",
@@ -4173,10 +4167,10 @@
       },
       {
         "quarter": "2024-Q2",
-        "absorption_billion": 467352.5,
+        "absorption_billion": 467669.9,
         "completion_billion": 987051.5,
         "cumulative_completed_billion": 1856502.2,
-        "net_pressure_billion": -519699.0,
+        "net_pressure_billion": -519381.6,
         "ratio": 0.47,
         "rate_pressure_score": -85,
         "rate_trend": "GIẢM MẠNH",
@@ -4827,11 +4821,11 @@
       },
       {
         "quarter": "2024-Q3",
-        "absorption_billion": 404147.0,
+        "absorption_billion": 404664.4,
         "completion_billion": 80406.2,
         "cumulative_completed_billion": 1936908.4,
-        "net_pressure_billion": 323740.8,
-        "ratio": 5.02,
+        "net_pressure_billion": 324258.2,
+        "ratio": 5.03,
         "rate_pressure_score": 85,
         "rate_trend": "TĂNG MẠNH",
         "completing_projects": [
@@ -5001,10 +4995,10 @@
       },
       {
         "quarter": "2024-Q4",
-        "absorption_billion": 394973.1,
+        "absorption_billion": 395725.7,
         "completion_billion": 154481.6,
         "cumulative_completed_billion": 2091390.0,
-        "net_pressure_billion": 240491.5,
+        "net_pressure_billion": 241244.1,
         "ratio": 2.56,
         "rate_pressure_score": 85,
         "rate_trend": "TĂNG MẠNH",
@@ -5571,10 +5565,10 @@
       },
       {
         "quarter": "2025-Q1",
-        "absorption_billion": 380058.8,
+        "absorption_billion": 381034.8,
         "completion_billion": 146400.1,
         "cumulative_completed_billion": 2237790.1,
-        "net_pressure_billion": 233658.7,
+        "net_pressure_billion": 234634.7,
         "ratio": 2.6,
         "rate_pressure_score": 85,
         "rate_trend": "TĂNG MẠNH",
@@ -6231,10 +6225,10 @@
       },
       {
         "quarter": "2025-Q2",
-        "absorption_billion": 364412.2,
+        "absorption_billion": 365541.6,
         "completion_billion": 426119.4,
         "cumulative_completed_billion": 2663909.5,
-        "net_pressure_billion": -61707.2,
+        "net_pressure_billion": -60577.8,
         "ratio": 0.86,
         "rate_pressure_score": -85,
         "rate_trend": "GIẢM MẠNH",
@@ -6819,11 +6813,11 @@
       },
       {
         "quarter": "2025-Q3",
-        "absorption_billion": 350513.4,
+        "absorption_billion": 351680.2,
         "completion_billion": 149462.8,
         "cumulative_completed_billion": 2813372.3,
-        "net_pressure_billion": 201050.6,
-        "ratio": 2.34,
+        "net_pressure_billion": 202217.4,
+        "ratio": 2.35,
         "rate_pressure_score": 85,
         "rate_trend": "TĂNG MẠNH",
         "completing_projects": [
@@ -7287,10 +7281,10 @@
       },
       {
         "quarter": "2025-Q4",
-        "absorption_billion": 353467.4,
+        "absorption_billion": 354545.3,
         "completion_billion": 375251.6,
         "cumulative_completed_billion": 3188623.9,
-        "net_pressure_billion": -21784.2,
+        "net_pressure_billion": -20706.3,
         "ratio": 0.94,
         "rate_pressure_score": -50,
         "rate_trend": "GIẢM NHẸ",
@@ -7863,10 +7857,10 @@
       },
       {
         "quarter": "2026-Q1",
-        "absorption_billion": 362408.3,
+        "absorption_billion": 363300.0,
         "completion_billion": 488374.4,
         "cumulative_completed_billion": 3676998.3,
-        "net_pressure_billion": -125966.1,
+        "net_pressure_billion": -125074.4,
         "ratio": 0.74,
         "rate_pressure_score": -85,
         "rate_trend": "GIẢM MẠNH",
@@ -8403,10 +8397,10 @@
       },
       {
         "quarter": "2026-Q2",
-        "absorption_billion": 393260.1,
+        "absorption_billion": 393921.5,
         "completion_billion": 456676.0,
         "cumulative_completed_billion": 4133674.3,
-        "net_pressure_billion": -63415.9,
+        "net_pressure_billion": -62754.5,
         "ratio": 0.86,
         "rate_pressure_score": -85,
         "rate_trend": "GIẢM MẠNH",
@@ -9177,11 +9171,11 @@
       },
       {
         "quarter": "2026-Q3",
-        "absorption_billion": 428013.1,
-        "completion_billion": 305844.7,
-        "cumulative_completed_billion": 4439519.0,
-        "net_pressure_billion": 122168.4,
-        "ratio": 1.4,
+        "absorption_billion": 428236.0,
+        "completion_billion": 300456.7,
+        "cumulative_completed_billion": 4434131.0,
+        "net_pressure_billion": 127779.3,
+        "ratio": 1.43,
         "rate_pressure_score": 85,
         "rate_trend": "TĂNG MẠNH",
         "completing_projects": [
@@ -9292,12 +9286,6 @@
             "name": "Dự án thành phần 5-Xây dựng đường Vành đai 3 đoạn qua tỉnh Bình Dương (bao gồm nút giao Tân Vạn và cầu Bình Gởi) thuộc Dự án đầu tư xây dựng đường Vành đai 3 Thành phố Hồ Chí Minh",
             "capital_billion": 5752.0,
             "sector": "Hạ tầng giao thông"
-          },
-          {
-            "code": "PR2300010269",
-            "name": "Dự án thành phần 2.1: Xây dựng đường song hành (đường đô thị) địa phận thành phố Hà Nội thuộc Dự án đầu tư xây dựng đường Vành đai 4 - Vùng Thủ đô Hà Nội",
-            "capital_billion": 5388.0,
-            "sector": "Đô thị & Nhà ở"
           },
           {
             "code": "PR2300013367",
@@ -9573,13 +9561,13 @@
       },
       {
         "quarter": "2026-Q4",
-        "absorption_billion": 482059.0,
-        "completion_billion": 445276.3,
-        "cumulative_completed_billion": 4884795.3,
-        "net_pressure_billion": 36782.7,
-        "ratio": 1.08,
-        "rate_pressure_score": 85,
-        "rate_trend": "TĂNG MẠNH",
+        "absorption_billion": 482011.8,
+        "completion_billion": 459066.3,
+        "cumulative_completed_billion": 4893197.3,
+        "net_pressure_billion": 22945.5,
+        "ratio": 1.05,
+        "rate_pressure_score": 50,
+        "rate_trend": "TĂNG NHẸ",
         "completing_projects": [
           {
             "code": "PR_LONG_THANH_G1",
@@ -9630,10 +9618,22 @@
             "sector": "Hạ tầng giao thông"
           },
           {
+            "code": "PR2600026009",
+            "name": "Dự án Đầu tư xây dựng đường Vành đai 2,5 các đoạn: Khu đô thị mới Dịch Vọng - Dương Đình Nghệ; Vũ Phạm Hàm - Trần Duy Hưng; Ngụy Như Kon Tum - Nguyễn Trãi, thành phố Hà Nội",
+            "capital_billion": 8402.0,
+            "sector": "Hạ tầng giao thông"
+          },
+          {
             "code": "PR_CAU_RACH_MIEU_2",
             "name": "Dự án Đầu tư xây dựng cầu Rạch Miễu 2 nối tỉnh Tiền Giang và Bến Tre",
             "capital_billion": 6810.0,
             "sector": "Cầu đường bộ"
+          },
+          {
+            "code": "PR2300010269",
+            "name": "Dự án thành phần 2.1: Xây dựng đường song hành (đường đô thị) địa phận thành phố Hà Nội thuộc Dự án đầu tư xây dựng đường Vành đai 4 - Vùng Thủ đô Hà Nội",
+            "capital_billion": 5388.0,
+            "sector": "Đô thị & Nhà ở"
           },
           {
             "code": "PR2300034197",
@@ -10281,10 +10281,10 @@
       },
       {
         "quarter": "2027-Q1",
-        "absorption_billion": 584230.9,
+        "absorption_billion": 583638.8,
         "completion_billion": 200689.2,
-        "cumulative_completed_billion": 5085484.5,
-        "net_pressure_billion": 383541.7,
+        "cumulative_completed_billion": 5093886.5,
+        "net_pressure_billion": 382949.6,
         "ratio": 2.91,
         "rate_pressure_score": 85,
         "rate_trend": "TĂNG MẠNH",
@@ -10851,10 +10851,10 @@
       },
       {
         "quarter": "2027-Q2",
-        "absorption_billion": 654458.5,
+        "absorption_billion": 653632.2,
         "completion_billion": 311471.3,
-        "cumulative_completed_billion": 5396955.8,
-        "net_pressure_billion": 342987.2,
+        "cumulative_completed_billion": 5405357.8,
+        "net_pressure_billion": 342160.9,
         "ratio": 2.1,
         "rate_pressure_score": 85,
         "rate_trend": "TĂNG MẠNH",
@@ -11619,11 +11619,11 @@
       },
       {
         "quarter": "2027-Q3",
-        "absorption_billion": 714860.4,
+        "absorption_billion": 713828.5,
         "completion_billion": 322359.2,
-        "cumulative_completed_billion": 5719315.0,
-        "net_pressure_billion": 392501.2,
-        "ratio": 2.22,
+        "cumulative_completed_billion": 5727717.0,
+        "net_pressure_billion": 391469.3,
+        "ratio": 2.21,
         "rate_pressure_score": 85,
         "rate_trend": "TĂNG MẠNH",
         "completing_projects": [
@@ -12117,10 +12117,10 @@
       },
       {
         "quarter": "2027-Q4",
-        "absorption_billion": 756365.8,
+        "absorption_billion": 755212.6,
         "completion_billion": 259636.0,
-        "cumulative_completed_billion": 5978951.0,
-        "net_pressure_billion": 496729.8,
+        "cumulative_completed_billion": 5987353.0,
+        "net_pressure_billion": 495576.6,
         "ratio": 2.91,
         "rate_pressure_score": 85,
         "rate_trend": "TĂNG MẠNH",
@@ -12789,10 +12789,10 @@
       },
       {
         "quarter": "2028-Q1",
-        "absorption_billion": 769879.2,
+        "absorption_billion": 768726.0,
         "completion_billion": 359578.7,
-        "cumulative_completed_billion": 6338529.7,
-        "net_pressure_billion": 410300.5,
+        "cumulative_completed_billion": 6346931.7,
+        "net_pressure_billion": 409147.3,
         "ratio": 2.14,
         "rate_pressure_score": 85,
         "rate_trend": "TĂNG MẠNH",
@@ -13413,10 +13413,10 @@
       },
       {
         "quarter": "2028-Q2",
-        "absorption_billion": 745023.0,
+        "absorption_billion": 743991.0,
         "completion_billion": 346385.6,
-        "cumulative_completed_billion": 6684915.3,
-        "net_pressure_billion": 398637.4,
+        "cumulative_completed_billion": 6693317.3,
+        "net_pressure_billion": 397605.4,
         "ratio": 2.15,
         "rate_pressure_score": 85,
         "rate_trend": "TĂNG MẠNH",
@@ -14427,10 +14427,10 @@
       },
       {
         "quarter": "2028-Q3",
-        "absorption_billion": 684311.9,
+        "absorption_billion": 683485.6,
         "completion_billion": 555739.5,
-        "cumulative_completed_billion": 7240654.8,
-        "net_pressure_billion": 128572.4,
+        "cumulative_completed_billion": 7249056.8,
+        "net_pressure_billion": 127746.1,
         "ratio": 1.23,
         "rate_pressure_score": 85,
         "rate_trend": "TĂNG MẠNH",
@@ -15117,10 +15117,10 @@
       },
       {
         "quarter": "2028-Q4",
-        "absorption_billion": 591860.3,
+        "absorption_billion": 591268.2,
         "completion_billion": 741318.8,
-        "cumulative_completed_billion": 7981973.6,
-        "net_pressure_billion": -149458.5,
+        "cumulative_completed_billion": 7990375.6,
+        "net_pressure_billion": -150050.6,
         "ratio": 0.8,
         "rate_pressure_score": -85,
         "rate_trend": "GIẢM MẠNH",
@@ -16221,10 +16221,10 @@
       },
       {
         "quarter": "2029-Q1",
-        "absorption_billion": 482754.6,
+        "absorption_billion": 482375.0,
         "completion_billion": 614289.3,
-        "cumulative_completed_billion": 8596262.9,
-        "net_pressure_billion": -131534.7,
+        "cumulative_completed_billion": 8604664.9,
+        "net_pressure_billion": -131914.3,
         "ratio": 0.79,
         "rate_pressure_score": -85,
         "rate_trend": "GIẢM MẠNH",
@@ -17043,11 +17043,11 @@
       },
       {
         "quarter": "2029-Q2",
-        "absorption_billion": 373432.6,
-        "completion_billion": 1114715.3,
-        "cumulative_completed_billion": 9710978.2,
-        "net_pressure_billion": -741282.7,
-        "ratio": 0.33,
+        "absorption_billion": 373214.7,
+        "completion_billion": 1106313.4,
+        "cumulative_completed_billion": 9710978.3,
+        "net_pressure_billion": -733098.7,
+        "ratio": 0.34,
         "rate_pressure_score": -85,
         "rate_trend": "GIẢM MẠNH",
         "completing_projects": [
@@ -17170,12 +17170,6 @@
             "name": "Đường giao thông trục ngang biển Văn Trị đến thôn Đông Văn, xã Đồng Tiến.",
             "capital_billion": 8567.0,
             "sector": "Hạ tầng giao thông"
-          },
-          {
-            "code": "PR2600026009",
-            "name": "Dự án Đầu tư xây dựng đường Vành đai 2,5 các đoạn: Khu đô thị mới Dịch Vọng - Dương Đình Nghệ; Vũ Phạm Hàm - Trần Duy Hưng; Ngụy Như Kon Tum - Nguyễn Trãi, thành phố Hà Nội",
-            "capital_billion": 8402.0,
-            "sector": "Đô thị & Nhà ở"
           },
           {
             "code": "PR2600002961",
@@ -17993,7 +17987,7 @@
         "quarter": "2029-Q3",
         "absorption_billion": 267677.6,
         "completion_billion": 610219.8,
-        "cumulative_completed_billion": 10321198.0,
+        "cumulative_completed_billion": 10321198.1,
         "net_pressure_billion": -342542.2,
         "ratio": 0.44,
         "rate_pressure_score": -85,
@@ -18851,7 +18845,7 @@
         "quarter": "2029-Q4",
         "absorption_billion": 187824.8,
         "completion_billion": 1403989.1,
-        "cumulative_completed_billion": 11725187.1,
+        "cumulative_completed_billion": 11725187.2,
         "net_pressure_billion": -1216164.3,
         "ratio": 0.13,
         "rate_pressure_score": -85,
@@ -19631,7 +19625,7 @@
         "quarter": "2030-Q1",
         "absorption_billion": 114491.1,
         "completion_billion": 679822.3,
-        "cumulative_completed_billion": 12405009.4,
+        "cumulative_completed_billion": 12405009.5,
         "net_pressure_billion": -565331.2,
         "ratio": 0.17,
         "rate_pressure_score": -85,
@@ -20081,7 +20075,7 @@
         "quarter": "2030-Q2",
         "absorption_billion": 72285.6,
         "completion_billion": 0.0,
-        "cumulative_completed_billion": 12405009.4,
+        "cumulative_completed_billion": 12405009.5,
         "net_pressure_billion": 72285.6,
         "ratio": 1445.71,
         "rate_pressure_score": 85,
@@ -20092,7 +20086,7 @@
         "quarter": "2030-Q3",
         "absorption_billion": 49854.5,
         "completion_billion": 0.0,
-        "cumulative_completed_billion": 12405009.4,
+        "cumulative_completed_billion": 12405009.5,
         "net_pressure_billion": 49854.5,
         "ratio": 997.09,
         "rate_pressure_score": 85,
@@ -20103,7 +20097,7 @@
         "quarter": "2030-Q4",
         "absorption_billion": 32358.4,
         "completion_billion": 129000.0,
-        "cumulative_completed_billion": 12534009.4,
+        "cumulative_completed_billion": 12534009.5,
         "net_pressure_billion": -96641.6,
         "ratio": 0.25,
         "rate_pressure_score": -85,

@@ -23,7 +23,7 @@ import {
 export const metadata: Metadata = {
   title: 'Đấu Thầu Y Tế (ETC), Cổ Phiếu Dược & Đại Dự Án ĐTC | Dữ Liệu Cổ Phiếu',
   description:
-    'Hệ thống đấu thầu Quốc gia: Theo dõi chi tiết các gói thầu trúng kênh ETC của các doanh nghiệp Dược niêm yết (DP1, DTP, DAN, TRA, CDP, DTG) dự phóng kết quả kinh doanh quý 3/2026, cùng tiến độ các đại dự án đầu tư công trọng điểm quy mô ≥ 500 tỷ từ Hệ thống Mua sắm công (Bộ KH&ĐT) và điểm đảo chiều lãi suất vĩ mô.',
+    'Hệ thống đấu thầu Quốc gia: Theo dõi chi tiết các gói thầu trúng kênh ETC của các doanh nghiệp Dược niêm yết (DP1, DTP, DAN, TRA, CDP, DTG) đối soát KQKD Quý 3/2026 thực tế và tiến độ Q4/2026, cùng 3.736 dự án đầu tư công trọng điểm quy mô ≥ 500 tỷ từ Hệ thống Mua sắm công (Bộ KH&ĐT) và điểm đảo chiều lãi suất vĩ mô.',
 };
 
 export default async function DauThauPage() {
@@ -59,7 +59,7 @@ export default async function DauThauPage() {
               <div className="flex items-center gap-2 text-xs font-semibold text-slate-400">
                 <span className="flex items-center gap-1.5 rounded-full border border-emerald-500/20 bg-emerald-500/10 px-3 py-1 text-emerald-400">
                   <span className="size-1.5 rounded-full bg-emerald-400 animate-pulse" />
-                  Dữ liệu Mua Sắm Công MPI 2026
+                  Dữ liệu Mua Sắm Công MPI 2026 • Cập nhật 12/11/2026
                 </span>
               </div>
             </div>
@@ -78,7 +78,7 @@ export default async function DauThauPage() {
                 <strong className="text-emerald-400">DP1</strong>, <strong className="text-emerald-400">DTP</strong>,{' '}
                 <strong className="text-emerald-400">DAN</strong>, <strong className="text-emerald-400">TRA</strong>,{' '}
                 <strong className="text-emerald-400">CDP</strong>, <strong className="text-emerald-400">DTG</strong> năm 2026{' '}
-                để dự phóng KQKD Quý 3/2026; kết hợp mô hình hấp thụ vốn 71 đại dự án đầu tư công và điểm đảo chiều lãi suất vĩ mô.
+                đối chiếu KQKD Quý 3/2026 thực tế &amp; gói thầu Q4/2026; kết hợp mô hình hấp thụ vốn 3.736 dự án đầu tư công và điểm đảo chiều lãi suất vĩ mô.
               </p>
             </div>
           </div>
@@ -89,11 +89,11 @@ export default async function DauThauPage() {
           <AuthGate
             variant="blur"
             blurHeight={360}
-            title="Mở khóa Dữ Liệu Đấu Thầu Y Tế & 71 Đại Dự Án ĐTC"
-            subtitle="Đăng nhập tài khoản miễn phí để tra cứu chi tiết danh mục gói thầu trúng của DP1, DTP, TRA... và tiến độ 71 dự án đầu tư công."
+            title="Mở khóa Dữ Liệu Đấu Thầu Y Tế & 3.736 Dự Án ĐTC"
+            subtitle="Đăng nhập tài khoản miễn phí để tra cứu chi tiết danh mục gói thầu trúng của DP1, DTP, TRA... và tiến độ 3.736 dự án đầu tư công."
             features={[
-              'Bóc tách chi tiết từng gói thầu trúng kênh ETC theo quý',
-              'Tiến độ hấp thụ vốn 71 đại dự án đầu tư công quy mô ≥ 500 tỷ',
+              'Bóc tách chi tiết từng gói thầu trúng kênh ETC theo quý (Q1–Q4/2026)',
+              'Tiến độ hấp thụ vốn 3.736 dự án đầu tư công quy mô ≥ 500 tỷ',
               'Đăng nhập tức thì bằng tài khoản Google',
             ]}
             ctaText="Đăng nhập để xem dữ liệu đấu thầu"

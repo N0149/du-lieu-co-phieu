@@ -1024,6 +1024,7 @@ export function WatchlistManager({
                     <td className="py-2.5 px-3">
                       <Link
                         href={`/stock/${s.ticker}`}
+                        prefetch={false}
                         className="flex items-center gap-1.5 font-mono font-black text-sm text-white group-hover:text-emerald-400 transition-colors"
                       >
                         <Star className="size-3 fill-amber-400 text-amber-400 shrink-0" />
@@ -1051,6 +1052,7 @@ export function WatchlistManager({
                     <td className="py-2.5 px-3">
                       <Link
                         href={`/stock/${s.ticker}`}
+                        prefetch={false}
                         className="block truncate max-w-[240px] text-xs text-[#9EACB9] hover:text-white transition-colors"
                         title={s.name}
                       >

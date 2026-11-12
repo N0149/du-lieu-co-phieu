@@ -4,6 +4,7 @@
 import crypto from 'crypto'
 import { createAdminClient, hasServiceRoleKey } from '@/lib/supabase/admin'
 import { createClient as createServerClient } from '@/lib/supabase/server'
+import { isVipUser } from '@/lib/admin-auth'
 
 export type PageViewEntry = {
   path: string
@@ -23,6 +24,10 @@ export type UserAdminInfo = {
   lastSignInAt?: string
   watchlistCount?: number
   isOnlineRecent?: boolean
+  isVip?: boolean
+  vipPlan?: string | null
+  vipUntil?: string | null
+  vipSince?: string | null
 }
 
 // In-Memory Ring Buffer lưu 500 lượt xem gần nhất
@@ -179,7 +184,7 @@ export async function getAllUsers(): Promise<{
     try {
       const { data, error } = await adminSb.auth.admin.listUsers({
         page: 1,
-        perPage: 500,
+        perPage: 1000,
       })
 
       if (!error && data?.users && data.users.length > 0) {
@@ -206,6 +211,14 @@ export async function getAllUsers(): Promise<{
         const users: UserAdminInfo[] = data.users.map((u) => {
           const lastSignIn = u.last_sign_in_at ? new Date(u.last_sign_in_at).getTime() : 0
           const isRecent = Date.now() - lastSignIn < 24 * 60 * 60 * 1000
+          const vipUntil =
+            u.app_metadata?.vip_until ||
+            u.user_metadata?.vip_until ||
+            u.app_metadata?.expires_at ||
+            u.user_metadata?.expires_at ||
+            null
+          const vipPlan = u.app_metadata?.plan || u.user_metadata?.plan || null
+          const vipSince = u.app_metadata?.vip_since || u.user_metadata?.vip_since || null
 
           return {
             id: u.id,
@@ -220,6 +233,10 @@ export async function getAllUsers(): Promise<{
             lastSignInAt: u.last_sign_in_at,
             watchlistCount: watchlistMap.get(u.id) || 0,
             isOnlineRecent: isRecent,
+            isVip: isVipUser(u),
+            vipPlan,
+            vipUntil,
+            vipSince,
           }
         })
 

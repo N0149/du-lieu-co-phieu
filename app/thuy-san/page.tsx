@@ -26,9 +26,9 @@ import {
 } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: 'Ngành Thủy Sản VASEP & So Sánh Kết Quả Kinh Doanh Quý 3/2026 | Dữ Liệu Cổ Phiếu',
+  title: 'Ngành Thủy Sản VASEP & BCTC Quý 3/2026 | Dữ Liệu Cổ Phiếu',
   description:
-    'Hệ thống dữ liệu ngành Thủy sản kết nối trực tiếp VASEP: Bóc tách kim ngạch xuất khẩu 9 tháng đầu năm, biến động giá nguyên liệu hàng tuần (cá tra, tôm, nghêu) và so sánh kết quả kinh doanh Quý 3/2026 của 12 cổ phiếu niêm yết (VHC, ANV, FMC, MPC, IDI, CAT, ABT, CMX, CCA, KHS, AAM, ACL).',
+    'Hệ thống dữ liệu ngành Thủy sản kết nối VASEP: Bóc tách kim ngạch xuất khẩu 10 tháng đầu năm 2026 (cập nhật T10/2026), biến động giá nguyên liệu hàng tuần (đầu T11/2026) và kết quả kinh doanh BCTC Quý 3/2026 của 12 cổ phiếu niêm yết (VHC, ANV, FMC, MPC, IDI, CAT, ABT, CMX, CCA, KHS, AAM, ACL).',
 };
 
 export default async function ThuySanPage() {
@@ -59,7 +59,7 @@ export default async function ThuySanPage() {
               <div className="flex items-center gap-2 text-xs font-semibold text-slate-400">
                 <span className="flex items-center gap-1.5 rounded-full border border-emerald-500/20 bg-emerald-500/10 px-3 py-1 text-emerald-400">
                   <span className="size-1.5 rounded-full bg-emerald-400 animate-pulse" />
-                  Dữ Liệu VASEP &amp; Tổng Cục Hải Quan Q3/2026
+                  Dữ Liệu VASEP T10/2026 &amp; BCTC Q3/2026
                 </span>
               </div>
             </div>
@@ -68,14 +68,14 @@ export default async function ThuySanPage() {
             <div className="max-w-4xl space-y-3">
               <div className="inline-flex items-center gap-2 rounded-full border border-emerald-500/30 bg-emerald-500/10 px-3.5 py-1 text-xs font-black text-emerald-400 shadow-sm shadow-emerald-500/10">
                 <Fish className="size-3.5" />
-                <span>CHỈ BÁO SỚM KẾT QUẢ KINH DOANH QUÝ 3/2026 TỪ VASEP</span>
+                <span>VASEP 10T/2026 &amp; BCTC CHÍNH THỨC QUÝ 3/2026</span>
               </div>
               <h1 className="text-2xl sm:text-4xl lg:text-5xl font-black tracking-tight text-white leading-tight">
                 Dữ Liệu Thủy Sản &amp; Kết Quả Kinh Doanh 12 Cổ Phiếu Niêm Yết
               </h1>
               <p className="text-sm sm:text-base text-slate-400 leading-relaxed max-w-3xl">
-                Bóc tách số liệu kim ngạch xuất khẩu 9 tháng đầu năm (cập nhật mới nhất Tháng 9/2026), diễn biến giá nguyên liệu hàng tuần từ VASEP
-                và so sánh trực diện triển vọng kết quả kinh doanh Quý 3/2026 của 12 cổ phiếu tiêu biểu:{' '}
+                Bóc tách số liệu kim ngạch xuất khẩu 10 tháng đầu năm (cập nhật mới nhất Tháng 10/2026), diễn biến giá nguyên liệu hàng tuần (cập nhật đầu T11/2026) từ VASEP
+                và tổng hợp kết quả kinh doanh BCTC Quý 3/2026 của 12 cổ phiếu tiêu biểu:{' '}
                 <strong className="text-white">VHC</strong>, <strong className="text-white">ANV</strong>,{' '}
                 <strong className="text-white">FMC</strong>, <strong className="text-white">MPC</strong>,{' '}
                 <strong className="text-white">IDI</strong>, <strong className="text-emerald-400">CAT</strong>,{' '}

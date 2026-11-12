@@ -34,6 +34,18 @@ export function UserNav() {
       setUser(currentUser)
       setLoading(false)
 
+      // 1b. Đồng bộ lại metadata mới nhất từ Supabase (đảm bảo VIP có hiệu lực ngay khi Admin vừa nâng cấp)
+      if (currentUser) {
+        supabase.auth.getUser().then(({ data: { user: freshUser } }) => {
+          if (!cancelled && freshUser) {
+            setUser(freshUser)
+            if (isVipUser(freshUser) !== isVipUser(currentUser)) {
+              supabase.auth.refreshSession().catch(() => {})
+            }
+          }
+        }).catch(() => {})
+      }
+
       // 2. Tự động đồng bộ nếu khách đã bấm mã ở localStorage trước khi đăng nhập
       if (currentUser) {
         const guestTickers = getGuestWatchlist()

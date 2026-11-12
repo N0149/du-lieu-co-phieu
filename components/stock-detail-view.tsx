@@ -2074,21 +2074,20 @@ export function StockDetailView({
       {/* ══════════════════════════════════════════════════════════ */}
       {mountedTabs.has('financials') && (
         <div className={cn("space-y-5 animate-in fade-in-50 duration-200", (activeTab !== 'financials' || loadingTab === 'financials') && "hidden")}>
-          {/* A. Kế Hoạch Kinh Doanh & Tỷ Lệ Hoàn Thành (1 năm / 3 năm / 5 năm / 10 năm) */}
+          {/* A. Kế Hoạch Kinh Doanh & Tỷ Lệ Hoàn Thành (1 năm / 3 năm / 5 năm / 10 năm) - YÊU CẦU ĐĂNG NHẬP */}
           <AuthGate
             isLoggedIn={effectiveIsLoggedIn}
-            isVip={effectiveIsVip}
-            requiredTier="vip"
+            requiredTier="member"
             variant="blur"
             blurHeight={130}
-            title="Mở khóa Kế Hoạch Kinh Doanh ĐHĐCĐ 10 Năm (VIP)"
-            subtitle="Dành riêng cho Hội viên VIP: Đối chiếu chi tiết chỉ tiêu ĐHĐCĐ giao và kết quả thực hiện thực tế qua các năm."
+            title="Đăng nhập để xem Kế Hoạch Kinh Doanh ĐHĐCĐ 10 Năm"
+            subtitle="Đăng nhập tài khoản miễn phí để đối chiếu chi tiết chỉ tiêu ĐHĐCĐ giao và kết quả thực hiện thực tế qua các năm."
             features={[
               'So sánh doanh thu, LNST kế hoạch vs thực hiện 10 năm liên tục',
               'Đánh giá mức độ trung thực và năng lực hoàn thành của Ban lãnh đạo',
               'Cập nhật tiến độ hoàn thành theo từng quý trong năm',
             ]}
-            ctaText="👑 Nâng cấp VIP để xem Kế hoạch kinh doanh"
+            ctaText="Đăng nhập để xem Kế hoạch kinh doanh"
           >
             <BusinessPlanComparison ticker={ticker} />
           </AuthGate>
@@ -2228,6 +2227,7 @@ export function StockDetailView({
                         <Link
                           key={s.t}
                           href={`/stock/${s.t}`}
+                          prefetch={false}
                           className="group flex flex-col justify-between rounded-xl border border-border bg-background p-3.5 transition-all hover:border-primary hover:shadow-xs"
                         >
                           <div>

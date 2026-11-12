@@ -481,6 +481,42 @@
         "scope": "Generic tổng hợp & Sinh phẩm",
         "duration_months": 24,
         "status": "Đang giao đợt 1"
+      },
+      {
+        "quarter": "Q4/2026",
+        "code": "IB2600049820",
+        "name": "Gói thầu mua sắm thuốc Biệt dược gốc và thuốc điều trị chuyên khoa tim mạch, ung bướu đợt bổ sung T11/2026",
+        "client": "Bệnh viện Trung ương Huế",
+        "pkg_price": 175000000000,
+        "win_price": 170200000000,
+        "award_date": "2026-11-11",
+        "scope": "Biệt dược gốc & Ung bướu",
+        "duration_months": 12,
+        "status": "Mới trúng thầu"
+      },
+      {
+        "quarter": "Q4/2026",
+        "code": "IB2600049150",
+        "name": "Cung ứng thuốc kháng sinh tiêm truyền và thuốc điều trị tích cực cho các cơ sở y tế tỉnh Đồng Nai",
+        "client": "Sở Y tế tỉnh Đồng Nai",
+        "pkg_price": 190000000000,
+        "win_price": 184800000000,
+        "award_date": "2026-11-06",
+        "scope": "Kháng sinh tiêm & Hồi sức",
+        "duration_months": 12,
+        "status": "Mới ký hợp đồng"
+      },
+      {
+        "quarter": "Q4/2026",
+        "code": "IB2600048420",
+        "name": "Mua sắm thuốc Generic Nhóm 1 phục vụ công tác khám chữa bệnh BHYT cuối năm 2026",
+        "client": "Bệnh viện E Trung ương",
+        "pkg_price": 135000000000,
+        "win_price": 131200000000,
+        "award_date": "2026-11-02",
+        "scope": "Thuốc Generic Nhóm 1",
+        "duration_months": 12,
+        "status": "Đang hoàn thiện hợp đồng"
       }
     ],
     "quarterly_financials_2026": {
@@ -519,23 +555,23 @@
         "status": "Dự báo mô hình (Kết thúc Quý 3/2026)"
       },
       "Q3_2026": {
-        "bidding_value_billion": 2050,
+        "bidding_value_billion": 2050.0,
         "bids_won_count": 312,
-        "net_revenue_billion": 679.5,
-        "revenue_yoy_growth_pct": 32.5,
-        "gross_profit_billion": 91,
-        "gross_margin_pct": 13.39,
-        "npat_billion": 40.1,
+        "net_revenue_billion": 679.51,
+        "revenue_yoy_growth_pct": 32.4,
+        "gross_profit_billion": 91.11,
+        "gross_margin_pct": 13.41,
+        "npat_billion": 40.08,
         "net_margin_pct": 5.9,
-        "accumulated_9m_revenue_billion": 1925,
-        "accumulated_9m_npat_billion": 106,
-        "plan_completion_profit_pct": 87,
-        "status": "Đã công bố BCTC (+32.5% YoY)"
+        "accumulated_9m_revenue_billion": 1925.76,
+        "accumulated_9m_npat_billion": 106.51,
+        "plan_completion_profit_pct": 87.0,
+        "status": "Đã công bố BCTC (+32.4% YoY)"
       },
       "Q4_2026": {
-        "bidding_value_billion": 1451.8,
-        "bids_won_count": 8,
-        "status": "Đang đấu thầu (T10/2026)"
+        "bidding_value_billion": 1938.0,
+        "bids_won_count": 11,
+        "status": "Đang đấu thầu (T10-T11/2026)"
       }
     }
   },
@@ -814,6 +850,30 @@
         "scope": "Tân dược tổng hợp & Dịch truyền",
         "duration_months": 18,
         "status": "Đang giao đợt 1"
+      },
+      {
+        "quarter": "Q4/2026",
+        "code": "IB2600049640",
+        "name": "Cung ứng thuốc Generic đa khoa và dung dịch truyền tĩnh mạch đợt 4/2026 khu vực phía Nam",
+        "client": "Bệnh viện Nhân dân 115",
+        "pkg_price": 165000000000,
+        "win_price": 160400000000,
+        "award_date": "2026-11-10",
+        "scope": "Generic & Dịch truyền",
+        "duration_months": 12,
+        "status": "Mới trúng thầu"
+      },
+      {
+        "quarter": "Q4/2026",
+        "code": "IB2600048790",
+        "name": "Gói thầu bổ sung thuốc điều trị nội trú giai đoạn 2026-2027 tại các trung tâm y tế",
+        "client": "Sở Y tế tỉnh Bình Dương",
+        "pkg_price": 148000000000,
+        "win_price": 143500000000,
+        "award_date": "2026-11-04",
+        "scope": "Tân dược thiết yếu",
+        "duration_months": 12,
+        "status": "Mới ký hợp đồng"
       }
     ],
     "quarterly_financials_2026": {
@@ -852,24 +912,23 @@
         "status": "Dự báo mô hình (Kết thúc Quý 3/2026)"
       },
       "Q3_2026": {
-        "bidding_value_billion": 1620,
+        "bidding_value_billion": 1620.0,
         "bids_won_count": 255,
         "net_revenue_billion": 687.52,
-        "revenue_yoy_growth_pct": 22.1,
+        "revenue_yoy_growth_pct": -10.4,
         "gross_profit_billion": 62.04,
         "gross_margin_pct": 9.02,
-        "npat_billion": 29.85,
-        "npat_yoy_growth_pct": 32.4,
-        "net_margin_pct": 4.34,
-        "accumulated_9m_revenue_billion": 1737.5,
-        "accumulated_9m_npat_billion": 75.15,
-        "plan_completion_profit_pct": 83,
-        "status": "Đã công bố BCTC (+22.1% YoY)"
+        "npat_billion": 9.17,
+        "npat_yoy_growth_pct": -0.3,
+        "net_margin_pct": 1.33,
+        "accumulated_9m_revenue_billion": 1980.64,
+        "accumulated_9m_npat_billion": 21.2,
+        "status": "Đã công bố BCTC (-10.4% YoY)"
       },
       "Q4_2026": {
-        "bidding_value_billion": 796.2,
-        "bids_won_count": 4,
-        "status": "Đang đấu thầu (T10/2026)"
+        "bidding_value_billion": 1100.1,
+        "bids_won_count": 6,
+        "status": "Đang đấu thầu (T10-T11/2026)"
       }
     }
   },
@@ -1493,6 +1552,18 @@
         "scope": "Đông y & Thảo dược",
         "duration_months": 12,
         "status": "Đang giao đợt 1"
+      },
+      {
+        "quarter": "Q4/2026",
+        "code": "IB2600049510",
+        "name": "Cung ứng thuốc dược liệu Nhóm 2, Nhóm 3 và thuốc bổ trợ tuần hoàn cho các bệnh viện tuyến tỉnh",
+        "client": "Sở Y tế tỉnh Bắc Ninh",
+        "pkg_price": 58000000000,
+        "win_price": 56400000000,
+        "award_date": "2026-11-09",
+        "scope": "Đông dược & Dược liệu",
+        "duration_months": 12,
+        "status": "Mới trúng thầu"
       }
     ],
     "quarterly_financials_2026": {
@@ -1531,9 +1602,23 @@
         "status": "Dự báo mô hình (Kết thúc Quý 3/2026)"
       },
       "Q4_2026": {
-        "bidding_value_billion": 160.6,
-        "bids_won_count": 3,
-        "status": "Đang đấu thầu (T10/2026)"
+        "bidding_value_billion": 217.0,
+        "bids_won_count": 4,
+        "status": "Đang đấu thầu (T10-T11/2026)"
+      },
+      "Q3_2026": {
+        "bidding_value_billion": 415.0,
+        "bids_won_count": 95,
+        "net_revenue_billion": 704.0,
+        "revenue_yoy_growth_pct": 4.0,
+        "gross_profit_billion": 364.0,
+        "gross_margin_pct": 51.7,
+        "npat_billion": 69.0,
+        "net_margin_pct": 9.8,
+        "accumulated_9m_revenue_billion": 2067.0,
+        "accumulated_9m_npat_billion": 197.0,
+        "plan_completion_profit_pct": 64.0,
+        "status": "Đã công bố BCTC (+4.0% YoY)"
       }
     }
   },
@@ -1930,6 +2015,18 @@
         "scope": "Khí dung & Ống uống phân liều",
         "duration_months": 12,
         "status": "Đang hoàn thiện hợp đồng"
+      },
+      {
+        "quarter": "Q4/2026",
+        "code": "IB2600049710",
+        "name": "Gói thầu cung cấp thuốc nhỏ mắt đơn liều không chất bảo quản và ống xịt định liều công nghệ BFS",
+        "client": "Bệnh viện Mắt TP. Hồ Chí Minh",
+        "pkg_price": 78000000000,
+        "win_price": 75800000000,
+        "award_date": "2026-11-10",
+        "scope": "Thuốc nhỏ mắt BFS",
+        "duration_months": 12,
+        "status": "Mới trúng thầu"
       }
     ],
     "quarterly_financials_2026": {
@@ -1968,9 +2065,23 @@
         "status": "Dự báo mô hình (Kết thúc Quý 3/2026)"
       },
       "Q4_2026": {
-        "bidding_value_billion": 172,
-        "bids_won_count": 2,
-        "status": "Đang đấu thầu (T10/2026)"
+        "bidding_value_billion": 247.8,
+        "bids_won_count": 3,
+        "status": "Đang đấu thầu (T10-T11/2026)"
+      },
+      "Q3_2026": {
+        "bidding_value_billion": 490.0,
+        "bids_won_count": 128,
+        "net_revenue_billion": 476.37,
+        "revenue_yoy_growth_pct": 14.1,
+        "gross_profit_billion": 253.4,
+        "gross_margin_pct": 53.19,
+        "npat_billion": 74.94,
+        "npat_yoy_growth_pct": -24.4,
+        "net_margin_pct": 15.73,
+        "accumulated_9m_revenue_billion": 1351.61,
+        "accumulated_9m_npat_billion": 187.74,
+        "status": "Đã công bố BCTC (+14.1% YoY)"
       }
     }
   },
@@ -2226,6 +2337,18 @@
         "scope": "Generic tổng hợp",
         "duration_months": 18,
         "status": "Đang giao đợt 1"
+      },
+      {
+        "quarter": "Q4/2026",
+        "code": "IB2600049380",
+        "name": "Cung ứng thuốc đặc trị, thuốc đông dược và generic phục vụ khám chữa bệnh BHYT đợt cuối 2026",
+        "client": "Bệnh viện C Đà Nẵng",
+        "pkg_price": 82000000000,
+        "win_price": 79500000000,
+        "award_date": "2026-11-08",
+        "scope": "Thuốc đặc trị & Generic",
+        "duration_months": 12,
+        "status": "Mới trúng thầu"
       }
     ],
     "quarterly_financials_2026": {
@@ -2264,9 +2387,22 @@
         "status": "Dự báo mô hình (Kết thúc Quý 3/2026)"
       },
       "Q4_2026": {
-        "bidding_value_billion": 252.4,
-        "bids_won_count": 2,
-        "status": "Đang đấu thầu (T10/2026)"
+        "bidding_value_billion": 331.9,
+        "bids_won_count": 3,
+        "status": "Đang đấu thầu (T10-T11/2026)"
+      },
+      "Q3_2026": {
+        "bidding_value_billion": 245.0,
+        "bids_won_count": 74,
+        "net_revenue_billion": 245.49,
+        "revenue_yoy_growth_pct": 50.3,
+        "gross_profit_billion": 127.3,
+        "gross_margin_pct": 51.86,
+        "npat_billion": 49.0,
+        "npat_yoy_growth_pct": 105.0,
+        "net_margin_pct": 19.96,
+        "accumulated_9m_revenue_billion": 571.9,
+        "status": "Đã công bố BCTC (+50.3% YoY)"
       }
     }
   },
@@ -2521,6 +2657,18 @@
         "scope": "Tân dược tổng hợp",
         "duration_months": 12,
         "status": "Đang hoàn thiện hợp đồng"
+      },
+      {
+        "quarter": "Q4/2026",
+        "code": "IB2600049210",
+        "name": "Cung ứng thuốc thiết yếu nhóm thần kinh, kháng sinh và tiêu hóa tuyến cơ sở",
+        "client": "Sở Y tế tỉnh Long An",
+        "pkg_price": 46000000000,
+        "win_price": 44500000000,
+        "award_date": "2026-11-07",
+        "scope": "Thuốc thiết yếu & Kháng sinh",
+        "duration_months": 12,
+        "status": "Mới trúng thầu"
       }
     ],
     "quarterly_financials_2026": {
@@ -2559,9 +2707,23 @@
         "status": "Dự báo mô hình (Kết thúc Quý 3/2026)"
       },
       "Q4_2026": {
-        "bidding_value_billion": 119.4,
-        "bids_won_count": 2,
-        "status": "Đang đấu thầu (T10/2026)"
+        "bidding_value_billion": 163.9,
+        "bids_won_count": 3,
+        "status": "Đang đấu thầu (T10-T11/2026)"
+      },
+      "Q3_2026": {
+        "bidding_value_billion": 185.0,
+        "bids_won_count": 52,
+        "net_revenue_billion": 73.0,
+        "revenue_yoy_growth_pct": 6.3,
+        "gross_profit_billion": 17.93,
+        "gross_margin_pct": 24.56,
+        "npat_billion": 7.27,
+        "npat_yoy_growth_pct": 698.3,
+        "net_margin_pct": 9.97,
+        "accumulated_9m_revenue_billion": 221.93,
+        "accumulated_9m_npat_billion": 20.29,
+        "status": "Đã công bố BCTC (+6.3% YoY)"
       }
     }
   },

@@ -240,7 +240,7 @@ export function StockCardGrid({
                     )}
                   >
                     <td className="px-3.5 py-2.5 font-mono font-bold text-emerald-400 sticky left-0 bg-[#212631]">
-                      <Link href={`/stock/${stock.t}`} className="hover:underline flex items-center gap-1">
+                      <Link href={`/stock/${stock.t}`} prefetch={false} className="hover:underline flex items-center gap-1">
                         <span>{stock.t}</span>
                         {stock.port && (
                           <span className="rounded bg-amber-500/10 px-1 py-0.2 text-[8.5px] font-bold text-amber-400">
@@ -250,7 +250,7 @@ export function StockCardGrid({
                       </Link>
                     </td>
                     <td className="px-3.5 py-2.5 text-foreground/90 font-medium">
-                      <Link href={`/stock/${stock.t}`} className="hover:text-primary hover:underline line-clamp-1">
+                      <Link href={`/stock/${stock.t}`} prefetch={false} className="hover:text-primary hover:underline line-clamp-1">
                         {stock.n}
                       </Link>
                     </td>

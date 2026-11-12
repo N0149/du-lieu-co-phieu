@@ -104,6 +104,7 @@ export default function RootLayout({
                       { href_matches: '/*' },
                       { not: { href_matches: '/api/*' } },
                       { not: { href_matches: '/admin/*' } },
+                      { not: { href_matches: '/stock/*' } },
                     ],
                   },
                   eagerness: 'moderate',

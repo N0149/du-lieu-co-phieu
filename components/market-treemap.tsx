@@ -125,6 +125,7 @@ export function MarketTreemap({ stocks, manifestData, onSelectSector }: MarketTr
                     <Link
                       key={stk.t}
                       href={`/stock/${stk.t}`}
+                      prefetch={false}
                       onMouseEnter={() => setHoveredTicker(stk.t)}
                       onMouseLeave={() => setHoveredTicker(null)}
                       style={{ backgroundColor: bg }}

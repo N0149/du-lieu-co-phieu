@@ -1,66 +1,12 @@
 [
   {
-    "id": 26728,
-    "title": "Cập nhật Section 301: Mỹ lùi hạn kết luận điều tra Sở hữu trí tuệ (IP) với Việt Nam - Tích cực trong ngắn hạn",
-    "source": "SHS",
-    "date": "2026-11-09T00:00:00.000Z",
-    "url": "https://cdn02.wigroup.vn/baocaophantich/ar_27068_SHS_2026-11-09.pdf",
-    "category": "Báo cáo Vĩ mô",
-    "created_at": "2026-11-11T19:57:46.718Z"
-  },
-  {
-    "id": 26736,
-    "title": "Báo cáo triển vọng vĩ mô tháng 11/2026",
-    "source": "TPS",
-    "date": "2026-11-09T00:00:00.000Z",
-    "url": "https://cdn02.wigroup.vn/baocaophantich/ar_27070_TPS_2026-11-11.pdf",
-    "category": "Báo cáo Vĩ mô",
-    "created_at": "2026-11-11T19:57:46.718Z"
-  },
-  {
-    "id": 26706,
-    "title": "NHNN mua ngoại tệ giao ngay: Bơm VND dài hạn, hỗ trợ giảm lãi suất",
-    "source": "ACBS",
-    "date": "2026-11-10T00:00:00.000Z",
-    "url": "https://cdn02.wigroup.vn/baocaophantich/ar_27057_ACBS_2026-11-10.pdf",
-    "category": "Báo cáo Vĩ mô",
-    "created_at": "2026-11-11T19:57:46.718Z"
-  },
-  {
-    "id": 26745,
-    "title": "NHNN mua USD: đặt sàn tỷ giá, mở van thanh khoản hỗ trợ giảm lãi suất",
-    "source": "VNDS",
-    "date": "2026-11-10T00:00:00.000Z",
-    "url": "https://cdn02.wigroup.vn/baocaophantich/ar_27080_VNDS_2026-11-10.pdf",
-    "category": "Báo cáo Vĩ mô",
-    "created_at": "2026-11-11T19:57:46.718Z"
-  },
-  {
-    "id": 26727,
-    "title": "Báo cáo Kinh tế Vĩ mô - Tháng 10/2026",
-    "source": "PSI",
-    "date": "2026-11-10T00:00:00.000Z",
-    "url": "https://cdn02.wigroup.vn/baocaophantich/ar_27069_PSI_2026-11-10.pdf",
-    "category": "Báo cáo Vĩ mô",
-    "created_at": "2026-11-11T19:57:46.718Z"
-  },
-  {
-    "id": 26738,
-    "title": "Báo cáo vĩ mô tháng 10/2026",
-    "source": "VCBS",
-    "date": "2026-11-10T00:00:00.000Z",
-    "url": "https://cdn02.wigroup.vn/baocaophantich/ar_27075_VCBS_2026-11-10.pdf",
-    "category": "Báo cáo Vĩ mô",
-    "created_at": "2026-11-11T19:57:46.718Z"
-  },
-  {
     "id": 26714,
     "title": "Báo cáo kinh tế vĩ mô tháng 10 và mười tháng đầu năm 2026",
     "source": "CSI",
     "date": "2026-11-11T00:00:00.000Z",
     "url": "https://cdn02.wigroup.vn/baocaophantich/ar_27061_CSI_2026-11-11.pdf",
     "category": "Báo cáo Vĩ mô",
-    "created_at": "2026-11-11T19:57:46.718Z"
+    "created_at": "2026-11-12T13:00:17.978Z"
   },
   {
     "id": 26746,
@@ -69,7 +15,7 @@
     "date": "2026-11-11T00:00:00.000Z",
     "url": "https://cdn02.wigroup.vn/baocaophantich/ar_27089_YUANTA_2026-11-11.pdf",
     "category": "Báo cáo Vĩ mô",
-    "created_at": "2026-11-11T19:57:46.718Z"
+    "created_at": "2026-11-12T13:00:17.978Z"
   },
   {
     "id": 26739,
@@ -78,7 +24,160 @@
     "date": "2026-11-11T00:00:00.000Z",
     "url": "https://cdn02.wigroup.vn/baocaophantich/ar_27074_VCBS_2026-11-11.pdf",
     "category": "Báo cáo Vĩ mô",
-    "created_at": "2026-11-11T19:57:46.718Z"
+    "created_at": "2026-11-12T13:00:17.978Z"
+  },
+  {
+    "id": 26706,
+    "title": "NHNN mua ngoại tệ giao ngay: Bơm VND dài hạn, hỗ trợ giảm lãi suất",
+    "source": "ACBS",
+    "date": "2026-11-10T00:00:00.000Z",
+    "url": "https://cdn02.wigroup.vn/baocaophantich/ar_27057_ACBS_2026-11-10.pdf",
+    "category": "Báo cáo Vĩ mô",
+    "created_at": "2026-11-12T13:00:17.978Z"
+  },
+  {
+    "id": 26745,
+    "title": "NHNN mua USD: đặt sàn tỷ giá, mở van thanh khoản hỗ trợ giảm lãi suất",
+    "source": "VNDS",
+    "date": "2026-11-10T00:00:00.000Z",
+    "url": "https://cdn02.wigroup.vn/baocaophantich/ar_27080_VNDS_2026-11-10.pdf",
+    "category": "Báo cáo Vĩ mô",
+    "created_at": "2026-11-12T13:00:17.978Z"
+  },
+  {
+    "id": 26727,
+    "title": "Báo cáo Kinh tế Vĩ mô - Tháng 10/2026",
+    "source": "PSI",
+    "date": "2026-11-10T00:00:00.000Z",
+    "url": "https://cdn02.wigroup.vn/baocaophantich/ar_27069_PSI_2026-11-10.pdf",
+    "category": "Báo cáo Vĩ mô",
+    "created_at": "2026-11-12T13:00:17.978Z"
+  },
+  {
+    "id": 26738,
+    "title": "Báo cáo vĩ mô tháng 10/2026",
+    "source": "VCBS",
+    "date": "2026-11-10T00:00:00.000Z",
+    "url": "https://cdn02.wigroup.vn/baocaophantich/ar_27075_VCBS_2026-11-10.pdf",
+    "category": "Báo cáo Vĩ mô",
+    "created_at": "2026-11-12T13:00:17.978Z"
+  },
+  {
+    "id": 26693,
+    "title": "Báo cáo vĩ mô tháng 10/2026",
+    "source": "VFS",
+    "date": "2026-11-10T00:00:00.000Z",
+    "url": "https://cdn02.wigroup.vn/baocaophantich/ar_27045_VFS_2026-11-10.pdf",
+    "category": "Báo cáo Vĩ mô",
+    "created_at": "2026-11-12T13:00:17.978Z"
+  },
+  {
+    "id": 26678,
+    "title": "Thị trường tiền tệ: Ngân hàng Nhà nước triển khai hai biện pháp can thiệp ngoại hối",
+    "source": "KAFI",
+    "date": "2026-11-10T00:00:00.000Z",
+    "url": "https://cdn02.wigroup.vn/baocaophantich/ar_27020_KAFI_2026-11-10.pdf",
+    "category": "Báo cáo Vĩ mô",
+    "created_at": "2026-11-12T13:00:17.978Z"
+  },
+  {
+    "id": 26670,
+    "title": "NHNN mua ngoại tệ: tín hiệu thanh khoản cho cổ phiếu",
+    "source": "AAS",
+    "date": "2026-11-10T00:00:00.000Z",
+    "url": "https://cdn02.wigroup.vn/baocaophantich/ar_27013_AAS_2026-11-10.pdf",
+    "category": "Báo cáo Vĩ mô",
+    "created_at": "2026-11-12T13:00:17.978Z"
+  },
+  {
+    "id": 26728,
+    "title": "Cập nhật Section 301: Mỹ lùi hạn kết luận điều tra Sở hữu trí tuệ (IP) với Việt Nam - Tích cực trong ngắn hạn",
+    "source": "SHS",
+    "date": "2026-11-09T00:00:00.000Z",
+    "url": "https://cdn02.wigroup.vn/baocaophantich/ar_27068_SHS_2026-11-09.pdf",
+    "category": "Báo cáo Vĩ mô",
+    "created_at": "2026-11-12T13:00:17.978Z"
+  },
+  {
+    "id": 26736,
+    "title": "Báo cáo triển vọng vĩ mô tháng 11/2026",
+    "source": "TPS",
+    "date": "2026-11-09T00:00:00.000Z",
+    "url": "https://cdn02.wigroup.vn/baocaophantich/ar_27070_TPS_2026-11-11.pdf",
+    "category": "Báo cáo Vĩ mô",
+    "created_at": "2026-11-12T13:00:17.978Z"
+  },
+  {
+    "id": 26675,
+    "title": "Báo cáo vĩ mô tháng 10/2026",
+    "source": "BVSC",
+    "date": "2026-11-09T00:00:00.000Z",
+    "url": "https://cdn02.wigroup.vn/baocaophantich/ar_27016_BVSC_2026-11-09.pdf",
+    "category": "Báo cáo Vĩ mô",
+    "created_at": "2026-11-12T13:00:17.978Z"
+  },
+  {
+    "id": 26661,
+    "title": "Sản xuất và xuất khẩu giữ nhịp, áp lực giá vẫn hiện hữu",
+    "source": "OCBS",
+    "date": "2026-11-09T00:00:00.000Z",
+    "url": "https://cdn02.wigroup.vn/baocaophantich/ar_26992_OCBS_2026-11-09.pdf",
+    "category": "Báo cáo Vĩ mô",
+    "created_at": "2026-11-12T13:00:17.978Z"
+  },
+  {
+    "id": 26696,
+    "title": "Thặng dư thương mại tháng 10 đạt mức cao kỷ lục",
+    "source": "Vietcap",
+    "date": "2026-11-06T00:00:00.000Z",
+    "url": "https://cdn02.wigroup.vn/baocaophantich/ar_27031_Vietcap_2026-11-09.pdf",
+    "category": "Báo cáo Vĩ mô",
+    "created_at": "2026-11-12T13:00:17.978Z"
+  },
+  {
+    "id": 26652,
+    "title": "Cập nhật thông tin liên quan hoạt động cổ phần hóa thoái vốn Doanh nghiệp Nhà nước giai đoạn 2026-2030",
+    "source": "BSC",
+    "date": "2026-11-06T00:00:00.000Z",
+    "url": "https://cdn02.wigroup.vn/baocaophantich/ar_26989_BSC_2026-11-06.pdf",
+    "category": "Báo cáo Vĩ mô",
+    "created_at": "2026-11-12T13:00:17.978Z"
+  },
+  {
+    "id": 26543,
+    "title": "Báo cáo sự kiện - Bầu cử giữa kỳ Mỹ 2026: Thay đổi cán cân quyền lực nhưng khó thay đổi các xu hướng lớn",
+    "source": "VNDS",
+    "date": "2026-11-06T00:00:00.000Z",
+    "url": "https://cdn02.wigroup.vn/baocaophantich/ar_26957_VNDS_2026-11-06.pdf",
+    "category": "Báo cáo Vĩ mô",
+    "created_at": "2026-11-12T13:00:17.978Z"
+  },
+  {
+    "id": 26542,
+    "title": "Báo cáo vĩ mô Tháng 10/2026",
+    "source": "VIKKIBANKS",
+    "date": "2026-11-06T00:00:00.000Z",
+    "url": "https://cdn02.wigroup.vn/baocaophantich/ar_26945_VIKKIBANKS_2026-11-06.pdf",
+    "category": "Báo cáo Vĩ mô",
+    "created_at": "2026-11-12T13:00:17.978Z"
+  },
+  {
+    "id": 26540,
+    "title": "Báo cáo Thị trường Tiền tệ T10/2026: Mặt bằng lãi suất huy động hạ nhiệt",
+    "source": "MBS",
+    "date": "2026-11-06T00:00:00.000Z",
+    "url": "https://cdn02.wigroup.vn/baocaophantich/ar_26956_MBS_2026-11-06.pdf",
+    "category": "Báo cáo Vĩ mô",
+    "created_at": "2026-11-12T13:00:17.978Z"
+  },
+  {
+    "id": 26539,
+    "title": "10M26: Xuất khẩu vươn lên dẫn dắt đà tăng trưởng kinh tế Việt Nam",
+    "source": "KIS",
+    "date": "2026-11-06T00:00:00.000Z",
+    "url": "https://cdn02.wigroup.vn/baocaophantich/ar_26923_KIS_2026-11-06.pdf",
+    "category": "Báo cáo Vĩ mô",
+    "created_at": "2026-11-12T13:00:17.978Z"
   },
   {
     "id": 26677,
@@ -87,7 +186,7 @@
     "date": "2026-11-05T00:00:00.000Z",
     "url": "https://cdn02.wigroup.vn/baocaophantich/ar_26866_CTS_2026-11-05.pdf",
     "category": "Báo cáo Vĩ mô",
-    "created_at": "2026-11-10T20:10:37.660Z"
+    "created_at": "2026-11-12T13:00:17.978Z"
   },
   {
     "id": 26697,
@@ -99,76 +198,13 @@
     "created_at": "2026-11-10T20:10:37.660Z"
   },
   {
-    "id": 26696,
-    "title": "Thặng dư thương mại tháng 10 đạt mức cao kỷ lục",
-    "source": "Vietcap",
-    "date": "2026-11-06T00:00:00.000Z",
-    "url": "https://cdn02.wigroup.vn/baocaophantich/ar_27031_Vietcap_2026-11-09.pdf",
-    "category": "Báo cáo Vĩ mô",
-    "created_at": "2026-11-10T20:10:37.660Z"
-  },
-  {
-    "id": 26675,
-    "title": "Báo cáo vĩ mô tháng 10/2026",
-    "source": "BVSC",
-    "date": "2026-11-09T00:00:00.000Z",
-    "url": "https://cdn02.wigroup.vn/baocaophantich/ar_27016_BVSC_2026-11-09.pdf",
-    "category": "Báo cáo Vĩ mô",
-    "created_at": "2026-11-10T20:10:37.660Z"
-  },
-  {
-    "id": 26693,
-    "title": "Báo cáo vĩ mô tháng 10/2026",
-    "source": "VFS",
-    "date": "2026-11-10T00:00:00.000Z",
-    "url": "https://cdn02.wigroup.vn/baocaophantich/ar_27045_VFS_2026-11-10.pdf",
-    "category": "Báo cáo Vĩ mô",
-    "created_at": "2026-11-10T20:10:37.660Z"
-  },
-  {
-    "id": 26678,
-    "title": "Thị trường tiền tệ: Ngân hàng Nhà nước triển khai hai biện pháp can thiệp ngoại hối",
-    "source": "KAFI",
-    "date": "2026-11-10T00:00:00.000Z",
-    "url": "https://cdn02.wigroup.vn/baocaophantich/ar_27020_KAFI_2026-11-10.pdf",
-    "category": "Báo cáo Vĩ mô",
-    "created_at": "2026-11-10T20:10:37.660Z"
-  },
-  {
-    "id": 26670,
-    "title": "NHNN mua ngoại tệ: tín hiệu thanh khoản cho cổ phiếu",
-    "source": "AAS",
-    "date": "2026-11-10T00:00:00.000Z",
-    "url": "https://cdn02.wigroup.vn/baocaophantich/ar_27013_AAS_2026-11-10.pdf",
-    "category": "Báo cáo Vĩ mô",
-    "created_at": "2026-11-10T20:10:37.660Z"
-  },
-  {
-    "id": 26652,
-    "title": "Cập nhật thông tin liên quan hoạt động cổ phần hóa thoái vốn Doanh nghiệp Nhà nước giai đoạn 2026-2030",
-    "source": "BSC",
-    "date": "2026-11-06T00:00:00.000Z",
-    "url": "https://cdn02.wigroup.vn/baocaophantich/ar_26989_BSC_2026-11-06.pdf",
-    "category": "Báo cáo Vĩ mô",
-    "created_at": "2026-11-10T13:00:25.716Z"
-  },
-  {
-    "id": 26661,
-    "title": "Sản xuất và xuất khẩu giữ nhịp, áp lực giá vẫn hiện hữu",
-    "source": "OCBS",
-    "date": "2026-11-09T00:00:00.000Z",
-    "url": "https://cdn02.wigroup.vn/baocaophantich/ar_26992_OCBS_2026-11-09.pdf",
-    "category": "Báo cáo Vĩ mô",
-    "created_at": "2026-11-10T13:00:25.716Z"
-  },
-  {
     "id": 26536,
     "title": "Tác động của chính sách NHNN hoán đổi ngoại tệ 182 ngày",
     "source": "ABS",
     "date": "2026-11-05T00:00:00.000Z",
     "url": "https://cdn02.wigroup.vn/baocaophantich/ar_26926_ABS_2026-11-06.pdf",
     "category": "Báo cáo Vĩ mô",
-    "created_at": "2026-11-06T19:49:08.536Z"
+    "created_at": "2026-11-12T13:00:17.978Z"
   },
   {
     "id": 26541,
@@ -177,7 +213,7 @@
     "date": "2026-11-05T00:00:00.000Z",
     "url": "https://cdn02.wigroup.vn/baocaophantich/ar_26937_VDS_2026-11-05.pdf",
     "category": "Báo cáo Vĩ mô",
-    "created_at": "2026-11-06T19:49:08.536Z"
+    "created_at": "2026-11-12T13:00:17.978Z"
   },
   {
     "id": 26537,
@@ -186,7 +222,7 @@
     "date": "2026-11-05T00:00:00.000Z",
     "url": "https://cdn02.wigroup.vn/baocaophantich/ar_26929_ABS_2026-11-06.pdf",
     "category": "Báo cáo Vĩ mô",
-    "created_at": "2026-11-06T19:49:08.536Z"
+    "created_at": "2026-11-12T13:00:17.978Z"
   },
   {
     "id": 26538,
@@ -198,40 +234,13 @@
     "created_at": "2026-11-06T19:49:08.535Z"
   },
   {
-    "id": 26543,
-    "title": "Báo cáo sự kiện - Bầu cử giữa kỳ Mỹ 2026: Thay đổi cán cân quyền lực nhưng khó thay đổi các xu hướng lớn",
-    "source": "VNDS",
-    "date": "2026-11-06T00:00:00.000Z",
-    "url": "https://cdn02.wigroup.vn/baocaophantich/ar_26957_VNDS_2026-11-06.pdf",
+    "id": 26433,
+    "title": "Báo cáo chuyên đề: Bầu cử nhiệm kỳ Mỹ 2026",
+    "source": "CTS",
+    "date": "2026-11-05T00:00:00.000Z",
+    "url": "https://cdn02.wigroup.vn/baocaophantich/ar_26860_CTS_2026-11-05.pdf",
     "category": "Báo cáo Vĩ mô",
-    "created_at": "2026-11-06T19:49:08.535Z"
-  },
-  {
-    "id": 26542,
-    "title": "Báo cáo vĩ mô Tháng 10/2026",
-    "source": "VIKKIBANKS",
-    "date": "2026-11-06T00:00:00.000Z",
-    "url": "https://cdn02.wigroup.vn/baocaophantich/ar_26945_VIKKIBANKS_2026-11-06.pdf",
-    "category": "Báo cáo Vĩ mô",
-    "created_at": "2026-11-06T19:49:08.535Z"
-  },
-  {
-    "id": 26540,
-    "title": "Báo cáo Thị trường Tiền tệ T10/2026: Mặt bằng lãi suất huy động hạ nhiệt",
-    "source": "MBS",
-    "date": "2026-11-06T00:00:00.000Z",
-    "url": "https://cdn02.wigroup.vn/baocaophantich/ar_26956_MBS_2026-11-06.pdf",
-    "category": "Báo cáo Vĩ mô",
-    "created_at": "2026-11-06T19:49:08.535Z"
-  },
-  {
-    "id": 26539,
-    "title": "10M26: Xuất khẩu vươn lên dẫn dắt đà tăng trưởng kinh tế Việt Nam",
-    "source": "KIS",
-    "date": "2026-11-06T00:00:00.000Z",
-    "url": "https://cdn02.wigroup.vn/baocaophantich/ar_26923_KIS_2026-11-06.pdf",
-    "category": "Báo cáo Vĩ mô",
-    "created_at": "2026-11-06T19:49:08.535Z"
+    "created_at": "2026-11-12T13:00:17.978Z"
   },
   {
     "id": 26449,
@@ -261,13 +270,31 @@
     "created_at": "2026-11-06T13:00:37.651Z"
   },
   {
-    "id": 26433,
-    "title": "Báo cáo chuyên đề: Bầu cử nhiệm kỳ Mỹ 2026",
-    "source": "CTS",
-    "date": "2026-11-05T00:00:00.000Z",
-    "url": "https://cdn02.wigroup.vn/baocaophantich/ar_26860_CTS_2026-11-05.pdf",
+    "id": 26410,
+    "title": "Báo cáo vĩ mô tháng 10/2026: Áp lực lạm phát dai dẳng",
+    "source": "DSC",
+    "date": "2026-11-04T00:00:00.000Z",
+    "url": "https://cdn02.wigroup.vn/baocaophantich/ar_26840_DSC_2026-11-04.pdf",
     "category": "Báo cáo Vĩ mô",
-    "created_at": "2026-11-06T13:00:37.651Z"
+    "created_at": "2026-11-04T13:00:44.783Z"
+  },
+  {
+    "id": 26413,
+    "title": "Kinh tế Việt Nam: Đánh giá các động lực tăng trưởng và cập nhật kỳ vọng định hướng chính sách",
+    "source": "MAS",
+    "date": "2026-11-04T00:00:00.000Z",
+    "url": "https://cdn02.wigroup.vn/baocaophantich/ar_26837_MAS_2026-11-04.pdf",
+    "category": "Báo cáo Vĩ mô",
+    "created_at": "2026-11-04T13:00:44.783Z"
+  },
+  {
+    "id": 26409,
+    "title": "Cập nhật kinh tế vĩ mô 10 tháng năm 2026",
+    "source": "AGRISECO",
+    "date": "2026-11-04T00:00:00.000Z",
+    "url": "https://cdn02.wigroup.vn/baocaophantich/ar_26834_AGRISECO_2026-11-04.pdf",
+    "category": "Báo cáo Vĩ mô",
+    "created_at": "2026-11-04T13:00:44.783Z"
   },
   {
     "id": 26399,
@@ -297,42 +324,6 @@
     "created_at": "2026-11-04T13:00:44.783Z"
   },
   {
-    "id": 26410,
-    "title": "Báo cáo vĩ mô tháng 10/2026: Áp lực lạm phát dai dẳng",
-    "source": "DSC",
-    "date": "2026-11-04T00:00:00.000Z",
-    "url": "https://cdn02.wigroup.vn/baocaophantich/ar_26840_DSC_2026-11-04.pdf",
-    "category": "Báo cáo Vĩ mô",
-    "created_at": "2026-11-04T13:00:44.783Z"
-  },
-  {
-    "id": 26413,
-    "title": "Kinh tế Việt Nam: Đánh giá các động lực tăng trưởng và cập nhật kỳ vọng định hướng chính sách",
-    "source": "MAS",
-    "date": "2026-11-04T00:00:00.000Z",
-    "url": "https://cdn02.wigroup.vn/baocaophantich/ar_26837_MAS_2026-11-04.pdf",
-    "category": "Báo cáo Vĩ mô",
-    "created_at": "2026-11-04T13:00:44.783Z"
-  },
-  {
-    "id": 26409,
-    "title": "Cập nhật kinh tế vĩ mô 10 tháng năm 2026",
-    "source": "AGRISECO",
-    "date": "2026-11-04T00:00:00.000Z",
-    "url": "https://cdn02.wigroup.vn/baocaophantich/ar_26834_AGRISECO_2026-11-04.pdf",
-    "category": "Báo cáo Vĩ mô",
-    "created_at": "2026-11-04T13:00:44.783Z"
-  },
-  {
-    "id": 26272,
-    "title": "Tăng trưởng mạnh trước áp lực lạm phát",
-    "source": "SSV",
-    "date": "2026-10-22T00:00:00.000Z",
-    "url": "https://cdn02.wigroup.vn/baocaophantich/ar_26683_SSV_2026-10-29.pdf",
-    "category": "Báo cáo Vĩ mô",
-    "created_at": "2026-10-31T13:01:18.719Z"
-  },
-  {
     "id": 26273,
     "title": "Tăng trưởng mạnh trước áp lực lạm phát - Tháng 9/2026",
     "source": "SSV",
@@ -351,13 +342,22 @@
     "created_at": "2026-10-30T13:00:39.635Z"
   },
   {
-    "id": 26075,
-    "title": "Thị trường lao động Việt Nam cải thiện trong bối cảnh tăng trưởng kinh tế tích cực",
-    "source": "Vietcap",
-    "date": "2026-10-20T00:00:00.000Z",
-    "url": "https://cdn02.wigroup.vn/baocaophantich/ar_26486_Vietcap_2026-10-22.pdf",
+    "id": 26086,
+    "title": "Báo cáo Vĩ mô & Thị trường tháng 10/2026",
+    "source": "EVS",
+    "date": "2026-10-23T00:00:00.000Z",
+    "url": "https://cdn02.wigroup.vn/baocaophantich/ar_26508_EVS_2026-10-23.pdf",
     "category": "Báo cáo Vĩ mô",
     "created_at": "2026-10-23T17:46:42.938Z"
+  },
+  {
+    "id": 26272,
+    "title": "Tăng trưởng mạnh trước áp lực lạm phát",
+    "source": "SSV",
+    "date": "2026-10-22T00:00:00.000Z",
+    "url": "https://cdn02.wigroup.vn/baocaophantich/ar_26683_SSV_2026-10-29.pdf",
+    "category": "Báo cáo Vĩ mô",
+    "created_at": "2026-10-31T13:01:18.719Z"
   },
   {
     "id": 26076,
@@ -369,11 +369,20 @@
     "created_at": "2026-10-23T17:46:42.938Z"
   },
   {
-    "id": 26086,
-    "title": "Báo cáo Vĩ mô & Thị trường tháng 10/2026",
-    "source": "EVS",
-    "date": "2026-10-23T00:00:00.000Z",
-    "url": "https://cdn02.wigroup.vn/baocaophantich/ar_26508_EVS_2026-10-23.pdf",
+    "id": 26025,
+    "title": "Báo cáo vĩ mô tháng 10/2026",
+    "source": "CTS",
+    "date": "2026-10-21T00:00:00.000Z",
+    "url": "https://cdn02.wigroup.vn/baocaophantich/ar_26458_CTS_2026-10-21.pdf",
+    "category": "Báo cáo Vĩ mô",
+    "created_at": "2026-10-22T17:56:49.965Z"
+  },
+  {
+    "id": 26075,
+    "title": "Thị trường lao động Việt Nam cải thiện trong bối cảnh tăng trưởng kinh tế tích cực",
+    "source": "Vietcap",
+    "date": "2026-10-20T00:00:00.000Z",
+    "url": "https://cdn02.wigroup.vn/baocaophantich/ar_26486_Vietcap_2026-10-22.pdf",
     "category": "Báo cáo Vĩ mô",
     "created_at": "2026-10-23T17:46:42.938Z"
   },
@@ -385,33 +394,6 @@
     "url": "https://cdn02.wigroup.vn/baocaophantich/ar_26450_YUANTA_2026-10-20.pdf",
     "category": "Báo cáo Vĩ mô",
     "created_at": "2026-10-22T17:56:49.965Z"
-  },
-  {
-    "id": 26025,
-    "title": "Báo cáo vĩ mô tháng 10/2026",
-    "source": "CTS",
-    "date": "2026-10-21T00:00:00.000Z",
-    "url": "https://cdn02.wigroup.vn/baocaophantich/ar_26458_CTS_2026-10-21.pdf",
-    "category": "Báo cáo Vĩ mô",
-    "created_at": "2026-10-22T17:56:49.965Z"
-  },
-  {
-    "id": 26021,
-    "title": "Báo cáo triển vọng vĩ mô tháng 10/2026",
-    "source": "TPS",
-    "date": "2026-10-09T00:00:00.000Z",
-    "url": "https://cdn02.wigroup.vn/baocaophantich/ar_26358_TPS_2026-10-09.pdf",
-    "category": "Báo cáo Vĩ mô",
-    "created_at": "2026-10-21T17:57:04.615Z"
-  },
-  {
-    "id": 26012,
-    "title": "Báo cáo vĩ mô Tháng 10/2026",
-    "source": "OCBS",
-    "date": "2026-10-12T00:00:00.000Z",
-    "url": "https://cdn02.wigroup.vn/baocaophantich/ar_26373_OCBS_2026-10-12.pdf",
-    "category": "Báo cáo Vĩ mô",
-    "created_at": "2026-10-21T17:57:04.615Z"
   },
   {
     "id": 26003,
@@ -432,22 +414,22 @@
     "created_at": "2026-10-21T17:57:04.615Z"
   },
   {
-    "id": 25980,
-    "title": "Không có sự lựa chọn hoàn hảo cho tăng trưởng",
-    "source": "YUANTA",
-    "date": "2026-10-08T00:00:00.000Z",
-    "url": "https://cdn02.wigroup.vn/baocaophantich/ar_26176_YUANTA_2026-10-16.pdf",
+    "id": 25951,
+    "title": "Báo cáo Thị trường Tiền tệ T9/2026: Tỷ giá duy trì ổn định trước nhiều biến động",
+    "source": "MBS",
+    "date": "2026-10-16T00:00:00.000Z",
+    "url": "https://cdn02.wigroup.vn/baocaophantich/ar_26179_MBS_2026-10-16.pdf",
     "category": "Báo cáo Vĩ mô",
-    "created_at": "2026-10-19T13:07:24.573Z"
+    "created_at": "2026-10-16T17:16:06.604Z"
   },
   {
-    "id": 25986,
-    "title": "Báo cáo vĩ mô Quý 3/2026",
-    "source": "VCBS",
-    "date": "2026-10-14T00:00:00.000Z",
-    "url": "https://cdn02.wigroup.vn/baocaophantich/ar_26150_VCBS_2026-10-14.pdf",
+    "id": 25947,
+    "title": "Cập nhật Vĩ mô Việt Nam tháng 9 & 9 tháng đầu năm 2026",
+    "source": "GTJA",
+    "date": "2026-10-16T00:00:00.000Z",
+    "url": "https://cdn02.wigroup.vn/baocaophantich/ar_26159_GTJA_2026-10-16.pdf",
     "category": "Báo cáo Vĩ mô",
-    "created_at": "2026-10-19T13:07:24.573Z"
+    "created_at": "2026-10-16T17:16:06.604Z"
   },
   {
     "id": 25978,
@@ -468,22 +450,13 @@
     "created_at": "2026-10-16T17:16:06.604Z"
   },
   {
-    "id": 25951,
-    "title": "Báo cáo Thị trường Tiền tệ T9/2026: Tỷ giá duy trì ổn định trước nhiều biến động",
-    "source": "MBS",
-    "date": "2026-10-16T00:00:00.000Z",
-    "url": "https://cdn02.wigroup.vn/baocaophantich/ar_26179_MBS_2026-10-16.pdf",
+    "id": 25986,
+    "title": "Báo cáo vĩ mô Quý 3/2026",
+    "source": "VCBS",
+    "date": "2026-10-14T00:00:00.000Z",
+    "url": "https://cdn02.wigroup.vn/baocaophantich/ar_26150_VCBS_2026-10-14.pdf",
     "category": "Báo cáo Vĩ mô",
-    "created_at": "2026-10-16T17:16:06.604Z"
-  },
-  {
-    "id": 25947,
-    "title": "Cập nhật Vĩ mô Việt Nam tháng 9 & 9 tháng đầu năm 2026",
-    "source": "GTJA",
-    "date": "2026-10-16T00:00:00.000Z",
-    "url": "https://cdn02.wigroup.vn/baocaophantich/ar_26159_GTJA_2026-10-16.pdf",
-    "category": "Báo cáo Vĩ mô",
-    "created_at": "2026-10-16T17:16:06.604Z"
+    "created_at": "2026-10-19T13:07:24.573Z"
   },
   {
     "id": 25936,
@@ -513,13 +486,22 @@
     "created_at": "2026-10-13T19:49:44.971Z"
   },
   {
-    "id": 25918,
-    "title": "Liệu chênh lệch lãi suất VND–USD có thu hẹp?",
-    "source": "TCB",
-    "date": "2026-10-06T00:00:00.000Z",
-    "url": "https://cdn02.wigroup.vn/baocaophantich/ar_25879_TCB_2026-10-09.pdf",
+    "id": 26012,
+    "title": "Báo cáo vĩ mô Tháng 10/2026",
+    "source": "OCBS",
+    "date": "2026-10-12T00:00:00.000Z",
+    "url": "https://cdn02.wigroup.vn/baocaophantich/ar_26373_OCBS_2026-10-12.pdf",
     "category": "Báo cáo Vĩ mô",
-    "created_at": "2026-10-12T21:38:24.781Z"
+    "created_at": "2026-10-21T17:57:04.615Z"
+  },
+  {
+    "id": 26021,
+    "title": "Báo cáo triển vọng vĩ mô tháng 10/2026",
+    "source": "TPS",
+    "date": "2026-10-09T00:00:00.000Z",
+    "url": "https://cdn02.wigroup.vn/baocaophantich/ar_26358_TPS_2026-10-09.pdf",
+    "category": "Báo cáo Vĩ mô",
+    "created_at": "2026-10-21T17:57:04.615Z"
   },
   {
     "id": 25907,
@@ -540,22 +522,31 @@
     "created_at": "2026-10-12T21:38:24.781Z"
   },
   {
-    "id": 25881,
-    "title": "Báo cáo vĩ mô tháng 9/2026: Bứt tốc trong giai đoạn cuối năm",
-    "source": "DSC",
-    "date": "2026-10-06T00:00:00.000Z",
-    "url": "https://cdn02.wigroup.vn/baocaophantich/ar_25830_DSC_2026-10-06.pdf",
+    "id": 25893,
+    "title": "Báo cáo vĩ mô 09/2026",
+    "source": "VFS",
+    "date": "2026-10-09T00:00:00.000Z",
+    "url": "https://cdn02.wigroup.vn/baocaophantich/ar_25870_VFS_2026-10-09.pdf",
     "category": "Báo cáo Vĩ mô",
     "created_at": "2026-10-09T12:35:26.443Z"
   },
   {
-    "id": 25871,
-    "title": "Báo cáo vĩ mô Tháng 9/2026",
-    "source": "VIKKIBANKS",
-    "date": "2026-10-07T00:00:00.000Z",
-    "url": "https://cdn02.wigroup.vn/baocaophantich/ar_25839_VIKKIBANKS_2026-10-07.pdf",
+    "id": 25887,
+    "title": "Báo cáo vĩ mô tháng 9/2026",
+    "source": "NSI",
+    "date": "2026-10-09T00:00:00.000Z",
+    "url": "https://cdn02.wigroup.vn/baocaophantich/ar_25867_NSI_2026-10-09.pdf",
     "category": "Báo cáo Vĩ mô",
     "created_at": "2026-10-09T12:35:26.443Z"
+  },
+  {
+    "id": 25980,
+    "title": "Không có sự lựa chọn hoàn hảo cho tăng trưởng",
+    "source": "YUANTA",
+    "date": "2026-10-08T00:00:00.000Z",
+    "url": "https://cdn02.wigroup.vn/baocaophantich/ar_26176_YUANTA_2026-10-16.pdf",
+    "category": "Báo cáo Vĩ mô",
+    "created_at": "2026-10-19T13:07:24.573Z"
   },
   {
     "id": 25895,
@@ -585,31 +576,31 @@
     "created_at": "2026-10-09T12:35:26.443Z"
   },
   {
-    "id": 25893,
-    "title": "Báo cáo vĩ mô 09/2026",
-    "source": "VFS",
-    "date": "2026-10-09T00:00:00.000Z",
-    "url": "https://cdn02.wigroup.vn/baocaophantich/ar_25870_VFS_2026-10-09.pdf",
+    "id": 25871,
+    "title": "Báo cáo vĩ mô Tháng 9/2026",
+    "source": "VIKKIBANKS",
+    "date": "2026-10-07T00:00:00.000Z",
+    "url": "https://cdn02.wigroup.vn/baocaophantich/ar_25839_VIKKIBANKS_2026-10-07.pdf",
     "category": "Báo cáo Vĩ mô",
     "created_at": "2026-10-09T12:35:26.443Z"
   },
   {
-    "id": 25887,
-    "title": "Báo cáo vĩ mô tháng 9/2026",
-    "source": "NSI",
-    "date": "2026-10-09T00:00:00.000Z",
-    "url": "https://cdn02.wigroup.vn/baocaophantich/ar_25867_NSI_2026-10-09.pdf",
+    "id": 25918,
+    "title": "Liệu chênh lệch lãi suất VND–USD có thu hẹp?",
+    "source": "TCB",
+    "date": "2026-10-06T00:00:00.000Z",
+    "url": "https://cdn02.wigroup.vn/baocaophantich/ar_25879_TCB_2026-10-09.pdf",
     "category": "Báo cáo Vĩ mô",
-    "created_at": "2026-10-09T12:35:26.443Z"
+    "created_at": "2026-10-12T21:38:24.781Z"
   },
   {
-    "id": 25861,
-    "title": "Báo cáo vĩ mô Tháng 09/2026",
-    "source": "BETA",
-    "date": "2026-10-05T00:00:00.000Z",
-    "url": "https://cdn02.wigroup.vn/baocaophantich/ar_25818_BETA_2026-10-05.pdf",
+    "id": 25881,
+    "title": "Báo cáo vĩ mô tháng 9/2026: Bứt tốc trong giai đoạn cuối năm",
+    "source": "DSC",
+    "date": "2026-10-06T00:00:00.000Z",
+    "url": "https://cdn02.wigroup.vn/baocaophantich/ar_25830_DSC_2026-10-06.pdf",
     "category": "Báo cáo Vĩ mô",
-    "created_at": "2026-10-07T13:22:58.234Z"
+    "created_at": "2026-10-09T12:35:26.443Z"
   },
   {
     "id": 25866,
@@ -628,6 +619,15 @@
     "url": "https://cdn02.wigroup.vn/baocaophantich/ar_25816_AGRISECO_2026-10-06.pdf",
     "category": "Báo cáo Vĩ mô",
     "created_at": "2026-10-06T22:48:49.041Z"
+  },
+  {
+    "id": 25861,
+    "title": "Báo cáo vĩ mô Tháng 09/2026",
+    "source": "BETA",
+    "date": "2026-10-05T00:00:00.000Z",
+    "url": "https://cdn02.wigroup.vn/baocaophantich/ar_25818_BETA_2026-10-05.pdf",
+    "category": "Báo cáo Vĩ mô",
+    "created_at": "2026-10-07T13:22:58.234Z"
   },
   {
     "id": 25823,
@@ -657,146 +657,29 @@
     "created_at": "2026-09-28T13:13:53.464Z"
   },
   {
-    "id": 25406,
-    "title": "Kinh tế Việt Nam: Chính sách hỗ trợ và các điểm sáng kinh tế tháng 8",
-    "source": "MAS",
-    "date": "2026-09-07T00:00:00.000Z",
-    "url": "https://cdn02.wigroup.vn/baocaophantich/25406_MAS_2026-09-07.pdf",
-    "category": "Báo cáo Vĩ mô",
-    "created_at": "2026-09-26T01:09:30.644Z"
-  },
-  {
-    "id": 25418,
-    "title": "Cập nhật kinh tế vĩ mô 8 tháng năm 2026",
-    "source": "AGRISECO",
-    "date": "2026-09-08T00:00:00.000Z",
-    "url": "https://cdn02.wigroup.vn/baocaophantich/25418_AGRISECO_2026-09-08.pdf",
-    "category": "Báo cáo Vĩ mô",
-    "created_at": "2026-09-26T01:09:30.644Z"
-  },
-  {
-    "id": 25425,
-    "title": "Báo cáo Thị trường Tiền tệ T8/2026 – Tỷ giá duy trì đà hạ nhiệt tích cực",
-    "source": "MBS",
-    "date": "2026-09-08T00:00:00.000Z",
-    "url": "https://cdn02.wigroup.vn/baocaophantich/25425_MBS_2026-09-08.pdf",
-    "category": "Báo cáo Vĩ mô",
-    "created_at": "2026-09-26T01:09:30.644Z"
-  },
-  {
-    "id": 25442,
-    "title": "Báo cáo Kinh tế vĩ mô tháng 8 năm 2026",
-    "source": "BVSC",
-    "date": "2026-09-09T00:00:00.000Z",
-    "url": "https://cdn02.wigroup.vn/baocaophantich/25442_BVSC_2026-09-09.pdf",
-    "category": "Báo cáo Vĩ mô",
-    "created_at": "2026-09-26T01:09:30.644Z"
-  },
-  {
-    "id": 25488,
-    "title": "Thâm hụt thương mại thu hẹp, tỷ giá USD/VND giảm trong tháng 8",
-    "source": "Vietcap",
-    "date": "2026-09-10T00:00:00.000Z",
-    "url": "https://cdn02.wigroup.vn/baocaophantich/ar_25322_USD_Vietcap_2026-09-10.pdf",
-    "category": "Báo cáo Vĩ mô",
-    "created_at": "2026-09-26T01:09:30.644Z"
-  },
-  {
-    "id": 25456,
-    "title": "Báo cáo vĩ mô tháng 8/2026",
-    "source": "VCBS",
-    "date": "2026-09-10T00:00:00.000Z",
-    "url": "https://cdn02.wigroup.vn/baocaophantich/25456_VCBS_2026-09-10.pdf",
-    "category": "Báo cáo Vĩ mô",
-    "created_at": "2026-09-26T01:09:30.644Z"
-  },
-  {
-    "id": 25664,
-    "title": "Tăng trưởng tiếp tục cải thiện trong bối cảnh áp lực vĩ mô gia tăng",
-    "source": "OCBS",
-    "date": "2026-09-10T00:00:00.000Z",
-    "url": "https://cdn02.wigroup.vn/baocaophantich/25664_OCBS_2026-09-10.pdf",
-    "category": "Báo cáo Vĩ mô",
-    "created_at": "2026-09-26T01:09:30.644Z"
-  },
-  {
-    "id": 25495,
-    "title": "Báo cáo vĩ mô Tháng 8/2026: Tăng trưởng vững nhịp trước những biến động bên ngoài",
-    "source": "KIS",
-    "date": "2026-09-11T00:00:00.000Z",
-    "url": "https://cdn02.wigroup.vn/baocaophantich/ar_25358_KIS_2026-09-11.pdf",
-    "category": "Báo cáo Vĩ mô",
-    "created_at": "2026-09-26T01:09:30.644Z"
-  },
-  {
-    "id": 25477,
-    "title": "Báo cáo vĩ mô tháng 8/2026",
-    "source": "NSI",
-    "date": "2026-09-11T00:00:00.000Z",
-    "url": "https://cdn02.wigroup.vn/baocaophantich/ar_25333_NSI_2026-09-10.pdf",
-    "category": "Báo cáo Vĩ mô",
-    "created_at": "2026-09-26T01:09:30.644Z"
-  },
-  {
-    "id": 25493,
-    "title": "Việt Nam – Định hướng điều hành cuối năm",
-    "source": "BSC",
-    "date": "2026-09-13T00:00:00.000Z",
-    "url": "https://cdn02.wigroup.vn/baocaophantich/ar_25360_BSC_2026-09-13.pdf",
-    "category": "Báo cáo Vĩ mô",
-    "created_at": "2026-09-26T01:09:30.644Z"
-  },
-  {
-    "id": 25501,
-    "title": "Báo cáo triển vọng vĩ mô tháng 09.2026",
-    "source": "TPS",
-    "date": "2026-09-14T00:00:00.000Z",
-    "url": "https://cdn02.wigroup.vn/baocaophantich/ar_25354_TPS_2026-09-14.pdf",
-    "category": "Báo cáo Vĩ mô",
-    "created_at": "2026-09-26T01:09:30.644Z"
-  },
-  {
-    "id": 25510,
-    "title": "Cập nhật Vĩ mô Việt Nam tháng 8 và điểm nhấn chính",
-    "source": "GTJA",
-    "date": "2026-09-15T00:00:00.000Z",
-    "url": "https://cdn02.wigroup.vn/baocaophantich/ar_25377_GTJA_2026-09-15.pdf",
-    "category": "Báo cáo Vĩ mô",
-    "created_at": "2026-09-26T01:09:30.644Z"
-  },
-  {
-    "id": 25654,
-    "title": "Báo cáo vĩ mô tháng 09/2026",
-    "source": "CTS",
-    "date": "2026-09-15T00:00:00.000Z",
-    "url": "https://cdn02.wigroup.vn/baocaophantich/25654_CTS_2026-09-15.pdf",
-    "category": "Báo cáo Vĩ mô",
-    "created_at": "2026-09-26T01:09:30.644Z"
-  },
-  {
-    "id": 25649,
-    "title": "Báo cáo kinh tế vĩ mô tháng 8 và tám tháng đầu năm 2026",
-    "source": "CSI",
-    "date": "2026-09-15T00:00:00.000Z",
-    "url": "https://cdn02.wigroup.vn/baocaophantich/25649_CSI_2026-09-15.pdf",
-    "category": "Báo cáo Vĩ mô",
-    "created_at": "2026-09-26T01:09:30.644Z"
-  },
-  {
-    "id": 25507,
-    "title": "Thuế quan theo Mục 301 và các tác động đối với Việt Nam",
+    "id": 25633,
+    "title": "Chuyển động thị trường – tháng 9/2026: Tiếp đà tăng trưởng trong môi trường lãi suất neo cao",
     "source": "ACBS",
-    "date": "2026-09-15T00:00:00.000Z",
-    "url": "https://cdn02.wigroup.vn/baocaophantich/ar_25373_ACBS_2026-09-15.pdf",
+    "date": "2026-09-22T00:00:00.000Z",
+    "url": "https://cdn02.wigroup.vn/baocaophantich/ar_25493_ACBS_2026-09-22.pdf",
     "category": "Báo cáo Vĩ mô",
     "created_at": "2026-09-26T01:09:30.644Z"
   },
   {
-    "id": 25625,
-    "title": "Báo cáo vĩ mô tháng 9: Thanh khoản hệ thống ngân hàng bớt căng, lạm phát lại căng thẳng",
-    "source": "NHSV",
-    "date": "2026-09-16T00:00:00.000Z",
-    "url": "https://cdn02.wigroup.vn/baocaophantich/ar_25471_NHSV_2026-09-16.pdf",
+    "id": 25636,
+    "title": "Báo cáo Vĩ mô & Thị trường tháng 9/2026",
+    "source": "EVS",
+    "date": "2026-09-22T00:00:00.000Z",
+    "url": "https://cdn02.wigroup.vn/baocaophantich/ar_25490_EVS_2026-09-22.pdf",
+    "category": "Báo cáo Vĩ mô",
+    "created_at": "2026-09-26T01:09:30.644Z"
+  },
+  {
+    "id": 25575,
+    "title": " Cuộc họp Fed tháng 09/2026: Fed nâng lãi suất nhưng vẫn duy trì triển vọng tích cực cho 2027",
+    "source": "VNDS",
+    "date": "2026-09-18T00:00:00.000Z",
+    "url": "https://cdn02.wigroup.vn/baocaophantich/ar_25420_VNDS_2026-09-18.pdf",
     "category": "Báo cáo Vĩ mô",
     "created_at": "2026-09-26T01:09:30.644Z"
   },
@@ -855,29 +738,146 @@
     "created_at": "2026-09-26T01:09:30.644Z"
   },
   {
-    "id": 25575,
-    "title": " Cuộc họp Fed tháng 09/2026: Fed nâng lãi suất nhưng vẫn duy trì triển vọng tích cực cho 2027",
-    "source": "VNDS",
-    "date": "2026-09-18T00:00:00.000Z",
-    "url": "https://cdn02.wigroup.vn/baocaophantich/ar_25420_VNDS_2026-09-18.pdf",
+    "id": 25625,
+    "title": "Báo cáo vĩ mô tháng 9: Thanh khoản hệ thống ngân hàng bớt căng, lạm phát lại căng thẳng",
+    "source": "NHSV",
+    "date": "2026-09-16T00:00:00.000Z",
+    "url": "https://cdn02.wigroup.vn/baocaophantich/ar_25471_NHSV_2026-09-16.pdf",
     "category": "Báo cáo Vĩ mô",
     "created_at": "2026-09-26T01:09:30.644Z"
   },
   {
-    "id": 25633,
-    "title": "Chuyển động thị trường – tháng 9/2026: Tiếp đà tăng trưởng trong môi trường lãi suất neo cao",
+    "id": 25510,
+    "title": "Cập nhật Vĩ mô Việt Nam tháng 8 và điểm nhấn chính",
+    "source": "GTJA",
+    "date": "2026-09-15T00:00:00.000Z",
+    "url": "https://cdn02.wigroup.vn/baocaophantich/ar_25377_GTJA_2026-09-15.pdf",
+    "category": "Báo cáo Vĩ mô",
+    "created_at": "2026-09-26T01:09:30.644Z"
+  },
+  {
+    "id": 25654,
+    "title": "Báo cáo vĩ mô tháng 09/2026",
+    "source": "CTS",
+    "date": "2026-09-15T00:00:00.000Z",
+    "url": "https://cdn02.wigroup.vn/baocaophantich/25654_CTS_2026-09-15.pdf",
+    "category": "Báo cáo Vĩ mô",
+    "created_at": "2026-09-26T01:09:30.644Z"
+  },
+  {
+    "id": 25649,
+    "title": "Báo cáo kinh tế vĩ mô tháng 8 và tám tháng đầu năm 2026",
+    "source": "CSI",
+    "date": "2026-09-15T00:00:00.000Z",
+    "url": "https://cdn02.wigroup.vn/baocaophantich/25649_CSI_2026-09-15.pdf",
+    "category": "Báo cáo Vĩ mô",
+    "created_at": "2026-09-26T01:09:30.644Z"
+  },
+  {
+    "id": 25507,
+    "title": "Thuế quan theo Mục 301 và các tác động đối với Việt Nam",
     "source": "ACBS",
-    "date": "2026-09-22T00:00:00.000Z",
-    "url": "https://cdn02.wigroup.vn/baocaophantich/ar_25493_ACBS_2026-09-22.pdf",
+    "date": "2026-09-15T00:00:00.000Z",
+    "url": "https://cdn02.wigroup.vn/baocaophantich/ar_25373_ACBS_2026-09-15.pdf",
     "category": "Báo cáo Vĩ mô",
     "created_at": "2026-09-26T01:09:30.644Z"
   },
   {
-    "id": 25636,
-    "title": "Báo cáo Vĩ mô & Thị trường tháng 9/2026",
-    "source": "EVS",
-    "date": "2026-09-22T00:00:00.000Z",
-    "url": "https://cdn02.wigroup.vn/baocaophantich/ar_25490_EVS_2026-09-22.pdf",
+    "id": 25501,
+    "title": "Báo cáo triển vọng vĩ mô tháng 09.2026",
+    "source": "TPS",
+    "date": "2026-09-14T00:00:00.000Z",
+    "url": "https://cdn02.wigroup.vn/baocaophantich/ar_25354_TPS_2026-09-14.pdf",
+    "category": "Báo cáo Vĩ mô",
+    "created_at": "2026-09-26T01:09:30.644Z"
+  },
+  {
+    "id": 25493,
+    "title": "Việt Nam – Định hướng điều hành cuối năm",
+    "source": "BSC",
+    "date": "2026-09-13T00:00:00.000Z",
+    "url": "https://cdn02.wigroup.vn/baocaophantich/ar_25360_BSC_2026-09-13.pdf",
+    "category": "Báo cáo Vĩ mô",
+    "created_at": "2026-09-26T01:09:30.644Z"
+  },
+  {
+    "id": 25495,
+    "title": "Báo cáo vĩ mô Tháng 8/2026: Tăng trưởng vững nhịp trước những biến động bên ngoài",
+    "source": "KIS",
+    "date": "2026-09-11T00:00:00.000Z",
+    "url": "https://cdn02.wigroup.vn/baocaophantich/ar_25358_KIS_2026-09-11.pdf",
+    "category": "Báo cáo Vĩ mô",
+    "created_at": "2026-09-26T01:09:30.644Z"
+  },
+  {
+    "id": 25477,
+    "title": "Báo cáo vĩ mô tháng 8/2026",
+    "source": "NSI",
+    "date": "2026-09-11T00:00:00.000Z",
+    "url": "https://cdn02.wigroup.vn/baocaophantich/ar_25333_NSI_2026-09-10.pdf",
+    "category": "Báo cáo Vĩ mô",
+    "created_at": "2026-09-26T01:09:30.644Z"
+  },
+  {
+    "id": 25488,
+    "title": "Thâm hụt thương mại thu hẹp, tỷ giá USD/VND giảm trong tháng 8",
+    "source": "Vietcap",
+    "date": "2026-09-10T00:00:00.000Z",
+    "url": "https://cdn02.wigroup.vn/baocaophantich/ar_25322_USD_Vietcap_2026-09-10.pdf",
+    "category": "Báo cáo Vĩ mô",
+    "created_at": "2026-09-26T01:09:30.644Z"
+  },
+  {
+    "id": 25456,
+    "title": "Báo cáo vĩ mô tháng 8/2026",
+    "source": "VCBS",
+    "date": "2026-09-10T00:00:00.000Z",
+    "url": "https://cdn02.wigroup.vn/baocaophantich/25456_VCBS_2026-09-10.pdf",
+    "category": "Báo cáo Vĩ mô",
+    "created_at": "2026-09-26T01:09:30.644Z"
+  },
+  {
+    "id": 25664,
+    "title": "Tăng trưởng tiếp tục cải thiện trong bối cảnh áp lực vĩ mô gia tăng",
+    "source": "OCBS",
+    "date": "2026-09-10T00:00:00.000Z",
+    "url": "https://cdn02.wigroup.vn/baocaophantich/25664_OCBS_2026-09-10.pdf",
+    "category": "Báo cáo Vĩ mô",
+    "created_at": "2026-09-26T01:09:30.644Z"
+  },
+  {
+    "id": 25442,
+    "title": "Báo cáo Kinh tế vĩ mô tháng 8 năm 2026",
+    "source": "BVSC",
+    "date": "2026-09-09T00:00:00.000Z",
+    "url": "https://cdn02.wigroup.vn/baocaophantich/25442_BVSC_2026-09-09.pdf",
+    "category": "Báo cáo Vĩ mô",
+    "created_at": "2026-09-26T01:09:30.644Z"
+  },
+  {
+    "id": 25418,
+    "title": "Cập nhật kinh tế vĩ mô 8 tháng năm 2026",
+    "source": "AGRISECO",
+    "date": "2026-09-08T00:00:00.000Z",
+    "url": "https://cdn02.wigroup.vn/baocaophantich/25418_AGRISECO_2026-09-08.pdf",
+    "category": "Báo cáo Vĩ mô",
+    "created_at": "2026-09-26T01:09:30.644Z"
+  },
+  {
+    "id": 25425,
+    "title": "Báo cáo Thị trường Tiền tệ T8/2026 – Tỷ giá duy trì đà hạ nhiệt tích cực",
+    "source": "MBS",
+    "date": "2026-09-08T00:00:00.000Z",
+    "url": "https://cdn02.wigroup.vn/baocaophantich/25425_MBS_2026-09-08.pdf",
+    "category": "Báo cáo Vĩ mô",
+    "created_at": "2026-09-26T01:09:30.644Z"
+  },
+  {
+    "id": 25406,
+    "title": "Kinh tế Việt Nam: Chính sách hỗ trợ và các điểm sáng kinh tế tháng 8",
+    "source": "MAS",
+    "date": "2026-09-07T00:00:00.000Z",
+    "url": "https://cdn02.wigroup.vn/baocaophantich/25406_MAS_2026-09-07.pdf",
     "category": "Báo cáo Vĩ mô",
     "created_at": "2026-09-26T01:09:30.644Z"
   }

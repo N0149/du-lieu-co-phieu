@@ -315,6 +315,7 @@ export function IndustryValuationTable({ valuationList }: IndustryValuationTable
                                       <td className="py-2 pl-2">
                                         <Link
                                           href={`/stock/${stk.symbol}`}
+                                          prefetch={false}
                                           className="group inline-flex items-center gap-1 rounded bg-emerald-500/10 px-2 py-0.5 font-bold text-emerald-400 hover:bg-emerald-500/20 transition-colors"
                                         >
                                           <span>{stk.symbol}</span>
@@ -365,6 +366,7 @@ export function IndustryValuationTable({ valuationList }: IndustryValuationTable
                                 <Link
                                   key={sym}
                                   href={`/stock/${sym}`}
+                                  prefetch={false}
                                   className="group inline-flex items-center gap-1 rounded-md border border-white/10 bg-[#161a23] px-2.5 py-1 text-xs font-semibold text-[#F0F3F6] hover:border-emerald-500/50 hover:text-emerald-400 transition-all"
                                 >
                                   <span>{sym}</span>

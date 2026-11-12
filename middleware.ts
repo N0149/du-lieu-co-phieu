@@ -23,6 +23,17 @@ export const config = {
   ],
 }
 
+function isPrefetchRequest(request: NextRequest, pathname: string): boolean {
+  const purpose = request.headers.get('purpose')?.toLowerCase() || ''
+  const secPurpose = request.headers.get('sec-purpose')?.toLowerCase() || ''
+  return (
+    request.headers.get('next-router-prefetch') === '1' ||
+    purpose.includes('prefetch') ||
+    secPurpose.includes('prefetch') ||
+    pathname.startsWith('/.well-known/')
+  )
+}
+
 export function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl
   const userAgent = request.headers.get('user-agent') || ''
@@ -166,41 +177,61 @@ export function middleware(request: NextRequest) {
       }
     }
   } else {
-    // 4. Chống cào hàng loạt trang cổ phiếu (Bulk Stock Scraping: tối đa 25 mã / phút / IP)
+    // 4. Chống cào hàng loạt trang cổ phiếu (Bulk Stock Scraping)
+    // Tách riêng bucket cho request prefetch ngầm để tránh việc Next.js/trình duyệt prefetch danh sách mã làm khóa nhầm lượt truy cập thật của người dùng
     const isLocalhost = ip === '127.0.0.1' || ip === '::1' || process.env.NODE_ENV !== 'production'
-    if (pathname.startsWith('/stock/') && !isLocalhost) {
-      const stockLimiter = checkInMemoryRateLimit(`rl:stock:${ip}`, {
-        windowMs: 60_000,
-        max: 25,
-      })
+    const isPrefetch = isPrefetchRequest(request, pathname)
 
-      if (!stockLimiter.success) {
-        console.warn(`[Anti-Scraping] IP: ${ip} cào duyệt quá 25 mã cổ phiếu / phút trên ${pathname}`)
-        return new NextResponse(
-          `<html><body style="font-family: sans-serif; text-align: center; padding: 50px;">
-            <h2>Yêu cầu tra cứu bị tạm dừng (429)</h2>
-            <p>Hệ thống ghi nhận bạn đang tra cứu số lượng lớn mã cổ phiếu với tốc độ bất thường.</p>
-            <p>Vui lòng chờ 1 phút trước khi tiếp tục tra cứu.</p>
-          </body></html>`,
-          {
-            status: 429,
-            headers: {
-              'Content-Type': 'text/html; charset=utf-8',
-              'Retry-After': '60',
-            },
-          }
-        )
+    if (pathname.startsWith('/stock/') && !isLocalhost) {
+      if (isPrefetch) {
+        const stockPrefetchLimiter = checkInMemoryRateLimit(`rl:stock:prefetch:${ip}`, {
+          windowMs: 60_000,
+          max: 120,
+        })
+
+        if (!stockPrefetchLimiter.success) {
+          return new NextResponse(
+            JSON.stringify({
+              error: 'PREFETCH_RATE_LIMIT_EXCEEDED',
+              retryAfter: stockPrefetchLimiter.reset,
+            }),
+            {
+              status: 429,
+              headers: {
+                'Content-Type': 'application/json; charset=utf-8',
+                'Retry-After': '60',
+              },
+            }
+          )
+        }
+      } else {
+        const stockLimiter = checkInMemoryRateLimit(`rl:stock:${ip}`, {
+          windowMs: 60_000,
+          max: 30,
+        })
+
+        if (!stockLimiter.success) {
+          console.warn(`[Anti-Scraping] IP: ${ip} cào duyệt quá 30 mã cổ phiếu / phút trên ${pathname}`)
+          return new NextResponse(
+            `<html><body style="font-family: sans-serif; text-align: center; padding: 50px;">
+              <h2>Yêu cầu tra cứu bị tạm dừng (429)</h2>
+              <p>Hệ thống ghi nhận bạn đang tra cứu số lượng lớn mã cổ phiếu với tốc độ bất thường.</p>
+              <p>Vui lòng chờ 1 phút trước khi tiếp tục tra cứu.</p>
+            </body></html>`,
+            {
+              status: 429,
+              headers: {
+                'Content-Type': 'text/html; charset=utf-8',
+                'Retry-After': '60',
+              },
+            }
+          )
+        }
       }
     }
 
     // 5. Rate Limiting chung cho Web Pages (tối đa 150 requests / phút / IP để chống spam reload)
     // Miễn trừ hoàn toàn cho môi trường phát triển (localhost / 127.0.0.1) và các request prefetch ngầm
-    const isPrefetch =
-      request.headers.get('next-router-prefetch') === '1' ||
-      request.headers.get('purpose') === 'prefetch' ||
-      request.headers.get('sec-purpose') === 'prefetch' ||
-      pathname.startsWith('/.well-known/')
-
     if (!isLocalhost && !isPrefetch) {
       const pageLimiter = checkInMemoryRateLimit(`rl:page:${ip}`, {
         windowMs: 60_000,

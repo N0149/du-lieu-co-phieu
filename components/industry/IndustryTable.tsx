@@ -347,6 +347,7 @@ export function IndustryTable({ sectors, quarterLabel = 'Gần Nhất' }: Indust
                                   <Link
                                     key={sym}
                                     href={`/stock/${sym.toUpperCase()}`}
+                                    prefetch={false}
                                     className="group inline-flex items-center gap-1 rounded-md border border-white/10 bg-[#161a23] px-2 py-1 text-xs font-semibold text-[#F0F3F6] transition-all hover:border-emerald-500/50 hover:bg-emerald-500/10 hover:text-emerald-400"
                                   >
                                     <span>{sym}</span>

@@ -1,66 +1,12 @@
 [
   {
-    "id": 26705,
-    "title": "Báo cáo chiến lược tháng 11/2026: Niềm tin dần trở lại",
-    "source": "ABS",
-    "date": "2026-11-09T00:00:00.000Z",
-    "url": "https://cdn02.wigroup.vn/baocaophantich/ar_27056_ABS_2026-11-10.pdf",
-    "category": "Báo cáo Chiến lược",
-    "created_at": "2026-11-11T19:57:48.792Z"
-  },
-  {
-    "id": 26743,
-    "title": "Danh mục khuyến nghị tháng 11/2026",
-    "source": "VIKKIBANKS",
-    "date": "2026-11-09T00:00:00.000Z",
-    "url": "https://cdn02.wigroup.vn/baocaophantich/ar_27078_VIKKIBANKS_2026-11-09.pdf",
-    "category": "Báo cáo Chiến lược",
-    "created_at": "2026-11-11T19:57:48.792Z"
-  },
-  {
     "id": 26744,
     "title": "La bàn đầu tư Tháng 11/2026 - Định giá hấp dẫn, chờ cú hích tái định giá",
     "source": "VNDS",
     "date": "2026-11-10T00:00:00.000Z",
     "url": "https://cdn02.wigroup.vn/baocaophantich/ar_27081_VNDS_2026-11-10.pdf",
     "category": "Báo cáo Chiến lược",
-    "created_at": "2026-11-11T19:57:48.792Z"
-  },
-  {
-    "id": 26698,
-    "title": "Một số đánh giá về KQKD quý 3/2026",
-    "source": "VIX",
-    "date": "2026-11-05T00:00:00.000Z",
-    "url": "https://cdn02.wigroup.vn/baocaophantich/ar_26952_VIX_2026-11-05.pdf",
-    "category": "Báo cáo Chiến lược",
-    "created_at": "2026-11-10T20:10:40.539Z"
-  },
-  {
-    "id": 26676,
-    "title": "Báo cáo triển vọng thị trường tháng 11/2026",
-    "source": "BVSC",
-    "date": "2026-11-09T00:00:00.000Z",
-    "url": "https://cdn02.wigroup.vn/baocaophantich/ar_27015_BVSC_2026-11-09.pdf",
-    "category": "Báo cáo Chiến lược",
-    "created_at": "2026-11-10T20:10:40.539Z"
-  },
-  {
-    "id": 26699,
-    "title": "Báo cáo cập nhật kết quả kinh doanh toàn thị trường - Quý 3/2026",
-    "source": "YUANTA",
-    "date": "2026-11-09T00:00:00.000Z",
-    "url": "https://cdn02.wigroup.vn/baocaophantich/ar_27044_YUANTA_2026-11-09.pdf",
-    "category": "Báo cáo Chiến lược",
-    "created_at": "2026-11-10T20:10:40.539Z"
-  },
-  {
-    "id": 26683,
-    "title": "Kinh tế vĩ mô & thị trường chứng khoán tháng 11/2026",
-    "source": "SHS",
-    "date": "2026-11-09T00:00:00.000Z",
-    "url": "https://cdn02.wigroup.vn/baocaophantich/ar_27024_SHS_2026-11-09.pdf",
-    "category": "Báo cáo Chiến lược",
-    "created_at": "2026-11-10T20:10:40.539Z"
+    "created_at": "2026-11-12T13:00:19.746Z"
   },
   {
     "id": 26682,
@@ -69,16 +15,52 @@
     "date": "2026-11-10T00:00:00.000Z",
     "url": "https://cdn02.wigroup.vn/baocaophantich/ar_27025_PSI_2026-11-10.pdf",
     "category": "Báo cáo Chiến lược",
-    "created_at": "2026-11-10T20:10:40.539Z"
+    "created_at": "2026-11-12T13:00:19.746Z"
   },
   {
-    "id": 26658,
-    "title": "Chiến lược đầu tư chủ động: Danh mục ứng dụng học máy - Tối ưu vị thế đầu tư dựa trên tỷ lệ Risk/Reward",
-    "source": "FPTS",
-    "date": "2026-10-30T00:00:00.000Z",
-    "url": "https://cdn02.wigroup.vn/baocaophantich/ar_26782_FPTS_2026-10-30.pdf",
+    "id": 26705,
+    "title": "Báo cáo chiến lược tháng 11/2026: Niềm tin dần trở lại",
+    "source": "ABS",
+    "date": "2026-11-09T00:00:00.000Z",
+    "url": "https://cdn02.wigroup.vn/baocaophantich/ar_27056_ABS_2026-11-10.pdf",
     "category": "Báo cáo Chiến lược",
-    "created_at": "2026-11-10T13:00:27.483Z"
+    "created_at": "2026-11-12T13:00:19.746Z"
+  },
+  {
+    "id": 26743,
+    "title": "Danh mục khuyến nghị tháng 11/2026",
+    "source": "VIKKIBANKS",
+    "date": "2026-11-09T00:00:00.000Z",
+    "url": "https://cdn02.wigroup.vn/baocaophantich/ar_27078_VIKKIBANKS_2026-11-09.pdf",
+    "category": "Báo cáo Chiến lược",
+    "created_at": "2026-11-12T13:00:19.746Z"
+  },
+  {
+    "id": 26676,
+    "title": "Báo cáo triển vọng thị trường tháng 11/2026",
+    "source": "BVSC",
+    "date": "2026-11-09T00:00:00.000Z",
+    "url": "https://cdn02.wigroup.vn/baocaophantich/ar_27015_BVSC_2026-11-09.pdf",
+    "category": "Báo cáo Chiến lược",
+    "created_at": "2026-11-12T13:00:19.746Z"
+  },
+  {
+    "id": 26699,
+    "title": "Báo cáo cập nhật kết quả kinh doanh toàn thị trường - Quý 3/2026",
+    "source": "YUANTA",
+    "date": "2026-11-09T00:00:00.000Z",
+    "url": "https://cdn02.wigroup.vn/baocaophantich/ar_27044_YUANTA_2026-11-09.pdf",
+    "category": "Báo cáo Chiến lược",
+    "created_at": "2026-11-12T13:00:19.746Z"
+  },
+  {
+    "id": 26683,
+    "title": "Kinh tế vĩ mô & thị trường chứng khoán tháng 11/2026",
+    "source": "SHS",
+    "date": "2026-11-09T00:00:00.000Z",
+    "url": "https://cdn02.wigroup.vn/baocaophantich/ar_27024_SHS_2026-11-09.pdf",
+    "category": "Báo cáo Chiến lược",
+    "created_at": "2026-11-12T13:00:19.746Z"
   },
   {
     "id": 26488,
@@ -87,7 +69,7 @@
     "date": "2026-11-06T00:00:00.000Z",
     "url": "https://cdn02.wigroup.vn/baocaophantich/ar_26924_GTJA_2026-11-06.pdf",
     "category": "Báo cáo Chiến lược",
-    "created_at": "2026-11-06T19:49:12.013Z"
+    "created_at": "2026-11-12T13:00:19.746Z"
   },
   {
     "id": 26489,
@@ -96,25 +78,16 @@
     "date": "2026-11-06T00:00:00.000Z",
     "url": null,
     "category": "Báo cáo Chiến lược",
-    "created_at": "2026-11-06T19:49:12.013Z"
+    "created_at": "2026-11-12T13:00:19.746Z"
   },
   {
-    "id": 26457,
-    "title": "Báo cáo tổng kết thị trường tháng 10/2026: VN-Index giảm tháng thứ hai liên tiếp trong bối cảnh thanh khoản yếu và khối ngoại bán ròng",
-    "source": "Vietcap",
-    "date": "2026-11-03T00:00:00.000Z",
-    "url": "https://cdn02.wigroup.vn/baocaophantich/ar_26878_Vietcap_2026-11-03.pdf",
+    "id": 26698,
+    "title": "Một số đánh giá về KQKD quý 3/2026",
+    "source": "VIX",
+    "date": "2026-11-05T00:00:00.000Z",
+    "url": "https://cdn02.wigroup.vn/baocaophantich/ar_26952_VIX_2026-11-05.pdf",
     "category": "Báo cáo Chiến lược",
-    "created_at": "2026-11-06T13:00:39.407Z"
-  },
-  {
-    "id": 26453,
-    "title": "Báo cáo chiến lược thị trường chứng khoán tháng 11/2026",
-    "source": "TPS",
-    "date": "2026-11-04T00:00:00.000Z",
-    "url": "https://cdn02.wigroup.vn/baocaophantich/ar_26871_TPS_2026-11-04.pdf",
-    "category": "Báo cáo Chiến lược",
-    "created_at": "2026-11-06T13:00:39.407Z"
+    "created_at": "2026-11-12T13:00:19.746Z"
   },
   {
     "id": 26458,
@@ -123,7 +96,7 @@
     "date": "2026-11-05T00:00:00.000Z",
     "url": "https://cdn02.wigroup.vn/baocaophantich/ar_26877_Vietcap_2026-11-05.pdf",
     "category": "Báo cáo Chiến lược",
-    "created_at": "2026-11-06T13:00:39.407Z"
+    "created_at": "2026-11-12T13:00:19.746Z"
   },
   {
     "id": 26441,
@@ -132,7 +105,25 @@
     "date": "2026-11-05T00:00:00.000Z",
     "url": "https://cdn02.wigroup.vn/baocaophantich/ar_26857_MAS_2026-11-05.pdf",
     "category": "Báo cáo Chiến lược",
-    "created_at": "2026-11-06T13:00:39.407Z"
+    "created_at": "2026-11-12T13:00:19.746Z"
+  },
+  {
+    "id": 26453,
+    "title": "Báo cáo chiến lược thị trường chứng khoán tháng 11/2026",
+    "source": "TPS",
+    "date": "2026-11-04T00:00:00.000Z",
+    "url": "https://cdn02.wigroup.vn/baocaophantich/ar_26871_TPS_2026-11-04.pdf",
+    "category": "Báo cáo Chiến lược",
+    "created_at": "2026-11-12T13:00:19.746Z"
+  },
+  {
+    "id": 26457,
+    "title": "Báo cáo tổng kết thị trường tháng 10/2026: VN-Index giảm tháng thứ hai liên tiếp trong bối cảnh thanh khoản yếu và khối ngoại bán ròng",
+    "source": "Vietcap",
+    "date": "2026-11-03T00:00:00.000Z",
+    "url": "https://cdn02.wigroup.vn/baocaophantich/ar_26878_Vietcap_2026-11-03.pdf",
+    "category": "Báo cáo Chiến lược",
+    "created_at": "2026-11-12T13:00:19.746Z"
   },
   {
     "id": 26375,
@@ -141,7 +132,7 @@
     "date": "2026-11-03T00:00:00.000Z",
     "url": "https://cdn02.wigroup.vn/baocaophantich/ar_26799_MAS_2026-11-03.pdf",
     "category": "Báo cáo Chiến lược",
-    "created_at": "2026-11-04T13:00:46.564Z"
+    "created_at": "2026-11-12T13:00:19.746Z"
   },
   {
     "id": 26342,
@@ -150,7 +141,16 @@
     "date": "2026-11-01T00:00:00.000Z",
     "url": "https://cdn02.wigroup.vn/baocaophantich/ar_26759_SHS_2026-11-01.pdf",
     "category": "Báo cáo Chiến lược",
-    "created_at": "2026-11-03T13:01:08.546Z"
+    "created_at": "2026-11-12T13:00:19.746Z"
+  },
+  {
+    "id": 26658,
+    "title": "Chiến lược đầu tư chủ động: Danh mục ứng dụng học máy - Tối ưu vị thế đầu tư dựa trên tỷ lệ Risk/Reward",
+    "source": "FPTS",
+    "date": "2026-10-30T00:00:00.000Z",
+    "url": "https://cdn02.wigroup.vn/baocaophantich/ar_26782_FPTS_2026-10-30.pdf",
+    "category": "Báo cáo Chiến lược",
+    "created_at": "2026-11-12T13:00:19.746Z"
   },
   {
     "id": 26267,
@@ -159,25 +159,7 @@
     "date": "2026-10-30T00:00:00.000Z",
     "url": "https://cdn02.wigroup.vn/baocaophantich/ar_26703_MBS_2026-10-30.pdf",
     "category": "Báo cáo Chiến lược",
-    "created_at": "2026-10-31T13:01:20.468Z"
-  },
-  {
-    "id": 26112,
-    "title": "Cơ cấu ngành VN-Index: Bất động sản vượt ngân hàng về vốn hóa và ở đỉnh lịch sử",
-    "source": "AAS",
-    "date": "2026-10-11T00:00:00.000Z",
-    "url": "https://cdn02.wigroup.vn/baocaophantich/ar_26394_AAS_2026-10-11.pdf",
-    "category": "Báo cáo Chiến lược",
-    "created_at": "2026-10-27T18:31:56.078Z"
-  },
-  {
-    "id": 26113,
-    "title": "Dự thảo thay thế Thông tư 45 biến khấu hao thành ước tính của doanh nghiệp",
-    "source": "AAS",
-    "date": "2026-10-19T00:00:00.000Z",
-    "url": "https://cdn02.wigroup.vn/baocaophantich/ar_26375_AAS_2026-10-19.pdf",
-    "category": "Báo cáo Chiến lược",
-    "created_at": "2026-10-27T18:31:56.078Z"
+    "created_at": "2026-11-12T13:00:19.746Z"
   },
   {
     "id": 26058,
@@ -186,7 +168,70 @@
     "date": "2026-10-22T00:00:00.000Z",
     "url": "https://cdn02.wigroup.vn/baocaophantich/ar_26476_VCBS_2026-10-22.pdf",
     "category": "Báo cáo Chiến lược",
-    "created_at": "2026-10-23T17:46:45.118Z"
+    "created_at": "2026-11-12T13:00:19.746Z"
+  },
+  {
+    "id": 26006,
+    "title": "Việt Nam – EFTA (VEFTA) - Các tác động đến công ty niêm yết trong danh mục theo dõi",
+    "source": "MAS",
+    "date": "2026-10-20T00:00:00.000Z",
+    "url": "https://cdn02.wigroup.vn/baocaophantich/ar_26422_MAS_2026-10-20.pdf",
+    "category": "Báo cáo Chiến lược",
+    "created_at": "2026-11-12T13:00:19.746Z"
+  },
+  {
+    "id": 26005,
+    "title": "Chiến lược tháng: Tìm điểm cân bằng - Lãi suất và dòng vốn quyết định nhịp hồi phục",
+    "source": "MAS",
+    "date": "2026-10-20T00:00:00.000Z",
+    "url": "https://cdn02.wigroup.vn/baocaophantich/ar_26423_MAS_2026-10-20.pdf",
+    "category": "Báo cáo Chiến lược",
+    "created_at": "2026-11-12T13:00:19.746Z"
+  },
+  {
+    "id": 26015,
+    "title": "Báo cáo tài sản thị trường Việt Nam Q3.2026",
+    "source": "PHS",
+    "date": "2026-10-20T00:00:00.000Z",
+    "url": "https://cdn02.wigroup.vn/baocaophantich/ar_26445_PHS_2026-10-20.pdf",
+    "category": "Báo cáo Chiến lược",
+    "created_at": "2026-11-12T13:00:19.746Z"
+  },
+  {
+    "id": 26113,
+    "title": "Dự thảo thay thế Thông tư 45 biến khấu hao thành ước tính của doanh nghiệp",
+    "source": "AAS",
+    "date": "2026-10-19T00:00:00.000Z",
+    "url": "https://cdn02.wigroup.vn/baocaophantich/ar_26375_AAS_2026-10-19.pdf",
+    "category": "Báo cáo Chiến lược",
+    "created_at": "2026-11-12T13:00:19.746Z"
+  },
+  {
+    "id": 26001,
+    "title": "Vùng định giá chiết khấu, cơ hội đầu tư gắn với tăng trưởng nội địa",
+    "source": "BSC",
+    "date": "2026-10-19T00:00:00.000Z",
+    "url": "https://cdn02.wigroup.vn/baocaophantich/ar_26418_BSC_2026-10-19.pdf",
+    "category": "Báo cáo Chiến lược",
+    "created_at": "2026-11-12T13:00:19.746Z"
+  },
+  {
+    "id": 25997,
+    "title": "Báo cáo Cập nhật diễn biến dòng tiền T9/2026: Dòng vốn ETF toàn cầu chững lại, Việt Nam tiếp tục bị rút vốn",
+    "source": "VNDS",
+    "date": "2026-10-19T00:00:00.000Z",
+    "url": "https://cdn02.wigroup.vn/baocaophantich/ar_26189_VNDS_2026-10-19.pdf",
+    "category": "Báo cáo Chiến lược",
+    "created_at": "2026-11-12T13:00:19.746Z"
+  },
+  {
+    "id": 25976,
+    "title": "La bàn đầu tư Tháng 10/2026: Tích luỹ chọn lọc, đón nhịp phục hồi mới",
+    "source": "VNDS",
+    "date": "2026-10-15T00:00:00.000Z",
+    "url": "https://cdn02.wigroup.vn/baocaophantich/ar_26172_VNDS_2026-10-15.pdf",
+    "category": "Báo cáo Chiến lược",
+    "created_at": "2026-10-19T13:07:26.305Z"
   },
   {
     "id": 26014,
@@ -198,65 +243,11 @@
     "created_at": "2026-10-21T17:57:06.674Z"
   },
   {
-    "id": 26001,
-    "title": "Vùng định giá chiết khấu, cơ hội đầu tư gắn với tăng trưởng nội địa",
-    "source": "BSC",
-    "date": "2026-10-19T00:00:00.000Z",
-    "url": "https://cdn02.wigroup.vn/baocaophantich/ar_26418_BSC_2026-10-19.pdf",
-    "category": "Báo cáo Chiến lược",
-    "created_at": "2026-10-21T17:57:06.674Z"
-  },
-  {
-    "id": 26006,
-    "title": "Việt Nam – EFTA (VEFTA) - Các tác động đến công ty niêm yết trong danh mục theo dõi",
-    "source": "MAS",
-    "date": "2026-10-20T00:00:00.000Z",
-    "url": "https://cdn02.wigroup.vn/baocaophantich/ar_26422_MAS_2026-10-20.pdf",
-    "category": "Báo cáo Chiến lược",
-    "created_at": "2026-10-21T17:57:06.674Z"
-  },
-  {
-    "id": 26005,
-    "title": "Chiến lược tháng: Tìm điểm cân bằng - Lãi suất và dòng vốn quyết định nhịp hồi phục",
-    "source": "MAS",
-    "date": "2026-10-20T00:00:00.000Z",
-    "url": "https://cdn02.wigroup.vn/baocaophantich/ar_26423_MAS_2026-10-20.pdf",
-    "category": "Báo cáo Chiến lược",
-    "created_at": "2026-10-21T17:57:06.674Z"
-  },
-  {
-    "id": 26015,
-    "title": "Báo cáo tài sản thị trường Việt Nam Q3.2026",
-    "source": "PHS",
-    "date": "2026-10-20T00:00:00.000Z",
-    "url": "https://cdn02.wigroup.vn/baocaophantich/ar_26445_PHS_2026-10-20.pdf",
-    "category": "Báo cáo Chiến lược",
-    "created_at": "2026-10-21T17:57:06.674Z"
-  },
-  {
-    "id": 25997,
-    "title": "Báo cáo Cập nhật diễn biến dòng tiền T9/2026: Dòng vốn ETF toàn cầu chững lại, Việt Nam tiếp tục bị rút vốn",
-    "source": "VNDS",
-    "date": "2026-10-19T00:00:00.000Z",
-    "url": "https://cdn02.wigroup.vn/baocaophantich/ar_26189_VNDS_2026-10-19.pdf",
-    "category": "Báo cáo Chiến lược",
-    "created_at": "2026-10-20T17:51:02.429Z"
-  },
-  {
     "id": 25974,
     "title": "Báo cáo sự kiện Bầu cử giữa kỳ của Mỹ và Thị trường chứng khoán",
     "source": "VIKKIBANKS",
     "date": "2026-10-13T00:00:00.000Z",
     "url": "https://cdn02.wigroup.vn/baocaophantich/ar_26144_VIKKIBANKS_2026-10-13.pdf",
-    "category": "Báo cáo Chiến lược",
-    "created_at": "2026-10-19T13:07:26.305Z"
-  },
-  {
-    "id": 25976,
-    "title": "La bàn đầu tư Tháng 10/2026: Tích luỹ chọn lọc, đón nhịp phục hồi mới",
-    "source": "VNDS",
-    "date": "2026-10-15T00:00:00.000Z",
-    "url": "https://cdn02.wigroup.vn/baocaophantich/ar_26172_VNDS_2026-10-15.pdf",
     "category": "Báo cáo Chiến lược",
     "created_at": "2026-10-19T13:07:26.305Z"
   },
@@ -279,15 +270,6 @@
     "created_at": "2026-10-16T17:16:08.730Z"
   },
   {
-    "id": 25940,
-    "title": "Phác thảo Chiến lược Đầu tư 2027: Dốc đứng, Chân vững",
-    "source": "SSI",
-    "date": "2026-10-12T00:00:00.000Z",
-    "url": null,
-    "category": "Báo cáo Chiến lược",
-    "created_at": "2026-10-15T17:40:36.713Z"
-  },
-  {
     "id": 25931,
     "title": "Cập nhật thay đổi quy tắc bộ chỉ số HOSE-Index & Dự báo thay đổi thành phần chỉ số VNDIAMOND Tháng 10/2026",
     "source": "FPTS",
@@ -306,13 +288,13 @@
     "created_at": "2026-10-14T17:51:56.852Z"
   },
   {
-    "id": 25912,
-    "title": "Báo cáo Chiến lược tháng 10/2026: Tìm kiếm cơ hội trong mùa báo cáo kết quả kinh doanh",
-    "source": "SHS",
-    "date": "2026-10-08T00:00:00.000Z",
-    "url": "https://cdn02.wigroup.vn/baocaophantich/ar_25858_SHS_2026-10-09.pdf",
+    "id": 25940,
+    "title": "Phác thảo Chiến lược Đầu tư 2027: Dốc đứng, Chân vững",
+    "source": "SSI",
+    "date": "2026-10-12T00:00:00.000Z",
+    "url": null,
     "category": "Báo cáo Chiến lược",
-    "created_at": "2026-10-12T21:38:26.825Z"
+    "created_at": "2026-10-15T17:40:36.713Z"
   },
   {
     "id": 25906,
@@ -322,6 +304,33 @@
     "url": "https://cdn02.wigroup.vn/baocaophantich/ar_26094_BSC_2026-10-12.pdf",
     "category": "Báo cáo Chiến lược",
     "created_at": "2026-10-12T21:38:26.825Z"
+  },
+  {
+    "id": 26112,
+    "title": "Cơ cấu ngành VN-Index: Bất động sản vượt ngân hàng về vốn hóa và ở đỉnh lịch sử",
+    "source": "AAS",
+    "date": "2026-10-11T00:00:00.000Z",
+    "url": "https://cdn02.wigroup.vn/baocaophantich/ar_26394_AAS_2026-10-11.pdf",
+    "category": "Báo cáo Chiến lược",
+    "created_at": "2026-10-27T18:31:56.078Z"
+  },
+  {
+    "id": 25912,
+    "title": "Báo cáo Chiến lược tháng 10/2026: Tìm kiếm cơ hội trong mùa báo cáo kết quả kinh doanh",
+    "source": "SHS",
+    "date": "2026-10-08T00:00:00.000Z",
+    "url": "https://cdn02.wigroup.vn/baocaophantich/ar_25858_SHS_2026-10-09.pdf",
+    "category": "Báo cáo Chiến lược",
+    "created_at": "2026-10-12T21:38:26.825Z"
+  },
+  {
+    "id": 25885,
+    "title": "Dự báo danh mục VNDiamond trong kỳ rà soát Q4/26",
+    "source": "MBS",
+    "date": "2026-10-08T00:00:00.000Z",
+    "url": "https://cdn02.wigroup.vn/baocaophantich/ar_25855_MBS_2026-10-08.pdf",
+    "category": "Báo cáo Chiến lược",
+    "created_at": "2026-10-09T12:35:28.190Z"
   },
   {
     "id": 25882,
@@ -351,24 +360,6 @@
     "created_at": "2026-10-09T12:35:28.190Z"
   },
   {
-    "id": 25885,
-    "title": "Dự báo danh mục VNDiamond trong kỳ rà soát Q4/26",
-    "source": "MBS",
-    "date": "2026-10-08T00:00:00.000Z",
-    "url": "https://cdn02.wigroup.vn/baocaophantich/ar_25855_MBS_2026-10-08.pdf",
-    "category": "Báo cáo Chiến lược",
-    "created_at": "2026-10-09T12:35:28.190Z"
-  },
-  {
-    "id": 25862,
-    "title": "Báo cáo Chiến lược Quý 4/2026: Tìm về giá trị",
-    "source": "KAFI",
-    "date": "2026-10-01T00:00:00.000Z",
-    "url": "https://cdn02.wigroup.vn/baocaophantich/ar_25821_KAFI_2026-10-01.pdf",
-    "category": "Báo cáo Chiến lược",
-    "created_at": "2026-10-07T13:23:00.020Z"
-  },
-  {
     "id": 25865,
     "title": "Báo cáo triển vọng quý 4/2026: Cơ hội trong giai đoạn tích lũy & phân hóa",
     "source": "FPTS",
@@ -376,15 +367,6 @@
     "url": "https://cdn02.wigroup.vn/baocaophantich/ar_25819_FPTS_2026-10-06.pdf",
     "category": "Báo cáo Chiến lược",
     "created_at": "2026-10-07T13:23:00.020Z"
-  },
-  {
-    "id": 25857,
-    "title": "Báo cáo tổng kết thị trường tháng 9/2026: Thanh khoản thấp, khối ngoại tiếp tục bán ròng tạo áp lực lên VN-Index",
-    "source": "Vietcap",
-    "date": "2026-10-02T00:00:00.000Z",
-    "url": "https://cdn02.wigroup.vn/baocaophantich/25857_Vietcap_2026-10-06.pdf",
-    "category": "Báo cáo Chiến lược",
-    "created_at": "2026-10-06T22:48:50.786Z"
   },
   {
     "id": 25859,
@@ -414,31 +396,13 @@
     "created_at": "2026-10-06T22:48:50.786Z"
   },
   {
-    "id": 25820,
-    "title": "Chiến lược tháng: Fed tăng lãi suất – Phép thử vĩ mô đối với Việt Nam",
-    "source": "MAS",
-    "date": "2026-09-21T00:00:00.000Z",
-    "url": "https://cdn02.wigroup.vn/baocaophantich/ar_25735_MAS_2026-09-21.pdf",
+    "id": 25857,
+    "title": "Báo cáo tổng kết thị trường tháng 9/2026: Thanh khoản thấp, khối ngoại tiếp tục bán ròng tạo áp lực lên VN-Index",
+    "source": "Vietcap",
+    "date": "2026-10-02T00:00:00.000Z",
+    "url": "https://cdn02.wigroup.vn/baocaophantich/25857_Vietcap_2026-10-06.pdf",
     "category": "Báo cáo Chiến lược",
-    "created_at": "2026-10-05T13:07:31.005Z"
-  },
-  {
-    "id": 25812,
-    "title": "Tác động quan hệ đối tác chiến lược Việt Nam - Canada",
-    "source": "MAS",
-    "date": "2026-09-25T00:00:00.000Z",
-    "url": "https://cdn02.wigroup.vn/baocaophantich/ar_25729_MAS_2026-09-25.pdf",
-    "category": "Báo cáo Chiến lược",
-    "created_at": "2026-10-05T13:07:31.005Z"
-  },
-  {
-    "id": 25813,
-    "title": "Ảnh hưởng chiến tranh Trung Đông",
-    "source": "MAS",
-    "date": "2026-09-28T00:00:00.000Z",
-    "url": "https://cdn02.wigroup.vn/baocaophantich/ar_25728_MAS_2026-09-28.pdf",
-    "category": "Báo cáo Chiến lược",
-    "created_at": "2026-10-05T13:07:31.005Z"
+    "created_at": "2026-10-06T22:48:50.786Z"
   },
   {
     "id": 25834,
@@ -450,20 +414,29 @@
     "created_at": "2026-10-05T13:07:31.005Z"
   },
   {
-    "id": 25774,
-    "title": "Danh mục Alpha tháng 10/2026",
-    "source": "MBS",
-    "date": "2026-09-29T00:00:00.000Z",
-    "url": "https://cdn02.wigroup.vn/baocaophantich/ar_25676_MBS_2026-09-29.pdf",
+    "id": 25862,
+    "title": "Báo cáo Chiến lược Quý 4/2026: Tìm về giá trị",
+    "source": "KAFI",
+    "date": "2026-10-01T00:00:00.000Z",
+    "url": "https://cdn02.wigroup.vn/baocaophantich/ar_25821_KAFI_2026-10-01.pdf",
+    "category": "Báo cáo Chiến lược",
+    "created_at": "2026-10-07T13:23:00.020Z"
+  },
+  {
+    "id": 25790,
+    "title": "Danh mục khuyến nghị tháng 10/2026",
+    "source": "AGRISECO",
+    "date": "2026-10-01T00:00:00.000Z",
+    "url": "https://cdn02.wigroup.vn/baocaophantich/ar_25691_AGRISECO_2026-10-01.pdf",
     "category": "Báo cáo Chiến lược",
     "created_at": "2026-10-03T13:07:23.636Z"
   },
   {
-    "id": 25766,
-    "title": "Đầu tư cổ phiếu trong môi trường lãi suất cao",
-    "source": "AGRISECO",
-    "date": "2026-09-29T00:00:00.000Z",
-    "url": "https://cdn02.wigroup.vn/baocaophantich/ar_25664_AGRISECO_2026-09-29.pdf",
+    "id": 25788,
+    "title": "Báo cáo ETF: Dự báo danh mục VNDIAMOND Q3/2026",
+    "source": "ACBS",
+    "date": "2026-10-01T00:00:00.000Z",
+    "url": "https://cdn02.wigroup.vn/baocaophantich/ar_25692_ACBS_2026-10-01.pdf",
     "category": "Báo cáo Chiến lược",
     "created_at": "2026-10-03T13:07:23.636Z"
   },
@@ -486,22 +459,31 @@
     "created_at": "2026-10-03T13:07:23.636Z"
   },
   {
-    "id": 25790,
-    "title": "Danh mục khuyến nghị tháng 10/2026",
-    "source": "AGRISECO",
-    "date": "2026-10-01T00:00:00.000Z",
-    "url": "https://cdn02.wigroup.vn/baocaophantich/ar_25691_AGRISECO_2026-10-01.pdf",
+    "id": 25774,
+    "title": "Danh mục Alpha tháng 10/2026",
+    "source": "MBS",
+    "date": "2026-09-29T00:00:00.000Z",
+    "url": "https://cdn02.wigroup.vn/baocaophantich/ar_25676_MBS_2026-09-29.pdf",
     "category": "Báo cáo Chiến lược",
     "created_at": "2026-10-03T13:07:23.636Z"
   },
   {
-    "id": 25788,
-    "title": "Báo cáo ETF: Dự báo danh mục VNDIAMOND Q3/2026",
-    "source": "ACBS",
-    "date": "2026-10-01T00:00:00.000Z",
-    "url": "https://cdn02.wigroup.vn/baocaophantich/ar_25692_ACBS_2026-10-01.pdf",
+    "id": 25766,
+    "title": "Đầu tư cổ phiếu trong môi trường lãi suất cao",
+    "source": "AGRISECO",
+    "date": "2026-09-29T00:00:00.000Z",
+    "url": "https://cdn02.wigroup.vn/baocaophantich/ar_25664_AGRISECO_2026-09-29.pdf",
     "category": "Báo cáo Chiến lược",
     "created_at": "2026-10-03T13:07:23.636Z"
+  },
+  {
+    "id": 25813,
+    "title": "Ảnh hưởng chiến tranh Trung Đông",
+    "source": "MAS",
+    "date": "2026-09-28T00:00:00.000Z",
+    "url": "https://cdn02.wigroup.vn/baocaophantich/ar_25728_MAS_2026-09-28.pdf",
+    "category": "Báo cáo Chiến lược",
+    "created_at": "2026-10-05T13:07:31.005Z"
   },
   {
     "id": 25761,
@@ -513,146 +495,74 @@
     "created_at": "2026-09-29T13:07:26.186Z"
   },
   {
-    "id": 25242,
-    "title": "Danh mục khuyến nghị các cổ phiếu ngân hàng nổi bật trong danh mục FTSE GEIS",
-    "source": "CTS",
-    "date": "2026-08-24T00:00:00.000Z",
-    "url": "https://cdn02.wigroup.vn/baocaophantich/25242_CTS_2026-08-24.pdf",
-    "category": "Báo cáo Chiến lược",
-    "created_at": "2026-09-26T01:09:32.419Z"
-  },
-  {
-    "id": 25257,
-    "title": "Công bố Kết quả Danh mục FTSE GEIS – H2/2026",
-    "source": "ACBS",
-    "date": "2026-08-25T00:00:00.000Z",
-    "url": "https://cdn02.wigroup.vn/baocaophantich/25257_ACBS_2026-08-25.pdf",
-    "category": "Báo cáo Chiến lược",
-    "created_at": "2026-09-26T01:09:32.419Z"
-  },
-  {
-    "id": 25285,
-    "title": "Danh mục khuyến nghị (trung & dài hạn)_Tháng 9/2026",
+    "id": 25812,
+    "title": "Tác động quan hệ đối tác chiến lược Việt Nam - Canada",
     "source": "MAS",
-    "date": "2026-08-26T00:00:00.000Z",
-    "url": "https://cdn02.wigroup.vn/baocaophantich/25285_MAS_2026-08-26.pdf",
+    "date": "2026-09-25T00:00:00.000Z",
+    "url": "https://cdn02.wigroup.vn/baocaophantich/ar_25729_MAS_2026-09-25.pdf",
+    "category": "Báo cáo Chiến lược",
+    "created_at": "2026-10-05T13:07:31.005Z"
+  },
+  {
+    "id": 25704,
+    "title": "Tổng hợp dự báo KQKD Q3.2026 và cả năm 2026",
+    "source": "VCBS",
+    "date": "2026-09-24T00:00:00.000Z",
+    "url": "https://cdn02.wigroup.vn/baocaophantich/ar_25604_VCBS_2026-09-24.pdf",
     "category": "Báo cáo Chiến lược",
     "created_at": "2026-09-26T01:09:32.419Z"
   },
   {
-    "id": 25298,
-    "title": "FTSE Russell công bố danh sách cổ phiếu Việt Nam được đưa vào bộ chỉ số FTSE Emerging",
+    "id": 25820,
+    "title": "Chiến lược tháng: Fed tăng lãi suất – Phép thử vĩ mô đối với Việt Nam",
+    "source": "MAS",
+    "date": "2026-09-21T00:00:00.000Z",
+    "url": "https://cdn02.wigroup.vn/baocaophantich/ar_25735_MAS_2026-09-21.pdf",
+    "category": "Báo cáo Chiến lược",
+    "created_at": "2026-10-05T13:07:31.005Z"
+  },
+  {
+    "id": 25619,
+    "title": "Cập nhật diễn biến dòng tiền tháng 8/2026 - Dòng vốn ETF dịch chuyển theo hướng thận trọng",
     "source": "VNDS",
-    "date": "2026-08-26T00:00:00.000Z",
-    "url": "https://cdn02.wigroup.vn/baocaophantich/25298_VNDS_2026-08-26.pdf",
+    "date": "2026-09-18T00:00:00.000Z",
+    "url": "https://cdn02.wigroup.vn/baocaophantich/ar_25441_VNDS_2026-09-18.pdf",
     "category": "Báo cáo Chiến lược",
     "created_at": "2026-09-26T01:09:32.419Z"
   },
   {
-    "id": 25376,
-    "title": "Thị trường Dầu thế giới 2026 và dự báo",
-    "source": "VIX",
-    "date": "2026-08-26T00:00:00.000Z",
-    "url": "https://cdn02.wigroup.vn/baocaophantich/25376_VIX_2026-08-26.pdf",
+    "id": 25604,
+    "title": "Báo cáo Chiến lược đầu tư Ứng dụng mô hình học máy trong tìm kiếm cổ phiếu dẫn đầu - Tháng 09/2026",
+    "source": "FPTS",
+    "date": "2026-09-18T00:00:00.000Z",
+    "url": "https://cdn02.wigroup.vn/baocaophantich/ar_25458_FPTS_2026-09-18.pdf",
     "category": "Báo cáo Chiến lược",
     "created_at": "2026-09-26T01:09:32.419Z"
   },
   {
-    "id": 25313,
-    "title": "Danh mục Alpha tháng 09/2026",
-    "source": "MBS",
-    "date": "2026-08-27T00:00:00.000Z",
-    "url": "https://cdn02.wigroup.vn/baocaophantich/25313_MBS_2026-08-27.pdf",
-    "category": "Báo cáo Chiến lược",
-    "created_at": "2026-09-26T01:09:32.419Z"
-  },
-  {
-    "id": 25375,
-    "title": "Kinh tế Mỹ ra sao trước thềm họp Fed…",
-    "source": "VIX",
-    "date": "2026-08-28T00:00:00.000Z",
-    "url": "https://cdn02.wigroup.vn/baocaophantich/25375_VIX_2026-08-28.pdf",
-    "category": "Báo cáo Chiến lược",
-    "created_at": "2026-09-26T01:09:32.419Z"
-  },
-  {
-    "id": 25374,
-    "title": "Giá khí tự nhiên tại Châu Âu tăng mạnh và tác động",
-    "source": "VIX",
-    "date": "2026-08-28T00:00:00.000Z",
-    "url": "https://cdn02.wigroup.vn/baocaophantich/25374_VIX_2026-08-28.pdf",
-    "category": "Báo cáo Chiến lược",
-    "created_at": "2026-09-26T01:09:32.419Z"
-  },
-  {
-    "id": 25367,
-    "title": "Lãi suất liệu có giảm? - Định giá hấp dẫn có thực sự hấp dẫn?",
-    "source": "VDS",
-    "date": "2026-09-03T00:00:00.000Z",
-    "url": "https://cdn02.wigroup.vn/baocaophantich/25367_VDS_2026-09-03.pdf",
-    "category": "Báo cáo Chiến lược",
-    "created_at": "2026-09-26T01:09:32.419Z"
-  },
-  {
-    "id": 25382,
-    "title": "Dự báo cơ cấu danh mục quỹ Vaneck & Xtrackers Q3.2026",
-    "source": "ACBS",
-    "date": "2026-09-04T00:00:00.000Z",
-    "url": "https://cdn02.wigroup.vn/baocaophantich/25382_ACBS_2026-09-04.pdf",
-    "category": "Báo cáo Chiến lược",
-    "created_at": "2026-09-26T01:09:32.419Z"
-  },
-  {
-    "id": 25457,
-    "title": "Báo cáo triển vọng thị trường tháng 9: Đón dòng vốn nâng hạng",
-    "source": "VDS",
-    "date": "2026-09-07T00:00:00.000Z",
-    "url": "https://cdn02.wigroup.vn/baocaophantich/25457_VDS_2026-09-07.pdf",
-    "category": "Báo cáo Chiến lược",
-    "created_at": "2026-09-26T01:09:32.419Z"
-  },
-  {
-    "id": 25452,
-    "title": "Báo cáo tổng kết thị trường tháng 8/2026 - VN-Index phục hồi sau 2 tháng giảm liên tiếp",
-    "source": "Vietcap",
-    "date": "2026-09-07T00:00:00.000Z",
-    "url": "https://cdn02.wigroup.vn/baocaophantich/25452_Vietcap_2026-09-07.pdf",
-    "category": "Báo cáo Chiến lược",
-    "created_at": "2026-09-26T01:09:32.419Z"
-  },
-  {
-    "id": 25428,
-    "title": "Báo cáo chiến lược tháng 9/2026",
-    "source": "SHS",
-    "date": "2026-09-08T00:00:00.000Z",
-    "url": "https://cdn02.wigroup.vn/baocaophantich/25428_SHS_2026-09-08.pdf",
-    "category": "Báo cáo Chiến lược",
-    "created_at": "2026-09-26T01:09:32.419Z"
-  },
-  {
-    "id": 25429,
-    "title": "Báo cáo Chiến lược Tháng 9/2026: Ra khơi",
-    "source": "SSI",
-    "date": "2026-09-08T00:00:00.000Z",
+    "id": 25611,
+    "title": "Bản tin nâng hạng: 21/09/2026 Việt Nam chính thức được nâng hạng lên Thị trường mới nổi thứ cấp",
+    "source": "TCBS",
+    "date": "2026-09-18T00:00:00.000Z",
     "url": null,
     "category": "Báo cáo Chiến lược",
     "created_at": "2026-09-26T01:09:32.419Z"
   },
   {
-    "id": 25453,
-    "title": "Chiến lược thị trường ngắn hạn tháng 9/2026 - Chào đón dòng vốn đầu tiên từ nâng hạng thị trường",
-    "source": "Vietcap",
-    "date": "2026-09-08T00:00:00.000Z",
-    "url": "https://cdn02.wigroup.vn/baocaophantich/25453_Vietcap_2026-09-08.pdf",
+    "id": 25513,
+    "title": "Ai thực sự hưởng lợi từ đầu tư công",
+    "source": "TCBS",
+    "date": "2026-09-15T00:00:00.000Z",
+    "url": null,
     "category": "Báo cáo Chiến lược",
     "created_at": "2026-09-26T01:09:32.419Z"
   },
   {
-    "id": 25455,
-    "title": "Danh mục FTSE GEIS: Những cổ phiếu tâm điểm thu hút dòng vốn nước ngoài",
-    "source": "MBS",
-    "date": "2026-09-09T00:00:00.000Z",
-    "url": "https://cdn02.wigroup.vn/baocaophantich/25455_MBS_2026-09-09.pdf",
+    "id": 25550,
+    "title": "Báo cáo cập nhật Chiến lược đầu tư theo yếu tố Khả năng sinh lời - Tháng 09/2026 - FPTS",
+    "source": "FPTS",
+    "date": "2026-09-14T00:00:00.000Z",
+    "url": "https://cdn02.wigroup.vn/baocaophantich/ar_25401_FPTS_2026-09-14.pdf",
     "category": "Báo cáo Chiến lược",
     "created_at": "2026-09-26T01:09:32.419Z"
   },
@@ -684,56 +594,146 @@
     "created_at": "2026-09-26T01:09:32.419Z"
   },
   {
-    "id": 25550,
-    "title": "Báo cáo cập nhật Chiến lược đầu tư theo yếu tố Khả năng sinh lời - Tháng 09/2026 - FPTS",
-    "source": "FPTS",
-    "date": "2026-09-14T00:00:00.000Z",
-    "url": "https://cdn02.wigroup.vn/baocaophantich/ar_25401_FPTS_2026-09-14.pdf",
+    "id": 25455,
+    "title": "Danh mục FTSE GEIS: Những cổ phiếu tâm điểm thu hút dòng vốn nước ngoài",
+    "source": "MBS",
+    "date": "2026-09-09T00:00:00.000Z",
+    "url": "https://cdn02.wigroup.vn/baocaophantich/25455_MBS_2026-09-09.pdf",
     "category": "Báo cáo Chiến lược",
     "created_at": "2026-09-26T01:09:32.419Z"
   },
   {
-    "id": 25513,
-    "title": "Ai thực sự hưởng lợi từ đầu tư công",
-    "source": "TCBS",
-    "date": "2026-09-15T00:00:00.000Z",
+    "id": 25428,
+    "title": "Báo cáo chiến lược tháng 9/2026",
+    "source": "SHS",
+    "date": "2026-09-08T00:00:00.000Z",
+    "url": "https://cdn02.wigroup.vn/baocaophantich/25428_SHS_2026-09-08.pdf",
+    "category": "Báo cáo Chiến lược",
+    "created_at": "2026-09-26T01:09:32.419Z"
+  },
+  {
+    "id": 25429,
+    "title": "Báo cáo Chiến lược Tháng 9/2026: Ra khơi",
+    "source": "SSI",
+    "date": "2026-09-08T00:00:00.000Z",
     "url": null,
     "category": "Báo cáo Chiến lược",
     "created_at": "2026-09-26T01:09:32.419Z"
   },
   {
-    "id": 25619,
-    "title": "Cập nhật diễn biến dòng tiền tháng 8/2026 - Dòng vốn ETF dịch chuyển theo hướng thận trọng",
+    "id": 25453,
+    "title": "Chiến lược thị trường ngắn hạn tháng 9/2026 - Chào đón dòng vốn đầu tiên từ nâng hạng thị trường",
+    "source": "Vietcap",
+    "date": "2026-09-08T00:00:00.000Z",
+    "url": "https://cdn02.wigroup.vn/baocaophantich/25453_Vietcap_2026-09-08.pdf",
+    "category": "Báo cáo Chiến lược",
+    "created_at": "2026-09-26T01:09:32.419Z"
+  },
+  {
+    "id": 25457,
+    "title": "Báo cáo triển vọng thị trường tháng 9: Đón dòng vốn nâng hạng",
+    "source": "VDS",
+    "date": "2026-09-07T00:00:00.000Z",
+    "url": "https://cdn02.wigroup.vn/baocaophantich/25457_VDS_2026-09-07.pdf",
+    "category": "Báo cáo Chiến lược",
+    "created_at": "2026-09-26T01:09:32.419Z"
+  },
+  {
+    "id": 25452,
+    "title": "Báo cáo tổng kết thị trường tháng 8/2026 - VN-Index phục hồi sau 2 tháng giảm liên tiếp",
+    "source": "Vietcap",
+    "date": "2026-09-07T00:00:00.000Z",
+    "url": "https://cdn02.wigroup.vn/baocaophantich/25452_Vietcap_2026-09-07.pdf",
+    "category": "Báo cáo Chiến lược",
+    "created_at": "2026-09-26T01:09:32.419Z"
+  },
+  {
+    "id": 25382,
+    "title": "Dự báo cơ cấu danh mục quỹ Vaneck & Xtrackers Q3.2026",
+    "source": "ACBS",
+    "date": "2026-09-04T00:00:00.000Z",
+    "url": "https://cdn02.wigroup.vn/baocaophantich/25382_ACBS_2026-09-04.pdf",
+    "category": "Báo cáo Chiến lược",
+    "created_at": "2026-09-26T01:09:32.419Z"
+  },
+  {
+    "id": 25367,
+    "title": "Lãi suất liệu có giảm? - Định giá hấp dẫn có thực sự hấp dẫn?",
+    "source": "VDS",
+    "date": "2026-09-03T00:00:00.000Z",
+    "url": "https://cdn02.wigroup.vn/baocaophantich/25367_VDS_2026-09-03.pdf",
+    "category": "Báo cáo Chiến lược",
+    "created_at": "2026-09-26T01:09:32.419Z"
+  },
+  {
+    "id": 25375,
+    "title": "Kinh tế Mỹ ra sao trước thềm họp Fed…",
+    "source": "VIX",
+    "date": "2026-08-28T00:00:00.000Z",
+    "url": "https://cdn02.wigroup.vn/baocaophantich/25375_VIX_2026-08-28.pdf",
+    "category": "Báo cáo Chiến lược",
+    "created_at": "2026-09-26T01:09:32.419Z"
+  },
+  {
+    "id": 25374,
+    "title": "Giá khí tự nhiên tại Châu Âu tăng mạnh và tác động",
+    "source": "VIX",
+    "date": "2026-08-28T00:00:00.000Z",
+    "url": "https://cdn02.wigroup.vn/baocaophantich/25374_VIX_2026-08-28.pdf",
+    "category": "Báo cáo Chiến lược",
+    "created_at": "2026-09-26T01:09:32.419Z"
+  },
+  {
+    "id": 25313,
+    "title": "Danh mục Alpha tháng 09/2026",
+    "source": "MBS",
+    "date": "2026-08-27T00:00:00.000Z",
+    "url": "https://cdn02.wigroup.vn/baocaophantich/25313_MBS_2026-08-27.pdf",
+    "category": "Báo cáo Chiến lược",
+    "created_at": "2026-09-26T01:09:32.419Z"
+  },
+  {
+    "id": 25285,
+    "title": "Danh mục khuyến nghị (trung & dài hạn)_Tháng 9/2026",
+    "source": "MAS",
+    "date": "2026-08-26T00:00:00.000Z",
+    "url": "https://cdn02.wigroup.vn/baocaophantich/25285_MAS_2026-08-26.pdf",
+    "category": "Báo cáo Chiến lược",
+    "created_at": "2026-09-26T01:09:32.419Z"
+  },
+  {
+    "id": 25298,
+    "title": "FTSE Russell công bố danh sách cổ phiếu Việt Nam được đưa vào bộ chỉ số FTSE Emerging",
     "source": "VNDS",
-    "date": "2026-09-18T00:00:00.000Z",
-    "url": "https://cdn02.wigroup.vn/baocaophantich/ar_25441_VNDS_2026-09-18.pdf",
+    "date": "2026-08-26T00:00:00.000Z",
+    "url": "https://cdn02.wigroup.vn/baocaophantich/25298_VNDS_2026-08-26.pdf",
     "category": "Báo cáo Chiến lược",
     "created_at": "2026-09-26T01:09:32.419Z"
   },
   {
-    "id": 25604,
-    "title": "Báo cáo Chiến lược đầu tư Ứng dụng mô hình học máy trong tìm kiếm cổ phiếu dẫn đầu - Tháng 09/2026",
-    "source": "FPTS",
-    "date": "2026-09-18T00:00:00.000Z",
-    "url": "https://cdn02.wigroup.vn/baocaophantich/ar_25458_FPTS_2026-09-18.pdf",
+    "id": 25376,
+    "title": "Thị trường Dầu thế giới 2026 và dự báo",
+    "source": "VIX",
+    "date": "2026-08-26T00:00:00.000Z",
+    "url": "https://cdn02.wigroup.vn/baocaophantich/25376_VIX_2026-08-26.pdf",
     "category": "Báo cáo Chiến lược",
     "created_at": "2026-09-26T01:09:32.419Z"
   },
   {
-    "id": 25611,
-    "title": "Bản tin nâng hạng: 21/09/2026 Việt Nam chính thức được nâng hạng lên Thị trường mới nổi thứ cấp",
-    "source": "TCBS",
-    "date": "2026-09-18T00:00:00.000Z",
-    "url": null,
+    "id": 25257,
+    "title": "Công bố Kết quả Danh mục FTSE GEIS – H2/2026",
+    "source": "ACBS",
+    "date": "2026-08-25T00:00:00.000Z",
+    "url": "https://cdn02.wigroup.vn/baocaophantich/25257_ACBS_2026-08-25.pdf",
     "category": "Báo cáo Chiến lược",
     "created_at": "2026-09-26T01:09:32.419Z"
   },
   {
-    "id": 25704,
-    "title": "Tổng hợp dự báo KQKD Q3.2026 và cả năm 2026",
-    "source": "VCBS",
-    "date": "2026-09-24T00:00:00.000Z",
-    "url": "https://cdn02.wigroup.vn/baocaophantich/ar_25604_VCBS_2026-09-24.pdf",
+    "id": 25242,
+    "title": "Danh mục khuyến nghị các cổ phiếu ngân hàng nổi bật trong danh mục FTSE GEIS",
+    "source": "CTS",
+    "date": "2026-08-24T00:00:00.000Z",
+    "url": "https://cdn02.wigroup.vn/baocaophantich/25242_CTS_2026-08-24.pdf",
     "category": "Báo cáo Chiến lược",
     "created_at": "2026-09-26T01:09:32.419Z"
   }

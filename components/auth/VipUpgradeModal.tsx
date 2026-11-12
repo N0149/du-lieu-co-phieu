@@ -82,7 +82,7 @@ export const VIP_PRIVILEGES = [
   'Thuyết minh BCTC chi tiết 34 quý: Bóc tách nợ vay, dự án dở dang & hàng tồn kho',
   'Toàn bộ Nghị quyết ĐHĐCĐ chi tiết: Kế hoạch cổ tức, thù lao HĐQT & biểu quyết',
   'Báo cáo Nghiên cứu chuyên sâu AI & Audio Podcast tóm tắt độc quyền',
-  'Kế hoạch kinh doanh ĐHĐCĐ 10 năm & đối chiếu mức độ cam kết Ban lãnh đạo',
+  'Định giá độc quyền RNAV & Tình báo hàng hải bóc tách DWT từng bến cảng',
   'Chỉ số độc quyền: P/E thực tế & Tỷ lệ trích ngoài cổ đông (Quỹ KTPL & Thưởng BĐH)',
 ] as const
 

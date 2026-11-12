@@ -37,6 +37,7 @@ export function StockLink({
   href,
   ticker,
   debounceMs = 80,
+  prefetch = false,
   children,
   onPointerEnter,
   onPointerLeave,
@@ -83,6 +84,7 @@ export function StockLink({
   return (
     <Link
       href={href}
+      prefetch={prefetch}
       onPointerEnter={handlePointerEnter}
       onPointerLeave={handlePointerLeave}
       onTouchStart={handleTouchStart}
