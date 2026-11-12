@@ -227,6 +227,10 @@ export function StockBctcReportView({
       })
   }
 
+  const currentData = selectedType === 'HopNhat' ? dataHopNhat : dataCongTyMe
+  const title = currentData?.title || ""
+  const tableCount = currentData?.tableCount ?? 0
+
   // Thanh tab con: Báo cáo tài chính bán niên & Báo cáo tài chính quý 3 (hiển thị nổi bật ở phía trên)
   const renderSubTabsBar = () => (
     <div className="flex flex-wrap items-center justify-between gap-3 p-1.5 sm:p-2 rounded-2xl border border-border/80 bg-card/90 backdrop-blur-xs shadow-xs">
@@ -266,13 +270,15 @@ export function StockBctcReportView({
 
       <div className="hidden sm:flex items-center gap-2 text-xs text-muted-foreground px-2">
         <span className="font-mono text-emerald-400 font-bold">{ticker}</span>
-        <span>·</span>
-        <span>{tableCount} bảng chi tiết</span>
+        {currentData?.hasReport && tableCount > 0 && (
+          <>
+            <span>·</span>
+            <span>{tableCount} bảng chi tiết</span>
+          </>
+        )}
       </div>
     </div>
   )
-
-  const currentData = selectedType === 'HopNhat' ? dataHopNhat : dataCongTyMe
 
   const [selectedSectionId, setSelectedSectionId] = useState<string>("all")
   const [searchKeyword, setSearchKeyword] = useState<string>("")
@@ -379,26 +385,24 @@ export function StockBctcReportView({
           </div>
           <div className="max-w-md mx-auto space-y-2">
             <h3 className="text-lg font-bold text-foreground">
-              Chưa có dữ liệu {targetPeriod === 'Quy_3_2026' ? 'Báo cáo Quý 3/2026' : 'Báo cáo Bán niên 2026'} cho {companyName || ticker}
+              Chưa có dữ liệu {selectedPeriod === 'Quy_3_2026' ? 'Báo cáo Quý 3/2026' : 'Báo cáo Bán niên 2026'} cho {companyName || ticker}
             </h3>
             <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed">
-              Dữ liệu số hóa chi tiết của {targetPeriod === 'Quy_3_2026' ? 'Báo cáo Quý 3/2026' : 'Báo cáo Bán niên 2026'} đang trong tiến trình trích xuất tự động hoặc doanh nghiệp chưa công bố. Bạn có thể xem và tải trực tiếp bản scan Báo cáo tài chính gốc từ danh mục phía trên!
+              Dữ liệu số hóa chi tiết của {selectedPeriod === 'Quy_3_2026' ? 'Báo cáo Quý 3/2026' : 'Báo cáo Bán niên 2026'} đang trong tiến trình trích xuất tự động hoặc doanh nghiệp chưa công bố. Bạn có thể xem và tải trực tiếp bản scan Báo cáo tài chính gốc từ danh mục phía trên!
             </p>
           </div>
 
-          {onSwitchPeriod && (
-            <div className="flex justify-center pt-1">
-              <button
-                type="button"
-                onClick={() => onSwitchPeriod(targetPeriod === 'Quy_3_2026' ? 'Ban_Nien_2026' : 'Quy_3_2026')}
-                className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-primary text-primary-foreground text-xs sm:text-sm font-bold shadow-xs hover:bg-primary/90 transition-all cursor-pointer"
-              >
-                <Calendar className="size-4" />
-                <span>Chuyển sang xem {targetPeriod === 'Quy_3_2026' ? 'Báo cáo Bán niên 2026' : 'Báo cáo Quý 3/2026'}</span>
-                <ArrowUpRight className="size-4" />
-              </button>
-            </div>
-          )}
+          <div className="flex justify-center pt-1">
+            <button
+              type="button"
+              onClick={() => handlePeriodChange(selectedPeriod === 'Quy_3_2026' ? 'Ban_Nien_2026' : 'Quy_3_2026')}
+              className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-primary text-primary-foreground text-xs sm:text-sm font-bold shadow-xs hover:bg-primary/90 transition-all cursor-pointer"
+            >
+              <Calendar className="size-4" />
+              <span>Chuyển sang xem {selectedPeriod === 'Quy_3_2026' ? 'Báo cáo Bán niên 2026' : 'Báo cáo Quý 3/2026'}</span>
+              <ArrowUpRight className="size-4" />
+            </button>
+          </div>
 
         {tickers.length > 0 && (
           <div className="pt-4 border-t border-border/50 max-w-2xl mx-auto text-left">
@@ -421,7 +425,7 @@ export function StockBctcReportView({
               {filteredTickers.map((sym) => (
                 <Link
                   key={sym}
-                  href={`/stock/${sym}?tab=${targetPeriod === 'Quy_3_2026' ? 'bctc-q3' : 'bctc-ban-nien'}`}
+                  href={`/stock/${sym}?tab=${selectedPeriod === 'Quy_3_2026' ? 'bctc-q3' : 'bctc-ban-nien'}`}
                   className={cn(
                     "inline-flex items-center gap-1 px-2.5 py-1 rounded-lg text-xs font-bold font-mono transition-colors",
                     sym === ticker
@@ -440,8 +444,6 @@ export function StockBctcReportView({
       </div>
     )
   }
-
-  const { title, tableCount } = currentData
 
   const handleCopy = () => {
     if (typeof window === "undefined" || !currentData) return
