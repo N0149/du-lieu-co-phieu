@@ -2958,5 +2958,135 @@
     "url": "https://vietstock.vn/2026/11/sgn-nhan-duoc-quyet-dinh-cua-thue-tp-hcm-ve-xu-phat-hanh-chinh-ve-thue-830-1514431.htm",
     "source": "Vietstock_News",
     "alerted_at": "2026-11-12 11:48:11"
+  },
+  "web_9f8859da4f19": {
+    "ticker": "CAP",
+    "category": "EXTRAORDINARY_EVENT",
+    "category_label": "CÔNG BỐ BẤT THƯỜNG",
+    "title": "Báo cáo kết quả kinh doanh",
+    "date": "13/11/2026",
+    "url": "http://www.yfatuf.com.vn/category/quan-he-nha-dau-tu/bao-cao-ket-qua-kinh-doanh/",
+    "source": "Company_Web",
+    "alerted_at": "2026-11-13 08:32:44"
+  },
+  "web_e953f82797b4": {
+    "ticker": "CAP",
+    "category": "EXTRAORDINARY_EVENT",
+    "category_label": "CÔNG BỐ BẤT THƯỜNG",
+    "title": "Công bố thông tin",
+    "date": "13/11/2026",
+    "url": "http://www.yfatuf.com.vn/category/quan-he-nha-dau-tu/cong-bo-thong-tin/",
+    "source": "Company_Web",
+    "alerted_at": "2026-11-13 08:32:45"
+  },
+  "web_3d80658b6394": {
+    "ticker": "CAP",
+    "category": "EXTRAORDINARY_EVENT",
+    "category_label": "CÔNG BỐ BẤT THƯỜNG",
+    "title": "Quan hệ nhà đầu tư",
+    "date": "13/11/2026",
+    "url": "http://www.yfatuf.com.vn/category/quan-he-nha-dau-tu/",
+    "source": "Company_Web",
+    "alerted_at": "2026-11-13 08:32:46"
+  },
+  "web_d71594c88103": {
+    "ticker": "CAP",
+    "category": "EXTRAORDINARY_EVENT",
+    "category_label": "CÔNG BỐ BẤT THƯỜNG",
+    "title": "Tin tức - Sự kiện",
+    "date": "13/11/2026",
+    "url": "http://www.yfatuf.com.vn/category/tin-tuc-su-kien/",
+    "source": "Company_Web",
+    "alerted_at": "2026-11-13 08:32:47"
+  },
+  "web_9ec946673ba3": {
+    "ticker": "CAP",
+    "category": "EXTRAORDINARY_EVENT",
+    "category_label": "CÔNG BỐ BẤT THƯỜNG",
+    "title": "13/11/2026",
+    "date": "13/11/2026",
+    "url": "http://www.yfatuf.com.vn/bao-cao-tai-chinh-tong-hop-nien-do-2025-2026-da-kiem-toan-tv/",
+    "source": "Company_Web",
+    "alerted_at": "2026-11-13 08:32:47"
+  },
+  "vts_doc_9c965699aba9": {
+    "ticker": "DHB",
+    "category": "EGM_EXTRAORDINARY",
+    "category_label": "ĐHĐCĐ BẤT THƯỜNG / LẤY Ý KIẾN",
+    "title": "Nghị quyết đại hội đồng cổ đông bất thường năm 2026",
+    "date": "13/11/2026 04:35",
+    "url": "https://static2.vietstock.vn/data/HNX/2026/NGHI QUYET DHCD/VN/DHB_Nghiquyet_DHDCD bat thuong_2026.zip",
+    "source": "Vietstock_Document",
+    "alerted_at": "2026-11-13 08:32:47"
+  },
+  "vts_doc_38fdb1ea112d": {
+    "ticker": "PDV",
+    "category": "INSIDER_BUY",
+    "category_label": "CỔ ĐÔNG NỘI BỘ MUA VÀO",
+    "title": "Nghị quyết HĐQT về việc thông qua ngày ĐKCC thực hiện quyền mua cổ phiếu",
+    "date": "13/11/2026 01:37",
+    "url": "https://static2.vietstock.vn/data/HOSE/2026/NGHI QUYET HDQT/VN/20261112___pdv___cbtt_nq_thong_qua_ngay_dkcc_thuc_hien_quyen.pdf",
+    "source": "Vietstock_Document",
+    "alerted_at": "2026-11-13 08:32:48"
+  },
+  "vts_news_1514519": {
+    "ticker": "PDV",
+    "category": "DIVIDEND_RIGHTS",
+    "category_label": "CỔ TỨC & QUYỀN DOANH NGHIỆP",
+    "title": "PDV muốn huy động gần 570 tỷ bổ sung vốn mua tàu, thách thức khi chào bán cao hơn thị giá",
+    "date": "13/11/2026 04:30",
+    "url": "https://vietstock.vn/2026/11/pdv-muon-huy-dong-gan-570-ty-bo-sung-von-mua-tau-thach-thuc-khi-chao-ban-cao-hon-thi-gia-764-1514519.htm",
+    "source": "Vietstock_News",
+    "alerted_at": "2026-11-13 08:32:49"
+  },
+  "vts_news_1514571": {
+    "ticker": "DPR",
+    "category": "RESOLUTION_HDQT",
+    "category_label": "NGHỊ QUYẾT HĐQT",
+    "title": "DPR: Nghị quyết HĐQT về việc triển khai phương án phát hành cổ phiếu để tăng vốn cổ phần từ nguồn vốn chủ sở hữu",
+    "date": "13/11/2026 07:02",
+    "url": "https://vietstock.vn/2026/11/dpr-nghi-quyet-hdqt-ve-viec-trien-khai-phuong-an-phat-hanh-co-phieu-de-tang-von-co-phan-tu-nguon-von-chu-so-huu-737-1514571.htm",
+    "source": "Vietstock_News",
+    "alerted_at": "2026-11-13 08:32:49"
+  },
+  "vts_news_1514524": {
+    "ticker": "DC4",
+    "category": "EXTRAORDINARY_EVENT",
+    "category_label": "CÔNG BỐ BẤT THƯỜNG",
+    "title": "DC4: Đính chính Báo cáo tình hình quản trị 6 tháng đầu năm 2025",
+    "date": "13/11/2026 03:05",
+    "url": "https://vietstock.vn/2026/11/dc4-dinh-chinh-bao-cao-tinh-hinh-quan-tri-6-thang-dau-nam-2025-737-1514524.htm",
+    "source": "Vietstock_News",
+    "alerted_at": "2026-11-13 08:32:50"
+  },
+  "vts_doc_2864644721c0": {
+    "ticker": "PTB",
+    "category": "RESOLUTION_HDQT",
+    "category_label": "NGHỊ QUYẾT HĐQT",
+    "title": "Nghị quyết HĐQT về việc chuyển nhượng toàn bộ phần vốn góp tại Công ty Sản xuất đá Granit - TNHH",
+    "date": "13/11/2026 01:37",
+    "url": "https://static2.vietstock.vn/data/HOSE/2026/NGHI QUYET HDQT/VN/20261111___ptb___nq_chuyen_nhuong_von_gop_tai_cty_sx_da_granit_tnhh.pdf",
+    "source": "Vietstock_Document",
+    "alerted_at": "2026-11-13 08:32:50"
+  },
+  "vts_news_1514572": {
+    "ticker": "SGN",
+    "category": "DIVIDEND_RIGHTS",
+    "category_label": "CỔ TỨC & QUYỀN DOANH NGHIỆP",
+    "title": "SGN: Thông báo về việc hủy ngày đăng ký cuối cùng",
+    "date": "13/11/2026 07:02",
+    "url": "https://vietstock.vn/2026/11/sgn-thong-bao-ve-viec-huy-ngay-dang-ky-cuoi-cung-737-1514572.htm",
+    "source": "Vietstock_News",
+    "alerted_at": "2026-11-13 08:32:51"
+  },
+  "vts_doc_b48790f1da50": {
+    "ticker": "TVN",
+    "category": "RESOLUTION_HDQT",
+    "category_label": "NGHỊ QUYẾT HĐQT",
+    "title": "Nghị quyết số 95/NQ-VNS ngày 11 tháng 11 năm 2026 về việc tổ chức lấy ý kiến cổ đông bằng văn bản để thông qua phương án tạm ứng cổ tức năm 2026 của Tổng công ty Thép Việt Nam - CTCP",
+    "date": "13/11/2026 02:07",
+    "url": "https://static2.vietstock.vn/data/UPCOM/2026/NGHI%20QUYET%20HDQT/VN/2_tvn_2026_11_12_dea1c2f_vi_1132_signed(NhieuFile).zip?ver=0ca68b95",
+    "source": "Vietstock_Document",
+    "alerted_at": "2026-11-13 08:32:52"
   }
 }
