@@ -29,6 +29,7 @@ import {
   Crown,
   Zap,
   Ban,
+  Home,
 } from 'lucide-react'
 import { createClient } from '@/lib/supabase/client'
 import { isAdminEmail } from '@/lib/admin-auth'
@@ -316,14 +317,23 @@ export default function AdminPage() {
           <p className="mt-2 text-xs text-[#9EACB9] leading-relaxed">
             Trang này dành riêng cho Quản trị viên (<span className="text-emerald-400 font-mono">trungnhat232@gmail.com</span>). Vui lòng đăng nhập để tiếp tục.
           </p>
-          <button
-            type="button"
-            onClick={() => setAuthModalOpen(true)}
-            className="mt-6 inline-flex w-full items-center justify-center gap-2 rounded-xl bg-emerald-500 px-5 py-3 text-sm font-semibold text-black transition-all hover:bg-emerald-400 cursor-pointer shadow-lg shadow-emerald-500/20"
-          >
-            <LogIn className="size-4" />
-            <span>Đăng nhập tài khoản Admin</span>
-          </button>
+          <div className="mt-6 flex flex-col sm:flex-row gap-3">
+            <button
+              type="button"
+              onClick={() => setAuthModalOpen(true)}
+              className="inline-flex flex-1 items-center justify-center gap-2 rounded-xl bg-emerald-500 px-5 py-3 text-sm font-semibold text-black transition-all hover:bg-emerald-400 cursor-pointer shadow-lg shadow-emerald-500/20"
+            >
+              <LogIn className="size-4" />
+              <span>Đăng nhập tài khoản Admin</span>
+            </button>
+            <Link
+              href="/"
+              className="inline-flex items-center justify-center gap-2 rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-sm font-semibold text-white transition-colors hover:bg-white/10"
+            >
+              <Home className="size-4" />
+              <span>Về trang chủ</span>
+            </Link>
+          </div>
         </div>
         <AuthModal open={authModalOpen} onClose={() => setAuthModalOpen(false)} />
       </div>
@@ -350,7 +360,8 @@ export default function AdminPage() {
               href="/"
               className="inline-flex items-center gap-2 rounded-xl border border-white/10 bg-white/5 px-4 py-2 text-xs font-semibold text-white transition-colors hover:bg-white/10"
             >
-              Về trang chủ
+              <Home className="size-3.5" />
+              <span>Về trang chủ</span>
             </Link>
           </div>
         </div>
@@ -391,6 +402,14 @@ export default function AdminPage() {
 
             {/* CÁC PHÍM TẮT HỮU ÍCH */}
             <div className="flex flex-wrap items-center gap-2">
+              <Link
+                href="/"
+                className="inline-flex items-center gap-1.5 rounded-xl border border-emerald-500/30 bg-emerald-500/10 px-3 py-1.5 text-xs font-semibold text-emerald-400 transition-colors hover:bg-emerald-500/20 hover:border-emerald-500/50"
+              >
+                <Home className="size-3.5" />
+                <span>Về trang chủ</span>
+              </Link>
+
               <button
                 type="button"
                 onClick={fetchAdminData}
