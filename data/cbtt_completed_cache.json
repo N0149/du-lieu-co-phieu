@@ -3088,5 +3088,45 @@
     "url": "https://static2.vietstock.vn/data/UPCOM/2026/NGHI%20QUYET%20HDQT/VN/2_tvn_2026_11_12_dea1c2f_vi_1132_signed(NhieuFile).zip?ver=0ca68b95",
     "source": "Vietstock_Document",
     "alerted_at": "2026-11-13 08:32:52"
+  },
+  "vts_news_1514661": {
+    "ticker": "ABR",
+    "category": "EGM_EXTRAORDINARY",
+    "category_label": "ĐHĐCĐ BẤT THƯỜNG / LẤY Ý KIẾN",
+    "title": "ABR: CBTT thời gian, địa điểm và tài liệu họp ĐHĐCĐ bất thường năm 2026",
+    "date": "13/11/2026 09:36",
+    "url": "https://vietstock.vn/2026/11/abr-cbtt-thoi-gian-dia-diem-va-tai-lieu-hop-dhdcd-bat-thuong-nam-2026-737-1514661.htm",
+    "source": "Vietstock_News",
+    "alerted_at": "2026-11-13 09:59:32"
+  },
+  "vts_news_1514683": {
+    "ticker": "MTA",
+    "category": "EGM_EXTRAORDINARY",
+    "category_label": "ĐHĐCĐ BẤT THƯỜNG / LẤY Ý KIẾN",
+    "title": "MTA: Ngày đăng ký cuối cùng Đại hội đồng cổ đông bất thường năm 2026",
+    "date": "13/11/2026 09:40",
+    "url": "https://vietstock.vn/2026/11/mta-ngay-dang-ky-cuoi-cung-dai-hoi-dong-co-dong-bat-thuong-nam-2026-737-1514683.htm",
+    "source": "Vietstock_News",
+    "alerted_at": "2026-11-13 09:59:33"
+  },
+  "vts_news_1514666": {
+    "ticker": "SFI",
+    "category": "RESOLUTION_HDQT",
+    "category_label": "NGHỊ QUYẾT HĐQT",
+    "title": "SFI: Nghị quyết HĐQT về triển khai phương án chia cổ phiếu quỹ cho cổ đông hiện hữu",
+    "date": "13/11/2026 09:40",
+    "url": "https://vietstock.vn/2026/11/sfi-nghi-quyet-hdqt-ve-trien-khai-phuong-an-chia-co-phieu-quy-cho-co-dong-hien-huu-737-1514666.htm",
+    "source": "Vietstock_News",
+    "alerted_at": "2026-11-13 09:59:34"
+  },
+  "web_37f377db3344": {
+    "ticker": "VNF",
+    "category": "INSIDER_TRADE",
+    "category_label": "GIAO DỊCH CỔ ĐÔNG / NỘI BỘ",
+    "title": "Thông báo thực hiện giao dịch cổ phiếu của người có liên quan của người nội bộ ngày 13/11/2026",
+    "date": "13/11/2026",
+    "url": "https://vinafreight.com/thong-tin-co-dong/thong-bao-thuc-hien-giao-dich-co-phieu-cua-nguoi-co-lien-quan-cua-nguoi-noi-bo-ngay-13-11-2026.html",
+    "source": "Company_Web",
+    "alerted_at": "2026-11-13 09:59:35"
   }
 }
