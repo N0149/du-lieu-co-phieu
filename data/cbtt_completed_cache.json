@@ -3238,5 +3238,65 @@
     "url": "https://vietstock.vn/2026/11/snz-nghi-quyet-hdqt-ve-chu-truong-giai-the-ctcp-sonadezi-khanh-hoa-737-1514728.htm",
     "source": "Vietstock_News",
     "alerted_at": "2026-11-13 11:32:26"
+  },
+  "vts_doc_0fe0fc271de3": {
+    "ticker": "SZC",
+    "category": "RESOLUTION_HDQT",
+    "category_label": "NGHỊ QUYẾT HĐQT",
+    "title": "Thông báo và Nghị quyết HĐQT về ngày đăng ký cuối cùng chốt danh sách cổ đông để thực hiện quyền lấy ý kiến cổ đông bằng văn bản",
+    "date": "14/11/2026 13:24",
+    "url": "https://static2.vietstock.vn/data/HOSE/2026/NGHI QUYET HDQT/VN/20261113___szc___chot_ds_co_dong_de_lay_y_kien_bang_van_ban.pdf",
+    "source": "Vietstock_Document",
+    "alerted_at": "2026-11-14 17:36:28"
+  },
+  "vts_doc_cc076ad3259f": {
+    "ticker": "DPR",
+    "category": "RESOLUTION_HDQT",
+    "category_label": "NGHỊ QUYẾT HĐQT",
+    "title": "Nghị quyết HĐQT về việc triển khai phương án phát hành cổ phiếu để tăng vốn cổ phần từ nguồn vốn chủ sở hữu",
+    "date": "14/11/2026 13:26",
+    "url": "https://static2.vietstock.vn/data/HOSE/2026/NGHI QUYET HDQT/VN/20261113___dpr___cbtt_trien_khai_pa_phat__hanh_cp_tang_vcsh.pdf",
+    "source": "Vietstock_Document",
+    "alerted_at": "2026-11-14 17:36:28"
+  },
+  "vts_doc_7f7def76e49d": {
+    "ticker": "BWE",
+    "category": "INSIDER_TRADE",
+    "category_label": "GIAO DỊCH CỔ ĐÔNG / NỘI BỘ",
+    "title": "Nghị quyết HĐQT về dự kiến thực hiện các giao dịch, ký hợp đồng với Tổ chức có liên quan",
+    "date": "14/11/2026 13:25",
+    "url": "https://static2.vietstock.vn/data/HOSE/2026/NGHI QUYET HDQT/VN/20261113___bwe___nq_hdqt_vv_giao_dich_voi_to_chuc_co_lien_quan_biwelco_signed.pdf",
+    "source": "Vietstock_Document",
+    "alerted_at": "2026-11-14 17:36:28"
+  },
+  "vts_doc_b9e4f5b5bc69": {
+    "ticker": "MSH",
+    "category": "RESOLUTION_HDQT",
+    "category_label": "NGHỊ QUYẾT HĐQT",
+    "title": "Nghị quyết HĐQT số 96 ngày 13/11/2026 (kèm Nghị quyết ĐHĐCĐ TN 2026, Thông báo ngày ĐKCC)",
+    "date": "14/11/2026 13:24",
+    "url": "https://static2.vietstock.vn/data/HOSE/2026/NGHI QUYET DHCD/VN/20261113___msh___cbtt_nq_hdqt___tb_ve_ngay_dkcc___ky.pdf",
+    "source": "Vietstock_Document",
+    "alerted_at": "2026-11-14 17:36:28"
+  },
+  "vts_news_1514948": {
+    "ticker": "POW",
+    "category": "EXTRAORDINARY_EVENT",
+    "category_label": "CÔNG BỐ BẤT THƯỜNG",
+    "title": "Phó Tổng Giám đốc PV Power: Sắp thu hồi dứt điểm khí trả trước tại Cà Mau, ước lãi công ty mẹ 2026 gần 7 ngàn tỷ đồng",
+    "date": "14/11/2026 08:07",
+    "url": "https://vietstock.vn/2026/11/pho-tong-giam-doc-pv-power-sap-thu-hoi-dut-diem-khi-tra-truoc-tai-ca-mau-uoc-lai-cong-ty-me-2026-gan-7-ngan-ty-dong-737-1514948.htm",
+    "source": "Vietstock_News",
+    "alerted_at": "2026-11-14 17:36:30"
+  },
+  "vts_doc_c9ee9eeb71c3": {
+    "ticker": "SFI",
+    "category": "RESOLUTION_HDQT",
+    "category_label": "NGHỊ QUYẾT HĐQT",
+    "title": "Nghị quyết HĐQT về triển khai phương án chia cổ phiếu quỹ cho cổ đông hiện hữu",
+    "date": "14/11/2026 13:26",
+    "url": "https://static2.vietstock.vn/data/HOSE/2026/NGHI QUYET HDQT/VN/20261113___sfi___nq_hdqt_vv_trien_khai_phuong_an_chia_co_phieu_quy_cho_co_dong_hien_huu.pdf",
+    "source": "Vietstock_Document",
+    "alerted_at": "2026-11-14 17:36:30"
   }
 }
