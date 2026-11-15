@@ -1,7 +1,28 @@
 # BÁO CÁO TÀI CHÍNH QUÝ 3/2026 & GIẢI TRÌNH CHÊNH LỆCH LỢI NHUẬN
 **CÔNG TY CỔ PHẦN LOGISTICS VINALINK**  
 Địa chỉ: 226/2 Lê Văn Sỹ, Phường Tân Sơn Hòa, TP.HCM  
-MCK: VNL  
+Mã chứng khoán: VNL  
+
+---
+
+<!-- TRANG 1 TRONG FILE GỐC (BÌA BÁO CÁO) -->
+
+### THÔNG TIN DOANH NGHIỆP & CHỨNG THỰC CHỮ KÝ SỐ
+
+* **Chứng thư số điện tử:**
+  * **Chủ thể:** CÔNG TY CỔ PHẦN LOGISTICS VINALINK
+  * **DN:** `cn=CÔNG TY CỔ PHẦN LOGISTICS VINALINK, c=VN, l=226/2 Lê Văn Sỹ, Phường 1, Quận Tân Bình, Thành Phố Hồ Chí Minh, e=thanhlt@vinalinklogistics.com`
+  * **Lý do ký (Reason):** I am the author of this document
+  * **Ngày ký:** 2026-10-30 15:38+07:00
+* **Logo doanh nghiệp:** VinaLink LOGISTICS
+* **Tên tổ chức:** CÔNG TY CỔ PHẦN LOGISTICS VINALINK
+* **Mã chứng khoán (MCK):** VNL
+* **Địa chỉ:** 226/2 Lê Văn Sỹ, Phường Tân Sơn Hòa, TP.HCM
+* **Website:** www.vinalinklogistics.com
+* **E-mail:** headoffice@vinalinklogistics.com
+* **Tel:** (028) 3991 9259
+* **Fax:** (028) 3991 9459
+* **Tiêu đề văn bản:** BÁO CÁO TÀI CHÍNH QUÝ 3/2026
 
 ---
 
@@ -11,9 +32,9 @@ CÔNG TY CỔ PHẦN LOGISTICS VINALINK
 226/2 Lê Văn Sỹ, Phường Tân Sơn Hòa, TPHCM  
 
 **Mẫu số B 01a - DN**  
-*(Theo 99/2025/TT-BTC)*  
+*(Theo Thông tư 99/2025/TT-BTC)*  
 
-### BÁO CÁO TÌNH HÌNH TÀI CHÍNH GIỮA NIÊN ĐỘ
+## BÁO CÁO TÌNH HÌNH TÀI CHÍNH GIỮA NIÊN ĐỘ
 **Tại ngày 30 tháng 09 năm 2026**  
 *Đơn vị tính: Đồng Việt Nam*
 
@@ -50,7 +71,7 @@ CÔNG TY CỔ PHẦN LOGISTICS VINALINK
 | 3. Dự phòng tổn thất đầu tư vào đơn vị khác dài hạn | 264 | | (232,537,118) | (232,537,118) |
 | **IV. Tài sản dài hạn khác** | **270** | | **2,531,449,420** | **373,854,690** |
 | 1. Chi phí chờ phân bổ dài hạn | 271 | | 2,531,449,420 | 373,854,690 |
-| 2. Tài sản dài hạn khác | 274 | | | |
+| 2. Tài sản dài hạn khác | 274 | | - | - |
 | **TỔNG CỘNG TÀI SẢN** | **280** | | **562,880,294,338** | **522,054,038,331** |
 
 ---
@@ -67,7 +88,7 @@ CÔNG TY CỔ PHẦN LOGISTICS VINALINK
 | **I. Nợ ngắn hạn** | **310** | | **155,884,574,645** | **154,577,060,449** |
 | 1. Phải trả người bán ngắn hạn | 311 | V.7 | 87,004,354,750 | 85,076,205,446 |
 | 2. Người mua trả tiền trước ngắn hạn | 312 | | 3,015,810,509 | 2,491,076,522 |
-| 3. Phải trả cổ tức, lợi nhuận | 313 | | | |
+| 3. Phải trả cổ tức, lợi nhuận | 313 | | - | - |
 | 4. Thuế và các khoản phải nộp Nhà nước ngắn hạn | 314 | V.8 | 14,903,291,028 | 10,419,588,136 |
 | 5. Phải trả người lao động | 315 | | 17,878,573,681 | 39,099,550,892 |
 | 6. Chi phí phải trả ngắn hạn | 316 | V.9 | 24,301,800,783 | 8,032,232,412 |
@@ -79,7 +100,7 @@ CÔNG TY CỔ PHẦN LOGISTICS VINALINK
 | **D. VỐN CHỦ SỞ HỮU** | **400** | **V.12** | **366,630,794,693** | **327,111,035,382** |
 | 1. Vốn góp của chủ sở hữu | 411 | | 148,087,870,000 | 141,404,870,000 |
 | - Cổ phiếu phổ thông có quyền biểu quyết | 411a | | 148,087,870,000 | 141,404,870,000 |
-| - Cổ phiếu ưu đãi | 411b | | | |
+| - Cổ phiếu ưu đãi | 411b | | - | - |
 | 2. Thặng dư vốn | 412 | | 4,870,000,000 | 4,950,000,000 |
 | 3. Vốn khác của chủ sở hữu | 414 | | 10,000,000,000 | 10,000,000,000 |
 | 4. Lợi nhuận sau thuế chưa phân phối | 420 | | 203,672,924,693 | 170,756,165,382 |
@@ -87,12 +108,14 @@ CÔNG TY CỔ PHẦN LOGISTICS VINALINK
 | - LNST chưa phân phối kỳ này | 420b | | 45,882,148,911 | 45,201,714,226 |
 | **TỔNG CỘNG NGUỒN VỐN** | **440** | | **562,880,294,338** | **522,054,038,331** |
 
-Phê duyệt, ngày 29 tháng 10 năm 2026
+*Phê duyệt, ngày 29 tháng 10 năm 2026*
 
 | NGƯỜI LẬP | KẾ TOÁN TRƯỞNG | NGƯỜI ĐẠI DIỆN THEO PHÁP LUẬT |
 | :---: | :---: | :---: |
 | *(Đã ký)* | *(Đã ký)* | *(Đã ký và đóng dấu)* |
 | **LÊ THỊ THANH THANH** | **NGUYỄN ANH NAM** | **VŨ QUỐC BẢO** |
+
+*(Dấu tròn: CÔNG TY CỔ PHẦN LOGISTICS VINALINK - M.S.D.N: 0301776205 - TP. HỒ CHÍ MINH)*
 
 ---
 
@@ -102,9 +125,9 @@ CÔNG TY CỔ PHẦN LOGISTICS VINALINK
 226/2 Lê Văn Sỹ, Phường Tân Sơn Hòa, TPHCM  
 
 **Mẫu số B 02a - DN**  
-*(Theo 99/2025/TT-BTC)*  
+*(Theo Thông tư 99/2025/TT-BTC)*  
 
-### BÁO CÁO KẾT QUẢ HOẠT ĐỘNG KINH DOANH GIỮA NIÊN ĐỘ
+## BÁO CÁO KẾT QUẢ HOẠT ĐỘNG KINH DOANH GIỮA NIÊN ĐỘ
 **Kỳ kế toán từ ngày 01/01/2026 đến ngày 30/09/2026**  
 *Đơn vị tính: Đồng Việt Nam*
 
@@ -112,33 +135,35 @@ CÔNG TY CỔ PHẦN LOGISTICS VINALINK
 | :--- | :---: | :---: | :---: | :---: | :---: | :---: |
 | 1 | 2 | 3 | 4 | 5 | 6 | 7 |
 | **1. Doanh thu bán hàng và cung cấp dịch vụ** | **01** | **V.14** | **391,736,812,625** | **376,992,777,619** | **1,159,829,464,887** | **1,002,314,170,862** |
-| 2. Các khoản giảm trừ doanh thu | 02 | | | | | |
+| 2. Các khoản giảm trừ doanh thu | 02 | | - | - | - | - |
 | **3. Doanh thu thuần về bán hàng và cung cấp dịch vụ** | **10** | | **391,736,812,625** | **376,992,777,619** | **1,159,829,464,887** | **1,002,314,170,862** |
 | 4. Giá vốn hàng bán | 11 | V.15 | 366,557,049,840 | 353,291,297,779 | 1,083,232,903,556 | 935,804,857,230 |
 | **5. Lợi nhuận gộp về bán hàng và cung cấp dịch vụ** | **20** | | **25,179,762,785** | **23,701,479,840** | **76,596,561,331** | **66,509,313,632** |
-| 6. Lãi/lỗ của hoạt động bán, thanh lý bất động sản đầu tư | 21 | | | | | |
+| 6. Lãi/lỗ của hoạt động bán, thanh lý bất động sản đầu tư | 21 | | - | - | - | - |
 | 7. Doanh thu hoạt động tài chính | 22 | V.16 | 1,328,564,317 | 5,052,974,995 | 7,356,343,672 | 16,578,453,676 |
 | 8. Chi phí tài chính | 23 | | 1,300,278,708 | 3,821,486,972 | 3,779,274,653 | 6,997,495,824 |
-| *- Trong đó: Chi phí lãi vay* | 24 | | | | | |
-| 9. Chi phí bán hàng | 25 | | | | | |
+| *- Trong đó: Chi phí lãi vay* | 24 | | - | - | - | - |
+| 9. Chi phí bán hàng | 25 | | - | - | - | - |
 | 10. Chi phí quản lý doanh nghiệp | 26 | | 7,416,910,105 | 6,791,791,132 | 19,851,501,255 | 18,818,300,256 |
 | **11. Lợi nhuận thuần từ hoạt động kinh doanh** | **30** | | **17,791,138,289** | **18,141,176,731** | **60,322,129,095** | **57,271,971,228** |
-| 12. Thu nhập khác | 31 | | | 342,592,590 | 55,555,556 | 388,109,945 |
-| 13. Chi phí khác | 32 | | | | 95,535,740 | 13,995 |
-| **14. Lợi nhuận khác** | **40** | | | **342,592,590** | **(39,980,184)** | **388,095,950** |
+| 12. Thu nhập khác | 31 | | - | 342,592,590 | 55,555,556 | 388,109,945 |
+| 13. Chi phí khác | 32 | | - | - | 95,535,740 | 13,995 |
+| **14. Lợi nhuận khác** | **40** | | **-** | **342,592,590** | **(39,980,184)** | **388,095,950** |
 | **15. Tổng lợi nhuận kế toán trước thuế** | **50** | | **17,791,138,289** | **18,483,769,321** | **60,282,148,911** | **57,660,067,178** |
 | 16. Chi phí thuế TNDN hiện hành | 51 | | 5,000,000,000 | 3,700,000,000 | 14,400,000,000 | 10,200,000,000 |
-| 17. Chi phí thuế TNDN hoãn lại | 52 | | | | | |
+| 17. Chi phí thuế TNDN hoãn lại | 52 | | - | - | - | - |
 | **18. Lợi nhuận sau thuế thu nhập doanh nghiệp** | **60** | | **12,791,138,289** | **14,783,769,321** | **45,882,148,911** | **47,460,067,178** |
 | 19. Lãi cơ bản trên cổ phiếu | 70 | | 838 | 1,014 | 3,005 | 3,256 |
 | 20. Lãi suy giảm trên cổ phiếu | 71 | | 838 | 1,014 | 3,005 | 3,256 |
 
-Phê duyệt, ngày 29 tháng 10 năm 2026
+*Phê duyệt, ngày 29 tháng 10 năm 2026*
 
 | NGƯỜI LẬP | KẾ TOÁN TRƯỞNG | NGƯỜI ĐẠI DIỆN THEO PHÁP LUẬT |
 | :---: | :---: | :---: |
 | *(Đã ký)* | *(Đã ký)* | *(Đã ký và đóng dấu)* |
 | **LÊ THỊ THANH THANH** | **NGUYỄN ANH NAM** | **VŨ QUỐC BẢO** |
+
+*(Dấu tròn: CÔNG TY CỔ PHẦN LOGISTICS VINALINK - M.S.D.N: 0301776205 - TP. HỒ CHÍ MINH)*
 
 ---
 
@@ -148,9 +173,9 @@ CÔNG TY CỔ PHẦN LOGISTICS VINALINK
 226/2 Lê Văn Sỹ, Phường Tân Sơn Hòa, TPHCM  
 
 **Mẫu số B 03a - DN**  
-*(Theo 99/2025/TT-BTC)*  
+*(Theo Thông tư 99/2025/TT-BTC)*  
 
-### BÁO CÁO LƯU CHUYỂN TIỀN TỆ GIỮA NIÊN ĐỘ
+## BÁO CÁO LƯU CHUYỂN TIỀN TỆ GIỮA NIÊN ĐỘ
 **(Theo phương pháp gián tiếp)**  
 **Kỳ kế toán từ ngày 01/01/2026 đến ngày 30/09/2026**  
 *Đơn vị tính: Đồng Việt Nam*
@@ -161,30 +186,30 @@ CÔNG TY CỔ PHẦN LOGISTICS VINALINK
 | **I. Lưu chuyển tiền từ hoạt động kinh doanh** | | | | |
 | **1. Lợi nhuận trước thuế** | **01** | | **60,282,148,911** | **57,660,067,178** |
 | **2. Điều chỉnh cho các khoản** | | | | |
-| Khấu hao TSCĐ và BĐSĐT | 02 | | 2,208,823,521 | 1,958,099,762 |
-| Các khoản dự phòng | 03 | | | (9,856,800,000) |
-| Lãi, lỗ chênh lệch tỷ giá hối đoái do đánh giá lại các khoản mục tiền tệ có gốc ngoại tệ | 04 | | (2,678,617) | 299,199,317 |
-| Lãi, lỗ từ hoạt động đầu tư, tài chính | 05 | | (4,064,296,846) | (7,579,448,039) |
-| Chi phí đi vay | 06 | | | |
-| Các khoản điều chỉnh khác | 07 | | | |
+| - Khấu hao TSCĐ và BĐSĐT | 02 | | 2,208,823,521 | 1,958,099,762 |
+| - Các khoản dự phòng | 03 | | - | (9,856,800,000) |
+| - Lãi, lỗ chênh lệch tỷ giá hối đoái do đánh giá lại các khoản mục tiền tệ có gốc ngoại tệ | 04 | | (2,678,617) | 299,199,317 |
+| - Lãi, lỗ từ hoạt động đầu tư, tài chính | 05 | | (4,064,296,846) | (7,579,448,039) |
+| - Chi phí đi vay | 06 | | - | - |
+| - Các khoản điều chỉnh khác | 07 | | - | - |
 | **3. Lợi nhuận từ hoạt động kinh doanh trước thay đổi vốn lưu động** | **08** | | **58,423,996,969** | **42,481,118,218** |
-| Tăng, giảm các khoản phải thu | 09 | | (31,177,523,572) | (36,866,504,104) |
-| Tăng, giảm hàng tồn kho | 10 | | | |
-| Tăng, giảm các khoản phải trả (không kể lãi vay phải trả, thuế thu nhập doanh nghiệp phải nộp) | 11 | | (1,584,733,012) | 17,769,879,530 |
-| Tăng, giảm chi phí chờ phân bổ | 12 | | (2,426,375,880) | 188,931,900 |
-| Tăng, giảm chứng khoán kinh doanh | 13 | | | |
-| Chi phí đi vay đã trả | 14 | | | |
-| Thuế thu nhập doanh nghiệp đã nộp | 15 | | (11,478,946,188) | (9,090,204,120) |
-| Tiền thu khác từ hoạt động kinh doanh | 16 | | | |
-| Tiền chi khác từ hoạt động kinh doanh | 17 | | (1,633,451,984) | (1,110,500,000) |
+| - Tăng, giảm các khoản phải thu | 09 | | (31,177,523,572) | (36,866,504,104) |
+| - Tăng, giảm hàng tồn kho | 10 | | - | - |
+| - Tăng, giảm các khoản phải trả (không kể lãi vay phải trả, thuế thu nhập doanh nghiệp phải nộp) | 11 | | (1,584,733,012) | 17,769,879,530 |
+| - Tăng, giảm chi phí chờ phân bổ | 12 | | (2,426,375,880) | 188,931,900 |
+| - Tăng, giảm chứng khoán kinh doanh | 13 | | - | - |
+| - Chi phí đi vay đã trả | 14 | | - | - |
+| - Thuế thu nhập doanh nghiệp đã nộp | 15 | | (11,478,946,188) | (9,090,204,120) |
+| - Tiền thu khác từ hoạt động kinh doanh | 16 | | - | - |
+| - Tiền chi khác từ hoạt động kinh doanh | 17 | | (1,633,451,984) | (1,110,500,000) |
 | **Lưu chuyển tiền thuần từ hoạt động kinh doanh** | **20** | | **10,122,966,333** | **13,372,721,424** |
 | **II. Lưu chuyển tiền từ hoạt động đầu tư** | | | | |
 | 1. Tiền chi để mua sắm, xây dựng TSCĐ và các tài sản dài hạn khác | 21 | | (2,453,412,266) | (325,300,000) |
 | 2. Tiền thu từ thanh lý, nhượng bán TSCĐ và các tài sản dài hạn khác | 22 | | 148,148,148 | 45,370,367 |
 | 3. Tiền chi cho vay, mua các công cụ nợ của đơn vị khác | 23 | | (16,140,843,836) | (10,000,000,000) |
-| 4. Tiền thu hồi cho vay, bán lại các công cụ nợ của đơn vị khác | 24 | | 20,106,904,110 | |
-| 5. Tiền chi đầu tư góp vốn vào đơn vị khác | 25 | | | (1,000,000,000) |
-| 6. Tiền thu hồi đầu tư góp vốn vào đơn vị khác | 26 | | | |
+| 4. Tiền thu hồi cho vay, bán lại các công cụ nợ của đơn vị khác | 24 | | 20,106,904,110 | - |
+| 5. Tiền chi đầu tư góp vốn vào đơn vị khác | 25 | | - | (1,000,000,000) |
+| 6. Tiền thu hồi đầu tư góp vốn vào đơn vị khác | 26 | | - | - |
 | 7. Tiền thu lãi cho vay, cổ tức và lợi nhuận được chia | 27 | | 2,444,234,804 | 5,748,892,699 |
 | **Lưu chuyển tiền thuần từ hoạt động đầu tư** | **30** | | **4,105,030,960** | **(5,531,036,934)** |
 
@@ -201,11 +226,11 @@ CÔNG TY CỔ PHẦN LOGISTICS VINALINK
 | :--- | :---: | :---: | :---: | :---: |
 | 1 | 2 | 3 | 4 | 5 |
 | **III. Lưu chuyển tiền từ hoạt động tài chính** | | | | |
-| 1. Tiền thu từ phát hành cổ phiếu, nhận vốn góp của chủ sở hữu | 31 | | 6,603,000,000 | |
-| 2. Tiền trả lại vốn góp cho các chủ sở hữu, mua lại cổ phiếu đã phát hành | 32 | | | |
-| 3. Tiền thu từ đi vay | 33 | | | |
-| 4. Tiền trả nợ gốc vay | 34 | | | |
-| 5. Tiền trả nợ gốc thuê tài chính | 35 | | | |
+| 1. Tiền thu từ phát hành cổ phiếu, nhận vốn góp của chủ sở hữu | 31 | | 6,603,000,000 | - |
+| 2. Tiền trả lại vốn góp cho các chủ sở hữu, mua lại cổ phiếu đã phát hành | 32 | | - | - |
+| 3. Tiền thu từ đi vay | 33 | | - | - |
+| 4. Tiền trả nợ gốc vay | 34 | | - | - |
+| 5. Tiền trả nợ gốc thuê tài chính | 35 | | - | - |
 | 6. Cổ tức, lợi nhuận đã trả cho chủ sở hữu | 36 | | (11,312,389,600) | (14,140,487,000) |
 | **Lưu chuyển tiền thuần từ hoạt động tài chính** | **40** | | **(4,709,389,600)** | **(14,140,487,000)** |
 | **Lưu chuyển tiền thuần trong kỳ** | **50** | | **9,518,607,693** | **(6,298,802,510)** |
@@ -213,12 +238,14 @@ CÔNG TY CỔ PHẦN LOGISTICS VINALINK
 | **Ảnh hưởng của thay đổi tỷ giá hối đoái quy đổi ngoại tệ** | **61** | | **(26,263,193)** | **83,728,931** |
 | **Tiền và tương đương tiền cuối kỳ** | **70** | | **92,828,733,243** | **78,976,029,345** |
 
-Phê duyệt, ngày 29 tháng 10 năm 2026
+*Phê duyệt, ngày 29 tháng 10 năm 2026*
 
 | NGƯỜI LẬP | KẾ TOÁN TRƯỞNG | NGƯỜI ĐẠI DIỆN THEO PHÁP LUẬT |
 | :---: | :---: | :---: |
 | *(Đã ký)* | *(Đã ký)* | *(Đã ký và đóng dấu)* |
 | **LÊ THỊ THANH THANH** | **NGUYỄN ANH NAM** | **VŨ QUỐC BẢO** |
+
+*(Dấu tròn: CÔNG TY CỔ PHẦN LOGISTICS VINALINK - M.S.D.N: 0301776205 - TP. HỒ CHÍ MINH)*
 
 ---
 
@@ -228,36 +255,34 @@ CÔNG TY CỔ PHẦN LOGISTICS VINALINK
 226/2 Lê Văn Sỹ, Phường Tân Sơn Hòa, TPHCM  
 
 **Mẫu số B 09a - DN**  
-*(Theo 99/2025/TT-BTC)*  
+*(Theo Thông tư 99/2025/TT-BTC)*  
 
-### BẢN THUYẾT MINH BÁO CÁO TÀI CHÍNH CHỌN LỌC
+## BẢN THUYẾT MINH BÁO CÁO TÀI CHÍNH CHỌN LỌC
 **Kỳ kế toán từ ngày 01/01/2026 đến ngày 30/09/2026**  
 *Đơn vị tính: Đồng Việt Nam*
 
-#### I. ĐẶC ĐIỂM HOẠT ĐỘNG CỦA DOANH NGHIỆP
+### I. ĐẶC ĐIỂM HOẠT ĐỘNG CỦA DOANH NGHIỆP
 
 Công ty Cổ phần Logistics Vinalink trước đây là Xí Nghiệp Đại Lý Vận Tải Và Gom Hàng, được thành lập theo:
-- Quyết định số 0776/1999/QĐ/BTM ngày 24 tháng 06 năm 1999 về chuyển đổi Xí Nghiệp Đại Lý Vận Tải Và Gom Hàng thành công ty cổ phần có tên gọi là Công ty Cổ phần Giao Nhận Vận Tải Và Thương Mại và Giấy Chứng nhận Đăng ký Kinh doanh lần đầu số 064162 ngày 31 tháng 07 năm 1999 do Sở Kế hoạch và Đầu tư Thành phố Hồ Chí Minh cấp.
-- Ngày 22 tháng 05 năm 2014, Công ty Cổ phần Giao Nhận Vận Tải Và Thương Mại được chuyển đổi thành Công ty Cổ phần Logistics Vinalink theo Giấy Chứng nhận Đăng ký doanh nghiệp số 0301776205 do Sở Kế hoạch và Đầu tư Thành phố Hồ Chí Minh cấp và các Giấy phép thay đổi sau đó với lần thay đổi gần đây nhất là vào ngày 18 tháng 09 năm 2026.
-- Công ty chính thức được niêm yết giao dịch chứng khoán trên Trung tâm giao dịch chứng khoán Thành phố Hồ Chí Minh theo Quyết định số 90/QĐ-SGDHCM ngày 10 tháng 08 năm 2009 do Sở giao dịch chứng khoán Thành phố Hồ Chí Minh cấp.
+* Quyết định số 0776/1999/QĐ/BTM ngày 24 tháng 06 năm 1999 về chuyển đổi Xí Nghiệp Đại Lý Vận Tải Và Gom Hàng thành công ty cổ phần có tên gọi là Công ty Cổ phần Giao Nhận Vận Tải Và Thương Mại và Giấy Chứng nhận Đăng ký Kinh doanh lần đầu số 064162 ngày 31 tháng 07 năm 1999 do Sở Kế hoạch và Đầu tư Thành phố Hồ Chí Minh cấp.
+* Ngày 22 tháng 05 năm 2014, Công ty Cổ phần Giao Nhận Vận Tải Và Thương Mại được chuyển đổi thành Công ty Cổ phần Logistics Vinalink theo Giấy Chứng nhận Đăng ký doanh nghiệp số 0301776205 do Sở Kế hoạch và Đầu tư Thành phố Hồ Chí Minh cấp và các Giấy phép thay đổi sau đó với lần thay đổi gần đây nhất là vào ngày 18 tháng 09 năm 2026.
+* Công ty chính thức được niêm yết giao dịch chứng khoán trên Trung tâm giao dịch chứng khoán Thành phố Hồ Chí Minh theo Quyết định số 90/QĐ-SGDHCM ngày 10 tháng 08 năm 2009 do Sở giao dịch chứng khoán Thành phố Hồ Chí Minh cấp.
 
-**Vốn điều lệ theo Giấy chứng nhận đăng ký doanh nghiệp là:** 148.087.870.000 VND  
-**Trụ sở chính công ty hiện đặt tại:** 226/2 Lê Văn Sỹ, Phường Tân Sơn Hòa, Thành phố Hồ Chí Minh.
+* **Vốn điều lệ theo Giấy chứng nhận đăng ký doanh nghiệp là:** 148.087.870.000 VND
+* **Trụ sở chính công ty hiện đặt tại:** 226/2 Lê Văn Sỹ, Phường Tân Sơn Hòa, Thành phố Hồ Chí Minh.
+* **Lĩnh vực kinh doanh:** Dịch vụ vận tải.
 
-**Lĩnh vực kinh doanh**  
-Dịch vụ vận tải.
-
-**Ngành nghề kinh doanh**  
+#### Ngành nghề kinh doanh
 Theo Giấy chứng nhận đăng ký doanh nghiệp, ngành nghề kinh doanh chính của Công ty bao gồm:
-- Hoạt động logistics;
-- Vận tải hàng hóa bằng đường bộ: Kinh doanh vận tải nội địa và quá cảnh (trừ hóa lỏng khí để vận chuyển);
-- Chuyển phát;
-- Bốc xếp hàng hóa (trừ bốc xếp hàng hóa cảng hàng không);
-- Các dịch vụ về vận tải hàng hóa xuất nhập khẩu. Đại lý tàu biển, đại lý lưu cước, đại lý quản lý container cho các hãng tàu; cung ứng tàu biển. Đại lý giao nhận cho các hãng giao nhận vận tải nước ngoài. Kinh doanh vận tải hàng hóa công cộng. Kinh doanh xuất nhập khẩu trực tiếp và nhận ủy thác xuất nhập khẩu. Dịch vụ thủ tục hải quan và các dịch vụ có liên quan đến giao nhận vận chuyển hàng hóa xuất nhập khẩu: tái chế, bao bì, mua bảo hiểm, kiểm kiện. Kinh doanh vận tải đa phương thức;
-- Kinh doanh các dịch vụ về kho gom hàng lẻ xuất nhập khẩu (CFS). Kinh doanh kho bảo quản hàng hóa xuất nhập khẩu. Kinh doanh kho bãi theo quy định của pháp luật.
+* Hoạt động logistics;
+* Vận tải hàng hóa bằng đường bộ: Kinh doanh vận tải nội địa và quá cảnh (trừ hóa lỏng khí để vận chuyển);
+* Chuyển phát;
+* Bốc xếp hàng hóa (trừ bốc xếp hàng hóa cảng hàng không);
+* Các dịch vụ về vận tải hàng hóa xuất nhập khẩu. Đại lý tàu biển, đại lý lưu cước, đại lý quản lý container cho các hãng tàu; cung ứng tàu biển. Đại lý giao nhận cho các hãng giao nhận vận tải nước ngoài. Kinh doanh vận tải hàng hóa công cộng. Kinh doanh xuất nhập khẩu trực tiếp và nhận ủy thác xuất nhập khẩu. Dịch vụ thủ tục hải quan và các dịch vụ có liên quan đến giao nhận vận chuyển hàng hóa xuất nhập khẩu: tái chế, bao bì, mua bảo hiểm, kiểm kiện. Kinh doanh vận tải đa phương thức;
+* Kinh doanh các dịch vụ về kho gom hàng lẻ xuất nhập khẩu (CFS). Kinh doanh kho bảo quản hàng hóa xuất nhập khẩu. Kinh doanh kho bãi theo quy định của pháp luật.
 
-**Cấu trúc doanh nghiệp**  
-*Danh sách các công ty liên doanh, liên kết:*
+#### Cấu trúc doanh nghiệp
+**Danh sách các công ty liên doanh, liên kết:**
 
 | Tên công ty liên doanh, liên kết | Địa chỉ | Tỷ lệ quyền biểu quyết | Tỷ lệ vốn góp | Tỷ lệ lợi ích |
 | :--- | :--- | :---: | :---: | :---: |
@@ -269,7 +294,7 @@ Theo Giấy chứng nhận đăng ký doanh nghiệp, ngành nghề kinh doanh c
 
 <!-- TRANG 8 TRONG FILE GỐC (TRANG 7 BÁO CÁO) -->
 
-*Danh sách các công ty liên doanh, liên kết (tiếp theo):*
+**Danh sách các công ty liên doanh, liên kết (tiếp theo):**
 
 | Tên công ty liên doanh, liên kết | Địa chỉ | Tỷ lệ quyền biểu quyết | Tỷ lệ vốn góp | Tỷ lệ lợi ích |
 | :--- | :--- | :---: | :---: | :---: |
@@ -278,7 +303,7 @@ Theo Giấy chứng nhận đăng ký doanh nghiệp, ngành nghề kinh doanh c
 | Công ty Cổ Phần Vận Chuyển Vinalink | Số 4 Nguyễn Đình Chiểu, Phường Tân Định, TP Hồ Chí Minh | 40% | 40% | 40% |
 | Công ty TNHH Hệ Thống Phần Mềm Quản Lý Logistics | Lầu 2, 68 Nguyễn Huệ, Phường Sài Gòn, TP Hồ Chí Minh | 40% | 40% | 40% |
 
-*Danh sách các đơn vị trực thuộc:*
+**Danh sách các đơn vị trực thuộc:**
 
 | Tên đơn vị trực thuộc | Địa chỉ | Mã số chi nhánh |
 | :--- | :--- | :---: |
@@ -286,21 +311,21 @@ Theo Giấy chứng nhận đăng ký doanh nghiệp, ngành nghề kinh doanh c
 | Chi nhánh Công ty Cổ Phần Logistics Vinalink Tại Hải Phòng | Phòng 223-224-225, Tầng 2, Tòa nhà Thành Đạt 1, Số 3 Đường Lê Thánh Tông, Phường Ngô Quyền, Thành phố Hải Phòng | 0301776205-002 |
 | Chi nhánh Công ty Cổ Phần Logistics Vinalink Tại Đà Nẵng | 773 Ngô Quyền, Phường An Hải, Thành phố Đà Nẵng | 0301776205-003 |
 
-#### II. KỲ KẾ TOÁN, ĐƠN VỊ TIỀN TỆ SỬ DỤNG TRONG KẾ TOÁN
-- Kỳ kế toán năm theo năm dương lịch bắt đầu từ ngày 01/01 đến ngày 31/12.
-- Đơn vị tiền tệ sử dụng trong kế toán là Đồng Việt Nam.
+### II. KỲ KẾ TOÁN, ĐƠN VỊ TIỀN TỆ SỬ DỤNG TRONG KẾ TOÁN
+* Kỳ kế toán năm theo năm dương lịch bắt đầu từ ngày 01/01 đến ngày 31/12.
+* Đơn vị tiền tệ sử dụng trong kế toán là Đồng Việt Nam.
 
-#### III. CHUẨN MỰC VÀ CHẾ ĐỘ KẾ TOÁN ÁP DỤNG
-- **Chế độ kế toán áp dụng:** Công ty áp dụng Chế độ kế toán doanh nghiệp ban hành theo Thông tư số 99/2025/TT-BTC ngày 27 tháng 10 năm 2025, cùng với các quy định hiện hành khác về kế toán tại Việt Nam.
-- **Tuyên bố về việc tuân thủ Chuẩn mực kế toán Việt Nam và Chế độ kế toán:** Báo cáo tài chính được lập và trình bày phù hợp với các Chuẩn mực và Chế độ kế toán Việt Nam.
-- **Hình thức kế toán áp dụng:** Công ty áp dụng hình thức kế toán trên máy vi tính.
+### III. CHUẨN MỰC VÀ CHẾ ĐỘ KẾ TOÁN ÁP DỤNG
+* **Chế độ kế toán áp dụng:** Công ty áp dụng Chế độ kế toán doanh nghiệp ban hành theo Thông tư số 99/2025/TT-BTC ngày 27 tháng 10 năm 2025, cùng với các quy định hiện hành khác về kế toán tại Việt Nam.
+* **Tuyên bố về việc tuân thủ Chuẩn mực kế toán Việt Nam và Chế độ kế toán:** Báo cáo tài chính được lập và trình bày phù hợp với các Chuẩn mực và Chế độ kế toán Việt Nam.
+* **Hình thức kế toán áp dụng:** Công ty áp dụng hình thức kế toán trên máy vi tính.
 
-#### IV. CÁC CHÍNH SÁCH KẾ TOÁN ÁP DỤNG
+### IV. CÁC CHÍNH SÁCH KẾ TOÁN ÁP DỤNG
 Các chính sách kế toán áp dụng để lập Báo cáo tài chính giữa niên độ thống nhất với các chính sách kế toán đã áp dụng để lập Báo cáo tài chính năm 2025.
 
-#### V. CÁC SỰ KIỆN HOẶC GIAO DỊCH TRỌNG YẾU TRONG KỲ KẾ TOÁN GIỮA NIÊN ĐỘ
+### V. CÁC SỰ KIỆN HOẶC GIAO DỊCH TRỌNG YẾU TRONG KỲ KẾ TOÁN GIỮA NIÊN ĐỘ
 
-**1. Tiền và các khoản tương đương tiền**
+#### 1. Tiền và các khoản tương đương tiền
 
 | Các khoản tiền và tương đương tiền doanh nghiệp đang nắm giữ nhưng không bị hạn chế sử dụng | Cuối quý | Đầu năm |
 | :--- | :---: | :---: |
@@ -310,7 +335,7 @@ Các chính sách kế toán áp dụng để lập Báo cáo tài chính giữa
 | Ngân hàng TMCP Phát triển Thành phố Hồ Chí Minh | 16,758,089,806 | 1,101,586,960 |
 | Ngân hàng khác | 15,173,968,945 | 8,805,371,062 |
 | **- Tương đương tiền** | **23,070,417,807** | **39,068,871,233** |
-| Tiền gửi có kỳ hạn 1 tháng | | |
+| *Tiền gửi có kỳ hạn 1 tháng* | | |
 | + Ngân hàng TMCP Kỹ Thương Việt Nam | 18,056,869,862 | 29,066,569,863 |
 | + Ngân hàng TNHH MTV Standard Chartered (VN) | 5,013,547,945 | 10,002,301,370 |
 | **Cộng** | **92,828,733,243** | **83,336,388,743** |
@@ -319,13 +344,13 @@ Các chính sách kế toán áp dụng để lập Báo cáo tài chính giữa
 
 <!-- TRANG 9 TRONG FILE GỐC (TRANG 8 BÁO CÁO) -->
 
-**2. Các khoản đầu tư tài chính**
+#### 2. Các khoản đầu tư tài chính
 
 **2.1 Đầu tư nắm giữ đến ngày đáo hạn ngắn hạn**
 
 | Khoản mục | Cuối quý | Đầu năm |
 | :--- | :---: | :---: |
-| Tiền gửi có kỳ hạn 6 tháng | | |
+| *Tiền gửi có kỳ hạn 6 tháng* | | |
 | + Ngân hàng TMCP Kỹ Thương Việt Nam | 16,140,843,836 | 20,106,904,110 |
 | **Cộng** | **16,140,843,836** | **20,106,904,110** |
 
@@ -352,7 +377,7 @@ Các chính sách kế toán áp dụng để lập Báo cáo tài chính giữa
 | Công ty CP Giao Nhận Vận Tải Miền Trung | 8,784,000,000 | 8,784,000,000 |
 | **Cộng** | **9,510,150,000** | **9,510,150,000** |
 
-**3. Phải thu của khách hàng**
+#### 3. Phải thu của khách hàng
 
 *Phải thu của khách hàng ngắn hạn:*
 
@@ -369,13 +394,13 @@ Các chính sách kế toán áp dụng để lập Báo cáo tài chính giữa
 | Công ty CP Vận Chuyển Vinalink | 27,110,926 | 8,532,000 |
 | **Cộng** | **333,309,475,791** | **296,263,542,140** |
 
-**4. Phải thu khác**
+#### 4. Phải thu khác
 
 **4.1 Phải thu ngắn hạn khác**
 
 | Khoản mục | Cuối quý | Đầu năm |
 | :--- | :---: | :---: |
-| Phải thu về cổ tức và lợi nhuận được chia | 1,660,007,262 | |
+| Phải thu về cổ tức và lợi nhuận được chia | 1,660,007,262 | - |
 | Phải thu của người lao động | 1,244,052,627 | 965,265,584 |
 | Ký cược, ký quỹ | 999,500,000 | 1,366,600,000 |
 | Phải thu khác | 874,930,433 | 585,635,983 |
@@ -393,53 +418,55 @@ Các chính sách kế toán áp dụng để lập Báo cáo tài chính giữa
 | Phải thu khác | 500,000,000 | 500,000,000 |
 | **Cộng** | **2,475,896,208** | **2,368,120,696** |
 
-**5. Tăng, giảm tài sản cố định hữu hình**
+#### 5. Tăng, giảm tài sản cố định hữu hình
 
 | Khoản mục | Nhà cửa, vật kiến trúc | Máy móc thiết bị | Phương tiện vận tải | Thiết bị quản lý | Tổng cộng |
 | :--- | :---: | :---: | :---: | :---: | :---: |
 | **Nguyên giá** | | | | | |
 | **Số dư đầu năm** | **21,978,829,093** | **667,950,476** | **30,831,744,534** | **1,640,103,504** | **55,118,627,607** |
-| - Mua trong kỳ | | | 2,215,412,266 | 145,000,000 | 2,360,412,266 |
-| - Thanh lý, nhượng bán | | | (1,890,963,868) | | (1,890,963,868) |
+| - Mua trong kỳ | - | - | 2,215,412,266 | 145,000,000 | 2,360,412,266 |
+| - Thanh lý, nhượng bán | - | - | (1,890,963,868) | - | (1,890,963,868) |
 | **Số dư cuối quý** | **21,978,829,093** | **667,950,476** | **31,156,192,932** | **1,785,103,504** | **55,588,076,005** |
 | **Giá trị hao mòn lũy kế** | | | | | |
 | **Số dư đầu năm** | **11,593,226,241** | **544,158,814** | **21,855,709,682** | **892,173,478** | **34,885,268,215** |
 | - Khấu hao trong kỳ | 609,849,279 | 27,588,342 | 1,197,255,939 | 167,904,954 | 2,002,598,514 |
-| - Thanh lý, nhượng bán | | | (1,702,870,500) | | (1,702,870,500) |
+| - Thanh lý, nhượng bán | - | - | (1,702,870,500) | - | (1,702,870,500) |
 | **Số dư cuối quý** | **12,203,075,520** | **571,747,156** | **21,350,095,121** | **1,060,078,432** | **35,184,996,229** |
 | **Giá trị còn lại** | | | | | |
 | Tại ngày đầu năm | 10,385,602,852 | 123,791,662 | 8,976,034,852 | 747,930,026 | 20,233,359,392 |
 | Tại ngày cuối quý | 9,775,753,573 | 96,203,320 | 9,806,097,811 | 725,025,072 | 20,403,079,776 |
 
-- Nguyên giá tài sản cố định hữu hình đang hiện hữu có giá trị từ 10% trở lên tổng giá trị tài sản cố định hữu hình:  
-  Tòa nhà văn phòng 226/2 Lê Văn Sỹ, Phường Tân Sơn Hòa, TPHCM: **15,794,980,853 VND**
-- Nguyên giá tài sản cố định hữu hình đã khấu hao hết nhưng vẫn còn sử dụng: **25,186,733,490 VND**
+* Ghi chú bổ sung:
+  * Nguyên giá tài sản cố định hữu hình đang hiện hữu có giá trị từ 10% trở lên tổng giá trị tài sản cố định hữu hình:  
+    Tòa nhà văn phòng 226/2 Lê Văn Sỹ, Phường Tân Sơn Hòa, TPHCM: **15,794,980,853 VND**
+  * Nguyên giá tài sản cố định hữu hình đã khấu hao hết nhưng vẫn còn sử dụng: **25,186,733,490 VND**
 
-**6. Tăng, giảm tài sản cố định vô hình**
+#### 6. Tăng, giảm tài sản cố định vô hình
 
 | Khoản mục | Quyền sử dụng đất | Phần mềm | Tổng cộng |
 | :--- | :---: | :---: | :---: |
 | **Nguyên giá** | | | |
 | **Số dư đầu năm** | **26,130,000,000** | **1,025,000,000** | **27,155,000,000** |
-| Tăng khác | | 93,000,000 | 93,000,000 |
+| - Tăng khác | - | 93,000,000 | 93,000,000 |
 | **Số dư cuối quý** | **26,130,000,000** | **1,118,000,000** | **27,248,000,000** |
 | **Giá trị hao mòn lũy kế** | | | |
-| **Số dư đầu năm** | | **616,111,104** | **616,111,104** |
-| - Khấu hao trong kỳ | | 206,225,007 | 206,225,007 |
-| **Số dư cuối quý** | | **822,336,111** | **822,336,111** |
+| **Số dư đầu năm** | **-** | **616,111,104** | **616,111,104** |
+| - Khấu hao trong kỳ | - | 206,225,007 | 206,225,007 |
+| **Số dư cuối quý** | **-** | **822,336,111** | **822,336,111** |
 | **Giá trị còn lại** | | | |
 | Tại ngày đầu năm | 26,130,000,000 | 408,888,896 | 26,538,888,896 |
 | Tại ngày cuối quý | 26,130,000,000 | 295,663,889 | 26,425,663,889 |
 
-- Nguyên giá tài sản cố định vô hình đang hiện hữu có giá trị từ 10% trở lên tổng giá trị tài sản cố định vô hình:  
-  Quyền sử dụng đất nhà 226/2 Lê Văn Sỹ, Phường Tân Sơn Hòa, TPHCM: **26,130,000,000 VND**
-- Nguyên giá tài sản cố định vô hình đã khấu hao hết nhưng vẫn còn sử dụng: **470,000,000 VND**
+* Ghi chú bổ sung:
+  * Nguyên giá tài sản cố định vô hình đang hiện hữu có giá trị từ 10% trở lên tổng giá trị tài sản cố định vô hình:  
+    Quyền sử dụng đất nhà 226/2 Lê Văn Sỹ, Phường Tân Sơn Hòa, TPHCM: **26,130,000,000 VND**
+  * Nguyên giá tài sản cố định vô hình đã khấu hao hết nhưng vẫn còn sử dụng: **470,000,000 VND**
 
 ---
 
 <!-- TRANG 11 TRONG FILE GỐC (TRANG 10 BÁO CÁO) -->
 
-**7. Phải trả người bán ngắn hạn**
+#### 7. Phải trả người bán ngắn hạn
 
 | Khoản mục | Cuối quý | Đầu năm |
 | :--- | :---: | :---: |
@@ -447,7 +474,7 @@ Các chính sách kế toán áp dụng để lập Báo cáo tài chính giữa
 | Phải trả người bán nước ngoài | 43,051,755,386 | 41,516,586,282 |
 | **Cộng** | **87,004,354,750** | **85,076,205,446** |
 
-**8. Thuế và các khoản phải nộp nhà nước**
+#### 8. Thuế và các khoản phải nộp nhà nước
 
 | Khoản mục | Đầu kỳ | Số phải nộp trong kỳ | Số đã thực nộp trong kỳ | Cuối kỳ |
 | :--- | :---: | :---: | :---: | :---: |
@@ -458,18 +485,18 @@ Các chính sách kế toán áp dụng để lập Báo cáo tài chính giữa
 | Các loại thuế khác | 358,093,276 | 1,567,794,124 | 1,674,570,910 | 251,316,490 |
 | **Cộng** | **10,419,588,136** | **29,745,759,705** | **25,262,056,813** | **14,903,291,028** |
 | **Phải thu** | | | | |
-| Thuế thu nhập cá nhân | | 107,006,220 | 133,453,511 | 26,447,291 |
-| Thuế nhà đất và tiền thuê đất | 524,232,192 | 524,232,192 | | |
+| Thuế thu nhập cá nhân | - | 107,006,220 | 133,453,511 | 26,447,291 |
+| Thuế nhà đất và tiền thuê đất | 524,232,192 | 524,232,192 | - | - |
 | **Cộng** | **524,232,192** | **631,238,412** | **133,453,511** | **26,447,291** |
 
-**9. Chi phí phải trả ngắn hạn**
+#### 9. Chi phí phải trả ngắn hạn
 
 | Khoản mục | Cuối quý | Đầu năm |
 | :--- | :---: | :---: |
 | Cước vận chuyển, phí làm hàng | 24,301,800,783 | 8,032,232,412 |
 | **Cộng** | **24,301,800,783** | **8,032,232,412** |
 
-**10. Phải trả khác**
+#### 10. Phải trả khác
 
 **10.1 Phải trả ngắn hạn khác**
 
@@ -483,13 +510,13 @@ Các chính sách kế toán áp dụng để lập Báo cáo tài chính giữa
 
 | Khoản mục | Cuối quý | Đầu năm |
 | :--- | :---: | :---: |
-| Tiền đền bù di dời (ứng trước)* | 32,800,000,000 | 32,800,000,000 |
+| Tiền đền bù di dời (ứng trước)\* | 32,800,000,000 | 32,800,000,000 |
 | Các khoản khác | 64,925,000 | 65,942,500 |
 | **Cộng** | **32,864,925,000** | **32,865,942,500** |
 
-*(\*) Là khoản tiền tạm ứng 80% tổng giá trị đền bù di dời phục vụ dự án chuyển đổi công năng và khai thác kho bãi khu vực 145-147 Nguyễn Tất Thành mà Công ty Cổ Phần Đường Khánh Hội phải trả Công ty Cổ Phần Logistics Vinalink theo hợp đồng nguyên tắc số 2392/HĐĐB.14 ngày 14 tháng 11 năm 2014.*
+\* *(\*) Là khoản tiền tạm ứng 80% tổng giá trị đền bù di dời phục vụ dự án chuyển đổi công năng và khai thác kho bãi khu vực 145-147 Nguyễn Tất Thành mà Công ty Cổ Phần Đường Khánh Hội phải trả Công ty Cổ Phần Logistics Vinalink theo hợp đồng nguyên tắc số 2392/HĐĐB.14 ngày 14 tháng 11 năm 2014.*
 
-**11. Doanh thu chờ phân bổ dài hạn**
+#### 11. Doanh thu chờ phân bổ dài hạn
 
 | Khoản mục | Cuối quý | Đầu năm |
 | :--- | :---: | :---: |
@@ -500,23 +527,23 @@ Các chính sách kế toán áp dụng để lập Báo cáo tài chính giữa
 
 <!-- TRANG 12 TRONG FILE GỐC (TRANG 11 BÁO CÁO) -->
 
-**12. Vốn chủ sở hữu**
+#### 12. Vốn chủ sở hữu
 
 **12.1 Bảng đối chiếu biến động của vốn chủ sở hữu**
 
 | Khoản mục | Vốn đầu tư của chủ sở hữu | Thặng dư vốn cổ phần | Vốn khác của chủ sở hữu | Lợi nhuận sau thuế chưa phân phối và các quỹ | Cộng |
 | :--- | :---: | :---: | :---: | :---: | :---: |
 | **- Số dư đầu năm trước** | **141,404,870,000** | **4,950,000,000** | **10,000,000,000** | **141,057,938,156** | **297,412,808,156** |
-| - Lãi trong năm trước | | | | 55,100,055,126 | 55,100,055,126 |
-| - Chia cổ tức năm 2024 | | | | (14,140,487,000) | (14,140,487,000) |
-| - Chia cổ tức năm 2025 | | | | (9,898,340,900) | (9,898,340,900) |
-| - Trích các quỹ | | | | (1,363,000,000) | (1,363,000,000) |
+| - Lãi trong năm trước | - | - | - | 55,100,055,126 | 55,100,055,126 |
+| - Chia cổ tức năm 2024 | - | - | - | (14,140,487,000) | (14,140,487,000) |
+| - Chia cổ tức năm 2025 | - | - | - | (9,898,340,900) | (9,898,340,900) |
+| - Trích các quỹ | - | - | - | (1,363,000,000) | (1,363,000,000) |
 | **- Số dư đầu năm nay** | **141,404,870,000** | **4,950,000,000** | **10,000,000,000** | **170,756,165,382** | **327,111,035,382** |
-| - Tăng vốn trong năm nay | 6,683,000,000 | | | | 6,683,000,000 |
-| - Lãi trong năm nay | | | | 45,882,148,911 | 45,882,148,911 |
-| - Chia cổ tức năm 2025 | | | | (11,312,389,600) | (11,312,389,600) |
-| - Trích các quỹ | | | | (1,653,000,000) | (1,653,000,000) |
-| - Chi phí phát hành cổ phiếu | | (80,000,000) | | | (80,000,000) |
+| - Tăng vốn trong năm nay | 6,683,000,000 | - | - | - | 6,683,000,000 |
+| - Lãi trong năm nay | - | - | - | 45,882,148,911 | 45,882,148,911 |
+| - Chia cổ tức năm 2025 | - | - | - | (11,312,389,600) | (11,312,389,600) |
+| - Trích các quỹ | - | - | - | (1,653,000,000) | (1,653,000,000) |
+| - Chi phí phát hành cổ phiếu | - | (80,000,000) | - | - | (80,000,000) |
 | **- Số dư cuối quý** | **148,087,870,000** | **4,870,000,000** | **10,000,000,000** | **203,672,924,693** | **366,630,794,693** |
 
 ---
@@ -539,9 +566,9 @@ Các chính sách kế toán áp dụng để lập Báo cáo tài chính giữa
 | Số lượng cổ phiếu phổ thông đã bán ra công chúng | 14,808,787 | 14,140,487 |
 | Số lượng cổ phiếu phổ thông đang lưu hành | 14,808,787 | 14,140,487 |
 
-*\* Mệnh giá cổ phiếu đang lưu hành: 10.000 đồng / cổ phần*
+*\* Mệnh giá cổ phiếu đang lưu hành: 10.000 đồng/cổ phần*
 
-**13. Các khoản mục ngoài Báo cáo tình hình tài chính**
+#### 13. Các khoản mục ngoài Báo cáo tình hình tài chính
 
 *Ngoại tệ các loại:*
 
@@ -558,7 +585,7 @@ Các chính sách kế toán áp dụng để lập Báo cáo tài chính giữa
 | Công ty TNHH Techcom Life Technologies Việt Nam | 426,723,472 | 426,723,472 |
 | **Cộng** | **11,283,057,972** | **11,283,057,972** |
 
-**14. Tổng doanh thu bán hàng và cung cấp dịch vụ**
+#### 14. Tổng doanh thu bán hàng và cung cấp dịch vụ
 
 | Doanh Thu | Năm nay | Năm trước |
 | :--- | :---: | :---: |
@@ -566,9 +593,10 @@ Các chính sách kế toán áp dụng để lập Báo cáo tài chính giữa
 | Doanh thu khu vực miền Bắc | 372,024,851,368 | 349,907,055,932 |
 | Doanh thu khu vực miền Trung | 9,051,810,491 | 6,833,171,815 |
 | **Cộng** | **1,159,829,464,887** | **1,002,314,170,862** |
-| *\* Doanh thu từ các bên liên quan* | 1,072,322,147 | 2,318,041,654 |
 
-**15. Giá vốn hàng bán**
+*\* Doanh thu từ các bên liên quan: 1,072,322,147 VND (Năm trước: 2,318,041,654 VND)*
+
+#### 15. Giá vốn hàng bán
 
 | Khoản mục | Năm nay | Năm trước |
 | :--- | :---: | :---: |
@@ -577,7 +605,7 @@ Các chính sách kế toán áp dụng để lập Báo cáo tài chính giữa
 | Giá vốn khu vực miền Trung | 13,707,484,360 | 10,269,502,343 |
 | **Cộng** | **1,083,232,903,556** | **935,804,857,230** |
 
-**16. Doanh thu hoạt động tài chính**
+#### 16. Doanh thu hoạt động tài chính
 
 | Khoản mục | Năm nay | Năm trước |
 | :--- | :---: | :---: |
@@ -590,70 +618,70 @@ Các chính sách kế toán áp dụng để lập Báo cáo tài chính giữa
 
 <!-- TRANG 14 TRONG FILE GỐC (TRANG 13 BÁO CÁO) -->
 
-**17. Báo cáo bộ phận**
+#### 17. Báo cáo bộ phận
 
 *Đơn vị tính: Triệu đồng*
 
 | Chỉ tiêu | Miền Nam (Năm nay) | Miền Nam (Năm trước) | Miền Bắc (Năm nay) | Miền Bắc (Năm trước) | Miền Trung (Năm nay) | Miền Trung (Năm trước) | Loại trừ (Năm nay) | Loại trừ (Năm trước) | Tổng cộng (Năm nay) | Tổng cộng (Năm trước) |
 | :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
 | **Doanh thu** | | | | | | | | | | |
-| Từ khách hàng bên ngoài | 778,753 | 645,574 | 372,025 | 349,907 | 9,052 | 6,833 | | | 1,159,830 | 1,002,314 |
-| Giữa các bộ phận | 7,490 | 13,620 | 124,798 | 125,338 | 5,117 | 4,006 | (137,405) | (142,964) | | |
+| Từ khách hàng bên ngoài | 778,753 | 645,574 | 372,025 | 349,907 | 9,052 | 6,833 | - | - | 1,159,830 | 1,002,314 |
+| Giữa các bộ phận | 7,490 | 13,620 | 124,798 | 125,338 | 5,117 | 4,006 | (137,405) | (142,964) | - | - |
 | **Cộng** | **786,243** | **659,194** | **496,823** | **475,245** | **14,169** | **10,839** | **(137,405)** | **(142,964)** | **1,159,830** | **1,002,314** |
-| **Kết quả bộ phận** | **54,301** | **52,845** | **21,894** | **13,178** | **486** | **401** | | | **76,596** | **66,509** |
+| **Kết quả bộ phận** | **54,301** | **52,845** | **21,894** | **13,178** | **401** | **486** | **-** | **-** | **76,596** | **66,509** |
 
 *Đơn vị tính: Triệu đồng*
 
 | Chỉ tiêu | Miền Nam (Cuối quý) | Miền Nam (Đầu năm) | Miền Bắc (Cuối quý) | Miền Bắc (Đầu năm) | Miền Trung (Cuối quý) | Miền Trung (Đầu năm) | Loại trừ (Cuối quý) | Loại trừ (Đầu năm) | Tổng cộng (Cuối quý) | Tổng cộng (Đầu năm) |
 | :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
-| **Tài sản bộ phận** | 498,414 | 473,767 | 127,217 | 101,041 | 3,646 | 3,604 | (66,354) | (56,400) | 562,881 | 522,054 |
-| **Nợ phải trả bộ phận** | 153,826 | 163,724 | 105,575 | 84,359 | 3,260 | 3,203 | (66,354) | (56,400) | 196,250 | 194,943 |
+| **Tài sản bộ phận** | 498,414 | 473,767 | 127,217 | 101,041 | 3,604 | 3,646 | (66,354) | (56,400) | 562,881 | 522,054 |
+| **Nợ phải trả bộ phận** | 153,826 | 163,724 | 105,575 | 84,359 | 3,203 | 3,260 | (66,354) | (56,400) | 196,250 | 194,943 |
 
 *Đơn vị tính: Triệu đồng*
 
 | Chỉ tiêu | Miền Nam (Năm nay) | Miền Nam (Năm trước) | Miền Bắc (Năm nay) | Miền Bắc (Năm trước) | Miền Trung (Năm nay) | Miền Trung (Năm trước) | Loại trừ (Năm nay) | Loại trừ (Năm trước) | Tổng cộng (Năm nay) | Tổng cộng (Năm trước) |
 | :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
-| Chi phí mua tài sản | 238 | 325 | 2,215 | | | | | | 2,453 | 325 |
-| Chi phí khấu hao | 2,015 | 1,848 | 194 | 110 | | | | | 2,209 | 1,958 |
+| **Chi phí mua tài sản** | 238 | 325 | 2,215 | - | - | - | - | - | 2,453 | 325 |
+| **Chi phí khấu hao** | 2,015 | 1,848 | 194 | 110 | - | - | - | - | 2,209 | 1,958 |
 
 ---
 
 <!-- TRANG 15 TRONG FILE GỐC (TRANG 14 BÁO CÁO) -->
 
-**18. Thông tin về các bên liên quan**
+#### 18. Thông tin về các bên liên quan
 
 Bản chất các giao dịch quan trọng và giá trị giao dịch trong năm như sau:
 
-*Cung cấp dịch vụ:*
+**- Cung cấp dịch vụ:**
 
 | Bên liên quan | Năm nay | Năm trước |
 | :--- | :---: | :---: |
-| Công ty TNHH Dịch Vụ Đại Lý Vận Chuyển | 879,732,147 | 853,816,806 |
-| Công ty TNHH Vận Tải Việt Nhật | 192,590,000 | 1,428,674,848 |
-| Công ty CP Vận Chuyển Vinalink | | 35,550,000 |
+| Công ty TNHH Dịch Vụ Đại Lý Vận Chuyển | - | 853,816,806 |
+| Công ty TNHH Vận Tải Việt Nhật | 879,732,147 | 1,428,674,848 |
+| Công ty CP Vận Chuyển Vinalink | 192,590,000 | 35,550,000 |
 | **Cộng** | **1,072,322,147** | **2,318,041,654** |
 
-*Sử dụng dịch vụ:*
+**- Sử dụng dịch vụ:**
 
 | Bên liên quan | Năm nay | Năm trước |
 | :--- | :---: | :---: |
-| Công ty TNHH Dịch Vụ Đại Lý Vận Chuyển | | 46,670,215 |
+| Công ty TNHH Dịch Vụ Đại Lý Vận Chuyển | - | 46,670,215 |
 | Công ty TNHH RCL (Việt Nam) | 1,690,998,903 | 1,934,362,756 |
 | Công ty TNHH Vận Tải Việt Nhật | 354,786,754 | 125,982,500 |
 | Công ty CP Vận Chuyển Vinalink | 110,231,675 | 76,207,796 |
 | Công ty TNHH Hệ Thống Phần Mềm Quản Lý Logistics | 206,250,000 | 410,000,000 |
 | **Cộng** | **2,362,267,332** | **2,593,223,267** |
 
-*Cổ tức, lợi nhuận được chia:*
+**- Cổ tức, lợi nhuận được chia:**
 
 | Bên liên quan | Năm nay | Năm trước |
 | :--- | :---: | :---: |
-| Công ty TNHH RCL (Việt Nam) | | 4,000,000,000 |
+| Công ty TNHH RCL (Việt Nam) | - | 4,000,000,000 |
 | Công ty TNHH Vận Tải Việt Nhật | 1,660,007,262 | 1,437,571,275 |
 | Công ty CP Vận Chuyển Vinalink | 1,200,000,000 | 800,000,000 |
 | **Cộng** | **2,860,007,262** | **6,237,571,275** |
 
-*Thù lao Hội đồng quản trị, Ban kiểm soát và Thu nhập của Ban Giám đốc:*
+**Thù lao Hội đồng quản trị, Ban kiểm soát và Thu nhập của Ban Giám đốc:**
 
 | Họ và tên | Chức vụ | Năm nay | Năm trước |
 | :--- | :--- | :---: | :---: |
@@ -669,7 +697,7 @@ Bản chất các giao dịch quan trọng và giá trị giao dịch trong năm
 | Ông Dương Trấn An | Thành viên Ban kiểm soát | 79,800,000 | 55,500,000 |
 | **Cộng** | | **9,388,824,306** | **8,807,486,263** |
 
-*Cổ tức đã chia:*
+**- Cổ tức đã chia:**
 
 | Cá nhân | Năm nay | Năm trước |
 | :--- | :---: | :---: |
@@ -684,7 +712,7 @@ Bản chất các giao dịch quan trọng và giá trị giao dịch trong năm
 
 <!-- TRANG 16 TRONG FILE GỐC (TRANG 15 BÁO CÁO) -->
 
-*Cổ tức đã chia (tiếp theo):*
+**- Cổ tức đã chia (tiếp theo):**
 
 | Cá nhân | Năm nay | Năm trước |
 | :--- | :---: | :---: |
@@ -693,12 +721,14 @@ Bản chất các giao dịch quan trọng và giá trị giao dịch trong năm
 | Ông Dương Trấn An | 15,276,000 | 19,095,000 |
 | **Cộng** | **649,260,000** | **805,075,000** |
 
-Phê duyệt ngày 29 tháng 10 năm 2026
+*Phê duyệt, ngày 29 tháng 10 năm 2026*
 
 | NGƯỜI LẬP BIỂU | KẾ TOÁN TRƯỞNG | NGƯỜI ĐẠI DIỆN THEO PHÁP LUẬT |
 | :---: | :---: | :---: |
 | *(Đã ký)* | *(Đã ký)* | *(Đã ký và đóng dấu)* |
 | **LÊ THỊ THANH THANH** | **NGUYỄN ANH NAM** | **VŨ QUỐC BẢO** |
+
+*(Dấu tròn: CÔNG TY CỔ PHẦN LOGISTICS VINALINK - M.S.D.N: 0301776205 - TP. HỒ CHÍ MINH)*
 
 ---
 
@@ -707,7 +737,7 @@ Phê duyệt ngày 29 tháng 10 năm 2026
 ### CÔNG VĂN GIẢI TRÌNH CHÊNH LỆCH LỢI NHUẬN SAU THUẾ
 
 **CÔNG TY CỔ PHẦN LOGISTICS VINALINK**  
-Số CV: 890/2026/CV/VNL-ADM  
+Số CV: 890 /2026/CV/VNL-ADM  
 
 **CỘNG HOÀ XÃ HỘI CHỦ NGHĨA VIỆT NAM**  
 **Độc Lập – Tự Do – Hạnh Phúc**  
@@ -721,8 +751,8 @@ Công ty Cổ Phần Logistics Vinalink giải trình về chênh lệch Lợi n
 
 | Chỉ tiêu | Quý 3-2026 | Quý 3-2025 | Chênh lệch | % Tăng/giảm |
 | :--- | :---: | :---: | :---: | :---: |
-| Doanh thu thuần | 391.736.812.625 | 376.992.777.619 | 14.744.035.006 | 3,91% |
-| Lợi nhuận sau thuế TNDN | 12.791.138.289 | 14.783.769.321 | -1.992.631.032 | - 13,48% |
+| Doanh thu thuần | 391.736.812.625 | 376.992.777.619 | 14.744.035.006 | 3,91 % |
+| Lợi nhuận sau thuế TNDN | 12.791.138.289 | 14.783.769.321 | - 1.992.631.032 | - 13,48 % |
 
 Lợi nhuận sau thuế thu nhập doanh nghiệp Quý 3 năm 2026 giảm 1.992.631.032 đồng, tương ứng 13,48% so với cùng kỳ năm 2025, chủ yếu do các nguyên nhân sau:
 
@@ -735,6 +765,8 @@ Lợi nhuận sau thuế thu nhập doanh nghiệp Quý 3 năm 2026 giảm 1.992
 *(Đã ký và đóng dấu)*  
 **VŨ QUỐC BẢO**
 
+*(Dấu tròn: CÔNG TY CỔ PHẦN LOGISTICS VINALINK - M.S.D.N: 0301776205 - TP. HỒ CHÍ MINH)*
+
 ---
 *Trụ sở chính: 226/2 Lê Văn Sỹ, Phường Tân Sơn Hòa, TPHCM - ĐT: 84.28.3991 9259*  
-*Email: thuky@vinalinklogistics.com - Website: www.vinalinklogistics.com*
+*Email: thuky@vinalinklogistics.com – Website: www.vinalinklogistics.com*

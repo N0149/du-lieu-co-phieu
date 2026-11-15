@@ -25,10 +25,12 @@ import {
   ScrollText,
   Loader2,
   Calendar,
+  Download,
+  FolderDown,
 } from "lucide-react"
 import { cn } from "@/lib/utils"
 import type { BctcReportData, BctcPeriodOption } from "@/lib/bctc-service"
-import { BctcDocumentSection } from "./BctcDocumentSection"
+import { BctcDocumentModal } from "./BctcDocumentModal"
 import type { BctcCompanyDocumentsPayload } from "@/lib/bctc-document-service"
 
 interface StockBctcReportViewProps {
@@ -62,6 +64,7 @@ export function StockBctcReportView({
   })
   const [tickers, setTickers] = useState<string[]>(availableTickers)
   const [docs, setDocs] = useState<BctcCompanyDocumentsPayload | null>(bctcDocuments)
+  const [isDocsModalOpen, setIsDocsModalOpen] = useState<boolean>(false)
   const [isLoading, setIsLoading] = useState<boolean>(() => {
     const hasInitial = (bctcDataHopNhat && (!targetPeriod || bctcDataHopNhat.periodKey === targetPeriod)) ||
                        (bctcDataCongTyMe && (!targetPeriod || bctcDataCongTyMe.periodKey === targetPeriod))
@@ -268,13 +271,24 @@ export function StockBctcReportView({
         })}
       </div>
 
-      <div className="hidden sm:flex items-center gap-2 text-xs text-muted-foreground px-2">
-        <span className="font-mono text-emerald-400 font-bold">{ticker}</span>
+      <div className="flex items-center gap-2 text-xs text-muted-foreground px-2">
+        <span className="font-mono text-emerald-400 font-bold hidden sm:inline">{ticker}</span>
         {currentData?.hasReport && tableCount > 0 && (
-          <>
-            <span>·</span>
-            <span>{tableCount} bảng chi tiết</span>
-          </>
+          <span className="hidden md:inline">· {tableCount} bảng chi tiết</span>
+        )}
+        {docs && (
+          <button
+            type="button"
+            onClick={() => setIsDocsModalOpen(true)}
+            className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl border border-emerald-500/30 bg-emerald-500/10 hover:bg-emerald-500/20 text-emerald-400 text-xs font-bold transition-all cursor-pointer shadow-2xs"
+            title={`Xem & tải danh mục ${docs.totalFiles} file scan BCTC gốc có dấu đỏ`}
+          >
+            <FolderDown className="size-3.5" />
+            <span>Tải BCTC gốc</span>
+            <span className="rounded-full bg-emerald-500/20 px-1.5 py-0.2 text-[10px] font-mono font-bold">
+              {docs.totalFiles}
+            </span>
+          </button>
         )}
       </div>
     </div>
@@ -370,15 +384,6 @@ export function StockBctcReportView({
         {/* ── Thanh điều hướng các tab con (Bán niên, Quý 3, Quý 4...) ── */}
         {renderSubTabsBar()}
 
-        {/* Danh mục Tải File Gốc BCTC */}
-        {docs && (
-          <BctcDocumentSection
-            documents={docs}
-            companyName={companyName}
-            defaultExpanded={true}
-          />
-        )}
-
         <div className="rounded-2xl border border-border/70 bg-card/60 p-6 sm:p-10 text-center space-y-6">
           <div className="mx-auto flex size-16 items-center justify-center rounded-2xl bg-muted/60 text-muted-foreground">
             <FileSpreadsheet className="size-8 text-primary" />
@@ -388,11 +393,21 @@ export function StockBctcReportView({
               Chưa có dữ liệu {selectedPeriod === 'Quy_3_2026' ? 'Báo cáo Quý 3/2026' : 'Báo cáo Bán niên 2026'} cho {companyName || ticker}
             </h3>
             <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed">
-              Dữ liệu số hóa chi tiết của {selectedPeriod === 'Quy_3_2026' ? 'Báo cáo Quý 3/2026' : 'Báo cáo Bán niên 2026'} đang trong tiến trình trích xuất tự động hoặc doanh nghiệp chưa công bố. Bạn có thể xem và tải trực tiếp bản scan Báo cáo tài chính gốc từ danh mục phía trên!
+              Dữ liệu số hóa chi tiết của {selectedPeriod === 'Quy_3_2026' ? 'Báo cáo Quý 3/2026' : 'Báo cáo Bán niên 2026'} đang trong tiến trình trích xuất tự động hoặc doanh nghiệp chưa công bố. Bạn có thể bấm nút bên dưới để xem và tải trực tiếp các bản scan Báo cáo tài chính gốc!
             </p>
           </div>
 
-          <div className="flex justify-center pt-1">
+          <div className="flex flex-wrap items-center justify-center gap-2.5 pt-1">
+            {docs && (
+              <button
+                type="button"
+                onClick={() => setIsDocsModalOpen(true)}
+                className="inline-flex items-center gap-2 px-4 py-2 rounded-xl border border-emerald-500/30 bg-emerald-500/10 hover:bg-emerald-500/20 text-emerald-400 text-xs sm:text-sm font-bold shadow-xs transition-all cursor-pointer"
+              >
+                <FolderDown className="size-4" />
+                <span>Xem & Tải {docs.totalFiles} file BCTC gốc (PDF)</span>
+              </button>
+            )}
             <button
               type="button"
               onClick={() => handlePeriodChange(selectedPeriod === 'Quy_3_2026' ? 'Ban_Nien_2026' : 'Quy_3_2026')}
@@ -441,6 +456,14 @@ export function StockBctcReportView({
           </div>
         )}
         </div>
+
+        {/* ── Modal Danh mục Tải File Gốc BCTC ── */}
+        <BctcDocumentModal
+          isOpen={isDocsModalOpen}
+          onClose={() => setIsDocsModalOpen(false)}
+          documents={docs}
+          companyName={companyName}
+        />
       </div>
     )
   }
@@ -481,15 +504,6 @@ export function StockBctcReportView({
     <div className="space-y-6">
       {/* ── 0. THANH ĐIỀU HƯỚNG CÁC TAB CON: BCTC BÁN NIÊN, QUÝ 3 (VÀ QUÝ 4, CÁC KỲ SAU) ── */}
       {renderSubTabsBar()}
-
-      {/* ── Danh mục Tải File Gốc BCTC ── */}
-      {docs && (
-        <BctcDocumentSection
-          documents={docs}
-          companyName={companyName}
-          defaultExpanded={false}
-        />
-      )}
 
       {/* ── 1. HEADER BÁO CÁO THUYẾT MINH BCTC ── */}
       <div className="relative overflow-hidden rounded-2xl border border-border/80 bg-linear-to-br from-card/90 via-card/60 to-background p-5 sm:p-7 shadow-sm">
@@ -583,6 +597,18 @@ export function StockBctcReportView({
               <Printer className="size-3.5" />
               <span>In BCTC</span>
             </button>
+
+            {docs && (
+              <button
+                type="button"
+                onClick={() => setIsDocsModalOpen(true)}
+                className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl border border-emerald-500/30 bg-emerald-500/10 hover:bg-emerald-500/20 text-xs font-bold text-emerald-400 transition-colors cursor-pointer shadow-2xs"
+                title={`Xem và tải toàn bộ ${docs.totalFiles} file PDF/ZIP BCTC gốc`}
+              >
+                <FolderDown className="size-3.5" />
+                <span>File gốc ({docs.totalFiles})</span>
+              </button>
+            )}
 
             <button
               type="button"
@@ -742,6 +768,41 @@ export function StockBctcReportView({
           ))}
         </div>
       )}
+
+      {/* ── 4. CHÂN TRANG: TÀI LIỆU GỐC & CỔNG THÔNG TIN ĐỐI CHIẾU ── */}
+      {docs && (
+        <div className="rounded-2xl border border-border/80 bg-card/60 p-4 sm:p-5 flex flex-wrap items-center justify-between gap-4">
+          <div className="flex items-center gap-3">
+            <div className="flex size-10 shrink-0 items-center justify-center rounded-xl bg-emerald-500/15 text-emerald-400 border border-emerald-500/30">
+              <FolderDown className="size-5" />
+            </div>
+            <div>
+              <p className="text-xs sm:text-sm font-bold text-foreground">
+                Cần đối chiếu bản scan BCTC gốc có dấu đỏ & kiểm toán?
+              </p>
+              <p className="text-xs text-muted-foreground mt-0.5">
+                Hệ thống lưu trữ đầy đủ {docs.totalFiles} file PDF/ZIP chính thức của {companyName || ticker} từ các kỳ trước tới nay.
+              </p>
+            </div>
+          </div>
+          <button
+            type="button"
+            onClick={() => setIsDocsModalOpen(true)}
+            className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-emerald-500 text-slate-950 font-bold text-xs sm:text-sm shadow-xs hover:bg-emerald-400 transition-all cursor-pointer"
+          >
+            <Download className="size-4" />
+            <span>Mở danh mục {docs.totalFiles} file gốc</span>
+          </button>
+        </div>
+      )}
+
+      {/* ── 5. MODAL HỘP THOẠI TẢI FILE BCTC GỐC ── */}
+      <BctcDocumentModal
+        isOpen={isDocsModalOpen}
+        onClose={() => setIsDocsModalOpen(false)}
+        documents={docs}
+        companyName={companyName}
+      />
     </div>
   )
 }

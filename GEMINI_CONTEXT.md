@@ -1,6 +1,6 @@
 # GEMINI_CONTEXT.md — Ngữ cảnh đồng bộ dự án
 
-> **Mục đích**: File duy nhất để mọi AI agent (Gemini, Copilot, Claude, Cursor...) nắm được 100% hiện trạng code của dự án **Phân Tích Chuyên Sâu Cổ Phiếu (dulieucophieu.com)**.
+> **Mục đích**: File duy nhất để mọi AI agent (Gemini, Copilot, Claude, Cursor...) nắm được 100% hiện trạng code của dự án **Phân Tích Chuyên Sâu Cổ Phiếu (dulieudautu.com / dulieucophieu.com)**.
 >
 > **Quy tắc cập nhật (CẬP NHẬT 2026-08-15, theo `AGENTS.md`)**: **KHÔNG tự động cập nhật/đồng bộ/nhắc tới file này** sau mỗi lần sửa code — **CHỈ cập nhật khi người dùng yêu cầu đích danh** (vd "cập nhật GEMINI_CONTEXT.md", "đồng bộ ngữ cảnh", "cập nhật changelog").
 
@@ -13,28 +13,28 @@
 | **Tên dự án** | Phân Tích Chuyên Sâu Cổ Phiếu — Cổng Dữ Liệu & Báo Cáo Đầu Tư (`dulieudautu.com` / `dulieucophieu.com`) |
 | **Sáng lập / Người phụ trách** | Nguyễn Trung Nhật · Zalo **0983.627.018** · trungnhat232@gmail.com |
 | **Tech stack** | Next.js **16.3.0** (App Router, Turbopack), React **19**, TypeScript **5.7.3**, Tailwind CSS **v4** (OKLCH, chủ đạo emerald / teal / dark oceanic), Node.js **22.x**, pnpm |
-| **Xác thực & Watchlist** | **Supabase Auth & Database** (`@supabase/ssr`, `@supabase/supabase-js`): Đăng nhập email/Google, quản lý Watchlist cá nhân, nhập danh sách mã hàng loạt (Bulk Import), SSR tức thì 0ms, lọc tin tức & công bố theo watchlist |
-| **Dữ liệu Giá Live** | Realtime Ticker API từ **24hMoney** (`lib/live-quote-service.ts`) → route `/api/stock/[symbol]/live-quote`, cache 60s in-memory, client polling tự động mỗi 60s |
-| **Công Bố Thông Tin 3 Sàn** | Tích hợp tab Công Bố 3 Sàn (HOSE, HNX, UPCOM) mặc định tại trang chủ `/`, tự động revalidate ngầm, lọc theo sàn & loại tài liệu (BCTC, Nghị quyết HĐQT, giải trình...) → route `/api/disclosures` |
-| **Bộ Lọc Cổ Phiếu WiData** | `/bo-loc` sàng lọc 1.530+ mã (HOSE, HNX, UPCOM) chuẩn WiData: P/E, P/B, ROE, biên LN, dòng tiền OCF, nợ/VCSH, tăng trưởng và tín hiệu kỹ thuật |
-| **Tình Báo Cổ Phiếu Chuyên Sâu** | `/stock/[symbol]`: Header giá realtime 24hMoney (polling 60s), Biểu đồ giá & Giao dịch nội bộ (`InsiderTradingPriceChart`), Đồng thuận giá mục tiêu CTCK (`ConsensusTargetPriceChart`), Định giá P/E-P/B kết hợp EPS (`StockValuationEpsChart`), Bóc tách chuỗi/phân khúc kinh doanh (`MWGSegmentCharts`), Chỉ số tài chính chuẩn WiData (`WiDataFinancialRatiosDashboard`), Báo cáo ĐHĐCĐ (AGM) 2026 chi tiết (`StockAgmReportView`), BCTC chi tiết 16 năm |
-| **Báo Cáo Phân Tích Doanh Nghiệp** | Tự động cào và cache báo cáo phân tích theo từng mã từ CTCK (`lib/company-reports-service.ts` → `/api/reports/company/[symbol]`), kết hợp kho tĩnh 94 báo cáo vĩ mô/ngành từ Google Drive (`data/reports-snapshot.json`) |
-| **Dữ liệu XNK** | Snapshot 7 năm (2020–2026) `data/customs_trade_snapshot.json` + `data/customs_matrix_detail.json` → `/api/customs-trade` |
-| **Dữ liệu Cảng Biển** | SQLite `data/maritime.db` (WAL mode) + JSON Snapshots `data/maritime/dashboard_summary.json` (15 cảng vụ, 12 mã cổ phiếu cảng biển & vận tải biển: `PHP`, `GMD`, `DVP`, `DXP`, `MIPEC`, `SGP`, `PDN`, `CDN`, `HAH`, `VGR`, `CQN`, `PSP`, 147+ hồ sơ tàu biển, 600+ lượt điều động tàu phân biệt không trùng lặp, theo dõi cước vận tải biển quốc tế BDI, WCI, BDTI, BCTI) |
-| **UI & UX Responsive** | **Dark Oceanic Fintech Aesthetic**: Nền Deep Slate 950, hiệu ứng ngọc bích / lục bảo (Teal & Cyan Glow), bảng kính mờ Glassmorphism, mã cổ phiếu Neon Gradient. Hỗ trợ **Mobile Bottom Navigation Bar**, touch-friendly tabs docking, auto-adapting tab labels, scroll chevrons và mouse wheel navigation cho màn hình laptop |
-| **Điều Hướng & Tìm Kiếm** | Sidebar dọc thu gọn/mở rộng (`VerticalSidebarNav` lưu `localStorage` & sync `data-sidebar`), Hộp tìm kiếm toàn diện Command Palette (`GlobalSearchModal`, phím tắt `Ctrl+K`) |
-| **Fonts & Format số** | Inter, JetBrains Mono; format vi-VN: dấu chấm nghìn, dấu phẩy thập phân; giá nghìn đồng/cổ phiếu; vốn hóa tỷ đồng |
-| **Định vị sản phẩm** | Cổng dữ liệu tài chính & đầu tư toàn diện: Công bố 3 sàn realtime + Bộ lọc WiData 1.530+ mã + Watchlist cá nhân + Tình báo cổ phiếu 360 + BCTC 16 năm + ĐHĐCĐ 2026 + Thống kê XNK Hải quan 7 năm + Tình báo hàng hải cảng biển |
+| **Model Context Protocol (MCP)** | Server MCP chuẩn hóa (`/api/mcp`, `/mcp`, `/ket-noi-mcp`) hỗ trợ kết nối trực tiếp các AI client (Gemini, Claude, Cursor, ChatGPT). Tuân thủ OAuth 2.0 RFC 8414 & RFC 9728 (`/.well-known/oauth-*`, `/oauth/*`). Gồm 4 công cụ hợp nhất: `tra_cuu_ho_so_tai_chinh`, `bo_loc_co_phieu`, `so_sanh_co_phieu`, `su_kien_va_cong_bo_thong_tin`. Quota: Free Member 5 câu/ngày, VIP không giới hạn |
+| **Phân quyền VIP & AuthGate** | **Supabase Auth & Database** (`@supabase/ssr`): Đăng nhập Google/Email, hệ thống cấp quyền 3 tầng: Khách vãng lai, Free Member và Hội viên VIP. Quản trị kích hoạt/thu hồi VIP nhanh qua email tại `/admin` (`/api/admin/vip`), webhook cổng thanh toán (`/api/payment/webhook`). Khóa mở tính năng thông minh bằng component `AuthGate` |
+| **Dữ liệu Giá Live 24hMoney** | Realtime Ticker API từ **24hMoney** (`lib/live-quote-service.ts` → `/api/stock/[symbol]/live-quote`), cache 60s in-memory, client polling tự động mỗi 60s, tính toán động P/E, P/B và vốn hóa theo thị giá |
+| **Công Bố Thông Tin 3 Sàn** | Tích hợp tab Công Bố 3 Sàn (HOSE, HNX, UPCOM) tại trang chủ `/`, tự động revalidate ngầm, lọc theo sàn, loại tài liệu & Watchlist cá nhân → `/api/disclosures` |
+| **Bộ Lọc Cổ Phiếu WiData** | `/bo-loc`: Sàng lọc 1.530+ mã (HOSE, HNX, UPCOM) chuẩn WiData: P/E, P/B, ROE, biên LN, dòng tiền OCF, nợ/VCSH, tăng trưởng và tín hiệu kỹ thuật |
+| **Tình Báo Cổ Phiếu Chuyên Sâu** | `/stock/[symbol]`: Header giá realtime, 7 tab phân tích: Đánh giá 360, BCTC chi tiết 16 năm (kèm thuyết minh bóc tách nợ vay, hàng tồn kho, dở dang), Kế hoạch kinh doanh 10 năm, Biểu đồ giao dịch nội bộ, Đồng thuận giá CTCK, Định giá P/E-P/B Bands + EPS, Báo cáo ĐHĐCĐ 2026 (867+ mã), Báo cáo phân tích CTCK |
+| **Hệ Thống Hub Ngành Chuyên Sâu** | **Ngành Điện** (`/nganh-dien`): 36 mã, LNST thực tế, tỷ lệ hoàn thành, Quy hoạch Điện VIII.<br>**Đấu Thầu Y Tế & ĐTC** (`/dau-thau`): Bóc tách gói thầu trúng ETC của DP1, DTP, DAN, TRA, CDP, DTG và 3.736 dự án ĐTC quy mô ≥ 500 tỷ.<br>**Ngành Thủy Sản** (`/thuy-san`): Dữ liệu VASEP 10T/2026, giá nguyên liệu cá tra/tôm hàng tuần, so sánh BCTC Q3 của 12 cổ phiếu.<br>**Nghiên Cứu Định Giá AI & RNAV** (`/nghien-cuu-ai`): Bóc tách giá trị ròng tài sản, mô hình RNAV, tính điểm định giá realtime |
+| **Báo Cáo Phân Tích & Kho BCTC** | 4.900+ snapshot báo cáo phân tích CTCK (`data/company_reports_snapshot.json`), 490+ báo cáo ngành (`data/industry-reports.json`), báo cáo vĩ mô, trái phiếu, tin IR. Kho tài liệu thuyết minh BCTC Q3/2026 chuẩn Markdown trong `content/bctc/` |
+| **Tình Báo Cảng Biển & Hàng Hải** | SQLite `data/maritime.db` + Snapshots `data/maritime/dashboard_summary.json` (15 cảng vụ, 12 mã niêm yết: `PHP`, `GMD`, `DVP`, `DXP`, `MIPEC`, `SGP`, `PDN`, `CDN`, `HAH`, `VGR`, `CQN`, `PSP`, 147+ hồ sơ tàu, khử trùng lặp tự động, theo dõi cước vận tải biển BDI, WCI, BDTI, BCTI) |
+| **Thống Kê XNK Hải Quan 7 Năm** | Snapshot 2020–2026 `data/customs_trade_snapshot.json` + `data/customs_matrix_detail.json` → `/api/customs-trade` |
+| **Bảo Mật & Tối Ưu Tải** | `middleware.ts` tách biệt bucket rate-limit cho prefetch (`isPrefetchRequest`) tránh khóa nhầm truy cập thật; hạn chế cào hàng loạt `/stock/[symbol]`; Cloudflare IP header priority; chặn bot cào trộm; security trap routes |
+| **UI & UX Responsive** | **Dark Oceanic Fintech Aesthetic**: Nền Deep Slate 950, hiệu ứng ngọc bích / lục bảo (Teal & Cyan Glow), bảng kính mờ Glassmorphism. Hỗ trợ **Mobile Bottom Navigation Bar**, touch-friendly docking tabs, scroll chevrons, Command Palette (`Ctrl+K`) |
+| **Export sang AI Cá Nhân** | Tích hợp tính năng 1-click xuất toàn bộ dữ liệu tài chính BCTC và báo cáo ĐHĐCĐ sang Markdown nạp vào Gemini, Google NotebookLM, ChatGPT, Claude, DeepSeek |
 
 ### Cách chạy dev & Build
-- **Lệnh dùng được**: `pnpm dev` hoặc `node node_modules\next\dist\bin\next dev` (chạy tại `localhost:3000`)
+- **Lệnh chạy local**: `pnpm dev` hoặc `pnpm run build` (kiểm tra TypeScript & Turbopack build)
 - `next.config.mjs`:
   - `poweredByHeader: false`, `serverExternalPackages: ['node:sqlite']`.
-  - `outputFileTracingIncludes`: Tự động bundle các thư mục dữ liệu JSON (`financial_charts`, `valuation_history`, `dividend_history`, `segments`, `price_history`, `reports-snapshot.json`) cho route `/stock/[symbol]`.
+  - `outputFileTracingIncludes`: Tự động bundle các file JSON và content markdown cho các dynamic route.
   - `outputFileTracingExcludes`: Loại trừ các cache nặng cục bộ (`evaluation_cache`, `shareholder_cache`, `notes-cache`, `*.db`).
-- `package.json`: `engines.node: "22.x"`, `packageManager: pnpm@11.20.0`; lockfile: `pnpm-lock.yaml`.
-- **Tự động hóa CI/CD**: GitHub Actions `.github/workflows/sync-market-data.yml` chạy tự động quét thị trường, cảng biển và cập nhật JSON snapshots.
-- **Vercel Deployment**: domain `dulieudautu.com`, `metadataBase` = https://dulieudautu.com, tự động deploy khi push lên nhánh `main`.
+- **Tự động hóa CI/CD**: GitHub Actions tự động đồng bộ báo cáo phân tích hàng ngày, đồng bộ công bố thông tin và cache BCTC completed.
+- **Vercel Deployment**: domain `dulieudautu.com` / `du-lieu-co-phieu-grtq.vercel.app`, tự động deploy production khi push nhánh `main`.
 
 ---
 
@@ -44,105 +44,71 @@
 
 ```mermaid
 flowchart TD
-  subgraph AuthWatchlist [1. Supabase Auth & Watchlist Cá Nhân]
-    USER[Người dùng / Nhà đầu tư] --> AUTH_MODAL[AuthModal / Google OAuth / Email Magic Link]
+  subgraph AuthVIP [1. Supabase Auth, VIP & Phân Quyền]
+    USER[Người dùng / Nhà đầu tư] --> AUTH_MODAL[AuthModal / Google OAuth / Magic Link]
     AUTH_MODAL --> SB_AUTH[Supabase Auth - @supabase/ssr]
-    SB_AUTH --> SB_DB[(Supabase DB: watchlists & watchlist_items)]
-    SB_DB --> WL_SSR[Server-side SSR 0ms /danh-muc]
-    WL_SSR --> WL_TABLE[WatchlistTable compact 100+ mã]
-    WL_TABLE --> BULK_IMPORT[BulkImportModal: Nhập mã hàng loạt]
-    SB_DB -.-> SYNC_FILTER[Lọc bài viết theo Watchlist tại Trang Chủ]
+    SB_AUTH --> USER_TIER{Phân tầng hội viên}
+    USER_TIER -->|Khách vãng lai| TIER_GUEST[Xem dữ liệu cơ bản]
+    USER_TIER -->|Free Member| TIER_MEMBER[Xem Kế hoạch KD, Đấu thầu, 5 MCP queries/ngày]
+    USER_TIER -->|VIP Member| TIER_VIP[Thuyết minh 34 quý, RNAV, DWT bến cảng, Không giới hạn MCP]
+    ADMIN[Quản trị viên] --> ADMIN_PAGE[/admin Kích hoạt/Thu hồi VIP nhanh]
+    ADMIN_PAGE --> API_VIP[/api/admin/vip]
+    WEBHOOK[Cổng thanh toán] --> API_PAYMENT[/api/payment/webhook]
   end
 
-  subgraph Disclosures [2. Công Bố Thông Tin 3 Sàn]
-    EXCH[HOSE / HNX / UPCOM] --> SCRAPE_DISC[Cào & tổng hợp công bố]
-    SCRAPE_DISC --> API_DISC[/api/disclosures/]
-    API_DISC --> DISC_TAB[Tab Công Bố 3 Sàn mặc định tại Trang Chủ /]
-    SYNC_FILTER -.-> DISC_TAB
+  subgraph MCP_Ecosystem [2. Model Context Protocol Server & OAuth 2.0]
+    AI_CLIENTS[Gemini / Claude / Cursor / ChatGPT] --> OAUTH_EP[/.well-known/oauth-* & /oauth/*]
+    OAUTH_EP --> MCP_CORE[/api/mcp & lib/mcp/server.ts]
+    MCP_CORE --> T1[tra_cuu_ho_so_tai_chinh]
+    MCP_CORE --> T2[bo_loc_co_phieu]
+    MCP_CORE --> T3[so_sanh_co_phieu]
+    MCP_CORE --> T4[su_kien_va_cong_bo_thong_tin]
   end
 
-  subgraph Screener [3. Bộ Lọc Cổ Phiếu WiData 1.530+ Mã]
-    WIDATA_SRC[Dữ liệu WiData: BCTC, Định giá, Kỹ thuật] --> API_SCREENER[/api/screener/stocks]
-    API_SCREENER --> SCREENER_PAGE[/bo-loc WiData Screener]
+  subgraph Industry_Hubs [3. Các Hub Ngành & Tình Báo Chuyên Sâu]
+    DIEN_DATA[Dữ liệu 36 mã Điện & QHĐ VIII] --> PAGE_DIEN[/nganh-dien Hub Ngành Điện]
+    ETC_DATA[Dữ liệu MPI & Đấu thầu ETC] --> PAGE_ETC[/dau-thau Hub Đấu Thầu Y Tế & ĐTC]
+    VASEP_DATA[Dữ liệu VASEP 10T/2026] --> PAGE_TS[/thuy-san Hub Thủy Sản]
+    RNAV_DATA[Bóc tách tài sản & BCTC] --> PAGE_RNAV[/nghien-cuu-ai Định Giá RNAV]
+    MACRO_DATA[Vĩ mô, Lãi suất, Tín dụng] --> PAGE_MACRO[/vi-mo & /quy-mo]
   end
 
-  subgraph DeepDive [4. Tình Báo Cổ Phiếu Chuyên Sâu /stock/symbol]
-    LIVE_API[24hMoney Live Quote API] --> API_QUOTE[/api/stock/symbol/live-quote]
-    API_QUOTE --> STOCK_HEADER[StockEvaluationHeader - polling 60s]
-    
-    FIN_DATA[data/financial_charts 16 năm] --> FIN_SVC[lib/financial-charts-service.ts]
-    FIN_SVC --> FIN_CHARTS[GeneralDetailedFinancialCharts: 7 nhóm biểu đồ]
-    
-    VAL_DATA[data/valuation_history] --> VAL_SVC[lib/valuation-history-service.ts]
-    VAL_SVC --> VAL_CHART[StockValuationEpsChart: P/E-P/B Bands + EPS]
-    
-    CONS_DATA[data/consensus_target_price] --> CONS_SVC[lib/consensus-target-price-service.ts]
-    CONS_SVC --> CONS_CHART[ConsensusTargetPriceChart: Đồng thuận CTCK]
-    
-    INSIDER_DATA[data/insider_trading] --> INSIDER_SVC[lib/insider-trading-service.ts]
-    INSIDER_SVC --> INSIDER_CHART[InsiderTradingPriceChart: Giao dịch nội bộ]
-    
-    SEGM_DATA[data/segments] --> SEGM_CHARTS[MWGSegmentCharts: Bóc tách chuỗi/phân khúc]
-    
-    AGM_DATA[data/agm_reports] --> AGM_VIEW[StockAgmReportView: ĐHĐCĐ 2026 chi tiết]
-    
-    CTCK_SCRAPE[Cào báo cáo phân tích mã] --> API_COMP_REP[/api/reports/company/symbol]
-  end
-
-  subgraph Reports [5. Kho Báo Cáo Phân Tích & AI]
-    SNAP[data/reports-snapshot.json 94 báo cáo] --> API_REP[/api/reports/]
-    API_REP --> BAOCAO[/bao-cao page + TTS Server-side]
-    BAOCAO --> AI_RESEARCH[/nghien-cuu-ai Định giá RNAV]
-  end
-
-  subgraph Customs [6. Thống Kê XNK Hải Quan 7 Năm]
-    XNK_SNAP[data/customs_trade_snapshot.json 2020-2026] --> API_XNK[/api/customs-trade/]
-    API_XNK --> XNK_PAGE[/xuat-nhap-khau page]
-  end
-
-  subgraph Maritime [7. Tình Báo Cảng Biển & Hàng Hải]
-    CVHH[Cảng vụ Hải Phòng & 14 cảng vụ] --> HP_SCRAPER[cvhh_haiphong_scraper.py]
-    PILOT[Hoa tiêu Miền Nam - pilotcosouth] --> SOUTH_SCRAPER[pilot_south_scraper.py]
-    DLCB[Master 15 cảng vụ + 12 mã niêm yết] --> DLCB_COLLECTOR[dlcb_collector.py]
-    HP_SCRAPER & SOUTH_SCRAPER & DLCB_COLLECTOR --> DEDUPE[dedupe_port_calls]
-    DEDUPE --> M_DB[(data/maritime.db)]
-    M_DB --> M_SNAP[data/maritime/dashboard_summary.json]
-    M_SNAP --> LIB_M[lib/maritime.ts & lib/maritime-types.ts]
-    LIB_M --> PAGE_CANGBIEN[/cang-bien Hub]
-    LIB_M --> PAGE_STOCK_PORT[/cang/ticker Deep Dive]
-    LIB_M --> PAGE_VESSEL[/cang-bien/tau Vessel Search]
-    LIB_M --> PAGE_SOURCE[/cang-bien/nguon-du-lieu]
+  subgraph Core_Analytics [4. Tình Báo Cổ Phiếu 360 & Thị Trường]
+    LIVE_API[24hMoney Realtime Ticker] --> API_QUOTE[/api/stock/symbol/live-quote]
+    FIN_DATA[Kho BCTC 16 năm + Thuyết minh Q3/2026] --> PAGE_STOCK[/stock/symbol Deep Dive]
+    DISC_DATA[Công bố thông tin 3 sàn] --> PAGE_HOME[Trang Chủ / Công Bố & Tin Tức]
+    WIDATA_SRC[WiData 1.530+ mã] --> PAGE_SCREENER[/bo-loc Bộ Lọc Cổ Phiếu]
+    MARITIME_DB[(data/maritime.db 15 Cảng vụ)] --> PAGE_CANGBIEN[/cang-bien Tình Báo Hàng Hải]
   end
 ```
 
-### 2.2 Hệ Thống Supabase Auth & Watchlist Cá Nhân
-- **Kiến trúc Server-Side (`@supabase/ssr`)**: Sử dụng helper Supabase server/client chuẩn Next.js App Router với cơ chế đọc/ghi cookie an toàn (`lib/supabase/server.ts`, `lib/supabase/client.ts`).
-- **Database Schema & RLS**:
-  - `watchlists`: Lưu thông tin danh mục của từng `user_id`.
-  - `watchlist_items`: Lưu các mã cổ phiếu (`symbol`, `added_at`, `target_price`, `notes`) liên kết với `watchlist_id`. Bảo vệ bằng Supabase Row Level Security (RLS) để người dùng chỉ thấy danh mục của chính mình.
-- **Tối ưu Tốc Độ SSR 0ms (`/danh-muc`)**: Dữ liệu watchlist được nạp trực tiếp trong server component `app/danh-muc/page.tsx` qua `createServerClient`, chuyển thẳng sang `WatchlistTable` mà không phải chờ client fetch ngầm qua HTTP API.
-- **Bulk Import**: Hỗ trợ dán hàng loạt mã cổ phiếu (phân cách bằng dấu phẩy, khoảng trắng, dấu chấm phẩy hoặc xuống dòng), tự động chuẩn hóa chữ hoa, lọc trùng và nhập chỉ trong 1 thao tác.
-- **Tích Hợp Đồng Bộ Bộ Lọc Tin Tức**: Tab Tin Tức và Công Bố Thông Tin tại trang chủ `/` hỗ trợ checkbox lọc tin tức chỉ thuộc các mã trong Watchlist của người dùng.
+### 2.2 Model Context Protocol (MCP) Server & OAuth 2.0
+- **Tiêu chuẩn triển khai**:
+  - Route `/api/mcp` triển khai qua `lib/mcp/server.ts` sử dụng thư viện `@modelcontextprotocol/sdk`.
+  - Hỗ trợ Dynamic Client Registration và RFC 8414 OAuth 2.0 Authorization Server Metadata (`/.well-known/oauth-authorization-server`, `/.well-known/oauth-protected-resource`).
+- **4 Công cụ AI hợp nhất**:
+  1. `tra_cuu_ho_so_tai_chinh`: Nạp trọn bộ hồ sơ cổ phiếu (giá realtime, BCTC tóm tắt, thuyết minh chuyên sâu Q3/2026, nghị quyết ĐHĐCĐ 2026, nghiên cứu định giá AI).
+  2. `bo_loc_co_phieu`: Sàng lọc 1.530+ mã theo tiêu chí cơ bản, định giá, ngành nghề, điểm sức khỏe tài chính.
+  3. `so_sanh_co_phieu`: So sánh trực diện nhóm đối thủ cùng ngành về định giá P/E, P/B, ROE, đòn bẩy tài chính.
+  4. `su_kien_va_cong_bo_thong_tin`: Tra cứu công bố thông tin mới nhất 3 sàn và giao dịch người nội bộ.
+- **Quota & Kiểm soát tần suất**:
+  - Free User: Giới hạn tối đa 5 câu hỏi/ngày.
+  - VIP Member: Không giới hạn truy vấn dữ liệu.
 
-### 2.3 Hệ Thống Giao Diện Đa Thiết Bị (Responsive Layout)
-- **Desktop Sidebar Dọc (`VerticalSidebarNav.tsx`)**:
-  - Tích hợp thanh điều hướng cố định bên trái, hỗ trợ thu gọn (icon only) hoặc mở rộng (đầy đủ nhãn).
-  - Tự động lưu trạng thái đóng/mở vào `localStorage` (`sidebar_collapsed`) và cập nhật thuộc tính `data-sidebar` lên phần tử root `<html>` để tránh chớp giật giao diện khi tải lại trang.
-- **Mobile Bottom Navigation Bar (`MobileBottomNav.tsx`)**:
-  - Thanh điều hướng cố định sát đáy màn hình trên thiết bị di động, tự động ẩn trên màn hình lớn (`md:hidden`).
-  - Các nút truy cập nhanh: Trang chủ / Công bố, Bộ lọc WiData, Watchlist danh mục, Cảng biển, Tài khoản cá nhân.
-- **Thanh Tab Trượt Ngang & Chevrons Điều Hướng (`HorizontalTabs`)**:
-  - Các trang nhiều tab (`/stock/[symbol]`, `/cang-bien`) trang bị nút chevron trái/phải hỗ trợ cuộn mượt mà trên laptop và màn hình nhỏ, cùng hỗ trợ cuộn con lăn chuột ngang (mouse wheel navigation).
-  - Cố định tab khi cuộn trang (touch-friendly docking) giúp người dùng dễ dàng chuyển qua lại giữa các nội dung phân tích.
-- **Hộp Tìm Kiếm Toàn Diện Command Palette (`GlobalSearchModal.tsx`)**:
-  - Kích hoạt qua tổ hợp phím `Ctrl+K` (hoặc `Cmd+K` trên Mac) hoặc nút tìm kiếm trên header.
-  - Tìm kiếm tức thì mã cổ phiếu, doanh nghiệp, báo cáo phân tích, ngành nghề và cảng biển.
+### 2.3 Phân Tầng Quyền Hạn Hội Viên & Quản Trị VIP
+- **Kiến trúc AuthGate 3 tầng**:
+  - `tier="guest"`: Mở công khai cho mọi người dùng (giá realtime, tin tức, công bố thông tin, bộ lọc cơ bản).
+  - `tier="member"`: Yêu cầu đăng nhập tài khoản miễn phí (Kế hoạch kinh doanh ĐHĐCĐ 10 năm, dữ liệu Đấu thầu ETC, tra cứu danh mục Watchlist cá nhân).
+  - `tier="vip"`: Dành riêng cho Hội viên VIP (Thuyết minh BCTC chi tiết 34 quý, Định giá tài sản RNAV, Tình báo hàng hải bóc tách DWT từng bến cảng, P/E thực tế & Tỷ lệ trích ngoài cổ đông, truy cập MCP không giới hạn).
+- **Trang Quản Trị Admin (`/admin` & `/api/admin/vip`)**:
+  - Phân quyền theo email admin (`lib/admin-auth.ts`).
+  - Hỗ trợ gõ tìm kiếm gợi ý email khách hàng, chọn gói (1 tháng, 6 tháng, 1 năm, tùy chỉnh số ngày) và kích hoạt hoặc thu hồi VIP ngay lập tức.
+  - Cập nhật trực tiếp `app_metadata` của Supabase User, client đồng bộ lại session tức thì mà không cần đăng xuất đăng nhập lại.
 
-### 2.4 Module Cảng Biển & Tình Báo Hàng Hải (`scripts/cangbien/` & `data/maritime/`)
-- **Database Schema (`scripts/cangbien/schema.sql`)**: 7 bảng SQLite (`port_authorities`, `stocks`, `berths`, `vessels`, `port_calls`, `stock_metrics_monthly`, `port_authority_metrics_monthly`).
-- **Deduplication Engine (`scripts/cangbien/db.py`)**: Tự động nhận diện và gộp dữ liệu theo `(vessel_name, call_date, call_direction, scheduled_time)`, loại bỏ 100% bản ghi lặp.
-- **Berth Mapper (`scripts/cangbien/berth_mapper.py`)**: Tự động nhận diện tên bến thô từ cảng vụ và map về đúng mã cổ phiếu (`PHP`, `GMD`, `DVP`, `DXP`, `MIPEC`, `SGP`, `PDN`, `CDN`, `HAH`, `VGR`, `CQN`, `PSP`, `TCL`).
-- **Data Loaders (`lib/maritime.ts` & `lib/maritime-types.ts`)**: Tách riêng types và client formatters (`formatDWT`, `formatCalls`) khỏi server-only file loader để tối ưu Turbopack.
+### 2.4 Cơ Chế Bảo Mật, Rate Limiting & Tối Ưu Prefetch (`middleware.ts`)
+- **Tách riêng bucket prefetch**: Nhận diện header `next-router-prefetch`, `purpose: prefetch`, `sec-purpose: prefetch` và `pathname.startsWith('/.well-known/')`. Cho phép prefetch tối đa 120 req/phút/IP để không chặn nhầm trình duyệt của người dùng thực.
+- **Chống cào dữ liệu hàng loạt**: Giới hạn tối đa 30 mã cổ phiếu/phút/IP cho các request xem chi tiết `/stock/[symbol]`.
+- **Tối ưu Link Prefetch**: Đặt `prefetch={false}` trên các component hiển thị danh sách nhiều mã cổ phiếu (`stock-card-grid.tsx`, `stock-link.tsx`, `WatchlistManager.tsx`, `market-treemap.tsx`, `IndustryTable.tsx`) để triệt tiêu tình trạng gửi hàng chục request ngầm cùng lúc làm nghẽn kết nối và kích hoạt rate limit.
 
 ---
 
@@ -154,103 +120,101 @@ flowchart TD
 |---|---|---|
 | `app/layout.tsx` | Server (root) | ✅ Layout toàn site: fonts Inter/JetBrains, `themeScript`, `<VerticalSidebarNav/>`, `<MobileBottomNav/>`, `<GlobalSearchModal/>`, `<SiteFooter/>`, `@vercel/analytics`. |
 | `app/page.tsx` | Server | ✅ **Trang chủ**: Mặc định hiển thị tab **Công Bố Thông Tin 3 Sàn** (HOSE, HNX, UPCOM) & tab **Tin Tức Thị Trường** realtime (`NewsDashboard`), tự động revalidate ngầm và lọc theo Watchlist cá nhân. |
-| `app/danh-muc/page.tsx` | Server (async) | ✅ **Trang Watchlist Cá Nhân**: Nạp SSR 0ms, bảng compact tối ưu hiển thị 100+ mã cổ phiếu, quản lý danh mục, thêm/xóa mã, bulk import hàng loạt mã cổ phiếu. |
-| `app/auth/login/page.tsx` | Client | ✅ **Trang Đăng Nhập / Đăng Ký**: Xác thực Supabase qua Magic Link Email và Google OAuth, chuẩn hóa callback redirect cho cả localhost và production `dulieudautu.com`. |
-| `app/auth/callback/route.ts` | Server (route) | ✅ **OAuth Callback Route**: Trao đổi mã xác thực `code` lấy session Supabase và chuyển hướng người dùng về trang đích mong muốn. |
-| `app/bo-loc/page.tsx` | Server | ✅ **Bộ Lọc Cổ Phiếu WiData**: Sàng lọc 1.530+ mã (HOSE, HNX, UPCOM) theo định giá, sinh lời, biên lợi nhuận, dòng tiền, nợ vay và tín hiệu kỹ thuật. |
-| `app/tin-tuc/page.tsx` | Server | ✅ **Trang Tin Tức**: Dòng tin tài chính & bóc tách mã cổ phiếu realtime, tự động gắn thẻ doanh nghiệp. |
-| `app/stock/[symbol]/page.tsx` | Server (async) | ✅ **Trang Chi Tiết Cổ Phiếu Chuyên Sâu**: Header giá realtime (`StockEvaluationHeader`), 7 tab nội dung chuyên sâu (Đánh giá 360, BCTC chuyên sâu 16 năm, Bóc tách chuỗi/phân khúc kinh doanh, Giao dịch nội bộ & Cổ đông, Định giá P/E-P/B Bands kết hợp EPS, Báo cáo ĐHĐCĐ 2026 chi tiết, Báo cáo phân tích CTCK). |
-| `app/nghien-cuu-ai/page.tsx` | Server | ✅ **Trang Nghiên Cứu Định Giá RNAV**: Bóc tách giá trị ròng tài sản doanh nghiệp, mô hình RNAV và định giá chuyên sâu. |
-| `app/thi-truong/page.tsx` | Server (async) | ✅ **Trang Thị Trường Tài Chính & Vĩ Mô**: Biến động thế giới, hàng hóa, tỷ giá, crypto, biểu đồ định giá P/E & P/B VN-Index từ 2005, báo cáo thị trường, thống kê dư nợ Margin 41 CTCK. |
-| `app/nganh/page.tsx` | Server (async) | ✅ **Trang Bản Đồ Ngành & Vốn Hóa**: Cơ cấu vốn hóa, lợi nhuận, định giá P/E, P/B, ROE toàn bộ các ngành cấp 1 & cấp 2 trên TTCK Việt Nam. |
-| `app/bao-cao/page.tsx` | Client (Suspense) | ✅ Kho 94 báo cáo phân tích: tìm kiếm, sort, 4 Tab lọc (Tất cả / Cổ phiếu / Hàng hóa / Vĩ mô). |
+| `app/admin/page.tsx` | Client | ✅ **Trang Quản Trị**: Thống kê người dùng, lưu lượng truy cập pageview, giao diện kích hoạt/thu hồi quyền VIP nhanh cho khách hàng bằng email. |
+| `app/ket-noi-mcp/page.tsx` | Server | ✅ **Trang Hướng Dẫn Kết Nối MCP**: Hướng dẫn 1-click tích hợp Model Context Protocol vào Gemini CLI, Claude Desktop, Cursor, ChatGPT. |
+| `app/mcp/page.tsx` | Server | ✅ **Trang Giới Thiệu MCP Server**: Mô tả chuẩn giao thức, danh sách 4 công cụ AI hợp nhất và chính sách quota. |
+| `app/nganh-dien/page.tsx` | Server | ✅ **Hub Ngành Điện**: Bóc tách 36 mã cổ phiếu ngành điện, LNST thực tế, tiến độ hoàn thành kế hoạch năm và Quy hoạch Điện VIII. |
+| `app/dau-thau/page.tsx` | Server | ✅ **Hub Đấu Thầu Y Tế & ĐTC**: Theo dõi trúng thầu ETC của các doanh nghiệp Dược niêm yết (DP1, DTP, DAN, TRA, CDP, DTG) và 3.736 dự án đầu tư công quy mô ≥ 500 tỷ. |
+| `app/thuy-san/page.tsx` | Server | ✅ **Hub Ngành Thủy Sản**: Kết nối số liệu VASEP 10T/2026, giá nguyên liệu hàng tuần (cá tra, tôm, nghêu) và KQKD BCTC Q3/2026 của 12 cổ phiếu tiêu biểu. |
+| `app/nghien-cuu-ai/page.tsx` | Server | ✅ **Hub Nghiên Cứu Định Giá RNAV**: Bóc tách giá trị ròng tài sản doanh nghiệp, mô hình RNAV và định giá chuyên sâu. |
+| `app/vi-mo/page.tsx` | Server | ✅ **Hub Dữ Liệu Vĩ Mô**: Lãi suất, tăng trưởng tín dụng, cung tiền M2, lạm phát CPI và tỷ giá. |
+| `app/quy-mo/page.tsx` | Server | ✅ **Hub Quy Mô Vốn Hóa**: Phân lớp cổ phiếu Large-Cap, Mid-Cap, Small-Cap và Penny trên 3 sàn. |
+| `app/danh-muc/page.tsx` | Server (async) | ✅ **Trang Watchlist Cá Nhân**: Nạp SSR 0ms, bảng compact hiển thị 100+ mã cổ phiếu, quản lý danh mục, bulk import hàng loạt mã. |
+| `app/bo-loc/page.tsx` | Server | ✅ **Bộ Lọc Cổ Phiếu WiData**: Sàng lọc 1.530+ mã theo P/E, P/B, ROE, biên LN, dòng tiền, nợ vay và tín hiệu kỹ thuật. |
+| `app/stock/[symbol]/page.tsx` | Server (async) | ✅ **Trang Chi Tiết Cổ Phiếu Chuyên Sâu**: Header giá realtime 24hMoney, 7 tab phân tích chuyên sâu (Đánh giá 360, BCTC 16 năm kèm thuyết minh chi tiết 34 quý, Kế hoạch KD 10 năm, Cổ đông & Giao dịch nội bộ, Định giá P/E-P/B Bands + EPS, ĐHĐCĐ 2026, Báo cáo CTCK). |
+| `app/cang-bien/page.tsx` | Server | ✅ **Trang Chủ Tình Báo Cảng Biển**: Giao diện Dark Oceanic, KPI cảng biển, 12 mã niêm yết, nhật ký tàu realtime, 15 cảng vụ, theo dõi cước vận tải biển. |
+| `app/cang/[ticker]/page.tsx` | Server (async) | ✅ **Trang Phân Tích Cảng Biển Từng Mã**: KPI sản lượng, biểu đồ SVG gradient, bảng so sánh cùng kỳ YoY 12 tháng, danh mục cầu bến và nhật ký tàu. |
+| `app/thi-truong/page.tsx` | Server (async) | ✅ **Trang Thị Trường Vĩ Mô**: Biến động thế giới, hàng hóa, tỷ giá, crypto, biểu đồ định giá P/E-P/B VN-Index từ 2005, dư nợ margin 41 CTCK. |
+| `app/nganh/page.tsx` | Server (async) | ✅ **Trang Bản Đồ Ngành & Vốn Hóa**: Cơ cấu vốn hóa, lợi nhuận, định giá P/E, P/B, ROE toàn bộ các ngành cấp 1 & cấp 2 ICB. |
+| `app/bao-cao/page.tsx` | Client (Suspense) | ✅ Kho 4.900+ báo cáo phân tích: tìm kiếm, sort, lọc theo mã và ngành. |
 | `app/bao-cao/[slug]/page.tsx` | Server (async) | ✅ Viewer báo cáo + `<ReportAudioPlayer/>` (Google Translate TTS) + `<DriveDocViewer/>`. |
-| `app/xuat-nhap-khau/page.tsx` | Server | ✅ Trang Thống Kê XNK: Cán cân và ma trận xuất nhập khẩu Hải quan 7 năm (2020-2026) qua `<TradeBalanceChart/>` + `<CustomsTradeViewer/>`. |
-| `app/cang-bien/page.tsx` | Server | ✅ **Trang Chủ Tình Báo Cảng Biển**: Giao diện Dark Oceanic, `<SiteHeader/>` + Sub-nav, KPI toàn quốc, `<MaritimeStockGrid/>` (12 mã), `<LivePortCallsTable/>` (nhật ký tàu thời gian thực), `<PortAuthoritiesStrip/>` (15 Cảng vụ thu gọn/mở rộng). |
-| `app/cang/[ticker]/page.tsx` | Server (async) | ✅ **Trang Phân Tích Cảng Biển Từng Mã**: KPI tháng gần nhất, `<PortThroughputChart/>` (biểu đồ cột SVG gradient không giật), `<YoYThroughputComparison/>` (bảng so sánh 12 tháng cùng kỳ YoY), danh mục cầu bến & bến nước sâu, khung giá bốc dỡ QĐ 810/TT 39, và **Nhật ký 10 chuyến tàu gần nhất**. |
-| `app/cang-bien/tau/page.tsx` | Server | ✅ **Tra Cứu Tàu Biển**: Lọc theo DWT, LOA, mớn nước, danh bạ 147+ hồ sơ tàu qua `<VesselSearchClient/>`. |
-| `app/cang-bien/nguon-du-lieu/page.tsx` | Server | ✅ **Minh Bạch Nguồn Dữ Liệu**: Thuyết minh nguồn 15 Cảng vụ, Hoa tiêu Miền Nam, quy trình khử trùng lặp và làm sạch ISO UN/LOCODE. |
+| `app/xuat-nhap-khau/page.tsx` | Server | ✅ Thống Kê XNK Hải quan 7 năm (2020-2026): Cán cân và ma trận xuất nhập khẩu qua `<TradeBalanceChart/>` + `<CustomsTradeViewer/>`. |
 
 ### 3.2 Key API Routes (`app/api/`)
 
 | File | Loại | Trạng thái & Mô tả |
 |---|---|---|
-| `app/api/disclosures/route.ts` | GET | ✅ **API Công Bố Thông Tin 3 Sàn**: Cung cấp danh sách công bố HOSE, HNX, UPCOM, hỗ trợ phân trang, lọc sàn, lọc loại tài liệu (BCTC, Nghị quyết HĐQT, giải trình...) và lọc theo mã cổ phiếu. |
-| `app/api/stock/[symbol]/live-quote/route.ts` | GET | ✅ **API Giá Realtime**: Tích hợp 24hMoney Ticker API, cache 60s, cung cấp giá khớp, biên độ, % thay đổi và ngày giao dịch mới nhất. |
-| `app/api/reports/company/[symbol]/route.ts` | GET | ✅ **API Báo Cáo Phân Tích Doanh Nghiệp**: Cào và tổng hợp báo cáo phân tích theo từng mã từ các CTCK lớn (VNDirect, SSI, HSC, Vietcap...), cache server-side. |
+| `app/api/mcp/route.ts` | POST/GET | ✅ **MCP Server Endpoint**: Tiếp nhận truy vấn JSON-RPC từ các AI client qua giao thức Model Context Protocol. |
+| `app/api/admin/vip/route.ts` | POST | ✅ **API Quản Trị VIP**: Kích hoạt và thu hồi quyền VIP cho người dùng qua email, hỗ trợ các gói thời hạn linh hoạt. |
+| `app/api/admin/overview/route.ts` | GET | ✅ **API Thống Kê Admin**: Cung cấp tổng số người dùng, tỷ lệ hoạt động và các chỉ số vận hành hệ thống. |
+| `app/api/payment/webhook/route.ts` | POST | ✅ **Webhook Cổng Thanh Toán**: Xử lý callback thanh toán tự động nâng cấp VIP cho khách hàng. |
+| `app/api/disclosures/route.ts` | GET | ✅ **API Công Bố Thông Tin 3 Sàn**: Cung cấp danh sách công bố HOSE, HNX, UPCOM, hỗ trợ phân trang, lọc sàn, loại tài liệu và mã cổ phiếu. |
+| `app/api/stock/[symbol]/live-quote/route.ts` | GET | ✅ **API Giá Realtime**: Tích hợp 24hMoney Ticker API, cache 60s, cung cấp giá khớp, biên độ, % thay đổi và ngày giao dịch. |
+| `app/api/reports/company/[symbol]/route.ts` | GET | ✅ **API Báo Cáo Phân Tích Doanh Nghiệp**: Tổng hợp báo cáo phân tích theo từng mã từ các CTCK lớn (VNDirect, SSI, HSC, Vietcap...), cache server-side. |
 | `app/api/screener/stocks/route.ts` | GET | ✅ **API Bộ Lọc WiData**: Truy xuất dữ liệu lọc của 1.530+ mã cổ phiếu với đầy đủ chỉ số cơ bản, định giá và kỹ thuật. |
 | `app/api/reports/[id]/audio/route.ts` | GET | ✅ **API TTS Google Translate**: Trích xuất nội dung văn bản báo cáo, chunking câu <= 180 ký tự, tải song song đa luồng và ghép buffer MP3 trả về audio stream. |
 | `app/api/customs-trade/route.ts` | GET | ✅ **API Dữ Liệu XNK**: Phục vụ dữ liệu cán cân thương mại và ma trận mặt hàng xuất nhập khẩu 7 năm (2020-2026). |
+| `app/api/analytics/track/route.ts` | POST | ✅ **API Theo Dõi Pageview**: Ghi nhận lượt truy cập trang web phục vụ thống kê nội bộ trên trang quản trị. |
 
 ### 3.3 Components Nổi Bật
 
 | Thư mục / File | Trạng thái & Tính năng |
 |---|---|
-| `components/watchlist/WatchlistTable.tsx` | ✅ Bảng theo dõi cổ phiếu rút gọn (Compact View), tối ưu cho danh mục lớn từ 20 đến 100+ mã, hiển thị giá, biến động, khối lượng, P/E, P/B, ROE, thao tác nhanh. |
-| `components/watchlist/BulkImportModal.tsx` | ✅ Modal nhập danh sách cổ phiếu hàng loạt, tự động bóc tách các ký tự ngăn cách, kiểm tra tính hợp lệ và thêm vào Watchlist chỉ trong 1 thao tác. |
-| `components/auth/UserNav.tsx` | ✅ Khối điều hướng người dùng trên Header: hiển thị avatar, email, trạng thái đăng nhập, menu nhanh truy cập Watchlist và nút Đăng xuất. |
-| `components/auth/AuthModal.tsx` | ✅ Modal đăng nhập nhanh dạng popup hỗ trợ cả đăng nhập qua Google OAuth và nhận Magic Link qua Email. |
-| `components/stock/StockEvaluationHeader.tsx` | ✅ Thanh tiêu đề cổ phiếu chuyên sâu: hiển thị logo, tên công ty, giá realtime (polling ngầm 60s), badge % biến động, giá trần/sàn, P/E, P/B forward. |
-| `components/stock/StockAgmReportView.tsx` | ✅ Trình xem báo cáo Đại hội đồng Cổ đông (AGM) 2026 chi tiết: bóc tách kế hoạch kinh doanh, cổ tức, ý kiến thảo luận của cổ đông và ban lãnh đạo. |
-| `components/stock/ConsensusTargetPriceChart.tsx` | ✅ Biểu đồ đồng thuận giá mục tiêu của các CTCK so với thị giá hiện tại, kèm khuyến nghị Mua/Khả quan/Nắm giữ. |
-| `components/stock/InsiderTradingPriceChart.tsx` | ✅ Biểu đồ trực quan hóa các đợt giao dịch của ban lãnh đạo và người nội bộ (Mua/Bán) trên trục thời gian biến động giá cổ phiếu. |
-| `components/stock/StockValuationEpsChart.tsx` | ✅ Biểu đồ định giá P/E Bands và P/B Bands kết hợp đường tăng trưởng EPS lịch sử. |
-| `components/stock/MWGSegmentCharts.tsx` | ✅ Biểu đồ bóc tách doanh thu, lợi nhuận và số lượng cửa hàng theo từng chuỗi/phân khúc kinh doanh (Thế Giới Di Động, Điện Máy Xanh, Bách Hóa Xanh, An Khang...). |
-| `components/stock/WiDataFinancialRatiosDashboard.tsx` | ✅ Bảng chỉ số tài chính chuyên sâu chuẩn WiData: cơ cấu tài sản, nguồn vốn, khả năng thanh toán, vòng quay tài sản và đòn bẩy tài chính. |
-| `components/stock/GeneralDetailedFinancialCharts.tsx` | ✅ Bộ 7 biểu đồ phân tích BCTC 16 năm: Cơ cấu doanh thu/LN, Cán cân tài sản, Cấu trúc nợ DuPont, Dòng tiền OCF/ICF/FCF, v.v. |
+| `components/auth/AuthGate.tsx` | ✅ Component cổng bảo vệ nội dung phân cấp (Guest / Member / VIP), hiển thị giao diện mờ (blur), danh sách quyền lợi và nút kêu gọi hành động (CTA). |
+| `components/auth/VipUpgradeModal.tsx` | ✅ Modal nâng cấp VIP hiển thị chi tiết các đặc quyền cao cấp (thuyết minh 34 quý, định giá RNAV, tình báo DWT cảng biển, MCP không giới hạn). |
+| `components/auth/UserNav.tsx` | ✅ Điều hướng người dùng trên Header: hiển thị avatar, email, huy hiệu VIP, trạng thái đăng nhập, menu nhanh và tự động đồng bộ metadata mới nhất. |
+| `components/thuy-san/ThuySanDashboard.tsx` | ✅ Bảng điều khiển ngành thủy sản: kim ngạch xuất khẩu 10T/2026, giá nguyên liệu cá tra/tôm hàng tuần, so sánh KQKD BCTC Q3 của 12 doanh nghiệp. |
+| `components/bidding/BiddingDashboard.tsx` | ✅ Bảng điều khiển đấu thầu y tế & đầu tư công: chi tiết các gói thầu trúng ETC theo quý và tiến độ hấp thụ vốn 3.736 dự án ĐTC. |
+| `components/stock/StockEvaluationHeader.tsx` | ✅ Thanh tiêu đề cổ phiếu: logo, tên công ty, giá realtime (polling 60s), badge biến động, giá trần/sàn, P/E, P/B forward. |
+| `components/stock/StockBctcReportView.tsx` | ✅ Trình xem báo cáo tài chính chuyên sâu và thuyết minh BCTC chi tiết 34 quý (bóc tách nợ vay, dự án dở dang, hàng tồn kho). |
+| `components/stock/BusinessPlanComparison.tsx` | ✅ Đối chiếu chi tiết chỉ tiêu kế hoạch kinh doanh ĐHĐCĐ giao và kết quả thực hiện thực tế qua các năm (1 năm / 3 năm / 5 năm / 10 năm). |
+| `components/stock/StockAgmReportView.tsx` | ✅ Trình xem báo cáo Đại hội đồng Cổ đông (AGM) 2026 chi tiết cho 867+ mã cổ phiếu. |
+| `components/watchlist/WatchlistTable.tsx` | ✅ Bảng theo dõi cổ phiếu rút gọn (Compact View), tối ưu cho danh mục từ 20 đến 100+ mã. |
+| `components/watchlist/BulkImportModal.tsx` | ✅ Modal dán và nhập danh sách cổ phiếu hàng loạt vào Watchlist chỉ trong 1 thao tác. |
 | `components/navigation/VerticalSidebarNav.tsx` | ✅ Sidebar dọc cố định, hỗ trợ thu nhỏ/mở rộng, lưu trạng thái vào `localStorage` và đồng bộ `data-sidebar` trên `<html>`. |
 | `components/navigation/MobileBottomNav.tsx` | ✅ Thanh điều hướng đáy dành riêng cho điện thoại, tối ưu thao tác một tay. |
-| `components/navigation/GlobalSearchModal.tsx` | ✅ Command Palette (phím tắt `Ctrl+K` / `Cmd+K`) tìm kiếm toàn diện cổ phiếu, báo cáo, ngành, cảng biển. |
-| `components/cang-bien/**` | ✅ Hệ sinh thái trực quan hóa cảng biển: `MaritimeStockGrid`, `LivePortCallsTable`, `PortThroughputChart`, `YoYThroughputComparison`, `PortAuthoritiesStrip`. |
+| `components/navigation/GlobalSearchModal.tsx` | ✅ Command Palette (`Ctrl+K` / `Cmd+K`) tìm kiếm toàn diện mã cổ phiếu, báo cáo, ngành, cảng biển. |
 
 ---
 
 ## 4. Tiến độ chi tiết (Status Checklist)
 
 ### ✅ Đã hoàn thành (Done)
-- [x] **Hệ Thống Xác Thực Supabase & Watchlist Cá Nhân (2026-09-09 → 2026-09-10)**:
-  - [x] Tích hợp Supabase Auth (`@supabase/ssr`) với Google OAuth & Magic Link Email.
-  - [x] Thiết lập Database Supabase (`watchlists`, `watchlist_items`) kèm bảo mật RLS theo từng user.
-  - [x] Xây dựng trang `/danh-muc` nạp SSR 0ms tốc độ tối đa, hiển thị bảng Watchlist tối ưu cho 100+ mã cổ phiếu.
-  - [x] Tính năng Bulk Import: dán và nhập danh sách cổ phiếu hàng loạt vào danh mục theo định dạng tùy biến.
-  - [x] Đồng bộ Watchlist thực tế của người dùng vào bộ lọc Tin Tức & Công Bố Thông Tin tại trang chủ.
-  - [x] Chuẩn hóa URL redirect OAuth chính xác cho cả localhost và production domain `dulieudautu.com`.
-- [x] **Công Bố Thông Tin 3 Sàn (2026-09-07 → 2026-09-08)**:
-  - [x] Tích hợp tab Công Bố Thông Tin 3 Sàn (HOSE, HNX, UPCOM) mặc định ngay tại trang chủ `/`.
-  - [x] Cơ chế live revalidation ngầm tự động cập nhật công bố mới nhất không cần tải lại trang.
-  - [x] Bộ lọc theo sàn, theo loại tài liệu (BCTC, Nghị quyết, Giải trình...) và tìm kiếm theo mã cổ phiếu.
-- [x] **Trang Chi Tiết Cổ Phiếu Chuyên Sâu 7 Tab (`/stock/[symbol]`)**:
-  - [x] Header giá realtime từ 24hMoney Ticker API (`lib/live-quote-service.ts`) tự động polling 60s.
-  - [x] Mở rộng 50+ Báo Cáo ĐHĐCĐ (AGM) 2026 chi tiết (`StockAgmReportView.tsx`).
-  - [x] Biểu đồ Giao dịch nội bộ trực quan hóa trên đường giá (`InsiderTradingPriceChart.tsx`).
-  - [x] Biểu đồ Đồng thuận giá mục tiêu các CTCK (`ConsensusTargetPriceChart.tsx`).
-  - [x] Biểu đồ Định giá P/E-P/B Bands kết hợp EPS (`StockValuationEpsChart.tsx`).
-  - [x] Bóc tách phân khúc chuỗi kinh doanh bán lẻ (`MWGSegmentCharts.tsx`).
-  - [x] BCTC chuyên sâu 16 năm với 7 cụm biểu đồ phân tích (`GeneralDetailedFinancialCharts.tsx`).
-  - [x] Tự động cào và tổng hợp báo cáo phân tích theo mã từ CTCK (`/api/reports/company/[symbol]`).
-- [x] **Bộ Lọc Cổ Phiếu WiData 1.530+ Mã (`/bo-loc`)**:
-  - [x] Sàng lọc 1.530+ mã trên cả 3 sàn (HOSE, HNX, UPCOM).
-  - [x] Đầy đủ tiêu chuẩn lọc: P/E, P/B, ROE, Biên LN gộp/ròng, Tăng trưởng LN, Tỷ lệ Nợ/VCSH, Tín hiệu kỹ thuật.
-- [x] **Tối Ưu Trải Nghiệm Giao Diện Đa Thiết Bị (Responsive UX)**:
-  - [x] Mobile Bottom Navigation Bar giúp điều hướng thuận tiện trên điện thoại.
-  - [x] Touch-friendly tabs docking, tự động co giãn nhãn tab trên màn hình nhỏ.
-  - [x] Nút scroll chevrons và hỗ trợ cuộn con lăn chuột ngang cho người dùng laptop.
-  - [x] Tối ưu chuyển tab tức thì 0ms với kiến trúc optimistic UI.
-  - [x] Phục hồi Sidebar dọc (`VerticalSidebarNav`), lưu trạng thái đóng/mở trong `localStorage` và chống giật với `data-sidebar`.
-  - [x] Command Palette tìm kiếm toàn diện `GlobalSearchModal` kích hoạt bằng `Ctrl+K`.
-- [x] **Module Cảng Biển & Tình Báo Hàng Hải (`/cang-bien`)**:
-  - [x] SQLite database `data/maritime.db` (7 bảng) + JSON snapshots `data/maritime/dashboard_summary.json`.
-  - [x] Scraper engine cào Cảng vụ Hải Phòng, Hoa tiêu Miền Nam, khử trùng lặp `dedupe_port_calls`, 607+ chuyến tàu sạch và 147+ hồ sơ tàu biển.
-  - [x] Theo dõi 12 doanh nghiệp cảng & vận tải biển (`PHP`, `GMD`, `DVP`, `DXP`, `MIPEC`, `SGP`, `PDN`, `CDN`, `HAH`, `VGR`, `CQN`, `PSP`).
-  - [x] Chốt số liệu sản lượng Cảng MIPEC tháng 8/2026 (+50% YoY), chuyển tháng 9 sang trạng thái đang chạy.
-  - [x] Biểu đồ cột SVG không giật (`PortThroughputChart`) và bảng so sánh cùng kỳ YoY 12 tháng.
-- [x] **Thống Kê XNK Hải Quan 7 Năm (`/xuat-nhap-khau`)**:
-  - [x] Tích hợp toàn bộ dữ liệu lịch sử XNK giai đoạn 2020–2026, cập nhật snapshot 7 năm và bộ lọc năm linh hoạt.
-- [x] **Thị Trường Tài Chính & Vĩ Mô (`/thi-truong`) & Bản Đồ Ngành (`/nganh`)**:
-  - [x] Định giá P/E-P/B VN-Index từ 2005, thống kê dư nợ margin 41 CTCK, tỷ giá, hàng hóa, crypto, bản đồ ngành cấp 1 & cấp 2.
-- [x] **Tối Ưu Hóa Vercel Deployment**:
-  - [x] Cấu hình `outputFileTracingIncludes` nạp đủ dữ liệu JSON cho route `/stock/[symbol]`.
-  - [x] Loại trừ các thư mục cache nặng (`evaluation_cache`, `shareholder_cache`, `*.db`), kiểm soát payload build <15MB, deploy production Vercel ổn định 100%.
+- [x] **Hệ Thống Model Context Protocol (MCP) Server & OAuth 2.0 (2026-10-31 → 2026-11-10)**:
+  - [x] Xây dựng server MCP chuẩn hóa tại `/api/mcp` với thư viện `@modelcontextprotocol/sdk`.
+  - [x] Triển khai RFC 8414 & RFC 9728 OAuth 2.0 Authorization Server và Dynamic Client Registration.
+  - [x] Hợp nhất thành 4 công cụ AI trọng tâm: `tra_cuu_ho_so_tai_chinh`, `bo_loc_co_phieu`, `so_sanh_co_phieu`, `su_kien_va_cong_bo_thong_tin`.
+  - [x] Cài đặt chính sách hạn mức: Free Member tối đa 5 câu hỏi/ngày, Hội viên VIP không giới hạn.
+  - [x] Trang giới thiệu và hướng dẫn kết nối 1-click cho Gemini CLI, Claude, Cursor, ChatGPT tại `/ket-noi-mcp` và `/mcp`.
+- [x] **Hệ Thống Hội Viên VIP & Quản Trị Admin (2026-10-25 → 2026-11-12)**:
+  - [x] Thiết lập cơ chế phân tầng quyền hạn với component `AuthGate` (Guest / Member / VIP).
+  - [x] Xây dựng modal nâng cấp VIP `VipUpgradeModal` với đầy đủ đặc quyền phân tích chuyên sâu.
+  - [x] Xây dựng trang quản trị `/admin` và API `/api/admin/vip`: kích hoạt hoặc thu hồi VIP nhanh theo email, hỗ trợ gói 1 tháng, 6 tháng, 1 năm hoặc số ngày tùy chỉnh.
+  - [x] Tích hợp webhook cổng thanh toán tự động `/api/payment/webhook`.
+  - [x] Tự động làm mới và đồng bộ Supabase metadata trên client trong `UserNav.tsx` ngay khi Admin kích hoạt quyền VIP.
+- [x] **Tối Ưu Bảo Mật, Rate Limiting & Link Prefetch (2026-10-26 → 2026-11-12)**:
+  - [x] Nâng cấp `middleware.ts`: Tách riêng bucket rate-limit cho request prefetch ngầm (`isPrefetchRequest`) với hạn mức 120 req/phút/IP để chống chặn nhầm người dùng.
+  - [x] Giới hạn tốc độ chống cào hàng loạt trang `/stock/[symbol]` (30 mã/phút/IP).
+  - [x] Gắn `prefetch={false}` cho toàn bộ link mã cổ phiếu trên các bảng biểu lớn (`stock-card-grid.tsx`, `stock-link.tsx`, `WatchlistManager.tsx`, `market-treemap.tsx`, `IndustryTable.tsx`).
+  - [x] Thiết lập Cloudflare IP header priority, chặn bot cào dữ liệu và các bẫy bảo mật `api/security/trap`.
+- [x] **Hệ Thống Hub Ngành & Tình Báo Chuyên Sâu (2026-09-26 → 2026-11-12)**:
+  - [x] **Ngành Điện (`/nganh-dien`)**: Dữ liệu 36 mã, bóc tách LNST thực tế, tỷ lệ hoàn thành kế hoạch năm và Quy hoạch Điện VIII.
+  - [x] **Đấu Thầu Y Tế & Đầu Tư Công (`/dau-thau`)**: Theo dõi các gói thầu ETC của doanh nghiệp Dược (DP1, DTP, DAN, TRA, CDP, DTG) và 3.736 dự án ĐTC quy mô ≥ 500 tỷ.
+  - [x] **Ngành Thủy Sản VASEP (`/thuy-san`)**: Cập nhật kim ngạch xuất khẩu 10T/2026, giá cá tra/tôm hàng tuần đầu T11/2026 và KQKD BCTC Q3 của 12 cổ phiếu.
+  - [x] **Nghiên Cứu Định Giá AI & RNAV (`/nghien-cuu-ai`)**: Bóc tách tài sản ròng, mô hình RNAV, tính điểm định giá động theo giá realtime 24hMoney.
+  - [x] **Vĩ Mô & Quy Mô (`/vi-mo`, `/quy-mo`)**: Dữ liệu vĩ mô và phân lớp quy mô vốn hóa thị trường.
+- [x] **Kho Báo Cáo Tài Chính & Thuyết Minh BCTC Q3/2026 (2026-10-02 → 2026-11-12)**:
+  - [x] Bổ sung hàng trăm báo cáo thuyết minh BCTC Q3/2026 chi tiết (nợ vay, hàng tồn kho, dở dang) cho các doanh nghiệp lớn.
+  - [x] Mở rộng 867+ báo cáo ĐHĐCĐ 2026 (`StockAgmReportView.tsx`).
+  - [x] Đối chiếu Kế hoạch kinh doanh ĐHĐCĐ 10 năm liên tục (`BusinessPlanComparison.tsx`).
+  - [x] Tính năng nạp hồ sơ BCTC và ĐHĐCĐ vào AI cá nhân (Gemini, NotebookLM, ChatGPT, Claude, DeepSeek).
+- [x] **Tình Báo Cảng Biển & Hàng Hải Nâng Cấp (2026-09-17 → 2026-11-13)**:
+  - [x] Đồng bộ số liệu DWT chuẩn cho Cảng Hải Phòng (`PHP`) và Cảng MIPEC khớp 100% DLCB.
+  - [x] Thiết lập cron và script tự động cập nhật dữ liệu cảng biển 1 lần/ngày khi khởi động máy.
+  - [x] Theo dõi biến động chỉ số cước vận tải biển quốc tế (BDI, WCI, BDTI, BCTI).
+- [x] **Hợp Nhất Dữ Liệu Báo Cáo & Tối Ưu Vercel Build (2026-11-12)**:
+  - [x] Hợp nhất an toàn 7 file báo cáo JSON (`company_reports_snapshot.json` 4.947 báo cáo, `industry-reports.json` 491 báo cáo, cùng báo cáo trái phiếu, IR, vĩ mô, chiến lược) không làm mất dữ liệu.
+  - [x] Kiểm tra và hoàn tất build local Next.js 16 Turbopack (68/68 static pages, exit code 0) và deploy thành công lên Vercel production.
 
 ---
 
@@ -260,24 +224,31 @@ flowchart TD
 
 | Timestamp | File(s) sửa | Nội dung thay đổi |
 |---|---|---|
-| 2026-09-10 (Tối) | `components/watchlist/BulkImportModal.tsx` (mới) · `components/watchlist/WatchlistTable.tsx` · `components/news-dashboard.tsx` · `app/danh-muc/page.tsx` · `lib/supabase/client.ts` · `GEMINI_CONTEXT.md` | **Bổ sung tính năng Bulk Import vào Watchlist, tối ưu bảng 100+ mã, sync bộ lọc vào Tin tức/Công bố & chuẩn hóa Redirect**: <br>1. **Bulk Import cổ phiếu**: Xây dựng `BulkImportModal` cho phép người dùng dán hàng loạt mã cổ phiếu (phân tách bởi dấu phẩy, khoảng trắng, xuống dòng...), tự động làm sạch và thêm vào Watchlist nhanh chóng. Push `a3174ed`.<br>2. **Bảng Watchlist Compact**: Tái thiết kế `WatchlistTable` với giao diện bảng tinh gọn, tối ưu hiển thị danh mục từ 20 đến 100+ mã cổ phiếu mà không bị quá tải giao diện. Push `7d928c1`.<br>3. **Đồng bộ Watchlist sang Tin Tức & Công Bố**: Bổ sung checkbox lọc tin tức và công bố thông tin chỉ hiển thị các bài viết liên quan đến danh mục cổ phiếu mà người dùng đang theo dõi trong Supabase Watchlist. Push `57e0a8b`.<br>4. **Chuẩn hóa Redirect Auth**: Cấu hình `redirectTo` nhận diện môi trường localhost (`http://localhost:3000/auth/callback`) hoặc production (`https://dulieudautu.com/auth/callback`). Push `18fac21`.<br>5. **SSR 0ms Watchlist**: Nạp danh mục trực tiếp từ Server Component với cookie session Supabase, render giao diện ngay lập tức mà không có độ trễ client-side. Push `bfb851c`. |
-| 2026-09-09 | `lib/supabase/**` (mới) · `components/auth/**` (mới) · `app/auth/**` (mới) · `app/danh-muc/page.tsx` (mới) · `components/site-header.tsx` | **Tích hợp Supabase Auth & Hệ thống Watchlist cá nhân**: <br>1. Tích hợp `@supabase/ssr` và `@supabase/supabase-js`, cấu hình server client, browser client và middleware cookie session.<br>2. Xây dựng trang `/danh-muc` quản lý danh mục cổ phiếu cá nhân, bảo vệ bằng Supabase RLS.<br>3. Tạo `UserNav` trên Header hiển thị avatar, email, trạng thái đăng nhập và menu tài khoản; tích hợp `AuthModal` hỗ trợ Magic Link & Google OAuth. Push `b5ff28c`. |
-| 2026-09-08 | `app/page.tsx` · `components/news-dashboard.tsx` · `app/api/disclosures/route.ts` · `data/agm_reports/**` · `components/stock/StockAgmReportView.tsx` | **Tích hợp Tab Công Bố Thông Tin 3 Sàn vào Trang Chủ & Mở rộng 50+ Báo Cáo ĐHĐCĐ 2026**: <br>1. Đưa tab **Công Bố Thông Tin 3 Sàn** (HOSE, HNX, UPCOM) làm tab mặc định trên trang chủ `/`, tích hợp live revalidation tự động cập nhật công bố mới nhất từ doanh nghiệp. Push `367e6be`, `839b943`.<br>2. Bổ sung kho dữ liệu 50+ báo cáo ĐHĐCĐ (AGM) 2026 chi tiết cho các doanh nghiệp lớn, tích hợp bộ lọc mã AGM và trình xem báo cáo ĐHĐCĐ chuyên sâu `StockAgmReportView`. Push `367e6be`. |
-| 2026-09-07 | `components/mobile-bottom-nav.tsx` (mới) · `components/site-header.tsx` · `app/layout.tsx` · `components/stock/**` | **Tối ưu hóa giao diện đa thiết bị: Mobile Bottom Navigation, Touch Docking Tabs & Scroll Chevrons**: <br>1. Xây dựng `MobileBottomNav` gắn cố định đáy màn hình điện thoại với các phím tắt truy cập nhanh: Trang chủ, Bộ lọc WiData, Watchlist, Cảng biển, Tài khoản. Push `3109a20`.<br>2. Tối ưu thanh tab trượt ngang (Horizontal Tabs): tự động co giãn nhãn tab, bổ sung 2 nút chevron cuộn trái/phải và hỗ trợ cuộn con lăn chuột ngang trên laptop. Push `dd9a884`.<br>3. Tối ưu kiến trúc chuyển tab optimistic 0ms chống giật lag khi chuyển đổi giữa các màn hình phân tích. Push `3113e80`. |
-| 2026-09-06 | `components/vertical-sidebar-nav.tsx` · `components/global-search-modal.tsx` · `components/stock/**` · `lib/financial-charts-service.ts` · `data/customs_trade_snapshot.json` | **Phục hồi toàn diện giao diện & Tính năng chuyên sâu**: <br>1. Khôi phục `VerticalSidebarNav` (sidebar dọc thu gọn/mở rộng, lưu `localStorage`, đồng bộ `data-sidebar` trên root HTML chống flash). Push `fb18180`.<br>2. Tích hợp `GlobalSearchModal` (Command Palette `Ctrl+K` tìm kiếm toàn diện mã cổ phiếu, báo cáo, ngành, cảng biển). Push `a6cd741`.<br>3. Khôi phục trọn vẹn 7 biểu đồ BCTC chuyên sâu 16 năm, biểu đồ định giá P/E-P/B Bands kết hợp EPS, biểu đồ giao dịch nội bộ và phân tích phân khúc chuỗi bán lẻ. Push `fb18180`.<br>4. Đồng bộ Bộ lọc WiData 1.530+ mã tại `/bo-loc`. Push `a6cd741`.<br>5. Cập nhật số liệu điều động tàu mới nhất đến ngày 06/09/2026 cho Cảng MIPEC và các cảng biển, sửa lỗi cú pháp JSON dữ liệu hàng hải. Push `24e6d25`, `b838e59`. |
-| 2026-09-04 → 2026-09-05 | `scripts/customs_etl/**` · `data/customs_trade_snapshot.json` · `data/maritime/dashboard_summary.json` | **Tích hợp Dữ Liệu XNK Lịch Sử 7 Năm (2020-2026) & Cập Nhật Sản Lượng Cảng MIPEC Tháng 8**: <br>1. Nhập toàn bộ dữ liệu XNK 2020–2024 vào snapshot 7 năm và nâng cấp bộ lọc năm trên `/xuat-nhap-khau`. Push `244b5a8`.<br>2. Chốt số liệu sản lượng tháng 8/2026 cho Cảng MIPEC (+50% YoY) và chuyển tháng 9 sang trạng thái đang chạy. Push `6dcfdc2`.<br>3. Cập nhật lịch trình điều động tàu tự động qua CI/CD GitHub Actions. Push `8c3f129`, `34f4284`. |
-| 2026-09-03 (Tối) | `lib/live-quote-service.ts` (mới) · `app/api/stock/[symbol]/live-quote/route.ts` (mới) · `components/stock/StockEvaluationHeader.tsx` · `lib/stock-evaluation-service.ts` · `lib/longlivestock.ts` · `.vercelignore` (mới) · `next.config.mjs` · `package.json` · `.gitignore` | **Tích hợp API cập nhật giá thời gian thực (Live Quote) & Khắc phục triệt để lỗi deployment Vercel**: <br>1. **Live Quote API**: Kết nối trực tiếp 24hMoney Ticker API qua `lib/live-quote-service.ts` (cache 60s in-memory), bóc tách giá khớp, biên độ, % thay đổi, ngày và giờ giao dịch thực tế.<br>2. **Auto-refresh Frontend**: `StockEvaluationHeader` tự động thăm dò `/api/stock/[symbol]/live-quote` mỗi 60s ngầm khi tab mở, hiển thị giá chuẩn VNĐ, pill % xanh/đỏ và ngày chốt phiên.<br>3. **Đồng bộ tính toán**: Tự động tính lại P/E, P/B và vốn hóa theo giá realtime; cập nhật nốt phiên mới vào chuỗi `price_weekly`.<br>4. **Sửa lỗi Vercel Deployment**: Thêm `.vercelignore` và `outputFileTracingExcludes` trong `next.config.mjs`, nâng cấp engine `node: 22.x`, gỡ bỏ hơn 3.000 file cache nặng (`evaluation_cache`, `shareholder_cache`, `*.db`) khỏi Git tracking, giảm dung lượng build từ >500MB xuống <15MB giúp Vercel build & deploy thành công 100% lên `dulieudautu.com`. Push `935051f`. |
-| 2026-09-03 (Chiều) | `app/thi-truong/page.tsx` (mới) · `app/nganh/page.tsx` (mới) · `app/stock/[symbol]/page.tsx` · `components/market/**` · `components/industry/**` · `components/stock/**` · `lib/banking-service.ts` · `lib/ctck-service.ts` · `lib/pe-pb-service.ts` | **Triển khai hệ thống Thị Trường Vĩ Mô, Bản Đồ Ngành và Đánh Giá 360 Doanh Nghiệp**: <br>1. Xây dựng trang `/thi-truong` hiển thị biến động thế giới, hàng hóa, tỷ giá, định giá P/E-P/B VN-Index và thống kê margin 41 CTCK.<br>2. Xây dựng trang `/nganh` trực quan hóa cơ cấu ngành, vốn hóa, lợi nhuận và định giá.<br>3. Tái cấu trúc trang `/stock/[symbol]` thành hệ thống 6 tab chuyên sâu: Đánh giá 360, BCTC chuyên sâu, Kế hoạch KD, Cổ đông, Định giá P/E-P/B Bands, Báo cáo CTCK. Push `8e1ec7d`. |
-| 2026-09-02 | `app/page.tsx` · `app/bo-loc/page.tsx` (mới) · `components/site-header.tsx` | **Cấu hình trang chủ (/) hiển thị trực tiếp Tab Tin Tức & di chuyển Bộ Lọc Cổ Phiếu sang (/bo-loc)**: <br>1. Đưa tab **Tin Tức** lên vị trí đầu tiên trên thanh menu điều hướng và trỏ trực tiếp về trang chủ `/`.<br>2. Cấu hình `app/page.tsx` nạp dữ liệu và hiển thị trực tiếp `NewsDashboard` (dòng tin tức tài chính & doanh nghiệp realtime, tự động bóc tách mã CK, lọc nguồn, bookmark, polling 60s).<br>3. Tạo trang `app/bo-loc/page.tsx` lưu giữ nguyên vẹn chức năng Bộ Lọc Cổ Phiếu + KPIs định giá RNAV.<br>4. Đồng bộ active state trên `SiteHeader` chuẩn xác cho cả desktop và mobile (`/` và `/tin-tuc` đều active Tin Tức, `/bo-loc` active Bộ Lọc Cổ Phiếu). |
-| 2026-09-01 | `scripts/cangbien/db.py` · `run_pipeline.py` · `.github/workflows/sync-market-data.yml` · `data/maritime/dashboard_summary.json` | **Cập nhật dữ liệu tàu mới nhất (31/08, 01/09, 02/09), xử lý chống trùng lặp và cài đặt cron auto-sync**: <br>1. Thêm hàm `dedupe_port_calls` và nâng cấp `insert_port_call` trong `db.py` chống trùng lặp theo `(Tên tàu, Ngày, Giờ, Hướng, Cầu bến)`.<br>2. Mở rộng `run_pipeline.py` quét multi-day (offset -3 đến 1), cập nhật 395 lượt tàu phân biệt duy nhất.<br>3. Nâng cấp GitHub Actions workflow chạy tự động 2 lần mỗi ngày (05:30 và 16:30 GMT+7) để tự động cào và deploy lên `dulieucophieu.com`. Push `1ba5545`. |
-| 2026-08-31 | `app/cang-bien/**` · `app/cang/**` · `components/cang-bien/**` | **Nâng cấp giao diện sang theme Dark Oceanic Fintech & đồng bộ Header toàn site**: <br>1. Gắn `SiteHeader` và thanh Sub-nav tabs (Tổng quan / Tra cứu tàu / Nguồn dữ liệu) trên tất cả các trang cảng biển.<br>2. Chuyển đổi toàn bộ giao diện sang Dark Oceanic: Nền Deep Slate 950, ambient glow Teal & Cyan, thẻ Neon Gradient, bảng Bloomberg Terminal glassmorphism.<br>3. Tối ưu biểu đồ cột SVG gradient đa sắc và dải tháng T1-T12 nằm ngang. Push `6d5f88f` → `d86b78f`. |
-| 2026-08-29 | `scripts/cangbien/**` (mới) · `data/maritime/**` (mới) · `app/cang-bien/**` (mới) · `app/cang/**` (mới) · `components/cang-bien/**` (mới) · `lib/maritime*.ts` (mới) · `components/site-header.tsx` | **Triển khai toàn diện Hệ Thống Dữ Liệu Cảng Biển & Tình Báo Hàng Hải (`dulieucophieu.com/cang-bien`)**: Data engine SQLite, scraper Cảng vụ HP & Hoa tiêu Miền Nam, 12 mã cổ phiếu cảng biển, biểu đồ SVG không giật, bảng so sánh cùng kỳ YoY, 10 chuyến tàu gần nhất, Cảng MIPEC Đình Vũ. Push `d710fab`. |
-| 2026-08-27 | `app/page.tsx` | **Ẩn phần tiêu đề và giới thiệu ở trang chủ**: Xóa khối heading chứa "Trang chủ · Sàng lọc định giá", H1 "Bộ Lọc Cổ Phiếu Giá Trị" và đoạn mô tả đồng bộ kho báo cáo để trang gọn gàng hơn. Push `f0f20d9`. |
-| 2026-08-27 | `lib/auth-check.ts` | **Tạm tắt Paywall truy cập báo cáo**: Thêm hằng số `PAYWALL_ENABLED = false` làm công tắc linh hoạt cho phép mở toàn bộ bài phân tích trực tiếp mà không cần đăng nhập / kích hoạt dùng thử. Push `da5b2ea`. |
-| 2026-08-23 | `app/api/reports/[id]/audio/route.ts` (mới) · `components/report-audio-player.tsx` | **Nâng cấp TTS sang Google Translate TTS Server-side (<4s)**: Xây dựng route `/api/reports/[id]/audio` trích xuất text báo cáo, cắt câu chunking <= 180 ký tự, tải song song 8 luồng từ Google Translate TTS, ghép buffer MP3 trả về `audio/mpeg`. Push `8e1e870`. |
-| 2026-08-23 | `components/report-audio-player.tsx` (mới) · `app/api/reports/[id]/content/route.ts` (mới) · `app/bao-cao/[slug]/page.tsx` | **Nghe đọc báo cáo (TTS — Web Speech API)**: route export Google Doc text/plain → `{content}`; component `ReportAudioPlayer` phát âm thanh tiếng Việt. |
-| 2026-08-23 | `app/xuat-nhap-khau/page.tsx` (mới) · `app/api/customs-trade/route.ts` (mới) · `components/customs-trade-viewer.tsx` (mới) · `components/TradeBalanceChart.tsx` (mới) · `components/site-header.tsx` | **Trang Thống Kê XNK + biểu đồ Cán cân**: route `/api/customs-trade` trả snapshot XNK; trang `/xuat-nhap-khau` render `TradeBalanceChart` + `CustomsTradeViewer`. |
+| 2026-11-14 | `GEMINI_CONTEXT.md` | **Đồng bộ toàn diện ngữ cảnh dự án (theo yêu cầu đích danh của người dùng)**: <br>1. Cập nhật tổng quan kiến trúc hệ thống: Chuẩn Model Context Protocol (MCP) Server & OAuth 2.0 (RFC 8414/9728), phân tầng quyền hạn Hội viên VIP & AuthGate 3 tầng, hệ thống Hub ngành chuyên sâu (Ngành Điện, Đấu Thầu Y Tế & ĐTC, Thủy Sản VASEP, Nghiên Cứu Định Giá RNAV, Vĩ Mô & Quy Mô).<br>2. Cập nhật sơ đồ luồng dữ liệu kiến trúc Mermaid tích hợp phân tầng VIP, MCP ecosystem và các Hub chuyên sâu.<br>3. Bổ sung danh mục chi tiết các Pages mới, API routes mới (`/api/mcp`, `/api/admin/vip`, `/api/payment/webhook`...) và Components mới.<br>4. Cập nhật Status Checklist và tổng hợp toàn bộ các mốc phát triển kỹ thuật từ 2026-09-10 đến 2026-11-14. |
+| 2026-11-13 | `app/admin/page.tsx` | **Thêm nút Về trang chủ trên thanh Header trang quản trị**: Bổ sung liên kết điều hướng nhanh từ trang Admin quay lại trang chủ. Push `e33106b`. |
+| 2026-11-12 (Tối) | `components/stock/StockBctcReportView.tsx` · `content/bctc/Quy_3_2026/**` | **Khắc phục ReferenceError khởi tạo biến trong StockBctcReportView & Bổ sung thuyết minh BCTC Q3**: Sửa lỗi tham chiếu trước khi khởi tạo trong view BCTC, cập nhật thuyết minh Q3/2026 cho các mã DRI, DSN. Push `ad5a504`. |
+| 2026-11-12 | `app/api/admin/vip/route.ts` (mới) · `app/admin/page.tsx` · `middleware.ts` · `components/auth/**` · `components/stock-detail-view.tsx` · `app/dau-thau/**` · `app/thuy-san/**` · `data/**` | **Nâng cấp kích hoạt VIP Admin, tối ưu rate-limit prefetch, cập nhật dữ liệu Thủy sản, Đấu thầu & Báo cáo**: <br>1. Xây dựng API `/api/admin/vip` và giao diện admin kích hoạt/thu hồi VIP nhanh theo email với các gói linh hoạt (1 tháng, 6 tháng, 1 năm, tùy chỉnh).<br>2. Tối ưu `middleware.ts` tách riêng bucket cho `isPrefetchRequest` (max 120 req/phút/IP), đặt `prefetch={false}` trên các bảng cổ phiếu chống nghẽn kết nối.<br>3. Điều chỉnh `AuthGate` phần Kế hoạch kinh doanh 10 năm sang tier `member` (đăng nhập miễn phí).<br>4. Cập nhật dữ liệu VASEP 10T/2026 ngành Thủy sản, dữ liệu Đấu thầu Y tế ETC & 3.736 dự án ĐTC.<br>5. Hợp nhất an toàn 7 file báo cáo JSON (giữ trọn vẹn 4.947 báo cáo doanh nghiệp và 491 báo cáo ngành). Push `9f7144c`. |
+| 2026-11-10 | `app/nganh-dien/**` · `lib/nganh-dien-data.ts` · `data/nganh_dien_snapshot.json` | **Cập nhật dữ liệu LNST thực tế và bộ lọc đánh giá triển vọng 36 mã cổ phiếu ngành điện**: Bổ sung tiến độ hoàn thành kế hoạch năm và tác động Quy hoạch Điện VIII. Push `d185649`. |
+| 2026-11-10 | `lib/mcp/server.ts` · `app/ket-noi-mcp/page.tsx` | **Thiết lập hạn mức truy vấn MCP**: Giới hạn tối đa 5 câu hỏi/ngày đối với tài khoản Free Member và không giới hạn đối với Hội viên VIP; chuẩn hóa danh sách 4 công cụ AI hợp nhất. Push `e075d8f`, `c1f73af`. |
+| 2026-11-10 | `app/api/payment/webhook/route.ts` (mới) · `components/auth/VipUpgradeModal.tsx` (mới) · `lib/supabase/**` | **Tích hợp webhook cổng thanh toán & Modal nâng cấp VIP**: Xử lý tự động nâng cấp VIP khi nhận webhook thanh toán, xây dựng modal chi tiết đặc quyền VIP. Push `65c36e2`. |
+| 2026-11-09 | `data/maritime/**` · `scripts/cangbien/**` | **Bổ sung số liệu DWT chuẩn cho Cảng Hải Phòng (PHP)**: Đồng bộ số liệu cầu bến và năng lực đón tàu khớp 100% dữ liệu hàng hải thực tế. Push `8ca04c7`. |
+| 2026-11-08 | `components/auth/**` · `lib/financial-charts-service.ts` · `lib/valuation-history-service.ts` | **Nâng cấp hệ thống xác thực miễn phí & Cập nhật biểu đồ tài chính quý**: Tối ưu trải nghiệm đăng nhập Google/Email và cập nhật chuỗi định giá P/E-P/B. Push `0177d20`. |
+| 2026-11-07 | `scripts/cangbien/**` | **Tự động cập nhật dữ liệu cảng biển 1 lần/ngày**: Thiết lập script tự động chạy khi khởi động máy để đồng bộ lịch trình tàu. Push `3b7ead4`. |
+| 2026-11-07 | `lib/mcp/**` · `app/api/mcp/**` | **Tối ưu hóa công cụ MCP Server**: Tinh giản bundle dữ liệu cổ phiếu tập trung vào BCTC Q3, AGM 2026 và AI Deep Research; hoàn thiện công cụ lọc và so sánh cổ phiếu. Push `bcb4015`, `bd38372`, `8c99ecc`. |
+| 2026-11-07 | `app/vi-mo/**` · `app/quy-mo/**` · `content/bctc/**` | **Tích hợp Hub Vĩ Mô & Quy Mô Doanh Nghiệp**: Chuẩn hóa cấu trúc tài liệu BCTC và phân lớp quy mô thị trường. Push `07af495`. |
+| 2026-11-01 | `app/nghien-cuu-ai/**` · `lib/ai-research-service.ts` | **Tính điểm định giá RNAV động theo giá realtime 24hMoney**: Kết nối giá live thời gian thực cho toàn bộ danh mục cổ phiếu phân tích định giá tài sản ròng. Push `85a0f02`, `72ed643`, `02726e9`. |
+| 2026-10-31 | `lib/mcp/**` (mới) · `app/api/mcp/**` (mới) · `app/oauth/**` (mới) · `app/.well-known/**` (mới) | **Triển khai Model Context Protocol (MCP) Server & OAuth 2.0**: Xây dựng máy chủ MCP hoàn chỉnh hỗ trợ kết nối trực tiếp các AI client (Gemini, Claude, Cursor, ChatGPT) với kho dữ liệu đầu tư. Push `57685e2`, `6f43f8e`. |
+| 2026-10-25 | `app/admin/**` (mới) · `lib/analytics-service.ts` · `app/api/analytics/**` | **Bổ sung trang Quản trị Admin & Hệ thống phân tích Pageview**: Theo dõi người dùng, phiên truy cập và lượt xem trang. Push `e3ed8c5`, `c4f70e6`. |
+| 2026-10-12 → 2026-10-22 | `scripts/monitor/**` · `data/evaluation_cache/**` · `content/bctc/**` | **Xây dựng hệ thống Bot Radar quét và phát hiện BCTC Q3/2026 tự động**: Quét liên tục các nguồn công bố Vietstock, FPTS và website doanh nghiệp, gửi thông báo Discord và cập nhật thuyết minh BCTC. Push `b6a0291`, `7baacf2`, `cddba17`. |
+| 2026-09-26 → 2026-09-29 | `app/nganh-dien/**` (mới) · `app/dau-thau/**` (mới) · `app/thuy-san/**` (mới) | **Tích hợp các Hub ngành chuyên sâu: Ngành Điện, Đấu Thầu Y Tế & Thủy Sản VASEP**: Mở rộng hệ sinh thái phân tích chuyên ngành phục vụ nhà đầu tư. Push `872d499`, `d9f5b2e`. |
+| 2026-09-10 (Tối) | `components/watchlist/BulkImportModal.tsx` (mới) · `components/watchlist/WatchlistTable.tsx` · `components/news-dashboard.tsx` · `app/danh-muc/page.tsx` · `lib/supabase/client.ts` | **Bổ sung tính năng Bulk Import vào Watchlist, tối ưu bảng 100+ mã, sync bộ lọc vào Tin tức/Công bố & chuẩn hóa Redirect**: Xây dựng `BulkImportModal`, thiết kế bảng compact, đồng bộ Watchlist vào trang chủ và chuẩn hóa redirect OAuth. Push `a3174ed`. |
+| 2026-09-09 | `lib/supabase/**` (mới) · `components/auth/**` (mới) · `app/auth/**` (mới) · `app/danh-muc/page.tsx` (mới) | **Tích hợp Supabase Auth & Hệ thống Watchlist cá nhân**: Tích hợp `@supabase/ssr`, tạo trang `/danh-muc` nạp SSR 0ms, bảo vệ bằng Supabase RLS. Push `b5ff28c`. |
+| 2026-09-08 | `app/page.tsx` · `components/news-dashboard.tsx` · `app/api/disclosures/route.ts` · `data/agm_reports/**` | **Tích hợp Tab Công Bố Thông Tin 3 Sàn vào Trang Chủ & Mở rộng Báo Cáo ĐHĐCĐ 2026**: Đưa tab Công Bố 3 Sàn làm mặc định, mở rộng kho báo cáo ĐHĐCĐ chi tiết. Push `367e6be`. |
+| 2026-09-07 | `components/mobile-bottom-nav.tsx` (mới) · `components/site-header.tsx` · `app/layout.tsx` | **Tối ưu hóa giao diện đa thiết bị**: Xây dựng Mobile Bottom Navigation Bar, touch docking tabs, scroll chevrons và tối ưu chuyển tab 0ms. Push `3109a20`, `dd9a884`. |
+| 2026-09-06 | `components/vertical-sidebar-nav.tsx` · `components/global-search-modal.tsx` · `components/stock/**` | **Phục hồi toàn diện giao diện & Tính năng chuyên sâu**: Khôi phục sidebar dọc, Command Palette `Ctrl+K`, 7 biểu đồ BCTC chuyên sâu 16 năm và bộ lọc WiData. Push `fb18180`, `a6cd741`. |
+| 2026-09-04 → 2026-09-05 | `scripts/customs_etl/**` · `data/customs_trade_snapshot.json` · `data/maritime/dashboard_summary.json` | **Tích hợp Dữ Liệu XNK Lịch Sử 7 Năm (2020-2026) & Cập Nhật Sản Lượng Cảng MIPEC Tháng 8**: Nhập dữ liệu XNK 7 năm và cập nhật nhật ký tàu cảng biển. Push `244b5a8`, `6dcfdc2`. |
+| 2026-09-03 | `lib/live-quote-service.ts` (mới) · `app/api/stock/[symbol]/live-quote/route.ts` (mới) · `components/stock/StockEvaluationHeader.tsx` | **Tích hợp API cập nhật giá thời gian thực (Live Quote) từ 24hMoney**: Polling 60s ngầm, hiển thị giá biến động realtime, tối ưu hóa bundle Vercel deploy ổn định. Push `935051f`. |
+| 2026-08-29 → 2026-09-02 | `scripts/cangbien/**` (mới) · `app/cang-bien/**` (mới) · `app/thi-truong/**` (mới) · `app/nganh/**` (mới) · `app/bo-loc/**` (mới) | **Triển khai Hệ Thống Dữ Liệu Cảng Biển, Thị Trường Vĩ Mô, Bản Đồ Ngành và Tách Bộ Lọc WiData**: Xây dựng tình báo hàng hải, trang thị trường vĩ mô và phân ngành ICB. Push `d710fab`, `8e1ec7d`. |
 
 ---
-*Cập nhật lần cuối: 2026-09-10 · Người duy trì: Nguyễn Trung Nhật (trungnhat232@gmail.com)*
-
+*Cập nhật lần cuối: 2026-11-14 · Người duy trì: Nguyễn Trung Nhật (trungnhat232@gmail.com)*

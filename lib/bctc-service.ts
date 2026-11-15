@@ -165,10 +165,13 @@ export function hasBctcReport(ticker: string): boolean {
     // Định dạng chuẩn mới: {TICKER}_{KỲ}_{NĂM}_{LOẠI}.md
     `${sym}_Q3_2026_HN.md`,
     `${sym}_Q3_2026_me.md`,
+    `${sym}_Q3_2026.md`,
     `${sym}_BN_2026_HN.md`,
     `${sym}_BN_2026_me.md`,
+    `${sym}_BN_2026.md`,
     `${sym}_Q4_2026_HN.md`,
     `${sym}_Q4_2026_me.md`,
+    `${sym}_Q4_2026.md`,
     // Định dạng cũ (fallback tương thích)
     sym + '_HopNhat_Q3.md',
     sym + '_CongTyMe_Q3.md',
@@ -203,18 +206,21 @@ export function hasBctcReportForPeriod(ticker: string, period: 'Ban_Nien_2026' |
   const q4Files = [
     `${sym}_Q4_2026_HN.md`,
     `${sym}_Q4_2026_me.md`,
+    `${sym}_Q4_2026.md`,
     `${sym}_HopNhat_Q4.md`,
     `${sym}_CongTyMe_Q4.md`,
   ]
   const q3Files = [
     `${sym}_Q3_2026_HN.md`,
     `${sym}_Q3_2026_me.md`,
+    `${sym}_Q3_2026.md`,
     `${sym}_HopNhat_Q3.md`,
     `${sym}_CongTyMe_Q3.md`,
   ]
   const banNienFiles = [
     `${sym}_BN_2026_HN.md`,
     `${sym}_BN_2026_me.md`,
+    `${sym}_BN_2026.md`,
     `${sym}_ThuyetMinh_HopNhat.md`,
     `${sym}_ThuyetMinh_CongTyMe.md`,
     `${sym}_ThuyetMinh_BCTC.md`,
@@ -338,6 +344,7 @@ export function getAvailableBctcPeriods(ticker: string): BctcPeriodOption[] {
   const q4Files = [
     `${sym}_Q4_2026_HN.md`,
     `${sym}_Q4_2026_me.md`,
+    `${sym}_Q4_2026.md`,
     `${sym}_HopNhat_Q4.md`,
     `${sym}_CongTyMe_Q4.md`,
   ]
@@ -356,6 +363,7 @@ export function getAvailableBctcPeriods(ticker: string): BctcPeriodOption[] {
   const q3Files = [
     `${sym}_Q3_2026_HN.md`,
     `${sym}_Q3_2026_me.md`,
+    `${sym}_Q3_2026.md`,
     `${sym}_HopNhat_Q3.md`,
     `${sym}_CongTyMe_Q3.md`,
     `${sym}_ThuyetMinh_HopNhat.md`,
@@ -376,6 +384,7 @@ export function getAvailableBctcPeriods(ticker: string): BctcPeriodOption[] {
   const banNienFiles = [
     `${sym}_BN_2026_HN.md`,
     `${sym}_BN_2026_me.md`,
+    `${sym}_BN_2026.md`,
     `${sym}_ThuyetMinh_HopNhat.md`,
     `${sym}_ThuyetMinh_CongTyMe.md`,
     `${sym}_ThuyetMinh_BCTC.md`,
@@ -525,12 +534,14 @@ export function getBctcReport(
     if (isStrictPeriod && preferredPeriod === 'Ban_Nien_2026') {
       candidateFiles = [
         `${sym}_BN_2026_${suffix}.md`,
+        ...(isHN ? [`${sym}_BN_2026.md`] : []),
         sym + '_ThuyetMinh_' + type + '.md',
         ...(type === 'HopNhat' ? [sym + '_ThuyetMinh_BCTC.md', sym + '_HopNhat_BanNien.md', sym + '_BanNien.md'] : [sym + '_CongTyMe_BanNien.md']),
       ]
     } else if (isStrictPeriod && preferredPeriod === 'Quy_3_2026') {
       candidateFiles = [
         `${sym}_Q3_2026_${suffix}.md`,
+        ...(isHN ? [`${sym}_Q3_2026.md`] : []),
         sym + '_' + type + '_Q3.md',
         sym + '_ThuyetMinh_' + type + '.md',
         ...(type === 'HopNhat' ? [sym + '_ThuyetMinh_BCTC.md'] : []),
@@ -538,8 +549,11 @@ export function getBctcReport(
     } else {
       candidateFiles = [
         `${sym}_Q3_2026_${suffix}.md`,
+        ...(isHN ? [`${sym}_Q3_2026.md`] : []),
         `${sym}_BN_2026_${suffix}.md`,
+        ...(isHN ? [`${sym}_BN_2026.md`] : []),
         `${sym}_Q4_2026_${suffix}.md`,
+        ...(isHN ? [`${sym}_Q4_2026.md`] : []),
         sym + '_' + type + '_Q3.md',
         sym + '_ThuyetMinh_' + type + '.md',
         ...(type === 'HopNhat' ? [sym + '_ThuyetMinh_BCTC.md', sym + '_HopNhat_BanNien.md'] : []),
