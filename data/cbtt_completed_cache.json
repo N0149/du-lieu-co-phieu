@@ -3568,5 +3568,55 @@
     "url": "https://vietstock.vn/2026/11/vnf-nghi-quyet-hoi-dong-quan-tri-737-1515169.htm",
     "source": "Vietstock_News",
     "alerted_at": "2026-11-16 10:09:57"
+  },
+  "vts_news_1515227": {
+    "ticker": "IDV",
+    "category": "EXTRAORDINARY_EVENT",
+    "category_label": "CÔNG BỐ BẤT THƯỜNG",
+    "title": "IDV: Thực hiện giải thể Công ty TNHH MTV Xây dựng Sông Lô",
+    "date": "16/11/2026 10:13",
+    "url": "https://vietstock.vn/2026/11/idv-thuc-hien-giai-the-cong-ty-tnhh-mtv-xay-dung-song-lo-830-1515227.htm",
+    "source": "Vietstock_News",
+    "alerted_at": "2026-11-16 12:01:34"
+  },
+  "vts_news_1515243": {
+    "ticker": "VHC",
+    "category": "RESOLUTION_HDQT",
+    "category_label": "NGHỊ QUYẾT HĐQT",
+    "title": "VHC: Nghị quyết HĐQT về việc tạm ứng cổ tức năm 2026",
+    "date": "16/11/2026 10:22",
+    "url": "https://vietstock.vn/2026/11/vhc-nghi-quyet-hdqt-ve-viec-tam-ung-co-tuc-nam-2026-737-1515243.htm",
+    "source": "Vietstock_News",
+    "alerted_at": "2026-11-16 12:01:36"
+  },
+  "vts_news_1515248": {
+    "ticker": "VPS",
+    "category": "INSIDER_TRADE",
+    "category_label": "GIAO DỊCH CỔ ĐÔNG / NỘI BỘ",
+    "title": "VPS: Quyết định của HĐQT về việc điều chỉnh Hợp đồng, giao dịch giữa Công ty với Người có liên quan năm 2026",
+    "date": "16/11/2026 10:30",
+    "url": "https://vietstock.vn/2026/11/vps-quyet-dinh-cua-hdqt-ve-viec-dieu-chinh-hop-dong-giao-dich-giua-cong-ty-voi-nguoi-co-lien-quan-nam-2026-739-1515248.htm",
+    "source": "Vietstock_News",
+    "alerted_at": "2026-11-16 12:01:37"
+  },
+  "vts_news_1515235": {
+    "ticker": "IDC",
+    "category": "RESOLUTION_HDQT",
+    "category_label": "NGHỊ QUYẾT HĐQT",
+    "title": "IDC: Nghị quyết Hội đồng quản trị",
+    "date": "16/11/2026 10:11",
+    "url": "https://vietstock.vn/2026/11/idc-nghi-quyet-hoi-dong-quan-tri-737-1515235.htm",
+    "source": "Vietstock_News",
+    "alerted_at": "2026-11-16 12:01:37"
+  },
+  "vts_news_1515215": {
+    "ticker": "VEA",
+    "category": "RESOLUTION_HDQT",
+    "category_label": "NGHỊ QUYẾT HĐQT",
+    "title": "VEA: Nghị quyết Hội đồng quản trị chấp thuận hợp đồng với bên có liên quan",
+    "date": "16/11/2026 09:28",
+    "url": "https://vietstock.vn/2026/11/vea-nghi-quyet-hoi-dong-quan-tri-chap-thuan-hop-dong-voi-ben-co-lien-quan-737-1515215.htm",
+    "source": "Vietstock_News",
+    "alerted_at": "2026-11-16 12:01:38"
   }
 }
