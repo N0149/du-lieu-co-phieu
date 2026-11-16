@@ -3618,5 +3618,35 @@
     "url": "https://vietstock.vn/2026/11/vea-nghi-quyet-hoi-dong-quan-tri-chap-thuan-hop-dong-voi-ben-co-lien-quan-737-1515215.htm",
     "source": "Vietstock_News",
     "alerted_at": "2026-11-16 12:01:38"
+  },
+  "vts_doc_1cb3e0f838c8": {
+    "ticker": "VHC",
+    "category": "RESOLUTION_HDQT",
+    "category_label": "NGHỊ QUYẾT HĐQT",
+    "title": "Nghị quyết HĐQT về việc tạm ứng cổ tức năm 2026",
+    "date": "16/11/2026 14:22",
+    "url": "https://static2.vietstock.vn/data/HOSE/2026/NGHI QUYET HDQT/VN/20261116___vhc___nqhdqt_tam_ung_co_tuc_nam_2026_bang_tien.pdf",
+    "source": "Vietstock_Document",
+    "alerted_at": "2026-11-16 16:23:41"
+  },
+  "vts_doc_06b50be53699": {
+    "ticker": "VEA",
+    "category": "RESOLUTION_HDQT",
+    "category_label": "NGHỊ QUYẾT HĐQT",
+    "title": "Nghị quyết Hội đồng quản trị chấp thuận hợp đồng với bên có liên quan",
+    "date": "16/11/2026 14:22",
+    "url": "https://static2.vietstock.vn/data/HNX/2026/NGHI QUYET HDQT/VN/2_vea_2026_11_16_a01df52_en__contract_between_veam_and_a_related_party_2(NhieuFile).zip",
+    "source": "Vietstock_Document",
+    "alerted_at": "2026-11-16 16:23:41"
+  },
+  "vts_doc_aece130d4bbc": {
+    "ticker": "VEA",
+    "category": "RESOLUTION_HDQT",
+    "category_label": "NGHỊ QUYẾT HĐQT",
+    "title": "Nghị quyết HĐQT chấp thuận hợp đồng với bên có liên quan",
+    "date": "16/11/2026 14:22",
+    "url": "https://static2.vietstock.vn/data/HNX/2026/NGHI QUYET HDQT/VN/2_vea_2026_11_16_a01df52_en__contract_between_veam_and_a_related_party(NhieuFile).zip",
+    "source": "Vietstock_Document",
+    "alerted_at": "2026-11-16 16:23:42"
   }
 }
