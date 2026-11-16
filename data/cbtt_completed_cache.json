@@ -3508,5 +3508,65 @@
     "url": "https://vietstock.vn/2026/11/tvn-ngay-dang-ky-cuoi-cung-lay-y-kien-co-dong-bang-van-ban-737-1515107.htm",
     "source": "Vietstock_News",
     "alerted_at": "2026-11-16 08:23:06"
+  },
+  "vts_doc_b52ea50880ca": {
+    "ticker": "HND",
+    "category": "RESOLUTION_HDQT",
+    "category_label": "NGHỊ QUYẾT HĐQT",
+    "title": "Nghị quyết HĐQT số 6867/NQ-NĐHP ngày 13/11/2026",
+    "date": "16/11/2026 08:23",
+    "url": "https://static2.vietstock.vn/data/UPCOM/2026/NGHI%20QUYET%20HDQT/VN/2_hnd_2026_11_16_ae25aa4_en_boardresolution_13_11_2026(NhieuFile).zip?ver=9daaf23b",
+    "source": "Vietstock_Document",
+    "alerted_at": "2026-11-16 10:09:53"
+  },
+  "vts_news_1515178": {
+    "ticker": "GCF",
+    "category": "INSIDER_SELL",
+    "category_label": "CỔ ĐÔNG NỘI BỘ BÁN RA",
+    "title": "GCF: Bùi Thị Mai Hiên - Tổng Giám đốc - đã bán 953,049 CP",
+    "date": "16/11/2026 09:14",
+    "url": "https://vietstock.vn/2026/11/gcf-bui-thi-mai-hien-tong-giam-doc-da-ban-953049-cp-739-1515178.htm",
+    "source": "Vietstock_News",
+    "alerted_at": "2026-11-16 10:09:54"
+  },
+  "vts_news_1515154": {
+    "ticker": "MSH",
+    "category": "DIVIDEND_RIGHTS",
+    "category_label": "CỔ TỨC & QUYỀN DOANH NGHIỆP",
+    "title": "May Sông Hồng sắp chi 450 tỷ tạm ứng cổ tức tỷ lệ 40% giữa lúc lãi ròng đi xuống",
+    "date": "16/11/2026 10:00",
+    "url": "https://vietstock.vn/2026/11/may-song-hong-sap-chi-450-ty-tam-ung-co-tuc-ty-le-40-giua-luc-lai-rong-di-xuong-738-1515154.htm",
+    "source": "Vietstock_News",
+    "alerted_at": "2026-11-16 10:09:54"
+  },
+  "vts_news_1515185": {
+    "ticker": "VEA",
+    "category": "RESOLUTION_HDQT",
+    "category_label": "NGHỊ QUYẾT HĐQT",
+    "title": "VEA: Nghị quyết HĐQT chấp thuận hợp đồng với bên có liên quan",
+    "date": "16/11/2026 09:28",
+    "url": "https://vietstock.vn/2026/11/vea-nghi-quyet-hdqt-chap-thuan-hop-dong-voi-ben-co-lien-quan-737-1515185.htm",
+    "source": "Vietstock_News",
+    "alerted_at": "2026-11-16 10:09:55"
+  },
+  "vts_news_1515182": {
+    "ticker": "VNF",
+    "category": "RESOLUTION_HDQT",
+    "category_label": "NGHỊ QUYẾT HĐQT",
+    "title": "VNF: Nghị quyết Hội đồng quản trị",
+    "date": "16/11/2026 09:21",
+    "url": "https://vietstock.vn/2026/11/vnf-nghi-quyet-hoi-dong-quan-tri-737-1515182.htm",
+    "source": "Vietstock_News",
+    "alerted_at": "2026-11-16 10:09:56"
+  },
+  "vts_news_1515169": {
+    "ticker": "VNF",
+    "category": "RESOLUTION_HDQT",
+    "category_label": "NGHỊ QUYẾT HĐQT",
+    "title": "VNF: Nghị quyết Hội đồng quản trị",
+    "date": "16/11/2026 08:58",
+    "url": "https://vietstock.vn/2026/11/vnf-nghi-quyet-hoi-dong-quan-tri-737-1515169.htm",
+    "source": "Vietstock_News",
+    "alerted_at": "2026-11-16 10:09:57"
   }
 }
