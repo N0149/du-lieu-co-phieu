@@ -254,6 +254,7 @@ async function syncInsiderOnly(sym, profileDb, now) {
       const parsed = JSON.parse(fs.readFileSync(cacheFile, "utf-8"));
       if (parsed.ownership) existingProfile.ownership = parsed.ownership;
       if (parsed.subsidiaries) existingProfile.subsidiaries = parsed.subsidiaries;
+      if (parsed.giao_dich_noi_bo) existingProfile.giao_dich_noi_bo = parsed.giao_dich_noi_bo;
     } catch {}
   }
 

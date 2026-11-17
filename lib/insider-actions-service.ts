@@ -32,6 +32,10 @@ let lastFetchTime = 0
 let isFetching = false
 const CACHE_TTL_MS = 2 * 60 * 1000 // 2 minutes
 
+// Per-symbol cache (chia sẻ cho từng trang cổ phiếu tra cứu tức thì < 1ms)
+const symbolActionsCache = new Map<string, { items: InsiderActionRecord[]; expiresAt: number }>()
+const SYMBOL_CACHE_TTL_MS = 5 * 60 * 1000 // 5 minutes
+
 // Position dictionary translation
 const POSITION_MAP: Record<string, string> = {
   'chairman of board': 'Chủ tịch HĐQT',
@@ -246,13 +250,21 @@ export async function getInsiderActions(options?: {
   const force = options?.force ?? false
   const symbol = options?.symbol?.toUpperCase().trim() || ''
 
-  // Nếu tìm theo mã cụ thể, gọi trực tiếp callback với filter mã
+  // Nếu tìm theo mã cụ thể, kiểm tra RAM cache trước, nếu chưa có thì fetch từ Stockbiz
   if (symbol) {
+    const cached = symbolActionsCache.get(symbol)
+    if (!force && cached && cached.expiresAt > now) {
+      return options?.limit ? cached.items.slice(0, options.limit) : cached.items
+    }
     try {
       const html = await fetchStockbizPage(0, symbol)
-      return parseInsiderTableHtml(html)
+      const items = parseInsiderTableHtml(html)
+      if (items.length > 0) {
+        symbolActionsCache.set(symbol, { items, expiresAt: now + SYMBOL_CACHE_TTL_MS })
+      }
+      return options?.limit ? items.slice(0, options.limit) : items
     } catch {
-      return []
+      return cached?.items || []
     }
   }
 
@@ -291,6 +303,16 @@ export async function getInsiderActions(options?: {
     if (allItems.length > 0) {
       cachedInsiderActions = allItems
       lastFetchTime = Date.now()
+
+      // Lập chỉ mục theo từng mã cổ phiếu để trang chi tiết mã tra cứu tức thì < 1ms
+      const bySym = new Map<string, InsiderActionRecord[]>()
+      for (const item of allItems) {
+        if (!bySym.has(item.symbol)) bySym.set(item.symbol, [])
+        bySym.get(item.symbol)!.push(item)
+      }
+      for (const [symKey, symItems] of bySym.entries()) {
+        symbolActionsCache.set(symKey, { items: symItems, expiresAt: now + SYMBOL_CACHE_TTL_MS })
+      }
     }
 
     return options?.limit ? allItems.slice(0, options.limit) : allItems

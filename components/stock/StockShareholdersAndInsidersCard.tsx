@@ -34,6 +34,17 @@ function fmtNum(n: number | null | undefined): string {
   return Number(n).toLocaleString('vi-VN')
 }
 
+function formatTradeDate(dStr: string | null | undefined): string {
+  if (!dStr) return '—'
+  const str = dStr.trim()
+  if (str.includes('/')) return str
+  if (str.includes('-')) {
+    const parts = str.split('T')[0].split('-')
+    if (parts.length === 3) return `${parts[2]}/${parts[1]}/${parts[0]}`
+  }
+  return str
+}
+
 // Phân biệt cá nhân hay tổ chức dựa trên tên
 function isOrganization(name: string): boolean {
   if (!name) return false
@@ -161,9 +172,12 @@ export function StockShareholdersAndInsidersCard({
     let sellVol = 0
     let buyCount = 0
     let sellCount = 0
+    let planCount = 0
 
     for (const t of rawTrades) {
-      if (t.action === 'BUY' && t.volumeTraded > 0) {
+      if (t.volumeTraded === 0 && t.volumeRegistered > 0) {
+        planCount++
+      } else if (t.action === 'BUY' && t.volumeTraded > 0) {
         buyVol += t.volumeTraded
         buyCount++
       } else if (t.action === 'SELL' && t.volumeTraded > 0) {
@@ -177,6 +191,7 @@ export function StockShareholdersAndInsidersCard({
       sellVol,
       buyCount,
       sellCount,
+      planCount,
       netVol: buyVol - sellVol,
       totalCount: rawTrades.length,
     }
@@ -320,6 +335,20 @@ export function StockShareholdersAndInsidersCard({
             >
               Bán ({tradeStats.sellCount})
             </button>
+            {tradeStats.planCount > 0 && (
+              <button
+                type="button"
+                onClick={() => setTradeFilter('plan')}
+                className={cn(
+                  'px-2 py-0.5 rounded-md transition-all cursor-pointer',
+                  tradeFilter === 'plan'
+                    ? 'bg-amber-500/20 text-amber-400 font-bold'
+                    : 'text-muted-foreground hover:text-foreground'
+                )}
+              >
+                Đăng ký ({tradeStats.planCount})
+              </button>
+            )}
           </div>
         )}
       </div>
@@ -560,7 +589,7 @@ export function StockShareholdersAndInsidersCard({
                       >
                         {/* Ngày */}
                         <td className="py-2 px-3 font-mono text-[11px] text-muted-foreground whitespace-nowrap align-middle">
-                          {t.tradeDate}
+                          {formatTradeDate(t.tradeDate)}
                         </td>
 
                         {/* Người giao dịch & chức vụ */}
@@ -607,6 +636,8 @@ export function StockShareholdersAndInsidersCard({
                             <span>{t.ownershipRate < 1 ? (t.ownershipRate * 100).toFixed(2) : t.ownershipRate.toFixed(2)}%</span>
                           ) : t.volumeAfter != null && t.volumeAfter > 0 ? (
                             <span title={`${fmtNum(t.volumeAfter)} CP`}>{fmtNum(t.volumeAfter)}</span>
+                          ) : t.volumeAfter === 0 || t.ownershipRate === 0 ? (
+                            <span className="text-muted-foreground/80">0%</span>
                           ) : (
                             '—'
                           )}

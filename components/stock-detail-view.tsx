@@ -344,7 +344,7 @@ function resolveValidTab(tab: StockDetailTab | string | null | undefined): Stock
 const StockDividendsTab = dynamic(
   () => import('@/components/stock/StockDividendsTab').then((m) => m.StockDividendsTab),
   {
-    loading: () => <TabLoadingSkeleton tabLabel="Lịch sử cổ tức & tăng vốn" />,
+    loading: () => <TabLoadingSkeleton tabLabel="Giao dịch nội bộ và cổ tức" />,
     ssr: false,
   }
 )
@@ -962,8 +962,8 @@ export function StockDetailView({
       },
       {
         id: 'dividends' as StockDetailTab,
-        label: 'Cổ Tức & Tăng Vốn',
-        shortLabel: 'Cổ tức',
+        label: 'Giao Dịch Nội Bộ và Cổ Tức',
+        shortLabel: 'GD nội bộ & Cổ tức',
         icon: Coins,
         iconColor: 'text-amber-500',
         badge: dividendHistory?.events && dividendHistory.events.length > 0
@@ -2010,7 +2010,7 @@ export function StockDetailView({
       )}
 
       {/* ══════════════════════════════════════════════════════════ */}
-      {/* TAB: CỔ TỨC & TĂNG VỐN (CHUẨN 100% LOCAL-FIRST)           */}
+      {/* TAB: GIAO DỊCH NỘI BỘ VÀ CỔ TỨC (CHUẨN 100% LOCAL-FIRST)   */}
       {/* ══════════════════════════════════════════════════════════ */}
       {mountedTabs.has('dividends') && (
         <div className={cn("space-y-5 animate-in fade-in-50 duration-200", (activeTab !== 'dividends' || loadingTab === 'dividends') && "hidden")}>
@@ -2018,14 +2018,14 @@ export function StockDetailView({
             isLoggedIn={effectiveIsLoggedIn}
             variant="blur"
             blurHeight={350}
-            title="Mở khóa Lịch Sử Cổ Tức & Tăng Vốn Toàn Diện"
-            subtitle="Đăng nhập tài khoản miễn phí để tra cứu toàn bộ lịch sử chi trả cổ tức tiền mặt, cổ phiếu thưởng và tăng vốn qua 16 năm."
+            title="Mở khóa Lịch Sử Giao Dịch Nội Bộ và Cổ Tức Toàn Diện"
+            subtitle="Đăng nhập tài khoản miễn phí để tra cứu toàn bộ nhật ký giao dịch nội bộ, cổ đông lớn và lịch sử chi trả cổ tức qua các năm."
             features={[
+              'Nhật ký mua bán, thay đổi tỷ lệ sở hữu của ban lãnh đạo và người có liên quan',
               'Lịch sử chi trả cổ tức tiền mặt & tỷ suất cổ tức thực tế qua các năm',
-              'Lịch sử chia tách, phát hành thưởng và tăng vốn điều lệ',
               'Đăng nhập miễn phí trong 3 giây bằng tài khoản Google',
             ]}
-            ctaText="Đăng nhập để xem toàn bộ lịch sử cổ tức"
+            ctaText="Đăng nhập để xem toàn bộ giao dịch nội bộ và cổ tức"
           >
             <StockDividendsTab
               symbol={ticker}
