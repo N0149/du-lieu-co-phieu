@@ -88,8 +88,19 @@ def build_trade_balance(
         else:
             if trade_type == "EXPORT":
                 rec["export"] = val
+                if totals.get("val_ky_fdi"):
+                    rec["subtotal_export_fdi"] = totals["val_ky_fdi"]
             else:
                 rec["import"] = val
+                if totals.get("val_ky_fdi"):
+                    rec["subtotal_import_fdi"] = totals["val_ky_fdi"]
+
+    # Điền khuyết FDI từ dòng subtotal trong file chính (nếu chưa có file FDI riêng)
+    for rec in periods.values():
+        if rec["export_fdi"] == 0.0 and rec.get("subtotal_export_fdi"):
+            rec["export_fdi"] = rec["subtotal_export_fdi"]
+        if rec["import_fdi"] == 0.0 and rec.get("subtotal_import_fdi"):
+            rec["import_fdi"] = rec["subtotal_import_fdi"]
 
     # Bổ sung/điền khuyết số liệu THANG từ KY_1 + KY_2 nếu file tháng bị thiếu 1 hoặc 2 chiều
     months = {k[1] for k in periods}
@@ -125,6 +136,13 @@ def build_trade_balance(
             rec = periods[thang_key]
             if rec.get("export_fdi", 0.0) == 0.0 and m == "2025-03-01":
                 rec["export_fdi"] = 27358020565.0
+
+    # Điền khuyết lần 2 cho các kỳ nếu còn thiếu
+    for rec in periods.values():
+        if rec["export_fdi"] == 0.0 and rec.get("subtotal_export_fdi"):
+            rec["export_fdi"] = rec["subtotal_export_fdi"]
+        if rec["import_fdi"] == 0.0 and rec.get("subtotal_import_fdi"):
+            rec["import_fdi"] = rec["subtotal_import_fdi"]
 
     series: list[dict[str, Any]] = []
     for key in sorted(periods, key=lambda k: (k[1], PERIOD_RANK.get(k[0], 99))):

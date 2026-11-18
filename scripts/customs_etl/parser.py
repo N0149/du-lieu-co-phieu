@@ -503,9 +503,15 @@ def _is_total_row(name: str) -> bool:
     return any(nt == kw or nt.startswith(kw) for kw in TOTAL_KEYWORDS)
 
 
+def _is_fdi_subtotal_row(name: str) -> bool:
+    """Dòng con 'Trong đó: Doanh nghiệp có vốn đầu tư trực tiếp nước ngoài'
+    trong bảng tổng của file CHÍNH — chứa tổng trị giá XNK của khối FDI."""
+    nt = normalize_key(name)
+    return nt.startswith("trong do") and ("dau tu" in nt or "fdi" in nt or "nuoc ngoai" in nt)
+
+
 def _is_sub_total_row(name: str) -> bool:
-    """Dòng con 'Trong đó: ...' (vd 'Trong đó: Doanh nghiệp có vốn đầu tư trực tiếp
-    nước ngoài') — là phần tách nhỏ của tổng, gây trùng lặp với file FDI riêng → bỏ qua."""
+    """Dòng con 'Trong đó: ...' khác — là phần tách nhỏ của tổng, bỏ qua."""
     return normalize_key(name).startswith("trong do")
 
 
@@ -525,6 +531,7 @@ def extract_rows(
     rows: list[dict[str, Any]] = []
     totals: dict[str, float | None] = {
         "qty_ky": None, "val_ky": None, "qty_acc": None, "val_acc": None,
+        "val_ky_fdi": None, "val_acc_fdi": None,
     }
     prev_name = ""
 
@@ -548,10 +555,18 @@ def extract_rows(
             continue
         if _is_total_row(raw_name):
             # Dòng TỔNG TRỊ GIÁ → chỉ giữ số liệu tổng (lấy trị tuyệt đối lớn nhất)
-            for field in totals:
+            for field in ("qty_ky", "val_ky", "qty_acc", "val_acc"):
                 v = _plausible(parse_number(cell(row, field)))
                 if v is not None and (totals[field] is None or abs(v) > abs(totals[field])):
                     totals[field] = v
+            continue
+        if _is_fdi_subtotal_row(raw_name):
+            v_ky = _plausible(parse_number(cell(row, F_VAL_KY)))
+            if v_ky is not None and (totals["val_ky_fdi"] is None or abs(v_ky) > abs(totals["val_ky_fdi"])):
+                totals["val_ky_fdi"] = v_ky
+            v_acc = _plausible(parse_number(cell(row, F_VAL_ACC)))
+            if v_acc is not None and (totals["val_acc_fdi"] is None or abs(v_acc) > abs(totals["val_acc_fdi"])):
+                totals["val_acc_fdi"] = v_acc
             continue
         if _is_sub_total_row(raw_name):
             continue
@@ -921,6 +936,7 @@ def parse_file(
     out: list[ParsedRow] = []
     file_totals: dict[str, float | None] = {
         "qty_ky": None, "val_ky": None, "qty_acc": None, "val_acc": None,
+        "val_ky_fdi": None, "val_acc_fdi": None,
     }
     # Chỉ file bảng CHÍNH + FDI tham gia tổng trị giá (Cán cân thương mại)
     keep_totals = category in ("main", "fdi")
@@ -976,7 +992,7 @@ def parse_file(
         raw_rows, table_totals = extract_rows(df, first_data_row, col_map)
         if keep_totals:
             for field in file_totals:
-                if table_totals[field] is not None and (
+                if table_totals.get(field) is not None and (
                     file_totals[field] is None or abs(table_totals[field]) > abs(file_totals[field])
                 ):
                     file_totals[field] = table_totals[field]
