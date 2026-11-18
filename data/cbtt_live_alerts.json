@@ -1,30 +1,16 @@
 [
   {
-    "ticker": "LIX",
-    "title": "LIX: Thông báo nhận được Quyết định của Thuế TP.HCM về việc xử phạt vi phạm hành chính về thuế",
-    "url": "https://vietstock.vn/2026/11/lix-thong-bao-nhan-duoc-quyet-dinh-cua-thue-tp-hcm-ve-viec-xu-phat-vi-pham-hanh-chinh-ve-thue-830-1515974.htm",
-    "date": "18/11/2026 10:44",
+    "ticker": "POS",
+    "title": "POS: Ngày 30/11/2026, Thông báo ngày giao dịch đầu tiên đăng ký giao dịch bổ sung",
+    "url": "https://vietstock.vn/2026/11/pos-ngay-30-11-2026-thong-bao-ngay-giao-dich-dau-tien-dang-ky-giao-dich-bo-sung-741-1515993.htm",
+    "date": "18/11/2026 12:06",
     "source": "Vietstock_News",
-    "category": "EXTRAORDINARY_EVENT",
-    "category_label": "CÔNG BỐ BẤT THƯỜNG",
-    "color": 15485081,
-    "icon": "⚠️",
-    "unique_id": "vts_news_1515974",
-    "company_name": "Công ty Cổ phần Bột Giặt LIX",
-    "exchange": "HOSE"
-  },
-  {
-    "ticker": "DC4",
-    "title": "DC4: Thông báo giao dịch cổ phiếu của Người nội bộ Lê Đình Thắng",
-    "url": "https://vietstock.vn/2026/11/dc4-thong-bao-giao-dich-co-phieu-cua-nguoi-noi-bo-le-dinh-thang-830-1515960.htm",
-    "date": "18/11/2026 09:47",
-    "source": "Vietstock_News",
-    "category": "INSIDER_TRADE",
-    "category_label": "GIAO DỊCH CỔ ĐÔNG / NỘI BỘ",
-    "color": 3900150,
-    "icon": "👥",
-    "unique_id": "vts_news_1515960",
-    "company_name": "Công ty Cổ phần Dicera Holdings",
-    "exchange": "HOSE"
+    "category": "DIVIDEND_RIGHTS",
+    "category_label": "CỔ TỨC & QUYỀN DOANH NGHIỆP",
+    "color": 15381256,
+    "icon": "💰",
+    "unique_id": "vts_news_1515993",
+    "company_name": "Công ty Cổ phần Vận hành và Xây lắp PTSC",
+    "exchange": "UPCOM"
   }
 ]
