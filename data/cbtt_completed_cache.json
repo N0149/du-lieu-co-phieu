@@ -4408,5 +4408,95 @@
     "url": "https://vietstock.vn/2026/11/ils-phung-nhat-minh-nguoi-co-lien-quan-den-chu-tich-hoi-dong-quan-tri-dang-ky-mua-720000-cp-739-1516238.htm",
     "source": "Vietstock_News",
     "alerted_at": "2026-11-19 10:44:12"
+  },
+  "web_b74d0e188c4c": {
+    "ticker": "CAP",
+    "category": "EXTRAORDINARY_EVENT",
+    "category_label": "CÔNG BỐ BẤT THƯỜNG",
+    "title": "Công bố thông tin",
+    "date": "19/11/2026",
+    "url": "http://www.yfatuf.com.vn/category/quan-he-nha-dau-tu/cong-bo-thong-tin/",
+    "source": "Company_Web",
+    "alerted_at": "2026-11-19 12:08:01"
+  },
+  "web_96dee2bf26a0": {
+    "ticker": "CAP",
+    "category": "EXTRAORDINARY_EVENT",
+    "category_label": "CÔNG BỐ BẤT THƯỜNG",
+    "title": "Quan hệ nhà đầu tư",
+    "date": "19/11/2026",
+    "url": "http://www.yfatuf.com.vn/category/quan-he-nha-dau-tu/",
+    "source": "Company_Web",
+    "alerted_at": "2026-11-19 12:08:02"
+  },
+  "web_16c490f8b3a0": {
+    "ticker": "CAP",
+    "category": "EXTRAORDINARY_EVENT",
+    "category_label": "CÔNG BỐ BẤT THƯỜNG",
+    "title": "Tin tức - Sự kiện",
+    "date": "19/11/2026",
+    "url": "http://www.yfatuf.com.vn/category/tin-tuc-su-kien/",
+    "source": "Company_Web",
+    "alerted_at": "2026-11-19 12:08:02"
+  },
+  "web_02d358cb76ec": {
+    "ticker": "CAP",
+    "category": "EXTRAORDINARY_EVENT",
+    "category_label": "CÔNG BỐ BẤT THƯỜNG",
+    "title": "Đại hội cổ đông",
+    "date": "19/11/2026",
+    "url": "http://www.yfatuf.com.vn/category/quan-he-nha-dau-tu/dai-hoi-co-dong/",
+    "source": "Company_Web",
+    "alerted_at": "2026-11-19 12:08:03"
+  },
+  "web_b23f1b9bd9dc": {
+    "ticker": "CAP",
+    "category": "EXTRAORDINARY_EVENT",
+    "category_label": "CÔNG BỐ BẤT THƯỜNG",
+    "title": "19/11/2026",
+    "date": "19/11/2026",
+    "url": "http://www.yfatuf.com.vn/tai-lieu-bo-sung-dai-hoi-dcd-thuong-nien-nam-2026-tieng-viet/",
+    "source": "Company_Web",
+    "alerted_at": "2026-11-19 12:08:04"
+  },
+  "vts_news_1516104": {
+    "ticker": "SFC",
+    "category": "BUSINESS_NEWS",
+    "category_label": "TÌNH HÌNH SẢN XUẤT KINH DOANH",
+    "title": "SFC: Giải trình LNST TNDN (NĐKT từ 01/10/2025 đến 30/09/2026)",
+    "date": "19/11/2026 07:00",
+    "url": "https://vietstock.vn/2026/11/sfc-giai-trinh-lnst-tndn-ndkt-tu-01-10-2025-den-30-09-2026-830-1516104.htm",
+    "source": "Vietstock_News",
+    "alerted_at": "2026-11-19 12:08:05"
+  },
+  "vts_news_1516290": {
+    "ticker": "VFG",
+    "category": "RESOLUTION_HDQT",
+    "category_label": "NGHỊ QUYẾT HĐQT",
+    "title": "VFG: Thông báo thay đổi nhân sự và kèm NQ HĐQT",
+    "date": "19/11/2026 10:46",
+    "url": "https://vietstock.vn/2026/11/vfg-thong-bao-thay-doi-nhan-su-va-kem-nq-hdqt-214-1516290.htm",
+    "source": "Vietstock_News",
+    "alerted_at": "2026-11-19 12:08:05"
+  },
+  "vts_news_1516311": {
+    "ticker": "SJG",
+    "category": "RESOLUTION_HDQT",
+    "category_label": "NGHỊ QUYẾT HĐQT",
+    "title": "SJG: Nghị quyết Hội đồng quản trị",
+    "date": "19/11/2026 11:13",
+    "url": "https://vietstock.vn/2026/11/sjg-nghi-quyet-hoi-dong-quan-tri-737-1516311.htm",
+    "source": "Vietstock_News",
+    "alerted_at": "2026-11-19 12:08:06"
+  },
+  "vts_news_1516296": {
+    "ticker": "TRA",
+    "category": "EGM_EXTRAORDINARY",
+    "category_label": "ĐHĐCĐ BẤT THƯỜNG / LẤY Ý KIẾN",
+    "title": "TRA: Biên bản kiểm phiếu, Nghị quyết ĐHĐCĐ theo thể thức lấy ý kiến cổ đông bằng văn bản",
+    "date": "19/11/2026 10:52",
+    "url": "https://vietstock.vn/2026/11/tra-bien-ban-kiem-phieu-nghi-quyet-dhdcd-theo-the-thuc-lay-y-kien-co-dong-bang-van-ban-737-1516296.htm",
+    "source": "Vietstock_News",
+    "alerted_at": "2026-11-19 12:08:07"
   }
 }
