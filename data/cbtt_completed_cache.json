@@ -4338,5 +4338,75 @@
     "url": "https://static2.vietstock.vn/data/HNX/2026/TAI%20LIEU%20DHCD/VN/SJE_TAILIEU_DHDCD_2026.zip?ver=bab274e1",
     "source": "Vietstock_Document",
     "alerted_at": "2026-11-19 09:10:33"
+  },
+  "vts_news_1516247": {
+    "ticker": "SZC",
+    "category": "EGM_EXTRAORDINARY",
+    "category_label": "ĐHĐCĐ BẤT THƯỜNG / LẤY Ý KIẾN",
+    "title": "SZC: Thông báo về ngày đăng ký cuối cùng thực hiện lấy ý kiến cổ đông bằng văn bản",
+    "date": "19/11/2026 10:04",
+    "url": "https://vietstock.vn/2026/11/szc-thong-bao-ve-ngay-dang-ky-cuoi-cung-thuc-hien-lay-y-kien-co-dong-bang-van-ban-737-1516247.htm",
+    "source": "Vietstock_News",
+    "alerted_at": "2026-11-19 10:44:08"
+  },
+  "vts_news_1516237": {
+    "ticker": "MDG",
+    "category": "INSIDER_TRADE",
+    "category_label": "GIAO DỊCH CỔ ĐÔNG / NỘI BỘ",
+    "title": "MDG: Báo cáo kết quả giao dịch cổ phiếu của Người nội bộ Võ Đức Lợi",
+    "date": "19/11/2026 10:01",
+    "url": "https://vietstock.vn/2026/11/mdg-bao-cao-ket-qua-giao-dich-co-phieu-cua-nguoi-noi-bo-vo-duc-loi-739-1516237.htm",
+    "source": "Vietstock_News",
+    "alerted_at": "2026-11-19 10:44:09"
+  },
+  "vts_news_1516176": {
+    "ticker": "KTS",
+    "category": "EXTRAORDINARY_EVENT",
+    "category_label": "CÔNG BỐ BẤT THƯỜNG",
+    "title": "Giá cổ phiếu giảm một nửa từ đầu năm, Tổng Giám đốc Đường Kon Tum gom gần 26% vốn",
+    "date": "19/11/2026 09:56",
+    "url": "https://vietstock.vn/2026/11/gia-co-phieu-giam-mot-nua-tu-dau-nam-tong-giam-doc-duong-kon-tum-gom-gan-26-von-739-1516176.htm",
+    "source": "Vietstock_News",
+    "alerted_at": "2026-11-19 10:44:09"
+  },
+  "vts_news_1516236": {
+    "ticker": "KTS",
+    "category": "INSIDER_BUY",
+    "category_label": "CỔ ĐÔNG NỘI BỘ MUA VÀO",
+    "title": "KTS: Đặng Thị Thu Hằng - Ủy viên Hội đồng quản trị, Tổng Giám đốc - đã mua 1,313,317 CP",
+    "date": "19/11/2026 03:51",
+    "url": "https://vietstock.vn/2026/11/kts-dang-thi-thu-hang-uy-vien-hoi-dong-quan-tri-tong-giam-doc-da-mua-1313317-cp-739-1516236.htm",
+    "source": "Vietstock_News",
+    "alerted_at": "2026-11-19 10:44:10"
+  },
+  "vts_news_1516246": {
+    "ticker": "SWC",
+    "category": "RESOLUTION_HDQT",
+    "category_label": "NGHỊ QUYẾT HĐQT",
+    "title": "SWC: Nghị quyết Hội đồng quản trị về việc bán vốn cổ phần tại CTCP Xây Lắp Công Trình",
+    "date": "19/11/2026 07:14",
+    "url": "https://vietstock.vn/2026/11/swc-nghi-quyet-hoi-dong-quan-tri-ve-viec-ban-von-co-phan-tai-ctcp-xay-lap-cong-trinh-737-1516246.htm",
+    "source": "Vietstock_News",
+    "alerted_at": "2026-11-19 10:44:11"
+  },
+  "vts_news_1516213": {
+    "ticker": "ILS",
+    "category": "INSIDER_BUY",
+    "category_label": "CỔ ĐÔNG NỘI BỘ MUA VÀO",
+    "title": "ILS: Phùng Nhật Minh - người có liên quan đến Chủ tịch HĐQT - đăng ký mua 720,000 CP",
+    "date": "19/11/2026 09:35",
+    "url": "https://vietstock.vn/2026/11/ils-phung-nhat-minh-nguoi-co-lien-quan-den-chu-tich-hdqt-dang-ky-mua-720000-cp-739-1516213.htm",
+    "source": "Vietstock_News",
+    "alerted_at": "2026-11-19 10:44:12"
+  },
+  "vts_news_1516238": {
+    "ticker": "ILS",
+    "category": "INSIDER_BUY",
+    "category_label": "CỔ ĐÔNG NỘI BỘ MUA VÀO",
+    "title": "ILS: Phùng Nhật Minh - người có liên quan đến Chủ tịch Hội đồng quản trị - đăng ký mua 720,000 CP",
+    "date": "19/11/2026 09:35",
+    "url": "https://vietstock.vn/2026/11/ils-phung-nhat-minh-nguoi-co-lien-quan-den-chu-tich-hoi-dong-quan-tri-dang-ky-mua-720000-cp-739-1516238.htm",
+    "source": "Vietstock_News",
+    "alerted_at": "2026-11-19 10:44:12"
   }
 }
