@@ -132,6 +132,9 @@ function parseVndirectToCandles(data: any): CandleDataPoint[] {
   return candles.sort((a, b) => a.time.localeCompare(b.time))
 }
 
+// Global in-memory cache lưu nến kỹ thuật giữa các lần chuyển mã cổ phiếu (Chuẩn FireAnt 0ms)
+const globalCandlesCache = new Map<string, CandleDataPoint[]>()
+
 export function TradingViewCandleChart({
   symbol,
   companyName,
@@ -146,7 +149,12 @@ export function TradingViewCandleChart({
   const volumeSeriesRef = useRef<ISeriesApi<'Histogram'> | null>(null)
   const ma20SeriesRef = useRef<ISeriesApi<'Line'> | null>(null)
   const ma50SeriesRef = useRef<ISeriesApi<'Line'> | null>(null)
+  const watermarkRef = useRef<any>(null)
   const hasFittedRef = useRef<boolean>(false)
+  const validCandlesRef = useRef<CandleDataPoint[]>([])
+  const ma20DataRef = useRef<{ time: string; value: number }[]>([])
+  const ma50DataRef = useRef<{ time: string; value: number }[]>([])
+  const candleMapRef = useRef<Map<string, CandleDataPoint>>(new Map())
 
   const [candles, setCandles] = useState<CandleDataPoint[]>(initialCandles || [])
   const [loading, setLoading] = useState<boolean>(!initialCandles || initialCandles.length === 0)
@@ -178,23 +186,35 @@ export function TradingViewCandleChart({
     ma50?: number
   } | null>(null)
 
-  // 1. Nạp dữ liệu nến: Ưu tiên SSR -> API Nội Bộ -> Fallback Entrade Open CORS -> VNDirect
+  // 1. Nạp dữ liệu nến: Ưu tiên RAM Cache 0ms -> SSR -> API Nội Bộ -> Fallback Entrade Open CORS -> VNDirect
   useEffect(() => {
     let isMounted = true
+    const sym = symbol.toUpperCase().trim()
 
+    // Kiểm tra initialCandles nếu có
     if (reloadKey === 0 && initialCandles && initialCandles.length > 0) {
+      globalCandlesCache.set(sym, initialCandles)
       setCandles(initialCandles)
       setLoading(false)
       setError(null)
       return
     }
 
+    // Kiểm tra In-Memory RAM Cache (0ms Instant Return chuẩn FireAnt)
+    if (reloadKey === 0 && globalCandlesCache.has(sym)) {
+      const cached = globalCandlesCache.get(sym)!
+      if (cached && cached.length > 0) {
+        setCandles(cached)
+        setLoading(false)
+        setError(null)
+        return
+      }
+    }
+
     async function fetchCandles() {
       try {
         setLoading(true)
         setError(null)
-
-        const sym = symbol.toUpperCase().trim()
 
         // Bước 1: Thử gọi qua API nội bộ
         try {
@@ -203,6 +223,7 @@ export function TradingViewCandleChart({
             const data = await res.json()
             if (data && Array.isArray(data.candles) && data.candles.length > 0) {
               if (isMounted) {
+                globalCandlesCache.set(sym, data.candles)
                 setCandles(data.candles)
                 setLoading(false)
                 return
@@ -227,6 +248,7 @@ export function TradingViewCandleChart({
             const parsed = parseEntradeToCandles(entradeData)
             if (parsed.length > 0) {
               if (isMounted) {
+                globalCandlesCache.set(sym, parsed)
                 setCandles(parsed)
                 setLoading(false)
                 return
@@ -395,9 +417,20 @@ export function TradingViewCandleChart({
     }
   }, [validCandles])
 
-  // 5. Khởi tạo biểu đồ Lightweight Charts
+  // 5. Đồng bộ Refs cho Crosshair Listener (Tránh re-bind event & stale closure)
   useEffect(() => {
-    if (!containerRef.current || validCandles.length === 0) return
+    validCandlesRef.current = validCandles
+    ma20DataRef.current = ma20Data
+    ma50DataRef.current = ma50Data
+    const map = new Map<string, CandleDataPoint>()
+    validCandles.forEach((c) => map.set(c.time, c))
+    candleMapRef.current = map
+  }, [validCandles, ma20Data, ma50Data])
+
+  // 6. Khởi tạo biểu đồ Lightweight Charts (Chạy 1 lần duy nhất khi Mount - Chuẩn FireAnt Canvas Reuse)
+  useEffect(() => {
+    const container = containerRef.current
+    if (!container) return
 
     // Dọn dẹp biểu đồ cũ nếu có
     if (chartRef.current) {
@@ -405,7 +438,6 @@ export function TradingViewCandleChart({
       chartRef.current = null
     }
 
-    const container = containerRef.current
     hasFittedRef.current = false
 
     // Khởi tạo biểu đồ Dark Theme tối ưu giống FireAnt & TradingView
@@ -453,15 +485,15 @@ export function TradingViewCandleChart({
       },
       handleScale: {
         axisPressedMouseMove: true,
-        mouseWheel: false, // Tắt phóng to thu nhỏ bằng con lăn chuột để không bị giật khi cuộn trang
+        mouseWheel: false,
         pinch: true,
         axisDoubleClickReset: true,
       },
       handleScroll: {
-        mouseWheel: false, // Tắt cuộn nến bằng con lăn chuột để cuộn trang web tự nhiên
+        mouseWheel: false,
         pressedMouseMove: true,
         horzTouchDrag: true,
-        vertTouchDrag: false, // Để cuộn trang mượt mà trên điện thoại
+        vertTouchDrag: false,
       },
     })
     chartRef.current = chart
@@ -470,7 +502,7 @@ export function TradingViewCandleChart({
     try {
       const firstPane = chart.panes()[0]
       if (firstPane) {
-        createTextWatermark(firstPane, {
+        watermarkRef.current = createTextWatermark(firstPane, {
           lines: [
             {
               text: symbol.toUpperCase(),
@@ -504,16 +536,6 @@ export function TradingViewCandleChart({
     })
     candleSeriesRef.current = candleSeries
 
-    candleSeries.setData(
-      validCandles.map((c) => ({
-        time: c.time as unknown as Time,
-        open: c.open,
-        high: c.high,
-        low: c.low,
-        close: c.close,
-      }))
-    )
-
     // 2. Thêm Series Khối Lượng (Volume Histogram)
     const volumeSeries = chart.addSeries(HistogramSeries, {
       priceFormat: { type: 'volume' },
@@ -528,14 +550,6 @@ export function TradingViewCandleChart({
       },
     })
 
-    volumeSeries.setData(
-      validCandles.map((c) => ({
-        time: c.time as unknown as Time,
-        value: c.volume,
-        color: c.close >= c.open ? 'rgba(38, 166, 154, 0.5)' : 'rgba(239, 83, 80, 0.5)',
-      }))
-    )
-
     // 3. Thêm đường MA20 (Line Series)
     const ma20Series = chart.addSeries(LineSeries, {
       color: '#2962FF',
@@ -545,7 +559,6 @@ export function TradingViewCandleChart({
       crosshairMarkerVisible: true,
     })
     ma20SeriesRef.current = ma20Series
-    ma20Series.setData(ma20Data.map((m) => ({ time: m.time as unknown as Time, value: m.value })))
 
     // 4. Thêm đường MA50 (Line Series)
     const ma50Series = chart.addSeries(LineSeries, {
@@ -556,20 +569,21 @@ export function TradingViewCandleChart({
       crosshairMarkerVisible: true,
     })
     ma50SeriesRef.current = ma50Series
-    ma50Series.setData(ma50Data.map((m) => ({ time: m.time as unknown as Time, value: m.value })))
 
-    // 5. Đăng ký sự kiện Crosshair Move để cập nhật Legend O, H, L, C, Vol
-    const candleMap = new Map<string, CandleDataPoint>()
-    validCandles.forEach((c) => candleMap.set(c.time, c))
-
+    // 5. Đăng ký sự kiện Crosshair Move: đọc từ Ref để luôn cập nhật tức thì 0ms
     chart.subscribeCrosshairMove((param) => {
+      const curCandles = validCandlesRef.current
+      if (!curCandles || curCandles.length === 0) return
+
       if (!param || !param.time || !param.seriesData) {
         // Khôi phục nến mới nhất khi chuột rời vùng vẽ
-        const last = validCandles[validCandles.length - 1]
+        const last = curCandles[curCandles.length - 1]
         if (last) {
-          const prev = validCandles.length > 1 ? validCandles[validCandles.length - 2] : null
+          const prev = curCandles.length > 1 ? curCandles[curCandles.length - 2] : null
           const chg = prev ? last.close - prev.close : 0
           const chgPct = prev && prev.close > 0 ? (chg / prev.close) * 100 : 0
+          const ma20List = ma20DataRef.current
+          const ma50List = ma50DataRef.current
           setLegendData({
             date: last.dateStr || last.time,
             open: last.open,
@@ -579,8 +593,8 @@ export function TradingViewCandleChart({
             volume: last.volume,
             change: Math.round(chg * 100) / 100,
             changePct: Math.round(chgPct * 100) / 100,
-            ma20: ma20Data[ma20Data.length - 1]?.value,
-            ma50: ma50Data[ma50Data.length - 1]?.value,
+            ma20: ma20List.length > 0 ? ma20List[ma20List.length - 1]?.value : undefined,
+            ma50: ma50List.length > 0 ? ma50List[ma50List.length - 1]?.value : undefined,
           })
         }
         return
@@ -592,7 +606,7 @@ export function TradingViewCandleChart({
         ? `${(param.time as any).year}-${String((param.time as any).month).padStart(2, '0')}-${String((param.time as any).day).padStart(2, '0')}`
         : String(param.time)
 
-      const pointCandle = candleMap.get(timeKey)
+      const pointCandle = candleMapRef.current.get(timeKey)
       const candleData = param.seriesData.get(candleSeries) as any
       const volData = param.seriesData.get(volumeSeries) as any
       const ma20Val = param.seriesData.get(ma20Series) as any
@@ -633,16 +647,7 @@ export function TradingViewCandleChart({
     })
     ro.observe(container)
 
-    // Khởi tạo khung nhìn
-    chart.timeScale().fitContent()
-    const fitTimer = setTimeout(() => {
-      if (chartRef.current) {
-        applyTimeframeRange(timeframe, chartRef.current)
-      }
-    }, 80)
-
     return () => {
-      clearTimeout(fitTimer)
       ro.disconnect()
       chart.remove()
       chartRef.current = null
@@ -650,8 +655,67 @@ export function TradingViewCandleChart({
       volumeSeriesRef.current = null
       ma20SeriesRef.current = null
       ma50SeriesRef.current = null
+      watermarkRef.current = null
     }
-  }, [validCandles, ma20Data, ma50Data]) // eslint-disable-line react-hooks/exhaustive-deps
+  }, []) // Mount 1 lần duy nhất, giữ nguyên Canvas context!
+
+  // 7. Cập nhật Dữ liệu Nến Tức Thì (Data Sync - 0ms Không bao giờ tạo lại biểu đồ)
+  useEffect(() => {
+    if (!chartRef.current || !candleSeriesRef.current || validCandles.length === 0) return
+
+    // Nạp nến
+    candleSeriesRef.current.setData(
+      validCandles.map((c) => ({
+        time: c.time as unknown as Time,
+        open: c.open,
+        high: c.high,
+        low: c.low,
+        close: c.close,
+      }))
+    )
+
+    // Nạp khối lượng
+    if (volumeSeriesRef.current) {
+      volumeSeriesRef.current.setData(
+        validCandles.map((c) => ({
+          time: c.time as unknown as Time,
+          value: c.volume,
+          color: c.close >= c.open ? 'rgba(38, 166, 154, 0.5)' : 'rgba(239, 83, 80, 0.5)',
+        }))
+      )
+    }
+
+    // Nạp MA20
+    if (ma20SeriesRef.current) {
+      ma20SeriesRef.current.setData(ma20Data.map((m) => ({ time: m.time as unknown as Time, value: m.value })))
+    }
+
+    // Nạp MA50
+    if (ma50SeriesRef.current) {
+      ma50SeriesRef.current.setData(ma50Data.map((m) => ({ time: m.time as unknown as Time, value: m.value })))
+    }
+
+    // Cập nhật watermark mã cổ phiếu
+    try {
+      if (watermarkRef.current) {
+        watermarkRef.current.applyOptions({
+          lines: [
+            {
+              text: symbol.toUpperCase(),
+              color: 'rgba(255, 255, 255, 0.045)',
+              fontSize: 72,
+              fontFamily: 'Inter, system-ui, sans-serif',
+              fontStyle: 'bold',
+              lineHeight: 76,
+            },
+          ],
+        })
+      }
+    } catch {}
+
+    // Căn chỉnh khung nhìn thời gian
+    applyTimeframeRange(timeframe, chartRef.current)
+  }, [validCandles, ma20Data, ma50Data, symbol, timeframe, applyTimeframeRange])
 
   // Cập nhật hiển thị chỉ báo MA20, MA50, Volume khi toggle
   useEffect(() => {

@@ -35,6 +35,11 @@ const nextConfig = {
   serverExternalPackages: ['node:sqlite'],
   experimental: {
     optimizePackageImports: ['lucide-react', 'recharts', 'marked'],
+    // Bộ nhớ đệm Client Router Cache (Chuẩn FireAnt 0ms khi xem lại mã trong 5 phút)
+    staleTimes: {
+      dynamic: 300, // 5 phút lưu trữ RAM Client cho các mã cổ phiếu đã xem
+      static: 1800, // 30 phút cho các trang tĩnh
+    },
   },
   outputFileTracingIncludes: {
     '/stock/[symbol]': [

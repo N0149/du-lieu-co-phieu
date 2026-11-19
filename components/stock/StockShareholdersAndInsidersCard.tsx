@@ -86,8 +86,8 @@ export function StockShareholdersAndInsidersCard({
   const [profileData, setProfileData] = useState<CompanyFullProfileData | null>(initialData || null)
   const [loading, setLoading] = useState<boolean>(!initialData)
   
-  // Tab chính: Cổ đông lớn ('shareholders') hoặc Giao dịch nội bộ ('trades')
-  const [activeTab, setActiveTab] = useState<'shareholders' | 'trades'>('shareholders')
+  // Tab chính: Mặc định ưu tiên Giao dịch nội bộ ('trades') trước Cổ đông lớn ('shareholders')
+  const [activeTab, setActiveTab] = useState<'shareholders' | 'trades'>('trades')
   
   // Bộ lọc cổ đông: Tất cả | Cá nhân | Tổ chức
   const [shFilter, setShFilter] = useState<'all' | 'individual' | 'org'>('all')
@@ -216,27 +216,8 @@ export function StockShareholdersAndInsidersCard({
     >
       {/* ── HEADER: SWITCHER CỔ ĐÔNG LỚN vs GIAO DỊCH NỘI BỘ & BỘ LỌC ── */}
       <div className="flex flex-wrap items-center justify-between gap-2.5 p-3 sm:p-3.5 border-b border-border/60 bg-muted/20 shrink-0">
-        {/* Nút chuyển đổi Tab chính */}
+        {/* Nút chuyển đổi Tab chính (Ưu tiên Giao Dịch Nội Bộ lên trước) */}
         <div className="flex items-center rounded-xl bg-muted/70 p-1 border border-border/60 text-xs font-semibold">
-          <button
-            type="button"
-            onClick={() => setActiveTab('shareholders')}
-            className={cn(
-              'flex items-center gap-1.5 px-3 py-1 rounded-lg transition-all cursor-pointer text-xs font-bold',
-              activeTab === 'shareholders'
-                ? 'bg-background text-foreground shadow-xs'
-                : 'text-muted-foreground hover:text-foreground'
-            )}
-          >
-            <Users className="size-3.5 text-primary" />
-            <span>Cổ Đông Lớn</span>
-            {rawShareholders.length > 0 && (
-              <span className="rounded-full bg-primary/15 text-primary px-1.5 py-0.2 text-[10px] font-mono">
-                {rawShareholders.length}
-              </span>
-            )}
-          </button>
-
           <button
             type="button"
             onClick={() => setActiveTab('trades')}
@@ -252,6 +233,25 @@ export function StockShareholdersAndInsidersCard({
             {rawTrades.length > 0 && (
               <span className="rounded-full bg-amber-500/15 text-amber-500 px-1.5 py-0.2 text-[10px] font-mono">
                 {rawTrades.length}
+              </span>
+            )}
+          </button>
+
+          <button
+            type="button"
+            onClick={() => setActiveTab('shareholders')}
+            className={cn(
+              'flex items-center gap-1.5 px-3 py-1 rounded-lg transition-all cursor-pointer text-xs font-bold',
+              activeTab === 'shareholders'
+                ? 'bg-background text-foreground shadow-xs'
+                : 'text-muted-foreground hover:text-foreground'
+            )}
+          >
+            <Users className="size-3.5 text-primary" />
+            <span>Cổ Đông Lớn</span>
+            {rawShareholders.length > 0 && (
+              <span className="rounded-full bg-primary/15 text-primary px-1.5 py-0.2 text-[10px] font-mono">
+                {rawShareholders.length}
               </span>
             )}
           </button>
@@ -595,11 +595,11 @@ export function StockShareholdersAndInsidersCard({
                         {/* Người giao dịch & chức vụ */}
                         <td className="py-2 px-2 align-middle">
                           <div className="leading-tight">
-                            <p className="font-semibold text-foreground text-xs truncate max-w-[200px]" title={t.traderName}>
+                            <p className="font-semibold text-foreground text-xs truncate max-w-[190px] sm:max-w-[240px] xl:max-w-[320px]" title={t.traderName}>
                               {t.traderName}
                             </p>
                             {(t.traderPosition || t.leaderPosition || t.leaderName) && (
-                              <p className="text-[10px] text-muted-foreground truncate max-w-[200px] mt-0.5">
+                              <p className="text-[10px] text-muted-foreground truncate max-w-[190px] sm:max-w-[240px] xl:max-w-[320px] mt-0.5">
                                 {t.traderPosition || (t.leaderPosition ? `${t.leaderPosition} (${t.leaderName})` : t.leaderName)}
                               </p>
                             )}

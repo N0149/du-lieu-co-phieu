@@ -218,9 +218,9 @@ export default function AdminPage() {
     planId?: '1_month' | '6_months' | '1_year' | 'custom'
     days?: number
   }) => {
-    const cleanEmail = opts.email.trim().toLowerCase()
-    if (!cleanEmail || !cleanEmail.includes('@')) {
-      setVipFeedback({ type: 'error', text: 'Vui lòng nhập email hợp lệ của khách hàng.' })
+    const cleanAccount = opts.email.trim().toLowerCase()
+    if (!cleanAccount) {
+      setVipFeedback({ type: 'error', text: 'Vui lòng nhập email hoặc tên tài khoản của khách hàng.' })
       return
     }
 
@@ -232,7 +232,7 @@ export default function AdminPage() {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
-          email: cleanEmail,
+          email: cleanAccount,
           action: opts.action || 'activate',
           planId: opts.planId || vipPlanId,
           days: opts.days ?? (vipPlanId === 'custom' ? Number(vipCustomDays) : undefined),
@@ -248,7 +248,7 @@ export default function AdminPage() {
       if (json.user) {
         setUsers((prev) =>
           prev.map((u) =>
-            u.email.toLowerCase() === cleanEmail
+            u.email.toLowerCase() === cleanAccount || u.email.split('@')[0].toLowerCase() === cleanAccount
               ? {
                   ...u,
                   isVip: json.user.isVip,
@@ -515,7 +515,7 @@ export default function AdminPage() {
               <div className="lg:col-span-5 relative">
                 <input
                   ref={vipInputRef}
-                  type="email"
+                  type="text"
                   required
                   list="admin-vip-user-emails"
                   value={vipEmail}
@@ -523,7 +523,7 @@ export default function AdminPage() {
                     setVipEmail(e.target.value)
                     if (vipFeedback) setVipFeedback(null)
                   }}
-                  placeholder="Nhập email khách (VD: khachhang@gmail.com)..."
+                  placeholder="Nhập tên tài khoản hoặc email (VD: bigzero0149 hoặc khach@gmail.com)..."
                   className="w-full rounded-xl border border-white/15 bg-[#0e1117] px-3.5 py-2.5 text-sm text-white placeholder-[#7c8999] focus:border-amber-400 focus:outline-none focus:ring-1 focus:ring-amber-400"
                 />
                 <datalist id="admin-vip-user-emails">

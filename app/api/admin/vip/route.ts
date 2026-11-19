@@ -16,7 +16,8 @@ const VIP_PLANS: Record<string, { label: string; days: number }> = {
   '1_year': { label: 'Gói 1 Năm (890.000đ)', days: 365 },
 }
 
-async function findUserByEmail(adminSb: NonNullable<ReturnType<typeof createAdminClient>>, emailLower: string) {
+async function findUserByQuery(adminSb: NonNullable<ReturnType<typeof createAdminClient>>, query: string) {
+  const q = query.trim().toLowerCase()
   const perPage = 1000
   for (let page = 1; page <= 10; page++) {
     const { data, error } = await adminSb.auth.admin.listUsers({ page, perPage })
@@ -24,7 +25,12 @@ async function findUserByEmail(adminSb: NonNullable<ReturnType<typeof createAdmi
       throw new Error(error.message || 'Lỗi truy vấn danh sách người dùng Supabase')
     }
     const users = data?.users || []
-    const matched = users.find((u) => (u.email || '').trim().toLowerCase() === emailLower)
+    const matched = users.find((u) => {
+      const email = (u.email || '').trim().toLowerCase()
+      const emailPrefix = email.split('@')[0]
+      const customName = ((u.user_metadata?.user_name || '') as string).toLowerCase()
+      return email === q || emailPrefix === q || customName === q
+    })
     if (matched) return matched
     if (users.length < perPage) break
   }
@@ -63,15 +69,15 @@ export async function POST(req: NextRequest) {
 
     // 2. Đọc tham số từ request
     const body = await req.json().catch(() => ({}))
-    const rawEmail = typeof body.email === 'string' ? body.email.trim().toLowerCase() : ''
+    const rawAccount = typeof body.email === 'string' ? body.email.trim() : (typeof body.account === 'string' ? body.account.trim() : '')
     const action: 'activate' | 'revoke' = body.action === 'revoke' ? 'revoke' : 'activate'
     const planId: string = typeof body.planId === 'string' ? body.planId : '1_month'
     const extendFromExisting: boolean = body.extendFromExisting !== false
     const note: string = typeof body.note === 'string' ? body.note.trim() : ''
 
-    if (!rawEmail || !rawEmail.includes('@')) {
+    if (!rawAccount) {
       return NextResponse.json(
-        { error: 'Vui lòng nhập địa chỉ email hợp lệ của khách hàng.' },
+        { error: 'Vui lòng nhập email hoặc tên tài khoản của khách hàng.' },
         { status: 400 }
       )
     }
@@ -85,12 +91,12 @@ export async function POST(req: NextRequest) {
       )
     }
 
-    // 4. Tìm tài khoản theo Email
-    const targetUser = await findUserByEmail(adminSb, rawEmail)
+    // 4. Tìm tài khoản theo Email hoặc Tên tài khoản
+    const targetUser = await findUserByQuery(adminSb, rawAccount)
     if (!targetUser) {
       return NextResponse.json(
         {
-          error: `Không tìm thấy tài khoản nào có email "${rawEmail}". Hãy kiểm tra lại chính tả hoặc nhắc khách bấm Đăng nhập Google vào web trước 1 lần.`,
+          error: `Không tìm thấy tài khoản nào khớp với "${rawAccount}". Hãy kiểm tra lại chính tả hoặc nhắc khách bấm Đăng nhập Google vào web trước 1 lần.`,
         },
         { status: 404 }
       )

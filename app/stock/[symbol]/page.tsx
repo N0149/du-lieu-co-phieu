@@ -143,15 +143,8 @@ export default async function StockDetailPage({
     getStockEvaluation(ticker),
     getFinancialChartData(ticker, 'quarter'),
     getFinancialChartData(ticker, 'annual'),
-    (async () => {
-      const local = getLocalStockCandles(ticker)
-      if (local && local.length > 0) return local
-      try {
-        return await getStockCandles(ticker, 3)
-      } catch {
-        return []
-      }
-    })(),
+    // Ưu tiên nến lưu cục bộ 0ms; nếu chưa có thì trả về mảng rỗng để client tải song song nền, loại bỏ độ trễ nghẽn mạng SSR
+    Promise.resolve(getLocalStockCandles(ticker) || []),
     Promise.resolve(getCompanyWebsiteMeta(ticker)),
 
     // Nhóm 2: Dữ liệu theo tab & nội dung cốt lõi (100% Local-First / SQLite / Disk)
@@ -165,8 +158,10 @@ export default async function StockDetailPage({
     // Khi ở tab khác, dữ liệu được tải mượt mà on-demand khi chuyển tab, giảm 80% dung lượng HTML ban đầu
     isAgmTab ? Promise.resolve(getAgmReport(ticker, 2026)) : Promise.resolve(null),
     Promise.resolve(getAvailableAgmTickers(2026)),
-    (isBctcTab || isFinancialsTab) ? Promise.resolve(getBctcReport(ticker, 'HopNhat', targetSsrPeriod)) : Promise.resolve(null),
-    (isBctcTab || isFinancialsTab) ? Promise.resolve(getBctcReport(ticker, 'CongTyMe', targetSsrPeriod)) : Promise.resolve(null),
+    // Tối ưu Payload chuẩn FireAnt: Chỉ nạp 676KB văn bản thuyết minh BCTC khi người dùng thực sự mở Tab Thuyết minh
+    // Ở các tab khác, thuyết minh được client tải ngầm không làm phình to HTML/RSC ban đầu
+    isBctcTab ? Promise.resolve(getBctcReport(ticker, 'HopNhat', targetSsrPeriod)) : Promise.resolve(null),
+    isBctcTab ? Promise.resolve(getBctcReport(ticker, 'CongTyMe', targetSsrPeriod)) : Promise.resolve(null),
     Promise.resolve(getAvailableBctcTickers()),
     isArticlesTab ? getStockArticlesAsync(ticker, manifestItem.n) : Promise.resolve(null),
   ])
