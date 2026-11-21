@@ -27,6 +27,7 @@ import {
   ChevronRight,
   Newspaper,
   ScrollText,
+  BookOpen,
   MessageSquare,
   Coins,
   Crown,
@@ -42,6 +43,7 @@ import type { RawFinancialStatementData } from '@/lib/financial-statements-db'
 import type { StockArticlesPayload } from '@/lib/stock-articles-service'
 import type { AgmReportData } from '@/lib/agm-service'
 import type { BctcReportData } from '@/lib/bctc-service'
+import type { BctnReportData } from '@/lib/bctn-service'
 import { StockEvaluationHeader } from '@/components/stock/StockEvaluationHeader'
 import { TradingViewCandleChart } from '@/components/stock/TradingViewCandleChart'
 import type { DetailedFinancialSnapshot } from '@/lib/local-financials'
@@ -80,6 +82,7 @@ export type StockDetailTab =
   | 'bctc'
   | 'bctc-ban-nien'
   | 'bctc-q3'
+  | 'bctn'
 
 interface StockDetailViewProps {
   stockData: StockDetailData
@@ -109,6 +112,8 @@ interface StockDetailViewProps {
   bctcDataHopNhat?: BctcReportData | null
   bctcDataCongTyMe?: BctcReportData | null
   availableBctcTickers?: string[]
+  bctnData?: BctnReportData | null
+  availableBctnTickers?: string[]
   hasBctcQ3?: boolean
   hasBctcBanNien?: boolean
   ktplRate?: number | null
@@ -338,6 +343,14 @@ function resolveValidTab(tab: StockDetailTab | string | null | undefined): Stock
   ) {
     return 'bctc'
   }
+  if (
+    tab === 'bctn' ||
+    tab === 'bao-cao-thuong-nien' ||
+    tab === 'bctn-2025' ||
+    tab === 'annual-report'
+  ) {
+    return 'bctn'
+  }
   return tab as StockDetailTab
 }
 
@@ -361,6 +374,14 @@ const StockBctcReportView = dynamic(
   () => import('@/components/stock/StockBctcReportView').then((m) => m.StockBctcReportView),
   {
     loading: () => <TabLoadingSkeleton tabLabel="Báo cáo tài chính chi tiết" />,
+    ssr: false,
+  }
+)
+
+const StockBctnReportView = dynamic(
+  () => import('@/components/stock/StockBctnReportView').then((m) => m.StockBctnReportView),
+  {
+    loading: () => <TabLoadingSkeleton tabLabel="Báo cáo thường niên" />,
     ssr: false,
   }
 )
@@ -393,6 +414,8 @@ export function StockDetailView({
   bctcDataHopNhat = null,
   bctcDataCongTyMe = null,
   availableBctcTickers = [],
+  bctnData = null,
+  availableBctnTickers = [],
   hasBctcQ3 = false,
   hasBctcBanNien = false,
   ktplRate = null,
@@ -1038,10 +1061,18 @@ export function StockDetailView({
         iconColor: 'text-emerald-400',
         badge: (hasBctcQ3 || hasBctcBanNien || bctcDataHopNhat?.hasReport || bctcDataCongTyMe?.hasReport || availableBctcTickers?.includes(ticker)) ? 'MỚI' : undefined,
       },
+      {
+        id: 'bctn' as StockDetailTab,
+        label: 'Báo Cáo Thường Niên',
+        shortLabel: 'BCTN',
+        icon: BookOpen,
+        iconColor: 'text-indigo-400',
+        badge: (bctnData?.hasReport || availableBctnTickers?.includes(ticker)) ? '2025' : undefined,
+      },
     )
 
     return list
-  }, [agmData, articlesData, bctcDataHopNhat, bctcDataCongTyMe, dividendHistory, availableAgmTickers, availableBctcTickers, hasBctcQ3, hasBctcBanNien, ticker])
+  }, [agmData, articlesData, bctcDataHopNhat, bctcDataCongTyMe, bctnData, dividendHistory, availableAgmTickers, availableBctcTickers, availableBctnTickers, hasBctcQ3, hasBctcBanNien, ticker])
 
   return (
     <div className="space-y-5 pb-12 w-full">
@@ -2560,6 +2591,36 @@ export function StockDetailView({
             bctcDataHopNhat={bctcDataHopNhat}
             bctcDataCongTyMe={bctcDataCongTyMe}
           />
+          </AuthGate>
+        </div>
+      )}
+
+      {/* ══════════════════════════════════════════════════════════ */}
+      {/* TAB: BÁO CÁO THƯỜNG NIÊN (BCTN 2025)                      */}
+      {/* ══════════════════════════════════════════════════════════ */}
+      {mountedTabs.has('bctn') && (
+        <div className={cn("animate-in fade-in-50 duration-200", (activeTab !== 'bctn' || loadingTab === 'bctn') && "hidden")}>
+          <AuthGate
+            isLoggedIn={effectiveIsLoggedIn}
+            isVip={effectiveIsVip}
+            requiredTier="vip"
+            variant="blur"
+            blurHeight={360}
+            title="Mở khóa Báo Cáo Thường Niên 2025 Chuyên Sâu (VIP)"
+            subtitle="Dành riêng cho Hội viên VIP: Toàn bộ nội dung Báo Cáo Thường Niên bóc tách chi tiết từng mục hoạt động, kế hoạch kinh doanh, quản trị và chiến lược ESG."
+            features={[
+              'Toàn bộ các chương mục bóc tách thông minh từ Báo Cáo Thường Niên 2025 gốc',
+              'Bảng số liệu chi tiết về năng lực sản xuất, dự án đầu tư và kế hoạch tương lai',
+              'Đầy đủ thông tin cơ cấu quản trị, thù lao ban lãnh đạo và báo cáo phát triển bền vững ESG',
+            ]}
+            ctaText="👑 Nâng cấp VIP để xem Báo Cáo Thường Niên"
+          >
+            <StockBctnReportView
+              bctnData={bctnData}
+              ticker={ticker}
+              companyName={company.name}
+              availableTickers={availableBctnTickers}
+            />
           </AuthGate>
         </div>
       )}

@@ -93,7 +93,8 @@ export function formatQuarterKqkdTable(symbol: string): string {
  * Quét toàn bộ tài liệu gốc (.md) trong hệ thống mang tên mã cổ phiếu đó:
  * - Thuyết minh BCTC Quý 3/2026
  * - Thuyết minh BCTC Bán Niên 2026
- * - Tài liệu ĐHĐCĐ AGM 2026
+ * - Báo Cáo Thường Niên (BCTN 2025/2026)
+ * - Tài liệu ĐHĐCĐ AGM 2026, 2025
  * - Nghiên cứu chuyên sâu AI & Định giá
  * Tuyệt đối chỉ đọc file có tên bắt đầu bằng mã cổ phiếu (${SYM}_ hoặc ${sym}-)
  */
@@ -101,6 +102,7 @@ export function getAttachedDocumentsForStock(tickerSymbol: string): AttachedStoc
   const sym = tickerSymbol.toUpperCase().trim()
   const symLower = tickerSymbol.toLowerCase().trim()
   const docs: AttachedStockDoc[] = []
+  const seenFilenames = new Set<string>()
 
   const targetDirs = [
     { dir: path.join(process.cwd(), 'content', 'bctc', 'Quy_3_2026'), cat: 'Thuyết minh BCTC Quý 3/2026' },
@@ -110,12 +112,43 @@ export function getAttachedDocumentsForStock(tickerSymbol: string): AttachedStoc
     { dir: path.join(process.cwd(), 'content', 'nghien_cuu_ai'), cat: 'Nghiên cứu chuyên sâu AI & Định giá' },
   ]
 
+  // Quét các thư mục Báo Cáo Thường Niên (content/bctn/{year})
+  const bctnBase = path.join(process.cwd(), 'content', 'bctn')
+  if (fs.existsSync(/*turbopackIgnore: true*/ bctnBase)) {
+    try {
+      const yearDirs = fs
+        .readdirSync(/*turbopackIgnore: true*/ bctnBase)
+        .filter((d) => !isNaN(Number(d)))
+        .sort((a, b) => Number(b) - Number(a))
+      for (const y of yearDirs) {
+        targetDirs.push({
+          dir: path.join(bctnBase, y),
+          cat: `Báo Cáo Thường Niên Năm ${y} (BCTN)`,
+        })
+      }
+    } catch {
+      // ignore
+    }
+  }
+
+  // Quét thêm thư mục ngoài nếu có (môi trường máy trạm nội bộ)
+  const externalBctnDir = 'D:\\hoc\\lap trinh\\tai-lieu-BCTC\\ket_qua_trich_xuat\\BCTN_2026'
+  if (fs.existsSync(/*turbopackIgnore: true*/ externalBctnDir)) {
+    targetDirs.push({
+      dir: externalBctnDir,
+      cat: 'Báo Cáo Thường Niên Năm 2025 (BCTN)',
+    })
+  }
+
   for (const target of targetDirs) {
     if (!fs.existsSync(/*turbopackIgnore: true*/ target.dir)) continue
     try {
       const files = fs.readdirSync(/*turbopackIgnore: true*/ target.dir)
       for (const f of files) {
         if (!f.endsWith('.md')) continue
+        const fileKey = f.toUpperCase()
+        if (seenFilenames.has(fileKey)) continue
+
         const u = f.toUpperCase()
         const l = f.toLowerCase()
         const matchUpper = u.startsWith(sym + '_') || u.startsWith(sym + '-') || u.startsWith(sym + '.')
@@ -124,6 +157,7 @@ export function getAttachedDocumentsForStock(tickerSymbol: string): AttachedStoc
           const fullPath = path.join(/*turbopackIgnore: true*/ target.dir, f)
           const stat = fs.statSync(/*turbopackIgnore: true*/ fullPath)
           const content = fs.readFileSync(/*turbopackIgnore: true*/ fullPath, 'utf8')
+          seenFilenames.add(fileKey)
           docs.push({
             filename: f,
             category: target.cat,
@@ -176,7 +210,7 @@ export async function buildStockAiBundle(tickerSymbol: string): Promise<AiBundle
   const docListSummary =
     attachedDocs.length > 0
       ? attachedDocs.map((d, i) => `${i + 1}. 📄 **${d.filename}** (${d.category} · ${d.sizeKb} KB)`).join('\n')
-      : `_Hệ thống hiện chưa có tài liệu bóc tách văn bản (.md) mang tên mã ${sym} trong các kho BCTC Quý 3/2026, BCTC Bán Niên 2026, AGM 2026 hay Nghiên cứu AI._`
+      : `_Hệ thống hiện chưa có tài liệu bóc tách văn bản (.md) mang tên mã ${sym} trong các kho BCTC Quý 3/2026, BCTC Bán Niên 2026, Báo Cáo Thường Niên (BCTN), AGM 2026 hay Nghiên cứu AI._`
 
   // 4. Nội dung chi tiết từng file đính kèm
   const docSections = attachedDocs
@@ -215,10 +249,11 @@ ${quarterKqkdTable ? `\n### Bảng Tóm Tắt KQKD Các Quý Gần Nhất:\n${qu
 ================================================================================
 🎯 HƯỚNG DẪN TRẢ LỜI CHO AI (SYSTEM PROMPT):
 1. **Trả lời đúng trọng tâm**: Trả lời trực tiếp câu hỏi của người dùng dựa trên các tài liệu đính kèm bên trên.
-2. **Nếu người dùng hỏi về tài liệu**: Liệt kê rõ các tài liệu tìm thấy ở mục "DANH MỤC TÀI LIỆU ĐÃ ĐÍNH KÈM" và tóm lược ngắn gọn nội dung của từng file. Nếu chưa có file BCTC thì nêu rõ chỉ có tài liệu AGM (hoặc ngược lại).
+2. **Nếu người dùng hỏi về tài liệu**: Liệt kê rõ các tài liệu tìm thấy ở mục "DANH MỤC TÀI LIỆU ĐÃ ĐÍNH KÈM" và tóm lược ngắn gọn nội dung của từng file. Nếu chưa có file BCTC thì nêu rõ chỉ có tài liệu BCTN hay AGM (hoặc ngược lại).
 3. **Nếu người dùng yêu cầu chấm điểm / phân tích**:
    - Đánh giá chất lượng kinh doanh & dòng tiền từ BCTC.
    - Đánh giá Ban Lãnh đạo & tính minh bạch với cổ đông nhỏ lẻ từ tài liệu AGM (đặc biệt là tỷ lệ trích Quỹ khen thưởng phúc lợi KTPL và thảo luận ĐHĐCĐ).
+   - Đánh giá chiến lược dài hạn, kế hoạch sản xuất kinh doanh, cơ cấu ban điều hành và định hướng phát triển bền vững ESG từ Báo Cáo Thường Niên (BCTN).
    - Đưa ra kết luận và chấm điểm định giá tổng kết theo thang điểm chuẩn hóa:
      * Quy chuẩn: Benchmark lãi suất gửi tiết kiệm 10%/năm = 100 điểm.
      * Điểm ≥ 200: Siêu Hấp Dẫn (Cơ hội đầu tư xuất sắc, biên an toàn cao).

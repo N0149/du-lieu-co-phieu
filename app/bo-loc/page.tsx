@@ -26,9 +26,9 @@ export default function BoLocPage() {
         <WiDataScreener initialStocks={initialStocks} />
       </main>
 
-      <footer className="border-t border-white/10 bg-[#121620] px-4 py-3 text-center text-[11px] text-muted-foreground">
+      <div className="border-t border-white/10 bg-[#121620] px-4 py-3 text-center text-[11px] text-muted-foreground">
         Hệ thống Bộ lọc Cổ phiếu Chuyên Sâu · Dữ liệu cập nhật từ các Sở Giao dịch Chứng khoán HOSE, HNX, UPCOM và BCTC doanh nghiệp niêm yết.
-      </footer>
+      </div>
     </div>
   )
 }

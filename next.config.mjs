@@ -31,6 +31,7 @@ const securityHeaders = [
 ]
 
 const nextConfig = {
+  allowedDevOrigins: ['127.0.0.1', 'localhost'],
   poweredByHeader: false,
   serverExternalPackages: ['node:sqlite'],
   experimental: {

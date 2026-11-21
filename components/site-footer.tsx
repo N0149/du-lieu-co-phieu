@@ -9,7 +9,7 @@ const FOOTER_LINKS = [
 
 export function SiteFooter() {
   return (
-    <footer className="mx-auto w-full max-w-[1600px] px-4 py-8">
+    <footer className="mx-auto w-full max-w-[1600px] px-4 pt-8 pb-24 lg:pb-8">
       <div className="rounded-xl border border-white/8 bg-[#212631] shadow-[0_4px_20px_rgba(0,0,0,0.25)] p-6 sm:p-8">
         {/* Tuyên bố giới thiệu & Miễn trách nhiệm */}
         <section aria-labelledby="disclaimer-title" className="max-w-4xl">

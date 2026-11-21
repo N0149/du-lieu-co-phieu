@@ -388,10 +388,10 @@ export function NewsDashboard({
   return (
     <div className="min-h-screen w-full bg-[#0b0d11] text-[#9aa0a6] font-sans antialiased">
       {/* Top Header Navigation */}
-      <div className="sticky top-0 z-30 border-b border-[#1f242d] bg-[#0b0d11]/95 backdrop-blur">
-        <div className="flex h-12 w-full items-center justify-between px-3 sm:px-4 lg:px-6">
+      <div className="sticky top-14 z-30 border-b border-[#1f242d] bg-[#0b0d11]/95 backdrop-blur">
+        <div className="flex h-12 w-full items-center justify-between gap-2 px-3 sm:px-4 lg:px-6">
           {/* Left: Navigation Tabs */}
-          <div className="flex items-center gap-1.5 overflow-x-auto no-scrollbar py-1">
+          <div className="flex flex-1 min-w-0 items-center gap-1.5 overflow-x-auto no-scrollbar py-1">
             <button
               type="button"
               onClick={() => setActiveTab('cong-bo')}
@@ -476,7 +476,7 @@ export function NewsDashboard({
           </div>
 
           {/* Right: Search Input & Filter Dropdown (WiData Style) */}
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-2 sm:gap-3 shrink-0">
             {/* Filter by Source dropdown */}
             <div className="hidden sm:block">
               <select
@@ -496,7 +496,7 @@ export function NewsDashboard({
             </div>
 
             {/* Search Box */}
-            <div className="relative w-44 sm:w-64">
+            <div className="relative w-28 sm:w-64">
               <Search className="absolute left-2.5 top-1/2 size-3.5 -translate-y-1/2 text-[#64748b]" />
               <input
                 type="text"

@@ -1,5 +1,6 @@
 import DriveDocViewer from "@/components/DriveDocViewer";
 import Link from "next/link";
+import { SiteHeader } from "@/components/site-header";
 import { ReportAudioPlayer } from "@/components/report-audio-player";
 import { getAuthenticatedUser } from "@/lib/auth-user-helper";
 import { isVipUser } from "@/lib/admin-auth";
@@ -29,8 +30,10 @@ export default async function ReportDetailPage({
   const localReport = getNghienCuuAiReportBySlug(localSlug);
 
   return (
-    <div className="container mx-auto px-4 py-8 max-w-6xl">
-      {/* Nút quay lại */}
+    <div className="flex min-h-screen flex-col bg-[#0b0d11]">
+      <SiteHeader />
+      <main className="mx-auto w-full max-w-[1600px] px-4 py-6 flex-1">
+        {/* Nút quay lại */}
       <div className="mb-6 flex items-center justify-between gap-4">
         <Link
           href="/bao-cao"
@@ -158,6 +161,7 @@ export default async function ReportDetailPage({
           </div>
         </AuthGate>
       )}
+      </main>
     </div>
   );
 }

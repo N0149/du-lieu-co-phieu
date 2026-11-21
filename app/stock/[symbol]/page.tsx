@@ -24,6 +24,7 @@ import { buildCapexFinancialData } from '@/lib/capex-financial-service'
 import { buildDebtDupontData } from '@/lib/debt-dupont-service'
 import { getAgmReport, getAvailableAgmTickers, getAgmKtpl } from '@/lib/agm-service'
 import { getBctcReport, getAvailableBctcTickers, hasBctcReportForPeriod } from '@/lib/bctc-service'
+import { getBctnReport, getAvailableBctnTickers } from '@/lib/bctn-service'
 import { getStockIcbHierarchy } from '@/lib/icb-service'
 import { getFinancialStatements } from '@/lib/financial-statements-db'
 import { getStockArticles, getStockArticlesAsync } from '@/lib/stock-articles-service'
@@ -71,7 +72,7 @@ export default async function StockDetailPage({
   const hasBctcQ3 = hasBctcReportForPeriod(ticker, 'Quy_3_2026')
   const hasBctcBanNien = hasBctcReportForPeriod(ticker, 'Ban_Nien_2026')
 
-  let initialTab: 'overview' | 'profile' | 'dividends' | 'charts' | 'articles' | 'community' | 'financials' | 'peers' | 'reports' | 'agm' | 'bctc' = 'financials'
+  let initialTab: 'overview' | 'profile' | 'dividends' | 'charts' | 'articles' | 'community' | 'financials' | 'peers' | 'reports' | 'agm' | 'bctc' | 'bctn' = 'financials'
 
   if (rawTab === 'overview' || rawTab === 'tong-quan' || rawTab === 'do-thi' || rawTab === 'chart') initialTab = 'overview'
   else if (rawTab === 'profile' || rawTab === 'ho-so') initialTab = 'profile'
@@ -83,6 +84,14 @@ export default async function StockDetailPage({
   else if (rawTab === 'peers') initialTab = 'peers'
   else if (rawTab === 'reports') initialTab = 'reports'
   else if (rawTab === 'agm' || rawTab === 'dhcd' || rawTab === 'dhcd-2026' || rawTab === 'dai-hoi-co-dong') initialTab = 'agm'
+  else if (
+    rawTab === 'bctn' ||
+    rawTab === 'bao-cao-thuong-nien' ||
+    rawTab === 'bctn-2025' ||
+    rawTab === 'annual-report'
+  ) {
+    initialTab = 'bctn'
+  }
   else if (
     rawTab === 'bctc' ||
     rawTab === 'thuyet-minh' ||
@@ -111,6 +120,7 @@ export default async function StockDetailPage({
   const isFinancialsTab = initialTab === 'financials'
   const isAgmTab = initialTab === 'agm'
   const isBctcTab = initialTab === 'bctc'
+  const isBctnTab = initialTab === 'bctn'
   const isTargetBanNien = rawTab === 'bctc-ban-nien' || rawTab === 'ban-nien' || sParams.period === 'Ban_Nien_2026'
   const targetSsrPeriod = isTargetBanNien ? 'Ban_Nien_2026' : (hasBctcQ3 ? 'Quy_3_2026' : (hasBctcBanNien ? 'Ban_Nien_2026' : 'Quy_3_2026'))
   const isProfileTab = initialTab === 'profile' || initialTab === 'overview' || initialTab === 'dividends' || initialTab === 'financials'
@@ -136,6 +146,8 @@ export default async function StockDetailPage({
     bctcDataHopNhat,
     bctcDataCongTyMe,
     availableBctcTickers,
+    bctnData,
+    availableBctnTickers,
     articlesData,
   ] = await Promise.all([
     // Nhóm 1: Dữ liệu cốt lõi Tab Tổng quan (luôn tải, 0ms local disk + live quote)
@@ -154,7 +166,7 @@ export default async function StockDetailPage({
     getBusinessPlan(ticker),
     getFinancialStatements(ticker, 'quarter'),
     getFinancialStatements(ticker, 'annual'),
-    // Tối ưu on-demand: BCTC (~676 KB) và ĐHĐCĐ (~56 KB) chỉ nạp SSR khi người dùng đang ở tab đó
+    // Tối ưu on-demand: BCTC (~676 KB), ĐHĐCĐ (~56 KB) và BCTN (~100 KB) chỉ nạp SSR khi người dùng đang ở tab đó
     // Khi ở tab khác, dữ liệu được tải mượt mà on-demand khi chuyển tab, giảm 80% dung lượng HTML ban đầu
     isAgmTab ? Promise.resolve(getAgmReport(ticker, 2026)) : Promise.resolve(null),
     Promise.resolve(getAvailableAgmTickers(2026)),
@@ -163,6 +175,8 @@ export default async function StockDetailPage({
     isBctcTab ? Promise.resolve(getBctcReport(ticker, 'HopNhat', targetSsrPeriod)) : Promise.resolve(null),
     isBctcTab ? Promise.resolve(getBctcReport(ticker, 'CongTyMe', targetSsrPeriod)) : Promise.resolve(null),
     Promise.resolve(getAvailableBctcTickers()),
+    isBctnTab ? Promise.resolve(getBctnReport(ticker, 2025)) : Promise.resolve(null),
+    Promise.resolve(getAvailableBctnTickers(2025)),
     isArticlesTab ? getStockArticlesAsync(ticker, manifestItem.n) : Promise.resolve(null),
   ])
 
@@ -257,8 +271,9 @@ export default async function StockDetailPage({
   return (
     <div className="min-h-screen bg-background text-foreground">
       <SiteHeader />
-      <main className="w-full px-3 sm:px-6 lg:px-8 py-5">
-        <StockDetailView
+      <main className="w-full py-5">
+        <div className="px-3 sm:px-6 lg:px-8 w-full">
+          <StockDetailView
           stockData={stockData}
           relatedStocks={relatedStocks}
           icbHierarchy={icbHierarchy}
@@ -289,6 +304,8 @@ export default async function StockDetailPage({
           bctcDataHopNhat={bctcDataHopNhat}
           bctcDataCongTyMe={bctcDataCongTyMe}
           availableBctcTickers={availableBctcTickers}
+          bctnData={bctnData}
+          availableBctnTickers={availableBctnTickers}
           hasBctcQ3={hasBctcQ3}
           hasBctcBanNien={hasBctcBanNien}
           ktplRate={ktplRate}
@@ -298,6 +315,7 @@ export default async function StockDetailPage({
           bctcDocuments={bctcDocuments}
           initialCandles={initialCandles}
         />
+        </div>
       </main>
     </div>
   )

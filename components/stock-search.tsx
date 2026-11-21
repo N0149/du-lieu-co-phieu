@@ -47,10 +47,10 @@ export function StockSearch() {
         <button
           type="button"
           onClick={() => setModalOpen(true)}
-          className="group flex h-9 w-full items-center justify-between rounded-lg border border-white/10 bg-[#121620] px-3 text-xs text-[#9EACB9] transition-all hover:border-emerald-500/50 hover:bg-[#181d28] hover:text-[#F0F3F6]"
+          className="group flex h-9 w-full min-w-0 items-center justify-between rounded-lg border border-white/10 bg-[#121620] px-2.5 sm:px-3 text-xs text-[#9EACB9] transition-all hover:border-emerald-500/50 hover:bg-[#181d28] hover:text-[#F0F3F6]"
           title="Mở công cụ tìm kiếm toàn diện (Ctrl + K)"
         >
-          <div className="flex items-center gap-2.5 truncate">
+          <div className="flex flex-1 min-w-0 items-center gap-2 sm:gap-2.5 truncate">
             <Search className="size-4 shrink-0 text-[#64748b] group-hover:text-emerald-400 transition-colors" />
             <span className="truncate hidden sm:inline">
               Tìm kiếm Biểu đồ, Dữ liệu, Bố cục, Cổ phiếu...

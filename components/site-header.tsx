@@ -110,7 +110,7 @@ export function SiteHeader({ hideSearch = false }: SiteHeaderProps) {
 
           {/* Center: Global Search Bar (WiData Style Omnibar) */}
           {shouldShowSearch && (
-            <div className="flex-1 max-w-xl mx-2 sm:mx-4">
+            <div className="flex-1 min-w-0 max-w-xl mx-1 sm:mx-4">
               <StockSearch />
             </div>
           )}

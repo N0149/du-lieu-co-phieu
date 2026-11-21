@@ -226,10 +226,11 @@ export function UserNav() {
       <button
         type="button"
         onClick={() => setAuthModalOpen(true)}
-        className="inline-flex items-center gap-1.5 rounded-xl border border-emerald-500/40 bg-emerald-500/10 px-3 py-1.5 text-xs font-bold text-emerald-400 transition-all hover:bg-emerald-500/20 hover:border-emerald-500/60 active:scale-95 cursor-pointer shadow-xs"
+        className="inline-flex size-8 sm:size-auto sm:h-8 items-center justify-center gap-1.5 rounded-lg border border-emerald-500/40 bg-emerald-500/10 px-2 sm:px-3 text-xs font-bold text-emerald-400 transition-all hover:bg-emerald-500/20 hover:border-emerald-500/60 active:scale-95 cursor-pointer shadow-xs shrink-0"
+        title="Đăng nhập"
       >
-        <LogIn className="size-3.5" />
-        <span>Đăng nhập</span>
+        <LogIn className="size-4 sm:size-3.5" />
+        <span className="hidden sm:inline">Đăng nhập</span>
       </button>
 
       <AuthModal

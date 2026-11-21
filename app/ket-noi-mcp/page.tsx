@@ -39,20 +39,20 @@ const CONNECT_INFO = {
   name: 'dulieudautu.com',
   url: 'https://www.dulieudautu.com/mcp',
   auth: 'OAuth (RFC 7636 PKCE S256)',
-  scope: '16 năm BCTC, Thuyết minh CAPEX & Lãi vay, Kế hoạch ĐHĐCĐ & Quỹ KTPL, Định giá RNAV',
+  scope: '16 năm BCTC, Thuyết minh CAPEX & Lãi vay, Báo Cáo Thường Niên (BCTN), Kế hoạch ĐHĐCĐ & Quỹ KTPL, Định giá RNAV',
 }
 
 const MCP_TOOLS = [
   {
     name: 'tra_cuu_ho_so_tai_chinh',
     title: 'Tra cứu & Tự động Đính kèm Toàn bộ Tài liệu Cổ phiếu',
-    desc: 'Công cụ duy nhất tự động bóc tách và đính kèm trực tiếp vào chat: Thuyết minh BCTC Quý 3/2026, BCTC Bán Niên 2026, Toàn văn tài liệu ĐHĐCĐ AGM 2026, Bài Nghiên cứu chuyên sâu AI & Định giá, Dòng tiền CFO, Nợ vay và Định giá RNAV. Chỉ cần cấp quyền 1 lần duy nhất!',
+    desc: 'Công cụ duy nhất tự động bóc tách và đính kèm trực tiếp vào chat: Thuyết minh BCTC Quý 3/2026, BCTC Bán Niên 2026, Toàn văn Báo Cáo Thường Niên Năm 2025/2026 (BCTN), Tài liệu ĐHĐCĐ AGM 2026, Bài Nghiên cứu chuyên sâu AI & Định giá, Dòng tiền CFO, Nợ vay và Định giá RNAV. Chỉ cần cấp quyền 1 lần duy nhất!',
     badge: 'All-in-One Attachment · Ưu tiên số 1',
   },
   {
     name: 'bo_loc_co_phieu',
     title: 'Bộ lọc Cổ phiếu Thông minh (Screener)',
-    desc: 'Sàng lọc trên toàn bộ 1.530+ mã (HOSE, HNX, UPCoM) theo các tiêu chí tài chính: Ngành, Sàn, P/E, P/B, ROE, Tỷ suất cổ tức tiền mặt, Vốn hóa, Tỷ lệ trích Quỹ KTPL, và Điểm đánh giá AI 360.',
+    desc: 'Sàng lọc trên toàn bộ 1.530+ mã (HOSE, HNX, UPCoM) theo các tiêu chí tài chính: Ngành, Sàn, P/E, P/B, ROE, Tỷ suất cổ tức tiền mặt, Vốn hóa, Tỷ lệ trích Quỹ KTPL, Điểm đánh giá AI 360, và lọc doanh nghiệp đã có Báo Cáo Thường Niên (BCTN).',
     badge: 'Smart Screener',
   },
   {
@@ -63,13 +63,17 @@ const MCP_TOOLS = [
   },
   {
     name: 'su_kien_va_cong_bo_thong_tin',
-    title: 'Lịch Cổ tức, Giao dịch Nội bộ & Công bố TT',
-    desc: 'Tra cứu thông báo chia cổ tức (tiền mặt & cổ phiếu, ngày GDKHQ), giao dịch Lãnh đạo & Cổ đông lớn mua/bán, Nghị quyết ĐHĐCĐ/HĐQT và sự kiện toàn thị trường.',
+    title: 'Lịch Cổ tức, Giao dịch Nội bộ & Danh mục BCTN',
+    desc: 'Tra cứu thông báo chia cổ tức (tiền mặt & cổ phiếu, ngày GDKHQ), giao dịch Lãnh đạo & Cổ đông lớn mua/bán, Nghị quyết ĐHĐCĐ/HĐQT và danh mục doanh nghiệp đã có Báo Cáo Thường Niên bóc tách.',
     badge: 'Corporate Actions',
   },
 ]
 
 const SAMPLE_PROMPTS = [
+  {
+    title: 'Bóc tách chiến lược & ESG từ BCTN',
+    prompt: 'Bóc tách chiến lược dài hạn, kế hoạch đầu tư dự án mới và định hướng phát triển bền vững ESG trong Báo Cáo Thường Niên của VHC.',
+  },
   {
     title: 'Sàng lọc top cổ phiếu Cảng biển',
     prompt: 'Lọc cho tôi các cổ phiếu ngành Cảng biển có ROE > 15%, P/E < 10 và tỷ suất cổ tức tiền mặt > 4%.',
@@ -149,7 +153,7 @@ export default function KetNoiMcpPage() {
   return (
     <>
       <SiteHeader />
-      <div className="min-h-screen bg-[#0e1117] text-[#f0f3f6] pb-24">
+      <main className="min-h-screen bg-[#0e1117] text-[#f0f3f6] pb-24">
         {/* Navigation Breadcrumb Bar */}
         <div className="border-b border-white/5 bg-[#10131a] px-4 sm:px-6 py-2.5">
           <div className="max-w-5xl mx-auto flex flex-wrap items-center justify-between gap-2 text-xs">
@@ -1221,7 +1225,7 @@ export default function KetNoiMcpPage() {
         </div>
 
       </div>
-    </div>
+    </main>
     </>
   )
 }

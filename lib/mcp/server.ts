@@ -8,30 +8,78 @@ import { buildStockAiBundle } from '@/lib/ai-bundle-service'
 import { getStock, upside } from '@/lib/data'
 import { getEnrichedScreenerStocks, type ScreenerStockItem } from '@/lib/screener-data-service'
 import { getDisclosuresBySymbol, getRecentMarketDisclosures, type CorporateDisclosure } from '@/lib/disclosures'
+import { getBctnReport, getAvailableBctnTickers } from '@/lib/bctn-service'
 import { fmtBillion, fmtNum, fmtPct, fmtPrice } from '@/lib/format'
 
 export function createDulieudautuMcpServer() {
   const server = new McpServer({
     name: 'dulieudautu.com',
-    version: '1.2.0',
+    version: '1.3.0',
   })
 
   // 1. Tool DUY NHẤT cho mọi yêu cầu về một mã cổ phiếu cụ thể
-  // Tự động đọc và đính kèm TOÀN BỘ tài liệu gốc (BCTC Q3, BCTC Bán Niên, AGM 2026, Nghiên cứu AI)
+  // Tự động đọc và đính kèm TOÀN BỘ tài liệu gốc (BCTC Q3, BCTC Bán Niên, BCTN 2025, AGM 2026, Nghiên cứu AI)
   // Chỉ cần cấp quyền "Luôn cho phép" 1 lần duy nhất!
   server.tool(
     'tra_cuu_ho_so_tai_chinh',
-    'CÔNG CỤ DUY NHẤT để tra cứu hồ sơ và đọc tài liệu đính kèm của một mã cổ phiếu. Tự động đọc và đính kèm TOÀN BỘ tài liệu gốc có trong hệ thống mang tên mã cổ phiếu đó: Thuyết minh BCTC Quý 3/2026, BCTC Bán Niên 2026, Toàn văn tài liệu ĐHĐCĐ AGM 2026, và Bài nghiên cứu chuyên sâu AI & Định giá độc quyền (nếu có), kèm chỉ số tài chính cơ bản, bảng KQKD các quý gần nhất và định giá RNAV. Dùng công cụ này cho MỌI yêu cầu liên quan đến một mã cổ phiếu cụ thể (chấm điểm, phân tích tài chính, dòng tiền, nợ vay, tài liệu hiện có, kế hoạch ĐHĐCĐ, định giá). KHÔNG CẦN và KHÔNG ĐƯỢC gọi thêm công cụ nào khác.',
+    'CÔNG CỤ DUY NHẤT để tra cứu hồ sơ và đọc tài liệu đính kèm của một mã cổ phiếu. Tự động đọc và đính kèm TOÀN BỘ tài liệu gốc có trong hệ thống mang tên mã cổ phiếu đó: Thuyết minh BCTC Quý 3/2026, BCTC Bán Niên 2026, Toàn văn Báo Cáo Thường Niên Năm 2025/2026 (BCTN), Toàn văn tài liệu ĐHĐCĐ AGM 2026, và Bài nghiên cứu chuyên sâu AI & Định giá độc quyền (nếu có), kèm chỉ số tài chính cơ bản, bảng KQKD các quý gần nhất và định giá RNAV. Dùng công cụ này cho MỌI yêu cầu liên quan đến một mã cổ phiếu cụ thể (chấm điểm, phân tích tài chính, dòng tiền, nợ vay, tài liệu hiện có, kế hoạch ĐHĐCĐ, chiến lược trong Báo Cáo Thường Niên, định giá). KHÔNG CẦN và KHÔNG ĐƯỢC gọi thêm công cụ nào khác.',
     {
       symbol: z
         .string()
         .min(3)
         .max(5)
-        .describe('Mã cổ phiếu chứng khoán Việt Nam (ví dụ: DAN, CAT, MWG, HPG, SJE, LHG, FMC)'),
+        .describe('Mã cổ phiếu chứng khoán Việt Nam (ví dụ: DAN, CAT, MWG, HPG, SJE, LHG, FMC, VHC, DRC)'),
+      docType: z
+        .enum(['TAT_CA', 'BCTC', 'BCTN', 'AGM', 'AI_RESEARCH'])
+        .optional()
+        .describe('Loại tài liệu cần đọc: "TAT_CA" (mặc định - đính kèm toàn bộ), "BCTC" (Thuyết minh BCTC), "BCTN" (Báo Cáo Thường Niên), "AGM" (Tài liệu ĐHĐCĐ), "AI_RESEARCH" (Nghiên cứu chuyên sâu AI).'),
     },
-    async ({ symbol }) => {
+    async ({ symbol, docType = 'TAT_CA' }) => {
       try {
         const sym = symbol.toUpperCase().trim()
+
+        // Nếu người dùng chỉ định đích danh muốn đọc riêng Báo Cáo Thường Niên (BCTN)
+        if (docType === 'BCTN') {
+          const bctn = getBctnReport(sym)
+          if (bctn && bctn.hasReport) {
+            const sectionsSummary = bctn.sections
+              .map(
+                (sec) =>
+                  `- **${sec.shortTitle || sec.title}** (${(sec.rawMarkdown.length / 1024).toFixed(1)} KB${sec.tableCount > 0 ? `, ${sec.tableCount} bảng số liệu` : ''})`
+              )
+              .join('\n')
+
+            const sectionsDetail = bctn.sections
+              .map((sec) =>
+                [
+                  `================================================================================`,
+                  `📖 [CHƯƠNG ${sec.number}]: ${sec.title}`,
+                  `📁 Phân loại: ${sec.category.toUpperCase()} | ${(sec.rawMarkdown.length / 1024).toFixed(1)} KB`,
+                  `================================================================================`,
+                  sec.rawMarkdown,
+                ].join('\n')
+              )
+              .join('\n\n')
+
+            return {
+              content: [
+                {
+                  type: 'text',
+                  text: [
+                    `# 📘 BÁO CÁO THƯỜNG NIÊN NĂM ${bctn.year}: ${sym}`,
+                    `*${bctn.title}${bctn.subtitle ? ` — ${bctn.subtitle}` : ''}*`,
+                    `\n**Thống kê báo cáo**: ${bctn.stats.sectionCount} chương mục | ${bctn.stats.tableCount} bảng số liệu | ${(bctn.stats.charCount / 1024).toFixed(0)} KB văn bản bóc tách`,
+                    `\n### 📑 MỤC LỤC CÁC CHƯƠNG MỤC:`,
+                    sectionsSummary,
+                    `\n\n${sectionsDetail}`,
+                  ].join('\n'),
+                },
+              ],
+            }
+          }
+        }
+
+        // Mặc định hoặc fallback: Trả về toàn bộ gói bundle (bao gồm BCTC, BCTN, AGM, Nghiên cứu AI và chỉ số cốt lõi)
         const bundle = await buildStockAiBundle(sym)
         return {
           content: [
@@ -93,6 +141,10 @@ export function createDulieudautuMcpServer() {
         .number()
         .optional()
         .describe('Vốn hóa thị trường tối thiểu (tỷ VNĐ) - ví dụ: 1000 cho công ty vốn hóa >= 1.000 tỷ'),
+      hasBctn: z
+        .boolean()
+        .optional()
+        .describe('Chỉ lấy các cổ phiếu đã có Báo Cáo Thường Niên (BCTN) đã bóc tách dữ liệu văn bản'),
       sortBy: z
         .enum(['roe', 'pe', 'pb', 'marketCap', 'dy', 'upside', 'score360'])
         .optional()
@@ -111,12 +163,14 @@ export function createDulieudautuMcpServer() {
       minDividendYield,
       maxKtplRate,
       minMarketCap,
+      hasBctn,
       sortBy = 'roe',
       limit = 15,
     }) => {
       try {
         const stocks = getEnrichedScreenerStocks()
         let filtered = stocks
+        const bctnSet = new Set(getAvailableBctnTickers())
 
         if (sector && sector.trim()) {
           const s = sector.toLowerCase().trim()
@@ -157,6 +211,10 @@ export function createDulieudautuMcpServer() {
           filtered = filtered.filter((st) => st.marketCap != null && st.marketCap >= minMarketCap)
         }
 
+        if (hasBctn) {
+          filtered = filtered.filter((st) => bctnSet.has(st.ticker.toUpperCase()))
+        }
+
         // Sắp xếp kết quả
         filtered.sort((a, b) => {
           if (sortBy === 'pe') return (a.pe ?? 999) - (b.pe ?? 999)
@@ -192,6 +250,7 @@ export function createDulieudautuMcpServer() {
         if (minDividendYield != null) criteriaList.push(`Cổ tức >= ${minDividendYield}%`)
         if (maxKtplRate != null) criteriaList.push(`Quỹ KTPL <= ${maxKtplRate}%`)
         if (minMarketCap != null) criteriaList.push(`Vốn hóa >= ${fmtBillion(minMarketCap)} tỷ`)
+        if (hasBctn) criteriaList.push(`Đã có Báo Cáo Thường Niên (BCTN)`)
 
         const tableRows = topList.map((st, idx) => {
           const p = st.price ? fmtPrice(st.price) : '—'
@@ -201,19 +260,20 @@ export function createDulieudautuMcpServer() {
           const dy = st.dy != null && st.dy > 0 ? fmtNum(st.dy, 1) + '%' : '—'
           const cap = st.marketCap ? fmtBillion(st.marketCap) : '—'
           const ktpl = st.ktplRate != null ? fmtNum(st.ktplRate, 1) + '%' : '—'
+          const bctnStatus = bctnSet.has(st.ticker.toUpperCase()) ? '📘 Có' : '—'
           const score = st.score360 != null ? `${st.score360}/10` : '—'
 
-          return `| ${idx + 1} | **${st.ticker}** | ${st.name} | ${st.exchange} | ${st.sector || '—'} | ${p} | ${pe} | ${pb} | ${roe} | ${dy} | ${cap} | ${ktpl} | ${score} |`
+          return `| ${idx + 1} | **${st.ticker}** | ${st.name} | ${st.exchange} | ${st.sector || '—'} | ${p} | ${pe} | ${pb} | ${roe} | ${dy} | ${cap} | ${bctnStatus} | ${score} |`
         })
 
         const markdownText = [
           `### KẾT QUẢ SÀNG LỌC CỔ PHIẾU (Tìm thấy ${totalMatched} mã thỏa mãn, hiển thị top ${topList.length}):`,
           `- **Tiêu chí lọc**: ${criteriaList.length > 0 ? criteriaList.join(' | ') : 'Tất cả 1.530+ mã'}`,
           `- **Sắp xếp theo**: ${sortBy.toUpperCase()}\n`,
-          `| STT | Mã CP | Tên Doanh Nghiệp | Sàn | Ngành | Thị giá (k) | P/E | P/B | ROE | Cổ tức | Vốn hóa (tỷ) | Quỹ KTPL | Điểm 360 |`,
+          `| STT | Mã CP | Tên Doanh Nghiệp | Sàn | Ngành | Thị giá (k) | P/E | P/B | ROE | Cổ tức | Vốn hóa (tỷ) | BCTN 2025 | Điểm 360 |`,
           `|:---:|:---:|:---|:---:|:---|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|`,
           ...tableRows,
-          `\n> **Gợi ý phân tích tiếp theo**: Bạn có thể gọi tool \`tra_cuu_ho_so_tai_chinh\` với mã cổ phiếu cụ thể để đọc toàn bộ tài liệu đính kèm và phân tích chuyên sâu.`,
+          `\n> **Gợi ý phân tích tiếp theo**: Bạn có thể gọi tool \`tra_cuu_ho_so_tai_chinh\` với mã cổ phiếu cụ thể để đọc toàn bộ tài liệu đính kèm (BCTC, BCTN, AGM) và phân tích chuyên sâu.`,
         ].join('\n')
 
         return {
@@ -392,18 +452,18 @@ export function createDulieudautuMcpServer() {
   // 4. Tool: Tra cứu Sự kiện Doanh nghiệp, Lịch Cổ tức & Giao dịch Nội bộ
   server.tool(
     'su_kien_va_cong_bo_thong_tin',
-    'Tra cứu công bố thông tin và sự kiện doanh nghiệp niêm yết mới nhất: Lịch chi trả cổ tức (tiền mặt & cổ phiếu, ngày giao dịch không hưởng quyền - GDKHQ), Giao dịch của Lãnh đạo & Cổ đông lớn, Nghị quyết ĐHĐCĐ & HĐQT, Thông báo cảnh báo / diện kiểm soát.',
+    'Tra cứu công bố thông tin và sự kiện doanh nghiệp niêm yết mới nhất: Lịch chi trả cổ tức (tiền mặt & cổ phiếu, ngày giao dịch không hưởng quyền - GDKHQ), Giao dịch của Lãnh đạo & Cổ đông lớn, Nghị quyết ĐHĐCĐ & HĐQT, Thông báo cảnh báo / diện kiểm soát, và Danh sách các doanh nghiệp đã phát hành Báo Cáo Thường Niên bóc tách.',
     {
       symbol: z
         .string()
         .min(3)
         .max(5)
         .optional()
-        .describe('Mã cổ phiếu cần tra cứu (ví dụ: HPG, VNM, MWG). Để trống nếu muốn xem sự kiện toàn thị trường.'),
+        .describe('Mã cổ phiếu cần tra cứu (ví dụ: HPG, VNM, MWG, VHC). Để trống nếu muốn xem sự kiện toàn thị trường.'),
       type: z
-        .enum(['TAT_CA', 'CO_TUC', 'GIAO_DICH_NOI_BO', 'DHDCD', 'NGHI_QUYET_HDQT', 'CANH_BAO_KIEM_SOAT'])
+        .enum(['TAT_CA', 'CO_TUC', 'GIAO_DICH_NOI_BO', 'DHDCD', 'NGHI_QUYET_HDQT', 'CANH_BAO_KIEM_SOAT', 'BCTN'])
         .optional()
-        .describe('Loại sự kiện cần lọc: "TAT_CA" (mặc định), "CO_TUC" (Cổ tức tiền mặt/cổ phiếu, GDKHQ), "GIAO_DICH_NOI_BO" (Lãnh đạo & người có liên quan mua/bán), "DHDCD" (Đại hội cổ đông), "NGHI_QUYET_HDQT" (Nghị quyết HĐQT), "CANH_BAO_KIEM_SOAT" (Cảnh báo, đình chỉ, kiểm soát)'),
+        .describe('Loại sự kiện cần lọc: "TAT_CA" (mặc định), "CO_TUC" (Cổ tức tiền mặt/cổ phiếu, GDKHQ), "GIAO_DICH_NOI_BO" (Lãnh đạo & người có liên quan mua/bán), "DHDCD" (Đại hội cổ đông), "NGHI_QUYET_HDQT" (Nghị quyết HĐQT), "CANH_BAO_KIEM_SOAT" (Cảnh báo, đình chỉ, kiểm soát), "BCTN" (Danh sách các doanh nghiệp đã có Báo Cáo Thường Niên bóc tách)'),
       limit: z
         .number()
         .optional()
@@ -411,6 +471,53 @@ export function createDulieudautuMcpServer() {
     },
     async ({ symbol, type = 'TAT_CA', limit = 15 }) => {
       try {
+        // Xử lý riêng khi người dùng muốn tra cứu danh sách Báo Cáo Thường Niên
+        if (type === 'BCTN') {
+          if (symbol && symbol.trim()) {
+            const sym = symbol.toUpperCase().trim()
+            const bctn = getBctnReport(sym)
+            if (bctn && bctn.hasReport) {
+              const secList = bctn.sections
+                .map((s) => `  - **${s.shortTitle || s.title}**: ${(s.rawMarkdown.length / 1024).toFixed(1)} KB${s.tableCount > 0 ? `, ${s.tableCount} bảng số liệu` : ''}`)
+                .join('\n')
+              return {
+                content: [
+                  {
+                    type: 'text',
+                    text: `### 📘 BÁO CÁO THƯỜNG NIÊN NĂM ${bctn.year} MÃ ${sym}:\n- **Tiêu đề**: ${bctn.title}\n- **Quy mô**: ${bctn.stats.sectionCount} chương mục | ${bctn.stats.tableCount} bảng số liệu | ${(bctn.stats.charCount / 1024).toFixed(0)} KB văn bản bóc tách\n- **Các chương mục chi tiết**:\n${secList}\n\n> Dùng tool \`tra_cuu_ho_so_tai_chinh\` với symbol: "${sym}" để đọc toàn văn chi tiết.`,
+                  },
+                ],
+              }
+            } else {
+              return {
+                content: [
+                  {
+                    type: 'text',
+                    text: `Hệ thống hiện chưa có Báo Cáo Thường Niên bóc tách cho mã ${sym}. Bạn có thể gọi tool \`tra_cuu_ho_so_tai_chinh\` để đọc Thuyết minh BCTC Quý 3/2026, BCTC Bán Niên và ĐHĐCĐ của mã này.`,
+                  },
+                ],
+              }
+            }
+          }
+
+          const available = getAvailableBctnTickers()
+          const maxDisplay = Math.min(limit, 50)
+          const sliceItems = available.slice(0, maxDisplay)
+          const lines = sliceItems.map((t, idx) => {
+            const r = getBctnReport(t)
+            const stats = r ? ` (${r.stats.sectionCount} mục, ${r.stats.tableCount} bảng, ${(r.stats.charCount / 1024).toFixed(0)} KB)` : ''
+            return `${idx + 1}. **${t}** - ${r?.title || `Báo Cáo Thường Niên ${t}`}${stats}`
+          })
+          return {
+            content: [
+              {
+                type: 'text',
+                text: `### 📘 DANH SÁCH DOANH NGHIỆP CÓ BÁO CÁO THƯỜNG NIÊN BÓC TÁCH (Tổng ${available.length} mã, hiển thị ${lines.length}):\n\n${lines.join('\n')}\n\n> **Gợi ý**: Bạn có thể gọi tool \`tra_cuu_ho_so_tai_chinh\` với mã cổ phiếu cụ thể để đọc toàn văn hoặc phân tích chuyên sâu.`,
+              },
+            ],
+          }
+        }
+
         const maxItems = Math.min(limit, 30)
         let list: CorporateDisclosure[] = []
 
