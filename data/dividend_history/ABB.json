@@ -2,22 +2,6 @@
   "symbol": "ABB",
   "events": [
     {
-      "date": "2006-11-30",
-      "cashVnd": null,
-      "stockPct": 14.34,
-      "texts": [
-        "Phát hành cổ phiếu - Cổ phiếu thưởng tỉ lệ 14.3%"
-      ]
-    },
-    {
-      "date": "2011-01-31",
-      "cashVnd": null,
-      "stockPct": 10,
-      "texts": [
-        "Phát hành cổ phiếu - Cổ phiếu thưởng tỉ lệ 10.0%"
-      ]
-    },
-    {
       "date": "2014-05-14",
       "cashVnd": 246,
       "stockPct": null,
@@ -50,14 +34,6 @@
       ]
     },
     {
-      "date": "2021-11-09",
-      "cashVnd": null,
-      "stockPct": 20,
-      "texts": [
-        "Phát hành cổ phiếu - Quyền mua CP cho Cổ đông hiện hữu tỉ lệ 20.0%"
-      ]
-    },
-    {
       "date": "2022-02-09",
       "cashVnd": null,
       "stockPct": 35,
@@ -71,22 +47,6 @@
       "stockPct": 10,
       "texts": [
         "Cổ tức bằng Cổ phiếu, tỷ lệ 100:10"
-      ]
-    },
-    {
-      "date": "2026-01-14",
-      "cashVnd": null,
-      "stockPct": 30,
-      "texts": [
-        "Phát hành cổ phiếu - Quyền mua CP cho Cổ đông hiện hữu tỉ lệ 30.0%"
-      ]
-    },
-    {
-      "date": "2026-03-03",
-      "cashVnd": null,
-      "stockPct": 5,
-      "texts": [
-        "Phát hành cổ phiếu - Phát hành cho CBCNV tỉ lệ 5.0%"
       ]
     },
     {

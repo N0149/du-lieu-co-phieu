@@ -1,0 +1,45 @@
+{
+  "symbol": "LDG",
+  "events": [
+    {
+      "date": "2016-09-08",
+      "cashVnd": null,
+      "stockPct": 18,
+      "texts": [
+        "Cổ tức bằng Cổ phiếu, tỷ lệ 100:18"
+      ]
+    },
+    {
+      "date": "2017-06-25",
+      "cashVnd": null,
+      "stockPct": 20,
+      "texts": [
+        "Cổ tức bằng Cổ phiếu, tỷ lệ 5:1"
+      ]
+    },
+    {
+      "date": "2018-06-05",
+      "cashVnd": null,
+      "stockPct": 18,
+      "texts": [
+        "Cổ tức bằng Cổ phiếu, tỷ lệ 100:18"
+      ]
+    },
+    {
+      "date": "2019-05-08",
+      "cashVnd": null,
+      "stockPct": 25,
+      "texts": [
+        "Cổ tức bằng Cổ phiếu, tỷ lệ 4:1"
+      ]
+    },
+    {
+      "date": "2022-12-06",
+      "cashVnd": null,
+      "stockPct": 7.000000000000001,
+      "texts": [
+        "Cổ tức bằng Cổ phiếu, tỷ lệ 100:7"
+      ]
+    }
+  ]
+}

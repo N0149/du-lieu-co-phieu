@@ -1,0 +1,85 @@
+{
+  "symbol": "NCS",
+  "events": [
+    {
+      "date": "2014-01-22",
+      "cashVnd": 1500,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 15%"
+      ]
+    },
+    {
+      "date": "2016-02-15",
+      "cashVnd": 2400,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 24%"
+      ]
+    },
+    {
+      "date": "2016-05-17",
+      "cashVnd": 2400,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 24%"
+      ]
+    },
+    {
+      "date": "2016-11-09",
+      "cashVnd": 3000,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 30%"
+      ]
+    },
+    {
+      "date": "2017-05-24",
+      "cashVnd": 3000,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 30%"
+      ]
+    },
+    {
+      "date": "2017-09-14",
+      "cashVnd": 2000,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 20%"
+      ]
+    },
+    {
+      "date": "2018-05-22",
+      "cashVnd": 2600,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 26%"
+      ]
+    },
+    {
+      "date": "2019-05-26",
+      "cashVnd": 2200,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 22%"
+      ]
+    },
+    {
+      "date": "2023-11-22",
+      "cashVnd": 1500,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 15%"
+      ]
+    },
+    {
+      "date": "2026-05-18",
+      "cashVnd": 3300,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 33%"
+      ]
+    }
+  ]
+}

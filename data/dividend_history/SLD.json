@@ -1,0 +1,77 @@
+{
+  "symbol": "SLD",
+  "events": [
+    {
+      "date": "2018-07-30",
+      "cashVnd": 497,
+      "stockPct": null,
+      "texts": [
+        "Trả cổ tức bằng tiền mặt - Cả năm 2017 - 497 VND"
+      ]
+    },
+    {
+      "date": "2019-06-27",
+      "cashVnd": 500,
+      "stockPct": null,
+      "texts": [
+        "Trả cổ tức bằng tiền mặt - Cả năm 2018 - 500 VND"
+      ]
+    },
+    {
+      "date": "2019-09-19",
+      "cashVnd": null,
+      "stockPct": 0.05,
+      "texts": [
+        "Phát hành cổ phiếu - Trả Cổ tức bằng Cổ phiếu tỉ lệ 5.0%"
+      ]
+    },
+    {
+      "date": "2019-09-19",
+      "cashVnd": null,
+      "stockPct": 5,
+      "texts": [
+        "Phát hành cổ phiếu - Trả Cổ tức bằng Cổ phiếu tỉ lệ 5.0%"
+      ]
+    },
+    {
+      "date": "2020-09-16",
+      "cashVnd": 500,
+      "stockPct": null,
+      "texts": [
+        "Trả cổ tức bằng tiền mặt - Cả năm 2019 - 500 VND"
+      ]
+    },
+    {
+      "date": "2020-10-08",
+      "cashVnd": null,
+      "stockPct": 0.05,
+      "texts": [
+        "Phát hành cổ phiếu - Trả Cổ tức bằng Cổ phiếu tỉ lệ 5.0%"
+      ]
+    },
+    {
+      "date": "2020-10-08",
+      "cashVnd": null,
+      "stockPct": 5,
+      "texts": [
+        "Phát hành cổ phiếu - Trả Cổ tức bằng Cổ phiếu tỉ lệ 5.0%"
+      ]
+    },
+    {
+      "date": "2021-11-30",
+      "cashVnd": null,
+      "stockPct": 0.0125,
+      "texts": [
+        "Phát hành cổ phiếu - Trả Cổ tức bằng Cổ phiếu tỉ lệ 1.3%"
+      ]
+    },
+    {
+      "date": "2021-11-30",
+      "cashVnd": null,
+      "stockPct": 1.25,
+      "texts": [
+        "Phát hành cổ phiếu - Trả Cổ tức bằng Cổ phiếu tỉ lệ 1.3%"
+      ]
+    }
+  ]
+}

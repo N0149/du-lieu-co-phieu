@@ -1,0 +1,53 @@
+{
+  "symbol": "VLC",
+  "events": [
+    {
+      "date": "2016-12-18",
+      "cashVnd": 650,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 6.5%"
+      ]
+    },
+    {
+      "date": "2017-06-08",
+      "cashVnd": 650,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 6.5%"
+      ]
+    },
+    {
+      "date": "2020-06-03",
+      "cashVnd": 600,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 6%"
+      ]
+    },
+    {
+      "date": "2021-12-19",
+      "cashVnd": 600,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 6%"
+      ]
+    },
+    {
+      "date": "2022-11-16",
+      "cashVnd": 600,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 6%"
+      ]
+    },
+    {
+      "date": "2024-09-18",
+      "cashVnd": 600,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 6%"
+      ]
+    }
+  ]
+}

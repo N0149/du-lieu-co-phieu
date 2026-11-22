@@ -1,0 +1,77 @@
+{
+  "symbol": "TOW",
+  "events": [
+    {
+      "date": "2018-05-28",
+      "cashVnd": 600,
+      "stockPct": null,
+      "texts": [
+        "Trả cổ tức bằng tiền mặt - 5 Tháng 2017 - 600 VND"
+      ]
+    },
+    {
+      "date": "2019-06-03",
+      "cashVnd": 1400,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 14%"
+      ]
+    },
+    {
+      "date": "2020-05-18",
+      "cashVnd": 1500,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 15%"
+      ]
+    },
+    {
+      "date": "2021-05-18",
+      "cashVnd": 1200,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 12%"
+      ]
+    },
+    {
+      "date": "2022-05-29",
+      "cashVnd": 1300,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 13%"
+      ]
+    },
+    {
+      "date": "2023-05-29",
+      "cashVnd": 1700,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 17%"
+      ]
+    },
+    {
+      "date": "2024-05-29",
+      "cashVnd": 1500,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 15%"
+      ]
+    },
+    {
+      "date": "2025-05-28",
+      "cashVnd": 3050,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 30.5%"
+      ]
+    },
+    {
+      "date": "2026-05-25",
+      "cashVnd": 3000,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 30%"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,37 @@
+{
+  "symbol": "SCC",
+  "events": [
+    {
+      "date": "2007-03-14",
+      "cashVnd": 1900,
+      "stockPct": null,
+      "texts": [
+        "Trả cổ tức bằng tiền mặt - Cả năm 2006 - 1,900 VND"
+      ]
+    },
+    {
+      "date": "2008-02-26",
+      "cashVnd": 1600,
+      "stockPct": null,
+      "texts": [
+        "Trả cổ tức bằng tiền mặt - Cả năm 2007 - 1,600 VND"
+      ]
+    },
+    {
+      "date": "2009-03-04",
+      "cashVnd": 1800,
+      "stockPct": null,
+      "texts": [
+        "Trả cổ tức bằng tiền mặt - Cả năm 2008 - 1,800 VND"
+      ]
+    },
+    {
+      "date": "2010-05-19",
+      "cashVnd": 1500,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 15%"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,125 @@
+{
+  "symbol": "CDG",
+  "events": [
+    {
+      "date": "2009-10-01",
+      "cashVnd": null,
+      "stockPct": 15.4,
+      "texts": [
+        "Phát hành cổ phiếu - Trả Cổ tức bằng Cổ phiếu tỉ lệ 15.4%"
+      ]
+    },
+    {
+      "date": "2010-07-26",
+      "cashVnd": null,
+      "stockPct": 40,
+      "texts": [
+        "Phát hành cổ phiếu - Cổ phiếu thưởng tỉ lệ 40.0%"
+      ]
+    },
+    {
+      "date": "2011-09-19",
+      "cashVnd": null,
+      "stockPct": 42.86,
+      "texts": [
+        "Phát hành cổ phiếu - Cổ phiếu thưởng tỉ lệ 42.9%"
+      ]
+    },
+    {
+      "date": "2011-12-31",
+      "cashVnd": 1500,
+      "stockPct": null,
+      "texts": [
+        "Trả cổ tức bằng tiền mặt - Cả năm 2011 - 1,500 VND"
+      ]
+    },
+    {
+      "date": "2012-10-05",
+      "cashVnd": null,
+      "stockPct": 10,
+      "texts": [
+        "Phát hành cổ phiếu - Cổ phiếu thưởng tỉ lệ 10.0%"
+      ]
+    },
+    {
+      "date": "2018-06-28",
+      "cashVnd": 500,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 5%"
+      ]
+    },
+    {
+      "date": "2019-07-10",
+      "cashVnd": 1200,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 12%"
+      ]
+    },
+    {
+      "date": "2020-07-16",
+      "cashVnd": 800,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 8%"
+      ]
+    },
+    {
+      "date": "2021-06-01",
+      "cashVnd": 1000,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 10%"
+      ]
+    },
+    {
+      "date": "2022-06-13",
+      "cashVnd": 800,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 8%"
+      ]
+    },
+    {
+      "date": "2023-06-28",
+      "cashVnd": 800,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 8%"
+      ]
+    },
+    {
+      "date": "2024-06-27",
+      "cashVnd": 950,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 9.5%"
+      ]
+    },
+    {
+      "date": "2025-07-16",
+      "cashVnd": 600,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 6%"
+      ]
+    },
+    {
+      "date": "2026-03-23",
+      "cashVnd": 600,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 6%"
+      ]
+    },
+    {
+      "date": "2026-07-13",
+      "cashVnd": 1100,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 11%"
+      ]
+    }
+  ]
+}

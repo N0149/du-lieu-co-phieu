@@ -1,0 +1,21 @@
+{
+  "symbol": "L63",
+  "events": [
+    {
+      "date": "2017-09-17",
+      "cashVnd": 300,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 3%"
+      ]
+    },
+    {
+      "date": "2017-12-27",
+      "cashVnd": null,
+      "stockPct": 6,
+      "texts": [
+        "Thưởng bằng Cổ phiếu, tỷ lệ 100:6"
+      ]
+    }
+  ]
+}

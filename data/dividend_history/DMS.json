@@ -1,0 +1,29 @@
+{
+  "symbol": "DMS",
+  "events": [
+    {
+      "date": "2021-12-31",
+      "cashVnd": 1200,
+      "stockPct": null,
+      "texts": [
+        "Trả cổ tức bằng tiền mặt - Cả năm 2021 - 1,200 VND"
+      ]
+    },
+    {
+      "date": "2023-07-12",
+      "cashVnd": 700,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 7%"
+      ]
+    },
+    {
+      "date": "2024-10-09",
+      "cashVnd": 200,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 2%"
+      ]
+    }
+  ]
+}

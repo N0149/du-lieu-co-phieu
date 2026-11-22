@@ -1,0 +1,77 @@
+{
+  "symbol": "C22",
+  "events": [
+    {
+      "date": "2018-06-03",
+      "cashVnd": 1600,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 16%"
+      ]
+    },
+    {
+      "date": "2019-06-12",
+      "cashVnd": 1400,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 14%"
+      ]
+    },
+    {
+      "date": "2020-05-13",
+      "cashVnd": 1400,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 14%"
+      ]
+    },
+    {
+      "date": "2021-07-01",
+      "cashVnd": 1200,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 12%"
+      ]
+    },
+    {
+      "date": "2022-07-24",
+      "cashVnd": 1800,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 18%"
+      ]
+    },
+    {
+      "date": "2023-07-18",
+      "cashVnd": 1200,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 12%"
+      ]
+    },
+    {
+      "date": "2024-07-16",
+      "cashVnd": 1000,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 10%"
+      ]
+    },
+    {
+      "date": "2025-07-27",
+      "cashVnd": 1000,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 10%"
+      ]
+    },
+    {
+      "date": "2026-08-27",
+      "cashVnd": 1000,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 10%"
+      ]
+    }
+  ]
+}

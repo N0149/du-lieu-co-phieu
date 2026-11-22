@@ -1,0 +1,61 @@
+{
+  "symbol": "TQW",
+  "events": [
+    {
+      "date": "2020-09-08",
+      "cashVnd": 220.00000000000003,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 2.2%"
+      ]
+    },
+    {
+      "date": "2021-08-10",
+      "cashVnd": 300,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 3%"
+      ]
+    },
+    {
+      "date": "2022-08-11",
+      "cashVnd": 350,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 3.5%"
+      ]
+    },
+    {
+      "date": "2023-08-13",
+      "cashVnd": 360,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 3.6%"
+      ]
+    },
+    {
+      "date": "2024-08-11",
+      "cashVnd": 640,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 6.4%"
+      ]
+    },
+    {
+      "date": "2025-08-07",
+      "cashVnd": 600,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 6%"
+      ]
+    },
+    {
+      "date": "2026-08-06",
+      "cashVnd": 620,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 6.2%"
+      ]
+    }
+  ]
+}

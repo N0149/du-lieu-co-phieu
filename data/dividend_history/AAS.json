@@ -1,0 +1,21 @@
+{
+  "symbol": "AAS",
+  "events": [
+    {
+      "date": "2023-06-26",
+      "cashVnd": null,
+      "stockPct": 50,
+      "texts": [
+        "Cổ tức bằng Cổ phiếu, tỷ lệ 100:50"
+      ]
+    },
+    {
+      "date": "2023-11-13",
+      "cashVnd": null,
+      "stockPct": 15,
+      "texts": [
+        "Cổ tức bằng Cổ phiếu, tỷ lệ 100:15"
+      ]
+    }
+  ]
+}

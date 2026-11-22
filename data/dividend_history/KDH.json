@@ -2,259 +2,119 @@
   "symbol": "KDH",
   "events": [
     {
-      "date": "2015-01-27",
+      "date": "2012-12-25",
       "cashVnd": null,
-      "stockPct": null,
+      "stockPct": 10,
       "texts": [
-        "Phát hành cổ phiếu - Phát hành riêng lẻ"
+        "Cổ tức bằng Cổ phiếu, tỷ lệ 10:1"
       ]
     },
     {
-      "date": "2015-01-28",
-      "cashVnd": null,
-      "stockPct": null,
-      "texts": [
-        "Phát hành cổ phiếu - Phát hành cho CBCNV"
-      ]
-    },
-    {
-      "date": "2015-10-28",
+      "date": "2015-10-27",
       "cashVnd": 800,
       "stockPct": null,
       "texts": [
-        "Trả cổ tức bằng tiền mặt - Đợt 1 2015 - 800 VND"
+        "Cổ tức bằng Tiền, tỷ lệ 8%"
       ]
     },
     {
-      "date": "2015-10-28",
-      "cashVnd": null,
-      "stockPct": 0.4,
-      "texts": [
-        "Phát hành cổ phiếu - Quyền mua CP cho Cổ đông hiện hữu tỉ lệ 40.0%"
-      ]
-    },
-    {
-      "date": "2015-12-02",
-      "cashVnd": null,
-      "stockPct": null,
-      "texts": [
-        "Phát hành cổ phiếu - Phát hành cho CBCNV"
-      ]
-    },
-    {
-      "date": "2016-09-20",
+      "date": "2016-09-19",
       "cashVnd": 700,
       "stockPct": null,
       "texts": [
-        "Trả cổ tức bằng tiền mặt - Đợt 2 2015 - 700 VND"
+        "Cổ tức bằng Tiền, tỷ lệ 7%"
       ]
     },
     {
-      "date": "2016-10-21",
+      "date": "2016-10-20",
       "cashVnd": null,
-      "stockPct": 0.3,
+      "stockPct": 30,
       "texts": [
-        "Phát hành cổ phiếu - Cổ phiếu thưởng tỉ lệ 30.0%"
+        "Thưởng bằng Cổ phiếu, tỷ lệ 10:3"
       ]
     },
     {
-      "date": "2017-09-19",
-      "cashVnd": null,
-      "stockPct": 0.4,
-      "texts": [
-        "Phát hành cổ phiếu - Quyền mua CP cho Cổ đông hiện hữu tỉ lệ 40.0%"
-      ]
-    },
-    {
-      "date": "2017-09-19",
+      "date": "2017-09-18",
       "cashVnd": 1000,
       "stockPct": null,
       "texts": [
-        "Trả cổ tức bằng tiền mặt - Cả năm 2016 - 1,000 VND"
+        "Cổ tức bằng Tiền, tỷ lệ 10%"
       ]
     },
     {
-      "date": "2017-10-19",
-      "cashVnd": null,
-      "stockPct": null,
-      "texts": [
-        "Phát hành cổ phiếu - Phát hành cho CBCNV"
-      ]
-    },
-    {
-      "date": "2018-02-23",
-      "cashVnd": null,
-      "stockPct": 0.7143,
-      "texts": [
-        "Phát hành cổ phiếu - Phát hành để sáp nhập tỉ lệ 71.4%"
-      ]
-    },
-    {
-      "date": "2018-09-21",
-      "cashVnd": null,
-      "stockPct": 0.05,
-      "texts": [
-        "Phát hành cổ phiếu - Trả Cổ tức bằng Cổ phiếu tỉ lệ 5.0%"
-      ]
-    },
-    {
-      "date": "2018-09-21",
+      "date": "2018-09-20",
       "cashVnd": 500,
-      "stockPct": null,
+      "stockPct": 5,
       "texts": [
-        "Trả cổ tức bằng tiền mặt - Cả năm 2017 - 500 VND"
+        "Cổ tức bằng Cổ phiếu, tỷ lệ 100:5",
+        "Cổ tức bằng Tiền, tỷ lệ 5%"
       ]
     },
     {
-      "date": "2018-10-11",
-      "cashVnd": null,
-      "stockPct": null,
-      "texts": [
-        "Phát hành cổ phiếu - Phát hành cho CBCNV"
-      ]
-    },
-    {
-      "date": "2019-06-11",
-      "cashVnd": null,
-      "stockPct": 0.25,
-      "texts": [
-        "Phát hành cổ phiếu - Cổ phiếu thưởng tỉ lệ 25.0%"
-      ]
-    },
-    {
-      "date": "2019-06-11",
-      "cashVnd": null,
-      "stockPct": 0.05,
-      "texts": [
-        "Phát hành cổ phiếu - Trả Cổ tức bằng Cổ phiếu tỉ lệ 5.0%"
-      ]
-    },
-    {
-      "date": "2019-06-11",
+      "date": "2019-06-10",
       "cashVnd": 500,
-      "stockPct": null,
+      "stockPct": 30,
       "texts": [
-        "Trả cổ tức bằng tiền mặt - Cả năm 2018 - 500 VND"
+        "Thưởng bằng Cổ phiếu, tỷ lệ 100:25",
+        "Cổ tức bằng Cổ phiếu, tỷ lệ 100:5",
+        "Cổ tức bằng Tiền, tỷ lệ 5%"
       ]
     },
     {
-      "date": "2019-07-02",
-      "cashVnd": null,
-      "stockPct": null,
-      "texts": [
-        "Phát hành cổ phiếu - Phát hành cho CBCNV"
-      ]
-    },
-    {
-      "date": "2020-08-19",
-      "cashVnd": null,
-      "stockPct": 0.05,
-      "texts": [
-        "Phát hành cổ phiếu - Trả Cổ tức bằng Cổ phiếu tỉ lệ 5.0%"
-      ]
-    },
-    {
-      "date": "2020-08-19",
+      "date": "2020-08-18",
       "cashVnd": 500,
-      "stockPct": null,
+      "stockPct": 5,
       "texts": [
-        "Trả cổ tức bằng tiền mặt - Cả năm 2019 - 500 VND"
+        "Cổ tức bằng Cổ phiếu, tỷ lệ 100:5",
+        "Cổ tức bằng Tiền, tỷ lệ 5%"
       ]
     },
     {
-      "date": "2020-08-26",
+      "date": "2021-06-10",
       "cashVnd": null,
-      "stockPct": null,
+      "stockPct": 10,
       "texts": [
-        "Phát hành cổ phiếu - Phát hành cho CBCNV"
+        "Cổ tức bằng Cổ phiếu, tỷ lệ 100:10"
       ]
     },
     {
-      "date": "2021-06-11",
+      "date": "2022-07-03",
       "cashVnd": null,
-      "stockPct": 0.1,
+      "stockPct": 10,
       "texts": [
-        "Phát hành cổ phiếu - Trả Cổ tức bằng Cổ phiếu tỉ lệ 10.0%"
+        "Cổ tức bằng Cổ phiếu, tỷ lệ 100:10"
       ]
     },
     {
-      "date": "2021-06-21",
+      "date": "2023-10-02",
       "cashVnd": null,
-      "stockPct": null,
+      "stockPct": 10,
       "texts": [
-        "Phát hành cổ phiếu - Phát hành cho CBCNV"
+        "Cổ tức bằng Cổ phiếu, tỷ lệ 100:10"
       ]
     },
     {
-      "date": "2022-07-04",
+      "date": "2024-10-16",
       "cashVnd": null,
-      "stockPct": 0.1,
+      "stockPct": 10,
       "texts": [
-        "Phát hành cổ phiếu - Trả Cổ tức bằng Cổ phiếu tỉ lệ 10.0%"
+        "Cổ tức bằng Cổ phiếu, tỷ lệ 100:10"
       ]
     },
     {
-      "date": "2022-07-18",
+      "date": "2025-07-16",
       "cashVnd": null,
-      "stockPct": null,
+      "stockPct": 10,
       "texts": [
-        "Phát hành cổ phiếu - Phát hành cho CBCNV"
+        "Cổ tức bằng Cổ phiếu, tỷ lệ 100:10"
       ]
     },
     {
-      "date": "2023-10-03",
+      "date": "2026-10-06",
       "cashVnd": null,
-      "stockPct": 0.1,
+      "stockPct": 10,
       "texts": [
-        "Phát hành cổ phiếu - Trả Cổ tức bằng Cổ phiếu tỉ lệ 10.0%"
-      ]
-    },
-    {
-      "date": "2023-10-10",
-      "cashVnd": null,
-      "stockPct": null,
-      "texts": [
-        "Phát hành cổ phiếu - Phát hành cho CBCNV"
-      ]
-    },
-    {
-      "date": "2024-07-29",
-      "cashVnd": null,
-      "stockPct": 0.1377,
-      "texts": [
-        "Phát hành cổ phiếu - Phát hành riêng lẻ tỉ lệ 13.8%"
-      ]
-    },
-    {
-      "date": "2024-10-17",
-      "cashVnd": null,
-      "stockPct": 0.1,
-      "texts": [
-        "Phát hành cổ phiếu - Trả Cổ tức bằng Cổ phiếu tỉ lệ 10.0%"
-      ]
-    },
-    {
-      "date": "2024-10-18",
-      "cashVnd": null,
-      "stockPct": 0.0119,
-      "texts": [
-        "Phát hành cổ phiếu - Phát hành cho CBCNV tỉ lệ 1.2%"
-      ]
-    },
-    {
-      "date": "2025-07-17",
-      "cashVnd": null,
-      "stockPct": 0.1,
-      "texts": [
-        "Phát hành cổ phiếu - Trả Cổ tức bằng Cổ phiếu tỉ lệ 10.0%"
-      ]
-    },
-    {
-      "date": "2025-07-23",
-      "cashVnd": null,
-      "stockPct": 0.0098,
-      "texts": [
-        "Phát hành cổ phiếu - Phát hành cho CBCNV tỉ lệ 1.0%"
+        "Cổ tức bằng Cổ phiếu, tỷ lệ 100:10"
       ]
     }
   ]

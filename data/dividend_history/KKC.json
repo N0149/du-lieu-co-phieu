@@ -1,0 +1,77 @@
+{
+  "symbol": "KKC",
+  "events": [
+    {
+      "date": "2010-08-30",
+      "cashVnd": 2000,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 20%"
+      ]
+    },
+    {
+      "date": "2013-03-05",
+      "cashVnd": 1500,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 15%"
+      ]
+    },
+    {
+      "date": "2014-02-13",
+      "cashVnd": 2200,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 22%"
+      ]
+    },
+    {
+      "date": "2015-03-24",
+      "cashVnd": 1500,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 15%"
+      ]
+    },
+    {
+      "date": "2017-03-01",
+      "cashVnd": 5000,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 50%"
+      ]
+    },
+    {
+      "date": "2018-03-29",
+      "cashVnd": 2000,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 20%"
+      ]
+    },
+    {
+      "date": "2021-04-08",
+      "cashVnd": 700,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 7%"
+      ]
+    },
+    {
+      "date": "2021-06-03",
+      "cashVnd": 1000,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 10%"
+      ]
+    },
+    {
+      "date": "2022-02-22",
+      "cashVnd": null,
+      "stockPct": 0.108,
+      "texts": [
+        "Thưởng bằng Cổ phiếu, tỷ lệ 100000:108"
+      ]
+    }
+  ]
+}

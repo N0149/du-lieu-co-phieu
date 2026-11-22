@@ -1,0 +1,93 @@
+{
+  "symbol": "DFC",
+  "events": [
+    {
+      "date": "2015-06-15",
+      "cashVnd": 3560,
+      "stockPct": null,
+      "texts": [
+        "Trả cổ tức bằng tiền mặt - Cả năm 2014 - 3,560 VND"
+      ]
+    },
+    {
+      "date": "2016-05-30",
+      "cashVnd": 4500,
+      "stockPct": null,
+      "texts": [
+        "Trả cổ tức bằng tiền mặt - Cả năm 2015 - 4,500 VND"
+      ]
+    },
+    {
+      "date": "2017-05-18",
+      "cashVnd": 4200,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 42%"
+      ]
+    },
+    {
+      "date": "2018-06-10",
+      "cashVnd": 2900,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 29%"
+      ]
+    },
+    {
+      "date": "2019-07-16",
+      "cashVnd": 3300,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 33%"
+      ]
+    },
+    {
+      "date": "2020-09-09",
+      "cashVnd": 1300,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 13%"
+      ]
+    },
+    {
+      "date": "2021-08-22",
+      "cashVnd": 1100,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 11%"
+      ]
+    },
+    {
+      "date": "2023-07-27",
+      "cashVnd": 1736,
+      "stockPct": null,
+      "texts": [
+        "Trả cổ tức bằng tiền mặt - Cả năm 2022 - 1,736 VND"
+      ]
+    },
+    {
+      "date": "2024-08-26",
+      "cashVnd": 2000,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 20%"
+      ]
+    },
+    {
+      "date": "2025-06-25",
+      "cashVnd": 3240,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 32.4%"
+      ]
+    },
+    {
+      "date": "2026-06-16",
+      "cashVnd": 3900,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 39%"
+      ]
+    }
+  ]
+}

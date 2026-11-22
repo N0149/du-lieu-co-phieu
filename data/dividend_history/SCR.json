@@ -1,0 +1,85 @@
+{
+  "symbol": "SCR",
+  "events": [
+    {
+      "date": "2012-06-25",
+      "cashVnd": null,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Cổ phiếu, tỷ lệ 30%"
+      ]
+    },
+    {
+      "date": "2012-08-09",
+      "cashVnd": null,
+      "stockPct": 10,
+      "texts": [
+        "Thưởng bằng Cổ phiếu, tỷ lệ 10:1"
+      ]
+    },
+    {
+      "date": "2013-06-12",
+      "cashVnd": null,
+      "stockPct": 5,
+      "texts": [
+        "Cổ tức bằng Cổ phiếu, tỷ lệ 100:5"
+      ]
+    },
+    {
+      "date": "2014-12-25",
+      "cashVnd": null,
+      "stockPct": 5,
+      "texts": [
+        "Thưởng bằng Cổ phiếu, tỷ lệ 100:5"
+      ]
+    },
+    {
+      "date": "2015-08-04",
+      "cashVnd": null,
+      "stockPct": 5,
+      "texts": [
+        "Thưởng bằng Cổ phiếu, tỷ lệ 100:5"
+      ]
+    },
+    {
+      "date": "2016-12-15",
+      "cashVnd": null,
+      "stockPct": 5,
+      "texts": [
+        "Thưởng bằng Cổ phiếu, tỷ lệ 100:5"
+      ]
+    },
+    {
+      "date": "2017-10-19",
+      "cashVnd": null,
+      "stockPct": 7.000000000000001,
+      "texts": [
+        "Cổ tức bằng Cổ phiếu, tỷ lệ 100:7"
+      ]
+    },
+    {
+      "date": "2018-10-22",
+      "cashVnd": null,
+      "stockPct": 7.000000000000001,
+      "texts": [
+        "Cổ tức bằng Cổ phiếu, tỷ lệ 100:7"
+      ]
+    },
+    {
+      "date": "2019-12-16",
+      "cashVnd": null,
+      "stockPct": 8,
+      "texts": [
+        "Cổ tức bằng Cổ phiếu, tỷ lệ 100:8"
+      ]
+    },
+    {
+      "date": "2022-10-24",
+      "cashVnd": null,
+      "stockPct": 8,
+      "texts": [
+        "Cổ tức bằng Cổ phiếu, tỷ lệ 100:8"
+      ]
+    }
+  ]
+}

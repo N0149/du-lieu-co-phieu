@@ -2,54 +2,6 @@
   "symbol": "DXP",
   "events": [
     {
-      "date": "2006-03-15",
-      "cashVnd": 1350,
-      "stockPct": null,
-      "texts": [
-        "Trả cổ tức bằng tiền mặt - Cả năm 2005 - 1,350 VND"
-      ]
-    },
-    {
-      "date": "2006-10-12",
-      "cashVnd": 1000,
-      "stockPct": null,
-      "texts": [
-        "Trả cổ tức bằng tiền mặt - Đợt 1 2006 - 1,000 VND"
-      ]
-    },
-    {
-      "date": "2007-04-11",
-      "cashVnd": 500,
-      "stockPct": null,
-      "texts": [
-        "Trả cổ tức bằng tiền mặt - Đợt 2 2006 - 500 VND"
-      ]
-    },
-    {
-      "date": "2007-07-24",
-      "cashVnd": 1000,
-      "stockPct": null,
-      "texts": [
-        "Trả cổ tức bằng tiền mặt - Đợt 1 2007 - 1,000 VND"
-      ]
-    },
-    {
-      "date": "2007-12-21",
-      "cashVnd": null,
-      "stockPct": 50,
-      "texts": [
-        "Phát hành cổ phiếu - Cổ phiếu thưởng tỉ lệ 50.0%"
-      ]
-    },
-    {
-      "date": "2008-04-08",
-      "cashVnd": 500,
-      "stockPct": null,
-      "texts": [
-        "Trả cổ tức bằng tiền mặt - Đợt 2 2008 - 500 VND"
-      ]
-    },
-    {
       "date": "2009-01-13",
       "cashVnd": 1200,
       "stockPct": null,
@@ -87,30 +39,6 @@
       "stockPct": null,
       "texts": [
         "Cổ tức bằng Tiền, tỷ lệ 35%"
-      ]
-    },
-    {
-      "date": "2011-05-12",
-      "cashVnd": 2000,
-      "stockPct": null,
-      "texts": [
-        "Trả cổ tức bằng tiền mặt - Đợt 2 2010 - 2,000 VND"
-      ]
-    },
-    {
-      "date": "2012-02-02",
-      "cashVnd": 3000,
-      "stockPct": null,
-      "texts": [
-        "Trả cổ tức bằng tiền mặt - Đợt 1 2011 - 3,000 VND"
-      ]
-    },
-    {
-      "date": "2012-12-06",
-      "cashVnd": 2000,
-      "stockPct": null,
-      "texts": [
-        "Trả cổ tức bằng tiền mặt - Đợt 1 2012 - 2,000 VND"
       ]
     },
     {

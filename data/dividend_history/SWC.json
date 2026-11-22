@@ -1,0 +1,77 @@
+{
+  "symbol": "SWC",
+  "events": [
+    {
+      "date": "2011-07-13",
+      "cashVnd": 229,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 2.29%"
+      ]
+    },
+    {
+      "date": "2014-09-25",
+      "cashVnd": 443,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 4.43%"
+      ]
+    },
+    {
+      "date": "2015-05-14",
+      "cashVnd": 379,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 3.79%"
+      ]
+    },
+    {
+      "date": "2016-05-26",
+      "cashVnd": 500,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 5%"
+      ]
+    },
+    {
+      "date": "2017-05-14",
+      "cashVnd": 5000,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 50%"
+      ]
+    },
+    {
+      "date": "2018-02-06",
+      "cashVnd": 1000,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 10%"
+      ]
+    },
+    {
+      "date": "2018-05-29",
+      "cashVnd": 2000,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 20%"
+      ]
+    },
+    {
+      "date": "2019-03-10",
+      "cashVnd": 3000,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 30%"
+      ]
+    },
+    {
+      "date": "2025-08-27",
+      "cashVnd": 3500,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 35%"
+      ]
+    }
+  ]
+}

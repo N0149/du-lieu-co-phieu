@@ -1,0 +1,37 @@
+{
+  "symbol": "ING",
+  "events": [
+    {
+      "date": "2007-12-31",
+      "cashVnd": null,
+      "stockPct": 12.5,
+      "texts": [
+        "Phát hành cổ phiếu - Cổ phiếu thưởng tỉ lệ 12.5%"
+      ]
+    },
+    {
+      "date": "2007-12-31",
+      "cashVnd": null,
+      "stockPct": 13.5,
+      "texts": [
+        "Phát hành cổ phiếu - Trả Cổ tức bằng Cổ phiếu tỉ lệ 13.5%"
+      ]
+    },
+    {
+      "date": "2010-07-05",
+      "cashVnd": null,
+      "stockPct": 8,
+      "texts": [
+        "Phát hành cổ phiếu - Trả Cổ tức bằng Cổ phiếu tỉ lệ 8.0%"
+      ]
+    },
+    {
+      "date": "2010-07-05",
+      "cashVnd": null,
+      "stockPct": 10,
+      "texts": [
+        "Phát hành cổ phiếu - Cổ phiếu thưởng tỉ lệ 10.0%"
+      ]
+    }
+  ]
+}

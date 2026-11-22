@@ -1,0 +1,45 @@
+{
+  "symbol": "MSB",
+  "events": [
+    {
+      "date": "2021-10-06",
+      "cashVnd": null,
+      "stockPct": 30,
+      "texts": [
+        "Cổ tức bằng Cổ phiếu, tỷ lệ 100:30"
+      ]
+    },
+    {
+      "date": "2022-10-09",
+      "cashVnd": null,
+      "stockPct": 30,
+      "texts": [
+        "Thưởng bằng Cổ phiếu, tỷ lệ 100:30"
+      ]
+    },
+    {
+      "date": "2024-08-27",
+      "cashVnd": null,
+      "stockPct": 30,
+      "texts": [
+        "Cổ tức bằng Cổ phiếu, tỷ lệ 100:30"
+      ]
+    },
+    {
+      "date": "2025-09-07",
+      "cashVnd": null,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Cổ phiếu, tỷ lệ 20%"
+      ]
+    },
+    {
+      "date": "2026-08-27",
+      "cashVnd": null,
+      "stockPct": 20,
+      "texts": [
+        "Thưởng bằng Cổ tức, tỷ lệ 100:20"
+      ]
+    }
+  ]
+}

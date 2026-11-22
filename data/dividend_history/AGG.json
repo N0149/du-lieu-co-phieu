@@ -1,0 +1,45 @@
+{
+  "symbol": "AGG",
+  "events": [
+    {
+      "date": "2020-08-26",
+      "cashVnd": null,
+      "stockPct": 10,
+      "texts": [
+        "Cổ tức bằng Cổ phiếu, tỷ lệ 10:1"
+      ]
+    },
+    {
+      "date": "2022-01-24",
+      "cashVnd": null,
+      "stockPct": 10,
+      "texts": [
+        "Cổ tức bằng Cổ phiếu, tỷ lệ 100:10"
+      ]
+    },
+    {
+      "date": "2022-12-06",
+      "cashVnd": null,
+      "stockPct": 10,
+      "texts": [
+        "Cổ tức bằng Cổ phiếu, tỷ lệ 10:1"
+      ]
+    },
+    {
+      "date": "2024-08-06",
+      "cashVnd": null,
+      "stockPct": 25,
+      "texts": [
+        "Cổ tức bằng Cổ phiếu, tỷ lệ 100:25"
+      ]
+    },
+    {
+      "date": "2026-09-03",
+      "cashVnd": null,
+      "stockPct": 10,
+      "texts": [
+        "Cổ tức bằng Cổ phiếu, tỷ lệ 10:1"
+      ]
+    }
+  ]
+}

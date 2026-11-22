@@ -1,0 +1,87 @@
+{
+  "symbol": "VDB",
+  "events": [
+    {
+      "date": "2019-06-03",
+      "cashVnd": 2076,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 20.76%"
+      ]
+    },
+    {
+      "date": "2020-07-20",
+      "cashVnd": 3281,
+      "stockPct": 30,
+      "texts": [
+        "Cổ tức bằng Cổ phiếu, tỷ lệ 100:30",
+        "Cổ tức bằng Tiền, tỷ lệ 32.81%"
+      ]
+    },
+    {
+      "date": "2021-05-19",
+      "cashVnd": 2381,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 23.81%"
+      ]
+    },
+    {
+      "date": "2022-01-18",
+      "cashVnd": null,
+      "stockPct": 19,
+      "texts": [
+        "Thưởng bằng Cổ phiếu, tỷ lệ 100:9",
+        "Cổ tức bằng Cổ phiếu, tỷ lệ 100:10"
+      ]
+    },
+    {
+      "date": "2022-05-16",
+      "cashVnd": 9400,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 24,94%"
+      ]
+    },
+    {
+      "date": "2022-07-17",
+      "cashVnd": null,
+      "stockPct": 10,
+      "texts": [
+        "Thưởng bằng Cổ phiếu, tỷ lệ 100:10"
+      ]
+    },
+    {
+      "date": "2023-05-08",
+      "cashVnd": 5083,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 50.83%"
+      ]
+    },
+    {
+      "date": "2024-05-06",
+      "cashVnd": 5336,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 53.36%"
+      ]
+    },
+    {
+      "date": "2025-05-08",
+      "cashVnd": 3565.9999999999995,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 35.66%"
+      ]
+    },
+    {
+      "date": "2026-05-11",
+      "cashVnd": 2876.58,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 28.7658%"
+      ]
+    }
+  ]
+}

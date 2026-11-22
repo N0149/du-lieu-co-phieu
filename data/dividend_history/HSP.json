@@ -1,0 +1,61 @@
+{
+  "symbol": "HSP",
+  "events": [
+    {
+      "date": "2020-06-08",
+      "cashVnd": 529,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 5.29%"
+      ]
+    },
+    {
+      "date": "2021-06-23",
+      "cashVnd": 674,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 6.74%"
+      ]
+    },
+    {
+      "date": "2022-06-06",
+      "cashVnd": 815,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 8.15%"
+      ]
+    },
+    {
+      "date": "2023-06-20",
+      "cashVnd": 917,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 9.17%"
+      ]
+    },
+    {
+      "date": "2024-05-27",
+      "cashVnd": 1140,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 11.4%"
+      ]
+    },
+    {
+      "date": "2025-05-04",
+      "cashVnd": 1560,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 15.6%"
+      ]
+    },
+    {
+      "date": "2026-06-04",
+      "cashVnd": 1451.2,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 14.512%"
+      ]
+    }
+  ]
+}

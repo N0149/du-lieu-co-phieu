@@ -1,0 +1,31 @@
+{
+  "symbol": "DLG",
+  "events": [
+    {
+      "date": "2014-08-04",
+      "cashVnd": null,
+      "stockPct": 14,
+      "texts": [
+        "Thưởng bằng Cổ phiếu, tỷ lệ 100:8",
+        "Cổ tức bằng Cổ phiếu, tỷ lệ 100:6"
+      ]
+    },
+    {
+      "date": "2016-12-01",
+      "cashVnd": null,
+      "stockPct": 5,
+      "texts": [
+        "Thưởng bằng Cổ phiếu, tỷ lệ 100:2",
+        "Cổ tức bằng Cổ phiếu, tỷ lệ 100:3"
+      ]
+    },
+    {
+      "date": "2018-10-02",
+      "cashVnd": null,
+      "stockPct": 5,
+      "texts": [
+        "Cổ tức bằng Cổ phiếu, tỷ lệ 100:5"
+      ]
+    }
+  ]
+}

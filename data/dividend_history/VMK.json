@@ -1,0 +1,21 @@
+{
+  "symbol": "VMK",
+  "events": [
+    {
+      "date": "2025-08-27",
+      "cashVnd": null,
+      "stockPct": 13,
+      "texts": [
+        "Cổ tức bằng Cổ phiếu, tỷ lệ 100:13"
+      ]
+    },
+    {
+      "date": "2026-11-04",
+      "cashVnd": null,
+      "stockPct": 6,
+      "texts": [
+        "Cổ tức bằng Cổ phiếu, tỷ lệ 100:6"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "symbol": "CTX",
+  "events": [
+    {
+      "date": "2019-09-04",
+      "cashVnd": null,
+      "stockPct": null,
+      "texts": [
+        "Thưởng bằng Cổ phiếu, tỷ lệ 199.416023"
+      ]
+    },
+    {
+      "date": "2026-01-21",
+      "cashVnd": null,
+      "stockPct": 27,
+      "texts": [
+        "Thưởng bằng Cổ tức, tỷ lệ 100:27.247170"
+      ]
+    }
+  ]
+}

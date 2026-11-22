@@ -1,0 +1,21 @@
+{
+  "symbol": "TRT",
+  "events": [
+    {
+      "date": "2022-09-25",
+      "cashVnd": 1000,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 10%"
+      ]
+    },
+    {
+      "date": "2023-10-08",
+      "cashVnd": 1000,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 10%"
+      ]
+    }
+  ]
+}

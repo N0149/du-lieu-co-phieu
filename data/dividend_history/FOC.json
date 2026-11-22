@@ -1,0 +1,86 @@
+{
+  "symbol": "FOC",
+  "events": [
+    {
+      "date": "2019-01-13",
+      "cashVnd": 5000,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 50%"
+      ]
+    },
+    {
+      "date": "2019-05-08",
+      "cashVnd": 8000,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 80%"
+      ]
+    },
+    {
+      "date": "2019-08-13",
+      "cashVnd": 10000,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 100%"
+      ]
+    },
+    {
+      "date": "2020-05-28",
+      "cashVnd": 5000,
+      "stockPct": 25,
+      "texts": [
+        "Cổ tức bằng Cổ phiếu, tỷ lệ 100:25",
+        "Cổ tức bằng Tiền, tỷ lệ 50%"
+      ]
+    },
+    {
+      "date": "2021-04-12",
+      "cashVnd": 20000,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 200%"
+      ]
+    },
+    {
+      "date": "2022-06-09",
+      "cashVnd": 8000,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 80%"
+      ]
+    },
+    {
+      "date": "2023-06-07",
+      "cashVnd": 5000,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 50%"
+      ]
+    },
+    {
+      "date": "2024-07-17",
+      "cashVnd": 2000,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 20%"
+      ]
+    },
+    {
+      "date": "2025-05-22",
+      "cashVnd": 10000,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 100%"
+      ]
+    },
+    {
+      "date": "2026-08-09",
+      "cashVnd": 10000,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 100%"
+      ]
+    }
+  ]
+}

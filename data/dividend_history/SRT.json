@@ -1,0 +1,21 @@
+{
+  "symbol": "SRT",
+  "events": [
+    {
+      "date": "2017-12-27",
+      "cashVnd": 35,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 0.35%"
+      ]
+    },
+    {
+      "date": "2019-03-26",
+      "cashVnd": 112.00000000000001,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 1.12%"
+      ]
+    }
+  ]
+}

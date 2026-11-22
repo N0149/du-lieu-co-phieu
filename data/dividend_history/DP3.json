@@ -1,0 +1,109 @@
+{
+  "symbol": "DP3",
+  "events": [
+    {
+      "date": "2016-01-03",
+      "cashVnd": 1600,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 16%"
+      ]
+    },
+    {
+      "date": "2017-05-16",
+      "cashVnd": 2000,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 20%"
+      ]
+    },
+    {
+      "date": "2017-12-27",
+      "cashVnd": 1000,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 10%"
+      ]
+    },
+    {
+      "date": "2018-04-01",
+      "cashVnd": 3000,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 30%"
+      ]
+    },
+    {
+      "date": "2018-10-16",
+      "cashVnd": 3000,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 30%"
+      ]
+    },
+    {
+      "date": "2019-05-02",
+      "cashVnd": 5000,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 50%"
+      ]
+    },
+    {
+      "date": "2020-06-02",
+      "cashVnd": 7000,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 70%"
+      ]
+    },
+    {
+      "date": "2021-03-25",
+      "cashVnd": 8000,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 80%"
+      ]
+    },
+    {
+      "date": "2023-03-20",
+      "cashVnd": 8000,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 80%"
+      ]
+    },
+    {
+      "date": "2023-07-11",
+      "cashVnd": null,
+      "stockPct": 150,
+      "texts": [
+        "Thưởng bằng Cổ phiếu, tỷ lệ 100:150"
+      ]
+    },
+    {
+      "date": "2024-03-20",
+      "cashVnd": 3000,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 30%"
+      ]
+    },
+    {
+      "date": "2025-03-20",
+      "cashVnd": 3000,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 30%"
+      ]
+    },
+    {
+      "date": "2026-03-19",
+      "cashVnd": 4000,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 40%"
+      ]
+    }
+  ]
+}

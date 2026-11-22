@@ -1,0 +1,77 @@
+{
+  "symbol": "LLM",
+  "events": [
+    {
+      "date": "2017-10-29",
+      "cashVnd": 225,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 2.25%"
+      ]
+    },
+    {
+      "date": "2018-11-01",
+      "cashVnd": 600,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 6%"
+      ]
+    },
+    {
+      "date": "2019-11-13",
+      "cashVnd": 400,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 4%"
+      ]
+    },
+    {
+      "date": "2020-10-28",
+      "cashVnd": 400,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 4%"
+      ]
+    },
+    {
+      "date": "2021-10-25",
+      "cashVnd": 200,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 2%"
+      ]
+    },
+    {
+      "date": "2022-11-16",
+      "cashVnd": 100,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 1%"
+      ]
+    },
+    {
+      "date": "2023-11-23",
+      "cashVnd": 100,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 1%"
+      ]
+    },
+    {
+      "date": "2024-11-18",
+      "cashVnd": 450,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 4.5%"
+      ]
+    },
+    {
+      "date": "2025-09-24",
+      "cashVnd": 350,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 3.5%"
+      ]
+    }
+  ]
+}

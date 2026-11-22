@@ -1,0 +1,69 @@
+{
+  "symbol": "PBT",
+  "events": [
+    {
+      "date": "2019-06-26",
+      "cashVnd": 483,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 4.83%"
+      ]
+    },
+    {
+      "date": "2020-05-18",
+      "cashVnd": 646,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 6.46%"
+      ]
+    },
+    {
+      "date": "2021-05-24",
+      "cashVnd": 588,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 5.88%"
+      ]
+    },
+    {
+      "date": "2022-05-26",
+      "cashVnd": 687,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 6.87%"
+      ]
+    },
+    {
+      "date": "2023-08-28",
+      "cashVnd": 521,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 5.21%"
+      ]
+    },
+    {
+      "date": "2024-09-18",
+      "cashVnd": 776,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 7.76%"
+      ]
+    },
+    {
+      "date": "2025-06-25",
+      "cashVnd": 704,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 7.04%"
+      ]
+    },
+    {
+      "date": "2026-09-03",
+      "cashVnd": 728,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 7.28%"
+      ]
+    }
+  ]
+}

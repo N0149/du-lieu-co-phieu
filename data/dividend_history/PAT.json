@@ -1,0 +1,77 @@
+{
+  "symbol": "PAT",
+  "events": [
+    {
+      "date": "2022-08-03",
+      "cashVnd": 10000,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 100%"
+      ]
+    },
+    {
+      "date": "2022-12-18",
+      "cashVnd": 10000,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 100%"
+      ]
+    },
+    {
+      "date": "2023-04-06",
+      "cashVnd": 10655,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 106.55%"
+      ]
+    },
+    {
+      "date": "2023-12-18",
+      "cashVnd": 9000,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 90%"
+      ]
+    },
+    {
+      "date": "2024-04-11",
+      "cashVnd": 1000,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 10%"
+      ]
+    },
+    {
+      "date": "2024-11-18",
+      "cashVnd": 7000,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 70%"
+      ]
+    },
+    {
+      "date": "2025-04-23",
+      "cashVnd": 2500,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 25%"
+      ]
+    },
+    {
+      "date": "2025-12-23",
+      "cashVnd": 10000,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 100%"
+      ]
+    },
+    {
+      "date": "2026-09-14",
+      "cashVnd": 2900,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 29%"
+      ]
+    }
+  ]
+}

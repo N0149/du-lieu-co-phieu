@@ -1,0 +1,62 @@
+{
+  "symbol": "DL1",
+  "events": [
+    {
+      "date": "2011-11-21",
+      "cashVnd": null,
+      "stockPct": 15,
+      "texts": [
+        "Cổ tức bằng Cổ phiếu, tỷ lệ 20:3"
+      ]
+    },
+    {
+      "date": "2012-07-11",
+      "cashVnd": null,
+      "stockPct": 20,
+      "texts": [
+        "Cổ tức bằng Cổ phiếu, tỷ lệ 10:2"
+      ]
+    },
+    {
+      "date": "2013-09-09",
+      "cashVnd": null,
+      "stockPct": 15,
+      "texts": [
+        "Cổ tức bằng Cổ phiếu, tỷ lệ 20:3"
+      ]
+    },
+    {
+      "date": "2014-10-12",
+      "cashVnd": null,
+      "stockPct": 10,
+      "texts": [
+        "Cổ tức bằng Cổ phiếu, tỷ lệ 100:10"
+      ]
+    },
+    {
+      "date": "2016-07-27",
+      "cashVnd": null,
+      "stockPct": 11,
+      "texts": [
+        "Thưởng bằng Cổ phiếu, tỷ lệ 1000:55",
+        "Cổ tức bằng Cổ phiếu, tỷ lệ 1000:55"
+      ]
+    },
+    {
+      "date": "2022-02-08",
+      "cashVnd": null,
+      "stockPct": 5,
+      "texts": [
+        "Cổ tức bằng Cổ phiếu, tỷ lệ 100:5"
+      ]
+    },
+    {
+      "date": "2025-12-10",
+      "cashVnd": null,
+      "stockPct": 10,
+      "texts": [
+        "Cổ tức bằng Cổ phiếu, tỷ lệ 10:1"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,69 @@
+{
+  "symbol": "BHN",
+  "events": [
+    {
+      "date": "2017-09-18",
+      "cashVnd": 1800,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 18%"
+      ]
+    },
+    {
+      "date": "2019-09-05",
+      "cashVnd": 7556.999999999999,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 75.57%"
+      ]
+    },
+    {
+      "date": "2021-02-17",
+      "cashVnd": 2830,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 28.3%"
+      ]
+    },
+    {
+      "date": "2022-02-09",
+      "cashVnd": 2380,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 23.8%"
+      ]
+    },
+    {
+      "date": "2023-11-16",
+      "cashVnd": 1200,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 12%"
+      ]
+    },
+    {
+      "date": "2024-08-14",
+      "cashVnd": 1500,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 15%"
+      ]
+    },
+    {
+      "date": "2025-06-08",
+      "cashVnd": 1150,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 11.5%"
+      ]
+    },
+    {
+      "date": "2026-09-14",
+      "cashVnd": 2840,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 28.4%"
+      ]
+    }
+  ]
+}

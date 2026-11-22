@@ -1,0 +1,37 @@
+{
+  "symbol": "PCM",
+  "events": [
+    {
+      "date": "2019-06-13",
+      "cashVnd": 123.70000000000002,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 1.237%"
+      ]
+    },
+    {
+      "date": "2020-09-24",
+      "cashVnd": 243.00000000000003,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 2.43%"
+      ]
+    },
+    {
+      "date": "2021-10-13",
+      "cashVnd": 34,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 0.34%"
+      ]
+    },
+    {
+      "date": "2022-09-18",
+      "cashVnd": 19,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 0.19%"
+      ]
+    }
+  ]
+}

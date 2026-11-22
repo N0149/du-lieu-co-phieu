@@ -1,0 +1,61 @@
+{
+  "symbol": "CI5",
+  "events": [
+    {
+      "date": "2012-05-15",
+      "cashVnd": 2000,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 20%"
+      ]
+    },
+    {
+      "date": "2013-05-27",
+      "cashVnd": 2000,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 20%"
+      ]
+    },
+    {
+      "date": "2014-06-02",
+      "cashVnd": 2000,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 20%"
+      ]
+    },
+    {
+      "date": "2015-05-19",
+      "cashVnd": 2000,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 20%"
+      ]
+    },
+    {
+      "date": "2015-11-16",
+      "cashVnd": null,
+      "stockPct": 47.05882352941176,
+      "texts": [
+        "Cổ tức bằng Cổ phiếu, tỷ lệ 17:08"
+      ]
+    },
+    {
+      "date": "2016-07-10",
+      "cashVnd": 1800,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 18%"
+      ]
+    },
+    {
+      "date": "2017-08-08",
+      "cashVnd": 1500,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 15%"
+      ]
+    }
+  ]
+}

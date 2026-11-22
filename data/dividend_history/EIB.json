@@ -1,0 +1,73 @@
+{
+  "symbol": "EIB",
+  "events": [
+    {
+      "date": "2010-06-17",
+      "cashVnd": 400,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 4%"
+      ]
+    },
+    {
+      "date": "2011-11-27",
+      "cashVnd": null,
+      "stockPct": null,
+      "texts": [
+        "Thưởng bằng Cổ phiếu, tỷ lệ 17%",
+        "Thưởng bằng Cổ phiếu, tỷ lệ 17%",
+        "Thưởng bằng Cổ phiếu, tỷ lệ 17%",
+        "Thưởng bằng Cổ phiếu, tỷ lệ 17%"
+      ]
+    },
+    {
+      "date": "2013-01-08",
+      "cashVnd": 800,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 8%"
+      ]
+    },
+    {
+      "date": "2013-06-12",
+      "cashVnd": 550,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 5.5%"
+      ]
+    },
+    {
+      "date": "2014-06-11",
+      "cashVnd": 400,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 4%"
+      ]
+    },
+    {
+      "date": "2023-02-16",
+      "cashVnd": null,
+      "stockPct": 20,
+      "texts": [
+        "Cổ tức bằng Cổ phiếu, tỷ lệ 100:20"
+      ]
+    },
+    {
+      "date": "2023-09-21",
+      "cashVnd": null,
+      "stockPct": 18,
+      "texts": [
+        "Cổ tức bằng Cổ phiếu, tỷ lệ 100:18"
+      ]
+    },
+    {
+      "date": "2024-09-18",
+      "cashVnd": 300,
+      "stockPct": 7.000000000000001,
+      "texts": [
+        "Cổ tức bằng Cổ phiếu, tỷ lệ 100:7",
+        "Cổ tức bằng Tiền, tỷ lệ 3%"
+      ]
+    }
+  ]
+}

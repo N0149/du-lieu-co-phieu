@@ -1,0 +1,61 @@
+{
+  "symbol": "L43",
+  "events": [
+    {
+      "date": "2008-11-07",
+      "cashVnd": 800,
+      "stockPct": null,
+      "texts": [
+        "Trả cổ tức bằng tiền mặt - Đợt 1 2008 - 800 VND"
+      ]
+    },
+    {
+      "date": "2009-03-19",
+      "cashVnd": 1000,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 10%"
+      ]
+    },
+    {
+      "date": "2009-10-21",
+      "cashVnd": 800,
+      "stockPct": null,
+      "texts": [
+        "Trả cổ tức bằng tiền mặt - Đợt 1 2009 - 800 VND"
+      ]
+    },
+    {
+      "date": "2010-03-22",
+      "cashVnd": 900,
+      "stockPct": null,
+      "texts": [
+        "Trả cổ tức bằng tiền mặt - Đợt 2 2009 - 900 VND"
+      ]
+    },
+    {
+      "date": "2011-03-31",
+      "cashVnd": 100,
+      "stockPct": null,
+      "texts": [
+        "Trả cổ tức bằng tiền mặt - Đợt 3 2009 - 100 VND"
+      ]
+    },
+    {
+      "date": "2012-11-05",
+      "cashVnd": 1000,
+      "stockPct": null,
+      "texts": [
+        "Trả cổ tức bằng tiền mặt - Cả năm 2011 - 1,000 VND"
+      ]
+    },
+    {
+      "date": "2014-03-25",
+      "cashVnd": 500,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 5%"
+      ]
+    }
+  ]
+}

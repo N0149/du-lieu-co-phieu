@@ -1,0 +1,53 @@
+{
+  "symbol": "VFC",
+  "events": [
+    {
+      "date": "2009-07-06",
+      "cashVnd": 400,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 4%"
+      ]
+    },
+    {
+      "date": "2014-07-31",
+      "cashVnd": 650,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 6.5%"
+      ]
+    },
+    {
+      "date": "2014-10-27",
+      "cashVnd": 2700,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 27%"
+      ]
+    },
+    {
+      "date": "2023-08-27",
+      "cashVnd": 1500,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 15%"
+      ]
+    },
+    {
+      "date": "2024-06-02",
+      "cashVnd": 800,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 8%"
+      ]
+    },
+    {
+      "date": "2025-06-26",
+      "cashVnd": 800,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 8%"
+      ]
+    }
+  ]
+}

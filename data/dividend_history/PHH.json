@@ -1,0 +1,21 @@
+{
+  "symbol": "PHH",
+  "events": [
+    {
+      "date": "2010-05-04",
+      "cashVnd": 1000,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 10%"
+      ]
+    },
+    {
+      "date": "2011-06-16",
+      "cashVnd": 800,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 8%"
+      ]
+    }
+  ]
+}

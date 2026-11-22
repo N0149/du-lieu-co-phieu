@@ -1,0 +1,45 @@
+{
+  "symbol": "QNC",
+  "events": [
+    {
+      "date": "2009-03-24",
+      "cashVnd": 1500,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 15%"
+      ]
+    },
+    {
+      "date": "2012-03-06",
+      "cashVnd": 1000,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 10%"
+      ]
+    },
+    {
+      "date": "2013-02-26",
+      "cashVnd": 200,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 2%"
+      ]
+    },
+    {
+      "date": "2014-03-02",
+      "cashVnd": 130,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 1.3%"
+      ]
+    },
+    {
+      "date": "2015-02-25",
+      "cashVnd": 750,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 7.5%"
+      ]
+    }
+  ]
+}

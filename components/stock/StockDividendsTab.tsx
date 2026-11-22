@@ -127,7 +127,7 @@ export function StockDividendsTab({
         const stockPctNorm = normalizeStockPct(e.stockPct)
         const hasStock = stockPctNorm > 0
 
-        const rawText = e.texts?.[0] || ''
+        const rawText = Array.isArray(e.texts) && e.texts.length > 0 ? e.texts.join(' & ') : (e.texts?.[0] || '')
         const isRightsIssue =
           e.eventType === 'rights' ||
           rawText.toLowerCase().includes('quyền mua') ||

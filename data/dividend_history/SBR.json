@@ -1,0 +1,53 @@
+{
+  "symbol": "SBR",
+  "events": [
+    {
+      "date": "2021-09-26",
+      "cashVnd": 130,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 1.3%"
+      ]
+    },
+    {
+      "date": "2022-07-21",
+      "cashVnd": 130,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 1.3%"
+      ]
+    },
+    {
+      "date": "2023-06-08",
+      "cashVnd": 130,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 1.3%"
+      ]
+    },
+    {
+      "date": "2024-06-11",
+      "cashVnd": 219,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 2.19%"
+      ]
+    },
+    {
+      "date": "2025-06-11",
+      "cashVnd": 158,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 1.58%"
+      ]
+    },
+    {
+      "date": "2026-09-29",
+      "cashVnd": 153,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 1.53%"
+      ]
+    }
+  ]
+}

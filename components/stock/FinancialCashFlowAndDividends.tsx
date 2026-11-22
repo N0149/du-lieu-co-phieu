@@ -80,7 +80,7 @@ export function FinancialCashFlowAndDividends({
           stockPct: stockPctNorm,
           typeLabel,
           typeBadge,
-          note: e.texts?.[0] || 'Chi trả cổ tức',
+          note: Array.isArray(e.texts) && e.texts.length > 0 ? e.texts.join(' & ') : (e.texts?.[0] || 'Chi trả cổ tức'),
         }
       })
   }, [dividendData])

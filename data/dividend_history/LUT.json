@@ -1,0 +1,37 @@
+{
+  "symbol": "LUT",
+  "events": [
+    {
+      "date": "2008-03-11",
+      "cashVnd": 629,
+      "stockPct": null,
+      "texts": [
+        "Trả cổ tức bằng tiền mặt - Cả năm 2007 - 629 VND"
+      ]
+    },
+    {
+      "date": "2008-12-08",
+      "cashVnd": 500,
+      "stockPct": null,
+      "texts": [
+        "Trả cổ tức bằng tiền mặt - Đợt 1 2008 - 500 VND"
+      ]
+    },
+    {
+      "date": "2009-04-13",
+      "cashVnd": 723,
+      "stockPct": null,
+      "texts": [
+        "Trả cổ tức bằng tiền mặt - Cả năm 2008 - 723 VND"
+      ]
+    },
+    {
+      "date": "2011-04-12",
+      "cashVnd": 2100,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 21%"
+      ]
+    }
+  ]
+}

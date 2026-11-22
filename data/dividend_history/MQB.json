@@ -1,0 +1,69 @@
+{
+  "symbol": "MQB",
+  "events": [
+    {
+      "date": "2019-05-15",
+      "cashVnd": 200,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 2%"
+      ]
+    },
+    {
+      "date": "2020-07-19",
+      "cashVnd": 229.99999999999997,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 2.3%"
+      ]
+    },
+    {
+      "date": "2021-05-24",
+      "cashVnd": 250,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 2.5%"
+      ]
+    },
+    {
+      "date": "2022-05-29",
+      "cashVnd": 250,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 2.5%"
+      ]
+    },
+    {
+      "date": "2023-07-06",
+      "cashVnd": 350,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 3.5%"
+      ]
+    },
+    {
+      "date": "2024-07-08",
+      "cashVnd": 350,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 3.5%"
+      ]
+    },
+    {
+      "date": "2025-07-28",
+      "cashVnd": 380,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 3.8%"
+      ]
+    },
+    {
+      "date": "2026-10-14",
+      "cashVnd": 400,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 4%"
+      ]
+    }
+  ]
+}

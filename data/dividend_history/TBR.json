@@ -1,0 +1,45 @@
+{
+  "symbol": "TBR",
+  "events": [
+    {
+      "date": "2022-08-23",
+      "cashVnd": 500,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 5%"
+      ]
+    },
+    {
+      "date": "2023-08-10",
+      "cashVnd": 600,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 6%"
+      ]
+    },
+    {
+      "date": "2024-10-14",
+      "cashVnd": 350,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 3.5%"
+      ]
+    },
+    {
+      "date": "2025-10-27",
+      "cashVnd": 350,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 3.5%"
+      ]
+    },
+    {
+      "date": "2026-10-26",
+      "cashVnd": 350,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 3.5%"
+      ]
+    }
+  ]
+}

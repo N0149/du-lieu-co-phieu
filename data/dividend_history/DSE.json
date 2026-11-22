@@ -1,0 +1,21 @@
+{
+  "symbol": "DSE",
+  "events": [
+    {
+      "date": "2024-11-27",
+      "cashVnd": 500,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 5%"
+      ]
+    },
+    {
+      "date": "2026-01-06",
+      "cashVnd": 700,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 7%"
+      ]
+    }
+  ]
+}

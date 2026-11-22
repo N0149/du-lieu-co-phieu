@@ -1,0 +1,86 @@
+{
+  "symbol": "NLS",
+  "events": [
+    {
+      "date": "2017-05-25",
+      "cashVnd": 350,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 3.5%"
+      ]
+    },
+    {
+      "date": "2018-05-24",
+      "cashVnd": 390,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 3.9%"
+      ]
+    },
+    {
+      "date": "2019-06-12",
+      "cashVnd": 520,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 5.2%"
+      ]
+    },
+    {
+      "date": "2020-06-02",
+      "cashVnd": 600,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 6%"
+      ]
+    },
+    {
+      "date": "2021-06-15",
+      "cashVnd": 670,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 6.7%"
+      ]
+    },
+    {
+      "date": "2022-06-01",
+      "cashVnd": 750,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 7.5%"
+      ]
+    },
+    {
+      "date": "2023-06-14",
+      "cashVnd": 1500,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 7.5%",
+        "Cổ tức bằng Tiền, tỷ lệ 7.5%"
+      ]
+    },
+    {
+      "date": "2024-06-16",
+      "cashVnd": 800,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 8%"
+      ]
+    },
+    {
+      "date": "2025-06-04",
+      "cashVnd": 1300,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 13%"
+      ]
+    },
+    {
+      "date": "2026-05-28",
+      "cashVnd": 1350,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 13.5%"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,37 @@
+{
+  "symbol": "STL",
+  "events": [
+    {
+      "date": "2009-04-27",
+      "cashVnd": 2000,
+      "stockPct": null,
+      "texts": [
+        "Trả cổ tức bằng tiền mặt - Cả năm 2008 - 2,000 VND"
+      ]
+    },
+    {
+      "date": "2010-07-06",
+      "cashVnd": null,
+      "stockPct": 30,
+      "texts": [
+        "Phát hành cổ phiếu - Cổ phiếu thưởng tỉ lệ 30.0%"
+      ]
+    },
+    {
+      "date": "2010-07-06",
+      "cashVnd": null,
+      "stockPct": 20,
+      "texts": [
+        "Phát hành cổ phiếu - Trả Cổ tức bằng Cổ phiếu tỉ lệ 20.0%"
+      ]
+    },
+    {
+      "date": "2011-07-27",
+      "cashVnd": 2000,
+      "stockPct": null,
+      "texts": [
+        "Trả cổ tức bằng tiền mặt - Cả năm 2010 - 2,000 VND"
+      ]
+    }
+  ]
+}

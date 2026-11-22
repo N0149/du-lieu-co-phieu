@@ -1,0 +1,45 @@
+{
+  "symbol": "SVG",
+  "events": [
+    {
+      "date": "2016-06-14",
+      "cashVnd": 50,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 0.5%"
+      ]
+    },
+    {
+      "date": "2017-06-13",
+      "cashVnd": 60,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 0.6%"
+      ]
+    },
+    {
+      "date": "2018-06-11",
+      "cashVnd": 60,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 0.6%"
+      ]
+    },
+    {
+      "date": "2019-06-02",
+      "cashVnd": 60,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 0.6%"
+      ]
+    },
+    {
+      "date": "2020-07-07",
+      "cashVnd": 60,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 0.6%"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,69 @@
+{
+  "symbol": "IDP",
+  "events": [
+    {
+      "date": "2021-07-18",
+      "cashVnd": 5000,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 50%"
+      ]
+    },
+    {
+      "date": "2022-05-23",
+      "cashVnd": 4000,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 40%"
+      ]
+    },
+    {
+      "date": "2022-10-24",
+      "cashVnd": 1500,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 15%"
+      ]
+    },
+    {
+      "date": "2023-05-17",
+      "cashVnd": 4500,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 45%"
+      ]
+    },
+    {
+      "date": "2024-01-18",
+      "cashVnd": 8500,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 85%"
+      ]
+    },
+    {
+      "date": "2025-01-05",
+      "cashVnd": 5000,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 50%"
+      ]
+    },
+    {
+      "date": "2026-01-14",
+      "cashVnd": 2500,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 25%"
+      ]
+    },
+    {
+      "date": "2026-06-18",
+      "cashVnd": 10000,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 100%"
+      ]
+    }
+  ]
+}

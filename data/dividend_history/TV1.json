@@ -1,0 +1,69 @@
+{
+  "symbol": "TV1",
+  "events": [
+    {
+      "date": "2012-06-19",
+      "cashVnd": null,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Cổ phiếu, tỷ lệ 15%"
+      ]
+    },
+    {
+      "date": "2013-07-17",
+      "cashVnd": 1200,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 12%"
+      ]
+    },
+    {
+      "date": "2014-06-16",
+      "cashVnd": null,
+      "stockPct": 16,
+      "texts": [
+        "Cổ tức bằng Cổ phiếu, tỷ lệ 100:16"
+      ]
+    },
+    {
+      "date": "2015-09-29",
+      "cashVnd": 1500,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 15%"
+      ]
+    },
+    {
+      "date": "2016-09-28",
+      "cashVnd": 1050,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 10.5%"
+      ]
+    },
+    {
+      "date": "2024-08-11",
+      "cashVnd": 500,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 5%"
+      ]
+    },
+    {
+      "date": "2025-12-10",
+      "cashVnd": 600,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 6%"
+      ]
+    },
+    {
+      "date": "2026-10-06",
+      "cashVnd": 1500,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 15%"
+      ]
+    }
+  ]
+}

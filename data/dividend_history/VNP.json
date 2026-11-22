@@ -1,0 +1,21 @@
+{
+  "symbol": "VNP",
+  "events": [
+    {
+      "date": "2025-06-16",
+      "cashVnd": 2000,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 20%"
+      ]
+    },
+    {
+      "date": "2026-06-28",
+      "cashVnd": 800,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 8%"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "symbol": "CMX",
+  "events": [
+    {
+      "date": "2020-08-25",
+      "cashVnd": null,
+      "stockPct": 10,
+      "texts": [
+        "Thưởng bằng Cổ phiếu, tỷ lệ 10:1"
+      ]
+    },
+    {
+      "date": "2022-07-27",
+      "cashVnd": null,
+      "stockPct": 10,
+      "texts": [
+        "Thưởng bằng Cổ phiếu, tỷ lệ 10:1"
+      ]
+    }
+  ]
+}

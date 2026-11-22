@@ -312,8 +312,10 @@ export function getEnrichedScreenerStocks(): ScreenerStockItem[] {
         .prepare('SELECT symbol, events_json FROM dividend_history')
         .all() as any[]
 
-      // Mốc 1 năm gần nhất (trailing 12M tính từ hiện tại 2026-09-05)
-      const oneYearAgoDate = '2025-09-01'
+      // Mốc 1 năm gần nhất (trailing 12M tính từ ngày hiện tại)
+      const dNow = new Date()
+      dNow.setFullYear(dNow.getFullYear() - 1)
+      const oneYearAgoDate = dNow.toISOString().slice(0, 10)
 
       for (const r of rows) {
         try {

@@ -89,7 +89,7 @@ function enrichEvents(sym: string, rawEvents: DividendEventItem[]): DividendEven
   const corpList = corpMap ? corpMap[sym.toUpperCase()] : null
 
   return rawEvents.map((e) => {
-    const rawText = e.texts?.[0] || ''
+    const rawText = Array.isArray(e.texts) && e.texts.length > 0 ? e.texts.join(' & ') : (e.texts?.[0] || '')
     const title = e.eventTitle || formatEventTitle(rawText, e.cashVnd, e.stockPct)
 
     let exec = e.execDate || null
@@ -109,6 +109,7 @@ function enrichEvents(sym: string, rawEvents: DividendEventItem[]): DividendEven
 
     let type: 'cash' | 'stock' | 'rights' | 'other' = 'cash'
     if (isRights) type = 'rights'
+    else if (hasCash && hasStock) type = 'cash'
     else if (hasStock) type = 'stock'
     else if (hasCash) type = 'cash'
 
@@ -241,6 +242,28 @@ export async function getDividendHistory(symbol: string): Promise<DividendHistor
           DIV_MEMORY_CACHE.set(sym, { data: payload, expiresAt: now + DIV_CACHE_TTL_MS })
           return payload
         }
+      }
+    }
+  } catch {}
+
+  // 4. Fallback trực tiếp từ API Ruatichsan khi chưa có trong DB
+  try {
+    const res = await fetch(`https://api.ruatichsan.com/api/v1/data/public/dividend-history/${sym}`, {
+      headers: {
+        Origin: 'https://ruatichsan.com',
+        Referer: 'https://ruatichsan.com/',
+        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36',
+      },
+    })
+    if (res.ok) {
+      const liveData = await decryptApiResponse(res)
+      if (liveData && Array.isArray(liveData.events) && liveData.events.length > 0) {
+        const payload: DividendHistoryPayload = {
+          symbol: sym,
+          events: enrichEvents(sym, liveData.events),
+        }
+        DIV_MEMORY_CACHE.set(sym, { data: payload, expiresAt: now + DIV_CACHE_TTL_MS })
+        return payload
       }
     }
   } catch {}

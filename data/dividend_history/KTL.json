@@ -1,0 +1,101 @@
+{
+  "symbol": "KTL",
+  "events": [
+    {
+      "date": "2015-01-19",
+      "cashVnd": 900,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 9%"
+      ]
+    },
+    {
+      "date": "2015-06-30",
+      "cashVnd": 700,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 7%"
+      ]
+    },
+    {
+      "date": "2016-07-17",
+      "cashVnd": 800,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 8%"
+      ]
+    },
+    {
+      "date": "2017-07-13",
+      "cashVnd": 700,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 7%"
+      ]
+    },
+    {
+      "date": "2019-12-04",
+      "cashVnd": 2058.8,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 20.588%"
+      ]
+    },
+    {
+      "date": "2020-12-20",
+      "cashVnd": 976.6,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 9.766%"
+      ]
+    },
+    {
+      "date": "2021-12-15",
+      "cashVnd": 807.4,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 8.074%"
+      ]
+    },
+    {
+      "date": "2022-12-18",
+      "cashVnd": 340,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 3.4%"
+      ]
+    },
+    {
+      "date": "2023-12-13",
+      "cashVnd": 550,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 5.5%"
+      ]
+    },
+    {
+      "date": "2024-08-13",
+      "cashVnd": 550,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 5.5%"
+      ]
+    },
+    {
+      "date": "2025-08-14",
+      "cashVnd": 750,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 7.5%"
+      ]
+    },
+    {
+      "date": "2026-08-16",
+      "cashVnd": 700,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 7%"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "symbol": "VXP",
+  "events": [
+    {
+      "date": "2020-07-16",
+      "cashVnd": 1250,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 12.5%"
+      ]
+    },
+    {
+      "date": "2021-08-05",
+      "cashVnd": null,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 14.7"
+      ]
+    },
+    {
+      "date": "2022-07-26",
+      "cashVnd": 1400,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 14%"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "symbol": "PXA",
+  "events": [
+    {
+      "date": "2011-06-07",
+      "cashVnd": 500,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 1,5%"
+      ]
+    },
+    {
+      "date": "2014-11-17",
+      "cashVnd": 250,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 2.5%"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,61 @@
+{
+  "symbol": "CAG",
+  "events": [
+    {
+      "date": "2018-05-16",
+      "cashVnd": 193,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 1.93%"
+      ]
+    },
+    {
+      "date": "2019-06-13",
+      "cashVnd": 196,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 1.96%"
+      ]
+    },
+    {
+      "date": "2020-07-01",
+      "cashVnd": 218.7,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 2.187%"
+      ]
+    },
+    {
+      "date": "2021-06-23",
+      "cashVnd": 250,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 2.5%"
+      ]
+    },
+    {
+      "date": "2022-05-25",
+      "cashVnd": 290,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 2.9%"
+      ]
+    },
+    {
+      "date": "2023-05-22",
+      "cashVnd": 341,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 3.41%"
+      ]
+    },
+    {
+      "date": "2024-06-19",
+      "cashVnd": 168,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 1.68%"
+      ]
+    }
+  ]
+}

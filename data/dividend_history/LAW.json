@@ -1,0 +1,61 @@
+{
+  "symbol": "LAW",
+  "events": [
+    {
+      "date": "2017-05-10",
+      "cashVnd": 499,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 4.99%"
+      ]
+    },
+    {
+      "date": "2018-05-29",
+      "cashVnd": 620,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 6.2%"
+      ]
+    },
+    {
+      "date": "2019-05-28",
+      "cashVnd": 786,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 7.86%"
+      ]
+    },
+    {
+      "date": "2020-10-13",
+      "cashVnd": 1798,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 17.98%"
+      ]
+    },
+    {
+      "date": "2021-10-06",
+      "cashVnd": 420,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 4.2%"
+      ]
+    },
+    {
+      "date": "2022-10-20",
+      "cashVnd": 517,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 5.17%"
+      ]
+    },
+    {
+      "date": "2023-10-16",
+      "cashVnd": 607,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 6.07%"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,77 @@
+{
+  "symbol": "HDW",
+  "events": [
+    {
+      "date": "2018-05-29",
+      "cashVnd": 500,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 5%"
+      ]
+    },
+    {
+      "date": "2019-08-07",
+      "cashVnd": 680,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 6.8%"
+      ]
+    },
+    {
+      "date": "2020-09-08",
+      "cashVnd": 730,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 7.3%"
+      ]
+    },
+    {
+      "date": "2021-09-13",
+      "cashVnd": 740,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 7.4%"
+      ]
+    },
+    {
+      "date": "2022-09-18",
+      "cashVnd": 1002.0899999999999,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 10.0209%"
+      ]
+    },
+    {
+      "date": "2023-08-30",
+      "cashVnd": 780,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 7.8%"
+      ]
+    },
+    {
+      "date": "2024-09-17",
+      "cashVnd": 791.93,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 7.9193%"
+      ]
+    },
+    {
+      "date": "2025-09-08",
+      "cashVnd": 810,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 8.1%"
+      ]
+    },
+    {
+      "date": "2026-07-20",
+      "cashVnd": 819.9999999999999,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 8.2%"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,69 @@
+{
+  "symbol": "TVH",
+  "events": [
+    {
+      "date": "2019-08-22",
+      "cashVnd": 2191,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 21.91%"
+      ]
+    },
+    {
+      "date": "2020-11-02",
+      "cashVnd": 3082,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 30.82%"
+      ]
+    },
+    {
+      "date": "2021-09-23",
+      "cashVnd": 3434.0000000000005,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 34.34%"
+      ]
+    },
+    {
+      "date": "2022-09-08",
+      "cashVnd": 3327.0000000000005,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 33.27%"
+      ]
+    },
+    {
+      "date": "2023-09-20",
+      "cashVnd": 3600,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 36%"
+      ]
+    },
+    {
+      "date": "2024-06-13",
+      "cashVnd": 3990,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 39.90%"
+      ]
+    },
+    {
+      "date": "2025-06-10",
+      "cashVnd": 4100,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 41%"
+      ]
+    },
+    {
+      "date": "2026-06-17",
+      "cashVnd": 3900,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 39%"
+      ]
+    }
+  ]
+}

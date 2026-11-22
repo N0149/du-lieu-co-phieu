@@ -1,0 +1,45 @@
+{
+  "symbol": "HPX",
+  "events": [
+    {
+      "date": "2018-10-31",
+      "cashVnd": null,
+      "stockPct": 15,
+      "texts": [
+        "Cổ tức bằng Cổ phiếu, tỷ lệ 100:15"
+      ]
+    },
+    {
+      "date": "2018-12-19",
+      "cashVnd": null,
+      "stockPct": 15.939999999999998,
+      "texts": [
+        "Thưởng bằng Cổ phiếu, tỷ lệ 10000:1594"
+      ]
+    },
+    {
+      "date": "2020-03-26",
+      "cashVnd": null,
+      "stockPct": 15,
+      "texts": [
+        "Cổ tức bằng Cổ phiếu, tỷ lệ 100:15"
+      ]
+    },
+    {
+      "date": "2020-09-23",
+      "cashVnd": null,
+      "stockPct": 15,
+      "texts": [
+        "Cổ tức bằng Cổ phiếu, tỷ lệ 100:15"
+      ]
+    },
+    {
+      "date": "2021-09-05",
+      "cashVnd": null,
+      "stockPct": 15,
+      "texts": [
+        "Cổ tức bằng Cổ phiếu, tỷ lệ 100:15"
+      ]
+    }
+  ]
+}

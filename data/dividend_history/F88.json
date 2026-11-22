@@ -1,0 +1,21 @@
+{
+  "symbol": "F88",
+  "events": [
+    {
+      "date": "2026-01-19",
+      "cashVnd": null,
+      "stockPct": 1200,
+      "texts": [
+        "Thưởng bằng Cổ tức, tỷ lệ 1:12"
+      ]
+    },
+    {
+      "date": "2026-06-07",
+      "cashVnd": null,
+      "stockPct": 100,
+      "texts": [
+        "Thưởng bằng Cổ tức, tỷ lệ 1:1"
+      ]
+    }
+  ]
+}

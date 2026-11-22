@@ -1,0 +1,21 @@
+{
+  "symbol": "PMG",
+  "events": [
+    {
+      "date": "2018-07-30",
+      "cashVnd": null,
+      "stockPct": 15,
+      "texts": [
+        "Cổ tức bằng Cổ phiếu, tỷ lệ 100:15"
+      ]
+    },
+    {
+      "date": "2019-06-09",
+      "cashVnd": null,
+      "stockPct": 11,
+      "texts": [
+        "Cổ tức bằng Cổ phiếu, tỷ lệ 100:11"
+      ]
+    }
+  ]
+}

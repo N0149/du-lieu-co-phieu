@@ -1,0 +1,85 @@
+{
+  "symbol": "SMA",
+  "events": [
+    {
+      "date": "2018-02-12",
+      "cashVnd": 1000,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 10%"
+      ]
+    },
+    {
+      "date": "2018-05-27",
+      "cashVnd": 300,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 3%"
+      ]
+    },
+    {
+      "date": "2018-07-22",
+      "cashVnd": 470,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 4.7%"
+      ]
+    },
+    {
+      "date": "2018-08-13",
+      "cashVnd": null,
+      "stockPct": 18,
+      "texts": [
+        "Cổ tức bằng Cổ phiếu, tỷ lệ 100:18"
+      ]
+    },
+    {
+      "date": "2018-10-28",
+      "cashVnd": 500,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 5%"
+      ]
+    },
+    {
+      "date": "2019-01-03",
+      "cashVnd": 300,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 3%"
+      ]
+    },
+    {
+      "date": "2019-03-31",
+      "cashVnd": 200,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 2%"
+      ]
+    },
+    {
+      "date": "2021-01-05",
+      "cashVnd": null,
+      "stockPct": 7.000000000000001,
+      "texts": [
+        "Cổ tức bằng Cổ phiếu, tỷ lệ 100:7"
+      ]
+    },
+    {
+      "date": "2024-11-07",
+      "cashVnd": 350,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 3.5%"
+      ]
+    },
+    {
+      "date": "2025-11-13",
+      "cashVnd": 500,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 5%"
+      ]
+    }
+  ]
+}

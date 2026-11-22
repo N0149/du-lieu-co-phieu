@@ -1,0 +1,29 @@
+{
+  "symbol": "FTI",
+  "events": [
+    {
+      "date": "2015-12-31",
+      "cashVnd": 98,
+      "stockPct": null,
+      "texts": [
+        "Trả cổ tức bằng tiền mặt - Cả năm 2015 - 98 VND"
+      ]
+    },
+    {
+      "date": "2016-11-30",
+      "cashVnd": null,
+      "stockPct": 0.1268,
+      "texts": [
+        "Phát hành cổ phiếu - Cổ phiếu thưởng tỉ lệ 12.7%"
+      ]
+    },
+    {
+      "date": "2016-11-30",
+      "cashVnd": null,
+      "stockPct": 12.677,
+      "texts": [
+        "Phát hành cổ phiếu - Cổ phiếu thưởng tỉ lệ 12.7%"
+      ]
+    }
+  ]
+}

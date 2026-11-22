@@ -1,0 +1,25 @@
+{
+  "symbol": "OGC",
+  "events": [
+    {
+      "date": "2011-11-16",
+      "cashVnd": null,
+      "stockPct": 100,
+      "texts": [
+        "Thưởng bằng Cổ phiếu, tỷ lệ 5:1",
+        "Thưởng bằng Cổ phiếu, tỷ lệ 5:1",
+        "Thưởng bằng Cổ phiếu, tỷ lệ 5:1",
+        "Thưởng bằng Cổ phiếu, tỷ lệ 5:1",
+        "Thưởng bằng Cổ phiếu, tỷ lệ 5:1"
+      ]
+    },
+    {
+      "date": "2013-10-03",
+      "cashVnd": 500,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 5%"
+      ]
+    }
+  ]
+}

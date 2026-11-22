@@ -1,0 +1,106 @@
+{
+  "symbol": "DHD",
+  "events": [
+    {
+      "date": "2014-01-07",
+      "cashVnd": 2300,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 23%"
+      ]
+    },
+    {
+      "date": "2018-05-10",
+      "cashVnd": 700,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 7%"
+      ]
+    },
+    {
+      "date": "2019-05-22",
+      "cashVnd": 700,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 7%"
+      ]
+    },
+    {
+      "date": "2020-04-22",
+      "cashVnd": 500,
+      "stockPct": 25,
+      "texts": [
+        "Cổ tức bằng Cổ phiếu, tỷ lệ 100:25",
+        "Cổ tức bằng Tiền, tỷ lệ 5%"
+      ]
+    },
+    {
+      "date": "2021-04-06",
+      "cashVnd": 600,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 6%"
+      ]
+    },
+    {
+      "date": "2021-06-01",
+      "cashVnd": null,
+      "stockPct": 20,
+      "texts": [
+        "Cổ tức bằng Cổ phiếu, tỷ lệ 100:20"
+      ]
+    },
+    {
+      "date": "2022-07-10",
+      "cashVnd": 500,
+      "stockPct": 25,
+      "texts": [
+        "Cổ tức bằng Cổ phiếu, tỷ lệ 100:25",
+        "Cổ tức bằng Tiền, tỷ lệ 5%"
+      ]
+    },
+    {
+      "date": "2023-04-16",
+      "cashVnd": 400,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 4%"
+      ]
+    },
+    {
+      "date": "2023-05-16",
+      "cashVnd": null,
+      "stockPct": 36,
+      "texts": [
+        "Thưởng bằng Cổ phiếu, tỷ lệ 100:36"
+      ]
+    },
+    {
+      "date": "2024-05-08",
+      "cashVnd": 300,
+      "stockPct": 37,
+      "texts": [
+        "Thưởng bằng Cổ tức, tỷ lệ 100:37",
+        "Cổ tức bằng Tiền, tỷ lệ 3%"
+      ]
+    },
+    {
+      "date": "2025-05-13",
+      "cashVnd": 220.00000000000003,
+      "stockPct": 28.000000000000004,
+      "texts": [
+        "Thưởng bằng Cổ tức, tỷ lệ 100:28.8",
+        "Cổ tức bằng Tiền, tỷ lệ 2.2%"
+      ]
+    },
+    {
+      "date": "2026-05-04",
+      "cashVnd": 180,
+      "stockPct": 35,
+      "texts": [
+        "Thưởng bằng Cổ tức, tỷ lệ 100:35",
+        "Cổ tức bằng Tiền, tỷ lệ 1.8%"
+      ]
+    }
+  ]
+}

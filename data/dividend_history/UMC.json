@@ -1,0 +1,85 @@
+{
+  "symbol": "UMC",
+  "events": [
+    {
+      "date": "2018-05-29",
+      "cashVnd": 300,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 3%"
+      ]
+    },
+    {
+      "date": "2019-05-13",
+      "cashVnd": 300,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 3%"
+      ]
+    },
+    {
+      "date": "2020-06-23",
+      "cashVnd": 300,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 3%"
+      ]
+    },
+    {
+      "date": "2021-06-13",
+      "cashVnd": 300,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 3%"
+      ]
+    },
+    {
+      "date": "2022-05-22",
+      "cashVnd": 300,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 3%"
+      ]
+    },
+    {
+      "date": "2022-12-20",
+      "cashVnd": 77,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 0.77%"
+      ]
+    },
+    {
+      "date": "2023-05-22",
+      "cashVnd": 423.00000000000006,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 4.23%"
+      ]
+    },
+    {
+      "date": "2024-05-21",
+      "cashVnd": 586,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 5.86%"
+      ]
+    },
+    {
+      "date": "2025-05-20",
+      "cashVnd": 705,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 7.05%"
+      ]
+    },
+    {
+      "date": "2026-05-19",
+      "cashVnd": 1980,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 19.8%"
+      ]
+    }
+  ]
+}

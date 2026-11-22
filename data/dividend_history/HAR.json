@@ -1,0 +1,29 @@
+{
+  "symbol": "HAR",
+  "events": [
+    {
+      "date": "2013-07-07",
+      "cashVnd": null,
+      "stockPct": 4,
+      "texts": [
+        "Cổ tức bằng Cổ phiếu, tỷ lệ 100:4"
+      ]
+    },
+    {
+      "date": "2015-11-02",
+      "cashVnd": null,
+      "stockPct": 2,
+      "texts": [
+        "Cổ tức bằng Cổ phiếu, tỷ lệ 100:2.3"
+      ]
+    },
+    {
+      "date": "2017-09-11",
+      "cashVnd": null,
+      "stockPct": 4.5,
+      "texts": [
+        "Cổ tức bằng Cổ phiếu, tỷ lệ 200:9"
+      ]
+    }
+  ]
+}

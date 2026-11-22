@@ -1,0 +1,69 @@
+{
+  "symbol": "ILB",
+  "events": [
+    {
+      "date": "2020-06-30",
+      "cashVnd": 1500,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 15%"
+      ]
+    },
+    {
+      "date": "2021-06-23",
+      "cashVnd": 1500,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 15%"
+      ]
+    },
+    {
+      "date": "2022-07-18",
+      "cashVnd": 1500,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 15%"
+      ]
+    },
+    {
+      "date": "2023-09-06",
+      "cashVnd": 1989.9999999999998,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 19.9%"
+      ]
+    },
+    {
+      "date": "2024-08-28",
+      "cashVnd": 2107,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 21.07%"
+      ]
+    },
+    {
+      "date": "2025-03-05",
+      "cashVnd": null,
+      "stockPct": 5.5,
+      "texts": [
+        "Thưởng bằng Cổ tức, tỷ lệ 1000:55"
+      ]
+    },
+    {
+      "date": "2025-08-27",
+      "cashVnd": 1466,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 14.66%"
+      ]
+    },
+    {
+      "date": "2026-08-26",
+      "cashVnd": 1427,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 14.27%"
+      ]
+    }
+  ]
+}

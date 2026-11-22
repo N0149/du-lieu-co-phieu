@@ -1,0 +1,109 @@
+{
+  "symbol": "NGC",
+  "events": [
+    {
+      "date": "2008-08-08",
+      "cashVnd": 1000,
+      "stockPct": null,
+      "texts": [
+        "Trả cổ tức bằng tiền mặt - Đợt 1 2008 - 1,000 VND"
+      ]
+    },
+    {
+      "date": "2008-12-29",
+      "cashVnd": 1000,
+      "stockPct": null,
+      "texts": [
+        "Trả cổ tức bằng tiền mặt - Đợt 2 2008 - 1,000 VND"
+      ]
+    },
+    {
+      "date": "2009-12-28",
+      "cashVnd": 1500,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 15%"
+      ]
+    },
+    {
+      "date": "2011-01-10",
+      "cashVnd": 800,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 8%"
+      ]
+    },
+    {
+      "date": "2012-02-29",
+      "cashVnd": 1200,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 12%"
+      ]
+    },
+    {
+      "date": "2012-03-30",
+      "cashVnd": null,
+      "stockPct": 10,
+      "texts": [
+        "Phát hành cổ phiếu - Cổ phiếu thưởng tỉ lệ 10.0%"
+      ]
+    },
+    {
+      "date": "2013-04-13",
+      "cashVnd": null,
+      "stockPct": 15,
+      "texts": [
+        "Phát hành cổ phiếu - Cổ phiếu thưởng tỉ lệ 15.0%"
+      ]
+    },
+    {
+      "date": "2013-05-07",
+      "cashVnd": 700,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 7%"
+      ]
+    },
+    {
+      "date": "2014-03-17",
+      "cashVnd": 1300,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 13%"
+      ]
+    },
+    {
+      "date": "2015-04-07",
+      "cashVnd": 1000,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 10%"
+      ]
+    },
+    {
+      "date": "2015-06-22",
+      "cashVnd": null,
+      "stockPct": 66.66666666666666,
+      "texts": [
+        "Cổ tức bằng Cổ phiếu, tỷ lệ 3:2"
+      ]
+    },
+    {
+      "date": "2016-03-23",
+      "cashVnd": 1000,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 10%"
+      ]
+    },
+    {
+      "date": "2018-07-16",
+      "cashVnd": null,
+      "stockPct": 15,
+      "texts": [
+        "Thưởng bằng Cổ phiếu, tỷ lệ 100:15"
+      ]
+    }
+  ]
+}

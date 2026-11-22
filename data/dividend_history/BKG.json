@@ -1,0 +1,21 @@
+{
+  "symbol": "BKG",
+  "events": [
+    {
+      "date": "2022-10-23",
+      "cashVnd": null,
+      "stockPct": 10,
+      "texts": [
+        "Cổ tức bằng Cổ phiếu, tỷ lệ 100:10"
+      ]
+    },
+    {
+      "date": "2024-06-23",
+      "cashVnd": null,
+      "stockPct": 5,
+      "texts": [
+        "Cổ tức bằng Cổ phiếu, tỷ lệ 100:5"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "symbol": "MKV",
+  "events": [
+    {
+      "date": "2009-05-10",
+      "cashVnd": 700,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 7%"
+      ]
+    },
+    {
+      "date": "2013-01-08",
+      "cashVnd": null,
+      "stockPct": 6,
+      "texts": [
+        "Thưởng bằng Cổ phiếu, tỷ lệ 100:6"
+      ]
+    },
+    {
+      "date": "2023-05-04",
+      "cashVnd": 300,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 3%"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,37 @@
+{
+  "symbol": "VAB",
+  "events": [
+    {
+      "date": "2015-12-10",
+      "cashVnd": null,
+      "stockPct": 5.510000000000001,
+      "texts": [
+        "Thưởng bằng Cổ phiếu, tỷ lệ 10000:551"
+      ]
+    },
+    {
+      "date": "2022-01-18",
+      "cashVnd": null,
+      "stockPct": 21,
+      "texts": [
+        "Cổ tức bằng Cổ phiếu, tỷ lệ 100:21.35"
+      ]
+    },
+    {
+      "date": "2025-08-13",
+      "cashVnd": null,
+      "stockPct": 51,
+      "texts": [
+        "Thưởng bằng Cổ tức, tỷ lệ 100:51.19"
+      ]
+    },
+    {
+      "date": "2026-08-24",
+      "cashVnd": null,
+      "stockPct": 10,
+      "texts": [
+        "Thưởng bằng Cổ tức, tỷ lệ 100:10.5"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "symbol": "LM3",
+  "events": [
+    {
+      "date": "2010-05-06",
+      "cashVnd": 1280,
+      "stockPct": null,
+      "texts": [
+        "Trả cổ tức bằng tiền mặt - Cả năm 2009 - 1,280 VND"
+      ]
+    },
+    {
+      "date": "2011-05-17",
+      "cashVnd": 600,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 6%"
+      ]
+    },
+    {
+      "date": "2011-10-19",
+      "cashVnd": 600,
+      "stockPct": null,
+      "texts": [
+        "Trả cổ tức bằng tiền mặt - Đợt 2 2010 - 600 VND"
+      ]
+    }
+  ]
+}

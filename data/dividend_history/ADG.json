@@ -1,0 +1,31 @@
+{
+  "symbol": "ADG",
+  "events": [
+    {
+      "date": "2020-07-15",
+      "cashVnd": null,
+      "stockPct": 114,
+      "texts": [
+        "Thưởng bằng Cổ phiếu, tỷ lệ 100:73.4",
+        "Cổ tức bằng Cổ phiếu, tỷ lệ 100:41.6"
+      ]
+    },
+    {
+      "date": "2021-08-05",
+      "cashVnd": 500,
+      "stockPct": 10,
+      "texts": [
+        "Cổ tức bằng Cổ phiếu, tỷ lệ 100:10",
+        "Cổ tức bằng Tiền, tỷ lệ 5%"
+      ]
+    },
+    {
+      "date": "2022-11-16",
+      "cashVnd": null,
+      "stockPct": 7.5,
+      "texts": [
+        "Cổ tức bằng Cổ phiếu, tỷ lệ 1000:75"
+      ]
+    }
+  ]
+}

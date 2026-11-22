@@ -1,0 +1,85 @@
+{
+  "symbol": "QNU",
+  "events": [
+    {
+      "date": "2017-06-15",
+      "cashVnd": 283,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 2.83%"
+      ]
+    },
+    {
+      "date": "2018-05-28",
+      "cashVnd": 313,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 3.13%"
+      ]
+    },
+    {
+      "date": "2019-05-08",
+      "cashVnd": 395,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 3.95%"
+      ]
+    },
+    {
+      "date": "2020-05-20",
+      "cashVnd": 279,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 2.79%"
+      ]
+    },
+    {
+      "date": "2021-05-17",
+      "cashVnd": 6095,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 60.95%"
+      ]
+    },
+    {
+      "date": "2022-05-16",
+      "cashVnd": 453,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 4.53%"
+      ]
+    },
+    {
+      "date": "2023-05-17",
+      "cashVnd": 413.99999999999994,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 4.14%"
+      ]
+    },
+    {
+      "date": "2024-05-22",
+      "cashVnd": 386,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 3.86%"
+      ]
+    },
+    {
+      "date": "2025-05-22",
+      "cashVnd": 405,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 4.05%"
+      ]
+    },
+    {
+      "date": "2026-05-10",
+      "cashVnd": 432,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 4.32%"
+      ]
+    }
+  ]
+}

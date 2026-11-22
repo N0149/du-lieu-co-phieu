@@ -1,0 +1,95 @@
+{
+  "symbol": "VDL",
+  "events": [
+    {
+      "date": "2009-05-17",
+      "cashVnd": 700,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 7%"
+      ]
+    },
+    {
+      "date": "2010-05-18",
+      "cashVnd": 1200,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 12%"
+      ]
+    },
+    {
+      "date": "2011-05-22",
+      "cashVnd": 1500,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 15%"
+      ]
+    },
+    {
+      "date": "2012-12-26",
+      "cashVnd": null,
+      "stockPct": 100,
+      "texts": [
+        "Thưởng bằng Cổ phiếu, tỷ lệ 100:82",
+        "Cổ tức bằng Cổ phiếu, tỷ lệ 100:18"
+      ]
+    },
+    {
+      "date": "2013-06-12",
+      "cashVnd": 600,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 6%"
+      ]
+    },
+    {
+      "date": "2014-05-15",
+      "cashVnd": null,
+      "stockPct": 125,
+      "texts": [
+        "Thưởng bằng Cổ phiếu, tỷ lệ 2.1:1",
+        "Cổ tức bằng Cổ phiếu, tỷ lệ 100:25"
+      ]
+    },
+    {
+      "date": "2015-07-01",
+      "cashVnd": null,
+      "stockPct": 15,
+      "texts": [
+        "Cổ tức bằng Cổ phiếu, tỷ lệ 100:15"
+      ]
+    },
+    {
+      "date": "2016-07-13",
+      "cashVnd": null,
+      "stockPct": 18,
+      "texts": [
+        "Cổ tức bằng Cổ phiếu, tỷ lệ 100:18"
+      ]
+    },
+    {
+      "date": "2017-09-27",
+      "cashVnd": 1000,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 10%"
+      ]
+    },
+    {
+      "date": "2019-12-18",
+      "cashVnd": 1000,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 10%"
+      ]
+    },
+    {
+      "date": "2025-09-03",
+      "cashVnd": 1500,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 15%"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,45 @@
+{
+  "symbol": "IFS",
+  "events": [
+    {
+      "date": "2022-08-08",
+      "cashVnd": 190,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 1.9%"
+      ]
+    },
+    {
+      "date": "2023-07-31",
+      "cashVnd": 1780,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 17.8%"
+      ]
+    },
+    {
+      "date": "2024-07-31",
+      "cashVnd": 2400,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 24%"
+      ]
+    },
+    {
+      "date": "2025-08-04",
+      "cashVnd": 1984,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 19.84%"
+      ]
+    },
+    {
+      "date": "2026-08-02",
+      "cashVnd": 1614.9999999999998,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 16.15%"
+      ]
+    }
+  ]
+}

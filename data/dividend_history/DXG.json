@@ -1,0 +1,103 @@
+{
+  "symbol": "DXG",
+  "events": [
+    {
+      "date": "2010-07-04",
+      "cashVnd": 3500,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 35%"
+      ]
+    },
+    {
+      "date": "2013-04-23",
+      "cashVnd": null,
+      "stockPct": 25,
+      "texts": [
+        "Thưởng bằng Cổ phiếu, tỷ lệ 20:1",
+        "Cổ tức bằng Cổ phiếu, tỷ lệ 5:1"
+      ]
+    },
+    {
+      "date": "2015-03-03",
+      "cashVnd": null,
+      "stockPct": 7.000000000000001,
+      "texts": [
+        "Cổ tức bằng Cổ phiếu, tỷ lệ 100:7"
+      ]
+    },
+    {
+      "date": "2015-06-24",
+      "cashVnd": null,
+      "stockPct": 10,
+      "texts": [
+        "Cổ tức bằng Cổ phiếu, tỷ lệ 10:1"
+      ]
+    },
+    {
+      "date": "2016-10-04",
+      "cashVnd": null,
+      "stockPct": 15,
+      "texts": [
+        "Cổ tức bằng Cổ phiếu, tỷ lệ 20:3"
+      ]
+    },
+    {
+      "date": "2017-05-14",
+      "cashVnd": 500,
+      "stockPct": 13,
+      "texts": [
+        "Cổ tức bằng Cổ phiếu, tỷ lệ 100:13",
+        "Cổ tức bằng Tiền, tỷ lệ 5%"
+      ]
+    },
+    {
+      "date": "2017-10-30",
+      "cashVnd": null,
+      "stockPct": 5,
+      "texts": [
+        "Cổ tức bằng Cổ phiếu, tỷ lệ 20:1"
+      ]
+    },
+    {
+      "date": "2018-05-21",
+      "cashVnd": null,
+      "stockPct": 13,
+      "texts": [
+        "Cổ tức bằng Cổ phiếu, tỷ lệ 100:13"
+      ]
+    },
+    {
+      "date": "2019-08-12",
+      "cashVnd": null,
+      "stockPct": 22,
+      "texts": [
+        "Cổ tức bằng Cổ phiếu, tỷ lệ 100:22"
+      ]
+    },
+    {
+      "date": "2021-09-08",
+      "cashVnd": null,
+      "stockPct": 15,
+      "texts": [
+        "Thưởng bằng Cổ phiếu, tỷ lệ 100:15"
+      ]
+    },
+    {
+      "date": "2025-06-03",
+      "cashVnd": null,
+      "stockPct": 17,
+      "texts": [
+        "Thưởng bằng Cổ tức, tỷ lệ 100:17"
+      ]
+    },
+    {
+      "date": "2026-05-27",
+      "cashVnd": null,
+      "stockPct": 14.000000000000002,
+      "texts": [
+        "Thưởng bằng Cổ tức, tỷ lệ 100:14"
+      ]
+    }
+  ]
+}

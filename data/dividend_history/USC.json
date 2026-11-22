@@ -1,0 +1,85 @@
+{
+  "symbol": "USC",
+  "events": [
+    {
+      "date": "2017-11-12",
+      "cashVnd": 459.99999999999994,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 4.6%"
+      ]
+    },
+    {
+      "date": "2018-11-07",
+      "cashVnd": 459.99999999999994,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 4.6%"
+      ]
+    },
+    {
+      "date": "2019-10-09",
+      "cashVnd": 459.99999999999994,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 4.6%"
+      ]
+    },
+    {
+      "date": "2020-09-28",
+      "cashVnd": 458,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 4.58%"
+      ]
+    },
+    {
+      "date": "2021-09-29",
+      "cashVnd": 368,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 3.68%"
+      ]
+    },
+    {
+      "date": "2022-10-03",
+      "cashVnd": 350,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 3.5%"
+      ]
+    },
+    {
+      "date": "2023-10-11",
+      "cashVnd": 320,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 3.2%"
+      ]
+    },
+    {
+      "date": "2024-10-10",
+      "cashVnd": 110.00000000000001,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 1.1%"
+      ]
+    },
+    {
+      "date": "2025-10-12",
+      "cashVnd": 109.00000000000001,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 1.09%"
+      ]
+    },
+    {
+      "date": "2026-10-07",
+      "cashVnd": 204.99999999999997,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 2.05%"
+      ]
+    }
+  ]
+}

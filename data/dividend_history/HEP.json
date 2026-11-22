@@ -1,0 +1,77 @@
+{
+  "symbol": "HEP",
+  "events": [
+    {
+      "date": "2018-05-16",
+      "cashVnd": 581.4,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 5.814%"
+      ]
+    },
+    {
+      "date": "2019-05-22",
+      "cashVnd": 703,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 7.03%"
+      ]
+    },
+    {
+      "date": "2020-05-18",
+      "cashVnd": 772,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 7.72%"
+      ]
+    },
+    {
+      "date": "2021-05-18",
+      "cashVnd": 832,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 8.32%"
+      ]
+    },
+    {
+      "date": "2022-06-12",
+      "cashVnd": 878.9999999999999,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 8.79%"
+      ]
+    },
+    {
+      "date": "2023-06-05",
+      "cashVnd": 960,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 9.6%"
+      ]
+    },
+    {
+      "date": "2024-05-13",
+      "cashVnd": 1039,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 10.39%"
+      ]
+    },
+    {
+      "date": "2025-07-09",
+      "cashVnd": 1200,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 12%"
+      ]
+    },
+    {
+      "date": "2026-05-26",
+      "cashVnd": 1200,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 12%"
+      ]
+    }
+  ]
+}

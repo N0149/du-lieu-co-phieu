@@ -1,0 +1,29 @@
+{
+  "symbol": "VTJ",
+  "events": [
+    {
+      "date": "2016-07-12",
+      "cashVnd": 550,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 5.5%"
+      ]
+    },
+    {
+      "date": "2017-11-12",
+      "cashVnd": 830.0000000000001,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 8.3%"
+      ]
+    },
+    {
+      "date": "2018-07-19",
+      "cashVnd": 550,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 5.5%"
+      ]
+    }
+  ]
+}

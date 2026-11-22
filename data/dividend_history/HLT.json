@@ -1,0 +1,37 @@
+{
+  "symbol": "HLT",
+  "events": [
+    {
+      "date": "2011-02-23",
+      "cashVnd": null,
+      "stockPct": 5,
+      "texts": [
+        "Phát hành cổ phiếu - Trả Cổ tức bằng Cổ phiếu tỉ lệ 5.0%"
+      ]
+    },
+    {
+      "date": "2017-12-29",
+      "cashVnd": 1000,
+      "stockPct": null,
+      "texts": [
+        "Trả cổ tức bằng tiền mặt - Cả năm 2017 - 1,000 VND"
+      ]
+    },
+    {
+      "date": "2018-12-31",
+      "cashVnd": 1000,
+      "stockPct": null,
+      "texts": [
+        "Trả cổ tức bằng tiền mặt - Cả năm 2018 - 1,000 VND"
+      ]
+    },
+    {
+      "date": "2020-02-05",
+      "cashVnd": null,
+      "stockPct": 10,
+      "texts": [
+        "Cổ tức bằng Cổ phiếu, tỷ lệ 100:10"
+      ]
+    }
+  ]
+}

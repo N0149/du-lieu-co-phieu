@@ -1,0 +1,61 @@
+{
+  "symbol": "TLP",
+  "events": [
+    {
+      "date": "2019-12-03",
+      "cashVnd": 360,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 3.6%"
+      ]
+    },
+    {
+      "date": "2020-12-22",
+      "cashVnd": 280,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 2.8%"
+      ]
+    },
+    {
+      "date": "2021-11-24",
+      "cashVnd": 37,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 0.37%"
+      ]
+    },
+    {
+      "date": "2022-10-26",
+      "cashVnd": 339,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 3.39%"
+      ]
+    },
+    {
+      "date": "2024-10-08",
+      "cashVnd": 250,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 2.5%"
+      ]
+    },
+    {
+      "date": "2024-12-04",
+      "cashVnd": 61,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 0.61%"
+      ]
+    },
+    {
+      "date": "2025-10-06",
+      "cashVnd": 151,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 1.51%"
+      ]
+    }
+  ]
+}

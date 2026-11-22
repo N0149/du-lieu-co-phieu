@@ -1,0 +1,69 @@
+{
+  "symbol": "TNW",
+  "events": [
+    {
+      "date": "2017-09-25",
+      "cashVnd": 600,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 6%"
+      ]
+    },
+    {
+      "date": "2019-10-08",
+      "cashVnd": 650,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 6.5%"
+      ]
+    },
+    {
+      "date": "2020-11-23",
+      "cashVnd": 700,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 7%"
+      ]
+    },
+    {
+      "date": "2021-11-29",
+      "cashVnd": 570,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 5.7%"
+      ]
+    },
+    {
+      "date": "2022-10-03",
+      "cashVnd": 700,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 7%"
+      ]
+    },
+    {
+      "date": "2024-09-16",
+      "cashVnd": 570,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 5.7%"
+      ]
+    },
+    {
+      "date": "2025-12-08",
+      "cashVnd": 112.00000000000001,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 1.12%"
+      ]
+    },
+    {
+      "date": "2026-06-01",
+      "cashVnd": 969.9999999999999,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 9.7%"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,93 @@
+{
+  "symbol": "FBC",
+  "events": [
+    {
+      "date": "2015-12-31",
+      "cashVnd": 1960,
+      "stockPct": null,
+      "texts": [
+        "Trả cổ tức bằng tiền mặt - Cả năm 2015 - 1,960 VND"
+      ]
+    },
+    {
+      "date": "2016-12-31",
+      "cashVnd": 3000,
+      "stockPct": null,
+      "texts": [
+        "Trả cổ tức bằng tiền mặt - Cả năm 2016 - 3,000 VND"
+      ]
+    },
+    {
+      "date": "2018-06-25",
+      "cashVnd": 3000,
+      "stockPct": null,
+      "texts": [
+        "Trả cổ tức bằng tiền mặt - Cả năm 2017 - 3,000 VND"
+      ]
+    },
+    {
+      "date": "2019-07-04",
+      "cashVnd": 5000,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 50%"
+      ]
+    },
+    {
+      "date": "2020-07-20",
+      "cashVnd": 3500,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 35%"
+      ]
+    },
+    {
+      "date": "2021-07-07",
+      "cashVnd": 5000,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 50%"
+      ]
+    },
+    {
+      "date": "2022-06-20",
+      "cashVnd": 6500,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 65%"
+      ]
+    },
+    {
+      "date": "2023-09-21",
+      "cashVnd": 12000,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 120%"
+      ]
+    },
+    {
+      "date": "2024-09-25",
+      "cashVnd": 20000,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 200%"
+      ]
+    },
+    {
+      "date": "2025-09-25",
+      "cashVnd": 10000,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 100%"
+      ]
+    },
+    {
+      "date": "2026-08-05",
+      "cashVnd": 10000,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 100%"
+      ]
+    }
+  ]
+}

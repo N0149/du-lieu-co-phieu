@@ -1,0 +1,21 @@
+{
+  "symbol": "TTE",
+  "events": [
+    {
+      "date": "2018-12-12",
+      "cashVnd": 600,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 6%"
+      ]
+    },
+    {
+      "date": "2020-01-20",
+      "cashVnd": 600,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 6%"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "symbol": "FRM",
+  "events": [
+    {
+      "date": "2020-06-28",
+      "cashVnd": 1550,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 15.5%"
+      ]
+    },
+    {
+      "date": "2024-07-11",
+      "cashVnd": 426,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 4.26%"
+      ]
+    },
+    {
+      "date": "2026-07-02",
+      "cashVnd": 806,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 8.06%"
+      ]
+    }
+  ]
+}

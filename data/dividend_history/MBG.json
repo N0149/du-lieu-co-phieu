@@ -1,0 +1,53 @@
+{
+  "symbol": "MBG",
+  "events": [
+    {
+      "date": "2017-04-12",
+      "cashVnd": null,
+      "stockPct": 10,
+      "texts": [
+        "Cổ tức bằng Cổ phiếu, tỷ lệ 100:10"
+      ]
+    },
+    {
+      "date": "2018-08-02",
+      "cashVnd": null,
+      "stockPct": 5,
+      "texts": [
+        "Cổ tức bằng Cổ phiếu, tỷ lệ 20:1"
+      ]
+    },
+    {
+      "date": "2020-03-11",
+      "cashVnd": null,
+      "stockPct": 3,
+      "texts": [
+        "Cổ tức bằng Cổ phiếu, tỷ lệ 100:3"
+      ]
+    },
+    {
+      "date": "2021-07-18",
+      "cashVnd": null,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Cổ phiếu, tỷ lệ 5%"
+      ]
+    },
+    {
+      "date": "2021-09-29",
+      "cashVnd": null,
+      "stockPct": 3,
+      "texts": [
+        "Cổ tức bằng Cổ phiếu, tỷ lệ 100:3"
+      ]
+    },
+    {
+      "date": "2022-09-28",
+      "cashVnd": null,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Cổ phiếu, tỷ lệ 7%"
+      ]
+    }
+  ]
+}

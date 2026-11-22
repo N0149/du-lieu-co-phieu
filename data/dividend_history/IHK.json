@@ -1,0 +1,109 @@
+{
+  "symbol": "IHK",
+  "events": [
+    {
+      "date": "2010-08-23",
+      "cashVnd": null,
+      "stockPct": 13,
+      "texts": [
+        "Phát hành cổ phiếu - Cổ phiếu thưởng tỉ lệ 13.0%"
+      ]
+    },
+    {
+      "date": "2011-08-24",
+      "cashVnd": 730,
+      "stockPct": null,
+      "texts": [
+        "Trả cổ tức bằng tiền mặt - Cả năm 2010 - 730 VND"
+      ]
+    },
+    {
+      "date": "2012-08-22",
+      "cashVnd": 577,
+      "stockPct": null,
+      "texts": [
+        "Trả cổ tức bằng tiền mặt - Cả năm 2011 - 577 VND"
+      ]
+    },
+    {
+      "date": "2013-09-20",
+      "cashVnd": 1070,
+      "stockPct": null,
+      "texts": [
+        "Trả cổ tức bằng tiền mặt - Cả năm 2012 - 1,070 VND"
+      ]
+    },
+    {
+      "date": "2014-09-02",
+      "cashVnd": 1150,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 11.5%"
+      ]
+    },
+    {
+      "date": "2015-07-01",
+      "cashVnd": 1400,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 14%"
+      ]
+    },
+    {
+      "date": "2016-08-11",
+      "cashVnd": 1450,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 14.5%"
+      ]
+    },
+    {
+      "date": "2017-09-25",
+      "cashVnd": 1200,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 12%"
+      ]
+    },
+    {
+      "date": "2018-08-30",
+      "cashVnd": 1450,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 14.5%"
+      ]
+    },
+    {
+      "date": "2019-08-04",
+      "cashVnd": 1100,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 11%"
+      ]
+    },
+    {
+      "date": "2020-11-29",
+      "cashVnd": 1200,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 12%"
+      ]
+    },
+    {
+      "date": "2021-11-29",
+      "cashVnd": 700,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 7%"
+      ]
+    },
+    {
+      "date": "2024-05-12",
+      "cashVnd": 1250,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 12.5%"
+      ]
+    }
+  ]
+}

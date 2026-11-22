@@ -1,0 +1,21 @@
+{
+  "symbol": "VTA",
+  "events": [
+    {
+      "date": "2007-05-28",
+      "cashVnd": 500,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 5%"
+      ]
+    },
+    {
+      "date": "2008-03-12",
+      "cashVnd": 1200,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 12%"
+      ]
+    }
+  ]
+}

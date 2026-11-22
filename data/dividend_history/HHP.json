@@ -1,0 +1,45 @@
+{
+  "symbol": "HHP",
+  "events": [
+    {
+      "date": "2019-08-06",
+      "cashVnd": null,
+      "stockPct": 15,
+      "texts": [
+        "Cổ tức bằng Cổ phiếu, tỷ lệ 100:15"
+      ]
+    },
+    {
+      "date": "2021-04-01",
+      "cashVnd": null,
+      "stockPct": 6.5,
+      "texts": [
+        "Cổ tức bằng Cổ phiếu, tỷ lệ 200:13"
+      ]
+    },
+    {
+      "date": "2022-12-08",
+      "cashVnd": null,
+      "stockPct": 6,
+      "texts": [
+        "Cổ tức bằng Cổ phiếu, tỷ lệ 100:6.5"
+      ]
+    },
+    {
+      "date": "2024-01-16",
+      "cashVnd": null,
+      "stockPct": 6.5,
+      "texts": [
+        "Cổ tức bằng Cổ phiếu, tỷ lệ 1000:65"
+      ]
+    },
+    {
+      "date": "2026-08-17",
+      "cashVnd": null,
+      "stockPct": 6.5,
+      "texts": [
+        "Cổ tức bằng Cổ phiếu, tỷ lệ 1000:65"
+      ]
+    }
+  ]
+}

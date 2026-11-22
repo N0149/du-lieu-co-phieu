@@ -1,0 +1,21 @@
+{
+  "symbol": "VGI",
+  "events": [
+    {
+      "date": "2025-09-07",
+      "cashVnd": 750,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 7.5%"
+      ]
+    },
+    {
+      "date": "2026-09-16",
+      "cashVnd": 3300,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 33%"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,53 @@
+{
+  "symbol": "LNC",
+  "events": [
+    {
+      "date": "2020-12-20",
+      "cashVnd": 35,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 0.35%"
+      ]
+    },
+    {
+      "date": "2021-11-28",
+      "cashVnd": 35,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 0.35%"
+      ]
+    },
+    {
+      "date": "2022-10-20",
+      "cashVnd": 36,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 0.36%"
+      ]
+    },
+    {
+      "date": "2023-10-04",
+      "cashVnd": 40,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 0.4%"
+      ]
+    },
+    {
+      "date": "2024-10-03",
+      "cashVnd": 40,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 0.40%"
+      ]
+    },
+    {
+      "date": "2025-10-01",
+      "cashVnd": 67,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 0.67%"
+      ]
+    }
+  ]
+}

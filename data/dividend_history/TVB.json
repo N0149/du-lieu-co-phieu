@@ -1,0 +1,46 @@
+{
+  "symbol": "TVB",
+  "events": [
+    {
+      "date": "2017-03-21",
+      "cashVnd": 1120,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 5.6%",
+        "Cổ tức bằng Tiền, tỷ lệ 5.6%"
+      ]
+    },
+    {
+      "date": "2018-06-21",
+      "cashVnd": null,
+      "stockPct": 7.8,
+      "texts": [
+        "Cổ tức bằng Cổ phiếu, tỷ lệ 1000:78"
+      ]
+    },
+    {
+      "date": "2020-07-13",
+      "cashVnd": null,
+      "stockPct": 7.3,
+      "texts": [
+        "Thưởng bằng Cổ tức, tỷ lệ 1000:73"
+      ]
+    },
+    {
+      "date": "2020-12-09",
+      "cashVnd": 1000,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 10%"
+      ]
+    },
+    {
+      "date": "2021-06-13",
+      "cashVnd": 960,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 9.6%"
+      ]
+    }
+  ]
+}

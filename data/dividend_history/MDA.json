@@ -1,0 +1,21 @@
+{
+  "symbol": "MDA",
+  "events": [
+    {
+      "date": "2018-10-08",
+      "cashVnd": 1000,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 10%"
+      ]
+    },
+    {
+      "date": "2025-05-20",
+      "cashVnd": 291.65999999999997,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 2.9166%"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,109 @@
+{
+  "symbol": "CID",
+  "events": [
+    {
+      "date": "2006-04-14",
+      "cashVnd": 1200,
+      "stockPct": null,
+      "texts": [
+        "Trả cổ tức bằng tiền mặt - Cả năm 2005 - 1,200 VND"
+      ]
+    },
+    {
+      "date": "2007-01-11",
+      "cashVnd": 1000,
+      "stockPct": null,
+      "texts": [
+        "Trả cổ tức bằng tiền mặt - Đợt 1 2006 - 1,000 VND"
+      ]
+    },
+    {
+      "date": "2007-03-15",
+      "cashVnd": 500,
+      "stockPct": null,
+      "texts": [
+        "Trả cổ tức bằng tiền mặt - Đợt 2 2006 - 500 VND"
+      ]
+    },
+    {
+      "date": "2008-02-21",
+      "cashVnd": 1000,
+      "stockPct": null,
+      "texts": [
+        "Trả cổ tức bằng tiền mặt - Cả năm 2007 - 1,000 VND"
+      ]
+    },
+    {
+      "date": "2009-03-25",
+      "cashVnd": 500,
+      "stockPct": null,
+      "texts": [
+        "Trả cổ tức bằng tiền mặt - Cả năm 2008 - 500 VND"
+      ]
+    },
+    {
+      "date": "2009-12-27",
+      "cashVnd": 800,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 8%"
+      ]
+    },
+    {
+      "date": "2010-05-18",
+      "cashVnd": 200,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 2%"
+      ]
+    },
+    {
+      "date": "2011-06-30",
+      "cashVnd": 500,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 5%"
+      ]
+    },
+    {
+      "date": "2012-04-20",
+      "cashVnd": 500,
+      "stockPct": null,
+      "texts": [
+        "Trả cổ tức bằng tiền mặt - Cả năm 2011 - 500 VND"
+      ]
+    },
+    {
+      "date": "2013-06-30",
+      "cashVnd": 550,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 5.5%"
+      ]
+    },
+    {
+      "date": "2024-05-20",
+      "cashVnd": 653,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 6.53%"
+      ]
+    },
+    {
+      "date": "2025-06-24",
+      "cashVnd": 1500,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 15%"
+      ]
+    },
+    {
+      "date": "2026-05-18",
+      "cashVnd": 1500,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 15%"
+      ]
+    }
+  ]
+}

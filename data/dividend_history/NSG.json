@@ -1,0 +1,29 @@
+{
+  "symbol": "NSG",
+  "events": [
+    {
+      "date": "2016-11-20",
+      "cashVnd": 250,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 2.5%"
+      ]
+    },
+    {
+      "date": "2017-10-01",
+      "cashVnd": 850,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 8.5%"
+      ]
+    },
+    {
+      "date": "2018-12-26",
+      "cashVnd": 500,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 5%"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "symbol": "TAR",
+  "events": [
+    {
+      "date": "2020-08-30",
+      "cashVnd": null,
+      "stockPct": 20,
+      "texts": [
+        "Cổ tức bằng Cổ phiếu, tỷ lệ 100:20"
+      ]
+    },
+    {
+      "date": "2021-07-15",
+      "cashVnd": null,
+      "stockPct": 10,
+      "texts": [
+        "Cổ tức bằng Cổ phiếu, tỷ lệ 100:10"
+      ]
+    },
+    {
+      "date": "2022-11-09",
+      "cashVnd": null,
+      "stockPct": 10,
+      "texts": [
+        "Cổ tức bằng Cổ phiếu, tỷ lệ 10:1"
+      ]
+    }
+  ]
+}

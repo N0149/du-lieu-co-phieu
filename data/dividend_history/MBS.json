@@ -1,0 +1,86 @@
+{
+  "symbol": "MBS",
+  "events": [
+    {
+      "date": "2017-08-23",
+      "cashVnd": 500,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 5%"
+      ]
+    },
+    {
+      "date": "2020-02-10",
+      "cashVnd": null,
+      "stockPct": 10,
+      "texts": [
+        "Cổ tức bằng Cổ phiếu, tỷ lệ 10:1"
+      ]
+    },
+    {
+      "date": "2020-06-14",
+      "cashVnd": 1000,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 10%"
+      ]
+    },
+    {
+      "date": "2021-05-16",
+      "cashVnd": null,
+      "stockPct": 15,
+      "texts": [
+        "Cổ tức bằng Cổ phiếu, tỷ lệ 20:3"
+      ]
+    },
+    {
+      "date": "2022-08-11",
+      "cashVnd": null,
+      "stockPct": 20,
+      "texts": [
+        "Cổ tức bằng Cổ phiếu, tỷ lệ 5:1"
+      ]
+    },
+    {
+      "date": "2023-08-09",
+      "cashVnd": null,
+      "stockPct": 15,
+      "texts": [
+        "Thưởng bằng Cổ phiếu, tỷ lệ 100:3",
+        "Cổ tức bằng Cổ phiếu, tỷ lệ 100:12"
+      ]
+    },
+    {
+      "date": "2024-07-23",
+      "cashVnd": 1200,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 12%"
+      ]
+    },
+    {
+      "date": "2025-08-18",
+      "cashVnd": 1200,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 12%"
+      ]
+    },
+    {
+      "date": "2025-09-23",
+      "cashVnd": null,
+      "stockPct": 3,
+      "texts": [
+        "Thưởng bằng Cổ tức, tỷ lệ 100:3"
+      ]
+    },
+    {
+      "date": "2026-08-16",
+      "cashVnd": 1000,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 10%"
+      ]
+    }
+  ]
+}

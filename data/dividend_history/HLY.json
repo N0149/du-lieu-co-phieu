@@ -1,0 +1,77 @@
+{
+  "symbol": "HLY",
+  "events": [
+    {
+      "date": "2008-03-06",
+      "cashVnd": 1900,
+      "stockPct": null,
+      "texts": [
+        "Trả cổ tức bằng tiền mặt - Cả năm 2007 - 1,900 VND"
+      ]
+    },
+    {
+      "date": "2008-04-22",
+      "cashVnd": 100,
+      "stockPct": null,
+      "texts": [
+        "Trả cổ tức bằng tiền mặt - Cả năm 2007 - 100 VND"
+      ]
+    },
+    {
+      "date": "2008-10-20",
+      "cashVnd": null,
+      "stockPct": 50,
+      "texts": [
+        "Phát hành cổ phiếu - Trả Cổ tức bằng Cổ phiếu tỉ lệ 50.0%"
+      ]
+    },
+    {
+      "date": "2009-03-18",
+      "cashVnd": null,
+      "stockPct": 33.3,
+      "texts": [
+        "Phát hành cổ phiếu - Trả Cổ tức bằng Cổ phiếu tỉ lệ 33.3%"
+      ]
+    },
+    {
+      "date": "2009-08-07",
+      "cashVnd": 2500,
+      "stockPct": null,
+      "texts": [
+        "Trả cổ tức bằng tiền mặt - Đợt 1 2009 - 2,500 VND"
+      ]
+    },
+    {
+      "date": "2009-11-29",
+      "cashVnd": 2000,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 20%"
+      ]
+    },
+    {
+      "date": "2011-05-04",
+      "cashVnd": 2500,
+      "stockPct": null,
+      "texts": [
+        "Trả cổ tức bằng tiền mặt - Cả năm 2010 - 2,500 VND"
+      ]
+    },
+    {
+      "date": "2017-11-08",
+      "cashVnd": 2000,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 20%"
+      ]
+    },
+    {
+      "date": "2018-12-12",
+      "cashVnd": 700,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 7%"
+      ]
+    }
+  ]
+}

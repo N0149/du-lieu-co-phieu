@@ -1,0 +1,29 @@
+{
+  "symbol": "KBC",
+  "events": [
+    {
+      "date": "2019-07-11",
+      "cashVnd": 500,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 5%"
+      ]
+    },
+    {
+      "date": "2019-10-23",
+      "cashVnd": 500,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 5%"
+      ]
+    },
+    {
+      "date": "2022-06-20",
+      "cashVnd": null,
+      "stockPct": 33.33333333333333,
+      "texts": [
+        "Thưởng bằng Cổ phiếu, tỷ lệ 3:1"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,85 @@
+{
+  "symbol": "NS2",
+  "events": [
+    {
+      "date": "2016-06-06",
+      "cashVnd": 52,
+      "stockPct": null,
+      "texts": [
+        "Trả cổ tức bằng tiền mặt - Cả năm 2015 - 52 VND"
+      ]
+    },
+    {
+      "date": "2017-05-30",
+      "cashVnd": 500,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 5%"
+      ]
+    },
+    {
+      "date": "2018-05-31",
+      "cashVnd": 111.00000000000001,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 1.11%"
+      ]
+    },
+    {
+      "date": "2019-05-22",
+      "cashVnd": 106.5,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 1.065%"
+      ]
+    },
+    {
+      "date": "2020-07-22",
+      "cashVnd": 113.99999999999999,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 1.14%"
+      ]
+    },
+    {
+      "date": "2021-06-09",
+      "cashVnd": 117,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 1.17%"
+      ]
+    },
+    {
+      "date": "2022-06-15",
+      "cashVnd": 146,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 1.46%"
+      ]
+    },
+    {
+      "date": "2023-07-16",
+      "cashVnd": 124,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 1.24%"
+      ]
+    },
+    {
+      "date": "2024-07-04",
+      "cashVnd": 132,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 1.32%"
+      ]
+    },
+    {
+      "date": "2025-07-13",
+      "cashVnd": 170,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 1.7%"
+      ]
+    }
+  ]
+}

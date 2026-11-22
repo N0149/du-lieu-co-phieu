@@ -1,0 +1,61 @@
+{
+  "symbol": "THU",
+  "events": [
+    {
+      "date": "2020-07-20",
+      "cashVnd": 640,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 6.4%"
+      ]
+    },
+    {
+      "date": "2021-08-18",
+      "cashVnd": 505.99999999999994,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 5.06%"
+      ]
+    },
+    {
+      "date": "2022-08-18",
+      "cashVnd": 250,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 2.5%"
+      ]
+    },
+    {
+      "date": "2023-08-20",
+      "cashVnd": 420,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 4.2%"
+      ]
+    },
+    {
+      "date": "2024-08-21",
+      "cashVnd": 587,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 5.87%"
+      ]
+    },
+    {
+      "date": "2025-09-14",
+      "cashVnd": 616,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 6.16%"
+      ]
+    },
+    {
+      "date": "2026-10-22",
+      "cashVnd": 672,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 6.72%"
+      ]
+    }
+  ]
+}

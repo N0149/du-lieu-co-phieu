@@ -1,0 +1,70 @@
+{
+  "symbol": "BLN",
+  "events": [
+    {
+      "date": "2017-06-12",
+      "cashVnd": 250,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 2.5%"
+      ]
+    },
+    {
+      "date": "2018-09-25",
+      "cashVnd": 229.99999999999997,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 2.3%"
+      ]
+    },
+    {
+      "date": "2019-07-28",
+      "cashVnd": 250,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 2.5%"
+      ]
+    },
+    {
+      "date": "2021-10-14",
+      "cashVnd": 459.99999999999994,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 2.3%",
+        "Cổ tức bằng Tiền, tỷ lệ 2.3%"
+      ]
+    },
+    {
+      "date": "2022-09-04",
+      "cashVnd": 210,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 2.1%"
+      ]
+    },
+    {
+      "date": "2023-08-23",
+      "cashVnd": 240,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 2.4%"
+      ]
+    },
+    {
+      "date": "2025-08-26",
+      "cashVnd": 600,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 6%"
+      ]
+    },
+    {
+      "date": "2026-09-09",
+      "cashVnd": 1000,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 10%"
+      ]
+    }
+  ]
+}

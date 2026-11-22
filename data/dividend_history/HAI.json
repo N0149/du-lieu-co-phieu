@@ -1,0 +1,117 @@
+{
+  "symbol": "HAI",
+  "events": [
+    {
+      "date": "2007-01-09",
+      "cashVnd": 1000,
+      "stockPct": null,
+      "texts": [
+        "Trả cổ tức bằng tiền mặt - Đợt 2 2006 - 1,000 VND"
+      ]
+    },
+    {
+      "date": "2007-07-18",
+      "cashVnd": 1000,
+      "stockPct": null,
+      "texts": [
+        "Trả cổ tức bằng tiền mặt - Đợt 1 2007 - 1,000 VND"
+      ]
+    },
+    {
+      "date": "2007-12-24",
+      "cashVnd": null,
+      "stockPct": 5,
+      "texts": [
+        "Phát hành cổ phiếu - Trả Cổ tức bằng Cổ phiếu tỉ lệ 5.0%"
+      ]
+    },
+    {
+      "date": "2008-03-13",
+      "cashVnd": 500,
+      "stockPct": null,
+      "texts": [
+        "Trả cổ tức bằng tiền mặt - Đợt 3 2007 - 500 VND"
+      ]
+    },
+    {
+      "date": "2008-07-23",
+      "cashVnd": 1500,
+      "stockPct": null,
+      "texts": [
+        "Trả cổ tức bằng tiền mặt - Đợt 1 2008 - 1,500 VND"
+      ]
+    },
+    {
+      "date": "2009-11-09",
+      "cashVnd": 2000,
+      "stockPct": null,
+      "texts": [
+        "Trả cổ tức bằng tiền mặt - Đợt 1 2009 - 2,000 VND"
+      ]
+    },
+    {
+      "date": "2010-11-10",
+      "cashVnd": 2000,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 20%"
+      ]
+    },
+    {
+      "date": "2011-03-13",
+      "cashVnd": 1000,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 10%"
+      ]
+    },
+    {
+      "date": "2011-10-19",
+      "cashVnd": 2000,
+      "stockPct": null,
+      "texts": [
+        "Trả cổ tức bằng tiền mặt - Đợt 1 2011 - 2,000 VND"
+      ]
+    },
+    {
+      "date": "2013-01-10",
+      "cashVnd": 3000,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 30%"
+      ]
+    },
+    {
+      "date": "2013-12-01",
+      "cashVnd": 1000,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 10%"
+      ]
+    },
+    {
+      "date": "2014-03-25",
+      "cashVnd": 1000,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 10%"
+      ]
+    },
+    {
+      "date": "2014-11-25",
+      "cashVnd": null,
+      "stockPct": 100,
+      "texts": [
+        "Thưởng bằng Cổ phiếu, tỷ lệ 1:1"
+      ]
+    },
+    {
+      "date": "2015-07-29",
+      "cashVnd": null,
+      "stockPct": 15,
+      "texts": [
+        "Thưởng bằng Cổ phiếu, tỷ lệ 100:15"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,53 @@
+{
+  "symbol": "FIR",
+  "events": [
+    {
+      "date": "2020-01-12",
+      "cashVnd": null,
+      "stockPct": 60,
+      "texts": [
+        "Thưởng bằng Cổ phiếu, tỷ lệ 10:6"
+      ]
+    },
+    {
+      "date": "2020-11-01",
+      "cashVnd": null,
+      "stockPct": 30,
+      "texts": [
+        "Cổ tức bằng Cổ phiếu, tỷ lệ 100:30"
+      ]
+    },
+    {
+      "date": "2022-05-11",
+      "cashVnd": null,
+      "stockPct": 14.000000000000002,
+      "texts": [
+        "Cổ tức bằng Cổ phiếu, tỷ lệ 100:14.999"
+      ]
+    },
+    {
+      "date": "2023-02-12",
+      "cashVnd": null,
+      "stockPct": 20,
+      "texts": [
+        "Cổ tức bằng Cổ phiếu, tỷ lệ 100:20"
+      ]
+    },
+    {
+      "date": "2023-06-26",
+      "cashVnd": null,
+      "stockPct": 20,
+      "texts": [
+        "Cổ tức bằng Cổ phiếu, tỷ lệ 100:20"
+      ]
+    },
+    {
+      "date": "2025-07-28",
+      "cashVnd": null,
+      "stockPct": 10,
+      "texts": [
+        "Thưởng bằng Cổ tức, tỷ lệ 10:1"
+      ]
+    }
+  ]
+}

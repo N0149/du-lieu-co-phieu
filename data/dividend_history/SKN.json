@@ -1,0 +1,69 @@
+{
+  "symbol": "SKN",
+  "events": [
+    {
+      "date": "2019-05-22",
+      "cashVnd": 484,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 4.84%"
+      ]
+    },
+    {
+      "date": "2020-07-19",
+      "cashVnd": 511.00000000000006,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 5.11%"
+      ]
+    },
+    {
+      "date": "2021-07-07",
+      "cashVnd": 320,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 3.2%"
+      ]
+    },
+    {
+      "date": "2022-06-22",
+      "cashVnd": 186,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 1.86%"
+      ]
+    },
+    {
+      "date": "2023-05-29",
+      "cashVnd": 299.8,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 2.998%"
+      ]
+    },
+    {
+      "date": "2024-06-18",
+      "cashVnd": 346,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 3.46%"
+      ]
+    },
+    {
+      "date": "2025-05-05",
+      "cashVnd": 494.00000000000006,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 4.94%"
+      ]
+    },
+    {
+      "date": "2026-05-11",
+      "cashVnd": 581,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 5.81%"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "symbol": "MTA",
+  "events": [
+    {
+      "date": "2023-11-15",
+      "cashVnd": 180,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 1.8%"
+      ]
+    },
+    {
+      "date": "2026-09-13",
+      "cashVnd": 100,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 1%"
+      ]
+    }
+  ]
+}

@@ -2,171 +2,105 @@
   "symbol": "VPB",
   "events": [
     {
-      "date": "2005-10-10",
-      "cashVnd": null,
-      "stockPct": 0.2717,
-      "texts": [
-        "Phát hành cổ phiếu - Quyền mua CP cho Cổ đông hiện hữu tỉ lệ 27.2%"
-      ]
-    },
-    {
-      "date": "2015-05-30",
-      "cashVnd": null,
-      "stockPct": 0.1539,
-      "texts": [
-        "Phát hành cổ phiếu - Cổ phiếu thưởng tỉ lệ 15.4%"
-      ]
-    },
-    {
-      "date": "2015-12-31",
+      "date": "2014-03-09",
       "cashVnd": null,
       "stockPct": null,
       "texts": [
-        "Phát hành cổ phiếu - Phát hành riêng lẻ"
+        "Thưởng bằng Cổ phiếu, tỷ lệ 0.477%",
+        "Cổ tức bằng Cổ phiếu, tỷ lệ 9.53%"
       ]
     },
     {
-      "date": "2016-01-29",
-      "cashVnd": null,
-      "stockPct": 0.0078,
-      "texts": [
-        "Phát hành cổ phiếu - Cổ phiếu thưởng tỉ lệ 0.8%"
-      ]
-    },
-    {
-      "date": "2016-01-29",
-      "cashVnd": null,
-      "stockPct": 0.1457,
-      "texts": [
-        "Phát hành cổ phiếu - Trả Cổ tức bằng Cổ phiếu tỉ lệ 14.6%"
-      ]
-    },
-    {
-      "date": "2017-01-13",
-      "cashVnd": null,
-      "stockPct": 0.0569,
-      "texts": [
-        "Phát hành cổ phiếu - Cổ phiếu thưởng tỉ lệ 5.7%"
-      ]
-    },
-    {
-      "date": "2017-01-13",
-      "cashVnd": null,
-      "stockPct": 0.1307,
-      "texts": [
-        "Phát hành cổ phiếu - Trả Cổ tức bằng Cổ phiếu tỉ lệ 13.1%"
-      ]
-    },
-    {
-      "date": "2017-07-10",
-      "cashVnd": null,
-      "stockPct": 0.3184,
-      "texts": [
-        "Phát hành cổ phiếu - Trả Cổ tức bằng Cổ phiếu tỉ lệ 31.8%"
-      ]
-    },
-    {
-      "date": "2017-07-10",
-      "cashVnd": null,
-      "stockPct": 0.0099,
-      "texts": [
-        "Phát hành cổ phiếu - Cổ phiếu thưởng tỉ lệ 1.0%"
-      ]
-    },
-    {
-      "date": "2017-09-14",
+      "date": "2015-05-11",
       "cashVnd": null,
       "stockPct": null,
       "texts": [
-        "Phát hành cổ phiếu - Phát hành riêng lẻ"
+        "Thưởng bằng Cổ phiếu, tỷ lệ 0.699%",
+        "Cổ tức bằng Cổ phiếu, tỷ lệ 14.691%"
       ]
     },
     {
-      "date": "2018-06-18",
-      "cashVnd": null,
-      "stockPct": 0.3022,
-      "texts": [
-        "Phát hành cổ phiếu - Trả Cổ tức bằng Cổ phiếu tỉ lệ 30.2%"
-      ]
-    },
-    {
-      "date": "2018-06-18",
-      "cashVnd": null,
-      "stockPct": 0.316,
-      "texts": [
-        "Phát hành cổ phiếu - Cổ phiếu thưởng tỉ lệ 31.6%"
-      ]
-    },
-    {
-      "date": "2018-09-21",
+      "date": "2016-01-28",
       "cashVnd": null,
       "stockPct": null,
       "texts": [
-        "Phát hành cổ phiếu - Phát hành cho CBCNV"
+        "Thưởng bằng Cổ phiếu, tỷ lệ 0.79%",
+        "Cổ tức bằng Cổ phiếu, tỷ lệ 14.57%"
       ]
     },
     {
-      "date": "2021-10-07",
-      "cashVnd": null,
-      "stockPct": 0.1785,
-      "texts": [
-        "Phát hành cổ phiếu - Cổ phiếu thưởng tỉ lệ 17.8%"
-      ]
-    },
-    {
-      "date": "2021-10-07",
-      "cashVnd": null,
-      "stockPct": 0.6215,
-      "texts": [
-        "Phát hành cổ phiếu - Trả Cổ tức bằng Cổ phiếu tỉ lệ 62.2%"
-      ]
-    },
-    {
-      "date": "2022-09-28",
-      "cashVnd": null,
-      "stockPct": 0.5,
-      "texts": [
-        "Phát hành cổ phiếu - Cổ phiếu thưởng tỉ lệ 50.0%"
-      ]
-    },
-    {
-      "date": "2023-10-20",
+      "date": "2017-06-23",
       "cashVnd": null,
       "stockPct": null,
       "texts": [
-        "Phát hành cổ phiếu - Phát hành riêng lẻ"
+        "Thưởng bằng Cổ phiếu, tỷ lệ 0.99%",
+        "Cổ tức bằng Cổ phiếu, tỷ lệ 31.84%"
       ]
     },
     {
-      "date": "2023-11-09",
+      "date": "2018-06-17",
+      "cashVnd": null,
+      "stockPct": 61.6,
+      "texts": [
+        "Thưởng bằng Cổ phiếu, tỷ lệ 1000:316",
+        "Cổ tức bằng Cổ phiếu, tỷ lệ 100:30.217"
+      ]
+    },
+    {
+      "date": "2021-10-06",
+      "cashVnd": null,
+      "stockPct": 79,
+      "texts": [
+        "Thưởng bằng Cổ phiếu, tỷ lệ 100:17.848",
+        "Cổ tức bằng Cổ phiếu, tỷ lệ 100:62.15"
+      ]
+    },
+    {
+      "date": "2022-09-27",
+      "cashVnd": null,
+      "stockPct": 50,
+      "texts": [
+        "Thưởng bằng Cổ tức, tỷ lệ 2:1"
+      ]
+    },
+    {
+      "date": "2023-11-08",
       "cashVnd": 1000,
       "stockPct": null,
       "texts": [
-        "Trả cổ tức bằng tiền mặt - Cả năm 2022 - 1,000 VND"
+        "Cổ tức bằng Tiền, tỷ lệ 10%"
       ]
     },
     {
-      "date": "2024-05-22",
+      "date": "2024-05-21",
       "cashVnd": 1000,
       "stockPct": null,
       "texts": [
-        "Trả cổ tức bằng tiền mặt - Cả năm 2023 - 1,000 VND"
+        "Cổ tức bằng Tiền, tỷ lệ 10%"
       ]
     },
     {
-      "date": "2025-05-15",
+      "date": "2025-05-14",
       "cashVnd": 500,
       "stockPct": null,
       "texts": [
-        "Trả cổ tức bằng tiền mặt - Cả năm 2024 - 500 VND"
+        "Cổ tức bằng Tiền, tỷ lệ 5%"
       ]
     },
     {
-      "date": "2026-05-15",
+      "date": "2026-05-14",
       "cashVnd": 500,
       "stockPct": null,
       "texts": [
-        "Trả cổ tức bằng tiền mặt - Cả năm 2025 - 500 VND"
+        "Cổ tức bằng Tiền, tỷ lệ 5%"
+      ]
+    },
+    {
+      "date": "2026-09-23",
+      "cashVnd": null,
+      "stockPct": 26.04104,
+      "texts": [
+        "Cổ tức bằng Cổ phiếu, tỷ lệ 10000000:2604104"
       ]
     }
   ]

@@ -2,38 +2,6 @@
   "symbol": "ABC",
   "events": [
     {
-      "date": "2013-05-31",
-      "cashVnd": 2500,
-      "stockPct": null,
-      "texts": [
-        "Trả cổ tức bằng tiền mặt - Cả năm 2012 - 2,500 VND"
-      ]
-    },
-    {
-      "date": "2014-05-29",
-      "cashVnd": 2500,
-      "stockPct": null,
-      "texts": [
-        "Trả cổ tức bằng tiền mặt - Cả năm 2013 - 2,500 VND"
-      ]
-    },
-    {
-      "date": "2015-05-21",
-      "cashVnd": 2500,
-      "stockPct": null,
-      "texts": [
-        "Trả cổ tức bằng tiền mặt - Cả năm 2014 - 2,500 VND"
-      ]
-    },
-    {
-      "date": "2016-05-24",
-      "cashVnd": 4000,
-      "stockPct": null,
-      "texts": [
-        "Trả cổ tức bằng tiền mặt - Cả năm 2015 - 4,000 VND"
-      ]
-    },
-    {
       "date": "2017-07-11",
       "cashVnd": 19500,
       "stockPct": null,

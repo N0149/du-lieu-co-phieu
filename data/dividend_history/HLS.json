@@ -1,0 +1,81 @@
+{
+  "symbol": "HLS",
+  "events": [
+    {
+      "date": "2018-05-29",
+      "cashVnd": 3000,
+      "stockPct": 20,
+      "texts": [
+        "Thưởng bằng Cổ phiếu, tỷ lệ 10:2",
+        "Cổ tức bằng Tiền, tỷ lệ 30%"
+      ]
+    },
+    {
+      "date": "2019-05-08",
+      "cashVnd": 1500,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 15%"
+      ]
+    },
+    {
+      "date": "2020-08-10",
+      "cashVnd": 700,
+      "stockPct": 25,
+      "texts": [
+        "Thưởng bằng Cổ phiếu, tỷ lệ 100:25",
+        "Cổ tức bằng Tiền, tỷ lệ 7%"
+      ]
+    },
+    {
+      "date": "2021-06-03",
+      "cashVnd": 800,
+      "stockPct": 18,
+      "texts": [
+        "Thưởng bằng Cổ phiếu, tỷ lệ 100:18",
+        "Cổ tức bằng Tiền, tỷ lệ 8%"
+      ]
+    },
+    {
+      "date": "2022-05-17",
+      "cashVnd": 2500,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 25%"
+      ]
+    },
+    {
+      "date": "2023-06-07",
+      "cashVnd": 800,
+      "stockPct": 16,
+      "texts": [
+        "Thưởng bằng Cổ phiếu, tỷ lệ 100:16",
+        "Cổ tức bằng Tiền, tỷ lệ 8%"
+      ]
+    },
+    {
+      "date": "2024-05-09",
+      "cashVnd": 1000,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 10%"
+      ]
+    },
+    {
+      "date": "2025-05-28",
+      "cashVnd": 1500,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 15%"
+      ]
+    },
+    {
+      "date": "2026-05-20",
+      "cashVnd": 2500,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 25%"
+      ]
+    }
+  ]
+}

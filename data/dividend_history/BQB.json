@@ -1,0 +1,29 @@
+{
+  "symbol": "BQB",
+  "events": [
+    {
+      "date": "2014-12-31",
+      "cashVnd": 1300,
+      "stockPct": null,
+      "texts": [
+        "Trả cổ tức bằng tiền mặt - Cả năm 2014 - 1,300 VND"
+      ]
+    },
+    {
+      "date": "2015-12-31",
+      "cashVnd": 1300,
+      "stockPct": null,
+      "texts": [
+        "Trả cổ tức bằng tiền mặt - Cả năm 2015 - 1,300 VND"
+      ]
+    },
+    {
+      "date": "2016-12-30",
+      "cashVnd": 180,
+      "stockPct": null,
+      "texts": [
+        "Trả cổ tức bằng tiền mặt - Cả năm 2016 - 180 VND"
+      ]
+    }
+  ]
+}

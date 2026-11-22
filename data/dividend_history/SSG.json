@@ -1,0 +1,37 @@
+{
+  "symbol": "SSG",
+  "events": [
+    {
+      "date": "2011-05-19",
+      "cashVnd": 800,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 8%"
+      ]
+    },
+    {
+      "date": "2023-04-19",
+      "cashVnd": 3700,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 37%"
+      ]
+    },
+    {
+      "date": "2024-07-10",
+      "cashVnd": 1000,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 10%"
+      ]
+    },
+    {
+      "date": "2025-04-09",
+      "cashVnd": 12000,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 120%"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,61 @@
+{
+  "symbol": "PMT",
+  "events": [
+    {
+      "date": "2007-04-24",
+      "cashVnd": null,
+      "stockPct": 30,
+      "texts": [
+        "Phát hành cổ phiếu - Cổ phiếu thưởng tỉ lệ 30.0%"
+      ]
+    },
+    {
+      "date": "2020-07-02",
+      "cashVnd": 340,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 3.4%"
+      ]
+    },
+    {
+      "date": "2021-04-28",
+      "cashVnd": 520,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 5.2%"
+      ]
+    },
+    {
+      "date": "2022-04-18",
+      "cashVnd": 567,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 5.67%"
+      ]
+    },
+    {
+      "date": "2023-04-19",
+      "cashVnd": 213,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 2.13%"
+      ]
+    },
+    {
+      "date": "2024-04-15",
+      "cashVnd": 89,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 0.89%"
+      ]
+    },
+    {
+      "date": "2026-09-02",
+      "cashVnd": 445,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 4.45%"
+      ]
+    }
+  ]
+}

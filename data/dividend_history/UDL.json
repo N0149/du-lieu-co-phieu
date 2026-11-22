@@ -1,0 +1,29 @@
+{
+  "symbol": "UDL",
+  "events": [
+    {
+      "date": "2023-08-28",
+      "cashVnd": 1350,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 13.5%"
+      ]
+    },
+    {
+      "date": "2025-05-11",
+      "cashVnd": 3100,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 31%"
+      ]
+    },
+    {
+      "date": "2026-07-08",
+      "cashVnd": 5000,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 50%"
+      ]
+    }
+  ]
+}

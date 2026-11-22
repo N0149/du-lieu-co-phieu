@@ -1,0 +1,45 @@
+{
+  "symbol": "VE8",
+  "events": [
+    {
+      "date": "2010-08-30",
+      "cashVnd": null,
+      "stockPct": 6.12,
+      "texts": [
+        "Phát hành cổ phiếu - Trả Cổ tức bằng Cổ phiếu tỉ lệ 6.1%"
+      ]
+    },
+    {
+      "date": "2014-05-27",
+      "cashVnd": 362,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 3.62%"
+      ]
+    },
+    {
+      "date": "2015-05-17",
+      "cashVnd": 1500,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 15%"
+      ]
+    },
+    {
+      "date": "2016-06-13",
+      "cashVnd": 1500,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 15%"
+      ]
+    },
+    {
+      "date": "2017-06-06",
+      "cashVnd": 1500,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 15%"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "symbol": "BKC",
+  "events": [
+    {
+      "date": "2011-06-15",
+      "cashVnd": 1500,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 15%"
+      ]
+    },
+    {
+      "date": "2025-08-06",
+      "cashVnd": null,
+      "stockPct": 100,
+      "texts": [
+        "Thưởng bằng Cổ tức, tỷ lệ 1:1"
+      ]
+    },
+    {
+      "date": "2026-07-22",
+      "cashVnd": null,
+      "stockPct": null,
+      "texts": [
+        "Thưởng bằng Cổ tức, tỷ lệ 28.6763%"
+      ]
+    }
+  ]
+}

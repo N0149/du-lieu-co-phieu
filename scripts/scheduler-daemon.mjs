@@ -33,6 +33,7 @@ let lastRunReports2000 = "";
 let lastRunFunds2100 = "";
 let lastRunShareholdersMonth = "";
 let lastRunChinaNewsDate0645 = "";
+let lastRunDividendDaily = "";
 
 function runCommand(cmd, taskName) {
   const timeStr = new Date().toLocaleTimeString("vi-VN");
@@ -131,6 +132,12 @@ function checkAndRunSchedule() {
     lastRunShareholdersMonth = monthStr;
     runCommand("node scripts/crawl-direct-market.mjs --mode=shareholders", "CỔ ĐÔNG & CÔNG TY CON (NGÀY 1 HÀNG THÁNG)");
   }
+
+  // 8. Lịch sử Cổ tức toàn bộ 3 Sàn: 22:30 tối hàng ngày (1 lần/ngày)
+  if (hours === 22 && minutes === 30 && lastRunDividendDaily !== dateStr) {
+    lastRunDividendDaily = dateStr;
+    runCommand("node scripts/sync-all-dividends.mjs", "LỊCH SỬ CỔ TỨC TOÀN BỘ 3 SÀN (22:30 HÀNG NGÀY)");
+  }
 }
 
 console.log("===================================================================");
@@ -146,6 +153,7 @@ console.log("   • 18:36 hàng ngày           : Cập nhật Giao dịch nội
 console.log("   • 20:00 hàng ngày           : Cập nhật Báo cáo phân tích Cổ phiếu & Ngành (1 ngày 1 lần)");
 console.log("   • 20:30 hàng ngày           : Cập nhật Công bố thông tin 3 Sàn (Lần 3 - Chốt tối)");
 console.log("   • 21:00 hàng ngày           : Cập nhật Dữ liệu Quỹ Mở Fmarket (70 Quỹ)");
+console.log("   • 22:30 hàng ngày           : Đồng bộ Lịch sử Cổ tức toàn bộ 3 Sàn (1 lần/ngày)");
 console.log("   • 23:00 ngày 1 hàng tháng   : Cập nhật Cơ cấu Cổ đông & Công ty con");
 console.log("-------------------------------------------------------------------");
 console.log(`[${new Date().toLocaleTimeString("vi-VN")}] Daemon đang canh thời gian thực... (Kiểm tra mỗi 30s)`);

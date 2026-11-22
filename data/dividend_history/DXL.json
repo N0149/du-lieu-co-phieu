@@ -1,0 +1,29 @@
+{
+  "symbol": "DXL",
+  "events": [
+    {
+      "date": "2014-06-11",
+      "cashVnd": 697,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 6.97%"
+      ]
+    },
+    {
+      "date": "2017-09-28",
+      "cashVnd": 159,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 1.59%"
+      ]
+    },
+    {
+      "date": "2023-11-19",
+      "cashVnd": 125,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 1.25%"
+      ]
+    }
+  ]
+}

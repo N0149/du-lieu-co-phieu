@@ -1,0 +1,110 @@
+{
+  "symbol": "MCH",
+  "events": [
+    {
+      "date": "2017-05-29",
+      "cashVnd": 4500,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 45%"
+      ]
+    },
+    {
+      "date": "2018-08-26",
+      "cashVnd": null,
+      "stockPct": 15,
+      "texts": [
+        "Thưởng bằng Cổ phiếu, tỷ lệ 100:15"
+      ]
+    },
+    {
+      "date": "2019-06-06",
+      "cashVnd": 4500,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 45%"
+      ]
+    },
+    {
+      "date": "2019-08-22",
+      "cashVnd": null,
+      "stockPct": 15,
+      "texts": [
+        "Thưởng bằng Cổ phiếu, tỷ lệ 100:15"
+      ]
+    },
+    {
+      "date": "2020-08-09",
+      "cashVnd": 4500,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 45%"
+      ]
+    },
+    {
+      "date": "2021-05-31",
+      "cashVnd": 4500,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 45%"
+      ]
+    },
+    {
+      "date": "2023-07-17",
+      "cashVnd": 4500,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 45%"
+      ]
+    },
+    {
+      "date": "2024-07-01",
+      "cashVnd": 5500,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 55%"
+      ]
+    },
+    {
+      "date": "2024-09-24",
+      "cashVnd": 16800,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 168%"
+      ]
+    },
+    {
+      "date": "2024-12-18",
+      "cashVnd": 9500,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 95%"
+      ]
+    },
+    {
+      "date": "2025-07-06",
+      "cashVnd": 2500,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 25%"
+      ]
+    },
+    {
+      "date": "2026-01-08",
+      "cashVnd": 2500,
+      "stockPct": 21.47,
+      "texts": [
+        "Thưởng bằng Cổ tức, tỷ lệ 10000:2147",
+        "Cổ tức bằng Tiền, tỷ lệ 25%"
+      ]
+    },
+    {
+      "date": "2026-08-09",
+      "cashVnd": 2000,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 20%"
+      ]
+    }
+  ]
+}

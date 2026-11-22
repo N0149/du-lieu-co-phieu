@@ -1,0 +1,45 @@
+{
+  "symbol": "FIT",
+  "events": [
+    {
+      "date": "2013-09-18",
+      "cashVnd": null,
+      "stockPct": 5,
+      "texts": [
+        "Cổ tức bằng Cổ phiếu, tỷ lệ 100:5"
+      ]
+    },
+    {
+      "date": "2014-03-25",
+      "cashVnd": null,
+      "stockPct": 20,
+      "texts": [
+        "Cổ tức bằng Cổ phiếu, tỷ lệ 5:1"
+      ]
+    },
+    {
+      "date": "2015-01-04",
+      "cashVnd": null,
+      "stockPct": 15,
+      "texts": [
+        "Cổ tức bằng Cổ phiếu, tỷ lệ 100:15"
+      ]
+    },
+    {
+      "date": "2016-06-14",
+      "cashVnd": null,
+      "stockPct": 8,
+      "texts": [
+        "Cổ tức bằng Cổ phiếu, tỷ lệ 100:8"
+      ]
+    },
+    {
+      "date": "2022-04-24",
+      "cashVnd": null,
+      "stockPct": 10,
+      "texts": [
+        "Cổ tức bằng Cổ phiếu, tỷ lệ 10:1"
+      ]
+    }
+  ]
+}

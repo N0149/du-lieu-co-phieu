@@ -1,0 +1,21 @@
+{
+  "symbol": "CFM",
+  "events": [
+    {
+      "date": "2024-08-20",
+      "cashVnd": 200,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 2%"
+      ]
+    },
+    {
+      "date": "2025-11-23",
+      "cashVnd": 200,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 2%"
+      ]
+    }
+  ]
+}

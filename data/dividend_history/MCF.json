@@ -1,0 +1,134 @@
+{
+  "symbol": "MCF",
+  "events": [
+    {
+      "date": "2012-01-17",
+      "cashVnd": null,
+      "stockPct": 22,
+      "texts": [
+        "Cổ tức bằng Cổ phiếu, tỷ lệ 100:22"
+      ]
+    },
+    {
+      "date": "2013-02-24",
+      "cashVnd": 409.99999999999994,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 4.1%"
+      ]
+    },
+    {
+      "date": "2014-03-11",
+      "cashVnd": 1613,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 16.13%"
+      ]
+    },
+    {
+      "date": "2015-04-15",
+      "cashVnd": 1600,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 16%"
+      ]
+    },
+    {
+      "date": "2016-03-06",
+      "cashVnd": 1060,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 10.6%"
+      ]
+    },
+    {
+      "date": "2017-03-07",
+      "cashVnd": 1144,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 11.44%"
+      ]
+    },
+    {
+      "date": "2018-03-15",
+      "cashVnd": 900,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 9%"
+      ]
+    },
+    {
+      "date": "2018-06-07",
+      "cashVnd": 105,
+      "stockPct": 0.347,
+      "texts": [
+        "Thưởng bằng Cổ phiếu, tỷ lệ 100000:347",
+        "Cổ tức bằng Tiền, tỷ lệ 1.05%"
+      ]
+    },
+    {
+      "date": "2019-05-16",
+      "cashVnd": 668,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 6.68%"
+      ]
+    },
+    {
+      "date": "2020-07-16",
+      "cashVnd": 680,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 6.8%"
+      ]
+    },
+    {
+      "date": "2021-07-07",
+      "cashVnd": 700,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 7%"
+      ]
+    },
+    {
+      "date": "2022-07-06",
+      "cashVnd": 720,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 7.2%"
+      ]
+    },
+    {
+      "date": "2023-05-09",
+      "cashVnd": 730,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 7.3%"
+      ]
+    },
+    {
+      "date": "2024-05-27",
+      "cashVnd": 1200,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 12%"
+      ]
+    },
+    {
+      "date": "2025-05-12",
+      "cashVnd": 650,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 6.5%"
+      ]
+    },
+    {
+      "date": "2026-05-13",
+      "cashVnd": 650,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 6.5%"
+      ]
+    }
+  ]
+}

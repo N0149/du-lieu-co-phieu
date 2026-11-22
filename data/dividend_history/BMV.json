@@ -1,0 +1,61 @@
+{
+  "symbol": "BMV",
+  "events": [
+    {
+      "date": "2020-11-15",
+      "cashVnd": 48,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 0.48%"
+      ]
+    },
+    {
+      "date": "2021-11-11",
+      "cashVnd": 88,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 0.88%"
+      ]
+    },
+    {
+      "date": "2022-11-08",
+      "cashVnd": 129,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 1.29%"
+      ]
+    },
+    {
+      "date": "2023-10-25",
+      "cashVnd": 27,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 0.27%"
+      ]
+    },
+    {
+      "date": "2024-11-14",
+      "cashVnd": 84,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 0.84%"
+      ]
+    },
+    {
+      "date": "2025-10-01",
+      "cashVnd": 41,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 0.41%"
+      ]
+    },
+    {
+      "date": "2026-10-13",
+      "cashVnd": 77,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 0.77%"
+      ]
+    }
+  ]
+}

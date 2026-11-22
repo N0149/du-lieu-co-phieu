@@ -1,0 +1,69 @@
+{
+  "symbol": "HRC",
+  "events": [
+    {
+      "date": "2009-02-03",
+      "cashVnd": 500,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 5%"
+      ]
+    },
+    {
+      "date": "2010-02-07",
+      "cashVnd": 2000,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 20%"
+      ]
+    },
+    {
+      "date": "2011-04-26",
+      "cashVnd": 2500,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 25%"
+      ]
+    },
+    {
+      "date": "2011-12-06",
+      "cashVnd": 1500,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 15%"
+      ]
+    },
+    {
+      "date": "2014-02-11",
+      "cashVnd": 1000,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 10%"
+      ]
+    },
+    {
+      "date": "2015-08-13",
+      "cashVnd": null,
+      "stockPct": 40,
+      "texts": [
+        "Thưởng bằng Cổ phiếu, tỷ lệ 10:4"
+      ]
+    },
+    {
+      "date": "2016-07-20",
+      "cashVnd": null,
+      "stockPct": 25,
+      "texts": [
+        "Thưởng bằng Cổ phiếu, tỷ lệ 4:1"
+      ]
+    },
+    {
+      "date": "2023-09-12",
+      "cashVnd": 300,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 3%"
+      ]
+    }
+  ]
+}

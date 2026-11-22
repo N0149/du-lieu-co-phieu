@@ -1,0 +1,69 @@
+{
+  "symbol": "LDW",
+  "events": [
+    {
+      "date": "2019-07-22",
+      "cashVnd": 82,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 0.82%"
+      ]
+    },
+    {
+      "date": "2020-06-24",
+      "cashVnd": 243.00000000000003,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 2.43%"
+      ]
+    },
+    {
+      "date": "2021-06-16",
+      "cashVnd": 258,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 2.58%"
+      ]
+    },
+    {
+      "date": "2022-06-20",
+      "cashVnd": 330,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 3.3%"
+      ]
+    },
+    {
+      "date": "2023-06-15",
+      "cashVnd": 378,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 3.78%"
+      ]
+    },
+    {
+      "date": "2024-07-15",
+      "cashVnd": 509.99999999999994,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 5.1%"
+      ]
+    },
+    {
+      "date": "2025-07-15",
+      "cashVnd": 610,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 6.1%"
+      ]
+    },
+    {
+      "date": "2026-07-15",
+      "cashVnd": 612,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 6.12%"
+      ]
+    }
+  ]
+}

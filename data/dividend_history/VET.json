@@ -1,0 +1,61 @@
+{
+  "symbol": "VET",
+  "events": [
+    {
+      "date": "2018-09-09",
+      "cashVnd": 4136,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 41.36%"
+      ]
+    },
+    {
+      "date": "2019-09-05",
+      "cashVnd": 4000,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 40%"
+      ]
+    },
+    {
+      "date": "2020-10-06",
+      "cashVnd": 2800,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 28%"
+      ]
+    },
+    {
+      "date": "2021-10-07",
+      "cashVnd": 2500,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 25%"
+      ]
+    },
+    {
+      "date": "2022-09-26",
+      "cashVnd": 2662,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 26.62%"
+      ]
+    },
+    {
+      "date": "2023-09-28",
+      "cashVnd": 2000,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 20%"
+      ]
+    },
+    {
+      "date": "2024-03-20",
+      "cashVnd": 40,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 0.4%"
+      ]
+    }
+  ]
+}

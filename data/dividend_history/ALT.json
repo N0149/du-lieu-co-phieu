@@ -2,59 +2,11 @@
   "symbol": "ALT",
   "events": [
     {
-      "date": "2007-05-16",
-      "cashVnd": null,
-      "stockPct": 15,
-      "texts": [
-        "Phát hành cổ phiếu - Trả Cổ tức bằng Cổ phiếu tỉ lệ 15.0%"
-      ]
-    },
-    {
-      "date": "2007-08-03",
-      "cashVnd": 800,
-      "stockPct": null,
-      "texts": [
-        "Trả cổ tức bằng tiền mặt - 6T đầu năm 2007 - 800 VND"
-      ]
-    },
-    {
-      "date": "2008-06-03",
-      "cashVnd": 800,
-      "stockPct": null,
-      "texts": [
-        "Trả cổ tức bằng tiền mặt - Cả năm 2007 - 800 VND"
-      ]
-    },
-    {
-      "date": "2008-10-27",
-      "cashVnd": 800,
-      "stockPct": null,
-      "texts": [
-        "Trả cổ tức bằng tiền mặt - Đợt 1 2008 - 800 VND"
-      ]
-    },
-    {
-      "date": "2008-12-11",
-      "cashVnd": null,
-      "stockPct": 25,
-      "texts": [
-        "Phát hành cổ phiếu - Cổ phiếu thưởng tỉ lệ 25.0%"
-      ]
-    },
-    {
       "date": "2009-08-24",
       "cashVnd": 400,
       "stockPct": null,
       "texts": [
         "Cổ tức bằng Tiền, tỷ lệ 4%"
-      ]
-    },
-    {
-      "date": "2009-11-24",
-      "cashVnd": null,
-      "stockPct": 9,
-      "texts": [
-        "Phát hành cổ phiếu - Trả Cổ tức bằng Cổ phiếu tỉ lệ 9.0%"
       ]
     },
     {
@@ -71,14 +23,6 @@
       "stockPct": null,
       "texts": [
         "Cổ tức bằng Tiền, tỷ lệ 6%"
-      ]
-    },
-    {
-      "date": "2012-09-18",
-      "cashVnd": 600,
-      "stockPct": null,
-      "texts": [
-        "Trả cổ tức bằng tiền mặt - Đợt 2 2011 - 600 VND"
       ]
     },
     {
@@ -111,14 +55,6 @@
       "stockPct": null,
       "texts": [
         "Cổ tức bằng Tiền, tỷ lệ 6%"
-      ]
-    },
-    {
-      "date": "2018-09-11",
-      "cashVnd": 800,
-      "stockPct": null,
-      "texts": [
-        "Trả cổ tức bằng tiền mặt - Cả năm 2017 - 800 VND"
       ]
     },
     {
@@ -175,6 +111,14 @@
       "stockPct": null,
       "texts": [
         "Cổ tức bằng Tiền, tỷ lệ 6%"
+      ]
+    },
+    {
+      "date": "2026-09-28",
+      "cashVnd": 1000,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 10%"
       ]
     }
   ]

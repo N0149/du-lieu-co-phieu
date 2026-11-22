@@ -1,0 +1,21 @@
+{
+  "symbol": "BVB",
+  "events": [
+    {
+      "date": "2023-03-28",
+      "cashVnd": null,
+      "stockPct": 15,
+      "texts": [
+        "Thưởng bằng Cổ tức, tỷ lệ 100:15"
+      ]
+    },
+    {
+      "date": "2024-08-14",
+      "cashVnd": null,
+      "stockPct": 10,
+      "texts": [
+        "Cổ tức bằng Cổ phiếu, tỷ lệ 100:10"
+      ]
+    }
+  ]
+}

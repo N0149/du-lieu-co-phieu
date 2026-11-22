@@ -1,0 +1,77 @@
+{
+  "symbol": "NAU",
+  "events": [
+    {
+      "date": "2016-12-31",
+      "cashVnd": 63,
+      "stockPct": null,
+      "texts": [
+        "Trả cổ tức bằng tiền mặt - Cả năm 2016 - 63 VND"
+      ]
+    },
+    {
+      "date": "2018-07-30",
+      "cashVnd": 72,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 0.72%"
+      ]
+    },
+    {
+      "date": "2019-07-31",
+      "cashVnd": 75,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 0.75%"
+      ]
+    },
+    {
+      "date": "2020-11-25",
+      "cashVnd": 71,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 0.71%"
+      ]
+    },
+    {
+      "date": "2021-07-22",
+      "cashVnd": 81,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 0.81%"
+      ]
+    },
+    {
+      "date": "2022-08-10",
+      "cashVnd": 87,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 0.87%"
+      ]
+    },
+    {
+      "date": "2023-08-03",
+      "cashVnd": 205.6,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 2.056%"
+      ]
+    },
+    {
+      "date": "2024-11-14",
+      "cashVnd": 245.00000000000003,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 2.45%"
+      ]
+    },
+    {
+      "date": "2025-12-10",
+      "cashVnd": 314,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 3.14%"
+      ]
+    }
+  ]
+}

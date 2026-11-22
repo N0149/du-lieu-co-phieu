@@ -1,0 +1,61 @@
+{
+  "symbol": "VPW",
+  "events": [
+    {
+      "date": "2020-07-19",
+      "cashVnd": 225.2,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 2.252%"
+      ]
+    },
+    {
+      "date": "2021-05-20",
+      "cashVnd": 216,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 2.16%"
+      ]
+    },
+    {
+      "date": "2022-05-26",
+      "cashVnd": 255.41,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 2.5541%"
+      ]
+    },
+    {
+      "date": "2023-07-03",
+      "cashVnd": 356.19,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 3.5619%"
+      ]
+    },
+    {
+      "date": "2024-07-31",
+      "cashVnd": 382.595,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 3.82595%"
+      ]
+    },
+    {
+      "date": "2025-07-01",
+      "cashVnd": 99.82220000000001,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 0.998222%"
+      ]
+    },
+    {
+      "date": "2026-06-29",
+      "cashVnd": 202.06750000000002,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 2.020675%"
+      ]
+    }
+  ]
+}

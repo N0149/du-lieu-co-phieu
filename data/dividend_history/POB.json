@@ -1,0 +1,45 @@
+{
+  "symbol": "POB",
+  "events": [
+    {
+      "date": "2019-06-04",
+      "cashVnd": 180,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 1.8%"
+      ]
+    },
+    {
+      "date": "2020-07-09",
+      "cashVnd": 140,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 1.4%"
+      ]
+    },
+    {
+      "date": "2022-08-18",
+      "cashVnd": 80,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 0.8%"
+      ]
+    },
+    {
+      "date": "2023-06-29",
+      "cashVnd": 151,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 1.51%"
+      ]
+    },
+    {
+      "date": "2024-09-03",
+      "cashVnd": 156,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 1.56%"
+      ]
+    }
+  ]
+}

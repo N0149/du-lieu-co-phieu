@@ -1,0 +1,21 @@
+{
+  "symbol": "AIG",
+  "events": [
+    {
+      "date": "2026-07-30",
+      "cashVnd": 500,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 5%"
+      ]
+    },
+    {
+      "date": "2026-08-03",
+      "cashVnd": null,
+      "stockPct": 15,
+      "texts": [
+        "Thưởng bằng Cổ tức, tỷ lệ 100:15"
+      ]
+    }
+  ]
+}

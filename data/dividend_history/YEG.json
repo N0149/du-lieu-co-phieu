@@ -1,0 +1,21 @@
+{
+  "symbol": "YEG",
+  "events": [
+    {
+      "date": "2023-12-13",
+      "cashVnd": null,
+      "stockPct": 72.2,
+      "texts": [
+        "Thưởng bằng Cổ tức, tỷ lệ 1000:722"
+      ]
+    },
+    {
+      "date": "2026-05-19",
+      "cashVnd": null,
+      "stockPct": 7.000000000000001,
+      "texts": [
+        "Thưởng bằng Cổ tức, tỷ lệ 100:7"
+      ]
+    }
+  ]
+}

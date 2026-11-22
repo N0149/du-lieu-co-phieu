@@ -1,0 +1,21 @@
+{
+  "symbol": "VTR",
+  "events": [
+    {
+      "date": "2025-07-23",
+      "cashVnd": 1000,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 10%"
+      ]
+    },
+    {
+      "date": "2025-12-08",
+      "cashVnd": null,
+      "stockPct": 10,
+      "texts": [
+        "Thưởng bằng Cổ tức, tỷ lệ 10:1.5"
+      ]
+    }
+  ]
+}

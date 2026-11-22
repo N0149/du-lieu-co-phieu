@@ -1,0 +1,21 @@
+{
+  "symbol": "VMG",
+  "events": [
+    {
+      "date": "2008-09-30",
+      "cashVnd": null,
+      "stockPct": 50,
+      "texts": [
+        "Phát hành cổ phiếu - Cổ phiếu thưởng tỉ lệ 50.0%"
+      ]
+    },
+    {
+      "date": "2010-05-16",
+      "cashVnd": null,
+      "stockPct": 33.33,
+      "texts": [
+        "Phát hành cổ phiếu - Cổ phiếu thưởng tỉ lệ 33.3%"
+      ]
+    }
+  ]
+}

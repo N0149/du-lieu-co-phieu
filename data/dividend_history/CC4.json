@@ -1,0 +1,21 @@
+{
+  "symbol": "CC4",
+  "events": [
+    {
+      "date": "2015-12-31",
+      "cashVnd": 500,
+      "stockPct": null,
+      "texts": [
+        "Trả cổ tức bằng tiền mặt - Cả năm 2015 - 500 VND"
+      ]
+    },
+    {
+      "date": "2024-09-26",
+      "cashVnd": 500,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 5%"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,121 @@
+{
+  "symbol": "SHI",
+  "events": [
+    {
+      "date": "2010-05-12",
+      "cashVnd": 1500,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 15%"
+      ]
+    },
+    {
+      "date": "2013-11-13",
+      "cashVnd": 300,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 3%"
+      ]
+    },
+    {
+      "date": "2014-12-02",
+      "cashVnd": 300,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 3%"
+      ]
+    },
+    {
+      "date": "2015-08-20",
+      "cashVnd": 300,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 3%"
+      ]
+    },
+    {
+      "date": "2016-08-18",
+      "cashVnd": null,
+      "stockPct": 12,
+      "texts": [
+        "Cổ tức bằng Cổ phiếu, tỷ lệ 100:12"
+      ]
+    },
+    {
+      "date": "2017-03-19",
+      "cashVnd": 300,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 3%"
+      ]
+    },
+    {
+      "date": "2017-09-14",
+      "cashVnd": 200,
+      "stockPct": 5,
+      "texts": [
+        "Cổ tức bằng Cổ phiếu, tỷ lệ 100:5",
+        "Cổ tức bằng Tiền, tỷ lệ 2%"
+      ]
+    },
+    {
+      "date": "2018-03-19",
+      "cashVnd": 300,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 3%"
+      ]
+    },
+    {
+      "date": "2018-05-29",
+      "cashVnd": 200,
+      "stockPct": 5,
+      "texts": [
+        "Cổ tức bằng Cổ phiếu, tỷ lệ 100:5",
+        "Cổ tức bằng Tiền, tỷ lệ 2%"
+      ]
+    },
+    {
+      "date": "2019-06-05",
+      "cashVnd": 500,
+      "stockPct": 2,
+      "texts": [
+        "Cổ tức bằng Cổ phiếu, tỷ lệ 100:2",
+        "Cổ tức bằng Tiền, tỷ lệ 5%"
+      ]
+    },
+    {
+      "date": "2020-10-28",
+      "cashVnd": 500,
+      "stockPct": 5,
+      "texts": [
+        "Cổ tức bằng Cổ phiếu, tỷ lệ 100:5",
+        "Cổ tức bằng Tiền, tỷ lệ 5%"
+      ]
+    },
+    {
+      "date": "2021-07-08",
+      "cashVnd": null,
+      "stockPct": 10,
+      "texts": [
+        "Cổ tức bằng Cổ phiếu, tỷ lệ 10:1"
+      ]
+    },
+    {
+      "date": "2022-08-25",
+      "cashVnd": null,
+      "stockPct": 8,
+      "texts": [
+        "Cổ tức bằng Cổ phiếu, tỷ lệ 100:8"
+      ]
+    },
+    {
+      "date": "2025-06-26",
+      "cashVnd": null,
+      "stockPct": 5,
+      "texts": [
+        "Thưởng bằng Cổ tức, tỷ lệ 100:5"
+      ]
+    }
+  ]
+}

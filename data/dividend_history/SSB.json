@@ -1,0 +1,48 @@
+{
+  "symbol": "SSB",
+  "events": [
+    {
+      "date": "2021-07-22",
+      "cashVnd": null,
+      "stockPct": 9,
+      "texts": [
+        "Cổ tức bằng Cổ phiếu, tỷ lệ 100:9.1206"
+      ]
+    },
+    {
+      "date": "2022-06-15",
+      "cashVnd": null,
+      "stockPct": 18,
+      "texts": [
+        "Thưởng bằng Cổ phiếu, tỷ lệ 100:6.6092",
+        "Cổ tức bằng Cổ phiếu, tỷ lệ 100:12.736"
+      ]
+    },
+    {
+      "date": "2023-06-22",
+      "cashVnd": null,
+      "stockPct": 19,
+      "texts": [
+        "Thưởng bằng Cổ phiếu, tỷ lệ 100:5.7933",
+        "Cổ tức bằng Cổ phiếu, tỷ lệ 100:14.468"
+      ]
+    },
+    {
+      "date": "2024-08-22",
+      "cashVnd": null,
+      "stockPct": 13,
+      "texts": [
+        "Thưởng bằng Cổ tức, tỷ lệ 100:0.4127",
+        "Cổ tức bằng Cổ phiếu, tỷ lệ 100:13.1826"
+      ]
+    },
+    {
+      "date": "2026-05-27",
+      "cashVnd": null,
+      "stockPct": 20,
+      "texts": [
+        "Cổ tức bằng Cổ phiếu, tỷ lệ 100:20,5202"
+      ]
+    }
+  ]
+}

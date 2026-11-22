@@ -1,0 +1,69 @@
+{
+  "symbol": "PVO",
+  "events": [
+    {
+      "date": "2015-05-22",
+      "cashVnd": 200,
+      "stockPct": null,
+      "texts": [
+        "Trả cổ tức bằng tiền mặt - Cả năm 2014 - 200 VND"
+      ]
+    },
+    {
+      "date": "2017-09-10",
+      "cashVnd": 1100,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 11%"
+      ]
+    },
+    {
+      "date": "2018-09-18",
+      "cashVnd": 200,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 2%"
+      ]
+    },
+    {
+      "date": "2021-09-29",
+      "cashVnd": 100,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 1%"
+      ]
+    },
+    {
+      "date": "2023-09-25",
+      "cashVnd": 100,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 1%"
+      ]
+    },
+    {
+      "date": "2024-09-18",
+      "cashVnd": 100,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 1%"
+      ]
+    },
+    {
+      "date": "2025-09-18",
+      "cashVnd": 100,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 1%"
+      ]
+    },
+    {
+      "date": "2026-05-18",
+      "cashVnd": 100,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 01%"
+      ]
+    }
+  ]
+}

@@ -2,99 +2,83 @@
   "symbol": "SZB",
   "events": [
     {
-      "date": "2016-12-30",
+      "date": "2020-05-27",
       "cashVnd": 2500,
       "stockPct": null,
       "texts": [
-        "Trả cổ tức bằng tiền mặt - Cả năm 2016 - 2,500 VND"
+        "Cổ tức bằng Tiền, tỷ lệ 25%"
       ]
     },
     {
-      "date": "2017-12-29",
+      "date": "2021-07-22",
       "cashVnd": 2500,
       "stockPct": null,
       "texts": [
-        "Trả cổ tức bằng tiền mặt - Cả năm 2017 - 2,500 VND"
+        "Cổ tức bằng Tiền, tỷ lệ 25%"
       ]
     },
     {
-      "date": "2018-12-31",
+      "date": "2022-08-24",
       "cashVnd": 2500,
       "stockPct": null,
       "texts": [
-        "Trả cổ tức bằng tiền mặt - Cả năm 2018 - 2,500 VND"
+        "Cổ tức bằng Tiền, tỷ lệ 25%"
       ]
     },
     {
-      "date": "2020-05-28",
-      "cashVnd": 2500,
-      "stockPct": null,
-      "texts": [
-        "Trả cổ tức bằng tiền mặt - Cả năm 2019 - 2,500 VND"
-      ]
-    },
-    {
-      "date": "2021-07-23",
-      "cashVnd": 2500,
-      "stockPct": null,
-      "texts": [
-        "Trả cổ tức bằng tiền mặt - Cả năm 2020 - 2,500 VND"
-      ]
-    },
-    {
-      "date": "2022-08-25",
-      "cashVnd": 2500,
-      "stockPct": null,
-      "texts": [
-        "Trả cổ tức bằng tiền mặt - Cả năm 2021 - 2,500 VND"
-      ]
-    },
-    {
-      "date": "2022-11-24",
+      "date": "2022-11-23",
       "cashVnd": 1200,
       "stockPct": null,
       "texts": [
-        "Trả cổ tức bằng tiền mặt - Đợt 1 2022 - 1,200 VND"
+        "Cổ tức bằng Tiền, tỷ lệ 12%"
       ]
     },
     {
-      "date": "2023-07-14",
+      "date": "2023-08-16",
       "cashVnd": 1800,
       "stockPct": null,
       "texts": [
-        "Trả cổ tức bằng tiền mặt - Đợt 2 2022 - 1,800 VND"
+        "Cổ tức bằng Tiền, tỷ lệ 18%"
       ]
     },
     {
-      "date": "2023-11-21",
+      "date": "2023-11-20",
       "cashVnd": 1200,
       "stockPct": null,
       "texts": [
-        "Trả cổ tức bằng tiền mặt - Đợt 1 2023 - 1,200 VND"
+        "Cổ tức bằng Tiền, tỷ lệ 12%"
       ]
     },
     {
-      "date": "2024-07-04",
+      "date": "2024-07-03",
       "cashVnd": 2300,
       "stockPct": null,
       "texts": [
-        "Trả cổ tức bằng tiền mặt - Đợt 2 2023 - 2,300 VND"
+        "Cổ tức bằng Tiền, tỷ lệ 23%"
       ]
     },
     {
-      "date": "2024-11-25",
+      "date": "2024-11-24",
       "cashVnd": 1000,
       "stockPct": null,
       "texts": [
-        "Trả cổ tức bằng tiền mặt - Đợt 1 2024 - 1,000 VND"
+        "Cổ tức bằng Tiền, tỷ lệ 10%"
       ]
     },
     {
-      "date": "2025-07-21",
+      "date": "2025-07-20",
       "cashVnd": 3000,
       "stockPct": null,
       "texts": [
-        "Trả cổ tức bằng tiền mặt - Đợt 2 2024 - 3,000 VND"
+        "Cổ tức bằng Tiền, tỷ lệ 30%"
+      ]
+    },
+    {
+      "date": "2026-07-26",
+      "cashVnd": 4500,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 45%"
       ]
     }
   ]

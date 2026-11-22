@@ -2,59 +2,11 @@
   "symbol": "BMI",
   "events": [
     {
-      "date": "2007-01-29",
-      "cashVnd": 700,
-      "stockPct": null,
-      "texts": [
-        "Trả cổ tức bằng tiền mặt - Đợt 1 2006 - 700 VND"
-      ]
-    },
-    {
-      "date": "2007-06-15",
-      "cashVnd": null,
-      "stockPct": 25,
-      "texts": [
-        "Phát hành cổ phiếu - Quyền mua CP cho Cổ đông hiện hữu tỉ lệ 25.0%"
-      ]
-    },
-    {
-      "date": "2008-05-06",
-      "cashVnd": 700,
-      "stockPct": null,
-      "texts": [
-        "Trả cổ tức bằng tiền mặt - Cả năm 2007 - 700 VND"
-      ]
-    },
-    {
       "date": "2009-05-17",
       "cashVnd": 1200,
       "stockPct": null,
       "texts": [
         "Cổ tức bằng Tiền, tỷ lệ 12%"
-      ]
-    },
-    {
-      "date": "2010-05-26",
-      "cashVnd": 1200,
-      "stockPct": null,
-      "texts": [
-        "Trả cổ tức bằng tiền mặt - Cả năm 2009 - 1,200 VND"
-      ]
-    },
-    {
-      "date": "2011-05-23",
-      "cashVnd": 1500,
-      "stockPct": null,
-      "texts": [
-        "Trả cổ tức bằng tiền mặt - Cả năm 2010 - 1,500 VND"
-      ]
-    },
-    {
-      "date": "2012-05-23",
-      "cashVnd": 1200,
-      "stockPct": null,
-      "texts": [
-        "Trả cổ tức bằng tiền mặt - Cả năm 2011 - 1,200 VND"
       ]
     },
     {

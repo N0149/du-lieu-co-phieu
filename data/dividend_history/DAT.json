@@ -1,0 +1,45 @@
+{
+  "symbol": "DAT",
+  "events": [
+    {
+      "date": "2017-11-29",
+      "cashVnd": null,
+      "stockPct": 15,
+      "texts": [
+        "Cổ tức bằng Cổ phiếu, tỷ lệ 100:15"
+      ]
+    },
+    {
+      "date": "2019-06-23",
+      "cashVnd": null,
+      "stockPct": 5,
+      "texts": [
+        "Cổ tức bằng Cổ phiếu, tỷ lệ 100:5"
+      ]
+    },
+    {
+      "date": "2022-01-18",
+      "cashVnd": null,
+      "stockPct": 20,
+      "texts": [
+        "Cổ tức bằng Cổ phiếu, tỷ lệ 100:20"
+      ]
+    },
+    {
+      "date": "2022-08-08",
+      "cashVnd": null,
+      "stockPct": 14.000000000000002,
+      "texts": [
+        "Cổ tức bằng Cổ phiếu, tỷ lệ 100:14"
+      ]
+    },
+    {
+      "date": "2024-06-30",
+      "cashVnd": null,
+      "stockPct": 10,
+      "texts": [
+        "Cổ tức bằng Cổ phiếu, tỷ lệ 100:10"
+      ]
+    }
+  ]
+}

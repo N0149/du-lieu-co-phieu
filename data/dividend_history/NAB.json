@@ -1,0 +1,54 @@
+{
+  "symbol": "NAB",
+  "events": [
+    {
+      "date": "2021-12-01",
+      "cashVnd": null,
+      "stockPct": 12,
+      "texts": [
+        "Cổ tức bằng Cổ phiếu, tỷ lệ 100:12.487"
+      ]
+    },
+    {
+      "date": "2022-10-18",
+      "cashVnd": null,
+      "stockPct": null,
+      "texts": [
+        "Thưởng bằng Cổ phiếu, tỷ lệ 10.2075%",
+        "Cổ tức bằng Cổ phiếu, tỷ lệ 18.7364%"
+      ]
+    },
+    {
+      "date": "2023-07-06",
+      "cashVnd": null,
+      "stockPct": 25,
+      "texts": [
+        "Thưởng bằng Cổ phiếu, tỷ lệ 100:25"
+      ]
+    },
+    {
+      "date": "2024-07-10",
+      "cashVnd": null,
+      "stockPct": 25,
+      "texts": [
+        "Thưởng bằng Cổ tức, tỷ lệ 100:25"
+      ]
+    },
+    {
+      "date": "2025-07-09",
+      "cashVnd": null,
+      "stockPct": 25,
+      "texts": [
+        "Thưởng bằng Cổ tức, tỷ lệ 100:25"
+      ]
+    },
+    {
+      "date": "2026-05-10",
+      "cashVnd": null,
+      "stockPct": 20,
+      "texts": [
+        "Thưởng bằng Cổ tức, tỷ lệ 100:20"
+      ]
+    }
+  ]
+}

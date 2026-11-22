@@ -1,4 +1,4 @@
-# Script đăng ký lịch tự động vào Windows Task Scheduler
+﻿# Script đăng ký lịch tự động vào Windows Task Scheduler
 # Chạy một lần duy nhất với quyền Administrator:
 # powershell -ExecutionPolicy Bypass -File scripts/register-windows-tasks.ps1
 
@@ -50,5 +50,11 @@ $trigger6a = New-ScheduledTaskTrigger -Daily -At 08:30
 $trigger6b = New-ScheduledTaskTrigger -AtLogOn
 Register-ScheduledTask -TaskName "StockData-Maritime-Daily" -Action $action6 -Trigger @($trigger6a, $trigger6b) -Settings $settings -Description "Cập nhật Sản lượng cảng biển & Cước vận tải biển (1 lần/ngày khi bật máy tính hoặc 08:30)" -Force
 Write-Host "  -> [OK] Đã đăng ký tác vụ: StockData-Maritime-Daily (Khi bật máy tính & 08:30 hàng ngày)" -ForegroundColor Green
+
+# 7. Lịch sử Cổ tức toàn bộ 3 Sàn: 22:30 tối hàng ngày (1 lần/ngày)
+$action7 = New-ScheduledTaskAction -Execute $nodePath -Argument "`"$scriptDir\sync-all-dividends.mjs`"" -WorkingDirectory $workingDir
+$trigger7 = New-ScheduledTaskTrigger -Daily -At 22:30
+Register-ScheduledTask -TaskName "StockData-Dividends-Daily" -Action $action7 -Trigger $trigger7 -Settings $settings -Description "Cập nhật Lịch sử cổ tức toàn bộ 3 sàn lúc 22:30 hàng ngày" -Force
+Write-Host "  -> [OK] Đã đăng ký tác vụ: StockData-Dividends-Daily (22:30 tối hàng ngày)" -ForegroundColor Green
 
 Write-Host "`nHoàn tất cài đặt vào Windows Task Scheduler! Các tác vụ sẽ tự động chạy đúng giờ." -ForegroundColor Yellow

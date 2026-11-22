@@ -1,0 +1,77 @@
+{
+  "symbol": "SKH",
+  "events": [
+    {
+      "date": "2018-03-19",
+      "cashVnd": 340,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 3.4%"
+      ]
+    },
+    {
+      "date": "2019-05-15",
+      "cashVnd": 2222,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 22.22%"
+      ]
+    },
+    {
+      "date": "2020-07-13",
+      "cashVnd": 2285,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 22.85%"
+      ]
+    },
+    {
+      "date": "2021-07-18",
+      "cashVnd": 1713,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 17.13%"
+      ]
+    },
+    {
+      "date": "2022-06-14",
+      "cashVnd": 1455,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 14.55%"
+      ]
+    },
+    {
+      "date": "2023-05-03",
+      "cashVnd": 1935.0000000000002,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 19.35%"
+      ]
+    },
+    {
+      "date": "2024-10-08",
+      "cashVnd": 2112,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 21.12%"
+      ]
+    },
+    {
+      "date": "2025-05-20",
+      "cashVnd": 1159,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 11.59%"
+      ]
+    },
+    {
+      "date": "2026-05-18",
+      "cashVnd": 1350,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 13.50%"
+      ]
+    }
+  ]
+}

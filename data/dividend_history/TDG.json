@@ -1,0 +1,29 @@
+{
+  "symbol": "TDG",
+  "events": [
+    {
+      "date": "2018-10-14",
+      "cashVnd": null,
+      "stockPct": 30,
+      "texts": [
+        "Cổ tức bằng Cổ phiếu, tỷ lệ 10:3"
+      ]
+    },
+    {
+      "date": "2023-03-09",
+      "cashVnd": null,
+      "stockPct": 10,
+      "texts": [
+        "Cổ tức bằng Cổ phiếu, tỷ lệ 10:1"
+      ]
+    },
+    {
+      "date": "2024-10-20",
+      "cashVnd": null,
+      "stockPct": 20,
+      "texts": [
+        "Cổ tức bằng Cổ phiếu, tỷ lệ 5:1"
+      ]
+    }
+  ]
+}

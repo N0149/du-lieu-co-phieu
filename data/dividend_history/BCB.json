@@ -1,0 +1,70 @@
+{
+  "symbol": "BCB",
+  "events": [
+    {
+      "date": "2019-05-22",
+      "cashVnd": 1941.36,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 19.4136%"
+      ]
+    },
+    {
+      "date": "2020-06-01",
+      "cashVnd": 1603.5,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 16.035%"
+      ]
+    },
+    {
+      "date": "2021-05-06",
+      "cashVnd": 2958.8,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 29.588%"
+      ]
+    },
+    {
+      "date": "2022-05-12",
+      "cashVnd": 3164.5,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 31.645%"
+      ]
+    },
+    {
+      "date": "2023-06-21",
+      "cashVnd": 3756.2,
+      "stockPct": 14.000000000000002,
+      "texts": [
+        "Thưởng bằng Cổ phiếu, tỷ lệ 100:14",
+        "Cổ tức bằng Tiền, tỷ lệ 37.562%"
+      ]
+    },
+    {
+      "date": "2024-05-29",
+      "cashVnd": 2919,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 29.19%"
+      ]
+    },
+    {
+      "date": "2025-05-28",
+      "cashVnd": 2810,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 28.10%"
+      ]
+    },
+    {
+      "date": "2026-05-20",
+      "cashVnd": 2719,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 27.19%"
+      ]
+    }
+  ]
+}

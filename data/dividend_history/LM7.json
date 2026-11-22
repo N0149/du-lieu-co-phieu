@@ -1,0 +1,29 @@
+{
+  "symbol": "LM7",
+  "events": [
+    {
+      "date": "2011-01-19",
+      "cashVnd": 200,
+      "stockPct": null,
+      "texts": [
+        "Trả cổ tức bằng tiền mặt - Đợt 2 2009 - 200 VND"
+      ]
+    },
+    {
+      "date": "2011-10-18",
+      "cashVnd": 600,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 6%"
+      ]
+    },
+    {
+      "date": "2013-01-14",
+      "cashVnd": 200,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 2%"
+      ]
+    }
+  ]
+}

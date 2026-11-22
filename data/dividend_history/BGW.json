@@ -1,0 +1,77 @@
+{
+  "symbol": "BGW",
+  "events": [
+    {
+      "date": "2018-05-10",
+      "cashVnd": 173,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 1.73%"
+      ]
+    },
+    {
+      "date": "2019-05-13",
+      "cashVnd": 223,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 2.23%"
+      ]
+    },
+    {
+      "date": "2020-07-13",
+      "cashVnd": 199,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 1.99%"
+      ]
+    },
+    {
+      "date": "2021-05-13",
+      "cashVnd": 424,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 4.24%"
+      ]
+    },
+    {
+      "date": "2022-05-09",
+      "cashVnd": 458,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 4.58%"
+      ]
+    },
+    {
+      "date": "2023-04-27",
+      "cashVnd": 500,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 5%"
+      ]
+    },
+    {
+      "date": "2024-05-05",
+      "cashVnd": 548,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 5.48%"
+      ]
+    },
+    {
+      "date": "2025-05-13",
+      "cashVnd": 570,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 5.7%"
+      ]
+    },
+    {
+      "date": "2026-05-13",
+      "cashVnd": 810,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 8.10%"
+      ]
+    }
+  ]
+}

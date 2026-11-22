@@ -1,0 +1,21 @@
+{
+  "symbol": "AFX",
+  "events": [
+    {
+      "date": "2018-04-26",
+      "cashVnd": 350,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 3.5%"
+      ]
+    },
+    {
+      "date": "2019-05-13",
+      "cashVnd": 150,
+      "stockPct": null,
+      "texts": [
+        "Cổ tức bằng Tiền, tỷ lệ 1.5%"
+      ]
+    }
+  ]
+}
