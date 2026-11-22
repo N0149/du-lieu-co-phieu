@@ -2,29 +2,18 @@ name: Giám sát Công bố Thông tin & Tài liệu Doanh nghiệp (Cloud Đị
 
 on:
   schedule:
-    # --- PHIÊN BAN NGÀY (THỨ 2 - THỨ 6): 1 TIẾNG / LẦN TỪ 08:30 ĐẾN 15:30 ---
-    # 08:30 VN (01:30 UTC)
-    - cron: '30 1 * * 1-5'
-    # 09:30 VN (02:30 UTC)
-    - cron: '30 2 * * 1-5'
-    # 10:30 VN (03:30 UTC)
-    - cron: '30 3 * * 1-5'
-    # 11:30 VN (04:30 UTC)
-    - cron: '30 4 * * 1-5'
-    # 12:30 VN (05:30 UTC)
-    - cron: '30 5 * * 1-5'
-    # 13:30 VN (06:30 UTC)
-    - cron: '30 6 * * 1-5'
-    # 14:30 VN (07:30 UTC)
-    - cron: '30 7 * * 1-5'
-    # 15:30 VN (08:30 UTC)
-    - cron: '30 8 * * 1-5'
+    # --- KHỞI ĐỘNG ĐẦU NGÀY TRƯỚC GIỜ GIAO DỊCH (07:50 VN = 00:50 UTC, tránh kẹt hàng đợi) ---
+    - cron: '50 0 * * 1-5'
 
-    # --- BUỔI TỐI: QUÉT 2 LẦN LÚC 19:00 VÀ 21:30 ---
-    # 19:00 VN (12:00 UTC)
-    - cron: '0 12 * * *'
-    # 21:30 VN (14:30 UTC)
-    - cron: '30 14 * * *'
+    # --- PHIÊN BAN NGÀY (THỨ 2 - THỨ 6): TẦN SUẤT 1 TIẾNG / LẦN TỪ 08:20 ĐẾN 15:20 ---
+    # Phút 20 lẻ tránh giờ cao điểm :00 và :30 của GitHub Actions
+    - cron: '20 1-8 * * 1-5'
+
+    # --- BUỔI TỐI: QUÉT 2 LẦN VÀO 19:15 VÀ 21:35 ---
+    # 19:15 VN (12:15 UTC)
+    - cron: '15 12 * * *'
+    # 21:35 VN (14:35 UTC)
+    - cron: '35 14 * * *'
 
   workflow_dispatch:
     inputs:
@@ -47,6 +36,8 @@ on:
 jobs:
   monitor-cbtt:
     runs-on: ubuntu-latest
+    env:
+      TZ: 'Asia/Ho_Chi_Minh'
     permissions:
       contents: write
 

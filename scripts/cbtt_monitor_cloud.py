@@ -59,9 +59,13 @@ CBTT_ALERTS_FILE = os.path.join(DATA_DIR, "cbtt_live_alerts.json")
 DISCORD_CONFIG_FILE = os.path.join(DATA_DIR, "discord_config.json")
 
 HEADERS = get_browser_headers()
+VN_TZ = datetime.timezone(datetime.timedelta(hours=7))
+
+def get_now_vn():
+    return datetime.datetime.now(VN_TZ)
 
 def log(msg):
-    now_str = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+    now_str = get_now_vn().strftime("%Y-%m-%d %H:%M:%S")
     try:
         print(f"[{now_str}] {msg}")
     except:
@@ -187,7 +191,9 @@ def is_recent_timestamp(dt, lookback_days=3):
     """Kiểm tra thời điểm có nằm trong khoảng lookback_days (mặc định 3 ngày) trở lại đây hay không"""
     if not dt:
         return False
-    now = datetime.datetime.now()
+    if dt.tzinfo is None:
+        dt = dt.replace(tzinfo=VN_TZ)
+    now = get_now_vn()
     diff_sec = (now - dt).total_seconds()
     # Chấp nhận chênh lệch tối đa lookback_days + 12h đệm (để bao trọn cuối tuần)
     return -86400 <= diff_sec <= (lookback_days * 86400 + 43200)
@@ -201,7 +207,7 @@ def is_recent_date_str(date_str, lookback_days=3):
     if m1:
         d, m, y = int(m1.group(1)), int(m1.group(2)), int(m1.group(3))
         try:
-            dt = datetime.datetime(y, m, d)
+            dt = datetime.datetime(y, m, d, tzinfo=VN_TZ)
             return is_recent_timestamp(dt, lookback_days)
         except:
             return False
@@ -210,7 +216,7 @@ def is_recent_date_str(date_str, lookback_days=3):
     if m2:
         y, m, d = int(m2.group(1)), int(m2.group(2)), int(m2.group(3))
         try:
-            dt = datetime.datetime(y, m, d)
+            dt = datetime.datetime(y, m, d, tzinfo=VN_TZ)
             return is_recent_timestamp(dt, lookback_days)
         except:
             return False
@@ -219,7 +225,7 @@ def is_recent_date_str(date_str, lookback_days=3):
     if m3:
         y, m, d = int(m3.group(1)), int(m3.group(2)), int(m3.group(3))
         try:
-            dt = datetime.datetime(y, m, d)
+            dt = datetime.datetime(y, m, d, tzinfo=VN_TZ)
             return is_recent_timestamp(dt, lookback_days)
         except:
             return False
@@ -302,7 +308,7 @@ class VietstockDisclosureScanner:
                     date_str = ""
                     if m_ts:
                         ts = int(m_ts.group(0)) / 1000.0
-                        date_obj = datetime.datetime.fromtimestamp(ts)
+                        date_obj = datetime.datetime.fromtimestamp(ts, tz=VN_TZ)
                         date_str = date_obj.strftime("%d/%m/%Y %H:%M")
 
                     if not is_recent_timestamp(date_obj, lookback_days):
@@ -350,7 +356,7 @@ class VietstockDisclosureScanner:
                     date_str = ""
                     if m_ts:
                         ts = int(m_ts.group(0)) / 1000.0
-                        date_obj = datetime.datetime.fromtimestamp(ts)
+                        date_obj = datetime.datetime.fromtimestamp(ts, tz=VN_TZ)
                         date_str = date_obj.strftime("%d/%m/%Y %H:%M")
 
                     if not is_recent_timestamp(date_obj, lookback_days):
@@ -401,12 +407,12 @@ class VietstockDisclosureScanner:
                     date_str = ""
                     if m_ts:
                         ts = int(m_ts.group(0)) / 1000.0
-                        date_obj = datetime.datetime.fromtimestamp(ts)
+                        date_obj = datetime.datetime.fromtimestamp(ts, tz=VN_TZ)
                         date_str = date_obj.strftime("%d/%m/%Y")
 
                     # Sự kiện quyền: chấp nhận nếu ngày sự kiện trong vòng 7 ngày tới hoặc 3 ngày qua
                     if date_obj:
-                        diff_sec = (datetime.datetime.now() - date_obj).total_seconds()
+                        diff_sec = (get_now_vn() - date_obj).total_seconds()
                         if diff_sec > lookback_days * 86400 or diff_sec < -14 * 86400:
                             continue
 
@@ -570,7 +576,7 @@ def send_discord_alert(item):
     color = item.get('color', 0x3B82F6)
     icon = item.get('icon', '📢')
     title = item.get('title', '')
-    date_str = item.get('date', datetime.datetime.now().strftime("%d/%m/%Y"))
+    date_str = item.get('date', get_now_vn().strftime("%d/%m/%Y"))
     source = item.get('source', 'Vietstock')
     doc_url = item.get('url', '')
 
@@ -714,7 +720,7 @@ def run_full_scan(lookback_days=3, single_symbol=None, limit=None, dry_run=False
                 'date': disc.get('date'),
                 'url': disc.get('url'),
                 'source': disc.get('source'),
-                'alerted_at': datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+                'alerted_at': get_now_vn().strftime("%Y-%m-%d %H:%M:%S")
             }
 
         if not dry_run:
@@ -726,7 +732,7 @@ def run_full_scan(lookback_days=3, single_symbol=None, limit=None, dry_run=False
             except:
                 pass
             log(f"✅ Đã gửi {sent_count} thông báo lên Discord và cập nhật cache thành công.")
-            now_vn_str = datetime.datetime.now().strftime("%H:%M")
+            now_vn_str = get_now_vn().strftime("%H:%M")
             summary_msg = f"🔔 **[Cloud Radar {now_vn_str}]** Đã hoàn tất quét {total_count} doanh nghiệp • Phát hiện **{sent_count} công bố bất thường & tài liệu mới**!"
             send_discord_raw_message(summary_msg)
         else:
@@ -734,7 +740,7 @@ def run_full_scan(lookback_days=3, single_symbol=None, limit=None, dry_run=False
     else:
         log("🟢 Không có công bố thông tin bất thường nào mới trong khoảng thời gian này.")
         if not dry_run and not single_symbol:
-            now_vn_str = datetime.datetime.now().strftime("%H:%M")
+            now_vn_str = get_now_vn().strftime("%H:%M")
             silent_msg = f"🟢 `[{now_vn_str}]` **Cloud Radar Công bố Bất thường:** Đã rà soát {total_count} doanh nghiệp • Chưa có công bố thông tin bất thường nào mới."
             send_discord_raw_message(silent_msg, flags=4096)
 
