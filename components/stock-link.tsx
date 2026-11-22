@@ -81,10 +81,33 @@ export function StockLink({
     triggerPrefetch()
   }
 
+  const handleClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    rest.onClick?.(e)
+    if (
+      e.defaultPrevented ||
+      e.button !== 0 ||
+      e.metaKey ||
+      e.ctrlKey ||
+      e.altKey ||
+      e.shiftKey
+    ) {
+      return
+    }
+
+    // Kích hoạt CSS View Transitions API (Chuẩn Native App 60fps mượt mà)
+    if (typeof document !== 'undefined' && 'startViewTransition' in document) {
+      e.preventDefault()
+      ;(document as any).startViewTransition(() => {
+        router.push(targetHref)
+      })
+    }
+  }
+
   return (
     <Link
       href={href}
       prefetch={prefetch}
+      onClick={handleClick}
       onPointerEnter={handlePointerEnter}
       onPointerLeave={handlePointerLeave}
       onTouchStart={handleTouchStart}

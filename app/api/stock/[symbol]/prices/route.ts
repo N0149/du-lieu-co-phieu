@@ -20,13 +20,17 @@ export async function GET(
 
   try {
     if (format === 'candles') {
-      const { getStockCandles } = await import('@/lib/stock-price-history-service')
-      const candles = await getStockCandles(ticker, years)
+      const { getLocalStockCandles, getStockCandles } = await import('@/lib/stock-price-history-service')
+      // Chuẩn WiData: Ưu tiên đọc cache nội bộ 0ms, không gọi API ngoài khi đang phục vụ người dùng
+      let candles = getLocalStockCandles(ticker)
+      if (!candles || candles.length === 0) {
+        candles = await getStockCandles(ticker, years)
+      }
       const hasData = Array.isArray(candles) && candles.length > 0
       return NextResponse.json({ symbol: ticker, candles: candles || [] }, {
         headers: {
           'Cache-Control': hasData
-            ? 'public, s-maxage=3600, stale-while-revalidate=86400'
+            ? 'public, max-age=86400, s-maxage=86400, stale-while-revalidate=86400'
             : 'no-cache, no-store, must-revalidate',
         },
       })

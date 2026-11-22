@@ -441,6 +441,7 @@ export function StockBctcReportView({
                 <Link
                   key={sym}
                   href={`/stock/${sym}?tab=${selectedPeriod === 'Quy_3_2026' ? 'bctc-q3' : 'bctc-ban-nien'}`}
+                  prefetch={false}
                   className={cn(
                     "inline-flex items-center gap-1 px-2.5 py-1 rounded-lg text-xs font-bold font-mono transition-colors",
                     sym === ticker

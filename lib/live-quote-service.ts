@@ -40,6 +40,16 @@ function formatTradingDate(ms: number | null | undefined): string | null {
   }
 }
 
+export function getLiveStockQuoteFromCache(symbol: string): LiveStockQuote | null {
+  const sym = symbol?.toUpperCase().trim()
+  if (!sym) return null
+  const cached = MEMORY_CACHE.get(sym)
+  if (cached && cached.expiresAt > Date.now()) {
+    return cached.data
+  }
+  return null
+}
+
 export async function getLiveStockQuote(symbol: string): Promise<LiveStockQuote | null> {
   const sym = symbol.toUpperCase().trim()
   if (!sym) return null

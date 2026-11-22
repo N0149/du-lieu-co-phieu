@@ -6,7 +6,7 @@ import { createClient, type SupabaseClient } from '@supabase/supabase-js'
 const DATA_DIR = path.resolve(process.cwd(), 'data')
 const DB_PATH = path.join(DATA_DIR, 'business_plans.db')
 
-const CIPHER_KEY_HEX = '19dd3af428f4cf7d68864cd4c87d8d1c5b489932e84b93ac6528a0dd403a5725'
+const CIPHER_KEY_HEX = 'fa4abc75c049cac6b2d58d501f183a3f4eeace7d3f79f37724b1737d095371e5'
 const API_BASE_URL = 'https://api.ruatichsan.com/api/v1/data/public/business-plan'
 
 export interface BusinessPlanQuarterData {
@@ -73,6 +73,23 @@ export function getBusinessPlanDb(): DatabaseSync {
 }
 
 let cryptoKeyCache: CryptoKey | null = null
+const RTZ1_MAGIC = [82, 84, 90, 49];
+
+function isRtz1Compressed(buf: Uint8Array): boolean {
+  if (!buf || buf.length < RTZ1_MAGIC.length) return false;
+  return RTZ1_MAGIC.every((b, i) => buf[i] === b);
+}
+
+async function decompressRtz1Gzip(buf: Uint8Array): Promise<Uint8Array> {
+  const stream = new ReadableStream({
+    start(controller) {
+      controller.enqueue(buf);
+      controller.close();
+    }
+  }).pipeThrough(new DecompressionStream("gzip"));
+  return new Uint8Array(await new Response(stream).arrayBuffer());
+}
+
 async function getCryptoKey(): Promise<CryptoKey> {
   if (cryptoKeyCache) return cryptoKeyCache
   const bytes = new Uint8Array(

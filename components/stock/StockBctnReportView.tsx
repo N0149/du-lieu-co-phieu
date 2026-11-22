@@ -244,6 +244,7 @@ export function StockBctnReportView({
                   <Link
                     key={sym}
                     href={`/stock/${sym}?tab=bctn`}
+                    prefetch={false}
                     className={cn(
                       "inline-flex items-center gap-1 px-2.5 py-1 rounded-lg text-xs font-bold font-mono transition-colors",
                       sym === ticker
@@ -544,6 +545,7 @@ export function StockBctnReportView({
               <Link
                 key={sym}
                 href={`/stock/${sym}?tab=bctn`}
+                prefetch={false}
                 className={cn(
                   "inline-flex items-center gap-1 px-2.5 py-1 rounded-lg text-xs font-bold font-mono transition-colors",
                   sym === ticker

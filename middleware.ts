@@ -26,8 +26,17 @@ export const config = {
 function isPrefetchRequest(request: NextRequest, pathname: string): boolean {
   const purpose = request.headers.get('purpose')?.toLowerCase() || ''
   const secPurpose = request.headers.get('sec-purpose')?.toLowerCase() || ''
+  const isNextPrefetch = request.headers.get('next-router-prefetch') === '1'
+  const isNextRsc = request.headers.get('rsc') === '1'
+  const isNextTree = !!request.headers.get('next-router-state-tree')
+  const acceptHeader = request.headers.get('accept') || ''
+  const isComponentAccept = acceptHeader.includes('text/x-component')
+
   return (
-    request.headers.get('next-router-prefetch') === '1' ||
+    isNextPrefetch ||
+    isNextRsc ||
+    isNextTree ||
+    isComponentAccept ||
     purpose.includes('prefetch') ||
     secPurpose.includes('prefetch') ||
     pathname.startsWith('/.well-known/')
@@ -186,7 +195,7 @@ export function middleware(request: NextRequest) {
       if (isPrefetch) {
         const stockPrefetchLimiter = checkInMemoryRateLimit(`rl:stock:prefetch:${ip}`, {
           windowMs: 60_000,
-          max: 120,
+          max: 300,
         })
 
         if (!stockPrefetchLimiter.success) {
@@ -207,11 +216,11 @@ export function middleware(request: NextRequest) {
       } else {
         const stockLimiter = checkInMemoryRateLimit(`rl:stock:${ip}`, {
           windowMs: 60_000,
-          max: 30,
+          max: 90,
         })
 
         if (!stockLimiter.success) {
-          console.warn(`[Anti-Scraping] IP: ${ip} cào duyệt quá 30 mã cổ phiếu / phút trên ${pathname}`)
+          console.warn(`[Anti-Scraping] IP: ${ip} cào duyệt quá 90 mã cổ phiếu / phút trên ${pathname}`)
           return new NextResponse(
             `<html><body style="font-family: sans-serif; text-align: center; padding: 50px;">
               <h2>Yêu cầu tra cứu bị tạm dừng (429)</h2>

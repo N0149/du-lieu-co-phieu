@@ -22,6 +22,7 @@ const __dirname = path.dirname(__filename);
 const ROOT_DIR = path.resolve(__dirname, "..");
 
 let lastRunValuationDate = "";
+let lastRunCandlesDate = "";
 let lastRunPriceChangesDate = "";
 let lastRunInsiderDate1206 = "";
 let lastRunInsiderDate1836 = "";
@@ -75,6 +76,12 @@ function checkAndRunSchedule() {
   if (hours === 12 && minutes === 0 && lastRunDisclosures1200 !== dateStr) {
     lastRunDisclosures1200 = dateStr;
     runCommand("node scripts/sync-disclosures.mjs", "CÔNG BỐ THÔNG TIN 3 SÀN (12:00 TRƯA)");
+  }
+
+  // 3a. Đồng bộ Nến kỹ thuật EOD (1 ngày 1 lần): 15:35 hàng ngày (Sau khi phiên ATC chốt nến ngày)
+  if (hours === 15 && minutes === 35 && lastRunCandlesDate !== dateStr) {
+    lastRunCandlesDate = dateStr;
+    runCommand("node scripts/sync-daily-candles.mjs", "NẾN KỸ THUẬT EOD 1 NGÀY/LẦN (15:35 CHIỀU)");
   }
 
   // 3. Chỉ số định giá: 16:16 hàng ngày (Sau phiên ATC)
@@ -132,6 +139,7 @@ console.log("===================================================================
 console.log(" Lịch trình đã thiết lập:");
 console.log("   • 12:00 hàng ngày           : Cập nhật Công bố thông tin 3 Sàn (Lần 1)");
 console.log("   • 12:06 hàng ngày           : Cập nhật Giao dịch nội bộ (Lần 1 - Đón phiên chiều)");
+console.log("   • 15:35 hàng ngày           : Đồng bộ Nến kỹ thuật EOD (1 ngày/lần, lưu cache đĩa 0ms)");
 console.log("   • 16:16 hàng ngày           : Cập nhật Chỉ số Định giá (P/E, P/B, Điểm 360°)");
 console.log("   • 18:00 hàng ngày           : Cập nhật Công bố thông tin 3 Sàn (Lần 2 - Bắt BCTC/Giải trình)");
 console.log("   • 18:36 hàng ngày           : Cập nhật Giao dịch nội bộ (Lần 2 - Chốt ngày)");

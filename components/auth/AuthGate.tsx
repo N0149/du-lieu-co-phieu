@@ -43,9 +43,9 @@ const DEFAULT_MEMBER_FEATURES = [
 ]
 
 const DEFAULT_VIP_FEATURES = [
-  'Thuyết minh BCTC bóc tách nợ vay, chi phí dở dang & ĐHĐCĐ chi tiết',
   'Báo cáo Nghiên cứu chuyên sâu AI & Audio Podcast tóm tắt độc quyền',
-  'Chỉ số độc quyền: P/E thực tế & Tỷ lệ trích ngoài cổ đông (KTPL / ĐHĐCĐ)',
+  'Báo cáo Phân tích độc quyền Admin & Hệ thống Định giá RNAV',
+  'Chỉ số độc quyền: P/E thực tế & Tỷ lệ trích ngoài cổ đông (KTPL / BĐH)',
 ]
 
 /**

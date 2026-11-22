@@ -229,10 +229,10 @@ export async function getStockPriceHistory(
             updatedAt: cached.updatedAt || new Date().toISOString(),
             points: normalizedPoints,
           }
-          // Nếu cache đã có sẵn trường open (full OHLCV), dùng ngay
-          if (cached.points[0]?.open != null) {
-            return cachedPayload
-          }
+          // Chuẩn WiData: Ưu tiên tuyệt đối dữ liệu nội bộ.
+          // Đã có nến trong cache đĩa là trả về ngay lập tức 0ms,
+          // KHÔNG BAO GIỜ gọi API bên thứ ba khi đang phục vụ người dùng.
+          return cachedPayload
         }
       }
     } catch {}
@@ -289,11 +289,9 @@ export async function getStockPriceHistory(
           points,
         }
 
-        if (process.env.NODE_ENV !== 'development') {
-          try {
-            fs.writeFileSync(cacheFile, JSON.stringify(payload), 'utf-8')
-          } catch {}
-        }
+        try {
+          fs.writeFileSync(cacheFile, JSON.stringify(payload), 'utf-8')
+        } catch {}
 
         return payload
       }
@@ -348,11 +346,9 @@ export async function getStockPriceHistory(
           points,
         }
 
-        if (process.env.NODE_ENV !== 'development') {
-          try {
-            fs.writeFileSync(cacheFile, JSON.stringify(payload), 'utf-8')
-          } catch {}
-        }
+        try {
+          fs.writeFileSync(cacheFile, JSON.stringify(payload), 'utf-8')
+        } catch {}
 
         return payload
       }

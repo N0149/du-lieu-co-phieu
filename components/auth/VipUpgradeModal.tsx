@@ -79,11 +79,11 @@ export const BANK_INFO = {
 
 /** 5 Đặc quyền lớn nhất của Hội viên VIP */
 export const VIP_PRIVILEGES = [
-  'Thuyết minh BCTC chi tiết 34 quý: Bóc tách nợ vay, dự án dở dang & hàng tồn kho',
-  'Toàn bộ Nghị quyết ĐHĐCĐ chi tiết: Kế hoạch cổ tức, thù lao HĐQT & biểu quyết',
   'Báo cáo Nghiên cứu chuyên sâu AI & Audio Podcast tóm tắt độc quyền',
-  'Định giá độc quyền RNAV & Tình báo hàng hải bóc tách DWT từng bến cảng',
+  'Báo cáo Phân tích độc quyền Admin & Hệ thống Định giá RNAV',
+  'Tình báo Hàng hải bóc tách DWT, công suất & sản lượng từng bến cảng',
   'Chỉ số độc quyền: P/E thực tế & Tỷ lệ trích ngoài cổ đông (Quỹ KTPL & Thưởng BĐH)',
+  'Điểm đánh giá toàn diện 360 & Khuyến nghị Mua/Bán độc quyền',
 ] as const
 
 interface VipUpgradeModalProps {
@@ -99,7 +99,7 @@ export function VipUpgradeModal({
   onClose,
   initialPlanId = '1_year',
   title = 'Nâng Cấp Hội Viên VIP',
-  subtitle = 'Mở khóa toàn bộ Thuyết minh BCTC chi tiết, ĐHĐCĐ, Kế hoạch 10 năm, Nghiên cứu AI và P/E thực tế.',
+  subtitle = 'Mở khóa toàn bộ Nghiên cứu chuyên sâu AI, Báo cáo độc quyền Admin, Định giá RNAV, Tình báo Cảng biển và P/E thực tế.',
 }: VipUpgradeModalProps) {
   const { user, isLoggedIn } = useAuth()
   const [selectedPlanId, setSelectedPlanId] = useState<VipPlanId>(initialPlanId)

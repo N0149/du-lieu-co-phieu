@@ -40,7 +40,24 @@ export interface ValuationHistoryPayload {
 
 const DATA_DIR = path.join(process.cwd(), 'data')
 const VAL_DIR = path.join(DATA_DIR, 'valuation_history')
-const CIPHER_KEY_HEX = '19dd3af428f4cf7d68864cd4c87d8d1c5b489932e84b93ac6528a0dd403a5725'
+const CIPHER_KEY_HEX = 'fa4abc75c049cac6b2d58d501f183a3f4eeace7d3f79f37724b1737d095371e5'
+
+const RTZ1_MAGIC = [82, 84, 90, 49];
+
+function isRtz1Compressed(buf: Uint8Array): boolean {
+  if (!buf || buf.length < RTZ1_MAGIC.length) return false;
+  return RTZ1_MAGIC.every((b, i) => buf[i] === b);
+}
+
+async function decompressRtz1Gzip(buf: Uint8Array): Promise<Uint8Array> {
+  const stream = new ReadableStream({
+    start(controller) {
+      controller.enqueue(buf);
+      controller.close();
+    }
+  }).pipeThrough(new DecompressionStream("gzip"));
+  return new Uint8Array(await new Response(stream).arrayBuffer());
+}
 
 async function decryptApiResponse(res: Response): Promise<any> {
   if (res.headers.get('X-Encrypted') !== '1') {
@@ -53,7 +70,11 @@ async function decryptApiResponse(res: Response): Promise<any> {
   const iv = rawBytes.slice(0, 12)
   const ciphertext = rawBytes.slice(12)
   const decryptedBuf = await crypto.subtle.decrypt({ name: 'AES-GCM', iv }, key, ciphertext)
-  return JSON.parse(new TextDecoder().decode(decryptedBuf))
+  const decryptedBytes = new Uint8Array(decryptedBuf)
+  const finalBytes = isRtz1Compressed(decryptedBytes)
+    ? await decompressRtz1Gzip(decryptedBytes.subarray(RTZ1_MAGIC.length))
+    : decryptedBytes
+  return JSON.parse(new TextDecoder().decode(finalBytes))
 }
 
 const DB_EVAL_PATH = path.join(DATA_DIR, 'stock_evaluations.db')

@@ -2,6 +2,7 @@
 
 import { useMemo, useState, useRef, useEffect, useCallback, startTransition } from 'react'
 import Link from 'next/link'
+import { StockLink } from '@/components/stock-link'
 import dynamic from 'next/dynamic'
 import {
   ArrowLeft,
@@ -1454,7 +1455,7 @@ export function StockDetailView({
           </div>
 
           {/* ── CẶP BIỂU ĐỒ THỊ TRƯỜNG: GIÁ KHUYẾN NGHỊ CTCK & GIAO DỊCH NỘI BỘ ── */}
-          <div className="space-y-3 pt-1">
+          <div className="space-y-3 pt-1 fast-section">
             <div className="flex items-center justify-between">
               <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-muted-foreground">
                 <span className="size-2 rounded-full bg-cyan-400" />
@@ -1470,7 +1471,7 @@ export function StockDetailView({
 
           {/* Mảng Kinh Doanh Cốt Lõi (Bảng chi tiết nếu có) */}
           {coreCard?.segments && coreCard.segments.length > 0 && (
-            <div className="overflow-hidden rounded-2xl border border-border bg-card p-5 sm:p-6 shadow-xs space-y-3">
+            <div className="overflow-hidden rounded-2xl border border-border bg-card p-5 sm:p-6 shadow-xs space-y-3 fast-section">
               <div className="text-[11px] font-bold uppercase tracking-wider text-muted-foreground">
                 Chi Tiết Mảng Kinh Doanh Cốt Lõi
               </div>
@@ -1510,7 +1511,7 @@ export function StockDetailView({
 
           {/* Ngành Nghề Kinh Doanh Đăng Ký */}
           {company.business_lines && company.business_lines.length > 0 && (
-            <div className="rounded-2xl border border-border bg-card p-5 sm:p-6 shadow-xs space-y-3">
+            <div className="rounded-2xl border border-border bg-card p-5 sm:p-6 shadow-xs space-y-3 fast-section">
               <div className="text-[11px] font-bold uppercase tracking-wider text-muted-foreground">
                 Ngành nghề kinh doanh đăng ký ({company.business_lines.length} ngành nghề)
               </div>
@@ -1544,7 +1545,7 @@ export function StockDetailView({
             {companyProfileData ? (
               <CompanyProfileEnhancement symbol={ticker} data={companyProfileData} />
             ) : shareholderData.items.length > 0 ? (
-              <div className="rounded-2xl border border-border bg-card p-6 shadow-xs space-y-4">
+              <div className="rounded-2xl border border-border bg-card p-6 shadow-xs space-y-4 fast-section">
                 <h3 className="text-sm font-bold uppercase tracking-wider text-foreground">
                   Cơ Cấu Cổ Đông Lớn & Sở Hữu
                 </h3>
@@ -2255,7 +2256,7 @@ export function StockDetailView({
                       const isW1Neg = hasW1 && w1 < 0
 
                       return (
-                        <Link
+                        <StockLink
                           key={s.t}
                           href={`/stock/${s.t}`}
                           prefetch={false}
@@ -2290,7 +2291,7 @@ export function StockDetailView({
                               </span>
                             ) : null}
                           </div>
-                        </Link>
+                        </StockLink>
                       )
                     })}
                   </div>
@@ -2539,18 +2540,17 @@ export function StockDetailView({
         <div className={cn("animate-in fade-in-50 duration-200", (activeTab !== 'agm' || loadingTab === 'agm') && "hidden")}>
           <AuthGate
             isLoggedIn={effectiveIsLoggedIn}
-            isVip={effectiveIsVip}
-            requiredTier="vip"
+            requiredTier="member"
             variant="blur"
             blurHeight={360}
-            title="Mở khóa Toàn Bộ Nghị Quyết ĐHĐCĐ & Kế Hoạch 2026 (VIP)"
-            subtitle="Dành riêng cho Hội viên VIP: Toàn bộ nội dung nghị quyết ĐHĐCĐ chi tiết, kế hoạch cổ tức, thù lao HĐQT và bóc tách tỷ lệ trích ngoài cổ đông."
+            title="Đăng nhập để xem Toàn Bộ Nghị Quyết ĐHĐCĐ & Kế Hoạch 2026"
+            subtitle="Đăng nhập tài khoản miễn phí để tra cứu toàn bộ nội dung nghị quyết ĐHĐCĐ chi tiết, kế hoạch cổ tức, thù lao HĐQT và bóc tách tỷ lệ trích ngoài cổ đông."
             features={[
               'Toàn bộ các tờ trình, nghị quyết và tỷ lệ biểu quyết ĐHĐCĐ chi tiết',
               'Kế hoạch chia cổ tức tiền mặt & cổ phiếu năm 2026',
               'Bóc tách chi tiết tỷ lệ trích quỹ khen thưởng phúc lợi & thưởng ban điều hành',
             ]}
-            ctaText="👑 Nâng cấp VIP để xem ĐHĐCĐ chi tiết"
+            ctaText="Đăng nhập để xem ĐHĐCĐ chi tiết"
           >
             <StockAgmReportView
               agmData={agmData}
@@ -2569,18 +2569,17 @@ export function StockDetailView({
         <div className={cn("animate-in fade-in-50 duration-200", (activeTab !== 'bctc' && activeTab !== 'bctc-q3' && activeTab !== 'bctc-ban-nien' || loadingTab === 'bctc') && "hidden")}>
           <AuthGate
             isLoggedIn={effectiveIsLoggedIn}
-            isVip={effectiveIsVip}
-            requiredTier="vip"
+            requiredTier="member"
             variant="blur"
             blurHeight={340}
-            title="Mở khóa Thuyết Minh Báo Cáo Tài Chính (VIP)"
-            subtitle="Dành riêng cho Hội viên VIP: Tra cứu chi tiết từng khoản mục nợ vay, dự án dở dang, người mua trả tiền trước không cần đọc PDF."
+            title="Đăng nhập để xem Thuyết Minh Báo Cáo Tài Chính"
+            subtitle="Đăng nhập tài khoản miễn phí để tra cứu chi tiết từng khoản mục nợ vay, dự án dở dang, người mua trả tiền trước không cần đọc PDF."
             features={[
               'Chi tiết danh mục hàng tồn kho, dự án xây dựng dở dang và trích lập dự phòng',
               'Bóc tách người mua trả tiền trước và nợ phải trả theo từng ngân hàng/đối tác',
               'Đầy đủ dữ liệu Hợp nhất & Công ty mẹ',
             ]}
-            ctaText="👑 Nâng cấp VIP để xem Thuyết minh BCTC"
+            ctaText="Đăng nhập để xem Thuyết minh BCTC"
           >
             <StockBctcReportView
             ticker={ticker}
@@ -2602,18 +2601,17 @@ export function StockDetailView({
         <div className={cn("animate-in fade-in-50 duration-200", (activeTab !== 'bctn' || loadingTab === 'bctn') && "hidden")}>
           <AuthGate
             isLoggedIn={effectiveIsLoggedIn}
-            isVip={effectiveIsVip}
-            requiredTier="vip"
+            requiredTier="member"
             variant="blur"
             blurHeight={360}
-            title="Mở khóa Báo Cáo Thường Niên 2025 Chuyên Sâu (VIP)"
-            subtitle="Dành riêng cho Hội viên VIP: Toàn bộ nội dung Báo Cáo Thường Niên bóc tách chi tiết từng mục hoạt động, kế hoạch kinh doanh, quản trị và chiến lược ESG."
+            title="Đăng nhập để xem Báo Cáo Thường Niên 2025"
+            subtitle="Đăng nhập tài khoản miễn phí để tra cứu toàn bộ nội dung Báo Cáo Thường Niên bóc tách chi tiết từng mục hoạt động, kế hoạch kinh doanh, quản trị và chiến lược ESG."
             features={[
               'Toàn bộ các chương mục bóc tách thông minh từ Báo Cáo Thường Niên 2025 gốc',
               'Bảng số liệu chi tiết về năng lực sản xuất, dự án đầu tư và kế hoạch tương lai',
               'Đầy đủ thông tin cơ cấu quản trị, thù lao ban lãnh đạo và báo cáo phát triển bền vững ESG',
             ]}
-            ctaText="👑 Nâng cấp VIP để xem Báo Cáo Thường Niên"
+            ctaText="Đăng nhập để xem Báo Cáo Thường Niên"
           >
             <StockBctnReportView
               bctnData={bctnData}

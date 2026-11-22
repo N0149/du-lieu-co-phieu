@@ -27,6 +27,8 @@
     "sync-shareholders": "node scripts/crawl-direct-market.mjs --mode=shareholders",
     "sync-financial-charts": "node scripts/sync-financial-charts.mjs --banks",
     "sync-disclosures": "node scripts/sync-disclosures.mjs",
+    "sync-candles": "node scripts/sync-daily-candles.mjs",
+    "sync-candles:all": "node scripts/sync-daily-candles.mjs --all",
     "sync-price-changes": "node scripts/sync-price-changes.mjs",
     "backup": "node scripts/backup.mjs",
     "scheduler": "node scripts/scheduler-daemon.mjs",

@@ -374,7 +374,13 @@ export function GlobalSearchModal({ open, onClose }: GlobalSearchModalProps) {
         window.dispatchEvent(new CustomEvent('app-navigation-start'))
       }
       onClose()
-      router.push(item.href)
+      if (typeof document !== 'undefined' && 'startViewTransition' in document) {
+        ;(document as any).startViewTransition(() => {
+          router.push(item.href)
+        })
+      } else {
+        router.push(item.href)
+      }
     },
     [onClose, router]
   )
@@ -412,7 +418,13 @@ export function GlobalSearchModal({ open, onClose }: GlobalSearchModalProps) {
             categoryLabel: 'Doanh nghiệp',
             href: `/stock/${encodeURIComponent(t)}`,
           })
-          router.push(`/stock/${t}`)
+          if (typeof document !== 'undefined' && 'startViewTransition' in document) {
+            ;(document as any).startViewTransition(() => {
+              router.push(`/stock/${t}`)
+            })
+          } else {
+            router.push(`/stock/${t}`)
+          }
         } else {
           router.push(`/bao-cao?search=${encodeURIComponent(query.trim())}`)
         }

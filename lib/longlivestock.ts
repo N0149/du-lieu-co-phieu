@@ -3,7 +3,7 @@ import customStocksRaw from '@/data/custom_stocks_manifest.json'
 import indicesRaw from '@/data/longlive_indices.json'
 import coreCardsRaw from '@/data/company_core_cards.json'
 import exchangeMapRaw from '@/data/stock_exchanges.json'
-import { getLiveStockQuote } from './live-quote-service'
+import { getLiveStockQuote, getLiveStockQuoteFromCache } from './live-quote-service'
 
 const exchangeMap = exchangeMapRaw as Record<string, string>
 
@@ -352,7 +352,7 @@ export async function fetchStockDetailData(
   const coreCardData: CoreCardData | null = getLocalCoreCard(ticker)
 
   // 2. Lấy giá trực tiếp live quote (timeout tối đa 800ms)
-  const liveQuote = await getLiveStockQuote(ticker).catch(() => null)
+  const liveQuote = getLiveStockQuoteFromCache(ticker)
 
   // 3. Chuỗi giá tuần
   const weeklyPrices = [...initialWeeklyPrices]

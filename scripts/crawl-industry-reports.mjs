@@ -1,11 +1,11 @@
 /**
- * Script cào toàn b? danh sách Báo cáo phân tích ngành & th? tru?ng
- * T? d?ng gi?i mã (AES-GCM), phân trang, gom d? 100% báo cáo và luu vào JSON + SQLite.
+ * Script cï¿½o toï¿½n b? danh sï¿½ch Bï¿½o cï¿½o phï¿½n tï¿½ch ngï¿½nh & th? tru?ng
+ * T? d?ng gi?i mï¿½ (AES-GCM), phï¿½n trang, gom d? 100% bï¿½o cï¿½o vï¿½ luu vï¿½o JSON + SQLite.
  *
- * Cách dùng:
- *   node scripts/crawl-industry-reports.mjs                  # Cào báo cáo ngành (m?c d?nh)
- *   node scripts/crawl-industry-reports.mjs --scope=market   # Cào báo cáo th? tru?ng/vi mô
- *   node scripts/crawl-industry-reports.mjs --scope=all      # Cào c? ngành và th? tru?ng
+ * Cï¿½ch dï¿½ng:
+ *   node scripts/crawl-industry-reports.mjs                  # Cï¿½o bï¿½o cï¿½o ngï¿½nh (m?c d?nh)
+ *   node scripts/crawl-industry-reports.mjs --scope=market   # Cï¿½o bï¿½o cï¿½o th? tru?ng/vi mï¿½
+ *   node scripts/crawl-industry-reports.mjs --scope=all      # Cï¿½o c? ngï¿½nh vï¿½ th? tru?ng
  */
 
 import fs from "node:fs";
@@ -17,11 +17,28 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 const DATA_DIR = path.resolve(__dirname, "../data");
 
-// Key gi?i mã chu?n
-const CIPHER_KEY_HEX = "19dd3af428f4cf7d68864cd4c87d8d1c5b489932e84b93ac6528a0dd403a5725";
+// Key gi?i mï¿½ chu?n
+const CIPHER_KEY_HEX = "fa4abc75c049cac6b2d58d501f183a3f4eeace7d3f79f37724b1737d095371e5";
 const API_BASE_URL = "https://api.ruatichsan.com/api/v1/data/public/analyst-reports";
 
 let cryptoKeyCache = null;
+const RTZ1_MAGIC = [82, 84, 90, 49];
+
+function isRtz1Compressed(buf) {
+  if (!buf || buf.length < RTZ1_MAGIC.length) return false;
+  return RTZ1_MAGIC.every((b, i) => buf[i] === b);
+}
+
+async function decompressRtz1Gzip(buf) {
+  const stream = new ReadableStream({
+    start(controller) {
+      controller.enqueue(buf);
+      controller.close();
+    }
+  }).pipeThrough(new DecompressionStream("gzip"));
+  return new Uint8Array(await new Response(stream).arrayBuffer());
+}
+
 async function getCryptoKey() {
   if (cryptoKeyCache) return cryptoKeyCache;
   const bytes = new Uint8Array(CIPHER_KEY_HEX.match(/.{2}/g).map((h) => parseInt(h, 16)));
@@ -39,7 +56,11 @@ async function decryptApiResponse(res) {
   const iv = rawBytes.slice(0, 12);
   const ciphertext = rawBytes.slice(12);
   const decryptedBuf = await crypto.subtle.decrypt({ name: "AES-GCM", iv }, key, ciphertext);
-  return JSON.parse(new TextDecoder().decode(decryptedBuf));
+  const decryptedBytes = new Uint8Array(decryptedBuf);
+  const finalBytes = isRtz1Compressed(decryptedBytes)
+    ? await decompressRtz1Gzip(decryptedBytes.subarray(RTZ1_MAGIC.length))
+    : decryptedBytes;
+  return JSON.parse(new TextDecoder().decode(finalBytes));
 }
 
 async function fetchPage(scope = "sector", page = 1, pageSize = 50) {
@@ -62,7 +83,7 @@ async function fetchPage(scope = "sector", page = 1, pageSize = 50) {
 
 async function crawlScope(scope = "sector") {
   console.log(`\n========================================`);
-  console.log(`?? B?t d?u cào d? li?u [scope: ${scope}]...`);
+  console.log(`?? B?t d?u cï¿½o d? li?u [scope: ${scope}]...`);
   console.log(`========================================`);
 
   const PAGE_SIZE = 50;
@@ -79,8 +100,8 @@ async function crawlScope(scope = "sector") {
   allReports.push(...reportsP1);
 
   const totalPages = Math.ceil(totalRecords / PAGE_SIZE) || 1;
-  console.log(`?? T?ng s? báo cáo [${scope}]: ${totalRecords} (D? ki?n: ${totalPages} trang)`);
-  console.log(`? [Trang 1/${totalPages}] L?y du?c ${reportsP1.length} báo cáo.`);
+  console.log(`?? T?ng s? bï¿½o cï¿½o [${scope}]: ${totalRecords} (D? ki?n: ${totalPages} trang)`);
+  console.log(`? [Trang 1/${totalPages}] L?y du?c ${reportsP1.length} bï¿½o cï¿½o.`);
 
   // Duy?t ti?p
   for (currentPage = 2; currentPage <= totalPages; currentPage++) {
@@ -88,13 +109,13 @@ async function crawlScope(scope = "sector") {
       const pageData = await fetchPage(scope, currentPage, PAGE_SIZE);
       const reports = pageData.reports || [];
       allReports.push(...reports);
-      console.log(`? [Trang ${currentPage}/${totalPages}] L?y du?c ${reports.length} báo cáo (Ðã gom: ${allReports.length}/${totalRecords}).`);
+      console.log(`? [Trang ${currentPage}/${totalPages}] L?y du?c ${reports.length} bï¿½o cï¿½o (ï¿½ï¿½ gom: ${allReports.length}/${totalRecords}).`);
     } catch (err) {
       console.error(`? L?i ? trang ${currentPage}:`, err.message);
     }
   }
 
-  // Chu?n hóa d? li?u
+  // Chu?n hï¿½a d? li?u
   const normalizedReports = allReports.map((r) => {
     let displayDate = "";
     if (r.date) {
@@ -108,11 +129,11 @@ async function crawlScope(scope = "sector") {
       id: String(r.id),
       slug: r.slug || "",
       title: (r.title || "").trim(),
-      source: (r.source || "Khác").trim(),
+      source: (r.source || "Khï¿½c").trim(),
       date: r.date || "",
       displayDate,
       scope: r.scope || scope,
-      sectorName: (r.sector_name || "Chua phân lo?i").trim(),
+      sectorName: (r.sector_name || "Chua phï¿½n lo?i").trim(),
       symbol: r.symbol || null,
       description: (r.description || "").trim(),
       pageCount: Number(r.page_count) || 0,
@@ -138,7 +159,7 @@ function saveToSqlite(data) {
   }
 
   const dbPath = path.join(DATA_DIR, "industry_reports.db");
-  console.log(`\n?? Ðang luu vào SQLite database: ${dbPath}...`);
+  console.log(`\n?? ï¿½ang luu vï¿½o SQLite database: ${dbPath}...`);
   const db = new DatabaseSync(dbPath);
 
   try {
@@ -204,7 +225,7 @@ function saveToSqlite(data) {
     }
     db.exec("COMMIT");
 
-    console.log(`?? Ðã luu thành công ${count} b?n ghi vào SQLite table [industry_reports]!`);
+    console.log(`?? ï¿½ï¿½ luu thï¿½nh cï¿½ng ${count} b?n ghi vï¿½o SQLite table [industry_reports]!`);
   } finally {
     db.close();
   }
@@ -216,9 +237,9 @@ function saveToJson(data, filename = "industry-reports.json") {
   }
 
   const jsonPath = path.join(DATA_DIR, filename);
-  console.log(`\n?? Ðang luu snapshot JSON: ${jsonPath}...`);
+  console.log(`\n?? ï¿½ang luu snapshot JSON: ${jsonPath}...`);
   fs.writeFileSync(jsonPath, JSON.stringify(data, null, 2), "utf-8");
-  console.log(`?? Ðã luu file ${filename} (${(fs.statSync(jsonPath).size / 1024).toFixed(1)} KB)!`);
+  console.log(`?? ï¿½ï¿½ luu file ${filename} (${(fs.statSync(jsonPath).size / 1024).toFixed(1)} KB)!`);
 }
 
 async function main() {
@@ -248,9 +269,9 @@ async function main() {
       saveToSqlite(result);
     }
 
-    console.log(`\n? HOÀN T?T Ð?NG B? BÁO CÁO! S?n sàng dua lên giao di?n Web.`);
+    console.log(`\n? HOï¿½N T?T ï¿½?NG B? Bï¿½O Cï¿½O! S?n sï¿½ng dua lï¿½n giao di?n Web.`);
   } catch (err) {
-    console.error(`?? L?i nghiêm tr?ng trong quá trình cào:`, err);
+    console.error(`?? L?i nghiï¿½m tr?ng trong quï¿½ trï¿½nh cï¿½o:`, err);
     process.exit(1);
   }
 }

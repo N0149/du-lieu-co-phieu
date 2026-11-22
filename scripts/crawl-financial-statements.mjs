@@ -24,10 +24,27 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 const DATA_DIR = path.resolve(__dirname, "../data");
 
-const CIPHER_KEY_HEX = "19dd3af428f4cf7d68864cd4c87d8d1c5b489932e84b93ac6528a0dd403a5725";
+const CIPHER_KEY_HEX = "fa4abc75c049cac6b2d58d501f183a3f4eeace7d3f79f37724b1737d095371e5";
 const API_BASE_URL = "https://api.ruatichsan.com/api/v1/data/public/financial-statements";
 
 let cryptoKeyCache = null;
+const RTZ1_MAGIC = [82, 84, 90, 49];
+
+function isRtz1Compressed(buf) {
+  if (!buf || buf.length < RTZ1_MAGIC.length) return false;
+  return RTZ1_MAGIC.every((b, i) => buf[i] === b);
+}
+
+async function decompressRtz1Gzip(buf) {
+  const stream = new ReadableStream({
+    start(controller) {
+      controller.enqueue(buf);
+      controller.close();
+    }
+  }).pipeThrough(new DecompressionStream("gzip"));
+  return new Uint8Array(await new Response(stream).arrayBuffer());
+}
+
 async function getCryptoKey() {
   if (cryptoKeyCache) return cryptoKeyCache;
   const bytes = new Uint8Array(CIPHER_KEY_HEX.match(/.{2}/g).map((h) => parseInt(h, 16)));
@@ -45,7 +62,11 @@ async function decryptApiResponse(res) {
   const iv = rawBytes.slice(0, 12);
   const ciphertext = rawBytes.slice(12);
   const decryptedBuf = await crypto.subtle.decrypt({ name: "AES-GCM", iv }, key, ciphertext);
-  return JSON.parse(new TextDecoder().decode(decryptedBuf));
+  const decryptedBytes = new Uint8Array(decryptedBuf);
+  const finalBytes = isRtz1Compressed(decryptedBytes)
+    ? await decompressRtz1Gzip(decryptedBytes.subarray(RTZ1_MAGIC.length))
+    : decryptedBytes;
+  return JSON.parse(new TextDecoder().decode(finalBytes));
 }
 
 function initDatabase() {
@@ -140,6 +161,7 @@ async function runWorkerPool(items, concurrency, delayMs, workerFn) {
 async function main() {
   const args = process.argv.slice(2);
   const allArg = args.includes("--all");
+  const missingQ3Arg = args.includes("--missing-q3");
   const topArg = Number(args.find((a) => a.startsWith("--top="))?.split("=")[1]);
   const symbolsArg = args.find((a) => a.startsWith("--symbols="))?.split("=")[1];
   const concurrencyArg = Number(args.find((a) => a.startsWith("--concurrency="))?.split("=")[1]) || 4;
@@ -149,7 +171,16 @@ async function main() {
     tickers = symbolsArg.split(",").map((s) => s.trim().toUpperCase()).filter(Boolean);
   } else {
     tickers = loadSortedTickers();
-    if (!allArg) {
+    if (missingQ3Arg) {
+      const { db: checkDb } = initDatabase();
+      const existingQ3Rows = checkDb.prepare("SELECT symbol FROM financial_statements WHERE period_type = 'quarter' AND fiscal_dates LIKE '%2026-09-30%'").all();
+      const q3Set = new Set(existingQ3Rows.map(r => r.symbol));
+      tickers = tickers.filter(t => !q3Set.has(t));
+      checkDb.close();
+      if (topArg && topArg > 0) {
+        tickers = tickers.slice(0, topArg);
+      }
+    } else if (!allArg) {
       const limit = topArg && topArg > 0 ? topArg : 350;
       tickers = tickers.slice(0, limit);
     }

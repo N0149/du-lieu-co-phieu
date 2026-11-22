@@ -32,24 +32,36 @@ async function main() {
 
   const db = new DatabaseSync(dbPath, { readOnly: true });
 
-  // 1. Tìm tất cả các mã có Q3 2026 (2026-09-30)
-  const q3SymbolsRows = db.prepare(`
-    SELECT DISTINCT symbol 
-    FROM financial_statements 
-    WHERE period_type = 'quarter' AND fiscal_dates LIKE '%2026-09-30%'
-  `).all();
+  const args = process.argv.slice(2);
+  const recentOnly = args.includes("--recent");
 
-  const q3Symbols = new Set(q3SymbolsRows.map((r) => r.symbol));
-  console.log(`===================================================================`);
-  console.log(`🚀 ĐỒNG BỘ BCTC QUÝ 3/2026 LÊN SUPABASE CLOUD DATABASE`);
-  console.log(`📋 Số lượng doanh nghiệp có BCTC Quý 3: ${q3Symbols.size} mã`);
-  console.log(`===================================================================\n`);
+  let allRows = [];
+  if (recentOnly) {
+    console.log(`🚀 ĐỒNG BỘ CÁC BẢN GHI VỪA CẬP NHẬT GẦN ĐÂY LÊN SUPABASE CLOUD DATABASE`);
+    allRows = db.prepare(`
+      SELECT symbol, period_type, fiscal_dates, cdkt, kqkd, lctt, data_source, updated_at
+      FROM financial_statements
+      WHERE updated_at >= datetime('now', '-3 hours')
+    `).all();
+  } else {
+    // 1. Tìm tất cả các mã có Q3 2026 (2026-09-30)
+    const q3SymbolsRows = db.prepare(`
+      SELECT DISTINCT symbol 
+      FROM financial_statements 
+      WHERE period_type = 'quarter' AND fiscal_dates LIKE '%2026-09-30%'
+    `).all();
 
-  // Lấy toàn bộ bản ghi (cả quarter và annual) của các mã này
-  const allRows = db.prepare(`
-    SELECT symbol, period_type, fiscal_dates, cdkt, kqkd, lctt, data_source, updated_at
-    FROM financial_statements
-  `).all().filter((r) => q3Symbols.has(r.symbol));
+    const q3Symbols = new Set(q3SymbolsRows.map((r) => r.symbol));
+    console.log(`===================================================================`);
+    console.log(`🚀 ĐỒNG BỘ BCTC QUÝ 3/2026 LÊN SUPABASE CLOUD DATABASE`);
+    console.log(`📋 Số lượng doanh nghiệp có BCTC Quý 3: ${q3Symbols.size} mã`);
+    console.log(`===================================================================\n`);
+
+    allRows = db.prepare(`
+      SELECT symbol, period_type, fiscal_dates, cdkt, kqkd, lctt, data_source, updated_at
+      FROM financial_statements
+    `).all().filter((r) => q3Symbols.has(r.symbol));
+  }
 
   console.log(`Tổng số bản ghi (Quý + Năm) cần tải lên: ${allRows.length}`);
 

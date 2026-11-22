@@ -13,12 +13,29 @@ export interface FinancialChartPayload {
 const DATA_DIR = path.join(process.cwd(), 'data')
 const QUARTER_DIR = path.join(DATA_DIR, 'financial_charts', 'quarter')
 const ANNUAL_DIR = path.join(DATA_DIR, 'financial_charts', 'annual')
-const CIPHER_KEY_HEX = '19dd3af428f4cf7d68864cd4c87d8d1c5b489932e84b93ac6528a0dd403a5725'
+const CIPHER_KEY_HEX = 'fa4abc75c049cac6b2d58d501f183a3f4eeace7d3f79f37724b1737d095371e5'
 
 const CHART_MEMORY_CACHE = new Map<string, { data: FinancialChartPayload; expiresAt: number }>()
 const CACHE_TTL_MS = 3600 * 1000 // 1 hour in-memory cache
 
 let cryptoKeyCache: any = null
+const RTZ1_MAGIC = [82, 84, 90, 49];
+
+function isRtz1Compressed(buf: Uint8Array): boolean {
+  if (!buf || buf.length < RTZ1_MAGIC.length) return false;
+  return RTZ1_MAGIC.every((b, i) => buf[i] === b);
+}
+
+async function decompressRtz1Gzip(buf: Uint8Array): Promise<Uint8Array> {
+  const stream = new ReadableStream({
+    start(controller) {
+      controller.enqueue(buf);
+      controller.close();
+    }
+  }).pipeThrough(new DecompressionStream("gzip"));
+  return new Uint8Array(await new Response(stream).arrayBuffer());
+}
+
 async function getCryptoKey(): Promise<any> {
   if (cryptoKeyCache) return cryptoKeyCache
   const bytes = new Uint8Array(CIPHER_KEY_HEX.match(/.{2}/g)!.map((h) => parseInt(h, 16)))
@@ -36,7 +53,11 @@ async function decryptApiResponse(res: Response): Promise<any> {
   const iv = rawBytes.slice(0, 12)
   const ciphertext = rawBytes.slice(12)
   const decryptedBuf = await crypto.subtle.decrypt({ name: 'AES-GCM', iv }, key, ciphertext)
-  return JSON.parse(new TextDecoder().decode(decryptedBuf))
+  const decryptedBytes = new Uint8Array(decryptedBuf)
+  const finalBytes = isRtz1Compressed(decryptedBytes)
+    ? await decompressRtz1Gzip(decryptedBytes.subarray(RTZ1_MAGIC.length))
+    : decryptedBytes
+  return JSON.parse(new TextDecoder().decode(finalBytes))
 }
 
 async function fetchRemoteChartData(

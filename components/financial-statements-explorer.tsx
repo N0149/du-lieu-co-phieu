@@ -1186,10 +1186,6 @@ export function FinancialStatementsExplorer({
       });
       return;
     }
-    if (!isVip) {
-      setVipModalOpen(true);
-      return;
-    }
     setActiveNoteModal({
       isOpen: true,
       rowName,
