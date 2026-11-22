@@ -1,6 +1,6 @@
 {
   "status": "success",
-  "generated_at": "2026-11-22T07:56:45.611913",
+  "generated_at": "2026-11-22T08:01:46.001210",
   "kpis": {
     "total_port_authorities": 16,
     "total_calls_30d": 15635,
@@ -306,7 +306,7 @@
       "category": "port",
       "pure_play": 1,
       "scope_note": null,
-      "total_calls": 5126,
+      "total_calls": 5132,
       "total_dwt": 0
     },
     {
