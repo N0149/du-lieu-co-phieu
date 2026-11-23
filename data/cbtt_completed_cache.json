@@ -4838,5 +4838,45 @@
     "url": "https://static2.vietstock.vn/data/UPCOM/2026/NGHI%20QUYET%20HDQT/VN/2_sjg_2026_11_19_e2046eb_en_862_tcttckt_ngay_19_11_2026_cong_bo_nq_112_tcthdqt_ngay_19_11_26_tam_ung_co_tuc_2026ky_1(NhieuFile).zip?ver=257c3234",
     "source": "Vietstock_Document",
     "alerted_at": "2026-11-23 15:30:02"
+  },
+  "vts_news_1517088": {
+    "ticker": "TNG",
+    "category": "INSIDER_TRADE",
+    "category_label": "GIAO DỊCH CỔ ĐÔNG / NỘI BỘ",
+    "title": "TNG: Báo cáo thay đổi sở hữu của nhóm Nhà đầu tư nước ngoài có liên quan",
+    "date": "23/11/2026 15:41",
+    "url": "https://vietstock.vn/2026/11/tng-bao-cao-thay-doi-so-huu-cua-nhom-nha-dau-tu-nuoc-ngoai-co-lien-quan-737-1517088.htm",
+    "source": "Vietstock_News",
+    "alerted_at": "2026-11-23 16:20:10"
+  },
+  "vts_news_1517108": {
+    "ticker": "HAG",
+    "category": "RESOLUTION_HDQT",
+    "category_label": "NGHỊ QUYẾT HĐQT",
+    "title": "HAG: Trích lục Nghị quyết HĐQT về phương án phát hành trái phiếu riêng lẻ lần 2 năm 2026",
+    "date": "23/11/2026 15:48",
+    "url": "https://vietstock.vn/2026/11/hag-trich-luc-nghi-quyet-hdqt-ve-phuong-an-phat-hanh-trai-phieu-rieng-le-lan-2-nam-2026-737-1517108.htm",
+    "source": "Vietstock_News",
+    "alerted_at": "2026-11-23 16:20:11"
+  },
+  "vts_news_1517106": {
+    "ticker": "GDA",
+    "category": "RESOLUTION_HDQT",
+    "category_label": "NGHỊ QUYẾT HĐQT",
+    "title": "GDA: Nghị quyết HĐQT về ngày đăng ký cuối cùng để tổ chức lấy ý kiến cổ đông bằng văn bản",
+    "date": "23/11/2026 15:47",
+    "url": "https://vietstock.vn/2026/11/gda-nghi-quyet-hdqt-ve-ngay-dang-ky-cuoi-cung-de-to-chuc-lay-y-kien-co-dong-bang-van-ban-737-1517106.htm",
+    "source": "Vietstock_News",
+    "alerted_at": "2026-11-23 16:20:11"
+  },
+  "web_6dd40bfea69b": {
+    "ticker": "GDA",
+    "category": "RESOLUTION_HDQT",
+    "category_label": "NGHỊ QUYẾT HĐQT",
+    "title": "NGHỊ QUYẾT HĐQT TỔ CHỨC LẤY Ý KIẾN CỔ ĐÔNG BẰNG VĂN BẢN VÀ NGÀY ĐĂNG KÝ CUỐI CÙNG",
+    "date": "20261123",
+    "url": "https://tondonga.com.vn/Data/Sites/1/media/07-co-dong/CONGBOTHONGTIN/2026/23_11_2026/20261123_GDA_NQ_HDQT_To_chuc_Lay_y_kien_CD_van_ban_va_NDKCC.pdf",
+    "source": "Company_Web",
+    "alerted_at": "2026-11-23 16:20:12"
   }
 }
