@@ -5028,5 +5028,155 @@
     "url": "https://vietstock.vn/2026/11/con-trai-tong-giam-doc-idc-gom-thanh-cong-44-trieu-cp-739-1517382.htm",
     "source": "Vietstock_News",
     "alerted_at": "2026-11-24 17:37:27"
+  },
+  "web_ac0ee0f0e8c5": {
+    "ticker": "DRC",
+    "category": "EXTRAORDINARY_EVENT",
+    "category_label": "CÔNG BỐ BẤT THƯỜNG",
+    "title": "Công ty cổ phần Cao su Đà Nẵng (DRC) công bố Giấy chứng nhận đăng ký doanh nghiệp, thay đổi lần thứ 18",
+    "date": "25/11/2026",
+    "url": "https://drc.com.vn/wp-content/uploads/2026/11/20261125-DRC-Thay-doi-dang-ky-doanh-nghiep-lan-18-.pdf",
+    "source": "Company_Web",
+    "alerted_at": "2026-11-25 16:26:47"
+  },
+  "vts_news_1517614": {
+    "ticker": "HMC",
+    "category": "INSIDER_TRADE",
+    "category_label": "GIAO DỊCH CỔ ĐÔNG / NỘI BỘ",
+    "title": "HMC: Nghị quyết HĐQT về chấp thuận giao dịch bán hàng hóa với tổ chức có lien quan của Công ty mẹ",
+    "date": "25/11/2026 15:22",
+    "url": "https://vietstock.vn/2026/11/hmc-nghi-quyet-hdqt-ve-chap-thuan-giao-dich-ban-hang-hoa-voi-to-chuc-co-lien-quan-cua-cong-ty-me-737-1517614.htm",
+    "source": "Vietstock_News",
+    "alerted_at": "2026-11-25 16:26:48"
+  },
+  "vts_news_1517589": {
+    "ticker": "VAF",
+    "category": "DIVIDEND_RIGHTS",
+    "category_label": "CỔ TỨC & QUYỀN DOANH NGHIỆP",
+    "title": "VAF: Thông báo ngày đăng ký cuối cùng thực hiện quyền nhận cổ tức năm 2025 bằng cổ phiếu",
+    "date": "25/11/2026 14:30",
+    "url": "https://vietstock.vn/2026/11/vaf-thong-bao-ngay-dang-ky-cuoi-cung-thuc-hien-quyen-nhan-co-tuc-nam-2025-bang-co-phieu-737-1517589.htm",
+    "source": "Vietstock_News",
+    "alerted_at": "2026-11-25 16:26:49"
+  },
+  "vts_news_1517588": {
+    "ticker": "VAF",
+    "category": "DIVIDEND_RIGHTS",
+    "category_label": "CỔ TỨC & QUYỀN DOANH NGHIỆP",
+    "title": "VAF: Thông báo phát hành cổ phiếu để trả cổ tức năm 2025",
+    "date": "25/11/2026 14:29",
+    "url": "https://vietstock.vn/2026/11/vaf-thong-bao-phat-hanh-co-phieu-de-tra-co-tuc-nam-2025-738-1517588.htm",
+    "source": "Vietstock_News",
+    "alerted_at": "2026-11-25 16:26:50"
+  },
+  "vts_news_1517403": {
+    "ticker": "TNG",
+    "category": "INSIDER_SELL",
+    "category_label": "CỔ ĐÔNG NỘI BỘ BÁN RA",
+    "title": "Nhóm cổ đông liên quan Dragon Capital giảm sở hữu, TNG giải thể công ty liên kết",
+    "date": "25/11/2026 09:32",
+    "url": "https://vietstock.vn/2026/11/nhom-co-dong-lien-quan-dragon-capital-giam-so-huu-tng-giai-the-cong-ty-lien-ket-739-1517403.htm",
+    "source": "Vietstock_News",
+    "alerted_at": "2026-11-25 16:26:50"
+  },
+  "vts_news_1517615": {
+    "ticker": "HAG",
+    "category": "RESOLUTION_HDQT",
+    "category_label": "NGHỊ QUYẾT HĐQT",
+    "title": "HAG: Bản trích lục Nghị quyết HĐQT số 18/26 ngày 23/11/2026",
+    "date": "25/11/2026 15:22",
+    "url": "https://vietstock.vn/2026/11/hag-ban-trich-luc-nghi-quyet-hdqt-so-18-26-ngay-23-11-2026-737-1517615.htm",
+    "source": "Vietstock_News",
+    "alerted_at": "2026-11-25 16:26:51"
+  },
+  "vts_news_1517565": {
+    "ticker": "NED",
+    "category": "RESOLUTION_HDQT",
+    "category_label": "NGHỊ QUYẾT HĐQT",
+    "title": "NED: Nghị quyết Hội đồng quản trị",
+    "date": "25/11/2026 13:51",
+    "url": "https://vietstock.vn/2026/11/ned-nghi-quyet-hoi-dong-quan-tri-737-1517565.htm",
+    "source": "Vietstock_News",
+    "alerted_at": "2026-11-25 16:26:52"
+  },
+  "vts_news_1517618": {
+    "ticker": "TYA",
+    "category": "RESOLUTION_HDQT",
+    "category_label": "NGHỊ QUYẾT HĐQT",
+    "title": "TYA: Nghị quyết HĐQT về việc vay hạn mức tín dụng The Shanghai Commercial & Savings Bank - OBU Branch",
+    "date": "25/11/2026 15:27",
+    "url": "https://vietstock.vn/2026/11/tya-nghi-quyet-hdqt-ve-viec-vay-han-muc-tin-dung-the-shanghai-commercial-savings-bank-obu-branch-737-1517618.htm",
+    "source": "Vietstock_News",
+    "alerted_at": "2026-11-25 16:26:53"
+  },
+  "vts_news_1517447": {
+    "ticker": "DSH",
+    "category": "RESOLUTION_HDQT",
+    "category_label": "NGHỊ QUYẾT HĐQT",
+    "title": "DSH: Các Nghị quyết HĐQT số 23,11. 23,11,1. 23,11,2 ngày 23/11/2026",
+    "date": "25/11/2026 09:33",
+    "url": "https://vietstock.vn/2026/11/dsh-cac-nghi-quyet-hdqt-so-2311-23111-23112-ngay-23-11-2026-737-1517447.htm",
+    "source": "Vietstock_News",
+    "alerted_at": "2026-11-25 16:26:54"
+  },
+  "vts_news_1517630": {
+    "ticker": "BMI",
+    "category": "DIVIDEND_RIGHTS",
+    "category_label": "CỔ TỨC & QUYỀN DOANH NGHIỆP",
+    "title": "BMI: Báo cáo kết quả đợt phát hành cổ phiếu để trả cổ tức",
+    "date": "25/11/2026 15:27",
+    "url": "https://vietstock.vn/2026/11/bmi-bao-cao-ket-qua-dot-phat-hanh-co-phieu-de-tra-co-tuc-738-1517630.htm",
+    "source": "Vietstock_News",
+    "alerted_at": "2026-11-25 16:26:55"
+  },
+  "vts_news_1517626": {
+    "ticker": "GDA",
+    "category": "RESOLUTION_HDQT",
+    "category_label": "NGHỊ QUYẾT HĐQT",
+    "title": "GDA: Nghị quyết HĐQT về việc đầu tư thêm vốn vào Công ty TNHH MTV Đông Á - Phú Mỹ 1",
+    "date": "25/11/2026 15:25",
+    "url": "https://vietstock.vn/2026/11/gda-nghi-quyet-hdqt-ve-viec-dau-tu-them-von-vao-cong-ty-tnhh-mtv-dong-a-phu-my-1-737-1517626.htm",
+    "source": "Vietstock_News",
+    "alerted_at": "2026-11-25 16:26:55"
+  },
+  "web_0b7cd5e4fbca": {
+    "ticker": "GDA",
+    "category": "RESOLUTION_HDQT",
+    "category_label": "NGHỊ QUYẾT HĐQT",
+    "title": "NGHỊ QUYẾT HĐQT TĂNG VỐN ĐẦU TƯ VÀO ĐÔNG Á - PHÚ MỸ 1",
+    "date": "20261125",
+    "url": "https://tondonga.com.vn/Data/Sites/1/media/07-co-dong/CONGBOTHONGTIN/2026/25_11_2026/20261125_GDA_NQ_HDQT_Tang_von_Dau_tu_tai_PhuMy_1.pdf",
+    "source": "Company_Web",
+    "alerted_at": "2026-11-25 16:26:56"
+  },
+  "vts_news_1517623": {
+    "ticker": "MZG",
+    "category": "RESOLUTION_HDQT",
+    "category_label": "NGHỊ QUYẾT HĐQT",
+    "title": "MZG: Đính chính thông tin tại Phụ lục đính kèm Nghị quyết HĐQT số 201101 ngày 20/11/2026",
+    "date": "25/11/2026 15:23",
+    "url": "https://vietstock.vn/2026/11/mzg-dinh-chinh-thong-tin-tai-phu-luc-dinh-kem-nghi-quyet-hdqt-so-201101-ngay-20-11-2026-737-1517623.htm",
+    "source": "Vietstock_News",
+    "alerted_at": "2026-11-25 16:26:57"
+  },
+  "vts_news_1517659": {
+    "ticker": "VEA",
+    "category": "RESOLUTION_HDQT",
+    "category_label": "NGHỊ QUYẾT HĐQT",
+    "title": "VEA: Nghị quyết HĐQT về việc tổ chức ĐHĐCĐ bất thường năm 2027",
+    "date": "25/11/2026 15:57",
+    "url": "https://vietstock.vn/2026/11/vea-nghi-quyet-hdqt-ve-viec-to-chuc-dhdcd-bat-thuong-nam-2027-737-1517659.htm",
+    "source": "Vietstock_News",
+    "alerted_at": "2026-11-25 16:26:57"
+  },
+  "vts_news_1517609": {
+    "ticker": "VGS",
+    "category": "EGM_EXTRAORDINARY",
+    "category_label": "ĐHĐCĐ BẤT THƯỜNG / LẤY Ý KIẾN",
+    "title": "VGS: Nghị quyết Đại hội đồng cổ đông lấy ý kiến bằng văn bản năm 2026",
+    "date": "25/11/2026 15:10",
+    "url": "https://vietstock.vn/2026/11/vgs-nghi-quyet-dai-hoi-dong-co-dong-lay-y-kien-bang-van-ban-nam-2026-737-1517609.htm",
+    "source": "Vietstock_News",
+    "alerted_at": "2026-11-25 16:26:58"
   }
 }
