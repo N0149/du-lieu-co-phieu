@@ -5538,5 +5538,115 @@
     "url": "https://vietstock.vn/2026/11/mzg-bao-cao-ket-qua-dot-chao-ban-co-phieu-ra-cong-chung-739-1518125.htm",
     "source": "Vietstock_News",
     "alerted_at": "2026-11-26 16:48:51"
+  },
+  "vts_news_1518297": {
+    "ticker": "LIX",
+    "category": "RESOLUTION_HDQT",
+    "category_label": "NGHỊ QUYẾT HĐQT",
+    "title": "LIX: Nghị quyết HĐQT về việc bổ nhiệm lại Kế Toán trưởng (kèm Quyết định)",
+    "date": "26/11/2026 17:58",
+    "url": "https://vietstock.vn/2026/11/lix-nghi-quyet-hdqt-ve-viec-bo-nhiem-lai-ke-toan-truong-kem-quyet-dinh-737-1518297.htm",
+    "source": "Vietstock_News",
+    "alerted_at": "2026-11-27 04:43:33"
+  },
+  "vts_news_1518257": {
+    "ticker": "GSM",
+    "category": "RESOLUTION_HDQT",
+    "category_label": "NGHỊ QUYẾT HĐQT",
+    "title": "GSM: Nghị quyết Hội đồng quản trị",
+    "date": "26/11/2026 16:47",
+    "url": "https://vietstock.vn/2026/11/gsm-nghi-quyet-hoi-dong-quan-tri-737-1518257.htm",
+    "source": "Vietstock_News",
+    "alerted_at": "2026-11-27 04:43:34"
+  },
+  "vts_news_1518313": {
+    "ticker": "VTO",
+    "category": "EGM_EXTRAORDINARY",
+    "category_label": "ĐHĐCĐ BẤT THƯỜNG / LẤY Ý KIẾN",
+    "title": "VTO: Thông báo ngày ĐKCC tổ chức ĐHĐCĐ bất thường lần 01 năm 2027",
+    "date": "26/11/2026 18:10",
+    "url": "https://vietstock.vn/2026/11/vto-thong-bao-ngay-dkcc-to-chuc-dhdcd-bat-thuong-lan-01-nam-2027-737-1518313.htm",
+    "source": "Vietstock_News",
+    "alerted_at": "2026-11-27 04:43:34"
+  },
+  "vts_news_1518184": {
+    "ticker": "VCP",
+    "category": "DIVIDEND_RIGHTS",
+    "category_label": "CỔ TỨC & QUYỀN DOANH NGHIỆP",
+    "title": "DPR: Thông báo công văn của UBCKNN về tài liệu báo cáo phát hành cổ phiếu để tăng VCP từ NVCSH",
+    "date": "26/11/2026 16:57",
+    "url": "https://vietstock.vn/2026/11/dpr-thong-bao-cong-van-cua-ubcknn-ve-tai-lieu-bao-cao-phat-hanh-co-phieu-de-tang-vcp-tu-nvcsh-830-1518184.htm",
+    "source": "Vietstock_News",
+    "alerted_at": "2026-11-27 04:43:41"
+  },
+  "vts_news_1518248": {
+    "ticker": "DC4",
+    "category": "EXTRAORDINARY_EVENT",
+    "category_label": "CÔNG BỐ BẤT THƯỜNG",
+    "title": "DC4: Giấy chứng nhận đăng ký doanh nghiệp thay đổi lần thứ 29",
+    "date": "26/11/2026 17:25",
+    "url": "https://vietstock.vn/2026/11/dc4-giay-chung-nhan-dang-ky-doanh-nghiep-thay-doi-lan-thu-29-737-1518248.htm",
+    "source": "Vietstock_News",
+    "alerted_at": "2026-11-27 04:43:36"
+  },
+  "vts_news_1518194": {
+    "ticker": "GCF",
+    "category": "INSIDER_SELL",
+    "category_label": "CỔ ĐÔNG NỘI BỘ BÁN RA",
+    "title": "GCF: Đồng Thị Nụ - Phó Tổng Giám đốc - đã bán 0 CP",
+    "date": "26/11/2026 17:02",
+    "url": "https://vietstock.vn/2026/11/gcf-dong-thi-nu-pho-tong-giam-doc-da-ban-0-cp-739-1518194.htm",
+    "source": "Vietstock_News",
+    "alerted_at": "2026-11-27 04:43:37"
+  },
+  "vts_news_1518152": {
+    "ticker": "PAN",
+    "category": "INSIDER_TRADE",
+    "category_label": "GIAO DỊCH CỔ ĐÔNG / NỘI BỘ",
+    "title": "PAN: Nghị quyết HĐQT về việc phê duyệt bổ sung giao dịch với người có liên quan trong năm 2026",
+    "date": "26/11/2026 16:49",
+    "url": "https://vietstock.vn/2026/11/pan-nghi-quyet-hdqt-ve-viec-phe-duyet-bo-sung-giao-dich-voi-nguoi-co-lien-quan-trong-nam-2026-737-1518152.htm",
+    "source": "Vietstock_News",
+    "alerted_at": "2026-11-27 04:43:37"
+  },
+  "vts_news_1518189": {
+    "ticker": "PRE",
+    "category": "DIVIDEND_RIGHTS",
+    "category_label": "CỔ TỨC & QUYỀN DOANH NGHIỆP",
+    "title": "PRE: Công bố thông tin về ngày Đăng ký cuối cùng để thực hiện quyền chi tạm ứng cổ tức lần thứ nhất năm 2026",
+    "date": "26/11/2026 16:52",
+    "url": "https://vietstock.vn/2026/11/pre-cong-bo-thong-tin-ve-ngay-dang-ky-cuoi-cung-de-thuc-hien-quyen-chi-tam-ung-co-tuc-lan-thu-nhat-nam-2026-737-1518189.htm",
+    "source": "Vietstock_News",
+    "alerted_at": "2026-11-27 04:43:38"
+  },
+  "vts_news_1518246": {
+    "ticker": "ANT",
+    "category": "RESOLUTION_HDQT",
+    "category_label": "NGHỊ QUYẾT HĐQT",
+    "title": "ANT: Nghị quyết HĐQT thông qua hạn mức tín dụng tại Ngân hàng TMCP Quân đội - Chi nhánh Sài Gòn",
+    "date": "26/11/2026 17:25",
+    "url": "https://vietstock.vn/2026/11/ant-nghi-quyet-hdqt-thong-qua-han-muc-tin-dung-tai-ngan-hang-tmcp-quan-doi-chi-nhanh-sai-gon-737-1518246.htm",
+    "source": "Vietstock_News",
+    "alerted_at": "2026-11-27 04:43:39"
+  },
+  "vts_news_1518298": {
+    "ticker": "PGC",
+    "category": "EXTRAORDINARY_EVENT",
+    "category_label": "CÔNG BỐ BẤT THƯỜNG",
+    "title": "PGC: Thông báo bổ nhiệm lại Tổng Giám đốc (kèm Quyết định)",
+    "date": "26/11/2026 17:58",
+    "url": "https://vietstock.vn/2026/11/pgc-thong-bao-bo-nhiem-lai-tong-giam-doc-kem-quyet-dinh-214-1518298.htm",
+    "source": "Vietstock_News",
+    "alerted_at": "2026-11-27 04:43:39"
+  },
+  "vts_news_1518308": {
+    "ticker": "TVT",
+    "category": "INSIDER_TRADE",
+    "category_label": "GIAO DỊCH CỔ ĐÔNG / NỘI BỘ",
+    "title": "TVT: Báo cáo kết quả giao dịch cổ phiếu của người có liên quan đến người nội bộ Diều Minh Lương",
+    "date": "26/11/2026 17:59",
+    "url": "https://vietstock.vn/2026/11/tvt-bao-cao-ket-qua-giao-dich-co-phieu-cua-nguoi-co-lien-quan-den-nguoi-noi-bo-dieu-minh-luong-739-1518308.htm",
+    "source": "Vietstock_News",
+    "alerted_at": "2026-11-27 04:43:40"
   }
 }
