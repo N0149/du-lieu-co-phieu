@@ -5898,5 +5898,85 @@
     "url": "https://static2.vietstock.vn/data/HNX/2026/NGHI QUYET HDQT/VN/2_tid_2026_11_27_3a2b0e7_en_boardresolution(NhieuFile).zip",
     "source": "Vietstock_Document",
     "alerted_at": "2026-11-27 16:52:53"
+  },
+  "vts_news_1518672": {
+    "ticker": "PDN",
+    "category": "EGM_EXTRAORDINARY",
+    "category_label": "ĐHĐCĐ BẤT THƯỜNG / LẤY Ý KIẾN",
+    "title": "PDN: Nghị quyết ĐHĐCĐ và Biên bản kiểm phiếu lấy ý kiến cổ đông bằng văn bản",
+    "date": "27/11/2026 16:33",
+    "url": "https://vietstock.vn/2026/11/pdn-nghi-quyet-dhdcd-va-bien-ban-kiem-phieu-lay-y-kien-co-dong-bang-van-ban-737-1518672.htm",
+    "source": "Vietstock_News",
+    "alerted_at": "2026-11-28 04:29:22"
+  },
+  "vts_news_1518809": {
+    "ticker": "ANV",
+    "category": "INSIDER_TRADE",
+    "category_label": "GIAO DỊCH CỔ ĐÔNG / NỘI BỘ",
+    "title": "ANV: Thông báo giao dịch cổ phiếu của Người nội bộ Doãn Chí Thiên",
+    "date": "27/11/2026 17:37",
+    "url": "https://vietstock.vn/2026/11/anv-thong-bao-giao-dich-co-phieu-cua-nguoi-noi-bo-doan-chi-thien-830-1518809.htm",
+    "source": "Vietstock_News",
+    "alerted_at": "2026-11-28 04:29:22"
+  },
+  "vts_news_1518808": {
+    "ticker": "L10",
+    "category": "RESOLUTION_HDQT",
+    "category_label": "NGHỊ QUYẾT HĐQT",
+    "title": "L10: Nghị quyết HĐQT họp Quý IV năm 2026",
+    "date": "27/11/2026 17:38",
+    "url": "https://vietstock.vn/2026/11/l10-nghi-quyet-hdqt-hop-quy-iv-nam-2026-737-1518808.htm",
+    "source": "Vietstock_News",
+    "alerted_at": "2026-11-28 04:29:23"
+  },
+  "vts_news_1518701": {
+    "ticker": "TOT",
+    "category": "EXTRAORDINARY_EVENT",
+    "category_label": "CÔNG BỐ BẤT THƯỜNG",
+    "title": "TOT: Thay đổi nhân sự",
+    "date": "27/11/2026 16:21",
+    "url": "https://vietstock.vn/2026/11/tot-thay-doi-nhan-su-214-1518701.htm",
+    "source": "Vietstock_News",
+    "alerted_at": "2026-11-28 04:29:24"
+  },
+  "vts_news_1518811": {
+    "ticker": "TIP",
+    "category": "RESOLUTION_HDQT",
+    "category_label": "NGHỊ QUYẾT HĐQT",
+    "title": "TIP: Nghị quyết HĐQT về việc phê duyệt giá chuyển nhượng cổ phần tại Công ty Cổ phần Thương mại và Xây dựng Phước Tân",
+    "date": "27/11/2026 17:42",
+    "url": "https://vietstock.vn/2026/11/tip-nghi-quyet-hdqt-ve-viec-phe-duyet-gia-chuyen-nhuong-co-phan-tai-cong-ty-co-phan-thuong-mai-va-xay-dung-phuoc-tan-737-1518811.htm",
+    "source": "Vietstock_News",
+    "alerted_at": "2026-11-28 04:29:25"
+  },
+  "vts_news_1518762": {
+    "ticker": "ALT",
+    "category": "INSIDER_BUY",
+    "category_label": "CỔ ĐÔNG NỘI BỘ MUA VÀO",
+    "title": "ALT: Nguyễn Thị Xuân - Kế toán trưởng - đăng ký mua 50,000 CP",
+    "date": "27/11/2026 17:17",
+    "url": "https://vietstock.vn/2026/11/alt-nguyen-thi-xuan-ke-toan-truong-dang-ky-mua-50000-cp-739-1518762.htm",
+    "source": "Vietstock_News",
+    "alerted_at": "2026-11-28 04:29:26"
+  },
+  "vts_news_1518413": {
+    "ticker": "GDA",
+    "category": "EGM_EXTRAORDINARY",
+    "category_label": "ĐHĐCĐ BẤT THƯỜNG / LẤY Ý KIẾN",
+    "title": "GDA: Thông báo ngày ĐKCC lấy ý kiến cổ đông bằng văn bản",
+    "date": "27/11/2026 10:59",
+    "url": "https://vietstock.vn/2026/11/gda-thong-bao-ngay-dkcc-lay-y-kien-co-dong-bang-van-ban-830-1518413.htm",
+    "source": "Vietstock_News",
+    "alerted_at": "2026-11-28 04:29:27"
+  },
+  "vts_news_1518698": {
+    "ticker": "SPC",
+    "category": "EXTRAORDINARY_EVENT",
+    "category_label": "CÔNG BỐ BẤT THƯỜNG",
+    "title": "SPC: Quyết định của Thuế tỉnh Nghệ An, về việc xử phạt vi phạm hành chính do khai sai thuế GTGT - Chi nhánh CTCP Bảo vệ thực vật Sài Gòn tại Nghệ An",
+    "date": "27/11/2026 16:20",
+    "url": "https://vietstock.vn/2026/11/spc-quyet-dinh-cua-thue-tinh-nghe-an-ve-viec-xu-phat-vi-pham-hanh-chinh-do-khai-sai-thue-gtgt-chi-nhanh-ctcp-bao-ve-thuc-vat-sai-gon-tai-nghe-an-737-1518698.htm",
+    "source": "Vietstock_News",
+    "alerted_at": "2026-11-28 04:29:28"
   }
 }
