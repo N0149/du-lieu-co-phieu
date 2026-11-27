@@ -5828,5 +5828,75 @@
     "url": "https://vietstock.vn/2026/11/tid-nghi-quyet-hdqt-phe-duyet-gia-khoi-diem-chuyen-nhuong-co-phan-tai-ctcp-thuong-mai-va-xay-dung-phuoc-tan-737-1518548.htm",
     "source": "Vietstock_News",
     "alerted_at": "2026-11-27 16:18:30"
+  },
+  "vts_doc_05e6b4a3e0a2": {
+    "ticker": "GSM",
+    "category": "RESOLUTION_HDQT",
+    "category_label": "NGHỊ QUYẾT HĐQT",
+    "title": "Nghị quyết HĐQT phê duyệt cho Công ty CP năng lượng xanh Hương Sơn đấu nối Dự án Nhà máy thủy điện Hương Sơn 3 lên đường dây 110kV NMTĐ Hương Sơn – TBA 110kV Hương Sơn và sử dụng chung tài sản do Công ty cổ phần thủy điện Hương Sơn đầu tư",
+    "date": "27/11/2026 16:18",
+    "url": "https://static2.vietstock.vn/data/UPCOM/2026/NGHI%20QUYET%20HDQT/VN/4_gsm_2026_11_26_e3cfee2_en_announcement_1(NhieuFile).zip?ver=ff523e79",
+    "source": "Vietstock_Document",
+    "alerted_at": "2026-11-27 16:52:50"
+  },
+  "web_924c9015ff20": {
+    "ticker": "ANV",
+    "category": "INSIDER_TRADE",
+    "category_label": "GIAO DỊCH CỔ ĐÔNG / NỘI BỘ",
+    "title": "ANV - THONG BAO GIAO DICH CP NGUOI NOI BO - DOAN CHI THIEN",
+    "date": "20261127",
+    "url": "https://navicorp.com.vn/files/folder_file_pdf/images/20261127 - ANV - THONG BAO GIAO DICH CP NGUOI NOI BO - DOAN CHI THIEN-OgW100.pdf",
+    "source": "Company_Web",
+    "alerted_at": "2026-11-27 16:52:50"
+  },
+  "vts_news_1518604": {
+    "ticker": "DRC",
+    "category": "EGM_EXTRAORDINARY",
+    "category_label": "ĐHĐCĐ BẤT THƯỜNG / LẤY Ý KIẾN",
+    "title": "DRC: Tài liệu họp ĐHĐCĐ bất thường năm 2026. thư mời và giấy ủy quyền",
+    "date": "27/11/2026 16:13",
+    "url": "https://vietstock.vn/2026/11/drc-tai-lieu-hop-dhdcd-bat-thuong-nam-2026-thu-moi-va-giay-uy-quyen-737-1518604.htm",
+    "source": "Vietstock_News",
+    "alerted_at": "2026-11-27 16:52:51"
+  },
+  "vts_news_1518626": {
+    "ticker": "DTK",
+    "category": "EGM_EXTRAORDINARY",
+    "category_label": "ĐHĐCĐ BẤT THƯỜNG / LẤY Ý KIẾN",
+    "title": "DTK: Nghị quyết Đại hội đồng cổ đông bất thường năm 2026",
+    "date": "27/11/2026 16:14",
+    "url": "https://vietstock.vn/2026/11/dtk-nghi-quyet-dai-hoi-dong-co-dong-bat-thuong-nam-2026-737-1518626.htm",
+    "source": "Vietstock_News",
+    "alerted_at": "2026-11-27 16:52:52"
+  },
+  "vts_doc_5e2dc5a22e80": {
+    "ticker": "HAH",
+    "category": "RESOLUTION_HDQT",
+    "category_label": "NGHỊ QUYẾT HĐQT",
+    "title": "Nghị quyết HĐQT ngày 26/11/2026",
+    "date": "27/11/2026 16:24",
+    "url": "https://static2.vietstock.vn/data/HOSE/2026/NGHI QUYET HDQT/VN/20261127___hah___nghi_quyet_hdqt_ngay_26_11_2026.pdf",
+    "source": "Vietstock_Document",
+    "alerted_at": "2026-11-27 16:52:52"
+  },
+  "vts_news_1518642": {
+    "ticker": "MZG",
+    "category": "DIVIDEND_RIGHTS",
+    "category_label": "CỔ TỨC & QUYỀN DOANH NGHIỆP",
+    "title": "MZG: Nhận được công văn của UBCKNN về tài liệu báo cáo kết quả chào bán thêm CP ra công chúng",
+    "date": "27/11/2026 16:31",
+    "url": "https://vietstock.vn/2026/11/mzg-nhan-duoc-cong-van-cua-ubcknn-ve-tai-lieu-bao-cao-ket-qua-chao-ban-them-cp-ra-cong-chung-739-1518642.htm",
+    "source": "Vietstock_News",
+    "alerted_at": "2026-11-27 16:52:53"
+  },
+  "vts_doc_6b27afab7468": {
+    "ticker": "TID",
+    "category": "RESOLUTION_HDQT",
+    "category_label": "NGHỊ QUYẾT HĐQT",
+    "title": "Nghị quyết HĐQT phê duyệt giá khởi điểm chuyển nhượng cổ phần tại CTCP Thương mại và Xây dựng Phước Tân",
+    "date": "27/11/2026 16:24",
+    "url": "https://static2.vietstock.vn/data/HNX/2026/NGHI QUYET HDQT/VN/2_tid_2026_11_27_3a2b0e7_en_boardresolution(NhieuFile).zip",
+    "source": "Vietstock_Document",
+    "alerted_at": "2026-11-27 16:52:53"
   }
 }
