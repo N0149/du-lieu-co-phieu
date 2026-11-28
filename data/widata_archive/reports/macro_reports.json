@@ -1,12 +1,39 @@
 [
   {
-    "id": 26959,
-    "title": "Báo cáo vĩ mô và thị trường Tháng 11/2026",
-    "source": "EVS",
-    "date": "2026-11-23T00:00:00.000Z",
-    "url": "https://cdn02.wigroup.vn/baocaophantich/ar_27319_EVS_2026-11-23.pdf",
+    "id": 26988,
+    "title": "Cập nhật chính sách thuế quan của Mỹ, Section 301 - Tháng 11/2026",
+    "source": "KBSV",
+    "date": "2026-11-27T00:00:00.000Z",
+    "url": "https://cdn02.wigroup.vn/baocaophantich/ar_27378_KBSV_2026-11-27.pdf",
     "category": "Báo cáo Vĩ mô",
-    "created_at": "2026-11-24T00:32:37.765Z"
+    "created_at": "2026-11-27T13:00:35.355Z"
+  },
+  {
+    "id": 26991,
+    "title": "Thuế quan Hoa kỳ và lợi thế cạnh tranh phân hóa, đàm phán quyết định triển vọng",
+    "source": "OCBS",
+    "date": "2026-11-26T00:00:00.000Z",
+    "url": "https://cdn02.wigroup.vn/baocaophantich/ar_27377_OCBS_2026-11-27.pdf",
+    "category": "Báo cáo Vĩ mô",
+    "created_at": "2026-11-27T13:00:35.355Z"
+  },
+  {
+    "id": 26976,
+    "title": "Cập nhật Section 301: USTR đề xuất thuế “dư thừa công suất” với 14 nền kinh tế",
+    "source": "SHS",
+    "date": "2026-11-25T00:00:00.000Z",
+    "url": "https://cdn02.wigroup.vn/baocaophantich/ar_27360_SHS_2026-11-25.pdf",
+    "category": "Báo cáo Vĩ mô",
+    "created_at": "2026-11-26T13:00:38.276Z"
+  },
+  {
+    "id": 26962,
+    "title": "Đánh giá nhanh tác động Mỹ áp thuế bổ sung đến Trung Quốc và nhiều nền kinh tế",
+    "source": "CTS",
+    "date": "2026-11-25T00:00:00.000Z",
+    "url": "https://cdn02.wigroup.vn/baocaophantich/ar_27348_CTS_2026-11-25.pdf",
+    "category": "Báo cáo Vĩ mô",
+    "created_at": "2026-11-26T13:00:38.276Z"
   },
   {
     "id": 26960,
@@ -15,16 +42,16 @@
     "date": "2026-11-23T00:00:00.000Z",
     "url": "https://cdn02.wigroup.vn/baocaophantich/ar_27330_VNDS_2026-11-23.pdf",
     "category": "Báo cáo Vĩ mô",
-    "created_at": "2026-11-24T00:32:37.765Z"
+    "created_at": "2026-11-25T14:42:24.750Z"
   },
   {
-    "id": 26900,
-    "title": "Báo cáo Kinh tế Vĩ mô Việt Nam: Tháng 10/2026",
-    "source": "VinaCapital",
-    "date": "2026-11-09T00:00:00.000Z",
-    "url": "https://cdn02.wigroup.vn/baocaophantich/ar_27275_VinaCapital_2026-11-18.pdf",
+    "id": 26959,
+    "title": "Báo cáo vĩ mô và thị trường Tháng 11/2026",
+    "source": "EVS",
+    "date": "2026-11-23T00:00:00.000Z",
+    "url": "https://cdn02.wigroup.vn/baocaophantich/ar_27319_EVS_2026-11-23.pdf",
     "category": "Báo cáo Vĩ mô",
-    "created_at": "2026-11-19T13:00:51.501Z"
+    "created_at": "2026-11-25T14:42:24.750Z"
   },
   {
     "id": 26903,
@@ -33,7 +60,7 @@
     "date": "2026-11-18T00:00:00.000Z",
     "url": "https://cdn02.wigroup.vn/baocaophantich/ar_27278_VNDS_2026-11-18.pdf",
     "category": "Báo cáo Vĩ mô",
-    "created_at": "2026-11-19T13:00:51.501Z"
+    "created_at": "2026-11-25T14:42:24.750Z"
   },
   {
     "id": 26875,
@@ -42,16 +69,7 @@
     "date": "2026-11-17T00:00:00.000Z",
     "url": "https://cdn02.wigroup.vn/baocaophantich/ar_27252_TCB_2026-11-17.pdf",
     "category": "Báo cáo Vĩ mô",
-    "created_at": "2026-11-18T21:03:43.186Z"
-  },
-  {
-    "id": 26843,
-    "title": "Lãi suất cho vay ngắn hạn giảm: Doanh nghiệp niêm yết nào hưởng lợi trong Quý 4/2026",
-    "source": "CTS",
-    "date": "2026-11-13T00:00:00.000Z",
-    "url": "https://cdn02.wigroup.vn/baocaophantich/ar_27225_CTS_2026-11-17.pdf",
-    "category": "Báo cáo Vĩ mô",
-    "created_at": "2026-11-17T21:29:01.833Z"
+    "created_at": "2026-11-25T14:42:24.750Z"
   },
   {
     "id": 26842,
@@ -60,7 +78,7 @@
     "date": "2026-11-17T00:00:00.000Z",
     "url": "https://cdn02.wigroup.vn/baocaophantich/ar_27226_CTS_2026-11-17.pdf",
     "category": "Báo cáo Vĩ mô",
-    "created_at": "2026-11-17T21:29:01.833Z"
+    "created_at": "2026-11-25T14:42:24.750Z"
   },
   {
     "id": 26859,
@@ -69,7 +87,16 @@
     "date": "2026-11-17T00:00:00.000Z",
     "url": "https://cdn02.wigroup.vn/baocaophantich/ar_27231_VPBS_2026-11-17.pdf",
     "category": "Báo cáo Vĩ mô",
-    "created_at": "2026-11-17T21:29:01.833Z"
+    "created_at": "2026-11-25T14:42:24.750Z"
+  },
+  {
+    "id": 26843,
+    "title": "Lãi suất cho vay ngắn hạn giảm: Doanh nghiệp niêm yết nào hưởng lợi trong Quý 4/2026",
+    "source": "CTS",
+    "date": "2026-11-13T00:00:00.000Z",
+    "url": "https://cdn02.wigroup.vn/baocaophantich/ar_27225_CTS_2026-11-17.pdf",
+    "category": "Báo cáo Vĩ mô",
+    "created_at": "2026-11-25T14:42:24.750Z"
   },
   {
     "id": 26824,
@@ -78,7 +105,7 @@
     "date": "2026-11-13T00:00:00.000Z",
     "url": "https://cdn02.wigroup.vn/baocaophantich/ar_27190_MBS_2026-11-13.pdf",
     "category": "Báo cáo Vĩ mô",
-    "created_at": "2026-11-16T13:00:31.731Z"
+    "created_at": "2026-11-25T14:42:24.750Z"
   },
   {
     "id": 26818,
@@ -87,7 +114,7 @@
     "date": "2026-11-13T00:00:00.000Z",
     "url": "https://cdn02.wigroup.vn/baocaophantich/ar_27178_GTJA_2026-11-13.pdf",
     "category": "Báo cáo Vĩ mô",
-    "created_at": "2026-11-16T13:00:31.731Z"
+    "created_at": "2026-11-25T14:42:24.750Z"
   },
   {
     "id": 26714,
@@ -96,7 +123,7 @@
     "date": "2026-11-11T00:00:00.000Z",
     "url": "https://cdn02.wigroup.vn/baocaophantich/ar_27061_CSI_2026-11-11.pdf",
     "category": "Báo cáo Vĩ mô",
-    "created_at": "2026-11-12T13:00:17.978Z"
+    "created_at": "2026-11-25T14:42:24.750Z"
   },
   {
     "id": 26746,
@@ -105,7 +132,7 @@
     "date": "2026-11-11T00:00:00.000Z",
     "url": "https://cdn02.wigroup.vn/baocaophantich/ar_27089_YUANTA_2026-11-11.pdf",
     "category": "Báo cáo Vĩ mô",
-    "created_at": "2026-11-12T13:00:17.978Z"
+    "created_at": "2026-11-25T14:42:24.750Z"
   },
   {
     "id": 26739,
@@ -114,7 +141,7 @@
     "date": "2026-11-11T00:00:00.000Z",
     "url": "https://cdn02.wigroup.vn/baocaophantich/ar_27074_VCBS_2026-11-11.pdf",
     "category": "Báo cáo Vĩ mô",
-    "created_at": "2026-11-12T13:00:17.978Z"
+    "created_at": "2026-11-25T14:42:24.750Z"
   },
   {
     "id": 26706,
@@ -123,7 +150,7 @@
     "date": "2026-11-10T00:00:00.000Z",
     "url": "https://cdn02.wigroup.vn/baocaophantich/ar_27057_ACBS_2026-11-10.pdf",
     "category": "Báo cáo Vĩ mô",
-    "created_at": "2026-11-12T13:00:17.978Z"
+    "created_at": "2026-11-25T14:42:24.750Z"
   },
   {
     "id": 26745,
@@ -132,7 +159,7 @@
     "date": "2026-11-10T00:00:00.000Z",
     "url": "https://cdn02.wigroup.vn/baocaophantich/ar_27080_VNDS_2026-11-10.pdf",
     "category": "Báo cáo Vĩ mô",
-    "created_at": "2026-11-12T13:00:17.978Z"
+    "created_at": "2026-11-25T14:42:24.750Z"
   },
   {
     "id": 26727,
@@ -141,7 +168,7 @@
     "date": "2026-11-10T00:00:00.000Z",
     "url": "https://cdn02.wigroup.vn/baocaophantich/ar_27069_PSI_2026-11-10.pdf",
     "category": "Báo cáo Vĩ mô",
-    "created_at": "2026-11-12T13:00:17.978Z"
+    "created_at": "2026-11-25T14:42:24.750Z"
   },
   {
     "id": 26738,
@@ -150,7 +177,7 @@
     "date": "2026-11-10T00:00:00.000Z",
     "url": "https://cdn02.wigroup.vn/baocaophantich/ar_27075_VCBS_2026-11-10.pdf",
     "category": "Báo cáo Vĩ mô",
-    "created_at": "2026-11-12T13:00:17.978Z"
+    "created_at": "2026-11-25T14:42:24.750Z"
   },
   {
     "id": 26693,
@@ -159,7 +186,7 @@
     "date": "2026-11-10T00:00:00.000Z",
     "url": "https://cdn02.wigroup.vn/baocaophantich/ar_27045_VFS_2026-11-10.pdf",
     "category": "Báo cáo Vĩ mô",
-    "created_at": "2026-11-12T13:00:17.978Z"
+    "created_at": "2026-11-25T14:42:24.750Z"
   },
   {
     "id": 26678,
@@ -168,7 +195,7 @@
     "date": "2026-11-10T00:00:00.000Z",
     "url": "https://cdn02.wigroup.vn/baocaophantich/ar_27020_KAFI_2026-11-10.pdf",
     "category": "Báo cáo Vĩ mô",
-    "created_at": "2026-11-12T13:00:17.978Z"
+    "created_at": "2026-11-25T14:42:24.750Z"
   },
   {
     "id": 26670,
@@ -177,7 +204,16 @@
     "date": "2026-11-10T00:00:00.000Z",
     "url": "https://cdn02.wigroup.vn/baocaophantich/ar_27013_AAS_2026-11-10.pdf",
     "category": "Báo cáo Vĩ mô",
-    "created_at": "2026-11-12T13:00:17.978Z"
+    "created_at": "2026-11-25T14:42:24.750Z"
+  },
+  {
+    "id": 26900,
+    "title": "Báo cáo Kinh tế Vĩ mô Việt Nam: Tháng 10/2026",
+    "source": "VinaCapital",
+    "date": "2026-11-09T00:00:00.000Z",
+    "url": "https://cdn02.wigroup.vn/baocaophantich/ar_27275_VinaCapital_2026-11-18.pdf",
+    "category": "Báo cáo Vĩ mô",
+    "created_at": "2026-11-25T14:42:24.750Z"
   },
   {
     "id": 26728,
@@ -186,7 +222,7 @@
     "date": "2026-11-09T00:00:00.000Z",
     "url": "https://cdn02.wigroup.vn/baocaophantich/ar_27068_SHS_2026-11-09.pdf",
     "category": "Báo cáo Vĩ mô",
-    "created_at": "2026-11-12T13:00:17.978Z"
+    "created_at": "2026-11-25T14:42:24.750Z"
   },
   {
     "id": 26736,
@@ -195,7 +231,7 @@
     "date": "2026-11-09T00:00:00.000Z",
     "url": "https://cdn02.wigroup.vn/baocaophantich/ar_27070_TPS_2026-11-11.pdf",
     "category": "Báo cáo Vĩ mô",
-    "created_at": "2026-11-12T13:00:17.978Z"
+    "created_at": "2026-11-25T14:42:24.750Z"
   },
   {
     "id": 26675,
@@ -204,7 +240,7 @@
     "date": "2026-11-09T00:00:00.000Z",
     "url": "https://cdn02.wigroup.vn/baocaophantich/ar_27016_BVSC_2026-11-09.pdf",
     "category": "Báo cáo Vĩ mô",
-    "created_at": "2026-11-12T13:00:17.978Z"
+    "created_at": "2026-11-25T14:42:24.750Z"
   },
   {
     "id": 26661,
@@ -213,7 +249,7 @@
     "date": "2026-11-09T00:00:00.000Z",
     "url": "https://cdn02.wigroup.vn/baocaophantich/ar_26992_OCBS_2026-11-09.pdf",
     "category": "Báo cáo Vĩ mô",
-    "created_at": "2026-11-12T13:00:17.978Z"
+    "created_at": "2026-11-25T14:42:24.750Z"
   },
   {
     "id": 26696,
@@ -258,7 +294,7 @@
     "date": "2026-11-06T00:00:00.000Z",
     "url": "https://cdn02.wigroup.vn/baocaophantich/ar_26956_MBS_2026-11-06.pdf",
     "category": "Báo cáo Vĩ mô",
-    "created_at": "2026-11-12T13:00:17.978Z"
+    "created_at": "2026-11-25T14:42:24.750Z"
   },
   {
     "id": 26539,

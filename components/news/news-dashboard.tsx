@@ -236,12 +236,12 @@ export function NewsDashboard({
     isFetchingDiscRef.current = true
     if (force) setIsRefreshing(true)
     try {
-      const res = await fetch(`/api/disclosures?limit=200${force ? '&refresh=true' : ''}`)
+      const res = await fetch(`/api/disclosures?limit=400${force ? '&refresh=true' : ''}`)
       if (res.ok) {
         const data = await res.json()
         if (data.data && Array.isArray(data.data)) {
           setDisclosures(data.data)
-          setLastUpdated(new Date())
+          setLastUpdated(new Date(data.asOf || Date.now()))
           hasFetchedDiscRef.current = true
         }
       }
@@ -477,23 +477,25 @@ export function NewsDashboard({
 
           {/* Right: Search Input & Filter Dropdown (WiData Style) */}
           <div className="flex items-center gap-2 sm:gap-3 shrink-0">
-            {/* Filter by Source dropdown */}
-            <div className="hidden sm:block">
-              <select
-                value={selectedSource}
-                onChange={(e) => setSelectedSource(e.target.value)}
-                className="h-7.5 rounded border border-[#232a36] bg-[#12161f] px-2.5 text-xs text-[#c9d1d9] outline-none transition-colors hover:border-[#384356] focus:border-[#3b82f6]"
-              >
-                <option value="all">Tất cả nguồn</option>
-                {availableSources
-                  .filter((s) => s !== 'all')
-                  .map((src) => (
-                    <option key={src} value={src}>
-                      {src}
-                    </option>
-                  ))}
-              </select>
-            </div>
+            {/* Filter by Source dropdown (chỉ hiển thị trên các tab tin tức RSS) */}
+            {activeTab !== 'cong-bo' && activeTab !== 'giao-dich-noi-bo' && (
+              <div className="hidden sm:block">
+                <select
+                  value={selectedSource}
+                  onChange={(e) => setSelectedSource(e.target.value)}
+                  className="h-7.5 rounded border border-[#232a36] bg-[#12161f] px-2.5 text-xs text-[#c9d1d9] outline-none transition-colors hover:border-[#384356] focus:border-[#3b82f6]"
+                >
+                  <option value="all">Tất cả nguồn</option>
+                  {availableSources
+                    .filter((s) => s !== 'all')
+                    .map((src) => (
+                      <option key={src} value={src}>
+                        {src}
+                      </option>
+                    ))}
+                </select>
+              </div>
+            )}
 
             {/* Search Box */}
             <div className="relative w-28 sm:w-64">
@@ -580,23 +582,46 @@ export function NewsDashboard({
                 <span>Watchlist ({userWatchlist.length} mã)</span>
               </button>
 
-              {/* 2. Nút Tin nhạy cảm giá (khi ở tab công bố) */}
+              {/* 2. Nút Tin nhạy cảm giá & bộ lọc 3 sàn (khi ở tab công bố) */}
               {activeTab === 'cong-bo' && (
-                <button
-                  type="button"
-                  onClick={() => setDiscImportantOnly(!discImportantOnly)}
-                  className={cn(
-                    'rounded-lg px-2.5 py-1.5 text-xs font-semibold transition-all flex items-center gap-1 shrink-0 border cursor-pointer',
-                    discImportantOnly
-                      ? 'bg-amber-500 text-black border-amber-400 font-bold shadow'
-                      : 'bg-amber-500/10 text-amber-400 hover:bg-amber-500/20 border-amber-500/30'
-                  )}
-                  title="Lọc các văn bản công bố nhạy cảm với biến động giá cổ phiếu"
-                >
-                  <span>⚡</span>
-                  <span className="hidden sm:inline">Tin nhạy cảm giá</span>
-                  <span className="sm:hidden">Nhạy cảm</span>
-                </button>
+                <>
+                  <button
+                    type="button"
+                    onClick={() => setDiscImportantOnly(!discImportantOnly)}
+                    className={cn(
+                      'rounded-lg px-2.5 py-1.5 text-xs font-semibold transition-all flex items-center gap-1 shrink-0 border cursor-pointer',
+                      discImportantOnly
+                        ? 'bg-amber-500 text-black border-amber-400 font-bold shadow'
+                        : 'bg-amber-500/10 text-amber-400 hover:bg-amber-500/20 border-amber-500/30'
+                    )}
+                    title="Lọc các văn bản công bố nhạy cảm với biến động giá cổ phiếu"
+                  >
+                    <span>⚡</span>
+                    <span className="hidden sm:inline">Tin nhạy cảm giá</span>
+                    <span className="sm:hidden">Nhạy cảm</span>
+                  </button>
+
+                  <div className="flex items-center rounded-lg border border-[#232a36] bg-[#12161f] p-0.5 shrink-0">
+                    {(['ALL', 'HOSE', 'HNX', 'UPCOM'] as const).map((ex) => (
+                      <button
+                        key={ex}
+                        type="button"
+                        onClick={() => {
+                          setDiscExchange(ex)
+                          setVisibleCount(40)
+                        }}
+                        className={cn(
+                          'rounded px-2 py-1 text-[11px] font-semibold transition-colors cursor-pointer',
+                          discExchange === ex
+                            ? 'bg-[#1e293b] text-[#38bdf8]'
+                            : 'text-[#8b949e] hover:text-white'
+                        )}
+                      >
+                        {ex === 'ALL' ? '3 sàn' : ex}
+                      </button>
+                    ))}
+                  </div>
+                </>
               )}
 
               {/* Link thêm nhanh mã nếu danh mục trống */}
@@ -698,9 +723,10 @@ export function NewsDashboard({
           ) : (
             <div className="divide-y divide-[#141820]">
               {filteredDisclosures.slice(0, visibleCount).map((item, idx) => {
-                const priceInfo = stockPriceMap[item.symbol]
+                const sym = (item.symbol || '').toUpperCase()
+                const priceInfo = stockPriceMap[sym]
                 const isImportant = Boolean(item.is_important)
-                const inWatchlist = userWatchlist.includes(item.symbol.toUpperCase())
+                const inWatchlist = userWatchlist.includes(sym)
 
                 return (
                   <div

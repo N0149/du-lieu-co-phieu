@@ -2,6 +2,8 @@
 // lib/mcp/server.ts — Remote MCP Server for Google Gemini, Claude & ChatGPT
 // ─────────────────────────────────────────────────────────────────────────────
 
+import fs from 'node:fs'
+import path from 'node:path'
 import { McpServer } from '@modelcontextprotocol/sdk/server/mcp.js'
 import { z } from 'zod'
 import { buildStockAiBundle } from '@/lib/ai-bundle-service'
@@ -449,21 +451,21 @@ export function createDulieudautuMcpServer() {
     }
   )
 
-  // 4. Tool: Tra cứu Sự kiện Doanh nghiệp, Lịch Cổ tức & Giao dịch Nội bộ
+  // 4. Tool: Tra cứu Sự kiện Doanh nghiệp, Lịch Cổ tức, Hàng hóa & Xuất nhập khẩu
   server.tool(
     'su_kien_va_cong_bo_thong_tin',
-    'Tra cứu công bố thông tin và sự kiện doanh nghiệp niêm yết mới nhất: Lịch chi trả cổ tức (tiền mặt & cổ phiếu, ngày giao dịch không hưởng quyền - GDKHQ), Giao dịch của Lãnh đạo & Cổ đông lớn, Nghị quyết ĐHĐCĐ & HĐQT, Thông báo cảnh báo / diện kiểm soát, và Danh sách các doanh nghiệp đã phát hành Báo Cáo Thường Niên bóc tách.',
+    'Tra cứu công bố thông tin, sự kiện doanh nghiệp niêm yết, danh mục Báo Cáo Thường Niên, giá cả hàng hóa thế giới (Dầu Brent, WTI, Thép, Cao su, Vàng, Khí tự nhiên, Phân bón Urea, Cước tàu BDI/WCI), và số liệu thống kê xuất nhập khẩu từ Tổng cục Hải quan.',
     {
       symbol: z
         .string()
         .min(3)
         .max(5)
         .optional()
-        .describe('Mã cổ phiếu cần tra cứu (ví dụ: HPG, VNM, MWG, VHC). Để trống nếu muốn xem sự kiện toàn thị trường.'),
+        .describe('Mã cổ phiếu cần tra cứu (ví dụ: HPG, VNM, MWG, VHC). Để trống nếu muốn xem sự kiện hoặc dữ liệu vĩ mô toàn thị trường.'),
       type: z
-        .enum(['TAT_CA', 'CO_TUC', 'GIAO_DICH_NOI_BO', 'DHDCD', 'NGHI_QUYET_HDQT', 'CANH_BAO_KIEM_SOAT', 'BCTN'])
+        .enum(['TAT_CA', 'CO_TUC', 'GIAO_DICH_NOI_BO', 'DHDCD', 'NGHI_QUYET_HDQT', 'CANH_BAO_KIEM_SOAT', 'BCTN', 'HANG_HOA', 'XUAT_NHAP_KHAU'])
         .optional()
-        .describe('Loại sự kiện cần lọc: "TAT_CA" (mặc định), "CO_TUC" (Cổ tức tiền mặt/cổ phiếu, GDKHQ), "GIAO_DICH_NOI_BO" (Lãnh đạo & người có liên quan mua/bán), "DHDCD" (Đại hội cổ đông), "NGHI_QUYET_HDQT" (Nghị quyết HĐQT), "CANH_BAO_KIEM_SOAT" (Cảnh báo, đình chỉ, kiểm soát), "BCTN" (Danh sách các doanh nghiệp đã có Báo Cáo Thường Niên bóc tách)'),
+        .describe('Loại sự kiện cần lọc: "TAT_CA" (mặc định), "CO_TUC" (Cổ tức tiền mặt/cổ phiếu, GDKHQ), "GIAO_DICH_NOI_BO" (Lãnh đạo & người có liên quan mua/bán), "DHDCD" (Đại hội cổ đông), "NGHI_QUYET_HDQT" (Nghị quyết HĐQT), "CANH_BAO_KIEM_SOAT" (Cảnh báo, kiểm soát), "BCTN" (Báo Cáo Thường Niên), "HANG_HOA" (Giá cả hàng hóa thế giới & cước vận tải biển), "XUAT_NHAP_KHAU" (Thống kê xuất nhập khẩu từ Tổng cục Hải quan)'),
       limit: z
         .number()
         .optional()
@@ -471,6 +473,119 @@ export function createDulieudautuMcpServer() {
     },
     async ({ symbol, type = 'TAT_CA', limit = 15 }) => {
       try {
+        // Xử lý tra cứu giá cả hàng hóa thế giới & cước vận tải biển
+        if (type === 'HANG_HOA') {
+          try {
+            const p = path.join(process.cwd(), 'data', 'world_market_snapshot.json')
+            const data = fs.existsSync(p) ? JSON.parse(fs.readFileSync(p, 'utf-8')) : {}
+            const coms = data.commodity || []
+            const rows = coms.map((c: any) => `| **${c.name || c.code}** | ${c.price} ${c.market || ''} | ${c.change || ''} (${c.percent || ''}) | ${c.date || ''} |`)
+
+            const fp = path.join(process.cwd(), 'data', 'maritime', 'freight_rates.json')
+            let freightRows: string[] = []
+            if (fs.existsSync(fp)) {
+              const fdata = JSON.parse(fs.readFileSync(fp, 'utf-8'))
+              const indices = fdata.indices || {}
+              freightRows = Object.values(indices).map((ind: any) => {
+                const chg = ind.change_val > 0 ? `+${ind.change_val}` : String(ind.change_val)
+                return `| **${ind.name} (${ind.symbol})** | ${ind.latest_value} ${ind.unit || 'pts'} | ${chg} (${ind.change_pct}%) | ${ind.latest_date} |`
+              })
+            }
+
+            return {
+              content: [
+                {
+                  type: 'text',
+                  text: [
+                    `### 🌐 BẢNG GIÁ HÀNG HÓA THẾ GIỚI & CƯỚC VẬN TẢI BIỂN (CẬP NHẬT TRỰC TUYẾN):`,
+                    `| Mặt hàng / Chỉ số | Giá thị trường | Biến động | Cập nhật |`,
+                    `|:---|:---:|:---:|:---:|`,
+                    ...rows,
+                    ...freightRows,
+                    `\n*Nguồn dữ liệu: WiData, Bloomberg, Baltic Exchange, TradingEconomics*`,
+                  ].join('\n'),
+                },
+              ],
+            }
+          } catch (err) {
+            return {
+              isError: true,
+              content: [{ type: 'text', text: `Lỗi tải dữ liệu giá hàng hóa: ${String(err)}` }],
+            }
+          }
+        }
+
+        // Xử lý tra cứu số liệu xuất nhập khẩu Tổng cục Hải quan
+        if (type === 'XUAT_NHAP_KHAU') {
+          try {
+            if (symbol && symbol.trim()) {
+              const sym = symbol.toUpperCase().trim()
+              const profPath = path.join(process.cwd(), 'data', 'customs_driver_profiles.json')
+              if (fs.existsSync(profPath)) {
+                const profiles = JSON.parse(fs.readFileSync(profPath, 'utf-8'))
+                const prof = profiles[sym]
+                if (prof) {
+                  const segs = (prof.segments || [])
+                    .map((s: any) => `- **${s.ten}**: ${s.chitiet} *(${s.vaitro})*`)
+                    .join('\n')
+                  const mkts = (prof.markets || []).map((m: any) => `- ${m.replace(/<[^>]+>/g, '')}`).join('\n')
+                  const drivers = (prof.drivers || []).map((d: any) => `- ${d.replace(/<[^>]+>/g, '')}`).join('\n')
+
+                  return {
+                    content: [
+                      {
+                        type: 'text',
+                        text: [
+                          `### 🚢 HỒ SƠ XUẤT NHẬP KHẨU HẢI QUAN & THỊ TRƯỜNG MÃ ${sym} (${prof.name}):`,
+                          `- **Ngành hàng**: ${prof.nganh} | **Thị trường chủ lực**: ${prof.main_market}`,
+                          segs ? `\n**Các mảng sản phẩm cốt lõi:**\n${segs}` : '',
+                          mkts ? `\n**Thị trường trọng điểm:**\n${mkts}` : '',
+                          drivers ? `\n**Động lực thương mại & Thuế quan:**\n${drivers}` : '',
+                          `\n*Nguồn dữ liệu: Tổng cục Hải quan & Báo cáo thường niên bóc tách*`,
+                        ].join('\n'),
+                      },
+                    ],
+                  }
+                }
+              }
+            }
+
+            // Mặc định hiển thị cán cân thương mại vĩ mô mới nhất
+            const tbPath = path.join(process.cwd(), 'data', 'customs_trade_balance.json')
+            if (fs.existsSync(tbPath)) {
+              const tb = JSON.parse(fs.readFileSync(tbPath, 'utf-8'))
+              const latest = tb.slice(-4).reverse()
+              const rows = latest.map((it: any) => {
+                const exp = (it.export / 1e9).toFixed(2)
+                const imp = (it.import / 1e9).toFixed(2)
+                const bal = (it.balance / 1e9).toFixed(2)
+                const balFmt = Number(bal) > 0 ? `+${bal}` : bal
+                return `| **${it.label}** | ${exp} tỷ USD | ${imp} tỷ USD | ${balFmt} tỷ USD |`
+              })
+
+              return {
+                content: [
+                  {
+                    type: 'text',
+                    text: [
+                      `### 🚢 THỐNG KÊ CÁN CÂN XUẤT NHẬP KHẨU VIỆT NAM (TỔNG CỤC HẢI QUAN):`,
+                      `| Kỳ thống kê | Kim ngạch XK | Kim ngạch NK | Cán cân XNK |`,
+                      `|:---|:---:|:---:|:---:|`,
+                      ...rows,
+                      `\n> **Gợi ý**: Bạn có thể truyền thêm mã cổ phiếu (ví dụ: \`symbol: "VHC"\` hoặc \`"HPG"\`) để xem bóc tách chi tiết mặt hàng và thị trường xuất khẩu.`,
+                    ].join('\n'),
+                  },
+                ],
+              }
+            }
+          } catch (err) {
+            return {
+              isError: true,
+              content: [{ type: 'text', text: `Lỗi tải dữ liệu xuất nhập khẩu: ${String(err)}` }],
+            }
+          }
+        }
+
         // Xử lý riêng khi người dùng muốn tra cứu danh sách Báo Cáo Thường Niên
         if (type === 'BCTN') {
           if (symbol && symbol.trim()) {

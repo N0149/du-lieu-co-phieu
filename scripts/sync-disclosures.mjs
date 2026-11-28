@@ -239,11 +239,19 @@ export function classifyDisclosure(title) {
 export function extractTickerFromTitle(title, fallback = null) {
   if (fallback) return fallback.toUpperCase();
   if (!title) return null;
-  const match = title.match(/^([A-Za-z0-9]{3,5})\s*[:\-\.]/);
+  const trimmed = title.trim();
+  const match = trimmed.match(/^([A-Za-z0-9]{3,5})\s*[:\-–\.]/);
   if (match) {
     const candidate = match[1].toUpperCase();
     if (stockExchanges[candidate] || stockNames[candidate] || candidate.length === 3) {
       return candidate;
+    }
+  }
+  const bondMatch = trimmed.match(/^([A-Za-z]{3})\d{5,7}\s*[:\-–]/);
+  if (bondMatch) {
+    const parent = bondMatch[1].toUpperCase();
+    if (stockExchanges[parent] || stockNames[parent]) {
+      return parent;
     }
   }
   return null;
@@ -432,21 +440,45 @@ async function fetchVietcapNews(ticker, page = 0, size = 50) {
 }
 
 /**
- * Đồng bộ luồng toàn thị trường (cả HOSE, HNX, UPCoM)
+ * Đồng bộ luồng toàn thị trường (cả HOSE, HNX, UPCoM) theo lô song song để tăng tốc
  */
-async function syncMarketDisclosures(db, pages = 4) {
+async function syncMarketDisclosures(db, pages = 15) {
   console.log(`\n=== ĐỒNG BỘ LUỒNG CÔNG BỐ THÔNG TIN 3 SÀN (HOSE · HNX · UPCOM) ===`);
   let totalSaved = 0;
+  const batchSize = 5;
 
-  for (let page = 1; page <= pages; page++) {
-    try {
-      const records = await fetchCafefDisclosures(page, 50);
-      const saved = insertDisclosures(db, records);
-      totalSaved += saved;
-      console.log(`  -> Trang ${page}: Nạp ${saved}/${records.length} văn bản công bố mới`);
-      await new Promise((r) => setTimeout(r, 150));
-    } catch (err) {
-      console.error(`  [!] Lỗi cào trang ${page}:`, err.message);
+  for (let start = 1; start <= pages; start += batchSize) {
+    const batchPages = [];
+    for (let p = start; p < start + batchSize && p <= pages; p++) {
+      batchPages.push(p);
+    }
+
+    const results = await Promise.allSettled(
+      batchPages.map(async (page) => ({
+        page,
+        records: await fetchCafefDisclosures(page, 50),
+      }))
+    );
+
+    let emptyHits = 0;
+    for (const r of results) {
+      if (r.status === "fulfilled") {
+        const { page, records } = r.value;
+        if (!records || records.length === 0) {
+          emptyHits++;
+          continue;
+        }
+        const saved = insertDisclosures(db, records);
+        totalSaved += saved;
+        console.log(`  -> Trang ${page}: Nạp ${saved}/${records.length} văn bản công bố mới`);
+      } else {
+        console.error(`  [!] Lỗi cào trang:`, r.reason?.message || r.reason);
+      }
+    }
+
+    if (emptyHits === batchPages.length) break;
+    if (start + batchSize <= pages) {
+      await new Promise((r) => setTimeout(r, 100));
     }
   }
 
@@ -500,7 +532,7 @@ async function syncTickersDisclosures(db, tickers) {
 /**
  * Xuất file JSON Snapshot nhanh phục vụ Website
  */
-export function exportSnapshot(db, limit = 200) {
+export function exportSnapshot(db, limit = 500) {
   const rows = db.prepare(`
     SELECT id, symbol, exchange, company_name, title, doc_type, doc_type_label,
            published_at, file_url, source, is_important
@@ -526,7 +558,7 @@ async function main() {
   const isWatchlist = args.includes("--watchlist");
   const isDaemon = args.includes("--daemon");
 
-  const marketPages = pagesArg ? parseInt(pagesArg, 10) : 4;
+  const marketPages = pagesArg ? parseInt(pagesArg, 10) : 15;
 
   if (symbolArg) {
     await syncTickersDisclosures(db, [symbolArg]);

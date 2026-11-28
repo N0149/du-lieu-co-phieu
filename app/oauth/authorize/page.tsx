@@ -97,7 +97,7 @@ export default async function AuthorizePage({ searchParams }: AuthorizePageProps
             </li>
             <li className="flex items-start gap-2">
               <CheckCircle2 className="size-4 shrink-0 text-emerald-400 mt-0.5" />
-              <span>Bóc tách Thuyết minh CAPEX, cơ cấu nợ vay & áp lực chi phí lãi vay</span>
+              <span>Thuyết minh BCTC & Bóc tách toàn văn Báo Cáo Thường Niên (BCTN 2025/2026)</span>
             </li>
             <li className="flex items-start gap-2">
               <CheckCircle2 className="size-4 shrink-0 text-emerald-400 mt-0.5" />
@@ -105,15 +105,28 @@ export default async function AuthorizePage({ searchParams }: AuthorizePageProps
             </li>
             <li className="flex items-start gap-2">
               <CheckCircle2 className="size-4 shrink-0 text-emerald-400 mt-0.5" />
-              <span>Định giá RNAV tài sản ngầm, giá mục tiêu CTCK & upside</span>
+              <span>Định giá RNAV tài sản ngầm, giá mục tiêu CTCK & tiềm năng upside</span>
+            </li>
+            <li className="flex items-start gap-2">
+              <CheckCircle2 className="size-4 shrink-0 text-emerald-400 mt-0.5" />
+              <span>Dữ liệu giá cả hàng hóa thế giới & trong nước (Thép, Cao su, Dầu khí, Hóa chất, Cước tàu...)</span>
+            </li>
+            <li className="flex items-start gap-2">
+              <CheckCircle2 className="size-4 shrink-0 text-emerald-400 mt-0.5" />
+              <span>Dữ liệu thống kê ngành & vĩ mô từ tổ chức uy tín (Tổng cục Hải quan XNK, GSO, VPA, VAMA...)</span>
             </li>
           </ul>
         </div>
 
         {/* Security assurance */}
-        <div className="flex items-center gap-2 rounded-lg bg-emerald-500/10 p-2.5 text-[11px] text-emerald-300 border border-emerald-500/20">
-          <ShieldCheck className="size-4 shrink-0 text-emerald-400" />
-          <span>Kết nối an toàn chuẩn OAuth 2.0 PKCE. Bạn có thể ngắt kết nối bất cứ lúc nào trong cài đặt.</span>
+        <div className="rounded-lg bg-emerald-500/10 p-2.5 text-[11px] text-emerald-300 border border-emerald-500/20 space-y-1">
+          <div className="flex items-center gap-1.5 font-semibold text-emerald-400">
+            <ShieldCheck className="size-4 shrink-0" />
+            <span>Cam kết CHỈ ĐỌC (Read-Only) an toàn 100%</span>
+          </div>
+          <p className="text-[10.5px] text-[#cbd5e1] leading-relaxed">
+            Hệ thống chỉ cung cấp dữ liệu tài chính công khai cho Trợ lý AI. Ứng dụng <strong>tuyệt đối không can thiệp, không ghi đè và không thể xóa</strong> bất kỳ dữ liệu cá nhân nào của bạn. (Chuẩn bảo mật OAuth 2.0 PKCE).
+          </p>
         </div>
 
         {/* Action Form */}

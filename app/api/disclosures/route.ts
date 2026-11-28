@@ -3,6 +3,7 @@ import {
   getDisclosuresBySymbol,
   getLiveMarketDisclosures,
   fetchLiveDisclosuresForSymbol,
+  getLiveDisclosuresLastUpdated,
 } from '@/lib/disclosures'
 
 export const dynamic = 'force-dynamic'
@@ -16,7 +17,7 @@ export async function GET(request: NextRequest) {
     const importantOnly = searchParams.get('important') === 'true' || searchParams.get('important') === '1'
     const refresh = searchParams.get('refresh') === 'true' || searchParams.get('refresh') === '1'
     const q = searchParams.get('q')?.toLowerCase() || ''
-    const limit = Math.min(parseInt(searchParams.get('limit') || '50', 10), 200)
+    const limit = Math.min(Math.max(parseInt(searchParams.get('limit') || '50', 10) || 50, 1), 500)
 
     let items: any[] = []
     if (symbol) {
@@ -42,11 +43,12 @@ export async function GET(request: NextRequest) {
       )
     }
 
+    const lastUpdatedMs = getLiveDisclosuresLastUpdated()
     return NextResponse.json({
       success: true,
       count: items.length,
       data: items,
-      asOf: new Date().toISOString(),
+      asOf: new Date(lastUpdatedMs || Date.now()).toISOString(),
     })
   } catch (err: any) {
     console.error('[API /api/disclosures] Error:', err)

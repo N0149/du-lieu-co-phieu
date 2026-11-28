@@ -1,12 +1,21 @@
 [
   {
-    "id": 26928,
-    "title": "Báo cáo chiến lược Q4/2026: Định giá rẻ đến khi nào?",
-    "source": "DSC",
-    "date": "2026-11-20T00:00:00.000Z",
-    "url": "https://cdn02.wigroup.vn/baocaophantich/ar_27342_DSC_2026-11-20.pdf",
+    "id": 26974,
+    "title": "Thuế 301 \"dư thừa năng lực\": Việt Nam chịu trần cao nhất",
+    "source": "AAS",
+    "date": "2026-11-26T00:00:00.000Z",
+    "url": "https://cdn02.wigroup.vn/baocaophantich/ar_27358_AAS_2026-11-26.pdf",
     "category": "Báo cáo Chiến lược",
-    "created_at": "2026-11-24T00:32:41.154Z"
+    "created_at": "2026-11-26T13:00:40.077Z"
+  },
+  {
+    "id": 26971,
+    "title": "Cập nhật diễn biến dòng tiền tháng 10/2026: Dòng vốn ETF toàn cầu bứt tốc, khối ngoại gia tăng bán ròng tại Việt Nam",
+    "source": "VNDS",
+    "date": "2026-11-25T00:00:00.000Z",
+    "url": "https://cdn02.wigroup.vn/baocaophantich/ar_27352_VNDS_2026-11-25.pdf",
+    "category": "Báo cáo Chiến lược",
+    "created_at": "2026-11-26T13:00:40.077Z"
   },
   {
     "id": 26929,
@@ -15,7 +24,16 @@
     "date": "2026-11-23T00:00:00.000Z",
     "url": "https://cdn02.wigroup.vn/baocaophantich/ar_27327_OCBS_2026-11-23.pdf",
     "category": "Báo cáo Chiến lược",
-    "created_at": "2026-11-24T00:32:41.154Z"
+    "created_at": "2026-11-25T14:42:26.509Z"
+  },
+  {
+    "id": 26928,
+    "title": "Báo cáo chiến lược Q4/2026: Định giá rẻ đến khi nào?",
+    "source": "DSC",
+    "date": "2026-11-20T00:00:00.000Z",
+    "url": "https://cdn02.wigroup.vn/baocaophantich/ar_27342_DSC_2026-11-20.pdf",
+    "category": "Báo cáo Chiến lược",
+    "created_at": "2026-11-25T14:42:26.509Z"
   },
   {
     "id": 26913,
@@ -24,7 +42,7 @@
     "date": "2026-11-20T00:00:00.000Z",
     "url": "https://cdn02.wigroup.vn/baocaophantich/ar_27294_KAFI_2026-11-20.pdf",
     "category": "Báo cáo Chiến lược",
-    "created_at": "2026-11-20T13:00:26.319Z"
+    "created_at": "2026-11-25T14:42:26.510Z"
   },
   {
     "id": 26902,
@@ -33,16 +51,7 @@
     "date": "2026-11-17T00:00:00.000Z",
     "url": "https://cdn02.wigroup.vn/baocaophantich/ar_27279_VNDS_2026-11-17.pdf",
     "category": "Báo cáo Chiến lược",
-    "created_at": "2026-11-19T13:00:53.278Z"
-  },
-  {
-    "id": 26874,
-    "title": "Giữ nhịp cân bằng, sẵn sàng trước sóng gió",
-    "source": "OCBS",
-    "date": "2026-11-15T00:00:00.000Z",
-    "url": "https://cdn02.wigroup.vn/baocaophantich/ar_27200_OCBS_2026-11-15.pdf",
-    "category": "Báo cáo Chiến lược",
-    "created_at": "2026-11-18T21:03:45.408Z"
+    "created_at": "2026-11-25T14:42:26.510Z"
   },
   {
     "id": 26863,
@@ -51,7 +60,7 @@
     "date": "2026-11-17T00:00:00.000Z",
     "url": "https://cdn02.wigroup.vn/baocaophantich/ar_27240_AAS_2026-11-18.pdf",
     "category": "Báo cáo Chiến lược",
-    "created_at": "2026-11-18T21:03:45.408Z"
+    "created_at": "2026-11-25T14:42:26.510Z"
   },
   {
     "id": 26836,
@@ -60,7 +69,16 @@
     "date": "2026-11-16T00:00:00.000Z",
     "url": "https://cdn02.wigroup.vn/baocaophantich/ar_27203_AAS_2026-11-16.pdf",
     "category": "Báo cáo Chiến lược",
-    "created_at": "2026-11-17T21:29:03.848Z"
+    "created_at": "2026-11-25T14:42:26.510Z"
+  },
+  {
+    "id": 26874,
+    "title": "Giữ nhịp cân bằng, sẵn sàng trước sóng gió",
+    "source": "OCBS",
+    "date": "2026-11-15T00:00:00.000Z",
+    "url": "https://cdn02.wigroup.vn/baocaophantich/ar_27200_OCBS_2026-11-15.pdf",
+    "category": "Báo cáo Chiến lược",
+    "created_at": "2026-11-25T14:42:26.510Z"
   },
   {
     "id": 26815,
@@ -69,7 +87,7 @@
     "date": "2026-11-12T00:00:00.000Z",
     "url": "https://cdn02.wigroup.vn/baocaophantich/ar_27180_CTS_2026-11-13.pdf",
     "category": "Báo cáo Chiến lược",
-    "created_at": "2026-11-16T13:00:33.698Z"
+    "created_at": "2026-11-25T14:42:26.510Z"
   },
   {
     "id": 26765,
@@ -78,7 +96,7 @@
     "date": "2026-11-12T00:00:00.000Z",
     "url": "https://cdn02.wigroup.vn/baocaophantich/ar_27131_KIS_2026-11-12.pdf",
     "category": "Báo cáo Chiến lược",
-    "created_at": "2026-11-14T13:00:24.982Z"
+    "created_at": "2026-11-25T14:42:26.510Z"
   },
   {
     "id": 26766,
@@ -87,7 +105,7 @@
     "date": "2026-11-12T00:00:00.000Z",
     "url": "https://cdn02.wigroup.vn/baocaophantich/ar_27139_PHS_2026-11-12.pdf",
     "category": "Báo cáo Chiến lược",
-    "created_at": "2026-11-14T13:00:24.982Z"
+    "created_at": "2026-11-25T14:42:26.510Z"
   },
   {
     "id": 26764,
@@ -96,7 +114,7 @@
     "date": "2026-11-11T00:00:00.000Z",
     "url": "https://cdn02.wigroup.vn/baocaophantich/ar_27125_FPTS_2026-11-11.pdf",
     "category": "Báo cáo Chiến lược",
-    "created_at": "2026-11-14T13:00:24.982Z"
+    "created_at": "2026-11-25T14:42:26.510Z"
   },
   {
     "id": 26744,
@@ -105,7 +123,7 @@
     "date": "2026-11-10T00:00:00.000Z",
     "url": "https://cdn02.wigroup.vn/baocaophantich/ar_27081_VNDS_2026-11-10.pdf",
     "category": "Báo cáo Chiến lược",
-    "created_at": "2026-11-14T13:00:24.982Z"
+    "created_at": "2026-11-25T14:42:26.510Z"
   },
   {
     "id": 26682,
@@ -114,7 +132,7 @@
     "date": "2026-11-10T00:00:00.000Z",
     "url": "https://cdn02.wigroup.vn/baocaophantich/ar_27025_PSI_2026-11-10.pdf",
     "category": "Báo cáo Chiến lược",
-    "created_at": "2026-11-14T13:00:24.982Z"
+    "created_at": "2026-11-25T14:42:26.510Z"
   },
   {
     "id": 26705,
@@ -123,7 +141,7 @@
     "date": "2026-11-09T00:00:00.000Z",
     "url": "https://cdn02.wigroup.vn/baocaophantich/ar_27056_ABS_2026-11-10.pdf",
     "category": "Báo cáo Chiến lược",
-    "created_at": "2026-11-14T13:00:24.983Z"
+    "created_at": "2026-11-25T14:42:26.510Z"
   },
   {
     "id": 26743,
@@ -132,7 +150,7 @@
     "date": "2026-11-09T00:00:00.000Z",
     "url": "https://cdn02.wigroup.vn/baocaophantich/ar_27078_VIKKIBANKS_2026-11-09.pdf",
     "category": "Báo cáo Chiến lược",
-    "created_at": "2026-11-14T13:00:24.983Z"
+    "created_at": "2026-11-25T14:42:26.510Z"
   },
   {
     "id": 26676,
@@ -141,7 +159,7 @@
     "date": "2026-11-09T00:00:00.000Z",
     "url": "https://cdn02.wigroup.vn/baocaophantich/ar_27015_BVSC_2026-11-09.pdf",
     "category": "Báo cáo Chiến lược",
-    "created_at": "2026-11-14T13:00:24.983Z"
+    "created_at": "2026-11-25T14:42:26.510Z"
   },
   {
     "id": 26699,
@@ -150,7 +168,7 @@
     "date": "2026-11-09T00:00:00.000Z",
     "url": "https://cdn02.wigroup.vn/baocaophantich/ar_27044_YUANTA_2026-11-09.pdf",
     "category": "Báo cáo Chiến lược",
-    "created_at": "2026-11-14T13:00:24.983Z"
+    "created_at": "2026-11-25T14:42:26.510Z"
   },
   {
     "id": 26683,
@@ -159,7 +177,7 @@
     "date": "2026-11-09T00:00:00.000Z",
     "url": "https://cdn02.wigroup.vn/baocaophantich/ar_27024_SHS_2026-11-09.pdf",
     "category": "Báo cáo Chiến lược",
-    "created_at": "2026-11-14T13:00:24.983Z"
+    "created_at": "2026-11-25T14:42:26.510Z"
   },
   {
     "id": 26488,
@@ -168,7 +186,7 @@
     "date": "2026-11-06T00:00:00.000Z",
     "url": "https://cdn02.wigroup.vn/baocaophantich/ar_26924_GTJA_2026-11-06.pdf",
     "category": "Báo cáo Chiến lược",
-    "created_at": "2026-11-14T13:00:24.983Z"
+    "created_at": "2026-11-25T14:42:26.510Z"
   },
   {
     "id": 26489,
@@ -177,7 +195,7 @@
     "date": "2026-11-06T00:00:00.000Z",
     "url": null,
     "category": "Báo cáo Chiến lược",
-    "created_at": "2026-11-14T13:00:24.983Z"
+    "created_at": "2026-11-25T14:42:26.510Z"
   },
   {
     "id": 26698,
@@ -186,7 +204,7 @@
     "date": "2026-11-05T00:00:00.000Z",
     "url": "https://cdn02.wigroup.vn/baocaophantich/ar_26952_VIX_2026-11-05.pdf",
     "category": "Báo cáo Chiến lược",
-    "created_at": "2026-11-14T13:00:24.983Z"
+    "created_at": "2026-11-25T14:42:26.510Z"
   },
   {
     "id": 26458,
@@ -195,7 +213,7 @@
     "date": "2026-11-05T00:00:00.000Z",
     "url": "https://cdn02.wigroup.vn/baocaophantich/ar_26877_Vietcap_2026-11-05.pdf",
     "category": "Báo cáo Chiến lược",
-    "created_at": "2026-11-14T13:00:24.983Z"
+    "created_at": "2026-11-25T14:42:26.510Z"
   },
   {
     "id": 26441,
@@ -204,7 +222,7 @@
     "date": "2026-11-05T00:00:00.000Z",
     "url": "https://cdn02.wigroup.vn/baocaophantich/ar_26857_MAS_2026-11-05.pdf",
     "category": "Báo cáo Chiến lược",
-    "created_at": "2026-11-14T13:00:24.983Z"
+    "created_at": "2026-11-25T14:42:26.510Z"
   },
   {
     "id": 26453,
@@ -213,7 +231,7 @@
     "date": "2026-11-04T00:00:00.000Z",
     "url": "https://cdn02.wigroup.vn/baocaophantich/ar_26871_TPS_2026-11-04.pdf",
     "category": "Báo cáo Chiến lược",
-    "created_at": "2026-11-14T13:00:24.983Z"
+    "created_at": "2026-11-25T14:42:26.510Z"
   },
   {
     "id": 26457,
@@ -222,7 +240,7 @@
     "date": "2026-11-03T00:00:00.000Z",
     "url": "https://cdn02.wigroup.vn/baocaophantich/ar_26878_Vietcap_2026-11-03.pdf",
     "category": "Báo cáo Chiến lược",
-    "created_at": "2026-11-14T13:00:24.983Z"
+    "created_at": "2026-11-25T14:42:26.510Z"
   },
   {
     "id": 26375,

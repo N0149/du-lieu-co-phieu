@@ -45,6 +45,8 @@ const TRACKED_DATA_TARGETS = [
   'data/evaluation_cache/',
   'data/company_profiles.db',
   'data/funds_snapshot.json',
+  'data/disclosures_snapshot.json',
+  'data/corporate_disclosures.db',
   'lib/funds-data.ts',
 ];
 
@@ -190,6 +192,9 @@ async function main() {
 
   // Bước 8: Dữ liệu Quỹ Mở Fmarket (70 quỹ)
   runCommand('node', ['scripts/sync-funds.mjs'], 'Đồng bộ Dữ liệu Quỹ Mở Fmarket (70 quỹ)');
+
+  // Bước 9: Công bố thông tin 3 sàn (HOSE, HNX, UPCoM)
+  runCommand('node', ['scripts/sync-disclosures.mjs'], 'Đồng bộ Công bố thông tin 3 sàn (HOSE, HNX, UPCoM)');
 
   // Cập nhật mốc thời gian thành công
   try {

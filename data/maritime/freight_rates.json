@@ -1,6 +1,6 @@
 {
   "status": "success",
-  "updated_at": "2026-11-22T08:01:45.661803",
+  "updated_at": "2026-11-28T07:39:33.129299",
   "indices": {
     "BDI": {
       "symbol": "BDI",
@@ -15,13 +15,13 @@
       ],
       "summary": "Đo lường chi phí thuê tàu vận tải hàng rời (than đá, quặng sắt, ngũ cốc) toàn cầu. Tác động trực tiếp tới biên lợi nhuận của VOS và các đội tàu hàng khô.",
       "source": "Baltic Exchange / Hellenic",
-      "latest_date": "2026-11-22",
-      "latest_value": 2914.0,
-      "previous_value": 2947,
-      "change_val": -33.0,
-      "change_pct": 1.2,
+      "latest_date": "2026-11-28",
+      "latest_value": 3137.0,
+      "previous_value": 3156,
+      "change_val": -19.0,
+      "change_pct": -0.9,
       "stats_52w": {
-        "high": 3024,
+        "high": 3172,
         "low": 1520
       },
       "stats_10y": {
@@ -3355,93 +3355,99 @@
         },
         {
           "date": "2026-08-21",
-          "value": 2937,
-          "change_val": 8,
-          "change_pct": 0.27
+          "value": 2967,
+          "change_val": 38,
+          "change_pct": 1.3
         },
         {
           "date": "2026-08-28",
-          "value": 2921,
-          "change_val": -16,
-          "change_pct": -0.54
-        },
-        {
-          "date": "2026-09-04",
-          "value": 2973,
-          "change_val": 52,
-          "change_pct": 1.78
-        },
-        {
-          "date": "2026-09-11",
-          "value": 3024,
-          "change_val": 51,
-          "change_pct": 1.72
-        },
-        {
-          "date": "2026-09-18",
-          "value": 2999,
-          "change_val": -25,
-          "change_pct": -0.83
-        },
-        {
-          "date": "2026-09-25",
-          "value": 2985,
-          "change_val": -14,
-          "change_pct": -0.47
-        },
-        {
-          "date": "2026-10-02",
-          "value": 2981,
+          "value": 2963,
           "change_val": -4,
           "change_pct": -0.13
         },
         {
+          "date": "2026-09-04",
+          "value": 3031,
+          "change_val": 68,
+          "change_pct": 2.29
+        },
+        {
+          "date": "2026-09-11",
+          "value": 3097,
+          "change_val": 66,
+          "change_pct": 2.18
+        },
+        {
+          "date": "2026-09-18",
+          "value": 3084,
+          "change_val": -13,
+          "change_pct": -0.42
+        },
+        {
+          "date": "2026-09-25",
+          "value": 3082,
+          "change_val": -2,
+          "change_pct": -0.06
+        },
+        {
+          "date": "2026-10-02",
+          "value": 3088,
+          "change_val": 6,
+          "change_pct": 0.19
+        },
+        {
           "date": "2026-10-09",
-          "value": 2983,
-          "change_val": 2,
-          "change_pct": 0.07
+          "value": 3102,
+          "change_val": 14,
+          "change_pct": 0.45
         },
         {
           "date": "2026-10-16",
-          "value": 2988,
-          "change_val": 5,
-          "change_pct": 0.17
+          "value": 3119,
+          "change_val": 17,
+          "change_pct": 0.55
         },
         {
           "date": "2026-10-23",
-          "value": 2993,
-          "change_val": 5,
-          "change_pct": 0.17
+          "value": 3138,
+          "change_val": 19,
+          "change_pct": 0.61
         },
         {
           "date": "2026-10-30",
-          "value": 2994,
-          "change_val": 1,
-          "change_pct": 0.03
+          "value": 3154,
+          "change_val": 16,
+          "change_pct": 0.51
         },
         {
           "date": "2026-11-06",
-          "value": 2988,
-          "change_val": -6,
-          "change_pct": -0.2
+          "value": 3166,
+          "change_val": 12,
+          "change_pct": 0.38
         },
         {
           "date": "2026-11-13",
-          "value": 2973,
-          "change_val": -15,
-          "change_pct": -0.5
+          "value": 3172,
+          "change_val": 6,
+          "change_pct": 0.19
         },
         {
           "date": "2026-11-20",
-          "value": 2947,
-          "change_val": -26,
-          "change_pct": -0.87
+          "value": 3169,
+          "change_val": -3,
+          "change_pct": -0.09
         },
         {
-          "date": "2026-11-22",
-          "value": 2914.0,
-          "change_val": -33.0,
-          "change_pct": 1.2
+          "date": "2026-11-27",
+          "value": 3156,
+          "change_val": -13,
+          "change_pct": -0.41
+        },
+        {
+          "date": "2026-11-28",
+          "value": 3137.0,
+          "change_val": -19.0,
+          "change_pct": -0.9
         }
       ]
     },
@@ -3458,14 +3464,14 @@
       ],
       "summary": "Đo lường giá cước giao ngay cho 1 container 40ft (FEU) trên các tuyến xuyên đại dương. Kim chỉ nam doanh thu cho HAH và các liên doanh cảng nước sâu của Gemadept.",
       "source": "Drewry Shipping Consultants",
-      "latest_date": "2026-11-22",
-      "latest_value": 4176.0,
-      "previous_value": 4195,
-      "change_val": -19.0,
+      "latest_date": "2026-11-28",
+      "latest_value": 4032.0,
+      "previous_value": 4061,
+      "change_val": -29.0,
       "change_pct": -3.0,
       "stats_52w": {
         "high": 4680,
-        "low": 4176.0
+        "low": 4032.0
       },
       "stats_10y": {
         "all_time_high": 10377,
@@ -6798,92 +6804,98 @@
         },
         {
           "date": "2026-08-21",
-          "value": 4503,
-          "change_val": -30,
-          "change_pct": -0.66
+          "value": 4523,
+          "change_val": -10,
+          "change_pct": -0.22
         },
         {
           "date": "2026-08-28",
-          "value": 4481,
-          "change_val": -22,
-          "change_pct": -0.49
+          "value": 4491,
+          "change_val": -32,
+          "change_pct": -0.71
         },
         {
           "date": "2026-09-04",
           "value": 4455,
-          "change_val": -26,
-          "change_pct": -0.58
+          "change_val": -36,
+          "change_pct": -0.8
         },
         {
           "date": "2026-09-11",
-          "value": 4431,
-          "change_val": -24,
-          "change_pct": -0.54
+          "value": 4422,
+          "change_val": -33,
+          "change_pct": -0.74
         },
         {
           "date": "2026-09-18",
-          "value": 4411,
-          "change_val": -20,
-          "change_pct": -0.45
+          "value": 4392,
+          "change_val": -30,
+          "change_pct": -0.68
         },
         {
           "date": "2026-09-25",
-          "value": 4388,
-          "change_val": -23,
-          "change_pct": -0.52
+          "value": 4360,
+          "change_val": -32,
+          "change_pct": -0.73
         },
         {
           "date": "2026-10-02",
-          "value": 4365,
-          "change_val": -23,
-          "change_pct": -0.52
+          "value": 4327,
+          "change_val": -33,
+          "change_pct": -0.76
         },
         {
           "date": "2026-10-09",
-          "value": 4339,
-          "change_val": -26,
-          "change_pct": -0.6
+          "value": 4293,
+          "change_val": -34,
+          "change_pct": -0.79
         },
         {
           "date": "2026-10-16",
-          "value": 4314,
-          "change_val": -25,
-          "change_pct": -0.58
+          "value": 4258,
+          "change_val": -35,
+          "change_pct": -0.82
         },
         {
           "date": "2026-10-23",
-          "value": 4289,
-          "change_val": -25,
-          "change_pct": -0.58
+          "value": 4223,
+          "change_val": -35,
+          "change_pct": -0.82
         },
         {
           "date": "2026-10-30",
-          "value": 4263,
-          "change_val": -26,
-          "change_pct": -0.61
+          "value": 4189,
+          "change_val": -34,
+          "change_pct": -0.81
         },
         {
           "date": "2026-11-06",
-          "value": 4239,
-          "change_val": -24,
-          "change_pct": -0.56
+          "value": 4156,
+          "change_val": -33,
+          "change_pct": -0.79
         },
         {
           "date": "2026-11-13",
-          "value": 4217,
-          "change_val": -22,
-          "change_pct": -0.52
+          "value": 4123,
+          "change_val": -33,
+          "change_pct": -0.79
         },
         {
           "date": "2026-11-20",
-          "value": 4195,
-          "change_val": -22,
-          "change_pct": -0.52
+          "value": 4091,
+          "change_val": -32,
+          "change_pct": -0.78
         },
         {
-          "date": "2026-11-22",
-          "value": 4176.0,
-          "change_val": -19.0,
+          "date": "2026-11-27",
+          "value": 4061,
+          "change_val": -30,
+          "change_pct": -0.73
+        },
+        {
+          "date": "2026-11-28",
+          "value": 4032.0,
+          "change_val": -29.0,
           "change_pct": -3.0
         }
       ]
@@ -6901,14 +6913,14 @@
       ],
       "summary": "Đo lường giá cước thuê các siêu tàu dầu thô viễn dương (VLCC, Suezmax, Aframax). Đang trong siêu chu kỳ tăng giá kỷ lục năm 2026 do căng thẳng an ninh eo biển Hormuz/Trung Đông và tái định tuyến Mũi Hảo Vọng.",
       "source": "Baltic Exchange",
-      "latest_date": "2026-11-22",
+      "latest_date": "2026-11-28",
       "latest_value": 5366.0,
       "previous_value": 5366,
       "change_val": 0.0,
       "change_pct": 2.21,
       "stats_52w": {
         "high": 5366,
-        "low": 2366
+        "low": 2438
       },
       "stats_10y": {
         "all_time_high": 5366,
@@ -10277,54 +10289,60 @@
         },
         {
           "date": "2026-10-02",
-          "value": 5255,
-          "change_val": 5,
-          "change_pct": 0.1
+          "value": 5254,
+          "change_val": 4,
+          "change_pct": 0.08
         },
         {
           "date": "2026-10-09",
-          "value": 5268,
-          "change_val": 13,
-          "change_pct": 0.25
+          "value": 5265,
+          "change_val": 11,
+          "change_pct": 0.21
         },
         {
           "date": "2026-10-16",
-          "value": 5285,
-          "change_val": 17,
-          "change_pct": 0.32
+          "value": 5280,
+          "change_val": 15,
+          "change_pct": 0.28
         },
         {
           "date": "2026-10-23",
-          "value": 5306,
-          "change_val": 21,
-          "change_pct": 0.4
+          "value": 5298,
+          "change_val": 18,
+          "change_pct": 0.34
         },
         {
           "date": "2026-10-30",
-          "value": 5328,
-          "change_val": 22,
-          "change_pct": 0.41
+          "value": 5318,
+          "change_val": 20,
+          "change_pct": 0.38
         },
         {
           "date": "2026-11-06",
-          "value": 5346,
+          "value": 5336,
           "change_val": 18,
           "change_pct": 0.34
         },
         {
           "date": "2026-11-13",
-          "value": 5359,
-          "change_val": 13,
-          "change_pct": 0.24
+          "value": 5351,
+          "change_val": 15,
+          "change_pct": 0.28
         },
         {
           "date": "2026-11-20",
-          "value": 5366,
-          "change_val": 7,
-          "change_pct": 0.13
+          "value": 5362,
+          "change_val": 11,
+          "change_pct": 0.21
         },
         {
-          "date": "2026-11-22",
+          "date": "2026-11-27",
+          "value": 5366,
+          "change_val": 4,
+          "change_pct": 0.07
+        },
+        {
+          "date": "2026-11-28",
           "value": 5366.0,
           "change_val": 0.0,
           "change_pct": 2.21
@@ -10344,14 +10362,14 @@
       ],
       "summary": "Theo dõi cước vận tải xăng dầu tinh chế, nhiên liệu hàng không Jet-A1 và hóa chất lỏng sạch. Tăng trưởng trên 110% YoY trong năm 2026, tạo động lực tăng trưởng doanh thu vượt trội cho đội tàu PVTrans.",
       "source": "Baltic Exchange / Macro Benchmark",
-      "latest_date": "2026-11-22",
+      "latest_date": "2026-11-28",
       "latest_value": 2160.0,
       "previous_value": 2160,
       "change_val": 0.0,
       "change_pct": 4.05,
       "stats_52w": {
         "high": 2160,
-        "low": 1353
+        "low": 1368
       },
       "stats_10y": {
         "all_time_high": 2160,
@@ -13720,54 +13738,60 @@
         },
         {
           "date": "2026-10-02",
-          "value": 2081,
-          "change_val": 5,
-          "change_pct": 0.24
+          "value": 2080,
+          "change_val": 4,
+          "change_pct": 0.19
         },
         {
           "date": "2026-10-09",
-          "value": 2090,
-          "change_val": 9,
-          "change_pct": 0.43
+          "value": 2088,
+          "change_val": 8,
+          "change_pct": 0.38
         },
         {
           "date": "2026-10-16",
-          "value": 2103,
+          "value": 2099,
+          "change_val": 11,
+          "change_pct": 0.53
+        },
+        {
+          "date": "2026-10-23",
+          "value": 2112,
           "change_val": 13,
           "change_pct": 0.62
         },
         {
-          "date": "2026-10-23",
-          "value": 2118,
-          "change_val": 15,
-          "change_pct": 0.71
-        },
-        {
           "date": "2026-10-30",
-          "value": 2133,
-          "change_val": 15,
-          "change_pct": 0.71
+          "value": 2126,
+          "change_val": 14,
+          "change_pct": 0.66
         },
         {
           "date": "2026-11-06",
-          "value": 2146,
+          "value": 2139,
           "change_val": 13,
           "change_pct": 0.61
         },
         {
           "date": "2026-11-13",
-          "value": 2155,
-          "change_val": 9,
-          "change_pct": 0.42
+          "value": 2150,
+          "change_val": 11,
+          "change_pct": 0.51
         },
         {
           "date": "2026-11-20",
-          "value": 2160,
-          "change_val": 5,
-          "change_pct": 0.23
+          "value": 2157,
+          "change_val": 7,
+          "change_pct": 0.33
         },
         {
-          "date": "2026-11-22",
+          "date": "2026-11-27",
+          "value": 2160,
+          "change_val": 3,
+          "change_pct": 0.14
+        },
+        {
+          "date": "2026-11-28",
           "value": 2160.0,
           "change_val": 0.0,
           "change_pct": 4.05

@@ -1,30 +1,12 @@
 [
   {
-    "id": 26927,
-    "title": "Tình hình sản xuất kinh doanh Tháng 10/2026 và kế hoạch Tháng 11/2026",
-    "source": "POW",
-    "date": "2026-10-31T00:00:00.000Z",
-    "url": "https://cdn02.wigroup.vn/baocaophantich/ar_27322_POW_2026-11-23.pdf",
+    "id": 26968,
+    "title": "Kết quả kinh doanh 10T2026",
+    "source": "MSN",
+    "date": "2026-11-25T00:00:00.000Z",
+    "url": "https://cdn02.wigroup.vn/baocaophantich/ar_27349_MSN_2026-11-25.pdf",
     "category": "Bản tin IR",
-    "created_at": "2026-11-24T00:32:48.041Z"
-  },
-  {
-    "id": 26916,
-    "title": "Bản tin doanh nghiệp tháng 10/2026",
-    "source": "SHI",
-    "date": "2026-10-31T00:00:00.000Z",
-    "url": "https://cdn02.wigroup.vn/baocaophantich/ar_27296_SHI_2026-11-20.pdf",
-    "category": "Bản tin IR",
-    "created_at": "2026-11-20T13:00:29.910Z"
-  },
-  {
-    "id": 26873,
-    "title": "Kết quả sản xuất kinh doanh tháng 10/2026 và kế hoạch tháng 11/2026",
-    "source": "NT2",
-    "date": "2026-10-31T00:00:00.000Z",
-    "url": "https://cdn02.wigroup.vn/baocaophantich/ar_27244_NT2_2026-11-16.pdf",
-    "category": "Bản tin IR",
-    "created_at": "2026-11-18T21:03:49.766Z"
+    "created_at": "2026-11-26T13:00:43.591Z"
   },
   {
     "id": 26855,
@@ -33,16 +15,7 @@
     "date": "2026-11-14T00:00:00.000Z",
     "url": "https://cdn02.wigroup.vn/baocaophantich/ar_27208_VHC_2026-11-14.pdf",
     "category": "Bản tin IR",
-    "created_at": "2026-11-17T21:29:08.022Z"
-  },
-  {
-    "id": 26825,
-    "title": "Cập nhật tình hình kinh doanh 10 tháng đầu năm 2026",
-    "source": "MWG",
-    "date": "2026-10-31T00:00:00.000Z",
-    "url": "https://cdn02.wigroup.vn/baocaophantich/ar_27199_MWG_2026-11-16.pdf",
-    "category": "Bản tin IR",
-    "created_at": "2026-11-16T13:00:37.421Z"
+    "created_at": "2026-11-25T14:42:30.130Z"
   },
   {
     "id": 26655,
@@ -51,7 +24,7 @@
     "date": "2026-11-09T00:00:00.000Z",
     "url": "https://cdn02.wigroup.vn/baocaophantich/ar_26982_DMX_2026-11-09.pdf",
     "category": "Bản tin IR",
-    "created_at": "2026-11-12T13:00:23.301Z"
+    "created_at": "2026-11-25T14:42:30.130Z"
   },
   {
     "id": 26487,
@@ -60,7 +33,7 @@
     "date": "2026-11-06T00:00:00.000Z",
     "url": "https://cdn02.wigroup.vn/baocaophantich/ar_26933_MWG_2026-11-06.pdf",
     "category": "Bản tin IR",
-    "created_at": "2026-11-12T13:00:23.301Z"
+    "created_at": "2026-11-25T14:42:30.130Z"
   },
   {
     "id": 26486,
@@ -69,7 +42,43 @@
     "date": "2026-11-06T00:00:00.000Z",
     "url": "https://cdn02.wigroup.vn/baocaophantich/ar_26930_DGW_2026-09-30.pdf",
     "category": "Bản tin IR",
-    "created_at": "2026-11-12T13:00:23.301Z"
+    "created_at": "2026-11-25T14:42:30.130Z"
+  },
+  {
+    "id": 26927,
+    "title": "Tình hình sản xuất kinh doanh Tháng 10/2026 và kế hoạch Tháng 11/2026",
+    "source": "POW",
+    "date": "2026-10-31T00:00:00.000Z",
+    "url": "https://cdn02.wigroup.vn/baocaophantich/ar_27322_POW_2026-11-23.pdf",
+    "category": "Bản tin IR",
+    "created_at": "2026-11-25T14:42:30.130Z"
+  },
+  {
+    "id": 26916,
+    "title": "Bản tin doanh nghiệp tháng 10/2026",
+    "source": "SHI",
+    "date": "2026-10-31T00:00:00.000Z",
+    "url": "https://cdn02.wigroup.vn/baocaophantich/ar_27296_SHI_2026-11-20.pdf",
+    "category": "Bản tin IR",
+    "created_at": "2026-11-25T14:42:30.130Z"
+  },
+  {
+    "id": 26873,
+    "title": "Kết quả sản xuất kinh doanh tháng 10/2026 và kế hoạch tháng 11/2026",
+    "source": "NT2",
+    "date": "2026-10-31T00:00:00.000Z",
+    "url": "https://cdn02.wigroup.vn/baocaophantich/ar_27244_NT2_2026-11-16.pdf",
+    "category": "Bản tin IR",
+    "created_at": "2026-11-25T14:42:30.130Z"
+  },
+  {
+    "id": 26825,
+    "title": "Cập nhật tình hình kinh doanh 10 tháng đầu năm 2026",
+    "source": "MWG",
+    "date": "2026-10-31T00:00:00.000Z",
+    "url": "https://cdn02.wigroup.vn/baocaophantich/ar_27199_MWG_2026-11-16.pdf",
+    "category": "Bản tin IR",
+    "created_at": "2026-11-25T14:42:30.130Z"
   },
   {
     "id": 26726,
@@ -78,7 +87,7 @@
     "date": "2026-10-31T00:00:00.000Z",
     "url": "https://cdn02.wigroup.vn/baocaophantich/ar_27064_PDR_2026-11-11.pdf",
     "category": "Bản tin IR",
-    "created_at": "2026-11-12T13:00:23.301Z"
+    "created_at": "2026-11-25T14:42:30.130Z"
   },
   {
     "id": 26199,
@@ -87,7 +96,7 @@
     "date": "2026-10-29T00:00:00.000Z",
     "url": "https://cdn02.wigroup.vn/baocaophantich/26199_FRT_2026-10-29.pdf",
     "category": "Bản tin IR",
-    "created_at": "2026-11-12T13:00:23.301Z"
+    "created_at": "2026-11-25T14:42:30.130Z"
   },
   {
     "id": 26106,
@@ -96,7 +105,7 @@
     "date": "2026-10-25T00:00:00.000Z",
     "url": "https://cdn02.wigroup.vn/baocaophantich/ar_26535_SHI_2026-10-25.pdf",
     "category": "Bản tin IR",
-    "created_at": "2026-11-12T13:00:23.301Z"
+    "created_at": "2026-11-25T14:42:30.130Z"
   },
   {
     "id": 26057,
@@ -105,7 +114,7 @@
     "date": "2026-10-22T00:00:00.000Z",
     "url": "https://cdn02.wigroup.vn/baocaophantich/ar_26493_TCB_2026-09-30.pdf",
     "category": "Bản tin IR",
-    "created_at": "2026-11-12T13:00:23.301Z"
+    "created_at": "2026-11-25T14:42:30.130Z"
   },
   {
     "id": 25992,
@@ -114,7 +123,7 @@
     "date": "2026-10-16T00:00:00.000Z",
     "url": "https://cdn02.wigroup.vn/baocaophantich/ar_26182_NT2_2026-10-16.pdf",
     "category": "Bản tin IR",
-    "created_at": "2026-11-12T13:00:23.301Z"
+    "created_at": "2026-11-25T14:42:30.130Z"
   },
   {
     "id": 25963,
@@ -123,7 +132,7 @@
     "date": "2026-10-16T00:00:00.000Z",
     "url": "https://cdn02.wigroup.vn/baocaophantich/ar_26165_VHC_2026-10-16.pdf",
     "category": "Bản tin IR",
-    "created_at": "2026-11-12T13:00:23.301Z"
+    "created_at": "2026-11-25T14:42:30.130Z"
   },
   {
     "id": 25939,
@@ -132,7 +141,7 @@
     "date": "2026-10-14T00:00:00.000Z",
     "url": "https://cdn02.wigroup.vn/baocaophantich/ar_26136_POW_2026-10-14.pdf",
     "category": "Bản tin IR",
-    "created_at": "2026-11-12T13:00:23.301Z"
+    "created_at": "2026-11-25T14:42:30.130Z"
   },
   {
     "id": 25938,
@@ -141,7 +150,7 @@
     "date": "2026-10-14T00:00:00.000Z",
     "url": "https://cdn02.wigroup.vn/baocaophantich/ar_26137_MWG_2026-10-14.pdf",
     "category": "Bản tin IR",
-    "created_at": "2026-11-12T13:00:23.301Z"
+    "created_at": "2026-11-25T14:42:30.130Z"
   },
   {
     "id": 25926,
@@ -150,7 +159,7 @@
     "date": "2026-10-13T00:00:00.000Z",
     "url": "https://cdn02.wigroup.vn/baocaophantich/ar_26107_PDR_2026-10-13.pdf",
     "category": "Bản tin IR",
-    "created_at": "2026-11-12T13:00:23.301Z"
+    "created_at": "2026-11-25T14:42:30.130Z"
   },
   {
     "id": 25843,
@@ -159,7 +168,7 @@
     "date": "2026-10-06T00:00:00.000Z",
     "url": "https://cdn02.wigroup.vn/baocaophantich/ar_25786_DMX_2026-10-06.pdf",
     "category": "Bản tin IR",
-    "created_at": "2026-11-12T13:00:23.301Z"
+    "created_at": "2026-11-25T14:42:30.130Z"
   },
   {
     "id": 26680,
@@ -168,7 +177,7 @@
     "date": "2026-09-30T00:00:00.000Z",
     "url": "https://cdn02.wigroup.vn/baocaophantich/ar_27023_MWG_2026-11-10.pdf",
     "category": "Bản tin IR",
-    "created_at": "2026-11-12T13:00:23.301Z"
+    "created_at": "2026-11-25T14:42:30.130Z"
   },
   {
     "id": 26434,
@@ -177,7 +186,7 @@
     "date": "2026-09-30T00:00:00.000Z",
     "url": "https://cdn02.wigroup.vn/baocaophantich/ar_26879_GMD_2026-11-05.pdf",
     "category": "Bản tin IR",
-    "created_at": "2026-11-12T13:00:23.301Z"
+    "created_at": "2026-11-25T14:42:30.130Z"
   },
   {
     "id": 26270,
@@ -195,7 +204,7 @@
     "date": "2026-09-30T00:00:00.000Z",
     "url": "https://cdn02.wigroup.vn/baocaophantich/ar_26718_VNM_2026-10-30.pdf",
     "category": "Bản tin IR",
-    "created_at": "2026-11-12T13:00:23.301Z"
+    "created_at": "2026-11-25T14:42:30.130Z"
   },
   {
     "id": 26322,
@@ -204,7 +213,7 @@
     "date": "2026-09-30T00:00:00.000Z",
     "url": "https://cdn02.wigroup.vn/baocaophantich/ar_26713_VND_2026-10-20.pdf",
     "category": "Bản tin IR",
-    "created_at": "2026-11-12T13:00:23.301Z"
+    "created_at": "2026-11-25T14:42:30.130Z"
   },
   {
     "id": 26329,
@@ -213,7 +222,7 @@
     "date": "2026-09-30T00:00:00.000Z",
     "url": "https://cdn02.wigroup.vn/baocaophantich/ar_26699_VPB_2026-10-30.pdf",
     "category": "Bản tin IR",
-    "created_at": "2026-11-12T13:00:23.301Z"
+    "created_at": "2026-11-25T14:42:30.130Z"
   },
   {
     "id": 26205,
@@ -222,7 +231,7 @@
     "date": "2026-09-30T00:00:00.000Z",
     "url": "https://cdn02.wigroup.vn/baocaophantich/ar_26611_HPG_2026-10-29.pdf",
     "category": "Bản tin IR",
-    "created_at": "2026-11-12T13:00:23.301Z"
+    "created_at": "2026-11-25T14:42:30.130Z"
   },
   {
     "id": 26147,
@@ -240,7 +249,7 @@
     "date": "2026-09-30T00:00:00.000Z",
     "url": "https://cdn02.wigroup.vn/baocaophantich/ar_26548_MSN_2026-10-22.pdf",
     "category": "Bản tin IR",
-    "created_at": "2026-11-12T13:00:23.301Z"
+    "created_at": "2026-11-26T13:00:43.591Z"
   },
   {
     "id": 26016,
@@ -249,7 +258,7 @@
     "date": "2026-09-30T00:00:00.000Z",
     "url": "https://cdn02.wigroup.vn/baocaophantich/ar_26424_PNJ_2026-10-21.pdf",
     "category": "Bản tin IR",
-    "created_at": "2026-11-12T13:00:23.301Z"
+    "created_at": "2026-11-25T14:42:30.130Z"
   },
   {
     "id": 25730,

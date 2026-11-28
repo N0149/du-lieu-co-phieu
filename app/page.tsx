@@ -1,8 +1,8 @@
 import type { Metadata } from 'next'
 import { SiteHeader } from '@/components/site-header'
 import { NewsDashboard, NewsSnapshotItem } from '@/components/news/news-dashboard'
-import { getCachedNews, fetchAllRssFeeds } from '@/lib/rss-news-service'
-import { getRecentMarketDisclosures } from '@/lib/disclosures'
+import { getCachedNews, fetchAllRssFeeds, getLastFetchedTime } from '@/lib/rss-news-service'
+import { getLiveMarketDisclosures, getRecentMarketDisclosures } from '@/lib/disclosures'
 import manifestRaw from '@/data/longlive_manifest.json'
 
 // Kích hoạt bộ nhớ đệm CDN Edge Vercel (ISR) 30 phút (1800 giây):
@@ -28,7 +28,9 @@ export const metadata: Metadata = {
 async function getInitialNews(): Promise<NewsSnapshotItem[]> {
   try {
     const cached = getCachedNews()
-    if (cached && cached.length > 0) {
+    const lastTime = getLastFetchedTime()
+    const isStale = !lastTime || Date.now() - lastTime > 15 * 60 * 1000
+    if (cached && cached.length > 0 && !isStale) {
       return cached
     }
     return await fetchAllRssFeeds(false)
@@ -59,7 +61,7 @@ function getStockPriceMap(): Record<string, { px: number | null; w1: number | nu
 export default async function HomePage() {
   const [initialNews, initialDisclosures] = await Promise.all([
     getInitialNews(),
-    getRecentMarketDisclosures({ limit: 200 }),
+    getLiveMarketDisclosures({ limit: 300 }).catch(() => getRecentMarketDisclosures({ limit: 300 })),
   ])
 
   const initialWatchlist: string[] = []

@@ -1,5 +1,6 @@
 import fs from 'node:fs'
 import path from 'node:path'
+import crypto from 'node:crypto'
 import { DatabaseSync } from 'node:sqlite'
 
 export type CorporateDisclosure = {
@@ -36,7 +37,8 @@ let dbInstance: DatabaseSync | null = null
 const globalForDisclosures = globalThis as unknown as {
   __inMemoryLiveDisclosures?: CorporateDisclosure[] | null
   __lastLiveFetchTime?: number
-  __isLiveFetching?: boolean
+  __liveFetchPromise?: Promise<void> | null
+  __liveHighestCafefPage?: number
   __liveSymbolDisclosuresMap?: Map<string, { data: CorporateDisclosure[]; timestamp: number }>
 }
 if (!globalForDisclosures.__liveSymbolDisclosuresMap) {
@@ -44,9 +46,10 @@ if (!globalForDisclosures.__liveSymbolDisclosuresMap) {
 }
 const liveSymbolDisclosuresMap = globalForDisclosures.__liveSymbolDisclosuresMap
 const LIVE_TTL_MS = 3 * 60 * 1000 // 3 phút cache
+const DEFAULT_LIVE_PAGES = 12 // ~360 tin mới nhất (~3-5 ngày giao dịch gần nhất)
 
 let stockExchangesCache: Record<string, string> | null = null
-function getStockExchange(symbol: string): string {
+function loadStockExchanges(): Record<string, string> {
   if (!stockExchangesCache) {
     try {
       const exPath = path.join(DATA_DIR, 'stock_exchanges.json')
@@ -56,29 +59,114 @@ function getStockExchange(symbol: string): string {
     } catch {}
     stockExchangesCache = stockExchangesCache || {}
   }
-  return stockExchangesCache[symbol] || 'UPCOM'
+  return stockExchangesCache
+}
+
+function getStockExchange(symbol: string): string {
+  const map = loadStockExchanges()
+  return map[symbol] || 'UPCOM'
+}
+
+function isKnownStockTicker(candidate: string): boolean {
+  const map = loadStockExchanges()
+  return Boolean(map[candidate])
 }
 
 function extractTickerFromTitle(title: string): string | null {
   if (!title) return null
-  const m1 = title.match(/^([A-Z0-9]{3,4})[:\s\-]/i)
-  if (m1) return m1[1].toUpperCase()
-  const m2 = title.match(/(?:mã\s*(?:ck|chứng khoán)|cổ phiếu)\s*[:\-]?\s*([A-Z0-9]{3,4})/i)
-  if (m2) return m2[1].toUpperCase()
-  const m3 = title.match(/\(([A-Z0-9]{3,4})\)/)
-  if (m3) return m3[1].toUpperCase()
+  const trimmed = title.trim()
+
+  // 1. Prefix chuẩn dạng "MÃ: ..." hoặc "MÃ - ..." (không dùng \s chung để tránh bắt nhầm từ tiếng Việt)
+  const mPrefix = trimmed.match(/^([A-Z0-9]{3,4})\s*[:\-–\.]/i)
+  if (mPrefix) {
+    const cand = mPrefix[1].toUpperCase()
+    if (isKnownStockTicker(cand) || cand.length === 3) {
+      return cand
+    }
+  }
+
+  // 2. Mã trái phiếu có prefix là mã cổ phiếu niêm yết (vd: CII424002:, VHM121025:, BID123004:)
+  const mBond = trimmed.match(/^([A-Z]{3})\d{5,7}\s*[:\-–]/i)
+  if (mBond) {
+    const parent = mBond[1].toUpperCase()
+    if (isKnownStockTicker(parent)) {
+      return parent
+    }
+  }
+
+  // 3. Dạng "MÃ ..." có dấu cách nếu viết hoa toàn bộ & nằm trong danh mục 1.500+ mã sàn
+  const mSpace = trimmed.match(/^([A-Z0-9]{3})\s+/)
+  if (mSpace && isKnownStockTicker(mSpace[1])) {
+    return mSpace[1]
+  }
+
+  // 4. Trong ngoặc đơn/vuông hoặc sau từ khóa
+  const mKeyword = trimmed.match(/(?:mã\s*(?:ck|chứng khoán)|cổ phiếu)\s*[:\-]?\s*([A-Z0-9]{3,4})/i)
+  if (mKeyword && isKnownStockTicker(mKeyword[1].toUpperCase())) {
+    return mKeyword[1].toUpperCase()
+  }
+  const mParen = trimmed.match(/\(([A-Z0-9]{3,4})\)/)
+  if (mParen && isKnownStockTicker(mParen[1].toUpperCase())) {
+    return mParen[1].toUpperCase()
+  }
+
   return null
 }
 
+function getVnNowString(): string {
+  try {
+    const parts = new Intl.DateTimeFormat('sv-SE', {
+      timeZone: 'Asia/Ho_Chi_Minh',
+      year: 'numeric',
+      month: '2-digit',
+      day: '2-digit',
+      hour: '2-digit',
+      minute: '2-digit',
+      second: '2-digit',
+      hour12: false,
+    }).formatToParts(new Date())
+    const get = (t: string) => parts.find((p) => p.type === t)?.value || '00'
+    return `${get('year')}-${get('month')}-${get('day')} ${get('hour')}:${get('minute')}:${get('second')}`
+  } catch {
+    return new Date(Date.now() + 7 * 3600 * 1000).toISOString().replace('T', ' ').slice(0, 19)
+  }
+}
+
 function parseVnDateTime(str: string): string {
-  if (!str) return new Date().toISOString().replace('T', ' ').slice(0, 19)
+  if (!str) return getVnNowString()
   const match = str.match(/(\d{1,2})\/(\d{1,2})\/(\d{4})\s+(\d{1,2}):(\d{1,2})/)
   if (match) {
     const [, d, m, y, h, min] = match
     const pad = (n: any) => String(n).padStart(2, '0')
     return `${y}-${pad(m)}-${pad(d)} ${pad(h)}:${pad(min)}:00`
   }
+  const dateOnly = str.match(/(\d{1,2})\/(\d{1,2})\/(\d{4})/)
+  if (dateOnly) {
+    const [, d, m, y] = dateOnly
+    const pad = (n: any) => String(n).padStart(2, '0')
+    return `${y}-${pad(m)}-${pad(d)} 00:00:00`
+  }
   return str.replace('T', ' ').slice(0, 19)
+}
+
+function toSortMs(dateStr: string): number {
+  if (!dateStr) return 0
+  const m = dateStr.match(/^(\d{4})-(\d{2})-(\d{2})[ T](\d{2}):(\d{2})(?::(\d{2}))?/)
+  if (m) {
+    return Date.UTC(Number(m[1]), Number(m[2]) - 1, Number(m[3]), Number(m[4]), Number(m[5]), Number(m[6] || 0))
+  }
+  const t = Date.parse(dateStr)
+  return Number.isNaN(t) ? 0 : t
+}
+
+function makeDisclosureId(symbol: string, publishedAt: string, title: string): string {
+  const hash = crypto.createHash('md5').update(title.trim()).digest('hex').slice(0, 10)
+  return `cf_${symbol}_${publishedAt.slice(0, 10)}_${hash}`
+}
+
+function makeDedupeKey(item: Pick<CorporateDisclosure, 'symbol' | 'published_at' | 'title'>): string {
+  const cleanTitle = (item.title || '').trim().toLowerCase().replace(/\s+/g, ' ')
+  return `${(item.symbol || '').toUpperCase()}_${(item.published_at || '').slice(0, 10)}_${cleanTitle}`
 }
 
 function classifyDisclosure(title: string): { docType: string; label: string; isImportant: number } {
@@ -95,48 +183,61 @@ function classifyDisclosure(title: string): { docType: string; label: string; is
     return { docType: 'CANH_BAO_KIEM_SOAT', label: 'Cảnh báo & Kiểm soát', isImportant: 1 }
   }
   if (
-    t.includes('soát xét') ||
-    t.includes('kiểm toán') ||
-    t.includes('báo cáo tài chính') ||
-    t.includes('bctc')
-  ) {
-    return { docType: 'BCTC_SOAT_XET', label: 'BCTC & Soát xét', isImportant: 1 }
-  }
-  if (
     t.includes('giải trình') ||
     t.includes('chênh lệch') ||
     t.includes('biến động kqkd') ||
+    t.includes('kết quả kinh doanh') ||
     t.includes('chuyển từ lỗ sang lãi')
   ) {
     return { docType: 'GIAI_TRINH_KQKD', label: 'Giải trình KQKD', isImportant: 1 }
   }
   if (
+    t.includes('soát xét') ||
+    t.includes('kiểm toán') ||
+    t.includes('báo cáo tài chính') ||
+    t.includes('bctc') ||
+    t.includes('bán niên')
+  ) {
+    return { docType: 'BCTC_SOAT_XET', label: 'BCTC & Soát xét', isImportant: 1 }
+  }
+  if (
     t.includes('cổ tức') ||
+    t.includes('đkcc') ||
     t.includes('ngày đkcc') ||
+    t.includes('đăng ký cuối cùng') ||
     t.includes('chốt danh sách') ||
     t.includes('trả cổ tức') ||
-    t.includes('quyền mua')
+    t.includes('chi trả') ||
+    t.includes('quyền mua') ||
+    t.includes('thưởng cổ phiếu')
   ) {
     return { docType: 'CO_TUC', label: 'Cổ tức & Quyền', isImportant: 1 }
   }
   if (
     t.includes('đhđcđ') ||
+    t.includes('đhcđ') ||
     t.includes('đại hội đồng cổ đông') ||
     t.includes('nghị quyết đhđcđ') ||
-    t.includes('biên bản họp đhđcđ')
+    t.includes('biên bản họp đhđcđ') ||
+    t.includes('lấy ý kiến cổ đông')
   ) {
-    return { docType: 'DHDCD', label: 'ĐHĐCĐ', isImportant: 0 }
+    const imp = t.includes('bất thường') || t.includes('kế hoạch') ? 1 : 0
+    return { docType: 'DHDCD', label: 'ĐHĐCĐ', isImportant: imp }
   }
   if (
     t.includes('nghị quyết hđqt') ||
     t.includes('quyết định hđqt') ||
-    t.includes('hội đồng quản trị')
+    t.includes('hđqt') ||
+    t.includes('hội đồng quản trị') ||
+    t.includes('bổ nhiệm') ||
+    t.includes('miễn nhiệm')
   ) {
     return { docType: 'NGHI_QUYET_HDQT', label: 'Nghị quyết HĐQT', isImportant: 0 }
   }
   if (
     t.includes('nội bộ') ||
     t.includes('giao dịch cổ phiếu') ||
+    t.includes('giao dịch') ||
     t.includes('cổ đông lớn') ||
     t.includes('người có liên quan')
   ) {
@@ -146,15 +247,15 @@ function classifyDisclosure(title: string): { docType: string; label: string; is
 }
 
 /**
- * Cào tức thì luồng công bố thông tin 3 sàn mới nhất từ CafeF AJAX (~200ms)
+ * Cào 1 trang luồng công bố thông tin CafeF AJAX
  */
-export async function fetchLiveCafefDisclosures(): Promise<CorporateDisclosure[]> {
+async function fetchCafefDisclosuresSinglePage(page: number): Promise<CorporateDisclosure[]> {
   try {
     const controller = new AbortController()
     const timeoutId = setTimeout(() => controller.abort(), 6000)
 
     const res = await fetch(
-      'https://cafef.vn/du-lieu/Ajax/Events_RelatedNews_New.aspx?symbol=&floorID=0&configID=0&PageIndex=1&PageSize=50&Type=2',
+      `https://cafef.vn/du-lieu/Ajax/Events_RelatedNews_New.aspx?symbol=&floorID=0&configID=0&PageIndex=${page}&PageSize=50&Type=2`,
       {
         headers: {
           'User-Agent':
@@ -189,7 +290,7 @@ export async function fetchLiveCafefDisclosures(): Promise<CorporateDisclosure[]
 
       const exchange = getStockExchange(symbol)
       const { docType, label, isImportant } = classifyDisclosure(rawTitle)
-      const id = `cf_${symbol}_${publishedAt.replace(/[: -]/g, '')}`
+      const id = makeDisclosureId(symbol, publishedAt, rawTitle)
 
       records.push({
         id,
@@ -207,9 +308,62 @@ export async function fetchLiveCafefDisclosures(): Promise<CorporateDisclosure[]
     }
     return records
   } catch (err) {
-    console.warn('[Disclosures] Error fetching live CafeF stream:', err)
+    console.warn(`[Disclosures] Error fetching CafeF page ${page}:`, err)
     return []
   }
+}
+
+/**
+ * Cào nhiều trang luồng công bố thông tin 3 sàn mới nhất từ CafeF AJAX (song song theo lô)
+ * Đảm bảo dòng tin tức luôn liền mạch nhiều ngày liên tiếp, không bị đứt đoạn chỉ ở 30 tin đầu.
+ */
+export async function fetchLiveCafefDisclosures(options?: {
+  startPage?: number
+  maxPages?: number
+  stopAtMs?: number
+}): Promise<{ records: CorporateDisclosure[]; lastPageFetched: number }> {
+  const startPage = Math.max(1, options?.startPage ?? 1)
+  const maxPages = Math.max(1, Math.min(options?.maxPages ?? DEFAULT_LIVE_PAGES, 40))
+  const stopAtMs = options?.stopAtMs ?? 0
+
+  const allRecords: CorporateDisclosure[] = []
+  const batchSize = 4
+  let lastPageFetched = startPage - 1
+
+  for (let offset = 0; offset < maxPages; offset += batchSize) {
+    const pages: number[] = []
+    for (let i = 0; i < batchSize && offset + i < maxPages; i++) {
+      pages.push(startPage + offset + i)
+    }
+
+    const batchResults = await Promise.all(pages.map((p) => fetchCafefDisclosuresSinglePage(p)))
+    let shouldStop = false
+
+    for (let i = 0; i < batchResults.length; i++) {
+      const pageItems = batchResults[i]
+      if (!pageItems || pageItems.length === 0) {
+        shouldStop = true
+        break
+      }
+      lastPageFetched = pages[i]
+      allRecords.push(...pageItems)
+
+      if (stopAtMs > 0) {
+        const oldestOnPage = pageItems.reduce((min, it) => {
+          const ms = toSortMs(it.published_at)
+          return ms > 0 && ms < min ? ms : min
+        }, Infinity)
+        if (oldestOnPage <= stopAtMs) {
+          shouldStop = true
+          break
+        }
+      }
+    }
+
+    if (shouldStop) break
+  }
+
+  return { records: allRecords, lastPageFetched }
 }
 
 /**
@@ -256,7 +410,7 @@ export async function fetchLiveDisclosuresForSymbol(symbol: string): Promise<Cor
 
       const exchange = getStockExchange(sym)
       const { docType, label, isImportant } = classifyDisclosure(rawTitle)
-      const id = `cf_${sym}_${publishedAt.replace(/[: -]/g, '')}_${Math.random().toString(36).slice(2, 6)}`
+      const id = makeDisclosureId(sym, publishedAt, rawTitle)
 
       records.push({
         id,
@@ -387,13 +541,30 @@ export function getDisclosuresBySymbol(symbol: string, limit: number = 50): Corp
       }
     }
     return Array.from(map.values())
-      .sort((a, b) => new Date(b.published_at).getTime() - new Date(a.published_at).getTime())
+      .sort((a, b) => toSortMs(b.published_at) - toSortMs(a.published_at))
       .slice(0, limit)
   }
 
   // 3. Fallback sang snapshot JSON nếu cả SQLite và RAM đều rỗng
   const snapshot = loadSnapshot()
   return snapshot.filter((item) => item.symbol?.toUpperCase() === sym).slice(0, limit)
+}
+
+function mergeDisclosureLists(
+  primary: CorporateDisclosure[],
+  secondary: CorporateDisclosure[]
+): CorporateDisclosure[] {
+  const map = new Map<string, CorporateDisclosure>()
+  for (const item of primary) {
+    map.set(makeDedupeKey(item), item)
+  }
+  for (const item of secondary) {
+    const key = makeDedupeKey(item)
+    if (!map.has(key)) {
+      map.set(key, item)
+    }
+  }
+  return Array.from(map.values()).sort((a, b) => toSortMs(b.published_at) - toSortMs(a.published_at))
 }
 
 function filterDisclosures(
@@ -413,6 +584,10 @@ function filterDisclosures(
   return list.slice(0, filter.limit)
 }
 
+export function getLiveDisclosuresLastUpdated(): number {
+  return globalForDisclosures.__lastLiveFetchTime || 0
+}
+
 /**
  * Lấy danh sách công bố thông tin mới nhất toàn thị trường (cả 3 sàn HOSE, HNX, UPCoM)
  * Hỗ trợ tự động revalidation theo thời gian thực (Live On-Demand Fetching)
@@ -427,65 +602,74 @@ export async function getLiveMarketDisclosures(options?: {
   const { limit = 150, exchange, docType, importantOnly, forceRefresh = false } = options || {}
   const now = Date.now()
 
-  // 1. Kiểm tra cache trong bộ nhớ
-  if (
+  const cacheFresh =
     !forceRefresh &&
     globalForDisclosures.__inMemoryLiveDisclosures &&
     globalForDisclosures.__inMemoryLiveDisclosures.length > 0 &&
     now - (globalForDisclosures.__lastLiveFetchTime || 0) < LIVE_TTL_MS
-  ) {
-    return filterDisclosures(globalForDisclosures.__inMemoryLiveDisclosures, { exchange, docType, importantOnly, limit })
+
+  // 1. Kiểm tra cache trong bộ nhớ (đảm bảo đủ số lượng nếu cần)
+  if (cacheFresh && globalForDisclosures.__inMemoryLiveDisclosures!.length >= Math.min(limit, 300)) {
+    return filterDisclosures(globalForDisclosures.__inMemoryLiveDisclosures!, {
+      exchange,
+      docType,
+      importantOnly,
+      limit,
+    })
   }
 
-  // 2. Nếu đang cào hoặc cần cào mới:
-  if (!globalForDisclosures.__isLiveFetching) {
-    globalForDisclosures.__isLiveFetching = true
-    try {
-      const liveItems = await fetchLiveCafefDisclosures()
-      if (liveItems && liveItems.length > 0) {
-        // Lấy dữ liệu cơ sở (từ DB hoặc Snapshot)
-        const baseItems = getRecentMarketDisclosures({ limit: 300 })
+  // 2. Nếu đang có luồng fetch chạy, chờ chung promise thay vì trả về rỗng/cũ
+  if (globalForDisclosures.__liveFetchPromise) {
+    await globalForDisclosures.__liveFetchPromise
+  } else {
+    globalForDisclosures.__liveFetchPromise = (async () => {
+      try {
+        const baseItems = getRecentMarketDisclosures({ limit: 500 })
+        const newestBaseMs = baseItems.length > 0 ? toSortMs(baseItems[0].published_at) : 0
+        // Nếu DB/Snapshot mới (trong vòng 7 ngày), dừng sớm khi đã chạm vùng giao thoa để cực nhanh
+        const sevenDaysAgoMs = now - 7 * 24 * 3600 * 1000
+        const stopAtMs = newestBaseMs > sevenDaysAgoMs ? newestBaseMs : 0
+        const maxPages = limit > 300 ? Math.min(20, Math.ceil(limit / 25) + 2) : DEFAULT_LIVE_PAGES
 
-        // Trộn và khử trùng lặp theo title hoặc id
-        const map = new Map<string, CorporateDisclosure>()
-        for (const item of liveItems) {
-          const key = `${item.symbol}_${item.title}`
-          map.set(key, item)
-        }
-        for (const item of baseItems) {
-          const key = `${item.symbol}_${item.title}`
-          if (!map.has(key)) {
-            map.set(key, item)
+        const { records: liveItems, lastPageFetched } = await fetchLiveCafefDisclosures({
+          startPage: 1,
+          maxPages,
+          stopAtMs,
+        })
+
+        if (liveItems.length > 0) {
+          const existingMem = globalForDisclosures.__inMemoryLiveDisclosures || []
+          const merged = mergeDisclosureLists(liveItems, mergeDisclosureLists(existingMem, baseItems))
+          globalForDisclosures.__inMemoryLiveDisclosures = merged
+          globalForDisclosures.__liveHighestCafefPage = Math.max(
+            lastPageFetched,
+            globalForDisclosures.__liveHighestCafefPage || 0
+          )
+          globalForDisclosures.__lastLiveFetchTime = Date.now()
+        } else {
+          if (!globalForDisclosures.__inMemoryLiveDisclosures || globalForDisclosures.__inMemoryLiveDisclosures.length === 0) {
+            globalForDisclosures.__inMemoryLiveDisclosures = baseItems
           }
+          globalForDisclosures.__lastLiveFetchTime = Date.now()
         }
-
-        const merged = Array.from(map.values()).sort(
-          (a, b) => new Date(b.published_at).getTime() - new Date(a.published_at).getTime()
-        )
-
-        globalForDisclosures.__inMemoryLiveDisclosures = merged
-        globalForDisclosures.__lastLiveFetchTime = now
-      } else {
+      } catch (e) {
+        console.warn('[Disclosures] Live fetch failed, using cached base:', e)
         if (!globalForDisclosures.__inMemoryLiveDisclosures || globalForDisclosures.__inMemoryLiveDisclosures.length === 0) {
           globalForDisclosures.__inMemoryLiveDisclosures = getRecentMarketDisclosures({ limit: 300 })
         }
-        globalForDisclosures.__lastLiveFetchTime = now
+        globalForDisclosures.__lastLiveFetchTime = Date.now()
+      } finally {
+        globalForDisclosures.__liveFetchPromise = null
       }
-    } catch (e) {
-      console.warn('[Disclosures] Live fetch failed, using cached base:', e)
-      if (!globalForDisclosures.__inMemoryLiveDisclosures || globalForDisclosures.__inMemoryLiveDisclosures.length === 0) {
-        globalForDisclosures.__inMemoryLiveDisclosures = getRecentMarketDisclosures({ limit: 300 })
-      }
-      globalForDisclosures.__lastLiveFetchTime = now
-    } finally {
-      globalForDisclosures.__isLiveFetching = false
-    }
+    })()
+
+    await globalForDisclosures.__liveFetchPromise
   }
 
   const pool =
     globalForDisclosures.__inMemoryLiveDisclosures && globalForDisclosures.__inMemoryLiveDisclosures.length > 0
       ? globalForDisclosures.__inMemoryLiveDisclosures
-      : getRecentMarketDisclosures({ limit: 200 })
+      : getRecentMarketDisclosures({ limit: Math.max(limit, 200) })
 
   return filterDisclosures(pool, { exchange, docType, importantOnly, limit })
 }

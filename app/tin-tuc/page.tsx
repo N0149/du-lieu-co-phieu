@@ -79,7 +79,7 @@ export default async function NewsPage(props: NewsPageProps) {
     getInitialNews(),
     getUserWatchlist(),
     getInsiderActions({ limit: 80 }).catch(() => []),
-    getLiveMarketDisclosures({ limit: 200 }).catch(() => getRecentMarketDisclosures({ limit: 200 })),
+    getLiveMarketDisclosures({ limit: 300 }).catch(() => getRecentMarketDisclosures({ limit: 300 })),
   ])
   const initialWatchlist = userWatchlistResult.items.map((it) => it.ticker)
   const stockPriceMap = getStockPriceMap()

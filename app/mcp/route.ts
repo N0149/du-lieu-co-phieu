@@ -11,7 +11,7 @@ import {
   verifyAccessToken,
   MCP_CORS_HEADERS,
 } from '@/lib/mcp/oauth'
-import { checkMcpDailyLimit } from '@/lib/rate-limiter'
+import { checkMcpDailyLimit, MCP_FREE_DAILY_LIMIT } from '@/lib/rate-limiter'
 import { isAdminEmail } from '@/lib/admin-auth'
 
 export const dynamic = 'force-dynamic'
@@ -153,8 +153,9 @@ export async function POST(req: NextRequest) {
   )
 
   // 3. Kiểm tra hạn mức: Miễn phí = 5 câu hỏi/ngày; VIP = 150 câu hỏi/ngày
+  let limitCheck: any = null
   if (isToolCall) {
-    const limitCheck = await checkMcpDailyLimit(authPayload.userId || authPayload.email, isVip)
+    limitCheck = await checkMcpDailyLimit(authPayload.userId || authPayload.email, isVip)
     if (!limitCheck.success) {
       return new NextResponse(
         JSON.stringify({
@@ -164,7 +165,7 @@ export async function POST(req: NextRequest) {
             code: -32000,
             message:
               '🔒 BẠN ĐÃ SỬ DỤNG HẾT 5 CÂU HỎI TRẢI NGHIỆM MCP MIỄN PHÍ TRONG HÔM NAY.\n\n' +
-              'Dữ liệu Thuyết minh BCTC, ĐHĐCĐ và Nghiên cứu chuyên sâu AI là đặc quyền của Hội viên VIP.\n' +
+              'Dữ liệu Thuyết minh BCTC, Báo Cáo Thường Niên, ĐHĐCĐ và Nghiên cứu chuyên sâu AI là đặc quyền của Hội viên VIP.\n' +
               'Để tiếp tục tra cứu không giới hạn trên Google Gemini & Claude, vui lòng nâng cấp gói VIP (chỉ từ 95.000 đ/tháng) tại: https://www.dulieudautu.com/ket-noi-mcp (hoặc quay lại vào ngày mai).',
           },
         }),
@@ -186,12 +187,38 @@ export async function POST(req: NextRequest) {
     await server.connect(transport)
 
     const response = await transport.handleRequest(req)
+    let finalBody = await response.text()
+
+    // Nếu là tài khoản Dùng thử (Free) và là cuộc gọi tools/call: chèn thêm thông báo hạn mức vào cuối câu trả lời
+    if (isToolCall && !isVip && limitCheck && limitCheck.success) {
+      try {
+        const resJson = JSON.parse(finalBody)
+        if (resJson?.result?.content && Array.isArray(resJson.result.content)) {
+          const remaining = typeof limitCheck.remaining === 'number' ? limitCheck.remaining : 0
+          const used = Math.max(0, MCP_FREE_DAILY_LIMIT - remaining)
+          const quotaNotice =
+            `\n\n---\n` +
+            `💡 **Hạn mức tài khoản dùng thử**: Bạn đã sử dụng ${used}/${MCP_FREE_DAILY_LIMIT} câu hỏi MCP hôm nay (còn lại **${remaining}** lượt).\n` +
+            `👉 *Nâng cấp gói Hội viên VIP (chỉ từ 95.000đ/tháng) tại https://www.dulieudautu.com/ket-noi-mcp để tra cứu không giới hạn Thuyết minh BCTC, BCTN & Nghiên cứu AI.*`
+
+          const lastTextItem = resJson.result.content.slice().reverse().find((c: any) => c.type === 'text')
+          if (lastTextItem) {
+            lastTextItem.text += quotaNotice
+            finalBody = JSON.stringify(resJson)
+          }
+        }
+      } catch {
+        // Giữ nguyên finalBody nếu không parse được
+      }
+    }
+
     const headers = new Headers(response.headers)
     for (const [k, v] of Object.entries(MCP_CORS_HEADERS)) {
       headers.set(k, v)
     }
+    headers.delete('content-length')
 
-    return new Response(response.body, {
+    return new Response(finalBody, {
       status: response.status,
       statusText: response.statusText,
       headers,

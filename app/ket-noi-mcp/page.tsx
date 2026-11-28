@@ -39,7 +39,7 @@ const CONNECT_INFO = {
   name: 'dulieudautu.com',
   url: 'https://www.dulieudautu.com/mcp',
   auth: 'OAuth (RFC 7636 PKCE S256)',
-  scope: '16 năm BCTC, Thuyết minh CAPEX & Lãi vay, Báo Cáo Thường Niên (BCTN), Kế hoạch ĐHĐCĐ & Quỹ KTPL, Định giá RNAV',
+  scope: '16 năm BCTC, Thuyết minh CAPEX & Lãi vay, BCTN, Giá hàng hóa thế giới, XNK Hải quan, Kế hoạch ĐHĐCĐ, Định giá RNAV',
 }
 
 const MCP_TOOLS = [
@@ -63,9 +63,9 @@ const MCP_TOOLS = [
   },
   {
     name: 'su_kien_va_cong_bo_thong_tin',
-    title: 'Lịch Cổ tức, Giao dịch Nội bộ & Danh mục BCTN',
-    desc: 'Tra cứu thông báo chia cổ tức (tiền mặt & cổ phiếu, ngày GDKHQ), giao dịch Lãnh đạo & Cổ đông lớn mua/bán, Nghị quyết ĐHĐCĐ/HĐQT và danh mục doanh nghiệp đã có Báo Cáo Thường Niên bóc tách.',
-    badge: 'Corporate Actions',
+    title: 'Sự kiện, Giá hàng hóa & Thống kê XNK Hải quan',
+    desc: 'Tra cứu thông báo cổ tức, giao dịch nội bộ, danh mục BCTN, giá cả hàng hóa thế giới (Dầu Brent/WTI, Thép, Cao su, Phân bón, Cước tàu BDI/WCI) và số liệu XNK từ Tổng cục Hải quan.',
+    badge: 'Macro & Commodities',
   },
 ]
 
@@ -73,6 +73,14 @@ const SAMPLE_PROMPTS = [
   {
     title: 'Bóc tách chiến lược & ESG từ BCTN',
     prompt: 'Bóc tách chiến lược dài hạn, kế hoạch đầu tư dự án mới và định hướng phát triển bền vững ESG trong Báo Cáo Thường Niên của VHC.',
+  },
+  {
+    title: 'Tra cứu giá hàng hóa thế giới & cước tàu',
+    prompt: 'Cập nhật giá cả hàng hóa thế giới mới nhất: Giá dầu Brent, thép, cao su, phân bón Urea và chỉ số cước vận tải biển BDI.',
+  },
+  {
+    title: 'Bóc tách số liệu XNK Hải quan',
+    prompt: 'Bóc tách tình hình xuất khẩu thủy sản của VHC và số liệu cán cân xuất nhập khẩu mới nhất từ Tổng cục Hải quan.',
   },
   {
     title: 'Sàng lọc top cổ phiếu Cảng biển',
@@ -105,6 +113,10 @@ const SAMPLE_PROMPTS = [
 ]
 
 const FAQ_ITEMS = [
+  {
+    q: 'Hạn mức tra cứu MCP là bao nhiêu? Làm sao để biết khi nào hết hạn mức?',
+    a: 'Tài khoản thành viên miễn phí được tặng 5 câu hỏi trải nghiệm mỗi ngày (24 giờ). Trong mỗi câu trả lời của AI sẽ luôn hiển thị số câu còn lại (ví dụ: "còn lại 3/5 lượt"). Khi dùng hết 5 lượt, AI sẽ gửi thông báo nâng cấp và tạm dừng tra cứu đến ngày hôm sau. Hội viên VIP được tra cứu không giới hạn (150 câu hỏi/ngày) với toàn quyền truy xuất Thuyết minh BCTC, BCTN 2025, ĐHĐCĐ & Nghiên cứu AI.',
+  },
   {
     q: 'Chi phí sử dụng MCP là bao nhiêu? Có tốn phí chủ web không?',
     a: 'Chi phí là 0đ đối với máy chủ của dulieudautu.com. Toàn bộ quá trình tính toán và suy luận AI được xử lý trực tiếp trên tài khoản Claude, ChatGPT, Gemini hoặc Grok của bạn.',
