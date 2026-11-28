@@ -310,7 +310,7 @@
     "recommendation": "MUA",
     "targetPrice": 44500,
     "pageCount": 0,
-    "description": "Tập đoàn Xăng Dầu Việt Nam | Ngành: Phân phối Xăng dầu | Kỳ vọng tăng giá (Upside): 45.0% | Dự phóng LNST: 4021 tỷ đồng",
+    "description": "Tập đoàn Xăng Dầu Việt Nam | Ngành: Phân phối Xăng dầu | Kỳ vọng tăng giá (Upside): 43.5% | Dự phóng LNST: 4021 tỷ đồng",
     "downloadUrl": "https://cdn02.wigroup.vn/baocaophantich/ar_27332_VNDS_2026-11-23.pdf",
     "thumbnailUrl": ""
   },
@@ -325,7 +325,7 @@
     "recommendation": "TRUNG LẬP",
     "targetPrice": 34000,
     "pageCount": 0,
-    "description": "CTCP - Tổng Công ty Phân bón Dầu khí Cà Mau | Ngành: Phân bón | Kỳ vọng tăng giá (Upside): 11.3% | Dự phóng LNST: 2811 tỷ đồng",
+    "description": "CTCP - Tổng Công ty Phân bón Dầu khí Cà Mau | Ngành: Phân bón | Kỳ vọng tăng giá (Upside): 11.7% | Dự phóng LNST: 2811 tỷ đồng",
     "downloadUrl": "https://cdn02.wigroup.vn/baocaophantich/ar_27326_PSI_2026-11-23.pdf",
     "thumbnailUrl": ""
   },
@@ -340,7 +340,7 @@
     "recommendation": "MUA",
     "targetPrice": 29600,
     "pageCount": 0,
-    "description": "Ngân hàng TMCP Quân Đội | Ngành: Ngân hàng | Kỳ vọng tăng giá (Upside): 63.5% | Dự phóng LNST: 33342 tỷ đồng",
+    "description": "Ngân hàng TMCP Quân Đội | Ngành: Ngân hàng | Kỳ vọng tăng giá (Upside): 62.6% | Dự phóng LNST: 33342 tỷ đồng",
     "downloadUrl": "https://cdn02.wigroup.vn/baocaophantich/ar_27323_MAS_2026-11-23.pdf",
     "thumbnailUrl": ""
   },
@@ -355,7 +355,7 @@
     "recommendation": "MUA",
     "targetPrice": 25000,
     "pageCount": 0,
-    "description": "Ngân hàng TMCP Phát triển TP. HCM | Ngành: Ngân hàng | Kỳ vọng tăng giá (Upside): 14.7% | Dự phóng LNST: 18934 tỷ đồng",
+    "description": "Ngân hàng TMCP Phát triển TP. HCM | Ngành: Ngân hàng | Kỳ vọng tăng giá (Upside): 16.8% | Dự phóng LNST: 18934 tỷ đồng",
     "downloadUrl": "https://cdn02.wigroup.vn/baocaophantich/ar_27324_MAS_2026-11-23.pdf",
     "thumbnailUrl": ""
   },
@@ -385,7 +385,7 @@
     "recommendation": "MUA",
     "targetPrice": 33200,
     "pageCount": 0,
-    "description": "CTCP Tập đoàn Hòa Phát | Ngành: Thép | Kỳ vọng tăng giá (Upside): 62.7% | Dự phóng LNST: 30027 tỷ đồng",
+    "description": "CTCP Tập đoàn Hòa Phát | Ngành: Thép | Kỳ vọng tăng giá (Upside): 66.8% | Dự phóng LNST: 30027 tỷ đồng",
     "downloadUrl": "https://cdn02.wigroup.vn/baocaophantich/ar_27315_BSC_2026-11-23.pdf",
     "thumbnailUrl": ""
   },
@@ -580,83 +580,53 @@
     "recommendation": "MUA",
     "targetPrice": 89800,
     "pageCount": 0,
-    "description": "CTCP Xây dựng Coteccons | Ngành: Xây dựng nhà ở | Kỳ vọng tăng giá (Upside): 22.7% | Dự phóng LNST: 788 tỷ đồng",
+    "description": "CTCP Xây dựng Coteccons | Ngành: Xây dựng nhà ở | Kỳ vọng tăng giá (Upside): 29.2% | Dự phóng LNST: 788 tỷ đồng",
     "downloadUrl": "https://cdn02.wigroup.vn/baocaophantich/ar_27331_VNDS_2026-11-23.pdf",
     "thumbnailUrl": ""
   },
   {
-    "id": "23231",
-    "symbol": "GVR",
-    "title": "GVR: Báo cáo Phân tích Kỹ thuật 22/11/2026",
-    "slug": "gvr-bao-cao-phan-tich-ky-thuat-22112026",
-    "source": "VikkiBankS",
-    "date": "2026-11-22",
-    "displayDate": "22/11/2026",
-    "recommendation": "MUA",
+    "id": "wd_26977",
+    "symbol": "DGW",
+    "title": "Báo cáo cập nhật KQKD Q3/2026",
+    "slug": "dgw-bao-cao-cap-nhat-kqkd-q3-2026-wd_26977",
+    "source": "TCBS",
+    "date": "2026-11-20",
+    "displayDate": "20/11/2026",
+    "recommendation": null,
     "targetPrice": null,
-    "pageCount": 5,
-    "description": "Công ty chứng khoán VIKKIBANKS khuyến nghị MUA mã cổ phiếu GVR với giá mục tiêu từ 30.000 đến 33.000 đồng, upside từ +8,89% đến +19,78%. Theo BCTC hợp nhất Q3/2026, GVR ghi nhận doanh thu thuần đạt 9.506 tỷ đồng (+2,3% YoY) và LNST đạt 3.679 tỷ đồng (+68,2% YoY). Lũy kế 9T/2026, doanh thu thuần đạt 25.434 tỷ đồng (+24,5% YoY) và LNST đạt 8.626 tỷ đồng (+65,3% YoY), hoàn thành khoảng 155% kế hoạch LNST cả năm 2026. Kết quả tích cực nhờ giá bán cao su duy trì ở mức cao và doanh thu mủ cao su 9T/2026 đạt 21.266 tỷ đồng.",
-    "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/company/GVR/gvr-bao-cao-phan-tich-ky-thuat-22112026-23231.pdf",
-    "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/company/GVR/gvr-bao-cao-phan-tich-ky-thuat-22112026-23231.jpg"
+    "pageCount": 0,
+    "description": "CTCP Thế Giới Số | Ngành: Bán lẻ ICT | Dự phóng LNST: 1045 tỷ đồng",
+    "downloadUrl": "",
+    "thumbnailUrl": ""
   },
   {
-    "id": "wd_26954",
-    "symbol": "PLC",
-    "title": "Cơ hội tái định giá khi đầu tư công tăng tốc",
-    "slug": "plc-co-hoi-tai-dinh-gia-khi-dau-tu-cong-tang-toc-wd_26954",
+    "id": "wd_26969",
+    "symbol": "VHC",
+    "title": "Đa dạng hóa thị trường giảm tác động thuế quan",
+    "slug": "vhc-da-dang-hoa-thi-truong-giam-tac-dong-thue-quan-wd_26969",
     "source": "VNDS",
     "date": "2026-11-20",
     "displayDate": "20/11/2026",
     "recommendation": "MUA",
-    "targetPrice": 30500,
+    "targetPrice": 67900,
     "pageCount": 0,
-    "description": "Tổng Công ty Hóa dầu Petrolimex - CTCP | Ngành: Hoá chất khác | Kỳ vọng tăng giá (Upside): 62.2% | Dự phóng LNST: 314 tỷ đồng",
-    "downloadUrl": "https://cdn02.wigroup.vn/baocaophantich/ar_27333_VNDS_2026-11-20.pdf",
+    "description": "CTCP Vĩnh Hoàn | Ngành: Thuỷ sản | Kỳ vọng tăng giá (Upside): 41.2% | Dự phóng LNST: 1367 tỷ đồng",
+    "downloadUrl": "https://cdn02.wigroup.vn/baocaophantich/ar_27354_VNDS_2026-11-23.pdf",
     "thumbnailUrl": ""
   },
   {
-    "id": "wd_26953",
-    "symbol": "SHB",
-    "title": "Báo cáo cập nhật KQKD Q3/2026",
-    "slug": "shb-bao-cao-cap-nhat-kqkd-q3-2026-wd_26953",
-    "source": "TCBS",
+    "id": "wd_26965",
+    "symbol": "SAB",
+    "title": "Triển vọng dài hạn kém khả quan",
+    "slug": "sab-trien-vong-dai-han-kem-kha-quan-wd_26965",
+    "source": "FPTS",
     "date": "2026-11-20",
     "displayDate": "20/11/2026",
-    "recommendation": null,
-    "targetPrice": null,
+    "recommendation": "TRUNG LẬP",
+    "targetPrice": 45400,
     "pageCount": 0,
-    "description": "Ngân hàng TMCP Sài Gòn - Hà Nội | Ngành: Ngân hàng | Dự phóng LNST: 15179 tỷ đồng",
-    "downloadUrl": "",
-    "thumbnailUrl": ""
-  },
-  {
-    "id": "wd_26952",
-    "symbol": "HDG",
-    "title": "Báo cáo cập nhật KQKD Q3/2026",
-    "slug": "hdg-bao-cao-cap-nhat-kqkd-q3-2026-wd_26952",
-    "source": "TCBS",
-    "date": "2026-11-20",
-    "displayDate": "20/11/2026",
-    "recommendation": null,
-    "targetPrice": null,
-    "pageCount": 0,
-    "description": "CTCP Tập đoàn Hà Đô | Ngành: Tập đoàn công nghiệp | Dự phóng LNST: 678 tỷ đồng",
-    "downloadUrl": "",
-    "thumbnailUrl": ""
-  },
-  {
-    "id": "wd_26951",
-    "symbol": "GMD",
-    "title": "Báo cáo cập nhật KQKD Q3/2026",
-    "slug": "gmd-bao-cao-cap-nhat-kqkd-q3-2026-wd_26951",
-    "source": "TCBS",
-    "date": "2026-11-20",
-    "displayDate": "20/11/2026",
-    "recommendation": null,
-    "targetPrice": null,
-    "pageCount": 0,
-    "description": "CTCP Tập đoàn Gemadept | Ngành: Cảng biển | Dự phóng LNST: 2671 tỷ đồng",
-    "downloadUrl": "",
+    "description": "Tổng CTCP Bia - Rượu - Nước giải khát Sài Gòn | Ngành: Bia | Kỳ vọng tăng giá (Upside): 4.1% | Dự phóng LNST: 4925 tỷ đồng",
+    "downloadUrl": "https://cdn02.wigroup.vn/baocaophantich/ar_27345_FPTS_2026-11-23.pdf",
     "thumbnailUrl": ""
   },
   {
@@ -690,51 +660,6 @@
     "thumbnailUrl": ""
   },
   {
-    "id": "wd_26942",
-    "symbol": "GEG",
-    "title": "Lợi nhuận cải thiện so với cùng kỳ",
-    "slug": "geg-loi-nhuan-cai-thien-so-voi-cung-ky-wd_26942",
-    "source": "KIS",
-    "date": "2026-11-20",
-    "displayDate": "20/11/2026",
-    "recommendation": "TRUNG LẬP",
-    "targetPrice": null,
-    "pageCount": 0,
-    "description": "CTCP Điện Gia Lai | Ngành: Điện | Dự phóng LNST: 318 tỷ đồng",
-    "downloadUrl": "https://cdn02.wigroup.vn/baocaophantich/ar_27316_KIS_2026-11-20.pdf",
-    "thumbnailUrl": ""
-  },
-  {
-    "id": "wd_26940",
-    "symbol": "VHM",
-    "title": "Cập nhật kết quả kinh doanh Quý 3 năm 2026",
-    "slug": "vhm-cap-nhat-ket-qua-kinh-doanh-quy-3-nam-2026-wd_26940",
-    "source": "KAFI",
-    "date": "2026-11-20",
-    "displayDate": "20/11/2026",
-    "recommendation": null,
-    "targetPrice": null,
-    "pageCount": 0,
-    "description": "CTCP Vinhomes | Ngành: Bất động sản dân cư",
-    "downloadUrl": "https://cdn02.wigroup.vn/baocaophantich/ar_27320_KAFI_2026-11-20.pdf",
-    "thumbnailUrl": ""
-  },
-  {
-    "id": "wd_26939",
-    "symbol": "NLG",
-    "title": "Cập nhật kết quả kinh doanh Quý 3 năm 2026",
-    "slug": "nlg-cap-nhat-ket-qua-kinh-doanh-quy-3-nam-2026-wd_26939",
-    "source": "KAFI",
-    "date": "2026-11-20",
-    "displayDate": "20/11/2026",
-    "recommendation": null,
-    "targetPrice": null,
-    "pageCount": 0,
-    "description": "CTCP Đầu tư Nam Long | Ngành: Bất động sản dân cư",
-    "downloadUrl": "https://cdn02.wigroup.vn/baocaophantich/ar_27321_KAFI_2026-11-20.pdf",
-    "thumbnailUrl": ""
-  },
-  {
     "id": "wd_26938",
     "symbol": "CTG",
     "title": "Cập nhật KQKD Quý 3 và 9T2026",
@@ -745,7 +670,7 @@
     "recommendation": "TRUNG LẬP",
     "targetPrice": 32800,
     "pageCount": 0,
-    "description": "Ngân hàng TMCP Công Thương Việt Nam | Ngành: Ngân hàng | Kỳ vọng tăng giá (Upside): 8.1% | Dự phóng LNST: 40640 tỷ đồng",
+    "description": "Ngân hàng TMCP Công Thương Việt Nam | Ngành: Ngân hàng | Kỳ vọng tăng giá (Upside): 11.2% | Dự phóng LNST: 40640 tỷ đồng",
     "downloadUrl": "https://cdn02.wigroup.vn/baocaophantich/ar_27311_GTJA_2026-11-20.pdf",
     "thumbnailUrl": ""
   },
@@ -760,7 +685,7 @@
     "recommendation": "TRUNG LẬP",
     "targetPrice": 32800,
     "pageCount": 0,
-    "description": "CTCP - Tổng Công ty Phân bón Dầu khí Cà Mau | Ngành: Phân bón | Kỳ vọng tăng giá (Upside): 7.4% | Dự phóng LNST: 2475 tỷ đồng",
+    "description": "CTCP - Tổng Công ty Phân bón Dầu khí Cà Mau | Ngành: Phân bón | Kỳ vọng tăng giá (Upside): 7.7% | Dự phóng LNST: 2475 tỷ đồng",
     "downloadUrl": "https://cdn02.wigroup.vn/baocaophantich/ar_27317_BSC_2026-11-23.pdf",
     "thumbnailUrl": ""
   },
@@ -793,6 +718,21 @@
     "description": "- Chúng tôi duy trì khuyến nghị MUA đối với CTCP Đầu tư Nam Long (NLG) và điều chỉnh giảm 6,5% giá mục tiêu xuống 34.400 đồng/cổ phiếu. - Giá mục tiêu thấp hơn của chúng tôi chủ yếu phản ánh (1) mức điều chỉnh giảm 26% đối với tổng dự báo doanh số bán BĐS giai đoạn 2026–28 sau doanh số bán BĐS 9T 2026 thấp hơn kỳ vọng và (2) P/B mục tiêu thấp hơn ở mức 1,2 lần (so với 1,3 lần trước đây), một phần được bù đắp bởi (3) việc chúng tôi cập nhật mô hình định giá sang cuối năm 2027 (từ giữa năm 2027). - Chúng tôi dự báo LNST sau lợi ích CĐTS năm 2026 đạt 653 tỷ đồng (-7% YoY), tương ứng LNST sau lợi ích CĐTS quý 4/2026 đạt khoảng 524 tỷ đồng (+51% YoY) so với mức -64% YoY trong 9T 2026. Quý 4/2026 dự kiến sẽ đóng góp khoảng 80% dự báo lợi nhuận cả năm của chúng tôi, chủ yếu được thúc đẩy bởi hoạt động bàn giao tại Izumi City, Mizuki Park, Sol Garden, An Zen Residences, Southgate và Cần Thơ. - Chúng tôi dự báo LNST sau lợi ích CĐTS năm 2027 đạt 745 tỷ đồng (+14% so với dự báo năm 2026), trong đó doanh thu BĐS cốt lõi tăng 23% so với năm 2026 lên 8,0 nghìn tỷ đồng, chủ yếu từ hoạt động bàn giao backlog (Southgate, Mizuki Park và Izumi City). - Về doanh số bán BĐS, chúng tôi dự báo năm 2026 ",
     "downloadUrl": "https://www.vietcap.com.vn/api/cms-api/uploads/file/202611/NLG-20261118-MUA.pdf",
     "thumbnailUrl": ""
+  },
+  {
+    "id": "23257",
+    "symbol": "CTG",
+    "title": "CTG: Khuyến nghị TRUNG LẬP với giá mục tiêu 32,800 đồng/cổ phiếu",
+    "slug": "ctg-khuyen-nghi-trung-lap-voi-gia-muc-tieu-32800-dongco-phieu",
+    "source": "GTJA (Vietnam)",
+    "date": "2026-11-20",
+    "displayDate": "20/11/2026",
+    "recommendation": "TRUNG LẬP",
+    "targetPrice": 32800,
+    "pageCount": 8,
+    "description": "Công ty chứng khoán Guotai Haitong khuyến nghị TRUNG LẬP mã cổ phiếu CTG với giá mục tiêu 32.800 đồng, upside +8.9%. Lợi nhuận trước thuế 9T2026 đạt 39,557 tỷ đồng (+33.9% YoY); riêng Q3/2026 đạt 13,689 tỷ đồng (+29.0% YoY). Dự phóng năm 2026F, CTG đạt LNTT 50.8 nghìn tỷ đồng (+17% YoY). Tín dụng 9T2026 tăng 7.5% YTD đạt 2,141 nghìn tỷ đồng, huy động vốn tăng 8.4% YTD đạt 1,944 nghìn tỷ đồng. NIM 9M2026 đạt 2.91%, CIR giảm về 24.7%. Tỷ lệ nợ xấu NPL giữ ở mức 1.20% và tỷ lệ bao phủ nợ xấu (LLR) đạt 160.4%.",
+    "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/company/CTG/ctg-khuyen-nghi-trung-lap-voi-gia-muc-tieu-32800-dongco-phieu-23257.pdf",
+    "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/company/CTG/ctg-khuyen-nghi-trung-lap-voi-gia-muc-tieu-32800-dongco-phieu-23257.jpg"
   },
   {
     "id": "23230",
@@ -1028,7 +968,7 @@
     "date": "2026-11-19",
     "displayDate": "19/11/2026",
     "recommendation": "MUA",
-    "targetPrice": 68200,
+    "targetPrice": 66662.88840262582,
     "pageCount": 0,
     "description": "CTCP FPT | Ngành: Phần mềm | Kỳ vọng tăng giá (Upside): 51.6% | Dự phóng LNST: 10594 tỷ đồng",
     "downloadUrl": "https://cdn02.wigroup.vn/baocaophantich/ar_27287_BVSC_2026-11-20.pdf",
@@ -1050,11 +990,11 @@
     "thumbnailUrl": ""
   },
   {
-    "id": "wd_26908",
-    "symbol": "SIP",
-    "title": "Cho thuê đất KCN phục hồi mạnh, hưởng lợi từ các dự án hạ tầng trọng điểm",
-    "slug": "sip-cho-thue-dat-kcn-phuc-hoi-manh-huong-loi-tu-cac-du-an-ha-tang-trong-diem-wd_26908",
-    "source": "BVSC",
+    "id": "23259",
+    "symbol": "HDB",
+    "title": "HDB: Báo cáo cập nhật KQKD Q3/2026",
+    "slug": "hdb-bao-cao-cap-nhat-kqkd-q32026",
+    "source": "VPX",
     "date": "2026-11-19",
     "displayDate": "19/11/2026",
     "recommendation": "MUA",
@@ -1065,7 +1005,7 @@
     "thumbnailUrl": ""
   },
   {
-    "id": "wd_26907",
+    "id": "23249",
     "symbol": "ACB",
     "title": "Cập nhật kết quả kinh doanh Q3/2026",
     "slug": "acb-cap-nhat-ket-qua-kinh-doanh-q3-2026-wd_26907",
@@ -1418,7 +1358,7 @@
     "date": "2026-11-18",
     "displayDate": "18/11/2026",
     "recommendation": "MUA",
-    "targetPrice": 11200,
+    "targetPrice": 39457,
     "pageCount": 0,
     "description": "CTCP Lizen | Ngành: Xây dựng cầu đường | Kỳ vọng tăng giá (Upside): 80.6% | Dự phóng LNST: 165 tỷ đồng",
     "downloadUrl": "https://cdn02.wigroup.vn/baocaophantich/ar_27290_ACBS_2026-11-19.pdf",
@@ -2085,21 +2025,6 @@
     "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/company/DCM/dcm-khuyen-nghi-mua-voi-gia-muc-tieu-38200-dongco-phieu-23147.jpg"
   },
   {
-    "id": "23146",
-    "symbol": "HHV",
-    "title": "HHV: Báo cáo cập nhật KQKD Q3/2026",
-    "slug": "hhv-bao-cao-cap-nhat-kqkd-q32026",
-    "source": "VikkiBankS",
-    "date": "2026-11-17",
-    "displayDate": "17/11/2026",
-    "recommendation": null,
-    "targetPrice": null,
-    "pageCount": 8,
-    "description": "Công ty chứng khoán VikkiBanks cập nhật kết quả kinh doanh Q3/2026 của mã cổ phiếu HHV. Năm 2026, công ty chứng khoán ước tính doanh thu thuần đạt 4.592 tỷ đồng (+20,8% YoY) và lợi nhuận sau thuế hợp nhất đạt 902 tỷ đồng (+55,3% YoY). Cổ phiếu HHV đang giao dịch ở mức định giá P/E 8,0 lần và P/B 0,5 lần. Lũy kế 9T/2026, HHV ghi nhận doanh thu thuần 2.992 tỷ đồng (+15,3% YoY) và lợi nhuận sau thuế 602 tỷ đồng (+26,2% YoY), qua đó hoàn thành 67% kế hoạch doanh thu và 74% kế hoạch lợi nhuận cả năm. Giá trị backlog ký mới đạt 5.300 tỷ đồng, đảm bảo công việc đến năm 2028.",
-    "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/company/HHV/hhv-bao-cao-cap-nhat-kqkd-q32026-23146.pdf",
-    "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/company/HHV/hhv-bao-cao-cap-nhat-kqkd-q32026-23146.jpg"
-  },
-  {
     "id": "23145",
     "symbol": "VNM",
     "title": "VNM: Khuyến nghị MUA với giá mục tiêu 60,500 đồng/cổ phiếu",
@@ -2338,6 +2263,21 @@
     "description": "Công ty chứng khoán VPBankS cập nhật kết quả kinh doanh mã cổ phiếu POW qua chương trình Analyst Meeting (báo cáo không đưa ra giá mục tiêu và khuyến nghị). Ước tính cả năm 2026, sản lượng điện đạt 25 tỷ kWh (hoàn thành vượt mức kế hoạch 21,6 tỷ kWh), doanh thu hợp nhất phấn đấu đạt 69–70 nghìn tỷ đồng và LNST công ty mẹ đạt khoảng 4,7 nghìn tỷ đồng. HĐQT đã điều chỉnh tăng kế hoạch kinh doanh 2026 với doanh thu hợp nhất 53.308 tỷ đồng (+7%) và LNST 4.973 tỷ đồng (+342%). POW dự kiến trình đại hội đồng cổ đông kế hoạch tăng vốn điều lệ lên 50.600 tỷ đồng đến năm 2028 thông qua phát hành cổ phiếu trả cổ tức từ nguồn LNST chưa phân phối và chào bán thêm cổ phiếu.",
     "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/company/POW/pow-bao-cao-cap-nhat-kqkd-q32026-23163.pdf",
     "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/company/POW/pow-bao-cao-cap-nhat-kqkd-q32026-23163.jpg"
+  },
+  {
+    "id": "23162",
+    "symbol": "PLX",
+    "title": "PLX: Khuyến nghị MUA với giá mục tiêu 42,400 đồng/cổ phiếu",
+    "slug": "plx-khuyen-nghi-mua-voi-gia-muc-tieu-42400-dongco-phieu",
+    "source": "ACBS",
+    "date": "2026-11-16",
+    "displayDate": "16/11/2026",
+    "recommendation": "MUA",
+    "targetPrice": 42400,
+    "pageCount": 2,
+    "description": "Công ty chứng khoán ACBS khuyến nghị MUA mã cổ phiếu PLX với giá mục tiêu 42.400 đồng, upside +26% (tổng tỷ suất sinh lời kỳ vọng 29%). Lũy kế 9T2026, doanh thu thuần đạt 373 nghìn tỷ đồng (+63,7% yoy, hoàn thành 118% kế hoạch năm) và LNST đạt 3,7 nghìn tỷ đồng (+60% yoy, hoàn thành 139% kế hoạch năm). ACBS dự phóng doanh thu thuần năm 2026 đạt 473.790 tỷ đồng (+53% yoy), LN ròng đạt 4.465 tỷ đồng (+48% yoy). Năm 2027, doanh thu dự phóng 467.991 tỷ đồng (-1% yoy) và LN ròng 4.271 tỷ đồng (-4% yoy). P/E dự phóng năm 2026/2027 lần lượt là 15,4x và 16,3x; P/B là 1,5x. Kế hoạch chi trả cổ tức tiền mặt dự phóng 1.200 đồng/cp năm 2026 (lợi suất 3,6%) và 1.000 đồng/cp năm 2027 (lợi suất 3,0%).",
+    "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/company/PLX/plx-khuyen-nghi-mua-voi-gia-muc-tieu-42400-dongco-phieu-23162.pdf",
+    "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/company/PLX/plx-khuyen-nghi-mua-voi-gia-muc-tieu-42400-dongco-phieu-23162.jpg"
   },
   {
     "id": "23151",
@@ -2818,21 +2758,6 @@
     "description": "Công ty chứng khoán ACBS khuyến nghị MUA mã cổ phiếu FPT với giá mục tiêu 75.700 đồng, upside +51,2% (tổng suất sinh lời 55,2%). ACBS điều chỉnh giảm 3% dự phóng LNTT năm 2027 xuống 13.025 tỷ đồng (+10,6% svck) do mảng CNTT nước ngoài giảm tốc. Năm 2026F, doanh thu dự phóng đạt 55.709 tỷ đồng, LNTT đạt 11.781 tỷ đồng. Định giá P/E dự phóng 2026F và 2027F lần lượt ở mức 9,7 lần và 8,9 lần, P/B dự phóng lần lượt là 2,2 lần và 1,9 lần. Suất sinh lợi cổ tức dự kiến duy trì ở mức 4,0%.",
     "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/company/FPT/fpt-khuyen-nghi-mua-voi-gia-muc-tieu-75700-dongco-phieu-23107.pdf",
     "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/company/FPT/fpt-khuyen-nghi-mua-voi-gia-muc-tieu-75700-dongco-phieu-23107.jpg"
-  },
-  {
-    "id": "23099",
-    "symbol": "HHV",
-    "title": "HHV: Khuyến nghị TĂNG TỶ TRỌNG với giá mục tiêu 11,300 đồng/cổ phiếu",
-    "slug": "hhv-khuyen-nghi-tang-ty-trong-voi-gia-muc-tieu-11300-dongco-phieu",
-    "source": "AGRISECO",
-    "date": "2026-11-13",
-    "displayDate": "13/11/2026",
-    "recommendation": "TĂNG TỶ TRỌNG",
-    "targetPrice": 11300,
-    "pageCount": 3,
-    "description": "Công ty chứng khoán Agriseco khuyến nghị Tăng tỷ trọng mã cổ phiếu HHV với giá mục tiêu 11.300 đồng, upside 15,9%. Trong Q3/2026, HHV ghi nhận doanh thu thuần 1.114 tỷ đồng (+22,0% yoy) và LNST 213 tỷ đồng (+39,6% yoy). Lũy kế 9T/2026, doanh thu đạt 2.992 tỷ đồng và LNST đạt 602 tỷ đồng, hoàn thành lần lượt 67% kế hoạch doanh thu và 78,6% kế hoạch lợi nhuận năm. Định giá P/E ở mức 8,2x và P/B ở mức 0,4x.",
-    "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/company/HHV/hhv-khuyen-nghi-tang-ty-trong-voi-gia-muc-tieu-11300-dongco-phieu-23099.pdf",
-    "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/company/HHV/hhv-khuyen-nghi-tang-ty-trong-voi-gia-muc-tieu-11300-dongco-phieu-23099.jpg"
   },
   {
     "id": "23098",
@@ -3795,21 +3720,6 @@
     "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/company/BSR/bsr-bao-cao-cap-nhat-kqkd-q32026-23104.jpg"
   },
   {
-    "id": "23081",
-    "symbol": "HHV",
-    "title": "HHV: Khuyến nghị MUA với giá mục tiêu 12,799 đồng/cổ phiếu",
-    "slug": "hhv-khuyen-nghi-mua-voi-gia-muc-tieu-12799-dongco-phieu",
-    "source": "VCBS",
-    "date": "2026-11-11",
-    "displayDate": "11/11/2026",
-    "recommendation": "MUA",
-    "targetPrice": 12799,
-    "pageCount": 8,
-    "description": "Công ty chứng khoán VCBS duy trì khuyến nghị MUA mã cổ phiếu HHV với giá mục tiêu 12.799 đồng, upside +29%. Doanh thu và lợi nhuận thuần năm 2026 của HHV được ước tính đạt lần lượt 4.218 tỷ đồng (tăng 10,9% yoy) và 799 tỷ đồng (tăng 18,9% yoy), tương ứng EPS là 1.177 đồng/cổ phiếu. Trong 9 tháng đầu năm 2026, doanh thu thuần và LNST đạt lần lượt 2.991,6 tỷ đồng và 602 tỷ đồng, hoàn thành 67,0% và 78,6% kế hoạch năm. Triển vọng doanh nghiệp được hỗ trợ bởi backlog xây lắp dồi dào và kỳ vọng nhận 6.860 tỷ đồng vốn ngân sách nhà nước hỗ trợ cho các dự án BOT.",
-    "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/company/HHV/hhv-khuyen-nghi-mua-voi-gia-muc-tieu-12799-dongco-phieu-23081.pdf",
-    "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/company/HHV/hhv-khuyen-nghi-mua-voi-gia-muc-tieu-12799-dongco-phieu-23081.jpg"
-  },
-  {
     "id": "23079",
     "symbol": "GMD",
     "title": "GMD: Báo cáo cập nhật KQKD Q3/2026",
@@ -3960,19 +3870,19 @@
     "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/company/VIB/vib-bao-cao-cap-nhat-kqkd-q32026-23069.jpg"
   },
   {
-    "id": "23067",
-    "symbol": "GVR",
-    "title": "GVR: Báo cáo cập nhật KQKD Q3/2026",
-    "slug": "gvr-bao-cao-cap-nhat-kqkd-q32026",
+    "id": "23066",
+    "symbol": "BCM",
+    "title": "BCM: Báo cáo cập nhật KQKD Q3/2026",
+    "slug": "bcm-bao-cao-cap-nhat-kqkd-q32026",
     "source": "TCBS",
     "date": "2026-11-11",
     "displayDate": "11/11/2026",
     "recommendation": null,
     "targetPrice": null,
-    "pageCount": 10,
-    "description": "Công ty chứng khoán TCBS cập nhật kết quả kinh doanh Q3/2026 của mã cổ phiếu GVR. TCBS Research đánh giá tích cực KQKD Q3 nhưng khuyến nghị nhà đầu tư tiếp tục theo dõi diễn biến giá để tìm điểm giải ngân phù hợp. Doanh thu thuần Q3 đạt 9.506 tỷ đồng (+2,3% YoY), LNST đạt 3.679 tỷ đồng (+68,2% YoY) nhờ khoản tiền bồi thường đất 1.779 tỷ đồng. Lũy kế 9 tháng, LNTT và LNST lần lượt hoàn thành 147,5% và 155,2% kế hoạch năm. Năm 2026, TCBS dự phóng doanh thu đạt 34.518 tỷ đồng (+18,7% YoY), LNST đạt 10.648 tỷ đồng (+77,5% YoY), P/E dự phóng 12,3x và P/B dự phóng 1,9x, cổ tức năm 2025 dự kiến là 400 đồng/cổ phiếu.",
-    "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/company/GVR/gvr-bao-cao-cap-nhat-kqkd-q32026-23067.pdf",
-    "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/company/GVR/gvr-bao-cao-cap-nhat-kqkd-q32026-23067.jpg"
+    "pageCount": 8,
+    "description": "Công ty chứng khoán TCBS cập nhật kết quả kinh doanh Q3/2026 của mã cổ phiếu BCM. Doanh thu thuần Q3/2026 đạt 941 tỷ đồng (+13,6% YoY) và LNST cổ đông mẹ đạt 563 tỷ đồng (+35,5% YoY). Lũy kế 9 tháng, BCM đạt doanh thu thuần 2.591 tỷ đồng và LNST cổ đông mẹ 855 tỷ đồng, hoàn thành 22,0% kế hoạch LNST năm. TCBS dự phóng LNST cổ đông mẹ năm 2026 đạt 2.812 tỷ đồng (-19,7% YoY), đạt 72,4% kế hoạch năm. Định giá P/E dự phóng 2026 và 2027 lần lượt ở mức 14,1 lần và 10,6 lần, với P/B hiện tại khoảng 1,8 lần.",
+    "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/company/BCM/bcm-bao-cao-cap-nhat-kqkd-q32026-23066.pdf",
+    "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/company/BCM/bcm-bao-cao-cap-nhat-kqkd-q32026-23066.jpg"
   },
   {
     "id": "23022",
@@ -4000,7 +3910,7 @@
     "recommendation": "MUA",
     "targetPrice": 25200,
     "pageCount": 0,
-    "description": "CTCP Hoàng Anh Gia Lai | Ngành: Nông sản | Kỳ vọng tăng giá (Upside): 81.9% | Dự phóng LNST: 3352 tỷ đồng",
+    "description": "CTCP Hoàng Anh Gia Lai | Ngành: Nông sản | Kỳ vọng tăng giá (Upside): 81.3% | Dự phóng LNST: 2990 tỷ đồng",
     "downloadUrl": "https://cdn02.wigroup.vn/baocaophantich/ar_27328_OCBS_2026-11-23.pdf",
     "thumbnailUrl": ""
   },
@@ -4423,6 +4333,21 @@
     "description": "Công ty chứng khoán DSC đưa ra khuyến nghị THEO DÕI mã cổ phiếu SCS với giá mục tiêu 44.500 đồng, upside 11,5%. Lũy kế 9 tháng đầu năm 2026, SCS ghi nhận doanh thu thuần đạt 836 tỷ đồng (-4% YoY) và LNTT đạt 695 tỷ đồng (-1% YoY), lần lượt hoàn thành 64% và 72% kế hoạch kinh doanh cả năm. Kịch bản thận trọng năm 2027 dự báo doanh thu thuần đạt 802 tỷ đồng (-31% YoY) và LNTT đạt 651 tỷ đồng (-26% YoY). Cổ phiếu SCS đang giao dịch quanh mức P/E trượt 5,5 lần, cùng kế hoạch cổ tức tiền mặt 2026 là 50%.",
     "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/company/SCS/scs-khuyen-nghi-theo-doi-voi-gia-muc-tieu-44500-dongco-phieu-23035.pdf",
     "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/company/SCS/scs-khuyen-nghi-theo-doi-voi-gia-muc-tieu-44500-dongco-phieu-23035.jpg"
+  },
+  {
+    "id": "23029",
+    "symbol": "PLX",
+    "title": "PLX: Báo cáo cập nhật KQKD Q3/2026",
+    "slug": "plx-bao-cao-cap-nhat-kqkd-q32026",
+    "source": "TCBS",
+    "date": "2026-11-10",
+    "displayDate": "10/11/2026",
+    "recommendation": null,
+    "targetPrice": null,
+    "pageCount": 8,
+    "description": "Công ty chứng khoán TCBS cập nhật kết quả kinh doanh Quý 3/2026 của mã cổ phiếu PLX. Định giá P/E trượt 4 quý ở mức 11,1 lần và P/E dự phóng 2026 đạt 10,3 lần (P/B dự phóng 1,5 lần). Lũy kế 9 tháng năm 2026, Petrolimex ghi nhận LNTT 4.688 tỷ đồng, đạt 139% kế hoạch năm (3.370 tỷ đồng) và doanh thu 373.226 tỷ đồng, vượt 13% kế hoạch năm (330.300 tỷ đồng). Dự phóng cả năm 2026, doanh thu đạt 505.095 tỷ đồng (+63,0% YoY) và LNST cổ đông mẹ đạt 4.160 tỷ đồng (+55,5% YoY). Tỷ suất cổ tức dự phóng 2026 khoảng 3,8%.",
+    "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/company/PLX/plx-bao-cao-cap-nhat-kqkd-q32026-23029.pdf",
+    "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/company/PLX/plx-bao-cao-cap-nhat-kqkd-q32026-23029.jpg"
   },
   {
     "id": "23027",
@@ -6000,6 +5925,21 @@
     "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/company/ACV/acv-khuyen-nghi-kha-quan-voi-gia-muc-tieu-46300-dongco-phieu-22942.jpg"
   },
   {
+    "id": "22938",
+    "symbol": "PLX",
+    "title": "PLX: Khuyến nghị KHẢ QUAN với giá mục tiêu 57,600 đồng/cổ phiếu",
+    "slug": "plx-khuyen-nghi-kha-quan-voi-gia-muc-tieu-57600-dongco-phieu",
+    "source": "MBS",
+    "date": "2026-11-05",
+    "displayDate": "05/11/2026",
+    "recommendation": "KHẢ QUAN",
+    "targetPrice": 57600,
+    "pageCount": 11,
+    "description": "Công ty chứng khoán MBS nâng khuyến nghị lên KHẢ QUAN cho mã cổ phiếu PLX với giá mục tiêu 57.600 đồng, upside +74,5%. Dự phóng lợi nhuận ròng giai đoạn 2026-2028F lần lượt đạt 4.657 tỷ đồng (+74,1% svck), 5.460 tỷ đồng (+17,2% svck) và 5.485 tỷ đồng (+0,5% svck) nhờ mặt bằng giá dầu cao, sản lượng cùng thị phần tăng và đóng góp từ khối ngoài xăng dầu. Định giá theo phương pháp Forward P/E mục tiêu 14x cho EPS bình quân 2027-28F và FCFF. Lũy kế 9T/2026, lợi nhuận ròng đạt 3.278 tỷ đồng (+55,3% svck), hoàn thành 70% dự phóng cả năm.",
+    "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/company/PLX/plx-khuyen-nghi-kha-quan-voi-gia-muc-tieu-57600-dongco-phieu-22938.pdf",
+    "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/company/PLX/plx-khuyen-nghi-kha-quan-voi-gia-muc-tieu-57600-dongco-phieu-22938.jpg"
+  },
+  {
     "id": "22933",
     "symbol": "DCM",
     "title": "DCM: Khuyến nghị MUA với giá mục tiêu 42,500 đồng/cổ phiếu",
@@ -7063,21 +7003,6 @@
     "description": "Công ty chứng khoán VNDIRECT khuyến nghị KHẢ QUAN mã cổ phiếu HPG với giá mục tiêu 32.400 đồng, upside +58,8%. VNDIRECT dự phóng LNST cốt lõi năm 2026 tăng 78% svck lên 27.527 tỷ đồng nhờ sản lượng tiêu thụ thép tăng 33,9% đạt 14,2 triệu tấn. Doanh thu thuần dự phóng năm 2026 đạt 231.461 tỷ đồng (+48,3% svck). Biên lợi nhuận gộp năm 2026 dự kiến đạt 17,9%. Cổ phiếu HPG đang giao dịch ở mức P/B 1,16 lần và P/E dự phóng 2026 ở mức 6,3x.",
     "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/company/HPG/hpg-khuyen-nghi-kha-quan-voi-gia-muc-tieu-32400-dongco-phieu-22896.pdf",
     "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/company/HPG/hpg-khuyen-nghi-kha-quan-voi-gia-muc-tieu-32400-dongco-phieu-22896.jpg"
-  },
-  {
-    "id": "22876",
-    "symbol": "HHV",
-    "title": "HHV: Báo cáo cập nhật KQKD Q3/2026",
-    "slug": "hhv-bao-cao-cap-nhat-kqkd-q32026",
-    "source": "VNDS",
-    "date": "2026-11-03",
-    "displayDate": "03/11/2026",
-    "recommendation": null,
-    "targetPrice": 14700,
-    "pageCount": 2,
-    "description": "Công ty Chứng khoán VNDIRECT cập nhật kết quả kinh doanh Q3/2026 của mã cổ phiếu HHV với giá mục tiêu 14.700 đồng. Trong Q3/2026, HHV ghi nhận doanh thu thuần đạt 1.114 tỷ đồng, tăng 22% so với cùng kỳ và lợi nhuận ròng đạt 186 tỷ đồng, tăng 44,6% so với cùng kỳ. Lũy kế 9 tháng đầu năm 2026, doanh thu thuần đạt 2.992 tỷ đồng, hoàn thành 57,6% dự báo cả năm; lợi nhuận ròng đạt 511 tỷ đồng, tăng 26% so với cùng kỳ và đạt 75,7% dự báo năm 2026 của VNDIRECT.",
-    "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/company/HHV/hhv-bao-cao-cap-nhat-kqkd-q32026-22876.pdf",
-    "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/company/HHV/hhv-bao-cao-cap-nhat-kqkd-q32026-22876.jpg"
   },
   {
     "id": "22868",
@@ -11055,19 +10980,19 @@
     "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/company/STB/stb-khuyen-nghi-kha-quan-voi-gia-muc-tieu-74900-dongco-phieu-22706.jpg"
   },
   {
-    "id": "22700",
-    "symbol": "MCH",
-    "title": "MCH: Báo cáo cập nhật KQKD Q3/2026",
-    "slug": "mch-bao-cao-cap-nhat-kqkd-q32026",
+    "id": "22701",
+    "symbol": "VPX",
+    "title": "VPX: Báo cáo cập nhật KQKD Q3/2026",
+    "slug": "vpx-bao-cao-cap-nhat-kqkd-q32026",
     "source": "TCBS",
     "date": "2026-10-28",
     "displayDate": "28/10/2026",
     "recommendation": null,
     "targetPrice": null,
     "pageCount": 9,
-    "description": "Công ty chứng khoán TCBS cập nhật kết quả kinh doanh Q3/2026 của mã cổ phiếu MCH. Q3/2026, MCH đạt doanh thu thuần 8.743 tỷ đồng (+16,3% YoY) và LNST cổ đông công ty mẹ 1.929 tỷ đồng (+15,1% YoY). Lũy kế 9 tháng, doanh thu đạt 24.380 tỷ đồng (+14,6% YoY) và LNST trước CĐTS đạt 5.222 tỷ đồng, hoàn thành 70% kịch bản cơ sở kế hoạch năm. TCBS dự phóng năm 2026 doanh thu thuần đạt 34.590 tỷ đồng (+13,2% YoY), LNST cổ đông mẹ đạt 7.480 tỷ đồng (+12,2% YoY), P/E dự phóng 24,5 lần và P/B 9,4 lần. Công ty đã chi trả cổ tức tiền mặt tỷ lệ 20% (2.000 đồng/cp) trong quý.",
-    "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/company/MCH/mch-bao-cao-cap-nhat-kqkd-q32026-22700.pdf",
-    "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/company/MCH/mch-bao-cao-cap-nhat-kqkd-q32026-22700.jpg"
+    "description": "Công ty chứng khoán TCBS cập nhật kết quả kinh doanh Q3/2026 của mã cổ phiếu VPX. Doanh thu hoạt động đạt 3.575 tỷ đồng (+0,1% YoY), LNTT giảm mạnh xuống 843 tỷ đồng (-64,3% YoY). Cho vay margin đạt dư nợ kỷ lục 39.869 tỷ đồng (+47,5% YoY). Cho cả năm 2026, TCBS dự phóng doanh thu hoạt động đạt 14.669 tỷ đồng (+85,4% YoY), LNST đạt 4.728 tỷ đồng (+32,5% YoY). Cổ phiếu hiện giao dịch ở P/E trailing 11,5 lần, P/B 1,2 lần, P/E forward 2026F ở mức 9,2 lần và P/B forward ở mức 1,1 lần.",
+    "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/company/VPX/vpx-bao-cao-cap-nhat-kqkd-q32026-22701.pdf",
+    "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/company/VPX/vpx-bao-cao-cap-nhat-kqkd-q32026-22701.jpg"
   },
   {
     "id": "wd_26880",
@@ -13867,12 +13792,12 @@
     "source": "YSVN",
     "date": "2026-10-20",
     "displayDate": "20/10/2026",
-    "recommendation": "MUA",
-    "targetPrice": 25610,
-    "pageCount": 4,
-    "description": "Công ty chứng khoán Yuanta duy trì khuyến nghị MUA mã cổ phiếu VPB với giá mục tiêu 25.610 đồng (đã điều chỉnh cổ tức), upside +7% (tổng tỷ suất sinh lời 12T ~9%). Q3/2026 VPB cắt giảm chi phí dự phòng -21% QoQ xuống 6,2 nghìn tỷ đồng, tỷ lệ nợ xấu NPL giảm còn 3,12%. Cổ phiếu đang giao dịch ở P/B 1,2x. Kế hoạch phát hành riêng lẻ 624 triệu cổ phiếu (~5,9%) cho NĐTNN giúp nâng cao CAR và hỗ trợ tăng trưởng.",
-    "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/company/VPB/vpb-khuyen-nghi-mua-voi-gia-muc-tieu-25610-dongco-phieu-22570.pdf",
-    "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/company/VPB/vpb-khuyen-nghi-mua-voi-gia-muc-tieu-25610-dongco-phieu-22570.jpg"
+    "recommendation": "NẮM GIỮ",
+    "targetPrice": 38300,
+    "pageCount": 13,
+    "description": "Công ty chứng khoán Yuanta khuyến nghị NẮM GIỮ - Khả quan lần đầu mã cổ phiếu PLX với giá mục tiêu 38.300 đồng, upside +9% (tổng tỷ suất sinh lời 12T +12%). Dự phóng năm 2026E doanh thu đạt 481.255 tỷ đồng (+55% YoY), LNST công ty mẹ đạt 2.808 tỷ đồng (+5% YoY), EPS đạt 2.170 đồng, P/E dự phóng 17,6x. Tỷ lệ chi trả cổ tức tiền mặt đều đặn duy trì khoảng 50% (tỷ suất cổ tức >3%). Định giá kết hợp phương pháp FCFF và P/B mục tiêu 1,4x.",
+    "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/company/PLX/plx-khuyen-nghi-nam-giu-voi-gia-muc-tieu-38300-dongco-phieu-22569.pdf",
+    "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/company/PLX/plx-khuyen-nghi-nam-giu-voi-gia-muc-tieu-38300-dongco-phieu-22569.jpg"
   },
   {
     "id": "22569",
@@ -16710,21 +16635,6 @@
     "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/company/DCM/dcm-khuyen-nghi-mua-voi-gia-muc-tieu-44400-dongco-phieu-22400.jpg"
   },
   {
-    "id": "22398",
-    "symbol": "MCH",
-    "title": "MCH: Khuyến nghị MUA với giá mục tiêu 156,559 đồng/cổ phiếu",
-    "slug": "mch-khuyen-nghi-mua-voi-gia-muc-tieu-156559-dongco-phieu",
-    "source": "YSVN",
-    "date": "2026-10-06",
-    "displayDate": "06/10/2026",
-    "recommendation": "MUA",
-    "targetPrice": 156559,
-    "pageCount": 40,
-    "description": "Công ty chứng khoán Yuanta Việt Nam (YSVN) khuyến nghị MUA lần đầu mã cổ phiếu MCH với giá mục tiêu 156.559 đồng, upside +10,3% (tổng tỷ suất sinh lời kỳ vọng 12 tháng đạt +13,8%). YSVN dự phóng doanh thu năm 2026E đạt 34.188 tỷ đồng (+11,9% YoY) và LNST đạt 7.543 tỷ đồng (+11,5% YoY). Định giá P/E dự phóng 2026E đạt 20,7 lần, kết hợp định giá FCFF (159.128 đồng, tỷ trọng 80%) và SOTP (146.286 đồng, tỷ trọng 20%). MCH duy trì chính sách cổ tức tiền mặt đều đặn dự phóng 5.000–6.500 đồng/cổ phiếu giai đoạn 2026E–2030E, tương đương tỷ lệ chi trả 60–75% và tỷ suất cổ tức 3,5%. MCH đã chuyển niêm yết lên HSX tháng 12/2025 và được thêm vào chỉ số VN30 và FTSE GEIS từ tháng 8/2026.",
-    "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/company/MCH/mch-khuyen-nghi-mua-voi-gia-muc-tieu-156559-dongco-phieu-22398.pdf",
-    "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/company/MCH/mch-khuyen-nghi-mua-voi-gia-muc-tieu-156559-dongco-phieu-22398.jpg"
-  },
-  {
     "id": "22397",
     "symbol": "VRE",
     "title": "VRE: Báo cáo cập nhật 06/10/2026",
@@ -18525,21 +18435,6 @@
     "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/company/HPG/hpg-khuyen-nghi-mua-voi-gia-muc-tieu-31100-dongco-phieu-22293.jpg"
   },
   {
-    "id": "22292",
-    "symbol": "VPB",
-    "title": "VPB: Khuyến nghị TÍCH LỦY với giá mục tiêu 25,300 đồng/cổ phiếu",
-    "slug": "vpb-khuyen-nghi-tich-luy-voi-gia-muc-tieu-25300-dongco-phieu",
-    "source": "VDS",
-    "date": "2026-09-25",
-    "displayDate": "25/09/2026",
-    "recommendation": "TÍCH LỦY",
-    "targetPrice": 25300,
-    "pageCount": 12,
-    "description": "Công ty chứng khoán VDSC đưa ra khuyến nghị TÍCH LỦY đối với mã cổ phiếu VPB với giá mục tiêu 25.300 đồng. Q2/2026, VPB đạt LNTT đỉnh lịch sử 10.959 tỷ đồng (+76,3% YoY) và LNST-CĐCTM đạt 8.385 tỷ đồng (+72,4% YoY) nhờ tín dụng tăng trưởng mạnh và thu nhập phí bứt phá. Dự phóng năm 2026F, EPS đạt 4.146 đồng (+37,1% YoY), ROE cải thiện lên 17,4%. Cổ phiếu VPB giao dịch ở mức P/E dự phóng 6,75x và P/B dự phóng 1,20x. Tỷ lệ cổ tức tiền mặt dự kiến là 1,8%. VDSC lưu ý chất lượng tài sản và nợ xấu FE Credit là điểm cần theo dõi.",
-    "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/company/VPB/vpb-khuyen-nghi-tich-luy-voi-gia-muc-tieu-25300-dongco-phieu-22292.pdf",
-    "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/company/VPB/vpb-khuyen-nghi-tich-luy-voi-gia-muc-tieu-25300-dongco-phieu-22292.jpg"
-  },
-  {
     "id": "22291",
     "symbol": "SCS",
     "title": "SCS: Báo cáo cập nhật KQKD Q2/2026",
@@ -18958,21 +18853,6 @@
     "description": "Công ty chứng khoán VDSC khuyến nghị MUA mã cổ phiếu DPR với giá mục tiêu 52.500 đồng, upside +40,0% so với thị giá 38.700 đồng ngày 24/09/2026. VDSC dự kiến cổ tức tiền mặt 2.000 đồng/cổ phiếu trong 12 tháng tới. EPS năm 2025 đạt 3.325 đồng (+10,3%) và EPS hiện tại đạt 3.389 đồng (+21,5%). Định giá P/E hiện tại ở mức 11,1 lần, P/B 1,4 lần và ROE đạt 12,7%. Động lực tăng trưởng chính đến từ mảng cao su neo giá cao và tiềm năng phát triển KCN Nam Đồng Phú & Bắc Đồng Phú mở rộng.",
     "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/company/DPR/dpr-khuyen-nghi-mua-voi-gia-muc-tieu-52500-dongco-phieu-22261.pdf",
     "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/company/DPR/dpr-khuyen-nghi-mua-voi-gia-muc-tieu-52500-dongco-phieu-22261.jpg"
-  },
-  {
-    "id": "22259",
-    "symbol": "HHV",
-    "title": "HHV: Khuyến nghị MUA với giá mục tiêu 15,500 đồng/cổ phiếu",
-    "slug": "hhv-khuyen-nghi-mua-voi-gia-muc-tieu-15500-dongco-phieu",
-    "source": "SSV",
-    "date": "2026-09-24",
-    "displayDate": "24/09/2026",
-    "recommendation": "MUA",
-    "targetPrice": 15500,
-    "pageCount": 16,
-    "description": "Công ty chứng khoán Shinhan khuyến nghị MUA mã cổ phiếu HHV với giá mục tiêu 15.500 đồng, upside +69,0% so với giá 9.150 đồng ngày 24/09/2026. Shinhan dự phóng doanh thu năm 2026F đạt 4.385 tỷ đồng (+15% YoY) và LNST đạt 775 tỷ đồng (+16% YoY). Định giá P/E dự phóng 2026F ở mức 8,01 lần, P/B ở mức 0,48 lần và ROE đạt 6,20%. HHV đã thực hiện chia cổ tức bằng cổ phiếu tỷ lệ 20:1 vào ngày 09/07/2026.",
-    "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/company/HHV/hhv-khuyen-nghi-mua-voi-gia-muc-tieu-15500-dongco-phieu-22259.pdf",
-    "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/company/HHV/hhv-khuyen-nghi-mua-voi-gia-muc-tieu-15500-dongco-phieu-22259.jpg"
   },
   {
     "id": "22255",
@@ -20115,21 +19995,6 @@
     "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/company/HPG/hpg-khuyen-nghi-kha-quan-voi-gia-muc-tieu-32000-dongco-phieu-22171.jpg"
   },
   {
-    "id": "22214",
-    "symbol": "VPB",
-    "title": "VPB: Khuyến nghị MUA với giá mục tiêu 33,500 đồng/cổ phiếu",
-    "slug": "vpb-khuyen-nghi-mua-voi-gia-muc-tieu-33500-dongco-phieu",
-    "source": "FPTS",
-    "date": "2026-09-17",
-    "displayDate": "17/09/2026",
-    "recommendation": "MUA",
-    "targetPrice": 33500,
-    "pageCount": 34,
-    "description": "Công ty chứng khoán FPTS khuyến nghị MUA mã cổ phiếu VPB với giá mục tiêu 33.500 đồng, upside +19,1%. Động lực tăng trưởng đến từ sự phục hồi của FE Credit và quy mô tín dụng mở rộng. FPTS dự phóng thu nhập lãi thuần năm 2026F của VPB đạt 82.506 tỷ đồng (tăng 40,6% so với cùng kỳ), lợi nhuận trước thuế đạt 43.551 tỷ đồng (tăng 42,2%) và lợi nhuận sau thuế của cổ đông công ty mẹ đạt 34.319 tỷ đồng. Chỉ số ROE dự phóng năm 2026F đạt 17,5% và ROA đạt 2,1% với NIM ở mức 5,2%. Ngân hàng có kế hoạch tăng vốn kỷ lục từ H2/2026 nhằm gia tăng dư địa tăng trưởng tín dụng.",
-    "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/company/VPB/vpb-khuyen-nghi-mua-voi-gia-muc-tieu-33500-dongco-phieu-22214.pdf",
-    "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/company/VPB/vpb-khuyen-nghi-mua-voi-gia-muc-tieu-33500-dongco-phieu-22214.jpg"
-  },
-  {
     "id": "22186",
     "symbol": "VNM",
     "title": "VNM: Khuyến nghị Khả quan với giá mục tiêu 71,900 đồng/cổ phiếu",
@@ -20190,19 +20055,19 @@
     "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/company/PHP/php-bao-cao-cap-nhat-kqkd-q22026-22181.jpg"
   },
   {
-    "id": "22180",
-    "symbol": "HHV",
-    "title": "HHV: Khuyến nghị MUA với giá mục tiêu 12,300 đồng/cổ phiếu",
-    "slug": "hhv-khuyen-nghi-mua-voi-gia-muc-tieu-12300-dongco-phieu",
-    "source": "BSC",
+    "id": "22175",
+    "symbol": "BCM",
+    "title": "BCM: Khuyến nghị MUA với giá mục tiêu 70,200 đồng/cổ phiếu",
+    "slug": "bcm-khuyen-nghi-mua-voi-gia-muc-tieu-70200-dongco-phieu",
+    "source": "NHSV",
     "date": "2026-09-17",
     "displayDate": "17/09/2026",
     "recommendation": "MUA",
-    "targetPrice": 12300,
-    "pageCount": 8,
-    "description": "Công ty chứng khoán BSC khuyến nghị MUA mã cổ phiếu HHV với giá mục tiêu 12.300 đồng, upside +31%. BSC dự phóng doanh thu thuần năm 2026 đạt 4.642 tỷ đồng (+22% svck) và LNST cổ đông công ty mẹ đạt 616 tỷ đồng (+6% svck), tương ứng EPS FWD là 1.072 đồng/cp. Động lực chính đến từ mảng BOT (+15% svck) và mảng Xây lắp (+30% svck) nhờ lượng backlog khoảng 5.500 tỷ đồng. Lũy kế 6T/2026, HHV đã hoàn thành 40% kế hoạch doanh thu và 50% kế hoạch lợi nhuận. Định giá P/E FWD 2026 ở mức 9,3x và P/B FWD là 0,3x.",
-    "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/company/HHV/hhv-khuyen-nghi-mua-voi-gia-muc-tieu-12300-dongco-phieu-22180.pdf",
-    "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/company/HHV/hhv-khuyen-nghi-mua-voi-gia-muc-tieu-12300-dongco-phieu-22180.jpg"
+    "targetPrice": 70200,
+    "pageCount": 5,
+    "description": "Công ty chứng khoán NHSV duy trì khuyến nghị MUA mã cổ phiếu BCM với giá mục tiêu 70.200 đồng, upside +73,5%. NHSV cập nhật KQKD 6T/2026 với doanh thu thuần đạt 1.650 tỷ đồng (-65% svck) và lợi nhuận ròng đạt 292 tỷ đồng (-84% svck), mới hoàn thành 8% kế hoạch lợi nhuận năm 2026. Hoạt động kinh doanh cốt lõi gặp khó khăn do cạn kiệt nguồn hàng BĐS, tuy nhiên liên doanh VSIP và các công ty liên kết đóng góp 733 tỷ đồng lợi nhuận, trở thành trụ đỡ chính.",
+    "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/company/BCM/bcm-khuyen-nghi-mua-voi-gia-muc-tieu-70200-dongco-phieu-22175.pdf",
+    "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/company/BCM/bcm-khuyen-nghi-mua-voi-gia-muc-tieu-70200-dongco-phieu-22175.jpg"
   },
   {
     "id": "22175",
@@ -21675,21 +21540,6 @@
     "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/company/GAS/gas-bao-cao-cap-nhat-07092026-22030.jpg"
   },
   {
-    "id": "22028",
-    "symbol": "VPB",
-    "title": "VPB: Khuyến nghị MUA với giá mục tiêu 30,800 đồng/cổ phiếu",
-    "slug": "vpb-khuyen-nghi-mua-voi-gia-muc-tieu-30800-dongco-phieu",
-    "source": "EVS.,JSC",
-    "date": "2026-09-07",
-    "displayDate": "07/09/2026",
-    "recommendation": "MUA",
-    "targetPrice": 30800,
-    "pageCount": 2,
-    "description": "Công ty chứng khoán EVS khuyến nghị MUA mã cổ phiếu VPB với giá mục tiêu 30.800 đồng, upside +13%. Kết quả kinh doanh 6 tháng đầu năm 2026 ghi nhận lợi nhuận trước thuế của ngân hàng đạt 18.880 tỷ đồng, tăng trưởng 68,1% so với cùng kỳ năm trước, hoàn thành 45,7% kế hoạch năm. Tăng trưởng tín dụng đạt 23,2% giúp thu nhập lãi thuần tăng 30,2% so với cùng kỳ. Tỷ lệ nợ xấu được kiểm soát ở mức giảm xuống 3,28% và tỷ lệ bao phủ nợ xấu đạt 56,2%. Định giá P/E hiện tại ở mức 7,4x và giá trị sổ sách P/B đang nằm dưới mức trung vị 3 năm.",
-    "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/company/VPB/vpb-khuyen-nghi-mua-voi-gia-muc-tieu-30800-dongco-phieu-22028.pdf",
-    "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/company/VPB/vpb-khuyen-nghi-mua-voi-gia-muc-tieu-30800-dongco-phieu-22028.jpg"
-  },
-  {
     "id": "22025",
     "symbol": "VHM",
     "title": "VHM: Khuyến nghị MUA với giá mục tiêu 99,800 đồng/cổ phiếu",
@@ -22408,21 +22258,6 @@
     "description": "Công ty chứng khoán VFS cập nhật kết quả kinh doanh Q2/2026 của mã cổ phiếu MBB với định giá hợp lý là 22.100 đồng, tương đương tiềm năng tăng giá đạt 5%. Trong Q2/2026, MBB ghi nhận thu nhập lãi thuần đạt 16.894 tỷ đồng (+36,5% svck) và lợi nhuận sau thuế đạt 8.445 tỷ đồng (+40,6% svck). Lũy kế 6 tháng đầu năm 2026, lợi nhuận sau thuế của MBB đạt 16.148 tỷ đồng. VFS dự phóng cả năm 2026 MBB đạt lợi nhuận trước thuế là 42.279 tỷ đồng (+23,4% svck, hoàn thành 107% kế hoạch năm) và định giá cổ phiếu giao dịch với mức P/B mục tiêu đạt 1,34 lần.",
     "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/company/MBB/mbb-bao-cao-cap-nhat-kqkd-q22026-21974.pdf",
     "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/company/MBB/mbb-bao-cao-cap-nhat-kqkd-q22026-21974.jpg"
-  },
-  {
-    "id": "21917",
-    "symbol": "VPL",
-    "title": "VPL: Khuyến nghị KHẢ QUAN với giá mục tiêu 119,700 đồng/cổ phiếu",
-    "slug": "vpl-khuyen-nghi-kha-quan-voi-gia-muc-tieu-119700-dongco-phieu",
-    "source": "VNDS",
-    "date": "2026-08-28",
-    "displayDate": "28/08/2026",
-    "recommendation": "KHẢ QUAN",
-    "targetPrice": 119700,
-    "pageCount": 23,
-    "description": "Công ty chứng khoán VNDIRECT khuyến nghị KHẢ QUAN đối với mã cổ phiếu VPL với giá mục tiêu là 119.700 đồng, upside +54% so với giá ngày 27/08/2026. Doanh nghiệp đang bước vào chu kỳ tăng trưởng mới nhờ mở rộng mạnh danh mục phòng khách sạn và các công viên VinWonders. Dự phóng năm 2026, doanh thu thuần tăng 17,8% và lợi nhuận ròng đạt 4.437 tỷ đồng, tăng 303% so với cùng kỳ. Biên lợi nhuận gộp dự báo đạt 40,4% nhờ lượng khách phục hồi tốt. Đại hội đồng cổ đông 2026 đã thông qua phương án chào bán riêng lẻ tối đa 100 triệu cổ phiếu ưu đãi cổ tức nhằm huy động vốn phục vụ mở rộng dự án.",
-    "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/company/VPL/vpl-khuyen-nghi-kha-quan-voi-gia-muc-tieu-119700-dongco-phieu-21917.pdf",
-    "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/company/VPL/vpl-khuyen-nghi-kha-quan-voi-gia-muc-tieu-119700-dongco-phieu-21917.jpg"
   },
   {
     "id": "21916",
@@ -32595,21 +32430,6 @@
     "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/company/MBB/mbb-khuyen-nghi-mua-voi-gia-muc-tieu-32900-dongco-phieu-20931.jpg"
   },
   {
-    "id": "20929",
-    "symbol": "VPB",
-    "title": "VPB: Khuyến nghị MUA với giá mục tiêu 33,800 đồng/cổ phiếu",
-    "slug": "vpb-khuyen-nghi-mua-voi-gia-muc-tieu-33800-dongco-phieu",
-    "source": "MAS",
-    "date": "2026-06-24",
-    "displayDate": "24/06/2026",
-    "recommendation": "MUA",
-    "targetPrice": 33800,
-    "pageCount": 7,
-    "description": "Mirae Asset duy trì khuyến nghị MUA đối với mã chứng khoán VPB, điều chỉnh giá mục tiêu xuống 33.800 đồng với tiềm năng tăng giá 27,3%. Năm 2026F, LNTT dự phóng đạt 37.262 tỷ đồng (+21,7% svck) và LNST đạt 29.056 tỷ đồng (+21,1% svck). Định giá P/E và P/B dự phóng lần lượt đạt 9,3x và 1,4x. Động lực chính đến từ thu nhập lãi thuần đạt 74.051 tỷ đồng và sự hồi phục của thu nhập dịch vụ. Tỷ lệ nợ xấu (NPL) được dự báo ở mức 3,39%. Giá mục tiêu mới chưa bao gồm tác động từ thương vụ tiềm năng phát hành riêng lẻ.",
-    "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/company/VPB/vpb-khuyen-nghi-mua-voi-gia-muc-tieu-33800-dongco-phieu-20929.pdf",
-    "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/company/VPB/vpb-khuyen-nghi-mua-voi-gia-muc-tieu-33800-dongco-phieu-20929.jpg"
-  },
-  {
     "id": "20928",
     "symbol": "VGC",
     "title": "VGC: Báo cáo cập nhật KQKD Q1/2026",
@@ -34483,21 +34303,6 @@
     "description": "BSC duy trì khuyến nghị MUA MẠNH cổ phiếu MWG với giá mục tiêu 106.800 đồng tương ứng upside 37%. BSC kỳ vọng lợi nhuận sau thuế năm 2026 đạt 10.238 tỷ đồng (+45.5% yoy) vượt kế hoạch đề ra nhờ tối ưu hóa mô hình vận hành và tăng trưởng mạnh từ chuỗi Bách Hóa Xanh. Doanh thu thuần năm 2026 dự báo đạt 192.879 tỷ đồng (+23.3% yoy). Định giá hiện tại được xem là hấp dẫn khi mới chỉ phản ánh một phần giá trị của chuỗi Bách Hóa Xanh và chưa bao gồm tiềm năng từ sự kiện IPO chuỗi Điện Máy Xanh dự kiến vào tháng 8/2026.",
     "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/company/MWG/mwg-khuyen-nghi-mua-voi-gia-muc-tieu-106800-dongco-phieu-20754.pdf",
     "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/company/MWG/mwg-khuyen-nghi-mua-voi-gia-muc-tieu-106800-dongco-phieu-20754.jpg"
-  },
-  {
-    "id": "20752",
-    "symbol": "GVR",
-    "title": "GVR: Khuyến nghị TRUNG LẬP với giá mục tiêu 36,100 đồng/cổ phiếu",
-    "slug": "gvr-khuyen-nghi-trung-lap-voi-gia-muc-tieu-36100-dongco-phieu",
-    "source": "MBS",
-    "date": "2026-06-10",
-    "displayDate": "10/06/2026",
-    "recommendation": "TRUNG LẬP",
-    "targetPrice": 36100,
-    "pageCount": 10,
-    "description": "MBS duy trì khuyến nghị TRUNG LẬP nhưng nâng giá mục tiêu cổ phiếu GVR lên 36.100 đồng nhờ mảng cao su tăng giá trị định giá. Dự báo năm 2026 doanh thu thuần đạt 33.207 tỷ đồng (+14% svck) và lợi nhuận ròng đạt 8.158 tỷ đồng (+53% svck). Giá cao su tự nhiên tăng trên 25% giúp giá bán bình quân năm 2026 có thể đạt 54 triệu đồng/tấn. Ngoài ra công ty dự kiến nhận khoảng 3.600 tỷ đồng tiền đền bù đất từ VSIP và Thaco trong giai đoạn 2026-2027. Rủi ro chính đến từ vướng mắc pháp lý kéo dài ảnh hưởng tiến độ các dự án khu công nghiệp.",
-    "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/company/GVR/gvr-khuyen-nghi-trung-lap-voi-gia-muc-tieu-36100-dongco-phieu-20752.pdf",
-    "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/company/GVR/gvr-khuyen-nghi-trung-lap-voi-gia-muc-tieu-36100-dongco-phieu-20752.jpg"
   },
   {
     "id": "20750",
@@ -36615,21 +36420,6 @@
     "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/company/MBB/mbb-khuyen-nghi-mua-voi-gia-muc-tieu-30380-dongco-phieu-20522.jpg"
   },
   {
-    "id": "20513",
-    "symbol": "VPB",
-    "title": "VPB: Khuyến nghị MUA với giá mục tiêu 35,500 đồng/cổ phiếu",
-    "slug": "vpb-khuyen-nghi-mua-voi-gia-muc-tieu-35500-dongco-phieu",
-    "source": "KAFI",
-    "date": "2026-05-25",
-    "displayDate": "25/05/2026",
-    "recommendation": "MUA",
-    "targetPrice": 35500,
-    "pageCount": 6,
-    "description": "KAFI duy trì khuyến nghị MUA đối với cổ phiếu VPB với giá mục tiêu 35,500 đồng/cp, tiềm năng tăng giá khoảng 33%. Sự phục hồi liên tục của chỉ số ROE trong 8 quý gần đây cùng việc FE Credit dần đóng góp lợi nhuận trở lại sau tái cấu trúc là những điểm nhấn quan trọng. Tín dụng quý 1/2026 tăng trưởng bứt phá 10.2%, vượt xa mức trung bình ngành nhờ mảng bán lẻ và SME. Lợi nhuận trước thuế dự phóng năm 2026 đạt 39,982 tỷ đồng, tăng trưởng 31% so với cùng kỳ năm trước.",
-    "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/company/VPB/vpb-khuyen-nghi-mua-voi-gia-muc-tieu-35500-dongco-phieu-20513.pdf",
-    "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/company/VPB/vpb-khuyen-nghi-mua-voi-gia-muc-tieu-35500-dongco-phieu-20513.jpg"
-  },
-  {
     "id": "20505",
     "symbol": "PVS",
     "title": "PVS: Báo cáo cập nhật KQKD Q1/2026",
@@ -37012,12 +36802,12 @@
     "source": "SSI",
     "date": "2026-05-21",
     "displayDate": "21/05/2026",
-    "recommendation": "TRUNG LẬP",
-    "targetPrice": 36200,
-    "pageCount": 6,
-    "description": "SSI duy trì khuyến nghị TRUNG LẬP đối với cổ phiếu GVR với giá mục tiêu 12 tháng là 36.200 đồng, tương ứng tiềm năng giảm giá 3,7%. Lợi nhuận sau thuế năm 2026 dự kiến đạt 8,5 nghìn tỷ đồng, tăng trưởng mạnh 33,9% so với cùng kỳ. Động lực chính đến từ mảng cao su cốt lõi nhờ giá bán duy trì ở mức cao và mảng thanh lý cây cao su dự kiến đạt đỉnh. Đặc biệt, kế hoạch chuyển đổi hơn 23.000 ha đất cao su sang phát triển khu công nghiệp giai đoạn 2025-2030 kỳ vọng mở ra giai đoạn phát triển mới cho tập đoàn.",
-    "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/company/GVR/gvr-khuyen-nghi-trung-lap-voi-gia-muc-tieu-36200-dongco-phieu-20455.pdf",
-    "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/company/GVR/gvr-khuyen-nghi-trung-lap-voi-gia-muc-tieu-36200-dongco-phieu-20455.jpg"
+    "recommendation": "MUA",
+    "targetPrice": 83000,
+    "pageCount": 4,
+    "description": "NHSV khuyến nghị MUA cho mã BCM với giá kỳ vọng 83.000 VNĐ, tiềm năng tăng trưởng 52,3%. LNST năm 2026 dự phóng đạt 3.883 tỷ đồng (+10% YoY). Kết quả Q1/2026 cho thấy doanh thu giảm mạnh do mảng bất động sản suy yếu, nhưng biên lợi nhuận gộp cải thiện vượt trội lên 61,8%. Lợi nhuận từ các liên doanh như VSIP và BW vẫn đóng vai trò trụ cột. Thách thức lớn hiện nay là áp lực dòng tiền âm và gánh nặng nợ vay gia tăng do tốc độ bàn giao dự án chậm.",
+    "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/company/BCM/bcm-khuyen-nghi-mua-voi-gia-muc-tieu-83000-dongco-phieu-20470.pdf",
+    "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/company/BCM/bcm-khuyen-nghi-mua-voi-gia-muc-tieu-83000-dongco-phieu-20470.jpg"
   },
   {
     "id": "20453",
@@ -37618,21 +37408,6 @@
     "description": "Chứng khoán DSC giữ nguyên khuyến nghị MUA cho cổ phiếu PVS với giá mục tiêu là 59.700 VND/cp, tương ứng với mức upside 45,6%. Trong quý 1/2026, PVS ghi nhận kết quả ấn tượng với doanh thu đạt 8.699 tỷ đồng (+45% YoY) và LNST đạt 435 tỷ đồng (+45% YoY), hoàn thành 44% kế hoạch lợi nhuận năm. DSC dự phóng lợi nhuận sau thuế của doanh nghiệp trong năm 2026 sẽ đạt mức tăng trưởng khoảng 3% so với năm 2025. Động lực tăng trưởng chính đến từ khối lượng công việc xây lắp lớn tại các đại dự án như Lô B và nguồn dòng tiền ổn định từ mảng FSO/FPSO thông qua các hợp đồng thuê dài hạn.",
     "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/company/PVS/pvs-khuyen-nghi-mua-voi-gia-muc-tieu-59700-dongco-phieu-20407.pdf",
     "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/company/PVS/pvs-khuyen-nghi-mua-voi-gia-muc-tieu-59700-dongco-phieu-20407.jpg"
-  },
-  {
-    "id": "20400",
-    "symbol": "VPB",
-    "title": "VPB: Báo cáo cập nhật KQKD Q1/2026",
-    "slug": "vpb-bao-cao-cap-nhat-kqkd-q12026",
-    "source": "Beta",
-    "date": "2026-05-18",
-    "displayDate": "18/05/2026",
-    "recommendation": null,
-    "targetPrice": null,
-    "pageCount": 7,
-    "description": "BETA cập nhật kết quả kinh doanh quý 1/2026 của ngân hàng VPB với lợi nhuận trước thuế đạt 7.921 tỷ đồng, tăng trưởng mạnh mẽ 57,9% so với cùng kỳ, hoàn thành 19% kế hoạch năm. Thu nhập lãi thuần tăng 27% nhờ tăng trưởng tín dụng đạt 10,2% trong riêng quý 1, dẫn dắt bởi phân khúc khách hàng doanh nghiệp. Dù biên lãi ròng (NIM) giảm về mức 5,25% do chi phí vốn tăng, thu nhập ngoài lãi vẫn đóng góp tích cực nhờ mảng bảo hiểm (bancassurance) tăng 41,1%. Chất lượng tài sản được duy trì với tỷ lệ nợ xấu cải thiện rõ rệt so với năm trước, trong khi tỷ lệ bao phủ nợ xấu giữ ở mức 52,8%.",
-    "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/company/VPB/vpb-bao-cao-cap-nhat-kqkd-q12026-20400.pdf",
-    "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/company/VPB/vpb-bao-cao-cap-nhat-kqkd-q12026-20400.jpg"
   },
   {
     "id": "20399",
@@ -39265,9 +39040,9 @@
     "recommendation": null,
     "targetPrice": null,
     "pageCount": 2,
-    "description": "VPBankS cập nhật KQKD Q1/2026 của Tập đoàn Công nghiệp Cao su Việt Nam (GVR). Doanh thu và LNST của cổ đông công ty mẹ tăng trưởng đột biến lần lượt 55,8% và 90% svck, đạt 8.845 tỷ đồng và 2.251 tỷ đồng. Kết quả này nhờ giá mủ cao su duy trì ở mức cao và các khoản thu nhập khác từ thanh lý cây cao su (700 tỷ đồng) cùng tiền bồi thường bàn giao đất khu công nghiệp (380 tỷ đồng). Dự phóng cả năm 2026, doanh thu dự kiến đạt 29.949 tỷ đồng và LNST đạt 6.732 tỷ đồng. GVR kỳ vọng tiếp tục ghi nhận thu nhập từ đền bù đất tại dự án KCN Bắc Tân Uyên 1 và KCN Long Đức giai đoạn 3 vừa khởi công tháng 4/2026.",
-    "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/company/GVR/gvr-bao-cao-cap-nhat-kqkd-q12026-20240.pdf",
-    "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/company/GVR/gvr-bao-cao-cap-nhat-kqkd-q12026-20240.jpg"
+    "description": "VPBankS cập nhật kết quả kinh doanh Q1/2026 của GEE với doanh thu đạt 7.097 tỷ đồng (+34% svck) và LNST công ty mẹ đạt 579 tỷ đồng (+28% svck). Kết quả này phản ánh sự tăng trưởng tích cực từ hoạt động kinh doanh cốt lõi. Tuy nhiên, biên lãi gộp giảm nhẹ còn 14,3% do giá nguyên vật liệu đầu vào (đồng, nhôm, PVC) biến động mạnh. Điểm nhấn đáng chú ý là GEE đã phát hành thành công hơn 274 triệu cổ phiếu từ vốn chủ sở hữu vào tháng 5/2026, nâng vốn điều lệ lên 6.405 tỷ đồng, giúp củng cố năng lực tài chính và tạo dư địa cho các kế hoạch mở rộng sản xuất thiết bị điện trong tương lai.",
+    "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/company/GEE/gee-bao-cao-cap-nhat-kqkd-q12026-20442.pdf",
+    "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/company/GEE/gee-bao-cao-cap-nhat-kqkd-q12026-20442.jpg"
   },
   {
     "id": "20239",
@@ -41850,21 +41625,6 @@
     "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/company/BID/bid-bao-cao-cap-nhat-dhcd-2026-20017.jpg"
   },
   {
-    "id": "20008",
-    "symbol": "VPL",
-    "title": "VPL: Báo cáo cập nhật ĐHCĐ 2026",
-    "slug": "vpl-bao-cao-cap-nhat-dhcd-2026",
-    "source": "VPX",
-    "date": "2026-04-24",
-    "displayDate": "24/04/2026",
-    "recommendation": null,
-    "targetPrice": 84400,
-    "pageCount": 3,
-    "description": "VPBankS cập nhật ĐHCĐ mã VPL với giá mục tiêu 84.400 đồng, upside 3,5%. Vinpearl đặt kế hoạch doanh thu 16.000 tỷ đồng và LNST 3.000 tỷ đồng (+172% svck) trong năm 2026 nhờ nền so sánh thấp và tối ưu chi phí. Công ty dự kiến khai trương tổ hợp Mỹ Lâm (Tuyên Quang) vào Q4/2026. Chiến lược phát triển hệ sinh thái \"all-in-one\" được đẩy mạnh thông qua hợp tác với các tập đoàn khách sạn quốc tế như IHG, Marriott nhằm thu hút khách quốc tế có mức chi tiêu cao.",
-    "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/company/VPL/vpl-bao-cao-cap-nhat-dhcd-2026-20008.pdf",
-    "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/company/VPL/vpl-bao-cao-cap-nhat-dhcd-2026-20008.jpg"
-  },
-  {
     "id": "20007",
     "symbol": "TCX",
     "title": "TCX: Báo cáo cập nhật ĐHCĐ 2026",
@@ -42465,21 +42225,6 @@
     "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/company/GAS/gas-khuyen-nghi-trung-lap-voi-gia-muc-tieu-83800-dongco-phieu-19940.jpg"
   },
   {
-    "id": "19939",
-    "symbol": "VPB",
-    "title": "VPB: Báo cáo cập nhật ĐHCĐ 2026",
-    "slug": "vpb-bao-cao-cap-nhat-dhcd-2026",
-    "source": "VPX",
-    "date": "2026-04-23",
-    "displayDate": "23/04/2026",
-    "recommendation": null,
-    "targetPrice": 42800,
-    "pageCount": 3,
-    "description": "VPBankS cập nhật ĐHCĐ VPB với giá mục tiêu 42.800 VND/cp. Ngân hàng đặt kế hoạch LNTT 2026 tham vọng đạt 41.323 tỷ đồng (+34,9% svck) dựa trên hạn mức tín dụng 35%. Q1/2026 ghi nhận LNTT sơ bộ 7.921 tỷ đồng (+57,9% svck). ĐHCĐ thông qua phương án tăng vốn điều lệ lên hơn 106.200 tỷ đồng và mở rộng hệ sinh thái tài chính với các mảng mới như tài sản số, quản lý quỹ và bảo hiểm nhân thọ. FE Credit kỳ vọng phục hồi mạnh với mục tiêu LN 1.179 tỷ đồng. VPBankS dự báo NIM sẽ gặp áp lực đến hết Q2/2026.",
-    "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/company/VPB/vpb-bao-cao-cap-nhat-dhcd-2026-19939.pdf",
-    "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/company/VPB/vpb-bao-cao-cap-nhat-dhcd-2026-19939.jpg"
-  },
-  {
     "id": "19937",
     "symbol": "TCB",
     "title": "TCB: Báo cáo cập nhật KQKD Q1/2026",
@@ -43073,11 +42818,11 @@
     "date": "2026-04-21",
     "displayDate": "21/04/2026",
     "recommendation": "MUA",
-    "targetPrice": 32000,
-    "pageCount": 3,
-    "description": "Agriseco khuyến nghị MUA cho VPB với giá mục tiêu 32.000 VND/cp, upside 16%. LNTT năm 2026 dự báo duy trì đà tăng trưởng cao trên 30% svck nhờ tín dụng khách hàng doanh nghiệp dẫn dắt mạnh mẽ. Q1/2026 ghi nhận kết quả khả quan với LNTT đạt 7.921 tỷ đồng (+58% svck). Tín dụng toàn hàng tăng 10,3% YTD, tập trung vào các lĩnh vực phục hồi như thương mại, xây dựng và bất động sản. Ngân hàng dự kiến tăng vốn điều lệ lên 106.200 tỷ đồng và chi trả cổ tức tiền mặt 5%. Định giá P/B 1,2x hiện thấp hơn bình quân ngành.",
-    "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/company/VPB/vpb-khuyen-nghi-mua-voi-gia-muc-tieu-32000-dongco-phieu-19905.pdf",
-    "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/company/VPB/vpb-khuyen-nghi-mua-voi-gia-muc-tieu-32000-dongco-phieu-19905.jpg"
+    "targetPrice": 45600,
+    "pageCount": 20,
+    "description": "VPBankS khuyến nghị MUA cho PLX với giá mục tiêu 45.600 VND/cp, tiềm năng tăng giá 16,0%. Lợi nhuận sau thuế năm 2026 dự phóng đạt 3.926 tỷ đồng, tăng trưởng 29,6% svck nhờ sản lượng nội địa dự kiến tăng 6-8%. Petrolimex sở hữu 50% thị phần nội địa với mạng lưới 4.365 cửa hàng. Công ty đang tích cực đấu thầu 10 dự án trạm dừng nghỉ trên cao tốc để phát triển dịch vụ phi xăng dầu. Thách thức dài hạn đến từ xu hướng xe điện và biến động giá dầu thế giới.",
+    "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/company/PLX/plx-khuyen-nghi-mua-voi-gia-muc-tieu-45600-dongco-phieu-19915.pdf",
+    "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/company/PLX/plx-khuyen-nghi-mua-voi-gia-muc-tieu-45600-dongco-phieu-19915.jpg"
   },
   {
     "id": "19903",
@@ -43648,21 +43393,6 @@
     "description": "CSI đưa ra khuyến nghị MUA cho ACB với giá mục tiêu 33.000 đồng/cp, tương ứng upside 38,95%. Lợi nhuận sau thuế dự phóng năm 2026 đạt 18.700 tỷ đồng (+19,8% yoy). Động lực tăng trưởng đến từ việc NIM dự kiến cải thiện nhẹ và áp lực trích lập dự phòng giảm đáng kể do đã hoàn tất các khoản trích lập theo quy định mới trong năm 2025. Ngân hàng cũng có kế hoạch trả cổ tức hấp dẫn (20% cho năm 2025 và dự kiến 25% cho năm 2026). ACB đang chuyển dịch mạnh mẽ sang mảng khách hàng doanh nghiệp lớn và FDI.",
     "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/company/ACB/acb-khuyen-nghi-mua-voi-gia-muc-tieu-33000-dongco-phieu-19867.pdf",
     "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/company/ACB/acb-khuyen-nghi-mua-voi-gia-muc-tieu-33000-dongco-phieu-19867.jpg"
-  },
-  {
-    "id": "19861",
-    "symbol": "VPB",
-    "title": "VPB: Báo cáo cập nhật KQKD Q1/2026",
-    "slug": "vpb-bao-cao-cap-nhat-kqkd-q12026",
-    "source": "VPX",
-    "date": "2026-04-17",
-    "displayDate": "17/04/2026",
-    "recommendation": null,
-    "targetPrice": 42800,
-    "pageCount": 3,
-    "description": "VPBankS cập nhật kết quả Q1/2026 của VPB với giá mục tiêu 42.800 VND/cp, tiềm năng tăng giá 51,5%. LNTT hợp nhất Q1 đạt 7.921 tỷ đồng (+57,9% svck), hoàn thành 20% dự phóng cả năm nhờ tăng trưởng cho vay mạnh mẽ (+10,3% trong Q1). Tuy nhiên, NIM bị nén xuống 5,3% do chi phí vốn tăng để đáp ứng nhu cầu huy động. Tỷ lệ nợ xấu tăng nhẹ lên 4,1% do ảnh hưởng của lãi suất thị trường nhưng vẫn trong tầm kiểm soát. Ngân hàng ghi nhận hiệu quả chi phí cải thiện với tỷ lệ CIR giảm mạnh còn 21,7%. Tỷ suất cổ tức dự kiến đạt 1,8%.",
-    "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/company/VPB/vpb-bao-cao-cap-nhat-kqkd-q12026-19861.pdf",
-    "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/company/VPB/vpb-bao-cao-cap-nhat-kqkd-q12026-19861.jpg"
   },
   {
     "id": "19850",
@@ -44805,19 +44535,19 @@
     "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/company/ACB/acb-bao-cao-cap-nhat-dhcd-2026-19729.jpg"
   },
   {
-    "id": "19727",
-    "symbol": "VPB",
-    "title": "VPB: Khuyến nghị MUA với giá mục tiêu 34,000 đồng/cổ phiếu",
-    "slug": "vpb-khuyen-nghi-mua-voi-gia-muc-tieu-34000-dongco-phieu",
-    "source": "NHSV",
+    "id": "19722",
+    "symbol": "PLX",
+    "title": "PLX: Khuyến nghị MUA với giá mục tiêu 49,600 đồng/cổ phiếu",
+    "slug": "plx-khuyen-nghi-mua-voi-gia-muc-tieu-49600-dongco-phieu",
+    "source": "ACBS",
     "date": "2026-04-09",
     "displayDate": "09/04/2026",
     "recommendation": "MUA",
-    "targetPrice": 34000,
-    "pageCount": 12,
-    "description": "Chứng khoán NH Việt Nam (NHSV) khuyến nghị MUA đối với VPB với giá mục tiêu 34.000 đồng/cp (upside 31%). Ngân hàng dẫn đầu về tăng trưởng tín dụng (35% năm 2025) nhờ phục hồi cho vay mua nhà và tín dụng tiêu dùng. Việc tham gia tái cơ cấu GPBank kỳ vọng giúp nới trần sở hữu ngoại, hỗ trợ tăng cường bộ đệm vốn. Lợi nhuận từ hệ sinh thái (FE Credit, VPBankS) bắt đầu khởi sắc rõ rệt. NHSV dự phóng lợi nhuận sau thuế năm 2026 của VPB đạt 33.643 tỷ đồng, tăng trưởng mạnh 40,2% so với kết quả năm 2025.",
-    "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/company/VPB/vpb-khuyen-nghi-mua-voi-gia-muc-tieu-34000-dongco-phieu-19727.pdf",
-    "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/company/VPB/vpb-khuyen-nghi-mua-voi-gia-muc-tieu-34000-dongco-phieu-19727.jpg"
+    "targetPrice": 49600,
+    "pageCount": 11,
+    "description": "Chứng khoán ACBS duy trì khuyến nghị MUA cho PLX với giá mục tiêu 49.600 đồng/cp, tương ứng mức upside 25,5%. Triển vọng 2026 tích cực nhờ đề xuất cơ chế điều hành giá xăng dầu mới theo giá thị trường và nhu cầu tiêu thụ trong nước dự báo tăng 8%/năm. Việc áp dụng xăng E10 trên toàn quốc từ giữa năm 2026 cũng mở ra cơ hội gia tăng thị phần. ACBS dự phóng doanh thu năm 2026 của PLX đạt 353.526 tỷ đồng (+14,1% YoY) và lợi nhuận sau thuế đạt 3.688 tỷ đồng, tăng trưởng 21,4% so với năm 2025.",
+    "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/company/PLX/plx-khuyen-nghi-mua-voi-gia-muc-tieu-49600-dongco-phieu-19722.pdf",
+    "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/company/PLX/plx-khuyen-nghi-mua-voi-gia-muc-tieu-49600-dongco-phieu-19722.jpg"
   },
   {
     "id": "19722",
@@ -46275,19 +46005,19 @@
     "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/company/FPT/fpt-khuyen-nghi-mua-voi-gia-muc-tieu-126541-dongco-phieu-19551.jpg"
   },
   {
-    "id": "19540",
-    "symbol": "MCH",
-    "title": "MCH: Khuyến nghị NẮM GIỮ với giá mục tiêu 165,000 đồng/cổ phiếu",
-    "slug": "mch-khuyen-nghi-nam-giu-voi-gia-muc-tieu-165000-dongco-phieu",
-    "source": "VNDS",
+    "id": "19538",
+    "symbol": "FOX",
+    "title": "FOX: Báo cáo cập nhật KQKD Q4/2025",
+    "slug": "fox-bao-cao-cap-nhat-kqkd-q42025",
+    "source": "BSC",
     "date": "2026-03-26",
     "displayDate": "26/03/2026",
-    "recommendation": "NẮM GIỮ",
-    "targetPrice": 165000,
-    "pageCount": 13,
-    "description": "VNDIRECT duy trì khuyến nghị NẮM GIỮ cổ phiếu MCH với giá mục tiêu 165.000 VND (upside 13%). Dự phóng năm 2026, doanh thu đạt 35,2 nghìn tỷ (+15,4% yoy) và lợi nhuận ròng đạt 7,4 nghìn tỷ (+9,6% yoy) nhờ phục hồi của kênh truyền thống (GT) và mô hình Retail Supreme. MCH đang mở rộng sang các dòng hàng cao cấp như Quán xá Châu Á và HPC. Tuy nhiên, biên lợi nhuận gộp dự kiến thu hẹp nhẹ do áp lực giá dầu tăng. Việc niêm yết trên HOSE và lọt rổ VN100 giúp cải thiện thanh khoản và thu hút nhà đầu tư tổ chức.",
-    "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/company/MCH/mch-khuyen-nghi-nam-giu-voi-gia-muc-tieu-165000-dongco-phieu-19540.pdf",
-    "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/company/MCH/mch-khuyen-nghi-nam-giu-voi-gia-muc-tieu-165000-dongco-phieu-19540.jpg"
+    "recommendation": null,
+    "targetPrice": null,
+    "pageCount": 0,
+    "description": "BSC hiện chưa đưa ra khuyến nghị (trạng thái KKN) đối với cổ phiếu FOX do định giá P/E dự phóng 2026 đạt 16,6 lần, cao hơn mức trung bình lịch sử trong khi tăng trưởng có dấu hiệu chậm lại. Dự phóng năm 2026, doanh thu thuần và LNST của FOX lần lượt đạt 21.417 tỷ (+9,8%) và 3.838 tỷ (+12,3%). Ngành viễn thông bão hòa khiến FOX phụ thuộc vào dịch vụ giá trị gia tăng (Wifi 6, Wifi 7) và FPT Play. Đáng chú ý, doanh nghiệp đối mặt rủi ro hủy niêm yết do không đáp ứng quy định về số lượng cổ đông sau khi chuyển giao về Bộ Công An.",
+    "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/company/FOX/fox-bao-cao-cap-nhat-kqkd-q42025-19538.pdf",
+    "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/company/FOX/fox-bao-cao-cap-nhat-kqkd-q42025-19538.jpg"
   },
   {
     "id": "19538",
@@ -50040,21 +49770,6 @@
     "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/company/PHP/php-khuyen-nghi-mua-voi-gia-muc-tieu-45500-dongco-phieu-19189.jpg"
   },
   {
-    "id": "19188",
-    "symbol": "VPB",
-    "title": "VPB: Báo cáo cập nhật KQKD Q4/2025",
-    "slug": "vpb-bao-cao-cap-nhat-kqkd-q42025",
-    "source": "Beta",
-    "date": "2026-03-02",
-    "displayDate": "02/03/2026",
-    "recommendation": "TĂNG TỶ TRỌNG",
-    "targetPrice": null,
-    "pageCount": 9,
-    "description": "Trong Q4/2025, VPB duy trì đà tăng trưởng lợi nhuận ấn tượng nhờ động lực chính đến từ tăng trưởng tín dụng mạnh mẽ và sự cải thiện rõ rệt của chất lượng tài sản. Thu nhập lãi thuần (NII) đạt 16,767 tỷ đồng (+27.1% YoY), dù biên lãi ròng (NIM) tiếp tục chịu áp lực giảm về mức 5.38% (-58 bps YoY) do lợi suất từ tài sản sinh lãi (EAY) thu hẹp trong bối cảnh cạnh tranh gia tăng và cơ cấu cho gia tăng tỷ trọng nhóm khách hàng doanh nghiệp, tuy nhiên, VPB vẫn kiểm soát tốt chi phí vốn (CoF) nhờ vào lượng tiền gửi khách hàng tăng mạnh ở mức 29% YoY và mở rộng hiệu quả nguồn vốn rẻ khác.",
-    "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/company/VPB/vpb-bao-cao-cap-nhat-kqkd-q42025-19188.pdf",
-    "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/company/VPB/vpb-bao-cao-cap-nhat-kqkd-q42025-19188.jpg"
-  },
-  {
     "id": "19187",
     "symbol": "KDH",
     "title": "KDH: Báo cáo cập nhật KQKD Q4/2025",
@@ -52245,19 +51960,19 @@
     "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/company/GAS/gas-khuyen-nghi-trung-lap-voi-gia-muc-tieu-115400-dongco-phieu-18982.jpg"
   },
   {
-    "id": "19336",
-    "symbol": "MCH",
-    "title": "MCH: Khuyến nghị TRUNG LẬP với giá mục tiêu 158,600 đồng/cổ phiếu",
-    "slug": "mch-khuyen-nghi-trung-lap-voi-gia-muc-tieu-158600-dongco-phieu",
-    "source": "BVS",
+    "id": "18975",
+    "symbol": "BCM",
+    "title": "BCM: Khuyến nghị KHẢ QUAN với giá mục tiêu 76,600 đồng/cổ phiếu",
+    "slug": "bcm-khuyen-nghi-kha-quan-voi-gia-muc-tieu-76600-dongco-phieu",
+    "source": "ACBS",
     "date": "2026-02-09",
     "displayDate": "09/02/2026",
-    "recommendation": "TRUNG LẬP",
-    "targetPrice": 158600,
-    "pageCount": 11,
-    "description": "Sử dụng phương pháp DCF và P/E, BVSC đưa ra giá mục tiêu của MCH là 158.600 đồng/cp đối với cổ phiếu MCH, tương ứng khuyến nghị NEUTRAL. Dựa trên số liệu ngày 06/02/2026, MCH hiện có mức vốn hóa tương đương với vị trí số 11 trong rổ VN-30; vì vậy, doanh nghiệp có thể sớm được vào VN-30 trong lần xét duyệt tháng 7/2026. Tuy nhiên, BVSC cho rằng câu chuyện chuyển sàn đã phản ánh một phần vào giá cổ phiếu trong thời gian qua, nâng mức định giá P/E lên mức cao so với lịch sử và so với các doanh nghiệp cùng ngành trong khu vực.",
-    "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/company/MCH/mch-khuyen-nghi-trung-lap-voi-gia-muc-tieu-158600-dongco-phieu-19336.pdf",
-    "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/company/MCH/mch-khuyen-nghi-trung-lap-voi-gia-muc-tieu-158600-dongco-phieu-19336.jpg"
+    "recommendation": "KHẢ QUAN",
+    "targetPrice": 76600,
+    "pageCount": 6,
+    "description": "ACBS dự phóng kết quả kinh doanh 2026 đi ngang với doanh thu đạt 7.041 tỷ đồng (+1% svck) và LNST đạt 3.616 tỷ đồng (+3% svck). ACBS giữ nguyên giá mục tiêu cuối năm 2026 ở mức 76.600 đồng/cổ phiếu và duy trì khuyến nghị Khả quan đối với BCM.",
+    "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/company/BCM/bcm-khuyen-nghi-kha-quan-voi-gia-muc-tieu-76600-dongco-phieu-18975.pdf",
+    "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/company/BCM/bcm-khuyen-nghi-kha-quan-voi-gia-muc-tieu-76600-dongco-phieu-18975.jpg"
   },
   {
     "id": "18975",
@@ -58170,21 +57885,6 @@
     "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/company/BMP/bmp-khuyen-nghi-trung-lap-voi-gia-muc-tieu-178200-dongco-phieu-18334.jpg"
   },
   {
-    "id": "18333",
-    "symbol": "GVR",
-    "title": "GVR: Khuyến nghị MUA với giá mục tiêu 33,400 đồng/cổ phiếu",
-    "slug": "gvr-khuyen-nghi-mua-voi-gia-muc-tieu-33400-dongco-phieu",
-    "source": "KBSV",
-    "date": "2025-12-15",
-    "displayDate": "15/12/2025",
-    "recommendation": "MUA",
-    "targetPrice": 33400,
-    "pageCount": 11,
-    "description": "GVR đang giao dịch với PBR 2025 là 1.72x, nằm dưới đường trung bình PBR 5 năm - đã phản ánh mức chiết khấu với rủi ro Tradewar 2.0. Dựa trên triển vọng kinh doanh và kết quả định giá, KBSV khuyến nghị MUA đối với cổ phiếu GVR với giá mục tiêu 33,400VND/cổ phiếu.",
-    "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/company/GVR/gvr-khuyen-nghi-mua-voi-gia-muc-tieu-33400-dongco-phieu-18333.pdf",
-    "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/company/GVR/gvr-khuyen-nghi-mua-voi-gia-muc-tieu-33400-dongco-phieu-18333.jpg"
-  },
-  {
     "id": "18368",
     "symbol": "CTG",
     "title": "CTG: Khuyến nghị KHẢ QUAN với giá mục tiêu 61,400 đồng/cổ phiếu",
@@ -60472,12 +60172,12 @@
     "source": "AGRISECO",
     "date": "2025-11-12",
     "displayDate": "12/11/2025",
-    "recommendation": "TĂNG TỶ TRỌNG",
-    "targetPrice": 16000,
+    "recommendation": null,
+    "targetPrice": null,
     "pageCount": 3,
-    "description": "Agriseco Research kỳ vọng KQKD của HHV sẽ duy trì tăng trưởng trong Quý 4 cũng như cả năm 2025 nhờ: (1) Lưu lượng xe qua các trạm thu phí tăng ổn định và (2) Mảng xây lắp góp phần thúc đẩy tăng trưởng doanh thu các tháng cuối năm khi các dự án quy mô lớn đang được cấp tốc triển khai hoàn thành. Chúng tôi khuyến nghị Tăng tỷ trọng cổ phiếu HHV với giá mục tiêu là 16.000 đồng/cp, tương ứng với upside 12,2%.",
-    "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/company/HHV/hhv-khuyen-nghi-tang-ty-trong-voi-gia-muc-tieu-16000-dongco-phieu-18135.pdf",
-    "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/company/HHV/hhv-khuyen-nghi-tang-ty-trong-voi-gia-muc-tieu-16000-dongco-phieu-18135.jpg"
+    "description": "Lợi nhuận trước thuế Q3.25 đạt 807 tỷ đồng, tăng 234,6% so với mức nền thấp cùng kỳ 2024: Nhờ lợi nhuận gộp tăng mạnh, lợi nhuận trước thuế tăng mạnh so với nền thấp cùng kỳ 2024. Lợi nhuận sau thuế đạt 706 tỷ đồng (+441,0% svck). Lũy kế 9T.25, lợi nhuận trước và sau thuế đạt 2.812 tỷ đồng và 2.341 tỷ đồng, giảm 12,1% và 8,2% svck, thực hiện được 87,9% kế hoạch lợi nhuận trước thuế cả năm.",
+    "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/company/PLX/plx-bao-cao-cap-nhat-kqkd-q32025-18091.pdf",
+    "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/company/PLX/plx-bao-cao-cap-nhat-kqkd-q32025-18091.jpg"
   },
   {
     "id": "18091",
@@ -67260,21 +66960,6 @@
     "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/company/VIC/vic-khuyen-nghi-kha-quan-voi-gia-muc-tieu-49500-dongco-phieu-13036.jpg"
   },
   {
-    "id": "13005",
-    "symbol": "VNM",
-    "title": "VNM: Khuyến nghị KHẢ QUAN với giá mục tiêu 82,600 đồng/cổ phiếu",
-    "slug": "vnm-khuyen-nghi-kha-quan-voi-gia-muc-tieu-82600-dongco-phieu",
-    "source": "VNDS",
-    "date": "2023-11-16",
-    "displayDate": "16/11/2023",
-    "recommendation": "KHẢ QUAN",
-    "targetPrice": 82600,
-    "pageCount": 10,
-    "description": "Chúng tôi duy trì khuyến nghị Khả quan với tiềm năng tăng giá 19,3% và tỷ suất cổ tức 5,6%. Chúng tôi giảm giá mục tiêu xuống 0,6% khi giá cổ phiếu đã giảm 3,5% kể từ báo cáo gần đây của chúng tôi. Chúng tôi thay đổi giá mục tiêu chủ yếu do điều chỉnh dự phóng EPS trong 2023-25 và giảm P/E mục tiêu. P/E trượt 12T của VNM là 17,3x, thấp hơn trung bình các doanh nghiệp cùng ngành và khá hấp dẫn so với triển vọng kinh doanh tích cực của doanh nghiệp.",
-    "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/company/VNM/vnm-khuyen-nghi-kha-quan-voi-gia-muc-tieu-82600-dongco-phieu-13005.pdf",
-    "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/company/VNM/vnm-khuyen-nghi-kha-quan-voi-gia-muc-tieu-82600-dongco-phieu-13005.jpg"
-  },
-  {
     "id": "13003",
     "symbol": "SAB",
     "title": "SAB: Khuyến nghị MUA với giá mục tiêu 78,000 đồng/cổ phiếu",
@@ -71145,21 +70830,6 @@
     "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/company/SAB/sab-khuyen-nghi-neutral-voi-gia-muc-tieu-162300-dongco-phieu-12177.jpg"
   },
   {
-    "id": "12217",
-    "symbol": "HHV",
-    "title": "HHV: Khuyến nghị với giá mục tiêu 16,600 đồng/cổ phiếu",
-    "slug": "hhv-khuyen-nghi-voi-gia-muc-tieu-16600-dongco-phieu",
-    "source": "DSC",
-    "date": "2023-05-18",
-    "displayDate": "18/05/2023",
-    "recommendation": null,
-    "targetPrice": 16600,
-    "pageCount": 4,
-    "description": "Có thể cân nhắc giải ngân khi P/B về quanh mức 0,5, tương đương với vùng giá khoảng 11.700 – 12.000 VND/cp.",
-    "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/company/HHV/hhv-khuyen-nghi-voi-gia-muc-tieu-16600-dongco-phieu-12217.pdf",
-    "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/company/HHV/hhv-khuyen-nghi-voi-gia-muc-tieu-16600-dongco-phieu-12217.jpg"
-  },
-  {
     "id": "12178",
     "symbol": "BSR",
     "title": "BSR: Khuyến nghị MUA với giá mục tiêu 19,300 đồng/cổ phiếu",
@@ -74528,11 +74198,11 @@
     "date": "2022-12-01",
     "displayDate": "01/12/2022",
     "recommendation": "MUA",
-    "targetPrice": 38200,
-    "pageCount": 8,
-    "description": "Trong năm 2022, MBS kỳ vọng CTG sẽ đạt TOI hợp nhất 57,327 tỷ đồng (+7.8% yoy), trong đó NII và NOI lần lượt chiếm tỷ trọng 77.0% và 23.0%. Với kỳ vọng tỷ lệ CIR hợp nhất cả năm 2022 đạt 28%, chi phí hoạt động được dự báo sẽ ở mức 16,051 tỷ đồng (-6.6% yoy). Chi phí trích lập DPRRTD được kỳ vọng sẽ đạt 20,928 tỷ đồng (+13.9% yoy) với kỳ vọng CTG sẽ tiếp tục duy trì tỷ lệ dự phòng/dư nợ cho vay ở mức 1.8%. Từ đó, LNTT hợp nhất của CTG trong năm 2022 được dự báo sẽ đạt 20,347 tỷ đồng (+15.7% yoy), hoàn thành 100% kế hoạch đề ra. Trong năm 2023, chúng tôi kỳ vọng CTG sẽ có được hạn mức tăng trưởng tương đương với năm 2022 vì hiện tại mức này tương đối hợp lý đối với hầu hết các NHTM nhằm thực hiện chính sách tiền tệ không quá nới lỏng của NHNN đồng thời phù hợp với những nỗ lực nâng cao chất lượng tài sản của CTG. LNTT trong năm 2023 được dự báo ở mức 23,152 tỷ đồng (+13.8% yoy). MBS định giá cổ phiếu CTG với mức giá mục tiêu 38,200 VND/cp theo 2 Phương pháp: Thu nhập thặng dư (Residual Income-RI) và so sánh P/B toàn ngành. Trong phương pháp RI, MBS sử dụng tỷ suất chiết khẩu Re=14.1% và P/B=1.3x trong Phương pháp so sánh P/B",
-    "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/company/CTG/ctg-khuyen-nghi-mua-voi-gia-muc-tieu-38200-dongco-phieu-10752.pdf",
-    "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/company/CTG/ctg-khuyen-nghi-mua-voi-gia-muc-tieu-38200-dongco-phieu-10752.jpg"
+    "targetPrice": 88700,
+    "pageCount": 3,
+    "description": "Lợi nhuận sau thế trong năm 2023 dự kiến sẽ tiếp tục tăng trưởng hai con số do tính thanh khoản tại Thành phố mới Bình Dương đã được cải thiện, với lợi thế pháp lý rõ ràng và diện tích lô đất lớn cùng với nhu cầu thị trường chung tăng cao. Theo BCM, tháng 12/2022 công ty sẽ ghi nhận hợp đồng mới tại Thành phố mới Bình Dương. Năm 2023, chúng tôi ước tính doanh thu đạt 9,8 nghìn tỷ đồng (hay 411,7 triệu USD) (tăng 5,2% so với cùng kỳ) và LNST đạt 3 nghìn tỷ đồng (tăng 21,9% so với cùng kỳ) tương đương với EPS là 2.822 đồng. Trong đó, doanh thu Khu công nghiệp ước đạt 3,1 nghìn tỷ đồng (hay 130,2 triệu USD) (tăng 38% so với cùng kỳ, chiếm 30,6% tổng doanh thu) với giá thuê tăng 5% so với cùng kỳ. Diện tích đất cho thuê ước đạt 151 ha (tăng 22,8% so với cùng kỳ) do: (1) nhu cầu thuê đất tiếp tục tăng với dự báo Bình Dương là một trong những tỉnh nhận vốn FDI lớn nhất cả nước; và (2) Khu công nghiệp Cây Trường sẽ bắt đầu cho thuê đất từ cuối quý 1 năm 2023. Ngoài ra, doanh thu từ Thành phố mới Bình Dương ước đạt 3,6 nghìn tỷ đồng (hay 151 triệu USD) (giảm 12% so với cùng kỳ) với diện tích cho thuê đạt 11,3 ha – thấp hơn mức 13,6 ha trong năm 2022 – ước tính dựa trên diện tích đất hiện đang được đàm phán trong quý 4 năm 2022. Chi phí lãi vay ước tính khoảng 1,1 nghìn tỷ đồng (giảm 19% so với cùng kỳ) do giảm (23% so với cùng kỳ) các khoản vay ngắn hạn và dài hạn, đồng thời ghi nhận dòng tiền dương từ bán bất động sản tại Thành phố mới Bình Dương và cho thuê đất tại khu công nghiệp",
+    "downloadUrl": "https://cdn.ruatichsan.com/analyst_reports/pdf/company/BCM/bcm-khyen-nghi-kha-quan-voi-gia-muc-tieu-88700-dongco-phieu-10757.pdf",
+    "thumbnailUrl": "https://cdn.ruatichsan.com/analyst_reports/thumb/company/BCM/bcm-khyen-nghi-kha-quan-voi-gia-muc-tieu-88700-dongco-phieu-10757.jpg"
   },
   {
     "id": "10751",

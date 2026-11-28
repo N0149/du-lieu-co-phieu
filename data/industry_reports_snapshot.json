@@ -377,19 +377,6 @@
     "sectorName": "Điện"
   },
   {
-    "id": "wd_ind_26534",
-    "title": "Cập nhật Ngành Chứng khoán – Q3/2026",
-    "slug": "chung-khoan-cap-nhat-nganh-chung-khoan-q3-2026-wd_ind_26534",
-    "source": "TCBS",
-    "date": "2026-11-05",
-    "displayDate": "05/11/2026",
-    "pageCount": 0,
-    "description": "Cập nhật Ngành Chứng khoán – Q3/2026",
-    "downloadUrl": "",
-    "thumbnailUrl": "",
-    "sectorName": "Chứng khoán"
-  },
-  {
     "id": "wd_ind_26533",
     "title": "Triển vọng ngành điện năm 2027",
     "slug": "dien-trien-vong-nganh-dien-nam-2027-wd_ind_26533",
@@ -715,9 +702,9 @@
     "sectorName": "Chứng khoán"
   },
   {
-    "id": "wd_ind_26181",
+    "id": "wd_ind_26985",
     "title": "Báo cáo thống kê T10/2026",
-    "slug": "hang-tieu-dung-bao-cao-thong-ke-t10-2026-wd_ind_26181",
+    "slug": "soi-bao-cao-thong-ke-t10-2026-wd_ind_26985",
     "source": "VCOSA",
     "date": "2026-10-27",
     "displayDate": "27/10/2026",
@@ -725,7 +712,7 @@
     "description": "Báo cáo thống kê T10/2026",
     "downloadUrl": "https://cdn02.wigroup.vn/baocaophantich/ar_26577_VCOSA_2026-10-27.pdf",
     "thumbnailUrl": "",
-    "sectorName": "Hàng tiêu dùng"
+    "sectorName": "Sợi"
   },
   {
     "id": "wd_ind_26170",
@@ -975,19 +962,6 @@
     "sectorName": "Dược phẩm"
   },
   {
-    "id": "wd_ind_25917",
-    "title": "Cập nhật Ngành Vật liệu xây dựng: Bứt phá nhờ lực đẩy đầu tư công",
-    "slug": "vat-lieu-xay-dung-cap-nhat-nganh-vat-lieu-xay-dung-but-pha-nho-luc-day-dau-tu-cong-wd_ind_25917",
-    "source": "SSI",
-    "date": "2026-10-12",
-    "displayDate": "12/10/2026",
-    "pageCount": 0,
-    "description": "Cập nhật Ngành Vật liệu xây dựng: Bứt phá nhờ lực đẩy đầu tư công",
-    "downloadUrl": "",
-    "thumbnailUrl": "",
-    "sectorName": "Vật liệu xây dựng"
-  },
-  {
     "id": "wd_ind_25916",
     "title": "Cập nhật Ngành Dầu khí: Lợi nhuận đột biến hạ nhiệt, chu kỳ đầu tư tiếp diễn",
     "slug": "dau-khi-cap-nhat-nganh-dau-khi-loi-nhuan-dot-bien-ha-nhiet-chu-ky-dau-tu-tiep-dien-wd_ind_25916",
@@ -1012,19 +986,6 @@
     "downloadUrl": "",
     "thumbnailUrl": "",
     "sectorName": "Hàng tiêu dùng"
-  },
-  {
-    "id": "wd_ind_25914",
-    "title": "Cập nhật Ngành Ngân hàng: Tâm điểm \"lãi suất\"",
-    "slug": "ngan-hang-cap-nhat-nganh-ngan-hang-tam-diem-lai-suat-wd_ind_25914",
-    "source": "SSI",
-    "date": "2026-10-12",
-    "displayDate": "12/10/2026",
-    "pageCount": 0,
-    "description": "Cập nhật Ngành Ngân hàng: Tâm điểm \"lãi suất\"",
-    "downloadUrl": "",
-    "thumbnailUrl": "",
-    "sectorName": "Ngân hàng"
   },
   {
     "id": "22540",
